@@ -43,7 +43,9 @@ class Studio:
 
     def call(self, payload: dict, timeout: int = 60) -> dict:
         data = json.dumps({**payload, 'worker': self.worker}).encode()
-        for attempt in range(4):
+        # the shared database stalls for a minute or two at a time (9.11.2026): six tries over ~3 minutes ride it out
+        waits = (5, 10, 20, 40, 60)
+        for attempt in range(len(waits) + 1):
             req = urllib.request.Request(self.base + '/api/master/stories/worker', data=data, method='POST',
                                          headers={'Authorization': 'Bearer ' + self.secret, 'Content-Type': 'application/json'})
             try:
@@ -53,12 +55,12 @@ class Studio:
                 msg = e.read()[:300].decode('utf-8', 'replace')
                 if e.code in (409, 401, 400, 404):
                     raise StageError(f'STUDIO_{e.code}', msg)
-                if attempt == 3:
+                if attempt == len(waits):
                     raise StageError(f'STUDIO_{e.code}', msg, retryable=True)
             except (urllib.error.URLError, TimeoutError) as e:
-                if attempt == 3:
+                if attempt == len(waits):
                     raise StageError('STUDIO_UNREACHABLE', str(e), retryable=True)
-            time.sleep(4 * (attempt + 1))
+            time.sleep(waits[attempt])
         raise StageError('STUDIO_UNREACHABLE', 'no answer', retryable=True)
 
     def ping_chat(self) -> str | None:
@@ -71,7 +73,9 @@ class Studio:
 
     def put(self, url: str, path: Path, data: bytes | None = None, ctype: str = 'application/octet-stream') -> None:
         body = data if data is not None else path.read_bytes()
-        for attempt in range(4):
+        # the shared database stalls for a minute or two at a time (9.11.2026): six tries over ~3 minutes ride it out
+        waits = (5, 10, 20, 40, 60)
+        for attempt in range(len(waits) + 1):
             req = urllib.request.Request(url, data=body, method='PUT', headers={'Content-Type': ctype, 'x-upsert': 'true'})
             try:
                 with urllib.request.urlopen(req, timeout=600) as r:
@@ -86,7 +90,7 @@ class Studio:
 CTYPES = {'.mp4': 'video/mp4', '.jpg': 'image/jpeg', '.srt': 'application/x-subrip', '.vtt': 'text/vtt', '.zip': 'application/zip', '.json': 'application/json'}
 
 
-WAIT_CODES = ('WRITER_BUSY', 'WRITER_QUOTA_DAY')
+WAIT_CODES = ('WRITER_BUSY', 'WRITER_QUOTA_DAY', 'STUDIO_UNREACHABLE', 'STUDIO_500', 'STUDIO_502', 'STUDIO_503', 'STUDIO_504')
 
 
 def retry_at(code: str, now: datetime | None = None) -> str:
@@ -96,6 +100,8 @@ def retry_at(code: str, now: datetime | None = None) -> str:
         la = now.astimezone(ZoneInfo('America/Los_Angeles'))
         nxt = (la + timedelta(days=1)).replace(hour=0, minute=7, second=0, microsecond=0)
         return nxt.astimezone(timezone.utc).isoformat().replace('+00:00', 'Z')
+    if code.startswith('STUDIO_'):  # the studio itself did not answer: try again soon, from the last checkpoint
+        return (now + timedelta(minutes=15)).isoformat().replace('+00:00', 'Z')
     return (now + timedelta(minutes=20)).isoformat().replace('+00:00', 'Z')
 
 

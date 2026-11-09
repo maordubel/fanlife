@@ -120,6 +120,10 @@ describe('A busy free writer makes the film wait, not fail (4.11.2026)',()=>{
   expect(nextForWorker([w],new Date(Date.parse(later)+1000))?.id).toBe(w.id)
   expect(claim(w,'w2',new Date(Date.parse(later)+1000)).notBefore).toBeNull()
  })
+ it('a studio that did not answer (9.11.2026) says so, and the film starts again by itself',()=>{
+  const w=finish(claim(base,'w1',now),'w1',{state:'waiting',retryAt:later,error:{code:'STUDIO_UNREACHABLE',message:'timed out',retryable:true}},now)
+  expect(w.state).toBe('queued');expect(w.lease).toBeNull();expect(w.message).toMatch(/^The studio was not answering/)
+ })
  it('an absurd time becomes twenty minutes, and the owner can start it now',()=>{
   const w=finish(claim(base,'w1',now),'w1',{state:'waiting',retryAt:'nonsense'},now)
   expect(Date.parse(w.notBefore!)-now.getTime()).toBe(20*60_000)

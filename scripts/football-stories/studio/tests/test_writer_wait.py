@@ -113,6 +113,14 @@ class OptionsWait(unittest.TestCase):
         self.assertEqual(at, '2026-11-05T08:07:00Z')  # 00:07 PST
         self.assertEqual(retry_at('WRITER_BUSY', datetime(2026, 11, 4, 15, 50, tzinfo=timezone.utc)), '2026-11-04T16:10:00Z')
 
+    def test_a_studio_that_did_not_answer_puts_the_film_back_in_the_queue(self):
+        # 9.11.2026: the shared database stalled and a claimed film sat on a dead runner's lease for six hours
+        from studio.worker import WAIT_CODES, retry_at
+        for code in ('STUDIO_UNREACHABLE', 'STUDIO_503'):
+            self.assertIn(code, WAIT_CODES)
+        self.assertEqual(retry_at('STUDIO_UNREACHABLE', datetime(2026, 11, 9, 15, 0, tzinfo=timezone.utc)), '2026-11-09T15:15:00Z')
+        self.assertNotIn('STUDIO_409', WAIT_CODES)  # a refusal is an answer, not a stall
+
 
 class Repair(unittest.TestCase):
     def test_the_hook_is_the_first_sentence_spoken(self):
