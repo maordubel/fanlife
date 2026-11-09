@@ -41,3 +41,20 @@ describe('the art library Flow draws (studio/cinema/flow_library.json)',()=>{
   expect(libPath('ppl-referee-fl1-kr')).toBe('library/flow/ppl-referee-fl1-kr.png')
  })
 })
+
+describe('the studio operator door (docs/fanlife/70 §Studio operator)',()=>{
+ it('is the run ticket on the site\'s own origin, with no login, no cron secret and no delete',()=>{
+  const r=src('app/api/master/stories/operator/route.ts')
+  expect(r).toContain('sameOrigin(r)')
+  expect(r).toContain('ticketOk(b.ticket)')
+  expect(r).not.toMatch(/cronAuthorized|adminFromRequest|export async function (GET|DELETE)/)
+  const o=src('lib/stories/operator.ts')
+  expect(o).not.toMatch(/deleteJob|purgeJobMedia/)
+  expect(o).toContain("ownerAct(j,a,OPERATOR)")
+ })
+ it('never lets the operator do what only the desk may (pictures, Flow slots)',async()=>{
+  const {OPERATOR_ACTIONS}=await import('@/lib/stories/operator')
+  for(const a of ['art_added','flow_added','flow_ready'])expect(OPERATOR_ACTIONS.has(a)).toBe(false)
+  expect(OPERATOR_ACTIONS.has('upload_done')).toBe(true)
+ })
+})
