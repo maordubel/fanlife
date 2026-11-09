@@ -20,7 +20,7 @@ worker edits → the film arrives on Telegram
 ```
 
 * The files never leave the owner's browser except into the private bucket: no GitHub, no public page, no download.
-* The door (`app/api/master/stories/flow/route.ts`) answers the origin `https://labs.google` only, with a valid ticket
+* The door (`app/api/master/stories/flow/route.ts`) answers the origins `https://flow.google.com` and `https://labs.google` only, with a valid ticket
   only (sha256 + expiry ≤ 3 h, `lib/stories/flowOperator.ts → ticketOk`). No studio login, no cron secret.
 * Shorts and marketing films: slots `clip-N.mp4`, `still-N.jpg` (`lib/stories/jobs.ts` FLOW_NAME).
 * CLASSIFIED: every manifest panel with no `drive_id` and a `prompt` (written by the writers' room) → stored at
@@ -38,7 +38,7 @@ worker edits → the film arrives on Telegram
    returning (select v from t) as ticket;
    ```
    The ticket lives only in this run; it is never written to a file, a commit, a message or a log.
-2. Built-in browser → `https://labs.google/fx/tools/flow`. Not signed in to Google → stop with one line to the owner.
+2. Built-in browser → `https://flow.google.com`. Not signed in to Google → stop with one line to the owner.
 3. In that tab (javascript): `fetch('https://fanlife.dubelteam.com/api/master/stories/flow',{method:'POST',
    headers:{'Content-Type':'application/json'},body:JSON.stringify({ticket,op:'queue'})})`.
    `{"jobs":[],"classified":[]}` → stop quietly.

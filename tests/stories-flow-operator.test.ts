@@ -25,7 +25,7 @@ describe('the Flow operator door (docs/fanlife/70)',()=>{
  })
  it('answers the Flow origin only, with no studio login and no cron secret',()=>{
   const r=src('app/api/master/stories/flow/route.ts')
-  expect(r).toContain("ORIGIN='https://labs.google'")
+  expect(r).toContain("ORIGINS=['https://flow.google.com','https://labs.google']")
   expect(r).toContain('ticketOk(b.ticket)')
   expect(r).not.toMatch(/cronAuthorized|adminFromRequest/)
  })
