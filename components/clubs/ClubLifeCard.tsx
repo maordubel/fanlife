@@ -4,7 +4,7 @@ import {Plate} from '@/components/weekly/Plate'
 import {LifeContinue} from './LifeContinue'
 import type {LifeCompat} from '@/lib/life/universal/compat'
 
-type Copy={lifeGame:string;wkkLifeShout:string;lifeTitle:string;lifeOpen:string;lifeWorkshop:string;life:string;lifeContinue?:string;lifeWaiting?:string}
+type Copy={lifeGame:string;wkkLifeShout:string;lifeTitle:string;lifeOpen:string;lifeWorkshop:string;life:string;lifeContinue?:string;lifeWaiting?:string;lifeSoon?:string;lifeSoonNote?:string}
 /** A club's LIFE door as a banner: used on the club home and on the All gates page, so both say the same thing. */
 export function ClubLifeCard({href,state,copy,club,compat,pin}:{href:string|null;state:string;copy:Copy;club?:string;compat?:LifeCompat|null;/** LIFE's Pin toggle (switch `pins`) */pin?:{href:string;label:string;locale:string}}){
  return <section className="wkk-life" id="life-block" aria-labelledby="life-h"><div className="wk-panel shadow wkk-life-in" id="life" data-life-entry={state}>
@@ -13,11 +13,12 @@ export function ClubLifeCard({href,state,copy,club,compat,pin}:{href:string|null
    <p className="wk-k red">{copy.lifeGame}</p>
    <p className="wk-shout wkk-life-shout" aria-hidden="true">{copy.wkkLifeShout}</p>
    <h2 id="life-h" className="wk-head">{copy.lifeTitle}</h2>
-   {href&&club&&copy.lifeContinue&&copy.lifeWaiting?<LifeContinue club={club} href={href} enter={copy.life} cont={copy.lifeContinue} waiting={copy.lifeWaiting} note={copy.lifeOpen} compat={compat}/>:<>
+   {state==='soon'?<p className="wkh-life-soon" data-life-entry="soon"><span className="wk-stamp">{copy.lifeSoon}</span><span className="wkk-life-note">{copy.lifeSoonNote}</span></p>
+   :href&&club&&copy.lifeContinue&&copy.lifeWaiting?<LifeContinue club={club} href={href} enter={copy.life} cont={copy.lifeContinue} waiting={copy.lifeWaiting} note={copy.lifeOpen} compat={compat}/>:<>
     <p className="wkk-life-note">{href?copy.lifeOpen:copy.lifeWorkshop}</p>
     {href&&<Link className="wk-btn red wkk-life-cta min-h-tap" href={href}>{copy.life}</Link>}
    </>}
-   {pin&&<PinToggle href={pin.href} label={pin.label} locale={pin.locale}/>}
+   {pin&&state!=='soon'&&<PinToggle href={pin.href} label={pin.label} locale={pin.locale}/>}
   </div>
  </div></section>
 }

@@ -1,0 +1,38 @@
+/* The YouTube banner (components/weekly/WatchBanner.tsx, owner 9.11.2026) — the TV listings box of the weekly.
+   Tokens only: on a club page the rival lock re-points every ink. Mobile first; the desktop is a two-column spread. */
+.wkt { margin-block: 22px; padding-inline: 16px; }
+.wkt-in { display: grid; grid-template-columns: 1fr; overflow: hidden; color: var(--mag-ink); }
+.wkt-screen { position: relative; display: block; min-height: 190px; border-bottom: 3px solid var(--mag-ink); overflow: hidden; text-decoration: none; }
+.wkt-screen::after { content: ''; position: absolute; inset: 10px; border: 3px solid var(--mag-paper); pointer-events: none; }
+.wkt-art { position: absolute; inset-inline-end: -6px; inset-block-end: 0; height: 92%; }
+.wkt-play { position: absolute; inset-inline-start: 50%; inset-block-start: 50%; translate: -50% -50%; width: 92px; height: 92px; border-radius: 50%; display: grid; place-items: center; background: var(--mag-vermilion); border: 4px solid var(--mag-ink); box-shadow: 5px 5px 0 var(--mag-ink); transition: transform .12s cubic-bezier(.2,.9,.3,1.4); }
+.wkt-play.club { background: var(--club-primary, var(--mag-vermilion)); }
+.wkt-play svg { width: 44px; height: 44px; margin-inline-start: 6px; fill: var(--mag-white); stroke: var(--mag-ink); stroke-width: 2.5; stroke-linejoin: round; }
+.wkt-screen:hover .wkt-play, .wkt-screen:focus-visible .wkt-play { transform: scale(1.08) rotate(-4deg); }
+.wkt-screen:active .wkt-play { transform: translate(3px, 3px); box-shadow: 2px 2px 0 var(--mag-ink); }
+.wkt-tag { position: absolute; inset-inline-start: 18px; inset-block-start: 18px; padding: 4px 8px; background: var(--mag-paper); color: var(--mag-ink); border: 2px solid var(--mag-ink); transform: rotate(-3deg); }
+.wkt-txt { padding: 16px 16px 18px; display: grid; gap: 8px; }
+.wkt-kicker { color: var(--mag-red-deep); margin: 0; }
+.wkt-shout { font-size: 44px; transform: rotate(-3deg); transform-origin: 0 50%; margin-block: 2px 4px; }
+.wkt .wkt-head { font-size: 26px; }
+.wkt-line { margin: 0; font-size: 15px; line-height: 1.4; }
+.wkt-doors { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+.wkt-doors .wk-btn { flex: 1 1 160px; }
+.wk-btn.wkt-club { background: var(--club-primary, var(--mag-vermilion)); color: var(--club-on-primary, var(--mag-white)); }
+.wkt-handle { margin: 2px 0 0; color: var(--mag-muted, var(--mag-ink)); opacity: .8; }
+@media (min-width: 900px) {
+  .wkt { padding-inline: 0; max-width: 1180px; margin-inline: auto; margin-block: 34px; }
+  .wkt-in { grid-template-columns: 1.05fr 1fr; }
+  .wkt-screen { min-height: 330px; border-bottom: 0; border-inline-end: 3px solid var(--mag-ink); }
+  .wkt-play { width: 124px; height: 124px; }
+  .wkt-play svg { width: 58px; height: 58px; }
+  .wkt-txt { padding: 28px 30px; align-content: center; gap: 12px; }
+  .wkt-shout { font-size: 64px; }
+  .wkt .wkt-head { font-size: 36px; }
+  .wkt-line { font-size: 17px; }
+}
+@media (prefers-reduced-motion: reduce) { .wkt-play { transition: none; } }
+/* LIFE closed to fans (switch `life`): the door says Coming soon (owner, 9.11.2026) */
+.wkh-life-soon { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin: 10px 0 0; }
+.wkh-life-soon .wk-stamp { font-size: 24px; padding: 6px 14px; }
+.wk-stamp.white { color: var(--mag-white); }

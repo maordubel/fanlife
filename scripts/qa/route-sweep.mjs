@@ -66,7 +66,9 @@ try{
 
  // 2 · every core club, every door, every gate
  for(const id of CORE_CLUB_IDS){
-  for(const door of ['','/play','/history','/terrace','/life'])await visit(`${id}${door||' home'}`,`/clubs/${id}${door}`)
+  for(const door of ['','/play','/history','/terrace'])await visit(`${id}${door||' home'}`,`/clubs/${id}${door}`)
+  // LIFE is closed to fans until the owner opens it (switch `life`, 9.11.2026): its door answers 404, and every card says Coming soon
+  await visit(`${id}/life`,`/clubs/${id}/life`,{expect:404})
   for(const g of SHARED_GATES){
    const url=g.key==='timeline'?`/clubs/${id}/timeline?seed=42`:`/clubs/${id}/${g.key}?seed=42`
    // a gate the club's data cannot play yet is switched off in production (launch defaults) and answers 404 — the gate wall shows it as "In preparation"

@@ -1,5 +1,7 @@
 import {describe,expect,it,vi} from 'vitest'
 vi.mock('server-only',()=>({}))
+const lifeSwitch={open:true}
+vi.mock('@/lib/features-server',()=>({door:async()=>({open:lifeSwitch.open})}))
 import {researchRows} from '@/lib/master/researchAnalysis'
 import {lifeEntry} from '@/lib/clubs/life/entry'
 import type {ClubSummary} from '@/lib/master/summary'
@@ -27,5 +29,9 @@ describe('LIFE entry',()=>{
   expect((await lifeEntry('celtic',{evaluation:false,status:'research'})).state).toBe('workshop')
   expect((await lifeEntry('celtic',{evaluation:false,paused:true,status:'live'})).state).toBe('workshop')
   expect((await lifeEntry('celtic',{evaluation:false,status:'live'})).state).toBe('universal')
+ })
+ it('says Coming soon for every club while the LIFE switch is off (owner, 9.11.2026)',async()=>{
+  lifeSwitch.open=false
+  try{expect((await lifeEntry('celtic',{evaluation:true,status:'live'})).state).toBe('soon')}finally{lifeSwitch.open=true}
  })
 })
