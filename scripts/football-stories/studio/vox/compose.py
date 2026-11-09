@@ -35,7 +35,7 @@ STYLES = {
     'trailer': {'glide': 0.95, 'over': 0.07, 'bump': 0.42, 'push': 1.46, 'count': 0.9, 'people': 1, 'warm': False, 'roll': 2.4},
     # CLASSIFIED's case-file board (comic/casefile.py, owner 5.11.2026: "VOX is our leading edit"): the slowest, calmest
     # glide — barely an overshoot, a shallow pull-back, almost no roll — so the owner's pictures stay sharp and steady
-    'classified': {'glide': 1.5, 'over': 0.015, 'bump': 0.2, 'push': 1.14, 'count': 1.1, 'people': 0, 'warm': True, 'roll': 0.4,
+    'classified': {'glide': 1.5, 'lead': 6.0, 'over': 0.015, 'bump': 0.2, 'push': 1.14, 'count': 1.1, 'people': 0, 'warm': True, 'roll': 0.4,
                    'board': 'case'},
 }
 

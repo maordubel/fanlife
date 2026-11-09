@@ -27,6 +27,11 @@ class Pose:
     arrive: float = 0.0    # 0..1: just surfaced on a new board
 
 
+def _smooth(x: float) -> float:
+    x = clamp(x)
+    return x * x * (3 - 2 * x)
+
+
 def _seg(keys: list, t: float) -> tuple[float, float, float]:
     """Inside one shot: ease between the beat's focus keys (in-out per segment, zoom in log space)."""
     if t <= keys[0][0]:
@@ -42,10 +47,28 @@ def _seg(keys: list, t: float) -> tuple[float, float, float]:
     return x0 + (x1 - x0) * k, y0 + (y1 - y0) * k, math.exp(math.log(z0) + (math.log(z1) - math.log(z0)) * k)
 
 
+def _retime(keys: list, limit: float) -> list:
+    """A move inside a beat that would cross the screen too fast borrows time from the hold before it (never below
+    0.2 s of hold), so a push from one detail to the next eases instead of whipping (docs/fanlife/71)."""
+    ks = [list(k) for k in keys]
+    for i in range(1, len(ks)):
+        t0, x0, y0, z0 = ks[i - 1]
+        t1, x1, y1, z1 = ks[i]
+        travel = math.hypot(x1 - x0, y1 - y0) * max(z0, z1) + abs(math.log(z1 / z0)) * 1000
+        need = travel / limit
+        if t1 - t0 >= need or i < 2:
+            continue
+        hold = t0 - ks[i - 2][0]
+        take = min(need - (t1 - t0), max(0.0, hold - 0.2))
+        ks[i - 1][0] = t0 - take
+    return [tuple(k) for k in ks]
+
+
 class CameraPath:
     """`shots`: [{n, start, dur, board, engine: vox|classic, keys: [(t, bx, by, z)] in board units}] in film order."""
 
     def __init__(self, shots: list[dict], style: dict):
+        shots = [{**s, 'keys': _retime(s['keys'], style.get('max_speed', 1400.0))} if s.get('keys') else s for s in shots]
         self.shots = shots
         self.st = style
         self.starts = [s['start'] for s in shots]
@@ -66,6 +89,18 @@ class CameraPath:
                 pre = min(0.55, 0.4 * prev['dur']) if (prev and prev['engine'] == 'vox') else 0.0
                 post = min(1.05, 0.5 * s['dur'])
             self.win.append({'same': same, 'new': new_board, 'pre': pre, 'post': post})
+        # the creep during a hold (board units a second): toward the next beat on the same board, else a slow drift
+        v = style.get('lead', 14.0)
+        self.lead = []
+        for i, s in enumerate(shots):
+            nx = shots[i + 1] if i + 1 < len(shots) else None
+            a = s['keys'][-1]
+            if nx and nx['board'] == s['board'] and nx['engine'] == s['engine']:
+                b = nx['keys'][0]
+                d = math.hypot(b[1] - a[1], b[2] - a[2])
+                self.lead.append(((b[1] - a[1]) / d * v, (b[2] - a[2]) / d * v) if d > 1 else (v, 0.0))
+            else:
+                self.lead.append((v * 0.8, v * 0.3))
 
     # the beat's own move, with the hand-held drift that keeps a held frame alive
     def local(self, i: int, t: float) -> Pose:
@@ -77,6 +112,10 @@ class CameraPath:
         y += amp * 0.6 * (math.cos(T * 0.41 + i * 0.7) * 0.7 + math.sin(T * 1.07) * 0.3)
         z *= 1 + 0.006 * math.sin(T * 0.37 + i)
         rot = self.st.get('roll', 1.2) * 0.35 * math.sin(T * 0.23 + i * 1.7)
+        # it never stops dead: while it holds it creeps on toward the next beat (the way it is about to go)
+        lx, ly = self.lead[i]
+        x += lx * t
+        y += ly * t
         return Pose(s['board'], x, y, z, rot)
 
     def pose(self, T: float) -> Pose:
@@ -100,6 +139,22 @@ class CameraPath:
         return self.local(i, t)
 
     def glide(self, i: int, T: float) -> Pose:
+        """A glide that hands over smoothly at both ends: it leaves the previous beat's own move and joins this beat's,
+        so the speed never steps (docs/fanlife/71 — every start and stop eases, nothing jerks)."""
+        g = self._glide(i, T)
+        w = self.win[i]
+        a_t = self.starts[i] - w['pre']
+        k = clamp((T - a_t) / max(1e-3, w['pre'] + w['post']))
+        if k < 0.3:
+            o, m = self.local(i - 1, T - self.starts[i - 1]), _smooth(k / 0.3)
+        elif k > 0.7:
+            o, m = self.local(i, T - self.starts[i]), 1 - _smooth((k - 0.7) / 0.3)
+        else:
+            return g
+        return Pose(g.board, o.cx + (g.cx - o.cx) * m, o.cy + (g.cy - o.cy) * m, math.exp(math.log(o.z) + (math.log(g.z) - math.log(o.z)) * m),
+                    o.rot + (g.rot - o.rot) * m)
+
+    def _glide(self, i: int, T: float) -> Pose:
         """From the previous beat to this one across the board: ease in-out, a pull-back on the way, a small overshoot."""
         w = self.win[i]
         S = self.starts[i]
@@ -153,3 +208,15 @@ class CameraPath:
                 out.append((T, d))
             prev = p
         return out
+
+    def flow(self, step: float = 1 / 25) -> dict:
+        """The owner's continuous-camera rules, measured (docs/fanlife/71-continuous-camera-edit.md): the camera never
+        stops dead (the slowest frame still moves), and no start or stop jerks (the largest frame-to-frame change in
+        speed). Same frames as `jumps` — the chapter dive is the one designed break."""
+        js = self.jumps(step)
+        if len(js) < 3:
+            return {'frames': len(js), 'slowest': 0.0, 'dead_frames': 0, 'worst_jerk': 0.0, 'mean': 0.0}
+        speeds = [d for _, d in js]
+        jerk = [abs(b - a) for a, b in zip(speeds, speeds[1:])]
+        return {'frames': len(js), 'slowest': round(min(speeds), 3), 'dead_frames': sum(1 for v in speeds if v < 0.05),
+                'worst_jerk': round(max(jerk), 2), 'mean': round(sum(speeds) / len(speeds), 2)}

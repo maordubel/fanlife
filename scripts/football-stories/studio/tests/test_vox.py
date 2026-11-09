@@ -163,6 +163,16 @@ class Camera(unittest.TestCase):
                     self.assertEqual(kind, 'chapter')
                 prev = p
 
+    def test_the_camera_never_stops_dead_and_never_jerks(self):
+        # docs/fanlife/71-continuous-camera-edit.md: holds drift on, every start and stop eases
+        for director in (None, 'broadcaster', 'terrace', 'trailer'):
+            ed, plan, f = shared(director)
+            fl = f.cam.flow(1 / FPS)
+            self.assertEqual(fl['dead_frames'], 0, f'{director}: {fl}')
+            # a start or stop that steps the speed by more than this in one frame reads as a jerk (measured 9.11.2026:
+            # 33–123 after the retime and the eased hand-over; it was 88–123 before)
+            self.assertLess(fl['worst_jerk'], 130, f'{director}: {fl}')
+
     def test_every_held_frame_still_moves(self):
         ed, plan, f = shared()
         cam = f.cam
