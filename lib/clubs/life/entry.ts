@@ -3,6 +3,7 @@ import {CORE_CLUB_IDS, loadClub} from '@/lib/clubs/resolver'
 import {clubLife} from './pack'
 import {readLifePlayable} from '@/lib/clubs/precompiled'
 import {compatOf} from '@/lib/life/universal/compat'
+import {door} from '@/lib/features-server'
 
 /**
  * Where a visitor enters one club's LIFE — the single answer the home page, the club cards and the
@@ -10,12 +11,20 @@ import {compatOf} from '@/lib/life/universal/compat'
  * the same rule: no club has a door of its own.
  *  - `universal` the shared engine composed with the club's pack (`/clubs/<id>/life`).
  *  - `workshop`  no playable life yet: surfaces say so instead of linking.
+ *  - `soon`      LIFE is closed to fans (switch `life`, owner 9.11.2026): every door says Coming soon, nobody enters
+ *                but the owner's preview.
  */
-export type LifeEntry = {state: 'universal' | 'workshop'; href: string | null}
+export type LifeEntry = {state: 'universal' | 'workshop' | 'soon'; href: string | null}
 
 const WORKSHOP: LifeEntry = {state: 'workshop', href: null}
+const SOON: LifeEntry = {state: 'soon', href: null}
+/** Is LIFE open to this viewer (the switch, or the owner's preview)? */
+export async function lifeOpen(): Promise<boolean> {
+  return (await door('life').catch(() => ({open: false}))).open
+}
 
 export async function lifeEntry(clubId: string, opts: {evaluation: boolean; paused?: boolean; status?: string; locale?: string}): Promise<LifeEntry> {
+  if (!(await lifeOpen())) return SOON
   if (opts.paused) return WORKSHOP
   if (!CORE_CLUB_IDS.includes(clubId)) return WORKSHOP
   // Preview opens every club; the real site opens LIFE for a club the owner has published (live).

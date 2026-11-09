@@ -9,6 +9,7 @@ import en from '@/messages/clubs/en.json'
 import he from '@/messages/clubs/he.json'
 import {APP_URL} from '@/ecosystem/sdk'
 import {goHref} from '@/lib/ecosystem/links'
+import {CHANNEL} from '@/lib/stories/channel'
 
 /**
  * The data behind THE WEEKLY's menu (rule 124). The hub's menu and a club's menu list the same corner and the same
@@ -43,6 +44,7 @@ export function menuFanLife(locale:UiLocale):ContentsItem[]{
   {href:'/all-football',title:t.wkAllFootball,icon:'globe'},
   {href:'/#life',title:t.tabLife,icon:'life'},
   {href:'/sources',title:t.wkSources,icon:'sources'},
+  {href:`${CHANNEL.url}?utm_source=fanlife&utm_medium=menu`,title:t.wkWatch,sub:t.wkWatchSub,icon:'watch'},
  ]
 }
 

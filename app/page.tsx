@@ -32,6 +32,8 @@ import { Badge } from '@/components/clubs/Badge'
 import {Emblem} from '@/components/legends/Brand'
 import {door} from '@/lib/features-server'
 import {PinsRow} from '@/components/fanlife/Pins'
+import {WatchBanner} from '@/components/weekly/WatchBanner'
+import {lifeOpen} from '@/lib/clubs/life/entry'
 export const dynamic='force-dynamic'
 
 const Arrow=()=><svg className="wkh-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -52,7 +54,7 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
   const nick=(id:string)=>clubWorld(id)?.nicknames[0]?.text
  const now=new Date(),preview=evaluationMode()
  // one pass for both readings, and the LIFE doors alongside it (performance audit, 11.10.2026)
- const [{model,strict},life,fl,uv]=await Promise.all([hubModels(open,locale),lifeEntries(open,preview),door('fanLeague'),door('universe')])
+ const [{model,strict},life,fl,uv,lifeDoor]=await Promise.all([hubModels(open,locale),lifeEntries(open,preview),door('fanLeague'),door('universe'),lifeOpen()])
  const isOpen=(id:string)=>isOpenClub(strict.find(x=>x.id===id))
  const live=open.filter(c=>isOpen(c.id)),shop=open.filter(c=>!isOpen(c.id))
  const seed=seedVotes(shop.map(c=>c.id)),order2=rank(seed,shop.map(c=>c.id))
@@ -127,10 +129,14 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
      <p className="wk-k wkh-orange">{copy.lifeEntryTitle} · {copy.lifeGameSub}</p>
      <h2 className="wk-shout wkh-life-shout" id="life-h" dir="ltr">{copy.wkhLifeShout}</h2>
      <p className="wk-small">{copy.lifeEntryNote}</p>
-     <GateChooser gate="life" clubs={model} life={Object.fromEntries(open.map(c=>[c.id,life[c.id]?.href??null]))} copy={chooser} className="wkh-life-cta">{copy.lifeEntryCta} <Arrow/></GateChooser>
+     {lifeDoor?<GateChooser gate="life" clubs={model} life={Object.fromEntries(open.map(c=>[c.id,life[c.id]?.href??null]))} copy={chooser} className="wkh-life-cta">{copy.lifeEntryCta} <Arrow/></GateChooser>
+      :<p className="wkh-life-soon" data-life-entry="soon"><span className="wk-stamp">{copy.lifeSoon}</span><span className="wk-small">{copy.lifeSoonNote}</span></p>}
     </div>
    </div>
   </section>
+
+  {/* THE CHANNEL: FanLife: Football Stories on YouTube (owner, 9.11.2026). */}
+  <WatchBanner copy={copy}/>
 
   {/* THE MARKET, compact: one line, one button (owner, 14.10.2026). */}
   <section className="wkh-market wkh-market-mini wk-redplate" id="market" aria-labelledby="market-h">

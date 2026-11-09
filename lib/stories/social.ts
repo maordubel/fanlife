@@ -32,7 +32,8 @@ export type SocialPlan={posts:SocialPost[]}
 /** The connection lights the runner records: yes/no only, never a token. */
 export type SocialLights={at:string;autopublish:boolean;telegram:boolean}&Record<Platform,boolean>
 
-export const CHANNEL={name:'FanLife: Football Stories',handle:'@FanLifeFootballStories',url:'https://www.youtube.com/@FanLifeFootballStories'}
+export {CHANNEL} from './channel'
+import {CHANNEL} from './channel'
 export const SLOGAN='Football is ninety minutes. Being a supporter is a lifetime.'
 /** Caption limits as each platform counts them; X counts every link as 23 characters (t.co). */
 export const LIMITS:Record<Platform,{caption:number;comment:number;tags:number}>={

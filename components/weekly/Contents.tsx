@@ -60,7 +60,7 @@ export function Contents({copy,sections,gates,corner,clubs,fanlife,tone='dark',r
       <span style={{minWidth:0}}><b>{c.name}</b><small>{c.city}</small></span>
      </Link>)}</nav>
      <h3 className="wk-head" style={{fontSize:20,marginTop:14}}>{copy.fanlife}</h3>
-     <nav className="wk-tiles two">{fanlife.map(f=><Link key={f.href} href={f.href} onClick={shut}><Icon name={f.icon}/><b>{f.title}</b>{f.sub&&<small>{f.sub}</small>}</Link>)}</nav>
+     <nav className="wk-tiles two">{fanlife.map(f=>f.href.startsWith('https://')?<a key={f.href} href={f.href} target="_blank" rel="noopener" onClick={shut}><Icon name={f.icon}/><b>{f.title}</b>{f.sub&&<small>{f.sub}</small>}</a>:<Link key={f.href} href={f.href} onClick={shut}><Icon name={f.icon}/><b>{f.title}</b>{f.sub&&<small>{f.sub}</small>}</Link>)}</nav>
      {pins&&apps.length>0&&<><h3 className="wk-head" style={{fontSize:20,marginTop:14}}>{copy.apps}</h3>
       <ul className="wkp-apps">{apps.map(a=><li key={a.href}><a href={a.href} onClick={shut}><Icon name={a.icon}/><span><b>{a.title}</b>{a.sub&&<small>{a.sub}</small>}</span></a>{a.pin&&<PinToggle href={a.pin} label={a.title} locale={locale}/>}</li>)}</ul></>}
     </section>

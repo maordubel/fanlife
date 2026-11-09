@@ -29,6 +29,7 @@ import he from '@/messages/clubs/he.json'
 import {SHARED_GATES,gateAvailability,type GateKey} from '@/lib/clubs/gates'
 import {gameCopy} from '@/lib/clubs/game-copy'
 import {lifeEntry,lifeCompatFor} from '@/lib/clubs/life/entry'
+import {WatchBanner} from '@/components/weekly/WatchBanner'
 import {getFixtureFeed} from '@/lib/fixtures/service'
 import {livery} from '@/lib/club-livery'
 import {hasClubAway} from '@/lib/away-days/club'
@@ -136,6 +137,7 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
   {/* ═════ the rest of the issue ═════ */}
   {core&&<div className="wkk-legends"><Suspense fallback={null}><LegendsBanner club={id} name={c.name} theme={theme}/></Suspense></div>}
   <ClubLifeCard href={life.href} state={life.state} copy={copy} club={id} pin={life.href?{href:`/clubs/${id}/life`,label:`${c.name} · LIFE`,locale}:undefined} compat={life.href&&core?lifeCompatFor(core.data):null}/>
+  <WatchBanner copy={copy} club={id} ink="club"/>
   {dyk==='moment'&&<div className="wkk-dykwrap"><TodayMoment clubId={id} clubName={c.name} moment={moment} locale={locale} dyk={copy.wkkDyk} cta={copy.wkkPlaceIt} copy={{kicker:copy.todayKicker,exact:copy.todayExact,near:copy.todayNear,open:copy.todayOpen,pick:copy.todayPick}}/></div>}
   {dyk==='flavour'&&<div className="wkk-dykwrap"><ClubFlavour item={flav2} kicker={copy.flavourKicker2} label={copy.wkkDyk} variant="dyk"/></div>}
 

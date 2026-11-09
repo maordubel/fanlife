@@ -4,7 +4,7 @@ import {Plate} from '@/components/weekly/Plate'
 import {Emblem} from '@/components/legends/Brand'
 import {GateChooser} from '@/components/home/MagazineHubControls'
 import {hubModels} from '@/lib/home/hub-model'
-import {lifeEntries} from '@/lib/clubs/life/entry'
+import {lifeEntries,lifeOpen} from '@/lib/clubs/life/entry'
 import {isOpenClub} from '@/lib/home/hub-open'
 import {readState} from '@/lib/master/store'
 import {evaluationMode} from '@/lib/master/mode'
@@ -25,7 +25,7 @@ export default async function OurGames({searchParams}:{searchParams:{lang?:strin
  const locale=uiLocale(searchParams.lang),copy=locale==='he'?he:en,preview=evaluationMode()
  const {clubs}=await readState()
  const open=clubs.filter(c=>c.status!=='paused').sort((a,b)=>a.name.localeCompare(b.name))
- const [{model,strict},life,fl]=await Promise.all([hubModels(open,locale),lifeEntries(open,preview),door('fanLeague')])
+ const [{model,strict},life,fl,lifeDoor]=await Promise.all([hubModels(open,locale),lifeEntries(open,preview),door('fanLeague'),lifeOpen()])
  const live=open.filter(c=>isOpenClub(strict.find(x=>x.id===c.id)))
  const chooser={title:copy.chooseClub,search:copy.chooserSearch,close:copy.chooserClose,none:copy.chooserNone,workshop:copy.chooserWorkshop,partial:''}
  const lifeMap=Object.fromEntries(open.map(c=>[c.id,life[c.id]?.href??null]))
@@ -37,7 +37,8 @@ export default async function OurGames({searchParams}:{searchParams:{lang?:strin
     <span className="wk-speed" aria-hidden="true"/>
     <Plate art="fatherson" ink="navy" className="wkg-art"/>
     <div className="wkg-txt"><p className="wk-k white">{copy.lifeEntryTitle} · {copy.lifeGameSub}</p><h2 className="wk-shout wkg-shout" id="og-life" dir="ltr">{copy.wkhLifeShout}</h2><p className="wkg-line">{copy.ourGamesLife}</p>
-     <GateChooser gate="life" clubs={model} life={lifeMap} copy={chooser} className="wk-btn paper wkg-cta">{copy.lifeEntryCta} <Arrow/></GateChooser></div>
+     {lifeDoor?<GateChooser gate="life" clubs={model} life={lifeMap} copy={chooser} className="wk-btn paper wkg-cta">{copy.lifeEntryCta} <Arrow/></GateChooser>
+      :<p className="wkh-life-soon" data-life-entry="soon"><span className="wk-stamp white">{copy.lifeSoon}</span><span className="wk-small">{copy.lifeSoonNote}</span></p>}</div>
    </section>
    <section className="wkg-card wkg-lm wk-navyplate" aria-labelledby="og-lm">
     <Emblem size={120} label="" className="wkg-emblem"/>
