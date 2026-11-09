@@ -1,39 +1,46 @@
 import {readFileSync} from 'node:fs'
 import {describe, expect, it} from 'vitest'
 
-// The generated plan (scripts/marketing/build-plan.mts → plan-v5.json + supabase/marketing/0009). Plan v5, owner 4.11.2026:
+// The generated plan (scripts/marketing/build-plan.mts → plan-v6.json + supabase/marketing/0010). Plan v6, owner 9.11.2026 (on v5, 4.11.2026):
 // Athens time; every row names its channels in kit.to (feed = Facebook + Instagram, story, tiktok); four feed posts a day.
 type Main = {app: string; hook: string; body: string; visual: string; url?: string; tags?: string; label?: string; comment?: string; comment_label?: string; how?: string; kit: {t: string; data: Record<string, unknown>; to?: string[]}}
 type Row = {day: number; at: string; format: string; kind: string; main: Main}
-const rows: Row[] = JSON.parse(readFileSync('scripts/marketing/plan-v5.json', 'utf8'))
+const rows: Row[] = JSON.parse(readFileSync('scripts/marketing/plan-v6.json', 'utf8'))
 const FEED = ['10:00', '13:00', '19:00', '21:00']
 const STORY = ['14:00', '16:00', '17:30', '19:30', '22:00']
-const LIVE = {'07:30': 'briefing', '09:00': 'results', '11:00': 'fixtures', '13:30': 'dubid', '15:00': 'offsides'} as Record<string, string>
+const LIVE = {'07:30': 'briefing', '09:00': 'results', '11:00': 'fixtures', '13:30': 'dubid', '15:00': 'offsides', '20:00': 'pulse'} as Record<string, string>
 const fixed = rows.filter(r => r.kind === 'fixed')
 const YEARS = /\b(1[89]\d\d|20\d\d)(?:\/\d\d)?\b|\b(1[89]\d)0s\b/g
 const at = (t: string) => fixed.filter(r => r.at.endsWith(t))
 const label = (l: string) => fixed.filter(r => r.main.label === l)
 
-describe('FAN LIFE social plan v5 (owner, 4.11.2026)', () => {
-  it('45 days from 5.11.2026, Athens time: four feed posts, five stories (+ a film on Wednesdays), four live slots and the briefing', () => {
-    expect(rows[0]!.at.slice(0, 10)).toBe('2026-11-05')
-    expect(rows.at(-1)!.at.slice(0, 10)).toBe('2026-12-19')
+describe('FAN LIFE social plan v6 (owner, 9.11.2026)', () => {
+  it('45 days from 10.11.2026, Athens time: four feed posts, five stories (+ a film on Wednesdays), the live slots and the briefing', () => {
+    expect(rows[0]!.at.slice(0, 10)).toBe('2026-11-10')
+    expect(rows.at(-1)!.at.slice(0, 10)).toBe('2026-12-24')
     expect(rows.filter(r => r.kind === 'briefing')).toHaveLength(45)
     for (let d = 1; d <= 45; d++) {
       const day = rows.filter(r => r.day === d && r.kind === 'fixed')
       expect(day.filter(r => r.main.kit.to!.includes('feed')).map(r => r.at.slice(11)).sort()).toEqual(FEED)
       const st = day.filter(r => r.main.kit.to!.includes('story')).map(r => r.at.slice(11)).sort()
-      expect(st.filter(t => t !== '20:00')).toEqual(STORY)
+      expect(st.filter(t => t !== '20:30')).toEqual(STORY)
       for (const [t, kind] of Object.entries(LIVE)) expect(rows.find(r => r.day === d && r.at.endsWith(t))?.kind).toBe(kind)
     }
     expect(new Set(rows.map(r => r.at)).size).toBe(rows.length)
-    expect(fixed.filter(r => r.at.endsWith('20:00'))).toHaveLength(fixed.filter(r => r.at.endsWith('20:00') && new Date(r.at.slice(0, 10)).getUTCDay() === 3).length)
+    expect(fixed.filter(r => r.at.endsWith('20:30'))).toHaveLength(fixed.filter(r => r.at.endsWith('20:30') && new Date(r.at.slice(0, 10)).getUTCDay() === 3).length)
+    // 12:00: the Club Vote on Mondays and Thursdays (feed + story), the real numbers on Wednesdays and Sundays (story)
+    for (const r of rows.filter(r => r.at.endsWith('12:00'))) {
+      const dow = new Date(r.at.slice(0, 10)).getUTCDay()
+      expect(r.kind, r.at).toBe(dow === 1 || dow === 4 ? 'vote' : 'numbers')
+      expect([1, 4, 0, 3]).toContain(dow)
+    }
   })
   it('every row names its channels; the briefing goes nowhere but Telegram; the carousel is also a TikTok draft', () => {
     for (const r of rows) expect(Array.isArray(r.main.kit.to), r.at).toBe(true)
     for (const r of rows.filter(r => r.kind === 'briefing')) expect(r.main.kit.to).toEqual([])
     for (const r of rows.filter(r => r.format === 'carousel')) expect(r.main.kit.to).toEqual(['feed', 'tiktok'])
-    for (const r of rows.filter(r => ['results', 'fixtures', 'dubid', 'offsides'].includes(r.kind))) expect(r.main.kit.to).toEqual(['story'])
+    for (const r of rows.filter(r => ['results', 'fixtures', 'dubid', 'offsides', 'pulse', 'numbers'].includes(r.kind))) expect(r.main.kit.to).toEqual(['story'])
+    for (const r of rows.filter(r => r.kind === 'vote')) expect(r.main.kit.to).toEqual(['feed', 'story'])
   })
   it('a story never needs a sticker: the quiz question at 14:00, its answer at 17:30, same club', () => {
     for (let d = 1; d <= 45; d++) {
@@ -45,10 +52,38 @@ describe('FAN LIFE social plan v5 (owner, 4.11.2026)', () => {
       expect(q.main.kit.data.options as string[]).toContain(String(a.main.hook).replace('The answer: ', ''))
     }
   })
-  it('films: only public ones, each with its own thumbnail, on Friday night and Wednesday story', () => {
+  it('films: only public ones, each with its own thumbnail, on Friday night and Wednesday story; Instagram points at YouTube and back', () => {
     const films = fixed.filter(r => r.main.kit.t === 'L-FILM')
     expect(films.length).toBeGreaterThanOrEqual(12)
-    for (const r of films) { expect(r.main.url).toMatch(/^https:\/\/youtu\.be\//); expect(String(r.main.kit.data.thumb)).toMatch(/thumbnail(-1)?\.jpg$/) }
+    for (const r of films) { expect(r.main.url).toMatch(/^https:\/\/youtu\.be\//); expect(String(r.main.kit.data.thumb)).toMatch(/thumbnail(-1)?\.jpg$/); expect(r.main.body).toContain('@fanlifefootballstories') }
+    for (const r of label('The bundle')) expect(r.main.body).toContain('youtube.com/@FanLifeFootballStories')
+  })
+  it('OPINION WAR: a question every day at 16:00 and Tuesday night — opinions only, two sides or YES/NO, never a number', () => {
+    const war = label('Opinion War')
+    expect(at('16:00').every(r => r.main.label === 'Opinion War')).toBe(true)
+    expect(war.length).toBeGreaterThanOrEqual(45 + 3)
+    for (const r of war) {
+      expect(r.main.kit.t).toBe('L-DEBATE')
+      expect(r.main.hook, r.at).toMatch(/\?$/)
+      expect(r.main.body, r.at).toMatch(/👇/)
+      expect(`${r.main.hook} ${r.main.body}`, r.at).not.toMatch(/\d{2,}%|\b\d{3,}\b/)
+      const d = r.main.kit.data as {left: {name: string; club?: string}; right: {name: string; club?: string} | null}
+      if (d.right) { expect(d.left.name).not.toBe(d.right.name); expect(r.main.body).toContain(`⬅️ ${d.left.name} or ➡️ ${d.right.name}`) }
+      else expect(r.main.body).toContain('YES or')
+    }
+    expect(new Set(war.map(r => r.main.hook)).size).toBeGreaterThan(25)
+  })
+  it('the bundle walks the whole universe on Sundays: the club, Royal Rumble, Legends Manager, a film, the way in', () => {
+    const b = label('The bundle')
+    expect(b.length).toBeGreaterThanOrEqual(6)
+    for (const r of b) {
+      expect(new Date(r.at.slice(0, 10)).getUTCDay()).toBe(0)
+      const slides = (r.main.kit as unknown as {slides: {t: string; data: Record<string, unknown>}[]}).slides
+      expect(slides.map(s => s.t)).toEqual(['L-SLIDE', 'L-GATE', 'L-GATE', 'L-GATE', 'L-FILM', 'L-SLIDE'])
+    }
+  })
+  it('no THE WORKER in this plan (owner, 9.11.2026)', () => {
+    for (const r of rows) expect(JSON.stringify(r.main), r.at).not.toMatch(/theworker\.dubelteam|THE WORKER\b/)
   })
   it('smart tags: #FANLIFE (or the app) first, at most eight, never in the caption body', () => {
     for (const r of fixed) {
@@ -78,7 +113,7 @@ describe('FAN LIFE social plan v5 (owner, 4.11.2026)', () => {
     for (const r of label('Nerds only')) expect(r.main.body).toMatch(/A\) .+\nB\) .+\nC\) .+\nD\) /)
   })
   it('one club carousel a day: history · gates · love, every open club', () => {
-    const car = rows.filter(r => r.format === 'carousel')
+    const car = rows.filter(r => r.format === 'carousel' && r.main.label !== 'The bundle')
     expect(car).toHaveLength(45)
     const clubs = new Set<string>()
     for (const r of car) {
@@ -95,9 +130,8 @@ describe('FAN LIFE social plan v5 (owner, 4.11.2026)', () => {
     expect(new Set(fixed.map(r => r.main.app))).toEqual(new Set(['fanlife', 'dubid', 'offsides']))
     expect(fixed.filter(r => r.main.app === 'fanlife').length / fixed.length).toBeGreaterThan(0.9)
     for (const r of fixed.filter(r => r.main.app !== 'fanlife')) { expect(r.at.endsWith('13:00')).toBe(true); expect(r.main.kit.t).toBe(`L-${r.main.app.toUpperCase()}-SYSTEM`) }
-    const evening = at('21:00').map(r => r.main.kit.data.name)
-    expect(evening.filter(n => n === 'ROYAL RUMBLE').length).toBeGreaterThanOrEqual(5)
-    expect(evening.filter(n => n === 'LEGENDS MANAGER').length).toBeGreaterThanOrEqual(5)
+    // v6 week: Monday night Royal Rumble, Saturday night Legends Manager
+    for (const r of at('21:00')) { const dow = new Date(r.at.slice(0, 10)).getUTCDay(); if (dow === 1) expect(r.main.kit.data.name).toBe('ROYAL RUMBLE'); if (dow === 6) expect(r.main.kit.data.name).toBe('LEGENDS MANAGER') }
   })
   it('nothing from before 1980 — hook, caption, comment or picture', () => {
     for (const r of fixed) for (const m of `${r.main.hook} ${r.main.body} ${r.main.comment ?? ''} ${JSON.stringify(r.main.kit.data)}`.matchAll(YEARS))

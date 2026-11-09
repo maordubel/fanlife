@@ -10,7 +10,7 @@
 import type {Fixture, Result} from '@/lib/fixtures/types'
 import {smartTags} from './tags'
 
-export const LIVE_KINDS = ['fixtures', 'results', 'dubid', 'offsides', 'briefing'] as const
+export const LIVE_KINDS = ['fixtures', 'results', 'dubid', 'offsides', 'briefing', 'vote', 'numbers', 'pulse'] as const
 export type LiveKind = typeof LIVE_KINDS[number]
 export const isLiveKind = (k: unknown): k is LiveKind => LIVE_KINDS.includes(k as LiveKind)
 
@@ -126,7 +126,33 @@ export function composeOffsides(d: LiveData, now: Date): Composed {
  * OFFSIDES match), the FAN LIFE clubs' results since yesterday morning, and the DUBID rounds still open.
  * Never deduplicated against the posts: a briefing reports the state of the day, every day.
  */
-export function composeBriefing(fixtures: readonly Fixture[], results: readonly Result[], liveClubs: readonly string[], d: LiveData, now: Date, names: Record<string, string>): Composed {
+export type LedgerRow = {at: string; kind: string; status: string; format?: string; label: string | null; app?: string | null; to?: string[]; error?: string | null
+  published?: {facebook?: string; instagram?: string; x?: string} | null}
+const LIVE_SLOT = new Set(['fixtures', 'results', 'dubid', 'offsides', 'vote', 'numbers', 'pulse'])
+const ok = (s?: string) => !!s && s.startsWith('published')
+/** one line per post of a day: ✅ out everywhere it was meant to go · ✋ sent to you as a draft to post by hand · ❌ failed */
+const WHERE: Record<string, string> = {feed: 'feed', story: 'story', tiktok: 'TikTok'}
+export function ledgerLines(rows: readonly LedgerRow[]) {
+  const quiet = rows.filter(r => r.status === 'skipped' && LIVE_SLOT.has(r.kind)).length
+  const out = {done: 0, ok: [] as string[], hands: [] as string[], failed: [] as string[], quiet}
+  for (const r of rows) {
+    if (r.status === 'skipped') continue
+    const name = `${r.at} ${r.label || r.kind}`
+    const meta = (r.to || []).filter(t => t === 'feed' || t === 'story')
+    if (r.status === 'failed' || r.status === 'refused') { out.failed.push(`${name} — ${(r.error || 'not delivered').slice(0, 80)}`); continue }
+    if (r.status === 'pending' || r.status === 'sending') { out.failed.push(`${name} — never went out`); continue }
+    const p = r.published || {}
+    const bad = [p.facebook && !ok(p.facebook) ? `Facebook: ${p.facebook}` : '', p.instagram && !ok(p.instagram) ? `Instagram: ${p.instagram}` : ''].filter(Boolean)
+    if (bad.length && meta.length) { out.failed.push(`${name} — ${bad.join(' · ').slice(0, 90)}`); continue }
+    if (meta.length && !(ok(p.facebook) && ok(p.instagram))) { out.hands.push(`${name} — draft in this chat, post it by hand`); continue }
+    if ((r.to || []).includes('tiktok')) out.hands.push(`${name} — TikTok carousel by hand`)
+    out.done++
+    out.ok.push(`${name}${meta.length ? ` · ${meta.map(t => WHERE[t]).join(' + ')}` : ' · Telegram'}`)
+  }
+  return out
+}
+export function composeBriefing(fixtures: readonly Fixture[], results: readonly Result[], liveClubs: readonly string[], d: LiveData, now: Date, names: Record<string, string>,
+  ledger: {yesterday: readonly LedgerRow[]; today: readonly LedgerRow[]} | null = null): Composed {
   const today = dayKey(now)
   const uniq = <T,>(xs: T[], key: (x: T) => string) => { const s = new Set<string>(); return xs.filter(x => !s.has(key(x)) && s.add(key(x))) }
   const os = d.offsides.filter(m => dayKey(m.kickoff) === today)
@@ -139,15 +165,20 @@ export function composeBriefing(fixtures: readonly Fixture[], results: readonly 
   const t = (f: {kickoff: string; dateOnly?: boolean}) => f.dateOnly ? 'today' : hhmm(f.kickoff)
   const sec = (title: string, rows: string[], empty: string) => [`<b>${title}</b>`, ...(rows.length ? rows.map(r => `• ${esc(r)}`) : [`<i>${esc(empty)}</i>`])].join('\n')
   const total = arenas.reduce((n, m) => n + m.arenas, 0)
+  // owner, 9.11.2026: "tick what was published, warn about failures, show the day's plan — practical and to the point"
+  const y = ledger ? ledgerLines(ledger.yesterday) : null
+  const pub = !ledger ? ['<b>📣 Yesterday’s publishing</b>', '<i>The plan’s record could not be read.</i>']
+    : [`<b>📣 Yesterday’s publishing</b> — ✅ ${y!.done}${y!.hands.length ? ` · ✋ ${y!.hands.length}` : ''}${y!.failed.length ? ` · ❌ ${y!.failed.length}` : ''}${y!.quiet ? ` · ${y!.quiet} live slot${y!.quiet === 1 ? '' : 's'} quiet (no data)` : ''}`,
+      ...y!.failed.slice(0, 8).map(l => `❌ ${esc(l)}`), ...y!.hands.slice(0, 6).map(l => `✋ ${esc(l)}`), ...y!.ok.slice(0, 18).map(l => `✅ ${esc(l)}`),
+      ...(!y!.failed.length && !y!.hands.length && y!.done ? ['<i>Everything went out by itself.</i>'] : [])]
+  const plan = !ledger ? [] : ['<b>📅 Today’s plan</b>', ...(ledger.today.length ? ledger.today.slice(0, 18).map(r => `• ${r.at} ${esc(r.label || r.kind)}${LIVE_SLOT.has(r.kind) ? ' <i>(live — only if there is data)</i>' : ''}${(r.to || []).length ? ` · ${(r.to || []).map(t => WHERE[t] || t).join(' + ')}` : ''}`) : ['<i>Nothing planned today.</i>'])]
   const msg = [
-    `☀️ <b>Morning briefing · ${part(now, {weekday: 'short'})} ${part(now, {day: '2-digit', month: '2-digit'}).replace('/', '.')}</b>`,
-    `<i>Operations, not a post — nothing here to publish.</i>`, '',
-    sec(`🏟 OFFSIDES — arenas today${total ? ` (${total})` : ''}`, arenas.slice(0, 10).map(m => `${hhmm(m.kickoff)} ${m.home} v ${m.away} · ${m.league} · ${m.arenas} arena${m.arenas === 1 ? '' : 's'}`), 'No active arena today.'), '',
-    sec('⚽ Today’s matches — FAN LIFE clubs', clubToday.map(f => `${t(f)} ${f.home} v ${f.away}${f.competition ? ` · ${comp(f.competition)}` : ''}`), 'No FAN LIFE club plays today.'), '',
-    sec(`📺 Today’s matches — OFFSIDES (${os.length})`, os.slice().sort((a, b) => a.kickoff.localeCompare(b.kickoff)).slice(0, 15).map(m => `${hhmm(m.kickoff)} ${m.home} v ${m.away} · ${m.league}`)
-      .concat(os.length > 15 ? [`…and ${os.length - 15} more`] : []), 'No OFFSIDES match today.'), '',
-    sec('🏁 Latest results — FAN LIFE clubs', done.map(r => `${r.home} ${r.homeScore}-${r.awayScore} ${r.away}${r.competition ? ` · ${comp(r.competition)}` : ''}`), 'No FAN LIFE club played since yesterday morning.'), '',
-    sec('🧩 DUBID — rounds open', rounds.slice(0, 6).map(r => `${r.league} · Round ${r.round} · locks ${weekday(r.lock_at).slice(0, 1)}${weekday(r.lock_at).slice(1).toLowerCase()} ${hhmm(r.lock_at)}`), 'No DUBID round is open.'),
+    `☀️ <b>Morning briefing · ${part(now, {weekday: 'short'})} ${part(now, {day: '2-digit', month: '2-digit'}).replace('/', '.')}</b>`, '',
+    ...pub, '', ...(plan.length ? [...plan, ''] : []),
+    sec('⚽ FAN LIFE clubs today', clubToday.map(f => `${t(f)} ${f.home} v ${f.away}${f.competition ? ` · ${comp(f.competition)}` : ''}`), 'No FAN LIFE club plays today.'), '',
+    sec('🏁 Since yesterday', done.map(r => `${r.home} ${r.homeScore}-${r.awayScore} ${r.away}`), 'No FAN LIFE club played.'), '',
+    sec(`🏟 OFFSIDES — ${os.length} match${os.length === 1 ? '' : 'es'} today${total ? `, ${total} arena${total === 1 ? '' : 's'} open` : ''}`, arenas.slice(0, 5).map(m => `${hhmm(m.kickoff)} ${m.home} v ${m.away} · ${m.arenas} arena${m.arenas === 1 ? '' : 's'}`), 'No active arena yet.'), '',
+    sec('🧩 DUBID', rounds.slice(0, 4).map(r => `${r.league} · Round ${r.round} · locks ${weekday(r.lock_at).slice(0, 1)}${weekday(r.lock_at).slice(1).toLowerCase()} ${hhmm(r.lock_at)}`), 'No round open.'),
   ].join('\n')
   // the pictures (owner, 29.10.2026: "with the relevant graphics"): one card per part that has something in it,
   // sent as one album before the text — the same layouts the live posts use
@@ -161,4 +192,64 @@ export function composeBriefing(fixtures: readonly Fixture[], results: readonly 
   if (rounds.length) slides.push({t: 'L-DUBID-ROUND', data: {app: 'dubid', round: rounds[0]!.round, leagues: rounds.slice(0, 4).map(r => ({name: r.league, round: r.round, line: `LINEUPS LOCK ${weekday(r.lock_at)} ${dayMonth(r.lock_at)} · ${hhmm(r.lock_at)}`})), label: 'DUBID · FANTASY FOOTBALL'}})
   void names
   return {refs: [`brief:${today}`], msg: msg.slice(0, 4000), kit: slides.length ? {t: 'L-CAROUSEL', data: {briefing: true}, slides} as unknown as Kit : {t: 'none', data: {}}}
+}
+
+// ── plan v6 (owner, 9.11.2026): live counters from real data — never a typed number ─────────────────────────────────
+
+export type VoteRow = {club_id: string; account_votes: number | string; guest_votes: number | string}
+/** below this many real ballots the vote slot stays quiet: "3 fans voted" is not a hook, it is a confession */
+export const VOTE_QUIET = 10
+/** 12:00 (Mon/Thu) — the hub's Club Vote ("which club opens next?"): the REAL ballots only (worker_hub_vote_tally),
+ *  never the site's labelled early count; the same total is never announced twice */
+export function composeVote(rows: readonly VoteRow[], names: Record<string, string>, d: LiveData, now: Date): Composed {
+  const tally = rows.map(r => ({id: r.club_id, name: names[r.club_id] || '', votes: Number(r.account_votes || 0) + Number(r.guest_votes || 0)}))
+    .filter(r => r.name && r.votes > 0).sort((a, b) => b.votes - a.votes || a.name.localeCompare(b.name))
+  const total = tally.reduce((n, r) => n + r.votes, 0)
+  if (total < VOTE_QUIET) return {skip: `only ${total} real ballot(s) in the Club Vote — quiet until ${VOTE_QUIET}`}
+  const ref = `vote:${total}`
+  if (d.posted.includes(ref)) return {skip: 'the Club Vote total has not changed since it was last posted'}
+  const [a, b] = tally, lead = a && b ? a.votes - b.votes : 0
+  const hook = `${total} fans have voted. Which club opens next?`
+  const body = `${tally.slice(0, 3).map((r, i) => `${i + 1}. ${r.name} — ${r.votes} vote${r.votes === 1 ? '' : 's'}`).join('\n')}${a && b ? `\n\n${a.name} lead${lead ? ` by ${lead}` : ' — level at the top'}.` : ''}\nThe winner is the next club whose whole history opens on FAN LIFE.\nYour club not on top? Send this to your group. 👇`
+  return {refs: [ref], msg: message({app: 'fanlife', sendAt: now, label: 'Club Vote', hook, body, url: URL.fanlife,
+    tags: smartTags({topics: ['vote'], max: 6}), visual: 'L-VOTE the ballot board: the leading clubs, their real counts, the total.'}),
+  kit: {t: 'L-VOTE', data: {total, rows: tally.slice(0, 5).map(r => ({name: r.name, votes: r.votes, crestName: r.name})), shout: 'VOTE!', label: 'FAN LIFE · WHICH CLUB OPENS NEXT?'}}}
+}
+
+export type FunnelRow = {gate: string; visitors: number | string; starters: number | string; finishers: number | string}
+const GATE_NAMES: Record<string, string> = {xi: 'All-time XI', trivia: 'Trivia', lineup: 'Historical line-up', 'kit-builder': 'Kit builder', kits: 'Shirt collection',
+  memory: 'Memory', polls: 'Terrace vote', goal: 'Goal reconstruction', 'royal-rumble': 'Royal Rumble', 'blind-cow': 'Blind Cow', derby: 'The derby',
+  archive: 'Living archive', timeline: 'Timeline', legends: 'Legends Manager'}
+export const NUMBERS_QUIET = 50
+/** 12:00 (other days) — real activity this week (worker_events_funnel, 7 days): rounds finished, the busiest game. Once a day at most. */
+export function composeNumbers(rows: readonly FunnelRow[], d: LiveData, now: Date): Composed {
+  const games = rows.map(r => ({key: String(r.gate).split('/').filter(Boolean).pop() || '', done: Number(r.finishers || 0)})).filter(r => r.done > 0)
+  const done = games.reduce((n, r) => n + r.done, 0)
+  if (done < NUMBERS_QUIET) return {skip: `${done} rounds finished this week — quiet until ${NUMBERS_QUIET}`}
+  const ref = `num:${dayKey(now)}`
+  if (d.posted.includes(ref)) return {skip: 'community numbers already posted today'}
+  const by = new Map<string, number>()
+  for (const g of games) if (GATE_NAMES[g.key]) by.set(g.key, (by.get(g.key) ?? 0) + g.done)
+  const top = [...by.entries()].sort((a, b) => b[1] - a[1])[0]
+  const hook = `${done.toLocaleString('en-GB')} rounds played on FAN LIFE this week.`
+  const body = `${top ? `The busiest game: ${GATE_NAMES[top[0]]} — ${top[1].toLocaleString('en-GB')} rounds.\n` : ''}Every round is a supporter proving something about their club.\nWhere's yours? Play free, no download. 👇`
+  return {refs: [ref], msg: message({app: 'fanlife', sendAt: now, label: 'This week on FAN LIFE', hook, body, url: URL.fanlife,
+    tags: smartTags({topics: ['gate'], max: 6}), visual: 'L-NUMBERS one giant real number: rounds played this week, the busiest game.'}),
+  kit: {t: 'L-NUMBERS', data: {number: done.toLocaleString('en-GB'), line: 'ROUNDS PLAYED THIS WEEK', sub: top ? `BUSIEST: ${GATE_NAMES[top[0]]!.toUpperCase()}` : '', shout: 'THIS WEEK!', label: 'FAN LIFE · REAL NUMBERS'}}}
+}
+
+export type ChannelVideo = {videoId: string; title: string; kind: 'film' | 'short'; publishedAt: string}
+/** 20:00 — the channel pulse: the newest PUBLIC video (the studio's upload records), each announced once, never one
+ *  published more than 10 days ago (old news is not a pulse) */
+export function composePulse(videos: readonly ChannelVideo[], d: LiveData, now: Date): Composed {
+  const fresh = videos.filter(v => /^[A-Za-z0-9_-]{11}$/.test(v.videoId) && Date.parse(v.publishedAt) <= now.getTime() && now.getTime() - Date.parse(v.publishedAt) < 10 * 86400_000
+    && !d.posted.includes(`yt:${v.videoId}`)).sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
+  const v = fresh[0]
+  if (!v) return {skip: 'no new public video on the channel'}
+  const url = v.kind === 'short' ? `https://youtube.com/shorts/${v.videoId}` : `https://youtu.be/${v.videoId}`
+  const hook = v.kind === 'short' ? `New Short: ${v.title}` : `New on the channel: ${v.title}`
+  const body = `${v.title}\n\n${v.kind === 'short' ? '60 seconds of a night supporters never forget.' : 'The full story — real nights, real supporters.'}\n▶️ ${url}\n\nWere you there? Tell us in the comments 👇`
+  return {refs: [`yt:${v.videoId}`], msg: message({app: 'fanlife', sendAt: now, label: 'Channel pulse', hook, body, url, tags: smartTags({topics: ['film'], max: 6}),
+    visual: 'L-FILM the video\'s own thumbnail on a screen, its title.'}),
+  kit: {t: 'L-FILM', data: {title: v.title, thumbUrl: `https://i.ytimg.com/vi/${v.videoId}/hqdefault.jpg`, kicker: v.kind === 'short' ? 'NEW SHORT' : 'NOW ON YOUTUBE', shout: 'WATCH!'}}}
 }

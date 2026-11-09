@@ -35,6 +35,8 @@ export async function POST(r:NextRequest){
   const id=Number(b.id),outcome=String(b.outcome||'')
   if(!Number.isSafeInteger(id)||!['sent','refused','unknown'].includes(outcome))return json({error:'id and outcome are required.'},400)
   const got=await rpc('worker_marketing_report',{p_id:id,p_outcome:outcome,p_error:typeof b.error==='string'?b.error.slice(0,300):null})
+  // plan v6: where it went out (Facebook, Instagram, X), for the morning briefing
+  if(b.published&&typeof b.published==='object'){const pb=b.published as Record<string,unknown>;const s=(k:string)=>typeof pb[k]==='string'?(pb[k] as string).slice(0,120):null;await rpc('worker_marketing_published',{p_id:id,p_result:{facebook:s('facebook'),instagram:s('instagram'),x:s('x')}}).catch(()=>null)}
   return got.ok?json(got.data):json({error:got.error},got.status)
  }
  return json({error:'action must be claim or report.'},400)

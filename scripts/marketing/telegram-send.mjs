@@ -52,7 +52,7 @@ for (const p of posts) {
     .then(async r => ({status: r.status, ...(await r.json().catch(() => ({})))})).catch(e => ({unknown: true, description: String(e?.name || e)}))
   const outcome = sent.ok ? 'sent' : sent.unknown || (sent.status >= 500) ? 'unknown' : 'refused'
   const error = sent.ok ? null : String(sent.description || `status ${sent.status}`).split(token).join('[token]').slice(0, 300)
-  await site({action: 'report', id: p.id, outcome, error}).catch(() => {})
+  await site({action: 'report', id: p.id, outcome, error, published: {facebook: meta.facebook || null, instagram: meta.instagram || null, x: x.x || null}}).catch(() => {})
   if (sent.ok) console.log(`sent post ${p.id}`); else { bad++; console.log(`::warning title=post ${p.id}::${outcome}: ${error}`) }
 }
 if (bad) process.exit(1)

@@ -155,6 +155,7 @@ export function plan(post) {
   }
 }
 
+import {localCrest} from './crests-local.mjs'
 // ── crests and shirts ──────────────────────────────────────────────────────────────────────────────────────────────
 let LIB
 const OWN = {'AEK Athens': 'aek-athens', Celtic: 'celtic', Olympiacos: 'olympiacos', Panathinaikos: 'panathinaikos', 'FC St. Pauli': 'st-pauli',
@@ -164,6 +165,8 @@ const MISSED = new Set() // a crest the library could not hand over is not asked
 /** A local PNG path for a team's crest, or null. Library first; the club's own file where the library has none. */
 export async function crestPath(name) {
   if (!name) return null
+  // the owner's current crest packs first (9.11.2026)
+  { const own = localCrest(name); if (own) return own }
   LIB ??= await import('../../../ecosystem/crests/index.mjs')
   const slug = LIB.crestSlug(name)
   if (slug && !MISSED.has(slug)) {
@@ -202,6 +205,11 @@ async function resolveAssets(data) {
     if (r.homeCrestName) r.homeCrest = await crestPath(r.homeCrestName)
     if (r.awayCrestName) r.awayCrest = await crestPath(r.awayCrestName)
   }
+  // plan v6: the channel pulse names a YouTube thumbnail by address; it is fetched once into the run's cache
+  if (d.thumbUrl && !d.thumb) { try { const r = await fetch(String(d.thumbUrl), {signal: AbortSignal.timeout(8000)}); const buf = r.ok ? Buffer.from(await r.arrayBuffer()) : null; if (buf && buf.length > 2000) { mkdirSync(CACHE, {recursive: true}); const f = path.join(CACHE, 'thumb-' + String(d.thumbUrl).replace(/[^a-z0-9]+/gi, '-').slice(-60) + '.png'); writeFileSync(f, await sharp(buf).png().toBuffer()); d.thumb = f } } catch { /* the frame without the thumbnail */ } }
+  delete d.thumbUrl
+  if (d.left?.crestName) d.left = {...d.left, crest: await crestPath(d.left.crestName)}
+  if (d.right?.crestName) d.right = {...d.right, crest: await crestPath(d.right.crestName)}
   if (d.shirtFor) { d.shirt = await shirtPath(d.shirtFor); if (!d.shirt) { d.score = String(d.shirtFor.text.match(/\d{4}\/\d{2}/)?.[0] || ''); d.away = 'THE SHIRT ARCHIVE' } }
   for (const k of ['crestName', 'homeCrestName', 'awayCrestName', 'shirtFor']) delete d[k]
   for (const k of ['crest', 'homeCrest', 'awayCrest']) if (d[k] === null) delete d[k]
