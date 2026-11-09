@@ -8,11 +8,11 @@
   "sourceFamilyId": "thecelticwiki-editorial",
   "scope": "mixed",
   "access": "available",
-  "checkedAt": "2026-11-08",
-  "retrievedAt": "2026-11-08T10:46:39.287Z",
+  "checkedAt": "2026-11-09",
+  "retrievedAt": "2026-11-09T12:07:27.343Z",
   "collected": {
-   "documents": 5200,
-   "observedTotalDocuments": 19317,
+   "documents": 5450,
+   "observedTotalDocuments": 19319,
    "state": "partial_budget",
    "parser": null
   },
@@ -29,8 +29,8 @@
   "sourceFamilyId": "celtic-institutional",
   "scope": "club-history",
   "access": "available",
-  "checkedAt": "2026-11-08",
-  "retrievedAt": "2026-11-08T10:46:39.287Z",
+  "checkedAt": "2026-11-09",
+  "retrievedAt": "2026-11-09T12:07:27.343Z",
   "collected": {
    "documents": 2,
    "observedTotalDocuments": 2,

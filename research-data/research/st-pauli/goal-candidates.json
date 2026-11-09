@@ -13,33 +13,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2022/01/27/bericht-von-der-kollaustrasse-26-01-2022/",
-    "locator": "p11",
-    "quote": "Nach dem Aufwärmen ging es dann an die erste intensive Übung: Die Gruppe wurde in zwei Teams unterteilt, die auf jeweils einem kleinen Feld im 4vs4 antraten und zusätzlich zwei Spieler dabei hatten, die immer beim ballführenden Team spielten. Runtergebrochen also das klassische 5vs2 mit höherer Intensität. Zudem waren nur jeweils zwei Kontakte erlaubt und es gab auch wieder die Möglichkeit nach einer gewissen Anzahl an Pässen auf kleine Tore zu schießen (Dauer etwa 30min).",
-    "bodyHash": "6dc8e9fb50d6667121b45cf5616ccae8f504908115c2e18fbd50b345f1e3d0b4",
-    "fetchedAt": "2026-10-31T09:59:25.476Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
-    "url": "https://millernton.de/2022/01/28/lage-am-millerntor-28-januar-2022/",
-    "locator": "p24",
-    "quote": "In der ARD Mediathek hingegen findet Ihr eine 30minütige Doku mit dem Titel „Sonny – eine Geschichte über den Holocaust, Eintracht und Frankfurt“ , über das Leben von Helmut „Sonny“ Sonneberg.",
-    "bodyHash": "bbef318e0e1f8e73a0770f4cb8d4c8a4193928c13be4df71d314950bf6f5df46",
-    "fetchedAt": "2026-10-31T09:59:25.478Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
-    "url": "https://millernton.de/2022/09/16/lage-am-millerntor-16-september-2022/",
-    "locator": "p31",
-    "quote": "Die 1. Frauen testete unter der Woche gegen die U19 des Hamburger Fußballverbandes und unterlag in 3x30min mit 1:3 – Kurzbericht und Fotos bei Matthias von Schramm auf Facebook .",
-    "bodyHash": "575efcec37fbf4f91ee677e7980db0acec7ccd0e4548e4b8da1390cb6b831725",
-    "fetchedAt": "2026-11-03T11:22:00.389Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2022/10/05/gedenkstaettenfahrt-nach-oswiecim-auschwitz/",
     "locator": "p60",
     "quote": "Den Abschluss des Tages bildete die WDR-Dokumentation „Auschwitz war auch meine Stadt“ (YouTube, 30min), in der Zeitzeugen über ihr damaliges Leben hier sprachen. Unter anderem kam ein überlebender Häftling des Lagers ebenso zu Wort, wie eine deutsche Arbeiterin des hier extra angesiedelten IG Farben-Werkes, die ihre Zeit in Auschwitz verstörenderweise auch im Rückblick noch als die schönste Zeit ihres Lebens bezeichnet.",
@@ -82,6 +55,33 @@
     "bodyHash": "5a9ddbe4692a6299cc2dfe948e0ad651469457c354b645fe893e4ba0b33d73ed",
     "fetchedAt": "2026-11-08T10:47:53.749Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/01/19/lage-am-millerntor-19-januar-2023-2/",
+    "locator": "p4",
+    "quote": "Die gestrige Pressekonferenz zum Spiel könnt Ihr in Text und Bild (30min) nachverfolgen. Der ausführliche Vorbericht von Tim ist ebenfalls bereits online .",
+    "bodyHash": "bc17dc423176bbda711782570a963f8b66fd811912da4ea53e97f0682c59aee0",
+    "fetchedAt": "2026-11-09T12:08:33.150Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/02/02/lage-am-millerntor-02-februar-2024/",
+    "locator": "p20",
+    "quote": "Apropos: Das ZDF-Sportstudio hat ein Reportage-Format mit dem Namen „Bolzplatz“. In der aktuellen Folge geht es um Fabian Hürzeler – seine Karriere, seine Philosophie und auch seine Vertragssituation. Neben Fabian Boll, Oke Göttlich und Ewald Lienen kommt auch Dr. Tim Eckhardt zu Wort. // YouTube (30min)",
+    "bodyHash": "35fc4842085c89ff7b1a4d5f12f5a4d76843c9947b343051f9fcfb7d1bfafd88",
+    "fetchedAt": "2026-11-09T12:08:35.798Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/02/19/lage-am-millerntor-19-februar-2024/",
+    "locator": "p44",
+    "quote": "#GB9 aka Guido Burgstaller war im ballesterer-Podcast (30min) zu Gast. Oder anders: er wurde für die März-Ausgabe des ballesterers interviewt und Auszüge dieses Interviews finden sich im Podcast wieder, ergänzt durch Einordnungen des Interviewers. Interessantes Format, welches natürlich Lust auf die bald erscheinende Print-Ausgabe machen soll.",
+    "bodyHash": "455c4507f664ebb1e1f5db0856aa69a32586ab1908a3b69775b246260c66f7f8",
+    "fetchedAt": "2026-11-09T12:08:38.659Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -89,8 +89,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-08T10:47:53.749Z",
-  "updatedAt": "2026-11-08T10:47:53.749Z"
+  "createdAt": "2026-11-09T12:08:38.659Z",
+  "updatedAt": "2026-11-09T12:08:38.659Z"
  },
  {
   "id": "ga-03973ac070b40b9b",
@@ -298,6 +298,15 @@
     "bodyHash": "cdf5bf55ac162bc247b7976329919076ea3558406d59be84725f7bb16c9e980f",
     "fetchedAt": "2026-10-23T08:52:17.087Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/02/19/lage-am-millerntor-19-februar-2024/",
+    "locator": "p21",
+    "quote": "Zu den Karten im nächsten Abschnitt noch mehr, arbeiten wir erst mal die jüngsten Medien-Auftritte ab. Er war gestern zu Gast im NDR-Sportclub (13min, inkl. Spielbericht) und bestätigte dort das, was man als Eindrücke auch bisher schon gewinnen konnte. Sehr sympathisch und „am Boden geblieben“ , wie Hauke Wahl sagte.",
+    "bodyHash": "455c4507f664ebb1e1f5db0856aa69a32586ab1908a3b69775b246260c66f7f8",
+    "fetchedAt": "2026-11-09T12:08:38.659Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -305,8 +314,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-23T08:52:17.087Z",
-  "updatedAt": "2026-10-23T08:52:17.087Z"
+  "createdAt": "2026-11-09T12:08:38.659Z",
+  "updatedAt": "2026-11-09T12:08:38.659Z"
  },
  {
   "id": "ga-394aed08aa3f879b",
@@ -769,6 +778,24 @@
     "bodyHash": "997f27f8b95f6666bed69eb53e5900e68d5d93e55e8543906e84d4ae9d48e488",
     "fetchedAt": "2026-10-25T08:45:17.491Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/01/15/lage-am-millerntor-15-januar-2024/",
+    "locator": "p8",
+    "quote": "Luca war vor Ort und stand nach dem Spiel der Neuen Osnabrücker Zeitung (NOZ) im Brückengeflüster-Podcast (18min) (€) Rede und Antwort. Auf der Seite selbst wäre ein Abo nötig, im Podcatcher Eurer Wahl findet Ihr die Folge aber auch so.",
+    "bodyHash": "2ecd5a508f84ba3accbbfe6cf92030ba13325326dae5a5e6cf5b951c94fd154a",
+    "fetchedAt": "2026-11-09T12:08:33.142Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/01/16/lage-am-millerntor-16-januar-2024/",
+    "locator": "p32",
+    "quote": "Eine neue Folge von „Vertrau mir blind“: Serdal Çelebi war 2023 bei „Kicken mit Herz“ und traf unter anderem Ewald Lienen und viele weitere Prominente. // YouTube (18min)",
+    "bodyHash": "f2209462acb4cf57197554a8dda8de72bb671d66154abef4454d50111a81210d",
+    "fetchedAt": "2026-11-09T12:08:33.147Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -776,8 +803,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-25T08:45:17.491Z",
-  "updatedAt": "2026-10-25T08:45:17.491Z"
+  "createdAt": "2026-11-09T12:08:33.147Z",
+  "updatedAt": "2026-11-09T12:08:33.147Z"
  },
  {
   "id": "ga-978d8f0184b404d5",
@@ -1111,6 +1138,15 @@
     "bodyHash": "2e94496c22d30c451a805c0d16b476a4bc097a113b57d961ccf25718ce30f67f",
     "fetchedAt": "2026-11-08T10:47:50.876Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/03/04/lage-am-millerntor-04-maerz-2024/",
+    "locator": "p97",
+    "quote": "(Der kleiner Junge in der orangenen Weste hat sicher heute in der Schule einiges zu erzählen.) // Instagram // ( 12Min extended version , Tor dann aus anderem Blickwinkel ab ca. 7m30s))",
+    "bodyHash": "dbeb6eea200e612cd9166a3d2cf86fbc2b53f733c06d47c4043a602abbe14cea",
+    "fetchedAt": "2026-11-09T12:08:41.720Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1118,8 +1154,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-08T10:47:50.876Z",
-  "updatedAt": "2026-11-08T10:47:50.876Z"
+  "createdAt": "2026-11-09T12:08:41.720Z",
+  "updatedAt": "2026-11-09T12:08:41.720Z"
  },
  {
   "id": "ga-c85bb1efc815c755",
@@ -1567,6 +1603,15 @@
     "bodyHash": "d302a9681ec6156f01c262b7d54cf0791d68a4030b22d9db34fa24ef193c412e",
     "fetchedAt": "2026-10-27T09:22:18.690Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/02/19/lage-am-millerntor-19-februar-2024/",
+    "locator": "p23",
+    "quote": "„Vor 7 Jahren Kreisliga…“ (53min)",
+    "bodyHash": "455c4507f664ebb1e1f5db0856aa69a32586ab1908a3b69775b246260c66f7f8",
+    "fetchedAt": "2026-11-09T12:08:38.659Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1574,8 +1619,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-27T09:22:18.690Z",
-  "updatedAt": "2026-10-27T09:22:18.690Z"
+  "createdAt": "2026-11-09T12:08:38.659Z",
+  "updatedAt": "2026-11-09T12:08:38.659Z"
  },
  {
   "id": "ga-0ca8402e929e8694",
@@ -2161,6 +2206,15 @@
     "bodyHash": "96788b8422c259f73020deff3f600c57ffbf4ca7a263158912fac9eea70b9263",
     "fetchedAt": "2026-11-01T10:49:44.581Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/02/12/lage-am-millerntor-12-februar-2024/",
+    "locator": "p34",
+    "quote": "Wie in solchen Konstellationen üblich, hatte Hauke Wahl gestern einen Doppeltermin beim NDR. Zunächst traf er sich zum Gespräch bei NDR 90,3 (15min) , anschließend saß er im N3-Sportclub (noch nicht online).",
+    "bodyHash": "6a60f309fa07ec6a6c8416868d8f7e1efc71af4fbbb3733da2e962561f3c2ed1",
+    "fetchedAt": "2026-11-09T12:08:38.652Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2168,8 +2222,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-01T10:49:44.581Z",
-  "updatedAt": "2026-11-01T10:49:44.581Z"
+  "createdAt": "2026-11-09T12:08:38.652Z",
+  "updatedAt": "2026-11-09T12:08:38.652Z"
  },
  {
   "id": "ga-f11dcede79422e60",
@@ -2211,7 +2265,7 @@
   "opponentHe": null,
   "minute": "95",
   "scorerAlias": null,
-  "ownGoal": true,
+  "ownGoal": false,
   "evidence": [
    {
     "sourceId": "millernton",
@@ -2221,6 +2275,15 @@
     "bodyHash": "7fa181a5554c0b8aa48faf5318157e51619b3b3b1f39388d7b08d4902a73abf2",
     "fetchedAt": "2026-11-02T11:43:00.285Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/01/17/lage-am-millerntor-17-januar-2024/",
+    "locator": "p44",
+    "quote": "When you score a 95th minute equaliser to make it 5-5 and slip seamlessly into the worm 😅 pic.twitter.com/IOoi07vZcw",
+    "bodyHash": "dcef2be1aa4dbe8e2e8629ed408a0a8ee8a8536c1dd366c8c59471e36194ee16",
+    "fetchedAt": "2026-11-09T12:08:33.149Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2228,8 +2291,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-02T11:43:00.285Z",
-  "updatedAt": "2026-11-02T11:43:00.285Z"
+  "createdAt": "2026-11-09T12:08:33.149Z",
+  "updatedAt": "2026-11-09T12:08:33.149Z"
  },
  {
   "id": "ga-ee9a6a7de85d6de3",
@@ -2701,6 +2764,15 @@
     "bodyHash": "f443b7914e92e5f210391765dbdc4f6209afa6c85d91e27fd0bd84acc32837d1",
     "fetchedAt": "2026-11-04T11:35:58.153Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/02/20/lage-am-millerntor-20-februar-2024/",
+    "locator": "p29",
+    "quote": "Bei „Hart Aber Fair“ (75min) also gab es gestern in der ARD eine Runde, die insbesondere auf Social Media hohe Wellen schlug. Teilnehmende an dieser Runde waren:",
+    "bodyHash": "f10c3849e466f13030020a5057d5953c0b477925d4193674176c05af9d0319f5",
+    "fetchedAt": "2026-11-09T12:08:41.710Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2708,8 +2780,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-04T11:35:58.153Z",
-  "updatedAt": "2026-11-04T11:35:58.153Z"
+  "createdAt": "2026-11-09T12:08:41.710Z",
+  "updatedAt": "2026-11-09T12:08:41.710Z"
  },
  {
   "id": "ga-fa269f9476941017",
@@ -3136,6 +3208,15 @@
     "bodyHash": "54bccb2233d26a7bd513eb647ced8fa56b5274c4b4ff68e13edbdccca7e3678c",
     "fetchedAt": "2026-11-08T10:47:48.400Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/02/19/lage-am-millerntor-19-februar-2024/",
+    "locator": "p45",
+    "quote": "Apropos Podcast: Rolf Höfert war Kapitän des Teams 1977, welches nach dem erstmaligen Aufstieg das erste Bundesligaderby beim HSV gewann. Im Abendblatt-Podcast Millerntalk (36min) ( Text-Zusammenfassung (€) ) spricht er über seine Karriere und den damaligen Erfolg, blickt aber auch auf die aktuelle Situation.",
+    "bodyHash": "455c4507f664ebb1e1f5db0856aa69a32586ab1908a3b69775b246260c66f7f8",
+    "fetchedAt": "2026-11-09T12:08:38.659Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -3143,8 +3224,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-08T10:47:48.400Z",
-  "updatedAt": "2026-11-08T10:47:48.400Z"
+  "createdAt": "2026-11-09T12:08:38.659Z",
+  "updatedAt": "2026-11-09T12:08:38.659Z"
  },
  {
   "id": "ga-d537512c2e048a18",
@@ -3175,5 +3256,35 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-11-08T10:47:50.878Z",
   "updatedAt": "2026-11-08T10:47:50.878Z"
+ },
+ {
+  "id": "ga-372da65233f815b3",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "50",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/01/24/lage-am-millerntor-24-januar-2024/",
+    "locator": "p17",
+    "quote": "Die neue „Talking Fussball“ -Episode ist online. Schwerpunktthema ist der Tod von Kay Bernstein und wie es bei Hertha BSC nun weiter geht – Hertha-Fan Matt Hermann stand Rede und Antwort. Außerdem wurde ich gefragt, wie es denn mit den internationalen Fanclubs beim FC St. Pauli so aussieht, was zu beantworten mir hörbar schwer fiel. ( Spotify, 50min, Englisch )",
+    "bodyHash": "f50f6b9513e4a90ca46f75cab4bbee898c604661e7cc3a832756c2fe0b92fd18",
+    "fetchedAt": "2026-11-09T12:08:33.155Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-09T12:08:33.155Z",
+  "updatedAt": "2026-11-09T12:08:33.155Z"
  }
 ]
