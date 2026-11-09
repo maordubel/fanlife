@@ -297,9 +297,9 @@ export function finish(job:Job,worker:string,f:Finish,now=new Date()):Job{
   // Google's free tier was busy or its daily quota spent: nothing is wrong with the film, it starts again by itself
   const t=Date.parse(String(f.retryAt||'')),ok=Number.isFinite(t)&&t>now.getTime()&&t<now.getTime()+36*3600_000
   j.state='queued';j.error=null;j.notBefore=new Date(ok?t:now.getTime()+20*60_000).toISOString()
-  const hm=new Date(j.notBefore).toISOString().slice(11,16)
-  j.message=`Waiting for Google's free writer — starts again by itself at ${hm} UTC`
-  pushLog(j,`${String(f.error?.message||'The writer is busy').slice(0,300)} — the film waits until ${hm} UTC and starts again by itself`,at)
+  const hm=new Date(j.notBefore).toISOString().slice(11,16),studio=String(f.error?.code||'').startsWith('STUDIO_')
+  j.message=studio?`The studio was not answering — starts again by itself at ${hm} UTC`:`Waiting for Google's free writer — starts again by itself at ${hm} UTC`
+  pushLog(j,`${String(f.error?.message||(studio?'The studio did not answer':'The writer is busy')).slice(0,300)} — the film waits until ${hm} UTC and starts again by itself`,at)
   return j
  }
  j.state=f.state;j.notBefore=null
