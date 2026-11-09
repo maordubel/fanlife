@@ -11,7 +11,7 @@ export const runtime='nodejs'
  *   {ticket,op:'done',id,files}        → record what landed; a full set queues the edit
  */
 const ORIGINS=['https://flow.google.com','https://labs.google']
-const pick=(r:Request)=>{const o=r.headers.get('origin');return o&&ORIGINS.includes(o)?o:ORIGINS[0]}
+const pick=(r:Request):string=>{const o=r.headers.get('origin');return o&&ORIGINS.includes(o)?o:'https://flow.google.com'}
 const cors=(res:Response,origin:string)=>{res.headers.set('Access-Control-Allow-Origin',origin);res.headers.set('Vary','Origin');return res}
 export function OPTIONS(r:Request){
  return cors(new Response(null,{status:204,headers:{'Access-Control-Allow-Methods':'POST','Access-Control-Allow-Headers':'Content-Type','Access-Control-Max-Age':'600'}}),pick(r))
