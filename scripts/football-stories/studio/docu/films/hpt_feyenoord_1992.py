@@ -125,8 +125,8 @@ beat("Imagine the second leg had ended two, nil. Two, one on aggregate, and Hapo
 beat("Imagine it had ended three, one. Three, two on aggregate. Hapoel through again.",
      dict(kind='ledger', us='HAPOEL P.T.', them='FEYENOORD', rows=[['IF IT ENDS 2 – 0', 2, 1], ['IF IT ENDS 3 – 1', 3, 2]], row_at=[0.1, 0.6]))
 beat("But two, one meant level on aggregate. And level meant counting away goals. One for Feyenoord. None for Hapoel.",
-     dict(kind='ledger', us='HAPOEL P.T.', them='FEYENOORD', rows=[['IF IT ENDS 2 – 0', 2, 1], ['IF IT ENDS 3 – 1', 3, 2], ['IT ENDED 2 – 1', 0, 1]],
-          row_at=[0.1, 0.1, 0.6], circle=[2, 2], note='away goals', circle_at=4.5), pad=1.0)
+     dict(kind='ledger', us='HAPOEL P.T.', them='FEYENOORD', rows=[['IF IT ENDS 2 – 0', 2, 1], ['IT ENDED 2 – 1', 2, 2], ['AWAY GOALS', 0, 1]],
+          row_at=[0.1, 0.6, 3.0], circle=[2, 2], note='the difference', circle_at=4.6), pad=1.0)
 beat("The rule was meant to reward the brave away side. Score in the other team's stadium, and your goal is worth more when it matters.",
      img('fey.jpg', 'panl', veil=0.4))
 beat("UEFA abolished the rule in twenty twenty-one. For Hapoel, it was twenty-nine years too late.",
