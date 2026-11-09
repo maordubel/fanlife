@@ -43,7 +43,10 @@ worker edits → the film arrives on Telegram
    headers:{'Content-Type':'application/json'},body:JSON.stringify({ticket,op:'queue',manifest})})` — `manifest` is
    `scripts/football-stories/comic/classified_manifest.json` from main (raw.githubusercontent.com).
    `{"jobs":[],"classified":[]}` → stop quietly.
-4. One job per run, oldest first (or up to 20 CLASSIFIED panels). In a Flow project named after it:
+   Send also `library`: the `pieces` of `scripts/football-stories/studio/cinema/flow_library.json` from main — the
+   answer then lists the art-library pieces not drawn yet.
+4. One job per run, oldest first (or up to 20 CLASSIFIED panels); when neither waits, up to 12 art-library pieces
+   (Image, the piece's aspect, its prompt) — uploaded with `op:'urls', lib:true, names:[stem]`, no `done` needed. In a Flow project named after it:
    * characters (a Short): Image, 9:16, Nano Banana, each `characters[].prompt`;
    * each missing `clip-N.mp4`: Video · Ingredients, 9:16, the step's model, 720p, its seconds, ×1, its character
      sheets as ingredients, its prompt; each `still-N.jpg`: Image, 9:16;
@@ -52,3 +55,11 @@ worker edits → the film arrives on Telegram
    `PUT` the blob to the url (`x-upsert: true`) → after a job's files, `op:'done'` with the names that went up.
 6. Flow out of credits, a refusal, or anything unexpected → stop; the rest waits for the next hour. One short line
    to the owner only when something needs him. A finished Short reaches his Telegram by itself.
+
+## The art library (9.11.2026)
+`studio/cinema/flow_library.py` writes 167 pieces the VOX cinema picks by meaning (`cinema/animate.wants`): new
+variants of every terrace person and object, players (shot, header, celebration, despair), the keeper's dive, the
+grounds of every decade (1950s–2020s, inside and out), and each club's own city. Ink + cream + one signal red: the
+red becomes each club's colour at render time, so one drawing serves every club. Stored at `library/flow/<stem>.png`;
+the worker adds them to the cinema library (`library.list_flow`, worker op `library_flow`) next to the owner's
+drawings.

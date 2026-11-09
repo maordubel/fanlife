@@ -1,4 +1,4 @@
-import {flowDone,flowQueue,flowUrls,panelNeeds,ticketOk} from '@/lib/stories/flowOperator'
+import {flowDone,flowQueue,flowUrls,panelNeeds,ticketOk,type LibPiece} from '@/lib/stories/flowOperator'
 import {body,fail,json,limited} from '@/lib/stories/http'
 export const dynamic='force-dynamic'
 export const runtime='nodejs'
@@ -8,7 +8,8 @@ export const runtime='nodejs'
  * so it answers Flow's origins only, and only with the run's ticket — never the studio login, never the cron secret.
  *   {ticket,op:'queue',manifest?}      → what to make: waiting Shorts/promos, and the CLASSIFIED panels of the manifest
  *                                        it sends (comic/classified_manifest.json) that Flow has not made yet
- *   {ticket,op:'urls',id|file,names}   → signed upload urls for those slots / panels (private bucket)
+ *   ... library? (studio/cinema/flow_library.json pieces) → also the art-library pieces not drawn yet
+ *   {ticket,op:'urls',id|file|lib,names} → signed upload urls for those slots / panels / library pieces (private bucket)
  *   {ticket,op:'done',id,files}        → record what landed; a full set queues the edit
  */
 const ORIGINS=['https://flow.google.com','https://labs.google']
@@ -24,7 +25,7 @@ export async function POST(r:Request){
  try{
   const b=await body(r) as Record<string,unknown>
   if(!await ticketOk(b.ticket))return cors(json({error:'No valid ticket.'},401),at)
-  if(b.op==='queue')return cors(json(await flowQueue(panelNeeds({files:(b.manifest&&typeof b.manifest==='object'?(b.manifest as {files?:never}).files:undefined)??{}}))),at)
+  if(b.op==='queue')return cors(json(await flowQueue(panelNeeds({files:(b.manifest&&typeof b.manifest==='object'?(b.manifest as {files?:never}).files:undefined)??{}}),Array.isArray(b.library)?b.library as LibPiece[]:[])),at)
   if(b.op==='urls')return cors(json(await flowUrls(b)),at)
   if(b.op==='done')return cors(json(await flowDone(b)),at)
   return cors(json({error:'Unknown op.'},400),at)

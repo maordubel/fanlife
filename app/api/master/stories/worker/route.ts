@@ -9,7 +9,7 @@ import {noteLights} from '@/lib/stories/socialLights'
 import {addRound,markDispatched,noteRun,shouldDispatch,takenEvents} from '@/lib/stories/pitches'
 import {readPitchDays,readPitchDesk,updatePitchDay,updatePitchDesk} from '@/lib/stories/pitchStore'
 import {clubNames} from '@/lib/stories/clubs'
-import {classifiedUrls} from '@/lib/stories/flowOperator'
+import {classifiedUrls,libraryUrls} from '@/lib/stories/flowOperator'
 export const dynamic='force-dynamic'
 export const runtime='nodejs'
 
@@ -30,6 +30,7 @@ export const runtime='nodejs'
  *   {op:'social_pack',id,worker}                → every platform's composed post (read-only)
  *   {op:'finish',id,worker,state,…}             → the finished job
  *   {op:'classified_urls',worker,file,ids}      → signed download urls for panels Flow made
+ *   {op:'library_flow',worker}                  → the Flow-made art-library pieces with signed download urls
  * A worker that lost its lease is refused, so two runners can never both finish one film.
  */
 export async function POST(r:Request){
@@ -92,6 +93,7 @@ export async function POST(r:Request){
   }
   const id=String(b.id||'')
   if(b.op==='classified_urls')return json(await classifiedUrls(b))
+  if(b.op==='library_flow')return json(await libraryUrls())
   if(b.op==='progress'){
    let control:'continue'|'pause'|'cancel'='continue'
    await updateJob(id,j=>{const x=report(j,worker,b as unknown as Progress);control=x.control;return x.job})

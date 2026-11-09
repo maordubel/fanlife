@@ -318,6 +318,36 @@ def fetch(fid: str, tries: int = 3) -> bytes:
     raise OSError(str(last))
 
 
+def fetch_url(url: str, tries: int = 3) -> bytes:
+    """A Flow-made piece from the studio's private bucket (a signed url, studio/cinema/flow_library.py)."""
+    import urllib.request
+    last = None
+    for attempt in range(tries):
+        try:
+            with urllib.request.urlopen(url, timeout=120) as r:
+                return r.read()
+        except OSError as e:
+            last = e
+            time.sleep(2 * (attempt + 1))
+    raise OSError(str(last))
+
+
+def list_flow() -> list[dict]:
+    """The pieces the Flow operator made, from the studio (worker door, cron secret): {id: flow:<stem>, name, url}.
+    The id and name are stable (the cache key); the url is a fresh one-hour link used only to download."""
+    base, secret = os.environ.get('STORIES_URL', ''), os.environ.get('FAN_LIFE_CRON_SECRET', '')
+    if not base or len(secret) < 32:
+        return []
+    import urllib.request
+    req = urllib.request.Request(base.rstrip('/') + '/api/master/stories/worker', method='POST',
+                                 data=json.dumps({'op': 'library_flow', 'worker': 'library-list'}).encode(),
+                                 headers={'Authorization': 'Bearer ' + secret, 'Content-Type': 'application/json'})
+    with urllib.request.urlopen(req, timeout=60) as r:
+        rows = json.load(r).get('pieces') or []
+    return [{'id': f"flow:{p['stem']}", 'name': f"{p['stem']}.png", 'url': p['url']} for p in rows
+            if re.fullmatch(r'[a-z0-9-]{4,90}', str(p.get('stem') or '')) and str(p.get('url') or '').startswith('https://')]
+
+
 def sync(listing: list[dict], dest: Path, log=print, getter=fetch, budget_s: float = 1500.0) -> dict:
     """Download what is new in the listing, prepare it, write `dest/index.json`. Idempotent: a piece already prepared
     from the same Drive file (and the same VERSION) is kept as it is."""
@@ -356,7 +386,7 @@ def sync(listing: list[dict], dest: Path, log=print, getter=fetch, budget_s: flo
             report['failed'].append({'name': f['name'], 'why': 'time budget (the next run carries on)'})
             continue
         try:
-            data = getter(f['id'])
+            data = fetch_url(f['url']) if f.get('url') else getter(f['id'])
             row = {**prepare(data, stem, info, ready), 'drive_id': f['id']}
         except Exception as e:  # noqa: BLE001 — reported by name, never guessed
             report['failed'].append({'name': f['name'], 'why': f'{type(e).__name__}: {str(e)[:120]}'})
@@ -518,6 +548,12 @@ def main(argv=None) -> int:
         except Exception as e:  # noqa: BLE001 — the film renders without the library
             print(f'Cinema library: the folder did not list ({type(e).__name__}: {e})')
             items = []
+        try:
+            flow = list_flow()
+            items += flow
+            print(f'Cinema library: {len(flow)} Flow-made pieces')
+        except Exception as e:  # noqa: BLE001 — the owner's drawings still make the film
+            print(f'Cinema library: the Flow pieces did not list ({type(e).__name__})')
         a.out.write_text(json.dumps({'key': listing_key(items), 'files': items}, ensure_ascii=False))
         print(f'Cinema library: {len(items)} files listed · key {listing_key(items)}')
         return 0

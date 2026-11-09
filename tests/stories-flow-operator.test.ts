@@ -30,3 +30,14 @@ describe('the Flow operator door (docs/fanlife/70)',()=>{
   expect(r).not.toMatch(/cronAuthorized|adminFromRequest/)
  })
 })
+
+describe('the art library Flow draws (studio/cinema/flow_library.json)',()=>{
+ it('accepts every piece of the spec and nothing else',async()=>{
+  const {LIB_STEM,libPath}=await import('@/lib/stories/flowOperator')
+  const spec=JSON.parse(src('scripts/football-stories/studio/cinema/flow_library.json')) as {pieces:{stem:string}[]}
+  expect(spec.pieces.length).toBeGreaterThan(100)
+  for(const p of spec.pieces)expect(LIB_STEM.test(p.stem),p.stem).toBe(true)
+  for(const bad of ['../x-fl1-kr','ppl-capo-kr','cl-panel-fl1-kr','ppl-x-fl1-kr.png'])expect(LIB_STEM.test(bad)).toBe(false)
+  expect(libPath('ppl-referee-fl1-kr')).toBe('library/flow/ppl-referee-fl1-kr.png')
+ })
+})
