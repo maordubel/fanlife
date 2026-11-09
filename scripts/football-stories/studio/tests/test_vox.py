@@ -215,9 +215,35 @@ class Numbers(unittest.TestCase):
         flips = {e.name: e for e in P.els if isinstance(e, E.Flip)}
         self.assertEqual(flips['home'].final, str(f['score_home']))
         self.assertEqual(flips['away'].final, str(f['score_away']))
-        self.assertEqual([v for _, v in flips['home'].steps], [str(f['score_home'])])
-        self.assertEqual([v for _, v in flips['away'].steps], [str(f['score_away'])])
+        # the board starts from the score the viewer knows (0–0 here) and flips to the result only when it is told
+        # (owner, 9.11.2026 — score_story.py); it used to show the final from its first frame
+        for side, val in (('home', f['score_home']), ('away', f['score_away'])):
+            steps = flips[side].steps
+            self.assertEqual(steps[-1][1], str(val))
+            self.assertEqual(steps[0][1], '0')
+            self.assertTrue(all(a[0] < b[0] for a, b in zip(steps, steps[1:])))
         self.assertEqual(P.targets['score_value'], f"{f['score_home']}–{f['score_away']}")
+
+    def test_the_final_never_shows_before_the_story_tells_it(self):
+        # the versus card opens a match the film goes on to tell (its goal follows): a live board, never the result
+        ed, plan, f = shared()
+        s = next(s for s in plan['shots'] if s['visual']['type'] == 'versus')
+        fa = ed.by[s['visual']['claim']]['fact']
+        self.assertFalse(s['score_story'][s['visual']['claim']]['last'])
+        P = f.panel(s['n'])
+        flips = {e.name: e for e in P.els if isinstance(e, E.Flip)}
+        final = (str(fa['score_home']), str(fa['score_away']))
+        if flips and final != ('0', '0'):
+            self.assertNotEqual((flips['home'].steps[-1][1], flips['away'].steps[-1][1]), final)
+        # and the same card mid-story, as a result card, stays a live board until the narrator tells the result
+        from studio.vox import compose as C2
+        live = {**s, 'match_preview': False, 'visual': {**s['visual'], 'type': 'score'}}
+        Q = C2.compose(ed, live, 0.5, f.style)
+        fl = {e.name: e for e in Q.els if isinstance(e, E.Flip)}
+        if final != ('0', '0'):
+            self.assertNotEqual((fl['home'].steps[-1][1], fl['away'].steps[-1][1]), final)
+        self.assertFalse([e for e in Q.els if isinstance(e, E.Highlight)])
+        self.assertFalse([e for e in P.els if isinstance(e, E.Highlight)])
 
     def test_the_form_number_rides_the_line_up_and_down_and_lands_on_the_story(self):
         from studio.cinema.story import story_of
