@@ -11,10 +11,6 @@
   "observedTotalPages": null,
   "perPage": 1,
   "queue": [
-   "/franjorupnik.html",
-   "/belapalfi.html",
-   "/zlatkocajkovski.html",
-   "/prvoslavmihailovic.html",
    "/kirilsimonovski.html",
    "/atanackovic.html",
    "/franjoglazer.html",
@@ -571,10 +567,14 @@
    "/1920.html",
    "/rekordi.html",
    "/stjepanbobek.html",
-   "/miroslavbrozovic.html"
+   "/miroslavbrozovic.html",
+   "/franjorupnik.html",
+   "/belapalfi.html",
+   "/zlatkocajkovski.html",
+   "/prvoslavmihailovic.html"
   ],
   "state": "partial_budget",
-  "updatedAt": "2026-11-08T10:47:34.487Z",
+  "updatedAt": "2026-11-09T12:08:18.872Z",
   "lastError": null
  },
  "crno-bela-nostalgija:posts": {
@@ -589,7 +589,7 @@
   "observedTotalPages": null,
   "perPage": 25,
   "state": "blocked",
-  "updatedAt": "2026-11-08T10:47:34.929Z",
+  "updatedAt": "2026-11-09T12:08:19.439Z",
   "lastError": "HTTP 403 — a refusal is an answer"
  },
  "crno-bela-nostalgija:pages": {
@@ -604,7 +604,7 @@
   "observedTotalPages": 1,
   "perPage": 25,
   "state": "listed",
-  "updatedAt": "2026-11-08T10:47:38.690Z",
+  "updatedAt": "2026-11-09T12:08:23.323Z",
   "lastError": null
  },
  "partizan-official:html": {
@@ -623,7 +623,7 @@
    "/vesti/istorijat"
   ],
   "state": "listed",
-  "updatedAt": "2026-11-08T10:47:40.619Z",
+  "updatedAt": "2026-11-09T12:08:25.139Z",
   "lastError": null
  },
  "nft-partizan:html": {
@@ -642,7 +642,7 @@
    "/club/2156/1963/Partizan_Beograd.html"
   ],
   "state": "listed",
-  "updatedAt": "2026-11-08T10:47:41.663Z",
+  "updatedAt": "2026-11-09T12:08:26.191Z",
   "lastError": null
  }
 }
