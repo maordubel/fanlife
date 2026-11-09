@@ -23,6 +23,7 @@ from studio.tests import test_cinema as tc  # noqa: E402
 from studio.tests import test_hyperframes as th  # noqa: E402
 
 tearDownModule = tc.tearDownModule
+dp.B.GSAP = th._STUB   # the page is checked as written; no browser runs it here
 
 
 def project():
