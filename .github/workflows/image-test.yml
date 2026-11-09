@@ -3,7 +3,9 @@ on: { push: { branches: [claude/image-test] } }
 jobs:
   t:
     runs-on: ubuntu-latest
+    permissions: { contents: write }
     steps:
+      - uses: actions/checkout@v4
       - run: |
           mkdir out; i=0
           for p in \
@@ -12,12 +14,13 @@ jobs:
            "hand-inked comic book panel, 1981 Spain, newspaper kiosk at dawn, headline-less newspapers, worried men reading, muted halftone colours, dramatic shadows" \
            "photorealistic archive-style photograph, 1980s football terrace, crowd of men in coats, black and white, film grain" ; do
             i=$((i+1)); enc=$(python3 -c "import urllib.parse,sys;print(urllib.parse.quote(sys.argv[1]))" "$p")
-            for m in flux turbo; do
-              curl -sS -m 180 -o out/$i-$m.jpg -w "$i $m %{http_code} %{size_download} %{time_total}\n" "https://image.pollinations.ai/prompt/$enc?width=720&height=1280&model=$m&seed=11&nologo=true" || true
+            for m in flux zimage; do
+              curl -sS -m 180 -o out/$i-$m.jpg -w "RES $i $m %{http_code} %{size_download} %{time_total}\n" "https://image.pollinations.ai/prompt/$enc?width=720&height=1280&model=$m&seed=11&nologo=true" || true
               sleep 16
             done
           done
           curl -sS -m 30 https://image.pollinations.ai/models || true
-          curl -sS -m 30 https://gen.pollinations.ai/image/models | head -c 3000 || true
+          curl -sS -m 30 https://gen.pollinations.ai/image/models | python3 -c "import json,sys;[print('MODEL',m['name'],m.get('category'),'paid' if m.get('paid_only') else 'free',m.get('aliases')) for m in json.load(sys.stdin)]" || true
+          git config user.name bot; git config user.email bot@x; git add out; git commit -qm imgs; git push -q origin HEAD:claude/image-test-out --force
       - uses: actions/upload-artifact@v4
         with: { name: imgs, path: out }
