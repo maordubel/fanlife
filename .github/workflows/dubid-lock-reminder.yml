@@ -3,7 +3,7 @@
 name: DUBID lock reminder
 on:
   schedule:
-    - cron: '11,26,41,56 * * * *'
+    - cron: '11,41 * * * *'  # a reminder hours ahead does not need 15-minute precision (9.11.2026)
   workflow_dispatch:
 permissions: {}
 concurrency:

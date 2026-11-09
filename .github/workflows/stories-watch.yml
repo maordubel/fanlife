@@ -49,7 +49,7 @@ jobs:
           echo "Writer: $writer"
           while [ "$(date +%s)" -lt "$end" ]; do
             if [ $(( $(date +%s) - checked )) -gt 10800 ]; then writer=$(writer_check); checked=$(date +%s); fi
-            peek=$(curl -s --max-time 30 -X POST -H "Authorization: Bearer $FAN_LIFE_CRON_SECRET" -H 'Content-Type: application/json' \
+            peek=$(curl -s --retry 2 --retry-delay 20 --max-time 70 -X POST -H "Authorization: Bearer $FAN_LIFE_CRON_SECRET" -H 'Content-Type: application/json' \
               -d "{\"op\":\"peek\",\"worker\":\"listen-$GITHUB_RUN_ID\",\"health\":{\"writer\":$writer}}" "$STORIES_URL/api/master/stories/worker" || true)
             if [ $(( $(date +%s) - cleaned )) -ge 600 ]; then
               python3 scripts/football-stories/studio/cleanup.py || echo "::warning::Storage cleanup will retry"

@@ -9,7 +9,7 @@ name: Football Stories · social
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '4-59/20 * * * *'  # 72 calls a day instead of 144 (9.11.2026)
 permissions:
   contents: read
 concurrency:

@@ -1,7 +1,7 @@
 name: Requested club research
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '7 * * * *'  # hourly (9.11.2026: every 15 min was the largest single Vercel CPU consumer)
   workflow_dispatch:
 permissions: {}
 jobs:
