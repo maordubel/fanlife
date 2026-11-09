@@ -11,7 +11,7 @@ name: Football Stories worker
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '*/30 * * * *'  # fallback only: the listener starts films (9.11.2026, fewer Vercel calls)
 permissions:
   contents: write  # a CLASSIFIED FILE written by the studio is committed to main (studio/kinds.run_casefile)
 concurrency:

@@ -4,14 +4,14 @@ import {BUCKET} from './media'
 
 /**
  * Is the studio able to make a film right now? Three facts the owner should never have to guess (4.11.2026):
- *   · the listener — `stories-watch.yml` asks for work every three minutes and reports here (throttled to one write in 4 min);
+ *   · the listener — `stories-watch.yml` asks for work every seven minutes and reports here (throttled to one write in 4 min);
  *   · the script writer — the listener checks the key it holds (GEMINI_API_KEY, …) against the provider, not just its
  *     presence, because a key pasted wrong looks exactly like a key that works until a film fails at "Script";
  *   · storage — the private bucket the films are delivered to.
  * The listener file lives outside `stories/` so a heartbeat never touches the job list's cache.
  */
 const NAME='studio/health.json'
-const STALE_MS=10*60_000
+const STALE_MS=16*60_000  // the listener asks every 7 minutes (9.11.2026); two missed rounds = stale
 const WRITE_EVERY_MS=4*60_000
 
 export type Writer={provider:'gemini'|'anthropic'|'openai'|'none';ok:boolean|null;model?:string;note?:string}
