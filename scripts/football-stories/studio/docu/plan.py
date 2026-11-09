@@ -27,6 +27,7 @@ from ..common import FPS, Palette, StageError, read_json, write_json
 from . import build as B
 
 ENGINE = 'docu'
+OLD = ('vox', 'vox-hf', 'classic', 'paper')
 NAMED = {'tunnel': 'beat:common/tunnel-walk-out', 'terrace-crowd': 'beat:common/terrace-full-kr',
          'terrace-empty': 'beat:common/old-ground-wide-kr', 'supporter': 'beat:common/supporter-cap-old-ground'}
 FOLLOW = ('follow-seat-kept-kr', 'follow-turnstile-welcome-kr', 'follow-away-end-gap-kr', 'follow-pub-door-kr')
@@ -39,8 +40,11 @@ def wanted(brief: dict | None) -> bool:
     b = brief or {}
     if os.environ.get('STORIES_DOCU', '1') == '0':
         return False
-    look = b.get('look') or b.get('engine') or b.get('visual_style')
-    return look in (None, '', 'docu', 'auto', 'archive', 'documentary')
+    # Only an explicit request for an older engine keeps it; a picture style (collage, night, mixed, papercut…) is a
+    # mood the writer reads, not an engine, so it still gets the DOCU minimum.
+    if (b.get('look') or b.get('engine')) in OLD or b.get('visual_style') == 'classic':
+        return False
+    return True
 
 
 def long_date(iso: str | None) -> str:
