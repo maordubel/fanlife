@@ -1,7 +1,7 @@
 import 'server-only'
 import {FLOW_KINDS,FLOW_NAME,StoryError,flowFiles,jobKind,mediaPath,ownerAct,type Job} from './jobs'
 import {getJob,listJobs,updateJob} from './store'
-import {signedDownload,signedUpload} from './media'
+import {listNames,signedDownload,signedUpload} from './media'
 import {durable} from '@/lib/master/durable'
 import {createHash,timingSafeEqual} from 'node:crypto'
 
@@ -18,11 +18,15 @@ import {createHash,timingSafeEqual} from 'node:crypto'
 export const FILE_ID=/^file\d{2}$/
 export const PANEL_ID=/^f\d{2}-[a-z0-9-]{1,40}$/
 export const panelPath=(file:string,id:string)=>`classified/${file}/${id}.png`
+export const LIB_STEM=/^(ppl|sup|obj|era|doc|ins|layer|sky|ground|city)-[a-z0-9-]{2,70}-fl\d-kr$/
+export const LIB_DIR='library/flow'
+export const libPath=(stem:string)=>`${LIB_DIR}/${stem}.png`
+export type LibPiece={stem:string;aspect?:string;prompt:string}
 export type PanelNeed={file:string;title?:string;panels:{id:string;role?:string;prompt:string}[]}
 
 const waiting=(j:Job)=>FLOW_KINDS.includes(jobKind(j))&&!!j.flow&&['needs_review','paused','failed'].includes(j.state)&&j.stage!=='done'&&!j.lease
 
-export async function flowQueue(needs:PanelNeed[]){
+export async function flowQueue(needs:PanelNeed[],lib:LibPiece[]=[]){
  const jobs=(await listJobs(200)).filter(waiting).sort((a,b)=>a.createdAt.localeCompare(b.createdAt)).map(j=>{
   const have=new Set((j.brief.art??[]).map(a=>a.name)),f=j.flow!
   return {id:j.id,kind:jobKind(j),title:f.title,characters:f.characters,clips:f.clips,stills:f.stills,missing:flowFiles(f).filter(n=>!have.has(n))}
@@ -36,13 +40,22 @@ export async function flowQueue(needs:PanelNeed[]){
   const missing=panels.filter(p=>!stored[panelPath(n.file,p.id)]).map(p=>({id:p.id,role:String(p.role??'').slice(0,40),prompt:p.prompt.slice(0,2400)}))
   if(missing.length)classified.push({file:n.file,title:String(n.title??'').slice(0,140),missing})
  }
- return {jobs,classified}
+ // the art library the VOX cinema picks from (studio/cinema/flow_library.json): the pieces not drawn yet
+ const want=lib.filter(p=>LIB_STEM.test(String(p.stem))&&typeof p.prompt==='string'&&p.prompt.length>20).slice(0,400)
+ const have=new Set(want.length?await listNames(LIB_DIR,2000):[])
+ const library=want.filter(p=>!have.has(`${p.stem}.png`)).map(p=>({stem:p.stem,aspect:p.aspect==='16:9'?'16:9':'1:1',prompt:p.prompt.slice(0,2400)}))
+ return {jobs,classified,library}
 }
 
-export async function flowUrls(b:{id?:unknown;file?:unknown;names?:unknown}){
+export async function flowUrls(b:{id?:unknown;file?:unknown;lib?:unknown;names?:unknown}){
  const names=Array.isArray(b.names)?b.names.slice(0,40).map(String):[]
  if(!names.length)throw new StoryError('FLOW','Name the files.')
  const urls:Record<string,string>={}
+ if(b.lib===true){
+  if(names.some(n=>!LIB_STEM.test(n)))throw new StoryError('FLOW','Unknown library piece.')
+  for(const n of names)urls[n]=await signedUpload(libPath(n))
+  return {urls}
+ }
  if(typeof b.file==='string'){
   if(!FILE_ID.test(b.file)||names.some(n=>!PANEL_ID.test(n)))throw new StoryError('FLOW','Unknown FILE or panel.')
   for(const n of names)urls[n]=await signedUpload(panelPath(b.file,n))
@@ -103,4 +116,11 @@ export async function ticketOk(ticket:unknown,now=Date.now()):Promise<boolean>{
 type Man={files:Record<string,{title?:string;panels?:{id:string;role?:string;drive_id?:string|null;prompt?:string}[]}>}
 export function panelNeeds(m:Man):PanelNeed[]{
  return Object.entries(m.files||{}).map(([file,f])=>({file,title:f.title,panels:(f.panels||[]).filter(p=>!p.drive_id&&typeof p.prompt==='string'&&p.prompt.length>10).map(p=>({id:p.id,role:p.role,prompt:p.prompt!}))})).filter(n=>n.panels.length)
+}
+
+/** The Flow-made library pieces with signed download urls (the worker adds them to the cinema library). */
+export async function libraryUrls(){
+ const names=(await listNames(LIB_DIR,2000)).filter(n=>LIB_STEM.test(n.replace(/\.png$/,'')))
+ const s=await signedDownload(names.map(n=>`${LIB_DIR}/${n}`),3600)
+ return {pieces:names.flatMap(n=>{const u=s[`${LIB_DIR}/${n}`];return u?[{stem:n.replace(/\.png$/,''),url:u}]:[]})}
 }

@@ -68,3 +68,16 @@ export async function purgeJobMedia(id:string):Promise<void>{
   if(!r.ok)throw new StoryError('MEDIA',`Storage deletion failed (${r.status}).`,502)
  }
 }
+
+/** The file names directly under a folder of the bucket (no recursion), at most `max`. */
+export async function listNames(prefix:string,max=1000):Promise<string[]>{
+ const {url,headers}=cfg(),out:string[]=[]
+ for(let offset=0;offset<max;offset+=100){
+  const r=await fetch(`${url}/storage/v1/object/list/${BUCKET}`,{method:'POST',headers,body:JSON.stringify({prefix,limit:100,offset,sortBy:{column:'name',order:'asc'}}),cache:'no-store'})
+  if(!r.ok)throw new StoryError('MEDIA',`Storage listing failed (${r.status}).`,502)
+  const rows=await r.json() as {name:string;id:string|null}[]
+  for(const row of rows)if(row.id&&row.name&&!row.name.includes('/'))out.push(row.name)
+  if(rows.length<100)break
+ }
+ return out
+}

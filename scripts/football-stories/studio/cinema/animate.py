@@ -140,14 +140,14 @@ def wants(c: dict) -> dict:
     win, loss, draw = c['outcome'] == 'win', c['outcome'] == 'loss', c['outcome'] == 'draw'
     A, O, S, T = out['actor'], out['object'], out['scene'], out['tr']
     if c['pens']:
-        A.append(['pup-keeper-pose', 'pup-referee-pose'])
+        A.append(['pup-keeper-pose', 'pup-referee-pose', 'ppl-keeper-dive'])
         S.append(['clip-shootout-walk', 'clip-keeper-save', 'ins-penalty-spot'])
         O.append(['obj-ball'])
     if c['save'] and not c['pens']:
-        A.append(['pup-keeper-pose'])
+        A.append(['pup-keeper-pose', 'ppl-keeper-dive'])
         S.append(['clip-keeper-save'])
     if k == 'goal' or (c['goal_kind'] and win and k in ('score', 'illustration', 'versus')):
-        A.append(['pup-striker-pose'])
+        A.append(['pup-striker-pose', 'ppl-player-shot', 'ppl-player-header', 'ppl-player-celebrate'])
         S.append(['clip-late-goal-surge'] if c['late'] else [])
         S.append(['clip-goal-net-ripple', 'ins-net-bulge', 'ins-boot-strike', 'ins-ball-spin'])
         O.append(['obj-ball'])
@@ -169,7 +169,7 @@ def wants(c: dict) -> dict:
     if loss:
         if 'rain' in c['weather']:
             A.append(['sup-rain'])   # the record says it rained: the supporter stands in it
-        A.append(['sup-sit-step'])
+        A.append(['sup-sit-step', 'ppl-player-despair'])
         S.append(['clip-empty-after'])
         T.append(['tr-paper-crumple', 'tr-smoke-wipe'])
     if draw:

@@ -132,6 +132,11 @@ HOOK LAWS (the first 5 seconds decide everything; every opening, title, thumbnai
   Say each verified score when it changes, in home–away order. Give an opponent goal its own score beat when it
   changes the story. Keep the preview scoreless and save the final result and shootout for their own reveals.
   If the archive lacks goal order, tell only the recorded moments and reveal the known result at full time.
+- THE EDIT YOU WRITE FOR (docs/fanlife/71, the VOX board): one idea per beat, so the editor can give it ONE hero on
+  screen (a photo, a word, a document, a score). A phrase is shown once — on a real document or typed — never both.
+  Name the word a visual should land on (the score as it changes, the minute, the name). The score board on screen
+  follows your narration: it shows only the scores you have said, and the final result only when you tell it — so tell
+  it on purpose, at the climax, never in the preview.
 - ARCHIVE GOALS: A goal-detail claim is one separately documented goal linked by match_id to a reviewed match.
   When telling it, cite both the goal-detail and its match. Use only its stated scorer, minute and description;
   its presence does not mean that every scorer, every goal minute or the entire build-up is known. A minute such as
