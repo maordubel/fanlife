@@ -289,6 +289,9 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     from . import hyperframes
     if plan['engine'] == 'vox' and hyperframes.wanted(brief):
         plan['engine'] = hyperframes.ENGINE   # VOX drawn by HyperFrames (prototype; look 'vox-hf' or STORIES_VOX_HF=1)
+    from .docu import plan as docu
+    if plan['engine'] == 'vox' and docu.wanted(brief):
+        plan['engine'] = docu.ENGINE   # the owner's graphic minimum (9.11.2026); look 'vox' / STORIES_DOCU=0 keep the board
     if editorial_review is not None:
         plan, review = editorial.review_plan(job_dir, brief, ed, plan, editorial_review)
         if review is not None:
@@ -311,6 +314,8 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
             from .vox.render import render_film as render
         elif plan['engine'] == 'vox-hf':
             from .hyperframes.render import render_film as render
+        elif plan['engine'] == 'docu':
+            from .docu.plan import render_film as render
         render(job_dir, plan, palette, log, workers=int(os.environ.get('STORIES_WORKERS', '0')) or None,
                tick=lambda d, t: step('edit', 0.4 + 0.38 * d / max(t, 1), f'Rendering shots: {d} of {t}'))
 

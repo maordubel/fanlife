@@ -153,9 +153,9 @@ class Film:
         cid = self.id('sb')
         ush = f'background:{self.US}'
         them = f'background:linear-gradient(90deg,{self.THEM} 0 50%,#fff 50% 100%)' if s.get('them_halves') else f'background:{self.THEM}'
-        inner = (f'<div class="sb"><div class="sbl" style="{ush}"><img src="assets/img/{e(s["us_crest"])}"><span>{s["us"]}</span></div>'
+        inner = (f'<div class="sb"><div class="sbl" style="{ush}">{self.badge(s.get("us_crest"), s["us"])}<span>{s["us"]}</span></div>'
                  f'<div class="sbc"><b>{e(s["us_goals"])}</b><i>–</i><b>{e(s["them_goals"])}</b></div>'
-                 f'<div class="sbr" style="{them}"><span class="nm">{e(s["them"])}</span><img src="assets/img/{e(s["them_crest"])}"></div></div>'
+                 f'<div class="sbr" style="{them}"><span class="nm">{e(s["them"])}</span>{self.badge(s.get("them_crest"), s["them"])}</div></div>'
                  f'<div class="sbcap">{e(s.get("cap", ""))}</div>')
         if s.get('bg'):
             self.image({'src': s['bg'], 'veil': 0.55, 'move': 'push'}, t, d, 1)
@@ -163,6 +163,14 @@ class Film:
         self.tween(f'tl.fromTo("#{cid} .sb",{{y:-260,opacity:0}},{{y:0,opacity:1,duration:0.55,ease:"back.out(1.6)"}},{r2(t)});')
         if s.get('shrink_at') is not None:
             self.tween(f'tl.fromTo("#{cid}",{{y:0,scale:1}},{{y:-300,scale:0.62,duration:0.7,ease:"power3.inOut",immediateRender:false}},{r2(t + s["shrink_at"])});')
+
+    def badge(self, src, name) -> str:
+        """A crest when one is on file; otherwise the club's initials on a plain roundel — never a borrowed badge."""
+        if src:
+            return f'<img src="assets/img/{e(src)}">'
+        import re as _re
+        ini = ''.join(w[0] for w in _re.findall(r"[A-Za-zÀ-ž]+", html.unescape(str(name)))[:3]).upper()
+        return f'<i class="ini">{e(ini)}</i>'
 
     def stamp(self, s, t, d):
         cid = self.id('st')
@@ -174,18 +182,20 @@ class Film:
     def question(self, s, t, d):
         cid = self.id('q')
         txt = e(s['text']).replace('[', f'<em style="background:{self.US}">').replace(']', '</em>').replace('{', f'<em style="background:{self.THEM}">').replace('}', '</em>').replace('|', '<br>')
-        self.clip(cid, t, d, f'<div class="q">{txt}</div>', 14)
+        small = f'<small>{e(s["small"])}</small>' if s.get('small') else ''
+        self.clip(cid, t, d, f'<div class="q">{small}{txt}</div>', 14)
         self.tween(f'tl.fromTo("#{cid} .q",{{opacity:0,y:40}},{{opacity:1,y:0,duration:0.5,ease:"power3.out"}},{r2(t)});')
 
     def ticket(self, s, t, d):
         cid = self.id('tk')
-        self.clip(cid, t, d, f'<div class="ticket"><small style="color:{self.US}">{e(s["small"])}</small><b>{e(s["big"])}</b><span>{e(s.get("line", ""))}</span></div>', 9, 'paper')
+        self.clip(cid, t, d, f'<div class="ticket{" tc" if s.get("compact") else ""}"><small style="color:{self.US}">{e(s["small"])}</small><b>{e(s["big"])}</b><span>{e(s.get("line", ""))}</span></div>', 9, '' if s.get('compact') else 'paper')
         self.tween(f'tl.fromTo("#{cid} .ticket",{{rotation:-6,scale:0.6,opacity:0}},{{rotation:-2,scale:1,opacity:1,duration:0.35,ease:"back.out(2)"}},{r2(t)});')
 
     def lead(self, s, t, d):
         cid = self.id('ld')
         col = self.US if s.get('side', 'us') == 'us' else self.THEM
-        self.clip(cid, t, d, f'<div class="lead" style="background:{col}">{e(s["text"])}</div>', 9)
+        sub = f'<small>{e(s["sub"])}</small>' if s.get('sub') else ''
+        self.clip(cid, t, d, f'<div class="lead" style="background:{col}">{e(s["text"])}{sub}</div>', 9)
         self.tween(f'tl.fromTo("#{cid} .lead",{{clipPath:"inset(0 100% 0 0)"}},{{clipPath:"inset(0 0% 0 0)",duration:0.5,ease:"power3.out"}},{r2(t)});')
 
     def ledger(self, s, t, d):
@@ -194,7 +204,8 @@ class Film:
         circ = (f'<svg class="circ" style="top:{65 + 220 * s["circle"][0]}px;left:{1160 if s["circle"][1] == 2 else 820}px" viewBox="0 0 200 140">'
                 f'<path id="{cid}c" d="M100 10 C170 10 190 50 188 72 C185 115 140 132 98 130 C45 128 12 105 14 68 C16 32 55 12 112 14" fill="none" stroke="{self.THEM}" stroke-width="7" stroke-linecap="round"/></svg>'
                 f'<div class="note" style="top:{278 + 220 * s["circle"][0]}px;left:{1160 if s["circle"][1] == 2 else 820}px;color:{self.THEM}">{e(s.get("note", ""))}</div>') if s.get('circle') else ''
-        inner = (f'<div class="ledger"><div class="lh"><span></span><b style="color:{self.US}">{e(s["us"])}</b><b style="color:{self.THEM}">{e(s["them"])}</b></div>{rows}{circ}</div>')
+        ttl = f'<span>{e(s["title"])}</span>' if s.get('title') else '<span></span>'
+        inner = (f'<div class="ledger{" lc" if s.get("compact") else ""}"><div class="lh">{ttl}<b style="color:{self.US}">{e(s["us"])}</b><b style="color:{self.THEM}">{e(s["them"])}</b></div>{rows}{circ}</div>')
         self.clip(cid, t, d, inner, 14, 'paper')
         self.tween(f'tl.fromTo("#{cid} .ledger",{{y:80,opacity:0}},{{y:0,opacity:1,duration:0.45,ease:"power3.out"}},{r2(t)});')
         for i, at in enumerate(s.get('row_at', [0.4 + 1.2 * k for k in range(len(s['rows']))])):
@@ -209,6 +220,44 @@ class Film:
         self.clip(cid, t, d, f'<div class="rule"><small style="color:{self.THEM}">{e(s["small"])}</small><b>{e(s["title"])}</b><p>{e(s["text"])}</p></div>', 14, 'paper')
         self.tween(f'tl.fromTo("#{cid} .rule",{{scale:0.9,opacity:0}},{{scale:1,opacity:1,duration:0.45,ease:"power3.out"}},{r2(t)});'
                    f'tl.fromTo("#{cid} p",{{clipPath:"inset(0 100% 0 0)"}},{{clipPath:"inset(0 0% 0 0)",duration:{r2(min(2.4, d - 1))},ease:"none"}},{r2(t + 0.6)});')
+
+    def stat(self, s, t, d):
+        cid = self.id('stt')
+        self.clip(cid, t, d, f'<div class="stat"><b>{e(s["value"])}</b><small style="background:{self.US}">{e(s["label"])}</small></div>', 9)
+        self.tween(f'tl.fromTo("#{cid} .stat b",{{scale:2.2,opacity:0}},{{scale:1,opacity:1,duration:0.28,ease:"power4.in"}},{r2(t)});'
+                   f'tl.fromTo("#{cid} .stat small",{{clipPath:"inset(0 100% 0 0)"}},{{clipPath:"inset(0 0% 0 0)",duration:0.45,ease:"power3.out"}},{r2(t + 0.35)});')
+
+    def tally(self, s, t, d):
+        cid = self.id('tly')
+        cells = ''.join(f'<div class="tc{i}"><b>{e(v)}</b><span>{e(k)}</span></div>' for i, (k, v) in enumerate(s['cells']))
+        self.clip(cid, t, d, f'<div class="tally"><small style="color:{self.US}">{e(s.get("title", ""))}</small><div class="tcs">{cells}</div></div>', 14, 'paper')
+        for i in range(len(s['cells'])):
+            self.tween(f'tl.fromTo("#{cid} .tc{i}",{{y:60,opacity:0}},{{y:0,opacity:1,duration:0.35,ease:"back.out(2)"}},{r2(t + 0.3 + 0.35 * i)});')
+
+    def card(self, s, t, d):
+        cid = self.id('crd')
+        sub = f'<p>{e(s["sub"])}</p>' if s.get('sub') else ''
+        self.clip(cid, t, d, f'<div class="card"><small style="color:{self.US}">{e(s.get("small", ""))}</small><b>{e(s["text"])}</b>{sub}</div>',
+                  14 if s.get('paper') else 9, 'paper' if s.get('paper') else '')
+        self.tween(f'tl.fromTo("#{cid} .card",{{rotation:-3,y:90,opacity:0}},{{rotation:-1,y:0,opacity:1,duration:0.45,ease:"back.out(1.6)"}},{r2(t)});')
+
+    def quote(self, s, t, d):
+        cid = self.id('qt')
+        who = ' · '.join(x for x in (s.get('who'), s.get('role')) if x)
+        self.clip(cid, t, d, f'<div class="quote"><i style="color:{self.US}">“</i><b>{e(s["text"])}</b><small>{e(who)}</small></div>', 14, 'paper')
+        self.tween(f'tl.fromTo("#{cid} .quote b",{{clipPath:"inset(0 0 100% 0)"}},{{clipPath:"inset(0 0 0% 0)",duration:{r2(min(2.0, d * 0.5))},ease:"none"}},{r2(t + 0.3)});'
+                   f'tl.fromTo("#{cid} .quote i",{{scale:2,opacity:0}},{{scale:1,opacity:1,duration:0.3}},{r2(t)});')
+
+    def follow(self, s, t, d):
+        cid = self.id('fol')
+        inner = (f'<div class="follow"><b>JOIN US!</b><div class="fl"><span>NAME</span><i></i></div><div class="fl"><span>CLUB</span><i>{e(s["club"])}</i></div>'
+                 f'<div class="fl"><span>SINCE</span><i></i></div><div class="btn" style="background:{self.US}"><span class="b1">SUBSCRIBE</span><span class="b2">SUBSCRIBED ✓</span></div></div>')
+        self.clip(cid, t, d, inner, 10)
+        p = t + s.get('press_at', 1.6)
+        self.tween(f'tl.fromTo("#{cid} .follow",{{rotation:-8,scale:0.7,opacity:0}},{{rotation:-2,scale:1,opacity:1,duration:0.45,ease:"back.out(1.8)"}},{r2(t)});'
+                   f'tl.fromTo("#{cid} .btn",{{scale:1}},{{scale:0.9,duration:0.08,yoyo:true,repeat:1,immediateRender:false}},{r2(p)});'
+                   f'tl.fromTo("#{cid} .b1",{{opacity:1}},{{opacity:0,duration:0.05,immediateRender:false}},{r2(p + 0.1)});'
+                   f'tl.fromTo("#{cid} .b2",{{opacity:0}},{{opacity:1,duration:0.05}},{r2(p + 0.1)});')
 
     def verdict(self, s, t, d):
         cid = self.id('vd')
@@ -243,6 +292,8 @@ class Film:
                     self.agg_moves.append((b['t'] + b.get('agg_dt', 0.6), b['agg']))
             if b.get('agg_off'):
                 self.agg_window = (agg_on, b['t'])
+            for (part, at, dd) in b.get('subs', []):
+                self.clip(self.id('sub'), at, dd, f'<div class="sub">{e(part)}</div>', 20, 'subw')
             if b.get('vo'):
                 self.audio.append(f'<audio id="{self.id("vo")}" class="clip" src="assets/vo/{b["vo_file"]}" data-start="{r2(b["vo_t"])}" data-duration="{r2(b["vo_d"])}" data-volume="1.15"></audio>')
                 # subtitles in short pieces (two lines at most), each on screen for its share of the line
@@ -305,10 +356,27 @@ video.clip{{width:1920px;height:1080px}}
 .vl img,.vr img{{width:230px;height:230px;object-fit:contain;background:#fff;border-radius:50%;padding:10px}} .vl small,.vr small{{font:700 46px 'Cond';letter-spacing:10px}} .vl b,.vr b{{font:400 92px/1.05 'Head'}}
 .end{{position:absolute;left:0;top:190px;width:1920px;text-align:center;color:{P}}} .end img{{width:260px;height:260px}} .end small{{display:block;font:700 36px 'Cond';letter-spacing:10px;margin-top:20px}} .end b{{display:block;font:400 96px/1.1 'Head';margin:16px 0}} .end span{{font:700 32px 'Mono';opacity:.85}}
 .subw .sub{{position:absolute;left:50%;transform:translateX(-50%);max-width:1400px;top:948px;text-align:center;font:700 38px/1.25 'Cond';color:#fff;background:rgba(20,17,13,.82);padding:8px 22px}}
+.ini{{width:150px;height:150px;border-radius:50%;background:#fff;border:4px solid {INK};display:flex;align-items:center;justify-content:center;font:400 54px 'Ultra';color:{INK};font-style:normal}}
+.q small{{display:block;font:700 40px 'Cond';letter-spacing:10px;color:{P};margin-bottom:26px}}
+.lead small{{display:block;font:700 40px 'Cond';letter-spacing:6px;line-height:1.2;margin-top:-6px}}
+.tc{{top:300px;box-shadow:16px 16px 0 {INK}}} .tc b{{font-size:96px}}
+.lc .lrow{{padding:10px 0}} .lc .lrow b{{font-size:92px}} .lc .lrow span{{font-size:40px}} .lc .lh span{{text-align:left;font:700 40px 'Cond';letter-spacing:6px}}
+.stat{{position:absolute;left:0;top:250px;width:1920px;text-align:center}} .stat b{{display:block;font:400 330px/1 'Ultra';color:#fff;text-shadow:12px 12px 0 {INK}}}
+.stat small{{display:inline-block;margin-top:24px;padding:10px 34px;font:700 52px 'Cond';letter-spacing:6px;color:#fff;box-shadow:10px 10px 0 {INK}}}
+.tally{{position:absolute;left:160px;top:250px;width:1600px;color:{INK}}} .tally>small{{display:block;font:700 46px 'Cond';letter-spacing:10px;margin-bottom:40px}}
+.tcs{{display:flex;gap:24px}} .tcs div{{flex:1;border:6px solid {INK};background:#fff;padding:24px 0;text-align:center;box-shadow:10px 10px 0 {INK}}} .tcs b{{display:block;font:400 150px/1 'Ultra'}} .tcs span{{font:700 36px 'Cond';letter-spacing:5px}}
+.card{{position:absolute;left:300px;top:240px;width:1320px;background:{P};border:6px solid {INK};padding:46px 60px;color:{INK};box-shadow:18px 18px 0 {INK}}}
+.card small{{display:block;font:700 40px 'Cond';letter-spacing:8px}} .card b{{display:block;font:400 72px/1.12 'Head';margin-top:14px}} .card p{{font:700 38px/1.3 'Mono';margin:22px 0 0}}
+.paper .card{{box-shadow:none;border:none;background:transparent;left:220px;width:1480px}}
+.quote{{position:absolute;left:240px;top:170px;width:1440px;color:{INK}}} .quote i{{display:block;font:400 260px/0.7 'Ultra';font-style:normal}} .quote b{{display:block;font:400 74px/1.18 'Head'}} .quote small{{display:block;margin-top:34px;font:700 40px 'Cond';letter-spacing:6px}}
+.follow{{position:absolute;left:560px;top:150px;width:800px;background:#fff;border:6px solid {INK};padding:40px 50px;box-shadow:18px 18px 0 {INK};color:{INK}}}
+.follow b{{display:block;font:400 110px/1 'Ultra';margin-bottom:24px}} .fl{{display:flex;gap:20px;align-items:baseline;border-bottom:4px dashed {INK};padding:14px 0;font:700 40px 'Cond';letter-spacing:4px}} .fl i{{font:400 50px 'Head';font-style:normal}}
+.btn{{position:relative;margin-top:34px;height:96px;color:#fff;font:700 52px/96px 'Cond';letter-spacing:6px;text-align:center;box-shadow:8px 8px 0 {INK}}} .btn span{{position:absolute;left:0;right:0}} .b2{{opacity:0}}
 #flash{{position:absolute;left:0;top:0;width:1920px;height:1080px;background:#fff;opacity:0;z-index:30}}
 '''
-        bed = self.sb.get('bed', 0.28)
-        self.sound('bed', 0.2, max(1, D - 5), bed)
+        if not self.sb.get('silent'):
+            bed = self.sb.get('bed', 0.28)
+            self.sound('bed', 0.2, max(1, D - 5), bed)
         return (f'<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=1920, height=1080">'
                 f'<script src="assets/gsap.min.js"></script><style>{css}</style></head><body>\n'
                 f'<div id="root" data-composition-id="main" data-start="0" data-duration="{r2(D)}" data-width="1920" data-height="1080" data-fps="30" data-layout-allow-overlap data-layout-allow-overflow>\n'
