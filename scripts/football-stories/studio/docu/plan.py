@@ -241,6 +241,9 @@ class Adapter:
         elif t == 'quote':
             out.append({'kind': 'quote', 'text': v.get('text') or '', 'who': v.get('who') or '', 'role': v.get('role') or ''})
             self.cue(n, 0.2, 'paper')
+        elif t == 'press' and not (v.get('headline') or '').strip():
+            b = self.back(s)
+            out += [b] if b else []
         elif t == 'press':
             out.append({'kind': 'card', 'small': ' · '.join(x for x in ((v.get('outlet') or '').upper(), long_date(v.get('date')).upper()) if x),
                         'text': v.get('headline') or '', 'sub': v.get('standfirst') or '', 'paper': True})
@@ -288,8 +291,9 @@ class Adapter:
             out.append({'kind': 'end', 'title': title or self.club, 'line': 'YouTube · @FanLifeFootballStories'})
             self.cue(n, 0.2, 'end')
         else:   # an illustration, or a card whose claim is not a match: the owner's picture with its caption
-            cap = v.get('caption')
-            b = self.back(s, ('pull', 'push', 'panl', 'panr')[n % 4], **({'tag': {'small': '', 'big': cap}} if cap and len(cap) <= 28 else {}))
+            # A picture's caption describes it for the editor ("Supporter holding scarf high"); it is never printed —
+            # a name tag on screen is a claim, and only a cited scorer or minute earns one.
+            b = self.back(s, ('pull', 'push', 'panl', 'panr')[n % 4])
             out += [b] if b else []
         return [x for x in out if x]
 
