@@ -80,3 +80,19 @@ Key Figures: Luis Díaz, Danny Bright (North City Goalscorers). Joško Marin, Sa
             _, accepted = editorial.review_plan(root, {'editorial_request': {**request, 'revision': stale['plan']}},
                                                 editor, plan, {'drafts': []})
             self.assertIsNone(accepted)
+
+    def test_an_approved_story_survives_a_picture_the_library_changed(self):
+        editor = SimpleNamespace(ledger={}, script={'chapters': [{'title': 'The match'}]})
+        shot = lambda art: {'shots': [{'n': 0, 'chapter': 0, 'narration': 'The game begins.', 'voice_at': .2,
+                                       'start': 0, 'frames': 50, 'visual': {'type': 'illustration', 'art': art}}]}
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            _, board = editorial.review_plan(root, {'editorial_request': {'action': 'editorial_plan', 'order': ['0'], 'images': {}}},
+                                             editor, shot('beat:common/a'), {'drafts': []})
+            request = {'action': 'editorial_plan', 'order': ['0'], 'images': {}, 'approved': True, 'revision': board['plan']}
+            _, review = editorial.review_plan(root, {'editorial_request': request}, editor, shot('beat:common/b'), {'drafts': []})
+            self.assertIsNone(review)                         # same words, same order: the approval stands
+            words = shot('beat:common/b')
+            words['shots'][0]['narration'] = 'Different words.'
+            _, review = editorial.review_plan(root, {'editorial_request': request}, editor, words, {'drafts': []})
+            self.assertTrue(review['issues'])                 # a changed story is reviewed again

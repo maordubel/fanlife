@@ -175,6 +175,12 @@ def scene_board(ed, plan: dict) -> list[dict]:
     return rows
 
 
+def story_key(plan: dict) -> str:
+    """What the owner approves on the scene board: each scene, its narration and its kind, in order."""
+    return sha256_json([[str(x.get('editorial_id', x['n'])), x.get('narration') or '', x['visual']['type'], x.get('required_asset')]
+                        for x in plan['shots']])
+
+
 def review_plan(job: Path, brief: dict, ed, plan: dict, review: dict) -> tuple[dict, dict | None]:
     from . import cinema, media_assets
     request = brief.get('editorial_request') or {}
@@ -184,6 +190,12 @@ def review_plan(job: Path, brief: dict, ed, plan: dict, review: dict) -> tuple[d
     saved = read_json(path) if path.exists() else {}
     for shot in plan['shots']:
         shot['editorial_id'] = str(shot['n'])
+    if (request.get('action') == 'editorial_plan' and request.get('approved') and not request.get('images')
+            and saved.get('plan') and saved.get('base') != base and request.get('revision') == sha256_json(saved['plan'])
+            and story_key(saved['plan']) == story_key(plan) and request['order'] == [s['editorial_id'] for s in plan['shots']]):
+        # The owner approved this exact story — same scenes, same words, same order. Only a picture the library could not
+        # fetch on this run (its download has a time budget) or a frame of voice timing moved; the approval stands.
+        return plan, None
     if request.get('action') != 'editorial_plan' or saved.get('base') != base:
         saved = {'base': base, 'plan': plan}
     current = copy.deepcopy(saved['plan'])
