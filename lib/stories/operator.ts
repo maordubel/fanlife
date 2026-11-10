@@ -13,7 +13,7 @@ import {createCasefile,createClassified,createFilm,createPromo,createShort,creat
  * through the same create* functions (the same archive checks), recorded as "Studio operator".
  */
 export const OPERATOR='Studio operator'
-export const OPERATOR_ACTIONS=new Set(['pause','resume','cancel','retry','retry_editorial','approve_script','choose_script','editorial_script','editorial_rewrite','editorial_combine','editorial_plan','editorial_back','upload_started','upload_done','upload_uncertain','upload_reset','social_schedule','social_cancel'])
+export const OPERATOR_ACTIONS=new Set(['pause','resume','cancel','retry','retry_editorial','approve_script','choose_script','editorial_script','editorial_rewrite','editorial_combine','editorial_plan','editorial_back','upload_started','upload_done','upload_uncertain','upload_reset','social_schedule','social_cancel','reel_added'])
 const KINDS=['film','classified','vlog','promo','short','casefile'] as const
 
 export async function operatorCreate(b:{kind?:unknown;brief?:unknown;key?:unknown}){

@@ -19,8 +19,9 @@ jobs:
       FAN_LIFE_URL: ${{ vars.FAN_LIFE_RESEARCH_URL }}
       CRON_SECRET: ${{ secrets.FAN_LIFE_CRON_SECRET }}
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-      # the business Facebook Page + its Instagram (docs/fanlife/53-meta-publishing.md); off unless META_AUTOPUBLISH = 1
-      META_AUTOPUBLISH: ${{ vars.META_AUTOPUBLISH }}
+      # the business Facebook Page + its Instagram (docs/fanlife/53-meta-publishing.md); on when META_AUTOPUBLISH = 1, or when the
+      # films switch STORIES_SOCIAL_AUTOPUBLISH = 1 is set (owner, 10.11.2026: "marketing is not publishing by itself — fix it")
+      META_AUTOPUBLISH: ${{ vars.META_AUTOPUBLISH || vars.STORIES_SOCIAL_AUTOPUBLISH }}
       META_PAGE_ID: ${{ vars.META_PAGE_ID }}
       META_IG_USER_ID: ${{ vars.META_IG_USER_ID }}
       META_APPS: ${{ vars.META_APPS }}

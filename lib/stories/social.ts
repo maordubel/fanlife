@@ -77,7 +77,7 @@ export function filmTitle(job:Job):string{
 /** The files a post can carry, in the order they are offered: every Short (9:16), then every thumbnail. */
 export function mediaChoices(job:Job):{media:SocialMedia;label:string;hook:string|null}[]{
  const a=job.artefacts
- const shorts=(a?.shorts??[]).map((s,i)=>({media:{kind:'short' as const,index:i},label:`Short ${i+1} · ${Math.round(s.seconds)} s`,hook:s.hook||null}))
+ const shorts=(a?.shorts??[]).map((s,i)=>({media:{kind:'short' as const,index:i},label:`${s.title==='Your Reel'?'Your Reel':`Short ${i+1}`} · ${Math.round(s.seconds)} s`,hook:s.hook||null}))
  const thumbs=(a?.thumbnails??[]).map((_,i)=>({media:{kind:'thumbnail' as const,index:i},label:`Thumbnail ${i+1}`,hook:null}))
  return [...shorts,...thumbs]
 }

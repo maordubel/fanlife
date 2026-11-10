@@ -52,6 +52,9 @@ export type Brief={
 }
 export const ART_NAME=/^[a-z0-9][a-z0-9._-]{0,60}\.(png|jpe?g|webp)$/
 /** The files an animated Short is edited from, as Google Flow made them (studio/flowkit.py names the slots). */
+/** A Reel or Short the owner made outside the pipeline, added to a finished film for the Social panel (10.11.2026). */
+export const REEL_NAME=/^reel-[a-z0-9][a-z0-9-]{0,40}\.mp4$/
+export const REEL_MAX_BYTES=45*1024*1024
 export const FLOW_NAME=/^(clip-\d{1,2}\.mp4|still-\d{1,2}\.(jpg|png|webp))$/
 const DAY=/^\d{4}-\d{2}-\d{2}$/
 /** One line of owner notes: `quote | speaker | role | the exact words | https://…` or `press | outlet | YYYY-MM-DD | headline | https://…`. */
@@ -149,7 +152,7 @@ export function newJob(id:string,brief:Brief,palette:Palette,actor:string,idempo
 const LOG_KEEP=120
 const pushLog=(j:Job,text:string,at:string)=>{j.log=[...j.log,{at,text:text.slice(0,400)}].slice(-LOG_KEEP)}
 
-export type OwnerAction=ReviewAction|{action:'pause'|'resume'|'cancel'|'retry'|'retry_editorial'|'approve_script'}|{action:'choose_script';option:number}|{action:'upload_started'}|{action:'upload_done';videoId:string;visibility:Privacy;publishAt?:string|null}|{action:'upload_uncertain';note:string}|{action:'upload_reset'}|{action:'art_added';files:ArtFile[]}|{action:'social_schedule';posts:PostInput[]}|{action:'social_cancel';id:string}|{action:'flow_added';files:string[]}|{action:'flow_ready'}
+export type OwnerAction=ReviewAction|{action:'pause'|'resume'|'cancel'|'retry'|'retry_editorial'|'approve_script'}|{action:'choose_script';option:number}|{action:'upload_started'}|{action:'upload_done';videoId:string;visibility:Privacy;publishAt?:string|null}|{action:'upload_uncertain';note:string}|{action:'upload_reset'}|{action:'art_added';files:ArtFile[]}|{action:'social_schedule';posts:PostInput[]}|{action:'social_cancel';id:string}|{action:'flow_added';files:string[]}|{action:'flow_ready'}|{action:'reel_added';name:string;bytes:number;seconds:number;hook:string}
 export const VIDEO_ID=/^[A-Za-z0-9_-]{11}$/
 
 /** An owner's action → the next job, or a StoryError saying why it is not allowed now. */
@@ -256,6 +259,20 @@ export function ownerAct(job:Job,a:OwnerAction,actor:string,now=new Date()):Job{
    if(keep.size>30)throw new StoryError('ART','At most 30 pictures for one film.')
    j.brief={...j.brief,art:[...keep.values()]};pushLog(j,`${files.length} picture(s) added by ${actor}`,at)
    if(reviewingScenes)queueReview({action:'editorial_refresh'})
+   break}
+  case 'reel_added':{
+   // the owner's own Reel/Short for a finished film: it joins artefacts.shorts, so the Social panel can schedule it
+   const art=j.artefacts
+   if(!art?.master||!['ready','needs_review'].includes(j.state)){no('Add your own Reel once the film is finished.');break}
+   const name=String(a.name??''),bytes=Number(a.bytes),seconds=Number(a.seconds),hook=String(a.hook??'').trim().slice(0,120)
+   if(!REEL_NAME.test(name))throw new StoryError('REEL','Invalid Reel file name.')
+   if(!Number.isInteger(bytes)||bytes<1||bytes>REEL_MAX_BYTES)throw new StoryError('REEL','A Reel can be at most 45 MB.')
+   if(!Number.isFinite(seconds)||seconds<3||seconds>180)throw new StoryError('REEL','A Reel must be between 3 seconds and 3 minutes long.')
+   const shorts=[...(art.shorts??[])],path=mediaPath(j.id,name)
+   if(shorts.some(x=>x.path===path))throw new StoryError('REEL','This Reel is already part of the film.',409)
+   if(shorts.length>=12)throw new StoryError('REEL','At most 12 Shorts and Reels for one film.')
+   shorts.push({path,bytes,seconds:Math.round(seconds*10)/10,hook,title:'Your Reel'})
+   j.artefacts={...art,shorts};pushLog(j,`Reel added by ${actor} (${Math.round(seconds)} s)`,at)
    break}
   case 'upload_reset':if(j.upload.state==='done')no('A confirmed upload cannot be reset.');j.upload={state:'none',videoId:null,visibility:null,publishAt:null,at,by:actor,note:'Reset after checking YouTube Studio'};pushLog(j,`Upload state reset by ${actor} after checking YouTube Studio`,at);break
  }

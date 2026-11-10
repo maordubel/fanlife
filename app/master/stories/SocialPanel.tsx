@@ -1,6 +1,6 @@
 'use client'
 import {useEffect,useMemo,useState} from 'react'
-import type {Job} from '@/lib/stories/jobs'
+import {REEL_MAX_BYTES,type Job} from '@/lib/stories/jobs'
 import {LIMITS,PLATFORMS,PLATFORM_NAME,captionLength,compose,filmLink,mediaAllowed,mediaChoices,textProblem,type Platform,type SocialLights,type SocialMedia,type SocialPost} from '@/lib/stories/social'
 import css from './social.module.css'
 
@@ -50,10 +50,13 @@ function athensToIso(local:string){
  const off=(parts.find(p=>p.type==='timeZoneName')?.value||'GMT+02:00').replace('GMT','')||'+00:00'
  return `${d}T${t}:00${off}`
 }
+const j0=(j:Job)=>(j.artefacts?.shorts??[]).length
 const mkey=(m:SocialMedia|null)=>m?`${m.kind}:${m.index}`:'none'
 const unkey=(k:string):SocialMedia|null=>{if(k==='none')return null;const [kind,i]=k.split(':');return {kind:kind as SocialMedia['kind'],index:Number(i)}}
 
-export function SocialPanel({job}:{job:Job}){
+export function SocialPanel({job:start}:{job:Job}){
+ const [job,setJob]=useState<Job>(start)
+ useEffect(()=>{setJob(start)},[start])
  const [posts,setPosts]=useState<SocialPost[]>(job.social?.posts??[])
  const [lights,setLights]=useState<SocialLights|null>(null),[fresh,setFresh]=useState(false)
  useEffect(()=>{setPosts(job.social?.posts??[])},[job.updatedAt,job.social])
@@ -86,7 +89,8 @@ export function SocialPanel({job}:{job:Job}){
    <button type="button" className={`${css.btn} ${css.red} min-h-tap`} disabled={allBusy} onClick={()=>void scheduleAll()}>{allBusy?'Scheduling…':'Schedule all four'}</button>
    {allMsg&&<p className={css.msg} role="status">{allMsg}</p>}
   </div>
-  <div className={css.grid}>{PLATFORMS.map(p=><PlatformCard key={p} job={job} platform={p} lights={lights} fresh={fresh} draft={drafts[p]} setDraft={d=>setDrafts(x=>({...x,[p]:d}))} schedule={schedule}/>)}</div>
+  <OwnReel job={job} added={j=>setJob(j)}/>
+  <div className={css.grid}>{PLATFORMS.map(p=><PlatformCard key={`${p}:${j0(job)}`} job={job} platform={p} lights={lights} fresh={fresh} draft={drafts[p]} setDraft={d=>setDrafts(x=>({...x,[p]:d}))} schedule={schedule}/>)}</div>
   {sorted.length?<><h4 className={css.h4}>Planned and sent</h4><ul className={css.posts}>{sorted.map(x=><PostRow key={x.id} post={x} cancel={cancel}/>)}</ul></>:null}
  </section>
 }
@@ -149,4 +153,34 @@ function PostRow({post,cancel}:{post:SocialPost;cancel:(id:string)=>Promise<void
   </div>
   {err&&<p className={css.problem} role="alert">{err}</p>}
  </li>
+}
+
+/** A vertical MP4 the owner made himself (a Reel, an animated Short) joins this film's files, so the cards below can
+ *  publish it on Instagram and Facebook like the pipeline's own Shorts. */
+function OwnReel({job,added}:{job:Job;added:(j:Job)=>void}){
+ const [file,setFile]=useState<File|null>(null),[hook,setHook]=useState(''),[busy,setBusy]=useState(false),[msg,setMsg]=useState('')
+ async function add(){
+  setMsg('');if(!file){setMsg('Choose the MP4 first.');return}
+  if(!/\.mp4$/i.test(file.name)||file.size<1||file.size>REEL_MAX_BYTES){setMsg('Use an MP4 of at most 45 MB.');return}
+  setBusy(true)
+  try{
+   const seconds=await new Promise<number>((ok,bad)=>{const v=document.createElement('video');v.preload='metadata';v.onloadedmetadata=()=>{const d=v.duration;URL.revokeObjectURL(v.src);ok(d)};v.onerror=()=>bad(new Error('This file does not play as a video.'));v.src=URL.createObjectURL(file)})
+   const stem=file.name.replace(/\.[^.]+$/,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,24)||'reel'
+   const name=`reel-${stem}-${Date.now().toString(36)}.mp4`
+   setMsg('Uploading…')
+   const {url}=await call(`/api/master/stories/${job.id}/reel`,{method:'POST',body:JSON.stringify({name,bytes:file.size})})
+   const put=await fetch(url,{method:'PUT',body:file,headers:{'Content-Type':'video/mp4','x-upsert':'true'}})
+   if(!put.ok)throw new Error('The Reel did not upload. Try again.')
+   const b=await call(`/api/master/stories/${job.id}`,{method:'POST',body:JSON.stringify({action:'reel_added',name,bytes:file.size,seconds,hook})})
+   added(b.job);setFile(null);setHook('');setMsg('Added. Choose “Your Reel” as the file on Instagram and Facebook below.')
+  }catch(e){setMsg(e instanceof Error?e.message:'Could not add the Reel.')}finally{setBusy(false)}
+ }
+ return <details className={css.setup}><summary className="min-h-tap">Add your own Reel (MP4, 9:16, up to 45 MB)</summary>
+  <div className={css.all}>
+   <label className={css.lab}>Video<input type="file" accept="video/mp4" className={css.input} onChange={e=>setFile(e.target.files?.[0]??null)}/></label>
+   <label className={css.lab}>Hook (one line, optional)<input type="text" maxLength={120} value={hook} onChange={e=>setHook(e.target.value)} className={css.input}/></label>
+   <button type="button" className={`${css.btn} ${css.red} min-h-tap`} disabled={busy||!file} onClick={()=>void add()}>{busy?'Adding…':'Add the Reel'}</button>
+   {msg&&<p className={css.msg} role="status">{msg}</p>}
+  </div>
+ </details>
 }

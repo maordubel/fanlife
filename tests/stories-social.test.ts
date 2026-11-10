@@ -156,3 +156,27 @@ describe('Social — the publishing script',()=>{
   expect(y).not.toMatch(/echo .*secrets\./)
  })
 })
+
+describe('Social — the owner adds his own Reel to a finished film (10.11.2026)',()=>{
+ const id='0f1e2d3c-aaaa-bbbb-cccc-000000000001'
+ it('joins the film\'s Shorts and can be scheduled on Instagram and Facebook',()=>{
+  const j=ownerAct(film(),{action:'reel_added',name:'reel-hta-zito-mh1.mp4',bytes:4_000_000,seconds:29.4,hook:'0–1 down. Then Zito.'},'owner',now)
+  const r=j.artefacts!.shorts!.at(-1)!
+  expect(r).toMatchObject({path:`jobs/${id}/reel-hta-zito-mh1.mp4`,seconds:29.4,hook:'0–1 down. Then Zito.',title:'Your Reel'})
+  const s=scheduleSocial(j,[{platform:'instagram',when:at(60),caption:'x #FootballStories',comment:'',media:{kind:'short',index:1}}],'owner',now)
+  expect(s.social!.posts[0]!.media).toEqual({kind:'short',index:1})
+ })
+ it('refuses a bad name, a big file, a wrong length, a duplicate, an unfinished film',()=>{
+  const add=(j:Job,over:object={})=>ownerAct(j,{action:'reel_added',name:'reel-a.mp4',bytes:10,seconds:20,hook:'',...over} as never,'owner',now)
+  expect(()=>add(film(),{name:'../x.mp4'})).toThrow(StoryError)
+  expect(()=>add(film(),{name:'short-1.mp4'})).toThrow(StoryError)
+  expect(()=>add(film(),{bytes:46*1024*1024})).toThrow(StoryError)
+  expect(()=>add(film(),{seconds:1})).toThrow(StoryError)
+  expect(()=>add(add(film()))).toThrow(/already/)
+  expect(()=>add(film({state:'running'}))).toThrow(/finished/)
+ })
+ it('the plan\'s Facebook/Instagram switch also follows the films switch',()=>{
+  const wf=readFileSync('.github/workflows/marketing-telegram.yml','utf8')
+  expect(wf).toContain('META_AUTOPUBLISH: ${{ vars.META_AUTOPUBLISH || vars.STORIES_SOCIAL_AUTOPUBLISH }}')
+ })
+})
