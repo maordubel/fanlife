@@ -182,7 +182,7 @@ class Film:
     def stamp(self, s, t, d):
         cid = self.id('st')
         col = self.US if s.get('side', 'us') == 'us' else self.THEM
-        self.clip(cid, t, d, f'<span>{e(s["text"])}</span>', s.get('z', 7), 'stamp', f'left:{s.get("x", 200)}px;top:{s.get("y", 560)}px;color:{col};border-color:{col}')
+        self.clip(cid, t, d, f'<span>{e(s["text"])}</span>', s.get('z', 7), 'stamp', f'left:{s.get("x", 200)}px;top:{s.get("y", 560)}px;color:{col};border-color:{col};font-size:{s.get("size", 230)}px;white-space:nowrap')
         rot = s.get('rot', -8)
         self.tween(f'tl.fromTo("#{cid}",{{scale:2.4,opacity:0,rotation:{rot * 1.7}}},{{scale:1,opacity:1,rotation:{rot},duration:0.25,ease:"power4.in"}},{r2(t)});')
 

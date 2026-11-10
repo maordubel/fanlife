@@ -25,11 +25,11 @@ beat("It means losing money. Losing your best players. Losing your name.",
      word('SPORTING|DEATH', bg='them', size=230, glitch=True), sound=[('impact', 0.0, 2.0, 0.9)], pad=0.6)
 beat("For a small club, it is a tragedy.", img('badge27.png', 'pull', veil=0, pos='center', fade=True, recon=False, fit='contain'), pad=0.4)
 beat("For a historic empire, it is the end of the world.",
-     img('bloomfield.jpg', 'slam', veil=0.35), dict(kind='stamp', text='EMPIRE', side='us', x=560, y=380, dt=0.9),
+     img('bloomfield.jpg', 'slam', veil=0.35), dict(kind='stamp', text='EMPIRE', side='us', x=520, y=380, dt=0.9, size=200),
      sound=[('stamp', 0.9, 1.0, 0.7)])
 beat(None, word('16 MAY 2005|BLOOMFIELD STADIUM', bg='ink', size=120, glitch=True), hold=2.0, sound=[('glitch', 0.0, 1.0, 0.6)])
 beat("This is the story of matchday thirty-one, the two thousand and four, two thousand and five season.",
-     img('bloomfield.jpg', 'pull', veil=0.45), dict(kind='stamp', text='MATCHDAY 31', side='us', x=520, y=420, dt=1.0))
+     img('bloomfield.jpg', 'pull', veil=0.45), dict(kind='stamp', text='MATCHDAY 31', side='us', x=380, y=400, dt=1.0, size=150))
 beat("The night one of Israel's biggest clubs stood on the edge of the abyss, and the ninety minutes it took to pull it back.",
      img('tunnel.jpg', 'push', veil=0.2))
 beat(None, word('THE SURVIVAL|GAME', bg='us', size=200), hold=2.6, sound=[('impact2', 0.0, 2.2, 0.9), ('riser', -1.6, 1.6, 0.5)])
@@ -42,7 +42,7 @@ beat("To understand the fear, you have to understand the club. By two thousand a
 beat("Eleven State Cups. And in nineteen sixty-seven, the Asian Champion Club Tournament.",
      dict(kind='tally', title='HAPOEL TEL AVIV · HONOURS BEFORE 2005', cells=[('LEAGUE TITLES', 12), ('STATE CUPS', 11), ('ASIAN CUP', 1)]))
 beat("In two thousand, they won the double.", img('bloomfield.jpg', 'pull', veil=0.4),
-     dict(kind='stamp', text='DOUBLE', side='us', x=620, y=400, dt=0.8), sound=[('stamp', 0.8, 1.0, 0.7)])
+     dict(kind='stamp', text='DOUBLE', side='us', x=560, y=400, dt=0.8, size=200), sound=[('stamp', 0.8, 1.0, 0.7)])
 beat("And just three years before this night, they went on a run through Europe that nobody in Israel has forgotten.",
      dict(kind='ledger', title='UEFA CUP 2001/02', us='HAPOEL', them='OPPONENT', compact=True,
           rows=[['CHELSEA', 3, 1], ['LOKOMOTIV MOSCOW', 3, 1], ['PARMA', 2, 1], ['AC MILAN · QUARTER-FINAL', 1, 2]],
@@ -66,7 +66,7 @@ beat("The strangest part? That season they beat Maccabi Tel Aviv twice. Three, n
      dict(kind='ledger', title='THE DERBIES · 2004/05', us='HAPOEL', them='MACCABI', compact=True,
           rows=[['19 FEBRUARY 2005', 3, 0], ['19 MARCH 2005', 1, 0]], row_at=[2.6, 3.8]))
 beat("They could beat their biggest rival. They could not stop falling.",
-     img('bloomfield.jpg', 'panr', veil=0.6), dict(kind='stamp', text='DANGER', side='them', x=1100, y=620, rot=6, dt=1.6),
+     img('bloomfield.jpg', 'panr', veil=0.6), dict(kind='stamp', text='DANGER', side='them', x=1020, y=600, rot=6, dt=1.6, size=180),
      sound=[('stamp', 1.6, 1.0, 0.7)])
 
 # ── THE STAKES ──
@@ -83,7 +83,7 @@ beat("To stop the bleeding, Hapoel brought in this man.",
      img('shiye.jpg', 'pull', veil=0.1, pos='center 30%', tag=tag('SHIYE FEIGENBAUM', 'THE COACH')))
 beat("Yehoshua Feigenbaum. Shiye. The club's all-time record goalscorer, called back to save it.",
      img('shiye.jpg', 'push', veil=0.55, pos='center 30%'),
-     dict(kind='lead', text='HAPOEL’S RECORD GOALSCORER', sub='NOW IN THE DUGOUT', dt=0.8))
+     dict(kind='lead', text='RECORD GOALSCORER', sub='HAPOEL TEL AVIV · NOW IN THE DUGOUT', dt=0.8))
 beat("If the empire fell on his watch, that would stay with his name for ever.",
      img('shiye.jpg', 'panl', veil=0.35, pos='center 25%'))
 
@@ -152,7 +152,7 @@ beat("On one side, the relief of Zito Ogbonna and Hapoel Tel Aviv. On the other,
 beat("Five days later they lost three, two at Maccabi Haifa. On the last day of the season they beat Maccabi Petah Tikva, one, nil. Hapoel Tel Aviv stayed up.",
      dict(kind='ledger', title='THE LAST TWO MATCHDAYS', us='HAPOEL', them='OPP.', compact=True,
           rows=[['21 MAY · AT MACCABI HAIFA', 2, 3], ['27 MAY · MACCABI PETAH TIKVA', 1, 0]], row_at=[1.0, 4.4]),
-     dict(kind='stamp', text='STAYED UP', side='us', x=560, y=640, dt=7.4, z=16), sound=[('stamp', 7.4, 1.0, 0.8)], pad=1.6)
+     dict(kind='stamp', text='STAYED UP', side='us', x=480, y=560, dt=7.4, z=16, size=160), sound=[('stamp', 7.4, 1.0, 0.8)], pad=1.6)
 beat("Clubs celebrate titles with open-top buses and parades.",
      dict(kind='lights', src='bloomfield.jpg', towers=[(161, 88), (1350, 86)], off_at=[3.6, 4.4]))
 beat("But sometimes, clawing your way out of the mud just to survive means a whole lot more.",
