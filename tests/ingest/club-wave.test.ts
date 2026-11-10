@@ -1,7 +1,7 @@
 import {describe,it,expect} from 'vitest'
 import {parseMatch,parseLineups,teamsIn,matchesUrl,lineupUrl} from '@/scripts/ingest/clubs/uefa'
 import {corroborates} from '@/scripts/ingest/clubs/corroborate'
-import {toWaveFact,buildWave,mergeAutoWave} from '@/scripts/ingest/clubs/wave'
+import {toWaveFact,buildWave,mergeAutoWave,pickToRead,factId} from '@/scripts/ingest/clubs/wave'
 // Shapes copied from live match.uefa.com/v5 responses (2026-10-06).
 const raw={id:'2036196',homeTeam:{id:'50057',internationalName:'Olympiacos',countryCode:'GRE'},awayTeam:{id:'1',internationalName:'Other FC',countryCode:'ENG'},competition:{id:'14',metaData:{name:'UEFA Europa League'}},kickOffTime:{date:'2024-02-15',dateTime:'2024-02-15T19:00:00Z'},score:{regular:{home:2,away:1},total:{home:2,away:1}},stadium:{name:'Karaiskakis'},playerEvents:{scorers:[{goalType:'SCORED',player:{internationalName:'A Scorer'},teamId:'50057',time:{minute:10,second:3}},{goalType:'OWN_GOAL',player:{internationalName:'B Own'},teamId:'1',time:{minute:50}},{goalType:'SCORED',player:{internationalName:'C Visitor'},teamId:'1',time:{minute:70}}]}}
 const side=(n:number,p:string)=>({field:Array.from({length:n},(_,i)=>({player:{internationalName:`${p}${i}`}})),bench:[{player:{internationalName:`${p}-bench`}}]})
@@ -52,5 +52,26 @@ describe('wave building',()=>{
   // a fresh read that lost its approval never replaces an approved one
   const worse={...fresh,matches:fresh.matches.map(f=>({...f,status:'review' as const}))}
   expect(mergeAutoWave(prev,worse).matches.find(f=>f.value.on==='2024-02-15')!.status).toBe('approved')
+ })
+ it('a run reads the newest, then backfills what the wave lacks, then re-reads held ties for squad details — never one twice (10.11.2026)',()=>{
+  const day=(i:number)=>({...m,on:`2025-0${1+Math.floor(i/28)}-${String(1+i%28).padStart(2,'0')}`})
+  const listed=Array.from({length:40},(_,i)=>day(39-i))// newest first, as UEFA lists them
+  const held=buildWave(listed.slice(0,10).map(x=>({m:x,second:null})),['Olympiacos'],'olympiacos','2026-11-01').matches
+  const pick=pickToRead(listed,held,{max:5,backfill:8,refresh:3})
+  expect(pick.slice(0,5)).toEqual(listed.slice(0,5))
+  expect(pick.slice(5,13).every(x=>!held.some(h=>h.id===factId(x)))).toBe(true)// backfill: only matches the wave does not hold
+  expect(pick.slice(13).every(x=>held.some(h=>h.id===factId(x)))).toBe(true)// refresh: held, eleven, no squad yet
+  expect(new Set(pick.map(factId)).size).toBe(pick.length)
+  expect(pickToRead(listed,held,{max:80,backfill:0,refresh:0})).toHaveLength(40)// the old behaviour is --max alone
+ })
+ it('the squad details UEFA states ride on the wave, and a later read that lost them keeps the old ones',()=>{
+  const sheet={homeTeam:{field:Array.from({length:11},(_,i)=>({jerseyNumber:i+1,player:{internationalName:`h${i}`,nationalFieldPosition:i===0?'GOALKEEPER':'DEFENDER',birthDate:'1999-03-04',height:181,translations:{countryName:{EN:'Exampleland'}}}})),bench:[]},awayTeam:side(11,'a')}
+  const lu=parseLineups(sheet)!;expect(lu.homeSquad![0]).toEqual({name:'h0',pos:'GK',born:'1999-03-04',nat:'Exampleland',shirt:1,height:181})
+  expect(lu.awaySquad![0]).toEqual({name:'a0',pos:null,born:null,nat:null,shirt:null,height:null})// nothing stated, nothing written
+  const withSquad=buildWave([{m:{...m,lineup:lu},second:null}],['Olympiacos'],'olympiacos','2026-11-10')
+  expect((withSquad.matches[0]!.value as {squad?:unknown[]}).squad).toHaveLength(11)
+  const plain=buildWave([{m:{...m,lineup:parseLineups({homeTeam:side(11,'h'),awayTeam:side(11,'a')})},second:null}],['Olympiacos'],'olympiacos','2026-11-11')
+  const lost={...plain,matches:plain.matches.map(f=>({...f,value:{...f.value,squad:[]}}))}
+  expect((mergeAutoWave(withSquad,lost).matches[0]!.value as {squad?:unknown[]}).squad).toHaveLength(11)
  })
 })

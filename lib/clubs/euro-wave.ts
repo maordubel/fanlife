@@ -25,6 +25,7 @@ import stPauliLeague from '@/club-packs/st-pauli/wave-league-lineups-2026-10-10.
 import paoSheets from '@/club-packs/panathinaikos/wave-pao-lineups-2026-10-12.json'
 // 12.10.2026 — St. Pauli plays no UEFA football: its Blind Cow comes from the DFB squad registrations (scripts/club-research/build-dfb-mysteries-2026-10-12.py)
 import stPauliMys from '@/club-packs/st-pauli/wave-mysteries-dfb-2026-10-12.json'
+// ↓ promoted wave-auto imports (scripts/clubs/promote.ts)
 
 type Raw=Record<string,unknown>
 const arr=(v:unknown):Raw[]=>Array.isArray(v)?v as Raw[]:[]

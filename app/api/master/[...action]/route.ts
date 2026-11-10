@@ -29,6 +29,8 @@ import {launchView} from '@/lib/master/launch'
 import {buildDeskPack,writeDeskPack} from '@/lib/master/deskPack'
 import {invalidateClub,hasStaticPack} from '@/lib/clubs/resolver'
 import {legendsAdminPost,legendsOverview,legendsPlayers} from '@/lib/legends/admin'
+import {researchDesk} from '@/lib/research/desk'
+import {deskDecide,deskExport,deskPromotion} from '@/lib/research/desk-actions'
 export const dynamic='force-dynamic'
 export const maxDuration=60
 const json=(data:unknown,status=200)=>NextResponse.json(data,{status,headers:{'Cache-Control':'no-store'}})
@@ -40,12 +42,16 @@ export async function GET(r:NextRequest,{params}:{params:{action:string[]}}){try
  // the scheduler runs the whole autopilot: collect → stage → bring in (unreviewed) → fetch planned pages → process jobs.
  // The GitHub workflow sends CRON_SECRET; the owner may also run it from a signed-in browser.
  if(a==='cron'){const owner=adminFromRequest(r);/* a signed-in browser may start the run only from this site: a link on another page must not (cookies ride along on cross-site GETs) */if(owner&&!cronAuthorized(r)&&r.headers.get('sec-fetch-site')==='cross-site')return json({error:'Start this from the control room.'},403);if(!cronAuthorized(r)&&!owner)return json({error:'Invalid scheduler authorization'},401);const report=await runPipeline();/* the audit line is a record of the run, not the run: a busy control room must not turn a finished pass into an error */let recorded:string|null=null;try{await recordPipeline(report,owner?actorOf(owner):{actor:AUTOMATION_ACTOR,role:'scheduler'})}catch(e){recorded=e instanceof Error?e.message:'not recorded'};return json(recorded?{...report,auditNotRecorded:recorded}:report)}
+ // the opening runner reads the clubs the owner opened on the research desk, with their decisions (handoff: admin ⇄ runner, 10.11.2026)
+ if(a==='research/desk-export'){if(!cronAuthorized(r)&&!adminFromRequest(r))return json({error:'Invalid scheduler authorization'},401);return json(await deskExport())}
  // the archive runner pins the control room's source profiles before it collects (handoff: admin ⇄ runner)
  if(a==='research/profiles-export'){if(!cronAuthorized(r)&&!adminFromRequest(r))return json({error:'Invalid scheduler authorization'},401);return json(await exportOverlays())}
  if(!adminFromRequest(r))return unauthorized()
  if(a==='search')return json(await deskSearch(q.get('q')||'',q.get('club')||null))
  if(a==='legends/players')return json(await legendsPlayers(slug(q.get('club')),(q.get('q')||'').slice(0,60)))
  if(a==='legends/overview')return json(await legendsOverview())
+ // the research desk (10.11.2026): the line of new clubs, what each yes opens, and the next click for every club
+ if(a==='research/desk'){const st=await readState();return json(await researchDesk(st,await allSummaries(st)))}
  if(a==='pipeline/runs')return json(await lastPipelineRuns(10))
  if(a==='goals/status')return json(await goalsStatus())
  if(a==='archive/profile'){const p=await loadClubProfile(slug(q.get('club')));return p?json(p):json({error:'No research profile for this club.'},404)}
@@ -68,12 +74,17 @@ export async function GET(r:NextRequest,{params}:{params:{action:string[]}}){try
  if(a==='life-display')return json((await readState()).lifeDisplay||emptyDisplay())
  if(a==='export')return new NextResponse(JSON.stringify(await readState(),null,2),{headers:{'Content-Type':'application/json','Content-Disposition':'attachment; filename="fan-life-control.json"','Cache-Control':'no-store'}})
  return json({error:'Not found'},404)}catch(e){const m=e instanceof Error?e.message:'Operation failed';/* a storage refusal says which credentials are configured and which one answered — booleans only, never a value */return json(/blob/i.test(m)?{error:m,storage:blobAuthReport()}:{error:m},400)}}
-export async function POST(r:NextRequest,{params}:{params:{action:string[]}}){try{const who=adminFromRequest(r);if(!who)return unauthorized();sameOrigin(r);const by=actorOf(who),a=params.action.join('/');if(a==='upstream/check')return json(await checkUpstream(by));const raw=await r.text();if(raw.length>250000)throw new Error('Request too large.');const b=raw?JSON.parse(raw):{}
+export async function POST(r:NextRequest,{params}:{params:{action:string[]}}){try{
+// the opening runner's report (scheduler secret only — never a browser cookie): running / merged / failed for one club
+if(params.action.join('/')==='research/desk/promotion'){if(!cronAuthorized(r))return json({error:'Invalid scheduler authorization'},401);const raw=await r.text();if(raw.length>5000)throw new Error('Request too large.');return json(await deskPromotion(raw?JSON.parse(raw):{}))}
+const who=adminFromRequest(r);if(!who)return unauthorized();sameOrigin(r);const by=actorOf(who),a=params.action.join('/');if(a==='upstream/check')return json(await checkUpstream(by));const raw=await r.text();if(raw.length>250000)throw new Error('Request too large.');const b=raw?JSON.parse(raw):{}
 // F15: run the job the caller queued (by id); without an id, the first runnable job (the scheduler's behaviour)
 if(a==='goals'){const out=await goalsAction(b,by.actor);await mutate(st=>{audit(st,'goals.'+String(b.op),String(b.club||b.id||'-'),JSON.stringify(out).slice(0,200),by)});return json(out,out.ok?200:400)}
 // owner's recovery decision while control data is still only in Blob (reliability plan P0): ask Blob again, or retire it on purpose
 if(a==='storage/retry-blob'){retryBlobNow();return json({ok:true})}
 if(a==='storage/retire-blob'){if(b.confirm!=='RETIRE')throw new Error('Type RETIRE to confirm.');await retireBlob(by.actor||'owner');await mutate(s=>{audit(s,'storage.blob-retired','store','Blob retired by the owner: a file missing in Supabase is treated as missing.',by);return true});return json({ok:true})}
+// research desk: approve / undo a staged batch, or choose the rival — the owner's click, checked against the material as it is now
+if(a==='research/desk/decide')return json(await deskDecide(b,by))
 if(a==='research/run')return json(await runResearch(typeof b.id==='string'&&b.id?b.id.slice(0,64):undefined))
 if(a==='clubs/create'){const created=await mutate(s=>{const id=slug(b.id);if(s.clubs.some(c=>c.id===id))throw new Error('Club already exists.');if(s.clubs.length>=100)throw new Error('Registry limit reached.');const c:Club={id,name:text(b.name,'Name'),city:text(b.city,'City'),country:text(b.country,'Country'),initials:text(b.initials,'Initials',4),primary:color(b.primary),secondary:color(b.secondary),status:'research',version:1,gates:[],sources:[],findings:[],gaps:['Research file created. Engine connection missing: register the club and build a first pack.']};s.clubs.push(c);audit(s,'club.created',id,'Research file only — no registry entry or data provider yet.',by);return c});await ensureProfile(created.id);return json(created,201)}
 // one bounded archive pass + staging export, from the Data tab

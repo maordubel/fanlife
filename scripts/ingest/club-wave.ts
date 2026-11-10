@@ -2,7 +2,9 @@
  * club:wave — pull a club's matches (date, score, scorers with minutes, full elevens, bench) from public
  * providers and write `club-packs/<id>/wave-auto.json`, which the club resolver merges and the compiler
  * re-validates. Run by .github/workflows/club-ingest.yml (no terminal needed) or locally:
- *   npm run club:wave -- --club olympiacos [--dry-run] [--max 60]
+ *   npm run club:wave -- --club olympiacos [--dry-run] [--max 60] [--backfill 40] [--refresh 20]
+ * --max: the newest N listed matches (default 80) · --backfill: N matches the wave does not hold yet (default 0) ·
+ * --refresh: N held matches re-read for squad details (default 0). A discovered UEFA team id is written back to ingest.json.
  * Config per club: club-packs/<id>/ingest.json  { names:[…exact club names…], country:"GRE", uefaTeamId:"…"|null }
  * Never invents: a provider refusal is reported and skipped, a match without a readable side is skipped,
  * a lineup that is not exactly eleven stays empty, and nothing is approved without a second publisher.
@@ -12,7 +14,7 @@ import {sameClub} from '../../lib/fixtures/names'
 import {RefusedError,type Fetcher} from './clubs/types'
 import {COMPETITIONS,teamsIn,uefaMatchesForTeam,withLineup,UEFA} from './clubs/uefa'
 import {corroborate} from './clubs/corroborate'
-import {buildWave,mergeAutoWave} from './clubs/wave'
+import {buildWave,mergeAutoWave,pickToRead} from './clubs/wave'
 const arg=(k:string)=>{const i=process.argv.indexOf('--'+k);return i<0?null:process.argv[i+1]&&!process.argv[i+1]!.startsWith('--')?process.argv[i+1]!:'true'}
 const sleep=(ms:number)=>new Promise(r=>setTimeout(r,ms))
 const fetchJson:Fetcher=async url=>{
@@ -23,8 +25,9 @@ const fetchJson:Fetcher=async url=>{
  return res.json()
 }
 async function discover(names:string[],country:string|null):Promise<string|null>{
+ // eight seasons back (10.11.2026): a club out of Europe for four seasons (Leicester since 2023) was never found
  const year=new Date().getFullYear()
- for(let y=year+1;y>=year-3;y--)for(const c of Object.values(COMPETITIONS))for(let off=0;off<400;off+=50){
+ for(let y=year+1;y>=year-7;y--)for(const c of Object.values(COMPETITIONS))for(let off=0;off<400;off+=50){
   let rows:unknown;try{rows=await fetchJson(`${UEFA}/matches?competitionId=${c}&seasonYear=${y}&limit=50&offset=${off}`)}catch{break}
   if(!Array.isArray(rows)||!rows.length)break
   const hit=teamsIn(rows).filter(t=>names.some(n=>sameClub(n,t.name))&&(!country||t.country===country))
@@ -37,15 +40,19 @@ async function main(){
  const home=existsSync(`club-packs/${club}/ingest.json`)?`club-packs/${club}`:`research-staging/${club}`  // unopened clubs keep their wave in staging, never wired
  const cfgPath=`${home}/ingest.json`;if(!existsSync(cfgPath))throw new Error(`missing ${cfgPath}`)
  const cfg=JSON.parse(readFileSync(cfgPath,'utf8')) as {names:string[];country?:string;uefaTeamId?:string|null}
- const max=Number(arg('max')||80),today=new Date().toISOString().slice(0,10)
+ const max=Number(arg('max')||80),backfill=Number(arg('backfill')||0),refresh=Number(arg('refresh')||0),today=new Date().toISOString().slice(0,10)
  const teamId=cfg.uefaTeamId||await discover(cfg.names,cfg.country||null)
- if(!teamId){console.log(`[${club}] no UEFA team id found (club may not play in UEFA competitions) — nothing pulled.`);return}
- console.log(`[${club}] UEFA team id ${teamId}`)
- const matches=(await uefaMatchesForTeam(fetchJson,teamId)).slice(0,max),rows=[]
+ // the zero-yield alarm reads this line (research:daily-report): a club with no id is named every day until it has one
+ if(!teamId){console.log(`[${club}] NO_UEFA_TEAM — no UEFA team id found for ${cfg.names.join(' / ')} (${cfg.country||'any country'}) — nothing pulled.`);return}
+ if(!cfg.uefaTeamId&&!arg('dry-run')){writeFileSync(cfgPath,JSON.stringify({...cfg,uefaTeamId:teamId},null,1)+'\n');console.log(`[${club}] UEFA team id ${teamId} discovered and saved to ${cfgPath}`)}
+ else console.log(`[${club}] UEFA team id ${teamId}`)
+ const path=`${home}/wave-auto.json`,held=existsSync(path)?JSON.parse(readFileSync(path,'utf8')):null
+ const listed=await uefaMatchesForTeam(fetchJson,teamId),matches=pickToRead(listed,held?.matches||[],{max,backfill,refresh}),rows=[]
+ console.log(`[${club}] UEFA lists ${listed.length} finished matches; reading ${matches.length} (newest ${Math.min(max,listed.length)}, backfill ≤${backfill}, squad refresh ≤${refresh})`)
  for(const m of matches){const full=await withLineup(fetchJson,m);rows.push({m:full,second:await corroborate(fetchJson,full,process.env.THESPORTSDB_KEY||'123')})}
- const fresh=buildWave(rows,cfg.names,club,today),path=`${home}/wave-auto.json`
+ const fresh=buildWave(rows,cfg.names,club,today)
  // merge, never replace: this run reads the newest --max matches only (see mergeAutoWave)
- const wave=mergeAutoWave(existsSync(path)?JSON.parse(readFileSync(path,'utf8')):null,fresh)
+ const wave=mergeAutoWave(held,fresh)
  console.log(`[${club}] read ${fresh.matches.length}; wave now ${wave.matches.length} matches (${wave.matches.filter(f=>f.status==='approved').length} approved, ${wave.matches.filter(f=>f.value.primaryOnly.lineup.length===11).length} with a full eleven)`)
  if(arg('dry-run')){console.log('dry run, nothing written');return}
  writeFileSync(path,JSON.stringify(wave,null,1)+'\n')

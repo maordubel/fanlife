@@ -8,14 +8,16 @@ import {writeFileSync} from 'node:fs'
 process.env.FANLIFE_PRECOMPILED='off'
 async function main(){
  const {loadClub,CORE_CLUB_IDS}=await import('@/lib/clubs/resolver')
- const out:Record<string,unknown>={}
- for(const id of CORE_CLUB_IDS){
+ // 10.11.2026 — and every staged club (lib/research/staged), compiled from its staged files and the owner's decisions where this runner can read them
+ const {stagedClubIds}=await import('@/lib/research/staged/pack')
+ const out:Record<string,unknown>={},staged=new Set(stagedClubIds())
+ for(const id of [...CORE_CLUB_IDS,...staged]){
   const r=await loadClub(id);if(!r)continue
   const d=r.data as unknown as Record<string,unknown>
   const n=(k:string)=>Array.isArray(d[k])?(d[k] as unknown[]).length:0
   const matches=(Array.isArray(d.matches)?d.matches:[]) as {value:Record<string,unknown>}[]
   const gates=Object.fromEntries(Object.entries(r.data.gates).map(([k,v])=>[k,v?`${v.state} ${v.eligible}/${v.target}`:null]))
-  out[id]={players:n('players'),matches:n('matches'),matchesWithEleven:matches.filter(m=>Array.isArray(m.value.lineup)&&m.value.lineup.length===11).length,matchesWithScorers:matches.filter(m=>Array.isArray(m.value.scorers)&&m.value.scorers.length>0).length,archive:n('archive'),timeline:n('timeline'),kits:n('kits'),trophies:n('trophies'),seasons:n('seasons'),mysteries:n('mysteries'),trivia:Array.isArray((d.trivia as {questions?:unknown[]}|undefined)?.questions)?(d.trivia as {questions:unknown[]}).questions.length:0,sources:n('sources'),gates}
+  out[id]={...(staged.has(id)?{staged:true}:{}),players:n('players'),matches:n('matches'),matchesWithEleven:matches.filter(m=>Array.isArray(m.value.lineup)&&m.value.lineup.length===11).length,matchesWithScorers:matches.filter(m=>Array.isArray(m.value.scorers)&&m.value.scorers.length>0).length,archive:n('archive'),timeline:n('timeline'),kits:n('kits'),trophies:n('trophies'),seasons:n('seasons'),mysteries:n('mysteries'),trivia:Array.isArray((d.trivia as {questions?:unknown[]}|undefined)?.questions)?(d.trivia as {questions:unknown[]}).questions.length:0,sources:n('sources'),gates}
   console.log(id,JSON.stringify(out[id]))
  }
  const i=process.argv.indexOf('--out');if(i>0&&process.argv[i+1])writeFileSync(process.argv[i+1]!,JSON.stringify(out,null,1)+'\n')

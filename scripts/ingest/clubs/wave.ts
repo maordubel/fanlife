@@ -10,12 +10,14 @@ import type {Corroboration} from './corroborate'
  * match is skipped (no guessing which side "we" are).
  */
 const slug=(s:string)=>s.normalize('NFD').replace(/\p{M}+/gu,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
+/** The wave id of a provider match — the key a pull uses to know what it already holds. */
+export const factId=(m:Pick<ProviderMatch,'on'|'home'|'away'>)=>`a-m-${m.on}-${slug(m.home)}-${slug(m.away)}`
 export type WaveSource={id:string;title:string;url:string;publisher:string;access:'available';checkedAt:string}
 export function toWaveFact(m:ProviderMatch,clubNames:string[],second:Corroboration|null,today:string,clubId:string){
  const homeUs=clubNames.some(n=>sameClub(n,m.home)),awayUs=clubNames.some(n=>sameClub(n,m.away))
  if(homeUs===awayUs||!m.score)return null
- const side=homeUs?'home':'away',lineup=m.lineup?(side==='home'?m.lineup.home:m.lineup.away):[],bench=m.lineup?(side==='home'?m.lineup.homeBench:m.lineup.awayBench):[]
- const id=`a-m-${m.on}-${slug(m.home)}-${slug(m.away)}`
+ const side=homeUs?'home':'away',lineup=m.lineup?(side==='home'?m.lineup.home:m.lineup.away):[],bench=m.lineup?(side==='home'?m.lineup.homeBench:m.lineup.awayBench):[],squad=m.lineup?(side==='home'?m.lineup.homeSquad:m.lineup.awaySquad)??[]:[]
+ const id=factId(m)
  const src:WaveSource[]=[{id:`a-src-${m.provider}-${m.providerId}`,title:`${m.publisher}: ${m.home} ${m.score.home}-${m.score.away} ${m.away}, ${m.on}`,url:m.url,publisher:m.publisher,access:'available',checkedAt:today}]
  if(second)src.push({id:`a-src-tsdb-${slug(second.url.split('/').pop()||'')}`,title:second.title,url:second.url,publisher:second.publisher,access:'available',checkedAt:today})
  const second2=src.length>=2&&new Set(src.map(s=>s.publisher.toLowerCase())).size>=2
@@ -28,7 +30,7 @@ export function toWaveFact(m:ProviderMatch,clubNames:string[],second:Corroborati
  // Approval is per FIELD (audit A04): the second publisher confirms date, teams and score only. The eleven and the
  // scorers come from the primary report alone, so they travel as `primaryOnly` claims the gates never read —
  // a corroborated result is not a corroborated line-up.
- return {sources:src,fact:{id,value:{name:`${m.home} ${m.score.home}-${m.score.away} ${m.away}`,on:m.on,competition:m.competition,score:`${m.score.home}-${m.score.away}`,venue:m.venue,...(uefa?{lineup,bench,scorers:ours}:{}),primaryOnly:{source:src[0]!.id,scorers:ours,lineup,bench}},sources:src.map(s=>s.id),researchedAt:today,parserCertainty:'high' as const,conflictFree:true,notes:ownerUefa?'UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.':uefa&&approved?'Date, teams and score agree across two publishers; the eleven and the scorers are UEFA\'s own record (owner, 2026-10-10: UEFA is sufficient for its own competitions).':approved?'Date, teams and score agree across two publishers. Line-up and scorers are held as primary-only claims until a second publisher states them.':'One publisher only; awaiting corroboration.',confidence:second2?3:2,status:approved?'approved' as const:'review' as const,approvedAt:approved?today:null,approvedBy:ownerUefa?'Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)':approved?`automated:cross-source-review-${clubId}-auto`:null}}
+ return {sources:src,fact:{id,value:{name:`${m.home} ${m.score.home}-${m.score.away} ${m.away}`,on:m.on,competition:m.competition,score:`${m.score.home}-${m.score.away}`,venue:m.venue,...(uefa?{lineup,bench,scorers:ours,...(squad.length?{squad}:{})}:{}),primaryOnly:{source:src[0]!.id,scorers:ours,lineup,bench}},sources:src.map(s=>s.id),researchedAt:today,parserCertainty:'high' as const,conflictFree:true,notes:ownerUefa?'UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.':uefa&&approved?'Date, teams and score agree across two publishers; the eleven and the scorers are UEFA\'s own record (owner, 2026-10-10: UEFA is sufficient for its own competitions).':approved?'Date, teams and score agree across two publishers. Line-up and scorers are held as primary-only claims until a second publisher states them.':'One publisher only; awaiting corroboration.',confidence:second2?3:2,status:approved?'approved' as const:'review' as const,approvedAt:approved?today:null,approvedBy:ownerUefa?'Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)':approved?`automated:cross-source-review-${clubId}-auto`:null}}
 }
 export function buildWave(rows:{m:ProviderMatch;second:Corroboration|null}[],clubNames:string[],clubId:string,today:string){
  const sources=new Map<string,WaveSource>(),matches:NonNullable<ReturnType<typeof toWaveFact>>['fact'][]=[]
@@ -51,10 +53,30 @@ export function mergeAutoWave(prev:Partial<WaveFile>|null|undefined,fresh:WaveFi
   const p=old.get(f.id)
   if(!p){out.set(f.id,f);continue}
   if(p.status==='approved'&&f.status!=='approved')continue
-  out.set(f.id,eleven(p as never)&&!eleven(f as never)?{...f,value:{...f.value,lineup:(p.value as Record<string,unknown>).lineup,bench:(p.value as Record<string,unknown>).bench,scorers:(p.value as Record<string,unknown>).scorers} as typeof f.value,sources:[...new Set([...p.sources,...f.sources])]}:f)
+  const next=eleven(p as never)&&!eleven(f as never)?{...f,value:{...f.value,lineup:(p.value as Record<string,unknown>).lineup,bench:(p.value as Record<string,unknown>).bench,scorers:(p.value as Record<string,unknown>).scorers} as typeof f.value,sources:[...new Set([...p.sources,...f.sources])]}:f
+  // the squad details (positions, birth dates) follow the same rule: a read that lost them is not evidence they were wrong
+  const ps=(p.value as Record<string,unknown>).squad,ns=(next.value as Record<string,unknown>).squad
+  out.set(f.id,Array.isArray(ps)&&ps.length&&!(Array.isArray(ns)&&ns.length)?{...next,value:{...next.value,squad:ps} as typeof next.value}:next)
  }
  const matches=[...out.values()].sort((x,y)=>String(y.value.on).localeCompare(String(x.value.on)))
  const cited=new Set(matches.flatMap(f=>f.sources)),src=new Map<string,WaveSource>()
  for(const s of [...(prev?.sources||[]),...fresh.sources])if(cited.has(s.id))src.set(s.id,s)
  return {sources:[...src.values()],matches,kits:fresh.kits.length?fresh.kits:(prev?.kits||[]),rivals:fresh.rivals.length?fresh.rivals:(prev?.rivals||[])}
+}
+
+/**
+ * Which listed matches a run reads (research desk, 10.11.2026). Before, a run read the newest `--max` only, so a club's
+ * wave stopped at 80 matches for weeks while UEFA held every tie it ever played. Now three shares, in this order:
+ *  - the newest `max` (results change, a fresh tie appears),
+ *  - `backfill` matches the wave does not hold yet, newest first — the wave grows back through the club's history,
+ *  - `refresh` held matches with a full eleven but no squad details, re-read once for positions and birth dates.
+ * Never the same match twice. Pure; tested in tests/ingest/club-wave.test.ts.
+ */
+export function pickToRead<M extends Pick<ProviderMatch,'on'|'home'|'away'>>(listed:M[],held:{id:string;value:Record<string,unknown>}[],{max,backfill,refresh}:{max:number;backfill:number;refresh:number}):M[]{
+ const have=new Map(held.map(f=>[f.id,f])),out:M[]=[],taken=new Set<string>()
+ const take=(m:M)=>{const id=factId(m);if(taken.has(id))return false;taken.add(id);out.push(m);return true}
+ for(const m of listed.slice(0,Math.max(0,max)))take(m)
+ let b=0;for(const m of listed){if(b>=backfill)break;if(!have.has(factId(m))&&take(m))b++}
+ let r=0;for(const m of listed){if(r>=refresh)break;const f=have.get(factId(m));if(f&&Array.isArray(f.value.lineup)&&(f.value.lineup as unknown[]).length===11&&!(Array.isArray(f.value.squad)&&(f.value.squad as unknown[]).length)&&take(m))r++}
+ return out
 }

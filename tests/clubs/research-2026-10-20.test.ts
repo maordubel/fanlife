@@ -21,7 +21,9 @@ describe('research bundle 2026-10-20',()=>{
  it('unopened clubs are staged, never wired, and none is approved',()=>{
   const dirs=readdirSync('research-staging').filter(d=>existsSync(`research-staging/${d}/wave-history-2026-10-20.json`))
   expect(dirs.length).toBeGreaterThanOrEqual(10)
-  for(const d of dirs){const w=JSON.parse(readFileSync(`research-staging/${d}/wave-history-2026-10-20.json`,'utf8')) as W;expect(w.matches.every(m=>m.status==='review')).toBe(true);expect(existsSync(`club-packs/${d}`)).toBe(false)}
+  // 10.11.2026 (rule 143): a club the owner opened on the research desk is promoted — its pack says so, and the staged file stays as it was, the record of what he approved
+  for(const d of dirs){const w=JSON.parse(readFileSync(`research-staging/${d}/wave-history-2026-10-20.json`,'utf8')) as W;expect(w.matches.every(m=>m.status==='review')).toBe(true)
+   if(existsSync(`club-packs/${d}/core.json`))expect(String(JSON.parse(readFileSync(`club-packs/${d}/core.json`,'utf8')).note||'')).toMatch(/^Promoted from the research desk/);else expect(existsSync(`club-packs/${d}`)).toBe(false)}
  })
  it('only CC0 sources feed the new waves',()=>{
   for(const id of OPEN){const w=JSON.parse(readFileSync(`club-packs/${id}/wave-history-2026-10-20.json`,'utf8')) as {sources:{license?:string}[]};expect(w.sources.every(s=>s.license==='CC0-1.0')).toBe(true)}
