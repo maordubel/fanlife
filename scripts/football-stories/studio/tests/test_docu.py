@@ -51,6 +51,8 @@ class Docu(unittest.TestCase):
         os.environ.pop('STORIES_DOCU', None)
         self.assertTrue(dp.wanted({}))
         self.assertTrue(dp.wanted({'look': 'archive'}))
+        for style in ('collage', 'night', 'mixed', 'papercut'):   # every brief carries one; a style is not an engine
+            self.assertTrue(dp.wanted({'visual_style': style}), style)
         for keep in ({'look': 'vox-hf'}, {'engine': 'vox'}, {'visual_style': 'classic'}):
             self.assertFalse(dp.wanted(keep))
         os.environ['STORIES_DOCU'] = '0'
