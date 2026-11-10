@@ -1,0 +1,36 @@
+# The Facebook Page + Instagram connection, from GitHub's secrets to the site's server-only store (owner, 10.11.2026:
+# "permanent automatic publishing"). GitHub's scheduled runs come every few hours; the plan's tick and the studio's
+# Reels run on Vercel every five minutes and never had the Page token. This hands it over on merge and on Run workflow
+# (after renewing the token: Actions → Meta connection → site → Run workflow). The value is never printed. lib/marketing/metaStore.ts.
+# Uses: secrets META_PAGE_TOKEN, FAN_LIFE_CRON_SECRET · variables META_PAGE_ID, META_IG_USER_ID, FAN_LIFE_RESEARCH_URL,
+#       META_AUTOPUBLISH (or the films switch STORIES_SOCIAL_AUTOPUBLISH), META_GRAPH_VERSION (optional).
+name: Meta connection → site
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/meta-handoff.yml', 'lib/marketing/metaStore.ts']
+  workflow_dispatch:
+permissions: {}
+jobs:
+  handoff:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Hand the connection to the site
+        env:
+          SITE: ${{ vars.FAN_LIFE_RESEARCH_URL || 'https://fanlife.dubelteam.com' }}
+          CRON: ${{ secrets.FAN_LIFE_CRON_SECRET }}
+          PAGE: ${{ vars.META_PAGE_ID }}
+          IG: ${{ vars.META_IG_USER_ID }}
+          TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+          ON: ${{ vars.META_AUTOPUBLISH || vars.STORIES_SOCIAL_AUTOPUBLISH }}
+          VERSION: ${{ vars.META_GRAPH_VERSION }}
+        run: |
+          node --input-type=module -e '
+          const e=process.env
+          if(!e.CRON||!e.TOKEN||!e.PAGE){console.log("::error::META_PAGE_ID, META_PAGE_TOKEN or FAN_LIFE_CRON_SECRET is missing");process.exit(1)}
+          const r=await fetch(e.SITE.replace(/\/$/,"")+"/api/master/marketing",{method:"POST",headers:{authorization:"Bearer "+e.CRON,"content-type":"application/json"},
+            body:JSON.stringify({action:"meta_config",page:e.PAGE,ig:e.IG||"",token:e.TOKEN,on:String(e.ON||"").trim()==="1",version:e.VERSION||""})})
+          const b=await r.json().catch(()=>({}))
+          console.log("site:",r.status,JSON.stringify(b.lights||b.error||{}))
+          if(!r.ok)process.exit(1)'
