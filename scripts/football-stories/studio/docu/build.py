@@ -41,6 +41,12 @@ FACES = [('Head', 'weekly-head-latin'), ('Head', 'weekly-head-latin-ext'), ('Cap
          ('Mono', 'courier-prime-latin-ext-700-normal')]
 SOUNDS = {'whistle': 'whistle-1', 'goal': 'crowd-real-goal', 'groan': 'crowd-groan', 'hush': 'crowd-hush',
           'claps': 'crowd-claps', 'murmur': 'crowd-real-murmur', 'swell': 'crowd-swell', 'bed': 'crowd-bed'}
+SOUNDS.update({'impact': 'impact-bass-1', 'impact2': 'impact-bass-2', 'whoosh': 'whoosh-cinematic', 'swish': 'whoosh-short',
+               'riser': 'riser', 'glitch': 'glitch-2', 'kick': 'ball-kick', 'tick': 'clock-tick', 'stamp': 'stamp',
+               'buzzer': 'buzzer', 'page': 'page', 'clang': 'clang', 'final': 'crowd-real-final', 'build': 'crowd-real-build',
+               'chant': 'chant-derby', 'flash': 'flash', 'reveal': 'reveal', 'sting': 'stage-sting'})
+SFX2 = REPO / '.claude' / 'skills' / 'media-use' / 'audio' / 'assets' / 'sfx'
+MUSIC = HERE.parent / 'kit' / 'music'
 RECON = 'Illustration · graphic reconstruction'
 
 
@@ -111,8 +117,9 @@ class Film:
         cid = self.id('img')
         veil = s.get('veil', 0.3)
         pos = s.get('pos', 'center')
-        inner = (f'<div class="phi" id="{cid}i" style="background-image:url(assets/img/{e(s["src"])});background-position:{pos}"></div>'
-                 + (f'<div class="veil" style="opacity:{veil}"></div>' if veil else '') + f'<div class="recon">{RECON}</div>')
+        fit = 'background-size:contain;background-repeat:no-repeat;background-color:' + self.INK if s.get('fit') == 'contain' else ''
+        inner = (f'<div class="phi" id="{cid}i" style="background-image:url(assets/img/{e(s["src"])});background-position:{pos};{fit}"></div>'
+                 + (f'<div class="veil" style="opacity:{veil}"></div>' if veil else '') + (f'<div class="recon">{RECON}</div>' if s.get('recon', True) else ''))
         self.clip(cid, t, d, inner, z, 'ph')
         move = s.get('move', 'push')
         a, b = {'push': ('{scale:1.02}', '{scale:1.16}'), 'pull': ('{scale:1.3,y:50}', '{scale:1.06,y:0}'),
@@ -175,7 +182,7 @@ class Film:
     def stamp(self, s, t, d):
         cid = self.id('st')
         col = self.US if s.get('side', 'us') == 'us' else self.THEM
-        self.clip(cid, t, d, f'<span>{e(s["text"])}</span>', 7, 'stamp', f'left:{s.get("x", 200)}px;top:{s.get("y", 560)}px;color:{col};border-color:{col}')
+        self.clip(cid, t, d, f'<span>{e(s["text"])}</span>', s.get('z', 7), 'stamp', f'left:{s.get("x", 200)}px;top:{s.get("y", 560)}px;color:{col};border-color:{col};font-size:{s.get("size", 230)}px;white-space:nowrap')
         rot = s.get('rot', -8)
         self.tween(f'tl.fromTo("#{cid}",{{scale:2.4,opacity:0,rotation:{rot * 1.7}}},{{scale:1,opacity:1,rotation:{rot},duration:0.25,ease:"power4.in"}},{r2(t)});')
 
@@ -201,11 +208,15 @@ class Film:
     def ledger(self, s, t, d):
         cid = self.id('lg')
         rows = ''.join(f'<div class="lrow" id="{cid}r{i}"><span>{e(r[0])}</span><b>{e(r[1])}</b><b>{e(r[2])}</b></div>' for i, r in enumerate(s['rows']))
-        circ = (f'<svg class="circ" style="top:{65 + 220 * s["circle"][0]}px;left:{1160 if s["circle"][1] == 2 else 820}px" viewBox="0 0 200 140">'
-                f'<path id="{cid}c" d="M100 10 C170 10 190 50 188 72 C185 115 140 132 98 130 C45 128 12 105 14 68 C16 32 55 12 112 14" fill="none" stroke="{self.THEM}" stroke-width="7" stroke-linecap="round"/></svg>'
-                f'<div class="note" style="top:{278 + 220 * s["circle"][0]}px;left:{1160 if s["circle"][1] == 2 else 820}px;color:{self.THEM}">{e(s.get("note", ""))}</div>') if s.get('circle') else ''
+        circ = ''
+        if s.get('circle'):
+            r, c = s['circle']
+            mark = (f'<svg class="circ" style="left:{1160 if c == 2 else 820}px" viewBox="0 0 200 140">'
+                    f'<path id="{cid}c" d="M100 10 C170 10 190 50 188 72 C185 115 140 132 98 130 C45 128 12 105 14 68 C16 32 55 12 112 14" fill="none" stroke="{self.THEM}" stroke-width="7" stroke-linecap="round"/></svg>'
+                    f'<div class="note" style="left:{1160 if c == 2 else 820}px;color:{self.THEM}">{e(s.get("note", ""))}</div>')
+            rows = rows.replace(f'<div class="lrow" id="{cid}r{r}">', f'<div class="lrow" id="{cid}r{r}" style="position:relative">{mark}', 1)
         ttl = f'<span>{e(s["title"])}</span>' if s.get('title') else '<span></span>'
-        inner = (f'<div class="ledger{" lc" if s.get("compact") else ""}"><div class="lh">{ttl}<b style="color:{self.US}">{e(s["us"])}</b><b style="color:{self.THEM}">{e(s["them"])}</b></div>{rows}{circ}</div>')
+        inner = (f'<div class="ledger{" lc" if s.get("compact") else ""}"><div class="lh">{ttl}<b style="color:{self.US}">{e(s["us"])}</b><b style="color:{self.THEM}">{e(s["them"])}</b></div>{rows}</div>')
         self.clip(cid, t, d, inner, 14, 'paper')
         self.tween(f'tl.fromTo("#{cid} .ledger",{{y:80,opacity:0}},{{y:0,opacity:1,duration:0.45,ease:"power3.out"}},{r2(t)});')
         for i, at in enumerate(s.get('row_at', [0.4 + 1.2 * k for k in range(len(s['rows']))])):
@@ -259,6 +270,181 @@ class Film:
                    f'tl.fromTo("#{cid} .b1",{{opacity:1}},{{opacity:0,duration:0.05,immediateRender:false}},{r2(p + 0.1)});'
                    f'tl.fromTo("#{cid} .b2",{{opacity:0}},{{opacity:1,duration:0.05}},{r2(p + 0.1)});')
 
+    # ── motion graphics (11.2026: the HTA v Be'er Sheva film) ───────────────────────────────────────────────────────
+    def table(self, s, t, d):
+        """A league table drawn row by row; the drop line is red; the camera pushes in on it. Rows may be unnamed — a
+        shape of a table, not a claim about who stood where."""
+        cid = self.id('tb')
+        rows = s.get('rows') or [''] * s.get('n', 16)
+        cut = s.get('cut', len(rows) - 2)
+        hl = s.get('highlight')
+        html_rows = ''.join(
+            f'<div class="tr{" hl" if i == hl else ""}" id="{cid}r{i}"><i>{i + 1}</i><span>{e(r)}</span><b></b></div>'
+            + (f'<div class="drop" id="{cid}line"><em>{e(s.get("line_label", "RELEGATION"))}</em></div>' if i == cut - 1 else '')
+            for i, r in enumerate(rows))
+        self.clip(cid, t, d, f'<div class="tbw" id="{cid}w"><div class="tbl">{html_rows}</div></div>', 9, 'paper')
+        for i in range(len(rows)):
+            self.tween(f'tl.fromTo("#{cid}r{i}",{{x:-60,opacity:0}},{{x:0,opacity:1,duration:0.25,ease:"power2.out"}},{r2(t + 0.15 + 0.06 * i)});')
+        self.tween(f'tl.fromTo("#{cid}line",{{scaleX:0}},{{scaleX:1,duration:0.5,ease:"power3.out",transformOrigin:"left center"}},{r2(t + 0.3 + 0.06 * len(rows))});')
+        pa = s.get('push_at')
+        if pa is not None:
+            ly = 60 + 6 + 46 * cut   # the drop line, in the frame's pixels
+            self.tween(f'tl.set("#{cid}w",{{transformOrigin:"50% {ly - 60}px"}},{r2(t)});'
+                       f'tl.fromTo("#{cid}w",{{scale:1,y:0}},{{scale:{s.get("push_scale", 2.2)},y:{540 - ly},duration:0.9,ease:"power3.inOut",immediateRender:false}},{r2(t + pa)});')
+
+    def word(self, s, t, d):
+        """Kinetic type: one or two words slammed onto the glass, the frame shaking once."""
+        cid = self.id('wd')
+        col = {'us': self.US, 'them': self.THEM, 'ink': self.INK, 'paper': self.PAPER}.get(s.get('bg', 'ink'), s.get('bg'))
+        fg = s.get('fg', '#fff')
+        lines = '<br>'.join(e(x) for x in s['text'].split('|'))
+        at0 = s.get('at', 0)
+        t, d, s = t + at0, d - at0, {**s, 'at': 0}
+        self.clip(cid, t, d, f'<div class="word" style="background:{col}"><b style="color:{fg};font-size:{s.get("size", 220)}px">{lines}</b>'
+                  + (f'<small style="color:{fg}">{e(s["small"])}</small>' if s.get('small') else '') + '</div>', s.get('z', 15))
+        self.tween(f'tl.fromTo("#{cid} .word b",{{scale:3,opacity:0}},{{scale:1,opacity:1,duration:0.18,ease:"power4.in"}},{r2(t + s.get("at", 0))});'
+                   f'tl.fromTo("#{cid} .word",{{x:0}},{{x:14,duration:0.04,yoyo:true,repeat:5,ease:"none",immediateRender:false}},{r2(t + s.get("at", 0) + 0.18)});')
+        if s.get('glitch'):
+            self.tween(f'tl.fromTo("#{cid} .word b",{{textShadow:"-14px 0 {self.US}, 14px 0 #3ad"}},{{textShadow:"0 0 transparent, 0 0 transparent",duration:0.35,ease:"steps(5)"}},{r2(t + s.get("at", 0) + 0.18)});')
+
+    def cities(self, s, t, d):
+        """Two places, two halves, a jagged line between them."""
+        cid = self.id('ct')
+        a, b = s['a'], s['b']
+        inner = (f'<div class="cty"><div class="cl" style="background:{a.get("bg", self.US)}"><small>{e(a.get("small", ""))}</small><b>{e(a["name"])}</b>'
+                 + (f'<img src="assets/img/{e(a["crest"])}">' if a.get('crest') else '') + '</div>'
+                 f'<div class="cr" style="background:{b.get("bg", self.US)}"><small>{e(b.get("small", ""))}</small><b>{e(b["name"])}</b>'
+                 + (f'<img src="assets/img/{e(b["crest"])}">' if b.get('crest') else '') + '</div>'
+                 f'<svg class="bolt" viewBox="0 0 1920 1080"><path id="{cid}z" d="M960 40 L1010 260 L900 420 L1030 600 L910 780 L980 1040" fill="none" stroke="{self.PAPER}" stroke-width="18" stroke-linejoin="bevel"/></svg>'
+                 + (f'<div class="ctmid">{e(s["mid"])}</div>' if s.get('mid') else '') + '</div>')
+        self.clip(cid, t, d, inner, 9)
+        self.tween(f'tl.fromTo("#{cid} .cl",{{xPercent:-100}},{{xPercent:0,duration:0.45,ease:"power3.out"}},{r2(t)});'
+                   f'tl.fromTo("#{cid} .cr",{{xPercent:100}},{{xPercent:0,duration:0.45,ease:"power3.out"}},{r2(t + 0.25)});'
+                   f'tl.fromTo("#{cid}z",{{strokeDasharray:1400,strokeDashoffset:1400}},{{strokeDashoffset:0,duration:0.5,ease:"power2.in"}},{r2(t + 0.8)});'
+                   f'tl.fromTo("#{cid} .ctmid",{{scale:2.5,opacity:0}},{{scale:1,opacity:1,duration:0.2,ease:"power4.in"}},{r2(t + s.get("mid_at", 1.4))});')
+
+    def chalk(self, s, t, d):
+        """The tactics board: a chalk pitch, the clock running to the minute, then the move — a free kick or a corner —
+        drawn as the ball's path into the net."""
+        cid = self.id('ch')
+        mn = s.get('minute')
+        play = s.get('play', 'freekick')
+        P = self.PAPER
+        # attacking the goal on the right; coordinates in a 1920x1080 board
+        pitch = (f'<rect x="120" y="120" width="1680" height="840" fill="none" stroke="{P}" stroke-width="5"/>'
+                 f'<line x1="960" y1="120" x2="960" y2="960" stroke="{P}" stroke-width="5"/><circle cx="960" cy="540" r="120" fill="none" stroke="{P}" stroke-width="5"/>'
+                 f'<rect x="1500" y="300" width="300" height="480" fill="none" stroke="{P}" stroke-width="5"/><rect x="1700" y="420" width="100" height="240" fill="none" stroke="{P}" stroke-width="5"/>'
+                 f'<rect x="1800" y="480" width="34" height="120" fill="none" stroke="{P}" stroke-width="6"/>'
+                 f'<rect x="120" y="300" width="300" height="480" fill="none" stroke="{P}" stroke-width="5"/>')
+        if play == 'freekick':
+            ball, path = (1390, 610), 'M1390 610 C1560 380 1700 430 1812 505'
+            wall = ''.join(f'<rect x="1468" y="{y}" width="26" height="26" fill="{self.THEM if s.get("attack") == "us" else self.US}" transform="rotate(45 1481 {y + 13})"/>' for y in (520, 556, 592))
+            marks = f'<text x="1330" y="690" class="chx" fill="{P}">X</text>{wall}'
+        else:   # corner from the top right
+            ball, path = (1795, 128), 'M1795 128 C1640 220 1620 420 1660 520 L1812 540'
+            marks = ''.join(f'<circle cx="{x}" cy="{y}" r="16" fill="none" stroke="{P}" stroke-width="5"/>' for x, y in ((1600, 470), (1640, 600), (1560, 560)))
+        col = self.US if s.get('attack', 'them') == 'us' else self.THEM
+        pitch = pitch.replace('/>', ' pathLength="1"/>')
+        inner = (f'<div class="chk"><svg viewBox="0 0 1920 1080" class="chs">{pitch}{marks}'
+                 f'<path id="{cid}p" d="{path}" fill="none" stroke="{col}" stroke-width="9" stroke-dasharray="22 14" stroke-linecap="round"/>'
+                 f'<circle id="{cid}b" cx="{ball[0]}" cy="{ball[1]}" r="17" fill="#fff"/></svg>'
+                 + (f'<div class="chc"><small>MIN</small><b id="{cid}m">00:00</b></div>' if mn else '')
+                 + (f'<div class="chl" style="background:{col}">{e(s["label"])}</div>' if s.get('label') else '') + '</div>')
+        self.clip(cid, t, d, inner, 9)
+        self.tween(f'tl.fromTo("#{cid} .chs rect, #{cid} .chs line, #{cid} .chs circle:not(#{cid}b)",{{strokeDasharray:1,strokeDashoffset:1}},{{strokeDashoffset:0,duration:1.0,ease:"power1.inOut",stagger:0.05}},{r2(t)});')
+        if mn:
+            k = self.id('m')
+            self.tween(f'const {k}={{v:0}};tl.to({k},{{v:{mn},duration:1.4,ease:"power2.out",onUpdate:()=>{{const el=document.getElementById("{cid}m");if(el)el.textContent=String(Math.round({k}.v)).padStart(2,"0")+":00";}}}},{r2(t + 0.3)});')
+        g = s.get('go', 2.0)
+        go = t + (d + g if g < 0 else g)
+        self.sound('kick', go, 0.6, 0.9)
+        self.tween(f'tl.fromTo("#{cid}p",{{clipPath:"inset(0 100% 0 0)"}},{{clipPath:"inset(0 0% 0 0)",duration:0.7,ease:"power2.in"}},{r2(go)});'
+                   f'tl.fromTo("#{cid}b",{{attr:{{cx:{ball[0]},cy:{ball[1]}}}}},{{attr:{{cx:1812,cy:{540 if play != "freekick" else 505}}},duration:0.7,ease:"power2.in",immediateRender:false}},{r2(go)});'
+                   f'tl.fromTo("#{cid} .chl",{{scale:2.2,opacity:0}},{{scale:1,opacity:1,duration:0.2,ease:"power4.in"}},{r2(go + 0.75)});')
+
+    def form(self, s, t, d):
+        """A season as a strip of results — W / D / L tiles dealt one by one; a run can be bracketed and named."""
+        cid = self.id('fm')
+        cols = {'W': '#1F8A4C', 'D': '#8A8478', 'L': self.US if s.get('loss') == 'us' else '#D7192A'}
+        tiles = ''.join(f'<div class="ft" id="{cid}t{i}" style="background:{cols[r]}">{r}</div>' for i, r in enumerate(s['results']))
+        br = f'<div class="fbr" id="{cid}b"><span>{e(s["bracket"][2])}</span></div>' if s.get('bracket') else ''
+        head = f'<div class="fh"><b>{e(s.get("title", ""))}</b><span>{e(s.get("sub", ""))}</span></div>'
+        self.clip(cid, t, d, f'<div class="fw">{head}<div class="fg" style="grid-template-columns:repeat({s.get("per_row", 15)},96px)">{tiles}</div>{br}</div>', 9, 'paper')
+        step = s.get('step', 0.07)
+        for i in range(len(s['results'])):
+            self.tween(f'tl.fromTo("#{cid}t{i}",{{scale:0,rotation:-20}},{{scale:1,rotation:0,duration:0.18,ease:"back.out(3)"}},{r2(t + 0.4 + step * i)});')
+        if br:
+            a, z, _ = s['bracket']
+            at = t + s.get('bracket_at', 0.6 + step * len(s['results']))
+            sel = ','.join(f'#{cid}t{i}' for i in range(a, z + 1))
+            others = ','.join(f'#{cid}t{i}' for i in range(len(s['results'])) if not a <= i <= z)
+            self.tween(f'tl.to("{others}",{{opacity:0.25,duration:0.4}},{r2(at)});'
+                       f'tl.to("{sel}",{{y:-14,duration:0.3,ease:"back.out(3)",stagger:0.05}},{r2(at)});'
+                       f'tl.fromTo("#{cid}b",{{opacity:0,y:20}},{{opacity:1,y:0,duration:0.4}},{r2(at + 0.4)});')
+
+    def board(self, s, t, d):
+        """The fourth official's board: the minute, the number lit, the name coming on."""
+        cid = self.id('bd')
+        inner = (f'<div class="sbd"><div class="sbt">{e(s.get("minute", ""))}</div><div class="sbin"><small>IN</small><b>{e(s["in"])}</b></div>'
+                 + (f'<div class="sbout"><small>OUT</small><b>{e(s["out"])}</b></div>' if s.get('out') else '') + '</div>')
+        if s.get('bg'):
+            self.image({'src': s['bg'], 'veil': 0.6, 'move': 'push'}, t, d, 1)
+        self.clip(cid, t, d, inner, 9)
+        self.tween(f'tl.fromTo("#{cid} .sbd",{{y:700}},{{y:0,duration:0.6,ease:"back.out(1.3)"}},{r2(t)});'
+                   f'tl.fromTo("#{cid} .sbin b",{{opacity:0.15}},{{opacity:1,duration:0.08,yoyo:true,repeat:5,ease:"none"}},{r2(t + 0.7)});')
+
+    def press(self, s, t, d):
+        """A newspaper page as a print on the desk; the camera finds the headline; a highlighter crosses it; the
+        translation sits under it."""
+        cid = self.id('pr')
+        x, y, w, h = s.get('mark', (0.02, 0.02, 0.96, 0.12))
+        inner = (f'<div class="prs" id="{cid}s"><img src="assets/img/{e(s["src"])}"><i class="hlm" id="{cid}h" style="left:{x * 100}%;top:{y * 100}%;width:{w * 100}%;height:{h * 100}%;background:{self.US}"></i></div>'
+                 + (f'<div class="prt"><small>{e(s.get("small", ""))}</small><b>{e(s["translation"])}</b></div>' if s.get('translation') else ''))
+        self.clip(cid, t, d, inner, 9, 'paper')
+        self.tween(f'tl.fromTo("#{cid}s",{{rotation:-9,scale:0.6,y:200,opacity:0}},{{rotation:-3,scale:1,y:0,opacity:1,duration:0.6,ease:"power3.out"}},{r2(t)});'
+                   f'tl.fromTo("#{cid}s",{{scale:1}},{{scale:{s.get("zoom", 1.5)},transformOrigin:"{x * 100 + w * 50}% {y * 100 + h * 50}%",duration:1.2,ease:"power2.inOut",immediateRender:false}},{r2(t + 1.0)});'
+                   f'tl.fromTo("#{cid}h",{{scaleX:0}},{{scaleX:1,duration:0.6,ease:"power1.inOut",transformOrigin:"left center"}},{r2(t + 2.3)});'
+                   f'tl.fromTo("#{cid} .prt",{{y:200,opacity:0}},{{y:0,opacity:1,duration:0.45,ease:"power3.out"}},{r2(t + 2.9)});')
+
+    def cutout(self, s, t, d):
+        """A cut-out figure (transparent PNG) rising in front of the picture behind it, on its own parallax plane."""
+        cid = self.id('cu')
+        self.clip(cid, t, d, f'<img class="cut" id="{cid}i" src="assets/img/{e(s["src"])}" style="left:{s.get("x", 1180)}px;height:{s.get("h", 1000)}px">', s.get('z', 6))
+        self.tween(f'tl.fromTo("#{cid}i",{{y:500,opacity:0}},{{y:{s.get("y", 120)},opacity:1,duration:0.7,ease:"power3.out"}},{r2(t)});'
+                   f'tl.to("#{cid}i",{{x:-50,duration:{r2(max(0.5, d - 0.7))},ease:"none"}},{r2(t + 0.7)});')
+
+    def lights(self, s, t, d):
+        """The ground after the night: the picture darkens and the floodlights go out, one tower at a time."""
+        cid = self.id('lt')
+        glows = ''.join(f'<i class="glow" id="{cid}g{i}" style="left:{x}px;top:{y}px"></i>' for i, (x, y) in enumerate(s['towers']))
+        self.image({'src': s['src'], 'veil': 0.0, 'move': 'push'}, t, d, 3)
+        self.clip(cid, t, d, f'<div class="dark" id="{cid}d"></div>{glows}', 5)
+        for i, at in enumerate(s.get('off_at', [1.5 + 1.1 * k for k in range(len(s['towers']))])):
+            self.tween(f'tl.fromTo("#{cid}g{i}",{{opacity:1}},{{opacity:0,duration:0.12,immediateRender:false}},{r2(t + at)});')
+            self.sound('clang', t + at, 1.2, 0.35)
+        last = t + s.get('off_at', [1.5 + 1.1 * k for k in range(len(s['towers']))])[-1]
+        self.tween(f'tl.fromTo("#{cid}d",{{opacity:0}},{{opacity:0.82,duration:{r2(max(0.4, last - t))},ease:"power1.in"}},{r2(t)});')
+
+    def tint(self, s, t, d):
+        """The picture in the club's colour — duotone, slammed in with a shake (a hero's entrance)."""
+        cid = self.id('tn')
+        self.clip(cid, t, d, f'<div class="phi" id="{cid}i" style="background-image:url(assets/img/{e(s["src"])});background-position:{s.get("pos", "center")};filter:grayscale(1) contrast(1.4)"></div>'
+                  f'<div class="duo" style="background:{self.US}"></div><div class="recon">{RECON if s.get("recon", True) else ""}</div>', 3, 'ph')
+        self.tween(f'tl.fromTo("#{cid}i",{{scale:1.5}},{{scale:1.08,duration:0.35,ease:"power4.in"}},{r2(t)});'
+                   f'tl.fromTo("#{cid}",{{x:0,y:0}},{{x:18,y:-10,duration:0.04,yoyo:true,repeat:7,ease:"none",immediateRender:false}},{r2(t + 0.35)});'
+                   f'tl.to("#{cid}i",{{scale:1.2,duration:{r2(max(0.5, d - 0.4))},ease:"none"}},{r2(t + 0.4)});')
+        if s.get('tag'):
+            tg = s['tag']
+            tid = self.id('tag')
+            self.clip(tid, t + 0.6, d - 0.6, f'<div class="tag" style="background:{self.INK}"><small>{e(tg.get("small", ""))}</small><b>{e(tg["big"])}</b></div>', 8)
+            self.tween(f'tl.fromTo("#{tid} .tag",{{scaleX:0}},{{scaleX:1,duration:0.35,ease:"power3.out",transformOrigin:"left center"}},{r2(t + 0.6)});')
+
+    def music(self, sb_music):
+        for m in sb_music:
+            f = Path(m['file']).name
+            self.audio.append(f'<audio id="{self.id("mus")}" class="clip" src="assets/music/{e(f)}" data-start="{r2(m["at"])}" data-duration="{r2(m["d"])}" '
+                              f'data-media-start="{m.get("from", 0)}" data-volume="{m.get("vol", 0.16)}"></audio>')
+
     def verdict(self, s, t, d):
         cid = self.id('vd')
         inner = (f'<div class="vd"><div class="vl" style="background:{self.US}"><img src="assets/img/{e(s["us_crest"])}"><small>{e(s["us_line"])}</small><b>{s["us"]}</b></div>'
@@ -273,6 +459,23 @@ class Film:
         self.tween(f'tl.fromTo("#{cid} .end",{{opacity:0,y:30}},{{opacity:1,y:0,duration:0.6,ease:"power2.out"}},{r2(t)});')
 
     # ── assembly ────────────────────────────────────────────────────────────────────────────────────────────────────
+    def subline(self, part: str, at: float, dd: float):
+        """One subtitle: in the brand's face; with `karaoke`, each word lights in the club's colour as it is said."""
+        sid = self.id('sub')
+        if not self.sb.get('karaoke'):
+            self.clip(sid, at, dd, f'<div class="sub">{e(part)}</div>', 20, 'subw')
+            return
+        words = part.split()
+        wl = sum(len(w) + 1 for w in words)
+        spans = ''.join(f'<span id="{sid}w{j}">{e(w)}</span> ' for j, w in enumerate(words))
+        self.clip(sid, at, dd, f'<div class="sub kar">{spans}</div>', 20, 'subw')
+        wt, span = at, max(0.3, dd - 0.15)
+        for j, w in enumerate(words):
+            step = span * (len(w) + 1) / wl
+            self.tween(f'tl.fromTo("#{sid}w{j}",{{color:"{self.PAPER}",backgroundColor:"rgba(0,0,0,0)"}},{{color:"#ffffff",backgroundColor:"{self.US}",duration:0.06,immediateRender:false}},{r2(wt)});'
+                       f'tl.to("#{sid}w{j}",{{backgroundColor:"rgba(0,0,0,0)",duration:0.06}},{r2(wt + step)});')
+            wt += step
+
     def build(self, beats: list[dict]) -> float:
         """beats carry their absolute times (t, d) — see timeline(). Returns the film's duration."""
         agg_on = None
@@ -293,21 +496,21 @@ class Film:
             if b.get('agg_off'):
                 self.agg_window = (agg_on, b['t'])
             for (part, at, dd) in b.get('subs', []):
-                self.clip(self.id('sub'), at, dd, f'<div class="sub">{e(part)}</div>', 20, 'subw')
+                self.subline(part, at, dd)
             if b.get('vo'):
                 self.audio.append(f'<audio id="{self.id("vo")}" class="clip" src="assets/vo/{b["vo_file"]}" data-start="{r2(b["vo_t"])}" data-duration="{r2(b["vo_d"])}" data-volume="1.15"></audio>')
                 # subtitles in short pieces (two lines at most), each on screen for its share of the line
-                parts = chunks(b['vo'])
+                parts = chunks(b['vo'], self.sb.get('sub_limit', 64))
                 total = sum(len(x) for x in parts)
                 at = b['vo_t']
                 for k, part in enumerate(parts):
                     dd = b['vo_d'] * len(part) / total
-                    self.clip(self.id('sub'), at, dd + (0.15 if k == len(parts) - 1 else 0), f'<div class="sub">{e(part)}</div>', 20, 'subw')
+                    self.subline(part, at, dd + (0.15 if k == len(parts) - 1 else 0))
                     at += dd
         if agg_on is not None:
             a0, a1 = getattr(self, 'agg_window', (agg_on, beats[-1]['t']))
             sb = self.sb
-            self.clip('agg', a0, a1 - a0, f'<div class="agg"><div class="ah">AGGREGATE</div><div class="ar"><img src="assets/img/{e(sb["us"]["crest"])}"><b id="aggu">{self.agg0[0]}</b><i>–</i><b id="aggt">{self.agg0[1]}</b><img src="assets/img/{e(sb["them"]["crest"])}"></div></div>', 12)
+            self.clip('agg', a0, a1 - a0, f'<div class="agg"><div class="ah">{e(sb.get("agg_label", "AGGREGATE"))}</div><div class="ar"><img src="assets/img/{e(sb["us"]["crest"])}"><b id="aggu">{self.agg0[0]}</b><i>–</i><b id="aggt">{self.agg0[1]}</b><img src="assets/img/{e(sb["them"]["crest"])}"></div></div>', 12)
             self.tween(f'tl.fromTo("#agg .agg",{{x:500}},{{x:0,duration:0.5,ease:"power3.out"}},{r2(a0)});')
             last = list(self.agg0)
             for at, (u, th) in self.agg_moves:
@@ -350,7 +553,7 @@ video.clip{{width:1920px;height:1080px}}
 .ledger{{position:absolute;left:220px;top:170px;width:1480px;color:{INK}}}
 .lh,.lrow{{display:grid;grid-template-columns:1fr 340px 340px;align-items:center;text-align:center}} .lh b{{font:400 54px 'Head'}}
 .lrow{{border-top:5px solid {INK};padding:28px 0}} .lrow span{{text-align:left;font:700 48px 'Cond';letter-spacing:3px}} .lrow b{{font:400 160px/1 'Ultra'}}
-.circ{{position:absolute;width:300px;height:210px}} .note{{position:absolute;width:300px;text-align:center;font:700 34px 'Mono'}}
+.circ{{position:absolute;width:300px;height:210px;top:50%;margin-top:-105px}} .lc .circ{{width:240px;height:150px;margin-top:-75px;margin-left:30px}} .note{{position:absolute;width:300px;text-align:center;font:700 34px 'Mono';top:100%;margin-top:6px}}
 .rule{{position:absolute;left:260px;top:220px;width:1400px;color:{INK}}} .rule small{{font:700 40px 'Cond';letter-spacing:10px}} .rule b{{display:block;font:400 132px/1.05 'Ultra';margin:12px 0 30px}} .rule p{{font:700 52px/1.3 'Mono';margin:0}}
 .vd{{position:absolute;left:0;top:0;width:1920px;height:1080px;display:flex}} .vl,.vr{{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;color:#fff;text-align:center}}
 .vl img,.vr img{{width:230px;height:230px;object-fit:contain;background:#fff;border-radius:50%;padding:10px}} .vl small,.vr small{{font:700 46px 'Cond';letter-spacing:10px}} .vl b,.vr b{{font:400 92px/1.05 'Head'}}
@@ -372,6 +575,33 @@ video.clip{{width:1920px;height:1080px}}
 .follow{{position:absolute;left:560px;top:150px;width:800px;background:#fff;border:6px solid {INK};padding:40px 50px;box-shadow:18px 18px 0 {INK};color:{INK}}}
 .follow b{{display:block;font:400 110px/1 'Ultra';margin-bottom:24px}} .fl{{display:flex;gap:20px;align-items:baseline;border-bottom:4px dashed {INK};padding:14px 0;font:700 40px 'Cond';letter-spacing:4px}} .fl i{{font:400 50px 'Head';font-style:normal}}
 .btn{{position:relative;margin-top:34px;height:96px;color:#fff;font:700 52px/96px 'Cond';letter-spacing:6px;text-align:center;box-shadow:8px 8px 0 {INK}}} .btn span{{position:absolute;left:0;right:0}} .b2{{opacity:0}}
+.tbw{{position:absolute;left:460px;top:60px;width:1000px;transform-origin:50% 0}} .tbl{{background:#fff;border:6px solid {INK};box-shadow:16px 16px 0 {INK}}}
+.tr{{display:flex;align-items:center;height:46px;border-bottom:2px solid rgba(20,17,13,.25);font:700 30px 'Caps';color:{INK}}} .tr i{{width:80px;text-align:center;font:400 34px 'Ultra';font-style:normal}} .tr span{{flex:1}} .tr b{{width:240px;height:18px;margin-right:30px;background:rgba(20,17,13,.18)}}
+.tr.hl{{background:{US};color:#fff}} .drop{{position:relative;height:10px;background:#D7192A}} .drop em{{position:absolute;right:20px;top:-42px;font:700 30px 'Cond';letter-spacing:6px;color:#D7192A;font-style:normal}}
+.word{{position:absolute;left:0;top:0;width:1920px;height:1080px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}}
+.word b{{font-family:'Ultra';font-weight:400;line-height:0.95;letter-spacing:2px}} .word small{{font:700 46px 'Caps';letter-spacing:10px;margin-top:34px}}
+.cty{{position:absolute;left:0;top:0;width:1920px;height:1080px;display:flex;overflow:hidden}} .cl,.cr{{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;gap:14px}}
+.cl b,.cr b{{font:400 92px/1 'Ultra';max-width:820px;text-align:center}} .cl small,.cr small{{font:700 40px 'Caps';letter-spacing:10px}} .cl img,.cr img{{width:200px;height:200px;object-fit:contain;background:#fff;border-radius:50%;padding:10px;border:6px solid {INK}}}
+.cr{{filter:brightness(.82)}} .bolt{{position:absolute;left:0;top:0;width:1920px;height:1080px}}
+.ctmid{{position:absolute;left:660px;top:110px;width:600px;text-align:center;background:{INK};color:{P};font:400 56px/1.3 'Ultra';padding:10px 0;box-shadow:12px 12px 0 rgba(0,0,0,.4)}}
+.chk{{position:absolute;left:0;top:0;width:1920px;height:1080px;background:#1E3A2B}} .chs{{position:absolute;left:0;top:0;width:1920px;height:1080px}} .chx{{font:400 70px 'Ultra'}}
+.chc{{position:absolute;left:70px;top:30px;background:{INK};color:{P};padding:12px 30px;text-align:center;border:5px solid {P}}} .chc small{{display:block;font:700 28px 'Cond';letter-spacing:8px}} .chc b{{font:400 84px/1 'Ultra'}}
+.chl{{position:absolute;left:330px;top:46px;color:#fff;padding:14px 34px;font:400 76px/1 'Ultra';box-shadow:10px 10px 0 {INK}}}
+.sbd{{position:absolute;left:560px;top:250px;width:800px;background:#0B0B0B;border:12px solid #2a2a2a;border-radius:18px;padding:30px 40px;box-shadow:0 30px 60px rgba(0,0,0,.6)}}
+.sbt{{font:400 120px/1 'Ultra';color:#ff3b30;text-align:center;letter-spacing:8px;text-shadow:0 0 22px #ff3b30}} .sbin,.sbout{{display:flex;gap:30px;align-items:baseline;margin-top:20px}}
+.sbin small,.sbout small{{font:700 40px 'Cond';letter-spacing:6px;color:#9be37b}} .sbout small{{color:#ff6b5b}} .sbin b,.sbout b{{font:400 84px/1 'Head';color:#fff;text-shadow:0 0 14px rgba(255,255,255,.6)}}
+.prs{{position:absolute;left:510px;top:70px;width:900px;background:#fff;padding:18px;box-shadow:24px 24px 0 rgba(20,17,13,.45);transform-origin:50% 20%}} .prs img{{display:block;width:100%}}
+.hlm{{position:absolute;mix-blend-mode:multiply;opacity:.55}} .prt{{position:absolute;left:180px;top:720px;width:1560px;background:{INK};color:{P};text-align:center;padding:20px 30px}}
+.prt small{{display:block;font:700 30px 'Cond';letter-spacing:8px;opacity:.85}} .prt b{{display:block;font:400 56px/1.15 'Ultra';color:#fff}}
+.cut{{position:absolute;top:0;filter:drop-shadow(14px 14px 0 rgba(20,17,13,.55))}}
+.glow{{position:absolute;width:260px;height:260px;margin:-130px 0 0 -130px;border-radius:50%;background:radial-gradient(circle,rgba(255,250,225,.95) 0,rgba(255,240,200,.45) 30%,rgba(255,240,200,0) 70%);mix-blend-mode:screen}}
+.dark{{position:absolute;left:0;top:0;width:1920px;height:1080px;background:#05060a;opacity:0}}
+.duo{{position:absolute;left:0;top:0;width:1920px;height:1080px;mix-blend-mode:multiply;opacity:.85}}
+.subw .sub.kar{{top:auto;bottom:54px;font:400 46px/1.25 'Head';text-transform:uppercase;letter-spacing:1px;color:{P};background:rgba(20,17,13,.88);padding:10px 26px;max-width:1500px}} .sub.kar span{{padding:0 4px}}
+.fw{{position:absolute;left:150px;top:150px;width:1620px;color:{INK}}} .fh b{{display:block;font:400 92px/1 'Ultra'}} .fh span{{font:700 40px 'Caps';letter-spacing:8px}}
+.fg{{display:grid;gap:12px;margin-top:40px}} .ft{{height:96px;display:flex;align-items:center;justify-content:center;color:#fff;font:400 52px 'Ultra';border:4px solid {INK};box-shadow:6px 6px 0 {INK}}}
+.fbr{{margin-top:44px;text-align:left}}
+.fbr span{{display:inline-block;margin-top:14px;background:{INK};color:#fff;font:700 40px 'Caps';letter-spacing:4px;padding:8px 22px}}
 #flash{{position:absolute;left:0;top:0;width:1920px;height:1080px;background:#fff;opacity:0;z-index:30}}
 '''
         if not self.sb.get('silent'):
@@ -403,6 +633,17 @@ def timeline(beats: list[dict], vo: dict[str, float], lead_in: float = 1.5) -> l
         b['t'] = t
         t += b['d']
         out.append(b)
+    return out
+
+
+def resolve_music(music: list[dict], beats: list[dict], D: float) -> list[dict]:
+    """Music cues name a beat (`from_beat`, `to_beat`, indices) rather than a second, so a re-recorded line never
+    leaves a track starting in the wrong place."""
+    out = []
+    for m in music:
+        a = beats[m['from_beat']]['t'] + m.get('offset', 0)
+        z = beats[m['to_beat']]['t'] + beats[m['to_beat']]['d'] if m.get('to_beat') is not None else D
+        out.append({**m, 'at': a, 'd': max(0.5, z - a)})
     return out
 
 
@@ -457,7 +698,7 @@ def build(storyboard: Path, assets: Path, root: Path, voice: bool = True) -> tup
     shutil.copyfile(GSAP, root / 'assets' / 'gsap.min.js')
     import subprocess
     for name in set(SOUNDS.values()):
-        src = next(SFX.glob(name + '.*'))
+        src = next(iter([*SFX.glob(name + '.*'), *SFX2.glob(name + '.*')]))
         dst = root / 'assets' / 'sfx' / f'{name}.wav'
         if not dst.exists():
             subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', str(src), '-ac', '2', '-ar', '48000', str(dst)], check=True)
@@ -469,6 +710,12 @@ def build(storyboard: Path, assets: Path, root: Path, voice: bool = True) -> tup
     f = Film(sb, root)
     f.agg_moves = []
     D = f.build(beats)
+    if sb.get('music'):
+        (root / 'assets' / 'music').mkdir(parents=True, exist_ok=True)
+        for m in sb['music']:
+            src = MUSIC / m['file']
+            shutil.copyfile(src, root / 'assets' / 'music' / src.name)
+        f.music(resolve_music(sb['music'], beats, D))
     errs = check(sb, beats, D)
     (root / 'index.html').write_text(f.page(D), encoding='utf-8')
     (root / 'hyperframes.json').write_text(json.dumps({'name': sb.get('slug', 'docu'), 'width': W, 'height': H, 'fps': 30}) + '\n')
