@@ -7,13 +7,13 @@
     "collection": "html",
     "state": "partial_budget",
     "pagesRead": 0,
-    "observedTotalDocuments": 803,
+    "observedTotalDocuments": 806,
     "observedTotalPages": null,
     "queue": 694,
     "lastError": null
    }
   ],
-  "documents": 109,
+  "documents": 112,
   "historicalRecordsExtracted": 0,
   "seasonReviews": [],
   "note": "Documents read is not historical coverage. Records extracted are candidates for review, not facts."
@@ -43,12 +43,12 @@
   "listings": [
    {
     "collection": "html",
-    "state": "listed",
+    "state": "retry-later",
     "pagesRead": 0,
     "observedTotalDocuments": 1,
     "observedTotalPages": null,
-    "queue": 0,
-    "lastError": null
+    "queue": 1,
+    "lastError": "HTTP 500"
    }
   ],
   "documents": 1,

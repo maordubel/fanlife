@@ -64,6 +64,14 @@
   "owner": null
  },
  {
+  "id": "continue-dfb-union-html",
+  "priority": "P3",
+  "task": "Deutscher Fußball-Bund html: 0 page(s) read; the scheduled task continues from the checkpoint.",
+  "taskHe": "Deutscher Fußball-Bund html: נקראו 0 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
+  "status": "queued",
+  "owner": null
+ },
+ {
   "id": "limit-dfb-union-0",
   "priority": "P3",
   "task": "Same data centre that produced the St. Pauli squad rows: first-team competition squads; a squad is not an appearance.",

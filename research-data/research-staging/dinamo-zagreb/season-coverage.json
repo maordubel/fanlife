@@ -24,8 +24,8 @@
   "listings": [
    {
     "collection": "posts",
-    "state": "listed",
-    "pagesRead": 4,
+    "state": "partial_budget",
+    "pagesRead": 2,
     "observedTotalDocuments": 79,
     "observedTotalPages": 4,
     "queue": null,
@@ -52,12 +52,12 @@
   "listings": [
    {
     "collection": "html",
-    "state": "listed",
+    "state": "blocked",
     "pagesRead": 0,
     "observedTotalDocuments": 1,
     "observedTotalPages": null,
     "queue": 0,
-    "lastError": null
+    "lastError": "HTTP 403 — a refusal is an answer"
    }
   ],
   "documents": 1,

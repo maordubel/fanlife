@@ -13,74 +13,74 @@
   "evidence": [
    {
     "sourceId": "thecelticwiki",
-    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/60s-pictures/1967-68-pics/1967-08-30-celtic-3-1-rangers-league-cup-pictures/",
-    "locator": "p1",
-    "quote": "Match | 1967 -68 Pictures | 1967 – 1968 | 60's Pictures | Year By Year Pictures | Picture Library",
-    "bodyHash": "1f285232e9b43944a066f5e02cbbfd893e04d97a87100c3d2852c2afd6342934",
-    "fetchedAt": "2026-11-09T12:07:13.617Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "thecelticwiki",
-    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/60s-pictures/1967-68-pics/1967-09-16-rangers-1-0-celtic-league-division-1-pictures/",
-    "locator": "p1",
-    "quote": "Match | 1967-68 Pictures | 1967 – 1968 | 60's Pictures | Year By Year Pictures | Picture Library",
-    "bodyHash": "f00644953450574f363cddc32fcbcb89f11eae2bcbebde5a32d0129368cc9ad6",
-    "fetchedAt": "2026-11-09T12:07:16.629Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "thecelticwiki",
-    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/60s-pictures/1967-68-pics/1968-03-18-shamrock-rovers-2-2-celtic-friendly-pictures/",
-    "locator": "p1",
-    "quote": "Match | 1967-68 Pictures | 1967 – 1968 | 60's Pictures | Year By Year Pictures | Picture Library",
-    "bodyHash": "f00644953450574f363cddc32fcbcb89f11eae2bcbebde5a32d0129368cc9ad6",
-    "fetchedAt": "2026-11-09T12:07:19.481Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "thecelticwiki",
-    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/60s-pictures/1968-69-pics/1968-08-03-celtic-1-2-leeds-united-friendly-pictures/",
-    "locator": "p1",
-    "quote": "Match | 1968-69 Pictures | 1968 – 1969 | 60's Pictures | Year By Year Pictures | Picture Library",
-    "bodyHash": "10b6b6ce56739c37a8de85ce7c93ce53a3c2a91d5706bb7d6cacac6ba4c9d451",
-    "fetchedAt": "2026-11-09T12:07:22.528Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "thecelticwiki",
-    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/60s-pictures/1968-69-pics/1968-08-10-rangers-0-2-celtic-league-cup-pictures/",
-    "locator": "p1",
-    "quote": "Match | 1968-69 Pictures | 1968 – 1969 | 60's Pictures | Year By Year Pictures | Picture Library",
-    "bodyHash": "1b46dc1f84b4f947c8e3d34a9be9ba98d85bd004ff4503feab3bda6ba5b0b842",
-    "fetchedAt": "2026-11-09T12:07:22.528Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "thecelticwiki",
-    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/60s-pictures/1968-69-pics/1968-08-24-celtic-1-0-rangers-league-cup-pictures/",
-    "locator": "p1",
-    "quote": "Match | 1968-69 Pictures | 1968 – 1969 | 60's Pictures | Year By Year Pictures | Picture Library",
-    "bodyHash": "1a7c8ce1ce33c9af1159983a37614bc85d56130bd36b6af7c900a57ae5194eb4",
-    "fetchedAt": "2026-11-09T12:07:22.528Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "thecelticwiki",
-    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/60s-pictures/1968-69-pics/1968-09-14-celtic-2-4-rangers-league-division-1-pictures/",
-    "locator": "p1",
-    "quote": "Match | 1968-69 Pictures | 1968 – 1969 | 60's Pictures | Year By Year Pictures | Picture Library",
-    "bodyHash": "63b58ac015c50887e20ad917b96ea8f362854f320465142cedf8072c20ac0711",
-    "fetchedAt": "2026-11-09T12:07:22.528Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "thecelticwiki",
     "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/60s-pictures/1968-69-pics/1968-10-02-celtic-4-0-st-etienne-european-cup-pictures/",
     "locator": "p1",
     "quote": "Match | 1968-69 Pictures | 1968 – 1969 | 60's Pictures | Year By Year Pictures | Picture Library",
     "bodyHash": "b5fa26c84b577562d8a9f37b253344597e0e692d823e92bc9cd1d83803a53081",
     "fetchedAt": "2026-11-09T12:07:22.528Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/60s-pictures/1968-69-pics/1968-11-30-hibernian-2-5-celtic-league-pictures/",
+    "locator": "p1",
+    "quote": "Match | 1968-69 Pictures | 1968 – 1969 | 60's Pictures | Year By Year Pictures | Picture Library",
+    "bodyHash": "e231e504b4541d2c2df4a3891674f59e315fe8908e395c4f5d2039abb3560016",
+    "fetchedAt": "2026-11-10T11:24:50.021Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/60s-pictures/1968-69-pics/1968-12-07-celtic-5-0-st-mirren-league-division-1-pictures/",
+    "locator": "p1",
+    "quote": "Match | 1968-69 Pictures | 1968 – 1969 | 60's Pictures | Year By Year Pictures | Picture Library",
+    "bodyHash": "e231e504b4541d2c2df4a3891674f59e315fe8908e395c4f5d2039abb3560016",
+    "fetchedAt": "2026-11-10T11:24:50.025Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/60s-pictures/1968-69-pics/1968-12-21-celtic-1-1-kilmarnock-league-division-1-pictures/",
+    "locator": "p1",
+    "quote": "Match | 1968-69 Pictures | 1968 – 1969 | 60's Pictures | Year By Year Pictures | Picture Library",
+    "bodyHash": "e231e504b4541d2c2df4a3891674f59e315fe8908e395c4f5d2039abb3560016",
+    "fetchedAt": "2026-11-10T11:24:50.026Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/60s-pictures/1968-69-pics/1969-03-22-celtic-4-1-morton-scottish-cup-semi-final-pictures/",
+    "locator": "p1",
+    "quote": "Match | 1968-69 Pictures | 1968 – 1969 | 60's Pictures | Year By Year Pictures | Picture Library",
+    "bodyHash": "e231e504b4541d2c2df4a3891674f59e315fe8908e395c4f5d2039abb3560016",
+    "fetchedAt": "2026-11-10T11:24:50.030Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/60s-pictures/1968-69-pics/1969-04-21-kilmarnock-2-2-celtic-league-division-1-pictures/",
+    "locator": "p1",
+    "quote": "Match | 1968-69 Pictures | 1968 – 1969 | 60's Pictures | Year By Year Pictures | Picture Library",
+    "bodyHash": "f917a644ade7ec093fbaef695cc34277bc1ecafa5b3ff803b15123c8f3b4c00a",
+    "fetchedAt": "2026-11-10T11:24:53.190Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/70s-pictures/1969-70-pics/1969-08-05-celtic-1-1-leeds-united-friendly-pictures/",
+    "locator": "p1",
+    "quote": "Match | 1969-70 Pictures | 1969 – 1970 | 60's Pictures | Year By Year Pictures | Picture Library",
+    "bodyHash": "9d2e778ff8e164d4fa98635b856363ed793160e658dd059411166184b6e0d809",
+    "fetchedAt": "2026-11-10T11:24:53.193Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/70s-pictures/1969-70-pics/1969-11-12-celtic-3-0-benfica-european-cup-pictures/",
+    "locator": "p1",
+    "quote": "Match | Matches: 1969 – 1970 | 1969-70 Pictures | 60's Pictures | Year By Year Pictures | Picture Library",
+    "bodyHash": "710d5e391245fd50f14775834b5d305cc05b7adcafaa059820a9e1b2dff5807b",
+    "fetchedAt": "2026-11-10T11:24:59.016Z",
     "language": "en"
    }
   ],
@@ -89,8 +89,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-09T12:07:22.528Z",
-  "updatedAt": "2026-11-09T12:07:22.528Z"
+  "createdAt": "2026-11-10T11:24:59.016Z",
+  "updatedAt": "2026-11-10T11:24:59.016Z"
  },
  {
   "id": "ga-b62cccd6f7bbc627",
@@ -991,20 +991,74 @@
   "evidence": [
    {
     "sourceId": "thecelticwiki",
-    "url": "https://www.thecelticwiki.com/media/celtic-videos-and-dvds/dvd-celtic-the-official-history/",
-    "locator": "p8",
-    "quote": "The first two DVDs handle the transition of the club from its inauspicious beginnings and carries on through to the 70's/80's, educating viewers on the club's background and then onto our highs and lows through the ages. The last two DVDs concentrate more on the last 20years (Stopping the ten, Seville etc).",
-    "bodyHash": "409a577fa2d53caf0cd96a9f6b4bf6e45856fa28234c1a399ebce5aca56c214b",
-    "fetchedAt": "2026-10-30T10:27:24.315Z",
+    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/70s-pictures/1969-70-pics/1969-10-25-celtic-1-0-st-johnstone-league-cup-final-pictures/",
+    "locator": "p1",
+    "quote": "Match | 1969- 70 Pictures | 1969 – 1970 | 70's Picture s | Year By Year Pictures | Picture Library",
+    "bodyHash": "b794219890c1d3366d39ff607a78b9c3b4d469062e1030efc00879692a548b98",
+    "fetchedAt": "2026-11-10T11:24:55.993Z",
     "language": "en"
    },
    {
     "sourceId": "thecelticwiki",
-    "url": "https://www.thecelticwiki.com/managers/strachan-gordon/gordon-strachan-celtic-minded/",
-    "locator": "p11",
-    "quote": "(When asked about Man Utd showing interest in getting him to manage at Old Trafford in early 70's)",
-    "bodyHash": "93c42f088a255cc71bbf45904e6e156590fa10f32c753a982c3c7790b491e8ff",
-    "fetchedAt": "2026-11-03T11:03:12.328Z",
+    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/70s-pictures/1969-70-pics/1970-01-03-celtic-0-0-rangers-league-division-1-pictures/",
+    "locator": "p1",
+    "quote": "Match | 1969-70 Pictures | 1969 – 1970 | 70's Pictures | Year By Year Pictures | Picture Library | Forum",
+    "bodyHash": "098da734a795e50f9c40711c3653e8d470e29b071256bcce53deb103ab9fbe97",
+    "fetchedAt": "2026-11-10T11:24:59.017Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/70s-pictures/1969-70-pics/1970-01-24-celtic-2-1-dunfermline-scottish-cup-pictures/",
+    "locator": "p1",
+    "quote": "Match | 1969-70 Pictures | Matches 1969 – 1970 | 70's Pictures | Year By Year Pictures | Picture Library",
+    "bodyHash": "fc7a8dc760a11ad48c3263966357812fcca49ccb40e52ecac83e616c789b8fff",
+    "fetchedAt": "2026-11-10T11:24:59.017Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/70s-pictures/1969-70-pics/1970-01-31-celtic-3-1-dunfermline-athletic-league-division-1-pictures/",
+    "locator": "p1",
+    "quote": "Match | 1969-70 Pictures | 1969 – 1970 | 70's Pictures | Year By Year Pictures | Picture Library",
+    "bodyHash": "65ef48a8d659c3e61bd84f3bd37f82eb1693cc47924cae394c19d7cbc70a2557",
+    "fetchedAt": "2026-11-10T11:24:59.017Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/70s-pictures/1969-70-pics/1970-03-04-celtic-3-0-fiorentina-european-cup-pictures/",
+    "locator": "p1",
+    "quote": "Match | 1969-70 Pictures | 70's Pictures | Year By Year Pictures | Picture Library | Matches: 1969 – 1970 | Forum",
+    "bodyHash": "0fc52368db68796360e44cc33e3edb9a3207f5c8479bf2381cadff0aa4a6a300",
+    "fetchedAt": "2026-11-10T11:25:02.074Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/70s-pictures/1969-70-pics/1970-03-14-celtic-2-1-dundee-scottish-cup-semi-final-pictures/",
+    "locator": "p1",
+    "quote": "Match | 1969-70 Pictures | 1969 – 1970 | 70's Pictures | Year By Year Pictures | Picture Library",
+    "bodyHash": "f149cc4bd785ff1651b7c691c13857e1d123e4f0874ea4f484f8657b876b9021",
+    "fetchedAt": "2026-11-10T11:25:02.075Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/70s-pictures/1969-70-pics/1970-03-18-fiorentina-1-0-celtic-european-cup-pictures/",
+    "locator": "p1",
+    "quote": "Match | 1969-70 Pictures | 1969 – 1970 | 70's Pictures | Year By Year Pictures | Picture Library | Forum",
+    "bodyHash": "cc2691755eb5e4daf2612fae154c49a273428a355023cfad3b2218043c68598c",
+    "fetchedAt": "2026-11-10T11:25:02.075Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/70s-pictures/1969-70-pics/1970-04-11-aberdeen-3-1-celtic-scottish-cup-final-pictures/",
+    "locator": "p1",
+    "quote": "Match | 1969-70 Pictures | 1969 – 1970 | 70's Pictures | Year By Year Pictures | Picture Library",
+    "bodyHash": "3c45692634642867e5e1b314d23b9c6383c1be167ef885f46eb8aaa33b657f5e",
+    "fetchedAt": "2026-11-10T11:25:02.077Z",
     "language": "en"
    }
   ],
@@ -1013,8 +1067,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-03T11:03:12.328Z",
-  "updatedAt": "2026-11-03T11:03:12.328Z"
+  "createdAt": "2026-11-10T11:25:02.077Z",
+  "updatedAt": "2026-11-10T11:25:02.077Z"
  },
  {
   "id": "ga-e21180845e547f26",
@@ -1090,6 +1144,15 @@
     "bodyHash": "8427924f7688c9a9e3efb9723e5e5f0fbc237c309e3347aafae6e51c436c10fb",
     "fetchedAt": "2026-11-02T11:41:46.766Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/60s-pictures/1968-69-pics/1969-04-21-kilmarnock-2-2-celtic-league-division-1-pictures/",
+    "locator": "p2",
+    "quote": "In the 90th minute, Gemmell scores to make it 2-2 and earn the point to make Celtic the league champions.",
+    "bodyHash": "f917a644ade7ec093fbaef695cc34277bc1ecafa5b3ff803b15123c8f3b4c00a",
+    "fetchedAt": "2026-11-10T11:24:53.190Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1097,8 +1160,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-02T11:41:46.766Z",
-  "updatedAt": "2026-11-02T11:41:46.766Z"
+  "createdAt": "2026-11-10T11:24:53.190Z",
+  "updatedAt": "2026-11-10T11:24:53.190Z"
  },
  {
   "id": "ga-22353df6dc5d1642",
@@ -1651,6 +1714,24 @@
     "bodyHash": "f0aff2e4134a46ff2828a43381a3f9f685a3b208f6dfdcc733070886885abf50",
     "fetchedAt": "2026-11-03T11:03:15.285Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-collectables/panini-albums/panini-football-80/",
+    "locator": "p1",
+    "quote": "The Celtic section from the Panini 'Football 80' album. In this album Celtic were, as with all other Scottish teams featured, allocated a half page.",
+    "bodyHash": "c59f2bd24a220ed409084236c172838614d8d1256825c41a8ab61fae5bef83f7",
+    "fetchedAt": "2026-11-10T11:25:05.053Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-collectables/panini-albums/panini-before-they-were-celts/",
+    "locator": "p17",
+    "quote": "Garry Pendrey started his football career with hometown club Birmingham City and made more than 300 appearances for the Blues before moing to near neighbours West Brom. He would later join Torquay and also played for Bristol Rovers and Walsall. This sticker is from Panini's 'Football 80'.",
+    "bodyHash": "e24ede7fb0a3eb144ca6f0fd0fb5705737c52a0c053418ccbedf80ea05100085",
+    "fetchedAt": "2026-11-10T11:25:05.054Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1658,8 +1739,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-03T11:03:15.285Z",
-  "updatedAt": "2026-11-03T11:03:15.285Z"
+  "createdAt": "2026-11-10T11:25:05.054Z",
+  "updatedAt": "2026-11-10T11:25:05.054Z"
  },
  {
   "id": "ga-09431d5a23e77134",
@@ -2347,6 +2428,15 @@
     "bodyHash": "b4b28910dc2405d4dfb4af4041061e2cdaea0935cb9609a6e8ab81e41bdaf5e6",
     "fetchedAt": "2026-11-01T10:48:14.312Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-collectables/panini-albums/panini-football-86/",
+    "locator": "p1",
+    "quote": "Below is the Celtic page from Panini's 'Football 86'",
+    "bodyHash": "6e1a100495560817e52958b3e7ad2dabc3aff302a52d71c976f2b22b5fd3ac9e",
+    "fetchedAt": "2026-11-10T11:25:05.053Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2354,8 +2444,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-01T10:48:14.312Z",
-  "updatedAt": "2026-11-01T10:48:14.312Z"
+  "createdAt": "2026-11-10T11:25:05.053Z",
+  "updatedAt": "2026-11-10T11:25:05.053Z"
  },
  {
   "id": "ga-6c1d11d189bd1d7a",
@@ -2536,6 +2626,15 @@
     "bodyHash": "0fd214b3e6bdb91fb372e678d317d7d8f4d25ea6dcd5e2516e8c59c070f8f8d7",
     "fetchedAt": "2026-11-02T11:41:31.969Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-collectables/panini-albums/panini-football-78/",
+    "locator": "p1",
+    "quote": "Below is the Celtic page from the Panini 'Football 78' album",
+    "bodyHash": "3938c972887001a885ce3ed966d819335eca7fc31c5bd38e74174677358e9dad",
+    "fetchedAt": "2026-11-10T11:25:05.052Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2543,8 +2642,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-02T11:41:31.969Z",
-  "updatedAt": "2026-11-02T11:41:31.969Z"
+  "createdAt": "2026-11-10T11:25:05.052Z",
+  "updatedAt": "2026-11-10T11:25:05.052Z"
  },
  {
   "id": "ga-530c343db29ad707",

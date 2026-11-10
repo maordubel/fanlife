@@ -1848,17 +1848,8 @@
   "opponentHe": null,
   "minute": "45",
   "scorerAlias": null,
-  "ownGoal": false,
+  "ownGoal": true,
   "evidence": [
-   {
-    "sourceId": "millernton",
-    "url": "https://millernton.de/2022/01/31/lage-am-millerntor-31-januar-2022/",
-    "locator": "p62",
-    "quote": "Doch auch abgesehen davon gibt es natürlich viele Punkte, die die Vergabe der Spiele nach China unverständlich erscheinen lassen – zumindest, wenn man mal den offensichtlichen Punkt „Geld & Macht“ ausblendet. In Zusammenarbeit mit Christian Neureuther hat die ARD eine Dokumentation veröffentlicht, die heute immerhin mal zur besten Sendezeit (20.15h) ausgestrahlt wird, vorab aber auch schon in der Mediathek abrufbar ist. // ( ARD Mediathek, 45min )",
-    "bodyHash": "80bff29d26e8339372c2cfd1c0eb33d785f106f9c6c988e90342d4557c361fdd",
-    "fetchedAt": "2026-10-31T09:59:25.478Z",
-    "language": "en"
-   },
    {
     "sourceId": "millernton",
     "url": "https://millernton.de/2022/06/20/lage-am-millerntor-20-juni-2022/",
@@ -1921,6 +1912,15 @@
     "bodyHash": "31c687530f1109238daa844337384fae133aa99a947b7f2d6366eaab9f81bf14",
     "fetchedAt": "2026-11-06T11:09:22.959Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/03/05/lage-am-millerntor-05-maerz-2024/",
+    "locator": "p103",
+    "quote": "[Chilean Primera B] Universidad de Concepción [1] – San Marcos de Arica. D Vicencio 45′ Own Goal",
+    "bodyHash": "d164f1760857aa5e4e4bca2bb863c9c044dc28ef6a43f454b8e45fc429b36a0d",
+    "fetchedAt": "2026-11-10T11:25:55.502Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1928,8 +1928,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-06T11:09:22.959Z",
-  "updatedAt": "2026-11-06T11:09:22.959Z"
+  "createdAt": "2026-11-10T11:25:55.502Z",
+  "updatedAt": "2026-11-10T11:25:55.502Z"
  },
  {
   "id": "ga-d8e2dac9b5d75d90",
@@ -2851,6 +2851,15 @@
     "bodyHash": "5a51cb611cbbc85121bc85cbc6fb928909114e23fb7a6eebe4c7442d9bdb933d",
     "fetchedAt": "2026-11-07T10:42:53.735Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/03/26/lage-am-millerntor-26-maerz-2024/",
+    "locator": "p47",
+    "quote": "Mexico U23 0 – [2] Argentina U23 – Matias Soule 25′ (Puskas Contender)",
+    "bodyHash": "1174885b224508cf7bd2be8f079e7dbb58bd40b19ccb0f59bf52179d6d3f3c99",
+    "fetchedAt": "2026-11-10T11:25:58.172Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2858,8 +2867,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:53.735Z",
-  "updatedAt": "2026-11-07T10:42:53.735Z"
+  "createdAt": "2026-11-10T11:25:58.172Z",
+  "updatedAt": "2026-11-10T11:25:58.172Z"
  },
  {
   "id": "ga-690e32cb743d0203",
@@ -3286,5 +3295,35 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-11-09T12:08:33.155Z",
   "updatedAt": "2026-11-09T12:08:33.155Z"
+ },
+ {
+  "id": "ga-20c09a946dfc57a2",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "90+2",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/03/14/lage-am-millerntor-14-maerz-2024/",
+    "locator": "p56",
+    "quote": "River Plate [2]-1 Estudiantes – Rodrigo Aliendro 90+2′ (great goal)",
+    "bodyHash": "453cceae056130fca420fe7071484f41d734aa71f638a970464c79617228084b",
+    "fetchedAt": "2026-11-10T11:25:55.517Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-10T11:25:55.517Z",
+  "updatedAt": "2026-11-10T11:25:55.517Z"
  }
 ]
