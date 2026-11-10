@@ -169,3 +169,16 @@ Each Short needs separate narration, new pacing, independently edited 9:16 visua
 2. One photograph from a match that never kicked off became a symbol of a country in crisis. Dinamo Zagreb were due to face Red Star Belgrade in May 1990. Before football could begin, violence took over the stadium. The story behind that image is more complicated than the myth that followed.
 
 3. The match at Maksimir never started, yet its images still shape how people remember Yugoslavia. Dinamo Zagreb and Red Star Belgrade were meant to play that afternoon. Instead, a stadium descended into violence. To understand why the photograph mattered, we need to look beyond the frame.
+
+## Production cut · DOCU (10.11.2026)
+
+The film is built from `scripts/football-stories/studio/docu/films/classified_maksimir_1990.py` (43 beats, ~5 min) on the
+owner's Drive pack. What the cut adds to the ledger above, each checked on 10.11.2026:
+
+- The officer, Refik Ahmetović, publicly forgave Boban years later (Wikipedia, "Dinamo–Red Star riot", citing BalkanInsight).
+- The ban is told as two versions: Dinamo's account (nine months, cut to four) and the FSJ six-month ban reported by Wikipedia and These Football Times. Either way he missed Italia 90.
+- The monument outside Maksimir (1994) and its plaque's words, quoted from [Euronews, 13.5.2020](https://www.euronews.com/2020/05/13/red-star-belgrade-vs-dinamo-zagreb-the-football-match-that-started-a-war), with the historian Dario Brentin's warning in the same piece.
+- Croatia declared independence in June 1991.
+
+Photographs carry ARCHIVE · CONTEXT (date and source not verified); the owner's illustrations carry the reconstruction
+label. Nothing on the board flickers (rule 142).
