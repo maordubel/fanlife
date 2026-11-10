@@ -1,7 +1,7 @@
 # The Facebook Page + Instagram connection, from GitHub's secrets to the site's server-only store (owner, 10.11.2026:
 # "permanent automatic publishing"). GitHub's scheduled runs come every few hours; the plan's tick and the studio's
-# Reels run on Vercel every five minutes and never had the Page token. This hands it over: on merge, on Run workflow,
-# and once a week (a renewed token travels by itself). The value is never printed. lib/marketing/metaStore.ts.
+# Reels run on Vercel every five minutes and never had the Page token. This hands it over on merge and on Run workflow
+# (after renewing the token: Actions → Meta connection → site → Run workflow). The value is never printed. lib/marketing/metaStore.ts.
 # Uses: secrets META_PAGE_TOKEN, FAN_LIFE_CRON_SECRET · variables META_PAGE_ID, META_IG_USER_ID, FAN_LIFE_RESEARCH_URL,
 #       META_AUTOPUBLISH (or the films switch STORIES_SOCIAL_AUTOPUBLISH), META_GRAPH_VERSION (optional).
 name: Meta connection → site
@@ -10,8 +10,6 @@ on:
     branches: [main]
     paths: ['.github/workflows/meta-handoff.yml', 'lib/marketing/metaStore.ts']
   workflow_dispatch:
-  schedule:
-    - cron: '17 6 * * 1'
 permissions: {}
 jobs:
   handoff:
