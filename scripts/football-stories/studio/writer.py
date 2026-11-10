@@ -477,7 +477,9 @@ def fix_hints(errs: list[str], ledger: dict, lo: int, hi: int) -> str:
         out.append('A number may appear only if a claim you cite contains it. A count over several matches (six draws, '
                    f'four wins) comes from a season summary: cite it ({ids}) in that beat, or say it without the number. '
                    'A date or a year you cannot cite is REWRITTEN, never just deleted: "October second, brought…" with the '
-                   'year cut out is a broken sentence — say "That October night brought…" instead.')
+                   'year cut out is a broken sentence — say "That October night brought…" instead. Numbers from the club context '
+                   '(a gate or stand number, a count of titles, a capacity) are never citable: name the place or the idea '
+                   'without the figure ("their own end", "the champions").')
     st = None
     try:
         from .director import story_of
