@@ -212,7 +212,16 @@ class Adapter:
                 sc = self.scoreline(g)
                 d0 = long_date(g.get('date'))
                 rows.append([f'{d0.rsplit(" ", 1)[0] if d0 else ""} · {"v" if sc["home"] else "at"} {sc["them"]}'.strip(' ·'), sc['ug'], sc['tg']])
-            if rows:
+            results = []
+            for cid in (v.get('claims') or s.get('claim_ids') or []):
+                g = self.fact(cid)
+                if g.get('kind') == 'match' and g.get('outcome') in ('win', 'draw', 'loss'):
+                    results.append({'win': 'W', 'draw': 'D', 'loss': 'L'}[g['outcome']])
+            if len(results) >= 6:   # a run reads as a strip of results, dealt one by one
+                out.append({'kind': 'form', 'results': results[:30], 'per_row': 15 if len(results) > 10 else len(results),
+                            'title': (v.get('label') or '').upper(), 'sub': self.club.upper(), 'step': min(0.09, max(0.03, (d - 1.2) / max(1, len(results))))})
+                self.cue(n, 0.3, 'tick')
+            elif rows:
                 out.append({'kind': 'ledger', 'us': self.club.upper(), 'them': 'OPPONENTS', 'rows': rows, 'compact': True,
                             'title': (v.get('label') or '').upper(), 'row_at': [0.3 + 0.45 * i for i in range(len(rows))]})
                 self.cue(n, 0.3, 'tick')
@@ -258,9 +267,12 @@ class Adapter:
                 b = self.back(s)
                 out += [b] if b else []
         elif t == 'turning':
-            b = self.back(s, 'slam')
-            out += [b] if b else []
-            out.append({'kind': 'lead', 'text': (v.get('title') or '').upper(), 'sub': v.get('subtitle') or '', 'dt': 0.5})
+            src, is_video = self.picture(s)
+            if src and not is_video:   # the turn of the story: the picture in the club's colour, slammed in
+                out.append({'kind': 'tint', 'src': src})
+            out.append({'kind': 'word', 'text': (v.get('title') or '').upper(), 'bg': 'ink', 'size': 150, 'at': 0.8,
+                        'small': v.get('subtitle') or ''} if len(v.get('title') or '') <= 22 else
+                       {'kind': 'lead', 'text': (v.get('title') or '').upper(), 'sub': v.get('subtitle') or '', 'dt': 0.5})
             self.cue(n, 0.5, 'sting')
         elif t == 'race':
             b = self.back(s, 'panl')
@@ -354,7 +366,7 @@ def write_project(job_dir: Path, plan: dict, palette: Palette, root: Path) -> tu
     if fl.exists():
         shutil.copyfile(fl, root / 'assets' / 'img' / 'fanlife.png')
     them = NEUTRAL
-    sb = {'palette': {'us': palette.accent, 'them': them}, 'silent': True}
+    sb = {'palette': {'us': palette.accent, 'them': them}, 'silent': True, 'karaoke': True, 'sub_limit': 44}
     film = B.Film(sb, root)
     film.agg_moves = []
     D = film.build(beats)
