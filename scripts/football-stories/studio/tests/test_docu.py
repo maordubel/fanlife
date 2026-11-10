@@ -89,6 +89,12 @@ class Docu(unittest.TestCase):
         self.assertNotIn('assets/img/None', self.page)
         self.assertIn('class="ini"', self.page)
 
+    def test_a_pictures_caption_is_never_printed(self):
+        for s in self.plan['shots']:
+            cap = s['visual'].get('caption')
+            if s['visual']['type'] == 'illustration' and cap:
+                self.assertNotIn(f'<b>{cap}</b>', self.page)
+
     def test_the_picture_is_silent_for_the_mix(self):
         self.assertNotIn('<audio', self.page)
 
