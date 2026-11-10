@@ -81,7 +81,7 @@ beat("The Bad Blue Boys closed around their captain, and walked him away from th
 beat("Cameras caught it. Photographers caught it. That one frame was printed and shown, again and again, until it stood for the whole afternoon.",
      img('k_kick.png', 'push', veil=0.2), dict(kind='cutout', src='cut_tv.png', x=1180, h=520, y=420), pad=0.6)
 beat("The officer has a name too. Refik Ahmetović.",
-     dict(kind='cutout', src='cut_helmet.png', x=560, h=520, y=300), stamp('REFIK AHMETOVIĆ', side='them', x=380, y=820, dt=1.2, size=130),
+     dict(kind='cutout', src='cut_helmet.png', x=560, h=520, y=300), stamp('REFIK AHMETOVIĆ', side='them', x=330, y=800, dt=1.2, size=100, rot=-4),
      sound=[('stamp', 1.2, 1.0, 0.7)])
 beat("Years later, he publicly forgave Boban.", word('HE FORGAVE HIM', bg='us', size=210), sound=[('impact', 0.0, 1.6, 0.6)], pad=0.6)
 
@@ -95,13 +95,13 @@ beat("A score that nobody scored.", word('0 – 3', bg='them', size=330, small='
 beat("And Boban was banned. How long depends on who you ask.",
      photo('o05_after.jpg', 'push', big='AFTER'), pad=0.3)
 beat("Dinamo's account says nine months, cut to four. Other accounts say six. Either way, it cost him the World Cup in Italy that summer.",
-     dict(kind='tally', title='THE BAN · TWO VERSIONS', cells=[('DINAMO: MONTHS', '9 → 4'), ('OTHER ACCOUNTS', 6), ('ITALIA 90', 'MISSED')]),
+     dict(kind='rule', small='THE BAN · TWO VERSIONS', title='9 → 4 MONTHS · OR 6', text="Dinamo's account: nine months, cut to four. Other accounts: six. Either way, no Italia 90."),
      sound=[('tick', 0.2, 2.6, 0.4)])
 
 # ── CHAPTER SIX · THE MYTH ──
 beat(None, dict(kind='ticket', small='CHAPTER SIX', big='THE MYTH', line='1990 · 1991 · 1994'), hold=2.0)
 beat("Football carried on. The league finished. A year later, in May nineteen ninety-one, Dinamo and Red Star met again, in Zagreb.",
-     dict(kind='tally', title='WHAT CAME NEXT', cells=[('MAY 1990', 'MAKSIMIR'), ('MAY 1991', 'THEY MET AGAIN')]))
+     dict(kind='cities', a=dict(name='1990', small='NEVER PLAYED'), b=dict(name='1991', small='THEY MET AGAIN', bg='#C8102E'), mid='ZAGREB · MAY', mid_at=1.6), sound=[('swish', 0.0, 1.0, 0.5)])
 beat("In June nineteen ninety-one, Croatia declared independence. War followed. Some of the men from those terraces went to fight in it.",
      img('k_after.png', 'push', veil=0.45), pad=0.6)
 beat("In nineteen ninety-four, a monument went up outside Maksimir. Its plaque is for Dinamo fans for whom, in its words, the war started on the thirteenth of May, nineteen ninety.",
