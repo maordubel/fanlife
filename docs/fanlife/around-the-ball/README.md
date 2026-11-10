@@ -40,4 +40,29 @@ Order = the strongest hook first, alternating tone so the playlist never plays t
 | 09 | [atb09-zambia.script.md](atb09-zambia.script.md) | HEART | No way I don't know | script ready |
 | 10 | [atb10-robin-friday.script.md](atb10-robin-friday.script.md) | LAUGH | Is this real | script ready |
 
+## The second list (owner, 10.11.2026, three files) — scripts ready
+
+| # | File | Tone |
+|---|---|---|
+| 11 | [atb11-guttmann.script.md](atb11-guttmann.script.md) | WAR |
+| 12 | [atb12-drogba-2005.script.md](atb12-drogba-2005.script.md) | HEART |
+| 13 | [atb13-three-yellows.script.md](atb13-three-yellows.script.md) | LAUGH |
+| 14 | [atb14-eboue.script.md](atb14-eboue.script.md) | LAUGH |
+| 15 | [atb15-dimona-56.script.md](atb15-dimona-56.script.md) | LAUGH |
+| 16 | [atb16-ronaldo-1998.script.md](atb16-ronaldo-1998.script.md) | WAR |
+| 17 | [atb17-phantom-goal.script.md](atb17-phantom-goal.script.md) | LAUGH |
+| 18 | [atb18-kramer-2014.script.md](atb18-kramer-2014.script.md) | HEART |
+| 19 | [atb19-denmark-1992.script.md](atb19-denmark-1992.script.md) | LAUGH |
+| 20 | [atb20-paul-octopus.script.md](atb20-paul-octopus.script.md) | LAUGH |
+| 21 | [atb21-barbados-grenada.script.md](atb21-barbados-grenada.script.md) | LAUGH |
+| 22 | [atb22-six-minutes.script.md](atb22-six-minutes.script.md) | WAR |
+| 23 | [atb23-nuremberg.script.md](atb23-nuremberg.script.md) | WAR |
+| 24 | [atb24-nigeria-79-0.script.md](atb24-nigeria-79-0.script.md) | LAUGH |
+| 25 | [atb25-steve-davies.script.md](atb25-steve-davies.script.md) | LAUGH |
+| 26 | [atb26-meroni.script.md](atb26-meroni.script.md) | HEART |
+| 27 | [atb27-quini.script.md](atb27-quini.script.md) | WAR |
+| 28 | [atb28-australia-curse.script.md](atb28-australia-curse.script.md) | LAUGH |
+
+Ali Dia (Southampton, 1996) was on the list too: it is already **CLASSIFIED FILE 04 · THE COUSIN** (`docs/fanlife/classified/file04-the-cousin.script.md`), so it is not written twice.
+
 Already in the playlist: **The Holy Water** (Branco, Italia 90 — CLASSIFIED FILE 06 Short, scheduled).
