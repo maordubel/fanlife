@@ -2,6 +2,7 @@
 import {useEffect,useRef,useState,type ReactNode} from 'react'
 import {jobKind,type Job} from '@/lib/stories/jobs'
 import {filmTitle} from '@/lib/stories/social'
+import {deliverables} from '@/lib/stories/deliverables'
 import {finished,marketingBanner,type Facts} from '@/lib/stories/banners'
 import type {PlanPost} from '@/lib/stories/marketing'
 import {DeskBanner} from './desk'
@@ -41,32 +42,53 @@ export function MarketingTab({facts,jobs,onChange,onMade,children}:{facts:Facts;
        <b>{filmTitle(j)}</b>
        <span>{KIND_TEXT[jobKind(j)]} · {j.brief.club_name} · {j.artefacts?.shorts?.length??0} Short(s) · {j.upload.state==='done'?'on YouTube':'not on YouTube yet'}</span>
        <span>{(j.social?.posts??[]).length?`${j.social!.posts.length} post(s) planned or sent`:'No posts planned'}</span>
+       {jobKind(j)==='film'?<span>{deliverables(j,jobs??[]).map(d=>`${d.done?'✓':'○'} ${d.label}`).join(' · ')}</span>:null}
       </button></li>)}</ul>}
      <h3 className={css.h3}>Shorts and Reels</h3>
      <p className={css.hint}>Every film is also cut into its own animated 9:16 Shorts when it is made — they are listed under each film. Marketing films are made in the panel above.</p>
     </div>
    </section>
    <section className={css.list}>
-    {job?<FilmMarketing key={job.id} job={job} onChange={onChange}/>:<div className={css.panel}><p className={css.empty}>Open a film to post it.</p></div>}
+    {job?<FilmMarketing key={job.id} job={job} jobs={jobs??[]} onChange={onChange} onMade={onMade}/>:<div className={css.panel}><p className={css.empty}>Open a film to post it.</p></div>}
     <Plan posts={facts.plan}/>
    </section>
   </div>
  </>
 }
 
-function FilmMarketing({job,onChange}:{job:Job;onChange:()=>void}){
+function FilmMarketing({job,jobs,onChange,onMade}:{job:Job;jobs:Job[];onChange:()=>void;onMade:(id:string)=>Promise<void>}){
  const [urls,setUrls]=useState<Record<string,string>>({}),[err,setErr]=useState('')
  useEffect(()=>{void api(`/api/master/stories/${job.id}`).then(b=>setUrls(b.urls||{})).catch(e=>setErr(e instanceof Error?e.message:'Could not read the film.'))},[job.id])
  const shorts=job.artefacts?.shorts??[]
  return <article className={css.panel}><div className={css.body}>
   <h2 className={css.jobTitle}>{filmTitle(job)}</h2>
   {err&&<p role="alert" className={css.alert}>{err}</p>}
+  {jobKind(job)==='film'?<Standard job={job} jobs={jobs} onMade={onMade}/>:null}
   <h3 className={css.h3}>Shorts and Reels</h3>
   {shorts.length?<div className={css.shorts}>{shorts.map((x,i)=><figure key={x.path}>{urls[x.path]?<video src={urls[x.path]} controls preload="metadata" playsInline/>:null}
    <figcaption><b>{x.hook}</b> · {Math.round(x.seconds)} s{urls[x.path]?<> · <a href={urls[x.path]} download={`short-${i+1}.mp4`}>Download</a></>:null}</figcaption></figure>)}</div>:<p className={css.hint}>This film has no Shorts.</p>}
   <SocialPanel job={job}/>
   <button type="button" className={`${css.btn} min-h-tap`} onClick={onChange}>Refresh</button>
  </div></article>
+}
+
+/** The production standard (owner, 10.11.2026): film · Shorts · Reel on Instagram + Facebook · animated Short. */
+function Standard({job,jobs,onMade}:{job:Job;jobs:Job[];onMade:(id:string)=>Promise<void>}){
+ const [busy,setBusy]=useState(false),[msg,setMsg]=useState('')
+ const list=deliverables(job,jobs)
+ const animated=list.find(d=>d.key==='animated')!,match=(job.brief.match_ids??[]).at(-1)
+ async function makeShort(){
+  if(!match)return
+  setBusy(true);setMsg('')
+  try{const b=await api('/api/master/stories',{method:'POST',body:JSON.stringify({kind:'short',brief:{club_id:job.brief.club_id,match_id:match,seconds:30},idempotencyKey:`std-short-${job.id}`})});setMsg('Queued: the animated Short’s script and its Google Flow pack arrive in Animated Shorts within a few minutes.');await onMade(b.job.id)}
+  catch(e){setMsg(e instanceof Error?e.message:'Could not queue it.')}finally{setBusy(false)}
+ }
+ return <>
+  <h3 className={css.h3}>The standard: film · Shorts · Reel · animated Short</h3>
+  <ul className={css.checks}>{list.map(d=><li key={d.key}><b>{d.done?'✓':'○'} {d.label}</b> — {d.detail}{d.key==='reel'&&!d.done?' (schedule it in Social below: Instagram and Facebook, file “Short” or “Your Reel”)':''}</li>)}</ul>
+  {!animated.done&&match?<button type="button" className={`${css.btn} min-h-tap`} disabled={busy} onClick={()=>void makeShort()}>{busy?'Queuing…':'Make the animated Short'}</button>:null}
+  {msg&&<p role="status" className={css.hint}>{msg}</p>}
+ </>
 }
 
 function Plan({posts}:{posts:PlanPost[]|null|undefined}){
