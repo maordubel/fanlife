@@ -163,3 +163,10 @@ describe('the full opening (scripts/clubs/promote.ts, .github/workflows/club-ope
   for(const d of staged)for(const s of ['scarf','ticket','tunnel','stand'])expect(existsSync(`public/life/town/shots/${d}/${s}.webp`),`${d} ${s}`).toBe(true)
  })
 })
+describe('LIFE parity for a promoted club (tests/life-club-parity-data.test.ts holds every core club to it)',()=>{
+ it('the opening writes all five named roles and a birth year the parity guard accepts',()=>{
+  const p=readFileSync('scripts/clubs/promote.ts','utf8')
+  for(const r of ['dad:','mum:','friend:','kiosk:','elder:'])expect(p).toContain(r)
+  expect(p).toContain('NAMES[reg.country]??ANY');expect(p).toContain('Math.min(2007,first-8)')
+ })
+})

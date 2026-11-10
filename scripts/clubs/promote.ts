@@ -28,12 +28,16 @@ const arg=(k:string)=>{const i=process.argv.indexOf('--'+k);return i<0?null:proc
 type Raw=Record<string,unknown>
 
 /** Fictional first names by country for LIFE's street (roles: friend, kiosk, elder; dad and mum keep their word). Proposed, never real people. */
-const NAMES:Record<string,{friend:string;kiosk:string;elder:string}>={
- Greece:{friend:'Nikos',kiosk:'Stavros',elder:'Kyr Thanasis'},Croatia:{friend:'Ivan',kiosk:'Mate',elder:'Đuro'},Serbia:{friend:'Marko',kiosk:'Dragan',elder:'Čika Mile'},
- 'Bosnia and Herzegovina':{friend:'Ante',kiosk:'Mirko',elder:'Stari Jure'},Germany:{friend:'Jonas',kiosk:'Uwe',elder:'Opa Heinz'},England:{friend:'Danny',kiosk:'Raj',elder:'Old Les'},
- Scotland:{friend:'Callum',kiosk:'Sandy',elder:'Auld Jimmy'},Italy:{friend:'Luca',kiosk:'Gino',elder:'Nonno Pietro'},Turkey:{friend:'Emre',kiosk:'Hasan',elder:'Hüseyin Amca'},
- Israel:{friend:'Yossi',kiosk:'Shlomo',elder:'Saba Moshe'},Morocco:{friend:'Youssef',kiosk:'Driss',elder:'Haj Ali'},Egypt:{friend:'Karim',kiosk:'Sayed',elder:'Amm Hassan'},
+const NAMES:Record<string,{dad:string;mum:string;friend:string;kiosk:string;elder:string}>={
+ Greece:{dad:'Giorgos',mum:'Eleni',friend:'Nikos',kiosk:'Stavros',elder:'Kyr Thanasis'},Croatia:{dad:'Zoran',mum:'Snježana',friend:'Ivan',kiosk:'Mate',elder:'Đuro'},
+ Serbia:{dad:'Goran',mum:'Jelena',friend:'Marko',kiosk:'Dragan',elder:'Čika Mile'},'Bosnia and Herzegovina':{dad:'Mario',mum:'Ivana',friend:'Ante',kiosk:'Mirko',elder:'Stari Jure'},
+ Germany:{dad:'Thomas',mum:'Sabine',friend:'Jonas',kiosk:'Uwe',elder:'Opa Heinz'},England:{dad:'Gary',mum:'Karen',friend:'Danny',kiosk:'Raj',elder:'Old Les'},
+ Scotland:{dad:'Tam',mum:'Senga',friend:'Callum',kiosk:'Sandy',elder:'Auld Jimmy'},Italy:{dad:'Marco',mum:'Giulia',friend:'Luca',kiosk:'Gino',elder:'Nonno Pietro'},
+ Turkey:{dad:'Mehmet',mum:'Ayşe',friend:'Emre',kiosk:'Hasan',elder:'Hüseyin Amca'},Israel:{dad:'Avi',mum:'Orna',friend:'Yossi',kiosk:'Shlomo',elder:'Saba Moshe'},
+ Morocco:{dad:'Hassan',mum:'Fatima',friend:'Youssef',kiosk:'Driss',elder:'Haj Ali'},Egypt:{dad:'Mahmoud',mum:'Mona',friend:'Karim',kiosk:'Sayed',elder:'Amm Hassan'},
 }
+/** a country the table does not know still gets the five roles (LIFE parity, tests/life-club-parity-data.test.ts) — plain names, proposed like the rest */
+const ANY={dad:'Paul',mum:'Anna',friend:'Leo',kiosk:'Max',elder:'Old Karl'}
 const LOGO_COUNTRY:Record<string,string>={Turkey:'Türkiye'}
 const norm=(s:string)=>s.normalize('NFD').replace(/\p{M}+/gu,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim()
 const FORM=new Set(['fc','fk','sk','bc','hnk','gnk','nk','hsk','sc','ac','cf','afc','pfc','bv','1'])
@@ -85,9 +89,10 @@ async function main(){
  if(!existsSync(`${dir}/wave-auto.json`)){writeFileSync(`${dir}/wave-auto.json`,JSON.stringify({sources:[],matches:[],kits:[],rivals:[]},null,1)+'\n');changed.push(`${dir}/wave-auto.json`)}
  // 4 · LIFE: born 1978 unless the archive cannot carry a childhood from then (rule 139); fictional names, proposed
  const years=[...(pack.matches as Raw[]),...(pack.archive as Raw[])].map(f=>Number(String((f.value as Raw)?.on||'').slice(0,4))).filter(y=>y>1850).sort((a,b)=>a-b)
- const first=years[0]??null,birth=first===null||first<=1986?1978:first-8
- const n=NAMES[reg.country]
- writeFileSync(`${dir}/life/cast.json`,JSON.stringify({schemaVersion:1,clubId:id,status:'proposed',note:'Proposed fictional first names; awaiting owner approval. Nobody here is a real person.',names:n?{friend:n.friend,kiosk:n.kiosk,elder:n.elder}:{}},null,1)+'\n')
+ // the parity guard holds a birth year between 1940 and 2008: a club whose record starts after 2016 gets the latest a childhood can stand on
+ const first=years[0]??null,birth=first===null||first<=1986?1978:Math.min(2007,first-8)
+ const n=NAMES[reg.country]??ANY
+ writeFileSync(`${dir}/life/cast.json`,JSON.stringify({schemaVersion:1,clubId:id,status:'proposed',note:'Proposed fictional first names; awaiting owner approval. Nobody here is a real person.',names:n},null,1)+'\n')
  writeFileSync(`${dir}/life/timeline.json`,JSON.stringify({schemaVersion:1,clubId:id,birthYear:birth,status:'proposed',note:birth===1978?'1978, the life every club is handed (rule 139). Proposed; awaiting owner approval.':`${birth}: the club's recorded archive begins in ${first}, so a supporter born in ${birth} has a childhood that stands on recorded nights. A stopgap until older history is researched (rule 139). Proposed; awaiting owner approval.`},null,1)+'\n')
  changed.push(`${dir}/life/cast.json`,`${dir}/life/timeline.json`)
  const v=varName(id)
