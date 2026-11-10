@@ -96,11 +96,19 @@ jobs:
           npm test -- --maxWorkers=2 --minWorkers=1 --exclude tests/clubs/universal-life.test.ts
           npx vitest run tests/clubs/universal-life.test.ts --maxWorkers=1 --minWorkers=1
           npm run -s clubs:precompile
+      - name: Check — every door of every club in a real browser (the CI route sweep, the new club included)
+        id: routes
+        if: steps.ask.outputs.ids != ''
+        run: |
+          npm run master:local-db
+          [ -d .next ] || npm run build
+          npx playwright install --with-deps chromium
+          npm run qa:routes
       - name: Pull request — merged when every check passed, left open (and the desk told why) when one did not
         if: always() && steps.ask.outputs.ids != '' && steps.promote.outcome != 'skipped'
         env:
-          OK: ${{ steps.promote.outcome == 'success' && steps.lists.outcome == 'success' && steps.shots.outcome == 'success' && steps.types.outcome == 'success' && steps.tests.outcome == 'success' }}
-          FAILED_AT: ${{ steps.promote.outcome != 'success' && 'promotion' || steps.lists.outcome != 'success' && 'generated lists (Rumble prices / names / launch defaults)' || steps.shots.outcome != 'success' && 'LIFE stills' || steps.types.outcome != 'success' && 'type check' || steps.tests.outcome != 'success' && 'club tests' || '' }}
+          OK: ${{ steps.promote.outcome == 'success' && steps.lists.outcome == 'success' && steps.shots.outcome == 'success' && steps.types.outcome == 'success' && steps.tests.outcome == 'success' && steps.routes.outcome == 'success' }}
+          FAILED_AT: ${{ steps.promote.outcome != 'success' && 'promotion' || steps.lists.outcome != 'success' && 'generated lists (Rumble prices / names / launch defaults)' || steps.shots.outcome != 'success' && 'LIFE stills' || steps.types.outcome != 'success' && 'type check' || steps.tests.outcome != 'success' && 'test suite' || steps.routes.outcome != 'success' && 'route sweep' || '' }}
         run: |
           ids="${{ steps.ask.outputs.ids }}"
           report() { for id in $ids; do curl -sS --max-time 60 -o /dev/null -X POST -H "Authorization: Bearer $CRON_SECRET" -H 'Content-Type: application/json' -d "{\"clubId\":\"$id\",\"state\":\"$1\",\"pr\":${2:-null},\"reason\":\"$3\"}" "$URL/api/master/research/desk/promotion" || true; done; }

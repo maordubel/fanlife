@@ -144,7 +144,7 @@ describe('the full opening (scripts/clubs/promote.ts, .github/workflows/club-ope
  })
  it('the workflow checks before it merges, captures the LIFE stills, reports to the desk, and never runs without the scheduler secret',()=>{
   const w=readFileSync('.github/workflows/club-open.yml','utf8')
-  for(const s of ['clubs:promote','rumble:prices -- freeze','rumble:names','launch-defaults.ts','capture-shots.mjs','shots-measure.py','tsc --noEmit','npm test -- --maxWorkers=2','clubs:precompile','research/desk/promotion','research/desk-export'])expect(w,s).toContain(s)
+  for(const s of ['qa:routes','master:local-db','clubs:promote','rumble:prices -- freeze','rumble:names','launch-defaults.ts','capture-shots.mjs','shots-measure.py','tsc --noEmit','npm test -- --maxWorkers=2','clubs:precompile','research/desk/promotion','research/desk-export'])expect(w,s).toContain(s)
   expect(w).toMatch(/if \[ "\$OK" = "true" \]; then\s+gh pr merge/)
   const r=readFileSync('app/api/master/[...action]/route.ts','utf8')
   expect(r).toMatch(/research\/desk\/promotion'\)\{if\(!cronAuthorized\(r\)\)return/)// a browser cookie cannot write the runner's report
