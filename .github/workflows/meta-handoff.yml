@@ -32,5 +32,5 @@ jobs:
           const r=await fetch(e.SITE.replace(/\/$/,"")+"/api/master/marketing",{method:"POST",headers:{authorization:"Bearer "+e.CRON,"content-type":"application/json"},
             body:JSON.stringify({action:"meta_config",page:e.PAGE,ig:e.IG||"",token:e.TOKEN,on:String(e.ON||"").trim()==="1",version:e.VERSION||""})})
           const b=await r.json().catch(()=>({}))
-          console.log("site:",r.status,JSON.stringify(b.lights||b.error||{}))
+          console.log("site:",r.status,b.token||"",JSON.stringify(b.lights||b.error||{}))
           if(!r.ok)process.exit(1)'
