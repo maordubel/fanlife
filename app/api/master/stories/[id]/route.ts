@@ -1,7 +1,7 @@
 import {adminFromRequest} from '@/lib/master/admin'
 import {StoryError,ownerAct,type Job,type OwnerAction} from '@/lib/stories/jobs'
 import {deleteJob,getJob,updateJob} from '@/lib/stories/store'
-import {purgeJobMedia,removeFolder,signedDownload} from '@/lib/stories/media'
+import {listNames,purgeJobMedia,removeFolder,signedDownload} from '@/lib/stories/media'
 import {body,fail,json,limited,sameOrigin} from '@/lib/stories/http'
 export const dynamic='force-dynamic'
 export const runtime='nodejs'
@@ -25,7 +25,7 @@ export async function GET(r:Request,{params}:{params:{id:string}}){
   return json({job:cur.job,urls})
  }catch(e){return fail(e)}
 }
-const ACTIONS=new Set(['pause','resume','cancel','retry','retry_editorial','approve_script','choose_script','editorial_script','editorial_rewrite','editorial_combine','editorial_plan','editorial_back','upload_started','upload_done','upload_uncertain','upload_reset','art_added','flow_added','flow_ready','social_schedule','social_cancel'])
+const ACTIONS=new Set(['pause','resume','cancel','retry','retry_editorial','approve_script','choose_script','editorial_script','editorial_rewrite','editorial_combine','editorial_plan','editorial_back','upload_started','upload_done','upload_uncertain','upload_reset','art_added','flow_added','flow_ready','social_schedule','social_cancel','reel_added'])
 export async function POST(r:Request,{params}:{params:{id:string}}){
  const s=adminFromRequest(r)
  if(!s)return json({error:'Not authorised.'},401)
@@ -34,6 +34,8 @@ export async function POST(r:Request,{params}:{params:{id:string}}){
  try{
   const a=await body(r,100_000) as OwnerAction
   if(!a||typeof a!=='object'||!ACTIONS.has((a as {action:string}).action))throw new StoryError('ACTION','Unknown action.')
+  // the owner's own Reel is named only once it is really in the job's folder
+  if(a.action==='reel_added'&&!(await listNames(`jobs/${params.id}`)).includes(String(a.name)))throw new StoryError('REEL','The Reel did not reach storage. Upload it again.',409)
   const job=await updateJob(params.id,j=>ownerAct(j,a,s.actor||'owner'))
   // Free plan, 1 GB: once YouTube has the film, the master's chunks leave the bucket (preview and package stay).
   if(a.action==='upload_done'&&job.artefacts?.master?.chunks.length){
