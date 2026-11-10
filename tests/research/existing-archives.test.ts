@@ -10,7 +10,9 @@ import zrinjskiWave from '@/club-packs/zrinjski-mostar/wave-existing-archive-202
 
 describe('Completion of existing archives',()=>{
  it('keeps the existing eight static clubs, plus the three opened on 28.10.2026, and offers both existing packages in the control room',()=>{
-  expect([...CORE_CLUB_IDS].sort()).toEqual(['aek-athens','al-ahly','celtic','hapoel-petah-tikva','hapoel-tel-aviv','olympiacos','panathinaikos','raja-casablanca','st-pauli','wydad-casablanca','zrinjski-mostar'])
+  // clubs promoted from the research desk (rule 143) join the list by themselves; the hand-opened ones stay named
+  const promoted=(id:string)=>{try{return /^Promoted from the research desk/.test(String(JSON.parse(readFileSync(`club-packs/${id}/core.json`,'utf8')).note||''))}catch{return false}}
+  expect([...CORE_CLUB_IDS].filter(id=>!promoted(id)).sort()).toEqual(['aek-athens','al-ahly','celtic','hapoel-petah-tikva','hapoel-tel-aviv','olympiacos','panathinaikos','raja-casablanca','st-pauli','wydad-casablanca','zrinjski-mostar'])
   for(const club of ['st-pauli','zrinjski-mostar'])expect(packageAdapter.available?.(club)).toBe(true)
  })
  for(const [club,wave,total] of [['st-pauli',stPauliWave,1454],['zrinjski-mostar',zrinjskiWave,36]] as const){

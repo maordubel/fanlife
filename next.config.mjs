@@ -1,5 +1,5 @@
 /** Research files the control room reads with fs; the admin page and its API must ship the same dataset. */
-export const RESEARCH_FILES = ['./research-data/**/*', './research-profiles/**/*', './research-staging/**/*']
+export const RESEARCH_FILES = ['./research-data/**/*', './research-profiles/**/*', './research-staging/**/*', './research-reports/*.json']
 
 /** Evaluation mode boots an in-process Postgres at runtime from these files (fs, not imports). */
 export const EVALUATION_FILES = ['./scripts/master/local-bootstrap.sql', './supabase/migrations/*.sql']
@@ -33,7 +33,8 @@ const nextConfig = {
       '/api/evaluation/files': EVALUATION_FILES,
       '/api/track': EVALUATION_FILES,
       // pre-compiled club packs (lib/clubs/precompiled.ts): every route that may load a club reads them with fs
-      '/**': ['./content/compiled/*.json'],
+      // …and a club with no repository pack is compiled from its staged files (lib/research/staged, research desk 10.11.2026)
+      '/**': ['./content/compiled/*.json', './research-staging/*/wave-*.json', './research-staging/*/ingest.json'],
       // the studio's catalog of what a film can be about (lib/stories/catalog.ts reads it with fs)
       '/api/master/stories/**': ['./content/generated/stories/*.json', './content/generated/stories-recommended.json', './scripts/football-stories/comic/classified_manifest.json', './scripts/football-stories/comic/episodes/*.json'],
     },

@@ -1,0 +1,130 @@
+name: club-open
+# The FULL opening of a club the owner opened on the research desk (Control room → Research → "Open <club> to fans").
+# The games are live the moment he clicks; this run, within the hour, makes the club a repository club with nothing left
+# out — crest, hub tile, club pages, LIFE, Royal Rumble prices, ALL FOOTBALL and LEGENDS, the next-match card, the social
+# plan (scripts/clubs/promote.ts says each place). It checks the result (types, club tests, the compile) and merges it
+# only when every check passes; otherwise it leaves the pull request open and tells the desk why ("Opening stopped").
+# No terminal for the owner: the desk shows the state; "Try again" there runs it once more. Rule 143.
+on:
+  schedule:
+    - cron: '29 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write
+concurrency: {group: club-open, cancel-in-progress: false}
+jobs:
+  open:
+    if: vars.FAN_LIFE_RESEARCH_URL != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    env:
+      URL: ${{ vars.FAN_LIFE_RESEARCH_URL }}
+      CRON_SECRET: ${{ secrets.FAN_LIFE_CRON_SECRET }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Which clubs did the owner open?
+        id: ask
+        run: |
+          [ "${#CRON_SECRET}" -ge 32 ] || { echo "::error::FAN_LIFE_CRON_SECRET is missing — the opening runner cannot read the desk."; exit 1; }
+          code=$(curl -sS --max-time 90 -o "$RUNNER_TEMP/export.json" -w '%{http_code}' -H "Authorization: Bearer $CRON_SECRET" "$URL/api/master/research/desk-export")
+          [ "$code" = 200 ] || { echo "::error::The control room answered $code"; head -c 300 "$RUNNER_TEMP/export.json"; exit 1; }
+          ids=$(jq -r '[.clubs[] | select((.decisions.promotion.state // "") != "failed") | .id] | join(" ")' "$RUNNER_TEMP/export.json")
+          echo "ids=$ids" >> "$GITHUB_OUTPUT"
+          echo "Clubs to open fully: ${ids:-none}"
+      - if: steps.ask.outputs.ids != ''
+        uses: actions/checkout@v4
+      - if: steps.ask.outputs.ids != ''
+        uses: actions/setup-node@v4
+        with: {node-version: 22, cache: npm}
+      - if: steps.ask.outputs.ids != ''
+        run: npm ci
+      - name: Tell the desk the opening is running
+        if: steps.ask.outputs.ids != ''
+        run: |
+          for id in ${{ steps.ask.outputs.ids }}; do
+            curl -sS --max-time 60 -o /dev/null -X POST -H "Authorization: Bearer $CRON_SECRET" -H 'Content-Type: application/json' -d "{\"clubId\":\"$id\",\"state\":\"running\"}" "$URL/api/master/research/desk/promotion" || true
+          done
+      - name: The crest catalogue (the same open catalogue as the other clubs' crests)
+        if: steps.ask.outputs.ids != ''
+        run: git clone -q --filter=blob:none --no-checkout https://github.com/luukhopman/football-logos "$RUNNER_TEMP/logos"
+      - name: Promote each club
+        id: promote
+        if: steps.ask.outputs.ids != ''
+        run: |
+          for id in ${{ steps.ask.outputs.ids }}; do
+            jq ".clubs[] | select(.id==\"$id\") | .decisions" "$RUNNER_TEMP/export.json" > "$RUNNER_TEMP/decisions-$id.json"
+            npm run -s clubs:promote -- --club "$id" --decisions "$RUNNER_TEMP/decisions-$id.json" --logos "$RUNNER_TEMP/logos"
+          done
+      - name: The generated lists every club carries
+        id: lists
+        if: steps.ask.outputs.ids != ''
+        run: |
+          npm run -s rumble:prices -- freeze
+          npm run -s rumble:prices -- validate
+          npm run -s rumble:names
+          node --require ./scripts/master/server-only.cjs --import tsx scripts/master/launch-defaults.ts
+      - name: LIFE stills in the club's own town (the chapter reel's four shots, scripts/life/capture-shots.mjs)
+        id: shots
+        if: steps.ask.outputs.ids != ''
+        run: |
+          missing=""
+          for id in ${{ steps.ask.outputs.ids }}; do for s in scarf ticket tunnel stand; do [ -f "public/life/town/shots/$id/$s.webp" ] || missing="$missing $id"; done; done
+          missing=$(echo $missing | tr ' ' '\n' | sort -u | paste -sd, -)
+          if [ -z "$missing" ]; then echo "Every still is on file."; exit 0; fi
+          npx playwright install --with-deps chromium
+          npm run build
+          (npx next start -p 3300 > "$RUNNER_TEMP/next.log" 2>&1 &)
+          for i in $(seq 1 60); do curl -fs -o /dev/null http://127.0.0.1:3300/life/voxel/skins && break; sleep 2; done
+          CHROMIUM="$(node -e "console.log(require('playwright').chromium.executablePath())")" node scripts/life/capture-shots.mjs http://127.0.0.1:3300 "$missing"
+          python3 -m pip install --quiet numpy scipy pillow
+          python3 -I scripts/life/shots-measure.py
+          # the measure pass re-encodes every club's stills; only the new clubs' files are part of this opening
+          git diff --name-only -- public/life/town/shots | xargs -r git checkout --
+      - name: Check — types
+        id: types
+        if: steps.ask.outputs.ids != ''
+        run: NODE_OPTIONS=--max-old-space-size=6000 npx tsc --noEmit -p tsconfig.all.json
+      - name: Check — club tests and the compile
+        id: tests
+        if: steps.ask.outputs.ids != ''
+        run: |
+          # the whole suite, exactly as CI runs it: this run pushes to main itself, and a push by the workflow token starts no other workflow
+          npm run repo:hygiene
+          npm run assets:provenance
+          npm test -- --maxWorkers=2 --minWorkers=1 --exclude tests/clubs/universal-life.test.ts
+          npx vitest run tests/clubs/universal-life.test.ts --maxWorkers=1 --minWorkers=1
+          npm run -s clubs:precompile
+      - name: Check — every door of every club in a real browser (the CI route sweep, the new club included)
+        id: routes
+        if: steps.ask.outputs.ids != ''
+        run: |
+          npm run master:local-db
+          [ -d .next ] || npm run build
+          npx playwright install --with-deps chromium
+          npm run qa:routes
+      - name: Pull request — merged when every check passed, left open (and the desk told why) when one did not
+        if: always() && steps.ask.outputs.ids != '' && steps.promote.outcome != 'skipped'
+        env:
+          OK: ${{ steps.promote.outcome == 'success' && steps.lists.outcome == 'success' && steps.shots.outcome == 'success' && steps.types.outcome == 'success' && steps.tests.outcome == 'success' && steps.routes.outcome == 'success' }}
+          FAILED_AT: ${{ steps.promote.outcome != 'success' && 'promotion' || steps.lists.outcome != 'success' && 'generated lists (Rumble prices / names / launch defaults)' || steps.shots.outcome != 'success' && 'LIFE stills' || steps.types.outcome != 'success' && 'type check' || steps.tests.outcome != 'success' && 'test suite' || steps.routes.outcome != 'success' && 'route sweep' || '' }}
+        run: |
+          ids="${{ steps.ask.outputs.ids }}"
+          report() { for id in $ids; do curl -sS --max-time 60 -o /dev/null -X POST -H "Authorization: Bearer $CRON_SECRET" -H 'Content-Type: application/json' -d "{\"clubId\":\"$id\",\"state\":\"$1\",\"pr\":${2:-null},\"reason\":\"$3\"}" "$URL/api/master/research/desk/promotion" || true; done; }
+          rm -rf content/compiled .next; find public/life/town/shots -name '*.png' -delete
+          if [ -z "$(git status --porcelain)" ]; then report failed null "the opening produced no change"; exit 1; fi
+          branch="club-open/$(echo $ids | tr ' ' '-')-$(date -u +%Y%m%d%H%M)"
+          git config user.name 'github-actions[bot]'; git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -b "$branch"; git add -A; git commit -qm "club-open: the full opening of $ids (research desk, rule 143)"
+          git push -q origin "$branch"
+          body="The owner opened **$ids** on the research desk. This makes each a repository club (scripts/clubs/promote.ts): pack, crest, LIFE, Rumble prices, names, spellings, next-match row, launch defaults. Checks: types, the full test suite, hygiene, provenance, compile — ${OK}."
+          pr=$(gh pr create --base main --head "$branch" --title "club-open: $ids" --body "$body" | grep -oE '[0-9]+$')
+          if [ "$OK" = "true" ]; then
+            gh pr merge "$pr" --squash --delete-branch && report merged "$pr" "Fully open." || { report failed "$pr" "the merge was refused — the pull request is waiting"; exit 1; }
+            # more men from Wikipedia for the new club (Royal Rumble depth, positions) — its own pull request, like every roster run
+            for id in $ids; do gh workflow run roster-complete.yml -f club="$id" || true; done
+          else
+            report failed "$pr" "the ${FAILED_AT} did not pass — the change waits in pull request #$pr"
+            exit 1
+          fi

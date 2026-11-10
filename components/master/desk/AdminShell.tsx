@@ -17,14 +17,15 @@ export {SECTIONS,TOOLS,type Section}
 const ICON:Record<string,ReactNode>={
  overview:<path d="M4 5h16M4 12h10M4 19h7"/>,
  clubs:<><circle cx="12" cy="12" r="8"/><path d="M12 8l3.5 2.6-1.3 4.4h-4.4L8.5 10.6z"/></>,
+ research:<><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5M8 10.5h5M10.5 8v5"/></>,
  players:<><circle cx="12" cy="7.5" r="3.5"/><path d="M5 20c.8-4 3.6-6 7-6s6.2 2 7 6"/></>,
  games:<><rect x="3" y="4" width="18" height="16"/><path d="M3 10h18M9 4v16M15 4v16"/></>,
  studio:<><rect x="3" y="6" width="13" height="12"/><path d="M16 10l5-3v10l-5-3z"/></>,
  more:<><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></>,
 }
 const Icon=({k}:{k:string})=><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} aria-hidden="true">{ICON[k]}</svg>
-/** the phone's bar: the areas the owner opens most; everything else is under More */
-const BAR=['overview','clubs','players','games','studio'] as const
+/** the phone's bar: the areas the owner opens most; everything else is under More (10.11.2026: Research joins, Games moves to More) */
+const BAR=['overview','clubs','research','players','studio'] as const
 /** areas that read a club scope keep it when you move between them; the rest are application-wide */
 const SCOPED=new Set(['clubs','players','games','data','audience'])
 

@@ -42,6 +42,7 @@ import rajaCasablancaTimeline from '@/club-packs/raja-casablanca/life/timeline.j
 import wydadCasablancaTimeline from '@/club-packs/wydad-casablanca/life/timeline.json'
 import alAhlyTimeline from '@/club-packs/al-ahly/life/timeline.json'
 import panathinaikosTimeline from '@/club-packs/panathinaikos/life/timeline.json'
+// ↓ promoted LIFE imports (scripts/clubs/promote.ts)
 
 export const LIFE_SKINS: Record<string, LifeSkinManifest> = {
   'hapoel-tel-aviv': hapoelSkin as LifeSkinManifest,

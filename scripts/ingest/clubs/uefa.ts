@@ -4,7 +4,7 @@
  * stadium and — through /lineups — both starting elevens and benches. Field names verified against
  * live responses on 2026-10-06 (matches?teamId=…, matches/{id}/lineups).
  */
-import type {Fetcher,Goal,ProviderMatch} from './types'
+import type {Fetcher,Goal,ProviderMatch,SquadEntry} from './types'
 type J=Record<string,unknown>
 const o=(v:unknown):J=>v&&typeof v==='object'&&!Array.isArray(v)?v as J:{}
 const a=(v:unknown):J[]=>Array.isArray(v)?v.map(o):[]
@@ -35,7 +35,18 @@ const names=(v:unknown)=>a(v).map(p=>s(o(p.player).internationalName)).filter((x
 export function parseLineups(raw:unknown):ProviderMatch['lineup']{
  const r=o(raw),h=o(r.homeTeam),aw=o(r.awayTeam),hf=[...new Set(names(h.field))],af=[...new Set(names(aw.field))]
  if(hf.length!==11||af.length!==11)return null
- return {home:hf,away:af,homeBench:names(h.bench),awayBench:names(aw.bench)}
+ return {home:hf,away:af,homeBench:names(h.bench),awayBench:names(aw.bench),homeSquad:squad(h),awaySquad:squad(aw)}
+}
+const POSITION:Record<string,SquadEntry['pos']>={GOALKEEPER:'GK',DEFENDER:'DF',MIDFIELDER:'MF',FORWARD:'FW'}
+/** Each named man of one side with what UEFA states about him (field names as read by scripts/ingest/clubs/uefa-mysteries.ts on live line-ups, 10.10.2026). */
+export function squad(side:J):SquadEntry[]{
+ const out:SquadEntry[]=[],seen=new Set<string>()
+ for(const slot of [...a(side.field),...a(side.bench)]){
+  const p=o(slot.player),name=s(p.internationalName);if(!name||seen.has(name))continue;seen.add(name)
+  const born=s(p.birthDate),height=n(p.height),shirt=n(slot.jerseyNumber)??n(p.clubJerseyNumber)
+  out.push({name,pos:POSITION[String(p.nationalFieldPosition??p.fieldPosition??'').toUpperCase()]??null,born:born&&/^\d{4}-\d{2}-\d{2}/.test(born)?born.slice(0,10):null,nat:s(o(o(p.translations).countryName).EN),shirt:shirt&&shirt>0?shirt:null,height:height&&height>=140&&height<=220?height:null})
+ }
+ return out
 }
 export async function uefaMatchesForTeam(fetchJson:Fetcher,teamId:string,{pages=10}:{pages?:number}={}):Promise<ProviderMatch[]> {
  const out:ProviderMatch[]=[]

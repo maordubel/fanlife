@@ -48,7 +48,8 @@ export const providers:Record<string,()=>Promise<{data:ClubData;diagnostics:Diag
  'raja-casablanca':async()=>compilePackEuro((await import('@/club-packs/raja-casablanca/core.json')).default as never,REGISTRY.find(c=>c.id==='raja-casablanca')!),
  'wydad-casablanca':async()=>compilePackEuro((await import('@/club-packs/wydad-casablanca/core.json')).default as never,REGISTRY.find(c=>c.id==='wydad-casablanca')!),
  'al-ahly':async()=>compilePackEuro((await import('@/club-packs/al-ahly/core.json')).default as never,REGISTRY.find(c=>c.id==='al-ahly')!),
+ // ↓ promoted from the research desk (scripts/clubs/promote.ts) — one line per club
 }
 /** What `loadClubBase` adds on top of a provider's output: the roster wave, then the forged English trivia. */
-export {withForgedTrivia,withArchiveMysteries}
+export {withForgedTrivia,withArchiveMysteries,mergeWave}
 export const withBaseWaves=(id:string,r:{data:ClubData;diagnostics:Diagnostic[]})=>({...r,data:withArchiveMysteries(withForgedTrivia(withRosterWave(id,r.data)))})

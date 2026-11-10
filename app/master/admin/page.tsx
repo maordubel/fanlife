@@ -12,6 +12,7 @@ import {Admin,type AdapterInfo,type DeskSection} from '@/components/master/Admin
 import {AdminShell,MoreMenu,type Section} from '@/components/master/desk/AdminShell'
 import {AudienceDesk} from '@/components/master/desk/AudienceDesk'
 import {PlayersDesk} from '@/components/master/desk/PlayersDesk'
+import {ResearchDesk} from '@/components/master/desk/ResearchDesk'
 import {TaskDesk} from '@/components/master/desk/TaskDesk'
 import {GamesDesk} from '@/components/master/desk/GamesDesk'
 import {MissionsCard, MissionsDesk} from '@/components/master/desk/MissionsDesk'
@@ -32,9 +33,10 @@ import {ConnectedDesk} from '@/components/master/desk/ConnectedDesk'
 import {StoriesDesk} from '../stories/desk'
 import {deskTab} from '@/lib/stories/banners'
 import '../../desk.css'
+import '../../research-desk.css'
 export const dynamic='force-dynamic'
 
-const SECTION_KEYS=['overview','clubs','players','games','studio','market','community','audience','data','operations','advertising','settings','more'] as const
+const SECTION_KEYS=['overview','clubs','research','players','games','studio','market','community','audience','data','operations','advertising','settings','more'] as const
 /** Old bookmarks keep working (rule 99 §2): `?tab=` and `?section=data&view=players` land where they always did. */
 const LEGACY:Record<string,{section:Section;view?:string}>={overview:{section:'overview'},club:{section:'clubs',view:'evidence'},data:{section:'data'},display:{section:'settings'},updates:{section:'operations'},activity:{section:'operations'}}
 /** sections the Admin component draws (the rest are the desk's own panels) */
@@ -74,6 +76,7 @@ async function DeskContent({section,view,club,owner,searchParams,overview,scoped
 }){
  if(section==='more')return <MoreMenu owner={owner}/>
  if(section==='players')return <PlayersDesk/>
+ if(section==='research')return <ResearchDesk/>
  if(section==='studio')return <StoriesDesk view={deskTab(view)}/>
  if(section==='market')return <MarketDesk/>
  if(section==='community')return <CommunityDesk/>

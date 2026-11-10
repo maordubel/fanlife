@@ -1,3 +1,4 @@
+import {readFileSync} from 'node:fs'
 import {describe,it,expect,beforeAll} from 'vitest'
 import {CORE_CLUB_IDS,loadClub} from '@/lib/clubs/resolver'
 import {clubBank,dealMode,type Bank} from '@/lib/clubs/trivia-deck'
@@ -67,7 +68,18 @@ for(const club of CORE_CLUB_IDS)if(STANDARD_NOT_YET.has(club))it(`${club}: Stand
    expect(d.ids).toHaveLength(12);const facts=d.ids.map(id=>bank.byId.get(id)!).flatMap(factsOf);expect(new Set(facts).size).toBe(facts.length)
   }
  })
-for(const club of CORE_CLUB_IDS.filter(c=>!STANDARD_NOT_YET.has(c)))it(`${club}: 12 seeds preserve the Standard experience and shared-seed determinism`,()=>{
+// a club promoted from the research desk (rule 143) opens with what its archive holds: Standard plays in full where its bank can field it,
+// and where it cannot it is shut with the named code and History deals a full round — the same honesty as the clubs above, decided by the bank
+const promoted=(id:string)=>{try{return /^Promoted from the research desk/.test(String(JSON.parse(readFileSync(`club-packs/${id}/core.json`,'utf8')).note||''))}catch{return false}}
+for(const club of CORE_CLUB_IDS.filter(c=>promoted(c)&&!STANDARD_NOT_YET.has(c)))it(`${club}: a promoted club plays Standard in full, or shuts it by name and plays History in full`,()=>{
+  const bank=banks.get(club)!
+  for(let seed=1;seed<=12;seed++){
+   const s=dealMode(bank,{mode:'standard'},seed,0)
+   if('blocked' in s){expect(s.blocked.code).toBe('TRIVIA_DECK_UNVERIFIED');const h=dealMode(bank,{mode:'history'},seed,0);if('blocked' in h)throw new Error(JSON.stringify(h));expect(h.ids).toHaveLength(12)}
+   else expect(s.ids).toHaveLength(12)
+  }
+ })
+for(const club of CORE_CLUB_IDS.filter(c=>!STANDARD_NOT_YET.has(c)&&!promoted(c)))it(`${club}: 12 seeds preserve the Standard experience and shared-seed determinism`,()=>{
   const bank=banks.get(club)!
   for(let seed=1;seed<=12;seed++){
    const d=dealMode(bank,{mode:'standard'},seed,0);if('blocked' in d)throw new Error(JSON.stringify(d))

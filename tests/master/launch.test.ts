@@ -41,7 +41,8 @@ describe('desk pack',()=>{
  it('is stored, listed and loaded by the engine for a club with no repository pack',async()=>{
   const dir=await mkdtemp(path.join(tmpdir(),'fanlife-desk-'));vi.stubEnv('FAN_LIFE_DATA_DIR',dir)
   try{
-   expect(await loadClub('dinamo-zagreb')).toBeNull()
+   // 10.11.2026 (rule 143): a registry club with staged material already loads from it — UEFA's own ties only, no XI until something is approved
+   expect(gateAvailability((await loadClub('dinamo-zagreb'))!.data,'xi').playable).toBe(false)
    await writeDeskPack(buildDeskPack(club(Array.from({length:13},(_,i)=>player(i+1,'approved')),[src('a')],'dinamo-zagreb'),'owner'))
    invalidateClub('dinamo-zagreb')
    expect((await readDeskPack('dinamo-zagreb'))?.players).toHaveLength(13)
@@ -50,7 +51,7 @@ describe('desk pack',()=>{
    const loaded=await loadClub('dinamo-zagreb')
    expect(gateAvailability(loaded!.data,'xi').playable).toBe(true)
   }finally{invalidateClub('dinamo-zagreb');await rm(dir,{recursive:true,force:true})}
- })
+ },30000)// two compiles of a staged club (10.11.2026)
 })
 describe('package adapter',()=>{
  it('offers each staged player as a finding with a record, coaches stay in the report',async()=>{

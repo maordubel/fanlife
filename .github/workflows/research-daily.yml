@@ -2,6 +2,9 @@ name: research-daily
 # Every day: pull fresh data for every club (archives, UEFA matches/elevens), measure what each club now holds,
 # write a short report (with an optional AI triage), and open ONE pull request. Nothing is approved or published here
 # (rules 92, 93, 114); collected rows arrive unreviewed. Click "Run workflow" to run it now.
+# 10.11.2026 (research desk): the UEFA pull reads the newest 20, then 30 ties the wave does not hold yet (history grows
+# every day instead of stopping at 80) and re-reads 20 held ties for positions and birth dates; a discovered UEFA team
+# id is saved; the staged clubs get their "what a yes opens" preview; the report names what waits for the owner.
 on:
   workflow_dispatch:
   schedule:
@@ -35,15 +38,17 @@ jobs:
           for dir in club-packs/*/ research-staging/*/; do
             id=$(basename "$dir")
             [ -f "$dir/ingest.json" ] || continue
-            npm run -s club:wave -- --club "$id" || failed="$failed $id"
+            npm run -s club:wave -- --club "$id" --max 20 --backfill 30 --refresh 20 2>&1 | tee -a wave.log || failed="$failed $id"
           done
           [ -z "$failed" ] || echo "::warning::club:wave failed for:$failed"
       - name: Census
         run: npm run -s research:census -- --out census.json
+      - name: What a yes would open (staged clubs)
+        run: npm run -s research:desk-preview
       - name: Report (+ AI triage when the key exists)
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: npm run -s research:daily-report -- --census census.json
+        run: npm run -s research:daily-report -- --census census.json --wave-log wave.log
       - uses: peter-evans/create-pull-request@v6
         with:
           branch: research-daily/auto
@@ -53,5 +58,7 @@ jobs:
             research-data/**
             club-packs/**/wave-auto.json
             research-staging/**/wave-auto.json
+            research-staging/**/ingest.json
+            club-packs/**/ingest.json
             research-reports/**
-          body: 'Automatic daily pull. New rows are unreviewed; see research-reports/ for what changed per club.'
+          body: 'Automatic daily pull. New rows are unreviewed; see research-reports/ for what changed per club. New clubs wait for the owner on the research desk (Control room → Research).'
