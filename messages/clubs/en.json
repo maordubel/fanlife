@@ -39,6 +39,8 @@
   "english": "English",
   "hebrew": "עברית",
   "paused": "This club is taking a short break.",
+  "clubRestingTitle": "Taking a short break",
+  "clubRestingNote": "This club is resting for now. Its pages come back the moment it reopens — every other club is open.",
   "closed": "Timeline is currently closed by the administrator.",
   "lifeTitle": "Step into the life",
   "lifeContinue": "Continue LIFE ↗",

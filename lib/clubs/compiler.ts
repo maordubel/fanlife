@@ -15,7 +15,13 @@ const id=(v:unknown)=>text(v).normalize('NFKC').toLowerCase().replace(/\s+/g,'-'
 const validId=(v:string)=>/^[a-z0-9][a-z0-9_-]{0,100}$/.test(v)
 const date=(v:unknown):string|null=>{const s=text(v);return /^\d{4}-\d{2}-\d{2}$/.test(s)&&Number.isFinite(Date.parse(s))&&new Date(s).toISOString().slice(0,10)===s?s:null}
 const confidence=(v:unknown)=>({A_PRIMARY:3,B_SECONDARY:2,C_UNVERIFIED:1}[text(v)]??Number(v))
-const hint=(s:string)=>s.replace(/\d{4}-\d{2}-\d{2}|\d{1,2}[./]\d{1,2}[./]\d{2,4}|\d{2,4}\s*\/\s*\d{2,4}|\b(?:18|19|20)\d{2}\b/g,'').replace(/\s+/g,' ').trim()
+/**
+ * A GAME hint: the record's text with every date and season taken out, so the timeline cannot be answered from it.
+ * A season is removed WHOLE ("2019-20", "2019/20") — taking the year alone left "Scottish Premiership · -20" (review V01).
+ * Separators a removal leaves dangling go with it. The full text is kept beside it as `text`: the archive reads that.
+ */
+const hint=(s:string)=>s.replace(/\b(?:18|19|20)\d{2}\s*[-–\/]\s*\d{2,4}\b|\d{4}-\d{2}-\d{2}|\d{1,2}[./]\d{1,2}[./]\d{2,4}|\d{2,4}\s*\/\s*\d{2,4}|\b(?:18|19|20)\d{2}\b/g,'')
+ .replace(/\(\s*[-–,·]?\s*\)/g,'').replace(/(?:\s*[·,–-])+\s*$/,'').replace(/^\s*[·,–-]+\s*/,'').replace(/\s*·\s*(?:[-–,]\s*)?·\s*/g,' · ').replace(/\s*,\s*·/g,' ·').replace(/\s+/g,' ').trim()
 const hash=(s:string)=>createHash('sha256').update(s).digest('hex').slice(0,16)
 /** Deterministic validation, not a researcher or approval service. */
 export function compilePack(raw:unknown,club:RegistryClub):{data:ClubData;diagnostics:Diagnostic[]} {
@@ -42,7 +48,7 @@ export function compilePack(raw:unknown,club:RegistryClub):{data:ClubData;diagno
   const year=Number.isInteger(value.year)&&Number(value.year)>=1800&&Number(value.year)<=2100?Number(value.year):null
   if(precision==='year'&&!year){issue(key,'YEAR_INVALID','Year precision requires a documented year.');continue}
   const status=['draft','review','approved','rejected','deep_research'].includes(text(f.status))?text(f.status) as FactStatus:'draft'
-  const fact:Fact<HistoricalEvent>={id:`${club.id}:${key}`,value:{id:`${club.id}:${key}`,name:text(value.name),on,precision,year:precision==='year'?year:on?Number(on.slice(0,4)):null,hint:hint(text(value.hint)),sport:'football',sensitive:value.sensitive!==false},sources:refs,confidence:level as 0|1|2|3,status,researchedAt:date(f.researchedAt),approvedAt:date(f.approvedAt),approvedBy:text(f.approvedBy)||null,notes:text(f.notes)}
+  const fact:Fact<HistoricalEvent>={id:`${club.id}:${key}`,value:{id:`${club.id}:${key}`,name:text(value.name),on,precision,year:precision==='year'?year:on?Number(on.slice(0,4)):null,hint:hint(text(value.hint)),text:text(value.hint)||undefined,sport:'football',sensitive:value.sensitive!==false},sources:refs,confidence:level as 0|1|2|3,status,researchedAt:date(f.researchedAt),approvedAt:date(f.approvedAt),approvedBy:text(f.approvedBy)||null,notes:text(f.notes)}
   if(status==='approved'&&(!fact.approvedAt||!fact.approvedBy||!fact.researchedAt)){fact.status='review';issue(key,'APPROVAL_INCOMPLETE','Approval requires actor, research date and approval date.')}
   if(status==='approved'&&fact.approvedBy?.startsWith('automated:')) {
    const independent=new Set(refs.map(ref=>sources.find(s=>s.id===ref)!.publisher.toLowerCase()))

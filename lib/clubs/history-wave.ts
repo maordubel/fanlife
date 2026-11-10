@@ -36,6 +36,8 @@ export type HistoryConflict={existing:string;incoming:string;on:string;reason:'r
  * Like withEuro, first-team records are reconciled by day; multiple candidates on
  * one day require review rather than guessing which game a source describes.
  */
+/** "UEFA Champions League 2012/13" already says the season "2012-13" — printing both read as a typo (review V01) */
+const sameSeason=(competition:string,season:string)=>{const k=(x:string)=>x.replace(/[-–/]/g,'/');return !!season&&k(competition).includes(k(season).replace(/^(\d{4})\/(\d{2})(\d{2})$/,'$1/$3'))||!!season&&k(competition).includes(k(season))}
 export function mergeHistorical<T extends Raw>(pack:T,wave:Raw):{pack:T;conflicts:HistoryConflict[]}{
  const sources=arr(wave.sources),existing=arr(pack.matches),out=[...existing],events:Raw[]=[...arr(wave.archive)],conflicts:HistoryConflict[]=[]
  const byDay=new Map<string,number[]>()
@@ -69,7 +71,7 @@ export function mergeHistorical<T extends Raw>(pack:T,wave:Raw):{pack:T;conflict
   // Match-only input would never reach Living Archive (eligibleArchive reads
   // archive/timeline). Make its projection here, after the same collision gate.
   // An existing dated event retains chronology priority through mergeWave.
-  events.push({...f,id:`${str(f.id)}-moment`,value:{id:`${str(f.id)}-moment`,name:v.name,on,precision:'day',sport:'football',sensitive:false,hint:`${str(v.competition)} · ${str(v.season)}${matched?' · Corroborated match record.':''}`}})
+  events.push({...f,id:`${str(f.id)}-moment`,value:{id:`${str(f.id)}-moment`,name:v.name,on,precision:'day',sport:'football',sensitive:false,hint:[str(v.competition),sameSeason(str(v.competition),str(v.season))?'':str(v.season),matched?'Corroborated match record.':''].filter(Boolean).join(' · ')}})
  }
  return {pack:mergeWave({...pack,matches:out},{sources,archive:events}),conflicts}
 }

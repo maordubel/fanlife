@@ -40,7 +40,7 @@ export function ArchiveSheetBody({entry:e,entries,byId,seen,ctx,club,clubName,lo
    <span className={css.miniDate}>{x.on?dayMonth(x.on,locale)+' '+x.year:x.year??''}</span><span lang={contentLocale} dir="auto">{x.title}</span></button></li>)}</ul>
   {list.length>SHOW&&!more[key]&&<button type="button" className={`${css.linkBtn} min-h-tap`} onClick={()=>setMore(m=>({...m,[key]:true}))}>{t('ar.sheet.more',{n:list.length-SHOW})}</button>}
  </section>:null
- const hasRelated=rel.named.length+rel.namedBy.length+rel.sameDay.length+rel.sameYear.length+e.refs.length>0
+ const hasRelated=rel.named.length+rel.namedBy.length+rel.scored.length+rel.started.length+rel.playedIn.length+rel.sameDay.length+rel.sameYear.length+e.refs.length>0
  return <div className={css.sheet} data-testid="archive-detail" data-entry-id={e.id}>
   {onBack&&<button type="button" className={`${css.linkBtn} min-h-tap`} onClick={onBack}><span aria-hidden="true" className={css.arrow}>←</span> {t('ar.sheet.back',{title:backTitle||t('ar.sheet.fallback')})}</button>}
   <p className={css.kicker}>{t(isPlayer?'ar.kind.player':'ar.kind.moment')} · <bdi>{prec==='day'?dayMonth(e.on!,locale)+' '+e.year:dateText}</bdi></p>
@@ -50,6 +50,9 @@ export function ArchiveSheetBody({entry:e,entries,byId,seen,ctx,club,clubName,lo
    <div><dt>{t('ar.sheet.type')}</dt><dd>{t(isPlayer?'ar.kind.player':'ar.kind.moment')}</dd></div>
    <div><dt>{t('ar.sheet.date')}</dt><dd>{prec==='day'?<time dateTime={e.on!}>{dateText}</time>:dateText}</dd></div>
    <div><dt>{t('ar.sheet.precision')}</dt><dd>{t(`ar.sheet.precision.${prec}`)}</dd></div>
+   {e.match?.competition&&<div><dt>{t('ar.sheet.competition')}</dt><dd lang={contentLocale} dir="auto">{e.match.competition}</dd></div>}
+   {e.match?.score&&<div><dt>{t('ar.sheet.score')}</dt><dd><bdi dir="ltr">{e.match.score}</bdi></dd></div>}
+   {e.match?.venue&&<div><dt>{t('ar.sheet.venue')}</dt><dd lang={contentLocale} dir="auto">{e.match.venue}</dd></div>}
    {isPlayer&&e.player&&<>
     <div><dt>{t('ar.sheet.positions')}</dt><dd>{posText||copy.unknown}</dd></div>
     <div><dt>{t('ar.sheet.years')}</dt><dd>{e.player.from!==null||e.player.to!==null?<bdi dir="ltr">{`${e.player.from??'?'}–${e.player.to??'?'}`}</bdi>:copy.unknown}</dd></div>
@@ -71,7 +74,11 @@ export function ArchiveSheetBody({entry:e,entries,byId,seen,ctx,club,clubName,lo
   {hasRelated&&<div className={css.related}>
    <h3 className={css.relatedTitle}>{t('ar.sheet.related')}</h3>
    {group('named',t('ar.sheet.named'),rel.named)}
+   {group('scored',t('ar.sheet.scored'),rel.scored)}
    {group('namedBy',t('ar.sheet.namedBy'),rel.namedBy)}
+   {group('playedIn',t('ar.sheet.playedIn'),rel.playedIn)}
+   {group('started',t('ar.sheet.started'),rel.started)}
+   {e.match&&e.match.unnamed>0&&<p className={css.fine}>{t('ar.sheet.unnamed',{n:e.match.unnamed})}</p>}
    {group('sameDay',t('ar.sheet.sameDay'),rel.sameDay)}
    {group('sameYear',t('ar.sheet.sameYear'),rel.sameYear)}
    {e.refs.length>0&&<section className={css.group}><h3>{t('ar.sheet.refs')}</h3>

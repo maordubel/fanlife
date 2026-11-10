@@ -23,11 +23,18 @@ describe('Gate 6 · the dealt wall (ME-R01..R04) on the real clubs',()=>{
   expect(d.deal.label).toBe('mixed');expect(d.deal.narrow).toBe(false)
   expect(deckReport(d.pairs,6).recognisable).toBeGreaterThanOrEqual(3);expect(deckReport(d.pairs,6).maxOfOneType).toBeLessThanOrEqual(3)
  })
- it('a club whose archive is dated events only is dealt as DATE MEMORY and says so',()=>{
+ // review D04 (10.11.2026): these two were "date memory" only; honours, goals, kit makers and European nights from
+ // their own approved records now sit beside the dates — so they are dealt as a MIXED wall, and never called date memory
+ it('a club with more than dated events is dealt a mixed wall, not "date memory"',()=>{
   for(const club of [olympiacos,zrinjski]){
    const plan=planMemory(club,{seed:42,cursor:0})
-   expect(plan.pool.dateOnly).toBe(true);expect(plan.deal?.label).toBe('date')
+   expect(plan.pool.dateOnly).toBe(false);expect(plan.deal?.label).not.toBe('date')
   }
+ })
+ it('a pool of dated events only is still dealt as DATE MEMORY and says so',()=>{
+  const dates={...olympiacos,memory:olympiacos.memory.filter(m=>m.type==='moment-date')}
+  const plan=planMemory(dates,{seed:42,cursor:0})
+  expect(plan.pool.dateOnly).toBe(true);expect(plan.deal?.label).toBe('date')
  })
  it('is deterministic in (size, theme, seed, cursor) and rotates: the next cursor never repeats a pair of the lap',()=>{
   const a=dealt(dealMemory(hapoel,{size:6,seed:5,cursor:0})),b=dealt(dealMemory(hapoel,{size:6,seed:5,cursor:0})),c=dealt(dealMemory(hapoel,{size:6,seed:5,cursor:1}))

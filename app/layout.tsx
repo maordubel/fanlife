@@ -32,7 +32,7 @@ import { PromoSlot } from '@/components/promo/PromoSlot'
 import { headers } from 'next/headers'
 import {clubFromHost,DEFAULT_CLUB} from '@/lib/master/registry'
 import { readState } from '@/lib/master/store'
-import { GATES } from '@/lib/master/types'
+import { isFanPath, legacyOpen } from '@/lib/master/legacy-access'
 import {uiLocale,localeDirection} from '@/lib/clubs/locale'
 import { Shell } from '@/components/master/Shell'
 import { TelegramSession } from '@/components/telegram/TelegramSession'
@@ -121,7 +121,6 @@ export function generateMetadata(): Metadata {
   return clubFromHost(headers().get('host')) === DEFAULT_CLUB ? workerMetadata : fanLifeMetadata
 }
 
-const FAN_PATHS=['/today','/about','/privacy','/terms','/contact','/master','/clubs','/telegram','/our-games','/all-football','/sources','/closet','/market','/auction','/shirts','/me','/stands']
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const pathname=headers().get('x-fan-life-path')||'/'
@@ -129,12 +128,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const sharedLocale=pathname.startsWith('/clubs/')?uiLocale(headers().get('x-fan-life-locale')||undefined):'en'
   // FAN LIFE's own pages (English, LTR, never behind The Worker's gate switches): the hub, the clubs,
   // the control room, and "your corner" — the personal area ported from The Worker (7.10.2026).
-  const master=pathname==='/'||FAN_PATHS.some(p=>pathname===p||pathname.startsWith(p+'/'))
+  const master=isFanPath(pathname)
   const club=master?undefined:(await readState()).clubs.find(c=>c.id==='hapoel-tel-aviv')
-  const gate=GATES.find(g=>pathname===g[2]||pathname.startsWith(g[2]+'/'))
   const tenant=clubFromHost(headers().get('host'))
   const otherTenant=Boolean(tenant&&tenant!==DEFAULT_CLUB)
-  const closed=!master&&(otherTenant||(club?.status!=='live'||gate&&!club?.gates.includes(gate[0])))
+  const closed=!master&&(otherTenant||!legacyOpen(pathname,club))
   // the Dubel top ad (lib/top-ad.ts): the control room's switch AND a page that may carry it; otherwise the body says data-no-ads
   const topAd=topAdAllowedOn(pathname)&&!closed&&((await readState().catch(()=>null))?.ads??DEFAULT_TOP_AD).topAd
   return (

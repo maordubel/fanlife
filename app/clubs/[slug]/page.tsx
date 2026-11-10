@@ -13,7 +13,8 @@ import {InstallClub} from '@/components/clubs/InstallClub'
 import {momentFor} from '@/lib/clubs/today'
 import {belovedOf,wallNumbers} from '@/lib/clubs/beloved'
 import {ClubEntrance} from '@/components/clubs/ClubEntrance'
-import {FixtureCard,MatchTicket} from '@/components/clubs/FixtureCard'
+import {MatchTicket} from '@/components/clubs/FixtureCard'
+import {NextFixture,NextFixtureHold} from '@/components/clubs/NextFixture'
 import {Plate} from '@/components/weekly/Plate'
 import {ClubLifeCard} from '@/components/clubs/ClubLifeCard'
 import {Icon} from '@/components/weekly/Icon'
@@ -30,7 +31,6 @@ import {SHARED_GATES,gateAvailability,type GateKey} from '@/lib/clubs/gates'
 import {gameCopy} from '@/lib/clubs/game-copy'
 import {lifeEntry,lifeCompatFor} from '@/lib/clubs/life/entry'
 import {WatchBanner} from '@/components/weekly/WatchBanner'
-import {getFixtureFeed} from '@/lib/fixtures/service'
 import {livery} from '@/lib/club-livery'
 import {hasClubAway} from '@/lib/away-days/club'
 import {ClubFlavour} from '@/components/clubs/ClubFlavour'
@@ -58,7 +58,7 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
  const c=state.clubs.find(c=>c.id===id)
  if(!c)notFound()
  const locale=uiLocale(searchParams.lang),copy=locale==='he'?he:en,reg=REGISTRY.find(r=>r.id===c.id)||c,theme=core?.data.theme||clubTheme(reg)
- const feed=await getFixtureFeed(new Date()).catch(()=>null),fx=feed?.fixtures.find(f=>f.clubId===id),lv=livery(id),world=worldFor(reg)
+ const lv=livery(id),world=worldFor(reg)
  const games=gameCopy(locale),life=await lifeEntry(id,{evaluation:evaluationMode(),paused:c.status==='paused',status:c.status,locale})
  const states:GateState[]=core?SHARED_GATES.map(g=>({key:g.key,allowed:gateAccess(c,g.number,evaluationMode()).allowed,playable:gateAvailability(core.data,g.key).playable})):[]
  const open=states.filter(s=>s.allowed&&s.playable).map(s=>s.key as GateKey)
@@ -141,11 +141,14 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
   {dyk==='moment'&&<div className="wkk-dykwrap"><TodayMoment clubId={id} clubName={c.name} moment={moment} locale={locale} dyk={copy.wkkDyk} cta={copy.wkkPlaceIt} copy={{kicker:copy.todayKicker,exact:copy.todayExact,near:copy.todayNear,open:copy.todayOpen,pick:copy.todayPick}}/></div>}
   {dyk==='flavour'&&<div className="wkk-dykwrap"><ClubFlavour item={flav2} kicker={copy.flavourKicker2} label={copy.wkkDyk} variant="dyk"/></div>}
 
-  {fx&&lv?<div className="wkk-nextwrap"><FixtureCard clubId={id} clubName={c.name} fx={fx} lv={lv} locale={locale} copy={{kicker:copy.fixtureCard,vs:copy.vs,cta:copy.nextCta,kick:copy.wkkKickWord}}/></div>
-  :world.ground&&<section className="wkk-nextwrap" aria-label={copy.fixtureCard}><MatchTicket labelledBy="md-h" kicker={`${copy.fixtureCard} · ${copy.wkkTbc}`} title={world.ground.name}
+  <Suspense fallback={<div className="wkk-nextwrap"><NextFixtureHold label={copy.fixtureCard}/></div>}>
+   <NextFixture clubId={id} clubName={c.name} lv={lv} locale={locale} copy={{kicker:copy.fixtureCard,vs:copy.vs,cta:copy.nextCta,kick:copy.wkkKickWord}}
+    wrap={card=><div className="wkk-nextwrap">{card}</div>}
+    none={world.ground?<section className="wkk-nextwrap" aria-label={copy.fixtureCard}><MatchTicket labelledBy="md-h" kicker={`${copy.fixtureCard} · ${copy.wkkTbc}`} title={world.ground.name}
     meta={world.ground.local?<p className="wkk-ticket-local"><bdi lang={world.ground.script} dir="auto">{world.ground.local}</bdi></p>:undefined} stub={{small:copy.wkkKickWord,big:copy.wkkTbcShort}}>
     <p className="wk-cap white wkk-ticket-cap">{world.ground.line}</p>
-   </MatchTicket></section>}
+   </MatchTicket></section>:null}/>
+  </Suspense>
   {core&&<section className="wkk-cardwrap" id="card" aria-label={copy.cardKicker}><SupporterCard clubId={id} clubName={c.name} initials={c.initials} pattern={lv?.pattern} locale={locale} open={open} names={names} total={SHARED_GATES.length} next={false} copy={{kicker:copy.cardKicker,title:copy.cardTitle,gates:copy.cardGates,rounds:copy.cardRounds,been:copy.cardBeen,since:copy.cardSince,empty:copy.cardEmpty,next:copy.cardNext}}/></section>}
 
   <nav className="wkk-contents" aria-label={copy.homeJump}>

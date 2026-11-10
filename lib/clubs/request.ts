@@ -10,5 +10,7 @@ export async function requestClub(pathId?:string,gate=13) {
  if(!id)return null
  const control=(await readState()).clubs.find(c=>c.id===id)
  if(!gateAccess(control,gate,preview).allowed)return null
- return loadClub(id)
+ const r=await loadClub(id)
+ // review F04: a page that links ONWARD to another gate asks the same policy the target asks (switched off ⇒ no link)
+ return r?{...r,allowGate:(n:number)=>gateAccess(control,n,preview).allowed}:null
 }

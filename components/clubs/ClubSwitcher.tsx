@@ -13,7 +13,8 @@ export type SwitchClub={id:string;name:string;city:string;initials:string;patter
  * THE WEEKLY's club button (rule 124): the crest and the name of the club you are in; a tap opens "Top Teams" — every open
  * club as a sticker in a grid that wraps (never a sideways list), plus the market, your corner and the front page.
  */
-export function ClubSwitcher({current,clubs,locale,copy}:{current:string;clubs:SwitchClub[];locale:UiLocale;copy:Record<'switch'|'title'|'note'|'here'|'close'|'market'|'me'|'hub',string>}) {
+export function ClubSwitcher({current,clubs,locale,copy,portal=''}:{current:string;clubs:SwitchClub[];locale:UiLocale;copy:Record<'switch'|'title'|'note'|'here'|'close'|'market'|'me'|'hub',string>;
+ /** the neutral portal's origin when this page is served on a club's own host (review F01), '' otherwise */portal?:string}) {
  const [open,setOpen]=useState(false),here=clubs.find(c=>c.id===current)
  return <>
   <button type="button" className="wk-club-btn club-switch min-h-tap" onClick={()=>setOpen(true)} aria-haspopup="dialog" aria-expanded={open} aria-label={`${copy.switch} — ${here?.name??''}`}>
@@ -23,14 +24,14 @@ export function ClubSwitcher({current,clubs,locale,copy}:{current:string;clubs:S
    <p className="club-switch-note">{copy.note}</p>
    <ul className="club-switch-list wk-crests">
     {clubs.map(c=><li key={c.id} style={{display:'contents'}}>
-     <Link href={clubHref(c.id,'',locale)} className="wk-crest club-switch-row" aria-current={c.id===current?'true':undefined} data-rival={c.rival||undefined} onClick={()=>setOpen(false)}>
+     <Link href={c.id===current?clubHref(c.id,'',locale):`${portal}${clubHref(c.id,'',locale)}`} className="wk-crest club-switch-row" aria-current={c.id===current?'true':undefined} data-rival={c.rival||undefined} onClick={()=>setOpen(false)}>
       <Badge club={c} style={c.style}/>
       <span style={{minWidth:0}}><b>{c.name}</b><small>{c.id===current?copy.here:c.city}</small></span>
      </Link>
     </li>)}
    </ul>
    <div className="club-switch-more">
-    <Link className="wk-seeall" href="/#clubs" onClick={()=>setOpen(false)}>{copy.hub}<span aria-hidden="true">→</span></Link>
+    <Link className="wk-seeall" href={`${portal}/#clubs`} onClick={()=>setOpen(false)}>{copy.hub}<span aria-hidden="true">→</span></Link>
     <Link className="wk-btn paper" href="/market" onClick={()=>setOpen(false)}>{copy.market}</Link>
     <Link className="wk-btn paper" href="/me" onClick={()=>setOpen(false)}>{copy.me}</Link>
    </div>

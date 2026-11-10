@@ -13,12 +13,13 @@ const TABS:ArchiveTab[]=['today','time','dig','search','mine']
  * sends them in a compact wire form; the client presenter owns the five modes. URLs keep working:
  *   ?q=… opens Search · ?today=1 opens Today · ?event=<id> opens that entry's sheet (unknown id → 404) · ?tab=… picks a mode.
  */
-export const view:GateView=({club,locale,copy,round,searchParams})=>{
+export const view:GateView=({club,locale,copy,round,searchParams,allowed})=>{
  const entries=buildEntries(club),wire=encodeArchive(entries,club.sources)
  if(searchParams.event&&!entries.some(e=>e.id===searchParams.event))notFound()
  const q=(searchParams.q||'').slice(0,100),asked=searchParams.tab as ArchiveTab|undefined
  const tab:ArchiveTab=q?'search':searchParams.today?'today':TABS.includes(asked as ArchiveTab)?asked!:'today'
- const playable=(k:'xi'|'derby')=>gateAvailability(club,k).playable
+ // switched on for this club AND playable from its data — the same two checks the target page makes (review F04)
+ const playable=(k:'xi'|'derby')=>allowed(k)&&gateAvailability(club,k).playable
  const hasRival=!!club.rivals?.length
  return <ClubArchive club={club.identity.id} clubName={club.identity.name} version={club.version} locale={locale} contentLocale={club.locales.content} copy={copy}
   wire={wire} seed={round.seed} initial={{tab,q,event:searchParams.event||null}}

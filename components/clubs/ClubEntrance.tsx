@@ -10,7 +10,8 @@ const HOLD_MS=2400
 export function ClubEntrance({clubId,name,tap}:{clubId:string;name:string;tap:string}) {
  const key=`fanlife:entrance:${clubId}`
  const [open,setOpen]=useState(false)
- useEffect(()=>{try{if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;if(window.sessionStorage.getItem(key))return}catch{}setOpen(true)},[key])
+ useEffect(()=>{try{if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;if(window.sessionStorage.getItem(key))return;// review V04: a link to a place ON the page (#card, #today…) goes straight there
+ if(window.location.hash.length>1)return}catch{}setOpen(true)},[key])
  const end=useCallback(()=>{setOpen(false);try{window.sessionStorage.setItem(key,'1')}catch{}},[key])
  useEffect(()=>{if(!open)return;const t=window.setTimeout(end,HOLD_MS),k=(e:KeyboardEvent)=>{if(e.key==='Escape')end()};window.addEventListener('keydown',k);return()=>{window.clearTimeout(t);window.removeEventListener('keydown',k)}},[open,end])
  if(!open)return null
