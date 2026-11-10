@@ -102,7 +102,7 @@ def cut(job: Path, first: int, last: int, hook: str, kicker: str, accent: str, o
     master = job / 'out' / 'master.mp4'
     # a VOX film keeps what matters at the centre of its camera, so the Short reframes the board tighter: the middle
     # 4:3 of the frame, larger on the page (captions are centred, so they stay whole)
-    tight = plan.get('engine') in ('vox', 'vox-hf', 'docu')
+    tight = plan.get('engine') in ('vox', 'vox-hf')   # DOCU keeps names and the tracker at the frame's edges: full width
     fy, fh = (TIGHT_Y, TIGHT_H) if tight else (FRAME_Y, 608)
     ov = overlay(hook, kicker, accent, out.with_suffix('.overlay.png'), fy, fh)
     fade = max(0.0, t1 - t0 - 0.6)
