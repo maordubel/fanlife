@@ -1,6 +1,7 @@
 import {NextRequest, NextResponse} from 'next/server'
 import {cronAuthorized} from '@/lib/master/request'
 import {prepare, type Due} from '@/lib/marketing/run'
+import {metaLights,saveMeta,validMeta} from '@/lib/marketing/metaStore'
 export const dynamic='force-dynamic'
 export const runtime='nodejs'
 const json=(d:unknown,s=200)=>NextResponse.json(d,{status:s,headers:{'Cache-Control':'no-store'}})
@@ -39,5 +40,13 @@ export async function POST(r:NextRequest){
   if(b.published&&typeof b.published==='object'){const pb=b.published as Record<string,unknown>;const s=(k:string)=>typeof pb[k]==='string'?(pb[k] as string).slice(0,120):null;await rpc('worker_marketing_published',{p_id:id,p_result:{facebook:s('facebook'),instagram:s('instagram'),x:s('x')}}).catch(()=>null)}
   return got.ok?json(got.data):json({error:got.error},got.status)
  }
- return json({error:'action must be claim or report.'},400)
+ // the Page + Instagram connection, handed over from GitHub's secrets (.github/workflows/meta-handoff.yml)
+ if(b.action==='meta_config'){
+  const m=validMeta(b)
+  if(!m)return json({error:'page, token (and ig) are required in the right shape.'},400)
+  await saveMeta(m)
+  return json({ok:true,lights:await metaLights()})
+ }
+ if(b.action==='meta_status')return json({lights:await metaLights()})
+ return json({error:'action must be claim, report, meta_config or meta_status.'},400)
 }

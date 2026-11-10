@@ -2,6 +2,8 @@ import path from 'node:path'
 import {pathToFileURL} from 'node:url'
 import {NextRequest, NextResponse} from 'next/server'
 import {prepare, type Due} from '@/lib/marketing/run'
+import {metaEnv} from '@/lib/marketing/metaStore'
+import {runMetaSocial} from '@/lib/stories/metaSocial'
 export const dynamic = 'force-dynamic'
 export const runtime = 'nodejs'
 export const maxDuration = 60
@@ -53,7 +55,7 @@ async function publish(p: Due, pngs: Buffer[]): Promise<Meta> {
   try {
     const file = pathToFileURL(path.join(process.cwd(), 'scripts/marketing/meta-publish.mjs')).href
     const mod = await import(/* webpackIgnore: true */ file)
-    return await mod.publishToMeta(p, pngs)
+    return await mod.publishToMeta(p, pngs, {env: await metaEnv()})
   } catch (e) { return {facebook: 'error', instagram: 'error', line: `⚠️ Meta publisher failed to load: ${String((e as Error)?.message || e).slice(0, 120)}`} }
 }
 /** docs/fanlife/54-x-publishing.md — the business X account, same once-only rule */
@@ -123,5 +125,7 @@ export async function POST(r: NextRequest) {
     await rpc('worker_marketing_published', {p_id: p.id, p_result: {facebook: meta.facebook || null, instagram: meta.instagram || null, x: x.x || null}}).catch(() => null)
     done.push({id: p.id, outcome, visual, facebook: meta.facebook, instagram: meta.instagram, x: x.x})
   }
-  return json({ok: true, done})
+  // the studio's Reels and posts on Facebook and Instagram, on this five-minute clock (lib/stories/metaSocial.ts)
+  const studio = await runMetaSocial().catch(() => [] as string[])
+  return json({ok: true, done, studio})
 }
