@@ -79,18 +79,23 @@ export function digOrder(ids:string[],seed:number,cursor:number):string[]{
 // ------------------------------------------------------------------ the rabbit hole and the round
 /** entries one step away from this one — only links the data states, nearest-first: named players, then the moments
  *  that name him, then the same day, then the same year. Stable order; never contains the entry itself. */
-export function related(entries:Entry[],byId:Map<string,Entry>,e:Entry):{named:Entry[];namedBy:Entry[];sameDay:Entry[];sameYear:Entry[]}{
- const named=e.names.map(id=>byId.get(id)).filter((x):x is Entry=>!!x)
+export function related(entries:Entry[],byId:Map<string,Entry>,e:Entry):{named:Entry[];namedBy:Entry[];scored:Entry[];started:Entry[];playedIn:Entry[];sameDay:Entry[];sameYear:Entry[]}{
+ const get=(ids:readonly string[])=>ids.map(id=>byId.get(id)).filter((x):x is Entry=>!!x)
+ const named=get(e.names)
  const namedBy=e.kind==='player'?entries.filter(x=>x.kind==='moment'&&x.names.includes(e.id)).sort(newestFirst):[]
+ // review D01: who the match's own record lists — a scorer is not repeated among the starters
+ const scored=e.match?get(e.match.scored).filter(x=>!e.names.includes(x.id)):[]
+ const started=e.match?get(e.match.started).filter(x=>!e.names.includes(x.id)&&!e.match!.scored.includes(x.id)):[]
+ const playedIn=e.kind==='player'?entries.filter(x=>x.kind==='moment'&&!x.names.includes(e.id)&&!!x.match&&(x.match.started.includes(e.id)||x.match.scored.includes(e.id))).sort(newestFirst):[]
  const k=e.kind==='moment'?dayKeyOf(e):null
  const sameDay=k?entries.filter(x=>x.id!==e.id&&x.kind==='moment'&&dayKeyOf(x)===k).sort(newestFirst):[]
  const sameYear=e.kind==='moment'&&e.year!==null?entries.filter(x=>x.id!==e.id&&x.kind==='moment'&&x.year===e.year&&!sameDay.includes(x)).sort(newestFirst):[]
- return {named,namedBy,sameDay,sameYear}
+ return {named,namedBy,scored,started,playedIn,sameDay,sameYear}
 }
 /** the next step of "dig deeper" from `e`: the first related entry not yet visited, or null — a thread always ends */
 export function nextStep(entries:Entry[],byId:Map<string,Entry>,e:Entry,seen:ReadonlySet<string>):Entry|null{
  const r=related(entries,byId,e)
- return [...r.named,...r.namedBy,...r.sameDay,...r.sameYear].find(x=>!seen.has(x.id)&&x.id!==e.id)??null
+ return [...r.named,...r.scored,...r.namedBy,...r.playedIn,...r.started,...r.sameDay,...r.sameYear].find(x=>!seen.has(x.id)&&x.id!==e.id)??null
 }
 /** An exploration is a finished round once it has opened this many DISTINCT entries in one visit. Page views,
  *  searches and a look at the Today deck do not count; saving and "I was there" are separate actions. */

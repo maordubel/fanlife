@@ -22,7 +22,8 @@ export type MysteryClue={id:string;label:string;value:string;sources:string[];ty
 /** `remaining[i]` = candidates still fitting after clue i+1, computed by the bank builder INCLUDING unresolved-name phantoms (BC-R04/R05). */
 export type ClubMystery={id:string;targetPlayerId:string;clues:MysteryClue[];remaining?:number[]}
 export type ClubTrivia = {questions:MasterQuestion[];pools:Record<string,string[]>}
-export type HistoricalEvent = Entity & {on:string|null;precision:'day'|'year'|'unknown';year?:number|null;hint:string;sport:'football';sensitive:boolean}
+/** `hint` is the game's (dates stripped); `text` is the record's own words for a READER — the archive (review V01/D02) */
+export type HistoricalEvent = Entity & {on:string|null;precision:'day'|'year'|'unknown';year?:number|null;hint:string;text?:string;sport:'football';sensitive:boolean}
 /** null = not researched/migrated; [] = known empty. Never invent missing fields. */
 export type ClubData = {
   schemaVersion:1; version:string

@@ -18,10 +18,11 @@ import {CHANNEL} from '@/lib/stories/channel'
  */
 export const menuCopy=(locale:UiLocale)=>locale==='he'?he:en
 
-export function menuClubs(clubs:readonly Club[],current:string|null,locale:UiLocale,theme?:ClubTheme):ContentsClub[]{
+/** `portal`: the neutral portal's origin when served on a club's own host (review F01) — another club lives there, not here */
+export function menuClubs(clubs:readonly Club[],current:string|null,locale:UiLocale,theme?:ClubTheme,portal=''):ContentsClub[]{
  return clubs.filter(c=>c.status!=='paused').slice().sort((a,b)=>a.name.localeCompare(b.name)).map(c=>{
   const lv=livery(c.id)
-  return {id:c.id,name:c.name,city:c.city,crest:crestFor(c.id),initials:c.initials,href:clubHref(c.id,'',locale),current:c.id===current,rival:!!(theme&&lv&&c.id!==current&&bannedHere(theme,lv.primary))}
+  return {id:c.id,name:c.name,city:c.city,crest:crestFor(c.id),initials:c.initials,href:c.id===current?clubHref(c.id,'',locale):`${portal}${clubHref(c.id,'',locale)}`,current:c.id===current,rival:!!(theme&&lv&&c.id!==current&&bannedHere(theme,lv.primary))}
  })
 }
 
@@ -37,12 +38,12 @@ export function menuCorner(locale:UiLocale,path=''):ContentsItem[]{
  ]
 }
 
-export function menuFanLife(locale:UiLocale):ContentsItem[]{
+export function menuFanLife(locale:UiLocale,portal=''):ContentsItem[]{
  const t=menuCopy(locale)
  return [
-  {href:'/',title:t.wkFront,icon:'home'},
+  {href:`${portal}/`,title:t.wkFront,icon:'home'},
   {href:'/all-football',title:t.wkAllFootball,icon:'globe'},
-  {href:'/#life',title:t.tabLife,icon:'life'},
+  {href:`${portal}/#life`,title:t.tabLife,icon:'life'},
   {href:'/sources',title:t.wkSources,icon:'sources'},
   {href:`${CHANNEL.url}?utm_source=fanlife&utm_medium=menu`,title:t.wkWatch,sub:t.wkWatchSub,icon:'watch'},
  ]

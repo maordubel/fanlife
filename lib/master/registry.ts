@@ -33,6 +33,17 @@ export const REGISTRY: readonly RegistryClub[] = [
 /** The official address (owner, 7.10.2026): https://fanlife.dubelteam.com — a club's own host is `<sub>.fanlife.dubelteam.com`. */
 export const PORTAL_HOST_ROOT = process.env.FANLIFE_ROOT_DOMAIN || 'fanlife.dubelteam.com'
 export const DEFAULT_CLUB = 'hapoel-tel-aviv'
+/**
+ * Where the neutral portal lives, seen from this request's host (review F01). On a club's own host every link to
+ * another club or to the hub must leave that host — the host is authority (resolveClubId), so `/clubs/<other>` there
+ * is a 404 and `/` sends you back to the same club. Local `<sub>.localhost:<port>` maps to `localhost:<port>`.
+ */
+export function portalOrigin(host: string | null | undefined, root = PORTAL_HOST_ROOT): string {
+  const h = (host ?? '').toLowerCase()
+  const [name, port] = h.split(':')
+  if (name?.endsWith('.localhost')) return `http://localhost${port ? `:${port}` : ''}`
+  return `https://${root}`
+}
 /** host → club id, or null for the neutral portal. Closed list: an unknown subdomain is the portal, never a guess. */
 export function clubFromHost(host: string | null | undefined, reg: readonly RegistryClub[] = REGISTRY, root = PORTAL_HOST_ROOT): string | null {
   if (!host) return null

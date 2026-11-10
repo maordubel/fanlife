@@ -22,18 +22,28 @@ export type DeskClub={id:string;name:string;country:string;primary:string;line:'
  gates:DeskGate[];playable:number;openNow:number;potential:number
  batches:DeskBatch[];rival:{chosen:string|null;candidates:RivalCandidate[];others:string[]}
  step:DeskStep;improve:{key:GateKey;number:number;name:string;eligible:number;target:number;what:string;auto:boolean}[]
- collection:{uefaMatches:number;historyMatches:number;alarm:string|null}}
+ collection:{uefaMatches:number;historyMatches:number;alarm:string|null}
+ /** review D05: who the archive holds and who still waits for a second source — never lowered to look complete */
+ coverage:Coverage|null}
+export type Coverage={players:number;approved:number;waiting:number;noPosition:number}
 export type Desk={waiting:DeskClub[];line:DeskClub[];open:DeskClub[];kpis:{waiting:number;inLine:number;openClubs:number;gatesOpen:number;couldOpen:number};health:string[]}
 
 export type GateInput={key:GateKey;number:number;state:string;eligible:number;target:number;playable:boolean;openNow:boolean}
 export type ClubInput={id:string;name:string;country:string;primary:string;status:string;version:number;gatesOn:number[];staged:boolean
  gates:GateInput[];after:GateInput[]|null;batches:Batch[];perBatch:Record<string,GateKey[]>;decisions:StagedDecisions|null
- rivals:RivalCandidate[];opponents:string[];uefaMatches:number;historyMatches:number;alarm:string|null}
+ rivals:RivalCandidate[];opponents:string[];uefaMatches:number;historyMatches:number;alarm:string|null;coverage?:Coverage|null}
 
 const NAME=Object.fromEntries(SHARED_GATES.map(g=>[g.key,g.name])) as Record<GateKey,string>
 export const gateName=(k:GateKey)=>NAME[k]
 /** Gates research can grow without anyone — the daily pull widens line-ups, timelines, trivia and Blind Cow by itself. */
 const AUTO_GROWS=new Set<GateKey>(['lineup','trivia','timeline','archive','memory','blind-cow','polls'])
+/** one line the owner can act on: how many people a second source would open to the archive, trivia and Blind Cow */
+export function coverageText(c:Coverage):string{
+ const parts=[`${c.approved} of ${c.players} players are in the archive`]
+ if(c.waiting)parts.push(`${c.waiting} wait for a second source (confidence 1)`)
+ if(c.noPosition)parts.push(`${c.noPosition} have no recorded position`)
+ return parts.join(' · ')+'.'
+}
 /** What the full opening puts in place after the owner's click (scripts/clubs/promote.ts) — said on the card before and after. */
 export const OPENING_PARTS='the crest, the hub tile, the club pages, LIFE, Royal Rumble prices, ALL FOOTBALL and LEGENDS, the next-match card and the social plan'
 const stateOf=(g:GateInput,after:GateInput|undefined):GateState=>g.openNow?'open':g.playable?'ready':after?.playable?'soon':'closed'
@@ -63,7 +73,7 @@ export function deskClub(c:ClubInput):DeskClub{
  const improve=c.staged?[]:c.gates.filter(g=>g.state!=='READY').map(g=>({key:g.key,number:g.number,name:NAME[g.key],eligible:g.eligible,target:g.target,what:GATE_METHOD[g.key].what,auto:AUTO_GROWS.has(g.key)}))
   .sort((a,b)=>(b.target?b.eligible/b.target:0)-(a.target?a.eligible/a.target:0))
  return {id:c.id,name:c.name,country:c.country,primary:c.primary,line:c.staged?'new':'open',status:c.status,version:c.version,gates,playable,openNow,potential,batches,
-  rival:{chosen:d?.rival?.name??null,candidates:c.rivals,others:c.opponents},step,improve,collection:{uefaMatches:c.uefaMatches,historyMatches:c.historyMatches,alarm:c.alarm}}
+  rival:{chosen:d?.rival?.name??null,candidates:c.rivals,others:c.opponents},step,improve,collection:{uefaMatches:c.uefaMatches,historyMatches:c.historyMatches,alarm:c.alarm},coverage:c.coverage??null}
 }
 
 /** The whole desk: what waits for the owner first (most gates a click opens), then the line of new clubs, then the open ones. */

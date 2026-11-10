@@ -85,7 +85,7 @@ export function ClubArchive({club,clubName,version,locale,contentLocale,copy,wir
  const day=isDayKey(browse)?browse:today
  const onToggleSave=useCallback((id:string)=>{
   const was=savedSet.has(id),r=setSaved(club,id,!was)
-  setNotice(r===null?t('ar.sheet.saveFail'):'')
+  setNotice(r==='full'?t('ar.sheet.saveFull'):r===null?t('ar.sheet.saveFail'):'')
  },[club,savedSet,t])
 
  // ---- the entry drawer + the trail (a visit's distinct entries opened — the exploration round)

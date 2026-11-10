@@ -41,8 +41,18 @@ export function memoryPool(club:Pick<ClubData,'identity'|'version'|'memory'>){
 export type DealInput={size:MemSize;theme?:string|null;seed:number;cursor:number}
 export type Dealt={deal:PublicDeal;pairs:Cand[]}|{blocked:MemoryBlocker}
 
-/** solve, validate and shuffle one wall; a board that fails its own validator is a blocker, never a quiet substitute */
+/** a wall is a pure function of (club version, pool, size, theme, seed, cursor): the reveal re-deals it on EVERY match,
+ *  so the last few walls are kept (a 3,000-pair pool costs ~0.5 s a solve) */
+const DEALS=new Map<string,Dealt>()
 export function dealMemory(club:Pick<ClubData,'identity'|'version'|'memory'>,input:DealInput):Dealt{
+ const k=`${club.identity.id}:${club.version}:${club.memory.length}:${input.size}:${input.theme??''}:${input.seed}:${input.cursor}`
+ const hit=DEALS.get(k);if(hit)return hit
+ const out=solveDeal(club,input)
+ if(DEALS.size>=64)DEALS.delete(DEALS.keys().next().value as string)
+ DEALS.set(k,out);return out
+}
+/** solve, validate and shuffle one wall; a board that fails its own validator is a blocker, never a quiet substitute */
+function solveDeal(club:Pick<ClubData,'identity'|'version'|'memory'>,input:DealInput):Dealt{
  const {pool,key}=memoryPool(club),theme=isTheme(input.theme)?input.theme:null
  const scope=inTheme(pool,theme)
  const at=boardAt(scope,input.size,input.seed,input.cursor,theme?`${key}|${theme}`:key)
@@ -103,11 +113,13 @@ export function revealOf(club:ClubData,input:DealInput&{i:number;j:number;lang:s
  if(!a||!b||input.i===input.j||a.pair!==b.pair)return null
  const id=club.identity.id,cand=dealt.pairs.find(c=>pairKey(id,c.pair)===a.pair)
  if(!cand)return null
- const rec=eligibleArchive(club).find(f=>f.id===cand.pair)
- const src=rec?.sources.map(s=>club.sources.find(x=>x.id===s)).find(Boolean)
+ const entryId=cand.entry??cand.pair,rec=eligibleArchive(club).find(f=>f.id===entryId)
+ // a match the archive projects as a moment (lib/clubs/entities.ts) is an entry too, under the match's own id
+ const projected=!rec&&cand.entry&&(club.matches||[]).some(m=>m.id===cand.entry)
+ const src=(rec?.sources??cand.sources??[]).map(s=>club.sources.find(x=>x.id===s)).find(Boolean)
  return {
   key:a.pair,type:cand.type,kind:cand.kind,fact:cand.fact??null,
-  href:rec?`/clubs/${id}/archive?${new URLSearchParams({event:cand.pair,lang:input.lang})}`:null,
+  href:rec||projected?`/clubs/${id}/archive?${new URLSearchParams({event:entryId,lang:input.lang})}`:null,
   source:src?{title:src.title,publisher:src.publisher,url:src.url}:null
  }
 }

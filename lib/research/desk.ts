@@ -8,6 +8,7 @@ import {buildDesk,type ClubInput,type Desk,type GateInput} from './desk-model'
 import {rivalCandidates,stagedBatches,uefaMatches,isReviewFile} from './staged/model'
 import {isStagedClub,readDecisions,readStagedInput} from './staged/pack'
 import {clubPreview} from './staged/preview'
+import {loadClub} from '@/lib/clubs/resolver'
 
 /** What the daily run found wrong with collection (research-reports/health.json, written by research:daily-report). */
 export type HealthFile={generatedAt:string;alarms:{club:string;code:string;text:string}[]}
@@ -27,7 +28,11 @@ export async function researchDesk(state:State,summaries:ClubSummary[]):Promise<
   const staged=isStagedClub(c.id),input=staged?readStagedInput(c.id):null
   if(!staged&&!s.engine.hasProvider)return null
   const base={id:c.id,name:c.name,country:c.country,primary:c.primary,status:c.status,version:c.version,gatesOn:c.gates,gates:fromSummary(s),alarm:alarmOf(c.id)}
-  if(!input)return {...base,staged:false,after:null,batches:[],perBatch:{},decisions:null,rivals:[],opponents:[],uefaMatches:0,historyMatches:0}
+  if(!input){
+   const core=await loadClub(c.id).catch(()=>null),ps=core?.data.players||[]
+   const coverage=core?{players:ps.length,approved:ps.filter(f=>f.status==='approved'&&f.confidence>=2).length,waiting:ps.filter(f=>f.confidence<2).length,noPosition:ps.filter(f=>!f.value.positions?.length).length}:null
+   return {...base,staged:false,after:null,batches:[],perBatch:{},decisions:null,rivals:[],opponents:[],uefaMatches:0,historyMatches:0,coverage}
+  }
   const [decisions,preview]=await Promise.all([readDecisions(c.id).catch(()=>null),clubPreview(c.id)])
   const batches=stagedBatches(input),perBatch:Record<string,GateKey[]>={}
   for(const b of batches){const p=preview?.batches[b.id];perBatch[b.id]=p&&p.hash===b.hash?p.opens:[]}

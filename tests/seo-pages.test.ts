@@ -26,7 +26,9 @@ describe('SEO: the publisher pages and the club pages',()=>{
   }
  })
  it('the four pages are FAN LIFE pages (English layout), and the sitemap lists them',()=>{
-  expect(read('app/layout.tsx')).toMatch(/FAN_PATHS=\['\/today','\/about','\/privacy','\/terms','\/contact'/)
+  // review F07 (10.11.2026): the list moved out of the root layout into the ONE policy the layout and the sitemap share
+  expect(read('lib/master/legacy-access.ts')).toMatch(/FAN_PATHS=\['\/today','\/about','\/privacy','\/terms','\/contact'/)
+  expect(read('app/layout.tsx')).toContain("isFanPath(pathname)")
   const sm=read('app/sitemap.ts')
   for(const p of ['/about','/privacy','/terms','/contact'])expect(sm).toContain(`'${p}'`)
   expect(sm).toContain('clubPages(')
@@ -45,6 +47,6 @@ describe('SEO: the publisher pages and the club pages',()=>{
   expect(sql).toMatch(/revoke all on function public\.worker_marketing_today\(\) from public, anon, authenticated/)
   const page=read('app/today/page.tsx')
   expect(page).toMatch(/robots:\{index:false,follow:true\}/)
-  expect(read('app/layout.tsx')).toContain("'/today'")
+  expect(read('lib/master/legacy-access.ts')).toContain("'/today'")
  })
 })

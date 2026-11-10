@@ -10,6 +10,7 @@ import { gateAccess } from '@/lib/clubs/access'
 import { loadClub } from '@/lib/clubs/resolver'
 import { clubAwayData } from '@/lib/away-days/club'
 import { featuresOf } from '@/lib/features'
+import { legacyOpen } from '@/lib/master/legacy-access'
 
 /**
  * מפת האתר — every public gate, derived from `lib/gates.ts` so it can never drift from
@@ -43,21 +44,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // A gate under refurbishment has no URL to list. Putting one in the sitemap would be
   // asking a search engine to index a page that does not exist.
-  const gateEntries: MetadataRoute.Sitemap = GATES.filter(isOpen).map((gate) => ({
-    url: `${SITE_URL}${gate.href.split('?')[0]}`,
+  // Review F07: a Worker page is listed only when the root layout would open it — the same `legacyOpen` answer.
+  const hapoel = state?.clubs.find((c) => c.id === DEFAULT_CLUB) ?? null
+  const worker = (path: string) => (state ? legacyOpen(path, hapoel) : true)
+  const gateEntries: MetadataRoute.Sitemap = GATES.filter(isOpen).map((gate) => gate.href.split('?')[0]!).filter(worker).map((path) => ({
+    url: `${SITE_URL}${path}`,
     lastModified: now,
   }))
+  const page = (entry: { url: string; lastModified: Date }) => (worker(entry.url.slice(SITE_URL.length)) ? [entry] : [])
 
   return [
     { url: SITE_URL, lastModified: now },
     ...gateEntries,
-    { url: `${SITE_URL}/ussishkin`, lastModified: now },
-    { url: `${SITE_URL}/kits/archive`, lastModified: now },
-    { url: `${SITE_URL}/kits/closet`, lastModified: now },
-    { url: `${SITE_URL}/kits/market`, lastModified: now },
-    { url: `${SITE_URL}/kits/auction`, lastModified: now },
-    { url: `${SITE_URL}/credits`, lastModified: now },
-    { url: `${SITE_URL}/away-days`, lastModified: now },
+    ...page({ url: `${SITE_URL}/ussishkin`, lastModified: now }),
+    ...page({ url: `${SITE_URL}/kits/archive`, lastModified: now }),
+    ...page({ url: `${SITE_URL}/kits/closet`, lastModified: now }),
+    ...page({ url: `${SITE_URL}/kits/market`, lastModified: now }),
+    ...page({ url: `${SITE_URL}/kits/auction`, lastModified: now }),
+    ...page({ url: `${SITE_URL}/credits`, lastModified: now }),
+    ...page({ url: `${SITE_URL}/away-days`, lastModified: now }),
     // FAN LIFE (7.10.2026): every club's own page and the sources page
     ...REGISTRY.filter((club) => live.has(club.id)).map((club) => ({ url: `${SITE_URL}/clubs/${club.id}`, lastModified: now })),
     ...(await clubPages(state, live, now)),

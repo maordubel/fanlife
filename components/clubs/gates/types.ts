@@ -16,6 +16,8 @@ export type GateViewProps={
  searchParams:GateSearch
  /** READY | PARTIAL — a view never renders for a locked gate */
  state:string
+ /** may this page link to that gate? The control room's switch for this club (review F04); readiness is the view's own check */
+ allowed:(gate:GateKey)=>boolean
 }
 export type GateView=(props:GateViewProps)=>JSX.Element|null|Promise<JSX.Element|null>
 export type ViewKey=Exclude<GateKey,'timeline'>

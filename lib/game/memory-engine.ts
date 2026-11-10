@@ -22,6 +22,10 @@ export type MemoryCandidate = {
    * row the archive does not date, which a window never deals.
    */
   year?: number | null
+  /** the source ids the pair is read from, when it is not an archive entry itself (lib/clubs/memory-pairs.ts) */
+  sources?: string[]
+  /** the archive entry the pair stands for, when it differs from `pair` */
+  entry?: string
 }
 
 function distinctCount(candidates: readonly { a: string; b: string }[]): number {

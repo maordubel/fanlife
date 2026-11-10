@@ -308,7 +308,7 @@ function Ready({club,clubName,seed,cursor,locale,plan,practice,onPractice,pace,o
   {plan.eras.length>0&&<div className={css.setBlock}><h3 className={css.setHead}>{t('tq.pick.era')}</h3>
    <div className={`wk-night ${css.dial}`} role="group" aria-label={t('tq.pick.era')}>
     <Link className={css.dialKey} href={href({topic:sel.topic,mode:sel.topic?undefined:sel.mode})} aria-current={!sel.era?'true':undefined}><i aria-hidden="true" style={{['--h' as string]:'100%'}}/><b>{copy.anyEra}</b></Link>
-    {plan.eras.map(e=><Link key={e.decade} className={css.dialKey} href={href({topic:sel.topic,era:String(e.decade)})} aria-current={sel.era===String(e.decade)?'true':undefined}><i aria-hidden="true" style={{['--h' as string]:`${Math.max(8,Math.round(100*e.size/eraMax))}%`}}/><b><bdi dir="ltr">{String(e.decade).slice(2)}s</bdi></b><small>{e.size}</small></Link>)}
+    {plan.eras.map(e=><Link key={e.decade} className={css.dialKey} href={href({topic:sel.topic,era:String(e.decade)})} aria-current={sel.era===String(e.decade)?'true':undefined}><i aria-hidden="true" style={{['--h' as string]:`${Math.max(8,Math.round(100*e.size/eraMax))}%`}}/><b><bdi dir="ltr">{e.decade}s</bdi></b><small>{e.size}</small></Link>)}
    </div></div>}
  </div>
  return <section className={`${css.stage} ${css.pregame}`} data-testid="trivia-ready" data-club={club} data-category={category}>

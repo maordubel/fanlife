@@ -163,3 +163,7 @@
 }
 @keyframes lgm-banner-shine { 0%, 70% { translate: -120% 0; } 100% { translate: 120% 0; } }
 @keyframes lgm-banner-float { from { translate: 0 0; } to { translate: 0 -4px; } }
+
+/* review F02: a paused club rests on every page inside it */
+.club-resting { padding: 48px var(--gutter, 16px); display: grid; place-items: center; min-block-size: 50vh; }
+.club-resting-in { max-inline-size: 560px; padding: 28px; display: grid; gap: 14px; text-align: center; justify-items: center; }

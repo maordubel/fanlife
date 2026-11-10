@@ -6,6 +6,14 @@ import {EDITORIAL_TAG,editorialKey,interaction,questionFamily,standardQuestion} 
 /** Stable seed/cursor selection for the club Standard mode; the native Worker engine is untouched.
  * Caps are real constraints, never silently relaxed. A sparse bank returns null and keeps its labelled History mode.
  * No personal history participates here: a shared seed always reproduces the same challenge. */
+/**
+ * Review D03: the 30 editorial questions per club are the best-worded, not the only good ones. A round carries at most
+ * this many of them, and the band decks WEAVE the two lanes (one editorial, then two from the rest of the bank) instead
+ * of putting every editorial question in front — before this, ten Standard rounds of one club used ~40 distinct questions
+ * out of thousands. The seed still decides everything: a shared challenge reproduces exactly.
+ */
+export const EDITORIAL_BUDGET=3
+const weave=<T,>(a:T[],b:T[]):T[]=>{const out:T[]=[];let i=0,j=0;while(i<a.length||j<b.length){if(i<a.length)out.push(a[i++]!);for(let k=0;k<2&&j<b.length;k++)out.push(b[j++]!)}return out}
 export function standardDeck(questions:readonly MasterQuestion[],seed:number,cursor:number):string[]|null{
  const pool=questions.filter(standardQuestion)
  const bands=[0,1,2].map(b=>pool.filter(q=>bandOf(q.difficulty,false)===b))
@@ -13,10 +21,11 @@ export function standardDeck(questions:readonly MasterQuestion[],seed:number,cur
  const wantTopics=Math.min(4,new Set(pool.map(q=>q.topic)).size),needAction=pool.some(interaction)
  const decks=bands.map((qs,b)=>{
   const lanes=[qs.filter(q=>q.facets?.includes(EDITORIAL_TAG)),qs.filter(q=>!q.facets?.includes(EDITORIAL_TAG))]
-  return lanes.map((xs,k)=>{
+  const [ed,rest]=lanes.map((xs,k)=>{
    const deck=shuffle([...xs],rng((seed+b*7919+k*104729)>>>0));if(!deck.length)return deck
-   const at=(cursor*4)%deck.length;return [...deck.slice(at),...deck.slice(0,at)]
-  }).flat()
+   const at=(cursor*(k===0?2:8))%deck.length;return [...deck.slice(at),...deck.slice(0,at)]
+  }) as [MasterQuestion[],MasterQuestion[]]
+  return weave(ed,rest)
  })
  for(let lap=0;lap<24;lap++){
   const picked:MasterQuestion[]=[],facts=new Set<string>(),prompts=new Set<string>(),topics=new Map<string,number>(),types=new Map<QType,number>(),templates=new Map<string,number>(),families=new Map<string,number>()
@@ -25,6 +34,7 @@ export function standardDeck(questions:readonly MasterQuestion[],seed:number,cur
    const ordered=[...lane.slice(at),...lane.slice(0,at)]
    const candidates=ordered.map((q,i)=>({q,i})).filter(({q})=>{
     if(factsOf(q).some(f=>facts.has(f))||prompts.has(editorialKey(q)))return false
+    if(q.facets?.includes(EDITORIAL_TAG)&&picked.filter(x=>x.facets?.includes(EDITORIAL_TAG)).length>=EDITORIAL_BUDGET)return false
     if((types.get(q.type)??0)>=(q.type==='tf'?2:q.type==='year'?2:12))return false
     if((topics.get(q.topic)??0)>=4||(templates.get(q.template)??0)>=2)return false
     if((families.get(questionFamily(q))??0)>=(questionFamily(q)==='scoreboard'?3:questionFamily(q)==='shirts'?2:12))return false

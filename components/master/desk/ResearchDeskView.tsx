@@ -3,7 +3,7 @@ import Link from 'next/link'
 import {useState} from 'react'
 import {useAdminApi} from '../adminApi'
 import {deskHref} from '@/lib/master/attention'
-import {gateName,stepText,type Desk,type DeskClub,type DeskGate} from '@/lib/research/desk-model'
+import {coverageText,gateName,stepText,type Desk,type DeskClub,type DeskGate} from '@/lib/research/desk-model'
 import type {GateKey} from '@/lib/clubs/gates'
 
 type Api=ReturnType<typeof useAdminApi>
@@ -105,6 +105,7 @@ export function ResearchDeskView({desk}:{desk:Desk}){
    <ol className="rdesk-rows rdesk-open-rows">{desk.open.map(c=><li key={c.id} className="rdesk-row">
     <div className="rdesk-row-head"><h3><Link href={deskHref('clubs',{club:c.id})}><bdi>{c.name}</bdi></Link></h3><span className="desk-stamp" data-ok={c.gates.every(g=>g.state==='open')||undefined}>{c.openNow}/13 open</span></div>
     <Punch club={c}/>
+    {c.coverage&&<p className="rdesk-row-say" data-testid="rdesk-coverage">{coverageText(c.coverage)}</p>}
     {c.improve.length?<ul className="rdesk-improve">{c.improve.slice(0,3).map(g=><li key={g.key}><b>{g.number} {g.name}</b> <span>{g.eligible}/{g.target}</span> — {g.what} <em data-auto={g.auto||undefined}>{g.auto?'Grows by itself':'Needs a new source'}</em></li>)}</ul>:<p className="rdesk-row-say">Every gate is full.</p>}
    </li>)}</ol>
   </section>

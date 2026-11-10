@@ -169,3 +169,24 @@
   .wga-tl-result { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(260px, .8fr); gap: 28px; align-items: start; max-width: 1360px; margin-inline: auto; }
   .wga-tl-cover { min-block-size: 560px; padding: 22px; }
 }
+
+/* review V03 (10.11.2026): on a phone the club's own masthead already says FAN LIFE and the club, so a gate's head
+   drops the repeated brand line and the plate shrinks — the first record of a reading gate starts in the first screen */
+@media (max-width: 760px) {
+  .club-app .wga-mast-navl { display: none; }
+  .club-app .wga-mast-nav:not(:has(.wga-mast-langs a)) { display: none; }
+  .club-app .wga-mast { margin-block-end: 16px; }
+  .club-app .wga-mast-plate { min-height: 0; padding: 12px 12px 16px; }
+  .club-app .wga-mast-row { padding-inline-end: 52px; gap: 10px; }
+  .club-app .wga-mast-row .mag-badge { inline-size: 38px; block-size: 38px; }
+  .club-app .wga-mast-title { font-size: clamp(28px, 8vw, 40px); }
+  .club-app .wga-mast-no { inline-size: 48px; block-size: 48px; inset-block-start: 8px; }
+  .club-app .wga-mast-no b { font-size: 20px; }
+  .club-app .wga-mast-stamp { font-size: 14px; inset-block-end: -14px; }
+  .club-app .wkp-under { margin-block-start: 6px; }
+}
+/* review V03: on a phone the pin in a game's HUD is the pin icon alone, so the game's own name is never cut ("Memo…") */
+@media (max-width: 520px) {
+  .wga-hud .wkp-toggle[data-compact] .wkp-btn-t { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .wga-hud .wkp-toggle[data-compact] .wkp-btn { padding-inline: 10px; min-inline-size: 44px; }
+}

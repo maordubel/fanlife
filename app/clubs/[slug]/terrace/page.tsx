@@ -1,10 +1,12 @@
+import {Suspense} from 'react'
 import {clubSubMetadata} from '@/lib/seo/club'
 import Link from 'next/link'
 import {headers} from 'next/headers'
 import {notFound} from 'next/navigation'
 import type {CSSProperties} from 'react'
 import {ClubSurface} from '@/components/clubs/ClubSurface'
-import {FixtureCard,MatchTicket} from '@/components/clubs/FixtureCard'
+import {MatchTicket} from '@/components/clubs/FixtureCard'
+import {NextFixture,NextFixtureHold} from '@/components/clubs/NextFixture'
 import {ClubActivity} from '@/components/clubs/games/ClubActivity'
 import {BelovedPlate} from '@/components/clubs/ClubGateWall'
 import {KickOff} from '@/components/clubs/ClubToday'
@@ -21,7 +23,6 @@ import {SHARED_GATES,gateAvailability,sharedGate,type GateKey} from '@/lib/clubs
 import {worldFor} from '@/lib/clubs/world'
 import {belovedOf,wallNumbers} from '@/lib/clubs/beloved'
 import {gameCopy} from '@/lib/clubs/game-copy'
-import {getFixtureFeed} from '@/lib/fixtures/service'
 import {livery} from '@/lib/club-livery'
 import {clubHref} from '@/lib/clubs/club-href'
 import {SupporterCard} from '@/components/clubs/SupporterCard'
@@ -42,7 +43,7 @@ export default async function Terrace({params,searchParams}:{params:{slug:string
  const c=state.clubs.find(x=>x.id===id)
  if(!c)notFound()
  const locale=uiLocale(searchParams.lang),copy=locale==='he'?he:en,reg=REGISTRY.find(r=>r.id===id)||c,theme=core?.data.theme||clubTheme(reg),world=worldFor(reg),lv=livery(id),games=gameCopy(locale)
- const feed=await getFixtureFeed(new Date()).catch(()=>null),fx=feed?.fixtures.find(f=>f.clubId===id)
+ 
  const vote=core&&gateAccess(c,sharedGate('polls')!.number,evaluationMode()).allowed&&gateAvailability(core.data,'polls').playable
  const open:GateKey[]=core?SHARED_GATES.filter(g=>gateAccess(c,g.number,evaluationMode()).allowed&&gateAvailability(core.data,g.key).playable).map(g=>g.key):[]
  const beloved=belovedOf(world.terrace,open),num=wallNumbers(beloved)
@@ -72,8 +73,10 @@ export default async function Terrace({params,searchParams}:{params:{slug:string
 
   <section className="wkk-tnext" aria-labelledby="tnext-h">
    <div className="wkk-sechead"><h2 id="tnext-h" className="wk-logo red sm wk-tilt">{copy.fixtureCard}</h2></div>
-   {fx&&lv?<FixtureCard clubId={id} clubName={c.name} fx={fx} lv={lv} locale={locale} copy={{kicker:copy.fixtureCard,vs:copy.vs,cta:copy.nextCta,kick:copy.wkkKickWord}}/>
-   :<MatchTicket kicker={copy.wkkTbc} title={copy.terraceNoFixture} stub={{small:copy.wkkKickWord,big:copy.wkkTbcShort}}><p className="wkk-ticket-note">{copy.wkkTicketFills}</p></MatchTicket>}
+   <Suspense fallback={<NextFixtureHold label={copy.fixtureCard}/>}>
+    <NextFixture clubId={id} clubName={c.name} lv={lv} locale={locale} copy={{kicker:copy.fixtureCard,vs:copy.vs,cta:copy.nextCta,kick:copy.wkkKickWord}}
+     none={<MatchTicket kicker={copy.wkkTbc} title={copy.terraceNoFixture} stub={{small:copy.wkkKickWord,big:copy.wkkTbcShort}}><p className="wkk-ticket-note">{copy.wkkTicketFills}</p></MatchTicket>}/>
+   </Suspense>
   </section>
 
   {core&&<section className="wkk-season" aria-labelledby="season-h">
