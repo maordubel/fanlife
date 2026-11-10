@@ -1,7 +1,7 @@
 import {NextRequest, NextResponse} from 'next/server'
 import {cronAuthorized} from '@/lib/master/request'
 import {prepare, type Due} from '@/lib/marketing/run'
-import {metaLights,saveMeta,validMeta} from '@/lib/marketing/metaStore'
+import {metaLights,pageTokenFor,saveMeta,validMeta} from '@/lib/marketing/metaStore'
 export const dynamic='force-dynamic'
 export const runtime='nodejs'
 const json=(d:unknown,s=200)=>NextResponse.json(d,{status:s,headers:{'Cache-Control':'no-store'}})
@@ -44,8 +44,9 @@ export async function POST(r:NextRequest){
  if(b.action==='meta_config'){
   const m=validMeta(b)
   if(!m)return json({error:'page, token (and ig) are required in the right shape.'},400)
-  await saveMeta(m)
-  return json({ok:true,lights:await metaLights()})
+  const {meta,how}=await pageTokenFor(m)
+  await saveMeta(meta)
+  return json({ok:true,token:how,lights:await metaLights()})
  }
  if(b.action==='meta_status')return json({lights:await metaLights()})
  return json({error:'action must be claim, report, meta_config or meta_status.'},400)

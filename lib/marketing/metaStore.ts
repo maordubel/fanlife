@@ -21,6 +21,22 @@ export function validMeta(x:unknown):Omit<MetaStored,'at'>|null{
  return {page,ig,token,on:v.on===true||v.on==='1',version:/^v\d+\.\d+$/.test(version)?version:null}
 }
 
+/**
+ * The token GitHub holds may be the system user's (doc 53 step 5) rather than the Page's own (step 6): posting to a Page
+ * with the former is refused with "(#200) publish_actions … deprecated". Ask Meta for the Page's token with it — for a
+ * Page token the answer is the same token — and the linked Instagram account when the id is missing.
+ */
+export async function pageTokenFor(x:Omit<MetaStored,'at'>,fetcher:typeof fetch=fetch):Promise<{meta:Omit<MetaStored,'at'>;how:'page token'|'as given'}>{
+ try{
+  const v=x.version??'v23.0'
+  const r=await fetcher(`https://graph.facebook.com/${v}/${x.page}?${new URLSearchParams({fields:'access_token,instagram_business_account',access_token:x.token})}`,{cache:'no-store',signal:AbortSignal.timeout(15_000)})
+  const j=await r.json().catch(()=>({})) as {access_token?:string;instagram_business_account?:{id?:string}}
+  const token=typeof j.access_token==='string'&&j.access_token.length>40&&!/\s/.test(j.access_token)?j.access_token:null
+  const ig=x.ig||(/^\d{5,30}$/.test(String(j.instagram_business_account?.id??''))?String(j.instagram_business_account!.id):'')
+  return token?{meta:{...x,token,ig},how:'page token'}:{meta:{...x,ig},how:'as given'}
+ }catch{return {meta:x,how:'as given'}}
+}
+
 export async function saveMeta(x:Omit<MetaStored,'at'>,now=new Date()):Promise<void>{
  await area().update<MetaStored|null>(FILE,null,()=>({...x,at:now.toISOString()}))
 }
