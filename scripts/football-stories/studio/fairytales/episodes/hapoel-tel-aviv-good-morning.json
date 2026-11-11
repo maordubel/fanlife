@@ -14,91 +14,30 @@
  },
  "shots": [
   {
-   "id": "cold-open",
-   "plate": "town",
-   "delivery": "secret",
-   "en": "For almost a hundred years, everyone believed Hapoel Tel Aviv was born in 1927. Everyone… was wrong.",
-   "he": "כמעט מאה שנה, כולם היו בטוחים שהפועל תל אביב נולדה באלף תשע מאות עשרים ושבע. כולם… טעו.",
+   "id": "once-upon",
+   "plate": "book-open",
+   "delivery": "warm",
+   "en": "Once upon a time, in a city by the sea, there was a football club that belonged to the people who worked there. They called it Hapoel — the Worker. And this… is its story.",
+   "he": "היה היה פעם, בעיר שעל שפת הים, מועדון כדורגל שהיה שייך לאנשים שעבדו בה. קראו לו הפועל. וזה… הסיפור שלו.",
    "sources": [
-    "packs/hapoel-tel-aviv.json goodMorning.coldOpen"
+    "club-packs/hapoel-tel-aviv/world.json founded"
    ],
    "visual": {
     "push": [
      1.0,
-     1.09
-    ],
-    "centre": [
-     0.6,
-     0.44
-    ],
-    "crests": [
-     {
-      "crest": "1927",
-      "at": 0.32,
-      "xy": [
-       330,
-       330
-      ],
-      "size": 330
-     }
+     1.04
     ]
-   }
-  },
-  {
-   "id": "card-no-2",
-   "plate": "card",
-   "delivery": "bright",
-   "en": "Then researchers found an old membership card. Card number two — issued in October 1923. And in 2015, the club put the true year on its crest.",
-   "he": "ואז חוקרים מצאו כרטיס חבר ישן. כרטיס מספר שתיים — שהונפק באוקטובר אלף תשע מאות עשרים ושלוש. ובאלפיים וחמש עשרה, המועדון שם את השנה האמיתית על הסמל שלו.",
-   "sources": [
-    "Sport1 / Maariv 12.6.2015 https://sport1.maariv.co.il/israeli-soccer/ligat-haal/Article-728080/",
-    "docs/04-verified-research.md #9"
-   ],
-   "visual": {
-    "tags": [
-     {
-      "text": "No. 2",
-      "at": 0.22,
-      "xy": [
-       1480,
-       300
-      ],
-      "size": 96
-     },
-     {
-      "text": "OCT 1923",
-      "at": 0.4,
-      "xy": [
-       1480,
-       520
-      ],
-      "size": 76
-     }
-    ],
-    "crests": [
-     {
-      "crest": "1927",
-      "at": 0.58,
-      "xy": [
-       460,
-       540
-      ],
-      "size": 400,
-      "flipTo": "1923",
-      "flipAt": 0.78
-     }
-    ],
-    "confettiAt": 0.82
    }
   },
   {
    "id": "workers",
    "plate": "workers",
    "delivery": "warm",
-   "en": "It was a workers' club, born in the labour sports movement of the 1920s. Before it was anything else, it belonged to working people.",
-   "he": "זה היה מועדון של פועלים, שנולד בתנועת הספורט של הפועלים בשנות העשרים. לפני שהוא היה כל דבר אחר, הוא היה שייך לאנשים עובדים.",
+   "en": "It began in the 1920s, in the workers' sports movement — in 1923, to be exact, even if for many years everyone said 1927. Working people, playing football after a long day's work.",
+   "he": "הכול התחיל בשנות העשרים, בתנועת הספורט של הפועלים — באלף תשע מאות עשרים ושלוש, ליתר דיוק, גם אם שנים רבות כולם אמרו עשרים ושבע. אנשים עובדים, ששיחקו כדורגל אחרי יום עבודה ארוך.",
    "sources": [
-    "club-packs/hapoel-tel-aviv/world.json founded"
+    "club-packs/hapoel-tel-aviv/world.json founded",
+    "Sport1 / Maariv 12.6.2015 (1923 membership card)"
    ],
    "visual": {
     "push": [
@@ -107,53 +46,151 @@
     ],
     "tags": [
      {
-      "text": "1920s",
-      "at": 0.3,
+      "text": "1923",
+      "at": 0.45,
       "xy": [
        300,
        230
       ],
-      "size": 80
+      "size": 90
      }
     ]
    }
   },
   {
-   "id": "trophies",
+   "id": "hodorov-boy",
+   "plate": "hodorov-boy",
+   "delivery": "tender",
+   "en": "Our first hero was born with both his legs folded inward. The doctors said he might never walk. But at nine, he walked — and his father, to make those legs strong, bought him a ball.",
+   "he": "הגיבור הראשון שלנו נולד כששתי רגליו מקופלות פנימה. הרופאים אמרו שאולי לעולם לא ילך. אבל בגיל תשע הוא הלך — ואבא שלו, כדי לחזק את הרגליים האלה, קנה לו כדור.",
+   "sources": [
+    "Vikipoel (the club wiki, content/raw/vikipoel-player-wikitext.json) יעקב חודורוב"
+   ]
+  },
+  {
+   "id": "hodorov-goal",
+   "plate": "hodorov-goal",
+   "delivery": "build",
+   "en": "At thirteen, in a friendly match, his team's goalkeeper was hurt, and the boy stepped into the goal. It was a moment that would change Israeli football.",
+   "he": "בגיל שלוש עשרה, במשחק ידידות, נפצע השוער של הקבוצה, והילד נעמד בשער. זה היה רגע שישנה את הכדורגל הישראלי.",
+   "sources": [
+    "Vikipoel (the club wiki, content/raw/vikipoel-player-wikitext.json) יעקב חודורוב"
+   ]
+  },
+  {
+   "id": "hodorov",
+   "plate": "hodorov-legend",
+   "delivery": "proud",
+   "en": "His name was Yaakov Hodorov. He kept goal for Hapoel from 1947 to 1962, and won the title in 1957. Many still call him the greatest goalkeeper Israel ever had. He won the Israel Prize — and today, Hapoel's training ground carries his name.",
+   "he": "קראו לו יעקב חודורוב. הוא שמר על השער של הפועל מאלף תשע מאות ארבעים ושבע עד שישים ושתיים, וזכה באליפות של חמישים ושבע. רבים עדיין אומרים שהוא השוער הגדול ביותר שהיה לישראל. הוא קיבל את פרס ישראל — והיום מתחם האימונים של הפועל קרוי על שמו.",
+   "sources": [
+    "Vikipoel (the club wiki, content/raw/vikipoel-player-wikitext.json) יעקב חודורוב",
+    "content/manual/trophies.json 1956/57"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "tags": [
+     {
+      "text": "YAAKOV HODOROV",
+      "sub": "1947 – 1962",
+      "at": 0.08,
+      "xy": [
+       480,
+       200
+      ],
+      "size": 66
+     }
+    ]
+   }
+  },
+  {
+   "id": "primo",
+   "plate": "primo",
+   "delivery": "playful",
+   "en": "Then came a boy born in Bulgaria — David Primo. He played his first game for Hapoel at seventeen, and getting past him was almost impossible. Even when you did… he was so fast, he was in front of you again.",
+   "he": "ואז הגיע ילד שנולד בבולגריה — דוד פרימו. הוא שיחק את המשחק הראשון שלו בהפועל בגיל שבע עשרה, ולעבור אותו היה כמעט בלתי אפשרי. וגם אם עברת… הוא היה כל כך מהיר, שהוא כבר עמד מולך שוב.",
+   "sources": [
+    "Vikipoel (the club wiki, content/raw/vikipoel-player-wikitext.json) דוד פרימו"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "centre": [
+     0.5,
+     0.55
+    ],
+    "tags": [
+     {
+      "text": "DAVID PRIMO",
+      "at": 0.1,
+      "xy": [
+       420,
+       200
+      ],
+      "size": 72
+     }
+    ]
+   }
+  },
+  {
+   "id": "mexico",
+   "plate": "mexico",
+   "delivery": "bright",
+   "en": "He played for Israel at the 1970 World Cup in Mexico — in all three of Israel's games.",
+   "he": "הוא שיחק בנבחרת ישראל במונדיאל של אלף תשע מאות שבעים במקסיקו — בכל שלושת המשחקים.",
+   "sources": [
+    "Vikipoel (the club wiki, content/raw/vikipoel-player-wikitext.json) דוד פרימו"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ],
+    "tags": [
+     {
+      "text": "MEXICO 1970",
+      "at": 0.25,
+      "xy": [
+       1500,
+       220
+      ],
+      "size": 76
+     }
+    ]
+   }
+  },
+  {
+   "id": "asia",
    "plate": "trophies",
    "delivery": "bright",
-   "en": "Since then: thirteen league titles. Sixteen State Cups. And one cup from far away — in 1967, Hapoel Tel Aviv became the very first club champions of Asia.",
-   "he": "ומאז: שלוש עשרה אליפויות. שש עשרה גביעי מדינה. וגביע אחד מרחוק — באלף תשע מאות שישים ושבע, הפועל תל אביב הייתה אלופת המועדונים הראשונה של אסיה.",
+   "en": "And with Hapoel, Primo won the title in 1966 — and then the very first Asian Champion Club Tournament, beating Selangor of Malaysia two–one in the final. Hapoel Tel Aviv: the first club champions of Asia.",
+   "he": "ועם הפועל, פרימו זכה באליפות של שישים ושש — ואז בטורניר הראשון אי פעם של אלופות אסיה, עם ניצחון שתיים–אחת על סלנגור ממלזיה בגמר. הפועל תל אביב: אלופת המועדונים הראשונה של אסיה.",
    "sources": [
-    "content/manual/trophies.json (13 league, 16 State Cup, 1 Asian Champion Club Tournament 1967/68)",
+    "Vikipoel (the club wiki, content/raw/vikipoel-player-wikitext.json) דוד פרימו",
+    "content/manual/trophies.json 1965/66, 1967/68",
     "https://en.wikipedia.org/wiki/1967_Asian_Champion_Club_Tournament"
    ],
    "visual": {
     "tags": [
      {
-      "text": "13",
-      "sub": "LEAGUE TITLES",
-      "at": 0.14,
+      "text": "1966",
+      "sub": "CHAMPIONS",
+      "at": 0.16,
       "xy": [
        300,
-       290
+       300
       ],
-      "size": 120
-     },
-     {
-      "text": "16",
-      "sub": "STATE CUPS",
-      "at": 0.32,
-      "xy": [
-       300,
-       640
-      ],
-      "size": 120
+      "size": 110
      },
      {
       "text": "1967",
       "sub": "CHAMPIONS OF ASIA",
-      "at": 0.58,
+      "at": 0.5,
       "xy": [
        1600,
        300
@@ -164,11 +201,283 @@
    }
   },
   {
+   "id": "jimmy",
+   "plate": "jaffa",
+   "delivery": "warm",
+   "en": "In the seventies, the heart of Hapoel's midfield was Rifaat Turk — everyone called him Jimmy. He joined Hapoel's youth team at sixteen, and became the first Arab footballer to play for Israel's national team.",
+   "he": "בשנות השבעים, הלב של הקישור האדום היה ריפעת טורק — כולם קראו לו ג'ימי. הוא הצטרף לנוער של הפועל בגיל שש עשרה, והיה לשחקן הערבי הראשון ששיחק בנבחרת ישראל.",
+   "sources": [
+    "Vikipoel (the club wiki, content/raw/vikipoel-player-wikitext.json) ריפעת טורק"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "JIMMY TURK",
+      "at": 0.2,
+      "xy": [
+       420,
+       210
+      ],
+      "size": 76
+     }
+    ]
+   }
+  },
+  {
+   "id": "sinai",
+   "plate": "sinai-run",
+   "delivery": "proud",
+   "en": "And beside him grew a boy from Jaffa, who had joined Hapoel's children's team: Moshe Sinai. Many call him the greatest Hapoel player of all time.",
+   "he": "ולידו גדל ילד מיפו, שהצטרף עוד לקבוצת הילדים של הפועל: משה סיני. רבים אומרים שהוא השחקן הגדול ביותר בתולדות הפועל.",
+   "sources": [
+    "Vikipoel (the club wiki, content/raw/vikipoel-player-wikitext.json) משה סיני"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.09
+    ],
+    "tags": [
+     {
+      "text": "MOSHE SINAI",
+      "at": 0.25,
+      "xy": [
+       1480,
+       200
+      ],
+      "size": 80
+     }
+    ]
+   }
+  },
+  {
+   "id": "left-foot",
+   "plate": "freekick",
+   "delivery": "bright",
+   "en": "His left foot frightened the whole league — especially from free kicks.",
+   "he": "רגל שמאל שלו הפחידה את כל הליגה — במיוחד בבעיטות חופשיות.",
+   "sources": [
+    "Vikipoel (the club wiki, content/raw/vikipoel-player-wikitext.json) משה סיני"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "centre": [
+     0.6,
+     0.45
+    ]
+   }
+  },
+  {
+   "id": "1981",
+   "plate": "title1981",
+   "delivery": "build",
+   "en": "In 1981, Jimmy was injured early in the season, and people said Hapoel could not win without him. So Sinai took the reins… and Hapoel were champions for the first time in twelve years.",
+   "he": "באלף תשע מאות שמונים ואחת, ג'ימי נפצע בתחילת העונה, ואמרו שבלעדיו הפועל לא תזכה. אז סיני לקח את המושכות… והפועל הייתה אלופה לראשונה אחרי שתים עשרה שנה.",
+   "sources": [
+    "Vikipoel (the club wiki, content/raw/vikipoel-player-wikitext.json) משה סיני",
+    "content/manual/trophies.json 1968/69 → 1980/81"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "1981",
+      "sub": "CHAMPIONS",
+      "at": 0.72,
+      "xy": [
+       1600,
+       260
+      ],
+      "size": 110
+     }
+    ],
+    "confettiAt": 0.74
+   }
+  },
+  {
+   "id": "aston-villa",
+   "plate": "letter",
+   "delivery": "secret",
+   "en": "Then a letter arrived from England: Aston Villa wanted Sinai. Hapoel asked for three hundred and fifty thousand pounds — an impossible sum in those days — and Sinai stayed. Two more titles followed, in 1986 and 1988.",
+   "he": "ואז הגיע מכתב מאנגליה: אסטון וילה רצתה את סיני. הפועל ביקשה שלוש מאות וחמישים אלף לירות שטרלינג — סכום דמיוני באותם ימים — וסיני נשאר. ובאו עוד שתי אליפויות, בשמונים ושש ובשמונים ושמונה.",
+   "sources": [
+    "Vikipoel (the club wiki, content/raw/vikipoel-player-wikitext.json) משה סיני",
+    "content/manual/trophies.json 1985/86, 1987/88"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "1986",
+      "sub": "CHAMPIONS",
+      "at": 0.72,
+      "xy": [
+       330,
+       300
+      ],
+      "size": 100
+     },
+     {
+      "text": "1988",
+      "sub": "CHAMPIONS",
+      "at": 0.84,
+      "xy": [
+       330,
+       640
+      ],
+      "size": 100
+     }
+    ]
+   }
+  },
+  {
+   "id": "tikva",
+   "plate": "tikva-arrive",
+   "delivery": "playful",
+   "en": "In the middle of the nineties, a playmaker came home from Belgium — with a famous moustache. His name was Shalom Tikva, and the fans called him the Red Diamond. The man who brought him to Hapoel was Moshe Sinai, by then the club's manager.",
+   "he": "באמצע שנות התשעים חזר מבלגיה פליימייקר — עם שפם מפורסם. קראו לו שלום תקוה, והאוהדים קראו לו היהלום האדום. מי שהביא אותו להפועל היה משה סיני, שהיה אז המנג'ר של המועדון.",
+   "sources": [
+    "Vikipoel (the club wiki, content/raw/vikipoel-player-wikitext.json) שלום תקוה"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "SHALOM TIKVA",
+      "sub": "THE RED DIAMOND",
+      "at": 0.28,
+      "xy": [
+       1460,
+       220
+      ],
+      "size": 74
+     }
+    ]
+   }
+  },
+  {
+   "id": "the-chip",
+   "plate": "chip",
+   "delivery": "build",
+   "en": "Against Beitar Jerusalem, with only ten men, Tikva scored twice in a four–nil win — the second, a gentle chip over the goalkeeper from the edge of the box.",
+   "he": "מול בית\"ר ירושלים, בעשרה שחקנים בלבד, תקוה כבש פעמיים בניצחון ארבע–אפס — והשני היה לוב עדין מעל השוער, מקצה הרחבה.",
+   "sources": [
+    "Vikipoel (the club wiki, content/raw/vikipoel-player-wikitext.json) שלום תקוה"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "tags": [
+     {
+      "text": "4 – 0",
+      "at": 0.75,
+      "xy": [
+       1600,
+       240
+      ],
+      "size": 110
+     }
+    ]
+   }
+  },
+  {
+   "id": "his-bloomfield",
+   "plate": "tikva-joy",
+   "delivery": "close",
+   "en": "From that night on, Bloomfield belonged to him.",
+   "he": "ומאותו לילה, בלומפילד הייתה שלו.",
+   "sources": [
+    "Vikipoel (the club wiki, content/raw/vikipoel-player-wikitext.json) שלום תקוה"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.12
+    ],
+    "confettiAt": 0.3
+   }
+  },
+  {
+   "id": "babies",
+   "plate": "babies",
+   "delivery": "playful",
+   "en": "In 1999, the coach, Dror Kashtan, gave his youngest players their chance. People called them Kashtan's babies — and one of them was Salim Toama.",
+   "he": "באלף תשע מאות תשעים ותשע, המאמן דרור קשטן נתן הזדמנות לשחקנים הכי צעירים שלו. קראו להם התינוקות של קשטן — ואחד מהם היה סלים טועמה.",
+   "sources": [
+    "Vikipoel (the club wiki, content/raw/vikipoel-player-wikitext.json) סלים טועמה"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "SALIM TOAMA",
+      "at": 0.7,
+      "xy": [
+       1480,
+       210
+      ],
+      "size": 76
+     }
+    ]
+   }
+  },
+  {
+   "id": "double-2000",
+   "plate": "shootout",
+   "delivery": "build",
+   "en": "That season, Hapoel won the double: the league and the cup. In the cup final, Toama scored in the hundred-and-fifteenth minute, then missed his penalty in the shoot-out — and Hapoel won it anyway.",
+   "he": "באותה עונה הפועל זכתה בדאבל: אליפות וגביע. בגמר הגביע טועמה כבש בדקה המאה וחמש עשרה, ואז החטיא את הפנדל שלו בדו־קרב — והפועל זכתה בכל זאת.",
+   "sources": [
+    "Vikipoel (the club wiki, content/raw/vikipoel-player-wikitext.json) סלים טועמה",
+    "content/manual/trophies.json 1999/00 league + cup"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "2000",
+      "sub": "THE DOUBLE",
+      "at": 0.14,
+      "xy": [
+       320,
+       260
+      ],
+      "size": 110
+     }
+    ],
+    "confettiAt": 0.86
+   }
+  },
+  {
    "id": "europe",
    "plate": "europe",
    "delivery": "adventure",
-   "en": "In 2001, Hapoel went on an adventure across Europe. At Bloomfield they beat Chelsea, two–nil. Then Lokomotiv Moscow. Then Parma, in Italy. Only Milan stopped them — in the quarter-final.",
-   "he": "באלפיים ואחת, הפועל יצאה להרפתקה באירופה. בבלומפילד היא ניצחה את צ'לסי, שתיים–אפס. אחר כך את לוקומוטיב מוסקבה. אחר כך את פארמה, באיטליה. רק מילאן עצרה אותה — ברבע הגמר.",
+   "en": "Two years later, Hapoel went on an adventure across Europe. Chelsea, two–nil at Bloomfield. Then Lokomotiv Moscow. Then Parma, in Italy. Only Milan stopped them — in the quarter-final.",
+   "he": "שנתיים אחר כך, הפועל יצאה להרפתקה באירופה. צ'לסי, שתיים–אפס בבלומפילד. אחר כך לוקומוטיב מוסקבה. אחר כך פארמה, באיטליה. רק מילאן עצרה אותה — ברבע הגמר.",
    "sources": [
     "content/manual/euro-ties.json 2001-uefa-r2-chelsea, -r3-lokomotiv, -r4-parma, -qf-milan"
    ],
@@ -216,49 +525,89 @@
    }
   },
   {
-   "id": "the-92nd-minute",
+   "id": "double-2010",
    "plate": "hero",
    "delivery": "build",
-   "en": "On the fifteenth of May 2010 — the last day of the season, the ninety-second minute — a young striker from the club's own youth team, Eran Zahavi, scored. And Hapoel were champions.",
-   "he": "בחמישה עשר במאי אלפיים ועשר — היום האחרון של העונה, הדקה התשעים ושתיים — חלוץ צעיר ממחלקת הנוער של המועדון, ערן זהבי, כבש. והפועל הייתה אלופה.",
+   "en": "And then came May 2010. The last day of the season, the ninety-second minute — and a striker from the club's own youth team, Eran Zahavi, scored the goal that won the title. A few days earlier, Hapoel had won the cup too: a second double.",
+   "he": "ואז הגיע מאי אלפיים ועשר. היום האחרון של העונה, הדקה התשעים ושתיים — וחלוץ ממחלקת הנוער של המועדון, ערן זהבי, כבש את שער האליפות. כמה ימים קודם הפועל זכתה גם בגביע: דאבל שני.",
    "sources": [
-    "content/manual/goals.json championship-2010-zahavi-92",
-    "content/manual/enemies.json zahavi (youth team)"
+    "content/manual/goals.json championship-2010-zahavi-92, cupfinal-2010-vermouth-25",
+    "content/manual/trophies.json 2009/10"
    ],
    "visual": {
     "tags": [
      {
-      "text": "15 · 5 · 2010",
-      "at": 0.22,
-      "xy": [
-       380,
-       240
-      ],
-      "size": 64
-     },
-     {
       "text": "92'",
-      "at": 0.5,
+      "at": 0.38,
       "xy": [
        1560,
-       250
+       240
       ],
       "size": 130
+     },
+     {
+      "text": "2010",
+      "sub": "THE DOUBLE",
+      "at": 0.8,
+      "xy": [
+       360,
+       260
+      ],
+      "size": 110
      }
     ],
-    "confettiAt": 0.8
+    "confettiAt": 0.6
+   }
+  },
+  {
+   "id": "champions-league",
+   "plate": "champions",
+   "delivery": "adventure",
+   "en": "That autumn, Hapoel Tel Aviv played in the Champions League — the greatest stage in club football. And on a November night at Bloomfield, they beat Benfica, three–nil. Two of the goals were Zahavi's.",
+   "he": "ובאותו סתיו, הפועל תל אביב שיחקה בליגת האלופות — הבמה הגדולה ביותר בכדורגל. ובלילה אחד בנובמבר, בבלומפילד, היא ניצחה את בנפיקה שלוש–אפס. שניים מהשערים היו של זהבי.",
+   "sources": [
+    "content/manual/euro-ties.json 2010/11 Champions League group B",
+    "content/manual/goals.json benfica-2010-zahavi-24, -90-2"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "tags": [
+     {
+      "text": "CHAMPIONS LEAGUE",
+      "sub": "2010",
+      "at": 0.12,
+      "xy": [
+       960,
+       170
+      ],
+      "size": 72
+     },
+     {
+      "text": "BENFICA",
+      "sub": "3 – 0",
+      "at": 0.62,
+      "xy": [
+       1560,
+       560
+      ],
+      "size": 80
+     }
+    ]
    }
   },
   {
    "id": "across-the-road",
    "plate": "road",
-   "delivery": "warm",
-   "en": "Years later, he played for the club across the city. Football is like that. But that night still belongs to everyone who was there.",
-   "he": "שנים אחר כך, הוא שיחק במועדון שבצד השני של העיר. ככה זה בכדורגל. אבל הלילה ההוא עדיין שייך לכל מי שהיה שם.",
+   "delivery": "wry",
+   "en": "And then… Zahavi went to play for the team across the city. So today, at Bloomfield, we don't love Zahavi. Football is like that.",
+   "he": "ואז… זהבי הלך לשחק בקבוצה שבצד השני של העיר. אז היום, בבלומפילד, אנחנו לא אוהבים את זהבי. ככה זה בכדורגל.",
    "sources": [
-    "content/manual/grievances.json zahavi-palermo (Palermo 2011, Maccabi Tel Aviv 2013)"
+    "content/manual/grievances.json zahavi-palermo (Palermo 2011, Maccabi Tel Aviv 2013)",
+    "owner, 11.11.2026"
    ],
-   "framing": "friendly — owner, 11.11.2026",
    "visual": {
     "push": [
      1.0,
@@ -269,9 +618,9 @@
   {
    "id": "gate-5",
    "plate": "gate5",
-   "delivery": "bright",
-   "en": "And at every home game, at one end of Bloomfield, there's Gate 5 — where the loudest supporters stand.",
-   "he": "ובכל משחק בית, בקצה אחד של בלומפילד, יש את שער חמש — המקום שבו עומדים האוהדים הכי רועשים.",
+   "delivery": "warm",
+   "en": "But the stories stay — at Gate 5, at one end of Bloomfield, where the loudest supporters stand, and remember every one of them.",
+   "he": "אבל הסיפורים נשארים — בשער חמש, בקצה אחד של בלומפילד, איפה שעומדים האוהדים הכי רועשים, וזוכרים את כולם.",
    "sources": [
     "club-packs/hapoel-tel-aviv/world.json terrace"
    ],
@@ -279,7 +628,7 @@
     "tags": [
      {
       "text": "GATE 5",
-      "at": 0.35,
+      "at": 0.3,
       "xy": [
        1600,
        280
@@ -294,17 +643,17 @@
    "id": "good-morning",
    "plate": "book-close",
    "delivery": "close",
-   "en": "So, good morning from Hapoel Tel Aviv. A hundred and three years old… and four years older than everyone thought.",
-   "he": "אז בוקר טוב מהפועל תל אביב. בת מאה ושלוש… וגדולה בארבע שנים ממה שכולם חשבו.",
+   "en": "Hodorov in goal. Primo at the back. Jimmy and Sinai in the middle. Tikva with the ball, and Toama running beside him. Thirteen titles. Sixteen cups. A hundred and three years. Good morning, Hapoel Tel Aviv.",
+   "he": "חודורוב בשער. פרימו בהגנה. ג'ימי וסיני בקישור. תקוה עם הכדור, וטועמה רץ לידו. שלוש עשרה אליפויות. שש עשרה גביעים. מאה ושלוש שנים. בוקר טוב, הפועל תל אביב.",
    "sources": [
-    "1923 → 2026; 1923 vs 1927"
+    "content/manual/trophies.json (13 league, 16 State Cup)"
    ],
    "visual": {
     "extra": 2.6,
     "crests": [
      {
       "crest": "1923",
-      "at": 0.12,
+      "at": 0.55,
       "xy": [
        960,
        350
@@ -312,7 +661,7 @@
       "size": 360
      }
     ],
-    "wordmarkAt": 0.5,
+    "wordmarkAt": 0.72,
     "wordmarkTag": "Good Morning, Hapoel Tel Aviv"
    }
   }

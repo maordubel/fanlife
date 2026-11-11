@@ -35,6 +35,10 @@ DELIVERY = {
     'warm': 'Warm and unhurried, like turning an old photograph over in your hands.',
     'adventure': 'Building like a journey: each place a little more excited than the last, then a soft drop on the last sentence.',
     'build': 'Holding the breath: slower and slower through the dashes, then the last sentence bursts with joy.',
+ 'tender': 'Soft and slow, close to the listener, full of warmth; a small catch in the voice at the hard part, then hope.',
+    'proud': 'Proud and warm, a little slower on the names, letting each achievement land.',
+    'playful': 'Playful and amused, a smile you can hear, a quick comic beat at the "…".',
+    'wry': 'A knowing, gently amused tone — a little sigh at the "…", then the last lines dry and light, a wink, never bitter.',
     'close': 'Warm and smiling; a held beat at the "…", then the last words land gently, like the last page of a book.',
 }
 ACCENT = {'en': 'Accent: neutral British English.',
