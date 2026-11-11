@@ -2,7 +2,7 @@
 // PRIMARY (Cloud Run) answers; if it is down, a GET/HEAD falls back to STANDBY (Vercel) when one is set.
 // Switching hosts = changing these two variables in the Worker's settings; no DNS change, no downtime.
 // KEY = the service secret FANLIFE_PROXY_KEY (optional).
-const DEFAULT_PRIMARY = 'https://fanlife-dubel.example.invalid'
+const DEFAULT_PRIMARY = ''
 const DEFAULT_STANDBY = ''
 
 async function forward(request, url, base, env, body) {
