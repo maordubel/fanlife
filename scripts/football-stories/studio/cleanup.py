@@ -44,7 +44,6 @@ def trim():
 
 
 def run():
-    trim()
     for job_id in call('cleanup_due')['ids']:
         try:
             for cache_id in cache_ids(job_id):
@@ -56,4 +55,5 @@ def run():
 
 
 if __name__ == '__main__':
+    trim()
     run()
