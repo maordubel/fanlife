@@ -34,6 +34,8 @@ jobs:
           npm run clubs:precompile
       - uses: actions/setup-python@v5
         with: {python-version: '3.12'}
+      - name: Python tools (the directors import the research and writer modules, which need numpy and Pillow)
+        run: pip install -q numpy pillow
       - name: The writer's earlier answers (a pitch is never asked twice)
         uses: actions/cache@v4
         with:
