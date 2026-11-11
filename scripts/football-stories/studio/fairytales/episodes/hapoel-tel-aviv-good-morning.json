@@ -57,6 +57,50 @@
    "transition": "fade"
   },
   {
+   "id": "red",
+   "plate": "red",
+   "transition": "iris",
+   "delivery": "playful",
+   "en": "Hapoel's colour is red. Red shirts, red scarves, and a big red heart. And yellow? We don't love yellow. Yellow is… yuck!",
+   "he": "הצבע של הפועל הוא אדום. חולצות אדומות, צעיפים אדומים, ולב אדום גדול. וצהוב? צהוב אנחנו לא אוהבים. צהוב זה… איכסה!",
+   "visual": {
+    "push": [
+     1.0,
+     1.06
+    ],
+    "tags": [
+     {
+      "text": "RED",
+      "at": 0.12,
+      "xy": [
+       1500,
+       230
+      ],
+      "size": 120,
+      "rot": -4
+     },
+     {
+      "text": "YELLOW?",
+      "sub": "YUCK!",
+      "at": 0.66,
+      "xy": [
+       420,
+       250
+      ],
+      "size": 84,
+      "rot": 5
+     }
+    ],
+    "punch": [
+     0.66
+    ]
+   },
+   "sources": [
+    "club-packs/hapoel-tel-aviv/world.json colours",
+    "owner, 11.11.2026 (\"צהוב זה איכסה\")"
+   ]
+  },
+  {
    "id": "workers",
    "plate": "workers",
    "delivery": "warm",
@@ -133,6 +177,9 @@
       ],
       "size": 66
      }
+    ],
+    "punch": [
+     0.08
     ]
    },
    "transition": "dissolve"
@@ -198,6 +245,38 @@
    "transition": "slide"
   },
   {
+   "id": "feigenbaum",
+   "plate": "feigenbaum",
+   "transition": "slide",
+   "delivery": "warm",
+   "en": "In the same team played a boy who, at five, used to stand behind Hodorov's goal and fetch the balls. His name was Shaya Feigenbaum. He grew up to be Hapoel's captain for ten years — and, with a hundred and thirty-one goals, the greatest goal scorer in the club's history.",
+   "he": "באותה קבוצה שיחק ילד שבגיל חמש היה עומד מאחורי השער של חודורוב ומביא לו את הכדורים. קראו לו שייע פייגנבוים. הוא גדל והיה הקפטן של הפועל עשר שנים — ועם מאה שלושים ואחד שערים, מלך השערים הגדול ביותר בתולדות המועדון.",
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "SHAYA FEIGENBAUM",
+      "sub": "131 GOALS",
+      "at": 0.42,
+      "xy": [
+       1420,
+       210
+      ],
+      "size": 68
+     }
+    ],
+    "punch": [
+     0.42
+    ]
+   },
+   "sources": [
+    "Vikipoel (the club wiki, content/raw/vikipoel-player-wikitext.json) שייע פייגנבוים (born 1947; fetched balls for Hodorov at Basa in 1952; captain ten years; 131 goals, the club record)"
+   ]
+  },
+  {
    "id": "asia",
    "plate": "trophies",
    "delivery": "bright",
@@ -230,6 +309,10 @@
       ],
       "size": 110
      }
+    ],
+    "punch": [
+     0.16,
+     0.5
     ]
    },
    "transition": "page"
@@ -263,6 +346,23 @@
    "transition": "iris"
   },
   {
+   "id": "red-shirts",
+   "plate": "red-shirts",
+   "transition": "dissolve",
+   "delivery": "proud",
+   "en": "And after Jimmy, many Arab footballers wore the red shirt. It is one of the things Hapoel is known for.",
+   "he": "ואחרי ג'ימי, שחקנים ערבים רבים לבשו את החולצה האדומה. זה אחד הדברים שהפועל מזוהה איתם.",
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ]
+   },
+   "sources": [
+    "owner, 11.11.2026"
+   ]
+  },
+  {
    "id": "sinai",
    "plate": "sinai-run",
    "delivery": "proud",
@@ -289,6 +389,38 @@
     ]
    },
    "transition": "zoom"
+  },
+  {
+   "id": "seven",
+   "plate": "seven",
+   "transition": "zoom",
+   "delivery": "proud",
+   "en": "On his back, he wore number seven.",
+   "he": "על הגב שלו, הוא לבש את מספר שבע.",
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "tags": [
+     {
+      "text": "7",
+      "at": 0.4,
+      "xy": [
+       1560,
+       260
+      ],
+      "size": 150,
+      "rot": -3
+     }
+    ],
+    "punch": [
+     0.4
+    ]
+   },
+   "sources": [
+    "Vikipoel (the club wiki, content/raw/vikipoel-player-wikitext.json) משה סיני (מספר בהפועל=7)"
+   ]
   },
   {
    "id": "left-foot",
@@ -338,7 +470,10 @@
       "size": 110
      }
     ],
-    "confettiAt": 0.74
+    "confettiAt": 0.74,
+    "punch": [
+     0.72
+    ]
    },
    "transition": "torn"
   },
@@ -378,6 +513,9 @@
       ],
       "size": 100
      }
+    ],
+    "punch": [
+     0.72
     ]
    },
    "transition": "page"
@@ -435,9 +573,44 @@
       ],
       "size": 110
      }
+    ],
+    "punch": [
+     0.75
     ]
    },
    "transition": "zoom"
+  },
+  {
+   "id": "fourteen",
+   "plate": "fourteen",
+   "transition": "iris",
+   "delivery": "warm",
+   "en": "And on Tikva's back — number fourteen.",
+   "he": "ועל הגב של תקוה — מספר ארבע עשרה.",
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "tags": [
+     {
+      "text": "14",
+      "at": 0.4,
+      "xy": [
+       1560,
+       260
+      ],
+      "size": 150,
+      "rot": 3
+     }
+    ],
+    "punch": [
+     0.4
+    ]
+   },
+   "sources": [
+    "Vikipoel (the club wiki, content/raw/vikipoel-player-wikitext.json) שלום תקוה (מספר בהפועל=14)"
+   ]
   },
   {
    "id": "his-bloomfield",
@@ -512,7 +685,10 @@
       "size": 110
      }
     ],
-    "confettiAt": 0.86
+    "confettiAt": 0.86,
+    "punch": [
+     0.86
+    ]
    },
    "transition": "page"
   },
@@ -565,6 +741,10 @@
       ],
       "size": 70
      }
+    ],
+    "punch": [
+     0.2,
+     0.7
     ]
    },
    "transition": "torn"
@@ -601,7 +781,11 @@
       "size": 110
      }
     ],
-    "confettiAt": 0.6
+    "confettiAt": 0.6,
+    "punch": [
+     0.38,
+     0.8
+    ]
    },
    "transition": "zoom"
   },
@@ -641,6 +825,9 @@
       ],
       "size": 80
      }
+    ],
+    "punch": [
+     0.62
     ]
    },
    "transition": "iris"
@@ -664,6 +851,58 @@
    "transition": "slide"
   },
   {
+   "id": "bad-days",
+   "plate": "bad-days",
+   "transition": "torn",
+   "delivery": "tender",
+   "en": "We had less good days too. Three times, Hapoel fell out of the top league — in 1989, in 2017, and in 2024. And every time, after one season, it came back up.",
+   "he": "היו לנו גם ימים פחות טובים. שלוש פעמים הפועל ירדה מהליגה הבכירה — באלף תשע מאות שמונים ותשע, באלפיים ושבע עשרה, ובאלפיים עשרים וארבע. ובכל פעם, אחרי עונה אחת, היא עלתה בחזרה.",
+   "visual": {
+    "push": [
+     1.0,
+     1.06
+    ],
+    "tags": [
+     {
+      "text": "1989",
+      "at": 0.3,
+      "xy": [
+       330,
+       240
+      ],
+      "size": 84,
+      "rot": -4
+     },
+     {
+      "text": "2017",
+      "at": 0.4,
+      "xy": [
+       960,
+       200
+      ],
+      "size": 84,
+      "rot": 3
+     },
+     {
+      "text": "2024",
+      "at": 0.5,
+      "xy": [
+       1590,
+       240
+      ],
+      "size": 84,
+      "rot": -2
+     }
+    ]
+   },
+   "sources": [
+    "walla 4.1.2005 (item 649885) — first relegation 1989",
+    "content/manual/moments.json תשע-נקודות-2017, ירידה-2024 (Haaretz 11.5.2024: third time in its history)",
+    "en.wikipedia List of Hapoel Tel Aviv F.C. seasons (1989–90 Artzit, 2nd)",
+    "content/manual/moments.json 2017/18, 2024/25 (RSSSF: Leumit champions, promoted)"
+   ]
+  },
+  {
    "id": "gate-5",
    "plate": "gate5",
    "delivery": "warm",
@@ -684,6 +923,9 @@
       "size": 110,
       "rot": -4
      }
+    ],
+    "punch": [
+     0.3
     ]
    },
    "transition": "dissolve"
@@ -692,8 +934,8 @@
    "id": "good-morning",
    "plate": "book-close",
    "delivery": "close",
-   "en": "Hodorov in goal. Primo at the back. Jimmy and Sinai in the middle. Tikva with the ball, and Toama running beside him. Thirteen titles. Sixteen cups. A hundred and three years. Good morning, Hapoel Tel Aviv.",
-   "he": "חודורוב בשער. פרימו בהגנה. ג'ימי וסיני בקישור. תקוה עם הכדור, וטועמה רץ לידו. שלוש עשרה אליפויות. שש עשרה גביעים. מאה ושלוש שנים. בוקר טוב, הפועל תל אביב.",
+   "en": "Hodorov in goal. Primo at the back. Feigenbaum up front. Jimmy and Sinai in the middle. Tikva with the ball, and Toama running beside him. Thirteen titles. Sixteen cups. A hundred and three years. Good morning, Hapoel Tel Aviv.",
+   "he": "חודורוב בשער. פרימו בהגנה. פייגנבוים בהתקפה. ג'ימי וסיני בקישור. תקוה עם הכדור, וטועמה רץ לידו. שלוש עשרה אליפויות. שש עשרה גביעים. מאה ושלוש שנים. בוקר טוב, הפועל תל אביב.",
    "sources": [
     "content/manual/trophies.json (13 league, 16 State Cup)"
    ],

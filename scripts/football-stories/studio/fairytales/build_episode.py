@@ -94,7 +94,7 @@ class Source:
     def drop(self) -> None:
         self._frames = None
 
-    def at(self, t: float, push=(1.0, 1.06), centre=(.5, .5)) -> Image.Image:
+    def at(self, t: float, push=(1.0, 1.06), centre=(.5, .5), punch: float = 0.0, aim=(.5, .5)) -> Image.Image:
         frames = self.frames
         # owner 11.11.2026: no shake — the clip plays on ones, a slowed clip blends its neighbouring frames, and the
         # camera glides on one eased curve with no boil
@@ -106,10 +106,20 @@ class Source:
         u = pt.ease(t / max(self.dur, 0.1))
         z = push[0] + (push[1] - push[0]) * u
         cx, cy = centre
+        side = 1 if self.seed % 2 else -1
         if len(frames) == 1:                                          # a still drifts as well as pushes: a camera on a slider
             z += 0.04
-            cx += 0.07 * (u - 0.5) * (1 if self.seed % 2 else -1)
+            cx += 0.07 * (u - 0.5) * side
             cy += 0.02 * (0.5 - u)
+        else:                                                         # a clip gets a slower reframe, so no shot sits still
+            cx += 0.03 * (u - 0.5) * side
+        # owner 11.11.2026 ("zooms when needed, so the film keeps moving"): a punch-in on the shot's big moment, eased,
+        # leaning a little toward what just landed
+        z += punch
+        if punch:
+            k = min(punch / 0.08, 1.0) * 0.35
+            cx += (aim[0] - cx) * k
+            cy += (aim[1] - cy) * k
         return lens(frame, z, cx, cy)
 
 
@@ -250,7 +260,15 @@ def main() -> None:
     def draw(k: int, t: float) -> Image.Image:
         s, src = shots[k], sources[k]
         v = s['shot'].get('visual', {})
-        img = src.at(t, tuple(v.get('push', (1.0, 1.06))), tuple(v.get('centre', (.5, .5))))
+        punch, aim = 0.0, (.5, .5)
+        for pu in v.get('punch', []):                                # each punch adds a gentle 7% push over 0.6 s
+            q = tr._ease_io((t - pu * s['dur']) / 0.6)
+            if q > 0:
+                punch += 0.07 * q
+                hit = next((g for g in v.get('tags', []) if abs(g['at'] - pu) < 1e-6), None)
+                if hit:
+                    aim = (hit['xy'][0] / W * .5 + .25, hit['xy'][1] / H * .5 + .25)
+        img = src.at(t, tuple(v.get('push', (1.0, 1.06))), tuple(v.get('centre', (.5, .5))), punch, aim)
         u = t / s['dur']                                              # where in the shot, 0..1
         for c in v.get('crests', []):
             img = crest_card(img, t - c['at'] * s['dur'], crests[c['crest']], c['xy'], c['size'],
