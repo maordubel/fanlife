@@ -43,7 +43,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: scripts/marketing/kit/node_modules
-          key: marketing-kit-sharp-0.34.5-${{ runner.os }}
+          key: marketing-kit-sharp-0.34.5-qrcode-1.5.4-${{ runner.os }}
       - run: test -d scripts/marketing/kit/node_modules/sharp -a -d scripts/marketing/kit/node_modules/qrcode || npm install --prefix scripts/marketing/kit --no-save --no-audit --no-fund sharp@0.34.5 qrcode@1.5.4
         continue-on-error: true
       - run: node scripts/marketing/telegram-send.mjs
