@@ -10,12 +10,12 @@ on:
     paths: ['scripts/football-stories/studio/fairytales/episodes/*.retake']
 permissions:
   contents: write
-concurrency:
-  group: fairytales-narrate
-  cancel-in-progress: true
 jobs:
   narrate:
     runs-on: ubuntu-latest
+    concurrency:
+      group: fairytales-narrate
+      cancel-in-progress: true
     timeout-minutes: 90
     env:
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -47,8 +47,15 @@ jobs:
           git add -A && git commit -qm "Fairy Tales narration $EPISODE $(date -u +%FT%TZ)"
           git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" "$BRANCH"
           echo "branch: $BRANCH"
+  cleanup:
+    # a separate job, outside the narration's concurrency group, so a long wait never blocks the next retake
+    needs: narrate
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
       - name: Keep the takes for the studio session, then delete the temporary branch
-        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           sleep 2400
-          git push -q "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" --delete "$BRANCH" || true
+          gh api -X DELETE "repos/${{ github.repository }}/git/refs/heads/fairytales-narration-${{ github.run_id }}" || true
