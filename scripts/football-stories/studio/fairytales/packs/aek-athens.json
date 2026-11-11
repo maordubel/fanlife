@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "clubId": "aek-athens",
+  "series": "Football Fairy Tales",
+  "names": {"en": "AEK Athens", "local": "ΑΕΚ"},
+  "audio": ["en", "el"],
+  "say": {"AEK": "AH-ek (as the Greeks say it — owner, 4.11.2026)"},
+  "palette": {"primary": "#F5C400", "secondary": "#111111", "note": "no identity.json yet — Byzantine yellow and black"},
+  "crest": {"files": ["public/club-kits/aek-athens/crest.png"], "owner": "official crests approved (owner, 11.11.2026)"},
+  "kit": {"pattern": "plain", "colours": ["yellow", "black"]},
+  "rival": {"club": "Olympiacos / Panathinaikos", "framing": "friendly"},
+  "goodMorning": {
+    "coldOpen": {
+      "id": "the-match-in-the-war",
+      "status": "fact",
+      "line": "In April 1999, while bombs were falling on Belgrade, one football team got on a bus and drove into the city to play.",
+      "reveal": "AEK played Partizan on 7 April 1999. Both teams walked out under one banner: 'Stop the war'. At 1–1, thousands ran onto the pitch — to hug the players.",
+      "neverSay": ["a minute for the pitch invasion (sources say 60, 62, 68 and 69)", "'they made peace' — they sent a message of peace"],
+      "sources": [
+        {"publisher": "Wikipedia — 1998–99 AEK Athens season", "url": "https://en.wikipedia.org/wiki/1998%E2%80%9399_AEK_Athens_F.C._season"},
+        {"publisher": "RSSSF", "url": "https://www.rsssf.com/tablesa/aek-beograd99.html"},
+        {"publisher": "FK Partizan", "url": "https://partizan.rs/en/article/4653/down-the-memory-lane-when-football-beats-war"}
+      ]
+    },
+    "beats": [
+      {"id": "builders", "status": "fact", "line": "Founded in 1924 in Athens by refugees from Constantinople. The name means Athletic Union of Constantinople.", "sources": ["club-packs/aek-athens/world.json founded"]},
+      {"id": "the-eagle", "status": "fact", "line": "A double-headed Byzantine eagle — one head looks back to where they came from, one looks ahead.", "note": "the looking-back/looking-ahead reading is the owner's storytelling; say it as 'fans say'", "sources": ["club-packs/aek-athens/world.json emblem"]},
+      {"id": "heroes", "status": "fact+art", "players": ["Mimis Papaioannou", "Thomas Mavros", "Sergio Araujo"], "rule": "draw their superpower from a sourced moment; the nicknames 'the flying eagle', 'Mavros the god' and the 'A' finger sign are unsourced — do not narrate them as fact"},
+      {"id": "gate-21", "status": "fact", "line": "Gate 21, where Original 21 stands.", "sources": ["club-packs/aek-athens/world.json terrace"]}
+    ]
+  },
+  "ownerResearchCheck": [
+    {"claim": "1924, refugees from Constantinople", "verdict": "confirmed"},
+    {"claim": "Belgrade 1999, fans ran on to hug the players", "verdict": "confirmed (7.4.1999, 1–1)"},
+    {"claim": "'to make peace'", "verdict": "softened — 'a message of peace'"},
+    {"claim": "neighbourhoods Kypseli / Exarchia, 'Forza AEK' chant", "verdict": "not found in sources — left out until sourced"},
+    {"claim": "player nicknames", "verdict": "unsourced — art only, not narration"}
+  ]
+}

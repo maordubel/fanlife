@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "clubId": "hapoel-tel-aviv",
+  "series": "Football Fairy Tales",
+  "names": {"en": "Hapoel Tel Aviv", "local": "הפועל תל אביב"},
+  "audio": ["en", "he"],
+  "palette": {"from": "club-packs/hapoel-tel-aviv/identity.json", "primary": "#B02D10", "secondary": "#FFFFFF", "bannedRivalHues": "yellow (rule 8)"},
+  "crest": {"files": ["public/brand/crests/circle-1927.png", "public/brand/crests/circle-1923.png"], "owner": "official crests approved (owner, 11.11.2026)"},
+  "kit": {"pattern": "plain", "colours": ["red", "white"]},
+  "rival": {"club": "Maccabi Tel Aviv", "derby": "the Tel Aviv derby", "framing": "friendly — no hate, no guns (owner, 11.11.2026)"},
+  "goodMorning": {
+    "coldOpen": {
+      "id": "the-secret-birthday",
+      "status": "fact",
+      "line": "For almost a hundred years, everyone believed this club was born in 1927. Everyone was wrong.",
+      "reveal": "Researchers found membership card no. 2, issued in October 1923. The crest was corrected in 2015.",
+      "sources": [
+        {"publisher": "Sport1 / Maariv, 12.6.2015", "url": "https://sport1.maariv.co.il/israeli-soccer/ligat-haal/Article-728080/"},
+        {"publisher": "docs/04-verified-research.md #9", "url": "repo"}
+      ]
+    },
+    "beats": [
+      {"id": "builders", "status": "fact", "line": "A workers' club, born in the labour sports movement of the 1920s.", "sources": ["club-packs/hapoel-tel-aviv/world.json founded"]},
+      {"id": "trophy-plane", "status": "fact", "line": "13 league titles, 16 State Cups, and in 1967 the first Asian club champions.", "sources": ["content/manual/trophies.json (13 / 16 / 1)"]},
+      {"id": "snow-in-moscow", "status": "fact", "line": "UEFA Cup 2001/02: Chelsea, Lokomotiv Moscow and Parma knocked out.", "sources": ["content/manual/euro-ties.json"]},
+      {"id": "hall-of-heroes", "status": "fact+art", "line": "Heroes are drawn as paper characters; every 'superpower' is a sourced moment, not an invented nickname.", "sources": ["owner PDF 11.11.2026; facts from the Worker archive"]},
+      {"id": "the-hero-who-crossed-the-road", "status": "fact", "line": "Eran Zahavi: the 92nd-minute title hero who later crossed the road. Respectful, no gestures.", "sources": ["content/manual (2009/10 title)"]},
+      {"id": "gate-5", "status": "fact", "line": "Gate 5, the Bloomfield end where the loudest supporters stand.", "sources": ["club-packs/hapoel-tel-aviv/world.json terrace"]}
+    ]
+  },
+  "ownerResearchCheck": [
+    {"claim": "Founded 1923, not 1927", "verdict": "confirmed"},
+    {"claim": "13 titles, 16 cups", "verdict": "confirmed (archive)"},
+    {"claim": "Asia 1967", "verdict": "confirmed (archive)"},
+    {"claim": "Zahavi 'pew pew' guns", "verdict": "removed — owner approved the friendly reframe"}
+  ]
+}

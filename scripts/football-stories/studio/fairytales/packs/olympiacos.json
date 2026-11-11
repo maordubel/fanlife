@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "clubId": "olympiacos",
+  "series": "Football Fairy Tales",
+  "names": {"en": "Olympiacos", "local": "Ολυμπιακός"},
+  "audio": ["en", "el"],
+  "palette": {"from": "club-packs/olympiacos/identity.json", "primary": "#A20F18", "secondary": "#FFFFFF", "bannedRivalHues": ["#0B7A3B"]},
+  "crest": {"files": ["public/club-kits/olympiacos/crest.png"], "owner": "official crests approved (owner, 11.11.2026)"},
+  "kit": {"pattern": "stripes", "colours": ["red", "white"]},
+  "rival": {"club": "Panathinaikos", "derby": "the Derby of the Eternal Enemies", "framing": "friendly — the port against the city centre"},
+  "goodMorning": {
+    "coldOpen": {
+      "id": "how-a-team-became-a-legend",
+      "status": "fact",
+      "line": "For three whole seasons, nobody in Greece could beat them. Thirty-six games. Thirty wins. Not one defeat.",
+      "reveal": "Unbeaten against every Greek team from March 1926 to March 1929 — and the newspapers called them Thrylos, the Legend, for the first time. The six titles in a row of the 1950s made the name stick for ever.",
+      "sources": [
+        {"publisher": "Wikipedia — Olympiacos F.C.", "url": "https://en.wikipedia.org/wiki/Olympiacos_FC"},
+        {"publisher": "To Vima, 20.3.2025", "url": "https://www.tovima.com/sports/the-team-of-six-consecutive-championships-that-made-olympiacos-a-legend"}
+      ]
+    },
+    "beats": [
+      {"id": "builders", "status": "fact", "line": "Born in 1925 in the port of Piraeus, from two older clubs of the port; a naval officer, Notis Kamperos, proposed the name and the emblem.", "conflict": "Wikipedia also gives a 1924 founding meeting; the club celebrates 10 March 1925 — narrate 1925", "sources": ["club-packs/olympiacos/world.json founded", "https://en.wikipedia.org/wiki/Olympiacos_FC"]},
+      {"id": "the-youth", "status": "fact", "line": "The badge is a laurel-crowned youth — an Olympic victor.", "sources": ["club-packs/olympiacos/world.json emblem"]},
+      {"id": "heroes", "status": "fact+art", "players": ["Nikos Anastopoulos", "Predrag Đorđević", "Giovanni"], "rule": "Anastopoulos' moustache and Đorđević's left foot are fine as art; every narrated claim needs a source"},
+      {"id": "gate-7", "status": "fact", "line": "Gate 7 — painted as a red sea of flags, no flares.", "sources": ["club-packs/olympiacos/world.json terrace"]}
+    ]
+  },
+  "ownerResearchCheck": [
+    {"claim": "Founded 1925 in Piraeus", "verdict": "confirmed (conflict noted: a 1924 meeting)"},
+    {"claim": "Founded by sailors, stevedores and dockworkers", "verdict": "not supported — founders were port townspeople (a navy officer, an industrialist, a merchant, a lawyer…); reframed"},
+    {"claim": "'Thrylos' came from beating foreign navy teams in the 1930s", "verdict": "not supported — the press first used it after the 1926–29 unbeaten run; replaced with the sourced story"},
+    {"claim": "laurel-crowned youth", "verdict": "confirmed"}
+  ]
+}

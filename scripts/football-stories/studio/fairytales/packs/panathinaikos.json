@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "clubId": "panathinaikos",
+  "series": "Football Fairy Tales",
+  "names": {"en": "Panathinaikos", "local": "Παναθηναϊκός"},
+  "audio": ["en", "el"],
+  "palette": {"from": "club-packs/panathinaikos/identity.json", "primary": "#0B5A2C", "secondary": "#FFFFFF", "bannedRivalHues": ["#D71920"]},
+  "crest": {"files": ["public/club-kits/panathinaikos/crest.png"], "owner": "official crests approved (owner, 11.11.2026)"},
+  "kit": {"pattern": "plain", "colours": ["green", "white"]},
+  "rival": {"club": "Olympiacos", "derby": "the Derby of the Eternal Enemies", "framing": "friendly"},
+  "goodMorning": {
+    "coldOpen": {
+      "id": "the-shamrock-from-the-marathon",
+      "status": "legend",
+      "line": "In 1906 a runner from Canada won the marathon in Athens with a green shamrock on his shirt.",
+      "reveal": "Twelve years later a Panathinaikos player, Michalis Papazoglou, proposed the shamrock as the club's emblem — and it has been there since 1918. Many say the marathon runner gave him the idea.",
+      "narrate": "the 1918 emblem and Papazoglou are fact; the Sherring inspiration is told as 'many say'",
+      "sources": [
+        {"publisher": "pao.gr — 1918, the shamrock", "url": "https://pao.gr/en/historyitem/1918-2"},
+        {"publisher": "Football Shirt Culture", "url": "https://www.footballshirtculture.com/12/13-Kits/panathinaikos-2012-2013-adidas-home-football-shirt.html"},
+        {"publisher": "Wikipedia — Michalis Papazoglou", "url": "https://en.wikipedia.org/wiki/Michalis_Papazoglou"}
+      ]
+    },
+    "beats": [
+      {"id": "builders", "status": "fact", "line": "Founded in 1908 by Giorgos Kalafatis — the oldest of the big Athens clubs.", "sources": ["club-packs/panathinaikos/world.json founded"]},
+      {"id": "heroes", "status": "fact+art", "players": ["Dimitris Saravakos", "Krzysztof Warzycha", "Giorgos Karagounis"], "rule": "Warzycha is the club's record scorer — sourced; 'typhoon' is not a sourced nickname"},
+      {"id": "gate-13", "status": "fact", "line": "Gate 13, the stand at Leoforos where the most devoted supporters gather.", "sources": ["club-packs/panathinaikos/world.json terrace"]}
+    ]
+  },
+  "ownerResearchCheck": [
+    {"claim": "1908", "verdict": "confirmed"},
+    {"claim": "Papazoglou flew to Canada and brought the shamrock in a suitcase", "verdict": "wrong — the Canadian (Billy Sherring) came to Athens for the 1906 marathon; Papazoglou proposed the shamrock in 1918; the link is told as legend"},
+    {"claim": "Gate 13 founded 1966, the oldest in Greece", "verdict": "plausible, not yet sourced here — narrate 'one of the oldest' until a source is added"}
+  ]
+}

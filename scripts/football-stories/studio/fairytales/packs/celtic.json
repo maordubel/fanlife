@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "clubId": "celtic",
+  "series": "Football Fairy Tales",
+  "names": {"en": "Celtic", "local": "Celtic"},
+  "audio": ["en"],
+  "palette": {"primary": "#018749", "secondary": "#FFFFFF", "note": "no identity.json yet — green and white hoops"},
+  "crest": {"files": ["public/club-kits/celtic/crest.png"], "owner": "official crests approved (owner, 11.11.2026)"},
+  "kit": {"pattern": "hoops", "colours": ["green", "white"]},
+  "rival": {"club": "Rangers", "derby": "the Old Firm", "framing": "friendly; no sectarian or religious content of any kind"},
+  "goodMorning": {
+    "coldOpen": {
+      "id": "eleven-boys-from-home",
+      "status": "fact",
+      "line": "Today the biggest clubs buy players from every corner of the world. In 1967 Celtic became champions of Europe with eleven men born within thirty miles of their own ground.",
+      "reveal": "25 May 1967, Lisbon: Celtic 2, Inter 1 — the first British club to win the European Cup. The Lisbon Lions.",
+      "sources": [
+        {"publisher": "UEFA", "url": "https://uefa.com/uefaeuropaleague/news/0191-0e6a61878fe4-d4daa8580df3-1000--lisbon-lions-still-roaring"},
+        {"publisher": "Wikipedia — 1966–67 Celtic F.C. season", "url": "https://en.wikipedia.org/wiki/1966%E2%80%9367_Celtic_F.C._season"}
+      ]
+    },
+    "beats": [
+      {"id": "builders", "status": "fact", "line": "Born on 6 November 1887 in a church hall in Calton, led by Brother Walfrid, to raise money for meals for poor children.", "sources": ["club-packs/celtic/world.json founded"]},
+      {"id": "heroes", "status": "fact+art", "players": ["Henrik Larsson", "Jimmy Johnstone", "Scott Brown"], "rule": "'King of Kings' for Larsson is the supporters' own title; the snowstorm-in-short-sleeves is art, told as 'they say'"},
+      {"id": "the-stand", "status": "fact", "line": "Celtic Park sings — scarves up, the whole ground together.", "neverUse": "the recording or lyrics of 'You'll Never Walk Alone' (a copyrighted song) — crowd sound only"}
+    ]
+  },
+  "ownerResearchCheck": [
+    {"claim": "1887, Brother Walfrid, meals for poor children", "verdict": "confirmed"},
+    {"claim": "Lisbon Lions all born within 30 miles", "verdict": "confirmed"},
+    {"claim": "Old Firm is the oldest derby in the world", "verdict": "not accurate — 'one of the oldest and loudest'"},
+    {"claim": "singing 'You'll Never Walk Alone'", "verdict": "true of the fans, but the song cannot be used — copyright"}
+  ]
+}

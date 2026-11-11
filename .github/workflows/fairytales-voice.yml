@@ -1,0 +1,55 @@
+name: Football Fairy Tales · narrator audition
+# Phase 0 of the series (owner, 11.11.2026): the cold-open line in English, Hebrew and Greek, read by several young
+# Gemini voices (free tier), sent to the owner's Telegram as card videos. The takes live on a temporary branch while
+# Telegram and the studio session fetch them; the branch is deleted at the end of the run.
+on:
+  workflow_dispatch:
+  push:
+    paths: ['scripts/football-stories/studio/fairytales/voice_audition.py']
+permissions:
+  contents: write
+concurrency:
+  group: fairytales-voice
+  cancel-in-progress: true
+jobs:
+  audition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      FAN_LIFE_URL: ${{ vars.FAN_LIFE_RESEARCH_URL }}
+      CRON_SECRET: ${{ secrets.FAN_LIFE_CRON_SECRET }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      BRANCH: fairytales-voice-${{ github.run_id }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Engines
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-dejavu-core > /dev/null
+          pip install -q numpy
+      - name: Audition
+        working-directory: scripts/football-stories
+        env:
+          AUDITION_RAW_BASE: https://raw.githubusercontent.com/${{ github.repository }}/${{ env.BRANCH }}
+        run: python3 -m studio.fairytales.voice_audition "$RUNNER_TEMP/voice" --send
+      - name: Publish the takes
+        run: |
+          cd "$RUNNER_TEMP/voice"
+          git init -q && git checkout -q -b "$BRANCH"
+          git config user.name "fanlife-audition" && git config user.email "actions@users.noreply.github.com"
+          git add -A && git commit -qm "Fairy Tales voice audition $(date -u +%FT%TZ)"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" "$BRANCH"
+      - name: Send to Telegram
+        run: node scripts/football-stories/matchday/deliver.mjs "$RUNNER_TEMP/voice/delivery.json"
+      - name: Report
+        if: always()
+        run: cat "$RUNNER_TEMP/voice/audition.json" || true
+      - name: Keep the takes for the studio session, then delete the temporary branch
+        if: always()
+        run: |
+          sleep 1500
+          git push -q "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" --delete "$BRANCH" || true
