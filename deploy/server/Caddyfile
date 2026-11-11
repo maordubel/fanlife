@@ -1,0 +1,9 @@
+# Every FAN LIFE host. Caddy gets each certificate itself (Let's Encrypt, HTTP-01).
+# fanlife.dubelteam.com may sit behind Cloudflare's proxy (SSL mode "Full (strict)");
+# the club hosts are second-level subdomains, which Cloudflare's free certificate does not cover, so they stay DNS-only.
+fanlife.dubelteam.com, celtic.fanlife.dubelteam.com, stpauli.fanlife.dubelteam.com, zrinjski.fanlife.dubelteam.com,
+aekathens.fanlife.dubelteam.com, olympiacos.fanlife.dubelteam.com, unionberlin.fanlife.dubelteam.com,
+hapoeltelaviv.fanlife.dubelteam.com, panathinaikos.fanlife.dubelteam.com, hapoelpetahtikva.fanlife.dubelteam.com {
+	encode zstd gzip
+	reverse_proxy 127.0.0.1:3000
+}

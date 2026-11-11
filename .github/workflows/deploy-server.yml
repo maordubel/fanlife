@@ -1,0 +1,58 @@
+name: Deploy · own server
+
+# FAN LIFE runs on our own free server (Oracle Cloud Always Free) since Vercel's Hobby CPU cap shut it off on 10.11.2026.
+# Every push to main deploys; "Run workflow" deploys by hand. The owner only fills repository secrets (click-only):
+#   SERVER_HOST          the server's public IP
+#   SERVER_SSH_KEY       the private key whose public half is on the server (user "ubuntu")
+#   SUPABASE_SERVICE_ROLE_KEY · FAN_LIFE_ADMIN_KEY · TELEGRAM_BOT_TOKEN · TELEGRAM_WEBHOOK_SECRET · THESPORTSDB_KEY
+# CRON_SECRET on the server is FAN_LIFE_CRON_SECRET, the one the scheduled jobs already send.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-server
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Server configured?
+        id: cfg
+        env:
+          HOST: ${{ secrets.SERVER_HOST }}
+          KEY: ${{ secrets.SERVER_SSH_KEY }}
+        run: |
+          if [ -z "$HOST" ] || [ -z "$KEY" ]; then
+            echo "::notice title=Own server not configured yet::Add SERVER_HOST and SERVER_SSH_KEY in Settings → Secrets and variables → Actions."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Deploy
+        if: steps.cfg.outputs.ready == 'true'
+        env:
+          HOST: ${{ secrets.SERVER_HOST }}
+          KEY: ${{ secrets.SERVER_SSH_KEY }}
+          ENV_FILE: |
+            VERCEL_ENV=production
+            NEXT_PUBLIC_SUPABASE_URL=${{ vars.NEXT_PUBLIC_SUPABASE_URL || 'https://afxpjfxwpdjvlmuoawda.supabase.co' }}
+            NEXT_PUBLIC_SUPABASE_ANON_KEY=${{ vars.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+            NEXT_PUBLIC_FAN_LIFE_EVALUATION=${{ vars.NEXT_PUBLIC_FAN_LIFE_EVALUATION }}
+            TELEGRAM_APP_URL=${{ secrets.TELEGRAM_APP_URL || vars.TELEGRAM_APP_URL }}
+            SUPABASE_SERVICE_ROLE_KEY=${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+            FAN_LIFE_ADMIN_KEY=${{ secrets.FAN_LIFE_ADMIN_KEY }}
+            CRON_SECRET=${{ secrets.FAN_LIFE_CRON_SECRET }}
+            TELEGRAM_BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }}
+            TELEGRAM_WEBHOOK_SECRET=${{ secrets.TELEGRAM_WEBHOOK_SECRET }}
+            THESPORTSDB_KEY=${{ secrets.THESPORTSDB_KEY }}
+        run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$KEY" > ~/.ssh/id && chmod 600 ~/.ssh/id
+          ssh-keyscan -H "$HOST" >> ~/.ssh/known_hosts 2>/dev/null
+          S="ssh -i $HOME/.ssh/id -o ServerAliveInterval=30 ubuntu@$HOST"
+          printf '%s\n' "$ENV_FILE" | grep -v '=$' | $S 'sudo tee /etc/fanlife.env >/dev/null && sudo chmod 600 /etc/fanlife.env'
+          $S 'curl -fsSL https://raw.githubusercontent.com/maordubel/fanlife/main/deploy/server/bootstrap.sh -o /tmp/bootstrap.sh && bash /tmp/bootstrap.sh'

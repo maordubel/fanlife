@@ -1,0 +1,15 @@
+[Unit]
+Description=FAN LIFE (next start)
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/srv/fanlife
+EnvironmentFile=/etc/fanlife.env
+Environment=NODE_ENV=production PORT=3000 HOSTNAME=127.0.0.1 NODE_OPTIONS=--max-old-space-size=6144
+ExecStart=/usr/bin/npm run start
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
