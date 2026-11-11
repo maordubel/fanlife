@@ -1,0 +1,9 @@
+{
+  "note": "Where the Deploy · Cloud Run workflow sends FAN LIFE. None of these is a secret (keyless GitHub OIDC).",
+  "project": "",
+  "region": "europe-west1",
+  "service": "fanlife",
+  "repository": "fanlife",
+  "workloadIdentityProvider": "",
+  "serviceAccount": ""
+}
