@@ -91,6 +91,8 @@ export type Job={
  kind?:JobKind;spec?:ClassifiedSpec|VlogSpec|PromoSpec|ShortSpec|CasefileSpec|null
  /** an animated Short's Google Flow pack (studio/flowkit.py): what to make in Flow, and the edit plan for the clips */
  flow?:FlowPack|null
+ /** set once the big files left the bucket after the YouTube upload (lib/stories/trim.ts) */
+ trim?:{at:string;bytes:number;files:number}|null
 }
 export const SEASON=/^\d{4}\/\d{2}$/
 export const SPAN=/^\d{4}–\d{4}$/

@@ -1,5 +1,6 @@
 import 'server-only'
 import {StoryError} from './jobs'
+import {isBig} from './trim'
 
 /**
  * Renders live in the PRIVATE Supabase Storage bucket `worker-stories` (migration 20261102090000). Nothing is public:
@@ -80,4 +81,36 @@ export async function listNames(prefix:string,max=1000):Promise<string[]>{
   if(rows.length<100)break
  }
  return out
+}
+
+/** Every file under jobs/<id>/ with its size (recursive), for the after-YouTube trim. */
+async function listSized(id:string):Promise<{path:string;bytes:number}[]>{
+ if(!/^[a-z0-9-]{8,64}$/.test(id))throw new StoryError('MEDIA','Invalid job id.')
+ const {url,headers}=cfg(),out:{path:string;bytes:number}[]=[],folders=[`jobs/${id}`]
+ while(folders.length){
+  const prefix=folders.pop()!
+  for(let offset=0;;offset+=100){
+   const r=await fetch(`${url}/storage/v1/object/list/${BUCKET}`,{method:'POST',headers,body:JSON.stringify({prefix,limit:100,offset,sortBy:{column:'name',order:'asc'}}),cache:'no-store'})
+   if(!r.ok)throw new StoryError('MEDIA',`Storage listing failed (${r.status}).`,502)
+   const rows=await r.json() as {name:string;id:string|null;metadata?:{size?:number}|null}[]
+   for(const row of rows){
+    if(!row.name||row.name.includes('/')||row.name==='.'||row.name==='..')throw new StoryError('MEDIA','Invalid storage listing.',502)
+    const path=`${prefix}/${row.name}`
+    if(row.id===null)folders.push(path);else out.push({path,bytes:Number(row.metadata?.size)||0})
+   }
+   if(rows.length<100)break
+  }
+ }
+ return out
+}
+
+/** Deletes a published film's big files (video, audio, archives); pictures and captions stay. */
+export async function trimJobMedia(id:string):Promise<{bytes:number;files:number}>{
+ const {url,headers}=cfg()
+ const big=(await listSized(id)).filter(f=>isBig(f.path.split('/').pop()!,f.bytes))
+ for(let i=0;i<big.length;i+=100){
+  const r=await fetch(`${url}/storage/v1/object/${BUCKET}`,{method:'DELETE',headers,body:JSON.stringify({prefixes:big.slice(i,i+100).map(f=>f.path)}),cache:'no-store'})
+  if(!r.ok)throw new StoryError('MEDIA',`Storage deletion failed (${r.status}).`,502)
+ }
+ return {bytes:big.reduce((n,f)=>n+f.bytes,0),files:big.length}
 }

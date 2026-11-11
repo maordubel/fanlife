@@ -1,15 +1,20 @@
-"""Remove per-production Actions caches before acknowledging the durable media cleanup queue."""
+"""Remove per-production Actions caches before acknowledging the durable media cleanup queue, and ask the studio to
+remove the big files of films YouTube already has (op trim, lib/stories/trim.ts)."""
 import json
 import os
 import re
 import subprocess
 import urllib.request
 
+# Cloudflare sits in front of the site (11.11.2026) and refuses Python's default agent with error 1010.
+UA = 'Mozilla/5.0 (compatible; FanLife-Studio/1.0; +https://fanlife.dubelteam.com)'
+
 
 def call(op, **data):
     request = urllib.request.Request(os.environ['STORIES_URL'].rstrip('/') + '/api/master/stories/worker',
         json.dumps({'op': op, 'worker': 'cleanup-' + os.environ.get('GITHUB_RUN_ID', 'listener'), **data}).encode(),
-        {'Authorization': 'Bearer ' + os.environ['FAN_LIFE_CRON_SECRET'], 'Content-Type': 'application/json'})
+        {'Authorization': 'Bearer ' + os.environ['FAN_LIFE_CRON_SECRET'], 'Content-Type': 'application/json',
+         'User-Agent': UA})
     with urllib.request.urlopen(request, timeout=40) as response:
         return json.load(response)
 
@@ -27,7 +32,19 @@ def cache_ids(job_id):
         page += 1
 
 
+def trim():
+    try:
+        out = call('trim')
+        for row in out.get('trimmed', []):
+            print(f"Freed {row['bytes'] // 1048576} MB of a published film: {row['id']}", flush=True)
+        for job_id in out.get('failed', []):
+            print(f'::warning::Trim will retry: {job_id}', flush=True)
+    except Exception as error:
+        print(f'::warning::Trim will retry ({type(error).__name__})', flush=True)
+
+
 def run():
+    trim()
     for job_id in call('cleanup_due')['ids']:
         try:
             for cache_id in cache_ids(job_id):

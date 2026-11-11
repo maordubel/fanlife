@@ -1403,7 +1403,7 @@ def telegram_chat() -> str | None:
     base = (os.environ.get('STORIES_URL') or 'https://fanlife.dubelteam.com').rstrip('/')
     secret = os.environ.get('FAN_LIFE_CRON_SECRET', '')
     req = urllib.request.Request(base + '/api/master/final-whistle/ping', data=b'{}', method='POST',
-                                 headers={'Authorization': 'Bearer ' + secret, 'Content-Type': 'application/json'})
+                                 headers={'Authorization': 'Bearer ' + secret, 'Content-Type': 'application/json', 'User-Agent': 'Mozilla/5.0 (compatible; FanLife-Studio/1.0; +https://fanlife.dubelteam.com)'})
     with urllib.request.urlopen(req, timeout=30) as r:
         chat = json.load(r).get('chatId')
     return str(chat) if chat else None

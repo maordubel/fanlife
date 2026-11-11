@@ -341,7 +341,7 @@ def list_flow() -> list[dict]:
     import urllib.request
     req = urllib.request.Request(base.rstrip('/') + '/api/master/stories/worker', method='POST',
                                  data=json.dumps({'op': 'library_flow', 'worker': 'library-list'}).encode(),
-                                 headers={'Authorization': 'Bearer ' + secret, 'Content-Type': 'application/json'})
+                                 headers={'Authorization': 'Bearer ' + secret, 'Content-Type': 'application/json', 'User-Agent': 'Mozilla/5.0 (compatible; FanLife-Studio/1.0; +https://fanlife.dubelteam.com)'})
     with urllib.request.urlopen(req, timeout=60) as r:
         rows = json.load(r).get('pieces') or []
     return [{'id': f"flow:{p['stem']}", 'name': f"{p['stem']}.png", 'url': p['url']} for p in rows

@@ -1,7 +1,8 @@
 import {cronAuthorized} from '@/lib/master/request'
 import {StoryError,claim,finish,jobKind,mediaPath,nextForWorker,report,type Finish,type Progress} from '@/lib/stories/jobs'
 import {deletionCleaned,getJob,listJobs,pendingDeletions,updateJob} from '@/lib/stories/store'
-import {purgeJobMedia,signedDownload,signedUpload} from '@/lib/stories/media'
+import {purgeJobMedia,signedDownload,signedUpload,trimJobMedia} from '@/lib/stories/media'
+import {trimDue,trimLog} from '@/lib/stories/trim'
 import {body,fail,json} from '@/lib/stories/http'
 import {cleanHeartbeat,noteHeartbeat} from '@/lib/stories/health'
 import {claimSocial,cleanLights,composeAll,dueSocial,filmLink,filmTitle,mediaPathOf,resultSocial,type SocialResult} from '@/lib/stories/social'
@@ -15,6 +16,7 @@ export const runtime='nodejs'
 
 /**
  * The production worker's only door (GitHub Actions, `Authorization: Bearer <CRON_SECRET>`).
+ *   {op:'trim',worker}                          → published films' big files leave the bucket (lib/stories/trim.ts)
  *   {op:'peek',worker,health?}                  → the id of the job that would be taken next and its kind (no lease), and
  *                                                 `pitch: true` once when the owner asked for new pitches; the listener
  *                                                 (stories-watch.yml) adds its heartbeat and the writer-key check
@@ -46,6 +48,17 @@ export async function POST(r:Request){
    await purgeJobMedia(id)
    await deletionCleaned(id)
    return json({cleaned:true})
+  }
+  if(b.op==='trim'){
+   const done:{id:string;bytes:number;files:number}[]=[],failed:string[]=[]
+   for(const j of trimDue(await listJobs(200)).slice(0,5)){
+    try{
+     const t=await trimJobMedia(j.id),at=new Date().toISOString(),mark={at,...t}
+     await updateJob(j.id,x=>({...x,trim:mark,log:[...x.log,{at,text:trimLog(mark)}].slice(-120)}))
+     done.push({id:j.id,...t})
+    }catch{failed.push(j.id)}
+   }
+   return json({trimmed:done,failed})
   }
   if(b.op==='checkpoint_allowed')return json({allowed:!!await getJob(String(b.id||''))})
   if(b.op==='peek'){
