@@ -101,6 +101,8 @@ def take(key: str, models: list[str], text: str, lang: str, delivery: str, voice
             # a number the narrator said is heard as digits ("103"), so a whole take can match only ~0.75 of the words;
             # what was said outside the script (a second reading, the notes aloud) has already been cut by the trim
             chk = {k: chk[k] for k in ('matched', 'added', 'heard')} | {'ok': chk['matched'] >= 0.7 and chk['added'] <= 0.15}
+            if chk['ok'] and seconds(out) > words[-1]['end'] + 0.6:
+                gemini_tts._cut(out, 0.0, words[-1]['end'] + 0.4)          # a second reading after the last word goes
         else:
             words, chk = None, check_local(text, out, lang)
         tried.append({'model': model, **chk})
