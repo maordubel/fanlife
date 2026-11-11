@@ -18,6 +18,8 @@ const nextConfig = {
     ]
   },
   reactStrictMode: true,
+  // our own host (deploy/space) runs the standalone server; Vercel builds as before
+  ...(process.env.NEXT_OUTPUT === 'standalone' ? { output: 'standalone' } : {}),
   experimental: {
     serverComponentsExternalPackages: ['@electric-sql/pglite'], cpus: 2,
     // the control room reads research files at runtime (fs, not imports): ship them with the routes that read them.

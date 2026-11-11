@@ -1,0 +1,88 @@
+name: Deploy · Hugging Face Space
+
+# FAN LIFE runs on a free Hugging Face Space (2 vCPU / 16 GB, no CPU meter) behind a Cloudflare Worker, since Vercel's
+# Hobby CPU cap shut it off on 10.11.2026. GitHub builds the site and publishes it as a release asset; the Space only
+# downloads and runs it. This workflow never sends a secret anywhere: the owner types the server secrets into the
+# Space's own settings (Settings → Variables and secrets). It needs one repository secret:
+#   HF_TOKEN  huggingface.co → Settings → Access Tokens → New token (Write)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-space
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+    steps:
+      - name: Space configured?
+        id: cfg
+        run: |
+          if [ -z "$HF_TOKEN" ]; then
+            echo "::notice title=Space not configured yet::Add HF_TOKEN in Settings → Secrets and variables → Actions."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else echo "ready=true" >> "$GITHUB_OUTPUT"; fi
+      - uses: actions/checkout@v4
+        if: steps.cfg.outputs.ready == 'true'
+      - uses: actions/setup-node@v4
+        if: steps.cfg.outputs.ready == 'true'
+        with: { node-version: 22, cache: npm }
+      - name: Build (standalone)
+        if: steps.cfg.outputs.ready == 'true'
+        env:
+          NEXT_OUTPUT: standalone
+          NODE_OPTIONS: --max-old-space-size=6144
+          NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL || 'https://afxpjfxwpdjvlmuoawda.supabase.co' }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          NEXT_PUBLIC_FAN_LIFE_EVALUATION: ${{ vars.NEXT_PUBLIC_FAN_LIFE_EVALUATION }}
+        run: |
+          npm ci --no-audit --no-fund
+          npm run build
+      - name: Bundle
+        if: steps.cfg.outputs.ready == 'true'
+        run: |
+          B=bundle && rm -rf $B && mkdir -p $B
+          cp -a .next/standalone/. $B/
+          mkdir -p $B/.next && cp -a .next/static $B/.next/static
+          cp -a public $B/public
+          cp deploy/space/proxy.mjs $B/deploy-proxy.mjs && cp deploy/space/start.sh $B/deploy-start.sh
+          tar -czf fanlife-space.tar.gz -C $B .
+          ls -lh fanlife-space.tar.gz
+      - name: Publish the bundle
+        if: steps.cfg.outputs.ready == 'true'
+        id: rel
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="space-${GITHUB_SHA::12}"
+          gh release create "$TAG" fanlife-space.tar.gz --prerelease --title "$TAG" --notes "Build for the FAN LIFE Space" --target "$GITHUB_SHA"
+          echo "url=https://github.com/${GITHUB_REPOSITORY}/releases/download/$TAG/fanlife-space.tar.gz" >> "$GITHUB_OUTPUT"
+          gh release list --limit 50 --json tagName --jq '.[].tagName' | grep '^space-' | tail -n +4 | xargs -r -I{} gh release delete {} --yes --cleanup-tag
+      - name: Point the Space at it
+        if: steps.cfg.outputs.ready == 'true'
+        env:
+          BUNDLE_URL: ${{ steps.rel.outputs.url }}
+        run: |
+          pip install --quiet huggingface_hub
+          python - <<'PY'
+          import os, pathlib
+          from huggingface_hub import HfApi
+          api = HfApi(token=os.environ['HF_TOKEN'])
+          user = api.whoami()['name']
+          repo = f"{user}/fanlife"
+          api.create_repo(repo, repo_type='space', space_sdk='docker', exist_ok=True, private=False)
+          docker = pathlib.Path('deploy/space/Dockerfile').read_text().replace('ARG BUNDLE_URL', f"ARG BUNDLE_URL={os.environ['BUNDLE_URL']}")
+          api.upload_file(path_or_fileobj=docker.encode(), path_in_repo='Dockerfile', repo_id=repo, repo_type='space', commit_message=os.environ['BUNDLE_URL'])
+          api.upload_file(path_or_fileobj='deploy/space/README.md', path_in_repo='README.md', repo_id=repo, repo_type='space')
+          print(f"::notice title=Space::https://huggingface.co/spaces/{repo} · https://{user.lower()}-fanlife.hf.space")
+          PY
