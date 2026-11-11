@@ -88,7 +88,7 @@ def take(key: str, models: list[str], text: str, lang: str, delivery: str, voice
             pcm = gemini_tts._call(key, model, prompt(text, lang, delivery))
         except Exception as e:  # noqa: BLE001
             tried.append({'model': model, 'error': f'{type(e).__name__}: {e}'[:200]})
-            time.sleep(20)
+            time.sleep(65 if '429' in str(e) else 20)   # the free tier counts requests per minute
             continue
         with wave.open(str(out), 'wb') as w:
             w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes(pcm)
@@ -98,7 +98,9 @@ def take(key: str, models: list[str], text: str, lang: str, delivery: str, voice
                 t0, t1 = chk['trim']
                 gemini_tts._cut(out, t0, t1)
                 words = [{**w, 'start': round(max(0.0, w['start'] - t0), 3), 'end': round(max(0.0, w['end'] - t0), 3)} for w in words]
-            chk = {k: chk[k] for k in ('ok', 'matched', 'added', 'heard')}
+            # a number the narrator said is heard as digits ("103"), so a whole take can match only ~0.75 of the words;
+            # what was said outside the script (a second reading, the notes aloud) has already been cut by the trim
+            chk = {k: chk[k] for k in ('matched', 'added', 'heard')} | {'ok': chk['matched'] >= 0.7 and chk['added'] <= 0.15}
         else:
             words, chk = None, check_local(text, out, lang)
         tried.append({'model': model, **chk})
@@ -117,9 +119,10 @@ def main() -> None:
     models = gemini_tts.models(key)
     langs = [l for l in os.environ.get('FT_LANGS', ','.join(ep['voice'].keys() - {'chosen'})).split(',') if l]
     report = {'episode': ep['id'], 'models': models[:2], 'takes': []}
+    only = {x.strip() for x in os.environ.get('FT_ONLY', '').split(',') if x.strip()}   # 'shot:lang' retakes
     for shot in ep['shots']:
         for lang in langs:
-            if lang not in shot:
+            if lang not in shot or (only and f"{shot['id']}:{lang}" not in only):
                 continue
             row = {'shot': shot['id'], 'lang': lang, 'voice': ep['voice'][lang], 'file': f"{shot['id']}-{lang}.wav"}
             row.update(take(key, models, shot[lang], lang, shot.get('delivery', 'warm'), ep['voice'][lang], out / row['file']))

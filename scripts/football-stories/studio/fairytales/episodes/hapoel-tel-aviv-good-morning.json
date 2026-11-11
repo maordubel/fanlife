@@ -278,14 +278,13 @@
    "visual": {
     "tags": [
      {
-      "text": "5",
-      "sub": "GATE",
+      "text": "GATE 5",
       "at": 0.35,
       "xy": [
-       1640,
-       300
+       1600,
+       280
       ],
-      "size": 200,
+      "size": 110,
       "rot": -4
      }
     ]
@@ -320,7 +319,11 @@
  ],
  "palette": {
   "primary": "#B02D10",
-  "secondary": "#F6F0E4"
+  "secondary": "#F6F0E4",
+  "bannedHue": [
+   36,
+   74
+  ]
  },
  "crests": {
   "1927": "public/brand/crests/circle-1927.png",

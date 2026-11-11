@@ -41,33 +41,55 @@ def seconds(p: Path) -> float:
 
 
 def clip_frames(path: Path) -> list[Image.Image]:
-    """The clip's frames, cover-fitted to W×H."""
-    raw = subprocess.run(['ffmpeg', '-v', 'error', '-i', str(path), '-vf', f'scale={W}:{H}:force_original_aspect_ratio=increase,'
-                          f'crop={W}:{H},fps=24', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-'], capture_output=True, check=True).stdout
-    n = len(raw) // (W * H * 3)
-    return [Image.frombuffer('RGB', (W, H), raw[i * W * H * 3:(i + 1) * W * H * 3]) for i in range(n)]
+    """The clip's frames at their own size (a 720p clip is 400 MB in memory; 1080p would be twice that)."""
+    w, h = (int(v) for v in subprocess.run(['ffprobe', '-v', 'error', '-select_streams', 'v:0', '-show_entries',
+                                            'stream=width,height', '-of', 'csv=p=0', str(path)],
+                                           capture_output=True, text=True, check=True).stdout.strip().split(','))
+    raw = subprocess.run(['ffmpeg', '-v', 'error', '-i', str(path), '-vf', 'fps=24', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-'],
+                         capture_output=True, check=True).stdout
+    n = len(raw) // (w * h * 3)
+    return [Image.frombuffer('RGB', (w, h), raw[i * w * h * 3:(i + 1) * w * h * 3]) for i in range(n)]
+
+
+def lens(img: Image.Image, zoom: float, cx: float, cy: float, dx: float = 0, dy: float = 0) -> Image.Image:
+    """pt.camera for a source of any size with the plate's 16:9 framing: the push-in rendered straight to W×H."""
+    sw, sh = img.size
+    s = max(W / sw, H / sh)
+    vw, vh = W / s, H / s                                             # the 16:9 window of the source
+    cw, ch = vw / zoom, vh / zoom
+    ox, oy = (sw - vw) / 2, (sh - vh) / 2
+    x0 = min(max(ox + cx * vw - cw / 2 + dx / (s * zoom), ox), ox + vw - cw)
+    y0 = min(max(oy + cy * vh - ch / 2 + dy / (s * zoom), oy), oy + vh - ch)
+    return img.transform((W, H), Image.EXTENT, (x0, y0, x0 + cw, y0 + ch), Image.BICUBIC)
 
 
 class Source:
-    """A shot's moving picture: a clip on twos stretched to the shot, or a still with a stop-motion boil."""
+    """A shot's moving picture: a clip on twos stretched to the shot, or a still with a stop-motion boil.
+    Frames are decoded on first use and released with `drop()`, so only two shots are ever in memory."""
 
     def __init__(self, work: Path, plate: str, dur: float, speed_floor: float = 0.55, seed: int = 1):
-        self.dur, self.seed = dur, seed
-        mp4, jpg = work / f'{plate}.mp4', work / f'{plate}.jpg'
-        if mp4.exists():
-            self.frames = clip_frames(mp4)
-        else:
-            self.frames = [pt.fit(Image.open(jpg).convert('RGB'))]
-        self.length = len(self.frames) / FPS
-        self.speed = 1.0 if len(self.frames) == 1 else max(min(1.0, self.length / max(dur, 0.1)), speed_floor)
+        self.dur, self.seed, self.work, self.plate, self.floor = dur, seed, work, plate, speed_floor
+        self._frames: list[Image.Image] | None = None
+
+    @property
+    def frames(self) -> list[Image.Image]:
+        if self._frames is None:
+            mp4, jpg = self.work / f'{self.plate}.mp4', self.work / f'{self.plate}.jpg'
+            self._frames = clip_frames(mp4) if mp4.exists() else [Image.open(jpg).convert('RGB')]
+            length = len(self._frames) / FPS
+            self.speed = 1.0 if len(self._frames) == 1 else max(min(1.0, length / max(self.dur, 0.1)), self.floor)
+        return self._frames
+
+    def drop(self) -> None:
+        self._frames = None
 
     def at(self, t: float, push=(1.0, 1.06), centre=(.5, .5)) -> Image.Image:
+        frames = self.frames
         ts = pt.stepped(t)                                            # on twos
-        k = min(int(ts * self.speed * FPS), len(self.frames) - 1)
-        img = self.frames[k]
+        k = min(int(ts * self.speed * FPS), len(frames) - 1)
         rng = random.Random(self.seed * 1000 + int(ts * 12))
         z = push[0] + (push[1] - push[0]) * pt.ease(t / max(self.dur, 0.1))
-        return pt.camera(img, z, *centre, dx=rng.uniform(-1.1, 1.1), dy=rng.uniform(-0.9, 0.9))
+        return lens(frames[k], z, *centre, dx=rng.uniform(-1.1, 1.1), dy=rng.uniform(-0.9, 0.9))
 
 
 def tag(img: Image.Image, t: float, text: str, xy: tuple[int, int], font: Path, size: int = 84, sub: str = '',
@@ -77,11 +99,11 @@ def tag(img: Image.Image, t: float, text: str, xy: tuple[int, int], font: Path, 
         return img
     t = pt.stepped(t)
     f = ImageFont.truetype(str(font), size)
-    fs = ImageFont.truetype(str(sub_font or font), max(26, size // 3))
+    fs = ImageFont.truetype(str(sub_font or font), max(30, int(size * 0.42)))
     probe = ImageDraw.Draw(Image.new('RGB', (4, 4)))
     tw = probe.textlength(text, font=f)
     sw = probe.textlength(sub, font=fs) if sub else 0
-    cw, ch = int(max(tw, sw) + 70), int(size * 1.35 + (size // 3 + 18 if sub else 0))
+    cw, ch = int(max(tw, sw) + 70), int(size * 1.35 + (int(size * 0.42) + 18 if sub else 0))
     card = Image.new('RGBA', (cw + 40, ch + 40), (0, 0, 0, 0))
     d = ImageDraw.Draw(card)
     rng = random.Random(hash(text) & 0xffff)
@@ -127,6 +149,20 @@ def crest_card(img: Image.Image, t: float, art: Image.Image, xy, size: int, flip
     out.paste((20, 12, 6, 255), (x + 8, y + 12), sh)
     out.paste(disc, (x, y), disc)
     return out.convert('RGB')
+
+
+def deyellow(img: Image.Image, band=(36, 74), smin=0.30) -> Image.Image:
+    """The rival's hue never prints (pack `bannedRivalHues`; rule 8 for Hapoel): a pixel in the band at saturation ≥ smin
+    turns to the brass-brown of the badge's own fix (hue 26°) at the same value, so gold becomes bronze and stays lit."""
+    import cv2
+    a = np.asarray(img)
+    hsv = cv2.cvtColor(a, cv2.COLOR_RGB2HSV_FULL)
+    h = hsv[..., 0].astype(np.float32) * 360 / 256
+    m = (h >= band[0]) & (h <= band[1]) & (hsv[..., 1] >= smin * 255)
+    if not m.any():
+        return img
+    hsv[..., 0][m] = int(26 * 256 / 360)
+    return Image.fromarray(cv2.cvtColor(hsv, cv2.COLOR_HSV2RGB_FULL))
 
 
 def plan(ep: dict, narr: Path, langs: list[str]) -> list[dict]:
@@ -177,6 +213,8 @@ def main() -> None:
         for i in range(n):
             gt = i / FPS
             k = max(j for j, s in enumerate(shots) if s['start'] <= gt + 1e-9)
+            if k >= 2:
+                sources[k - 2].drop()
             t = gt - shots[k]['start']
             fr = draw(k, t)
             if k > 0 and t < TURN:
@@ -184,7 +222,8 @@ def main() -> None:
                 fr = pt.page_turn(prev, fr, t / TURN)
             if gt > total - 0.6:
                 fr = Image.fromarray((np.asarray(fr, dtype=np.float32) * max(0.0, (total - gt) / 0.6)).astype(np.uint8))
-            yield pt.grain(fr, i, 3.0)
+            fr = pt.grain(fr, i, 3.0)
+            yield deyellow(fr, tuple(ep['palette']['bannedHue'])) if ep['palette'].get('bannedHue') else fr
 
     silent = outd / 'picture.mp4'
     if not silent.exists():

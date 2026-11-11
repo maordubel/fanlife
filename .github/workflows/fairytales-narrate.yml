@@ -7,7 +7,7 @@ on:
     inputs:
       episode: {description: 'episode file name', default: 'hapoel-tel-aviv-good-morning'}
   push:
-    paths: ['scripts/football-stories/studio/fairytales/episodes/*.json', 'scripts/football-stories/studio/fairytales/narrate.py']
+    paths: ['scripts/football-stories/studio/fairytales/episodes/*.retake']
 permissions:
   contents: write
 concurrency:
@@ -34,7 +34,10 @@ jobs:
       - name: Narrate
         timeout-minutes: 45
         working-directory: scripts/football-stories
-        run: python3 -m studio.fairytales.narrate "studio/fairytales/episodes/$EPISODE.json" "$RUNNER_TEMP/narration"
+        run: |
+          RETAKE="studio/fairytales/episodes/$EPISODE.retake"
+          [ -f "$RETAKE" ] && export FT_ONLY="$(cat "$RETAKE")"
+          python3 -m studio.fairytales.narrate "studio/fairytales/episodes/$EPISODE.json" "$RUNNER_TEMP/narration"
       - name: Publish the takes
         if: always()
         run: |
