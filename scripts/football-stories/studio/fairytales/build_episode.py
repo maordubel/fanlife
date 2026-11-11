@@ -108,11 +108,11 @@ def tag(img: Image.Image, t: float, text: str, xy: tuple[int, int], font: Path, 
         return img
     t = pt.stepped(t)
     f = ImageFont.truetype(str(font), size)
-    fs = ImageFont.truetype(str(sub_font or font), max(30, int(size * 0.42)))
+    fs = ImageFont.truetype(str(sub_font or font), max(30, int(size * 0.5)))
     probe = ImageDraw.Draw(Image.new('RGB', (4, 4)))
     tw = probe.textlength(text, font=f)
     sw = probe.textlength(sub, font=fs) if sub else 0
-    cw, ch = int(max(tw, sw) + 70), int(size * 1.35 + (int(size * 0.42) + 18 if sub else 0))
+    cw, ch = int(max(tw, sw) + 70), int(size * 1.35 + (int(size * 0.5) + 18 if sub else 0))
     card = Image.new('RGBA', (cw + 40, ch + 40), (0, 0, 0, 0))
     d = ImageDraw.Draw(card)
     rng = random.Random(hash(text) & 0xffff)

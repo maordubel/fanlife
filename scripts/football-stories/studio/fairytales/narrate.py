@@ -117,25 +117,127 @@ def take(key: str, models: list[str], text: str, lang: str, delivery: str, voice
     return {'error': 'no take said the line once and whole', 'tries': tried}
 
 
+class QuotaGone(Exception):
+    """The free tier said no three times in a row: the day's requests are spent; stop and publish what we have."""
+
+
+def call(key: str, models: list[str], text: str) -> tuple[bytes, str]:
+    misses = 0
+    for attempt in range(6):
+        model = models[attempt % min(2, len(models))]
+        try:
+            return gemini_tts._call(key, model, text), model
+        except Exception as e:  # noqa: BLE001
+            if '429' in str(e):
+                misses += 1
+                if misses >= 4:
+                    raise QuotaGone(str(e)[:200]) from e
+                time.sleep(65)
+            else:
+                time.sleep(15)
+    raise RuntimeError('no speech model answered')
+
+
+def silences(wav: Path) -> list[tuple[float, float]]:
+    import subprocess
+    err = subprocess.run(['ffmpeg', '-v', 'info', '-i', str(wav), '-af', 'silencedetect=n=-40dB:d=0.45', '-f', 'null', '-'],
+                         capture_output=True, text=True).stderr
+    starts = [float(x) for x in re.findall(r'silence_start: ([\d.]+)', err)]
+    ends = [float(x) for x in re.findall(r'silence_end: ([\d.]+)', err)]
+    return list(zip(starts, ends))
+
+
+def cut(src: Path, dst: Path, t0: float, t1: float) -> None:
+    with wave.open(str(src)) as w:
+        w.setpos(int(t0 * SR))
+        data = w.readframes(max(0, int((t1 - t0) * SR)))
+    with wave.open(str(dst), 'wb') as w:
+        w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes(data)
+
+
+def chunk_prompt(texts: list[str], lang: str) -> str:
+    body = '\n\n'.join(texts)
+    return '\n'.join(['# AUDIO PROFILE', PROFILE, '', '## THE SCENE',
+                      'A family football story told over the pages of a pop-up book; each paragraph is a new page.', '',
+                      "### DIRECTOR'S NOTES", ACCENT[lang],
+                      'Style: warm, bright and storytelling, with a grin; slow down and lower the voice at every "…"; let '
+                      'surprises land. Each paragraph has its own mood: tender for a hard beginning, proud for the names, '
+                      'joyful for the goals.',
+                      'Between paragraphs leave a long silence of two full seconds — the page turns.',
+                      'Read the transcript exactly once, word for word, paragraph by paragraph: add nothing, skip nothing, '
+                      'never repeat a paragraph, do not read these notes.', '', '#### TRANSCRIPT', body])
+
+
+def chunk(key: str, models: list[str], rows: list[dict], lang: str, out: Path) -> list[dict]:
+    """Several shots in one request (the free tier counts requests, not seconds), cut apart at the page-turn silences
+    and checked one by one. A paragraph that fails its check comes back as an error for a later retake."""
+    texts = [r['text'] for r in rows]
+    for attempt in range(2):
+        pcm, model = call(key, models, chunk_prompt(texts, lang))
+        whole = out / f'_chunk-{lang}.wav'
+        with wave.open(str(whole), 'wb') as w:
+            w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes(pcm)
+        dur = seconds(whole)
+        sil = sorted(silences(whole), key=lambda x: -(x[1] - x[0]))[:len(rows) - 1]
+        if len(sil) < len(rows) - 1:
+            continue
+        bounds = [0.0] + sorted((a + b) / 2 for a, b in sil) + [dur]
+        res = []
+        for k, r in enumerate(rows):
+            seg = out / r['file']
+            cut(whole, seg, bounds[k], bounds[k + 1])
+            ss = silences(seg)
+            t0 = ss[0][1] - 0.12 if ss and ss[0][0] < 0.05 else 0.0
+            t1 = ss[-1][0] + 0.25 if ss and ss[-1][1] > seconds(seg) - 0.05 else seconds(seg)
+            tmp = out / f'_t.wav'
+            cut(seg, tmp, max(0.0, t0), max(t1, t0 + 0.5))
+            tmp.replace(seg)
+            if lang == 'en':
+                words, chk = gemini_tts.align(r['text'], seg)
+                chk = {k2: chk[k2] for k2 in ('matched', 'added', 'heard')} | {'ok': chk['matched'] >= 0.7 and chk['added'] <= 0.15}
+            else:
+                words, chk = None, check_local(r['text'], seg, lang)
+            row = {k2: v for k2, v in r.items() if k2 != 'text'} | {'model': model, 'seconds': round(seconds(seg), 2),
+                                                                      'check': chk, 'words': words, 'chunked': True}
+            if not chk['ok']:
+                row['error'] = 'the paragraph cut from the chunk did not say the line'
+                seg.unlink(missing_ok=True)
+            res.append(row)
+        whole.unlink(missing_ok=True)
+        if sum('error' not in x for x in res) >= len(rows) - 1 or attempt == 1:
+            return res
+        time.sleep(20)
+    return [{k2: v for k2, v in r.items() if k2 != 'text'} | {'error': 'the chunk had too few page-turn silences'} for r in rows]
+
+
 def main() -> None:
     ep = json.loads(Path(sys.argv[1]).read_text())
     out = Path(sys.argv[2]).resolve()
     out.mkdir(parents=True, exist_ok=True)
     key = os.environ['GEMINI_API_KEY'].strip()
     models = gemini_tts.models(key)
-    langs = [l for l in os.environ.get('FT_LANGS', ','.join(ep['voice'].keys() - {'chosen'})).split(',') if l]
+    langs = [l for l in os.environ.get('FT_LANGS', ','.join(sorted(ep['voice'].keys() - {'chosen'}))).split(',') if l]
     report = {'episode': ep['id'], 'models': models[:2], 'takes': []}
     only = {x.strip() for x in os.environ.get('FT_ONLY', '').split(',') if x.strip()}   # 'shot:lang' retakes
-    for shot in ep['shots']:
+    size = int(os.environ.get('FT_CHUNK', '5'))
+
+    def save():
+        (out / 'narration.json').write_text(json.dumps(report, ensure_ascii=False, indent=1))
+    try:
         for lang in langs:
-            if lang not in shot or (only and f"{shot['id']}:{lang}" not in only):
-                continue
-            row = {'shot': shot['id'], 'lang': lang, 'voice': ep['voice'][lang], 'file': f"{shot['id']}-{lang}.wav"}
-            row.update(take(key, models, shot[lang], lang, shot.get('delivery', 'warm'), ep['voice'][lang], out / row['file']))
-            report['takes'].append(row)
-            print(json.dumps({k: v for k, v in row.items() if k != 'words'}, ensure_ascii=False), flush=True)
-            time.sleep(7)
-    (out / 'narration.json').write_text(json.dumps(report, ensure_ascii=False, indent=1))
+            todo = [{'shot': s['id'], 'lang': lang, 'voice': ep['voice'][lang], 'file': f"{s['id']}-{lang}.wav", 'text': s[lang]}
+                    for s in ep['shots'] if lang in s and (not only or f"{s['id']}:{lang}" in only)]
+            for i in range(0, len(todo), size):
+                rows = chunk(key, models, todo[i:i + size], lang, out)
+                report['takes'] += rows
+                for r in rows:
+                    print(json.dumps({k: v for k, v in r.items() if k != 'words'}, ensure_ascii=False)[:600], flush=True)
+                save()
+                time.sleep(20)
+    except QuotaGone as e:
+        report['stopped'] = f'free-tier quota spent: {e}'
+        print(report['stopped'], flush=True)
+    save()
     bad = [t for t in report['takes'] if 'error' in t]
     print(f"{len(report['takes']) - len(bad)}/{len(report['takes'])} takes kept")
 
