@@ -155,6 +155,41 @@ def cut(src: Path, dst: Path, t0: float, t1: float) -> None:
         w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes(data)
 
 
+def heard_words(wav: Path, lang: str) -> list[tuple[str, float, float]]:
+    global _W
+    import subprocess
+    import numpy as np
+    from faster_whisper import WhisperModel
+    if _W is None:
+        _W = WhisperModel(os.environ.get('FT_WHISPER_MODEL', 'small'), device='cpu', compute_type='int8')
+    raw = subprocess.run(['ffmpeg', '-v', 'error', '-i', str(wav), '-ac', '1', '-ar', '16000', '-f', 'f32le', '-'],
+                         capture_output=True, check=True).stdout
+    segs, _ = _W.transcribe(np.frombuffer(raw, dtype='float32'), language=lang, beam_size=5, word_timestamps=True)
+    return [(w.word.strip(), float(w.start), float(w.end)) for sg in segs for w in (sg.words or [])]
+
+
+def word_bounds(texts: list[str], wav: Path, lang: str) -> list[float] | None:
+    """Where one paragraph ends and the next begins, from Whisper's word times matched to the script — so a pause
+    inside a paragraph is never taken for a page turn. None when the match is too thin to trust."""
+    heard = heard_words(wav, lang)
+    norm = (lambda w: re.sub(r'[^a-z0-9]', '', letters(w))) if lang == 'en' else letters
+    script = [(norm(w), k) for k, t in enumerate(texts) for w in t.split()]
+    a, b = [w for w, _ in script], [norm(h[0]) for h in heard]
+    owner = [None] * len(heard)
+    for tag, i1, i2, j1, j2 in difflib.SequenceMatcher(None, a, b, autojunk=False).get_opcodes():
+        if tag in ('equal', 'replace'):
+            for d in range(min(i2 - i1, j2 - j1)):
+                owner[j1 + d] = script[i1 + d][1]
+    bounds = []
+    for k in range(len(texts) - 1):
+        ends = [heard[j][2] for j, o in enumerate(owner) if o == k]
+        starts = [heard[j][1] for j, o in enumerate(owner) if o == k + 1]
+        if not ends or not starts:
+            return None
+        bounds.append((max(ends) + min(starts)) / 2)
+    return bounds if bounds == sorted(bounds) else None
+
+
 def chunk_prompt(texts: list[str], lang: str) -> str:
     body = '\n\n'.join(texts)
     return '\n'.join(['# AUDIO PROFILE', PROFILE, '', '## THE SCENE',
@@ -178,10 +213,17 @@ def chunk(key: str, models: list[str], rows: list[dict], lang: str, out: Path) -
         with wave.open(str(whole), 'wb') as w:
             w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes(pcm)
         dur = seconds(whole)
-        sil = sorted(silences(whole), key=lambda x: -(x[1] - x[0]))[:len(rows) - 1]
-        if len(sil) < len(rows) - 1:
-            continue
-        bounds = [0.0] + sorted((a + b) / 2 for a, b in sil) + [dur]
+        keep = out / '_raw'
+        keep.mkdir(exist_ok=True)
+        import shutil
+        shutil.copy(whole, keep / f"{lang}-{rows[0]['shot']}-{attempt}.wav")     # the raw chunk, for a hand cut if needed
+        inner = word_bounds(texts, whole, lang) if len(rows) > 1 else []
+        if inner is None:
+            sil = sorted(silences(whole), key=lambda x: -(x[1] - x[0]))[:len(rows) - 1]
+            if len(sil) < len(rows) - 1:
+                continue
+            inner = sorted((a + b) / 2 for a, b in sil)
+        bounds = [0.0] + inner + [dur]
         res = []
         for k, r in enumerate(rows):
             seg = out / r['file']
@@ -194,6 +236,10 @@ def chunk(key: str, models: list[str], rows: list[dict], lang: str, out: Path) -
             tmp.replace(seg)
             if lang == 'en':
                 words, chk = gemini_tts.align(r['text'], seg)
+                if chk.get('trim'):
+                    t0, t1 = chk['trim']
+                    gemini_tts._cut(seg, t0, t1)
+                    words = [{**w, 'start': round(max(0.0, w['start'] - t0), 3), 'end': round(max(0.0, w['end'] - t0), 3)} for w in words]
                 chk = {k2: chk[k2] for k2 in ('matched', 'added', 'heard')} | {'ok': chk['matched'] >= 0.7 and chk['added'] <= 0.15}
             else:
                 words, chk = None, check_local(r['text'], seg, lang)
@@ -201,7 +247,7 @@ def chunk(key: str, models: list[str], rows: list[dict], lang: str, out: Path) -
                                                                       'check': chk, 'words': words, 'chunked': True}
             if not chk['ok']:
                 row['error'] = 'the paragraph cut from the chunk did not say the line'
-                seg.unlink(missing_ok=True)
+                seg.replace(keep / f"failed-{r['file']}")
             res.append(row)
         whole.unlink(missing_ok=True)
         if sum('error' not in x for x in res) >= len(rows) - 1 or attempt == 1:
@@ -219,7 +265,7 @@ def main() -> None:
     langs = [l for l in os.environ.get('FT_LANGS', ','.join(sorted(ep['voice'].keys() - {'chosen'}))).split(',') if l]
     report = {'episode': ep['id'], 'models': models[:2], 'takes': []}
     only = {x.strip() for x in os.environ.get('FT_ONLY', '').split(',') if x.strip()}   # 'shot:lang' retakes
-    size = int(os.environ.get('FT_CHUNK', '5'))
+    size = int(os.environ.get('FT_CHUNK', '4'))
 
     def save():
         (out / 'narration.json').write_text(json.dumps(report, ensure_ascii=False, indent=1))
