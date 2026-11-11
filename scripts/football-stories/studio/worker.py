@@ -47,7 +47,7 @@ class Studio:
         waits = (5, 10, 20, 40, 60)
         for attempt in range(len(waits) + 1):
             req = urllib.request.Request(self.base + '/api/master/stories/worker', data=data, method='POST',
-                                         headers={'Authorization': 'Bearer ' + self.secret, 'Content-Type': 'application/json'})
+                                         headers={'Authorization': 'Bearer ' + self.secret, 'Content-Type': 'application/json', 'User-Agent': 'Mozilla/5.0 (compatible; FanLife-Studio/1.0; +https://fanlife.dubelteam.com)'})
             try:
                 with urllib.request.urlopen(req, timeout=timeout) as r:
                     return json.load(r)
@@ -66,7 +66,7 @@ class Studio:
     def ping_chat(self) -> str | None:
         """The owner's linked Telegram chat id (Final Whistle link), or None."""
         req = urllib.request.Request(self.base + '/api/master/final-whistle/ping', data=b'{}', method='POST',
-                                     headers={'Authorization': 'Bearer ' + self.secret, 'Content-Type': 'application/json'})
+                                     headers={'Authorization': 'Bearer ' + self.secret, 'Content-Type': 'application/json', 'User-Agent': 'Mozilla/5.0 (compatible; FanLife-Studio/1.0; +https://fanlife.dubelteam.com)'})
         with urllib.request.urlopen(req, timeout=30) as r:
             chat = json.load(r).get('chatId')
         return str(chat) if chat else None
