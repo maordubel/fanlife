@@ -142,7 +142,8 @@ class Confetti:
     def draw(self, img: Image.Image, t: float) -> Image.Image:
         if t <= 0:
             return img
-        t = stepped(t)
+        if not getattr(self, 'smooth', False):
+            t = stepped(t)
         layer = Image.new('RGBA', img.size, (0, 0, 0, 0))
         d = ImageDraw.Draw(layer)
         for b in self.bits:

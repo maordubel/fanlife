@@ -12,6 +12,32 @@
   "he": "Leda",
   "chosen": "owner, 11.11.2026"
  },
+ "palette": {
+  "primary": "#B02D10",
+  "secondary": "#F6F0E4",
+  "bannedHue": [
+   36,
+   74
+  ]
+ },
+ "crests": {
+  "1927": "public/brand/crests/circle-1927.png",
+  "1923": "public/brand/crests/circle-1923.png"
+ },
+ "music": [
+  {
+   "track": "zambolino-lighthearted",
+   "from": "once-upon"
+  },
+  {
+   "track": "pufino-enlivening",
+   "from": "1981"
+  },
+  {
+   "track": "zambolino-lighthearted",
+   "from": "gate-5"
+  }
+ ],
  "shots": [
   {
    "id": "once-upon",
@@ -27,7 +53,8 @@
      1.0,
      1.04
     ]
-   }
+   },
+   "transition": "fade"
   },
   {
    "id": "workers",
@@ -55,7 +82,8 @@
       "size": 90
      }
     ]
-   }
+   },
+   "transition": "iris"
   },
   {
    "id": "hodorov-boy",
@@ -65,7 +93,8 @@
    "he": "הגיבור הראשון שלנו נולד כששתי רגליו מקופלות פנימה. הרופאים אמרו שאולי לעולם לא ילך. אבל בגיל תשע הוא הלך — ואבא שלו, כדי לחזק את הרגליים האלה, קנה לו כדור.",
    "sources": [
     "Vikipoel (the club wiki, content/raw/vikipoel-player-wikitext.json) יעקב חודורוב"
-   ]
+   ],
+   "transition": "slide"
   },
   {
    "id": "hodorov-goal",
@@ -75,7 +104,8 @@
    "he": "בגיל שלוש עשרה, במשחק ידידות, נפצע השוער של הקבוצה, והילד נעמד בשער. זה היה רגע שישנה את הכדורגל הישראלי.",
    "sources": [
     "Vikipoel (the club wiki, content/raw/vikipoel-player-wikitext.json) יעקב חודורוב"
-   ]
+   ],
+   "transition": "zoom"
   },
   {
    "id": "hodorov",
@@ -104,7 +134,8 @@
       "size": 66
      }
     ]
-   }
+   },
+   "transition": "dissolve"
   },
   {
    "id": "primo",
@@ -135,7 +166,8 @@
       "size": 72
      }
     ]
-   }
+   },
+   "transition": "torn"
   },
   {
    "id": "mexico",
@@ -162,7 +194,8 @@
       "size": 76
      }
     ]
-   }
+   },
+   "transition": "slide"
   },
   {
    "id": "asia",
@@ -198,7 +231,8 @@
       "size": 110
      }
     ]
-   }
+   },
+   "transition": "page"
   },
   {
    "id": "jimmy",
@@ -225,7 +259,8 @@
       "size": 76
      }
     ]
-   }
+   },
+   "transition": "iris"
   },
   {
    "id": "sinai",
@@ -252,7 +287,8 @@
       "size": 80
      }
     ]
-   }
+   },
+   "transition": "zoom"
   },
   {
    "id": "left-foot",
@@ -272,7 +308,8 @@
      0.6,
      0.45
     ]
-   }
+   },
+   "transition": "slide"
   },
   {
    "id": "1981",
@@ -302,7 +339,8 @@
      }
     ],
     "confettiAt": 0.74
-   }
+   },
+   "transition": "torn"
   },
   {
    "id": "aston-villa",
@@ -341,7 +379,8 @@
       "size": 100
      }
     ]
-   }
+   },
+   "transition": "page"
   },
   {
    "id": "tikva",
@@ -369,7 +408,8 @@
       "size": 74
      }
     ]
-   }
+   },
+   "transition": "iris"
   },
   {
    "id": "the-chip",
@@ -396,7 +436,8 @@
       "size": 110
      }
     ]
-   }
+   },
+   "transition": "zoom"
   },
   {
    "id": "his-bloomfield",
@@ -413,7 +454,8 @@
      1.12
     ],
     "confettiAt": 0.3
-   }
+   },
+   "transition": "dissolve"
   },
   {
    "id": "babies",
@@ -440,7 +482,8 @@
       "size": 76
      }
     ]
-   }
+   },
+   "transition": "slide"
   },
   {
    "id": "double-2000",
@@ -470,7 +513,8 @@
      }
     ],
     "confettiAt": 0.86
-   }
+   },
+   "transition": "page"
   },
   {
    "id": "europe",
@@ -522,7 +566,8 @@
       "size": 70
      }
     ]
-   }
+   },
+   "transition": "torn"
   },
   {
    "id": "double-2010",
@@ -557,7 +602,8 @@
      }
     ],
     "confettiAt": 0.6
-   }
+   },
+   "transition": "zoom"
   },
   {
    "id": "champions-league",
@@ -596,7 +642,8 @@
       "size": 80
      }
     ]
-   }
+   },
+   "transition": "iris"
   },
   {
    "id": "across-the-road",
@@ -613,7 +660,8 @@
      1.0,
      1.04
     ]
-   }
+   },
+   "transition": "slide"
   },
   {
    "id": "gate-5",
@@ -637,7 +685,8 @@
       "rot": -4
      }
     ]
-   }
+   },
+   "transition": "dissolve"
   },
   {
    "id": "good-morning",
@@ -663,19 +712,8 @@
     ],
     "wordmarkAt": 0.72,
     "wordmarkTag": "Good Morning, Hapoel Tel Aviv"
-   }
+   },
+   "transition": "page"
   }
- ],
- "palette": {
-  "primary": "#B02D10",
-  "secondary": "#F6F0E4",
-  "bannedHue": [
-   36,
-   74
-  ]
- },
- "crests": {
-  "1927": "public/brand/crests/circle-1927.png",
-  "1923": "public/brand/crests/circle-1923.png"
- }
+ ]
 }

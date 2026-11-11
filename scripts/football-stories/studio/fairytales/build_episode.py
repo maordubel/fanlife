@@ -18,6 +18,7 @@ from __future__ import annotations
 import json
 import math
 import random
+import zlib
 import subprocess
 import sys
 import wave
@@ -27,10 +28,17 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 from studio.fairytales import papertheatre as pt
+from studio.fairytales import transitions as tr
 
 REPO = Path(__file__).resolve().parents[4]
 SFX = REPO / 'public/life/sfx'
-MUSIC = REPO / 'scripts/football-stories/studio/kit/music/sports-atlasaudio-625740.mp3'
+MUSIC_DIR = REPO / 'scripts/football-stories/studio/kit/music'
+KIT_SFX = REPO / '.claude/skills/media-use/audio/assets/sfx'
+# the sound under each cut: (file, level). Soft and short — the story is told by the voice
+CUT_SFX = {'page': (SFX / 'page.m4a', 0.7), 'slide': (KIT_SFX / 'whoosh-short.mp3', 0.22), 'zoom': (KIT_SFX / 'whoosh.mp3', 0.16),
+           'iris': (KIT_SFX / 'sparkle.mp3', 0.18), 'torn': (SFX / 'page.m4a', 0.5), 'dissolve': (None, 0), 'fade': (None, 0)}
+# where a shot has no `transition`: the page turn opens every fourth shot, the rest rotate so no cut repeats
+CYCLE = ['iris', 'slide', 'zoom', 'dissolve', 'torn', 'slide', 'iris', 'zoom']
 LEAD, TAIL, TURN = 0.55, 0.85, 0.5
 W, H, FPS = pt.W, pt.H, pt.FPS
 
@@ -88,9 +96,13 @@ class Source:
 
     def at(self, t: float, push=(1.0, 1.06), centre=(.5, .5)) -> Image.Image:
         frames = self.frames
-        ts = pt.stepped(t)                                            # on twos
-        k = min(int(ts * self.speed * FPS), len(frames) - 1)
-        rng = random.Random(self.seed * 1000 + int(ts * 12))
+        # owner 11.11.2026: no shake — the clip plays on ones, a slowed clip blends its neighbouring frames, and the
+        # camera glides on one eased curve with no boil
+        fk = min(max(t, 0.0) * self.speed * FPS, len(frames) - 1)
+        k = int(fk)
+        frame = frames[k]
+        if 0.08 < fk - k and k + 1 < len(frames):
+            frame = Image.blend(frames[k], frames[k + 1], fk - k)
         u = pt.ease(t / max(self.dur, 0.1))
         z = push[0] + (push[1] - push[0]) * u
         cx, cy = centre
@@ -98,7 +110,7 @@ class Source:
             z += 0.04
             cx += 0.07 * (u - 0.5) * (1 if self.seed % 2 else -1)
             cy += 0.02 * (0.5 - u)
-        return lens(frames[k], z, cx, cy, dx=rng.uniform(-1.1, 1.1), dy=rng.uniform(-0.9, 0.9))
+        return lens(frame, z, cx, cy)
 
 
 def tag(img: Image.Image, t: float, text: str, xy: tuple[int, int], font: Path, size: int = 84, sub: str = '',
@@ -106,7 +118,6 @@ def tag(img: Image.Image, t: float, text: str, xy: tuple[int, int], font: Path, 
     """A cut-card label with a brass pin, dropped in on twos."""
     if t <= 0:
         return img
-    t = pt.stepped(t)
     f = ImageFont.truetype(str(font), size)
     fs = ImageFont.truetype(str(sub_font or font), max(30, int(size * 0.5)))
     probe = ImageDraw.Draw(Image.new('RGB', (4, 4)))
@@ -115,7 +126,7 @@ def tag(img: Image.Image, t: float, text: str, xy: tuple[int, int], font: Path, 
     cw, ch = int(max(tw, sw) + 70), int(size * 1.35 + (int(size * 0.5) + 18 if sub else 0))
     card = Image.new('RGBA', (cw + 40, ch + 40), (0, 0, 0, 0))
     d = ImageDraw.Draw(card)
-    rng = random.Random(hash(text) & 0xffff)
+    rng = random.Random(zlib.crc32(text.encode()) & 0xffff)
     pts = [(20 + rng.randint(-3, 3), 20 + rng.randint(-3, 3)), (20 + cw + rng.randint(-3, 3), 20 + rng.randint(-3, 3)),
            (20 + cw + rng.randint(-3, 3), 20 + ch + rng.randint(-3, 3)), (20 + rng.randint(-3, 3), 20 + ch + rng.randint(-3, 3))]
     d.polygon(pts, fill=colour + (255,))
@@ -123,8 +134,8 @@ def tag(img: Image.Image, t: float, text: str, xy: tuple[int, int], font: Path, 
     if sub:
         d.text((20 + (cw - sw) / 2, 20 + size * 1.32), sub, font=fs, fill=ink + (230,))
     d.ellipse((20 + cw // 2 - 11, 8, 20 + cw // 2 + 11, 30), fill=pt.BRASS + (255,), outline=(120, 90, 30, 255), width=2)
-    p = pt.ease(min(t / 0.25, 1.0))
-    r = (rot if rot is not None else rng.uniform(-5, 5)) * (1.6 - 0.6 * p)
+    p = tr._out_back(t / 0.45, 1.1)                                  # drops in and settles, no stepping
+    r = (rot if rot is not None else rng.uniform(-5, 5)) * (1.6 - 0.6 * min(p, 1.0))
     card = card.rotate(r, resample=Image.BICUBIC, expand=True)
     x, y = int(xy[0] - card.width / 2), int(xy[1] - card.height / 2 - (1 - p) * 70)
     out = img.convert('RGBA')
@@ -139,8 +150,8 @@ def crest_card(img: Image.Image, t: float, art: Image.Image, xy, size: int, flip
     """The crest printed on a round cream card that drops in; optionally it flips like a coin to another crest."""
     if t <= 0:
         return img
-    ts = pt.stepped(t)
-    p = pt.ease(min(ts / 0.3, 1.0))
+    ts = t
+    p = tr._out_back(ts / 0.5, 1.1)
     face, sx, hop = art, 1.0, 0
     if flip_to is not None and ts > flip_at:
         q = min((ts - flip_at) / 0.4, 1.0)
@@ -180,9 +191,46 @@ def plan(ep: dict, narr: Path, langs: list[str]) -> list[dict]:
     for s in ep['shots']:
         lens = {l: seconds(narr / f"{s['id']}-{l}.wav") for l in langs}
         dur = LEAD + max(lens.values()) + TAIL + s.get('visual', {}).get('extra', 0.0)
-        out.append({'shot': s, 'start': t, 'dur': dur, 'lens': lens})
+        k = len(out)
+        cut = s.get('transition') or ('fade' if k == 0 else 'page' if k % 4 == 0 else CYCLE[k % len(CYCLE)])
+        out.append({'shot': s, 'start': t, 'dur': dur, 'lens': lens, 'cut': cut})
         t += dur
     return out
+
+
+def music_plan(ep: dict, shots: list[dict], total: float, xf: float = 3.0) -> list[tuple]:
+    """(file, start, length, fade-in, fade-out) for each music cue in the script's `music` list. A cue starts at its
+    shot and runs into the next cue by `xf` seconds; the last one closes with the film."""
+    index = {t['id']: t for t in json.loads((MUSIC_DIR / 'index.json').read_text())['tracks']}
+    starts = {s['shot']['id']: s['start'] for s in shots}
+    cues = ep.get('music') or [{'track': 'zambolino-lighthearted', 'from': shots[0]['shot']['id']}]
+    out = []
+    for j, c in enumerate(cues):
+        t = index[c['track']]
+        assert t.get('owner'), f"{c['track']}: only tracks the owner supplied score a film"
+        path = MUSIC_DIR / t['file']
+        if not path.exists():
+            raise SystemExit(f'music missing: {path} (fetch it from the owner\'s Drive into kit/music/cache/owner/)')
+        a = starts[c['from']] if j else 0.0
+        b = starts[cues[j + 1]['from']] + xf if j + 1 < len(cues) else total
+        out.append((path, max(0.0, a - (xf if j else 0)), b - max(0.0, a - (xf if j else 0)), xf if j else 1.5,
+                    xf if j + 1 < len(cues) else 3.5))
+    return out
+
+
+def sfx_events(shots: list[dict]) -> list[tuple]:
+    """(file, time, level): a soft sound under every cut, a pop when a card lands, a sparkle with the confetti."""
+    ev = []
+    for k, s in enumerate(shots):
+        f, lv = CUT_SFX[s['cut']]
+        if k and f:
+            ev.append((f, s['start'], lv))
+        v = s['shot'].get('visual', {})
+        for g in v.get('tags', []) + v.get('crests', []):
+            ev.append((KIT_SFX / 'pop.mp3', s['start'] + g['at'] * s['dur'] + 0.12, 0.12))
+        if v.get('confettiAt') is not None:
+            ev.append((KIT_SFX / 'sparkle.mp3', s['start'] + v['confettiAt'] * s['dur'], 0.28))
+    return ev
 
 
 def main() -> None:
@@ -197,6 +245,7 @@ def main() -> None:
     red = tuple(int(ep['palette']['primary'][i:i + 2], 16) for i in (1, 3, 5))
     sources = [Source(work, s['shot']['plate'], s['dur'], seed=k + 1) for k, s in enumerate(shots)]
     confetti = pt.Confetti((W * .5, H * .6), [red, (246, 240, 228), pt.KRAFT, red], n=120)
+    confetti.smooth = True
 
     def draw(k: int, t: float) -> Image.Image:
         s, src = shots[k], sources[k]
@@ -226,18 +275,22 @@ def main() -> None:
                 sources[k - 2].drop()
             t = gt - shots[k]['start']
             fr = draw(k, t)
-            if k > 0 and t < TURN:
-                prev = draw(k - 1, shots[k - 1]['dur'] + t)
-                fr = pt.page_turn(prev, fr, t / TURN)
+            cut = shots[k]['cut']
+            d = tr.DURATION[cut]
+            if t < d:
+                prev = draw(k - 1, shots[k - 1]['dur'] + t) if k > 0 else None
+                fr = tr.CUTS[cut](prev, fr, t / d)
             if gt > total - 0.6:
                 fr = Image.fromarray((np.asarray(fr, dtype=np.float32) * max(0.0, (total - gt) / 0.6)).astype(np.uint8))
-            fr = pt.grain(fr, i, 3.0)
+            fr = pt.grain(fr, i, 2.2)
             yield deyellow(fr, tuple(ep['palette']['bannedHue'])) if ep['palette'].get('bannedHue') else fr
 
     silent = outd / 'picture.mp4'
     if not silent.exists():
         pt.encode(frames(), silent)
     timing = []
+    music = music_plan(ep, shots, total)
+    events = sfx_events(shots)
     for lang in langs:
         inputs, parts = [], []
         for k, s in enumerate(shots):
@@ -245,15 +298,22 @@ def main() -> None:
             ms = int((s['start'] + LEAD) * 1000)
             parts.append(f'[{k}:a]aresample=48000,adelay={ms}|{ms}[v{k}]')
         n = len(shots)
-        inputs += ['-i', str(MUSIC), '-i', str(SFX / 'page.m4a')]
-        turns = ''.join(f'[{n + 1}:a]adelay={int(s["start"] * 1000)}|{int(s["start"] * 1000)},volume=0.7[p{k}];'
-                        for k, s in enumerate(shots) if k > 0)
-        pages = ''.join(f'[p{k}]' for k in range(1, n))
-        fc = (';'.join(parts) + ';' + ''.join(f'[v{k}]' for k in range(n)) + f'amix=inputs={n}:normalize=0,volume=1.5[vo];'
-              f'[{n}:a]aloop=loop=-1:size=2e9,atrim=0:{total:.2f},asetpts=PTS-STARTPTS,volume=0.075,'
-              f'afade=t=in:d=1.5,afade=t=out:st={total - 2.5:.2f}:d=2.5[mu];' + turns +
-              f'{pages}amix=inputs={n - 1}:normalize=0[pg];'
-              f'[vo][mu][pg]amix=inputs=3:normalize=0,alimiter=limit=0.95,atrim=0:{total:.2f}[a]')
+        fc = ';'.join(parts) + ';' + ''.join(f'[v{k}]' for k in range(n)) + f'amix=inputs={n}:normalize=0,volume=1.5,asplit=2[vo][key];'
+        # the bed: the owner's warm, playful tracks in turn, crossfaded, ducked under the voice and lifted between lines
+        for j, (path, start, length, fin, fout) in enumerate(music):
+            inputs += ['-i', str(path)]
+            ms = int(start * 1000)
+            fc += (f'[{n + j}:a]aresample=48000,aloop=loop=-1:size=2e9,atrim=0:{length:.2f},asetpts=PTS-STARTPTS,'
+                   f'afade=t=in:d={fin:.2f},afade=t=out:st={length - fout:.2f}:d={fout:.2f},adelay={ms}|{ms}[m{j}];')
+        m0 = n + len(music)
+        fc += (''.join(f'[m{j}]' for j in range(len(music))) + f'amix=inputs={len(music)}:normalize=0,volume=0.30,'
+               f'atrim=0:{total:.2f}[bed];[bed][key]sidechaincompress=threshold=0.025:ratio=5:attack=40:release=650[mu];')
+        for e, (path, at, level) in enumerate(events):
+            inputs += ['-i', str(path)]
+            ms = int(at * 1000)
+            fc += f'[{m0 + e}:a]aresample=48000,volume={level},adelay={ms}|{ms}[x{e}];'
+        fc += (''.join(f'[x{e}]' for e in range(len(events))) + f'amix=inputs={len(events)}:normalize=0[fx];'
+               f'[vo][mu][fx]amix=inputs=3:normalize=0,alimiter=limit=0.95,atrim=0:{total:.2f}[a]')
         mix = outd / f'mix-{lang}.wav'
         subprocess.run(['ffmpeg', '-y', '-v', 'error', *inputs, '-filter_complex', fc, '-map', '[a]', '-ar', '48000', '-ac', '2',
                         str(mix)], check=True)
