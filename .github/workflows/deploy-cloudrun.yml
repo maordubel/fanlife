@@ -3,7 +3,8 @@ name: Deploy · Cloud Run
 # FAN LIFE runs on Google Cloud Run (scales to zero, 2 GB) behind a Cloudflare Worker, since Vercel's Hobby CPU cap
 # shut it off on 10.11.2026. GitHub builds the site, packs it into a container and deploys it. No key is stored
 # anywhere: GitHub proves who it is to Google (OIDC, keyless), and deploy/cloudrun/target.json says where to go.
-# The server's secrets live only in the Cloud Run service (Console → Cloud Run → fanlife → Edit → Variables & secrets).
+# The server keys come from this repository's own secrets and go only to the owner's Cloud Run service (owner's
+# approval, 11.11.2026), so the cron, social and Telegram jobs that call the site keep the keys they already use.
 
 on:
   push:
@@ -75,13 +76,35 @@ jobs:
           docker build -t "$IMG" deploy/cloudrun
           docker push "$IMG"
           echo "image=$IMG" >> "$GITHUB_OUTPUT"
+      - name: Server keys
+        if: steps.cfg.outputs.ready == 'true'
+        env:
+          CRON_SECRET: ${{ secrets.FAN_LIFE_CRON_SECRET }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_WEBHOOK_SECRET: ${{ secrets.TELEGRAM_WEBHOOK_SECRET }}
+          TELEGRAM_APP_URL: ${{ secrets.TELEGRAM_APP_URL }}
+          THESPORTSDB_KEY: ${{ secrets.THESPORTSDB_KEY }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          FAN_LIFE_ADMIN_KEY: ${{ secrets.FAN_LIFE_ADMIN_KEY }}
+        run: |
+          python3 - <<'PY2'
+          import os
+          names = ['CRON_SECRET','TELEGRAM_BOT_TOKEN','TELEGRAM_WEBHOOK_SECRET','TELEGRAM_APP_URL','THESPORTSDB_KEY','SUPABASE_SERVICE_ROLE_KEY','FAN_LIFE_ADMIN_KEY']
+          have = [n for n in names if os.environ.get(n)]
+          arg = ('^##^' + '##'.join(n + '=' + os.environ[n] for n in have)) if have else ''
+          open(os.environ['RUNNER_TEMP'] + '/envs', 'w').write(arg)
+          print('server keys:', ', '.join(have) or 'none')
+          PY2
       - name: Deploy
         if: steps.cfg.outputs.ready == 'true'
         run: |
+          EXTRA=()
+          ENVS="$(cat "$RUNNER_TEMP/envs")"
+          [ -n "$ENVS" ] && EXTRA=(--update-env-vars "$ENVS")
           gcloud run deploy "${{ steps.cfg.outputs.service }}" \
             --project "${{ steps.cfg.outputs.project }}" --region "${{ steps.cfg.outputs.region }}" \
             --image "${{ steps.img.outputs.image }}" --port 8080 --memory 2Gi --cpu 1 \
-            --min-instances 0 --max-instances 3 --concurrency 40 --timeout 60 \
-            --no-invoker-iam-check --quiet
+            --min-instances 0 --max-instances 3 --concurrency 40 --timeout 300 \
+            --no-invoker-iam-check "${EXTRA[@]}" --quiet
           URL=$(gcloud run services describe "${{ steps.cfg.outputs.service }}" --project "${{ steps.cfg.outputs.project }}" --region "${{ steps.cfg.outputs.region }}" --format 'value(status.url)')
           echo "::notice title=Cloud Run::$URL"
