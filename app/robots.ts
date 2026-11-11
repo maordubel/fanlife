@@ -12,7 +12,13 @@ import { SITE_URL } from '@/lib/brand'
  */
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: { userAgent: '*', allow: '/', disallow: ['/qa/', '/master/', '/api/'] },
+    // A URL with a query (?event= for each of thousands of archive entries, ?seed=, ?q=, ?lang=) is the same page as
+    // the one without it: crawling every variant rendered the whole archive again each time and spent the Vercel
+    // budget (the deployment was paused on 10.11.2026). Aggressive scrapers that send no visitors are refused outright.
+    rules: [
+      { userAgent: '*', allow: '/', disallow: ['/qa/', '/master/', '/api/', '/*?'] },
+      { userAgent: ['Bytespider', 'PetalBot', 'CCBot', 'AhrefsBot', 'SemrushBot', 'MJ12bot', 'DotBot', 'DataForSeoBot'], disallow: '/' },
+    ],
     sitemap: `${SITE_URL}/sitemap.xml`,
   }
 }
