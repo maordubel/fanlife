@@ -1,46 +1,329 @@
 {
-  "schemaVersion": 1,
-  "id": "hapoel-tel-aviv-good-morning",
-  "club": "hapoel-tel-aviv",
-  "series": "Football Fairy Tales",
-  "title": {"en": "Good Morning, Hapoel Tel Aviv", "he": "בוקר טוב, הפועל תל אביב"},
-  "voice": {"en": "Leda", "he": "Leda", "chosen": "owner, 11.11.2026"},
-  "shots": [
-    {"id": "cold-open", "plate": "town", "delivery": "secret",
-     "en": "For almost a hundred years, everyone believed Hapoel Tel Aviv was born in 1927. Everyone… was wrong.",
-     "he": "כמעט מאה שנה, כולם היו בטוחים שהפועל תל אביב נולדה באלף תשע מאות עשרים ושבע. כולם… טעו.",
-     "sources": ["packs/hapoel-tel-aviv.json goodMorning.coldOpen"]},
-    {"id": "card-no-2", "plate": "medallion", "delivery": "bright",
-     "en": "Then researchers found an old membership card. Card number two — issued in October 1923. And in 2015, the club put the true year on its crest.",
-     "he": "ואז חוקרים מצאו כרטיס חבר ישן. כרטיס מספר שתיים — שהונפק באוקטובר אלף תשע מאות עשרים ושלוש. ובאלפיים וחמש עשרה, המועדון שם את השנה האמיתית על הסמל שלו.",
-     "sources": ["Sport1 / Maariv 12.6.2015 https://sport1.maariv.co.il/israeli-soccer/ligat-haal/Article-728080/", "docs/04-verified-research.md #9"]},
-    {"id": "workers", "plate": "workers", "delivery": "warm",
-     "en": "It was a workers' club, born in the labour sports movement of the 1920s. Before it was anything else, it belonged to working people.",
-     "he": "זה היה מועדון של פועלים, שנולד בתנועת הספורט של הפועלים בשנות העשרים. לפני שהוא היה כל דבר אחר, הוא היה שייך לאנשים עובדים.",
-     "sources": ["club-packs/hapoel-tel-aviv/world.json founded"]},
-    {"id": "trophies", "plate": "trophies", "delivery": "bright",
-     "en": "Since then: thirteen league titles. Sixteen State Cups. And one cup from far away — in 1967, Hapoel Tel Aviv became the very first club champions of Asia.",
-     "he": "ומאז: שלוש עשרה אליפויות. שש עשרה גביעי מדינה. וגביע אחד מרחוק — באלף תשע מאות שישים ושבע, הפועל תל אביב הייתה אלופת המועדונים הראשונה של אסיה.",
-     "sources": ["content/manual/trophies.json (13 league, 16 State Cup, 1 Asian Champion Club Tournament 1967/68)", "https://en.wikipedia.org/wiki/1967_Asian_Champion_Club_Tournament"]},
-    {"id": "europe", "plate": "europe", "delivery": "adventure",
-     "en": "In 2001, Hapoel went on an adventure across Europe. At Bloomfield they beat Chelsea, two–nil. Then Lokomotiv Moscow. Then Parma, in Italy. Only Milan stopped them — in the quarter-final.",
-     "he": "באלפיים ואחת, הפועל יצאה להרפתקה באירופה. בבלומפילד היא ניצחה את צ'לסי, שתיים–אפס. אחר כך את לוקומוטיב מוסקבה. אחר כך את פארמה, באיטליה. רק מילאן עצרה אותה — ברבע הגמר.",
-     "sources": ["content/manual/euro-ties.json 2001-uefa-r2-chelsea, -r3-lokomotiv, -r4-parma, -qf-milan"]},
-    {"id": "the-92nd-minute", "plate": "hero", "delivery": "build",
-     "en": "On the fifteenth of May 2010 — the last day of the season, the ninety-second minute — a young striker from the club's own youth team, Eran Zahavi, scored. And Hapoel were champions.",
-     "he": "בחמישה עשר במאי אלפיים ועשר — היום האחרון של העונה, הדקה התשעים ושתיים — חלוץ צעיר ממחלקת הנוער של המועדון, ערן זהבי, כבש. והפועל הייתה אלופה.",
-     "sources": ["content/manual/goals.json championship-2010-zahavi-92", "content/manual/enemies.json zahavi (youth team)"]},
-    {"id": "across-the-road", "plate": "road", "delivery": "warm",
-     "en": "Years later, he played for the club across the city. Football is like that. But that night still belongs to everyone who was there.",
-     "he": "שנים אחר כך, הוא שיחק במועדון שבצד השני של העיר. ככה זה בכדורגל. אבל הלילה ההוא עדיין שייך לכל מי שהיה שם.",
-     "sources": ["content/manual/grievances.json zahavi-palermo (Palermo 2011, Maccabi Tel Aviv 2013)"], "framing": "friendly — owner, 11.11.2026"},
-    {"id": "gate-5", "plate": "gate5", "delivery": "bright",
-     "en": "And at every home game, at one end of Bloomfield, there's Gate 5 — where the loudest supporters stand.",
-     "he": "ובכל משחק בית, בקצה אחד של בלומפילד, יש את שער חמש — המקום שבו עומדים האוהדים הכי רועשים.",
-     "sources": ["club-packs/hapoel-tel-aviv/world.json terrace"]},
-    {"id": "good-morning", "plate": "book-close", "delivery": "close",
-     "en": "So, good morning from Hapoel Tel Aviv. A hundred and three years old… and four years older than everyone thought.",
-     "he": "אז בוקר טוב מהפועל תל אביב. בת מאה ושלוש… וגדולה בארבע שנים ממה שכולם חשבו.",
-     "sources": ["1923 → 2026; 1923 vs 1927"]}
-  ]
+ "schemaVersion": 1,
+ "id": "hapoel-tel-aviv-good-morning",
+ "club": "hapoel-tel-aviv",
+ "series": "Football Fairy Tales",
+ "title": {
+  "en": "Good Morning, Hapoel Tel Aviv",
+  "he": "בוקר טוב, הפועל תל אביב"
+ },
+ "voice": {
+  "en": "Leda",
+  "he": "Leda",
+  "chosen": "owner, 11.11.2026"
+ },
+ "shots": [
+  {
+   "id": "cold-open",
+   "plate": "town",
+   "delivery": "secret",
+   "en": "For almost a hundred years, everyone believed Hapoel Tel Aviv was born in 1927. Everyone… was wrong.",
+   "he": "כמעט מאה שנה, כולם היו בטוחים שהפועל תל אביב נולדה באלף תשע מאות עשרים ושבע. כולם… טעו.",
+   "sources": [
+    "packs/hapoel-tel-aviv.json goodMorning.coldOpen"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.09
+    ],
+    "centre": [
+     0.6,
+     0.44
+    ],
+    "crests": [
+     {
+      "crest": "1927",
+      "at": 0.32,
+      "xy": [
+       330,
+       330
+      ],
+      "size": 330
+     }
+    ]
+   }
+  },
+  {
+   "id": "card-no-2",
+   "plate": "card",
+   "delivery": "bright",
+   "en": "Then researchers found an old membership card. Card number two — issued in October 1923. And in 2015, the club put the true year on its crest.",
+   "he": "ואז חוקרים מצאו כרטיס חבר ישן. כרטיס מספר שתיים — שהונפק באוקטובר אלף תשע מאות עשרים ושלוש. ובאלפיים וחמש עשרה, המועדון שם את השנה האמיתית על הסמל שלו.",
+   "sources": [
+    "Sport1 / Maariv 12.6.2015 https://sport1.maariv.co.il/israeli-soccer/ligat-haal/Article-728080/",
+    "docs/04-verified-research.md #9"
+   ],
+   "visual": {
+    "tags": [
+     {
+      "text": "No. 2",
+      "at": 0.22,
+      "xy": [
+       1480,
+       300
+      ],
+      "size": 96
+     },
+     {
+      "text": "OCT 1923",
+      "at": 0.4,
+      "xy": [
+       1480,
+       520
+      ],
+      "size": 76
+     }
+    ],
+    "crests": [
+     {
+      "crest": "1927",
+      "at": 0.58,
+      "xy": [
+       460,
+       540
+      ],
+      "size": 400,
+      "flipTo": "1923",
+      "flipAt": 0.78
+     }
+    ],
+    "confettiAt": 0.82
+   }
+  },
+  {
+   "id": "workers",
+   "plate": "workers",
+   "delivery": "warm",
+   "en": "It was a workers' club, born in the labour sports movement of the 1920s. Before it was anything else, it belonged to working people.",
+   "he": "זה היה מועדון של פועלים, שנולד בתנועת הספורט של הפועלים בשנות העשרים. לפני שהוא היה כל דבר אחר, הוא היה שייך לאנשים עובדים.",
+   "sources": [
+    "club-packs/hapoel-tel-aviv/world.json founded"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.05
+    ],
+    "tags": [
+     {
+      "text": "1920s",
+      "at": 0.3,
+      "xy": [
+       300,
+       230
+      ],
+      "size": 80
+     }
+    ]
+   }
+  },
+  {
+   "id": "trophies",
+   "plate": "trophies",
+   "delivery": "bright",
+   "en": "Since then: thirteen league titles. Sixteen State Cups. And one cup from far away — in 1967, Hapoel Tel Aviv became the very first club champions of Asia.",
+   "he": "ומאז: שלוש עשרה אליפויות. שש עשרה גביעי מדינה. וגביע אחד מרחוק — באלף תשע מאות שישים ושבע, הפועל תל אביב הייתה אלופת המועדונים הראשונה של אסיה.",
+   "sources": [
+    "content/manual/trophies.json (13 league, 16 State Cup, 1 Asian Champion Club Tournament 1967/68)",
+    "https://en.wikipedia.org/wiki/1967_Asian_Champion_Club_Tournament"
+   ],
+   "visual": {
+    "tags": [
+     {
+      "text": "13",
+      "sub": "LEAGUE TITLES",
+      "at": 0.14,
+      "xy": [
+       300,
+       290
+      ],
+      "size": 120
+     },
+     {
+      "text": "16",
+      "sub": "STATE CUPS",
+      "at": 0.32,
+      "xy": [
+       300,
+       640
+      ],
+      "size": 120
+     },
+     {
+      "text": "1967",
+      "sub": "CHAMPIONS OF ASIA",
+      "at": 0.58,
+      "xy": [
+       1600,
+       300
+      ],
+      "size": 110
+     }
+    ]
+   }
+  },
+  {
+   "id": "europe",
+   "plate": "europe",
+   "delivery": "adventure",
+   "en": "In 2001, Hapoel went on an adventure across Europe. At Bloomfield they beat Chelsea, two–nil. Then Lokomotiv Moscow. Then Parma, in Italy. Only Milan stopped them — in the quarter-final.",
+   "he": "באלפיים ואחת, הפועל יצאה להרפתקה באירופה. בבלומפילד היא ניצחה את צ'לסי, שתיים–אפס. אחר כך את לוקומוטיב מוסקבה. אחר כך את פארמה, באיטליה. רק מילאן עצרה אותה — ברבע הגמר.",
+   "sources": [
+    "content/manual/euro-ties.json 2001-uefa-r2-chelsea, -r3-lokomotiv, -r4-parma, -qf-milan"
+   ],
+   "visual": {
+    "tags": [
+     {
+      "text": "CHELSEA",
+      "sub": "2 – 0",
+      "at": 0.2,
+      "xy": [
+       380,
+       250
+      ],
+      "size": 70
+     },
+     {
+      "text": "LOKOMOTIV MOSCOW",
+      "at": 0.38,
+      "xy": [
+       1480,
+       250
+      ],
+      "size": 56
+     },
+     {
+      "text": "PARMA",
+      "at": 0.52,
+      "xy": [
+       460,
+       830
+      ],
+      "size": 70
+     },
+     {
+      "text": "MILAN",
+      "sub": "QUARTER-FINAL",
+      "at": 0.7,
+      "xy": [
+       1480,
+       830
+      ],
+      "size": 70
+     }
+    ]
+   }
+  },
+  {
+   "id": "the-92nd-minute",
+   "plate": "hero",
+   "delivery": "build",
+   "en": "On the fifteenth of May 2010 — the last day of the season, the ninety-second minute — a young striker from the club's own youth team, Eran Zahavi, scored. And Hapoel were champions.",
+   "he": "בחמישה עשר במאי אלפיים ועשר — היום האחרון של העונה, הדקה התשעים ושתיים — חלוץ צעיר ממחלקת הנוער של המועדון, ערן זהבי, כבש. והפועל הייתה אלופה.",
+   "sources": [
+    "content/manual/goals.json championship-2010-zahavi-92",
+    "content/manual/enemies.json zahavi (youth team)"
+   ],
+   "visual": {
+    "tags": [
+     {
+      "text": "15 · 5 · 2010",
+      "at": 0.22,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 64
+     },
+     {
+      "text": "92'",
+      "at": 0.5,
+      "xy": [
+       1560,
+       250
+      ],
+      "size": 130
+     }
+    ],
+    "confettiAt": 0.8
+   }
+  },
+  {
+   "id": "across-the-road",
+   "plate": "road",
+   "delivery": "warm",
+   "en": "Years later, he played for the club across the city. Football is like that. But that night still belongs to everyone who was there.",
+   "he": "שנים אחר כך, הוא שיחק במועדון שבצד השני של העיר. ככה זה בכדורגל. אבל הלילה ההוא עדיין שייך לכל מי שהיה שם.",
+   "sources": [
+    "content/manual/grievances.json zahavi-palermo (Palermo 2011, Maccabi Tel Aviv 2013)"
+   ],
+   "framing": "friendly — owner, 11.11.2026",
+   "visual": {
+    "push": [
+     1.0,
+     1.04
+    ]
+   }
+  },
+  {
+   "id": "gate-5",
+   "plate": "gate5",
+   "delivery": "bright",
+   "en": "And at every home game, at one end of Bloomfield, there's Gate 5 — where the loudest supporters stand.",
+   "he": "ובכל משחק בית, בקצה אחד של בלומפילד, יש את שער חמש — המקום שבו עומדים האוהדים הכי רועשים.",
+   "sources": [
+    "club-packs/hapoel-tel-aviv/world.json terrace"
+   ],
+   "visual": {
+    "tags": [
+     {
+      "text": "5",
+      "sub": "GATE",
+      "at": 0.35,
+      "xy": [
+       1640,
+       300
+      ],
+      "size": 200,
+      "rot": -4
+     }
+    ]
+   }
+  },
+  {
+   "id": "good-morning",
+   "plate": "book-close",
+   "delivery": "close",
+   "en": "So, good morning from Hapoel Tel Aviv. A hundred and three years old… and four years older than everyone thought.",
+   "he": "אז בוקר טוב מהפועל תל אביב. בת מאה ושלוש… וגדולה בארבע שנים ממה שכולם חשבו.",
+   "sources": [
+    "1923 → 2026; 1923 vs 1927"
+   ],
+   "visual": {
+    "extra": 2.6,
+    "crests": [
+     {
+      "crest": "1923",
+      "at": 0.12,
+      "xy": [
+       960,
+       350
+      ],
+      "size": 360
+     }
+    ],
+    "wordmarkAt": 0.5,
+    "wordmarkTag": "Good Morning, Hapoel Tel Aviv"
+   }
+  }
+ ],
+ "palette": {
+  "primary": "#B02D10",
+  "secondary": "#F6F0E4"
+ },
+ "crests": {
+  "1927": "public/brand/crests/circle-1927.png",
+  "1923": "public/brand/crests/circle-1923.png"
+ }
 }
