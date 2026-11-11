@@ -74,8 +74,11 @@ class Source:
     @property
     def frames(self) -> list[Image.Image]:
         if self._frames is None:
-            mp4, jpg = self.work / f'{self.plate}.mp4', self.work / f'{self.plate}.jpg'
+            name, _, mode = self.plate.partition(':')                  # 'book-close:rev' plays a clip backwards
+            mp4, jpg = self.work / f'{name}.mp4', self.work / f'{name}.jpg'
             self._frames = clip_frames(mp4) if mp4.exists() else [Image.open(jpg).convert('RGB')]
+            if mode == 'rev':
+                self._frames.reverse()
             length = len(self._frames) / FPS
             self.speed = 1.0 if len(self._frames) == 1 else max(min(1.0, length / max(self.dur, 0.1)), self.floor)
         return self._frames
@@ -88,8 +91,14 @@ class Source:
         ts = pt.stepped(t)                                            # on twos
         k = min(int(ts * self.speed * FPS), len(frames) - 1)
         rng = random.Random(self.seed * 1000 + int(ts * 12))
-        z = push[0] + (push[1] - push[0]) * pt.ease(t / max(self.dur, 0.1))
-        return lens(frames[k], z, *centre, dx=rng.uniform(-1.1, 1.1), dy=rng.uniform(-0.9, 0.9))
+        u = pt.ease(t / max(self.dur, 0.1))
+        z = push[0] + (push[1] - push[0]) * u
+        cx, cy = centre
+        if len(frames) == 1:                                          # a still drifts as well as pushes: a camera on a slider
+            z += 0.04
+            cx += 0.07 * (u - 0.5) * (1 if self.seed % 2 else -1)
+            cy += 0.02 * (0.5 - u)
+        return lens(frames[k], z, cx, cy, dx=rng.uniform(-1.1, 1.1), dy=rng.uniform(-0.9, 0.9))
 
 
 def tag(img: Image.Image, t: float, text: str, xy: tuple[int, int], font: Path, size: int = 84, sub: str = '',
