@@ -1,0 +1,1509 @@
+{
+ "episode": "hapoel-tel-aviv-good-morning",
+ "models": [
+  "gemini-3.8-flash-tts",
+  "gemini-3.8-flash-lite-tts"
+ ],
+ "takes": [
+  {
+   "shot": "cold-open",
+   "lang": "en",
+   "voice": "Leda",
+   "file": "cold-open-en.wav",
+   "model": "gemini-3.8-flash-tts",
+   "seconds": 8.97,
+   "check": {
+    "ok": true,
+    "matched": 1.0,
+    "added": 0.0,
+    "heard": "for almost a hundred years everyone believed hapoel tel aviv was born in 1927 everyone was wrong"
+   },
+   "words": [
+    {
+     "w": "For",
+     "start": 0.0,
+     "end": 0.36
+    },
+    {
+     "w": "almost",
+     "start": 0.36,
+     "end": 0.8
+    },
+    {
+     "w": "a",
+     "start": 0.8,
+     "end": 1.06
+    },
+    {
+     "w": "hundred",
+     "start": 1.06,
+     "end": 1.42
+    },
+    {
+     "w": "years,",
+     "start": 1.42,
+     "end": 1.86
+    },
+    {
+     "w": "everyone",
+     "start": 2.16,
+     "end": 2.44
+    },
+    {
+     "w": "believed",
+     "start": 2.44,
+     "end": 2.84
+    },
+    {
+     "w": "Hapoel",
+     "start": 2.84,
+     "end": 3.4
+    },
+    {
+     "w": "Tel",
+     "start": 3.4,
+     "end": 3.58
+    },
+    {
+     "w": "Aviv",
+     "start": 3.58,
+     "end": 3.8
+    },
+    {
+     "w": "was",
+     "start": 3.8,
+     "end": 4.08
+    },
+    {
+     "w": "born",
+     "start": 4.08,
+     "end": 4.3
+    },
+    {
+     "w": "in",
+     "start": 4.3,
+     "end": 4.5
+    },
+    {
+     "w": "1927.",
+     "start": 4.5,
+     "end": 5.34
+    },
+    {
+     "w": "Everyone…",
+     "start": 6.18,
+     "end": 6.56
+    },
+    {
+     "w": "was",
+     "start": 7.34,
+     "end": 7.7
+    },
+    {
+     "w": "wrong.",
+     "start": 7.7,
+     "end": 8.06
+    }
+   ],
+   "tries": [
+    {
+     "model": "gemini-3.8-flash-tts",
+     "ok": true,
+     "matched": 1.0,
+     "added": 0.0,
+     "heard": "for almost a hundred years everyone believed hapoel tel aviv was born in 1927 everyone was wrong"
+    }
+   ]
+  },
+  {
+   "shot": "cold-open",
+   "lang": "he",
+   "voice": "Leda",
+   "file": "cold-open-he.wav",
+   "model": "gemini-3.8-flash-tts",
+   "seconds": 8.25,
+   "check": {
+    "ok": true,
+    "ratio": 0.765,
+    "length": 0.716,
+    "heard": " כמעט מאה שנה, כולם היו בטוחים שהפולט אליויב נולדה ב-1927, כולם טעו."
+   },
+   "words": null,
+   "tries": [
+    {
+     "model": "gemini-3.8-flash-tts",
+     "ok": true,
+     "ratio": 0.765,
+     "length": 0.716,
+     "heard": " כמעט מאה שנה, כולם היו בטוחים שהפולט אליויב נולדה ב-1927, כולם טעו."
+    }
+   ]
+  },
+  {
+   "shot": "card-no-2",
+   "lang": "en",
+   "voice": "Leda",
+   "file": "card-no-2-en.wav",
+   "model": "gemini-3.8-flash-tts",
+   "seconds": 13.85,
+   "check": {
+    "ok": true,
+    "matched": 0.9629629629629629,
+    "added": 0.0,
+    "heard": "then researchers found an old membership card card number two issued in october 1923 and in 2015 the club put the true year on its crest"
+   },
+   "words": [
+    {
+     "w": "Then",
+     "start": 0.0,
+     "end": 0.7
+    },
+    {
+     "w": "researchers",
+     "start": 1.14,
+     "end": 1.46
+    },
+    {
+     "w": "found",
+     "start": 1.46,
+     "end": 1.9
+    },
+    {
+     "w": "an",
+     "start": 1.9,
+     "end": 2.18
+    },
+    {
+     "w": "old",
+     "start": 2.18,
+     "end": 2.62
+    },
+    {
+     "w": "membership",
+     "start": 2.62,
+     "end": 3.04
+    },
+    {
+     "w": "card.",
+     "start": 3.04,
+     "end": 3.56
+    },
+    {
+     "w": "Card",
+     "start": 4.4,
+     "end": 4.54
+    },
+    {
+     "w": "number",
+     "start": 4.54,
+     "end": 5.08
+    },
+    {
+     "w": "two",
+     "start": 5.08,
+     "end": 5.8
+    },
+    {
+     "w": "—",
+     "start": 5.8,
+     "end": 6.01
+    },
+    {
+     "w": "issued",
+     "start": 6.22,
+     "end": 6.5
+    },
+    {
+     "w": "in",
+     "start": 6.5,
+     "end": 6.76
+    },
+    {
+     "w": "October",
+     "start": 6.76,
+     "end": 7.18
+    },
+    {
+     "w": "1923.",
+     "start": 7.18,
+     "end": 8.42
+    },
+    {
+     "w": "And",
+     "start": 9.1,
+     "end": 9.2
+    },
+    {
+     "w": "in",
+     "start": 9.2,
+     "end": 9.32
+    },
+    {
+     "w": "2015,",
+     "start": 9.32,
+     "end": 9.86
+    },
+    {
+     "w": "the",
+     "start": 10.48,
+     "end": 10.58
+    },
+    {
+     "w": "club",
+     "start": 10.58,
+     "end": 10.88
+    },
+    {
+     "w": "put",
+     "start": 10.88,
+     "end": 11.24
+    },
+    {
+     "w": "the",
+     "start": 11.24,
+     "end": 11.44
+    },
+    {
+     "w": "true",
+     "start": 11.44,
+     "end": 11.9
+    },
+    {
+     "w": "year",
+     "start": 11.9,
+     "end": 12.28
+    },
+    {
+     "w": "on",
+     "start": 12.28,
+     "end": 12.52
+    },
+    {
+     "w": "its",
+     "start": 12.52,
+     "end": 12.68
+    },
+    {
+     "w": "crest.",
+     "start": 12.68,
+     "end": 12.9
+    }
+   ],
+   "tries": [
+    {
+     "model": "gemini-3.8-flash-tts",
+     "ok": true,
+     "matched": 0.9629629629629629,
+     "added": 0.0,
+     "heard": "then researchers found an old membership card card number two issued in october 1923 and in 2015 the club put the true year on its crest"
+    }
+   ]
+  },
+  {
+   "shot": "card-no-2",
+   "lang": "he",
+   "voice": "Leda",
+   "file": "card-no-2-he.wav",
+   "model": "gemini-3.8-flash-tts",
+   "seconds": 12.89,
+   "check": {
+    "ok": true,
+    "ratio": 0.792,
+    "length": 0.697,
+    "heard": " ואז, חוקרים מצאו קרטיס חבר ישן, קרטיס מספר שתיים, שונפק באוקטובר 1923.  וב-2015, המועדון שם את השנה רמיתית על הסמל שלו."
+   },
+   "words": null,
+   "tries": [
+    {
+     "model": "gemini-3.8-flash-tts",
+     "ok": true,
+     "ratio": 0.792,
+     "length": 0.697,
+     "heard": " ואז, חוקרים מצאו קרטיס חבר ישן, קרטיס מספר שתיים, שונפק באוקטובר 1923.  וב-2015, המועדון שם את השנה רמיתית על הסמל שלו."
+    }
+   ]
+  },
+  {
+   "shot": "workers",
+   "lang": "en",
+   "voice": "Leda",
+   "file": "workers-en.wav",
+   "model": "gemini-3.8-flash-tts",
+   "seconds": 8.53,
+   "check": {
+    "ok": true,
+    "matched": 1.0,
+    "added": 0.0,
+    "heard": "it was a workers club born in the labour sports movement of the 1920s before it was anything else it belonged to working people it was a workers club born in the labour sports movement of the 1920s before it was anything else it belonged to working people"
+   },
+   "words": [
+    {
+     "w": "It",
+     "start": 0.0,
+     "end": 0.4
+    },
+    {
+     "w": "was",
+     "start": 0.4,
+     "end": 0.54
+    },
+    {
+     "w": "a",
+     "start": 0.54,
+     "end": 0.68
+    },
+    {
+     "w": "workers'",
+     "start": 0.68,
+     "end": 1.1
+    },
+    {
+     "w": "club,",
+     "start": 1.1,
+     "end": 1.48
+    },
+    {
+     "w": "born",
+     "start": 1.86,
+     "end": 1.94
+    },
+    {
+     "w": "in",
+     "start": 1.94,
+     "end": 2.26
+    },
+    {
+     "w": "the",
+     "start": 2.26,
+     "end": 2.4
+    },
+    {
+     "w": "labour",
+     "start": 2.4,
+     "end": 2.62
+    },
+    {
+     "w": "sports",
+     "start": 2.62,
+     "end": 3.04
+    },
+    {
+     "w": "movement",
+     "start": 3.04,
+     "end": 3.36
+    },
+    {
+     "w": "of",
+     "start": 3.36,
+     "end": 3.62
+    },
+    {
+     "w": "the",
+     "start": 3.62,
+     "end": 3.74
+    },
+    {
+     "w": "1920s.",
+     "start": 3.74,
+     "end": 4.82
+    },
+    {
+     "w": "Before",
+     "start": 5.16,
+     "end": 5.24
+    },
+    {
+     "w": "it",
+     "start": 5.24,
+     "end": 5.44
+    },
+    {
+     "w": "was",
+     "start": 5.44,
+     "end": 5.56
+    },
+    {
+     "w": "anything",
+     "start": 5.56,
+     "end": 5.86
+    },
+    {
+     "w": "else,",
+     "start": 5.86,
+     "end": 6.24
+    },
+    {
+     "w": "it",
+     "start": 6.46,
+     "end": 6.6
+    },
+    {
+     "w": "belonged",
+     "start": 6.6,
+     "end": 6.96
+    },
+    {
+     "w": "to",
+     "start": 6.96,
+     "end": 7.3
+    },
+    {
+     "w": "working",
+     "start": 7.3,
+     "end": 7.7
+    },
+    {
+     "w": "people.",
+     "start": 7.7,
+     "end": 8.18
+    }
+   ],
+   "tries": [
+    {
+     "model": "gemini-3.8-flash-tts",
+     "ok": true,
+     "matched": 1.0,
+     "added": 0.0,
+     "heard": "it was a workers club born in the labour sports movement of the 1920s before it was anything else it belonged to working people it was a workers club born in the labour sports movement of the 1920s before it was anything else it belonged to working people"
+    }
+   ]
+  },
+  {
+   "shot": "workers",
+   "lang": "he",
+   "voice": "Leda",
+   "file": "workers-he.wav",
+   "model": "gemini-3.8-flash-tts",
+   "seconds": 9.33,
+   "check": {
+    "ok": true,
+    "ratio": 0.974,
+    "length": 0.948,
+    "heard": " זה היה מועדון של פועלים, שנולד בתנועת הספורט של הפועלים בשנות ה-20.  לפני שהוא היה כל דבר אחר, הוא היה שייך לאנשים עובדים."
+   },
+   "words": null,
+   "tries": [
+    {
+     "model": "gemini-3.8-flash-tts",
+     "ok": true,
+     "ratio": 0.974,
+     "length": 0.948,
+     "heard": " זה היה מועדון של פועלים, שנולד בתנועת הספורט של הפועלים בשנות ה-20.  לפני שהוא היה כל דבר אחר, הוא היה שייך לאנשים עובדים."
+    }
+   ]
+  },
+  {
+   "shot": "trophies",
+   "lang": "en",
+   "voice": "Leda",
+   "file": "trophies-en.wav",
+   "model": "gemini-3.8-flash-tts",
+   "seconds": 14.81,
+   "check": {
+    "ok": true,
+    "matched": 0.8928571428571429,
+    "added": 0.0,
+    "heard": "since then 13 league titles 16 state cups and one cup from far away in 1967 apple tel aviv became the very first club champions of asia"
+   },
+   "words": [
+    {
+     "w": "Since",
+     "start": 0.0,
+     "end": 0.58
+    },
+    {
+     "w": "then:",
+     "start": 0.58,
+     "end": 1.04
+    },
+    {
+     "w": "thirteen",
+     "start": 1.6,
+     "end": 2.0
+    },
+    {
+     "w": "league",
+     "start": 2.0,
+     "end": 2.34
+    },
+    {
+     "w": "titles.",
+     "start": 2.34,
+     "end": 2.86
+    },
+    {
+     "w": "Sixteen",
+     "start": 3.36,
+     "end": 3.82
+    },
+    {
+     "w": "State",
+     "start": 3.82,
+     "end": 4.24
+    },
+    {
+     "w": "Cups.",
+     "start": 4.24,
+     "end": 4.54
+    },
+    {
+     "w": "And",
+     "start": 4.54,
+     "end": 5.26
+    },
+    {
+     "w": "one",
+     "start": 5.26,
+     "end": 5.8
+    },
+    {
+     "w": "cup",
+     "start": 5.8,
+     "end": 6.18
+    },
+    {
+     "w": "from",
+     "start": 6.18,
+     "end": 6.6
+    },
+    {
+     "w": "far",
+     "start": 6.6,
+     "end": 6.94
+    },
+    {
+     "w": "away",
+     "start": 6.94,
+     "end": 7.3
+    },
+    {
+     "w": "—",
+     "start": 7.3,
+     "end": 7.67
+    },
+    {
+     "w": "in",
+     "start": 8.04,
+     "end": 8.16
+    },
+    {
+     "w": "1967,",
+     "start": 8.16,
+     "end": 9.04
+    },
+    {
+     "w": "Hapoel",
+     "start": 9.78,
+     "end": 9.98
+    },
+    {
+     "w": "Tel",
+     "start": 9.98,
+     "end": 10.2
+    },
+    {
+     "w": "Aviv",
+     "start": 10.2,
+     "end": 10.48
+    },
+    {
+     "w": "became",
+     "start": 10.48,
+     "end": 10.88
+    },
+    {
+     "w": "the",
+     "start": 10.88,
+     "end": 11.1
+    },
+    {
+     "w": "very",
+     "start": 11.1,
+     "end": 11.38
+    },
+    {
+     "w": "first",
+     "start": 11.38,
+     "end": 11.92
+    },
+    {
+     "w": "club",
+     "start": 11.92,
+     "end": 12.42
+    },
+    {
+     "w": "champions",
+     "start": 12.42,
+     "end": 13.1
+    },
+    {
+     "w": "of",
+     "start": 13.1,
+     "end": 13.52
+    },
+    {
+     "w": "Asia.",
+     "start": 13.52,
+     "end": 14.08
+    }
+   ],
+   "tries": [
+    {
+     "model": "gemini-3.8-flash-tts",
+     "ok": true,
+     "matched": 0.8928571428571429,
+     "added": 0.0,
+     "heard": "since then 13 league titles 16 state cups and one cup from far away in 1967 apple tel aviv became the very first club champions of asia"
+    }
+   ]
+  },
+  {
+   "shot": "trophies",
+   "lang": "he",
+   "voice": "Leda",
+   "file": "trophies-he.wav",
+   "model": "gemini-3.8-flash-tts",
+   "seconds": 14.45,
+   "check": {
+    "ok": true,
+    "ratio": 0.849,
+    "length": 0.83,
+    "heard": " ומאז, שלוש עשרה הליפויות, שש עשרה גבירים מדינה, וגבי האחד מרחוק, ב-1967, הפולטל אביב הייתה הלופת המועדונים הראשונה של אסיה."
+   },
+   "words": null,
+   "tries": [
+    {
+     "model": "gemini-3.8-flash-tts",
+     "ok": true,
+     "ratio": 0.849,
+     "length": 0.83,
+     "heard": " ומאז, שלוש עשרה הליפויות, שש עשרה גבירים מדינה, וגבי האחד מרחוק, ב-1967, הפולטל אביב הייתה הלופת המועדונים הראשונה של אסיה."
+    }
+   ]
+  },
+  {
+   "shot": "europe",
+   "lang": "en",
+   "voice": "Leda",
+   "file": "europe-en.wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "seconds": 15.81,
+   "check": {
+    "ok": true,
+    "matched": 0.9333333333333333,
+    "added": 0.0,
+    "heard": "in 2001 hapol went on an adventure across europe at bloomfield they beat chelsea 2 0 then locomotive moscow then parma in italy only milan stopped them in the quarterfinal in 2001 hapol went on an adventure across europe at bloomfield they beat chelsea 2 0 then locomotive moscow then parma in italy only milan stopped them in the quarterfinal"
+   },
+   "words": [
+    {
+     "w": "In",
+     "start": 0.0,
+     "end": 0.5
+    },
+    {
+     "w": "2001,",
+     "start": 0.5,
+     "end": 1.44
+    },
+    {
+     "w": "Hapoel",
+     "start": 2.0,
+     "end": 2.28
+    },
+    {
+     "w": "went",
+     "start": 2.28,
+     "end": 2.54
+    },
+    {
+     "w": "on",
+     "start": 2.54,
+     "end": 2.76
+    },
+    {
+     "w": "an",
+     "start": 2.76,
+     "end": 2.92
+    },
+    {
+     "w": "adventure",
+     "start": 2.92,
+     "end": 3.46
+    },
+    {
+     "w": "across",
+     "start": 3.46,
+     "end": 3.94
+    },
+    {
+     "w": "Europe.",
+     "start": 3.94,
+     "end": 4.4
+    },
+    {
+     "w": "At",
+     "start": 4.98,
+     "end": 5.2
+    },
+    {
+     "w": "Bloomfield",
+     "start": 5.2,
+     "end": 5.7
+    },
+    {
+     "w": "they",
+     "start": 6.14,
+     "end": 6.16
+    },
+    {
+     "w": "beat",
+     "start": 6.16,
+     "end": 6.42
+    },
+    {
+     "w": "Chelsea,",
+     "start": 6.42,
+     "end": 7.02
+    },
+    {
+     "w": "two–nil.",
+     "start": 7.02,
+     "end": 7.76
+    },
+    {
+     "w": "Then",
+     "start": 8.42,
+     "end": 8.72
+    },
+    {
+     "w": "Lokomotiv",
+     "start": 8.72,
+     "end": 9.3
+    },
+    {
+     "w": "Moscow.",
+     "start": 9.3,
+     "end": 9.66
+    },
+    {
+     "w": "Then",
+     "start": 10.32,
+     "end": 10.48
+    },
+    {
+     "w": "Parma,",
+     "start": 10.48,
+     "end": 10.84
+    },
+    {
+     "w": "in",
+     "start": 10.84,
+     "end": 11.34
+    },
+    {
+     "w": "Italy.",
+     "start": 11.34,
+     "end": 11.7
+    },
+    {
+     "w": "Only",
+     "start": 12.42,
+     "end": 12.8
+    },
+    {
+     "w": "Milan",
+     "start": 12.8,
+     "end": 13.2
+    },
+    {
+     "w": "stopped",
+     "start": 13.2,
+     "end": 13.74
+    },
+    {
+     "w": "them",
+     "start": 13.74,
+     "end": 14.1
+    },
+    {
+     "w": "—",
+     "start": 14.1,
+     "end": 14.15
+    },
+    {
+     "w": "in",
+     "start": 14.1,
+     "end": 14.82
+    },
+    {
+     "w": "the",
+     "start": 14.82,
+     "end": 14.96
+    },
+    {
+     "w": "quarter-final.",
+     "start": 14.96,
+     "end": 15.46
+    }
+   ],
+   "tries": [
+    {
+     "model": "gemini-3.8-flash-tts",
+     "ok": false,
+     "matched": 0.9333333333333333,
+     "added": 1.0666666666666667,
+     "heard": "in 2001 hapuel went on an adventure across europe at bloomfield they beat chelsea 2 0 then locomotive moscow then parma in italy only milan stopped them in the quarter final in 2001 hapuel went on an adventure across europe at bloomfield they beat chelsea 2 0 then locomotive moscow then parma in italy only milan stopped them in the quarter final"
+    },
+    {
+     "model": "gemini-3.8-flash-lite-tts",
+     "ok": true,
+     "matched": 0.9333333333333333,
+     "added": 0.0,
+     "heard": "in 2001 hapol went on an adventure across europe at bloomfield they beat chelsea 2 0 then locomotive moscow then parma in italy only milan stopped them in the quarterfinal in 2001 hapol went on an adventure across europe at bloomfield they beat chelsea 2 0 then locomotive moscow then parma in italy only milan stopped them in the quarterfinal"
+    }
+   ]
+  },
+  {
+   "shot": "europe",
+   "lang": "he",
+   "voice": "Leda",
+   "file": "europe-he.wav",
+   "model": "gemini-3.8-flash-tts",
+   "seconds": 16.25,
+   "check": {
+    "ok": true,
+    "ratio": 0.941,
+    "length": 0.977,
+    "heard": " באלפיים ואחת, הפועל יצאה להרפתקה באירופה.  בבלום פילד היא נצחה את שלסי, שתיים אפס,  אחר כך את לוקמוטיב מוסקווה,  אחר כך את פרמה, באיטליה,  רק מילה נצרה אותה, ברבע הגמר."
+   },
+   "words": null,
+   "tries": [
+    {
+     "model": "gemini-3.8-flash-tts",
+     "ok": true,
+     "ratio": 0.941,
+     "length": 0.977,
+     "heard": " באלפיים ואחת, הפועל יצאה להרפתקה באירופה.  בבלום פילד היא נצחה את שלסי, שתיים אפס,  אחר כך את לוקמוטיב מוסקווה,  אחר כך את פרמה, באיטליה,  רק מילה נצרה אותה, ברבע הגמר."
+    }
+   ]
+  },
+  {
+   "shot": "the-92nd-minute",
+   "lang": "en",
+   "voice": "Leda",
+   "file": "the-92nd-minute-en.wav",
+   "model": "gemini-3.8-flash-tts",
+   "seconds": 15.25,
+   "check": {
+    "ok": true,
+    "matched": 0.8787878787878788,
+    "added": 0.0,
+    "heard": "on the 15th of may 2010 the last day of the season the 92nd minute a young striker from the clubs own youth team aranza javi scored and hapoel were champions"
+   },
+   "words": [
+    {
+     "w": "On",
+     "start": 0.0,
+     "end": 0.4
+    },
+    {
+     "w": "the",
+     "start": 0.4,
+     "end": 0.48
+    },
+    {
+     "w": "fifteenth",
+     "start": 0.48,
+     "end": 1.02
+    },
+    {
+     "w": "of",
+     "start": 1.02,
+     "end": 1.18
+    },
+    {
+     "w": "May",
+     "start": 1.18,
+     "end": 1.48
+    },
+    {
+     "w": "2010",
+     "start": 1.48,
+     "end": 2.5
+    },
+    {
+     "w": "—",
+     "start": 2.5,
+     "end": 2.86
+    },
+    {
+     "w": "the",
+     "start": 3.22,
+     "end": 3.24
+    },
+    {
+     "w": "last",
+     "start": 3.24,
+     "end": 3.58
+    },
+    {
+     "w": "day",
+     "start": 3.58,
+     "end": 3.88
+    },
+    {
+     "w": "of",
+     "start": 3.88,
+     "end": 3.98
+    },
+    {
+     "w": "the",
+     "start": 3.98,
+     "end": 4.12
+    },
+    {
+     "w": "season,",
+     "start": 4.12,
+     "end": 4.5
+    },
+    {
+     "w": "the",
+     "start": 4.84,
+     "end": 4.88
+    },
+    {
+     "w": "ninety-second",
+     "start": 4.88,
+     "end": 6.16
+    },
+    {
+     "w": "minute",
+     "start": 6.16,
+     "end": 6.54
+    },
+    {
+     "w": "—",
+     "start": 6.54,
+     "end": 6.84
+    },
+    {
+     "w": "a",
+     "start": 7.14,
+     "end": 7.28
+    },
+    {
+     "w": "young",
+     "start": 7.28,
+     "end": 7.52
+    },
+    {
+     "w": "striker",
+     "start": 7.52,
+     "end": 7.84
+    },
+    {
+     "w": "from",
+     "start": 7.84,
+     "end": 8.18
+    },
+    {
+     "w": "the",
+     "start": 8.18,
+     "end": 8.34
+    },
+    {
+     "w": "club's",
+     "start": 8.34,
+     "end": 8.64
+    },
+    {
+     "w": "own",
+     "start": 8.64,
+     "end": 8.98
+    },
+    {
+     "w": "youth",
+     "start": 8.98,
+     "end": 9.34
+    },
+    {
+     "w": "team,",
+     "start": 9.34,
+     "end": 9.68
+    },
+    {
+     "w": "Eran",
+     "start": 10.02,
+     "end": 10.35
+    },
+    {
+     "w": "Zahavi,",
+     "start": 10.35,
+     "end": 10.68
+    },
+    {
+     "w": "scored.",
+     "start": 11.2,
+     "end": 11.62
+    },
+    {
+     "w": "And",
+     "start": 12.36,
+     "end": 12.46
+    },
+    {
+     "w": "Hapoel",
+     "start": 12.46,
+     "end": 12.9
+    },
+    {
+     "w": "were",
+     "start": 12.9,
+     "end": 13.34
+    },
+    {
+     "w": "champions.",
+     "start": 13.34,
+     "end": 13.98
+    }
+   ],
+   "tries": [
+    {
+     "model": "gemini-3.8-flash-tts",
+     "ok": true,
+     "matched": 0.8787878787878788,
+     "added": 0.0,
+     "heard": "on the 15th of may 2010 the last day of the season the 92nd minute a young striker from the clubs own youth team aranza javi scored and hapoel were champions"
+    }
+   ]
+  },
+  {
+   "shot": "the-92nd-minute",
+   "lang": "he",
+   "voice": "Leda",
+   "file": "the-92nd-minute-he.wav",
+   "model": "gemini-3.8-flash-tts",
+   "seconds": 14.77,
+   "check": {
+    "ok": true,
+    "ratio": 0.906,
+    "length": 1.027,
+    "heard": " בחמישה עשר במי אלפיים ועשרה, היום האחרון של האונא, עדקה תשעים ושתיים, חלוץ צעיר ממחלקת הנוער של המועדון, איראן זה הווי, קבש, והפועל הייתה עלופה."
+   },
+   "words": null,
+   "tries": [
+    {
+     "model": "gemini-3.8-flash-tts",
+     "error": "StageError: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.g"
+    },
+    {
+     "model": "gemini-3.8-flash-lite-tts",
+     "ok": false,
+     "ratio": 0.367,
+     "length": 0.782,
+     "heard": " היסם היה את הטי קרב הגבוש  אדונה עירן בשם מהן בקצפת המחזה מעין  והמקרב קבש  עירן זה חווי קבש  הפועל הייתה עלופה"
+    },
+    {
+     "model": "gemini-3.8-flash-tts",
+     "ok": true,
+     "ratio": 0.906,
+     "length": 1.027,
+     "heard": " בחמישה עשר במי אלפיים ועשרה, היום האחרון של האונא, עדקה תשעים ושתיים, חלוץ צעיר ממחלקת הנוער של המועדון, איראן זה הווי, קבש, והפועל הייתה עלופה."
+    }
+   ]
+  },
+  {
+   "shot": "across-the-road",
+   "lang": "en",
+   "voice": "Leda",
+   "file": "across-the-road-en.wav",
+   "model": "gemini-3.8-flash-tts",
+   "seconds": 7.8,
+   "check": {
+    "ok": true,
+    "matched": 1.0,
+    "added": 0.0,
+    "heard": "years later he played for the club across the city football is like that but that night still belongs to everyone who was there"
+   },
+   "words": [
+    {
+     "w": "Years",
+     "start": 0.0,
+     "end": 0.58
+    },
+    {
+     "w": "later,",
+     "start": 0.58,
+     "end": 1.06
+    },
+    {
+     "w": "he",
+     "start": 1.28,
+     "end": 1.42
+    },
+    {
+     "w": "played",
+     "start": 1.42,
+     "end": 1.66
+    },
+    {
+     "w": "for",
+     "start": 1.66,
+     "end": 1.88
+    },
+    {
+     "w": "the",
+     "start": 1.88,
+     "end": 2.02
+    },
+    {
+     "w": "club",
+     "start": 2.02,
+     "end": 2.18
+    },
+    {
+     "w": "across",
+     "start": 2.18,
+     "end": 2.48
+    },
+    {
+     "w": "the",
+     "start": 2.48,
+     "end": 2.7
+    },
+    {
+     "w": "city.",
+     "start": 2.7,
+     "end": 2.96
+    },
+    {
+     "w": "Football",
+     "start": 3.72,
+     "end": 3.78
+    },
+    {
+     "w": "is",
+     "start": 3.78,
+     "end": 4.08
+    },
+    {
+     "w": "like",
+     "start": 4.08,
+     "end": 4.26
+    },
+    {
+     "w": "that.",
+     "start": 4.26,
+     "end": 4.54
+    },
+    {
+     "w": "But",
+     "start": 5.0,
+     "end": 5.14
+    },
+    {
+     "w": "that",
+     "start": 5.14,
+     "end": 5.36
+    },
+    {
+     "w": "night",
+     "start": 5.36,
+     "end": 5.6
+    },
+    {
+     "w": "still",
+     "start": 5.6,
+     "end": 5.88
+    },
+    {
+     "w": "belongs",
+     "start": 5.88,
+     "end": 6.16
+    },
+    {
+     "w": "to",
+     "start": 6.16,
+     "end": 6.44
+    },
+    {
+     "w": "everyone",
+     "start": 6.44,
+     "end": 6.76
+    },
+    {
+     "w": "who",
+     "start": 6.76,
+     "end": 7.0
+    },
+    {
+     "w": "was",
+     "start": 7.0,
+     "end": 7.12
+    },
+    {
+     "w": "there.",
+     "start": 7.12,
+     "end": 7.36
+    }
+   ],
+   "tries": [
+    {
+     "model": "gemini-3.8-flash-tts",
+     "ok": true,
+     "matched": 1.0,
+     "added": 0.0,
+     "heard": "years later he played for the club across the city football is like that but that night still belongs to everyone who was there"
+    }
+   ]
+  },
+  {
+   "shot": "across-the-road",
+   "lang": "he",
+   "voice": "Leda",
+   "file": "across-the-road-he.wav",
+   "model": "gemini-3.8-flash-tts",
+   "seconds": 10.69,
+   "check": {
+    "ok": true,
+    "ratio": 0.975,
+    "length": 0.975,
+    "heard": " שנים אחר כך הוא שיחק במועדון שבצד השני של העיר.  כך זה בכדורגל.  אבל הלילה הוא עדיין שייך לכל מי שהיה שם."
+   },
+   "words": null,
+   "tries": [
+    {
+     "model": "gemini-3.8-flash-tts",
+     "ok": true,
+     "ratio": 0.975,
+     "length": 0.975,
+     "heard": " שנים אחר כך הוא שיחק במועדון שבצד השני של העיר.  כך זה בכדורגל.  אבל הלילה הוא עדיין שייך לכל מי שהיה שם."
+    }
+   ]
+  },
+  {
+   "shot": "gate-5",
+   "lang": "en",
+   "voice": "Leda",
+   "file": "gate-5-en.wav",
+   "model": "gemini-3.8-flash-lite-tts",
+   "seconds": 7.13,
+   "check": {
+    "ok": true,
+    "matched": 0.9473684210526315,
+    "added": 0.0,
+    "heard": "and at every home game at one end of bloomfield theres gate 5 where the loudest supporters stand she lowers her voice for a secret and lets a surprise land clear and natural never babyish never a cartoon never shouting and at every home game at one end of bloomfield theres gate 5 where the loudest supporters stand"
+   },
+   "words": [
+    {
+     "w": "And",
+     "start": 0.0,
+     "end": 0.42
+    },
+    {
+     "w": "at",
+     "start": 0.42,
+     "end": 0.56
+    },
+    {
+     "w": "every",
+     "start": 0.56,
+     "end": 1.06
+    },
+    {
+     "w": "home",
+     "start": 1.06,
+     "end": 1.32
+    },
+    {
+     "w": "game,",
+     "start": 1.32,
+     "end": 1.6
+    },
+    {
+     "w": "at",
+     "start": 1.9,
+     "end": 2.02
+    },
+    {
+     "w": "one",
+     "start": 2.02,
+     "end": 2.26
+    },
+    {
+     "w": "end",
+     "start": 2.26,
+     "end": 2.44
+    },
+    {
+     "w": "of",
+     "start": 2.44,
+     "end": 2.64
+    },
+    {
+     "w": "Bloomfield,",
+     "start": 2.64,
+     "end": 3.06
+    },
+    {
+     "w": "there's",
+     "start": 3.56,
+     "end": 3.9
+    },
+    {
+     "w": "Gate",
+     "start": 3.9,
+     "end": 4.06
+    },
+    {
+     "w": "5",
+     "start": 4.06,
+     "end": 4.54
+    },
+    {
+     "w": "—",
+     "start": 4.54,
+     "end": 4.72
+    },
+    {
+     "w": "where",
+     "start": 4.9,
+     "end": 5.24
+    },
+    {
+     "w": "the",
+     "start": 5.24,
+     "end": 5.44
+    },
+    {
+     "w": "loudest",
+     "start": 5.44,
+     "end": 6.0
+    },
+    {
+     "w": "supporters",
+     "start": 6.0,
+     "end": 6.3
+    },
+    {
+     "w": "stand.",
+     "start": 6.3,
+     "end": 6.78
+    }
+   ],
+   "tries": [
+    {
+     "model": "gemini-3.8-flash-tts",
+     "error": "StageError: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.g"
+    },
+    {
+     "model": "gemini-3.8-flash-lite-tts",
+     "ok": true,
+     "matched": 0.9473684210526315,
+     "added": 0.0,
+     "heard": "and at every home game at one end of bloomfield theres gate 5 where the loudest supporters stand she lowers her voice for a secret and lets a surprise land clear and natural never babyish never a cartoon never shouting and at every home game at one end of bloomfield theres gate 5 where the loudest supporters stand"
+    }
+   ]
+  },
+  {
+   "shot": "gate-5",
+   "lang": "he",
+   "voice": "Leda",
+   "file": "gate-5-he.wav",
+   "error": "no take said the line once and whole",
+   "tries": [
+    {
+     "model": "gemini-3.8-flash-tts",
+     "error": "StageError: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.g"
+    },
+    {
+     "model": "gemini-3.8-flash-lite-tts",
+     "ok": false,
+     "ratio": 0.3,
+     "length": 5.265,
+     "heard": " ובכל משחק בית, בקצה אחד של בלומפילד יש את שר חמש,  המקום שבו עומדים הרעדים הכי רועשים.  שלורר הטרובוי ספור הסקרת, ולצאסור פריזלנד.  כליר ונטורל.  Never baby-ish, never a cartoon, never shouting.  A scene.  A family football story told over the pages of a pop-up book.  Transcribed exactly once, word for word.  Add nothing, skip nothing, never repeat a line.  Do not read these notes.  ובכל משחק בית"
+    },
+    {
+     "model": "gemini-3.8-flash-tts",
+     "error": "StageError: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.g"
+    },
+    {
+     "model": "gemini-3.8-flash-lite-tts",
+     "ok": false,
+     "ratio": 0.602,
+     "length": 2.176,
+     "heard": " ובכל משחק בית, בקצה אחד של בלומפילד יש את שר חמש,  המקום שבו עומדים העודים הכי רועשים,  שילוהר את הוויסבור סיכרת ולצס הפרייסלנד,  כליר ונטורל, never baby-ish, never a cartoon, never shouting."
+    }
+   ]
+  },
+  {
+   "shot": "good-morning",
+   "lang": "en",
+   "voice": "Leda",
+   "file": "good-morning-en.wav",
+   "error": "no take said the line once and whole",
+   "tries": [
+    {
+     "model": "gemini-3.8-flash-tts",
+     "ok": false,
+     "matched": 0.75,
+     "added": 0.0,
+     "heard": "so good morning from hapoel tel aviv 103 years old and 4 years older than everyone thought"
+    },
+    {
+     "model": "gemini-3.8-flash-lite-tts",
+     "ok": false,
+     "matched": 0.75,
+     "added": 0.0,
+     "heard": "so good morning from hapuel tel aviv 103 years old and 4 years older than everyone thought so good morning from hapuel tel aviv 103 years old and 4 years older than everyone thought"
+    },
+    {
+     "model": "gemini-3.8-flash-tts",
+     "error": "StageError: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.g"
+    },
+    {
+     "model": "gemini-3.8-flash-lite-tts",
+     "ok": false,
+     "matched": 0.75,
+     "added": 0.0,
+     "heard": "so good morning from hapol tel aviv 103 years old and 4 years older than everyone thought she lowers her voice for a secret and lets a surprise land clear and natural never babyish never a cartoon never shouting the scene a family football story told over the pages of a pop up book so good morning from hapol tel aviv 103 years old and 4 years older than everyone thought"
+    }
+   ]
+  },
+  {
+   "shot": "good-morning",
+   "lang": "he",
+   "voice": "Leda",
+   "file": "good-morning-he.wav",
+   "model": "gemini-3.8-flash-tts",
+   "seconds": 7.37,
+   "check": {
+    "ok": true,
+    "ratio": 0.936,
+    "length": 0.879,
+    "heard": " אז בוקר טוב מהפועל תל אביב  בת 100 ו3  וגדולה בארבע שנים ממה שכולם חשבו"
+   },
+   "words": null,
+   "tries": [
+    {
+     "model": "gemini-3.8-flash-tts",
+     "error": "StageError: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.g"
+    },
+    {
+     "model": "gemini-3.8-flash-lite-tts",
+     "ok": false,
+     "ratio": 0.388,
+     "length": 3.448,
+     "heard": " אז בוקר טוב מהפועל תל אביב, בת 1003 וגדולה בארבע שנים ממה שכולם חשבו.  She lowers her voice for a secret and lets a surprise land.  Clear and natural, never baby-ish, never a cartoon, never shouting.  אז בוקר טוב מהפועל תל אביב, בת 1003 וגדולה בארבע שנים ממה שכולם חשבו."
+    },
+    {
+     "model": "gemini-3.8-flash-tts",
+     "ok": true,
+     "ratio": 0.936,
+     "length": 0.879,
+     "heard": " אז בוקר טוב מהפועל תל אביב  בת 100 ו3  וגדולה בארבע שנים ממה שכולם חשבו"
+    }
+   ]
+  }
+ ]
+}
