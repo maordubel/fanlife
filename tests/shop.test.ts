@@ -55,3 +55,21 @@ describe('the shop: Printify decisions',()=>{
   expect(KINDS.every(k=>KIND_SPECS[k])).toBe(true)
  })
 })
+describe('the shop runs itself: the Pop-Up store mirrored',()=>{
+ it('reads the kind from the title and tags, most specific first',async()=>{
+  const {kindOf}=await import('@/lib/shop/sync')
+  expect(kindOf({title:'Athens Derby — Framed Poster'})).toBe('framed');expect(kindOf({title:'Kids Heavy Cotton Tee'})).toBe('kids-tee')
+  expect(kindOf({title:'Ceramic Mug 11oz'})).toBe('mug');expect(kindOf({title:'Cotton Canvas Tote Bag'})).toBe('tote');expect(kindOf({title:'Something',tags:['Hoodies']})).toBe('hoodie')
+ })
+ it('shelves a product by a club tag, else under FAN LIFE',async()=>{
+  const {subjectOf}=await import('@/lib/shop/sync')
+  expect(subjectOf({title:'Stand on fire',tags:['olympiacos']})).toBe('olympiacos');expect(subjectOf({title:'Paper terrace'})).toBe('fanlife')
+ })
+ it('sells only what is published, and links to the Pop-Up page',async()=>{
+  const {forSale,buyUrl,toCatalog}=await import('@/lib/shop/sync')
+  const p={id:'a1',title:'Poster',visible:true,is_locked:false,variants:[{id:1,cost:900,price:2499,is_enabled:true},{id:2,cost:1200,price:3499,is_enabled:true}],images:[{src:'x.jpg',is_default:false},{src:'d.jpg',is_default:true}],external:{id:'987',handle:'https://fanlife.printify.me/product/987/poster'}}
+  expect(forSale(p)).toBe(true);expect(forSale({...p,external:undefined})).toBe(false);expect(forSale({...p,visible:false})).toBe(false)
+  expect(buyUrl({external:{id:'987'}},'https://fanlife.printify.me/')).toBe('https://fanlife.printify.me/product/987')
+  const c=toCatalog(p,'https://fanlife.printify.me','EUR');expect(c.image).toBe('d.jpg');expect(c.priceFrom).toBe(2499);expect(c.url).toContain('/product/987')
+ })
+})

@@ -34,8 +34,6 @@ import {StoriesDesk} from '../stories/desk'
 import {deskTab} from '@/lib/stories/banners'
 import {ShopDesk} from '@/components/master/desk/ShopDesk'
 import {readShop,printifyToken} from '@/lib/shop/store'
-import {SUBJECT_IDS,subjectName} from '@/lib/shop/subjects'
-import {LIBRARY} from '@/lib/shop/library'
 import '../../desk.css'
 import '../../research-desk.css'
 export const dynamic='force-dynamic'
@@ -82,7 +80,7 @@ async function DeskContent({section,view,club,owner,searchParams,overview,scoped
  if(section==='players')return <PlayersDesk/>
  if(section==='research')return <ResearchDesk/>
  if(section==='studio')return <StoriesDesk view={deskTab(view)}/>
- if(section==='shop'){const [doc,token]=await Promise.all([readShop(),printifyToken()]);return <ShopDesk initial={{doc,connected:!!token}} subjects={SUBJECT_IDS.map(id=>({id,name:subjectName(id)}))} pictures={LIBRARY.map(({bytes:_b,...p})=>p)}/>}
+ if(section==='shop'){const [doc,token]=await Promise.all([readShop(),printifyToken()]);return <ShopDesk initial={{doc,connected:!!token}}/>}
  if(section==='market')return <MarketDesk/>
  if(section==='community')return <CommunityDesk/>
  if(section==='operations')await refreshMigrationState()
