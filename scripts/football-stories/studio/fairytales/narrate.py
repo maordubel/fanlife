@@ -186,8 +186,32 @@ def word_bounds(texts: list[str], wav: Path, lang: str) -> list[float] | None:
         starts = [heard[j][1] for j, o in enumerate(owner) if o == k + 1]
         if not ends or not starts:
             return None
-        bounds.append((max(ends) + min(starts)) / 2)
+        bounds.append(snap(wav, max(ends) - 0.45, min(starts) + 0.45, (max(ends) + min(starts)) / 2))
     return bounds if bounds == sorted(bounds) else None
+
+
+def snap(wav: Path, lo: float, hi: float, fallback: float) -> float:
+    """The middle of the longest quiet run between lo and hi. Whisper's word times are off by a syllable in Hebrew,
+    and a cut at their midpoint left the first sound of the next paragraph at the end of this one (12.11.2026,
+    'left-foot' → '1981'). The page turn is the silence itself, so the cut goes into it."""
+    import numpy as np
+    with wave.open(str(wav)) as w:
+        sr = w.getframerate()
+        a = np.frombuffer(w.readframes(w.getnframes()), np.int16).astype(float) / 32768
+    hop = int(sr * 0.01)
+    i0, i1 = max(0, int(lo * 100)), min(len(a) // hop, int(hi * 100))
+    if i1 - i0 < 5:
+        return fallback
+    e = np.sqrt((a[i0 * hop:i1 * hop].reshape(-1, hop) ** 2).mean(1))
+    quiet = e < max(0.006, float(np.percentile(e, 10)) * 2)
+    best, run, start = (0, 0), 0, 0
+    for k, q in enumerate(quiet):
+        run, start = (run + 1, start) if q else (0, k + 1)
+        if run > best[0]:
+            best = (run, start)
+    if best[0] < 8:                                   # under 80 ms of quiet: no real gap here, keep the midpoint
+        return fallback
+    return (i0 + best[1] + best[0] / 2) / 100
 
 
 PRONOUNCE: dict[str, str] = {}                               # per language, from the episode's `pronounce`

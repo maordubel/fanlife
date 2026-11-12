@@ -108,6 +108,26 @@ def prompt(text: str, delivery: str, extra: dict | None = None, scene: str = '')
         '', '#### TRANSCRIPT', text])
 
 
+def pcm_only(raw: bytes) -> bytes:
+    """The samples alone. Since November 2026 the model may answer a whole WAV — a RIFF header in front and a
+    C2PA manifest chunk behind the samples. Written out as PCM, the header is a click at the first word and the
+    manifest a loud burst of noise after the last one, so both are cut here, by the file's own chunk table."""
+    if raw[:4] == b'RIFF' and raw[8:12] == b'WAVE':
+        i = 12
+        while i + 8 <= len(raw):
+            cid, size = raw[i:i + 4], int.from_bytes(raw[i + 4:i + 8], 'little')
+            if cid == b'data':
+                end = len(raw) if size in (0, 0xFFFFFFFF) else min(len(raw), i + 8 + size)
+                raw = raw[i + 8:end]
+                break
+            i += 8 + size + (size & 1)
+    for mark in (b'C2PA', b'jumb'):
+        j = raw.find(mark)
+        if j > 0:
+            raw = raw[:j - (4 if mark == b'jumb' else 0)]
+    return raw[:len(raw) & ~1]
+
+
 def _call(key: str, model: str, text: str) -> bytes:
     body = {'contents': [{'parts': [{'text': text}]}],
             'generationConfig': {'responseModalities': ['AUDIO'],
@@ -125,7 +145,7 @@ def _call(key: str, model: str, text: str) -> bytes:
         for p in (c.get('content') or {}).get('parts') or []:
             data = (p.get('inlineData') or {}).get('data')
             if data:
-                return base64.b64decode(data)
+                return pcm_only(base64.b64decode(data))
     raise StageError('GEMINI_TTS_EMPTY', json.dumps(out)[:300], retryable=True)
 
 

@@ -164,6 +164,91 @@ class Confetti:
         return out
 
 
+class Celebration:
+    """A title moment, the way a ground does it (12.11.2026: one burst from a point in the middle of the screen read
+    as a stray rectangle, not a party). Two paper cannons fire from the bottom corners into the picture, and a beat
+    later a shower of paper and curling ribbons drifts down across the whole width, fluttering, then thins out.
+    Every bit follows a closed-form path (linear drag + gravity), so any frame can be drawn on its own."""
+
+    def __init__(self, colours, size=(1920, 1080), seed: int = 7, cannons: int = 70, rain: int = 150, ribbons: int = 26):
+        rng = random.Random(seed)
+        w, h = size
+        self.size, self.bits = size, []
+        for side in (-1, 1):                                   # the two cannons, aimed up and in
+            x0 = w * (0.02 if side < 0 else 0.98)
+            for _ in range(cannons):
+                ang = math.radians(rng.uniform(58, 82))
+                sp = rng.uniform(1500, 2350)
+                self.bits.append(dict(kind='paper', x=x0, y=h + 20, vx=-side * sp * math.cos(ang), vy=-sp * math.sin(ang),
+                                      k=rng.uniform(1.5, 2.3), fall=rng.uniform(150, 240), t0=rng.uniform(0, 0.14),
+                                      **self._paper(rng, colours)))
+        for _ in range(rain):                                  # the shower from above, a beat later
+            self.bits.append(dict(kind='paper', x=rng.uniform(-40, w + 40), y=rng.uniform(-900, -30), vx=0, vy=0, k=2.0,
+                                  fall=rng.uniform(170, 280), t0=0.35 + rng.uniform(0, 0.6), **self._paper(rng, colours)))
+        for _ in range(ribbons):                               # curling streamers
+            self.bits.append(dict(kind='ribbon', x=rng.uniform(40, w - 40), y=rng.uniform(-700, -60), vx=0, vy=0, k=2.0,
+                                  fall=rng.uniform(210, 300), t0=0.3 + rng.uniform(0, 0.7), c=rng.choice(colours),
+                                  len=rng.uniform(110, 190), wid=rng.uniform(7, 11), sway=rng.uniform(26, 50),
+                                  f=rng.uniform(1.2, 2.0), ph=rng.uniform(0, 6.3), rot=0, vr=0, spin=1))
+
+    @staticmethod
+    def _paper(rng, colours) -> dict:
+        return dict(c=rng.choice(colours), w=rng.uniform(16, 34), h=rng.uniform(9, 18), rot=rng.uniform(0, 360),
+                    vr=rng.uniform(-300, 300), spin=rng.uniform(3, 7), sway=rng.uniform(18, 46), f=rng.uniform(0.9, 1.8),
+                    ph=rng.uniform(0, 6.3), round=rng.random() < 0.18)
+
+    @staticmethod
+    def _at(b: dict, t: float) -> tuple[float, float]:
+        k, g = b['k'], b['fall'] * b['k']                     # terminal fall speed = g / k
+        e = 1 - math.exp(-k * t)
+        x = b['x'] + b['vx'] * e / k + b['sway'] * math.sin(b['f'] * t * 6.283 + b['ph']) * min(1.0, t / 0.8)
+        y = b['y'] + (b['vy'] - b['fall']) * e / k + b['fall'] * t
+        return x, y
+
+    def draw(self, img: Image.Image, t: float, life: float = 6.5) -> Image.Image:
+        if t <= 0 or t > life:
+            return img
+        fade = max(0.0, min(1.0, (life - t) / 1.6))
+        layer = Image.new('RGBA', img.size, (0, 0, 0, 0))
+        d = ImageDraw.Draw(layer)
+        w, h = self.size
+        for b in self.bits:
+            tt = t - b['t0']
+            if tt <= 0:
+                continue
+            x, y = self._at(b, tt)
+            if y > h + 60 or x < -80 or x > w + 80:
+                continue
+            col = b['c']
+            if b['kind'] == 'ribbon':
+                pts = []
+                for i in range(12):
+                    s_ = i / 11
+                    yy = y - s_ * b['len']
+                    xx = x + 14 * math.sin(s_ * 7.5 + tt * 5 + b['ph'])
+                    pts.append((xx, yy))
+                shade = 0.88 + 0.12 * math.sin(tt * 4 + b['ph'])
+                d.line(pts, fill=tuple(int(c * shade) for c in col) + (int(255 * fade),), width=int(b['wid']), joint='curve')
+                continue
+            flip = abs(math.cos(b['spin'] * tt + b['ph']))
+            ww, hh = b['w'], max(2.0, b['h'] * flip)
+            shade = 0.78 + 0.22 * flip
+            fill = tuple(int(c * shade) for c in col) + (int(255 * fade),)
+            if b['round']:
+                r = b['h'] * 0.6
+                d.ellipse((x - r, y - r * max(0.25, flip), x + r, y + r * max(0.25, flip)), fill=fill)
+                continue
+            a = math.radians(b['rot'] + b['vr'] * tt)
+            pts = [(x + dx * math.cos(a) - dy * math.sin(a), y + dx * math.sin(a) + dy * math.cos(a))
+                   for dx, dy in ((-ww / 2, -hh / 2), (ww / 2, -hh / 2), (ww / 2, hh / 2), (-ww / 2, hh / 2))]
+            d.polygon(pts, fill=fill)
+        shadow = layer.split()[3].filter(ImageFilter.GaussianBlur(4)).point(lambda v: v * 0.28)
+        out = img.copy()
+        out.paste((20, 12, 6), (5, 8), shadow)
+        out.paste(layer, (0, 0), layer)
+        return out
+
+
 def wordmark(img: Image.Image, t: float, font_big: Path, font_small: Path, tag: str = '', accent=(176, 45, 16)) -> Image.Image:
     """FOOTBALL / Fairy Tales — card letters dropped in one by one on twos, a kraft ribbon behind, a brass pin."""
     if t <= 0:

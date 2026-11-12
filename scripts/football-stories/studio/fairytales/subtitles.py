@@ -47,6 +47,25 @@ def _two(words: list[str]) -> list[str]:
     return best[1] if best else _lines(words)
 
 
+def _split(words: list[str], n: int) -> list[list[str]]:
+    """n cues from one long sentence, broken after a comma where one is near the even point — the voice breathes at
+    a comma, so a cue that ends there leaves when the words do. Every cue still fits on two lines."""
+    per = len(words) / n
+    cuts, last = [], 0
+    for k in range(1, n):
+        even = round(k * per)
+        near = [i for i in range(max(last + 2, even - int(per * 0.45)), min(len(words) - 1, even + int(per * 0.45)) + 1)
+                if re.search(r'[,;:]$', words[i - 1])]
+        cut = min(near, key=lambda i: abs(i - even)) if near else even
+        cuts.append(max(cut, last + 1))
+        last = cuts[-1]
+    parts = [words[a:b] for a, b in zip([0] + cuts, cuts + [len(words)])]
+    if all(len(_lines(c)) <= 2 for c in parts):
+        return parts
+    per = -(-len(words) // n)
+    return [words[i:i + per] for i in range(0, len(words), per)]
+
+
 def cues(text: str) -> list[str]:
     """The line cut into on-screen cues: sentences first, two even lines a cue, never one dangling word."""
     parts = [p.strip() for p in re.split(r'(?<=[.!?…—])\s+', text) if p.strip()]
@@ -57,10 +76,8 @@ def cues(text: str) -> list[str]:
             out.append(p)
             continue
         ls = _lines(words)
-        n = (len(ls) + 1) // 2                                # cues this sentence needs, then share the words evenly
-        per = -(-len(words) // n)
-        for i in range(0, len(words), per):
-            chunk = words[i:i + per]
+        n = (len(ls) + 1) // 2                                # cues this sentence needs
+        for chunk in _split(words, n):
             one = ' '.join(chunk)
             out.append(one if len(one) <= LINE else '\n'.join(_two(chunk)))
     merged = []                                               # a cue of one or two words joins the cue before it
@@ -70,6 +87,112 @@ def cues(text: str) -> list[str]:
         else:
             merged.append(c)
     return merged
+
+
+def _runs(wav) -> tuple[list[tuple[float, float]], float]:
+    """Where the voice speaks in a take: runs of sound split by pauses of 150 ms or more, and the take's length."""
+    import wave
+    import numpy as np
+    with wave.open(str(wav)) as w:
+        sr = w.getframerate()
+        x = np.frombuffer(w.readframes(w.getnframes()), np.int16).astype(float) / 32768
+    hop = int(sr * 0.01)
+    e = np.sqrt((x[:len(x) // hop * hop].reshape(-1, hop) ** 2).mean(1))
+    loud = e > max(0.012, float(np.percentile(e, 20)) * 3)
+    runs, k = [], 0
+    while k < len(loud):
+        if loud[k]:
+            j = k
+            while j < len(loud) and loud[j]:
+                j += 1
+            if runs and k - runs[-1][1] < 15:
+                runs[-1] = (runs[-1][0], j)
+            else:
+                runs.append((k, j))
+            k = j
+        else:
+            k += 1
+    return [(r0 / 100, r1 / 100) for r0, r1 in runs if r1 - r0 >= 4], len(x) / sr
+
+
+def _spoken(cue: str) -> int:
+    """How long a cue takes to say, in letters: a written year is read as four words ("nineteen sixty-two"), so a
+    figure counts for the words it becomes, not the digits it is printed with."""
+    n = len(re.sub(r'[\W\d]', '', cue))
+    for num in re.findall(r'\d+', cue):
+        n += 16 if len(num) == 4 else 5 * len(num)
+    return max(1, n)
+
+
+def timed(text: str, a: float, b: float, wav=None) -> list[tuple[float, float, str]]:
+    """The cues of one line with their times. With the take at hand, every cue break is put in the pause the voice
+    actually takes there (12.11.2026: cues spread evenly by letters ran up to a second ahead of or behind the words);
+    a cue holds through a short breath and leaves in a long one. Without it, an even share by letters."""
+    cs = cues(text)
+    if not cs:
+        return []
+    size = [_spoken(c) for c in cs]
+    tot = sum(size)
+    runs, length = _runs(wav) if wav else ([], 0.0)
+    if not runs:
+        out, t = [], a
+        for c, n in zip(cs, size):
+            d = (b - a) * n / tot
+            out.append((t, t + d - 0.04, c))
+            t += d
+        return out
+    voiced = sum(r1 - r0 for r0, r1 in runs)
+    gaps = [(runs[i][1], runs[i + 1][0]) for i in range(len(runs) - 1)]
+
+    def at(v: float) -> float:                               # voiced seconds → take seconds
+        for r0, r1 in runs:
+            if v <= r1 - r0:
+                return r0 + v
+            v -= r1 - r0
+        return runs[-1][1]
+    wants, acc = [], 0
+    for n in size[:-1]:
+        acc += n
+        wants.append(at(voiced * acc / tot))
+    cuts = _assign(wants, gaps, [bool(re.search(r'[.!?…]\W*$', c)) for c in cs[:-1]])
+    starts = [runs[0][0]] + [g1 for _, g1 in cuts]
+    ends = [g0 for g0, _ in cuts] + [runs[-1][1]]
+    out = []
+    for i, c in enumerate(cs):
+        t0 = a + max(0.0, starts[i] - 0.12)
+        nxt = a + starts[i + 1] - 0.12 if i + 1 < len(cs) else None
+        hold = a + ends[i] + 0.45
+        t1 = min(hold, nxt - 0.03) if nxt is not None and nxt - (a + ends[i]) > 0.75 else (nxt - 0.03 if nxt else hold)
+        out.append((t0, max(t1, t0 + 0.6), c))
+    for i in range(len(out) - 1):                            # never two cues on screen at once
+        if out[i][1] > out[i + 1][0] - 0.02:
+            out[i] = (out[i][0], out[i + 1][0] - 0.02, out[i][2])
+    return out
+
+
+def _assign(wants: list[float], gaps: list[tuple[float, float]], ends: list[bool] | None = None) -> list[tuple[float, float]]:
+    """Each cue break to its own pause, in order, all at once: the set of pauses nearest the estimates, where a
+    longer pause (a sentence end) pulls harder. A break with no pause near it stays where the letters put it."""
+    import functools
+    centre = [(g0 + g1) / 2 for g0, g1 in gaps]
+
+    def cost(b: int, g: int) -> float:
+        pull = 1.1 if ends and ends[b] else 0.45            # a full stop is a long pause; a comma a short one
+        return abs(centre[g] - wants[b]) - pull * min(gaps[g][1] - gaps[g][0], 1.0)
+
+    @functools.lru_cache(None)
+    def best(b: int, g: int) -> tuple[float, tuple]:      # breaks b.. placed using gaps g..
+        if b == len(wants):
+            return 0.0, ()
+        miss = best(b + 1, g)
+        options = [(0.75 + miss[0], (None,) + miss[1])]
+        for k in range(g, len(gaps)):
+            if abs(centre[k] - wants[b]) < 1.6:
+                rest = best(b + 1, k + 1)
+                options.append((cost(b, k) + rest[0], (k,) + rest[1]))
+        return min(options, key=lambda o: o[0])
+    pick = best(0, 0)[1]
+    return [gaps[k] if k is not None else (w, w) for k, w in zip(pick, wants)]
 
 
 def _visual(line: str, lang: str) -> str:
@@ -105,16 +228,10 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     for span in spans:
         a, b, text = span[:3]
         pos = '\\an8' if len(span) > 3 and span[3] == 'top' else ''      # over the closing card's ribbon
-        cs = cues(text)
-        if not cs:
-            continue
-        total = sum(len(c) for c in cs)
-        t = a
-        for c in cs:
-            d = (b - a) * len(c) / total
+        wav = span[4] if len(span) > 4 else None
+        for t0, t1, c in timed(text, a, b, wav):
             body = r'\N'.join(_visual(x, lang) for x in c.split('\n'))
-            ev.append(f'Dialogue: 0,{_t(t)},{_t(t + d - 0.04)},Tale,,0,0,0,,{{{pos}\\fad(120,120)}}{body}')
-            t += d
+            ev.append(f'Dialogue: 0,{_t(t0)},{_t(t1)},Tale,,0,0,0,,{{{pos}\\fad(90,90)}}{body}')
     return head + '\n'.join(ev) + '\n'
 
 

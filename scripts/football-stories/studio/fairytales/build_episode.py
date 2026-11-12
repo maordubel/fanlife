@@ -296,8 +296,10 @@ def main() -> None:
     crests = {k: Image.open(REPO / v).convert('RGBA') for k, v in ep.get('crests', {}).items()}
     red = tuple(int(ep['palette']['primary'][i:i + 2], 16) for i in (1, 3, 5))
     sources = [Source(work, s['shot']['plate'], s['dur'], seed=k + 1) for k, s in enumerate(shots)]
-    confetti = pt.Confetti((W * .5, H * .6), [red, (246, 240, 228), pt.KRAFT, red], n=120)
-    confetti.smooth = True
+    deep = tuple(int(c * .62) for c in red)
+    light = tuple(int(c + (255 - c) * .45) for c in red)
+    party = [pt.Celebration([red, red, deep, light, (246, 240, 228), (246, 240, 228), pt.KRAFT], (W, H), seed=k + 5)
+             for k in range(4)]
 
     def draw(k: int, t: float) -> Image.Image:
         s, src = shots[k], sources[k]
@@ -319,7 +321,7 @@ def main() -> None:
             img = tag(img, t - g['at'] * s['dur'], g['text'], tuple(g['xy']), fb if g.get('big', True) else fs,
                       g.get('size', 84), g.get('sub', ''), fs, rot=g.get('rot'))
         if v.get('confettiAt') is not None:
-            img = confetti.draw(img, t - v['confettiAt'] * s['dur'])
+            img = party[k % 4].draw(img, t - v['confettiAt'] * s['dur'])
         if v.get('wordmarkAt') is not None:
             img = pt.wordmark(img, t - v['wordmarkAt'] * s['dur'], fb, fs, tag=v.get('wordmarkTag', ''), accent=red)
         if u > 1:
@@ -385,7 +387,8 @@ def main() -> None:
                         '-c:a', 'aac', '-b:a', '192k', str(outd / f'audio-{lang}.m4a')], check=True)
         # subtitles burned in the storybook face (owner, 12.11.2026); the clean picture stays as picture.mp4
         spans = [(s['start'] + LEAD, s['start'] + LEAD + s['lens'][lang], caption(s['shot'], lang),
-                  'top' if s['shot'].get('visual', {}).get('wordmarkAt') is not None else 'bottom') for s in shots]
+                  'top' if s['shot'].get('visual', {}).get('wordmarkAt') is not None else 'bottom',
+                  narr / f"{s['shot']['id']}-{lang}.wav") for s in shots]
         assf = outd / f'subs-{lang}.ass'
         assf.write_text(sub.ass(lang, spans, outline=ass_colour(ep['palette']['primary'])), encoding='utf-8')
         vf = f"ass={assf}:fontsdir={sub.FONTS}"
@@ -396,14 +399,9 @@ def main() -> None:
         mix.unlink()
         srt = []
         fmt = lambda x: f'{int(x // 3600):02d}:{int(x % 3600 // 60):02d}:{int(x % 60):02d},{int(x * 1000 % 1000):03d}'
-        for a, b, text, _ in spans:                                  # the YouTube caption track: the same cues
-            cs = sub.cues(text)
-            tot = sum(len(c) for c in cs) or 1
-            t = a
-            for c in cs:
-                d = (b - a) * len(c) / tot
-                srt.append(f"{len(srt) + 1}\n{fmt(t)} --> {fmt(t + d - 0.04)}\n{c}\n")
-                t += d
+        for a, b, text, _, wav in spans:                             # the YouTube caption track: the same cues
+            for t0, t1, c in sub.timed(text, a, b, wav):
+                srt.append(f"{len(srt) + 1}\n{fmt(t0)} --> {fmt(t1)}\n{c}\n")
         (outd / f'captions-{lang}.srt').write_text('\n'.join(srt), encoding='utf-8')
     for s in shots:
         timing.append({'shot': s['shot']['id'], 'start': round(s['start'], 2), 'dur': round(s['dur'], 2), 'narration': s['lens']})
