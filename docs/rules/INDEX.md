@@ -203,4 +203,5 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [120](120.md) · Parallel pull requests must not collide (13.10.2026)
 - [128](128.md) · A discovery unit promises only what the target can do, and shows only when it may (27.10.2026)
 - [shop-library-only](shop-library-only.md) · The shop prints only from the owner's library and sells only fan art that is ours to sell; Printify Pop-Up checkout (12.11.2026)
+- [shop-checks-itself](shop-checks-itself.md) · The shop re-reads every product from Printify hourly, repairs links and pictures, hides what was deleted, re-presses passing failures; never shows anything itself (12.11.2026)
 - [hub-order](hub-order.md) · The hub and a club home are put in order, not redesigned: nothing hidden, the features indexed, clubs as a slide on a phone, no next-match box (12.11.2026)

@@ -40,11 +40,17 @@ export function ShopDesk({initial,subjects,pictures}:{initial:State;subjects:Sub
    if(made.length)await pressMany(made)
   }else{const out=await act('add',{subject:nSub,picture:nPic,kinds:nKinds},'Added.');if(out?.made)await pressMany(out.made)}
  }
+ const ago=(iso:string)=>{const m=Math.round((Date.now()-Date.parse(iso))/60e3);return m<1?'just now':m<60?`${m} min ago`:m<2880?`${Math.round(m/60)} h ago`:`${Math.round(m/1440)} days ago`}
  const step=(n:number,done:boolean)=><span className="shop-no" data-done={done||undefined} aria-hidden="true">{done?'✓':n}</span>
  return <div className="desk-content shopd">
   <header className="desk-head"><p className="desk-kicker">Shop</p><h1 className="desk-h1">The print room</h1>
    <p className="desk-fine">Printed and shipped by Printify. {shown.length} shown in the shop · {live.length} on sale · {todo.length} waiting to be pressed.</p>
    <p className="desk-actions"><a className="desk-btn ghost" href="/shop" target="_blank" rel="noreferrer">Open the shop ↗</a><a className="desk-btn ghost" href="https://printify.com/app/orders" target="_blank" rel="noreferrer">Orders in Printify ↗</a></p></header>
+  <section className="desk-card shop-health" aria-labelledby="shh" data-ok={doc.health?doc.health.ok:undefined}><h2 className="desk-h2" id="shh">Health</h2>
+   <p className="desk-fine">{doc.health?<>{doc.health.ok?'All well':'Needs a look'} · checked {ago(doc.health.at)} · {doc.health.checked} product(s) read from Printify, {doc.health.repaired} repaired. The shop checks itself every hour.</>:'Not checked yet. The shop checks itself every hour.'}</p>
+   {doc.health&&doc.health.notes.length>0&&<ul className="shop-notes">{doc.health.notes.map((n,i)=><li key={i}>{n}</li>)}</ul>}
+   <div className="shop-row"><button className="desk-btn ghost min-h-tap" disabled={!!run||api.busy||!st.connected} onClick={async()=>{const out=await api.post<{health:NonNullable<ShopDoc['health']>}>('shop/checkup',{},'Checked.');if(out)setSt(v=>({...v,doc:{...v.doc,health:out.health}}));const fresh=await api.get<State>('shop');if(fresh)setSt({doc:fresh.doc,connected:fresh.connected})}}>Check now</button></div>
+  </section>
   {api.error&&<p className="desk-state" role="alert" data-tone="bad">{api.error}</p>}
   {api.notice&&!run&&<p className="desk-state" role="status">{api.notice}</p>}
   {run&&<p className="desk-state shop-run" role="status"><b>Pressing {run.done} of {run.total}…</b> Keep this page open. <button className="desk-btn ghost" onClick={()=>{stop.current=true}}>Stop after this one</button></p>}

@@ -492,3 +492,7 @@ select.pcc-inline { inline-size: 92px; cursor: pointer; } select.pcc-inline:disa
 .shop-go { position: sticky; inset-block-end: 72px; z-index: 2; }
 .shop-pick[aria-checked='true'] { outline: 4px solid var(--mag-green); outline-offset: -4px; }
 .shop-plus { display: grid; place-items: center; inline-size: 100%; aspect-ratio: 4 / 5; font-size: 44px; border: 2px dashed var(--mag-ink); }
+/* the shop's hourly check-up (12.11.2026) */
+.shop-health[data-ok="false"] { border-inline-start: 6px solid var(--mag-vermilion); }
+.shop-health[data-ok="true"] { border-inline-start: 6px solid var(--mag-green, var(--mag-ink)); }
+.shop-notes { margin: 8px 0 0; padding-inline-start: 18px; font-size: 14px; }

@@ -63,7 +63,7 @@ export async function pressProduct(id:string,by:string):Promise<ShopProduct>{
   if(soft<.5)await set(id,{error:`On sale, but this picture is small for a ${spec.label.toLowerCase()} (${Math.round(soft*100)}% of the print size) — it may print soft. A larger original is better.`})
   const images=[...made.images].sort((a,b)=>Number(b.is_default)-Number(a.is_default)).map(i=>i.src).slice(0,6)
   url=url||(doc.settings.popupUrl?doc.settings.popupUrl.replace(/\/$/,''):null)
-  await set(id,{status:publishedAt&&url?'live':'ready',printify:{productId:made.id,blueprintId:m.blueprintId,providerId:m.providerId,images,priceFrom:Math.min(...priced.map(v=>v.price)),currency:'USD',url,publishedAt}})
+  await set(id,{retries:publishedAt&&url?0:p.retries,status:publishedAt&&url?'live':'ready',printify:{productId:made.id,blueprintId:m.blueprintId,providerId:m.providerId,images,priceFrom:Math.min(...priced.map(v=>v.price)),currency:'USD',url,publishedAt}})
  }catch(e){await set(id,{status:'error',error:(e as Error).message.slice(0,400)})}
  return (await readShop()).products.find(x=>x.id===id)!
 }
