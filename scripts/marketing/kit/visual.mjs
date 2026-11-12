@@ -172,6 +172,9 @@ export async function crestPath(name) {
   if (slug && !MISSED.has(slug)) {
     const file = path.join(CACHE, slug + '.png')
     if (existsSync(file)) return file
+    // FAN LIFE bundles a copy of the library (public/universe-crests, like DUBID) so a crest never waits on OFFSIDES
+    const bundled = path.join(REPO, 'public/universe-crests', slug + '.png')
+    if (existsSync(bundled)) return bundled
     try {
       const r = await fetch(`${LIB.CREST_BASE}/${slug}.png`, {signal: AbortSignal.timeout(8000)})
       const buf = r.ok ? Buffer.from(await r.arrayBuffer()) : null
