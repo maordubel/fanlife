@@ -96,6 +96,7 @@ class Adapter:
         self._picker = None                          # the media index's view of this film (studio/media_index.py)
         self.sheet = {int(k): v for k, v in (plan.get('sheet') or {}).get('beats', {}).items()} if isinstance(plan.get('sheet'), dict) else {}
         self.foci: dict[str, str | None] = {}        # picture → where its detail look looks
+        self.horizons: dict[str, float | None] = {}  # picture → where its foreground band begins (the camera's near plane)
         self.lib_used: list[str] = []                # the library pieces this film put on screen
         self.last: str | None = None                 # the rich device of the shot before (two city splits never run back to back)
         names = [palette.club_name]
@@ -202,6 +203,14 @@ class Adapter:
             except Exception:  # noqa: BLE001 — a clip, a missing file: the editor's fixed corners
                 pass
         return self.foci[src]
+
+    def horizon(self, src: str) -> float | None:
+        """Where this picture's foreground band begins (studio/camera.horizon), read once per picture: the near plane of
+        the camera's parallax. None for a picture with no such line — the camera then lifts its lower part by default."""
+        if src not in self.horizons:
+            from .. import camera as C
+            self.horizons[src] = C.horizon(self.files[src]) if src in self.files else None
+        return self.horizons[src]
 
     def backdrop(self, n: int) -> dict | None:
         """The picture for the rest of a beat whose card has left (docu/editor.cut): the beat's own, else a spare."""
@@ -506,8 +515,11 @@ class Adapter:
             t, d = s['start'], s['frames'] / FPS
             cin = s.get('cinema') or {}
             at0 = s.get('voice_at')
-            b = {'t': t, 'd': d, 'shots': self.shots(s, d),
+            devs = self.shots(s, d)
+            rec = self._picker.by.get(self.keys.get(s['n'])) if self._picker is not None else None
+            b = {'t': t, 'd': d, 'shots': devs,
                  'meta': {'n': s['n'], 'type': v_type(s), 'chapter': s.get('chapter'), 'camera': cin.get('camera'), 'pace': cin.get('cam_pace'),
+                          'subjects': (rec or {}).get('subjects') or [],   # what the picture shows, by its index entry: the camera reads it
                           'outcome': self.fact(s['visual'].get('claim')).get('outcome') if v_type(s) in ('score', 'versus') else None,
                           'words': [round(at0 + w['start'], 3) for w in (s.get('words') or [])] if at0 is not None else []}}
             if s.get('narration') and s.get('voice_at') is not None and v_type(s) != 'end':
@@ -530,7 +542,14 @@ class Adapter:
                 for x in b['shots']:
                     if x['kind'] == 'image' and not s.get('required_asset'):
                         x['src'] = self.related(b['meta']['n'], 0) or x['src']
-        return E.cut(raw, self.plan.get('beat_grid'), self.related, self.backdrop, fixes, self.focus)
+        out = E.cut(raw, self.plan.get('beat_grid'), self.related, self.backdrop, fixes, self.focus)
+        for b in out:   # the camera's near plane, read off each picture it moves over
+            for x in b['shots']:
+                if x.get('cam') and x['kind'] == 'image' and x.get('as') != 'print':
+                    h = self.horizon(x['src'])
+                    if h is not None:
+                        x['horizon'] = h
+        return out
 
 
 def v_type(s: dict) -> str:
