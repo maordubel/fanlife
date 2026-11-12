@@ -47,8 +47,10 @@ export const printAreas=(placed:{sheet:Sheet;imageId:string;x:number;y:number;sc
 export const price=(cost:number,margin:number)=>Math.max(499,Math.ceil(cost*(1+margin/100)/100)*100-1)
 
 export const NOTE='Original supporter art from the FAN LIFE library — an independent fan design, not an official club product. Printed to order.'
-export const productId=(subject:string,pictureId:string,kind:Kind)=>`${subject}.${pictureId.slice(-10).replace(/[^a-zA-Z0-9]/g,'x')}.${kind}`
-export const draftOf=(subject:string,pic:Pick<LibraryPicture,'id'|'name'>,kind:Kind,now:string):ShopProduct=>({id:productId(subject,pic.id,kind),subject,kind,art:{library:{id:pic.id,name:pic.name}},title:`${titleOf(pic.name)} · ${KIND_SPECS[kind].label}`,description:NOTE,status:'draft',visible:false,createdAt:now,updatedAt:now})
+export const productId=(subject:string,pictureId:string,kind:Kind,bp?:number)=>`${subject}.${pictureId.slice(-10).replace(/[^a-zA-Z0-9]/g,'x')}.${kind}${bp?`-${bp}`:''}`
+export const draftOf=(subject:string,pic:Pick<LibraryPicture,'id'|'name'>,kind:Kind,now:string,blueprint?:{id:number;title:string}):ShopProduct=>({id:productId(subject,pic.id,kind,blueprint?.id),subject,kind,art:{library:{id:pic.id,name:pic.name}},title:`${titleOf(pic.name)} · ${blueprint?shortTitle(blueprint.title):KIND_SPECS[kind].label}`,description:NOTE,status:'draft',visible:false,createdAt:now,updatedAt:now,...(blueprint?{blueprint}:{})})
+/** a catalogue name for a shop card: "Unisex Heavy Cotton Tee" stays, "Mug 11oz (EU)" loses the bracket */
+export const shortTitle=(t:string)=>t.replace(/\s*\([^)]*\)\s*/g,' ').replace(/\s+/g,' ').trim().slice(0,40)
 /** the launch drafts for one subject: its own approved pictures first, then the rest of its shelf — never a picture marked for review */
 export function launchSet(subject:string,now:string,library:LibraryPicture[]=LIBRARY):ShopProduct[]{
  const own=library.filter(p=>p.subject===subject&&!p.review).sort((a,b)=>Number(b.approved)-Number(a.approved)||b.bytes-a.bytes).slice(0,LAUNCH_PICTURES)

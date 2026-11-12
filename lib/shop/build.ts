@@ -1,5 +1,5 @@
 import 'server-only'
-import {KIND_SPECS} from './kinds'
+import {KIND_SPECS,catalogueSpec,groupOf} from './kinds'
 import {matchBlueprint,pickProvider,pickVariants,place,price,printAreas,sheets,sharpness} from './plan'
 import {original,pictureById} from './library'
 import {printify,type Printify} from './printify'
@@ -22,10 +22,20 @@ export async function connect(by:string){
  return {shops,picked:pick}
 }
 let catalogue:{at:number;list:Awaited<ReturnType<Printify['blueprints']>>}|null=null
+const catalogueList=async(api:Printify)=>{if(!catalogue||Date.now()-catalogue.at>3600e3)catalogue={at:Date.now(),list:await api.blueprints()};return catalogue.list}
+/** the desk's whole-catalogue browser: every Printify product, sorted onto shelves (one read an hour) */
+export async function catalogueFor(api:Printify){return (await catalogueList(api)).map(b=>({id:b.id,title:b.title,brand:b.brand,image:b.images?.[0]??'',group:groupOf(b.title)}))}
+/** a catalogue product's printer: a European one first (kept per catalogue number in the shop record) */
+export async function matchBlueprintId(api:Printify,id:number,by:string):Promise<KindMatch>{
+ const doc=await readShop(),kept=doc.settings.picked?.[id];if(kept)return kept
+ const bp=(await catalogueList(api)).find(b=>b.id===id);if(!bp)throw new Error(`Printify no longer has catalogue product ${id}.`)
+ const pp=pickProvider(await api.providers(id));if(!pp)throw new Error(`No print provider prints “${bp.title}” right now.`)
+ const match={blueprintId:id,providerId:pp.id,title:bp.title,provider:pp.title}
+ await updateShop(by,'',d=>{d.settings.picked={...(d.settings.picked||{}),[id]:match}});return match
+}
 export async function matchKind(api:Printify,kind:Kind,by:string,force?:{blueprintId:number;providerId?:number}):Promise<KindMatch>{
  const doc=await readShop(),kept=doc.settings.matches[kind];if(kept&&!force)return kept
- if(!catalogue||Date.now()-catalogue.at>3600e3)catalogue={at:Date.now(),list:await api.blueprints()}
- const bp=force?catalogue.list.find(b=>b.id===force.blueprintId):matchBlueprint(KIND_SPECS[kind],catalogue.list)
+ const list=await catalogueList(api),bp=force?list.find(b=>b.id===force.blueprintId):matchBlueprint(KIND_SPECS[kind],list)
  if(!bp)throw new Error(force?`Printify has no catalogue product number ${force.blueprintId}.`:`Printify's catalogue has no ${KIND_SPECS[kind].label.toLowerCase()} we recognise. Choose one by its catalogue number in Shop → Catalogue.`)
  const providers=await api.providers(bp.id),pp=force?.providerId?providers.find(p=>p.id===force.providerId):pickProvider(providers)
  if(!pp)throw new Error(`No print provider prints “${bp.title}” right now.`)
@@ -38,10 +48,13 @@ const set=(id:string,patch:Partial<ShopProduct>)=>updateShop('press','',d=>{cons
 export async function pressProduct(id:string,by:string):Promise<ShopProduct>{
  const doc=await readShop(),p=doc.products.find(x=>x.id===id);if(!p)throw new Error('No such product.')
  const shop=doc.settings.shopId;if(!shop)throw new Error('Connect Printify first (Shop → Connect).')
- const api=await client(),spec=KIND_SPECS[p.kind]
+ const api=await client(),spec=p.blueprint?catalogueSpec(p.blueprint.title):KIND_SPECS[p.kind]
  try{
   await set(id,{status:'building',error:undefined})
-  const m=await matchKind(api,p.kind,by),variants=pickVariants(spec,(await api.variants(m.blueprintId,m.providerId)).variants)
+  const m=p.blueprint?await matchBlueprintId(api,p.blueprint.id,by):await matchKind(api,p.kind,by),all=(await api.variants(m.blueprintId,m.providerId)).variants
+  // a catalogue product whose print area has another name: print on the first area its variants have
+  if(p.blueprint&&!all.some(v=>v.placeholders.some(ph=>spec.positions.includes(ph.position)))&&all[0]?.placeholders[0])spec.positions=[all[0].placeholders[0].position]
+  const variants=pickVariants(spec,all)
   if(!variants.length)throw new Error(`“${m.title}” at ${m.provider} has nothing in stock to print on.`)
   // the picture: from the Drive library (Printify fetches the original itself) or the owner's own upload, sent once
   let pic:{id:string;width:number;height:number}

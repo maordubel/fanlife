@@ -30,6 +30,7 @@ export const KIND_SPECS:Record<Kind,KindSpec>={
  sticker:{label:'Sticker',plural:'Stickers',find:[/^kiss[- ]cut stickers?$/i,/square stickers?/i,/sticker/i],avoid:/sheet|bumper|roll|label/i,positions:['front'],maxVariants:4,scale:1},
  'phone-case':{label:'Phone case',plural:'Phone cases',find:[/^tough (phone )?cases?$/i,/^slim (phone )?cases?$/i,/phone case/i],avoid:/wallet|flip|magnetic|card/i,positions:['front'],maxVariants:30,scale:1},
  puzzle:{label:'Jigsaw puzzle',plural:'Puzzles',find:[/^(jigsaw )?puzzle/i,/puzzle/i],avoid:/kids'? puzzle.*30/i,positions:['front'],maxVariants:4,scale:1},
+ more:{label:'From the catalogue',plural:'More',find:[],positions:['front','default'],maxVariants:24,scale:1},
  notebook:{label:'Notebook',plural:'Notebooks',find:[/^hardcover journal/i,/^spiral notebook/i,/(journal|notebook)/i],avoid:/sticker/i,positions:['front','cover'],maxVariants:3,scale:1},
 }
 /** print providers we would rather print with (Europe first: the audience is here and the parcel is cheaper), then anyone */
@@ -38,3 +39,31 @@ export const PROVIDER_ORDER=[/print clever/i,/textildruck europa/i,/opt ondemand
 export const LAUNCH_KINDS:Kind[]=['poster','tote','tee','mug']
 /** how many library pictures per subject go into the launch drafts */
 export const LAUNCH_PICTURES=4
+
+/**
+ * THE WHOLE CATALOGUE (owner, 12.11.2026: "every option they have, smartly, simple to run and launch").
+ * Any Printify product can be chosen in the desk. Its spec is worked out from its name: garments and bags get a chest-sized
+ * print on light colours and adult sizes; everything else (wall art, home, drinkware, accessories) is printed edge to edge.
+ */
+const WEAR=/shirt|tee|hood|sweat|tank|jacket|jersey|polo|dress|legging|jogger|short|sock|onesie|bodysuit|romper|bib|apron|crewneck|long sleeve|zip/i
+const BAG=/tote|bag|backpack|pouch|duffel|fanny/i
+const HAT=/hat|cap|beanie|visor|bucket/i
+export function catalogueSpec(title:string):KindSpec{
+ const wear=WEAR.test(title),bag=BAG.test(title),hat=HAT.test(title),kids=/kid|youth|toddler|baby|infant|bodysuit|onesie|romper|bib/i.test(title)
+ return {label:title,plural:title,find:[],positions:['front','default','front_side','front_cover','cover','top','left','right','back'],
+  colors:wear||bag?LIGHT:undefined,sizes:wear&&!kids?ADULT:undefined,maxVariants:wear?24:12,scale:wear?.78:bag?.86:hat?.6:1,kids}
+}
+/** the desk's shelves for the whole catalogue, in the order a supporter shops */
+export const CATALOGUE_GROUPS:[string,RegExp][]=[
+ ['Wall art',/poster|canvas|framed|print|wall|tapestr|metal|acrylic|wood|photo tile/i],
+ ['Kids & baby',/kid|youth|toddler|baby|infant|bodysuit|onesie|romper|bib/i],
+ ['Clothing',WEAR],
+ ['Hats',HAT],
+ ['Bags',BAG],
+ ['Drinkware',/mug|cup|tumbler|bottle|glass|stein|can cooler|koozie/i],
+ ['Home',/pillow|blanket|towel|rug|mat|curtain|shower|candle|ornament|coaster|clock|duvet|sheet|apron|flag|banner/i],
+ ['Phone & tech',/phone|case|airpod|laptop|mouse|pad|sleeve|charger|pop ?socket|tablet/i],
+ ['Stickers & paper',/sticker|magnet|notebook|journal|card|calendar|postcard|puzzle|paper|planner|bookmark/i],
+ ['Accessories',/socks?|scarf|bandana|mask|keychain|pin|button|lanyard|wristband|jewel|necklace|watch|patch|sunglass|umbrella|face/i],
+]
+export const groupOf=(title:string)=>CATALOGUE_GROUPS.find(([,re])=>re.test(title))?.[0]??'Other'

@@ -1,5 +1,5 @@
 /** The shop's own record (file area `shop`): what the print room has made, what Printify answered and what the public sees. */
-export const KINDS=['poster','framed','canvas','tote','tee','hoodie','kids-tee','mug','sticker','phone-case','puzzle','notebook'] as const
+export const KINDS=['poster','framed','canvas','tote','tee','hoodie','kids-tee','mug','sticker','phone-case','puzzle','notebook','more'] as const
 export type Kind=(typeof KINDS)[number]
 export type ProductStatus='draft'|'building'|'ready'|'live'|'error'
 export type ShopProduct={
@@ -11,6 +11,8 @@ export type ShopProduct={
  art:{library:{id:string;name:string}}|{upload:{id:string;name:string;preview:string;width:number;height:number}}
  title:string;description:string
  status:ProductStatus;error?:string
+ /** any product of Printify's whole catalogue, chosen in the desk's catalogue (kind 'more'): its catalogue number and name */
+ blueprint?:{id:number;title:string}
  /** automatic re-presses after a passing failure (the hourly check-up, at most two) */
  retries?:number
  /** shown on /shop — the owner's switch; only a `live` product with a link can be shown */
@@ -29,6 +31,8 @@ export type ShopSettings={
  margin:number
  /** the catalogue row each kind prints on: found once, kept, and the owner may replace it */
  matches:Partial<Record<Kind,KindMatch>>
+ /** the printer chosen for each whole-catalogue product, by catalogue number */
+ picked?:Record<number,KindMatch>
 }
 export type ShopAudit={at:string;by:string;what:string}
 export type ShopHealthNote={at:string;ok:boolean;notes:string[];checked:number;repaired:number}
