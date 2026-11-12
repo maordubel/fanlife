@@ -26,6 +26,7 @@ from pathlib import Path
 from ..common import FPS, Palette, StageError, read_json, write_json
 from . import build as B
 from . import editor as E
+from . import explainer as X
 from .designer import Designer
 
 ENGINE = 'docu'
@@ -33,10 +34,6 @@ OLD = ('vox', 'vox-hf', 'classic', 'paper')
 NAMED = {'tunnel': 'beat:common/tunnel-walk-out', 'terrace-crowd': 'beat:common/terrace-full-kr',
          'terrace-empty': 'beat:common/old-ground-wide-kr', 'supporter': 'beat:common/supporter-cap-old-ground'}
 FOLLOW = ('follow-seat-kept-kr', 'follow-turnstile-welcome-kr', 'follow-away-end-gap-kr', 'follow-pub-door-kr')
-# The pictures a shot with no art of its own may borrow: the library's home-crowd pictures (cinema/look.BROLL 'home' and
-# 'form' — the kind the single old fallback, terrace-full-kr, was).
-SPARE = ('terrace-full-kr', 'terrace-full-b-kr', 'home-end-night-kr', 'home-end-night-b-kr', 'street-matchday-crowd-kr',
-         'turnstile-queue-kr', 'crowd-scarves-night-kr', 'street-lamp-crowd-kr', 'terrace-fence-scarves-kr', 'kick-off-centre-kr')
 WORDS = ['ONE', 'TWO', 'THREE', 'FOUR', 'FIVE', 'SIX', 'SEVEN', 'EIGHT', 'NINE', 'TEN']
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 NEUTRAL = '#2B2A33'   # an opponent with no recorded colour wears ink, never a guessed kit
@@ -97,9 +94,11 @@ class Adapter:
         self.cues: dict[int, list] = {}
         self.shown: dict[int, Path] = {}             # shot → the picture it shows (spare() keeps neighbours apart)
         self.spares: dict[int, Path | None] = {}     # shot → the spare picture it was given
-        self.used: dict[Path, int] = {}              # spare picture → when it was last given
-        self.pool: list[Path] | None = None
+        self._picker = None                          # the media index's view of this film (studio/media_index.py)
+        self.explainable: dict[int, bool] = {}       # shot → its data could carry an explainer passage (docu/explainer.py)
+        self.sheet = {int(k): v for k, v in (plan.get('sheet') or {}).get('beats', {}).items()} if isinstance(plan.get('sheet'), dict) else {}
         self.foci: dict[str, str | None] = {}        # picture → where its detail look looks
+        self.horizons: dict[str, float | None] = {}  # picture → where its foreground band begins (the camera's near plane)
         self.lib_used: list[str] = []                # the library pieces this film put on screen
         self.last: str | None = None                 # the rich device of the shot before (two city splits never run back to back)
         names = [palette.club_name]
@@ -109,6 +108,7 @@ class Adapter:
                 names += [f.get('home'), f.get('away'), f.get('opponent')]
         self.crest = crests(names)
         self.keys: dict[int, str] = {}               # shot → the key of the picture it shows (the designer reads its index entry)
+        self.also: dict[int, list[str]] = {}         # shot → the further pictures a long line was given
         self.design = Designer(self)                 # the richer devices, each only when the beat's data earns it (docu/designer.py)
 
     # ── assets ──────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -139,6 +139,8 @@ class Adapter:
             p = self.lib_scene(key) if str(key or '').startswith('lib:') else media(key) if key and key != 'paper' else None
             if p:
                 self.keys[s['n']] = NAMED.get(key, key)
+                if s['n'] not in self.shown:   # the plan's own choice is a use too: the index keeps away from it elsewhere
+                    self.picker.use(self.keys[s['n']], s['n'], s.get('start'))
                 break
         if not p and v['type'] == 'follow':
             p = media(f'beat:common/{FOLLOW[s["n"] % len(FOLLOW)]}')
@@ -148,35 +150,43 @@ class Adapter:
         self.shown[s['n']] = p
         return self.asset(p, 'img'), p.suffix.lower() == '.mp4'
 
+    @property
+    def picker(self):
+        """The media index, as this film sees it (studio/media_index.py): its club, the colour families its palette
+        refuses in a picture, its decade, and what the last films showed. Built on first use, once."""
+        if self._picker is None:
+            from .. import media_index as MI
+            self._picker = MI.Picker(MI.build(), self.pal.club_id, self.pal.render_bans, MI.era_of(self.led.get('season')), self.jd.name)
+        return self._picker
+
+    def query(self, n: int) -> dict:
+        from .. import media_index as MI
+        s = next((x for x in self.plan.get('shots') or [] if x['n'] == n), None) or {'n': n, 'visual': {'type': 'illustration'}}
+        return {**MI.beat_query(s, (self.sheet.get(n) or {}).get('emotion')), 't': s.get('start')}
+
     def spare(self, n: int) -> Path | None:
-        """The picture for a shot that has none of its own. It was always `terrace-full-kr`, so a film showed one image
-        again and again (owner, 12.11.2026). Now: the least recently used of the library's crowd pictures (SPARE), in an
-        order fixed by the film's id so a re-render draws the same film, and never the picture of the shot before."""
+        """The picture for a shot that has none of its own. First it was always `terrace-full-kr`, then the least recently
+        used of ten crowd pictures (batch 1's SPARE). Now the media index chooses (owner, 12.11.2026: "real index
+        management"): the picture whose subject and mood fit the beat, of this club or of any, never another club's,
+        fresh against this film and the last films — and never the picture of the shot before."""
         if n in self.spares:   # a shot may ask twice (its background and its card): the same picture both times
             return self.spares[n]
-        if self.pool is None:
-            from ..cinema.look import allowed
-            keys = [f'beat:common/{k}' for k in SPARE if allowed(f'beat:common/{k}', self.pal.render_bans)]
-            keys.sort(key=lambda k: hashlib.sha256(f'{self.jd.name}:{k}'.encode()).hexdigest())
-            self.pool = [q for q in map(media, keys) if q] or [q for q in [media('beat:common/terrace-full-kr')] if q]
-        before = self.shown.get(max((k for k in self.shown if k < n), default=-1))
-        fresh = [q for q in self.pool if q != before] or self.pool
-        p = min(fresh, key=lambda q: self.used.get(q, -1), default=None)   # min is stable: ties keep the film's order
-        if p:
-            self.used[p] = len(self.spares)
-        self.spares[n] = p
-        return p
+        before = self.keys.get(max((k for k in self.keys if k < n), default=-1))
+        q = self.query(n)
+        r = self.picker.pick(q, avoid={before} if before else ()) or self.picker.pick(q)
+        self.spares[n] = Path(r['path']) if r else None
+        if r:
+            self.keys.setdefault(n, r['id'])
+        return self.spares[n]
 
     def related(self, n: int, i: int) -> str | None:
         """Another picture for a line so long that three looks at its own picture are not enough (docu/editor.looks): the
-        least recently used crowd picture, never the one this shot already shows."""
-        self.spare(-1 - n) if self.pool is None else None   # fills the pool; the throwaway key is never a shot
-        own = self.shown.get(n)
-        fresh = [q for q in (self.pool or []) if q != own]
-        p = min(fresh, key=lambda q: self.used.get(q, -1), default=None)
-        if p:
-            self.used[p] = len(self.used) + len(self.spares)
-        return self.asset(p, 'img')
+        index's next best for the same beat, never the one this shot already shows."""
+        own = self.keys.get(n)
+        r = self.picker.pick({**self.query(n), 'n': n}, avoid={own} if own else ())
+        if r:
+            self.also.setdefault(n, []).append(r['id'])
+        return self.asset(r['path'], 'img') if r else None
 
     def focus(self, src: str) -> str | None:
         """Where a detail look should look on this picture: the busiest part of it (most edges), as a transform origin —
@@ -195,6 +205,14 @@ class Adapter:
             except Exception:  # noqa: BLE001 — a clip, a missing file: the editor's fixed corners
                 pass
         return self.foci[src]
+
+    def horizon(self, src: str) -> float | None:
+        """Where this picture's foreground band begins (studio/camera.horizon), read once per picture: the near plane of
+        the camera's parallax. None for a picture with no such line — the camera then lifts its lower part by default."""
+        if src not in self.horizons:
+            from .. import camera as C
+            self.horizons[src] = C.horizon(self.files[src]) if src in self.files else None
+        return self.horizons[src]
 
     def backdrop(self, n: int) -> dict | None:
         """The picture for the rest of a beat whose card has left (docu/editor.cut): the beat's own, else a spare."""
@@ -330,8 +348,17 @@ class Adapter:
             sco = (f.get('scorers') or [])
             k = v.get('scorer') if isinstance(v.get('scorer'), int) else 0
             who = sco[k] if 0 <= k < len(sco) else {}
-            b = self.back(s, 'slam', tag={'small': f"{who['minute']}'" if who.get('minute') is not None else 'GOAL', 'big': who.get('name') or ''},
-                          mini={'home': f.get('home') or '', 'score': f'{f.get("score_home")}–{f.get("score_away")}', 'away': f.get('away') or '', 'at': 1.2})
+            mini = {'home': f.get('home') or '', 'score': f'{f.get("score_home")}–{f.get("score_away")}', 'away': f.get('away') or '', 'at': 1.2}
+            try:    # the score as it stood, changing to the score after THIS goal when the scorer is named — only when the
+                    # record orders the goals (director.goal_scores); otherwise the final score, as before
+                from ..director import goal_scores, goal_word_time
+                st = goal_scores(self.led, f).get(k)
+                if st:
+                    mini = {**mini, 'score': f'{st[0][0]}–{st[0][1]}', 'at': 0.4,
+                            'flip': {'score': f'{st[1][0]}–{st[1][1]}', 'at': round(max(1.0, min(d - 1.0, goal_word_time(s, who.get('name') or '', d * 0.5))), 2)}}
+            except Exception:  # noqa: BLE001 — a claim without minutes or sides: no order is claimed
+                pass
+            b = self.back(s, 'slam', tag={'small': f"{who['minute']}'" if who.get('minute') is not None else 'GOAL', 'big': who.get('name') or ''}, mini=mini)
             ch = self.design.chalk(s, f, who, list(s.get('claim_ids') or []) + [v.get('claim')]) if d >= 5 else None
             if ch and b:   # the move on the board first, then the goal itself: the picture arrives as the ball does
                 c = round(min(E.MAX_CARD, d * 0.55), 2)
@@ -479,9 +506,108 @@ class Adapter:
             # the figure the writer asked for by key comes first; else the library's own people for this shot — over a
             # picture only (under a full-frame card nobody would see them), and never over the city split or the board
             out += [cu] if cu else ([] if any(x and E.opaque(x) for x in out) else self.lib_figures(s))
-        out = [x for x in out if x]
+        out = self.speak(s, d, f, [x for x in out if x])
         self.last = next((x['kind'] for x in out if x['kind'] in ('cities', 'table', 'chalk', 'verdict', 'rule', 'press')), None)
         return out
+
+    # ── the three languages (docu/explainer.py) ─────────────────────────────────────────────────────────────────────
+    def checked(self, dev: dict | None, s: dict) -> dict | None:
+        """An explainer through the designer's rule (rules 2, 11): every label and every number it would print must be in
+        the ledger's claims or in the beat's own checked words — else no device."""
+        if not dev:
+            return None
+        labels = [dev.get('label') or ''] + [x.get('label') or '' for x in (dev.get('ticks') or []) + (dev.get('bars') or [])]
+        nums = [str(dev['value'])] if dev.get('value') is not None else []
+        nums += [str(x['value']) for x in (dev.get('ticks') or []) + (dev.get('bars') or [])]
+        probe = {'kind': 'explain', 'title': dev.get('title') or '', 'label': ' '.join(x for x in labels if x), 'text': ' '.join(nums)}
+        return dev if self.design.sourced(probe, s) else None
+
+    def speak(self, s: dict, d: float, f: dict, out: list[dict]) -> list[dict]:
+        """Which language tells this beat best, after the adapter laid its documentary devices. An EXPLANATION the claims
+        can draw becomes an explainer passage — when the goals came (a score beat that talks about its goals), a counted
+        number the line says (the wait, the crowd), a record as bars — and a quote becomes kinetic type over its picture.
+        `explainable[n]` records that the beat's data could carry one, whether or not there was room (the gate reads it).
+        STORIES_DOCU_LANG=0 keeps batch 3's devices for comparison."""
+        n, t, v = s['n'], v_type(s), s['visual']
+        self.explainable[n] = False
+        if os.environ.get('STORIES_DOCU_LANG', '1') == '0':
+            return out
+        text = s.get('narration') or ''
+        facts = [g for g in (self.fact(c) for c in dict.fromkeys([v.get('claim'), *(s.get('claim_ids') or [])]) if c) if g]
+        if t in ('score', 'versus', 'goal') and f.get('kind') == 'match':
+            tl = self.checked(X.goal_timeline(f, self.club), s)
+            self.explainable[n] = bool(tl)
+            if tl and t != 'goal' and d >= X.EXPLAIN_MIN_S + 2.6 and X.GOAL_TALK.search(text):
+                # the board is read first (2.6 s at least), then HOW the score came about — in place of a verdict stamp
+                at = round(max(2.6, d - min(X.EXPLAIN_MAX_S, d * 0.6)), 2)
+                out = [x for x in out if x['kind'] not in ('verdict', 'stamp')] + [{**tl, 'dt': at, 'd': round(d - at, 2)}]
+                self.cues[n] = [c for c in self.cues.get(n, []) if c[1] not in ('sting', 'stamp')]
+                self.cue(n, at + 0.25, 'pen')
+                self.cue(n, at + 1.1, 'tick')
+        elif t == 'record':
+            br = self.checked(X.bars(self.fact(v.get('claim'))), s)
+            self.explainable[n] = bool(br) or any(x['kind'] == 'tally' for x in out)
+            if br:
+                out = [x for x in out if x['kind'] != 'tally'] + [br]
+        elif t == 'quote':
+            kq = X.quote_lines(v.get('text') or '', d)
+            b = self.back(s, 'push', veil=0.3) if kq else None
+            if kq and b:     # the words themselves, arriving, over a picture — not a card of text
+                out = [b, {**kq, 'who': ' · '.join(x for x in (v.get('who') or '', v.get('role') or '') if x).upper(), 'dt': 0.3, 'd': round(d - 0.3, 2), 'veil': 0.66}]
+        elif t in ('turning', 'illustration', 'fact', 'matchday', 'trailer'):
+            nb = self.checked(X.number(text, facts), s)
+            self.explainable[n] = bool(nb)
+            lead = max((x.get('at', 0.0) + E.WORD_HOLD for x in out if x['kind'] == 'word'), default=0.0)
+            at = round(max(lead, d * 0.42), 2)
+            if nb and d - at >= X.EXPLAIN_MIN_S:
+                out.append({**nb, 'dt': at, 'd': round(min(X.EXPLAIN_MAX_S, d - at), 2)})
+                self.cue(n, at + 0.35, 'tick')
+        if any(x['kind'] in X.EXPLAIN_KINDS for x in out):
+            self.explainable[n] = True
+        # time pressure (the score sheet's `clock`): the match clock over the picture, at a minute that is sourced — one
+        # the line says AND that is a scorer's minute of the cited match or the end of a period (45, 90, 120)
+        if (self.sheet.get(n) or {}).get('clock') and f.get('kind') == 'match' and t in ('matchday', 'illustration', 'goal', 'race', 'ticket') \
+                and any(x['kind'] == 'image' for x in out):
+            from ..script import numbers_in_text
+            ok = {x.get('minute') for x in f.get('scorers') or [] if isinstance(x.get('minute'), int)} | {45, 90, 120}
+            said = sorted(m for m in numbers_in_text(text) if m in ok)
+            if said:
+                m = said[-1]
+                ck = self.design.sourced({'kind': 'clockdev', 'minute': m, 'span': 120 if m > 90 else 90}, s)
+                if ck:
+                    out.append({**ck, 'dt': 0.6, 'd': round(d - 0.6, 2)})
+                    self.cue(n, 0.8, 'tick')
+        return out
+
+    def punch_up(self, raw: list[dict]) -> None:
+        """The mix (explainer.PLAIN_MAX): while more of the film than that is plain art, the beats that are ALL art — the
+        most intense first, by the score sheet — get their one short line as kinetic type (explainer.punch). In place."""
+        for b in raw:
+            b['lang'] = X.languages(b['shots'], b['d'])
+        if os.environ.get('STORIES_DOCU_LANG', '1') == '0':
+            return
+        # the beats that are mostly art and have no type of their own yet — the most art first, then the most intense
+        todo = sorted((b for b in raw if b['meta']['type'] not in ('end', 'follow', 'chapter') and b['lang']['documentary'] >= 0.6 * b['d']
+                       and not any(x['kind'] == 'kinetic' for x in b['shots'])),
+                      key=lambda b: (-b['lang']['documentary'], -(b['meta'].get('intensity') or 0.5), b['meta']['n']))
+        for b in todo:
+            if X.mix(raw)['documentary'] <= X.PLAIN_MAX:
+                break
+            s = next(x for x in self.plan['shots'] if x['n'] == b['meta']['n'])
+            k = X.punch(s.get('narration') or '', b['meta'].get('words') or [], b['t'], b['d'])
+            busy = X.spans(b['shots'], b['d'], X.EXPLAIN_KINDS | X.KINETIC_KINDS)
+            if k and not any(a < k['dt'] + k['d'] and k['dt'] < z for a, z in busy):   # never over a board or another line of type
+                b['shots'].append(k)
+                b['lang'] = X.languages(b['shots'], b['d'])
+
+    @staticmethod
+    def spoken(beats: list[dict]) -> list[dict]:
+        """Each beat's seconds in each language, read off the beat as it will be drawn (after the cut: a card that left
+        early no longer counts), and the language that leads it."""
+        for b in beats:
+            lg = b['lang'] = X.languages(b['shots'], b['d'])
+            b['language'] = max(lg, key=lambda k: (lg[k], k == 'documentary'))
+        return beats
 
     def cutting(self, s: dict) -> tuple[str | None, str | None]:
         """The beat's own picture (never a spare) and its key — what a press beat may show as the cutting."""
@@ -499,8 +625,13 @@ class Adapter:
             t, d = s['start'], s['frames'] / FPS
             cin = s.get('cinema') or {}
             at0 = s.get('voice_at')
-            b = {'t': t, 'd': d, 'shots': self.shots(s, d),
+            devs = self.shots(s, d)
+            rec = self._picker.by.get(self.keys.get(s['n'])) if self._picker is not None else None
+            b = {'t': t, 'd': d, 'shots': devs,
                  'meta': {'n': s['n'], 'type': v_type(s), 'chapter': s.get('chapter'), 'camera': cin.get('camera'), 'pace': cin.get('cam_pace'),
+                          'subjects': (rec or {}).get('subjects') or [],   # what the picture shows, by its index entry: the camera reads it
+                          'explainable': self.explainable.get(s['n'], False),
+                          **{k: (self.sheet.get(s['n']) or {}).get(k) for k in ('emotion', 'intensity', 'turn', 'clock', 'breath')},
                           'outcome': self.fact(s['visual'].get('claim')).get('outcome') if v_type(s) in ('score', 'versus') else None,
                           'words': [round(at0 + w['start'], 3) for w in (s.get('words') or [])] if at0 is not None else []}}
             if s.get('narration') and s.get('voice_at') is not None and v_type(s) != 'end':
@@ -512,8 +643,9 @@ class Adapter:
         """The film's beats, edited (docu/editor.py): long stills cut into looks, cards that leave, a transition into
         every beat, the docs/71 rules. STORIES_DOCU_EDIT=0 keeps the adapter's own one-still-per-line cut (for comparison)."""
         raw = self.raw_beats()
+        self.punch_up(raw)   # the language mix: kinetic lines where too much of the film is plain art (docu/explainer.py)
         if os.environ.get('STORIES_DOCU_EDIT', '1') == '0':
-            return raw
+            return self.spoken(raw)
         # the producer's gate named shots to re-plan (studio/qa.experience → pipeline): {shot n: [long | asset | flash | shake]}
         fp = self.jd / 'experience-replan.json'
         fixes = {int(k): v for k, v in (read_json(fp).get('shots') or {}).items()} if fp.exists() else {}
@@ -523,7 +655,14 @@ class Adapter:
                 for x in b['shots']:
                     if x['kind'] == 'image' and not s.get('required_asset'):
                         x['src'] = self.related(b['meta']['n'], 0) or x['src']
-        return E.cut(raw, self.plan.get('beat_grid'), self.related, self.backdrop, fixes, self.focus)
+        out = E.cut(raw, self.plan.get('beat_grid'), self.related, self.backdrop, fixes, self.focus)
+        for b in out:   # the camera's near plane, read off each picture it moves over
+            for x in b['shots']:
+                if x.get('cam') and x['kind'] == 'image' and x.get('as') != 'print':
+                    h = self.horizon(x['src'])
+                    if h is not None:
+                        x['horizon'] = h
+        return self.spoken(out)
 
 
 def v_type(s: dict) -> str:
@@ -560,7 +699,15 @@ def write_project(job_dir: Path, plan: dict, palette: Palette, root: Path) -> tu
     ad = Adapter(job_dir, plan, palette, ledger, script)
     beats = ad.beats()
     write_json(job_dir / 'docu-shots.json', {'shots': E.shot_list(beats), 'errors': E.errors(beats) if beats and 'in' in beats[0] else [],
-                                             'beat_grid': bool(plan.get('beat_grid')), 'library': sorted(set(ad.lib_used))})
+                                             'beat_grid': bool(plan.get('beat_grid')), 'library': sorted(set(ad.lib_used)),
+                                             **({'mix': X.mix(beats)} if beats and 'lang' in beats[0] else {})})
+    # the film's pictures, by their index entries, and the ledger across films (studio/media_index.py): which asset on
+    # which shot — what the next film's picker reads as "seen lately" and the gate reports as library hygiene
+    if ad._picker is not None:
+        pk = ad._picker
+        uses = pk.close()
+        write_json(job_dir / 'media-index-usage.json', {'film': job_dir.name, 'club': palette.club_id, 'uses': uses, 'recent': {a: k for a, k in pk.recent.items() if a in pk.shots},
+                   'assets': {a: {k: pk.by[a].get(k) for k in ('source', 'kind', 'clubs', 'era', 'subjects', 'moods', 'rights', 'size')} for a in sorted(pk.shots) if a in pk.by}})
     if root.exists():
         shutil.rmtree(root)
     (root / 'assets' / 'img').mkdir(parents=True)

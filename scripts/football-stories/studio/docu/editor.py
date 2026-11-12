@@ -17,6 +17,8 @@ from __future__ import annotations
 
 import math
 
+from .. import camera as C
+
 # A still held longer than this reads as a slide (measured on the pilot: stills of 8–13 s, 5.6 shots a minute; the
 # hand-written films the owner approved change picture every 2–4 s).
 MAX_STILL = 4.0
@@ -42,7 +44,7 @@ OTHER = {'cut': 'whip', 'whip': 'match', 'match': 'cut', 'fade': 'cut', 'tear': 
 def opaque(dev: dict) -> bool:
     """A device that covers the whole frame with its own ground (paper or ink), so nothing under it is seen."""
     k = dev['kind']
-    return (k in ('ledger', 'quote', 'rule', 'tally', 'form', 'table', 'press', 'chalk', 'cities', 'verdict', 'word')
+    return (k in ('ledger', 'quote', 'rule', 'tally', 'form', 'table', 'press', 'chalk', 'cities', 'verdict', 'word', 'explain')
             or (k == 'ticket' and not dev.get('compact')) or (k == 'card' and bool(dev.get('paper'))))
 
 
@@ -55,13 +57,38 @@ OPENING = 2.6       # the film's first cut comes by here: the gate wants a chang
 TIGHT = 2.4         # the re-plan's target for a shot the gate measured as too long or too still
 
 
+# THE PACE FOLLOWS THE SCORE SHEET (studio/drama.py). What a look aims to last, by the beat's emotion and intensity:
+BURST = 1.9         # a release or a joy at full intensity: a burst of quick cuts (never under MIN_SUB — rule 142: a look, not a flicker)
+HELD = 3.9          # the held breath before a turn: the fewest cuts MAX_STILL allows
+
+
+def pace(meta: dict) -> float:
+    """The target length of a look in this beat: short as tension rises (TARGET down to TIGHT at full intensity), ONE
+    long held look for the breath before the turn, a burst of quick cuts at the release, a little longer for grief,
+    wonder and pride. A beat with no emotion on the sheet keeps TARGET."""
+    emo, k = meta.get('emotion'), float(meta.get('intensity') or 0.5)
+    if meta.get('breath'):
+        return HELD
+    if emo in ('release', 'joy'):
+        return round(TARGET - (TARGET - BURST) * k, 2)
+    if emo in ('tension', 'dread', 'defiance'):
+        return round(TARGET - (TARGET - TIGHT) * k, 2)
+    if emo in ('grief', 'wonder', 'pride'):
+        return min(HELD, round(TARGET + 0.4 * (1 - k), 2))
+    return TARGET
+
+
+# The colour treatment a picture takes from the sheet (build.GRADES draws it): inside the brand, a slow grade, no flash.
+GRADE = {'dread': 'cold', 'grief': 'grey', 'tension': 'cool', 'joy': 'bloom', 'release': 'bloom', 'pride': 'warm'}
+
+
 def cut_points(t0: float, d: float, words: list[float], grid: list[float] | None, target: float = TARGET) -> list[float]:
     """Where a hold of `d` seconds starting at film time `t0` is cut, as offsets into it. As many looks as keep every one
     under MAX_STILL; each cut is moved to the nearest music beat (within BEAT_SNAP), else to the nearest word start
     (within WORD_SNAP), else left where the arithmetic put it — and never so far that a look breaks MIN_SUB or MAX_STILL."""
-    if d <= (MAX_STILL if target >= TARGET else 2 * MIN_SUB):
+    if d <= (MAX_STILL if target >= TARGET else max(2 * MIN_SUB, target + MIN_SUB * 0.5)):
         return []
-    n = max(2, math.ceil(d / target))
+    n = max(2, math.ceil(d / target - 1e-6))
     out, last = [], 0.0
     for i in range(1, n):
         ideal = d * i / n
@@ -111,10 +138,10 @@ def transition(prev: dict | None, meta: dict, history: list[str]) -> str:
         name = 'dive'
     elif prev.get('type') == 'chapter':
         name = 'tear'           # out of the chapter card through the paper
-    elif t in SOFT or meta.get('outcome') == 'loss' or meta.get('pace') == 'slow':
-        name = 'fade'
-    elif t in HARD:
-        name = 'cut'
+    elif t in SOFT or meta.get('outcome') == 'loss' or meta.get('pace') == 'slow' or (meta.get('emotion') in ('grief', 'dread') and t not in HARD):
+        name = 'fade'           # grief and dread arrive slowly (the score sheet, studio/drama.py)
+    elif t in HARD or meta.get('emotion') == 'release':
+        name = 'cut'            # the hit: the release is a hard cut on the moment
     elif t in CENTRED:
         name = 'match'
     elif t in TRAVEL or meta.get('camera') == 'whip':
@@ -132,6 +159,7 @@ def cut(beats: list[dict], grid: list[float] | None = None, related=None, backdr
     the producer's one re-plan ({shot n: reasons}, studio/qa.experience): `long` cuts that shot tighter and lets its card
     go sooner; `flash` or `shake` brings it in on a plain cut and keeps its looks to the calm ones."""
     out, history, prev = [], [], None
+    cams: list[str] = []   # the camera moves so far, film-wide (direct(): never the same one three times running)
     for b in beats:
         m, d = b.get('meta') or {}, b['d']
         fix = set((fixes or {}).get(m.get('n')) or [])
@@ -158,7 +186,7 @@ def cut(beats: list[dict], grid: list[float] | None = None, related=None, backdr
         cutup = []
         for dev in shots:
             dt, hold = span(dev, d) if dev['kind'] != 'word' else (0, 0)
-            pts = cut_points(b['t'] + dt, hold, m.get('words') or [], grid, TIGHT if tight or prev is None else TARGET) if dev['kind'] in PICTURES else []
+            pts = cut_points(b['t'] + dt, hold, m.get('words') or [], grid, TIGHT if tight or prev is None else pace(m)) if dev['kind'] in PICTURES else []
             if prev is None and dev['kind'] in PICTURES and dt == 0 and hold >= OPENING + MIN_SUB:
                 pts = [min((pts or [OPENING])[0], OPENING), *pts[1:]]   # the opening: its first look is over inside three seconds
             if pts:
@@ -171,11 +199,20 @@ def cut(beats: list[dict], grid: list[float] | None = None, related=None, backdr
             leave = next((e for e in ends if e - x.get('dt', 0.0) >= MIN_SUB), None) if x['kind'] == 'cutout' else None
             if leave is not None:
                 x['d'] = round(leave - x.get('dt', 0.0), 3)
+        # a scoreline that changes ON the cut: the mini score's flip moves to the look boundary nearest the word that tells the goal
+        edges = sorted({round(x.get('dt', 0.0), 3) for x in cutup if x['kind'] in PICTURES and x.get('dt', 0.0) > 0})
+        for x in cutup:
+            fl = (x.get('mini') or {}).get('flip')
+            if fl and edges:
+                near = min(edges, key=lambda e_: abs(e_ - fl['at']))
+                if abs(near - fl['at']) <= 1.2:
+                    x['mini'] = {**x['mini'], 'flip': {**fl, 'at': near, 'on_cut': True}}
         name = 'cut' if calm and prev is not None else transition(prev, m, history)
         if calm:   # no slam, no pan back the other way: every look of this shot glides one way
             for x in cutup:
                 if x['kind'] in PICTURES:
                     x.update({'frame': 'wide'} if x.get('frame') in ('reverse', 'turn') else {'move': 'push'} if x.get('move') in ('slam', 'pull') else {})
+        direct(cutup, m, cams, calm)
         history.append(name)
         for x in cutup:   # the transition is the entrance now: the picture's own fade would be a second one
             if x['kind'] == 'image' and x.get('dt', 0) == 0:
@@ -184,6 +221,45 @@ def cut(beats: list[dict], grid: list[float] | None = None, related=None, backdr
         prev = m
     rules(out)
     return out
+
+
+# The adapter's old one-layer tweens, as the camera moves that mean the same (a plan with no score sheet — an older
+# job, a hand-made plan — is still filmed with the camera, by what each beat's type always asked for).
+OLD_MOVE = {'push': 'dolly', 'pull': 'pull', 'panl': 'track', 'panr': 'track', 'slam': 'snap'}
+UNDER = 0.45        # a veil this dark means a card or a board is read over the picture: it only breathes
+
+
+def direct(shots: list[dict], meta: dict, cams: list[str], calm: bool = False) -> None:
+    """e · the camera (studio/camera.py), in place: every full-frame still of the beat gets a named move — chosen by the
+    beat's emotion on the score sheet and by what the picture shows, `breath` under a card, the turn's push for a
+    chapter's last look — how far it travels (`ci`, the sheet's intensity) and which way a lateral move runs. A print on
+    the desk and the tinted hero keep their own entrances. `cams` is the film's run of moves so far."""
+    emo, inten = meta.get('emotion'), meta.get('intensity')
+    subj = meta.get('subjects') or ()
+    k = 0
+    for x in shots:
+        if x['kind'] != 'image' or x.get('as') == 'print' or x.get('fit') == 'contain':
+            continue
+        under = x.get('veil', 0.3) >= UNDER
+        if calm:
+            mv = 'dolly'
+        elif x.get('frame') == 'turn':
+            mv = 'dolly'            # the chapter's last look: the push that leaves a question (rules() sets the frame after; see there)
+        elif under:
+            mv = 'breath' if cams[-2:] != ['breath', 'breath'] else 'dolly'
+        elif emo is None and not x.get('frame') and cams[-2:] != [OLD_MOVE.get(x.get('move', 'push'))] * 2:
+            mv = OLD_MOVE.get(x.get('move', 'push'), 'dolly')
+        else:
+            mv = C.choose(emo, cams, subj if k == 0 else (), key=(meta.get('n') or 0) + k)
+            if cams[-2:] == [mv, mv]:
+                mv = next(c for c in C.MOVES[:-1] if c != mv)
+        x['cam'] = mv
+        if GRADE.get(emo) and float(inten or 0) >= 0.5 and not under:
+            x['grade'] = GRADE[emo]
+        x['ci'] = 0.0 if (calm or (under and mv == 'dolly')) else round(0.5 if inten is None else float(inten), 2)
+        x['way'] = -1 if (x.get('move') == 'panl' or ((meta.get('n') or 0) + k) % 2) else 1
+        cams.append(mv)
+        k += 1
 
 
 def pictures(b: dict) -> list[dict]:
@@ -199,7 +275,7 @@ def treatment(b: dict) -> str | None:
 
 
 def motion(x: dict) -> str:
-    return x.get('frame') or x.get('move') or 'push'
+    return x.get('cam') or x.get('frame') or x.get('move') or 'push'
 
 
 def rules(beats: list[dict]) -> None:
@@ -208,13 +284,6 @@ def rules(beats: list[dict]) -> None:
     for i in range(2, len(beats)):
         if treatment(beats[i]) == treatment(beats[i - 1]) == treatment(beats[i - 2]) == 'image':
             beats[i]['shots'][0]['as'] = 'print'
-    seq = [x for b in beats for x in pictures(b)]
-    for i in range(2, len(seq)):
-        if motion(seq[i]) == motion(seq[i - 1]) == motion(seq[i - 2]):
-            if seq[i].get('frame'):
-                seq[i]['frame'] = FRAMES[(FRAMES.index(seq[i]['frame']) + 1) % 3] if seq[i]['frame'] in FRAMES else 'wide'
-            else:
-                seq[i]['move'] = MOVES[(MOVES.index(motion(seq[i])) + 1) % 4] if motion(seq[i]) in MOVES else 'push'
     for i, b in enumerate(beats[:-1]):
         nxt = beats[i + 1]
         if (b.get('meta') or {}).get('chapter') != (nxt.get('meta') or {}).get('chapter') or (nxt.get('meta') or {}).get('type') == 'chapter':
@@ -222,6 +291,24 @@ def rules(beats: list[dict]) -> None:
             if p and p[-1]['kind'] == 'image' and not p[-1].get('tag'):
                 p[-1]['frame'] = 'turn'
                 p[-1].pop('focus', None)
+                if p[-1].get('cam'):    # the push that leaves a question: the dolly, as far as it goes
+                    p[-1].update({'cam': 'dolly', 'ci': 1.0})
+    seq = [x for b in beats for x in pictures(b)]
+    for _ in range(3):   # a fix can make a new run with its neighbours: settle it (three passes are always enough here)
+        again = False
+        for i in range(2, len(seq)):
+            if motion(seq[i]) == motion(seq[i - 1]) == motion(seq[i - 2]):
+                x = seq[i - 1] if seq[i].get('frame') == 'turn' else seq[i]   # the chapter's turn keeps its push; its neighbour gives way
+                if x.get('cam'):   # the camera's own run: the next move of the grammar that neither neighbour makes
+                    near = {motion(seq[j]) for j in (i - 2, i - 1, i, min(i + 1, len(seq) - 1)) if seq[j] is not x}
+                    x['cam'] = next(c for c in C.MOVES[:-1] if c not in near)
+                elif x.get('frame'):
+                    x['frame'] = FRAMES[(FRAMES.index(x['frame']) + 1) % 3] if x['frame'] in FRAMES else 'wide'
+                else:
+                    x['move'] = MOVES[(MOVES.index(motion(x)) + 1) % 4] if motion(x) in MOVES else 'push'
+                again = True
+        if not again:
+            break
 
 
 def errors(beats: list[dict]) -> list[str]:
@@ -258,7 +345,9 @@ def shot_list(beats: list[dict]) -> list[dict]:
     for b in beats:
         m = b.get('meta') or {}
         subs = [{'kind': x['kind'], 'at': round(b['t'] + x.get('dt', 0), 2), 'd': round(x.get('d', b['d'] - x.get('dt', 0)), 2),
-                 'look': x.get('as') or motion(x), 'src': x.get('src')} for x in b['shots'] if x['kind'] in (*PICTURES, 'video', 'cutout')]
+                 'look': x.get('as') or x.get('frame') or x.get('move') or 'push', 'src': x.get('src'), **({'camera': x['cam']} if x.get('cam') else {})}
+                for x in b['shots'] if x['kind'] in (*PICTURES, 'video', 'cutout')]
         out.append({'n': m.get('n'), 'type': m.get('type'), 'chapter': m.get('chapter'), 't': round(b['t'], 2), 'd': round(b['d'], 2),
-                    'in': b.get('in'), 'devices': [x['kind'] for x in b['shots']], 'pictures': subs})
+                    'in': b.get('in'), 'devices': [x['kind'] for x in b['shots']], 'pictures': subs,
+                    **{k: b[k] for k in ('lang', 'language') if k in b}, **{k: m[k] for k in ('emotion', 'intensity') if m.get(k) is not None}})
     return out

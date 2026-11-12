@@ -12,6 +12,10 @@ understand their roles."* One owner per decision; each rule lives in ONE place a
 | **Editor (VOX)** | how it moves and reads: one camera, never a dead stop, one hero per line, big type, the score that follows the story | `docs/fanlife/71-continuous-camera-edit.md` → `vox/camera.py` (`flow()`), `score_story.py`, `vox/compose.py` | `test_vox` (Camera, Numbers) |
 | **Editor (DOCU)** | the cut of the default engine: no still past 4 s, the looks, the transitions, the same docs/71 rules | `studio/docu/editor.py` → `docu/build.py` (`transition`, `FRAMINGS`) | `test_docu_editor` |
 | **Graphic designer (DOCU)** | which device a beat's data earns; nothing on screen outside the research block | `studio/docu/designer.py` (`sourced`) | `test_docu_designer` |
+| **Librarian** | which picture a beat with none of its own gets; what the last films showed; what art is missing | `studio/media_index.py` (`Picker`, `Ledger`, `report`), `docs/rules/studio-experience.md` | `test_media_index` |
+| **Camera** | how a still is filmed: the named move, the depth planes, the bounds | `studio/camera.py` → `docu/editor.direct`, `docu/build.Film.image` | `test_camera` |
+| **Score sheet** | what every beat FEELS like, and the film's arc; the mini-drama shape | `studio/drama.py`, `script.mini_drama`, `writer.drama_pass` | `test_drama` |
+| **Languages (DOCU)** | documentary, explainer or kinetic per beat; the mix targets | `studio/docu/explainer.py` | `test_docu_languages` |
 | **Producer** | whether the finished film is an experience: the gate's thresholds and the one re-plan | `studio/qa.py` (the experience gate) | `test_experience_gate` |
 | **Narrator** | how names and moments sound | `studio/voice.py`, `pronounce.py`, `kit/pronounce/*` | `test_voice*` |
 | **Flow operator** | the pictures and clips Flow makes: Shorts, CLASSIFIED panels, the art library | `docs/fanlife/70-flow-operator.md`, `cinema/flow_library.py` | `test_flow_library`, `tests/stories-flow-operator.test.ts` |

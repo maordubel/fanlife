@@ -110,6 +110,17 @@ HOOK LAWS (the first 5 seconds decide everything; every opening, title, thumbnai
   rewind ("But to understand that night, go back to August.").
 - STAKES BEFORE RESULTS. Before a big match say what it could change: a run on the line, a tie to save, a rival waiting,
   a first final. Then make the viewer wait one beat before the score.
+- EVERY CHAPTER IS A MINI-DRAMA with five parts, in this order, each in the narration's own words:
+  a WANT (what the club or its people need here — say it in the chapter's first two beats), an OBSTACLE (who or what
+  stands in the way), a CLOCK (how much time is left: minutes, matches, days — so the viewer feels it running out),
+  a TURN in the chapter's second half (one beat where the story changes direction: "Then…", "Until…", "But this
+  time…") and a PAYOFF (what happened — a result, a score, a table) just before the chapter's last line. That last line,
+  in every chapter but the final one, is a CLIFF EDGE: a question, a cliffhanger or a turn the next chapter answers.
+- THE FILM'S ARC. Plant ONE question inside the first fifteen seconds (the moment whose outcome the viewer does not
+  know: "…and it all comes down to penalties.") and DO NOT answer it: withhold the outcome, rewind, and pay it off
+  after the midpoint of the film, citing the same claim. Give the film at least one moment of real TENSION (one match
+  or decision told against its clock) and one of pure JOY (the goal, the win, the celebration on its own beat).
+  Set "drama": 1.
 - MINI-DRAMA. Start with a concrete paradox or decisive moment. Rewind to the fixture and the stakes, let a setback
   narrow the options, build a believable moment of hope, and show the decision that changes the outcome. Close on what
   the result meant to the people involved. Give each chapter one change and an honest question to carry into the next.
@@ -608,9 +619,11 @@ def squash_text(t: str) -> str:
 
 
 def write_script(brief: dict, ledger: dict, cache_dir: Path, log, angle: tuple[str, str] | None = None,
-                 director: dict | None = None, avoid: list[dict] | None = None) -> dict:
+                 director: dict | None = None, avoid: list[dict] | None = None, drama: bool = False) -> dict:
     """One script. `director` (from studio/directors.py) makes it that director's film; `avoid` lists the options already
-    written ({director, title, hook}) so this one cannot repeat their hook or title."""
+    written ({director, title, hook}) so this one cannot repeat their hook or title. `drama` allows the ONE rewrite for
+    the mini-drama shape (drama_pass) — the film's own script only: an option among three is checked and reported, never
+    rewritten, so three directors do not spend six calls of the free daily quota."""
     minutes = float(brief['duration'])
     lo, hi = target_words(minutes)
     kind = brief.get('kind') or 'season'
@@ -685,10 +698,48 @@ def write_script(brief: dict, ledger: dict, cache_dir: Path, log, angle: tuple[s
         attempts.append({'attempt': attempt, 'errors': errs[:40], 'meta': reply.get('meta')})
         if not errs:
             script['_writer'] = attempts
-            return script
+            return drama_pass(script, check, user, reply['text'], cache_dir, log, rewrite=drama)
         user += ('\n\nYOUR PREVIOUS ANSWER FAILED THESE CHECKS. Return the whole corrected JSON object:\n- '
                  + '\n- '.join(errs[:40]) + fix_hints(errs, ledger, lo, hi) + '\n\nPrevious answer:\n' + reply['text'][:60000])
     raise StageError('SCRIPT_INVALID', 'The writer could not produce a valid script: ' + '; '.join(attempts[-1]['errors'][:10]))
+
+
+def drama_pass(script: dict, check, user: str, answer: str, cache_dir: Path, log, rewrite: bool = True) -> dict:
+    """The mini-drama shape (script.mini_drama), held by ONE automatic rewrite: a valid script whose chapters miss a
+    want, an obstacle, a clock, a turn, a payoff or a cliff edge is sent back once with those sentences. The rewrite
+    is taken only if it passes every check the first one passed and is closer to the shape; otherwise the first stays.
+    A busy tier, a spent quota or a broken answer leaves the first script too — a film never fails for this. What
+    happened is on the script (`drama_check`) for the desk."""
+    from .script import mini_drama
+    miss = mini_drama(script)
+    script['drama_check'] = {'errors': miss, 'rewritten': False}
+    if not miss or not rewrite or os.environ.get('STORIES_DRAMA_REWRITE', '1') == '0':
+        return script
+    log(f'Writer: the mini-drama shape misses {len(miss)} thing(s) — one rewrite: ' + '; '.join(miss)[:300])
+    ask = (user + '\n\nYOUR SCRIPT IS VALID BUT ITS DRAMA IS FLAT. Rewrite ONLY what these lines name, keep every fact, claim id, visual and the '
+           'length, and return the whole corrected JSON object:\n- ' + '\n- '.join(miss[:20]) + '\n\nYour script:\n' + answer[:60000])
+    try:
+        key = sha256_json({'system': SYSTEM, 'user': ask, 'drama': 1})
+        cached = cache_dir / f'writer-drama-{key[:20]}.json'
+        if cached.exists():
+            reply = read_json(cached)
+        else:
+            text, meta = call_model(SYSTEM, ask)
+            reply = {'text': text, 'meta': meta}
+            write_json(cached, reply)
+        from .owner_story import normalize
+        again = repair(normalize(parse_json(reply['text']), {}))
+        errs = check(again)
+        left = mini_drama(again) if not errs else miss
+        if not errs and len(left) < len(miss):
+            again['_writer'] = script.get('_writer')
+            again['drama_check'] = {'errors': left, 'rewritten': True, 'fixed': len(miss) - len(left)}
+            log(f'Writer: the rewrite fixed {len(miss) - len(left)} of {len(miss)}')
+            return again
+        log('Writer: the rewrite was not better — the first script stays' + (f' ({errs[0]})' if errs else ''))
+    except Exception as e:  # noqa: BLE001 — no key, a busy tier, a broken answer: the valid script is the script
+        log(f'Writer: no drama rewrite ({type(e).__name__}) — the first script stays')
+    return script
 
 
 WAIT_CODES = ('WRITER_BUSY', 'WRITER_QUOTA_DAY', 'WRITER_UNREACHABLE')

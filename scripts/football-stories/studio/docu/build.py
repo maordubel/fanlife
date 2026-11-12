@@ -29,6 +29,8 @@ import json
 import shutil
 from pathlib import Path
 
+from .. import camera as C
+
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[3]
 FONTS = REPO / 'public' / 'fonts'
@@ -57,12 +59,44 @@ FRAMINGS = {'wide': ('{scale:1.02}', '{scale:1.1}', '50% 50%'),
             'turn': ('{scale:1.08}', '{scale:1.42}', '50% 46%')}   # the last look of a chapter: the push that leaves a question
 # Transitions into a beat (`in`). None goes to white and none shakes (rule 142): each is ONE move in ONE direction.
 # The seconds are how long the outgoing beat stays on screen under the incoming one (0 = the cut needs no overlap).
+# The colour treatment of a picture, from the score sheet (docu/editor.GRADE): a CSS filter on the picture's planes and,
+# for joy, the club's colour blooming up from the foot of the frame. All inside the brand; the bloom RISES over
+# BLOOM_S (the gate calls a flash a 28-level jump inside two frames — this is under one level a frame). No flashing.
+GRADES = {'cold': 'filter:saturate(.62) brightness(.9) contrast(1.06) hue-rotate(-8deg);', 'grey': 'filter:saturate(.38) brightness(.92);',
+          'cool': 'filter:saturate(.82) contrast(1.05);', 'warm': 'filter:saturate(1.12) contrast(1.03);', 'bloom': 'filter:saturate(1.18) contrast(1.04);'}
+BLOOM_S, BLOOM_TO = 1.4, 0.3
+# The framing a camera move starts from (studio/camera.py): (the framing's own scale, its default origin). The move adds
+# its travel to this — a detail look is a dolly or a rack AT 1.42, never the old constant glide.
+FRAME_BASE = {'wide': (1.0, '50% 50%'), 'detail': (1.42, '34% 40%'), 'reverse': (1.16, '50% 58%'), 'turn': (1.04, '50% 46%')}
 TAILS = {'cut': 0.0, 'fade': 0.0, 'match': 0.0, 'whip': 0.3, 'tear': 0.45, 'dive': 0.4}
 TEAR = (4, -3, 5, -4, 3, -5, 4, -2, 3)   # the torn edge: how far each of nine points sits off the tear line, in % of the width
 # A card that holds still is a dead frame (docs/fanlife/71: "the camera never stops dead"): it creeps in by this much a
 # second — 0.13 px a frame at the edge of the screen, far under rule 142's 0.6 px.
 CREEP = 0.004
 CREEPS = {'question', 'ticket', 'lead', 'ledger', 'rule', 'stat', 'tally', 'card', 'quote', 'form', 'verdict', 'cities', 'chalk', 'end', 'table', 'press', 'word'}
+
+# The explainer board and the kinetic line (Film.explain, Film.kinetic). INK and PAPER are the film's own.
+XP_CSS = ('.bloom{position:absolute;left:0;top:0;width:1920px;height:1080px;mix-blend-mode:screen;pointer-events:none}'
+          '.ckb{position:absolute;left:140px;top:104px;width:1640px;height:60px} .ckt{position:absolute;left:0;top:18px;width:100%;height:24px;background:rgba(20,17,13,.55);border:3px solid PAPER}'
+          '.ckt i{display:block;height:100%;transform-origin:left center}'
+          ".ckb b{position:absolute;top:52px;margin-left:-60px;width:120px;text-align:center;font:400 54px/1 'Ultra';color:#fff;text-shadow:4px 4px 0 INK}"
+          ".ckb span{position:absolute;right:0;top:-26px;font:700 28px 'Cond';letter-spacing:3px;color:PAPER}"
+          '.xpb{position:absolute;left:0;top:0;width:1920px;height:1080px;color:INK}'
+          ".xpt{position:absolute;left:250px;top:150px;font:700 40px 'Cond';letter-spacing:10px}"
+          '.pen{position:absolute;left:0;top:0;overflow:visible}'
+          ".xpe{position:absolute;width:120px;text-align:center;font:400 64px/1 'Ultra'}"
+          ".xpm{position:absolute;width:6px;height:52px;background:INK;opacity:.45} .xpml{position:absolute;width:120px;text-align:center;font:700 34px 'Cond';letter-spacing:3px;opacity:.7}"
+          ".xpk{position:absolute;width:600px;text-align:center} .xpk b{position:relative;display:inline-block;font:400 76px/1.1 'Head';padding:0 16px} .xpk b.hot{color:#fff}"
+          '.hl{position:absolute;left:0;top:8%;width:100%;height:86%;transform-origin:left center;z-index:0} .xpk em,.kw em{position:relative;font-style:normal;z-index:1}'
+          ".odo{display:block;white-space:nowrap} .od{display:inline-block;height:1em;line-height:1;overflow:hidden;vertical-align:top} .ods{display:block;line-height:1}"
+          ".xpn{font:400 120px/1 'Ultra'} .xpbig{position:absolute;left:0;top:250px;width:1920px;text-align:center} .xpv{font:400 430px/1 'Ultra'}"
+          ".xpbig b{display:block;margin-top:26px;font:700 76px 'Cond';letter-spacing:12px}"
+          ".xpr{position:absolute;left:250px;width:1420px;height:130px;display:flex;align-items:center;gap:30px} .xpr>span{width:260px;font:700 52px 'Cond';letter-spacing:6px}"
+          ".xpbar{flex:1;height:84px} .xpbar i{display:block;height:100%} .xprn{font:400 110px/1 'Ultra';width:220px;text-align:right}"
+          '.kv{position:absolute;left:0;top:0;width:1920px;height:1080px;background:INK}'
+          ".kn{position:absolute;left:160px;top:250px;width:1600px;text-align:center;font-family:'Head';line-height:1.18;color:#fff}"
+          ".kw{position:relative;display:inline-block;padding:0 14px;margin:0 2px} .kn small{display:block;margin-top:34px;font:700 40px 'Cond';letter-spacing:8px;color:PAPER}"
+          '.kq{font-style:normal}')
 
 
 def e(s) -> str:
@@ -109,6 +143,7 @@ class Film:
         self.tw: list[str] = []
         self.audio: list[str] = []
         self.made: list[dict] = []   # every clip as it is laid: {id, t, z (its end)} — what a transition moves
+        self.cams: list[dict] = []   # every camera move as it is laid (studio/camera.py) — what the unit check measures
         self.n = 0
 
     def id(self, k: str) -> str:
@@ -139,7 +174,11 @@ class Film:
         z = s.get('z', z)
         hold = s.get('hold', d)   # how long its tag and mini score stay: the whole beat, when the picture under them is cut into sub-shots
         fit = 'background-size:contain;background-repeat:no-repeat;background-color:' + self.INK if s.get('fit') == 'contain' else ''
-        phi = f'<div class="phi" id="{cid}i" style="background-image:url(assets/img/{e(s["src"])});background-position:{pos};{fit}"></div>'
+        src_css = f'background-image:url(assets/img/{e(s["src"])});background-position:{pos};{fit}{GRADES.get(s.get("grade"), "")}'
+        cam = s.get('cam') if s.get('fit') != 'contain' else None
+        flat = s.get('as') == 'print' or not cam
+        # with a camera move the picture is two depth planes and a vignette (studio/camera.planes); a print is one sheet
+        phi = f'<div class="phi" id="{cid}i" style="{src_css}"></div>' if flat else C.planes(src_css, cid, s.get('horizon'))
         recon = f'<div class="recon">{RECON}</div>' if s.get('recon', True) else ''
         if s.get('as') == 'print':
             # the picture as a print dropped on the desk (docs/fanlife/71: photos land on the world as prints) — the
@@ -147,9 +186,21 @@ class Film:
             self.clip(cid, t, d, f'<div class="prn" id="{cid}p">{phi}</div>{recon}', z, 'paper')
             self.tween(f'tl.fromTo("#{cid}p",{{y:120,rotation:-5,opacity:0}},{{y:0,rotation:-1.5,opacity:1,duration:0.5,ease:"power3.out"}},{r2(t)});')
         else:
-            self.clip(cid, t, d, phi + (f'<div class="veil" style="opacity:{veil}"></div>' if veil else '') + recon, z, 'ph')
+            bloom = f'<div class="bloom" id="{cid}b" style="background:linear-gradient(to top,{self.US} 0%,rgba(0,0,0,0) 62%)"></div>' if s.get('grade') == 'bloom' else ''
+            self.clip(cid, t, d, phi + bloom + (f'<div class="veil" style="opacity:{veil}"></div>' if veil else '') + recon, z, 'ph')
+            if bloom:
+                self.tween(f'tl.fromTo("#{cid}b",{{opacity:0}},{{opacity:{BLOOM_TO},duration:{r2(min(BLOOM_S, d))},ease:"power1.inOut"}},{r2(t)});')
         move = s.get('move', 'push')
-        if s.get('frame'):
+        if cam:
+            # THE CAMERA (studio/camera.py): a named move on the planes, from the framing's own scale and origin. The
+            # editor chose it by the beat's emotion; `ci` is how far it travels, `way` which side a lateral move starts.
+            base, origin = FRAME_BASE[s.get('frame') or 'wide']
+            sel = {'back': f'#{cid}i'} if flat else {'back': f'#{cid}i', 'fore': f'#{cid}f', 'vig': f'#{cid}v'}
+            self.tween(f'tl.set("{",".join(v for k, v in sel.items() if k != "vig")}",{{transformOrigin:"{s.get("focus", origin)}"}},{r2(t)});')
+            for js in C.gsap(C.spec(cam, d, s.get('ci', 0.5), base, s.get('way', 1), s.get('rack')), sel, t):
+                self.tween(js)
+            self.cams.append({'t': r2(t), 'd': r2(d), 'move': cam, 'ci': s.get('ci', 0.5)})
+        elif s.get('frame'):
             a, b, origin = FRAMINGS[s['frame']]
             ease, dur = ('power2.in', d) if s['frame'] == 'turn' else ('none', d)
             self.tween(f'tl.set("#{cid}i",{{transformOrigin:"{s.get("focus", origin)}"}},{r2(t)});')
@@ -158,8 +209,9 @@ class Film:
                     'panl': ('{scale:1.14,x:60}', '{scale:1.14,x:-60}'), 'panr': ('{scale:1.14,x:-60}', '{scale:1.14,x:60}'),
                     'slam': ('{scale:1.35}', '{scale:1.08}')}[move]
             ease, dur = ('power3.out', min(1.1, d)) if move in ('pull', 'slam') else ('none', d)
-        self.tween(f'tl.fromTo("#{cid}i",{a},{{...{b},duration:{r2(dur)},ease:"{ease}"}},{r2(t)});')
-        if not s.get('frame') and move in ('pull', 'slam') and d > dur + 0.5:
+        if not cam:
+            self.tween(f'tl.fromTo("#{cid}i",{a},{{...{b},duration:{r2(dur)},ease:"{ease}"}},{r2(t)});')
+        if not cam and not s.get('frame') and move in ('pull', 'slam') and d > dur + 0.5:
             # after it lands it keeps creeping (docs/fanlife/71: never a dead stop) — the landing used to be the last motion of the shot
             rest = 1.06 if move == 'pull' else 1.08
             self.tween(f'tl.fromTo("#{cid}i",{{scale:{rest}}},{{scale:{rest + CREEP * 3 * (d - dur):.4f},duration:{r2(d - dur)},ease:"none",immediateRender:false}},{r2(t + dur)});')
@@ -180,6 +232,10 @@ class Film:
             mid = self.id('mini')
             self.clip(mid, t + m.get('at', 1.5), hold - m.get('at', 1.5), f'<div class="mini"><span>{e(m["home"])}</span><b>{e(m["score"])}</b><span>{e(m["away"])}</span></div>', 9)
             self.tween(f'tl.fromTo("#{mid} .mini",{{scale:1.8,opacity:0}},{{scale:1,opacity:1,duration:0.22,ease:"power4.in"}},{r2(t + m.get("at", 1.5))});')
+            if m.get('flip'):   # the score before the goal, then the score after it — changed on the cut, settled once (no bounce)
+                at = t + m['flip']['at']
+                self.tween(f'tl.set("#{mid} .mini b",{{textContent:"{e(m["score"])}"}},{r2(t)});tl.set("#{mid} .mini b",{{textContent:"{e(m["flip"]["score"])}"}},{r2(at)});'
+                           f'tl.fromTo("#{mid} .mini b",{{scale:1.5,color:"{self.US}"}},{{scale:1,color:"{self.INK}",duration:0.4,ease:"power2.out",immediateRender:false}},{r2(at)});')
 
     def video(self, s, t, d):
         cid = self.id('vid')
@@ -456,7 +512,105 @@ class Film:
         cid = self.id('cu')
         self.clip(cid, t, d, f'<img class="cut" id="{cid}i" src="assets/img/{e(s["src"])}" style="left:{s.get("x", 1180)}px;height:{s.get("h", 1000)}px">', s.get('z', 6))
         self.tween(f'tl.fromTo("#{cid}i",{{y:500,opacity:0}},{{y:{s.get("y", 120)},opacity:1,duration:0.7,ease:"power3.out"}},{r2(t)});'
-                   f'tl.to("#{cid}i",{{x:-50,duration:{r2(max(0.5, d - 0.7))},ease:"none"}},{r2(t + 0.7)});')
+                   f'tl.to("#{cid}i",{{x:{-60 * s.get("way", 1)},duration:{r2(max(0.5, d - 0.7))},ease:"none"}},{r2(t + 0.7)});')   # the nearest plane: it travels with the camera's move
+
+    def clockdev(self, s, t, d):
+        """Time pressure, drawn: the match clock as a bar across the top that fills to the minute the line is at — a minute
+        a claim records or the line itself says (the adapter checks it) — with that minute at its head. It fills once,
+        eased, and stays; over the picture, never a card."""
+        cid = self.id('ck')
+        to = max(0.02, min(1.0, s['minute'] / s.get('span', 90)))
+        self.clip(cid, t, d, f'<div class="ckb"><div class="ckt"><i id="{cid}f" style="background:{self.US}"></i></div>'
+                             f'<b id="{cid}m" style="left:{to * 100:.1f}%">{e(s["minute"])}\'</b><span>{e(s.get("span", 90))}\'</span></div>', s.get('z', 8))
+        fill = min(2.6, max(0.8, d - 0.6))
+        self.tween(f'tl.fromTo("#{cid} .ckb",{{y:-90,opacity:0}},{{y:0,opacity:1,duration:0.3,ease:"power2.out"}},{r2(t)});'
+                   f'tl.fromTo("#{cid}f",{{scaleX:0}},{{scaleX:{to:.4f},duration:{r2(fill)},ease:"power1.inOut"}},{r2(t + 0.2)});'
+                   f'tl.fromTo("#{cid}m",{{opacity:0,y:-14}},{{opacity:1,y:0,duration:0.25,ease:"power2.out"}},{r2(t + 0.2 + fill)});')
+
+    # ── the explainer and the kinetic line (docu/explainer.py: the VOX board's devices on this page) ─────────────────
+    def odo(self, val: int, t: float, cls: str = '', suffix: str = '', dur: float = 0.9) -> str:
+        """An odometer: one drum of digits per place, each rolling up from 0 to its digit and stopping (ease-out — it
+        does not roll past and back: rule 142). Returns its HTML; the tweens are queued."""
+        oid = self.id('od')
+        digits = str(abs(int(val)))
+        strip = '<br>'.join(str(k) for k in range(10))
+        cols = ''.join(f'<span class="od"><span class="ods" id="{oid}c{j}">{strip}</span></span>' for j in range(len(digits)))
+        for j, ch in enumerate(digits):
+            self.tween(f'tl.fromTo("#{oid}c{j}",{{yPercent:0}},{{yPercent:{-10 * int(ch)},duration:{r2(dur + 0.12 * j)},ease:"power2.out",immediateRender:false}},{r2(t)});')
+        return f'<span class="odo {cls}">{cols}{e(suffix)}</span>'
+
+    def pen(self, pts: list[tuple[float, float]], t: float, dur: float, width: float = 9, colour: str | None = None) -> str:
+        """A pen line drawn along `pts` (frame pixels): the stroke's dash runs out from its start — VOX's marker."""
+        pid = self.id('pen')
+        L = sum(((b[0] - a[0]) ** 2 + (b[1] - a[1]) ** 2) ** 0.5 for a, b in zip(pts, pts[1:])) + 2
+        path = 'M' + ' L'.join(f'{x:.1f} {y:.1f}' for x, y in pts)
+        self.tween(f'tl.fromTo("#{pid}",{{strokeDashoffset:{L:.1f}}},{{strokeDashoffset:0,duration:{r2(dur)},ease:"power1.inOut"}},{r2(t)});')
+        return (f'<svg class="pen" width="1920" height="1080" viewBox="0 0 1920 1080"><path id="{pid}" d="{path}" stroke="{colour or self.INK}" stroke-width="{width}" '
+                f'fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="{L:.1f}" stroke-dashoffset="{L:.1f}"/></svg>')
+
+    def explain(self, s, t, d):
+        """An explainer passage on the paper board: `timeline` (a pen-drawn clock, a labelled tick and an odometer minute
+        for every recorded goal, the highlighter on the one that decided it), `number` (one counted number rolling up,
+        its label underlined by the pen), `bars` (a record's cells growing to their own values). The board itself
+        drifts the whole time — VOX's camera never stops (docs/fanlife/71)."""
+        cid = self.id('xp')
+        head = f'<small class="xpt">{e(s["title"])}</small>' if s.get('title') else ''
+        inner, step = '', 0.0
+        if s['form'] == 'timeline':
+            x0, x1, y = 250.0, 1670.0, 640.0
+            wob = [(x0 + (x1 - x0) * k / 24, y + (3.0 if k % 2 else -3.0) * (1 if k % 3 else -1)) for k in range(25)]   # a hand's line, not a ruler's
+            inner += self.pen(wob, t + 0.25, 0.9)
+            inner += f'<span class="xpe" style="left:{x0 - 150}px;top:{y - 44}px">{e(s["left"])}</span><span class="xpe" style="left:{x1 + 30}px;top:{y - 44}px">{e(s["right"])}</span>'
+            for mk in s.get('marks') or []:
+                mx = x0 + (x1 - x0) * mk['at']
+                inner += f'<span class="xpm" style="left:{mx - 3:.0f}px;top:{y - 26}px"></span><span class="xpml" style="left:{mx - 60:.0f}px;top:{y + 40}px">{e(mk["label"])}</span>'
+            ticks = s['ticks']
+            step = min(1.1, max(0.4, (d - 2.6) / max(1, len(ticks))))
+            for i, tk in enumerate(ticks):
+                tx, at = x0 + (x1 - x0) * tk['at'], t + 1.1 + i * step
+                up = i % 2 == 0   # neighbours sit above and below the line, so two late goals never print over each other
+                tid = self.id('tk')
+                hl = f'<i class="hl" id="{tid}h" style="background:{self.US}"></i>' if tk.get('hot') else ''
+                lab = (f'<div class="xpk" id="{tid}" style="left:{tx - 300:.0f}px;top:{(y - 330) if up else (y + 60):.0f}px">'
+                       f'<b class="{"hot" if tk.get("hot") else ""}">{hl}<em>{e(tk["label"])}</em></b>{self.odo(tk["value"], at + 0.1, "xpn", tk.get("suffix", ""))}</div>')
+                inner += lab + self.pen([(tx, y - 70), (tx, y + 4)] if up else [(tx, y + 70), (tx, y - 4)], at, 0.25, 12, self.US if tk.get('hot') else None)
+                self.tween(f'tl.fromTo("#{tid}",{{y:{30 if up else -30},opacity:0}},{{y:0,opacity:1,duration:0.3,ease:"power2.out"}},{r2(at)});')
+                if tk.get('hot'):
+                    self.tween(f'tl.fromTo("#{tid}h",{{scaleX:0}},{{scaleX:1,duration:0.4,ease:"power2.inOut"}},{r2(at + 0.35)});')
+        elif s['form'] == 'number':
+            inner += f'<div class="xpbig">{self.odo(s["value"], t + 0.35, "xpv", s.get("suffix", ""), 1.1)}<b id="{cid}l">{e(s["label"])}</b></div>'
+            w = 60 * len(s['label']) * 0.62 + 80
+            inner += self.pen([(960 - w / 2, 838), (960 - w / 6, 846), (960 + w / 6, 836), (960 + w / 2, 844)], t + 1.5, 0.45, 12, self.US)
+            self.tween(f'tl.fromTo("#{cid}l",{{y:30,opacity:0}},{{y:0,opacity:1,duration:0.3,ease:"power2.out"}},{r2(t + 1.2)});')
+        elif s['form'] == 'bars':
+            for i, br in enumerate(s['bars']):
+                bid, at = self.id('br'), t + 0.4 + 0.45 * i
+                inner += (f'<div class="xpr" style="top:{330 + 170 * i}px"><span>{e(br["label"])}</span><div class="xpbar"><i id="{bid}" style="width:{max(2.0, 100 * br["share"]):.1f}%;'
+                          f'background:{self.US if br.get("hot") else self.INK}"></i></div>{self.odo(br["value"], at, "xprn")}</div>')
+                self.tween(f'tl.fromTo("#{bid}",{{scaleX:0}},{{scaleX:1,duration:0.7,ease:"power2.out",transformOrigin:"left center"}},{r2(at)});')
+        self.clip(cid, t, d, f'<div class="xpb" id="{cid}b">{head}{inner}</div>', s.get('z', 9), 'paper')
+        # the board's own camera: a slow push with a drift, one way, for as long as the passage runs
+        self.tween(f'tl.fromTo("#{cid}b",{{scale:1,x:16}},{{scale:{1 + 0.012 * min(d, 8):.4f},x:-16,duration:{r2(d)},ease:"none"}},{r2(t)});')
+        self.cams.append({'t': r2(t), 'd': r2(d), 'move': 'breath', 'ci': 0.5})
+
+    def kinetic(self, s, t, d):
+        """Kinetic type: the line's words arrive one by one — on the narrator's own word times for his line, evenly for
+        a quote — each rising into place once; the highlighter runs under the word it turns on; the block drifts up
+        the whole time. Over the picture, on a veil that fades in (never a flash: rule 142)."""
+        cid = self.id('kn')
+        hot = set(s.get('hot') or [])
+        spans = ''
+        for j, w in enumerate(s['words']):
+            hl = f'<i class="hl" id="{cid}h{j}" style="background:{self.US}"></i>' if j in hot else ''
+            spans += f'<span class="kw" id="{cid}w{j}">{hl}<em>{e(w["w"])}</em></span> '
+            self.tween(f'tl.fromTo("#{cid}w{j}",{{y:46,opacity:0}},{{y:0,opacity:1,duration:0.2,ease:"power2.out"}},{r2(t + w["at"])});')
+            if j in hot:
+                self.tween(f'tl.fromTo("#{cid}h{j}",{{scaleX:0}},{{scaleX:1,duration:0.35,ease:"power2.inOut"}},{r2(t + w["at"] + 0.15)});')
+        size = 132 if len(s['words']) <= 5 else 104 if len(s['words']) <= 9 else 78
+        who = f'<small>{e(s["who"])}</small>' if s.get('who') else ''
+        self.clip(cid, t, d, f'<div class="kv" id="{cid}v"></div><div class="kn{" kq" if s.get("quote") else ""}" id="{cid}b" style="font-size:{size}px">{spans}{who}</div>', s.get('z', 14))
+        self.tween(f'tl.fromTo("#{cid}v",{{opacity:0}},{{opacity:{s.get("veil", 0.58)},duration:0.35,ease:"power1.out"}},{r2(t)});'
+                   f'tl.fromTo("#{cid}b",{{y:18}},{{y:-18,duration:{r2(d)},ease:"none"}},{r2(t)});')
 
     def lights(self, s, t, d):
         """The ground after the night: the picture darkens and the floodlights go out, one tower at a time."""
@@ -629,6 +783,7 @@ class Film:
 .clip{{position:absolute;left:0;top:0;width:1920px;height:1080px}}
 video.clip{{width:1920px;height:1080px}}
 .ph{{overflow:hidden}} .phi{{position:absolute;left:0;top:0;width:1920px;height:1080px;background-size:cover}}
+''' + C.CSS + XP_CSS.replace('INK', INK).replace('PAPER', P) + f'''
 .veil{{position:absolute;left:0;top:0;width:1920px;height:1080px;background:{INK}}}
 .recon{{position:absolute;right:40px;top:34px;font:700 18px 'Mono';color:{P};opacity:.75;letter-spacing:1px}} .r2{{right:120px;top:90px}}
 .frame{{border:58px solid {P};box-sizing:border-box}} .paper{{background:{P}}} .ink{{background:{INK}}}
@@ -713,7 +868,7 @@ video.clip{{width:1920px;height:1080px}}
                 f'<script src="assets/gsap.min.js"></script><style>{css}</style></head><body>\n'
                 f'<div id="root" data-composition-id="main" data-start="0" data-duration="{r2(D)}" data-width="1920" data-height="1080" data-fps="30" data-layout-allow-overlap data-layout-allow-overflow>\n'
                 + '\n'.join(self.clips) + '\n<div id="flash" data-layout-ignore></div>\n' + '\n'.join(self.audio)
-                + '\n</div>\n<script>\nconst tl=gsap.timeline({paused:true});\n' + '\n'.join(self.tw)
+                + '\n</div>\n<script>\n' + C.EASES_JS + '\nconst tl=gsap.timeline({paused:true});\n' + '\n'.join(self.tw)
                 + '\nwindow.__timelines=window.__timelines||{};window.__timelines["main"]=tl;tl.seek(0);\n</script></body></html>\n')
 
 

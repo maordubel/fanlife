@@ -7,7 +7,12 @@ viewer feels, on the frames of the finished film, and each threshold below is a 
 
   the opening     something changes on screen within FIRST_CHANGE_S; the film's stake is on screen within STAKE_BY_S
   the cut         no shot longer than MAX_SHOT_S; no shot under MOTION_FLOOR; no stretch of dead frames
+  the camera      no static shot: no STATIC_RUN_S without measurable camera or layer motion (studio/camera.py)
   the pictures    at least UNIQUE_ASSET_MIN of the picture uses are different pictures; none on more than MAX_ASSET_SHOTS shots
+  the languages   plain art shots are at most explainer.PLAIN_MAX of the film; a chapter with data to explain explains
+  the arc         a passage of tension and one of joy; the opening's question answered after the midpoint (enforced for
+                  a script written to the mini-drama shape, reported for an older one)
+  the library     pictures the last films also showed (media_index.Ledger) — reported, never blocking
   calm            no flash (a luma spike that comes straight back) and no shake (the whole frame reversing direction) —
                   rule 142, measured the way VOX measures its camera (docs/fanlife/71: dead_frames, worst_jerk)
 
@@ -131,6 +136,17 @@ CUT_ABS, CUT_RATIO = 3.0, 4.0
 MOTION_FLOOR = 0.05
 # VOX's `dead_frames` for a rendered film: consecutive frames that do not change at all. A second of them is a freeze.
 DEAD_DIFF, DEAD_RUN_S = 0.01, 1.0
+# A static shot (owner, 12.11.2026: "as little static camera as possible"): STATIC_RUN_S in a row with no measurable
+# motion — the mean change over the run under STATIC_FLOOR. The camera's slowest move, the breath under a card
+# (camera.BREATH), measures 0.1–0.3 on a picture; a karaoke word lighting is cut off with the subtitle band. This is
+# stricter than the freeze above: 1.5 s of a card whose creep is too slow to see is static to a viewer, frozen or not.
+STATIC_RUN_S, STATIC_FLOOR = 1.5, 0.04
+# The language mix is counted in seconds off the cut; a film may sit this far over explainer.PLAIN_MAX before it fails
+# (one look's worth in a five-minute film — the measuring grain, not a licence).
+MIX_GRAIN = 0.03
+# The arc's opening window and the films the hygiene line looks back over are named where they are decided:
+ARC_OPENING_S = 15.0     # drama.OPENING_S
+HYGIENE_FILMS = 5        # media_index.RECENT_FILMS
 # Pictures: a film that shows the same few images again and again is the slideshow the owner rejected.
 UNIQUE_ASSET_MIN, MAX_ASSET_SHOTS = 0.6, 2
 # A flash: the frame's mean luma jumps by FLASH_RISE levels inside two frames and falls back inside FLASH_FRAMES. A cut to
@@ -240,6 +256,23 @@ def experience_numbers(m: dict) -> dict:
             if (i - run0) / fps >= DEAD_RUN_S:
                 runs.append({'at': round(run0 / fps, 2), 'd': round((i - run0) / fps, 2)})
             run0 = None
+    # static shots: any STATIC_RUN_S window whose mean change is under STATIC_FLOOR; overlapping windows are one stretch.
+    # `moving` is the share of the film's frames that sit in no such window — the camera or a layer is moving there.
+    win = max(2, int(round(STATIC_RUN_S * fps)))
+    still = np.zeros(n, bool)
+    if n > win:
+        c = np.concatenate([[0.0], np.cumsum(d, dtype=np.float64)])
+        means = (c[win + 1:] - c[1:n - win + 1]) / win            # the mean of d[i+1 … i+win]: the changes INSIDE the window
+        for i in np.nonzero(means < STATIC_FLOOR)[0]:
+            still[i:i + win + 1] = True
+    static, run0 = [], None
+    for i in range(n + 1):
+        if i < n and still[i]:
+            run0 = i if run0 is None else run0
+        elif run0 is not None:
+            static.append({'at': round(run0 / fps, 2), 'd': round((i - run0) / fps, 2)})
+            run0 = None
+    static_s = round(float(still.sum()) / fps, 2) if fps else 0.0
     # flashes: up fast, and straight back down
     flashes = []
     for i in range(2, n):
@@ -271,7 +304,8 @@ def experience_numbers(m: dict) -> dict:
     return {'seconds': round(dur, 2), 'changes': len(ev), 'shots_per_minute': round(len(shots) * 60 / dur, 1) if dur else 0.0,
             'first_change_s': None if first is None else round(first, 2), 'longest_shot_s': round(longest[1] - longest[0], 2),
             'longest_shot_at': round(longest[0], 2), 'long_shots': [{'at': round(a, 2), 'd': round(b - a, 2)} for a, b in shots if b - a > MAX_SHOT_S],
-            'slow_shots': slow, 'dead_frames': int(dead.sum()), 'dead_runs': runs, 'flashes': flashes, 'shakes': shakes,
+            'slow_shots': slow, 'dead_frames': int(dead.sum()), 'dead_runs': runs, 'static_shots': static, 'static_seconds': static_s,
+            'moving_share': round(1 - static_s / dur, 3) if dur else 0.0, 'flashes': flashes, 'shakes': shakes,
             'worst_jerk': round(jerk, 1)}
 
 
@@ -292,16 +326,27 @@ def asset_numbers(shots: list[dict] | None) -> dict | None:
             'over': sorted({n for v in over.values() for n in v[MAX_ASSET_SHOTS:] if n is not None})}
 
 
+def _tally(assets: dict, field: str) -> dict:
+    out: dict[str, int] = {}
+    for a in assets.values():
+        out[str(a.get(field))] = out.get(str(a.get(field)), 0) + 1
+    return out
+
+
 def experience(master: Path, plan: dict, job_dir: Path | None = None, intro_s: float = 0.0, shots: list[dict] | None = None,
-               frames=None) -> dict:
+               frames=None, extras: dict | None = None) -> dict:
     """The gate. → {'checks': [(name, ok, detail)], 'numbers', 'replan': {plan shot n: [reasons]}, 'enforced'}.
     `plan` is on the film's clock (after any owner opening of `intro_s` seconds, which the gate does not judge: the owner
     chose it). Enforced for the DOCU engine, the studio's default; for the older engines the numbers are recorded and
     reported but block nothing — their cut was never built to these rules."""
     cut_errors: list[str] = []
+    extras = dict(extras or {})
     if shots is None and job_dir and (job_dir / 'docu-shots.json').exists():
         j = json.loads((job_dir / 'docu-shots.json').read_text())
         shots, cut_errors = j.get('shots'), list(j.get('errors') or [])
+        extras.setdefault('mix', j.get('mix'))
+    if job_dir and (job_dir / 'media-index-usage.json').exists():
+        extras.setdefault('usage', json.loads((job_dir / 'media-index-usage.json').read_text()))
     fps, gen = (frames[0], frames[1]) if frames else read_frames(master, intro_s)
     num = experience_numbers(measure(gen, fps))
     assets = asset_numbers(shots)
@@ -339,11 +384,52 @@ def experience(master: Path, plan: dict, job_dir: Path | None = None, intro_s: f
         at(x['at'] + 0.1, 'long', x['d'] - 0.2)
     checks.append(('experience · motion', not still, f'{len(num["slow_shots"])} shots under the motion floor, {len(num["dead_runs"])} freezes of {DEAD_RUN_S:.0f}s or more ({num["dead_frames"]} dead frames)'
                    + (f' — first at {still[0]["at"]}s: a picture that does not move' if still else '')))
+    for x in num['static_shots']:
+        at(x['at'] + 0.1, 'long', x['d'] - 0.2)
+    checks.append(('experience · static shots', not num['static_shots'], f'the camera or a layer moves for {num["moving_share"]:.0%} of the film; {num["static_seconds"]}s in {len(num["static_shots"])} static stretches of {STATIC_RUN_S}s or more'
+                   + (f' — first at {num["static_shots"][0]["at"]}s: nothing on screen moves there' if num['static_shots'] else '')))
     if assets:
         bad = assets['ratio'] < UNIQUE_ASSET_MIN or bool(assets['over'])
         for n in assets['over']:
             replan.setdefault(n, []).append('asset')
         checks.append(('experience · pictures', not bad, f'{assets["unique"]} different pictures in {assets["uses"]} uses ({assets["ratio"]:.0%}; at least {UNIQUE_ASSET_MIN:.0%}), the most used on {assets["most"]} shots (at most {MAX_ASSET_SHOTS})'))
+    # the languages (docu/explainer.py): how much of the film is plain art, and whether every chapter that could explain did
+    mix = extras.get('mix')
+    if mix:
+        from .docu.explainer import EXPLAINERS_PER_CHAPTER, PLAIN_MAX
+        num['language_mix'] = {k: mix[k] for k in ('documentary', 'explainer', 'kinetic')}
+        short = mix.get('chapters_short') or []
+        ok_mix = mix['documentary'] <= PLAIN_MAX + MIX_GRAIN and not short
+        checks.append(('experience · language mix', ok_mix, f'documentary {mix["documentary"]:.0%} · explainer {mix["explainer"]:.0%} · kinetic type {mix["kinetic"]:.0%} of the running time '
+                       f'(plain art at most {PLAIN_MAX:.0%})' + (f'; chapter {", ".join(str(int(c) + 1) for c in short)} has data an explainer could draw and shows fewer than {EXPLAINERS_PER_CHAPTER}' if short else '')
+                       + ('' if ok_mix or short else ' — too much of it is pictures with nothing explained or said in type')))
+    # the arc (studio/drama.py): the sheet's tension and joy, and the opening's question paid off late
+    arc = (plan.get('sheet') or {}).get('arc')
+    if arc:
+        num['arc'] = {k: arc.get(k) for k in ('question', 'answer', 'answer_at', 'told_early')} | {'tension_beats': len(arc.get('tension') or []), 'joy_beats': len(arc.get('joy') or [])}
+        miss = []
+        if not arc.get('tension'):
+            miss.append('no passage of real tension')
+        if not arc.get('joy'):
+            miss.append('no moment of joy')
+        if arc.get('question') is None:
+            miss.append(f'no question is planted in the first {ARC_OPENING_S:.0f}s')
+        elif arc.get('answer') is None:
+            miss.append('the opening\'s outcome is told before the midpoint' if arc.get('told_early') is not None else 'the question the opening plants is never answered')
+        shaped = bool((plan.get('sheet') or {}).get('shaped'))
+        said = (f'tension on {len(arc.get("tension") or [])} beats, joy on {len(arc.get("joy") or [])}; the opening\'s question '
+                + ('is answered ' + f'{arc["answer_at"]:.0%} of the way in' if arc.get('answer') is not None else 'has no late answer'))
+        checks.append(('experience · the arc', not miss or not shaped, said + (' — ' + '; '.join(miss) if miss else '')
+                       + ('' if shaped or not miss else ' (reported, not enforced: this script was not written to the mini-drama shape)')))
+    # library hygiene (studio/media_index.py): pictures the last films also showed — reported, never blocking
+    used = extras.get('usage')
+    if used is not None:
+        rec = used.get('recent') or {}
+        num['library'] = {'assets': len(used.get('assets') or {}), 'seen_lately': len(rec), 'by_source': _tally(used.get('assets') or {}, 'source'), 'by_rights': _tally(used.get('assets') or {}, 'rights')}
+        worst = sorted(rec.items(), key=lambda x: -x[1])[:3]
+        checks.append(('experience · library hygiene', True, f'{len(used.get("assets") or {})} indexed pictures on screen; {len(rec)} of them were also in one of the last {HYGIENE_FILMS} films'
+                       + (' (' + ', '.join(f'{a.split("/")[-1]} in {k}' for a, k in worst) + ')' if worst else '')
+                       + (f'; {num["library"]["by_rights"].get("needs-check", 0)} need a rights check' if num['library']['by_rights'].get('needs-check') else '') + ' — reported, never blocking'))
     for t in num['flashes']:
         at(t, 'flash')
     for t in num['shakes']:
