@@ -26,6 +26,7 @@ from pathlib import Path
 from ..common import FPS, Palette, StageError, read_json, write_json
 from . import build as B
 from . import editor as E
+from . import explainer as X
 from .designer import Designer
 
 ENGINE = 'docu'
@@ -94,6 +95,7 @@ class Adapter:
         self.shown: dict[int, Path] = {}             # shot → the picture it shows (spare() keeps neighbours apart)
         self.spares: dict[int, Path | None] = {}     # shot → the spare picture it was given
         self._picker = None                          # the media index's view of this film (studio/media_index.py)
+        self.explainable: dict[int, bool] = {}       # shot → its data could carry an explainer passage (docu/explainer.py)
         self.sheet = {int(k): v for k, v in (plan.get('sheet') or {}).get('beats', {}).items()} if isinstance(plan.get('sheet'), dict) else {}
         self.foci: dict[str, str | None] = {}        # picture → where its detail look looks
         self.horizons: dict[str, float | None] = {}  # picture → where its foreground band begins (the camera's near plane)
@@ -495,9 +497,92 @@ class Adapter:
             # the figure the writer asked for by key comes first; else the library's own people for this shot — over a
             # picture only (under a full-frame card nobody would see them), and never over the city split or the board
             out += [cu] if cu else ([] if any(x and E.opaque(x) for x in out) else self.lib_figures(s))
-        out = [x for x in out if x]
+        out = self.speak(s, d, f, [x for x in out if x])
         self.last = next((x['kind'] for x in out if x['kind'] in ('cities', 'table', 'chalk', 'verdict', 'rule', 'press')), None)
         return out
+
+    # ── the three languages (docu/explainer.py) ─────────────────────────────────────────────────────────────────────
+    def checked(self, dev: dict | None, s: dict) -> dict | None:
+        """An explainer through the designer's rule (rules 2, 11): every label and every number it would print must be in
+        the ledger's claims or in the beat's own checked words — else no device."""
+        if not dev:
+            return None
+        labels = [dev.get('label') or ''] + [x.get('label') or '' for x in (dev.get('ticks') or []) + (dev.get('bars') or [])]
+        nums = [str(dev['value'])] if dev.get('value') is not None else []
+        nums += [str(x['value']) for x in (dev.get('ticks') or []) + (dev.get('bars') or [])]
+        probe = {'kind': 'explain', 'title': dev.get('title') or '', 'label': ' '.join(x for x in labels if x), 'text': ' '.join(nums)}
+        return dev if self.design.sourced(probe, s) else None
+
+    def speak(self, s: dict, d: float, f: dict, out: list[dict]) -> list[dict]:
+        """Which language tells this beat best, after the adapter laid its documentary devices. An EXPLANATION the claims
+        can draw becomes an explainer passage — when the goals came (a score beat that talks about its goals), a counted
+        number the line says (the wait, the crowd), a record as bars — and a quote becomes kinetic type over its picture.
+        `explainable[n]` records that the beat's data could carry one, whether or not there was room (the gate reads it).
+        STORIES_DOCU_LANG=0 keeps batch 3's devices for comparison."""
+        n, t, v = s['n'], v_type(s), s['visual']
+        self.explainable[n] = False
+        if os.environ.get('STORIES_DOCU_LANG', '1') == '0':
+            return out
+        text = s.get('narration') or ''
+        facts = [g for g in (self.fact(c) for c in dict.fromkeys([v.get('claim'), *(s.get('claim_ids') or [])]) if c) if g]
+        if t in ('score', 'versus', 'goal') and f.get('kind') == 'match':
+            tl = self.checked(X.goal_timeline(f, self.club), s)
+            self.explainable[n] = bool(tl)
+            if tl and t != 'goal' and d >= X.EXPLAIN_MIN_S + 2.6 and X.GOAL_TALK.search(text):
+                # the board is read first (2.6 s at least), then HOW the score came about — in place of a verdict stamp
+                at = round(max(2.6, d - min(X.EXPLAIN_MAX_S, d * 0.6)), 2)
+                out = [x for x in out if x['kind'] not in ('verdict', 'stamp')] + [{**tl, 'dt': at, 'd': round(d - at, 2)}]
+                self.cues[n] = [c for c in self.cues.get(n, []) if c[1] not in ('sting', 'stamp')]
+                self.cue(n, at + 0.25, 'pen')
+                self.cue(n, at + 1.1, 'tick')
+        elif t == 'record':
+            br = self.checked(X.bars(self.fact(v.get('claim'))), s)
+            self.explainable[n] = bool(br) or any(x['kind'] == 'tally' for x in out)
+            if br:
+                out = [x for x in out if x['kind'] != 'tally'] + [br]
+        elif t == 'quote':
+            kq = X.quote_lines(v.get('text') or '', d)
+            b = self.back(s, 'push', veil=0.3) if kq else None
+            if kq and b:     # the words themselves, arriving, over a picture — not a card of text
+                out = [b, {**kq, 'who': ' · '.join(x for x in (v.get('who') or '', v.get('role') or '') if x).upper(), 'dt': 0.3, 'd': round(d - 0.3, 2), 'veil': 0.66}]
+        elif t in ('turning', 'illustration', 'fact', 'matchday', 'trailer'):
+            nb = self.checked(X.number(text, facts), s)
+            self.explainable[n] = bool(nb)
+            lead = max((x.get('at', 0.0) + E.WORD_HOLD for x in out if x['kind'] == 'word'), default=0.0)
+            at = round(max(lead, d * 0.42), 2)
+            if nb and d - at >= X.EXPLAIN_MIN_S:
+                out.append({**nb, 'dt': at, 'd': round(min(X.EXPLAIN_MAX_S - 1.0, d - at), 2)})
+                self.cue(n, at + 0.35, 'tick')
+        if any(x['kind'] in X.EXPLAIN_KINDS for x in out):
+            self.explainable[n] = True
+        return out
+
+    def punch_up(self, raw: list[dict]) -> None:
+        """The mix (explainer.PLAIN_MAX): while more of the film than that is plain art, the beats that are ALL art — the
+        most intense first, by the score sheet — get their one short line as kinetic type (explainer.punch). In place."""
+        for b in raw:
+            b['lang'] = X.languages(b['shots'], b['d'])
+        if os.environ.get('STORIES_DOCU_LANG', '1') == '0':
+            return
+        todo = sorted((b for b in raw if b['meta']['type'] not in ('end', 'follow', 'chapter') and b['lang']['documentary'] >= b['d'] - 0.01),
+                      key=lambda b: (-(b['meta'].get('intensity') or 0.5), b['meta']['n']))
+        for b in todo:
+            if X.mix(raw)['documentary'] <= X.PLAIN_MAX:
+                break
+            s = next(x for x in self.plan['shots'] if x['n'] == b['meta']['n'])
+            k = X.punch(s.get('narration') or '', b['meta'].get('words') or [], b['t'], b['d'])
+            if k:
+                b['shots'].append(k)
+                b['lang'] = X.languages(b['shots'], b['d'])
+
+    @staticmethod
+    def spoken(beats: list[dict]) -> list[dict]:
+        """Each beat's seconds in each language, read off the beat as it will be drawn (after the cut: a card that left
+        early no longer counts), and the language that leads it."""
+        for b in beats:
+            lg = b['lang'] = X.languages(b['shots'], b['d'])
+            b['language'] = max(lg, key=lambda k: (lg[k], k == 'documentary'))
+        return beats
 
     def cutting(self, s: dict) -> tuple[str | None, str | None]:
         """The beat's own picture (never a spare) and its key — what a press beat may show as the cutting."""
@@ -520,6 +605,8 @@ class Adapter:
             b = {'t': t, 'd': d, 'shots': devs,
                  'meta': {'n': s['n'], 'type': v_type(s), 'chapter': s.get('chapter'), 'camera': cin.get('camera'), 'pace': cin.get('cam_pace'),
                           'subjects': (rec or {}).get('subjects') or [],   # what the picture shows, by its index entry: the camera reads it
+                          'explainable': self.explainable.get(s['n'], False),
+                          **{k: (self.sheet.get(s['n']) or {}).get(k) for k in ('emotion', 'intensity', 'turn', 'clock')},
                           'outcome': self.fact(s['visual'].get('claim')).get('outcome') if v_type(s) in ('score', 'versus') else None,
                           'words': [round(at0 + w['start'], 3) for w in (s.get('words') or [])] if at0 is not None else []}}
             if s.get('narration') and s.get('voice_at') is not None and v_type(s) != 'end':
@@ -531,8 +618,9 @@ class Adapter:
         """The film's beats, edited (docu/editor.py): long stills cut into looks, cards that leave, a transition into
         every beat, the docs/71 rules. STORIES_DOCU_EDIT=0 keeps the adapter's own one-still-per-line cut (for comparison)."""
         raw = self.raw_beats()
+        self.punch_up(raw)   # the language mix: kinetic lines where too much of the film is plain art (docu/explainer.py)
         if os.environ.get('STORIES_DOCU_EDIT', '1') == '0':
-            return raw
+            return self.spoken(raw)
         # the producer's gate named shots to re-plan (studio/qa.experience → pipeline): {shot n: [long | asset | flash | shake]}
         fp = self.jd / 'experience-replan.json'
         fixes = {int(k): v for k, v in (read_json(fp).get('shots') or {}).items()} if fp.exists() else {}
@@ -549,7 +637,7 @@ class Adapter:
                     h = self.horizon(x['src'])
                     if h is not None:
                         x['horizon'] = h
-        return out
+        return self.spoken(out)
 
 
 def v_type(s: dict) -> str:
@@ -586,7 +674,8 @@ def write_project(job_dir: Path, plan: dict, palette: Palette, root: Path) -> tu
     ad = Adapter(job_dir, plan, palette, ledger, script)
     beats = ad.beats()
     write_json(job_dir / 'docu-shots.json', {'shots': E.shot_list(beats), 'errors': E.errors(beats) if beats and 'in' in beats[0] else [],
-                                             'beat_grid': bool(plan.get('beat_grid')), 'library': sorted(set(ad.lib_used))})
+                                             'beat_grid': bool(plan.get('beat_grid')), 'library': sorted(set(ad.lib_used)),
+                                             **({'mix': X.mix(beats)} if beats and 'lang' in beats[0] else {})})
     # the film's pictures, by their index entries, and the ledger across films (studio/media_index.py): which asset on
     # which shot — what the next film's picker reads as "seen lately" and the gate reports as library hygiene
     if ad._picker is not None:
