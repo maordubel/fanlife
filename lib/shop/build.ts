@@ -17,7 +17,7 @@ export async function client():Promise<Printify>{const t=await printifyToken();i
 export async function connect(by:string){
  const api=await client(),shops=await api.shops()
  if(!shops.length)throw new Error('This Printify account has no store yet. Add a Pop-Up store in Printify, then check again.')
- const doc=await readShop(),pick=shops.find(s=>s.id===doc.settings.shopId)||shops.find(s=>/pop/i.test(s.sales_channel))||shops[0]!
+ const doc=await readShop(),pick=shops.find(s=>s.id===doc.settings.shopId)||shops.find(s=>/storefront|pop/i.test(s.sales_channel))||shops[0]!
  await updateShop(by,`Connected Printify store “${pick.title}”`,d=>{d.settings.shopId=pick.id;d.settings.shopTitle=pick.title;d.settings.channel=pick.sales_channel})
  return {shops,picked:pick}
 }

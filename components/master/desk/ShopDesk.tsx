@@ -28,7 +28,7 @@ export function ShopDesk({initial,subjects,pictures}:{initial:State;subjects:Sub
  const list=useMemo(()=>doc.products.filter(p=>(who==='all'||p.subject===who)&&(show==='all'||(show==='shown'?p.visible:show==='hidden'?!p.visible&&p.status==='live':p.status!=='live'))),[doc.products,who,show])
  const todo=doc.products.filter(p=>p.status==='draft'||p.status==='error'||p.status==='building'),live=doc.products.filter(p=>p.status==='live'),shown=live.filter(p=>p.visible)
  const pressMany=async(ids:string[])=>{stop.current=false;setRun({done:0,total:ids.length});for(let i=0;i<ids.length&&!stop.current;i++){await act('press',{id:ids[i]},'Pressed.');setRun({done:i+1,total:ids.length})}setRun(null)}
- const popup=/pop/i.test(s.channel||'')
+ const popup=/storefront|pop/i.test(s.channel||'')
  const shelves=useMemo(()=>{const mine=pictures.filter(p=>p.subject===nSub||p.subject==='fanlife'),by=new Map<string,DeskPicture[]>()
   for(const p of mine.sort((a,b)=>Number(b.subject===nSub)-Number(a.subject===nSub)||Number(b.approved)-Number(a.approved)))by.set(p.folder,[...(by.get(p.folder)||[]),p])
   return [...by]},[pictures,nSub])
