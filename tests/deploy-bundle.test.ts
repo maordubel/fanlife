@@ -42,3 +42,51 @@ describe('the Cloud Run front door (deploy/space/proxy.mjs)',()=>{
   expect((await run('/brand/x.png',200,{accept:'image/*'}))['clear-site-data']).toBeUndefined()
  })
 })
+
+describe('the Cloudflare Worker routes each app to its own Cloud Run service',()=>{
+ it('fanlife and its club subdomains stay on fanlife; <name>.dubelteam.com goes to the service <name>',async()=>{
+  const {originFor}=await import('../deploy/space/worker.js')
+  expect(originFor('fanlife.dubelteam.com')).toBeNull()
+  expect(originFor('celtic.fanlife.dubelteam.com')).toBeNull()
+  expect(originFor('theworker.dubelteam.com')).toBe('https://theworker-1041793148354.europe-west1.run.app')
+  expect(originFor('fuckyou.dubelteam.com')).toBe('https://fuckyou-1041793148354.europe-west1.run.app')
+  expect(originFor('dubelteam.com')).toBe('https://dubelteam-1041793148354.europe-west1.run.app')
+  expect(originFor('www.dubelteam.com')).toBe('https://dubelteam-1041793148354.europe-west1.run.app')
+  expect(originFor('evil.example.com')).toBeNull()
+ })
+})
+
+describe('the static server for the Dubel Team sites (deploy/static/server.mjs)',()=>{
+ const setup=async(cfg:object,files:Record<string,string>)=>{
+  const fs=await import('node:fs'),os=await import('node:os'),path=await import('node:path')
+  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'site-'))
+  fs.writeFileSync(path.join(dir,'site.json'),JSON.stringify(cfg))
+  for(const [f,b] of Object.entries(files)){fs.mkdirSync(path.dirname(path.join(dir,'site',f)),{recursive:true});fs.writeFileSync(path.join(dir,'site',f),b)}
+  const {load,makeServer}=await import('../deploy/static/server.mjs')
+  const srv=makeServer(load(dir));await new Promise<void>(r=>srv.listen(0,'127.0.0.1',()=>r()))
+  const port=(srv.address() as {port:number}).port
+  return {get:(p:string)=>fetch(`http://127.0.0.1:${port}${p}`),close:()=>srv.close(),dir}
+ }
+ it('serves files, clean URLs and the single-page fallback, and never leaves the folder',async()=>{
+  const s=await setup({root:'site',spa:true,rewrites:[{source:'^/admin/?$',destination:'/admin.html'}]},{'index.html':'INDEX','admin.html':'ADMIN','assets/a-1234abcd.js':'JS','about.html':'ABOUT'})
+  try{
+   expect(await (await s.get('/')).text()).toBe('INDEX')
+   expect(await (await s.get('/admin')).text()).toBe('ADMIN')
+   expect(await (await s.get('/about')).text()).toBe('ABOUT')
+   expect(await (await s.get('/deep/route')).text()).toBe('INDEX')
+   const js=await s.get('/assets/a-1234abcd.js');expect(js.headers.get('cache-control')).toContain('immutable')
+   expect((await s.get('/missing.png')).status).toBe(404)
+   expect(await (await s.get('/%2e%2e/%2e%2e/etc/passwd')).text()).toBe('INDEX')
+  }finally{s.close()}
+ })
+ it('runs a Vercel-style /api handler behind a rewrite with named groups',async()=>{
+  const s=await setup({root:'site',spa:true,rewrites:[{source:'^/s/(?<kind>[^/]+)/(?<id>[^/]+)(?:/.*)?$',destination:'/api/share?kind=:kind&id=:id'}],api:{share:'share.mjs'}},{'index.html':'I'})
+  const fs=await import('node:fs'),path=await import('node:path')
+  fs.writeFileSync(path.join(s.dir,'share.mjs'),"export default (req,res)=>res.status(200).json({k:req.query.kind,i:req.query.id})")
+  try{expect(await (await s.get('/s/c/42/my-slug')).json()).toEqual({k:'c',i:'42'})}finally{s.close()}
+ })
+ it('answers a missing page with the site 404 page when it has one',async()=>{
+  const s=await setup({root:'site',spa:false,notFound:'404.html'},{'index.html':'I','404.html':'GONE'})
+  try{const r=await s.get('/nope');expect(r.status).toBe(404);expect(await r.text()).toBe('GONE')}finally{s.close()}
+ })
+})

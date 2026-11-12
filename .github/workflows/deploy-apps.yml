@@ -1,0 +1,163 @@
+name: Deploy · other apps on Cloud Run
+
+# Vercel's Hobby plan paused the whole Dubel Team account (12.11.2026). THE WORKER and FUCK YOU (Next.js) and DUBID and
+# dubelteam.com (static) are public repositories, so this repository — already trusted by Google (keyless OIDC,
+# deploy/cloudrun/target.json) — builds and deploys them as their own Cloud Run services. Static sites run
+# deploy/static/server.mjs with deploy/static/sites/<app>.json (what their vercel.json did). The Cloudflare Worker (deploy/space/worker.js) sends
+# <name>.dubelteam.com to the service <name>. Every hour it redeploys an app whose main branch moved. No server secret is passed here.
+
+on:
+  schedule:
+    - cron: '23 * * * *'
+  workflow_dispatch:
+    inputs:
+      app:
+        description: 'theworker, fuckyou, dubid, dubelteam or all'
+        default: all
+      force:
+        description: 'Redeploy even if nothing changed'
+        type: boolean
+        default: false
+
+concurrency:
+  group: deploy-apps
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - app: theworker
+            repo: maordubel/The-Worker
+            site: https://theworker.dubelteam.com
+            supabase: https://afxpjfxwpdjvlmuoawda.supabase.co
+            # public anon key of Football Master (ships in every browser bundle by design; RLS guards the data)
+            anon: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFmeHBqZnh3cGRqdmxtdW9hd2RhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc0NzY4NDUsImV4cCI6MjEwMzA1Mjg0NX0.DxpeH8L9yzRCOSdBzrnZLs7NztYs65psQoroYiCtY2U
+            config: next.config.mjs
+          - app: fuckyou
+            repo: maordubel/FuckYou
+            site: https://fuckyou.dubelteam.com
+            supabase: https://wvxzhjaerfmrlvirbasc.supabase.co
+            # public anon key of the TakeMeOut! project, where FUCK YOU keeps its fy_* tables
+            anon: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind2eHpoamFlcmZtcmx2aXJiYXNjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU4NDkyOTksImV4cCI6MjEwMTQyNTI5OX0.p-mHTCh_eyYFzuRIiu0Cm7FOFhTp0jrs2vqNWCmeC1Q
+            config: next.config.ts
+          - app: dubid
+            repo: maordubel/Dubid
+            kind: static
+            build: npm ci --no-audit --no-fund && npm run build
+            out: dist
+          - app: dubelteam
+            repo: maordubel/dubelteam
+            kind: static
+            build: ''
+            out: .
+    steps:
+      - name: This app?
+        id: pick
+        run: |
+          want="${{ github.event.inputs.app || 'all' }}"
+          if [ "$want" = all ] || [ "$want" = "${{ matrix.app }}" ]; then echo "go=true" >> "$GITHUB_OUTPUT"; else echo "go=false" >> "$GITHUB_OUTPUT"; fi
+      - uses: actions/checkout@v4
+        if: steps.pick.outputs.go == 'true'
+      - name: Target
+        if: steps.pick.outputs.go == 'true'
+        id: cfg
+        run: |
+          T=deploy/cloudrun/target.json
+          for k in project region repository workloadIdentityProvider serviceAccount; do
+            echo "$k=$(jq -r ".$k" $T)" >> "$GITHUB_OUTPUT"
+          done
+      - uses: actions/checkout@v4
+        if: steps.pick.outputs.go == 'true'
+        with:
+          repository: ${{ matrix.repo }}
+          path: app
+      - uses: google-github-actions/auth@v2
+        if: steps.pick.outputs.go == 'true'
+        with:
+          workload_identity_provider: ${{ steps.cfg.outputs.workloadIdentityProvider }}
+          service_account: ${{ steps.cfg.outputs.serviceAccount }}
+      - uses: google-github-actions/setup-gcloud@v2
+        if: steps.pick.outputs.go == 'true'
+      - name: Changed since the last deploy?
+        if: steps.pick.outputs.go == 'true'
+        id: changed
+        run: |
+          SHA=$(git -C app rev-parse --short=12 HEAD)
+          echo "sha=$SHA" >> "$GITHUB_OUTPUT"
+          LIVE=$(gcloud run services describe "${{ matrix.app }}" --project "${{ steps.cfg.outputs.project }}" \
+            --region "${{ steps.cfg.outputs.region }}" --format 'value(metadata.labels.source)' 2>/dev/null || true)
+          if [ "${{ github.event.inputs.force }}" = true ] || [ "$LIVE" != "$SHA" ]; then echo "build=true" >> "$GITHUB_OUTPUT"
+          else echo "build=false" >> "$GITHUB_OUTPUT"; echo "::notice::${{ matrix.app }} is already at $SHA"; fi
+      - uses: actions/setup-node@v4
+        if: steps.changed.outputs.build == 'true'
+        with: { node-version: 22 }
+      - name: Build (standalone)
+        if: steps.changed.outputs.build == 'true' && matrix.kind != 'static'
+        working-directory: app
+        env:
+          NODE_OPTIONS: --max-old-space-size=6144
+          NEXT_TELEMETRY_DISABLED: '1'
+          NEXT_PUBLIC_SUPABASE_URL: ${{ matrix.supabase }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ matrix.anon }}
+          NEXT_PUBLIC_SITE_URL: ${{ matrix.site }}
+          VERCEL_ENV: production
+          NEXT_PUBLIC_VERCEL_ENV: production
+        run: |
+          # the app's own config, told to emit a standalone server (the repository itself is not changed)
+          sed -i "0,/reactStrictMode: true,/s//output: 'standalone', reactStrictMode: true,/" ${{ matrix.config }}
+          grep -q "output: 'standalone'" ${{ matrix.config }}
+          npm ci --no-audit --no-fund || npm install --no-audit --no-fund
+          npx next build
+      - name: Build and bundle (static)
+        if: steps.changed.outputs.build == 'true' && matrix.kind == 'static'
+        run: |
+          if [ -n "${{ matrix.build }}" ]; then (cd app && ${{ matrix.build }}); fi
+          B=deploy/static/bundle && rm -rf $B && mkdir -p $B/site
+          rsync -a --exclude='.git' --exclude='.github' --exclude='node_modules' --exclude='*-src' \
+            --exclude='CNAME' --exclude='_redirects' "app/${{ matrix.out }}/" $B/site/
+          cp deploy/static/server.mjs $B/server.mjs && cp deploy/static/sites/${{ matrix.app }}.json $B/site.json
+          echo '{"type":"module"}' > $B/package.json
+          test -f $B/site/index.html
+          echo "files: $(find $B/site -type f | wc -l)" && du -sh $B
+      - name: Bundle
+        if: steps.changed.outputs.build == 'true' && matrix.kind != 'static'
+        run: |
+          B=deploy/cloudrun/bundle && rm -rf $B && mkdir -p $B
+          cp -a app/.next/standalone/. $B/
+          mkdir -p $B/.next && cp -a app/.next/static $B/.next/static
+          if [ -d app/public ]; then mkdir -p $B/public && cp -a app/public/. $B/public/; fi
+          test ! -e $B/public/public
+          cp deploy/space/proxy.mjs $B/deploy-proxy.mjs && cp deploy/space/start.sh $B/deploy-start.sh
+          du -sh $B
+      - name: Image
+        if: steps.changed.outputs.build == 'true'
+        id: img
+        run: |
+          R="${{ steps.cfg.outputs.region }}"
+          IMG="$R-docker.pkg.dev/${{ steps.cfg.outputs.project }}/${{ steps.cfg.outputs.repository }}/${{ matrix.app }}:${{ steps.changed.outputs.sha }}"
+          gcloud auth configure-docker "$R-docker.pkg.dev" --quiet
+          docker build -t "$IMG" ${{ matrix.kind == 'static' && 'deploy/static' || 'deploy/cloudrun' }}
+          docker push "$IMG"
+          echo "image=$IMG" >> "$GITHUB_OUTPUT"
+      - name: Deploy
+        if: steps.changed.outputs.build == 'true'
+        run: |
+          gcloud run deploy "${{ matrix.app }}" \
+            --project "${{ steps.cfg.outputs.project }}" --region "${{ steps.cfg.outputs.region }}" \
+            --image "${{ steps.img.outputs.image }}" --port 8080 --memory ${{ matrix.kind == 'static' && '512Mi' || '1Gi' }} --cpu 1 \
+            --min-instances 0 --max-instances 5 --concurrency ${{ matrix.kind == 'static' && '80' || '20' }} --cpu-boost --timeout 300 \
+            --labels "source=${{ steps.changed.outputs.sha }}" \
+            --update-env-vars NODE_OPTIONS=${{ matrix.kind == 'static' && '--max-old-space-size=256' || '--max-old-space-size=768' }} \
+            --no-invoker-iam-check --quiet
+          URL=$(gcloud run services describe "${{ matrix.app }}" --project "${{ steps.cfg.outputs.project }}" --region "${{ steps.cfg.outputs.region }}" --format 'value(status.url)')
+          echo "::notice title=${{ matrix.app }}::$URL"
+          curl -s -o /dev/null -w "home: %{http_code}\n" "$URL/"

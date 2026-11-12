@@ -1,0 +1,7 @@
+{"root":"site","spa":true,"cleanUrls":true,
+ "rewrites":[{"source":"^/admin/?$","destination":"/admin.html"}],
+ "headers":[
+  {"source":"^/sw\\.js$","headers":{"cache-control":"no-cache, no-store, must-revalidate","service-worker-allowed":"/"}},
+  {"source":"^/assets/","headers":{"cache-control":"public, max-age=31536000, immutable"}},
+  {"source":"^/manifest\\.webmanifest$","headers":{"content-type":"application/manifest+json; charset=utf-8"}},
+  {"source":".*","headers":{"referrer-policy":"strict-origin-when-cross-origin","permissions-policy":"geolocation=(), microphone=(), camera=()"}}]}
