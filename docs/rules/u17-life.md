@@ -1,0 +1,12 @@
+## LIFE — הפתיח: סרט קודם, דוקומנטרי כשהוא לא יכול (דלתא 90-G, 25.9.2026)
+מפרט הבעלים: `OPENING DOCUMENTARY HYBRID FINAL SPEC` (25.9.2026).
+1. **`Opening` הוא ה-orchestrator היחיד: `OpeningFilm | OpeningDocumentary`.** `OpeningSequence` (המצגת) נמחק; אין נתיב שלישי. `prefers-reduced-motion` → הדוקומנטרי במצב מופחת. QA: `/qa/life-opening?path=documentary|film`.
+2. **ניסיון הוגן לסרט = `lib/life/openingAttempt.ts`** (פונקציה טהורה, `step()`): אוטופליי 2.5 ש׳ → `load()+play()` 1.8 ש׳ → "▶ להתחיל" רק כשהמדיה תקינה והאוטופליי נדחה (7 ש׳ או עד לחיצה) → דוקומנטרי. אין לולאה; מסלול שנבחר לא מתהפך. הצלה יחידה: סרט שקפא 6 ש׳ נמסר לדוקומנטרי בביט המקביל (`beatForFilmMs`). מעבר: הסרט דוהה לדיו 420ms מעל `DocumentaryGround` — אותם פיקסלים שהדוקומנטרי מתחיל מהם.
+3. **הדוקומנטרי הוא קוד בלבד** — אין `<img>`, `url(` (מלבד data: של ה-grain), `/life/opening/`, `/life/art/`, fetch. נבדק ב-`tests/life-opening.test.ts`. `Grain code` = grain בלי תמונה.
+4. **הטקסט ב-`lib/life/opening.ts` בלבד** (`mode`, `captionHe`, `overlineHe`, `noteHe`, `emphasisHe` שחייב להיות חלק מילולי מהכיתוב). הכיתובים הקנוניים מילה במילה; `captionPieces` חותך ולא משנה תו. מחרוזות UI ב-`messages/he.stage.life90g.json`.
+5. **החוט האדום הוא מחוון ההתקדמות היחיד** — מצויר ב-transform בלבד, במהירות הביט. רק שנים שהפתיח יודע (1978, שנת העוגן) מתויגות; אין ציר חיים. בסוף החוט יוצא מהזכוכית ב-transform **לפני** שהשכבה דוהה (כלל 79).
+6. **ה-CSS בבלוק `OPENING DOCUMENTARY — begin/end` ב-globals.css**, טוקנים red/ink/sheet/concrete/sign בלבד, גם לזרקורים. קלאסי המצגת (`opening-bed/stage/frame/caption`) נמחקו; `openingDrift` נשאר (CodaCard).
+7. **התמונות והקליפים הישנים נשארים בדיסק** (§17) — הבדיקה נופלת אם נמחקו.
+8. **קול: אווירה בלבד, רק הקלטות של מאור** (`lib/life/openingAir.ts`: amb-park, radio-open, crowd-real-murmur ⊆ `LifeAudio.allowed`), כבוי עד לחיצה, AudioContext פרטי שנסגר בסוף.
+9. **הקידודים של 23.9 אינם אותו סרט:** WebM 7.949 ש׳, MP4 25.84 ש׳. לכן MP4 ראשון ב-`<source>`; `FILM.ms = 25_840`. לקודד מחדש WebM מה-MP4 (ולמדוד צהוב, כלל 61) ואז להחזיר VP9 ראשון.
+   **נסגר 25.9.2026:** ה-WebM קודד מחדש מה-MP4 ונמדד ב-`ffprobe` — VP9 25.864 ש׳ / h.264 25.833 ש׳, 775 פריימים בשניהם; VP9 ראשון ב-`<source>`. הצהוב נמדד על כל 775 הפריימים המפוענחים ושלושת הנתיבים ב-`lib/brand/yellowExemptions.ts` נושאים את המשפט של מאור על הגרסה הזאת: **"מאשר את הגרסא החדשה, עם הצהוב."** (`approvedOn: 2026-09-25`; האישור של 17.9 נשאר בהערה — היסטוריה, לא ערך שדורסים).
