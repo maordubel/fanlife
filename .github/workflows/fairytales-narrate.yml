@@ -18,7 +18,8 @@ jobs:
       cancel-in-progress: true
     timeout-minutes: 90
     env:
-      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      # Football Fairy Tales has its own free-tier key (owner, 12.11.2026), kept apart from the studio's GEMINI_API_KEY
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY_KIDS }}
       EPISODE: ${{ inputs.episode || 'hapoel-tel-aviv-good-morning' }}
       BRANCH: fairytales-narration-${{ github.run_id }}
     steps:
