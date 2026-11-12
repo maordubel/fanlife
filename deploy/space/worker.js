@@ -4,7 +4,6 @@
 // KEY = the service secret FANLIFE_PROXY_KEY (optional).
 const DEFAULT_PRIMARY = 'https://fanlife-1041793148354.europe-west1.run.app'
 const DEFAULT_STANDBY = ''
-const CLEAR = 'fl_cache_20261112'
 
 async function forward(request, url, base, env, body) {
   const target = new URL(url.pathname + url.search, base)
@@ -21,15 +20,6 @@ async function forward(request, url, base, env, body) {
   const out = new Response(res.body, res)
   const loc = out.headers.get('location')
   if (loc && loc.startsWith(base)) out.headers.set('location', loc.replace(base, `https://${url.host}`))
-  // a missing file is never cached: next.config gives /brand, /fonts, /ads a day-to-a-month max-age even on a 404,
-  // and the first Cloud Run bundle (11.11.2026) left browsers holding those 404s
-  if (out.status >= 400) out.headers.set('cache-control', 'no-store')
-  // one browser-cache clear per visitor, to drop the 404s cached on 11-12.11.2026; the cookie name is the round
-  const page = request.method === 'GET' && (request.headers.get('accept') || '').includes('text/html')
-  if (page && out.status < 400 && !(request.headers.get('cookie') || '').includes(`${CLEAR}=1`)) {
-    out.headers.set('clear-site-data', '"cache"')
-    out.headers.append('set-cookie', `${CLEAR}=1; Max-Age=31536000; Path=/; Secure; SameSite=Lax`)
-  }
   return out
 }
 

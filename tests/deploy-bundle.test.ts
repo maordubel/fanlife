@@ -25,22 +25,20 @@ describe('the universe crests are served from FAN LIFE',()=>{
  })
 })
 
-describe('the Cloudflare front door (deploy/space/worker.js)',()=>{
+describe('the Cloud Run front door (deploy/space/proxy.mjs)',()=>{
  const run=async(path:string,status:number,headers:Record<string,string>={})=>{
-  const {default:w}=await import('../deploy/space/worker.js')
-  const orig=globalThis.fetch
-  globalThis.fetch=(async()=>new Response('x',{status,headers:{'cache-control':'public, max-age=2592000'}})) as typeof fetch
-  try{return await w.fetch(new Request('https://fanlife.dubelteam.com'+path,{headers}),{})}finally{globalThis.fetch=orig}
+  const {fix}=await import('../deploy/space/proxy.mjs')
+  return fix({method:'GET',url:path,headers},status,{'cache-control':'public, max-age=2592000'}) as Record<string,string|string[]|undefined>
  }
  it('never lets a missing file be cached',async()=>{
-  expect((await run('/fonts/a.woff2',404)).headers.get('cache-control')).toBe('no-store')
-  expect((await run('/fonts/a.woff2',200)).headers.get('cache-control')).toContain('max-age')
+  expect((await run('/fonts/a.woff2',404))['cache-control']).toBe('no-store')
+  expect((await run('/fonts/a.woff2',200))['cache-control']).toContain('max-age')
  })
  it('clears a returning browser\'s cache once, on a page, and never again',async()=>{
   const first=await run('/',200,{accept:'text/html'})
-  expect(first.headers.get('clear-site-data')).toBe('"cache"')
-  expect(first.headers.get('set-cookie')).toContain('fl_cache_20261112=1')
-  expect((await run('/',200,{accept:'text/html',cookie:'fl_cache_20261112=1'})).headers.get('clear-site-data')).toBeNull()
-  expect((await run('/brand/x.png',200,{accept:'image/*'})).headers.get('clear-site-data')).toBeNull()
+  expect(first['clear-site-data']).toBe('"cache"')
+  expect(String(first['set-cookie'])).toContain('fl_cache_20261112=1')
+  expect((await run('/',200,{accept:'text/html',cookie:'fl_cache_20261112=1'}))['clear-site-data']).toBeUndefined()
+  expect((await run('/brand/x.png',200,{accept:'image/*'}))['clear-site-data']).toBeUndefined()
  })
 })
