@@ -1,0 +1,96 @@
+{
+  "episode": "iwt-04-aek-paok-2023",
+  "cut": "reel",
+  "voice": {
+    "provider": "kokoro",
+    "voice": "bm_lewis",
+    "lang": "en-gb",
+    "speed": 0.94,
+    "licence": "Kokoro-82M, Apache-2.0",
+    "chosen": "Take B of the narration audition (matchday-voice branch), owner, 2.11.2026"
+  },
+  "beats": [
+    {
+      "n": 0,
+      "kind": "hook",
+      "clip": "IMG_2830.MOV",
+      "start": 0.0,
+      "dur": 3.2,
+      "say": ""
+    },
+    {
+      "n": 1,
+      "kind": "clip",
+      "clip": "IMG_2835.MOV",
+      "start": 3.2,
+      "dur": 5.48,
+      "say": "Two goals in three minutes. The whole ground in smoke."
+    },
+    {
+      "n": 2,
+      "kind": "black",
+      "clip": null,
+      "start": 8.68,
+      "dur": 6.88,
+      "say": "Twenty-one. Twenty-four. Seventy-seven. Eighty-six."
+    },
+    {
+      "n": 3,
+      "kind": "clip",
+      "clip": "95C437BB-85A3-4A52-AF8F-74E25FBFAD6A.MP4",
+      "start": 15.56,
+      "dur": 3.64,
+      "say": "Four–nil. Level at the top."
+    },
+    {
+      "n": 4,
+      "kind": "black",
+      "clip": null,
+      "start": 19.2,
+      "dur": 4.6,
+      "say": "Three weeks later… the double."
+    },
+    {
+      "n": 5,
+      "kind": "end",
+      "clip": null,
+      "start": 23.8,
+      "dur": 4.88,
+      "say": "Were you there? Follow for the next night from the stand."
+    }
+  ],
+  "speech": {
+    "00 IMG_2830.MOV": {
+      "checked": true,
+      "speech": false,
+      "text": ""
+    },
+    "01 IMG_2835.MOV": {
+      "checked": true,
+      "speech": false,
+      "text": ""
+    },
+    "03 95C437BB-85A3-4A52-AF8F-74E25FBFAD6A.MP4": {
+      "checked": true,
+      "speech": false,
+      "text": ""
+    }
+  },
+  "subscribe_stub_beat": null,
+  "publish": {
+    "file": "iwt-04-aek-paok-2023-reel-publish.mp4",
+    "mb": 42.2,
+    "video": "12706k"
+  },
+  "duration": 28.68,
+  "planned": 28.68,
+  "lufs": -14.4,
+  "true_peak": -5.1,
+  "identifying_tags_left": [],
+  "chapters": [
+    [
+      "0:00",
+      "Cold open"
+    ]
+  ]
+}
