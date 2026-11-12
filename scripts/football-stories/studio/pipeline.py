@@ -264,7 +264,7 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
             # a director's pitch made with one click (owner, 8.11.2026) is written by the director who pitched it
             from .directors import BY_ID
             s = writer.write_script(brief, {**ledger, 'bans': palette.bans}, cache, log,
-                                    director=BY_ID.get(brief.get('lead_director') or ''))
+                                    director=BY_ID.get(brief.get('lead_director') or ''), drama=True)   # one rewrite if a chapter is not a mini-drama
             s = hook_judge.judge_script(s, ledger, hook_check, log, cache)   # the best of its three openings is the one spoken
         s = sc.with_cta(s, f"{brief['club_id']}-{brief['season']}{'-' + Path(brief['dossier']).stem if brief.get('dossier') else ''}")
         write_json(sp_, s)
@@ -282,6 +282,9 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
 
     # 3 voice
     step('voice', 0.2, 'Recording narration')
+    from . import drama
+    if brief.get('kind') not in ('classified', 'vlog'):
+        drama.direct_script(s)   # the score sheet's deliveries: the held breath before a turn, the release (studio/drama.py)
     vp = job_dir / 'voice.json'
     if not vp.exists() or any(not (job_dir / 'voice' / b['file']).exists() for b in read_json(vp)['beats']):
         write_json(vp, voice.voice_script(s, job_dir / 'voice', cache / 'voice', log))
@@ -302,6 +305,14 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     from .docu import plan as docu
     if plan['engine'] == 'vox' and docu.wanted(brief):
         plan['engine'] = docu.ENGINE   # the owner's graphic minimum (9.11.2026); look 'vox' / STORIES_DOCU=0 keep the board
+    # the director's score sheet: an emotion and an intensity per beat, read by the camera, the cut, the mix and the gate
+    try:
+        plan = drama.attach(plan, s, ledger)
+        a = plan['sheet']['arc']
+        log(f"Director: score sheet — tension on {len(a['tension'])} beats, joy on {len(a['joy'])}, {len(a['turns'])} turn(s); the opening's question is "
+            + ('not planted' if a['question'] is None else f"answered {a['answer_at']:.0%} in" if a['answer'] is not None else 'never answered'))
+    except Exception as e:  # noqa: BLE001 — a plan of another shape: the film is made as before, without the sheet
+        log(f'Director: no score sheet ({type(e).__name__})')
     if plan['engine'] == 'docu':
         # the editor cuts on the music's beats when the track the mix will choose is at hand; otherwise on words
         try:

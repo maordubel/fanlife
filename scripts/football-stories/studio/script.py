@@ -133,6 +133,7 @@ WORDS_PER_MINUTE = 148  # Kokoro at speed 1.0: a supporter telling it, not a lec
 
 SCHEMA_TEXT = '''{
   "director": 2 — always; it says this script is cut by the director rules,
+  "drama": 1 — always; it says every chapter is written as a mini-drama (want, obstacle, clock, turn, payoff, cliff edge),
   "motif": optional — the film's recurring image, ≤6 words, no fact in it ("a scarf in the club colours", "the clock above the stand"),
   "title_candidates": [{"title": string <=100 chars, "angle": "search" | "discovery"}] — EXACTLY 10,
   "selected": integer index into title_candidates,
@@ -956,6 +957,90 @@ def director_rules(s: dict, seq: list, ledger: dict, story: dict, kind: str, by:
         last = sentences[-1] if sentences else ''
         if not (last.endswith(('?', '…', '...', '—', '-')) or TURN_WORDS.search(last)):
             errs.append(f'Chapter {ci + 1}: [director rule 5] its last line must end on a question, a cliffhanger or a turn')
+    return errs
+
+
+# ── the mini-drama (owner, 12.11.2026: "Make mini-dramas. Create tension. Create joy and happiness.") ───────────────────
+# Every chapter is written as a small drama — a WANT, an OBSTACLE, a CLOCK, a TURN, a PAYOFF — and ends on a cliff edge;
+# the film plants a question in its opening, withholds the outcome and pays it off after the midpoint, with one moment
+# of real tension and one of pure joy. These are read off the words the writer wrote (no model), and each failure is a
+# sentence the writer can act on. They never fail a film: writer.write_script asks for ONE rewrite when a chapter
+# fails and keeps the better script; the experience gate reports the arc on the finished film (qa.experience).
+DRAMA = 1   # a script that declares "drama": 1 was written to this shape
+WANT = re.compile(r'\b(want\w*|need\w*|must|had to|has to|have to|chas\w+|hop\w+|dream\w*|aim\w*|to win|to stay up|to survive|to reach|a win would|'
+                  r'on the line|at stake|stakes?|for the first time|one (game|match|point|goal|win|shoot-out) (from|away)|waited|waiting|promise\w*|ambition)\b', re.I)
+OBSTACLE = re.compile(r'\b(but|yet|against|behind|trail\w*|without|injur\w+|suspend\w+|sent off|lost|los(e|ing)|down|deficit|never|nobody|no one|only|'
+                      r'favourites?|stronger|rivals?|doubt\w*|problem|trouble|debt|crisis|feared|unbeaten|had not won|had never)\b', re.I)
+CLOCKED = re.compile(r'\b(minutes?|seconds|hours?|days?|weeks?|months?|left|remaining|to go|deadline|last|final (day|game|match|whistle)|by (the end|then|may|june)|'
+                     r'before|until|extra time|stoppage|penalt\w+|shoot-?out|the clock|time was|running out|\d{1,2}(st|nd|rd|th))\b', re.I)
+TURNED = re.compile(r'\b(then|until|suddenly|but then|turned|chang\w+|instead|equalis\w+|equaliz\w+|comeback|came back|that was when|and yet|everything|'
+                    r'out of nowhere|this time|at last|finally)\b', re.I)
+PAYOFF_VISUALS = {'score', 'goal', 'versus', 'table', 'record', 'stat', 'form', 'run'}
+PLANTED = re.compile(r'\?|comes? down to|one (game|match|point|goal|kick|shoot-out|win) (from|away)|nobody knew|no one knew|still level|all to play for|'
+                     r'how (did|do|could)|what happened|would (it|they|he)\b|could (it|they|he)\b', re.I)
+DRAMA_MIN_BEATS = 4   # a chapter shorter than this is a scene, not a drama: only its cliff edge is asked of it
+
+
+def mini_drama(s: dict) -> list[str]:
+    """What is missing from the script's mini-drama shape, as sentences (empty when it holds)."""
+    errs: list[str] = []
+    chs = [c for c in (s.get('chapters') or []) if isinstance(c, dict)]
+    flat = []
+    for ci, ch in enumerate(chs):
+        beats = [b for b in (ch.get('beats') or []) if isinstance(b, dict) and (b.get('visual') or {}).get('type') not in ('follow', 'end')]
+        flat += [(ci, b) for b in beats]
+        text = [(b.get('narration') or '') for b in beats]
+        name = f'Chapter {ci + 1} ("{(ch.get("title") or "").strip()[:40]}")'
+        if len(beats) >= DRAMA_MIN_BEATS:
+            third = max(1, len(beats) // 3)
+            if not any(WANT.search(t) for t in text[:max(2, third + 1)]):
+                errs.append(f'{name}: [mini-drama] its opening beats never say what the club or the people WANT here — state the want or the stake in the first two beats')
+            if not any(OBSTACLE.search(t) for t in text):
+                errs.append(f'{name}: [mini-drama] nothing stands in the way — name the OBSTACLE (the opponent, the deficit, the doubt) before the result')
+            if not any(CLOCKED.search(t) for t in text):
+                errs.append(f'{name}: [mini-drama] there is no CLOCK — say how much time is left (minutes, matches, days) so the viewer feels it running out')
+            if not any(TURNED.search(t) for t in text[len(beats) // 2:]):
+                errs.append(f'{name}: [mini-drama] its second half has no TURN — one beat where the story changes direction ("Then…", "Until…", "But this time…")')
+            tail = beats[-third - 1:]
+            if not any(RESULT_CUES.search(b.get('narration') or '') or (b.get('visual') or {}).get('type') in PAYOFF_VISUALS for b in tail):
+                errs.append(f'{name}: [mini-drama] it never pays off — its last beats must tell what happened (a result, a score, a table) before the cliff edge')
+        if ci < len(chs) - 1 and beats:
+            last = [x for x in re.split(r'(?<=[.!?…])\s+', (beats[-1].get('narration') or '').strip()) if x.strip()]
+            line = last[-1] if last else ''
+            if not (line.endswith(('?', '…', '...', '—', '-')) or TURN_WORDS.search(line)):
+                errs.append(f'{name}: [mini-drama] it does not end on a cliff edge — its last line must be a question, a cliffhanger or a turn that the next chapter answers')
+    if not flat:
+        return errs
+    said, planted = 0, False
+    for _, b in flat:
+        if said >= 60:
+            break
+        t = b.get('narration') or ''
+        planted = planted or bool(PLANTED.search(t)) or '?' in ((b.get('visual') or {}).get('headline') or '')
+        said += len(t.split())
+    if not planted:
+        errs.append('The film: [mini-drama] the first fifteen seconds plant no question — open on a moment whose outcome the viewer does not know yet, and do not tell it')
+    opening = set(flat[0][1].get('claim_ids') or [])
+    total = sum(len((b.get('narration') or '').split()) for _, b in flat) or 1
+    run = 0
+    if opening and len(flat) >= 8:
+        early = late = False
+        for i, (_, b) in enumerate(flat):
+            w = len((b.get('narration') or '').split())
+            if i and opening & set(b.get('claim_ids') or []) and RESULT_CUES.search(b.get('narration') or '') and (b.get('visual') or {}).get('type') in PAYOFF_VISUALS:
+                early, late = early or (run + w / 2) / total < 0.5, late or (run + w / 2) / total >= 0.5
+            run += w
+        if early and not late:
+            errs.append('The film: [mini-drama] the opening\'s outcome is told before the midpoint — withhold it and pay it off late')
+        elif not late:
+            errs.append('The film: [mini-drama] the question the opening plants is never paid off — return to that moment after the midpoint and tell how it ended')
+    from .drama import STRONG, beats_of_script, sheet
+    sh = sheet(beats_of_script(s))['beats']
+    if len(flat) >= 8:
+        if not any(x['emotion'] in ('tension', 'dread') and x['intensity'] >= STRONG for x in sh.values()):
+            errs.append('The film: [mini-drama] there is no moment of real tension — tell one match or one decision against its clock, with what was at stake')
+        if not any(x['emotion'] in ('joy', 'release') and x['intensity'] >= STRONG for x in sh.values()):
+            errs.append('The film: [mini-drama] there is no moment of pure joy — give the win, the goal or the celebration its own beat')
     return errs
 
 

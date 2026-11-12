@@ -668,6 +668,23 @@ def hush_envelope(hushes: list[tuple[float, float]], n: int, depth: float = 0.35
     return env
 
 
+def sheet_envelope(sheet: dict | None, n: int) -> np.ndarray:
+    """The score sheet's two music cues (studio/drama.attach) as a gain over the film: before each TURN the music drops
+    to near-silence (drama.HUSH_DEPTH) for the held breath, and on each RELEASE it lifts (drama.LIFT_GAIN) and comes
+    back. Every edge is a ramp of a few tenths of a second — a drop, never a cut."""
+    from .drama import HUSH_DEPTH, LIFT_GAIN
+    env = hush_envelope([(a, d) for a, d in (sheet or {}).get('hush') or []], n, HUSH_DEPTH)
+    for at, d_ in (sheet or {}).get('lift') or []:
+        a, b = int(at * SR), int((at + d_) * SR)
+        idx = np.arange(max(0, a), min(n, b + SR))
+        if not len(idx):
+            continue
+        tt = (idx - a) / SR
+        g = np.where(tt < 0.3, 1 + (LIFT_GAIN - 1) * tt / 0.3, np.where(idx < b, LIFT_GAIN, LIFT_GAIN - (LIFT_GAIN - 1) * np.clip((idx - b) / SR, 0, 1)))
+        env[idx] = env[idx] * g.astype('float32')
+    return env
+
+
 ROOM_FLOOR_DB = -42.0   # the room tone's level where nothing else sounds (QA's dead-air detector is at -45 dB)
 ROOM_QUIET_DB = -52.0   # a half second this quiet counts as nothing sounding
 ROOM_AFTER_S = 2.0      # nothing for this long is dead air in a film; the room comes in under it
@@ -775,6 +792,9 @@ def build_mix(job_dir: Path, plan: dict, log, crowd_level: str = 'soft', music: 
     music = np.pad(music, (0, n - len(music)))
     music *= hush_envelope(hushes, n)
     music = level_music(music, vdb)
+    if plan.get('sheet'):   # after the level is set: the drop before the turn and the lift on the release are relative to it
+        music = music * sheet_envelope(plan['sheet'], n)
+        log(f"Mix: the score follows the sheet — {len(plan['sheet'].get('hush') or [])} held breath(s) before a turn, {len(plan['sheet'].get('lift') or [])} lift(s) on a release")
     log(f'Mix: score set {MUSIC_UNDER_VOICE_DB:.0f} dB under the narrator, ducked further while he speaks')
     room = room_tone(voice, music, sfx, crowd)
     if float(np.max(np.abs(room))) > 0:
