@@ -42,3 +42,14 @@ describe('the Cloud Run front door (deploy/space/proxy.mjs)',()=>{
   expect((await run('/brand/x.png',200,{accept:'image/*'}))['clear-site-data']).toBeUndefined()
  })
 })
+
+describe('the Cloudflare Worker routes each app to its own Cloud Run service',()=>{
+ it('fanlife and its club subdomains stay on fanlife; <name>.dubelteam.com goes to the service <name>',async()=>{
+  const {originFor}=await import('../deploy/space/worker.js')
+  expect(originFor('fanlife.dubelteam.com')).toBeNull()
+  expect(originFor('celtic.fanlife.dubelteam.com')).toBeNull()
+  expect(originFor('theworker.dubelteam.com')).toBe('https://theworker-1041793148354.europe-west1.run.app')
+  expect(originFor('fuckyou.dubelteam.com')).toBe('https://fuckyou-1041793148354.europe-west1.run.app')
+  expect(originFor('evil.example.com')).toBeNull()
+ })
+})
