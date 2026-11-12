@@ -44,7 +44,7 @@ OTHER = {'cut': 'whip', 'whip': 'match', 'match': 'cut', 'fade': 'cut', 'tear': 
 def opaque(dev: dict) -> bool:
     """A device that covers the whole frame with its own ground (paper or ink), so nothing under it is seen."""
     k = dev['kind']
-    return (k in ('ledger', 'quote', 'rule', 'tally', 'form', 'table', 'press', 'chalk', 'cities', 'verdict', 'word')
+    return (k in ('ledger', 'quote', 'rule', 'tally', 'form', 'table', 'press', 'chalk', 'cities', 'verdict', 'word', 'explain')
             or (k == 'ticket' and not dev.get('compact')) or (k == 'card' and bool(dev.get('paper'))))
 
 
@@ -313,5 +313,6 @@ def shot_list(beats: list[dict]) -> list[dict]:
                  'look': x.get('as') or x.get('frame') or x.get('move') or 'push', 'src': x.get('src'), **({'camera': x['cam']} if x.get('cam') else {})}
                 for x in b['shots'] if x['kind'] in (*PICTURES, 'video', 'cutout')]
         out.append({'n': m.get('n'), 'type': m.get('type'), 'chapter': m.get('chapter'), 't': round(b['t'], 2), 'd': round(b['d'], 2),
-                    'in': b.get('in'), 'devices': [x['kind'] for x in b['shots']], 'pictures': subs})
+                    'in': b.get('in'), 'devices': [x['kind'] for x in b['shots']], 'pictures': subs,
+                    **{k: b[k] for k in ('lang', 'language') if k in b}, **{k: m[k] for k in ('emotion', 'intensity') if m.get(k) is not None}})
     return out

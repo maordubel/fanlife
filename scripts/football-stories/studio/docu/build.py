@@ -69,6 +69,24 @@ TEAR = (4, -3, 5, -4, 3, -5, 4, -2, 3)   # the torn edge: how far each of nine p
 CREEP = 0.004
 CREEPS = {'question', 'ticket', 'lead', 'ledger', 'rule', 'stat', 'tally', 'card', 'quote', 'form', 'verdict', 'cities', 'chalk', 'end', 'table', 'press', 'word'}
 
+# The explainer board and the kinetic line (Film.explain, Film.kinetic). INK and PAPER are the film's own.
+XP_CSS = ('.xpb{position:absolute;left:0;top:0;width:1920px;height:1080px;color:INK}'
+          ".xpt{position:absolute;left:250px;top:150px;font:700 40px 'Cond';letter-spacing:10px}"
+          '.pen{position:absolute;left:0;top:0;overflow:visible}'
+          ".xpe{position:absolute;width:120px;text-align:center;font:400 64px/1 'Ultra'}"
+          ".xpm{position:absolute;width:6px;height:52px;background:INK;opacity:.45} .xpml{position:absolute;width:120px;text-align:center;font:700 34px 'Cond';letter-spacing:3px;opacity:.7}"
+          ".xpk{position:absolute;width:600px;text-align:center} .xpk b{position:relative;display:inline-block;font:400 76px/1.1 'Head';padding:0 16px} .xpk b.hot{color:#fff}"
+          '.hl{position:absolute;left:0;top:8%;width:100%;height:86%;transform-origin:left center;z-index:0} .xpk em,.kw em{position:relative;font-style:normal;z-index:1}'
+          ".odo{display:block;white-space:nowrap} .od{display:inline-block;height:1em;line-height:1;overflow:hidden;vertical-align:top} .ods{display:block;line-height:1}"
+          ".xpn{font:400 120px/1 'Ultra'} .xpbig{position:absolute;left:0;top:250px;width:1920px;text-align:center} .xpv{font:400 430px/1 'Ultra'}"
+          ".xpbig b{display:block;margin-top:26px;font:700 76px 'Cond';letter-spacing:12px}"
+          ".xpr{position:absolute;left:250px;width:1420px;height:130px;display:flex;align-items:center;gap:30px} .xpr>span{width:260px;font:700 52px 'Cond';letter-spacing:6px}"
+          ".xpbar{flex:1;height:84px} .xpbar i{display:block;height:100%} .xprn{font:400 110px/1 'Ultra';width:220px;text-align:right}"
+          '.kv{position:absolute;left:0;top:0;width:1920px;height:1080px;background:INK}'
+          ".kn{position:absolute;left:160px;top:250px;width:1600px;text-align:center;font-family:'Head';line-height:1.18;color:#fff}"
+          ".kw{position:relative;display:inline-block;padding:0 14px;margin:0 2px} .kn small{display:block;margin-top:34px;font:700 40px 'Cond';letter-spacing:8px;color:PAPER}"
+          '.kq{font-style:normal}')
+
 
 def e(s) -> str:
     return html.escape(str(s), quote=True)
@@ -478,6 +496,91 @@ class Film:
         self.tween(f'tl.fromTo("#{cid}i",{{y:500,opacity:0}},{{y:{s.get("y", 120)},opacity:1,duration:0.7,ease:"power3.out"}},{r2(t)});'
                    f'tl.to("#{cid}i",{{x:{-60 * s.get("way", 1)},duration:{r2(max(0.5, d - 0.7))},ease:"none"}},{r2(t + 0.7)});')   # the nearest plane: it travels with the camera's move
 
+    # ── the explainer and the kinetic line (docu/explainer.py: the VOX board's devices on this page) ─────────────────
+    def odo(self, val: int, t: float, cls: str = '', suffix: str = '', dur: float = 0.9) -> str:
+        """An odometer: one drum of digits per place, each rolling up from 0 to its digit and stopping (ease-out — it
+        does not roll past and back: rule 142). Returns its HTML; the tweens are queued."""
+        oid = self.id('od')
+        digits = str(abs(int(val)))
+        strip = '<br>'.join(str(k) for k in range(10))
+        cols = ''.join(f'<span class="od"><span class="ods" id="{oid}c{j}">{strip}</span></span>' for j in range(len(digits)))
+        for j, ch in enumerate(digits):
+            self.tween(f'tl.fromTo("#{oid}c{j}",{{yPercent:0}},{{yPercent:{-10 * int(ch)},duration:{r2(dur + 0.12 * j)},ease:"power2.out",immediateRender:false}},{r2(t)});')
+        return f'<span class="odo {cls}">{cols}{e(suffix)}</span>'
+
+    def pen(self, pts: list[tuple[float, float]], t: float, dur: float, width: float = 9, colour: str | None = None) -> str:
+        """A pen line drawn along `pts` (frame pixels): the stroke's dash runs out from its start — VOX's marker."""
+        pid = self.id('pen')
+        L = sum(((b[0] - a[0]) ** 2 + (b[1] - a[1]) ** 2) ** 0.5 for a, b in zip(pts, pts[1:])) + 2
+        path = 'M' + ' L'.join(f'{x:.1f} {y:.1f}' for x, y in pts)
+        self.tween(f'tl.fromTo("#{pid}",{{strokeDashoffset:{L:.1f}}},{{strokeDashoffset:0,duration:{r2(dur)},ease:"power1.inOut"}},{r2(t)});')
+        return (f'<svg class="pen" width="1920" height="1080" viewBox="0 0 1920 1080"><path id="{pid}" d="{path}" stroke="{colour or self.INK}" stroke-width="{width}" '
+                f'fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="{L:.1f}" stroke-dashoffset="{L:.1f}"/></svg>')
+
+    def explain(self, s, t, d):
+        """An explainer passage on the paper board: `timeline` (a pen-drawn clock, a labelled tick and an odometer minute
+        for every recorded goal, the highlighter on the one that decided it), `number` (one counted number rolling up,
+        its label underlined by the pen), `bars` (a record's cells growing to their own values). The board itself
+        drifts the whole time — VOX's camera never stops (docs/fanlife/71)."""
+        cid = self.id('xp')
+        head = f'<small class="xpt">{e(s["title"])}</small>' if s.get('title') else ''
+        inner, step = '', 0.0
+        if s['form'] == 'timeline':
+            x0, x1, y = 250.0, 1670.0, 640.0
+            wob = [(x0 + (x1 - x0) * k / 24, y + (3.0 if k % 2 else -3.0) * (1 if k % 3 else -1)) for k in range(25)]   # a hand's line, not a ruler's
+            inner += self.pen(wob, t + 0.25, 0.9)
+            inner += f'<span class="xpe" style="left:{x0 - 150}px;top:{y - 44}px">{e(s["left"])}</span><span class="xpe" style="left:{x1 + 30}px;top:{y - 44}px">{e(s["right"])}</span>'
+            for mk in s.get('marks') or []:
+                mx = x0 + (x1 - x0) * mk['at']
+                inner += f'<span class="xpm" style="left:{mx - 3:.0f}px;top:{y - 26}px"></span><span class="xpml" style="left:{mx - 60:.0f}px;top:{y + 40}px">{e(mk["label"])}</span>'
+            ticks = s['ticks']
+            step = min(1.1, max(0.5, (d - 2.4) / max(1, len(ticks))))
+            for i, tk in enumerate(ticks):
+                tx, at = x0 + (x1 - x0) * tk['at'], t + 1.1 + i * step
+                up = i % 2 == 0   # neighbours sit above and below the line, so two late goals never print over each other
+                tid = self.id('tk')
+                hl = f'<i class="hl" id="{tid}h" style="background:{self.US}"></i>' if tk.get('hot') else ''
+                lab = (f'<div class="xpk" id="{tid}" style="left:{tx - 300:.0f}px;top:{(y - 330) if up else (y + 60):.0f}px">'
+                       f'<b class="{"hot" if tk.get("hot") else ""}">{hl}<em>{e(tk["label"])}</em></b>{self.odo(tk["value"], at + 0.1, "xpn", tk.get("suffix", ""))}</div>')
+                inner += lab + self.pen([(tx, y - 70), (tx, y + 4)] if up else [(tx, y + 70), (tx, y - 4)], at, 0.25, 12, self.US if tk.get('hot') else None)
+                self.tween(f'tl.fromTo("#{tid}",{{y:{30 if up else -30},opacity:0}},{{y:0,opacity:1,duration:0.3,ease:"power2.out"}},{r2(at)});')
+                if tk.get('hot'):
+                    self.tween(f'tl.fromTo("#{tid}h",{{scaleX:0}},{{scaleX:1,duration:0.4,ease:"power2.inOut"}},{r2(at + 0.35)});')
+        elif s['form'] == 'number':
+            inner += f'<div class="xpbig">{self.odo(s["value"], t + 0.35, "xpv", s.get("suffix", ""), 1.1)}<b id="{cid}l">{e(s["label"])}</b></div>'
+            w = 60 * len(s['label']) * 0.62 + 80
+            inner += self.pen([(960 - w / 2, 838), (960 - w / 6, 846), (960 + w / 6, 836), (960 + w / 2, 844)], t + 1.5, 0.45, 12, self.US)
+            self.tween(f'tl.fromTo("#{cid}l",{{y:30,opacity:0}},{{y:0,opacity:1,duration:0.3,ease:"power2.out"}},{r2(t + 1.2)});')
+        elif s['form'] == 'bars':
+            for i, br in enumerate(s['bars']):
+                bid, at = self.id('br'), t + 0.4 + 0.45 * i
+                inner += (f'<div class="xpr" style="top:{330 + 170 * i}px"><span>{e(br["label"])}</span><div class="xpbar"><i id="{bid}" style="width:{max(2.0, 100 * br["share"]):.1f}%;'
+                          f'background:{self.US if br.get("hot") else self.INK}"></i></div>{self.odo(br["value"], at, "xprn")}</div>')
+                self.tween(f'tl.fromTo("#{bid}",{{scaleX:0}},{{scaleX:1,duration:0.7,ease:"power2.out",transformOrigin:"left center"}},{r2(at)});')
+        self.clip(cid, t, d, f'<div class="xpb" id="{cid}b">{head}{inner}</div>', s.get('z', 9), 'paper')
+        # the board's own camera: a slow push with a drift, one way, for as long as the passage runs
+        self.tween(f'tl.fromTo("#{cid}b",{{scale:1,x:16}},{{scale:{1 + 0.012 * min(d, 8):.4f},x:-16,duration:{r2(d)},ease:"none"}},{r2(t)});')
+        self.cams.append({'t': r2(t), 'd': r2(d), 'move': 'breath', 'ci': 0.5})
+
+    def kinetic(self, s, t, d):
+        """Kinetic type: the line's words arrive one by one — on the narrator's own word times for his line, evenly for
+        a quote — each rising into place once; the highlighter runs under the word it turns on; the block drifts up
+        the whole time. Over the picture, on a veil that fades in (never a flash: rule 142)."""
+        cid = self.id('kn')
+        hot = set(s.get('hot') or [])
+        spans = ''
+        for j, w in enumerate(s['words']):
+            hl = f'<i class="hl" id="{cid}h{j}" style="background:{self.US}"></i>' if j in hot else ''
+            spans += f'<span class="kw" id="{cid}w{j}">{hl}<em>{e(w["w"])}</em></span> '
+            self.tween(f'tl.fromTo("#{cid}w{j}",{{y:46,opacity:0}},{{y:0,opacity:1,duration:0.2,ease:"power2.out"}},{r2(t + w["at"])});')
+            if j in hot:
+                self.tween(f'tl.fromTo("#{cid}h{j}",{{scaleX:0}},{{scaleX:1,duration:0.35,ease:"power2.inOut"}},{r2(t + w["at"] + 0.15)});')
+        size = 132 if len(s['words']) <= 5 else 104 if len(s['words']) <= 9 else 78
+        who = f'<small>{e(s["who"])}</small>' if s.get('who') else ''
+        self.clip(cid, t, d, f'<div class="kv" id="{cid}v"></div><div class="kn{" kq" if s.get("quote") else ""}" id="{cid}b" style="font-size:{size}px">{spans}{who}</div>', s.get('z', 14))
+        self.tween(f'tl.fromTo("#{cid}v",{{opacity:0}},{{opacity:{s.get("veil", 0.58)},duration:0.35,ease:"power1.out"}},{r2(t)});'
+                   f'tl.fromTo("#{cid}b",{{y:18}},{{y:-18,duration:{r2(d)},ease:"none"}},{r2(t)});')
+
     def lights(self, s, t, d):
         """The ground after the night: the picture darkens and the floodlights go out, one tower at a time."""
         cid = self.id('lt')
@@ -649,7 +752,7 @@ class Film:
 .clip{{position:absolute;left:0;top:0;width:1920px;height:1080px}}
 video.clip{{width:1920px;height:1080px}}
 .ph{{overflow:hidden}} .phi{{position:absolute;left:0;top:0;width:1920px;height:1080px;background-size:cover}}
-''' + C.CSS + f'''
+''' + C.CSS + XP_CSS.replace('INK', INK).replace('PAPER', P) + f'''
 .veil{{position:absolute;left:0;top:0;width:1920px;height:1080px;background:{INK}}}
 .recon{{position:absolute;right:40px;top:34px;font:700 18px 'Mono';color:{P};opacity:.75;letter-spacing:1px}} .r2{{right:120px;top:90px}}
 .frame{{border:58px solid {P};box-sizing:border-box}} .paper{{background:{P}}} .ink{{background:{INK}}}
