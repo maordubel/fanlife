@@ -42,7 +42,6 @@ import {Suspense} from 'react'
 import {clubMetadata} from '@/lib/seo/club'
 import {LegendsBanner} from '@/components/legends/ClubBanner'
 import {PinToggle,PinsRow} from '@/components/fanlife/Pins'
-import {IssueFold} from '@/components/home/IssueFold'
 import {ShopStrip,shopIsOpen} from '@/components/shop/ShopStrip'
 import shopCopy from '@/messages/en.shop.json'
 export const dynamic='force-dynamic'
@@ -138,12 +137,11 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
     quick:copy.playQuick,deep:copy.playDeep,archive:copy.wkkArchiveShort,quickSub:copy.wkkQuickSub,deepSub:copy.wkkDeepSub,archiveSub:copy.wkkArchiveSub,soon:c.status==='paused'?copy.paused:games.comingSoon,gateWord:copy.wallGate,pick:copy.homeToday,mark}}/>}
 
   {/* ═════ the rest of the issue ═════ */}
-  <div className="wkk-foldbar"><IssueFold scope="main.wkk-home" more={copy.wkkFoldMore} less={copy.wkkFoldLess}/></div>
-  {core&&<div className="wkk-legends" data-fold><Suspense fallback={null}><LegendsBanner club={id} name={c.name} theme={theme}/></Suspense></div>}
+  {core&&<div className="wkk-legends"><Suspense fallback={null}><LegendsBanner club={id} name={c.name} theme={theme}/></Suspense></div>}
   <ClubLifeCard href={life.href} state={life.state} copy={copy} club={id} pin={life.href?{href:`/clubs/${id}/life`,label:`${c.name} · LIFE`,locale}:undefined} compat={life.href&&core?lifeCompatFor(core.data):null}/>
-  <div className="wkk-foldwrap" data-fold><WatchBanner copy={copy} club={id} ink="club"/></div>
-  {dyk==='moment'&&<div className="wkk-dykwrap" data-fold><TodayMoment clubId={id} clubName={c.name} moment={moment} locale={locale} dyk={copy.wkkDyk} cta={copy.wkkPlaceIt} copy={{kicker:copy.todayKicker,exact:copy.todayExact,near:copy.todayNear,open:copy.todayOpen,pick:copy.todayPick}}/></div>}
-  {dyk==='flavour'&&<div className="wkk-dykwrap" data-fold><ClubFlavour item={flav2} kicker={copy.flavourKicker2} label={copy.wkkDyk} variant="dyk"/></div>}
+  <div className="wkk-foldwrap"><WatchBanner copy={copy} club={id} ink="club"/></div>
+  {dyk==='moment'&&<div className="wkk-dykwrap"><TodayMoment clubId={id} clubName={c.name} moment={moment} locale={locale} dyk={copy.wkkDyk} cta={copy.wkkPlaceIt} copy={{kicker:copy.todayKicker,exact:copy.todayExact,near:copy.todayNear,open:copy.todayOpen,pick:copy.todayPick}}/></div>}
+  {dyk==='flavour'&&<div className="wkk-dykwrap"><ClubFlavour item={flav2} kicker={copy.flavourKicker2} label={copy.wkkDyk} variant="dyk"/></div>}
 
   <Suspense fallback={<div className="wkk-nextwrap"><NextFixtureHold label={copy.fixtureCard}/></div>}>
    <NextFixture clubId={id} clubName={c.name} lv={lv} locale={locale} copy={{kicker:copy.fixtureCard,vs:copy.vs,cta:copy.nextCta,kick:copy.wkkKickWord}}
@@ -153,7 +151,7 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
     <p className="wk-cap white wkk-ticket-cap">{world.ground.line}</p>
    </MatchTicket></section>:null}/>
   </Suspense>
-  {core&&<section className="wkk-cardwrap" id="card" data-fold aria-label={copy.cardKicker}><SupporterCard clubId={id} clubName={c.name} initials={c.initials} pattern={lv?.pattern} locale={locale} open={open} names={names} total={SHARED_GATES.length} next={false} copy={{kicker:copy.cardKicker,title:copy.cardTitle,gates:copy.cardGates,rounds:copy.cardRounds,been:copy.cardBeen,since:copy.cardSince,empty:copy.cardEmpty,next:copy.cardNext}}/></section>}
+  {core&&<section className="wkk-cardwrap" id="card" aria-label={copy.cardKicker}><SupporterCard clubId={id} clubName={c.name} initials={c.initials} pattern={lv?.pattern} locale={locale} open={open} names={names} total={SHARED_GATES.length} next={false} copy={{kicker:copy.cardKicker,title:copy.cardTitle,gates:copy.cardGates,rounds:copy.cardRounds,been:copy.cardBeen,since:copy.cardSince,empty:copy.cardEmpty,next:copy.cardNext}}/></section>}
 
   <Suspense fallback={null}><ShopStrip subject={id} limit={2} className="wkk-shop"/></Suspense>
 
@@ -166,7 +164,7 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
     <li><Link className="min-h-tap" href={clubHref(id,'history',locale)}><b className="wk-head">{copy.historyTitle}</b><small className="wk-k muted">{copy.wkHistorySub}</small><Icon name="history" size={18}/></Link></li>
     <li><Link className="min-h-tap" href="/sources"><b className="wk-head">{copy.wkSources}</b><small className="wk-k muted">{copy.wkSourcesSub}</small><Icon name="sources" size={18}/></Link></li>
    </ul>
-   <div className="wkk-foldwrap" data-fold><ClubFlavour item={flav} kicker={copy.flavourKicker} variant="hero"/>
+   <div className="wkk-foldwrap"><ClubFlavour item={flav} kicker={copy.flavourKicker} variant="hero"/>
    {dyk==='moment'&&flav2&&flav2.id!==flav?.id&&<ClubFlavour item={flav2} kicker={copy.historyFacts} variant="terrace"/>}</div>
    {core&&open.length>0&&<div className="wkk-share"><ShareComposer draft={coverShare(c.id,states.filter(x=>x.allowed&&x.playable).map(x=>SHARED_GATES.find(g=>g.key===x.key)!.name))} label={copy.homeShare}/></div>}
   </nav>

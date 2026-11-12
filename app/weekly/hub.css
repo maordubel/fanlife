@@ -297,7 +297,7 @@
   .wkh .wkh-d-only { display: revert; }
   .wkh .wkh-m-only { display: none; }
   .wkh { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 40px; padding: 22px 40px 72px;
-    grid-template-areas: 'mast mast mast' 'hero hero hero' 'pins pins pins' 'lm lm lm' 'cover cover inside' 'cover cover cont' 'cover cover life' 'market market market' 'watch watch watch' 'clubs clubs letter' 'next say spec' 'back say spec';
+    grid-template-areas: 'mast mast mast' 'hero hero hero' 'pins pins pins' 'lm lm lm' 'cover cover inside' 'cover cover cont' 'cover cover life' 'market market market' 'watch watch watch' 'clubs clubs letter' 'back say spec';
     grid-template-rows: auto auto auto auto auto auto auto auto auto auto 1fr; }
   .wkh-pins { grid-area: pins; }
   .wkh > .wkt { grid-area: watch; margin-block-start: 64px; max-width: none; }
@@ -661,25 +661,30 @@
 .wkh-today-clubs { list-style: none; padding: 0 !important; display: flex; flex-wrap: wrap; gap: 8px; }
 .wkh-today-clubs a { display: inline-flex; align-items: center; min-block-size: 44px; padding: 0 14px; border: 2px solid var(--mag-ink); text-decoration: none; }
 
-/* ── THE PHONE'S FOLD and THE COUNTER (owner, 12.11.2026: shorter, hook first; the market and the shop together) ── */
+/* ── THE ORDER OF THE HUB and THE COUNTER (owner, 12.11.2026: the same design, put in order — every feature of ours seen, none hidden) ── */
 .wkh-counter { display: grid; gap: 12px; margin-block-start: 22px; }
 .wkh-counter .wkh-market.wkh-market-mini { margin-block-start: 0; }
 .wkh-door { position: relative; overflow: hidden; display: grid; grid-template-columns: 64px minmax(0, 1fr) auto; align-items: center; gap: 10px; min-block-size: 76px; padding: 10px 12px; border: 3px solid var(--mag-ink); box-shadow: 4px 4px 0 var(--mag-ink); color: var(--mag-white); text-decoration: none; }
 .wkh-door .wk-plate { block-size: 64px; }
 .wkh-door b { display: block; font-size: 24px; line-height: 1; color: var(--mag-white); }
-.wkh-foldbar { display: none; }
-.wkh-sayfold { display: contents; }
-.wk-fold-btn { inline-size: 100%; justify-content: center; }
+.wkh-sayfold, .wkh-watch { display: contents; }
+.wkh :is(#manager, #watch) { scroll-margin-top: calc(var(--app-top, 0px) + 16px); }
 @media (max-width: 900px) {
-  .wkh > * { order: 10; }
-  .wkh > .wkh-mast { order: 0; } .wkh > .wkh-hero { order: 1; } .wkh > .wkh-pins { order: 2; } .wkh > .wkh-next { order: 3; }
-  .wkh > .wkh-life { order: 4; } .wkh > .wkh-lm { order: 5; } .wkh > .wkh-counter { order: 6; } .wkh > .wkt { order: 7; } .wkh > .wkh-clubs { order: 8; }
-  .wkh > .wkh-foldbar { order: 9; display: block; margin-block-start: 22px; }
-  .wkh > .wkh-cont { display: none; }
-  .wkh:not([data-full='1']) [data-fold] { display: none; }
-  .wkh-sayfold { display: block; }
-  .wkh > .wkh-life { margin-block-start: 22px; } .wkh > .wkh-clubs { margin-block-start: 28px; }
+  /* the phone reads: who you are → your club → the index → our features, one after another → your corner */
+  .wkh > * { order: 20; }
+  .wkh > .wkh-mast { order: 0; } .wkh > .wkh-hero, .wkh > .wkh-cont { order: 1; } .wkh > .wkh-clubs { order: 2; } .wkh > .wkh-inside { order: 3; }
+  .wkh > .wkh-lm { order: 4; } .wkh > .wkh-life { order: 5; } .wkh > .wkh-counter { order: 6; } .wkh > .wkh-watch { order: 7; display: block; } .wkh > .wkh-cover { order: 8; }
+  .wkh > .wkh-pins { order: 9; } .wkh > .wkh-spec { order: 10; } .wkh > .wkh-sayfold { order: 11; display: block; } .wkh > .wkh-letter { order: 12; } .wkh > .wkh-back { order: 13; }
+  .wkh > .wkh-clubs { margin-block-start: 24px; } .wkh > .wkh-life { margin-block-start: 22px; }
+  /* the clubs are a slide (owner, 12.11.2026): the same stickers on one row, two and a bit in view so the next one shows */
+  .wkh-stickers { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; padding-block-end: 10px; margin-inline: -16px; padding-inline: 16px; scroll-padding-inline: 16px; scrollbar-width: thin; }
+  .wkh-stickers > .wkh-stk { flex: 0 0 42%; scroll-snap-align: start; }
+  /* the index: three cells a row */
+  .wkh-inside ol { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .wkh-inside li:nth-child(3n+1) { border-inline-start: 0; }
+  .wkh-inside li:nth-child(n+4) { border-block-start: 2px solid rgb(255 251 242 / 0.25); }
 }
+@media (min-width: 560px) and (max-width: 900px) { .wkh-stickers > .wkh-stk { flex-basis: 28%; } }
 @media (min-width: 901px) {
   .wkh-counter { grid-area: market; margin-block-start: 40px; grid-template-columns: 1fr 1fr; }
   .wkh-counter:has(> :only-child) { grid-template-columns: 1fr; }
