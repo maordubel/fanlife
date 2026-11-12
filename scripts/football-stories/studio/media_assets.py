@@ -114,7 +114,8 @@ def describe(path: Path, cache: Path, log) -> dict:
     saved = cache / f'image-v{VERSION}-{digest}.json'
     if saved.exists():
         return read_json(saved)
-    key = os.environ.get('GEMINI_API_KEY', '').strip()
+    from .gemini import api_key
+    key = api_key()
     if not key or os.environ.get('STORIES_IMAGE_ANALYSIS', '1') == '0':
         return {}
     from .gemini import generate, _http

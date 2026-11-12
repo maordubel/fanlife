@@ -1,5 +1,7 @@
-"""Does the script writer's key really work? One tiny request to the cheapest current Gemini model (never the Pro
-quota), printed as the heartbeat the listener sends: {"provider","ok","model","note"}. No secret is printed."""
+"""Do the script writer's keys really work? One tiny request per key to the cheapest current Gemini model (never the Pro
+quota), printed as the heartbeat the listener sends: {"provider","ok","model","note","keys"}. `keys` is one line per
+SECRET NAME (GEMINI_API_KEY, GEMINI_API_KEY_KIDS): ok / no credit / refused / quota, with the time — the desk shows it.
+No key, and no part of one, is printed."""
 from __future__ import annotations
 
 import json
@@ -9,34 +11,31 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from studio.common import StageError  # noqa: E402
-from studio.gemini import GEMINI, _http, gemini_candidates  # noqa: E402
+from studio import gemini  # noqa: E402
+
+WORDS = {'no credit': "no credit: the key's Google project has billing on and a zero balance — use a key from a project without billing",
+         'refused': 'Google refused the key', 'quota': "today's free quota is spent", 'error': 'the check could not get an answer'}
+
+
+def heartbeat(env=None, http=None) -> dict:
+    """The writer light: ok when ANY key answers, and the state of every key by name."""
+    env = os.environ if env is None else env
+    found = gemini.keys(env)
+    if not found:
+        return {'provider': 'none', 'ok': False, 'note': 'GEMINI_API_KEY is not set'}
+    wanted = env.get('STORIES_GEMINI_MODEL') or None
+    rows = gemini.check_keys(env, http=http, wanted=wanted)
+    ok = [r for r in rows if r['state'] == 'ok']
+    if ok:
+        key = dict(found)[ok[0]['name']]
+        tries = gemini.gemini_candidates(key, wanted)
+        return {'provider': 'gemini', 'ok': True, 'model': tries[0] if tries else None, 'note': f"using {ok[0]['name']}", 'keys': rows}
+    note = WORDS.get(rows[0]['state'], rows[0]['state']) if len(rows) == 1 else gemini.keys_line(rows)
+    return {'provider': 'gemini', 'ok': False, 'note': note[:150], 'keys': rows}
 
 
 def main() -> None:
-    key = os.environ.get('GEMINI_API_KEY', '').strip()
-    if not key:
-        print(json.dumps({'provider': 'none', 'ok': False, 'note': 'GEMINI_API_KEY is not set'}))
-        return
-    tries = gemini_candidates(key, os.environ.get('STORIES_GEMINI_MODEL') or None)
-    script_model = tries[0] if tries else None
-    flash = [m for m in tries if '-flash' in m] or tries
-    note = ''
-    for m in flash[:5]:
-        try:
-            _http(f'{GEMINI}/models/{m}:generateContent', {'contents': [{'role': 'user', 'parts': [{'text': 'Say OK.'}]}],
-                                                            'generationConfig': {'maxOutputTokens': 8}}, {'x-goog-api-key': key}, timeout=60)
-            print(json.dumps({'provider': 'gemini', 'ok': True, 'model': script_model,
-                              'note': f'checked on {m}'}))
-            return
-        except StageError as e:
-            note = f'{m}: {e.code}'
-            if e.code == 'WRITER_HTTP_402':  # the same on every model: say it in words on the status light
-                note = 'no credit: the key\'s Google project has billing on and a zero balance — use a key from a project without billing'
-                break
-            if e.code in ('WRITER_HTTP_401', 'WRITER_HTTP_403') and 'API key' in str(e):
-                break
-    print(json.dumps({'provider': 'gemini', 'ok': False, 'note': note[:150]}))
+    print(json.dumps(heartbeat()))
 
 
 if __name__ == '__main__':

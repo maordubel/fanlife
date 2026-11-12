@@ -5,6 +5,7 @@
  * a fact the studio could not read is "Not connected", never "no" and never zero (rule 128's honest states).
  */
 import type {Health} from './health'
+import {keysText} from './writerKeys'
 import type {ClassifiedFile,Job} from './jobs'
 import type {PitchDesk} from './pitches'
 import type {SocialLights} from './social'
@@ -43,10 +44,11 @@ export function writerNeed(h:Health|null,jobs:Job[]|null,now:number):Need{
  if(!h)return {label:'Writer (Gemini, free)',light:'unknown',text:'Not connected'}
  if(!w)return {label:'Writer (Gemini, free)',light:'unknown',text:'Not checked yet — the listener checks the key on its next round'}
  if(w.provider==='none')return {label:'Writer (Gemini, free)',light:'no',text:'No key: add GEMINI_API_KEY in GitHub → Settings → Secrets and variables → Actions'}
- if(w.ok===false)return {label:'Writer (Gemini, free)',light:'no',text:`Google refused the key${w.note?` (${w.note})`:''} — paste it again in GitHub → Settings → Secrets → Actions`}
+ const keys=keysText(w.keys)
+ if(w.ok===false)return {label:'Writer (Gemini, free)',light:'no',text:keys?`No Gemini key can write — ${keys}. Fix one of them in GitHub → Settings → Secrets → Actions`:`Google refused the key${w.note?` (${w.note})`:''} — paste it again in GitHub → Settings → Secrets → Actions`}
  const until=writerWaitUntil(jobs,now)
  if(until)return {label:'Writer (Gemini, free)',light:'wait',text:`Google's free quota is busy or spent — back by ${athens(until)}. Waiting jobs start again by themselves`}
- return w.ok?{label:'Writer (Gemini, free)',light:'yes',text:`Key works${w.model?` · ${w.model}`:''}`}:{label:'Writer (Gemini, free)',light:'unknown',text:w.note||'The key check could not run'}
+ return w.ok?{label:'Writer (Gemini, free)',light:'yes',text:keys?`${keys}${w.model?` · ${w.model}`:''}`:`Key works${w.model?` · ${w.model}`:''}`}:{label:'Writer (Gemini, free)',light:'unknown',text:w.note||'The key check could not run'}
 }
 export function queueText(jobs:Job[]|null):string{
  if(!jobs)return 'The queue could not be read.'

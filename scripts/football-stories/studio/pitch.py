@@ -34,7 +34,7 @@ from pathlib import Path
 
 from .common import ROOT, StageError
 from .directors import DIRECTORS
-from .worker import WAIT_CODES, Studio, retry_at
+from .worker import WAIT_CODES, Studio, report_keys, retry_at
 
 STOP_CODES = ('WRITER_NO_CREDIT', 'WRITER_KEY', 'WRITER_NOT_CONFIGURED')  # writer.STOP_CODES, kept here so the desk imports no writer
 
@@ -147,6 +147,8 @@ def main(argv=None) -> int:
         print('FAN_LIFE_CRON_SECRET is not set: the pitch desk cannot talk to the studio.', file=sys.stderr)
         return 1
     st = Studio(base, secret, ('pitch-' + os.environ.get('GITHUB_RUN_ID', socket.gethostname()))[:60])
+    if not a.dry:
+        report_keys(st, log)
     history = {'pitched': [], 'films': []} if a.dry else st.call({'op': 'pitch_history', 'days': 14})
     cache = Path(os.environ.get('STORIES_PITCH_CACHE', 'stories-pitch-cache'))
     cache.mkdir(parents=True, exist_ok=True)

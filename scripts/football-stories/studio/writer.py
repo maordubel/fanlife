@@ -22,6 +22,7 @@ from pathlib import Path
 from .common import CHANNEL_NAME, SLOGAN, StageError, read_json, sha256_json, write_json
 from .paper import beat_index, clip_index
 from .script import beat_set, SCHEMA_TEXT, WORDS_PER_MINUTE, target_words, validate_script
+from . import gemini as gemini_keys
 from .gemini import generate
 
 _LOG = [None]  # the job's log while a script is written (the writer says when it waits for Google)
@@ -246,7 +247,8 @@ def provider() -> tuple[str, str, str]:
     if not paid:
         order = [p for p in order if p == 'gemini']
     for p in order:
-        key = os.environ.get({'anthropic': 'ANTHROPIC_API_KEY', 'openai': 'OPENAI_API_KEY', 'gemini': 'GEMINI_API_KEY'}.get(p, ''), '').strip()
+        # Gemini has a key LIST (GEMINI_API_KEY, GEMINI_API_KEY_KIDS): the one known to work first (studio/gemini.py)
+        key = gemini_keys.api_key() if p == 'gemini' else os.environ.get({'anthropic': 'ANTHROPIC_API_KEY', 'openai': 'OPENAI_API_KEY'}.get(p, ''), '').strip()
         if key:
             model = os.environ.get(f'STORIES_{p.upper()}_MODEL') or {'anthropic': 'claude-sonnet-5-5', 'openai': 'gpt-5', 'gemini': 'gemini-2.5-pro'}[p]
             return p, model, key

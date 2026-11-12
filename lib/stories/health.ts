@@ -1,6 +1,7 @@
 import 'server-only'
 import {durable} from '@/lib/master/durable'
 import {BUCKET} from './media'
+import {cleanKeys,type KeyLine} from './writerKeys'
 
 /**
  * Is the studio able to make a film right now? Three facts the owner should never have to guess (4.11.2026):
@@ -14,7 +15,7 @@ const NAME='studio/health.json'
 const STALE_MS=16*60_000  // the listener asks every 7 minutes (9.11.2026); two missed rounds = stale
 const WRITE_EVERY_MS=4*60_000
 
-export type Writer={provider:'gemini'|'anthropic'|'openai'|'none';ok:boolean|null;model?:string;note?:string}
+export type Writer={provider:'gemini'|'anthropic'|'openai'|'none';ok:boolean|null;model?:string;note?:string;keys?:KeyLine[]}
 export type Heartbeat={at:string;run?:string;writer:Writer}
 export type Health={listener:{ok:boolean;at:string|null};writer:Writer|null;storage:{ok:boolean;note?:string}}
 
@@ -26,9 +27,9 @@ export function cleanHeartbeat(raw:unknown,run?:string):Heartbeat|null{
  if(!raw||typeof raw!=='object')return null
  const w=(raw as {writer?:Record<string,unknown>}).writer
  if(!w||typeof w!=='object'||!PROVIDERS.has(String(w.provider)))return null
- return {at:new Date().toISOString(),run:clip(run,80),writer:{provider:w.provider as Writer['provider'],ok:typeof w.ok==='boolean'?w.ok:null,model:clip(w.model,60),note:clip(w.note,160)}}
+ const keys=cleanKeys(w.keys)
+ return {at:new Date().toISOString(),run:clip(run,80),writer:{provider:w.provider as Writer['provider'],ok:typeof w.ok==='boolean'?w.ok:null,model:clip(w.model,60),note:clip(w.note,160),...(keys.length?{keys}:{})}}
 }
-
 export async function noteHeartbeat(h:Heartbeat):Promise<void>{
  const d=durable()
  if(!d||d.kind==='memory')return

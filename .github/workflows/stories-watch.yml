@@ -30,6 +30,7 @@ jobs:
       STORIES_URL: ${{ vars.FAN_LIFE_RESEARCH_URL || 'https://fanlife.dubelteam.com' }}
       FAN_LIFE_CRON_SECRET: ${{ secrets.FAN_LIFE_CRON_SECRET }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GEMINI_API_KEY_KIDS: ${{ secrets.GEMINI_API_KEY_KIDS }}
       STORIES_GEMINI_MODEL: ${{ vars.STORIES_GEMINI_MODEL }}
       GH_TOKEN: ${{ github.token }}
       GH_REPO: ${{ github.repository }}

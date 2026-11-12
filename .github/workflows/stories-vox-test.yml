@@ -58,7 +58,7 @@ jobs:
           npx tsx scripts/football-stories/palettes.ts > /tmp/palettes.json
       - name: The three directors write
         working-directory: scripts/football-stories
-        env: {GEMINI_API_KEY: '${{ secrets.GEMINI_API_KEY }}', PALETTES: /tmp/palettes.json, KOKORO_DIR: /home/runner/models}
+        env: {GEMINI_API_KEY: '${{ secrets.GEMINI_API_KEY }}', GEMINI_API_KEY_KIDS: '${{ secrets.GEMINI_API_KEY_KIDS }}', PALETTES: /tmp/palettes.json, KOKORO_DIR: /home/runner/models}
         run: python -m studio.vox_test write ${{ github.workspace }}/dtest
       - uses: actions/upload-artifact@v4
         if: always()
@@ -109,7 +109,7 @@ jobs:
         with: {name: dtest, path: '${{ github.workspace }}/dtest', run-id: '${{ needs.plan.outputs.reuse }}', github-token: '${{ github.token }}'}
       - name: Render this director's film
         working-directory: scripts/football-stories
-        env: {GEMINI_API_KEY: '${{ secrets.GEMINI_API_KEY }}', PALETTES: /tmp/palettes.json, KOKORO_DIR: /home/runner/models, STORIES_WORKERS: '4', STORIES_MASTER_PRESET: medium, TELEGRAM_BOT_TOKEN: '${{ secrets.TELEGRAM_BOT_TOKEN }}'}
+        env: {GEMINI_API_KEY: '${{ secrets.GEMINI_API_KEY }}', GEMINI_API_KEY_KIDS: '${{ secrets.GEMINI_API_KEY_KIDS }}', PALETTES: /tmp/palettes.json, KOKORO_DIR: /home/runner/models, STORIES_WORKERS: '4', STORIES_MASTER_PRESET: medium, TELEGRAM_BOT_TOKEN: '${{ secrets.TELEGRAM_BOT_TOKEN }}'}
         run: python -m studio.vox_test ${{ matrix.n }} ${{ github.workspace }}/dtest
       - uses: actions/upload-artifact@v4
         if: always()

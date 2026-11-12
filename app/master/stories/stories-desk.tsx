@@ -1,6 +1,7 @@
 'use client'
 import {useEffect,useRef,useState,type CSSProperties,type ReactNode} from 'react'
 import type {Job,Privacy} from '@/lib/stories/jobs'
+import {keysText} from '@/lib/stories/writerKeys'
 import type {Health} from '@/lib/stories/health'
 import type {Evidence} from '@/lib/stories/catalog'
 import {STAGES} from '@/lib/stories/jobs'
@@ -376,7 +377,7 @@ export function HealthStrip({h}:{h:Health}){
  const w=h.writer
  const rows:[string,boolean|null,string][]=[
   ['Studio worker',h.listener.ok,h.listener.ok?'Listening — a new film starts within a few minutes':h.listener.at?`Last seen ${when(h.listener.at)} — it restarts by itself; GitHub → Actions → "Football Stories · listener" → Run workflow starts it now`:'Not started yet — GitHub → Actions → "Football Stories · listener" → Run workflow'],
-  ['Script writer',w?w.ok:null,!w?'Checked by the worker on its next round':w.provider==='none'?'No key: add GEMINI_API_KEY in GitHub → Settings → Secrets → Actions':w.ok?`${w.provider==='gemini'?'Gemini':w.provider} key works${w.model?` · ${w.model}`:''}`:`The ${w.provider} key was refused${w.note?` (${w.note})`:''} — paste it again in GitHub → Settings → Secrets → Actions`],
+  ['Script writer',w?w.ok:null,!w?'Checked by the worker on its next round':w.provider==='none'?'No key: add GEMINI_API_KEY in GitHub → Settings → Secrets → Actions':w.keys?.length?`${keysText(w.keys)}${w.ok&&w.model?` · ${w.model}`:''} · checked ${when(w.keys[0]!.at)}`:w.ok?`${w.provider==='gemini'?'Gemini':w.provider} key works${w.model?` · ${w.model}`:''}`:`The ${w.provider} key was refused${w.note?` (${w.note})`:''} — paste it again in GitHub → Settings → Secrets → Actions`],
   ['Film storage',h.storage.ok,h.storage.ok?'Private bucket ready':h.storage.note||'Storage is not ready'],
   ['Narrator',true,'Kokoro George · names from the lexicon (Take B, 4.11.2026)'],
  ]

@@ -220,7 +220,8 @@ EDITORIAL_KEYS = ('subject', 'competition_format', 'before', 'timeline', 'tactic
 
 def enrich(ledger: dict, brief: dict, cache_dir: Path, log) -> dict:
     """Add deep research to the ledger in place. Never fails the film: a missing key or a spent quota is logged."""
-    key = os.environ.get('GEMINI_API_KEY', '').strip()
+    from .gemini import api_key  # the key LIST: the one known to work first
+    key = api_key()
     if brief.get('deep_research') is False:
         return ledger
     if not key:

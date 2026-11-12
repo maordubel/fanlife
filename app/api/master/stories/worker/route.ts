@@ -17,6 +17,7 @@ export const runtime='nodejs'
 /**
  * The production worker's only door (GitHub Actions, `Authorization: Bearer <CRON_SECRET>`).
  *   {op:'trim',worker}                          → published films' big files leave the bucket (lib/stories/trim.ts)
+ *   {op:'health',worker,health}                 → the writer light from a run that just checked its Gemini keys (by name)
  *   {op:'peek',worker,health?}                  → the id of the job that would be taken next and its kind (no lease), and
  *                                                 `pitch: true` once when the owner asked for new pitches, and
  *                                                 `social_due: true` while a scheduled post's time has come (read from
@@ -62,6 +63,8 @@ export async function POST(r:Request){
    }
    return json({trimmed:done,failed})
   }
+  // a worker or pitch run checked its Gemini keys at the start: the writer light, without the peek's side effects
+  if(b.op==='health'){const hb=cleanHeartbeat(b.health,worker);if(hb)await noteHeartbeat(hb);return json({noted:!!hb})}
   if(b.op==='checkpoint_allowed')return json({allowed:!!await getJob(String(b.id||''))})
   if(b.op==='peek'){
    const hb=cleanHeartbeat(b.health,worker)

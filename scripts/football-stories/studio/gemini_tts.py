@@ -54,7 +54,8 @@ DELIVERY_NOTES = {
 
 
 def _key() -> str:
-    return os.environ.get('GEMINI_API_KEY', '').strip()
+    from .gemini import api_key  # the key LIST: the one known to work first
+    return api_key()
 
 
 def available() -> bool:
