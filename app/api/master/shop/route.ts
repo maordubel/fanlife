@@ -4,8 +4,6 @@ import {sameOrigin} from '@/lib/master/request'
 import {readShop,updateShop,printifyToken,saveToken} from '@/lib/shop/store'
 import {client,connect,matchKind,pressProduct,refreshProduct,removeProduct} from '@/lib/shop/build'
 import {draftOf,launchSet,NOTE} from '@/lib/shop/plan'
-import {syncCatalog} from '@/lib/shop/sync'
-import {forgetPublicShop} from '@/lib/shop/store'
 import {SUBJECT_IDS,isSubject} from '@/lib/shop/subjects'
 import {pictureById} from '@/lib/shop/library'
 import {KINDS,type Kind,type ShopProduct} from '@/lib/shop/types'
@@ -30,12 +28,10 @@ export async function POST(r:Request){
    case 'connect':{
     if(typeof b.token==='string'&&b.token.trim()){if(b.token.trim().length<40)return json({error:'That does not look like a Printify API token.'},422);await saveToken(b.token.trim())}
     const out=await connect(by);return json({...(await state()),shops:out.shops})}
-   case 'sync':await syncCatalog(by);forgetPublicShop();break
    case 'settings':await updateShop(by,'Shop settings',d=>{
      if(typeof b.open==='boolean')d.settings.open=b.open
      if(typeof b.margin==='number'&&b.margin>=0&&b.margin<=300)d.settings.margin=Math.round(b.margin)
      if(typeof b.popupUrl==='string'){const u=b.popupUrl.trim();if(u&&!/^https:\/\/[a-z0-9-]+\.printify\.me\/?$/i.test(u))throw new Error('The Pop-Up address looks like https://your-name.printify.me');d.settings.popupUrl=u}
-     if(typeof b.currency==='string'&&/^[A-Z]{3}$/.test(b.currency))d.settings.currency=b.currency
      if(typeof b.shopId==='number')d.settings.shopId=b.shopId});break
    case 'launch':{const ids=b.subject==='all'?SUBJECT_IDS:[String(b.subject)].filter(isSubject)
     await updateShop(by,`Launch drafts: ${ids.length===1?ids[0]:'all'}`,d=>{for(const sid of ids)for(const p of launchSet(sid,now))if(!d.products.some(x=>x.id===p.id))d.products.push(p)});break}

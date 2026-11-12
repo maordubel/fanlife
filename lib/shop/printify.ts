@@ -10,7 +10,7 @@ export type PBlueprint={id:number;title:string;brand:string;model:string;images:
 export type PProvider={id:number;title:string}
 export type PVariant={id:number;title:string;options:Record<string,string>;placeholders:{position:string;width:number;height:number}[]}
 export type PUpload={id:string;file_name:string;width:number;height:number;preview_url:string}
-export type PProduct={id:string;title:string;description?:string;tags?:string[];blueprint_id?:number;visible:boolean;is_locked:boolean;variants:{id:number;cost:number;price:number;is_enabled:boolean}[];images:{src:string;is_default:boolean;position?:string}[];external?:{id?:string;handle?:string}}
+export type PProduct={id:string;title:string;visible:boolean;is_locked:boolean;variants:{id:number;cost:number;price:number;is_enabled:boolean}[];images:{src:string;is_default:boolean;position?:string}[];external?:{id?:string;handle?:string}}
 export type PrintArea={variant_ids:number[];placeholders:{position:string;images:{id:string;x:number;y:number;scale:number;angle:number}[]}[]}
 
 export function printify(token:string){
@@ -33,7 +33,6 @@ export function printify(token:string){
   upload:(file_name:string,contents:string)=>call<PUpload>('Uploading the artwork','/uploads/images.json',{method:'POST',body:{file_name,contents}}),
   create:(shop:number,body:unknown)=>call<PProduct>('Creating the product',`/shops/${shop}/products.json`,{method:'POST',body}),
   update:(shop:number,id:string,body:unknown)=>call<PProduct>('Pricing the product',`/shops/${shop}/products/${id}.json`,{method:'PUT',body}),
-  list:(shop:number,page:number)=>call<{current_page:number;last_page:number;data:PProduct[]}>('Reading your products',`/shops/${shop}/products.json?limit=50&page=${page}`),
   product:(shop:number,id:string)=>call<PProduct>('Reading the product',`/shops/${shop}/products/${id}.json`),
   publish:(shop:number,id:string)=>call<object>('Publishing the product',`/shops/${shop}/products/${id}/publish.json`,{method:'POST',body:{title:true,description:true,images:true,variants:true,tags:true,keyFeatures:true,shipping_template:true}}),
   unpublish:(shop:number,id:string)=>call<object>('Unpublishing the product',`/shops/${shop}/products/${id}/unpublish.json`,{method:'POST',body:{}}),
