@@ -26,6 +26,7 @@ from pathlib import Path
 from ..common import FPS, Palette, StageError, read_json, write_json
 from . import build as B
 from . import editor as E
+from .designer import Designer
 
 ENGINE = 'docu'
 OLD = ('vox', 'vox-hf', 'classic', 'paper')
@@ -98,12 +99,15 @@ class Adapter:
         self.spares: dict[int, Path | None] = {}     # shot → the spare picture it was given
         self.used: dict[Path, int] = {}              # spare picture → when it was last given
         self.pool: list[Path] | None = None
+        self.last: str | None = None                 # the rich device of the shot before (two city splits never run back to back)
         names = [palette.club_name]
         for c in self.by.values():
             f = c.get('fact') or {}
             if f.get('kind') == 'match':
                 names += [f.get('home'), f.get('away'), f.get('opponent')]
         self.crest = crests(names)
+        self.keys: dict[int, str] = {}               # shot → the key of the picture it shows (the designer reads its index entry)
+        self.design = Designer(self)                 # the richer devices, each only when the beat's data earns it (docu/designer.py)
 
     # ── assets ──────────────────────────────────────────────────────────────────────────────────────────────────────
     def asset(self, p: Path | str | None, prefix: str = 'a') -> str | None:
@@ -131,6 +135,7 @@ class Adapter:
                     (s.get('cinema') or {}).get('broll')):
             p = media(key) if key and key != 'paper' else None
             if p:
+                self.keys[s['n']] = NAMED.get(key, key)
                 break
         if not p and v['type'] == 'follow':
             p = media(f'beat:common/{FOLLOW[s["n"] % len(FOLLOW)]}')
@@ -223,6 +228,17 @@ class Adapter:
                 out.append({'kind': 'image', 'src': bg[0], 'veil': 0.55, 'move': 'push', 'z': 1})
             out.append({'kind': 'score', 'us': B.e(sc['us']), 'them': sc['them'], 'us_goals': sc['ug'], 'them_goals': sc['tg'],
                         'us_crest': self.crest_of(sc['us']), 'them_crest': self.crest_of(sc['them']), 'cap': self.cap(f)})
+            cid = v.get('claim') or (s.get('claim_ids') or [None])[0]
+            vd = self.design.verdict(s, f, cid) if d >= 6 else None
+            st = None if vd else self.design.stamp(s, f, cid)
+            if vd:      # the second half of the beat: the board has been read, now what the result meant
+                at = round(d - min(5.0, d * 0.5), 2)
+                out.append({**vd, 'dt': at, 'd': round(d - at, 2)})
+                self.cue(n, at, 'sting')
+            elif st and d >= 4:
+                at = round(max(1.5, d - 2.4), 2)
+                out.append({**st, 'dt': at, 'd': round(d - at, 2)})
+                self.cue(n, at, 'stamp')
             if f.get('outcome') == 'win':
                 self.cue(n, 0.6, 'crowd-goal' if (s.get('cinema') or {}).get('climax') else 'stamp')
             elif f.get('outcome') == 'loss':
@@ -236,11 +252,22 @@ class Adapter:
             who = sco[k] if 0 <= k < len(sco) else {}
             b = self.back(s, 'slam', tag={'small': f"{who['minute']}'" if who.get('minute') is not None else 'GOAL', 'big': who.get('name') or ''},
                           mini={'home': f.get('home') or '', 'score': f'{f.get("score_home")}–{f.get("score_away")}', 'away': f.get('away') or '', 'at': 1.2})
+            ch = self.design.chalk(s, f, who, list(s.get('claim_ids') or []) + [v.get('claim')]) if d >= 5 else None
+            if ch and b:   # the move on the board first, then the goal itself: the picture arrives as the ball does
+                c = round(min(E.MAX_CARD, d * 0.55), 2)
+                out.append({**ch, 'd': c})
+                b = {**b, 'dt': c, 'd': round(d - c, 2), 'fade': False}
+                self.cue(n, max(0.2, c - 1.2), 'whoosh')
             out += [b] if b else []
-            self.cue(n, 0.3, 'crowd-goal')
+            self.cue(n, 0.3 if not ch else c, 'crowd-goal')
         elif t == 'matchday' and f.get('kind') == 'match':
             sc = self.scoreline(f)
             b = self.back(s, 'panr', tag={'small': self.cap(f)[:60], 'big': f'{"v" if sc["home"] else "at"} {sc["them"]}'})
+            ct = self.design.cities(s, [f]) if d >= 5 and b and self.last != 'cities' else None
+            if ct:      # an away day opens on the journey: the two cities, then the ground
+                c = round(min(3.2, d * 0.4), 2)
+                out.append({**ct, 'd': c})
+                b = {**b, 'dt': c, 'd': round(d - c, 2), 'fade': False}
             out += [b] if b else []
             self.cue(n, 0.4, 'whoosh')
         elif t == 'ticket' and f.get('kind') == 'match':
@@ -292,7 +319,7 @@ class Adapter:
         elif t == 'fact':
             b = self.back(s, 'push', veil=0.0)
             out += [b] if b else []
-            out.append({'kind': 'card', 'small': (v.get('heading') or '').upper(), 'text': v.get('text') or '', 'dt': 0.5})
+            out.append(self.design.rule(s) or {'kind': 'card', 'small': (v.get('heading') or '').upper(), 'text': v.get('text') or '', 'dt': 0.5})
             self.cue(n, 0.5, 'paper')
         elif t == 'quote':
             out.append({'kind': 'quote', 'text': v.get('text') or '', 'who': v.get('who') or '', 'role': v.get('role') or ''})
@@ -300,6 +327,9 @@ class Adapter:
         elif t == 'press' and not (v.get('headline') or '').strip():
             b = self.back(s)
             out += [b] if b else []
+        elif t == 'press' and self.design.press(s, *self.cutting(s)):
+            out.append(self.design.press(s, *self.cutting(s)))
+            self.cue(n, 0.2, 'paper')
         elif t == 'press':
             out.append({'kind': 'card', 'small': ' · '.join(x for x in ((v.get('outlet') or '').upper(), long_date(v.get('date')).upper()) if x),
                         'text': v.get('headline') or '', 'sub': v.get('standfirst') or '', 'paper': True})
@@ -308,7 +338,11 @@ class Adapter:
             g = self.fact(v.get('claim'))
             rows = [[str(r.get('team') or r.get('club') or ''), r.get('position') or r.get('pos') or '', r.get('points') or r.get('pts') or '']
                     for r in (g.get('rows') or [])[:6]]
-            if rows:
+            tb = self.design.table(s, g)
+            if tb:      # the table itself, every row in its place and the club's own lit
+                out.append(tb)
+                self.cue(n, 0.3, 'tick')
+            elif rows:
                 out.append({'kind': 'ledger', 'us': 'POS', 'them': 'PTS', 'rows': rows, 'compact': True, 'title': (g.get('competition') or '').upper()})
             else:
                 b = self.back(s)
@@ -340,6 +374,12 @@ class Adapter:
                     pins.append(ven)
             b = self.back(s, 'panr', lt=[(v.get('label') or '').upper(), ' · '.join(pins)] if (v.get('label') or pins) else None)
             out += [b] if b else []
+            ct = self.design.cities(s, [self.fact(c) for c in (v.get('claims') or [])])
+            if ct:      # a real journey: two cities the place book knows. Without both, the picture and its lower third stay.
+                if b:
+                    b.pop('lt', None)
+                out.append(ct)
+                self.cue(n, 0.3, 'whoosh')
         elif t == 'follow':
             b = self.back(s, 'push', veil=0.45)
             out += [b] if b else []
@@ -354,7 +394,22 @@ class Adapter:
             # a name tag on screen is a claim, and only a cited scorer or minute earns one.
             b = self.back(s, ('pull', 'push', 'panl', 'panr')[n % 4])
             out += [b] if b else []
-        return [x for x in out if x]
+        if t in ('illustration', 'matchday', 'goal', 'race', 'open') and any(x['kind'] in ('image', 'video') for x in out if x):
+            cu = self.design.cutout(s)
+            if cu:
+                out.append(cu)
+        out = [x for x in out if x]
+        self.last = next((x['kind'] for x in out if x['kind'] in ('cities', 'table', 'chalk', 'verdict', 'rule', 'press')), None)
+        return out
+
+    def cutting(self, s: dict) -> tuple[str | None, str | None]:
+        """The beat's own picture (never a spare) and its key — what a press beat may show as the cutting."""
+        v = s['visual']
+        for key in (s.get('required_asset'), v.get('backdrop')):
+            p = media(key) if key and key != 'paper' else None
+            if p and p.suffix.lower() != '.mp4':
+                return self.asset(p, 'img'), NAMED.get(key, key)
+        return None, None
 
     def raw_beats(self) -> list[dict]:
         """One beat per plan shot, as the adapter reads it — before the edit."""

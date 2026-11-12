@@ -62,7 +62,7 @@ TEAR = (4, -3, 5, -4, 3, -5, 4, -2, 3)   # the torn edge: how far each of nine p
 # A card that holds still is a dead frame (docs/fanlife/71: "the camera never stops dead"): it creeps in by this much a
 # second — 0.13 px a frame at the edge of the screen, far under rule 142's 0.6 px.
 CREEP = 0.004
-CREEPS = {'question', 'ticket', 'lead', 'ledger', 'rule', 'stat', 'tally', 'card', 'quote', 'form', 'verdict', 'cities', 'chalk', 'end'}
+CREEPS = {'question', 'ticket', 'lead', 'ledger', 'rule', 'stat', 'tally', 'card', 'quote', 'form', 'verdict', 'cities', 'chalk', 'end', 'table', 'press'}
 
 
 def e(s) -> str:
@@ -124,6 +124,8 @@ class Film:
         self.tw.append(js)
 
     def sound(self, name, t, d=None, vol=0.6):
+        if self.sb.get('silent'):
+            return   # the pipeline's film is a silent picture: the mix (audio.build_mix) owns every sound, from the cue files
         f = SOUNDS.get(name, name)
         sid = self.id('snd')
         dur = f' data-duration="{r2(d)}"' if d else ''
@@ -169,6 +171,10 @@ class Film:
             col = self.US if tg.get('side', 'us') == 'us' else self.THEM
             self.clip(tid, t + 0.5, hold - 0.5, f'<div class="tag" style="background:{col}"><small>{e(tg.get("small", ""))}</small><b>{e(tg["big"])}</b></div>', 8)
             self.tween(f'tl.fromTo("#{tid} .tag",{{scaleX:0}},{{scaleX:1,duration:0.35,ease:"power3.out",transformOrigin:"left center"}},{r2(t + 0.5)});')
+        if s.get('lt'):   # the lower third a clip has always carried, for a still too (a map beat with no route to draw)
+            lid = self.id('lt')
+            self.clip(lid, t + 0.4, hold - 0.4, f'<div class="lt"><b>{e(s["lt"][0])}</b><span>{e(s["lt"][1])}</span></div>', 6)
+            self.tween(f'tl.fromTo("#{lid} .lt",{{x:-900}},{{x:0,duration:0.5,ease:"power3.out"}},{r2(t + 0.4)});')
         if s.get('mini'):
             m = s['mini']
             mid = self.id('mini')
@@ -312,6 +318,8 @@ class Film:
         cid = self.id('tb')
         rows = s.get('rows') or [''] * s.get('n', 16)
         cut = s.get('cut', len(rows) - 2)
+        line = cut is not False   # `cut: False` draws no line: where the drop sat is a claim the adapter's rows do not make
+        cut = cut if line else -1
         hl = s.get('highlight')
         html_rows = ''.join(
             f'<div class="tr{" hl" if i == hl else ""}" id="{cid}r{i}"><i>{i + 1}</i><span>{e(r)}</span><b></b></div>'
@@ -320,8 +328,9 @@ class Film:
         self.clip(cid, t, d, f'<div class="tbw" id="{cid}w"><div class="tbl">{html_rows}</div></div>', 9, 'paper')
         for i in range(len(rows)):
             self.tween(f'tl.fromTo("#{cid}r{i}",{{x:-60,opacity:0}},{{x:0,opacity:1,duration:0.25,ease:"power2.out"}},{r2(t + 0.15 + 0.06 * i)});')
-        self.tween(f'tl.fromTo("#{cid}line",{{scaleX:0}},{{scaleX:1,duration:0.5,ease:"power3.out",transformOrigin:"left center"}},{r2(t + 0.3 + 0.06 * len(rows))});')
-        pa = s.get('push_at')
+        if line:
+            self.tween(f'tl.fromTo("#{cid}line",{{scaleX:0}},{{scaleX:1,duration:0.5,ease:"power3.out",transformOrigin:"left center"}},{r2(t + 0.3 + 0.06 * len(rows))});')
+        pa = s.get('push_at') if line else None
         if pa is not None:
             ly = 60 + 6 + 46 * cut   # the drop line, in the frame's pixels
             self.tween(f'tl.set("#{cid}w",{{transformOrigin:"50% {ly - 60}px"}},{r2(t)});'
@@ -481,8 +490,9 @@ class Film:
 
     def verdict(self, s, t, d):
         cid = self.id('vd')
-        inner = (f'<div class="vd"><div class="vl" style="background:{self.US}"><img src="assets/img/{e(s["us_crest"])}"><small>{e(s["us_line"])}</small><b>{s["us"]}</b></div>'
-                 f'<div class="vr" style="background:{self.THEM}"><img src="assets/img/{e(s["them_crest"])}"><small>{e(s["them_line"])}</small><b>{s["them"]}</b></div></div>')
+        # a crest when one is on file, else the initials roundel the scoreboard uses — never a broken or borrowed badge
+        inner = (f'<div class="vd"><div class="vl" style="background:{self.US}">{self.badge(s.get("us_crest"), s["us"])}<small>{e(s["us_line"])}</small><b>{s["us"]}</b></div>'
+                 f'<div class="vr" style="background:{self.THEM}">{self.badge(s.get("them_crest"), s["them"])}<small>{e(s["them_line"])}</small><b>{s["them"]}</b></div></div>')
         self.clip(cid, t, d, inner, 11)
         self.tween(f'tl.fromTo("#{cid} .vl",{{xPercent:-100}},{{xPercent:0,duration:0.5,ease:"power3.out"}},{r2(t)});'
                    f'tl.fromTo("#{cid} .vr",{{xPercent:100}},{{xPercent:0,duration:0.5,ease:"power3.out"}},{r2(t + s.get("them_at", 1.6))});')
