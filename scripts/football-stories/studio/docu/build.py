@@ -29,6 +29,8 @@ import json
 import shutil
 from pathlib import Path
 
+from .. import camera as C
+
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[3]
 FONTS = REPO / 'public' / 'fonts'
@@ -57,6 +59,9 @@ FRAMINGS = {'wide': ('{scale:1.02}', '{scale:1.1}', '50% 50%'),
             'turn': ('{scale:1.08}', '{scale:1.42}', '50% 46%')}   # the last look of a chapter: the push that leaves a question
 # Transitions into a beat (`in`). None goes to white and none shakes (rule 142): each is ONE move in ONE direction.
 # The seconds are how long the outgoing beat stays on screen under the incoming one (0 = the cut needs no overlap).
+# The framing a camera move starts from (studio/camera.py): (the framing's own scale, its default origin). The move adds
+# its travel to this — a detail look is a dolly or a rack AT 1.42, never the old constant glide.
+FRAME_BASE = {'wide': (1.0, '50% 50%'), 'detail': (1.42, '34% 40%'), 'reverse': (1.16, '50% 58%'), 'turn': (1.04, '50% 46%')}
 TAILS = {'cut': 0.0, 'fade': 0.0, 'match': 0.0, 'whip': 0.3, 'tear': 0.45, 'dive': 0.4}
 TEAR = (4, -3, 5, -4, 3, -5, 4, -2, 3)   # the torn edge: how far each of nine points sits off the tear line, in % of the width
 # A card that holds still is a dead frame (docs/fanlife/71: "the camera never stops dead"): it creeps in by this much a
@@ -109,6 +114,7 @@ class Film:
         self.tw: list[str] = []
         self.audio: list[str] = []
         self.made: list[dict] = []   # every clip as it is laid: {id, t, z (its end)} — what a transition moves
+        self.cams: list[dict] = []   # every camera move as it is laid (studio/camera.py) — what the unit check measures
         self.n = 0
 
     def id(self, k: str) -> str:
@@ -139,7 +145,11 @@ class Film:
         z = s.get('z', z)
         hold = s.get('hold', d)   # how long its tag and mini score stay: the whole beat, when the picture under them is cut into sub-shots
         fit = 'background-size:contain;background-repeat:no-repeat;background-color:' + self.INK if s.get('fit') == 'contain' else ''
-        phi = f'<div class="phi" id="{cid}i" style="background-image:url(assets/img/{e(s["src"])});background-position:{pos};{fit}"></div>'
+        src_css = f'background-image:url(assets/img/{e(s["src"])});background-position:{pos};{fit}'
+        cam = s.get('cam') if s.get('fit') != 'contain' else None
+        flat = s.get('as') == 'print' or not cam
+        # with a camera move the picture is two depth planes and a vignette (studio/camera.planes); a print is one sheet
+        phi = f'<div class="phi" id="{cid}i" style="{src_css}"></div>' if flat else C.planes(src_css, cid, s.get('horizon'))
         recon = f'<div class="recon">{RECON}</div>' if s.get('recon', True) else ''
         if s.get('as') == 'print':
             # the picture as a print dropped on the desk (docs/fanlife/71: photos land on the world as prints) — the
@@ -149,7 +159,16 @@ class Film:
         else:
             self.clip(cid, t, d, phi + (f'<div class="veil" style="opacity:{veil}"></div>' if veil else '') + recon, z, 'ph')
         move = s.get('move', 'push')
-        if s.get('frame'):
+        if cam:
+            # THE CAMERA (studio/camera.py): a named move on the planes, from the framing's own scale and origin. The
+            # editor chose it by the beat's emotion; `ci` is how far it travels, `way` which side a lateral move starts.
+            base, origin = FRAME_BASE[s.get('frame') or 'wide']
+            sel = {'back': f'#{cid}i'} if flat else {'back': f'#{cid}i', 'fore': f'#{cid}f', 'vig': f'#{cid}v'}
+            self.tween(f'tl.set("{",".join(v for k, v in sel.items() if k != "vig")}",{{transformOrigin:"{s.get("focus", origin)}"}},{r2(t)});')
+            for js in C.gsap(C.spec(cam, d, s.get('ci', 0.5), base, s.get('way', 1), s.get('rack')), sel, t):
+                self.tween(js)
+            self.cams.append({'t': r2(t), 'd': r2(d), 'move': cam, 'ci': s.get('ci', 0.5)})
+        elif s.get('frame'):
             a, b, origin = FRAMINGS[s['frame']]
             ease, dur = ('power2.in', d) if s['frame'] == 'turn' else ('none', d)
             self.tween(f'tl.set("#{cid}i",{{transformOrigin:"{s.get("focus", origin)}"}},{r2(t)});')
@@ -158,8 +177,9 @@ class Film:
                     'panl': ('{scale:1.14,x:60}', '{scale:1.14,x:-60}'), 'panr': ('{scale:1.14,x:-60}', '{scale:1.14,x:60}'),
                     'slam': ('{scale:1.35}', '{scale:1.08}')}[move]
             ease, dur = ('power3.out', min(1.1, d)) if move in ('pull', 'slam') else ('none', d)
-        self.tween(f'tl.fromTo("#{cid}i",{a},{{...{b},duration:{r2(dur)},ease:"{ease}"}},{r2(t)});')
-        if not s.get('frame') and move in ('pull', 'slam') and d > dur + 0.5:
+        if not cam:
+            self.tween(f'tl.fromTo("#{cid}i",{a},{{...{b},duration:{r2(dur)},ease:"{ease}"}},{r2(t)});')
+        if not cam and not s.get('frame') and move in ('pull', 'slam') and d > dur + 0.5:
             # after it lands it keeps creeping (docs/fanlife/71: never a dead stop) — the landing used to be the last motion of the shot
             rest = 1.06 if move == 'pull' else 1.08
             self.tween(f'tl.fromTo("#{cid}i",{{scale:{rest}}},{{scale:{rest + CREEP * 3 * (d - dur):.4f},duration:{r2(d - dur)},ease:"none",immediateRender:false}},{r2(t + dur)});')
@@ -456,7 +476,7 @@ class Film:
         cid = self.id('cu')
         self.clip(cid, t, d, f'<img class="cut" id="{cid}i" src="assets/img/{e(s["src"])}" style="left:{s.get("x", 1180)}px;height:{s.get("h", 1000)}px">', s.get('z', 6))
         self.tween(f'tl.fromTo("#{cid}i",{{y:500,opacity:0}},{{y:{s.get("y", 120)},opacity:1,duration:0.7,ease:"power3.out"}},{r2(t)});'
-                   f'tl.to("#{cid}i",{{x:-50,duration:{r2(max(0.5, d - 0.7))},ease:"none"}},{r2(t + 0.7)});')
+                   f'tl.to("#{cid}i",{{x:{-60 * s.get("way", 1)},duration:{r2(max(0.5, d - 0.7))},ease:"none"}},{r2(t + 0.7)});')   # the nearest plane: it travels with the camera's move
 
     def lights(self, s, t, d):
         """The ground after the night: the picture darkens and the floodlights go out, one tower at a time."""
@@ -629,6 +649,7 @@ class Film:
 .clip{{position:absolute;left:0;top:0;width:1920px;height:1080px}}
 video.clip{{width:1920px;height:1080px}}
 .ph{{overflow:hidden}} .phi{{position:absolute;left:0;top:0;width:1920px;height:1080px;background-size:cover}}
+''' + C.CSS + f'''
 .veil{{position:absolute;left:0;top:0;width:1920px;height:1080px;background:{INK}}}
 .recon{{position:absolute;right:40px;top:34px;font:700 18px 'Mono';color:{P};opacity:.75;letter-spacing:1px}} .r2{{right:120px;top:90px}}
 .frame{{border:58px solid {P};box-sizing:border-box}} .paper{{background:{P}}} .ink{{background:{INK}}}
@@ -713,7 +734,7 @@ video.clip{{width:1920px;height:1080px}}
                 f'<script src="assets/gsap.min.js"></script><style>{css}</style></head><body>\n'
                 f'<div id="root" data-composition-id="main" data-start="0" data-duration="{r2(D)}" data-width="1920" data-height="1080" data-fps="30" data-layout-allow-overlap data-layout-allow-overflow>\n'
                 + '\n'.join(self.clips) + '\n<div id="flash" data-layout-ignore></div>\n' + '\n'.join(self.audio)
-                + '\n</div>\n<script>\nconst tl=gsap.timeline({paused:true});\n' + '\n'.join(self.tw)
+                + '\n</div>\n<script>\n' + C.EASES_JS + '\nconst tl=gsap.timeline({paused:true});\n' + '\n'.join(self.tw)
                 + '\nwindow.__timelines=window.__timelines||{};window.__timelines["main"]=tl;tl.seek(0);\n</script></body></html>\n')
 
 

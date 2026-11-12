@@ -7,6 +7,7 @@ viewer feels, on the frames of the finished film, and each threshold below is a 
 
   the opening     something changes on screen within FIRST_CHANGE_S; the film's stake is on screen within STAKE_BY_S
   the cut         no shot longer than MAX_SHOT_S; no shot under MOTION_FLOOR; no stretch of dead frames
+  the camera      no static shot: no STATIC_RUN_S without measurable camera or layer motion (studio/camera.py)
   the pictures    at least UNIQUE_ASSET_MIN of the picture uses are different pictures; none on more than MAX_ASSET_SHOTS shots
   calm            no flash (a luma spike that comes straight back) and no shake (the whole frame reversing direction) —
                   rule 142, measured the way VOX measures its camera (docs/fanlife/71: dead_frames, worst_jerk)
@@ -131,6 +132,11 @@ CUT_ABS, CUT_RATIO = 3.0, 4.0
 MOTION_FLOOR = 0.05
 # VOX's `dead_frames` for a rendered film: consecutive frames that do not change at all. A second of them is a freeze.
 DEAD_DIFF, DEAD_RUN_S = 0.01, 1.0
+# A static shot (owner, 12.11.2026: "as little static camera as possible"): STATIC_RUN_S in a row with no measurable
+# motion — the mean change over the run under STATIC_FLOOR. The camera's slowest move, the breath under a card
+# (camera.BREATH), measures 0.1–0.3 on a picture; a karaoke word lighting is cut off with the subtitle band. This is
+# stricter than the freeze above: 1.5 s of a card whose creep is too slow to see is static to a viewer, frozen or not.
+STATIC_RUN_S, STATIC_FLOOR = 1.5, 0.04
 # Pictures: a film that shows the same few images again and again is the slideshow the owner rejected.
 UNIQUE_ASSET_MIN, MAX_ASSET_SHOTS = 0.6, 2
 # A flash: the frame's mean luma jumps by FLASH_RISE levels inside two frames and falls back inside FLASH_FRAMES. A cut to
@@ -240,6 +246,23 @@ def experience_numbers(m: dict) -> dict:
             if (i - run0) / fps >= DEAD_RUN_S:
                 runs.append({'at': round(run0 / fps, 2), 'd': round((i - run0) / fps, 2)})
             run0 = None
+    # static shots: any STATIC_RUN_S window whose mean change is under STATIC_FLOOR; overlapping windows are one stretch.
+    # `moving` is the share of the film's frames that sit in no such window — the camera or a layer is moving there.
+    win = max(2, int(round(STATIC_RUN_S * fps)))
+    still = np.zeros(n, bool)
+    if n > win:
+        c = np.concatenate([[0.0], np.cumsum(d, dtype=np.float64)])
+        means = (c[win + 1:] - c[1:n - win + 1]) / win            # the mean of d[i+1 … i+win]: the changes INSIDE the window
+        for i in np.nonzero(means < STATIC_FLOOR)[0]:
+            still[i:i + win + 1] = True
+    static, run0 = [], None
+    for i in range(n + 1):
+        if i < n and still[i]:
+            run0 = i if run0 is None else run0
+        elif run0 is not None:
+            static.append({'at': round(run0 / fps, 2), 'd': round((i - run0) / fps, 2)})
+            run0 = None
+    static_s = round(float(still.sum()) / fps, 2) if fps else 0.0
     # flashes: up fast, and straight back down
     flashes = []
     for i in range(2, n):
@@ -271,7 +294,8 @@ def experience_numbers(m: dict) -> dict:
     return {'seconds': round(dur, 2), 'changes': len(ev), 'shots_per_minute': round(len(shots) * 60 / dur, 1) if dur else 0.0,
             'first_change_s': None if first is None else round(first, 2), 'longest_shot_s': round(longest[1] - longest[0], 2),
             'longest_shot_at': round(longest[0], 2), 'long_shots': [{'at': round(a, 2), 'd': round(b - a, 2)} for a, b in shots if b - a > MAX_SHOT_S],
-            'slow_shots': slow, 'dead_frames': int(dead.sum()), 'dead_runs': runs, 'flashes': flashes, 'shakes': shakes,
+            'slow_shots': slow, 'dead_frames': int(dead.sum()), 'dead_runs': runs, 'static_shots': static, 'static_seconds': static_s,
+            'moving_share': round(1 - static_s / dur, 3) if dur else 0.0, 'flashes': flashes, 'shakes': shakes,
             'worst_jerk': round(jerk, 1)}
 
 
@@ -339,6 +363,10 @@ def experience(master: Path, plan: dict, job_dir: Path | None = None, intro_s: f
         at(x['at'] + 0.1, 'long', x['d'] - 0.2)
     checks.append(('experience · motion', not still, f'{len(num["slow_shots"])} shots under the motion floor, {len(num["dead_runs"])} freezes of {DEAD_RUN_S:.0f}s or more ({num["dead_frames"]} dead frames)'
                    + (f' — first at {still[0]["at"]}s: a picture that does not move' if still else '')))
+    for x in num['static_shots']:
+        at(x['at'] + 0.1, 'long', x['d'] - 0.2)
+    checks.append(('experience · static shots', not num['static_shots'], f'the camera or a layer moves for {num["moving_share"]:.0%} of the film; {num["static_seconds"]}s in {len(num["static_shots"])} static stretches of {STATIC_RUN_S}s or more'
+                   + (f' — first at {num["static_shots"][0]["at"]}s: nothing on screen moves there' if num['static_shots'] else '')))
     if assets:
         bad = assets['ratio'] < UNIQUE_ASSET_MIN or bool(assets['over'])
         for n in assets['over']:

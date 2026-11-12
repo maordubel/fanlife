@@ -48,6 +48,9 @@ FACES = {  # css family → (latin, latin-ext) files in public/fonts (The Weekly
 }
 
 
+from ..camera import EASES_JS as CAMERA_EASES  # noqa: E402 — the two eases the shared camera grammar adds to GSAP
+
+
 def rgb(c) -> str:
     c = hex_rgb(c) if isinstance(c, str) else tuple(int(x) for x in c[:3])
     return '#%02x%02x%02x' % c
@@ -404,7 +407,20 @@ class B:
             L, T_ = (src.width - W_) // 2, (src.height - H_) // 2
             pic = E.photo_treat(src.crop((L, T_, L + W_, T_ + H_)), amount=0.34)
         url = self.c.assets.put_image(pic, 'print')
-        inner = f'<img class="pic" src="{url}" style="left:18px;top:18px;width:{W_}px;height:{H_}px">'
+        # THE CAMERA inside the print (studio/camera.py, the grammar DOCU films with): the picture sits in a window in its
+        # paper border and makes one calm move behind it — chosen by the beat's emotion on the score sheet, a breath
+        # without one — so a print the board camera holds on is never a dead rectangle (docs/fanlife/71).
+        pid = self.id('pic')
+        inner = (f'<div class="picw" style="left:18px;top:18px;width:{W_}px;height:{H_}px">'
+                 f'<img id="{pid}" class="pic" src="{url}" style="left:0;top:0;width:{W_}px;height:{H_}px"></div>')
+        if not key.startswith('clip:'):
+            from .. import camera as CAM
+            emo = (self.s.get('drama') or {}).get('emotion')
+            mv = CAM.choose(emo, [], key=self.s.get('n') or 0) if emo else 'breath'
+            hold = max(1.0, self.dur - t0)
+            for js in CAM.gsap(CAM.spec('breath' if mv == 'snap' else mv, hold, (self.s.get('drama') or {}).get('intensity', 0.3), 1.0, 1 if (self.s.get('n') or 0) % 2 else -1),
+                               {'back': f'#{pid}'}, self.T(t0)):
+                self.js(js)
         if key.startswith('clip:'):
             vurl = self.c.clip_video(key, self.dur + 1.0)
             if vurl:
@@ -865,7 +881,7 @@ html,body{width:1920px;height:1080px;overflow:hidden;background:#151310}
 .panel{position:absolute;width:1920px;height:1080px}
 .card{position:absolute}
 .pbg{position:absolute;max-width:none}
-.pic{position:absolute;object-fit:cover}
+.pic{position:absolute;object-fit:cover} .picw{position:absolute;overflow:hidden}
 .illu{position:absolute;right:28px;top:28px;background:var(--ink);color:var(--paper);font-size:22px;padding:6px 12px;letter-spacing:2px}
 .bar{position:absolute;left:0;top:0;right:0;height:74px;background:var(--ink);color:var(--paper);padding:0 40px;line-height:74px;letter-spacing:2px;white-space:nowrap;overflow:hidden}
 .rule{position:absolute;left:50px;right:50px;height:6px;background:var(--ink)}
@@ -1154,6 +1170,7 @@ class Composition:
 <script>
 const FPS={self.fps};
 {RUNTIME}
+{CAMERA_EASES}
 const tl=gsap.timeline({{paused:true}});
 const P={json.dumps(poses, separators=(',', ':'))};
 camera(tl,P,[...document.querySelectorAll('.board')],[...document.querySelectorAll('.near')]);
