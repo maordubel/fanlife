@@ -117,14 +117,12 @@ class SparePictures(unittest.TestCase):
     def bare(n):
         return {'n': n, 'visual': {'type': 'stat'}}
 
-    def test_least_recently_used_and_never_twice_running(self):
+    def test_no_picture_twice_and_the_same_shot_asks_the_same_picture(self):
         ad = self.adapter()
         got = [ad.picture(self.bare(n))[0] for n in range(25)]
-        pool = len(dp.SPARE)
-        self.assertEqual(len(set(got[:pool])), pool)                       # every picture once before any repeats
-        self.assertTrue(all(a != b for a, b in zip(got, got[1:])))
-        self.assertEqual(got[:pool], got[pool:2 * pool])                   # then the one unused for longest
+        self.assertEqual(len(set(got)), 25)                                # the index has hundreds: nothing repeats in 25 shots
         self.assertEqual(ad.picture(self.bare(3))[0], got[3])              # asked again for the same shot: the same picture
+        self.assertTrue(all(k.startswith(('beat:', 'art:')) for k in ad.keys.values()))   # each by its index key
 
     def test_the_same_film_draws_the_same_pictures_and_another_film_differs(self):
         a, b, c = (([ad.picture(self.bare(n))[0] for n in range(8)]) for ad in (self.adapter(), self.adapter(), self.adapter('job-b')))
@@ -134,9 +132,10 @@ class SparePictures(unittest.TestCase):
     def test_not_the_picture_the_script_chose_for_the_shot_before(self):
         for job in ('job-a', 'job-b', 'job-c', 'job-d'):
             ad = self.adapter(job)
-            first = ad.spare(0).stem                                       # what this film would borrow first
+            ad.spare(0)                                                    # what this film would borrow first
+            first = ad.keys[0]
             ad = self.adapter(job)
-            own = ad.picture({'n': 0, 'visual': {'type': 'stat', 'backdrop': f'beat:common/{first}'}})[0]
+            own = ad.picture({'n': 0, 'visual': {'type': 'stat', 'backdrop': first}})[0]
             self.assertNotEqual(ad.picture(self.bare(1))[0], own, job)
 
 

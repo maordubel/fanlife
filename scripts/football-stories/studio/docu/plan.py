@@ -33,10 +33,6 @@ OLD = ('vox', 'vox-hf', 'classic', 'paper')
 NAMED = {'tunnel': 'beat:common/tunnel-walk-out', 'terrace-crowd': 'beat:common/terrace-full-kr',
          'terrace-empty': 'beat:common/old-ground-wide-kr', 'supporter': 'beat:common/supporter-cap-old-ground'}
 FOLLOW = ('follow-seat-kept-kr', 'follow-turnstile-welcome-kr', 'follow-away-end-gap-kr', 'follow-pub-door-kr')
-# The pictures a shot with no art of its own may borrow: the library's home-crowd pictures (cinema/look.BROLL 'home' and
-# 'form' — the kind the single old fallback, terrace-full-kr, was).
-SPARE = ('terrace-full-kr', 'terrace-full-b-kr', 'home-end-night-kr', 'home-end-night-b-kr', 'street-matchday-crowd-kr',
-         'turnstile-queue-kr', 'crowd-scarves-night-kr', 'street-lamp-crowd-kr', 'terrace-fence-scarves-kr', 'kick-off-centre-kr')
 WORDS = ['ONE', 'TWO', 'THREE', 'FOUR', 'FIVE', 'SIX', 'SEVEN', 'EIGHT', 'NINE', 'TEN']
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 NEUTRAL = '#2B2A33'   # an opponent with no recorded colour wears ink, never a guessed kit
@@ -97,8 +93,8 @@ class Adapter:
         self.cues: dict[int, list] = {}
         self.shown: dict[int, Path] = {}             # shot → the picture it shows (spare() keeps neighbours apart)
         self.spares: dict[int, Path | None] = {}     # shot → the spare picture it was given
-        self.used: dict[Path, int] = {}              # spare picture → when it was last given
-        self.pool: list[Path] | None = None
+        self._picker = None                          # the media index's view of this film (studio/media_index.py)
+        self.sheet = {int(k): v for k, v in (plan.get('sheet') or {}).get('beats', {}).items()} if isinstance(plan.get('sheet'), dict) else {}
         self.foci: dict[str, str | None] = {}        # picture → where its detail look looks
         self.lib_used: list[str] = []                # the library pieces this film put on screen
         self.last: str | None = None                 # the rich device of the shot before (two city splits never run back to back)
@@ -109,6 +105,7 @@ class Adapter:
                 names += [f.get('home'), f.get('away'), f.get('opponent')]
         self.crest = crests(names)
         self.keys: dict[int, str] = {}               # shot → the key of the picture it shows (the designer reads its index entry)
+        self.also: dict[int, list[str]] = {}         # shot → the further pictures a long line was given
         self.design = Designer(self)                 # the richer devices, each only when the beat's data earns it (docu/designer.py)
 
     # ── assets ──────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -139,6 +136,8 @@ class Adapter:
             p = self.lib_scene(key) if str(key or '').startswith('lib:') else media(key) if key and key != 'paper' else None
             if p:
                 self.keys[s['n']] = NAMED.get(key, key)
+                if s['n'] not in self.shown:   # the plan's own choice is a use too: the index keeps away from it elsewhere
+                    self.picker.use(self.keys[s['n']], s['n'], s.get('start'))
                 break
         if not p and v['type'] == 'follow':
             p = media(f'beat:common/{FOLLOW[s["n"] % len(FOLLOW)]}')
@@ -148,35 +147,43 @@ class Adapter:
         self.shown[s['n']] = p
         return self.asset(p, 'img'), p.suffix.lower() == '.mp4'
 
+    @property
+    def picker(self):
+        """The media index, as this film sees it (studio/media_index.py): its club, the colour families its palette
+        refuses in a picture, its decade, and what the last films showed. Built on first use, once."""
+        if self._picker is None:
+            from .. import media_index as MI
+            self._picker = MI.Picker(MI.build(), self.pal.club_id, self.pal.render_bans, MI.era_of(self.led.get('season')), self.jd.name)
+        return self._picker
+
+    def query(self, n: int) -> dict:
+        from .. import media_index as MI
+        s = next((x for x in self.plan.get('shots') or [] if x['n'] == n), None) or {'n': n, 'visual': {'type': 'illustration'}}
+        return {**MI.beat_query(s, (self.sheet.get(n) or {}).get('emotion')), 't': s.get('start')}
+
     def spare(self, n: int) -> Path | None:
-        """The picture for a shot that has none of its own. It was always `terrace-full-kr`, so a film showed one image
-        again and again (owner, 12.11.2026). Now: the least recently used of the library's crowd pictures (SPARE), in an
-        order fixed by the film's id so a re-render draws the same film, and never the picture of the shot before."""
+        """The picture for a shot that has none of its own. First it was always `terrace-full-kr`, then the least recently
+        used of ten crowd pictures (batch 1's SPARE). Now the media index chooses (owner, 12.11.2026: "real index
+        management"): the picture whose subject and mood fit the beat, of this club or of any, never another club's,
+        fresh against this film and the last films — and never the picture of the shot before."""
         if n in self.spares:   # a shot may ask twice (its background and its card): the same picture both times
             return self.spares[n]
-        if self.pool is None:
-            from ..cinema.look import allowed
-            keys = [f'beat:common/{k}' for k in SPARE if allowed(f'beat:common/{k}', self.pal.render_bans)]
-            keys.sort(key=lambda k: hashlib.sha256(f'{self.jd.name}:{k}'.encode()).hexdigest())
-            self.pool = [q for q in map(media, keys) if q] or [q for q in [media('beat:common/terrace-full-kr')] if q]
-        before = self.shown.get(max((k for k in self.shown if k < n), default=-1))
-        fresh = [q for q in self.pool if q != before] or self.pool
-        p = min(fresh, key=lambda q: self.used.get(q, -1), default=None)   # min is stable: ties keep the film's order
-        if p:
-            self.used[p] = len(self.spares)
-        self.spares[n] = p
-        return p
+        before = self.keys.get(max((k for k in self.keys if k < n), default=-1))
+        q = self.query(n)
+        r = self.picker.pick(q, avoid={before} if before else ()) or self.picker.pick(q)
+        self.spares[n] = Path(r['path']) if r else None
+        if r:
+            self.keys.setdefault(n, r['id'])
+        return self.spares[n]
 
     def related(self, n: int, i: int) -> str | None:
         """Another picture for a line so long that three looks at its own picture are not enough (docu/editor.looks): the
-        least recently used crowd picture, never the one this shot already shows."""
-        self.spare(-1 - n) if self.pool is None else None   # fills the pool; the throwaway key is never a shot
-        own = self.shown.get(n)
-        fresh = [q for q in (self.pool or []) if q != own]
-        p = min(fresh, key=lambda q: self.used.get(q, -1), default=None)
-        if p:
-            self.used[p] = len(self.used) + len(self.spares)
-        return self.asset(p, 'img')
+        index's next best for the same beat, never the one this shot already shows."""
+        own = self.keys.get(n)
+        r = self.picker.pick({**self.query(n), 'n': n}, avoid={own} if own else ())
+        if r:
+            self.also.setdefault(n, []).append(r['id'])
+        return self.asset(r['path'], 'img') if r else None
 
     def focus(self, src: str) -> str | None:
         """Where a detail look should look on this picture: the busiest part of it (most edges), as a transform origin —
@@ -561,6 +568,13 @@ def write_project(job_dir: Path, plan: dict, palette: Palette, root: Path) -> tu
     beats = ad.beats()
     write_json(job_dir / 'docu-shots.json', {'shots': E.shot_list(beats), 'errors': E.errors(beats) if beats and 'in' in beats[0] else [],
                                              'beat_grid': bool(plan.get('beat_grid')), 'library': sorted(set(ad.lib_used))})
+    # the film's pictures, by their index entries, and the ledger across films (studio/media_index.py): which asset on
+    # which shot — what the next film's picker reads as "seen lately" and the gate reports as library hygiene
+    if ad._picker is not None:
+        pk = ad._picker
+        uses = pk.close()
+        write_json(job_dir / 'media-index-usage.json', {'film': job_dir.name, 'club': palette.club_id, 'uses': uses, 'recent': {a: k for a, k in pk.recent.items() if a in pk.shots},
+                   'assets': {a: {k: pk.by[a].get(k) for k in ('source', 'kind', 'clubs', 'era', 'subjects', 'moods', 'rights', 'size')} for a in sorted(pk.shots) if a in pk.by}})
     if root.exists():
         shutil.rmtree(root)
     (root / 'assets' / 'img').mkdir(parents=True)

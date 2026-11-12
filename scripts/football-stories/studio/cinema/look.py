@@ -266,6 +266,8 @@ def pick(moods: list[str], bans: list[str], salt: str, avoid: set[str] | None = 
         opts = [f'beat:common/{s}' for s in BROLL.get(m, ()) if dry(s) and allowed(f'beat:common/{s}', bans)]
         fresh = [o for o in opts if o not in avoid] or opts
         if fresh:
+            from ..media_index import freshest
+            fresh = freshest(fresh)   # the ones the last films showed least, when the worker keeps a usage ledger (media_index.py)
             h = int(hashlib.sha256(salt.encode()).hexdigest()[:8], 16)
             return fresh[h % len(fresh)]
     return None
