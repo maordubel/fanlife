@@ -5,7 +5,7 @@
  * Exit 0 even when a job fails: the failure is recorded on the job.
  */
 import sharp from 'sharp'
-import {mkdir, writeFile} from 'node:fs/promises'
+import {mkdir, readFile, writeFile} from 'node:fs/promises'
 import {callTelegram, pngSize, sendDocument, sendPhoto} from '../../lib/final-whistle/telegram.ts'
 import {renderSvg, hasCrest, libCrestFile, LIB_CACHE} from './template.mjs'
 import {existsSync} from 'node:fs'
@@ -17,6 +17,8 @@ async function fetchCrests(fixtures) {
     if (hasCrest(t.id)) continue
     const file = libCrestFile(t.name), slug = crestSlug(t.name)
     if (!file || existsSync(file)) continue
+    const bundled = new URL(`../../public/universe-crests/${slug}.png`, import.meta.url)
+    if (existsSync(bundled)) { await writeFile(file, await readFile(bundled)); continue }
     try { const r = await fetch(`${CREST_BASE}/${slug}.png`, {signal: AbortSignal.timeout(10_000)}); if (r.ok) await writeFile(file, Buffer.from(await r.arrayBuffer())) } catch { /* initials */ }
   }
 }
