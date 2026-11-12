@@ -96,5 +96,8 @@
  "gl.ask.what0": "מה קרה בנגיעה {n}?",
  "gl.move": "המהלך",
  "gl.move.empty": "עוד אין נגיעות. המהלך מתחיל בבחירה הראשונה שלך.",
- "gl.move.at": "{verb} · {zone}"
+ "gl.move.at": "{verb} · {zone}",
+ "gl.result.archive": "בארכיון",
+ "gl.result.archiveNight": "הערב הזה בארכיון",
+ "gl.result.archiveScorer": "{name} בארכיון"
 }

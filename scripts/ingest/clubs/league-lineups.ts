@@ -22,7 +22,9 @@ import {readFileSync,writeFileSync,existsSync} from 'node:fs'
 import {sameClub} from '../../../lib/fixtures/names'
 const arg=(k:string)=>{const i=process.argv.indexOf('--'+k);return i<0?null:process.argv[i+1]??null}
 const sleep=(ms:number)=>new Promise(r=>setTimeout(r,ms))
-const fold=(s:string)=>s.normalize('NFD').replace(/\p{M}+/gu,'').toLowerCase().replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim()
+// letters NFD does not split (ø, æ, ß, đ, ł, ı) are spelled out first: "Høgh" must read "hogh", not "h gh"
+const SPELL:Record<string,string>={ø:'o',æ:'ae',œ:'oe',ß:'ss',đ:'d',ł:'l',ı:'i',þ:'th',ð:'d'}
+const fold=(s:string)=>s.toLowerCase().replace(/[øæœßđłıþð]/g,c=>SPELL[c]!).normalize('NFD').replace(/\p{M}+/gu,'').replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim()
 type J=Record<string,any>
 const B365='https://webws.365scores.com/web',Q365='appTypeId=5&langId=1&timezoneName=Europe/London&userCountryId=1',LS='https://prod-cdn-public-api.livescore.com/v1/api/app'
 async function get(url:string):Promise<any>{
@@ -88,10 +90,12 @@ async function main(){
  for(const p of [...((core.players||[]) as J[]),...((prev.players||[]) as J[])]){const k=fold(String(p.value?.name||''));if(!k)continue;const was=known.get(k);known.set(k,was===undefined||was===p.id?p.id:null)}
  const lines=new Map<string,{name:string;votes:Map<string,number>;years:Set<number>;srcs:Set<string>}>()
  const prevPlayers=new Map<string,J>(((prev.players||[]) as J[]).map(p=>[p.id,p]))
+ const why=new Map<string,number>();let pages=0
  let url:string|null=`${B365}/games/results/?${Q365}&competitors=${id}&showOdds=false`,seen=0,agreed=0,single=0,fetched=0,withScorers=0,posAgree=0,posDiffer=0
  const lsDay=new Map<string,any>()
  while(url&&seen<max){
   const page=await get(url);if(!page)break
+  pages++
   for(const g of (page.games||[])as J[]){
    if(seen>=max)break
    if(g.statusGroup!==4||!g.hasLineups||EURO.test(String(g.competitionDisplayName||'')))continue
@@ -122,7 +126,8 @@ async function main(){
     }
     if(ev)break
    }
-   let agree=false,why='LiveScore lists no matching match (date, both clubs, score)',lsSrc:J|null=null,scorers:string[]=[]
+   if(!ev&&process.env.LL_DEBUG){const cands:string[]=[];for(const [,day] of lsDay)for(const st of (day?.Stages||[])as J[])for(const e of (st.Events||[])as J[])if(Number(e.Tr1)===sh&&Number(e.Tr2)===sa&&[e.T1?.[0]?.Nm,e.T2?.[0]?.Nm].some((n:string)=>words(n||'').some(w=>words(ourName).includes(w))))cands.push(`${e.T1?.[0]?.Nm} v ${e.T2?.[0]?.Nm} (${st.Cnm}/${st.Snm})`);console.log(`[${club}] no LS match: ${home.name} ${sh}-${sa} ${away.name} ${on} · near: ${cands.slice(0,3).join('; ')||'none'}`)}
+   let agree=false,why_='LiveScore lists no matching match (date, both clubs, score)',lsSrc:J|null=null,scorers:string[]=[]
    const side:1|2=weHome?1:2
    if(ev){
     const lu=await get(`${LS}/lineups/soccer/${ev.Eid}?locale=en`)
@@ -131,7 +136,7 @@ async function main(){
     const ls=lsPlayers.map(p=>fold(`${p.Fn||''} ${p.Ln||''}`))
     if(ls.length===11){
      const hit=starters.filter(n=>ls.some(l=>l.split(' ').includes(surname(n))||l.endsWith(surname(n)))).length
-     agree=hit>=10;why=agree?'':`LiveScore's eleven differs (${hit}/11 surnames agree)`
+     agree=hit>=10;why_=agree?'':`LiveScore's eleven differs (${hit}/11 surnames agree)`
      lsSrc={id:`ls-lu-${ev.Eid}`,title:`LiveScore: ${home.name} ${sh}-${sa} ${away.name}, ${on} (line-ups)`,url:`${LS}/lineups/soccer/${ev.Eid}`,publisher:'LiveScore',access:'available',checkedAt:today}
      if(agree){
       // the lines both sites drew
@@ -150,7 +155,7 @@ async function main(){
        if(scorersAgree(goals365,lsGoals)){scorers=goals365;withScorers++}
       }
      }
-    }else why='LiveScore has no full eleven for this match'
+    }else why_='LiveScore has no full eleven for this match'
    }
    const s365={id:`s365-${g.id}`,title:`365Scores: ${home.name} ${sh}-${sa} ${away.name}, ${on}`,url:`${B365}/game/?gameId=${g.id}`,publisher:'365Scores',access:'available',checkedAt:today}
    const ok=agree&&!!lsSrc
@@ -159,9 +164,10 @@ async function main(){
    if(old&&old.status==='approved'&&(!ok||((old.value?.scorers||[]).length>=scorers.length))){ok?agreed++:single++;continue}
    sources.set(s365.id,s365);if(lsSrc&&agree)sources.set(lsSrc.id,lsSrc)
    ok?agreed++:single++
+   if(!ok)why.set(why_,(why.get(why_)||0)+1)
    byId.set(mid,{id:mid,value:{name:`${home.name} ${sh}-${sa} ${away.name}`,on,competition:comp,score:`${sh}-${sa}`,venue:null,lineup:starters,bench,scorers},
     sources:ok?[s365.id,lsSrc!.id]:[s365.id],researchedAt:today,parserCertainty:'high',conflictFree:true,
-    notes:ok?`Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames)${scorers.length?'; both print the same scorers':''}.`:`One publisher only — ${why}.`,
+    notes:ok?`Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames)${scorers.length?'; both print the same scorers':''}.`:`One publisher only — ${why_}.`,
     confidence:ok?3:2,status:ok?'approved':'review',approvedAt:ok?today:null,approvedBy:ok?`automated:cross-source-review-league-lineups-${club}`:null})
   }
   url=page.paging?.previousPage?`https://webws.365scores.com${page.paging.previousPage}`:null
@@ -175,15 +181,16 @@ async function main(){
   if(mine===null)continue // a name two men of the club share fills neither (rule 7)
   const srcs=[...r.srcs].slice(-2),ys=[...r.years].sort()
   const base={sources:srcs,confidence:3,status:'approved',researchedAt:today,approvedAt:today,approvedBy:`automated:cross-source-review-league-lineups-${club}`,parserCertainty:'high',conflictFree:true,notes:`Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: ${pos}.`}
-  if(mine&&!prevPlayers.has(mine)){players.set(mine,{id:mine,value:{name:r.name,positions:[pos]},...base});filled++;continue}
+  if(mine&&!prevPlayers.has(mine)){players.set(mine,{id:mine,value:{name:r.name,positions:[pos],sensitive:false},...base});filled++;continue}
   const pid=mine??`p-ll-${slug(r.name)}`,was=players.get(pid)
   const from=Math.min(ys[0]!,Number(was?.value?.fromYear??9999)),to=Math.max(ys[ys.length-1]!,Number(was?.value?.toYear??0))
   if(!was)added++
-  players.set(pid,{id:pid,value:{name:r.name,sport:'football',positions:[pos],fromYear:from,toYear:to,aliases:[]},...base})
+  players.set(pid,{id:pid,value:{name:r.name,sport:'football',positions:[pos],fromYear:from,toYear:to,aliases:[],sensitive:false},...base})
  }
  const matches=[...byId.values()].sort((x,y)=>String(y.value.on).localeCompare(String(x.value.on)))
  const used=new Set([...matches.flatMap(m=>m.sources as string[]),...[...players.values()].flatMap(p=>p.sources as string[])])
  writeFileSync(file,JSON.stringify({sources:[...sources.values()].filter(s=>used.has(s.id)),matches,players:[...players.values()],kits:[],rivals:[]},null,1)+'\n')
- console.log(`[${club}] ${seen} matches read, ${fetched} with detail, ${agreed} agreed by two publishers, ${single} single-source · ${withScorers} with an agreed scoresheet · positions ${posAgree} agreed / ${posDiffer} differ → ${filled} filled, ${added} added, ${split} in two lines · file holds ${matches.length} matches`)
+ console.log(`[${club}] ${seen} matches read, ${fetched} with detail, ${agreed} agreed by two publishers, ${single} single-source · ${withScorers} with an agreed scoresheet · positions ${posAgree} agreed / ${posDiffer} differ → ${filled} filled, ${added} added, ${split} in two lines · file holds ${matches.length} matches · ${pages} result pages`)
+ if(why.size)console.log(`[${club}] single-source reasons: ${[...why].map(([k,n])=>`${n}× ${k}`).join(' | ')}`)
 }
 if(process.argv[1]?.endsWith('league-lineups.ts'))main().catch(e=>{console.error(e);process.exit(1)})

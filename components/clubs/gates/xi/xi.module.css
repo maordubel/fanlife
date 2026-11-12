@@ -151,3 +151,6 @@
 @media (max-width: 380px) { .tab { font-size: 15px; } .strip h2 { font-size: 18px; } }
 @media (max-height: 700px) and (max-width: 900px) { .stage { min-height: 500px; } .dock :global([data-pick-rail]) ul { max-block-size: 150px; } }
 @media (prefers-reduced-motion: reduce) { .shirt, .empty, .token[data-active='true'] .empty, .token[data-active='true'] .shirt { animation: none; transition: none; } .tool:active:not(:disabled), .row:active:not(:disabled), .hudFormation:active { transform: none; } }
+
+/* 12.11.2026 — a name on the team sheet opens the man in the archive */
+.archiveName { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }

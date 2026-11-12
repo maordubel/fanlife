@@ -228,3 +228,7 @@ h3.fine { font-family: var(--mag-mono); font-weight: 700; font-size: 11px; lette
 
 /* the lifted copy of a token must never be what the pointer lands on, or the drop zone under it is never found */
 .token:global(.drag-ghost), .token:global(.drag-ghost) * { pointer-events: none; }
+
+/* 12.11.2026 — the archive door under a rebuilt goal */
+.archiveRow { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-block: 6px 2px; }
+.archiveRow a { display: inline-flex; align-items: center; min-height: 44px; font-family: var(--mag-display); font-size: 15px; text-transform: uppercase; color: inherit; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }

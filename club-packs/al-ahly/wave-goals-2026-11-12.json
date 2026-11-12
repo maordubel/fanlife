@@ -1,0 +1,457 @@
+{
+ "schemaVersion": 1,
+ "clubId": "al-ahly",
+ "contentLocale": "en",
+ "sources": [
+  {
+   "id": "ah-g-bbc-2006",
+   "title": "Ahly retain African title",
+   "url": "https://bbcbreakingnews.pages.dev/sport2/hi/football/africa/6139438.stm",
+   "publisher": "BBC Sport (archived copy)",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "ah-g-dne-2006",
+   "title": "Where there is a will, there is no way for Sfax",
+   "url": "https://www.dailynewsegypt.com/2006/11/12/where-there-is-a-will-there-is-no-way-for-sfax/",
+   "publisher": "Daily News Egypt",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "ah-g-wiki-2006-final",
+   "title": "2006 CAF Champions League final",
+   "url": "https://kaweah.freedombox.rocks/kiwix/wikipedia_en_all_maxi_2023-10/2006_CAF_Champions_League_final",
+   "publisher": "Wikipedia (Kiwix mirror)",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "ah-g-amwal-2012",
+   "title": "Ruthless Ahly win Champions League in Tunisia",
+   "url": "https://en.amwalalghad.com/?p=12426",
+   "publisher": "Amwal Al Ghad English",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "ah-g-nbc-2012",
+   "title": "Al Ahly wins African Champions League",
+   "url": "https://www.nbcsports.com/soccer/news/al-ahly-wins-african-champions-league",
+   "publisher": "NBC Sports",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "ah-g-taipei-2012",
+   "title": "Taipei Times sport report, 19 November 2012",
+   "url": "https://www.taipeitimes.com/News/sport/archives/2012/11/19/2003548063",
+   "publisher": "Taipei Times",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "ah-g-reuters-2020",
+   "title": "Magnificent Magdi goal hands Al Ahly CAF Champions League title",
+   "url": "https://www.standardmedia.co.ke/amp/sports/article/2001395469/magnificent-magdi-goal-hands-al-ahly-caf-champions-league-title",
+   "publisher": "Reuters (via The Standard)",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "ah-g-astro-2020",
+   "title": "Zamalek 1-2 Al Ahly: Late Kafsha stunner settles final of the century",
+   "url": "https://english.stadiumastro.com/football/zamalek-12-al-ahly-late-kafsha-stunner-settles-final-century-180393",
+   "publisher": "Stadium Astro",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "ah-g-caf-2021",
+   "title": "Al Ahly secure 'Al Ashra' with victory over 10-man Chiefs",
+   "url": "https://www.cafonline.com/total-caf-champions-league/2021/news/al-ahly-secure-al-ashra-with-victory-over-10-man-chiefs",
+   "publisher": "CAF (cafonline.com)",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "ah-g-goal-2021",
+   "title": "Kaizer Chiefs 0-3 Al Ahly: Red Devils humble Amakhosi to clinch 10th CAF Champions League title",
+   "url": "https://www.goal.com/en/news/kaizer-chiefs-0-3-al-ahly-red-devils-humble-amakhosi-to-clinch-10th-caf-champions-league-title/smek52cur6yj1xp20infah5b0",
+   "publisher": "Goal.com",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "ah-g-reuters-2021",
+   "title": "Ahly punish 10-man Kaizer Chiefs to win CAF Champions League 10th time",
+   "url": "https://www.standardmedia.co.ke/sports/amp/football/article/2001418545/ahly-punish-10-man-kaizer-chiefs-to-win-caf-champions-league-10th-time",
+   "publisher": "Reuters (via The Standard)",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  }
+ ],
+ "goals": [
+  {
+   "id": "goal-2006-11-11-mohamed-aboutrika-90plus2",
+   "value": {
+    "name": "90+2' · Mohamed Aboutrika v CS Sfaxien",
+    "subtitle": "2006-11-11 · 90+2'",
+    "on": "2006-11-11",
+    "competition": "CAF Champions League final, second leg",
+    "opponent": "CS Sfaxien",
+    "score": "1-0",
+    "narrative": "Flávio Amado: Flick-on with the head that sends Aboutrika through. Mohamed Aboutrika: Volley from just outside the box into the net.",
+    "sequence": [
+     {
+      "actor": "Flávio Amado",
+      "side": "club",
+      "action": "header",
+      "zone": "C2",
+      "position": "in front of the area",
+      "note": "Flick-on with the head that sends Aboutrika through."
+     },
+     {
+      "actor": "Mohamed Aboutrika",
+      "side": "club",
+      "action": "shot",
+      "zone": "C2",
+      "position": "edge of the penalty area",
+      "note": "Volley from just outside the box into the net."
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "ah-g-bbc-2006",
+    "ah-g-dne-2006",
+    "ah-g-wiki-2006-final"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "BBC: two minutes into stoppage time, Flavio flick-on, volley from edge of the area. Daily News Egypt: long ball relayed by Meteb's head then Flavio's, left-foot finish from outside the area. Wikipedia: 90+2'. Moteab's header is reported only by Daily News Egypt (not contradicted by BBC). · Applied the two-publisher rule: the first header (Moteab) is reported by Daily News Egypt only."
+  },
+  {
+   "id": "goal-2012-11-17-gedo-43",
+   "value": {
+    "name": "43' · Gedo v Espérance de Tunis",
+    "subtitle": "2012-11-17 · 43'",
+    "on": "2012-11-17",
+    "competition": "CAF Champions League final, second leg",
+    "opponent": "Espérance de Tunis",
+    "score": "2-1",
+    "narrative": "Al-Sayed Hamdy: Goes past right-back Walid Hichri down the left. Al-Sayed Hamdy: Pull-back for the unmarked Gedo. Mohamed Nagy 'Gedo': Side-foot finish.",
+    "sequence": [
+     {
+      "actor": "Al-Sayed Hamdy",
+      "side": "club",
+      "action": "dribble",
+      "zone": "A2",
+      "position": "left wing",
+      "note": "Goes past right-back Walid Hichri down the left."
+     },
+     {
+      "actor": "Al-Sayed Hamdy",
+      "side": "club",
+      "action": "pass",
+      "zone": "A1",
+      "position": "left side of the penalty area",
+      "note": "Pull-back for the unmarked Gedo."
+     },
+     {
+      "actor": "Mohamed Nagy 'Gedo'",
+      "side": "club",
+      "action": "shot",
+      "zone": "C1",
+      "position": "close range",
+      "note": "Side-foot finish."
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "ah-g-amwal-2012",
+    "ah-g-taipei-2012",
+    "ah-g-nbc-2012"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Amwal Al Ghad: Hamdi beat Hichri down the left, reached the byline and pulled back for an unmarked Gedo to side-foot home, two minutes before the break. Taipei Times: Hamdi beat Hichri on the left and made a mazy run into the area to set it up. NBC Sports: 43', set up by Al-Sayed Hamdy. Side-foot detail from Amwal only."
+  },
+  {
+   "id": "goal-2012-11-17-walid-soliman-61",
+   "value": {
+    "name": "61' · Walid Soliman v Espérance de Tunis",
+    "subtitle": "2012-11-17 · 61'",
+    "on": "2012-11-17",
+    "competition": "CAF Champions League final, second leg",
+    "opponent": "Espérance de Tunis",
+    "score": "2-1",
+    "narrative": "Walid Soliman: Takes the ball past a defender (lifted over him per Amwal; rounded him per Taipei Times). Walid Soliman: Placed shot wide of the goalkeeper into the bottom corner.",
+    "sequence": [
+     {
+      "actor": "Walid Soliman",
+      "side": "club",
+      "action": "dribble",
+      "zone": "C2",
+      "position": "breaking clear",
+      "note": "Takes the ball past a defender (lifted over him per Amwal; rounded him per Taipei Times)."
+     },
+     {
+      "actor": "Walid Soliman",
+      "side": "club",
+      "action": "shot",
+      "zone": "C1",
+      "position": "through on goal",
+      "note": "Placed shot wide of the goalkeeper into the bottom corner."
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "ah-g-amwal-2012",
+    "ah-g-taipei-2012"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Minute 61 from Amwal; Taipei Times says just after the hour (consistent). Upstream build-up DROPPED: Amwal describes a one-two with Gedo, Taipei Times a long defensive clearance controlled by Soliman - the two disagree, so only the beat-the-defender and finish are kept."
+  },
+  {
+   "id": "goal-2020-11-27-mohamed-magdy-afsha-86",
+   "value": {
+    "name": "86' · Mohamed Magdy Afsha v Zamalek",
+    "subtitle": "2020-11-27 · 86'",
+    "on": "2020-11-27",
+    "competition": "CAF Champions League final",
+    "opponent": "Zamalek",
+    "score": "2-1",
+    "narrative": "Mohamed Magdy Afsha: Collects a loose ball and controls it up with his knee. Mohamed Magdy Afsha: Volley into the corner of the net.",
+    "sequence": [
+     {
+      "actor": "Mohamed Magdy Afsha",
+      "side": "club",
+      "action": "dribble",
+      "zone": "C2",
+      "position": "outside the box",
+      "note": "Collects a loose ball and controls it up with his knee."
+     },
+     {
+      "actor": "Mohamed Magdy Afsha",
+      "side": "club",
+      "action": "shot",
+      "zone": "C2",
+      "position": "outside the box",
+      "note": "Volley into the corner of the net."
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "ah-g-reuters-2020",
+    "ah-g-astro-2020"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-11-12",
+   "approvedAt": null,
+   "approvedBy": null,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Reuters: four minutes from time, loose ball collected, controlled under pressure, volleyed into the corner. Stadium Astro: 86', won the ball, knee to lift it, volley into the right side. Distance DROPPED (Reuters 30 metres vs Astro about 20 yards); side of goal kept generic. AFP (ah-g-afp-2020, not used as a source) gives 85' in one passage - flagged for review. · HELD FOR THE OWNER: AFP gives 85 minutes against 86 from Reuters and Stadium Astro."
+  },
+  {
+   "id": "goal-2021-07-17-mohamed-sherif-53",
+   "value": {
+    "name": "53' · Mohamed Sherif v Kaizer Chiefs",
+    "subtitle": "2021-07-17 · 53'",
+    "on": "2021-07-17",
+    "competition": "CAF Champions League final",
+    "opponent": "Kaizer Chiefs",
+    "score": "3-0",
+    "narrative": "Akram Tawfik: Overlaps down the right (Goal.com). Akram Tawfik: Pass that splits the Chiefs defence. Mohamed Sherif: Finishes past the onrushing goalkeeper Daniel Akpeyi.",
+    "sequence": [
+     {
+      "actor": "Akram Tawfik",
+      "side": "club",
+      "action": "dribble",
+      "zone": "E3",
+      "position": "right flank (overlapping run)",
+      "note": "Overlaps down the right (Goal.com)."
+     },
+     {
+      "actor": "Akram Tawfik",
+      "side": "club",
+      "action": "throughBall",
+      "zone": "E2",
+      "position": "right side",
+      "note": "Pass that splits the Chiefs defence."
+     },
+     {
+      "actor": "Mohamed Sherif",
+      "side": "club",
+      "action": "shot",
+      "zone": "C1",
+      "position": "through on goal",
+      "note": "Finishes past the onrushing goalkeeper Daniel Akpeyi."
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "ah-g-caf-2021",
+    "ah-g-goal-2021"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "CAF: eight minutes into the second half, Tawfik Akram pass put Sherif through, lofted over Akpeyi. Goal.com: 53', Akram Tawfik overlapped down the right and played a defence-splitting pass. Reuters (ah-g-reuters-2021) agrees on Tawfik's pass and adds a tight-angle finish; finish type (chip vs angle) not asserted."
+  },
+  {
+   "id": "goal-2021-07-17-mohamed-magdy-afsha-64",
+   "value": {
+    "name": "64' · Mohamed Magdy Afsha v Kaizer Chiefs",
+    "subtitle": "2021-07-17 · 64'",
+    "on": "2021-07-17",
+    "competition": "CAF Champions League final",
+    "opponent": "Kaizer Chiefs",
+    "score": "3-0",
+    "narrative": "Mohamed Sherif: Returns the ball to Afsha. Mohamed Magdy Afsha: Shot into the left-hand corner past Akpeyi.",
+    "sequence": [
+     {
+      "actor": "Mohamed Sherif",
+      "side": "club",
+      "action": "pass",
+      "zone": "C2",
+      "position": "around the box",
+      "note": "Returns the ball to Afsha."
+     },
+     {
+      "actor": "Mohamed Magdy Afsha",
+      "side": "club",
+      "action": "shot",
+      "zone": "C2",
+      "position": "edge of the box",
+      "note": "Shot into the left-hand corner past Akpeyi."
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "ah-g-caf-2021",
+    "ah-g-goal-2021",
+    "ah-g-reuters-2021"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "CAF: 64', counter after a long ball, Mohamed Taher carried on the left and passed to Afsha, one-two with Sherif, shot to the far left corner. Goal.com: 64', set up by Sherif, curled into the top left corner. Reuters: curling shot from the edge of the box. Height of finish DROPPED (CAF low vs Goal top corner). Taher's two touches and the first leg of the one-two come from CAF only. · Applied the two-publisher rule: the first leg of the one-two is reported by CAF only; Taher Mohamed's pass is reported by CAF only; Taher Mohamed's run is reported by CAF only."
+  },
+  {
+   "id": "goal-2021-07-17-amr-el-solia-74",
+   "value": {
+    "name": "74' · Amr El Solia v Kaizer Chiefs",
+    "subtitle": "2021-07-17 · 74'",
+    "on": "2021-07-17",
+    "competition": "CAF Champions League final",
+    "opponent": "Kaizer Chiefs",
+    "score": "3-0",
+    "narrative": "Mohamed Sherif: Backheel lay-off. Amr El Solia: Shot past Akpeyi.",
+    "sequence": [
+     {
+      "actor": "Mohamed Sherif",
+      "side": "club",
+      "action": "pass",
+      "zone": "C2",
+      "position": "edge of the box",
+      "note": "Backheel lay-off."
+     },
+     {
+      "actor": "Amr El Solia",
+      "side": "club",
+      "action": "shot",
+      "zone": "C2",
+      "position": "around the edge of the penalty area",
+      "note": "Shot past Akpeyi."
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "ah-g-caf-2021",
+    "ah-g-reuters-2021"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Reuters: 74', Sherif set him up with a back heel. CAF: ten minutes after the 64' goal, Sherif collected at the edge of the box and rolled a backheel; El Solia curled it past the keeper (curl detail CAF only). Goal.com implies about 73' ('17 minutes left') so it is not used as a source here."
+  }
+ ],
+ "skipped": [
+  {
+   "what": "2020-11-27 Amr El Solia 5' header v Zamalek",
+   "reason": "Header from a corner agreed by Reuters, AFP and Stadium Astro, but only Astro names the corner taker (Afsha) and no source gives the corner side, so a two-touch sequence cannot be built without an unsourced flank."
+  },
+  {
+   "what": "2013-11-10 Mohamed Aboutrika 54' v Orlando Pirates",
+   "reason": "Sources disagree on the preceding touch: Sport24/AFP says Abdallah Said's blocked shot, Al Jazeera says Ahmed Fathi's blocked shot, TimesLIVE says a ball in from Abdalla Mohamed on the right."
+  },
+  {
+   "what": "2013-11-10 Ahmed Abdel-Zaher v Orlando Pirates",
+   "reason": "Minute disagreement (Sport24 gives both 78' and 79', Al Jazeera about 78', TimesLIVE 79'); assist only named by TimesLIVE ('Mahmoud')."
+  },
+  {
+   "what": "2024-05-25 CAF Champions League final v Espérance (1-0)",
+   "reason": "Goal reported as an early own goal; not an Al Ahly scorer."
+  },
+  {
+   "what": "2006-10-29 Mohamed Aboutrika 27' v CS Sfaxien (first leg)",
+   "reason": "No fetched report describes the build-up."
+  }
+ ]
+}
