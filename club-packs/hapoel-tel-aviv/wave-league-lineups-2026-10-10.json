@@ -22,7 +22,7 @@
    "url": "https://webws.365scores.com/web/game/?gameId=4739333",
    "publisher": "365Scores",
    "access": "available",
-   "checkedAt": "2026-10-10"
+   "checkedAt": "2026-11-12"
   },
   {
    "id": "ls-lu-1800626",
@@ -30,7 +30,7 @@
    "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1800626",
    "publisher": "LiveScore",
    "access": "available",
-   "checkedAt": "2026-10-10"
+   "checkedAt": "2026-11-12"
   },
   {
    "id": "s365-4739339",
@@ -102,7 +102,7 @@
    "url": "https://webws.365scores.com/web/game/?gameId=4702057",
    "publisher": "365Scores",
    "access": "available",
-   "checkedAt": "2026-10-10"
+   "checkedAt": "2026-11-12"
   },
   {
    "id": "ls-lu-1766846",
@@ -110,7 +110,7 @@
    "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1766846",
    "publisher": "LiveScore",
    "access": "available",
-   "checkedAt": "2026-10-10"
+   "checkedAt": "2026-11-12"
   },
   {
    "id": "s365-4702055",
@@ -214,7 +214,7 @@
    "url": "https://webws.365scores.com/web/game/?gameId=4702017",
    "publisher": "365Scores",
    "access": "available",
-   "checkedAt": "2026-10-10"
+   "checkedAt": "2026-11-12"
   },
   {
    "id": "ls-lu-1766833",
@@ -222,7 +222,7 @@
    "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1766833",
    "publisher": "LiveScore",
    "access": "available",
-   "checkedAt": "2026-10-10"
+   "checkedAt": "2026-11-12"
   },
   {
    "id": "s365-4702005",
@@ -439,9 +439,380 @@
    "publisher": "365Scores",
    "access": "available",
    "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4739288",
+   "title": "365Scores: Hapoel Beer Sheva 0-1 Hapoel Tel Aviv, 2026-11-08",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739288",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "ls-lu-1800675",
+   "title": "LiveScore: Hapoel Beer Sheva 0-1 Hapoel Tel Aviv, 2026-11-08 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1800675",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4739299",
+   "title": "365Scores: Hapoel Tel Aviv 2-1 Maccabi Haifa, 2026-11-02",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739299",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "ls-lu-1800667",
+   "title": "LiveScore: Hapoel Tel Aviv 2-1 Maccabi Haifa, 2026-11-02 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1800667",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4815899",
+   "title": "365Scores: Maccabi Tel Aviv 2-3 Hapoel Tel Aviv, 2026-10-29",
+   "url": "https://webws.365scores.com/web/game/?gameId=4815899",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4739303",
+   "title": "365Scores: Hapoel Jerusalem 0-3 Hapoel Tel Aviv, 2026-10-24",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739303",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "ls-lu-1800684",
+   "title": "LiveScore: Hapoel Jerusalem 0-3 Hapoel Tel Aviv, 2026-10-24 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1800684",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4739313",
+   "title": "365Scores: Hapoel Tel Aviv 1-0 Ironi Tiberias, 2026-10-17",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739313",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "ls-lu-1800658",
+   "title": "LiveScore: Hapoel Tel Aviv 1-0 Ironi Tiberias, 2026-10-17 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1800658",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4739318",
+   "title": "365Scores: Kiryat Shmona 1-3 Hapoel Tel Aviv, 2026-10-10",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739318",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "ls-lu-1800656",
+   "title": "LiveScore: Kiryat Shmona 1-3 Hapoel Tel Aviv, 2026-10-10 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1800656",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-12"
   }
  ],
  "matches": [
+  {
+   "id": "a-m-2026-11-08-hapoel-beer-sheva-hapoel-tel-aviv",
+   "value": {
+    "name": "Hapoel Beer Sheva 0-1 Hapoel Tel Aviv",
+    "on": "2026-11-08",
+    "competition": "Premier League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Assaf Tzur",
+     "Yannick Leliendal",
+     "Chico",
+     "Fernand Mayembo",
+     "Marcus Coco",
+     "Andrian Kraev",
+     "Lucas Falcão",
+     "Omri Altman",
+     "Roi Alkukin",
+     "Douglas Owusu",
+     "Daniel Dappa"
+    ],
+    "bench": [
+     "El Yam Kancepolsky",
+     "Amit Lemkin",
+     "Roy Korine",
+     "Mor Buskila",
+     "Anas Mahamid",
+     "Dor Benyamini",
+     "Tal Archel",
+     "Shahar Piven",
+     "Doron Leidner"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4739288",
+    "ls-lu-1800675"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-hapoel-tel-aviv"
+  },
+  {
+   "id": "a-m-2026-11-02-hapoel-tel-aviv-maccabi-haifa",
+   "value": {
+    "name": "Hapoel Tel Aviv 2-1 Maccabi Haifa",
+    "on": "2026-11-02",
+    "competition": "Premier League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Assaf Tzur",
+     "Yannick Leliendal",
+     "Chico",
+     "Fernand Mayembo",
+     "Marcus Coco",
+     "Andrian Kraev",
+     "Lucas Falcão",
+     "Omri Altman",
+     "Roi Alkukin",
+     "Douglas Owusu",
+     "Daniel Dappa"
+    ],
+    "bench": [
+     "Doron Leidner",
+     "El Yam Kancepolsky",
+     "Amit Lemkin",
+     "Roy Korine",
+     "Dor Benyamini",
+     "Tal Archel",
+     "Shahar Piven",
+     "Yonatan Ferber",
+     "Mor Buskila"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4739299",
+    "ls-lu-1800667"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-hapoel-tel-aviv"
+  },
+  {
+   "id": "a-m-2026-10-29-maccabi-tel-aviv-hapoel-tel-aviv",
+   "value": {
+    "name": "Maccabi Tel Aviv 2-3 Hapoel Tel Aviv",
+    "on": "2026-10-29",
+    "competition": "Toto League Cup - Final",
+    "score": "2-3",
+    "venue": null,
+    "lineup": [
+     "Assaf Tzur",
+     "Marcus Coco",
+     "Fernand Mayembo",
+     "Chico",
+     "Yannick Leliendal",
+     "Lucas Falcão",
+     "El Yam Kancepolsky",
+     "Douglas Owusu",
+     "Roi Alkukin",
+     "Omri Altman",
+     "Daniel Dappa"
+    ],
+    "bench": [
+     "Shahar Piven",
+     "Andrian Kraev",
+     "Amit Lemkin",
+     "Yonatan Ferber",
+     "Roy Korine",
+     "Dor Benyamini",
+     "Tal Archel",
+     "Doron Leidner",
+     "Mor Buskila"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4815899"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore has no full eleven for this match.",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-10-24-hapoel-jerusalem-hapoel-tel-aviv",
+   "value": {
+    "name": "Hapoel Jerusalem 0-3 Hapoel Tel Aviv",
+    "on": "2026-10-24",
+    "competition": "Premier League",
+    "score": "0-3",
+    "venue": null,
+    "lineup": [
+     "Stav Turiel",
+     "Omri Altman",
+     "Daniel Dappa",
+     "Douglas Owusu",
+     "El Yam Kancepolsky",
+     "Lucas Falcão",
+     "Yannick Leliendal",
+     "Chico",
+     "Fernand Mayembo",
+     "Marcus Coco",
+     "Assaf Tzur"
+    ],
+    "bench": [
+     "Shahar Piven",
+     "Doron Leidner",
+     "Roi Alkukin",
+     "Roy Korine",
+     "Mor Buskila",
+     "Dor Benyamini",
+     "Tal Archel",
+     "Itay Shavit",
+     "Amit Lemkin"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4739303",
+    "ls-lu-1800684"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-hapoel-tel-aviv"
+  },
+  {
+   "id": "a-m-2026-10-17-hapoel-tel-aviv-ironi-tiberias",
+   "value": {
+    "name": "Hapoel Tel Aviv 1-0 Ironi Tiberias",
+    "on": "2026-10-17",
+    "competition": "Premier League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Assaf Tzur",
+     "Yannick Leliendal",
+     "Chico",
+     "Fernand Mayembo",
+     "Marcus Coco",
+     "Andrian Kraev",
+     "El Yam Kancepolsky",
+     "Omri Altman",
+     "Roi Alkukin",
+     "Douglas Owusu",
+     "Emmanuel Boateng"
+    ],
+    "bench": [
+     "Tal Archel",
+     "Doron Leidner",
+     "Amit Lemkin",
+     "Stav Turiel",
+     "Daniel Dappa",
+     "Dor Benyamini",
+     "Shahar Piven",
+     "Roy Korine",
+     "Mor Buskila"
+    ],
+    "scorers": [
+     "Omri Altman"
+    ]
+   },
+   "sources": [
+    "s365-4739313",
+    "ls-lu-1800658"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-hapoel-tel-aviv"
+  },
+  {
+   "id": "a-m-2026-10-10-kiryat-shmona-hapoel-tel-aviv",
+   "value": {
+    "name": "Kiryat Shmona 1-3 Hapoel Tel Aviv",
+    "on": "2026-10-10",
+    "competition": "Premier League",
+    "score": "1-3",
+    "venue": null,
+    "lineup": [
+     "Assaf Tzur",
+     "Yannick Leliendal",
+     "Chico",
+     "Fernand Mayembo",
+     "Marcus Coco",
+     "El Yam Kancepolsky",
+     "Lucas Falcão",
+     "Omri Altman",
+     "Roi Alkukin",
+     "Douglas Owusu",
+     "Emmanuel Boateng"
+    ],
+    "bench": [
+     "Roy Korine",
+     "Shahar Piven",
+     "Stav Turiel",
+     "Mor Buskila",
+     "Daniel Dappa",
+     "Dor Benyamini",
+     "Tal Archel",
+     "Doron Leidner",
+     "Amit Lemkin"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4739318",
+    "ls-lu-1800656"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-hapoel-tel-aviv"
+  },
   {
    "id": "a-m-2026-09-18-hapoel-tel-aviv-hapoel-petah-tikva",
    "value": {
@@ -521,19 +892,21 @@
      "El Yam Kancepolsky",
      "Amit Lemkin"
     ],
-    "scorers": []
+    "scorers": [
+     "Stav Turiel"
+    ]
    },
    "sources": [
     "s365-4739333",
     "ls-lu-1800626"
    ],
-   "researchedAt": "2026-10-10",
+   "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
    "confidence": 3,
    "status": "approved",
-   "approvedAt": "2026-10-10",
+   "approvedAt": "2026-11-12",
    "approvedBy": "automated:cross-source-review-league-lineups-hapoel-tel-aviv"
   },
   {
@@ -801,19 +1174,21 @@
      "Shahar Piven",
      "Anas Mahamid"
     ],
-    "scorers": []
+    "scorers": [
+     "Omri Altman"
+    ]
    },
    "sources": [
     "s365-4702057",
     "ls-lu-1766846"
    ],
-   "researchedAt": "2026-10-10",
+   "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
    "confidence": 3,
    "status": "approved",
-   "approvedAt": "2026-10-10",
+   "approvedAt": "2026-11-12",
    "approvedBy": "automated:cross-source-review-league-lineups-hapoel-tel-aviv"
   },
   {
@@ -1130,19 +1505,24 @@
      "Marcus Coco",
      "Amit Lemkin"
     ],
-    "scorers": []
+    "scorers": [
+     "Loizos Loizou",
+     "Omri Altman",
+     "Omri Altman",
+     "Loizos Loizou"
+    ]
    },
    "sources": [
     "s365-4702017",
     "ls-lu-1766833"
    ],
-   "researchedAt": "2026-10-10",
+   "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
    "confidence": 3,
    "status": "approved",
-   "approvedAt": "2026-10-10",
+   "approvedAt": "2026-11-12",
    "approvedBy": "automated:cross-source-review-league-lineups-hapoel-tel-aviv"
   },
   {
@@ -2286,6 +2666,398 @@
    "status": "approved",
    "approvedAt": "2026-10-12",
    "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
+  }
+ ],
+ "players": [
+  {
+   "id": "p-ll-assaf-tzur",
+   "value": {
+    "name": "Assaf Tzur",
+    "sport": "football",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4702033",
+    "ls-lu-1766837"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-hapoel-tel-aviv",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: GK."
+  },
+  {
+   "id": "p-ll-yannick-leliendal",
+   "value": {
+    "name": "Yannick Leliendal",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4739326",
+    "ls-lu-1800632"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-hapoel-tel-aviv",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
+  },
+  {
+   "id": "p-ll-fernand-mayembo",
+   "value": {
+    "name": "Fernand Mayembo",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4702033",
+    "ls-lu-1766837"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-hapoel-tel-aviv",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
+  },
+  {
+   "id": "p-ll-marcus-coco",
+   "value": {
+    "name": "Marcus Coco",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4702033",
+    "ls-lu-1766837"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-hapoel-tel-aviv",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
+  },
+  {
+   "id": "p-ll-andrian-kraev",
+   "value": {
+    "name": "Andrian Kraev",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4702033",
+    "ls-lu-1766837"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-hapoel-tel-aviv",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
+  },
+  {
+   "id": "p-ll-lucas-falcao",
+   "value": {
+    "name": "Lucas Falcão",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4702033",
+    "ls-lu-1766837"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-hapoel-tel-aviv",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
+  },
+  {
+   "id": "p-ll-roi-alkukin",
+   "value": {
+    "name": "Roi Alkukin",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4702039",
+    "ls-lu-1766841"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-hapoel-tel-aviv",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
+  },
+  {
+   "id": "p-ll-daniel-dappa",
+   "value": {
+    "name": "Daniel Dappa",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4702019",
+    "ls-lu-1766821"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-hapoel-tel-aviv",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: FW."
+  },
+  {
+   "id": "p-ll-el-yam-kancepolsky",
+   "value": {
+    "name": "El Yam Kancepolsky",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4702028",
+    "ls-lu-1766828"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-hapoel-tel-aviv",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
+  },
+  {
+   "id": "p-ll-emmanuel-boateng",
+   "value": {
+    "name": "Emmanuel Boateng",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4702033",
+    "ls-lu-1766837"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-hapoel-tel-aviv",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: FW."
+  },
+  {
+   "id": "p-ll-doron-leidner",
+   "value": {
+    "name": "Doron Leidner",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4702033",
+    "ls-lu-1766837"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-hapoel-tel-aviv",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
+  },
+  {
+   "id": "p-ll-shahar-piven",
+   "value": {
+    "name": "Shahar Piven",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4702019",
+    "ls-lu-1766821"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-hapoel-tel-aviv",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
+  },
+  {
+   "id": "p-ll-dor-benyamini",
+   "value": {
+    "name": "Dor Benyamini",
+    "sport": "football",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4702057",
+    "ls-lu-1766846"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-hapoel-tel-aviv",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: GK."
+  },
+  {
+   "id": "p-ll-tal-archel",
+   "value": {
+    "name": "Tal Archel",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4702047",
+    "ls-lu-1766848"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-hapoel-tel-aviv",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
+  },
+  {
+   "id": "p-ll-omri-altman",
+   "value": {
+    "name": "Omri Altman",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4702057",
+    "ls-lu-1766846"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-hapoel-tel-aviv",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: FW."
   }
  ],
  "kits": [],

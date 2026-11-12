@@ -1,6 +1,2001 @@
 {
- "sources": [],
- "matches": [],
+ "sources": [
+  {
+   "id": "s365-4882515",
+   "title": "365Scores: Kawkab Marrakech 2-1 Wydad AC, 2026-11-07",
+   "url": "https://webws.365scores.com/web/game/?gameId=4882515",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4882505",
+   "title": "365Scores: Wydad AC 1-0 Maghreb Tétouan, 2026-10-31",
+   "url": "https://webws.365scores.com/web/game/?gameId=4882505",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4882496",
+   "title": "365Scores: US Touarga 0-1 Wydad AC, 2026-10-24",
+   "url": "https://webws.365scores.com/web/game/?gameId=4882496",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4870765",
+   "title": "365Scores: Wydad AC 1-1 Amal Tiznit, 2026-10-18",
+   "url": "https://webws.365scores.com/web/game/?gameId=4870765",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4870757",
+   "title": "365Scores: Wydad AC 0-0 CODM Meknes, 2026-10-11",
+   "url": "https://webws.365scores.com/web/game/?gameId=4870757",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4859475",
+   "title": "365Scores: El Jadida 0-2 Wydad AC, 2026-10-03",
+   "url": "https://webws.365scores.com/web/game/?gameId=4859475",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4827866",
+   "title": "365Scores: Wydad AC 3-0 Wydad Temara, 2026-09-26",
+   "url": "https://webws.365scores.com/web/game/?gameId=4827866",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4754383",
+   "title": "365Scores: Wydad AC 1-2 US Touarga, 2026-07-05",
+   "url": "https://webws.365scores.com/web/game/?gameId=4754383",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4749424",
+   "title": "365Scores: RSB Berkane 2-0 Wydad AC, 2026-07-02",
+   "url": "https://webws.365scores.com/web/game/?gameId=4749424",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4745077",
+   "title": "365Scores: Wydad AC 1-3 Olympique Dcheira, 2026-06-28",
+   "url": "https://webws.365scores.com/web/game/?gameId=4745077",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4739956",
+   "title": "365Scores: Wydad AC 0-1 Maghreb Fès, 2026-06-25",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739956",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4739951",
+   "title": "365Scores: El Jadida 1-0 Wydad AC, 2026-06-21",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739951",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4737137",
+   "title": "365Scores: Wydad AC 1-2 FUS Rabat, 2026-06-18",
+   "url": "https://webws.365scores.com/web/game/?gameId=4737137",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4733317",
+   "title": "365Scores: AS Far Rabat 2-1 Wydad AC, 2026-06-14",
+   "url": "https://webws.365scores.com/web/game/?gameId=4733317",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4729829",
+   "title": "365Scores: Wydad AC 1-0 Olympique Safi, 2026-06-08",
+   "url": "https://webws.365scores.com/web/game/?gameId=4729829",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4716408",
+   "title": "365Scores: Ittihad Tanger 2-1 Wydad AC, 2026-06-03",
+   "url": "https://webws.365scores.com/web/game/?gameId=4716408",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4716391",
+   "title": "365Scores: Wydad AC 3-2 Hassania Agadir, 2026-05-23",
+   "url": "https://webws.365scores.com/web/game/?gameId=4716391",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4708884",
+   "title": "365Scores: Raja Casablanca 0-1 Wydad AC, 2026-05-09",
+   "url": "https://webws.365scores.com/web/game/?gameId=4708884",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4708877",
+   "title": "365Scores: Wydad AC 2-0 CODM Meknes, 2026-05-06",
+   "url": "https://webws.365scores.com/web/game/?gameId=4708877",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4708821",
+   "title": "365Scores: CR Khemis Zemamra 1-0 Wydad AC, 2026-05-03",
+   "url": "https://webws.365scores.com/web/game/?gameId=4708821",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4704263",
+   "title": "365Scores: Wydad AC 1-2 Union Yacoub El Mansour, 2026-04-29",
+   "url": "https://webws.365scores.com/web/game/?gameId=4704263",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4703027",
+   "title": "365Scores: Kawkab Marrakech 0-0 Wydad AC, 2026-04-25",
+   "url": "https://webws.365scores.com/web/game/?gameId=4703027",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4700089",
+   "title": "365Scores: Maghreb Fès 1-0 Wydad AC, 2026-04-12",
+   "url": "https://webws.365scores.com/web/game/?gameId=4700089",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4696799",
+   "title": "365Scores: Wydad AC 1-1 El Jadida, 2026-04-06",
+   "url": "https://webws.365scores.com/web/game/?gameId=4696799",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4696804",
+   "title": "365Scores: FUS Rabat 1-0 Wydad AC, 2026-04-03",
+   "url": "https://webws.365scores.com/web/game/?gameId=4696804",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4674378",
+   "title": "365Scores: Wydad AC 2-2 Olympique Safi, 2026-03-22",
+   "url": "https://webws.365scores.com/web/game/?gameId=4674378",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4674377",
+   "title": "365Scores: Olympique Safi 1-1 Wydad AC, 2026-03-15",
+   "url": "https://webws.365scores.com/web/game/?gameId=4674377",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4671921",
+   "title": "365Scores: US Touarga 3-4 Wydad AC, 2026-03-08",
+   "url": "https://webws.365scores.com/web/game/?gameId=4671921",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4671963",
+   "title": "365Scores: Wydad AC 1-2 AS Far Rabat, 2026-03-04",
+   "url": "https://webws.365scores.com/web/game/?gameId=4671963",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4671915",
+   "title": "365Scores: Wydad AC 1-0 RSB Berkane, 2026-03-01",
+   "url": "https://webws.365scores.com/web/game/?gameId=4671915",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4671891",
+   "title": "365Scores: Olympique Dcheira 0-5 Wydad AC, 2026-02-21",
+   "url": "https://webws.365scores.com/web/game/?gameId=4671891",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4611619",
+   "title": "365Scores: Wydad AC 2-0 Azam FC, 2026-02-15",
+   "url": "https://webws.365scores.com/web/game/?gameId=4611619",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4611628",
+   "title": "365Scores: Nairobi United 0-1 Wydad AC, 2026-02-08",
+   "url": "https://webws.365scores.com/web/game/?gameId=4611628",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4611635",
+   "title": "365Scores: As Maniema Union 2-1 Wydad AC, 2026-02-01",
+   "url": "https://webws.365scores.com/web/game/?gameId=4611635",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4611643",
+   "title": "365Scores: Wydad AC 1-0 As Maniema Union, 2026-01-25",
+   "url": "https://webws.365scores.com/web/game/?gameId=4611643",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4610787",
+   "title": "365Scores: Azam FC 0-1 Wydad AC, 2025-11-28",
+   "url": "https://webws.365scores.com/web/game/?gameId=4610787",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4610783",
+   "title": "365Scores: Wydad AC 3-0 Nairobi United, 2025-11-23",
+   "url": "https://webws.365scores.com/web/game/?gameId=4610783",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  }
+ ],
+ "matches": [
+  {
+   "id": "a-m-2026-11-07-kawkab-marrakech-wydad-ac",
+   "value": {
+    "name": "Kawkab Marrakech 2-1 Wydad AC",
+    "on": "2026-11-07",
+    "competition": "Botola Pro",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Rachid Ghanimi",
+     "Mohamed Moufid",
+     "Haitam Hamani",
+     "Aymane El Hassouni",
+     "Sallah Moussaddaq",
+     "Yahia Attiyat Allah",
+     "Silvere Ganvoula",
+     "Oussama Zemraoui",
+     "Issoufou Dayo",
+     "Joseph Bakasu",
+     "Adil Khalloufi"
+    ],
+    "bench": [
+     "Mouad Enzo",
+     "Yassine Jabrane",
+     "Hamza Hanouri",
+     "El Mehdi Benabid",
+     "Hamza Jananallah",
+     "Yahya Jabrane",
+     "Naïm Byar",
+     "Nizar Al Rashdan",
+     "Salaheddine Cofi"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4882515"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-10-31-wydad-ac-maghreb-tetouan",
+   "value": {
+    "name": "Wydad AC 1-0 Maghreb Tétouan",
+    "on": "2026-10-31",
+    "competition": "Botola Pro",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Rachid Ghanimi",
+     "Mohamed Moufid",
+     "Aymane El Hassouni",
+     "Sallah Moussaddaq",
+     "Yahia Attiyat Allah",
+     "Silvere Ganvoula",
+     "Nizar Al Rashdan",
+     "Oussama Zemraoui",
+     "Issoufou Dayo",
+     "Joseph Bakasu",
+     "Adil Khalloufi"
+    ],
+    "bench": [
+     "Walid Atik",
+     "Mouad Enzo",
+     "Haitam Hamani",
+     "Yassine Jabrane",
+     "Hamza Hanouri",
+     "El Mehdi Benabid",
+     "Hamza Jananallah",
+     "Yahya Jabrane",
+     "Naïm Byar"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4882505"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore has no full eleven for this match.",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-10-24-us-touarga-wydad-ac",
+   "value": {
+    "name": "US Touarga 0-1 Wydad AC",
+    "on": "2026-10-24",
+    "competition": "Botola Pro",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Rachid Ghanimi",
+     "Mohamed Moufid",
+     "Aymane El Hassouni",
+     "Sallah Moussaddaq",
+     "Silvere Ganvoula",
+     "Nizar Al Rashdan",
+     "Oussama Zemraoui",
+     "Issoufou Dayo",
+     "Joseph Bakasu",
+     "Yahia Attiyat Allah",
+     "Adil Khalloufi"
+    ],
+    "bench": [
+     "Yahya Jabrane",
+     "Haitam Hamani",
+     "Yassine Jabrane",
+     "Hamza Hanouri",
+     "Abderrazak El Wadi",
+     "Walid Atik",
+     "Hamza Jananallah",
+     "Naïm Byar",
+     "Salaheddine Cofi"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4882496"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore has no full eleven for this match.",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-10-18-wydad-ac-amal-tiznit",
+   "value": {
+    "name": "Wydad AC 1-1 Amal Tiznit",
+    "on": "2026-10-18",
+    "competition": "Botola Pro",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Mohamed Moufid",
+     "Aymane El Hassouni",
+     "Sallah Moussaddaq",
+     "Yahia Attiyat Allah",
+     "Silvere Ganvoula",
+     "Nizar Al Rashdan",
+     "Mouad Enzo",
+     "Oussama Zemraoui",
+     "Issoufou Dayo",
+     "Adil Khalloufi",
+     "Rachid Ghanimi"
+    ],
+    "bench": [
+     "Haitam Hamani",
+     "Hamza Hanouri",
+     "Abderrazak El Wadi",
+     "Driss El Mahdaoui",
+     "Mouhamed Sambou",
+     "Rayane Mahtou",
+     "Yahya Jabrane",
+     "Naïm Byar",
+     "Yassine Jabrane"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4870765"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore has no full eleven for this match.",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-10-11-wydad-ac-codm-meknes",
+   "value": {
+    "name": "Wydad AC 0-0 CODM Meknes",
+    "on": "2026-10-11",
+    "competition": "Botola Pro",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Mohamed Moufid",
+     "Naïm Byar",
+     "Aymane El Hassouni",
+     "Sallah Moussaddaq",
+     "Yahia Attiyat Allah",
+     "Silvere Ganvoula",
+     "El Mehdi Benabid",
+     "Mouad Enzo",
+     "Oussama Zemraoui",
+     "Issoufou Dayo",
+     "Adil Khalloufi"
+    ],
+    "bench": [
+     "Nizar Al Rashdan",
+     "Haitam Hamani",
+     "Yassine Jabrane",
+     "Hamza Hanouri",
+     "Abderrazak El Wadi",
+     "Hamza Jananallah",
+     "Rayane Mahtou",
+     "Yahya Jabrane",
+     "Salaheddine Cofi"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4870757"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore has no full eleven for this match.",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-10-03-el-jadida-wydad-ac",
+   "value": {
+    "name": "El Jadida 0-2 Wydad AC",
+    "on": "2026-10-03",
+    "competition": "Botola Pro",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Benabid",
+     "Issoufou Dayo",
+     "Sallah Moussaddaq",
+     "Mohamed Moufid",
+     "Adil Khalloufi",
+     "Naïm Byar",
+     "Oussama Zemraoui",
+     "Mouad Enzo",
+     "Aymane El Hassouni",
+     "Silvere Ganvoula",
+     "Yahia Attiyat Allah"
+    ],
+    "bench": [
+     "Rayane Mahtou",
+     "Yahya Jabrane",
+     "Haitam Hamani",
+     "Yassine Jabrane",
+     "Hamza Hanouri",
+     "Abderrazak El Wadi",
+     "Hamza Jananallah",
+     "Joseph Bakasu",
+     "Salaheddine Cofi"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4859475"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore has no full eleven for this match.",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-09-26-wydad-ac-wydad-temara",
+   "value": {
+    "name": "Wydad AC 3-0 Wydad Temara",
+    "on": "2026-09-26",
+    "competition": "Botola Pro",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Benabid",
+     "Issoufou Dayo",
+     "Sallah Moussaddaq",
+     "Mohamed Moufid",
+     "Yahya Jabrane",
+     "Naïm Byar",
+     "Oussama Zemraoui",
+     "Mouad Enzo",
+     "Walid Nassi",
+     "Hamza Hanouri",
+     "Yahia Attiyat Allah"
+    ],
+    "bench": [
+     "Adil Khalloufi",
+     "Aymane El Hassouni",
+     "Haitam Hamani",
+     "Yassine Jabrane",
+     "Silvere Ganvoula",
+     "Abderrazak El Wadi",
+     "Hamza Jananallah",
+     "Rayane Mahtou",
+     "Salaheddine Cofi"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4827866"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-07-05-wydad-ac-us-touarga",
+   "value": {
+    "name": "Wydad AC 1-2 US Touarga",
+    "on": "2026-07-05",
+    "competition": "Botola Pro",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Nordin Amrabat",
+     "Joseph Bakasu",
+     "Wissam Ben Yedder",
+     "Ayoub Boucheta",
+     "Naïm Byar",
+     "Mohamed Elouardi",
+     "Ayman El Wafi",
+     "Abdelali M'Hamdi",
+     "Sallah Moussaddaq",
+     "Walid Nassi",
+     "Ramiro Vaca"
+    ],
+    "bench": [
+     "Nabil Khali",
+     "Rayane Mahtou",
+     "Zouhair El Moutaraji",
+     "Hamza Hanouri",
+     "Moises Paniagua",
+     "Omar Aqzdaou",
+     "Bart Meijers",
+     "Brahim Laafouri",
+     "Hamza Elowasti"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4754383"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-07-02-rsb-berkane-wydad-ac",
+   "value": {
+    "name": "RSB Berkane 2-0 Wydad AC",
+    "on": "2026-07-02",
+    "competition": "Botola Pro",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Nordin Amrabat",
+     "Omar Aqzdaou",
+     "Joseph Bakasu",
+     "Mohamed Bouchouari",
+     "Abdoulaye Coulibaly",
+     "Mohamed Elouardi",
+     "Ayman El Wafi",
+     "Rayane Mahtou",
+     "Moises Paniagua",
+     "Mohamed Rayhi",
+     "Mouhamed Sambou"
+    ],
+    "bench": [
+     "Brahim Laafouri",
+     "Nabil Khali",
+     "Mohamed Mounssef",
+     "Arthur",
+     "Salman Rihani",
+     "Sallah Moussaddaq",
+     "Naïm Byar",
+     "Abderrazak El Wadi",
+     "Hamza Elowasti"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4749424"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-06-28-wydad-ac-olympique-dcheira",
+   "value": {
+    "name": "Wydad AC 1-3 Olympique Dcheira",
+    "on": "2026-06-28",
+    "competition": "Botola Pro",
+    "score": "1-3",
+    "venue": null,
+    "lineup": [
+     "Omar Aqzdaou",
+     "Wissam Ben Yedder",
+     "Ayoub Boucheta",
+     "Mohamed Bouchouari",
+     "Naïm Byar",
+     "Abdoulaye Coulibaly",
+     "Bart Meijers",
+     "Sallah Moussaddaq",
+     "Walid Nassi",
+     "Mohamed Rayhi",
+     "Ramiro Vaca"
+    ],
+    "bench": [
+     "Nabil Khali",
+     "Nordin Amrabat",
+     "Zouhair El Moutaraji",
+     "Hamza Hanouri",
+     "Moises Paniagua",
+     "Abderrazak El Wadi",
+     "Ayman El Wafi",
+     "Rayane Mahtou",
+     "Hamza Elowasti"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4745077"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-06-25-wydad-ac-maghreb-fes",
+   "value": {
+    "name": "Wydad AC 0-1 Maghreb Fès",
+    "on": "2026-06-25",
+    "competition": "Botola Pro",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Nordin Amrabat",
+     "Omar Aqzdaou",
+     "Joseph Bakasu",
+     "Ayoub Boucheta",
+     "Naïm Byar",
+     "Abdoulaye Coulibaly",
+     "Ayman El Wafi",
+     "Bart Meijers",
+     "Sallah Moussaddaq",
+     "Walid Nassi",
+     "Ramiro Vaca"
+    ],
+    "bench": [
+     "Zouhair El Moutaraji",
+     "Mohamed Rayhi",
+     "Wissam Ben Yedder",
+     "Salman Rihani",
+     "Abderrazak El Wadi",
+     "Mohamed Bouchouari",
+     "Brahim Laafouri",
+     "Nabil Khali",
+     "Rayane Mahtou"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4739956"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-06-21-el-jadida-wydad-ac",
+   "value": {
+    "name": "El Jadida 1-0 Wydad AC",
+    "on": "2026-06-21",
+    "competition": "Botola Pro",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Nordin Amrabat",
+     "Omar Aqzdaou",
+     "Ayoub Boucheta",
+     "Naïm Byar",
+     "Abdoulaye Coulibaly",
+     "Ayman El Wafi",
+     "Mohamed Moufid",
+     "Sallah Moussaddaq",
+     "Mohamed Rayhi",
+     "Walid Sabbar",
+     "Ramiro Vaca"
+    ],
+    "bench": [
+     "Nabil Khali",
+     "Rayane Mahtou",
+     "Mohamed Mounssef",
+     "Walid Nassi",
+     "Wissam Ben Yedder",
+     "Abderrazak El Wadi",
+     "Bart Meijers",
+     "Mohamed Bouchouari",
+     "Joseph Bakasu"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4739951"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-06-18-wydad-ac-fus-rabat",
+   "value": {
+    "name": "Wydad AC 1-2 FUS Rabat",
+    "on": "2026-06-18",
+    "competition": "Botola Pro",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Joseph Bakasu",
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Mohamed Bouchouari",
+     "Ayman El Wafi",
+     "Hamza Hanouri",
+     "Mohamed Mounssef",
+     "Sallah Moussaddaq",
+     "Moises Paniagua",
+     "Mohamed Rayhi",
+     "Ramiro Vaca"
+    ],
+    "bench": [
+     "Nabil Khali",
+     "Naïm Byar",
+     "Walid Sabbar",
+     "Walid Nassi",
+     "Abdoulaye Coulibaly",
+     "Omar Aqzdaou",
+     "Bart Meijers",
+     "Rayane Mahtou",
+     "Nordin Amrabat"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4737137"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-06-14-as-far-rabat-wydad-ac",
+   "value": {
+    "name": "AS Far Rabat 2-1 Wydad AC",
+    "on": "2026-06-14",
+    "competition": "Botola Pro",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Amine Aboulfath",
+     "Joseph Bakasu",
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Naïm Byar",
+     "Ayman El Wafi",
+     "Hamza Hanouri",
+     "Abdelghafour Lamirat",
+     "Mohamed Moufid",
+     "Walid Nassi",
+     "Hakim Ziyech"
+    ],
+    "bench": [
+     "Walid Sabbar",
+     "Nordin Amrabat",
+     "Hamza Elowasti",
+     "Mohamed Rayhi",
+     "Omar Aqzdaou",
+     "Bart Meijers",
+     "Mohamed Bouchouari",
+     "Ramiro Vaca",
+     "Wissam Ben Yedder"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4733317"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-06-08-wydad-ac-olympique-safi",
+   "value": {
+    "name": "Wydad AC 1-0 Olympique Safi",
+    "on": "2026-06-08",
+    "competition": "Botola Pro",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Wissam Ben Yedder",
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Ayman El Wafi",
+     "Abdelghafour Lamirat",
+     "Mohamed Moufid",
+     "Sallah Moussaddaq",
+     "Mohamed Rayhi",
+     "Walid Sabbar",
+     "Ramiro Vaca",
+     "Hakim Ziyech"
+    ],
+    "bench": [
+     "Naïm Byar",
+     "Nordin Amrabat",
+     "Walid Nassi",
+     "Hamza Elowasti",
+     "Hamza Hanouri",
+     "Omar Aqzdaou",
+     "Bart Meijers",
+     "Mohamed Bouchouari",
+     "Mohamed Mounssef"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4729829"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-06-03-ittihad-tanger-wydad-ac",
+   "value": {
+    "name": "Ittihad Tanger 2-1 Wydad AC",
+    "on": "2026-06-03",
+    "competition": "Botola Pro",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Amine Aboulfath",
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Hamza Elowasti",
+     "Abdelghafour Lamirat",
+     "Mohamed Moufid",
+     "Sallah Moussaddaq",
+     "Walid Nassi",
+     "Mohamed Rayhi",
+     "Ramiro Vaca",
+     "Hakim Ziyech"
+    ],
+    "bench": [
+     "Walid Sabbar",
+     "Nordin Amrabat",
+     "Zouhair El Moutaraji",
+     "Omar Aqzdaou",
+     "Ayman El Wafi",
+     "Mohamed Bouchouari",
+     "Nabil Khali",
+     "Mohamed Mounssef",
+     "Wissam Ben Yedder"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4716408"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-05-23-wydad-ac-hassania-agadir",
+   "value": {
+    "name": "Wydad AC 3-2 Hassania Agadir",
+    "on": "2026-05-23",
+    "competition": "Botola Pro",
+    "score": "3-2",
+    "venue": null,
+    "lineup": [
+     "Amine Aboulfath",
+     "Joseph Bakasu",
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Naïm Byar",
+     "Hamza Elowasti",
+     "Abdelghafour Lamirat",
+     "Mohamed Moufid",
+     "Sallah Moussaddaq",
+     "Mohamed Rayhi",
+     "Hakim Ziyech"
+    ],
+    "bench": [
+     "Nordin Amrabat",
+     "Walid Nassi",
+     "Zouhair El Moutaraji",
+     "Omar Aqzdaou",
+     "Ayman El Wafi",
+     "Mohamed Bouchouari",
+     "Nabil Khali",
+     "Mohamed Mounssef",
+     "Wissam Ben Yedder"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4716391"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-05-09-raja-casablanca-wydad-ac",
+   "value": {
+    "name": "Raja Casablanca 0-1 Wydad AC",
+    "on": "2026-05-09",
+    "competition": "Botola Pro",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Amine Aboulfath",
+     "Joseph Bakasu",
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Naïm Byar",
+     "Hamza Hanouri",
+     "Mohamed Moufid",
+     "Sallah Moussaddaq",
+     "Mohamed Rayhi",
+     "Ramiro Vaca",
+     "Hakim Ziyech"
+    ],
+    "bench": [
+     "Abdelghafour Lamirat",
+     "Nordin Amrabat",
+     "Walid Nassi",
+     "Zouhair El Moutaraji",
+     "Omar Aqzdaou",
+     "Ayman El Wafi",
+     "Mohamed Bouchouari",
+     "Hamza Elowasti",
+     "Wissam Ben Yedder"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4708884"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-05-06-wydad-ac-codm-meknes",
+   "value": {
+    "name": "Wydad AC 2-0 CODM Meknes",
+    "on": "2026-05-06",
+    "competition": "Botola Pro",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Joseph Bakasu",
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Naïm Byar",
+     "Guilherme Ferreira",
+     "Hamza Hanouri",
+     "Mohamed Moufid",
+     "Sallah Moussaddaq",
+     "Mohamed Rayhi",
+     "Ramiro Vaca",
+     "Hakim Ziyech"
+    ],
+    "bench": [
+     "Nordin Amrabat",
+     "Wissam Ben Yedder",
+     "Ayman El Wafi",
+     "Walid Nassi",
+     "Hamza Elowasti",
+     "Omar Aqzdaou",
+     "Mohamed Bouchouari",
+     "Rayane Mahtou",
+     "Zouhair El Moutaraji"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4708877"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-05-03-cr-khemis-zemamra-wydad-ac",
+   "value": {
+    "name": "CR Khemis Zemamra 1-0 Wydad AC",
+    "on": "2026-05-03",
+    "competition": "Botola Pro",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Joseph Bakasu",
+     "El Mehdi Benabid",
+     "Abdoulaye Coulibaly",
+     "Ayman El Wafi",
+     "Hamza Elowasti",
+     "Nabil Khali",
+     "Abdelghafour Lamirat",
+     "Mohamed Moufid",
+     "Sallah Moussaddaq",
+     "Walid Nassi",
+     "Ramiro Vaca"
+    ],
+    "bench": [
+     "Guilherme Ferreira",
+     "Nordin Amrabat",
+     "Mohamed Rayhi",
+     "Wissam Ben Yedder",
+     "Omar Aqzdaou",
+     "Mohamed Bouchouari",
+     "Ayoub Boucheta",
+     "Naïm Byar",
+     "Zouhair El Moutaraji"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4708821"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-04-29-wydad-ac-union-yacoub-el-mansour",
+   "value": {
+    "name": "Wydad AC 1-2 Union Yacoub El Mansour",
+    "on": "2026-04-29",
+    "competition": "Botola Pro",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Amine Aboulfath",
+     "Nordin Amrabat",
+     "Wissam Ben Yedder",
+     "El Mehdi Benabid",
+     "Mohamed Bouchouari",
+     "Naïm Byar",
+     "Ayman El Wafi",
+     "Nabil Khali",
+     "Sallah Moussaddaq",
+     "Ramiro Vaca",
+     "Hakim Ziyech"
+    ],
+    "bench": [
+     "Abdelghafour Lamirat",
+     "Joseph Bakasu",
+     "Walid Nassi",
+     "Abdoulaye Coulibaly",
+     "Mohamed Rayhi",
+     "Abderrazak El Wadi",
+     "Guilherme Ferreira",
+     "Mohamed Moufid",
+     "Zouhair El Moutaraji"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4704263"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-04-25-kawkab-marrakech-wydad-ac",
+   "value": {
+    "name": "Kawkab Marrakech 0-0 Wydad AC",
+    "on": "2026-04-25",
+    "competition": "Botola Pro",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Mohamed Moufid",
+     "Ayman El Wafi",
+     "Wissam Ben Yedder",
+     "Ramiro Vaca",
+     "Nordin Amrabat",
+     "Sallah Moussaddaq",
+     "Guilherme Ferreira",
+     "Abdelghafour Lamirat",
+     "El Mehdi Benabid",
+     "Joseph Bakasu",
+     "Nabil Khali"
+    ],
+    "bench": [
+     "Mohamed Bouchouari",
+     "Naïm Byar",
+     "Hakim Ziyech",
+     "Walid Nassi",
+     "Abdoulaye Coulibaly",
+     "Abderrazak El Wadi",
+     "Mohamed Rayhi",
+     "Hamza Elowasti",
+     "Zouhair El Moutaraji"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4703027"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-04-12-maghreb-fes-wydad-ac",
+   "value": {
+    "name": "Maghreb Fès 1-0 Wydad AC",
+    "on": "2026-04-12",
+    "competition": "Botola Pro",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Benabid",
+     "Mohamed Moufid",
+     "Amine Aboulfath",
+     "Ramiro Vaca",
+     "Nordin Amrabat",
+     "Sallah Moussaddaq",
+     "Abdelghafour Lamirat",
+     "Hamza Elowasti",
+     "Moises Paniagua",
+     "Joseph Bakasu",
+     "Walid Nassi"
+    ],
+    "bench": [
+     "Naïm Byar",
+     "Wissam Ben Yedder",
+     "Ayman El Wafi",
+     "Mohamed Bouchouari",
+     "Nabil Khali",
+     "Mohamed Rayhi",
+     "Zouhair El Moutaraji",
+     "Chams Eddine El Allaly"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4700089"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-04-06-wydad-ac-el-jadida",
+   "value": {
+    "name": "Wydad AC 1-1 El Jadida",
+    "on": "2026-04-06",
+    "competition": "Botola Pro",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Benabid",
+     "Mohamed Moufid",
+     "Sallah Moussaddaq",
+     "Nabil Khali",
+     "Joseph Bakasu",
+     "Naïm Byar",
+     "Ramiro Vaca",
+     "Moises Paniagua",
+     "Walid Nassi",
+     "Wissam Ben Yedder",
+     "Hamza Elowasti"
+    ],
+    "bench": [
+     "Abdelghafour Lamirat",
+     "Nordin Amrabat",
+     "Hamza Hanouri",
+     "Bart Meijers",
+     "Mohamed Bouchouari",
+     "Mohamed Rayhi",
+     "Zouhair El Moutaraji"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4696799"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-04-03-fus-rabat-wydad-ac",
+   "value": {
+    "name": "FUS Rabat 1-0 Wydad AC",
+    "on": "2026-04-03",
+    "competition": "Botola Pro",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Benabid",
+     "Mohamed Moufid",
+     "Ayman El Wafi",
+     "Hakim Ziyech",
+     "Mohamed Rayhi",
+     "Wissam Ben Yedder",
+     "Sallah Moussaddaq",
+     "Abdelghafour Lamirat",
+     "Hamza Elowasti",
+     "Joseph Bakasu",
+     "Zouhair El Moutaraji"
+    ],
+    "bench": [
+     "Mohamed Bouchouari",
+     "Walid Sabbar",
+     "Nordin Amrabat",
+     "Hamza Hanouri",
+     "Bart Meijers",
+     "Nabil Khali",
+     "Naïm Byar",
+     "Hamza Sakhi"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4696804"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-03-22-wydad-ac-olympique-safi",
+   "value": {
+    "name": "Wydad AC 2-2 Olympique Safi",
+    "on": "2026-03-22",
+    "competition": "CAF Confederation Cup - Quarter Finals",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Ayman El Wafi",
+     "Amine Aboulfath",
+     "Mohamed Moufid",
+     "Walid Sabbar",
+     "Abdelghafour Lamirat",
+     "Mohamed Rayhi",
+     "Wissam Ben Yedder",
+     "Moises Paniagua",
+     "Hamza Hanouri"
+    ],
+    "bench": [
+     "Abdelali M'Hamdi",
+     "Sallah Moussaddaq",
+     "Nordin Amrabat",
+     "Hakim Ziyech",
+     "Hamza Elowasti",
+     "Mohamed Bouchouari",
+     "Joseph Bakasu",
+     "Naïm Byar",
+     "Walid Nassi"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4674378"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore has no full eleven for this match.",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-03-15-olympique-safi-wydad-ac",
+   "value": {
+    "name": "Olympique Safi 1-1 Wydad AC",
+    "on": "2026-03-15",
+    "competition": "CAF Confederation Cup - Quarter Finals",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Ayman El Wafi",
+     "Amine Aboulfath",
+     "Sallah Moussaddaq",
+     "Ramiro Vaca",
+     "Walid Sabbar",
+     "Joseph Bakasu",
+     "Hamza Hanouri",
+     "Wissam Ben Yedder",
+     "Moises Paniagua"
+    ],
+    "bench": [
+     "Mohamed Moufid",
+     "Abdelghafour Lamirat",
+     "Walid Nassi",
+     "Hamza Elowasti",
+     "Abdelali M'Hamdi",
+     "Guilherme Ferreira",
+     "Mohamed Bouchouari",
+     "Naïm Byar",
+     "Mohamed Rayhi"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4674377"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore has no full eleven for this match.",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-03-08-us-touarga-wydad-ac",
+   "value": {
+    "name": "US Touarga 3-4 Wydad AC",
+    "on": "2026-03-08",
+    "competition": "Botola Pro",
+    "score": "3-4",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Benabid",
+     "Amine Aboulfath",
+     "Ayman El Wafi",
+     "Mohamed Bouchouari",
+     "Ayoub Boucheta",
+     "Joseph Bakasu",
+     "Naïm Byar",
+     "Ramiro Vaca",
+     "Walid Nassi",
+     "Moises Paniagua",
+     "Wissam Ben Yedder"
+    ],
+    "bench": [
+     "Sallah Moussaddaq",
+     "Walid Sabbar",
+     "Mohamed Rayhi",
+     "Hamza Elowasti",
+     "Hamza Hanouri",
+     "Abdelali M'Hamdi",
+     "Guilherme Ferreira",
+     "Nabil Khali"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4671921"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-03-04-wydad-ac-as-far-rabat",
+   "value": {
+    "name": "Wydad AC 1-2 AS Far Rabat",
+    "on": "2026-03-04",
+    "competition": "Botola Pro",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Benabid",
+     "Sallah Moussaddaq",
+     "Amine Aboulfath",
+     "Mohamed Moufid",
+     "Nabil Khali",
+     "Abdelghafour Lamirat",
+     "Walid Sabbar",
+     "Ramiro Vaca",
+     "Hakim Ziyech",
+     "Walid Nassi",
+     "Hamza Hanouri"
+    ],
+    "bench": [
+     "Mohamed Bouchouari",
+     "Ayoub Boucheta",
+     "Naïm Byar",
+     "Hamza Elowasti",
+     "Wissam Ben Yedder",
+     "Abdelali M'Hamdi",
+     "Ayman El Wafi",
+     "Mohamed Rayhi",
+     "Moises Paniagua"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4671963"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-03-01-wydad-ac-rsb-berkane",
+   "value": {
+    "name": "Wydad AC 1-0 RSB Berkane",
+    "on": "2026-03-01",
+    "competition": "Botola Pro",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Amine Aboulfath",
+     "Sallah Moussaddaq",
+     "Mohamed Moufid",
+     "Joseph Bakasu",
+     "Walid Sabbar",
+     "Ramiro Vaca",
+     "Hakim Ziyech",
+     "Nordin Amrabat",
+     "Wissam Ben Yedder"
+    ],
+    "bench": [
+     "Nabil Khali",
+     "Walid Nassi",
+     "Hamza Hanouri",
+     "Abdelali M'Hamdi",
+     "Ayman El Wafi",
+     "Mohamed Bouchouari",
+     "Naïm Byar",
+     "Hamza Elowasti",
+     "Moises Paniagua"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4671915"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-02-21-olympique-dcheira-wydad-ac",
+   "value": {
+    "name": "Olympique Dcheira 0-5 Wydad AC",
+    "on": "2026-02-21",
+    "competition": "Botola Pro",
+    "score": "0-5",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Benabid",
+     "Mohamed Moufid",
+     "Nabil Khali",
+     "Amine Aboulfath",
+     "Sallah Moussaddaq",
+     "Naïm Byar",
+     "Walid Sabbar",
+     "Ramiro Vaca",
+     "Hakim Ziyech",
+     "Nordin Amrabat",
+     "Wissam Ben Yedder"
+    ],
+    "bench": [
+     "Ayman El Wafi",
+     "Mohamed Bouchouari",
+     "Walid Nassi",
+     "Mohamed Rayhi",
+     "Hamza Hanouri",
+     "Abdelali M'Hamdi",
+     "Ayoub Boucheta",
+     "Hamza Elowasti",
+     "Moises Paniagua"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4671891"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-02-15-wydad-ac-azam-fc",
+   "value": {
+    "name": "Wydad AC 2-0 Azam FC",
+    "on": "2026-02-15",
+    "competition": "CAF Confederation Cup",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Ayman El Wafi",
+     "Amine Aboulfath",
+     "Walid Sabbar",
+     "Abdelghafour Lamirat",
+     "Mohamed Moufid",
+     "Moises Paniagua",
+     "Ramiro Vaca",
+     "Hakim Ziyech",
+     "Hamza Hanouri"
+    ],
+    "bench": [
+     "Joseph Bakasu",
+     "Nordin Amrabat",
+     "Walid Nassi",
+     "Wissam Ben Yedder",
+     "Abdelali M'Hamdi",
+     "Sallah Moussaddaq",
+     "Mohamed Bouchouari",
+     "Naïm Byar",
+     "Hamza Elowasti"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4611619"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-02-08-nairobi-united-wydad-ac",
+   "value": {
+    "name": "Nairobi United 0-1 Wydad AC",
+    "on": "2026-02-08",
+    "competition": "CAF Confederation Cup",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Amine Aboulfath",
+     "Sallah Moussaddaq",
+     "Mohamed Bouchouari",
+     "Ramiro Vaca",
+     "Naïm Byar",
+     "Hakim Ziyech",
+     "Moises Paniagua",
+     "Hamza Hanouri",
+     "Nordin Amrabat"
+    ],
+    "bench": [
+     "Abdelghafour Lamirat",
+     "Walid Sabbar",
+     "Walid Nassi",
+     "Hamza Elowasti",
+     "Wissam Ben Yedder",
+     "Abdelali M'Hamdi",
+     "Ayman El Wafi",
+     "Mohamed Moufid",
+     "Joseph Bakasu"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4611628"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-02-01-as-maniema-union-wydad-ac",
+   "value": {
+    "name": "As Maniema Union 2-1 Wydad AC",
+    "on": "2026-02-01",
+    "competition": "CAF Confederation Cup",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Amine Aboulfath",
+     "Guilherme Ferreira",
+     "Mohamed Moufid",
+     "Joseph Bakasu",
+     "Abdelghafour Lamirat",
+     "Hamza Elowasti",
+     "Walid Sabbar",
+     "Walid Nassi",
+     "Wissam Ben Yedder"
+    ],
+    "bench": [
+     "Thembinkosi Lorch",
+     "Mohamed Rayhi",
+     "Hamza Hanouri",
+     "Moises Paniagua",
+     "Abdelali M'Hamdi",
+     "Ayman El Wafi",
+     "Bart Meijers",
+     "Mohamed Bouchouari",
+     "Naïm Byar"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4611635"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-01-25-wydad-ac-as-maniema-union",
+   "value": {
+    "name": "Wydad AC 1-0 As Maniema Union",
+    "on": "2026-01-25",
+    "competition": "CAF Confederation Cup",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Amine Aboulfath",
+     "Guilherme Ferreira",
+     "Mohamed Moufid",
+     "Joseph Bakasu",
+     "Abdelghafour Lamirat",
+     "Walid Nassi",
+     "Hakim Ziyech",
+     "Nordin Amrabat",
+     "Hamza Elowasti"
+    ],
+    "bench": [
+     "Walid Sabbar",
+     "Thembinkosi Lorch",
+     "Wissam Ben Yedder",
+     "Hamza Hanouri",
+     "Abdelali M'Hamdi",
+     "Ayman El Wafi",
+     "Mohamed Bouchouari",
+     "Naïm Byar",
+     "Mohamed Rayhi"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4611643"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-11-28-azam-fc-wydad-ac",
+   "value": {
+    "name": "Azam FC 0-1 Wydad AC",
+    "on": "2025-11-28",
+    "competition": "CAF Confederation Cup",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Amine Aboulfath",
+     "Guilherme Ferreira",
+     "Mohamed Bouchouari",
+     "Walid Sabbar",
+     "Thembinkosi Lorch",
+     "Joseph Bakasu",
+     "Nordin Amrabat",
+     "Hamza Hanouri",
+     "Stephane Aziz Ki"
+    ],
+    "bench": [
+     "Mohamed Moufid",
+     "Walid Nassi",
+     "Hamza Elowasti",
+     "Mohamed Rayhi",
+     "Tumisang Orebonye",
+     "Abdelali M'Hamdi",
+     "Bart Meijers",
+     "Oussama Zemraoui",
+     "Mouad Enzo"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4610787"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-11-23-wydad-ac-nairobi-united",
+   "value": {
+    "name": "Wydad AC 3-0 Nairobi United",
+    "on": "2025-11-23",
+    "competition": "CAF Confederation Cup",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Bart Meijers",
+     "Guilherme Ferreira",
+     "Mohamed Bouchouari",
+     "Joseph Bakasu",
+     "Stephane Aziz Ki",
+     "Abdelghafour Lamirat",
+     "Thembinkosi Lorch",
+     "Hamza Hanouri",
+     "Nordin Amrabat"
+    ],
+    "bench": [
+     "Mohamed Moufid",
+     "Walid Sabbar",
+     "Mouad Enzo",
+     "Walid Nassi",
+     "Mohamed Rayhi",
+     "Abdelali M'Hamdi",
+     "Amine Aboulfath",
+     "Zouhair El Moutaraji",
+     "Tumisang Orebonye"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4610783"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  }
+ ],
  "players": [],
  "kits": [],
  "rivals": []

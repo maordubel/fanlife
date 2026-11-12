@@ -1,6 +1,1682 @@
 {
- "sources": [],
- "matches": [],
+ "sources": [
+  {
+   "id": "s365-4882520",
+   "title": "365Scores: Raja Casablanca 2-0 Ittihad Tanger, 2026-11-08",
+   "url": "https://webws.365scores.com/web/game/?gameId=4882520",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4882494",
+   "title": "365Scores: AS Far Rabat 1-2 Raja Casablanca, 2026-11-04",
+   "url": "https://webws.365scores.com/web/game/?gameId=4882494",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4882507",
+   "title": "365Scores: RSB Berkane 2-0 Raja Casablanca, 2026-11-01",
+   "url": "https://webws.365scores.com/web/game/?gameId=4882507",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4882500",
+   "title": "365Scores: Raja Casablanca 1-1 Hassania Agadir, 2026-10-28",
+   "url": "https://webws.365scores.com/web/game/?gameId=4882500",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4870760",
+   "title": "365Scores: FUS Rabat 1-1 Raja Casablanca, 2026-10-13",
+   "url": "https://webws.365scores.com/web/game/?gameId=4870760",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4870753",
+   "title": "365Scores: Maghreb Fès 0-0 Raja Casablanca, 2026-10-08",
+   "url": "https://webws.365scores.com/web/game/?gameId=4870753",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4859476",
+   "title": "365Scores: Raja Casablanca 1-0 CR Khemis Zemamra, 2026-10-03",
+   "url": "https://webws.365scores.com/web/game/?gameId=4859476",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4754382",
+   "title": "365Scores: Olympique Safi 0-2 Raja Casablanca, 2026-07-05",
+   "url": "https://webws.365scores.com/web/game/?gameId=4754382",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4749418",
+   "title": "365Scores: Raja Casablanca 2-0 Hassania Agadir, 2026-07-02",
+   "url": "https://webws.365scores.com/web/game/?gameId=4749418",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4745075",
+   "title": "365Scores: Ittihad Tanger 1-1 Raja Casablanca, 2026-06-28",
+   "url": "https://webws.365scores.com/web/game/?gameId=4745075",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4739954",
+   "title": "365Scores: Union Yacoub El Mansour 2-1 Raja Casablanca, 2026-06-25",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739954",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4739949",
+   "title": "365Scores: Raja Casablanca 2-1 CODM Meknes, 2026-06-21",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739949",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4737135",
+   "title": "365Scores: CR Khemis Zemamra 3-4 Raja Casablanca, 2026-06-17",
+   "url": "https://webws.365scores.com/web/game/?gameId=4737135",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4733314",
+   "title": "365Scores: Raja Casablanca 1-1 US Touarga, 2026-06-14",
+   "url": "https://webws.365scores.com/web/game/?gameId=4733314",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4729834",
+   "title": "365Scores: Kawkab Marrakech 2-0 Raja Casablanca, 2026-06-09",
+   "url": "https://webws.365scores.com/web/game/?gameId=4729834",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4716409",
+   "title": "365Scores: Raja Casablanca 0-1 RSB Berkane, 2026-06-03",
+   "url": "https://webws.365scores.com/web/game/?gameId=4716409",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4716393",
+   "title": "365Scores: Olympique Dcheira 0-1 Raja Casablanca, 2026-05-24",
+   "url": "https://webws.365scores.com/web/game/?gameId=4716393",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4703026",
+   "title": "365Scores: Raja Casablanca 4-1 FUS Rabat, 2026-04-26",
+   "url": "https://webws.365scores.com/web/game/?gameId=4703026",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4704267",
+   "title": "365Scores: AS Far Rabat 2-1 Raja Casablanca, 2026-04-30",
+   "url": "https://webws.365scores.com/web/game/?gameId=4704267",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4708823",
+   "title": "365Scores: Raja Casablanca 1-0 El Jadida, 2026-05-03",
+   "url": "https://webws.365scores.com/web/game/?gameId=4708823",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4708878",
+   "title": "365Scores: Maghreb Fès 0-2 Raja Casablanca, 2026-05-06",
+   "url": "https://webws.365scores.com/web/game/?gameId=4708878",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4708884",
+   "title": "365Scores: Raja Casablanca 0-1 Wydad AC, 2026-05-09",
+   "url": "https://webws.365scores.com/web/game/?gameId=4708884",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4628308",
+   "title": "365Scores: Al Ahli Jeddah 1-2 Raja Casablanca, 2025-12-12",
+   "url": "https://webws.365scores.com/web/game/?gameId=4628308",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4656183",
+   "title": "365Scores: US Touarga 1-1 Raja Casablanca, 2026-01-25",
+   "url": "https://webws.365scores.com/web/game/?gameId=4656183",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4656181",
+   "title": "365Scores: Raja Casablanca 3-0 CR Khemis Zemamra, 2026-02-01",
+   "url": "https://webws.365scores.com/web/game/?gameId=4656181",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4664821",
+   "title": "365Scores: CODM Meknes 1-0 Raja Casablanca, 2026-02-08",
+   "url": "https://webws.365scores.com/web/game/?gameId=4664821",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4664975",
+   "title": "365Scores: Raja Casablanca 0-0 Union Yacoub El Mansour, 2026-02-13",
+   "url": "https://webws.365scores.com/web/game/?gameId=4664975",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4671898",
+   "title": "365Scores: Raja Casablanca 2-0 Ittihad Tanger, 2026-02-22",
+   "url": "https://webws.365scores.com/web/game/?gameId=4671898",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4671951",
+   "title": "365Scores: RSB Berkane 1-1 Raja Casablanca, 2026-02-25",
+   "url": "https://webws.365scores.com/web/game/?gameId=4671951",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4671914",
+   "title": "365Scores: Hassania Agadir 0-1 Raja Casablanca, 2026-03-01",
+   "url": "https://webws.365scores.com/web/game/?gameId=4671914",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4671919",
+   "title": "365Scores: Raja Casablanca 2-0 Olympique Safi, 2026-03-07",
+   "url": "https://webws.365scores.com/web/game/?gameId=4671919",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  }
+ ],
+ "matches": [
+  {
+   "id": "a-m-2026-11-08-raja-casablanca-ittihad-tanger",
+   "value": {
+    "name": "Raja Casablanca 2-0 Ittihad Tanger",
+    "on": "2026-11-08",
+    "competition": "Botola Pro",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Ismail Mokadem",
+     "Bouchaib Arrassi",
+     "Aymen Barkok",
+     "Mohamed Boulacsout",
+     "Ismail Khafi",
+     "Ayoub El Amloud",
+     "Mohamed Al Makahasi",
+     "Mohamed Abu Zraiq Sharara",
+     "Adam Ennaffati",
+     "Mathias Oyewusi"
+    ],
+    "bench": [
+     "Amine Khammas",
+     "Othmane Chraibi",
+     "Michael Agbekpornu",
+     "Youness Dahmani",
+     "Adel Bettaieb",
+     "Yassine Zoubir",
+     "Badr Benoun",
+     "Ishak Zidani",
+     "Yahya Iguiz"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4882520"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore has no full eleven for this match.",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-11-04-as-far-rabat-raja-casablanca",
+   "value": {
+    "name": "AS Far Rabat 1-2 Raja Casablanca",
+    "on": "2026-11-04",
+    "competition": "Botola Pro",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Chemseddine Knaidil",
+     "Ismail Mokadem",
+     "Bouchaib Arrassi",
+     "Aymen Barkok",
+     "Mohamed Boulacsout",
+     "Ayoub El Amloud",
+     "Mohamed Al Makahasi",
+     "Adam Ennaffati",
+     "Mathias Oyewusi",
+     "Ismail Khafi"
+    ],
+    "bench": [
+     "Ishak Zidani",
+     "Michael Agbekpornu",
+     "Youness Dahmani",
+     "Adel Bettaieb",
+     "Yahya Iguiz",
+     "Khalid Kbiri Alaoui",
+     "Badr Benoun",
+     "Mohamed Abu Zraiq Sharara",
+     "Felipinho"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4882494"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore has no full eleven for this match.",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-11-01-rsb-berkane-raja-casablanca",
+   "value": {
+    "name": "RSB Berkane 2-0 Raja Casablanca",
+    "on": "2026-11-01",
+    "competition": "Botola Pro",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Marian Huja",
+     "Badr Benoun",
+     "Bouchaib Arrassi",
+     "Chemseddine Knaidil",
+     "Ismail Mokadem",
+     "Ishak Zidani",
+     "Mohamed Boulacsout",
+     "Othmane Chraibi",
+     "Ismail Khafi",
+     "Mathias Oyewusi"
+    ],
+    "bench": [
+     "Michael Agbekpornu",
+     "Azzedine Laftah",
+     "Mohamed Abu Zraiq Sharara",
+     "Youness Dahmani",
+     "Yahya Iguiz",
+     "Yassine Zoubir",
+     "Ayoub El Amloud",
+     "Mohamed Al Makahasi",
+     "Felipinho"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4882507"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore has no full eleven for this match.",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-10-28-raja-casablanca-hassania-agadir",
+   "value": {
+    "name": "Raja Casablanca 1-1 Hassania Agadir",
+    "on": "2026-10-28",
+    "competition": "Botola Pro",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Mohamed Abu Zraiq Sharara",
+     "Aymen Barkok",
+     "Yahya Iguiz",
+     "Youness Dahmani",
+     "Othmane Chraibi",
+     "Mohamed Al Makahasi",
+     "Marian Huja",
+     "Chemseddine Knaidil",
+     "Badr Benoun",
+     "Mohamed Boulacsout",
+     "El Mehdi Al Harrar"
+    ],
+    "bench": [
+     "Ishak Zidani",
+     "Azzedine Laftah",
+     "Adam Ennaffati",
+     "Ismail Khafi",
+     "Mathias Oyewusi",
+     "Yassine Zoubir",
+     "Ismail Mokadem",
+     "Ayoub El Amloud",
+     "Felipinho"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4882500"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore has no full eleven for this match.",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-10-13-fus-rabat-raja-casablanca",
+   "value": {
+    "name": "FUS Rabat 1-1 Raja Casablanca",
+    "on": "2026-10-13",
+    "competition": "Botola Pro",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Marian Huja",
+     "Chemseddine Knaidil",
+     "Aymen Barkok",
+     "Ishak Zidani",
+     "Felipinho",
+     "Badr Benoun",
+     "Younes Bakiz",
+     "Ayoub El Amloud",
+     "Adel Bettaieb",
+     "Mathias Oyewusi"
+    ],
+    "bench": [
+     "Mohamed Al Makahasi",
+     "Azzedine Laftah",
+     "Mohamed Abu Zraiq Sharara",
+     "Youness Dahmani",
+     "Mounaïm El Idrissy",
+     "Khalid Kbiri Alaoui",
+     "Amine Khammas",
+     "Bouchaib Arrassi",
+     "Ismail Khafi"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4870760"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore has no full eleven for this match.",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-10-08-maghreb-fes-raja-casablanca",
+   "value": {
+    "name": "Maghreb Fès 0-0 Raja Casablanca",
+    "on": "2026-10-08",
+    "competition": "Botola Pro",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Badr Benoun",
+     "Marian Huja",
+     "Chemseddine Knaidil",
+     "Mohamed Boulacsout",
+     "Michael Agbekpornu",
+     "Othmane Chraibi",
+     "Younes Bakiz",
+     "Youness Dahmani",
+     "Bilal Ould-Chikh",
+     "Adel Bettaieb"
+    ],
+    "bench": [
+     "Bouchaib Arrassi",
+     "Ishak Zidani",
+     "Mohamed Al Makahasi",
+     "Aymen Barkok",
+     "Mathias Oyewusi",
+     "Yassine Zoubir",
+     "Ismail Mokadem",
+     "Azzedine Laftah",
+     "Mounaïm El Idrissy"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4870753"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-10-03-raja-casablanca-cr-khemis-zemamra",
+   "value": {
+    "name": "Raja Casablanca 1-0 CR Khemis Zemamra",
+    "on": "2026-10-03",
+    "competition": "Botola Pro",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Marian Huja",
+     "Chemseddine Knaidil",
+     "Mohamed Boulacsout",
+     "Youness Dahmani",
+     "Badr Benoun",
+     "Younes Bakiz",
+     "Othmane Chraibi",
+     "Adel Bettaieb",
+     "Michael Agbekpornu",
+     "Bilal Ould-Chikh"
+    ],
+    "bench": [
+     "Ayoub El Amloud",
+     "Aymen Barkok",
+     "Adam Ennaffati",
+     "Felipinho",
+     "Ismail Khafi",
+     "Yassine Zoubir",
+     "Ismail Mokadem",
+     "Ishak Zidani",
+     "Mohamed Al Makahasi"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4859476"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore has no full eleven for this match.",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-07-05-olympique-safi-raja-casablanca",
+   "value": {
+    "name": "Olympique Safi 0-2 Raja Casablanca",
+    "on": "2026-07-05",
+    "competition": "Botola Pro",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Mohamed Al Makahasi",
+     "Aymen Barkok",
+     "Mohamed Boulacsout",
+     "Balla Moussa Conte",
+     "Yahya Iguiz",
+     "Abdellah Khafifi",
+     "Ayoub Maamouri",
+     "Mehdi Mchakhchekh",
+     "Ismail Mokadem",
+     "Pape Ousmane Sakho",
+     "Yassine Zoubir"
+    ],
+    "bench": [
+     "Amine Khammas",
+     "Sabir Bougrine",
+     "Azzedine Laftah",
+     "Mohamed Abu Zraiq Sharara",
+     "Ismail Khafi",
+     "Saad Antra",
+     "Othmane Chraibi",
+     "Hilal Ferdaoussi",
+     "Mathias Oyewusi"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4754382"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-07-02-raja-casablanca-hassania-agadir",
+   "value": {
+    "name": "Raja Casablanca 2-0 Hassania Agadir",
+    "on": "2026-07-02",
+    "competition": "Botola Pro",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Mohamed Al Makahasi",
+     "Aymen Barkok",
+     "Ayoub El Amloud",
+     "Hilal Ferdaoussi",
+     "Mathias Oyewusi",
+     "Ismail Khafi",
+     "Abdellah Khafifi",
+     "Amine Khammas",
+     "Mehdi Mchakhchekh",
+     "Ismail Mokadem",
+     "Yassine Zoubir"
+    ],
+    "bench": [
+     "Mohamed Boulacsout",
+     "Sabir Bougrine",
+     "Mohamed Abu Zraiq Sharara",
+     "Pape Ousmane Sakho",
+     "Yahya Iguiz",
+     "Saad Antra",
+     "Othmane Chraibi",
+     "Balla Moussa Conte",
+     "Ayoub Maamouri"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4749418"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-06-28-ittihad-tanger-raja-casablanca",
+   "value": {
+    "name": "Ittihad Tanger 1-1 Raja Casablanca",
+    "on": "2026-06-28",
+    "competition": "Botola Pro",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Mohamed Al Makahasi",
+     "Aymen Barkok",
+     "Badr Benoun",
+     "Ayoub El Amloud",
+     "Hilal Ferdaoussi",
+     "Khalid Kbiri Alaoui",
+     "Mathias Oyewusi",
+     "Ismail Khafi",
+     "Abdellah Khafifi",
+     "Amine Khammas",
+     "Ismail Mokadem"
+    ],
+    "bench": [
+     "Mehdi Mchakhchekh",
+     "Mohamed Boulacsout",
+     "Balla Moussa Conte",
+     "Adam Ennaffati",
+     "Pape Ousmane Sakho",
+     "Yassine Zoubir",
+     "Abdelkarim Baadi",
+     "Sabir Bougrine",
+     "Yahya Iguiz"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4745075"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-06-25-union-yacoub-el-mansour-raja-casablanca",
+   "value": {
+    "name": "Union Yacoub El Mansour 2-1 Raja Casablanca",
+    "on": "2026-06-25",
+    "competition": "Botola Pro",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Mohamed Al Makahasi",
+     "Aymen Barkok",
+     "Badr Benoun",
+     "Sabir Bougrine",
+     "Ayoub El Amloud",
+     "Khalid Kbiri Alaoui",
+     "Mathias Oyewusi",
+     "Ismail Khafi",
+     "Abdellah Khafifi",
+     "Azzedine Laftah",
+     "Ismail Mokadem"
+    ],
+    "bench": [
+     "Amine Khammas",
+     "Hilal Ferdaoussi",
+     "Besar Halimi",
+     "Mouad Dahak",
+     "Ayoub Maamouri",
+     "Yassine Zoubir",
+     "Mehdi Mchakhchekh",
+     "Abdelkarim Baadi",
+     "Balla Moussa Conte"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4739954"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-06-21-raja-casablanca-codm-meknes",
+   "value": {
+    "name": "Raja Casablanca 2-1 CODM Meknes",
+    "on": "2026-06-21",
+    "competition": "Botola Pro",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Mohamed Al Makahasi",
+     "Abdelkarim Baadi",
+     "Aymen Barkok",
+     "Badr Benoun",
+     "Sabir Bougrine",
+     "Ayoub El Amloud",
+     "Besar Halimi",
+     "Khalid Kbiri Alaoui",
+     "Mathias Oyewusi",
+     "Abdellah Khafifi",
+     "Azzedine Laftah"
+    ],
+    "bench": [
+     "Amine Khammas",
+     "Balla Moussa Conte",
+     "Ayoub Maamouri",
+     "Pape Ousmane Sakho",
+     "Ismail Khafi",
+     "Yassine Zoubir",
+     "Mehdi Mchakhchekh",
+     "Othmane Chraibi",
+     "Hilal Ferdaoussi"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4739949"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-06-17-cr-khemis-zemamra-raja-casablanca",
+   "value": {
+    "name": "CR Khemis Zemamra 3-4 Raja Casablanca",
+    "on": "2026-06-17",
+    "competition": "Botola Pro",
+    "score": "3-4",
+    "venue": null,
+    "lineup": [
+     "Aymen Barkok",
+     "Sabir Bougrine",
+     "Mohamed Boulacsout",
+     "Ayoub El Amloud",
+     "Hilal Ferdaoussi",
+     "Khalid Kbiri Alaoui",
+     "Ismail Khafi",
+     "Azzedine Laftah",
+     "Ayoub Maamouri",
+     "Mehdi Mchakhchekh",
+     "Ismail Mokadem"
+    ],
+    "bench": [
+     "Abdelkarim Baadi",
+     "Othmane Chraibi",
+     "Balla Moussa Conte",
+     "Besar Halimi",
+     "Pape Ousmane Sakho",
+     "Yassine Zoubir",
+     "Amine Khammas",
+     "Mouad Dahak",
+     "Yahya Iguiz"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4737135"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-06-14-raja-casablanca-us-touarga",
+   "value": {
+    "name": "Raja Casablanca 1-1 US Touarga",
+    "on": "2026-06-14",
+    "competition": "Botola Pro",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Mohamed Al Makahasi",
+     "Sabir Bougrine",
+     "Mohamed Boulacsout",
+     "Ayoub El Amloud",
+     "Adam Ennaffati",
+     "Hilal Ferdaoussi",
+     "Khalid Kbiri Alaoui",
+     "Mathias Oyewusi",
+     "Mehdi Mchakhchekh",
+     "Ismail Mokadem",
+     "Pape Ousmane Sakho"
+    ],
+    "bench": [
+     "Besar Halimi",
+     "Mouad Dahak",
+     "Ayoub Maamouri",
+     "Ismail Khafi",
+     "Yassine Zoubir",
+     "Abdelkarim Baadi",
+     "Amine Khammas",
+     "Othmane Chraibi",
+     "Balla Moussa Conte"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4733314"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-06-09-kawkab-marrakech-raja-casablanca",
+   "value": {
+    "name": "Kawkab Marrakech 2-0 Raja Casablanca",
+    "on": "2026-06-09",
+    "competition": "Botola Pro",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Mohamed Al Makahasi",
+     "Aymen Barkok",
+     "Badr Benoun",
+     "Mohamed Boulacsout",
+     "Ayoub El Amloud",
+     "Adam Ennaffati",
+     "Besar Halimi",
+     "Khalid Kbiri Alaoui",
+     "Mathias Oyewusi",
+     "Abdellah Khafifi",
+     "Ismail Mokadem"
+    ],
+    "bench": [
+     "Mehdi Mchakhchekh",
+     "Amine Khammas",
+     "Othmane Chraibi",
+     "Ayoub Maamouri",
+     "Ismail Khafi",
+     "Yassine Zoubir",
+     "Hilal Ferdaoussi",
+     "Sabir Bougrine",
+     "Azzedine Laftah"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4729834"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-06-03-raja-casablanca-rsb-berkane",
+   "value": {
+    "name": "Raja Casablanca 0-1 RSB Berkane",
+    "on": "2026-06-03",
+    "competition": "Botola Pro",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Mohamed Al Makahasi",
+     "Badr Benoun",
+     "Sabir Bougrine",
+     "Mohamed Boulacsout",
+     "Adam Ennaffati",
+     "Hilal Ferdaoussi",
+     "Khalid Kbiri Alaoui",
+     "Mathias Oyewusi",
+     "Abdellah Khafifi",
+     "Ismail Mokadem",
+     "Pape Ousmane Sakho"
+    ],
+    "bench": [
+     "Ayoub El Amloud",
+     "Besar Halimi",
+     "Mouad Dahak",
+     "Yahya Iguiz",
+     "Yassine Zoubir",
+     "Mehdi Mchakhchekh",
+     "Othmane Chraibi",
+     "Aymen Barkok",
+     "Ayoub Maamouri"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4716409"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-05-24-olympique-dcheira-raja-casablanca",
+   "value": {
+    "name": "Olympique Dcheira 0-1 Raja Casablanca",
+    "on": "2026-05-24",
+    "competition": "Botola Pro",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Mohamed Abu Zraiq Sharara",
+     "El Mehdi Al Harrar",
+     "Mohamed Al Makahasi",
+     "Aymen Barkok",
+     "Badr Benoun",
+     "Mohamed Boulacsout",
+     "Besar Halimi",
+     "Mathias Oyewusi",
+     "Abdellah Khafifi",
+     "Ayoub Maamouri",
+     "Ismail Mokadem"
+    ],
+    "bench": [
+     "Abdelkarim Baadi",
+     "Othmane Chraibi",
+     "Mouad Dahak",
+     "Ismail Khafi",
+     "Khalid Kbiri Alaoui",
+     "Mehdi Mchakhchekh",
+     "Hilal Ferdaoussi",
+     "Sabir Bougrine",
+     "Pape Ousmane Sakho"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4716393"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-05-09-raja-casablanca-wydad-ac",
+   "value": {
+    "name": "Raja Casablanca 0-1 Wydad AC",
+    "on": "2026-05-09",
+    "competition": "Botola Pro",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Mohamed Al Makahasi",
+     "Mohamed Abu Zraiq Sharara",
+     "El Mehdi Al Harrar",
+     "Aymen Barkok",
+     "Badr Benoun",
+     "Sabir Bougrine",
+     "Ayoub El Amloud",
+     "Hilal Ferdaoussi",
+     "Mathias Oyewusi",
+     "Abdellah Khafifi",
+     "Ismail Mokadem"
+    ],
+    "bench": [
+     "Mohamed Boulacsout",
+     "Amine Khammas",
+     "Mouad Dahak",
+     "Pape Ousmane Sakho",
+     "Ismail Khafi",
+     "Khalid Kbiri Alaoui",
+     "Mehdi Mchakhchekh",
+     "Othmane Chraibi",
+     "Besar Halimi"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4708884"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-05-06-maghreb-fes-raja-casablanca",
+   "value": {
+    "name": "Maghreb Fès 0-2 Raja Casablanca",
+    "on": "2026-05-06",
+    "competition": "Botola Pro",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Mohamed Al Makahasi",
+     "Aymen Barkok",
+     "Badr Benoun",
+     "Sabir Bougrine",
+     "Ayoub El Amloud",
+     "Adam Ennaffati",
+     "Hilal Ferdaoussi",
+     "Mathias Oyewusi",
+     "Abdellah Khafifi",
+     "Ismail Mokadem"
+    ],
+    "bench": [
+     "Mehdi Mchakhchekh",
+     "Mohamed Boulacsout",
+     "Amine Khammas",
+     "Mouad Dahak",
+     "Ismail Khafi",
+     "Besar Halimi",
+     "Mohamed Abu Zraiq Sharara",
+     "Pape Ousmane Sakho",
+     "Khalid Kbiri Alaoui"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4708878"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-05-03-raja-casablanca-el-jadida",
+   "value": {
+    "name": "Raja Casablanca 1-0 El Jadida",
+    "on": "2026-05-03",
+    "competition": "Botola Pro",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Mohamed Abu Zraiq Sharara",
+     "El Mehdi Al Harrar",
+     "Mohamed Al Makahasi",
+     "Aymen Barkok",
+     "Badr Benoun",
+     "Mouad Dahak",
+     "Ayoub El Amloud",
+     "Adam Ennaffati",
+     "Ismail Khafi",
+     "Abdellah Khafifi",
+     "Amine Khammas"
+    ],
+    "bench": [
+     "Mehdi Mchakhchekh",
+     "Ismail Mokadem",
+     "Abdelkarim Baadi",
+     "Hilal Ferdaoussi",
+     "Besar Halimi",
+     "Mohamed Boulacsout",
+     "Balla Moussa Conte",
+     "Mathias Oyewusi",
+     "Khalid Kbiri Alaoui"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4708823"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-04-30-as-far-rabat-raja-casablanca",
+   "value": {
+    "name": "AS Far Rabat 2-1 Raja Casablanca",
+    "on": "2026-04-30",
+    "competition": "Botola Pro",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Mohamed Al Makahasi",
+     "Badr Benoun",
+     "Sabir Bougrine",
+     "Mohamed Boulacsout",
+     "Adam Ennaffati",
+     "Hilal Ferdaoussi",
+     "Mathias Oyewusi",
+     "Abdellah Khafifi",
+     "Ismail Mokadem",
+     "Pape Ousmane Sakho"
+    ],
+    "bench": [
+     "Aymen Barkok",
+     "Mohamed Abu Zraiq Sharara",
+     "Mouad Dahak",
+     "Ismail Khafi",
+     "Mehdi Mchakhchekh",
+     "Ayoub El Amloud",
+     "Amine Khammas",
+     "Besar Halimi",
+     "Khalid Kbiri Alaoui"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4704267"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-04-26-raja-casablanca-fus-rabat",
+   "value": {
+    "name": "Raja Casablanca 4-1 FUS Rabat",
+    "on": "2026-04-26",
+    "competition": "Botola Pro",
+    "score": "4-1",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Mohamed Al Makahasi",
+     "Badr Benoun",
+     "Sabir Bougrine",
+     "Mohamed Boulacsout",
+     "Adam Ennaffati",
+     "Hilal Ferdaoussi",
+     "Mathias Oyewusi",
+     "Abdellah Khafifi",
+     "Ismail Mokadem",
+     "Pape Ousmane Sakho"
+    ],
+    "bench": [
+     "Mehdi Mchakhchekh",
+     "Amine Khammas",
+     "Aymen Barkok",
+     "Mohamed Abu Zraiq Sharara",
+     "Ismail Khafi",
+     "Ayoub El Amloud",
+     "Besar Halimi",
+     "Mouad Dahak",
+     "Khalid Kbiri Alaoui"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4703026"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-03-07-raja-casablanca-olympique-safi",
+   "value": {
+    "name": "Raja Casablanca 2-0 Olympique Safi",
+    "on": "2026-03-07",
+    "competition": "Botola Pro",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Mohamed Boulacsout",
+     "Badr Benoun",
+     "Abdellah Khafifi",
+     "Ismail Mokadem",
+     "Hilal Ferdaoussi",
+     "Mohamed Al Makahasi",
+     "Sabir Bougrine",
+     "Mohamed Abu Zraiq Sharara",
+     "Pape Ousmane Sakho",
+     "Mathias Oyewusi"
+    ],
+    "bench": [
+     "Ayoub El Amloud",
+     "Aymen Barkok",
+     "Besar Halimi",
+     "Mouad Dahak",
+     "Ismail Khafi",
+     "Mehdi Mchakhchekh",
+     "Amine Khammas",
+     "Balla Moussa Conte",
+     "Khalid Kbiri Alaoui"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4671919"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-03-01-hassania-agadir-raja-casablanca",
+   "value": {
+    "name": "Hassania Agadir 0-1 Raja Casablanca",
+    "on": "2026-03-01",
+    "competition": "Botola Pro",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Ismail Mokadem",
+     "Badr Benoun",
+     "Abdellah Khafifi",
+     "Mohamed Boulacsout",
+     "Sabir Bougrine",
+     "Hilal Ferdaoussi",
+     "Mohamed Al Makahasi",
+     "Mohamed Abu Zraiq Sharara",
+     "Mathias Oyewusi",
+     "Pape Ousmane Sakho"
+    ],
+    "bench": [
+     "Mehdi Mchakhchekh",
+     "Ayoub El Amloud",
+     "Amine Khammas",
+     "Aymen Barkok",
+     "Ayoub Maamouri",
+     "Besar Halimi",
+     "Mouad Dahak",
+     "Ismail Khafi",
+     "Khalid Kbiri Alaoui"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4671914"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-02-25-rsb-berkane-raja-casablanca",
+   "value": {
+    "name": "RSB Berkane 1-1 Raja Casablanca",
+    "on": "2026-02-25",
+    "competition": "Botola Pro",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Ismail Mokadem",
+     "Badr Benoun",
+     "Abdellah Khafifi",
+     "Amine Khammas",
+     "Abdelkarim Baadi",
+     "Othmane Chraibi",
+     "Besar Halimi",
+     "Mohamed Al Makahasi",
+     "Ismail Khafi",
+     "Mathias Oyewusi"
+    ],
+    "bench": [
+     "Mohamed Boulacsout",
+     "Balla Moussa Conte",
+     "Mouad Dahak",
+     "Pape Ousmane Sakho",
+     "Yahya Iguiz",
+     "Mehdi Mchakhchekh",
+     "Sabir Bougrine",
+     "Ayoub Maamouri",
+     "Khalid Kbiri Alaoui"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4671951"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-02-22-raja-casablanca-ittihad-tanger",
+   "value": {
+    "name": "Raja Casablanca 2-0 Ittihad Tanger",
+    "on": "2026-02-22",
+    "competition": "Botola Pro",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Ismail Mokadem",
+     "Badr Benoun",
+     "Abdellah Khafifi",
+     "Amine Khammas",
+     "Mohamed Boulacsout",
+     "Othmane Chraibi",
+     "Besar Halimi",
+     "Mouad Dahak",
+     "Pape Ousmane Sakho",
+     "Mathias Oyewusi"
+    ],
+    "bench": [
+     "Mehdi Mchakhchekh",
+     "Abdelkarim Baadi",
+     "Mohamed Al Makahasi",
+     "Sabir Bougrine",
+     "Yahya Iguiz",
+     "Balla Moussa Conte",
+     "Mohamed Abu Zraiq Sharara",
+     "Ayoub Maamouri",
+     "Khalid Kbiri Alaoui"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4671898"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-02-13-raja-casablanca-union-yacoub-el-mansour",
+   "value": {
+    "name": "Raja Casablanca 0-0 Union Yacoub El Mansour",
+    "on": "2026-02-13",
+    "competition": "Botola Pro",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Ayoub El Amloud",
+     "Ismail Mokadem",
+     "Badr Benoun",
+     "Amine Khammas",
+     "Besar Halimi",
+     "Hilal Ferdaoussi",
+     "Sabir Bougrine",
+     "Mohamed Abu Zraiq Sharara",
+     "Adam Ennaffati",
+     "Mathias Oyewusi"
+    ],
+    "bench": [
+     "Mohamed Boulacsout",
+     "Othmane Chraibi",
+     "Mouad Dahak",
+     "Ayoub Maamouri",
+     "Abdellah Khafifi",
+     "Mehdi Mchakhchekh",
+     "Balla Moussa Conte",
+     "Khalid Kbiri Alaoui"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4664975"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-02-08-codm-meknes-raja-casablanca",
+   "value": {
+    "name": "CODM Meknes 1-0 Raja Casablanca",
+    "on": "2026-02-08",
+    "competition": "Botola Pro",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Mohamed Boulacsout",
+     "Ismail Mokadem",
+     "Badr Benoun",
+     "Amine Khammas",
+     "Othmane Chraibi",
+     "Aymen Barkok",
+     "Sabir Bougrine",
+     "Mohamed Abu Zraiq Sharara",
+     "Adam Ennaffati",
+     "Mathias Oyewusi"
+    ],
+    "bench": [
+     "Ayoub El Amloud",
+     "Besar Halimi",
+     "Mouad Dahak",
+     "Ismail Khafi",
+     "Mehdi Mchakhchekh",
+     "Abdelkarim Baadi",
+     "Balla Moussa Conte",
+     "Ayoub Maamouri",
+     "Khalid Kbiri Alaoui"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4664821"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-02-01-raja-casablanca-cr-khemis-zemamra",
+   "value": {
+    "name": "Raja Casablanca 3-0 CR Khemis Zemamra",
+    "on": "2026-02-01",
+    "competition": "Botola Pro",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Abdelkarim Baadi",
+     "Ismail Mokadem",
+     "Abdellah Khafifi",
+     "Amine Khammas",
+     "Othmane Chraibi",
+     "Aymen Barkok",
+     "Sabir Bougrine",
+     "Mohamed Abu Zraiq Sharara",
+     "Adam Ennaffati",
+     "Mathias Oyewusi"
+    ],
+    "bench": [
+     "Badr Benoun",
+     "Hilal Ferdaoussi",
+     "Besar Halimi",
+     "Pape Ousmane Sakho",
+     "Ismail Khafi",
+     "Mehdi Mchakhchekh",
+     "Mouad Dahak",
+     "Ayoub Maamouri",
+     "Khalid Kbiri Alaoui"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4656181"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-01-25-us-touarga-raja-casablanca",
+   "value": {
+    "name": "US Touarga 1-1 Raja Casablanca",
+    "on": "2026-01-25",
+    "competition": "Botola Pro",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Mohamed Boulacsout",
+     "Abdellah Khafifi",
+     "Ismail Mokadem",
+     "Amine Khammas",
+     "Othmane Chraibi",
+     "Mohamed Al Makahasi",
+     "Sabir Bougrine",
+     "Mohamed Abu Zraiq Sharara",
+     "Mathias Oyewusi",
+     "Mouad Dahak"
+    ],
+    "bench": [
+     "Abdelkarim Baadi",
+     "Aymen Barkok",
+     "Adam Ennaffati",
+     "Pape Ousmane Sakho",
+     "Ismail Khafi",
+     "Badr Benoun",
+     "Mehdi Mchakhchekh",
+     "Bilal Ould-Chikh",
+     "Ayoub Maamouri",
+     "Khalid Kbiri Alaoui"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4656183"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-12-12-al-ahli-jeddah-raja-casablanca",
+   "value": {
+    "name": "Al Ahli Jeddah 1-2 Raja Casablanca",
+    "on": "2025-12-12",
+    "competition": "Club Friendlies",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Abdellah Khafifi",
+     "Ismail Mokadem",
+     "Abdelkarim Baadi",
+     "Bouchaib Arrassi",
+     "Othmane Chraibi",
+     "Mohamed Al Makahasi",
+     "Pape Ousmane Sakho",
+     "Adam Ennaffati",
+     "Mouad Dahak",
+     "Younes Najari"
+    ],
+    "bench": [
+     "Yassine Zoubir",
+     "Badr Benoun",
+     "Mehdi Mchakhchekh",
+     "Youssef Belammari",
+     "Hilal Ferdaoussi",
+     "Bilal Ould-Chikh",
+     "Ayoub Maamouri",
+     "Victor Abrego",
+     "Khalid Kbiri Alaoui"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4628308"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  }
+ ],
  "players": [],
  "kits": [],
  "rivals": []
