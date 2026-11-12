@@ -96,6 +96,7 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [141](141.md) · A thumbnail's hook is read off the record (5.11.2026)
 - [142](142.md) · CLASSIFIED is drawn on VOX's case board, and nothing on it flickers (5.11.2026)
 - [studio-autopilot](studio-autopilot.md) · The studio's autopilot publishes only after the owner had two hours to cancel on Telegram; a film nobody uploads loses its big files after seven days (12.11.2026)
+- [studio-experience](studio-experience.md) · Every Football Stories film is an experience: a judged hook, a DOCU edit with no still past 4 s, the hand-made graphics on data only, and a gate that measures it (12.11.2026)
 
 ## Control room, research desk and CRM
 

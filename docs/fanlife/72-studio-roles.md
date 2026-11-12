@@ -8,7 +8,11 @@ understand their roles."* One owner per decision; each rule lives in ONE place a
 | **Researcher** | what is true: claims with sources | `studio/research.py`, `deep_research.py`, rule 11 | `test_research*` |
 | **Writer** | the story: hook, stakes, running score, one idea per beat | `studio/writer.py` SYSTEM (THINK FOOTBALL, HOOK LAWS, RUNNING SCORE, THE EDIT YOU WRITE FOR) · CLASSIFIED: `docs/fanlife/classified/WRITERS-ROOM.md` | `test_writer*`, `casefile.errors` |
 | **Director** | what each beat SHOWS: the visual type, the claim, the hero, the moving-art pieces by meaning | `studio/director.py`, `cinema/direct.py`, `cinema/animate.wants` | `test_director`, `test_cinema` |
+| **Hook judge** | which of the writer's three openings is spoken, and which director's script a pitched film uses | `studio/hook_judge.py`, `docs/rules/studio-experience.md` | `test_hook_judge` |
 | **Editor (VOX)** | how it moves and reads: one camera, never a dead stop, one hero per line, big type, the score that follows the story | `docs/fanlife/71-continuous-camera-edit.md` → `vox/camera.py` (`flow()`), `score_story.py`, `vox/compose.py` | `test_vox` (Camera, Numbers) |
+| **Editor (DOCU)** | the cut of the default engine: no still past 4 s, the looks, the transitions, the same docs/71 rules | `studio/docu/editor.py` → `docu/build.py` (`transition`, `FRAMINGS`) | `test_docu_editor` |
+| **Graphic designer (DOCU)** | which device a beat's data earns; nothing on screen outside the research block | `studio/docu/designer.py` (`sourced`) | `test_docu_designer` |
+| **Producer** | whether the finished film is an experience: the gate's thresholds and the one re-plan | `studio/qa.py` (the experience gate) | `test_experience_gate` |
 | **Narrator** | how names and moments sound | `studio/voice.py`, `pronounce.py`, `kit/pronounce/*` | `test_voice*` |
 | **Flow operator** | the pictures and clips Flow makes: Shorts, CLASSIFIED panels, the art library | `docs/fanlife/70-flow-operator.md`, `cinema/flow_library.py` | `test_flow_library`, `tests/stories-flow-operator.test.ts` |
 
