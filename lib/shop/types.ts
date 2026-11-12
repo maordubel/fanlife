@@ -25,16 +25,12 @@ export type ShopSettings={
  popupUrl:string
  /** price = cost × (1 + margin/100), rounded up to .99 */
  margin:number
- /** the Pop-Up store's selling currency (Printify prices are in it) */
- currency?:string
  /** the catalogue row each kind prints on: found once, kept, and the owner may replace it */
  matches:Partial<Record<Kind,KindMatch>>
 }
 export type ShopAudit={at:string;by:string;what:string}
-/** the mirror of the Pop-Up store: what /shop shows (owner, 12.11.2026 — design and publish in Printify, the site follows on its own) */
-export type ShopCatalog={at:string|null;error:string|null;products:PublicProduct[];seen?:number}
-export type ShopDoc={v:1;settings:ShopSettings;products:ShopProduct[];catalog:ShopCatalog;audit:ShopAudit[]}
-export const EMPTY_SHOP:ShopDoc={v:1,settings:{open:false,shopId:null,shopTitle:null,channel:null,popupUrl:'',margin:45,matches:{}},products:[],catalog:{at:null,error:null,products:[]},audit:[]}
+export type ShopDoc={v:1;settings:ShopSettings;products:ShopProduct[];audit:ShopAudit[]}
+export const EMPTY_SHOP:ShopDoc={v:1,settings:{open:false,shopId:null,shopTitle:null,channel:null,popupUrl:'',margin:45,matches:{}},products:[],audit:[]}
 /** what the public page may know about a product */
 export type PublicProduct={id:string;subject:string;kind:Kind;title:string;description:string;image:string;images:string[];priceFrom:number;currency:string;url:string}
 export const isPublic=(p:ShopProduct)=>p.visible&&p.status==='live'&&!!p.printify?.url&&p.printify.images.length>0

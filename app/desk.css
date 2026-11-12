@@ -492,10 +492,3 @@ select.pcc-inline { inline-size: 92px; cursor: pointer; } select.pcc-inline:disa
 .shop-go { position: sticky; inset-block-end: 72px; z-index: 2; }
 .shop-pick[aria-checked='true'] { outline: 4px solid var(--mag-green); outline-offset: -4px; }
 .shop-plus { display: grid; place-items: center; inline-size: 100%; aspect-ratio: 4 / 5; font-size: 44px; border: 2px dashed var(--mag-ink); }
-/* the self-running shop (12.11.2026): the mirror of the Pop-Up store */
-.shop-mini { list-style: none; margin: 14px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
-.shop-mini a { display: grid; gap: 6px; padding: 8px; min-block-size: 44px; border: 2px solid var(--mag-ink); background: var(--mag-card); color: var(--mag-ink); text-decoration: none; }
-.shop-mini img { inline-size: 100%; block-size: auto; aspect-ratio: 1; object-fit: cover; background: var(--mag-paper); }
-.shop-mini span { display: grid; gap: 2px; font-size: 13px; }
-.shop-mini small { font-family: var(--mag-mono); }
-@media (max-width: 760px) { .shop-mini { grid-template-columns: repeat(2, minmax(0, 1fr)); } .shopd .desk-actions .desk-btn { flex: 1 1 100%; } }
