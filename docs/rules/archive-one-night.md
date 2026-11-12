@@ -7,3 +7,5 @@
 - **A club that plays no UEFA football says so** (`"uefa": false` in `ingest.json`), so the daily report raises no false alarm.
 - **Every game opens the archive through the door.** Link with `lib/clubs/archive-link.ts` (`player`, `match`/`on`/`score`, `name`/`year`); the archive resolves it with `lib/clubs/archive-door.ts` and searches the name when it holds no entry — a game's link never ends on a 404.
 - **Research deliveries keep their raw files** under `research-data/<wave>/` and are turned into pack waves by a script that applies the two-publisher rule per touch (`scripts/club-research/integrate-caf-2026-11-12.py` is the model).
+- **The head-to-head ledger is one reader.** `lib/fixtures/meetings.ts → clubMeetings / ledgerOf / headToHead` counts every approved night per opponent; the next-match ticket prints it, and `npm run h2h:build` (daily) writes `content/generated/head-to-head.json` for the studio. Never count meetings anywhere else.
+- **Every approved kit with a documented colour is drawn** (`npm run kits:svgs` → `public/club-kits/<club>/svg/`), maker mark and sponsor lettering included; a kit with no colour on record is not drawn.

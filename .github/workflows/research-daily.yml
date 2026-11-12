@@ -52,6 +52,9 @@ jobs:
           done
       - name: Census
         run: npm run -s research:census -- --out census.json
+      - name: Head-to-head ledger for the studio and the next-match card
+        continue-on-error: true
+        run: npm run -s h2h:build
       - name: What a yes would open (staged clubs)
         run: npm run -s research:desk-preview
       - name: Report (+ AI triage when the key exists)
@@ -71,4 +74,5 @@ jobs:
             research-staging/**/ingest.json
             club-packs/**/ingest.json
             research-reports/**
+            content/generated/head-to-head.json
           body: 'Automatic daily pull. New rows are unreviewed; see research-reports/ for what changed per club. New clubs wait for the owner on the research desk (Control room → Research).'

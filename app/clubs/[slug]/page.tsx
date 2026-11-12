@@ -144,7 +144,7 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
   {dyk==='flavour'&&<div className="wkk-dykwrap"><ClubFlavour item={flav2} kicker={copy.flavourKicker2} label={copy.wkkDyk} variant="dyk"/></div>}
 
   <Suspense fallback={<div className="wkk-nextwrap"><NextFixtureHold label={copy.fixtureCard}/></div>}>
-   <NextFixture clubId={id} clubName={c.name} lv={lv} locale={locale} copy={{kicker:copy.fixtureCard,vs:copy.vs,cta:copy.nextCta,kick:copy.wkkKickWord}}
+   <NextFixture clubId={id} clubName={c.name} lv={lv} locale={locale} copy={{kicker:copy.fixtureCard,vs:copy.vs,cta:copy.nextCta,kick:copy.wkkKickWord,h2h:{met:copy.h2hMet,won:copy.h2hWon,drawn:copy.h2hDrawn,lost:copy.h2hLost,first:copy.h2hFirst}}}
     wrap={card=><div className="wkk-nextwrap">{card}</div>}
     none={world.ground?<section className="wkk-nextwrap" aria-label={copy.fixtureCard}><MatchTicket labelledBy="md-h" kicker={`${copy.fixtureCard} · ${copy.wkkTbc}`} title={world.ground.name}
     meta={world.ground.local?<p className="wkk-ticket-local"><bdi lang={world.ground.script} dir="auto">{world.ground.local}</bdi></p>:undefined} stub={{small:copy.wkkKickWord,big:copy.wkkTbcShort}}>

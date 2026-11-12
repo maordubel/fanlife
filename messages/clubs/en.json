@@ -660,5 +660,10 @@
   "tabWatch": "YouTube",
   "wkWatch": "Football Stories on YouTube",
   "wkWatchSub": "Films about real supporters",
-  "wkhInWatch": "Films"
+  "wkhInWatch": "Films",
+  "h2hMet": "Met {n} times",
+  "h2hWon": "won",
+  "h2hDrawn": "drawn",
+  "h2hLost": "lost",
+  "h2hFirst": "No meeting on record yet"
 }
