@@ -119,8 +119,10 @@ jobs:
           npx next build
       - name: Build and bundle (static)
         if: steps.changed.outputs.build == 'true' && matrix.kind == 'static'
+        env:
+          BUILD_CMD: ${{ matrix.build }}
         run: |
-          if [ -n "${{ matrix.build }}" ]; then (cd app && ${{ matrix.build }}); fi
+          if [ -n "$BUILD_CMD" ]; then (cd app && bash -c "$BUILD_CMD"); fi
           B=deploy/static/bundle && rm -rf $B && mkdir -p $B/site
           rsync -a --exclude='.git' --exclude='.github' --exclude='node_modules' --exclude='*-src' \
             --exclude='CNAME' --exclude='_redirects' "app/${{ matrix.out }}/" $B/site/
