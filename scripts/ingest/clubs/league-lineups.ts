@@ -37,6 +37,11 @@ async function get(url:string):Promise<any>{
 const slug=(s:string)=>s.normalize('NFD').replace(/\p{M}+/gu,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
 const EURO=/UEFA|Champions League|Europa League|Conference League/i
 const surname=(n:string)=>{const p=fold(n).split(' ').filter(Boolean);return p[p.length-1]??''}
+/** given names too common to tell two team-mates apart (Arabic, Portuguese, Spanish naming) never prove a match on their own */
+const COMMON=new Set(['mohamed','mohammed','muhammad','ahmed','ahmad','mahmoud','abdel','abdul','abdelrahman','hassan','hussein','hossam','ibrahim','ali','omar','youssef','yousef','mostafa','mustafa','karim','amr','ayman','walid','tarek','khaled','junior','silva','santos','souza','pereira','oliveira','jose','juan','carlos'])
+/** is printed name n one of the folded names on a sheet? surname first; else a distinctive token of four letters or more */
+const onSheet=(n:string,sheet:string[])=>{const s=surname(n);if(sheet.some(l=>l.split(' ').includes(s)||l.endsWith(s)))return true
+ const toks=fold(n).split(' ').filter(t=>t.length>=4&&!COMMON.has(t));return toks.length>0&&sheet.some(l=>toks.some(t=>l.split(' ').includes(t)))}
 /** both sites' words for a line, folded to the four the archive uses */
 export function line(raw:unknown):'GK'|'DF'|'MF'|'FW'|null{
  const s=fold(String(raw??''))
@@ -60,7 +65,7 @@ export function lsScorers(incs:J|null|undefined,side:1|2):string[]{
 export function scorersAgree(a:string[],b:string[]):boolean{
  if(a.length!==b.length)return false
  const pool=[...b]
- for(const n of a){const s=surname(n),i=pool.findIndex(l=>l.split(' ').includes(s)||l.endsWith(s));if(i<0)return false;pool.splice(i,1)}
+ for(const n of a){const i=pool.findIndex(l=>onSheet(n,[l]));if(i<0)return false;pool.splice(i,1)}
  return true
 }
 async function resolveId(names:string[]):Promise<number|null>{
@@ -115,15 +120,20 @@ async function main(){
    const ourName=ours.name,oppName=(weHome?away:home).name
    const words=(n:string)=>fold(n).split(' ').filter(w=>w.length>=4)
    const near=(a:string,b:string)=>sameClub(a,b)||words(a).some(w=>words(b).includes(w))
+   // 12.11.2026 — opponents are often spelled apart ("Maghreb Fès" / "MAS Fes"): on a day where OUR club played exactly one
+   // match with this exact score (and on the same side of the fixture), that match is the one, whatever the opponent is called
    let ev:J|null=null
    const day0=new Date(`${on}T12:00:00Z`)
    for(const off of [0,1,-1]){
     const key=new Date(day0.getTime()+off*86400000).toISOString().slice(0,10).replace(/-/g,'');let day=lsDay.get(key);if(!day){day=await get(`${LS}/date/soccer/${key}/0?locale=en`);lsDay.set(key,day)}
+    const ours:J[]=[]
     for(const st of (day?.Stages||[])as J[])for(const e of (st.Events||[])as J[]){
      const t1=e.T1?.[0]?.Nm??'',t2=e.T2?.[0]?.Nm??''
      if(Number(e.Tr1)!==sh||Number(e.Tr2)!==sa)continue
-     if((weHome?near(t1,ourName)&&near(t2,oppName):near(t1,oppName)&&near(t2,ourName)))ev=e
+     if((weHome?near(t1,ourName)&&near(t2,oppName):near(t1,oppName)&&near(t2,ourName))){ev=e;break}
+     if(weHome?near(t1,ourName):near(t2,ourName))ours.push(e)
     }
+    if(!ev&&ours.length===1)ev=ours[0]!
     if(ev)break
    }
    if(!ev&&process.env.LL_DEBUG){const cands:string[]=[];for(const [,day] of lsDay)for(const st of (day?.Stages||[])as J[])for(const e of (st.Events||[])as J[])if(Number(e.Tr1)===sh&&Number(e.Tr2)===sa&&[e.T1?.[0]?.Nm,e.T2?.[0]?.Nm].some((n:string)=>words(n||'').some(w=>words(ourName).includes(w))))cands.push(`${e.T1?.[0]?.Nm} v ${e.T2?.[0]?.Nm} (${st.Cnm}/${st.Snm})`);console.log(`[${club}] no LS match: ${home.name} ${sh}-${sa} ${away.name} ${on} · near: ${cands.slice(0,3).join('; ')||'none'}`)}
@@ -135,14 +145,14 @@ async function main(){
     const lsPlayers=((sideLu?.Ps||[]) as J[]).filter(p=>p.Pon!=='COACH'&&p.Fp)
     const ls=lsPlayers.map(p=>fold(`${p.Fn||''} ${p.Ln||''}`))
     if(ls.length===11){
-     const hit=starters.filter(n=>ls.some(l=>l.split(' ').includes(surname(n))||l.endsWith(surname(n)))).length
+     const hit=starters.filter(n=>onSheet(n,ls)).length
      agree=hit>=10;why_=agree?'':`LiveScore's eleven differs (${hit}/11 surnames agree)`
      lsSrc={id:`ls-lu-${ev.Eid}`,title:`LiveScore: ${home.name} ${sh}-${sa} ${away.name}, ${on} (line-ups)`,url:`${LS}/lineups/soccer/${ev.Eid}`,publisher:'LiveScore',access:'available',checkedAt:today}
      if(agree){
       // the lines both sites drew
       for(const m of members.filter(x=>x.status===1)){
        const n=names.get(m.id);if(!n)continue
-       const a=line(m.position?.name??m.formation?.name),lp=lsPlayers.find(p=>{const l=fold(`${p.Fn||''} ${p.Ln||''}`);return l.split(' ').includes(surname(n))||l.endsWith(surname(n))}),b=line(lp?.Pon)
+       const a=line(m.position?.name??m.formation?.name),lp=lsPlayers.find(p=>onSheet(n,[fold(`${p.Fn||''} ${p.Ln||''}`)])),b=line(lp?.Pon)
        if(!a||!b)continue
        if(a!==b){posDiffer++;continue}
        posAgree++
