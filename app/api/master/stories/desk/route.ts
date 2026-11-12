@@ -3,6 +3,7 @@ import {readClassified} from '@/lib/stories/classified'
 import {readPitchDays,readPitchDesk} from '@/lib/stories/pitchStore'
 import {readLights} from '@/lib/stories/socialLights'
 import {marketingToday} from '@/lib/stories/marketing'
+import {readAutopilot} from '@/lib/stories/autopilotStore'
 import {fail,json} from '@/lib/stories/http'
 export const dynamic='force-dynamic'
 export const runtime='nodejs'
@@ -14,7 +15,7 @@ export async function GET(r:Request){
  if(!adminFromRequest(r))return json({error:'Not authorised.'},401)
  try{
   const soft=<T>(p:Promise<T>)=>p.catch(()=>null)
-  const [classified,days,pitchDesk,lights,plan]=await Promise.all([soft(readClassified()),soft(readPitchDays(14)),soft(readPitchDesk()),soft(readLights()),soft(marketingToday())])
-  return json({classified,pitches:days,pitchDesk,lights,plan})
+  const [classified,days,pitchDesk,lights,plan,autopilot]=await Promise.all([soft(readClassified()),soft(readPitchDays(14)),soft(readPitchDesk()),soft(readLights()),soft(marketingToday()),soft(readAutopilot())])
+  return json({classified,pitches:days,pitchDesk,lights,plan,autopilot})
  }catch(e){return fail(e)}
 }

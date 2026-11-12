@@ -2,6 +2,7 @@
 import {useRef,useState} from 'react'
 import {DIRECTORS,HOUSE_SOUL,type Director} from '@/lib/stories/directors'
 import type {Pitch,PitchDay} from '@/lib/stories/pitches'
+import {PREVIEW_HOUR,type Setting} from '@/lib/stories/autopilot'
 import {directorsBanner,type Facts} from '@/lib/stories/banners'
 import {DeskBanner} from './desk'
 import {api} from './stories-desk'
@@ -14,7 +15,7 @@ import css from './studio.module.css'
  */
 const KIND_TEXT={match:'One match',tie:'A tie or a run',season:'A whole season',rivalry:'A rivalry'} as const
 type Dated=Pitch&{date:string}
-export function DirectorsTab({facts,days,onChange}:{facts:Facts;days:PitchDay[]|null;onChange:()=>Promise<void>}){
+export function DirectorsTab({facts,days,autopilot,onChange}:{facts:Facts;days:PitchDay[]|null;autopilot?:Setting|null;onChange:()=>Promise<void>}){
  const [busy,setBusy]=useState(false),[err,setErr]=useState(''),[msg,setMsg]=useState('')
  const all:Dated[]=(days??[]).flatMap(d=>d.rounds.slice().reverse().flatMap(r=>r.pitches.map(p=>({...p,date:d.date}))))
  async function ask(){
@@ -34,6 +35,7 @@ export function DirectorsTab({facts,days,onChange}:{facts:Facts;days:PitchDay[]|
     </div>
    </div>
   </section>
+  <AutopilotSwitch setting={autopilot} onChange={onChange}/>
   <div className={css.actions}>
    <button type="button" className={`${css.btn} ${css.btnRed} min-h-tap`} disabled={busy} onClick={()=>void ask()}>{busy?'Asking…':'Ask for new pitches'}</button>
   </div>
@@ -82,4 +84,28 @@ function PitchCard({p,onChange}:{p:Dated;onChange:()=>Promise<void>}){
   </div>
   {err&&<p role="alert" className={css.alert}>{err}</p>}
  </div>
+}
+
+/** THE switch of the autopilot (lib/stories/autopilotStore.ts): one on/off, one line saying what it does. Off until the
+ *  owner turns it on; `undefined` = still loading, `null` = the switch could not be read (shown as such, never as off). */
+function AutopilotSwitch({setting,onChange}:{setting?:Setting|null;onChange:()=>Promise<void>}){
+ const [busy,setBusy]=useState(false),[err,setErr]=useState('')
+ const on=setting?.on===true
+ async function flip(){
+  if(!on&&!confirm(`Turn the autopilot on? Every day it picks one pitch, makes the film and sends it to your Telegram at ${PREVIEW_HOUR}:00 Athens; two hours later it goes on unless you tap Cancel publishing.`))return
+  setBusy(true);setErr('')
+  try{await api('/api/master/stories/pitches',{method:'POST',body:JSON.stringify({action:'autopilot',on:!on})});await onChange()}
+  catch(e){setErr(e instanceof Error?e.message:'Could not change the switch.')}finally{setBusy(false)}
+ }
+ return <section className={css.panel} aria-labelledby="auto-h">
+  <div className={css.bar}><span id="auto-h">Autopilot</span><span>{setting===undefined?'…':setting===null?'Not connected':on?'On':'Off'}</span></div>
+  <div className={css.body}>
+   <p>One film a day by itself: the best pitch is picked, the film is made, and at {PREVIEW_HOUR}:00 Athens it reaches your Telegram with a <b>Cancel publishing</b> link — two hours later it is published unless you cancel.</p>
+   <div className={css.actions}>
+    <button type="button" role="switch" aria-checked={on} className={`${css.btn} ${on?'':css.btnRed} min-h-tap`} disabled={busy||!setting} onClick={()=>void flip()}>{busy?'Saving…':on?'Turn the autopilot off':'Turn the autopilot on'}</button>
+   </div>
+   <p className={css.hint}>{on?'On. Turning it off stops every pick, preview and publishing at once; a film already made stays in the studio.':'Off. Nothing is picked, sent or published by itself.'} YouTube keeps API uploads from this project private, so at the end of the two hours the film is approved and waits for your upload in YouTube Studio.</p>
+   {err&&<p role="alert" className={css.alert}>{err}</p>}
+  </div>
+ </section>
 }

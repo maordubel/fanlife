@@ -1,8 +1,10 @@
 import {cronAuthorized} from '@/lib/master/request'
-import {StoryError,claim,finish,jobKind,mediaPath,nextForWorker,report,type Finish,type Progress} from '@/lib/stories/jobs'
+import {StoryError,claim,finish,jobKind,mediaPath,nextForWorker,report,type Finish,type Job,type Progress} from '@/lib/stories/jobs'
 import {deletionCleaned,getJob,listJobs,pendingDeletions,updateJob} from '@/lib/stories/store'
 import {purgeJobMedia,signedDownload,signedUpload,trimJobMedia} from '@/lib/stories/media'
-import {trimDue,trimLog} from '@/lib/stories/trim'
+import {trimDue,trimLog,unuploadedDue,type Trim} from '@/lib/stories/trim'
+import {autopilotDue} from '@/lib/stories/autopilot'
+import {autopilotReport,autopilotTick,readAutopilot} from '@/lib/stories/autopilotStore'
 import {body,fail,json} from '@/lib/stories/http'
 import {cleanHeartbeat,noteHeartbeat} from '@/lib/stories/health'
 import {claimSocial,cleanLights,composeAll,dueSocial,socialDue,filmLink,filmTitle,mediaPathOf,resultSocial,type SocialResult} from '@/lib/stories/social'
@@ -16,12 +18,17 @@ export const runtime='nodejs'
 
 /**
  * The production worker's only door (GitHub Actions, `Authorization: Bearer <CRON_SECRET>`).
- *   {op:'trim',worker}                          → published films' big files leave the bucket (lib/stories/trim.ts)
+ *   {op:'trim',worker}                          → published films' big files leave the bucket, and those of finished
+ *                                                 films nobody uploaded for seven days (lib/stories/trim.ts)
+ *   {op:'autopilot',worker,lights}              → one tick of the autopilot (lib/stories/autopilot.ts): what this runner
+ *                                                 must now send to the owner's Telegram or upload — nothing while it is off
+ *   {op:'autopilot_report',worker,id,event,…}   → the runner's result for one of those
  *   {op:'health',worker,health}                 → the writer light from a run that just checked its Gemini keys (by name)
  *   {op:'peek',worker,health?}                  → the id of the job that would be taken next and its kind (no lease), and
  *                                                 `pitch: true` once when the owner asked for new pitches, and
  *                                                 `social_due: true` while a scheduled post's time has come (read from
- *                                                 the jobs the peek already loaded: no extra query); the listener
+ *                                                 the jobs the peek already loaded: no extra query), and `autopilot: true`
+ *                                                 when the autopilot's runner has something to do; the listener
  *                                                 (stories-watch.yml) adds its heartbeat and the writer-key check
  *   {op:'pitch_history',worker,days?}           → what the directors must not pitch again: recent pitches + every film
  *   {op:'pitch_save',worker,pitches,status}     → a round of pitches (one per director) and how the run went
@@ -38,6 +45,11 @@ export const runtime='nodejs'
  *   {op:'library_flow',worker}                  → the Flow-made art-library pieces with signed download urls
  * A worker that lost its lease is refused, so two runners can never both finish one film.
  */
+/** The autopilot's runner is started only when there is something for it: one small read of the switch, and the jobs the
+ *  peek already loaded. Off = never for a pick; a cancel still to confirm on Telegram is told either way. */
+async function autopilotFlag(jobs:Job[]):Promise<boolean>{
+ try{return autopilotDue(jobs,(await readAutopilot()).on)}catch{return false}
+}
 export async function POST(r:Request){
  if(!cronAuthorized(r))return json({error:'Not authorised.'},401)
  try{
@@ -54,9 +66,10 @@ export async function POST(r:Request){
   }
   if(b.op==='trim'){
    const done:{id:string;bytes:number;files:number}[]=[],failed:string[]=[]
-   for(const j of trimDue(await listJobs(200)).slice(0,5)){
+   const jobs=await listJobs(200),stale=new Set(unuploadedDue(jobs).map(j=>j.id))
+   for(const j of [...trimDue(jobs),...jobs.filter(j=>stale.has(j.id))].slice(0,5)){
     try{
-     const t=await trimJobMedia(j.id),at=new Date().toISOString(),mark={at,...t}
+     const t=await trimJobMedia(j.id),at=new Date().toISOString(),mark:Trim={at,...t,...(stale.has(j.id)?{reason:'unuploaded' as const}:{})}
      await updateJob(j.id,x=>({...x,trim:mark,log:[...x.log,{at,text:trimLog(mark)}].slice(-120)}))
      done.push({id:j.id,...t})
     }catch{failed.push(j.id)}
@@ -73,8 +86,13 @@ export async function POST(r:Request){
    const next=nextForWorker(jobs)
    let pitch=false
    try{const desk=await readPitchDesk();if(desk&&shouldDispatch(desk)){await updatePitchDesk(d=>markDispatched(d));pitch=true}}catch{pitch=false}
-   return json({next:next?next.id:null,kind:next?jobKind(next):null,pitch,social_due:socialDue(jobs)})
+   return json({next:next?next.id:null,kind:next?jobKind(next):null,pitch,social_due:socialDue(jobs),autopilot:await autopilotFlag(jobs)})
   }
+  if(b.op==='autopilot'){
+   const l=(b.lights&&typeof b.lights==='object'?b.lights:{}) as Record<string,unknown>
+   return json(await autopilotTick(worker,{telegram:l.telegram===true,youtube:l.youtube===true}))
+  }
+  if(b.op==='autopilot_report')return json(await autopilotReport(worker,b))
   // the pitch desk (scripts/football-stories/studio/pitch.py, .github/workflows/stories-pitch.yml)
   if(b.op==='pitch_history'){
    const n=Math.min(Math.max(Number(b.days)||14,1),60)

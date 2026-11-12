@@ -1,0 +1,15 @@
+# The studio's autopilot publishes only after the owner had two hours to cancel; a film nobody uploads loses its big files after seven days (owner, 12.11.2026)
+
+Two decisions of the owner, both "yes":
+
+**Autopilot.** The studio may pick the day's pitch itself, make the film and publish it — "but I want to receive the film on Telegram and have a two-hour option to cancel the publishing. That is: I receive it at 10:00, and the publishing happens at 12:00."
+
+- One switch, off by default: `studio/autopilot.json` in the durable store, read only in `lib/stories/autopilotStore.ts`, turned on and off in the desk (Studio → Directors → Autopilot). Off means no pick, no preview and no publishing.
+- The pick is a fixed sum, never a model (`lib/stories/autopilot.ts → scorePitches`): days since the club was last filmed, pictures known in the library, the kind of story, how fully the pitch is written. A pitch the owner passed is never picked, nor the same event pitched again. One pick an Athens day, only when no film is in production or waiting. The reasons are written on the job.
+- The preview goes to the owner's linked Telegram chat at the first listener round at or after 10:00 Europe/Athens (not from 20:00 on: a film ready in the evening waits for the morning). Publishing is the moment the message was sent plus two hours; a film that is ready later still gets its two full hours and the message states the real time.
+- No preview, no publish. Only a message Telegram accepted opens the window. Nothing is published when the switch is off, QA did not pass, the preview was not delivered, or the owner cancelled.
+- "Cancel publishing" is a signed link for one film, valid until its publishing time, signed with the scheduler's existing secret (`CRON_SECRET`, as the Final Whistle render link). No login. Opening it changes nothing; the page's one button (a POST) cancels. The film itself stays in the studio.
+- Time-based work hangs on the listener's peek (`stories-watch.yml`), never on a new cron: GitHub runs this repository's crons late and rarely.
+- **The last step is still the owner's.** YouTube keeps videos uploaded through an API project that has not passed Google's audit private, and no workflow holds a YouTube secret. So at the end of the window the film is "approved, waiting for your upload" and Telegram says so. The API uploader (`engine/upload.py`) is the second publisher behind the same interface; it is chosen only when its token is configured, and it reports what YouTube really shows.
+
+**Retention.** A finished film with no YouTube upload keeps its big files (master, preview, Shorts, package) for `UNUPLOADED_DAYS` = 7 days after it was last touched; then they leave the bucket by the same trim as an uploaded film. The owner gave no number; seven is ours and is one constant in `lib/stories/trim.ts`. The job, its captions, pictures and metadata stay, and the desk says "media removed after 7 days without upload — re-render to get it back". Never a job the worker holds, an upload in progress, or a film inside the autopilot's production or cancel window.

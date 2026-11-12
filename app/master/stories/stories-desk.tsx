@@ -1,7 +1,9 @@
 'use client'
 import {useEffect,useRef,useState,type CSSProperties,type ReactNode} from 'react'
 import type {Job,Privacy} from '@/lib/stories/jobs'
+import {autopilotLine} from '@/lib/stories/autopilot'
 import {keysText} from '@/lib/stories/writerKeys'
+import {UNUPLOADED_TEXT} from '@/lib/stories/trim'
 import type {Health} from '@/lib/stories/health'
 import type {Evidence} from '@/lib/stories/catalog'
 import {STAGES} from '@/lib/stories/jobs'
@@ -224,6 +226,8 @@ export function JobCard({job,open,onOpen,onChange}:{job:Job;open:boolean;onOpen:
     <div className={css.track} role="progressbar" aria-valuenow={Math.round(job.progress*100)} aria-valuemin={0} aria-valuemax={100}><div className={css.fill} style={{width:`${Math.round(job.progress*100)}%`}}/></div>
     <p className={css.meta}>{job.state==='queued'&&job.notBefore?`Waiting for Google's free writer — starts again by itself at ${new Date(job.notBefore).toLocaleString('en-GB',{weekday:'short',hour:'2-digit',minute:'2-digit'})}. Nothing is wrong with the film.`:job.message}</p>
     <ol className={css.stages}>{STAGES.filter(s=>s!=='done').map((s,i)=><li key={s} data-on={i===si||undefined} data-done={i<si||undefined}>{STAGE_TEXT[s]}</li>)}</ol></>}
+   {job.autopilot&&<p className={css.meta} role="status"><b>{autopilotLine(job.autopilot)}</b>{job.autopilot.state==='producing'||job.autopilot.state==='window'?' · the Telegram message carries the Cancel publishing link':''}</p>}
+   {job.trim?.reason==='unuploaded'&&<p className={css.alert} role="status">This film&rsquo;s {UNUPLOADED_TEXT}. Its record, captions, pictures and upload pack are kept.</p>}
    {job.error&&<p className={css.alert} role="alert"><b>[{job.error.code}]</b> {job.error.message} {job.error.retryable?'— safe to retry.':'— fix the cause before retrying.'}</p>}
    {b.review==='editorial'?<><EditorialSteps job={job}/>{job.state==='needs_review'?<p className={css.alert}>{job.message}</p>:null}</>:
     job.state==='needs_review'&&job.stage==='script'&&job.options?.length?<ScriptChoice job={job} busy={busy} pick={n=>act({action:'choose_script',option:n})}/>:
@@ -299,7 +303,8 @@ function Detail({job,act,busy,onChange}:{job:Job;act:(b:Record<string,unknown>)=
    <details><summary className={css.meta}>Shorts ideas</summary><ul>{yt.shorts.map(s=><li key={s.hook}><b>{s.hook}</b> — {s.idea}</li>)}</ul></details></>}
   {yt&&a?.master&&<PublishKit yt={yt} job={job}/>}
   {a?.master&&<SocialPanel job={job}/>}
-  {a?.master&&<><h3 className={css.h3}>Files</h3><div className={css.actions}>
+  {a?.master&&job.trim&&<><h3 className={css.h3}>Files</h3><p className={css.meta}>{job.trim.reason==='unuploaded'?`The film's ${UNUPLOADED_TEXT}.`:'The big files were removed after the YouTube upload.'}</p></>}
+  {a?.master&&!job.trim&&<><h3 className={css.h3}>Files</h3><div className={css.actions}>
    <button className={`${css.btn} min-h-tap`} onClick={()=>void downloadMaster()}>Download master ({(a.master.bytes/1e6).toFixed(0)} MB)</button>
    {u(a.package)&&<a className={`${css.btn} min-h-tap`} href={u(a.package)}>Package (zip)</a>}
    {u(a.captions?.srt)&&<a className={`${css.btn} min-h-tap`} href={u(a.captions?.srt)}>Captions (SRT)</a>}</div>{dl&&<p className={css.meta} role="status">{dl}</p>}</>}
