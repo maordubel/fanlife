@@ -41,6 +41,15 @@ jobs:
             npm run -s club:wave -- --club "$id" --max 20 --backfill 30 --refresh 20 2>&1 | tee -a wave.log || failed="$failed $id"
           done
           [ -z "$failed" ] || echo "::warning::club:wave failed for:$failed"
+      - name: League and cup nights, scoresheets and positions (365Scores × LiveScore, every club with ingest.json)
+        # 12.11.2026 — the league feed runs every day now (it had run once, on 10.10): new nights, agreed scorers and agreed lines
+        continue-on-error: true
+        run: |
+          for dir in club-packs/*/; do
+            id=$(basename "$dir")
+            [ -f "$dir/ingest.json" ] || continue
+            npx tsx scripts/ingest/clubs/league-lineups.ts --club "$id" --max 30 2>&1 | tee -a wave.log || echo "::warning::$id league feed failed"
+          done
       - name: Census
         run: npm run -s research:census -- --out census.json
       - name: What a yes would open (staged clubs)
@@ -57,6 +66,7 @@ jobs:
           add-paths: |
             research-data/**
             club-packs/**/wave-auto.json
+            club-packs/**/wave-league-lineups-*.json
             research-staging/**/wave-auto.json
             research-staging/**/ingest.json
             club-packs/**/ingest.json

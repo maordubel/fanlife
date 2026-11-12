@@ -18,9 +18,10 @@ import {withRosterWave} from './roster-wave'
 import {withForgedTrivia} from '@/lib/trivia/club'
 import {withMemoryPairs} from './memory-pairs'
 import {withArchiveMysteries} from './mystery-forge'
+import {oneNightPerMatch} from './one-night'
 export const compilePackEuro=(pack:Record<string,unknown>,club:RegistryClub)=>{
- const history=withHistorical(pack,club.id),result=compilePackBase(withGoalWave(withEuro(history.pack,club.id),club.id) as never,club)
- return {...result,diagnostics:[...result.diagnostics,...history.conflicts.map(c=>({record:`${club.id}:${c.incoming}`,code:'HISTORY_CONFLICT',message:`${c.reason}: ${c.on}; existing ${c.existing}. Incoming result withheld from matches and timeline.`}))]}
+ const history=withHistorical(pack,club.id),night=oneNightPerMatch(withGoalWave(withEuro(history.pack,club.id),club.id)),result=compilePackBase(night.pack as never,club)
+ return {...result,diagnostics:[...result.diagnostics,...night.folded.map(f=>({record:`${club.id}:${f.kept}`,code:'SAME_MATCH_FOLDED',message:`${f.on}: ${f.folded.join(', ')} folded into ${f.kept} (same day, same score).`})),...history.conflicts.map(c=>({record:`${club.id}:${c.incoming}`,code:'HISTORY_CONFLICT',message:`${c.reason}: ${c.on}; existing ${c.existing}. Incoming result withheld from matches and timeline.`}))]}
 }
 /** Existing archives only. New facts stay in review; prior approvals remain authoritative. */
 /** The colours-of-football catalogue kits the club pack has no (season, type) for: status `review`, so they reach no gate until the owner approves them. */

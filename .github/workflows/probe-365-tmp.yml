@@ -2,13 +2,25 @@ name: probe-365 (temporary)
 on:
   push:
     branches: ['claude/archive-refresh-2026-11-12']
-    paths: ['scripts/ingest/clubs/probe-365.mjs', '.github/workflows/probe-365-tmp.yml']
+    paths: ['scripts/ingest/clubs/league-lineups.ts', '.github/workflows/probe-365-tmp.yml']
 permissions: {contents: read}
 jobs:
   probe:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with: {node-version: 22}
-      - run: node scripts/ingest/clubs/probe-365.mjs
+        with: {node-version: 22, cache: npm}
+      - run: npm ci
+      - run: |
+          for id in raja-casablanca wydad-casablanca al-ahly hapoel-petah-tikva celtic olympiacos panathinaikos aek-athens zrinjski-mostar st-pauli hapoel-tel-aviv; do
+            npx tsx scripts/ingest/clubs/league-lineups.ts --club "$id" --max 60 || echo "FAILED $id"
+          done
+        env: {}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: league
+          path: |
+            club-packs/*/wave-league-lineups-2026-10-10.json
+            club-packs/*/ingest.json
