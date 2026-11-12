@@ -96,9 +96,9 @@ def chapters_of(plan: dict) -> list[dict]:
 
 
 def description(ep: dict, plan: dict, music: dict | None, voice_credit: str) -> str:
-    from studio.common import CHANNEL_HANDLE, CHANNEL_NAME, SLOGAN
+    from studio.common import CHANNEL_HANDLE, CHANNEL_NAME, SHOP_LINE, SLOGAN
     pk = ep.get('package') or {}
-    parts = [pk.get('hook', '').strip(), '']
+    parts = [pk.get('hook', '').strip(), '', SHOP_LINE, '']
     ch = chapters_of(plan)
     if ch:
         parts += ['Chapters'] + [f"{c['time']} {c['title']}" for c in ch] + ['']

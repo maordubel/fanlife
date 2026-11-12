@@ -21,6 +21,9 @@ CHANNEL_ID = 'UC2KULoLBFCSZC4jeRGYkKfQ'
 CHANNEL_NAME = 'FanLife: Football Stories'
 CHANNEL_HANDLE = '@FanLifeFootballStories'
 SLOGAN = 'Football is ninety minutes. Being a supporter is a lifetime.'
+# the shop line in every film description (owner, 12.11.2026: the shop lives where the fans already are)
+SHOP_URL = 'https://fanlife.dubelteam.com/shop?utm_source=youtube&utm_medium=description&utm_campaign=football-stories'
+SHOP_LINE = f'🛒 Wear the story — FAN LIFE supporter art, printed to order: {SHOP_URL}'
 
 # The Weekly guide (app/magazine.css) — ink, newsprint, paper and the magazine's own vermilion.
 INK = '#15130F'

@@ -157,7 +157,8 @@ def synthetic_decision(manifest: dict) -> dict:
 def description(script: dict, plan: dict, ledger: dict, manifest: dict) -> str:
     srcs = sources_list(used_claims(script, ledger))
     chs = chapters(plan)
-    parts = [script['description'].strip(), '']
+    from studio.common import SHOP_LINE
+    parts = [script['description'].strip(), '', SHOP_LINE, '']
     if chs:
         parts += ['Chapters'] + [f'{ts_chapter(c["t"])} {c["title"]}' for c in chs] + ['']
     tail = ['', 'Credits',
