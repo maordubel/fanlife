@@ -18,7 +18,8 @@ let kept:{at:number;value:Public}|null=null
 /** Read at most once a minute per server: every page's menu asks, and the answer changes only when the owner saves. */
 export async function publicShop():Promise<Public>{
  if(kept&&Date.now()-kept.at<60e3)return kept.value
- const d=await readShop(),value={open:d.settings.open,popupUrl:d.settings.popupUrl,products:d.settings.open?d.products.filter(isPublic).map(toPublic):[]}
+ const d=await readShop(),{usdToEur,eurGuide}=await import('./fx'),rate=d.settings.open?await usdToEur():null
+ const value={open:d.settings.open,popupUrl:d.settings.popupUrl,products:d.settings.open?d.products.filter(isPublic).map(toPublic).map(p=>({...p,eur:p.currency==='USD'?eurGuide(p.priceFrom,rate):null})):[]}
  kept={at:Date.now(),value};return value
 }
 /** The Printify token: the environment first, else the server-only file the owner saved from the desk. Never sent to a browser. */

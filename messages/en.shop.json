@@ -7,6 +7,7 @@
  "all": "Everything",
  "house": "FAN LIFE",
  "from": "from {price}",
+  "eur": " · ≈ €{eur}",
  "buy": "Buy",
  "buyAria": "Buy {title} — opens the secure checkout",
  "empty": "Nothing on this shelf yet. More is on the press.",

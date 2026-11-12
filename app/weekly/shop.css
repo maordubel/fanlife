@@ -28,3 +28,5 @@
   .wks-market { grid-template-columns: 130px minmax(0, 1fr); padding: 22px; }
   .wks-market-art { block-size: 130px; }
 }
+/* the euro guide beside the dollar price (12.11.2026) */
+.wks-eur { opacity: .75; white-space: nowrap; }

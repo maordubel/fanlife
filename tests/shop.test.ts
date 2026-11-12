@@ -1,3 +1,5 @@
+import {vi} from 'vitest'
+vi.mock('server-only',()=>({}))
 import {describe,expect,it} from 'vitest'
 import {KIND_SPECS} from '@/lib/shop/kinds'
 import {LIBRARY,picturesFor,titleOf} from '@/lib/shop/library'
@@ -53,5 +55,11 @@ describe('the shop: Printify decisions',()=>{
   const base:ShopProduct={id:'a',subject:'fanlife',kind:'poster',art:{library:{id:'x',name:'x.png'}},title:'t',description:'d',status:'live',visible:true,createdAt:'',updatedAt:'',printify:{productId:'1',blueprintId:1,providerId:1,images:['https://i/1.jpg'],priceFrom:1999,currency:'USD',url:'https://s.printify.me/p',publishedAt:'x'}}
   expect(isPublic(base)).toBe(true);expect(isPublic({...base,visible:false})).toBe(false);expect(isPublic({...base,status:'ready'})).toBe(false);expect(isPublic({...base,printify:{...base.printify!,url:null}})).toBe(false)
   expect(KINDS.every(k=>KIND_SPECS[k])).toBe(true)
+ })
+})
+describe('the euro guide price',()=>{
+ it('rounds to whole euros and shows nothing without a rate',async()=>{
+  const {eurGuide}=await import('@/lib/shop/fx')
+  expect(eurGuide(2499,0.92)).toBe(23);expect(eurGuide(499,0.92)).toBe(5);expect(eurGuide(2499,null)).toBeNull()
  })
 })
