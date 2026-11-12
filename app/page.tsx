@@ -4,7 +4,7 @@ import {redirect} from 'next/navigation'
 import {Shell} from '@/components/master/Shell'
 import {Plate} from '@/components/weekly/Plate'
 import {Suspense} from 'react'
-import {HubStop,HubNextUp,HubNextUpWaiting,HubMatchday} from '@/components/home/HubFixtures'
+import {HubStop,HubMatchday} from '@/components/home/HubFixtures'
 import {readState} from '@/lib/master/store'
 import Image from 'next/image'
 import {SHARED_GATES} from '@/lib/clubs/gates'
@@ -34,7 +34,6 @@ import {door} from '@/lib/features-server'
 import {PinsRow} from '@/components/fanlife/Pins'
 import {WatchBanner} from '@/components/weekly/WatchBanner'
 import {lifeOpen} from '@/lib/clubs/life/entry'
-import {IssueFold} from '@/components/home/IssueFold'
 import {shopIsOpen} from '@/components/shop/ShopStrip'
 import shopCopy from '@/messages/en.shop.json'
 export const dynamic='force-dynamic'
@@ -67,16 +66,18 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
  const date=new Intl.DateTimeFormat(locale==='en'?'en-GB':locale,{dateStyle:'full',timeZone:'UTC'}).format(now),iso=now.toISOString().slice(0,10)
  // the provider never holds the first byte: the strip and the match card stream in when the feed answers
  const stop=<Suspense fallback={null}><HubStop open={open} locale={locale} stopPress={copy.stopPress} vs={copy.vs} last={copy.stopLast} next={copy.stopNext} none={preview?<div className="mag-stop-in"><b>{copy.stopPress}</b><span>{copy.evaluation} · {copy.evaluationNote}</span></div>:null}/></Suspense>
- const couponCopy={kicker:copy.wkhInNext,coupon:copy.wkhCoupon,cols:copy.wkhCouponCols,all:copy.wkhNextAll,note:copy.nextNote,home:copy.homeSide,away:copy.awaySide,vs:copy.vs,live:copy.tagLive,today:copy.tagToday,soon:copy.tagSoon,later:copy.tagLater,tbc:copy.tagTbc,tbcLamp:copy.wkhTbc,close:copy.chooserClose}
  const dockCopy={title:copy.dockTitle,kept:copy.wkhKept,cont:copy.dockContinue,rounds:copy.dockRounds,file:copy.dockFile,fileSub:copy.wkFileSub,stand:copy.dockStand,standSub:copy.wkhStandSub,market:copy.dockMarket,marketSub:copy.wkMarketSub,sources:copy.dockSources,sourcesSub:copy.wkSourcesSub,voted:copy.dockVoted,vote:copy.dockVote,voteSub:copy.wkhVoteSub}
  const heroClubs=await Promise.all(live.map(async c=>{const base=await loadClubBase(c.id).catch(()=>null);const m=base?momentFor(base.data,now):null;const daily=!!base&&base.data.gates.trivia.playable&&buildEdition(base.data,clubDay(base.data.identity.country,now))!==null;return {id:c.id,name:c.name,city:c.city,daily,otd:m&&m.offset===0?{title:m.title,years:m.yearsAgo}:null}}))
  const heroCopy={kicker:copy.wkhHeroK,cont:copy.dockContinue,contSub:copy.wkhHeroSub,newK:copy.wkhHeroNewK,newT:copy.wkhHeroNewT,otd:copy.todayExact,play:copy.wkhHeroDaily}
  const dockClubs=open.map(c=>({id:c.id,name:c.name})),dockOpen=live.map(c=>c.id)
+ // INSIDE THIS ISSUE is the index of our own features (owner, 12.11.2026: "no feature may be missed"): one cell each, in the page's own order
  const inside=[
   {href:'#clubs',title:copy.clubs,sub:copy.wkhInClubs.replace('{n}',String(live.length)),go:'↓'},
-  {href:'#next',title:copy.navNext,sub:copy.wkhInNext,go:'↓'},
+  ...(fl.open?[{href:'#manager',title:copy.wkhLmTitle,sub:copy.wkhLmK,go:'↓'}]:[]),
   {href:'#life',title:copy.navLife,sub:`${copy.lifeEntryTitle} · ${copy.lifeGameSub}`,go:'↓'},
+  ...(shopOpen?[{href:'/shop',title:shopCopy.navShop,sub:shopCopy.rowShopSub,go:'→'}]:[]),
   {href:'#market',title:copy.navMarket,sub:copy.marketTitle,go:'↓'},
+  {href:'#watch',title:copy.wkhInWatch,sub:copy.watchKicker,go:'↓'},
  ]
  return <Shell locale={locale} stop={stop}><main id="main" className="wkh">
 
@@ -100,7 +101,7 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
   <div className="wkp-strip wkh-pins"><PinsRow locale={locale} where="hub"/></div>
 
   {/* THE MANAGER: LEGENDS MANAGER leads the page, above the gates (owner, 14.10.2026). */}
-  {fl.open&&<section className="wkh-lm" aria-label={copy.wkhLmTitle}>
+  {fl.open&&<section className="wkh-lm" id="manager" aria-label={copy.wkhLmTitle}>
    <Link className="wkh-sp wkh-sp-lm wk-navyplate" href="/all-football/legends" data-preview={fl.preview||undefined}>
     <Emblem size={76} label="" className="wkh-sp-emblem"/>
     <span className="wkh-sp-t"><span className="wk-k">{copy.wkhLmK}</span><b>{copy.wkhLmTitle}</b><small>{copy.wkhLmSub}{fl.preview?` · ${copy.wkhOwnerPreview}`:''}</small></span><Arrow/>
@@ -108,7 +109,7 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
   </section>}
 
   {/* THE COVER: orange plate, speed lines, the kicker, the two teasers that open a club chooser. */}
-  <section className="wkh-cover wk-panel wk-orangeplate" aria-labelledby="cover-h" data-fold>
+  <section className="wkh-cover wk-panel wk-orangeplate" aria-labelledby="cover-h">
    <span className="wk-speed wkh-cover-speed" aria-hidden="true"/>
    <span className="wk-flash wkh-cover-flash" aria-hidden="true"/>
    <Plate art="kicker" ink="green" className="wkh-cover-fig"/>
@@ -139,7 +140,7 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
   </section>
 
   {/* THE CHANNEL: FanLife: Football Stories on YouTube (owner, 9.11.2026). */}
-  <WatchBanner copy={copy}/>
+  <div className="wkh-watch" id="watch"><WatchBanner copy={copy}/></div>
 
   {/* THE COUNTER (12.11.2026): the supporters' shirt market and the shop, one place for both. */}
   <div className="wkh-counter">
@@ -155,10 +156,9 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
   </section>
    {shopOpen&&<Link className="wkh-door wk-greenplate" href="/shop" data-testid="hub-shop"><Plate art="scarf" ink="orange"/><span><span className="wk-k white">{shopCopy.doorK}</span><b className="wk-logo">{shopCopy.doorT}</b></span><Arrow/></Link>}
   </div>
-  <div className="wkh-foldbar"><IssueFold scope="main.wkh" more={copy.wkhFoldMore} less={copy.wkhFoldLess}/></div>
 
-  {/* INSIDE THIS ISSUE: four cells on a phone, the contents column on a desktop. Never a sideways strip. */}
-  <nav className="wkh-inside" aria-label={copy.insideTitle} data-fold>
+  {/* INSIDE THIS ISSUE: the index of our features — three cells a row on a phone, the contents column on a desktop. */}
+  <nav className="wkh-inside" aria-label={copy.insideTitle}>
    <p className="wk-banner wkh-inside-k">{copy.insideTitle}</p>
    <ol>{inside.map((x,i)=><li key={x.href}><a href={x.href} className="min-h-tap"><span className="no wk-num" aria-hidden="true">{String(i+1).padStart(2,'0')}</span><span className="t"><b>{x.title}</b><small>{x.sub}</small></span><span className="pg" aria-hidden="true">{x.go}</span></a></li>)}</ol>
   </nav>
@@ -186,21 +186,19 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
    <p className="wk-small wkh-clubs-note wkh-m-only">{copy.wkhStickerNote}</p>
   </section>
 
-  {/* NEXT UP — FOR REAL: the coupon, every club on the roll (streams in; rule 104). */}
-  <Suspense fallback={<HubNextUpWaiting title={copy.nextUp} kicker={copy.wkhInNext}/>}><HubNextUp open={open} locale={locale} copy={couponCopy} title={copy.nextUp}/></Suspense>
   {uv.open&&<Suspense fallback={null}><HubMatchday open={open} locale={locale} kicker={copy.wkhUvK}/></Suspense>}
 
-  <div className="wkh-spec" data-fold>
+  <div className="wkh-spec">
    <HubDock part="links" clubs={dockClubs} openIds={dockOpen} locale={locale} copy={dockCopy}/>
   </div>
 
   {/* YOUR SAY: the ballot of the clubs still in the workshop, and a club written in. */}
-  <div className="wkh-sayfold" data-fold><SuggestClub copy={{kicker:copy.suggestKicker,title:copy.suggestTitle,note:copy.suggestNote,label:copy.suggestLabel,placeholder:copy.suggestPlaceholder,send:copy.suggestSend,sending:copy.suggestSending,thanks:copy.suggestThanks,again:copy.suggestAgain,tooShort:copy.suggestTooShort,limit:copy.suggestLimit,failed:copy.suggestFailed,writeIn:copy.wkhWriteIn}}>
+  <div className="wkh-sayfold"><SuggestClub copy={{kicker:copy.suggestKicker,title:copy.suggestTitle,note:copy.suggestNote,label:copy.suggestLabel,placeholder:copy.suggestPlaceholder,send:copy.suggestSend,sending:copy.suggestSending,thanks:copy.suggestThanks,again:copy.suggestAgain,tooShort:copy.suggestTooShort,limit:copy.suggestLimit,failed:copy.suggestFailed,writeIn:copy.wkhWriteIn}}>
    {shop.length>0&&<WorkshopGrid clubs={shopClubs} copy={{ballot:copy.wkhBallot,question:copy.wkhBallotQ,kicker:copy.hubWorkshopKicker,count:copy.voteCount,demo:copy.voteDemo,note:copy.voteNote,vote:copy.voteCta,voted:copy.voteVoted,leading:copy.tileLeading,preview:copy.tilePreview,shop:copy.tileWorkshop,more:copy.tileMore,less:copy.tileLess,accounts:copy.voteAccounts,guests:copy.voteGuests,base:copy.voteBase,offline:copy.voteOffline,tooMany:copy.voteTooMany}}/>}
   </SuggestClub></div>
 
   {/* DEAR TERRACE: the editor's letter — the old weekly's "from the editor" box (owner, 7.10.2026). */}
-  <aside className="wkh-letter" aria-labelledby="editor-h" data-fold>
+  <aside className="wkh-letter" aria-labelledby="editor-h">
    <span className="wk-stamp wkh-letter-stamp" aria-hidden="true">{copy.letterStamp}</span>
    <p className="wk-k red">{copy.letterKicker}</p>
    <div className="wkh-letter-head"><span className="wk-circle wk-greenplate wkh-letter-pic" aria-hidden="true"><Plate art="fanfist" ink="green"/></span><h2 className="wk-logo green" id="editor-h">{copy.letterTitle}</h2></div>
@@ -211,7 +209,7 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
   </aside>
 
   {/* THE BACK PAGES: where every fact in the paper comes from. */}
-  <Link className="wkh-back" href="/sources" data-fold>
+  <Link className="wkh-back" href="/sources">
    <svg className="wkh-lens" viewBox="-12 -12 234 234" aria-hidden="true"><path className="h" d="M132 132 L192 192"/><path className="g" d="M140 140 L188 188"/><circle className="r" cx="86" cy="86" r="62"/><path className="s" d="M52 66 A40 40 0 0 1 82 42"/></svg>
    <span className="wkh-back-t"><span className="wk-k cyan">{copy.wkhBackPages}</span><b className="wk-head">{copy.wkSources}</b><span className="wk-small">{copy.wkhSourcesSub}</span></span><Arrow/>
   </Link>

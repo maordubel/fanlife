@@ -52,7 +52,7 @@ try{
  {const t=Date.now(),r=await fetch(base+'/');const ttfb=Date.now()-t;await r.text()
   timings.push(['/ (fetch, ttfb)',ttfb]);if(ttfb>4000)fail('hub','first byte after '+ttfb+' ms')}
  await visit('hub','/')
- await page.locator('#next').waitFor({timeout:20000}).catch(()=>fail('hub','Next up never arrived'))
+ await page.locator('#clubs').waitFor({timeout:20000}).catch(()=>fail('hub','The clubs never arrived'))
  const tile=page.locator('a[data-club-tile="open"]').first()
  if(await tile.count()){
   const href=await tile.getAttribute('href')
