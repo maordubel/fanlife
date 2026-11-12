@@ -24,3 +24,23 @@ describe('the universe crests are served from FAN LIFE',()=>{
   expect(universeCrest('Nobody United of Nowhere')).toBeNull()
  })
 })
+
+describe('the Cloudflare front door (deploy/space/worker.js)',()=>{
+ const run=async(path:string,status:number,headers:Record<string,string>={})=>{
+  const {default:w}=await import('../deploy/space/worker.js')
+  const orig=globalThis.fetch
+  globalThis.fetch=(async()=>new Response('x',{status,headers:{'cache-control':'public, max-age=2592000'}})) as typeof fetch
+  try{return await w.fetch(new Request('https://fanlife.dubelteam.com'+path,{headers}),{})}finally{globalThis.fetch=orig}
+ }
+ it('never lets a missing file be cached',async()=>{
+  expect((await run('/fonts/a.woff2',404)).headers.get('cache-control')).toBe('no-store')
+  expect((await run('/fonts/a.woff2',200)).headers.get('cache-control')).toContain('max-age')
+ })
+ it('clears a returning browser\'s cache once, on a page, and never again',async()=>{
+  const first=await run('/',200,{accept:'text/html'})
+  expect(first.headers.get('clear-site-data')).toBe('"cache"')
+  expect(first.headers.get('set-cookie')).toContain('fl_cache_20261112=1')
+  expect((await run('/',200,{accept:'text/html',cookie:'fl_cache_20261112=1'})).headers.get('clear-site-data')).toBeNull()
+  expect((await run('/brand/x.png',200,{accept:'image/*'})).headers.get('clear-site-data')).toBeNull()
+ })
+})
