@@ -446,6 +446,13 @@
     ],
     "punch": [
      0.6
+    ],
+    "sfx": [
+     {
+      "file": "crowd-real-build",
+      "at": 0.2,
+      "level": 0.25
+     }
     ]
    },
    "transition": "page"
@@ -550,6 +557,13 @@
     ],
     "punch": [
      0.72
+    ],
+    "sfx": [
+     {
+      "file": "crowd-real-goal",
+      "at": 0.7,
+      "level": 0.25
+     }
     ]
    },
    "transition": "torn",
@@ -596,6 +610,13 @@
     ],
     "punch": [
      0.82
+    ],
+    "sfx": [
+     {
+      "file": "whistle-2",
+      "at": 0.15,
+      "level": 0.2
+     }
     ]
    },
    "transition": "dissolve",
@@ -766,7 +787,14 @@
     "punch": [
      0.55
     ],
-    "confettiAt": 0.7
+    "confettiAt": 0.7,
+    "sfx": [
+     {
+      "file": "crowd-real-goal",
+      "at": 0.5,
+      "level": 0.3
+     }
+    ]
    },
    "transition": "slide",
    "cap": {
@@ -1041,7 +1069,14 @@
      0.3,
      0.8
     ],
-    "confettiAt": 0.8
+    "confettiAt": 0.8,
+    "sfx": [
+     {
+      "file": "crowd-real-goal",
+      "at": 0.8,
+      "level": 0.35
+     }
+    ]
    },
    "transition": "iris"
   },
@@ -1058,6 +1093,13 @@
     "push": [
      1.0,
      1.07
+    ],
+    "sfx": [
+     {
+      "file": "crowd-real-murmur",
+      "at": 0.05,
+      "level": 0.25
+     }
     ]
    },
    "transition": "dissolve"

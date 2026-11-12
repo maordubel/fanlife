@@ -155,6 +155,15 @@
    "transition": "zoom",
    "cap": {
     "he": "בגיל 13, במשחק ידידות, נפצע השוער של הקבוצה, והילד נעמד בשער. זה היה רגע שישנה את הכדורגל הישראלי."
+   },
+   "visual": {
+    "sfx": [
+     {
+      "file": "whistle-1",
+      "at": 0.3,
+      "level": 0.25
+     }
+    ]
    }
   },
   {
@@ -711,6 +720,13 @@
     ],
     "punch": [
      0.75
+    ],
+    "sfx": [
+     {
+      "file": "crowd-real-goal",
+      "at": 0.75,
+      "level": 0.3
+     }
     ]
    },
    "transition": "zoom",
@@ -846,6 +862,13 @@
     "confettiAt": 0.86,
     "punch": [
      0.86
+    ],
+    "sfx": [
+     {
+      "file": "crowd-real-final",
+      "at": 0.85,
+      "level": 0.3
+     }
     ]
    },
    "transition": "page",
@@ -910,6 +933,13 @@
     "punch": [
      0.2,
      0.7
+    ],
+    "sfx": [
+     {
+      "file": "crowd-real-goal",
+      "at": 0.25,
+      "level": 0.25
+     }
     ]
    },
    "transition": "torn",
@@ -957,6 +987,13 @@
     "punch": [
      0.38,
      0.8
+    ],
+    "sfx": [
+     {
+      "file": "crowd-real-goal",
+      "at": 0.4,
+      "level": 0.35
+     }
     ]
    },
    "transition": "zoom",
@@ -1007,6 +1044,13 @@
     ],
     "punch": [
      0.62
+    ],
+    "sfx": [
+     {
+      "file": "crowd-real-goal",
+      "at": 0.62,
+      "level": 0.32
+     }
     ]
    },
    "transition": "iris",
@@ -1157,6 +1201,13 @@
     ],
     "punch": [
      0.3
+    ],
+    "sfx": [
+     {
+      "file": "crowd-real-build",
+      "at": 0.1,
+      "level": 0.25
+     }
     ]
    },
    "transition": "dissolve",

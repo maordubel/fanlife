@@ -33,7 +33,9 @@ from studio.fairytales import subtitles as sub
 
 REPO = Path(__file__).resolve().parents[4]
 SFX = REPO / 'public/life/sfx'
+BEAT = 2.6                                                    # seconds between camera waypoints
 MUSIC_DIR = REPO / 'scripts/football-stories/studio/kit/music'
+LIFE_SFX = REPO / 'public/life/sfx'
 KIT_SFX = REPO / '.claude/skills/media-use/audio/assets/sfx'
 # the sound under each cut: (file, level). Soft and short — the story is told by the voice
 CUT_SFX = {'page': (SFX / 'page.m4a', 0.7), 'slide': (KIT_SFX / 'whoosh-short.mp3', 0.22), 'zoom': (KIT_SFX / 'whoosh.mp3', 0.16),
@@ -79,6 +81,13 @@ class Source:
     def __init__(self, work: Path, plate: str, dur: float, speed_floor: float = 0.55, seed: int = 1):
         self.dur, self.seed, self.work, self.plate, self.floor = dur, seed, work, plate, speed_floor
         self._frames: list[Image.Image] | None = None
+        # owner 12.11.2026: never more than three seconds of a still camera. A waypoint every BEAT seconds (a new
+        # framing: closer or wider, a little left or right) and a Catmull-Rom curve through them, so the lens is always
+        # travelling and never stops at a waypoint.
+        rng = random.Random(seed * 7919)
+        n = int((dur + 2.0) / BEAT) + 3
+        self.way = [(0.0, 0.0, 0.0)] + [(rng.uniform(0.02, 0.13), rng.uniform(-0.06, 0.06), rng.uniform(-0.035, 0.035))
+                                        for _ in range(n)]
 
     @property
     def frames(self) -> list[Image.Image]:
@@ -95,11 +104,24 @@ class Source:
     def drop(self) -> None:
         self._frames = None
 
+    def beat(self, t: float) -> tuple[float, float, float]:
+        x = max(t, 0.0) / BEAT
+        i = min(int(x), len(self.way) - 3)
+        f = x - i
+        p0, p1, p2, p3 = self.way[max(i - 1, 0)], self.way[i], self.way[i + 1], self.way[i + 2]
+        return tuple(0.5 * (2 * b + (-a + c) * f + (2 * a - 5 * b + 4 * c - d) * f * f + (-a + 3 * b - 3 * c + d) * f ** 3)
+                     for a, b, c, d in zip(p0, p1, p2, p3))
+
     def at(self, t: float, push=(1.0, 1.06), centre=(.5, .5), punch: float = 0.0, aim=(.5, .5)) -> Image.Image:
         frames = self.frames
         # owner 11.11.2026: no shake — the clip plays on ones, a slowed clip blends its neighbouring frames, and the
         # camera glides on one eased curve with no boil
-        fk = min(max(t, 0.0) * self.speed * FPS, len(frames) - 1)
+        fk = max(t, 0.0) * self.speed * FPS
+        last = len(frames) - 1
+        if last and fk > last:                                       # a clip shorter than its shot swings back (a
+            fk = fk % (2 * last)                                     # boomerang), it never freezes on its last frame
+            fk = 2 * last - fk if fk > last else fk
+        fk = min(fk, last)
         k = int(fk)
         frame = frames[k]
         if 0.08 < fk - k and k + 1 < len(frames):
@@ -114,6 +136,10 @@ class Source:
             cy += 0.02 * (0.5 - u)
         else:                                                         # a clip gets a slower reframe, so no shot sits still
             cx += 0.03 * (u - 0.5) * side
+        dz, dx, dy = self.beat(t)
+        z += dz
+        cx += dx
+        cy += dy
         # owner 11.11.2026 ("zooms when needed, so the film keeps moving"): a punch-in on the shot's big moment, eased,
         # leaning a little toward what just landed
         z += punch
@@ -253,6 +279,9 @@ def sfx_events(shots: list[dict]) -> list[tuple]:
             ev.append((KIT_SFX / 'pop.mp3', s['start'] + g['at'] * s['dur'] + 0.12, 0.12))
         if v.get('confettiAt') is not None:
             ev.append((KIT_SFX / 'sparkle.mp3', s['start'] + v['confettiAt'] * s['dur'], 0.28))
+            ev.append((LIFE_SFX / 'crowd-claps.m4a', s['start'] + v['confettiAt'] * s['dur'], 0.22))
+        for x in v.get('sfx', []):                                   # the owner's crowd, a whistle, a kick — by name
+            ev.append((LIFE_SFX / f"{x['file']}.m4a", s['start'] + x['at'] * s['dur'], x.get('level', 0.3)))
     return ev
 
 
@@ -329,7 +358,9 @@ def main() -> None:
         for k, s in enumerate(shots):
             inputs += ['-i', str(narr / f"{s['shot']['id']}-{lang}.wav")]
             ms = int((s['start'] + LEAD) * 1000)
-            parts.append(f'[{k}:a]aresample=48000,adelay={ms}|{ms}[v{k}]')
+            ln = s['lens'][lang]                                     # a soft edge on every take: no click at a cut
+            parts.append(f'[{k}:a]aresample=48000,afade=t=in:d=0.025,afade=t=out:st={max(0.0, ln - 0.09):.3f}:d=0.09,'
+                         f'adelay={ms}|{ms}[v{k}]')
         n = len(shots)
         fc = ';'.join(parts) + ';' + ''.join(f'[v{k}]' for k in range(n)) + f'amix=inputs={n}:normalize=0,volume=1.5,asplit=2[vo][key];'
         # the bed: the owner's warm, playful tracks in turn, crossfaded, ducked under the voice and lifted between lines
@@ -339,8 +370,8 @@ def main() -> None:
             fc += (f'[{n + j}:a]aresample=48000,aloop=loop=-1:size=2e9,atrim=0:{length:.2f},asetpts=PTS-STARTPTS,'
                    f'afade=t=in:d={fin:.2f},afade=t=out:st={length - fout:.2f}:d={fout:.2f},adelay={ms}|{ms}[m{j}];')
         m0 = n + len(music)
-        fc += (''.join(f'[m{j}]' for j in range(len(music))) + f'amix=inputs={len(music)}:normalize=0,volume=0.30,'
-               f'atrim=0:{total:.2f}[bed];[bed][key]sidechaincompress=threshold=0.025:ratio=5:attack=40:release=650[mu];')
+        fc += (''.join(f'[m{j}]' for j in range(len(music))) + f'amix=inputs={len(music)}:normalize=0,volume=0.42,'
+               f'atrim=0:{total:.2f}[bed];[bed][key]sidechaincompress=threshold=0.03:ratio=4:attack=60:release=500[mu];')
         for e, (path, at, level) in enumerate(events):
             inputs += ['-i', str(path)]
             ms = int(at * 1000)
