@@ -1,0 +1,65 @@
+{
+ "generatedAt": "2026-11-12T12:15:55.951Z",
+ "alarms": [
+  {
+   "club": "maccabi-haifa",
+   "code": "waiting-owner",
+   "text": "Maccabi Haifa: 9 gates open on your approval — nothing more to collect for them first."
+  },
+  {
+   "club": "paok",
+   "code": "waiting-owner",
+   "text": "PAOK Thessaloniki: 10 gates open on your approval — nothing more to collect for them first."
+  },
+  {
+   "club": "dinamo-zagreb",
+   "code": "waiting-owner",
+   "text": "Dinamo Zagreb: 10 gates open on your approval — nothing more to collect for them first."
+  },
+  {
+   "club": "hajduk-split",
+   "code": "waiting-owner",
+   "text": "Hajduk Split: 9 gates open on your approval — nothing more to collect for them first."
+  },
+  {
+   "club": "borussia-dortmund",
+   "code": "waiting-owner",
+   "text": "Borussia Dortmund: 10 gates open on your approval — nothing more to collect for them first."
+  },
+  {
+   "club": "leicester-city",
+   "code": "waiting-owner",
+   "text": "Leicester City: 10 gates open on your approval — nothing more to collect for them first."
+  },
+  {
+   "club": "atalanta",
+   "code": "waiting-owner",
+   "text": "Atalanta: 9 gates open on your approval — nothing more to collect for them first."
+  },
+  {
+   "club": "partizan-belgrade",
+   "code": "waiting-owner",
+   "text": "Partizan Belgrade: 10 gates open on your approval — nothing more to collect for them first."
+  },
+  {
+   "club": "union-berlin",
+   "code": "waiting-owner",
+   "text": "1. FC Union Berlin: 10 gates open on your approval — nothing more to collect for them first."
+  },
+  {
+   "club": "fenerbahce",
+   "code": "waiting-owner",
+   "text": "Fenerbahçe: 9 gates open on your approval — nothing more to collect for them first."
+  },
+  {
+   "club": "hapoel-tel-aviv",
+   "code": "no-uefa",
+   "text": "Hapoel Tel Aviv: UEFA returned no matches — its UEFA team was not found under the names on file. The next run tries the wider name list."
+  },
+  {
+   "club": "st-pauli",
+   "code": "no-uefa",
+   "text": "FC St. Pauli: UEFA returned no matches — its UEFA team was not found under the names on file. The next run tries the wider name list."
+  }
+ ]
+}
