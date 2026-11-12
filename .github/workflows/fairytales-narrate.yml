@@ -24,6 +24,14 @@ jobs:
       BRANCH: fairytales-narration-${{ github.run_id }}
     steps:
       - uses: actions/checkout@v4
+        with: {fetch-depth: 2}
+      - name: Which episode
+        # a push names its episode by the .retake file it changed; a manual run takes the input
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            ch=$(git diff --name-only HEAD~1 HEAD -- 'scripts/football-stories/studio/fairytales/episodes/*.retake' | head -1)
+            [ -n "$ch" ] && echo "EPISODE=$(basename "$ch" .retake)" >> "$GITHUB_ENV"
+          fi
       - uses: actions/setup-python@v5
         with: {python-version: '3.12'}
       - name: Engines
