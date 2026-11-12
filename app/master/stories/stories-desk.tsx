@@ -258,7 +258,7 @@ function ScriptChoice({job,busy,pick}:{job:Job;busy:boolean;pick:(n:number)=>Pro
    {(()=>{const d=directorOfOption(o);return <><p className={css.kicker2}>{d?.name??o.angle} · {o.words} words{job.brief.lead_director&&d?.id===job.brief.lead_director?' · his pitch':''}</p>{d&&<p className={css.tagline}>{d.tagline}</p>}</>})()}
    <h4>{o.title}</h4>
    <p className={css.hook}>&ldquo;{o.hook}&rdquo;</p>
-   {o.hook_options?.length?<details><summary>Three opening hooks</summary><ol>{o.hook_options.map((h,i)=><li key={i}>{h.text}</li>)}</ol><small>Opening 1 is used in this script; alternatives are for review.</small></details>:null}
+   {o.hook_options?.length?<details><summary>Three opening hooks</summary><ol>{o.hook_options.map((h,i)=><li key={i}>{h.text}</li>)}</ol><small>{o.hook_judge?`Hook judge: ${o.hook_judge.reason}`:'Opening 1 is used in this script; alternatives are for review.'}</small></details>:null}
    <p className={css.opening}>{o.opening}</p>
    <ol className={css.chapters}>{o.chapters.map(c=><li key={c}>{c}</li>)}</ol>
    <button type="button" className={`${css.btn} ${css.btnRed} min-h-tap`} disabled={busy} onClick={()=>void pick(o.n)}>Make this one</button>
@@ -290,6 +290,9 @@ function Detail({job,act,busy,onChange}:{job:Job;act:(b:Record<string,unknown>)=
   {script&&<><h3 className={css.h3}>Script for review</h3><div className={css.pre}>{script}</div></>}
   {u(a?.preview)&&<><h3 className={css.h3}>Preview</h3><video className={css.video} src={u(a?.preview)} controls preload="metadata" playsInline>{u(a?.captions?.vtt)&&<track kind="captions" srcLang="en" label="English" src={u(a?.captions?.vtt)} default/>}</video></>}
   {a?.thumbnails?.length?<><h3 className={css.h3}>Thumbnails</h3><div className={css.thumbs}>{a.thumbnails.map(t=>u(t)&&<img key={t.path} src={u(t)} alt="Thumbnail option"/>)}</div></>:null}
+  {job.hook&&<details><summary className={css.meta}>Why this hook opens the film</summary><p>{job.hook.reason}</p>
+   <ul>{job.hook.scores.map(r=><li key={r.n}>{r.n===job.hook!.spoken?'▶ ':''}Opening {r.n}: <b>{r.score}/100</b> — {r.notes.join('; ')}</li>)}</ul>
+   {job.hook.scripts&&<p>{job.hook.scripts.reason}</p>}</details>}
   {job.qa&&<><h3 className={css.h3}>Checks</h3><ul className={css.checks}>{job.qa.checks.map(c=><li key={c.name}>{c.ok?'✓':'✗'} <b>{c.name}</b> — {c.detail}</li>)}</ul>
    {job.qa.rights?.length?<p className={css.alert}>Rights gaps: {job.qa.rights.join('; ')}</p>:null}
    {job.qa.cannot_prove?.length?<details><summary className={css.meta}>What the checks cannot prove</summary><ul>{job.qa.cannot_prove.map(x=><li key={x}>{x}</li>)}</ul></details>:null}</>}

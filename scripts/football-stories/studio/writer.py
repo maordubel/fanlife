@@ -697,14 +697,20 @@ WAIT_CODES = ('WRITER_BUSY', 'WRITER_QUOTA_DAY', 'WRITER_UNREACHABLE')
 STOP_CODES = ('WRITER_NO_CREDIT', 'WRITER_KEY', 'WRITER_NOT_CONFIGURED')
 
 
-def write_options(brief: dict, ledger: dict, cache_dir: Path, log) -> list[dict]:
+def write_options(brief: dict, ledger: dict, cache_dir: Path, log, least: int = 2) -> list[dict]:
     """Three scripts, one per director (studio/directors.py); each must pass the same checks as a single script and may
     not repeat another option's hook or title. One that fails its checks is left out and named in the log. When Google's
     free tier is busy (WAIT_CODES) the film waits instead of failing — unless two scripts are already written, which is
-    enough to choose from. Every answer is cached, so the scripts already written are never asked for again."""
+    enough to choose from. Every answer is cached, so the scripts already written are never asked for again.
+
+    `least=1` is the film nobody is waiting to choose for (a pitch made with one click, studio/hook_judge.pick_script):
+    when the free DAILY quota ends after the first script, three become two and two become one — said in the log —
+    rather than a film that waits a day for a comparison. The pitching director (`lead_director`) writes first, so the
+    one script a spent quota leaves is his."""
     from .directors import DIRECTORS
     out, errs, busy = [], [], None
-    for d in DIRECTORS:
+    order = sorted(DIRECTORS, key=lambda d: d['id'] != (brief.get('lead_director') or '')) if least < 2 else DIRECTORS
+    for d in order:
         try:
             avoid = [{'director': o['_angle'], 'title': _title_of(o), 'hook': o.get('hook')} for o in out]
             sc_ = write_script(brief, ledger, cache_dir, log, director=d, avoid=avoid)
@@ -720,8 +726,10 @@ def write_options(brief: dict, ledger: dict, cache_dir: Path, log) -> list[dict]
                 break  # the other directors would only spend the same quota
             errs.append(f'{d["name"]}: {e}')
             log(f'Writer: {d["name"]}\'s script failed its checks — {str(e)[:200]}')
-    if busy and len(out) < 2:
+    if busy and len(out) < (1 if least < 2 and busy.code == 'WRITER_QUOTA_DAY' else 2):   # a busy minute is waited out; a spent day is not
         raise busy
+    if busy and len(out) < len(order):
+        log(f'Writer: the free quota allowed {len(out)} of {len(order)} scripts — going on with {"those" if len(out) > 1 else "that one"}')
     if not out:
         raise StageError('SCRIPT_INVALID', 'None of the three scripts passed the checks: ' + ' | '.join(errs)[:900])
     return out
@@ -733,6 +741,7 @@ def option_summary(s: dict, n: int) -> dict:
     beats = [b for ch in s.get('chapters') or [] for b in ch.get('beats') or []]
     return {'n': n, 'angle': s.get('_angle') or f'Option {n}', 'director': s.get('_director'), 'title': selected_title(s),
             'hook': s.get('hook') or '', 'hook_options': s.get('hook_options') or [],
+            **({'hook_judge': s['hook_judge']} if isinstance(s.get('hook_judge'), dict) else {}),
             'chapters': [ch.get('title') or '' for ch in s.get('chapters') or []],
             'words': sum(len((b.get('narration') or '').split()) for b in beats),
             'opening': ' '.join(b.get('narration') or '' for b in beats[:3])[:600]}

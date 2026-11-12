@@ -27,7 +27,11 @@ export type Tone=typeof TONES[number]
 export const STYLES=['collage','papercut','archive','night'] as const
 export type Style=typeof STYLES[number]
 /** One script per director (docs/fanlife/66 §5): `angle` carries the director's name, `director` his id. */
-export type ScriptOption={n:number;angle:string;title:string;hook:string;hook_options?:{text:string;claim_ids:string[]}[];chapters:string[];words:number;opening:string;director?:DirectorId}
+/** Why an opening was chosen (studio/hook_judge.py): each of the three scored against the hook laws, the one spoken, the reason;
+ *  `scripts` when the judge also chose between the directors' scripts (a film made from a pitch). */
+export type HookJudge={scores:{n:number;score:number;laws:Record<string,number>;notes:string[]}[];winner:number;spoken:number;reason:string
+ critic?:{pick:number;why:string}|null;scripts?:{chosen:number;reason:string;scripts:{n:number;director?:string|null;score:number;valid:boolean;hook:string}[]}}
+export type ScriptOption={n:number;angle:string;title:string;hook:string;hook_options?:{text:string;claim_ids:string[]}[];hook_judge?:HookJudge;chapters:string[];words:number;opening:string;director?:DirectorId}
 export type Brief={
  club_id:string;club_name:string;season:string;topic:string;duration:number
  visual_style:Style|'mixed';voice:'auto'|'elevenlabs'|'kokoro';review:'auto'|'script'|'editorial'
@@ -35,6 +39,8 @@ export type Brief={
  kind?:Kind;match_ids?:string[];opponent?:string|null;tone?:Tone
  /** three scripts to choose from (default) or one; the owner's pick once they are written */
  scripts?:1|3;choice?:number|null
+ /** three scripts and no question: the hook judge chooses between them (a film made from a pitch with one click) */
+ auto_pick?:boolean
  /** the director whose pitch this film came from: his script is offered first (studio desk, Directors tab) */
  lead_director?:DirectorId|null
  /** pictures from the owner's Google Drive library for this club, and the Reel sent to the owner's Telegram */
@@ -83,6 +89,8 @@ export type Job={
  cost:{writer?:string;voice?:string;renderMinutes?:number}
  /** the scripts written for the owner to choose from (studio v3) */
  options?:ScriptOption[]|null
+ /** why this film opens the way it does: the three hooks' scores and the reason (studio/hook_judge.py) */
+ hook?:HookJudge|null
  editorial?:Review
  editorialRequest?:ReviewAction
  /** posts of the finished film on Facebook, Instagram, X and TikTok (lib/stories/social.ts) */
@@ -145,7 +153,7 @@ export function validateBrief(v:unknown,clubs:Map<string,string>):Brief{
  if(b.lead_director!==undefined&&b.lead_director!==null&&!isDirector(b.lead_director))throw new StoryError('BRIEF','Unknown director.')
  const lead_director=isDirector(b.lead_director)?b.lead_director:null
  return {club_id,club_name,season,topic:str('topic',240),duration,visual_style:pick('visual_style',[...STYLES,'mixed'] as const,'collage'),
-  kind,match_ids:kind==='match'||kind==='tie'?ids as string[]:[],opponent,drive_folder:driveFolder(b.drive_folder),story_words:str('story_words',300),sides:Array.isArray(b.sides)?b.sides.filter((x:unknown):x is string=>typeof x==='string').slice(0,8).map(x=>x.slice(0,60)):[],tone:pick('tone',TONES,'auto'),scripts,choice:null,lead_director,drive:b.drive!==false,reel_to_telegram:b.reel_to_telegram===true,voice:pick('voice',['auto','elevenlabs','kokoro'] as const,'auto'),review:pick('review',['auto','script','editorial'] as const,'auto'),privacy,publish_at,crowd:pick('crowd',['soft','off'] as const,'soft'),
+  kind,match_ids:kind==='match'||kind==='tie'?ids as string[]:[],opponent,drive_folder:driveFolder(b.drive_folder),story_words:str('story_words',300),sides:Array.isArray(b.sides)?b.sides.filter((x:unknown):x is string=>typeof x==='string').slice(0,8).map(x=>x.slice(0,60)):[],tone:pick('tone',TONES,'auto'),scripts,choice:null,...(b.auto_pick===true&&scripts===3?{auto_pick:true}:{}),lead_director,drive:b.drive!==false,reel_to_telegram:b.reel_to_telegram===true,voice:pick('voice',['auto','elevenlabs','kokoro'] as const,'auto'),review:pick('review',['auto','script','editorial'] as const,'auto'),privacy,publish_at,crowd:pick('crowd',['soft','off'] as const,'soft'),
   focus_from,focus_to,notes:lines.join('\n'),art:[],hold}
 }
 
@@ -310,7 +318,7 @@ export function report(job:Job,worker:string,p:Progress,now=new Date()):{job:Job
  if(control==='pause')j.lease=null
  return {job:j,control}
 }
-export type Finish={flow?:FlowPack;options?:ScriptOption[];editorial?:Review;state:'ready'|'needs_review'|'failed'|'waiting';retryAt?:string;error?:{code:string;message:string;retryable:boolean};artefacts?:Job['artefacts'];youtube?:Record<string,unknown>;qa?:Job['qa'];cost?:Job['cost'];stage?:Stage}
+export type Finish={flow?:FlowPack;options?:ScriptOption[];hook?:HookJudge;editorial?:Review;state:'ready'|'needs_review'|'failed'|'waiting';retryAt?:string;error?:{code:string;message:string;retryable:boolean};artefacts?:Job['artefacts'];youtube?:Record<string,unknown>;qa?:Job['qa'];cost?:Job['cost'];stage?:Stage}
 export function finish(job:Job,worker:string,f:Finish,now=new Date()):Job{
  if(!job.lease||job.lease.worker!==worker)throw new StoryError('LEASE','This worker does not hold the job.',409)
  const j=structuredClone(job),at=now.toISOString()
@@ -340,11 +348,25 @@ export function finish(job:Job,worker:string,f:Finish,now=new Date()):Job{
   return j
  }
  if(f.state==='failed'){j.error={code:String(f.error?.code||'FAILED').slice(0,60),message:String(f.error?.message||'').slice(0,600),retryable:!!f.error?.retryable};pushLog(j,`Failed: [${j.error.code}] ${j.error.message}`,at)}
- else{if(f.state==='needs_review'&&f.stage==='script'&&Array.isArray(f.options))j.options=leadFirst(f.options.slice(0,3).map(cleanOption),j.brief.lead_director);j.progress=f.stage==='script'?j.progress:1;j.artefacts=f.artefacts??j.artefacts;j.youtube=f.youtube??j.youtube;j.qa=f.qa??j.qa;j.cost={...j.cost,...(f.cost??{})};pushLog(j,f.state==='ready'?'Finished: every automatic check passed':'Finished: waiting for your review',at)}
+ else{if(f.state==='needs_review'&&f.stage==='script'&&Array.isArray(f.options))j.options=leadFirst(f.options.slice(0,3).map(cleanOption),j.brief.lead_director);j.progress=f.stage==='script'?j.progress:1;j.artefacts=f.artefacts??j.artefacts;j.youtube=f.youtube??j.youtube;j.qa=f.qa??j.qa;if(f.hook)j.hook=cleanHook(f.hook)??j.hook;j.cost={...j.cost,...(f.cost??{})};pushLog(j,f.state==='ready'?'Finished: every automatic check passed':'Finished: waiting for your review',at)}
  return j
 }
 const cut=(x:unknown,n:number)=>String(x??'').slice(0,n)
-function cleanOption(o:ScriptOption):ScriptOption{const x:ScriptOption={n:Number(o.n)||0,angle:cut(o.angle,60),title:cut(o.title,110),hook:cut(o.hook,300),chapters:(Array.isArray(o.chapters)?o.chapters:[]).slice(0,10).map(c=>cut(c,80)),words:Number(o.words)||0,opening:cut(o.opening,600)};if(Array.isArray(o.hook_options))x.hook_options=o.hook_options.slice(0,3).filter(h=>h&&typeof h==='object').map(h=>({text:cut(h.text,600),claim_ids:(Array.isArray(h.claim_ids)?h.claim_ids:[]).slice(0,10).map(id=>cut(id,80))}));if(isDirector(o.director))x.director=o.director;return x}
+/** The judge's verdict as the worker sent it, cut to what the desk shows: nothing here is trusted as markup or as a number. */
+export function cleanHook(h:unknown):HookJudge|null{
+ if(!h||typeof h!=='object')return null
+ const v=h as Partial<HookJudge>,num=(x:unknown)=>Number.isFinite(Number(x))?Number(x):0
+ if(!Array.isArray(v.scores))return null
+ const out:HookJudge={scores:v.scores.slice(0,3).filter(r=>r&&typeof r==='object').map(r=>({n:num(r.n),score:num(r.score),
+   laws:Object.fromEntries(Object.entries(r.laws&&typeof r.laws==='object'?r.laws:{}).slice(0,8).map(([k,x])=>[cut(k,20),num(x)])),
+   notes:(Array.isArray(r.notes)?r.notes:[]).slice(0,8).map(x=>cut(x,160))})),
+  winner:num(v.winner),spoken:num(v.spoken),reason:cut(v.reason,600),critic:v.critic&&typeof v.critic==='object'?{pick:num(v.critic.pick),why:cut(v.critic.why,160)}:null}
+ const sp=v.scripts
+ if(sp&&typeof sp==='object'&&Array.isArray(sp.scripts))out.scripts={chosen:num(sp.chosen),reason:cut(sp.reason,300),
+  scripts:sp.scripts.slice(0,3).filter(r=>r&&typeof r==='object').map(r=>({n:num(r.n),director:r.director?cut(r.director,30):null,score:num(r.score),valid:r.valid===true,hook:cut(r.hook,300)}))}
+ return out
+}
+function cleanOption(o:ScriptOption):ScriptOption{const x:ScriptOption={n:Number(o.n)||0,angle:cut(o.angle,60),title:cut(o.title,110),hook:cut(o.hook,300),chapters:(Array.isArray(o.chapters)?o.chapters:[]).slice(0,10).map(c=>cut(c,80)),words:Number(o.words)||0,opening:cut(o.opening,600)};if(Array.isArray(o.hook_options))x.hook_options=o.hook_options.slice(0,3).filter(h=>h&&typeof h==='object').map(h=>({text:cut(h.text,600),claim_ids:(Array.isArray(h.claim_ids)?h.claim_ids:[]).slice(0,10).map(id=>cut(id,80))}));const hj=cleanHook(o.hook_judge);if(hj)x.hook_judge=hj;if(isDirector(o.director))x.director=o.director;return x}
 /** The pitching director's script first, the others in the order they were written. `n` is never renumbered: it names
  *  the file the worker resumes from (script-option-<n>.json). */
 export function leadFirst(opts:ScriptOption[],lead:DirectorId|null|undefined):ScriptOption[]{
