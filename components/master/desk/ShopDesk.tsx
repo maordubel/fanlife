@@ -28,13 +28,13 @@ export function ShopDesk({initial}:{initial:State}){
   <section className="desk-card" aria-labelledby="shs"><h2 className="desk-h2" id="shs">{c.products.length} on the site</h2>
    <p className="desk-fine">{ok?<>Store <b>{s.shopTitle}</b> · looked {ago(c.at)}{typeof c.seen==='number'?` · ${c.seen} product(s) in Printify, ${c.products.length} published`:''}.</>:'Printify is not connected.'}
     {c.error&&<> <b>Last look failed:</b> {c.error}</>}</p>
-   <div className="shop-row"><button className="desk-btn" disabled={api.busy||!ok} onClick={()=>act('sync',{},'Looked at Printify.')}>Look now</button></div>
+   <div className="shop-row"><button className="desk-btn min-h-tap" disabled={api.busy||!ok} onClick={()=>act('sync',{},'Looked at Printify.')}>Look now</button></div>
    {c.products.length>0&&<ul className="shop-mini">{c.products.map(p=><li key={p.id}><a href={p.url} target="_blank" rel="noreferrer">
     {/* eslint-disable-next-line @next/next/no-img-element */}<img src={p.image} alt="" width={96} height={96} loading="lazy"/><span><b>{p.title}</b><small>{money(p.priceFrom,p.currency)}</small></span></a></li>)}</ul>}
   </section>
   <details className="desk-card"><summary className="desk-h2">Connection</summary>
    <div className="shop-row"><label className="shop-field"><span>Printify API token</span><input type="password" autoComplete="off" value={token} onChange={e=>setToken(e.target.value)} placeholder={st.connected?'Connected — paste only to replace':'Paste the token'}/></label>
-    <button className="desk-btn ghost" disabled={api.busy} onClick={async()=>{if(await act('connect',{token},'Printify answered.'))setToken('')}}>{st.connected?'Check again':'Connect'}</button></div>
+    <button className="desk-btn ghost min-h-tap" disabled={api.busy} onClick={async()=>{if(await act('connect',{token},'Printify answered.'))setToken('')}}>{st.connected?'Check again':'Connect'}</button></div>
   </details>
  </div>
 }
