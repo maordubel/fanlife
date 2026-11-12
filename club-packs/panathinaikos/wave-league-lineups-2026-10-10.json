@@ -2681,13 +2681,9 @@
    "id": "inaki-pena",
    "value": {
     "name": "Inaki Pena",
-    "sport": "football",
     "positions": [
      "GK"
     ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -2706,14 +2702,10 @@
   {
    "id": "anass-salah-eddine",
    "value": {
-    "name": "Anass Salah-Eddine",
-    "sport": "football",
+    "name": "Anass Salah-eddine",
     "positions": [
      "DF"
     ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -2732,14 +2724,10 @@
   {
    "id": "rick-van-drongelen",
    "value": {
-    "name": "Rick van Drongelen",
-    "sport": "football",
+    "name": "Rick Van Drongelen",
     "positions": [
      "DF"
     ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -2758,14 +2746,10 @@
   {
    "id": "stefan-de-vrij",
    "value": {
-    "name": "Stefan de Vrij",
-    "sport": "football",
+    "name": "Stefan De Vrij",
     "positions": [
      "DF"
     ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -2785,13 +2769,9 @@
    "id": "davide-calabria",
    "value": {
     "name": "Davide Calabria",
-    "sport": "football",
     "positions": [
      "DF"
     ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -2811,13 +2791,9 @@
    "id": "imran-louza",
    "value": {
     "name": "Imran Louza",
-    "sport": "football",
     "positions": [
      "MF"
     ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -2837,13 +2813,9 @@
    "id": "etienne-camara",
    "value": {
     "name": "Etienne Camara",
-    "sport": "football",
     "positions": [
      "MF"
     ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -2863,13 +2835,9 @@
    "id": "vicente-taborda",
    "value": {
     "name": "Vicente Taborda",
-    "sport": "football",
     "positions": [
      "MF"
     ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -2889,13 +2857,9 @@
    "id": "santino-andino",
    "value": {
     "name": "Santino Andino",
-    "sport": "football",
     "positions": [
      "FW"
     ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -2915,13 +2879,9 @@
    "id": "cyriel-dessers",
    "value": {
     "name": "Cyriel Dessers",
-    "sport": "football",
     "positions": [
      "FW"
     ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -2938,68 +2898,12 @@
    "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: FW."
   },
   {
-   "id": "p-ll-andrews-tetteh",
-   "value": {
-    "name": "Andrews Tetteh",
-    "sport": "football",
-    "positions": [
-     "FW"
-    ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4648605",
-    "ls-lu-1707897"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-panathinaikos",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: FW."
-  },
-  {
-   "id": "p-ll-georgios-kyriakopoulos",
-   "value": {
-    "name": "Georgios Kyriakopoulos",
-    "sport": "football",
-    "positions": [
-     "DF"
-    ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4653338",
-    "ls-lu-1707900"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-panathinaikos",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
-  },
-  {
    "id": "kings-kangwa",
    "value": {
     "name": "Kings Kangwa",
-    "sport": "football",
     "positions": [
      "MF"
     ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -3016,42 +2920,12 @@
    "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
   },
   {
-   "id": "p-ll-georgios-katris",
-   "value": {
-    "name": "Georgios Katris",
-    "sport": "football",
-    "positions": [
-     "DF"
-    ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4823823",
-    "ls-lu-1882224"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-panathinaikos",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
-  },
-  {
    "id": "erik-palmer-brown",
    "value": {
-    "name": "Erik Palmer-Brown",
-    "sport": "football",
+    "name": "Erik Palmer-brown",
     "positions": [
      "DF"
     ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -3071,13 +2945,9 @@
    "id": "triantafyllos-tsapras",
    "value": {
     "name": "Triantafyllos Tsapras",
-    "sport": "football",
     "positions": [
      "DF"
     ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -3097,13 +2967,9 @@
    "id": "pedro-chirivella",
    "value": {
     "name": "Pedro Chirivella",
-    "sport": "football",
     "positions": [
      "MF"
     ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -3123,13 +2989,9 @@
    "id": "adriano-jagusic",
    "value": {
     "name": "Adriano Jagusic",
-    "sport": "football",
     "positions": [
      "MF"
     ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -3149,13 +3011,9 @@
    "id": "sotiris-kontouris",
    "value": {
     "name": "Sotiris Kontouris",
-    "sport": "football",
     "positions": [
      "MF"
     ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -3175,13 +3033,9 @@
    "id": "elmin-rastoder",
    "value": {
     "name": "Elmin Rastoder",
-    "sport": "football",
     "positions": [
      "FW"
     ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -3201,13 +3055,9 @@
    "id": "azzedine-ounahi",
    "value": {
     "name": "Azzedine Ounahi",
-    "sport": "football",
     "positions": [
      "MF"
     ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -3224,42 +3074,12 @@
    "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
   },
   {
-   "id": "p-ll-panagiotis-biniaris",
-   "value": {
-    "name": "Panagiotis Biniaris",
-    "sport": "football",
-    "positions": [
-     "MF"
-    ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4823810",
-    "ls-lu-1882220"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-panathinaikos",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
-  },
-  {
    "id": "levi-garcia",
    "value": {
     "name": "Levi Garcia",
-    "sport": "football",
     "positions": [
      "FW"
     ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -3274,266 +3094,6 @@
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: FW."
-  },
-  {
-   "id": "p-ll-alban-lafont",
-   "value": {
-    "name": "Alban Lafont",
-    "sport": "football",
-    "positions": [
-     "GK"
-    ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4648605",
-    "ls-lu-1707897"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-panathinaikos",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: GK."
-  },
-  {
-   "id": "p-ll-ahmed-touba",
-   "value": {
-    "name": "Ahmed Touba",
-    "sport": "football",
-    "positions": [
-     "DF"
-    ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4648605",
-    "ls-lu-1707897"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-panathinaikos",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
-  },
-  {
-   "id": "p-ll-adam-cerin",
-   "value": {
-    "name": "Adam Čerin",
-    "sport": "football",
-    "positions": [
-     "MF"
-    ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4653338",
-    "ls-lu-1707900"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-panathinaikos",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
-  },
-  {
-   "id": "p-ll-karol-swiderski",
-   "value": {
-    "name": "Karol Swiderski",
-    "sport": "football",
-    "positions": [
-     "FW"
-    ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4694796",
-    "ls-lu-1759020"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-panathinaikos",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: FW."
-  },
-  {
-   "id": "p-ll-sverrir-ingason",
-   "value": {
-    "name": "Sverrir Ingason",
-    "sport": "football",
-    "positions": [
-     "DF"
-    ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4648605",
-    "ls-lu-1707897"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-panathinaikos",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
-  },
-  {
-   "id": "p-ll-tin-jedvaj",
-   "value": {
-    "name": "Tin Jedvaj",
-    "sport": "football",
-    "positions": [
-     "DF"
-    ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4653338",
-    "ls-lu-1707900"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-panathinaikos",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
-  },
-  {
-   "id": "p-ll-renato-sanches",
-   "value": {
-    "name": "Renato Sanches",
-    "sport": "football",
-    "positions": [
-     "MF"
-    ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4694820",
-    "ls-lu-1759018"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-panathinaikos",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
-  },
-  {
-   "id": "p-ll-anastasios-bakasetas",
-   "value": {
-    "name": "Anastasios Bakasetas",
-    "sport": "football",
-    "positions": [
-     "MF"
-    ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4648605",
-    "ls-lu-1707897"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-panathinaikos",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
-  },
-  {
-   "id": "p-ll-giannis-kotsiras",
-   "value": {
-    "name": "Giannis Kotsiras",
-    "sport": "football",
-    "positions": [
-     "DF"
-    ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4648605",
-    "ls-lu-1707897"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-panathinaikos",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
-  },
-  {
-   "id": "p-ll-javier-hernandez-carrera",
-   "value": {
-    "name": "Javier Hernandez Carrera",
-    "sport": "football",
-    "positions": [
-     "DF"
-    ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4694828",
-    "ls-lu-1759017"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-panathinaikos",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
   }
  ],
  "kits": [],

@@ -6,12 +6,12 @@ const m=(id:string,value:Record<string,unknown>,over:Record<string,unknown>={})=
 const eleven=Array.from({length:11},(_,i)=>`Man ${i}`)
 
 describe('one night, one record (12.11.2026)',()=>{
- it('folds two records of one day with the same two numbers, keeping the curated id and borrowing what it lacks',()=>{
+ it('folds two records of one day with the same two numbers, keeping the curated id and borrowing the feed\'s eleven',()=>{
   const {pack,folded}=oneNightPerMatch({matches:[
    m('r26-m-arsenal',{name:'Olympiacos 3-1 Arsenal',on:'2011-12-06',score:'3-1',scorers:['A']}),
    m('a-m-2011-12-06-olympiacos-arsenal',{name:'Olympiacos 3-1 Arsenal',on:'2011-12-06',score:'3-1',lineup:eleven,bench:['B']}),
   ]})
-  expect(folded).toEqual([{kept:'a-m-2011-12-06-olympiacos-arsenal',folded:['r26-m-arsenal'],on:'2011-12-06'}])
+  expect(folded).toEqual([{kept:'r26-m-arsenal',folded:['a-m-2011-12-06-olympiacos-arsenal'],on:'2011-12-06'}])
   const [only]=pack.matches as unknown as {id:string;value:{lineup:string[];scorers:string[]};sources:string[]}[]
   expect((pack.matches as unknown[]).length).toBe(1)
   expect(only!.value.lineup).toHaveLength(11)

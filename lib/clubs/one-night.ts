@@ -7,7 +7,7 @@
  * memory could deal it twice, and a scoresheet one record held never reached the other.
  *
  * A club plays one match a day. So two records on the same day whose scores hold the same two numbers are one match: the best
- * record is kept (approved, then a full eleven, then scorers, then the curated id over a feed's `a-m-` id, then more sources)
+ * record is kept (approved, then the curated id over a feed's `a-m-` id, then a full eleven, then scorers, then more sources)
  * and the others lend it what it lacks — the eleven, the bench, the scorers, their sources. Nothing is invented and nothing
  * is overwritten: a field the kept record states stays as it is. Two records of one day with DIFFERENT scores are not merged
  * (that is a conflict for a person to read, not for this pass to settle).
@@ -27,7 +27,8 @@ const goalsKey=(v:Raw)=>{
 const day=(v:Raw)=>typeof v.on==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(v.on)?v.on:null
 const rank=(f:Raw)=>{
  const v=obj(f.value),id=String(f.id||'')
- return [f.status==='approved'?1:0,arr(v.lineup).length===11?1:0,arr(v.scorers).length?1:0,/^(a-m-|ea-match-)/.test(id)?0:1,arr(f.sources).length]
+ // the curated id outranks a feed's richer copy: questions, goals and links already point at it, and the feed's eleven is borrowed anyway
+ return [f.status==='approved'?1:0,/^(a-m-|ea-match-)/.test(id)?0:1,arr(v.lineup).length===11?1:0,arr(v.scorers).length?1:0,arr(f.sources).length]
 }
 const better=(a:Raw,b:Raw)=>{const x=rank(a),y=rank(b);for(let i=0;i<x.length;i++)if(x[i]!==y[i])return x[i]!>y[i]!;return String(a.id)<String(b.id)}
 

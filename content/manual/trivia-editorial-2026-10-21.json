@@ -542,8 +542,7 @@
         "answer": "Matija Malekinušić",
         "factIds": [
           "zrinjski-mostar:goal-2023-12-14-matija-malekinusic-87",
-          "zrinjski-mostar:w-m-villa-home-2023",
-          "zrinjski-mostar:a-m-2023-12-14-zrinjski-aston-villa"
+          "zrinjski-mostar:w-m-villa-home-2023"
         ],
         "sourceUrl": "https://www.skysports.com/football/news/13030310/zrinjski-mostar-1-1-aston-villa-nicolo-zaniolos-first-goal-for-club-secures-europa-conference-league-last-16-spot",
         "prompt": "Rewind to Zrinjski Mostar v Aston Villa, 14 Dec 2023 (UEFA Europa Conference League). Minute 87: who found the net?",
@@ -556,8 +555,7 @@
         "answer": "Zvonimir Kožulj",
         "factIds": [
           "zrinjski-mostar:goal-2023-09-21-kozulj-winner-az",
-          "zrinjski-mostar:w-m-az-home-2023",
-          "zrinjski-mostar:a-m-2023-09-21-zrinjski-az-alkmaar"
+          "zrinjski-mostar:w-m-az-home-2023"
         ],
         "sourceUrl": "https://www.nfsbih.ba/en/news/football-m/wwin-league-bh/zrinjski-debuted-in-the-group-stage-of-the-conference-league-and-celebrated-after-a-great-turnaround/",
         "prompt": "Rewind to Zrinjski Mostar v AZ Alkmaar, 21 Sept 2023 (UEFA Europa Conference League). Minute 81: who found the net?",
@@ -2942,8 +2940,7 @@
         "answer": "Ayoub El Kaabi",
         "factIds": [
           "olympiacos:oly-goal-elkaabi-final-fiorentina",
-          "olympiacos:w-m-uecl-final-fiorentina-2024",
-          "olympiacos:a-m-2024-05-29-olympiacos-fiorentina"
+          "olympiacos:w-m-uecl-final-fiorentina-2024"
         ],
         "sourceUrl": "https://www.uefa.com/uefaeuropaconferenceleague/news/028d-1b01e5ec31a5-144c1f00e4f3-1000--olympiacos-1-0-fiorentina-aet-el-kaabi-swoops-to-secure-g/",
         "prompt": "The 2024 Conference League final goes deep into extra time. Who heads in Olympiacos’ winner against Fiorentina?",

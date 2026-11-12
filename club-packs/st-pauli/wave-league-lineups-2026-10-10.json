@@ -2777,13 +2777,9 @@
    "id": "p-002fabbfd6ecd9",
    "value": {
     "name": "Ben Voll",
-    "sport": "football",
     "positions": [
      "GK"
     ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -2800,224 +2796,12 @@
    "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: GK."
   },
   {
-   "id": "p-ll-louis-oppie",
-   "value": {
-    "name": "Louis Oppie",
-    "sport": "football",
-    "positions": [
-     "DF"
-    ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4757682",
-    "ls-lu-1813329"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
-  },
-  {
-   "id": "p-ll-lars-ritzka",
-   "value": {
-    "name": "Lars Ritzka",
-    "sport": "football",
-    "positions": [
-     "DF"
-    ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4464628",
-    "ls-lu-1541175"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
-  },
-  {
-   "id": "p-ll-david-nemeth",
-   "value": {
-    "name": "David Nemeth",
-    "sport": "football",
-    "positions": [
-     "DF"
-    ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4757070",
-    "ls-lu-1813301"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
-  },
-  {
-   "id": "p-ll-arkadiusz-pyrka",
-   "value": {
-    "name": "Arkadiusz Pyrka",
-    "sport": "football",
-    "positions": [
-     "DF"
-    ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4757682",
-    "ls-lu-1813329"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
-  },
-  {
-   "id": "p-ll-joel-chima-fujita",
-   "value": {
-    "name": "Joel Chima Fujita",
-    "sport": "football",
-    "positions": [
-     "MF"
-    ],
-    "fromYear": 2025,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4609939",
-    "ls-lu-1687379"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
-  },
-  {
-   "id": "p-ll-matias-rasmussen",
-   "value": {
-    "name": "Matias Rasmussen",
-    "sport": "football",
-    "positions": [
-     "MF"
-    ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4464730",
-    "ls-lu-1540741"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
-  },
-  {
-   "id": "p-ll-abdoulie-ceesay",
-   "value": {
-    "name": "Abdoulie Ceesay",
-    "sport": "football",
-    "positions": [
-     "FW"
-    ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4757682",
-    "ls-lu-1813329"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: FW."
-  },
-  {
-   "id": "p-ll-branimir-hrgota",
-   "value": {
-    "name": "Branimir Hrgota",
-    "sport": "football",
-    "positions": [
-     "FW"
-    ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4757638",
-    "ls-lu-1813404"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: FW."
-  },
-  {
    "id": "p-386020d119ac0f",
    "value": {
     "name": "Eric Smith",
-    "sport": "football",
     "positions": [
      "DF"
     ],
-    "fromYear": 2025,
-    "toYear": 2026,
-    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -3032,174 +2816,14 @@
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
-  },
-  {
-   "id": "p-ll-connor-metcalfe",
-   "value": {
-    "name": "Connor Metcalfe",
-    "sport": "football",
-    "positions": [
-     "MF"
-    ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4464628",
-    "ls-lu-1541175"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
-  },
-  {
-   "id": "p-ll-youssoupha-niang",
-   "value": {
-    "name": "Youssoupha Niang",
-    "sport": "football",
-    "positions": [
-     "FW"
-    ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4757664",
-    "ls-lu-1813360"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: FW."
-  },
-  {
-   "id": "p-ll-tomoya-ando",
-   "value": {
-    "name": "Tomoya Ando",
-    "sport": "football",
-    "positions": [
-     "DF"
-    ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4464730",
-    "ls-lu-1540741"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
-  },
-  {
-   "id": "p-ll-marcus-mathisen",
-   "value": {
-    "name": "Marcus Mathisen",
-    "sport": "football",
-    "positions": [
-     "DF"
-    ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4757070",
-    "ls-lu-1813301"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
-  },
-  {
-   "id": "p-ll-martijn-kaars",
-   "value": {
-    "name": "Martijn Kaars",
-    "sport": "football",
-    "positions": [
-     "FW"
-    ],
-    "fromYear": 2025,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4609939",
-    "ls-lu-1687379"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: FW."
-  },
-  {
-   "id": "p-ll-taichi-hara",
-   "value": {
-    "name": "Taichi Hara",
-    "sport": "football",
-    "positions": [
-     "FW"
-    ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4757070",
-    "ls-lu-1813301"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: FW."
   },
   {
    "id": "p-2b718ff36ab1ce",
    "value": {
     "name": "Nikola Vasilj",
-    "sport": "football",
     "positions": [
      "GK"
     ],
-    "fromYear": 2025,
-    "toYear": 2026,
-    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -3219,44 +2843,14 @@
    "id": "p-1c73bd69f0c0d5",
    "value": {
     "name": "Hauke Wahl",
-    "sport": "football",
     "positions": [
      "DF"
     ],
-    "fromYear": 2025,
-    "toYear": 2026,
-    "aliases": [],
     "sensitive": false
    },
    "sources": [
     "s365-4609939",
     "ls-lu-1687379"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
-  },
-  {
-   "id": "p-ll-adam-dzwigala",
-   "value": {
-    "name": "Adam Dzwigala",
-    "sport": "football",
-    "positions": [
-     "DF"
-    ],
-    "fromYear": 2025,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4464790",
-    "ls-lu-1540625"
    ],
    "confidence": 3,
    "status": "approved",
@@ -3271,13 +2865,9 @@
    "id": "p-f158c822565fed",
    "value": {
     "name": "Jackson Irvine",
-    "sport": "football",
     "positions": [
      "MF"
     ],
-    "fromYear": 2025,
-    "toYear": 2026,
-    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -3292,44 +2882,14 @@
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
-  },
-  {
-   "id": "p-ll-andreas-hountondji",
-   "value": {
-    "name": "Andréas Hountondji",
-    "sport": "football",
-    "positions": [
-     "FW"
-    ],
-    "fromYear": 2025,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4464819",
-    "ls-lu-1540620"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: FW."
   },
   {
    "id": "p-f49afe97691e26",
    "value": {
     "name": "Karol Mets",
-    "sport": "football",
     "positions": [
      "DF"
     ],
-    "fromYear": 2025,
-    "toYear": 2026,
-    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -3344,110 +2904,6 @@
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
-  },
-  {
-   "id": "p-ll-danel-sinani",
-   "value": {
-    "name": "Danel Sinani",
-    "sport": "football",
-    "positions": [
-     "MF"
-    ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4464730",
-    "ls-lu-1540741"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
-  },
-  {
-   "id": "p-ll-james-sands",
-   "value": {
-    "name": "James Sands",
-    "sport": "football",
-    "positions": [
-     "MF"
-    ],
-    "fromYear": 2025,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4609939",
-    "ls-lu-1687379"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
-  },
-  {
-   "id": "p-ll-mathias-lage",
-   "value": {
-    "name": "Mathias Lage",
-    "sport": "football",
-    "positions": [
-     "FW"
-    ],
-    "fromYear": 2025,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4464819",
-    "ls-lu-1540620"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: FW."
-  },
-  {
-   "id": "p-ll-ricky-jade-jones",
-   "value": {
-    "name": "Ricky-Jade Jones",
-    "sport": "football",
-    "positions": [
-     "FW"
-    ],
-    "fromYear": 2026,
-    "toYear": 2026,
-    "aliases": [],
-    "sensitive": false
-   },
-   "sources": [
-    "s365-4464771",
-    "ls-lu-1540638"
-   ],
-   "confidence": 3,
-   "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
-   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli",
-   "parserCertainty": "high",
-   "conflictFree": true,
-   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: FW."
   }
  ],
  "kits": [],

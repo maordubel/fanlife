@@ -92,7 +92,8 @@ async function main(){
  // the club's own men by full name — a position fills the man the pack already knows instead of adding a second one
  const core=existsSync(`club-packs/${club}/core.json`)?JSON.parse(readFileSync(`club-packs/${club}/core.json`,'utf8')):{players:[]}
  const known=new Map<string,string|null>()
- for(const p of [...((core.players||[]) as J[]),...((prev.players||[]) as J[])]){const k=fold(String(p.value?.name||''));if(!k)continue;const was=known.get(k);known.set(k,was===undefined||was===p.id?p.id:null)}
+ const ownName=new Map<string,string>()
+ for(const p of (core.players||[]) as J[]){const k=fold(String(p.value?.name||''));if(!k)continue;ownName.set(p.id,String(p.value.name));const was=known.get(k);known.set(k,was===undefined||was===p.id?p.id:null)}
  const lines=new Map<string,{name:string;votes:Map<string,number>;years:Set<number>;srcs:Set<string>}>()
  const prevPlayers=new Map<string,J>(((prev.players||[]) as J[]).map(p=>[p.id,p]))
  const why=new Map<string,number>();let pages=0
@@ -183,24 +184,23 @@ async function main(){
   url=page.paging?.previousPage?`https://webws.365scores.com${page.paging.previousPage}`:null
  }
  // positions: one line on every agreed sheet (a man both sites put in two lines over the season is listed, not resolved)
- const players=new Map(prevPlayers)
- let filled=0,added=0,split=0
+ const players=new Map([...prevPlayers].filter(([id])=>!id.startsWith('p-ll-')))
+ let filled=0,split=0
  for(const [k,r] of lines){
   if(r.votes.size!==1){split++;continue}
   const pos=[...r.votes.keys()][0]!,mine=known.get(k)
   if(mine===null)continue // a name two men of the club share fills neither (rule 7)
   const srcs=[...r.srcs].slice(-2),ys=[...r.years].sort()
   const base={sources:srcs,confidence:3,status:'approved',researchedAt:today,approvedAt:today,approvedBy:`automated:cross-source-review-league-lineups-${club}`,parserCertainty:'high',conflictFree:true,notes:`Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: ${pos}.`}
-  if(mine&&!prevPlayers.has(mine)){players.set(mine,{id:mine,value:{name:r.name,positions:[pos],sensitive:false},...base});filled++;continue}
-  const pid=mine??`p-ll-${slug(r.name)}`,was=players.get(pid)
-  const from=Math.min(ys[0]!,Number(was?.value?.fromYear??9999)),to=Math.max(ys[ys.length-1]!,Number(was?.value?.toYear??0))
-  if(!was)added++
-  players.set(pid,{id:pid,value:{name:r.name,sport:'football',positions:[pos],fromYear:from,toYear:to,aliases:[],sensitive:false},...base})
+  // only a man the club already knows is filled: a NEW man belongs to the roster pipeline (English name, frozen price, merges —
+  // the Rumble and XI guards), so the feed never adds one (12.11.2026)
+  if(!mine)continue
+  players.set(mine,{id:mine,value:{name:ownName.get(mine)??r.name,positions:[pos],sensitive:false},...base});filled++
  }
  const matches=[...byId.values()].sort((x,y)=>String(y.value.on).localeCompare(String(x.value.on)))
  const used=new Set([...matches.flatMap(m=>m.sources as string[]),...[...players.values()].flatMap(p=>p.sources as string[])])
  writeFileSync(file,JSON.stringify({sources:[...sources.values()].filter(s=>used.has(s.id)),matches,players:[...players.values()],kits:[],rivals:[]},null,1)+'\n')
- console.log(`[${club}] ${seen} matches read, ${fetched} with detail, ${agreed} agreed by two publishers, ${single} single-source · ${withScorers} with an agreed scoresheet · positions ${posAgree} agreed / ${posDiffer} differ → ${filled} filled, ${added} added, ${split} in two lines · file holds ${matches.length} matches · ${pages} result pages`)
+ console.log(`[${club}] ${seen} matches read, ${fetched} with detail, ${agreed} agreed by two publishers, ${single} single-source · ${withScorers} with an agreed scoresheet · positions ${posAgree} agreed / ${posDiffer} differ → ${filled} filled, ${split} in two lines · file holds ${matches.length} matches · ${pages} result pages`)
  if(why.size)console.log(`[${club}] single-source reasons: ${[...why].map(([k,n])=>`${n}× ${k}`).join(' | ')}`)
 }
 if(process.argv[1]?.endsWith('league-lineups.ts'))main().catch(e=>{console.error(e);process.exit(1)})
