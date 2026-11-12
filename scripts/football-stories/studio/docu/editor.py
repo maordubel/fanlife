@@ -154,6 +154,11 @@ def cut(beats: list[dict], grid: list[float] | None = None, related=None, backdr
                 cutup += looks(dev, hold, pts, (lambda i, n=m.get('n'): related(n, i)) if related else None, m.get('n') or 0)
             else:
                 cutup.append(dev)
+        # a figure in front of a picture belongs to the look it rose over: it leaves at the first cut of what is behind it
+        firsts = [x.get('dt', 0.0) + x['d'] for x in cutup if x['kind'] in PICTURES and 'hold' in x and x['hold'] > x['d']]
+        for x in cutup:
+            if x['kind'] == 'cutout' and firsts and min(firsts) - x.get('dt', 0.0) >= MIN_SUB:
+                x['d'] = round(min(firsts) - x.get('dt', 0.0), 3)
         name = transition(prev, m, history)
         history.append(name)
         for x in cutup:   # the transition is the entrance now: the picture's own fade would be a second one

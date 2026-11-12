@@ -99,6 +99,7 @@ class Adapter:
         self.spares: dict[int, Path | None] = {}     # shot → the spare picture it was given
         self.used: dict[Path, int] = {}              # spare picture → when it was last given
         self.pool: list[Path] | None = None
+        self.lib_used: list[str] = []                # the library pieces this film put on screen
         self.last: str | None = None                 # the rich device of the shot before (two city splits never run back to back)
         names = [palette.club_name]
         for c in self.by.values():
@@ -133,7 +134,8 @@ class Adapter:
         p = None
         for key in (s.get('required_asset'), v.get('art') if v['type'] == 'illustration' else None, v.get('backdrop'),
                     (s.get('cinema') or {}).get('broll')):
-            p = media(key) if key and key != 'paper' else None
+            # `lib:` is the owner's moving-art library (cinema/animate.choose put it in the plan): its scene, painted
+            p = self.lib_scene(key) if str(key or '').startswith('lib:') else media(key) if key and key != 'paper' else None
             if p:
                 self.keys[s['n']] = NAMED.get(key, key)
                 break
@@ -179,6 +181,65 @@ class Adapter:
         """The picture for the rest of a beat whose card has left (docu/editor.cut): the beat's own, else a spare."""
         s = next((x for x in self.plan['shots'] if x['n'] == n), None)
         return self.back(s, 'push') if s else None
+
+    # ── the moving-art library (cinema/library.py, chosen per shot by cinema/animate.choose) ──────────────────────────
+    # The worker syncs the owner's "Dynamic Football Fan Art" every run and the plan names pieces for every shot, but
+    # only the classic engine drew them: DOCU read `lib:` keys as nothing and showed a spare crowd picture instead.
+    def lib_scene(self, key: str) -> Path | None:
+        """`lib:<stem>` → the scene behind a shot: a ground, a sky, a city or a layer's background as a still painted in
+        the club's colour (library.paint, as the classic engine paints it), or a clip that needs no painting. None when
+        the library or the piece is not on this machine — the shot then borrows a spare, as before."""
+        from PIL import Image
+        from ..cinema import library as L
+        from ..paper import cover
+        lib, stem = L.load(), key[4:]
+        if not lib:
+            return None
+        if stem in lib.by and lib.by[stem]['cls'] == 'clip':
+            # a `-kr` clip is repainted frame by frame in the classic engine; here it plays as made, so only a clip
+            # that carries no colour to repaint is taken
+            return lib.path(stem) if lib.by[stem].get('colour') != 'kr' else None
+        grp = lib.group(stem)
+        piece = (grp.get('bg') or grp.get('full')) if grp else lib.by.get(stem)
+        if not piece or piece.get('keyed'):
+            return None
+        out = self.jd / 'lib' / f"{piece['stem']}.jpg"
+        if not out.exists():
+            out.parent.mkdir(parents=True, exist_ok=True)
+            im = L.paint(cover(Image.open(lib.path(piece['stem'])).convert('RGB'), (B.W, B.H)), piece.get('colour'), self.pal.accent, self.pal.render_bans)
+            im.save(out, quality=90)
+        self.lib_used.append(piece['stem'])
+        return out
+
+    def lib_figures(self, s: dict) -> list[dict]:
+        """The library's people and objects the plan chose for this shot, as cut-out layers (build.Film.cutout: each rises
+        in on its own plane and drifts): one person at the side the plan gave, one object opposite. Painted and scrubbed
+        like every library piece."""
+        from PIL import Image
+        from ..cinema import library as L
+        lib = L.load()
+        out: list[dict] = []
+        if not lib:
+            return out
+        for e in (s.get('cinema') or {}).get('lib') or []:
+            piece = lib.by.get(e.get('key'))
+            role = e.get('role')
+            if not piece or not piece.get('keyed') or role not in ('actor', 'object') or any(x['role'] == role for x in out):
+                continue
+            h = int(B.H * (0.62 if role == 'actor' else 0.22))
+            png = self.jd / 'lib' / f"{piece['stem']}-{h}.png"
+            if not png.exists():
+                png.parent.mkdir(parents=True, exist_ok=True)
+                im = Image.open(lib.path(piece['stem'])).convert('RGBA')
+                im = im.resize((max(1, round(im.width * h / im.height)), h), Image.LANCZOS)
+                L.paint(im, piece.get('colour'), self.pal.accent, self.pal.render_bans).save(png, compress_level=1)
+            with Image.open(png) as im:
+                w = im.width
+            right = e.get('side', 1) > 0
+            out.append({'kind': 'cutout', 'role': role, 'src': self.asset(png, 'lib'), 'h': h, 'x': (B.W - w - 130) if right else 130,
+                        'y': B.H - h - (18 if role == 'actor' else int(B.H * 0.24)), 'dt': 0.5 if role == 'actor' else 0.9})
+            self.lib_used.append(piece['stem'])
+        return out
 
     def fact(self, cid) -> dict:
         return (self.by.get(cid) or {}).get('fact') or {}
@@ -396,8 +457,9 @@ class Adapter:
             out += [b] if b else []
         if t in ('illustration', 'matchday', 'goal', 'race', 'open') and any(x['kind'] in ('image', 'video') for x in out if x):
             cu = self.design.cutout(s)
-            if cu:
-                out.append(cu)
+            # the figure the writer asked for by key comes first; else the library's own people for this shot — over a
+            # picture only (under a full-frame card nobody would see them), and never over the city split or the board
+            out += [cu] if cu else ([] if any(x and E.opaque(x) for x in out) else self.lib_figures(s))
         out = [x for x in out if x]
         self.last = next((x['kind'] for x in out if x['kind'] in ('cities', 'table', 'chalk', 'verdict', 'rule', 'press')), None)
         return out
@@ -470,7 +532,7 @@ def write_project(job_dir: Path, plan: dict, palette: Palette, root: Path) -> tu
     ad = Adapter(job_dir, plan, palette, ledger, script)
     beats = ad.beats()
     write_json(job_dir / 'docu-shots.json', {'shots': E.shot_list(beats), 'errors': E.errors(beats) if beats and 'in' in beats[0] else [],
-                                             'beat_grid': bool(plan.get('beat_grid'))})
+                                             'beat_grid': bool(plan.get('beat_grid')), 'library': sorted(set(ad.lib_used))})
     if root.exists():
         shutil.rmtree(root)
     (root / 'assets' / 'img').mkdir(parents=True)
@@ -506,6 +568,8 @@ def render_film(job_dir: Path, plan: dict, palette: Palette, log, workers: int |
         write_json(sd / f'shot-{s["n"]:04d}.cues.json', {'cues': cues.get(s['n'], []), 'kind': s['visual']['type'], 'engine': ENGINE,
                                                         'required_asset': s.get('required_asset')})
     log(f'DOCU: {len(plan["shots"])} shots composed in {time.time() - t0:.1f}s ({D / 60:.2f} min)')
+    used = read_json(job_dir / 'docu-shots.json').get('library') or []
+    log(f'DOCU: {len(used)} moving-art library pieces on screen' if used else 'DOCU: no moving-art library on this machine (STORIES_CINEMA_LIB) — spare pictures only')
     if tick:
         tick(1, 3)
     raw = job_dir / 'docu.mp4'

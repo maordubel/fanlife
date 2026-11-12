@@ -192,3 +192,71 @@ class Sourced(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class MovingArtLibrary(unittest.TestCase):
+    """The owner's moving-art library in DOCU: the plan's `lib:` scene is the picture and its people are cut-out layers
+    (it used to be synced every run and drawn by the classic engine only)."""
+
+    @classmethod
+    def setUpClass(cls):
+        import os
+        from studio.cinema import library as L
+        from studio.tests import test_cinema_library as tl
+        cls.root = Path(tempfile.mkdtemp(prefix='docu-lib-'))
+        tl.build_lib(cls.root / 'lib', with_clips=False)
+        cls.keep = os.environ.get(L.ENV)
+        os.environ[L.ENV] = str(cls.root / 'lib')
+
+    @classmethod
+    def tearDownClass(cls):
+        import os
+        import shutil
+        from studio.cinema import library as L
+        os.environ.pop(L.ENV, None) if cls.keep is None else os.environ.__setitem__(L.ENV, cls.keep)
+        shutil.rmtree(cls.root, ignore_errors=True)
+
+    def lib_shot(self, n=0, **cin):
+        return shot(n, {'type': 'illustration', 'caption': ''}, cinema={'broll': 'lib:ground-1990s-int-kr',
+                    'lib': [{'key': 'sup-scarf-up-kr', 'role': 'actor', 'motion': 'cheer', 'side': 1},
+                            {'key': 'sup-hug-kr', 'role': 'actor', 'motion': 'cheer', 'side': -1},
+                            {'key': 'obj-ball-old-n', 'role': 'object', 'motion': 'fly', 'side': -1}], **cin})
+
+    def test_the_scene_is_the_picture_and_the_people_are_cut_out_layers(self):
+        ad = adapter()
+        out = ad.shots(self.lib_shot(), 6.0)
+        self.assertEqual(kinds(out), ['image', 'cutout', 'cutout'])                 # one person, one object: the second actor waits
+        self.assertEqual(ad.files[out[0]['src']].name, 'ground-1990s-int-kr.jpg')   # the library's ground, not a spare crowd
+        self.assertGreater(out[1]['x'], 960)                                        # the side the plan gave him
+        self.assertLess(out[2]['x'], 960)
+        self.assertEqual(sorted(set(ad.lib_used)), ['ground-1990s-int-kr', 'obj-ball-old-n', 'sup-scarf-up-kr'])
+        from PIL import Image
+        self.assertEqual(Image.open(ad.files[out[1]['src']]).mode, 'RGBA')
+
+    def test_a_writers_own_picture_keeps_its_place_and_a_card_gets_no_figures(self):
+        ad = adapter()
+        own = ad.shots(shot(0, {'type': 'illustration', 'art': 'terrace-crowd'}, cinema={'broll': 'lib:ground-1990s-int-kr', 'lib': []}), 6.0)
+        self.assertNotEqual(ad.files[own[0]['src']].name, 'ground-1990s-int-kr.jpg')
+        quote = ad.shots({**self.lib_shot(1), 'visual': {'type': 'quote', 'text': 'x'}}, 6.0)
+        self.assertEqual(kinds(quote), ['quote'])
+
+    def test_without_the_library_the_film_is_as_before(self):
+        import os
+        from studio.cinema import library as L
+        lib = os.environ.pop(L.ENV)
+        try:
+            ad = adapter()
+            out = ad.shots(self.lib_shot(), 6.0)
+            self.assertEqual(kinds(out), ['image'])
+            self.assertEqual(ad.lib_used, [])
+        finally:
+            os.environ[L.ENV] = lib
+
+    def test_a_figure_leaves_at_the_first_cut_of_the_picture_behind_it(self):
+        from studio.docu import editor as E
+        ad = adapter()
+        b = E.cut([{'t': 0, 'd': 11.0, 'shots': ad.shots(self.lib_shot(), 11.0), 'meta': {'n': 0, 'type': 'illustration', 'words': []}}])[0]
+        first = E.pictures(b)[0]['d']
+        for x in b['shots']:
+            if x['kind'] == 'cutout':
+                self.assertAlmostEqual(x['dt'] + x['d'], first, places=2)
