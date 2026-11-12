@@ -471,6 +471,30 @@
    "publisher": "365Scores",
    "access": "available",
    "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "ls-lu-1800665",
+   "title": "LiveScore: Hapoel Haifa 2-1 Hapoel Petah Tikva, 2026-10-31 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1800665",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "ls-lu-1800632",
+   "title": "LiveScore: Hapoel Tel Aviv 3-0 Hapoel Petah Tikva, 2026-09-18 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1800632",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "ls-lu-1766844",
+   "title": "LiveScore: Hapoel Petah Tikva 2-2 Maccabi Tel Aviv, 2026-05-23 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1766844",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-12"
   }
  ],
  "matches": [
@@ -514,7 +538,7 @@
    "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore's eleven differs (8/11 surnames agree).",
+   "notes": "One publisher only — LiveScore's eleven differs (9/11 surnames agree).",
    "confidence": 2,
    "status": "review",
    "approvedAt": null,
@@ -555,16 +579,17 @@
     "scorers": []
    },
    "sources": [
-    "s365-4739296"
+    "s365-4739296",
+    "ls-lu-1800665"
    ],
    "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore's eleven differs (9/11 surnames agree).",
-   "confidence": 2,
-   "status": "review",
-   "approvedAt": null,
-   "approvedBy": null
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-hapoel-petah-tikva"
   },
   {
    "id": "a-m-2026-10-25-hapoel-petah-tikva-beitar-jerusalem",
@@ -606,7 +631,7 @@
    "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore's eleven differs (8/11 surnames agree).",
+   "notes": "One publisher only — LiveScore's eleven differs (9/11 surnames agree).",
    "confidence": 2,
    "status": "review",
    "approvedAt": null,
@@ -739,16 +764,17 @@
     "scorers": []
    },
    "sources": [
-    "s365-4739326"
+    "s365-4739326",
+    "ls-lu-1800632"
    ],
    "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore's eleven differs (9/11 surnames agree).",
-   "confidence": 2,
-   "status": "review",
-   "approvedAt": null,
-   "approvedBy": null
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-hapoel-petah-tikva"
   },
   {
    "id": "a-m-2026-09-13-hapoel-petah-tikva-hapoel-beer-sheva",
@@ -1199,19 +1225,23 @@
      "Zohar Grinberg",
      "Aviad Hakiki"
     ],
-    "scorers": []
+    "scorers": [
+     "Yonatan Cohen",
+     "Mamady Diarra"
+    ]
    },
    "sources": [
-    "s365-4702056"
+    "s365-4702056",
+    "ls-lu-1766844"
    ],
    "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore's eleven differs (9/11 surnames agree).",
-   "confidence": 2,
-   "status": "review",
-   "approvedAt": null,
-   "approvedBy": null
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-hapoel-petah-tikva"
   },
   {
    "id": "a-m-2026-05-19-hapoel-petah-tikva-beitar-jerusalem",
@@ -3228,6 +3258,110 @@
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: FW."
+  },
+  {
+   "id": "p-ll-or-israelov",
+   "value": {
+    "name": "Or Israelov",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4739296",
+    "ls-lu-1800665"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-hapoel-petah-tikva",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
+  },
+  {
+   "id": "p-ll-harel-shalom",
+   "value": {
+    "name": "Harel Shalom",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4739296",
+    "ls-lu-1800665"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-hapoel-petah-tikva",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
+  },
+  {
+   "id": "p-ll-euclides-andrade-cle",
+   "value": {
+    "name": "Euclides Andrade Clé",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4702031",
+    "ls-lu-1766835"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-hapoel-petah-tikva",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: FW."
+  },
+  {
+   "id": "p-ll-amit-meshiah",
+   "value": {
+    "name": "Amit Meshiah",
+    "sport": "football",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4702056",
+    "ls-lu-1766844"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-hapoel-petah-tikva",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: GK."
   }
  ],
  "kits": [],

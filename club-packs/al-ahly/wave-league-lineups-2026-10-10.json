@@ -255,6 +255,118 @@
    "publisher": "365Scores",
    "access": "available",
    "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "ls-lu-1857549",
+   "title": "LiveScore: Modern Sport FC 0-1 Al Ahly SC, 2026-10-29 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1857549",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "ls-lu-1857525",
+   "title": "LiveScore: Al Ahly SC 3-3 El Qanah FC, 2026-10-21 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1857525",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "ls-lu-1857537",
+   "title": "LiveScore: Zamalek SC 0-2 Al Ahly SC, 2026-10-11 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1857537",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "ls-lu-1857512",
+   "title": "LiveScore: Al Ahly SC 2-0 Abo Qir Semad, 2026-09-15 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1857512",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "ls-lu-1857508",
+   "title": "LiveScore: Al Mokawloon Al Arab 1-1 Al Ahly SC, 2026-09-09 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1857508",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "ls-lu-1857485",
+   "title": "LiveScore: Al Ahly SC 1-0 Smouha, 2026-09-03 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1857485",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "ls-lu-1857496",
+   "title": "LiveScore: Zed FC 0-2 Al Ahly SC, 2026-08-28 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1857496",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "ls-lu-1857333",
+   "title": "LiveScore: Al Ahly SC 3-2 ENPPI, 2026-08-23 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1857333",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "ls-lu-1763557",
+   "title": "LiveScore: Al Masry 0-2 Al Ahly SC, 2026-05-20 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1763557",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "ls-lu-1763554",
+   "title": "LiveScore: Pyramids 3-0 Al Ahly SC, 2026-04-27 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1763554",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "ls-lu-1763550",
+   "title": "LiveScore: Zamalek SC 0-3 Al Ahly SC, 2026-05-01 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1763550",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "ls-lu-1763547",
+   "title": "LiveScore: Al Ahly SC 3-0 ENPPI, 2026-05-05 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1763547",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "ls-lu-1763538",
+   "title": "LiveScore: Ceramica Cleopatra 1-1 Al Ahly SC, 2026-04-07 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1763538",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "ls-lu-1763541",
+   "title": "LiveScore: Al Ahly SC 2-1 Smouha, 2026-04-11 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1763541",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-12"
   }
  ],
  "matches": [
@@ -381,19 +493,22 @@
      "Mohamed Magdy Afsha",
      "Mohamed Abdallah"
     ],
-    "scorers": []
+    "scorers": [
+     "Omar El Saaiy"
+    ]
    },
    "sources": [
-    "s365-4804723"
+    "s365-4804723",
+    "ls-lu-1857549"
    ],
    "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore's eleven differs (8/11 surnames agree).",
-   "confidence": 2,
-   "status": "review",
-   "approvedAt": null,
-   "approvedBy": null
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly"
   },
   {
    "id": "a-m-2026-10-21-al-ahly-sc-el-qanah-fc",
@@ -430,16 +545,17 @@
     "scorers": []
    },
    "sources": [
-    "s365-4804720"
+    "s365-4804720",
+    "ls-lu-1857525"
    ],
    "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore's eleven differs (8/11 surnames agree).",
-   "confidence": 2,
-   "status": "review",
-   "approvedAt": null,
-   "approvedBy": null
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly"
   },
   {
    "id": "a-m-2026-10-11-zamalek-sc-al-ahly-sc",
@@ -473,19 +589,23 @@
      "Karim Fouad",
      "Mohamed Magdy Afsha"
     ],
-    "scorers": []
+    "scorers": [
+     "Mohamed Hany",
+     "Monsef Bakrar"
+    ]
    },
    "sources": [
-    "s365-4804684"
+    "s365-4804684",
+    "ls-lu-1857537"
    ],
    "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore's eleven differs (8/11 surnames agree).",
-   "confidence": 2,
-   "status": "review",
-   "approvedAt": null,
-   "approvedBy": null
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly"
   },
   {
    "id": "a-m-2026-10-07-petrol-asyut-al-ahly-sc",
@@ -568,16 +688,17 @@
     "scorers": []
    },
    "sources": [
-    "s365-4804675"
+    "s365-4804675",
+    "ls-lu-1857512"
    ],
    "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore's eleven differs (9/11 surnames agree).",
-   "confidence": 2,
-   "status": "review",
-   "approvedAt": null,
-   "approvedBy": null
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly"
   },
   {
    "id": "a-m-2026-09-09-al-mokawloon-al-arab-al-ahly-sc",
@@ -611,19 +732,22 @@
      "Akram Tawfik",
      "Mohamed Magdy Afsha"
     ],
-    "scorers": []
+    "scorers": [
+     "Ahmed Sayed Zizo"
+    ]
    },
    "sources": [
-    "s365-4804667"
+    "s365-4804667",
+    "ls-lu-1857508"
    ],
    "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore's eleven differs (9/11 surnames agree).",
-   "confidence": 2,
-   "status": "review",
-   "approvedAt": null,
-   "approvedBy": null
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly"
   },
   {
    "id": "a-m-2026-09-03-al-ahly-sc-smouha",
@@ -657,19 +781,22 @@
      "Karim Fouad",
      "Hussein El Shahat"
     ],
-    "scorers": []
+    "scorers": [
+     "Yasser Ibrahim"
+    ]
    },
    "sources": [
-    "s365-4804603"
+    "s365-4804603",
+    "ls-lu-1857485"
    ],
    "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore's eleven differs (8/11 surnames agree).",
-   "confidence": 2,
-   "status": "review",
-   "approvedAt": null,
-   "approvedBy": null
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly"
   },
   {
    "id": "a-m-2026-08-28-zed-fc-al-ahly-sc",
@@ -703,19 +830,23 @@
      "Yassin Marei",
      "Karim Fouad"
     ],
-    "scorers": []
+    "scorers": [
+     "Achraf Bencharki",
+     "Taher Mohamed Taher"
+    ]
    },
    "sources": [
-    "s365-4804595"
+    "s365-4804595",
+    "ls-lu-1857496"
    ],
    "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore's eleven differs (8/11 surnames agree).",
-   "confidence": 2,
-   "status": "review",
-   "approvedAt": null,
-   "approvedBy": null
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly"
   },
   {
    "id": "a-m-2026-08-23-al-ahly-sc-enppi",
@@ -749,19 +880,24 @@
      "Akram Tawfik",
      "Aqtay Abdallah"
     ],
-    "scorers": []
+    "scorers": [
+     "Marwan Ateya",
+     "Ahmed Sayed Zizo",
+     "Mohamed Magdy Afsha"
+    ]
    },
    "sources": [
-    "s365-4804585"
+    "s365-4804585",
+    "ls-lu-1857333"
    ],
    "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore's eleven differs (8/11 surnames agree).",
-   "confidence": 2,
-   "status": "review",
-   "approvedAt": null,
-   "approvedBy": null
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly"
   },
   {
    "id": "a-m-2026-08-19-fc-barcelona-al-ahly-sc",
@@ -848,19 +984,23 @@
      "Mohamed Ben Romdhane",
      "Mohamed Sherif"
     ],
-    "scorers": []
+    "scorers": [
+     "Mahmoud Trézéguet",
+     "Mahmoud Trézéguet"
+    ]
    },
    "sources": [
-    "s365-4686692"
+    "s365-4686692",
+    "ls-lu-1763557"
    ],
    "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore's eleven differs (8/11 surnames agree).",
-   "confidence": 2,
-   "status": "review",
-   "approvedAt": null,
-   "approvedBy": null
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly"
   },
   {
    "id": "a-m-2026-05-05-al-ahly-sc-enppi",
@@ -897,16 +1037,17 @@
     "scorers": []
    },
    "sources": [
-    "s365-4686686"
+    "s365-4686686",
+    "ls-lu-1763547"
    ],
    "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore's eleven differs (7/11 surnames agree).",
-   "confidence": 2,
-   "status": "review",
-   "approvedAt": null,
-   "approvedBy": null
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly"
   },
   {
    "id": "a-m-2026-05-01-zamalek-sc-al-ahly-sc",
@@ -943,16 +1084,17 @@
     "scorers": []
    },
    "sources": [
-    "s365-4686684"
+    "s365-4686684",
+    "ls-lu-1763550"
    ],
    "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore's eleven differs (7/11 surnames agree).",
-   "confidence": 2,
-   "status": "review",
-   "approvedAt": null,
-   "approvedBy": null
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly"
   },
   {
    "id": "a-m-2026-04-27-pyramids-al-ahly-sc",
@@ -989,16 +1131,17 @@
     "scorers": []
    },
    "sources": [
-    "s365-4686680"
+    "s365-4686680",
+    "ls-lu-1763554"
    ],
    "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore's eleven differs (7/11 surnames agree).",
-   "confidence": 2,
-   "status": "review",
-   "approvedAt": null,
-   "approvedBy": null
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly"
   },
   {
    "id": "a-m-2026-04-11-al-ahly-sc-smouha",
@@ -1032,19 +1175,23 @@
      "Ahmed Eid",
      "Aliou Dieng"
     ],
-    "scorers": []
+    "scorers": [
+     "Mahmoud Trézéguet",
+     "Taher Mohamed Taher"
+    ]
    },
    "sources": [
-    "s365-4686675"
+    "s365-4686675",
+    "ls-lu-1763541"
    ],
    "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore's eleven differs (8/11 surnames agree).",
-   "confidence": 2,
-   "status": "review",
-   "approvedAt": null,
-   "approvedBy": null
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly"
   },
   {
    "id": "a-m-2026-04-07-ceramica-cleopatra-al-ahly-sc",
@@ -1078,19 +1225,22 @@
      "Ahmed Ramadan",
      "Ahmed Eid"
     ],
-    "scorers": []
+    "scorers": [
+     "Yasser Ibrahim"
+    ]
    },
    "sources": [
-    "s365-4686671"
+    "s365-4686671",
+    "ls-lu-1763538"
    ],
    "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore's eleven differs (7/11 surnames agree).",
-   "confidence": 2,
-   "status": "review",
-   "approvedAt": null,
-   "approvedBy": null
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly"
   },
   {
    "id": "a-m-2026-03-09-el-geish-al-ahly-sc",
@@ -1735,7 +1885,630 @@
    "approvedBy": null
   }
  ],
- "players": [],
+ "players": [
+  {
+   "id": "p-ll-mostafa-shobeir-oufa",
+   "value": {
+    "name": "Mostafa Shobeir Oufa",
+    "sport": "football",
+    "positions": [
+     "GK"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4686675",
+    "ls-lu-1763541"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: GK."
+  },
+  {
+   "id": "p-ll-tawfik-mohamed",
+   "value": {
+    "name": "Tawfik Mohamed",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4804684",
+    "ls-lu-1857537"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
+  },
+  {
+   "id": "p-ll-yassin-marei",
+   "value": {
+    "name": "Yassin Marei",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4686675",
+    "ls-lu-1763541"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
+  },
+  {
+   "id": "p-ll-hady-reyad",
+   "value": {
+    "name": "Hady Reyad",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4686686",
+    "ls-lu-1763547"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
+  },
+  {
+   "id": "p-ll-ahmed-eid",
+   "value": {
+    "name": "Ahmed Eid",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4804723",
+    "ls-lu-1857549"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
+  },
+  {
+   "id": "p-ll-marwan-ateya",
+   "value": {
+    "name": "Marwan Ateya",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4686675",
+    "ls-lu-1763541"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
+  },
+  {
+   "id": "p-ll-omar-el-saaiy",
+   "value": {
+    "name": "Omar El Saaiy",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4804675",
+    "ls-lu-1857512"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
+  },
+  {
+   "id": "p-ll-monsef-bakrar",
+   "value": {
+    "name": "Monsef Bakrar",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4804585",
+    "ls-lu-1857333"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: FW."
+  },
+  {
+   "id": "p-mg-9c339b4c2cfc",
+   "value": {
+    "name": "Achraf Dari",
+    "positions": [
+     "DF"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4804684",
+    "ls-lu-1857537"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
+  },
+  {
+   "id": "p-mg-a171ccf1efd9",
+   "value": {
+    "name": "Mohamed Hany",
+    "positions": [
+     "DF"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4686675",
+    "ls-lu-1763541"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
+  },
+  {
+   "id": "p-mg-c66c5727fbbf",
+   "value": {
+    "name": "Emam Ashour",
+    "positions": [
+     "MF"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4686675",
+    "ls-lu-1763541"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
+  },
+  {
+   "id": "p-ll-soufiane-benjdida",
+   "value": {
+    "name": "Soufiane Benjdida",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4804603",
+    "ls-lu-1857485"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: FW."
+  },
+  {
+   "id": "p-mg-57073af01c84",
+   "value": {
+    "name": "Mohamed El Shenawy",
+    "positions": [
+     "GK"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4804667",
+    "ls-lu-1857508"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: GK."
+  },
+  {
+   "id": "p-ll-karim-fouad",
+   "value": {
+    "name": "Karim Fouad",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4804585",
+    "ls-lu-1857333"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
+  },
+  {
+   "id": "p-ll-amr-el-gazar",
+   "value": {
+    "name": "Amr El Gazar",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4804585",
+    "ls-lu-1857333"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
+  },
+  {
+   "id": "p-ll-yasser-ibrahim",
+   "value": {
+    "name": "Yasser Ibrahim",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4686675",
+    "ls-lu-1763541"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
+  },
+  {
+   "id": "p-ll-ali-mahmoud",
+   "value": {
+    "name": "Ali Mahmoud",
+    "sport": "football",
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4804595",
+    "ls-lu-1857496"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
+  },
+  {
+   "id": "p-ll-ahmed-sayed-zizo",
+   "value": {
+    "name": "Ahmed Sayed Zizo",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4686675",
+    "ls-lu-1763541"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: FW."
+  },
+  {
+   "id": "p-mg-198998f2317b",
+   "value": {
+    "name": "Youssef Belammari",
+    "positions": [
+     "DF"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4686675",
+    "ls-lu-1763541"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
+  },
+  {
+   "id": "p-ll-achraf-bencharki",
+   "value": {
+    "name": "Achraf Bencharki",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4686686",
+    "ls-lu-1763547"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: FW."
+  },
+  {
+   "id": "p-ll-hussein-el-shahat",
+   "value": {
+    "name": "Hussein El Shahat",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4686686",
+    "ls-lu-1763547"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: FW."
+  },
+  {
+   "id": "p-mg-77359b7e2826",
+   "value": {
+    "name": "Aliou Dieng",
+    "positions": [
+     "MF"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4686671",
+    "ls-lu-1763538"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
+  },
+  {
+   "id": "p-ll-mohamed-sherif",
+   "value": {
+    "name": "Mohamed Sherif",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4686675",
+    "ls-lu-1763541"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: FW."
+  },
+  {
+   "id": "p-mg-8097d1fc7643",
+   "value": {
+    "name": "Ahmed Ramadan",
+    "positions": [
+     "DF"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4686686",
+    "ls-lu-1763547"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
+  },
+  {
+   "id": "p-ll-mahmoud-trezeguet",
+   "value": {
+    "name": "Mahmoud Trézéguet",
+    "sport": "football",
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4686684",
+    "ls-lu-1763550"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-al-ahly",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: FW."
+  }
+ ],
  "kits": [],
  "rivals": []
 }

@@ -3327,9 +3327,13 @@
    "id": "r26-elkaabi",
    "value": {
     "name": "Ayoub El Kaabi",
+    "sport": "football",
     "positions": [
      "FW"
     ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -3453,9 +3457,13 @@
    "id": "r26-tzolakis",
    "value": {
     "name": "Konstantinos Tzolakis",
+    "sport": "football",
     "positions": [
      "GK"
     ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
     "sensitive": false
    },
    "sources": [

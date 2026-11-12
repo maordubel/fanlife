@@ -3259,9 +3259,13 @@
    "id": "p-120e626233c582",
    "value": {
     "name": "Callum McGregor",
+    "sport": "football",
     "positions": [
      "MF"
     ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
     "sensitive": false
    },
    "sources": [

@@ -182,7 +182,7 @@
    "url": "https://webws.365scores.com/web/game/?gameId=4464650",
    "publisher": "365Scores",
    "access": "available",
-   "checkedAt": "2026-10-10"
+   "checkedAt": "2026-11-12"
   },
   {
    "id": "s365-4464660",
@@ -494,7 +494,7 @@
    "url": "https://webws.365scores.com/web/game/?gameId=4464803",
    "publisher": "365Scores",
    "access": "available",
-   "checkedAt": "2026-10-10"
+   "checkedAt": "2026-11-12"
   },
   {
    "id": "s365-4464793",
@@ -663,6 +663,30 @@
    "publisher": "LiveScore",
    "access": "available",
    "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "ls-lu-1813404",
+   "title": "LiveScore: St. Pauli 1-3 FC Nürnberg, 2026-11-01 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1813404",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "ls-lu-1541120",
+   "title": "LiveScore: St. Pauli 1-1 1. FC Köln, 2026-04-17 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1541120",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "ls-lu-1540603",
+   "title": "LiveScore: 1. FC Köln 1-1 St. Pauli, 2025-12-06 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1540603",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-12"
   }
  ],
  "matches": [
@@ -747,19 +771,22 @@
      "Erik Ahlstrand",
      "Taichi Hara"
     ],
-    "scorers": []
+    "scorers": [
+     "Abdoulie Ceesay"
+    ]
    },
    "sources": [
-    "s365-4757638"
+    "s365-4757638",
+    "ls-lu-1813404"
    ],
    "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
-   "confidence": 2,
-   "status": "review",
-   "approvedAt": null,
-   "approvedBy": null
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
   },
   {
    "id": "a-m-2026-10-23-sv-darmstadt-98-st-pauli",
@@ -1474,19 +1501,22 @@
      "Abdoulie Ceesay",
      "Taichi Hara"
     ],
-    "scorers": []
+    "scorers": [
+     "Karol Mets"
+    ]
    },
    "sources": [
-    "s365-4464650"
+    "s365-4464650",
+    "ls-lu-1541120"
    ],
-   "researchedAt": "2026-10-10",
+   "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score). Approved by the owner in chat on 2026-10-12 (collected research attached to the clubs).",
-   "confidence": 2,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
    "status": "approved",
-   "approvedAt": "2026-10-12",
-   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
   },
   {
    "id": "a-m-2026-04-11-st-pauli-bayern-munich",
@@ -2343,19 +2373,22 @@
      "Lars Ritzka",
      "Erik Ahlstrand"
     ],
-    "scorers": []
+    "scorers": [
+     "Ricky-Jade Jones"
+    ]
    },
    "sources": [
-    "s365-4464803"
+    "s365-4464803",
+    "ls-lu-1540603"
    ],
-   "researchedAt": "2026-10-10",
+   "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score). Approved by the owner in chat on 2026-10-12 (collected research attached to the clubs).",
-   "confidence": 2,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
    "status": "approved",
-   "approvedAt": "2026-10-12",
-   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
   },
   {
    "id": "a-m-2025-12-02-borussia-monchengladbach-st-pauli",
@@ -2744,9 +2777,13 @@
    "id": "p-002fabbfd6ecd9",
    "value": {
     "name": "Ben Voll",
+    "sport": "football",
     "positions": [
      "GK"
     ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -2958,8 +2995,8 @@
     "sensitive": false
    },
    "sources": [
-    "s365-4757622",
-    "ls-lu-1813399"
+    "s365-4757638",
+    "ls-lu-1813404"
    ],
    "confidence": 3,
    "status": "approved",
@@ -2974,9 +3011,13 @@
    "id": "p-386020d119ac0f",
    "value": {
     "name": "Eric Smith",
+    "sport": "football",
     "positions": [
      "DF"
     ],
+    "fromYear": 2025,
+    "toYear": 2026,
+    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -3152,9 +3193,13 @@
    "id": "p-2b718ff36ab1ce",
    "value": {
     "name": "Nikola Vasilj",
+    "sport": "football",
     "positions": [
      "GK"
     ],
+    "fromYear": 2025,
+    "toYear": 2026,
+    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -3174,9 +3219,13 @@
    "id": "p-1c73bd69f0c0d5",
    "value": {
     "name": "Hauke Wahl",
+    "sport": "football",
     "positions": [
      "DF"
     ],
+    "fromYear": 2025,
+    "toYear": 2026,
+    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -3222,9 +3271,13 @@
    "id": "p-f158c822565fed",
    "value": {
     "name": "Jackson Irvine",
+    "sport": "football",
     "positions": [
      "MF"
     ],
+    "fromYear": 2025,
+    "toYear": 2026,
+    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -3270,9 +3323,13 @@
    "id": "p-f49afe97691e26",
    "value": {
     "name": "Karol Mets",
+    "sport": "football",
     "positions": [
      "DF"
     ],
+    "fromYear": 2025,
+    "toYear": 2026,
+    "aliases": [],
     "sensitive": false
    },
    "sources": [

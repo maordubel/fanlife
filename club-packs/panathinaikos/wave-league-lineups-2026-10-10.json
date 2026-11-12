@@ -2681,9 +2681,13 @@
    "id": "inaki-pena",
    "value": {
     "name": "Inaki Pena",
+    "sport": "football",
     "positions": [
      "GK"
     ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -2703,9 +2707,13 @@
    "id": "anass-salah-eddine",
    "value": {
     "name": "Anass Salah-Eddine",
+    "sport": "football",
     "positions": [
      "DF"
     ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -2725,9 +2733,13 @@
    "id": "rick-van-drongelen",
    "value": {
     "name": "Rick van Drongelen",
+    "sport": "football",
     "positions": [
      "DF"
     ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -2747,9 +2759,13 @@
    "id": "stefan-de-vrij",
    "value": {
     "name": "Stefan de Vrij",
+    "sport": "football",
     "positions": [
      "DF"
     ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -2769,9 +2785,13 @@
    "id": "davide-calabria",
    "value": {
     "name": "Davide Calabria",
+    "sport": "football",
     "positions": [
      "DF"
     ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -2791,9 +2811,13 @@
    "id": "imran-louza",
    "value": {
     "name": "Imran Louza",
+    "sport": "football",
     "positions": [
      "MF"
     ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -2813,9 +2837,13 @@
    "id": "etienne-camara",
    "value": {
     "name": "Etienne Camara",
+    "sport": "football",
     "positions": [
      "MF"
     ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -2835,9 +2863,13 @@
    "id": "vicente-taborda",
    "value": {
     "name": "Vicente Taborda",
+    "sport": "football",
     "positions": [
      "MF"
     ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -2857,9 +2889,13 @@
    "id": "santino-andino",
    "value": {
     "name": "Santino Andino",
+    "sport": "football",
     "positions": [
      "FW"
     ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -2879,9 +2915,13 @@
    "id": "cyriel-dessers",
    "value": {
     "name": "Cyriel Dessers",
+    "sport": "football",
     "positions": [
      "FW"
     ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -2953,9 +2993,13 @@
    "id": "kings-kangwa",
    "value": {
     "name": "Kings Kangwa",
+    "sport": "football",
     "positions": [
      "MF"
     ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -3001,9 +3045,13 @@
    "id": "erik-palmer-brown",
    "value": {
     "name": "Erik Palmer-Brown",
+    "sport": "football",
     "positions": [
      "DF"
     ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -3023,9 +3071,13 @@
    "id": "triantafyllos-tsapras",
    "value": {
     "name": "Triantafyllos Tsapras",
+    "sport": "football",
     "positions": [
      "DF"
     ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -3045,9 +3097,13 @@
    "id": "pedro-chirivella",
    "value": {
     "name": "Pedro Chirivella",
+    "sport": "football",
     "positions": [
      "MF"
     ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -3067,9 +3123,13 @@
    "id": "adriano-jagusic",
    "value": {
     "name": "Adriano Jagusic",
+    "sport": "football",
     "positions": [
      "MF"
     ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -3089,9 +3149,13 @@
    "id": "sotiris-kontouris",
    "value": {
     "name": "Sotiris Kontouris",
+    "sport": "football",
     "positions": [
      "MF"
     ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -3111,9 +3175,13 @@
    "id": "elmin-rastoder",
    "value": {
     "name": "Elmin Rastoder",
+    "sport": "football",
     "positions": [
      "FW"
     ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -3133,9 +3201,13 @@
    "id": "azzedine-ounahi",
    "value": {
     "name": "Azzedine Ounahi",
+    "sport": "football",
     "positions": [
      "MF"
     ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -3181,9 +3253,13 @@
    "id": "levi-garcia",
    "value": {
     "name": "Levi Garcia",
+    "sport": "football",
     "positions": [
      "FW"
     ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
     "sensitive": false
    },
    "sources": [
@@ -3423,6 +3499,32 @@
    "sources": [
     "s365-4648605",
     "ls-lu-1707897"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-panathinaikos",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
+  },
+  {
+   "id": "p-ll-javier-hernandez-carrera",
+   "value": {
+    "name": "Javier Hernandez Carrera",
+    "sport": "football",
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2026,
+    "toYear": 2026,
+    "aliases": [],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4694828",
+    "ls-lu-1759017"
    ],
    "confidence": 3,
    "status": "approved",
