@@ -51,13 +51,17 @@ def span(dev: dict, d: float) -> tuple[float, float]:
     return dt, dev.get('d', d - dev.get('dt', 0.0))
 
 
-def cut_points(t0: float, d: float, words: list[float], grid: list[float] | None) -> list[float]:
+OPENING = 2.6       # the film's first cut comes by here: the gate wants a change inside its first three seconds (qa.FIRST_CHANGE_S)
+TIGHT = 2.4         # the re-plan's target for a shot the gate measured as too long or too still
+
+
+def cut_points(t0: float, d: float, words: list[float], grid: list[float] | None, target: float = TARGET) -> list[float]:
     """Where a hold of `d` seconds starting at film time `t0` is cut, as offsets into it. As many looks as keep every one
     under MAX_STILL; each cut is moved to the nearest music beat (within BEAT_SNAP), else to the nearest word start
     (within WORD_SNAP), else left where the arithmetic put it — and never so far that a look breaks MIN_SUB or MAX_STILL."""
-    if d <= MAX_STILL:
+    if d <= (MAX_STILL if target >= TARGET else 2 * MIN_SUB):
         return []
-    n = max(2, math.ceil(d / TARGET))
+    n = max(2, math.ceil(d / target))
     out, last = [], 0.0
     for i in range(1, n):
         ideal = d * i / n
@@ -73,7 +77,7 @@ def cut_points(t0: float, d: float, words: list[float], grid: list[float] | None
     return out
 
 
-def looks(dev: dict, d: float, cuts: list[float], related, key) -> list[dict]:
+def looks(dev: dict, d: float, cuts: list[float], related, key, focus=None) -> list[dict]:
     """One picture device over `d` seconds → its sub-shots. The first is the device as the adapter made it (its move, its
     tint, its tag — the tag and mini score stay for the whole hold); then detail → reverse → wide of the same picture;
     every fourth look is a related picture (`related(i)` → src or None), so a very long line still shows something new."""
@@ -88,7 +92,8 @@ def looks(dev: dict, d: float, cuts: list[float], related, key) -> list[dict]:
         if i % 3 == 0:
             src = (related(i) if related else None) or dev['src']
         frame = FRAMES[(i - 1) % 3]
-        out.append({'kind': 'image', 'src': src, 'frame': frame, 'focus': FOCUS[(key + i) % len(FOCUS)] if frame == 'detail' else None,
+        # a detail looks where the picture has something to look at (`focus(src)`, read off the picture); else a fixed corner
+        out.append({'kind': 'image', 'src': src, 'frame': frame, 'focus': ((focus(src) if focus else None) or FOCUS[(key + i) % len(FOCUS)]) if frame == 'detail' else None,
                     'dt': round(base + a, 3), 'd': round(z - a, 3), 'fade': False,
                     **{k: dev[k] for k in ('veil', 'pos', 'z', 'recon') if k in dev}})
     for x in out:
@@ -121,12 +126,16 @@ def transition(prev: dict | None, meta: dict, history: list[str]) -> str:
     return name
 
 
-def cut(beats: list[dict], grid: list[float] | None = None, related=None, backdrop=None) -> list[dict]:
+def cut(beats: list[dict], grid: list[float] | None = None, related=None, backdrop=None, fixes: dict | None = None, focus=None) -> list[dict]:
     """The edit of a film's beats (each with `meta`: n, type, chapter, words, …). `related(n, i)` → another picture's src
-    for a long hold; `backdrop(n)` → a picture device for a beat whose card leaves and has nothing under it."""
+    for a long hold; `backdrop(n)` → a picture device for a beat whose card leaves and has nothing under it. `fixes` is
+    the producer's one re-plan ({shot n: reasons}, studio/qa.experience): `long` cuts that shot tighter and lets its card
+    go sooner; `flash` or `shake` brings it in on a plain cut and keeps its looks to the calm ones."""
     out, history, prev = [], [], None
     for b in beats:
         m, d = b.get('meta') or {}, b['d']
+        fix = set((fixes or {}).get(m.get('n')) or [])
+        tight, calm = 'long' in fix, bool(fix & {'flash', 'shake'})
         shots = [dict(x) for x in b['shots']]
         if m.get('type') not in ('end', 'follow'):
             # b · a card that outstays its reading leaves; the picture under it (or one fetched for it) carries the rest
@@ -134,7 +143,7 @@ def cut(beats: list[dict], grid: list[float] | None = None, related=None, backdr
                 if not opaque(dev):
                     continue
                 at, hold = span(dev, d)
-                limit = WORD_HOLD if dev['kind'] == 'word' else MAX_CARD
+                limit = WORD_HOLD if dev['kind'] == 'word' else MAX_CARD * (0.6 if tight else 1)
                 rest = d - (at + limit)
                 if hold <= limit or rest < MIN_SUB:
                     continue
@@ -149,17 +158,24 @@ def cut(beats: list[dict], grid: list[float] | None = None, related=None, backdr
         cutup = []
         for dev in shots:
             dt, hold = span(dev, d) if dev['kind'] != 'word' else (0, 0)
-            if dev['kind'] in PICTURES and hold > MAX_STILL:
-                pts = cut_points(b['t'] + dt, hold, m.get('words') or [], grid)
-                cutup += looks(dev, hold, pts, (lambda i, n=m.get('n'): related(n, i)) if related else None, m.get('n') or 0)
+            pts = cut_points(b['t'] + dt, hold, m.get('words') or [], grid, TIGHT if tight or prev is None else TARGET) if dev['kind'] in PICTURES else []
+            if prev is None and dev['kind'] in PICTURES and dt == 0 and hold >= OPENING + MIN_SUB:
+                pts = [min((pts or [OPENING])[0], OPENING), *pts[1:]]   # the opening: its first look is over inside three seconds
+            if pts:
+                cutup += looks(dev, hold, pts, (lambda i, n=m.get('n'): related(n, i)) if related else None, m.get('n') or 0, focus)
             else:
                 cutup.append(dev)
-        # a figure in front of a picture belongs to the look it rose over: it leaves at the first cut of what is behind it
-        firsts = [x.get('dt', 0.0) + x['d'] for x in cutup if x['kind'] in PICTURES and 'hold' in x and x['hold'] > x['d']]
+        # a figure in front of a picture belongs to the look it rose over: it leaves at the first cut behind it that gives it time to be seen
+        ends = sorted(x.get('dt', 0.0) + x['d'] for x in cutup if x['kind'] in PICTURES and 'd' in x)[:-1]
         for x in cutup:
-            if x['kind'] == 'cutout' and firsts and min(firsts) - x.get('dt', 0.0) >= MIN_SUB:
-                x['d'] = round(min(firsts) - x.get('dt', 0.0), 3)
-        name = transition(prev, m, history)
+            leave = next((e for e in ends if e - x.get('dt', 0.0) >= MIN_SUB), None) if x['kind'] == 'cutout' else None
+            if leave is not None:
+                x['d'] = round(leave - x.get('dt', 0.0), 3)
+        name = 'cut' if calm and prev is not None else transition(prev, m, history)
+        if calm:   # no slam, no pan back the other way: every look of this shot glides one way
+            for x in cutup:
+                if x['kind'] in PICTURES:
+                    x.update({'frame': 'wide'} if x.get('frame') in ('reverse', 'turn') else {'move': 'push'} if x.get('move') in ('slam', 'pull') else {})
         history.append(name)
         for x in cutup:   # the transition is the entrance now: the picture's own fade would be a second one
             if x['kind'] == 'image' and x.get('dt', 0) == 0:

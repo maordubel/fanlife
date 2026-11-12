@@ -404,7 +404,20 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
 
     # 9 qa
     step('qa', 0.95, 'Checking the film')
-    report = qa.check(job_dir, master, plan, cues, float(brief['duration']) + (float(usage.get('added_seconds', 0)) + intro_seconds) / 60, palette, log)
+    report = qa.check(job_dir, master, plan, cues, float(brief['duration']) + (float(usage.get('added_seconds', 0)) + intro_seconds) / 60, palette, log,
+                      intro_s=intro_seconds)
+    # The experience gate failed on shots it can name: re-plan THOSE shots once (tighter cuts, another picture, a calm
+    # way in — docu/editor.cut reads experience-replan.json) and render again, rather than hand the owner a film to fix.
+    # Once only: the marker stays, so the second verdict is final and goes to the owner in plain words.
+    redo = (report.get('experience') or {}).get('replan') or {}
+    marker = job_dir / 'experience-replan.json'
+    if redo and not report['ok'] and plan.get('engine') == 'docu' and not marker.exists():
+        write_json(marker, {'shots': redo, 'first': [c for c in report['checks'] if c['name'].startswith('experience') and not c['ok']]})
+        log(f'Experience gate: re-planning {len(redo)} shot(s) once — ' + '; '.join(c['detail'] for c in report['checks'] if c['name'].startswith('experience') and not c['ok'])[:400])
+        for stale in (picture, job_dir / 'docu.mp4', master, preview, job_dir / 'intro-body.mp4', job_dir / 'intro.json', out / 'qa.json'):
+            stale.unlink(missing_ok=True)
+        logf.close()
+        return run(job_dir, {k: v for k, v in brief.items() if k != 'media_cache'}, palette, progress, script_file)
     report['media_usage'] = usage
     report['rights'] = rights_gaps(manifest)
     report['render_minutes'] = round((time.time() - t_start) / 60, 1)

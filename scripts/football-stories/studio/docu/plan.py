@@ -99,6 +99,7 @@ class Adapter:
         self.spares: dict[int, Path | None] = {}     # shot → the spare picture it was given
         self.used: dict[Path, int] = {}              # spare picture → when it was last given
         self.pool: list[Path] | None = None
+        self.foci: dict[str, str | None] = {}        # picture → where its detail look looks
         self.lib_used: list[str] = []                # the library pieces this film put on screen
         self.last: str | None = None                 # the rich device of the shot before (two city splits never run back to back)
         names = [palette.club_name]
@@ -176,6 +177,24 @@ class Adapter:
         if p:
             self.used[p] = len(self.used) + len(self.spares)
         return self.asset(p, 'img')
+
+    def focus(self, src: str) -> str | None:
+        """Where a detail look should look on this picture: the busiest part of it (most edges), as a transform origin —
+        a close-up of empty paper or sky is a look at nothing. Kept off the very edges so the push stays inside the frame."""
+        if src not in self.foci:
+            self.foci[src] = None
+            try:
+                import numpy as np
+                from PIL import Image
+                with Image.open(self.files[src]) as im:
+                    a = np.asarray(im.convert('L').resize((96, 54)), dtype='float32')
+                g = np.abs(np.diff(a, axis=0))[:, :-1] + np.abs(np.diff(a, axis=1))[:-1, :]
+                cells = [(float(g[r * 17:(r + 1) * 17 + 2, c * 23:(c + 1) * 23 + 3].mean()), c, r) for r in range(3) for c in range(4)]
+                _, c, r = max(cells)
+                self.foci[src] = f'{(26, 42, 58, 74)[c]}% {(30, 50, 68)[r]}%'
+            except Exception:  # noqa: BLE001 — a clip, a missing file: the editor's fixed corners
+                pass
+        return self.foci[src]
 
     def backdrop(self, n: int) -> dict | None:
         """The picture for the rest of a beat whose card has left (docu/editor.cut): the beat's own, else a spare."""
@@ -495,7 +514,16 @@ class Adapter:
         raw = self.raw_beats()
         if os.environ.get('STORIES_DOCU_EDIT', '1') == '0':
             return raw
-        return E.cut(raw, self.plan.get('beat_grid'), self.related, self.backdrop)
+        # the producer's gate named shots to re-plan (studio/qa.experience → pipeline): {shot n: [long | asset | flash | shake]}
+        fp = self.jd / 'experience-replan.json'
+        fixes = {int(k): v for k, v in (read_json(fp).get('shots') or {}).items()} if fp.exists() else {}
+        for b in raw:
+            if 'asset' in fixes.get(b['meta']['n'], []):   # another picture where one was on screen too often (never the owner's chosen one)
+                s = next(x for x in self.plan['shots'] if x['n'] == b['meta']['n'])
+                for x in b['shots']:
+                    if x['kind'] == 'image' and not s.get('required_asset'):
+                        x['src'] = self.related(b['meta']['n'], 0) or x['src']
+        return E.cut(raw, self.plan.get('beat_grid'), self.related, self.backdrop, fixes, self.focus)
 
 
 def v_type(s: dict) -> str:

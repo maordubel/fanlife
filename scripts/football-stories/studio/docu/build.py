@@ -62,7 +62,7 @@ TEAR = (4, -3, 5, -4, 3, -5, 4, -2, 3)   # the torn edge: how far each of nine p
 # A card that holds still is a dead frame (docs/fanlife/71: "the camera never stops dead"): it creeps in by this much a
 # second — 0.13 px a frame at the edge of the screen, far under rule 142's 0.6 px.
 CREEP = 0.004
-CREEPS = {'question', 'ticket', 'lead', 'ledger', 'rule', 'stat', 'tally', 'card', 'quote', 'form', 'verdict', 'cities', 'chalk', 'end', 'table', 'press'}
+CREEPS = {'question', 'ticket', 'lead', 'ledger', 'rule', 'stat', 'tally', 'card', 'quote', 'form', 'verdict', 'cities', 'chalk', 'end', 'table', 'press', 'word'}
 
 
 def e(s) -> str:
@@ -573,7 +573,7 @@ class Film:
                 k = len(self.made)
                 getattr(self, s['kind'])(s, t, d + (tail if last else 0))
                 mine = self.made[k:]
-                if edited and s['kind'] in CREEPS and len(mine) == 1 and d > 3 and s.get('shrink_at') is None:
+                if edited and s['kind'] in CREEPS and len(mine) == 1 and d > 1.5 and s.get('shrink_at') is None:
                     span = d - 0.6
                     mine[0]['sc'] = 1 + CREEP * span
                     self.tween(f'tl.fromTo("#{mine[0]["id"]}",{{scale:1}},{{scale:{mine[0]["sc"]:.4f},duration:{r2(span)},ease:"none",immediateRender:false}},{r2(t + 0.6)});')

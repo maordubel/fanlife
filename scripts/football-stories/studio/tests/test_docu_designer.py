@@ -256,7 +256,8 @@ class MovingArtLibrary(unittest.TestCase):
         from studio.docu import editor as E
         ad = adapter()
         b = E.cut([{'t': 0, 'd': 11.0, 'shots': ad.shots(self.lib_shot(), 11.0), 'meta': {'n': 0, 'type': 'illustration', 'words': []}}])[0]
-        first = E.pictures(b)[0]['d']
+        ends = [x['dt'] + x['d'] if 'dt' in x else x['d'] for x in E.pictures(b)]
         for x in b['shots']:
             if x['kind'] == 'cutout':
-                self.assertAlmostEqual(x['dt'] + x['d'], first, places=2)
+                self.assertIn(round(x['dt'] + x['d'], 2), [round(e, 2) for e in ends[:-1]])
+                self.assertGreaterEqual(x['d'], E.MIN_SUB)

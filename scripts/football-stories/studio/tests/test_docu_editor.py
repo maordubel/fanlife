@@ -58,7 +58,7 @@ class CutPoints(unittest.TestCase):
 
 class Cut(unittest.TestCase):
     def test_a_long_still_becomes_wide_detail_reverse_and_then_a_related_picture(self):
-        got = E.cut([beat(0, 0, 13.0, [img(tag={'big': 'X'})])], None, related=lambda n, i: f'rel-{i}.webp')[0]
+        got = E.cut([beat(0, 0, 3.0, [img('first.webp')]), beat(1, 3.0, 13.0, [img(tag={'big': 'X'})])], None, related=lambda n, i: f'rel-{i}.webp')[1]
         p = got['shots']
         self.assertEqual([x.get('frame') for x in p], [None, 'detail', 'reverse', 'wide'])
         self.assertEqual([x['src'] for x in p], ['a.webp', 'a.webp', 'a.webp', 'rel-3.webp'])
@@ -246,3 +246,33 @@ class BeatGrid(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class Opening(unittest.TestCase):
+    def test_the_films_first_look_is_over_inside_three_seconds(self):
+        from studio import qa
+        self.assertLess(E.OPENING, qa.FIRST_CHANGE_S)
+        for d, words in ((12.4, [3.1, 6.2, 9.3]), (4.1, []), (7.0, [2.9, 3.4])):
+            b = E.cut([beat(0, 0, d, [img()], 'open', words=words), beat(1, d, d, [img('b.webp')])])
+            self.assertLessEqual(E.pictures(b[0])[0]['d'], E.OPENING, d)
+            self.assertEqual(E.errors(b), [])
+        self.assertEqual(len(E.pictures(E.cut([beat(0, 0, 2.7, [img()], 'open')])[0])), 1)   # too short to cut: a look under MIN_SUB is a flicker
+
+    def test_a_detail_looks_where_the_picture_has_something(self):
+        got = E.cut([beat(0, 0, 9.0, [img()])], focus=lambda src: '74% 30%')[0]
+        self.assertEqual(next(x for x in got['shots'] if x.get('frame') == 'detail')['focus'], '74% 30%')
+
+    def test_the_adapter_reads_the_focus_off_the_picture(self):
+        import tempfile
+        from PIL import Image, ImageDraw
+        from studio.tests import test_docu_designer as tg
+        ad = tg.adapter()
+        p = Path(tempfile.mkdtemp(prefix='focus-')) / 'x.png'
+        im = Image.new('L', (960, 540), 235)
+        d = ImageDraw.Draw(im)
+        for k in range(0, 200, 8):                        # all the detail is bottom right; the rest is empty paper
+            d.line([(720 + k, 380), (720 + k, 520)], fill=20, width=3)
+        im.save(p)
+        src = ad.asset(p, 'img')
+        self.assertEqual(ad.focus(src), '74% 68%')
+        self.assertIsNone(ad.focus('missing.webp'))
