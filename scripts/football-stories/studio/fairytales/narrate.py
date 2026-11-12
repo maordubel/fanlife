@@ -190,11 +190,35 @@ def word_bounds(texts: list[str], wav: Path, lang: str) -> list[float] | None:
     return bounds if bounds == sorted(bounds) else None
 
 
+PRONOUNCE: dict[str, str] = {}                               # per language, from the episode's `pronounce`
+
+
+def pitch(wav: Path) -> float:
+    """Median voiced pitch (Hz) by autocorrelation: Leda sits near 180–220 Hz; a take under 145 Hz is a man's voice
+    (the studio's Charon answered when the voice was not set — 12.11.2026) and is never kept."""
+    import numpy as np
+    with wave.open(str(wav)) as w:
+        sr = w.getframerate()
+        x = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32)
+    fr, hop, out = int(0.04 * sr), int(0.02 * sr), []
+    for i in range(0, len(x) - fr, hop):
+        seg = x[i:i + fr] - x[i:i + fr].mean()
+        if np.sqrt((seg ** 2).mean()) < 500:
+            continue
+        ac = np.correlate(seg, seg, 'full')[fr - 1:]
+        lo, hi = int(sr / 400), int(sr / 70)
+        k = lo + int(np.argmax(ac[lo:hi]))
+        if ac[k] > 0.4 * ac[0]:
+            out.append(sr / k)
+    return float(np.median(out)) if out else 0.0
+
+
 def chunk_prompt(texts: list[str], lang: str) -> str:
     body = '\n\n'.join(texts)
+    say = [f'Pronunciation: {PRONOUNCE[lang]}'] if PRONOUNCE.get(lang) else []
     return '\n'.join(['# AUDIO PROFILE', PROFILE, '', '## THE SCENE',
                       'A family football story told over the pages of a pop-up book; each paragraph is a new page.', '',
-                      "### DIRECTOR'S NOTES", ACCENT[lang],
+                      "### DIRECTOR'S NOTES", ACCENT[lang], *say,
                       'Style: warm, bright and storytelling, with a grin; slow down and lower the voice at every "…"; let '
                       'surprises land. Each paragraph has its own mood: tender for a hard beginning, proud for the names, '
                       'joyful for the goals.',
@@ -243,10 +267,15 @@ def chunk(key: str, models: list[str], rows: list[dict], lang: str, out: Path) -
                 chk = {k2: chk[k2] for k2 in ('matched', 'added', 'heard')} | {'ok': chk['matched'] >= 0.7 and chk['added'] <= 0.15}
             else:
                 words, chk = None, check_local(r['text'], seg, lang)
+            hz = pitch(seg)
             row = {k2: v for k2, v in r.items() if k2 != 'text'} | {'model': model, 'seconds': round(seconds(seg), 2),
-                                                                      'check': chk, 'words': words, 'chunked': True}
+                                                                      'check': chk, 'words': words, 'chunked': True,
+                                                                      'pitch': round(hz)}
             if not chk['ok']:
                 row['error'] = 'the paragraph cut from the chunk did not say the line'
+            elif hz and hz < 145:
+                row['error'] = f'a man\'s voice ({hz:.0f} Hz), not Leda'
+            if 'error' in row:
                 seg.replace(keep / f"failed-{r['file']}")
             res.append(row)
         whole.unlink(missing_ok=True)
@@ -269,9 +298,12 @@ def main() -> None:
 
     def save():
         (out / 'narration.json').write_text(json.dumps(report, ensure_ascii=False, indent=1))
+    PRONOUNCE.update(ep.get('pronounce', {}))
     try:
         for lang in langs:
-            todo = [{'shot': s['id'], 'lang': lang, 'voice': ep['voice'][lang], 'file': f"{s['id']}-{lang}.wav", 'text': s[lang]}
+            os.environ['STORIES_GEMINI_VOICE'] = ep['voice'][lang]          # chunk mode too: never the studio's Charon
+            todo = [{'shot': s['id'], 'lang': lang, 'voice': ep['voice'][lang], 'file': f"{s['id']}-{lang}.wav",
+                     'text': (s.get('say') or {}).get(lang) or s[lang]}
                     for s in ep['shots'] if lang in s and (not only or f"{s['id']}:{lang}" in only)]
             for i in range(0, len(todo), size):
                 rows = chunk(key, models, todo[i:i + size], lang, out)

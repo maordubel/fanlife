@@ -21,16 +21,16 @@
  },
  "music": [
   {
-   "track": "zambolino-lighthearted",
+   "track": "aetheric-coconut-kind-of-love",
    "from": "once-upon"
   },
   {
-   "track": "pufino-enlivening",
+   "track": "aylex-happy-day",
    "from": "puskas"
   },
   {
-   "track": "zambolino-lighthearted",
-   "from": "gate-13-sings"
+   "track": "aylex-happiness",
+   "from": "double-2004"
   }
  ],
  "shots": [
@@ -128,11 +128,44 @@
    "transition": "slide"
   },
   {
+   "id": "tsiklitiras",
+   "plate": "pao-keeper",
+   "delivery": "playful",
+   "en": "And who stood in goal for the new team? Konstantinos Tsiklitiras — an Olympic champion! Imagine a goalkeeper who could jump further than almost anyone in the world.",
+   "el": "Και ποιος στεκόταν στην εστία της νέας ομάδας; Ο Κωνσταντίνος Τσικλητήρας — ολυμπιονίκης! Φανταστείτε έναν τερματοφύλακα που πηδούσε πιο μακριά από σχεδόν όλους στον κόσμο.",
+   "sources": [
+    "Wikipedia (Panathinaikos F.C.): Konstantinos Tsiklitiras, the great Greek athlete, played as goalkeeper for the new team",
+    "Wikipedia (Konstantinos Tsiklitiras): Olympic champion, standing long jump, 1912"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "tags": [
+     {
+      "text": "OLYMPIC CHAMPION",
+      "at": 0.4,
+      "xy": [
+       1420,
+       210
+      ],
+      "size": 70,
+      "rot": -3
+     }
+    ],
+    "punch": [
+     0.4
+    ]
+   },
+   "transition": "zoom"
+  },
+  {
    "id": "shamrock",
    "plate": "pao-shamrock",
    "delivery": "tender",
-   "en": "Ten years later, the club chose its sign: a little shamrock. Three leaves — for good luck, for unity, and for balance.",
-   "el": "Δέκα χρόνια αργότερα, ο σύλλογος διάλεξε το σήμα του: ένα μικρό τριφύλλι. Τρία φύλλα — για καλή τύχη, για ενότητα και για ισορροπία.",
+   "en": "Ten years later, the club chose its sign: a little shamrock. Can you count its leaves with me? One… two… three! Three leaves — for good luck, for unity, and for balance.",
+   "el": "Δέκα χρόνια αργότερα, ο σύλλογος διάλεξε το σήμα του: ένα μικρό τριφύλλι. Μετράτε μαζί μου τα φύλλα του; Ένα… δύο… τρία! Τρία φύλλα — για καλή τύχη, για ενότητα και για ισορροπία.",
    "sources": [
     "club-packs/panathinaikos/world.json emblem (Wikipedia, pao.gr, Skai.gr)"
    ],
@@ -151,6 +184,16 @@
       ],
       "size": 96,
       "rot": 4
+     },
+     {
+      "text": "1 · 2 · 3!",
+      "at": 0.45,
+      "xy": [
+       420,
+       300
+      ],
+      "size": 84,
+      "rot": -3
      }
     ],
     "crests": [
@@ -328,6 +371,49 @@
     "punch": [
      0.15
     ]
+   },
+   "transition": "iris"
+  },
+  {
+   "id": "unbeaten-1964",
+   "plate": "pao-unbeaten",
+   "delivery": "playful",
+   "en": "In 1964, the green team played a whole season — and nobody beat them. Not even once!",
+   "el": "Το 1964, οι πράσινοι έπαιξαν μια ολόκληρη σεζόν — και κανείς δεν τους νίκησε. Ούτε μία φορά!",
+   "sources": [
+    "club-packs/panathinaikos/core.json \"Unbeaten league title\" 1964: Stefan Bobek's side finished the 1963/64 season without a defeat"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "1964",
+      "at": 0.15,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -4
+     },
+     {
+      "text": "UNBEATEN!",
+      "at": 0.7,
+      "xy": [
+       1480,
+       240
+      ],
+      "size": 90,
+      "rot": 3
+     }
+    ],
+    "punch": [
+     0.7
+    ],
+    "confettiAt": 0.72
    },
    "transition": "iris"
   },
@@ -537,6 +623,75 @@
    "transition": "iris"
   },
   {
+   "id": "balkans-1978",
+   "plate": "pao-balkans",
+   "delivery": "adventure",
+   "en": "In 1978, Panathinaikos won the Balkans Cup, with a two–one win over Slavia Sofia in the final.",
+   "el": "Το 1978, ο Παναθηναϊκός κατέκτησε το Βαλκανικό Κύπελλο, με νίκη δύο–ένα επί της Σλάβια Σόφιας στον τελικό.",
+   "sources": [
+    "club-packs/panathinaikos/core.json \"Balkans Cup won\" 15.3.1978: a 2-1 win over Slavia Sofia in the second leg of the final"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "BALKANS CUP",
+      "at": 0.3,
+      "xy": [
+       1440,
+       220
+      ],
+      "size": 80,
+      "rot": -3
+     }
+    ],
+    "punch": [
+     0.3
+    ],
+    "confettiAt": 0.75
+   },
+   "transition": "slide",
+   "cap": {
+    "en": "In 1978, Panathinaikos won the Balkans Cup, with a 2–1 win over Slavia Sofia in the final.",
+    "el": "Το 1978, ο Παναθηναϊκός κατέκτησε το Βαλκανικό Κύπελλο, με νίκη 2–1 επί της Σλάβια Σόφιας στον τελικό."
+   }
+  },
+  {
+   "id": "liverpool-1985",
+   "plate": "pao-1985",
+   "delivery": "build",
+   "en": "In 1985, the green team was back among Europe's very best — all the way to the European Cup semi-final, where only Liverpool stopped them.",
+   "el": "Το 1985, οι πράσινοι ήταν ξανά ανάμεσα στους καλύτερους της Ευρώπης — μέχρι τον ημιτελικό του Κυπέλλου Πρωταθλητριών, όπου μόνο η Λίβερπουλ τους σταμάτησε.",
+   "sources": [
+    "club-packs/panathinaikos/core.json \"European Cup semi-final\" 1985: the campaign ended in two games against Liverpool"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "SEMI-FINAL",
+      "at": 0.45,
+      "xy": [
+       1460,
+       220
+      ],
+      "size": 84,
+      "rot": 3
+     }
+    ],
+    "punch": [
+     0.45
+    ]
+   },
+   "transition": "torn"
+  },
+  {
    "id": "warzycha",
    "plate": "pao-warzycha",
    "delivery": "proud",
@@ -620,6 +775,86 @@
    }
   },
   {
+   "id": "barcelona-2002",
+   "plate": "pao-barca",
+   "delivery": "build",
+   "en": "In 2002, in the Champions League quarter-final, Athens was shaking: Panathinaikos beat Barcelona, one–nil!",
+   "el": "Το 2002, στα προημιτελικά του Champions League, η Αθήνα σειόταν: ο Παναθηναϊκός νίκησε την Μπαρτσελόνα ένα–μηδέν!",
+   "sources": [
+    "club-packs/panathinaikos/core.json \"Champions League quarter-final\" 2002: a 1-0 home win over Barcelona and a 3-1 defeat in the return"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "1–0",
+      "at": 0.7,
+      "xy": [
+       1520,
+       240
+      ],
+      "size": 130,
+      "rot": -3
+     }
+    ],
+    "punch": [
+     0.7
+    ],
+    "confettiAt": 0.72,
+    "sfx": [
+     {
+      "file": "crowd-real-goal",
+      "at": 0.68,
+      "level": 0.35
+     }
+    ]
+   },
+   "transition": "zoom",
+   "cap": {
+    "en": "In 2002, in the Champions League quarter-final, Athens was shaking: Panathinaikos beat Barcelona, 1–0!",
+    "el": "Το 2002, στα προημιτελικά του Champions League, η Αθήνα σειόταν: ο Παναθηναϊκός νίκησε την Μπαρτσελόνα 1–0!"
+   }
+  },
+  {
+   "id": "porto-2003",
+   "plate": "pao-porto",
+   "delivery": "adventure",
+   "en": "A year later, in the UEFA Cup, they won one–nil in Porto, by the river in Portugal.",
+   "el": "Έναν χρόνο αργότερα, στο Κύπελλο UEFA, νίκησαν ένα–μηδέν στο Πόρτο, δίπλα στο ποτάμι της Πορτογαλίας.",
+   "sources": [
+    "club-packs/panathinaikos/core.json \"UEFA Cup quarter-final\" 2003: a 1-0 win in Porto and a 2-0 home defeat after extra time"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ],
+    "tags": [
+     {
+      "text": "PORTO",
+      "at": 0.3,
+      "xy": [
+       1480,
+       220
+      ],
+      "size": 90,
+      "rot": -3
+     }
+    ],
+    "punch": [
+     0.3
+    ]
+   },
+   "transition": "slide",
+   "cap": {
+    "en": "A year later, in the UEFA Cup, they won 1–0 in Porto, by the river in Portugal.",
+    "el": "Έναν χρόνο αργότερα, στο Κύπελλο UEFA, νίκησαν 1–0 στο Πόρτο, δίπλα στο ποτάμι της Πορτογαλίας."
+   }
+  },
+  {
    "id": "double-2004",
    "plate": "pao-2004",
    "delivery": "proud",
@@ -678,6 +913,92 @@
     "confettiAt": 0.5
    },
    "transition": "torn"
+  },
+  {
+   "id": "berg-2014",
+   "plate": "pao-berg",
+   "delivery": "playful",
+   "en": "In 2014, in the cup final, a Swedish striker called Marcus Berg scored three goals — a hat-trick! — and Panathinaikos won four–one.",
+   "el": "Το 2014, στον τελικό του κυπέλλου, ένας Σουηδός επιθετικός, ο Μάρκους Μπεργκ, έβαλε τρία γκολ — χατ τρικ! — και ο Παναθηναϊκός νίκησε τέσσερα–ένα.",
+   "sources": [
+    "club-packs/panathinaikos/core.json \"Cup won with a big win over PAOK\" 26.4.2014: a 4-1 win in the final, with a hat-trick from Marcus Berg"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "HAT-TRICK!",
+      "at": 0.5,
+      "xy": [
+       1460,
+       220
+      ],
+      "size": 90,
+      "rot": -4
+     },
+     {
+      "text": "4–1",
+      "at": 0.85,
+      "xy": [
+       420,
+       250
+      ],
+      "size": 110,
+      "rot": 3
+     }
+    ],
+    "punch": [
+     0.5,
+     0.85
+    ],
+    "confettiAt": 0.86,
+    "sfx": [
+     {
+      "file": "crowd-real-goal",
+      "at": 0.5,
+      "level": 0.3
+     }
+    ]
+   },
+   "transition": "iris",
+   "cap": {
+    "en": "In 2014, in the cup final, a Swedish striker called Marcus Berg scored 3 goals — a hat-trick! — and Panathinaikos won 4–1.",
+    "el": "Το 2014, στον τελικό του κυπέλλου, ένας Σουηδός επιθετικός, ο Μάρκους Μπεργκ, έβαλε 3 γκολ — χατ τρικ! — και ο Παναθηναϊκός νίκησε 4–1."
+   }
+  },
+  {
+   "id": "aitor-2022",
+   "plate": "pao-aitor",
+   "delivery": "proud",
+   "en": "In 2022, one goal from Aitor won the cup once more.",
+   "el": "Το 2022, ένα γκολ του Αϊτόρ έφερε ξανά το κύπελλο.",
+   "sources": [
+    "club-packs/panathinaikos/core.json \"Back to winning the cup\" 21.5.2022: a 1-0 win over PAOK in the final, with a goal from Aitor",
+    "pao.gr: The 19th Cup"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "2022",
+      "at": 0.2,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     }
+    ],
+    "confettiAt": 0.6
+   },
+   "transition": "slide"
   },
   {
    "id": "cup-2024",
@@ -790,5 +1111,9 @@
     "el": "Ο Καλαφάτης και οι φίλοι του. Ο Δομάζος, ο Στρατηγός. Ο Πούσκας στον πάγκο, ο Αντωνιάδης στην επίθεση, ο Βαζέχα με την μπάλα. 20 πρωταθλήματα. 20 κύπελλα. Καλημέρα, Παναθηναϊκέ."
    }
   }
- ]
+ ],
+ "pronounce": {
+  "en": "Panathinaikos: pah-nah-thee-nah-ee-KOS. Warzycha: var-ZHEE-kha. Domazos: DOH-mah-zos. Antoniadis: an-to-nee-AH-dees. Kalafatis: kah-lah-FAH-tees. Leoforos: leh-OH-fo-ros. Puskas: POOSH-kahsh. Vagiannidis: vah-yah-NEE-dees. Nikolaidis: nee-ko-LAH-ee-dees. Tsiklitiras: tsee-klee-TEE-ras. Aitor: eye-TOR. Ampelokipoi: am-beh-LO-kee-pee.",
+  "el": "Τα ξένα ονόματα: Βαζέχα (Warzycha), Πούσκας, Γουέμπλεϊ, Μπεργκ, Αϊτόρ — με φυσική αθηναϊκή προφορά."
+ }
 }

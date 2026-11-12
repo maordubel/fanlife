@@ -26,16 +26,16 @@
  },
  "music": [
   {
-   "track": "zambolino-lighthearted",
+   "track": "aylex-happy-day",
    "from": "once-upon"
   },
   {
-   "track": "pufino-enlivening",
+   "track": "aylex-happiness",
    "from": "1981"
   },
   {
-   "track": "zambolino-lighthearted",
-   "from": "gate-5"
+   "track": "aetheric-coconut-kind-of-love",
+   "from": "double-2000"
   }
  ],
  "shots": [
@@ -191,6 +191,9 @@
    "transition": "dissolve",
    "cap": {
     "he": "קראו לו יעקב חודורוב. הוא שמר על השער של הפועל מ־1947 עד 1962, וזכה באליפות של 1957. רבים עדיין אומרים שהוא השוער הגדול ביותר שהיה לישראל. הוא קיבל את פרס ישראל — והיום מתחם האימונים של הפועל קרוי על שמו."
+   },
+   "say": {
+    "he": "קראו לו יעקב חוֹדוֹרוֹב. הוא שמר על השער של הפועל מאלף תשע מאות ארבעים ושבע עד שישים ושתיים, וזכה באליפות של חמישים ושבע. רבים עדיין אומרים שהוא השוער הגדול ביותר שהיה לישראל. הוא קיבל את פרס ישראל — והיום מתחם האימונים של הפועל קרוי על שמו."
    }
   },
   {
@@ -226,6 +229,9 @@
    "transition": "torn",
    "cap": {
     "he": "ואז הגיע ילד שנולד בבולגריה — דוד פרימו. הוא שיחק את המשחק הראשון שלו בהפועל בגיל 17, ולעבור אותו היה כמעט בלתי אפשרי. וגם אם עברת… הוא היה כל כך מהיר, שהוא כבר עמד מולך שוב."
+   },
+   "say": {
+    "he": "ואז הגיע ילד שנולד בבולגריה — דוד פְּרִימוֹ. הוא שיחק את המשחק הראשון שלו בהפועל בגיל שבע עשרה, ולעבור אותו היה כמעט בלתי אפשרי. וגם אם עברת… הוא היה כל כך מהיר, שהוא כבר עמד מולך שוב."
    }
   },
   {
@@ -293,7 +299,10 @@
    },
    "sources": [
     "club-packs/hapoel-tel-aviv/world.json flavour: Bloomfield built from 1960 on the ground of the old Basa stadium, Hapoel's home since 1950"
-   ]
+   ],
+   "say": {
+    "he": "באותם ימים, הבית של הפועל היה מגרש במזרח יפו שקראו לו הַבַּסָּה. הפועל שיחקה שם מאלף תשע מאות וחמישים."
+   }
   },
   {
    "id": "feigenbaum",
@@ -329,6 +338,9 @@
    "cap": {
     "he": "באותה קבוצה שיחק ילד שבגיל חמש היה עומד מאחורי השער של חודורוב ומביא לו את הכדורים. קראו לו שייע פייגנבוים. הוא גדל והיה הקפטן של הפועל עשר שנים — ועם 131 שערים, מלך השערים הגדול ביותר בתולדות המועדון.",
     "en": "In the same team played a boy who, at five, used to stand behind Hodorov's goal and fetch the balls. His name was Shaya Feigenbaum. He grew up to be Hapoel's captain for ten years — and, with 131 goals, the greatest goal scorer in the club's history."
+   },
+   "say": {
+    "he": "באותה קבוצה שיחק ילד שבגיל חמש היה עומד מאחורי השער של חוֹדוֹרוֹב ומביא לו את הכדורים. קראו לו שַׁיֶּיע פַייגֶנְבּוֹים. הוא גדל והיה הקפטן של הפועל עשר שנים — ועם מאה שלושים ואחד שערים, מלך השערים הגדול ביותר בתולדות המועדון."
    }
   },
   {
@@ -367,7 +379,10 @@
    "sources": [
     "club-packs/hapoel-tel-aviv/world.json flavour: built from 1960 on the Basa; named for Bernard and Lewis Bloomfield; opened December 1962 (friendly v Twente, 1–1)",
     "Wikipedia (Bloomfield Stadium)"
-   ]
+   ],
+   "say": {
+    "he": "ובאלף תשע מאות שישים ושתיים, על אותו מגרש בדיוק, נפתח אצטדיון חדש: בְּלוּמְפִילְד — על שם שני אחים, ברנרד ולואיס בְּלוּמְפִילְד, שהמשפחה שלהם עזרה לבנות אותו."
+   }
   },
   {
    "id": "asia",
@@ -412,6 +427,9 @@
    "cap": {
     "he": "ועם הפועל, פרימו זכה באליפות של 1966 — ואז בטורניר הראשון אי פעם של אלופות אסיה, עם ניצחון 2–1 על סלנגור ממלזיה בגמר. הפועל תל אביב: אלופת המועדונים הראשונה של אסיה.",
     "en": "And with Hapoel, Primo won the title in 1966 — and then the very first Asian Champion Club Tournament, beating Selangor of Malaysia 2–1 in the final. Hapoel Tel Aviv: the first club champions of Asia."
+   },
+   "say": {
+    "he": "ועם הפועל, פְּרִימוֹ זכה באליפות של שישים ושש — ואז בטורניר הראשון אי פעם של אלופות אסיה, עם ניצחון שתיים–אחת על סֶלַנְגּוֹר ממלזיה בגמר. הפועל תל אביב: אלופת המועדונים הראשונה של אסיה."
    }
   },
   {
@@ -443,6 +461,9 @@
    "transition": "iris",
    "cap": {
     "he": "בשנות השבעים, הלב של הקישור האדום היה ריפעת טורק — כולם קראו לו ג'ימי. הוא הצטרף לנוער של הפועל בגיל 16, והיה לשחקן הערבי הראשון ששיחק בנבחרת ישראל."
+   },
+   "say": {
+    "he": "בשנות השבעים, הלב של הקישור האדום היה רִיפְעַת טורק — כולם קראו לו ג'ימי. הוא הצטרף לנוער של הפועל בגיל שש עשרה, והיה לשחקן הערבי הראשון ששיחק בנבחרת ישראל."
    }
   },
   {
@@ -495,8 +516,8 @@
    "plate": "seven",
    "transition": "zoom",
    "delivery": "proud",
-   "en": "On his back, he wore number seven.",
-   "he": "על הגב שלו, הוא לבש את מספר שבע.",
+   "en": "On his back, he wore number seven. Can you show me seven fingers?",
+   "he": "על הגב שלו, הוא לבש את מספר שבע. אתם יכולים להראות לי שבע אצבעות?",
    "visual": {
     "push": [
      1.0,
@@ -522,8 +543,8 @@
     "Vikipoel (the club wiki, content/raw/vikipoel-player-wikitext.json) משה סיני (מספר בהפועל=7)"
    ],
    "cap": {
-    "he": "על הגב שלו, הוא לבש את מספר 7.",
-    "en": "On his back, he wore number 7."
+    "en": "On his back, he wore number 7. Can you show me seven fingers?",
+    "he": "על הגב שלו, הוא לבש את מספר 7. אתם יכולים להראות לי שבע אצבעות?"
    }
   },
   {
@@ -658,7 +679,10 @@
      }
     ]
    },
-   "transition": "iris"
+   "transition": "iris",
+   "say": {
+    "he": "באמצע שנות התשעים חזר מבלגיה פליימייקר — עם שפם מפורסם. קראו לו שלום תִּקְוָה, והאוהדים קראו לו היהלום האדום. מי שהביא אותו להפועל היה משה סיני, שהיה אז המנג'ר של המועדון."
+   }
   },
   {
    "id": "the-chip",
@@ -693,6 +717,9 @@
    "cap": {
     "he": "מול בית\"ר ירושלים, בעשרה שחקנים בלבד, תקוה כבש פעמיים בניצחון 4–0 — והשני היה לוב עדין מעל השוער, מקצה הרחבה.",
     "en": "Against Beitar Jerusalem, with only ten men, Tikva scored twice in a 4–0 win — the second, a gentle chip over the goalkeeper from the edge of the box."
+   },
+   "say": {
+    "he": "מול בית\"ר ירושלים, בעשרה שחקנים בלבד, תִּקְוָה כבש פעמיים בניצחון ארבע–אפס — והשני היה לוב עדין מעל השוער, מקצה הרחבה."
    }
   },
   {
@@ -700,8 +727,8 @@
    "plate": "fourteen",
    "transition": "iris",
    "delivery": "warm",
-   "en": "And on Tikva's back — number fourteen.",
-   "he": "ועל הגב של תקוה — מספר ארבע עשרה.",
+   "en": "And on Tikva's back — number fourteen. Fourteen fingers? For that, you'll need a friend!",
+   "he": "ועל הגב של תקוה — מספר ארבע עשרה. ארבע עשרה אצבעות? בשביל זה צריך חבר!",
    "visual": {
     "push": [
      1.0,
@@ -727,8 +754,11 @@
     "Vikipoel (the club wiki, content/raw/vikipoel-player-wikitext.json) שלום תקוה (מספר בהפועל=14)"
    ],
    "cap": {
-    "he": "ועל הגב של תקוה — מספר 14.",
-    "en": "And on Tikva's back — number 14."
+    "en": "And on Tikva's back — number 14. Fourteen fingers? For that, you'll need a friend!",
+    "he": "ועל הגב של תקוה — מספר 14. ארבע עשרה אצבעות? בשביל זה צריך חבר!"
+   },
+   "say": {
+    "he": "ועל הגב של תִּקְוָה — מספר ארבע עשרה. ארבע עשרה אצבעות? בשביל זה צריך חבר!"
    }
   },
   {
@@ -747,7 +777,10 @@
     ],
     "confettiAt": 0.3
    },
-   "transition": "dissolve"
+   "transition": "dissolve",
+   "say": {
+    "he": "ומאותו לילה, בְּלוּמְפִילְד הייתה שלו."
+   }
   },
   {
    "id": "babies",
@@ -778,6 +811,9 @@
    "transition": "slide",
    "cap": {
     "he": "ב־1999, המאמן דרור קשטן נתן הזדמנות לשחקנים הכי צעירים שלו. קראו להם התינוקות של קשטן — ואחד מהם היה סלים טועמה."
+   },
+   "say": {
+    "he": "באלף תשע מאות תשעים ותשע, המאמן דרור קַשְׁטָן נתן הזדמנות לשחקנים הכי צעירים שלו. קראו להם התינוקות של קַשְׁטָן — ואחד מהם היה סלים טוּעְמֶה."
    }
   },
   {
@@ -816,6 +852,9 @@
    "cap": {
     "he": "באותה עונה הפועל זכתה בדאבל: אליפות וגביע. בגמר הגביע טועמה כבש בדקה ה־115, ואז החטיא את הפנדל שלו בדו־קרב — והפועל זכתה בכל זאת.",
     "en": "That season, Hapoel won the double: the league and the cup. In the cup final, Toama scored in the 115th minute, then missed his penalty in the shoot-out — and Hapoel won it anyway."
+   },
+   "say": {
+    "he": "באותה עונה הפועל זכתה בדאבל: אליפות וגביע. בגמר הגביע טוּעְמֶה כבש בדקה המאה וחמש עשרה, ואז החטיא את הפנדל שלו בדו־קרב — והפועל זכתה בכל זאת."
    }
   },
   {
@@ -877,6 +916,9 @@
    "cap": {
     "he": "שנתיים אחר כך, הפועל יצאה להרפתקה באירופה. צ'לסי, 2–0 בבלומפילד. אחר כך לוקומוטיב מוסקבה. אחר כך פארמה, באיטליה. רק מילאן עצרה אותה — ברבע הגמר.",
     "en": "Two years later, Hapoel went on an adventure across Europe. Chelsea, 2–0 at Bloomfield. Then Lokomotiv Moscow. Then Parma, in Italy. Only Milan stopped them — in the quarter-final."
+   },
+   "say": {
+    "he": "שנתיים אחר כך, הפועל יצאה להרפתקה באירופה. צ'לסי, שתיים–אפס בבְּלוּמְפִילְד. אחר כך לוקומוטיב מוסקבה. אחר כך פארמה, באיטליה. רק מילאן עצרה אותה — ברבע הגמר."
    }
   },
   {
@@ -921,6 +963,9 @@
    "cap": {
     "he": "ואז הגיע מאי 2010. היום האחרון של העונה, הדקה ה־92 — וחלוץ ממחלקת הנוער של המועדון, ערן זהבי, כבש את שער האליפות. כמה ימים קודם הפועל זכתה גם בגביע: דאבל שני.",
     "en": "And then came May 2010. The last day of the season, the 92nd minute — and a striker from the club's own youth team, Eran Zahavi, scored the goal that won the title. A few days earlier, Hapoel had won the cup too: a second double."
+   },
+   "say": {
+    "he": "ואז הגיע מאי אלפיים ועשר. היום האחרון של העונה, הדקה התשעים ושתיים — וחלוץ ממחלקת הנוער של המועדון, ערן זַהֲבִי, כבש את שער האליפות. כמה ימים קודם הפועל זכתה גם בגביע: דאבל שני."
    }
   },
   {
@@ -968,6 +1013,9 @@
    "cap": {
     "he": "ובאותו סתיו, הפועל תל אביב שיחקה בליגת האלופות — הבמה הגדולה ביותר בכדורגל. ובלילה אחד בנובמבר, בבלומפילד, היא ניצחה את בנפיקה 3–0. שניים מהשערים היו של זהבי.",
     "en": "That autumn, Hapoel Tel Aviv played in the Champions League — the greatest stage in club football. And on a November night at Bloomfield, they beat Benfica, 3–0. Two of the goals were Zahavi's."
+   },
+   "say": {
+    "he": "ובאותו סתיו, הפועל תל אביב שיחקה בליגת האלופות — הבמה הגדולה ביותר בכדורגל. ובלילה אחד בנובמבר, בבְּלוּמְפִילְד, היא ניצחה את בנפיקה שלוש–אפס. שניים מהשערים היו של זַהֲבִי."
    }
   },
   {
@@ -986,7 +1034,10 @@
      1.04
     ]
    },
-   "transition": "slide"
+   "transition": "slide",
+   "say": {
+    "he": "ואז… זַהֲבִי הלך לשחק בקבוצה שבצד השני של העיר. אז היום, בבְּלוּמְפִילְד, אנחנו לא אוהבים את זַהֲבִי. ככה זה בכדורגל."
+   }
   },
   {
    "id": "bad-days",
@@ -1077,7 +1128,10 @@
    "sources": [
     "CLAUDE.md rule 82: Bloomfield closed in 2016 and reopened at the end of August 2019 (two sources)",
     "Wikipedia (Bloomfield Stadium)"
-   ]
+   ],
+   "say": {
+    "he": "באלפיים תשע עשרה, אחרי שלוש שנים של בנייה, בְּלוּמְפִילְד חדש פתח את השערים — גדול יותר, וחדש לגמרי."
+   }
   },
   {
    "id": "gate-5",
@@ -1108,6 +1162,9 @@
    "transition": "dissolve",
    "cap": {
     "he": "אבל הסיפורים נשארים — בשער 5, בקצה אחד של בלומפילד, איפה שעומדים האוהדים הכי רועשים, וזוכרים את כולם."
+   },
+   "say": {
+    "he": "אבל הסיפורים נשארים — בשער חמש, בקצה אחד של בְּלוּמְפִילְד, איפה שעומדים האוהדים הכי רועשים, וזוכרים את כולם."
    }
   },
   {
@@ -1156,7 +1213,14 @@
    "cap": {
     "he": "חודורוב בשער. פרימו בהגנה. פייגנבוים בהתקפה. ג'ימי וסיני בקישור. תקוה עם הכדור, וטועמה רץ לידו. 13 אליפויות. 16 גביעים. 103 שנים. בוקר טוב, הפועל תל אביב.",
     "en": "Hodorov in goal. Primo at the back. Feigenbaum up front. Jimmy and Sinai in the middle. Tikva with the ball, and Toama running beside him. 13 titles. 16 cups. 103 years. Good morning, Hapoel Tel Aviv."
+   },
+   "say": {
+    "he": "חוֹדוֹרוֹב בשער. פְּרִימוֹ בהגנה. פַייגֶנְבּוֹים בהתקפה. ג'ימי וסיני בקישור. תִּקְוָה עם הכדור, וטוּעְמֶה רץ לידו. שלוש עשרה אליפויות. שש עשרה גביעים. מאה ושלוש שנים. בוקר טוב, הפועל תל אביב."
    }
   }
- ]
+ ],
+ "pronounce": {
+  "he": "בלומפילד נאמר \"בְּלוּמְפִילְד\" (Bloom-field). שייע נאמר \"שַׁיֶּיע\" (SHA-ye) — שם של אדם. פייגנבוים: FAY-gen-boym. חודורוב: kho-DO-rov. תקוה: tik-VA. טועמה: TOO-ah-meh. קשטן: kash-TAN. הבסה: ha-BA-sa.",
+  "en": "Bloomfield: BLOOM-field. Shaya: SHAH-yeh. Feigenbaum: FY-gen-bowm. Hodorov: kho-DOR-ov. Tikva: TEEK-vah. Toama: TOO-ah-mah. Kashtan: kahsh-TAHN. Primo: PREE-mo. Sinai: SEE-nye. Basa: BAH-sa."
+ }
 }

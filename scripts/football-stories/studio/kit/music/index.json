@@ -718,6 +718,36 @@
     "tension",
     "quirky"
    ]
+  },
+  {
+   "id": "aylex-happy-day",
+   "file": "cache/owner/aylex-happy-day.mp3",
+   "title": "Happy Day",
+   "artist": "Aylex",
+   "mood": "bright, bouncy, sunny",
+   "owner": true,
+   "source": "freetouse.com (supplied by the owner, 12.11.2026)",
+   "credit": "Music: Happy Day by Aylex — Source: https://freetouse.com/music · Free To Use Music for Videos"
+  },
+  {
+   "id": "aylex-happiness",
+   "file": "cache/owner/aylex-happiness.mp3",
+   "title": "Happiness",
+   "artist": "Aylex",
+   "mood": "cheerful, light, playful",
+   "owner": true,
+   "source": "freetouse.com (supplied by the owner, 12.11.2026)",
+   "credit": "Music: Happiness by Aylex — Source: https://freetouse.com/music · Free To Use Music for Videos"
+  },
+  {
+   "id": "aetheric-coconut-kind-of-love",
+   "file": "cache/owner/aetheric-coconut-kind-of-love.mp3",
+   "title": "Coconut Kind of Love",
+   "artist": "Aetheric",
+   "mood": "warm, tropical, smiling",
+   "owner": true,
+   "source": "freetouse.com (supplied by the owner, 12.11.2026)",
+   "credit": "Music: Coconut Kind of Love by Aetheric — Source: https://freetouse.com/music · Free To Use Music for Videos"
   }
  ]
 }
