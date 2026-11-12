@@ -1,7 +1,7 @@
 import {GATES} from './types'
 
 /** FAN LIFE's own paths: never behind The Worker's gate switches (the hub, the clubs, the control room, your corner). */
-export const FAN_PATHS=['/today','/about','/privacy','/terms','/contact','/master','/clubs','/telegram','/our-games','/all-football','/sources','/closet','/market','/auction','/shirts','/me','/stands'] as const
+export const FAN_PATHS=['/today','/about','/privacy','/terms','/contact','/master','/clubs','/telegram','/our-games','/all-football','/sources','/closet','/market','/shop','/auction','/shirts','/me','/stands'] as const
 export const isFanPath=(pathname:string)=>pathname==='/'||FAN_PATHS.some(p=>pathname===p||pathname.startsWith(p+'/'))
 
 /**

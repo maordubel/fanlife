@@ -461,3 +461,34 @@ select.pcc-inline { inline-size: 92px; cursor: pointer; } select.pcc-inline:disa
 .ra-num, .ra-open { margin: 0; }
 .ra-actions { display: flex; flex-wrap: wrap; gap: 8px; }
 @media (max-width: 760px) { .ra-list { grid-template-columns: 1fr; } .ra-actions > * { flex: 1 1 100%; } }
+
+/* ── THE SHOP DESK (12.11.2026) ── */
+.shopd .shop-step .desk-h2 { display: flex; align-items: center; gap: 10px; }
+.shop-no { flex: none; inline-size: 32px; block-size: 32px; display: grid; place-items: center; border: 2px solid var(--mag-ink); border-radius: 50%; font-family: var(--mag-mono); font-size: 15px; font-weight: 700; background: var(--mag-paper); }
+.shop-no[data-done] { background: var(--mag-green); color: var(--mag-paper); border-color: var(--mag-green); }
+.shop-row { display: flex; flex-wrap: wrap; align-items: end; gap: 10px; margin-block-start: 12px; }
+.shop-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin-block: 10px; }
+.shop-field { display: grid; gap: 4px; flex: 1 1 240px; min-inline-size: 0; font-family: var(--mag-mono); font-size: 12px; }
+.shop-field input, .shop-field select { min-block-size: 44px; padding: 0 12px; border: 2px solid var(--mag-ink); background: var(--mag-card); color: var(--mag-ink); font: inherit; font-size: 16px; inline-size: 100%; }
+.shop-field input[type='file'] { padding: 8px; }
+.shop-run { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; position: sticky; inset-block-start: 8px; z-index: 3; background: var(--mag-paper); border: 2px solid var(--mag-ink); padding: 10px 12px; }
+.shop-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+.shop-card { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 12px; padding: 10px; border: 2px solid var(--mag-ink); background: var(--mag-card); }
+.shop-card[data-status='error'] { border-color: var(--mag-vermilion); }
+.shop-card img { inline-size: 96px; block-size: 120px; object-fit: cover; border: 1px solid var(--mag-ink); background: var(--mag-paper); }
+.shop-card-t { display: grid; gap: 6px; align-content: start; min-inline-size: 0; }
+.shop-card-t small { font-family: var(--mag-mono); font-size: 12px; }
+.shop-err { color: var(--mag-vermilion); overflow-wrap: anywhere; }
+.shop-switch { display: flex; align-items: center; gap: 10px; min-block-size: 44px; font-weight: 700; }
+.shop-switch input { inline-size: 24px; block-size: 24px; accent-color: var(--mag-green); }
+.shop-card-a { display: flex; flex-wrap: wrap; gap: 6px; }
+.shop-card-a .desk-btn { min-height: 40px; padding-inline: 10px; font-size: 13px; }
+.shop-picks { display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 10px; }
+.shop-pick { display: grid; gap: 6px; justify-items: center; padding: 8px; min-block-size: 44px; border: 2px solid var(--mag-ink); background: var(--mag-card); color: var(--mag-ink); font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
+.shop-pick img { inline-size: 100%; block-size: auto; aspect-ratio: 4 / 5; object-fit: contain; background: var(--mag-paper); }
+.shop-pick.wide { grid-auto-flow: column; justify-content: start; align-items: center; inline-size: 100%; margin-block-end: 10px; }
+.shop-pick.wide .shop-plus { inline-size: 44px; aspect-ratio: 1; font-size: 28px; }
+.shop-shelf { margin-block-start: 10px; }
+.shop-go { position: sticky; inset-block-end: 72px; z-index: 2; }
+.shop-pick[aria-checked='true'] { outline: 4px solid var(--mag-green); outline-offset: -4px; }
+.shop-plus { display: grid; place-items: center; inline-size: 100%; aspect-ratio: 4 / 5; font-size: 44px; border: 2px dashed var(--mag-ink); }

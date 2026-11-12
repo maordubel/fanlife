@@ -34,6 +34,9 @@ import {door} from '@/lib/features-server'
 import {PinsRow} from '@/components/fanlife/Pins'
 import {WatchBanner} from '@/components/weekly/WatchBanner'
 import {lifeOpen} from '@/lib/clubs/life/entry'
+import {IssueFold} from '@/components/home/IssueFold'
+import {shopIsOpen} from '@/components/shop/ShopStrip'
+import shopCopy from '@/messages/en.shop.json'
 export const dynamic='force-dynamic'
 
 const Arrow=()=><svg className="wkh-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -54,7 +57,7 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
   const nick=(id:string)=>clubWorld(id)?.nicknames[0]?.text
  const now=new Date(),preview=evaluationMode()
  // one pass for both readings, and the LIFE doors alongside it (performance audit, 11.10.2026)
- const [{model,strict},life,fl,uv,lifeDoor]=await Promise.all([hubModels(open,locale),lifeEntries(open,preview),door('fanLeague'),door('universe'),lifeOpen()])
+ const [{model,strict},life,fl,uv,lifeDoor,shopOpen]=await Promise.all([hubModels(open,locale),lifeEntries(open,preview),door('fanLeague'),door('universe'),lifeOpen(),shopIsOpen()])
  const isOpen=(id:string)=>isOpenClub(strict.find(x=>x.id===id))
  const live=open.filter(c=>isOpen(c.id)),shop=open.filter(c=>!isOpen(c.id))
  const seed=seedVotes(shop.map(c=>c.id)),order2=rank(seed,shop.map(c=>c.id))
@@ -105,7 +108,7 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
   </section>}
 
   {/* THE COVER: orange plate, speed lines, the kicker, the two teasers that open a club chooser. */}
-  <section className="wkh-cover wk-panel wk-orangeplate" aria-labelledby="cover-h">
+  <section className="wkh-cover wk-panel wk-orangeplate" aria-labelledby="cover-h" data-fold>
    <span className="wk-speed wkh-cover-speed" aria-hidden="true"/>
    <span className="wk-flash wkh-cover-flash" aria-hidden="true"/>
    <Plate art="kicker" ink="green" className="wkh-cover-fig"/>
@@ -138,6 +141,8 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
   {/* THE CHANNEL: FanLife: Football Stories on YouTube (owner, 9.11.2026). */}
   <WatchBanner copy={copy}/>
 
+  {/* THE COUNTER (12.11.2026): the supporters' shirt market and the shop, one place for both. */}
+  <div className="wkh-counter">
   {/* THE MARKET, compact: one line, one button (owner, 14.10.2026). */}
   <section className="wkh-market wkh-market-mini wk-redplate" id="market" aria-labelledby="market-h">
    <span className="wk-speed wkh-market-speed" aria-hidden="true"/>
@@ -148,9 +153,12 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
    </div>
    <div className="wkh-market-ctas"><Link className="wk-btn paper" href="/market">{copy.marketCta} <Arrow/></Link></div>
   </section>
+   {shopOpen&&<Link className="wkh-door wk-greenplate" href="/shop" data-testid="hub-shop"><Plate art="scarf" ink="orange"/><span><span className="wk-k white">{shopCopy.doorK}</span><b className="wk-logo">{shopCopy.doorT}</b></span><Arrow/></Link>}
+  </div>
+  <div className="wkh-foldbar"><IssueFold scope="main.wkh" more={copy.wkhFoldMore} less={copy.wkhFoldLess}/></div>
 
   {/* INSIDE THIS ISSUE: four cells on a phone, the contents column on a desktop. Never a sideways strip. */}
-  <nav className="wkh-inside" aria-label={copy.insideTitle}>
+  <nav className="wkh-inside" aria-label={copy.insideTitle} data-fold>
    <p className="wk-banner wkh-inside-k">{copy.insideTitle}</p>
    <ol>{inside.map((x,i)=><li key={x.href}><a href={x.href} className="min-h-tap"><span className="no wk-num" aria-hidden="true">{String(i+1).padStart(2,'0')}</span><span className="t"><b>{x.title}</b><small>{x.sub}</small></span><span className="pg" aria-hidden="true">{x.go}</span></a></li>)}</ol>
   </nav>
@@ -182,17 +190,17 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
   <Suspense fallback={<HubNextUpWaiting title={copy.nextUp} kicker={copy.wkhInNext}/>}><HubNextUp open={open} locale={locale} copy={couponCopy} title={copy.nextUp}/></Suspense>
   {uv.open&&<Suspense fallback={null}><HubMatchday open={open} locale={locale} kicker={copy.wkhUvK}/></Suspense>}
 
-  <div className="wkh-spec">
+  <div className="wkh-spec" data-fold>
    <HubDock part="links" clubs={dockClubs} openIds={dockOpen} locale={locale} copy={dockCopy}/>
   </div>
 
   {/* YOUR SAY: the ballot of the clubs still in the workshop, and a club written in. */}
-  <SuggestClub copy={{kicker:copy.suggestKicker,title:copy.suggestTitle,note:copy.suggestNote,label:copy.suggestLabel,placeholder:copy.suggestPlaceholder,send:copy.suggestSend,sending:copy.suggestSending,thanks:copy.suggestThanks,again:copy.suggestAgain,tooShort:copy.suggestTooShort,limit:copy.suggestLimit,failed:copy.suggestFailed,writeIn:copy.wkhWriteIn}}>
+  <div className="wkh-sayfold" data-fold><SuggestClub copy={{kicker:copy.suggestKicker,title:copy.suggestTitle,note:copy.suggestNote,label:copy.suggestLabel,placeholder:copy.suggestPlaceholder,send:copy.suggestSend,sending:copy.suggestSending,thanks:copy.suggestThanks,again:copy.suggestAgain,tooShort:copy.suggestTooShort,limit:copy.suggestLimit,failed:copy.suggestFailed,writeIn:copy.wkhWriteIn}}>
    {shop.length>0&&<WorkshopGrid clubs={shopClubs} copy={{ballot:copy.wkhBallot,question:copy.wkhBallotQ,kicker:copy.hubWorkshopKicker,count:copy.voteCount,demo:copy.voteDemo,note:copy.voteNote,vote:copy.voteCta,voted:copy.voteVoted,leading:copy.tileLeading,preview:copy.tilePreview,shop:copy.tileWorkshop,more:copy.tileMore,less:copy.tileLess,accounts:copy.voteAccounts,guests:copy.voteGuests,base:copy.voteBase,offline:copy.voteOffline,tooMany:copy.voteTooMany}}/>}
-  </SuggestClub>
+  </SuggestClub></div>
 
   {/* DEAR TERRACE: the editor's letter — the old weekly's "from the editor" box (owner, 7.10.2026). */}
-  <aside className="wkh-letter" aria-labelledby="editor-h">
+  <aside className="wkh-letter" aria-labelledby="editor-h" data-fold>
    <span className="wk-stamp wkh-letter-stamp" aria-hidden="true">{copy.letterStamp}</span>
    <p className="wk-k red">{copy.letterKicker}</p>
    <div className="wkh-letter-head"><span className="wk-circle wk-greenplate wkh-letter-pic" aria-hidden="true"><Plate art="fanfist" ink="green"/></span><h2 className="wk-logo green" id="editor-h">{copy.letterTitle}</h2></div>
@@ -203,7 +211,7 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
   </aside>
 
   {/* THE BACK PAGES: where every fact in the paper comes from. */}
-  <Link className="wkh-back" href="/sources">
+  <Link className="wkh-back" href="/sources" data-fold>
    <svg className="wkh-lens" viewBox="-12 -12 234 234" aria-hidden="true"><path className="h" d="M132 132 L192 192"/><path className="g" d="M140 140 L188 188"/><circle className="r" cx="86" cy="86" r="62"/><path className="s" d="M52 66 A40 40 0 0 1 82 42"/></svg>
    <span className="wkh-back-t"><span className="wk-k cyan">{copy.wkhBackPages}</span><b className="wk-head">{copy.wkSources}</b><span className="wk-small">{copy.wkhSourcesSub}</span></span><Arrow/>
   </Link>

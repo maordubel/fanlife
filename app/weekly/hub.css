@@ -660,3 +660,28 @@
 .wkh-today-go { font-family: var(--mag-mono); text-transform: uppercase; font-size: 13px; align-self: flex-end; }
 .wkh-today-clubs { list-style: none; padding: 0 !important; display: flex; flex-wrap: wrap; gap: 8px; }
 .wkh-today-clubs a { display: inline-flex; align-items: center; min-block-size: 44px; padding: 0 14px; border: 2px solid var(--mag-ink); text-decoration: none; }
+
+/* ── THE PHONE'S FOLD and THE COUNTER (owner, 12.11.2026: shorter, hook first; the market and the shop together) ── */
+.wkh-counter { display: grid; gap: 12px; margin-block-start: 22px; }
+.wkh-counter .wkh-market.wkh-market-mini { margin-block-start: 0; }
+.wkh-door { position: relative; overflow: hidden; display: grid; grid-template-columns: 64px minmax(0, 1fr) auto; align-items: center; gap: 10px; min-block-size: 76px; padding: 10px 12px; border: 3px solid var(--mag-ink); box-shadow: 4px 4px 0 var(--mag-ink); color: var(--mag-white); text-decoration: none; }
+.wkh-door .wk-plate { block-size: 64px; }
+.wkh-door b { display: block; font-size: 24px; line-height: 1; color: var(--mag-white); }
+.wkh-foldbar { display: none; }
+.wkh-sayfold { display: contents; }
+.wk-fold-btn { inline-size: 100%; justify-content: center; }
+@media (max-width: 900px) {
+  .wkh > * { order: 10; }
+  .wkh > .wkh-mast { order: 0; } .wkh > .wkh-hero { order: 1; } .wkh > .wkh-pins { order: 2; } .wkh > .wkh-next { order: 3; }
+  .wkh > .wkh-life { order: 4; } .wkh > .wkh-lm { order: 5; } .wkh > .wkh-counter { order: 6; } .wkh > .wkt { order: 7; } .wkh > .wkh-clubs { order: 8; }
+  .wkh > .wkh-foldbar { order: 9; display: block; margin-block-start: 22px; }
+  .wkh > .wkh-cont { display: none; }
+  .wkh:not([data-full='1']) [data-fold] { display: none; }
+  .wkh-sayfold { display: block; }
+  .wkh > .wkh-life { margin-block-start: 22px; } .wkh > .wkh-clubs { margin-block-start: 28px; }
+}
+@media (min-width: 901px) {
+  .wkh-counter { grid-area: market; margin-block-start: 40px; grid-template-columns: 1fr 1fr; }
+  .wkh-counter:has(> :only-child) { grid-template-columns: 1fr; }
+  .wkh-counter .wkh-market.wkh-market-mini { grid-area: auto; }
+}

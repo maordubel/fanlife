@@ -32,11 +32,15 @@ import {featuresOf} from '@/lib/features'
 import {ConnectedDesk} from '@/components/master/desk/ConnectedDesk'
 import {StoriesDesk} from '../stories/desk'
 import {deskTab} from '@/lib/stories/banners'
+import {ShopDesk} from '@/components/master/desk/ShopDesk'
+import {readShop,printifyToken} from '@/lib/shop/store'
+import {SUBJECT_IDS,subjectName} from '@/lib/shop/subjects'
+import {LIBRARY} from '@/lib/shop/library'
 import '../../desk.css'
 import '../../research-desk.css'
 export const dynamic='force-dynamic'
 
-const SECTION_KEYS=['overview','clubs','research','players','games','studio','market','community','audience','data','operations','advertising','settings','more'] as const
+const SECTION_KEYS=['overview','clubs','research','players','games','studio','shop','market','community','audience','data','operations','advertising','settings','more'] as const
 /** Old bookmarks keep working (rule 99 §2): `?tab=` and `?section=data&view=players` land where they always did. */
 const LEGACY:Record<string,{section:Section;view?:string}>={overview:{section:'overview'},club:{section:'clubs',view:'evidence'},data:{section:'data'},display:{section:'settings'},updates:{section:'operations'},activity:{section:'operations'}}
 /** sections the Admin component draws (the rest are the desk's own panels) */
@@ -78,6 +82,7 @@ async function DeskContent({section,view,club,owner,searchParams,overview,scoped
  if(section==='players')return <PlayersDesk/>
  if(section==='research')return <ResearchDesk/>
  if(section==='studio')return <StoriesDesk view={deskTab(view)}/>
+ if(section==='shop'){const [doc,token]=await Promise.all([readShop(),printifyToken()]);return <ShopDesk initial={{doc,connected:!!token}} subjects={SUBJECT_IDS.map(id=>({id,name:subjectName(id)}))} pictures={LIBRARY.map(({bytes:_b,...p})=>p)}/>}
  if(section==='market')return <MarketDesk/>
  if(section==='community')return <CommunityDesk/>
  if(section==='operations')await refreshMigrationState()

@@ -5,6 +5,8 @@ import { HubScreen } from '@/components/fanlife/market/HubScreen'
 import { fanShirtMap } from '@/lib/fanlife/catalog'
 import { h } from '@/lib/fanlife/hub/copy'
 import { t } from '@/lib/fanlife/i18n'
+import { Suspense } from 'react'
+import { ShopStrip } from '@/components/shop/ShopStrip'
 
 export const metadata: Metadata = { title: t('market.title'), description: t('market.seo.desc') }
 export const dynamic = 'force-dynamic'
@@ -14,6 +16,8 @@ export default async function MarketPage() {
   return (
     <FanPage active="market" mast="full" spread title={h('hub.hero.title')} sub={h('hub.hero.sub')} kicker={h('hub.hero.kicker')}>
       <HubScreen shirts={await fanShirtMap()} />
+      {/* the shop's shelf under the market (12.11.2026): new prints beside the real shirts — nothing while the shop is closed */}
+      <Suspense fallback={null}><ShopStrip limit={4} /></Suspense>
     </FanPage>
   )
 }
