@@ -300,7 +300,7 @@
     grid-template-areas: 'mast mast mast' 'hero hero hero' 'pins pins pins' 'lm lm lm' 'cover cover inside' 'cover cover cont' 'cover cover life' 'market market market' 'watch watch watch' 'clubs clubs letter' 'back say spec';
     grid-template-rows: auto auto auto auto auto auto auto auto auto auto 1fr; }
   .wkh-pins { grid-area: pins; }
-  .wkh > .wkt { grid-area: watch; margin-block-start: 64px; max-width: none; }
+  .wkh > .wkt, .wkh > .wkh-watch > .wkt { grid-area: watch; margin-block-start: 64px; max-width: none; }
   .wkh-lm { grid-area: lm; margin-block-start: 28px; }
   .wkh-market-mini { grid-area: market; margin-block-start: 40px; }
   .wkh :is(#clubs, #next, #life, #market, #suggest) { scroll-margin-top: 92px; }
