@@ -25,6 +25,7 @@ from pathlib import Path
 
 from ..common import FPS, Palette, StageError, read_json, write_json
 from . import build as B
+from . import editor as E
 
 ENGINE = 'docu'
 OLD = ('vox', 'vox-hf', 'classic', 'paper')
@@ -158,6 +159,22 @@ class Adapter:
         self.spares[n] = p
         return p
 
+    def related(self, n: int, i: int) -> str | None:
+        """Another picture for a line so long that three looks at its own picture are not enough (docu/editor.looks): the
+        least recently used crowd picture, never the one this shot already shows."""
+        self.spare(-1 - n) if self.pool is None else None   # fills the pool; the throwaway key is never a shot
+        own = self.shown.get(n)
+        fresh = [q for q in (self.pool or []) if q != own]
+        p = min(fresh, key=lambda q: self.used.get(q, -1), default=None)
+        if p:
+            self.used[p] = len(self.used) + len(self.spares)
+        return self.asset(p, 'img')
+
+    def backdrop(self, n: int) -> dict | None:
+        """The picture for the rest of a beat whose card has left (docu/editor.cut): the beat's own, else a spare."""
+        s = next((x for x in self.plan['shots'] if x['n'] == n), None)
+        return self.back(s, 'push') if s else None
+
     def fact(self, cid) -> dict:
         return (self.by.get(cid) or {}).get('fact') or {}
 
@@ -202,9 +219,10 @@ class Adapter:
         elif t in ('score', 'versus') and f.get('kind') == 'match':
             sc = self.scoreline(f)
             bg = self.picture(s)
+            if bg[0] and not bg[1]:   # the picture behind the board is its own device, so the editor can cut it into looks
+                out.append({'kind': 'image', 'src': bg[0], 'veil': 0.55, 'move': 'push', 'z': 1})
             out.append({'kind': 'score', 'us': B.e(sc['us']), 'them': sc['them'], 'us_goals': sc['ug'], 'them_goals': sc['tg'],
-                        'us_crest': self.crest_of(sc['us']), 'them_crest': self.crest_of(sc['them']),
-                        'cap': self.cap(f), 'bg': None if bg[1] else bg[0]})
+                        'us_crest': self.crest_of(sc['us']), 'them_crest': self.crest_of(sc['them']), 'cap': self.cap(f)})
             if f.get('outcome') == 'win':
                 self.cue(n, 0.6, 'crowd-goal' if (s.get('cinema') or {}).get('climax') else 'stamp')
             elif f.get('outcome') == 'loss':
@@ -338,15 +356,29 @@ class Adapter:
             out += [b] if b else []
         return [x for x in out if x]
 
-    def beats(self) -> list[dict]:
+    def raw_beats(self) -> list[dict]:
+        """One beat per plan shot, as the adapter reads it — before the edit."""
         out = []
         for s in self.plan['shots']:
             t, d = s['start'], s['frames'] / FPS
-            b = {'t': t, 'd': d, 'shots': self.shots(s, d)}
+            cin = s.get('cinema') or {}
+            at0 = s.get('voice_at')
+            b = {'t': t, 'd': d, 'shots': self.shots(s, d),
+                 'meta': {'n': s['n'], 'type': v_type(s), 'chapter': s.get('chapter'), 'camera': cin.get('camera'), 'pace': cin.get('cam_pace'),
+                          'outcome': self.fact(s['visual'].get('claim')).get('outcome') if v_type(s) in ('score', 'versus') else None,
+                          'words': [round(at0 + w['start'], 3) for w in (s.get('words') or [])] if at0 is not None else []}}
             if s.get('narration') and s.get('voice_at') is not None and v_type(s) != 'end':
                 b['subs'] = subtitles(s)
             out.append(b)
         return out
+
+    def beats(self) -> list[dict]:
+        """The film's beats, edited (docu/editor.py): long stills cut into looks, cards that leave, a transition into
+        every beat, the docs/71 rules. STORIES_DOCU_EDIT=0 keeps the adapter's own one-still-per-line cut (for comparison)."""
+        raw = self.raw_beats()
+        if os.environ.get('STORIES_DOCU_EDIT', '1') == '0':
+            return raw
+        return E.cut(raw, self.plan.get('beat_grid'), self.related, self.backdrop)
 
 
 def v_type(s: dict) -> str:
@@ -382,6 +414,8 @@ def write_project(job_dir: Path, plan: dict, palette: Palette, root: Path) -> tu
     script = read_json(job_dir / 'script.json')
     ad = Adapter(job_dir, plan, palette, ledger, script)
     beats = ad.beats()
+    write_json(job_dir / 'docu-shots.json', {'shots': E.shot_list(beats), 'errors': E.errors(beats) if beats and 'in' in beats[0] else [],
+                                             'beat_grid': bool(plan.get('beat_grid'))})
     if root.exists():
         shutil.rmtree(root)
     (root / 'assets' / 'img').mkdir(parents=True)

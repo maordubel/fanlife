@@ -302,6 +302,14 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     from .docu import plan as docu
     if plan['engine'] == 'vox' and docu.wanted(brief):
         plan['engine'] = docu.ENGINE   # the owner's graphic minimum (9.11.2026); look 'vox' / STORIES_DOCU=0 keep the board
+    if plan['engine'] == 'docu':
+        # the editor cuts on the music's beats when the track the mix will choose is at hand; otherwise on words
+        try:
+            plan['beat_grid'] = audio.beat_grid(plan, brief.get('music') or 'auto', [x for x in (brief.get('tone'), brief.get('kind')) if x],
+                                                f"{brief.get('club_id')}|{brief.get('season')}")
+        except Exception as e:  # noqa: BLE001 — a grid is a nicety: the cut falls back to word boundaries
+            plan['beat_grid'] = []
+            log(f'Edit: no beat grid ({type(e).__name__}) — cuts land on words')
     if editorial_review is not None:
         plan, review = editorial.review_plan(job_dir, brief, ed, plan, editorial_review)
         if review is not None:
