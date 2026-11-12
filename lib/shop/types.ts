@@ -11,6 +11,8 @@ export type ShopProduct={
  art:{library:{id:string;name:string}}|{upload:{id:string;name:string;preview:string;width:number;height:number}}
  title:string;description:string
  status:ProductStatus;error?:string
+ /** automatic re-presses after a passing failure (the hourly check-up, at most two) */
+ retries?:number
  /** shown on /shop — the owner's switch; only a `live` product with a link can be shown */
  visible:boolean
  printify?:{productId:string;blueprintId:number;providerId:number;images:string[];priceFrom:number;currency:string;url:string|null;publishedAt:string|null}
@@ -29,7 +31,8 @@ export type ShopSettings={
  matches:Partial<Record<Kind,KindMatch>>
 }
 export type ShopAudit={at:string;by:string;what:string}
-export type ShopDoc={v:1;settings:ShopSettings;products:ShopProduct[];audit:ShopAudit[]}
+export type ShopHealthNote={at:string;ok:boolean;notes:string[];checked:number;repaired:number}
+export type ShopDoc={v:1;settings:ShopSettings;products:ShopProduct[];audit:ShopAudit[];health?:ShopHealthNote}
 export const EMPTY_SHOP:ShopDoc={v:1,settings:{open:false,shopId:null,shopTitle:null,channel:null,popupUrl:'',margin:45,matches:{}},products:[],audit:[]}
 /** what the public page may know about a product */
 export type PublicProduct={id:string;subject:string;kind:Kind;title:string;description:string;image:string;images:string[];priceFrom:number;currency:string;url:string}

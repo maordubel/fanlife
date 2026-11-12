@@ -1,0 +1,33 @@
+# The shop's hourly check-up (owner, 12.11.2026: full automation, a healthy and stable system). The server re-reads every product
+# from Printify, repairs addresses and pictures, hides what was deleted there, and presses again what failed on a passing error.
+# A failed check-up goes red here so it is seen; the desk shows the same notes.
+name: Shop check-up
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+permissions: {}
+concurrency: {group: shop-checkup, cancel-in-progress: false}
+jobs:
+  checkup:
+    if: vars.FAN_LIFE_RESEARCH_URL != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check the shop
+        env:
+          URL: ${{ vars.FAN_LIFE_RESEARCH_URL }}
+          CRON_SECRET: ${{ secrets.FAN_LIFE_CRON_SECRET }}
+        run: |
+          set -euo pipefail
+          if [ "${#CRON_SECRET}" -lt 32 ]; then echo "::error::FAN_LIFE_CRON_SECRET is missing."; exit 1; fi
+          code=$(curl --silent --show-error --max-time 150 -X POST -o out.json -w '%{http_code}' -H "Authorization: Bearer $CRON_SECRET" "$URL/api/master/shop/checkup")
+          cat out.json; echo
+          if [ "$code" != "200" ]; then echo "::error title=Shop check-up answered $code::$(head -c 300 out.json)"; exit 1; fi
+          python3 - <<'PY'
+          import json,sys
+          h=json.load(open('out.json'))['health']
+          print(f"checked {h['checked']} · repaired {h['repaired']} · ok={h['ok']}")
+          for n in h['notes']: print('::warning title=Shop::'+n.replace('\n',' '))
+          sys.exit(0 if h['ok'] else 1)
+          PY
