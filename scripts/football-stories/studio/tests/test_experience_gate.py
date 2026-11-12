@@ -190,3 +190,72 @@ class Replan(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class Batch4(unittest.TestCase):
+    """Static shots, the language mix, the arc and library hygiene (owner, 12.11.2026)."""
+
+    def test_a_static_stretch_fails_and_a_slow_camera_does_not(self):
+        a, b = texture(1), texture(2)
+        moving = gate(film(pan(a, 60), pan(b, 60), pan(a, 60, x0=60)))
+        self.assertTrue(check(moving, 'static shots')[1])
+        self.assertEqual(moving['numbers']['moving_share'], 1.0)
+        held = gate(film(pan(a, 50), still(b, 55), pan(a, 50, x0=60)))        # 2.2 s of a picture that does not move
+        c = check(held, 'static shots')
+        self.assertFalse(c[1])
+        self.assertIn('nothing on screen moves there', c[2])
+        self.assertAlmostEqual(held['numbers']['static_seconds'], 2.2, delta=0.3)
+        self.assertLess(held['numbers']['moving_share'], 0.75)
+        self.assertTrue(held['replan'])                                       # the shot is named for the one re-plan
+        short = gate(film(pan(a, 60), still(b, 30), pan(a, 60, x0=60)))       # 1.2 s: under STATIC_RUN_S
+        self.assertTrue(check(short, 'static shots')[1])
+        creep = gate(film(pan(a, 80, px=0.04), pan(b, 80, px=0.04)))          # the slowest move the camera makes still measures
+        self.assertTrue(check(creep, 'static shots')[1], creep['numbers']['static_shots'])
+
+    def frames(self):
+        return film(pan(texture(1), 60), pan(texture(2), 60))
+
+    def test_the_language_mix_is_reported_and_held(self):
+        mix = {'documentary': 0.5, 'explainer': 0.35, 'kinetic': 0.15, 'chapters_short': []}
+        g = qa.experience(None, plan(4.8), None, 0.0, None, frames=(F, self.frames()), extras={'mix': mix})
+        c = check(g, 'language mix')
+        self.assertTrue(c[1])
+        self.assertIn('documentary 50% · explainer 35% · kinetic type 15%', c[2])
+        self.assertEqual(g['numbers']['language_mix']['explainer'], 0.35)
+        plain = qa.experience(None, plan(4.8), None, 0.0, None, frames=(F, self.frames()), extras={'mix': {**mix, 'documentary': 0.8, 'explainer': 0.05}})
+        self.assertFalse(check(plain, 'language mix')[1])
+        short = qa.experience(None, plan(4.8), None, 0.0, None, frames=(F, self.frames()), extras={'mix': {**mix, 'chapters_short': ['1']}})
+        self.assertFalse(check(short, 'language mix')[1])
+        self.assertIn('chapter 2 has data an explainer could draw', check(short, 'language mix')[2])
+        self.assertFalse([c for c in gate(self.frames())['checks'] if c[0].endswith('language mix')])   # no mix on record: no check
+
+    def test_the_arc_is_enforced_for_a_script_written_to_the_shape(self):
+        arc = {'question': 0, 'answer': 9, 'answer_at': 0.8, 'told_early': None, 'tension': [0, 3], 'joy': [9], 'turns': [4]}
+        mk = lambda a, shaped: qa.experience(None, {**plan(4.8), 'sheet': {'arc': a, 'shaped': shaped}}, None, 0.0, None, frames=(F, self.frames()))   # noqa: E731
+        ok = check(mk(arc, True), 'the arc')
+        self.assertTrue(ok[1])
+        self.assertIn('answered 80% of the way in', ok[2])
+        flat = check(mk({**arc, 'joy': [], 'answer': None, 'answer_at': None}, True), 'the arc')
+        self.assertFalse(flat[1])
+        self.assertIn('no moment of joy', flat[2])
+        self.assertIn('never answered', flat[2])
+        self.assertIn('told before the midpoint', check(mk({**arc, 'answer': None, 'told_early': 2}, True), 'the arc')[2])
+        old = check(mk({**arc, 'tension': []}, False), 'the arc')
+        self.assertTrue(old[1])                                               # an older script: said, not blocked
+        self.assertIn('reported, not enforced', old[2])
+
+    def test_library_hygiene_is_reported_and_never_blocks(self):
+        usage = {'assets': {'beat:common/a': {'source': 'kit', 'rights': 'owner-made'}, 'beat:common/b': {'source': 'kit', 'rights': 'needs-check'}}, 'recent': {'beat:common/a': 3}}
+        g = qa.experience(None, plan(4.8), None, 0.0, None, frames=(F, self.frames()), extras={'usage': usage})
+        c = check(g, 'library hygiene')
+        self.assertTrue(c[1])
+        self.assertIn('1 of them were also in one of the last 5 films (a in 3)', c[2])
+        self.assertIn('1 need a rights check', c[2])
+        self.assertEqual(g['numbers']['library'], {'assets': 2, 'seen_lately': 1, 'by_source': {'kit': 2}, 'by_rights': {'owner-made': 1, 'needs-check': 1}})
+        self.assertFalse(g['replan'])
+
+    def test_the_new_thresholds_are_named_where_they_are_decided(self):
+        from studio import drama, media_index
+        from studio.docu import explainer
+        self.assertEqual((qa.STATIC_RUN_S, qa.ARC_OPENING_S, qa.HYGIENE_FILMS), (1.5, drama.OPENING_S, media_index.RECENT_FILMS))
+        self.assertEqual((explainer.PLAIN_MAX, qa.MAX_ASSET_SHOTS), (0.55, media_index.MAX_SHOTS))
