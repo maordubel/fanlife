@@ -1,0 +1,2 @@
+{"root":"site","spa":false,"cleanUrls":true,"notFound":"404.html",
+ "headers":[{"source":".*","headers":{"referrer-policy":"strict-origin-when-cross-origin"}}]}

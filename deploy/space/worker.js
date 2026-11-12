@@ -1,5 +1,5 @@
 // Cloudflare Worker in front of FAN LIFE and the other Dubel Team apps on Cloud Run (12.11.2026).
-// Routes: fanlife.dubelteam.com/*, theworker.dubelteam.com/*, fuckyou.dubelteam.com/* (add a route to add an app).
+// Routes: fanlife, theworker, fuckyou, dubid, offsides, takemeout (.dubelteam.com/*), dubelteam.com/* and www.dubelteam.com/*.
 // A host <name>.dubelteam.com is served by the Cloud Run service <name>; fanlife and its club subdomains by fanlife.
 // PRIMARY (Cloud Run) answers; if it is down, a GET/HEAD falls back to STANDBY (Vercel) when one is set.
 // Switching hosts = changing these two variables in the Worker's settings; no DNS change, no downtime.
@@ -10,6 +10,7 @@ const RUN = (name) => `https://${name}-1041793148354.europe-west1.run.app`
 export function originFor(host) {
   const h = String(host).toLowerCase()
   if (h === 'fanlife.dubelteam.com' || h.endsWith('.fanlife.dubelteam.com')) return null
+  if (h === 'dubelteam.com' || h === 'www.dubelteam.com') return RUN('dubelteam')
   const m = h.match(/^([a-z0-9-]+)\.dubelteam\.com$/)
   return m ? RUN(m[1]) : null
 }

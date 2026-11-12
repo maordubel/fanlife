@@ -1,0 +1,6 @@
+{"root":"site","spa":true,"cleanUrls":true,
+ "rewrites":[
+  {"source":"^/s/(?<kind>[^/]+)/(?<id>[^/]+)(?:/.*)?$","destination":"/api/share?kind=:kind&id=:id"},
+  {"source":"^/sitemap\\.xml$","destination":"/api/sitemap"}],
+ "api":{"share":"api/share.js","sitemap":"api/sitemap.js"},
+ "headers":[{"source":".*","headers":{"x-frame-options":"SAMEORIGIN","referrer-policy":"strict-origin-when-cross-origin","permissions-policy":"geolocation=(), microphone=(), camera=()"}}]}
