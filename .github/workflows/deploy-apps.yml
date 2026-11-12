@@ -150,16 +150,31 @@ jobs:
           docker build -t "$IMG" ${{ matrix.kind == 'static' && 'deploy/static' || 'deploy/cloudrun' }}
           docker push "$IMG"
           echo "image=$IMG" >> "$GITHUB_OUTPUT"
+      - name: Server keys
+        # THE WORKER only (owner approved 12.11.2026): the Football Master service key, set on the service, never in the bundle.
+        if: steps.changed.outputs.build == 'true' && matrix.app == 'theworker'
+        env:
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          python3 - <<'PY'
+          import os
+          v = os.environ.get('SUPABASE_SERVICE_ROLE_KEY', '')
+          open(os.environ['RUNNER_TEMP'] + '/envs', 'w').write(('^##^SUPABASE_SERVICE_ROLE_KEY=' + v) if v else '')
+          print('server keys:', 'SUPABASE_SERVICE_ROLE_KEY' if v else 'none')
+          PY
       - name: Deploy
         if: steps.changed.outputs.build == 'true'
         run: |
+          EXTRA=()
+          ENVS="$(cat "$RUNNER_TEMP/envs" 2>/dev/null || true)"
+          [ -n "$ENVS" ] && EXTRA=(--update-env-vars "$ENVS")
           gcloud run deploy "${{ matrix.app }}" \
             --project "${{ steps.cfg.outputs.project }}" --region "${{ steps.cfg.outputs.region }}" \
             --image "${{ steps.img.outputs.image }}" --port 8080 --memory ${{ matrix.kind == 'static' && '512Mi' || '1Gi' }} --cpu 1 \
             --min-instances 0 --max-instances 5 --concurrency ${{ matrix.kind == 'static' && '80' || '20' }} --cpu-boost --timeout 300 \
             --labels "source=${{ steps.changed.outputs.sha }}" \
             --update-env-vars NODE_OPTIONS=${{ matrix.kind == 'static' && '--max-old-space-size=256' || '--max-old-space-size=768' }} \
-            --no-invoker-iam-check --quiet
+            --no-invoker-iam-check "${EXTRA[@]}" --quiet
           URL=$(gcloud run services describe "${{ matrix.app }}" --project "${{ steps.cfg.outputs.project }}" --region "${{ steps.cfg.outputs.region }}" --format 'value(status.url)')
           echo "::notice title=${{ matrix.app }}::$URL"
           curl -s -o /dev/null -w "home: %{http_code}\n" "$URL/"
