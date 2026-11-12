@@ -250,7 +250,8 @@ def text(plan: dict) -> str:
     """The sheet as lines, for the desk and the proof."""
     out = []
     for s in plan['shots']:
-        x = (plan.get('sheet') or {}).get('beats', {}).get(s['n']) or {}
+        bs = (plan.get('sheet') or {}).get('beats', {})
+        x = bs.get(s['n']) or bs.get(str(s['n'])) or {}     # a plan read back from plan.json has text keys
         flags = ' '.join(k for k in ('turn', 'clock', 'breath', 'question') if x.get(k))
         out.append(f"{s['start']:7.2f}s  shot {s['n']:>2} [{s['visual']['type']:<9}] {x.get('emotion', '?'):<8} {x.get('intensity', 0):.2f}  {flags:<22} — {'; '.join(x.get('why') or [])}")
     a = (plan.get('sheet') or {}).get('arc') or {}

@@ -35,11 +35,12 @@ EXPLAINERS_PER_CHAPTER = 1
 # A kinetic line is short enough to read as it is said: a sentence of at most this many words …
 PUNCH_WORDS = 8
 PUNCH_MIN_S = 1.6          # … on screen at least this long
-EXPLAIN_MIN_S = 4.0        # an explainer shorter than this cannot be read (pen 1 s, ticks, a hold)
-EXPLAIN_MAX_S = 6.0        # the editor's MAX_CARD: after it the picture carries the rest
+EXPLAIN_MIN_S = 3.2        # an explainer shorter than this cannot be read (the pen, the ticks, a hold)
+# … and one longer than this is a held shot to the gate (qa.MAX_SHOT_S 4.5: measured on the pilot, a 6 s board failed
+# 'shot length' — its ticks arriving are not a change of picture). The picture carries the rest of the beat.
+EXPLAIN_MAX_S = 4.2
 EXPLAIN_KINDS = {'explain', 'table', 'form', 'ledger', 'tally', 'cities', 'chalk', 'stat'}
-TITLES = {'question', 'lead'}
-TITLE_READ_S = 3.0
+READ_S = {'question': 3.0, 'lead': 3.0, 'word': 2.6}   # a title is type while it arrives and is read; a slammed word leaves after editor.WORD_HOLD
 KINETIC_KINDS = {'kinetic', 'word', 'quote', 'question', 'lead', 'rule', 'verdict'}
 GOAL_TALK = re.compile(r'\b(goals?|scored|scorer|minutes?|extra time|late|early|apart|equalis\w+|winner)\b', re.I)
 # A counted field of a claim and the word that names it on screen. The word is the ledger's own field, in capitals.
@@ -131,7 +132,7 @@ def spans(devs: list[dict], d: float, kinds: set[str]) -> list[tuple[float, floa
             z = min(d, x.get('dt', 0.0) + x.get('d', d - x.get('dt', 0.0)))
             # a title that stays over the pictures is type for as long as it takes to arrive and be read; after that
             # it is a caption on a documentary shot
-            out.append((a, min(z, a + TITLE_READ_S) if x['kind'] in TITLES else z))
+            out.append((a, min(z, a + READ_S[x['kind']]) if x['kind'] in READ_S else z))
     return out
 
 

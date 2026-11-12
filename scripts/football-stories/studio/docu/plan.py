@@ -560,7 +560,7 @@ class Adapter:
             lead = max((x.get('at', 0.0) + E.WORD_HOLD for x in out if x['kind'] == 'word'), default=0.0)
             at = round(max(lead, d * 0.42), 2)
             if nb and d - at >= X.EXPLAIN_MIN_S:
-                out.append({**nb, 'dt': at, 'd': round(min(X.EXPLAIN_MAX_S - 1.0, d - at), 2)})
+                out.append({**nb, 'dt': at, 'd': round(min(X.EXPLAIN_MAX_S, d - at), 2)})
                 self.cue(n, at + 0.35, 'tick')
         if any(x['kind'] in X.EXPLAIN_KINDS for x in out):
             self.explainable[n] = True
@@ -586,14 +586,17 @@ class Adapter:
             b['lang'] = X.languages(b['shots'], b['d'])
         if os.environ.get('STORIES_DOCU_LANG', '1') == '0':
             return
-        todo = sorted((b for b in raw if b['meta']['type'] not in ('end', 'follow', 'chapter') and b['lang']['documentary'] >= b['d'] - 0.01),
-                      key=lambda b: (-(b['meta'].get('intensity') or 0.5), b['meta']['n']))
+        # the beats that are mostly art and have no type of their own yet — the most art first, then the most intense
+        todo = sorted((b for b in raw if b['meta']['type'] not in ('end', 'follow', 'chapter') and b['lang']['documentary'] >= 0.6 * b['d']
+                       and not any(x['kind'] == 'kinetic' for x in b['shots'])),
+                      key=lambda b: (-b['lang']['documentary'], -(b['meta'].get('intensity') or 0.5), b['meta']['n']))
         for b in todo:
             if X.mix(raw)['documentary'] <= X.PLAIN_MAX:
                 break
             s = next(x for x in self.plan['shots'] if x['n'] == b['meta']['n'])
             k = X.punch(s.get('narration') or '', b['meta'].get('words') or [], b['t'], b['d'])
-            if k:
+            busy = X.spans(b['shots'], b['d'], X.EXPLAIN_KINDS | X.KINETIC_KINDS)
+            if k and not any(a < k['dt'] + k['d'] and k['dt'] < z for a, z in busy):   # never over a board or another line of type
                 b['shots'].append(k)
                 b['lang'] = X.languages(b['shots'], b['d'])
 

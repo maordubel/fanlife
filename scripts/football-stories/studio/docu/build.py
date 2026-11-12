@@ -77,7 +77,7 @@ CREEPS = {'question', 'ticket', 'lead', 'ledger', 'rule', 'stat', 'tally', 'card
 
 # The explainer board and the kinetic line (Film.explain, Film.kinetic). INK and PAPER are the film's own.
 XP_CSS = ('.bloom{position:absolute;left:0;top:0;width:1920px;height:1080px;mix-blend-mode:screen;pointer-events:none}'
-          '.ckb{position:absolute;left:140px;top:70px;width:1640px;height:60px} .ckt{position:absolute;left:0;top:18px;width:100%;height:24px;background:rgba(20,17,13,.55);border:3px solid PAPER}'
+          '.ckb{position:absolute;left:140px;top:104px;width:1640px;height:60px} .ckt{position:absolute;left:0;top:18px;width:100%;height:24px;background:rgba(20,17,13,.55);border:3px solid PAPER}'
           '.ckt i{display:block;height:100%;transform-origin:left center}'
           ".ckb b{position:absolute;top:52px;margin-left:-60px;width:120px;text-align:center;font:400 54px/1 'Ultra';color:#fff;text-shadow:4px 4px 0 INK}"
           ".ckb span{position:absolute;right:0;top:-26px;font:700 28px 'Cond';letter-spacing:3px;color:PAPER}"
@@ -565,7 +565,7 @@ class Film:
                 mx = x0 + (x1 - x0) * mk['at']
                 inner += f'<span class="xpm" style="left:{mx - 3:.0f}px;top:{y - 26}px"></span><span class="xpml" style="left:{mx - 60:.0f}px;top:{y + 40}px">{e(mk["label"])}</span>'
             ticks = s['ticks']
-            step = min(1.1, max(0.5, (d - 2.4) / max(1, len(ticks))))
+            step = min(1.1, max(0.4, (d - 2.6) / max(1, len(ticks))))
             for i, tk in enumerate(ticks):
                 tx, at = x0 + (x1 - x0) * tk['at'], t + 1.1 + i * step
                 up = i % 2 == 0   # neighbours sit above and below the line, so two late goals never print over each other
