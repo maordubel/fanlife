@@ -1,8 +1,9 @@
 {
-  "$comment": "Dubel Team football ecosystem contract. This file is IDENTICAL in all four repos (fanlife, Offsides, Dubid, The-Worker). Change it in one repo => copy the same bytes to the other three in the same round. Bump version + updated.",
-  "version": 9,
-  "updated": "2026-10-27",
+  "$comment": "Dubel Team football ecosystem contract. This file is IDENTICAL in every repo (fanlife, Offsides, Dubid, The-Worker, FuckYou). Change it in one repo => copy the same bytes to the others in the same round. Bump version + updated.",
+  "version": 10,
+  "updated": "2026-11-12",
   "plan": "Project doc: claude/ecosystem-master-plan.md (claude.ai Project 'Football Master')",
+  "capabilities": "ecosystem/capabilities.json — every reusable engine of the universe (owner, path, status, who could use it). Same bytes in every repo. Read before designing a feature; add or refresh a row when one ships.",
   "supabase": {
     "project": "afxpjfxwpdjvlmuoawda",
     "projectName": "Football Master",
