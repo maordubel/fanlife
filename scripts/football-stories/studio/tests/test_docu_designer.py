@@ -231,7 +231,8 @@ class MovingArtLibrary(unittest.TestCase):
         self.assertLess(out[2]['x'], 960)
         self.assertEqual(sorted(set(ad.lib_used)), ['ground-1990s-int-kr', 'obj-ball-old-n', 'sup-scarf-up-kr'])
         from PIL import Image
-        self.assertEqual(Image.open(ad.files[out[1]['src']]).mode, 'RGBA')
+        with Image.open(ad.files[out[1]['src']]) as im:
+            self.assertEqual(im.mode, 'RGBA')
 
     def test_a_writers_own_picture_keeps_its_place_and_a_card_gets_no_figures(self):
         ad = adapter()

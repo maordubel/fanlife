@@ -22,6 +22,8 @@ MOVES = ('push', 'pull', 'whip', 'drift', 'slow', 'orbit')
 # Owner: "a feeling of epilepsy, the pictures shake" (rule 142). The shaking camera is gone; a script saved before that
 # may still ask for it, and gets the calm move that lands the same beat.
 CALM = {'shake': 'push'}
+# The same for the cut INTO a shot: a plan saved while 'flash' (a frame of paper-white) was an entry renders it as a hard cut.
+CALM_ENTRY = {'flash': 'cut'}
 
 
 def _handheld(t: float, amp: float, seed: int) -> tuple[float, float]:
@@ -156,11 +158,7 @@ ENTRY_DUR = {'whip': 0.3, 'push': 0.36, 'burn': 0.62, 'flash': 0.2, 'dissolve': 
 
 def blend(entry: str, t: float, frame: np.ndarray, prev: np.ndarray | None, side: int = 1) -> np.ndarray | None:
     """The cinema's own entries; None when the entry is not one of them (motion.blend_entry handles the rest)."""
-    if entry == 'flash':
-        if t >= ENTRY_DUR['flash']:
-            return frame
-        k = 1 - t / ENTRY_DUR['flash']
-        return np.clip(frame.astype('float32') * (1 - k) + 250 * k, 0, 255).astype('uint8')
+    entry = CALM_ENTRY.get(entry, entry)   # 'flash' → 'cut': no white frame, in a new plan or an old one (rule 142)
     if entry == 'cut':
         return frame
     if entry not in ENTRY_DUR or t >= ENTRY_DUR[entry]:

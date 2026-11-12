@@ -57,5 +57,58 @@ class CalmTrailer(unittest.TestCase):
             self.assertTrue(all(on[first:]), f'seed {seed}: a line went dark after it came up')
 
 
+
+class NoShakeNoFlashAnywhere(unittest.TestCase):
+    """Batch 3 (12.11.2026): the places batch 1 did not reach — per-shot camera impulses, the 'flash' entry, the white
+    sheet on a trailer line and on a win, the HyperFrames board's jolt, the blinking substitution board."""
+
+    def test_no_plan_is_given_a_flash_entry_and_a_saved_one_renders_as_a_cut(self):
+        import numpy as np
+        ed, _ = tc.editor()
+        self.assertNotIn('flash', {s['cinema']['entry'] for s in ed.plan()['shots'] if s.get('cinema')})
+        cdirect = sys.modules['studio.cinema.direct']
+        self.assertTrue(all('flash' not in d['entries'] for d in cdirect.DIRECTOR_LOOK.values()) if hasattr(cdirect, 'DIRECTOR_LOOK') else True)
+        frame, prev = np.full((8, 8, 3), 40, 'uint8'), np.full((8, 8, 3), 200, 'uint8')
+        for t in (0.0, 0.05, 0.19):                                        # inside what used to be the white frame
+            self.assertTrue(np.array_equal(look.blend('flash', t, frame, prev), frame))
+
+    def test_no_shot_gives_the_camera_an_impulse_and_the_renderer_would_ignore_one(self):
+        import inspect
+        from studio import edit, motion
+        from studio.cinema import shots
+        self.assertNotIn('shake.append', inspect.getsource(edit))
+        self.assertNotIn('shake +=', inspect.getsource(edit))
+        self.assertNotRegex(inspect.getsource(shots), r'shake = \[\(')
+        self.assertNotIn('s.shake', inspect.getsource(motion.ShotRenderer).split('"""')[-1].replace('# `s.shake`', ''))
+        ed, _ = tc.editor()
+        plan = ed.plan()
+        for kind in ('trailer', 'versus', 'goal', 'form'):
+            s = next((x for x in plan['shots'] if x['visual']['type'] == kind), None)
+            if s:
+                self.assertEqual(getattr(shots, kind)(ed, s).shake, [], kind)
+
+    def test_a_trailer_line_and_a_win_put_no_white_sheet_on_the_frame(self):
+        import inspect
+        from studio.cinema import shots
+        cdirect = sys.modules['studio.cinema.direct']
+        self.assertNotIn('(255, 251, 242, int(200', inspect.getsource(shots.trailer))
+        self.assertNotIn('glass.append(Flash', inspect.getsource(cdirect))
+        self.assertNotIn("meta['flash_at']", inspect.getsource(shots))
+
+    def test_the_hyperframes_board_neither_jolts_nor_flashes_white(self):
+        from studio.tests import test_hyperframes as th
+        page = th.shared()[3]
+        self.assertNotIn('tl.fromTo("#shk"', page)
+        self.assertNotIn('tl.fromTo("#flash"', page)
+        self.assertNotIn('#flash{position:absolute;inset:0;background:#fffbf2', page)
+
+    def test_the_substitution_board_lights_once(self):
+        from studio.docu import build as B
+        f = B.Film({'palette': {'us': '#c00', 'them': '#222'}}, Path('/tmp'))
+        f.board({'minute': "78'", 'in': 'X'}, 0, 4)
+        self.assertNotIn('yoyo', ''.join(f.tw))
+        self.assertNotIn('repeat', ''.join(f.tw))
+
+
 if __name__ == '__main__':
     unittest.main()

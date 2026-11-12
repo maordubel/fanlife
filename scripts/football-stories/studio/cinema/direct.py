@@ -78,7 +78,7 @@ LOOKS = {
     'terrace': {'entries': ('dissolve', 'fade', 'dissolve', 'burn'), 'letterbox': (), 'leak': ('joy', 'triumph', 'anthem', 'minor'),
                 'warm': True, 'bug_on_climax': False, 'crowd': True, 'stings': ('goal', 'trailer'),
                 'broll': ('home', 'record', 'press', 'away')},
-    'trailer': {'entries': ('flash', 'burn', 'whip', 'flash'), 'letterbox': ('goal', 'versus', 'turning', 'trailer'),
+    'trailer': {'entries': ('cut', 'burn', 'whip', 'cut'),   # was flash/burn/whip/flash: a hard cut lands the same beat without the white frame (rule 142) 'letterbox': ('goal', 'versus', 'turning', 'trailer'),
                 'leak': ('joy', 'triumph', 'anthem', 'build', 'tense'), 'warm': False, 'bug_on_climax': False, 'crowd': False,
                 'stings': ('goal', 'versus', 'trailer', 'chapter', 'turning')},
 }
@@ -223,7 +223,7 @@ def _entry(s: dict, kind: str, pace: str | None, mood: str | None, prev: str | N
     if s['n'] == 0 or kind == 'open':
         return 'black'
     if kind in ('trailer', 'goal'):
-        return 'flash'
+        return 'cut'    # a hard cut on the beat (it was a white flash: rule 142)
     if kind == 'chapter':
         return 'burn' if (s.get('chapter') or 0) % 2 else 'wipe'
     if kind == 'end':
@@ -235,7 +235,7 @@ def _entry(s: dict, kind: str, pace: str | None, mood: str | None, prev: str | N
     if pace == 'slow' or mood == 'sad':
         return 'dissolve'
     if kind == 'score' and f and f.get('outcome') == 'win':
-        return 'flash'
+        return 'cut'
     return (house or ('fade', 'whip', 'fade', 'push'))[s['n'] % 4]
 
 
@@ -360,6 +360,8 @@ class Motif:
 
 
 class Flash:
+    """Retired (rule 142: no flash frames). Kept so code that still builds one loads; nothing in the studio adds it to a shot."""
+
     def __init__(self, at: list[float], strength: int = 220, dur: float = 0.14):
         self.at, self.strength, self.d = at, strength, dur
         self._im = {}
@@ -450,11 +452,7 @@ def dress(ed, shot, s: dict) -> None:
     if kind == 'score':
         f = (ed.by.get(s['visual'].get('claim') or '') or {}).get('fact') or {}
         if f.get('outcome') == 'win':
-            glass.append(Flash([0.25]))
-            shot.cues.append((0.27, 'sting'))
-            shot.shake.append((0.3, 8))
-    if shot.meta.get('flash_at'):
-        glass.append(Flash(shot.meta['flash_at']))
+            shot.cues.append((0.27, 'sting'))   # the sting is the win's accent; the white flash and the camera jolt are gone (rule 142)
     if cin.get('bug'):
         glass.append(Scorebug(ink, ed.ledger.get('club_name') or '', str(ed.ledger.get('season') or ''), cin['bug']))
     if cin.get('lower'):

@@ -17,7 +17,7 @@ The vocabulary (each shot kind is a device of the approved sample, PT v Feyenoor
   rule      a rule card typed on paper
   verdict   the split screen: WON THE NIGHT | WENT THROUGH
   end       the channel card
-A beat may also move the AGGREGATE tracker (`agg: [us, them]`), flash, or cue a sound.
+A beat may also move the AGGREGATE tracker (`agg: [us, them]`), dip to the ground colour (`flash` — never white), or cue a sound.
 
 Every picture the owner made is labelled "Illustration · graphic reconstruction" (brief rule: never pass a drawing off as
 archive). Colours are the storyboard palette's; the opponent keeps its own (brief rule).
@@ -435,7 +435,8 @@ class Film:
             self.image({'src': s['bg'], 'veil': 0.6, 'move': 'push'}, t, d, 1)
         self.clip(cid, t, d, inner, 9)
         self.tween(f'tl.fromTo("#{cid} .sbd",{{y:700}},{{y:0,duration:0.6,ease:"back.out(1.3)"}},{r2(t)});'
-                   f'tl.fromTo("#{cid} .sbin b",{{opacity:0.15}},{{opacity:1,duration:0.08,yoyo:true,repeat:5,ease:"none"}},{r2(t + 0.7)});')
+                   # the name lights up once (it blinked six times in half a second: rule 142)
+                   f'tl.fromTo("#{cid} .sbin b",{{opacity:0.15}},{{opacity:1,duration:0.45,ease:"power2.out"}},{r2(t + 0.7)});')
 
     def press(self, s, t, d):
         """A newspaper page as a print on the desk; the camera finds the headline; a highlighter crosses it; the
