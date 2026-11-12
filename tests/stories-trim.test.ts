@@ -22,7 +22,7 @@ describe('after-YouTube trim (owner, 11.11.2026)',()=>{
   expect(trimDue([ok,fresh,notUp,waiting,sending,settled,already],now).map(j=>j.id)).toEqual(['job-ok-0001','job-done-001'])
  })
  it('counts video, audio and archives as big; never pictures, captions or JSON',()=>{
-  for(const n of ['master.mp4.part0','master.part3','preview.mp4','short-0.mp4','voice.wav','package.zip','reel.mov'])expect(isBig(n,1000)).toBe(true)
+  for(const n of ['master.000.part','master.012.part','short-1.003.part','master.mp4.part0','master.part3','preview.mp4','short-0.mp4','voice.wav','package.zip','reel.mov'])expect(isBig(n,1000)).toBe(true)
   for(const n of ['thumb-0.jpg','contact.png','captions.srt','captions.vtt','job.json'])expect(isBig(n,1000)).toBe(false)
   expect(isBig('thumb-huge.png',20*1024*1024)).toBe(true)
   expect(isBig('script.json',20*1024*1024)).toBe(false)

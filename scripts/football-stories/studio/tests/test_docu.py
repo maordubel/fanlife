@@ -101,3 +101,66 @@ class Docu(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class SparePictures(unittest.TestCase):
+    """A shot with no art of its own borrows a crowd picture — never the same one again and again (owner, 12.11.2026)."""
+
+    def adapter(self, job='job-a'):
+        keep, dp.crests = dp.crests, lambda names: {}
+        try:
+            return dp.Adapter(Path('/tmp') / job, {}, tc.PAL, {'claims': []}, {})
+        finally:
+            dp.crests = keep
+
+    @staticmethod
+    def bare(n):
+        return {'n': n, 'visual': {'type': 'stat'}}
+
+    def test_least_recently_used_and_never_twice_running(self):
+        ad = self.adapter()
+        got = [ad.picture(self.bare(n))[0] for n in range(25)]
+        pool = len(dp.SPARE)
+        self.assertEqual(len(set(got[:pool])), pool)                       # every picture once before any repeats
+        self.assertTrue(all(a != b for a, b in zip(got, got[1:])))
+        self.assertEqual(got[:pool], got[pool:2 * pool])                   # then the one unused for longest
+        self.assertEqual(ad.picture(self.bare(3))[0], got[3])              # asked again for the same shot: the same picture
+
+    def test_the_same_film_draws_the_same_pictures_and_another_film_differs(self):
+        a, b, c = (([ad.picture(self.bare(n))[0] for n in range(8)]) for ad in (self.adapter(), self.adapter(), self.adapter('job-b')))
+        self.assertEqual(a, b)
+        self.assertNotEqual(a, c)
+
+    def test_not_the_picture_the_script_chose_for_the_shot_before(self):
+        for job in ('job-a', 'job-b', 'job-c', 'job-d'):
+            ad = self.adapter(job)
+            first = ad.spare(0).stem                                       # what this film would borrow first
+            ad = self.adapter(job)
+            own = ad.picture({'n': 0, 'visual': {'type': 'stat', 'backdrop': f'beat:common/{first}'}})[0]
+            self.assertNotEqual(ad.picture(self.bare(1))[0], own, job)
+
+
+class Calm(unittest.TestCase):
+    """Nothing in a DOCU film shakes or flashes white (rule 142; owner: "a feeling of epilepsy, the pictures shake")."""
+
+    def film(self):
+        f = dp.B.Film({'palette': {'us': '#c00', 'them': '#222'}}, Path('/tmp'))
+        f.agg_moves = []
+        return f
+
+    def test_word_and_tint_land_without_a_shake(self):
+        f = self.film()
+        f.word({'text': 'GOAL', 'glitch': True}, 1.0, 2.0)
+        f.tint({'src': 'a.webp'}, 3.0, 2.0)
+        js = ''.join(f.tw)
+        self.assertNotIn('yoyo', js)
+        self.assertNotIn('steps(', js)
+        self.assertNotRegex(js, r'\{x:\d+')                                # no sideways jolt
+        self.assertIn('scale:1.04', js)                                    # the word plate settles instead
+
+    def test_a_beats_flash_dips_to_the_ground_colour_not_to_white(self):
+        f = self.film()
+        f.build([{'t': 0.0, 'd': 2.0, 'shots': [], 'flash': 0.5}])
+        js = ''.join(f.tw)
+        self.assertIn('tl.fromTo("#flash",{opacity:0},{opacity:0.5', js)
+        self.assertRegex(f.page(2.0), r'#flash\{[^}]*background:' + re.escape(f.INK))

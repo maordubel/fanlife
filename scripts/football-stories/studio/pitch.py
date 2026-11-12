@@ -36,6 +36,8 @@ from .common import ROOT, StageError
 from .directors import DIRECTORS
 from .worker import WAIT_CODES, Studio, retry_at
 
+STOP_CODES = ('WRITER_NO_CREDIT', 'WRITER_KEY', 'WRITER_NOT_CONFIGURED')  # writer.STOP_CODES, kept here so the desk imports no writer
+
 SHORTLIST = 8
 
 
@@ -117,6 +119,9 @@ def round_of(club_ids: list[str], history: dict, cache_dir: Path, log, *, candid
             if e.code in WAIT_CODES:
                 log(f"{d['name']}: the writer is waiting [{e.code}] — the round stops here")
                 return {'pitches': pitches, 'status': {'state': 'waiting', 'retryAt': retry_at(e.code), 'note': str(e)[:280]}}
+            if e.code in STOP_CODES:  # the key or its billing: the next director would get the same refusal
+                log(f"{d['name']}: the writer cannot work [{e.code}] — the round stops here")
+                return {'pitches': pitches, 'status': {'state': 'failed', 'note': str(e)[:280]}}
             log(f"{d['name']}: no pitch [{e.code}] {e}")
             continue
         if not p or not fits(p, offered):

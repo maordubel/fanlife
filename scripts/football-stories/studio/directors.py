@@ -21,7 +21,7 @@ DIRECTORS: list[dict] = [
         'voice': 'Urgent, precise, present tense in the big moments. Short sentences when the ball is live.',
         'humour': 'Dry and rare — a raised eyebrow at the fixture list, never a joke during the drama.',
         'visuals': ['versus', 'goal', 'race', 'form', 'score', 'run', 'record'],
-        'camera': ['push', 'whip', 'shake'],
+        'camera': ['push', 'whip', 'pull'],  # never 'shake' (rule 142: the pictures do not shake)
         'music': 'drive',
         'pitch_taste': 'a decider, a derby, a title race, a final, a season-defining run',
         'owner_facet': 'His demand for precision and his feel for what is at stake: the right minute, the right score, '

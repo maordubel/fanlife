@@ -85,8 +85,50 @@ class WriterWaits(unittest.TestCase):
             run({'a': [err(403, 'API key not valid. Please pass a valid API key.')]}, ['a'])
         self.assertEqual(e.exception.code, 'WRITER_KEY')
 
+    def test_402_no_credit_says_what_it_is_once_and_asks_no_other_model(self):
+        # 12.11.2026: "Your prepayment credits are depleted" reached the desk as a raw HTTP dump, 8 runs of 9
+        body = '{"error":{"code":402,"message":"Your prepayment credits are depleted. Please go to AI Studio to manage your billing.","status":"FAILED_PRECONDITION"}}'
+        G.DEAD.clear()
+        c, f = Clock(), Fake({'a': [StageError('WRITER_HTTP_402', 'Writer provider answered 402: ' + body)], 'b': [{'ok': 9}]})
+        with mock.patch.object(G, 'gemini_candidates', lambda key, wanted=None: ['a', 'b']):
+            with self.assertRaises(StageError) as e:
+                G.generate('k', {'contents': []}, sleep=c.sleep, clock=c.now, http=f)
+        self.assertEqual(e.exception.code, 'WRITER_NO_CREDIT')
+        self.assertFalse(e.exception.retryable)
+        self.assertEqual(([m for m, _ in f.calls], c.t), (['a'], 0.0))  # one request, no wait
+        msg = str(e.exception)
+        for word in ('no credit', 'WITHOUT billing', 'free', 'GEMINI_API_KEY', 'top up'):
+            self.assertIn(word, msg)
+        self.assertNotIn('{"error"', msg)
+
 
 class OptionsWait(unittest.TestCase):
+    def test_no_credit_stops_at_the_first_director_and_is_never_a_wait(self):
+        from studio import pitch as P
+        from studio import worker as K
+        from studio import writer as W
+        broke = StageError('WRITER_NO_CREDIT', G.NO_CREDIT)
+        with mock.patch.object(W, 'write_script', side_effect=broke) as ws:
+            with self.assertRaises(StageError) as e:
+                W.write_options({}, {}, None, lambda *_: None)
+        self.assertEqual((e.exception.code, ws.call_count), ('WRITER_NO_CREDIT', 1))
+        for codes in (W.WAIT_CODES, K.WAIT_CODES):
+            self.assertNotIn('WRITER_NO_CREDIT', codes)
+            self.assertNotIn('WRITER_HTTP_402', codes)
+        self.assertEqual(P.STOP_CODES, W.STOP_CODES)
+
+    def test_no_credit_ends_a_pitch_round_as_failed_with_the_plain_words(self):
+        from studio import pitch as P
+        asked = []
+
+        def write_pitch(d, offered, cache, log):
+            asked.append(d['id'])
+            raise StageError('WRITER_NO_CREDIT', G.NO_CREDIT)
+        cands = [{'club_id': f'c{i}', 'kind': 'match', 'season': '1990', 'match_ids': [str(i)], 'title': str(i)} for i in range(6)]
+        out = P.round_of(['c0'], {'pitched': [], 'films': []}, None, lambda *_: None, candidates=lambda ids: cands, write_pitch=write_pitch)
+        self.assertEqual((len(asked), out['status']['state']), (1, 'failed'))
+        self.assertIn('no credit', out['status']['note'])
+
     def test_a_busy_writer_makes_the_film_wait_not_fail(self):
         from studio import writer as W
         busy = StageError('WRITER_BUSY', 'busy', retryable=True)

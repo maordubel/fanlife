@@ -167,8 +167,8 @@ PICTURE (choose a visual for every beat, matching its emotion):
   "versus" and a "score"/"goal"; a rivalry film a "record" of "summary:All competitions" and a "versus" for its biggest
   meeting (moments[0]).
 - Never the same visual type three beats in a row. Mix cards with pictures: map → versus → score → illustration → race …
-- Beat-level direction: "camera" (push for rising tension, whip for a cut to the next match, shake for a goal, slow for
-  grief or awe, orbit for a trophy, drift for memory, pull to reveal), "pace" (fast for a run of results, slow for the
+- Beat-level direction: "camera" (push for rising tension, whip for a cut to the next match, push for a goal (the picture never
+  shakes), slow for grief or awe, orbit for a trophy, drift for memory, pull to reveal), "pace" (fast for a run of results, slow for the
   climax), "broll" (the art behind a data card — a terrace for a derby, an empty stand for a defeat, a tunnel before a
   final), "sfx" (roar on a goal, groan on a defeat, whistle at full time, gasp at a miss, drum under a trailer). Don't
   repeat a camera move three beats running.
@@ -690,6 +690,9 @@ def write_script(brief: dict, ledger: dict, cache_dir: Path, log, angle: tuple[s
 
 
 WAIT_CODES = ('WRITER_BUSY', 'WRITER_QUOTA_DAY', 'WRITER_UNREACHABLE')
+# What only the owner can fix (the key, its billing): never a wait (it would loop for ever) and never "failed its checks"
+# (the next director would spend another request on the same refusal, and the film would end as SCRIPT_INVALID).
+STOP_CODES = ('WRITER_NO_CREDIT', 'WRITER_KEY', 'WRITER_NOT_CONFIGURED')
 
 
 def write_options(brief: dict, ledger: dict, cache_dir: Path, log) -> list[dict]:
@@ -707,6 +710,8 @@ def write_options(brief: dict, ledger: dict, cache_dir: Path, log) -> list[dict]
             out.append(sc_)
             log(f'Writer: {d["name"]}\'s script ready')
         except StageError as e:
+            if e.code in STOP_CODES:
+                raise
             if e.code in WAIT_CODES or e.code.startswith('WRITER_HTTP_5'):
                 busy = busy or e
                 log(f'Writer: {d["name"]} waits — {str(e)[:200]}')

@@ -5,7 +5,7 @@ import {purgeJobMedia,signedDownload,signedUpload,trimJobMedia} from '@/lib/stor
 import {trimDue,trimLog} from '@/lib/stories/trim'
 import {body,fail,json} from '@/lib/stories/http'
 import {cleanHeartbeat,noteHeartbeat} from '@/lib/stories/health'
-import {claimSocial,cleanLights,composeAll,dueSocial,filmLink,filmTitle,mediaPathOf,resultSocial,type SocialResult} from '@/lib/stories/social'
+import {claimSocial,cleanLights,composeAll,dueSocial,socialDue,filmLink,filmTitle,mediaPathOf,resultSocial,type SocialResult} from '@/lib/stories/social'
 import {noteLights} from '@/lib/stories/socialLights'
 import {addRound,markDispatched,noteRun,shouldDispatch,takenEvents} from '@/lib/stories/pitches'
 import {readPitchDays,readPitchDesk,updatePitchDay,updatePitchDesk} from '@/lib/stories/pitchStore'
@@ -18,7 +18,9 @@ export const runtime='nodejs'
  * The production worker's only door (GitHub Actions, `Authorization: Bearer <CRON_SECRET>`).
  *   {op:'trim',worker}                          → published films' big files leave the bucket (lib/stories/trim.ts)
  *   {op:'peek',worker,health?}                  → the id of the job that would be taken next and its kind (no lease), and
- *                                                 `pitch: true` once when the owner asked for new pitches; the listener
+ *                                                 `pitch: true` once when the owner asked for new pitches, and
+ *                                                 `social_due: true` while a scheduled post's time has come (read from
+ *                                                 the jobs the peek already loaded: no extra query); the listener
  *                                                 (stories-watch.yml) adds its heartbeat and the writer-key check
  *   {op:'pitch_history',worker,days?}           → what the directors must not pitch again: recent pitches + every film
  *   {op:'pitch_save',worker,pitches,status}     → a round of pitches (one per director) and how the run went
@@ -68,7 +70,7 @@ export async function POST(r:Request){
    const next=nextForWorker(jobs)
    let pitch=false
    try{const desk=await readPitchDesk();if(desk&&shouldDispatch(desk)){await updatePitchDesk(d=>markDispatched(d));pitch=true}}catch{pitch=false}
-   return json({next:next?next.id:null,kind:next?jobKind(next):null,pitch})
+   return json({next:next?next.id:null,kind:next?jobKind(next):null,pitch,social_due:socialDue(jobs)})
   }
   // the pitch desk (scripts/football-stories/studio/pitch.py, .github/workflows/stories-pitch.yml)
   if(b.op==='pitch_history'){

@@ -8,8 +8,10 @@ import type {Job} from './jobs'
  * The listener (stories-watch.yml → studio/cleanup.py) asks for this every ten minutes: op `trim` in the worker route.
  */
 export const GRACE_HOURS=6
-/** what counts as a big file: video, audio and archives — never a picture, a caption or a job's JSON */
-export const BIG=/\.(mp4|mov|webm|mkv|m4v|wav|mp3|m4a|aac|flac|ogg|zip|tar|gz)(\.part\d+)?$|\.part\d+$|\.chunk\d+$/i
+/** what counts as a big file: video, audio and archives — never a picture, a caption or a job's JSON — and every chunk
+ *  of one, whatever its size: `master.mp4.part0`, `master.part3` and the worker's own `master.000.part` (the number
+ *  BEFORE `.part`: it was missed, so a chunk under 8 MB stayed in the bucket for ever) */
+export const BIG=/\.(mp4|mov|webm|mkv|m4v|wav|mp3|m4a|aac|flac|ogg|zip|tar|gz)(\.part\d+)?$|\.part\d*$|\.chunk\d+$/i
 
 export type Trim={at:string;bytes:number;files:number}
 

@@ -80,6 +80,10 @@ def _http(url: str, body: dict, headers: dict, timeout: int = 300) -> dict:
 # or the wait budget is spent does the call fail — as WRITER_BUSY / WRITER_QUOTA_DAY, which the worker turns into a film
 # that waits and starts again by itself (worker.py), never into a failed film.
 
+NO_CREDIT = ('The Gemini key belongs to a Google project with billing switched on and no credit left, so Google refuses every '
+             'request (HTTP 402). Fix: make a new key in Google AI Studio inside a project WITHOUT billing (that is the free '
+             'tier) and paste it as the GitHub secret GEMINI_API_KEY — or top up that project\'s credit. Then press Retry.')
+
 DEAD: set[str] = set()  # models this run learned are not served to this key (404, 403, a quota of 0, a per-day quota spent)
 
 
@@ -107,7 +111,8 @@ def _gemma_body(body: dict) -> dict:
 def generate(key: str, body: dict, *, wanted: str | None = None, budget_s: float = 1200, log=None,
              sleep=time.sleep, clock=time.monotonic, http=None) -> tuple[dict, str]:
     """(response, model). Raises WRITER_QUOTA_DAY when every model's daily free quota is spent, WRITER_BUSY when the
-    wait budget ran out on per-minute limits or overload, WRITER_HTTP_4xx for a request Google refuses as malformed."""
+    wait budget ran out on per-minute limits or overload, WRITER_NO_CREDIT (at once, never retried) when the key's billing
+    project has no credit (402), WRITER_HTTP_4xx for a request Google refuses as malformed."""
     http = http or _http
     say = log or (lambda _m: None)
     tries = [m for m in gemini_candidates(key, wanted) if m not in DEAD]
@@ -135,6 +140,11 @@ def generate(key: str, body: dict, *, wanted: str | None = None, budget_s: float
             return http(f'{GEMINI}/models/{model}:generateContent', b, {'x-goog-api-key': key}), model
         except StageError as e:
             code = e.code
+            if code == 'WRITER_HTTP_402':
+                # Measured 12.11.2026: 8 of 9 runs died on "Your prepayment credits are depleted" and the desk showed the
+                # raw HTTP body. Billing belongs to the key's Google Cloud project, so every model answers the same:
+                # no other model, no retry and no wait can help — say what it is and what fixes it, once.
+                raise StageError('WRITER_NO_CREDIT', NO_CREDIT, retryable=False) from e
             seen.append(f'{model}: {code[12:] if code.startswith("WRITER_HTTP_") else code}')
             hint = suggested_model(e)
             if hint and hint not in tries and hint not in DEAD:

@@ -31,6 +31,10 @@ OLD = ('vox', 'vox-hf', 'classic', 'paper')
 NAMED = {'tunnel': 'beat:common/tunnel-walk-out', 'terrace-crowd': 'beat:common/terrace-full-kr',
          'terrace-empty': 'beat:common/old-ground-wide-kr', 'supporter': 'beat:common/supporter-cap-old-ground'}
 FOLLOW = ('follow-seat-kept-kr', 'follow-turnstile-welcome-kr', 'follow-away-end-gap-kr', 'follow-pub-door-kr')
+# The pictures a shot with no art of its own may borrow: the library's home-crowd pictures (cinema/look.BROLL 'home' and
+# 'form' — the kind the single old fallback, terrace-full-kr, was).
+SPARE = ('terrace-full-kr', 'terrace-full-b-kr', 'home-end-night-kr', 'home-end-night-b-kr', 'street-matchday-crowd-kr',
+         'turnstile-queue-kr', 'crowd-scarves-night-kr', 'street-lamp-crowd-kr', 'terrace-fence-scarves-kr', 'kick-off-centre-kr')
 WORDS = ['ONE', 'TWO', 'THREE', 'FOUR', 'FIVE', 'SIX', 'SEVEN', 'EIGHT', 'NINE', 'TEN']
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 NEUTRAL = '#2B2A33'   # an opponent with no recorded colour wears ink, never a guessed kit
@@ -89,6 +93,10 @@ class Adapter:
         self.files: dict[str, Path] = {}
         self.club = palette.club_name
         self.cues: dict[int, list] = {}
+        self.shown: dict[int, Path] = {}             # shot → the picture it shows (spare() keeps neighbours apart)
+        self.spares: dict[int, Path | None] = {}     # shot → the spare picture it was given
+        self.used: dict[Path, int] = {}              # spare picture → when it was last given
+        self.pool: list[Path] | None = None
         names = [palette.club_name]
         for c in self.by.values():
             f = c.get('fact') or {}
@@ -117,17 +125,38 @@ class Adapter:
 
     def picture(self, s: dict) -> tuple[str | None, bool]:
         v = s['visual']
+        p = None
         for key in (s.get('required_asset'), v.get('art') if v['type'] == 'illustration' else None, v.get('backdrop'),
                     (s.get('cinema') or {}).get('broll')):
             p = media(key) if key and key != 'paper' else None
             if p:
-                return self.asset(p, 'img'), p.suffix.lower() == '.mp4'
-        if v['type'] == 'follow':
+                break
+        if not p and v['type'] == 'follow':
             p = media(f'beat:common/{FOLLOW[s["n"] % len(FOLLOW)]}')
-            if p:
-                return self.asset(p, 'img'), False
-        p = media('beat:common/terrace-full-kr')
-        return (self.asset(p, 'img'), False) if p else (None, False)
+        p = p or self.spare(s['n'])
+        if not p:
+            return None, False
+        self.shown[s['n']] = p
+        return self.asset(p, 'img'), p.suffix.lower() == '.mp4'
+
+    def spare(self, n: int) -> Path | None:
+        """The picture for a shot that has none of its own. It was always `terrace-full-kr`, so a film showed one image
+        again and again (owner, 12.11.2026). Now: the least recently used of the library's crowd pictures (SPARE), in an
+        order fixed by the film's id so a re-render draws the same film, and never the picture of the shot before."""
+        if n in self.spares:   # a shot may ask twice (its background and its card): the same picture both times
+            return self.spares[n]
+        if self.pool is None:
+            from ..cinema.look import allowed
+            keys = [f'beat:common/{k}' for k in SPARE if allowed(f'beat:common/{k}', self.pal.render_bans)]
+            keys.sort(key=lambda k: hashlib.sha256(f'{self.jd.name}:{k}'.encode()).hexdigest())
+            self.pool = [q for q in map(media, keys) if q] or [q for q in [media('beat:common/terrace-full-kr')] if q]
+        before = self.shown.get(max((k for k in self.shown if k < n), default=-1))
+        fresh = [q for q in self.pool if q != before] or self.pool
+        p = min(fresh, key=lambda q: self.used.get(q, -1), default=None)   # min is stable: ties keep the film's order
+        if p:
+            self.used[p] = len(self.spares)
+        self.spares[n] = p
+        return p
 
     def fact(self, cid) -> dict:
         return (self.by.get(cid) or {}).get('fact') or {}
