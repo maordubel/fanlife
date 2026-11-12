@@ -753,7 +753,8 @@ def main() -> None:
     if tall:
         (out / 'marketing.txt').write_text(ep['reel'].get('post', '').strip() + '\n')
     chapters = [('0:00', 'Cold open')] + [(mmss(p['start']), p['title']) for p in plan if p.get('kind') == 'chapter']
-    desc = ep[CUT]['description'].strip() + '\n\n' + '\n'.join(f'{a} {b}' for a, b in chapters) + '\n\nSources\n' + \
+    from studio.common import SHOP_LINE
+    desc = ep[CUT]['description'].strip() + '\n\n' + SHOP_LINE + '\n\n' + '\n'.join(f'{a} {b}' for a, b in chapters) + '\n\nSources\n' + \
         '\n'.join(f"· {s['short']}: {s.get('url') or 'https://fanlife.dubelteam.com'}" for s in ep['sources']) + \
         '\n\nNarration is synthetic (Kokoro, Apache-2.0). Footage: FAN LIFE, from the stand.' + music_credit(ep) + ' #FANLIFE #IWasThere'
     (out / 'youtube-description.txt').write_text(desc if not tall else ep['reel']['description'].strip() + '\n\n' + music_credit(ep).strip() + '\n#Shorts #FANLIFE #IWasThere')

@@ -395,7 +395,8 @@ def _short_edit(st, job: dict, spec: dict, pack: dict, jd: Path, progress, log, 
     frame = out / 'thumbnail-short.jpg'
     subprocess.run(['ffmpeg', '-y', '-v', 'error', '-ss', '0.3', '-i', str(mp4), '-frames:v', '1', str(frame)], check=True)
     progress('package', 0.85, 'Storing the Short privately')
-    desc = (pack.get('description') or '') + '\n▶ Subscribe: https://www.youtube.com/@FanLifeFootballStories?sub_confirmation=1'
+    from studio.common import SHOP_LINE
+    desc = (pack.get('description') or '') + '\n▶ Subscribe: https://www.youtube.com/@FanLifeFootballStories?sub_confirmation=1\n' + SHOP_LINE
     (out / 'description.txt').write_text(desc.strip(), encoding='utf-8')
     (out / 'flow-pack.json').write_text(json.dumps(pack, ensure_ascii=False, indent=1), encoding='utf-8')
     art = upload_set(st, job['id'], mp4, {'preview.mp4': mp4, 'thumbnail-short.jpg': frame},
