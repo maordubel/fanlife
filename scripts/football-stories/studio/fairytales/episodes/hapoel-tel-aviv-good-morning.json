@@ -127,7 +127,10 @@
      }
     ]
    },
-   "transition": "iris"
+   "transition": "iris",
+   "cap": {
+    "he": "הכול התחיל בשנות העשרים, בתנועת הספורט של הפועלים — ב־1923, ליתר דיוק, גם אם שנים רבות כולם אמרו 1927. אנשים עובדים, ששיחקו כדורגל אחרי יום עבודה ארוך."
+   }
   },
   {
    "id": "hodorov-boy",
@@ -149,7 +152,10 @@
    "sources": [
     "Vikipoel (the club wiki, content/raw/vikipoel-player-wikitext.json) יעקב חודורוב"
    ],
-   "transition": "zoom"
+   "transition": "zoom",
+   "cap": {
+    "he": "בגיל 13, במשחק ידידות, נפצע השוער של הקבוצה, והילד נעמד בשער. זה היה רגע שישנה את הכדורגל הישראלי."
+   }
   },
   {
    "id": "hodorov",
@@ -182,7 +188,10 @@
      0.08
     ]
    },
-   "transition": "dissolve"
+   "transition": "dissolve",
+   "cap": {
+    "he": "קראו לו יעקב חודורוב. הוא שמר על השער של הפועל מ־1947 עד 1962, וזכה באליפות של 1957. רבים עדיין אומרים שהוא השוער הגדול ביותר שהיה לישראל. הוא קיבל את פרס ישראל — והיום מתחם האימונים של הפועל קרוי על שמו."
+   }
   },
   {
    "id": "primo",
@@ -214,7 +223,10 @@
      }
     ]
    },
-   "transition": "torn"
+   "transition": "torn",
+   "cap": {
+    "he": "ואז הגיע ילד שנולד בבולגריה — דוד פרימו. הוא שיחק את המשחק הראשון שלו בהפועל בגיל 17, ולעבור אותו היה כמעט בלתי אפשרי. וגם אם עברת… הוא היה כל כך מהיר, שהוא כבר עמד מולך שוב."
+   }
   },
   {
    "id": "mexico",
@@ -242,7 +254,46 @@
      }
     ]
    },
-   "transition": "slide"
+   "transition": "slide",
+   "cap": {
+    "he": "הוא שיחק בנבחרת ישראל במונדיאל של 1970 במקסיקו — בכל שלושת המשחקים."
+   }
+  },
+  {
+   "id": "basa",
+   "plate": "basa",
+   "transition": "dissolve",
+   "delivery": "warm",
+   "en": "In those days, Hapoel's home was a ground in east Jaffa called the Basa. Hapoel played there from 1950.",
+   "he": "באותם ימים, הבית של הפועל היה מגרש במזרח יפו שקראו לו הבסה. הפועל שיחקה שם מאלף תשע מאות וחמישים.",
+   "cap": {
+    "he": "באותם ימים, הבית של הפועל היה מגרש במזרח יפו שקראו לו הבסה. הפועל שיחקה שם מ־1950."
+   },
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ],
+    "tags": [
+     {
+      "text": "THE BASA",
+      "sub": "1950",
+      "at": 0.35,
+      "xy": [
+       1480,
+       220
+      ],
+      "size": 84,
+      "rot": -3
+     }
+    ],
+    "punch": [
+     0.35
+    ]
+   },
+   "sources": [
+    "club-packs/hapoel-tel-aviv/world.json flavour: Bloomfield built from 1960 on the ground of the old Basa stadium, Hapoel's home since 1950"
+   ]
   },
   {
    "id": "feigenbaum",
@@ -274,6 +325,48 @@
    },
    "sources": [
     "Vikipoel (the club wiki, content/raw/vikipoel-player-wikitext.json) שייע פייגנבוים (born 1947; fetched balls for Hodorov at Basa in 1952; captain ten years; 131 goals, the club record)"
+   ],
+   "cap": {
+    "he": "באותה קבוצה שיחק ילד שבגיל חמש היה עומד מאחורי השער של חודורוב ומביא לו את הכדורים. קראו לו שייע פייגנבוים. הוא גדל והיה הקפטן של הפועל עשר שנים — ועם 131 שערים, מלך השערים הגדול ביותר בתולדות המועדון.",
+    "en": "In the same team played a boy who, at five, used to stand behind Hodorov's goal and fetch the balls. His name was Shaya Feigenbaum. He grew up to be Hapoel's captain for ten years — and, with 131 goals, the greatest goal scorer in the club's history."
+   }
+  },
+  {
+   "id": "bloomfield",
+   "plate": "bloomfield62",
+   "transition": "zoom",
+   "delivery": "proud",
+   "en": "And in 1962, on that very same ground, a new stadium opened: Bloomfield — named for two brothers, Bernard and Lewis Bloomfield, whose family helped to build it.",
+   "he": "ובאלף תשע מאות שישים ושתיים, על אותו מגרש בדיוק, נפתח אצטדיון חדש: בלומפילד — על שם שני אחים, ברנרד ולואיס בלומפילד, שהמשפחה שלהם עזרה לבנות אותו.",
+   "cap": {
+    "he": "וב־1962, על אותו מגרש בדיוק, נפתח אצטדיון חדש: בלומפילד — על שם שני אחים, ברנרד ולואיס בלומפילד, שהמשפחה שלהם עזרה לבנות אותו."
+   },
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "BLOOMFIELD",
+      "sub": "1962",
+      "at": 0.35,
+      "xy": [
+       1460,
+       220
+      ],
+      "size": 88,
+      "rot": 3
+     }
+    ],
+    "punch": [
+     0.35
+    ],
+    "confettiAt": 0.4
+   },
+   "sources": [
+    "club-packs/hapoel-tel-aviv/world.json flavour: built from 1960 on the Basa; named for Bernard and Lewis Bloomfield; opened December 1962 (friendly v Twente, 1–1)",
+    "Wikipedia (Bloomfield Stadium)"
    ]
   },
   {
@@ -315,7 +408,11 @@
      0.5
     ]
    },
-   "transition": "page"
+   "transition": "page",
+   "cap": {
+    "he": "ועם הפועל, פרימו זכה באליפות של 1966 — ואז בטורניר הראשון אי פעם של אלופות אסיה, עם ניצחון 2–1 על סלנגור ממלזיה בגמר. הפועל תל אביב: אלופת המועדונים הראשונה של אסיה.",
+    "en": "And with Hapoel, Primo won the title in 1966 — and then the very first Asian Champion Club Tournament, beating Selangor of Malaysia 2–1 in the final. Hapoel Tel Aviv: the first club champions of Asia."
+   }
   },
   {
    "id": "jimmy",
@@ -343,7 +440,10 @@
      }
     ]
    },
-   "transition": "iris"
+   "transition": "iris",
+   "cap": {
+    "he": "בשנות השבעים, הלב של הקישור האדום היה ריפעת טורק — כולם קראו לו ג'ימי. הוא הצטרף לנוער של הפועל בגיל 16, והיה לשחקן הערבי הראשון ששיחק בנבחרת ישראל."
+   }
   },
   {
    "id": "red-shirts",
@@ -420,7 +520,11 @@
    },
    "sources": [
     "Vikipoel (the club wiki, content/raw/vikipoel-player-wikitext.json) משה סיני (מספר בהפועל=7)"
-   ]
+   ],
+   "cap": {
+    "he": "על הגב שלו, הוא לבש את מספר 7.",
+    "en": "On his back, he wore number 7."
+   }
   },
   {
    "id": "left-foot",
@@ -475,7 +579,10 @@
      0.72
     ]
    },
-   "transition": "torn"
+   "transition": "torn",
+   "cap": {
+    "he": "ב־1981, ג'ימי נפצע בתחילת העונה, ואמרו שבלעדיו הפועל לא תזכה. אז סיני לקח את המושכות… והפועל הייתה אלופה לראשונה אחרי 12 שנה."
+   }
   },
   {
    "id": "aston-villa",
@@ -518,7 +625,11 @@
      0.72
     ]
    },
-   "transition": "page"
+   "transition": "page",
+   "cap": {
+    "he": "ואז הגיע מכתב מאנגליה: אסטון וילה רצתה את סיני. הפועל ביקשה 350 אלף לירות שטרלינג — סכום דמיוני באותם ימים — וסיני נשאר. ובאו עוד שתי אליפויות, ב־1986 וב־1988.",
+    "en": "Then a letter arrived from England: Aston Villa wanted Sinai. Hapoel asked for £350,000 — an impossible sum in those days — and Sinai stayed. Two more titles followed, in 1986 and 1988."
+   }
   },
   {
    "id": "tikva",
@@ -578,7 +689,11 @@
      0.75
     ]
    },
-   "transition": "zoom"
+   "transition": "zoom",
+   "cap": {
+    "he": "מול בית\"ר ירושלים, בעשרה שחקנים בלבד, תקוה כבש פעמיים בניצחון 4–0 — והשני היה לוב עדין מעל השוער, מקצה הרחבה.",
+    "en": "Against Beitar Jerusalem, with only ten men, Tikva scored twice in a 4–0 win — the second, a gentle chip over the goalkeeper from the edge of the box."
+   }
   },
   {
    "id": "fourteen",
@@ -610,7 +725,11 @@
    },
    "sources": [
     "Vikipoel (the club wiki, content/raw/vikipoel-player-wikitext.json) שלום תקוה (מספר בהפועל=14)"
-   ]
+   ],
+   "cap": {
+    "he": "ועל הגב של תקוה — מספר 14.",
+    "en": "And on Tikva's back — number 14."
+   }
   },
   {
    "id": "his-bloomfield",
@@ -656,7 +775,10 @@
      }
     ]
    },
-   "transition": "slide"
+   "transition": "slide",
+   "cap": {
+    "he": "ב־1999, המאמן דרור קשטן נתן הזדמנות לשחקנים הכי צעירים שלו. קראו להם התינוקות של קשטן — ואחד מהם היה סלים טועמה."
+   }
   },
   {
    "id": "double-2000",
@@ -690,7 +812,11 @@
      0.86
     ]
    },
-   "transition": "page"
+   "transition": "page",
+   "cap": {
+    "he": "באותה עונה הפועל זכתה בדאבל: אליפות וגביע. בגמר הגביע טועמה כבש בדקה ה־115, ואז החטיא את הפנדל שלו בדו־קרב — והפועל זכתה בכל זאת.",
+    "en": "That season, Hapoel won the double: the league and the cup. In the cup final, Toama scored in the 115th minute, then missed his penalty in the shoot-out — and Hapoel won it anyway."
+   }
   },
   {
    "id": "europe",
@@ -747,7 +873,11 @@
      0.7
     ]
    },
-   "transition": "torn"
+   "transition": "torn",
+   "cap": {
+    "he": "שנתיים אחר כך, הפועל יצאה להרפתקה באירופה. צ'לסי, 2–0 בבלומפילד. אחר כך לוקומוטיב מוסקבה. אחר כך פארמה, באיטליה. רק מילאן עצרה אותה — ברבע הגמר.",
+    "en": "Two years later, Hapoel went on an adventure across Europe. Chelsea, 2–0 at Bloomfield. Then Lokomotiv Moscow. Then Parma, in Italy. Only Milan stopped them — in the quarter-final."
+   }
   },
   {
    "id": "double-2010",
@@ -787,7 +917,11 @@
      0.8
     ]
    },
-   "transition": "zoom"
+   "transition": "zoom",
+   "cap": {
+    "he": "ואז הגיע מאי 2010. היום האחרון של העונה, הדקה ה־92 — וחלוץ ממחלקת הנוער של המועדון, ערן זהבי, כבש את שער האליפות. כמה ימים קודם הפועל זכתה גם בגביע: דאבל שני.",
+    "en": "And then came May 2010. The last day of the season, the 92nd minute — and a striker from the club's own youth team, Eran Zahavi, scored the goal that won the title. A few days earlier, Hapoel had won the cup too: a second double."
+   }
   },
   {
    "id": "champions-league",
@@ -830,7 +964,11 @@
      0.62
     ]
    },
-   "transition": "iris"
+   "transition": "iris",
+   "cap": {
+    "he": "ובאותו סתיו, הפועל תל אביב שיחקה בליגת האלופות — הבמה הגדולה ביותר בכדורגל. ובלילה אחד בנובמבר, בבלומפילד, היא ניצחה את בנפיקה 3–0. שניים מהשערים היו של זהבי.",
+    "en": "That autumn, Hapoel Tel Aviv played in the Champions League — the greatest stage in club football. And on a November night at Bloomfield, they beat Benfica, 3–0. Two of the goals were Zahavi's."
+   }
   },
   {
    "id": "across-the-road",
@@ -900,6 +1038,45 @@
     "content/manual/moments.json תשע-נקודות-2017, ירידה-2024 (Haaretz 11.5.2024: third time in its history)",
     "en.wikipedia List of Hapoel Tel Aviv F.C. seasons (1989–90 Artzit, 2nd)",
     "content/manual/moments.json 2017/18, 2024/25 (RSSSF: Leumit champions, promoted)"
+   ],
+   "cap": {
+    "he": "היו לנו גם ימים פחות טובים. שלוש פעמים הפועל ירדה מהליגה הבכירה — ב־1989, ב־2017 וב־2024. ובכל פעם, אחרי עונה אחת, היא עלתה בחזרה."
+   }
+  },
+  {
+   "id": "new-bloomfield",
+   "plate": "bloomfield19",
+   "transition": "iris",
+   "delivery": "bright",
+   "en": "In 2019, after three years of building, a new Bloomfield opened its gates — bigger, and brand new.",
+   "he": "באלפיים תשע עשרה, אחרי שלוש שנים של בנייה, בלומפילד חדש פתח את השערים — גדול יותר, וחדש לגמרי.",
+   "cap": {
+    "he": "ב־2019, אחרי שלוש שנים של בנייה, בלומפילד חדש פתח את השערים — גדול יותר, וחדש לגמרי."
+   },
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "2019",
+      "at": 0.2,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -4
+     }
+    ],
+    "punch": [
+     0.6
+    ]
+   },
+   "sources": [
+    "CLAUDE.md rule 82: Bloomfield closed in 2016 and reopened at the end of August 2019 (two sources)",
+    "Wikipedia (Bloomfield Stadium)"
    ]
   },
   {
@@ -928,7 +1105,27 @@
      0.3
     ]
    },
-   "transition": "dissolve"
+   "transition": "dissolve",
+   "cap": {
+    "he": "אבל הסיפורים נשארים — בשער 5, בקצה אחד של בלומפילד, איפה שעומדים האוהדים הכי רועשים, וזוכרים את כולם."
+   }
+  },
+  {
+   "id": "basketball",
+   "plate": "basket-red",
+   "transition": "slide",
+   "delivery": "wry",
+   "en": "There is also a beautiful story about our basketball team… but we'll get to that another time.",
+   "he": "יש גם סיפור יפה על קבוצת הכדורסל שלנו… אבל עוד נגיע לזה.",
+   "visual": {
+    "push": [
+     1.0,
+     1.06
+    ]
+   },
+   "sources": [
+    "owner, 12.11.2026"
+   ]
   },
   {
    "id": "good-morning",
@@ -955,7 +1152,11 @@
     "wordmarkAt": 0.72,
     "wordmarkTag": "Good Morning, Hapoel Tel Aviv"
    },
-   "transition": "page"
+   "transition": "page",
+   "cap": {
+    "he": "חודורוב בשער. פרימו בהגנה. פייגנבוים בהתקפה. ג'ימי וסיני בקישור. תקוה עם הכדור, וטועמה רץ לידו. 13 אליפויות. 16 גביעים. 103 שנים. בוקר טוב, הפועל תל אביב.",
+    "en": "Hodorov in goal. Primo at the back. Feigenbaum up front. Jimmy and Sinai in the middle. Tikva with the ball, and Toama running beside him. 13 titles. 16 cups. 103 years. Good morning, Hapoel Tel Aviv."
+   }
   }
  ]
 }

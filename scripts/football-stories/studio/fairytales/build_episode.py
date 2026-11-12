@@ -29,6 +29,7 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 from studio.fairytales import papertheatre as pt
 from studio.fairytales import transitions as tr
+from studio.fairytales import subtitles as sub
 
 REPO = Path(__file__).resolve().parents[4]
 SFX = REPO / 'public/life/sfx'
@@ -208,6 +209,18 @@ def plan(ep: dict, narr: Path, langs: list[str]) -> list[dict]:
     return out
 
 
+def caption(shot: dict, lang: str) -> str:
+    """What the subtitle prints: the narration, or the script's `cap` where the spoken line spells out a number."""
+    return (shot.get('cap') or {}).get(lang) or shot[lang]
+
+
+def ass_colour(hexrgb: str, k: float = 0.42) -> str:
+    """The club colour, darkened, as an ASS outline (&HAABBGGRR)."""
+    h = hexrgb.lstrip('#')
+    r, g, b = (int(int(h[i:i + 2], 16) * k) for i in (0, 2, 4))
+    return f'&H00{b:02X}{g:02X}{r:02X}'
+
+
 def music_plan(ep: dict, shots: list[dict], total: float, xf: float = 3.0) -> list[tuple]:
     """(file, start, length, fade-in, fade-out) for each music cue in the script's `music` list. A cue starts at its
     shot and runs into the next cue by `xf` seconds; the last one closes with the film."""
@@ -301,7 +314,9 @@ def main() -> None:
             if gt > total - 0.6:
                 fr = Image.fromarray((np.asarray(fr, dtype=np.float32) * max(0.0, (total - gt) / 0.6)).astype(np.uint8))
             fr = pt.grain(fr, i, 2.2)
-            yield deyellow(fr, tuple(ep['palette']['bannedHue'])) if ep['palette'].get('bannedHue') else fr
+            if ep['palette'].get('bannedHue'):
+                fr = deyellow(fr, tuple(ep['palette']['bannedHue']))
+            yield sub.put_stamp(fr, gt, total)
 
     silent = outd / 'picture.mp4'
     if not silent.exists():
@@ -337,16 +352,27 @@ def main() -> None:
                         str(mix)], check=True)
         subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', str(mix), '-af', 'loudnorm=I=-15:TP=-1.5:LRA=9', '-ar', '48000',
                         '-c:a', 'aac', '-b:a', '192k', str(outd / f'audio-{lang}.m4a')], check=True)
+        # subtitles burned in the storybook face (owner, 12.11.2026); the clean picture stays as picture.mp4
+        spans = [(s['start'] + LEAD, s['start'] + LEAD + s['lens'][lang], caption(s['shot'], lang),
+                  'top' if s['shot'].get('visual', {}).get('wordmarkAt') is not None else 'bottom') for s in shots]
+        assf = outd / f'subs-{lang}.ass'
+        assf.write_text(sub.ass(lang, spans, outline=ass_colour(ep['palette']['primary'])), encoding='utf-8')
+        vf = f"ass={assf}:fontsdir={sub.FONTS}"
         subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', str(silent), '-i', str(outd / f'audio-{lang}.m4a'), '-map', '0:v',
-                        '-map', '1:a', '-c', 'copy', '-metadata:s:a:0', f'language={ {"en": "eng", "he": "heb", "el": "ell"}[lang]}',
+                        '-map', '1:a', '-vf', vf, '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '18', '-pix_fmt', 'yuv420p',
+                        '-c:a', 'copy', '-metadata:s:a:0', f'language={ {"en": "eng", "he": "heb", "el": "ell"}[lang]}',
                         '-movflags', '+faststart', str(outd / f'episode-{lang}.mp4')], check=True)
         mix.unlink()
         srt = []
-        for k, s in enumerate(shots):
-            a = s['start'] + LEAD
-            b = a + s['lens'][lang]
-            fmt = lambda x: f'{int(x // 3600):02d}:{int(x % 3600 // 60):02d}:{int(x % 60):02d},{int(x * 1000 % 1000):03d}'
-            srt.append(f"{k + 1}\n{fmt(a)} --> {fmt(b)}\n{s['shot'][lang]}\n")
+        fmt = lambda x: f'{int(x // 3600):02d}:{int(x % 3600 // 60):02d}:{int(x % 60):02d},{int(x * 1000 % 1000):03d}'
+        for a, b, text, _ in spans:                                  # the YouTube caption track: the same cues
+            cs = sub.cues(text)
+            tot = sum(len(c) for c in cs) or 1
+            t = a
+            for c in cs:
+                d = (b - a) * len(c) / tot
+                srt.append(f"{len(srt) + 1}\n{fmt(t)} --> {fmt(t + d - 0.04)}\n{c}\n")
+                t += d
         (outd / f'captions-{lang}.srt').write_text('\n'.join(srt), encoding='utf-8')
     for s in shots:
         timing.append({'shot': s['shot']['id'], 'start': round(s['start'], 2), 'dur': round(s['dur'], 2), 'narration': s['lens']})

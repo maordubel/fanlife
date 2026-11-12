@@ -1,0 +1,794 @@
+{
+ "schemaVersion": 1,
+ "id": "panathinaikos-good-morning",
+ "club": "panathinaikos",
+ "series": "Football Fairy Tales",
+ "title": {
+  "en": "Good Morning, Panathinaikos",
+  "el": "Καλημέρα, Παναθηναϊκέ"
+ },
+ "voice": {
+  "en": "Leda",
+  "el": "Leda",
+  "chosen": "owner, 11.11.2026"
+ },
+ "palette": {
+  "primary": "#0B6B38",
+  "secondary": "#F6F0E4"
+ },
+ "crests": {
+  "pao": "public/crests/panathinaikos.png"
+ },
+ "music": [
+  {
+   "track": "zambolino-lighthearted",
+   "from": "once-upon"
+  },
+  {
+   "track": "pufino-enlivening",
+   "from": "puskas"
+  },
+  {
+   "track": "zambolino-lighthearted",
+   "from": "gate-13-sings"
+  }
+ ],
+ "shots": [
+  {
+   "id": "once-upon",
+   "plate": "pao-once",
+   "delivery": "secret",
+   "en": "Once upon a time, in a city where an old temple stands on a hill and watches over everyone, some young people dreamed of football. This… is the story of Panathinaikos.",
+   "el": "Μια φορά κι έναν καιρό, σε μια πόλη όπου ένας αρχαίος ναός στέκεται πάνω σε έναν λόφο και προσέχει όλους, κάποια παιδιά ονειρεύονταν το ποδόσφαιρο. Αυτή… είναι η ιστορία του Παναθηναϊκού.",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ]
+   },
+   "transition": "fade"
+  },
+  {
+   "id": "green",
+   "plate": "pao-green",
+   "delivery": "playful",
+   "en": "Panathinaikos is green. Green shirts, green scarves, and a big green heart. And red? No, thank you. We are green!",
+   "el": "Ο Παναθηναϊκός είναι πράσινος. Πράσινες φανέλες, πράσινα κασκόλ, και μια μεγάλη πράσινη καρδιά. Και κόκκινο; Όχι, ευχαριστώ. Εμείς είμαστε πράσινοι!",
+   "sources": [
+    "club-packs/panathinaikos/world.json colours (Green; Wikipedia, footballhistory.org, UEFA.com)",
+    "owner 11.11.2026: friendly rival framing"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.06
+    ],
+    "tags": [
+     {
+      "text": "GREEN",
+      "at": 0.12,
+      "xy": [
+       1500,
+       230
+      ],
+      "size": 120,
+      "rot": -4
+     },
+     {
+      "text": "RED?",
+      "sub": "NO, THANK YOU!",
+      "at": 0.7,
+      "xy": [
+       420,
+       250
+      ],
+      "size": 84,
+      "rot": 5
+     }
+    ],
+    "punch": [
+     0.7
+    ]
+   },
+   "transition": "iris"
+  },
+  {
+   "id": "kalafatis",
+   "plate": "pao-1908",
+   "delivery": "warm",
+   "en": "It began in 1908. A young man called Giorgos Kalafatis gathered his friends in Athens to play football — first as the Football Club of Athens.",
+   "el": "Όλα ξεκίνησαν το 1908. Ένας νεαρός, ο Γιώργος Καλαφάτης, μάζεψε τους φίλους του στην Αθήνα για να παίξουν ποδόσφαιρο — πρώτα με το όνομα Ποδοσφαιρικός Όμιλος Αθηνών.",
+   "sources": [
+    "club-packs/panathinaikos/world.json founded (Wikipedia, Skai.gr, pao.gr)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ],
+    "tags": [
+     {
+      "text": "1908",
+      "at": 0.2,
+      "xy": [
+       1540,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     }
+    ],
+    "punch": [
+     0.2
+    ]
+   },
+   "transition": "slide"
+  },
+  {
+   "id": "shamrock",
+   "plate": "pao-shamrock",
+   "delivery": "tender",
+   "en": "Ten years later, the club chose its sign: a little shamrock. Three leaves — for good luck, for unity, and for balance.",
+   "el": "Δέκα χρόνια αργότερα, ο σύλλογος διάλεξε το σήμα του: ένα μικρό τριφύλλι. Τρία φύλλα — για καλή τύχη, για ενότητα και για ισορροπία.",
+   "sources": [
+    "club-packs/panathinaikos/world.json emblem (Wikipedia, pao.gr, Skai.gr)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "tags": [
+     {
+      "text": "1918",
+      "at": 0.18,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 96,
+      "rot": 4
+     }
+    ],
+    "crests": [
+     {
+      "crest": "pao",
+      "at": 0.55,
+      "xy": [
+       1480,
+       520
+      ],
+      "size": 300
+     }
+    ]
+   },
+   "transition": "zoom"
+  },
+  {
+   "id": "leoforos",
+   "plate": "pao-leoforos",
+   "delivery": "warm",
+   "en": "Their home was on a long avenue in Ampelokipoi — Alexandras Avenue. And everyone simply called the ground Leoforos: the avenue.",
+   "el": "Το σπίτι τους ήταν σε μια μεγάλη λεωφόρο στους Αμπελοκήπους — τη Λεωφόρο Αλεξάνδρας. Και όλοι έλεγαν το γήπεδο απλά Λεωφόρο.",
+   "sources": [
+    "club-packs/panathinaikos/world.json ground + flavour leoforos (Wikipedia, pao.gr, Athens Attica)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ],
+    "tags": [
+     {
+      "text": "LEOFOROS",
+      "at": 0.55,
+      "xy": [
+       1420,
+       220
+      ],
+      "size": 84,
+      "rot": -3
+     }
+    ],
+    "punch": [
+     0.55
+    ]
+   },
+   "transition": "dissolve"
+  },
+  {
+   "id": "nikolaidis",
+   "plate": "pao-leoforos2",
+   "transition": "slide",
+   "delivery": "warm",
+   "en": "In 1981, the ground was given the name of Apostolos Nikolaidis — the man everyone at the club called the Patriarch. And right beside it stands the club's indoor hall, which has its own nickname: the Indian's Tomb.",
+   "el": "Το 1981, το γήπεδο πήρε το όνομα του Απόστολου Νικολαΐδη — του ανθρώπου που όλοι στον σύλλογο έλεγαν Πατριάρχη. Και ακριβώς δίπλα του βρίσκεται το κλειστό γήπεδο του συλλόγου, που έχει κι αυτό το δικό του παρατσούκλι: ο Τάφος του Ινδού.",
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ],
+    "tags": [
+     {
+      "text": "APOSTOLOS NIKOLAIDIS",
+      "at": 0.3,
+      "xy": [
+       1400,
+       200
+      ],
+      "size": 62
+     }
+    ],
+    "punch": [
+     0.3
+    ]
+   },
+   "sources": [
+    "club-packs/panathinaikos/world.json flavour patriarch (pao.gr 1981, Wikipedia)",
+    "world.json facts indians-tomb (Wikipedia, Skai.gr)"
+   ]
+  },
+  {
+   "id": "first-title",
+   "plate": "pao-1930",
+   "delivery": "proud",
+   "en": "In 1930 came the first Greek championship — and Panathinaikos won it without losing a single game.",
+   "el": "Το 1930 ήρθε το πρώτο πρωτάθλημα Ελλάδας — και ο Παναθηναϊκός το κατέκτησε χωρίς να χάσει ούτε ένα παιχνίδι.",
+   "sources": [
+    "club-packs/panathinaikos/core.json \"First league title\" 1930",
+    "Wikipedia: won undefeated the Championship of 1929–30"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ],
+    "tags": [
+     {
+      "text": "1930",
+      "at": 0.15,
+      "xy": [
+       1540,
+       240
+      ],
+      "size": 110,
+      "rot": 3
+     }
+    ],
+    "confettiAt": 0.6
+   },
+   "transition": "torn"
+  },
+  {
+   "id": "domazos-boy",
+   "plate": "pao-suit",
+   "delivery": "playful",
+   "en": "In 1959, a seventeen-year-old boy from Ampelokipoi joined the club — for a suit and an orange juice, he always said. His name was Mimis Domazos.",
+   "el": "Το 1959, ένα αγόρι δεκαεπτά χρονών από τους Αμπελοκήπους ήρθε στην ομάδα — για ένα κοστούμι και μια πορτοκαλάδα, όπως έλεγε πάντα. Τον έλεγαν Μίμη Δομάζο.",
+   "sources": [
+    "Wikipedia (Mimis Domazos): joined in summer 1959 at 17 \"for a suit and an orange juice\"; born in Ampelokipoi",
+    "club-packs/panathinaikos/core.json \"Domazos joins\" 1959"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "MIMIS DOMAZOS",
+      "at": 0.62,
+      "xy": [
+       1420,
+       210
+      ],
+      "size": 72
+     }
+    ],
+    "punch": [
+     0.62
+    ]
+   },
+   "transition": "slide",
+   "cap": {
+    "en": "In 1959, a 17-year-old boy from Ampelokipoi joined the club — for a suit and an orange juice, he always said. His name was Mimis Domazos.",
+    "el": "Το 1959, ένα αγόρι 17 χρονών από τους Αμπελοκήπους ήρθε στην ομάδα — για ένα κοστούμι και μια πορτοκαλάδα, όπως έλεγε πάντα. Τον έλεγαν Μίμη Δομάζο."
+   }
+  },
+  {
+   "id": "general",
+   "plate": "pao-general",
+   "delivery": "proud",
+   "en": "They called him The General. He led the green for twenty years — and played more top-flight games than anyone else in Greece.",
+   "el": "Τον έλεγαν Στρατηγό. Οδήγησε τους πράσινους για είκοσι χρόνια — κι έπαιξε σε περισσότερα παιχνίδια πρώτης κατηγορίας από οποιονδήποτε άλλον στην Ελλάδα.",
+   "sources": [
+    "Wikipedia (Mimis Domazos): nickname \"The General\"; 1959–1980",
+    "Wikipedia (Football records and statistics in Greece): most first-division appearances, 536"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "THE GENERAL",
+      "at": 0.15,
+      "xy": [
+       1440,
+       220
+      ],
+      "size": 80,
+      "rot": -3
+     }
+    ],
+    "punch": [
+     0.15
+    ]
+   },
+   "transition": "iris"
+  },
+  {
+   "id": "gate-13",
+   "plate": "pao-gate13",
+   "delivery": "build",
+   "en": "In 1966, the most devoted supporters made their own place at Leoforos. They called it Gate 13.",
+   "el": "Το 1966, οι πιο φανατικοί φίλαθλοι έφτιαξαν τη δική τους θέση στη Λεωφόρο. Την είπαν Θύρα 13.",
+   "sources": [
+    "club-packs/panathinaikos/core.json \"Gate 13 founded\" 1966",
+    "world.json terrace (Wikipedia, Skai.gr)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "GATE 13",
+      "at": 0.6,
+      "xy": [
+       1480,
+       230
+      ],
+      "size": 96,
+      "rot": 3
+     }
+    ],
+    "punch": [
+     0.6
+    ]
+   },
+   "transition": "page"
+  },
+  {
+   "id": "puskas",
+   "plate": "pao-puskas",
+   "delivery": "wry",
+   "en": "Then a famous Hungarian came to Athens — Ferenc Puskás, one of the greatest footballers the world had ever seen. Now he was the coach.",
+   "el": "Ύστερα ήρθε στην Αθήνα ένας διάσημος Ούγγρος — ο Φέρεντς Πούσκας, ένας από τους μεγαλύτερους ποδοσφαιριστές που είδε ποτέ ο κόσμος. Τώρα, ήταν ο προπονητής.",
+   "sources": [
+    "Wikipedia (1970–71 Panathinaikos F.C. season): manager Ferenc Puskás",
+    "UEFA.com: Panathinaikos class of 71"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ],
+    "tags": [
+     {
+      "text": "FERENC PUSKÁS",
+      "at": 0.3,
+      "xy": [
+       1420,
+       210
+      ],
+      "size": 72
+     }
+    ],
+    "punch": [
+     0.3
+    ]
+   },
+   "transition": "slide"
+  },
+  {
+   "id": "road",
+   "plate": "pao-road",
+   "delivery": "adventure",
+   "en": "In 1971, a team of amateurs went on a journey across Europe: Luxembourg, Bratislava, Everton in England, Red Star in Belgrade… all the way to the European Cup final.",
+   "el": "Το 1971, μια ομάδα ερασιτεχνών ξεκίνησε ένα ταξίδι σε όλη την Ευρώπη: Λουξεμβούργο, Μπρατισλάβα, η Έβερτον στην Αγγλία, ο Ερυθρός Αστέρας στο Βελιγράδι… μέχρι τον τελικό του Κυπέλλου Πρωταθλητριών.",
+   "sources": [
+    "UEFA.com: eliminating Jeunesse Esch, Slovan Bratislava, Everton and Crvena zvezda en route to the 1971 final",
+    "UEFA.com: an amateur club"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.06
+    ],
+    "tags": [
+     {
+      "text": "1971",
+      "at": 0.12,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -4
+     }
+    ]
+   },
+   "transition": "zoom"
+  },
+  {
+   "id": "antoniadis",
+   "plate": "pao-antoniadis",
+   "delivery": "playful",
+   "en": "Up front was Antonis Antoniadis. He was an amateur with a job in insurance — and still, he was the top scorer of the whole European Cup, with ten goals.",
+   "el": "Στην επίθεση ήταν ο Αντώνης Αντωνιάδης. Ήταν ερασιτέχνης και δούλευε σε ασφαλιστική — κι όμως, έγινε ο πρώτος σκόρερ σε όλο το Κύπελλο Πρωταθλητριών, με δέκα γκολ.",
+   "sources": [
+    "UEFA.com: Antoniadis, \"an amateur footballer with a job in insurance\", European Cup top scorer with ten goals",
+    "Wikipedia (1970–71 European Cup): top scorer Antoniadis, 10"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "ANTONIS ANTONIADIS",
+      "at": 0.15,
+      "xy": [
+       1400,
+       200
+      ],
+      "size": 66
+     },
+     {
+      "text": "10 GOALS",
+      "at": 0.72,
+      "xy": [
+       420,
+       250
+      ],
+      "size": 84,
+      "rot": 4
+     }
+    ],
+    "punch": [
+     0.72
+    ]
+   },
+   "transition": "torn",
+   "cap": {
+    "en": "Up front was Antonis Antoniadis. He was an amateur with a job in insurance — and still, he was the top scorer of the whole European Cup, with 10 goals.",
+    "el": "Στην επίθεση ήταν ο Αντώνης Αντωνιάδης. Ήταν ερασιτέχνης και δούλευε σε ασφαλιστική — κι όμως, έγινε ο πρώτος σκόρερ σε όλο το Κύπελλο Πρωταθλητριών, με 10 γκολ."
+   }
+  },
+  {
+   "id": "wembley",
+   "plate": "pao-wembley",
+   "delivery": "tender",
+   "en": "The final was at Wembley, in London, against Johan Cruyff's Ajax. Panathinaikos lost, two–nil. But no other Greek team has ever played in that final.",
+   "el": "Ο τελικός έγινε στο Γουέμπλεϊ, στο Λονδίνο, απέναντι στον Άγιαξ του Γιόχαν Κρόιφ. Ο Παναθηναϊκός έχασε δύο–μηδέν. Όμως καμία άλλη ελληνική ομάδα δεν έπαιξε ποτέ σε εκείνον τον τελικό.",
+   "sources": [
+    "Wikipedia (1971 European Cup Final): 2 June 1971, Wembley, Ajax 2–0; only Greek team in a European Cup/Champions League final",
+    "UEFA.com"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ],
+    "tags": [
+     {
+      "text": "WEMBLEY",
+      "at": 0.12,
+      "xy": [
+       1480,
+       220
+      ],
+      "size": 96,
+      "rot": -3
+     },
+     {
+      "text": "2 JUNE 1971",
+      "at": 0.22,
+      "xy": [
+       1480,
+       330
+      ],
+      "size": 52
+     }
+    ],
+    "punch": [
+     0.82
+    ]
+   },
+   "transition": "dissolve",
+   "cap": {
+    "en": "The final was at Wembley, in London, against Johan Cruyff's Ajax. Panathinaikos lost, 2–0. But no other Greek team has ever played in that final.",
+    "el": "Ο τελικός έγινε στο Γουέμπλεϊ, στο Λονδίνο, απέναντι στον Άγιαξ του Γιόχαν Κρόιφ. Ο Παναθηναϊκός έχασε 2–0. Όμως καμία άλλη ελληνική ομάδα δεν έπαιξε ποτέ σε εκείνον τον τελικό."
+   }
+  },
+  {
+   "id": "world",
+   "plate": "pao-world",
+   "delivery": "adventure",
+   "en": "And that same year, Panathinaikos played for the Intercontinental Cup, against Nacional of Uruguay — the only Greek club that ever has.",
+   "el": "Και την ίδια χρονιά, ο Παναθηναϊκός έπαιξε για το Διηπειρωτικό Κύπελλο, απέναντι στη Νασιονάλ της Ουρουγουάης — ο μόνος ελληνικός σύλλογος που το έκανε ποτέ.",
+   "sources": [
+    "club-packs/panathinaikos/core.json \"Intercontinental Cup appearance\" 1971 (Nacional)",
+    "Wikipedia: the only Greek team that has played for the Intercontinental Cup (1971)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ]
+   },
+   "transition": "iris"
+  },
+  {
+   "id": "warzycha",
+   "plate": "pao-warzycha",
+   "delivery": "proud",
+   "en": "Years later, a striker arrived from Poland: Krzysztof Warzycha. He stayed for fifteen seasons and scored three hundred and nineteen goals — more than anyone in the club's history.",
+   "el": "Χρόνια αργότερα, ήρθε ένας επιθετικός από την Πολωνία: ο Κσίστοφ Βαζέχα. Έμεινε δεκαπέντε σεζόν και πέτυχε τριακόσια δεκαεννέα γκολ — περισσότερα από οποιονδήποτε στην ιστορία του συλλόγου.",
+   "sources": [
+    "Wikipedia (Krzysztof Warzycha): 15 seasons, 319 goals in 553 official appearances, all-time leading goalscorer"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "KRZYSZTOF WARZYCHA",
+      "at": 0.3,
+      "xy": [
+       1400,
+       200
+      ],
+      "size": 64
+     },
+     {
+      "text": "319 GOALS",
+      "at": 0.7,
+      "xy": [
+       420,
+       250
+      ],
+      "size": 84,
+      "rot": -4
+     }
+    ],
+    "punch": [
+     0.7
+    ]
+   },
+   "transition": "page",
+   "cap": {
+    "en": "Years later, a striker arrived from Poland: Krzysztof Warzycha. He stayed for 15 seasons and scored 319 goals — more than anyone in the club's history.",
+    "el": "Χρόνια αργότερα, ήρθε ένας επιθετικός από την Πολωνία: ο Κσίστοφ Βαζέχα. Έμεινε 15 σεζόν και πέτυχε 319 γκολ — περισσότερα από οποιονδήποτε στην ιστορία του συλλόγου."
+   }
+  },
+  {
+   "id": "amsterdam",
+   "plate": "pao-amsterdam",
+   "delivery": "adventure",
+   "en": "In 1996, in the Champions League semi-final, Panathinaikos won one–nil in Amsterdam — and the goal was Warzycha's.",
+   "el": "Το 1996, στον ημιτελικό του Champions League, ο Παναθηναϊκός νίκησε ένα–μηδέν στο Άμστερνταμ — και το γκολ ήταν του Βαζέχα.",
+   "sources": [
+    "club-packs/panathinaikos/core.json \"Champions League semi-final\" 1996 (1–0 in Amsterdam)",
+    "footballhistory.org: Warzycha scoring the 1–0 in Amsterdam"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "1–0",
+      "at": 0.55,
+      "xy": [
+       1520,
+       240
+      ],
+      "size": 120,
+      "rot": 3
+     }
+    ],
+    "punch": [
+     0.55
+    ],
+    "confettiAt": 0.7
+   },
+   "transition": "slide",
+   "cap": {
+    "en": "In 1996, in the Champions League semi-final, Panathinaikos won 1–0 in Amsterdam — and the goal was Warzycha's.",
+    "el": "Το 1996, στον ημιτελικό του Champions League, ο Παναθηναϊκός νίκησε 1–0 στο Άμστερνταμ — και το γκολ ήταν του Βαζέχα."
+   }
+  },
+  {
+   "id": "double-2004",
+   "plate": "pao-2004",
+   "delivery": "proud",
+   "en": "In 2004, the league and the cup together: a double.",
+   "el": "Το 2004, πρωτάθλημα και κύπελλο μαζί: νταμπλ.",
+   "sources": [
+    "club-packs/panathinaikos/core.json \"Double with Itzhak Shum\" 2004"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "2004",
+      "at": 0.2,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     }
+    ],
+    "confettiAt": 0.55
+   },
+   "transition": "zoom"
+  },
+  {
+   "id": "double-2010",
+   "plate": "pao-2010",
+   "delivery": "proud",
+   "en": "And in 2010 — another double.",
+   "el": "Και το 2010 — άλλο ένα νταμπλ.",
+   "sources": [
+    "club-packs/panathinaikos/core.json \"Another double\" 2010"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "2010",
+      "at": 0.2,
+      "xy": [
+       1540,
+       240
+      ],
+      "size": 110,
+      "rot": 3
+     }
+    ],
+    "confettiAt": 0.5
+   },
+   "transition": "torn"
+  },
+  {
+   "id": "cup-2024",
+   "plate": "pao-header",
+   "delivery": "build",
+   "en": "In 2024, in the cup final, it was the very last minute. Giorgos Vagiannidis jumped higher than anyone — and headed the twentieth cup into the net.",
+   "el": "Το 2024, στον τελικό του κυπέλλου, ήταν το τελευταίο λεπτό. Ο Γιώργος Βαγιαννίδης πήδηξε πιο ψηλά απ' όλους — και έστειλε με κεφαλιά το εικοστό κύπελλο στα δίχτυα.",
+   "sources": [
+    "Protothema / Greek City Times / pao.gr: 25 May 2024, Vagiannidis 90+7′ header, 1–0 v Aris, the 20th Greek Cup",
+    "club-packs/panathinaikos/core.json \"Stoppage-time winner\" 2024"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "90+7′",
+      "at": 0.3,
+      "xy": [
+       400,
+       240
+      ],
+      "size": 110,
+      "rot": -4
+     },
+     {
+      "text": "CUP No. 20",
+      "at": 0.8,
+      "xy": [
+       1480,
+       240
+      ],
+      "size": 84,
+      "rot": 3
+     }
+    ],
+    "punch": [
+     0.3,
+     0.8
+    ],
+    "confettiAt": 0.8
+   },
+   "transition": "iris"
+  },
+  {
+   "id": "gate-13-sings",
+   "plate": "pao-gate13b",
+   "delivery": "close",
+   "en": "But the stories stay — at Gate 13, where the most devoted supporters stand, and sing for the green, and remember every one of them.",
+   "el": "Όμως οι ιστορίες μένουν — στη Θύρα 13, εκεί που στέκονται οι πιο φανατικοί φίλαθλοι, τραγουδούν για τους πράσινους και τους θυμούνται όλους.",
+   "sources": [
+    "world.json terrace (Wikipedia, Skai.gr)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ]
+   },
+   "transition": "dissolve"
+  },
+  {
+   "id": "basketball",
+   "plate": "basket-green",
+   "transition": "slide",
+   "delivery": "wry",
+   "en": "There is also a beautiful story about our basketball team… but we'll get to that another time.",
+   "el": "Υπάρχει και μια όμορφη ιστορία για την ομάδα μπάσκετ μας… αλλά θα φτάσουμε κι εκεί.",
+   "visual": {
+    "push": [
+     1.0,
+     1.06
+    ]
+   },
+   "sources": [
+    "owner, 12.11.2026"
+   ]
+  },
+  {
+   "id": "good-morning",
+   "plate": "pao-close",
+   "delivery": "warm",
+   "en": "Kalafatis and his friends. Domazos, The General. Puskás on the bench, Antoniadis up front, Warzycha with the ball. Twenty titles. Twenty cups. Good morning, Panathinaikos.",
+   "el": "Ο Καλαφάτης και οι φίλοι του. Ο Δομάζος, ο Στρατηγός. Ο Πούσκας στον πάγκο, ο Αντωνιάδης στην επίθεση, ο Βαζέχα με την μπάλα. Είκοσι πρωταθλήματα. Είκοσι κύπελλα. Καλημέρα, Παναθηναϊκέ.",
+   "sources": [
+    "Wikipedia (Panathinaikos F.C.): 20 Greek Championships, 20 Greek Cups",
+    "pao.gr: The 20th Cup"
+   ],
+   "visual": {
+    "extra": 2.6,
+    "crests": [
+     {
+      "crest": "pao",
+      "at": 0.55,
+      "xy": [
+       960,
+       350
+      ],
+      "size": 330
+     }
+    ],
+    "wordmarkAt": 0.72,
+    "wordmarkTag": "Good Morning, Panathinaikos"
+   },
+   "transition": "page",
+   "cap": {
+    "en": "Kalafatis and his friends. Domazos, The General. Puskás on the bench, Antoniadis up front, Warzycha with the ball. 20 titles. 20 cups. Good morning, Panathinaikos.",
+    "el": "Ο Καλαφάτης και οι φίλοι του. Ο Δομάζος, ο Στρατηγός. Ο Πούσκας στον πάγκο, ο Αντωνιάδης στην επίθεση, ο Βαζέχα με την μπάλα. 20 πρωταθλήματα. 20 κύπελλα. Καλημέρα, Παναθηναϊκέ."
+   }
+  }
+ ]
+}
