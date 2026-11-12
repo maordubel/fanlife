@@ -204,3 +204,4 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [shop-library-only](shop-library-only.md) · The shop prints only from the owner's library and sells only fan art that is ours to sell; Printify Pop-Up checkout (12.11.2026)
 - [shop-runs-itself](shop-runs-itself.md) · The owner designs and publishes in Printify; the site mirrors the Pop-Up store on its own, Buy opens the Pop-Up checkout (12.11.2026)
 - [phone-fold](phone-fold.md) · On a phone the hub and a club's home show the hook and the doors; the rest waits behind one button (12.11.2026)
+- [hub-order](hub-order.md) · The hub and a club home are put in order, not redesigned: nothing hidden, the features indexed, clubs as a slide on a phone, no next-match box (12.11.2026)
