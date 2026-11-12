@@ -16,6 +16,8 @@ type Subject={id:string;name:string}
 export type DeskPicture={id:string;name:string;folder:string;subject:string;approved:boolean;review:boolean}
 const thumb=(id:string)=>`https://drive.google.com/thumbnail?id=${id}&sz=w320`
 const money=(c:number,cur:string)=>new Intl.NumberFormat('en',{style:'currency',currency:cur}).format(c/100)
+const BASIC=KINDS.filter(k=>k!=='more')
+type CatItem={id:number;title:string;brand:string;image:string;group:string}
 const STATUS:Record<ShopProduct['status'],string>={draft:'Draft',building:'Pressing…',ready:'Made — waiting for its link',live:'On sale',error:'Needs a retry'}
 
 export function ShopDesk({initial,subjects,pictures}:{initial:State;subjects:Subject[];pictures:DeskPicture[]}){
@@ -23,6 +25,11 @@ export function ShopDesk({initial,subjects,pictures}:{initial:State;subjects:Sub
  const [token,setToken]=useState(''),[who,setWho]=useState('all'),[show,setShow]=useState<'all'|'shown'|'hidden'|'todo'>('all')
  const [run,setRun]=useState<{done:number;total:number}|null>(null),stop=useRef(false)
  const [nSub,setNSub]=useState(subjects[0]?.id||'fanlife'),[nKinds,setNKinds]=useState<Kind[]>(['poster']),[nPic,setNPic]=useState<string>('own'),[nTitle,setNTitle]=useState(''),file=useRef<HTMLInputElement>(null)
+ const [cat,setCat]=useState<CatItem[]|null>(null),[cq,setCq]=useState(''),[cg,setCg]=useState('All'),[picked,setPicked]=useState<{id:number;title:string}[]>([])
+ const openCat=async()=>{if(cat)return;const out=await api.post<{catalog:CatItem[]}>('shop',{action:'catalog'},'The whole Printify catalogue is open.');if(out?.catalog)setCat(out.catalog)}
+ const catGroups=useMemo(()=>{const m=new Map<string,number>();for(const c of cat||[])m.set(c.group,(m.get(c.group)||0)+1);return [['All',cat?.length||0] as [string,number],...[...m].sort((a,b)=>b[1]-a[1])]},[cat])
+ const catShown=useMemo(()=>{const q=cq.trim().toLowerCase();return (cat||[]).filter(c=>(cg==='All'||c.group===cg)&&(!q||`${c.title} ${c.brand}`.toLowerCase().includes(q))).slice(0,48)},[cat,cq,cg])
+ const togglePick=(c:{id:number;title:string})=>setPicked(v=>v.some(x=>x.id===c.id)?v.filter(x=>x.id!==c.id):v.length>=40?v:[...v,{id:c.id,title:c.title}])
  const act=async(action:string,data:Record<string,unknown>={},msg='Saved.')=>{const out=await api.post<State&{made?:string[]}>('shop',{action,...data},msg);if(out)setSt({doc:out.doc,connected:out.connected});return out}
  const name=(id:string)=>subjects.find(x=>x.id===id)?.name||id
  const list=useMemo(()=>doc.products.filter(p=>(who==='all'||p.subject===who)&&(show==='all'||(show==='shown'?p.visible:show==='hidden'?!p.visible&&p.status==='live':p.status!=='live'))),[doc.products,who,show])
@@ -33,12 +40,12 @@ export function ShopDesk({initial,subjects,pictures}:{initial:State;subjects:Sub
   for(const p of mine.sort((a,b)=>Number(b.subject===nSub)-Number(a.subject===nSub)||Number(b.approved)-Number(a.approved)))by.set(p.folder,[...(by.get(p.folder)||[]),p])
   return [...by]},[pictures,nSub])
  const create=async()=>{
-  if(!nKinds.length){api.setError('Choose at least one product.');return}
+  const total=nKinds.length+picked.length
+  if(!total){api.setError('Choose at least one product.');return}
   if(nPic==='own'){const f=file.current?.files?.[0];if(!f){api.setError('Choose a picture first (PNG or JPG).');return}
    const data=await new Promise<string>((ok,no)=>{const r=new FileReader();r.onload=()=>ok(String(r.result));r.onerror=()=>no(r.error);r.readAsDataURL(f)})
-   const made:string[]=[];for(const k of nKinds){const out=await act('upload',{subject:nSub,kind:k,name:f.name,data,title:`${nTitle||name(nSub)} · ${KIND_SPECS[k].label}`},'Picture uploaded.');if(out?.made)made.push(...out.made)}
-   if(made.length)await pressMany(made)
-  }else{const out=await act('add',{subject:nSub,picture:nPic,kinds:nKinds},'Added.');if(out?.made)await pressMany(out.made)}
+   const out=await act('upload',{subject:nSub,kinds:nKinds,blueprints:picked,name:f.name,data,title:nTitle||name(nSub)},'Picture uploaded.');if(out?.made?.length)await pressMany(out.made)
+  }else{const out=await act('add',{subject:nSub,picture:nPic,kinds:nKinds,blueprints:picked},'Added.');if(out?.made)await pressMany(out.made)}
  }
  const ago=(iso:string)=>{const m=Math.round((Date.now()-Date.parse(iso))/60e3);return m<1?'just now':m<60?`${m} min ago`:m<2880?`${Math.round(m/60)} h ago`:`${Math.round(m/1440)} days ago`}
  const step=(n:number,done:boolean)=><span className="shop-no" data-done={done||undefined} aria-hidden="true">{done?'✓':n}</span>
@@ -100,7 +107,18 @@ export function ShopDesk({initial,subjects,pictures}:{initial:State;subjects:Sub
   <section className="desk-card" aria-labelledby="shn"><h2 className="desk-h2" id="shn">New product</h2>
    <div className="shop-form"><label className="shop-field"><span>For</span><select value={nSub} onChange={e=>{setNSub(e.target.value);setNPic('own')}}>{subjects.map(x=><option key={x.id} value={x.id}>{x.name}</option>)}</select></label></div>
    <p className="desk-fine">Products (one or several)</p>
-   <div className="desk-chips" role="group" aria-label="Products">{KINDS.map(k=><button key={k} className="desk-chip" aria-current={nKinds.includes(k)} aria-pressed={nKinds.includes(k)} onClick={()=>setNKinds(v=>v.includes(k)?v.filter(x=>x!==k):[...v,k])}>{KIND_SPECS[k].label}</button>)}</div>
+   <div className="desk-chips" role="group" aria-label="Products">{BASIC.map(k=><button key={k} className="desk-chip" aria-current={nKinds.includes(k)} aria-pressed={nKinds.includes(k)} onClick={()=>setNKinds(v=>v.includes(k)?v.filter(x=>x!==k):[...v,k])}>{KIND_SPECS[k].label}</button>)}</div>
+   <details className="desk-more shop-cat" onToggle={e=>{if((e.target as HTMLDetailsElement).open)void openCat()}}><summary className="min-h-tap">Everything Printify makes{cat?` · ${cat.length} products`:''}{picked.length?` · ${picked.length} chosen`:''}</summary>
+    {!cat?<p className="desk-fine">{api.busy?'Opening the catalogue…':'Opens Printify’s whole catalogue. Each product you pick is printed by a European printer when there is one.'}</p>:<>
+     <div className="shop-form"><label className="shop-field"><span>Search the catalogue</span><input type="search" value={cq} onChange={e=>setCq(e.target.value)} placeholder="scarf, flag, cap, glass, towel…"/></label></div>
+     <div className="desk-chips" role="group" aria-label="Catalogue shelves">{catGroups.map(([g,n])=><button key={g} className="desk-chip" aria-current={cg===g} onClick={()=>setCg(g)}>{g} · {n}</button>)}</div>
+     <ul className="shop-catlist">{catShown.map(c=>{const on=picked.some(x=>x.id===c.id);return <li key={c.id}><button className="shop-catitem min-h-tap" aria-pressed={on} onClick={()=>togglePick(c)}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}{c.image?<img src={c.image} alt="" width={72} height={72} loading="lazy"/>:<span className="shop-plus" aria-hidden="true">#</span>}
+      <span><b>{c.title}</b><small>{c.brand} · #{c.id}</small></span><span className="shop-tick" aria-hidden="true">{on?'✓':'+'}</span></button></li>})}</ul>
+     {catShown.length===48&&<p className="desk-fine">Showing the first 48 — search to narrow.</p>}
+    </>}
+   </details>
+   {picked.length>0&&<div className="desk-chips" role="group" aria-label="Chosen from the catalogue">{picked.map(c=><button key={c.id} className="desk-chip" aria-current={true} onClick={()=>togglePick(c)}>{c.title} ✕</button>)}</div>}
    <p className="desk-fine">Picture — from your library ({name(nSub)}’s shelf first, then FAN LIFE’s), or your own</p>
    <button role="radio" aria-checked={nPic==='own'} className="shop-pick own wide" onClick={()=>setNPic('own')}><span className="shop-plus" aria-hidden="true">+</span><span>Upload my own picture</span></button>
    {nPic==='own'&&<div className="shop-form"><label className="shop-field"><span>Picture (PNG or JPG, the larger the better — 3000px or more)</span><input ref={file} type="file" accept="image/png,image/jpeg"/></label>
@@ -109,14 +127,14 @@ export function ShopDesk({initial,subjects,pictures}:{initial:State;subjects:Sub
     <div className="shop-picks" role="radiogroup" aria-label={folder}>{pics.map(pc=><button key={pc.id} role="radio" aria-checked={nPic===pc.id} className="shop-pick" title={pc.name} onClick={()=>setNPic(pc.id)}>
      {/* eslint-disable-next-line @next/next/no-img-element */}
      <img src={thumb(pc.id)} alt={pc.name} width={120} height={150} loading="lazy" referrerPolicy="no-referrer"/></button>)}</div></details>)}
-   <div className="shop-row shop-go"><button className="desk-btn" disabled={!!run||api.busy||!st.connected} onClick={create}>Create and put on sale{nKinds.length>1?` (${nKinds.length} products)`:''}</button></div>
+   <div className="shop-row shop-go"><button className="desk-btn" disabled={!!run||api.busy||!st.connected} onClick={create}>Create and put on sale{nKinds.length+picked.length>1?` (${nKinds.length+picked.length} products)`:''}</button></div>
    <p className="desk-fine">Sell only what is yours to sell: no official club crest, no registered club name, no player’s face, no photograph you did not take. Printify removes listings that break this, and can close the account.</p>
   </section>
 
   <details className="desk-more"><summary className="min-h-tap">Settings — price margin and the catalogue</summary>
    <div className="shop-row"><label className="shop-field"><span>Margin on Printify’s cost (%)</span><input type="number" min={0} max={300} defaultValue={s.margin} onBlur={e=>{const n=Number(e.target.value);if(n!==s.margin)void act('settings',{margin:n},'Margin saved — it applies to the next press.')}}/></label></div>
    <div className="desk-table-wrap"><table className="desk-table"><thead><tr><th>Product</th><th>Printify catalogue product</th><th>Printed by</th><th>Replace</th></tr></thead>
-    <tbody>{KINDS.map(k=>{const m=s.matches[k];return <tr key={k}><th>{KIND_SPECS[k].label}</th><td data-label="Catalogue">{m?`${m.title} (#${m.blueprintId})`:'Found at the first press'}</td><td data-label="Printed by">{m?.provider||'—'}</td>
+    <tbody>{BASIC.map(k=>{const m=s.matches[k];return <tr key={k}><th>{KIND_SPECS[k].label}</th><td data-label="Catalogue">{m?`${m.title} (#${m.blueprintId})`:'Found at the first press'}</td><td data-label="Printed by">{m?.provider||'—'}</td>
      <td data-label="Replace"><button className="desk-btn ghost" disabled={api.busy||!st.connected} onClick={()=>{const n=Number(window.prompt(`Printify catalogue number for ${KIND_SPECS[k].label} (the number in the product’s address on printify.com/app/products/…)`,m?String(m.blueprintId):''));if(n>0)void act('match',{kind:k,blueprintId:n},'Catalogue updated.')}}>Choose</button></td></tr>})}</tbody></table></div>
    <ol className="desk-list">{doc.audit.slice(-8).reverse().map((a,i)=><li key={i}><b>{a.what}</b> — {a.by} · {a.at.slice(0,16).replace('T',' ')}</li>)}</ol>
   </details>

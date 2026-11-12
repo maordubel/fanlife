@@ -28,5 +28,5 @@
  "rowShop": "The shop",
  "rowShopSub": "Posters · bags · shirts",
  "note": "Independent supporter art — not official club merchandise. Orders are printed, shipped and charged by Printify; the checkout opens on our Printify store.",
- "kinds": {"poster":"Posters","framed":"Framed","canvas":"Canvas","tote":"Bags","tee":"T-shirts","hoodie":"Hoodies","kids-tee":"Kids","mug":"Mugs","sticker":"Stickers","phone-case":"Phone cases","puzzle":"Puzzles","notebook":"Notebooks"}
+ "kinds": {"poster":"Posters","framed":"Framed","canvas":"Canvas","tote":"Bags","tee":"T-shirts","hoodie":"Hoodies","kids-tee":"Kids","mug":"Mugs","sticker":"Stickers","phone-case":"Phone cases","puzzle":"Puzzles","notebook":"Notebooks","more":"More"}
 }

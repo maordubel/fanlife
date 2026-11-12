@@ -496,3 +496,13 @@ select.pcc-inline { inline-size: 92px; cursor: pointer; } select.pcc-inline:disa
 .shop-health[data-ok="false"] { border-inline-start: 6px solid var(--mag-vermilion); }
 .shop-health[data-ok="true"] { border-inline-start: 6px solid var(--mag-green, var(--mag-ink)); }
 .shop-notes { margin: 8px 0 0; padding-inline-start: 18px; font-size: 14px; }
+/* the whole Printify catalogue in the builder (12.11.2026) */
+.shop-cat summary { font-weight: 700; }
+.shop-catlist { list-style: none; margin: 10px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 8px; }
+.shop-catitem { display: grid; grid-template-columns: 72px 1fr 28px; align-items: center; gap: 10px; inline-size: 100%; padding: 6px; text-align: start; background: var(--mag-card); color: var(--mag-ink); border: 2px solid var(--mag-ink); cursor: pointer; }
+.shop-catitem[aria-pressed="true"] { background: var(--mag-ink); color: var(--mag-paper); }
+.shop-catitem img { inline-size: 72px; block-size: 72px; object-fit: cover; background: var(--mag-paper); }
+.shop-catitem span { display: grid; gap: 2px; font-size: 14px; }
+.shop-catitem small { font-family: var(--mag-mono); opacity: .7; }
+.shop-tick { font-size: 20px; text-align: center; }
+@media (max-width: 760px) { .shop-catlist { grid-template-columns: 1fr; } }
