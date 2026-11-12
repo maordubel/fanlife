@@ -1,0 +1,1015 @@
+{
+ "schemaVersion": 1,
+ "id": "aek-good-morning",
+ "club": "aek-athens",
+ "series": "Football Fairy Tales",
+ "title": {
+  "en": "Good Morning, AEK",
+  "el": "Καλημέρα, ΑΕΚ"
+ },
+ "voice": {
+  "en": "Leda",
+  "el": "Leda",
+  "chosen": "owner, 11.11.2026"
+ },
+ "palette": {
+  "primary": "#1C1A17",
+  "secondary": "#F6F0E4",
+  "confetti": [
+   "#F2B705",
+   "#F2B705",
+   "#D99A00",
+   "#1C1A17",
+   "#1C1A17",
+   "#F6F0E4",
+   "#F6F0E4"
+  ]
+ },
+ "crests": {
+  "aek": "public/crests/aek-athens.png"
+ },
+ "music": [
+  {
+   "track": "aetheric-coconut-kind-of-love",
+   "from": "once-upon"
+  },
+  {
+   "track": "aylex-happy-day",
+   "from": "cup-1932"
+  },
+  {
+   "track": "aylex-happiness",
+   "from": "title-2018"
+  }
+ ],
+ "pronounce": {
+  "en": "AEK: say the letters, ah-eh-KAH in Greek, or A-E-K. Constantinople: kon-stan-tee-NO-pul. Nea Filadelfeia: NEH-ah fee-lah-DEL-fee-ah. Goumas: GOO-mas. Maropoulos: ma-RO-poo-los. Tzanetis: dza-NEH-tees. Nestoridis: nes-to-REE-dees. Papaioannou: pa-pa-yo-AH-noo. Mavros: MAV-ros. Bajević: BA-yeh-vich. Agia Sophia: ah-YAH so-FEE-ah. Kitrinómavri: kee-tree-NO-mav-ree.",
+  "el": "ΑΕΚ: «Α-Ε-Κάπα» ή «ΑΕΚ» όπως το λένε οι φίλαθλοι. Τα ξένα ονόματα: Ντούσαν Μπάγεβιτς, Κουίνς Παρκ Ρέιντζερς — με φυσική αθηναϊκή προφορά."
+ },
+ "shots": [
+  {
+   "id": "once-upon",
+   "plate": "aek-once",
+   "delivery": "secret",
+   "en": "Once upon a time, far across the sea, there was a great city of domes and towers called Constantinople. Many Greek families lived there — and some of them loved sport very, very much. This… is the story of AEK.",
+   "el": "Μια φορά κι έναν καιρό, μακριά, πέρα από τη θάλασσα, υπήρχε μια μεγάλη πόλη με τρούλους και πύργους, που τη λέγανε Κωνσταντινούπολη. Εκεί ζούσαν πολλές ελληνικές οικογένειες — και μερικές αγαπούσαν πάρα πολύ τον αθλητισμό. Αυτή… είναι η ιστορία της ΑΕΚ.",
+   "sources": [
+    "story frame",
+    "club-packs/aek-athens/world.json founded (Wikipedia, Greek City Times)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ]
+   },
+   "transition": "fade"
+  },
+  {
+   "id": "journey",
+   "plate": "aek-journey",
+   "delivery": "tender",
+   "en": "But one day, they had to leave their homes. They crossed the sea to Athens, carrying very little — a few photographs, a lot of memories… and their love of the game.",
+   "el": "Μια μέρα όμως, χρειάστηκε να αφήσουν τα σπίτια τους. Πέρασαν τη θάλασσα και ήρθαν στην Αθήνα, κρατώντας πολύ λίγα — μερικές φωτογραφίες, πολλές αναμνήσεις… και την αγάπη τους για το παιχνίδι.",
+   "sources": [
+    "club-packs/aek-athens/world.json flavour refugees (Wikipedia History of AEK, Greek City Times, Libero)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ]
+   },
+   "transition": "dissolve"
+  },
+  {
+   "id": "founded",
+   "plate": "aek-1924",
+   "delivery": "warm",
+   "en": "In 1924, in Athens, they started a club, and gave it a name that remembers where they came from: AEK — the Athletic Union of Constantinople.",
+   "el": "Το 1924, στην Αθήνα, ίδρυσαν έναν σύλλογο και του έδωσαν ένα όνομα που θυμάται από πού ήρθαν: ΑΕΚ — Αθλητική Ένωσις Κωνσταντινουπόλεως.",
+   "sources": [
+    "club-packs/aek-athens/world.json founded (Wikipedia, Greek City Times)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "1924",
+      "at": 0.2,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     },
+     {
+      "text": "A.E.K.",
+      "at": 0.6,
+      "xy": [
+       1440,
+       250
+      ],
+      "size": 110,
+      "rot": 4
+     }
+    ],
+    "punch": [
+     0.6
+    ]
+   },
+   "transition": "slide"
+  },
+  {
+   "id": "eagle",
+   "plate": "aek-eagle",
+   "delivery": "playful",
+   "en": "Their sign is a double-headed eagle, from the old empire of Constantinople. One head looks this way… and the other head looks that way. Can you look left and right at the same time? No? The eagle can!",
+   "el": "Το σήμα τους είναι ένας δικέφαλος αετός, από την παλιά αυτοκρατορία της Κωνσταντινούπολης. Το ένα κεφάλι κοιτάζει από εδώ… και το άλλο κοιτάζει από εκεί. Μπορείς να κοιτάξεις δεξιά κι αριστερά την ίδια στιγμή; Όχι; Ο αετός μπορεί!",
+   "sources": [
+    "club-packs/aek-athens/world.json emblem (Greek City Times, Football History)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "crests": [
+     {
+      "crest": "aek",
+      "at": 0.3,
+      "xy": [
+       1480,
+       520
+      ],
+      "size": 300
+     }
+    ],
+    "punch": [
+     0.85
+    ]
+   },
+   "transition": "zoom"
+  },
+  {
+   "id": "colours",
+   "plate": "aek-colours",
+   "delivery": "proud",
+   "en": "Their colours are yellow and black, the colours of that old empire — so that every child would remember the city their grandparents came from. Yellow and black: Kitrinómavri!",
+   "el": "Τα χρώματά τους είναι το κίτρινο και το μαύρο, τα χρώματα εκείνης της παλιάς αυτοκρατορίας — για να θυμάται κάθε παιδί την πόλη από την οποία ήρθαν οι παππούδες του. Κίτρινο και μαύρο: Κιτρινόμαυροι!",
+   "sources": [
+    "Wikipedia (A.E.K. sports club): colours yellow and black, inspired by the Byzantine Empire, to remind future generations of the Greeks of Constantinople",
+    "Football History (AEK)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.09
+    ],
+    "tags": [
+     {
+      "text": "YELLOW & BLACK",
+      "at": 0.35,
+      "xy": [
+       1400,
+       230
+      ],
+      "size": 80,
+      "rot": -4
+     }
+    ],
+    "punch": [
+     0.35
+    ]
+   },
+   "transition": "iris"
+  },
+  {
+   "id": "filadelfeia",
+   "plate": "aek-filadelfeia",
+   "delivery": "warm",
+   "en": "They made a new home in a new neighbourhood, built for families just like theirs: Nea Filadelfeia. And in 1926, they were given a piece of land there to play on.",
+   "el": "Έφτιαξαν ένα καινούργιο σπίτι σε μια καινούργια γειτονιά, χτισμένη για οικογένειες σαν τις δικές τους: τη Νέα Φιλαδέλφεια. Και το 1926, τους δόθηκε εκεί ένα κομμάτι γης για να παίζουν.",
+   "sources": [
+    "club-packs/aek-athens/world.json flavour filadelfeia (Wikipedia History of AEK, Libero)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "NEA FILADELFEIA",
+      "at": 0.3,
+      "xy": [
+       1360,
+       210
+      ],
+      "size": 72,
+      "rot": -3
+     }
+    ],
+    "punch": [
+     0.75
+    ]
+   },
+   "transition": "slide"
+  },
+  {
+   "id": "goumas",
+   "plate": "aek-goumas",
+   "delivery": "playful",
+   "en": "In 1930, a stadium grew on that land: the Nikos Goumas Stadium. And guess who came to play the very first match? Olympiacos! It ended two–two. Friends first!",
+   "el": "Το 1930, πάνω σε εκείνη τη γη μεγάλωσε ένα γήπεδο: το γήπεδο Νίκος Γκούμας. Και μάντεψε ποιος ήρθε να παίξει τον πρώτο αγώνα; Ο Ολυμπιακός! Τελείωσε δύο–δύο. Πρώτα φίλοι!",
+   "sources": [
+    "club-packs/aek-athens/world.json fact goumas (Wikipedia Nikos Goumas Stadium, Football History)",
+    "Wikipedia (History of AEK): first home game November 1930, friendly v Olympiacos 2–2"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.09
+    ],
+    "tags": [
+     {
+      "text": "1930",
+      "at": 0.15,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     },
+     {
+      "text": "2–2",
+      "at": 0.75,
+      "xy": [
+       1440,
+       260
+      ],
+      "size": 110,
+      "rot": 4
+     }
+    ],
+    "punch": [
+     0.75
+    ]
+   },
+   "transition": "page",
+   "cap": {
+    "en": "In 1930, a stadium grew on that land: the Nikos Goumas Stadium. And guess who came to play the very first match? Olympiacos! It ended 2–2. Friends first!",
+    "el": "Το 1930, πάνω σε εκείνη τη γη μεγάλωσε ένα γήπεδο: το γήπεδο Νίκος Γκούμας. Και μάντεψε ποιος ήρθε να παίξει τον πρώτο αγώνα; Ο Ολυμπιακός! Τελείωσε 2–2. Πρώτα φίλοι!"
+   }
+  },
+  {
+   "id": "cup-1932",
+   "plate": "aek-cup1932",
+   "delivery": "build",
+   "en": "In 1932, Greece played its very first Cup. And who won it? AEK! Five–three in the final.",
+   "el": "Το 1932, η Ελλάδα έπαιξε το πρώτο της Κύπελλο. Και ποιος το κέρδισε; Η ΑΕΚ! Πέντε–τρία στον τελικό.",
+   "sources": [
+    "Wikipedia (History of AEK Athens F.C.): won the inaugural Greek Cup in 1932, 5–3 v Aris"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "tags": [
+     {
+      "text": "1932",
+      "at": 0.15,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     },
+     {
+      "text": "5–3",
+      "at": 0.75,
+      "xy": [
+       1440,
+       260
+      ],
+      "size": 110,
+      "rot": 4
+     }
+    ],
+    "punch": [
+     0.75
+    ],
+    "confettiAt": 0.8,
+    "sfx": [
+     {
+      "file": "crowd-claps",
+      "at": 0.78,
+      "level": 0.3
+     }
+    ]
+   },
+   "transition": "torn",
+   "cap": {
+    "en": "In 1932, Greece played its very first Cup. And who won it? AEK! 5–3 in the final.",
+    "el": "Το 1932, η Ελλάδα έπαιξε το πρώτο της Κύπελλο. Και ποιος το κέρδισε; Η ΑΕΚ! 5–3 στον τελικό."
+   }
+  },
+  {
+   "id": "maropoulos",
+   "plate": "aek-strikers",
+   "delivery": "adventure",
+   "en": "Up front played two great friends, Kleanthis Maropoulos and Tryfon Tzanetis — one of the finest pairs of strikers Greek football has ever seen. One passed, the other scored. Then the other way round!",
+   "el": "Στην επίθεση έπαιζαν δύο μεγάλοι φίλοι, ο Κλεάνθης Μαρόπουλος κι ο Τρύφων Τζανετής — ένα από τα καλύτερα δίδυμα επιθετικών που είδε ποτέ το ελληνικό ποδόσφαιρο. Ο ένας πασάριζε, ο άλλος σκόραρε. Κι ύστερα ανάποδα!",
+   "sources": [
+    "Wikipedia (History of AEK Athens F.C.): Maropoulos and Tzanetis, the best pair of forwards at the time and one of the best in Greek football history"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.09
+    ],
+    "tags": [
+     {
+      "text": "MAROPOULOS",
+      "at": 0.2,
+      "xy": [
+       1400,
+       200
+      ],
+      "size": 72,
+      "rot": -3
+     },
+     {
+      "text": "TZANETIS",
+      "at": 0.45,
+      "xy": [
+       460,
+       250
+      ],
+      "size": 72,
+      "rot": 4
+     }
+    ],
+    "punch": [
+     0.85
+    ]
+   },
+   "transition": "slide"
+  },
+  {
+   "id": "double-1939",
+   "plate": "aek-1939",
+   "delivery": "build",
+   "en": "And in 1939, AEK won the championship and the Cup in the same year — the very first double in the history of Greek football! Can you clap twice? Clap… clap! One for the league, one for the Cup.",
+   "el": "Και το 1939, η ΑΕΚ κέρδισε το πρωτάθλημα και το Κύπελλο την ίδια χρονιά — το πρώτο νταμπλ στην ιστορία του ελληνικού ποδοσφαίρου! Μπορείς να χτυπήσεις παλαμάκια δύο φορές; Παλαμάκια… παλαμάκια! Ένα για το πρωτάθλημα, ένα για το Κύπελλο.",
+   "sources": [
+    "Wikipedia (History of AEK Athens F.C.): the 1939 Cup final win marked the first ever double in Greek football"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "tags": [
+     {
+      "text": "1939",
+      "at": 0.15,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     },
+     {
+      "text": "DOUBLE!",
+      "at": 0.45,
+      "xy": [
+       1440,
+       260
+      ],
+      "size": 100,
+      "rot": 4
+     }
+    ],
+    "punch": [
+     0.45
+    ],
+    "confettiAt": 0.5,
+    "sfx": [
+     {
+      "file": "crowd-claps",
+      "at": 0.75,
+      "level": 0.35
+     }
+    ]
+   },
+   "transition": "page"
+  },
+  {
+   "id": "nestoridis",
+   "plate": "aek-nestoridis",
+   "delivery": "proud",
+   "en": "Years later came Kostas Nestoridis, who was the top scorer of the whole league five years in a row. Five! Show me a whole hand!",
+   "el": "Χρόνια αργότερα ήρθε ο Κώστας Νεστορίδης, που βγήκε πρώτος σκόρερ σε όλο το πρωτάθλημα πέντε χρονιές στη σειρά. Πέντε! Δείξε μου ένα ολόκληρο χέρι!",
+   "sources": [
+    "Wikipedia (List of AEK records): Nestoridis league top scorer 1959–1963",
+    "Football History (AEK)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.09
+    ],
+    "tags": [
+     {
+      "text": "KOSTAS NESTORIDIS",
+      "at": 0.2,
+      "xy": [
+       1360,
+       200
+      ],
+      "size": 66,
+      "rot": -3
+     },
+     {
+      "text": "5 ×",
+      "at": 0.7,
+      "xy": [
+       420,
+       260
+      ],
+      "size": 110,
+      "rot": 4
+     }
+    ],
+    "punch": [
+     0.7
+    ]
+   },
+   "transition": "zoom"
+  },
+  {
+   "id": "mimis",
+   "plate": "aek-mimis",
+   "delivery": "tender",
+   "en": "And in 1962, a young striker arrived: Mimis Papaioannou. He played for AEK for seventeen seasons and scored more goals for the club than anyone. And in all those years — he was never sent off. Not once!",
+   "el": "Και το 1962 ήρθε ένας νεαρός επιθετικός: ο Μίμης Παπαϊωάννου. Έπαιξε στην ΑΕΚ δεκαεπτά σεζόν κι έβαλε περισσότερα γκολ για τον σύλλογο από οποιονδήποτε. Κι όλα αυτά τα χρόνια — δεν αποβλήθηκε ποτέ. Ούτε μία φορά!",
+   "sources": [
+    "Wikipedia (Mimis Papaioannou): 17 seasons at AEK, never shown a red card",
+    "Football History (AEK): top goalscorer and most games, Mimis Papaioannou"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "MIMIS",
+      "at": 0.2,
+      "xy": [
+       1440,
+       220
+      ],
+      "size": 110,
+      "rot": -4
+     },
+     {
+      "text": "17",
+      "at": 0.5,
+      "xy": [
+       420,
+       250
+      ],
+      "size": 120,
+      "rot": 4
+     }
+    ],
+    "punch": [
+     0.5
+    ]
+   },
+   "transition": "dissolve",
+   "cap": {
+    "en": "And in 1962, a young striker arrived: Mimis Papaioannou. He played for AEK for 17 seasons and scored more goals for the club than anyone. And in all those years — he was never sent off. Not once!",
+    "el": "Και το 1962 ήρθε ένας νεαρός επιθετικός: ο Μίμης Παπαϊωάννου. Έπαιξε στην ΑΕΚ 17 σεζόν κι έβαλε περισσότερα γκολ για τον σύλλογο από οποιονδήποτε. Κι όλα αυτά τα χρόνια — δεν αποβλήθηκε ποτέ. Ούτε μία φορά!"
+   }
+  },
+  {
+   "id": "title-1963",
+   "plate": "aek-1963",
+   "delivery": "build",
+   "en": "In 1963, the title came down to one last match against Panathinaikos. Mimis scored twice, it ended three–three… and AEK were champions!",
+   "el": "Το 1963, ο τίτλος κρίθηκε σε έναν τελευταίο αγώνα με τον Παναθηναϊκό. Ο Μίμης σκόραρε δύο φορές, τελείωσε τρία–τρία… κι η ΑΕΚ ήταν πρωταθλήτρια!",
+   "sources": [
+    "Wikipedia (AEK Athens F.C.): Papaioannou scored twice in the 1963 play-off v Panathinaikos, 3–3, giving AEK the championship"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "tags": [
+     {
+      "text": "1963",
+      "at": 0.15,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     },
+     {
+      "text": "3–3",
+      "at": 0.6,
+      "xy": [
+       1440,
+       260
+      ],
+      "size": 110,
+      "rot": 4
+     }
+    ],
+    "punch": [
+     0.6
+    ],
+    "confettiAt": 0.72,
+    "sfx": [
+     {
+      "file": "crowd-real-goal",
+      "at": 0.55,
+      "level": 0.4
+     }
+    ]
+   },
+   "transition": "slide",
+   "cap": {
+    "en": "In 1963, the title came down to one last match against Panathinaikos. Mimis scored twice, it ended 3–3… and AEK were champions!",
+    "el": "Το 1963, ο τίτλος κρίθηκε σε έναν τελευταίο αγώνα με τον Παναθηναϊκό. Ο Μίμης σκόραρε δύο φορές, τελείωσε 3–3… κι η ΑΕΚ ήταν πρωταθλήτρια!"
+   }
+  },
+  {
+   "id": "europe-1969",
+   "plate": "aek-europe",
+   "delivery": "adventure",
+   "en": "In 1969, AEK became the first Greek club to reach the quarter-finals of the European Cup — the biggest cup of all.",
+   "el": "Το 1969, η ΑΕΚ έγινε η πρώτη ελληνική ομάδα που έφτασε στους οκτώ του Κυπέλλου Πρωταθλητριών Ευρώπης — του μεγαλύτερου κυπέλλου απ' όλα.",
+   "sources": [
+    "Wikipedia (AEK Athens F.C.): 1968–69, first Greek club to reach the European Cup quarter-finals"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "1969",
+      "at": 0.2,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     }
+    ],
+    "punch": [
+     0.75
+    ]
+   },
+   "transition": "iris"
+  },
+  {
+   "id": "semi-1977",
+   "plate": "aek-1977",
+   "delivery": "build",
+   "en": "And in 1977, they went even further — all the way to the semi-finals of the UEFA Cup! On the way, they beat Queens Park Rangers from London… on penalties! The first Greek club ever to get so far.",
+   "el": "Και το 1977 πήγαν ακόμα πιο μακριά — μέχρι τα ημιτελικά του Κυπέλλου UEFA! Στον δρόμο, απέκλεισαν την Κουίνς Παρκ Ρέιντζερς από το Λονδίνο… στα πέναλτι! Η πρώτη ελληνική ομάδα που έφτασε ποτέ τόσο μακριά.",
+   "sources": [
+    "Wikipedia (AEK Athens F.C.): 1976–77 UEFA Cup semi-finals, first Greek club to do so",
+    "Wikipedia (AEK in European football): QPR 3–3, AEK through on penalties; semi-final v Juventus"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.11
+    ],
+    "tags": [
+     {
+      "text": "1977",
+      "at": 0.15,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     },
+     {
+      "text": "SEMI-FINAL!",
+      "at": 0.78,
+      "xy": [
+       1420,
+       260
+      ],
+      "size": 90,
+      "rot": 4
+     }
+    ],
+    "punch": [
+     0.5,
+     0.78
+    ],
+    "sfx": [
+     {
+      "file": "crowd-real-goal",
+      "at": 0.5,
+      "level": 0.4
+     }
+    ]
+   },
+   "transition": "page"
+  },
+  {
+   "id": "mavros",
+   "plate": "aek-mavros",
+   "delivery": "proud",
+   "en": "In that team was a young striker called Thomas Mavros. He would go on to score more goals than anyone in the history of the Greek league.",
+   "el": "Σε εκείνη την ομάδα έπαιζε ένας νεαρός επιθετικός, ο Θωμάς Μαύρος. Αργότερα θα έβαζε περισσότερα γκολ από οποιονδήποτε στην ιστορία του ελληνικού πρωταθλήματος.",
+   "sources": [
+    "Wikipedia (AEK Athens F.C.): Thomas Mavros, the all-time top goalscorer in the Greek Championship"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.09
+    ],
+    "tags": [
+     {
+      "text": "THOMAS MAVROS",
+      "at": 0.3,
+      "xy": [
+       1380,
+       210
+      ],
+      "size": 74,
+      "rot": -3
+     }
+    ],
+    "punch": [
+     0.3,
+     0.85
+    ]
+   },
+   "transition": "slide"
+  },
+  {
+   "id": "double-1978",
+   "plate": "aek-1978",
+   "delivery": "proud",
+   "en": "And in 1978, champions and Cup winners again — another double for the yellow and black!",
+   "el": "Και το 1978, ξανά πρωταθλητές και κυπελλούχοι — άλλο ένα νταμπλ για τους κιτρινόμαυρους!",
+   "sources": [
+    "Wikipedia (1977–78 AEK Athens F.C. season): league and cup double"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "1978",
+      "at": 0.2,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     }
+    ],
+    "confettiAt": 0.45,
+    "sfx": [
+     {
+      "file": "crowd-claps",
+      "at": 0.45,
+      "level": 0.35
+     }
+    ]
+   },
+   "transition": "zoom"
+  },
+  {
+   "id": "bajevic",
+   "plate": "aek-bajevic",
+   "delivery": "build",
+   "en": "Then a man who once scored goals for AEK came back as the coach: Dušan Bajević. With him, AEK were champions in 1989 — and then three times in a row: 1992, 1993, 1994! One, two, three!",
+   "el": "Ύστερα, ένας άνθρωπος που κάποτε έβαζε γκολ για την ΑΕΚ, γύρισε ως προπονητής: ο Ντούσαν Μπάγεβιτς. Μαζί του, η ΑΕΚ έγινε πρωταθλήτρια το 1989 — κι ύστερα τρεις φορές στη σειρά: 1992, 1993, 1994! Ένα, δύο, τρία!",
+   "sources": [
+    "Football History (AEK): champions 1988–89 and back-to-back 1992–1994 under Bajević",
+    "Wikipedia (List of AEK records): titles 1988–89, 1991–92, 1992–93, 1993–94"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "tags": [
+     {
+      "text": "DUŠAN BAJEVIĆ",
+      "at": 0.15,
+      "xy": [
+       1360,
+       200
+      ],
+      "size": 70,
+      "rot": -3
+     },
+     {
+      "text": "1 · 2 · 3!",
+      "at": 0.82,
+      "xy": [
+       440,
+       260
+      ],
+      "size": 96,
+      "rot": 4
+     }
+    ],
+    "punch": [
+     0.82
+    ],
+    "confettiAt": 0.86,
+    "sfx": [
+     {
+      "file": "crowd-real-goal",
+      "at": 0.84,
+      "level": 0.35
+     }
+    ]
+   },
+   "transition": "torn"
+  },
+  {
+   "id": "olympic-stadium",
+   "plate": "aek-oaka",
+   "delivery": "adventure",
+   "en": "In 2003, the old stadium in Nea Filadelfeia closed. For many years, AEK played far away, in the huge Olympic Stadium, under its great white arches. But everyone dreamed of going home.",
+   "el": "Το 2003 το παλιό γήπεδο στη Νέα Φιλαδέλφεια έκλεισε. Για πολλά χρόνια, η ΑΕΚ έπαιζε μακριά, στο τεράστιο Ολυμπιακό Στάδιο, κάτω από τις μεγάλες λευκές καμάρες του. Όμως όλοι ονειρεύονταν να γυρίσουν σπίτι.",
+   "sources": [
+    "club-packs/aek-athens/world.json facts goumas + olympic (Wikipedia, Football History)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ],
+    "tags": [
+     {
+      "text": "2003",
+      "at": 0.2,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     }
+    ]
+   },
+   "transition": "dissolve"
+  },
+  {
+   "id": "title-2018",
+   "plate": "aek-2018",
+   "delivery": "build",
+   "en": "They waited twenty-four years for another title… and in 2018 — AEK were champions of Greece once more!",
+   "el": "Περίμεναν είκοσι τέσσερα χρόνια για έναν ακόμα τίτλο… και το 2018 — η ΑΕΚ ήταν ξανά πρωταθλήτρια Ελλάδας!",
+   "sources": [
+    "Associated Press, 5 May 2018: AEK first Greek league title since 1994"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "tags": [
+     {
+      "text": "2018",
+      "at": 0.55,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     }
+    ],
+    "punch": [
+     0.55
+    ],
+    "confettiAt": 0.6,
+    "sfx": [
+     {
+      "file": "crowd-real-goal",
+      "at": 0.58,
+      "level": 0.4
+     }
+    ]
+   },
+   "transition": "page",
+   "cap": {
+    "en": "They waited 24 years for another title… and in 2018 — AEK were champions of Greece once more!",
+    "el": "Περίμεναν 24 χρόνια για έναν ακόμα τίτλο… και το 2018 — η ΑΕΚ ήταν ξανά πρωταθλήτρια Ελλάδας!"
+   }
+  },
+  {
+   "id": "agia-sophia",
+   "plate": "aek-agiasophia",
+   "delivery": "tender",
+   "en": "And on the thirtieth of September, 2022, a brand-new home opened — on the very same ground in Nea Filadelfeia. They named it Agia Sophia, after the most famous church of Constantinople. The family had come home.",
+   "el": "Και στις τριάντα Σεπτεμβρίου του 2022, άνοιξε ένα ολοκαίνουργιο σπίτι — στην ίδια ακριβώς γη, στη Νέα Φιλαδέλφεια. Το ονόμασαν Αγιά Σοφιά, από την πιο φημισμένη εκκλησία της Κωνσταντινούπολης. Η οικογένεια είχε γυρίσει σπίτι.",
+   "sources": [
+    "club-packs/aek-athens/world.json ground + flavour agia-sophia (Wikipedia, Greek City Times, Football History)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "AGIA SOPHIA",
+      "at": 0.5,
+      "xy": [
+       1400,
+       220
+      ],
+      "size": 90,
+      "rot": -4
+     }
+    ],
+    "punch": [
+     0.5
+    ],
+    "sfx": [
+     {
+      "file": "crowd-real-murmur",
+      "at": 0.6,
+      "level": 0.2
+     }
+    ]
+   },
+   "transition": "zoom",
+   "cap": {
+    "en": "And on 30 September 2022, a brand-new home opened — on the very same ground in Nea Filadelfeia. They named it Agia Sophia, after the most famous church of Constantinople. The family had come home.",
+    "el": "Και στις 30 Σεπτεμβρίου 2022, άνοιξε ένα ολοκαίνουργιο σπίτι — στην ίδια ακριβώς γη, στη Νέα Φιλαδέλφεια. Το ονόμασαν Αγιά Σοφιά, από την πιο φημισμένη εκκλησία της Κωνσταντινούπολης. Η οικογένεια είχε γυρίσει σπίτι."
+   }
+  },
+  {
+   "id": "double-2023",
+   "plate": "aek-2023",
+   "delivery": "proud",
+   "en": "And in their very first season back home, AEK won the league and the Cup together — a double, for the first time in forty-five years!",
+   "el": "Και στην πρώτη κιόλας σεζόν στο σπίτι, η ΑΕΚ κέρδισε μαζί πρωτάθλημα και Κύπελλο — νταμπλ, για πρώτη φορά μετά από σαράντα πέντε χρόνια!",
+   "sources": [
+    "Neos Kosmos, 15 & 25 May 2023: 13th league title; Cup final 2–0 v PAOK, first double since 1978"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "tags": [
+     {
+      "text": "2023",
+      "at": 0.15,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     },
+     {
+      "text": "DOUBLE!",
+      "at": 0.55,
+      "xy": [
+       1440,
+       260
+      ],
+      "size": 100,
+      "rot": 4
+     }
+    ],
+    "punch": [
+     0.55
+    ],
+    "confettiAt": 0.6,
+    "sfx": [
+     {
+      "file": "crowd-real-goal",
+      "at": 0.58,
+      "level": 0.4
+     }
+    ]
+   },
+   "transition": "page",
+   "cap": {
+    "en": "And in their very first season back home, AEK won the league and the Cup together — a double, for the first time in 45 years!",
+    "el": "Και στην πρώτη κιόλας σεζόν στο σπίτι, η ΑΕΚ κέρδισε μαζί πρωτάθλημα και Κύπελλο — νταμπλ, για πρώτη φορά μετά από 45 χρόνια!"
+   }
+  },
+  {
+   "id": "gate-21",
+   "plate": "aek-gate21",
+   "delivery": "close",
+   "en": "And at every match, at Gate 21, the most devoted supporters stand together, and the yellow and black sings with all its heart.",
+   "el": "Και σε κάθε αγώνα, στη Θύρα 21, στέκονται μαζί οι πιο φανατικοί φίλαθλοι, και το κιτρινόμαυρο τραγουδά με όλη του την καρδιά.",
+   "sources": [
+    "club-packs/aek-athens/world.json terrace (Wikipedia Original 21, Greek City Times)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ],
+    "tags": [
+     {
+      "text": "GATE 21",
+      "at": 0.4,
+      "xy": [
+       1440,
+       230
+      ],
+      "size": 100,
+      "rot": -4
+     }
+    ],
+    "sfx": [
+     {
+      "file": "crowd-real-murmur",
+      "at": 0.05,
+      "level": 0.25
+     }
+    ]
+   },
+   "transition": "dissolve"
+  },
+  {
+   "id": "basketball",
+   "plate": "basket-aek",
+   "delivery": "wry",
+   "en": "There is also a beautiful story about our basketball team… but we'll get to that another time.",
+   "el": "Υπάρχει και μια όμορφη ιστορία για την ομάδα μπάσκετ μας… αλλά θα φτάσουμε κι εκεί.",
+   "sources": [
+    "owner, 12.11.2026"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.06
+    ]
+   },
+   "transition": "slide"
+  },
+  {
+   "id": "good-morning",
+   "plate": "aek-close",
+   "delivery": "warm",
+   "en": "The families who crossed the sea. Maropoulos and Tzanetis, Mimis, Mavros… and the eagle that looks both ways — back to where we came from, and forward to where we're going. Good morning, AEK.",
+   "el": "Οι οικογένειες που πέρασαν τη θάλασσα. Ο Μαρόπουλος κι ο Τζανετής, ο Μίμης, ο Μαύρος… κι ο αετός που κοιτάζει και προς τις δύο μεριές — πίσω, από εκεί που ήρθαμε, και μπροστά, εκεί που πάμε. Καλημέρα, ΑΕΚ.",
+   "sources": [
+    "episode summary"
+   ],
+   "visual": {
+    "extra": 2.6,
+    "crests": [
+     {
+      "crest": "aek",
+      "at": 0.55,
+      "xy": [
+       960,
+       350
+      ],
+      "size": 330
+     }
+    ],
+    "wordmarkAt": 0.72,
+    "wordmarkTag": "Good Morning, AEK"
+   },
+   "transition": "page"
+  }
+ ]
+}

@@ -1,0 +1,1061 @@
+{
+ "schemaVersion": 1,
+ "id": "olympiacos-good-morning",
+ "club": "olympiacos",
+ "series": "Football Fairy Tales",
+ "title": {
+  "en": "Good Morning, Olympiacos",
+  "el": "Καλημέρα, Ολυμπιακέ"
+ },
+ "voice": {
+  "en": "Leda",
+  "el": "Leda",
+  "chosen": "owner, 11.11.2026"
+ },
+ "palette": {
+  "primary": "#C8102E",
+  "secondary": "#F6F0E4"
+ },
+ "crests": {
+  "oly": "public/crests/olympiacos.png"
+ },
+ "music": [
+  {
+   "track": "aylex-happy-day",
+   "from": "once-upon"
+  },
+  {
+   "track": "aetheric-coconut-kind-of-love",
+   "from": "six-in-a-row"
+  },
+  {
+   "track": "aylex-happiness",
+   "from": "seven-again"
+  }
+ ],
+ "pronounce": {
+  "en": "Olympiacos: oh-lim-BEE-ah-kos. Piraeus: pie-REE-us. Thrylos: THREE-los. Andrianopoulos: an-dree-ah-NO-poo-los. Karaiskakis: ka-ra-ees-KA-kees. Faliro: FA-lee-ro. Grammatikopoulos: gra-ma-tee-KO-poo-los. Helmis: HEL-mees. Sideris: see-DEH-rees. Bajević: BA-yeh-vich. Rivaldo: ree-VAHL-doh. El Kaabi: el KAH-bee.",
+  "el": "Τα ξένα ονόματα: Ντούσαν Μπάγεβιτς, Ριβάλντο, Αγιούμπ Ελ Κααμπί, Φιορεντίνα, Μίλαν, Γιουβέντους — με φυσική αθηναϊκή προφορά."
+ },
+ "shots": [
+  {
+   "id": "once-upon",
+   "plate": "oly-once",
+   "delivery": "secret",
+   "en": "Once upon a time, by a big blue sea, there was a busy port where ships came in from all over the world. Its name was Piraeus. And this… is the story of Olympiacos.",
+   "el": "Μια φορά κι έναν καιρό, δίπλα σε μια μεγάλη γαλάζια θάλασσα, υπήρχε ένα πολυσύχναστο λιμάνι, όπου έρχονταν καράβια από όλο τον κόσμο. Το έλεγαν Πειραιά. Κι αυτή… είναι η ιστορία του Ολυμπιακού.",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ]
+   },
+   "transition": "fade"
+  },
+  {
+   "id": "red-white",
+   "plate": "oly-redwhite",
+   "delivery": "playful",
+   "en": "Olympiacos is red and white. Red for passion — a big, warm, beating heart. White for purity — clean and bright. And green? No, thank you. We are red and white!",
+   "el": "Ο Ολυμπιακός είναι κόκκινος και λευκός. Κόκκινο για το πάθος — μια μεγάλη, ζεστή καρδιά που χτυπά. Λευκό για την αγνότητα — καθαρό και φωτεινό. Και πράσινο; Όχι, ευχαριστούμε. Εμείς είμαστε ερυθρόλευκοι!",
+   "sources": [
+    "club-packs/olympiacos/world.json colours (Wikipedia, in.gr, GreeceIndex)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "tags": [
+     {
+      "text": "RED & WHITE",
+      "at": 0.3,
+      "xy": [
+       1420,
+       230
+      ],
+      "size": 84,
+      "rot": -4
+     }
+    ],
+    "punch": [
+     0.3,
+     0.8
+    ]
+   },
+   "transition": "iris"
+  },
+  {
+   "id": "port",
+   "plate": "oly-port",
+   "delivery": "warm",
+   "en": "Down at the harbour worked sailors, dockers and fishermen — and after work, they played football. In 1925, the clubs of the port came together, and a new team was born: Olympiacos.",
+   "el": "Στο λιμάνι δούλευαν ναυτικοί, λιμενεργάτες και ψαράδες — και μετά τη δουλειά έπαιζαν ποδόσφαιρο. Το 1925, οι σύλλογοι του λιμανιού ενώθηκαν, και γεννήθηκε μια καινούργια ομάδα: ο Ολυμπιακός.",
+   "sources": [
+    "world.json founded + flavour piraeus (Wikipedia, To Vima, Sigmalive, Football History)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "1925",
+      "at": 0.55,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": 4
+     }
+    ],
+    "punch": [
+     0.55
+    ]
+   },
+   "transition": "slide",
+   "cap": {
+    "en": "Down at the harbour worked sailors, dockers and fishermen — and after work, they played football. In 1925, the clubs of the port came together, and a new team was born: Olympiacos."
+   }
+  },
+  {
+   "id": "first-game",
+   "plate": "oly-ship",
+   "delivery": "adventure",
+   "en": "Only a few weeks later, they played their very first match — against the sailors of a big French warship! And they won six–nil. Six! That's one whole hand… and one more finger!",
+   "el": "Λίγες μόνο εβδομάδες αργότερα, έπαιξαν τον πρώτο τους αγώνα — με τους ναύτες ενός μεγάλου γαλλικού πολεμικού πλοίου! Και κέρδισαν έξι–μηδέν. Έξι! Ένα ολόκληρο χέρι… κι ένα δαχτυλάκι ακόμα!",
+   "sources": [
+    "To Vima / Ta Nea \"Red wine and the night a legend was born\" (2025): first match 6–0 v the crew of the French warship Jeanne d'Arc"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.09
+    ],
+    "tags": [
+     {
+      "text": "6–0",
+      "at": 0.5,
+      "xy": [
+       1450,
+       250
+      ],
+      "size": 120,
+      "rot": -4
+     }
+    ],
+    "punch": [
+     0.5
+    ],
+    "sfx": [
+     {
+      "file": "crowd-claps",
+      "at": 0.55,
+      "level": 0.3
+     }
+    ]
+   },
+   "transition": "zoom",
+   "cap": {
+    "en": "Only a few weeks later, they played their very first match — against the sailors of a big French warship! And they won 6–0. Six! That's one whole hand… and one more finger!",
+    "el": "Λίγες μόνο εβδομάδες αργότερα, έπαιξαν τον πρώτο τους αγώνα — με τους ναύτες ενός μεγάλου γαλλικού πολεμικού πλοίου! Και κέρδισαν 6–0. Έξι! Ένα ολόκληρο χέρι… κι ένα δαχτυλάκι ακόμα!"
+   }
+  },
+  {
+   "id": "brothers",
+   "plate": "oly-brothers",
+   "delivery": "playful",
+   "en": "In that team played five brothers: Yannis, Giorgos, Dinos, Vassilis and Leonidas Andrianopoulos. Five brothers in one team! Let's count them on one hand: one, two, three, four, five!",
+   "el": "Σε εκείνη την ομάδα έπαιζαν πέντε αδέλφια: ο Γιάννης, ο Γιώργος, ο Ντίνος, ο Βασίλης και ο Λεωνίδας Ανδριανόπουλος. Πέντε αδέλφια σε μία ομάδα! Ας τα μετρήσουμε στο ένα χέρι: ένα, δύο, τρία, τέσσερα, πέντε!",
+   "sources": [
+    "Wikipedia (Olympiacos F.C.; Giannis Andrianopoulos)",
+    "To Vima / in.gr \"The Five Andrianopoulos Brothers\" (2025)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "tags": [
+     {
+      "text": "ANDRIANOPOULOS",
+      "at": 0.25,
+      "xy": [
+       1360,
+       200
+      ],
+      "size": 70,
+      "rot": -3
+     },
+     {
+      "text": "1 · 2 · 3 · 4 · 5!",
+      "at": 0.62,
+      "xy": [
+       460,
+       300
+      ],
+      "size": 80,
+      "rot": 4
+     }
+    ],
+    "punch": [
+     0.62
+    ]
+   },
+   "transition": "page"
+  },
+  {
+   "id": "legend",
+   "plate": "oly-legend",
+   "delivery": "tender",
+   "en": "They played so beautifully that people began to tell stories about them, the way you tell fairy tales at bedtime. And the team got a name it still carries today: Thrylos — the Legend.",
+   "el": "Έπαιζαν τόσο όμορφα, που ο κόσμος άρχισε να λέει ιστορίες γι' αυτούς, όπως λέμε παραμύθια πριν τον ύπνο. Κι η ομάδα πήρε ένα όνομα που κρατά ως σήμερα: Θρύλος.",
+   "sources": [
+    "Wikipedia (Giannis Andrianopoulos): the brothers earned the club the name Thrylos",
+    "world.json nicknames (Wikipedia, To Vima, Neos Kosmos)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "THRYLOS",
+      "at": 0.68,
+      "xy": [
+       1420,
+       240
+      ],
+      "size": 100,
+      "rot": -4
+     }
+    ],
+    "punch": [
+     0.68
+    ]
+   },
+   "transition": "dissolve"
+  },
+  {
+   "id": "laurel",
+   "plate": "oly-laurel",
+   "delivery": "playful",
+   "en": "Their sign is a young athlete with a crown of laurel leaves — like the winners of the Olympic Games, long, long ago. That's where the name comes from: Olympiacos. Can you put an invisible laurel crown on your head? There. Now you're a champion too.",
+   "el": "Το σήμα τους είναι ένας νεαρός αθλητής με ένα στεφάνι από δάφνη — σαν τους νικητές των Ολυμπιακών Αγώνων, πολύ, πολύ παλιά. Από εκεί βγαίνει και το όνομα: Ολυμπιακός. Μπορείς να βάλεις ένα αόρατο στεφάνι δάφνης στο κεφάλι σου; Ορίστε. Τώρα είσαι κι εσύ πρωταθλητής.",
+   "sources": [
+    "world.json emblem (Wikipedia, To Vima, Sigmalive)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "crests": [
+     {
+      "crest": "oly",
+      "at": 0.35,
+      "xy": [
+       1480,
+       520
+      ],
+      "size": 300
+     }
+    ],
+    "punch": [
+     0.75
+    ]
+   },
+   "transition": "zoom"
+  },
+  {
+   "id": "velodrome",
+   "plate": "oly-velodrome",
+   "delivery": "adventure",
+   "en": "Their home was by the sea, at Faliro. Long ago, it was a track for bicycles, built for the very first modern Olympic Games, in 1896. Round and round the bicycles went… and later, the footballers came.",
+   "el": "Το σπίτι τους ήταν δίπλα στη θάλασσα, στο Φάληρο. Πολύ παλιά ήταν μια πίστα για ποδήλατα, φτιαγμένη για τους πρώτους σύγχρονους Ολυμπιακούς Αγώνες, το 1896. Γύρω γύρω έτρεχαν τα ποδήλατα… κι αργότερα ήρθαν οι ποδοσφαιριστές.",
+   "sources": [
+    "world.json ground (Wikipedia Karaiskakis Stadium: Neo Phaliron Velodrome 1895–1964, opened 1896)",
+    "liberoguide.com: built as a velodrome for the 1896 Olympics"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "1896",
+      "at": 0.4,
+      "xy": [
+       400,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     }
+    ],
+    "punch": [
+     0.4
+    ]
+   },
+   "transition": "slide",
+   "cap": {
+    "en": "Their home was by the sea, at Faliro. Long ago, it was a track for bicycles, built for the very first modern Olympic Games, in 1896. Round and round the bicycles went… and later, the footballers came.",
+    "el": "Το σπίτι τους ήταν δίπλα στη θάλασσα, στο Φάληρο. Πολύ παλιά ήταν μια πίστα για ποδήλατα, φτιαγμένη για τους πρώτους σύγχρονους Ολυμπιακούς Αγώνες, το 1896. Γύρω γύρω έτρεχαν τα ποδήλατα… κι αργότερα ήρθαν οι ποδοσφαιριστές."
+   }
+  },
+  {
+   "id": "karaiskakis",
+   "plate": "oly-karaiskakis",
+   "delivery": "proud",
+   "en": "The ground is named after Georgios Karaiskakis, a brave hero from the old stories of Greece's freedom. And today everyone simply calls it: Karaiskakis.",
+   "el": "Το γήπεδο πήρε το όνομα του Γεωργίου Καραϊσκάκη, ενός γενναίου ήρωα από τις παλιές ιστορίες της ελευθερίας της Ελλάδας. Και σήμερα όλοι το λένε απλά: Καραϊσκάκη.",
+   "sources": [
+    "world.json ground + flavour karaiskakis (Wikipedia, My Sports Tourist, GreeceIndex, Football History)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ],
+    "tags": [
+     {
+      "text": "KARAISKAKIS",
+      "at": 0.6,
+      "xy": [
+       1400,
+       220
+      ],
+      "size": 88,
+      "rot": -3
+     }
+    ],
+    "punch": [
+     0.6
+    ]
+   },
+   "transition": "iris"
+  },
+  {
+   "id": "first-title",
+   "plate": "oly-1931",
+   "delivery": "proud",
+   "en": "In 1931, Olympiacos became champions of all Greece for the very first time — the first national title ever to come to Piraeus.",
+   "el": "Το 1931, ο Ολυμπιακός έγινε για πρώτη φορά πρωταθλητής όλης της Ελλάδας — ο πρώτος πανελλήνιος τίτλος που ήρθε ποτέ στον Πειραιά.",
+   "sources": [
+    "Ta Nea \"Achilleas Grammatikopoulos – the Zamora of Piraeus\" (2025): 1931 brought the first national title to Piraeus",
+    "Wikipedia (List of Greek football champions): 1931 Olympiacos"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "1931",
+      "at": 0.2,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     }
+    ],
+    "confettiAt": 0.6,
+    "sfx": [
+     {
+      "file": "crowd-claps",
+      "at": 0.6,
+      "level": 0.3
+     }
+    ]
+   },
+   "transition": "torn"
+  },
+  {
+   "id": "zamora",
+   "plate": "oly-keeper",
+   "delivery": "adventure",
+   "en": "In goal stood Achilleas Grammatikopoulos. People called him the Zamora of Piraeus, after a famous goalkeeper from Spain. He jumped, he dived — and he caught almost everything!",
+   "el": "Στο τέρμα στεκόταν ο Αχιλλέας Γραμματικόπουλος. Τον έλεγαν «ο Ζαμόρα του Πειραιά», από έναν διάσημο Ισπανό τερματοφύλακα. Πηδούσε, βουτούσε — κι έπιανε σχεδόν τα πάντα!",
+   "sources": [
+    "Ta Nea / To Vima \"Achilleas Grammatikopoulos – The Zamora of Piraeus\" (2025)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.09
+    ],
+    "tags": [
+     {
+      "text": "THE ZAMORA OF PIRAEUS",
+      "at": 0.35,
+      "xy": [
+       1300,
+       200
+      ],
+      "size": 60,
+      "rot": -3
+     }
+    ],
+    "punch": [
+     0.7
+    ]
+   },
+   "transition": "slide"
+  },
+  {
+   "id": "six-in-a-row",
+   "plate": "oly-1950s",
+   "delivery": "build",
+   "en": "Then came the nineteen-fifties. Champions in 1954. And in 1955. And 1956, 1957, 1958, 1959! Six in a row! Let's count together: one, two, three, four, five, six!",
+   "el": "Ύστερα ήρθε η δεκαετία του '50. Πρωταθλητές το 1954. Και το 1955. Και το 1956, το 1957, το 1958, το 1959! Έξι στη σειρά! Ας μετρήσουμε μαζί: ένα, δύο, τρία, τέσσερα, πέντε, έξι!",
+   "sources": [
+    "UEFA.com \"Olympiacos thrive in Greece\"",
+    "To Vima / Ta Nea \"The team of six consecutive championships\" (2025)",
+    "Wikipedia (Olympiacos F.C.): six consecutive 1954–1959"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "tags": [
+     {
+      "text": "1954 – 1959",
+      "at": 0.15,
+      "xy": [
+       420,
+       240
+      ],
+      "size": 90,
+      "rot": -3
+     },
+     {
+      "text": "6 IN A ROW!",
+      "at": 0.62,
+      "xy": [
+       1420,
+       260
+      ],
+      "size": 90,
+      "rot": 4
+     }
+    ],
+    "punch": [
+     0.62
+    ],
+    "confettiAt": 0.7,
+    "sfx": [
+     {
+      "file": "crowd-real-goal",
+      "at": 0.7,
+      "level": 0.35
+     }
+    ]
+   },
+   "transition": "page",
+   "cap": {
+    "en": "Then came the 1950s. Champions in 1954. And in 1955. And 1956, 1957, 1958, 1959! Six in a row! Let's count together: one, two, three, four, five, six!",
+    "el": "Ύστερα ήρθε η δεκαετία του '50. Πρωταθλητές το 1954. Και το 1955. Και το 1956, το 1957, το 1958, το 1959! Έξι στη σειρά! Ας μετρήσουμε μαζί: ένα, δύο, τρία, τέσσερα, πέντε, έξι!"
+   }
+  },
+  {
+   "id": "helmis",
+   "plate": "oly-coaches",
+   "delivery": "wry",
+   "en": "And who were the coaches? Two more brothers — Vangelis and Giannis Helmis. This club really loves brothers!",
+   "el": "Και ποιοι ήταν οι προπονητές; Δύο ακόμα αδέλφια — ο Βαγγέλης και ο Γιάννης Χελμής. Αυτός ο σύλλογος αγαπάει πολύ τα αδέλφια!",
+   "sources": [
+    "Ta Nea / To Vima \"Vangelis and Giannis Helmis – Making History\" (2025): as coaches, six consecutive championships 1954–1959"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "HELMIS",
+      "at": 0.35,
+      "xy": [
+       1420,
+       230
+      ],
+      "size": 96,
+      "rot": -4
+     }
+    ],
+    "punch": [
+     0.8
+    ]
+   },
+   "transition": "dissolve"
+  },
+  {
+   "id": "milan-1959",
+   "plate": "oly-europe",
+   "delivery": "adventure",
+   "en": "In 1959, Olympiacos became the first Greek club ever to play in a European cup — against the mighty Milan!",
+   "el": "Το 1959, ο Ολυμπιακός έγινε η πρώτη ελληνική ομάδα που έπαιξε ποτέ σε ευρωπαϊκό κύπελλο — απέναντι στη μεγάλη Μίλαν!",
+   "sources": [
+    "Wikipedia (Olympiacos F.C.), European record: \"First ever Greek club to play in the European competitions: Olympiacos–Milan (1959)\""
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "1959",
+      "at": 0.2,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     },
+     {
+      "text": "MILAN",
+      "at": 0.6,
+      "xy": [
+       1440,
+       260
+      ],
+      "size": 90,
+      "rot": 4
+     }
+    ],
+    "punch": [
+     0.6
+    ]
+   },
+   "transition": "zoom"
+  },
+  {
+   "id": "sideris",
+   "plate": "oly-sideris",
+   "delivery": "proud",
+   "en": "In the sixties, a striker called Giorgos Sideris scored so many goals that three times he was the top scorer of the whole of Greece.",
+   "el": "Τη δεκαετία του '60, ένας επιθετικός που τον έλεγαν Γιώργο Σιδέρη έβαζε τόσα γκολ, που τρεις φορές βγήκε πρώτος σκόρερ σε όλη την Ελλάδα.",
+   "sources": [
+    "RSSSF Greece top scorers: Giorgos Sideris 1964/65, 1966/67, 1968/69"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.09
+    ],
+    "tags": [
+     {
+      "text": "GIORGOS SIDERIS",
+      "at": 0.25,
+      "xy": [
+       1360,
+       200
+      ],
+      "size": 70,
+      "rot": -3
+     },
+     {
+      "text": "3 ×",
+      "at": 0.7,
+      "xy": [
+       420,
+       260
+      ],
+      "size": 110,
+      "rot": 4
+     }
+    ],
+    "punch": [
+     0.7
+    ]
+   },
+   "transition": "slide"
+  },
+  {
+   "id": "waiting",
+   "plate": "oly-waiting",
+   "delivery": "tender",
+   "en": "But then, for ten long years, no title came. The supporters waited… and waited… and waited.",
+   "el": "Ύστερα όμως, για δέκα ολόκληρα χρόνια, δεν ήρθε κανένας τίτλος. Οι φίλαθλοι περίμεναν… και περίμεναν… και περίμεναν.",
+   "sources": [
+    "UEFA.com \"Olympiacos thrive in Greece\": ten-year spell without the league, 1987–1997"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.06
+    ]
+   },
+   "transition": "fade"
+  },
+  {
+   "id": "seven",
+   "plate": "oly-seven",
+   "delivery": "build",
+   "en": "Until 1997, when a coach called Dušan Bajević arrived — and Olympiacos were champions again. And again! And again! Seven championships in a row, all the way to 2003. Can you show me seven fingers?",
+   "el": "Μέχρι το 1997, όταν ήρθε ένας προπονητής που τον έλεγαν Ντούσαν Μπάγεβιτς — κι ο Ολυμπιακός έγινε ξανά πρωταθλητής. Και ξανά! Και ξανά! Επτά πρωταθλήματα στη σειρά, μέχρι το 2003. Μου δείχνεις επτά δαχτυλάκια;",
+   "sources": [
+    "UEFA.com: seven consecutive titles 1996/97–2002/03",
+    "To Vima \"Dušan's Way\" (2025)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "tags": [
+     {
+      "text": "DUŠAN BAJEVIĆ",
+      "at": 0.15,
+      "xy": [
+       1360,
+       200
+      ],
+      "size": 70,
+      "rot": -3
+     },
+     {
+      "text": "7 IN A ROW!",
+      "at": 0.62,
+      "xy": [
+       420,
+       260
+      ],
+      "size": 96,
+      "rot": 4
+     }
+    ],
+    "punch": [
+     0.62
+    ],
+    "confettiAt": 0.66,
+    "sfx": [
+     {
+      "file": "crowd-real-goal",
+      "at": 0.66,
+      "level": 0.35
+     }
+    ]
+   },
+   "transition": "page",
+   "cap": {
+    "en": "Until 1997, when a coach called Dušan Bajević arrived — and Olympiacos were champions again. And again! And again! 7 championships in a row, all the way to 2003. Can you show me seven fingers?",
+    "el": "Μέχρι το 1997, όταν ήρθε ένας προπονητής που τον έλεγαν Ντούσαν Μπάγεβιτς — κι ο Ολυμπιακός έγινε ξανά πρωταθλητής. Και ξανά! Και ξανά! 7 πρωταθλήματα στη σειρά, μέχρι το 2003. Μου δείχνεις επτά δαχτυλάκια;"
+   }
+  },
+  {
+   "id": "juventus",
+   "plate": "oly-juve",
+   "delivery": "tender",
+   "en": "In 1999, they reached the quarter-finals of the Champions League, against Juventus. They came so close… so very close. But sometimes, even a legend has to wait a little longer.",
+   "el": "Το 1999, έφτασαν στους οκτώ του Τσάμπιονς Λιγκ, απέναντι στη Γιουβέντους. Έφτασαν τόσο κοντά… τόσο, μα τόσο κοντά. Μα καμιά φορά, ακόμα κι ένας θρύλος πρέπει να περιμένει λίγο ακόμα.",
+   "sources": [
+    "UEFA.com: 1998/99 quarter-finals, lost to Juventus",
+    "Wikipedia: lost the semi-final spot in the last minutes of the second leg"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ],
+    "tags": [
+     {
+      "text": "1999",
+      "at": 0.2,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     }
+    ]
+   },
+   "transition": "dissolve"
+  },
+  {
+   "id": "new-karaiskakis",
+   "plate": "oly-karaiskakis2004",
+   "delivery": "proud",
+   "en": "Then the old ground by the sea was rebuilt — in just one year! In 2004 it opened again: a brand-new red-and-white home, ready for the Olympic Games in Athens.",
+   "el": "Ύστερα το παλιό γήπεδο δίπλα στη θάλασσα χτίστηκε από την αρχή — μέσα σε έναν μόνο χρόνο! Το 2004 άνοιξε ξανά: ένα ολοκαίνουργιο ερυθρόλευκο σπίτι, έτοιμο για τους Ολυμπιακούς Αγώνες της Αθήνας.",
+   "sources": [
+    "Ta Nea \"We rule this land\" (2025): construction June 2003 – June 2004",
+    "Wikipedia (Karaiskakis Stadium): rebuilt 2004 for the Olympic football tournament"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "2004",
+      "at": 0.45,
+      "xy": [
+       400,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     }
+    ],
+    "punch": [
+     0.45
+    ]
+   },
+   "transition": "zoom"
+  },
+  {
+   "id": "rivaldo",
+   "plate": "oly-rivaldo",
+   "delivery": "playful",
+   "en": "And that same year, a world champion from Brazil came to Piraeus: Rivaldo! Tap, tap, flick — and the ball did exactly what he wanted.",
+   "el": "Την ίδια χρονιά, ένας παγκόσμιος πρωταθλητής από τη Βραζιλία ήρθε στον Πειραιά: ο Ριβάλντο! Τακ, τακ, φλικ — κι η μπάλα έκανε ακριβώς ό,τι ήθελε.",
+   "sources": [
+    "Wikipedia (Rivaldo): joined Olympiacos in 2004; 2002 World Cup winner with Brazil"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.09
+    ],
+    "tags": [
+     {
+      "text": "RIVALDO",
+      "at": 0.3,
+      "xy": [
+       1440,
+       230
+      ],
+      "size": 100,
+      "rot": -4
+     }
+    ],
+    "punch": [
+     0.3,
+     0.8
+    ]
+   },
+   "transition": "iris"
+  },
+  {
+   "id": "seven-again",
+   "plate": "oly-seven2",
+   "delivery": "build",
+   "en": "And then the Legend did it once more: seven more championships in a row, from 2011 to 2017. They became the only club in the world to win five titles in a row five different times — and FIFA sent them a letter to say: well done!",
+   "el": "Κι ύστερα ο Θρύλος το έκανε ξανά: άλλα επτά πρωταθλήματα στη σειρά, από το 2011 ως το 2017. Έγινε ο μόνος σύλλογος στον κόσμο που κατέκτησε πέντε τίτλους στη σειρά πέντε διαφορετικές φορές — κι η FIFA του έστειλε ένα γράμμα για να πει: μπράβο!",
+   "sources": [
+    "Wikipedia (Olympiacos F.C.): seven in a row 2011–2017; five-or-more consecutive titles five times, praised by FIFA in a congratulatory letter"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "tags": [
+     {
+      "text": "2011 – 2017",
+      "at": 0.15,
+      "xy": [
+       420,
+       240
+      ],
+      "size": 90,
+      "rot": -3
+     },
+     {
+      "text": "BRAVO!",
+      "at": 0.85,
+      "xy": [
+       1440,
+       260
+      ],
+      "size": 110,
+      "rot": 4
+     }
+    ],
+    "punch": [
+     0.85
+    ],
+    "confettiAt": 0.4,
+    "sfx": [
+     {
+      "file": "crowd-claps",
+      "at": 0.4,
+      "level": 0.3
+     }
+    ]
+   },
+   "transition": "torn",
+   "cap": {
+    "en": "And then the Legend did it once more: 7 more championships in a row, from 2011 to 2017. They became the only club in the world to win 5 titles in a row 5 different times — and FIFA sent them a letter to say: well done!",
+    "el": "Κι ύστερα ο Θρύλος το έκανε ξανά: άλλα 7 πρωταθλήματα στη σειρά, από το 2011 ως το 2017. Έγινε ο μόνος σύλλογος στον κόσμο που κατέκτησε 5 τίτλους στη σειρά 5 διαφορετικές φορές — κι η FIFA του έστειλε ένα γράμμα για να πει: μπράβο!"
+   }
+  },
+  {
+   "id": "youth",
+   "plate": "oly-youth",
+   "delivery": "adventure",
+   "en": "In April 2024, the young players of Olympiacos — the under-nineteens — travelled to Switzerland for a European final, and beat Milan three–nil. The first European trophy ever won by a Greek club!",
+   "el": "Τον Απρίλιο του 2024, οι νεαροί παίκτες του Ολυμπιακού — η ομάδα κάτω των δεκαεννιά — ταξίδεψαν στην Ελβετία για έναν ευρωπαϊκό τελικό, και κέρδισαν τη Μίλαν τρία–μηδέν. Το πρώτο ευρωπαϊκό τρόπαιο που κατέκτησε ποτέ ελληνικός σύλλογος!",
+   "sources": [
+    "UEFA.com 2024 UEFA Youth League final: Olympiacos 3–0 Milan in Nyon, first Greek club to win a UEFA competition"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.09
+    ],
+    "tags": [
+     {
+      "text": "U19",
+      "at": 0.2,
+      "xy": [
+       400,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     },
+     {
+      "text": "3–0",
+      "at": 0.7,
+      "xy": [
+       1440,
+       260
+      ],
+      "size": 110,
+      "rot": 4
+     }
+    ],
+    "punch": [
+     0.7
+    ],
+    "confettiAt": 0.78,
+    "sfx": [
+     {
+      "file": "crowd-real-goal",
+      "at": 0.72,
+      "level": 0.35
+     }
+    ]
+   },
+   "transition": "slide",
+   "cap": {
+    "en": "In April 2024, the young players of Olympiacos — the under-19s — travelled to Switzerland for a European final, and beat Milan 3–0. The first European trophy ever won by a Greek club!",
+    "el": "Τον Απρίλιο του 2024, οι νεαροί παίκτες του Ολυμπιακού — η ομάδα κάτω των 19 — ταξίδεψαν στην Ελβετία για έναν ευρωπαϊκό τελικό, και κέρδισαν τη Μίλαν 3–0. Το πρώτο ευρωπαϊκό τρόπαιο που κατέκτησε ποτέ ελληνικός σύλλογος!"
+   }
+  },
+  {
+   "id": "final-2024",
+   "plate": "oly-final",
+   "delivery": "build",
+   "en": "Just a few weeks later, it was the grown-ups' turn: the final of the Conference League, in Athens, against Fiorentina. Nil–nil… still nil–nil… extra time… and in the hundred-and-sixteenth minute, Ayoub El Kaabi jumped — and headed the ball into the net!",
+   "el": "Λίγες μόνο εβδομάδες αργότερα, ήταν η σειρά των μεγάλων: ο τελικός του Conference League, στην Αθήνα, απέναντι στη Φιορεντίνα. Μηδέν–μηδέν… ακόμα μηδέν–μηδέν… παράταση… και στο εκατοστό δέκατο έκτο λεπτό, ο Αγιούμπ Ελ Κααμπί πήδηξε ψηλά — και έστειλε την μπάλα με κεφαλιά στα δίχτυα!",
+   "sources": [
+    "UEFA / CNN / Reuters reports, 29 May 2024: Olympiacos 1–0 Fiorentina aet, El Kaabi header 116'"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.12
+    ],
+    "tags": [
+     {
+      "text": "116'",
+      "at": 0.78,
+      "xy": [
+       1440,
+       250
+      ],
+      "size": 120,
+      "rot": -4
+     }
+    ],
+    "punch": [
+     0.78
+    ],
+    "sfx": [
+     {
+      "file": "whistle",
+      "at": 0.42,
+      "level": 0.3
+     },
+     {
+      "file": "crowd-real-goal",
+      "at": 0.82,
+      "level": 0.5
+     }
+    ]
+   },
+   "transition": "page",
+   "cap": {
+    "en": "Just a few weeks later, it was the grown-ups' turn: the final of the Conference League, in Athens, against Fiorentina. 0–0… still 0–0… extra time… and in the 116th minute, Ayoub El Kaabi jumped — and headed the ball into the net!",
+    "el": "Λίγες μόνο εβδομάδες αργότερα, ήταν η σειρά των μεγάλων: ο τελικός του Conference League, στην Αθήνα, απέναντι στη Φιορεντίνα. 0–0… ακόμα 0–0… παράταση… και στο 116ο λεπτό, ο Αγιούμπ Ελ Κααμπί πήδηξε ψηλά — και έστειλε την μπάλα με κεφαλιά στα δίχτυα!"
+   }
+  },
+  {
+   "id": "cup-2024",
+   "plate": "oly-cup",
+   "delivery": "proud",
+   "en": "Olympiacos — winners of the Conference League! The first Greek club ever to lift a big European trophy. And Piraeus sang all night long.",
+   "el": "Ο Ολυμπιακός — κυπελλούχος του Conference League! Ο πρώτος ελληνικός σύλλογος που σήκωσε ποτέ ένα μεγάλο ευρωπαϊκό τρόπαιο. Κι ο Πειραιάς τραγουδούσε όλη τη νύχτα.",
+   "sources": [
+    "CNN, 30 May 2024: first Greek club to win a major European trophy"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "2024",
+      "at": 0.2,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     }
+    ],
+    "confettiAt": 0.3,
+    "sfx": [
+     {
+      "file": "crowd-claps",
+      "at": 0.3,
+      "level": 0.35
+     }
+    ]
+   },
+   "transition": "zoom"
+  },
+  {
+   "id": "gate-7",
+   "plate": "oly-gate7",
+   "delivery": "close",
+   "en": "And at every match, at Gate 7, the most devoted supporters stand together, and sing for the red and white.",
+   "el": "Και σε κάθε αγώνα, στη Θύρα 7, στέκονται μαζί οι πιο φανατικοί φίλαθλοι, και τραγουδούν για τους ερυθρόλευκους.",
+   "sources": [
+    "world.json terrace (GreeceIndex, Neos Kosmos)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ],
+    "tags": [
+     {
+      "text": "GATE 7",
+      "at": 0.4,
+      "xy": [
+       1440,
+       230
+      ],
+      "size": 100,
+      "rot": -4
+     }
+    ],
+    "sfx": [
+     {
+      "file": "crowd-real-murmur",
+      "at": 0.05,
+      "level": 0.25
+     }
+    ]
+   },
+   "transition": "dissolve"
+  },
+  {
+   "id": "metro",
+   "plate": "oly-metro",
+   "delivery": "playful",
+   "en": "To get there, you take metro line one to Faliro station, and walk a few minutes to the sea. Can you make the sound of the train? Whoooosh!",
+   "el": "Για να φτάσεις εκεί, παίρνεις τη γραμμή 1 του μετρό ως τον σταθμό Φάληρο, και περπατάς λίγα λεπτά ως τη θάλασσα. Μπορείς να κάνεις τον ήχο του τρένου; Βζζζζουμ!",
+   "sources": [
+    "world.json culture olympiacos-route-faliro (Metro Line 1 to Faliro)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "FALIRO",
+      "at": 0.45,
+      "xy": [
+       1440,
+       230
+      ],
+      "size": 96,
+      "rot": -4
+     }
+    ],
+    "punch": [
+     0.85
+    ]
+   },
+   "transition": "slide"
+  },
+  {
+   "id": "basketball",
+   "plate": "basket-oly",
+   "delivery": "wry",
+   "en": "There is also a beautiful story about our basketball team… but we'll get to that another time.",
+   "el": "Υπάρχει και μια όμορφη ιστορία για την ομάδα μπάσκετ μας… αλλά θα φτάσουμε κι εκεί.",
+   "sources": [
+    "owner, 12.11.2026"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.06
+    ]
+   },
+   "transition": "slide"
+  },
+  {
+   "id": "good-morning",
+   "plate": "oly-close",
+   "delivery": "warm",
+   "en": "The five brothers by the sea. Six in a row, and seven, and seven again. Rivaldo with the ball, El Kaabi in the air, and the young ones from the academy. Good morning, Olympiacos.",
+   "el": "Τα πέντε αδέλφια δίπλα στη θάλασσα. Έξι στη σειρά, κι επτά, κι άλλα επτά. Ο Ριβάλντο με την μπάλα, ο Ελ Κααμπί στον αέρα, κι οι μικροί από την ακαδημία. Καλημέρα, Ολυμπιακέ.",
+   "sources": [
+    "episode summary"
+   ],
+   "visual": {
+    "extra": 2.6,
+    "crests": [
+     {
+      "crest": "oly",
+      "at": 0.55,
+      "xy": [
+       960,
+       350
+      ],
+      "size": 330
+     }
+    ],
+    "wordmarkAt": 0.72,
+    "wordmarkTag": "Good Morning, Olympiacos"
+   },
+   "transition": "page"
+  }
+ ]
+}

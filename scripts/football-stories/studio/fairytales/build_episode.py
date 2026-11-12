@@ -298,7 +298,10 @@ def main() -> None:
     sources = [Source(work, s['shot']['plate'], s['dur'], seed=k + 1) for k, s in enumerate(shots)]
     deep = tuple(int(c * .62) for c in red)
     light = tuple(int(c + (255 - c) * .45) for c in red)
-    party = [pt.Celebration([red, red, deep, light, (246, 240, 228), (246, 240, 228), pt.KRAFT], (W, H), seed=k + 5)
+    hexes = ep['palette'].get('confetti')                      # a club whose colours are two (AEK: gold and black)
+    paper = ([tuple(int(h[i:i + 2], 16) for i in (1, 3, 5)) for h in hexes] if hexes
+             else [red, red, deep, light, (246, 240, 228), (246, 240, 228), pt.KRAFT])
+    party = [pt.Celebration(paper, (W, H), seed=k + 5)
              for k in range(4)]
 
     def draw(k: int, t: float) -> Image.Image:
