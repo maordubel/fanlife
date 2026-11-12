@@ -2,8 +2,10 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 import time
+from datetime import datetime, timezone
 import urllib.error
 import urllib.request
 
@@ -72,6 +74,79 @@ def _http(url: str, body: dict, headers: dict, timeout: int = 300) -> dict:
         raise StageError('WRITER_UNREACHABLE', f'Writer provider unreachable: {e}', retryable=True) from e
 
 
+# ── the keys ─────────────────────────────────────────────────────────────────────────────────────────────────────────
+# Owner, 12.11.2026: two Gemini keys are repository secrets — GEMINI_API_KEY (its billing project had no credit: 402)
+# and GEMINI_API_KEY_KIDS — "check credit on both and use whichever works, by itself". A key is only ever named by its
+# SECRET NAME: no key, and no part of one, is logged, raised or reported.
+KEY_NAMES = ('GEMINI_API_KEY', 'GEMINI_API_KEY_KIDS')
+_WORKING: list[str] = []  # the secret name that last answered in this process: later calls start with it
+_FAILOVER = {'WRITER_NO_CREDIT': 'no credit', 'WRITER_KEY': 'refused', 'WRITER_QUOTA_DAY': 'quota'}
+
+
+def keys(env=None) -> list[tuple[str, str]]:
+    """(secret name, key) for every key that is set, the one known to work first."""
+    env = os.environ if env is None else env
+    found = [(n, str(env.get(n) or '').strip()) for n in KEY_NAMES]
+    found = [(n, k) for n, k in found if k]
+    return sorted(found, key=lambda x: x[0] not in _WORKING)
+
+
+def api_key(env=None) -> str:
+    """The key to start with ('' when none is set) — for the callers that speak to Google themselves (voice, images)."""
+    k = keys(env)
+    return k[0][1] if k else ''
+
+
+def _remember(name: str) -> None:
+    _WORKING[:] = [name]
+
+
+def _order(key: str) -> list[tuple[str, str]]:
+    """The keys one call may use: the one it was given first, then the others that are set. A key that is not one of
+    the secrets (a test, a caller with its own) stands alone, exactly as before."""
+    env = keys()
+    if key not in [k for _n, k in env]:
+        return [('the key', key)]
+    return sorted(env, key=lambda x: (x[0] not in _WORKING, x[1] != key))
+
+
+def check_keys(env=None, http=None, wanted: str | None = None, now=None) -> list[dict]:
+    """Which key works? One tiny request per key (the cheapest current Flash model, never the Pro quota), as the listener's
+    writer check always did. → [{'name', 'state': ok | no credit | refused | quota | error, 'at'}]; the first key that
+    answers is remembered for the rest of the process. Nothing but the secret's NAME describes a key."""
+    http = http or _http
+    at = (now or datetime.now(timezone.utc)).strftime('%Y-%m-%dT%H:%M:%SZ')
+    rows, first_ok = [], None
+    for name, key in sorted(keys(env), key=lambda x: KEY_NAMES.index(x[0])):  # always in the secrets' own order
+        tries = gemini_candidates(key, wanted)
+        state = 'error'
+        for m in ([x for x in tries if '-flash' in x] or tries)[:5]:
+            try:
+                http(f'{GEMINI}/models/{m}:generateContent', {'contents': [{'role': 'user', 'parts': [{'text': 'Say OK.'}]}],
+                                                                'generationConfig': {'maxOutputTokens': 8}}, {'x-goog-api-key': key}, timeout=60)
+                state = 'ok'
+                break
+            except StageError as e:
+                if e.code == 'WRITER_HTTP_402':
+                    state = 'no credit'
+                    break
+                if e.code == 'WRITER_HTTP_401' or (e.code == 'WRITER_HTTP_403' and 'API key' in str(e)):
+                    state = 'refused'
+                    break
+                if e.code == 'WRITER_HTTP_429':
+                    q = quota_info(e)
+                    state = 'quota' if q['per_day'] or q['zero'] else state
+        rows.append({'name': name, 'state': state, 'at': at})
+        first_ok = first_ok or (name if state == 'ok' else None)
+    if first_ok:
+        _remember(first_ok)
+    return rows
+
+
+def keys_line(rows: list[dict]) -> str:
+    return ' · '.join(f"{r['name']}: {r['state']}" for r in rows) or 'no Gemini key is set'
+
+
 # ── one answer from the free tier, however busy it is ────────────────────────────────────────────────────────────────
 # Measured 4.11.2026 (a film from the desk): three scripts in a row used up the per-MINUTE input quota, every model
 # answered 429 within seconds, two answered 404 and two 503 — and the film failed with "fix the cause before retrying",
@@ -84,7 +159,8 @@ NO_CREDIT = ('The Gemini key belongs to a Google project with billing switched o
              'request (HTTP 402). Fix: make a new key in Google AI Studio inside a project WITHOUT billing (that is the free '
              'tier) and paste it as the GitHub secret GEMINI_API_KEY — or top up that project\'s credit. Then press Retry.')
 
-DEAD: set[str] = set()  # models this run learned are not served to this key (404, 403, a quota of 0, a per-day quota spent)
+DEAD: set[str] = set()  # models this run learned are not served to the first key (404, 403, a quota of 0, a per-day quota spent)
+_DEAD_OTHER: dict[str, set[str]] = {}  # …and the same for each further key, by its secret name: a quota belongs to a key
 
 
 def quota_info(err: StageError) -> dict:
@@ -110,11 +186,45 @@ def _gemma_body(body: dict) -> dict:
 
 def generate(key: str, body: dict, *, wanted: str | None = None, budget_s: float = 1200, log=None,
              sleep=time.sleep, clock=time.monotonic, http=None) -> tuple[dict, str]:
+    """(response, model), from the first key that can answer. A key with no credit (402), a refused key (401/403) or a
+    key whose daily free quota is spent on every model hands the call to the next key, and the key that answers is
+    remembered for the rest of the process. Only when every key has failed does the call fail: with the plain-English
+    error and how many keys were tried, each by its secret name."""
+    say = log or (lambda _m: None)
+    order = _order(key)
+    failed: list[tuple[str, StageError]] = []
+    for name, k in order:
+        try:
+            out = _generate_one(k, body, wanted=wanted, budget_s=budget_s, log=log, sleep=sleep, clock=clock, http=http, name=name)
+            if name in KEY_NAMES:
+                if failed:
+                    say(f'Writer: {name} answered — it is used for the rest of this run')
+                _remember(name)
+            return out
+        except StageError as e:
+            if e.code not in _FAILOVER:
+                raise
+            failed.append((name, e))
+            if len(failed) < len(order):
+                say(f'Writer: {name} cannot answer ({_FAILOVER[e.code]}) — trying the next key')
+    if len(failed) == 1:
+        raise failed[0][1]
+    # a spent daily quota comes back by itself (the film waits); no credit and a refused key need the owner
+    codes = [e.code for _n, e in failed]
+    code = next(c for c in ('WRITER_QUOTA_DAY', 'WRITER_NO_CREDIT', 'WRITER_KEY') if c in codes)
+    tried = ', '.join(f'{n} ({_FAILOVER[e.code]})' for n, e in failed)
+    last = next(e for _n, e in failed if e.code == code)
+    raise StageError(code, f'All {len(failed)} Gemini keys were tried and none can write: {tried}. {last}', retryable=code == 'WRITER_QUOTA_DAY') from last
+
+
+def _generate_one(key: str, body: dict, *, wanted: str | None = None, budget_s: float = 1200, log=None,
+                  sleep=time.sleep, clock=time.monotonic, http=None, name: str = 'the key') -> tuple[dict, str]:
     """(response, model). Raises WRITER_QUOTA_DAY when every model's daily free quota is spent, WRITER_BUSY when the
     wait budget ran out on per-minute limits or overload, WRITER_NO_CREDIT (at once, never retried) when the key's billing
     project has no credit (402), WRITER_HTTP_4xx for a request Google refuses as malformed."""
     http = http or _http
     say = log or (lambda _m: None)
+    DEAD = globals()['DEAD'] if name in ('the key', KEY_NAMES[0]) else _DEAD_OTHER.setdefault(name, set())
     tries = [m for m in gemini_candidates(key, wanted) if m not in DEAD]
     t0 = clock()
     waits: dict[str, float] = {}  # model → the clock time it may be asked again
@@ -149,10 +259,11 @@ def generate(key: str, body: dict, *, wanted: str | None = None, budget_s: float
             hint = suggested_model(e)
             if hint and hint not in tries and hint not in DEAD:
                 tries.insert(tries.index(model) + 1, hint)
-            if code in ('WRITER_HTTP_404', 'WRITER_HTTP_403'):
-                if code == 'WRITER_HTTP_403' and 'API key' in str(e) and 'not valid' in str(e).lower():
-                    raise StageError('WRITER_KEY', 'Google refused the GEMINI_API_KEY — make a new free key in Google AI Studio '
-                                     'and paste it as the GitHub secret GEMINI_API_KEY.', retryable=False) from e
+            if code in ('WRITER_HTTP_404', 'WRITER_HTTP_403', 'WRITER_HTTP_401'):
+                if code == 'WRITER_HTTP_401' or (code == 'WRITER_HTTP_403' and 'API key' in str(e) and 'not valid' in str(e).lower()):
+                    secret = name if name in KEY_NAMES else 'GEMINI_API_KEY'
+                    raise StageError('WRITER_KEY', f'Google refused the {secret} — make a new free key in Google AI Studio '
+                                     f'and paste it as the GitHub secret {secret}.', retryable=False) from e
                 DEAD.add(model)
             elif code == 'WRITER_HTTP_429':
                 q = quota_info(e)

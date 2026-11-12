@@ -25,6 +25,7 @@ jobs:
     timeout-minutes: 240
     env:
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GEMINI_API_KEY_KIDS: ${{ secrets.GEMINI_API_KEY_KIDS }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

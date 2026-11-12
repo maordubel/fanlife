@@ -50,6 +50,7 @@ jobs:
         working-directory: scripts/football-stories
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_KIDS: ${{ secrets.GEMINI_API_KEY_KIDS }}
           STORIES_IMAGE_MODEL: ${{ vars.STORIES_IMAGE_MODEL }}
           STORIES_GENART_CACHE: /home/runner/genart
           KOKORO_DIR: /home/runner/models

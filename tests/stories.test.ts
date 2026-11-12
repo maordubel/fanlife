@@ -186,3 +186,20 @@ it('a heartbeat carries only a provider, a yes/no, a model and a note',async()=>
   expect(cleanHeartbeat({writer:{provider:'evil'}})).toBeNull()
 })
 
+describe('the listener carries the autopilot (owner, 12.11.2026)',()=>{
+ const src=(p:string)=>readFileSync(p,'utf8')
+ it('runs the autopilot runner from the peek — no cron of its own, no permission widened, the Telegram secret it already had',()=>{
+  const w=src('.github/workflows/stories-watch.yml')
+  expect(w).toMatch(/get\('autopilot'\)[\s\S]{0,200}python3 scripts\/football-stories\/studio\/autopilot\.py/)
+  expect(w.match(/^permissions:\n((?:  .*\n)+)/m)![1]).toBe('  actions: write\n  contents: read\n')
+  expect(w.match(/- cron:/g)).toHaveLength(1)
+  expect(w).toMatch(/TELEGRAM_BOT_TOKEN: \$\{\{ secrets\.TELEGRAM_BOT_TOKEN \}\}/)
+  expect(w).not.toMatch(/YOUTUBE/)   // no YouTube secret exists: the last step is the owner's hand-off
+  expect(src('app/api/master/stories/worker/route.ts')).toMatch(/autopilot:await autopilotFlag\(jobs\)/)
+ })
+ it('the switch is read in one place and is off unless the file says on',()=>{
+  const files=['app/api/master/stories/worker/route.ts','app/api/master/stories/desk/route.ts','lib/stories/autopilotStore.ts']
+  expect(files.filter(f=>/studio\/autopilot\.json/.test(src(f)))).toEqual(['lib/stories/autopilotStore.ts'])
+  expect(src('lib/stories/autopilotStore.ts')).toMatch(/s&&s\.on===true\?\{on:true/)
+ })
+})

@@ -21,6 +21,7 @@ jobs:
       CRON_SECRET: ${{ secrets.FAN_LIFE_CRON_SECRET }}
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GEMINI_API_KEY_KIDS: ${{ secrets.GEMINI_API_KEY_KIDS }}
       # the narrator as the owner heard it, and the same narrator with every name researched (owner, 8.11.2026)
       AUDITION_TAKES: A,B
       BRANCH: narrator-audition-${{ github.run_id }}

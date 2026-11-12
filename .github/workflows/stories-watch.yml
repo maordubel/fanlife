@@ -9,6 +9,11 @@ name: Football Stories · listener
 # When a scheduled social post is due the peek says social_due, and the listener starts stories-social.yml — measured
 # 12.11.2026: GitHub ran that workflow's every-20-minutes schedule 2–5 times a day, so posts went out hours late. Same
 # token and permission as the worker start (actions: write); at most one start per 15 minutes, none while one is running.
+# When the autopilot has something to do (owner, 12.11.2026: docs/rules/studio-autopilot.md) the peek says autopilot, and
+# the listener runs studio/autopilot.py itself: the day's pick, the preview to the owner's Telegram at the first round at
+# or after 10:00 Europe/Athens, the hand-over two hours later. The clock is the studio's (Athens time, computed there) and
+# this loop's seven minutes — no cron of its own, because GitHub runs this repository's crons late and rarely. Off by
+# default: the switch is in the studio desk (Directors → Autopilot). TELEGRAM_BOT_TOKEN is the secret the worker already uses.
 on:
   workflow_dispatch:
   push:
@@ -30,7 +35,9 @@ jobs:
       STORIES_URL: ${{ vars.FAN_LIFE_RESEARCH_URL || 'https://fanlife.dubelteam.com' }}
       FAN_LIFE_CRON_SECRET: ${{ secrets.FAN_LIFE_CRON_SECRET }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GEMINI_API_KEY_KIDS: ${{ secrets.GEMINI_API_KEY_KIDS }}
       STORIES_GEMINI_MODEL: ${{ vars.STORIES_GEMINI_MODEL }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       GH_TOKEN: ${{ github.token }}
       GH_REPO: ${{ github.repository }}
     steps:
@@ -73,6 +80,10 @@ jobs:
                && [ $(( $(date +%s) - social_at )) -ge 900 ] && ! social_busy; then
               echo "$(date -u +%T) a social post is due — starting the social runner"
               if gh workflow run stories-social.yml; then social_at=$(date +%s); else echo "::warning::could not start the social runner"; fi
+            fi
+            # the autopilot: a pick, a preview due, the end of a cancel window or a message for the owner (never while it is off)
+            if [ "$(printf '%s' "$peek" | python3 -c "import sys,json;print(bool(json.load(sys.stdin).get('autopilot')))" 2>/dev/null || echo False)" = "True" ]; then
+              python3 scripts/football-stories/studio/autopilot.py || echo "::warning::the autopilot will retry on the next round"
             fi
             if [ -n "$next" ] && ! worker_busy; then
               echo "$(date -u +%T) film waiting: $next — starting the worker"

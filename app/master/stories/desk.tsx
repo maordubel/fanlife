@@ -7,6 +7,7 @@ import type {Health} from '@/lib/stories/health'
 import type {PitchDay,PitchDesk} from '@/lib/stories/pitches'
 import type {SocialLights} from '@/lib/stories/social'
 import type {PlanPost} from '@/lib/stories/marketing'
+import type {Setting} from '@/lib/stories/autopilot'
 import {DESK_TABS,docsBanner,statusBanner,type Banner,type DeskTab,type Facts} from '@/lib/stories/banners'
 import {api,JobCard,NewFilm,type Club} from './stories-desk'
 import {ClassifiedTab} from './ClassifiedTab'
@@ -27,14 +28,14 @@ import css from './studio.module.css'
  * its own maker, then its own jobs. One queue and one worker underneath (lib/stories/jobs.ts → kind).
  */
 const TAB_TEXT:Record<DeskTab,string>={ideas:'Ideas',shorts:'Animated Shorts',docs:'Documentary',classified:'CLASSIFIED',vlog:'VLOG · I was there',marketing:'Marketing',directors:'Directors',status:'Status'}
-export type DeskData={classified:ClassifiedFile[]|null;pitches:PitchDay[]|null;pitchDesk:PitchDesk|null;lights:SocialLights|null;plan:PlanPost[]|null}
+export type DeskData={classified:ClassifiedFile[]|null;pitches:PitchDay[]|null;pitchDesk:PitchDesk|null;lights:SocialLights|null;plan:PlanPost[]|null;autopilot?:Setting|null}
 
 export function StoriesDesk({view}:{view:DeskTab}){
  const [jobs,setJobs]=useState<Job[]|null>(null),[clubs,setClubs]=useState<Club[]>([]),[health,setHealth]=useState<Health|null>(null),[error,setError]=useState('')
  const [cleanupPending,setCleanupPending]=useState(0)
  const [desk,setDesk]=useState<DeskData|null>(null),[open,setOpen]=useState<string|null>(null),[now,setNow]=useState(()=>Date.now())
  const load=useCallback(async()=>{try{const b=await api('/api/master/stories');setJobs(b.jobs);setCleanupPending(b.cleanupPending??0);setClubs(b.clubs);setHealth(b.health??null);setError('');setNow(Date.now())}catch(e){setError(e instanceof Error?e.message:'Could not load the studio.')}},[])
- const loadDesk=useCallback(async()=>{try{setDesk(await api('/api/master/stories/desk'))}catch{setDesk(d=>d??{classified:null,pitches:null,pitchDesk:null,lights:null,plan:null})}},[])
+ const loadDesk=useCallback(async()=>{try{setDesk(await api('/api/master/stories/desk'))}catch{setDesk(d=>d??{classified:null,pitches:null,pitchDesk:null,lights:null,plan:null,autopilot:null})}},[])
  useEffect(()=>{void load();void loadDesk()},[load,loadDesk])
  const live=(jobs??[]).some(j=>['queued','running','cancel_requested'].includes(j.state))
  // Background tabs do not poll. When the owner returns, refresh immediately; visible active jobs update every 30s.
@@ -66,7 +67,7 @@ export function StoriesDesk({view}:{view:DeskTab}){
    {view==='classified'&&<ClassifiedTab facts={facts} onMade={made}>{list('classified','No CLASSIFIED FILE produced yet.')}</ClassifiedTab>}
    {view==='vlog'&&<VlogTab facts={facts} clubs={clubs} onMade={made}>{list('vlog','No I WAS THERE episode yet.')}</VlogTab>}
    {view==='marketing'&&<MarketingTab facts={facts} jobs={jobs} onChange={load} onMade={made}>{list('promo','No marketing film yet. Make the first one above.')}</MarketingTab>}
-   {view==='directors'&&<DirectorsTab facts={facts} days={desk?.pitches??null} onChange={async()=>{await loadDesk();await load()}}/>}
+   {view==='directors'&&<DirectorsTab facts={facts} days={desk?.pitches??null} autopilot={desk?desk.autopilot??null:undefined} onChange={async()=>{await loadDesk();await load()}}/>}
    {view==='status'&&<><DeskBanner b={statusBanner(facts)}/><StatusTab facts={facts} jobs={jobs}/></>}
   </div>
  </div>

@@ -469,6 +469,24 @@ def run_once(st: Studio, root: Path, log) -> bool:
     return True
 
 
+def report_keys(st, log) -> None:
+    """Which Gemini key works? Checked once at the start of a run (one tiny request per key), remembered for the run
+    (studio/gemini.py) and shown on the desk's writer light. Never stops a run: the film's own call fails over too."""
+    try:
+        from .writer_check import heartbeat
+        hb = heartbeat()
+        if hb.get('keys'):
+            log('Writer keys: ' + gemini_keys_line(hb['keys']))
+            st.call({'op': 'health', 'health': {'writer': hb}})
+    except Exception as e:  # noqa: BLE001
+        log(f'Writer keys: the check could not run ({type(e).__name__})')
+
+
+def gemini_keys_line(rows: list) -> str:
+    from .gemini import keys_line
+    return keys_line(rows)
+
+
 def main() -> int:
     base = os.environ.get('STORIES_URL') or os.environ.get('FAN_LIFE_RESEARCH_URL') or 'https://fanlife.dubelteam.com'
     secret = os.environ.get('FAN_LIFE_CRON_SECRET', '')
@@ -478,6 +496,7 @@ def main() -> int:
     root = Path(os.environ.get('STORIES_JOBS', 'stories-jobs'))
     st = Studio(base, secret, os.environ.get('GITHUB_RUN_ID', socket.gethostname())[:60] + '-gh')
     log = lambda m: print(time.strftime('%H:%M:%S'), m, flush=True)
+    report_keys(st, log)
     # one film per run: a 6-hour runner is enough for one 25-minute film with room to spare
     run_once(st, root, log)
     return 0

@@ -21,14 +21,15 @@ export function idemKey(v:unknown):string{
  throw new StoryError('BRIEF','Missing idempotency key.')
 }
 
-export async function createFilm(raw:unknown,actor:string,key:string):Promise<{job:Job;created:boolean}>{
+/** `prepare` marks the new job before it is saved (the autopilot's pick), so the mark and the job are one write. */
+export async function createFilm(raw:unknown,actor:string,key:string,prepare?:(j:Job)=>Job):Promise<{job:Job;created:boolean}>{
  const dup=await existing(key)
  if(dup)return {job:dup,created:false}
  const brief=validateBrief(await fromCatalog(raw),clubNames())
  const offer=(await storyClubs()).find(c=>c.id===brief.club_id)
  if(!offer)throw new StoryError('BRIEF','This club has no match records the studio can read yet. Choose a club from the list.')
  if(brief.kind!=='rivalry'&&!offer.seasons.some(s=>s.season===brief.season))throw new StoryError('BRIEF',`${offer.name} ${brief.season}: no match records the studio can read. Choose a season from the list.`)
- const job=newJob(randomUUID(),brief,paletteFor(brief.club_id),actor||'owner',key)
+ const made=newJob(randomUUID(),brief,paletteFor(brief.club_id),actor||'owner',key),job=prepare?prepare(made):made
  if(!await createJob(job))throw new StoryError('CONFLICT','Could not save the job.',409)
  return {job,created:true}
 }

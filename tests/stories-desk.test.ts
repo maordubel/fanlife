@@ -201,3 +201,15 @@ describe('the banners — computed, never guessed',()=>{
   expect(plainError('SOMETHING','its own message')).toBe('its own message')
  })
 })
+
+describe('the two Gemini keys on the writer light (owner, 12.11.2026)',()=>{
+ it('keeps one line per secret NAME and drops everything else a runner sends',async()=>{
+  const {cleanKeys,keysText}=await import('@/lib/stories/writerKeys')
+  const at='2026-11-12T08:00:00Z'
+  const rows=cleanKeys([{name:'GEMINI_API_KEY',state:'no credit',at,key:'AIza-secret'},{name:'GEMINI_API_KEY_KIDS',state:'ok',at},{name:'AIza-secret',state:'ok',at},{name:'GEMINI_API_KEY',state:'ok',at},{name:'GEMINI_API_KEY_KIDS',state:'AIza-secret',at}])
+  expect(rows).toEqual([{name:'GEMINI_API_KEY',state:'no credit',at},{name:'GEMINI_API_KEY_KIDS',state:'ok',at}])
+  expect(JSON.stringify(rows)).not.toMatch(/AIza/)
+  expect(keysText(rows)).toMatch(/GEMINI_API_KEY: no credit[\s\S]*GEMINI_API_KEY_KIDS: works/)
+  expect(cleanKeys('x')).toEqual([])
+ })
+})

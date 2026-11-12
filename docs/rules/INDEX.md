@@ -95,6 +95,7 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [136](136.md) · Every Football Stories film asks once to follow, as a supporter would (2.11.2026)
 - [141](141.md) · A thumbnail's hook is read off the record (5.11.2026)
 - [142](142.md) · CLASSIFIED is drawn on VOX's case board, and nothing on it flickers (5.11.2026)
+- [studio-autopilot](studio-autopilot.md) · The studio's autopilot publishes only after the owner had two hours to cancel on Telegram; a film nobody uploads loses its big files after seven days (12.11.2026)
 
 ## Control room, research desk and CRM
 

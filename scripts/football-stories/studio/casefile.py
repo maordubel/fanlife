@@ -54,7 +54,8 @@ Return ONE JSON object and nothing else:
 
 
 def _key() -> str:
-    k = os.environ.get('GEMINI_API_KEY', '').strip()
+    from .gemini import api_key  # the key LIST: the one known to work first
+    k = api_key()
     if not k:
         raise StageError('WRITER_NOT_CONFIGURED', 'GEMINI_API_KEY is not set: the CLASSIFIED writer needs the free writer')
     return k

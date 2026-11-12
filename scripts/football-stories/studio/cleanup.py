@@ -1,5 +1,6 @@
 """Remove per-production Actions caches before acknowledging the durable media cleanup queue, and ask the studio to
-remove the big files of films YouTube already has (op trim, lib/stories/trim.ts)."""
+remove the big files of films YouTube already has, and of finished films nobody uploaded for seven days (op trim,
+lib/stories/trim.ts)."""
 import json
 import os
 import re
@@ -36,7 +37,7 @@ def trim():
     try:
         out = call('trim')
         for row in out.get('trimmed', []):
-            print(f"Freed {row['bytes'] // 1048576} MB of a published film: {row['id']}", flush=True)
+            print(f"Freed {row['bytes'] // 1048576} MB of a film (published, or seven days without an upload): {row['id']}", flush=True)
         for job_id in out.get('failed', []):
             print(f'::warning::Trim will retry: {job_id}', flush=True)
     except Exception as error:
