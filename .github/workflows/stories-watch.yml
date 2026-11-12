@@ -6,6 +6,9 @@ name: Football Stories · listener
 # stops. Every round it reports a heartbeat; every three hours it checks that the script writer's key really works (one
 # tiny request to the cheapest current Gemini model, never the Pro quota), which the studio shows as its status lights. The hourly schedule only restarts a chain that broke.
 # When the owner asks for new pitches (studio → Directors) the peek says so once, and the listener starts stories-pitch.yml.
+# When a scheduled social post is due the peek says social_due, and the listener starts stories-social.yml — measured
+# 12.11.2026: GitHub ran that workflow's every-20-minutes schedule 2–5 times a day, so posts went out hours late. Same
+# token and permission as the worker start (actions: write); at most one start per 15 minutes, none while one is running.
 on:
   workflow_dispatch:
   push:
@@ -44,8 +47,12 @@ jobs:
             n=$(gh run list --workflow stories-worker.yml --limit 5 --json status --jq '[.[]|select(.status!="completed")]|length' 2>/dev/null || echo 0)
             [ "${n:-0}" -gt 0 ]
           }
+          social_busy() {
+            n=$(gh run list --workflow stories-social.yml --limit 5 --json status --jq '[.[]|select(.status!="completed")]|length' 2>/dev/null || echo 0)
+            [ "${n:-0}" -gt 0 ]
+          }
           end=$(( $(date +%s) + 5*3600 + 40*60 ))
-          writer=$(writer_check); checked=$(date +%s); cleaned=0
+          writer=$(writer_check); checked=$(date +%s); cleaned=0; social_at=0
           echo "Writer: $writer"
           while [ "$(date +%s)" -lt "$end" ]; do
             if [ $(( $(date +%s) - checked )) -gt 10800 ]; then writer=$(writer_check); checked=$(date +%s); fi
@@ -60,6 +67,12 @@ jobs:
             if [ "$(printf '%s' "$peek" | python3 -c "import sys,json;print(bool(json.load(sys.stdin).get('pitch')))" 2>/dev/null || echo False)" = "True" ]; then
               echo "$(date -u +%T) the owner asked for new pitches — starting the directors"
               gh workflow run stories-pitch.yml || echo "::warning::could not start the pitch run"
+            fi
+            # a scheduled post's time has come: start the social runner (its own cron is throttled to a few runs a day)
+            if [ "$(printf '%s' "$peek" | python3 -c "import sys,json;print(bool(json.load(sys.stdin).get('social_due')))" 2>/dev/null || echo False)" = "True" ] \
+               && [ $(( $(date +%s) - social_at )) -ge 900 ] && ! social_busy; then
+              echo "$(date -u +%T) a social post is due — starting the social runner"
+              if gh workflow run stories-social.yml; then social_at=$(date +%s); else echo "::warning::could not start the social runner"; fi
             fi
             if [ -n "$next" ] && ! worker_busy; then
               echo "$(date -u +%T) film waiting: $next — starting the worker"

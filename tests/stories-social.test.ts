@@ -1,7 +1,7 @@
 import {readFileSync} from 'node:fs'
 import {describe,expect,it} from 'vitest'
 import {newJob,ownerAct,StoryError,type Job} from '@/lib/stories/jobs'
-import {LIMITS,MAX_POSTS,PLATFORMS,captionLength,claimSocial,cleanLights,compose,dueSocial,hashtagCount,resultSocial,scheduleSocial,socialTags,textProblem,SocialError} from '@/lib/stories/social'
+import {LIMITS,MAX_POSTS,PLATFORMS,captionLength,claimSocial,cleanLights,compose,dueSocial,socialDue,hashtagCount,resultSocial,scheduleSocial,socialTags,textProblem,SocialError} from '@/lib/stories/social'
 // @ts-expect-error — plain ESM runner, no types
 import {config,lights,oauth1,packMessage,redactor,tiktokChunks} from '../scripts/football-stories/publish/social.mjs'
 
@@ -103,11 +103,18 @@ describe('Social — the runner takes each post once',()=>{
   let j=scheduleSocial(film(),[{platform:'facebook',when:'now',caption:'a'},{platform:'x',when:at(60),caption:'b'}],'owner',now)
   const due=dueSocial([j],new Date(now.getTime()+1000))
   expect(due).toEqual([{jobId:j.id,postId:j.social!.posts[0]!.id,platform:'facebook'}])
+  // the listener's peek: true only while a scheduled post's time has come
+  expect(socialDue([film()],now)).toBe(false)
+  expect(socialDue([film(),j],new Date(now.getTime()+1000))).toBe(true)
+  const later=scheduleSocial(film(),[{platform:'x',when:at(60),caption:'b'}],'owner',now)
+  expect(socialDue([later],new Date(now.getTime()+59*60_000))).toBe(false)
+  expect(socialDue([later],new Date(now.getTime()+61*60_000))).toBe(true)
   const id=due[0]!.postId
   expect(()=>claimSocial(j,j.social!.posts[1]!.id,'w',now)).toThrow(/not due/)
   j=claimSocial(j,id,'social-9',now)
   expect(()=>claimSocial(j,id,'social-10',now)).toThrow(SocialError)
   expect(dueSocial([j],new Date(now.getTime()+1000))).toEqual([])
+  expect(socialDue([j],new Date(now.getTime()+1000))).toBe(false)   // a post being sent does not start a second runner
   expect(()=>resultSocial(j,id,'social-10',{state:'sent'},now)).toThrow(/does not hold/)
   expect(()=>resultSocial(j,id,'social-9',{state:'published'},now)).toThrow(/Invalid/)
   j=resultSocial(j,id,'social-9',{state:'manual',result:'pack sent',url:'javascript:alert(1)'},now)

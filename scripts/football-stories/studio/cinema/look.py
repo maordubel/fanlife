@@ -18,7 +18,10 @@ from ..motion import ease_in_out, ease_out_cubic
 from ..paper import CANVAS, beat_path, piece_meta
 
 CW, CH = CANVAS
-MOVES = ('push', 'pull', 'whip', 'shake', 'drift', 'slow', 'orbit')
+MOVES = ('push', 'pull', 'whip', 'drift', 'slow', 'orbit')
+# Owner: "a feeling of epilepsy, the pictures shake" (rule 142). The shaking camera is gone; a script saved before that
+# may still ask for it, and gets the calm move that lands the same beat.
+CALM = {'shake': 'push'}
 
 
 def _handheld(t: float, amp: float, seed: int) -> tuple[float, float]:
@@ -29,6 +32,7 @@ def _handheld(t: float, amp: float, seed: int) -> tuple[float, float]:
 
 def move(name: str | None, dur: float, seed: int = 0, pace: str | None = None):
     """The camera for a shot: t → (zoom, cx, cy) on the canvas. Every move moves; `slow` slows it, `fast` sharpens it."""
+    name = CALM.get(name, name)
     name = name if name in MOVES else ('push', 'drift', 'pull', 'orbit')[seed % 4]
     sp = {'fast': 1.6, 'slow': 0.55}.get(pace or '', 1.0)
     side = 1 if seed % 2 else -1
@@ -45,9 +49,6 @@ def move(name: str | None, dur: float, seed: int = 0, pace: str | None = None):
         if name == 'whip':
             w = ease_out_cubic(min(1.0, t / 0.42))
             return 1.07 + 0.03 * k, X + side * (1 - w) * 260 + side * 24 * k + hx, Y + hy
-        if name == 'shake':
-            jx, jy = _handheld(t * 3.4, 7.5, seed + 5)
-            return 1.03 + 0.06 * k, X + jx, Y + jy
         if name == 'drift':
             return 1.08, X + side * (-70 + 140 * k) + hx, Y + 10 * math.sin(t * 0.5) + hy
         if name == 'slow':

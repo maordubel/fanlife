@@ -165,6 +165,7 @@ const PLAIN:Record<string,string>={
  WRITER_QUOTA_DAY:'Google’s free writer used up today’s quota. The job waits and starts again by itself after midnight Pacific time.',
  WRITER_BUSY:'Google’s free writer was too busy. The job waits about 20 minutes and tries again by itself.',
  WRITER_KEY:'Google refused the writer key. Make a new free key in Google AI Studio and paste it as GEMINI_API_KEY in GitHub secrets.',
+ WRITER_NO_CREDIT:'The Gemini key’s Google project has billing switched on and no credit left, so Google refuses every request. Make a new key in Google AI Studio in a project without billing (the free tier) and paste it as GEMINI_API_KEY in GitHub secrets, or top up the project. Then Retry.',
  WRITER_NOT_CONFIGURED:'No writer key. Add GEMINI_API_KEY in GitHub → Settings → Secrets and variables → Actions.',
  SCRIPT_INVALID:'The scripts did not pass the fact and length checks. Retry; a second pass usually passes.',
  SCRIPT_CHANGED:'The CLASSIFIED script changed after you approved it. Read the new draft and produce it again.',

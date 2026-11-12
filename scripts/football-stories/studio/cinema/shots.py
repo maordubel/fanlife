@@ -467,7 +467,7 @@ def goal(ed, s: dict) -> Shot:
     strap.alpha_composite(nm, (mins.width + 70, int(hh / 2 - nm.height / 2)))
     tick = text(f"{scores[1][0]}–{scores[1][1]}", 'ultra', 130, gfx.a(ink.on_accent)) if scores else None
     lines = gfx.speedlines(W, H, hit[0] - 100, hit[1], seed, alpha=110)
-    cam = look.move(cin.get('camera') or 'shake', dur, seed, cin.get('cam_pace') or cin.get('pace'))
+    cam = look.move(cin.get('camera') or 'push', dur, seed, cin.get('cam_pace') or cin.get('pace'))
 
     def pieces(t):
         out = []
@@ -681,7 +681,7 @@ def trailer(ed, s: dict) -> Shot:
     n = len(lines)
     span = max(s.get('voice_dur') or 0, dur - lead - 0.4, n * 0.9)
     starts = [max(0.15, lead * 0.6) + span * j / n for j in range(n)]
-    styles = [('slam', 'whip', 'stutter')[(j + seed) % 3] for j in range(n)]
+    styles = [('slam', 'whip', 'settle')[(j + seed) % 3] for j in range(n)]
     styles[0] = 'slam'
     imgs = []
     for ln in lines:
@@ -727,11 +727,9 @@ def trailer(ed, s: dict) -> Shot:
                 out.append(_at(blurred[j], W / 2 + (1 - ease_out_cubic(k)) * W, cy))
             else:
                 out.append(_at(im, W / 2 + 6 * math.sin(tt * 3), cy))
-        else:  # stutter: the line flickers on like a bad splice, then holds
-            fi = int(tt * FPS)
-            if tt > 0.36 or fi % 2 == 0:
-                jit = 0 if tt > 0.36 else (fi * 37 % 21 - 10)
-                out.append(_at(im, W / 2 + jit, cy + jit * 0.5))
+        else:  # settle: the line comes up once and eases into place, then holds (it used to flicker on like a bad splice — rule 142)
+            k = ease_out_cubic(clamp(tt / 0.36))
+            out.append(_at(_fade(_scale(im, 1.12 - 0.12 * k), k), W / 2, cy))
         if tt < 0.1:
             out.append((Image.new('RGBA', (W, H), (255, 251, 242, int(200 * (1 - tt / 0.1)))), 0, 0))
         return out

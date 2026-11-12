@@ -197,6 +197,7 @@ describe('the banners — computed, never guessed',()=>{
  it('a tab in the URL, plain words for an error code',()=>{
   expect(deskTab('vlog')).toBe('vlog');expect(deskTab('nope')).toBe('docs');expect(deskTab(undefined)).toBe('docs')
   expect(plainError('WRITER_QUOTA_DAY','x')).toMatch(/midnight Pacific/)
+  expect(plainError('WRITER_NO_CREDIT','raw 402')).toMatch(/no credit left[\s\S]*without billing[\s\S]*GEMINI_API_KEY/)
   expect(plainError('SOMETHING','its own message')).toBe('its own message')
  })
 })

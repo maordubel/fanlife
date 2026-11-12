@@ -31,6 +31,9 @@ def main() -> None:
             return
         except StageError as e:
             note = f'{m}: {e.code}'
+            if e.code == 'WRITER_HTTP_402':  # the same on every model: say it in words on the status light
+                note = 'no credit: the key\'s Google project has billing on and a zero balance — use a key from a project without billing'
+                break
             if e.code in ('WRITER_HTTP_401', 'WRITER_HTTP_403') and 'API key' in str(e):
                 break
     print(json.dumps({'provider': 'gemini', 'ok': False, 'note': note[:150]}))

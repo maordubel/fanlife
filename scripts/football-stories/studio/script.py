@@ -39,7 +39,8 @@ VISUALS = {
     'trailer': {'lines'},
 }
 DIRECTOR_VISUALS = {'form', 'race', 'versus', 'goal', 'record', 'run', 'trailer'}
-CAMERAS = {'push', 'pull', 'whip', 'shake', 'drift', 'slow', 'orbit'}
+CAMERAS = {'push', 'pull', 'whip', 'shake', 'drift', 'slow', 'orbit'}  # 'shake' is no longer offered (rule 142); a saved script that
+# carries it still passes and is filmed as a push (cinema/look.move)
 PACES = {'fast', 'normal', 'slow'}
 SFX = {'roar', 'whistle', 'groan', 'gasp', 'drum', 'none'}
 SCORE_VISUALS = {'matchday', 'score', 'versus', 'goal'}   # a visual that puts a match's score on screen itself
@@ -141,7 +142,7 @@ SCHEMA_TEXT = '''{
       "narration": string (one to three sentences),
       "claim_ids": [string] — ledger ids this beat relies on (may be empty only for pure atmosphere with no fact);
                    "story" may be cited for a number the STORY block counted (a run's length, the form line),
-      "camera": optional "push|pull|whip|shake|drift|slow|orbit" — the move you want on this beat,
+      "camera": optional "push|pull|whip|drift|slow|orbit" — the move you want on this beat,
       "pace": optional "fast|normal|slow" — fast = hard cuts and quick motion, slow = held frames,
       "broll": optional art key ("beat:…", "clip:…", tunnel|terrace-crowd|terrace-empty|supporter) behind a data card,
       "sfx": optional "roar|whistle|groan|gasp|drum|none",

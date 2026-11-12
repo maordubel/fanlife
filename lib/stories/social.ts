@@ -226,6 +226,8 @@ export function dueSocial(jobs:Job[],now=new Date(),limit=10):{jobId:string;post
  return jobs.flatMap(j=>(j.social?.posts??[]).filter(p=>p.state==='scheduled'&&Date.parse(p.dueAt)<=t).map(p=>({jobId:j.id,postId:p.id,platform:p.platform,dueAt:p.dueAt})))
   .sort((a,b)=>a.dueAt.localeCompare(b.dueAt)).slice(0,limit).map(({jobId,postId,platform})=>({jobId,postId,platform}))
 }
+/** The listener's peek asks only this (no lease, no list): is a post waiting for the social runner right now? */
+export const socialDue=(jobs:Job[],now=new Date()):boolean=>dueSocial(jobs,now,1).length>0
 export function claimSocial(job:Job,postId:unknown,worker:string,now=new Date()):Job{
  const j:Job=structuredClone(job),at=now.toISOString()
  const p=(j.social?.posts??[]).find(x=>x.id===postId)

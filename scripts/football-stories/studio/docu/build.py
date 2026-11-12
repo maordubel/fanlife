@@ -293,7 +293,7 @@ class Film:
                        f'tl.fromTo("#{cid}w",{{scale:1,y:0}},{{scale:{s.get("push_scale", 2.2)},y:{540 - ly},duration:0.9,ease:"power3.inOut",immediateRender:false}},{r2(t + pa)});')
 
     def word(self, s, t, d):
-        """Kinetic type: one or two words slammed onto the glass, the frame shaking once."""
+        """Kinetic type: one or two words slammed onto the glass; the plate settles once, it never shakes (rule 142)."""
         cid = self.id('wd')
         col = {'us': self.US, 'them': self.THEM, 'ink': self.INK, 'paper': self.PAPER}.get(s.get('bg', 'ink'), s.get('bg'))
         fg = s.get('fg', '#fff')
@@ -303,9 +303,9 @@ class Film:
         self.clip(cid, t, d, f'<div class="word" style="background:{col}"><b style="color:{fg};font-size:{s.get("size", 220)}px">{lines}</b>'
                   + (f'<small style="color:{fg}">{e(s["small"])}</small>' if s.get('small') else '') + '</div>', s.get('z', 15))
         self.tween(f'tl.fromTo("#{cid} .word b",{{scale:3,opacity:0}},{{scale:1,opacity:1,duration:0.18,ease:"power4.in"}},{r2(t + s.get("at", 0))});'
-                   f'tl.fromTo("#{cid} .word",{{x:0}},{{x:14,duration:0.04,yoyo:true,repeat:5,ease:"none",immediateRender:false}},{r2(t + s.get("at", 0) + 0.18)});')
+                   f'tl.fromTo("#{cid} .word",{{scale:1.04}},{{scale:1,duration:0.5,ease:"power2.out",immediateRender:false}},{r2(t + s.get("at", 0) + 0.18)});')
         if s.get('glitch'):
-            self.tween(f'tl.fromTo("#{cid} .word b",{{textShadow:"-14px 0 {self.US}, 14px 0 #3ad"}},{{textShadow:"0 0 transparent, 0 0 transparent",duration:0.35,ease:"steps(5)"}},{r2(t + s.get("at", 0) + 0.18)});')
+            self.tween(f'tl.fromTo("#{cid} .word b",{{textShadow:"-14px 0 {self.US}, 14px 0 #3ad"}},{{textShadow:"0 0 transparent, 0 0 transparent",duration:0.35,ease:"power2.out"}},{r2(t + s.get("at", 0) + 0.18)});')
 
     def cities(self, s, t, d):
         """Two places, two halves, a jagged line between them."""
@@ -426,12 +426,11 @@ class Film:
         self.tween(f'tl.fromTo("#{cid}d",{{opacity:0}},{{opacity:0.82,duration:{r2(max(0.4, last - t))},ease:"power1.in"}},{r2(t)});')
 
     def tint(self, s, t, d):
-        """The picture in the club's colour — duotone, slammed in with a shake (a hero's entrance)."""
+        """The picture in the club's colour — duotone, pushed in hard and then held on a slow push (a hero's entrance; no shake, rule 142)."""
         cid = self.id('tn')
         self.clip(cid, t, d, f'<div class="phi" id="{cid}i" style="background-image:url(assets/img/{e(s["src"])});background-position:{s.get("pos", "center")};filter:grayscale(1) contrast(1.4)"></div>'
                   f'<div class="duo" style="background:{self.US}"></div><div class="recon">{RECON if s.get("recon", True) else ""}</div>', 3, 'ph')
         self.tween(f'tl.fromTo("#{cid}i",{{scale:1.5}},{{scale:1.08,duration:0.35,ease:"power4.in"}},{r2(t)});'
-                   f'tl.fromTo("#{cid}",{{x:0,y:0}},{{x:18,y:-10,duration:0.04,yoyo:true,repeat:7,ease:"none",immediateRender:false}},{r2(t + 0.35)});'
                    f'tl.to("#{cid}i",{{scale:1.2,duration:{r2(max(0.5, d - 0.4))},ease:"none"}},{r2(t + 0.4)});')
         if s.get('tag'):
             tg = s['tag']
@@ -486,7 +485,9 @@ class Film:
             for snd in b.get('sound', []):
                 self.sound(snd[0], b['t'] + snd[1], snd[2] if len(snd) > 2 else None, snd[3] if len(snd) > 3 else 0.6)
             if b.get('flash') is not None:
-                self.tween(f'tl.fromTo("#flash",{{opacity:0.7}},{{opacity:0,duration:0.25,immediateRender:false}},{r2(b["t"] + b["flash"])});')
+                # a beat's `flash` is a quick dip to the ground colour and back — never a white frame (rule 142)
+                self.tween(f'tl.fromTo("#flash",{{opacity:0}},{{opacity:0.5,duration:0.1,ease:"power1.in",immediateRender:false}},{r2(b["t"] + b["flash"])});'
+                           f'tl.to("#flash",{{opacity:0,duration:0.3,ease:"power2.out"}},{r2(b["t"] + b["flash"] + 0.1)});')
             if b.get('agg') is not None:
                 if agg_on is None:
                     agg_on = b['t']
@@ -602,7 +603,7 @@ video.clip{{width:1920px;height:1080px}}
 .fg{{display:grid;gap:12px;margin-top:40px}} .ft{{height:96px;display:flex;align-items:center;justify-content:center;color:#fff;font:400 52px 'Ultra';border:4px solid {INK};box-shadow:6px 6px 0 {INK}}}
 .fbr{{margin-top:44px;text-align:left}}
 .fbr span{{display:inline-block;margin-top:14px;background:{INK};color:#fff;font:700 40px 'Caps';letter-spacing:4px;padding:8px 22px}}
-#flash{{position:absolute;left:0;top:0;width:1920px;height:1080px;background:#fff;opacity:0;z-index:30}}
+#flash{{position:absolute;left:0;top:0;width:1920px;height:1080px;background:{INK};opacity:0;z-index:30}}
 '''
         if not self.sb.get('silent'):
             bed = self.sb.get('bed', 0.28)

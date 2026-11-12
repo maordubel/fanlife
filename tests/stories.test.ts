@@ -165,6 +165,16 @@ it('the listener starts the worker and keeps itself alive',()=>{
   expect(w).toMatch(/gh workflow run stories-watch\.yml/)
   expect(w).toMatch(/"op":\\"peek\\"|op\\":\\"peek/)
 })
+it('the listener starts the social runner when a post is due, with the token it already has, at most once in 15 minutes',()=>{
+  const w=src('.github/workflows/stories-watch.yml')
+  expect(w).toMatch(/get\('social_due'\)/)
+  expect(w).toMatch(/social_at \)\) -ge 900 \] && ! social_busy/)
+  expect(w).toMatch(/if gh workflow run stories-social\.yml; then social_at=\$\(date \+%s\)/)
+  expect(w.match(/^permissions:\n((?:  .*\n)+)/m)![1]).toBe('  actions: write\n  contents: read\n')   // nothing widened
+  expect(src('.github/workflows/stories-social.yml')).toMatch(/^on:\n  workflow_dispatch:/m)
+  const r=src('app/api/master/stories/worker/route.ts')
+  expect(r).toMatch(/const jobs=await listJobs\(200\)[\s\S]{0,400}social_due:socialDue\(jobs\)/)   // from the jobs the peek already read
+})
 it('the worker compiles the club archives it researches from',()=>{
   expect(src('.github/workflows/stories-worker.yml')).toMatch(/npm run clubs:precompile/)
 })
