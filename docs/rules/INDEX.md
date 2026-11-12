@@ -201,3 +201,5 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [105](105.md) · Nothing closes because of a limit (12.10.2026)
 - [120](120.md) · Parallel pull requests must not collide (13.10.2026)
 - [128](128.md) · A discovery unit promises only what the target can do, and shows only when it may (27.10.2026)
+- [shop-library-only](shop-library-only.md) · The shop prints only from the owner's library and sells only fan art that is ours to sell; Printify Pop-Up checkout (12.11.2026)
+- [phone-fold](phone-fold.md) · On a phone the hub and a club's home show the hook and the doors; the rest waits behind one button (12.11.2026)

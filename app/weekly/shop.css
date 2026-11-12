@@ -1,0 +1,30 @@
+/* THE SHOP — the weekly's mail-order page (12.11.2026). Tokens only, logical properties only, nothing scrolls sideways. */
+.wks { display: grid; gap: 18px; padding: 14px 14px 32px; max-inline-size: 1180px; margin-inline: auto; }
+.wks-head { position: relative; overflow: hidden; display: grid; grid-template-columns: 84px minmax(0, 1fr); align-items: center; gap: 12px; padding: 16px 14px; border: 3px solid var(--mag-ink); box-shadow: 5px 5px 0 var(--mag-ink); }
+.wks-head-art { block-size: 96px; filter: drop-shadow(3px 3px 0 var(--mag-ink)); }
+.wks-h1 { font-size: clamp(34px, 11vw, 72px); line-height: .92; color: var(--mag-paper); margin-block: 6px; }
+.wks-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.wks-chip { display: inline-flex; align-items: center; padding: 0 14px; border: 2px solid var(--mag-ink); background: var(--mag-card, var(--mag-paper)); color: var(--mag-ink); font-family: var(--mag-mono); font-size: 13px; font-weight: 700; text-transform: uppercase; text-decoration: none; }
+.wks-chips.small .wks-chip { font-size: 12px; padding: 0 10px; }
+.wks-chip[aria-current] { background: var(--mag-ink); color: var(--mag-paper); }
+.wks-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.wks-card { padding: 0; }
+.wks-card-in { display: grid; gap: 8px; padding: 8px; color: var(--mag-ink); text-decoration: none; block-size: 100%; align-content: start; }
+.wks-img { inline-size: 100%; block-size: auto; aspect-ratio: 1; object-fit: cover; background: var(--mag-paper); border: 2px solid var(--mag-ink); }
+.wks-t { display: grid; gap: 4px; min-inline-size: 0; }
+.wks-t b { font-size: 14px; line-height: 1.2; overflow-wrap: anywhere; }
+.wks-buy { min-block-size: 44px; justify-content: center; align-self: end; }
+.wks-market { position: relative; display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 12px; align-items: center; padding: 14px; border: 3px solid var(--mag-ink); box-shadow: 5px 5px 0 var(--mag-ink); }
+.wks-market-art { block-size: 84px; filter: drop-shadow(3px 3px 0 var(--mag-ink)); }
+.wks-market .wk-btn { margin-block-start: 8px; }
+.wks-note { max-inline-size: 70ch; }
+.wks-strip { display: grid; gap: 12px; margin-block: 18px; }
+.wks-strip-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 10px; }
+@media (min-width: 760px) {
+  .wks { gap: 24px; padding: 24px 24px 48px; }
+  .wks-head { grid-template-columns: 150px minmax(0, 1fr); padding: 28px; }
+  .wks-head-art { block-size: 170px; }
+  .wks-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+  .wks-market { grid-template-columns: 130px minmax(0, 1fr); padding: 22px; }
+  .wks-market-art { block-size: 130px; }
+}

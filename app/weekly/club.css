@@ -763,3 +763,15 @@ button.wkk-stub-ground { min-block-size: 44px; text-decoration: underline; text-
 .wkk-next-hold { min-block-size: 168px; border: 3px dashed var(--mag-ink); opacity: .18; }
 @media (prefers-reduced-motion: no-preference) { .wkk-next-hold { animation: wkkHold 1.4s ease-in-out infinite alternate; } }
 @keyframes wkkHold { from { opacity: .1; } to { opacity: .22; } }
+
+/* ── THE PHONE'S FOLD on a club's home (owner, 12.11.2026): the pick, the match, the gates, LIFE — the rest behind one button ── */
+.wkk-foldbar { display: none; }
+.wkk-foldwrap { display: contents; }
+@media (max-width: 900px) {
+  .wkk-home > * { order: 10; }
+  .wkk-home > .club-entrance, .wkk-home > .wkk-mast { order: 0; } .wkk-home > .wkp-strip { order: 1; } .wkk-home > .wkk-lead { order: 2; } .wkk-home > .wkk-allgames { order: 3; }
+  .wkk-home > .wkk-nextwrap { order: 4; } .wkk-home > .wkk-picker { order: 5; } .wkk-home > .wkk-life { order: 6; }
+  .wkk-home > .wkk-foldbar { order: 7; display: block; }
+  .wkk-home > .wkk-shop { order: 11; } .wkk-home > .wkk-contents { order: 12; }
+  .wkk-home:not([data-full='1']) [data-fold] { display: none; }
+}

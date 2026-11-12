@@ -6,6 +6,7 @@ export const SECTIONS=[
  {key:'players',label:'Players',hint:'Positions, prices, duplicates'},
  {key:'games',label:'Games',hint:'Every gate, every club'},
  {key:'studio',label:'Studio',hint:'Football Stories films'},
+ {key:'shop',label:'Shop',hint:'Printify products, what is on sale'},
  {key:'market',label:'Market',hint:'Shirts, offers, reports'},
  {key:'community',label:'Community',hint:'Fan contributions'},
  {key:'audience',label:'Performance',hint:'Who plays, where they stop'},

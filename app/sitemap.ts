@@ -68,7 +68,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...(await clubPages(state, live, now)),
     { url: `${SITE_URL}/sources`, lastModified: now },
     // SEO pass (30.10.2026): the pages Google asks every publisher for, and the hub's own sections.
-    ...['/about', '/privacy', '/terms', '/contact', '/our-games', '/market', '/shirts'].map((path) => ({ url: `${SITE_URL}${path}`, lastModified: now })),
+    ...['/about', '/privacy', '/terms', '/contact', '/our-games', '/market', '/shop', '/shirts'].map((path) => ({ url: `${SITE_URL}${path}`, lastModified: now })),
     // ALL FOOTBALL and Legends Manager are listed only while their switch is on for everyone (off = owner preview, a 404 to the public).
     ...(featuresOf(state).allFootball ? [{ url: `${SITE_URL}/all-football`, lastModified: now }] : []),
     ...(featuresOf(state).fanLeague ? [{ url: `${SITE_URL}/all-football/legends`, lastModified: now }] : []),
