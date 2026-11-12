@@ -123,6 +123,16 @@ jobs:
           [ -f "$RUNNER_TEMP/cinema-listing.json" ] || exit 0
           python -m studio.cinema.library sync --listing "$RUNNER_TEMP/cinema-listing.json" --dest ~/cinema-lib --report "$RUNNER_TEMP/cinema-sync.json"
       - if: steps.peek.outputs.next != ''
+        name: Media usage ledger (which picture was in which film — studio/media_index.py)
+        # Restored before every film and saved after it, so the picker marks down what the last films showed. A missing
+        # or evicted cache only means the ledger starts again: no film waits for it.
+        continue-on-error: true
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/media-ledger
+          key: media-ledger-${{ github.run_id }}
+          restore-keys: media-ledger-
+      - if: steps.peek.outputs.next != ''
         name: This film's checkpoints
         uses: actions/cache/restore@v4
         with:
@@ -157,7 +167,16 @@ jobs:
           STORIES_GEMINI_MODEL: ${{ vars.STORIES_GEMINI_MODEL }}
           # the moving-art library the cinema animates (absent → the film renders without it)
           STORIES_CINEMA_LIB: /home/runner/cinema-lib
+          # the usage ledger across films (the media index's freshness; the generated index rides in the library cache)
+          STORIES_MEDIA_LEDGER: /home/runner/media-ledger/usage.json
         run: python -m studio.worker
+      - if: always() && steps.peek.outputs.next != ''
+        name: Keep the media usage ledger
+        continue-on-error: true
+        uses: actions/cache/save@v4
+        with:
+          path: ~/media-ledger
+          key: media-ledger-${{ github.run_id }}
       - name: Check production still exists
         if: always() && steps.peek.outputs.next != ''
         id: checkpoint
