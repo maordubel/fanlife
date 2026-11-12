@@ -59,6 +59,12 @@ FRAMINGS = {'wide': ('{scale:1.02}', '{scale:1.1}', '50% 50%'),
             'turn': ('{scale:1.08}', '{scale:1.42}', '50% 46%')}   # the last look of a chapter: the push that leaves a question
 # Transitions into a beat (`in`). None goes to white and none shakes (rule 142): each is ONE move in ONE direction.
 # The seconds are how long the outgoing beat stays on screen under the incoming one (0 = the cut needs no overlap).
+# The colour treatment of a picture, from the score sheet (docu/editor.GRADE): a CSS filter on the picture's planes and,
+# for joy, the club's colour blooming up from the foot of the frame. All inside the brand; the bloom RISES over
+# BLOOM_S (the gate calls a flash a 28-level jump inside two frames — this is under one level a frame). No flashing.
+GRADES = {'cold': 'filter:saturate(.62) brightness(.9) contrast(1.06) hue-rotate(-8deg);', 'grey': 'filter:saturate(.38) brightness(.92);',
+          'cool': 'filter:saturate(.82) contrast(1.05);', 'warm': 'filter:saturate(1.12) contrast(1.03);', 'bloom': 'filter:saturate(1.18) contrast(1.04);'}
+BLOOM_S, BLOOM_TO = 1.4, 0.3
 # The framing a camera move starts from (studio/camera.py): (the framing's own scale, its default origin). The move adds
 # its travel to this — a detail look is a dolly or a rack AT 1.42, never the old constant glide.
 FRAME_BASE = {'wide': (1.0, '50% 50%'), 'detail': (1.42, '34% 40%'), 'reverse': (1.16, '50% 58%'), 'turn': (1.04, '50% 46%')}
@@ -70,7 +76,12 @@ CREEP = 0.004
 CREEPS = {'question', 'ticket', 'lead', 'ledger', 'rule', 'stat', 'tally', 'card', 'quote', 'form', 'verdict', 'cities', 'chalk', 'end', 'table', 'press', 'word'}
 
 # The explainer board and the kinetic line (Film.explain, Film.kinetic). INK and PAPER are the film's own.
-XP_CSS = ('.xpb{position:absolute;left:0;top:0;width:1920px;height:1080px;color:INK}'
+XP_CSS = ('.bloom{position:absolute;left:0;top:0;width:1920px;height:1080px;mix-blend-mode:screen;pointer-events:none}'
+          '.ckb{position:absolute;left:140px;top:70px;width:1640px;height:60px} .ckt{position:absolute;left:0;top:18px;width:100%;height:24px;background:rgba(20,17,13,.55);border:3px solid PAPER}'
+          '.ckt i{display:block;height:100%;transform-origin:left center}'
+          ".ckb b{position:absolute;top:52px;margin-left:-60px;width:120px;text-align:center;font:400 54px/1 'Ultra';color:#fff;text-shadow:4px 4px 0 INK}"
+          ".ckb span{position:absolute;right:0;top:-26px;font:700 28px 'Cond';letter-spacing:3px;color:PAPER}"
+          '.xpb{position:absolute;left:0;top:0;width:1920px;height:1080px;color:INK}'
           ".xpt{position:absolute;left:250px;top:150px;font:700 40px 'Cond';letter-spacing:10px}"
           '.pen{position:absolute;left:0;top:0;overflow:visible}'
           ".xpe{position:absolute;width:120px;text-align:center;font:400 64px/1 'Ultra'}"
@@ -163,7 +174,7 @@ class Film:
         z = s.get('z', z)
         hold = s.get('hold', d)   # how long its tag and mini score stay: the whole beat, when the picture under them is cut into sub-shots
         fit = 'background-size:contain;background-repeat:no-repeat;background-color:' + self.INK if s.get('fit') == 'contain' else ''
-        src_css = f'background-image:url(assets/img/{e(s["src"])});background-position:{pos};{fit}'
+        src_css = f'background-image:url(assets/img/{e(s["src"])});background-position:{pos};{fit}{GRADES.get(s.get("grade"), "")}'
         cam = s.get('cam') if s.get('fit') != 'contain' else None
         flat = s.get('as') == 'print' or not cam
         # with a camera move the picture is two depth planes and a vignette (studio/camera.planes); a print is one sheet
@@ -175,7 +186,10 @@ class Film:
             self.clip(cid, t, d, f'<div class="prn" id="{cid}p">{phi}</div>{recon}', z, 'paper')
             self.tween(f'tl.fromTo("#{cid}p",{{y:120,rotation:-5,opacity:0}},{{y:0,rotation:-1.5,opacity:1,duration:0.5,ease:"power3.out"}},{r2(t)});')
         else:
-            self.clip(cid, t, d, phi + (f'<div class="veil" style="opacity:{veil}"></div>' if veil else '') + recon, z, 'ph')
+            bloom = f'<div class="bloom" id="{cid}b" style="background:linear-gradient(to top,{self.US} 0%,rgba(0,0,0,0) 62%)"></div>' if s.get('grade') == 'bloom' else ''
+            self.clip(cid, t, d, phi + bloom + (f'<div class="veil" style="opacity:{veil}"></div>' if veil else '') + recon, z, 'ph')
+            if bloom:
+                self.tween(f'tl.fromTo("#{cid}b",{{opacity:0}},{{opacity:{BLOOM_TO},duration:{r2(min(BLOOM_S, d))},ease:"power1.inOut"}},{r2(t)});')
         move = s.get('move', 'push')
         if cam:
             # THE CAMERA (studio/camera.py): a named move on the planes, from the framing's own scale and origin. The
@@ -218,6 +232,10 @@ class Film:
             mid = self.id('mini')
             self.clip(mid, t + m.get('at', 1.5), hold - m.get('at', 1.5), f'<div class="mini"><span>{e(m["home"])}</span><b>{e(m["score"])}</b><span>{e(m["away"])}</span></div>', 9)
             self.tween(f'tl.fromTo("#{mid} .mini",{{scale:1.8,opacity:0}},{{scale:1,opacity:1,duration:0.22,ease:"power4.in"}},{r2(t + m.get("at", 1.5))});')
+            if m.get('flip'):   # the score before the goal, then the score after it — changed on the cut, settled once (no bounce)
+                at = t + m['flip']['at']
+                self.tween(f'tl.set("#{mid} .mini b",{{textContent:"{e(m["score"])}"}},{r2(t)});tl.set("#{mid} .mini b",{{textContent:"{e(m["flip"]["score"])}"}},{r2(at)});'
+                           f'tl.fromTo("#{mid} .mini b",{{scale:1.5,color:"{self.US}"}},{{scale:1,color:"{self.INK}",duration:0.4,ease:"power2.out",immediateRender:false}},{r2(at)});')
 
     def video(self, s, t, d):
         cid = self.id('vid')
@@ -495,6 +513,19 @@ class Film:
         self.clip(cid, t, d, f'<img class="cut" id="{cid}i" src="assets/img/{e(s["src"])}" style="left:{s.get("x", 1180)}px;height:{s.get("h", 1000)}px">', s.get('z', 6))
         self.tween(f'tl.fromTo("#{cid}i",{{y:500,opacity:0}},{{y:{s.get("y", 120)},opacity:1,duration:0.7,ease:"power3.out"}},{r2(t)});'
                    f'tl.to("#{cid}i",{{x:{-60 * s.get("way", 1)},duration:{r2(max(0.5, d - 0.7))},ease:"none"}},{r2(t + 0.7)});')   # the nearest plane: it travels with the camera's move
+
+    def clockdev(self, s, t, d):
+        """Time pressure, drawn: the match clock as a bar across the top that fills to the minute the line is at — a minute
+        a claim records or the line itself says (the adapter checks it) — with that minute at its head. It fills once,
+        eased, and stays; over the picture, never a card."""
+        cid = self.id('ck')
+        to = max(0.02, min(1.0, s['minute'] / s.get('span', 90)))
+        self.clip(cid, t, d, f'<div class="ckb"><div class="ckt"><i id="{cid}f" style="background:{self.US}"></i></div>'
+                             f'<b id="{cid}m" style="left:{to * 100:.1f}%">{e(s["minute"])}\'</b><span>{e(s.get("span", 90))}\'</span></div>', s.get('z', 8))
+        fill = min(2.6, max(0.8, d - 0.6))
+        self.tween(f'tl.fromTo("#{cid} .ckb",{{y:-90,opacity:0}},{{y:0,opacity:1,duration:0.3,ease:"power2.out"}},{r2(t)});'
+                   f'tl.fromTo("#{cid}f",{{scaleX:0}},{{scaleX:{to:.4f},duration:{r2(fill)},ease:"power1.inOut"}},{r2(t + 0.2)});'
+                   f'tl.fromTo("#{cid}m",{{opacity:0,y:-14}},{{opacity:1,y:0,duration:0.25,ease:"power2.out"}},{r2(t + 0.2 + fill)});')
 
     # ── the explainer and the kinetic line (docu/explainer.py: the VOX board's devices on this page) ─────────────────
     def odo(self, val: int, t: float, cls: str = '', suffix: str = '', dur: float = 0.9) -> str:

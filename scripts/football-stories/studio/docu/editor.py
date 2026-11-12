@@ -57,13 +57,38 @@ OPENING = 2.6       # the film's first cut comes by here: the gate wants a chang
 TIGHT = 2.4         # the re-plan's target for a shot the gate measured as too long or too still
 
 
+# THE PACE FOLLOWS THE SCORE SHEET (studio/drama.py). What a look aims to last, by the beat's emotion and intensity:
+BURST = 1.9         # a release or a joy at full intensity: a burst of quick cuts (never under MIN_SUB — rule 142: a look, not a flicker)
+HELD = 3.9          # the held breath before a turn: the fewest cuts MAX_STILL allows
+
+
+def pace(meta: dict) -> float:
+    """The target length of a look in this beat: short as tension rises (TARGET down to TIGHT at full intensity), ONE
+    long held look for the breath before the turn, a burst of quick cuts at the release, a little longer for grief,
+    wonder and pride. A beat with no emotion on the sheet keeps TARGET."""
+    emo, k = meta.get('emotion'), float(meta.get('intensity') or 0.5)
+    if meta.get('breath'):
+        return HELD
+    if emo in ('release', 'joy'):
+        return round(TARGET - (TARGET - BURST) * k, 2)
+    if emo in ('tension', 'dread', 'defiance'):
+        return round(TARGET - (TARGET - TIGHT) * k, 2)
+    if emo in ('grief', 'wonder', 'pride'):
+        return min(HELD, round(TARGET + 0.4 * (1 - k), 2))
+    return TARGET
+
+
+# The colour treatment a picture takes from the sheet (build.GRADES draws it): inside the brand, a slow grade, no flash.
+GRADE = {'dread': 'cold', 'grief': 'grey', 'tension': 'cool', 'joy': 'bloom', 'release': 'bloom', 'pride': 'warm'}
+
+
 def cut_points(t0: float, d: float, words: list[float], grid: list[float] | None, target: float = TARGET) -> list[float]:
     """Where a hold of `d` seconds starting at film time `t0` is cut, as offsets into it. As many looks as keep every one
     under MAX_STILL; each cut is moved to the nearest music beat (within BEAT_SNAP), else to the nearest word start
     (within WORD_SNAP), else left where the arithmetic put it — and never so far that a look breaks MIN_SUB or MAX_STILL."""
-    if d <= (MAX_STILL if target >= TARGET else 2 * MIN_SUB):
+    if d <= (MAX_STILL if target >= TARGET else max(2 * MIN_SUB, target + MIN_SUB * 0.5)):
         return []
-    n = max(2, math.ceil(d / target))
+    n = max(2, math.ceil(d / target - 1e-6))
     out, last = [], 0.0
     for i in range(1, n):
         ideal = d * i / n
@@ -113,10 +138,10 @@ def transition(prev: dict | None, meta: dict, history: list[str]) -> str:
         name = 'dive'
     elif prev.get('type') == 'chapter':
         name = 'tear'           # out of the chapter card through the paper
-    elif t in SOFT or meta.get('outcome') == 'loss' or meta.get('pace') == 'slow':
-        name = 'fade'
-    elif t in HARD:
-        name = 'cut'
+    elif t in SOFT or meta.get('outcome') == 'loss' or meta.get('pace') == 'slow' or (meta.get('emotion') in ('grief', 'dread') and t not in HARD):
+        name = 'fade'           # grief and dread arrive slowly (the score sheet, studio/drama.py)
+    elif t in HARD or meta.get('emotion') == 'release':
+        name = 'cut'            # the hit: the release is a hard cut on the moment
     elif t in CENTRED:
         name = 'match'
     elif t in TRAVEL or meta.get('camera') == 'whip':
@@ -161,7 +186,7 @@ def cut(beats: list[dict], grid: list[float] | None = None, related=None, backdr
         cutup = []
         for dev in shots:
             dt, hold = span(dev, d) if dev['kind'] != 'word' else (0, 0)
-            pts = cut_points(b['t'] + dt, hold, m.get('words') or [], grid, TIGHT if tight or prev is None else TARGET) if dev['kind'] in PICTURES else []
+            pts = cut_points(b['t'] + dt, hold, m.get('words') or [], grid, TIGHT if tight or prev is None else pace(m)) if dev['kind'] in PICTURES else []
             if prev is None and dev['kind'] in PICTURES and dt == 0 and hold >= OPENING + MIN_SUB:
                 pts = [min((pts or [OPENING])[0], OPENING), *pts[1:]]   # the opening: its first look is over inside three seconds
             if pts:
@@ -174,6 +199,14 @@ def cut(beats: list[dict], grid: list[float] | None = None, related=None, backdr
             leave = next((e for e in ends if e - x.get('dt', 0.0) >= MIN_SUB), None) if x['kind'] == 'cutout' else None
             if leave is not None:
                 x['d'] = round(leave - x.get('dt', 0.0), 3)
+        # a scoreline that changes ON the cut: the mini score's flip moves to the look boundary nearest the word that tells the goal
+        edges = sorted({round(x.get('dt', 0.0), 3) for x in cutup if x['kind'] in PICTURES and x.get('dt', 0.0) > 0})
+        for x in cutup:
+            fl = (x.get('mini') or {}).get('flip')
+            if fl and edges:
+                near = min(edges, key=lambda e_: abs(e_ - fl['at']))
+                if abs(near - fl['at']) <= 1.2:
+                    x['mini'] = {**x['mini'], 'flip': {**fl, 'at': near, 'on_cut': True}}
         name = 'cut' if calm and prev is not None else transition(prev, m, history)
         if calm:   # no slam, no pan back the other way: every look of this shot glides one way
             for x in cutup:
@@ -221,6 +254,8 @@ def direct(shots: list[dict], meta: dict, cams: list[str], calm: bool = False) -
             if cams[-2:] == [mv, mv]:
                 mv = next(c for c in C.MOVES[:-1] if c != mv)
         x['cam'] = mv
+        if GRADE.get(emo) and float(inten or 0) >= 0.5 and not under:
+            x['grade'] = GRADE[emo]
         x['ci'] = 0.0 if (calm or (under and mv == 'dolly')) else round(0.5 if inten is None else float(inten), 2)
         x['way'] = -1 if (x.get('move') == 'panl' or ((meta.get('n') or 0) + k) % 2) else 1
         cams.append(mv)

@@ -348,8 +348,17 @@ class Adapter:
             sco = (f.get('scorers') or [])
             k = v.get('scorer') if isinstance(v.get('scorer'), int) else 0
             who = sco[k] if 0 <= k < len(sco) else {}
-            b = self.back(s, 'slam', tag={'small': f"{who['minute']}'" if who.get('minute') is not None else 'GOAL', 'big': who.get('name') or ''},
-                          mini={'home': f.get('home') or '', 'score': f'{f.get("score_home")}–{f.get("score_away")}', 'away': f.get('away') or '', 'at': 1.2})
+            mini = {'home': f.get('home') or '', 'score': f'{f.get("score_home")}–{f.get("score_away")}', 'away': f.get('away') or '', 'at': 1.2}
+            try:    # the score as it stood, changing to the score after THIS goal when the scorer is named — only when the
+                    # record orders the goals (director.goal_scores); otherwise the final score, as before
+                from ..director import goal_scores, goal_word_time
+                st = goal_scores(self.led, f).get(k)
+                if st:
+                    mini = {**mini, 'score': f'{st[0][0]}–{st[0][1]}', 'at': 0.4,
+                            'flip': {'score': f'{st[1][0]}–{st[1][1]}', 'at': round(max(1.0, min(d - 1.0, goal_word_time(s, who.get('name') or '', d * 0.5))), 2)}}
+            except Exception:  # noqa: BLE001 — a claim without minutes or sides: no order is claimed
+                pass
+            b = self.back(s, 'slam', tag={'small': f"{who['minute']}'" if who.get('minute') is not None else 'GOAL', 'big': who.get('name') or ''}, mini=mini)
             ch = self.design.chalk(s, f, who, list(s.get('claim_ids') or []) + [v.get('claim')]) if d >= 5 else None
             if ch and b:   # the move on the board first, then the goal itself: the picture arrives as the ball does
                 c = round(min(E.MAX_CARD, d * 0.55), 2)
@@ -555,6 +564,19 @@ class Adapter:
                 self.cue(n, at + 0.35, 'tick')
         if any(x['kind'] in X.EXPLAIN_KINDS for x in out):
             self.explainable[n] = True
+        # time pressure (the score sheet's `clock`): the match clock over the picture, at a minute that is sourced — one
+        # the line says AND that is a scorer's minute of the cited match or the end of a period (45, 90, 120)
+        if (self.sheet.get(n) or {}).get('clock') and f.get('kind') == 'match' and t in ('matchday', 'illustration', 'goal', 'race', 'ticket') \
+                and any(x['kind'] == 'image' for x in out):
+            from ..script import numbers_in_text
+            ok = {x.get('minute') for x in f.get('scorers') or [] if isinstance(x.get('minute'), int)} | {45, 90, 120}
+            said = sorted(m for m in numbers_in_text(text) if m in ok)
+            if said:
+                m = said[-1]
+                ck = self.design.sourced({'kind': 'clockdev', 'minute': m, 'span': 120 if m > 90 else 90}, s)
+                if ck:
+                    out.append({**ck, 'dt': 0.6, 'd': round(d - 0.6, 2)})
+                    self.cue(n, 0.8, 'tick')
         return out
 
     def punch_up(self, raw: list[dict]) -> None:
@@ -606,7 +628,7 @@ class Adapter:
                  'meta': {'n': s['n'], 'type': v_type(s), 'chapter': s.get('chapter'), 'camera': cin.get('camera'), 'pace': cin.get('cam_pace'),
                           'subjects': (rec or {}).get('subjects') or [],   # what the picture shows, by its index entry: the camera reads it
                           'explainable': self.explainable.get(s['n'], False),
-                          **{k: (self.sheet.get(s['n']) or {}).get(k) for k in ('emotion', 'intensity', 'turn', 'clock')},
+                          **{k: (self.sheet.get(s['n']) or {}).get(k) for k in ('emotion', 'intensity', 'turn', 'clock', 'breath')},
                           'outcome': self.fact(s['visual'].get('claim')).get('outcome') if v_type(s) in ('score', 'versus') else None,
                           'words': [round(at0 + w['start'], 3) for w in (s.get('words') or [])] if at0 is not None else []}}
             if s.get('narration') and s.get('voice_at') is not None and v_type(s) != 'end':
