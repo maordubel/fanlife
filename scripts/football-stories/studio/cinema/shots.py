@@ -136,7 +136,7 @@ def form(ed, s: dict) -> Shot:
         return out
 
     cues = [(0.15, 'whoosh')] + [(lt, 'pop') for lt in lands] + [(lands[-1] + 0.3, 'stamp')]
-    shake = [(lands[-1], 5)]
+    shake = []   # no camera impulse (rule 142): the card lands, the picture holds
     world = _world(ed, s, cin, ['form', 'home'], seed)
     return _shot(s, dur, world, cam, [Pieces(pieces)], cues, shake, 'form')
 
@@ -274,7 +274,7 @@ def race(ed, s: dict) -> Shot:
             out.append(_at(_scale(c, max(0.05, kk)), clamp(pts[i][0], X0 + c.width / 2, X1 - c.width / 2) + dx, cy_ + dy))
         return out
     cues = [(0.1, 'whoosh'), (t0, 'whoosh')] + [(ends[m], 'pop') for m in marks] + ([(ends[tp], 'stamp')] if tp else []) + [(t0 + draw, 'stamp')]
-    shake = [(ends[m], 4) for m in marks]
+    shake = []   # no camera impulse (rule 142): the card lands, the picture holds
     world = _world(ed, s, cin, ['form', 'home'], seed, dim=0.6)
     return _shot(s, dur, world, cam, [Pieces(pieces)], cues, shake, 'race')
 
@@ -391,10 +391,10 @@ def versus(ed, s: dict) -> Shot:
         return out
     roar = {'win': 'crowd-goal', 'loss': 'crowd-miss'}.get(f['outcome'], 'crowd-after')
     cues = [(0.0, 'whoosh'), (t_vs, 'drum'), (t_vs + 0.02, 'stamp'), (t_sc, 'sting'), (t_sc + 0.1, roar)]
-    shake = [(0.45, 6), (t_vs, 12), (t_sc, 16)]
+    shake = []   # no camera impulse (rule 142): the card lands, the picture holds
     world = _world(ed, s, cin, look.moods_for('versus', f, s.get('mood'), rival), seed, dim=0.5)
     sh = _shot(s, dur, world, cam, [Pieces(pieces)], cues, shake, 'versus')
-    sh.meta['flash_at'] = [t_sc]
+    # (the white flash on the score is gone — rule 142; `flash_at` in an older shot's meta is ignored by cinema/direct.py)
     return sh
 
 
@@ -511,7 +511,7 @@ def goal(ed, s: dict) -> Shot:
                 out.append(_at(_scale(p, ease_out_back(kt, 1.8)), W - 70 - p.width / 2, H * 0.3))
         return out
     cues = [(0.1, 'whistle'), (t_clock, 'whoosh'), (t_hit, 'sting'), (t_hit + 0.02, 'crowd-goal'), (t_hit + 0.6, 'whoosh')]
-    shake = [(t_hit, 18), (t_hit + 0.2, 10)]
+    shake = []   # no camera impulse (rule 142): the card lands, the picture holds
     world = _world(ed, s, cin, ['goal', 'win'], seed, dim=0.45)
     sh = _shot(s, dur, world, cam, [Pieces(pieces)], cues, shake, 'goal')
     sh.meta['goal_at'] = t_hit
@@ -580,7 +580,7 @@ def record(ed, s: dict) -> Shot:
                 out.append((pl, int(W / 2 + bar_w / 2 - pl.width + dx), int(cy + bw / 2 + 110 + dy)))
         return out
     cues = [(0.1, 'whoosh')] + [(st_, 'pop') for st_ in starts] + [(starts[-1] + count_dur, 'stamp')]
-    shake = [(starts[0], 4)]
+    shake = []   # no camera impulse (rule 142): the card lands, the picture holds
     world = _world(ed, s, cin, ['record', 'form'], seed, dim=0.6)
     return _shot(s, dur, world, cam, [Pieces(pieces)], cues, shake, 'record')
 
@@ -665,7 +665,7 @@ def run(ed, s: dict) -> Shot:
             out.append(_at(_scale(tl, max(0.05, kk)), gx0 + c_ * (tl.width + 14) + tl.width / 2 + dx, gy0 + r_ * (th + 20) + dy))
         return out
     cues = [(0.1, 'whoosh')] + [(lt, 'pop') for lt in lands] + [(lands[-1] + 0.25, 'stamp')]
-    shake = [(lt, 3) for lt in lands[::2]]
+    shake = []   # no camera impulse (rule 142): the card lands, the picture holds
     f_last = rows[-1][1]
     world = _world(ed, s, cin, ['win' if kind in ('wins in a row', 'unbeaten') else 'loss', 'form'], seed, dim=0.58)
     return _shot(s, dur, world, cam, [Pieces(pieces)], cues, shake, 'run')
@@ -730,10 +730,10 @@ def trailer(ed, s: dict) -> Shot:
         else:  # settle: the line comes up once and eases into place, then holds (it used to flicker on like a bad splice — rule 142)
             k = ease_out_cubic(clamp(tt / 0.36))
             out.append(_at(_fade(_scale(im, 1.12 - 0.12 * k), k), W / 2, cy))
-        if tt < 0.1:
-            out.append((Image.new('RGBA', (W, H), (255, 251, 242, int(200 * (1 - tt / 0.1)))), 0, 0))
+        # each line used to arrive under a 0.1 s sheet of paper-white: a flash on every line (rule 142). The line's own
+        # slam, whip or settle is its entrance; nothing lights the frame.
         return out
     cues = [(starts[0], 'sting')] + [(st_, 'drum') for st_ in starts[1:]]
-    shake = [(st_, 14 if styles[j] == 'slam' else 7) for j, st_ in enumerate(starts)]
+    shake = []   # no camera impulse (rule 142): the card lands, the picture holds
     sh = _shot(s, dur, worlds[0], cam, [Pieces(pieces)], cues, shake, 'trailer', world_frames=world_at)
     return sh

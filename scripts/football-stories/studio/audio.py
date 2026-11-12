@@ -301,10 +301,8 @@ def owner_score(sections: list[dict], candidates: list[str], log=None) -> tuple[
     raise StageError('MUSIC', 'None of the owner\'s tracks could be fetched: ' + '; '.join(errs)[:500], retryable=True)
 
 
-def track_score(sections: list[dict], track_id: str, xf: float = 1.4) -> np.ndarray:
-    """The owner's chosen track under the whole film, edited to the story: each part of the film gets a passage of the
-    track whose loudness fits it — the quiet intro and breaks under the tension, the full band under a goal — carried on
-    from where the last passage stopped when it still fits, so the music runs rather than jumps. Joins are crossfaded."""
+def _track(track_id: str) -> tuple[np.ndarray, np.ndarray, int]:
+    """The track decoded, which of its half-seconds are loud, and the hop (samples per half-second)."""
     t = music_track(track_id)
     raw = subprocess.run(['ffmpeg', '-v', 'error', '-i', str(track_path(t)), '-ac', '1', '-ar', str(SR), '-f', 'f32le', '-'],
                          capture_output=True, check=True).stdout
@@ -312,20 +310,36 @@ def track_score(sections: list[dict], track_id: str, xf: float = 1.4) -> np.ndar
     hop = SR // 2
     rms = np.array([np.sqrt(np.mean(trk[i:i + hop] ** 2)) for i in range(0, len(trk) - hop, hop)])
     rms = np.convolve(rms, np.ones(6) / 6, mode='same')
-    loud = rms >= np.percentile(rms, 55)
-    total = int(max(s['end'] for s in sections) * SR) + 2 * SR
-    out = np.zeros(total, 'float32')
-    cursor = 0  # in hops
+    return trk, rms >= np.percentile(rms, 55), hop
+
+
+def passages(sections: list[dict], loud: np.ndarray, hop: int, xf: float = 1.4) -> list[tuple[int, int]]:
+    """Which passage of the track plays under each section: (first sample in the track, samples needed). One place
+    decides it, so the score (track_score) and the editor's beat grid (beat_grid) can never disagree."""
+    out, cursor = [], 0  # cursor in hops
 
     def fits(i: int, want_loud: bool) -> bool:
         return bool(loud[i % len(loud)] == want_loud)
 
-    for k, sec in enumerate(sections):
+    for sec in sections:
         want = sec['mood'] in LOUD_MOODS
         need = int((sec['end'] - sec['start'] + xf) * SR)
         if not fits(cursor, want):  # find the next passage of the right kind, wrapping round the track
             cursor = next((j % len(loud) for j in range(cursor, cursor + 2 * len(loud)) if fits(j, want)), cursor)
         start = cursor * hop
+        out.append((start, need))
+        cursor = ((start + need - int(xf * SR)) // hop) % len(loud)
+    return out
+
+
+def track_score(sections: list[dict], track_id: str, xf: float = 1.4) -> np.ndarray:
+    """The owner's chosen track under the whole film, edited to the story: each part of the film gets a passage of the
+    track whose loudness fits it — the quiet intro and breaks under the tension, the full band under a goal — carried on
+    from where the last passage stopped when it still fits, so the music runs rather than jumps. Joins are crossfaded."""
+    trk, loud, hop = _track(track_id)
+    total = int(max(s['end'] for s in sections) * SR) + 2 * SR
+    out = np.zeros(total, 'float32')
+    for k, (sec, (start, need)) in enumerate(zip(sections, passages(sections, loud, hop, xf))):
         piece = np.concatenate([trk[start:], trk] * (1 + need // len(trk)))[:need]
         env = np.ones(len(piece), 'float32')
         fi = int(xf * SR)
@@ -335,9 +349,54 @@ def track_score(sections: list[dict], track_id: str, xf: float = 1.4) -> np.ndar
         a = int(sec['start'] * SR)
         n = min(len(piece), total - a)
         out[a:a + n] += piece[:n] * env[:n]
-        cursor = ((start + need - fi) // hop) % len(loud)
     peak = float(np.max(np.abs(out))) or 1.0
     return out / peak * 0.5
+
+
+def tempo(trk: np.ndarray, sr: int = SR) -> tuple[float, float] | None:
+    """(seconds per beat, the first beat's time) of a track, or None when it has no steady pulse. Cheap on purpose: the
+    energy rise every 10 ms, its autocorrelation between 60 and 180 beats a minute, then the phase that catches the most
+    rises. Good enough to put a cut on a beat; nothing else reads it."""
+    step = sr // 100
+    n = len(trk) // step
+    if n < 800:
+        return None
+    env = np.sqrt(np.mean(trk[:n * step].reshape(n, step) ** 2, axis=1))
+    on = np.maximum(0, np.diff(env))
+    on = on - on.mean()
+    if not np.any(on > 0):
+        return None
+    lo, hi = int(100 * 60 / 180), int(100 * 60 / 60)
+    m = min(len(on), 100 * 90)   # ninety seconds say what the tempo is
+    ac = np.array([float(np.dot(on[:m - lag], on[lag:m])) for lag in range(lo, hi + 1)])
+    if ac.max() <= 0 or ac.max() < 3 * np.median(np.abs(ac)):
+        return None
+    lag = lo + int(np.argmax(ac))
+    phase = int(np.argmax([on[p::lag].sum() for p in range(lag)]))
+    return lag / 100, phase / 100
+
+
+def beat_grid(plan: dict, music: str = 'auto', tags: list[str] | None = None, seed: str = '') -> list[float]:
+    """The film times of the music's beats, for the editor's cuts (docu/editor.cut_points): the same track the mix will
+    choose (resolve_music, the first whose file is here — nothing is fetched for a grid) and the same passages under the
+    same sections. [] when no track is at hand or it has no steady pulse: the cuts then land on words."""
+    wish = list(tags or []) + DIRECTOR_TAGS.get(plan.get('music_key') or '', [])
+    tid = next((t for t in resolve_music(music, wish, seed) if (MUSIC_DIR / music_track(t)['file']).exists()), None)
+    if not tid or tid != resolve_music(music, wish, seed)[0]:
+        return []   # the mix would try another track first: a grid from this one could be the wrong song's
+    trk, loud, hop = _track(tid)
+    tp = tempo(trk)
+    if not tp:
+        return []
+    period, phase = tp
+    sections, out = mood_sections(plan), []
+    for sec, (start, need) in zip(sections, passages(sections, loud, hop)):
+        a = start / SR                                   # the passage's first second in the track
+        k = math.ceil((a - phase) / period)
+        while phase + k * period < min(a + need / SR, len(trk) / SR):   # the passage before the track wraps round
+            out.append(round(sec['start'] + phase + k * period - a, 3))
+            k += 1
+    return sorted(x for x in set(out) if 0 <= x <= plan['duration'])
 
 
 def mood_sections(plan: dict, min_len: float = 7.0) -> list[dict]:

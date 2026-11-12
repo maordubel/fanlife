@@ -17,7 +17,7 @@ The vocabulary (each shot kind is a device of the approved sample, PT v Feyenoor
   rule      a rule card typed on paper
   verdict   the split screen: WON THE NIGHT | WENT THROUGH
   end       the channel card
-A beat may also move the AGGREGATE tracker (`agg: [us, them]`), flash, or cue a sound.
+A beat may also move the AGGREGATE tracker (`agg: [us, them]`), dip to the ground colour (`flash` — never white), or cue a sound.
 
 Every picture the owner made is labelled "Illustration · graphic reconstruction" (brief rule: never pass a drawing off as
 archive). Colours are the storyboard palette's; the opponent keeps its own (brief rule).
@@ -48,6 +48,21 @@ SOUNDS.update({'impact': 'impact-bass-1', 'impact2': 'impact-bass-2', 'whoosh': 
 SFX2 = REPO / '.claude' / 'skills' / 'media-use' / 'audio' / 'assets' / 'sfx'
 MUSIC = HERE.parent / 'kit' / 'music'
 RECON = 'Illustration · graphic reconstruction'
+# ── the editor's vocabulary (docu/editor.py decides; this draws) ─────────────────────────────────────────────────────
+# A sub-shot's framing of the same picture: wide → detail → reverse, so a long line is three looks at one scene and
+# never one still (owner, 12.11.2026: no slideshow). (from, to, default origin); all linear — a framing glides, it never lands.
+FRAMINGS = {'wide': ('{scale:1.02}', '{scale:1.1}', '50% 50%'),
+            'detail': ('{scale:1.5}', '{scale:1.62}', '34% 40%'),
+            'reverse': ('{scale:1.24,x:70}', '{scale:1.24,x:-70}', '50% 58%'),
+            'turn': ('{scale:1.08}', '{scale:1.42}', '50% 46%')}   # the last look of a chapter: the push that leaves a question
+# Transitions into a beat (`in`). None goes to white and none shakes (rule 142): each is ONE move in ONE direction.
+# The seconds are how long the outgoing beat stays on screen under the incoming one (0 = the cut needs no overlap).
+TAILS = {'cut': 0.0, 'fade': 0.0, 'match': 0.0, 'whip': 0.3, 'tear': 0.45, 'dive': 0.4}
+TEAR = (4, -3, 5, -4, 3, -5, 4, -2, 3)   # the torn edge: how far each of nine points sits off the tear line, in % of the width
+# A card that holds still is a dead frame (docs/fanlife/71: "the camera never stops dead"): it creeps in by this much a
+# second — 0.13 px a frame at the edge of the screen, far under rule 142's 0.6 px.
+CREEP = 0.004
+CREEPS = {'question', 'ticket', 'lead', 'ledger', 'rule', 'stat', 'tally', 'card', 'quote', 'form', 'verdict', 'cities', 'chalk', 'end', 'table', 'press', 'word'}
 
 
 def e(s) -> str:
@@ -93,6 +108,7 @@ class Film:
         self.clips: list[str] = []
         self.tw: list[str] = []
         self.audio: list[str] = []
+        self.made: list[dict] = []   # every clip as it is laid: {id, t, z (its end)} — what a transition moves
         self.n = 0
 
     def id(self, k: str) -> str:
@@ -101,12 +117,15 @@ class Film:
 
     # ── primitives ──────────────────────────────────────────────────────────────────────────────────────────────────
     def clip(self, cid, t, d, inner, z, cls='', style=''):
+        self.made.append({'id': cid, 't': t, 'z': t + d})
         self.clips.append(f'<div id="{cid}" class="clip {cls}" data-start="{r2(t)}" data-duration="{r2(d)}" style="z-index:{z};{style}">{inner}</div>')
 
     def tween(self, js: str):
         self.tw.append(js)
 
     def sound(self, name, t, d=None, vol=0.6):
+        if self.sb.get('silent'):
+            return   # the pipeline's film is a silent picture: the mix (audio.build_mix) owns every sound, from the cue files
         f = SOUNDS.get(name, name)
         sid = self.id('snd')
         dur = f' data-duration="{r2(d)}"' if d else ''
@@ -117,32 +136,54 @@ class Film:
         cid = self.id('img')
         veil = s.get('veil', 0.3)
         pos = s.get('pos', 'center')
+        z = s.get('z', z)
+        hold = s.get('hold', d)   # how long its tag and mini score stay: the whole beat, when the picture under them is cut into sub-shots
         fit = 'background-size:contain;background-repeat:no-repeat;background-color:' + self.INK if s.get('fit') == 'contain' else ''
-        inner = (f'<div class="phi" id="{cid}i" style="background-image:url(assets/img/{e(s["src"])});background-position:{pos};{fit}"></div>'
-                 + (f'<div class="veil" style="opacity:{veil}"></div>' if veil else '') + (f'<div class="recon">{RECON}</div>' if s.get('recon', True) else ''))
-        self.clip(cid, t, d, inner, z, 'ph')
+        phi = f'<div class="phi" id="{cid}i" style="background-image:url(assets/img/{e(s["src"])});background-position:{pos};{fit}"></div>'
+        recon = f'<div class="recon">{RECON}</div>' if s.get('recon', True) else ''
+        if s.get('as') == 'print':
+            # the picture as a print dropped on the desk (docs/fanlife/71: photos land on the world as prints) — the
+            # editor's third look when two full-frame stills have just run (docu/editor.py)
+            self.clip(cid, t, d, f'<div class="prn" id="{cid}p">{phi}</div>{recon}', z, 'paper')
+            self.tween(f'tl.fromTo("#{cid}p",{{y:120,rotation:-5,opacity:0}},{{y:0,rotation:-1.5,opacity:1,duration:0.5,ease:"power3.out"}},{r2(t)});')
+        else:
+            self.clip(cid, t, d, phi + (f'<div class="veil" style="opacity:{veil}"></div>' if veil else '') + recon, z, 'ph')
         move = s.get('move', 'push')
-        a, b = {'push': ('{scale:1.02}', '{scale:1.16}'), 'pull': ('{scale:1.3,y:50}', '{scale:1.06,y:0}'),
-                'panl': ('{scale:1.14,x:60}', '{scale:1.14,x:-60}'), 'panr': ('{scale:1.14,x:-60}', '{scale:1.14,x:60}'),
-                'slam': ('{scale:1.35}', '{scale:1.08}')}[move]
-        ease, dur = ('power3.out', min(1.1, d)) if move in ('pull', 'slam') else ('none', d)
+        if s.get('frame'):
+            a, b, origin = FRAMINGS[s['frame']]
+            ease, dur = ('power2.in', d) if s['frame'] == 'turn' else ('none', d)
+            self.tween(f'tl.set("#{cid}i",{{transformOrigin:"{s.get("focus", origin)}"}},{r2(t)});')
+        else:
+            a, b = {'push': ('{scale:1.02}', '{scale:1.16}'), 'pull': ('{scale:1.3,y:50}', '{scale:1.06,y:0}'),
+                    'panl': ('{scale:1.14,x:60}', '{scale:1.14,x:-60}'), 'panr': ('{scale:1.14,x:-60}', '{scale:1.14,x:60}'),
+                    'slam': ('{scale:1.35}', '{scale:1.08}')}[move]
+            ease, dur = ('power3.out', min(1.1, d)) if move in ('pull', 'slam') else ('none', d)
         self.tween(f'tl.fromTo("#{cid}i",{a},{{...{b},duration:{r2(dur)},ease:"{ease}"}},{r2(t)});')
+        if not s.get('frame') and move in ('pull', 'slam') and d > dur + 0.5:
+            # after it lands it keeps creeping (docs/fanlife/71: never a dead stop) — the landing used to be the last motion of the shot
+            rest = 1.06 if move == 'pull' else 1.08
+            self.tween(f'tl.fromTo("#{cid}i",{{scale:{rest}}},{{scale:{rest + CREEP * 3 * (d - dur):.4f},duration:{r2(d - dur)},ease:"none",immediateRender:false}},{r2(t + dur)});')
         if s.get('fade', True):
             self.tween(f'tl.fromTo("#{cid}",{{opacity:0}},{{opacity:1,duration:0.35}},{r2(t)});')
         if s.get('tag'):
             tg = s['tag']
             tid = self.id('tag')
             col = self.US if tg.get('side', 'us') == 'us' else self.THEM
-            self.clip(tid, t + 0.5, d - 0.5, f'<div class="tag" style="background:{col}"><small>{e(tg.get("small", ""))}</small><b>{e(tg["big"])}</b></div>', 8)
+            self.clip(tid, t + 0.5, hold - 0.5, f'<div class="tag" style="background:{col}"><small>{e(tg.get("small", ""))}</small><b>{e(tg["big"])}</b></div>', 8)
             self.tween(f'tl.fromTo("#{tid} .tag",{{scaleX:0}},{{scaleX:1,duration:0.35,ease:"power3.out",transformOrigin:"left center"}},{r2(t + 0.5)});')
+        if s.get('lt'):   # the lower third a clip has always carried, for a still too (a map beat with no route to draw)
+            lid = self.id('lt')
+            self.clip(lid, t + 0.4, hold - 0.4, f'<div class="lt"><b>{e(s["lt"][0])}</b><span>{e(s["lt"][1])}</span></div>', 6)
+            self.tween(f'tl.fromTo("#{lid} .lt",{{x:-900}},{{x:0,duration:0.5,ease:"power3.out"}},{r2(t + 0.4)});')
         if s.get('mini'):
             m = s['mini']
             mid = self.id('mini')
-            self.clip(mid, t + m.get('at', 1.5), d - m.get('at', 1.5), f'<div class="mini"><span>{e(m["home"])}</span><b>{e(m["score"])}</b><span>{e(m["away"])}</span></div>', 9)
+            self.clip(mid, t + m.get('at', 1.5), hold - m.get('at', 1.5), f'<div class="mini"><span>{e(m["home"])}</span><b>{e(m["score"])}</b><span>{e(m["away"])}</span></div>', 9)
             self.tween(f'tl.fromTo("#{mid} .mini",{{scale:1.8,opacity:0}},{{scale:1,opacity:1,duration:0.22,ease:"power4.in"}},{r2(t + m.get("at", 1.5))});')
 
     def video(self, s, t, d):
         cid = self.id('vid')
+        self.made.append({'id': cid, 't': t, 'z': t + d})
         self.clips.append(f'<video id="{cid}" class="clip" src="assets/img/{e(s["src"])}" muted playsinline data-start="{r2(t)}" data-duration="{r2(d)}" '
                           f'data-media-start="{s.get("from", 0)}" style="object-fit:cover;z-index:3"></video>')
         self.clip(self.id('frm'), t, d, f'<div class="recon r2">{RECON}</div>', 4, 'frame')
@@ -277,6 +318,8 @@ class Film:
         cid = self.id('tb')
         rows = s.get('rows') or [''] * s.get('n', 16)
         cut = s.get('cut', len(rows) - 2)
+        line = cut is not False   # `cut: False` draws no line: where the drop sat is a claim the adapter's rows do not make
+        cut = cut if line else -1
         hl = s.get('highlight')
         html_rows = ''.join(
             f'<div class="tr{" hl" if i == hl else ""}" id="{cid}r{i}"><i>{i + 1}</i><span>{e(r)}</span><b></b></div>'
@@ -285,8 +328,9 @@ class Film:
         self.clip(cid, t, d, f'<div class="tbw" id="{cid}w"><div class="tbl">{html_rows}</div></div>', 9, 'paper')
         for i in range(len(rows)):
             self.tween(f'tl.fromTo("#{cid}r{i}",{{x:-60,opacity:0}},{{x:0,opacity:1,duration:0.25,ease:"power2.out"}},{r2(t + 0.15 + 0.06 * i)});')
-        self.tween(f'tl.fromTo("#{cid}line",{{scaleX:0}},{{scaleX:1,duration:0.5,ease:"power3.out",transformOrigin:"left center"}},{r2(t + 0.3 + 0.06 * len(rows))});')
-        pa = s.get('push_at')
+        if line:
+            self.tween(f'tl.fromTo("#{cid}line",{{scaleX:0}},{{scaleX:1,duration:0.5,ease:"power3.out",transformOrigin:"left center"}},{r2(t + 0.3 + 0.06 * len(rows))});')
+        pa = s.get('push_at') if line else None
         if pa is not None:
             ly = 60 + 6 + 46 * cut   # the drop line, in the frame's pixels
             self.tween(f'tl.set("#{cid}w",{{transformOrigin:"50% {ly - 60}px"}},{r2(t)});'
@@ -391,7 +435,8 @@ class Film:
             self.image({'src': s['bg'], 'veil': 0.6, 'move': 'push'}, t, d, 1)
         self.clip(cid, t, d, inner, 9)
         self.tween(f'tl.fromTo("#{cid} .sbd",{{y:700}},{{y:0,duration:0.6,ease:"back.out(1.3)"}},{r2(t)});'
-                   f'tl.fromTo("#{cid} .sbin b",{{opacity:0.15}},{{opacity:1,duration:0.08,yoyo:true,repeat:5,ease:"none"}},{r2(t + 0.7)});')
+                   # the name lights up once (it blinked six times in half a second: rule 142)
+                   f'tl.fromTo("#{cid} .sbin b",{{opacity:0.15}},{{opacity:1,duration:0.45,ease:"power2.out"}},{r2(t + 0.7)});')
 
     def press(self, s, t, d):
         """A newspaper page as a print on the desk; the camera finds the headline; a highlighter crosses it; the
@@ -446,8 +491,9 @@ class Film:
 
     def verdict(self, s, t, d):
         cid = self.id('vd')
-        inner = (f'<div class="vd"><div class="vl" style="background:{self.US}"><img src="assets/img/{e(s["us_crest"])}"><small>{e(s["us_line"])}</small><b>{s["us"]}</b></div>'
-                 f'<div class="vr" style="background:{self.THEM}"><img src="assets/img/{e(s["them_crest"])}"><small>{e(s["them_line"])}</small><b>{s["them"]}</b></div></div>')
+        # a crest when one is on file, else the initials roundel the scoreboard uses — never a broken or borrowed badge
+        inner = (f'<div class="vd"><div class="vl" style="background:{self.US}">{self.badge(s.get("us_crest"), s["us"])}<small>{e(s["us_line"])}</small><b>{s["us"]}</b></div>'
+                 f'<div class="vr" style="background:{self.THEM}">{self.badge(s.get("them_crest"), s["them"])}<small>{e(s["them_line"])}</small><b>{s["them"]}</b></div></div>')
         self.clip(cid, t, d, inner, 11)
         self.tween(f'tl.fromTo("#{cid} .vl",{{xPercent:-100}},{{xPercent:0,duration:0.5,ease:"power3.out"}},{r2(t)});'
                    f'tl.fromTo("#{cid} .vr",{{xPercent:100}},{{xPercent:0,duration:0.5,ease:"power3.out"}},{r2(t + s.get("them_at", 1.6))});')
@@ -458,6 +504,42 @@ class Film:
         self.tween(f'tl.fromTo("#{cid} .end",{{opacity:0,y:30}},{{opacity:1,y:0,duration:0.6,ease:"power2.out"}},{r2(t)});')
 
     # ── assembly ────────────────────────────────────────────────────────────────────────────────────────────────────
+    def transition(self, name: str, T: float, into: list[dict], out: list[dict]):
+        """How an edited beat arrives (chosen by context in docu/editor.py). Each moves the incoming beat's clips and, where
+        it overlaps, the outgoing beat's — whole clips, so cards, pictures and tags travel together.
+          cut    a hard cut on the beat — nothing moves
+          fade   the old 0.35 s fade, kept for grief, awe and the last cards
+          whip   the old beat is pushed out to the left as the new one arrives from the right — one move, no blur
+          tear   the paper tears across: a jagged line travels left to right, the new beat behind it
+          dive   into and out of a chapter card: the old beat grows and thins, the new one settles from small
+          match  a cut on the scale: the old beat pushes in over its last frames, the new one settles from the same size —
+                 two centred heroes (a scoreboard, a number) read as one shape
+        None dips to white, none repeats or reverses its own move (rule 142)."""
+        if not into or name in (None, 'cut'):
+            return
+        IN, OUT = ','.join(f'#{m["id"]}' for m in into), ','.join(f'#{m["id"]}' for m in out)
+        if name == 'fade':
+            self.tween(f'tl.fromTo("{IN}",{{opacity:0}},{{opacity:1,duration:0.35}},{r2(T)});')
+        elif name == 'whip':
+            self.tween(f'tl.fromTo("{IN}",{{xPercent:100}},{{xPercent:0,duration:{TAILS["whip"]},ease:"power3.out"}},{r2(T)});')
+            if out:
+                self.tween(f'tl.fromTo("{OUT}",{{xPercent:0}},{{xPercent:-100,duration:{TAILS["whip"]},ease:"power3.out",immediateRender:false}},{r2(T)});')
+        elif name == 'tear':
+            edge = lambda p: ','.join(f'{p + j}% {12.5 * k}%' for k, j in enumerate(TEAR))  # noqa: E731
+            poly = lambda side, p: f'polygon({side}% 0%,{edge(p)},{side}% 100%)'  # noqa: E731
+            self.tween(f'tl.fromTo("{IN}",{{clipPath:"{poly(0, -8)}"}},{{clipPath:"{poly(0, 108)}",duration:{TAILS["tear"]},ease:"power2.inOut"}},{r2(T)});'
+                       f'tl.set("{IN}",{{clipPath:"none"}},{r2(T + TAILS["tear"])});')
+            if out:
+                self.tween(f'tl.fromTo("{OUT}",{{clipPath:"{poly(100, -8)}"}},{{clipPath:"{poly(100, 108)}",duration:{TAILS["tear"]},ease:"power2.inOut",immediateRender:false}},{r2(T)});')
+        elif name == 'dive':
+            self.tween(f'tl.fromTo("{IN}",{{scale:0.82,opacity:0}},{{scale:1,opacity:1,duration:{TAILS["dive"]},ease:"power3.out"}},{r2(T)});')
+            for m in out:
+                self.tween(f'tl.fromTo("#{m["id"]}",{{scale:{m.get("sc", 1):.4f},opacity:1}},{{scale:1.5,opacity:0,duration:{TAILS["dive"]},ease:"power2.in",immediateRender:false}},{r2(T)});')
+        elif name == 'match':
+            self.tween(f'tl.fromTo("{IN}",{{scale:1.1}},{{scale:1,duration:0.3,ease:"power2.out"}},{r2(T)});')
+            for m in out:
+                self.tween(f'tl.fromTo("#{m["id"]}",{{scale:{m.get("sc", 1):.4f}}},{{scale:{m.get("sc", 1) + 0.06:.4f},duration:0.2,ease:"power2.in",immediateRender:false}},{r2(T - 0.2)});')
+
     def subline(self, part: str, at: float, dd: float):
         """One subtitle: in the brand's face; with `karaoke`, each word lights in the club's colour as it is said."""
         sid = self.id('sub')
@@ -478,10 +560,28 @@ class Film:
     def build(self, beats: list[dict]) -> float:
         """beats carry their absolute times (t, d) — see timeline(). Returns the film's duration."""
         agg_on = None
-        for b in beats:
+        out_ids: list[dict] = []   # the clips of the beat before that are still on screen at the cut
+        for i, b in enumerate(beats):
+            # A beat with `in` is an edited beat (docu/editor.py): it enters by a transition, and stays under the next
+            # beat for as long as that beat's transition needs. A storyboard written by hand has no `in` and is drawn as before.
+            edited = 'in' in b
+            tail = TAILS[beats[i + 1].get('in') or 'cut'] if edited and i + 1 < len(beats) else 0.0
+            k0, end = len(self.made), b['t'] + b['d']
             for s in b['shots']:
-                t, d = b['t'] + s.get('dt', 0), s.get('d', b['d'] - s.get('dt', 0))
-                getattr(self, s['kind'])(s, t, d)
+                dt = s.get('dt', 0)
+                t, d = b['t'] + dt, s.get('d', b['d'] - dt)
+                last = abs(t + d - end) < 0.02
+                k = len(self.made)
+                getattr(self, s['kind'])(s, t, d + (tail if last else 0))
+                mine = self.made[k:]
+                if edited and s['kind'] in CREEPS and len(mine) == 1 and d > 1.5 and s.get('shrink_at') is None:
+                    span = d - 0.6
+                    mine[0]['sc'] = 1 + CREEP * span
+                    self.tween(f'tl.fromTo("#{mine[0]["id"]}",{{scale:1}},{{scale:{mine[0]["sc"]:.4f},duration:{r2(span)},ease:"none",immediateRender:false}},{r2(t + 0.6)});')
+            if edited:
+                mine = self.made[k0:]
+                self.transition(b['in'], b['t'], [m for m in mine if abs(m['t'] - b['t']) < 0.02], out_ids)
+                out_ids = [m for m in mine if m['z'] >= end - 0.02]
             for snd in b.get('sound', []):
                 self.sound(snd[0], b['t'] + snd[1], snd[2] if len(snd) > 2 else None, snd[3] if len(snd) > 3 else 0.6)
             if b.get('flash') is not None:
@@ -597,6 +697,7 @@ video.clip{{width:1920px;height:1080px}}
 .cut{{position:absolute;top:0;filter:drop-shadow(14px 14px 0 rgba(20,17,13,.55))}}
 .glow{{position:absolute;width:260px;height:260px;margin:-130px 0 0 -130px;border-radius:50%;background:radial-gradient(circle,rgba(255,250,225,.95) 0,rgba(255,240,200,.45) 30%,rgba(255,240,200,0) 70%);mix-blend-mode:screen}}
 .dark{{position:absolute;left:0;top:0;width:1920px;height:1080px;background:#05060a;opacity:0}}
+.prn{{position:absolute;left:210px;top:92px;width:1500px;height:844px;overflow:hidden;border:18px solid #fff;box-shadow:22px 22px 0 rgba(20,17,13,.5)}} .prn .phi{{width:100%;height:100%}}
 .duo{{position:absolute;left:0;top:0;width:1920px;height:1080px;mix-blend-mode:multiply;opacity:.85}}
 .subw .sub.kar{{top:auto;bottom:54px;font:400 46px/1.25 'Head';text-transform:uppercase;letter-spacing:1px;color:{P};background:rgba(20,17,13,.88);padding:10px 26px;max-width:1500px}} .sub.kar span{{padding:0 4px}}
 .fw{{position:absolute;left:150px;top:150px;width:1620px;color:{INK}}} .fh b{{display:block;font:400 92px/1 'Ultra'}} .fh span{{font:700 40px 'Caps';letter-spacing:8px}}

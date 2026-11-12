@@ -346,7 +346,7 @@ class Editor:
         f = claim['fact'] if claim else None
         k = key_of(s['n'], kind)
         cues: list[tuple[float, str]] = []
-        shake: list[tuple[float, float]] = []
+        shake: list[tuple[float, float]] = []   # stays empty (rule 142: no camera impulses); the parameter is kept for older callers
         layers: list[Layer] = []
         entry = 'fade'
         cam = cam_push(1.0, 1.05, (seed % 5 - 2) * 18, (seed % 3 - 1) * 12, dur)
@@ -365,7 +365,6 @@ class Editor:
             layers.append(Layer(card, slam(W * 0.47, H * 0.48, 0.45, rot=-1.5), settle=1e9))
             st = _img(sp.stamp(key_of('season', self.ledger['season']), self.ledger['season']))
             layers.append(Layer(fit(st, 300, 300), slam(W * 0.82, H * 0.27, 1.0, s0=1.8, rot=6, dur=0.22), settle=1e9))
-            shake += [(0.45, 9), (1.0, 6)]
             entry = 'wipe'
             cues += [(0.0, 'whoosh'), (0.45, 'stamp'), (1.0, 'stamp')]
         elif kind == 'map':
@@ -439,7 +438,6 @@ class Editor:
                     cues.append((at, 'tick'))
             elif kind == 'score':
                 layers.append(Layer(card, slam(cx, cy, 0.25, rot=-1.0), settle=1e9))
-                shake.append((0.25, 10))
                 cues += [(0.25, 'stamp')]
                 if f and f.get('outcome') == 'win':
                     cues.append((0.4, 'crowd-goal'))
@@ -455,7 +453,6 @@ class Editor:
             elif kind == 'press':  # a cutting dropped on the desk, then a slow read across it
                 layers.append(Layer(card, slam(cx, cy, 0.2, s0=1.35, rot=-3.5, dur=0.3), settle=1e9))
                 cues += [(0.2, 'paper'), (0.3, 'stamp')]
-                shake.append((0.3, 5))
                 cam = cam_push(1.0, 1.08, 30, -10, dur)
             elif kind == 'quote':
                 layers.append(Layer(card, slide_in(cx, cy, 0.2, frm=(0, 260), rot0=2, rot1=-1, dur=0.55), settle=1e9))
@@ -464,7 +461,6 @@ class Editor:
             elif kind == 'stat':
                 layers.append(Layer(card, pop(cx, cy, 0.3, dur=0.45, rot=-2), settle=1e9))
                 cues.append((0.3, 'stamp'))
-                shake.append((0.4, 6))
             else:
                 frm = [(0, 300), (-900, 40), (900, -30)][seed % 3]
                 layers.append(Layer(card, slide_in(cx, cy, 0.25, frm=frm, rot0=-6 + (seed % 5), rot1=-1.5 + (seed % 3), dur=0.6), settle=1e9))
@@ -472,7 +468,6 @@ class Editor:
             if kind == 'ticket':
                 st = _img(sp.stamp(key_of('season', self.ledger['season']), self.ledger['season']))
                 layers.append(Layer(fit(st, 260, 260), slam(cx + card.width * 0.36, cy + card.height * 0.18, 1.0, s0=1.8, rot=10, dur=0.2), settle=1e9))
-                shake.append((1.0, 7))
                 cues.append((1.0, 'stamp'))
             if kind == 'matchday' and dur > 5:
                 ball = fit(_img(sp.svg('ball', 'element_05_ball.svg')), 210, 210)
@@ -556,7 +551,6 @@ class Editor:
         cues.append((0.3, 'paper'))
         sh = fit(_img(sp.shout(key_of('shout', 'JOIN US!', self.pal.accent), 'JOIN US!', 'accent')), 560, 230)
         layers.append(Layer(sh, slam(W * 0.80, H * 0.16, 1.1, s0=2.2, rot=-5, dur=0.22), settle=1e9))
-        shake.append((1.1, 10))
         cues.append((1.1, 'stamp'))
         lead = (s['voice_at'] - s['start']) if s.get('voice_at') is not None else 0.6
         said = next((w['start'] for w in s.get('words') or [] if w['w'].lower().strip('.,!?;:') in ('subscribe', 'subscribe,')), None)
@@ -597,7 +591,6 @@ class Editor:
                 return Pose(bx + 330, by - 150, max(0.01, kk), swing, 1.0)
             layers.append(Layer(bell, ring, settle=1e9))
             cues.append((t_click + 0.1, 'whoosh'))
-        shake.append((t_click, 7))
         cues += [(t_click, 'stamp'), (t_click + 0.1, 'crowd-goal')]
         return world, layers, cam_push(1.0, 1.06, -20, 0, dur)
 
@@ -695,7 +688,6 @@ class Editor:
             return []
         im = fit(_img(sp.shout(key_of('shout', word, self.pal.accent), word, tone)), 640 if len(word) > 6 else 460, 240)
         t0 = 0.6
-        shake.append((t0, 12 if tone == 'accent' else 4))
         cues.append((t0, 'stamp'))
         # on the card's top-right corner, where the bar is empty: the date on the left stays readable
         cx_ = min(W - im.width / 2 - 20, x + card_w - im.width / 2 + 70)

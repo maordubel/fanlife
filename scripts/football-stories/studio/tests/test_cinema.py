@@ -310,10 +310,10 @@ class Direction(unittest.TestCase):
     def test_cold_open_and_climax_are_letterboxed_and_every_entry_is_known(self):
         first_chapter = next(s['n'] for s in self.shots if s['visual']['type'] == 'chapter')
         self.assertTrue(all(s['cinema']['letterbox'] for s in self.shots[:first_chapter]))
-        known = {'black', 'fade', 'wipe', 'cut', 'flash', 'whip', 'push', 'burn', 'dissolve'}
+        known = {'black', 'fade', 'wipe', 'cut', 'whip', 'push', 'burn', 'dissolve'}   # 'flash' is no longer an entry (rule 142)
         self.assertLessEqual({s['cinema']['entry'] for s in self.shots}, known)
         self.assertEqual(self.shots[0]['cinema']['entry'], 'black')
-        self.assertEqual(next(s for s in self.shots if s['visual']['type'] == 'goal')['cinema']['entry'], 'flash')
+        self.assertEqual(next(s for s in self.shots if s['visual']['type'] == 'goal')['cinema']['entry'], 'cut')
 
     def test_derby_and_defeat_are_treated(self):
         ill = next(s for s in self.shots if s['visual']['type'] == 'illustration')
@@ -393,6 +393,9 @@ class Transitions(unittest.TestCase):
         for e, d in look.ENTRY_DUR.items():
             mid = look.blend(e, d * 0.5, b, a)
             self.assertEqual(mid.shape, b.shape)
+            if e in look.CALM_ENTRY:   # 'flash' is a hard cut now (rule 142): the new shot at once, no white frame between
+                self.assertTrue(np.array_equal(mid, b), e)
+                continue
             self.assertFalse(np.array_equal(mid, b), e)
             self.assertTrue(np.array_equal(look.blend(e, d + 0.01, b, a), b), e)
         self.assertTrue(np.array_equal(look.blend('cut', 0.0, b, a), b))

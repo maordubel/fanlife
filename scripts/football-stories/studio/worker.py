@@ -154,6 +154,8 @@ def brief_for_pipeline(job: dict, art_dir: Path | None = None) -> dict:
            # studio v3: what the film is about, its tone, three scripts and the owner's pick
            'kind': b.get('kind') or 'season', 'match_ids': b.get('match_ids') or [], 'opponent': b.get('opponent'),
            'tone': b.get('tone') or 'auto', 'scripts': b.get('scripts') or 1, 'choice': b.get('choice'),
+           # a pitch made with one click: the directors each write, the hook judge chooses (studio/hook_judge.py)
+           'auto_pick': bool(b.get('auto_pick')),
            # a film made from a director's pitch: his script is written first and offered first (studio desk)
            'lead_director': b.get('lead_director') or None, 'media_set': 'job-' + job['id'][:40]}
     if art_dir and b.get('art'):
@@ -440,6 +442,7 @@ def run_once(st: Studio, root: Path, log) -> bool:
         st.call({'op': 'finish', 'id': jid, 'state': result['state'], 'stage': 'done', 'artefacts': art,
                  'youtube': read_json(out / 'youtube.json'),
                  'qa': {'ok': qa['ok'], 'checks': qa['checks'], 'cannot_prove': qa.get('cannot_prove'), 'rights': qa.get('rights')},
+                 **({'hook': result['hook']} if result.get('hook') else {}),
                  'cost': {'renderMinutes': qa.get('render_minutes'), 'voice': read_json(jd / 'voice.json').get('provider')}}, timeout=120)
         send_reel(st, job, jd, log)
         log(f'Job {jid}: {result["state"]}')

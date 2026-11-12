@@ -25,6 +25,8 @@ from pathlib import Path
 
 from ..common import FPS, Palette, StageError, read_json, write_json
 from . import build as B
+from . import editor as E
+from .designer import Designer
 
 ENGINE = 'docu'
 OLD = ('vox', 'vox-hf', 'classic', 'paper')
@@ -97,12 +99,17 @@ class Adapter:
         self.spares: dict[int, Path | None] = {}     # shot → the spare picture it was given
         self.used: dict[Path, int] = {}              # spare picture → when it was last given
         self.pool: list[Path] | None = None
+        self.foci: dict[str, str | None] = {}        # picture → where its detail look looks
+        self.lib_used: list[str] = []                # the library pieces this film put on screen
+        self.last: str | None = None                 # the rich device of the shot before (two city splits never run back to back)
         names = [palette.club_name]
         for c in self.by.values():
             f = c.get('fact') or {}
             if f.get('kind') == 'match':
                 names += [f.get('home'), f.get('away'), f.get('opponent')]
         self.crest = crests(names)
+        self.keys: dict[int, str] = {}               # shot → the key of the picture it shows (the designer reads its index entry)
+        self.design = Designer(self)                 # the richer devices, each only when the beat's data earns it (docu/designer.py)
 
     # ── assets ──────────────────────────────────────────────────────────────────────────────────────────────────────
     def asset(self, p: Path | str | None, prefix: str = 'a') -> str | None:
@@ -128,8 +135,10 @@ class Adapter:
         p = None
         for key in (s.get('required_asset'), v.get('art') if v['type'] == 'illustration' else None, v.get('backdrop'),
                     (s.get('cinema') or {}).get('broll')):
-            p = media(key) if key and key != 'paper' else None
+            # `lib:` is the owner's moving-art library (cinema/animate.choose put it in the plan): its scene, painted
+            p = self.lib_scene(key) if str(key or '').startswith('lib:') else media(key) if key and key != 'paper' else None
             if p:
+                self.keys[s['n']] = NAMED.get(key, key)
                 break
         if not p and v['type'] == 'follow':
             p = media(f'beat:common/{FOLLOW[s["n"] % len(FOLLOW)]}')
@@ -157,6 +166,99 @@ class Adapter:
             self.used[p] = len(self.spares)
         self.spares[n] = p
         return p
+
+    def related(self, n: int, i: int) -> str | None:
+        """Another picture for a line so long that three looks at its own picture are not enough (docu/editor.looks): the
+        least recently used crowd picture, never the one this shot already shows."""
+        self.spare(-1 - n) if self.pool is None else None   # fills the pool; the throwaway key is never a shot
+        own = self.shown.get(n)
+        fresh = [q for q in (self.pool or []) if q != own]
+        p = min(fresh, key=lambda q: self.used.get(q, -1), default=None)
+        if p:
+            self.used[p] = len(self.used) + len(self.spares)
+        return self.asset(p, 'img')
+
+    def focus(self, src: str) -> str | None:
+        """Where a detail look should look on this picture: the busiest part of it (most edges), as a transform origin —
+        a close-up of empty paper or sky is a look at nothing. Kept off the very edges so the push stays inside the frame."""
+        if src not in self.foci:
+            self.foci[src] = None
+            try:
+                import numpy as np
+                from PIL import Image
+                with Image.open(self.files[src]) as im:
+                    a = np.asarray(im.convert('L').resize((96, 54)), dtype='float32')
+                g = np.abs(np.diff(a, axis=0))[:, :-1] + np.abs(np.diff(a, axis=1))[:-1, :]
+                cells = [(float(g[r * 17:(r + 1) * 17 + 2, c * 23:(c + 1) * 23 + 3].mean()), c, r) for r in range(3) for c in range(4)]
+                _, c, r = max(cells)
+                self.foci[src] = f'{(26, 42, 58, 74)[c]}% {(30, 50, 68)[r]}%'
+            except Exception:  # noqa: BLE001 — a clip, a missing file: the editor's fixed corners
+                pass
+        return self.foci[src]
+
+    def backdrop(self, n: int) -> dict | None:
+        """The picture for the rest of a beat whose card has left (docu/editor.cut): the beat's own, else a spare."""
+        s = next((x for x in self.plan['shots'] if x['n'] == n), None)
+        return self.back(s, 'push') if s else None
+
+    # ── the moving-art library (cinema/library.py, chosen per shot by cinema/animate.choose) ──────────────────────────
+    # The worker syncs the owner's "Dynamic Football Fan Art" every run and the plan names pieces for every shot, but
+    # only the classic engine drew them: DOCU read `lib:` keys as nothing and showed a spare crowd picture instead.
+    def lib_scene(self, key: str) -> Path | None:
+        """`lib:<stem>` → the scene behind a shot: a ground, a sky, a city or a layer's background as a still painted in
+        the club's colour (library.paint, as the classic engine paints it), or a clip that needs no painting. None when
+        the library or the piece is not on this machine — the shot then borrows a spare, as before."""
+        from PIL import Image
+        from ..cinema import library as L
+        from ..paper import cover
+        lib, stem = L.load(), key[4:]
+        if not lib:
+            return None
+        if stem in lib.by and lib.by[stem]['cls'] == 'clip':
+            # a `-kr` clip is repainted frame by frame in the classic engine; here it plays as made, so only a clip
+            # that carries no colour to repaint is taken
+            return lib.path(stem) if lib.by[stem].get('colour') != 'kr' else None
+        grp = lib.group(stem)
+        piece = (grp.get('bg') or grp.get('full')) if grp else lib.by.get(stem)
+        if not piece or piece.get('keyed'):
+            return None
+        out = self.jd / 'lib' / f"{piece['stem']}.jpg"
+        if not out.exists():
+            out.parent.mkdir(parents=True, exist_ok=True)
+            im = L.paint(cover(Image.open(lib.path(piece['stem'])).convert('RGB'), (B.W, B.H)), piece.get('colour'), self.pal.accent, self.pal.render_bans)
+            im.save(out, quality=90)
+        self.lib_used.append(piece['stem'])
+        return out
+
+    def lib_figures(self, s: dict) -> list[dict]:
+        """The library's people and objects the plan chose for this shot, as cut-out layers (build.Film.cutout: each rises
+        in on its own plane and drifts): one person at the side the plan gave, one object opposite. Painted and scrubbed
+        like every library piece."""
+        from PIL import Image
+        from ..cinema import library as L
+        lib = L.load()
+        out: list[dict] = []
+        if not lib:
+            return out
+        for e in (s.get('cinema') or {}).get('lib') or []:
+            piece = lib.by.get(e.get('key'))
+            role = e.get('role')
+            if not piece or not piece.get('keyed') or role not in ('actor', 'object') or any(x['role'] == role for x in out):
+                continue
+            h = int(B.H * (0.62 if role == 'actor' else 0.22))
+            png = self.jd / 'lib' / f"{piece['stem']}-{h}.png"
+            if not png.exists():
+                png.parent.mkdir(parents=True, exist_ok=True)
+                im = Image.open(lib.path(piece['stem'])).convert('RGBA')
+                im = im.resize((max(1, round(im.width * h / im.height)), h), Image.LANCZOS)
+                L.paint(im, piece.get('colour'), self.pal.accent, self.pal.render_bans).save(png, compress_level=1)
+            with Image.open(png) as im:
+                w = im.width
+            right = e.get('side', 1) > 0
+            out.append({'kind': 'cutout', 'role': role, 'src': self.asset(png, 'lib'), 'h': h, 'x': (B.W - w - 130) if right else 130,
+                        'y': B.H - h - (18 if role == 'actor' else int(B.H * 0.24)), 'dt': 0.5 if role == 'actor' else 0.9})
+            self.lib_used.append(piece['stem'])
+        return out
 
     def fact(self, cid) -> dict:
         return (self.by.get(cid) or {}).get('fact') or {}
@@ -202,9 +304,21 @@ class Adapter:
         elif t in ('score', 'versus') and f.get('kind') == 'match':
             sc = self.scoreline(f)
             bg = self.picture(s)
+            if bg[0] and not bg[1]:   # the picture behind the board is its own device, so the editor can cut it into looks
+                out.append({'kind': 'image', 'src': bg[0], 'veil': 0.55, 'move': 'push', 'z': 1})
             out.append({'kind': 'score', 'us': B.e(sc['us']), 'them': sc['them'], 'us_goals': sc['ug'], 'them_goals': sc['tg'],
-                        'us_crest': self.crest_of(sc['us']), 'them_crest': self.crest_of(sc['them']),
-                        'cap': self.cap(f), 'bg': None if bg[1] else bg[0]})
+                        'us_crest': self.crest_of(sc['us']), 'them_crest': self.crest_of(sc['them']), 'cap': self.cap(f)})
+            cid = v.get('claim') or (s.get('claim_ids') or [None])[0]
+            vd = self.design.verdict(s, f, cid) if d >= 6 else None
+            st = None if vd else self.design.stamp(s, f, cid)
+            if vd:      # the second half of the beat: the board has been read, now what the result meant
+                at = round(d - min(5.0, d * 0.5), 2)
+                out.append({**vd, 'dt': at, 'd': round(d - at, 2)})
+                self.cue(n, at, 'sting')
+            elif st and d >= 4:
+                at = round(max(1.5, d - 2.4), 2)
+                out.append({**st, 'dt': at, 'd': round(d - at, 2)})
+                self.cue(n, at, 'stamp')
             if f.get('outcome') == 'win':
                 self.cue(n, 0.6, 'crowd-goal' if (s.get('cinema') or {}).get('climax') else 'stamp')
             elif f.get('outcome') == 'loss':
@@ -218,11 +332,22 @@ class Adapter:
             who = sco[k] if 0 <= k < len(sco) else {}
             b = self.back(s, 'slam', tag={'small': f"{who['minute']}'" if who.get('minute') is not None else 'GOAL', 'big': who.get('name') or ''},
                           mini={'home': f.get('home') or '', 'score': f'{f.get("score_home")}–{f.get("score_away")}', 'away': f.get('away') or '', 'at': 1.2})
+            ch = self.design.chalk(s, f, who, list(s.get('claim_ids') or []) + [v.get('claim')]) if d >= 5 else None
+            if ch and b:   # the move on the board first, then the goal itself: the picture arrives as the ball does
+                c = round(min(E.MAX_CARD, d * 0.55), 2)
+                out.append({**ch, 'd': c})
+                b = {**b, 'dt': c, 'd': round(d - c, 2), 'fade': False}
+                self.cue(n, max(0.2, c - 1.2), 'whoosh')
             out += [b] if b else []
-            self.cue(n, 0.3, 'crowd-goal')
+            self.cue(n, 0.3 if not ch else c, 'crowd-goal')
         elif t == 'matchday' and f.get('kind') == 'match':
             sc = self.scoreline(f)
             b = self.back(s, 'panr', tag={'small': self.cap(f)[:60], 'big': f'{"v" if sc["home"] else "at"} {sc["them"]}'})
+            ct = self.design.cities(s, [f]) if d >= 5 and b and self.last != 'cities' else None
+            if ct:      # an away day opens on the journey: the two cities, then the ground
+                c = round(min(3.2, d * 0.4), 2)
+                out.append({**ct, 'd': c})
+                b = {**b, 'dt': c, 'd': round(d - c, 2), 'fade': False}
             out += [b] if b else []
             self.cue(n, 0.4, 'whoosh')
         elif t == 'ticket' and f.get('kind') == 'match':
@@ -274,7 +399,7 @@ class Adapter:
         elif t == 'fact':
             b = self.back(s, 'push', veil=0.0)
             out += [b] if b else []
-            out.append({'kind': 'card', 'small': (v.get('heading') or '').upper(), 'text': v.get('text') or '', 'dt': 0.5})
+            out.append(self.design.rule(s) or {'kind': 'card', 'small': (v.get('heading') or '').upper(), 'text': v.get('text') or '', 'dt': 0.5})
             self.cue(n, 0.5, 'paper')
         elif t == 'quote':
             out.append({'kind': 'quote', 'text': v.get('text') or '', 'who': v.get('who') or '', 'role': v.get('role') or ''})
@@ -282,6 +407,9 @@ class Adapter:
         elif t == 'press' and not (v.get('headline') or '').strip():
             b = self.back(s)
             out += [b] if b else []
+        elif t == 'press' and self.design.press(s, *self.cutting(s)):
+            out.append(self.design.press(s, *self.cutting(s)))
+            self.cue(n, 0.2, 'paper')
         elif t == 'press':
             out.append({'kind': 'card', 'small': ' · '.join(x for x in ((v.get('outlet') or '').upper(), long_date(v.get('date')).upper()) if x),
                         'text': v.get('headline') or '', 'sub': v.get('standfirst') or '', 'paper': True})
@@ -290,7 +418,11 @@ class Adapter:
             g = self.fact(v.get('claim'))
             rows = [[str(r.get('team') or r.get('club') or ''), r.get('position') or r.get('pos') or '', r.get('points') or r.get('pts') or '']
                     for r in (g.get('rows') or [])[:6]]
-            if rows:
+            tb = self.design.table(s, g)
+            if tb:      # the table itself, every row in its place and the club's own lit
+                out.append(tb)
+                self.cue(n, 0.3, 'tick')
+            elif rows:
                 out.append({'kind': 'ledger', 'us': 'POS', 'them': 'PTS', 'rows': rows, 'compact': True, 'title': (g.get('competition') or '').upper()})
             else:
                 b = self.back(s)
@@ -322,6 +454,12 @@ class Adapter:
                     pins.append(ven)
             b = self.back(s, 'panr', lt=[(v.get('label') or '').upper(), ' · '.join(pins)] if (v.get('label') or pins) else None)
             out += [b] if b else []
+            ct = self.design.cities(s, [self.fact(c) for c in (v.get('claims') or [])])
+            if ct:      # a real journey: two cities the place book knows. Without both, the picture and its lower third stay.
+                if b:
+                    b.pop('lt', None)
+                out.append(ct)
+                self.cue(n, 0.3, 'whoosh')
         elif t == 'follow':
             b = self.back(s, 'push', veil=0.45)
             out += [b] if b else []
@@ -336,17 +474,56 @@ class Adapter:
             # a name tag on screen is a claim, and only a cited scorer or minute earns one.
             b = self.back(s, ('pull', 'push', 'panl', 'panr')[n % 4])
             out += [b] if b else []
-        return [x for x in out if x]
+        if t in ('illustration', 'matchday', 'goal', 'race', 'open') and any(x['kind'] in ('image', 'video') for x in out if x):
+            cu = self.design.cutout(s)
+            # the figure the writer asked for by key comes first; else the library's own people for this shot — over a
+            # picture only (under a full-frame card nobody would see them), and never over the city split or the board
+            out += [cu] if cu else ([] if any(x and E.opaque(x) for x in out) else self.lib_figures(s))
+        out = [x for x in out if x]
+        self.last = next((x['kind'] for x in out if x['kind'] in ('cities', 'table', 'chalk', 'verdict', 'rule', 'press')), None)
+        return out
 
-    def beats(self) -> list[dict]:
+    def cutting(self, s: dict) -> tuple[str | None, str | None]:
+        """The beat's own picture (never a spare) and its key — what a press beat may show as the cutting."""
+        v = s['visual']
+        for key in (s.get('required_asset'), v.get('backdrop')):
+            p = media(key) if key and key != 'paper' else None
+            if p and p.suffix.lower() != '.mp4':
+                return self.asset(p, 'img'), NAMED.get(key, key)
+        return None, None
+
+    def raw_beats(self) -> list[dict]:
+        """One beat per plan shot, as the adapter reads it — before the edit."""
         out = []
         for s in self.plan['shots']:
             t, d = s['start'], s['frames'] / FPS
-            b = {'t': t, 'd': d, 'shots': self.shots(s, d)}
+            cin = s.get('cinema') or {}
+            at0 = s.get('voice_at')
+            b = {'t': t, 'd': d, 'shots': self.shots(s, d),
+                 'meta': {'n': s['n'], 'type': v_type(s), 'chapter': s.get('chapter'), 'camera': cin.get('camera'), 'pace': cin.get('cam_pace'),
+                          'outcome': self.fact(s['visual'].get('claim')).get('outcome') if v_type(s) in ('score', 'versus') else None,
+                          'words': [round(at0 + w['start'], 3) for w in (s.get('words') or [])] if at0 is not None else []}}
             if s.get('narration') and s.get('voice_at') is not None and v_type(s) != 'end':
                 b['subs'] = subtitles(s)
             out.append(b)
         return out
+
+    def beats(self) -> list[dict]:
+        """The film's beats, edited (docu/editor.py): long stills cut into looks, cards that leave, a transition into
+        every beat, the docs/71 rules. STORIES_DOCU_EDIT=0 keeps the adapter's own one-still-per-line cut (for comparison)."""
+        raw = self.raw_beats()
+        if os.environ.get('STORIES_DOCU_EDIT', '1') == '0':
+            return raw
+        # the producer's gate named shots to re-plan (studio/qa.experience → pipeline): {shot n: [long | asset | flash | shake]}
+        fp = self.jd / 'experience-replan.json'
+        fixes = {int(k): v for k, v in (read_json(fp).get('shots') or {}).items()} if fp.exists() else {}
+        for b in raw:
+            if 'asset' in fixes.get(b['meta']['n'], []):   # another picture where one was on screen too often (never the owner's chosen one)
+                s = next(x for x in self.plan['shots'] if x['n'] == b['meta']['n'])
+                for x in b['shots']:
+                    if x['kind'] == 'image' and not s.get('required_asset'):
+                        x['src'] = self.related(b['meta']['n'], 0) or x['src']
+        return E.cut(raw, self.plan.get('beat_grid'), self.related, self.backdrop, fixes, self.focus)
 
 
 def v_type(s: dict) -> str:
@@ -382,6 +559,8 @@ def write_project(job_dir: Path, plan: dict, palette: Palette, root: Path) -> tu
     script = read_json(job_dir / 'script.json')
     ad = Adapter(job_dir, plan, palette, ledger, script)
     beats = ad.beats()
+    write_json(job_dir / 'docu-shots.json', {'shots': E.shot_list(beats), 'errors': E.errors(beats) if beats and 'in' in beats[0] else [],
+                                             'beat_grid': bool(plan.get('beat_grid')), 'library': sorted(set(ad.lib_used))})
     if root.exists():
         shutil.rmtree(root)
     (root / 'assets' / 'img').mkdir(parents=True)
@@ -417,6 +596,8 @@ def render_film(job_dir: Path, plan: dict, palette: Palette, log, workers: int |
         write_json(sd / f'shot-{s["n"]:04d}.cues.json', {'cues': cues.get(s['n'], []), 'kind': s['visual']['type'], 'engine': ENGINE,
                                                         'required_asset': s.get('required_asset')})
     log(f'DOCU: {len(plan["shots"])} shots composed in {time.time() - t0:.1f}s ({D / 60:.2f} min)')
+    used = read_json(job_dir / 'docu-shots.json').get('library') or []
+    log(f'DOCU: {len(used)} moving-art library pieces on screen' if used else 'DOCU: no moving-art library on this machine (STORIES_CINEMA_LIB) — spare pictures only')
     if tick:
         tick(1, 3)
     raw = job_dir / 'docu.mp4'

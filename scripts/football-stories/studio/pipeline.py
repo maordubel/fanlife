@@ -192,7 +192,7 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     owner_updated = owner_story.apply(ledger) or owner_document_changed
     if owner_updated:
         ledger['summary'] = research.season_summary(ledger)
-        for saved in [job_dir / name for name in ('script.json', 'editorial-script.json', 'editorial-plan.json', 'voice.json')] + list(job_dir.glob('script-option-*.json')):
+        for saved in [job_dir / name for name in ('script.json', 'editorial-script.json', 'editorial-plan.json', 'voice.json', 'script-pick.json')] + list(job_dir.glob('script-option-*.json')):
             saved.unlink(missing_ok=True)
         log('Research: applied the owner’s exact names and declared facts')
     # New uploads after Pause must reach the edit even when the ledger and chosen script already exist.
@@ -226,6 +226,8 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
         if selected is None:
             return {'state': 'review', 'stage': 'script', 'editorial': editorial_review}
         write_json(sp_, selected)
+    from . import hook_judge
+    hook_check = lambda x: sc.validate_script(x, ledger, float(brief['duration']), brief.get('kind')) + writer.hook_option_errors(x, ledger)  # noqa: E731
     if not sp_.exists():
         if script_file:
             s = owner_story.normalize(read_json(script_file), ledger.get('owner_name_aliases') or {})
@@ -234,28 +236,36 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
             s = sc.with_cta(s, f"{brief['club_id']}-{brief['season']}{'-' + Path(brief['dossier']).stem if brief.get('dossier') else ''}")
             sc.ensure_valid(s, ledger, float(brief['duration']), brief.get('kind'))
         elif int(brief.get('scripts') or 1) > 1:
-            # three scripts, three angles: the owner chooses one in the studio (studio v3)
+            # three scripts, three angles: the owner chooses one in the studio (studio v3) — or, for a film made from a
+            # pitch with one click (`auto_pick`), the hook judge chooses, so the three directors still each write theirs
+            auto = bool(brief.get('auto_pick')) and not brief.get('choice')
             opts = sorted(job_dir.glob('script-option-*.json'))
             if not opts:
-                made = writer.write_options(brief, {**ledger, 'bans': palette.bans}, cache, log)
+                made = writer.write_options(brief, {**ledger, 'bans': palette.bans}, cache, log, least=1 if auto else 2)
                 for i, o in enumerate(made, 1):
-                    write_json(job_dir / f'script-option-{i}.json', o)
+                    write_json(job_dir / f'script-option-{i}.json', hook_judge.judge_script(o, ledger, hook_check, log, cache))
                 opts = sorted(job_dir.glob('script-option-*.json'))
             for option in opts:
                 commons.discover(brief, ledger, read_json(option), commons_cache, log)
             choice = brief.get('choice')
-            if not choice:
+            if not choice and auto:
+                made = [read_json(p) for p in opts]
+                k, picked = hook_judge.pick_script(made, ledger, hook_check, brief.get('lead_director'), log)
+                choice = int(opts[k].stem.rsplit('-', 1)[1])
+                write_json(job_dir / 'script-pick.json', picked)
+            elif not choice:
                 return {'state': 'review', 'stage': 'script', 'options': [writer.option_summary(read_json(p), int(p.stem.rsplit('-', 1)[1])) for p in opts]}
             chosen = job_dir / f'script-option-{int(choice)}.json'
             if not chosen.exists():
                 raise StageError('CHOICE', f'Script {choice} is not among the written options')
             s = owner_story.normalize(read_json(chosen), ledger.get('owner_name_aliases') or {})
-            log(f'Script: option {choice} chosen by the owner')
+            log(f'Script: option {choice} chosen by {"the hook judge" if auto else "the owner"}')
         else:
             # a director's pitch made with one click (owner, 8.11.2026) is written by the director who pitched it
             from .directors import BY_ID
             s = writer.write_script(brief, {**ledger, 'bans': palette.bans}, cache, log,
                                     director=BY_ID.get(brief.get('lead_director') or ''))
+            s = hook_judge.judge_script(s, ledger, hook_check, log, cache)   # the best of its three openings is the one spoken
         s = sc.with_cta(s, f"{brief['club_id']}-{brief['season']}{'-' + Path(brief['dossier']).stem if brief.get('dossier') else ''}")
         write_json(sp_, s)
         log(f'Script: "{sc.selected_title(s)}" · {sum(len(b["narration"].split()) for *_, b in sc.all_beats(s))} words')
@@ -292,6 +302,14 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     from .docu import plan as docu
     if plan['engine'] == 'vox' and docu.wanted(brief):
         plan['engine'] = docu.ENGINE   # the owner's graphic minimum (9.11.2026); look 'vox' / STORIES_DOCU=0 keep the board
+    if plan['engine'] == 'docu':
+        # the editor cuts on the music's beats when the track the mix will choose is at hand; otherwise on words
+        try:
+            plan['beat_grid'] = audio.beat_grid(plan, brief.get('music') or 'auto', [x for x in (brief.get('tone'), brief.get('kind')) if x],
+                                                f"{brief.get('club_id')}|{brief.get('season')}")
+        except Exception as e:  # noqa: BLE001 — a grid is a nicety: the cut falls back to word boundaries
+            plan['beat_grid'] = []
+            log(f'Edit: no beat grid ({type(e).__name__}) — cuts land on words')
     if editorial_review is not None:
         plan, review = editorial.review_plan(job_dir, brief, ed, plan, editorial_review)
         if review is not None:
@@ -386,7 +404,20 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
 
     # 9 qa
     step('qa', 0.95, 'Checking the film')
-    report = qa.check(job_dir, master, plan, cues, float(brief['duration']) + (float(usage.get('added_seconds', 0)) + intro_seconds) / 60, palette, log)
+    report = qa.check(job_dir, master, plan, cues, float(brief['duration']) + (float(usage.get('added_seconds', 0)) + intro_seconds) / 60, palette, log,
+                      intro_s=intro_seconds)
+    # The experience gate failed on shots it can name: re-plan THOSE shots once (tighter cuts, another picture, a calm
+    # way in — docu/editor.cut reads experience-replan.json) and render again, rather than hand the owner a film to fix.
+    # Once only: the marker stays, so the second verdict is final and goes to the owner in plain words.
+    redo = (report.get('experience') or {}).get('replan') or {}
+    marker = job_dir / 'experience-replan.json'
+    if redo and not report['ok'] and plan.get('engine') == 'docu' and not marker.exists():
+        write_json(marker, {'shots': redo, 'first': [c for c in report['checks'] if c['name'].startswith('experience') and not c['ok']]})
+        log(f'Experience gate: re-planning {len(redo)} shot(s) once — ' + '; '.join(c['detail'] for c in report['checks'] if c['name'].startswith('experience') and not c['ok'])[:400])
+        for stale in (picture, job_dir / 'docu.mp4', master, preview, job_dir / 'intro-body.mp4', job_dir / 'intro.json', out / 'qa.json'):
+            stale.unlink(missing_ok=True)
+        logf.close()
+        return run(job_dir, {k: v for k, v in brief.items() if k != 'media_cache'}, palette, progress, script_file)
     report['media_usage'] = usage
     report['rights'] = rights_gaps(manifest)
     report['render_minutes'] = round((time.time() - t_start) / 60, 1)
@@ -409,7 +440,17 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
             log(f'Shorts: none cut ({type(e).__name__}: {e})')
             write_json(shorts_p, [])
     step('done', 1.0, 'Ready for review')
-    return {'state': 'ready' if report['ok'] and not report['rights'] else 'needs_review', 'qa': report}
+    return {'state': 'ready' if report['ok'] and not report['rights'] else 'needs_review', 'qa': report, 'hook': hook_record(job_dir, s)}
+
+
+def hook_record(job_dir: Path, script: dict) -> dict | None:
+    """Why this hook opens the film, for the desk: the three scores, the reason, and — for a film made from a pitch —
+    which director's script the judge chose (studio/hook_judge.py)."""
+    hj = script.get('hook_judge')
+    if not isinstance(hj, dict):
+        return None
+    pick = job_dir / 'script-pick.json'
+    return {**hj, **({'scripts': read_json(pick)} if pick.exists() else {})}
 
 
 def asset_ledger(job_dir: Path, script: dict) -> list[dict]:

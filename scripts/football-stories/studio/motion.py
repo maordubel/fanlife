@@ -94,7 +94,7 @@ class Shot:
     camera: Callable[[float], tuple[float, float, float]]  # t → (zoom, cx, cy) in canvas pixels; zoom 1 = W×H window
     layers: list[Layer] = field(default_factory=list)
     entry: str = 'cut'  # cut | fade | wipe | black
-    shake: list[tuple[float, float]] = field(default_factory=list)  # (time, strength px)
+    shake: list[tuple[float, float]] = field(default_factory=list)  # retired (rule 142): accepted, never applied
     cues: list[tuple[float, str]] = field(default_factory=list)  # sound cues for the mix
     meta: dict = field(default_factory=dict)
     # A moving world (an owner stop-motion clip): frame index → CANVAS-sized RGB. Read in order, never seeked.
@@ -159,11 +159,8 @@ class ShotRenderer:
         else:
             world = self.base
         z, cx, cy = s.camera(t)
-        for (ts, strength) in s.shake:
-            if ts <= t < ts + 0.28:
-                k = (1 - (t - ts) / 0.28) * strength
-                cx += k * math.sin(t * 91)
-                cy += k * math.cos(t * 77)
+        # `s.shake` (impulses a slam used to give the camera) is read by nobody: the picture does not shake (rule 142). The
+        # field stays so a shot built by older code still loads; the slam of the card is the impact, the camera holds its move.
         hw, hh = W / (2 * z), H / (2 * z)
         cx = clamp(cx, hw, CANVAS[0] - hw)
         cy = clamp(cy, hh, CANVAS[1] - hh)

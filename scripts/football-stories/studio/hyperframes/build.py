@@ -342,7 +342,6 @@ class B:
         self.js(f'tl.fromTo("#{sid}",{{xPercent:-50,yPercent:-50,scale:2.1,rotation:{r3(rot - 4)},opacity:0}},'
                 f'{{xPercent:-50,yPercent:-50,scale:1,rotation:{r3(rot)},opacity:1,duration:0.32,ease:"back.out(1.8)"}},{self.T(t0)});')
         self.P.cues.append((t0, 'stamp'))
-        self.P.shakes.append((t0 + 0.08, 9))
         w = text_width(word, 'shout', size) + 60
         return sid, (x - w / 2, y - size * 0.7, w, size * 1.4)
 
@@ -563,7 +562,6 @@ def result(b: B) -> None:
     if sw and not live and kind in ('score', 'versus', 'matchday'):
         b.stamp(sw[0], cx + W_ / 2 - 190, cy + H_ / 2 - 70, t_sc1 + 0.15, size=96 if len(sw[0]) < 7 else 80, tone=sw[1])
         if sw[1] == 'accent':
-            b.P.flashes.append(t_sc1 + 0.15)
             b.P.cues.append((t_sc1 + 0.2, 'crowd-goal' if f['outcome'] == 'win' else 'crowd-after'))
         else:
             b.P.cues.append((t_sc1 + 0.2, 'crowd-miss'))
@@ -895,7 +893,7 @@ html,body{width:1920px;height:1080px;overflow:hidden;background:#151310}
 .pin{position:absolute;width:44px;height:44px;border-radius:50% 50% 50% 0;rotate:-45deg;border:4px solid var(--paper);box-shadow:3px 6px 6px rgba(0,0,0,.35);z-index:85}
 .cutp{position:absolute}
 #veil{position:absolute;inset:0;background:var(--news);opacity:0;pointer-events:none}
-#flash{position:absolute;inset:0;background:#fffbf2;opacity:0;pointer-events:none}
+#flash{position:absolute;inset:0;background:#14110D;opacity:0;pointer-events:none}
 #vig{position:absolute;inset:0;background-image:var(--vig);background-size:100% 100%;pointer-events:none}
 #grain{position:absolute;inset:-256px;background-image:var(--grain);opacity:.10;mix-blend-mode:overlay;pointer-events:none}
 .lb{position:absolute;left:0;right:0;height:120px;background:#0d0b09;transform:scaleY(0)}
@@ -1127,13 +1125,8 @@ class Composition:
                 panels.append(f'<div class="panel" id="panel{n}" style="left:{p["ox"]:.1f}px;top:{p["oy"]:.1f}px">{"".join(P.html)}</div>')
                 near.append(f'<div class="panel" style="left:{p["ox"]:.1f}px;top:{p["oy"]:.1f}px">{"".join(P.near)}</div>')
                 js += P.js
-                for (ts, amp) in P.shakes:
-                    T = r3(P.start + ts)
-                    js.append(f'tl.fromTo("#shk",{{x:0,y:0}},{{keyframes:[{{x:{amp},y:{-amp * 0.6:.1f},duration:0.04}},{{x:{-amp * 0.8:.1f},y:{amp * 0.5:.1f},'
-                              f'duration:0.05}},{{x:{amp * 0.4:.1f},y:{-amp * 0.3:.1f},duration:0.05}},{{x:0,y:0,duration:0.08}}],immediateRender:false}},{T});')
-                for fl in P.flashes:
-                    T = r3(P.start + fl)
-                    js.append(f'tl.fromTo("#flash",{{opacity:0.55}},{{opacity:0,duration:0.14,immediateRender:false}},{T});')
+                # P.shakes (the board jolting under a stamp) and P.flashes (a sheet of paper-white on a win) are no longer
+                # drawn: rule 142 — nothing on the board shakes or flashes. A stamp lands by its own scale; that is the hit.
             boards.append(f'<div class="board" id="board{bi}" style="width:{bd["w"]:.0f}px;height:{bd["h"]:.0f}px;background-image:url({img})">{"".join(panels)}</div>')
             nears.append(f'<div class="near" id="near{bi}">{"".join(near)}</div>')
         glass, gjs = self.glass()
