@@ -2,12 +2,13 @@ import {NextResponse} from 'next/server'
 import {adminFromRequest} from '@/lib/master/admin'
 import {sameOrigin} from '@/lib/master/request'
 import {readShop,updateShop,printifyToken,saveToken} from '@/lib/shop/store'
-import {optionsFor,catalogueFor,client,connect,matchKind,pressProduct,refreshProduct,removeProduct} from '@/lib/shop/build'
-import {draftOf,launchSet,NOTE,shortTitle} from '@/lib/shop/plan'
+import {forgetPublicShop} from '@/lib/shop/store'
+import {syncListing,optionsFor,catalogueFor,client,connect,matchKind,pressProduct,refreshProduct,removeProduct} from '@/lib/shop/build'
+import {draftOf,fitTitle,launchSet,NOTE,shortTitle} from '@/lib/shop/plan'
 import {KIND_SPECS} from '@/lib/shop/kinds'
 import {SUBJECT_IDS,isSubject} from '@/lib/shop/subjects'
 import {pictureById} from '@/lib/shop/library'
-import {KINDS,PLACES,SHADES,SIDES,SIZES,type AreaDesign,type ArtRef,type Kind,type ProductDesign,type ShopProduct} from '@/lib/shop/types'
+import {designKey,KINDS,PLACES,SHADES,SIDES,SIZES,type AreaDesign,type ArtRef,type Kind,type ProductDesign,type ShopProduct} from '@/lib/shop/types'
 export const dynamic='force-dynamic'
 export const maxDuration=120
 const json=(d:unknown,s=200)=>NextResponse.json(d,{status:s,headers:{'Cache-Control':'no-store'}})
@@ -82,7 +83,14 @@ export async function POST(r:Request){
    case 'visible':{const ids=Array.isArray(b.ids)?b.ids.map(String):[id];await updateShop(by,`${b.visible?'Showed':'Hid'} ${ids.length} product(s)`,d=>{for(const p of d.products)if(ids.includes(p.id))p.visible=!!b.visible});break}
    case 'design':{if(!id)return json({error:'Which product?'},422);const design=designOf(b.design)
     await updateShop(by,`New design settings for ${id}`,d=>{const p=d.products.find(x=>x.id===id);if(p){p.design=design;p.status='draft';p.visible=false}});await pressProduct(id,by);break}
-   case 'edit':await updateShop(by,`Edited ${id}`,d=>{const p=d.products.find(x=>x.id===id);if(!p)return;if(typeof b.title==='string'&&b.title.trim())p.title=b.title.trim().slice(0,90);if(typeof b.description==='string')p.description=b.description.trim().slice(0,600);p.updatedAt=now});break
+   case 'edit':await updateShop(by,`Edited ${id}`,d=>{const p=d.products.find(x=>x.id===id);if(!p)return;if(typeof b.title==='string'&&b.title.trim())p.title=b.title.trim().slice(0,90);if(typeof b.description==='string')p.description=b.description.trim().slice(0,600);p.updatedAt=now});await syncListing(id).catch(()=>{});forgetPublicShop();break
+   case 'sync':if(!id)return json({error:'Which product?'},422);await syncListing(id);forgetPublicShop();break
+   case 'renameDesign':{const key=String(b.design||''),name=String(b.name||'').trim().replace(/\s+/g,' ').slice(0,48)
+    if(!key||name.length<2)return json({error:'Give the design a name.'},422)
+    const ids:string[]=[];await updateShop(by,`Named a design “${name}”`,d=>{d.settings.designNames={...(d.settings.designNames||{}),[key]:name}
+     for(const p of d.products)if(designKey(p)===key){p.title=fitTitle(name,p.blueprint?shortTitle(p.blueprint.title):KIND_SPECS[p.kind].label);p.updatedAt=now;ids.push(p.id)}})
+    for(const pid of ids)await syncListing(pid).catch(()=>{});forgetPublicShop();break}
+   case 'promo':{const pc=Number(b.percent);await updateShop(by,pc>0?`Sale on: ${pc}%`:'Sale off',d=>{d.settings.promo=pc>0&&pc<=80?{percent:Math.round(pc),label:String(b.label||'').trim().slice(0,60)||'Sale',until:typeof b.until==='string'&&b.until?b.until:null,code:typeof b.code==='string'&&b.code.trim()?b.code.trim().slice(0,24):undefined,freeShipping:b.freeShipping===true}:null});forgetPublicShop();break}
    case 'remove':await removeProduct(id,by);break
    case 'match':if(!kind||typeof b.blueprintId!=='number')return json({error:'Give the product type and a catalogue number.'},422)
     await matchKind(await client(),kind,by,{blueprintId:b.blueprintId,providerId:typeof b.providerId==='number'?b.providerId:undefined});break

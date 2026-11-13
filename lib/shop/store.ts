@@ -13,15 +13,21 @@ export async function updateShop(by:string,what:string,fn:(d:ShopDoc)=>ShopDoc|v
   return {...next,audit:what?[...next.audit,{at:new Date().toISOString(),by,what:what.slice(0,160)}].slice(-80):next.audit}})
 }
 /** what /shop shows: nothing unless the owner opened the shop */
-type Public={open:boolean;popupUrl:string;products:PublicProduct[]}
+type Public={open:boolean;popupUrl:string;promo:ShopDoc['settings']['promo'];products:PublicProduct[]}
 let kept:{at:number;value:Public}|null=null
 /** Read at most once a minute per server: every page's menu asks, and the answer changes only when the owner saves. */
 export async function publicShop():Promise<Public>{
  if(kept&&Date.now()-kept.at<60e3)return kept.value
  const d=await readShop(),{usdToEur,eurGuide}=await import('./fx'),rate=d.settings.open?await usdToEur():null
- const value={open:d.settings.open,popupUrl:d.settings.popupUrl,products:d.settings.open?d.products.filter(isPublic).map(toPublic).map(p=>({...p,eur:p.currency==='USD'?eurGuide(p.priceFrom,rate):null})):[]}
+ // a store-wide sale the owner runs in Printify: shown only while it is on, at the same percentage (the checkout applies it)
+ const pr=d.settings.promo,on=!!pr&&pr.percent>0&&(!pr.until||Date.parse(pr.until)>Date.now()),promo=on?pr!:null
+ const value={open:d.settings.open,popupUrl:d.settings.popupUrl,promo,products:d.settings.open?d.products.filter(isPublic).map(toPublic).map(p=>{
+  const now=promo?Math.round(p.priceFrom*(1-promo.percent/100)):p.priceFrom
+  return {...p,...(promo?{was:p.priceFrom,priceFrom:now}:{}),eur:p.currency==='USD'?eurGuide(now,rate):null}}):[]}
  kept={at:Date.now(),value};return value
 }
+/** after the desk changes what the public sees: the next visitor reads fresh */
+export const forgetPublicShop=()=>{kept=null}
 /** The Printify token: the environment first, else the server-only file the owner saved from the desk. Never sent to a browser. */
 export async function printifyToken():Promise<string|null>{
  if(process.env.PRINTIFY_API_TOKEN)return process.env.PRINTIFY_API_TOKEN

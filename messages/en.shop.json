@@ -88,5 +88,21 @@
  "giftT": "Every supporter has a birthday.",
  "giftSub": "Pick a print, a shirt or a mug for the one who still has the old ticket stubs. Printed for them, sent to their door.",
  "giftCta": "See the gifts",
- "clubShop": "{club} shop"
+ "clubShop": "{club} shop",
+ "promoK": "On now",
+ "promoOff": "−{n}%",
+ "promoAll": "off everything in the shop",
+ "promoUntil": "until {date}",
+ "promoCode": "Code at checkout: {code}",
+ "promoShip": "+ cheaper shipping",
+ "makeK": "Make your own",
+ "makeT": "Pick a print. Pick what it goes on.",
+ "makeSub": "Every FAN LIFE design can go on a shirt, a mug, a poster, a flag and more — choose yours.",
+ "makeCta": "Start making",
+ "makeH1": "Make your own",
+ "makeLead": "Step 1 — pick a design. Step 2 — pick what to print it on.",
+ "makeOn": "On {n} products",
+ "makeOpen": "Choose a product",
+ "was": "was {price}",
+ "clubAria": "{club} — {n} products"
 }
