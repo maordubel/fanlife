@@ -45,3 +45,9 @@ describe('listing text that sells',()=>{
   expect(l.description).toMatch(/Olympiacos supporters from Piraeus/);expect(l.description).toMatch(/not an official club product/);expect(l.tags).toContain('Olympiacos gift');expect(l.tags.length).toBeLessThanOrEqual(13)
  })
 })
+describe('a picture that is already cut out',()=>{
+ it('is recognised by its transparent border',async()=>{
+  const {transparentBorder}=await import('@/lib/shop/cutout');const w=10,h=10,d=new Uint8ClampedArray(w*h*4)
+  expect(transparentBorder({data:d,width:w,height:h})).toBe(true);d.fill(255);expect(transparentBorder({data:d,width:w,height:h})).toBe(false)
+ })
+})
