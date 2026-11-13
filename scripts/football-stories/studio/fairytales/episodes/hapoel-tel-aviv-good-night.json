@@ -1,0 +1,642 @@
+{
+ "schemaVersion": 1,
+ "id": "hapoel-tel-aviv-good-night",
+ "club": "hapoel-tel-aviv",
+ "series": "Football Fairy Tales",
+ "title": {
+  "en": "Good Night, Hapoel Tel Aviv",
+  "he": "לילה טוב, הפועל תל אביב"
+ },
+ "voice": {
+  "he": "Leda",
+  "en": "Leda",
+  "chosen": "owner, 11.11.2026"
+ },
+ "night": true,
+ "look": {
+  "style": "comic",
+  "note": "owner 13.11.2026 (FANLIFE KIDS board): Good Morning = pop-up cartoon (happy, fast, loud); Good Night = comic (slow, gentle, a bedtime story).",
+  "prompts": "plates-hapoel-good-night.prompts.json"
+ },
+ "palette": {
+  "primary": "#B02D10",
+  "secondary": "#F6F0E4",
+  "bannedHue": [
+   36,
+   74
+  ],
+  "confetti": [
+   "#F6F0E4",
+   "#F6F0E4",
+   "#FFFFFF",
+   "#E9D9B8",
+   "#B02D10"
+  ]
+ },
+ "crests": {
+  "1923": "public/brand/crests/circle-1923.png"
+ },
+ "music": [
+  {
+   "track": "fairytales-lullaby-hapoel",
+   "from": "once-upon"
+  },
+  {
+   "track": "pufino-enlivening",
+   "from": "chelsea"
+  },
+  {
+   "track": "fairytales-lullaby-hapoel",
+   "from": "walk-home"
+  }
+ ],
+ "pronounce": {
+  "he": "נאמר בשקט ובאיטיות, כמו סיפור לפני השינה. בלומפילד: \"בְּלוּמְפִילְד\". שייע: \"שַׁיֶּיע\". קלשצ'נקו: kle-SHCHEN-ko. צ'לסי: CHEL-see. בנפיקה: ben-FEE-ka.",
+  "en": "Read softly and slowly, like a bedtime story. Bloomfield: BLOOM-field. Kleshchenko: kle-SHCHEN-ko. Shaya: SHAH-yeh. Feigenbaum: FY-gen-bowm. Hodorov: kho-DOR-ov. Tikva: TEEK-vah. Toama: TOO-ah-mah. Benfica: ben-FEE-ka."
+ },
+ "shots": [
+  {
+   "id": "once-upon",
+   "plate": "gn-sunset",
+   "delivery": "secret",
+   "en": "Far away, many years ago, the sun went down into the sea at Jaffa. The sky over Tel Aviv turned orange, then pink, then blue… and the lights of Bloomfield came on, one after the other.",
+   "he": "אי שם, לפני שנים רבות, השמש שקעה לתוך הים של יפו. השמיים מעל תל אביב נהיו כתומים, אחר כך ורודים, ואחר כך כחולים… והאורות של בלומפילד נדלקו, אחד אחרי השני.",
+   "sources": [
+    "club-packs/hapoel-tel-aviv/world.json ground: Bloomfield, in the south of Tel Aviv-Jaffa, near the old port of Jaffa"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ]
+   },
+   "transition": "fade",
+   "say": {
+    "he": "אי שם, לפני שנים רבות, השמש שקעה לתוך הים של יָפוֹ. השמיים מעל תל אביב נהיו כתומים, אחר כך ורודים, ואחר כך כחולים… והאורות של בְּלוּמְפִילְד נדלקו, אחד אחרי השני."
+   }
+  },
+  {
+   "id": "night-magic",
+   "plate": "gn-floodlights",
+   "delivery": "playful",
+   "en": "There is something magic about a match at night. The grass looks greener, the ball looks whiter, and the red shirts… glow like little lanterns. Shall we switch on a pretend torch too? Click!",
+   "he": "יש משהו קסום במשחק בלילה. הדשא נראה ירוק יותר, הכדור נראה לבן יותר, והחולצות האדומות… זוהרות כמו פנסים קטנים. נדליק גם אנחנו פנס דמיוני? קליק!",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "tags": [
+     {
+      "text": "CLICK!",
+      "at": 0.85,
+      "xy": [
+       1450,
+       250
+      ],
+      "size": 110,
+      "rot": -4
+     }
+    ],
+    "punch": [
+     0.85
+    ]
+   },
+   "transition": "iris"
+  },
+  {
+   "id": "dreams",
+   "plate": "gn-map",
+   "delivery": "tender",
+   "en": "And at night, Hapoel loved to dream of far-away places: grounds all over Europe, and big famous teams from other countries.",
+   "he": "ובלילות, הפועל אהבה לחלום על מקומות רחוקים: על מגרשים בכל אירופה, ועל קבוצות גדולות ומפורסמות מארצות אחרות.",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ]
+   },
+   "transition": "dissolve"
+  },
+  {
+   "id": "chelsea",
+   "plate": "gn-chelsea",
+   "delivery": "build",
+   "en": "One autumn night in 2001, Chelsea came all the way from London to Bloomfield. For a long time, nobody scored. Then, near the very end — one goal! And then another! Two–nil to Hapoel!",
+   "he": "בלילה אחד של סתיו, בשנת 2001, הגיעה צ'לסי מלונדון עד לבלומפילד. הרבה זמן אף אחד לא הבקיע. ואז, ממש לקראת הסוף — גול אחד! ועוד גול! שתיים–אפס להפועל!",
+   "sources": [
+    "Wikipedia, 2001–02 Hapoel Tel Aviv F.C. season (UEFA Cup results): 18 October 2001, Hapoel Tel Aviv 2–0 Chelsea, Bloomfield; Gershon 87' (pen.), Cleşcenco 94'",
+    "Dawn, 19 Oct 2001 \"Late goals stun depleted Chelsea\""
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.11
+    ],
+    "tags": [
+     {
+      "text": "2001",
+      "at": 0.15,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     },
+     {
+      "text": "2–0",
+      "at": 0.82,
+      "xy": [
+       1450,
+       260
+      ],
+      "size": 120,
+      "rot": 4
+     }
+    ],
+    "punch": [
+     0.66,
+     0.82
+    ],
+    "sfx": [
+     {
+      "file": "crowd-real-goal",
+      "at": 0.66,
+      "level": 0.35
+     },
+     {
+      "file": "crowd-real-goal",
+      "at": 0.8,
+      "level": 0.4
+     }
+    ]
+   },
+   "transition": "page",
+   "cap": {
+    "he": "בלילה אחד של סתיו, ב־2001, הגיעה צ'לסי מלונדון עד לבלומפילד. הרבה זמן אף אחד לא הבקיע. ואז, ממש לקראת הסוף — גול אחד! ועוד גול! 2–0 להפועל!",
+    "en": "One autumn night in 2001, Chelsea came all the way from London to Bloomfield. For a long time, nobody scored. Then, near the very end — one goal! And then another! 2–0 to Hapoel!"
+   },
+   "say": {
+    "he": "בלילה אחד של סתיו, בשנת אלפיים ואחת, הגיעה צֶ'לְסִי מלונדון עד לבְּלוּמְפִילְד. הרבה זמן אף אחד לא הבקיע. ואז, ממש לקראת הסוף — גול אחד! ועוד גול! שתיים–אפס להפועל!"
+   }
+  },
+  {
+   "id": "journey",
+   "plate": "gn-train",
+   "delivery": "adventure",
+   "en": "And the journey went on: to Lokomotiv, in cold, snowy Moscow — and to Parma, in Italy. Hapoel beat them both, all the way to the quarter-finals of the UEFA Cup!",
+   "he": "והמסע המשיך: ללוקומוטיב, במוסקבה הקרה והמושלגת — ולפרמה, באיטליה. הפועל ניצחה את שתיהן, והגיעה עד לרבע הגמר של גביע אופ\"א!",
+   "sources": [
+    "Wikipedia, 2001–02 Hapoel Tel Aviv F.C. season (UEFA Cup results): third round v Lokomotiv Moscow 2–1, 1–0; fourth round v Parma 0–0, 2–1",
+    "UEFA.com 2001/02 season clubs: H. Tel Aviv, quarter-finals"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.09
+    ],
+    "tags": [
+     {
+      "text": "MOSCOW",
+      "at": 0.2,
+      "xy": [
+       1420,
+       220
+      ],
+      "size": 84,
+      "rot": -3
+     },
+     {
+      "text": "PARMA",
+      "at": 0.55,
+      "xy": [
+       440,
+       250
+      ],
+      "size": 84,
+      "rot": 4
+     }
+    ],
+    "punch": [
+     0.85
+    ]
+   },
+   "transition": "slide",
+   "say": {
+    "he": "והמסע המשיך: ללוֹקוֹמוֹטִיב, במוסקבה הקרה והמושלגת — ולפַּרְמָה, באיטליה. הפועל ניצחה את שתיהן, והגיעה עד לרבע הגמר של גביע אוּפָּ\"א!"
+   }
+  },
+  {
+   "id": "milan",
+   "plate": "gn-milan",
+   "delivery": "build",
+   "en": "There, the mighty Milan was waiting. Hapoel's home match was played across the sea, in Cyprus. And Sergei Kleshchenko struck a wonderful volley — one–nil to Hapoel!",
+   "he": "שם חיכתה מילאן הגדולה. משחק הבית של הפועל שוחק מעבר לים, בקפריסין. וסרגיי קלשצ'נקו בעט וולה נהדר — אחת–אפס להפועל!",
+   "sources": [
+    "Wikipedia, 2001–02 Hapoel Tel Aviv F.C. season (UEFA Cup results): quarter-final, 14 March 2002, Hapoel Tel Aviv 1–0 Milan, GSP Stadium, Nicosia, Cleşcenco 32'",
+    "UEFA.com 14.3.2002 \"Clescenko stuns Milan\": a wonderful volley"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.11
+    ],
+    "tags": [
+     {
+      "text": "MILAN",
+      "at": 0.15,
+      "xy": [
+       1440,
+       220
+      ],
+      "size": 100,
+      "rot": -4
+     },
+     {
+      "text": "1–0",
+      "at": 0.8,
+      "xy": [
+       440,
+       260
+      ],
+      "size": 120,
+      "rot": 4
+     }
+    ],
+    "punch": [
+     0.8
+    ],
+    "sfx": [
+     {
+      "file": "crowd-real-goal",
+      "at": 0.78,
+      "level": 0.4
+     }
+    ]
+   },
+   "transition": "zoom",
+   "cap": {
+    "he": "שם חיכתה מילאן הגדולה. משחק הבית של הפועל שוחק מעבר לים, בקפריסין. וסרגיי קלשצ'נקו בעט וולה נהדר — 1–0 להפועל!",
+    "en": "There, the mighty Milan was waiting. Hapoel's home match was played across the sea, in Cyprus. And Sergei Kleshchenko struck a wonderful volley — 1–0 to Hapoel!"
+   },
+   "say": {
+    "he": "שם חיכתה מִילָאן הגדולה. משחק הבית של הפועל שוחק מעבר לים, בקפריסין. וסֶרְגֵּיי קְלֶשְׁצֶ'נְקוֹ בעט וולה נהדר — אחת–אפס להפועל!"
+   }
+  },
+  {
+   "id": "so-close",
+   "plate": "gn-sanmarino",
+   "delivery": "tender",
+   "en": "In the big stadium in Milan, the Italians won the second match, and the journey ended there. But what a journey it was… a whole season of nights to remember.",
+   "he": "באצטדיון הענק במילאנו, האיטלקים ניצחו במשחק השני, והמסע נגמר שם. אבל איזה מסע זה היה… עונה שלמה של לילות שזוכרים.",
+   "sources": [
+    "Wikipedia, 2001–02 Hapoel Tel Aviv F.C. season (UEFA Cup results): 21 March 2002, Milan 2–0 Hapoel Tel Aviv, San Siro; Milan won 2–1 on aggregate"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.06
+    ]
+   },
+   "transition": "dissolve"
+  },
+  {
+   "id": "benfica",
+   "plate": "gn-benfica",
+   "delivery": "build",
+   "en": "And in November 2010, on a big Champions League night, Benfica came to Bloomfield from Portugal. Hapoel won three–nil — its first win ever in the Champions League group stage!",
+   "he": "ובנובמבר 2010, בלילה גדול של ליגת האלופות, הגיעה בנפיקה מפורטוגל לבלומפילד. הפועל ניצחה שלוש–אפס — הניצחון הראשון שלה אי פעם בשלב הבתים של ליגת האלופות!",
+   "sources": [
+    "UEFA.com 24.11.2010 \"Battered Hapoel stand firm to beat Benfica\": Hapoel 3–0 Benfica",
+    "Fox Sports / TNT Sports 24.11.2010: first ever Champions League group-stage win"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "tags": [
+     {
+      "text": "2010",
+      "at": 0.15,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     },
+     {
+      "text": "3–0",
+      "at": 0.7,
+      "xy": [
+       1450,
+       260
+      ],
+      "size": 120,
+      "rot": 4
+     }
+    ],
+    "punch": [
+     0.7
+    ],
+    "confettiAt": 0.78,
+    "sfx": [
+     {
+      "file": "crowd-real-goal",
+      "at": 0.68,
+      "level": 0.4
+     }
+    ]
+   },
+   "transition": "page",
+   "cap": {
+    "he": "ובנובמבר 2010, בלילה גדול של ליגת האלופות, הגיעה בנפיקה מפורטוגל לבלומפילד. הפועל ניצחה 3–0 — הניצחון הראשון שלה אי פעם בשלב הבתים של ליגת האלופות!",
+    "en": "And in November 2010, on a big Champions League night, Benfica came to Bloomfield from Portugal. Hapoel won 3–0 — its first win ever in the Champions League group stage!"
+   },
+   "say": {
+    "he": "ובנובמבר אלפיים ועשר, בלילה גדול של ליגת האלופות, הגיעה בֶּנְפִיקָה מפורטוגל לבְּלוּמְפִילְד. הפועל ניצחה שלוש–אפס — הניצחון הראשון שלה אי פעם בשלב הבתים של ליגת האלופות!"
+   }
+  },
+  {
+   "id": "walk-home",
+   "plate": "gn-walk",
+   "delivery": "warm",
+   "en": "After every match, the supporters walk home together, singing softly through the streets of Jaffa and south Tel Aviv, their scarves around their necks.",
+   "he": "אחרי כל משחק, האוהדים הולכים יחד הביתה, ושרים בשקט ברחובות של יפו ודרום תל אביב, עם הצעיף על הצוואר.",
+   "sources": [
+    "club-packs/hapoel-tel-aviv/world.json ground: south Tel Aviv-Jaffa"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ],
+    "sfx": [
+     {
+      "file": "crowd-real-murmur",
+      "at": 0.05,
+      "level": 0.18
+     }
+    ]
+   },
+   "transition": "slide"
+  },
+  {
+   "id": "lights-off",
+   "plate": "gn-lightsoff",
+   "delivery": "secret",
+   "en": "Inside the empty stadium, the floodlights go off, one after the other. Let's count them together, very quietly: one… two… three… four. Shhh.",
+   "he": "בתוך האצטדיון הריק, הפנסים הגדולים כבים, אחד אחרי השני. בואו נספור אותם ביחד, בשקט בשקט: אחד… שתיים… שלוש… ארבע. ששש.",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.06
+    ],
+    "tags": [
+     {
+      "text": "Shhh…",
+      "at": 0.85,
+      "xy": [
+       1450,
+       250
+      ],
+      "size": 100,
+      "rot": -4
+     }
+    ]
+   },
+   "transition": "fade"
+  },
+  {
+   "id": "ball-sleeps",
+   "plate": "gn-ball",
+   "delivery": "tender",
+   "en": "The ball rolls slowly into the net, and falls asleep there, under a blanket of soft sea mist.",
+   "he": "הכדור מתגלגל לאט לתוך הרשת, ונרדם שם, מתחת לשמיכה רכה של ערפל מהים.",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ]
+   },
+   "transition": "dissolve"
+  },
+  {
+   "id": "stars",
+   "plate": "gn-stars",
+   "delivery": "secret",
+   "en": "And up in the sky, the stars come out. Some people say that every star is one Hapoel player, keeping watch over the city.",
+   "he": "ולמעלה, בשמיים, יוצאים הכוכבים. יש אנשים שאומרים שכל כוכב הוא שחקן אחד של הפועל, ששומר על העיר.",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.09
+    ]
+   },
+   "transition": "fade"
+  },
+  {
+   "id": "star-hodorov",
+   "plate": "gn-star-keeper",
+   "delivery": "tender",
+   "en": "There is Hodorov, the great goalkeeper, still guarding the sky, his arms open wide.",
+   "he": "הנה חודורוב, השוער הגדול, עדיין שומר על השמיים, עם הידיים פתוחות לרווחה.",
+   "sources": [
+    "Vikipoel יעקב חודורוב (see Good Morning)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "HODOROV",
+      "at": 0.3,
+      "xy": [
+       1450,
+       220
+      ],
+      "size": 90,
+      "rot": -4
+     }
+    ]
+   },
+   "transition": "dissolve",
+   "say": {
+    "he": "הנה חוֹדוֹרוֹב, השוער הגדול, עדיין שומר על השמיים, עם הידיים פתוחות לרווחה."
+   }
+  },
+  {
+   "id": "star-seven",
+   "plate": "gn-star-seven",
+   "delivery": "playful",
+   "en": "And there, a star with the number seven — Moshe Sinai. And next to him, number fourteen — Shalom Tikva, with the gentlest chip in the world.",
+   "he": "והנה כוכב עם המספר שבע — משה סיני. ולידו, מספר ארבע־עשרה — שלום תקוה, עם הצ'יפ הכי עדין בעולם.",
+   "sources": [
+    "Vikipoel משה סיני (מספר בהפועל=7); שלום תקוה (14)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.09
+    ],
+    "tags": [
+     {
+      "text": "7",
+      "at": 0.25,
+      "xy": [
+       1460,
+       240
+      ],
+      "size": 140,
+      "rot": -4
+     },
+     {
+      "text": "14",
+      "at": 0.6,
+      "xy": [
+       460,
+       250
+      ],
+      "size": 140,
+      "rot": 4
+     }
+    ],
+    "punch": [
+     0.25,
+     0.6
+    ]
+   },
+   "transition": "zoom",
+   "cap": {
+    "he": "והנה כוכב עם המספר 7 — משה סיני. ולידו, מספר 14 — שלום תקוה, עם הצ'יפ הכי עדין בעולם.",
+    "en": "And there, a star with the number 7 — Moshe Sinai. And next to him, number 14 — Shalom Tikva, with the gentlest chip in the world."
+   },
+   "say": {
+    "he": "והנה כוכב עם המספר שבע — משה סִינַי. ולידו, מספר ארבע־עשרה — שלום תִּקְוָה, עם הצ'יפ הכי עדין בעולם."
+   }
+  },
+  {
+   "id": "star-crowd",
+   "plate": "gn-star-many",
+   "delivery": "warm",
+   "en": "And Shaya Feigenbaum, and Jimmy Turk, and Salim Toama, and so many more… so many, you could count stars all night long.",
+   "he": "ושייע פייגנבוים, וג'ימי טורק, וסלים טועמה, ועוד הרבה הרבה… כל כך הרבה, שאפשר לספור כוכבים כל הלילה.",
+   "sources": [
+    "Vikipoel players (see Good Morning)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ]
+   },
+   "transition": "dissolve",
+   "say": {
+    "he": "ושַׁיֶּיע פַייגֶנְבּוֹים, וג'ימי טוּרְק, וסלים טוּעְמֶה, ועוד הרבה הרבה… כל כך הרבה, שאפשר לספור כוכבים כל הלילה."
+   }
+  },
+  {
+   "id": "home-bed",
+   "plate": "gn-bed",
+   "delivery": "tender",
+   "en": "At home, a little boy in red pyjamas folds his scarf, and lays it gently on his pillow.",
+   "he": "ובבית, ילד קטן בפיג'מה אדומה מקפל את הצעיף שלו, ומניח אותו בעדינות על הכרית.",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ]
+   },
+   "transition": "slide"
+  },
+  {
+   "id": "red-dreams",
+   "plate": "gn-dreams",
+   "delivery": "wry",
+   "en": "Yellow dreams? Not in this house. Only red ones.",
+   "he": "חלומות צהובים? לא אצלנו בבית. רק חלומות אדומים.",
+   "sources": [
+    "owner, 12.11.2026 (friendly rival framing: \"yellow is yuck\")"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "punch": [
+     0.75
+    ]
+   },
+   "transition": "iris"
+  },
+  {
+   "id": "basketball",
+   "plate": "gn-basket",
+   "delivery": "wry",
+   "en": "There is also a beautiful story about our basketball team… but we'll get to that. Maybe tomorrow night.",
+   "he": "יש גם סיפור יפה על קבוצת הכדורסל שלנו… אבל עוד נגיע לזה. אולי מחר בלילה.",
+   "sources": [
+    "owner, 12.11.2026"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.06
+    ]
+   },
+   "transition": "slide"
+  },
+  {
+   "id": "good-night",
+   "plate": "gn-close",
+   "delivery": "close",
+   "en": "Good night, Jaffa. Good night, Bloomfield. Good night, little lanterns in red. Good night, Hapoel Tel Aviv.",
+   "he": "לילה טוב, יפו. לילה טוב, בלומפילד. לילה טוב, פנסים קטנים באדום. לילה טוב, הפועל תל אביב.",
+   "sources": [
+    "episode close"
+   ],
+   "visual": {
+    "extra": 3.2,
+    "crests": [
+     {
+      "crest": "1923",
+      "at": 0.55,
+      "xy": [
+       960,
+       350
+      ],
+      "size": 360
+     }
+    ],
+    "wordmarkAt": 0.72,
+    "wordmarkTag": "Good Night, Hapoel Tel Aviv"
+   },
+   "transition": "fade",
+   "say": {
+    "he": "לילה טוב, יָפוֹ. לילה טוב, בְּלוּמְפִילְד. לילה טוב, פנסים קטנים באדום. לילה טוב, הפועל תל אביב."
+   }
+  }
+ ]
+}

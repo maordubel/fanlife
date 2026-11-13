@@ -200,7 +200,10 @@ def _visual(line: str, lang: str) -> str:
     if lang != 'he':
         return line
     from bidi.algorithm import get_display
-    return get_display(line)
+    # a score reads left to right inside a Hebrew line: "2–0 להפועל", never "0–2". An en dash between two digits is a
+    # neutral, so plain bidi turns the score around; LRMs around it keep the score one run, and are dropped after.
+    line = re.sub(r'(?<=\d)([–—-])(?=\d)', '‎\\1‎', line)
+    return get_display(line).replace('‎', '')
 
 
 def _t(s: float) -> str:

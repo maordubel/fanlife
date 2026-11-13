@@ -748,6 +748,14 @@
    "owner": true,
    "source": "freetouse.com (supplied by the owner, 12.11.2026)",
    "credit": "Music: Coconut Kind of Love by Aetheric — Source: https://freetouse.com/music · Free To Use Music for Videos"
+  },
+  {
+   "id": "fairytales-lullaby-hapoel",
+   "owner": true,
+   "mood": "music box lullaby, bedtime, calm",
+   "file": "cache/owner/fairytales-lullaby-hapoel.mp3",
+   "origin": "original, synthesised in the studio by make_lullaby.py (no licence)",
+   "credit": ""
   }
  ]
 }
