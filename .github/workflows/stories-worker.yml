@@ -171,6 +171,11 @@ jobs:
           STORIES_MEDIA_LEDGER: /home/runner/media-ledger/usage.json
         run: python -m studio.worker
       - if: always() && steps.peek.outputs.next != ''
+        id: ledger
+        name: Is there a media usage ledger to keep
+        # a film that failed before its edit wrote none, and saving a path that does not exist only warns
+        run: if [ -n "$(ls -A "$HOME/media-ledger" 2>/dev/null)" ]; then echo "have=1" >> "$GITHUB_OUTPUT"; fi
+      - if: always() && steps.ledger.outputs.have == '1'
         name: Keep the media usage ledger
         continue-on-error: true
         uses: actions/cache/save@v4

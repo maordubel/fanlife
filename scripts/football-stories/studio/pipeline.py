@@ -227,7 +227,7 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
             return {'state': 'review', 'stage': 'script', 'editorial': editorial_review}
         write_json(sp_, selected)
     from . import hook_judge
-    hook_check = lambda x: sc.validate_script(x, ledger, float(brief['duration']), brief.get('kind')) + writer.hook_option_errors(x, ledger)  # noqa: E731
+    hook_check = lambda x: sc.validate_script(x, ledger, writer.script_minutes(x, brief), brief.get('kind')) + writer.hook_option_errors(x, ledger)  # noqa: E731
     if not sp_.exists():
         if script_file:
             s = owner_story.normalize(read_json(script_file), ledger.get('owner_name_aliases') or {})
@@ -415,7 +415,7 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
 
     # 9 qa
     step('qa', 0.95, 'Checking the film')
-    report = qa.check(job_dir, master, plan, cues, float(brief['duration']) + (float(usage.get('added_seconds', 0)) + intro_seconds) / 60, palette, log,
+    report = qa.check(job_dir, master, plan, cues, writer.script_minutes(s, brief) + (float(usage.get('added_seconds', 0)) + intro_seconds) / 60, palette, log,
                       intro_s=intro_seconds)
     # The experience gate failed on shots it can name: re-plan THOSE shots once (tighter cuts, another picture, a calm
     # way in — docu/editor.cut reads experience-replan.json) and render again, rather than hand the owner a film to fix.

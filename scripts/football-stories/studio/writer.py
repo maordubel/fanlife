@@ -6,7 +6,8 @@ Providers (first configured wins, or STORIES_WRITER=anthropic|openai|gemini):
   gemini     GEMINI_API_KEY      model STORIES_GEMINI_MODEL    (default: the newest the key may use — studio/gemini.py)
 
 Every call is cached on disk by the hash of its request, so a resumed job never pays twice for the same answer. A reply that
-fails validation is sent back once with the exact problems; a second failure stops the job with those problems listed.
+fails validation is sent back with the exact problems (ATTEMPTS rounds); what still fails is repaired in code without a
+model (studio/salvage.py: re-cite, remove, copy the hook — never add), and only a script below the floor fails the film.
 The ledger is passed as fenced DATA; the instructions say plainly that nothing inside it is an instruction.
 """
 from __future__ import annotations
@@ -618,13 +619,50 @@ def squash_text(t: str) -> str:
     return re.sub(r'[^a-z0-9]+', ' ', (t or '').lower()).strip()
 
 
+# ── the length a film can honestly carry (docs/rules/writer-salvage.md) ───────────────────────────────────────────────
+# Measured 13.11.2026 (Celtic 1984/85): deep research was skipped, the archive gave 6 claims and the brief asked for ten
+# minutes — about 200 words per proven fact, which no writer fills without inventing. A film written from the archive
+# alone is therefore sized by its claims before a word is written.
+CLAIM_MINUTES = 0.5      # one proven fact carries about half a minute of film: the fact, its stake, what it changed
+THIN_MIN_MINUTES = 2.0   # the shortest film the writer is asked for on a thin archive
+
+
+def sized_minutes(asked: float, ledger: dict) -> float:
+    """The target length for the writer: the asked length, unless the film stands on the archive alone (no deep
+    research, no owner story documents) and its claims carry less — then CLAIM_MINUTES per claim, in half minutes,
+    never under THIN_MIN_MINUTES and never over what was asked."""
+    if ledger.get('deep_research') or ledger.get('story_documents') or ledger.get('pack_notes'):
+        return asked
+    carried = max(THIN_MIN_MINUTES, round(len(ledger.get('claims') or []) * CLAIM_MINUTES * 2) / 2)
+    return min(asked, carried)
+
+
+def script_minutes(script: dict, brief: dict) -> float:
+    """The length a written script is checked and filmed at: its own ('_minutes' — a film sized by its claims, a
+    salvaged one, one accepted a little long), or the brief's for a script written before this was recorded."""
+    m = script.get('_minutes') if isinstance(script, dict) else None
+    return float(m) if isinstance(m, (int, float)) and not isinstance(m, bool) and m > 0 else float(brief['duration'])
+
+
+def failure_line(ledger: dict, asked: float, detail: str = '') -> str:
+    """One short human line for a film no script could be written for: the real reason, never the validator's output."""
+    n = len(ledger.get('claims') or [])
+    if sized_minutes(asked, {'claims': ledger.get('claims') or []}) < asked:
+        return f'Too few proven facts for this film: the research holds {n} claim(s), and no script could stand on them without inventing.'
+    return ('No script passed the fact checks, and none could be repaired without inventing'
+            + (f' ({detail[:80]})' if detail else '') + f'. The research holds {n} claims.')
+
+
 def write_script(brief: dict, ledger: dict, cache_dir: Path, log, angle: tuple[str, str] | None = None,
                  director: dict | None = None, avoid: list[dict] | None = None, drama: bool = False) -> dict:
     """One script. `director` (from studio/directors.py) makes it that director's film; `avoid` lists the options already
     written ({director, title, hook}) so this one cannot repeat their hook or title. `drama` allows the ONE rewrite for
     the mini-drama shape (drama_pass) — the film's own script only: an option among three is checked and reported, never
     rewritten, so three directors do not spend six calls of the free daily quota."""
-    minutes = float(brief['duration'])
+    asked = float(brief['duration'])
+    minutes = sized_minutes(asked, ledger)
+    if minutes < asked:
+        log(f'Writer: {len(ledger.get("claims") or [])} proven claims and no deep research — writing a {minutes:g}-minute film, not {asked:g}')
     lo, hi = target_words(minutes)
     kind = brief.get('kind') or 'season'
     extra = [f'Film: {KIND_TEXT.get(kind, KIND_TEXT["season"])}']
@@ -666,6 +704,11 @@ def write_script(brief: dict, ledger: dict, cache_dir: Path, log, angle: tuple[s
                  'the event or date: check the source ledger and label reconstructions honestly. The pack notes:\n```text\n' + ledger['pack_notes'][:3000] + '\n```')
     _LOG[0] = log
     attempts = []
+    from . import salvage as salvaging
+    who = (director['name'] + "'s") if director else 'the'
+    best = None   # the best honest salvage of any round: (script, report)
+    check_at = lambda sc, m: validate_script(sc, ledger, m, brief.get('kind')) + distinct_errors(sc, avoid) + hook_option_errors(sc, ledger) + (["Every Short needs its own hook-led narration"] if any(not isinstance(x, dict) or not isinstance(x.get('narration'), str) for x in sc.get('shorts') or []) else [])  # noqa: E731
+    check = lambda sc: check_at(sc, minutes)  # noqa: E731
     for attempt in range(ATTEMPTS):
         req = {'system': SYSTEM, 'user': user, 'attempt': attempt}
         key = sha256_json(req)
@@ -678,10 +721,10 @@ def write_script(brief: dict, ledger: dict, cache_dir: Path, log, angle: tuple[s
             reply = {'text': text, 'meta': meta}
             write_json(cached, reply)
             log(f'Writer: {meta["provider"]}/{meta["model"]} in {meta["seconds"]}s · tokens in {meta.get("input")} out {meta.get("output")}')
+        took = minutes
         try:
             from .owner_story import normalize
             script = repair(normalize(parse_json(reply['text']), ledger.get('owner_name_aliases') or {}))
-            check = lambda sc: validate_script(sc, ledger, minutes, brief.get('kind')) + distinct_errors(sc, avoid) + hook_option_errors(sc, ledger) + (["Every Short needs its own hook-led narration"] if any(not isinstance(x, dict) or not isinstance(x.get('narration'), str) for x in sc.get('shorts') or []) else [])  # noqa: E731
             errs = check(script)
             if errs:
                 fixed = autofix(script, errs, ledger)
@@ -692,16 +735,34 @@ def write_script(brief: dict, ledger: dict, cache_dir: Path, log, angle: tuple[s
                         script, errs = fixed, errs2
             if errs and attempt == ATTEMPTS - 1 and all(_length_only(e, lo, hi) for e in errs):
                 log(f'Writer: accepted at {errs[0]} — the film runs that much longer or shorter')
-                errs = []
+                errs, took = [], salvaging.fit_minutes(script, minutes)
+            if errs:
+                # the honest repairs in code (studio/salvage.py): taken at once when they cost almost nothing and the
+                # film keeps its length — otherwise the model is asked again and the best salvage waits for the end
+                saved, report = salvaging.salvage(script, ledger, check_at, minutes)
+                if saved is not None:
+                    if best is None or report['words'] > best[1]['words']:
+                        best = (saved, report)
+                    if report['minutes'] == minutes and report['lost'] <= salvaging.EARLY_LOSS and not report['dropped_beats']:
+                        log(salvaging.line(who, report))
+                        attempts.append({'attempt': attempt, 'errors': [], 'salvaged': report, 'meta': reply.get('meta')})
+                        saved['_writer'] = attempts
+                        return drama_pass(saved, check, user, reply['text'], cache_dir, log, rewrite=False)
         except StageError as e:
             script, errs = None, [str(e)]
         attempts.append({'attempt': attempt, 'errors': errs[:40], 'meta': reply.get('meta')})
         if not errs:
-            script['_writer'] = attempts
-            return drama_pass(script, check, user, reply['text'], cache_dir, log, rewrite=drama)
+            script['_writer'], script['_minutes'] = attempts, took
+            return drama_pass(script, (lambda sc: check_at(sc, took)), user, reply['text'], cache_dir, log, rewrite=drama)
         user += ('\n\nYOUR PREVIOUS ANSWER FAILED THESE CHECKS. Return the whole corrected JSON object:\n- '
                  + '\n- '.join(errs[:40]) + fix_hints(errs, ledger, lo, hi) + '\n\nPrevious answer:\n' + reply['text'][:60000])
-    raise StageError('SCRIPT_INVALID', 'The writer could not produce a valid script: ' + '; '.join(attempts[-1]['errors'][:10]))
+    if best is not None:   # the model rounds are spent: the film is made from what the record proves, at the length it carries
+        saved, report = best
+        log(salvaging.line(who, report))
+        saved['_writer'] = attempts
+        return drama_pass(saved, (lambda sc: check_at(sc, report['minutes'])), user, reply['text'], cache_dir, log, rewrite=False)
+    log(f'Writer: {who} script could not be salvaged — ' + '; '.join(attempts[-1]['errors'][:10]))   # the detail stays in the log
+    raise StageError('SCRIPT_INVALID', failure_line(ledger, asked, attempts[-1]['errors'][0] if attempts[-1]['errors'] else ''))
 
 
 def drama_pass(script: dict, check, user: str, answer: str, cache_dir: Path, log, rewrite: bool = True) -> dict:
@@ -776,13 +837,14 @@ def write_options(brief: dict, ledger: dict, cache_dir: Path, log, least: int = 
                 log(f'Writer: {d["name"]} waits — {str(e)[:200]}')
                 break  # the other directors would only spend the same quota
             errs.append(f'{d["name"]}: {e}')
-            log(f'Writer: {d["name"]}\'s script failed its checks — {str(e)[:200]}')
+            log(f'Writer: {d["name"]}\'s script failed its checks and could not be salvaged — {str(e)[:200]}')
     if busy and len(out) < (1 if least < 2 and busy.code == 'WRITER_QUOTA_DAY' else 2):   # a busy minute is waited out; a spent day is not
         raise busy
     if busy and len(out) < len(order):
         log(f'Writer: the free quota allowed {len(out)} of {len(order)} scripts — going on with {"those" if len(out) > 1 else "that one"}')
     if not out:
-        raise StageError('SCRIPT_INVALID', 'None of the three scripts passed the checks: ' + ' | '.join(errs)[:900])
+        log('Writer: none of the scripts passed or could be salvaged — ' + ' | '.join(errs)[:900])   # the detail stays in the log
+        raise StageError('SCRIPT_INVALID', failure_line(ledger, float(brief.get('duration') or 0)))
     return out
 
 

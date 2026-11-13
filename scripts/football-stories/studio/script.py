@@ -601,7 +601,7 @@ SCORE_WORDS = {'nil': 0, 'zero': 0, 'one': 1, 'two': 2, 'three': 3, 'four': 4, '
                'nine': 9, 'ten': 10}
 _SW = '|'.join(SCORE_WORDS)
 SCORELINE = re.compile(r'(?<![\d–-])(\d{1,2})\s?[–-]\s?(\d{1,2})(?![\d–-])|'
-                       rf'(?<!a )\b({_SW})-({_SW}|all)\b|\b({_SW}) nil\b', re.I)
+                       rf'(?<!\ba )\b({_SW})-({_SW}|all)\b|\b({_SW}) nil\b', re.I)   # "a two-one lead" is not a score told; "Vienna three-nil" is
 COLD_TITLE = re.compile(r'^\s*(in|during)\s+(the\s+)?(\d{4}|season|summer|autumn|winter|spring)|^\s*(the\s+)?\d{4}(/\d{2,4})?\s+season'
                         r'|^\s*this is the story|^\s*once upon', re.I)
 TABLE_TALK = re.compile(r'\b(league table|the table|the standings|top of the (league|pile)|bottom of the (league|table)|'
