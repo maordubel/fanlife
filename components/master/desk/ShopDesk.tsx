@@ -2,7 +2,8 @@
 import {useMemo,useRef,useState} from 'react'
 import {useAdminApi} from '@/components/master/adminApi'
 import {KIND_SPECS} from '@/lib/shop/kinds'
-import {KINDS,type Kind,type ShopDoc,type ShopProduct} from '@/lib/shop/types'
+import {DesignControls,CutoutPreview} from './ShopDesign'
+import {KINDS,type ProductDesign,type Kind,type ShopDoc,type ShopProduct} from '@/lib/shop/types'
 
 /**
  * THE SHOP DESK (owner, 12.11.2026: "click and sell"). Four steps down one page, each with one main button:
@@ -25,6 +26,7 @@ export function ShopDesk({initial,subjects,pictures}:{initial:State;subjects:Sub
  const [token,setToken]=useState(''),[who,setWho]=useState('all'),[show,setShow]=useState<'all'|'shown'|'hidden'|'todo'>('all')
  const [run,setRun]=useState<{done:number;total:number}|null>(null),stop=useRef(false)
  const [nSub,setNSub]=useState(subjects[0]?.id||'fanlife'),[nKinds,setNKinds]=useState<Kind[]>(['poster']),[nPic,setNPic]=useState<string>('own'),[nTitle,setNTitle]=useState(''),file=useRef<HTMLInputElement>(null)
+ const [nDesign,setNDesign]=useState<ProductDesign>({}),[ownFile,setOwnFile]=useState<File|null>(null),[clean,setClean]=useState<string|null>(null),[editing,setEditing]=useState<string|null>(null),[eDesign,setEDesign]=useState<ProductDesign>({})
  const [cat,setCat]=useState<CatItem[]|null>(null),[cq,setCq]=useState(''),[cg,setCg]=useState('All'),[picked,setPicked]=useState<{id:number;title:string}[]>([])
  const openCat=async()=>{if(cat)return;const out=await api.post<{catalog:CatItem[]}>('shop',{action:'catalog'},'The whole Printify catalogue is open.');if(out?.catalog)setCat(out.catalog)}
  const catGroups=useMemo(()=>{const m=new Map<string,number>();for(const c of cat||[])m.set(c.group,(m.get(c.group)||0)+1);return [['All',cat?.length||0] as [string,number],...[...m].sort((a,b)=>b[1]-a[1])]},[cat])
@@ -43,9 +45,9 @@ export function ShopDesk({initial,subjects,pictures}:{initial:State;subjects:Sub
   const total=nKinds.length+picked.length
   if(!total){api.setError('Choose at least one product.');return}
   if(nPic==='own'){const f=file.current?.files?.[0];if(!f){api.setError('Choose a picture first (PNG or JPG).');return}
-   const data=await new Promise<string>((ok,no)=>{const r=new FileReader();r.onload=()=>ok(String(r.result));r.onerror=()=>no(r.error);r.readAsDataURL(f)})
-   const out=await act('upload',{subject:nSub,kinds:nKinds,blueprints:picked,name:f.name,data,title:nTitle||name(nSub)},'Picture uploaded.');if(out?.made?.length)await pressMany(out.made)
-  }else{const out=await act('add',{subject:nSub,picture:nPic,kinds:nKinds,blueprints:picked},'Added.');if(out?.made)await pressMany(out.made)}
+   const data=clean??await new Promise<string>((ok,no)=>{const r=new FileReader();r.onload=()=>ok(String(r.result));r.onerror=()=>no(r.error);r.readAsDataURL(f)})
+   const out=await act('upload',{subject:nSub,kinds:nKinds,blueprints:picked,name:clean?f.name.replace(/\.\w+$/,'')+'.png':f.name,data,title:nTitle||name(nSub),design:nDesign},'Picture uploaded.');if(out?.made?.length)await pressMany(out.made)
+  }else{const out=await act('add',{subject:nSub,picture:nPic,kinds:nKinds,blueprints:picked,design:nDesign},'Added.');if(out?.made)await pressMany(out.made)}
  }
  const ago=(iso:string)=>{const m=Math.round((Date.now()-Date.parse(iso))/60e3);return m<1?'just now':m<60?`${m} min ago`:m<2880?`${Math.round(m/60)} h ago`:`${Math.round(m/1440)} days ago`}
  const step=(n:number,done:boolean)=><span className="shop-no" data-done={done||undefined} aria-hidden="true">{done?'✓':n}</span>
@@ -99,9 +101,14 @@ export function ShopDesk({initial,subjects,pictures}:{initial:State;subjects:Sub
        {p.status!=='live'&&<button className="desk-btn" disabled={!!run||api.busy||!st.connected} onClick={()=>pressMany([p.id])}>{p.status==='draft'?'Press':'Retry'}</button>}
        {p.status==='ready'&&<button className="desk-btn ghost" disabled={api.busy} onClick={()=>act('refresh',{id:p.id},'Checked.')}>Check its link</button>}
        {p.printify?.url&&<a className="desk-btn ghost" href={p.printify.url} target="_blank" rel="noreferrer">View ↗</a>}
+       <button className="desk-btn ghost" disabled={api.busy} aria-expanded={editing===p.id} onClick={()=>{setEditing(editing===p.id?null:p.id);setEDesign(p.design??{})}}>Design</button>
        <button className="desk-btn ghost" disabled={api.busy} onClick={()=>{const t=window.prompt('Product title',p.title);if(t&&t!==p.title)void act('edit',{id:p.id,title:t})}}>Rename</button>
        <button className="desk-btn ghost" disabled={api.busy} onClick={()=>{if(window.confirm(`Delete “${p.title}” here and in Printify? This cannot be undone.`))void act('remove',{id:p.id},'Deleted.')}}>Delete</button>
-      </div></div></li>})}</ul>}
+      </div>
+      {editing===p.id&&<div className="shop-edit"><DesignControls value={eDesign} onChange={setEDesign} library={'library' in p.art} margin={s.margin}/>
+       <p className="desk-fine">Applying presses the product again with these settings. It is hidden until you show it again.</p>
+       <button className="desk-btn min-h-tap" disabled={api.busy||!st.connected} onClick={async()=>{if(await act('design',{id:p.id,design:eDesign},'Pressed again with the new design.'))setEditing(null)}}>Apply and press again</button></div>}
+      </div></li>})}</ul>}
   </section>
 
   <section className="desk-card" aria-labelledby="shn"><h2 className="desk-h2" id="shn">New product</h2>
@@ -119,9 +126,11 @@ export function ShopDesk({initial,subjects,pictures}:{initial:State;subjects:Sub
     </>}
    </details>
    {picked.length>0&&<div className="desk-chips" role="group" aria-label="Chosen from the catalogue">{picked.map(c=><button key={c.id} className="desk-chip" aria-current={true} onClick={()=>togglePick(c)}>{c.title} ✕</button>)}</div>}
+   <details className="desk-more shop-design-box"><summary className="min-h-tap">Design — print side, size, colours, background, price</summary><DesignControls value={nDesign} onChange={setNDesign} library={nPic!=='own'} margin={s.margin}/></details>
    <p className="desk-fine">Picture — from your library ({name(nSub)}’s shelf first, then FAN LIFE’s), or your own</p>
    <button role="radio" aria-checked={nPic==='own'} className="shop-pick own wide" onClick={()=>setNPic('own')}><span className="shop-plus" aria-hidden="true">+</span><span>Upload my own picture</span></button>
-   {nPic==='own'&&<div className="shop-form"><label className="shop-field"><span>Picture (PNG or JPG, the larger the better — 3000px or more)</span><input ref={file} type="file" accept="image/png,image/jpeg"/></label>
+   {nPic==='own'&&<div className="shop-form"><label className="shop-field"><span>Picture (PNG or JPG, the larger the better — 3000px or more)</span><input ref={file} type="file" accept="image/png,image/jpeg" onChange={e=>setOwnFile(e.target.files?.[0]??null)}/></label>
+    <CutoutPreview file={ownFile} onReady={d=>setClean(d)}/>
     <label className="shop-field"><span>Title</span><input value={nTitle} onChange={e=>setNTitle(e.target.value)} maxLength={70} placeholder={name(nSub)}/></label></div>}
    {shelves.map(([folder,pics],i)=><details key={folder} className="desk-more shop-shelf" open={i===0}><summary className="min-h-tap">{folder} · {pics.length}{pics[0]!.approved?' · approved':''}{pics[0]!.review?' · check rights before selling':''}</summary>
     <div className="shop-picks" role="radiogroup" aria-label={folder}>{pics.map(pc=><button key={pc.id} role="radio" aria-checked={nPic===pc.id} className="shop-pick" title={pc.name} onClick={()=>setNPic(pc.id)}>

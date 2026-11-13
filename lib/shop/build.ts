@@ -1,6 +1,8 @@
 import 'server-only'
 import {KIND_SPECS,catalogueSpec,groupOf} from './kinds'
-import {matchBlueprint,pickProvider,pickVariants,place,price,printAreas,sheets,sharpness} from './plan'
+import {NOTE,listingOf,matchBlueprint,pickProvider,pickVariants,place,price,printAreas,shadedSpec,sheets,sidesOf,sharpness,sizedSpec} from './plan'
+import {subjectName} from './subjects'
+import {REGISTRY} from '@/lib/master/registry'
 import {original,pictureById} from './library'
 import {printify,type Printify} from './printify'
 import {printifyToken,readShop,updateShop} from './store'
@@ -48,26 +50,30 @@ const set=(id:string,patch:Partial<ShopProduct>)=>updateShop('press','',d=>{cons
 export async function pressProduct(id:string,by:string):Promise<ShopProduct>{
  const doc=await readShop(),p=doc.products.find(x=>x.id===id);if(!p)throw new Error('No such product.')
  const shop=doc.settings.shopId;if(!shop)throw new Error('Connect Printify first (Shop → Connect).')
- const api=await client(),spec=p.blueprint?catalogueSpec(p.blueprint.title):KIND_SPECS[p.kind]
+ const api=await client(),d=p.design,base=p.blueprint?catalogueSpec(p.blueprint.title):KIND_SPECS[p.kind],spec=sizedSpec(shadedSpec({...base,positions:[...base.positions]},d),d)
  try{
   await set(id,{status:'building',error:undefined})
   const m=p.blueprint?await matchBlueprintId(api,p.blueprint.id,by):await matchKind(api,p.kind,by),all=(await api.variants(m.blueprintId,m.providerId)).variants
   // a catalogue product whose print area has another name: print on the first area its variants have
   if(p.blueprint&&!all.some(v=>v.placeholders.some(ph=>spec.positions.includes(ph.position)))&&all[0]?.placeholders[0])spec.positions=[all[0].placeholders[0].position]
-  const variants=pickVariants(spec,all)
+  const variants=pickVariants({...spec,positions:[...spec.positions,'back']},all).filter(v=>v.placeholders.some(ph=>spec.positions.includes(ph.position)||(d?.sides&&d.sides!=='front'&&ph.position==='back')))
   if(!variants.length)throw new Error(`“${m.title}” at ${m.provider} has nothing in stock to print on.`)
   // the picture: from the Drive library (Printify fetches the original itself) or the owner's own upload, sent once
   let pic:{id:string;width:number;height:number}
   if('library' in p.art){const lib=pictureById(p.art.library.id);if(!lib)throw new Error('This picture is no longer in the library inventory.')
-   const up=await api.uploadUrl(lib.name.replace(/[^a-zA-Z0-9._-]/g,'-').slice(-80)||'art.png',original(lib.id));pic={id:up.id,width:up.width,height:up.height}
+   const fname=lib.name.replace(/[^a-zA-Z0-9._-]/g,'-').slice(-80)||'art.png'
+   if(d?.cutout){const clean=await cleanOriginal(original(lib.id));const up=await api.upload(fname.replace(/\.\w+$/,'')+'-cutout.png',clean);pic={id:up.id,width:up.width,height:up.height}}
+   else{const up=await api.uploadUrl(fname,original(lib.id));pic={id:up.id,width:up.width,height:up.height}}
   }else pic={id:p.art.upload.id,width:p.art.upload.width,height:p.art.upload.height}
   const placed=[] as Parameters<typeof printAreas>[0];let soft=1
-  for(const sheet of sheets(spec,variants)){const at=place(spec,sheet,pic);soft=Math.min(soft,sharpness(sheet,pic,at.scale));placed.push({sheet,imageId:pic.id,...at})}
+  for(const side of sidesOf(spec,variants,d))for(const sheet of sheets(spec,variants,side)){const at=place(spec,sheet,pic);soft=Math.min(soft,sharpness(sheet,pic,at.scale));placed.push({sheet,imageId:pic.id,...at})}
   const ids=new Set(variants.map(v=>v.id))
   if(p.printify?.productId)await api.remove(shop,p.printify.productId).catch(()=>{})
-  const made=await api.create(shop,{title:p.title,description:p.description,tags:['FAN LIFE','football','supporters',p.subject],blueprint_id:m.blueprintId,print_provider_id:m.providerId,
+  const club=p.subject==='fanlife'?null:REGISTRY.find(c=>c.id===p.subject),list=listingOf(p,club?{name:subjectName(p.subject),city:club.city}:null,p.blueprint?p.blueprint.title.replace(/\s*\([^)]*\)/g,''):base.label)
+  const description=p.description&&p.description!==NOTE?p.description:list.description
+  const made=await api.create(shop,{title:p.title,description,tags:list.tags,blueprint_id:m.blueprintId,print_provider_id:m.providerId,
    variants:[...ids].map(v=>({id:v,price:9900,is_enabled:true})),print_areas:printAreas(placed)})
-  const priced=made.variants.filter(v=>ids.has(v.id)).map(v=>({id:v.id,price:price(v.cost,doc.settings.margin),is_enabled:true}))
+  const priced=made.variants.filter(v=>ids.has(v.id)).map(v=>({id:v.id,price:price(v.cost,d?.margin??doc.settings.margin),is_enabled:true}))
   await api.update(shop,made.id,{variants:priced})
   let url:string|null=null,publishedAt:string|null=null
   try{await api.publish(shop,made.id);publishedAt=new Date().toISOString()
@@ -91,4 +97,14 @@ export async function removeProduct(id:string,by:string){
  const doc=await readShop(),p=doc.products.find(x=>x.id===id),shop=doc.settings.shopId
  if(p?.printify&&shop){const api=await client();await api.unpublish(shop,p.printify.productId).catch(()=>{});await api.remove(shop,p.printify.productId).catch(()=>{})}
  await updateShop(by,`Removed ${id}`,d=>{d.products=d.products.filter(x=>x.id!==id)})
+}
+
+/** a library original with its paper ground removed (sharp, server side), as base64 PNG for Printify */
+async function cleanOriginal(url:string):Promise<string>{
+ const r=await fetch(url,{signal:AbortSignal.timeout(60e3)});if(!r.ok)throw new Error(`Could not read the picture from the library (${r.status}).`)
+ const sharp=(await import('sharp')).default,{removePlainBackground}=await import('./cutout')
+ const {data,info}=await sharp(Buffer.from(await r.arrayBuffer())).ensureAlpha().raw().toBuffer({resolveWithObject:true})
+ const gone=removePlainBackground({data,width:info.width,height:info.height})
+ if(gone<.02)throw new Error('This picture has no plain background to remove — switch “Remove background” off for it.')
+ return (await sharp(data,{raw:{width:info.width,height:info.height,channels:4}}).png().toBuffer()).toString('base64')
 }
