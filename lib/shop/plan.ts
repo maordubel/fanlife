@@ -85,7 +85,9 @@ export const price=(cost:number,margin:number)=>Math.max(499,Math.ceil(cost*(1+m
 
 export const NOTE='Original supporter art from the FAN LIFE library — an independent fan design, not an official club product. Printed to order.'
 export const productId=(subject:string,pictureId:string,kind:Kind,bp?:number)=>`${subject}.${pictureId.slice(-10).replace(/[^a-zA-Z0-9]/g,'x')}.${kind}${bp?`-${bp}`:''}`
-export const draftOf=(subject:string,pic:Pick<LibraryPicture,'id'|'name'>,kind:Kind,now:string,blueprint?:{id:number;title:string}):ShopProduct=>({id:productId(subject,pic.id,kind,blueprint?.id),subject,kind,art:{library:{id:pic.id,name:pic.name}},title:`${titleOf(pic.name)} · ${blueprint?shortTitle(blueprint.title):KIND_SPECS[kind].label}`,description:NOTE,status:'draft',visible:false,createdAt:now,updatedAt:now,...(blueprint?{blueprint}:{})})
+export const draftOf=(subject:string,pic:Pick<LibraryPicture,'id'|'name'>,kind:Kind,now:string,blueprint?:{id:number;title:string}):ShopProduct=>({id:productId(subject,pic.id,kind,blueprint?.id),subject,kind,art:{library:{id:pic.id,name:pic.name}},title:fitTitle(titleOf(pic.name),blueprint?shortTitle(blueprint.title):KIND_SPECS[kind].label),description:NOTE,status:'draft',visible:false,createdAt:now,updatedAt:now,...(blueprint?{blueprint}:{})})
+/** "Design · Product" within 60 characters (search engines cut longer titles): the design name gives way, never the product */
+export const fitTitle=(design:string,what:string)=>{const room=Math.max(12,60-what.length-3);const d=design.length>room?design.slice(0,room).replace(/\s+\S*$/,'').trim():design;return `${d} · ${what}`}
 /** a catalogue name for a shop card: "Unisex Heavy Cotton Tee" stays, "Mug 11oz (EU)" loses the bracket */
 export const shortTitle=(t:string)=>t.replace(/\s*\([^)]*\)\s*/g,' ').replace(/\s+/g,' ').trim().slice(0,40)
 /** the launch drafts for one subject: its own approved pictures first, then the rest of its shelf — never a picture marked for review */
@@ -103,7 +105,8 @@ export function listingOf(p:Pick<ShopProduct,'title'|'subject'|'kind'>,club:{nam
  const description=[`${p.title.split(' · ')[0]} — original paper-cut supporter art for ${who}${club?.city?` from ${club.city}`:''}.`,
   `${what}, printed to order and shipped to your door.`,
   'An independent FAN LIFE fan design — not an official club product.'].join(' ')
- const tags=[...new Set(['FAN LIFE','football','supporters','football gift','fan art',what.toLowerCase(),...(club?[club.name,`${club.name} gift`,...(club.city?[club.city]:[])]:[]),p.subject])].slice(0,13)
+ // marketplace rule of thumb: at most 13 tags of at most 20 characters, the most specific first
+ const tags=[...new Set([...(club?[club.name,`${club.name} gift`,`${club.name} fan`,...(club.city?[club.city]:[])]:[]),what.toLowerCase(),'football gift','football fan art','supporters','FAN LIFE','football',p.subject])].filter(t=>t.length<=20).slice(0,13)
  return {description,tags}
 }
 

@@ -69,8 +69,17 @@ export async function pressProduct(id:string,by:string):Promise<ShopProduct>{
    }else pic={id:art.upload.id,width:art.upload.width,height:art.upload.height}
    sent.set(key,pic);return pic}
   const placed=[] as Parameters<typeof printAreas>[0];let soft=1
-  for(const [side,area] of areasOf(spec,variants,d)){const pic=await picOf(area.art??p.art,!!(area.cutout??d?.cutout))
-   for(const sheet of sheets(spec,variants,side)){const at=placeAt(spec,sheet,pic,area);soft=Math.min(soft,sharpness(sheet,pic,at.scale));placed.push({sheet,imageId:pic.id,...at})}}
+  // automatic fitting (13.11.2026): a full-bleed product whose shape differs from the picture's gets the picture extended with
+  // its own paper colour to the product's exact shape — the whole art shows, nothing is cropped, nothing is stretched
+  const fitted=new Map<string,{id:string;width:number;height:number}|null>()
+  const fitOf=async(art:ArtRef,sheet:{w:number;h:number},pic:{width:number;height:number})=>{const A=sheet.w/sheet.h,a=pic.width/pic.height
+   if(Math.min(a/A,A/a)>=.92)return null;const key=JSON.stringify(art)+A.toFixed(2);if(fitted.has(key))return fitted.get(key)!
+   const src='library' in art?original(art.library.id):art.upload.preview,out=src?await extendToShape(src,A).catch(()=>null):null
+   const up=out?await api.upload(`fit-${Math.round(A*100)}-${('library' in art?art.library.name:art.upload.name).replace(/[^a-zA-Z0-9._-]/g,'-').replace(/\.\w+$/,'').slice(-60)}.jpg`,out):null
+   const r=up?{id:up.id,width:up.width,height:up.height}:null;fitted.set(key,r);return r}
+  for(const [side,area] of areasOf(spec,variants,d)){const art=area.art??p.art,cut=!!(area.cutout??d?.cutout),pic=await picOf(art,cut)
+   for(const sheet of sheets(spec,variants,side)){const full=spec.scale>=1&&(!area.place||area.place==='auto')&&!cut
+    const use=(full?await fitOf(art,sheet,pic):null)??pic,at=placeAt(spec,sheet,use,area);soft=Math.min(soft,sharpness(sheet,use,at.scale));placed.push({sheet,imageId:use.id,...at})}}
   if(!placed.length)throw new Error(`“${m.title}” has none of the print areas chosen.`)
   const ids=new Set(variants.map(v=>v.id))
   if(p.printify?.productId)await api.remove(shop,p.printify.productId).catch(()=>{})
@@ -132,4 +141,23 @@ export function mockups(list:{src:string;is_default:boolean;position?:string}[],
  const sorted=[...list].sort((a,b)=>Number(b.is_default)-Number(a.is_default)),isBack=(i:{src:string;position?:string})=>i.position==='back'||/camera_label=back/.test(i.src)
  const b=back?sorted.find(isBack):undefined,front=sorted.filter(i=>!isBack(i))
  return {images:[...front.slice(0,5),...(b?[b]:[])].map(i=>i.src),...(b?{backImage:b.src}:{})}
+}
+
+/**
+ * Extend a picture to a shape (width ÷ height) with the colour of its own border — the paper — so a full-bleed product
+ * (a mug's wrap, a landscape canvas, a phone case) shows the whole art. A picture already cut out (transparent edges) is left
+ * alone: it is placed whole on the product. Returns base64 JPEG, at most 36 megapixels.
+ */
+export async function extendToShape(url:string,shape:number):Promise<string|null>{
+ const r=await fetch(url,{signal:AbortSignal.timeout(60e3)});if(!r.ok)return null
+ const sharp=(await import('sharp')).default,{borderColour,transparentBorder}=await import('./cutout')
+ const input=Buffer.from(await r.arrayBuffer()),{data,info}=await sharp(input).ensureAlpha().raw().toBuffer({resolveWithObject:true})
+ const img={data,width:info.width,height:info.height};if(transparentBorder(img))return null
+ const {rgb,share}=borderColour(img);if(share<.35)return null   // a busy border is not paper: leave the picture to be trimmed
+ const w=info.width,h=info.height,a=w/h,W=a<shape?Math.round(h*shape):w,H=a<shape?h:Math.round(w/shape)
+ const k=Math.min(1,Math.sqrt(36e6/(W*H))),bg={r:Math.round(rgb[0]),g:Math.round(rgb[1]),b:Math.round(rgb[2])}
+ const padX=Math.floor((W-w)/2),padY=Math.floor((H-h)/2)
+ let pipe=sharp(input).flatten({background:bg}).extend({left:padX,right:W-w-padX,top:padY,bottom:H-h-padY,background:bg})
+ if(k<1)pipe=sharp(await pipe.toBuffer()).resize(Math.round(W*k),Math.round(H*k))
+ return (await pipe.jpeg({quality:90}).toBuffer()).toString('base64')
 }

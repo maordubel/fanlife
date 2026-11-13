@@ -529,3 +529,6 @@ select.pcc-inline { inline-size: 92px; cursor: pointer; } select.pcc-inline:disa
 .shop-checks li { display: grid; grid-template-columns: 22px 1fr; gap: 6px; font-size: 15px; }
 .shop-checks li[data-ok="1"] > span:first-child { font-weight: 900; }
 .shop-checks li[data-ok="0"] { color: var(--mag-vermilion); }
+/* the shop desk in four tabs (13.11.2026): overview, create, products, settings — wrapping chips, never a sideways rail */
+.shop-tabs { display: flex; flex-wrap: wrap; gap: 8px; position: sticky; inset-block-start: 0; z-index: 2; padding-block: 8px; background: var(--mag-paper); border-block-end: 2px solid var(--mag-ink); }
+.shop-tabs .desk-chip[aria-current="page"] { background: var(--mag-ink); color: var(--mag-paper); }
