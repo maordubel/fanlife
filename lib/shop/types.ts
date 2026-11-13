@@ -36,13 +36,19 @@ export type ShopProduct={
  visible:boolean
  printify?:{productId:string;blueprintId:number;providerId:number;images:string[];priceFrom:number;currency:string;url:string|null;publishedAt:string|null;
  /** the mock-up of the back, when the product prints there */
- backImage?:string}
+ backImage?:string;
+ /** how sharp the print is: picture pixels ÷ pixels the product wants (1 = full; under .2 the shop hides it) */
+ quality?:number}
  createdAt:string;updatedAt:string
 }
 export type KindMatch={blueprintId:number;providerId:number;title:string;provider:string}
 export type ShopSettings={
  /** the public door: off until the owner opens the shop */
  open:boolean
+ /** the sale the owner runs in Printify's Promotions (13.11.2026): the site shows it only while it is on — the same % as in Printify */
+ promo?:{percent:number;label:string;until:string|null;code?:string;freeShipping?:boolean}|null
+ /** the names the owner gave his designs, by design key — every product of the design carries it */
+ designNames?:Record<string,string>
  shopId:number|null;shopTitle:string|null;channel:string|null
  /** the Pop-Up store's address, e.g. https://fanlife.printify.me */
  popupUrl:string
@@ -59,10 +65,15 @@ export type ShopDoc={v:1;settings:ShopSettings;products:ShopProduct[];audit:Shop
 export const EMPTY_SHOP:ShopDoc={v:1,settings:{open:false,shopId:null,shopTitle:null,channel:null,popupUrl:'',margin:45,matches:{}},products:[],audit:[]}
 /** what the public page may know about a product */
 export type Shelf='wall'|'wear'|'gear'|'home'|'kids'|'small'
-export type PublicProduct={id:string;subject:string;kind:Kind;title:string;description:string;image:string;images:string[];back?:string;
+export type PublicProduct={
+ /** the price before the store-wide sale, when one is on (cents) */
+ was?:number|null;id:string;subject:string;kind:Kind;title:string;description:string;image:string;images:string[];back?:string;
  /** the storefront's shelf, the design it shares with sibling products, when it went on sale */
  shelf:Shelf;design:string;since:string|null;priceFrom:number;currency:string;url:string;/** ≈ whole euros at today's ECB rate (a guide; the checkout is in dollars) */eur?:number|null}
-export const isPublic=(p:ShopProduct)=>p.visible&&p.status==='live'&&!!p.printify?.url&&p.printify.images.length>0
+/** below this share of the pixels a product needs, the print comes out blurred: the shop does not sell it, whatever the switch says */
+export const MIN_QUALITY=.2
+export const qualityOf=(p:ShopProduct)=>p.printify?.quality??(()=>{const m=/\((\d+)% of the print size\)/.exec(p.error||'');return m?Number(m[1])/100:1})()
+export const isPublic=(p:ShopProduct)=>p.visible&&p.status==='live'&&!!p.printify?.url&&p.printify.images.length>0&&qualityOf(p)>=MIN_QUALITY
 /** the storefront's shelf for a product: by kind, and for a catalogue product by its name */
 export function shelfOf(kind:Kind,catalogue?:string):Shelf{
  if(kind==='poster'||kind==='framed'||kind==='canvas')return 'wall';if(kind==='tee'||kind==='hoodie')return 'wear';if(kind==='kids-tee')return 'kids'

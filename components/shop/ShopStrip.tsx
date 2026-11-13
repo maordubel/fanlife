@@ -20,10 +20,10 @@ export function ShopCard({p,siblings=0,clubLabel}:{p:PublicProduct;siblings?:num
     <img className="wks-img" src={p.image} alt="" loading="lazy" width={600} height={600}/>
     {/* eslint-disable-next-line @next/next/no-img-element */}
     {p.back?<span className="wks-back"><img src={p.back} alt={copy.backAlt} loading="lazy" width={240} height={240}/><span>{copy.back}</span></span>:null}
-    <span className="wks-badges">{isNew(p)?<span className="wks-badge new">{copy.badgeNew}</span>:null}{p.back?<span className="wks-badge">{copy.badgeBoth}</span>:null}</span>
+    <span className="wks-badges">{p.was?<span className="wks-badge sale">−{Math.round((1-p.priceFrom/p.was)*100)}%</span>:null}{isNew(p)?<span className="wks-badge new">{copy.badgeNew}</span>:null}{p.back?<span className="wks-badge">{copy.badgeBoth}</span>:null}</span>
    </span>
    <span className="wks-t">{clubLabel?<span className="wks-club">{clubLabel}</span>:null}<b>{p.title.split(' · ')[0]}</b><span className="wks-what">{p.title.split(' · ')[1]??''}</span>
-    <span className="wks-price">{money(p.priceFrom,p.currency)}{p.eur?<span className="wks-eur">{copy.eur.replace('{eur}',String(p.eur))}</span>:null}</span></span>
+    <span className="wks-price">{p.was?<s className="wks-was" aria-label={copy.was.replace('{price}',money(p.was,p.currency))}>{money(p.was,p.currency)}</s>:null}{money(p.priceFrom,p.currency)}{p.eur?<span className="wks-eur">{copy.eur.replace('{eur}',String(p.eur))}</span>:null}</span></span>
    <span className="wk-btn wks-buy">{copy.buy} <span aria-hidden="true">↗</span></span>
   </a>
   {siblings>0?<Link className="wks-same min-h-tap" href={`/shop?design=${p.design}`}>{copy.sameDesign.replace('{n}',String(siblings))} <span aria-hidden="true">→</span></Link>:null}

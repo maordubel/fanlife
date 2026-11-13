@@ -5,6 +5,7 @@ import {Plate} from '@/components/weekly/Plate'
 import {ShopCard,isNew} from '@/components/shop/ShopStrip'
 import {publicShop} from '@/lib/shop/store'
 import {subjectName} from '@/lib/shop/subjects'
+import {REGISTRY} from '@/lib/master/registry'
 import type {PublicProduct,Shelf} from '@/lib/shop/types'
 import copy from '@/messages/en.shop.json'
 import '../weekly/shop.css'
@@ -52,9 +53,19 @@ export default async function Shop({searchParams}:{searchParams:{club?:string;sh
     {open&&<ul className="wks-trust">{copy.trust.map(t=><li key={t}>{t}</li>)}</ul>}</div>
   </header>
   {open&&<>
-   {subjects.length>1&&<nav className="wks-clubs" aria-label={copy.byClub}><p className="wk-k">{copy.byClub}</p><div className="wks-chips">
-    <Link className="wks-chip min-h-tap" href={href({club:null,design:null})} aria-current={!who?'page':undefined}>{copy.byClubAll}</Link>
-    {subjects.map(s=><Link key={s} className="wks-chip min-h-tap" href={href({club:s,design:null})} aria-current={who===s?'page':undefined}>{name(s)} <small>{all.filter(p=>p.subject===s).length}</small></Link>)}</div></nav>}
+   {subjects.length>1&&<nav className="wks-clubs" aria-label={copy.byClub}><p className="wk-banner">{copy.byClub}</p><ul className="wks-clubgrid">
+    <li><Link className="wks-clubtile min-h-tap" href={href({club:null,design:null})} aria-current={!who?'page':undefined} style={{['--club' as string]:'var(--mag-ink)'}}><span className="wks-roundel" aria-hidden="true">FL</span><span><b>{copy.byClubAll}</b><small>{all.length}</small></span></Link></li>
+    {subjects.filter(x=>x!=='fanlife').map(x=>{const c=REGISTRY.find(r=>r.id===x),n=all.filter(p=>p.subject===x).length
+     return <li key={x}><Link className="wks-clubtile min-h-tap" href={href({club:x,design:null})} aria-current={who===x?'page':undefined} aria-label={copy.clubAria.replace('{club}',name(x)).replace('{n}',String(n))} style={{['--club' as string]:c?.primary??'var(--mag-ink)'}}>
+      <span className="wks-roundel" aria-hidden="true">{c?.initials??name(x).slice(0,2).toUpperCase()}</span><span><b>{name(x)}</b><small>{n}</small></span></Link></li>})}
+    {subjects.includes('fanlife')&&<li><Link className="wks-clubtile min-h-tap" href={href({club:'fanlife',design:null})} aria-current={who==='fanlife'?'page':undefined} style={{['--club' as string]:'var(--mag-vermilion)'}}><span className="wks-roundel" aria-hidden="true">★</span><span><b>{copy.house}</b><small>{all.filter(p=>p.subject==='fanlife').length}</small></span></Link></li>}
+   </ul></nav>}
+   {shop.promo&&<aside className="wks-promo wk-redplate" aria-label={shop.promo.label}><span className="wk-speed" aria-hidden="true"/>
+    <span className="wks-burst" aria-hidden="true">{copy.promoOff.replace('{n}',String(shop.promo.percent))}</span>
+    <div><p className="wk-banner">{copy.promoK}</p><h2 className="wk-head white">{shop.promo.label}</h2><p className="wk-small white">{copy.promoOff.replace('{n}',String(shop.promo.percent))} {copy.promoAll}{shop.promo.until?` · ${copy.promoUntil.replace('{date}',new Date(shop.promo.until).toLocaleDateString('en-GB',{day:'numeric',month:'long'}))}`:''}{shop.promo.freeShipping?` ${copy.promoShip}`:''}</p>
+     {shop.promo.code?<p className="wks-code">{copy.promoCode.replace('{code}',shop.promo.code)}</p>:null}</div></aside>}
+   {!focused&&<aside className="wks-make wk-panel" aria-labelledby="wks-make-h"><div><p className="wk-banner">{copy.makeK}</p><h2 className="wk-head" id="wks-make-h">{copy.makeT}</h2><p className="wk-small">{copy.makeSub}</p></div>
+    <Link className="wk-btn min-h-tap" href={who?`/shop/make?club=${who}`:'/shop/make'}>{copy.makeCta} <span aria-hidden="true">→</span></Link></aside>}
    {focused?<section className="wks-shelf" aria-labelledby="wks-f-h">
      <div className="wks-shelf-head"><div><p className="wk-banner">{design?copy.designT:copy.shelfSub[shelf!]}</p><h2 className="wk-head" id="wks-f-h">{design?(focused[0]?.title.split(' · ')[0]??''):copy.shelves[shelf!]}</h2><p className="wk-small">{copy.results.replace('{n}',String(focused.length))}</p></div>
       <nav className="wks-chips small" aria-label={copy.sort}>{SORTS.map(o=><Link key={o} className="wks-chip min-h-tap" href={href({sort:o==='new'?null:o,design})} aria-current={sort===o?'true':undefined}>{o==='new'?copy.sortNew:o==='low'?copy.sortLow:copy.sortHigh}</Link>)}
