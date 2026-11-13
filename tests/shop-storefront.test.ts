@@ -24,7 +24,7 @@ describe('automatic fitting to the product’s shape',()=>{
  it('extends a square picture on paper to a mug’s wide wrap with the paper colour, nothing cropped',async()=>{
   const sharp=(await import('sharp')).default
   const png=await sharp({create:{width:400,height:400,channels:3,background:{r:244,g:236,b:216}}}).composite([{input:await sharp({create:{width:200,height:200,channels:3,background:{r:20,g:20,b:20}}}).png().toBuffer(),left:100,top:100}]).png().toBuffer()
-  const realFetch=globalThis.fetch;globalThis.fetch=(async()=>new Response(png)) as typeof fetch
+  const realFetch=globalThis.fetch;globalThis.fetch=(async()=>new Response(new Uint8Array(png))) as typeof fetch
   try{const {extendToShape}=await import('@/lib/shop/build');const out=await extendToShape('https://x/y.png',2.4)
    const meta=await sharp(Buffer.from(out!,'base64')).metadata();expect(Math.abs(meta.width!/meta.height!-2.4)).toBeLessThan(.02)
    const {data}=await sharp(Buffer.from(out!,'base64')).raw().toBuffer({resolveWithObject:true});expect(Math.abs(data[0]!-244)).toBeLessThan(6)
