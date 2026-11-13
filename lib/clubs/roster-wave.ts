@@ -10,6 +10,7 @@ import stpPeople from '@/club-packs/st-pauli/wave-squad-people-2026-10-12.json'
 import zriPeople from '@/club-packs/zrinjski-mostar/wave-squad-people-2026-10-12.json'
 import hta from '@/club-packs/hapoel-tel-aviv/wave-roster-2026-10-10.json'
 import {norm} from '@/lib/fixtures/names'
+import {careerFor} from './careers'
 /**
  * Roster wave (10.10.2026): men the owner's consolidated pricing file and the public Wikipedia player categories name, who the archive did not yet hold.
  * Built by `scripts/rumble/build-roster-wave.ts` into `club-packs/<club>/wave-roster-2026-10-10.json`; added here on top of every club's compiled data, never over an
@@ -27,10 +28,14 @@ export function withRosterWave(id:string,data:ClubData):ClubData{
  // a man in both waves is dealt once, from the squad-people wave (confidence 2)
  const w:Wave|undefined=r&&pp?{sources:[...r.sources,...pp.sources],players:[...pp.players,...r.players.filter(p=>!names(p).some(n=>ppNames.has(n)))]}:r??pp
  if(!w||!w.players.length)return data
+ // an archive-only man (a club's all-players table, 13.11.2026) yields to a roster man of the same name: the roster record carries position and price
  const have=new Set<string>(),ids=new Set<string>()
- for(const p of data.players){ids.add(p.id);for(const n of [p.value.name,...p.value.aliases])have.add(norm(n))}
+ for(const p of data.players){ids.add(p.id);if(p.value.archiveOnly)continue;for(const n of [p.value.name,...p.value.aliases])have.add(norm(n))}
  const add=w.players.filter(p=>!ids.has(p.id)&&![p.value.name,...p.value.aliases].some(n=>have.has(norm(n))))
  if(!add.length)return data
+ const taken=new Set(add.flatMap(names))
+ const kept=data.players.filter(p=>!p.value.archiveOnly||!names(p).some(n=>taken.has(n)))
  const used=new Set(add.flatMap(p=>p.sources)),known=new Set(data.sources.map(s=>s.id))
- return {...data,players:[...data.players,...add],sources:[...data.sources,...w.sources.filter(s=>used.has(s.id)&&!known.has(s.id))]}
+ const club=data.identity?.id??id,fill=(p:Fact<ClubPlayer>)=>{if(p.value.career)return p;const c=careerFor(club,p.id.replace(`${club}:`,''));return c?{...p,value:{...p.value,career:c}}:p}
+ return {...data,players:[...kept,...add.map(fill)],sources:[...data.sources,...w.sources.filter(s=>used.has(s.id)&&!known.has(s.id))]}
 }

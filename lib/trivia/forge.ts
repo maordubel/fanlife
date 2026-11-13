@@ -80,7 +80,7 @@ export function forgeTrivia(club:ClubData,extras:ForgeExtras={}):{trivia:ClubTri
  const fameOf=(pid:string):1|2|3|4=>{const r=rating.get(pid);if(r===undefined||!sortedR.length)return 3;const at=sortedR.findIndex(x=>x<=r)/sortedR.length;return at<0.1?1:at<0.35?2:at<0.7?3:4}
  const byId=new Map<string,Man>(),players=new Map<string,Man>(),originalNames=new Map<string,Set<Man>>()
  // one man, one card: records the merge list folds together are read as ONE man (content/manual/rumble-merges.json)
- const approvedMen=(club.players??[]).filter(f=>ok(f as Fact<unknown>)),factOf=new Map(approvedMen.map(f=>[f.value.id,f]))
+ const approvedMen=(club.players??[]).filter(f=>ok(f as Fact<unknown>)&&!f.value.archiveOnly),factOf=new Map(approvedMen.map(f=>[f.value.id,f]))
  for(const v of foldMerged(id,approvedMen.map(f=>f.value))){
   const f=factOf.get(v.id)!,labels=playerLabels as Record<string,Record<string,{name:string}>>,name=labels[id]?.[v.id]?.name??(v.name!==f.value.name&&isLatin(v.name)?v.name:englishName(id,v.id,v.name))
   if(!isLatin(name)||!name.trim())continue

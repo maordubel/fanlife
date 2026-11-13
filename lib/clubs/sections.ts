@@ -1,4 +1,5 @@
 import 'server-only'
+import {enoughPublishers} from './official'
 import type {ClubMystery,ClubPlayer,Diagnostic,Entity,Fact,Source} from './contract'
 const date=(v:unknown)=>typeof v==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(v)&&Number.isFinite(Date.parse(v))&&new Date(v).toISOString().slice(0,10)===v?v:null
 const ID=/^[a-z0-9][a-z0-9_-]{0,100}$/
@@ -10,7 +11,7 @@ function envelope(f:Raw,sources:Source[],valueOK:boolean,sensitive:boolean):{ref
  const cited=refs.map(id=>sources.find(s=>s.id===id))
  if(!refs.length||!cited.every(s=>s?.access==='available'&&s.checkedAt)||!valueOK)return null
  if(f.status!=='approved'||!(f.confidence===2||f.confidence===3)||!date(f.researchedAt)||!date(f.approvedAt)||typeof f.approvedBy!=='string'||!f.approvedBy.trim())return null
- if(f.approvedBy.startsWith('automated:')&&!(new Set(cited.map(s=>s!.publisher.toLowerCase())).size>=2&&f.confidence===3&&f.parserCertainty==='high'&&f.conflictFree===true&&!sensitive))return null
+ if(f.approvedBy.startsWith('automated:')&&!(enoughPublishers(cited)&&f.confidence===3&&f.parserCertainty==='high'&&f.conflictFree===true&&!sensitive))return null
  return {refs}
 }
 /** Optional typed-fact fields of a pack clue (BC-R02). Anything malformed is dropped, never guessed. */

@@ -47,7 +47,8 @@ export function rawPool(data:ClubData,opts:{extra?:Readonly<Record<string,Pos>>;
  const ov=(id:string)=>opts.base?undefined:overrideOf(club,id)
  // an explicit owner position list (even an empty one = unknown) beats every fallback; otherwise archive → workbook → named public source
  const posOf=(p:ClubPlayer):Pos|null=>ov(p.id)?.positions?(ov(p.id)!.positions![0]??null):first(p)??workbookRating(club,[p.name,...p.aliases])?.pos??opts.extra?.[p.id]??null
- const all=(data.players||[]).map(f=>f.value).filter(p=>isMan(p.name)),byId=new Map(all.map(p=>[p.id,p]))
+ // a man the archive holds only from a club's all-players table is not a card (no reviewed position or price yet)
+ const all=(data.players||[]).map(f=>f.value).filter(p=>isMan(p.name)&&!p.archiveOnly),byId=new Map(all.map(p=>[p.id,p]))
  // one man, one card: a record that is the same man as another (rumble-merges.json) is folded into the one kept — his names, years and goals travel along
  const dropped=new Set<string>(),everyone:ClubPlayer[]=[]
  for(const m of mergesFor(club)){const d=byId.get(m.drop),k=byId.get(m.keep);if(d&&k&&!dropped.has(k.id))dropped.add(d.id)}
