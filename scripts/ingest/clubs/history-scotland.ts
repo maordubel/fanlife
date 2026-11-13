@@ -67,8 +67,10 @@ async function main(){
  let agreed=0,onlyOne=0,read=0
  for(const s of seasons){
   const fUrl=`${fb}/team_results_season.php?from=${s.id}&to=${s.id}`
-  const hUrl=`https://www.londonhearts.com/scores/a${Math.floor(s.y1/10)*10}/${h.londonhearts}${s.y2}.htm`
-  const [fh,hh]=[await text(fUrl),await text(hUrl)]
+  // London Hearts files a season under the decade of its first or its last year, or under "allg" for the newest
+  let hUrl='',hh:string|null=null
+  for(const dir of [...new Set([`a${Math.floor(s.y1/10)*10}`,`a${Math.floor(s.y2/10)*10}`,'allg'])]){hUrl=`https://www.londonhearts.com/scores/${dir}/${h.londonhearts}${s.y2}.htm`;hh=await text(hUrl);if(hh)break}
+  const fh=await text(fUrl)
   if(!fh||!hh){console.log(`[${club}] ${s.y1}/${s.y2}: ${!fh?'FitbaStats':'London Hearts'} gave no page`);continue}
   read++
   const fn=parseFitba(fh,cfg.names[0],fb).filter(n=>n.on>=`${s.y1}-06-01`&&n.on<=`${s.y2}-07-31`),hn=parseHearts(hh,hUrl)
