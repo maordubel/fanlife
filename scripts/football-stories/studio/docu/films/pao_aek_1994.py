@@ -29,15 +29,17 @@ from pathlib import Path
 GREEN, AMBER, COAL = '#0B7A3E', '#C99700', '#1A1A1A'
 # The owner's pack: file-name prefix in his folder → the name the storyboard uses.
 PACK = {'Military_investigation': 'dossier.jpg', 'Gemini_Generated': 'header-a.jpg', 'Player_heading': 'header-b.jpg', '195a8098': 'celebrate.jpg',
-        'Football_tackle': 'tackle.jpg', 'Copy of 02-gate-13': 'gate13.jpg', 'Copy of 04-terrace': 'terrace.jpg', 'Emerald_green': 'scarf.jpg',
-        'Paper-cut_shamrock_badge': 'badge.jpg', 'Paper_cut_shamrock_emblem': 'emblem.jpg', 'Supporter_standing': 'supporter.jpg',
-        'Supporters_raising': 'scarves.jpg', 'unnamed (5)': 'applause.jpg', 'unnamed (6)': 'team.jpg', 'unnamed (7)': 'portrait.jpg',
-        'unnamed (8)': 'pyro.jpg', 'unnamed (9)': 'fence.jpg', 'images': 'crest-src.png'}
+        'Football_tackle': 'tackle.jpg', 'Copy of 02-gate-13': 'gate13.jpg', 'Copy of 04-terrace': 'terrace.jpg', 'Paper-cut_collage_of_soccer_stadium': 'scarf.jpg',
+        'Paper-cut_shamrock_badge': 'badge.jpg', 'Paper-cut_shamrock_emblem_134': 'emblem.jpg', 'Soccer_players_competing_during': 'supporter.jpg',
+        'Soccer_players_on_grass_pitch': 'scarves.jpg', 'unnamed (5)': 'applause.jpg', 'unnamed (6)': 'team.jpg', 'unnamed (7)': 'portrait.jpg',
+        'unnamed (8)': 'pyro.jpg', 'unnamed (9)': 'fence.jpg', 'images.png': 'crest-src.png'}
+# 13.11.2026: the pack is read from the owner's Drive (folders "AEK–PAO 1994" and the Panathinaikos shamrock folder). Three
+# pictures he attached in chat are not in Drive; his own Panathinaikos paper-cut scenes stand in for them (green only,
+# no rival colour): the stadium collage (scarf), the green v white duel (supporter), the green players (scarves).
 # The common library, asked of the media index (studio/media_index.py): role → (what the beat asks for, the piece that
 # means it). The picker refuses another club's art and marks every use in the ledger; a preferred piece it refuses falls
 # back to its own best.
 LIB = {'lib-trophy': (['trophy', 'archive'], ['calm'], 'beat:common/archive-trophy-spotlight'),
-       'lib-manager': (['bench', 'stadium'], ['tension'], 'beat:common/manager-blank-board-stadium'),
        'lib-bowl': (['stadium', 'night'], ['tension'], 'beat:common/stadium-night-bowl-n'),
        'lib-freekick': (['ball', 'goal', 'stand'], ['tension'], 'beat:common/free-kick-wall-kr'),
        'lib-clock': (['clock', 'stadium'], ['tension'], 'beat:common/last-minute-clock-n'),
@@ -46,8 +48,7 @@ LIB = {'lib-trophy': (['trophy', 'archive'], ['calm'], 'beat:common/archive-trop
        'lib-radio': (['archive'], ['calm'], 'beat:common/radio-scarf-ticket-table'),
        'lib-desk': (['archive', 'newspaper'], ['calm'], 'beat:common/scrapbook-desk-kr'),
        'lib-demolition': (['stadium', 'stand', 'crowd'], ['defiance'], 'beat:common/demolition-stand-kr'),
-       'lib-tunnel': (['tunnel', 'stadium'], ['tension'], 'beat:common/tunnel-gate-silhouette-n'),
-       'lib-ground': (['stadium', 'stand', 'city'], ['calm'], 'beat:common/old-ground-wide-kr')}
+       'lib-tunnel': (['tunnel', 'stadium'], ['tension'], 'beat:common/tunnel-gate-silhouette-n')}
 
 
 def pack(owner: Path, out: Path) -> dict:
@@ -180,7 +181,7 @@ beat(None, word('THE NINJA', bg='ink', size=250, d=1.2), word('THE NINJA|OF NEA 
 chapter('CHAPTER ONE', 'THE CHAMPIONS', 'NEA FILADELFEIA · ATHENS')
 beat("Nea Filadelfeia, in the north-west of Athens. The Nikos Goumas Stadium. The home of AEK.",
      dict(kind='locator', title='ATHENS', centre='CITY CENTRE', place='NEA FILADELFEIA', small='NIKOS GOUMAS STADIUM · AEK', bearing=315, d=4.3),
-     img('lib-ground.jpg', 'pull', veil=0.1, dt=4.3, tag=dict(big='NIKOS GOUMAS', small='THE HOME OF AEK', side='us')),
+     word('NIKOS GOUMAS|STADIUM', bg='ink', size=170, small='THE HOME OF AEK · NEA FILADELFEIA', at=4.3),   # no stand-in picture passed off as the ground
      type='map', emotion='wonder', intensity=0.5,
      pad=0.5, sound=[('swish', 0.0, 1.0, 0.5)])
 beat("And in November nineteen ninety-four, AEK are the champions of Greece. Not for one year. For three in a row.",
@@ -188,7 +189,8 @@ beat("And in November nineteen ninety-four, AEK are the champions of Greece. Not
      type='stat', emotion='pride', intensity=0.6,
      pad=0.5, sound=[('impact', 4.2, 1.4, 0.6)])
 beat("Their manager is Dušan Bajević. For three seasons, every other club in the country has been chasing his team.",
-     img('lib-manager.jpg', 'push', veil=0.2),
+     word('DUŠAN|BAJEVIĆ', bg='ink', size=210, small='AEK · THE MANAGER · 1994/95', d=3.6),   # a card, never a silhouette passed off as the man
+     word('EVERYONE|IS CHASING', bg='paper', size=200, small='THREE SEASONS · ONE TEAM AHEAD', at=3.6),
      type='illustration', emotion='dread', intensity=0.5, pad=0.4)
 beat("But this autumn, one club is not chasing. It is running away.",
      img('lib-bowl.jpg', 'push', veil=0.3), dict(kind='question', small='AUTUMN 1994', text='ONE CLUB IS|[RUNNING AWAY]', dt=1.4),
@@ -201,7 +203,7 @@ beat("Panathinaikos. Managed by Juan Ramón Rocha. And they have started the sea
      type='matchday', emotion='defiance', intensity=0.7, meta=dict(subjects=['crowd', 'flag']), pad=0.4,
      sound=[('chant', 0.0, 6.0, 0.3)])
 beat("Seven league matches. Seven wins.",
-     dict(kind='form', title='SEVEN FROM SEVEN', sub='PANATHINAIKOS · ALPHA ETHNIKI 1994/95 · MATCHDAYS 1–7', results=list('WWWWWWW'), per_row=7, step=0.22, bracket=(0, 6, '21 POINTS FROM 21')),
+     dict(kind='form', title='SEVEN FROM SEVEN', sub='PANATHINAIKOS · ALPHA ETHNIKI 1994/95 · MATCHDAYS 1–7', results=list('WWWWWWW'), per_row=7, step=0.22, bracket=(0, 6, '21 POINTS FROM 21'), big=True),
      type='stat', emotion='pride', intensity=0.7, pad=1.2, sound=[('tick', 0.3, 2.0, 0.4)])
 beat("Twenty-three goals scored. Five at Ionikos. Five at Kavala. Three past PAOK.",
      dict(kind='explain', form='bars', title='THE FIRST SEVEN MATCHES', bars=[dict(label='SCORED', share=1.0, value=23, hot=True), dict(label='CONCEDED', share=6 / 23, value=6)], d=4.2),
@@ -209,7 +211,7 @@ beat("Twenty-three goals scored. Five at Ionikos. Five at Kavala. Three past PAO
      type='stat', emotion='pride', intensity=0.7, pad=0.5)
 beat("Their striker, Krzysztof Warzycha, will finish the season with twenty-nine league goals. Their free kicks belong to the Argentine, Juan José Borrelli.",
      img('scarves.jpg', 'panl', veil=0.4), dict(kind='stat', value='29', label='LEAGUE GOALS · KRZYSZTOF WARZYCHA', dt=1.6, d=4.3),
-     stamp('FREE KICKS · BORRELLI', 'us', x=420, y=420, dt=7.6, size=84, rot=-3),
+     stamp('FREE KICKS · BORRELLI', 'us', x=420, y=420, dt=7.6, size=96, rot=-3, plate=True),
      type='illustration', emotion='pride', intensity=0.6, meta=dict(subjects=['crowd'], plain=True), sound=[('impact', 1.6, 1.4, 0.5), ('stamp', 7.6, 1.0, 0.6)], pad=0.4)
 beat("And at the back, the centre-back. Giannis Kalitzakis. Twenty-eight years old. The Ninja.",
      img('terrace.jpg', 'push', veil=0.5), pol('applause-print.png', x=240, h=880, y=80, stay=True),
@@ -289,7 +291,7 @@ beat("The two clubs met twice more that season. The return league match, three n
      word('3 – 0', bg='us', size=330, small='THE RETURN · PANATHINAIKOS v AEK', at=2.9),
      type='record', emotion='joy', intensity=0.8, pad=0.3)
 beat("The cup final, one nil. A Warzycha penalty, deep in extra time.",
-     img('tackle.jpg', 'pull', veil=0.1, focus='52% 50%'), stamp('CUP FINAL · 1–0', 'us', x=110, y=150, dt=1.2, size=90, rot=-3),
+     img('tackle.jpg', 'pull', veil=0.1, focus='52% 50%'), stamp('CUP FINAL · 1–0', 'us', x=110, y=150, dt=1.2, size=90, rot=-3, plate=True),
      type='illustration', emotion='joy', intensity=0.85, meta=dict(plain=True), pad=0.3, sound=[('stamp', 1.2, 1.0, 0.7)])
 beat("Three matches. Three Panathinaikos wins. AEK did not score in any of them.",
      dict(kind='ledger', title='1994/95', us='PAO', them='AEK', compact=True, rows=[['LEAGUE · AWAY', 1, 0], ['LEAGUE · HOME', 3, 0], ['CUP FINAL', 1, 0]], row_at=[0.3, 1.2, 2.1], d=4.2),
@@ -351,7 +353,7 @@ VERTICAL = [
         dict(card=dict(big='Did the run survive?', small="Matchday 8 · the champions' ground", size=150), d=2.4)]),
     dict(name='short-3-one-second', kind='short', hook='The second nobody breathed', kicker='Nea Filadelfeia · minute 20', music='dark-leberch-625667.mp3', end=END, scenes=[
         dict(src='lib-freekick.jpg', focus=(0.36, 0.62), zoom=(1.0, 1.25), vo=L['Twenty minutes in']),
-        dict(src='terrace.jpg', focus=(0.7, 0.6), zoom=(1.3, 1.5), vo=L['Borrelli stands']),
+        dict(src='pyro.jpg', focus=(0.5, 0.5), zoom=(1.0, 1.25), vo=L['Borrelli stands']),
         dict(src='header-b.jpg', focus=(0.53, 0.3), zoom=(1.2, 1.7), vo=L['And for one second'], pad=0.9),
         dict(card=dict(big='What happened next?', small='A defender. The champions. One header.', size=150), d=2.6)]),
     dict(name='reel-1-the-header', kind='reel', hook='The defender who beat the champions', kicker='AEK 0–1 Panathinaikos · 7 Nov 1994', music='energy-gr0za-627556.mp3',

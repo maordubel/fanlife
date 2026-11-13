@@ -279,7 +279,8 @@ class Film:
     def stamp(self, s, t, d):
         cid = self.id('st')
         col = self.US if s.get('side', 'us') == 'us' else self.THEM
-        self.clip(cid, t, d, f'<span>{e(s["text"])}</span>', s.get('z', 7), 'stamp', f'left:{s.get("x", 200)}px;top:{s.get("y", 560)}px;color:{col};border-color:{col};font-size:{s.get("size", 230)}px;white-space:nowrap')
+        plate = f';background:{self.PAPER};box-shadow:8px 8px 0 {self.INK};padding:6px 18px' if s.get('plate') else ''   # a stamp over a crowd sits on paper, or it does not read
+        self.clip(cid, t, d, f'<span>{e(s["text"])}</span>', s.get('z', 7), 'stamp', f'left:{s.get("x", 200)}px;top:{s.get("y", 560)}px;color:{col};border-color:{col};font-size:{s.get("size", 230)}px;white-space:nowrap{plate}')
         rot = s.get('rot', -8)
         self.tween(f'tl.fromTo("#{cid}",{{scale:2.4,opacity:0,rotation:{rot * 1.7}}},{{scale:1,opacity:1,rotation:{rot},duration:0.25,ease:"power4.in"}},{r2(t)});')
 
@@ -496,10 +497,13 @@ class Film:
         """A season as a strip of results — W / D / L tiles dealt one by one; a run can be bracketed and named."""
         cid = self.id('fm')
         cols = {'W': '#1F8A4C', 'D': '#8A8478', 'L': self.US if s.get('loss') == 'us' else '#D7192A'}
-        tiles = ''.join(f'<div class="ft" id="{cid}t{i}" style="background:{cols[r]}">{r}</div>' for i, r in enumerate(s['results']))
+        n = s.get('per_row', 15)
+        tw = min(210, (1620 - 12 * (n - 1)) // n) if s.get('big') else 96    # `big`: the strip IS the frame (a headline run), tiles sized to the full width
+        size = f'height:{tw}px;font-size:{round(tw * 0.55)}px;' if s.get('big') else ''
+        tiles = ''.join(f'<div class="ft" id="{cid}t{i}" style="{size}background:{cols[r]}">{r}</div>' for i, r in enumerate(s['results']))
         br = f'<div class="fbr" id="{cid}b"><span>{e(s["bracket"][2])}</span></div>' if s.get('bracket') else ''
         head = f'<div class="fh"><b>{e(s.get("title", ""))}</b><span>{e(s.get("sub", ""))}</span></div>'
-        self.clip(cid, t, d, f'<div class="fw">{head}<div class="fg" style="grid-template-columns:repeat({s.get("per_row", 15)},96px)">{tiles}</div>{br}</div>', 9, 'paper')
+        self.clip(cid, t, d, f'<div class="{"fw fwb" if s.get("big") else "fw"}">{head}<div class="fg" style="grid-template-columns:repeat({n},{tw}px)">{tiles}</div>{br}</div>', 9, 'paper')
         step = s.get('step', 0.07)
         for i in range(len(s['results'])):
             self.tween(f'tl.fromTo("#{cid}t{i}",{{scale:0,rotation:-20}},{{scale:1,rotation:0,duration:0.18,ease:"back.out(3)"}},{r2(t + 0.4 + step * i)});')
@@ -659,7 +663,7 @@ class Film:
         inner = (streets + self.pen(ring, t + 0.2, 0.7, 8)
                  + self.pen([(cx + r * math.sin(a), cy - r * math.cos(a)), (px, py)], t + 1.3, 0.7, 10, self.US)
                  + f'<small class="xpt">{e(s.get("title", ""))}</small>'
-                 f'<span class="lcc" style="left:{cx - 200:.0f}px;top:{cy - 40:.0f}px">{e(s["centre"])}</span>'
+                 f'<span class="lcc" style="left:{cx - 130:.0f}px;top:{cy - 36:.0f}px">{e(s["centre"]).replace(" ", "<br>")}</span>'
                  f'<div class="lcp" id="{cid}p" style="left:{px:.0f}px;top:{py:.0f}px"><i style="background:{self.US}"></i><b>{e(s["place"])}</b><span>{e(s.get("small", ""))}</span></div>'
                  f'<span class="lcn">N ↑</span><span class="lcs">SCHEMATIC · NOT TO SCALE</span>')
         self.clip(cid, t, d, f'<div class="xpb" id="{cid}b">{inner}</div>', s.get('z', 9), 'paper')
@@ -929,10 +933,10 @@ video.clip{{width:1920px;height:1080px}}
 .subw .sub.kar{{top:auto;bottom:54px;font:400 46px/1.25 'Head';text-transform:uppercase;letter-spacing:1px;color:{P};background:rgba(20,17,13,.88);padding:10px 26px;max-width:1500px}} .sub.kar span{{padding:0 4px}}
 .fw{{position:absolute;left:150px;top:150px;width:1620px;color:{INK}}} .fh b{{display:block;font:400 92px/1 'Ultra'}} .fh span{{font:700 40px 'Caps';letter-spacing:8px}}
 .fg{{display:grid;gap:12px;margin-top:40px}} .ft{{height:96px;display:flex;align-items:center;justify-content:center;color:#fff;font:400 52px 'Ultra';border:4px solid {INK};box-shadow:6px 6px 0 {INK}}}
-.fbr{{margin-top:44px;text-align:left}}
+.fbr{{margin-top:44px;text-align:left}} .fwb{{top:120px}} .fwb .fh b{{font-size:170px}} .fwb .fh span{{font-size:46px}} .fwb .fbr span{{font-size:60px;padding:12px 30px}}
 .fbr span{{display:inline-block;margin-top:14px;background:{INK};color:#fff;font:700 40px 'Caps';letter-spacing:4px;padding:8px 22px}}
 .tr b.pt{{background:none;height:auto;width:120px;text-align:right;font:400 34px 'Ultra'}} .tr.mk{{background:{INK};color:{P}}}
-.lcc{{position:absolute;width:400px;text-align:center;font:400 40px/1.05 'Ultra'}} .lcn{{position:absolute;left:1640px;top:150px;font:700 44px 'Cond';letter-spacing:4px}}
+.lcc{{position:absolute;width:260px;text-align:center;font:400 34px/1.0 'Ultra'}} .lcn{{position:absolute;left:1640px;top:150px;font:700 44px 'Cond';letter-spacing:4px}}
 .lcs{{position:absolute;left:250px;top:880px;font:700 26px 'Mono';opacity:.7;letter-spacing:2px}}
 .lcp{{position:absolute;width:0;height:0}} .lcp i{{position:absolute;left:-22px;top:-22px;width:44px;height:44px;border-radius:50%;border:6px solid {INK}}}
 .lcp b{{position:absolute;left:-640px;top:-120px;width:620px;text-align:right;font:400 60px/1 'Ultra';white-space:nowrap}} .lcp span{{position:absolute;left:-640px;top:-52px;width:620px;text-align:right;font:700 30px 'Cond';letter-spacing:4px;white-space:nowrap}}
