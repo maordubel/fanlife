@@ -2015,11 +2015,11 @@
    "researchedAt": "2026-11-13",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score). · Held as one-publisher; approved by the owner on 13.11.2026.",
    "confidence": 2,
-   "status": "review",
-   "approvedAt": null,
-   "approvedBy": null
+   "status": "approved",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approval 13.11.2026: all research collected so far)"
   },
   {
    "id": "a-m-2026-02-01-aek-athens-olympiacos",

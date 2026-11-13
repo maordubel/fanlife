@@ -7,7 +7,7 @@ let doc:ShopDoc
 const api={shops:vi.fn(),product:vi.fn()}
 vi.mock('@/lib/shop/store',()=>({readShop:async()=>structuredClone(doc),printifyToken:async()=>'t'.repeat(50),
  updateShop:async(_by:string,_w:string,fn:(d:ShopDoc)=>void)=>{fn(doc);return doc}}))
-vi.mock('@/lib/shop/build',()=>({client:async()=>api,pressProduct:vi.fn(async(id:string)=>{const p=doc.products.find(x=>x.id===id)!;p.status='live';return p})}))
+vi.mock('@/lib/shop/build',()=>({mockups:(l:{src:string;is_default:boolean}[])=>({images:[...l].sort((a,b)=>Number(b.is_default)-Number(a.is_default)).map(i=>i.src)}),client:async()=>api,pressProduct:vi.fn(async(id:string)=>{const p=doc.products.find(x=>x.id===id)!;p.status='live';return p})}))
 beforeEach(()=>{api.shops.mockReset();api.product.mockReset()
  doc={v:1,settings:{open:true,shopId:7,shopTitle:'FAN LIFE',channel:'storefront',popupUrl:'',margin:45,matches:{}},products:[],audit:[]}
  api.shops.mockResolvedValue([{id:7,title:'FAN LIFE',sales_channel:'storefront'}])})
