@@ -1,0 +1,1326 @@
+{
+ "sources": [
+  {
+   "id": "wy-p-wiki-2021-22",
+   "title": "2021–22 Wydad AC season",
+   "url": "https://en.wikipedia.org/wiki/2021%E2%80%9322_Wydad_AC_season",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-wiki-2022-23",
+   "title": "2022–23 Wydad AC season",
+   "url": "https://en.wikipedia.org/wiki/2022%E2%80%9323_Wydad_AC_season",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-wiki-2017-18",
+   "title": "2017–18 Wydad AC season",
+   "url": "https://en.wikipedia.org/wiki/2017%E2%80%9318_Wydad_AC_season",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-wiki-2020-21",
+   "title": "2020–21 Wydad AC season (Wikipedia, Kiwix mirror)",
+   "url": "https://kaweah.freedombox.rocks/kiwix/wikipedia_en_all_maxi_2023-10/2020%E2%80%9321_Wydad_AC_season",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-wiki-afcon2004",
+   "title": "2004 African Cup of Nations squads",
+   "url": "https://en.wikipedia.org/wiki/2004_African_Cup_of_Nations_squads",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-wiki-afcon2006",
+   "title": "2006 Africa Cup of Nations squads",
+   "url": "https://en.wikipedia.org/wiki/2006_Africa_Cup_of_Nations_squads",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-wiki-afcon2008",
+   "title": "2008 Africa Cup of Nations squads",
+   "url": "https://en.wikipedia.org/wiki/2008_Africa_Cup_of_Nations_squads",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-fbref-1986",
+   "title": "Morocco Men Roster Details 1986",
+   "url": "https://fbref.com/en/squads/af41ccda/1986/roster/Morocco-Men-Roster-Details",
+   "publisher": "FBref",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-fbref-1994",
+   "title": "Morocco Men Roster Details 1994",
+   "url": "https://fbref.com/en/squads/af41ccda/1994/roster/Morocco-Men-Roster-Details",
+   "publisher": "FBref",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-nft-2022",
+   "title": "Wydad AC Casablanca 2022 – club squad",
+   "url": "https://national-football-teams.com/de/old/club/1670/2022_1/Wydad_Ac_Casablanca.html",
+   "publisher": "National Football Teams",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-nft-2021",
+   "title": "Wydad AC Casablanca 2021 – club squad",
+   "url": "https://national-football-teams.com/club/1670/2021/Wydad_Ac_Casablanca.html",
+   "publisher": "National Football Teams",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-nft-2020",
+   "title": "Wydad AC Casablanca 2020 – club squad",
+   "url": "https://national-football-teams.com/club/1670/2020/Wydad_Ac_Casablanca.html",
+   "publisher": "National Football Teams",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-nft-2019",
+   "title": "Wydad AC Casablanca 2019 – club squad",
+   "url": "https://www.national-football-teams.com/club/1670/2019/Wydad_Ac_Casablanca.html",
+   "publisher": "National Football Teams",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-nft-2016",
+   "title": "Wydad AC Casablanca 2016 – club squad",
+   "url": "https://www.national-football-teams.com/club/1670/2016_1/Wydad_Ac_Casablanca.html",
+   "publisher": "National Football Teams",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-nft-2015",
+   "title": "Wydad AC Casablanca 2015 – club squad",
+   "url": "https://national-football-teams.com/club/1670/2015/Wydad_Ac_Casablanca.html",
+   "publisher": "National Football Teams",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-nft-2014",
+   "title": "Wydad AC Casablanca 2014 – club squad",
+   "url": "https://national-football-teams.com/club/1670/2014/Wydad_Ac_Casablanca.html",
+   "publisher": "National Football Teams",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-nft-2010",
+   "title": "Wydad AC Casablanca 2010 – club squad",
+   "url": "https://national-football-teams.com/club/1670/2010/Wydad_Ac_Casablanca.html",
+   "publisher": "National Football Teams",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-nft-2009",
+   "title": "Wydad AC Casablanca 2009 – club squad",
+   "url": "https://national-football-teams.com/club/1670/2009/Wydad_Ac_Casablanca.html",
+   "publisher": "National Football Teams",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-nft-2004",
+   "title": "Wydad AC Casablanca 2004 – club squad",
+   "url": "https://national-football-teams.com/club/1670/2004/Wydad_Ac_Casablanca.html",
+   "publisher": "National Football Teams",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-nft-1994",
+   "title": "Wydad AC Casablanca 1994 – club squad",
+   "url": "https://national-football-teams.com/club/1670/1994/Wydad_Ac_Casablanca.html",
+   "publisher": "National Football Teams",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-nft-1985",
+   "title": "Wydad AC Casablanca 1985 – club squad",
+   "url": "https://www.national-football-teams.com/club/1670/1985/Wydad_Ac_Casablanca.html",
+   "publisher": "National Football Teams",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-wiki-yassine-bounou",
+   "title": "Yassine Bounou",
+   "url": "https://en.wikipedia.org/wiki/Yassine_Bounou",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-wiki-karim-fegrouche",
+   "title": "Karim Fegrouche",
+   "url": "https://en.wikipedia.org/wiki/Karim_Fegrouche",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-wiki-mouhcine-iajour",
+   "title": "Mouhcine Iajour",
+   "url": "https://en.wikipedia.org/wiki/Mouhcine_Iajour",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-wiki-youness-mankari",
+   "title": "Youness Mankari",
+   "url": "https://en.wikipedia.org/wiki/Youness_Mankari",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-wiki-khalid-sekkat",
+   "title": "Khalid Sekkat",
+   "url": "https://en.wikipedia.org/wiki/Khalid_Sekkat",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-wiki-lahcen-abrami",
+   "title": "Lahcen Abrami",
+   "url": "https://en.wikipedia.org/wiki/Lahcen_Abrami",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-wiki-abdelilah-saber",
+   "title": "Abdelilah Saber",
+   "url": "https://en.wikipedia.org/wiki/Abdelilah_Saber",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-wiki-jean-jacques-gosso",
+   "title": "Jean-Jacques Gosso",
+   "url": "https://en.wikipedia.org/wiki/Jean-Jacques_Gosso",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-wiki-pascal-angan",
+   "title": "Pascal Angan",
+   "url": "https://en.wikipedia.org/wiki/Pascal_Angan",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-wiki-ahmed-ajeddou",
+   "title": "Ahmed Ajeddou",
+   "url": "https://en.wikipedia.org/wiki/Ahmed_Ajeddou",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-wiki-malick-evouna",
+   "title": "Malick Evouna",
+   "url": "https://en.wikipedia.org/wiki/Malick_Evouna",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-wiki-mustapha-allaoui",
+   "title": "Mustapha Allaoui",
+   "url": "https://en.wikipedia.org/wiki/Mustapha_Allaoui",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-wiki-lys-mouithys",
+   "title": "Lys Mouithys",
+   "url": "https://en.wikipedia.org/wiki/Lys_Mouithys",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-wiki-said-fettah",
+   "title": "Said Fettah",
+   "url": "https://en.wikipedia.org/wiki/Said_Fettah",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-wiki-mohamed-berrabeh",
+   "title": "Mohamed Berrabeh",
+   "url": "https://en.wikipedia.org/wiki/Mohamed_Berrabeh",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-wiki-mohammed-benchrifa",
+   "title": "Mohammed Benchrifa",
+   "url": "https://en.wikipedia.org/wiki/Mohammed_Benchrifa",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-p-wiki-mahamadou-ndiaye",
+   "title": "Mahamadou N'Diaye",
+   "url": "https://en.wikipedia.org/wiki/Mahamadou_N%27Diaye",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  }
+ ],
+ "players": [
+  {
+   "id": "p-mg-41a8e8551299",
+   "value": {
+    "name": "Ahmed Reda Tagnaouti",
+    "positions": [
+     "GK"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-2021-22",
+    "wy-p-nft-2021"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (2021–22 squad: GK) and National Football Teams (2021: Goalkeeper)."
+  },
+  {
+   "id": "p-mg-33be8eabf7ab",
+   "value": {
+    "name": "Ezzaki Badou",
+    "positions": [
+     "GK"
+    ]
+   },
+   "sources": [
+    "wy-p-fbref-1986",
+    "wy-p-nft-1985"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by FBref (1986 World Cup roster: GK, as Ezzaki Badou) and National Football Teams (Wydad 1985: Goalkeeper)."
+  },
+  {
+   "id": "p-mg-776c818b487a",
+   "value": {
+    "name": "Khalil Azmi",
+    "positions": [
+     "GK"
+    ]
+   },
+   "sources": [
+    "wy-p-fbref-1994",
+    "wy-p-nft-1985"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by FBref (1994 World Cup roster: GK) and National Football Teams (Wydad 1985: Goalkeeper)."
+  },
+  {
+   "id": "p-mg-91ceb8a8b458",
+   "value": {
+    "name": "Nadir Lamyaghri",
+    "positions": [
+     "GK"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-afcon2006",
+    "wy-p-nft-2010"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (2006 AFCON squad: GK, club Wydad) and National Football Teams (Wydad 2004/2009/2010: Goalkeeper)."
+  },
+  {
+   "id": "p-mg-418083f3b2fe",
+   "value": {
+    "name": "Yassine Bounou",
+    "positions": [
+     "GK"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-yassine-bounou",
+    "wy-p-nft-2010"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (goalkeeper; Wydad 2010–2012) and National Football Teams (Wydad 2010: Goalkeeper)."
+  },
+  {
+   "id": "p-mg-f633885e1d7d",
+   "value": {
+    "name": "Karim Fegrouche",
+    "positions": [
+     "GK"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-karim-fegrouche",
+    "wy-p-nft-2010"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (goalkeeper; Wydad 2007–2011) and National Football Teams (Wydad 2009/2010: Goalkeeper)."
+  },
+  {
+   "id": "p-mg-6c580793cf00",
+   "value": {
+    "name": "Achraf Dari",
+    "positions": [
+     "DF"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-2021-22",
+    "wy-p-nft-2021"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (2021–22 squad: DF) and National Football Teams (Centre Back)."
+  },
+  {
+   "id": "p-mg-b1c7f391a5df",
+   "value": {
+    "name": "Yahia Attiyat Allah",
+    "positions": [
+     "DF"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-2021-22",
+    "wy-p-nft-2021"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (2021–22 squad: DF) and National Football Teams (Left Back)."
+  },
+  {
+   "id": "p-mg-c945bb3a1586",
+   "value": {
+    "name": "Ayoub El Amloud",
+    "positions": [
+     "DF"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-2021-22",
+    "wy-p-nft-2021"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (2021–22 squad: DF) and National Football Teams (Right Back)."
+  },
+  {
+   "id": "p-mg-97db36cba002",
+   "value": {
+    "name": "Arsène Zola",
+    "positions": [
+     "DF"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-2022-23",
+    "wy-p-nft-2022"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (2022–23 squad: DF) and National Football Teams (2022/23: Left Back)."
+  },
+  {
+   "id": "p-mg-2e556e32fb25",
+   "value": {
+    "name": "Mohamed Nahiri",
+    "positions": [
+     "DF"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-2017-18",
+    "wy-p-nft-2019"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (2017–18 squad: DF) and National Football Teams (2019: Left Back)."
+  },
+  {
+   "id": "p-mg-a694d7ab0967",
+   "value": {
+    "name": "Abdelatif Noussir",
+    "positions": [
+     "DF"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-2017-18",
+    "wy-p-nft-2014"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (2017–18 squad: DF) and National Football Teams (2014: Right Back)."
+  },
+  {
+   "id": "p-mg-099b9da5beaf",
+   "value": {
+    "name": "Amine Atouchi",
+    "positions": [
+     "DF"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-2017-18",
+    "wy-p-nft-2016"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (2017–18 squad: DF, CB) and National Football Teams (2016: Centre Back, as Amine El Attouchi)."
+  },
+  {
+   "id": "p-mg-11ff4956797f",
+   "value": {
+    "name": "Noureddine Naybet",
+    "positions": [
+     "DF"
+    ]
+   },
+   "sources": [
+    "wy-p-fbref-1994",
+    "wy-p-wiki-afcon2006"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by FBref (1994 World Cup roster: DF, CB) and Wikipedia (2006 AFCON squad: DF)."
+  },
+  {
+   "id": "p-mg-4bd5603ed349",
+   "value": {
+    "name": "Khalid Sekkat",
+    "positions": [
+     "DF"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-khalid-sekkat",
+    "wy-p-nft-2010"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (left back; Wydad 2006–2011) and National Football Teams (Wydad 2009/2010: Left Back)."
+  },
+  {
+   "id": "p-mg-2ece59886190",
+   "value": {
+    "name": "Lahcen Abrami",
+    "positions": [
+     "DF"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-lahcen-abrami",
+    "wy-p-nft-1994"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (defender; Wydad spells 1989–2005) and National Football Teams (Wydad 1994 and 2004: Left Back)."
+  },
+  {
+   "id": "p-mg-096b25b68141",
+   "value": {
+    "name": "Abdelilah Saber",
+    "positions": [
+     "DF"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-abdelilah-saber",
+    "wy-p-nft-1994"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (right-back; Wydad 1993–1996) and National Football Teams (Wydad 1994: Right Back)."
+  },
+  {
+   "id": "p-mg-fc3e0cbe121d",
+   "value": {
+    "name": "Mohammed Benchrifa",
+    "positions": [
+     "DF"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-mohammed-benchrifa",
+    "wy-p-nft-2004"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (defender; Wydad 1995–2006) and National Football Teams (Wydad 2004: Centre Back)."
+  },
+  {
+   "id": "p-mg-4f7f5c55d238",
+   "value": {
+    "name": "Mahamadou N'Diaye",
+    "positions": [
+     "DF"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-mahamadou-ndiaye",
+    "wy-p-nft-2009"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (centre back; Wydad 2009–2010) and National Football Teams (Wydad 2009: Centre Back)."
+  },
+  {
+   "id": "p-mg-4c34ec79d5ef",
+   "value": {
+    "name": "Yahya Jabrane",
+    "positions": [
+     "MF"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-2021-22",
+    "wy-p-nft-2021"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (2021–22 squad: MF) and National Football Teams (Defensive Midfielder)."
+  },
+  {
+   "id": "p-mg-aa63018d9be7",
+   "value": {
+    "name": "Walid El Karti",
+    "positions": [
+     "MF"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-2020-21",
+    "wy-p-nft-2020"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (2020–21 squad: MF) and National Football Teams (Centre Midfielder)."
+  },
+  {
+   "id": "p-mg-c42e8c8ca2c6",
+   "value": {
+    "name": "Salaheddine Saidi",
+    "positions": [
+     "MF"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-2020-21",
+    "wy-p-nft-2014"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (2020–21 squad: MF) and National Football Teams (2014–2020: Defensive Midfielder)."
+  },
+  {
+   "id": "p-mg-26b8d1599f0e",
+   "value": {
+    "name": "Jamel Aït Ben Idir",
+    "positions": [
+     "MF"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-2017-18",
+    "wy-p-nft-2015"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (2017–18 squad: MF, DM) and National Football Teams (2015/2016: Defensive Midfielder)."
+  },
+  {
+   "id": "p-mg-7a913ebab772",
+   "value": {
+    "name": "Ayoub Skouma",
+    "positions": [
+     "MF"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-2020-21",
+    "wy-p-nft-2010"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (2020–21 squad: MF) and National Football Teams (Wydad 2009/2010: Attacking Midfielder). Same player listed by NFT in both the 2009–10 and 2020 Wydad squads."
+  },
+  {
+   "id": "p-mg-2e3cdfd732fe",
+   "value": {
+    "name": "Rachid Daoudi",
+    "positions": [
+     "MF"
+    ]
+   },
+   "sources": [
+    "wy-p-fbref-1994",
+    "wy-p-nft-1994"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by FBref (1994 World Cup roster: MF) and National Football Teams (Wydad 1994: Centre Midfielder)."
+  },
+  {
+   "id": "p-mg-d486fef896d0",
+   "value": {
+    "name": "Mohamed Madihi",
+    "positions": [
+     "MF"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-afcon2006",
+    "wy-p-nft-2004"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (2006 AFCON squad: MF, club Wydad) and National Football Teams (Wydad 2004: Attacking Midfielder)."
+  },
+  {
+   "id": "p-mg-d49347ba5bec",
+   "value": {
+    "name": "Abderrahman Kabous",
+    "positions": [
+     "MF"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-afcon2008",
+    "wy-p-nft-2010"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (2008 AFCON squad: MF) and National Football Teams (Wydad 2010: Defensive Midfielder)."
+  },
+  {
+   "id": "p-mg-19a786a56370",
+   "value": {
+    "name": "Youness Mankari",
+    "positions": [
+     "MF"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-youness-mankari",
+    "wy-p-nft-2010"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (midfielder; Wydad 1997–2014) and National Football Teams (Wydad 2010: Defensive Midfielder)."
+  },
+  {
+   "id": "p-mg-f7de17bc5f1b",
+   "value": {
+    "name": "Jean-Jacques Gosso",
+    "positions": [
+     "MF"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-jean-jacques-gosso",
+    "wy-p-nft-2004"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (defensive midfielder; Wydad 2003–2007) and National Football Teams (Wydad 2004: Defensive Midfielder)."
+  },
+  {
+   "id": "p-mg-41accb83f5bc",
+   "value": {
+    "name": "Pascal Angan",
+    "positions": [
+     "MF"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-pascal-angan",
+    "wy-p-nft-2010"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (attacking midfielder; Wydad 2008–2012) and National Football Teams (Wydad 2009/2010: Attacking Midfielder)."
+  },
+  {
+   "id": "p-mg-04da7c7e5d57",
+   "value": {
+    "name": "Ahmed Ajeddou",
+    "positions": [
+     "MF"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-ahmed-ajeddou",
+    "wy-p-nft-2010"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (midfielder; Wydad 2009–2012) and National Football Teams (Wydad 2009/2010: Attacking Midfielder)."
+  },
+  {
+   "id": "p-mg-9d62d70ef439",
+   "value": {
+    "name": "Said Fettah",
+    "positions": [
+     "MF"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-said-fettah",
+    "wy-p-nft-2010"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (midfielder; Wydad 2011–2014) and National Football Teams (Wydad 2010: Defensive Midfielder)."
+  },
+  {
+   "id": "p-mg-3b9654108988",
+   "value": {
+    "name": "Mohamed Berrabeh",
+    "positions": [
+     "MF"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-mohamed-berrabeh",
+    "wy-p-nft-2009"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (midfielder; Wydad 2009–2010, 2011–2015) and National Football Teams (Wydad 2009/2010/2014: Centre Midfielder)."
+  },
+  {
+   "id": "p-mg-12e3c32bdd5b",
+   "value": {
+    "name": "Juvhel Tsoumou",
+    "positions": [
+     "FW"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-2021-22",
+    "wy-p-nft-2021"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (2021–22 squad: FW) and National Football Teams (Centre Forward)."
+  },
+  {
+   "id": "p-mg-ac38dfb9a3a3",
+   "value": {
+    "name": "Bouly Sambou",
+    "positions": [
+     "FW"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-2022-23",
+    "wy-p-nft-2022"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (2022–23 squad: FW) and National Football Teams (2022/23: Centre Forward)."
+  },
+  {
+   "id": "p-mg-9c5606ecd24b",
+   "value": {
+    "name": "Ayoub El Kaabi",
+    "positions": [
+     "FW"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-2020-21",
+    "wy-p-nft-2019"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (2020–21 squad: FW) and National Football Teams (2019/2020: Centre Forward)."
+  },
+  {
+   "id": "p-mg-70f5b94f0464",
+   "value": {
+    "name": "Achraf Bencharki",
+    "positions": [
+     "FW"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-2017-18",
+    "wy-p-nft-2016"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (2017–18 squad: FW; also FW in 2018 CHAN squad) and National Football Teams (2016: Left Winger, forward line)."
+  },
+  {
+   "id": "p-mg-6b832f3d36a3",
+   "value": {
+    "name": "Hassan Nader",
+    "positions": [
+     "FW"
+    ]
+   },
+   "sources": [
+    "wy-p-fbref-1994",
+    "wy-p-nft-1985"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by FBref (1994 World Cup roster: FW) and National Football Teams (Wydad 1985: Centre Forward)."
+  },
+  {
+   "id": "p-mg-662b00e8ebf4",
+   "value": {
+    "name": "Mohamed Armoumen",
+    "positions": [
+     "FW"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-afcon2006",
+    "wy-p-nft-2009"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (2006 AFCON squad: FW) and National Football Teams (Wydad 2009: Centre Forward)."
+  },
+  {
+   "id": "p-mg-22d5e671c93f",
+   "value": {
+    "name": "Mustapha Bidoudane",
+    "positions": [
+     "FW"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-afcon2004",
+    "wy-p-nft-2010"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (2004 AFCON squad: FW) and National Football Teams (Wydad 2009/2010: Centre Forward)."
+  },
+  {
+   "id": "p-mg-f154ddce1db6",
+   "value": {
+    "name": "Mouhcine Iajour",
+    "positions": [
+     "FW"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-mouhcine-iajour",
+    "wy-p-nft-2010"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (striker; Wydad 2010–2012) and National Football Teams (Wydad 2010: Centre Forward, as Yajour)."
+  },
+  {
+   "id": "p-mg-755e70047a00",
+   "value": {
+    "name": "Malick Evouna",
+    "positions": [
+     "FW"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-malick-evouna",
+    "wy-p-nft-2014"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (striker; Wydad 2013–2015) and National Football Teams (Wydad 2014: Centre Forward)."
+  },
+  {
+   "id": "p-mg-d1c17bc2d79e",
+   "value": {
+    "name": "Mustapha Allaoui",
+    "positions": [
+     "FW"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-mustapha-allaoui",
+    "wy-p-nft-2010"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (forward; Wydad 2011 loan) and National Football Teams (Wydad 2010: Centre Forward)."
+  },
+  {
+   "id": "p-mg-12ed010dbe7b",
+   "value": {
+    "name": "Lys Mouithys",
+    "positions": [
+     "FW"
+    ]
+   },
+   "sources": [
+    "wy-p-wiki-lys-mouithys",
+    "wy-p-nft-2009"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Position agreed by Wikipedia (forward; Wydad 2009–2010, 2011–2013) and National Football Teams (Wydad 2009: Centre Forward)."
+  }
+ ],
+ "skipped": [
+  {
+   "id": "p-mg-20c5d7873076",
+   "reason": "FW vs MF disagreement: Wikipedia season pages list Mohamed Ounajem as FW/RW; National Football Teams lists Right Midfielder."
+  },
+  {
+   "id": "p-mg-83c8a7cecfe5",
+   "reason": "MF vs FW: Wikipedia 2017–18 lists Ismail Haddad as MF (LW), Wikipedia 2020–21 and CHAN 2018 as ST/FW; NFT Left Winger."
+  },
+  {
+   "id": "p-mg-81009087e449",
+   "reason": "DF vs MF: Wikipedia 2020–21 transfers list Anas El Asbahi as DF; Wikipedia 2017–18 squad MF and NFT Defensive Midfielder."
+  },
+  {
+   "id": "p-mg-dc3623a50b3c",
+   "reason": "DF vs MF: Wikipedia 2020–21 transfers list Brahim Nekkach as DF; Wikipedia 2017–18 MF (DM/RB) and NFT Defensive Midfielder."
+  },
+  {
+   "id": "p-mg-be3d76ee5d96",
+   "reason": "FW vs MF: Wikipedia 2020–21 lists Michel Babatunde as ST; NFT Attacking Midfielder."
+  },
+  {
+   "id": "p-mg-2d16755af699",
+   "reason": "DF vs MF: Wikipedia 2008 AFCON squad DF, 2004 AFCON squad MF (NFT Right Back)."
+  },
+  {
+   "id": "p-mg-144a8cc17e08",
+   "reason": "FBref lists Fadel Jilal as DF-MF (dual), NFT Defender; dual listing treated as unresolved."
+  },
+  {
+   "id": "p-mg-256ce71a13ea",
+   "reason": "Wikipedia lists Kamel Chafni as attacking midfielder and left winger (MF/FW ambiguity); NFT Attacking Midfielder."
+  },
+  {
+   "id": "p-mg-dde37950be8f",
+   "reason": "Wikipedia DF (AFCON squads, left back) vs 11v11 'Defender/Midfielder'; no clean second agreeing publisher."
+  },
+  {
+   "id": "p-mg-527dee5e3b73",
+   "reason": "Youssef Rabeh is DF in Wikipedia 2017–18 and NFT 2014–2016, but the pack lists his Wydad era as 2011 only; era match not confirmed."
+  },
+  {
+   "id": "p-mg-1da7617e5a91",
+   "reason": "Khalid Fouhami GK per Wikipedia; 11v11 also GK but its page shows only Beveren/Standard Liège, and NFT shows no position; no clean independent second source."
+  },
+  {
+   "id": "p-mg-b87c3a546340",
+   "reason": "Sofian El Moudane MF only in Wikipedia (2020–21); no second publisher found."
+  },
+  {
+   "id": "p-mg-fd23cf32c570",
+   "reason": "Badr Gaddarine DF only in Wikipedia season pages; no second publisher found."
+  }
+ ]
+}

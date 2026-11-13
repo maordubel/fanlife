@@ -1,0 +1,127 @@
+{
+ "sources": [
+  {
+   "id": "wy-c-wp-tsoumou",
+   "title": "Juvhel Tsoumou — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Juvhel_Tsoumou",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "wy-c-sw-tsoumou",
+   "title": "Juvhel Tsoumou — Soccerway player career",
+   "url": "https://us.soccerway.com/player/tsoumou-juvhel/OlfLEN72/",
+   "publisher": "Soccerway",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "wy-c-wp-niang",
+   "title": "Mbaye Niang — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/M%27Baye_Niang",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "wy-c-sw-niang",
+   "title": "Mbaye Niang — Soccerway player career",
+   "url": "https://cn.soccerway.com/player/niang-m-baye/hbNBiofd/",
+   "publisher": "Soccerway",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  }
+ ],
+ "players": [
+  {
+   "id": "p-mg-12e3c32bdd5b",
+   "value": {
+    "name": "Juvhel Tsoumou",
+    "career": {
+     "apps": 24,
+     "goals": 2,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "wy-c-wp-tsoumou",
+    "wy-c-sw-tsoumou"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2021–2022: 24/2; Soccerway Botola Pro 2021/22 23/2 + 2022/23 1/0 = 24/2."
+  },
+  {
+   "id": "p-mg-40bd590ea464",
+   "value": {
+    "name": "Mbaye Niang",
+    "career": {
+     "apps": 8,
+     "goals": 2,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "wy-c-wp-niang",
+    "wy-c-sw-niang"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox and career table (Botola 2024–25): 8/2; Soccerway Botola Pro 2024/25: 8/2. Position not set: only one publisher's position read."
+  }
+ ],
+ "missing": [],
+ "skipped": [
+  {
+   "id": "p-mg-4c34ec79d5ef",
+   "reason": "Yahya Jabrane: Wikipedia 137/20 (2019–2024); Soccerway Botola 2018/19..2023/24: 123/19 — disagree."
+  },
+  {
+   "id": "p-mg-aa63018d9be7",
+   "reason": "Walid El Karti: Soccerway Botola rows from 2017/18 only (67/10); no Wikipedia total for 2013–2021 read — incomplete."
+  },
+  {
+   "id": "p-mg-6c580793cf00",
+   "reason": "Achraf Dari: Wikipedia league table 90/8; Soccerway 64/8 — apps disagree."
+  },
+  {
+   "id": "p-mg-b1c7f391a5df",
+   "reason": "Yahia Attiyat Allah: Soccerway Botola 2019/20..2023/24: 100/7 (+7/0 in 2026/27); Wikipedia page has no infobox/table figures."
+  },
+  {
+   "id": "p-mg-755e70047a00",
+   "reason": "Malick Evouna: Wikipedia 54/24 (2013–2015); Stats Crew and Soccerway have no Wydad rows — no second publisher."
+  },
+  {
+   "id": "p-mg-83c8a7cecfe5",
+   "reason": "Ismail Haddad: Wikipedia 190/32 (2015–2020); no second publisher with Botola totals."
+  },
+  {
+   "id": "p-mg-be3d76ee5d96",
+   "reason": "Michel Babatunde: Wikipedia 32/12; Soccerway Botola 16/12 — apps disagree."
+  },
+  {
+   "id": "p-mg-70f5b94f0464",
+   "reason": "Achraf Bencharki: Soccerway shows only 2016/17 4/4 for Wydad (incomplete); no agreement."
+  },
+  {
+   "id": "p-mg-337327910373",
+   "reason": "Djameleddine Benlamri: Soccerway has no Wydad row; no second publisher."
+  }
+ ]
+}

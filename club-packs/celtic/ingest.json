@@ -4,5 +4,9 @@
  ],
  "country": "SCO",
  "uefaTeamId": "50050",
- "scores365Id": 754
+ "scores365Id": 754,
+ "history": {
+  "fitbastats": "celtic",
+  "londonhearts": "celtic"
+ }
 }

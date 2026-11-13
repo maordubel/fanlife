@@ -506,3 +506,26 @@ select.pcc-inline { inline-size: 92px; cursor: pointer; } select.pcc-inline:disa
 .shop-catitem small { font-family: var(--mag-mono); opacity: .7; }
 .shop-tick { font-size: 20px; text-align: center; }
 @media (max-width: 760px) { .shop-catlist { grid-template-columns: 1fr; } }
+/* the builder's design controls (13.11.2026) */
+.shop-design { display: grid; gap: 10px; padding-block: 8px; }
+.shop-design-row { display: grid; gap: 4px; }
+.shop-warn { color: var(--mag-vermilion); font-weight: 700; }
+.shop-margin input { max-inline-size: 140px; }
+.shop-edit { display: grid; gap: 8px; margin-block-start: 10px; padding-block-start: 10px; border-block-start: 2px dashed var(--mag-ink); }
+.shop-cutout { display: grid; gap: 8px; }
+.shop-cutout-img { max-inline-size: 320px; inline-size: 100%; block-size: auto; border: 2px solid var(--mag-ink);
+  background: repeating-conic-gradient(var(--mag-paper) 0 25%, var(--mag-card) 0 50%) 0 0 / 20px 20px; }
+.shop-cutout-img[aria-busy="true"] { opacity: .5; }
+/* the printer's stock: colour swatches and sizes (13.11.2026) */
+.shop-stock { display: grid; gap: 8px; }
+.shop-swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 6px; }
+.shop-swatch { display: flex; align-items: center; gap: 8px; padding: 6px 8px; background: var(--mag-card); color: var(--mag-ink); border: 2px solid var(--mag-ink); text-align: start; font-size: 13px; cursor: pointer; }
+.shop-swatch[aria-pressed="true"] { outline: 3px solid var(--mag-vermilion); outline-offset: 1px; }
+.shop-dot { inline-size: 22px; block-size: 22px; border-radius: 50%; border: 2px solid var(--mag-ink); flex: none; }
+.shop-dot[data-unknown] { background: repeating-linear-gradient(45deg, var(--mag-paper) 0 4px, var(--mag-card) 4px 8px); }
+@media (max-width: 760px) { .shop-swatches { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* the launch checklist (13.11.2026) */
+.shop-checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.shop-checks li { display: grid; grid-template-columns: 22px 1fr; gap: 6px; font-size: 15px; }
+.shop-checks li[data-ok="1"] > span:first-child { font-weight: 900; }
+.shop-checks li[data-ok="0"] { color: var(--mag-vermilion); }

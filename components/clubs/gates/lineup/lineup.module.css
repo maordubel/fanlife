@@ -191,3 +191,7 @@
 
 /* the lifted copy of a man must never be what the pointer lands on, or the band under it is never found */
 .man:global(.drag-ghost), .man:global(.drag-ghost) * { pointer-events: none; }
+
+/* 12.11.2026 — the archive door under a graded sheet */
+.archiveRow { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-block: 6px 2px; }
+.archiveRow a { display: inline-flex; align-items: center; min-height: 44px; font-family: var(--mag-display); font-size: 15px; text-transform: uppercase; color: inherit; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }

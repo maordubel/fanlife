@@ -7,18 +7,10 @@
   "parserVersion": "immerunioner-v1",
   "nextPage": 0,
   "lastCommittedPage": 0,
-  "observedTotalDocuments": 806,
+  "observedTotalDocuments": 814,
   "observedTotalPages": null,
   "perPage": 1,
   "queue": [
-   "/nummern.php?getid=33",
-   "/spieler.php?getid=209&zahl=1",
-   "/spieler.php?getid=206",
-   "/spieler.php?getid=207",
-   "/spieler.php?getid=210",
-   "/spieler.php?getid=212",
-   "/spieler.php?getid=44&zahl=1",
-   "/spieler.php?getid=41",
    "/spieler.php?getid=42",
    "/spieler.php?getid=43",
    "/spieler.php?getid=45",
@@ -704,7 +696,15 @@
    "/spieler.php?getid=448",
    "/spieler.php?getid=452&zahl=1",
    "/spieler.php?getid=455&zahl=1",
-   "/spieler.php?getid=456&zahl=1"
+   "/spieler.php?getid=456&zahl=1",
+   "/spieler.php?getid=209&zahl=0",
+   "/spieler.php?getid=206&zahl=1",
+   "/spieler.php?getid=207&zahl=1",
+   "/spieler.php?getid=210&zahl=1",
+   "/spieler.php?getid=212&zahl=1",
+   "/spieler.php?getid=44&zahl=0",
+   "/spieler.php?getid=41&zahl=1",
+   "/spieler.php?getid=40"
   ],
   "seen": [
    "/listen.php",
@@ -818,10 +818,18 @@
    "/spieler.php?getid=451",
    "/spieler.php?getid=452",
    "/spieler.php?getid=455",
-   "/spieler.php?getid=456"
+   "/spieler.php?getid=456",
+   "/nummern.php?getid=33",
+   "/spieler.php?getid=209&zahl=1",
+   "/spieler.php?getid=206",
+   "/spieler.php?getid=207",
+   "/spieler.php?getid=210",
+   "/spieler.php?getid=212",
+   "/spieler.php?getid=44&zahl=1",
+   "/spieler.php?getid=41"
   ],
   "state": "partial_budget",
-  "updatedAt": "2026-11-10T11:26:25.559Z",
+  "updatedAt": "2026-11-13T11:16:01.648Z",
   "lastError": null
  },
  "union-official:html": {
@@ -840,7 +848,7 @@
    "/de/fussball/profis-maenner/saisonarchiv-maenner-kOKT?league=01938ba8-e83f-7ac5-a848-1ca5c29f77b9&season=01938ba9-27c0-731d-a3fd-c36f0ec9ddb0"
   ],
   "state": "listed",
-  "updatedAt": "2026-11-10T11:26:27.829Z",
+  "updatedAt": "2026-11-13T11:16:03.841Z",
   "lastError": null
  },
  "dfb-union:html": {
@@ -854,12 +862,12 @@
   "observedTotalDocuments": 1,
   "observedTotalPages": null,
   "perPage": 1,
-  "queue": [
+  "queue": [],
+  "seen": [
    "/en/clubs/1-fc-union-berlin"
   ],
-  "seen": [],
   "state": "retry-later",
-  "updatedAt": "2026-11-10T11:26:32.265Z",
+  "updatedAt": "2026-11-13T11:16:03.841Z",
   "lastError": "HTTP 500"
  },
  "footballhistory-union:html": {
@@ -878,7 +886,7 @@
    "/club/union-berlin.html"
   ],
   "state": "listed",
-  "updatedAt": "2026-11-10T11:26:33.389Z",
+  "updatedAt": "2026-11-13T11:16:04.974Z",
   "lastError": null
  }
 }

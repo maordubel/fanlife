@@ -1,0 +1,84 @@
+{
+ "schemaVersion": 1,
+ "clubId": "aek-athens",
+ "contentLocale": "en",
+ "sources": [
+  {
+   "id": "aek-c-wp-papaioannou",
+   "title": "Wikipedia: Mimis Papaioannou",
+   "url": "https://en.wikipedia.org/wiki/Mimis_Papaioannou",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "aek-c-gh-papaioannou",
+   "title": "Tributes flow for legendary AEK Athens footballer Mimis Papaioannou",
+   "url": "https://greekherald.com.au/obituaries/tributes-flow-for-legendary-aek-athens-footballer-mimis-papaioannou/",
+   "publisher": "The Greek Herald",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  }
+ ],
+ "players": [
+  {
+   "id": "p-bc8a5032677b79",
+   "value": {
+    "name": "Μίμης Παπαϊωάννου",
+    "career": {
+     "apps": 481,
+     "goals": 236,
+     "basis": "league (Wikipedia infobox, The Greek Herald)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "aek-c-wp-papaioannou",
+    "aek-c-gh-papaioannou"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-aek-athens-2026-11-13",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Wikipedia infobox (league): 481/236; The Greek Herald: 481/236 (label garbled, figures identical). Other bases: Wikipedia records list (all competitions, from AEK official stats) 583/301; OT.gr 566/289 (basis unstated)."
+  }
+ ],
+ "matches": [],
+ "kits": [],
+ "rivals": [],
+ "skipped": [
+  {
+   "id": "p-92725eeff0e0a3",
+   "reason": "No second publisher with appearances: Wikipedia infobox 208/172 (league); iefimerida.gr and cnn.gr give goals only (228 all, 141 league, to 1965)."
+  },
+  {
+   "id": "p-6285922c387c87",
+   "reason": "Only one publisher reachable: Wikipedia records list 593 apps (all competitions); football.aek.com blocked, search budget exhausted."
+  },
+  {
+   "id": "p-9236ddd9581ef2",
+   "reason": "Only one publisher reachable: Wikipedia records list 495/68 (all competitions)."
+  },
+  {
+   "id": "p-4f633c83f18aa2",
+   "reason": "Only one publisher reachable: Wikipedia records list 492/140 (all competitions)."
+  },
+  {
+   "id": "p-2cef59e24a5992",
+   "reason": "Only one publisher reachable: Wikipedia records list 345/224 (all competitions)."
+  },
+  {
+   "id": "p-d887dcf755ace0",
+   "reason": "Only one publisher reachable: Wikipedia records list 301/116 (all competitions)."
+  },
+  {
+   "id": "p-066df1052defe1",
+   "reason": "Active player; only one publisher with both figures: Wikipedia records list 400/68."
+  }
+ ]
+}

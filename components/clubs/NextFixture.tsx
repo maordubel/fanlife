@@ -1,10 +1,11 @@
 import type {ReactNode} from 'react'
 import {getFixtureFeed} from '@/lib/fixtures/service'
 import {FixtureCard} from '@/components/clubs/FixtureCard'
+import {headToHead} from '@/lib/fixtures/meetings'
 import type {wearLivery} from '@/lib/club-livery'
 import type {UiLocale} from '@/lib/clubs/locale'
 
-type Props={clubId:string;clubName:string;lv:(Parameters<typeof wearLivery>[0]&{pattern:string})|null|undefined;locale:UiLocale;copy:{kicker:string;vs:string;cta:string;kick?:string};
+type Props={clubId:string;clubName:string;lv:(Parameters<typeof wearLivery>[0]&{pattern:string})|null|undefined;locale:UiLocale;copy:{kicker:string;vs:string;cta:string;kick?:string;h2h?:{met:string;won:string;drawn:string;lost:string;first:string}};
  /** what stands in when the provider has no confirmed match for this club */
  none:ReactNode;
  /** wraps the card when there is one (the home page's grid cell) */
@@ -17,7 +18,9 @@ type Props={clubId:string;clubName:string;lv:(Parameters<typeof wearLivery>[0]&{
 export async function NextFixture({clubId,clubName,lv,locale,copy,none,wrap}:Props){
  const feed=await getFixtureFeed(new Date()).catch(()=>null),fx=feed?.fixtures.find(f=>f.clubId===clubId)
  if(!fx||!lv)return <>{none}</>
- const card=<FixtureCard clubId={clubId} clubName={clubName} fx={fx} lv={lv} locale={locale} copy={copy}/>
+ // 12.11.2026 — the balance of every meeting the archive records (lib/fixtures/meetings.ts → headToHead); a slow read never holds the card
+ const h2h=await Promise.race([headToHead(clubId,fx.opponent).catch(()=>null),new Promise<null>(r=>setTimeout(()=>r(null),1500))])
+ const card=<FixtureCard clubId={clubId} clubName={clubName} fx={fx} lv={lv} locale={locale} copy={copy} h2h={h2h?{played:h2h.played,won:h2h.won,drawn:h2h.drawn,lost:h2h.lost,form:h2h.lastFive}:null}/>
  return <>{wrap?wrap(card):card}</>
 }
 

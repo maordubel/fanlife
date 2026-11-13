@@ -96,5 +96,7 @@
  "lu.intro.rule2": "Up to 3 locks and up to 2 coach notes. No clock.",
  "lu.intro.rule3": "Name practice: names are graded, bands are your own arrangement and are not scored.",
  "lu.intro.start": "Start",
- "lu.result.scoreLabel": "starters named"
+ "lu.result.scoreLabel": "starters named",
+ "lu.result.archive": "In the archive",
+ "lu.result.archiveNight": "The night in the archive"
 }

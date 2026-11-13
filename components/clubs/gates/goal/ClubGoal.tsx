@@ -1,6 +1,8 @@
 'use client'
 import {useMemo,useRef,useState,useTransition,type ReactNode} from 'react'
+import Link from 'next/link'
 import {SlideSheet} from '@/components/stage/SlideSheet'
+import {archiveLink} from '@/lib/clubs/archive-link'
 import {firePickFxAt} from '@/components/stage/PickFx'
 import {ClubShirt} from '@/components/clubs/stage/ClubShirt'
 import {tr,shortName} from '@/components/clubs/rumble/shared'
@@ -281,6 +283,12 @@ function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,c
      {draft.slice(verdict.truth.length).map((t,j)=><li key={`x${j}`} data-extra="true"><b className={css.rowNo}>{verdict.truth.length+j+1}</b><div><span className={css.rowMine}>{tx('gl.result.extra',{name:t.actor||unnamed,verb:verbWord(t.action),zone:t.zone})}</span></div></li>)}
     </ol>
     {verdict.narrative&&<p className={css.narrative} lang={contentLocale} dir="auto">{verdict.narrative}</p>}
+    {/* 12.11.2026 — back into the archive: the night this goal was scored, and the man who scored it */}
+    {(()=>{const scorer=[...verdict.truth].reverse().find(t=>t.side!=='opponent'&&t.actor)?.actor??null
+     return <nav className={css.archiveRow} aria-label={tx('gl.result.archive')} data-testid="goal-archive">
+      {g.on&&<Link prefetch={false} href={archiveLink(club,locale,{on:g.on,score:g.score,name:g.opponent})}>{tx('gl.result.archiveNight')} ↗</Link>}
+      {scorer&&<Link prefetch={false} href={archiveLink(club,locale,{name:scorer,year:g.year})} dir="auto">{tx('gl.result.archiveScorer',{name:scorer})} ↗</Link>}
+     </nav>})()}
     {verdict.sources.length>0&&<div><h3 className={css.fine}>{tx('gl.result.sources')}</h3>
      <ul className={css.sources}>{verdict.sources.map((s,i)=><li key={i}>{s.url?<a href={s.url} target="_blank" rel="noopener noreferrer">{s.title}</a>:s.title}</li>)}</ul></div>}
     <p className={css.fine}>{tx('gl.approx')}</p>

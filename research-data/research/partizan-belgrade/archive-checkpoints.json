@@ -11,12 +11,6 @@
   "observedTotalPages": null,
   "perPage": 1,
   "queue": [
-   "/franjoglazer.html",
-   "/milivojedjurdjevic.html",
-   "/stanislavpopesku.html",
-   "/silvesterseres.html",
-   "/ratkocolic.html",
-   "/florijanmatekalo.html",
    "/ristanikolic.html",
    "/vladimirfirm.html",
    "/momciloradunovic.html",
@@ -571,10 +565,16 @@
    "/zlatkocajkovski.html",
    "/prvoslavmihailovic.html",
    "/kirilsimonovski.html",
-   "/atanackovic.html"
+   "/atanackovic.html",
+   "/franjoglazer.html",
+   "/milivojedjurdjevic.html",
+   "/stanislavpopesku.html",
+   "/silvesterseres.html",
+   "/ratkocolic.html",
+   "/florijanmatekalo.html"
   ],
   "state": "partial_budget",
-  "updatedAt": "2026-11-10T11:25:44.066Z",
+  "updatedAt": "2026-11-13T11:15:18.995Z",
   "lastError": null
  },
  "crno-bela-nostalgija:posts": {
@@ -589,7 +589,7 @@
   "observedTotalPages": null,
   "perPage": 25,
   "state": "blocked",
-  "updatedAt": "2026-11-10T11:25:44.890Z",
+  "updatedAt": "2026-11-13T11:15:19.528Z",
   "lastError": "HTTP 403 — a refusal is an answer"
  },
  "crno-bela-nostalgija:pages": {
@@ -604,7 +604,7 @@
   "observedTotalPages": 1,
   "perPage": 25,
   "state": "blocked",
-  "updatedAt": "2026-11-10T11:25:47.988Z",
+  "updatedAt": "2026-11-13T11:15:22.550Z",
   "lastError": "HTTP 403 — a refusal is an answer"
  },
  "partizan-official:html": {
@@ -623,7 +623,7 @@
    "/vesti/istorijat"
   ],
   "state": "listed",
-  "updatedAt": "2026-11-10T11:25:49.999Z",
+  "updatedAt": "2026-11-13T11:15:24.624Z",
   "lastError": null
  },
  "nft-partizan:html": {
@@ -642,7 +642,7 @@
    "/club/2156/1963/Partizan_Beograd.html"
   ],
   "state": "listed",
-  "updatedAt": "2026-11-10T11:25:51.312Z",
+  "updatedAt": "2026-11-13T11:15:26.539Z",
   "lastError": null
  }
 }

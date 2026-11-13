@@ -1,0 +1,14 @@
+# The archive keeps one record per match night, refreshes itself daily, and every game opens it (12.11.2026)
+
+**Owner's ask (12.11.2026):** the archive is an encyclopedia of every club — every meeting, all the history — complete, corrected and current, and every feature uses it.
+
+- **One night, one record.** Two deliveries of the same match (same day, same two numbers) are one match: `lib/clubs/one-night.ts` keeps the best record and lets an *approved* twin lend what it lacks. Two scores on one day are a conflict for a person, never merged. The compiler reports each fold as `SAME_MATCH_FOLDED`.
+- **The league feed is daily and accumulates.** `scripts/ingest/clubs/league-lineups.ts` runs in `research-daily.yml` for every club with `ingest.json`; it adds nights, never drops an approved one, and records scorers and positions only where 365Scores and LiveScore agree.
+- **A club that plays no UEFA football says so** (`"uefa": false` in `ingest.json`), so the daily report raises no false alarm.
+- **Every game opens the archive through the door.** Link with `lib/clubs/archive-link.ts` (`player`, `match`/`on`/`score`, `name`/`year`); the archive resolves it with `lib/clubs/archive-door.ts` and searches the name when it holds no entry — a game's link never ends on a 404.
+- **Research deliveries keep their raw files** under `research-data/<wave>/` and are turned into pack waves by a script that applies the two-publisher rule per touch (`scripts/club-research/integrate-caf-2026-11-12.py` is the model).
+- **The head-to-head ledger is one reader.** `lib/fixtures/meetings.ts → clubMeetings / ledgerOf / headToHead` counts every approved night per opponent; the next-match ticket prints it, and `npm run h2h:build` (daily) writes `content/generated/head-to-head.json` for the studio. Never count meetings anywhere else.
+- **Every approved kit with a documented colour is drawn** (`npm run kits:svgs` → `public/club-kits/<club>/svg/`), maker mark and sponsor lettering included; a kit with no colour on record is not drawn.
+- **Checked corrections live beside the data, not inside it** (13.11.2026). `content/manual/archive-corrections-*.json` names the record, the change, the reason and the publishers; `lib/clubs/corrections.ts` applies it at compile time (The Worker's rows included). The owner authorised Claude to settle conflicts by the better-sourced reading (Wikipedia breaks ties).
+- **Season-history feeds come last.** A whole-history wave (Celtic: FitbaStats × London Hearts) is added after the match feeds (`withSeasonHistory`), so UEFA/league records keep their ids and elevens; club careers are applied once after every wave (`withCareers`) and only fill a missing `career`.
+- **A source the owner approves is a source** (olympiacos-history.gr, 13.11.2026): its facts are read, its pictures are not.

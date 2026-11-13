@@ -542,8 +542,7 @@
         "answer": "Matija Malekinušić",
         "factIds": [
           "zrinjski-mostar:goal-2023-12-14-matija-malekinusic-87",
-          "zrinjski-mostar:w-m-villa-home-2023",
-          "zrinjski-mostar:a-m-2023-12-14-zrinjski-aston-villa"
+          "zrinjski-mostar:w-m-villa-home-2023"
         ],
         "sourceUrl": "https://www.skysports.com/football/news/13030310/zrinjski-mostar-1-1-aston-villa-nicolo-zaniolos-first-goal-for-club-secures-europa-conference-league-last-16-spot",
         "prompt": "Rewind to Zrinjski Mostar v Aston Villa, 14 Dec 2023 (UEFA Europa Conference League). Minute 87: who found the net?",
@@ -556,8 +555,7 @@
         "answer": "Zvonimir Kožulj",
         "factIds": [
           "zrinjski-mostar:goal-2023-09-21-kozulj-winner-az",
-          "zrinjski-mostar:w-m-az-home-2023",
-          "zrinjski-mostar:a-m-2023-09-21-zrinjski-az-alkmaar"
+          "zrinjski-mostar:w-m-az-home-2023"
         ],
         "sourceUrl": "https://www.nfsbih.ba/en/news/football-m/wwin-league-bh/zrinjski-debuted-in-the-group-stage-of-the-conference-league-and-celebrated-after-a-great-turnaround/",
         "prompt": "Rewind to Zrinjski Mostar v AZ Alkmaar, 21 Sept 2023 (UEFA Europa Conference League). Minute 81: who found the net?",
@@ -2209,15 +2207,15 @@
       },
       {
         "questionId": "q_8c405fea5a862287",
-        "answer": "St. Mirren",
+        "answer": "St Mirren",
         "factIds": [
           "celtic:a-m-2025-12-14-st-mirren-celtic"
         ],
         "sourceUrl": "https://webws.365scores.com/web/game/?gameId=4609959",
         "prompt": "Celtic final rewind: 14 Dec 2025 in the League Cup final, Celtic 1-3. Who were the opponents?",
-        "explanation": "St. Mirren 3-1 Celtic, League Cup final, 14 Dec 2025.",
+        "explanation": "St Mirren 3-1 Celtic, League Cup final, 14 Dec 2025.",
         "basePrompt": "Celtic final rewind: 14 Dec 2025 in the League Cup final, Celtic 1-3. Who were the opponents?",
-        "baseExplanation": "St. Mirren 3-1 Celtic, League Cup final, 14 Dec 2025."
+        "baseExplanation": "St Mirren 3-1 Celtic, League Cup final, 14 Dec 2025."
       },
       {
         "questionId": "q_672e212abb6f8ab6",
@@ -2463,10 +2461,10 @@
           "celtic:m-dh-5c701e61e619"
         ],
         "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1901-1910/1908-2/1908-04-18-celtic-5-1-st-mirren-scottish-cup-final/",
-        "prompt": "Place this result in its season: Celtic beat St. Mirren 5-1 in the Scottish Cup Final. Which campaign was it?",
-        "explanation": "Celtic 5-1 St. Mirren, Scottish Cup Final, 18 Apr 1908.",
-        "basePrompt": "Place this result in its season: Celtic beat St. Mirren 5-1 in the Scottish Cup Final. Which campaign was it?",
-        "baseExplanation": "Celtic 5-1 St. Mirren, Scottish Cup Final, 18 Apr 1908."
+        "prompt": "Place this result in its season: Celtic beat St Mirren 5-1 in the Scottish Cup Final. Which campaign was it?",
+        "explanation": "Celtic 5-1 St Mirren, Scottish Cup Final, 18 Apr 1908.",
+        "basePrompt": "Place this result in its season: Celtic beat St Mirren 5-1 in the Scottish Cup Final. Which campaign was it?",
+        "baseExplanation": "Celtic 5-1 St Mirren, Scottish Cup Final, 18 Apr 1908."
       },
       {
         "questionId": "q_6b67ae2e62cdfbfc",
@@ -2475,10 +2473,10 @@
           "celtic:m-a2210b09c4"
         ],
         "sourceUrl": "https://www.thecelticwiki.com/1888-2/",
-        "prompt": "Celtic v Cowlairs in the Glasgow Exhibition Cup Final, 6 Aug 1888. Name the final score (Celtic first).",
-        "explanation": "Celtic 0-2 Cowlairs, Glasgow Exhibition Cup Final, 6 Aug 1888.",
-        "basePrompt": "Celtic v Cowlairs in the Glasgow Exhibition Cup Final, 6 Aug 1888. Name the final score (Celtic first).",
-        "baseExplanation": "Celtic 0-2 Cowlairs, Glasgow Exhibition Cup Final, 6 Aug 1888."
+        "prompt": "Celtic v Cowlairs in the Glasgow Exhibition Cup Final, 6 Sept 1888. Name the final score (Celtic first).",
+        "explanation": "Celtic 0-2 Cowlairs, Glasgow Exhibition Cup Final, 6 Sept 1888.",
+        "basePrompt": "Celtic v Cowlairs in the Glasgow Exhibition Cup Final, 6 Sept 1888. Name the final score (Celtic first).",
+        "baseExplanation": "Celtic 0-2 Cowlairs, Glasgow Exhibition Cup Final, 6 Sept 1888."
       },
       {
         "questionId": "q_0cf4fd7dbe5ac9ec",
@@ -2798,58 +2796,58 @@
         "baseExplanation": "Max Kruse's recorded years at FC St. Pauli: 2009–2012."
       },
       {
-        "questionId": "q_a6f81d0cc8d55cf9",
+        "questionId": "q_069a3da763c609ec",
         "answer": [
           "Rolf Börner",
           "Arvo Heino Raudanma Hansen",
-          "Mathias Hinzmann"
+          "Serkan Dursun"
         ],
         "factIds": [
           "span:st-pauli:p-dh-6eda6e01323b",
           "span:st-pauli:p-dh-e470b28764dc",
-          "span:dfb-10668"
+          "span:st-pauli:p-dh-cfd39d315f2f"
         ],
         "sourceUrl": "https://www.weltfussball.de/person/pe145465/rolf-boerner/",
         "prompt": "Three chapters of FC St. Pauli history. Put these players in order of their first recorded club year, earliest first.",
-        "explanation": "Rolf Börner (1945) → Arvo Heino Raudanma Hansen (1974) → Mathias Hinzmann (2009)",
+        "explanation": "Rolf Börner (1945) → Arvo Heino Raudanma Hansen (1974) → Serkan Dursun (2017)",
         "basePrompt": "Three chapters of FC St. Pauli history. Put these players in order of their first recorded club year, earliest first.",
-        "baseExplanation": "Rolf Börner (1945) → Arvo Heino Raudanma Hansen (1974) → Mathias Hinzmann (2009)"
+        "baseExplanation": "Rolf Börner (1945) → Arvo Heino Raudanma Hansen (1974) → Serkan Dursun (2017)"
       },
       {
-        "questionId": "q_862b327251123ba8",
+        "questionId": "q_0768475faa8efeb8",
         "answer": [
-          "Martin Haase",
-          "Heino Hansen",
-          "Afeez Aremu Olalekan"
+          "Klaus Winkler",
+          "Michael Dahms",
+          "Martino Gatti"
         ],
         "factIds": [
-          "span:st-pauli:p-dh-d0b378bc353d",
-          "span:st-pauli:p-dh-ec722507c11e",
-          "span:st-pauli:p-dh-3d4fcd19e850"
+          "span:dfb-44029",
+          "span:st-pauli:p-dh-9137da24cc0f",
+          "span:st-pauli:p-dh-3a5bee0dd168"
         ],
-        "sourceUrl": "https://www.weltfussball.de/person/pe257633/martin-haase/",
+        "sourceUrl": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/1978-1979-nord/teams/fc-st-pauli",
         "prompt": "Three chapters of FC St. Pauli history. Put these players in order of their first recorded club year, earliest first.",
-        "explanation": "Martin Haase (1954) → Heino Hansen (1974) → Afeez Aremu Olalekan (2020)",
+        "explanation": "Klaus Winkler (1977) → Michael Dahms (1982) → Martino Gatti (1991)",
         "basePrompt": "Three chapters of FC St. Pauli history. Put these players in order of their first recorded club year, earliest first.",
-        "baseExplanation": "Martin Haase (1954) → Heino Hansen (1974) → Afeez Aremu Olalekan (2020)"
+        "baseExplanation": "Klaus Winkler (1977) → Michael Dahms (1982) → Martino Gatti (1991)"
       },
       {
-        "questionId": "q_d789639a94c075a9",
+        "questionId": "q_175e0f6a02016644",
         "answer": [
-          "Walter Dzur",
-          "Klaus Emmerich",
-          "Frank Dröge"
+          "Günther Ahrens",
+          "Klaus Ottens",
+          "Ralph Gunesch"
         ],
         "factIds": [
-          "span:st-pauli:p-dh-9c206c8cecc9",
-          "span:st-pauli:p-dh-8d1b8a696ffd",
-          "span:st-pauli:p-dh-231abf25cc84"
+          "span:st-pauli:p-dh-6e35f09cc45b",
+          "span:dfb-45867",
+          "span:st-pauli:p-dh-7e01828e4ed1"
         ],
-        "sourceUrl": "https://www.weltfussball.de/person/pe76952/walter-dzur/",
+        "sourceUrl": "https://www.weltfussball.de/person/pe256613/guenther-ahrens/",
         "prompt": "Three chapters of FC St. Pauli history. Put these players in order of their first recorded club year, earliest first.",
-        "explanation": "Walter Dzur (1945) → Klaus Emmerich (1983) → Frank Dröge (1998)",
+        "explanation": "Günther Ahrens (1955) → Klaus Ottens (1988) → Ralph Gunesch (2003)",
         "basePrompt": "Three chapters of FC St. Pauli history. Put these players in order of their first recorded club year, earliest first.",
-        "baseExplanation": "Walter Dzur (1945) → Klaus Emmerich (1983) → Frank Dröge (1998)"
+        "baseExplanation": "Günther Ahrens (1955) → Klaus Ottens (1988) → Ralph Gunesch (2003)"
       },
       {
         "questionId": "q_cbeadb596f2a6928",
@@ -2942,8 +2940,7 @@
         "answer": "Ayoub El Kaabi",
         "factIds": [
           "olympiacos:oly-goal-elkaabi-final-fiorentina",
-          "olympiacos:w-m-uecl-final-fiorentina-2024",
-          "olympiacos:a-m-2024-05-29-olympiacos-fiorentina"
+          "olympiacos:w-m-uecl-final-fiorentina-2024"
         ],
         "sourceUrl": "https://www.uefa.com/uefaeuropaconferenceleague/news/028d-1b01e5ec31a5-144c1f00e4f3-1000--olympiacos-1-0-fiorentina-aet-el-kaabi-swoops-to-secure-g/",
         "prompt": "The 2024 Conference League final goes deep into extra time. Who heads in Olympiacos’ winner against Fiorentina?",

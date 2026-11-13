@@ -74,7 +74,7 @@ export function makeShelf(now = () => Date.now()) {
   }
 }
 const shelf = makeShelf()
-const renewing = new Set()
+const renewing = new Map()
 const HOP = ['content-length', 'content-encoding', 'transfer-encoding', 'connection', 'keep-alive']
 const clean = (h) => { const o = { ...h }; for (const k of HOP) delete o[k]; return o }
 function upstream(req) {
@@ -90,9 +90,8 @@ function upstream(req) {
 }
 /** One render behind a stale answer: at most one per page at a time, and a failure leaves the shelf as it was. */
 function renew(key, req) {
-  if (renewing.has(key)) return Promise.resolve(null)
-  renewing.add(key)
-  return new Promise((ok) => {
+  if (renewing.has(key)) return renewing.get(key)
+  const run = new Promise((ok) => {
     const done = (body) => { renewing.delete(key); ok(body || null) }
     const headers = { ...upstream(req), 'accept-encoding': 'identity' }
     delete headers['if-none-match']; delete headers['if-modified-since']
@@ -110,13 +109,15 @@ function renew(key, req) {
     up.on('error', () => done())
     up.end()
   })
+  renewing.set(key, run)
+  return run
 }
 // A new instance starts with an empty shelf, and its first visitors would pay for every render at once. So it lays the
 // table itself: the front page, then every club page and door the front page links to (as linked, ?lang included), one at a time so a real visitor's request
 // is never behind sixteen renders. The site host is the one visitors use (the Worker sends it as X-Fanlife-Host).
 export const SITE_HOST = (() => { try { return new URL(process.env.NEXT_PUBLIC_SITE_URL || '').host } catch { return 'fanlife.dubelteam.com' } })() || 'fanlife.dubelteam.com'
 export const warmList = (html) => [...new Set([...String(html).matchAll(/href="(\/(?:clubs\/[a-z0-9-]+(?:\?lang=[a-z-]{2,5})?|shop|market|our-games))"/g)].map((m) => m[1]))].slice(0, 40)
-async function warm() {
+async function warm(onHome = () => {}) {
   const ask = (path) => {
     const req = { method: 'GET', url: path, headers: { host: SITE_HOST, 'x-forwarded-host': SITE_HOST, 'x-forwarded-proto': 'https', accept: 'text/html', 'user-agent': 'FanLife-FrontDoor/1.0 (warm)' } }
     const key = shelfKey(req)
@@ -124,12 +125,17 @@ async function warm() {
   }
   try {
     const home = await ask('/')
+    onHome()
     for (const p of home ? warmList(home.toString('utf8')) : []) await ask(p)
   } catch { /* the shelf fills on demand instead */ }
+  onHome()
 }
-const server = http.createServer((req, res) => {
+const server = http.createServer(async (req, res) => {
   const key = shelfKey(req)
-  const kept = key ? shelf.get(key) : null
+  let kept = key ? shelf.get(key) : null
+  // the page is being rendered right now (the table is still being laid, or another visitor asked first): join that
+  // render instead of starting a second one on the same CPU
+  if (key && !kept && renewing.has(key)) { await renewing.get(key); kept = shelf.get(key) }
   if (key && kept) {
     if (kept.state === 'stale') renew(key, req)
     const gz = /\bgzip\b/.test(String(req.headers['accept-encoding'] || '')), out = gz ? kept.gz : kept.body
@@ -138,7 +144,14 @@ const server = http.createServer((req, res) => {
     return
   }
   const headers = upstream(req)
-  if (key) { headers['accept-encoding'] = 'identity'; delete headers['if-none-match']; delete headers['if-modified-since'] }
+  // the first visitor of an unshelved page: the next ones join this render until it ends
+  let settle = () => {}
+  if (key) {
+    headers['accept-encoding'] = 'identity'; delete headers['if-none-match']; delete headers['if-modified-since']
+    const run = new Promise((ok) => { settle = () => { if (renewing.get(key) === run) renewing.delete(key); ok(null) } })
+    renewing.set(key, run)
+    setTimeout(settle, 180_000).unref()
+  }
   const up = http.request({ ...UP, method: req.method, path: req.url, headers }, (r) => {
     const status = r.statusCode || 502
     res.writeHead(status, fix(req, status, key ? { ...r.headers, 'x-fanlife-shelf': 'miss' } : { ...r.headers }))
@@ -146,11 +159,13 @@ const server = http.createServer((req, res) => {
       // the first visitor still gets the page as it streams; the same bytes go on the shelf when it ends whole
       const parts = []; let n = 0
       r.on('data', (c) => { n += c.length; if (n <= MAX_BODY) parts.push(c) })
-      r.on('end', () => { if (shelvable(status, r.headers, n)) shelf.put(key, 200, clean(r.headers), Buffer.concat(parts)) })
-    }
+      r.on('end', () => { if (shelvable(status, r.headers, n)) shelf.put(key, 200, clean(r.headers), Buffer.concat(parts)); settle() })
+      r.on('error', settle)
+    } else settle()
     r.pipe(res)
   })
-  up.on('error', () => { if (!res.headersSent) res.writeHead(502); res.end('starting') })
+  up.on('error', () => { settle(); if (!res.headersSent) res.writeHead(502); res.end('starting') })
+  res.on('close', () => { if (!res.writableEnded) settle() })
   req.pipe(up)
 })
 // open the door only once Next answers, so the platform's startup probe never routes a visitor to a cold server
@@ -160,6 +175,9 @@ const ready = () => new Promise((ok) => {
 })
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
 for (let i = 0; i < 600 && !(await ready()); i++) await new Promise((r) => setTimeout(r, 100))
+// Cloud Run gives a starting instance its CPU (boosted) but takes it away between requests, so the table is laid while
+// starting: the door opens once the front page is on the shelf, or after twenty-five seconds at most; the other pages follow
+// behind. On a deploy the old revision keeps serving meanwhile, so nobody waits for it.
+await Promise.race([new Promise((ok) => { warm(ok) }), new Promise((ok) => setTimeout(ok, 25_000))])
 server.listen(Number(process.env.PORT) || 7860, '0.0.0.0')
-warm()
 }

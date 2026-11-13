@@ -6,7 +6,7 @@
    "url": "https://webws.365scores.com/web/game/?gameId=4739326",
    "publisher": "365Scores",
    "access": "available",
-   "checkedAt": "2026-10-10"
+   "checkedAt": "2026-11-12"
   },
   {
    "id": "s365-4739332",
@@ -30,7 +30,7 @@
    "url": "https://webws.365scores.com/web/game/?gameId=4739341",
    "publisher": "365Scores",
    "access": "available",
-   "checkedAt": "2026-10-10"
+   "checkedAt": "2026-11-12"
   },
   {
    "id": "ls-lu-1800647",
@@ -38,7 +38,7 @@
    "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1800647",
    "publisher": "LiveScore",
    "access": "available",
-   "checkedAt": "2026-10-10"
+   "checkedAt": "2026-11-12"
   },
   {
    "id": "s365-4739345",
@@ -118,7 +118,7 @@
    "url": "https://webws.365scores.com/web/game/?gameId=4702056",
    "publisher": "365Scores",
    "access": "available",
-   "checkedAt": "2026-10-10"
+   "checkedAt": "2026-11-12"
   },
   {
    "id": "s365-4702053",
@@ -142,7 +142,7 @@
    "url": "https://webws.365scores.com/web/game/?gameId=4702046",
    "publisher": "365Scores",
    "access": "available",
-   "checkedAt": "2026-10-10"
+   "checkedAt": "2026-11-12"
   },
   {
    "id": "ls-lu-1766847",
@@ -150,7 +150,7 @@
    "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1766847",
    "publisher": "LiveScore",
    "access": "available",
-   "checkedAt": "2026-10-10"
+   "checkedAt": "2026-11-12"
   },
   {
    "id": "s365-4702039",
@@ -431,9 +431,304 @@
    "publisher": "365Scores",
    "access": "available",
    "checkedAt": "2026-10-10"
+  },
+  {
+   "id": "s365-4739293",
+   "title": "365Scores: Hapoel Petah Tikva 2-1 Hapoel Ramat Gan, 2026-11-07",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739293",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4739296",
+   "title": "365Scores: Hapoel Haifa 2-1 Hapoel Petah Tikva, 2026-10-31",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739296",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4739306",
+   "title": "365Scores: Hapoel Petah Tikva 0-1 Beitar Jerusalem, 2026-10-25",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739306",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4739310",
+   "title": "365Scores: Bnei Sakhnin 2-0 Hapoel Petah Tikva, 2026-10-17",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739310",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4739319",
+   "title": "365Scores: Hapoel Petah Tikva 0-3 Maccabi Netanya, 2026-10-10",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739319",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "ls-lu-1800665",
+   "title": "LiveScore: Hapoel Haifa 2-1 Hapoel Petah Tikva, 2026-10-31 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1800665",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "ls-lu-1800632",
+   "title": "LiveScore: Hapoel Tel Aviv 3-0 Hapoel Petah Tikva, 2026-09-18 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1800632",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "ls-lu-1766844",
+   "title": "LiveScore: Hapoel Petah Tikva 2-2 Maccabi Tel Aviv, 2026-05-23 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1766844",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-12"
   }
  ],
  "matches": [
+  {
+   "id": "a-m-2026-11-07-hapoel-petah-tikva-hapoel-ramat-gan",
+   "value": {
+    "name": "Hapoel Petah Tikva 2-1 Hapoel Ramat Gan",
+    "on": "2026-11-07",
+    "competition": "Premier League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Omer Katz",
+     "Harel Shalom",
+     "Or Israelov",
+     "Alex Moussounda",
+     "Stav Israeli",
+     "Boni Amian",
+     "Tomer Altman",
+     "Roy Levi",
+     "Noam Cohen",
+     "Euclides Andrade Clé",
+     "Yves Erick Bile"
+    ],
+    "bench": [
+     "Yazan Nassar",
+     "Itay Ehud",
+     "Roee David",
+     "Karim Kimvuidi",
+     "Guy Badash",
+     "Amit Meshiah",
+     "Moshe Meir",
+     "Omri Cohen",
+     "Hamidou Keyta"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4739293"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore's eleven differs (9/11 surnames agree). · Held as one-publisher; approved by the owner on 13.11.2026.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approval 13.11.2026: all research collected so far)"
+  },
+  {
+   "id": "a-m-2026-10-31-hapoel-haifa-hapoel-petah-tikva",
+   "value": {
+    "name": "Hapoel Haifa 2-1 Hapoel Petah Tikva",
+    "on": "2026-10-31",
+    "competition": "Premier League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Omer Katz",
+     "Yazan Nassar",
+     "Or Israelov",
+     "Alex Moussounda",
+     "Harel Shalom",
+     "Hamidou Keyta",
+     "Tomer Altman",
+     "Boni Amian",
+     "Euclides Andrade Clé",
+     "Karim Kimvuidi",
+     "Yves Erick Bile"
+    ],
+    "bench": [
+     "Diego Arroyo",
+     "Roy Levi",
+     "Noam Cohen",
+     "Guy Badash",
+     "Omri Cohen",
+     "Amit Meshiah",
+     "Zohar Grinberg",
+     "Itay Ehud",
+     "Nachman Assal"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4739296",
+    "ls-lu-1800665"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-hapoel-petah-tikva"
+  },
+  {
+   "id": "a-m-2026-10-25-hapoel-petah-tikva-beitar-jerusalem",
+   "value": {
+    "name": "Hapoel Petah Tikva 0-1 Beitar Jerusalem",
+    "on": "2026-10-25",
+    "competition": "Premier League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Yves Erick Bile",
+     "Karim Kimvuidi",
+     "Euclides Andrade Clé",
+     "Roy Levi",
+     "Boni Amian",
+     "Tomer Altman",
+     "Harel Shalom",
+     "Or Israelov",
+     "Alex Moussounda",
+     "Stav Israeli",
+     "Omer Katz"
+    ],
+    "bench": [
+     "Yazan Nassar",
+     "Itay Ehud",
+     "Edmond Asante",
+     "Noam Cohen",
+     "Hamidou Keyta",
+     "Amit Meshiah",
+     "Zohar Grinberg",
+     "Nachman Assal",
+     "Omri Cohen"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4739306"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore's eleven differs (9/11 surnames agree). · Held as one-publisher; approved by the owner on 13.11.2026.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approval 13.11.2026: all research collected so far)"
+  },
+  {
+   "id": "a-m-2026-10-17-bnei-sakhnin-hapoel-petah-tikva",
+   "value": {
+    "name": "Bnei Sakhnin 2-0 Hapoel Petah Tikva",
+    "on": "2026-10-17",
+    "competition": "Premier League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Omer Katz",
+     "Yazan Nassar",
+     "Or Israelov",
+     "Alex Moussounda",
+     "Stav Israeli",
+     "Boni Amian",
+     "Itay Ehud",
+     "Karim Kimvuidi",
+     "Roee David",
+     "Roy Levi",
+     "Yves Erick Bile"
+    ],
+    "bench": [
+     "Tomer Altman",
+     "Edmond Asante",
+     "Noam Cohen",
+     "Hamidou Keyta",
+     "Euclides Andrade Clé",
+     "Amit Meshiah",
+     "Zohar Grinberg",
+     "Harel Shalom",
+     "Nachman Assal"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4739310"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore's eleven differs (9/11 surnames agree). · Held as one-publisher; approved by the owner on 13.11.2026.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approval 13.11.2026: all research collected so far)"
+  },
+  {
+   "id": "a-m-2026-10-10-hapoel-petah-tikva-maccabi-netanya",
+   "value": {
+    "name": "Hapoel Petah Tikva 0-3 Maccabi Netanya",
+    "on": "2026-10-10",
+    "competition": "Premier League",
+    "score": "0-3",
+    "venue": null,
+    "lineup": [
+     "Omer Katz",
+     "Yazan Nassar",
+     "Or Israelov",
+     "Alex Moussounda",
+     "Stav Israeli",
+     "Boni Amian",
+     "Itay Ehud",
+     "Edmond Asante",
+     "Roee David",
+     "Roy Levi",
+     "Yves Erick Bile"
+    ],
+    "bench": [
+     "Harel Shalom",
+     "Tomer Altman",
+     "Noam Cohen",
+     "Guy Badash",
+     "Euclides Andrade Clé",
+     "Amit Meshiah",
+     "Zohar Grinberg",
+     "Nachman Assal",
+     "Omri Cohen"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4739319"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score). · Held as one-publisher; approved by the owner on 13.11.2026.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approval 13.11.2026: all research collected so far)"
+  },
   {
    "id": "a-m-2026-09-18-hapoel-tel-aviv-hapoel-petah-tikva",
    "value": {
@@ -457,9 +752,9 @@
     ],
     "bench": [
      "Or Israelov",
+     "Roy Levi",
      "Itay Ehud",
      "Noam Cohen",
-     "Roy Levi",
      "Hamidou Keyta",
      "Amit Meshiah",
      "Harel Shalom",
@@ -469,16 +764,17 @@
     "scorers": []
    },
    "sources": [
-    "s365-4739326"
+    "s365-4739326",
+    "ls-lu-1800632"
    ],
-   "researchedAt": "2026-10-10",
+   "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore's eleven differs (9/11 surnames agree).",
-   "confidence": 2,
-   "status": "review",
-   "approvedAt": null,
-   "approvedBy": null
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-hapoel-petah-tikva"
   },
   {
    "id": "a-m-2026-09-13-hapoel-petah-tikva-hapoel-beer-sheva",
@@ -559,19 +855,21 @@
      "Noam Cohen",
      "Guy Badash"
     ],
-    "scorers": []
+    "scorers": [
+     "Boni Amian"
+    ]
    },
    "sources": [
     "s365-4739341",
     "ls-lu-1800647"
    ],
-   "researchedAt": "2026-10-10",
+   "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
    "confidence": 3,
    "status": "approved",
-   "approvedAt": "2026-10-10",
+   "approvedAt": "2026-11-12",
    "approvedBy": "automated:cross-source-review-league-lineups-hapoel-petah-tikva"
   },
   {
@@ -927,19 +1225,23 @@
      "Zohar Grinberg",
      "Aviad Hakiki"
     ],
-    "scorers": []
+    "scorers": [
+     "Yonatan Cohen",
+     "Mamady Diarra"
+    ]
    },
    "sources": [
-    "s365-4702056"
+    "s365-4702056",
+    "ls-lu-1766844"
    ],
-   "researchedAt": "2026-10-10",
+   "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore's eleven differs (9/11 surnames agree).",
-   "confidence": 2,
-   "status": "review",
-   "approvedAt": null,
-   "approvedBy": null
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-league-lineups-hapoel-petah-tikva"
   },
   {
    "id": "a-m-2026-05-19-hapoel-petah-tikva-beitar-jerusalem",
@@ -1020,19 +1322,21 @@
      "Orel Baye",
      "Omri Cohen"
     ],
-    "scorers": []
+    "scorers": [
+     "Yonatan Cohen"
+    ]
    },
    "sources": [
     "s365-4702046",
     "ls-lu-1766847"
    ],
-   "researchedAt": "2026-10-10",
+   "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
    "confidence": 3,
    "status": "approved",
-   "approvedAt": "2026-10-10",
+   "approvedAt": "2026-11-12",
    "approvedBy": "automated:cross-source-review-league-lineups-hapoel-petah-tikva"
   },
   {
@@ -2330,6 +2634,7 @@
    "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
   }
  ],
+ "players": [],
  "kits": [],
  "rivals": []
 }

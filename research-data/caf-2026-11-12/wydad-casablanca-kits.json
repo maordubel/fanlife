@@ -1,0 +1,574 @@
+{
+ "sources": [
+  {
+   "id": "wy-k-fka-index",
+   "title": "Wydad Athletic Club kits – Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-kits-t876/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-k-fka-2025-26-home",
+   "title": "Wydad Athletic Club 2025-26 Home Kit",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2025-26-home-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-k-fka-2022-23-home",
+   "title": "Wydad Athletic Club 2022-23 Home Kit",
+   "url": "https://footballkitarchive.com/wydad-athletic-club-2022-23-home-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-k-fka-2022-23-away",
+   "title": "Wydad Athletic Club 2022-23 Away Kit",
+   "url": "https://footballkitarchive.com/wydad-athletic-club-2022-23-away-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-k-fka-2022-23-third",
+   "title": "Wydad Athletic Club 2022-23 Third Kit",
+   "url": "https://footballkitarchive.com/wydad-athletic-club-2022-23-third-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-k-fka-2018-19-home",
+   "title": "Wydad Athletic Club 2018-19 Home Kit",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2018-19-home-kit/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-k-fka-2017-18-home",
+   "title": "Wydad Athletic Club 2017-18 Home Kit",
+   "url": "https://footballkitarchive.com/wydad-athletic-club-2017-18-home-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-k-fka-2017-18-away",
+   "title": "Wydad Athletic Club 2017-18 Away Kit",
+   "url": "https://footballkitarchive.com/wydad-athletic-club-2017-18-away-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-k-fka-2017-18-third",
+   "title": "Wydad Athletic Club 2017-18 Third Kit",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2017-18-third-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-k-fka-2016-17-away",
+   "title": "Wydad Athletic Club 2016-17 Away Kit",
+   "url": "https://footballkitarchive.com/wydad-athletic-club-2016-17-away-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-k-fka-2011-12-away",
+   "title": "Wydad Athletic Club 2011-12 Away Kit",
+   "url": "https://footballkitarchive.com/wydad-athletic-club-2011-12-away-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-k-fka-2007-08-away",
+   "title": "Wydad Athletic Club 2007-08 Away Kit",
+   "url": "https://footballkitarchive.com/wydad-athletic-club-2007-08-away-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-k-fka-1998-99-away",
+   "title": "Wydad Athletic Club 1998-99 Away Kit",
+   "url": "https://footballkitarchive.com/wydad-athletic-club-1998-99-away-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-k-fka-1989-90-home",
+   "title": "Wydad Athletic Club 1989-90 Home Kit",
+   "url": "https://footballkitarchive.com/wydad-athletic-club-1989-90-home-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  }
+ ],
+ "kits": [
+  {
+   "id": "wy-kit-2025-26-home",
+   "value": {
+    "name": "Wydad AC 2025/26 home",
+    "season": "2025/26",
+    "type": "home",
+    "manufacturer": "Kappa",
+    "construction": {
+     "design": "sash",
+     "colors": "red/white/gold"
+    },
+    "sponsor": "Ingelec",
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "wy-k-fka-2025-26-home",
+    "wy-k-fka-index"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Kit page: Kappa, Ingelec, sash design, red/white/gold. Shorts and socks not stated."
+  },
+  {
+   "id": "wy-kit-2022-23-home",
+   "value": {
+    "name": "Wydad AC 2022/23 home",
+    "season": "2022/23",
+    "type": "home",
+    "manufacturer": "Macron",
+    "construction": {
+     "design": "contrasting sleeves",
+     "colors": "red/white"
+    },
+    "sponsor": "Ingelec",
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "wy-k-fka-2022-23-home",
+    "wy-k-fka-index"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Kit page: Macron, Ingelec, contrasting-sleeves design, red/white. Shorts and socks not stated."
+  },
+  {
+   "id": "wy-kit-2022-23-away",
+   "value": {
+    "name": "Wydad AC 2022/23 away",
+    "season": "2022/23",
+    "type": "away",
+    "manufacturer": "Macron",
+    "construction": {
+     "design": "plain",
+     "colors": "white/red"
+    },
+    "sponsor": "Ingelec",
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "wy-k-fka-2022-23-away",
+    "wy-k-fka-index"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Kit page: Macron, Ingelec, plain, white/red. Shorts and socks not stated."
+  },
+  {
+   "id": "wy-kit-2022-23-third",
+   "value": {
+    "name": "Wydad AC 2022/23 third",
+    "season": "2022/23",
+    "type": "third",
+    "manufacturer": "Macron",
+    "construction": {
+     "design": null,
+     "colors": null
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "wy-k-fka-2022-23-third",
+    "wy-k-fka-index"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Kit page states Macron only; design, colours and sponsor not stated."
+  },
+  {
+   "id": "wy-kit-2018-19-home",
+   "value": {
+    "name": "Wydad AC 2018/19 home",
+    "season": "2018/19",
+    "type": "home",
+    "manufacturer": "Macron",
+    "construction": {
+     "design": null,
+     "colors": null
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "wy-k-fka-2018-19-home",
+    "wy-k-fka-index"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Kit page states Macron only; other fields not stated."
+  },
+  {
+   "id": "wy-kit-2017-18-home",
+   "value": {
+    "name": "Wydad AC 2017/18 home",
+    "season": "2017/18",
+    "type": "home",
+    "manufacturer": "Macron",
+    "construction": {
+     "design": null,
+     "colors": null
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "wy-k-fka-2017-18-home",
+    "wy-k-fka-index"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Kit page states Macron only; other fields not stated."
+  },
+  {
+   "id": "wy-kit-2017-18-away",
+   "value": {
+    "name": "Wydad AC 2017/18 away",
+    "season": "2017/18",
+    "type": "away",
+    "manufacturer": "Macron",
+    "construction": {
+     "design": null,
+     "colors": null
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "wy-k-fka-2017-18-away",
+    "wy-k-fka-index"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Kit page states Macron only; other fields not stated."
+  },
+  {
+   "id": "wy-kit-2017-18-third",
+   "value": {
+    "name": "Wydad AC 2017/18 third",
+    "season": "2017/18",
+    "type": "third",
+    "manufacturer": "Macron",
+    "construction": {
+     "design": "gradient",
+     "colors": "black/grey"
+    },
+    "sponsor": "Ingelec",
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "wy-k-fka-2017-18-third",
+    "wy-k-fka-index"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Kit page: Macron, Ingelec, gradient design, black/gray. Shorts and socks not stated."
+  },
+  {
+   "id": "wy-kit-2016-17-away",
+   "value": {
+    "name": "Wydad AC 2016/17 away",
+    "season": "2016/17",
+    "type": "away",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "chest band",
+     "colors": "white/red"
+    },
+    "sponsor": "Ingelec",
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "wy-k-fka-2016-17-away",
+    "wy-k-fka-index"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Kit page: adidas, Ingelec, chest-band design, white/red. Shorts and socks not stated."
+  },
+  {
+   "id": "wy-kit-2011-12-away",
+   "value": {
+    "name": "Wydad AC 2011/12 away",
+    "season": "2011/12",
+    "type": "away",
+    "manufacturer": null,
+    "construction": {
+     "design": null,
+     "colors": null
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "wy-k-fka-2011-12-away",
+    "wy-k-fka-index"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Kit page brand label reads 'maroc' rather than a named manufacturer, so manufacturer left null; other fields not stated."
+  },
+  {
+   "id": "wy-kit-2007-08-away",
+   "value": {
+    "name": "Wydad AC 2007/08 away",
+    "season": "2007/08",
+    "type": "away",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": null,
+     "colors": null
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "wy-k-fka-2007-08-away",
+    "wy-k-fka-index"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Kit page states adidas only; other fields not stated."
+  },
+  {
+   "id": "wy-kit-1998-99-away",
+   "value": {
+    "name": "Wydad AC 1998/99 away",
+    "season": "1998/99",
+    "type": "away",
+    "manufacturer": "New Balance",
+    "construction": {
+     "design": null,
+     "colors": null
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "wy-k-fka-1998-99-away",
+    "wy-k-fka-index"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Kit page states New Balance only; other fields not stated."
+  },
+  {
+   "id": "wy-kit-1989-90-home",
+   "value": {
+    "name": "Wydad AC 1989/90 home",
+    "season": "1989/90",
+    "type": "home",
+    "manufacturer": "C'drik Sports",
+    "construction": {
+     "design": null,
+     "colors": null
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "wy-k-fka-1989-90-home",
+    "wy-k-fka-index"
+   ],
+   "researchedAt": "2026-11-12",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Kit page states C'drik Sports; described as the shirt worn in the 1989-90 league-title season. Other fields not stated."
+  }
+ ]
+}

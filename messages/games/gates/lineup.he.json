@@ -96,5 +96,7 @@
  "lu.intro.rule2": "עד 3 נעילות ועד 2 הערות מאמן. בלי שעון.",
  "lu.intro.rule3": "אימון שמות: השמות מדורגים, הקווים הם הסידור שלכם ואינם מקבלים ניקוד.",
  "lu.intro.start": "התחלה",
- "lu.result.scoreLabel": "פותחים שנקבו"
+ "lu.result.scoreLabel": "פותחים שנקבו",
+ "lu.result.archive": "בארכיון",
+ "lu.result.archiveNight": "הערב הזה בארכיון"
 }

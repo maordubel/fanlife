@@ -99,6 +99,7 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [front-door-shelf](front-door-shelf.md) · A public page is answered from the front door's shelf, fresh for a minute and stale while it is renewed; the desk, APIs and the owner's session always reach the server (13.11.2026)
 - [studio-experience](studio-experience.md) · Every Football Stories film is an experience: a judged hook, a DOCU edit with no still past 4 s, the hand-made graphics on data only, and a gate that measures it (12.11.2026)
 - [model-film](model-film.md) · Every Football Stories film is assembled in the model's order and ships as the model's package: hook, question card, chapters on a turn, bookend, Shorts, Reels, marketing (13.11.2026)
+- [writer-salvage](writer-salvage.md) · The studio always makes a film and never says what it cannot prove: a failing script is repaired in code (re-cite, remove, copy the hook), made shorter, never padded; a thin archive is written short (13.11.2026)
 
 ## Control room, research desk and CRM
 
@@ -207,5 +208,7 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [128](128.md) · A discovery unit promises only what the target can do, and shows only when it may (27.10.2026)
 - [shop-library-only](shop-library-only.md) · The shop prints only from the owner's library and sells only fan art that is ours to sell; Printify Pop-Up checkout (12.11.2026)
 - [shop-whole-catalogue](shop-whole-catalogue.md) · The builder opens all of Printify's catalogue on shelves, European printer first; one upload for every product chosen (12.11.2026)
+- [shop-design-controls](shop-design-controls.md) · Front/back/both, size, garment colours, background removal, per-product margin, selling listing text (13.11.2026)
 - [shop-checks-itself](shop-checks-itself.md) · The shop re-reads every product from Printify hourly, repairs links and pictures, hides what was deleted, re-presses passing failures; never shows anything itself (12.11.2026)
 - [hub-order](hub-order.md) · The hub and a club home are put in order, not redesigned: nothing hidden, the features indexed, clubs as a slide on a phone, no next-match box (12.11.2026)
+- [archive-one-night](archive-one-night.md) · One record per match night, a daily self-refreshing league feed, and the archive door every game links through (12.11.2026)

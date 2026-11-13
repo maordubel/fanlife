@@ -96,5 +96,8 @@
  "gl.ask.what0": "What happened on touch {n}?",
  "gl.move": "The move",
  "gl.move.empty": "No touches yet. The move starts with your first pick.",
- "gl.move.at": "{verb} · {zone}"
+ "gl.move.at": "{verb} · {zone}",
+ "gl.result.archive": "In the archive",
+ "gl.result.archiveNight": "The night in the archive",
+ "gl.result.archiveScorer": "{name} in the archive"
 }

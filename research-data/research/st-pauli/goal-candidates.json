@@ -13,15 +13,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2022/10/05/gedenkstaettenfahrt-nach-oswiecim-auschwitz/",
-    "locator": "p60",
-    "quote": "Den Abschluss des Tages bildete die WDR-Dokumentation „Auschwitz war auch meine Stadt“ (YouTube, 30min), in der Zeitzeugen über ihr damaliges Leben hier sprachen. Unter anderem kam ein überlebender Häftling des Lagers ebenso zu Wort, wie eine deutsche Arbeiterin des hier extra angesiedelten IG Farben-Werkes, die ihre Zeit in Auschwitz verstörenderweise auch im Rückblick noch als die schönste Zeit ihres Lebens bezeichnet.",
-    "bodyHash": "c09e64b878d5702b87c8681cf9111f79f78fb775e73319d9bc0c1695dc5ef3d4",
-    "fetchedAt": "2026-11-03T11:22:03.588Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2023/03/29/lage-am-millerntor-29-maerz-2023/",
     "locator": "p31",
     "quote": "Zum Thema gibt es auch wieder einen Audiobeitrag auf YouTube (30min), in dem Hamburger Hochbahn Mobilitätsexpertin Doreen Kerinnis, Verkehrssenator Anjes Tjarks und Franziska Altenrath (Nachhaltigkeit beim FCSP) zu Gast sind.",
@@ -82,6 +73,15 @@
     "bodyHash": "455c4507f664ebb1e1f5db0856aa69a32586ab1908a3b69775b246260c66f7f8",
     "fetchedAt": "2026-11-09T12:08:38.659Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/06/07/lage-am-millerntor-07-juni-2024/",
+    "locator": "p52",
+    "quote": "Jacob begab sich für eineinhalb Jahre in eine ambulante Reha, gab die Kontrolle über sein Konto ab – und schaffte den Weg zurück. Heute arbeitet er wieder als Pressesprecher, bei Arminia Bielefeld. Beim NDR (30min) erzählt er seine Geschichte.",
+    "bodyHash": "64187845924174c32089610fba3303b0a163525eb0949c2b4300f63826ada5c2",
+    "fetchedAt": "2026-11-12T11:51:45.815Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -89,8 +89,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-09T12:08:38.659Z",
-  "updatedAt": "2026-11-09T12:08:38.659Z"
+  "createdAt": "2026-11-12T11:51:45.815Z",
+  "updatedAt": "2026-11-12T11:51:45.815Z"
  },
  {
   "id": "ga-03973ac070b40b9b",
@@ -104,15 +104,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "millernton",
-    "url": "https://millernton.de/2019/06/05/fcspgoesusa-and-can-oder-zu-gast-bei-freunden/",
-    "locator": "p7",
-    "quote": "Er sorgte dabei auch gleich für gute Laune: Beim Security-Check seiner Gitarre fragte ihn der Security-Hoschi: „ Ey, dich kenne ich, bist Du nicht Bosse? “, als er das verneinte, haute der Typ ab, um 3 min später wieder zu kommen: „ Ach nee, aber jetzt weiß ich es: Du bist Thees Uhlmann von Kettcar! “",
-    "bodyHash": "2c64aecb0bb9bf31cd8abc1bbc7ac50c9cd0ad089c9e02f91de5f65f05ae2914",
-    "fetchedAt": "2026-10-20T08:43:37.067Z",
-    "language": "en"
-   },
    {
     "sourceId": "millernton",
     "url": "https://millernton.de/2020/10/02/lage-am-millerntor-02-oktober-2020/",
@@ -175,6 +166,15 @@
     "bodyHash": "ee61db445a9214b0ac41bf112543d434f45020ebb9b14a2bdeb4347cb57f1d2d",
     "fetchedAt": "2026-11-07T10:43:01.978Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/08/12/lage-am-millerntor-12-august-2024/",
+    "locator": "p86",
+    "quote": "// Spielbericht fcstpauli.com // Highlights (3min) NordFV.tv (Registrierung erforderlich)",
+    "bodyHash": "fdee35f628237e8b94761d714d33096ae642981b345386c2ba8ad175eb952df8",
+    "fetchedAt": "2026-11-13T11:15:35.650Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -182,8 +182,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:43:01.978Z",
-  "updatedAt": "2026-11-07T10:43:01.978Z"
+  "createdAt": "2026-11-13T11:15:35.650Z",
+  "updatedAt": "2026-11-13T11:15:35.650Z"
  },
  {
   "id": "ga-841148b1b6e631c5",
@@ -197,15 +197,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "millernton",
-    "url": "https://millernton.de/2022/06/21/die-saison-21-22-der-offensivspieler-des-fc-st-pauli-chapter-two/",
-    "locator": "p18",
-    "quote": "Die Frage nach den Gründen für die schwächere Rückrunde von Guido Burgstaller beschäftigt mich schon einige Zeit. Die restlichen Daten zeigen keine signifikante Änderung an. Egal, ob expected Goals, Anzahl an Torschüssen, Dribblings, Pässe, Erfolgsquoten, alles – einzig bei der Anzahl an erzielten Toren hat sich etwas verändert. Aus Datensicht komme ich also zu dem Schluss, dass es sich bei der Verringerung der Toranzahl um ein gewisses Maß an Pech handeln muss (oder Glück in der Hinrunde). Zumindest sind die xG-Werte (0.49 pro 90min) etwas niedriger als die erzielten Tore (0.58 pro 90min), wa",
-    "bodyHash": "e4d1cf90e440a01fb46102fee0ac4da27314bfc924a527484d8f788ef0994995",
-    "fetchedAt": "2026-11-02T11:43:08.105Z",
-    "language": "en"
-   },
    {
     "sourceId": "millernton",
     "url": "https://millernton.de/2022/08/26/2-bundesliga-6-spieltag-2022-23/",
@@ -268,6 +259,15 @@
     "bodyHash": "5f5cb1633640a550d253e7dc0dbb47b6d7a823dd2e722a8462379f3e82925ff2",
     "fetchedAt": "2026-11-07T10:42:59.146Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/08/01/lage-am-millerntor-01-august-2024/",
+    "locator": "p14",
+    "quote": "Helene Altgelt schreibt bei 90min.de über Fußball (Frauen) und ist Fan des SC Freiburg . In der neuesten Episode „MillernTon meets…“ sprach Yannick daher mit ihr unter anderem über Christian Streich, das Dreisamstadion und den neuen Gästeblock.",
+    "bodyHash": "7e23b68cab0ab7e3dddab190b3dad870e6e12f3c5415d2cd20111f3fb7027cd2",
+    "fetchedAt": "2026-11-13T11:15:33.213Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -275,8 +275,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:59.146Z",
-  "updatedAt": "2026-11-07T10:42:59.146Z"
+  "createdAt": "2026-11-13T11:15:33.213Z",
+  "updatedAt": "2026-11-13T11:15:33.213Z"
  },
  {
   "id": "ga-a41e98643556d4b1",
@@ -700,6 +700,15 @@
     "bodyHash": "2d89d4667baf18ab0f4236421482dd0c0c4cfe9e142dcdf497d760f52af4bf52",
     "fetchedAt": "2026-11-05T11:31:41.785Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/05/20/sv-wehen-wiesbaden-vs-fc-st-pauli-12-champions-at-last/",
+    "locator": "p4",
+    "quote": "Die Highlights in der Sportschau (8min) sind hingegen verfügbar, einen Kurzbericht mit Stimmen von Irvine, Sinani und Hürzeler gibt es zusätzlich beim NDR (3min) .",
+    "bodyHash": "55272ed97745e3a30af828e3925dc79dbf8dfd139e31892e66566f6493b37363",
+    "fetchedAt": "2026-11-12T11:51:42.867Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -707,8 +716,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-05T11:31:41.785Z",
-  "updatedAt": "2026-11-05T11:31:41.785Z"
+  "createdAt": "2026-11-12T11:51:42.867Z",
+  "updatedAt": "2026-11-12T11:51:42.867Z"
  },
  {
   "id": "ga-f0288a576187c45b",
@@ -826,6 +835,15 @@
     "bodyHash": "997f27f8b95f6666bed69eb53e5900e68d5d93e55e8543906e84d4ae9d48e488",
     "fetchedAt": "2026-10-25T08:45:17.491Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/07/22/lage-am-millerntor-22-juli-2024/",
+    "locator": "p5",
+    "quote": "Gegen Fürth gab es in 2x60min eine 1:3-Niederlage, das Tor für die Kiezkicker erzielte Adam Dźwigała in der zweiten Halbzeit.",
+    "bodyHash": "4bcaefd0980466190cdbcdaf24e3086ea36c98a75658dd30e81f158b4ff26df6",
+    "fetchedAt": "2026-11-13T11:15:30.642Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -833,8 +851,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-25T08:45:17.491Z",
-  "updatedAt": "2026-10-25T08:45:17.491Z"
+  "createdAt": "2026-11-13T11:15:30.642Z",
+  "updatedAt": "2026-11-13T11:15:30.642Z"
  },
  {
   "id": "ga-c76513ad6243ab28",
@@ -901,6 +919,15 @@
     "bodyHash": "2e94496c22d30c451a805c0d16b476a4bc097a113b57d961ccf25718ce30f67f",
     "fetchedAt": "2026-11-08T10:47:50.876Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/07/30/lage-am-millerntor-30-juli-2024/",
+    "locator": "p5",
+    "quote": "Bei Hamburg 1 gibt es ein kurzes Video von der Kollaustraße (2min) , mit Interview-Aussagen von Carlo Boukhalfa . Wer davon mehr lesen möchte, wird beim Abendblatt (€) fündig, wo er etwas detaillierter auch zu einem noch möglichen Transfer Stellung nimmt.",
+    "bodyHash": "47c91f0e52784c5dd6c49bfeb03064cb5fccfacad10887722a0754295ba62545",
+    "fetchedAt": "2026-11-13T11:15:33.212Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -908,8 +935,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-08T10:47:50.876Z",
-  "updatedAt": "2026-11-08T10:47:50.876Z"
+  "createdAt": "2026-11-13T11:15:33.212Z",
+  "updatedAt": "2026-11-13T11:15:33.212Z"
  },
  {
   "id": "ga-215c67467d8ebaef",
@@ -1012,15 +1039,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2021/01/15/lage-am-millerntor-15-januar-2021/",
-    "locator": "p35",
-    "quote": "Bibiana Steinhaus hat bekanntlich ihre Karriere als Schiedsrichterin beendet, so wurde für den DFB auch ein Platz auf der FIFA-Liste frei. Dieser wurde jetzt mit Franziska Wildfeuer aus Schleswig-Holstein besetzt, die am Sonntag im N3 Sportclub (11min) zu Gast war.",
-    "bodyHash": "4bbe36c92c0129febb925141994247769b6c6447786bab3ef4f15dc6842a7f64",
-    "fetchedAt": "2026-10-27T09:22:18.692Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2021/04/06/lage-am-millerntor-06-april-2021/",
     "locator": "p41",
     "quote": "Ein sehr lesenswertes Interview mit dem US-amerikanischen Sportwissenschaftler Joseph N. Cooper gibt es beim Deutschlandfunk . Wie so häufig wahlweise zu lesen oder zu hören (11min).",
@@ -1081,6 +1099,15 @@
     "bodyHash": "cdac9c7d12860b3f0c250194dfcb63aa59ebcd4bef5a7ba3007038b753b60045",
     "fetchedAt": "2026-11-07T10:42:56.088Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/07/29/lage-am-millerntor-29-juli-2024/",
+    "locator": "p8",
+    "quote": "Unser Cheftrainer gab Lena Gruninger (Medienabteilung) zum Ende der Trainingslagers ein Interview. Dieses fand bereits vor dem abschließenden Testspiel gegen Olympique Lyon (1:0) statt, dem positiven Fazit tat dies selbstverständlich auch vorher schon keinen Abbruch. // YouTube (11min)",
+    "bodyHash": "6d0ee8d99b3907f331785bb7987c42d6bf722bf1e37b55358528e64f93782f68",
+    "fetchedAt": "2026-11-13T11:15:33.210Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1088,8 +1115,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:56.088Z",
-  "updatedAt": "2026-11-07T10:42:56.088Z"
+  "createdAt": "2026-11-13T11:15:33.210Z",
+  "updatedAt": "2026-11-13T11:15:33.210Z"
  },
  {
   "id": "ga-be3f364aae04b426",
@@ -1147,6 +1174,15 @@
     "bodyHash": "dbeb6eea200e612cd9166a3d2cf86fbc2b53f733c06d47c4043a602abbe14cea",
     "fetchedAt": "2026-11-09T12:08:41.720Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/07/23/lage-am-millerntor-23-juli-2024/",
+    "locator": "p41",
+    "quote": "„Mit Sicherheit zum Wohle des Fußballs“ (12min)",
+    "bodyHash": "62f05279bb2adb0a09c9e1c4c09e3180fe2f49ee33bdb1fd28e611c0414cf5be",
+    "fetchedAt": "2026-11-13T11:15:30.646Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1154,8 +1190,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-09T12:08:41.720Z",
-  "updatedAt": "2026-11-09T12:08:41.720Z"
+  "createdAt": "2026-11-13T11:15:30.646Z",
+  "updatedAt": "2026-11-13T11:15:30.646Z"
  },
  {
   "id": "ga-c85bb1efc815c755",
@@ -1369,24 +1405,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2020/09/06/endlich-wieder-auswaertsfahrt/",
-    "locator": "p2",
-    "quote": "Bereits vor zwei Wochen waren einige Fans zum Test nach Buchholz gefahren, aber eine 20minütige Regiofahrt fühlt sich natürlich nicht wirklich nach Auswärtsfahrt an.",
-    "bodyHash": "ebedb37b20b397ab42223d28790f553f892f7e1803cc6b4791c4b1a1f4952e0f",
-    "fetchedAt": "2026-10-26T09:23:36.860Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
-    "url": "https://millernton.de/2021/04/26/lage-am-millerntor-26-april-2021/",
-    "locator": "p10",
-    "quote": "Den gestrigen Auftritt (20min) könnt Ihr hier nochmal anschauen.",
-    "bodyHash": "eef0ac37f4325662a6d7f1dced56151166e37b2029c22f62b5f9fd3c66fa704b",
-    "fetchedAt": "2026-10-28T10:02:37.266Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2021/06/02/top18-der-2-bundesliga/",
     "locator": "p7",
     "quote": "In einem 4-2-3-1 schickt Jussi sein Team auf den Platz. Wobei ich anhand der personellen Aufstellung durchaus bezweifeln möchte, dass die zwei Spieler vor der Abwehr überhaupt eine defensive Rolle einnehmen würden. Denn Jae-Sung Lee und Rodrigo Zalazar bestachen in der Saison eher offensiv und sicher nicht auf der Sechser-Position. Hierzu liefert Jussi auch gleich die passende Erklärung: „ Es ist vermutlich eine zu offensive Aufstellung, die aber sehr gut dafür geeignet ist die letzten 20min zu wirbeln, wenn man 0:1 zurück liegt. „",
@@ -1438,6 +1456,24 @@
     "bodyHash": "1ce7587e6b85e9c7549371f82b36a62ab0bc19cf867d0702ebe10d323dc9e01c",
     "fetchedAt": "2026-11-08T10:47:50.880Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/07/01/lage-am-millerntor-01-juli-2024/",
+    "locator": "p61",
+    "quote": "Vor der EM war neben „Nachhaltigkeit“ natürlich auch die Sicherheit ein großes Thema. Nun können Massenveranstaltungen in dieser Größenordnung nie zu 100% sicher sein – wenn man dies versuchen würde umzusetzen, hätte dies massive Einschnitte zur Folge und doch würde man nicht alles abdecken können. Die Anzahl an Flitzern hielt sich bisher wohl auch in Grenzen, ein YouTuber hatte sich beim Eröffnungsspiel als Maskottchen eingeschlichen (20min) , und wurde anschließend verhaftet und verklagt (7min) . Angesichts von 2 Mio. und 2,6 Mio. Aufrufen, wird es wohl trotzdem keinen großen finanziellen Sc",
+    "bodyHash": "abd174a6fd157af3c2c34d1ccafbecb6fd19bf4ebbaacc9b98c5007fe4bddd8a",
+    "fetchedAt": "2026-11-12T11:51:48.723Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/08/13/lage-am-millerntor-13-august-2024/",
+    "locator": "p35",
+    "quote": "In Episode 2 (20min) geht es dann um Transfers, Prognosen und Schnäppchen, also eher den Blick in die Glaskugel.",
+    "bodyHash": "a609b7b74c03684c21d92785a062f6c2c6e72799be81ac6e3ef1ba26c8ace2e1",
+    "fetchedAt": "2026-11-13T11:15:35.653Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1445,8 +1481,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-08T10:47:50.880Z",
-  "updatedAt": "2026-11-08T10:47:50.880Z"
+  "createdAt": "2026-11-13T11:15:35.653Z",
+  "updatedAt": "2026-11-13T11:15:35.653Z"
  },
  {
   "id": "ga-c17fa246fc7afd17",
@@ -1573,6 +1609,15 @@
     "bodyHash": "344ddd3637fbe5d6aa72736564b8fabf54506339f2d40b19f757a9a0ab076aa5",
     "fetchedAt": "2026-11-03T11:22:00.384Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/07/26/wer-ist-fin-stevens-ein-spielerprofil/",
+    "locator": "p6",
+    "quote": "Zwar wurde die Saison 19/20 Corona-bedingt abgebrochen, doch Fin Stevens hinterließ als 17-jähriger Eindruck. So sehr, dass der FC Brentford auf ihn aufmerksam wurde, ein Club, der im Scouting wie der FCSP sehr auf Daten setzt. Stevens wurde zur Saison 20/21 für das B-Team von Brentford verpflichtet und konnte schnell auch bei den Profis Ausrufezeichen setzen. Direkt in seinem ersten Jahr kam er im FA Cup für das erste Team von Brentford zum Einsatz, während er es für das B-Team auf 28 Einsätze brachte. Im Frühjahr 2021 wurde Stevens erstmalig für das walisische U21-Nationalteam nominiert. Nac",
+    "bodyHash": "03dcb62a3a12381f6561d1461fb0c6817e70d732344bd2e0be8eb04a26d8eadc",
+    "fetchedAt": "2026-11-13T11:15:33.209Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1580,8 +1625,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-03T11:22:00.384Z",
-  "updatedAt": "2026-11-03T11:22:00.384Z"
+  "createdAt": "2026-11-13T11:15:33.209Z",
+  "updatedAt": "2026-11-13T11:15:33.209Z"
  },
  {
   "id": "ga-0b008b51fb1b193a",
@@ -1848,17 +1893,8 @@
   "opponentHe": null,
   "minute": "45",
   "scorerAlias": null,
-  "ownGoal": true,
+  "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "millernton",
-    "url": "https://millernton.de/2022/06/20/lage-am-millerntor-20-juni-2022/",
-    "locator": "p14",
-    "quote": "Wer noch mehr darüber wissen will, kann in den „Fell in Love with a girl“-Podcast (45min, Englisch) reinhören, wo Bernd von Geldern zu Gast war und einiges zum Drumherum erzählte.",
-    "bodyHash": "b3b5008884a41845fa065bfff893065fa5cb00226ce6961870b042917d5756bb",
-    "fetchedAt": "2026-11-02T11:43:05.212Z",
-    "language": "en"
-   },
    {
     "sourceId": "millernton",
     "url": "https://millernton.de/2022/08/22/lage-am-millerntor-22-august-2022/",
@@ -1921,6 +1957,15 @@
     "bodyHash": "d164f1760857aa5e4e4bca2bb863c9c044dc28ef6a43f454b8e45fc429b36a0d",
     "fetchedAt": "2026-11-10T11:25:55.502Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/06/05/lage-am-millerntor-05-juni-2024/",
+    "locator": "p16",
+    "quote": "Abschließend: Schaut die Doku in der Mediathek (45min) . Zu Wort kommen unter anderem aktuelle und ehemalige Nationalspieler wie Jonathan Tah und Gerald Asamoah, Autorin Alice Hasters, die ehemalige Profi-Fußballerin Tugba Tekkal und viele mehr.",
+    "bodyHash": "94713c20b6cc1b7ab21f269f6557ac265aca4edb41528b3824f4242d6ed8c71b",
+    "fetchedAt": "2026-11-12T11:51:45.814Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1928,8 +1973,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-10T11:25:55.502Z",
-  "updatedAt": "2026-11-10T11:25:55.502Z"
+  "createdAt": "2026-11-12T11:51:45.814Z",
+  "updatedAt": "2026-11-12T11:51:45.814Z"
  },
  {
   "id": "ga-d8e2dac9b5d75d90",
@@ -1990,6 +2035,15 @@
     "bodyHash": "6969b07d5e3e70a0d2cf872416d5ec82a6b9f9d50f8e716e9a4eb2ce7f4c5f21",
     "fetchedAt": "2026-10-28T10:02:37.273Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/05/13/lage-am-millerntor-13-mai-2024/",
+    "locator": "p18",
+    "quote": "NDR-Sportclub vom Sonntag, 34min",
+    "bodyHash": "555e9c992b71d69bac52e96e99873687e8f3ef0cdd5562e5f581c3dea306afc8",
+    "fetchedAt": "2026-11-12T11:51:40.579Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1997,8 +2051,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-28T10:02:37.273Z",
-  "updatedAt": "2026-10-28T10:02:37.273Z"
+  "createdAt": "2026-11-12T11:51:40.579Z",
+  "updatedAt": "2026-11-12T11:51:40.579Z"
  },
  {
   "id": "ga-63f41d8e36a414eb",
@@ -2548,6 +2602,15 @@
     "bodyHash": "d802121216b2bae5bacfde1405662cb9e3dd7ee962e61aeec767b8e728599740",
     "fetchedAt": "2026-11-03T11:22:12.311Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/08/14/lage-am-millerntor-14-august-2024/",
+    "locator": "p51",
+    "quote": "Harter Schnitt, gleiche Rubrik, anderes Thema: Eine neue Episode „Vertrau mir blind“ bringt Serdal Celebi mit Muckel (Herren-Fußballabteilung) auf den Bunker der Feldstraße. Eine tolle Folge, in der die Kritik/Bedenken am Umbau des Bunkers auch thematisiert werden. Bei Serdi bringt die Geschichte des Bunkers auch Erinnerungen an die eigene Kriegsgeschichte hervor. // YouTube (23min)",
+    "bodyHash": "ecc3a43d65d024f31949e36cfac9eb49a5064c5f2cde3342daafa1db095dd0fc",
+    "fetchedAt": "2026-11-13T11:15:35.653Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2555,8 +2618,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-03T11:22:12.311Z",
-  "updatedAt": "2026-11-03T11:22:12.311Z"
+  "createdAt": "2026-11-13T11:15:35.653Z",
+  "updatedAt": "2026-11-13T11:15:35.653Z"
  },
  {
   "id": "ga-288573982fa73cf2",
@@ -2572,24 +2635,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2022/12/06/lage-am-millerntor-06-dezember-2022/",
-    "locator": "p9",
-    "quote": "– ZDF: Geheimsache Katar (43min)",
-    "bodyHash": "7cab1d4aa537c07916d09de7186d5f609ce9e36e3b4e006a31f936f2df48696b",
-    "fetchedAt": "2026-11-04T11:36:00.536Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
-    "url": "https://millernton.de/2022/12/07/lage-am-millerntor-07-dezember-2022/",
-    "locator": "p9",
-    "quote": "– ZDF: Geheimsache Katar (43min)",
-    "bodyHash": "531d85427e203fae2c87263b69d3f6b59038641edb6e2f1b075e68b20966ca20",
-    "fetchedAt": "2026-11-04T11:36:02.702Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2022/12/08/lage-am-millerntor-08-dezember-2022/",
     "locator": "p9",
     "quote": "– ZDF: Geheimsache Katar (43min)",
@@ -2641,6 +2686,24 @@
     "bodyHash": "fa5d649e0ad41d02d5bf09a12aaaab33c2d25f618864d3c9c687a06b76f9b0ab",
     "fetchedAt": "2026-11-04T11:36:05.651Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/05/06/lage-am-millerntor-06-mai-2024/",
+    "locator": "p80",
+    "quote": "Nach dessen unerwarteten Tod kam es zu diesem weiteren Termin nicht mehr und der Film nahm schlussendlich dann auch eine andere Entwicklung als ursprünglich geplant – was ihn nicht weniger sehenswert macht. // ZDF Mediathek, 43min",
+    "bodyHash": "5362a6a586c4f216cbbcdf1becb3366f14b9e780643c37badd6d1a236e87586f",
+    "fetchedAt": "2026-11-12T11:51:40.575Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/06/28/lage-am-millerntor-28-juni-2024/",
+    "locator": "p6",
+    "quote": "Am Nachmittag fand dann noch die Pressekonferenz statt, auf der er sich mit Andreas Bornemann die Bälle schon sehr routiniert hin und her spielte. Ich kann empfehlen, diese auf YouTube in voller Länge (43min) zu schauen. Zusammengefasst saß da jemand, der sichtlich Vorfreude auf den neuen Job versprühte und dabei sehr glaubwürdig rüberkam. Unterschiede zu seinem Vorgänger waren auch schnell ausgemacht, denn während bei Fabian Hürzeler alles sehr kontrolliert erschien und wirklich jeder Satz auf den Punkt formuliert war, kommt Alexander Blessin offensichtlich gerne ins Reden und schweift dann v",
+    "bodyHash": "072682ed2aa2e5cad1e6a5a06da330d3deffa69f902af77e674972b0c09276ab",
+    "fetchedAt": "2026-11-12T11:51:48.722Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2648,8 +2711,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-04T11:36:05.651Z",
-  "updatedAt": "2026-11-04T11:36:05.651Z"
+  "createdAt": "2026-11-12T11:51:48.722Z",
+  "updatedAt": "2026-11-12T11:51:48.722Z"
  },
  {
   "id": "ga-10a49ffb1dbd4dab",
@@ -2665,15 +2728,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2022/12/06/lage-am-millerntor-06-dezember-2022/",
-    "locator": "p10",
-    "quote": "– ZDF: Die Skandal-WM – Wie Katar den Fußball kauft (44min)",
-    "bodyHash": "7cab1d4aa537c07916d09de7186d5f609ce9e36e3b4e006a31f936f2df48696b",
-    "fetchedAt": "2026-11-04T11:36:00.536Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2022/12/07/lage-am-millerntor-07-dezember-2022/",
     "locator": "p10",
     "quote": "– ZDF: Die Skandal-WM – Wie Katar den Fußball kauft (44min)",
@@ -2734,6 +2788,15 @@
     "bodyHash": "fa5d649e0ad41d02d5bf09a12aaaab33c2d25f618864d3c9c687a06b76f9b0ab",
     "fetchedAt": "2026-11-04T11:36:05.651Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/04/22/lage-am-millerntor-22-april-2024/",
+    "locator": "p80",
+    "quote": "Bei der Sportschau gibt es einen Beitrag (44min) über mutmaßliches Massendoping bei Chinas Schwimmer*innen im Vorfeld der Olympischen Spiele in Tokio. Dieses sei 2021 aufgefallen, 23 Schwimmer*innen seien positiv getestet worden – die WADA hätte aber nach einem Bericht des Chinesischen Ministeriums für Öffentliche Sicherheit auf eine eigene Untersuchung verzichtet. Laut ARD sei dies unterlassen worden, weil in jenem Bericht der Befund durch ein Versehen in einer Hotelküche entstanden sei. Demnach sei eine Tablette des verschreibungspflichtigen Medikaments Trimetazidin eben „versehentlich“ in d",
+    "bodyHash": "6c2a5dd0603af5d86a6034519aeee196aa8d79506c129d29dffce5d3d58b796f",
+    "fetchedAt": "2026-11-12T11:51:37.675Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2741,8 +2804,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-04T11:36:05.651Z",
-  "updatedAt": "2026-11-04T11:36:05.651Z"
+  "createdAt": "2026-11-12T11:51:37.675Z",
+  "updatedAt": "2026-11-12T11:51:37.675Z"
  },
  {
   "id": "ga-468216f78ee2fc35",
@@ -2938,6 +3001,15 @@
     "bodyHash": "5aa91f10f095a7d0a01c64e26dca5cd401f0f0066dd0f48381c9487dd2c070a3",
     "fetchedAt": "2026-11-06T11:09:22.953Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/08/13/lage-am-millerntor-13-august-2024/",
+    "locator": "p34",
+    "quote": "Auf YouTube gibt es einen Kanal namens „Manager United“, bei dem aktuell eine große Saisonvorschau auf alle Erstligisten läuft, mit dem Fokus auf Managerspiele. Michael war dort zu Gast zum Thema FCSP und es gibt zwei Folgen. Episode 1 (28min) befasst sich mit Aufstellung, Formation und Standardschützen.",
+    "bodyHash": "a609b7b74c03684c21d92785a062f6c2c6e72799be81ac6e3ef1ba26c8ace2e1",
+    "fetchedAt": "2026-11-13T11:15:35.653Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2945,8 +3017,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-06T11:09:22.953Z",
-  "updatedAt": "2026-11-06T11:09:22.953Z"
+  "createdAt": "2026-11-13T11:15:35.653Z",
+  "updatedAt": "2026-11-13T11:15:35.653Z"
  },
  {
   "id": "ga-22637ca0f1c3482a",
@@ -2998,6 +3070,15 @@
     "bodyHash": "ffc70935134302871babf858310237cec97204b6491b1e0dc4f04635310a4601",
     "fetchedAt": "2026-11-05T11:31:47.268Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/04/29/lage-am-millerntor-29-april-2024/",
+    "locator": "p25",
+    "quote": "Podcast: If you can hear us – „H96 & Hansa“ (51min)",
+    "bodyHash": "efaf943e6856984456c1de9786c74ef5da0e21a3b4febaf9a59e03d1a358361d",
+    "fetchedAt": "2026-11-12T11:51:37.684Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -3005,8 +3086,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-05T11:31:47.268Z",
-  "updatedAt": "2026-11-05T11:31:47.268Z"
+  "createdAt": "2026-11-12T11:51:37.684Z",
+  "updatedAt": "2026-11-12T11:51:37.684Z"
  },
  {
   "id": "ga-6a1a244ece56de71",
@@ -3325,5 +3406,65 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-11-10T11:25:55.517Z",
   "updatedAt": "2026-11-10T11:25:55.517Z"
+ },
+ {
+  "id": "ga-0d488ddb0e2889e6",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "1",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/07/29/lage-am-millerntor-29-juli-2024/",
+    "locator": "p6",
+    "quote": "Zusätzlich haben beide auch Kurzportraits (1min) auf YouTube im Vereins-TV . Beim Profil von Morgan Guilavogui kann man das eigene Französisch aufbessern, bei Fin Stevens logischerweise das eigene Englisch – in beiden Fällen gibt es aber auch Untertitel auf Deutsch.",
+    "bodyHash": "6d0ee8d99b3907f331785bb7987c42d6bf722bf1e37b55358528e64f93782f68",
+    "fetchedAt": "2026-11-13T11:15:33.210Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-13T11:15:33.210Z",
+  "updatedAt": "2026-11-13T11:15:33.210Z"
+ },
+ {
+  "id": "ga-0e2f5b25e1bf7839",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "26",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/08/02/lage-am-millerntor-02-august-2024/",
+    "locator": "p60",
+    "quote": "Für die Doku-Reihe des WDR hat sich Robert Kempe mit der ukrainischen Rhythmischen Sportgymnastin Mariia Vysochanska getroffen. Sie bereitete sich in der Ukraine auf die Olympischen Spiele vor, inmitten all der Umstände, die aufgrund des russischen Angriffskrieges dort nach wie vor herrschen. Eine beeindruckende Podcastfolge. // WDR Mediathek (26min)",
+    "bodyHash": "8b4a05778f6ecd8c0f80a9672a09b1db9ba01be03a07b756b5158884ca290484",
+    "fetchedAt": "2026-11-13T11:15:33.214Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-13T11:15:33.214Z",
+  "updatedAt": "2026-11-13T11:15:33.214Z"
  }
 ]

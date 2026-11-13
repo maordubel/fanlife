@@ -1,7 +1,9 @@
 'use client'
 import {useMemo,useRef,useState,useTransition,type ReactNode} from 'react'
 import {flyShirt} from '@/components/roster/PickRail'
+import Link from 'next/link'
 import {SlideSheet} from '@/components/stage/SlideSheet'
+import {archiveLink} from '@/lib/clubs/archive-link'
 import {firePickFxAt} from '@/components/stage/PickFx'
 import {ClubShirt} from '@/components/clubs/stage/ClubShirt'
 import {tr,shortName} from '@/components/clubs/rumble/shared'
@@ -241,6 +243,11 @@ function Match({m,n,total,started,onStart,onNext,club,clubName,version,locale,co
      {sheetData.locksUsed>0&&<span>{tx('lu.result.locks',{n:sheetData.locksRight,of:sheetData.locksUsed})}</span>}
      <span>{tx('lu.result.coach',{n:notes.length})}</span>
     </div>
+    {/* 12.11.2026 — back into the archive: the night itself, and the men the sheet had that the player did not */}
+    <nav className={css.archiveRow} aria-label={tx('lu.result.archive')} data-testid="lineup-archive" lang={contentLocale}>
+     <Link prefetch={false} href={archiveLink(club,locale,{match:m.id,on:m.on,score:m.score})}>{tx('lu.result.archiveNight')} ↗</Link>
+     {sheetData.missed.slice(0,4).map(name=><Link key={name} prefetch={false} href={archiveLink(club,locale,{name,year:m.year})} dir="auto">{name} ↗</Link>)}
+    </nav>
     {m.sources.length>0&&<div><h3 className={css.fine}>{tx('lu.result.sources')}</h3>
      <ul className={css.sources}>{m.sources.map((s,i)=><li key={i}>{s.url?<a href={s.url} target="_blank" rel="noopener noreferrer">{s.title}</a>:s.title}</li>)}</ul></div>}
     {total===1&&<p className={css.fine}>{tx('lu.onlyOne')}</p>}
