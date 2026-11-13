@@ -5,5 +5,7 @@
  ],
  "country": null,
  "uefaTeamId": null,
- "scores365Id": 359
+ "scores365Id": 359,
+ "uefa": false,
+ "uefaNote": "FC St. Pauli has never played a UEFA club competition; its matches come from the league feed and the DFB."
 }

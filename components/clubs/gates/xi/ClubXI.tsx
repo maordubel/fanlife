@@ -1,7 +1,9 @@
 'use client'
 import {useEffect,useMemo,useRef,useState} from 'react'
 import {PickRail,flyShirt,type RailItem,type RailLabels} from '@/components/roster/PickRail'
+import Link from 'next/link'
 import {SlideSheet} from '@/components/stage/SlideSheet'
+import {archiveLink} from '@/lib/clubs/archive-link'
 import {firePickFxAt} from '@/components/stage/PickFx'
 import {ClubShirt} from '@/components/clubs/stage/ClubShirt'
 import {tr,shortName,nameLabeler} from '@/components/clubs/rumble/shared'
@@ -157,7 +159,7 @@ function XIBoard({kind,tabs,players,club,clubName,locale,contentLocale,wardrobe,
    {main}
    <aside className={css.side} aria-label={t(kind==='best'?'xi.poster.mine':'xi.poster.worst')}>
     <div className={css.sideCard}><h3><span className="wk-logo red sm wk-tilt">{t('xi.sheet')}</span><small>{xi.formation} · {t('xi.count',{n:filledCount(xi)})}</small></h3>
-     <ol className={css.sheetList}>{[...slots].sort((a,b)=>a.y-b.y||a.x-b.x).map(s=>{const p=xi.picks[s.slotId]?byId.get(xi.picks[s.slotId]!):null;return <li key={s.slotId} data-empty={!p}><b>{s.role}</b><span lang={contentLocale} dir="auto">{p?`${p.name}${xi.captain===p.id?` (${t('xi.captainWord')})`:''}`:'—'}</span></li>})}
+     <ol className={css.sheetList}>{[...slots].sort((a,b)=>a.y-b.y||a.x-b.x).map(s=>{const p=xi.picks[s.slotId]?byId.get(xi.picks[s.slotId]!):null;return <li key={s.slotId} data-empty={!p}><b>{s.role}</b><span lang={contentLocale} dir="auto">{p?<><Link prefetch={false} className={css.archiveName} href={archiveLink(club,locale,{player:p.id,name:p.name,year:p.fromYear??null})}>{p.name}</Link>{xi.captain===p.id?` (${t('xi.captainWord')})`:''}</>:'—'}</span></li>})}
       {xi.twelfth&&byId.get(xi.twelfth)&&<li><b>12</b><span lang={contentLocale} dir="auto">{byId.get(xi.twelfth)!.name}</span></li>}</ol></div>
     <p className={css.fine}>{copy.localOnly}</p>
    </aside>

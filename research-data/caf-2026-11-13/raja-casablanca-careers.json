@@ -1,0 +1,270 @@
+{
+ "sources": [
+  {
+   "id": "rj-c-wp-habti",
+   "title": "Zakaria Habti — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Zakaria_Habti",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "rj-c-sw-habti",
+   "title": "Zakaria Habti — Soccerway player career",
+   "url": "https://ca.soccerway.com/player/habti-zakaria/zonOXkTC",
+   "publisher": "Soccerway",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "rj-c-wp-harkass",
+   "title": "Jamal Harkass — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Jamal_Harkass",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "rj-c-sw-harkass",
+   "title": "Jamal Harkass — Soccerway player career",
+   "url": "https://us.soccerway.com/player/harkass-jamal/IgZjAvPd/",
+   "publisher": "Soccerway",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "rj-c-wp-kabangu",
+   "title": "Kadima Kabangu — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Kadima_Kabangu",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "rj-c-sw-kabangu",
+   "title": "Kadima Kabangu — Soccerway player career",
+   "url": "https://www.soccerway.com/player/kabangu-kadima/QVQlvfAr",
+   "publisher": "Soccerway",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "rj-c-wp-khabba",
+   "title": "Hamza Khabba — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Hamza_Khabba",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "rj-c-sw-khabba",
+   "title": "Hamza Khabba — Soccerway player career",
+   "url": "https://www.soccerway.com/player/khabba-hamza/tW20cM7T/",
+   "publisher": "Soccerway",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "rj-c-wp-sadaoui",
+   "title": "Noah Sadaoui — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Noah_Sadaoui",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "rj-c-sw-sadaoui",
+   "title": "Noah Sadaoui — Soccerway player career",
+   "url": "https://ca.soccerway.com/player/sadaoui-noah/EF3q87EA/",
+   "publisher": "Soccerway",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  }
+ ],
+ "players": [
+  {
+   "id": "p-mg-20fb19a2811f",
+   "value": {
+    "name": "Zakaria Habti",
+    "career": {
+     "apps": 46,
+     "goals": 3,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "rj-c-wp-habti",
+    "rj-c-sw-habti"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-raja-casablanca-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2019–2023: 46/3; Soccerway Botola Pro rows 2019/20..2022/23: 44/3."
+  },
+  {
+   "id": "p-mg-0fdf057d425c",
+   "value": {
+    "name": "Jamal Harkass",
+    "career": {
+     "apps": 43,
+     "goals": 3,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "rj-c-wp-harkass",
+    "rj-c-sw-harkass"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-raja-casablanca-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2021–2023: 43/3; Soccerway Botola Pro rows 2021/22..2022/23: 43/3."
+  },
+  {
+   "id": "p-mg-8b826ef5ef96",
+   "value": {
+    "name": "Kadima Kabangu",
+    "career": {
+     "apps": 8,
+     "goals": 1,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "rj-c-wp-kabangu",
+    "rj-c-sw-kabangu"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-raja-casablanca-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2022: 8/1; Soccerway Botola Pro 2021/22: 8/1."
+  },
+  {
+   "id": "p-mg-758d9548ea06",
+   "value": {
+    "name": "Hamza Khabba",
+    "career": {
+     "apps": 25,
+     "goals": 2,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "rj-c-wp-khabba",
+    "rj-c-sw-khabba"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-raja-casablanca-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2022–2023 (loan): 25/2; Soccerway Botola Pro 2022/23: 25/2."
+  },
+  {
+   "id": "p-mg-ef51783e14cc",
+   "value": {
+    "name": "Noah Sadaoui",
+    "career": {
+     "apps": 18,
+     "goals": 2,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "rj-c-wp-sadaoui",
+    "rj-c-sw-sadaoui"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-raja-casablanca-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2020–2021: 18/2; Soccerway Botola Pro 2020/21: 18/2."
+  }
+ ],
+ "missing": [],
+ "skipped": [
+  {
+   "id": "p-mg-0d2b09b8e4db",
+   "reason": "Soufiane Rahimi: Wikipedia league table 83/30 (2018-19..2020-21); Soccerway 62/29 (2018/19 row only 5 apps) — disagree."
+  },
+  {
+   "id": "p-mg-3f7506ddef6a",
+   "reason": "Mohamed Oulhaj: Wikipedia infobox 342/10 vs its own season table 104/1 (as of 2010); no second publisher with Botola data for 2007–2019."
+  },
+  {
+   "id": "p-mg-fe9139b06159",
+   "reason": "Abdeljalil Jbira: No second publisher with Botola league totals (Stats Crew/ESPN/11v11 lack Botola rows)."
+  },
+  {
+   "id": "p-mg-1e09eb192a3a",
+   "reason": "Marouane Hadhoudi: Wikipedia 1/0 + 109/6; Soccerway Botola 2020/21..2022/23: 67/5 — disagree (Wikipedia likely all competitions)."
+  },
+  {
+   "id": "p-mg-db7e9cce1c16",
+   "reason": "Soufiane Benjdida: Wikipedia 64/14; Soccerway Botola 42/11 — disagree."
+  },
+  {
+   "id": "p-mg-e183fe818224",
+   "reason": "Ilias Haddad: Wikipedia mirror 44/0 is dated Oct 2020 (mid-spell); Soccerway 46/0 to 2021/22 — different periods, not comparable."
+  },
+  {
+   "id": "p-mg-6dad82ce67f8",
+   "reason": "Fabrice Ngoma: Wikipedia 18/0; Soccerway 56/4 — disagree."
+  },
+  {
+   "id": "p-mg-899ae40f175d",
+   "reason": "Mohsine Moutouali: Wikipedia gives no Raja infobox totals; Soccerway (2019-22 only 71/17) and FotMob (all competitions) cover different spans."
+  },
+  {
+   "id": "p-mg-9e6d25729fc3",
+   "reason": "Omar Arjoune: Wikipedia 20/1 + 104/1; Soccerway Botola 2019/20..2021/22: 66/1 — disagree."
+  },
+  {
+   "id": "p-mg-d72b16b8874d",
+   "reason": "Ahmadou Camara: Wikipedia 41/0; Soccerway 24/0 — disagree."
+  },
+  {
+   "id": "p-mg-3a78a718b5e8",
+   "reason": "Roger Aholou: Wikipedia 43/2; Soccerway 32/1 — disagree."
+  },
+  {
+   "id": "p-mg-3b58342358a3",
+   "reason": "Yousri Bouzok: Wikipedia 94/23; Soccerway 67/20 — disagree."
+  },
+  {
+   "id": "p-mg-74b944c07725",
+   "reason": "Abdellah Farah: Soccerway 17/2; no Wikipedia/second figure found."
+  },
+  {
+   "id": "p-mg-e7dd080f50cb",
+   "reason": "Michel Babatunde: Wikipedia 14/3; Soccerway 2015/16 2/2 (incomplete) — disagree."
+  }
+ ]
+}

@@ -1,0 +1,878 @@
+{
+ "sources": [
+  {
+   "id": "ah-c-wp-soliman",
+   "title": "Walid Soliman — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Walid_Soliman_(footballer)",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-soliman",
+   "title": "Walid Soliman — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-solimwal002",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-abdelfadil",
+   "title": "Sherif Abdel-Fadil — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Sherif_Abdel-Fadil",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-abdelfadil",
+   "title": "Sherif Abdel-Fadil — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-abdelshe001",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-ashraf",
+   "title": "Ayman Ashraf — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Ayman_Ashraf",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-ashraf",
+   "title": "Ayman Ashraf — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-ashraaym001",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-maaloul",
+   "title": "Ali Maâloul — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Ali_Maâloul",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-maaloul",
+   "title": "Ali Maâloul — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-maaloali001",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-ajayi",
+   "title": "Junior Ajayi — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Junior_Ajayi",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-ajayi",
+   "title": "Junior Ajayi — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-ajayijun001",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-azaro",
+   "title": "Walid Azaro — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Walid_Azaro",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-azaro",
+   "title": "Walid Azaro — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-azarowal001",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-sgomaa",
+   "title": "Saleh Gomaa — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Saleh_Gomaa",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-sgomaa",
+   "title": "Saleh Gomaa — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-gomaasal001",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-mohsen",
+   "title": "Marwan Mohsen — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Marwan_Mohsen",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-mohsen",
+   "title": "Marwan Mohsen — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-mohsemar001",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-hegazi",
+   "title": "Ahmed Hegazi — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Ahmed_Hegazi",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-hegazi",
+   "title": "Ahmed Hegazi — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-hegazahm002",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-zakaria",
+   "title": "Moamen Zakaria — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Moamen_Zakaria",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-zakaria",
+   "title": "Moamen Zakaria — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-zakarmom001",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-doe",
+   "title": "Francis Doe — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Francis_Doe",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-doe",
+   "title": "Francis Doe — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-doe00fra001",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-evouna",
+   "title": "Malick Evouna — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Malick_Evouna",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-evouna",
+   "title": "Malick Evouna — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-evounmal001",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-gamal",
+   "title": "Amr Gamal — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Amr_Gamal",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-gamal",
+   "title": "Amr Gamal — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-gamalamr001",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-yedan",
+   "title": "Moussa Yedan — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Moussa_Yedan",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-yedan",
+   "title": "Moussa Yedan — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-yedanmou001",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-hamdi",
+   "title": "Ahmed Hamdy — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Ahmed_Hamdi_(footballer)",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-hamdi",
+   "title": "Ahmed Hamdy — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-hamdiahm003",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-basemali",
+   "title": "Basem Ali — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Basem_Ali",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-basemali",
+   "title": "Basem Ali — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-ali00bas001",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-abdelzaher",
+   "title": "Ahmed Abd El-Zaher — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Ahmed_Abd_El-Zaher",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-abdelzaher",
+   "title": "Ahmed Abd El-Zaher — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-abdelahm019",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-shabana",
+   "title": "Abdelhamid Shabana — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Abdelhamid_Shabana",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-shabana",
+   "title": "Abdelhamid Shabana — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-shabaabd001",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  }
+ ],
+ "players": [
+  {
+   "id": "p-mg-035556f03af8",
+   "value": {
+    "name": "Walid Soliman",
+    "career": {
+     "apps": 178,
+     "goals": 44,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "ah-c-wp-soliman",
+    "ah-c-sc-soliman"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox: 178/44 (league; career table league 178/44); Stats Crew EGPL season rows 2011-12..2021-22: 178/45."
+  },
+  {
+   "id": "p-mg-3988596238ff",
+   "value": {
+    "name": "Sherif Abdel-Fadil",
+    "career": {
+     "apps": 65,
+     "goals": 3,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "ah-c-wp-abdelfadil",
+    "ah-c-sc-abdelfadil"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2009–2015: 65/3; Stats Crew EGPL rows 2009-10..2014-15: 65/3."
+  },
+  {
+   "id": "p-mg-c94b638310e4",
+   "value": {
+    "name": "Ayman Ashraf",
+    "career": {
+     "apps": 140,
+     "goals": 5,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "ah-c-wp-ashraf",
+    "ah-c-sc-ashraf"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox two Al Ahly spells 13/0 + 127/5 = 140/5; Stats Crew EGPL rows 2009-10..2021-22: 139/5."
+  },
+  {
+   "id": "p-mg-970e6626231d",
+   "value": {
+    "name": "Ali Maâloul",
+    "career": {
+     "apps": 163,
+     "goals": 35,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "ah-c-wp-maaloul",
+    "ah-c-sc-maaloul"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2016–2025: 163/35; Stats Crew EGPL rows 2016-17..2023-24: 163/35."
+  },
+  {
+   "id": "p-mg-fbfe4d08a75c",
+   "value": {
+    "name": "Junior Ajayi",
+    "career": {
+     "apps": 103,
+     "goals": 30,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "ah-c-wp-ajayi",
+    "ah-c-sc-ajayi"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2016–2021: 103/30; Stats Crew EGPL rows 2016-17..2020-21: 103/30."
+  },
+  {
+   "id": "p-mg-cc71c8356f4f",
+   "value": {
+    "name": "Walid Azaro",
+    "career": {
+     "apps": 60,
+     "goals": 26,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "ah-c-wp-azaro",
+    "ah-c-sc-azaro"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2017–2020: 60/26; Stats Crew EGPL rows 2017-18..2019-20: 60/26."
+  },
+  {
+   "id": "p-mg-518768a57d2b",
+   "value": {
+    "name": "Saleh Gomaa",
+    "career": {
+     "apps": 53,
+     "goals": 8,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "ah-c-wp-sgomaa",
+    "ah-c-sc-sgomaa"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2015–2020: 53/8; Stats Crew EGPL rows 2015-16..2019-20: 53/8."
+  },
+  {
+   "id": "p-mg-31c69a63ffa8",
+   "value": {
+    "name": "Marwan Mohsen",
+    "career": {
+     "apps": 73,
+     "goals": 17,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "ah-c-wp-mohsen",
+    "ah-c-sc-mohsen"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2016–2021: 73/17; Stats Crew EGPL rows 2016-17..2020-21: 72/17."
+  },
+  {
+   "id": "p-mg-6793a559151c",
+   "value": {
+    "name": "Ahmed Hegazi",
+    "positions": [
+     "DF"
+    ],
+    "career": {
+     "apps": 40,
+     "goals": 1,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "ah-c-wp-hegazi",
+    "ah-c-sc-hegazi"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2015–2017: 40/1; Stats Crew EGPL rows 2015-16..2016-17: 40/0. Position: centre-back (Wikipedia) / D, Center Back (Stats Crew)."
+  },
+  {
+   "id": "p-mg-a15a4b8daf94",
+   "value": {
+    "name": "Moamen Zakaria",
+    "positions": [
+     "FW"
+    ],
+    "career": {
+     "apps": 93,
+     "goals": 30,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "ah-c-wp-zakaria",
+    "ah-c-sc-zakaria"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2015–2018: 93/30; Stats Crew EGPL rows 2014-15..2018-19: 93/30. Position: winger (Wikipedia) / F, M - Right Winger (Stats Crew) -> FW."
+  },
+  {
+   "id": "p-mg-e9be9bc3c99c",
+   "value": {
+    "name": "Francis Doe",
+    "career": {
+     "apps": 18,
+     "goals": 4,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "ah-c-wp-doe",
+    "ah-c-sc-doe"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2009–2011: 18/4; Stats Crew EGPL rows 2009-10..2010-11: 18/4."
+  },
+  {
+   "id": "p-mg-c7a37fb57c3a",
+   "value": {
+    "name": "Malick Evouna",
+    "positions": [
+     "FW"
+    ],
+    "career": {
+     "apps": 24,
+     "goals": 12,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "ah-c-wp-evouna",
+    "ah-c-sc-evouna"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2015–2016: 24/12; Stats Crew EGPL 2015-16: 24/12. Position: striker (Wikipedia) / F, Center Forward (Stats Crew)."
+  },
+  {
+   "id": "p-mg-9eab041f038a",
+   "value": {
+    "name": "Amr Gamal",
+    "positions": [
+     "FW"
+    ],
+    "career": {
+     "apps": 68,
+     "goals": 18,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "ah-c-wp-gamal",
+    "ah-c-sc-gamal"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2013–2021: 68/18; Stats Crew EGPL rows 2012-13..2016-17 (incl. 2013-14 championship stage): 67/18. Position: striker / F, Center Forward."
+  },
+  {
+   "id": "p-mg-893fbed25f32",
+   "value": {
+    "name": "Moussa Yedan",
+    "positions": [
+     "MF"
+    ],
+    "career": {
+     "apps": 18,
+     "goals": 1,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "ah-c-wp-yedan",
+    "ah-c-sc-yedan"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2014–2015: 18/1; Stats Crew EGPL 2013-14..2014-15: 20/1 (18/1 without the 2013-14 championship-stage row). Position: attacking midfielder / M, F - Offensive Midfielder."
+  },
+  {
+   "id": "p-mg-2e9f0df5cfda",
+   "value": {
+    "name": "Ahmed Hamdy",
+    "positions": [
+     "MF"
+    ],
+    "career": {
+     "apps": 14,
+     "goals": 1,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "ah-c-wp-hamdi",
+    "ah-c-sc-hamdi"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia (Ahmed Hamdi) infobox 2015–2019: 14/1; Stats Crew EGPL 2015-16, 2017-18: 14/1. Position: attacking midfielder / M, F - Offensive Midfielder."
+  },
+  {
+   "id": "p-mg-5cbbc74e8dfc",
+   "value": {
+    "name": "Basem Ali",
+    "positions": [
+     "DF"
+    ],
+    "career": {
+     "apps": 45,
+     "goals": 1,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "ah-c-wp-basemali",
+    "ah-c-sc-basemali"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2014–2020: 45/1; Stats Crew EGPL rows 2014-15..2018-19: 45/1. Position: right-back / D, M - Right Back."
+  },
+  {
+   "id": "p-mg-bd37526673f8",
+   "value": {
+    "name": "Ahmed Abd El-Zaher",
+    "positions": [
+     "FW"
+    ],
+    "career": {
+     "apps": 34,
+     "goals": 8,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "ah-c-wp-abdelzaher",
+    "ah-c-sc-abdelzaher"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2013–2016: 34/8; Stats Crew EGPL 2012-13, 2014-15, 2015-16: 34/8. Position: forward / F, Center Forward."
+  },
+  {
+   "id": "p-mg-8872c1ef144f",
+   "value": {
+    "name": "Abdelhamid Shabana",
+    "positions": [
+     "MF"
+    ],
+    "career": {
+     "apps": 10,
+     "goals": 2,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "ah-c-wp-shabana",
+    "ah-c-sc-shabana"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2010–2013: 10/2; Stats Crew EGPL 2010-11: 8/1 (within tolerance). Position: attacking midfielder / M - Offensive Midfielder."
+  }
+ ],
+ "missing": [],
+ "skipped": [
+  {
+   "id": "p-mg-62359e1e0214",
+   "reason": "Abdallah El Said: Wikipedia 154/50; Stats Crew apps 154 but its goal column could not be read reliably — goals unconfirmed by a second publisher."
+  },
+  {
+   "id": "p-mg-58a19a526a10",
+   "reason": "Ramy Rabia: Wikipedia 26/2 + 162/9 (to May 2025); Stats Crew EGPL 172 apps through 2023-24 — coverage periods differ, totals disagree."
+  },
+  {
+   "id": "p-mg-466d587d3d5d",
+   "reason": "Saad Samir: Wikipedia 134/13; Stats Crew 134/11 — goals differ by 2."
+  },
+  {
+   "id": "p-mg-a171ccf1efd9",
+   "reason": "Mohamed Hany: Wikipedia 224/5 (as of Mar 2024); Stats Crew 197/4 — apps disagree."
+  },
+  {
+   "id": "p-mg-0da9f3455a7b",
+   "reason": "Ramadan Sobhi: Wikipedia 55/11 + 24/6 = 79/17; Stats Crew 82/19 — outside tolerance."
+  },
+  {
+   "id": "p-mg-6373333a1076",
+   "reason": "Ahmed Shoukry: Wikipedia 36/6; Stats Crew 44/5 — apps disagree."
+  },
+  {
+   "id": "p-mg-4738d91887a1",
+   "reason": "Gedo: Wikipedia 54/13; Stats Crew 50/11 — outside tolerance."
+  },
+  {
+   "id": "p-mg-34ac4b7390cd",
+   "reason": "Al-Sayed Hamdy: Wikipedia 61/27; Stats Crew 38/7 — disagree."
+  },
+  {
+   "id": "p-mg-d324b234b5d4",
+   "reason": "Dominique Da Silva: Wikipedia gives no Al Ahly apps/goals; no second value to compare."
+  },
+  {
+   "id": "p-mg-60ac6c7935e8",
+   "reason": "Mohamed Aboutrika: Wikipedia infobox 362/156 vs its own career table (league 163/77); Stats Crew covers only 2009-10 onward (46/18) — no two-publisher agreement."
+  },
+  {
+   "id": "p-mg-77359b7e2826",
+   "reason": "Aliou Dieng: Wikipedia 145/5 (to May 2026); Stats Crew 122/5 through 2023-24 — coverage periods differ."
+  },
+  {
+   "id": "p-mg-25f092120bfc",
+   "reason": "Amr El Solia: Wikipedia infobox 287/19 (appears all competitions); Stats Crew league 189/22 — basis/total disagree."
+  },
+  {
+   "id": "p-mg-efc39e11348a",
+   "reason": "Mohamed Magdy Afsha: Wikipedia 277/45 vs its own table 250; current player, no stable second value."
+  },
+  {
+   "id": "p-mg-851e85f61624",
+   "reason": "Mohamed Talaat: Wikipedia 21/3; Stats Crew 12/0 — disagree."
+  },
+  {
+   "id": "p-mg-dd690a203745",
+   "reason": "Ahmed Nabil \"Manga\": Wikipedia 38/2; Stats Crew 28/2 — apps disagree."
+  },
+  {
+   "id": "p-mg-13c42c7197ab",
+   "reason": "Ahmed El Sheikh: Wikipedia 28/9; Stats Crew 42/9 — apps disagree."
+  },
+  {
+   "id": "p-mg-f694bfcfd413",
+   "reason": "John Antwi: Wikipedia 29/10; Stats Crew 20/3 — disagree."
+  },
+  {
+   "id": "p-mg-fb600bba3ada",
+   "reason": "Sabri Raheel: Wikipedia 79/0; Stats Crew 82/0 — apps differ by 3."
+  },
+  {
+   "id": "p-mg-8991b1aa48d5",
+   "reason": "Karim Bambo: Wikipedia 13/1; Stats Crew 16/1 incl. 2013-14 championship stage (13/1 without) — basis ambiguous, left out."
+  },
+  {
+   "id": "p-mg-6b3dd8483961",
+   "reason": "Mossad Awad: Wikipedia 3/0; Stats Crew 11/0 — disagree."
+  },
+  {
+   "id": "p-mg-1678d863520a",
+   "reason": "Peter Ebimobowei: Wikipedia 5/3; Stats Crew 9/3 — apps disagree."
+  },
+  {
+   "id": "p-mg-5f5206fa6142",
+   "reason": "Aly Lotfi: Wikipedia 29/0 (2018–2023) and Stats Crew 29/0 (2017-18..2022-23) agree, but roster record years (2016) do not match the sourced span — identity/years need a human check before attaching."
+  },
+  {
+   "id": "p-mg-b2ac07c5d6d2",
+   "reason": "Mohamed Nagieb: Wikipedia (Mohamed Naguib) 108/1; Stats Crew 113/3 — outside tolerance."
+  },
+  {
+   "id": "p-mg-cd8a94cb5f64",
+   "reason": "Hossam Hassan: Wikipedia records table only (301 matches/142 goals; league 109); no independent second publisher found with the same basis."
+  },
+  {
+   "id": "p-mg-ec5ebe2cf877",
+   "reason": "Mahmoud El Khatib: Wikipedia records table 275/159 (league 109); Noon Post gives 199/108 — totals disagree; Mawdoo3 repeats Wikipedia's league 109 (not independent)."
+  },
+  {
+   "id": "p-mg-78d6d4e6a163",
+   "reason": "Emad Moteab: Wikipedia records table 320/124; Stats Crew covers only from 2009-10 — no agreement."
+  }
+ ]
+}

@@ -125,6 +125,15 @@
 .wkk-ticket-local { font-weight: 700; font-size: 15px; }
 .wkk-ticket-meta { font-size: 12px; }
 .wkk-ticket-cap { font-size: 12px; }
+/* 12.11.2026 — the balance of every recorded meeting, under the next match. Ink only: a result colour (green/red) could be a rival's colour on some club pages */
+.wkk-ticket-h2h { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; margin: 0; font-size: 13px; }
+.wkk-ticket-h2h b { font-family: var(--mag-display); text-transform: uppercase; }
+.wkk-h2h-tally { display: inline-flex; gap: 8px; }
+.wkk-h2h-tally span { font-variant-numeric: tabular-nums; }
+.wkk-h2h-form { display: inline-flex; gap: 3px; }
+.wkk-h2h-form i { display: inline-grid; place-items: center; inline-size: 20px; block-size: 20px; border: 2px solid var(--mag-ink); font-style: normal; font-family: var(--mag-display); font-size: 11px; }
+.wkk-h2h-form i[data-r="W"] { background: var(--mag-ink); color: var(--mag-white); }
+.wkk-h2h-form i[data-r="L"] { background: var(--mag-paper); color: var(--mag-ink); opacity: .7; }
 .wkk-ticket-cta { align-self: flex-start; min-block-size: 48px; font-size: 15px; }
 .wkk-ticket-stub { inline-size: 92px; gap: 4px; background: var(--club-primary, var(--mag-vermilion)); color: var(--club-on-primary, var(--mag-white)); text-align: center; }
 .wkk-ticket-stub small { font-family: var(--mag-display); font-size: 12px; text-transform: uppercase; }

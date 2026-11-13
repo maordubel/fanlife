@@ -3,7 +3,10 @@ import {REGISTRY} from '@/lib/master/registry'
 import {loadClub} from '@/lib/clubs/resolver'
 import {eligibleArchive} from '@/lib/clubs/archive'
 import {readMatch} from '@/lib/life/universal/match'
-import {sameClub,namesOf} from './names'
+import {sameClub,namesOf,core} from './names'
+import {CLUB_SPELLINGS} from '@/lib/clubs/spellings'
+import {canonClub} from '@/lib/trivia/club-names'
+import {enClub} from '@/lib/trivia/names'
 
 export type Meeting = {
   /** the day if the record states one */
@@ -78,4 +81,102 @@ export async function meetingsBetween(clubId: string, opponent: string, aliases:
     }
   }
   return [...found.values()].sort((a, b) => (b.on ?? `${b.year ?? 0}`).localeCompare(a.on ?? `${a.year ?? 0}`))
+}
+
+// ------------------------------------------------------------------ the head-to-head ledger (12.11.2026)
+/**
+ * Every meeting a club's approved archive records, against every opponent — one row per night — and the balance against each:
+ * played, won, drawn, lost, goals, first and last meeting, the biggest win and the heaviest defeat, the last five, per competition.
+ * Read for the studio (`npm run h2h:build` → content/generated/head-to-head.json) and for the match card beside "next match".
+ *
+ * A row is read from the record's own fields (home, away, both goal counts), else from its printed scoreline ("A 2-1 B") with the
+ * club named on one side by its own name or a spelling it is known by (lib/clubs/spellings.ts). The opponent is named in English
+ * where the trivia name table knows him (canonClub ∘ enClub), and grouped by his core name (legal forms dropped, rule 7) — never
+ * by similarity. A row we cannot read as a scoreline with our side stated is not a meeting.
+ */
+
+export type Ledger = Tally & {
+  opponent: string
+  first: Meeting | null
+  last: Meeting | null
+  biggestWin: Meeting | null
+  heaviestDefeat: Meeting | null
+  lastFive: ('W' | 'D' | 'L')[]
+  byCompetition: Record<string, Tally>
+}
+const english = (n: string) => canonClub(enClub(n) ?? n) || n
+const margin = (m: Meeting) => (m.us === 'home' ? m.homeGoals - m.awayGoals : m.awayGoals - m.homeGoals)
+const forOf = (m: Meeting) => (m.us === 'home' ? m.homeGoals : m.awayGoals)
+const letter = (m: Meeting): 'W' | 'D' | 'L' => (margin(m) > 0 ? 'W' : margin(m) < 0 ? 'L' : 'D')
+const when = (m: Meeting) => m.on ?? `${m.year ?? 0}`
+
+const MEMO = new Map<string, (Meeting & {opponent: string})[]>()
+/** every meeting of one club, with the opponent's English name (newest first) — read once per club version per instance */
+export async function clubMeetings(clubId: string): Promise<(Meeting & {opponent: string})[]> {
+  const club = REGISTRY.find(c => c.id === clubId)
+  const pack = await loadClub(clubId).catch(() => null)
+  if (!club || !pack) return []
+  const memo = `${clubId}:${pack.data.version}`, hit = MEMO.get(memo)
+  if (hit) return hit
+  const rows = readMeetings(clubId, club.name, pack.data)
+  if (MEMO.size >= 24) MEMO.delete(MEMO.keys().next().value as string)
+  MEMO.set(memo, rows)
+  return rows
+}
+function readMeetings(clubId: string, clubName: string, data: Awaited<ReturnType<typeof loadClub>> extends infer R ? R extends {data: infer D} ? D : never : never): (Meeting & {opponent: string})[] {
+  const club = {name: clubName}, pack = {data}
+  const ours = [club.name, ...(CLUB_SPELLINGS[clubId] ?? []), ...namesOf(club.name)]
+  const found = new Map<string, Meeting & {opponent: string}>()
+  const add = (m: Meeting) => {
+    if (!m.us) return
+    const other = m.us === 'home' ? m.away : m.home
+    // one night is one meeting: the day and the two numbers, whatever spelling recorded it
+    const key = `${m.on ?? m.year ?? '?'}|${[m.homeGoals, m.awayGoals].sort((a, b) => a - b).join('-')}`
+    if (!found.has(key)) found.set(key, {...m, opponent: english(other)})
+  }
+  for (const f of pack.data.matches || []) {
+    if (f.status !== 'approved') continue
+    const v = f.value as unknown as Structured & {name?: unknown; score?: unknown}
+    const s = structured(v)
+    if (s && s.us) { add({...s, year: s.on ? Number(s.on.slice(0, 4)) : null, from: [club.name], us: s.us as 'home' | 'away'}); continue }
+    const name = typeof v.name === 'string' ? v.name : ''
+    const r = name ? readMatch(name, ours) : null
+    if (!r) continue
+    const on = typeof v.on === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(v.on) ? v.on : null
+    add({on, year: on ? Number(on.slice(0, 4)) : null, home: r.home, away: r.away, homeGoals: r.homeGoals, awayGoals: r.awayGoals, competition: typeof v.competition === 'string' ? v.competition : '', from: [club.name], us: r.us, shootout: null})
+  }
+  for (const f of eligibleArchive(pack.data)) {
+    const r = readMatch(f.value.title, ours)
+    if (!r) continue
+    add({on: f.value.on, year: f.value.year, home: r.home, away: r.away, homeGoals: r.homeGoals, awayGoals: r.awayGoals, competition: f.value.hint, from: [club.name], us: r.us})
+  }
+  return [...found.values()].sort((a, b) => when(b).localeCompare(when(a)))
+}
+
+/** the balance against every opponent, most-met first */
+export function ledgerOf(ms: (Meeting & {opponent: string})[]): Ledger[] {
+  const by = new Map<string, (Meeting & {opponent: string})[]>()
+  for (const m of ms) { const k = core(m.opponent) || m.opponent; (by.get(k) ?? by.set(k, []).get(k)!).push(m) }
+  const out: Ledger[] = []
+  for (const rows of by.values()) {
+    const sorted = [...rows].sort((a, b) => when(a).localeCompare(when(b)))
+    const byCompetition: Record<string, Tally> = {}
+    for (const m of rows) { const c = m.competition?.trim() || '—'; byCompetition[c] = tallyOf([...(rows.filter(x => (x.competition?.trim() || '—') === c))]) }
+    const wins = rows.filter(m => margin(m) > 0), losses = rows.filter(m => margin(m) < 0)
+    const pick = (a: Meeting[], cmp: (x: Meeting, y: Meeting) => number) => (a.length ? [...a].sort(cmp)[0]! : null)
+    out.push({
+      opponent: sorted[sorted.length - 1]!.opponent, ...tallyOf(rows),
+      first: sorted[0] ?? null, last: sorted[sorted.length - 1] ?? null,
+      biggestWin: pick(wins, (x, y) => margin(y) - margin(x) || forOf(y) - forOf(x)),
+      heaviestDefeat: pick(losses, (x, y) => margin(x) - margin(y)),
+      lastFive: sorted.slice(-5).reverse().map(letter), byCompetition,
+    })
+  }
+  return out.sort((a, b) => b.played - a.played || a.opponent.localeCompare(b.opponent))
+}
+
+/** the balance against one opponent (any spelling the name table knows), or null when the archive records no meeting */
+export async function headToHead(clubId: string, opponent: string): Promise<Ledger | null> {
+  const k = core(english(opponent))
+  return ledgerOf((await clubMeetings(clubId)).filter(m => core(m.opponent) === k))[0] ?? null
 }

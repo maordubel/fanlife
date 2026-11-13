@@ -21,6 +21,10 @@ import olympiacosLeague from '@/club-packs/olympiacos/wave-league-lineups-2026-1
 import panathinaikosLeague from '@/club-packs/panathinaikos/wave-league-lineups-2026-10-10.json'
 import petahLeague from '@/club-packs/hapoel-petah-tikva/wave-league-lineups-2026-10-10.json'
 import stPauliLeague from '@/club-packs/st-pauli/wave-league-lineups-2026-10-10.json'
+// 12.11.2026 — the three CAF clubs join the league feed (filled by the daily run, scripts/ingest/clubs/league-lineups.ts)
+import rajaLeague from '@/club-packs/raja-casablanca/wave-league-lineups-2026-10-10.json'
+import wydadLeague from '@/club-packs/wydad-casablanca/wave-league-lineups-2026-10-10.json'
+import ahlyLeague from '@/club-packs/al-ahly/wave-league-lineups-2026-10-10.json'
 // 12.10.2026 — the club's own team sheets from the staged Panathinaikos research package (scripts/club-research/attach-pao-lineups-2026-10-12.py)
 import paoSheets from '@/club-packs/panathinaikos/wave-pao-lineups-2026-10-12.json'
 // 12.10.2026 — St. Pauli plays no UEFA football: its Blind Cow comes from the DFB squad registrations (scripts/club-research/build-dfb-mysteries-2026-10-12.py)
@@ -31,7 +35,7 @@ type Raw=Record<string,unknown>
 const arr=(v:unknown):Raw[]=>Array.isArray(v)?v as Raw[]:[]
 const obj=(v:unknown):Raw=>v&&typeof v==='object'&&!Array.isArray(v)?v as Raw:{}
 const AUTO:Record<string,unknown>={'zrinjski-mostar':zrinjskiAuto,'aek-athens':aekAuto,celtic:celticAuto,olympiacos:olympiacosAuto,panathinaikos:panathinaikosAuto,'hapoel-petah-tikva':petahAuto}
-const LEAGUE:Record<string,unknown>={'hapoel-tel-aviv':htaLeague,'zrinjski-mostar':zrinjskiLeague,'aek-athens':aekLeague,celtic:celticLeague,olympiacos:olympiacosLeague,panathinaikos:panathinaikosLeague,'hapoel-petah-tikva':petahLeague,'st-pauli':stPauliLeague}
+const LEAGUE:Record<string,unknown>={'hapoel-tel-aviv':htaLeague,'zrinjski-mostar':zrinjskiLeague,'aek-athens':aekLeague,celtic:celticLeague,olympiacos:olympiacosLeague,panathinaikos:panathinaikosLeague,'hapoel-petah-tikva':petahLeague,'st-pauli':stPauliLeague,'raja-casablanca':rajaLeague,'wydad-casablanca':wydadLeague,'al-ahly':ahlyLeague}
 /** more same-rule fills: a club's own team sheets from a staged research package (owner, 12.10.2026) */
 const SHEETS:Record<string,unknown>={panathinaikos:paoSheets}
 const MYS:Record<string,unknown>={'zrinjski-mostar':zrinjskiMys,'aek-athens':aekMys,celtic:celticMys,olympiacos:olympiacosMys,panathinaikos:panathinaikosMys,'hapoel-petah-tikva':petahMys,'st-pauli':stPauliMys}
@@ -49,7 +53,8 @@ export function withEuro<T extends Raw>(pack:T,clubId:string):T{
  const euro=obj(AUTO[clubId]),league=obj(LEAGUE[clubId]),sheets=obj(SHEETS[clubId]),mys=obj(MYS[clubId])
  if(!Object.keys(euro).length&&!Object.keys(league).length&&!Object.keys(sheets).length&&!Object.keys(mys).length)return pack
  const auto={sources:[...arr(euro.sources),...arr(league.sources),...arr(sheets.sources)],matches:[...arr(euro.matches),...arr(league.matches),...arr(sheets.matches)]}
- const sourced=mergeWave(mergeWave(pack,{sources:[...arr(auto.sources),...arr(mys.sources)]} as Raw),mys)
+ // the league feed's positions (both sites put the man in the same line): new men are added, a known man without a position is filled (lib/clubs/waves.ts)
+ const sourced=mergeWave(mergeWave(mergeWave(pack,{sources:[...arr(auto.sources),...arr(mys.sources)]} as Raw),mys),{players:arr(league.players)} as Raw)
  const byDay=new Map(arr(sourced.matches).map(f=>[String(obj(f.value).on),f]))
  const fill=new Map<string,Raw>(),add:Raw[]=[]
  for(const w of arr(auto.matches)){
@@ -57,6 +62,8 @@ export function withEuro<T extends Raw>(pack:T,clubId:string):T{
   const wv=obj(w.value),lineup=arr(wv.lineup),day=String(wv.on),p=byDay.get(day)
   if(!p){add.push(w);byDay.set(day,w);continue}
   const pv=obj(p.value)
+  // 12.11.2026 — the league feed now prints agreed scoresheets: a pack night with its eleven but no scorers takes them
+  if(lineup.length===11&&arr(pv.lineup).length===11&&!arr(pv.scorers).length&&arr(wv.scorers).length&&!fill.has(String(p.id))){fill.set(String(p.id),{...p,value:{...pv,scorers:wv.scorers},sources:[...new Set([...(Array.isArray(p.sources)?p.sources as string[]:[]),...(Array.isArray(w.sources)?w.sources as string[]:[])])]});continue}
   if(lineup.length===11&&arr(pv.lineup).length!==11&&!fill.has(String(p.id)))fill.set(String(p.id),{...p,value:{...pv,lineup:wv.lineup,bench:wv.bench,scorers:arr(pv.scorers).length?pv.scorers:wv.scorers,...(arr(wv.decoys).length&&!arr(pv.decoys).length?{decoys:wv.decoys}:{})},sources:[...new Set([...(Array.isArray(p.sources)?p.sources as string[]:[]),...(Array.isArray(w.sources)?w.sources as string[]:[])])]})
  }
  const matches=arr(sourced.matches).map(f=>fill.get(String(f.id))??f)

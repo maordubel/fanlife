@@ -1,0 +1,68 @@
+{
+ "hapoel-tel-aviv": {
+  "drawn": 48,
+  "fromArchive": 39,
+  "fromPack": 9,
+  "noColour": 0
+ },
+ "zrinjski-mostar": {
+  "drawn": 63,
+  "fromArchive": 22,
+  "fromPack": 41,
+  "noColour": 0
+ },
+ "hapoel-petah-tikva": {
+  "drawn": 84,
+  "fromArchive": 6,
+  "fromPack": 78,
+  "noColour": 0
+ },
+ "panathinaikos": {
+  "drawn": 128,
+  "fromArchive": 65,
+  "fromPack": 63,
+  "noColour": 0
+ },
+ "aek-athens": {
+  "drawn": 102,
+  "fromArchive": 102,
+  "fromPack": 0,
+  "noColour": 0
+ },
+ "celtic": {
+  "drawn": 101,
+  "fromArchive": 101,
+  "fromPack": 0,
+  "noColour": 2
+ },
+ "st-pauli": {
+  "drawn": 54,
+  "fromArchive": 54,
+  "fromPack": 0,
+  "noColour": 0
+ },
+ "olympiacos": {
+  "drawn": 102,
+  "fromArchive": 76,
+  "fromPack": 26,
+  "noColour": 0
+ },
+ "raja-casablanca": {
+  "drawn": 8,
+  "fromArchive": 0,
+  "fromPack": 8,
+  "noColour": 17
+ },
+ "wydad-casablanca": {
+  "drawn": 5,
+  "fromArchive": 0,
+  "fromPack": 5,
+  "noColour": 8
+ },
+ "al-ahly": {
+  "drawn": 8,
+  "fromArchive": 0,
+  "fromPack": 8,
+  "noColour": 7
+ }
+}

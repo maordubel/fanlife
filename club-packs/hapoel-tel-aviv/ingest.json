@@ -1,8 +1,9 @@
 {
  "names": [
-  "Hapoel Tel Aviv"
+  "Hapoel Tel Aviv",
+  "Hapoel Tel-Aviv"
  ],
- "country": null,
- "uefaTeamId": null,
+ "country": "ISR",
+ "uefaTeamId": "59869",
  "scores365Id": 567
 }

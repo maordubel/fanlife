@@ -64,6 +64,14 @@
   "owner": null
  },
  {
+  "id": "continue-torcida-posts",
+  "priority": "P3",
+  "task": "Torcida Split posts: 4 page(s) read of 27; the scheduled task continues from the checkpoint.",
+  "taskHe": "Torcida Split posts: נקראו 4 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
+  "status": "queued",
+  "owner": null
+ },
+ {
   "id": "limit-torcida-0",
   "priority": "P3",
   "task": "Fan-group history, not the club's match archive; results are never inferred from fan articles.",

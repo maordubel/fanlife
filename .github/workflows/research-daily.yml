@@ -41,8 +41,27 @@ jobs:
             npm run -s club:wave -- --club "$id" --max 20 --backfill 30 --refresh 20 2>&1 | tee -a wave.log || failed="$failed $id"
           done
           [ -z "$failed" ] || echo "::warning::club:wave failed for:$failed"
+      - name: League and cup nights, scoresheets and positions (365Scores × LiveScore, every club with ingest.json)
+        # 12.11.2026 — the league feed runs every day now (it had run once, on 10.10): new nights, agreed scorers and agreed lines
+        continue-on-error: true
+        run: |
+          for dir in club-packs/*/; do
+            id=$(basename "$dir")
+            [ -f "$dir/ingest.json" ] || continue
+            npx tsx scripts/ingest/clubs/league-lineups.ts --club "$id" --max 30 2>&1 | tee -a wave.log || echo "::warning::$id league feed failed"
+          done
       - name: Census
         run: npm run -s research:census -- --out census.json
+      - name: Club history and careers (Celtic every match; Olympiacos careers from olympiacos-history.gr)
+        # 13.11.2026 — the current and last season are re-read daily (the file accumulates); careers refresh with the site's table
+        continue-on-error: true
+        run: |
+          y=$(date +%Y)
+          npx tsx scripts/ingest/clubs/history-scotland.ts --club celtic --from $((y-1)) --to $y 2>&1 | tail -3
+          node --require ./scripts/master/server-only.cjs --import tsx scripts/ingest/clubs/olympiacos-history-players.ts 2>&1 | tail -2
+      - name: Head-to-head ledger for the studio and the next-match card
+        continue-on-error: true
+        run: npm run -s h2h:build
       - name: What a yes would open (staged clubs)
         run: npm run -s research:desk-preview
       - name: Report (+ AI triage when the key exists)
@@ -57,8 +76,12 @@ jobs:
           add-paths: |
             research-data/**
             club-packs/**/wave-auto.json
+            club-packs/**/wave-league-lineups-*.json
+            club-packs/celtic/wave-history-scotland.json
+            club-packs/olympiacos/wave-olympiacos-history.json
             research-staging/**/wave-auto.json
             research-staging/**/ingest.json
             club-packs/**/ingest.json
             research-reports/**
+            content/generated/head-to-head.json
           body: 'Automatic daily pull. New rows are unreviewed; see research-reports/ for what changed per club. New clubs wait for the owner on the research desk (Control room → Research).'

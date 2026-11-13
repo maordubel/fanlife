@@ -660,5 +660,10 @@
   "tabWatch": "יוטיוב",
   "wkWatch": "Football Stories ביוטיוב",
   "wkWatchSub": "סרטים על אוהדים אמיתיים",
-  "wkhInWatch": "סרטים"
+  "wkhInWatch": "סרטים",
+  "h2hMet": "{n} מפגשים",
+  "h2hWon": "נצחונות",
+  "h2hDrawn": "תיקו",
+  "h2hLost": "הפסדים",
+  "h2hFirst": "אין עדיין מפגש מתועד"
 }

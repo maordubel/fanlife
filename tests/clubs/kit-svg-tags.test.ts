@@ -9,8 +9,12 @@ describe('every club kit drawing is tagged and complete (13.10.2026)',()=>{
   const kits=(JSON.parse(readFileSync(`content/manual/${file}.json`,'utf8')) as {kits:K[]}).kits
   it(`${club}: each kit has an SVG carrying its season, type and index row`,()=>{
    const index=JSON.parse(readFileSync(`public/club-kits/${club}/svg/index.json`,'utf8')) as {count:number;kits:{id:string;season:string;type:string}[]}
-   expect(index.count).toBe(kits.length)
-   for(const k of kits){
+   // 12.11.2026 — the folder also draws every approved pack kit with a documented colour (npm run kits:svgs): the index counts the joined
+   // list, and every archive kit is still in it
+   const joined=`content/generated/kit-svgs/${club}.json`,all=existsSync(joined)?(JSON.parse(readFileSync(joined,'utf8')) as {kits:K[]}).kits:kits
+   expect(index.count).toBe(all.length)
+   expect(all.filter(k=>k.origin!=='pack').map(k=>k.id).sort()).toEqual(kits.map(k=>k.id).sort())
+   for(const k of all){
     const f=`public/club-kits/${club}/svg/${k.id}.svg`
     expect(existsSync(f),f).toBe(true)
     const head=readFileSync(f,'utf8').slice(0,600)

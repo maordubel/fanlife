@@ -39,7 +39,9 @@ async function main(){
  const club=arg('club');if(!club)throw new Error('--club <id> required')
  const home=existsSync(`club-packs/${club}/ingest.json`)?`club-packs/${club}`:`research-staging/${club}`  // unopened clubs keep their wave in staging, never wired
  const cfgPath=`${home}/ingest.json`;if(!existsSync(cfgPath))throw new Error(`missing ${cfgPath}`)
- const cfg=JSON.parse(readFileSync(cfgPath,'utf8')) as {names:string[];country?:string;uefaTeamId?:string|null}
+ const cfg=JSON.parse(readFileSync(cfgPath,'utf8')) as {names:string[];country?:string;uefaTeamId?:string|null;uefa?:boolean}
+ // 12.11.2026 — a club that plays no UEFA football (St. Pauli; the CAF clubs) says so in ingest.json: no discovery sweep, no false alarm
+ if(cfg.uefa===false){console.log(`[${club}] no UEFA competition on file — skipped (the league feed covers it)`);return}
  const max=Number(arg('max')||80),backfill=Number(arg('backfill')||0),refresh=Number(arg('refresh')||0),today=new Date().toISOString().slice(0,10)
  const teamId=cfg.uefaTeamId||await discover(cfg.names,cfg.country||null)
  // the zero-yield alarm reads this line (research:daily-report): a club with no id is named every day until it has one

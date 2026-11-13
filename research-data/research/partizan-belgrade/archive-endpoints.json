@@ -29,15 +29,15 @@
   "state": "blocked",
   "status": 403,
   "reason": "HTTP 403 — a refusal is an answer",
-  "checkedAt": "2026-11-10T11:25:44.890Z"
+  "checkedAt": "2026-11-12T11:51:26.261Z"
  },
  "crno-bela-nostalgija:/wp-json/wp/v2/pages": {
   "endpoint": "/wp-json/wp/v2/pages",
   "providerId": "crno-bela-nostalgija",
-  "state": "blocked",
-  "status": 403,
-  "reason": "HTTP 403 — a refusal is an answer",
-  "checkedAt": "2026-11-10T11:25:47.988Z"
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-11-12T11:51:30.178Z"
  },
  "partizan-official:/vesti/istorijat": {
   "endpoint": "/vesti/istorijat",
@@ -45,7 +45,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-11-10T11:25:49.998Z"
+  "checkedAt": "2026-11-12T11:51:31.936Z"
  },
  "nft-partizan:/club/2156/1963/Partizan_Beograd.html": {
   "endpoint": "/club/2156/1963/Partizan_Beograd.html",
@@ -53,7 +53,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-11-10T11:25:51.309Z"
+  "checkedAt": "2026-11-12T11:51:33.830Z"
  },
  "partizanopedia:/4647.html": {
   "endpoint": "/4647.html",
@@ -718,5 +718,37 @@
   "status": 200,
   "reason": null,
   "checkedAt": "2026-11-10T11:25:44.065Z"
+ },
+ "partizanopedia:/franjoglazer.html": {
+  "endpoint": "/franjoglazer.html",
+  "providerId": "partizanopedia",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-11-12T11:51:14.471Z"
+ },
+ "partizanopedia:/milivojedjurdjevic.html": {
+  "endpoint": "/milivojedjurdjevic.html",
+  "providerId": "partizanopedia",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-11-12T11:51:18.442Z"
+ },
+ "partizanopedia:/stanislavpopesku.html": {
+  "endpoint": "/stanislavpopesku.html",
+  "providerId": "partizanopedia",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-11-12T11:51:22.128Z"
+ },
+ "partizanopedia:/silvesterseres.html": {
+  "endpoint": "/silvesterseres.html",
+  "providerId": "partizanopedia",
+  "state": "ok",
+  "status": 200,
+  "reason": null,
+  "checkedAt": "2026-11-12T11:51:26.132Z"
  }
 }

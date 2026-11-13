@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import {archiveLink} from '@/lib/clubs/archive-link'
 import {ClubShirt} from '@/components/clubs/stage/ClubShirt'
 import {MysteryMark} from './MysteryMark'
 import {ShareComposer} from '@/components/share/v3/ShareComposer'
@@ -70,7 +71,7 @@ export function ResultCard({run,mode,player,wardrobe,contentLocale,club,locale,v
    </section>
    {r.sources.length>0&&<details className={css.sources}><summary>{t('bc.res.sources')} ({r.sources.length})</summary>
     <ul>{r.sources.map(s=><li key={s.id}>{s.url?<a href={s.url} target="_blank" rel="noreferrer"><bdi>{s.title}</bdi> ↗</a>:<bdi>{s.title}</bdi>}</li>)}</ul></details>}
-   <Link className={css.link} href={`/clubs/${club}/archive?q=${encodeURIComponent(r.name)}&lang=${locale}`}>{t('bc.res.archive')} ↗</Link>
+   <Link className={css.link} href={archiveLink(club,locale,{player:r.playerId,name:r.name})}>{t('bc.res.archive')} ↗</Link>
   </div>
   <div className={css.resultDock}>
    <p className={css.status} role="status">{notice}</p>

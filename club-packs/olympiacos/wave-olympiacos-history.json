@@ -1,0 +1,1788 @@
+{
+ "schemaVersion": 1,
+ "clubId": "olympiacos",
+ "contentLocale": "en",
+ "sources": [
+  {
+   "id": "olyhist-players",
+   "title": "olympiacos-history.gr — Όλοι οι παίκτες του Ολυμπιακού (archive of Tassos Stathopoulos)",
+   "url": "https://olympiacos-history.gr/?page_id=60212",
+   "publisher": "olympiacos-history.gr",
+   "language": "el",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  }
+ ],
+ "players": [
+  {
+   "id": "r26-karataidis",
+   "value": {
+    "name": "Kyriakos Karataidis",
+    "career": {
+     "apps": 500,
+     "goals": 5,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Καραταΐδης Κυριάκος."
+  },
+  {
+   "id": "r26-djordjevic",
+   "value": {
+    "name": "Predrag Djordjevic",
+    "career": {
+     "apps": 493,
+     "goals": 158,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Τζόρτζεβιτς Πρέντραγκ."
+  },
+  {
+   "id": "r26-gaitatzis",
+   "value": {
+    "name": "Giannis Gaitatzis",
+    "career": {
+     "apps": 438,
+     "goals": 13,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Γκαϊτατζής Γιάννης."
+  },
+  {
+   "id": "r26-sideris",
+   "value": {
+    "name": "Giorgos Sideris",
+    "career": {
+     "apps": 365,
+     "goals": 308,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Σιδέρης Γιώργος."
+  },
+  {
+   "id": "r26-anastopoulos",
+   "value": {
+    "name": "Nikos Anastopoulos",
+    "career": {
+     "apps": 351,
+     "goals": 200,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Αναστόπουλος Νίκος."
+  },
+  {
+   "id": "r26-alexandris",
+   "value": {
+    "name": "Alexandros Alexandris",
+    "career": {
+     "apps": 347,
+     "goals": 178,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Αλεξανδρής Αλέκος."
+  },
+  {
+   "id": "r26-mitropoulos",
+   "value": {
+    "name": "Tasos Mitropoulos",
+    "career": {
+     "apps": 324,
+     "goals": 62,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Μητρόπουλος Τάσος."
+  },
+  {
+   "id": "r26-karapialis",
+   "value": {
+    "name": "Vasilis Karapialis",
+    "career": {
+     "apps": 310,
+     "goals": 72,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Καραπιάλης Βασίλης."
+  },
+  {
+   "id": "wv-1418eb2827",
+   "value": {
+    "name": "Thanasis Bebis",
+    "career": {
+     "apps": 301,
+     "goals": 60,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Μπέμπης Θανάσης."
+  },
+  {
+   "id": "r26-giannakopoulos",
+   "value": {
+    "name": "Stelios Giannakopoulos",
+    "career": {
+     "apps": 285,
+     "goals": 87,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Γιαννακόπουλος Στέλιος."
+  },
+  {
+   "id": "r26-georgatos",
+   "value": {
+    "name": "Grigoris Georgatos",
+    "career": {
+     "apps": 276,
+     "goals": 42,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Γεωργάτος Γρηγόρης."
+  },
+  {
+   "id": "r26-lemonis",
+   "value": {
+    "name": "Takis Lemonis",
+    "career": {
+     "apps": 230,
+     "goals": 19,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Λεμονής Τάκης."
+  },
+  {
+   "id": "r26-kritikopoulos",
+   "value": {
+    "name": "Michalis Kritikopoulos",
+    "career": {
+     "apps": 228,
+     "goals": 102,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Κρητικόπουλος Μιχάλης."
+  },
+  {
+   "id": "r26-torosidis",
+   "value": {
+    "name": "Vasilis Torosidis",
+    "career": {
+     "apps": 221,
+     "goals": 20,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Τοροσίδης Βασίλης."
+  },
+  {
+   "id": "r26-kousoulakis",
+   "value": {
+    "name": "Vangelis Kousoulakis",
+    "career": {
+     "apps": 211,
+     "goals": 30,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Κουσουλάκης Βαγγέλης."
+  },
+  {
+   "id": "r26-papadopoulos",
+   "value": {
+    "name": "Avraam Papadopoulos",
+    "career": {
+     "apps": 211,
+     "goals": 6,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Παπαδόπουλος Αβραάμ."
+  },
+  {
+   "id": "wv-067df7343e",
+   "value": {
+    "name": "Takis Synetopoulos",
+    "career": {
+     "apps": 196,
+     "goals": 10,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Συνετόπουλος Τάκης."
+  },
+  {
+   "id": "r26-mitroglou",
+   "value": {
+    "name": "Kostas Mitroglou",
+    "career": {
+     "apps": 186,
+     "goals": 83,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Μήτρογλου Κώστας."
+  },
+  {
+   "id": "r26-losada",
+   "value": {
+    "name": "Julio Losada",
+    "career": {
+     "apps": 181,
+     "goals": 38,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Λοσάντα Χούλιο."
+  },
+  {
+   "id": "r26-vazos",
+   "value": {
+    "name": "Giannis Vazos",
+    "career": {
+     "apps": 173,
+     "goals": 192,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Βάζος Γιάννης."
+  },
+  {
+   "id": "r26-botinos",
+   "value": {
+    "name": "Vasilis Botinos",
+    "career": {
+     "apps": 171,
+     "goals": 58,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Μποτίνος Βασίλης."
+  },
+  {
+   "id": "r26-valbuena",
+   "value": {
+    "name": "Mathieu Valbuena",
+    "career": {
+     "apps": 161,
+     "goals": 20,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Βαλμπουενά Ματιέ."
+  },
+  {
+   "id": "r26-tzolakis",
+   "value": {
+    "name": "Konstantinos Tzolakis",
+    "career": {
+     "apps": 141,
+     "goals": 0,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Τζολάκης Κωσταντής."
+  },
+  {
+   "id": "r26-mouratis",
+   "value": {
+    "name": "Andreas Mouratis",
+    "career": {
+     "apps": 130,
+     "goals": 22,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Μουράτης Ανδρέας."
+  },
+  {
+   "id": "wv-eb41196d7e",
+   "value": {
+    "name": "Babis Drosos",
+    "career": {
+     "apps": 101,
+     "goals": 43,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Δρόσος Χαράλαμπος."
+  },
+  {
+   "id": "r26-manolas",
+   "value": {
+    "name": "Kostas Manolas",
+    "career": {
+     "apps": 96,
+     "goals": 6,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Μανωλάς Κώστας."
+  },
+  {
+   "id": "r26-galletti",
+   "value": {
+    "name": "Luciano Galletti",
+    "career": {
+     "apps": 93,
+     "goals": 27,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Γκαλέτι Λουτσιάνο."
+  },
+  {
+   "id": "wv-ab403287d5",
+   "value": {
+    "name": "Leonidas Andrianopoulos",
+    "career": {
+     "apps": 87,
+     "goals": 22,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Ανδριανόπουλος Λεωνίδας."
+  },
+  {
+   "id": "r26-detari",
+   "value": {
+    "name": "Lajos Detari",
+    "career": {
+     "apps": 84,
+     "goals": 46,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Ντέταρι Λάγιος."
+  },
+  {
+   "id": "r26-grammatikopoulos",
+   "value": {
+    "name": "Achilleas Grammatikopoulos",
+    "career": {
+     "apps": 81,
+     "goals": 0,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Γραμματικόπουλος Αχιλλέας."
+  },
+  {
+   "id": "wv-225bbdd197",
+   "value": {
+    "name": "Alexandros Paschalakis",
+    "career": {
+     "apps": 77,
+     "goals": 0,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Πασχαλάκης Αλέξανδρος."
+  },
+  {
+   "id": "wv-0f0256d1ec",
+   "value": {
+    "name": "Kostas Karapatis",
+    "career": {
+     "apps": 76,
+     "goals": 0,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Καραπατής Κώστας."
+  },
+  {
+   "id": "wv-c86e449664",
+   "value": {
+    "name": "Eleftherios Poupakis",
+    "career": {
+     "apps": 73,
+     "goals": 1,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Πουπάκης Λευτέρης."
+  },
+  {
+   "id": "wv-e2191690d0",
+   "value": {
+    "name": "Vasilios Papachristou",
+    "career": {
+     "apps": 58,
+     "goals": 5,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Παπαχρήστου Βασίλης."
+  },
+  {
+   "id": "wv-72dc0477ed",
+   "value": {
+    "name": "Apostolos Drakopoulos",
+    "career": {
+     "apps": 54,
+     "goals": 6,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Δρακόπουλος Τόλης."
+  },
+  {
+   "id": "wv-4145173bf3",
+   "value": {
+    "name": "Giannis Fronimidis",
+    "career": {
+     "apps": 41,
+     "goals": 0,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Φρονιμήδης Γιάννης."
+  },
+  {
+   "id": "wv-4c9b9a6c1c",
+   "value": {
+    "name": "Abdoulaye Keita",
+    "career": {
+     "apps": 33,
+     "goals": 4,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Κεϊτά Ντίμπι."
+  },
+  {
+   "id": "wv-727d6ed5d2",
+   "value": {
+    "name": "Giannis Andrianopoulos",
+    "career": {
+     "apps": 28,
+     "goals": 0,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Ανδριανόπουλος Γιάννης."
+  },
+  {
+   "id": "wv-b61220293b",
+   "value": {
+    "name": "Antonis Kasdovasilis",
+    "career": {
+     "apps": 20,
+     "goals": 0,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Κασδοβασίλης Αντώνης."
+  },
+  {
+   "id": "wv-a5ab779684",
+   "value": {
+    "name": "Emmanuel Emenike",
+    "career": {
+     "apps": 10,
+     "goals": 4,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Εμενίκε Εμάνουελ."
+  },
+  {
+   "id": "wv-e032400977",
+   "value": {
+    "name": "Svetozar Marković",
+    "career": {
+     "apps": 6,
+     "goals": 0,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Μάρκοβιτς Σβέντοζαρ."
+  },
+  {
+   "id": "wv-61d07cf5f2",
+   "value": {
+    "name": "Stefanos Theodoridis",
+    "career": {
+     "apps": 6,
+     "goals": 0,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Θεοδωρίδης Στέφανος."
+  },
+  {
+   "id": "wv-c6c5b63500",
+   "value": {
+    "name": "Antonis Dermatis",
+    "career": {
+     "apps": 6,
+     "goals": 0,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Δερμάτης Αντώνης."
+  },
+  {
+   "id": "wv-40c8f9a595",
+   "value": {
+    "name": "Emre Mor",
+    "career": {
+     "apps": 2,
+     "goals": 0,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Μορ Εμρέ."
+  },
+  {
+   "id": "wv-084f940795",
+   "value": {
+    "name": "Antonis Papasavvas",
+    "career": {
+     "apps": 1,
+     "goals": 1,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Παπασάββας Αντώνης."
+  },
+  {
+   "id": "wv-399f8661cf",
+   "value": {
+    "name": "Theofanis Tzandaris",
+    "career": {
+     "apps": 1,
+     "goals": 0,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Τζανδάρης Θεοφάνης."
+  },
+  {
+   "id": "wv-3e858839c0",
+   "value": {
+    "name": "Kristijan Belić",
+    "career": {
+     "apps": 1,
+     "goals": 0,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Μπέλιτς Κριστιάν."
+  },
+  {
+   "id": "wv-b4c9ea110b",
+   "value": {
+    "name": "Dimitris Thanopoulos",
+    "career": {
+     "apps": 1,
+     "goals": 0,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Θανόπουλος Δημήτρης."
+  },
+  {
+   "id": "wv-4cec810769",
+   "value": {
+    "name": "Iosif Daskalakis",
+    "career": {
+     "apps": 1,
+     "goals": 0,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Δασκαλάκης Σήφης."
+  },
+  {
+   "id": "wv-6f96004212",
+   "value": {
+    "name": "Giannis Gianniotas",
+    "career": {
+     "apps": 1,
+     "goals": 0,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Γιαννιώτας Γιάννης."
+  },
+  {
+   "id": "wv-ef3eed48e6",
+   "value": {
+    "name": "Andreas Vasilogiannis",
+    "career": {
+     "apps": 1,
+     "goals": 0,
+     "basis": "all official competitions (olympiacos-history.gr, from the archive of Tassos Stathopoulos)"
+    },
+    "sensitive": false
+   },
+   "sources": [
+    "olyhist-players"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Greek name on the site: Βασιλόγιαννης Ανδρέας."
+  }
+ ],
+ "matches": [],
+ "kits": [],
+ "rivals": [],
+ "unmatched": [
+  "Φορτούνης Κώστας",
+  "Σιώκος Βασίλης",
+  "Γιούτσος Νίκος",
+  "Μαυρογενίδης Δημήτρης",
+  "Μασούρας Γιώργος",
+  "Τσιαντάκης Νίκος",
+  "Νικοπολίδης Αντώνης",
+  "Βασιλείου Παύλος",
+  "Βαμβακούλας Νίκος",
+  "Χαντζίδης Μηνάς",
+  "Ελ Αραμπί Γιουσέφ",
+  "Παπαδόπουλος Σταύρος",
+  "Παυλίδης Ορέστης",
+  "Ελευθερόπουλος Δημήτρης",
+  "Αγγελής Θανάσης",
+  "Υφαντής Ηλίας",
+  "Κελεσίδης Παναγιώτης",
+  "Ζιοβάνι Σίλβα",
+  "Κωστούλας Θανάσης",
+  "Πάντος Τάσος",
+  "Άντζας Παρασκευάς",
+  "Ξανθόπουλος Βασίλης",
+  "Ζαντέρογλου Χρήστος",
+  "Σούλης (Κίνλεϊ) Θανάσης",
+  "Πλέσσας Δημήτρης",
+  "Παπάζογλου Αριστείδης",
+  "Ελ Αμπντελαουί Ομάρ",
+  "Καστίγιο Νέρι",
+  "Μαυρομμάτης Σωτήρης",
+  "Αγανιάν Γρηγόρης",
+  "Ροντινέι Μαρσέλο",
+  "Σισέ Παπέ Αμπού",
+  "Ιωάννου Γιάννης",
+  "Ποντένσε Ντάνιελ",
+  "Σημαντήρης Γιάγκος",
+  "Τόγιας Γιώργος",
+  "Εμβιλά Γιαν",
+  "Οφορίκουε Πίτερ",
+  "Ανδρούτσος Θανάσης",
+  "Ελ Κααμπί Αγιούμπ",
+  "Έσε Σαντιάγκο",
+  "Παπάζογλου Κώστας",
+  "Ζεβλάκοφ Μίχαελ",
+  "Στολίγκας Γιώργος",
+  "Συμεωνίδης Θεολόγος",
+  "Σα Ζοσέ",
+  "Ψύχος Στέλιος",
+  "Ντομίνγκες Αλεχάντρο",
+  "Μινάρδος Διονύσης",
+  "Ρέαμπτσιουκ Όλεγκ",
+  "Νοβοσέλατς Μάρτιν",
+  "Κορσιάνος Παναγιώτης",
+  "Ρομπέρτο Χιμένεθ Γκάγκο",
+  "Μουστακλής Θέμης",
+  "Βαγιακάκος Γιώργος",
+  "Τριαντάφυλλος Υβ",
+  "Προτάσοφ Όλεγκ",
+  "Καλατζής Κρις",
+  "Ποσειδών Αντώνης",
+  "Μπατίστα Ντανιέλ",
+  "Τσικίνιο Φρανσίσκο",
+  "Ράγκος Χριστόφορος",
+  "Ορτέγκα Φραντσίσκο",
+  "Παπαδόπουλος (Παμπουλής) Πάμπος",
+  "Λιτόφτσενκο Γενάντι",
+  "Σιδέρης Νίκος",
+  "Ριβάλντο Βίτορ Μπόρμπα Φερέιρα",
+  "Τσανακτσής Στάθης",
+  "Σέμπα Κόουτο",
+  "Καρεμπέ Κριστιάν",
+  "Βασιλόπουλος Γιώργος",
+  "Ράντος Αλέκος",
+  "Αποστολόπουλος Δημήτρης",
+  "Σταυρόπουλος Μπάμπης",
+  "Ιμπαγάσα Άριελ",
+  "Μαλεύρης Γιώργος",
+  "Λουτσιάνο Ντε Σόουζα",
+  "Μιλιβόγεβιτς Λούκα",
+  "Ντούντου Σεαρένσε",
+  "Κουμαριάς Μίλτος",
+  "Μάρτινς Ζέλσον",
+  "Νεντίδης Νίκος",
+  "Ντόη Ανδρέας",
+  "Χριστόπουλος Στέλιος",
+  "Κουρουκλάτος Στέλιος",
+  "Μουστακίδης Σάκης",
+  "Νικολούδης Τάκης",
+  "Ραούλ Μπράβο Σανφέλιξ",
+  "Παππάς Σούλης",
+  "Κουράντης Φίλιππος",
+  "Τζιμπούρ Ράφικ",
+  "Καβέζος Σωτήρης",
+  "Ιωαννίδης Βασίλης",
+  "Χρυσαφόπουλος Αριστείδης",
+  "Γρηγοριάδης Παύλος",
+  "Γκιλιέρμε Τόρες",
+  "Τοχούρογλου Κυριάκος",
+  "Ντιόγκο Λούις Σάντας",
+  "Ζε Ελίας Μοεντίμ",
+  "Αυγητίδης Παράσχος",
+  "Μίλησης Βαγγέλης",
+  "Ραντζέλοβιτς Λάζαρ",
+  "Γούναρης Γιάννης",
+  "Χατζησταυρίδης Αλέκος",
+  "Βασιλείου Νίκος",
+  "Μαζουακού Αρτούρ",
+  "Κοστίνια Ζοάο",
+  "Ανδριανόπουλος Βασίλης",
+  "Αμπντούν Τζαμέλ",
+  "Λεκκός Λάλης (Μιχάλης)",
+  "Μέγερι Μπαλάζ Ατίλα",
+  "Αλιφραγκής Ιάκωβος",
+  "Μπα Αλγκασίμ",
+  "Πανόπουλος Νίκος",
+  "Χούτος Λάμπρος",
+  "Παπαδημητρίου Γιώτης",
+  "Όσκαρ Γκονζάλεθ",
+  "Μπιανκόν Τζούλιαν",
+  "Μασάντο Πάουλο",
+  "Φιγκέιρας Ντιόγκο",
+  "Κανσός Γιώργος",
+  "Κούτρης Λεονάρντο",
+  "Ιντέγε Μπράουν",
+  "Αργυρούδης Ρομέν",
+  "Κωνσταντίνου Μιχάλης",
+  "Αναματερός Μιχάλης",
+  "Σέζαρ Σάντος Ζούλιο",
+  "Δεπούντης Σπύρος",
+  "Γκερέρο Μιγκέλ Άνχελ",
+  "Μαρτίνς Αντρέ",
+  "Κοβάσεβιτς Ντάρκο",
+  "Εντινγκά Κέλβιν",
+  "Ανδριανόπουλος Ντίνος",
+  "Σούρερ Γκάμπριελ",
+  "Κοκκινάκης Δημήτρης",
+  "Άλβες Γκαμπριέλ",
+  "Κωστούλας Μπάμπης",
+  "Λεονάρντο Ζεράλντο",
+  "Ξαρχάκος Δημήτρης",
+  "Βάντσλικ Τόμας",
+  "Σάβιτσεφ Γιούρι",
+  "Γκιόκας Λουκιανός",
+  "Μπελούτσι Φερναντο",
+  "Λιόλιος Κώστας",
+  "Μυλωνάς Μιχάλης",
+  "Άλστρομ Τόμας",
+  "Περόνε Ραφαέλ",
+  "Πινακάς Δημήτρης",
+  "Κόντης Χρήστος",
+  "Καμαρά Ακιμπού",
+  "Χριστοδούλου Γιώργος",
+  "Πάντελιτς Μάρκο",
+  "Σουάρες Τικίνιο",
+  "Ροντρίγκες Γκάρι",
+  "Καλτσάς Χρήστος",
+  "Ζάκκας Νίκος",
+  "Στρακόσια Φώτης",
+  "Γιάρεμτσουκ Ρόμαν",
+  "Λούα Λούα Λομανά",
+  "Καμπιάσο Εστέμπαν",
+  "Μπαμπαγκίντα Αρούνας",
+  "Σαπουντζής Τάσος",
+  "Γκαρθία Ντάνι Ντανιέλ Λάρα",
+  "Γκαρθία Ντάνι Καρίγιο Ντανιέλ",
+  "Ανδριανόπουλος Γιώργος",
+  "Μίλερ Δημήτρης",
+  "Καρβάλιο Ζοάο",
+  "Γερμενής Γεράσιμος",
+  "Τερεζάκης Κώστας",
+  "Παπάζογλου Τάσος",
+  "Τζίνης Νίκος",
+  "Κουρέας Κυριάκος",
+  "Μέρια Γιασίν",
+  "Παπαδούδης Θανάσης",
+  "Κάμπελ Ζοέλ",
+  "Εσταβίλιο Βιθέντε",
+  "Καλογερόπουλος Αλέξανδρος",
+  "Παπαγγέλης Βασίλης",
+  "Τσέλιος Τάσος",
+  "Δρούγκας Ακύλας",
+  "Τσαντάκης Φίλιππος",
+  "Μαυρουδής Παύλος",
+  "Χουάνγκ Ιν Μπον",
+  "Γκαβασιάδης Γιώργος",
+  "Μπαρμπαλιάς Παναγιώτης",
+  "Ζελιλίδης Θόδωρος",
+  "Χέλμης Γιάννης",
+  "Κούντε Πιέρ",
+  "Κόης Απόστολος",
+  "Ονιεμαέτσι Μπρούνο",
+  "Βλαχομήτρος Ανέστης",
+  "Τρούπκος Γρηγόρης",
+  "Μπακαμπού Σέντρικ",
+  "Ορμπάιθ Πάμπλο",
+  "Βασιλειάδης Άγγελος",
+  "Ντάρμπισιρ Ματ",
+  "Καλογερόπουλος Βαγγέλης",
+  "Ελιονούσι Ταρίκ",
+  "Καμπόλης Νίκος",
+  "Ζαρκάδης Βασίλης",
+  "Φέισα Λιούμπομιρ",
+  "Σαμπανάντοβιτς Ρέφικ",
+  "Γιουσκόβιακ Αντρέι",
+  "Κρίστενσεν Μπεντ",
+  "Γιόβετιτς Στέφαν",
+  "Λούβαρης Αριστείδης",
+  "Μύρτσος Γιώργος",
+  "Λαιμός Γιώργος",
+  "Φούνες Χιλμπέρτο",
+  "Μπρούμα Αρμίντο",
+  "Βούκοτιτς Γιάνκος",
+  "Κίνι Χοακίν",
+  "Σόρενσεν Νιλς",
+  "Μίχας Παναγιώτης",
+  "Κυπριανίδης Παναγιώτης",
+  "Ντε Λα Μπέγια Άλμπερτ",
+  "Ιμπαγάσα Ιάγκο",
+  "Σοφράς Δημήτρης",
+  "Τζούρτζεβιτς Ούρος",
+  "Μπόρχα Φέλιξ",
+  "Νόιμαν Χέρμπερτ",
+  "Πεζώνης Χαράλαμπος",
+  "Μπουλούτ Έρολ",
+  "Μακούν Ζαν",
+  "Σουρούνης Τάσος",
+  "Προκόβας Γιώργος",
+  "Τζιωρτζόπουλος Σταύρος",
+  "Χριστοφίδης Πέτρος",
+  "Νούνιες Λιονέλ",
+  "Γεωργάτος Διονύσης",
+  "Πάρντο Ούρκο Ραφαέλ",
+  "Γιαζίτζι Γιουσούφ",
+  "Νεοφώτιστος Αργύρης",
+  "Ζιλέ Γκιγιόμ",
+  "Σγούρος Ραφαήλ",
+  "Ζντιέλαρ Σάσα",
+  "Σπετσέρης Τάκης",
+  "Πήλιουρης Γιώργος",
+  "Μπενίτες Χόρχε",
+  "Όρτα Αντρέ",
+  "Γρηγοράτος Νίκος",
+  "Ονιεκούρου Χένρικ",
+  "Κοντρέρας Πάμπλο",
+  "Νασιμέντο Ντιόγκο Αντρέ",
+  "Μαριόλης Νίκος",
+  "Σιπιόνι Λορέντζο",
+  "Ερνάνι Σάντος",
+  "Νικολάου Δημήτρης",
+  "Βιολέτης Τάσος",
+  "Κλειδουχάκης Κώστας",
+  "Βέλλας Κώστας",
+  "Σκούνας Δημήτρης",
+  "Λουκανίδης Θανάσης",
+  "Σπενς Ντέρεκ",
+  "Βάις Βλάντιμιρ",
+  "Βάζος Στέλιος",
+  "Ηλιάδης Στέφανος",
+  "Αυλωνίτης Τάσος",
+  "Κατσίγιαννης Λάζαρος",
+  "Κανέλλος Πέτρος",
+  "Τριανταφύλλου Ελευθέριος",
+  "Λιατσικούρας Αργύρης",
+  "Ζωάννος Ανδρέας",
+  "Θεοδωρίδης Γιάννης",
+  "Μπάντοβιτς Μπόζινταρ",
+  "Ροντρίγκες Χάμες",
+  "Ρόμενταλ Ντένις",
+  "Κορωναίος Παναγιώτης",
+  "Αγγελίνας Μάκης",
+  "Ζουγλής Νίκος",
+  "Μπερμούδες Χόρχε",
+  "Τανούλης Κώστας",
+  "Χρυσόπουλος Κώστας",
+  "Καρνέσης Νίκος",
+  "Κουτσογούλας Θανάσης",
+  "Ραφίνια Μάρσιο Ραφαέλ",
+  "Καρυπίδης Θωμάς",
+  "Διαμαντόπουλος Κώστας",
+  "Αμπονσά Κόφι",
+  "Καλταβερίδης Αγάπιος",
+  "Μεσολογγίτης Κώστας",
+  "Μαζάρ Μπιλάλ",
+  "Στρεφέτσα Γκαμπριέλ",
+  "Κέλερης Θεμιστοκλής",
+  "Μπέσης Στέλιος",
+  "Άβιλα Πίπα Γκονθάλο",
+  "Καρπαθάκης Κώστας",
+  "Χάρα Φράνκο",
+  "Τουφάκης Πασχάλης",
+  "Καλογήρου Νίκος",
+  "Μιράντα Ρόντερικ",
+  "Παπαντωνίου Κώστας",
+  "Κούζμπα Μάρτσιν",
+  "Μουρατίδης Βασίλης",
+  "Κουνέλης Γρηγόρης",
+  "Ανδρούτσος Κυριάκος",
+  "Ράλλης Δημήτρης",
+  "Αντωνιάδης Αντώνης",
+  "Τσώχος Σταύρος",
+  "Ουρτάδο Μόισες",
+  "Κουρκουβέλας Θανάσης",
+  "Σέποβιτς Μάρκο",
+  "Πούλιδο Άλαν",
+  "Διαμαντάκος Δημήτρης",
+  "Πνευμονίδης Σταύρος",
+  "Χαρδαλιάς Βασίλης",
+  "Κούσουλας Μιχάλης",
+  "Αμπντουλαγιέ Νταμπό",
+  "Κρεμενλίεφ Εμίλ",
+  "Καρσελά Μεχντί",
+  "Βασιλείου Βασίλης",
+  "Βούρος Πραξιτέλης",
+  "Γκρέγκορι Σάββας",
+  "Φοράκης Μανώλης",
+  "Πένια Ινάσιο",
+  "Ντακόλ Αλεξάντρε",
+  "Λιάκος Βασίλης",
+  "Ρίτσαρντς Ομάρ",
+  "Κοπανίδης Γιώργος",
+  "Νέλσον Βαλντές Αντόνιο",
+  "Κάιπερς Ούγκο",
+  "Αμποάγκουε Φέλιξ",
+  "Καφού Κάρλος Ντίας",
+  "Ψεύτης Χρήστος",
+  "Μπότης Νίκος",
+  "Σέρτζιο Ολιβέιρα",
+  "Γιαννούλης Κώστας",
+  "Γιάνναρος Κώστας",
+  "Καραφουλίδης Βαγγέλης",
+  "Κοσκινάς Βασίλης",
+  "Πέρες Ερνάν Αρσένιο Γκολζάλες",
+  "Ντρασένα Έντου",
+  "Ρόρμπαχ Τόμας",
+  "Αχαρονιάν Χωρέν",
+  "Κοκκινάκης Ορέστης",
+  "Αλαφάκης Νεκτάριος",
+  "Λάιντνερ Ντόρον",
+  "Πέπε Πέντρο Φελίπε",
+  "Παπαμιχαήλ Γιάννης",
+  "Μουκέας Γιώργος",
+  "Βούζας Βασίλης",
+  "Χουάν Ιν Τζο",
+  "Λίβας Δημήτρης",
+  "Μαράτος Μιχαήλ",
+  "Ταμπακέας Γιώργος",
+  "Τζικιτζέλας Γιώργος",
+  "Ναουέλ Ματίας",
+  "Παπαδημητρίου Γιάννης",
+  "Βλάσσης Σώτος",
+  "Σχοινάς Κώστας",
+  "Κουράκλης Γιώργος",
+  "Μπρούνο Φελίπε",
+  "Λεβαντής Μανώλης",
+  "Κτενάς Αλέκος",
+  "Αργυρούλης Νίκος",
+  "Ράμον Ράμος Λίμας",
+  "Καλύκας Δημήτρης",
+  "Ρολάκης Γιάννης",
+  "Φίλης Χρήστος",
+  "Ντουμπέρι Ζέιν Ρίο Σίλκο",
+  "Μόνχε Βιθέντε",
+  "Μολακίδης Παναγιώτης",
+  "Λιαδέλης Βαγγέλης",
+  "Γουίλιαν Μπόρχες ντα Σίλβα",
+  "Βαλλιάνος Κώστας",
+  "Λυμπέρης Παναγιώτης",
+  "Μαρτσέλο Βιέιρα",
+  "Γιαταμπερέ Σαμπού",
+  "Σισοκό Αλί",
+  "Λάλας Γιάννης",
+  "Βέργος Κώστας",
+  "Αγάς Βασίλης",
+  "Μιγκέλ Τόρες Γκόμεθ",
+  "Μαυρόπουλος Χρήστος",
+  "Δάμα Αντώνης",
+  "Σπυρόπουλος Γιώργος",
+  "Ντρέγκερ Μοχάμεντ",
+  "Διαμαντόπουλος Ηλίας",
+  "Μπεν Ελ Σαρντού",
+  "Σαρηγιάννης Βασίλης",
+  "Βελτζλ Κουρτ",
+  "Μάνος Δημήτρης",
+  "Γιουσούφ Αμπντουλατίφ Ταϊγιέ",
+  "Καζίμ Ρίτσαρντς Κόλιν",
+  "Πολίτης Νίκος",
+  "Γεροντάκης Μιχάλης",
+  "Θαρθάνα Αντόνιο",
+  "Λιβαδάς Αλέξανδρος",
+  "Κουλοχέρης Ευθύμης",
+  "Κοστάνσο Φράνκο",
+  "Γρυπαίος Γιώργος",
+  "Γέστε Φρανσίσκο",
+  "Βρσάλικο Σίμε",
+  "Αραβαντινός Γιώργος",
+  "Πελέ Βίτορ",
+  "Γιεκινί Ρασίντ",
+  "Άλτσιμπαρ Αντόνιο",
+  "Κασιμάτης Αντώνης",
+  "Δαρδανός Κώστας",
+  "Βασιλείου Λεωνίδας",
+  "Βραχιώτης Γιώργος",
+  "Βάρναλης Γιώργος",
+  "Κλέτσας Χρήστος",
+  "Μπομπί Αλέν",
+  "Τζώρτζης Νίκος",
+  "Σαντάνα Φελίπε",
+  "Ουαντού Αμπντεσλάμ",
+  "Λάσκος Δημήτρης",
+  "Γκοτζιάς Ματθαίος",
+  "Μάντσα Γκουστάβο",
+  "Μαλαμόπουλος Ηλίας",
+  "Αγκίρε Ντιέγκο",
+  "Κρύος Βαγγέλης",
+  "Δότσικας Παναγιώτης",
+  "Βοζικιάν Βαχάν",
+  "Χατζισαφί Εσάν",
+  "Σορώτος Βασίλης",
+  "Κριεζής Νίκος",
+  "Ταβλάς Ναπολέων",
+  "Σούλανδρος Μιχάλης",
+  "Σηφάκης Μυρ. Μιχάλης",
+  "Τζανετουλάκος Αντώνης",
+  "Ντε Λα Φουέντε Κόνραντ",
+  "Μπόουλερ Τζος",
+  "Καψιμάλης Νίκος",
+  "Γκαζαριάν Κεβόργκ",
+  "Αρτσούμπι Ροντρίγκο",
+  "Κλέιτον Φερνάντες Σίλβα",
+  "Ελ Φαρντού Μπεν Μοχάμεντ",
+  "Δενδρινέλης Νίκος",
+  "Αλεκάκης Γιώργος",
+  "Μήτσου Βασίλης",
+  "Παύλου Ηρακλής",
+  "Μπούτσεκ Γιουράι",
+  "Καμαρά Αμπουκαμπάρ",
+  "Καλκιτανίδης Κυριάκος",
+  "Παπαθεοδώρου Γιάννης",
+  "Χουάν Πάμπλο Πίνο",
+  "Σοφιανός Λάκης",
+  "Ανδριανόπουλος Στέλιος",
+  "Χαβίτο Φρανθίσκο",
+  "Χέλμης Βαγγέλης",
+  "Κουράντης Γιώργος",
+  "Δέδες Γκίκας (Γιάννης)",
+  "Τριβέλης Ματθαίος",
+  "Πανωλιάσκος Σωτήρης",
+  "Τσάτσος Δημήτρης",
+  "Σταματάκης [Αντώνης]",
+  "Σιυνάτκας Θανάσης",
+  "Νικολάου Μιγκέλ",
+  "Κόβατς Πάβελ",
+  "Φρουδαράκης [Γιάννης]",
+  "Ρεμούνδος Αυγουστής",
+  "Ζούνης Σάββας",
+  "Πλειώνης Παρασκευάς",
+  "Τσατσαρίδης Αριστείδης",
+  "Κυριμόπουλος Γρηγόρης",
+  "Τσακμακίδης Ανδρέας",
+  "Συρίγος Σταμάτης",
+  "Ντακουβάνος Φώτης",
+  "Μπούτινα Τόμισλαβ",
+  "Λιόσης Βασίλης",
+  "Βινάγγκρε Ρούμπεν",
+  "Αθανασόπουλος Λυκούργος",
+  "Γεωργουλάκης Γιάννης",
+  "Κασάπογλου Γιώργος",
+  "Πατήρας Μιχάλης",
+  "Εντβάλντο Άλβες",
+  "Χρυσόπουλος Παντελής",
+  "Καρακίζης Γιώργος",
+  "Βαλσάμης Γρηγόρης",
+  "Κωστούλας Κώστας",
+  "Έξαρχος Αλέξανδρος",
+  "Ρέτσος Δημήτρης",
+  "Μασούρης Γιάννης",
+  "Σηφάκης Ιω. Μιχάλης",
+  "Μπούτουτσι Ζούμερ",
+  "Σάντμπεργκ Χόκαν",
+  "Ντόβας Γιώργος",
+  "Μπουντούρης Τάσος",
+  "Μπατιγί Ζιμέρ",
+  "Λοντίνγκιν Γιούρι",
+  "Κωνσταντινίδης Κώστας",
+  "Κιμπουρόπουλος Θρασύβουλος",
+  "Ζαραδούκας Γιάννης",
+  "Γαβριηλίδης Χαράλαμπος",
+  "Προκόβας Τάσος",
+  "Μυτώσης Νίκος",
+  "Δροσόπουλος Νίκος",
+  "Βλάχος Αντώνης",
+  "Γεωργουδάκης Σωτήρης",
+  "Τσιφλίδης [Γιώργος]",
+  "Μέρμηγκας Θανάσης",
+  "Λαχανάς [Μπάμπης]",
+  "Κονταράτος Τάκης",
+  "Καλογερόπουλος Λεωνίδας",
+  "Ζαρίκος Χαράλαμπος",
+  "Γαλάνης Πέτρος",
+  "Χατζηιωάννογλου Τάκης",
+  "Τσαλαφούτας Βασίλης",
+  "Μιχαλόπουλος Δημήτρης",
+  "Τζάμαλης Αλέξανδρος",
+  "Σταυρόπουλος Χρήστος",
+  "Αλίγιακιτς Ντένις",
+  "Αλ Καχτανί Μοχάμεντ",
+  "Φραντζής Γιάννης",
+  "Χιωτίδης Κώστας",
+  "Σκούρας Πιτ",
+  "Σέγκος Μάριος",
+  "Καριόκα Ιγκόρ Αλμέιδα",
+  "Ματσούκας Λευτέρης",
+  "Λεωνίδου Λεωνίδας",
+  "Κριμιτζάς Νίκος",
+  "Κόκκινος Όθων",
+  "Καρτερουλιώτης Κώστας",
+  "Θεοδώρου Χρήστος",
+  "Γρηγοριάδης Νίκος",
+  "Γερολυμάτος Φώτης",
+  "Γκένας Δημήτρης",
+  "Μπιζάν «Μπιζάνος» Γιάννης",
+  "Βλάχος Γιώργος",
+  "Ψαρράς [Θανάσης]",
+  "Χατζής Γιώργος",
+  "Τουλιάτος Σπύρος",
+  "Τζαμτζής Δημήτρης",
+  "Τερκεσίδης Βασίλης",
+  "Συρίγος Κώστας",
+  "Ρωσίδης Νίκος",
+  "Μανταλόπουλος",
+  "Μάμαλης Ανδρέας",
+  "Λαουτάρης Γιάννης",
+  "Καρπόζηλος Χαράλαμπος",
+  "Δέδες Θανάσης",
+  "Βένιος Γρηγόρης",
+  "Αλέφαντος Νίκος",
+  "Αλεξανδρής Κώστας",
+  "Αγγελής Γιώργος",
+  "Αγγελάκης Γιώργος",
+  "Αβραάμ Γιώργος",
+  "Μπέτσιος",
+  "Παναγάκος Ηλίας",
+  "Χαραλαμπόγλου Γιώργος",
+  "Βασιλακόπουλος Σαράντος",
+  "Πλις Κωνταντίνος",
+  "Μίλισιτς Αμάρ",
+  "Κολοκοτρώνης Πέτρος",
+  "Κλίτσα Αλμίρ",
+  "Χοβανισιάν Ζόρα",
+  "Χατζόπουλος Κώστας",
+  "Τσολάκος Θωμάς",
+  "Τούρλος Βαγγέλης",
+  "Τζάνδαρης Φάνης",
+  "Σφαιρόπουλος Σάββας",
+  "Στεργίου Στέργιος",
+  "Σταμάτης Αριστείδης",
+  "Σκορδιαλός Πέτρος",
+  "Σκοπελίτης Δημήτρης",
+  "Σαραλιώτης Κώστας",
+  "Ρωσσίδης Θανάσης",
+  "Σκορδαλιός Πέτρος",
+  "Πεντζαρόπουλος Νίκος",
+  "Πέιος Νίκος",
+  "Πασιένσια Γκονζάλο",
+  "Παρίσης Κ.",
+  "Νικητέας Σωτήρης",
+  "Νεοφυτίδης Γιώργος",
+  "Μπρούμας Αριστείδης",
+  "Μπενετάτος Δημήτρης",
+  "Μπαρούσης",
+  "Μάνος Κώστας",
+  "Μαθιουδάκης Αλέκος",
+  "Λεπενιώτης Χρήστος",
+  "Λάτσι Καζίμ",
+  "Λάμπρου Στάθης",
+  "Λαμπρόπουλος Βασίλης",
+  "Κοψαχείλης Σωκράτης",
+  "Κοντομός Λευτέρης",
+  "Κόλλιας Κώστας",
+  "Κεχαγιόγλου Μανώλης",
+  "Κάτσικας Νίκος",
+  "Καπνιάς Στέργιος",
+  "Καπατσώρης Βαγγέλης",
+  "Καλλίτσης Γιάννης",
+  "Ιωαννίδης Νίκος",
+  "Δοκόπουλος Θανάσης",
+  "Δεμιρτζόγλι Γιάννης",
+  "Αρζένης Κώστας",
+  "Αποστολάτος Παναγιώτης",
+  "Ανδρικάκης Μίλτος",
+  "Ανδρειωμένος Μανώλης",
+  "Αναγνωστόπουλος Αλέξανδρος",
+  "Αμπντισαλάμ Ιμπραΐμ"
+ ]
+}

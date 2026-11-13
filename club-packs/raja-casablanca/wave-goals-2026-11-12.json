@@ -1,0 +1,494 @@
+{
+ "schemaVersion": 1,
+ "clubId": "raja-casablanca",
+ "contentLocale": "en",
+ "sources": [
+  {
+   "id": "rj-g-ofc-auckland",
+   "title": "Raja Casablanca 2-1 Auckland City FC (OFC archive report)",
+   "url": "https://www.oceaniafootball.com/archives-15857/",
+   "publisher": "Oceania Football Confederation",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "rj-g-myjoy-auckland",
+   "title": "World Club Cup: Late Hafidi goal sends Raja through",
+   "url": "https://www.myjoyonline.com/world-club-cup-late-hafidi-goal-sends-raja-through/",
+   "publisher": "MyJoyOnline",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "rj-g-national-auckland",
+   "title": "Raja Casablanca open Club World Cup with win over Auckland (AP)",
+   "url": "https://www.thenationalnews.com/sport/raja-casablanca-open-club-world-cup-with-win-over-auckland-1.645680",
+   "publisher": "The National (Associated Press)",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "rj-g-sbs-monterrey",
+   "title": "Raja stun Monterrey in extra-time to reach semi-finals (Reuters)",
+   "url": "https://www.sbs.com.au/news/article/raja-stun-monterrey-in-extra-time-to-reach-semi-finals/lj8a8gnfw",
+   "publisher": "SBS News (Reuters)",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "rj-g-fft-monterrey",
+   "title": "FIFA Club World Cup: Raja Casablanca 2 Monterrey 1",
+   "url": "https://fourfourtwo.com/news/fifa-club-world-cup-raja-casablanca-2-monterrey-1",
+   "publisher": "FourFourTwo",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "rj-g-trivela-mineiro",
+   "title": "Ao Atlético, só resta aceitar a façanha conquistada pelo Raja",
+   "url": "https://trivela.com.br/mundo/ao-atletico-so-resta-aceitar-a-facanha-conquistada-pelo-raja/",
+   "publisher": "Trivela",
+   "language": "pt",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "rj-g-fox-mineiro",
+   "title": "Raja upsets Dinho's Atletico Mineiro",
+   "url": "https://www.foxsports.com/stories/soccer/raja-upsets-dinhos-atletico-mineiro",
+   "publisher": "FOX Sports",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "rj-g-wst-jsk",
+   "title": "Raja survive battering with 10 men to win CAF Confederation Cup (AFP)",
+   "url": "https://worldsoccertalk.com/news/raja-survive-battering-with-10-men-to-win-caf-confederation-cup-20210710-CMS-339694.html",
+   "publisher": "World Soccer Talk (AFP)",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "rj-g-afrikfoot-jsk",
+   "title": "Coupe de la Confédération : le Raja Casablanca secoué par la JS Kabylie mais titré",
+   "url": "https://www.afrik-foot.com/coupe-de-la-confederation-le-raja-casablanca-secoue-par-la-js-kabylie-mais-titre",
+   "publisher": "Afrik-Foot",
+   "language": "fr",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "rj-g-hespress-derby2019",
+   "title": "Coupe arabe Mohammed VI : Le Raja s'offre une remontada spectaculaire face au Wydad",
+   "url": "https://fr.hespress.com/110107-coupe-arabe-mohammed-vi-le-raja-soffre-une-remontada-spectaculaire-face-au-wydad.html",
+   "publisher": "Hespress FR",
+   "language": "fr",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "rj-g-afrikfoot-derby2019",
+   "title": "Derby de Casablanca : le Raja qualifié au terme d'une remontada de folie",
+   "url": "https://www.afrik-foot.com/derby-de-casablanca-le-raja-qualifie-au-terme-d-une-remontada-de-folie",
+   "publisher": "Afrik-Foot",
+   "language": "fr",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  }
+ ],
+ "goals": [
+  {
+   "id": "goal-2013-12-11-mouhcine-iajour-39",
+   "value": {
+    "name": "39' · Mouhcine Iajour v Auckland City",
+    "subtitle": "2013-12-11 · 39'",
+    "on": "2013-12-11",
+    "competition": "FIFA Club World Cup 2013 (play-off for quarter-finals)",
+    "opponent": "Auckland City",
+    "score": "2-1",
+    "narrative": "Adil Karrouchy: found Iajour inside the area Mouhcine Iajour: left-footed finish to the far corner",
+    "sequence": [
+     {
+      "actor": "Adil Karrouchy",
+      "side": "club",
+      "action": "pass",
+      "zone": "C2",
+      "position": "ball played into the box (flank not stated)",
+      "note": "found Iajour inside the area"
+     },
+     {
+      "actor": "Mouhcine Iajour",
+      "side": "club",
+      "action": "shot",
+      "zone": "C1",
+      "position": "inside the penalty area",
+      "note": "left-footed finish to the far corner"
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "rj-g-ofc-auckland",
+    "rj-g-myjoy-auckland"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-raja-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "OFC and MyJoyOnline both: Karrouchy played the ball into the box, Iajour left foot into far corner past Williams. Minute 39 from OFC (also AP via The National); MyJoyOnline gives no minute. FOX/RNZ mention a through ball without naming the passer; not used."
+  },
+  {
+   "id": "goal-2013-12-11-abdelilah-hafidi-90plus2",
+   "value": {
+    "name": "90+2' · Abdelilah Hafidi v Auckland City",
+    "subtitle": "2013-12-11 · 90+2'",
+    "on": "2013-12-11",
+    "competition": "FIFA Club World Cup 2013 (play-off for quarter-finals)",
+    "opponent": "Auckland City",
+    "score": "2-1",
+    "narrative": "Mohamed Oulhaj: header saved by Williams Abdelilah Hafidi: tapped the loose ball home",
+    "sequence": [
+     {
+      "actor": "Mohamed Oulhaj",
+      "side": "club",
+      "action": "header",
+      "zone": "C1",
+      "position": "in the box (exact spot not stated)",
+      "note": "header saved by Williams"
+     },
+     {
+      "actor": "Abdelilah Hafidi",
+      "side": "club",
+      "action": "shot",
+      "zone": "C1",
+      "position": "close range, on the rebound",
+      "note": "tapped the loose ball home"
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "rj-g-ofc-auckland",
+    "rj-g-national-auckland"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-raja-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "OFC (90+2) and AP via The National (2nd minute of stoppage time) agree: Oulhaj header saved by Williams, Hafidi rebound. MyJoyOnline adds that Karrouchy crossed from the goal line; single-source and flank unstated, so left out of the sequence."
+  },
+  {
+   "id": "goal-2013-12-14-chemseddine-chtibi-24",
+   "value": {
+    "name": "24' · Chemseddine Chtibi v Monterrey",
+    "subtitle": "2013-12-14 · 24'",
+    "on": "2013-12-14",
+    "competition": "FIFA Club World Cup 2013 (quarter-final)",
+    "opponent": "Monterrey",
+    "score": "2-1 (a.e.t.)",
+    "narrative": "A team-mate: cross fumbled by Orozco Chemseddine Chtibi: simple finish from the loose ball",
+    "sequence": [
+     {
+      "actor": "",
+      "side": "unnamed",
+      "action": "cross",
+      "zone": "E2",
+      "position": "right flank",
+      "note": "cross fumbled by Orozco"
+     },
+     {
+      "actor": "Chemseddine Chtibi",
+      "side": "club",
+      "action": "shot",
+      "zone": "C1",
+      "position": "close range, following in",
+      "note": "simple finish from the loose ball"
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "rj-g-sbs-monterrey",
+    "rj-g-fft-monterrey"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-raja-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both: 24', cross from the right spilled by Orozco, Chtibi follows in. Crosser named (El Hachimi/El Hachami) only by Reuters via SBS; FourFourTwo does not name him but does not contradict. · Applied the two-publisher rule: both report the cross from the right; only Reuters names the crosser."
+  },
+  {
+   "id": "goal-2013-12-14-kouko-guehi-95",
+   "value": {
+    "name": "95' · Kouko Guehi v Monterrey",
+    "subtitle": "2013-12-14 · 95'",
+    "on": "2013-12-14",
+    "competition": "FIFA Club World Cup 2013 (quarter-final)",
+    "opponent": "Monterrey",
+    "score": "2-1 (a.e.t.)",
+    "narrative": "A team-mate: corner delivery Kouko Guehi: powerful header into the top of the net",
+    "sequence": [
+     {
+      "actor": "",
+      "side": "unnamed",
+      "action": "cross",
+      "zone": "C1",
+      "position": "corner kick (side not stated)",
+      "note": "corner delivery"
+     },
+     {
+      "actor": "Kouko Guehi",
+      "side": "club",
+      "action": "header",
+      "zone": "C1",
+      "position": "close range",
+      "note": "powerful header into the top of the net"
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "rj-g-sbs-monterrey",
+    "rj-g-fft-monterrey"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-raja-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both: 95', header from a corner. Corner taker Moutaouali named by FourFourTwo; 'roof of the net' from Reuters/SBS. Corner side not given by either, so zone C1 is a neutral anchor. · Applied the two-publisher rule: both report a corner; only FourFourTwo names the taker."
+  },
+  {
+   "id": "goal-2013-12-18-mouhcine-iajour-51",
+   "value": {
+    "name": "51' · Mouhcine Iajour v Atlético Mineiro",
+    "subtitle": "2013-12-18 · 51'",
+    "on": "2013-12-18",
+    "competition": "FIFA Club World Cup 2013 (semi-final)",
+    "opponent": "Atlético Mineiro",
+    "score": "3-1",
+    "narrative": "A team-mate: released Iajour Mouhcine Iajour: low first-time finish",
+    "sequence": [
+     {
+      "actor": "",
+      "side": "unnamed",
+      "action": "throughBall",
+      "zone": "C3",
+      "position": "fast counter-attack (start point not stated)",
+      "note": "released Iajour"
+     },
+     {
+      "actor": "Mouhcine Iajour",
+      "side": "club",
+      "action": "shot",
+      "zone": "C1",
+      "position": "through on goal",
+      "note": "low first-time finish"
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "rj-g-trivela-mineiro",
+    "rj-g-fox-mineiro"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-raja-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Minute 51 from Trivela (6' of 2nd half) and FOX Sports; ESPN match page also 51. Hafidi's pass and first-time finish from Trivela; 'low' shot from FOX. AFP copy (Al Jazeera/Hurriyet) says 53' and 'sent clear on the right' - minute differs from the two chosen sources, so flank and AFP minute not used. · Applied the two-publisher rule: the pass is reported by Trivela only by name; the minute follows the majority (ESPN, FOX, Trivela 51' against AFP 53')."
+  },
+  {
+   "id": "goal-2013-12-18-vivien-mabide-90plus4",
+   "value": {
+    "name": "90+4' · Vivien Mabide v Atlético Mineiro",
+    "subtitle": "2013-12-18 · 90+4'",
+    "on": "2013-12-18",
+    "competition": "FIFA Club World Cup 2013 (semi-final)",
+    "opponent": "Atlético Mineiro",
+    "score": "3-1",
+    "narrative": "Mohsine Moutaouali: chip hit the crossbar Vivien Mabide: finished the rebound",
+    "sequence": [
+     {
+      "actor": "Mohsine Moutaouali",
+      "side": "club",
+      "action": "shot",
+      "zone": "C2",
+      "position": "counter-attack, attempt at goal (distance not stated)",
+      "note": "chip hit the crossbar"
+     },
+     {
+      "actor": "Vivien Mabide",
+      "side": "club",
+      "action": "shot",
+      "zone": "C1",
+      "position": "close range, on the rebound",
+      "note": "finished the rebound"
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "rj-g-trivela-mineiro",
+    "rj-g-fox-mineiro"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-raja-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both: Moutaouali shot off the crossbar, Mabide scored the rebound; Trivela 49' of 2nd half = 90+4, matching ESPN and AFP 'fourth minute of stoppage time'. Trivela says chip and tap-in, FOX says volley - finish type dropped; 'chip' kept from Trivela only (FOX just says shot)."
+  },
+  {
+   "id": "goal-2021-07-10-soufiane-rahimi-5",
+   "value": {
+    "name": "5' · Soufiane Rahimi v JS Kabylie",
+    "subtitle": "2021-07-10 · 5'",
+    "on": "2021-07-10",
+    "competition": "CAF Confederation Cup 2020-21 final",
+    "opponent": "JS Kabylie",
+    "score": "2-1",
+    "narrative": "Soufiane Rahimi: took the ball past Benbot Soufiane Rahimi: opener confirmed after VAR review",
+    "sequence": [
+     {
+      "actor": "Soufiane Rahimi",
+      "side": "club",
+      "action": "dribble",
+      "zone": "C1",
+      "position": "behind the defensive line, rounding the keeper",
+      "note": "took the ball past Benbot"
+     },
+     {
+      "actor": "Soufiane Rahimi",
+      "side": "club",
+      "action": "shot",
+      "zone": "C1",
+      "position": "inside the box after rounding the keeper",
+      "note": "opener confirmed after VAR review"
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "rj-g-wst-jsk",
+    "rj-g-afrikfoot-jsk"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-raja-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "AFP (World Soccer Talk) and Afrik-Foot agree: 5', Rahimi rounded Benbot, VAR check. Afrik-Foot credits a through ball by 'Arjoune' (first name not given) - single-source, so not in the sequence. Reuters (Yahoo) calls it the end of a long passing move without detail."
+  },
+  {
+   "id": "goal-2019-11-23-ben-malango-90plus4",
+   "value": {
+    "name": "90+4' · Ben Malango v Wydad AC",
+    "subtitle": "2019-11-23 · 90+4'",
+    "on": "2019-11-23",
+    "competition": "Arab Club Champions Cup 2019-20 (round of 16, second leg)",
+    "opponent": "Wydad AC",
+    "score": "4-4",
+    "narrative": "A team-mate: set-piece delivery Ben Malango: header into the top corner",
+    "sequence": [
+     {
+      "actor": "",
+      "side": "unnamed",
+      "action": "cross",
+      "zone": "C2",
+      "position": "free kick into the box (spot not stated)",
+      "note": "set-piece delivery"
+     },
+     {
+      "actor": "Ben Malango",
+      "side": "club",
+      "action": "header",
+      "zone": "C1",
+      "position": "inside the penalty area",
+      "note": "header into the top corner"
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "rj-g-hespress-derby2019",
+    "rj-g-afrikfoot-derby2019"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-raja-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both: Malango header from a free kick in stoppage time (Hespress 90+4, Afrik-Foot 94'). Taker Moutaouali and top-corner placement from Hespress only; Afrik-Foot does not contradict. Raja went through on away goals (1-1 first leg). · Applied the two-publisher rule: both report a free kick; only Hespress names the taker."
+  }
+ ],
+ "skipped": [
+  {
+   "what": "Moutaouali penalty v Atlético Mineiro, 2013-12-18",
+   "reason": "Minute differs between sources (83' AFP/AP copy vs 84' FOX/ESPN/Reuters) and a penalty has no open-play build-up."
+  },
+  {
+   "what": "Ben Malango 14' v JS Kabylie, 2021 Confederation Cup final",
+   "reason": "Creator conflicts: AFP credits Rahimi, Afrik-Foot credits a Soukhane cross. Dropping it leaves a single touch."
+  },
+  {
+   "what": "Soufiane Rahimi 47' v AS Vita Club, 2018 Confederation Cup final first leg (2018-11-25)",
+   "reason": "Assist conflicts: Hespress credits Hafidi, Afrik-Foot credits a Benhalib backheel. Only one touch left after dropping it."
+  },
+  {
+   "what": "Soufiane Rahimi second goal v AS Vita Club, 2018-11-25",
+   "reason": "Minute differs (61' Hespress/Afrik-Foot vs 59' Le Matin) and no build-up described beyond the shot from the edge of the box."
+  },
+  {
+   "what": "Benhalib penalty v AS Vita Club, 2018-11-25",
+   "reason": "Penalty; minute differs (65' Hespress/Le Matin vs 66' Afrik-Foot/Reuters)."
+  },
+  {
+   "what": "CAF Champions League finals 1989, 1997, 1999",
+   "reason": "No touch-by-touch match reports found in the time available."
+  },
+  {
+   "what": "Arab News report on 2021 final",
+   "reason": "Page could not be fetched (permission request timed out): https://www.arabnews.com/sport/moroccos-raja-overcome-algerias-js-kabilye-2-1-to-claim-caf-confederation-cup-1892191"
+  },
+  {
+   "what": "Raja 2-0 Wydad derby (Botola, June 2022)",
+   "reason": "Both goals were penalties; Morocco World News gives no build-up."
+  }
+ ]
+}

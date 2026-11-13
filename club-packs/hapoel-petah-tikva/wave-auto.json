@@ -6,7 +6,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/64923--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-09"
+   "checkedAt": "2026-11-12"
   },
   {
    "id": "a-src-uefa-64922",
@@ -14,7 +14,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/64922--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-09"
+   "checkedAt": "2026-11-12"
   },
   {
    "id": "a-src-uefa-54339",
@@ -22,7 +22,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/54339--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-09"
+   "checkedAt": "2026-11-12"
   },
   {
    "id": "a-src-uefa-54338",
@@ -30,7 +30,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/54338--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-09"
+   "checkedAt": "2026-11-12"
   },
   {
    "id": "a-src-uefa-54258",
@@ -38,7 +38,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/54258--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-09"
+   "checkedAt": "2026-11-12"
   },
   {
    "id": "a-src-uefa-54257",
@@ -46,7 +46,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/54257--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-09"
+   "checkedAt": "2026-11-12"
   },
   {
    "id": "a-src-uefa-54173",
@@ -54,7 +54,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/54173--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-09"
+   "checkedAt": "2026-11-12"
   },
   {
    "id": "a-src-uefa-54172",
@@ -62,7 +62,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/54172--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-09"
+   "checkedAt": "2026-11-12"
   },
   {
    "id": "a-src-uefa-51822",
@@ -70,7 +70,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/51822--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-09"
+   "checkedAt": "2026-11-12"
   },
   {
    "id": "a-src-uefa-51819",
@@ -78,7 +78,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/51819--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-09"
+   "checkedAt": "2026-11-12"
   },
   {
    "id": "a-src-uefa-51817",
@@ -86,7 +86,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/51817--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-09"
+   "checkedAt": "2026-11-12"
   },
   {
    "id": "a-src-uefa-51815",
@@ -94,7 +94,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/51815--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-09"
+   "checkedAt": "2026-11-12"
   },
   {
    "id": "a-src-uefa-6575",
@@ -102,7 +102,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/6575--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-09"
+   "checkedAt": "2026-11-12"
   },
   {
    "id": "a-src-uefa-6574",
@@ -110,7 +110,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/6574--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-09"
+   "checkedAt": "2026-11-12"
   },
   {
    "id": "a-src-uefa-6189",
@@ -118,7 +118,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/6189--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-09"
+   "checkedAt": "2026-11-12"
   },
   {
    "id": "a-src-uefa-6190",
@@ -126,7 +126,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/6190--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-09"
+   "checkedAt": "2026-11-12"
   }
  ],
  "matches": [
@@ -166,6 +166,152 @@
       "minute": 76
      }
     ],
+    "squad": [
+     {
+      "name": "Eyal Abramov",
+      "pos": null,
+      "born": "1972-10-01",
+      "nat": "Israel",
+      "shirt": 1,
+      "height": null
+     },
+     {
+      "name": "Avraham Fletcher",
+      "pos": "DF",
+      "born": "1972-07-18",
+      "nat": "Israel",
+      "shirt": 4,
+      "height": null
+     },
+     {
+      "name": "Yaniv Hermesh",
+      "pos": "DF",
+      "born": "1978-02-22",
+      "nat": "Israel",
+      "shirt": 2,
+      "height": null
+     },
+     {
+      "name": "Alon Maya",
+      "pos": "MF",
+      "born": "1974-08-31",
+      "nat": "Israel",
+      "shirt": 11,
+      "height": null
+     },
+     {
+      "name": "Roi Sabag",
+      "pos": "DF",
+      "born": "1981-05-30",
+      "nat": "Israel",
+      "shirt": 5,
+      "height": null
+     },
+     {
+      "name": "David Fadlon",
+      "pos": "DF",
+      "born": "1976-09-16",
+      "nat": "Israel",
+      "shirt": 20,
+      "height": null
+     },
+     {
+      "name": "Yossef Rosen",
+      "pos": "MF",
+      "born": "1979-10-13",
+      "nat": "Israel",
+      "shirt": 19,
+      "height": null
+     },
+     {
+      "name": "Guy Shamir",
+      "pos": "MF",
+      "born": "1978-01-09",
+      "nat": "Israel",
+      "shirt": 27,
+      "height": null
+     },
+     {
+      "name": "Eliezer Abarbanel",
+      "pos": "DF",
+      "born": "1976-02-22",
+      "nat": "Israel",
+      "shirt": 10,
+      "height": null
+     },
+     {
+      "name": "Michael Zandberg",
+      "pos": "MF",
+      "born": "1980-04-16",
+      "nat": "Israel",
+      "shirt": 17,
+      "height": 181
+     },
+     {
+      "name": "Eidan Hillel",
+      "pos": "FW",
+      "born": "1980-01-26",
+      "nat": "Israel",
+      "shirt": 12,
+      "height": null
+     },
+     {
+      "name": "Israel Pilosof",
+      "pos": "GK",
+      "born": "1981-05-28",
+      "nat": "Israel",
+      "shirt": 22,
+      "height": null
+     },
+     {
+      "name": "Yaniv Luzon",
+      "pos": "MF",
+      "born": "1981-08-06",
+      "nat": "Israel",
+      "shirt": 8,
+      "height": null
+     },
+     {
+      "name": "Yossi Shivhon",
+      "pos": "MF",
+      "born": "1982-03-22",
+      "nat": "Israel",
+      "shirt": 14,
+      "height": null
+     },
+     {
+      "name": "David Razabi",
+      "pos": "MF",
+      "born": "1982-09-10",
+      "nat": "Israel",
+      "shirt": 15,
+      "height": null
+     },
+     {
+      "name": "Sharon Gamliel",
+      "pos": "DF",
+      "born": "1981-04-22",
+      "nat": "Israel",
+      "shirt": 16,
+      "height": null
+     },
+     {
+      "name": "Eran Cohen",
+      "pos": "DF",
+      "born": "1981-04-09",
+      "nat": "Israel",
+      "shirt": 9,
+      "height": null
+     },
+     {
+      "name": "Yaniv David",
+      "pos": "FW",
+      "born": "1981-02-11",
+      "nat": "Israel",
+      "shirt": 7,
+      "height": null
+     }
+    ],
     "primaryOnly": {
      "source": "a-src-uefa-64923",
      "scorers": [
@@ -201,13 +347,13 @@
    "sources": [
     "a-src-uefa-64923"
    ],
-   "researchedAt": "2026-11-09",
+   "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-09",
+   "approvedAt": "2026-11-12",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   },
   {
@@ -244,6 +390,136 @@
       "minute": 45
      }
     ],
+    "squad": [
+     {
+      "name": "Eyal Abramov",
+      "pos": null,
+      "born": "1972-10-01",
+      "nat": "Israel",
+      "shirt": 1,
+      "height": null
+     },
+     {
+      "name": "Rami Amar",
+      "pos": "DF",
+      "born": "1977-04-20",
+      "nat": "Israel",
+      "shirt": 15,
+      "height": null
+     },
+     {
+      "name": "Alon Maya",
+      "pos": "MF",
+      "born": "1974-08-31",
+      "nat": "Israel",
+      "shirt": 11,
+      "height": null
+     },
+     {
+      "name": "Roi Sabag",
+      "pos": "DF",
+      "born": "1981-05-30",
+      "nat": "Israel",
+      "shirt": 5,
+      "height": null
+     },
+     {
+      "name": "Yaniv Hermesh",
+      "pos": "DF",
+      "born": "1978-02-22",
+      "nat": "Israel",
+      "shirt": 2,
+      "height": null
+     },
+     {
+      "name": "David Fadlon",
+      "pos": "DF",
+      "born": "1976-09-16",
+      "nat": "Israel",
+      "shirt": 20,
+      "height": null
+     },
+     {
+      "name": "Guy Shamir",
+      "pos": "MF",
+      "born": "1978-01-09",
+      "nat": "Israel",
+      "shirt": 27,
+      "height": null
+     },
+     {
+      "name": "Yossef Rosen",
+      "pos": "MF",
+      "born": "1979-10-13",
+      "nat": "Israel",
+      "shirt": 19,
+      "height": null
+     },
+     {
+      "name": "Eliezer Abarbanel",
+      "pos": "DF",
+      "born": "1976-02-22",
+      "nat": "Israel",
+      "shirt": 10,
+      "height": null
+     },
+     {
+      "name": "Eidan Hillel",
+      "pos": "FW",
+      "born": "1980-01-26",
+      "nat": "Israel",
+      "shirt": 12,
+      "height": null
+     },
+     {
+      "name": "Michael Zandberg",
+      "pos": "MF",
+      "born": "1980-04-16",
+      "nat": "Israel",
+      "shirt": 17,
+      "height": 181
+     },
+     {
+      "name": "Israel Pilosof",
+      "pos": "GK",
+      "born": "1981-05-28",
+      "nat": "Israel",
+      "shirt": 22,
+      "height": null
+     },
+     {
+      "name": "Eran Cohen",
+      "pos": "DF",
+      "born": "1981-04-09",
+      "nat": "Israel",
+      "shirt": 9,
+      "height": null
+     },
+     {
+      "name": "Sharon Gamliel",
+      "pos": "DF",
+      "born": "1981-04-22",
+      "nat": "Israel",
+      "shirt": 16,
+      "height": null
+     },
+     {
+      "name": "Yaniv Luzon",
+      "pos": "MF",
+      "born": "1981-08-06",
+      "nat": "Israel",
+      "shirt": 8,
+      "height": null
+     },
+     {
+      "name": "Yaniv David",
+      "pos": "FW",
+      "born": "1981-02-11",
+      "nat": "Israel",
+      "shirt": 7,
+      "height": null
+     }
+    ],
     "primaryOnly": {
      "source": "a-src-uefa-64922",
      "scorers": [
@@ -277,13 +553,13 @@
    "sources": [
     "a-src-uefa-64922"
    ],
-   "researchedAt": "2026-11-09",
+   "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-09",
+   "approvedAt": "2026-11-12",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   },
   {
@@ -322,6 +598,152 @@
       "minute": 34
      }
     ],
+    "squad": [
+     {
+      "name": "Shay Hass",
+      "pos": "GK",
+      "born": "1973-01-02",
+      "nat": "Israel",
+      "shirt": 1,
+      "height": null
+     },
+     {
+      "name": "Yaniv Hermesh",
+      "pos": "DF",
+      "born": "1978-02-22",
+      "nat": "Israel",
+      "shirt": 16,
+      "height": null
+     },
+     {
+      "name": "Avraham Fletcher",
+      "pos": "DF",
+      "born": "1972-07-18",
+      "nat": "Israel",
+      "shirt": 4,
+      "height": null
+     },
+     {
+      "name": "Walid Badier",
+      "pos": "DF",
+      "born": "1974-03-12",
+      "nat": "Israel",
+      "shirt": 5,
+      "height": 187
+     },
+     {
+      "name": "Ilan Buaron",
+      "pos": null,
+      "born": "1972-05-03",
+      "nat": "Israel",
+      "shirt": 20,
+      "height": null
+     },
+     {
+      "name": "Shlomi Benhamo",
+      "pos": null,
+      "born": "1974-12-03",
+      "nat": "Israel",
+      "shirt": 17,
+      "height": null
+     },
+     {
+      "name": "Ondrej Kristofik",
+      "pos": "DF",
+      "born": "1966-09-10",
+      "nat": "Slovakia",
+      "shirt": 8,
+      "height": null
+     },
+     {
+      "name": "Manor Hasan",
+      "pos": "MF",
+      "born": "1976-08-22",
+      "nat": "Israel",
+      "shirt": 18,
+      "height": null
+     },
+     {
+      "name": "Eliezer Abarbanel",
+      "pos": "DF",
+      "born": "1976-02-22",
+      "nat": "Israel",
+      "shirt": 10,
+      "height": null
+     },
+     {
+      "name": "Yaniv Ofri",
+      "pos": null,
+      "born": "1974-12-25",
+      "nat": "Israel",
+      "shirt": 7,
+      "height": null
+     },
+     {
+      "name": "Mordachy Kakon",
+      "pos": "FW",
+      "born": "1972-11-16",
+      "nat": "Israel",
+      "shirt": 9,
+      "height": null
+     },
+     {
+      "name": "Eyal Abramov",
+      "pos": null,
+      "born": "1972-10-01",
+      "nat": "Israel",
+      "shirt": 22,
+      "height": null
+     },
+     {
+      "name": "Guy Shamir",
+      "pos": "MF",
+      "born": "1978-01-09",
+      "nat": "Israel",
+      "shirt": 21,
+      "height": null
+     },
+     {
+      "name": "Eyal Sofer",
+      "pos": null,
+      "born": "1979-05-24",
+      "nat": "Israel",
+      "shirt": 28,
+      "height": null
+     },
+     {
+      "name": "Avraham Krouse",
+      "pos": null,
+      "born": "1979-01-19",
+      "nat": "Israel",
+      "shirt": 29,
+      "height": null
+     },
+     {
+      "name": "Lior Larido",
+      "pos": null,
+      "born": "1978-04-03",
+      "nat": "Israel",
+      "shirt": 15,
+      "height": null
+     },
+     {
+      "name": "Dor Gerchovitz",
+      "pos": null,
+      "born": "1977-11-13",
+      "nat": "Israel",
+      "shirt": 13,
+      "height": null
+     },
+     {
+      "name": "Uzi Azulay",
+      "pos": null,
+      "born": "1973-03-21",
+      "nat": "Israel",
+      "shirt": 14,
+      "height": null
+     }
+    ],
     "primaryOnly": {
      "source": "a-src-uefa-54339",
      "scorers": [
@@ -357,13 +779,13 @@
    "sources": [
     "a-src-uefa-54339"
    ],
-   "researchedAt": "2026-11-09",
+   "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-09",
+   "approvedAt": "2026-11-12",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   },
   {
@@ -397,6 +819,152 @@
      "Eyal Sofer"
     ],
     "scorers": [],
+    "squad": [
+     {
+      "name": "Shay Hass",
+      "pos": "GK",
+      "born": "1973-01-02",
+      "nat": "Israel",
+      "shirt": 1,
+      "height": null
+     },
+     {
+      "name": "Avraham Fletcher",
+      "pos": "DF",
+      "born": "1972-07-18",
+      "nat": "Israel",
+      "shirt": 4,
+      "height": null
+     },
+     {
+      "name": "Walid Badier",
+      "pos": "DF",
+      "born": "1974-03-12",
+      "nat": "Israel",
+      "shirt": 5,
+      "height": 187
+     },
+     {
+      "name": "Gábor Márton",
+      "pos": null,
+      "born": "1966-10-15",
+      "nat": "Hungary",
+      "shirt": 6,
+      "height": null
+     },
+     {
+      "name": "Yaniv Ofri",
+      "pos": null,
+      "born": "1974-12-25",
+      "nat": "Israel",
+      "shirt": 7,
+      "height": null
+     },
+     {
+      "name": "Mordachy Kakon",
+      "pos": "FW",
+      "born": "1972-11-16",
+      "nat": "Israel",
+      "shirt": 9,
+      "height": null
+     },
+     {
+      "name": "Eliezer Abarbanel",
+      "pos": "DF",
+      "born": "1976-02-22",
+      "nat": "Israel",
+      "shirt": 10,
+      "height": null
+     },
+     {
+      "name": "Yaniv Hermesh",
+      "pos": "DF",
+      "born": "1978-02-22",
+      "nat": "Israel",
+      "shirt": 16,
+      "height": null
+     },
+     {
+      "name": "Shlomi Benhamo",
+      "pos": null,
+      "born": "1974-12-03",
+      "nat": "Israel",
+      "shirt": 17,
+      "height": null
+     },
+     {
+      "name": "Manor Hasan",
+      "pos": "MF",
+      "born": "1976-08-22",
+      "nat": "Israel",
+      "shirt": 18,
+      "height": null
+     },
+     {
+      "name": "Ilan Buaron",
+      "pos": null,
+      "born": "1972-05-03",
+      "nat": "Israel",
+      "shirt": 20,
+      "height": null
+     },
+     {
+      "name": "Daniel Abas",
+      "pos": null,
+      "born": "1977-11-14",
+      "nat": "Israel",
+      "shirt": 23,
+      "height": null
+     },
+     {
+      "name": "Dor Gerchovitz",
+      "pos": null,
+      "born": "1977-11-13",
+      "nat": "Israel",
+      "shirt": 13,
+      "height": null
+     },
+     {
+      "name": "Uzi Azulay",
+      "pos": null,
+      "born": "1973-03-21",
+      "nat": "Israel",
+      "shirt": 14,
+      "height": null
+     },
+     {
+      "name": "Lior Larido",
+      "pos": null,
+      "born": "1978-04-03",
+      "nat": "Israel",
+      "shirt": 15,
+      "height": null
+     },
+     {
+      "name": "Guy Shamir",
+      "pos": "MF",
+      "born": "1978-01-09",
+      "nat": "Israel",
+      "shirt": 21,
+      "height": null
+     },
+     {
+      "name": "Eyal Abramov",
+      "pos": null,
+      "born": "1972-10-01",
+      "nat": "Israel",
+      "shirt": 22,
+      "height": null
+     },
+     {
+      "name": "Eyal Sofer",
+      "pos": null,
+      "born": "1979-05-24",
+      "nat": "Israel",
+      "shirt": 28,
+      "height": null
+     }
+    ],
     "primaryOnly": {
      "source": "a-src-uefa-54338",
      "scorers": [],
@@ -427,13 +995,13 @@
    "sources": [
     "a-src-uefa-54338"
    ],
-   "researchedAt": "2026-11-09",
+   "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-09",
+   "approvedAt": "2026-11-12",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   },
   {
@@ -472,6 +1040,152 @@
       "minute": 33
      }
     ],
+    "squad": [
+     {
+      "name": "Shay Hass",
+      "pos": "GK",
+      "born": "1973-01-02",
+      "nat": "Israel",
+      "shirt": 1,
+      "height": null
+     },
+     {
+      "name": "Bingamen Koziashvili",
+      "pos": null,
+      "born": "1967-09-19",
+      "nat": "Israel",
+      "shirt": 2,
+      "height": null
+     },
+     {
+      "name": "Gábor Márton",
+      "pos": null,
+      "born": "1966-10-15",
+      "nat": "Hungary",
+      "shirt": 6,
+      "height": null
+     },
+     {
+      "name": "Walid Badier",
+      "pos": "DF",
+      "born": "1974-03-12",
+      "nat": "Israel",
+      "shirt": 5,
+      "height": 187
+     },
+     {
+      "name": "Ilan Buaron",
+      "pos": null,
+      "born": "1972-05-03",
+      "nat": "Israel",
+      "shirt": 20,
+      "height": null
+     },
+     {
+      "name": "Avraham Fletcher",
+      "pos": "DF",
+      "born": "1972-07-18",
+      "nat": "Israel",
+      "shirt": 4,
+      "height": null
+     },
+     {
+      "name": "Shlomi Benhamo",
+      "pos": null,
+      "born": "1974-12-03",
+      "nat": "Israel",
+      "shirt": 17,
+      "height": null
+     },
+     {
+      "name": "Ondrej Kristofik",
+      "pos": "DF",
+      "born": "1966-09-10",
+      "nat": "Slovakia",
+      "shirt": 8,
+      "height": null
+     },
+     {
+      "name": "Eliezer Abarbanel",
+      "pos": "DF",
+      "born": "1976-02-22",
+      "nat": "Israel",
+      "shirt": 10,
+      "height": null
+     },
+     {
+      "name": "Manor Hasan",
+      "pos": "MF",
+      "born": "1976-08-22",
+      "nat": "Israel",
+      "shirt": 18,
+      "height": null
+     },
+     {
+      "name": "Mordachy Kakon",
+      "pos": "FW",
+      "born": "1972-11-16",
+      "nat": "Israel",
+      "shirt": 9,
+      "height": null
+     },
+     {
+      "name": "Eyal Abramov",
+      "pos": null,
+      "born": "1972-10-01",
+      "nat": "Israel",
+      "shirt": 22,
+      "height": null
+     },
+     {
+      "name": "Yaniv Ofri",
+      "pos": null,
+      "born": "1974-12-25",
+      "nat": "Israel",
+      "shirt": 7,
+      "height": null
+     },
+     {
+      "name": "Daniel Abas",
+      "pos": null,
+      "born": "1977-11-14",
+      "nat": "Israel",
+      "shirt": 23,
+      "height": null
+     },
+     {
+      "name": "Uzi Azulay",
+      "pos": null,
+      "born": "1973-03-21",
+      "nat": "Israel",
+      "shirt": 14,
+      "height": null
+     },
+     {
+      "name": "Dor Gerchovitz",
+      "pos": null,
+      "born": "1977-11-13",
+      "nat": "Israel",
+      "shirt": 13,
+      "height": null
+     },
+     {
+      "name": "Yaniv Hermesh",
+      "pos": "DF",
+      "born": "1978-02-22",
+      "nat": "Israel",
+      "shirt": 16,
+      "height": null
+     },
+     {
+      "name": "Guy Shamir",
+      "pos": "MF",
+      "born": "1978-01-09",
+      "nat": "Israel",
+      "shirt": 21,
+      "height": null
+     }
+    ],
     "primaryOnly": {
      "source": "a-src-uefa-54258",
      "scorers": [
@@ -507,13 +1221,13 @@
    "sources": [
     "a-src-uefa-54258"
    ],
-   "researchedAt": "2026-11-09",
+   "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-09",
+   "approvedAt": "2026-11-12",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   },
   {
@@ -547,6 +1261,152 @@
      "Daniel Abas"
     ],
     "scorers": [],
+    "squad": [
+     {
+      "name": "Shay Hass",
+      "pos": "GK",
+      "born": "1973-01-02",
+      "nat": "Israel",
+      "shirt": 1,
+      "height": null
+     },
+     {
+      "name": "Bingamen Koziashvili",
+      "pos": null,
+      "born": "1967-09-19",
+      "nat": "Israel",
+      "shirt": 2,
+      "height": null
+     },
+     {
+      "name": "Avraham Fletcher",
+      "pos": "DF",
+      "born": "1972-07-18",
+      "nat": "Israel",
+      "shirt": 4,
+      "height": null
+     },
+     {
+      "name": "Walid Badier",
+      "pos": "DF",
+      "born": "1974-03-12",
+      "nat": "Israel",
+      "shirt": 5,
+      "height": 187
+     },
+     {
+      "name": "Gábor Márton",
+      "pos": null,
+      "born": "1966-10-15",
+      "nat": "Hungary",
+      "shirt": 6,
+      "height": null
+     },
+     {
+      "name": "Yaniv Ofri",
+      "pos": null,
+      "born": "1974-12-25",
+      "nat": "Israel",
+      "shirt": 7,
+      "height": null
+     },
+     {
+      "name": "Ondrej Kristofik",
+      "pos": "DF",
+      "born": "1966-09-10",
+      "nat": "Slovakia",
+      "shirt": 8,
+      "height": null
+     },
+     {
+      "name": "Mordachy Kakon",
+      "pos": "FW",
+      "born": "1972-11-16",
+      "nat": "Israel",
+      "shirt": 9,
+      "height": null
+     },
+     {
+      "name": "Shlomi Benhamo",
+      "pos": null,
+      "born": "1974-12-03",
+      "nat": "Israel",
+      "shirt": 17,
+      "height": null
+     },
+     {
+      "name": "Manor Hasan",
+      "pos": "MF",
+      "born": "1976-08-22",
+      "nat": "Israel",
+      "shirt": 18,
+      "height": null
+     },
+     {
+      "name": "Ilan Buaron",
+      "pos": null,
+      "born": "1972-05-03",
+      "nat": "Israel",
+      "shirt": 20,
+      "height": null
+     },
+     {
+      "name": "Eyal Abramov",
+      "pos": null,
+      "born": "1972-10-01",
+      "nat": "Israel",
+      "shirt": 22,
+      "height": null
+     },
+     {
+      "name": "Efraim Bason",
+      "pos": null,
+      "born": "1976-09-24",
+      "nat": "Israel",
+      "shirt": 14,
+      "height": null
+     },
+     {
+      "name": "Guy Shamir",
+      "pos": "MF",
+      "born": "1978-01-09",
+      "nat": "Israel",
+      "shirt": 21,
+      "height": null
+     },
+     {
+      "name": "Alon Cohen",
+      "pos": null,
+      "born": "1973-08-23",
+      "nat": "Israel",
+      "shirt": 3,
+      "height": null
+     },
+     {
+      "name": "Uzi Azulay",
+      "pos": null,
+      "born": "1973-03-21",
+      "nat": "Israel",
+      "shirt": 13,
+      "height": null
+     },
+     {
+      "name": "Yaniv Hermesh",
+      "pos": "DF",
+      "born": "1978-02-22",
+      "nat": "Israel",
+      "shirt": 16,
+      "height": null
+     },
+     {
+      "name": "Daniel Abas",
+      "pos": null,
+      "born": "1977-11-14",
+      "nat": "Israel",
+      "shirt": 23,
+      "height": null
+     }
+    ],
     "primaryOnly": {
      "source": "a-src-uefa-54257",
      "scorers": [],
@@ -577,13 +1437,13 @@
    "sources": [
     "a-src-uefa-54257"
    ],
-   "researchedAt": "2026-11-09",
+   "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-09",
+   "approvedAt": "2026-11-12",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   },
   {
@@ -625,6 +1485,144 @@
       "minute": 62
      }
     ],
+    "squad": [
+     {
+      "name": "Shay Hass",
+      "pos": "GK",
+      "born": "1973-01-02",
+      "nat": "Israel",
+      "shirt": 1,
+      "height": null
+     },
+     {
+      "name": "Bingamen Koziashvili",
+      "pos": null,
+      "born": "1967-09-19",
+      "nat": "Israel",
+      "shirt": 2,
+      "height": null
+     },
+     {
+      "name": "Alon Cohen",
+      "pos": null,
+      "born": "1973-08-23",
+      "nat": "Israel",
+      "shirt": 3,
+      "height": null
+     },
+     {
+      "name": "Walid Badier",
+      "pos": "DF",
+      "born": "1974-03-12",
+      "nat": "Israel",
+      "shirt": 5,
+      "height": 187
+     },
+     {
+      "name": "Gábor Márton",
+      "pos": null,
+      "born": "1966-10-15",
+      "nat": "Hungary",
+      "shirt": 6,
+      "height": null
+     },
+     {
+      "name": "Yaniv Ofri",
+      "pos": null,
+      "born": "1974-12-25",
+      "nat": "Israel",
+      "shirt": 7,
+      "height": null
+     },
+     {
+      "name": "Mordachy Kakon",
+      "pos": "FW",
+      "born": "1972-11-16",
+      "nat": "Israel",
+      "shirt": 9,
+      "height": null
+     },
+     {
+      "name": "Shlomi Benhamo",
+      "pos": null,
+      "born": "1974-12-03",
+      "nat": "Israel",
+      "shirt": 17,
+      "height": null
+     },
+     {
+      "name": "Manor Hasan",
+      "pos": "MF",
+      "born": "1976-08-22",
+      "nat": "Israel",
+      "shirt": 18,
+      "height": null
+     },
+     {
+      "name": "Ondrej Kristofik",
+      "pos": "DF",
+      "born": "1966-09-10",
+      "nat": "Slovakia",
+      "shirt": 19,
+      "height": null
+     },
+     {
+      "name": "Ilan Buaron",
+      "pos": null,
+      "born": "1972-05-03",
+      "nat": "Israel",
+      "shirt": 20,
+      "height": null
+     },
+     {
+      "name": "Avraham Fletcher",
+      "pos": "DF",
+      "born": "1972-07-18",
+      "nat": "Israel",
+      "shirt": 4,
+      "height": null
+     },
+     {
+      "name": "Uzi Azulay",
+      "pos": null,
+      "born": "1973-03-21",
+      "nat": "Israel",
+      "shirt": 14,
+      "height": null
+     },
+     {
+      "name": "Guy Shamir",
+      "pos": "MF",
+      "born": "1978-01-09",
+      "nat": "Israel",
+      "shirt": 21,
+      "height": null
+     },
+     {
+      "name": "Efraim Bason",
+      "pos": null,
+      "born": "1976-09-24",
+      "nat": "Israel",
+      "shirt": 8,
+      "height": null
+     },
+     {
+      "name": "Dor Gerchovitz",
+      "pos": null,
+      "born": "1977-11-13",
+      "nat": "Israel",
+      "shirt": 13,
+      "height": null
+     },
+     {
+      "name": "Yaniv Hermesh",
+      "pos": "DF",
+      "born": "1978-02-22",
+      "nat": "Israel",
+      "shirt": 16,
+      "height": null
+     }
+    ],
     "primaryOnly": {
      "source": "a-src-uefa-54173",
      "scorers": [
@@ -663,13 +1661,13 @@
    "sources": [
     "a-src-uefa-54173"
    ],
-   "researchedAt": "2026-11-09",
+   "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-09",
+   "approvedAt": "2026-11-12",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   },
   {
@@ -707,6 +1705,144 @@
       "minute": 88
      }
     ],
+    "squad": [
+     {
+      "name": "Shay Hass",
+      "pos": "GK",
+      "born": "1973-01-02",
+      "nat": "Israel",
+      "shirt": 1,
+      "height": null
+     },
+     {
+      "name": "Bingamen Koziashvili",
+      "pos": null,
+      "born": "1967-09-19",
+      "nat": "Israel",
+      "shirt": 2,
+      "height": null
+     },
+     {
+      "name": "Alon Cohen",
+      "pos": null,
+      "born": "1973-08-23",
+      "nat": "Israel",
+      "shirt": 3,
+      "height": null
+     },
+     {
+      "name": "Walid Badier",
+      "pos": "DF",
+      "born": "1974-03-12",
+      "nat": "Israel",
+      "shirt": 5,
+      "height": 187
+     },
+     {
+      "name": "Gábor Márton",
+      "pos": null,
+      "born": "1966-10-15",
+      "nat": "Hungary",
+      "shirt": 6,
+      "height": null
+     },
+     {
+      "name": "Yaniv Ofri",
+      "pos": null,
+      "born": "1974-12-25",
+      "nat": "Israel",
+      "shirt": 7,
+      "height": null
+     },
+     {
+      "name": "Mordachy Kakon",
+      "pos": "FW",
+      "born": "1972-11-16",
+      "nat": "Israel",
+      "shirt": 9,
+      "height": null
+     },
+     {
+      "name": "Shlomi Benhamo",
+      "pos": null,
+      "born": "1974-12-03",
+      "nat": "Israel",
+      "shirt": 17,
+      "height": null
+     },
+     {
+      "name": "Manor Hasan",
+      "pos": "MF",
+      "born": "1976-08-22",
+      "nat": "Israel",
+      "shirt": 18,
+      "height": null
+     },
+     {
+      "name": "Ilan Buaron",
+      "pos": null,
+      "born": "1972-05-03",
+      "nat": "Israel",
+      "shirt": 20,
+      "height": null
+     },
+     {
+      "name": "Daniel Abas",
+      "pos": null,
+      "born": "1977-11-14",
+      "nat": "Israel",
+      "shirt": 23,
+      "height": null
+     },
+     {
+      "name": "Avraham Fletcher",
+      "pos": "DF",
+      "born": "1972-07-18",
+      "nat": "Israel",
+      "shirt": 4,
+      "height": null
+     },
+     {
+      "name": "Uzi Azulay",
+      "pos": null,
+      "born": "1973-03-21",
+      "nat": "Israel",
+      "shirt": 14,
+      "height": null
+     },
+     {
+      "name": "Efraim Bason",
+      "pos": null,
+      "born": "1976-09-24",
+      "nat": "Israel",
+      "shirt": 19,
+      "height": null
+     },
+     {
+      "name": "Dor Gerchovitz",
+      "pos": null,
+      "born": "1977-11-13",
+      "nat": "Israel",
+      "shirt": 13,
+      "height": null
+     },
+     {
+      "name": "Yaniv Hermesh",
+      "pos": "DF",
+      "born": "1978-02-22",
+      "nat": "Israel",
+      "shirt": 16,
+      "height": null
+     },
+     {
+      "name": "Guy Shamir",
+      "pos": "MF",
+      "born": "1978-01-09",
+      "nat": "Israel",
+      "shirt": 21,
+      "height": null
+     }
+    ],
     "primaryOnly": {
      "source": "a-src-uefa-54172",
      "scorers": [
@@ -741,13 +1877,13 @@
    "sources": [
     "a-src-uefa-54172"
    ],
-   "researchedAt": "2026-11-09",
+   "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-09",
+   "approvedAt": "2026-11-12",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   },
   {
@@ -779,6 +1915,136 @@
      "Nir Arbiv"
     ],
     "scorers": [],
+    "squad": [
+     {
+      "name": "Yaniv Nahom",
+      "pos": null,
+      "born": "1976-08-16",
+      "nat": "Israel",
+      "shirt": 1,
+      "height": null
+     },
+     {
+      "name": "Bingamen Koziashvili",
+      "pos": null,
+      "born": "1967-09-19",
+      "nat": "Israel",
+      "shirt": 2,
+      "height": null
+     },
+     {
+      "name": "Giy Sofer",
+      "pos": null,
+      "born": "1972-05-27",
+      "nat": "Israel",
+      "shirt": 3,
+      "height": null
+     },
+     {
+      "name": "Manor Hasan",
+      "pos": "MF",
+      "born": "1976-08-22",
+      "nat": "Israel",
+      "shirt": 4,
+      "height": null
+     },
+     {
+      "name": "Peter Kargil",
+      "pos": null,
+      "born": "1964-03-02",
+      "nat": "Jamaica",
+      "shirt": 5,
+      "height": null
+     },
+     {
+      "name": "Yoaav Hersko",
+      "pos": null,
+      "born": "1977-06-21",
+      "nat": "Israel",
+      "shirt": 6,
+      "height": null
+     },
+     {
+      "name": "Tomasz Cebula",
+      "pos": null,
+      "born": "1966-03-31",
+      "nat": "Poland",
+      "shirt": 7,
+      "height": null
+     },
+     {
+      "name": "Ofir Kopel",
+      "pos": "MF",
+      "born": "1975-04-25",
+      "nat": "Israel",
+      "shirt": 8,
+      "height": null
+     },
+     {
+      "name": "Jaroslaw Araszkiewicz",
+      "pos": "MF",
+      "born": "1965-02-01",
+      "nat": "Poland",
+      "shirt": 9,
+      "height": null
+     },
+     {
+      "name": "Eliezer Abarbanel",
+      "pos": "DF",
+      "born": "1976-02-22",
+      "nat": "Israel",
+      "shirt": 10,
+      "height": null
+     },
+     {
+      "name": "Alon Maya",
+      "pos": "MF",
+      "born": "1974-08-31",
+      "nat": "Israel",
+      "shirt": 11,
+      "height": null
+     },
+     {
+      "name": "Adi Fox",
+      "pos": null,
+      "born": "1973-07-25",
+      "nat": "Israel",
+      "shirt": 12,
+      "height": null
+     },
+     {
+      "name": "Mordachy Kakon",
+      "pos": "FW",
+      "born": "1972-11-16",
+      "nat": "Israel",
+      "shirt": 13,
+      "height": null
+     },
+     {
+      "name": "Menache Basson",
+      "pos": null,
+      "born": "1968-08-22",
+      "nat": "Israel",
+      "shirt": 14,
+      "height": null
+     },
+     {
+      "name": "Efraim Bason",
+      "pos": null,
+      "born": "1976-09-24",
+      "nat": "Israel",
+      "shirt": 15,
+      "height": null
+     },
+     {
+      "name": "Nir Arbiv",
+      "pos": null,
+      "born": "1975-10-04",
+      "nat": "Israel",
+      "shirt": 16,
+      "height": null
+     }
+    ],
     "primaryOnly": {
      "source": "a-src-uefa-51822",
      "scorers": [],
@@ -807,13 +2073,13 @@
    "sources": [
     "a-src-uefa-51822"
    ],
-   "researchedAt": "2026-11-09",
+   "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-09",
+   "approvedAt": "2026-11-12",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   },
   {
@@ -845,6 +2111,136 @@
      "Efraim Bason"
     ],
     "scorers": [],
+    "squad": [
+     {
+      "name": "Yaniv Nahom",
+      "pos": null,
+      "born": "1976-08-16",
+      "nat": "Israel",
+      "shirt": 1,
+      "height": null
+     },
+     {
+      "name": "Bingamen Koziashvili",
+      "pos": null,
+      "born": "1967-09-19",
+      "nat": "Israel",
+      "shirt": 2,
+      "height": null
+     },
+     {
+      "name": "Ilan Buaron",
+      "pos": null,
+      "born": "1972-05-03",
+      "nat": "Israel",
+      "shirt": 3,
+      "height": null
+     },
+     {
+      "name": "Avraham Fletcher",
+      "pos": "DF",
+      "born": "1972-07-18",
+      "nat": "Israel",
+      "shirt": 4,
+      "height": null
+     },
+     {
+      "name": "Peter Kargil",
+      "pos": null,
+      "born": "1964-03-02",
+      "nat": "Jamaica",
+      "shirt": 5,
+      "height": null
+     },
+     {
+      "name": "Adoram Keise",
+      "pos": "DF",
+      "born": "1972-06-17",
+      "nat": "Israel",
+      "shirt": 6,
+      "height": null
+     },
+     {
+      "name": "Eliezer Abarbanel",
+      "pos": "DF",
+      "born": "1976-02-22",
+      "nat": "Israel",
+      "shirt": 7,
+      "height": null
+     },
+     {
+      "name": "Ofir Kopel",
+      "pos": "MF",
+      "born": "1975-04-25",
+      "nat": "Israel",
+      "shirt": 8,
+      "height": null
+     },
+     {
+      "name": "Israel Cohan",
+      "pos": null,
+      "born": "1972-03-25",
+      "nat": "Israel",
+      "shirt": 9,
+      "height": null
+     },
+     {
+      "name": "Tomasz Cebula",
+      "pos": null,
+      "born": "1966-03-31",
+      "nat": "Poland",
+      "shirt": 10,
+      "height": null
+     },
+     {
+      "name": "Alon Maya",
+      "pos": "MF",
+      "born": "1974-08-31",
+      "nat": "Israel",
+      "shirt": 11,
+      "height": null
+     },
+     {
+      "name": "Amir Gooze",
+      "pos": null,
+      "born": "1974-11-05",
+      "nat": "Israel",
+      "shirt": 12,
+      "height": null
+     },
+     {
+      "name": "Yoaav Hersko",
+      "pos": null,
+      "born": "1977-06-21",
+      "nat": "Israel",
+      "shirt": 13,
+      "height": null
+     },
+     {
+      "name": "Nir Arbiv",
+      "pos": null,
+      "born": "1975-10-04",
+      "nat": "Israel",
+      "shirt": 14,
+      "height": null
+     },
+     {
+      "name": "Oren Moharer",
+      "pos": null,
+      "born": "1971-03-16",
+      "nat": "Israel",
+      "shirt": 15,
+      "height": null
+     },
+     {
+      "name": "Efraim Bason",
+      "pos": null,
+      "born": "1976-09-24",
+      "nat": "Israel",
+      "shirt": 16,
+      "height": null
+     }
+    ],
     "primaryOnly": {
      "source": "a-src-uefa-51819",
      "scorers": [],
@@ -873,13 +2269,13 @@
    "sources": [
     "a-src-uefa-51819"
    ],
-   "researchedAt": "2026-11-09",
+   "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-09",
+   "approvedAt": "2026-11-12",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   },
   {
@@ -915,6 +2311,128 @@
       "minute": 47
      }
     ],
+    "squad": [
+     {
+      "name": "Yaniv Nahom",
+      "pos": null,
+      "born": "1976-08-16",
+      "nat": "Israel",
+      "shirt": 1,
+      "height": null
+     },
+     {
+      "name": "Yoaav Hersko",
+      "pos": null,
+      "born": "1977-06-21",
+      "nat": "Israel",
+      "shirt": 2,
+      "height": null
+     },
+     {
+      "name": "Giy Sofer",
+      "pos": null,
+      "born": "1972-05-27",
+      "nat": "Israel",
+      "shirt": 3,
+      "height": null
+     },
+     {
+      "name": "Avraham Fletcher",
+      "pos": "DF",
+      "born": "1972-07-18",
+      "nat": "Israel",
+      "shirt": 4,
+      "height": null
+     },
+     {
+      "name": "Peter Kargil",
+      "pos": null,
+      "born": "1964-03-02",
+      "nat": "Jamaica",
+      "shirt": 5,
+      "height": null
+     },
+     {
+      "name": "Adoram Keise",
+      "pos": "DF",
+      "born": "1972-06-17",
+      "nat": "Israel",
+      "shirt": 6,
+      "height": null
+     },
+     {
+      "name": "Eliezer Abarbanel",
+      "pos": "DF",
+      "born": "1976-02-22",
+      "nat": "Israel",
+      "shirt": 7,
+      "height": null
+     },
+     {
+      "name": "Ofir Kopel",
+      "pos": "MF",
+      "born": "1975-04-25",
+      "nat": "Israel",
+      "shirt": 8,
+      "height": null
+     },
+     {
+      "name": "Piotr Prabucki",
+      "pos": null,
+      "born": "1968-12-19",
+      "nat": "Poland",
+      "shirt": 9,
+      "height": null
+     },
+     {
+      "name": "Tomasz Cebula",
+      "pos": null,
+      "born": "1966-03-31",
+      "nat": "Poland",
+      "shirt": 10,
+      "height": null
+     },
+     {
+      "name": "Manor Hasan",
+      "pos": "MF",
+      "born": "1976-08-22",
+      "nat": "Israel",
+      "shirt": 11,
+      "height": null
+     },
+     {
+      "name": "Nir Arbiv",
+      "pos": null,
+      "born": "1975-10-04",
+      "nat": "Israel",
+      "shirt": 14,
+      "height": null
+     },
+     {
+      "name": "Efraim Bason",
+      "pos": null,
+      "born": "1976-09-24",
+      "nat": "Israel",
+      "shirt": 15,
+      "height": null
+     },
+     {
+      "name": "Amir Gooze",
+      "pos": null,
+      "born": "1974-11-05",
+      "nat": "Israel",
+      "shirt": 12,
+      "height": null
+     },
+     {
+      "name": "Alon Maya",
+      "pos": "MF",
+      "born": "1974-08-31",
+      "nat": "Israel",
+      "shirt": 16,
+      "height": null
+     }
+    ],
     "primaryOnly": {
      "source": "a-src-uefa-51817",
      "scorers": [
@@ -947,13 +2465,13 @@
    "sources": [
     "a-src-uefa-51817"
    ],
-   "researchedAt": "2026-11-09",
+   "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-09",
+   "approvedAt": "2026-11-12",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   },
   {
@@ -985,6 +2503,136 @@
      "Yoaav Hersko"
     ],
     "scorers": [],
+    "squad": [
+     {
+      "name": "Yaniv Nahom",
+      "pos": null,
+      "born": "1976-08-16",
+      "nat": "Israel",
+      "shirt": 1,
+      "height": null
+     },
+     {
+      "name": "Israel Cohan",
+      "pos": null,
+      "born": "1972-03-25",
+      "nat": "Israel",
+      "shirt": 2,
+      "height": null
+     },
+     {
+      "name": "David Pizanti",
+      "pos": null,
+      "born": "1962-05-27",
+      "nat": "Israel",
+      "shirt": 3,
+      "height": null
+     },
+     {
+      "name": "Avraham Fletcher",
+      "pos": "DF",
+      "born": "1972-07-18",
+      "nat": "Israel",
+      "shirt": 4,
+      "height": null
+     },
+     {
+      "name": "Peter Kargil",
+      "pos": null,
+      "born": "1964-03-02",
+      "nat": "Jamaica",
+      "shirt": 5,
+      "height": null
+     },
+     {
+      "name": "Adoram Keise",
+      "pos": "DF",
+      "born": "1972-06-17",
+      "nat": "Israel",
+      "shirt": 6,
+      "height": null
+     },
+     {
+      "name": "Eliezer Abarbanel",
+      "pos": "DF",
+      "born": "1976-02-22",
+      "nat": "Israel",
+      "shirt": 7,
+      "height": null
+     },
+     {
+      "name": "Ofir Kopel",
+      "pos": "MF",
+      "born": "1975-04-25",
+      "nat": "Israel",
+      "shirt": 8,
+      "height": null
+     },
+     {
+      "name": "Piotr Prabucki",
+      "pos": null,
+      "born": "1968-12-19",
+      "nat": "Poland",
+      "shirt": 9,
+      "height": null
+     },
+     {
+      "name": "Tomasz Cebula",
+      "pos": null,
+      "born": "1966-03-31",
+      "nat": "Poland",
+      "shirt": 10,
+      "height": null
+     },
+     {
+      "name": "Jaroslaw Araszkiewicz",
+      "pos": "MF",
+      "born": "1965-02-01",
+      "nat": "Poland",
+      "shirt": 11,
+      "height": null
+     },
+     {
+      "name": "Amir Gooze",
+      "pos": null,
+      "born": "1974-11-05",
+      "nat": "Israel",
+      "shirt": 12,
+      "height": null
+     },
+     {
+      "name": "Gay Gat",
+      "pos": null,
+      "born": "1970-09-24",
+      "nat": "Israel",
+      "shirt": 13,
+      "height": null
+     },
+     {
+      "name": "Manor Hasan",
+      "pos": "MF",
+      "born": "1976-08-22",
+      "nat": "Israel",
+      "shirt": 14,
+      "height": null
+     },
+     {
+      "name": "Efraim Bason",
+      "pos": null,
+      "born": "1976-09-24",
+      "nat": "Israel",
+      "shirt": 15,
+      "height": null
+     },
+     {
+      "name": "Yoaav Hersko",
+      "pos": null,
+      "born": "1977-06-21",
+      "nat": "Israel",
+      "shirt": 16,
+      "height": null
+     }
+    ],
     "primaryOnly": {
      "source": "a-src-uefa-51815",
      "scorers": [],
@@ -1013,13 +2661,13 @@
    "sources": [
     "a-src-uefa-51815"
    ],
-   "researchedAt": "2026-11-09",
+   "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-09",
+   "approvedAt": "2026-11-12",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   },
   {
@@ -1060,6 +2708,136 @@
       "minute": 48
      }
     ],
+    "squad": [
+     {
+      "name": "Refael Cohen",
+      "pos": "GK",
+      "born": "1970-11-28",
+      "nat": "Israel",
+      "shirt": 1,
+      "height": null
+     },
+     {
+      "name": "Bingamen Koziashvili",
+      "pos": null,
+      "born": "1967-09-19",
+      "nat": "Israel",
+      "shirt": 2,
+      "height": null
+     },
+     {
+      "name": "Avinonam Keysi",
+      "pos": null,
+      "born": "1965-01-31",
+      "nat": "Israel",
+      "shirt": 3,
+      "height": null
+     },
+     {
+      "name": "Uda Bahagat",
+      "pos": null,
+      "born": "1974-09-07",
+      "nat": "Israel",
+      "shirt": 4,
+      "height": null
+     },
+     {
+      "name": "Karios Olarn",
+      "pos": null,
+      "born": "1961-11-17",
+      "nat": "Argentina",
+      "shirt": 5,
+      "height": null
+     },
+     {
+      "name": "Adoram Keise",
+      "pos": "DF",
+      "born": "1972-06-17",
+      "nat": "Israel",
+      "shirt": 6,
+      "height": null
+     },
+     {
+      "name": "Mordachy Kakon",
+      "pos": "FW",
+      "born": "1972-11-16",
+      "nat": "Israel",
+      "shirt": 7,
+      "height": null
+     },
+     {
+      "name": "Menache Basson",
+      "pos": null,
+      "born": "1968-08-22",
+      "nat": "Israel",
+      "shirt": 8,
+      "height": null
+     },
+     {
+      "name": "Ner Levin",
+      "pos": null,
+      "born": "1962-03-04",
+      "nat": "Israel",
+      "shirt": 9,
+      "height": null
+     },
+     {
+      "name": "Uzi Hoaion",
+      "pos": null,
+      "born": "1972-11-06",
+      "nat": null,
+      "shirt": 10,
+      "height": null
+     },
+     {
+      "name": "Oz Elia",
+      "pos": null,
+      "born": "1967-04-06",
+      "nat": "Israel",
+      "shirt": 11,
+      "height": null
+     },
+     {
+      "name": "Shay Hass",
+      "pos": "GK",
+      "born": "1973-01-02",
+      "nat": "Israel",
+      "shirt": 16,
+      "height": null
+     },
+     {
+      "name": "Yosef Levi",
+      "pos": null,
+      "born": "1966-02-01",
+      "nat": "Israel",
+      "shirt": 12,
+      "height": null
+     },
+     {
+      "name": "Eliyu Mahapud",
+      "pos": null,
+      "born": "1961-03-25",
+      "nat": "Israel",
+      "shirt": 15,
+      "height": null
+     },
+     {
+      "name": "Morad Abukishak",
+      "pos": null,
+      "born": "1973-05-11",
+      "nat": "Israel",
+      "shirt": 13,
+      "height": null
+     },
+     {
+      "name": "Ofir Kopel",
+      "pos": "MF",
+      "born": "1975-04-25",
+      "nat": "Israel",
+      "shirt": 14,
+      "height": null
+     }
+    ],
     "primaryOnly": {
      "source": "a-src-uefa-6575",
      "scorers": [
@@ -1097,13 +2875,13 @@
    "sources": [
     "a-src-uefa-6575"
    ],
-   "researchedAt": "2026-11-09",
+   "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-09",
+   "approvedAt": "2026-11-12",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   },
   {
@@ -1127,13 +2905,13 @@
    "sources": [
     "a-src-uefa-6574"
    ],
-   "researchedAt": "2026-11-09",
+   "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-09",
+   "approvedAt": "2026-11-12",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   },
   {
@@ -1167,13 +2945,13 @@
    "sources": [
     "a-src-uefa-6189"
    ],
-   "researchedAt": "2026-11-09",
+   "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-09",
+   "approvedAt": "2026-11-12",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   },
   {
@@ -1207,13 +2985,13 @@
    "sources": [
     "a-src-uefa-6190"
    ],
-   "researchedAt": "2026-11-09",
+   "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-09",
+   "approvedAt": "2026-11-12",
    "approvedBy": "Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)"
   }
  ],

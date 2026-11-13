@@ -1,0 +1,572 @@
+{
+ "sources": [
+  {
+   "id": "wy-g-africanews-2017",
+   "title": "Moroccan side Wydad Casablanca crowned African champions",
+   "url": "https://www.africanews.com/2017/11/05/moroccan-side-wydad-casablanca-crowned-african-champions/",
+   "publisher": "Africanews",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-g-fifa-2017",
+   "title": "Wydad crowned African champions",
+   "url": "https://inside.fifa.com/news/wydad-crowned-african-champions-2918627",
+   "publisher": "FIFA",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-g-businessday-2022",
+   "title": "Wydad storm to victory over Al Ahly in intense Champions League final",
+   "url": "https://www.businessday.co.za/bd/sport/soccer/2022-05-31-wydad-storm-to-victory-over-al-ahly-in-intense-champions-league-final/",
+   "publisher": "BusinessDay (Arena Holdings; text by Marc Strydom, TimesLIVE)",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-g-soccerladuma-2022",
+   "title": "CAF Champions League final report: Al Ahly v Wydad Casablanca, 30 May 2022",
+   "url": "https://www.soccerladuma.co.za/international/african-football/caf-champions-league-final-report-al-ahly-v-wydad-casablanca-30-may-2022-20220530",
+   "publisher": "Soccer Laduma",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-g-ahram-2022",
+   "title": "Ahly miss out on historic triumph as Wydad win Champions League",
+   "url": "https://english.ahram.org.eg/NewsContent/6/51/467115/Sports/Egyptian-Football/Ahly-miss-out-on-historic-triumph-as-Wydad-win-Cha.aspx",
+   "publisher": "Ahram Online",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-g-supersport-2022",
+   "title": "Mosimane's Al Ahly succumb to Wydad in CAFCL final",
+   "url": "https://supersport.com/football/caf-champions-league/news/6b839925-8881-4cd7-9862-0837d62415c5/mosimane_s_al_ahly_succumb_to_wydad_in_cafcl_final",
+   "publisher": "SuperSport",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-g-afp-2022",
+   "title": "El Moutaraji strikes twice as Wydad become African champions",
+   "url": "https://worldsoccertalk.com/2022/05/30/el-moutaraji-strikes-twice-as-wydad-become-african-champions",
+   "publisher": "AFP (via World Soccer Talk)",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-g-supersport-2023f",
+   "title": "Advantage Al Ahly in CAF Champions League final",
+   "url": "https://supersport.com/football/general/news/a2b0d2e8-75e6-4c84-b1df-32cd9d8d0fd3/advantage-al-ahly-in-caf-champions-league-final",
+   "publisher": "SuperSport",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-g-swg-2023f",
+   "title": "Match report: Al Ahly stun Wydad to earn CAF Champions League final first-leg advantage",
+   "url": "https://sportsworldghana.com/match-report-al-ahly-stun-wydad-to-earn-caf-champions-league-final-first-leg-advantage/",
+   "publisher": "Sports World Ghana",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-g-supersport-2023sf",
+   "title": "Wydad edge Sundowns on away goals",
+   "url": "https://supersport.com/football/general/news/50f82443-fef8-4b25-b48c-453066ec7ad9/wydad-edge-sundowns-on-away-goals",
+   "publisher": "SuperSport",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-g-swg-2023sf",
+   "title": "Match report: Wydad AC edge Mamelodi Sundowns on away goals to book CAF Champions League final spot",
+   "url": "https://sportsworldghana.com/match-report-wydad-ac-edge-mamelodi-sundowns-on-away-goals-to-book-caf-champions-league-final-spot/",
+   "publisher": "Sports World Ghana",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-g-citizen-2023sf",
+   "title": "Wydad end Sundowns Champions League dream",
+   "url": "https://citizen.co.za/sport/soccer/local-soccer/wydad-end-sundowns-champions-league-dream",
+   "publisher": "The Citizen",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-g-timeslive-2025",
+   "title": "Lorch scores but Juventus prove too strong for Wydad AC in Club World Cup",
+   "url": "https://www.timeslive.co.za/sport/soccer/2025-06-22-lorch-scores-but-juventus-prove-too-strong-for-wydad-ac-in-club-world-cup/",
+   "publisher": "TimesLIVE",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-g-juventus-2025",
+   "title": "Juve put four past Wydad AC",
+   "url": "https://www.juventus.com/en/news/articles/juve-put-four-past-wydad-ac",
+   "publisher": "Juventus FC",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-g-soccerladuma-2025",
+   "title": "FIFA Club World Cup report: Juventus v Wydad Casablanca, 22 June 2025",
+   "url": "https://www.soccerladuma.co.za/international/fifa-club-world-cup/fifa-club-world-cup-report-juventus-v-wydad-casablanca-22-june-2025",
+   "publisher": "Soccer Laduma",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-g-ahram-ap-2025",
+   "title": "Kaku scores go-ahead goal and Al Ain downs Wydad 2-1 at Club World Cup",
+   "url": "https://english.ahram.org.eg/NewsClubWorldCup2025/2025/548743.aspx",
+   "publisher": "Associated Press (via Ahram Online)",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-g-fmt-reuters-2025",
+   "title": "Al Ain edges Wydad AC for 1st win in Club World Cup",
+   "url": "https://www.freemalaysiatoday.com/category/sports/2025/06/27/al-ain-edges-wydad-ac-for-1st-win-in-club-world-cup",
+   "publisher": "Reuters (via Free Malaysia Today)",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-g-ghanasoccernet-2019",
+   "title": "CAF Champions League final: ten-man Wydad hold Esperance in first leg",
+   "url": "https://ghanasoccernet.com/caf-champions-league-final-ten-man-wydad-hold-esperance-in-first-leg",
+   "publisher": "GhanaSoccernet",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-g-afp-2019",
+   "title": "10-man Wydad claw back to hold Esperance in first leg of final",
+   "url": "https://worldsoccertalk.com/news/10-man-wydad-claw-back-to-hold-esperance-in-first-leg-of-final-20190525-CMS-272524.html",
+   "publisher": "AFP (via World Soccer Talk)",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-g-supersport-2022sf",
+   "title": "Wydad cruise past Petro in semifinal first-leg",
+   "url": "https://supersport.com/news/f9332aca-b252-4667-a23f-2365ec5a853c/wydad_cruise_past_petro_in_semifinal_first-leg",
+   "publisher": "SuperSport",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-g-afp-2022sf",
+   "title": "Rival captains score for Wydad in CAF Champions League last four",
+   "url": "https://worldsoccertalk.com/2022/05/07/rival-captains-score-for-wydad-in-caf-champions-league-last-four",
+   "publisher": "AFP (via World Soccer Talk)",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-g-mwn-2022sf",
+   "title": "Wydad AC beats Angola's Petro Atletico 3-1, moves closer to CAF Champions League final",
+   "url": "https://www.moroccoworldnews.com/2022/05/46418/wydad-ac-beats-angola-s-petro-atletico-3-1-moves-closer-to-caf-champions-league-final/",
+   "publisher": "Morocco World News",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-g-gulftoday-2023",
+   "title": "Egypt's Al Ahly conquer Africa again with late goal to deny defending champion Wydad",
+   "url": "https://www.gulftoday.ae/Sport/2023/06/12/Egypt-s-Al-Ahly-conquer-Africa-again-with-late-goal-to-deny-defending-champion-Wydad",
+   "publisher": "Gulf Today",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "wy-g-fourfourtwo-2017cwc",
+   "title": "Wydad Casablanca 2 Urawa Red Diamonds 3: Marvellous Mauricio double proves decisive",
+   "url": "https://www.fourfourtwo.com/news/wydad-casablanca-2-urawa-red-diamonds-3-marvellous-mauricio-double-proves-decisive",
+   "publisher": "FourFourTwo",
+   "language": "en",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  }
+ ],
+ "goals": [
+  {
+   "id": "goal-2017-11-04-walid-el-karti-69",
+   "value": {
+    "name": "69' · Walid El Karti v Al Ahly",
+    "subtitle": "2017-11-04 · 69'",
+    "on": "2017-11-04",
+    "competition": "CAF Champions League 2017 final, second leg",
+    "opponent": "Al Ahly",
+    "score": "1-0",
+    "narrative": "Achraf Bencharki: sends a cross into the Ahly box. Walid El Karti: heads it in from close range past Sherif Ekramy.",
+    "sequence": [
+     {
+      "actor": "Achraf Bencharki",
+      "side": "club",
+      "action": "cross",
+      "zone": "C2",
+      "position": "delivery point not stated",
+      "note": "Cross into the penalty area."
+     },
+     {
+      "actor": "Walid El Karti",
+      "side": "club",
+      "action": "header",
+      "zone": "C1",
+      "position": "close range",
+      "note": "Header beats goalkeeper Sherif Ekramy."
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "wy-g-africanews-2017",
+    "wy-g-fifa-2017"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both: 69th minute, Bencharki cross, El Karti header, 1-0 on the night and 2-1 aggregate. Africanews adds the cross was deflected while FIFA calls it precise; that quality detail was dropped. Neither gives the flank, so zone C2 is a coarse anchor only."
+  },
+  {
+   "id": "goal-2022-05-30-zouhair-el-moutaraji-15",
+   "value": {
+    "name": "15' · Zouhair El Moutaraji v Al Ahly",
+    "subtitle": "2022-05-30 · 15'",
+    "on": "2022-05-30",
+    "competition": "CAF Champions League 2022 final",
+    "opponent": "Al Ahly",
+    "score": "2-0",
+    "narrative": "Aymane El Hassouni: lays the ball to El Moutaraji after an Ahly giveaway. Zouhair El Moutaraji: strikes a powerful right-footed shot from outside the box into the top-left corner.",
+    "sequence": [
+     {
+      "actor": "Aymane El Hassouni",
+      "side": "club",
+      "action": "pass",
+      "zone": "C2",
+      "position": "not stated",
+      "note": "Lay-off to El Moutaraji after Ahly lost the ball."
+     },
+     {
+      "actor": "Zouhair El Moutaraji",
+      "side": "club",
+      "action": "shot",
+      "zone": "C2",
+      "position": "outside the penalty area",
+      "note": "Powerful long-range strike into the top-left corner."
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "wy-g-businessday-2022",
+    "wy-g-soccerladuma-2022"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "BusinessDay: Yasser Ibrahim's stray pass reached Hassouni, who passed to El Moutaraji; swerving drive into the top-left corner. Soccer Laduma: Hassouni laid it off; powerful right-foot effort from outside the box into the top-left corner. BusinessDay's 'out to the wing' detail is not confirmed and was dropped. AFP (World Soccer Talk) also confirms 15th minute and a shot from outside the area."
+  },
+  {
+   "id": "goal-2022-05-30-zouhair-el-moutaraji-48",
+   "value": {
+    "name": "48' · Zouhair El Moutaraji v Al Ahly",
+    "subtitle": "2022-05-30 · 48'",
+    "on": "2022-05-30",
+    "competition": "CAF Champions League 2022 final",
+    "opponent": "Al Ahly",
+    "score": "2-0",
+    "narrative": "Zouhair El Moutaraji: gets ahead of his marker and directs a close-range effort at goal. Mohamed El Shenawy: parries it. Zouhair El Moutaraji: drives the rebound home.",
+    "sequence": [
+     {
+      "actor": "Zouhair El Moutaraji",
+      "side": "club",
+      "action": "shot",
+      "zone": "C1",
+      "position": "close range",
+      "note": "First effort on goal after a cross from the right."
+     },
+     {
+      "actor": "Mohamed El Shenawy",
+      "side": "opponent",
+      "action": "save",
+      "zone": "C1",
+      "position": "goal line",
+      "note": "Goalkeeper parries the first attempt."
+     },
+     {
+      "actor": "Zouhair El Moutaraji",
+      "side": "club",
+      "action": "shot",
+      "zone": "C1",
+      "position": "close range",
+      "note": "Puts the rebound in."
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "wy-g-ahram-2022",
+    "wy-g-supersport-2022"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Ahram Online and SuperSport: three minutes into the second half (SuperSport 48'), El Moutaraji beats Mohamed Hany to a cross from the right, El Shenawy saves/spills, El Moutaraji scores the rebound. AFP also confirms save then rebound. The crosser is NOT recorded: Ahram names Aymane El Hassouni with a low cross from the right, while BusinessDay says Jalal Daoudi chipped it from the left; that conflict was dropped and the sequence starts at the shot."
+  },
+  {
+   "id": "goal-2023-06-04-saifeddine-bouhra-86",
+   "value": {
+    "name": "86' · Saifeddine Bouhra v Al Ahly",
+    "subtitle": "2023-06-04 · 86'",
+    "on": "2023-06-04",
+    "competition": "CAF Champions League 2023 final, first leg",
+    "opponent": "Al Ahly",
+    "score": "1-2",
+    "narrative": "Bouly Sambou: plays the ball on to Bouhra inside the area. Saifeddine Bouhra: lashes a powerful shot into the net.",
+    "sequence": [
+     {
+      "actor": "Bouly Sambou",
+      "side": "club",
+      "action": "pass",
+      "zone": "C1",
+      "position": "inside the area",
+      "note": "Redirects the ball to Bouhra."
+     },
+     {
+      "actor": "Saifeddine Bouhra",
+      "side": "club",
+      "action": "shot",
+      "zone": "C1",
+      "position": "inside the area",
+      "note": "Powerful finish, four minutes after coming on."
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "wy-g-supersport-2023f",
+    "wy-g-swg-2023f"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "SuperSport: 86', substitute Bouhra (on 82'), assisted by Junior Sambou, shot from inside the area into the top-left corner. Sports World Ghana: 86', Sambou redirected an Ayoub El Amloud cut-back and Bouhra fired a powerful shot. El Amloud's cut-back is single-source and was left out of the sequence; corner placement is SuperSport only."
+  },
+  {
+   "id": "goal-2023-05-20-ayoub-el-amloud-72",
+   "value": {
+    "name": "72' · Ayoub El Amloud v Mamelodi Sundowns",
+    "subtitle": "2023-05-20 · 72'",
+    "on": "2023-05-20",
+    "competition": "CAF Champions League 2023 semi-final, second leg",
+    "opponent": "Mamelodi Sundowns",
+    "score": "2-2",
+    "narrative": "Yahya Jabrane: delivers the ball into the box from the left. Ayoub El Amloud: arrives late and heads it in.",
+    "sequence": [
+     {
+      "actor": "Yahya Jabrane",
+      "side": "club",
+      "action": "cross",
+      "zone": "A2",
+      "position": "from the left",
+      "note": "Delivery into the penalty area."
+     },
+     {
+      "actor": "Ayoub El Amloud",
+      "side": "club",
+      "action": "header",
+      "zone": "C1",
+      "position": "in the box",
+      "note": "Right-back arrives late and heads home."
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "wy-g-supersport-2023sf",
+    "wy-g-swg-2023sf"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "SuperSport: 72', Jabrane pin-point diagonal ball from the left, El Amloud arrives late and heads home. Sports World Ghana: 72', well-timed header from Jabrane's cross. The Citizen says the equaliser came from a corner, so whether it was open play or a set piece is not claimed. Flank (left) is SuperSport only."
+  },
+  {
+   "id": "goal-2025-06-22-thembinkosi-lorch-25",
+   "value": {
+    "name": "25' · Thembinkosi Lorch v Juventus",
+    "subtitle": "2025-06-22 · 25'",
+    "on": "2025-06-22",
+    "competition": "FIFA Club World Cup 2025, group stage",
+    "opponent": "Juventus",
+    "score": "1-4",
+    "narrative": "Nordin Amrabat: wins the ball and slips Lorch in behind the defence. Thembinkosi Lorch: takes a touch and lobs the onrushing Michele Di Gregorio.",
+    "sequence": [
+     {
+      "actor": "Nordin Amrabat",
+      "side": "club",
+      "action": "throughBall",
+      "zone": "C3",
+      "position": "not stated",
+      "note": "Ball played into Lorch's path behind the defence."
+     },
+     {
+      "actor": "Thembinkosi Lorch",
+      "side": "club",
+      "action": "shot",
+      "zone": "C2",
+      "position": "not stated",
+      "note": "One touch, then a lob over the advancing goalkeeper."
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "wy-g-timeslive-2025",
+    "wy-g-juventus-2025"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "TimesLIVE: 25', Amrabat through ball behind the defence, Lorch touch then lob. Juventus.com: 25', Juve lost the ball from a throw-in, Amrabat won it and fed Lorch, who lofted it over Di Gregorio. Soccer Laduma also confirms Amrabat played Lorch in and a one-touch-then-lob finish. Pitch locations are not given."
+  },
+  {
+   "id": "goal-2025-06-26-cassius-mailula-4",
+   "value": {
+    "name": "4' · Cassius Mailula v Al Ain",
+    "subtitle": "2025-06-26 · 4'",
+    "on": "2025-06-26",
+    "competition": "FIFA Club World Cup 2025, group stage",
+    "opponent": "Al Ain",
+    "score": "1-2",
+    "narrative": "Mohamed Moufid: crosses after combining down the right. Cassius Mailula: controls and finishes past Rui Patricio.",
+    "sequence": [
+     {
+      "actor": "Mohamed Moufid",
+      "side": "club",
+      "action": "cross",
+      "zone": "E2",
+      "position": "down the right",
+      "note": "Low cross back into the box."
+     },
+     {
+      "actor": "Cassius Mailula",
+      "side": "club",
+      "action": "shot",
+      "zone": "C2",
+      "position": "front edge of the penalty area",
+      "note": "Controls, then beats Rui Patricio."
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "wy-g-ahram-ap-2025",
+    "wy-g-fmt-reuters-2025"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-wydad-casablanca-2026-11-12",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "AP (Ahram Online): 4', Moufid cross, Mailula unchallenged beats Patricio. Reuters (FMT): 4', Moufid combination down the right, low cross to the front edge of the area, touch and half-volley. The finish placement (AP near post vs Reuters top-right corner) differs and was dropped; flank and edge-of-box position are Reuters detail not contradicted by AP."
+  }
+ ],
+ "skipped": [
+  {
+   "what": "2019-05-24 Cheick Comara header v Esperance (CAF CL final first leg)",
+   "reason": "AFP has El Haddad free-kick flicked on by Salaheddine Saidi before Comara's header; GhanaSoccernet has the free-kick going straight to Comara. Contiguous contacts disagree; minute also only approximate in both (79'/~80')."
+  },
+  {
+   "what": "2023-06-11 Yahia Attiyat Allah free kick v Al Ahly (final second leg)",
+   "reason": "Single-touch direct free kick; fewer than two documented contacts."
+  },
+  {
+   "what": "2022-05-07 own goal by Tiago Azulao (Petro de Luanda) from Attiyat Allah free kick",
+   "reason": "Scorer is an opponent (own goal); not a Wydad scorer record."
+  },
+  {
+   "what": "2022-05-07 Yahya Jabrane v Petro de Luanda",
+   "reason": "Distance conflict (25 yards SuperSport vs 35 m AFP); assist (El Hassouni) named by one publisher only."
+  },
+  {
+   "what": "2022-05-07 Guy Mbenza v Petro de Luanda",
+   "reason": "SuperSport describes link-up with El Moutaraji; AFP says the ball fell to him from a failed clearance. Build-up conflict."
+  },
+  {
+   "what": "2017-12-12 Ismail El Haddad free kick v Urawa (Club World Cup)",
+   "reason": "Direct free kick, single touch; only one report fetched."
+  },
+  {
+   "what": "2026-05 Joseph Bakasso v Raja (Casablanca derby, 1-0)",
+   "reason": "Reports only say it came on a counter-attack; no touch-by-touch build-up."
+  },
+  {
+   "what": "Raja derbies generally; 1992 African Cup final v Al-Hilal",
+   "reason": "No reachable match report with touch-by-touch build-up found."
+  }
+ ]
+}
