@@ -1681,9 +1681,11 @@
    "sources": [
     "r26-sw"
    ],
-   "status": "review",
+   "status": "approved",
    "confidence": 2,
-   "notes": "Soccerway only."
+   "notes": "Soccerway only. · Held as one-publisher; approved by the owner on 13.11.2026.",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approval 13.11.2026: all research collected so far)"
   },
   {
    "id": "toni-sunjic",
@@ -1693,9 +1695,11 @@
     "r26-wiki",
     "r26-fotmob"
    ],
-   "status": "review",
+   "status": "approved",
    "confidence": 2,
-   "notes": "Wikipedia also lists 2007-12; FotMob Feb 2024-Sep 2025."
+   "notes": "Wikipedia also lists 2007-12; FotMob Feb 2024-Sep 2025. · Held as one-publisher; approved by the owner on 13.11.2026.",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approval 13.11.2026: all research collected so far)"
   },
   {
    "id": "andrija-balic",
@@ -1704,9 +1708,11 @@
    "sources": [
     "r26-wiki"
    ],
-   "status": "review",
+   "status": "approved",
    "confidence": 2,
-   "notes": "Wikipedia only; Soccerway has no data."
+   "notes": "Wikipedia only; Soccerway has no data. · Held as one-publisher; approved by the owner on 13.11.2026.",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approval 13.11.2026: all research collected so far)"
   }
  ],
  "mysteries": [

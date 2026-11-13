@@ -538,11 +538,11 @@
    "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore's eleven differs (9/11 surnames agree).",
+   "notes": "One publisher only — LiveScore's eleven differs (9/11 surnames agree). · Held as one-publisher; approved by the owner on 13.11.2026.",
    "confidence": 2,
-   "status": "review",
-   "approvedAt": null,
-   "approvedBy": null
+   "status": "approved",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approval 13.11.2026: all research collected so far)"
   },
   {
    "id": "a-m-2026-10-31-hapoel-haifa-hapoel-petah-tikva",
@@ -631,11 +631,11 @@
    "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore's eleven differs (9/11 surnames agree).",
+   "notes": "One publisher only — LiveScore's eleven differs (9/11 surnames agree). · Held as one-publisher; approved by the owner on 13.11.2026.",
    "confidence": 2,
-   "status": "review",
-   "approvedAt": null,
-   "approvedBy": null
+   "status": "approved",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approval 13.11.2026: all research collected so far)"
   },
   {
    "id": "a-m-2026-10-17-bnei-sakhnin-hapoel-petah-tikva",
@@ -677,11 +677,11 @@
    "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore's eleven differs (9/11 surnames agree).",
+   "notes": "One publisher only — LiveScore's eleven differs (9/11 surnames agree). · Held as one-publisher; approved by the owner on 13.11.2026.",
    "confidence": 2,
-   "status": "review",
-   "approvedAt": null,
-   "approvedBy": null
+   "status": "approved",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approval 13.11.2026: all research collected so far)"
   },
   {
    "id": "a-m-2026-10-10-hapoel-petah-tikva-maccabi-netanya",
@@ -723,11 +723,11 @@
    "researchedAt": "2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score). · Held as one-publisher; approved by the owner on 13.11.2026.",
    "confidence": 2,
-   "status": "review",
-   "approvedAt": null,
-   "approvedBy": null
+   "status": "approved",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "Maor Harel (owner approval 13.11.2026: all research collected so far)"
   },
   {
    "id": "a-m-2026-09-18-hapoel-tel-aviv-hapoel-petah-tikva",
