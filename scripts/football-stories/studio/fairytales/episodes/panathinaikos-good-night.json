@@ -1,0 +1,638 @@
+{
+ "schemaVersion": 1,
+ "id": "panathinaikos-good-night",
+ "club": "panathinaikos",
+ "series": "Football Fairy Tales",
+ "title": {
+  "en": "Good Night, Panathinaikos",
+  "el": "Καληνύχτα, Παναθηναϊκέ"
+ },
+ "voice": {
+  "en": "Leda",
+  "el": "Leda",
+  "chosen": "owner, 11.11.2026"
+ },
+ "night": true,
+ "look": {
+  "style": "comic",
+  "prompts": "plates-greek-good-night.prompts.json"
+ },
+ "palette": {
+  "primary": "#0B6B38",
+  "secondary": "#F6F0E4",
+  "confetti": [
+   "#F6F0E4",
+   "#F6F0E4",
+   "#FFFFFF",
+   "#0B6B38"
+  ]
+ },
+ "crests": {
+  "pao": "public/crests/panathinaikos.png"
+ },
+ "music": [
+  {
+   "track": "fairytales-lullaby-long",
+   "from": "once-upon"
+  }
+ ],
+ "pronounce": {
+  "en": "Read softly and slowly, like a bedtime story. Panathinaikos: pa-na-thee-na-ee-KOS. Leoforos: leh-OH-foh-ros. Tsiklitiras: tsee-klee-TEE-ras. Domazos: doh-MAH-zos. Antoniadis: an-to-nee-AH-dis. Warzycha: vah-ZHE-ha. Vagiannidis: va-ya-NEE-dis. Kalafatis: ka-la-FA-tis. Puskás: POOSH-kahsh. Aitor: eye-TOR. Ampelokipoi: am-beh-LOH-kee-pee.",
+  "el": "Διάβασε απαλά και αργά, σαν παραμύθι πριν τον ύπνο. Βαζέχα: Βα-ζέ-χα. Πούσκας: Πού-σκας. Αΐτορ: Α-ΐ-τορ. Μπεργκ: Μπεργκ."
+ },
+ "shots": [
+  {
+   "id": "once-upon",
+   "plate": "pgn-sunset",
+   "transition": "fade",
+   "en": "Once upon a time, the sun went down behind the old temple on the hill, and the sky over Athens turned orange, then pink, then deep blue. And on Alexandras Avenue, the lights of Leoforos began to glow.",
+   "el": "Μια φορά κι έναν καιρό, ο ήλιος έδυσε πίσω από τον παλιό ναό πάνω στον λόφο, κι ο ουρανός της Αθήνας έγινε πορτοκαλί, μετά ροζ, και μετά βαθύ μπλε. Και στη λεωφόρο Αλεξάνδρας, τα φώτα της Λεωφόρου άρχισαν να λάμπουν.",
+   "sources": [
+    "panathinaikos-good-morning.json (verified facts): Leoforos, Alexandras Avenue"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ]
+   }
+  },
+  {
+   "id": "night-magic",
+   "plate": "pgn-floodlights",
+   "transition": "dissolve",
+   "en": "There is something magical about a football match at night. The grass looks greener, the ball looks whiter, and the green shirts… glow like little lanterns.",
+   "el": "Έχει κάτι μαγικό ένα ματς τη νύχτα. Το γρασίδι φαίνεται πιο πράσινο, η μπάλα πιο λευκή, και οι πράσινες φανέλες… λάμπουν σαν μικρά φαναράκια.",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.09
+    ]
+   }
+  },
+  {
+   "id": "dreams",
+   "plate": "pgn-map",
+   "transition": "dissolve",
+   "en": "And at night, the team loved to dream of faraway places: of grounds all over Europe, and of big, famous teams.",
+   "el": "Και τις νύχτες, η ομάδα αγαπούσε να ονειρεύεται μακρινά μέρη: γήπεδα σε όλη την Ευρώπη, και μεγάλες, ξακουστές ομάδες.",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ]
+   }
+  },
+  {
+   "id": "wembley",
+   "plate": "pgn-wembley",
+   "transition": "page",
+   "en": "In 1971, a team of amateurs dreamed all the way to Wembley, in London — to the final of the biggest cup of all. That night they lost to Ajax. But no other Greek team has ever played in that final.",
+   "el": "Το 1971, μια ομάδα από ερασιτέχνες ονειρεύτηκε μέχρι το Γουέμπλεϊ, στο Λονδίνο — στον τελικό του πιο μεγάλου κυπέλλου απ' όλα. Εκείνο το βράδυ έχασαν από τον Άγιαξ. Μα καμία άλλη ελληνική ομάδα δεν έπαιξε ποτέ σε εκείνον τον τελικό.",
+   "sources": [
+    "panathinaikos-good-morning.json (verified facts): wembley 1971"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "tags": [
+     {
+      "text": "1971",
+      "at": 0.15,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     },
+     {
+      "text": "WEMBLEY",
+      "at": 0.55,
+      "xy": [
+       1450,
+       250
+      ],
+      "size": 90,
+      "rot": 4
+     }
+    ]
+   }
+  },
+  {
+   "id": "amsterdam",
+   "plate": "pgn-amsterdam",
+   "transition": "dissolve",
+   "en": "In 1996, on a spring night in Amsterdam, in the semi-final of the Champions League, Warzycha scored — and Panathinaikos won, one–nil.",
+   "el": "Το 1996, ένα ανοιξιάτικο βράδυ στο Άμστερνταμ, στον ημιτελικό του Τσάμπιονς Λιγκ, ο Βαζέχα σκόραρε — κι ο Παναθηναϊκός νίκησε, ένα–μηδέν.",
+   "sources": [
+    "panathinaikos-good-morning.json (verified facts): amsterdam 1996"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "tags": [
+     {
+      "text": "1996",
+      "at": 0.15,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     },
+     {
+      "text": "0–1",
+      "at": 0.7,
+      "xy": [
+       1450,
+       260
+      ],
+      "size": 120,
+      "rot": 4
+     }
+    ]
+   }
+  },
+  {
+   "id": "barcelona",
+   "plate": "pgn-barca",
+   "transition": "page",
+   "en": "And in 2002, the whole of Athens was shaking: in the quarter-final of the Champions League, Panathinaikos beat Barcelona, one–nil.",
+   "el": "Και το 2002, όλη η Αθήνα σειόταν: στα προημιτελικά του Τσάμπιονς Λιγκ, ο Παναθηναϊκός νίκησε την Μπαρτσελόνα, ένα–μηδέν.",
+   "sources": [
+    "panathinaikos-good-morning.json (verified facts): barcelona 2002"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "tags": [
+     {
+      "text": "2002",
+      "at": 0.15,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     },
+     {
+      "text": "1–0",
+      "at": 0.7,
+      "xy": [
+       1450,
+       260
+      ],
+      "size": 120,
+      "rot": 4
+     }
+    ]
+   }
+  },
+  {
+   "id": "walk-home",
+   "plate": "pgn-walk",
+   "transition": "slide",
+   "en": "After every match, the supporters walk home together through the streets of Ampelokipoi, singing softly, with their green scarves around their necks.",
+   "el": "Μετά από κάθε ματς, οι φίλαθλοι γυρίζουν μαζί σπίτι από τα στενά των Αμπελοκήπων, τραγουδώντας σιγανά, με τα πράσινα κασκόλ στον λαιμό.",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ]
+   }
+  },
+  {
+   "id": "lights-off",
+   "plate": "pgn-lightsoff",
+   "transition": "fade",
+   "en": "Inside the empty ground, the big lights go out, one after another. Let's count them together, very quietly: one… two… three… four. Shhh…",
+   "el": "Μέσα στο άδειο γήπεδο, οι μεγάλοι προβολείς σβήνουν, ο ένας μετά τον άλλον. Ας τους μετρήσουμε μαζί, πολύ σιγανά: ένα… δύο… τρία… τέσσερα. Σςςς…",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.05
+    ],
+    "tags": [
+     {
+      "text": "Shhh…",
+      "at": 0.85,
+      "xy": [
+       1450,
+       250
+      ],
+      "size": 100,
+      "rot": -4
+     }
+    ]
+   }
+  },
+  {
+   "id": "ball-sleeps",
+   "plate": "gn-ball",
+   "transition": "dissolve",
+   "en": "The ball rolls slowly into the net, and falls asleep there, under a soft blanket of night mist.",
+   "el": "Η μπάλα κυλάει αργά μέσα στα δίχτυα, και αποκοιμιέται εκεί, κάτω από μια απαλή κουβέρτα από νυχτερινή ομίχλη.",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ]
+   }
+  },
+  {
+   "id": "stars",
+   "plate": "gn-stars",
+   "transition": "fade",
+   "en": "And now, before we close our eyes, let's count the stars. Every star in the sky over Athens is one green player, keeping watch over the city.",
+   "el": "Και τώρα, πριν κλείσουμε τα μάτια, ας μετρήσουμε αστέρια. Κάθε αστέρι στον ουρανό της Αθήνας είναι κι ένας πράσινος παίκτης, που προσέχει την πόλη.",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.09
+    ]
+   }
+  },
+  {
+   "id": "star-keeper",
+   "plate": "pgn-star-keeper",
+   "transition": "dissolve",
+   "en": "Star number one: Konstantinos Tsiklitiras, the Olympic champion who stood in goal — still guarding the sky, his arms open wide.",
+   "el": "Αστέρι νούμερο ένα: ο Κωνσταντίνος Τσικλητήρας, ο Ολυμπιονίκης που στεκόταν στο τέρμα — ακόμα φυλάει τον ουρανό, με τα χέρια ανοιχτά.",
+   "sources": [
+    "panathinaikos-good-morning.json (verified facts): tsiklitiras"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "TSIKLITIRAS",
+      "at": 0.3,
+      "xy": [
+       1430,
+       220
+      ],
+      "size": 80,
+      "rot": -4
+     }
+    ]
+   }
+  },
+  {
+   "id": "star-general",
+   "plate": "pgn-star-general",
+   "transition": "dissolve",
+   "en": "Two: Mimis Domazos, The General, leading the stars the way he led the green for twenty years.",
+   "el": "Δύο: ο Μίμης Δομάζος, ο Στρατηγός, που οδηγεί τα αστέρια όπως οδηγούσε τους πράσινους για είκοσι χρόνια.",
+   "sources": [
+    "panathinaikos-good-morning.json (verified facts): general"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "DOMAZOS",
+      "at": 0.3,
+      "xy": [
+       1450,
+       220
+      ],
+      "size": 90,
+      "rot": -4
+     }
+    ]
+   }
+  },
+  {
+   "id": "star-antoniadis",
+   "plate": "pgn-star-striker",
+   "transition": "dissolve",
+   "en": "Three: Antonis Antoniadis — an amateur with a job in insurance, who scored ten goals in one European Cup.",
+   "el": "Τρία: ο Αντώνης Αντωνιάδης — ερασιτέχνης, που δούλευε σε ασφαλιστική, κι έβαλε δέκα γκολ σε ένα Κύπελλο Πρωταθλητριών.",
+   "sources": [
+    "panathinaikos-good-morning.json (verified facts): antoniadis"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "10",
+      "at": 0.55,
+      "xy": [
+       1460,
+       240
+      ],
+      "size": 140,
+      "rot": -4
+     }
+    ]
+   }
+  },
+  {
+   "id": "star-warzycha",
+   "plate": "pgn-star-bright",
+   "transition": "zoom",
+   "en": "Four: Krzysztof Warzycha — three hundred and nineteen goals. That's why his star shines the brightest of all.",
+   "el": "Τέσσερα: ο Κριστόφ Βαζέχα — τριακόσια δεκαεννιά γκολ. Γι' αυτό το αστέρι του λάμπει πιο δυνατά απ' όλα.",
+   "sources": [
+    "panathinaikos-good-morning.json (verified facts): warzycha"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.09
+    ],
+    "tags": [
+     {
+      "text": "319",
+      "at": 0.55,
+      "xy": [
+       1450,
+       240
+      ],
+      "size": 130,
+      "rot": -4
+     }
+    ]
+   },
+   "cap": {
+    "en": "Four: Krzysztof Warzycha — 319 goals. That's why his star shines the brightest of all.",
+    "el": "Τέσσερα: ο Κριστόφ Βαζέχα — 319 γκολ. Γι' αυτό το αστέρι του λάμπει πιο δυνατά απ' όλα."
+   }
+  },
+  {
+   "id": "star-shamrock",
+   "plate": "pgn-star-shamrock",
+   "transition": "dissolve",
+   "en": "And look — three stars in the shape of a shamrock. One leaf, two leaves, three. That is 1964, the season when nobody beat the green. Not even once.",
+   "el": "Και κοίτα — τρία αστέρια σε σχήμα τριφυλλιού. Ένα φύλλο, δύο φύλλα, τρία. Είναι το 1964, η χρονιά που κανείς δεν νίκησε τους πράσινους. Ούτε μία φορά.",
+   "sources": [
+    "panathinaikos-good-morning.json (verified facts): shamrock, unbeaten-1964"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "1964",
+      "at": 0.6,
+      "xy": [
+       1450,
+       240
+      ],
+      "size": 110,
+      "rot": -4
+     }
+    ]
+   }
+  },
+  {
+   "id": "star-berg",
+   "plate": "pgn-star-three",
+   "transition": "dissolve",
+   "en": "Five, six, seven: three stars all in a row — the three goals of Marcus Berg in the cup final of 2014.",
+   "el": "Πέντε, έξι, εφτά: τρία αστέρια στη σειρά — τα τρία γκολ του Μάρκους Μπεργκ στον τελικό του κυπέλλου, το 2014.",
+   "sources": [
+    "panathinaikos-good-morning.json (verified facts): berg-2014"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "2014",
+      "at": 0.2,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     },
+     {
+      "text": "BERG",
+      "at": 0.6,
+      "xy": [
+       1450,
+       250
+      ],
+      "size": 90,
+      "rot": 4
+     }
+    ]
+   }
+  },
+  {
+   "id": "star-header",
+   "plate": "pgn-star-header",
+   "transition": "slide",
+   "en": "And one shooting star, in the very last minute: Giorgos Vagiannidis jumps higher than anyone, and heads the twentieth cup into the net.",
+   "el": "Κι ένα πεφταστέρι, στο τελευταίο λεπτό: ο Γιώργος Βαγιαννίδης πηδάει πιο ψηλά απ' όλους, και βάζει με κεφαλιά το εικοστό κύπελλο στα δίχτυα.",
+   "sources": [
+    "panathinaikos-good-morning.json (verified facts): cup-2024"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "tags": [
+     {
+      "text": "2024",
+      "at": 0.15,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     },
+     {
+      "text": "20",
+      "at": 0.65,
+      "xy": [
+       1460,
+       250
+      ],
+      "size": 140,
+      "rot": 4
+     }
+    ]
+   }
+  },
+  {
+   "id": "star-names",
+   "plate": "pgn-star-names",
+   "transition": "dissolve",
+   "en": "And there, more and more stars: Giorgos Kalafatis and his friends, who started it all in 1908… Ferenc Puskás, on his little cloud… and Aitor, with the cup of 2022…",
+   "el": "Κι εκεί, όλο και περισσότερα αστέρια: ο Γιώργος Καλαφάτης και οι φίλοι του, που τα ξεκίνησαν όλα το 1908… ο Φέρεντς Πούσκας, πάνω στο συννεφάκι του… κι ο Αΐτορ, με το κύπελλο του 2022…",
+   "sources": [
+    "panathinaikos-good-morning.json (verified facts): kalafatis, puskas, aitor-2022"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "1908",
+      "at": 0.18,
+      "xy": [
+       1450,
+       220
+      ],
+      "size": 100,
+      "rot": -4
+     }
+    ]
+   }
+  },
+  {
+   "id": "star-crowd",
+   "plate": "pgn-star-many",
+   "transition": "dissolve",
+   "en": "…and more, and more, and more. So many stars, you could count them all night long.",
+   "el": "…κι άλλα, κι άλλα, κι άλλα. Τόσα πολλά αστέρια, που θα μπορούσες να τα μετράς όλη τη νύχτα.",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ]
+   }
+  },
+  {
+   "id": "count",
+   "plate": "pgn-count",
+   "transition": "fade",
+   "en": "Shhh… the eyes are getting heavy. We'll count a few more, slowly, slowly… one more star… and another… and one more…",
+   "el": "Σςςς… τα ματάκια βαραίνουν. Θα μετρήσουμε λίγα ακόμα, σιγά σιγά… ένα αστεράκι ακόμα… κι άλλο ένα… κι ακόμα ένα…",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ],
+    "extra": 1.5
+   }
+  },
+  {
+   "id": "home-bed",
+   "plate": "pgn-bed",
+   "transition": "slide",
+   "en": "And at home, a little child in green pyjamas folds a green scarf, and lays it gently on the pillow.",
+   "el": "Και στο σπίτι, ένα μικρό παιδί με πράσινες πιτζάμες διπλώνει το πράσινο κασκόλ του, και το αφήνει απαλά πάνω στο μαξιλάρι.",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ]
+   }
+  },
+  {
+   "id": "club-dreams",
+   "plate": "pgn-dreams",
+   "transition": "dissolve",
+   "en": "Red dreams? Not in this house. Only green dreams.",
+   "el": "Κόκκινα όνειρα; Όχι σε αυτό το σπίτι. Μόνο πράσινα όνειρα.",
+   "sources": [
+    "story frame; friendly rival joke, as in the Good Morning episode"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ]
+   }
+  },
+  {
+   "id": "basketball",
+   "plate": "pgn-basket",
+   "transition": "slide",
+   "en": "There is also a beautiful story about our basketball team… but we'll get to that. Maybe tomorrow night.",
+   "el": "Υπάρχει κι ένα όμορφο παραμύθι για την ομάδα μας στο μπάσκετ… αλλά θα φτάσουμε κι εκεί. Ίσως αύριο βράδυ.",
+   "sources": [
+    "series rule (owner, 12.11.2026)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ]
+   }
+  },
+  {
+   "id": "good-night",
+   "plate": "pgn-close",
+   "transition": "fade",
+   "en": "Good night, Athens. Good night, Leoforos. Good night, Gate 13. Good night, Panathinaikos.",
+   "el": "Καληνύχτα, Αθήνα. Καληνύχτα, Λεωφόρε. Καληνύχτα, Θύρα 13. Καληνύχτα, Παναθηναϊκέ.",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "extra": 3.2,
+    "crests": [
+     {
+      "crest": "pao",
+      "at": 0.55,
+      "xy": [
+       960,
+       350
+      ],
+      "size": 360
+     }
+    ],
+    "wordmarkAt": 0.72,
+    "wordmarkTag": "Good Night, Panathinaikos"
+   }
+  }
+ ]
+}

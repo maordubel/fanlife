@@ -1,0 +1,551 @@
+{
+ "schemaVersion": 1,
+ "id": "aek-good-night",
+ "club": "aek-athens",
+ "series": "Football Fairy Tales",
+ "title": {
+  "en": "Good Night, AEK",
+  "el": "Καληνύχτα, ΑΕΚ"
+ },
+ "voice": {
+  "en": "Leda",
+  "el": "Leda",
+  "chosen": "owner, 11.11.2026"
+ },
+ "night": true,
+ "look": {
+  "style": "comic",
+  "prompts": "plates-greek-good-night.prompts.json"
+ },
+ "palette": {
+  "primary": "#1C1A17",
+  "secondary": "#F6F0E4",
+  "confetti": [
+   "#F2B705",
+   "#F6F0E4",
+   "#1C1A17"
+  ]
+ },
+ "crests": {
+  "aek": "public/crests/aek-athens.png"
+ },
+ "music": [
+  {
+   "track": "fairytales-lullaby-long",
+   "from": "once-upon"
+  }
+ ],
+ "pronounce": {
+  "en": "Read softly and slowly, like a bedtime story. AEK: AH-ek. Nea Filadelfeia: NEH-ah fee-la-DEL-fee-ah. Agia Sophia: ah-YAH so-FEE-ah. Maropoulos: ma-ROH-poo-los. Tzanetis: dza-NEH-tis. Papaioannou: pa-pa-ee-oh-AH-noo. Nestoridis: nes-to-REE-dis. Mavros: MAV-ros. Bajević: BAH-yeh-vich.",
+  "el": "Διάβασε απαλά και αργά, σαν παραμύθι πριν τον ύπνο. ΑΕΚ: Α-Ε-Κ (Άεκ). Μπάγεβιτς: Μπά-γε-βιτς. ΟΥΕΦΑ: ου-έ-φα."
+ },
+ "shots": [
+  {
+   "id": "once-upon",
+   "plate": "agn-sunset",
+   "transition": "fade",
+   "en": "Once upon a time, the sun went down over Athens, and the sky turned orange, then pink, then deep blue. And in Nea Filadelfeia, the lights of a new home began to glow: Agia Sophia.",
+   "el": "Μια φορά κι έναν καιρό, ο ήλιος έδυσε πάνω από την Αθήνα, κι ο ουρανός έγινε πορτοκαλί, μετά ροζ, και μετά βαθύ μπλε. Και στη Νέα Φιλαδέλφεια, τα φώτα ενός καινούργιου σπιτιού άρχισαν να λάμπουν: η Αγιά Σοφιά.",
+   "sources": [
+    "aek-good-morning.json (verified facts): filadelfeia, agia-sophia"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ]
+   }
+  },
+  {
+   "id": "night-magic",
+   "plate": "agn-floodlights",
+   "transition": "dissolve",
+   "en": "There is something magical about a football match at night. The grass looks greener, the ball looks whiter, and the yellow-and-black shirts… glow like little lanterns.",
+   "el": "Έχει κάτι μαγικό ένα ματς τη νύχτα. Το γρασίδι φαίνεται πιο πράσινο, η μπάλα πιο λευκή, και οι κιτρινόμαυρες φανέλες… λάμπουν σαν μικρά φαναράκια.",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.09
+    ]
+   }
+  },
+  {
+   "id": "dreams",
+   "plate": "agn-map",
+   "transition": "dissolve",
+   "en": "And at night, the team loved to dream of faraway places: of grounds all over Europe, and of big, famous teams.",
+   "el": "Και τις νύχτες, η ομάδα αγαπούσε να ονειρεύεται μακρινά μέρη: γήπεδα σε όλη την Ευρώπη, και μεγάλες, ξακουστές ομάδες.",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ]
+   }
+  },
+  {
+   "id": "europe-1969",
+   "plate": "agn-europe",
+   "transition": "page",
+   "en": "In 1969, AEK became the first Greek club to reach the quarter-finals of the European Cup — the biggest cup of all.",
+   "el": "Το 1969, η ΑΕΚ έγινε η πρώτη ελληνική ομάδα που έφτασε στα προημιτελικά του Κυπέλλου Πρωταθλητριών — του πιο μεγάλου κυπέλλου απ' όλα.",
+   "sources": [
+    "aek-good-morning.json (verified facts): europe-1969"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "tags": [
+     {
+      "text": "1969",
+      "at": 0.15,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     }
+    ]
+   }
+  },
+  {
+   "id": "semi-1977",
+   "plate": "agn-london",
+   "transition": "dissolve",
+   "en": "And in 1977, they went even further — to the semi-finals of the UEFA Cup. On the way, they beat Queens Park Rangers from London… on penalties!",
+   "el": "Και το 1977, πήγαν ακόμα πιο μακριά — στους ημιτελικούς του Κυπέλλου ΟΥΕΦΑ. Στον δρόμο, νίκησαν την Κουίνς Παρκ Ρέιντζερς από το Λονδίνο… στα πέναλτι!",
+   "sources": [
+    "aek-good-morning.json (verified facts): semi-1977"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "tags": [
+     {
+      "text": "1977",
+      "at": 0.15,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     },
+     {
+      "text": "QPR",
+      "at": 0.55,
+      "xy": [
+       1450,
+       250
+      ],
+      "size": 100,
+      "rot": 4
+     }
+    ]
+   }
+  },
+  {
+   "id": "home-2023",
+   "plate": "agn-home",
+   "transition": "page",
+   "en": "And in their very first season back home, in Nea Filadelfeia, AEK won the league and the cup together — a double, for the first time in forty-five years.",
+   "el": "Και στην πρώτη κιόλας χρονιά πίσω στο σπίτι, στη Νέα Φιλαδέλφεια, η ΑΕΚ πήρε μαζί πρωτάθλημα και κύπελλο — νταμπλ, για πρώτη φορά μετά από σαράντα πέντε χρόνια.",
+   "sources": [
+    "aek-good-morning.json (verified facts): double-2023"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "tags": [
+     {
+      "text": "2023",
+      "at": 0.15,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     },
+     {
+      "text": "DOUBLE!",
+      "at": 0.65,
+      "xy": [
+       1450,
+       250
+      ],
+      "size": 100,
+      "rot": 4
+     }
+    ]
+   }
+  },
+  {
+   "id": "walk-home",
+   "plate": "agn-walk",
+   "transition": "slide",
+   "en": "After every match, the supporters walk home together through the streets of Nea Filadelfeia, singing softly, with their yellow-and-black scarves around their necks.",
+   "el": "Μετά από κάθε ματς, οι φίλαθλοι γυρίζουν μαζί σπίτι από τους δρόμους της Νέας Φιλαδέλφειας, τραγουδώντας σιγανά, με τα κιτρινόμαυρα κασκόλ στον λαιμό.",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ]
+   }
+  },
+  {
+   "id": "lights-off",
+   "plate": "agn-lightsoff",
+   "transition": "fade",
+   "en": "Inside the empty ground, the big lights go out, one after another. Let's count them together, very quietly: one… two… three… four. Shhh…",
+   "el": "Μέσα στο άδειο γήπεδο, οι μεγάλοι προβολείς σβήνουν, ο ένας μετά τον άλλον. Ας τους μετρήσουμε μαζί, πολύ σιγανά: ένα… δύο… τρία… τέσσερα. Σςςς…",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.05
+    ],
+    "tags": [
+     {
+      "text": "Shhh…",
+      "at": 0.85,
+      "xy": [
+       1450,
+       250
+      ],
+      "size": 100,
+      "rot": -4
+     }
+    ]
+   }
+  },
+  {
+   "id": "ball-sleeps",
+   "plate": "gn-ball",
+   "transition": "dissolve",
+   "en": "The ball rolls slowly into the net, and falls asleep there, under a soft blanket of night mist.",
+   "el": "Η μπάλα κυλάει αργά μέσα στα δίχτυα, και αποκοιμιέται εκεί, κάτω από μια απαλή κουβέρτα από νυχτερινή ομίχλη.",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ]
+   }
+  },
+  {
+   "id": "stars",
+   "plate": "gn-stars",
+   "transition": "fade",
+   "en": "And now, before we close our eyes, let's count the stars. Every star in the sky over Athens is one yellow-and-black player, keeping watch over the city.",
+   "el": "Και τώρα, πριν κλείσουμε τα μάτια, ας μετρήσουμε αστέρια. Κάθε αστέρι στον ουρανό της Αθήνας είναι κι ένας κιτρινόμαυρος παίκτης, που προσέχει την πόλη.",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.09
+    ]
+   }
+  },
+  {
+   "id": "star-pair",
+   "plate": "agn-star-pair",
+   "transition": "dissolve",
+   "en": "Star number one, and star number two: Kleanthis Maropoulos and Tryfon Tzanetis. One passes, the other scores. Then the other way round.",
+   "el": "Αστέρι νούμερο ένα, κι αστέρι νούμερο δύο: ο Κλεάνθης Μαρόπουλος κι ο Τρύφων Τζανετής. Ο ένας πασάρει, ο άλλος σκοράρει. Κι ύστερα ανάποδα.",
+   "sources": [
+    "aek-good-morning.json (verified facts): maropoulos"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ]
+   }
+  },
+  {
+   "id": "star-double-1939",
+   "plate": "agn-star-clap",
+   "transition": "dissolve",
+   "en": "Three: a star for 1939, the very first double in Greek football. Can you clap twice, very softly? One for the league… one for the cup.",
+   "el": "Τρία: ένα αστέρι για το 1939, το πρώτο νταμπλ στην ιστορία του ελληνικού ποδοσφαίρου. Μπορείς να χτυπήσεις παλαμάκια δύο φορές, πολύ σιγανά; Ένα για το πρωτάθλημα… ένα για το κύπελλο.",
+   "sources": [
+    "aek-good-morning.json (verified facts): double-1939"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "1939",
+      "at": 0.2,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     }
+    ]
+   }
+  },
+  {
+   "id": "star-mimis",
+   "plate": "agn-star-bright",
+   "transition": "zoom",
+   "en": "Four: Mimis Papaioannou — seventeen seasons, more goals for the club than anyone… and never once sent off. His star is the brightest.",
+   "el": "Τέσσερα: ο Μίμης Παπαϊωάννου — δεκαεφτά χρονιές, περισσότερα γκολ για την ομάδα απ' οποιονδήποτε… και ούτε μία αποβολή. Το αστέρι του λάμπει πιο δυνατά.",
+   "sources": [
+    "aek-good-morning.json (verified facts): mimis"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.09
+    ],
+    "tags": [
+     {
+      "text": "MIMIS",
+      "at": 0.3,
+      "xy": [
+       1450,
+       220
+      ],
+      "size": 100,
+      "rot": -4
+     }
+    ]
+   }
+  },
+  {
+   "id": "star-nestoridis",
+   "plate": "agn-star-five",
+   "transition": "dissolve",
+   "en": "Five little stars in a row: Kostas Nestoridis, top scorer of the whole league five years running. Show me a whole hand… softly.",
+   "el": "Πέντε αστεράκια στη σειρά: ο Κώστας Νεστορίδης, πρώτος σκόρερ του πρωταθλήματος πέντε χρονιές στη σειρά. Δείξε μου όλο το χεράκι σου… σιγά σιγά.",
+   "sources": [
+    "aek-good-morning.json (verified facts): nestoridis"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "5",
+      "at": 0.5,
+      "xy": [
+       1460,
+       240
+      ],
+      "size": 150,
+      "rot": -4
+     }
+    ]
+   }
+  },
+  {
+   "id": "star-mavros",
+   "plate": "agn-star-striker",
+   "transition": "dissolve",
+   "en": "And there is Thomas Mavros, who scored more goals than anyone in the history of the Greek league.",
+   "el": "Κι εκεί είναι ο Θωμάς Μαύρος, που έβαλε περισσότερα γκολ απ' όλους στην ιστορία του ελληνικού πρωταθλήματος.",
+   "sources": [
+    "aek-good-morning.json (verified facts): mavros"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "MAVROS",
+      "at": 0.35,
+      "xy": [
+       1450,
+       220
+      ],
+      "size": 90,
+      "rot": -4
+     }
+    ]
+   }
+  },
+  {
+   "id": "star-three",
+   "plate": "agn-star-row",
+   "transition": "dissolve",
+   "en": "And three stars in a row: 1992, 1993, 1994 — three titles in a row, with Dušan Bajević.",
+   "el": "Και τρία αστέρια στη σειρά: 1992, 1993, 1994 — τρία πρωταθλήματα στη σειρά, με τον Ντούσαν Μπάγεβιτς.",
+   "sources": [
+    "aek-good-morning.json (verified facts): bajevic"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.09
+    ],
+    "tags": [
+     {
+      "text": "92 · 93 · 94",
+      "at": 0.5,
+      "xy": [
+       1400,
+       250
+      ],
+      "size": 100,
+      "rot": 4
+     }
+    ]
+   }
+  },
+  {
+   "id": "star-names",
+   "plate": "agn-star-names",
+   "transition": "dissolve",
+   "en": "And there, more and more stars: the families who crossed the sea, the first cup of 1932, the double of 1978, the title of 2018…",
+   "el": "Κι εκεί, όλο και περισσότερα αστέρια: οι οικογένειες που πέρασαν τη θάλασσα, το πρώτο κύπελλο του 1932, το νταμπλ του 1978, το πρωτάθλημα του 2018…",
+   "sources": [
+    "aek-good-morning.json (verified facts): journey, cup-1932, double-1978, title-2018"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ]
+   }
+  },
+  {
+   "id": "star-crowd",
+   "plate": "agn-star-many",
+   "transition": "dissolve",
+   "en": "…and more, and more, and more. So many stars, you could count them all night long.",
+   "el": "…κι άλλα, κι άλλα, κι άλλα. Τόσα πολλά αστέρια, που θα μπορούσες να τα μετράς όλη τη νύχτα.",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ]
+   }
+  },
+  {
+   "id": "count",
+   "plate": "agn-count",
+   "transition": "fade",
+   "en": "Shhh… the eyes are getting heavy. We'll count a few more, slowly, slowly… one more star… and another… and one more…",
+   "el": "Σςςς… τα ματάκια βαραίνουν. Θα μετρήσουμε λίγα ακόμα, σιγά σιγά… ένα αστεράκι ακόμα… κι άλλο ένα… κι ακόμα ένα…",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ],
+    "extra": 1.5
+   }
+  },
+  {
+   "id": "home-bed",
+   "plate": "agn-bed",
+   "transition": "slide",
+   "en": "And at home, a little child in yellow-and-black pyjamas folds a yellow-and-black scarf, and lays it gently on the pillow.",
+   "el": "Και στο σπίτι, ένα μικρό παιδί με κιτρινόμαυρες πιτζάμες διπλώνει το κιτρινόμαυρο κασκόλ του, και το αφήνει απαλά πάνω στο μαξιλάρι.",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ]
+   }
+  },
+  {
+   "id": "club-dreams",
+   "plate": "agn-dreams",
+   "transition": "dissolve",
+   "en": "Red dreams? Green dreams? Not in this house. Only yellow-and-black dreams.",
+   "el": "Κόκκινα όνειρα; Πράσινα όνειρα; Όχι σε αυτό το σπίτι. Μόνο κιτρινόμαυρα όνειρα.",
+   "sources": [
+    "story frame; friendly rival joke, as in the Good Morning episode"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ]
+   }
+  },
+  {
+   "id": "basketball",
+   "plate": "agn-basket",
+   "transition": "slide",
+   "en": "There is also a beautiful story about our basketball team… but we'll get to that. Maybe tomorrow night.",
+   "el": "Υπάρχει κι ένα όμορφο παραμύθι για την ομάδα μας στο μπάσκετ… αλλά θα φτάσουμε κι εκεί. Ίσως αύριο βράδυ.",
+   "sources": [
+    "series rule (owner, 12.11.2026)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ]
+   }
+  },
+  {
+   "id": "good-night",
+   "plate": "agn-close",
+   "transition": "fade",
+   "en": "Good night, Nea Filadelfeia. Good night, Agia Sophia. Good night, Gate 21. Good night, AEK.",
+   "el": "Καληνύχτα, Νέα Φιλαδέλφεια. Καληνύχτα, Αγιά Σοφιά. Καληνύχτα, Θύρα 21. Καληνύχτα, ΑΕΚ.",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "extra": 3.2,
+    "crests": [
+     {
+      "crest": "aek",
+      "at": 0.55,
+      "xy": [
+       960,
+       350
+      ],
+      "size": 360
+     }
+    ],
+    "wordmarkAt": 0.72,
+    "wordmarkTag": "Good Night, AEK"
+   }
+  }
+ ]
+}

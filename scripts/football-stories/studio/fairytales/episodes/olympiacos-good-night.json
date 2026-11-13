@@ -1,0 +1,582 @@
+{
+ "schemaVersion": 1,
+ "id": "olympiacos-good-night",
+ "club": "olympiacos",
+ "series": "Football Fairy Tales",
+ "title": {
+  "en": "Good Night, Olympiacos",
+  "el": "Καληνύχτα, Ολυμπιακέ"
+ },
+ "voice": {
+  "en": "Leda",
+  "el": "Leda",
+  "chosen": "owner, 11.11.2026"
+ },
+ "night": true,
+ "look": {
+  "style": "comic",
+  "prompts": "plates-greek-good-night.prompts.json"
+ },
+ "palette": {
+  "primary": "#C8102E",
+  "secondary": "#F6F0E4",
+  "confetti": [
+   "#F6F0E4",
+   "#F6F0E4",
+   "#FFFFFF",
+   "#C8102E"
+  ]
+ },
+ "crests": {
+  "oly": "public/crests/olympiacos.png"
+ },
+ "music": [
+  {
+   "track": "fairytales-lullaby-long",
+   "from": "once-upon"
+  }
+ ],
+ "pronounce": {
+  "en": "Read softly and slowly, like a bedtime story. Olympiacos: oh-lim-bee-ah-KOS. Piraeus: pie-REE-us. Faliro: FAH-lee-ro. Karaiskakis: ka-ra-ee-SKA-kis. Grammatikopoulos: gra-ma-tee-KOH-poo-los. Andrianopoulos: an-dree-ah-NOH-poo-los. Bajević: BAH-yeh-vich. Sideris: see-DEH-ris. Rivaldo: ree-VAHL-doh. El Kaabi: el KAH-bee. Helmis: HEL-mees.",
+  "el": "Διάβασε απαλά και αργά, σαν παραμύθι πριν τον ύπνο. Μπάγεβιτς: Μπά-γε-βιτς. Ελ Κααμπί: Ελ Κα-α-μπί. Ριβάλντο: Ρι-βάλ-ντο."
+ },
+ "shots": [
+  {
+   "id": "once-upon",
+   "plate": "ogn-sunset",
+   "transition": "fade",
+   "en": "Once upon a time, the sun went down into the sea at Piraeus. The sky over the port turned orange, then pink, then deep blue, and the ships switched on their little lights. And by the sea, at Faliro, the lights of Karaiskakis began to glow.",
+   "el": "Μια φορά κι έναν καιρό, ο ήλιος βούτηξε στη θάλασσα του Πειραιά. Ο ουρανός πάνω από το λιμάνι έγινε πορτοκαλί, μετά ροζ, και μετά βαθύ μπλε, και τα καράβια άναψαν τα φωτάκια τους. Και δίπλα στη θάλασσα, στο Φάληρο, τα φώτα του Καραϊσκάκη άρχισαν να λάμπουν.",
+   "sources": [
+    "olympiacos-good-morning.json (verified facts): port, velodrome, karaiskakis"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ]
+   }
+  },
+  {
+   "id": "night-magic",
+   "plate": "ogn-floodlights",
+   "transition": "dissolve",
+   "en": "There is something magical about a football match at night. The grass looks greener, the ball looks whiter, and the red-and-white shirts… glow like little lanterns.",
+   "el": "Έχει κάτι μαγικό ένα ματς τη νύχτα. Το γρασίδι φαίνεται πιο πράσινο, η μπάλα πιο λευκή, και οι ερυθρόλευκες φανέλες… λάμπουν σαν μικρά φαναράκια.",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.09
+    ]
+   }
+  },
+  {
+   "id": "dreams",
+   "plate": "ogn-map",
+   "transition": "dissolve",
+   "en": "And at night, the team loved to dream of faraway places: of grounds all over Europe, and of big, famous teams.",
+   "el": "Και τις νύχτες, η ομάδα αγαπούσε να ονειρεύεται μακρινά μέρη: γήπεδα σε όλη την Ευρώπη, και μεγάλες, ξακουστές ομάδες.",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ]
+   }
+  },
+  {
+   "id": "milan-1959",
+   "plate": "ogn-milan",
+   "transition": "page",
+   "en": "In 1959, Olympiacos became the first Greek club ever to play in a European cup — against the mighty Milan.",
+   "el": "Το 1959, ο Ολυμπιακός έγινε η πρώτη ελληνική ομάδα που έπαιξε ποτέ σε ευρωπαϊκό κύπελλο — απέναντι στη μεγάλη Μίλαν.",
+   "sources": [
+    "olympiacos-good-morning.json (verified facts): milan-1959"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "tags": [
+     {
+      "text": "1959",
+      "at": 0.15,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     },
+     {
+      "text": "MILAN",
+      "at": 0.6,
+      "xy": [
+       1450,
+       250
+      ],
+      "size": 90,
+      "rot": 4
+     }
+    ]
+   }
+  },
+  {
+   "id": "juventus",
+   "plate": "ogn-juventus",
+   "transition": "dissolve",
+   "en": "In 1999, against Juventus, they came so close to the semi-finals of the Champions League. So very close. But sometimes, even a legend has to wait a little longer.",
+   "el": "Το 1999, απέναντι στη Γιουβέντους, έφτασαν τόσο κοντά στους ημιτελικούς του Τσάμπιονς Λιγκ. Τόσο, τόσο κοντά. Μα καμιά φορά, ακόμα κι ένας θρύλος πρέπει να περιμένει λίγο ακόμα.",
+   "sources": [
+    "olympiacos-good-morning.json (verified facts): juventus 1999"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ],
+    "tags": [
+     {
+      "text": "1999",
+      "at": 0.15,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     }
+    ]
+   }
+  },
+  {
+   "id": "final-2024",
+   "plate": "ogn-final",
+   "transition": "page",
+   "en": "And in May 2024, in Athens, on a big night: nil–nil… extra time… and in the hundred-and-sixteenth minute, Ayoub El Kaabi jumped, and headed the ball into the net. The first big European trophy ever won by a Greek club.",
+   "el": "Και τον Μάιο του 2024, στην Αθήνα, σε μια μεγάλη βραδιά: μηδέν–μηδέν… παράταση… και στο εκατοστό δέκατο έκτο λεπτό, ο Αγιούμπ Ελ Κααμπί πήδηξε, κι έστειλε την μπάλα με κεφαλιά στα δίχτυα. Το πρώτο μεγάλο ευρωπαϊκό τρόπαιο που κέρδισε ποτέ ελληνική ομάδα.",
+   "sources": [
+    "olympiacos-good-morning.json (verified facts): final-2024, cup-2024"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "tags": [
+     {
+      "text": "2024",
+      "at": 0.12,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     },
+     {
+      "text": "116'",
+      "at": 0.55,
+      "xy": [
+       1450,
+       250
+      ],
+      "size": 120,
+      "rot": 4
+     }
+    ]
+   },
+   "cap": {
+    "en": "And in May 2024, in Athens, on a big night: 0–0… extra time… and in the 116th minute, Ayoub El Kaabi jumped, and headed the ball into the net. The first big European trophy ever won by a Greek club.",
+    "el": "Και τον Μάιο του 2024, στην Αθήνα, σε μια μεγάλη βραδιά: 0–0… παράταση… και στο 116ο λεπτό, ο Αγιούμπ Ελ Κααμπί πήδηξε, κι έστειλε την μπάλα με κεφαλιά στα δίχτυα. Το πρώτο μεγάλο ευρωπαϊκό τρόπαιο που κέρδισε ποτέ ελληνική ομάδα."
+   }
+  },
+  {
+   "id": "walk-home",
+   "plate": "ogn-walk",
+   "transition": "slide",
+   "en": "After every match, the supporters walk home together along the sea, past the port and the sleeping ships, singing softly, with their red-and-white scarves around their necks.",
+   "el": "Μετά από κάθε ματς, οι φίλαθλοι γυρίζουν μαζί σπίτι δίπλα στη θάλασσα, περνώντας το λιμάνι και τα κοιμισμένα καράβια, τραγουδώντας σιγανά, με τα ερυθρόλευκα κασκόλ στον λαιμό.",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ]
+   }
+  },
+  {
+   "id": "lights-off",
+   "plate": "ogn-lightsoff",
+   "transition": "fade",
+   "en": "Inside the empty ground, the big lights go out, one after another. Let's count them together, very quietly: one… two… three… four. Shhh…",
+   "el": "Μέσα στο άδειο γήπεδο, οι μεγάλοι προβολείς σβήνουν, ο ένας μετά τον άλλον. Ας τους μετρήσουμε μαζί, πολύ σιγανά: ένα… δύο… τρία… τέσσερα. Σςςς…",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.05
+    ],
+    "tags": [
+     {
+      "text": "Shhh…",
+      "at": 0.85,
+      "xy": [
+       1450,
+       250
+      ],
+      "size": 100,
+      "rot": -4
+     }
+    ]
+   }
+  },
+  {
+   "id": "ball-sleeps",
+   "plate": "gn-ball",
+   "transition": "dissolve",
+   "en": "The ball rolls slowly into the net, and falls asleep there, under a soft blanket of night mist.",
+   "el": "Η μπάλα κυλάει αργά μέσα στα δίχτυα, και αποκοιμιέται εκεί, κάτω από μια απαλή κουβέρτα από νυχτερινή ομίχλη.",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ]
+   }
+  },
+  {
+   "id": "stars",
+   "plate": "gn-stars",
+   "transition": "fade",
+   "en": "And now, before we close our eyes, let's count the stars. Every star in the sky over Piraeus is one red-and-white player, keeping watch over the port.",
+   "el": "Και τώρα, πριν κλείσουμε τα μάτια, ας μετρήσουμε αστέρια. Κάθε αστέρι στον ουρανό του Πειραιά είναι κι ένας ερυθρόλευκος παίκτης, που προσέχει το λιμάνι.",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.09
+    ]
+   }
+  },
+  {
+   "id": "star-keeper",
+   "plate": "ogn-star-keeper",
+   "transition": "dissolve",
+   "en": "Star number one: Achilleas Grammatikopoulos, the Zamora of Piraeus — he jumped, he dived, and he still catches almost everything up there.",
+   "el": "Αστέρι νούμερο ένα: ο Αχιλλέας Γραμματικόπουλος, ο Ζαμόρα του Πειραιά — πηδούσε, βουτούσε, κι ακόμα πιάνει σχεδόν τα πάντα εκεί πάνω.",
+   "sources": [
+    "olympiacos-good-morning.json (verified facts): zamora"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "ZAMORA",
+      "at": 0.3,
+      "xy": [
+       1450,
+       220
+      ],
+      "size": 90,
+      "rot": -4
+     }
+    ]
+   }
+  },
+  {
+   "id": "star-brothers",
+   "plate": "ogn-star-five",
+   "transition": "dissolve",
+   "en": "Two, three, four, five, six: five little stars, all together — the five Andrianopoulos brothers. Yannis, Giorgos, Dinos, Vassilis and Leonidas.",
+   "el": "Δύο, τρία, τέσσερα, πέντε, έξι: πέντε αστεράκια, όλα μαζί — τα πέντε αδέρφια Ανδριανόπουλοι. Γιάννης, Γιώργος, Ντίνος, Βασίλης και Λεωνίδας.",
+   "sources": [
+    "olympiacos-good-morning.json (verified facts): brothers"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "5",
+      "at": 0.55,
+      "xy": [
+       1460,
+       240
+      ],
+      "size": 150,
+      "rot": -4
+     }
+    ]
+   }
+  },
+  {
+   "id": "star-six",
+   "plate": "ogn-star-row",
+   "transition": "dissolve",
+   "en": "And a long, long row of stars: six titles in a row in the fifties. And seven in a row with Bajević. And seven more, from 2011 to 2017.",
+   "el": "Κι ένα μακρύ, μακρύ σειράκι από αστέρια: έξι πρωταθλήματα στη σειρά τη δεκαετία του '50. Κι εφτά στη σειρά με τον Μπάγεβιτς. Κι άλλα εφτά, από το 2011 ως το 2017.",
+   "sources": [
+    "olympiacos-good-morning.json (verified facts): six-in-a-row, seven, seven-again"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.09
+    ],
+    "tags": [
+     {
+      "text": "6",
+      "at": 0.2,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 130,
+      "rot": -3
+     },
+     {
+      "text": "7 + 7",
+      "at": 0.6,
+      "xy": [
+       1450,
+       250
+      ],
+      "size": 120,
+      "rot": 4
+     }
+    ]
+   }
+  },
+  {
+   "id": "star-sideris",
+   "plate": "ogn-star-striker",
+   "transition": "dissolve",
+   "en": "There is Giorgos Sideris — three times the top scorer of all of Greece.",
+   "el": "Εκεί είναι ο Γιώργος Σιδέρης — τρεις φορές πρώτος σκόρερ σε όλη την Ελλάδα.",
+   "sources": [
+    "olympiacos-good-morning.json (verified facts): sideris"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "SIDERIS",
+      "at": 0.35,
+      "xy": [
+       1450,
+       220
+      ],
+      "size": 90,
+      "rot": -4
+     }
+    ]
+   }
+  },
+  {
+   "id": "star-rivaldo",
+   "plate": "ogn-star-flick",
+   "transition": "zoom",
+   "en": "And there is Rivaldo, the world champion from Brazil. Tap, tap, flick — even the stars do exactly what he wants.",
+   "el": "Κι εκεί είναι ο Ριβάλντο, ο παγκόσμιος πρωταθλητής από τη Βραζιλία. Τακ, τακ, φλικ — ακόμα και τα αστέρια κάνουν ό,τι θέλει εκείνος.",
+   "sources": [
+    "olympiacos-good-morning.json (verified facts): rivaldo"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.09
+    ],
+    "tags": [
+     {
+      "text": "RIVALDO",
+      "at": 0.3,
+      "xy": [
+       1450,
+       220
+      ],
+      "size": 90,
+      "rot": -4
+     }
+    ]
+   }
+  },
+  {
+   "id": "star-header",
+   "plate": "ogn-star-header",
+   "transition": "slide",
+   "en": "And one shooting star, high in the sky: Ayoub El Kaabi, jumping once more — in the hundred-and-sixteenth minute.",
+   "el": "Κι ένα πεφταστέρι, ψηλά στον ουρανό: ο Αγιούμπ Ελ Κααμπί, που πηδάει ξανά — στο εκατοστό δέκατο έκτο λεπτό.",
+   "sources": [
+    "olympiacos-good-morning.json (verified facts): final-2024"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "tags": [
+     {
+      "text": "116'",
+      "at": 0.4,
+      "xy": [
+       1450,
+       250
+      ],
+      "size": 120,
+      "rot": 4
+     }
+    ]
+   },
+   "cap": {
+    "en": "And one shooting star, high in the sky: Ayoub El Kaabi, jumping once more — in the 116th minute.",
+    "el": "Κι ένα πεφταστέρι, ψηλά στον ουρανό: ο Αγιούμπ Ελ Κααμπί, που πηδάει ξανά — στο 116ο λεπτό."
+   }
+  },
+  {
+   "id": "star-names",
+   "plate": "ogn-star-names",
+   "transition": "dissolve",
+   "en": "And there, more and more stars: the Helmis brothers, who coached the team… and the young ones from the academy, who beat Milan three–nil in 2024…",
+   "el": "Κι εκεί, όλο και περισσότερα αστέρια: τα αδέρφια Χελμή, που ήταν προπονητές της ομάδας… κι οι μικροί της ακαδημίας, που νίκησαν τη Μίλαν τρία–μηδέν το 2024…",
+   "sources": [
+    "olympiacos-good-morning.json (verified facts): helmis, youth"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ]
+   }
+  },
+  {
+   "id": "star-crowd",
+   "plate": "ogn-star-many",
+   "transition": "dissolve",
+   "en": "…and more, and more, and more. So many stars, you could count them all night long.",
+   "el": "…κι άλλα, κι άλλα, κι άλλα. Τόσα πολλά αστέρια, που θα μπορούσες να τα μετράς όλη τη νύχτα.",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ]
+   }
+  },
+  {
+   "id": "count",
+   "plate": "ogn-count",
+   "transition": "fade",
+   "en": "Shhh… the eyes are getting heavy. We'll count a few more, slowly, slowly… one more star… and another… and one more…",
+   "el": "Σςςς… τα ματάκια βαραίνουν. Θα μετρήσουμε λίγα ακόμα, σιγά σιγά… ένα αστεράκι ακόμα… κι άλλο ένα… κι ακόμα ένα…",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ],
+    "extra": 1.5
+   }
+  },
+  {
+   "id": "home-bed",
+   "plate": "ogn-bed",
+   "transition": "slide",
+   "en": "And at home, a little child in red-and-white pyjamas folds a red-and-white scarf, and lays it gently on the pillow.",
+   "el": "Και στο σπίτι, ένα μικρό παιδί με ερυθρόλευκες πιτζάμες διπλώνει το ερυθρόλευκο κασκόλ του, και το αφήνει απαλά πάνω στο μαξιλάρι.",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ]
+   }
+  },
+  {
+   "id": "club-dreams",
+   "plate": "ogn-dreams",
+   "transition": "dissolve",
+   "en": "Green dreams? Not in this house. Only red-and-white dreams.",
+   "el": "Πράσινα όνειρα; Όχι σε αυτό το σπίτι. Μόνο ερυθρόλευκα όνειρα.",
+   "sources": [
+    "story frame; friendly rival joke, as in the Good Morning episode"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ]
+   }
+  },
+  {
+   "id": "basketball",
+   "plate": "ogn-basket",
+   "transition": "slide",
+   "en": "There is also a beautiful story about our basketball team… but we'll get to that. Maybe tomorrow night.",
+   "el": "Υπάρχει κι ένα όμορφο παραμύθι για την ομάδα μας στο μπάσκετ… αλλά θα φτάσουμε κι εκεί. Ίσως αύριο βράδυ.",
+   "sources": [
+    "series rule (owner, 12.11.2026)"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ]
+   }
+  },
+  {
+   "id": "good-night",
+   "plate": "ogn-close",
+   "transition": "fade",
+   "en": "Good night, Piraeus. Good night, Karaiskakis. Good night, Gate 7. Good night, Olympiacos.",
+   "el": "Καληνύχτα, Πειραιά. Καληνύχτα, Καραϊσκάκη. Καληνύχτα, Θύρα 7. Καληνύχτα, Ολυμπιακέ.",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "extra": 3.2,
+    "crests": [
+     {
+      "crest": "oly",
+      "at": 0.55,
+      "xy": [
+       960,
+       350
+      ],
+      "size": 360
+     }
+    ],
+    "wordmarkAt": 0.72,
+    "wordmarkTag": "Good Night, Olympiacos"
+   }
+  }
+ ]
+}
