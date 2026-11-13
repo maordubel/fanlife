@@ -44,7 +44,7 @@ OTHER = {'cut': 'whip', 'whip': 'match', 'match': 'cut', 'fade': 'cut', 'tear': 
 def opaque(dev: dict) -> bool:
     """A device that covers the whole frame with its own ground (paper or ink), so nothing under it is seen."""
     k = dev['kind']
-    return (k in ('ledger', 'quote', 'rule', 'tally', 'form', 'table', 'press', 'chalk', 'cities', 'verdict', 'word', 'explain')
+    return (k in ('ledger', 'quote', 'rule', 'tally', 'form', 'table', 'press', 'chalk', 'cities', 'verdict', 'word', 'explain', 'locator', 'ident')
             or (k == 'ticket' and not dev.get('compact')) or (k == 'card' and bool(dev.get('paper'))))
 
 
@@ -196,7 +196,7 @@ def cut(beats: list[dict], grid: list[float] | None = None, related=None, backdr
         # a figure in front of a picture belongs to the look it rose over: it leaves at the first cut behind it that gives it time to be seen
         ends = sorted(x.get('dt', 0.0) + x['d'] for x in cutup if x['kind'] in PICTURES and 'd' in x)[:-1]
         for x in cutup:
-            leave = next((e for e in ends if e - x.get('dt', 0.0) >= MIN_SUB), None) if x['kind'] == 'cutout' else None
+            leave = next((e for e in ends if e - x.get('dt', 0.0) >= MIN_SUB), None) if x['kind'] == 'cutout' and not x.get('stay') else None   # `stay`: a print laid on the desk for the whole line (a hand-written storyboard's choice)
             if leave is not None:
                 x['d'] = round(leave - x.get('dt', 0.0), 3)
         # a scoreline that changes ON the cut: the mini score's flip moves to the look boundary nearest the word that tells the goal
