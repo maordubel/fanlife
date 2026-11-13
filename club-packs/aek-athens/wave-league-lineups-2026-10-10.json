@@ -22,7 +22,7 @@
    "url": "https://webws.365scores.com/web/game/?gameId=4823816",
    "publisher": "365Scores",
    "access": "available",
-   "checkedAt": "2026-10-10"
+   "checkedAt": "2026-11-13"
   },
   {
    "id": "ls-lu-1882211",
@@ -30,7 +30,7 @@
    "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1882211",
    "publisher": "LiveScore",
    "access": "available",
-   "checkedAt": "2026-10-10"
+   "checkedAt": "2026-11-13"
   },
   {
    "id": "s365-4776110",
@@ -270,7 +270,7 @@
    "url": "https://webws.365scores.com/web/game/?gameId=4480935",
    "publisher": "365Scores",
    "access": "available",
-   "checkedAt": "2026-11-12"
+   "checkedAt": "2026-11-13"
   },
   {
    "id": "s365-4480930",
@@ -825,29 +825,38 @@
      "Spyros Christakopoulos",
      "Dimitrios Kaloskamis",
      "Derek Kutesa",
-     "Zini",
      "Argyris Argyriou",
+     "Zini",
      "Alberto Brignoli",
+     "Georgios Sarakasidis",
      "Filipe Relvas",
      "Stavros Pilios",
      "Kervin Arriaga",
      "Hakim Sahabo",
-     "Mijat Gaćinović",
-     "Georgios Sarakasidis"
+     "Mijat Gaćinović"
     ],
-    "scorers": []
+    "scorers": [
+     "Christos Alexiou",
+     "Barnabas Varga",
+     "João Mário",
+     "Barnabas Varga",
+     "Milán Vitális",
+     "Petros Mantalos",
+     "Oleksandr Zubkov",
+     "Christos Alexiou"
+    ]
    },
    "sources": [
     "s365-4823816",
     "ls-lu-1882211"
    ],
-   "researchedAt": "2026-10-10",
+   "researchedAt": "2026-11-13",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
    "confidence": 3,
    "status": "approved",
-   "approvedAt": "2026-10-10",
+   "approvedAt": "2026-11-13",
    "approvedBy": "automated:cross-source-review-league-lineups-aek-athens"
   },
   {
@@ -2002,7 +2011,7 @@
    "sources": [
     "s365-4480935"
    ],
-   "researchedAt": "2026-11-12",
+   "researchedAt": "2026-11-13",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score). · Held as one-publisher; approved by the owner on 13.11.2026.",

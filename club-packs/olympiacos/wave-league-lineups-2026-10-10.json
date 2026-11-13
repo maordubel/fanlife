@@ -270,7 +270,7 @@
    "url": "https://webws.365scores.com/web/game/?gameId=4480939",
    "publisher": "365Scores",
    "access": "available",
-   "checkedAt": "2026-11-12"
+   "checkedAt": "2026-11-13"
   },
   {
    "id": "s365-4480923",
@@ -2012,7 +2012,7 @@
    "sources": [
     "s365-4480939"
    ],
-   "researchedAt": "2026-11-12",
+   "researchedAt": "2026-11-13",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score). · Held as one-publisher; approved by the owner on 13.11.2026.",
@@ -2766,8 +2766,8 @@
    ],
    "confidence": 3,
    "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
    "approvedBy": "automated:cross-source-review-league-lineups-olympiacos",
    "parserCertainty": "high",
    "conflictFree": true,
@@ -2783,13 +2783,13 @@
     "sensitive": false
    },
    "sources": [
-    "s365-4648649",
-    "ls-lu-1707894"
+    "s365-4694829",
+    "ls-lu-1759016"
    ],
    "confidence": 3,
    "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
    "approvedBy": "automated:cross-source-review-league-lineups-olympiacos",
    "parserCertainty": "high",
    "conflictFree": true,

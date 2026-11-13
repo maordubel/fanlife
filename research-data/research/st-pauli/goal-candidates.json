@@ -13,15 +13,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2023/03/29/lage-am-millerntor-29-maerz-2023/",
-    "locator": "p31",
-    "quote": "Zum Thema gibt es auch wieder einen Audiobeitrag auf YouTube (30min), in dem Hamburger Hochbahn Mobilitätsexpertin Doreen Kerinnis, Verkehrssenator Anjes Tjarks und Franziska Altenrath (Nachhaltigkeit beim FCSP) zu Gast sind.",
-    "bodyHash": "aa603c7b0a60528d9b2f841e6a76697d873d896f93911f18abf7737ac96ab190",
-    "fetchedAt": "2026-11-05T11:31:50.250Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2023/05/26/lage-am-millerntor-26-mai-2023/",
     "locator": "p65",
     "quote": "Organisiert vom Fanclub „Hexenkessel St. Pauli“ und dem Fanladen findet morgen um 19.00h ein Vortrag einer polnischen „No Borders“-Gruppe statt, die über die Situation von Flüchtlingen an der Grenze zwischen Polen und Belarus berichten werden. Außerdem wird der Film „The limits of humanity“ (30min) im Original mit deutschen Untertiteln gezeigt.",
@@ -82,6 +73,15 @@
     "bodyHash": "64187845924174c32089610fba3303b0a163525eb0949c2b4300f63826ada5c2",
     "fetchedAt": "2026-11-12T11:51:45.815Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/09/06/lage-am-millerntor-06-september-2024/",
+    "locator": "p60",
+    "quote": "Jedenfalls empfahl hanf beimer gestern in den Kommentaren der „Lage“ nach der ETV-Doku noch diese NDR-Doku (30min) . Ich habe mich sehr gut unterhalten gefühlt und möchte dies daher mit Euch teilen. Allein für die Ansprachen beider Trainer in den Kabinen hat es sich gelohnt.",
+    "bodyHash": "4a0d07b63b52a9a84b07a84c1259f536250e2b709e69b4dea41562c4d8809ce0",
+    "fetchedAt": "2026-11-13T11:33:03.024Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -89,8 +89,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-12T11:51:45.815Z",
-  "updatedAt": "2026-11-12T11:51:45.815Z"
+  "createdAt": "2026-11-13T11:33:03.024Z",
+  "updatedAt": "2026-11-13T11:33:03.024Z"
  },
  {
   "id": "ga-03973ac070b40b9b",
@@ -104,15 +104,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "millernton",
-    "url": "https://millernton.de/2020/10/02/lage-am-millerntor-02-oktober-2020/",
-    "locator": "p15",
-    "quote": "Im Vereins-TV könnt Ihr die Stimmen von Leart Paqarada (der ja zu seinem Ex-Verein reist) und Philipp Ziereis hören (3min), außerdem wurde die Pressekonferenz mit Timo Schultz in Schrift und Video (16min) frei für alle veröffentlicht.",
-    "bodyHash": "60c186a28662b573d5194ecd1668a888e4518427aa3114af2178e5a879113a23",
-    "fetchedAt": "2026-10-26T09:23:39.232Z",
-    "language": "en"
-   },
    {
     "sourceId": "millernton",
     "url": "https://millernton.de/2021/01/18/lage-am-millerntor-18-januar-2021/",
@@ -175,6 +166,15 @@
     "bodyHash": "fdee35f628237e8b94761d714d33096ae642981b345386c2ba8ad175eb952df8",
     "fetchedAt": "2026-11-13T11:15:35.650Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/10/16/lage-am-millerntor-16-oktober-2024/",
+    "locator": "p29",
+    "quote": "Ihr seid nach unserem Podcast zur geplanten Genossenschaft natürlich schon bestens und umfassend informiert. Wer sich darüber hinaus auf den neuesten Stand bringen lassen möchte, findet zunächst einmal einen grundlegenden Beitrag im NDR (3min) . Zusätzlich gibt es auch den Besuch von Oke Göttlich (mit einem weiteren eingebetteten Beitrag von Ole Zeisler) vom Sonntag im NDR-Sportclub (14min) .",
+    "bodyHash": "5367aea1757e67ff00215ef85a35f223473f713c6962e7e120ac35b4fd08a44c",
+    "fetchedAt": "2026-11-13T11:33:11.346Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -182,8 +182,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-13T11:15:35.650Z",
-  "updatedAt": "2026-11-13T11:15:35.650Z"
+  "createdAt": "2026-11-13T11:33:11.346Z",
+  "updatedAt": "2026-11-13T11:33:11.346Z"
  },
  {
   "id": "ga-841148b1b6e631c5",
@@ -197,15 +197,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "millernton",
-    "url": "https://millernton.de/2022/08/26/2-bundesliga-6-spieltag-2022-23/",
-    "locator": "p98",
-    "quote": "⏱️ 90' | 1:0 | #KSVSVS",
-    "bodyHash": "7b1150eed3592ff687cbb98444c62a9592abe7acbcb98b30c6e55aaffb90c88f",
-    "fetchedAt": "2026-11-03T11:04:09.893Z",
-    "language": "other"
-   },
    {
     "sourceId": "millernton",
     "url": "https://millernton.de/2022/09/06/lage-am-millerntor-06-september-2022/",
@@ -268,6 +259,15 @@
     "bodyHash": "7e23b68cab0ab7e3dddab190b3dad870e6e12f3c5415d2cd20111f3fb7027cd2",
     "fetchedAt": "2026-11-13T11:15:33.213Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/08/21/lage-am-millerntor-21-august-2024/",
+    "locator": "p17",
+    "quote": "Naja, und wenn ich schon dabei bin Euch Klicks zu ersparen: 90min.de hat den „Opta Supercomputer“ die Tabelle tippen lassen. Demnach schließt der FCSP die Saison auf Rang 16 ab, vor Kiel und Bochum. Die Wahrscheinlichkeit eines Abstiegs wird dort auf 33,5% beziffert… wie genau sich das auch immer zusammensetzt. Meister wird übrigens Bayer Leverkusen, wissta Bescheid.",
+    "bodyHash": "964d8ea54f8205407676d64728321d98069af21465042ac8701704c0e58be383",
+    "fetchedAt": "2026-11-13T11:33:00.039Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -275,8 +275,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-13T11:15:33.213Z",
-  "updatedAt": "2026-11-13T11:15:33.213Z"
+  "createdAt": "2026-11-13T11:33:00.039Z",
+  "updatedAt": "2026-11-13T11:33:00.039Z"
  },
  {
   "id": "ga-a41e98643556d4b1",
@@ -1039,15 +1039,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2021/04/06/lage-am-millerntor-06-april-2021/",
-    "locator": "p41",
-    "quote": "Ein sehr lesenswertes Interview mit dem US-amerikanischen Sportwissenschaftler Joseph N. Cooper gibt es beim Deutschlandfunk . Wie so häufig wahlweise zu lesen oder zu hören (11min).",
-    "bodyHash": "8a7cb38354e92229c3b991e33e766d1d00a07c43b0908620aaf5181ed73e3c33",
-    "fetchedAt": "2026-10-28T10:02:31.924Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2022/02/17/lage-am-millerntor-17-februar-2022/",
     "locator": "p19",
     "quote": "( Sportschau YouTube , 11min)",
@@ -1108,6 +1099,15 @@
     "bodyHash": "6d0ee8d99b3907f331785bb7987c42d6bf722bf1e37b55358528e64f93782f68",
     "fetchedAt": "2026-11-13T11:15:33.210Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/09/17/lage-am-millerntor-17-september-2024/",
+    "locator": "p65",
+    "quote": "Bei der Sportschau gibt es nun eine Reportage (11min) , in der mit Andernach und Wolfsburg zwei Vereine vorgestellt werden, die unterschiedliche Wege beschreiten. Während Andernach nun freiwillig in die Regionalliga „abstieg“, um weiter gegen Mädchenteams spielen zu können, wählt Wolfsburg den Weg, mit dem U17-Team nun in einer U15-Liga der Jungs anzutreten.",
+    "bodyHash": "f00b96d5745bce87099300c9e0952718793781465b43fdce58d933cef63e2fb8",
+    "fetchedAt": "2026-11-13T11:33:05.521Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1115,8 +1115,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-13T11:15:33.210Z",
-  "updatedAt": "2026-11-13T11:15:33.210Z"
+  "createdAt": "2026-11-13T11:33:05.521Z",
+  "updatedAt": "2026-11-13T11:33:05.521Z"
  },
  {
   "id": "ga-be3f364aae04b426",
@@ -1618,6 +1618,15 @@
     "bodyHash": "03dcb62a3a12381f6561d1461fb0c6817e70d732344bd2e0be8eb04a26d8eadc",
     "fetchedAt": "2026-11-13T11:15:33.209Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/09/30/lage-am-millerntor-30-september-2024/",
+    "locator": "p45",
+    "quote": "Bei Deutschlandfunk Nova (5min) sprachen etwas überdrehte Hosts mit einem wie immer bestens informierten Max-Jacob Ost, schriftlich hingegen gibt es einen Artikel bei The Athletic (in der New York Times, €) .",
+    "bodyHash": "7e7f7682bc991f17ac8e980fe08ad5e5d2fc0b475ce7232cc160269067f0fe79",
+    "fetchedAt": "2026-11-13T11:33:05.531Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1625,8 +1634,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-13T11:15:33.209Z",
-  "updatedAt": "2026-11-13T11:15:33.209Z"
+  "createdAt": "2026-11-13T11:33:05.531Z",
+  "updatedAt": "2026-11-13T11:33:05.531Z"
  },
  {
   "id": "ga-0b008b51fb1b193a",
@@ -1897,15 +1906,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2022/08/22/lage-am-millerntor-22-august-2022/",
-    "locator": "p39",
-    "quote": "In der zweiten Hälfte ging der HSV mit einem Freistoß in Führung, bei dessen Verursachung ich von der Tribüne aus auch auf „Ball gespielt“ entschieden hätte – aber vielleicht hatte der Schiri da die bessere Sicht. Immerhin gelang dem körperlich sehr präsenten Max Mbodje in der 69. Minute dann der Ausgleich. Was an mir vorbei gegangen war: in der B-Jugend Bundesliga wird ab sofort wohl auch 2x45min gespielt, statt wie bisher 2×40.",
-    "bodyHash": "e154282bcde674ccce21247c1393f99b83a48bbf6228456ab87156d25c3ed644",
-    "fetchedAt": "2026-11-03T11:04:07.707Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2022/10/07/lage-am-millerntor-07-oktober-2022/",
     "locator": "p10",
     "quote": "Außerdem könnt Ihr das „Vor dem Spiel-Gespräch“ von Yannick mit Anna anhören, in dem es auch um die besondere Beziehung beider Vereine und die Fanszene der Eintracht geht (45min). Wahlweise gibt es den Braunschweiger 2hundert10-Podcast mit Jan-Philipp Kalla als Gast oder das dortige Gegnergespräch , erneut mit Yannick.",
@@ -1966,6 +1966,15 @@
     "bodyHash": "94713c20b6cc1b7ab21f269f6557ac265aca4edb41528b3824f4242d6ed8c71b",
     "fetchedAt": "2026-11-12T11:51:45.814Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/08/30/lage-am-millerntor-30-august-2024/",
+    "locator": "p9",
+    "quote": "Wer die Paywall bei der Verschriftlichung umgehen will, kann natürlich einfach den Podcast (45min) hören.",
+    "bodyHash": "d34f5c18de1970677ebf895a0cdecaf4ca68071721212982201fde56867fa5a1",
+    "fetchedAt": "2026-11-13T11:33:00.060Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1973,8 +1982,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-12T11:51:45.814Z",
-  "updatedAt": "2026-11-12T11:51:45.814Z"
+  "createdAt": "2026-11-13T11:33:00.060Z",
+  "updatedAt": "2026-11-13T11:33:00.060Z"
  },
  {
   "id": "ga-d8e2dac9b5d75d90",
@@ -2122,6 +2131,15 @@
     "bodyHash": "2bcd206feec88514ae0d7a5a74c19e67523e33ed7d8a6550a1b91dac142f62d8",
     "fetchedAt": "2026-11-07T10:42:51.228Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/09/20/lage-am-millerntor-20-september-2024/",
+    "locator": "p8",
+    "quote": "Beim Abendblatt-Podcast „MillernTalk“ war Thomas Kessen zu Gast, Sprecher von „Unsere Kurve“. Er erläutert, warum RaBa aus seiner Sicht „kein Teil des deutschen Fußballs“ sondern ein „Marketingangebot“ ist (37min).",
+    "bodyHash": "cd047d422d137df363d824a813095f8e1a129c615a99ad2f0997889372b2f154",
+    "fetchedAt": "2026-11-13T11:33:05.524Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2129,8 +2147,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:42:51.228Z",
-  "updatedAt": "2026-11-07T10:42:51.228Z"
+  "createdAt": "2026-11-13T11:33:05.524Z",
+  "updatedAt": "2026-11-13T11:33:05.524Z"
  },
  {
   "id": "ga-0eb50d0b362777e7",
@@ -2269,6 +2287,15 @@
     "bodyHash": "6a60f309fa07ec6a6c8416868d8f7e1efc71af4fbbb3733da2e962561f3c2ed1",
     "fetchedAt": "2026-11-09T12:08:38.652Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/10/04/lage-am-millerntor-04-oktober-2024/",
+    "locator": "p74",
+    "quote": "Wer die Partien live mitverfolgen will, kann dies auf chess.com oder (15min zeitverzögert) lichess.org tun.",
+    "bodyHash": "8d254fe0578c576950d6bfe6c9a5f59499fd90bd4f175233f386f2db2d0fb2bc",
+    "fetchedAt": "2026-11-13T11:33:08.166Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2276,8 +2303,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-09T12:08:38.652Z",
-  "updatedAt": "2026-11-09T12:08:38.652Z"
+  "createdAt": "2026-11-13T11:33:08.166Z",
+  "updatedAt": "2026-11-13T11:33:08.166Z"
  },
  {
   "id": "ga-f11dcede79422e60",
@@ -2533,6 +2560,15 @@
     "bodyHash": "f7f758b0540b872f7b1c6d618c78a8a091626ce765e5f6ec9c11fecc67171778",
     "fetchedAt": "2026-11-06T11:09:25.387Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/08/29/lage-am-millerntor-29-august-2024-2/",
+    "locator": "p6",
+    "quote": "Auch der 1. FC Union Berlin hat mit Trainer Bo Svensson seine Pressekonferenz bereits abgehalten ( YouTube, 19min ). Wie man das so macht, war er voll des Lobes für den Gegner.",
+    "bodyHash": "dca59d80d8e4295013d07d0721f2d2331cf59eed31742901f89bb60a9dee3457",
+    "fetchedAt": "2026-11-13T11:33:00.059Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2540,8 +2576,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-06T11:09:25.387Z",
-  "updatedAt": "2026-11-06T11:09:25.387Z"
+  "createdAt": "2026-11-13T11:33:00.059Z",
+  "updatedAt": "2026-11-13T11:33:00.059Z"
  },
  {
   "id": "ga-0757fd767d0fbf20",
@@ -2728,15 +2764,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2022/12/07/lage-am-millerntor-07-dezember-2022/",
-    "locator": "p10",
-    "quote": "– ZDF: Die Skandal-WM – Wie Katar den Fußball kauft (44min)",
-    "bodyHash": "531d85427e203fae2c87263b69d3f6b59038641edb6e2f1b075e68b20966ca20",
-    "fetchedAt": "2026-11-04T11:36:02.702Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2022/12/08/lage-am-millerntor-08-dezember-2022/",
     "locator": "p10",
     "quote": "– ZDF: Die Skandal-WM – Wie Katar den Fußball kauft (44min)",
@@ -2797,6 +2824,15 @@
     "bodyHash": "6c2a5dd0603af5d86a6034519aeee196aa8d79506c129d29dffce5d3d58b796f",
     "fetchedAt": "2026-11-12T11:51:37.675Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/08/22/lage-am-millerntor-22-august-2024/",
+    "locator": "p54",
+    "quote": "Neben der technischen Lösung, wie genau bei Spielen auf dem Dorfplatz die globalen Wettanbieter ihre Live-Wetten aktualisieren, wird dabei auch auf das Thema Wettsucht eingegangen. ( ARD Mediathek, 44min )",
+    "bodyHash": "d47a1bd0d7eeb8cf4570e49c2cdc8aedaedaf11cec779a840e1239713b6d218f",
+    "fetchedAt": "2026-11-13T11:33:00.044Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2804,8 +2840,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-12T11:51:37.675Z",
-  "updatedAt": "2026-11-12T11:51:37.675Z"
+  "createdAt": "2026-11-13T11:33:00.044Z",
+  "updatedAt": "2026-11-13T11:33:00.044Z"
  },
  {
   "id": "ga-468216f78ee2fc35",
@@ -3079,6 +3115,15 @@
     "bodyHash": "efaf943e6856984456c1de9786c74ef5da0e21a3b4febaf9a59e03d1a358361d",
     "fetchedAt": "2026-11-12T11:51:37.684Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/10/15/lage-am-millerntor-15-oktober-2024/",
+    "locator": "p22",
+    "quote": "Hiervon berichtet Möhn im Abendblatt Millerntalk-Podcast ( Audio Podcast (51min) / Textversion (€) ).",
+    "bodyHash": "04fbc55b14b0bbaa2d0f55114432559895e379ce9c0b0cd0d9a8e8cd732a0106",
+    "fetchedAt": "2026-11-13T11:33:11.345Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -3086,8 +3131,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-12T11:51:37.684Z",
-  "updatedAt": "2026-11-12T11:51:37.684Z"
+  "createdAt": "2026-11-13T11:33:11.345Z",
+  "updatedAt": "2026-11-13T11:33:11.345Z"
  },
  {
   "id": "ga-6a1a244ece56de71",

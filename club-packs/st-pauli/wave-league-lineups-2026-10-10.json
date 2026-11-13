@@ -2788,8 +2788,8 @@
    ],
    "confidence": 3,
    "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
    "approvedBy": "automated:cross-source-review-league-lineups-st-pauli",
    "parserCertainty": "high",
    "conflictFree": true,
@@ -2805,13 +2805,13 @@
     "sensitive": false
    },
    "sources": [
-    "s365-4609939",
-    "ls-lu-1687379"
+    "s365-4464742",
+    "ls-lu-1540748"
    ],
    "confidence": 3,
    "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
    "approvedBy": "automated:cross-source-review-league-lineups-st-pauli",
    "parserCertainty": "high",
    "conflictFree": true,
@@ -2827,13 +2827,13 @@
     "sensitive": false
    },
    "sources": [
-    "s365-4609939",
-    "ls-lu-1687379"
+    "s365-4464730",
+    "ls-lu-1540741"
    ],
    "confidence": 3,
    "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
    "approvedBy": "automated:cross-source-review-league-lineups-st-pauli",
    "parserCertainty": "high",
    "conflictFree": true,
@@ -2849,13 +2849,13 @@
     "sensitive": false
    },
    "sources": [
-    "s365-4609939",
-    "ls-lu-1687379"
+    "s365-4464776",
+    "ls-lu-1540645"
    ],
    "confidence": 3,
    "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
    "approvedBy": "automated:cross-source-review-league-lineups-st-pauli",
    "parserCertainty": "high",
    "conflictFree": true,
@@ -2871,13 +2871,13 @@
     "sensitive": false
    },
    "sources": [
-    "s365-4609939",
-    "ls-lu-1687379"
+    "s365-4464730",
+    "ls-lu-1540741"
    ],
    "confidence": 3,
    "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
    "approvedBy": "automated:cross-source-review-league-lineups-st-pauli",
    "parserCertainty": "high",
    "conflictFree": true,
@@ -2893,13 +2893,13 @@
     "sensitive": false
    },
    "sources": [
-    "s365-4609939",
-    "ls-lu-1687379"
+    "s365-4464730",
+    "ls-lu-1540741"
    ],
    "confidence": 3,
    "status": "approved",
-   "researchedAt": "2026-11-12",
-   "approvedAt": "2026-11-12",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
    "approvedBy": "automated:cross-source-review-league-lineups-st-pauli",
    "parserCertainty": "high",
    "conflictFree": true,
