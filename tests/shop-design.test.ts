@@ -54,6 +54,8 @@ describe('exact colours from the printer',()=>{
  it('knows the common garment colours and calls light and dark right',async()=>{
   const {swatch,isLight}=await import('@/lib/shop/colours')
   expect(swatch('Black')).toBe('#111111');expect(swatch('Unknown Glitter')).toBeNull();expect(isLight('Natural')).toBe(true);expect(isLight('Navy')).toBe(false)
+ })
+})
 describe('a picture that is already cut out',()=>{
  it('is recognised by its transparent border',async()=>{
   const {transparentBorder}=await import('@/lib/shop/cutout');const w=10,h=10,d=new Uint8ClampedArray(w*h*4)
