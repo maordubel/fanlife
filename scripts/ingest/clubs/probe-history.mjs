@@ -1,6 +1,8 @@
 // Temporary probe (removed before merge)
 const UA={'user-agent':'FanLife-archive/1.0 (+https://github.com/maordubel/fanlife)'}
-const r=await fetch('https://www.fitbastats.com/celtic/team_results_season.php',{headers:UA});const t=await r.text()
-const forms=t.match(/<form[\s\S]*?<\/form>/g)||[];for(const f of forms)console.log('FORM',f.replace(/<option[^>]*>[^<]*<\/option>/g,m=>m.length>60?'':m).replace(/\s+/g,' ').slice(0,900))
-const sel=t.match(/<select[^>]*name="([^"]+)"[^>]*>([\s\S]*?)<\/select>/g)||[];for(const s of sel)console.log('SELECT',s.slice(0,300).replace(/\s+/g,' '),'… options',(s.match(/<option/g)||[]).length,s.slice(-200).replace(/\s+/g,' '))
-const g=await (await fetch('https://www.fitbastats.com/celtic/game.php?gameid=77093',{headers:UA})).text();const i=g.indexOf('<table');console.log('GAME',g.slice(i,i+3000).replace(/<[^>]+>/g,' ').replace(/\s+/g,' '))
+const strip=s=>s.replace(/<[^>]+>/g,' ').replace(/&nbsp;/g,' ').replace(/\s+/g,' ')
+for(const u of ['https://www.fitbastats.com/celtic/team_results_season.php?from=79&to=79&competition=0','https://www.fitbastats.com/celtic/team_results_season.php?from=79','https://londonhearts.com/scores/allg/celtic1967.htm','https://londonhearts.com/scores/allg/celtic2005.htm','https://www.londonhearts.com/scores/a1960/celtic1967.htm']){
+ const r=await fetch(u,{headers:UA});const t=await r.text();const rows=(t.match(/gameid=\d+">\d\d\/\d\d\/\d{4}/g)||[]).map(x=>x.split('>')[1])
+ console.log('##',r.status,u,'bytes',t.length,'fitba rows',rows.length,rows[0],rows[rows.length-1])
+ if(/londonhearts/.test(u)){const i=t.indexOf('Date Comp');const s=strip(t);const j=s.indexOf('Date Comp');console.log(s.slice(j,j+1200))}
+ await new Promise(r=>setTimeout(r,1200))}
