@@ -98,6 +98,7 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [studio-autopilot](studio-autopilot.md) · The studio's autopilot publishes only after the owner had two hours to cancel on Telegram; a film nobody uploads loses its big files after seven days (12.11.2026)
 - [front-door-shelf](front-door-shelf.md) · A public page is answered from the front door's shelf, fresh for a minute and stale while it is renewed; the desk, APIs and the owner's session always reach the server (13.11.2026)
 - [studio-experience](studio-experience.md) · Every Football Stories film is an experience: a judged hook, a DOCU edit with no still past 4 s, the hand-made graphics on data only, and a gate that measures it (12.11.2026)
+- [writer-salvage](writer-salvage.md) · The studio always makes a film and never says what it cannot prove: a failing script is repaired in code (re-cite, remove, copy the hook), made shorter, never padded; a thin archive is written short (13.11.2026)
 
 ## Control room, research desk and CRM
 

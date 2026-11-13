@@ -42,7 +42,7 @@ def editable(s: dict) -> dict:
 
 def check(s: dict, brief: dict, ledger: dict) -> list[str]:
     repaired = writer.repair(s)
-    minutes = float(brief['duration'])
+    minutes = writer.script_minutes(s, brief)   # a film sized by its claims or salvaged is checked at its own length
     if s.get('_owner_treatment'):
         # An imported treatment has its own length. Don't pad it to the writer's target.
         words = sum(len(b['narration'].split()) for *_, b in script.all_beats(repaired))
