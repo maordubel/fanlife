@@ -15,7 +15,7 @@ export type ClubPollChoice={id:string;name:string;from?:number|null;to?:number|n
 export type ClubPoll={id:string;prompt:string;choices:ClubPollChoice[]}
 /** Opinion prompts make no new historical or culture claims. Options are eligible records. */
 export function clubPolls(data:ClubData,locale:UiLocale):ClubPoll[]{
- const copy=gameCopy(locale),events=pollChoices(data),players=(data.players||[]).map(f=>englishPlayer(data.identity.id,f.value)).map(v=>({id:v.id,name:v.name,from:v.fromYear,to:v.toYear}))
+ const copy=gameCopy(locale),events=pollChoices(data),players=(data.players||[]).filter(f=>!f.value.archiveOnly).map(f=>englishPlayer(data.identity.id,f.value)).map(v=>({id:v.id,name:v.name,from:v.fromYear,to:v.toYear}))
  return [...(events.length>=2?['pollReplay','pollStory','pollCalendar'] as const:[]).map(id=>({id,prompt:copy[id],choices:events})),...(players.length>=2?['pollCaptain','pollMeet','pollFirstXI'] as const:[]).map(id=>({id,prompt:copy[id],choices:players}))]
 }
 export function clubPollRound(data:ClubData,locale:UiLocale,seed:number,cursor:number):ClubPoll[]{

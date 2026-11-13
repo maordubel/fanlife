@@ -1,7 +1,8 @@
 /**
  * Club careers (13.11.2026) — a player's appearances and goals AT the club, from the career waves (two publishers each, or a source
  * the owner approved). Applied once, after every other wave, so it reaches every man the pack finally holds: it only fills a `career`
- * the record does not state, and it never adds a man (a career row for an id the pack does not hold is ignored).
+ * the record does not state. A career row for an id the pack does not hold is ignored — unless the row is a whole player record
+ * (sport, positions): then he is a man the archive did not know and is added (Olympiacos: the club's all-players table, 13.11.2026).
  *   Celtic, St. Pauli, AEK: scripts/club-research/integrate-careers-2026-11-13.py
  *   Olympiacos: scripts/ingest/clubs/olympiacos-history-players.ts (olympiacos-history.gr, approved by the owner 13.11.2026)
  */
@@ -23,8 +24,20 @@ export function withCareers<T extends Raw>(pack:T,clubId:string):T{
   for(const s of arr(r.sources))used.add(String(s))
   return {...f,value:{...v,career:(r.value as Raw).career},sources:[...new Set([...arr(f.sources).map(String),...arr(r.sources).map(String)])]}
  })
+ const known=new Set(players.map(f=>String(f.id)))
+ // OLYHIST_REBUILD: the collector reads the pack without the men it added last time, so it re-joins them honestly
+ const added=process.env.OLYHIST_REBUILD?[]:[...rows.values()].filter(r=>!known.has(String(r.id))&&(r.value as Raw).sport==='football'&&Array.isArray((r.value as Raw).positions))
+ for(const r of added)for(const s of arr(r.sources))used.add(String(s))
  const sources=[...arr(pack.sources),...arr(w.sources).filter(s=>used.has(String(s.id))&&!have.has(String(s.id)))]
- return {...pack,players,sources}
+ return {...pack,players:[...players,...added],sources}
+}
+
+/** the same fill for men a later wave adds to the compiled data (the roster wave): a career row for his id, when he states none */
+export function careerFor(clubId:string,id:string):{apps:number;goals:number|null;basis:string}|null{
+ const w=WAVES[clubId];if(!w)return null
+ const r=arr(w.players).find(r=>r.status==='approved'&&String(r.id)===id),c=(r?.value as Raw|undefined)?.career as Raw|undefined
+ if(!c||typeof c.apps!=='number'||typeof c.basis!=='string')return null
+ return {apps:c.apps,goals:typeof c.goals==='number'?c.goals:null,basis:c.basis}
 }
 
 /**

@@ -43,7 +43,7 @@ const mulberry=(seed:number)=>()=>{seed=(seed+0x6D2B79F5)|0;let t=Math.imul(seed
 export function goalPool(data:Pick<ClubData,'players'>,g:ClubGoal,seed:number,size=8):string[]{
  const actors=[...new Set(g.steps.flatMap(s=>s.actor?[s.actor]:[]))]
  const words=new Set(actors.flatMap(a=>a.split(/\s+/)))
- const others=[...new Set((data.players||[]).map(p=>p.value.name).filter(n=>!actors.includes(n)&&!n.split(/\s+/).some(w=>words.has(w))))].sort()
+ const others=[...new Set((data.players||[]).filter(p=>!p.value.archiveOnly).map(p=>p.value.name).filter(n=>!actors.includes(n)&&!n.split(/\s+/).some(w=>words.has(w))))].sort()
  const r=mulberry(seed+g.id.length*31)
  for(let i=others.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[others[i],others[j]]=[others[j]!,others[i]!]}
  return [...actors,...others.slice(0,Math.max(0,size-actors.length))].sort((a,b)=>a.localeCompare(b))

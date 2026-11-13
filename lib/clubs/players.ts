@@ -1,4 +1,5 @@
 import 'server-only'
+import {enoughPublishers} from './official'
 import type {ClubPlayer,Fact,Source,Diagnostic} from './contract'
 /** Optional finer evidence from a pack; anything that is not exactly the documented shape is dropped, never guessed. */
 /** a club career a wave states (apps/goals AT the club and the basis the source gives) — kept only when well formed (13.11.2026) */
@@ -34,10 +35,10 @@ export function compilePlayers(raw:unknown,clubId:string,sources:Source[],diagno
   const sourceOK=refs.length&&cited.every(s=>s?.access==='available'&&s.checkedAt)
   const approvalOK=f.status==='approved'&&(f.confidence===2||f.confidence===3)&&date(f.researchedAt)&&date(f.approvedAt)&&typeof f.approvedBy==='string'&&f.approvedBy.trim()
   const automatic=typeof f.approvedBy==='string'&&f.approvedBy.startsWith('automated:')
-  const automaticOK=!automatic||(new Set(cited.map(s=>s?.publisher.toLowerCase())).size>=2&&f.confidence===3&&f.parserCertainty==='high'&&f.conflictFree===true&&v.sensitive===false)
+  const automaticOK=!automatic||(enoughPublishers(cited)&&f.confidence===3&&f.parserCertainty==='high'&&f.conflictFree===true&&v.sensitive===false)
   if(!/^[a-z0-9][a-z0-9_-]{0,100}$/.test(id)||typeof v.name!=='string'||!v.name.trim()||v.sport!=='football'||!Array.isArray(v.positions)||positions.some(p=>!['GK','DF','MF','FW'].includes(String(p)))||Number.isNaN(from)||Number.isNaN(to)||(from!==null&&to!==null&&from>to)||!sourceOK||!approvalOK||!automaticOK){diagnostics.push({record:id,code:'PLAYER_INELIGIBLE',message:'Player requires valid identity/football fields, referenced checked sources and a complete eligible approval.'});continue}
   const indexForm=personName(v.name)!==v.name.trim()?[v.name.trim()]:[]
-  out.push({id:`${clubId}:${id}`,value:{id:`${clubId}:${id}`,name:personName(v.name),positions:[...new Set(positions)] as ClubPlayer['positions'],fromYear:from,toYear:to,aliases:[...(Array.isArray(v.aliases)?v.aliases.filter((s):s is string=>typeof s==='string'):[]),...indexForm],...detailOf(v.detail),...careerOf(v.career)},sources:refs,confidence:f.confidence as 2|3,status:'approved',researchedAt:date(f.researchedAt),approvedAt:date(f.approvedAt),approvedBy:String(f.approvedBy),notes:typeof f.notes==='string'?f.notes:''})
+  out.push({id:`${clubId}:${id}`,value:{id:`${clubId}:${id}`,name:personName(v.name),positions:[...new Set(positions)] as ClubPlayer['positions'],fromYear:from,toYear:to,aliases:[...(Array.isArray(v.aliases)?v.aliases.filter((s):s is string=>typeof s==='string'):[]),...indexForm],...detailOf(v.detail),...careerOf(v.career),...(v.archiveOnly===true?{archiveOnly:true as const}:{})},sources:refs,confidence:f.confidence as 2|3,status:'approved',researchedAt:date(f.researchedAt),approvedAt:date(f.approvedAt),approvedBy:String(f.approvedBy),notes:typeof f.notes==='string'?f.notes:''})
  }
  for(const id of duplicates)diagnostics.push({record:id,code:'PLAYER_CONFLICT',message:'Duplicate player ID quarantined.'})
  return out.filter(f=>!duplicates.has(f.id.slice(clubId.length+1)))

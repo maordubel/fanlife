@@ -1,5 +1,6 @@
 import 'server-only'
 import {createHash} from 'node:crypto'
+import {enoughPublishers,officialOf} from './official'
 import {missingSections,timelineReadiness,type ClubData,type Diagnostic,type Fact,type HistoricalEvent,type Locale,type Source} from './contract'
 import type {RegistryClub} from '@/lib/master/registry'
 import {clubTheme} from './theme'
@@ -33,7 +34,7 @@ export function compilePack(raw:unknown,club:RegistryClub):{data:ClubData;diagno
   const s=object(input),key=id(s.id);let url:URL|undefined
   try{url=new URL(text(s.url))}catch{/* reported below */}
   if(!validId(key)||sourceIds.has(key)||!url||url.protocol!=='https:'||!text(s.title)||!text(s.publisher)){issue(key,'SOURCE_INVALID','Source needs a unique id, publisher, title and HTTPS URL.');continue}
-  sourceIds.add(key);sources.push({id:key,title:text(s.title),url:url.href,publisher:text(s.publisher),access:s.access==='available'?'available':s.access==='blocked'?'blocked':'unknown',checkedAt:date(s.checkedAt)})
+  sourceIds.add(key);sources.push({id:key,title:text(s.title),url:url.href,publisher:text(s.publisher),access:s.access==='available'?'available':s.access==='blocked'?'blocked':'unknown',checkedAt:date(s.checkedAt),...(officialOf(s.official)?{official:officialOf(s.official)}:{})})
  }
  const archive:Fact<HistoricalEvent>[]=[],seen=new Set<string>(),duplicates=new Set<string>()
  for(const input of list(pack.archive)) {
@@ -51,8 +52,7 @@ export function compilePack(raw:unknown,club:RegistryClub):{data:ClubData;diagno
   const fact:Fact<HistoricalEvent>={id:`${club.id}:${key}`,value:{id:`${club.id}:${key}`,name:text(value.name),on,precision,year:precision==='year'?year:on?Number(on.slice(0,4)):null,hint:hint(text(value.hint)),text:text(value.hint)||undefined,sport:'football',sensitive:value.sensitive!==false},sources:refs,confidence:level as 0|1|2|3,status,researchedAt:date(f.researchedAt),approvedAt:date(f.approvedAt),approvedBy:text(f.approvedBy)||null,notes:text(f.notes)}
   if(status==='approved'&&(!fact.approvedAt||!fact.approvedBy||!fact.researchedAt)){fact.status='review';issue(key,'APPROVAL_INCOMPLETE','Approval requires actor, research date and approval date.')}
   if(status==='approved'&&fact.approvedBy?.startsWith('automated:')) {
-   const independent=new Set(refs.map(ref=>sources.find(s=>s.id===ref)!.publisher.toLowerCase()))
-   if(independent.size<2||level!==3||fact.value.sensitive||f.parserCertainty!=='high'||f.conflictFree!==true){fact.status='review';issue(key,'HUMAN_REVIEW','Automated approval requires two publishers, high certainty, no conflict and non-sensitive facts.')}
+   if(!enoughPublishers(refs.map(ref=>sources.find(s=>s.id===ref)))||level!==3||fact.value.sensitive||f.parserCertainty!=='high'||f.conflictFree!==true){fact.status='review';issue(key,'HUMAN_REVIEW','Automated approval requires two publishers (or the competition’s official body), high certainty, no conflict and non-sensitive facts.')}
   }
   archive.push(fact)
  }
