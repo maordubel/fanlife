@@ -19,8 +19,9 @@ import {withForgedTrivia} from '@/lib/trivia/club'
 import {withMemoryPairs} from './memory-pairs'
 import {withArchiveMysteries} from './mystery-forge'
 import {oneNightPerMatch} from './one-night'
+import {correctPack,correctMatches} from './corrections'
 export const compilePackEuro=(pack:Record<string,unknown>,club:RegistryClub)=>{
- const history=withHistorical(pack,club.id),night=oneNightPerMatch(withGoalWave(withEuro(history.pack,club.id),club.id)),result=compilePackBase(night.pack as never,club)
+ const history=withHistorical(pack,club.id),night=oneNightPerMatch(correctPack(withGoalWave(withEuro(history.pack,club.id),club.id),club.id)),result=compilePackBase(night.pack as never,club)
  return {...result,diagnostics:[...result.diagnostics,...night.folded.map(f=>({record:`${club.id}:${f.kept}`,code:'SAME_MATCH_FOLDED',message:`${f.on}: ${f.folded.join(', ')} folded into ${f.kept} (same day, same score).`})),...history.conflicts.map(c=>({record:`${club.id}:${c.incoming}`,code:'HISTORY_CONFLICT',message:`${c.reason}: ${c.on}; existing ${c.existing}. Incoming result withheld from matches and timeline.`}))]}
 }
 /** Existing archives only. New facts stay in review; prior approvals remain authoritative. */
@@ -37,7 +38,8 @@ export const providers:Record<string,()=>Promise<{data:ClubData;diagnostics:Diag
   // catalogue kits ride on the same record shape, and `kitViews` folds a shirt both sources describe into one card.
   const base=(await import('./adapters/hapoel')).getHapoelData(),wave=htaCof as unknown as {sources:ClubData['sources'];kits:ClubData['kits']}
   const have=new Set(base.sources.map(x=>x.id)),kits=(wave.kits||[]).filter(k=>k.status==='approved'&&k.confidence>=2).map(k=>({...k,id:`hapoel-tel-aviv:${k.id}`}))
-  return {data:{...base,kits:[...(base.kits||[]),...kits],sources:[...base.sources,...wave.sources.filter(x=>!have.has(x.id))]},diagnostics:[]}
+  // 13.11.2026 — the checked corrections (content/manual/archive-corrections-*.json) apply to The Worker's rows too
+  return {data:{...base,matches:base.matches?correctMatches('hapoel-tel-aviv',base.matches):base.matches,kits:[...(base.kits||[]),...kits],sources:[...base.sources,...wave.sources.filter(x=>!have.has(x.id))]},diagnostics:[]}
  },
  'zrinjski-mostar':async()=>compileExistingArchive(mergeWave(mergeWave(mergeWave(mergeWave((await import('./adapters/zrinjski')).zrinjskiPack(),(await import('@/club-packs/zrinjski-mostar/wave-parity-2026-10-06.json')).default as never),mergeWave((await import('@/club-packs/zrinjski-mostar/wave-c-2026-10-06.json')).default as never,(await import('@/club-packs/zrinjski-mostar/wave-auto.json')).default as never)),(await import('@/club-packs/zrinjski-mostar/wave-kits-photos-2026-10-08.json')).default as never),(await import('@/club-packs/zrinjski-mostar/wave-uefa-2026-10-08.json')).default as never),REGISTRY.find(c=>c.id==='zrinjski-mostar')!),
  'hapoel-petah-tikva':async()=>compilePackEuro(mergeWave(mergeWave(mergeWave(mergeWave((await import('@/club-packs/hapoel-petah-tikva/core.json')).default,(await import('@/club-packs/hapoel-petah-tikva/wave-parity-2026-10-06.json')).default as never),mergeWave((await import('@/club-packs/hapoel-petah-tikva/wave-c-2026-10-06.json')).default as never,(await import('@/club-packs/hapoel-petah-tikva/wave-auto.json')).default as never)),(await import('@/club-packs/hapoel-petah-tikva/wave-kits-photos-2026-10-08.json')).default as never),(await import('@/club-packs/hapoel-petah-tikva/wave-uefa-2026-10-08.json')).default as never),REGISTRY.find(c=>c.id==='hapoel-petah-tikva')!),

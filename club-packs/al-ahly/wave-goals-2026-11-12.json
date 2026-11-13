@@ -281,14 +281,14 @@
     "ah-g-reuters-2020",
     "ah-g-astro-2020"
    ],
-   "confidence": 2,
-   "status": "review",
+   "confidence": 3,
+   "status": "approved",
    "researchedAt": "2026-11-12",
-   "approvedAt": null,
-   "approvedBy": null,
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "Reuters: four minutes from time, loose ball collected, controlled under pressure, volleyed into the corner. Stadium Astro: 86', won the ball, knee to lift it, volley into the right side. Distance DROPPED (Reuters 30 metres vs Astro about 20 yards); side of goal kept generic. AFP (ah-g-afp-2020, not used as a source) gives 85' in one passage - flagged for review. · HELD FOR THE OWNER: AFP gives 85 minutes against 86 from Reuters and Stadium Astro."
+   "notes": "Reuters: four minutes from time, loose ball collected, controlled under pressure, volleyed into the corner. Stadium Astro: 86', won the ball, knee to lift it, volley into the right side. Distance DROPPED (Reuters 30 metres vs Astro about 20 yards); side of goal kept generic. AFP (ah-g-afp-2020, not used as a source) gives 85' in one passage - flagged for review."
   },
   {
    "id": "goal-2021-07-17-mohamed-sherif-53",

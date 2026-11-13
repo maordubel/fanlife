@@ -24,12 +24,14 @@ EDITS={
   'goal-2013-12-14-chemseddine-chtibi-24':[(0,'unname','both report the cross from the right; only Reuters names the crosser')],
   'goal-2013-12-14-kouko-guehi-95':[(0,'unname','both report a corner; only FourFourTwo names the taker')],
   'goal-2019-11-23-ben-malango-90plus4':[(0,'unname','both report a free kick; only Hespress names the taker')],
-  'goal-2013-12-18-mouhcine-iajour-51':[('review','the pass from Hafidi is reported by Trivela only, and AFP gives 53 minutes')],
+  # 13.11.2026 — resolved on the owner's authority: 51' is the majority (ESPN, FOX, Trivela against AFP's 53'); the pass stays, its passer unnamed
+  'goal-2013-12-18-mouhcine-iajour-51':[(0,'unname','the pass is reported by Trivela only by name; the minute follows the majority (ESPN, FOX, Trivela 51\' against AFP 53\')')],
  },
  'al-ahly':{
   'goal-2006-11-11-mohamed-aboutrika-90+2':[(0,'drop','the first header (Moteab) is reported by Daily News Egypt only')],
   'goal-2021-07-17-mohamed-magdy-afsha-64':[(0,'drop','Taher Mohamed\'s run is reported by CAF only'),(1,'drop','Taher Mohamed\'s pass is reported by CAF only'),(2,'drop','the first leg of the one-two is reported by CAF only')],
-  'goal-2020-11-27-mohamed-magdy-afsha-86':[('review','AFP gives 85 minutes against 86 from Reuters and Stadium Astro')],
+  # 13.11.2026 — resolved on the owner's authority: 86' is the majority (Reuters, Stadium Astro against AFP's 85')
+  'goal-2020-11-27-mohamed-magdy-afsha-86':[],
  },
  'wydad-casablanca':{},
 }

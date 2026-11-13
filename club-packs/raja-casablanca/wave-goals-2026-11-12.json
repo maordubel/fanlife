@@ -289,11 +289,11 @@
     "competition": "FIFA Club World Cup 2013 (semi-final)",
     "opponent": "Atlético Mineiro",
     "score": "3-1",
-    "narrative": "Abdelilah Hafidi: released Iajour Mouhcine Iajour: low first-time finish",
+    "narrative": "A team-mate: released Iajour Mouhcine Iajour: low first-time finish",
     "sequence": [
      {
-      "actor": "Abdelilah Hafidi",
-      "side": "club",
+      "actor": "",
+      "side": "unnamed",
       "action": "throughBall",
       "zone": "C3",
       "position": "fast counter-attack (start point not stated)",
@@ -315,14 +315,14 @@
     "rj-g-trivela-mineiro",
     "rj-g-fox-mineiro"
    ],
-   "confidence": 2,
-   "status": "review",
+   "confidence": 3,
+   "status": "approved",
    "researchedAt": "2026-11-12",
-   "approvedAt": null,
-   "approvedBy": null,
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:cross-source-review-raja-casablanca-2026-11-12",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "Minute 51 from Trivela (6' of 2nd half) and FOX Sports; ESPN match page also 51. Hafidi's pass and first-time finish from Trivela; 'low' shot from FOX. AFP copy (Al Jazeera/Hurriyet) says 53' and 'sent clear on the right' - minute differs from the two chosen sources, so flank and AFP minute not used. · HELD FOR THE OWNER: the pass from Hafidi is reported by Trivela only, and AFP gives 53 minutes."
+   "notes": "Minute 51 from Trivela (6' of 2nd half) and FOX Sports; ESPN match page also 51. Hafidi's pass and first-time finish from Trivela; 'low' shot from FOX. AFP copy (Al Jazeera/Hurriyet) says 53' and 'sent clear on the right' - minute differs from the two chosen sources, so flank and AFP minute not used. · Applied the two-publisher rule: the pass is reported by Trivela only by name; the minute follows the majority (ESPN, FOX, Trivela 51' against AFP 53')."
   },
   {
    "id": "goal-2013-12-18-vivien-mabide-90plus4",
