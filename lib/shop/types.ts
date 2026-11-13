@@ -4,7 +4,9 @@ export type Kind=(typeof KINDS)[number]
 export const SIDES=['front','back','both'] as const
 export const SIZES=['auto','badge','medium','large','full'] as const
 export const SHADES=['light','dark','all'] as const
-export type ProductDesign={sides?:(typeof SIDES)[number];size?:(typeof SIZES)[number];shades?:(typeof SHADES)[number];cutout?:boolean;margin?:number}
+export type ProductDesign={sides?:(typeof SIDES)[number];size?:(typeof SIZES)[number];shades?:(typeof SHADES)[number];cutout?:boolean;margin?:number
+ /** exact colours and sizes chosen from the printer's stock (override `shades`) */
+ colors?:string[];sizes?:string[]}
 export type ProductStatus='draft'|'building'|'ready'|'live'|'error'
 export type ShopProduct={
  id:string

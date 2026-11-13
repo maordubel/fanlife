@@ -41,7 +41,9 @@ const SIZE_SCALE={badge:.3,medium:.55,large:.8,full:.94} as const
 export const sizedSpec=(spec:KindSpec,d?:ProductDesign):KindSpec=>!d?.size||d.size==='auto'?spec:{...spec,scale:SIZE_SCALE[d.size]}
 /** the garment colours: light (the default — any art reads on them), dark (art with a clean background), or every colour */
 const DARK=/^(black|navy|dark grey|dark heather|charcoal|asphalt|forest green|maroon|military green|heather navy|true navy|dark chocolate|black heather|vintage black|solid black blend|deep heather)$/i
-export const shadedSpec=(spec:KindSpec,d?:ProductDesign):KindSpec=>!spec.colors||!d?.shades||d.shades==='light'?spec:{...spec,colors:d.shades==='dark'?DARK:undefined,maxVariants:Math.max(spec.maxVariants,d.shades==='all'?60:24)}
+const exact=(names:string[])=>new RegExp(`^(${names.map(n=>n.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|')})$`,'i')
+export const shadedSpec=(spec:KindSpec,d?:ProductDesign):KindSpec=>d?.colors?.length||d?.sizes?.length?{...spec,...(d.colors?.length?{colors:exact(d.colors)}:{}),...(d.sizes?.length?{sizes:exact(d.sizes)}:{}),maxVariants:100}
+ :!spec.colors||!d?.shades||d.shades==='light'?spec:{...spec,colors:d.shades==='dark'?DARK:undefined,maxVariants:Math.max(spec.maxVariants,d.shades==='all'?60:24)}
 /**
  * Where a picture sits on a sheet (Printify: x,y are the centre 0–1; scale is the share of the sheet's WIDTH the picture's
  * width takes). A full-bleed kind (poster, mug, case) is filled edge to edge when the shapes are close — a little is
