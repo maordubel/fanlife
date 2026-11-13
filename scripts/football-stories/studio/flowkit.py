@@ -63,6 +63,12 @@ def words_for(seconds: int) -> tuple[int, int]:
     return (38, 55) if seconds <= 20 else (52, 72)
 
 
+def venue_name(fact: dict) -> str:
+    """The ground's name: the archive gives a venue as {'name', 'city', …} (research._venue), older ledgers as a string."""
+    v = fact.get('venue')
+    return str(v.get('name') or '') if isinstance(v, dict) else str(v or '')
+
+
 def facts_of(ledger: dict, match_id: str) -> str:
     """The match and everything the archive and the research hold about it, as lines a writer can quote."""
     lines = []
@@ -72,7 +78,7 @@ def facts_of(ledger: dict, match_id: str) -> str:
         if k == 'match' and c['id'] == match_id:
             sc = ', '.join(f"{s['name']}{' ' + str(s['minute']) + chr(39) if s.get('minute') is not None else ''}" for s in f.get('scorers') or [])
             lines.append(f"MATCH {f['date']}: {f['home']} {f['score_home']}–{f['score_away']} {f['away']}; {f.get('competition') or ''}"
-                         f"{' ' + f['stage'] if f.get('stage') else ''}{'; venue ' + f['venue'] if f.get('venue') else ''}"
+                         f"{' ' + f['stage'] if f.get('stage') else ''}{'; venue ' + venue_name(f) if venue_name(f) else ''}"
                          f"{'; after extra time' if f.get('after_extra_time') else ''}{'; penalties ' + str(f['penalties']) if f.get('penalties') else ''}"
                          f"{'; scorers: ' + sc if sc else ''}")
         elif k == 'goal-detail' and f.get('match_id') == match_id:
