@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { ownOrigin } from '@/lib/origin'
 import { TelegramLaunchInvalid, verifyTelegramLaunch } from '@/lib/telegram/verify'
 
 export const dynamic = 'force-dynamic'
@@ -7,7 +8,7 @@ const reply = (body: unknown, status = 200) => NextResponse.json(body, { status,
 
 /** Public launch proof endpoint: no credentials/session cookies or private profile data are returned. */
 export async function POST(request: Request) {
-  if (request.headers.get('origin') !== new URL(request.url).origin) return reply({ error: 'Origin refused.' }, 403)
+  if (!ownOrigin(request)) return reply({ error: 'Origin refused.' }, 403)
   if (!request.headers.get('content-type')?.startsWith('application/json')) return reply({ error: 'JSON required.' }, 415)
   const token = process.env.TELEGRAM_BOT_TOKEN?.trim()
   if (!token) return reply({ error: 'Telegram verification is not configured. Public games are still available.' }, 503)
