@@ -1,3 +1,5 @@
+import {vi} from 'vitest'
+vi.mock('server-only',()=>({}))
 import {describe,expect,it} from 'vitest'
 import {removePlainBackground} from '@/lib/shop/cutout'
 import {KIND_SPECS} from '@/lib/shop/kinds'
@@ -60,5 +62,25 @@ describe('a picture that is already cut out',()=>{
  it('is recognised by its transparent border',async()=>{
   const {transparentBorder}=await import('@/lib/shop/cutout');const w=10,h=10,d=new Uint8ClampedArray(w*h*4)
   expect(transparentBorder({data:d,width:w,height:h})).toBe(true);d.fill(255);expect(transparentBorder({data:d,width:w,height:h})).toBe(false)
+ })
+})
+describe('print areas: two pictures, a chest logo, every area the printer has',()=>{
+ it('a chest-left logo is small, high, and on the wearer’s left (the viewer’s right)',async()=>{
+  const {placeAt}=await import('@/lib/shop/plan');const {KIND_SPECS}=await import('@/lib/shop/kinds')
+  const at=placeAt(KIND_SPECS.tee,{w:3600,h:4800,position:'front',variantIds:[1]},{width:2000,height:2000},{place:'chest-left'})
+  expect(at.scale).toBeLessThanOrEqual(.3);expect(at.x).toBeGreaterThan(.6);expect(at.y).toBeLessThan(.35)
+  const r=placeAt(KIND_SPECS.tee,{w:3600,h:4800,position:'front',variantIds:[1]},{width:2000,height:2000},{place:'chest-right'});expect(r.x).toBeLessThan(.4)
+ })
+ it('explicit areas replace the quick choice and skip areas the product lacks',async()=>{
+  const {areasOf}=await import('@/lib/shop/plan');const {KIND_SPECS}=await import('@/lib/shop/kinds')
+  const v=[{id:1,title:'',options:{},placeholders:[{position:'front',width:1,height:1},{position:'back',width:1,height:1}]}]
+  const art={library:{id:'b',name:'b.png'}}
+  const got=areasOf(KIND_SPECS.tee,v as never,{sides:'front',areas:{back:{art},left_sleeve:{}}})
+  expect(got).toEqual([[['back'],{art}]])
+ })
+ it('keeps the back mock-up apart when the product prints there',async()=>{
+  const {mockups}=await import('@/lib/shop/build')
+  const m=mockups([{src:'f.jpg?camera_label=front',is_default:true},{src:'b.jpg?camera_label=back',is_default:false}],true)
+  expect(m.backImage).toBe('b.jpg?camera_label=back');expect(m.images[0]).toBe('f.jpg?camera_label=front')
  })
 })

@@ -1,12 +1,12 @@
 import 'server-only'
 import {KIND_SPECS,catalogueSpec,groupOf} from './kinds'
-import {NOTE,listingOf,matchBlueprint,pickProvider,pickVariants,place,price,printAreas,shadedSpec,sheets,sidesOf,sharpness,sizedSpec} from './plan'
+import {NOTE,areasOf,listingOf,matchBlueprint,pickProvider,pickVariants,placeAt,positionsOf,price,printAreas,shadedSpec,sheets,sharpness,sizedSpec} from './plan'
 import {subjectName} from './subjects'
 import {REGISTRY} from '@/lib/master/registry'
 import {original,pictureById} from './library'
 import {printify,type Printify} from './printify'
 import {printifyToken,readShop,updateShop} from './store'
-import type {Kind,KindMatch,ShopProduct} from './types'
+import type {ArtRef,Kind,KindMatch,ShopProduct} from './types'
 
 /**
  * The press: one product from a draft to a listing. Find the catalogue row → choose sizes and colours → hand Printify
@@ -56,18 +56,22 @@ export async function pressProduct(id:string,by:string):Promise<ShopProduct>{
   const m=p.blueprint?await matchBlueprintId(api,p.blueprint.id,by):await matchKind(api,p.kind,by),all=(await api.variants(m.blueprintId,m.providerId)).variants
   // a catalogue product whose print area has another name: print on the first area its variants have
   if(p.blueprint&&!all.some(v=>v.placeholders.some(ph=>spec.positions.includes(ph.position)))&&all[0]?.placeholders[0])spec.positions=[all[0].placeholders[0].position]
-  const variants=pickVariants({...spec,positions:[...spec.positions,'back']},all).filter(v=>v.placeholders.some(ph=>spec.positions.includes(ph.position)||(d?.sides&&d.sides!=='front'&&ph.position==='back')))
+  const wanted=d?.areas&&Object.keys(d.areas).length?Object.keys(d.areas):[...spec.positions,...(d?.sides&&d.sides!=='front'?['back']:[])]
+  const variants=pickVariants({...spec,positions:wanted},all)
   if(!variants.length)throw new Error(`“${m.title}” at ${m.provider} has nothing in stock to print on.`)
-  // the picture: from the Drive library (Printify fetches the original itself) or the owner's own upload, sent once
-  let pic:{id:string;width:number;height:number}
-  if('library' in p.art){const lib=pictureById(p.art.library.id);if(!lib)throw new Error('This picture is no longer in the library inventory.')
-   const fname=lib.name.replace(/[^a-zA-Z0-9._-]/g,'-').slice(-80)||'art.png'
-   const clean=d?.cutout?await cleanOriginal(original(lib.id)):null
-   if(clean){const up=await api.upload(fname.replace(/\.\w+$/,'')+'-cutout.png',clean);pic={id:up.id,width:up.width,height:up.height}}
-   else{const up=await api.uploadUrl(fname,original(lib.id));pic={id:up.id,width:up.width,height:up.height}}
-  }else pic={id:p.art.upload.id,width:p.art.upload.width,height:p.art.upload.height}
+  // the pictures: each print area its own (or the product's), sent to Printify once each
+  const sent=new Map<string,{id:string;width:number;height:number}>()
+  const picOf=async(art:ArtRef,cutout:boolean)=>{const key=JSON.stringify(art)+cutout;const got=sent.get(key);if(got)return got
+   let pic:{id:string;width:number;height:number}
+   if('library' in art){const lib=pictureById(art.library.id);if(!lib)throw new Error('A picture is no longer in the library inventory.')
+    const fname=lib.name.replace(/[^a-zA-Z0-9._-]/g,'-').slice(-80)||'art.png',clean=cutout?await cleanOriginal(original(lib.id)):null
+    const up=clean?await api.upload(fname.replace(/\.\w+$/,'')+'-cutout.png',clean):await api.uploadUrl(fname,original(lib.id));pic={id:up.id,width:up.width,height:up.height}
+   }else pic={id:art.upload.id,width:art.upload.width,height:art.upload.height}
+   sent.set(key,pic);return pic}
   const placed=[] as Parameters<typeof printAreas>[0];let soft=1
-  for(const side of sidesOf(spec,variants,d))for(const sheet of sheets(spec,variants,side)){const at=place(spec,sheet,pic);soft=Math.min(soft,sharpness(sheet,pic,at.scale));placed.push({sheet,imageId:pic.id,...at})}
+  for(const [side,area] of areasOf(spec,variants,d)){const pic=await picOf(area.art??p.art,!!(area.cutout??d?.cutout))
+   for(const sheet of sheets(spec,variants,side)){const at=placeAt(spec,sheet,pic,area);soft=Math.min(soft,sharpness(sheet,pic,at.scale));placed.push({sheet,imageId:pic.id,...at})}}
+  if(!placed.length)throw new Error(`“${m.title}” has none of the print areas chosen.`)
   const ids=new Set(variants.map(v=>v.id))
   if(p.printify?.productId)await api.remove(shop,p.printify.productId).catch(()=>{})
   const club=p.subject==='fanlife'?null:REGISTRY.find(c=>c.id===p.subject),list=listingOf(p,club?{name:subjectName(p.subject),city:club.city}:null,p.blueprint?p.blueprint.title.replace(/\s*\([^)]*\)/g,''):base.label)
@@ -81,9 +85,9 @@ export async function pressProduct(id:string,by:string):Promise<ShopProduct>{
    for(let i=0;i<4&&!url;i++){await new Promise(r=>setTimeout(r,2500));url=(await api.product(shop,made.id)).external?.handle||null}
   }catch(e){await set(id,{error:`Created, not published yet: ${(e as Error).message}`})}
   if(soft<.5)await set(id,{error:`On sale, but this picture is small for a ${spec.label.toLowerCase()} (${Math.round(soft*100)}% of the print size) — it may print soft. A larger original is better.`})
-  const images=[...made.images].sort((a,b)=>Number(b.is_default)-Number(a.is_default)).map(i=>i.src).slice(0,6)
+  const {images,backImage}=mockups(made.images,placed.some(x=>x.sheet.position==='back'))
   url=url||(doc.settings.popupUrl?doc.settings.popupUrl.replace(/\/$/,''):null)
-  await set(id,{retries:publishedAt&&url?0:p.retries,status:publishedAt&&url?'live':'ready',printify:{productId:made.id,blueprintId:m.blueprintId,providerId:m.providerId,images,priceFrom:Math.min(...priced.map(v=>v.price)),currency:'USD',url,publishedAt}})
+  await set(id,{retries:publishedAt&&url?0:p.retries,status:publishedAt&&url?'live':'ready',printify:{productId:made.id,blueprintId:m.blueprintId,providerId:m.providerId,images,...(backImage?{backImage}:{}),priceFrom:Math.min(...priced.map(v=>v.price)),currency:'USD',url,publishedAt}})
  }catch(e){await set(id,{status:'error',error:(e as Error).message.slice(0,400)})}
  return (await readShop()).products.find(x=>x.id===id)!
 }
@@ -91,7 +95,7 @@ export async function pressProduct(id:string,by:string):Promise<ShopProduct>{
 export async function refreshProduct(id:string){
  const doc=await readShop(),p=doc.products.find(x=>x.id===id),shop=doc.settings.shopId;if(!p?.printify||!shop)return p
  const api=await client(),live=await api.product(shop,p.printify.productId),url=live.external?.handle||p.printify.url||(doc.settings.popupUrl||null)
- await set(id,{status:p.printify.publishedAt&&url?'live':p.status,printify:{...p.printify,url,images:live.images.length?[...live.images].sort((a,b)=>Number(b.is_default)-Number(a.is_default)).map(i=>i.src).slice(0,6):p.printify.images}})
+ await set(id,{status:p.printify.publishedAt&&url?'live':p.status,printify:{...p.printify,url,...(live.images.length?mockups(live.images,!!p.printify.backImage):{})}})
  return (await readShop()).products.find(x=>x.id===id)
 }
 export async function removeProduct(id:string,by:string){
@@ -119,6 +123,13 @@ export async function optionsFor(target:{kind?:Kind;blueprintId?:number},by:stri
  const opt=(v:typeof vs[number],re:RegExp)=>Object.entries(v.options||{}).find(([k])=>re.test(k))?.[1]
  const colours=new Map<string,number>(),sizes:string[]=[]
  for(const v of vs){const c=opt(v,/colou?r/i),z=opt(v,/size/i);if(c)colours.set(c,(colours.get(c)||0)+1);if(z&&!sizes.includes(z))sizes.push(z)}
- return {printer:m.provider,product:m.title,variants:vs.length,
+ return {printer:m.provider,product:m.title,variants:vs.length,positions:positionsOf(vs),
   colors:[...colours].map(([name,n])=>({name,hex:swatch(name),light:isLight(name),variants:n})).sort((a,b)=>Number(b.light)-Number(a.light)||a.name.localeCompare(b.name)),sizes}
+}
+
+/** the mock-ups to keep: the default first, the back mock-up kept apart when the product prints on its back */
+export function mockups(list:{src:string;is_default:boolean;position?:string}[],back:boolean):{images:string[];backImage?:string}{
+ const sorted=[...list].sort((a,b)=>Number(b.is_default)-Number(a.is_default)),isBack=(i:{src:string;position?:string})=>i.position==='back'||/camera_label=back/.test(i.src)
+ const b=back?sorted.find(isBack):undefined,front=sorted.filter(i=>!isBack(i))
+ return {images:[...front.slice(0,5),...(b?[b]:[])].map(i=>i.src),...(b?{backImage:b.src}:{})}
 }

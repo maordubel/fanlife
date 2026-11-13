@@ -4,7 +4,16 @@ export type Kind=(typeof KINDS)[number]
 export const SIDES=['front','back','both'] as const
 export const SIZES=['auto','badge','medium','large','full'] as const
 export const SHADES=['light','dark','all'] as const
-export type ProductDesign={sides?:(typeof SIDES)[number];size?:(typeof SIZES)[number];shades?:(typeof SHADES)[number];cutout?:boolean;margin?:number
+export const PLACES=['auto','center','chest-left','chest-right','upper','lower'] as const
+export type ArtRef={library:{id:string;name:string}}|{upload:{id:string;name:string;preview:string;width:number;height:number}}
+/** one print area of a product (front, back, a sleeve, the neck label …): its own picture, where it sits and how big */
+export type AreaDesign={art?:ArtRef;place?:(typeof PLACES)[number];size?:(typeof SIZES)[number];cutout?:boolean}
+export type ProductDesign={
+ /** exactly these print areas, by the printer's position name; when set it replaces `sides` */
+ areas?:Record<string,AreaDesign>
+ sides?:(typeof SIDES)[number];
+ /** where the front print sits (quick choice, without opening the print areas) */
+ place?:(typeof PLACES)[number];size?:(typeof SIZES)[number];shades?:(typeof SHADES)[number];cutout?:boolean;margin?:number
  /** exact colours and sizes chosen from the printer's stock (override `shades`) */
  colors?:string[];sizes?:string[]}
 export type ProductStatus='draft'|'building'|'ready'|'live'|'error'
@@ -14,7 +23,7 @@ export type ShopProduct={
  subject:string
  kind:Kind
  /** a picture from the owner's Drive library (the studio's library), or one he uploaded here (already stored at Printify) */
- art:{library:{id:string;name:string}}|{upload:{id:string;name:string;preview:string;width:number;height:number}}
+ art:ArtRef
  title:string;description:string
  status:ProductStatus;error?:string
  /** any product of Printify's whole catalogue, chosen in the desk's catalogue (kind 'more'): its catalogue number and name */
@@ -25,7 +34,9 @@ export type ShopProduct={
  retries?:number
  /** shown on /shop — the owner's switch; only a `live` product with a link can be shown */
  visible:boolean
- printify?:{productId:string;blueprintId:number;providerId:number;images:string[];priceFrom:number;currency:string;url:string|null;publishedAt:string|null}
+ printify?:{productId:string;blueprintId:number;providerId:number;images:string[];priceFrom:number;currency:string;url:string|null;publishedAt:string|null;
+ /** the mock-up of the back, when the product prints there */
+ backImage?:string}
  createdAt:string;updatedAt:string
 }
 export type KindMatch={blueprintId:number;providerId:number;title:string;provider:string}
@@ -47,6 +58,6 @@ export type ShopHealthNote={at:string;ok:boolean;notes:string[];checked:number;r
 export type ShopDoc={v:1;settings:ShopSettings;products:ShopProduct[];audit:ShopAudit[];health?:ShopHealthNote}
 export const EMPTY_SHOP:ShopDoc={v:1,settings:{open:false,shopId:null,shopTitle:null,channel:null,popupUrl:'',margin:45,matches:{}},products:[],audit:[]}
 /** what the public page may know about a product */
-export type PublicProduct={id:string;subject:string;kind:Kind;title:string;description:string;image:string;images:string[];priceFrom:number;currency:string;url:string;/** ≈ whole euros at today's ECB rate (a guide; the checkout is in dollars) */eur?:number|null}
+export type PublicProduct={id:string;subject:string;kind:Kind;title:string;description:string;image:string;images:string[];back?:string;priceFrom:number;currency:string;url:string;/** ≈ whole euros at today's ECB rate (a guide; the checkout is in dollars) */eur?:number|null}
 export const isPublic=(p:ShopProduct)=>p.visible&&p.status==='live'&&!!p.printify?.url&&p.printify.images.length>0
-export const toPublic=(p:ShopProduct):PublicProduct=>({id:p.id,subject:p.subject,kind:p.kind,title:p.title,description:p.description,image:p.printify!.images[0]!,images:p.printify!.images.slice(0,4),priceFrom:p.printify!.priceFrom,currency:p.printify!.currency,url:p.printify!.url!})
+export const toPublic=(p:ShopProduct):PublicProduct=>({id:p.id,subject:p.subject,kind:p.kind,title:p.title,description:p.description,image:p.printify!.images[0]!,images:p.printify!.images.slice(0,4),...(p.printify!.backImage?{back:p.printify!.backImage}:{}),priceFrom:p.printify!.priceFrom,currency:p.printify!.currency,url:p.printify!.url!})

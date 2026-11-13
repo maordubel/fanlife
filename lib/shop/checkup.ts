@@ -1,6 +1,6 @@
 import 'server-only'
 import {PrintifyError} from './printify'
-import {client,pressProduct} from './build'
+import {client,mockups,pressProduct} from './build'
 import {readShop,updateShop,printifyToken} from './store'
 import type {ShopProduct} from './types'
 
@@ -40,8 +40,8 @@ export async function shopCheckup(by='autopilot'):Promise<ShopHealth>{
  const withId=[...doc.products].filter(p=>p.printify?.productId).sort((a,b)=>a.updatedAt.localeCompare(b.updatedAt)).slice(0,PER_RUN)
  for(const p of withId){
   try{const live=await api.product(shop,p.printify!.productId);checked++
-   const url=live.external?.handle||p.printify!.url,images=live.images.length?[...live.images].sort((a,b)=>Number(b.is_default)-Number(a.is_default)).map(i=>i.src).slice(0,6):p.printify!.images
-   if(url!==p.printify!.url||images[0]!==p.printify!.images[0]){repaired++;await patch(by,p.id,x=>{x.printify={...x.printify!,url,images}})}
+   const url=live.external?.handle||p.printify!.url,mk=live.images.length?mockups(live.images,!!p.printify!.backImage):{images:p.printify!.images,backImage:p.printify!.backImage}
+   if(url!==p.printify!.url||mk.images[0]!==p.printify!.images[0]){repaired++;await patch(by,p.id,x=>{x.printify={...x.printify!,url,images:mk.images,...(mk.backImage?{backImage:mk.backImage}:{})}})}
   }catch(e){
    if(e instanceof PrintifyError&&e.status===404){repaired++;notes.push(`“${p.title}” was deleted in Printify — hidden here.`)
     await patch(by,p.id,x=>{x.visible=false;x.status='error';x.error='Deleted in Printify. Press it again, or remove it.';delete x.printify})}

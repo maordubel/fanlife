@@ -1,7 +1,7 @@
 'use client'
 import {useEffect,useRef,useState} from 'react'
 import {removePlainBackground} from '@/lib/shop/cutout'
-import type {ProductDesign} from '@/lib/shop/types'
+import type {AreaDesign,ArtRef,ProductDesign} from '@/lib/shop/types'
 
 /**
  * THE BUILDER'S DESIGN CONTROLS (owner, 13.11.2026: more editing — print on the back, background removal, and what helps sell).
@@ -10,14 +10,20 @@ import type {ProductDesign} from '@/lib/shop/types'
  */
 const SIDE_L={front:'Front',back:'Back',both:'Front + back'} as const
 const SIZE_L={auto:'Automatic',badge:'Small badge',medium:'Medium',large:'Large',full:'Full width'} as const
+const PLACE_L={auto:'Automatic',center:'Centre','chest-left':'Left chest (logo)','chest-right':'Right chest',upper:'Upper',lower:'Lower'} as const
+const POS_L:Record<string,string>={front:'Front',back:'Back',left_sleeve:'Left sleeve',right_sleeve:'Right sleeve',neck:'Neck label',neck_label:'Neck label',left_chest:'Left chest',right_chest:'Right chest',pocket:'Pocket',hood:'Hood',default:'Print'}
+const posName=(p:string)=>POS_L[p]??p.replace(/_/g,' ')
 const SHADE_L={light:'Light colours',dark:'Dark colours',all:'Every colour'} as const
-export type Stock={printer:string;product:string;variants:number;colors:{name:string;hex:string|null;light:boolean;variants:number}[];sizes:string[]}
-export function DesignControls({value,onChange,library,margin,stock,loadStock,busy}:{value:ProductDesign;onChange:(d:ProductDesign)=>void;library:boolean;margin:number;stock?:Stock|null;loadStock?:()=>void;busy?:boolean}){
+export type Stock={printer:string;product:string;variants:number;positions?:{position:string;variants:number;w:number;h:number}[];colors:{name:string;hex:string|null;light:boolean;variants:number}[];sizes:string[]}
+export type PicOption={id:string;name:string}
+export function DesignControls({value,onChange,library,margin,stock,loadStock,busy,pictures=[],uploadArt}:{value:ProductDesign;onChange:(d:ProductDesign)=>void;library:boolean;margin:number;stock?:Stock|null;loadStock?:()=>void;busy?:boolean;pictures?:PicOption[];uploadArt?:(f:File)=>Promise<ArtRef|null>}){
  const set=(p:Partial<ProductDesign>)=>onChange({...value,...p})
  const chips=<K extends string>(label:string,map:Record<K,string>,cur:K,pick:(k:K)=>void)=><div className="shop-design-row"><span className="desk-fine">{label}</span>
   <div className="desk-chips" role="radiogroup" aria-label={label}>{(Object.keys(map) as K[]).map(k=><button key={k} type="button" role="radio" aria-checked={cur===k} className="desk-chip min-h-tap" aria-current={cur===k} onClick={()=>pick(k)}>{map[k]}</button>)}</div></div>
  return <div className="shop-design">
-  {chips('Print on',SIDE_L,value.sides??'front',k=>set({sides:k}))}
+  {!value.areas&&chips('Print on',SIDE_L,value.sides??'front',k=>set({sides:k}))}
+  {!value.areas&&chips('Front placement',PLACE_L,value.place??'auto',k=>set({place:k}))}
+  {value.areas&&<p className="desk-fine">Printing on the areas chosen below. <button type="button" className="desk-chip min-h-tap" onClick={()=>set({areas:undefined})}>Back to the quick choice</button></p>}
   {chips('Print size (garments, bags)',SIZE_L,value.size??'auto',k=>set({size:k}))}
   {chips('Garment colours',SHADE_L,value.shades??'light',k=>set({shades:k,colors:undefined}))}
   {loadStock&&!stock&&<button type="button" className="desk-btn ghost min-h-tap" disabled={busy} onClick={loadStock}>Choose exact colours and sizes from the printer’s stock</button>}
@@ -28,6 +34,7 @@ export function DesignControls({value,onChange,library,margin,stock,loadStock,bu
    {stock.colors.length>0&&<div className="shop-row"><button type="button" className="desk-chip min-h-tap" onClick={()=>set({colors:stock.colors.filter(c=>c.light).map(c=>c.name)})}>All light</button><button type="button" className="desk-chip min-h-tap" onClick={()=>set({colors:stock.colors.filter(c=>!c.light).map(c=>c.name)})}>All dark</button><button type="button" className="desk-chip min-h-tap" onClick={()=>set({colors:undefined})}>Clear</button></div>}
    {stock.sizes.length>1&&<div className="desk-chips" role="group" aria-label="Sizes">{stock.sizes.map(z=>{const on=!value.sizes?.length||value.sizes.includes(z);return <button key={z} type="button" className="desk-chip min-h-tap" aria-pressed={on} aria-current={on}
     onClick={()=>{const cur=value.sizes?.length?value.sizes:stock.sizes;const next=on?cur.filter(x=>x!==z):[...cur,z];set({sizes:next.length===stock.sizes.length?undefined:next})}}>{z}</button>})}</div>}
+   {stock.positions&&stock.positions.length>0&&<AreasEditor value={value} onChange={onChange} stock={stock} pictures={pictures} uploadArt={uploadArt} library={library}/>}
    {(value.colors?.length??1)*(value.sizes?.length||stock.sizes.length)>100&&<p className="desk-fine shop-warn">Printify takes at most 100 colour-and-size combinations per product — the first 100 are used.</p>}
    {value.colors?.some(n=>!stock.colors.find(c=>c.name===n)?.light)&&library&&!value.cutout&&<p className="desk-fine shop-warn">Dark colours chosen: switch on “Remove background” unless the picture is already cut out.</p>}
   </div>}
@@ -56,5 +63,31 @@ export function CutoutPreview({file,onReady}:{file:File|null;onReady:(data:strin
   {on&&<label className="shop-field"><span>Strength — more removes more of the ground ({Math.round(share*100)}% removed)</span><input type="range" min={20} max={160} step={5} value={tol} onChange={e=>setTol(Number(e.target.value))}/></label>}
   {/* eslint-disable-next-line @next/next/no-img-element */}
   {url&&<img className="shop-cutout-img" src={url} alt="Preview of the picture as it will print" aria-busy={busy}/>}
+ </div>
+}
+
+/**
+ * EVERY PRINT AREA THE PRINTER OFFERS (owner, 13.11.2026: two different pictures front and back, a chest logo, all the options).
+ * Each area the product has at this printer can be switched on with its own picture, placement and size. Printify adds its own
+ * cost for each extra area, and the price follows it automatically (cost + margin).
+ */
+function AreasEditor({value,onChange,stock,pictures,uploadArt,library}:{value:ProductDesign;onChange:(d:ProductDesign)=>void;stock:Stock;pictures:PicOption[];uploadArt?:(f:File)=>Promise<ArtRef|null>;library:boolean}){
+ const areas=value.areas??{},setArea=(pos:string,a:AreaDesign|null)=>{const next={...areas};if(a)next[pos]=a;else delete next[pos];onChange({...value,areas:Object.keys(next).length?next:undefined})}
+ const [loading,setLoading]=useState<string|null>(null)
+ return <div className="shop-areas"><p className="desk-fine"><b>Print areas at this printer.</b> Each extra area adds the printer’s cost for it — the price follows automatically.</p>
+  {stock.positions!.map(ps=>{const a=areas[ps.position],on=!!a,artKey=a?.art?('library' in a.art?`lib:${a.art.library.id}`:'upload'):'main'
+   return <fieldset key={ps.position} className="shop-area" data-on={on?'1':'0'}><legend><label className="shop-switch"><input type="checkbox" checked={on} onChange={e=>setArea(ps.position,e.target.checked?{place:ps.position==='front'?'auto':'auto'}:null)}/><span>{posName(ps.position)} <small>({ps.w}×{ps.h}px{ps.variants<stock.variants?`, on ${ps.variants} of ${stock.variants} variants`:''})</small></span></label></legend>
+    {on&&<div className="shop-design">
+     <label className="shop-field"><span>Picture</span><select value={artKey} onChange={async e=>{const v=e.target.value
+      if(v==='main')setArea(ps.position,{...a,art:undefined});else if(v.startsWith('lib:')){const pic=pictures.find(x=>x.id===v.slice(4));if(pic)setArea(ps.position,{...a,art:{library:{id:pic.id,name:pic.name}}})}}}>
+      <option value="main">The product’s picture</option>{artKey==='upload'&&<option value="upload">{a!.art&&'upload' in a!.art?a!.art.upload.name:'Uploaded picture'}</option>}
+      {pictures.length>0&&<optgroup label="From the library">{pictures.map(pc=><option key={pc.id} value={`lib:${pc.id}`}>{pc.name}</option>)}</optgroup>}</select></label>
+     {uploadArt&&<label className="shop-field"><span>…or upload another picture for this area (a cut-out PNG reads best)</span><input type="file" accept="image/png,image/jpeg" disabled={!!loading} onChange={async e=>{const f=e.target.files?.[0];if(!f)return;setLoading(ps.position);const art=await uploadArt(f);setLoading(null);if(art)setArea(ps.position,{...a,art})}}/></label>}
+     {loading===ps.position&&<p className="desk-fine">Uploading…</p>}
+     <div className="desk-chips" role="radiogroup" aria-label="Placement">{(Object.keys(PLACE_L) as (keyof typeof PLACE_L)[]).map(k=><button key={k} type="button" role="radio" aria-checked={(a?.place??'auto')===k} className="desk-chip min-h-tap" aria-current={(a?.place??'auto')===k} onClick={()=>setArea(ps.position,{...a,place:k})}>{PLACE_L[k]}</button>)}</div>
+     <div className="desk-chips" role="radiogroup" aria-label="Size">{(Object.keys(SIZE_L) as (keyof typeof SIZE_L)[]).map(k=><button key={k} type="button" role="radio" aria-checked={(a?.size??'auto')===k} className="desk-chip min-h-tap" aria-current={(a?.size??'auto')===k} onClick={()=>setArea(ps.position,{...a,size:k})}>{SIZE_L[k]}</button>)}</div>
+     {(library||(a?.art&&'library' in a.art))&&<label className="shop-switch"><input type="checkbox" checked={!!a?.cutout} onChange={e=>setArea(ps.position,{...a,cutout:e.target.checked})}/><span>Remove background (library pictures)</span></label>}
+    </div>}
+   </fieldset>})}
  </div>
 }
