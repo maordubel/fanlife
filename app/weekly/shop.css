@@ -62,7 +62,9 @@
 .wks-clubgrid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
 .wks-clubtile { display: grid; grid-template-columns: 44px minmax(0, 1fr); align-items: center; gap: 10px; padding: 8px 10px; border: 3px solid var(--mag-ink); background: var(--mag-paper); color: var(--mag-ink); text-decoration: none; box-shadow: 3px 3px 0 var(--club); }
 .wks-clubtile[aria-current] { background: var(--club); color: var(--mag-paper); box-shadow: 3px 3px 0 var(--mag-ink); }
-.wks-clubtile b { display: block; font-size: 14px; line-height: 1.1; overflow-wrap: anywhere; }
+.wks-clubtile b { display: block; font-size: 13px; line-height: 1.1; overflow-wrap: normal; word-break: normal; hyphens: auto; }
+.wks-head .wk-banner { color: var(--mag-paper); }
+@media (max-width: 420px) { .wks-clubtile { grid-template-columns: minmax(0, 1fr); justify-items: start; gap: 6px; } }
 .wks-clubtile small { font-family: var(--mag-mono); font-size: 11px; opacity: .8; }
 .wks-roundel { inline-size: 44px; block-size: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--club); color: var(--mag-paper); border: 3px solid var(--mag-ink); font-family: var(--mag-mono); font-weight: 900; font-size: 14px; }
 .wks-clubtile[aria-current] .wks-roundel { background: var(--mag-paper); color: var(--club); }
