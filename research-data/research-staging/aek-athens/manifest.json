@@ -1,7 +1,7 @@
 {
  "club": "aek-athens",
- "snapshotAsOf": "2026-11-12",
- "researchVersion": 28,
+ "snapshotAsOf": "2026-11-13",
+ "researchVersion": 29,
  "approvedForProduction": 0,
  "counts": {
   "sources": 2,
@@ -11,7 +11,7 @@
  },
  "collection": {
   "schemaVersion": 1,
-  "runId": "2026-11-12T11-49-46-877Z-e3a11e",
+  "runId": "2026-11-13T11-14-08-603Z-fc7d97",
   "state": "partial_budget",
   "historicalOnly": true,
   "completeArchiveClaim": false,

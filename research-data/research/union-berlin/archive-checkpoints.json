@@ -7,13 +7,10 @@
   "parserVersion": "immerunioner-v1",
   "nextPage": 0,
   "lastCommittedPage": 0,
-  "observedTotalDocuments": 810,
+  "observedTotalDocuments": 814,
   "observedTotalPages": null,
   "perPage": 1,
   "queue": [
-   "/spieler.php?getid=212",
-   "/spieler.php?getid=44&zahl=1",
-   "/spieler.php?getid=41",
    "/spieler.php?getid=42",
    "/spieler.php?getid=43",
    "/spieler.php?getid=45",
@@ -703,7 +700,11 @@
    "/spieler.php?getid=209&zahl=0",
    "/spieler.php?getid=206&zahl=1",
    "/spieler.php?getid=207&zahl=1",
-   "/spieler.php?getid=210&zahl=1"
+   "/spieler.php?getid=210&zahl=1",
+   "/spieler.php?getid=212&zahl=1",
+   "/spieler.php?getid=44&zahl=0",
+   "/spieler.php?getid=41&zahl=1",
+   "/spieler.php?getid=40"
   ],
   "seen": [
    "/listen.php",
@@ -822,10 +823,13 @@
    "/spieler.php?getid=209&zahl=1",
    "/spieler.php?getid=206",
    "/spieler.php?getid=207",
-   "/spieler.php?getid=210"
+   "/spieler.php?getid=210",
+   "/spieler.php?getid=212",
+   "/spieler.php?getid=44&zahl=1",
+   "/spieler.php?getid=41"
   ],
   "state": "partial_budget",
-  "updatedAt": "2026-11-12T11:52:23.601Z",
+  "updatedAt": "2026-11-13T11:16:01.648Z",
   "lastError": null
  },
  "union-official:html": {
@@ -844,7 +848,7 @@
    "/de/fussball/profis-maenner/saisonarchiv-maenner-kOKT?league=01938ba8-e83f-7ac5-a848-1ca5c29f77b9&season=01938ba9-27c0-731d-a3fd-c36f0ec9ddb0"
   ],
   "state": "listed",
-  "updatedAt": "2026-11-12T11:52:25.143Z",
+  "updatedAt": "2026-11-13T11:16:03.841Z",
   "lastError": null
  },
  "dfb-union:html": {
@@ -863,7 +867,7 @@
    "/en/clubs/1-fc-union-berlin"
   ],
   "state": "retry-later",
-  "updatedAt": "2026-11-12T11:52:31.592Z",
+  "updatedAt": "2026-11-13T11:16:03.841Z",
   "lastError": "HTTP 500"
  },
  "footballhistory-union:html": {
@@ -882,7 +886,7 @@
    "/club/union-berlin.html"
   ],
   "state": "listed",
-  "updatedAt": "2026-11-12T11:52:32.742Z",
+  "updatedAt": "2026-11-13T11:16:04.974Z",
   "lastError": null
  }
 }

@@ -8,11 +8,11 @@
   "sourceFamilyId": "millernton-editorial",
   "scope": "mixed",
   "access": "available",
-  "checkedAt": "2026-11-12",
-  "retrievedAt": "2026-11-12T11:52:06.117Z",
+  "checkedAt": "2026-11-13",
+  "retrievedAt": "2026-11-13T11:15:51.965Z",
   "collected": {
-   "documents": 2945,
-   "observedTotalDocuments": 4455,
+   "documents": 3020,
+   "observedTotalDocuments": 4456,
    "state": "partial_budget",
    "parser": null
   },
@@ -29,10 +29,10 @@
   "sourceFamilyId": "millernton-editorial",
   "scope": "mixed",
   "access": "available",
-  "checkedAt": "2026-11-12",
-  "retrievedAt": "2026-11-12T11:52:06.117Z",
+  "checkedAt": "2026-11-13",
+  "retrievedAt": "2026-11-13T11:15:51.965Z",
   "collected": {
-   "documents": 2945,
+   "documents": 3020,
    "observedTotalDocuments": 20,
    "state": "listed",
    "parser": null
@@ -50,8 +50,8 @@
   "sourceFamilyId": "fcstpauli-museum",
   "scope": "club-history",
   "access": "available",
-  "checkedAt": "2026-11-12",
-  "retrievedAt": "2026-11-12T11:52:06.117Z",
+  "checkedAt": "2026-11-13",
+  "retrievedAt": "2026-11-13T11:15:51.965Z",
   "collected": {
    "documents": 60,
    "observedTotalDocuments": 31,
@@ -71,8 +71,8 @@
   "sourceFamilyId": "fcstpauli-museum",
   "scope": "club-history",
   "access": "available",
-  "checkedAt": "2026-11-12",
-  "retrievedAt": "2026-11-12T11:52:06.117Z",
+  "checkedAt": "2026-11-13",
+  "retrievedAt": "2026-11-13T11:15:51.965Z",
   "collected": {
    "documents": 60,
    "observedTotalDocuments": 29,
