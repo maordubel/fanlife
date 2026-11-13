@@ -294,6 +294,9 @@ class Film:
         cid = self.id('tk')
         self.clip(cid, t, d, f'<div class="ticket{" tc" if s.get("compact") else ""}"><small style="color:{self.US}">{e(s["small"])}</small><b>{e(s["big"])}</b><span>{e(s.get("line", ""))}</span></div>', 9, '' if s.get('compact') else 'paper')
         self.tween(f'tl.fromTo("#{cid} .ticket",{{rotation:-6,scale:0.6,opacity:0}},{{rotation:-2,scale:1,opacity:1,duration:0.35,ease:"back.out(2)"}},{r2(t)});')
+        if d > 1.0:   # the card keeps turning very slowly and its lines open: a chapter card measured under the motion floor (qa.MOTION_FLOOR) when it only crept
+            self.tween(f'tl.fromTo("#{cid} .ticket",{{rotation:-2}},{{rotation:{-2 + 0.9 * min(d, 4):.2f},duration:{r2(d - 0.4)},ease:"none",immediateRender:false}},{r2(t + 0.4)});'
+                       f'tl.fromTo("#{cid} .ticket small",{{letterSpacing:"10px"}},{{letterSpacing:"{10 + 3 * min(d, 4):.0f}px",duration:{r2(d)},ease:"none"}},{r2(t)});')
 
     def lead(self, s, t, d):
         cid = self.id('ld')
@@ -377,11 +380,15 @@ class Film:
         line = cut is not False   # `cut: False` draws no line: where the drop sat is a claim the adapter's rows do not make
         cut = cut if line else -1
         hl = s.get('highlight')
+        mark = s.get('mark')   # a second row told apart in ink (the other side of the story), never in a colour the palette does not hold
+        # a row may carry its points: ['PANATHINAIKOS', 83] — printed as the record gives them, in place of the grey bar
+        cell = lambda r: (e(r[0]), f'<b class="pt">{e(r[1])}</b>') if isinstance(r, (list, tuple)) else (e(r), '<b></b>')  # noqa: E731
         html_rows = ''.join(
-            f'<div class="tr{" hl" if i == hl else ""}" id="{cid}r{i}"><i>{i + 1}</i><span>{e(r)}</span><b></b></div>'
+            f'<div class="tr{" lit" if i == hl else " mk" if i == mark else ""}" id="{cid}r{i}"><i>{i + 1}</i><span>{cell(r)[0]}</span>{cell(r)[1]}</div>'
             + (f'<div class="drop" id="{cid}line"><em>{e(s.get("line_label", "RELEGATION"))}</em></div>' if i == cut - 1 else '')
             for i, r in enumerate(rows))
-        self.clip(cid, t, d, f'<div class="tbw" id="{cid}w"><div class="tbl">{html_rows}</div></div>', 9, 'paper')
+        zoom = f' style="transform:scale({float(s["zoom"])});transform-origin:50% 0"' if s.get('zoom') else ''   # a short table (the top of one) is drawn larger
+        self.clip(cid, t, d, f'<div class="tbw" id="{cid}w"><div class="tbl"{zoom}>{html_rows}</div></div>', 9, 'paper')
         for i in range(len(rows)):
             self.tween(f'tl.fromTo("#{cid}r{i}",{{x:-60,opacity:0}},{{x:0,opacity:1,duration:0.25,ease:"power2.out"}},{r2(t + 0.15 + 0.06 * i)});')
         if line:
@@ -404,6 +411,9 @@ class Film:
                   + (f'<small style="color:{fg}">{e(s["small"])}</small>' if s.get('small') else '') + '</div>', s.get('z', 15))
         self.tween(f'tl.fromTo("#{cid} .word b",{{scale:3,opacity:0}},{{scale:1,opacity:1,duration:0.18,ease:"power4.in"}},{r2(t + s.get("at", 0))});'
                    f'tl.fromTo("#{cid} .word",{{scale:1.04}},{{scale:1,duration:0.5,ease:"power2.out",immediateRender:false}},{r2(t + s.get("at", 0) + 0.18)});')
+        if d > 0.9:   # the type keeps pushing in for as long as it holds: a flat card with still letters measured as a dead shot (qa.MOTION_FLOOR)
+            self.tween(f'tl.fromTo("#{cid} .word b",{{scale:1}},{{scale:{1 + 0.022 * min(d, 6):.4f},duration:{r2(d - 0.2)},ease:"none",immediateRender:false}},{r2(t + 0.2)});'
+                       f'tl.fromTo("#{cid} .word small",{{letterSpacing:"10px"}},{{letterSpacing:"{10 + 3 * min(d, 6):.0f}px",duration:{r2(d)},ease:"none"}},{r2(t)});')
         if s.get('glitch'):
             self.tween(f'tl.fromTo("#{cid} .word b",{{textShadow:"-14px 0 {self.US}, 14px 0 #3ad"}},{{textShadow:"0 0 transparent, 0 0 transparent",duration:0.35,ease:"power2.out"}},{r2(t + s.get("at", 0) + 0.18)});')
 
@@ -411,9 +421,10 @@ class Film:
         """Two places, two halves, a jagged line between them."""
         cid = self.id('ct')
         a, b = s['a'], s['b']
-        inner = (f'<div class="cty"><div class="cl" style="background:{a.get("bg", self.US)}"><small>{e(a.get("small", ""))}</small><b>{e(a["name"])}</b>'
+        size = lambda x: f' style="font-size:{int(x["size"])}px"' if x.get('size') else ''   # noqa: E731 — a long name is set smaller, never cut by the half's edge
+        inner = (f'<div class="cty"><div class="cl" style="background:{a.get("bg", self.US)}"><small>{e(a.get("small", ""))}</small><b{size(a)}>{e(a["name"])}</b>'
                  + (f'<img src="assets/img/{e(a["crest"])}">' if a.get('crest') else '') + '</div>'
-                 f'<div class="cr" style="background:{b.get("bg", self.US)}"><small>{e(b.get("small", ""))}</small><b>{e(b["name"])}</b>'
+                 f'<div class="cr" style="background:{b.get("bg", self.US)}"><small>{e(b.get("small", ""))}</small><b{size(b)}>{e(b["name"])}</b>'
                  + (f'<img src="assets/img/{e(b["crest"])}">' if b.get('crest') else '') + '</div>'
                  f'<svg class="bolt" viewBox="0 0 1920 1080"><path id="{cid}z" d="M960 40 L1010 260 L900 420 L1030 600 L910 780 L980 1040" fill="none" stroke="{self.PAPER}" stroke-width="18" stroke-linejoin="bevel"/></svg>'
                  + (f'<div class="ctmid">{e(s["mid"])}</div>' if s.get('mid') else '') + '</div>')
@@ -440,11 +451,18 @@ class Film:
             ball, path = (1390, 610), 'M1390 610 C1560 380 1700 430 1812 505'
             wall = ''.join(f'<rect x="1468" y="{y}" width="26" height="26" fill="{self.THEM if s.get("attack") == "us" else self.US}" transform="rotate(45 1481 {y + 13})"/>' for y in (520, 556, 592))
             marks = f'<text x="1330" y="690" class="chx" fill="{P}">X</text>{wall}'
+        elif play == 'cross':   # a free kick from the right flank, crossed to a head in the six-yard area, headed in (two legs)
+            ball, path = (1420, 860), 'M1420 860 C1540 700 1640 610 1690 560'
+            marks = (f'<text x="1362" y="940" class="chx" fill="{P}">X</text>'
+                     + ''.join(f'<circle cx="{x}" cy="{y}" r="16" fill="none" stroke="{P}" stroke-width="5"/>' for x, y in ((1640, 470), (1600, 600), (1730, 610))))
         else:   # corner from the top right
             ball, path = (1795, 128), 'M1795 128 C1640 220 1620 420 1660 520 L1812 540'
             marks = ''.join(f'<circle cx="{x}" cy="{y}" r="16" fill="none" stroke="{P}" stroke-width="5"/>' for x, y in ((1600, 470), (1640, 600), (1560, 560)))
         col = self.US if s.get('attack', 'them') == 'us' else self.THEM
         pitch = pitch.replace('/>', ' pathLength="1"/>')
+        if play == 'cross':   # the header's own line and the ring where the ball is met (drawn after the cross lands)
+            marks += (f'<path id="{cid}h" d="M1690 560 L1812 540" fill="none" stroke="{col}" stroke-width="11" stroke-linecap="round" stroke-dasharray="130" stroke-dashoffset="130"/>'
+                      f'<g id="{cid}k" opacity="0"><circle cx="1690" cy="560" r="30" fill="none" stroke="#fff" stroke-width="7"/></g>')
         inner = (f'<div class="chk"><svg viewBox="0 0 1920 1080" class="chs">{pitch}{marks}'
                  f'<path id="{cid}p" d="{path}" fill="none" stroke="{col}" stroke-width="9" stroke-dasharray="22 14" stroke-linecap="round"/>'
                  f'<circle id="{cid}b" cx="{ball[0]}" cy="{ball[1]}" r="17" fill="#fff"/></svg>'
@@ -458,6 +476,18 @@ class Film:
         g = s.get('go', 2.0)
         go = t + (d + g if g < 0 else g)
         self.sound('kick', go, 0.6, 0.9)
+        if play == 'cross':
+            # the cross first, then — after a held half-second at the head — the header: a second pen line into the net
+            hd = go + 0.9 + s.get('hang', 0.5)
+            self.tween(f'tl.fromTo("#{cid}p",{{clipPath:"inset(0 100% 0 0)"}},{{clipPath:"inset(0 0% 0 0)",duration:0.9,ease:"power1.inOut"}},{r2(go)});'
+                       f'tl.fromTo("#{cid}b",{{attr:{{cx:{ball[0]},cy:{ball[1]}}}}},{{attr:{{cx:1690,cy:560}},duration:0.9,ease:"power1.inOut",immediateRender:false}},{r2(go)});'
+                       f'tl.fromTo("#{cid}k",{{attr:{{opacity:0}}}},{{attr:{{opacity:1}},duration:0.3,ease:"power2.out"}},{r2(go + 0.8)});'
+                       f'tl.fromTo("#{cid}h",{{strokeDashoffset:130}},{{strokeDashoffset:0,duration:0.22,ease:"power2.in"}},{r2(hd)});'
+                       f'tl.fromTo("#{cid}b",{{attr:{{cx:1690,cy:560}}}},{{attr:{{cx:1812,cy:540}},duration:0.22,ease:"power2.in",immediateRender:false}},{r2(hd)});'
+                       f'tl.fromTo("#{cid} .chl",{{scale:2.2,opacity:0}},{{scale:1,opacity:1,duration:0.2,ease:"power4.in"}},{r2(hd + 0.3)});')
+            self.sound('kick', hd, 0.6, 0.9)
+            self.tween(f'tl.fromTo("#{cid} .chs",{{scale:1,transformOrigin:"1690px 560px"}},{{scale:{1 + 0.02 * min(d, 8):.3f},duration:{r2(d)},ease:"none"}},{r2(t)});')   # the board pushes toward the goal the whole time
+            return
         self.tween(f'tl.fromTo("#{cid}p",{{clipPath:"inset(0 100% 0 0)"}},{{clipPath:"inset(0 0% 0 0)",duration:0.7,ease:"power2.in"}},{r2(go)});'
                    f'tl.fromTo("#{cid}b",{{attr:{{cx:{ball[0]},cy:{ball[1]}}}}},{{attr:{{cx:1812,cy:{540 if play != "freekick" else 505}}},duration:0.7,ease:"power2.in",immediateRender:false}},{r2(go)});'
                    f'tl.fromTo("#{cid} .chl",{{scale:2.2,opacity:0}},{{scale:1,opacity:1,duration:0.2,ease:"power4.in"}},{r2(go + 0.75)});')
@@ -478,7 +508,8 @@ class Film:
             at = t + s.get('bracket_at', 0.6 + step * len(s['results']))
             sel = ','.join(f'#{cid}t{i}' for i in range(a, z + 1))
             others = ','.join(f'#{cid}t{i}' for i in range(len(s['results'])) if not a <= i <= z)
-            self.tween(f'tl.to("{others}",{{opacity:0.25,duration:0.4}},{r2(at)});'
+            # a bracket over the whole strip leaves no tile outside it: GSAP throws on an empty selector and the page loses every tween after it
+            self.tween((f'tl.to("{others}",{{opacity:0.25,duration:0.4}},{r2(at)});' if others else '') +
                        f'tl.to("{sel}",{{y:-14,duration:0.3,ease:"back.out(3)",stagger:0.05}},{r2(at)});'
                        f'tl.fromTo("#{cid}b",{{opacity:0,y:20}},{{opacity:1,y:0,duration:0.4}},{r2(at + 0.4)});')
 
@@ -609,8 +640,45 @@ class Film:
         size = 132 if len(s['words']) <= 5 else 104 if len(s['words']) <= 9 else 78
         who = f'<small>{e(s["who"])}</small>' if s.get('who') else ''
         self.clip(cid, t, d, f'<div class="kv" id="{cid}v"></div><div class="kn{" kq" if s.get("quote") else ""}" id="{cid}b" style="font-size:{size}px">{spans}{who}</div>', s.get('z', 14))
-        self.tween(f'tl.fromTo("#{cid}v",{{opacity:0}},{{opacity:{s.get("veil", 0.58)},duration:0.35,ease:"power1.out"}},{r2(t)});'
+        # a line that starts WITH its beat brings its veil in on the cut: a veil fading over a picture that has just cut in bright read as a flash (qa.FLASH_RISE)
+        self.tween(f'tl.fromTo("#{cid}v",{{opacity:{s.get("veil", 0.58) if s.get("on_cut") else 0}}},{{opacity:{s.get("veil", 0.58)},duration:0.35,ease:"power1.out"}},{r2(t)});'
                    f'tl.fromTo("#{cid}b",{{y:18}},{{y:-18,duration:{r2(d)},ease:"none"}},{r2(t)});')
+
+    def locator(self, s, t, d):
+        """A SCHEMATIC of where a ground sits in its city — drawn in code, labelled as not to scale, and never passed off
+        as a map: a ring for the centre, a pin at a compass bearing from it, the pen joining them. `bearing` in degrees
+        clockwise from north; the storyboard gives only what its sources say (a suburb north-west of the centre)."""
+        import math
+        cid = self.id('lc')
+        cx, cy, r = 1060.0, 640.0, 150.0
+        a = math.radians(s.get('bearing', 315))
+        px, py = cx + 430 * math.sin(a), cy - 430 * math.cos(a)
+        ring = [(cx + r * math.cos(k * math.pi / 12), cy + r * math.sin(k * math.pi / 12)) for k in range(25)]
+        streets = ''.join(self.pen([(cx + (r + 40) * math.cos(b), cy + (r + 40) * math.sin(b)), (cx + 760 * math.cos(b), cy + 560 * math.sin(b))], t + 0.5 + 0.08 * k, 0.5, 4)
+                          for k, b in enumerate(math.radians(x) for x in (20, 75, 140, 180, 290, 330)))
+        inner = (streets + self.pen(ring, t + 0.2, 0.7, 8)
+                 + self.pen([(cx + r * math.sin(a), cy - r * math.cos(a)), (px, py)], t + 1.3, 0.7, 10, self.US)
+                 + f'<small class="xpt">{e(s.get("title", ""))}</small>'
+                 f'<span class="lcc" style="left:{cx - 200:.0f}px;top:{cy - 40:.0f}px">{e(s["centre"])}</span>'
+                 f'<div class="lcp" id="{cid}p" style="left:{px:.0f}px;top:{py:.0f}px"><i style="background:{self.US}"></i><b>{e(s["place"])}</b><span>{e(s.get("small", ""))}</span></div>'
+                 f'<span class="lcn">N ↑</span><span class="lcs">SCHEMATIC · NOT TO SCALE</span>')
+        self.clip(cid, t, d, f'<div class="xpb" id="{cid}b">{inner}</div>', s.get('z', 9), 'paper')
+        self.tween(f'tl.fromTo("#{cid}p",{{scale:0,opacity:0}},{{scale:1,opacity:1,duration:0.35,ease:"power3.out"}},{r2(t + 1.9)});'
+                   # the board's camera travels from the centre toward the pin the whole time (never a dead frame)
+                   f'tl.fromTo("#{cid}b",{{scale:1,x:0,y:0}},{{scale:{1 + 0.03 * min(d, 8):.3f},x:{(cx - px) * 0.08:.0f},y:{(cy - py) * 0.08:.0f},duration:{r2(d)},ease:"none"}},{r2(t)});')
+        self.cams.append({'t': r2(t), 'd': r2(d), 'move': 'rack', 'ci': 0.5})
+
+    def ident(self, s, t, d):
+        """The channel's ident, drawn — for a film rendered where the owner's opening video (studio/intros.py) cannot be
+        fetched: the mark, the channel's name, one line travelling under it. It never stands still and never flashes."""
+        cid = self.id('idn')
+        self.clip(cid, t, d, f'<div class="idn" id="{cid}b"><img src="assets/img/fanlife.png"><b>FOOTBALL STORIES</b><small>{e(s.get("line", "A FAN LIFE FILM"))}</small>'
+                             f'<i id="{cid}l" style="background:{self.US}"></i></div>', 13, 'ink')
+        self.tween(f'tl.fromTo("#{cid}b img",{{scale:0.6,opacity:0}},{{scale:1,opacity:1,duration:0.5,ease:"power3.out"}},{r2(t)});'
+                   f'tl.fromTo("#{cid}b b",{{y:40,opacity:0}},{{y:0,opacity:1,duration:0.4,ease:"power2.out"}},{r2(t + 0.35)});'
+                   f'tl.fromTo("#{cid}b small",{{opacity:0}},{{opacity:1,duration:0.4}},{r2(t + 0.7)});'
+                   f'tl.fromTo("#{cid}l",{{scaleX:0}},{{scaleX:1,duration:{r2(max(0.6, d - 0.5))},ease:"power1.inOut",transformOrigin:"left center"}},{r2(t + 0.3)});'
+                   f'tl.fromTo("#{cid}b",{{scale:1}},{{scale:{1 + 0.03 * d:.3f},duration:{r2(d)},ease:"none"}},{r2(t)});')
 
     def lights(self, s, t, d):
         """The ground after the night: the picture darkens and the floodlights go out, one tower at a time."""
@@ -654,8 +722,12 @@ class Film:
 
     def end(self, s, t, d):
         cid = self.id('end')
-        self.clip(cid, t, d, f'<div class="end"><img src="assets/img/fanlife.png"><small>FAN LIFE · FOOTBALL STORIES</small><b>{e(s["title"])}</b><span>{e(s.get("line", ""))}</span></div>', 13, 'ink')
-        self.tween(f'tl.fromTo("#{cid} .end",{{opacity:0,y:30}},{{opacity:1,y:0,duration:0.6,ease:"power2.out"}},{r2(t)});')
+        self.clip(cid, t, d, f'<div class="end"><img src="assets/img/fanlife.png"><small>FAN LIFE · FOOTBALL STORIES</small><b>{e(s["title"])}</b><span>{e(s.get("line", ""))}</span>'
+                             f'<i class="endl" id="{cid}l" style="background:{self.US}"></i></div>', 13, 'ink')
+        self.tween(f'tl.fromTo("#{cid} .end",{{opacity:0,y:30}},{{opacity:1,y:0,duration:0.6,ease:"power2.out"}},{r2(t)});'
+                   # the last card is on screen for YouTube's end screen: a line travels under it and the mark grows, so it is never a dead frame
+                   f'tl.fromTo("#{cid}l",{{scaleX:0}},{{scaleX:1,duration:{r2(max(0.5, d - 0.3))},ease:"none",transformOrigin:"left center"}},{r2(t + 0.3)});'
+                   f'tl.fromTo("#{cid} .end img",{{scale:1}},{{scale:{1 + 0.03 * min(d, 8):.3f},duration:{r2(d)},ease:"none"}},{r2(t)});')
 
     # ── assembly ────────────────────────────────────────────────────────────────────────────────────────────────────
     def transition(self, name: str, T: float, into: list[dict], out: list[dict]):
@@ -833,7 +905,7 @@ video.clip{{width:1920px;height:1080px}}
 .btn{{position:relative;margin-top:34px;height:96px;color:#fff;font:700 52px/96px 'Cond';letter-spacing:6px;text-align:center;box-shadow:8px 8px 0 {INK}}} .btn span{{position:absolute;left:0;right:0}} .b2{{opacity:0}}
 .tbw{{position:absolute;left:460px;top:60px;width:1000px;transform-origin:50% 0}} .tbl{{background:#fff;border:6px solid {INK};box-shadow:16px 16px 0 {INK}}}
 .tr{{display:flex;align-items:center;height:46px;border-bottom:2px solid rgba(20,17,13,.25);font:700 30px 'Caps';color:{INK}}} .tr i{{width:80px;text-align:center;font:400 34px 'Ultra';font-style:normal}} .tr span{{flex:1}} .tr b{{width:240px;height:18px;margin-right:30px;background:rgba(20,17,13,.18)}}
-.tr.hl{{background:{US};color:#fff}} .drop{{position:relative;height:10px;background:#D7192A}} .drop em{{position:absolute;right:20px;top:-42px;font:700 30px 'Cond';letter-spacing:6px;color:#D7192A;font-style:normal}}
+.tr.lit{{background:{US};color:#fff}} .drop{{position:relative;height:10px;background:#D7192A}} .drop em{{position:absolute;right:20px;top:-42px;font:700 30px 'Cond';letter-spacing:6px;color:#D7192A;font-style:normal}}
 .word{{position:absolute;left:0;top:0;width:1920px;height:1080px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}}
 .word b{{font-family:'Ultra';font-weight:400;line-height:0.95;letter-spacing:2px}} .word small{{font:700 46px 'Caps';letter-spacing:10px;margin-top:34px}}
 .cty{{position:absolute;left:0;top:0;width:1920px;height:1080px;display:flex;overflow:hidden}} .cl,.cr{{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;gap:14px}}
@@ -859,6 +931,15 @@ video.clip{{width:1920px;height:1080px}}
 .fg{{display:grid;gap:12px;margin-top:40px}} .ft{{height:96px;display:flex;align-items:center;justify-content:center;color:#fff;font:400 52px 'Ultra';border:4px solid {INK};box-shadow:6px 6px 0 {INK}}}
 .fbr{{margin-top:44px;text-align:left}}
 .fbr span{{display:inline-block;margin-top:14px;background:{INK};color:#fff;font:700 40px 'Caps';letter-spacing:4px;padding:8px 22px}}
+.tr b.pt{{background:none;height:auto;width:120px;text-align:right;font:400 34px 'Ultra'}} .tr.mk{{background:{INK};color:{P}}}
+.lcc{{position:absolute;width:400px;text-align:center;font:400 40px/1.05 'Ultra'}} .lcn{{position:absolute;left:1640px;top:150px;font:700 44px 'Cond';letter-spacing:4px}}
+.lcs{{position:absolute;left:250px;top:880px;font:700 26px 'Mono';opacity:.7;letter-spacing:2px}}
+.lcp{{position:absolute;width:0;height:0}} .lcp i{{position:absolute;left:-22px;top:-22px;width:44px;height:44px;border-radius:50%;border:6px solid {INK}}}
+.lcp b{{position:absolute;left:-640px;top:-120px;width:620px;text-align:right;font:400 60px/1 'Ultra';white-space:nowrap}} .lcp span{{position:absolute;left:-640px;top:-52px;width:620px;text-align:right;font:700 30px 'Cond';letter-spacing:4px;white-space:nowrap}}
+.idn{{position:absolute;left:0;top:210px;width:1920px;text-align:center;color:{P}}} .idn img{{width:300px;height:300px}} .idn b{{display:block;font:400 110px/1.1 'Ultra';letter-spacing:6px;color:#fff;margin-top:18px}}
+.idn small{{display:block;font:700 38px 'Cond';letter-spacing:12px;margin-top:14px}} .idn i{{display:block;width:640px;height:10px;margin:28px auto 0}}
+.endl{{display:block;width:900px;height:10px;margin:30px auto 0}}
+.chm{{position:absolute;left:44px;top:30px;width:84px;height:84px;opacity:.9}}
 #flash{{position:absolute;left:0;top:0;width:1920px;height:1080px;background:{INK};opacity:0;z-index:30}}
 '''
         if not self.sb.get('silent'):
@@ -904,8 +985,11 @@ def resolve_music(music: list[dict], beats: list[dict], D: float) -> list[dict]:
     return out
 
 
-def speak(beats: list[dict], out: Path, voice: str = 'bm_george', speed: float = 0.92) -> dict[str, float]:
-    """The narrator: Kokoro (free, Apache-2.0), the same voice the studio's PIL engine uses by default."""
+def speak(beats: list[dict], out: Path, voice: str = 'bm_george', speed: float = 0.92, names: dict | None = None) -> dict[str, float]:
+    """The narrator: Kokoro (free, Apache-2.0), the same voice the studio's PIL engine uses by default. With `names`
+    (the storyboard's `pronounce`: {} or the film's own overrides) every name goes through the studio's lexicon
+    (studio/pronounce.py) — AEK as the owner decided, the Greek names as a prepared commentator says them; a beat's
+    own `say` still wins."""
     import soundfile as sf
     from kokoro_onnx import Kokoro
     import os
@@ -917,7 +1001,12 @@ def speak(beats: list[dict], out: Path, voice: str = 'bm_george', speed: float =
         if not b.get('vo'):
             continue
         f = f'l{i:03d}.wav'
-        a, sr = k.create(b.get('say', b['vo']), voice=voice, speed=speed, lang='en-gb')
+        if names is not None and not b.get('say'):
+            from .. import pronounce as P
+            ph, _ = P.phonemes(b['vo'], P.Pronouncer(names), k)
+            a, sr = k.create(ph, voice=voice, speed=speed, lang='en-gb', is_phonemes=True)
+        else:
+            a, sr = k.create(b.get('say', b['vo']), voice=voice, speed=speed, lang='en-gb')
         sf.write(out / f, a, sr)
         durs[f] = round(len(a) / sr, 3)
     return durs
@@ -942,6 +1031,79 @@ def check(sb: dict, beats: list[dict], D: float) -> list[str]:
     return errs
 
 
+def edited(sb: dict, beats: list[dict], root: Path) -> list[dict]:
+    """A HAND-WRITTEN storyboard cut by the studio's own editor (`"edit": true` — the model film, docs/fanlife/74): the
+    writer gives each beat its `meta` (type, chapter, emotion, intensity) and the editor does what it does for the
+    pipeline's films — no still past MAX_STILL, a transition into every beat, a named camera move by the emotion, a
+    chapter that ends on its turn. The cut, its errors and the language mix are written beside the page
+    (`docu-shots.json`), where the producer's gate (studio/qa.experience) reads them. Word starts are the line's words
+    spread over its voice by their length — Kokoro gives no timings — so a cut still lands near a word."""
+    from . import editor as E
+    from . import explainer as X
+    for i, b in enumerate(beats):
+        m = b.setdefault('meta', {})
+        m.setdefault('n', i)
+        m.setdefault('type', 'chapter' if any(x['kind'] == 'ticket' for x in b['shots']) else 'illustration')
+        m.setdefault('chapter', 0)
+        if b.get('vo') and not m.get('words'):
+            ws = b['vo'].split()
+            total, at, out = sum(len(w) + 1 for w in ws) or 1, b['vo_t'], []
+            for w in ws:
+                out.append(round(at, 3))
+                at += b['vo_d'] * (len(w) + 1) / total
+            m['words'] = out
+    pics: dict = {}
+    for b in beats:   # a long hold's fourth look is another picture of the same chapter, as the adapter's `related` gives one
+        for x in b['shots']:
+            if x['kind'] == 'image' and x.get('as') != 'print':
+                pics.setdefault(b['meta']['chapter'], []).append(x['src'])
+    by_n = {b['meta']['n']: b for b in beats}
+
+    on: dict = {}   # picture → the beats it is on (the gate lets a picture stand on two: qa.MAX_ASSET_SHOTS)
+    for b in beats:
+        for x in b['shots']:
+            if x.get('src'):
+                on.setdefault(x['src'], set()).add(b['meta']['n'])
+
+    def related(n, i):
+        own = {x.get('src') for x in by_n[n]['shots']}
+        pool = [p for p in dict.fromkeys(pics.get(by_n[n]['meta']['chapter'], [])) if p not in own and len(on.get(p, ())) < 2]
+        if not pool:
+            return None
+        pick = pool[(n + i) % len(pool)]
+        on.setdefault(pick, set()).add(n)
+        return pick
+
+    # the language mix, as the adapter keeps it (plan.Adapter.punch_up): while more of the film than PLAIN_MAX is plain
+    # art, the art-only beats — the most intense first — say their one short sentence as kinetic type, on the voice
+    for b in beats:
+        b['lang'] = X.languages(b['shots'], b['d'])
+    todo = sorted((b for b in beats if b['meta']['type'] not in ('end', 'follow', 'chapter') and b.get('vo') and b['lang']['documentary'] >= 0.6 * b['d'] and not b['meta'].get('plain')
+                   and not any(x['kind'] == 'kinetic' for x in b['shots'])),
+                  key=lambda b: (-(b['meta'].get('intensity') or 0.5), -b['lang']['documentary'], b['meta']['n']))
+    for b in todo:
+        if X.mix(beats)['documentary'] <= X.PLAIN_MAX:
+            break
+        k = X.punch(b['vo'], b['meta']['words'], b['t'], b['d'])
+        busy = X.spans(b['shots'], b['d'], X.EXPLAIN_KINDS | X.KINETIC_KINDS)
+        if k and not any(a < k['dt'] + k['d'] and k['dt'] < z for a, z in busy):
+            if b['d'] - (k['dt'] + k['d']) < 1.0:   # a line that would leave just before the cut stays to it: its veil lifting and the cut landing read as a flash (rule 142; qa.FLASH_RISE)
+                k['d'] = round(b['d'] - k['dt'], 3)
+            if k['dt'] < 0.5:
+                lead = k['dt']
+                k['d'], k['dt'], k['on_cut'] = round(k['d'] + lead, 3), 0.0, True
+                for w in k['words']:
+                    w['at'] = round(w['at'] + lead, 3)
+            b['shots'].append(k)
+            b['lang'] = X.languages(b['shots'], b['d'])
+    out = E.cut(beats, None, related, None, None, None)
+    for b in out:
+        lg = b['lang'] = X.languages(b['shots'], b['d'])
+        b['language'] = max(lg, key=lambda k: (lg[k], k == 'documentary'))
+    (root / 'docu-shots.json').write_text(json.dumps({'shots': E.shot_list(out), 'errors': E.errors(out), 'mix': X.mix(out)}, indent=1, ensure_ascii=False))
+    return out
+
+
 def build(storyboard: Path, assets: Path, root: Path, voice: bool = True) -> tuple[Path, float]:
     sb = json.loads(storyboard.read_text())
     root.mkdir(parents=True, exist_ok=True)
@@ -961,9 +1123,11 @@ def build(storyboard: Path, assets: Path, root: Path, voice: bool = True) -> tup
             subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', str(src), '-ac', '2', '-ar', '48000', str(dst)], check=True)
     vo_dir = root / 'assets' / 'vo'
     cache = vo_dir / 'durations.json'
-    durs = speak(sb['beats'], vo_dir, sb.get('voice', 'bm_george')) if voice or not cache.exists() else json.loads(cache.read_text())
+    durs = speak(sb['beats'], vo_dir, sb.get('voice', 'bm_george'), names=sb.get('pronounce')) if voice or not cache.exists() else json.loads(cache.read_text())
     cache.write_text(json.dumps(durs))
     beats = timeline(sb['beats'], durs)
+    if sb.get('edit'):
+        beats = edited(sb, beats, root)
     f = Film(sb, root)
     f.agg_moves = []
     D = f.build(beats)
@@ -973,6 +1137,9 @@ def build(storyboard: Path, assets: Path, root: Path, voice: bool = True) -> tup
             src = MUSIC / m['file']
             shutil.copyfile(src, root / 'assets' / 'music' / src.name)
         f.music(resolve_music(sb['music'], beats, D))
+    if sb.get('mark'):   # the channel's mark in a corner for the whole film (docs/fanlife/74): small, still, under the type
+        t0 = beats[1]['t'] if len(beats) > 1 else 0.0
+        f.clip('chmark', t0, max(0.5, beats[-1]['t'] - t0), '<img class="chm" src="assets/img/fanlife.png">', 18)
     errs = check(sb, beats, D)
     (root / 'index.html').write_text(f.page(D), encoding='utf-8')
     (root / 'hyperframes.json').write_text(json.dumps({'name': sb.get('slug', 'docu'), 'width': W, 'height': H, 'fps': 30}) + '\n')
