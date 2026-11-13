@@ -34,6 +34,9 @@ export const PUBLISH_CLAIM_MS=3*3600_000
 /** Telegram's public Bot API takes a file of at most 50 MB from a bot */
 export const TELEGRAM_MAX_BYTES=49*1024*1024
 /** a pitch is "of the day" for this long (the pitch run's days are UTC days) */
+/** the browser operator on the owner's computer may upload an approved film for this long after its window ended;
+ *  after that it is the owner's own step again (a film is never published a day late by itself) */
+export const OPERATOR_PUBLISH_MS=24*3600_000
 export const PITCH_FRESH_MS=36*3600_000
 export const ROTATION_CAP_DAYS=30
 export const ACTOR='Autopilot'
@@ -169,9 +172,9 @@ export function tickJob(job:Job,c:TickCtx):{job:Job;effect:Effect}{
   if(t<end)return same
   if(t>end+PUBLISH_LATE_MS)return {job:stop(job,'the publishing time passed while the autopilot was off or not listening',now),effect:null}
   if(c.youtube)return {job:next(job,now,'the two hours passed without a cancel — uploading to YouTube',x=>{x.state='publishing';x.publish={mode:'youtube',at:now.toISOString(),worker:c.worker}}),effect:'publish_youtube'}
-  return {job:next(job,now,'the two hours passed without a cancel — the film is approved and waits for your upload in YouTube Studio',x=>{
+  return {job:next(job,now,'the two hours passed without a cancel — the film is approved and waits for the browser operator on your computer',x=>{
    x.state='handoff';x.publish={mode:'handoff',at:now.toISOString(),worker:null}
-   note(x,'handoff',`✅ <b>AUTOPILOT · approved, waiting for your upload</b>\n${head(job)}\nThe two hours passed and you did not cancel. YouTube keeps API uploads from this project private, so the last step is yours: open the studio, download the master and upload it in YouTube Studio, then record the video id.\n<a href="${esc(c.desk)}">Open the studio</a>`,now)
+   note(x,'handoff',`✅ <b>AUTOPILOT · approved</b>\n${head(job)}\nThe two hours passed and you did not cancel. The operator in the browser on your computer uploads it to YouTube within the hour and you get the link here. The computer and the Claude app must be on; if they are not, the film waits a day for them, and you can always upload it yourself.\n<a href="${esc(c.desk)}">Open the studio</a>`,now)
   }),effect:null}
  }
  return same
@@ -201,7 +204,7 @@ export function cancelByOwner(job:Job,now=new Date()):Job{
  const a=job.autopilot
  if(!a)throw new StoryError('NOT_FOUND','This film is not on the autopilot.',404)
  if(a.state==='cancelled_by_owner')return job
- if(!autopilotActive(job))throw new StoryError('STATE',a.state==='published'?'This film is already published.':a.state==='handoff'?'The two hours have passed. Nothing is published by itself: the film waits for your own upload.':'The autopilot already stopped for this film.',409)
+ if(!autopilotActive(job))throw new StoryError('STATE',a.state==='published'?'This film is already published.':a.state==='handoff'?'The two hours have passed: the film is approved. To stop the upload now, turn the autopilot off in the studio.':'The autopilot already stopped for this film.',409)
  return next(job,now,'publishing cancelled by the owner — the film stays in the studio, unpublished',x=>{
   x.state='cancelled_by_owner';x.cancel={at:now.toISOString()};x.preview.claim=null
   note(x,'cancelled',`🛑 <b>Publishing cancelled</b>\n${head(job)}\nNothing will be published. The film stays in the studio; you can still upload it yourself.`,now)
@@ -227,6 +230,32 @@ export function youtubeResult(job:Job,worker:string,r:{videoId?:unknown;privacy?
  const why=id?`YouTube has the film (${id}) but kept it private — set it to Public in YouTube Studio`:`the upload did not complete (${String(r.error||'unknown').replace(/\s+/g,' ').slice(0,160)}) — check YouTube Studio before uploading again`
  return next(job,now,why,x=>{x.state='handoff';note(x,'handoff',`⚠️ <b>AUTOPILOT · your hand is needed</b>\n${head(job)}\n${esc(why)}.\n<a href="${esc(c.desk)}">Open the studio</a>`,now)})
 }
+/**
+ * The browser operator (owner, 12.11.2026: "upload through the browser on my computer, like the Flow operator"). A film
+ * whose window ended without a cancel and without the API uploader is `handoff` with publish.mode 'handoff': the
+ * operator may upload exactly that film, while the switch is on, QA passed, nobody uploaded it and the window ended less
+ * than a day ago. It claims the upload with the desk's own `upload_started` (a second run finds it taken), and
+ * `upload_done` is what YouTube Studio showed.
+ */
+export function operatorDue(job:Job,on:boolean,now=new Date()):boolean{
+ const a=job.autopilot
+ if(!on||!a||a.state!=='handoff'||a.publish?.mode!=='handoff'||a.cancel||!qaPassed(job)||job.upload.state!=='none')return false
+ const t=+now-Date.parse(a.publish.at)
+ return t>=0&&t<=OPERATOR_PUBLISH_MS
+}
+/** After the operator recorded what YouTube shows: public (or scheduled) closes the ride; anything else is said. */
+export function operatorPublished(job:Job,c:{desk:string},now=new Date()):Job{
+ const a=job.autopilot,u=job.upload
+ if(!a||a.state!=='handoff'||a.publish?.mode!=='handoff'||u.state!=='done'||!u.videoId)return job
+ if(u.visibility==='public'||u.visibility==='scheduled')return next(job,now,`published on YouTube by the browser operator (${u.videoId})`,x=>{x.state='published';note(x,'published',`🚀 <b>AUTOPILOT · published</b>\n${head(job)}\nhttps://youtu.be/${esc(u.videoId)}`,now)})
+ return next(job,now,`YouTube has the film (${u.videoId}) as ${u.visibility} — set it to Public in YouTube Studio`,x=>{note(x,'operator_private',`⚠️ <b>AUTOPILOT · your hand is needed</b>\n${head(job)}\nYouTube has the film (${esc(u.videoId)}) but it is ${esc(u.visibility)}. Set it to Public in YouTube Studio.\n<a href="${esc(c.desk)}">Open the studio</a>`,now)})
+}
+/** The operator could not finish (the desk's `upload_uncertain`): the owner is told once, and nothing is tried again. */
+export function operatorStuck(job:Job,c:{desk:string},now=new Date()):Job{
+ const a=job.autopilot
+ if(!a||a.state!=='handoff'||a.publish?.mode!=='handoff'||job.upload.state!=='uncertain')return job
+ return next(job,now,'the browser upload did not finish — check YouTube Studio before uploading again',x=>{note(x,'operator_stuck',`⚠️ <b>AUTOPILOT · your hand is needed</b>\n${head(job)}\nThe upload from your browser did not finish${job.upload.note?` (${esc(job.upload.note)})`:''}. Check YouTube Studio before uploading again.\n<a href="${esc(c.desk)}">Open the studio</a>`,now)})
+}
 export function noticeSent(job:Job,key:unknown,now=new Date()):Job{
  const n=job.autopilot?.notices.find(x=>x.key===key)
  if(!n||n.sentAt)return job
@@ -244,7 +273,7 @@ export function hookLine(job:Job):string{
 /** The preview message (Telegram HTML): what it is, when it publishes — the real time — and the one link that stops it. */
 export function previewText(job:Job,cancelUrl:string,watchUrl:string|null):string{
  const a=job.autopilot!,at=athens(new Date(a.preview.publishAt!)),hook=hookLine(job)
- const what=a.preview.mode==='youtube'?'it is uploaded to YouTube and made public':'it is approved and waits for your own upload in YouTube Studio (YouTube keeps API uploads from this project private, so that last step is yours)'
+ const what=a.preview.mode==='youtube'?'it is uploaded to YouTube and made public':'the operator in the browser on your computer uploads it to YouTube as public (the computer and the Claude app must be on; otherwise it waits for your own upload)'
  return [`🎬 <b>AUTOPILOT · today's film</b>`,head(job),`About ${job.brief.duration<1?`${Math.round(job.brief.duration*60)} seconds`:`${job.brief.duration} minutes`}`,
   hook?`“${esc(hook)}”`:'',watchUrl?`<a href="${esc(watchUrl)}">Watch the preview</a> (the file is too large for Telegram)`:'','',
   `⏰ At <b>${at.hm}</b> Athens time (${at.date}), two hours from now, ${what}.`,`To stop it: <a href="${esc(cancelUrl)}">Cancel publishing</a>`,'',
@@ -262,7 +291,7 @@ export function autopilotLine(a:Autopilot):string{
   :a.state==='window'?`Autopilot: preview delivered — publishing at ${hm(a.preview.publishAt)} Athens unless you cancel`
   :a.state==='publishing'?'Autopilot: uploading to YouTube'
   :a.state==='published'?'Autopilot: published'
-  :a.state==='handoff'?'Autopilot: approved — waiting for your upload in YouTube Studio'
+  :a.state==='handoff'?(a.publish?.mode==='handoff'?'Autopilot: approved — the browser operator on your computer uploads it (or upload it yourself)':'Autopilot: approved — waiting for your upload in YouTube Studio')
   :a.state==='cancelled_by_owner'?`Autopilot: you cancelled the publishing at ${hm(a.cancel?.at??null)} Athens`
   :`Autopilot: stopped — ${a.stop?.reason??'see the log'}`
 }

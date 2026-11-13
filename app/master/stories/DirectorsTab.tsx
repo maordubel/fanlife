@@ -104,7 +104,7 @@ function AutopilotSwitch({setting,onChange}:{setting?:Setting|null;onChange:()=>
    <div className={css.actions}>
     <button type="button" role="switch" aria-checked={on} className={`${css.btn} ${on?'':css.btnRed} min-h-tap`} disabled={busy||!setting} onClick={()=>void flip()}>{busy?'Saving…':on?'Turn the autopilot off':'Turn the autopilot on'}</button>
    </div>
-   <p className={css.hint}>{on?'On. Turning it off stops every pick, preview and publishing at once; a film already made stays in the studio.':'Off. Nothing is picked, sent or published by itself.'} YouTube keeps API uploads from this project private, so at the end of the two hours the film is approved and waits for your upload in YouTube Studio.</p>
+   <p className={css.hint}>{on?'On. Turning it off stops every pick, preview and publishing at once; a film already made stays in the studio.':'Off. Nothing is picked, sent or published by itself.'} The last step runs in the browser on your computer: once the two hours pass, the operator uploads the film to YouTube and Telegram sends you the link. The computer and the Claude app must be on; otherwise the film waits a day, then it is yours to upload.</p>
    {err&&<p role="alert" className={css.alert}>{err}</p>}
   </div>
  </section>

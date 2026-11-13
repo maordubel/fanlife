@@ -33,7 +33,7 @@ export default async function Page({searchParams}:{searchParams:{job?:string;exp
      </form>
      <p className={css.hint}>One tap. The film is not deleted: it stays in the studio, unpublished.</p>
     </>
-    :<p role="status" className={css.alert}>{film.state==='published'?'This film is already published.':film.state==='handoff'?'The two hours have passed. Nothing is published by itself: the film waits in the studio for your own upload.':'The autopilot already stopped for this film. Nothing is published by itself.'}</p>}
+    :<p role="status" className={css.alert}>{film.state==='published'?'This film is already published.':film.state==='handoff'?'The two hours have passed: the film is approved and is uploaded from the browser on your computer. To stop it now, turn the autopilot off in the studio.':'The autopilot already stopped for this film. Nothing is published by itself.'}</p>}
     <p className={css.hint}><a href="/master/admin?section=studio&view=docs">Open the studio</a></p>
    </div>
   </section>

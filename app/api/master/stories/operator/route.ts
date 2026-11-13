@@ -1,5 +1,5 @@
 import {OPERATOR_TICKET_FILE,ticketOk} from '@/lib/stories/flowOperator'
-import {operatorAct,operatorCreate,operatorJob,operatorJobs} from '@/lib/stories/operator'
+import {operatorAct,operatorCreate,operatorJob,operatorJobs,operatorPublish} from '@/lib/stories/operator'
 import {body,fail,json,limited,sameOrigin} from '@/lib/stories/http'
 export const dynamic='force-dynamic'
 export const runtime='nodejs'
@@ -11,6 +11,7 @@ export const runtime='nodejs'
  *   {ticket,op:'job',id,master?}       → the job and signed links to its files
  *   {ticket,op:'create',kind,brief,key}→ queue a job (same checks as the desk)
  *   {ticket,op:'act',id,action}        → an owner action (approve a script, record an upload …)
+ *   {ticket,op:'publish'}              → the films the autopilot approved for YouTube, with everything Studio needs
  */
 export async function POST(r:Request){
  if(!sameOrigin(r))return json({error:'Invalid request origin.'},403)
@@ -25,6 +26,7 @@ export async function POST(r:Request){
    const out=await operatorCreate(b as never);return json(out,out.created?201:200)
   }
   if(b.op==='act')return json(await operatorAct(b))
+  if(b.op==='publish')return json(await operatorPublish())
   return json({error:'Unknown op.'},400)
  }catch(e){return fail(e)}
 }

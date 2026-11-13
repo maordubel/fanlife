@@ -3,6 +3,9 @@ import {randomUUID} from 'node:crypto'
 import {StoryError,ownerAct,type Job,type OwnerAction} from './jobs'
 import {getJob,listJobs,updateJob} from './store'
 import {removeFolder,signedDownload} from './media'
+import {operatorDue,operatorPublished,operatorStuck} from './autopilot'
+import {deskUrl,readAutopilot} from './autopilotStore'
+import {filmTitle} from './social'
 import {createCasefile,createClassified,createFilm,createPromo,createShort,createVlog} from './create'
 
 /**
@@ -50,5 +53,31 @@ export async function operatorAct(b:{id?:unknown;action?:unknown}){
   const names=job.artefacts.master.chunks.map(c=>c.path.split('/').pop()!).filter(Boolean)
   try{await removeFolder(job.id,names)}catch{/* the film is on YouTube either way */}
  }
- return {job:jobLine(job)}
+ // a film the autopilot approved: the ride ends with what YouTube shows, and the owner hears it on Telegram
+ const told=job.autopilot?.state==='handoff'&&(a.action==='upload_done'||a.action==='upload_uncertain')
+  ?await updateJob(id,j=>a.action==='upload_done'?operatorPublished(j,{desk:deskUrl()}):operatorStuck(j,{desk:deskUrl()})):job
+ return {job:jobLine(told)}
+}
+
+/**
+ * What the browser operator may publish now (docs/fanlife/70-flow-operator.md §YouTube operator): the films the
+ * autopilot approved — window ended, no cancel — while the switch is on. Everything YouTube Studio needs comes with it:
+ * the title, description and tags the studio wrote, and two-hour links to the master's chunks, the thumbnail and the
+ * captions. Nothing here publishes; the operator claims with `upload_started` and reports with `upload_done`.
+ */
+export async function operatorPublish(now=new Date()){
+ const set=await readAutopilot()
+ const due=set.on?(await listJobs(200)).filter(j=>operatorDue(j,true,now)):[]
+ const out=[]
+ for(const j of due){
+  const a=j.artefacts,chunks=a?.master?.chunks??[],th=a?.thumbnails?.[0],srt=a?.captions?.srt
+  const urls=await signedDownload([...chunks.map(c=>c.path),th?.path,srt?.path].filter((p):p is string=>!!p),2*3600)
+  const y=(j.youtube??{}) as {description?:unknown;tags?:unknown;synthetic_media?:{altered_or_synthetic?:unknown}}
+  if(!chunks.length||chunks.some(c=>!urls[c.path]))continue
+  out.push({id:j.id,club:j.brief.club_name,approvedAt:j.autopilot!.publish!.at,title:filmTitle(j).slice(0,100),description:String(y.description??'').slice(0,5000),
+   tags:(Array.isArray(y.tags)?y.tags:[]).map(String).slice(0,25),altered:y.synthetic_media?.altered_or_synthetic===true,
+   master:{bytes:a!.master!.bytes,sha256:a!.master!.sha256,chunks:chunks.map(c=>({url:urls[c.path]!,bytes:c.bytes}))},
+   thumbnail:th?urls[th.path]??null:null,captions:srt?urls[srt.path]??null:null})
+ }
+ return {on:set.on,due:out}
 }

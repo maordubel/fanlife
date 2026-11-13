@@ -1,9 +1,10 @@
 import {describe,expect,it} from 'vitest'
 import {readFileSync} from 'node:fs'
-import {finish,claim,newJob,validateBrief,type Job} from '@/lib/stories/jobs'
+import {finish,claim,newJob,ownerAct,validateBrief,type Job} from '@/lib/stories/jobs'
 import {addRound,decidePitch,type PitchDay} from '@/lib/stories/pitches'
 import {PREVIEW_ATTEMPTS,PREVIEW_CLAIM_MS,PUBLISH_LATE_MS,WINDOW_MS,athens,autopilotDue,cancelByOwner,noticeSent,pendingNotices,pickPitch,pipelineBusy,
- previewDelivered,previewFailed,previewHour,previewSent,previewText,publishTime,scorePitches,startAutopilot,tickJob,youtubeResult,youtubeUploaded,type TickCtx} from '@/lib/stories/autopilot'
+ previewDelivered,previewFailed,previewHour,previewSent,previewText,publishTime,scorePitches,startAutopilot,tickJob,youtubeResult,youtubeUploaded,
+ OPERATOR_PUBLISH_MS,operatorDue,operatorPublished,operatorStuck,type TickCtx} from '@/lib/stories/autopilot'
 import {cancelLink,signCancel,verifyCancel} from '@/lib/stories/autopilotToken'
 import {UNUPLOADED_DAYS,trimLog,unuploadedDue} from '@/lib/stories/trim'
 
@@ -99,7 +100,7 @@ describe('autopilot · the window (Europe/Athens, across the clock change)',()=>
   expect(sent.autopilot!.preview.publishAt).toBe('2026-11-12T15:21:00.000Z')
   const text=previewText(sent,cancelLink('https://x.test',SECRET,sent)!,null)
   expect(text).toMatch(/The Night It Turned[\s\S]*Celtic[\s\S]*About 5 minutes[\s\S]*At <b>17:21<\/b> Athens time[\s\S]*Cancel publishing/)
-  expect(text).toMatch(/waits for your own upload in YouTube Studio/)  // the hand-off is said, not hidden
+  expect(text).toMatch(/operator in the browser on your computer/)  // the hand-off is said, not hidden
   expect(text).toMatch(/Picked because:/)
  })
  it('waits for 10:00: a film ready at night is not sent before the morning',()=>{
@@ -261,5 +262,34 @@ describe('retention · a film nobody uploaded (owner, 12.11.2026: seven days)',(
   expect(trimLog({at:old,bytes:230*1048576,files:7,reason:'unuploaded'})).toMatch(/media removed after 7 days without upload — re-render to get it back[\s\S]*230 MB/)
   expect(trimLog({at:old,bytes:1048576,files:1})).toMatch(/after the YouTube upload/)
   expect(readFileSync('app/api/master/stories/worker/route.ts','utf8')).toMatch(/unuploadedDue\(jobs\)[\s\S]*reason:'unuploaded'/)
+ })
+})
+
+describe('autopilot · the browser operator closes the ride (owner, 12.11.2026)',()=>{
+ const at=D('2026-11-12T08:00:00Z'),end=new Date(+publishTime(at)+60_000),desk={desk:'https://x.test/desk'}
+ const approved=()=>{const h=tickJob(inWindow(at),ctx(end)).job;expect(h.autopilot!.state).toBe('handoff');expect(h.autopilot!.publish!.mode).toBe('handoff');return h}
+ it('is due only for an approved film, with the switch on, for one day, and never after a cancel or a hand upload',()=>{
+  const h=approved()
+  expect(operatorDue(h,true,end)).toBe(true)
+  expect(operatorDue(h,false,end)).toBe(false)                                   // the switch is the owner's
+  expect(operatorDue(h,true,new Date(+end+OPERATOR_PUBLISH_MS+3600_000))).toBe(false) // never a day late
+  expect(operatorDue(inWindow(at),true,at)).toBe(false)                          // the two hours are his
+  expect(operatorDue(cancelByOwner(inWindow(at),at),true,end)).toBe(false)
+  expect(operatorDue({...h,qa:{ok:false,checks:[]}},true,end)).toBe(false)
+  const claimed=ownerAct(h,{action:'upload_started'},'Studio operator',end)
+  expect(operatorDue(claimed,true,end)).toBe(false)                              // a second run finds it taken
+  // the API uploader's own failure is not the operator's to retry
+  const api=youtubeResult(tickJob(inWindow(at),ctx(end,{youtube:true})).job,'r1',{error:'boom'},desk,end)
+  expect(api.autopilot!.state).toBe('handoff');expect(operatorDue(api,true,end)).toBe(false)
+ })
+ it('public on YouTube ends it as published and tells the owner once; private or unfinished asks for his hand',()=>{
+  const h=noticeSent(approved(),'handoff',end),started=ownerAct(h,{action:'upload_started'},'Studio operator',end)
+  const pub=operatorPublished(ownerAct(started,{action:'upload_done',videoId:'abcdefghijk',visibility:'public'},'Studio operator',end),desk,end)
+  expect(pub.autopilot!.state).toBe('published');expect(pendingNotices([pub]).map(n=>n.key)).toEqual(['published'])
+  expect(pendingNotices([pub])[0]!.text).toMatch(/youtu\.be\/abcdefghijk/);expect(operatorPublished(pub,desk,end)).toBe(pub)
+  const priv=operatorPublished(ownerAct(started,{action:'upload_done',videoId:'abcdefghijk',visibility:'private'},'Studio operator',end),desk,end)
+  expect(priv.autopilot!.state).toBe('handoff');expect(pendingNotices([priv])[0]!.text).toMatch(/Set it to Public/)
+  const stuck=operatorStuck(ownerAct(started,{action:'upload_uncertain',note:'the dialog closed'},'Studio operator',end),desk,end)
+  expect(pendingNotices([stuck]).map(n=>n.key)).toEqual(['operator_stuck']);expect(operatorDue(stuck,true,end)).toBe(false)
  })
 })

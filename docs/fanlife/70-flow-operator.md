@@ -73,3 +73,29 @@ slots, and every change is logged as "Studio operator". This is how Claude produ
 owner signing in. A production session mints its own ticket in `stories/operator-ticket.json` (same SQL, that
 file name), so the hourly Flow run and the session never overwrite each other's ticket; the Flow door reads only
 `stories/flow-ticket.json`.
+
+## YouTube operator (13.11.2026)
+Owner, 12.11.2026: the autopilot's last step is "upload through the browser on my computer, like the Flow operator".
+The scheduled task **Studio · YouTube operator** runs hourly from noon to midnight Athens and does nothing unless a
+film is due (`lib/stories/autopilot.ts → operatorDue`: approved by the two-hour window, switch on, QA passed, not
+uploaded, not cancelled, window ended less than 24 hours ago).
+
+1. Cheap look first, no browser (Supabase connector): the autopilot switch `studio/autopilot.json` and any job whose
+   `autopilot.state` is `handoff`. Nothing → stop quietly.
+2. Mint the session ticket in `stories/operator-ticket.json` (the SQL above with that file name).
+3. Built-in browser, a tab on `https://fanlife.dubelteam.com/` (any public page): `POST /api/master/stories/operator
+   {ticket, op:'publish'}` → `{on, due:[{id,title,description,tags,altered,master:{bytes,sha256,chunks:[{url,bytes}]},
+   thumbnail,captions}]}`. Empty → stop quietly. Oldest first, one film per run.
+4. Claim it: `{ticket, op:'act', id, action:{action:'upload_started'}}`. A 409 means another run holds it → stop.
+5. Tab on `https://studio.youtube.com/channel/UC2KULoLBFCSZC4jeRGYkKfQ` (no `authuser`; the channel name must read
+   "FanLife: Football Stories"). Not signed in, a "Verify it's you", or any other channel → record `upload_uncertain`
+   with the reason and stop. Create → Upload videos; in the page, fetch the chunks in order into one `File`
+   (`video/mp4`, size must equal `master.bytes`) and set it on the dialog's file input (`DataTransfer`), as doc 54
+   §Publishing from the session describes. Title, description, tags, "not made for kids", altered-content as `altered`
+   says, thumbnail and captions the same way. Visibility **Public**; the final Publish is a real click.
+6. Read the video id from the dialog's link, wait until Studio shows the upload complete, then report what Studio
+   shows: `{action:'upload_done', videoId, visibility:'public'|'private'|…}`. Public closes the ride as `published`,
+   the owner gets the link on Telegram, and the master's chunks leave the bucket. Anything that did not finish:
+   `{action:'upload_uncertain', note}` — the owner is told once and nothing is tried again by itself.
+7. The signed links live only in that run: never in a file, a commit, a message or a log. Never a password, a sign-in,
+   a settings change, or any channel but this one.
