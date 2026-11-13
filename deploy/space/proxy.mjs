@@ -144,7 +144,14 @@ const server = http.createServer(async (req, res) => {
     return
   }
   const headers = upstream(req)
-  if (key) { headers['accept-encoding'] = 'identity'; delete headers['if-none-match']; delete headers['if-modified-since'] }
+  // the first visitor of an unshelved page: the next ones join this render until it ends
+  let settle = () => {}
+  if (key) {
+    headers['accept-encoding'] = 'identity'; delete headers['if-none-match']; delete headers['if-modified-since']
+    const run = new Promise((ok) => { settle = () => { if (renewing.get(key) === run) renewing.delete(key); ok(null) } })
+    renewing.set(key, run)
+    setTimeout(settle, 180_000).unref()
+  }
   const up = http.request({ ...UP, method: req.method, path: req.url, headers }, (r) => {
     const status = r.statusCode || 502
     res.writeHead(status, fix(req, status, key ? { ...r.headers, 'x-fanlife-shelf': 'miss' } : { ...r.headers }))
@@ -152,11 +159,13 @@ const server = http.createServer(async (req, res) => {
       // the first visitor still gets the page as it streams; the same bytes go on the shelf when it ends whole
       const parts = []; let n = 0
       r.on('data', (c) => { n += c.length; if (n <= MAX_BODY) parts.push(c) })
-      r.on('end', () => { if (shelvable(status, r.headers, n)) shelf.put(key, 200, clean(r.headers), Buffer.concat(parts)) })
-    }
+      r.on('end', () => { if (shelvable(status, r.headers, n)) shelf.put(key, 200, clean(r.headers), Buffer.concat(parts)); settle() })
+      r.on('error', settle)
+    } else settle()
     r.pipe(res)
   })
-  up.on('error', () => { if (!res.headersSent) res.writeHead(502); res.end('starting') })
+  up.on('error', () => { settle(); if (!res.headersSent) res.writeHead(502); res.end('starting') })
+  res.on('close', () => { if (!res.writableEnded) settle() })
   req.pipe(up)
 })
 // open the door only once Next answers, so the platform's startup probe never routes a visitor to a cold server
