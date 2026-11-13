@@ -30,6 +30,7 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 from studio.fairytales import papertheatre as pt
 from studio.fairytales import transitions as tr
 from studio.fairytales import subtitles as sub
+from studio.fairytales import night as nt
 
 REPO = Path(__file__).resolve().parents[4]
 SFX = REPO / 'public/life/sfx'
@@ -43,14 +44,11 @@ CUT_SFX = {'page': (SFX / 'page.m4a', 0.7), 'slide': (KIT_SFX / 'whoosh-short.mp
 # where a shot has no `transition`: the page turn opens every fourth shot, the rest rotate so no cut repeats
 CYCLE = ['iris', 'slide', 'zoom', 'dissolve', 'torn', 'slide', 'iris', 'zoom']
 LEAD, TAIL, TURN = 0.55, 0.85, 0.5
-# a Good Night episode (`night: true`) breathes slower and every cut is a lullaby sound (owner, 13.11.2026: "gentler,
-# calmer, sleepier"): a music-box chime under a page or a slide, a breath of air under the rest, a twinkle for a card
+# a Good Night episode (`night: true`) breathes slower, melts from picture to picture, and sounds only of the lullaby
+# and a slow sea (owner, 13.11.2026: "think like a lullaby, a bedtime story — nothing that makes you jump")
 NIGHT_SFX = Path(__file__).resolve().parent / 'sfx'
-NIGHT_CUT_SFX = {'page': (NIGHT_SFX / 'night-chime.wav', 0.30), 'slide': (NIGHT_SFX / 'night-chime.wav', 0.24),
-                 'torn': (NIGHT_SFX / 'night-chime.wav', 0.26), 'zoom': (NIGHT_SFX / 'night-breath.wav', 0.30),
-                 'iris': (NIGHT_SFX / 'night-breath.wav', 0.30), 'dissolve': (NIGHT_SFX / 'night-breath.wav', 0.22),
-                 'fade': (None, 0)}
 NIGHT_LEAD, NIGHT_TAIL = 1.1, 1.9
+NIGHT_DISSOLVE = 2.4                                         # seconds: one picture melts into the next
 W, H, FPS = pt.W, pt.H, pt.FPS
 
 
@@ -120,8 +118,20 @@ class Source:
         return tuple(0.5 * (2 * b + (-a + c) * f + (2 * a - 5 * b + 4 * c - d) * f * f + (-a + 3 * b - 3 * c + d) * f ** 3)
                      for a, b, c, d in zip(p0, p1, p2, p3))
 
-    def at(self, t: float, push=(1.0, 1.06), centre=(.5, .5), punch: float = 0.0, aim=(.5, .5)) -> Image.Image:
+    def at(self, t: float, push=(1.0, 1.06), centre=(.5, .5), punch: float = 0.0, aim=(.5, .5), night: bool = False,
+           frame_override: Image.Image | None = None) -> Image.Image:
         frames = self.frames
+        if night:
+            # owner 13.11.2026 ("the camera movement feels epileptic"): at night a still gets ONE slow glide — a straight,
+            # constant push with a slight drift, no waypoints, no punch-in — and it keeps gliding through the long
+            # dissolve into the next picture, so nothing ever starts or stops
+            base = frame_override or frames[0]
+            v = max(t, 0.0) / max(self.dur, 0.1)
+            side = 1 if self.seed % 2 else -1
+            z = push[0] + 0.035 + (push[1] - push[0]) * v
+            cx = centre[0] + 0.045 * (v - 0.5) * side
+            cy = centre[1] + 0.012 * (0.5 - v)
+            return lens(base, z, cx, cy)
         # owner 11.11.2026: no shake — the clip plays on ones, a slowed clip blends its neighbouring frames, and the
         # camera glides on one eased curve with no boil
         fk = max(t, 0.0) * self.speed * FPS
@@ -276,20 +286,24 @@ def music_plan(ep: dict, shots: list[dict], total: float, xf: float = 3.0) -> li
 
 
 def sfx_events(shots: list[dict], night: bool = False) -> list[tuple]:
-    """(file, time, level): a soft sound under every cut, a pop when a card lands, a sparkle with the confetti."""
+    """(file, time, level): a soft sound under every cut, a pop when a card lands, a sparkle with the confetti.
+    At night (owner, 13.11.2026: "the crowd and the confetti stress even me — how will a child fall asleep?") there is
+    no crowd, no whistle, no confetti and no cut sound at all: only a faint music-box twinkle as a card fades in."""
     ev = []
-    cuts = NIGHT_CUT_SFX if night else CUT_SFX
     for k, s in enumerate(shots):
-        f, lv = cuts[s['cut']]
+        v = s['shot'].get('visual', {})
+        if night:
+            for g in v.get('tags', []) + v.get('crests', []):
+                ev.append((NIGHT_SFX / 'night-twinkle.wav', s['start'] + g['at'] * s['dur'] + 0.3, 0.07))
+            continue
+        f, lv = CUT_SFX[s['cut']]
         if k and f:
             ev.append((f, s['start'], lv))
-        v = s['shot'].get('visual', {})
         for g in v.get('tags', []) + v.get('crests', []):
-            ev.append(((NIGHT_SFX / 'night-twinkle.wav', s['start'] + g['at'] * s['dur'] + 0.12, 0.16) if night else
-                       (KIT_SFX / 'pop.mp3', s['start'] + g['at'] * s['dur'] + 0.12, 0.12)))
+            ev.append((KIT_SFX / 'pop.mp3', s['start'] + g['at'] * s['dur'] + 0.12, 0.12))
         if v.get('confettiAt') is not None:
-            ev.append((KIT_SFX / 'sparkle.mp3', s['start'] + v['confettiAt'] * s['dur'], 0.14 if night else 0.28))
-            ev.append((LIFE_SFX / 'crowd-claps.m4a', s['start'] + v['confettiAt'] * s['dur'], 0.12 if night else 0.22))
+            ev.append((KIT_SFX / 'sparkle.mp3', s['start'] + v['confettiAt'] * s['dur'], 0.28))
+            ev.append((LIFE_SFX / 'crowd-claps.m4a', s['start'] + v['confettiAt'] * s['dur'], 0.22))
         for x in v.get('sfx', []):                                   # the owner's crowd, a whistle, a kick — by name
             ev.append((LIFE_SFX / f"{x['file']}.m4a", s['start'] + x['at'] * s['dur'], x.get('level', 0.3)))
     return ev
@@ -317,7 +331,41 @@ def main() -> None:
     party = [pt.Celebration(paper, (W, H), seed=k + 5)
              for k in range(4)]
 
+    NIGHT = bool(ep.get('night'))
+    motes = nt.Motes() if NIGHT else None
+    lamps = {}                                                   # shot index -> nt.Lamps, built on first use
+
+    def night_draw(k: int, t: float) -> Image.Image:
+        """A Good Night frame: one slow glide, the lamps switching off on the count, every card arriving by a slow
+        fade, no punch-ins and no confetti (owner, 13.11.2026)."""
+        s, src = shots[k], sources[k]
+        v = s['shot'].get('visual', {})
+        frame = None
+        if v.get('lights'):
+            if k not in lamps:
+                lamps[k] = nt.Lamps(src.frames[0], v['lights'])
+            spoken = s['lens'].get('he', next(iter(s['lens'].values())))
+            levels = [1 - nt.smooth((t - (LEAD + f * spoken)) / 0.55) for f in v.get('lightsAt', [])]
+            frame = lamps[k].at(levels)
+        img = src.at(t, tuple(v.get('push', (1.0, 1.06))), tuple(v.get('centre', (.5, .5))), night=True,
+                     frame_override=frame)
+        for c in v.get('crests', []):
+            tc = t - c['at'] * s['dur']
+            if tc > 0:
+                img = nt.soft_in(img, crest_card(img, 9.0, crests[c['crest']], c['xy'], c['size']), tc, 1.6)
+        for g in v.get('tags', []):
+            tg = t - g['at'] * s['dur']
+            if tg > 0:
+                landed = tag(img, 9.0, g['text'], tuple(g['xy']), fb if g.get('big', True) else fs, g.get('size', 84),
+                             g.get('sub', ''), fs, rot=g.get('rot'))
+                img = nt.soft_in(img, landed, tg, 1.2)
+        if v.get('wordmarkAt') is not None:
+            img = pt.wordmark(img, t - v['wordmarkAt'] * s['dur'], fb, fs, tag=v.get('wordmarkTag', ''), accent=red)
+        return img
+
     def draw(k: int, t: float) -> Image.Image:
+        if NIGHT:
+            return night_draw(k, t)
         s, src = shots[k], sources[k]
         v = s['shot'].get('visual', {})
         punch, aim = 0.0, (.5, .5)
@@ -354,13 +402,25 @@ def main() -> None:
             t = gt - shots[k]['start']
             fr = draw(k, t)
             cut = shots[k]['cut']
-            d = tr.DURATION[cut]
-            if t < d:
-                prev = draw(k - 1, shots[k - 1]['dur'] + t) if k > 0 else None
-                fr = tr.CUTS[cut](prev, fr, t / d)
-            if gt > total - 0.6:
-                fr = Image.fromarray((np.asarray(fr, dtype=np.float32) * max(0.0, (total - gt) / 0.6)).astype(np.uint8))
-            fr = pt.grain(fr, i, 2.2)
+            if NIGHT:                                            # at night every cut is a long, slow cross-dissolve
+                d = 2.6 if k == 0 else NIGHT_DISSOLVE
+                if t < d:
+                    q = nt.smooth(t / d)
+                    if k == 0:
+                        fr = Image.fromarray((np.asarray(fr, dtype=np.float32) * q).astype(np.uint8))
+                    else:
+                        fr = Image.blend(draw(k - 1, shots[k - 1]['dur'] + t), fr, q)
+                fr = motes.draw(fr, gt, min(1.0, gt / 4.0))
+                end = 3.5
+            else:
+                d = tr.DURATION[cut]
+                if t < d:
+                    prev = draw(k - 1, shots[k - 1]['dur'] + t) if k > 0 else None
+                    fr = tr.CUTS[cut](prev, fr, t / d)
+                end = 0.6
+            if gt > total - end:
+                fr = Image.fromarray((np.asarray(fr, dtype=np.float32) * nt.smooth(max(0.0, (total - gt) / end))).astype(np.uint8))
+            fr = pt.grain(fr, i, 1.6 if NIGHT else 2.2)
             if ep['palette'].get('bannedHue'):
                 fr = deyellow(fr, tuple(ep['palette']['bannedHue']))
             yield sub.put_stamp(fr, gt, total)
@@ -388,14 +448,20 @@ def main() -> None:
             fc += (f'[{n + j}:a]aresample=48000,aloop=loop=-1:size=2e9,atrim=0:{length:.2f},asetpts=PTS-STARTPTS,'
                    f'afade=t=in:d={fin:.2f},afade=t=out:st={length - fout:.2f}:d={fout:.2f},adelay={ms}|{ms}[m{j}];')
         m0 = n + len(music)
-        fc += (''.join(f'[m{j}]' for j in range(len(music))) + f'amix=inputs={len(music)}:normalize=0,volume=0.42,'
-               f'atrim=0:{total:.2f}[bed];[bed][key]sidechaincompress=threshold=0.03:ratio=4:attack=60:release=500[mu];')
+        fc += (''.join(f'[m{j}]' for j in range(len(music))) + f'amix=inputs={len(music)}:normalize=0,volume={0.5 if ep.get("night") else 0.42},'
+               f'atrim=0:{total:.2f}[bed];[bed][key]sidechaincompress=threshold=0.03:{'ratio=2:attack=120:release=900' if ep.get("night") else 'ratio=4:attack=60:release=500'}[mu];')
         for e, (path, at, level) in enumerate(events):
             inputs += ['-i', str(path)]
             ms = int(at * 1000)
             fc += f'[{m0 + e}:a]aresample=48000,volume={level},adelay={ms}|{ms}[x{e}];'
-        fc += (''.join(f'[x{e}]' for e in range(len(events))) + f'amix=inputs={len(events)}:normalize=0[fx];'
-               f'[vo][mu][fx]amix=inputs=3:normalize=0,alimiter=limit=0.95,atrim=0:{total:.2f}[a]')
+        fc += (''.join(f'[x{e}]' for e in range(len(events))) + f'amix=inputs={len(events)}:normalize=0[fx];')
+        if ep.get('night'):                                          # a slow sea breathing under the whole night
+            inputs += ['-i', str(NIGHT_SFX / 'night-ambience.wav')]
+            fc += (f'[{m0 + len(events)}:a]aresample=48000,aloop=loop=-1:size=2e9,atrim=0:{total:.2f},asetpts=PTS-STARTPTS,'
+                   f'volume=0.16,afade=t=in:d=4,afade=t=out:st={max(0.0, total - 5):.2f}:d=5[sea];'
+                   f'[vo][mu][fx][sea]amix=inputs=4:normalize=0,alimiter=limit=0.95,atrim=0:{total:.2f}[a]')
+        else:
+            fc += f'[vo][mu][fx]amix=inputs=3:normalize=0,alimiter=limit=0.95,atrim=0:{total:.2f}[a]'
         mix = outd / f'mix-{lang}.wav'
         subprocess.run(['ffmpeg', '-y', '-v', 'error', *inputs, '-filter_complex', fc, '-map', '[a]', '-ar', '48000', '-ac', '2',
                         str(mix)], check=True)

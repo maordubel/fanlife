@@ -756,6 +756,13 @@
    "file": "cache/owner/fairytales-lullaby-hapoel.mp3",
    "origin": "original, synthesised in the studio by make_lullaby.py (no licence)",
    "credit": ""
+  },
+  {
+   "id": "fairytales-lullaby-long",
+   "owner": true,
+   "mood": "long music-box lullaby in four tellings (box, harp, broken chords, soft box), 58 bpm, for Good Night",
+   "file": "cache/owner/fairytales-lullaby-long.mp3",
+   "origin": "original, synthesised in studio/kit/music/make_lullaby_long.py (owner, 13.11.2026)"
   }
  ]
 }

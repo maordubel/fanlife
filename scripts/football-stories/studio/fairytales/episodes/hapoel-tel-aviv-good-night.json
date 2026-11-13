@@ -38,16 +38,8 @@
  },
  "music": [
   {
-   "track": "fairytales-lullaby-hapoel",
+   "track": "fairytales-lullaby-long",
    "from": "once-upon"
-  },
-  {
-   "track": "pufino-enlivening",
-   "from": "chelsea"
-  },
-  {
-   "track": "fairytales-lullaby-hapoel",
-   "from": "walk-home"
   }
  ],
  "pronounce": {
@@ -100,9 +92,6 @@
       "size": 110,
       "rot": -4
      }
-    ],
-    "punch": [
-     0.85
     ]
    },
    "transition": "iris"
@@ -160,22 +149,6 @@
       "size": 120,
       "rot": 4
      }
-    ],
-    "punch": [
-     0.66,
-     0.82
-    ],
-    "sfx": [
-     {
-      "file": "crowd-real-goal",
-      "at": 0.66,
-      "level": 0.35
-     },
-     {
-      "file": "crowd-real-goal",
-      "at": 0.8,
-      "level": 0.4
-     }
     ]
    },
    "transition": "page",
@@ -223,9 +196,6 @@
       "size": 84,
       "rot": 4
      }
-    ],
-    "punch": [
-     0.85
     ]
    },
    "transition": "slide",
@@ -268,16 +238,6 @@
       ],
       "size": 120,
       "rot": 4
-     }
-    ],
-    "punch": [
-     0.8
-    ],
-    "sfx": [
-     {
-      "file": "crowd-real-goal",
-      "at": 0.78,
-      "level": 0.4
      }
     ]
    },
@@ -343,17 +303,6 @@
       "size": 120,
       "rot": 4
      }
-    ],
-    "punch": [
-     0.7
-    ],
-    "confettiAt": 0.78,
-    "sfx": [
-     {
-      "file": "crowd-real-goal",
-      "at": 0.68,
-      "level": 0.4
-     }
     ]
    },
    "transition": "page",
@@ -378,13 +327,6 @@
     "push": [
      1.0,
      1.07
-    ],
-    "sfx": [
-     {
-      "file": "crowd-real-murmur",
-      "at": 0.05,
-      "level": 0.18
-     }
     ]
    },
    "transition": "slide"
@@ -401,7 +343,7 @@
    "visual": {
     "push": [
      1.0,
-     1.06
+     1.05
     ],
     "tags": [
      {
@@ -414,6 +356,38 @@
       "size": 100,
       "rot": -4
      }
+    ],
+    "lights": [
+     [
+      152,
+      123,
+      40,
+      0
+     ],
+     [
+      1243,
+      122,
+      40,
+      0
+     ],
+     [
+      790,
+      258,
+      24,
+      1
+     ],
+     [
+      1177,
+      420,
+      18,
+      1
+     ]
+    ],
+    "lightsAt": [
+     0.778,
+     0.829,
+     0.885,
+     0.936
     ]
    },
    "transition": "fade"
@@ -548,11 +522,7 @@
       "size": 90,
       "rot": 4
      }
-    ],
-    "punch": [
-     0.6
-    ],
-    "confettiAt": 0.82
+    ]
    },
    "cap": {
     "he": "שלושה כוכבים: הכוכב הזה זורח עוד מ־1986. גילי לנדאו כבש נגד מכבי חיפה, בדקה ה־86 — ולקחנו אליפות!"
@@ -594,10 +564,6 @@
       "size": 140,
       "rot": 4
      }
-    ],
-    "punch": [
-     0.25,
-     0.6
     ]
    },
    "transition": "zoom",
@@ -645,9 +611,6 @@
       "size": 100,
       "rot": 4
      }
-    ],
-    "punch": [
-     0.7
     ]
    }
   },
@@ -689,11 +652,7 @@
       "size": 110,
       "rot": 4
      }
-    ],
-    "punch": [
-     0.32
-    ],
-    "confettiAt": 0.36
+    ]
    },
    "cap": {
     "he": "ועוד דאבל, ב־2010! בערב האחרון של העונה, בדקה ה־92 — גול! זה היה בטדי, האצטדיון של בית\"ר ירושלים, ואותם אנחנו לא אוהבים. ואוהדי מכבי חיפה, שכבר חשבו שהם אלופים, היו עצובים מאוד מאוד.",
@@ -797,9 +756,6 @@
     "push": [
      1.0,
      1.08
-    ],
-    "punch": [
-     0.75
     ]
    },
    "transition": "iris"
