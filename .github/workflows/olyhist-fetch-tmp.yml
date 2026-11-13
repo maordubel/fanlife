@@ -6,14 +6,19 @@ on:
 permissions:
   contents: write
 jobs:
-  fetch:
+  probe:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with: {node-version: 22, cache: npm}
-      - run: npm ci
-      - run: npx tsx scripts/ingest/clubs/olympiacos-history-fetch.ts
+      - name: Probe official league sites
+        run: |
+          mkdir -p research-data/official-probe
+          for u in https://www.frmf.ma https://frmf.ma/botola https://www.lnfp.ma https://egyptianproleague.com https://www.efa.com.eg https://www.football.org.il https://www.football.org.il/leagues/league/?league_id=40 https://www.slgr.gr https://www.slgr.gr/el/schedule/ ; do
+            f=research-data/official-probe/$(echo "$u" | sed 's#https\?://##; s#[^a-zA-Z0-9]#_#g').html
+            code=$(curl -sSL -A "Mozilla/5.0 (FanLife-archive)" -m 40 -o "$f" -w "%{http_code}" "$u" || echo ERR)
+            echo "$u $code $(wc -c < "$f" 2>/dev/null)" | tee -a research-data/official-probe/status.txt
+            grep -oiE 'href="[^"]*(match|game|feuille|lineup|result|fixture|مباراة|משחק)[^"]*"' "$f" | sort -u | head -40 >> research-data/official-probe/links.txt || true
+          done
       - run: |
           git config user.name "github-actions[bot]"; git config user.email "41898699+github-actions[bot]@users.noreply.github.com"
-          git add research-data/olympiacos-history && git commit -m "olympiacos-history: players table snapshot" && git push
+          git add research-data/official-probe && git commit -m "probe: official league sites" && git push
