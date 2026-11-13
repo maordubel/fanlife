@@ -6,3 +6,5 @@ type Req = {method?: string; url?: string; headers: Record<string, string | stri
 export function shelfKey(req: Req): string | null
 export function shelvable(status: number, h: Record<string, string | string[] | undefined>, bytes: number): boolean
 export function makeShelf(now?: () => number): {size(): number; get(key: string): {status: number; headers: Record<string, string | string[] | undefined>; body: Buffer; gz: Buffer; at: number; state: 'hit' | 'stale'} | null; put(key: string, status: number, headers: Record<string, string | string[] | undefined>, body: Buffer): void}
+export const SITE_HOST: string
+export function warmList(html: string): string[]

@@ -1,5 +1,5 @@
 import {describe,expect,it} from 'vitest'
-import {FRESH_MS,STALE_MS,makeShelf,shelfKey,shelvable} from '../deploy/space/proxy.mjs'
+import {FRESH_MS,SITE_HOST,STALE_MS,makeShelf,shelfKey,shelvable,warmList} from '../deploy/space/proxy.mjs'
 
 const get=(url:string,headers:Record<string,string>={})=>({method:'GET',url,headers:{accept:'text/html',host:'x.run.app','x-fanlife-host':'fanlife.dubelteam.com',...headers}})
 describe('the front door\'s page shelf (13.11.2026)',()=>{
@@ -37,5 +37,13 @@ describe('the front door\'s page shelf (13.11.2026)',()=>{
   t=STALE_MS+1;expect(s.get('k')).toBeNull();expect(s.size()).toBe(0)
   for(let i=0;i<450;i++)s.put('k'+i,200,{},Buffer.from('x'))
   expect(s.size()).toBe(400);expect(s.get('k0')).toBeNull();expect(s.get('k449')).toBeTruthy()
+ })
+ it('a new instance lays the table: the club links of the front page, once each, on the host visitors use',()=>{
+  expect(warmList('<a href="/clubs/celtic?lang=en">x</a><a href="/clubs/celtic?lang=en">y</a><a href="/shop">s</a><a href="/market">m</a><a href="/master/admin">no</a><a href="https://x.test/clubs/zz">no</a><a href="/clubs/aek-athens/xi?lang=en">deep</a>')).toEqual(['/clubs/celtic?lang=en','/shop','/market'])
+  expect(SITE_HOST).toMatch(/^[a-z0-9.-]+(:\d+)?$/)
+  // the warm request and a visitor's request through the Worker share one shelf key
+  const visitor={method:'GET',url:'/',headers:{accept:'text/html',host:'x.run.app','x-fanlife-host':SITE_HOST}}
+  const own={method:'GET',url:'/',headers:{accept:'text/html',host:SITE_HOST}}
+  expect(shelfKey(own)).toBe(shelfKey(visitor))
  })
 })
