@@ -62,7 +62,8 @@ export async function pressProduct(id:string,by:string):Promise<ShopProduct>{
   let pic:{id:string;width:number;height:number}
   if('library' in p.art){const lib=pictureById(p.art.library.id);if(!lib)throw new Error('This picture is no longer in the library inventory.')
    const fname=lib.name.replace(/[^a-zA-Z0-9._-]/g,'-').slice(-80)||'art.png'
-   if(d?.cutout){const clean=await cleanOriginal(original(lib.id));const up=await api.upload(fname.replace(/\.\w+$/,'')+'-cutout.png',clean);pic={id:up.id,width:up.width,height:up.height}}
+   const clean=d?.cutout?await cleanOriginal(original(lib.id)):null
+   if(clean){const up=await api.upload(fname.replace(/\.\w+$/,'')+'-cutout.png',clean);pic={id:up.id,width:up.width,height:up.height}}
    else{const up=await api.uploadUrl(fname,original(lib.id));pic={id:up.id,width:up.width,height:up.height}}
   }else pic={id:p.art.upload.id,width:p.art.upload.width,height:p.art.upload.height}
   const placed=[] as Parameters<typeof printAreas>[0];let soft=1
@@ -100,10 +101,12 @@ export async function removeProduct(id:string,by:string){
 }
 
 /** a library original with its paper ground removed (sharp, server side), as base64 PNG for Printify */
-async function cleanOriginal(url:string):Promise<string>{
+/** null when the picture is already transparent at its edges (nothing to remove: the original is used as it is) */
+async function cleanOriginal(url:string):Promise<string|null>{
  const r=await fetch(url,{signal:AbortSignal.timeout(60e3)});if(!r.ok)throw new Error(`Could not read the picture from the library (${r.status}).`)
  const sharp=(await import('sharp')).default,{removePlainBackground}=await import('./cutout')
  const {data,info}=await sharp(Buffer.from(await r.arrayBuffer())).ensureAlpha().raw().toBuffer({resolveWithObject:true})
+ const {transparentBorder}=await import('./cutout');if(transparentBorder({data,width:info.width,height:info.height}))return null
  const gone=removePlainBackground({data,width:info.width,height:info.height})
  if(gone<.02)throw new Error('This picture has no plain background to remove — switch “Remove background” off for it.')
  return (await sharp(data,{raw:{width:info.width,height:info.height,channels:4}}).png().toBuffer()).toString('base64')

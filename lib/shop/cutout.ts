@@ -31,3 +31,10 @@ export function removePlainBackground(img:Rgba,tolerance=60):number{
  for(const p of edge){const t=Math.min(1,dist(d,p*4,rgb)/(tolerance*2.5));d[p*4+3]=Math.round(d[p*4+3]!*Math.max(.25,t))}
  return gone/(w*h)
 }
+/** is the picture already cut out? (most of its border is transparent) */
+export function transparentBorder(img:Rgba):boolean{
+ const {data:d,width:w,height:h}=img;let clear=0,n=0
+ const at=(x:number,y:number)=>{n++;if(d[(y*w+x)*4+3]!<16)clear++}
+ for(let x=0;x<w;x+=Math.max(1,w>>8)){at(x,0);at(x,h-1)}for(let y=0;y<h;y+=Math.max(1,h>>8)){at(0,y);at(w-1,y)}
+ return n>0&&clear/n>.6
+}
