@@ -3,7 +3,7 @@ import {useEffect,useMemo,useRef,useState} from 'react'
 import {useAdminApi} from '@/components/master/adminApi'
 import {KIND_SPECS} from '@/lib/shop/kinds'
 import {DesignControls,CutoutPreview,type Stock} from './ShopDesign'
-import {KINDS,type ArtRef,type ProductDesign,type Kind,type ShopDoc,type ShopProduct} from '@/lib/shop/types'
+import {designKey,KINDS,MIN_QUALITY,qualityOf,type ArtRef,type ProductDesign,type Kind,type ShopDoc,type ShopProduct} from '@/lib/shop/types'
 
 /**
  * THE SHOP DESK (owner, 12.11.2026: "click and sell"). Four steps down one page, each with one main button:
@@ -43,8 +43,13 @@ export function ShopDesk({initial,subjects,pictures}:{initial:State;subjects:Sub
  const togglePick=(c:{id:number;title:string})=>setPicked(v=>v.some(x=>x.id===c.id)?v.filter(x=>x.id!==c.id):v.length>=40?v:[...v,{id:c.id,title:c.title}])
  const act=async(action:string,data:Record<string,unknown>={},msg='Saved.')=>{const out=await api.post<State&{made?:string[]}>('shop',{action,...data},msg);if(out)setSt({doc:out.doc,connected:out.connected});return out}
  const name=(id:string)=>subjects.find(x=>x.id===id)?.name||id
+ const [openD,setOpenD]=useState<string|null>(null)
  const list=useMemo(()=>doc.products.filter(p=>(who==='all'||p.subject===who)&&(show==='all'||(show==='shown'?p.visible:show==='hidden'?!p.visible&&p.status==='live':p.status!=='live'))),[doc.products,who,show])
+ const groups=useMemo(()=>{const m=new Map<string,ShopProduct[]>();for(const p of list){const k=designKey(p);m.set(k,[...(m.get(k)??[]),p])}
+  return [...m].map(([key,items])=>({key,items,name:s.designNames?.[key]??items[0]!.title.split(' · ')[0]!})).sort((a,b)=>b.items[0]!.updatedAt.localeCompare(a.items[0]!.updatedAt))},[list,s.designNames])
  const todo=doc.products.filter(p=>p.status==='draft'||p.status==='error'||p.status==='building'),live=doc.products.filter(p=>p.status==='live'),shown=live.filter(p=>p.visible)
+ const syncMany=async(ids:string[])=>{setRun({done:0,total:ids.length});for(let k=0;k<ids.length;k++){await api.post('shop',{action:'sync',id:ids[k]},'');setRun({done:k+1,total:ids.length})}
+  setRun(null);const fresh=await api.get<State>('shop');if(fresh)setSt({doc:fresh.doc,connected:fresh.connected})}
  const pressMany=async(ids:string[])=>{stop.current=false;setRun({done:0,total:ids.length});for(let i=0;i<ids.length&&!stop.current;i++){await act('press',{id:ids[i]},'Pressed.');setRun({done:i+1,total:ids.length})}setRun(null)}
  const popup=/storefront|pop/i.test(s.channel||'')
  const shelves=useMemo(()=>{const mine=pictures.filter(p=>p.subject===nSub||p.subject==='fanlife'),by=new Map<string,DeskPicture[]>()
@@ -116,6 +121,7 @@ export function ShopDesk({initial,subjects,pictures}:{initial:State;subjects:Sub
   <section className="desk-card" aria-labelledby="shn"><h2 className="desk-h2" id="shn">New product</h2>
    <div className="shop-form"><label className="shop-field"><span>For</span><select value={nSub} onChange={e=>{setNSub(e.target.value);setNPic('own')}}>{subjects.map(x=><option key={x.id} value={x.id}>{x.name}</option>)}</select></label></div>
    <p className="desk-fine">Products (one or several)</p>
+   <div className="desk-chips shop-packs" role="group" aria-label="Ready packs">{([['Starter pack',['poster','tee','mug','tote','sticker']],['Wall pack',['poster','framed','canvas']],['Wear pack',['tee','hoodie','kids-tee']],['Gift pack',['mug','tote','sticker','notebook']]] as [string,Kind[]][]).map(([l,ks])=><button key={l} type="button" className="desk-chip min-h-tap" onClick={()=>setNKinds(ks)}>{l}</button>)}</div>
    <div className="desk-chips" role="group" aria-label="Products">{BASIC.map(k=><button key={k} className="desk-chip" aria-current={nKinds.includes(k)} aria-pressed={nKinds.includes(k)} onClick={()=>setNKinds(v=>v.includes(k)?v.filter(x=>x!==k):[...v,k])}>{KIND_SPECS[k].label}</button>)}</div>
    <details className="desk-more shop-cat" onToggle={e=>{if((e.target as HTMLDetailsElement).open)void openCat()}}><summary className="min-h-tap">Everything Printify makes{cat?` · ${cat.length} products`:''}{picked.length?` · ${picked.length} chosen`:''}</summary>
     {!cat?<p className="desk-fine">{api.busy?'Opening the catalogue…':'Opens Printify’s whole catalogue. Each product you pick is printed by a European printer when there is one.'}</p>:<>
@@ -147,29 +153,60 @@ export function ShopDesk({initial,subjects,pictures}:{initial:State;subjects:Sub
   <section className="desk-card" aria-labelledby="shp"><h2 className="desk-h2" id="shp">Products</h2>
    <div className="desk-chips" role="group" aria-label="Club">{[{id:'all',name:'All'},...subjects].map(x=>{const n=x.id==='all'?doc.products.length:doc.products.filter(p=>p.subject===x.id).length;return <button key={x.id} className="desk-chip" aria-current={who===x.id} onClick={()=>setWho(x.id)}>{x.name} · {n}</button>})}</div>
    <div className="desk-chips" role="group" aria-label="Show">{([['all','All'],['shown','Shown'],['hidden','On sale, hidden'],['todo','Not on sale']] as const).map(([k,l])=><button key={k} className="desk-chip" aria-current={show===k} onClick={()=>setShow(k)}>{l}</button>)}</div>
-   {list.length===0?<p className="desk-state">Nothing here yet.</p>:<ul className="shop-grid">{list.map(p=>{const img=p.printify?.images[0]||('library' in p.art?thumb(p.art.library.id):p.art.upload.preview)
-    return <li key={p.id} className="shop-card" data-status={p.status}>
-     {/* eslint-disable-next-line @next/next/no-img-element */}
-     <img src={img} alt="" loading="lazy" width={240} height={300} referrerPolicy="no-referrer"/>
-     <div className="shop-card-t"><b>{p.title}</b><small>{name(p.subject)} · {STATUS[p.status]}{p.printify?` · from ${money(p.printify.priceFrom,p.printify.currency)}`:''}</small>
-      {p.error&&<small className="shop-err">{p.error}</small>}
-      <label className="shop-switch"><input type="checkbox" checked={p.visible} disabled={api.busy||p.status!=='live'} onChange={e=>act('visible',{id:p.id,visible:e.target.checked},e.target.checked?'Shown in the shop.':'Hidden from the shop.')}/><span>Show in the shop</span></label>
-      <div className="shop-card-a">
-       {p.status!=='live'&&<button className="desk-btn" disabled={!!run||api.busy||!st.connected} onClick={()=>pressMany([p.id])}>{p.status==='draft'?'Press':'Retry'}</button>}
-       {p.status==='ready'&&<button className="desk-btn ghost" disabled={api.busy} onClick={()=>act('refresh',{id:p.id},'Checked.')}>Check its link</button>}
-       {p.printify?.url&&<a className="desk-btn ghost" href={p.printify.url} target="_blank" rel="noreferrer">View ↗</a>}
-       <button className="desk-btn ghost" disabled={api.busy} aria-expanded={editing===p.id} onClick={()=>{setEditing(editing===p.id?null:p.id);setEDesign(p.design??{});setEStock(null)}}>Design</button>
-       <button className="desk-btn ghost" disabled={api.busy} onClick={()=>{const t=window.prompt('Product title',p.title);if(t&&t!==p.title)void act('edit',{id:p.id,title:t})}}>Rename</button>
-       <button className="desk-btn ghost" disabled={api.busy} onClick={()=>{if(window.confirm(`Delete “${p.title}” here and in Printify? This cannot be undone.`))void act('remove',{id:p.id},'Deleted.')}}>Delete</button>
-      </div>
-      {editing===p.id&&<div className="shop-edit"><DesignControls value={eDesign} onChange={setEDesign} library={'library' in p.art} margin={s.margin} busy={api.busy} stock={eStock} loadStock={()=>{void stockOf(p.blueprint?{blueprintId:p.blueprint.id}:{kind:p.kind}).then(setEStock)}} pictures={picOptions(p.subject)} uploadArt={uploadArt}/>
-       <p className="desk-fine">Applying presses the product again with these settings. It is hidden until you show it again.</p>
-       <button className="desk-btn min-h-tap" disabled={api.busy||!st.connected} onClick={async()=>{if(await act('design',{id:p.id,design:eDesign},'Pressed again with the new design.'))setEditing(null)}}>Apply and press again</button></div>}
-      </div></li>})}</ul>}
+   {list.length===0?<p className="desk-state">Nothing here yet.</p>:<div className="shop-designs">{groups.map(g=>{const first=g.items[0]!,img=g.items.find(p=>p.printify?.images[0])?.printify?.images[0]||('library' in first.art?thumb(first.art.library.id):first.art.upload.preview)
+    const shownN=g.items.filter(p=>p.visible&&p.status==='live').length,low=g.items.filter(p=>qualityOf(p)<MIN_QUALITY).length
+    return <article key={g.key} className="shop-design-card" data-open={openD===g.key?'1':'0'}>
+     <header className="shop-dhead">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={img} alt="" loading="lazy" width={96} height={96} referrerPolicy="no-referrer"/>
+      <div className="shop-dt"><b>{g.name}</b><small>{name(first.subject)} · {g.items.length} product{g.items.length>1?'s':''} · {shownN} shown{low?` · ${low} too soft to sell`:''}</small>
+       <div className="shop-card-a">
+        <button className="desk-btn min-h-tap" aria-expanded={openD===g.key} onClick={()=>setOpenD(openD===g.key?null:g.key)}>{openD===g.key?'Close':'Open'}</button>
+        <button className="desk-btn ghost min-h-tap" disabled={api.busy} onClick={()=>{const n=window.prompt('Name this design (it names every product made from it)',g.name);if(n&&n.trim()&&n.trim()!==g.name)void act('renameDesign',{design:g.key,name:n.trim()},'Renamed, in the shop and in Printify.')}}>Name</button>
+        <button className="desk-btn ghost min-h-tap" disabled={api.busy} onClick={()=>act('visible',{ids:g.items.filter(p=>p.status==='live'&&qualityOf(p)>=MIN_QUALITY).map(p=>p.id),visible:true},'Shown.')}>Show all</button>
+        <button className="desk-btn ghost min-h-tap" disabled={api.busy} onClick={()=>act('visible',{ids:g.items.map(p=>p.id),visible:false},'Hidden.')}>Hide all</button>
+        <a className="desk-btn ghost min-h-tap" href={`/shop?design=${g.key}`} target="_blank" rel="noreferrer">In the shop ↗</a>
+       </div></div>
+     </header>
+     {openD===g.key&&<ul className="shop-prows">{g.items.map(p=>{const q=qualityOf(p),pimg=p.printify?.images[0]
+      return <li key={p.id} className="shop-prow" data-status={p.status} data-soft={q<MIN_QUALITY?'1':q<.5?'0':undefined}>
+       {/* eslint-disable-next-line @next/next/no-img-element */}
+       {pimg?<img src={pimg} alt="" loading="lazy" width={64} height={64}/>:<span className="shop-plus" aria-hidden="true">…</span>}
+       <div className="shop-pt"><b>{p.title.split(' · ')[1]??p.title}</b>
+        <small>{STATUS[p.status]}{p.printify?` · ${money(p.printify.priceFrom,p.printify.currency)}`:''} · sharpness {Math.round(q*100)}%{q<MIN_QUALITY?' — too soft, not sold':q<.5?' — may print soft':''}</small>
+        {p.error&&!/print size/.test(p.error)&&<small className="shop-err">{p.error}</small>}</div>
+       <label className="shop-switch"><input type="checkbox" checked={p.visible} disabled={api.busy||p.status!=='live'} onChange={e=>act('visible',{id:p.id,visible:e.target.checked},e.target.checked?'Shown in the shop.':'Hidden from the shop.')}/><span>Shown</span></label>
+       <details className="shop-more"><summary className="desk-btn ghost min-h-tap">More</summary><div className="shop-card-a">
+        {p.status!=='live'&&<button className="desk-btn" disabled={!!run||api.busy||!st.connected} onClick={()=>pressMany([p.id])}>{p.status==='draft'?'Press':'Retry'}</button>}
+        {p.printify?.url&&<a className="desk-btn ghost" href={p.printify.url} target="_blank" rel="noreferrer">View in the store ↗</a>}
+        <button className="desk-btn ghost" disabled={api.busy} onClick={()=>{setEditing(editing===p.id?null:p.id);setEDesign(p.design??{});setEStock(null)}}>Edit print</button>
+        <button className="desk-btn ghost" disabled={api.busy} onClick={()=>{if(window.confirm(`Delete “${p.title}” here and in Printify? This cannot be undone.`))void act('remove',{id:p.id},'Deleted.')}}>Delete</button>
+       </div></details>
+       {editing===p.id&&<div className="shop-edit"><DesignControls value={eDesign} onChange={setEDesign} library={'library' in p.art} margin={s.margin} busy={api.busy} stock={eStock} loadStock={()=>{void stockOf(p.blueprint?{blueprintId:p.blueprint.id}:{kind:p.kind}).then(setEStock)}} pictures={picOptions(p.subject)} uploadArt={uploadArt}/>
+        <p className="desk-fine">Applying presses the product again with these settings. It is hidden until you show it again.</p>
+        <button className="desk-btn min-h-tap" disabled={api.busy||!st.connected} onClick={async()=>{if(await act('design',{id:p.id,design:eDesign},'Pressed again with the new design.'))setEditing(null)}}>Apply and press again</button></div>}
+      </li>})}</ul>}
+    </article>})}</div>}
   </section>
 
   </>}
   {tab==='settings'&&<>
+  <section className="desk-card" aria-labelledby="shpromo"><h2 className="desk-h2" id="shpromo">Sale</h2>
+   <p className="desk-fine">1 · Create the sale in Printify (<a href="https://printify.com/app/store/promotions" target="_blank" rel="noreferrer">Promotions ↗</a> — a store-wide % off, and/or cheaper shipping). 2 · Put the same % here: the site shows the sale banner, “was” prices and a −% badge until the end date.</p>
+   <form className="shop-row" onSubmit={e=>{e.preventDefault();const f=new FormData(e.currentTarget);void act('promo',{percent:Number(f.get('percent')||0),label:String(f.get('label')||''),until:String(f.get('until')||'')||null,code:String(f.get('code')||''),freeShipping:f.get('ship')==='on'},'Sale saved — the shop shows it now.')}}>
+    <label className="shop-field"><span>% off</span><input name="percent" type="number" min={0} max={80} defaultValue={s.promo?.percent??''} placeholder="20"/></label>
+    <label className="shop-field"><span>Headline</span><input name="label" defaultValue={s.promo?.label??''} placeholder="Derby week sale"/></label>
+    <label className="shop-field"><span>Ends</span><input name="until" type="date" defaultValue={s.promo?.until?.slice(0,10)??''}/></label>
+    <label className="shop-field"><span>Code (if the sale needs one)</span><input name="code" defaultValue={s.promo?.code??''}/></label>
+    <label className="shop-switch"><input name="ship" type="checkbox" defaultChecked={!!s.promo?.freeShipping}/><span>Cheaper shipping too</span></label>
+    <button className="desk-btn min-h-tap" disabled={api.busy}>Save the sale</button>
+    {s.promo&&<button type="button" className="desk-btn ghost min-h-tap" disabled={api.busy} onClick={()=>act('promo',{percent:0},'Sale ended on the site.')}>End the sale</button>}
+   </form>
+  </section>
+  <section className="desk-card" aria-labelledby="shrelist"><h2 className="desk-h2" id="shrelist">Listings</h2>
+   <p className="desk-fine">Send every product’s name, description and tags to Printify again (club, city, what it is, gift words) — after renaming designs, or once after an update.</p>
+   <button className="desk-btn min-h-tap" disabled={!!run||api.busy||!st.connected} onClick={()=>syncMany(doc.products.filter(p=>p.printify).map(p=>p.id))}>Rewrite all {doc.products.filter(p=>p.printify).length} listings</button>
+  </section>
   <details className="desk-more" open><summary className="min-h-tap">Settings — price margin and the catalogue</summary>
    <div className="shop-row"><label className="shop-field"><span>Margin on Printify’s cost (%)</span><input type="number" min={0} max={300} defaultValue={s.margin} onBlur={e=>{const n=Number(e.target.value);if(n!==s.margin)void act('settings',{margin:n},'Margin saved — it applies to the next press.')}}/></label></div>
    <div className="desk-table-wrap"><table className="desk-table"><thead><tr><th>Product</th><th>Printify catalogue product</th><th>Printed by</th><th>Replace</th></tr></thead>

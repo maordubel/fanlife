@@ -58,3 +58,25 @@
 .wks-gift-cta { justify-self: start; }
 @media (prefers-reduced-motion: reduce) { .wks-img { transition: none; } .wks-card-in:hover .wks-img { transform: none; } }
 @media (min-width: 760px) { .wks-trust li { font-size: 13px; } .wks-gift { padding: 22px; } }
+/* aggressive round (13.11.2026): designed club tiles, the sale plate, make-your-own */
+.wks-clubgrid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.wks-clubtile { display: grid; grid-template-columns: 44px minmax(0, 1fr); align-items: center; gap: 10px; padding: 8px 10px; border: 3px solid var(--mag-ink); background: var(--mag-paper); color: var(--mag-ink); text-decoration: none; box-shadow: 3px 3px 0 var(--club); }
+.wks-clubtile[aria-current] { background: var(--club); color: var(--mag-paper); box-shadow: 3px 3px 0 var(--mag-ink); }
+.wks-clubtile b { display: block; font-size: 14px; line-height: 1.1; overflow-wrap: anywhere; }
+.wks-clubtile small { font-family: var(--mag-mono); font-size: 11px; opacity: .8; }
+.wks-roundel { inline-size: 44px; block-size: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--club); color: var(--mag-paper); border: 3px solid var(--mag-ink); font-family: var(--mag-mono); font-weight: 900; font-size: 14px; }
+.wks-clubtile[aria-current] .wks-roundel { background: var(--mag-paper); color: var(--club); }
+.wks-promo { position: relative; overflow: hidden; display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 14px; align-items: center; padding: 16px; border: 3px solid var(--mag-ink); box-shadow: 5px 5px 0 var(--mag-ink); }
+.wks-burst { position: relative; inline-size: 96px; block-size: 96px; display: grid; place-items: center; background: var(--mag-paper); color: var(--mag-vermilion); border: 3px solid var(--mag-ink); font-family: var(--mag-mono); font-weight: 900; font-size: 26px; clip-path: polygon(50% 0, 61% 18%, 82% 8%, 80% 30%, 100% 36%, 85% 52%, 100% 68%, 79% 72%, 82% 93%, 61% 83%, 50% 100%, 39% 83%, 18% 93%, 21% 72%, 0 68%, 15% 52%, 0 36%, 20% 30%, 18% 8%, 39% 18%); transform: rotate(-8deg); }
+.wks-code { display: inline-block; margin-block-start: 6px; padding: 4px 10px; border: 2px dashed var(--mag-paper); color: var(--mag-paper); font-family: var(--mag-mono); font-weight: 800; }
+.wks-badge.sale { background: var(--mag-vermilion); }
+.wks-was { margin-inline-end: 6px; opacity: .6; font-weight: 600; }
+.wks-make { display: grid; gap: 10px; padding: 14px; border: 3px dashed var(--mag-ink); }
+.wks-make .wk-btn { justify-self: start; }
+@media (min-width: 760px) {
+  .wks-clubgrid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+  .wks-promo { grid-template-columns: 140px minmax(0, 1fr); padding: 24px; }
+  .wks-burst { inline-size: 140px; block-size: 140px; font-size: 38px; }
+  .wks-make { grid-template-columns: minmax(0, 1fr) auto; align-items: center; padding: 22px; }
+}
+@media (min-width: 1100px) { .wks-clubgrid { grid-template-columns: repeat(6, minmax(0, 1fr)); } }

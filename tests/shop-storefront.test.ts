@@ -31,3 +31,12 @@ describe('automatic fitting to the product’s shape',()=>{
   }finally{globalThis.fetch=realFetch}
  })
 })
+describe('quality gate and sale',()=>{
+ it('reads a product’s sharpness and keeps blurred prints out of the shop',async()=>{
+  const {qualityOf,isPublic}=await import('@/lib/shop/types')
+  const p={visible:true,status:'live',printify:{url:'u',images:['i'],quality:.11},error:''} as never
+  expect(qualityOf(p)).toBe(.11);expect(isPublic(p)).toBe(false)
+  const old={visible:true,status:'live',printify:{url:'u',images:['i']},error:'On sale, but this picture is small for a canvas (43% of the print size) — it may print soft.'} as never
+  expect(qualityOf(old)).toBe(.43);expect(isPublic(old)).toBe(true)
+ })
+})

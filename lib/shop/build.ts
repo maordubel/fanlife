@@ -96,7 +96,7 @@ export async function pressProduct(id:string,by:string):Promise<ShopProduct>{
   if(soft<.5)await set(id,{error:`On sale, but this picture is small for a ${spec.label.toLowerCase()} (${Math.round(soft*100)}% of the print size) — it may print soft. A larger original is better.`})
   const {images,backImage}=mockups(made.images,placed.some(x=>x.sheet.position==='back'))
   url=url||(doc.settings.popupUrl?doc.settings.popupUrl.replace(/\/$/,''):null)
-  await set(id,{retries:publishedAt&&url?0:p.retries,status:publishedAt&&url?'live':'ready',printify:{productId:made.id,blueprintId:m.blueprintId,providerId:m.providerId,images,...(backImage?{backImage}:{}),priceFrom:Math.min(...priced.map(v=>v.price)),currency:'USD',url,publishedAt}})
+  await set(id,{retries:publishedAt&&url?0:p.retries,status:publishedAt&&url?'live':'ready',printify:{productId:made.id,blueprintId:m.blueprintId,providerId:m.providerId,images,...(backImage?{backImage}:{}),quality:Math.round(soft*100)/100,priceFrom:Math.min(...priced.map(v=>v.price)),currency:'USD',url,publishedAt}})
  }catch(e){await set(id,{status:'error',error:(e as Error).message.slice(0,400)})}
  return (await readShop()).products.find(x=>x.id===id)!
 }
@@ -160,4 +160,18 @@ export async function extendToShape(url:string,shape:number):Promise<string|null
  let pipe=sharp(input).flatten({background:bg}).extend({left:padX,right:W-w-padX,top:padY,bottom:H-h-padY,background:bg})
  if(k<1)pipe=sharp(await pipe.toBuffer()).resize(Math.round(W*k),Math.round(H*k))
  return (await pipe.jpeg({quality:90}).toBuffer()).toString('base64')
+}
+
+/**
+ * Send a product's name, description and tags to Printify and publish again, so the Pop-Up store says what the desk says
+ * (13.11.2026: an edit used to change only the desk).
+ */
+export async function syncListing(id:string){
+ const doc=await readShop(),p=doc.products.find(x=>x.id===id),shop=doc.settings.shopId;if(!p?.printify||!shop)return
+ const api=await client(),base=p.blueprint?p.blueprint.title.replace(/\s*\([^)]*\)/g,''):KIND_SPECS[p.kind].label
+ const club=p.subject==='fanlife'?null:REGISTRY.find(c=>c.id===p.subject),list=listingOf(p,club?{name:subjectName(p.subject),city:club.city}:null,base)
+ const description=p.description&&p.description!==NOTE&&!p.description.startsWith('Original supporter art from the FAN LIFE library')?p.description:list.description
+ await api.update(shop,p.printify.productId,{title:p.title,description,tags:list.tags})
+ if(p.printify.publishedAt)await api.publish(shop,p.printify.productId).catch(()=>{})
+ await set(id,{description})
 }
