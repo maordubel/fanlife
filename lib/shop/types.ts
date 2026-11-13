@@ -58,6 +58,23 @@ export type ShopHealthNote={at:string;ok:boolean;notes:string[];checked:number;r
 export type ShopDoc={v:1;settings:ShopSettings;products:ShopProduct[];audit:ShopAudit[];health?:ShopHealthNote}
 export const EMPTY_SHOP:ShopDoc={v:1,settings:{open:false,shopId:null,shopTitle:null,channel:null,popupUrl:'',margin:45,matches:{}},products:[],audit:[]}
 /** what the public page may know about a product */
-export type PublicProduct={id:string;subject:string;kind:Kind;title:string;description:string;image:string;images:string[];back?:string;priceFrom:number;currency:string;url:string;/** ≈ whole euros at today's ECB rate (a guide; the checkout is in dollars) */eur?:number|null}
+export type Shelf='wall'|'wear'|'gear'|'home'|'kids'|'small'
+export type PublicProduct={id:string;subject:string;kind:Kind;title:string;description:string;image:string;images:string[];back?:string;
+ /** the storefront's shelf, the design it shares with sibling products, when it went on sale */
+ shelf:Shelf;design:string;since:string|null;priceFrom:number;currency:string;url:string;/** ≈ whole euros at today's ECB rate (a guide; the checkout is in dollars) */eur?:number|null}
 export const isPublic=(p:ShopProduct)=>p.visible&&p.status==='live'&&!!p.printify?.url&&p.printify.images.length>0
-export const toPublic=(p:ShopProduct):PublicProduct=>({id:p.id,subject:p.subject,kind:p.kind,title:p.title,description:p.description,image:p.printify!.images[0]!,images:p.printify!.images.slice(0,4),...(p.printify!.backImage?{back:p.printify!.backImage}:{}),priceFrom:p.printify!.priceFrom,currency:p.printify!.currency,url:p.printify!.url!})
+/** the storefront's shelf for a product: by kind, and for a catalogue product by its name */
+export function shelfOf(kind:Kind,catalogue?:string):Shelf{
+ if(kind==='poster'||kind==='framed'||kind==='canvas')return 'wall';if(kind==='tee'||kind==='hoodie')return 'wear';if(kind==='kids-tee')return 'kids'
+ if(kind==='tote')return 'gear';if(kind==='mug')return 'home';if(kind!=='more')return 'small'
+ const t=catalogue||''
+ if(/kid|youth|toddler|baby|infant|bodysuit|onesie|romper|bib/i.test(t))return 'kids'
+ if(/flag|banner|scarf|bandana|hat|cap|beanie|visor|bucket|tote|bag|backpack|pouch|duffel/i.test(t))return 'gear'
+ if(/poster|canvas|framed|print|wall|tapestr|metal|acrylic|photo tile/i.test(t))return 'wall'
+ if(/shirt|tee|hood|sweat|tank|jacket|jersey|polo|crewneck|long sleeve|zip|jogger|short/i.test(t))return 'wear'
+ if(/mug|cup|tumbler|bottle|glass|stein|pillow|blanket|towel|rug|mat|curtain|candle|ornament|coaster|clock/i.test(t))return 'home'
+ return 'small'
+}
+/** the design a product shares with its siblings: the same picture on several products */
+export const designKey=(p:ShopProduct)=>'library' in p.art?`l-${p.art.library.id.slice(-10)}`:`u-${p.art.upload.id.slice(-10)}`
+export const toPublic=(p:ShopProduct):PublicProduct=>({shelf:shelfOf(p.kind,p.blueprint?.title),design:designKey(p),since:p.printify!.publishedAt,id:p.id,subject:p.subject,kind:p.kind,title:p.title,description:p.description,image:p.printify!.images[0]!,images:p.printify!.images.slice(0,4),...(p.printify!.backImage?{back:p.printify!.backImage}:{}),priceFrom:p.printify!.priceFrom,currency:p.printify!.currency,url:p.printify!.url!})
