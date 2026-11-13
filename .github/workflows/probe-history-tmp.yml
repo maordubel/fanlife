@@ -14,8 +14,10 @@ jobs:
       - uses: actions/setup-node@v4
         with: {node-version: 22, cache: npm}
       - run: node scripts/ingest/clubs/probe-history.mjs
-      - run: npm ci
-      - run: npx tsx scripts/ingest/clubs/history-scotland.ts --club celtic --from 1888 --to 2026 && echo done
+      - if: false
+        run: npm ci
+      - if: false
+        run: npx tsx scripts/ingest/clubs/history-scotland.ts --club celtic --from 1888 --to 2026 && echo done
       - name: Commit the collected file to this review branch
         run: |
           git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

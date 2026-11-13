@@ -1,0 +1,1994 @@
+{
+ "schemaVersion": 1,
+ "clubId": "al-ahly",
+ "contentLocale": "en",
+ "sources": [
+  {
+   "id": "ahly-m-wp2017f",
+   "title": "Wikipedia: 2017 CAF Champions League final (Kiwix mirror)",
+   "url": "https://wiki.krisyotam.com/content/wikipedia_en_all_nopic_2026-03/2017_CAF_Champions_League_final",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-af48372",
+   "title": "Al Ahly vs Wydad Casablanca, 2017-10-27 match centre",
+   "url": "https://africanfootball.com/match/48372/2017-10-27-Al-Ahly-vs-Wydad-Casablanca",
+   "publisher": "AfricanFootball.com",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-espn494361",
+   "title": "ESPN match page: Wydad AC v Al Ahly, CAF CL final 2nd leg 2017",
+   "url": "https://global.espn.com/football/match/_/gameId/494361/al-ahly-wydad-casablanca",
+   "publisher": "ESPN",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-wp2022f",
+   "title": "Wikipedia: 2022 CAF Champions League final (Kiwix mirror)",
+   "url": "https://kaweah.freedombox.rocks/kiwix/wikipedia_en_all_maxi_2023-10/2022_CAF_Champions_League_final",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-espn635094",
+   "title": "ESPN match page: Al Ahly v Wydad, CAF CL final 2022",
+   "url": "https://www.espn.com/soccer/match/_/gameId/635094",
+   "publisher": "ESPN",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-wp2023f",
+   "title": "Wikipedia: 2023 CAF Champions League final (Kiwix mirror)",
+   "url": "https://wiki.krisyotam.com/content/wikipedia_en_all_nopic_2026-03/2023_CAF_Champions_League_final",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-espn668082",
+   "title": "ESPN match page: Al Ahly v Wydad, CAF CL final 1st leg 2023",
+   "url": "https://www.espn.ph/football/match/_/gameId/668082/wydad-ac-al-ahly",
+   "publisher": "ESPN",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-espn668083",
+   "title": "ESPN match page: Wydad AC v Al Ahly, CAF CL final 2nd leg 2023",
+   "url": "https://africa.espn.com/football/match/_/gameId/668083",
+   "publisher": "ESPN",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-ahram502318",
+   "title": "Ahly claim narrow 2-1 win over Wydad in Champions League final",
+   "url": "https://english.ahram.org.eg/News/502318.aspx",
+   "publisher": "Ahram Online",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-espn570848",
+   "title": "ESPN match page: Wydad AC v Al Ahly, CAF CL semi-final 1st leg 2020",
+   "url": "https://global.espn.com/football/match/_/gameId/570848/al-ahly-wydad-casablanca",
+   "publisher": "ESPN",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-ahlylu20201017",
+   "title": "The Line Up for Wydad AC",
+   "url": "https://www.alahlyegypt.com/en/news/article/the-line-up-for-wydad-ac",
+   "publisher": "Al Ahly SC official site",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-ahlyrep20201017",
+   "title": "Match Report: Al Ahly 2-0 Wydad AC",
+   "url": "https://www.alahlyegypt.com/en/news/article/match-report-al-ahly-2-0-wydad-ac",
+   "publisher": "Al Ahly SC official site",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-sw3225672",
+   "title": "Wydad Athletic Club vs Al Ahly SC, 17 October 2020",
+   "url": "https://th.soccerway.com/matches/2020/10/17/africa/caf-champions-league/wydad-athletic-club/al-ahly-sporting-club/3225672",
+   "publisher": "Soccerway",
+   "language": "th",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-espn577826",
+   "title": "ESPN match page: Al Ahly v Wydad, CAF CL semi-final 2nd leg 2020",
+   "url": "https://global.espn.com/football/match/_/gameId/577826/wydad-casablanca-al-ahly",
+   "publisher": "ESPN",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-ahlylu20201023",
+   "title": "Our Starting Line-up for Wydad AC Match",
+   "url": "https://alahlyegypt.com/en/news/article/our-starting-line-up-for-wydad-ac-match",
+   "publisher": "Al Ahly SC official site",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-sl20201023",
+   "title": "Pitso Mosimane's Al Ahly advance to CAF Champions League final",
+   "url": "https://www.soccerladuma.co.za/local/sa-players-abroad/pitso-mosimanes-al-ahly-advance-to-caf-champions-league-final-20201023",
+   "publisher": "Soccer Laduma",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-espn633872",
+   "title": "ESPN line-ups: Al Ahly v Raja, CAF CL quarter-final 1st leg 2022",
+   "url": "https://www.espn.nl/voetbal/lineups/_/wedstrijdId/633872",
+   "publisher": "ESPN",
+   "language": "nl",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-ahlylu20220416",
+   "title": "Starting Line-up Announced for Raja CA's Game",
+   "url": "https://www.alahlyegypt.com/en/news/article/starting-line-up-announced-for-raja-cas-game",
+   "publisher": "Al Ahly SC official site",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-ko20220416",
+   "title": "CAF Champions League match report: Al Ahly v Raja Casablanca, 16 April 2022",
+   "url": "https://www.kickoff.com/world-news/african-football/caf-champions-league-match-report-al-ahly-v-raja-casablanca-16-april-2022-20220416",
+   "publisher": "KickOff",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-espn633878",
+   "title": "ESPN match page: Raja v Al Ahly, CAF CL quarter-final 2nd leg 2022",
+   "url": "https://www.espn.com/soccer/match/_/gameId/633878",
+   "publisher": "ESPN",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-ahlylu20220422",
+   "title": "Mosimane Announces Starting Line-up for Raja's Match",
+   "url": "https://www.alahlyegypt.com/en/news/article/mosimane-announces-starting-line-up-for-rajas-match",
+   "publisher": "Al Ahly SC official site",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-sl20220423",
+   "title": "CAF Champions League report: Raja Casablanca v Al Ahly",
+   "url": "https://www.soccerladuma.co.za/international/african-football/caf-champions-league-report-raja-casablanca-v-al-ahly-20220423",
+   "publisher": "Soccer Laduma",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-mwn47086",
+   "title": "Al Ahly wins 1-1 against Morocco's Raja",
+   "url": "https://www.moroccoworldnews.com/2022/04/47086/al-ahly-wins-1-1-against-morocco-s-raja/",
+   "publisher": "Morocco World News",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-espn668070",
+   "title": "ESPN match page: Al Ahly v Raja, CAF CL quarter-final 1st leg 2023",
+   "url": "https://africa.espn.com/football/match/_/gameId/668070",
+   "publisher": "ESPN",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-btolat140000",
+   "title": "Btolat line-ups: Al Ahly vs Raja, 22 April 2023",
+   "url": "https://www.btolat.com/matches/lineup/140000",
+   "publisher": "Btolat",
+   "language": "ar",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-se1270892",
+   "title": "SportEden line-ups: Al Ahly vs Raja Casablanca",
+   "url": "https://sporteden.com/football/match/1270892/al-ahly-vs-raja-casablanca/lineups",
+   "publisher": "SportEden",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-espn668077",
+   "title": "ESPN match page: Raja v Al Ahly, CAF CL quarter-final 2nd leg 2023",
+   "url": "https://www.espn.com/soccer/match/_/gameId/668077",
+   "publisher": "ESPN",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-btolat3317627",
+   "title": "Btolat line-ups: Raja vs Al Ahly, 29 April 2023",
+   "url": "https://www.btolat.com/matches/lineup/3317627",
+   "publisher": "Btolat",
+   "language": "ar",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-wpsc2021",
+   "title": "Wikipedia: 2021 CAF Super Cup (December) (Kiwix mirror)",
+   "url": "https://wiki.krisyotam.com/content/wikipedia_en_all_nopic_2026-03/2021-22_CAF_Super_Cup",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-ahly32172",
+   "title": "Mosimane Announces Team's Lineup for the Super Cup",
+   "url": "https://www.alahlyegypt.com/en/news/article/32172",
+   "publisher": "Al Ahly SC official site",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-s365sc2021",
+   "title": "365Scores: Al Ahly vs Raja Casablanca, CAF Super Cup",
+   "url": "https://www.365scores.com/ar/football/match/caf-super-cup-5581/al-ahly-sc-raja-casablanca-8200-8204-5581",
+   "publisher": "365Scores",
+   "language": "ar",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-telquel2021",
+   "title": "Supercoupe d'Afrique : Al Ahly remporte le titre aux dépens du Raja",
+   "url": "https://telquel.ma/2021/12/23/supercoupe-dafrique-al-ahly-degypte-remporte-le-titre-aux-depens-du-raja-de-casablanca_1748202",
+   "publisher": "TelQuel",
+   "language": "fr",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-wp2020f",
+   "title": "Wikipedia: 2020 CAF Champions League final (Kiwix mirror)",
+   "url": "https://kaweah.freedombox.rocks/kiwix/wikipedia_en_all_maxi_2023-10/2020_CAF_Champions_League_Final",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-espn570845",
+   "title": "ESPN match page: Zamalek v Al Ahly, CAF CL final 2020",
+   "url": "https://global.espn.com/soccer/match/_/gameId/570845/al-ahly-zamalek",
+   "publisher": "ESPN",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-ahlylu2020f",
+   "title": "Al Ahly's Starting Lineup for CAF Champions League Final",
+   "url": "https://alahlyegypt.com/en/news/article/al-ahlys-starting-lineup-for-caf-champions-league-final",
+   "publisher": "Al Ahly SC official site",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-wp2021f",
+   "title": "Wikipedia: 2021 CAF Champions League final (Kiwix mirror)",
+   "url": "https://wiki.krisyotam.com/content/wikipedia_en_all_nopic_2026-03/2021_CAF_Champions_League_Final",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-kc2021",
+   "title": "Chiefs vs Ahly line-ups for the Champions League Final",
+   "url": "https://kaizerchiefs.com/news/chiefs-vs-ahly-line-ups-champions-league-final",
+   "publisher": "Kaizer Chiefs FC official site",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-espn609917",
+   "title": "ESPN match page: Kaizer Chiefs v Al Ahly, CAF CL final 2021",
+   "url": "https://global.espn.com/soccer/match/_/gameId/609917/al-ahly-kaizer-chiefs",
+   "publisher": "ESPN",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-wp2024f",
+   "title": "Wikipedia: 2024 CAF Champions League final (Kiwix mirror)",
+   "url": "https://wiki.krisyotam.com/content/wikipedia_en_all_nopic_2026-03/2024_CAF_Champions_League_final",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-espn702206",
+   "title": "ESPN match page: ES Tunis v Al Ahly, CAF CL final 1st leg 2024",
+   "url": "https://global.espn.com/football/match/_/gameId/702206/al-ahly-esperance-sportive-de-tunis",
+   "publisher": "ESPN",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-espn702207",
+   "title": "ESPN match page: Al Ahly v ES Tunis, CAF CL final 2nd leg 2024",
+   "url": "https://global.espn.com/football/match/_/gameId/702207/esperance-sportive-de-tunis-al-ahly",
+   "publisher": "ESPN",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-wp2013f",
+   "title": "Wikipedia: 2013 CAF Champions League final (Kiwix mirror)",
+   "url": "https://kaweah.freedombox.rocks/kiwix/wikipedia_en_all_maxi_2023-10/2013_CAF_Champions_League_Final",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-s24_2013",
+   "title": "Red Devils deny Pirates glory",
+   "url": "https://www.sport24.co.za/Soccer/South-Africa/Red-Devils-deny-Pirates-glory-20131110",
+   "publisher": "Sport24",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-cfm2013",
+   "title": "Pirates hold Ahly in CL final opener",
+   "url": "https://www.capitalfm.co.ke/sports/2013/11/03/pirates-hold-ahly-in-cl-final-opener/",
+   "publisher": "Capital FM Kenya",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-wp2012f",
+   "title": "Wikipedia: 2012 CAF Champions League final (Kiwix mirror)",
+   "url": "https://wiki.krisyotam.com/content/wikipedia_en_all_nopic_2026-03/2012_CAF_Champions_League_final",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-ahram57172",
+   "title": "Ahly strike late to secure home draw with Esperance",
+   "url": "https://english.ahram.org.eg/NewsContent/6/0/57172/Sports/0/VIDEO-Ahly-strike-late-to-secure-home-draw-with-Es.aspx",
+   "publisher": "Ahram Online",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ahly-m-aj2012",
+   "title": "Al Ahly in seventh heaven",
+   "url": "https://www.aljazeera.com/amp/sports/2012/11/18/al-ahly-in-seventh-heaven",
+   "publisher": "Al Jazeera",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-soliman",
+   "title": "Walid Soliman — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Walid_Soliman_(footballer)",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-soliman",
+   "title": "Walid Soliman — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-solimwal002",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-abdelfadil",
+   "title": "Sherif Abdel-Fadil — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Sherif_Abdel-Fadil",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-abdelfadil",
+   "title": "Sherif Abdel-Fadil — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-abdelshe001",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-ashraf",
+   "title": "Ayman Ashraf — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Ayman_Ashraf",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-ashraf",
+   "title": "Ayman Ashraf — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-ashraaym001",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-maaloul",
+   "title": "Ali Maâloul — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Ali_Maâloul",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-maaloul",
+   "title": "Ali Maâloul — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-maaloali001",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-ajayi",
+   "title": "Junior Ajayi — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Junior_Ajayi",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-ajayi",
+   "title": "Junior Ajayi — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-ajayijun001",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-azaro",
+   "title": "Walid Azaro — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Walid_Azaro",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-azaro",
+   "title": "Walid Azaro — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-azarowal001",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-sgomaa",
+   "title": "Saleh Gomaa — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Saleh_Gomaa",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-sgomaa",
+   "title": "Saleh Gomaa — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-gomaasal001",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-mohsen",
+   "title": "Marwan Mohsen — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Marwan_Mohsen",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-mohsen",
+   "title": "Marwan Mohsen — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-mohsemar001",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-hegazi",
+   "title": "Ahmed Hegazi — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Ahmed_Hegazi",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-hegazi",
+   "title": "Ahmed Hegazi — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-hegazahm002",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-zakaria",
+   "title": "Moamen Zakaria — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Moamen_Zakaria",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-zakaria",
+   "title": "Moamen Zakaria — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-zakarmom001",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-doe",
+   "title": "Francis Doe — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Francis_Doe",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-doe",
+   "title": "Francis Doe — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-doe00fra001",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-evouna",
+   "title": "Malick Evouna — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Malick_Evouna",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-evouna",
+   "title": "Malick Evouna — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-evounmal001",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-gamal",
+   "title": "Amr Gamal — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Amr_Gamal",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-gamal",
+   "title": "Amr Gamal — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-gamalamr001",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-yedan",
+   "title": "Moussa Yedan — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Moussa_Yedan",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-yedan",
+   "title": "Moussa Yedan — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-yedanmou001",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-hamdi",
+   "title": "Ahmed Hamdy — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Ahmed_Hamdi_(footballer)",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-hamdi",
+   "title": "Ahmed Hamdy — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-hamdiahm003",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-basemali",
+   "title": "Basem Ali — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Basem_Ali",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-basemali",
+   "title": "Basem Ali — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-ali00bas001",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-abdelzaher",
+   "title": "Ahmed Abd El-Zaher — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Ahmed_Abd_El-Zaher",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-abdelzaher",
+   "title": "Ahmed Abd El-Zaher — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-abdelahm019",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-wp-shabana",
+   "title": "Abdelhamid Shabana — Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Abdelhamid_Shabana",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "ah-c-sc-shabana",
+   "title": "Abdelhamid Shabana — Stats Crew player stats",
+   "url": "https://www.statscrew.com/worldfootball/stats/p-shabaabd001",
+   "publisher": "Stats Crew (statscrew.com, worldfootball data)",
+   "language": "en",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  }
+ ],
+ "matches": [
+  {
+   "id": "m-2017-10-28-wydad-ac",
+   "value": {
+    "name": "Al Ahly 1-1 Wydad AC",
+    "on": "2017-10-28",
+    "competition": "CAF Champions League final, 1st leg",
+    "score": "1-1",
+    "venue": "Borg El Arab Stadium, Alexandria",
+    "lineup": [
+     "Sherif Ekramy",
+     "Ahmed Fathy",
+     "Saad Samir",
+     "Mohamed Nagieb",
+     "Ali Maâloul",
+     "Amr El Solia",
+     "Ramy Rabia",
+     "Moamen Zakaria",
+     "Abdallah El Said",
+     "Junior Ajayi",
+     "Walid Azaro"
+    ],
+    "bench": [],
+    "scorers": [
+     "Moamen Zakaria"
+    ],
+    "sport": "football"
+   },
+   "sources": [
+    "ahly-m-wp2017f",
+    "ahly-m-af48372"
+   ],
+   "researchedAt": "2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia and AfricanFootball.com agree on date (AfricanFootball header says 27 Oct, its text says Saturday 28 Oct), score 1-1 and all 11 Ahly starters (spelling variants Nagiub/Naguib, El-Sulaya). Zakaria 3' in both.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13"
+  },
+  {
+   "id": "m-2017-11-04-wydad-ac",
+   "value": {
+    "name": "Wydad AC 1-0 Al Ahly",
+    "on": "2017-11-04",
+    "competition": "CAF Champions League final, 2nd leg",
+    "score": "1-0",
+    "venue": "Stade Mohammed V, Casablanca",
+    "lineup": [
+     "Sherif Ekramy",
+     "Mohamed Hany",
+     "Ramy Rabia",
+     "Saad Samir",
+     "Hussein El Sayed",
+     "Amr El Solia",
+     "Ahmed Fathy",
+     "Moamen Zakaria",
+     "Abdallah El Said",
+     "Junior Ajayi",
+     "Walid Azaro"
+    ],
+    "bench": [],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "ahly-m-wp2017f",
+    "ahly-m-espn494361"
+   ],
+   "researchedAt": "2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia and ESPN agree on date, score and 11/11 Ahly starters (ESPN gives initials). Wydad won 2-1 on aggregate.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13"
+  },
+  {
+   "id": "m-2022-05-30-wydad-ac",
+   "value": {
+    "name": "Al Ahly 0-2 Wydad AC",
+    "on": "2022-05-30",
+    "competition": "CAF Champions League final",
+    "score": "0-2",
+    "venue": "Stade Mohammed V, Casablanca",
+    "lineup": [
+     "Mohamed El-Shenawy",
+     "Mohamed Hany",
+     "Yasser Ibrahim",
+     "Ayman Ashraf",
+     "Ali Maâloul",
+     "Taher Mohamed",
+     "Aliou Dieng",
+     "Hamdy Fathy",
+     "Hussein El Shahat",
+     "Percy Tau",
+     "Ahmed Abdel Kader"
+    ],
+    "bench": [],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "ahly-m-wp2022f",
+    "ahly-m-espn635094"
+   ],
+   "researchedAt": "2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Single-match final; both sources list Al Ahly first (designated home) though played in Casablanca. Existing record 'Wydad AC 2-0 Al Ahly' (same date, no XI) is the same match. Ahly XI 10/11 by surname: Wikipedia 'Ahmed Abdel Kader' vs ESPN 'Ahmed Radwan' (same #35).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13"
+  },
+  {
+   "id": "m-2023-06-04-wydad-ac",
+   "value": {
+    "name": "Al Ahly 2-1 Wydad AC",
+    "on": "2023-06-04",
+    "competition": "CAF Champions League final, 1st leg",
+    "score": "2-1",
+    "venue": "Cairo International Stadium, Cairo",
+    "lineup": [
+     "Mostafa Shobeir",
+     "Ali Maâloul",
+     "Mohamed Abdelmonem",
+     "Yasser Ibrahim",
+     "Mohamed Hany",
+     "Hamdy Fathy",
+     "Marwan Attia",
+     "Aliou Dieng",
+     "Hussein El Shahat",
+     "Mahmoud Kahraba",
+     "Percy Tau"
+    ],
+    "bench": [],
+    "scorers": [
+     "Percy Tau",
+     "Mahmoud Kahraba"
+    ],
+    "sport": "football"
+   },
+   "sources": [
+    "ahly-m-wp2023f",
+    "ahly-m-espn668082",
+    "ahly-m-ahram502318"
+   ],
+   "researchedAt": "2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia and Ahram agree on 4 June 2023 and 2-1; ESPN (Philippines edition) shows 5 June (time-zone rollover) but same score and 11/11 starters. Scorers Tau and Kahraba in Wikipedia and Ahram.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13"
+  },
+  {
+   "id": "m-2023-06-11-wydad-ac",
+   "value": {
+    "name": "Wydad AC 1-1 Al Ahly",
+    "on": "2023-06-11",
+    "competition": "CAF Champions League final, 2nd leg",
+    "score": "1-1",
+    "venue": "Stade Mohammed V, Casablanca",
+    "lineup": [
+     "Mohamed El-Shenawy",
+     "Ali Maâloul",
+     "Mohamed Abdelmonem",
+     "Yasser Ibrahim",
+     "Mohamed Hany",
+     "Hamdy Fathy",
+     "Marwan Attia",
+     "Aliou Dieng",
+     "Hussein El Shahat",
+     "Mahmoud Kahraba",
+     "Percy Tau"
+    ],
+    "bench": [],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "ahly-m-wp2023f",
+    "ahly-m-espn668083"
+   ],
+   "researchedAt": "2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, score and 11/11 Ahly starters agree. ESPN credits Mohamed Abdelmonem 78'; the Wikipedia mirror text lists no scorers, so scorers dropped. Ahly won 3-2 on aggregate.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13"
+  },
+  {
+   "id": "m-2020-10-17-wydad-ac",
+   "value": {
+    "name": "Wydad AC 0-2 Al Ahly",
+    "on": "2020-10-17",
+    "competition": "CAF Champions League semi-final, 1st leg",
+    "score": "0-2",
+    "venue": "Stade Mohammed V, Casablanca",
+    "lineup": [
+     "Mohamed El-Shenawy",
+     "Mohamed Hany",
+     "Yasser Ibrahim",
+     "Ayman Ashraf",
+     "Ali Maâloul",
+     "Amr El Solia",
+     "Aliou Dieng",
+     "Mohamed Magdy Afsha",
+     "Hussein El Shahat",
+     "Junior Ajayi",
+     "Marwan Mohsen"
+    ],
+    "bench": [],
+    "scorers": [
+     "Mohamed Magdy Afsha",
+     "Ali Maâloul"
+    ],
+    "sport": "football"
+   },
+   "sources": [
+    "ahly-m-espn570848",
+    "ahly-m-ahlylu20201017",
+    "ahly-m-ahlyrep20201017",
+    "ahly-m-sw3225672"
+   ],
+   "researchedAt": "2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "ESPN and Soccerway give 17 Oct 2020, 0-2; Al Ahly site report (posted 18 Oct 01:13) confirms. Ahly XI 11/11 between ESPN and the club's line-up post. Scorers Afsha and Maâloul (pen) in ESPN and club report.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13"
+  },
+  {
+   "id": "m-2020-10-23-wydad-ac",
+   "value": {
+    "name": "Al Ahly 3-1 Wydad AC",
+    "on": "2020-10-23",
+    "competition": "CAF Champions League semi-final, 2nd leg",
+    "score": "3-1",
+    "venue": "Cairo International Stadium, Cairo",
+    "lineup": [
+     "Mohamed El-Shenawy",
+     "Yasser Ibrahim",
+     "Mohamed Hany",
+     "Ayman Ashraf",
+     "Ahmed Fathy",
+     "Hussein El Shahat",
+     "Aliou Dieng",
+     "Amr El Solia",
+     "Junior Ajayi",
+     "Mohamed Magdy Afsha",
+     "Marwan Mohsen"
+    ],
+    "bench": [],
+    "scorers": [
+     "Marwan Mohsen",
+     "Hussein El Shahat",
+     "Yasser Ibrahim"
+    ],
+    "sport": "football"
+   },
+   "sources": [
+    "ahly-m-espn577826",
+    "ahly-m-ahlylu20201023",
+    "ahly-m-sl20201023"
+   ],
+   "researchedAt": "2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "ESPN and Soccer Laduma agree on 23 Oct 2020, 3-1 and Ahly scorers (Mohsen, El Shahat, Yasser Ibrahim). Ahly XI 11/11 between ESPN and the club line-up post. Ahly won 5-1 on aggregate.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13"
+  },
+  {
+   "id": "m-2022-04-16-raja-ca",
+   "value": {
+    "name": "Al Ahly 2-1 Raja CA",
+    "on": "2022-04-16",
+    "competition": "CAF Champions League quarter-final, 1st leg",
+    "score": "2-1",
+    "venue": "Cairo",
+    "lineup": [
+     "Mohamed El-Shenawy",
+     "Mohamed Abdelmonem",
+     "Yasser Ibrahim",
+     "Ayman Ashraf",
+     "Mohamed Hany",
+     "Amr El Solia",
+     "Aliou Dieng",
+     "Ahmed Abdel Kader",
+     "Hussein El Shahat",
+     "Percy Tau",
+     "Mohamed Sherif"
+    ],
+    "bench": [],
+    "scorers": [
+     "Amr El Solia",
+     "Hussein El Shahat"
+    ],
+    "sport": "football"
+   },
+   "sources": [
+    "ahly-m-espn633872",
+    "ahly-m-ahlylu20220416",
+    "ahly-m-ko20220416"
+   ],
+   "researchedAt": "2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "ESPN and KickOff agree on 16 Apr 2022, 2-1 and Ahly scorers (El Solia pen, El Shahat). Ahly XI 11/11 between ESPN and club post (ESPN 'Ahmed Radwan' = Ahmed Abdel Kader, #35). Stadium not named; venue city only.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13"
+  },
+  {
+   "id": "m-2022-04-22-raja-ca",
+   "value": {
+    "name": "Raja CA 1-1 Al Ahly",
+    "on": "2022-04-22",
+    "competition": "CAF Champions League quarter-final, 2nd leg",
+    "score": "1-1",
+    "venue": "Casablanca",
+    "lineup": [
+     "Mohamed El-Shenawy",
+     "Ali Maâloul",
+     "Mohamed Abdelmonem",
+     "Yasser Ibrahim",
+     "Mohamed Hany",
+     "Aliou Dieng",
+     "Hamdy Fathy",
+     "Amr El Solia",
+     "Hussein El Shahat",
+     "Taher Mohamed",
+     "Percy Tau"
+    ],
+    "bench": [],
+    "scorers": [
+     "Mohamed Abdelmonem"
+    ],
+    "sport": "football"
+   },
+   "sources": [
+    "ahly-m-espn633878",
+    "ahly-m-mwn47086",
+    "ahly-m-ahlylu20220422",
+    "ahly-m-sl20220423"
+   ],
+   "researchedAt": "2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "ESPN and Morocco World News give Friday 22 Apr 2022, 1-1 (Soccer Laduma report dated 23 Apr). Ahly XI 11/11 ESPN vs club post. Abdelmonem 44' in ESPN, Soccer Laduma and MWN. Ahly won 3-2 on aggregate.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13"
+  },
+  {
+   "id": "m-2023-04-22-raja-ca",
+   "value": {
+    "name": "Al Ahly 2-0 Raja CA",
+    "on": "2023-04-22",
+    "competition": "CAF Champions League quarter-final, 1st leg",
+    "score": "2-0",
+    "venue": "Cairo International Stadium, Cairo",
+    "lineup": [
+     "Mohamed El-Shenawy",
+     "Mohamed Hany",
+     "Mahmoud Metwaly",
+     "Mohamed Abdelmonem",
+     "Ali Maâloul",
+     "Aliou Dieng",
+     "Marwan Attia",
+     "Amr El Solia",
+     "Hussein El Shahat",
+     "Percy Tau",
+     "Mahmoud Kahraba"
+    ],
+    "bench": [],
+    "scorers": [
+     "Mohamed Abdelmonem",
+     "Hamdy Fathy"
+    ],
+    "sport": "football"
+   },
+   "sources": [
+    "ahly-m-espn668070",
+    "ahly-m-btolat140000",
+    "ahly-m-se1270892"
+   ],
+   "researchedAt": "2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "ESPN, Btolat and SportEden agree on date, score and 11/11 Ahly starters. Scorers in ESPN and Btolat.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13"
+  },
+  {
+   "id": "m-2023-04-29-raja-ca",
+   "value": {
+    "name": "Raja CA 0-0 Al Ahly",
+    "on": "2023-04-29",
+    "competition": "CAF Champions League quarter-final, 2nd leg",
+    "score": "0-0",
+    "venue": "Casablanca",
+    "lineup": [
+     "Mohamed El-Shenawy",
+     "Mohamed Hany",
+     "Yasser Ibrahim",
+     "Mohamed Abdelmonem",
+     "Ali Maâloul",
+     "Hamdy Fathy",
+     "Aliou Dieng",
+     "Marwan Attia",
+     "Hussein El Shahat",
+     "Percy Tau",
+     "Mahmoud Kahraba"
+    ],
+    "bench": [],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "ahly-m-espn668077",
+    "ahly-m-btolat3317627"
+   ],
+   "researchedAt": "2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "ESPN and Btolat agree on 29 Apr 2023, 0-0 and 11/11 Ahly starters. Ahly won 2-0 on aggregate.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13"
+  },
+  {
+   "id": "m-2020-11-27-zamalek",
+   "value": {
+    "name": "Zamalek 1-2 Al Ahly",
+    "on": "2020-11-27",
+    "competition": "CAF Champions League final",
+    "score": "1-2",
+    "venue": "Cairo International Stadium, Cairo",
+    "lineup": [
+     "Mohamed El-Shenawy",
+     "Mohamed Hany",
+     "Yasser Ibrahim",
+     "Ayman Ashraf",
+     "Ali Maâloul",
+     "Amr El Solia",
+     "Hamdy Fathy",
+     "Hussein El Shahat",
+     "Mohamed Magdy Afsha",
+     "Junior Ajayi",
+     "Marwan Mohsen"
+    ],
+    "bench": [],
+    "scorers": [
+     "Amr El Solia",
+     "Mohamed Magdy Afsha"
+    ],
+    "sport": "football"
+   },
+   "sources": [
+    "ahly-m-wp2020f",
+    "ahly-m-espn570845",
+    "ahly-m-ahlylu2020f"
+   ],
+   "researchedAt": "2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia and ESPN agree on date, Zamalek 1-2 Al Ahly and scorers El Solia 5', Magdy 86'. Ahly XI 11/11 Wikipedia vs club line-up post (ESPN line-up table unparseable).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13"
+  },
+  {
+   "id": "m-2021-07-17-kaizer-chiefs",
+   "value": {
+    "name": "Kaizer Chiefs 0-3 Al Ahly",
+    "on": "2021-07-17",
+    "competition": "CAF Champions League final",
+    "score": "0-3",
+    "venue": "Stade Mohammed V, Casablanca",
+    "lineup": [
+     "Mohamed El-Shenawy",
+     "Akram Tawfik",
+     "Badr Banoun",
+     "Ayman Ashraf",
+     "Ali Maâloul",
+     "Amr El Solia",
+     "Hamdy Fathy",
+     "Hussein El Shahat",
+     "Mohamed Magdy Afsha",
+     "Taher Mohamed",
+     "Mohamed Sherif"
+    ],
+    "bench": [],
+    "scorers": [
+     "Mohamed Sherif",
+     "Mohamed Magdy Afsha",
+     "Amr El Solia"
+    ],
+    "sport": "football"
+   },
+   "sources": [
+    "ahly-m-wp2021f",
+    "ahly-m-kc2021",
+    "ahly-m-espn609917"
+   ],
+   "researchedAt": "2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia and ESPN agree on date, 0-3 and scorers Sherif 53', Magdy 64', El Solia 74'. Ahly XI 11/11 Wikipedia vs Kaizer Chiefs line-up post.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13"
+  },
+  {
+   "id": "m-2024-05-18-esperance",
+   "value": {
+    "name": "Espérance de Tunis 0-0 Al Ahly",
+    "on": "2024-05-18",
+    "competition": "CAF Champions League final, 1st leg",
+    "score": "0-0",
+    "venue": "Stade Hammadi Agrebi, Radès",
+    "lineup": [
+     "Mostafa Shobeir",
+     "Ramy Rabia",
+     "Ali Maâloul",
+     "Mohamed Abdelmonem",
+     "Mohamed Hany",
+     "Akram Tawfik",
+     "Marwan Attia",
+     "Emam Ashour",
+     "Percy Tau",
+     "Hussein El Shahat",
+     "Wessam Abou Ali"
+    ],
+    "bench": [],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "ahly-m-wp2024f",
+    "ahly-m-espn702206"
+   ],
+   "researchedAt": "2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, 0-0 and 11/11 Ahly starters agree.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13"
+  },
+  {
+   "id": "m-2024-05-25-esperance",
+   "value": {
+    "name": "Al Ahly 1-0 Espérance de Tunis",
+    "on": "2024-05-25",
+    "competition": "CAF Champions League final, 2nd leg",
+    "score": "1-0",
+    "venue": "Cairo International Stadium, Cairo",
+    "lineup": [
+     "Mostafa Shobeir",
+     "Ramy Rabia",
+     "Akram Tawfik",
+     "Mohamed Abdelmonem",
+     "Karim Fouad",
+     "Mohamed Hany",
+     "Marwan Attia",
+     "Emam Ashour",
+     "Percy Tau",
+     "Hussein El Shahat",
+     "Wessam Abou Ali"
+    ],
+    "bench": [],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "ahly-m-wp2024f",
+    "ahly-m-espn702207"
+   ],
+   "researchedAt": "2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Date, 1-0 and 11/11 Ahly starters agree. The only goal was an own goal by Espérance's Roger Aholou (4') in both sources, so no Ahly scorer listed. Ahly won 1-0 on aggregate.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13"
+  },
+  {
+   "id": "m-2013-11-10-orlando-pirates",
+   "value": {
+    "name": "Al Ahly 2-0 Orlando Pirates",
+    "on": "2013-11-10",
+    "competition": "CAF Champions League final, 2nd leg",
+    "score": "2-0",
+    "venue": "Osman Ahmed Osman Stadium, Cairo",
+    "lineup": [
+     "Sherif Ekramy",
+     "Ahmed Fathy",
+     "Wael Gomaa",
+     "Sayed Moawad",
+     "Sherif Abdel-Fadil",
+     "Mohamed Nagieb",
+     "Hossam Ashour",
+     "Abdallah El Said",
+     "Walid Soliman",
+     "Mohamed Aboutrika",
+     "Ahmed Abd El-Zaher"
+    ],
+    "bench": [],
+    "scorers": [
+     "Mohamed Aboutrika",
+     "Ahmed Abd El-Zaher"
+    ],
+    "sport": "football"
+   },
+   "sources": [
+    "ahly-m-wp2013f",
+    "ahly-m-s24_2013"
+   ],
+   "researchedAt": "2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia and Sport24 agree on 10 Nov 2013, 2-0, scorers Aboutrika 54' and Abd El-Zaher (78'/79') and 11/11 starters. Ahly won 3-1 on aggregate.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13"
+  },
+  {
+   "id": "m-2013-11-02-orlando-pirates",
+   "value": {
+    "name": "Orlando Pirates 1-1 Al Ahly",
+    "on": "2013-11-02",
+    "competition": "CAF Champions League final, 1st leg",
+    "score": "1-1",
+    "venue": "Orlando Stadium, Johannesburg",
+    "lineup": [],
+    "bench": [],
+    "scorers": [],
+    "sport": "football"
+   },
+   "sources": [
+    "ahly-m-wp2013f",
+    "ahly-m-cfm2013"
+   ],
+   "researchedAt": "2026-11-13",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "notes": "Date (Saturday 2 Nov) and 1-1 agree. Only Wikipedia gives an XI, so lineup omitted; Capital FM does not name Ahly's scorer (Wikipedia: Aboutrika 14'), so scorers omitted.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13"
+  },
+  {
+   "id": "m-2012-11-04-esperance",
+   "value": {
+    "name": "Al Ahly 1-1 Espérance de Tunis",
+    "on": "2012-11-04",
+    "competition": "CAF Champions League final, 1st leg",
+    "score": "1-1",
+    "venue": "Borg El Arab Stadium, Alexandria",
+    "lineup": [],
+    "bench": [],
+    "scorers": [
+     "Al-Sayed Hamdy"
+    ],
+    "sport": "football"
+   },
+   "sources": [
+    "ahly-m-wp2012f",
+    "ahly-m-ahram57172"
+   ],
+   "researchedAt": "2026-11-13",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "notes": "Date, 1-1 and Ahly scorer El Sayed Hamdy (late) agree. Only Wikipedia gives an XI (a blog copy of BBC live text was not used), so lineup omitted.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13"
+  },
+  {
+   "id": "m-2012-11-17-esperance",
+   "value": {
+    "name": "Espérance de Tunis 1-2 Al Ahly",
+    "on": "2012-11-17",
+    "competition": "CAF Champions League final, 2nd leg",
+    "score": "1-2",
+    "venue": "Stade Olympique de Radès, Tunis",
+    "lineup": [],
+    "bench": [],
+    "scorers": [
+     "Gedo",
+     "Walid Soliman"
+    ],
+    "sport": "football"
+   },
+   "sources": [
+    "ahly-m-wp2012f",
+    "ahly-m-aj2012"
+   ],
+   "researchedAt": "2026-11-13",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "notes": "Date, 1-2 and scorers agree (Al Jazeera names Gedo by his given name Mohamed Nagui). Only Wikipedia gives an XI, so lineup omitted. Ahly won 3-2 on aggregate.",
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13"
+  },
+  {
+   "id": "m-2021-12-22-raja-ca",
+   "value": {
+    "name": "Al Ahly 1-1 Raja CA",
+    "on": "2021-12-22",
+    "competition": "CAF Super Cup",
+    "score": "1-1",
+    "venue": "Ahmad bin Ali Stadium, Al Rayyan",
+    "lineup": [
+     "Mohamed El-Shenawy",
+     "Yasser Ibrahim",
+     "Badr Banoun",
+     "Ayman Ashraf",
+     "Akram Tawfik",
+     "Ali Maâloul",
+     "Hamdy Fathy",
+     "Aliou Dieng",
+     "Hussein El Shahat",
+     "Percy Tau",
+     "Mohamed Magdy Afsha"
+    ],
+    "bench": [],
+    "scorers": [
+     "Taher Mohamed"
+    ],
+    "sport": "football"
+   },
+   "sources": [
+    "ahly-m-wpsc2021",
+    "ahly-m-s365sc2021",
+    "ahly-m-ahly32172",
+    "ahly-m-telquel2021"
+   ],
+   "researchedAt": "2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia and 365Scores agree on 22 Dec 2021, 1-1, Ahly won 6-5 on penalties. Ahly XI 10/11 Wikipedia vs club post (Wikipedia has Yasser Ibrahim, club post has Amr El Solia; Wikipedia version kept since Wikipedia and 365Scores both credit Raja's goal as a Yasser Ibrahim own goal). Taher Mohamed 90' in Wikipedia and TelQuel.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13"
+  }
+ ],
+ "players": [
+  {
+   "id": "p-mg-035556f03af8",
+   "value": {
+    "name": "Walid Soliman",
+    "sensitive": false,
+    "career": {
+     "apps": 178,
+     "goals": 44,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "ah-c-wp-soliman",
+    "ah-c-sc-soliman"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox: 178/44 (league; career table league 178/44); Stats Crew EGPL season rows 2011-12..2021-22: 178/45."
+  },
+  {
+   "id": "p-mg-3988596238ff",
+   "value": {
+    "name": "Sherif Abdel-Fadil",
+    "sensitive": false,
+    "career": {
+     "apps": 65,
+     "goals": 3,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "ah-c-wp-abdelfadil",
+    "ah-c-sc-abdelfadil"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2009–2015: 65/3; Stats Crew EGPL rows 2009-10..2014-15: 65/3."
+  },
+  {
+   "id": "p-mg-c94b638310e4",
+   "value": {
+    "name": "Ayman Ashraf",
+    "sensitive": false,
+    "career": {
+     "apps": 140,
+     "goals": 5,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "ah-c-wp-ashraf",
+    "ah-c-sc-ashraf"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox two Al Ahly spells 13/0 + 127/5 = 140/5; Stats Crew EGPL rows 2009-10..2021-22: 139/5."
+  },
+  {
+   "id": "p-mg-970e6626231d",
+   "value": {
+    "name": "Ali Maâloul",
+    "sensitive": false,
+    "career": {
+     "apps": 163,
+     "goals": 35,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "ah-c-wp-maaloul",
+    "ah-c-sc-maaloul"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2016–2025: 163/35; Stats Crew EGPL rows 2016-17..2023-24: 163/35."
+  },
+  {
+   "id": "p-mg-fbfe4d08a75c",
+   "value": {
+    "name": "Junior Ajayi",
+    "sensitive": false,
+    "career": {
+     "apps": 103,
+     "goals": 30,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "ah-c-wp-ajayi",
+    "ah-c-sc-ajayi"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2016–2021: 103/30; Stats Crew EGPL rows 2016-17..2020-21: 103/30."
+  },
+  {
+   "id": "p-mg-cc71c8356f4f",
+   "value": {
+    "name": "Walid Azaro",
+    "sensitive": false,
+    "career": {
+     "apps": 60,
+     "goals": 26,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "ah-c-wp-azaro",
+    "ah-c-sc-azaro"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2017–2020: 60/26; Stats Crew EGPL rows 2017-18..2019-20: 60/26."
+  },
+  {
+   "id": "p-mg-518768a57d2b",
+   "value": {
+    "name": "Saleh Gomaa",
+    "sensitive": false,
+    "career": {
+     "apps": 53,
+     "goals": 8,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "ah-c-wp-sgomaa",
+    "ah-c-sc-sgomaa"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2015–2020: 53/8; Stats Crew EGPL rows 2015-16..2019-20: 53/8."
+  },
+  {
+   "id": "p-mg-31c69a63ffa8",
+   "value": {
+    "name": "Marwan Mohsen",
+    "sensitive": false,
+    "career": {
+     "apps": 73,
+     "goals": 17,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "ah-c-wp-mohsen",
+    "ah-c-sc-mohsen"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2016–2021: 73/17; Stats Crew EGPL rows 2016-17..2020-21: 72/17."
+  },
+  {
+   "id": "p-mg-6793a559151c",
+   "value": {
+    "name": "Ahmed Hegazi",
+    "sensitive": false,
+    "career": {
+     "apps": 40,
+     "goals": 1,
+     "basis": "league"
+    },
+    "positions": [
+     "DF"
+    ]
+   },
+   "sources": [
+    "ah-c-wp-hegazi",
+    "ah-c-sc-hegazi"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2015–2017: 40/1; Stats Crew EGPL rows 2015-16..2016-17: 40/0. Position: centre-back (Wikipedia) / D, Center Back (Stats Crew)."
+  },
+  {
+   "id": "p-mg-a15a4b8daf94",
+   "value": {
+    "name": "Moamen Zakaria",
+    "sensitive": false,
+    "career": {
+     "apps": 93,
+     "goals": 30,
+     "basis": "league"
+    },
+    "positions": [
+     "FW"
+    ]
+   },
+   "sources": [
+    "ah-c-wp-zakaria",
+    "ah-c-sc-zakaria"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2015–2018: 93/30; Stats Crew EGPL rows 2014-15..2018-19: 93/30. Position: winger (Wikipedia) / F, M - Right Winger (Stats Crew) -> FW."
+  },
+  {
+   "id": "p-mg-e9be9bc3c99c",
+   "value": {
+    "name": "Francis Doe",
+    "sensitive": false,
+    "career": {
+     "apps": 18,
+     "goals": 4,
+     "basis": "league"
+    }
+   },
+   "sources": [
+    "ah-c-wp-doe",
+    "ah-c-sc-doe"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2009–2011: 18/4; Stats Crew EGPL rows 2009-10..2010-11: 18/4."
+  },
+  {
+   "id": "p-mg-c7a37fb57c3a",
+   "value": {
+    "name": "Malick Evouna",
+    "sensitive": false,
+    "career": {
+     "apps": 24,
+     "goals": 12,
+     "basis": "league"
+    },
+    "positions": [
+     "FW"
+    ]
+   },
+   "sources": [
+    "ah-c-wp-evouna",
+    "ah-c-sc-evouna"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2015–2016: 24/12; Stats Crew EGPL 2015-16: 24/12. Position: striker (Wikipedia) / F, Center Forward (Stats Crew)."
+  },
+  {
+   "id": "p-mg-9eab041f038a",
+   "value": {
+    "name": "Amr Gamal",
+    "sensitive": false,
+    "career": {
+     "apps": 68,
+     "goals": 18,
+     "basis": "league"
+    },
+    "positions": [
+     "FW"
+    ]
+   },
+   "sources": [
+    "ah-c-wp-gamal",
+    "ah-c-sc-gamal"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2013–2021: 68/18; Stats Crew EGPL rows 2012-13..2016-17 (incl. 2013-14 championship stage): 67/18. Position: striker / F, Center Forward."
+  },
+  {
+   "id": "p-mg-893fbed25f32",
+   "value": {
+    "name": "Moussa Yedan",
+    "sensitive": false,
+    "career": {
+     "apps": 18,
+     "goals": 1,
+     "basis": "league"
+    },
+    "positions": [
+     "MF"
+    ]
+   },
+   "sources": [
+    "ah-c-wp-yedan",
+    "ah-c-sc-yedan"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2014–2015: 18/1; Stats Crew EGPL 2013-14..2014-15: 20/1 (18/1 without the 2013-14 championship-stage row). Position: attacking midfielder / M, F - Offensive Midfielder."
+  },
+  {
+   "id": "p-mg-2e9f0df5cfda",
+   "value": {
+    "name": "Ahmed Hamdy",
+    "sensitive": false,
+    "career": {
+     "apps": 14,
+     "goals": 1,
+     "basis": "league"
+    },
+    "positions": [
+     "MF"
+    ]
+   },
+   "sources": [
+    "ah-c-wp-hamdi",
+    "ah-c-sc-hamdi"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia (Ahmed Hamdi) infobox 2015–2019: 14/1; Stats Crew EGPL 2015-16, 2017-18: 14/1. Position: attacking midfielder / M, F - Offensive Midfielder."
+  },
+  {
+   "id": "p-mg-5cbbc74e8dfc",
+   "value": {
+    "name": "Basem Ali",
+    "sensitive": false,
+    "career": {
+     "apps": 45,
+     "goals": 1,
+     "basis": "league"
+    },
+    "positions": [
+     "DF"
+    ]
+   },
+   "sources": [
+    "ah-c-wp-basemali",
+    "ah-c-sc-basemali"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2014–2020: 45/1; Stats Crew EGPL rows 2014-15..2018-19: 45/1. Position: right-back / D, M - Right Back."
+  },
+  {
+   "id": "p-mg-bd37526673f8",
+   "value": {
+    "name": "Ahmed Abd El-Zaher",
+    "sensitive": false,
+    "career": {
+     "apps": 34,
+     "goals": 8,
+     "basis": "league"
+    },
+    "positions": [
+     "FW"
+    ]
+   },
+   "sources": [
+    "ah-c-wp-abdelzaher",
+    "ah-c-sc-abdelzaher"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2013–2016: 34/8; Stats Crew EGPL 2012-13, 2014-15, 2015-16: 34/8. Position: forward / F, Center Forward."
+  },
+  {
+   "id": "p-mg-8872c1ef144f",
+   "value": {
+    "name": "Abdelhamid Shabana",
+    "sensitive": false,
+    "career": {
+     "apps": 10,
+     "goals": 2,
+     "basis": "league"
+    },
+    "positions": [
+     "MF"
+    ]
+   },
+   "sources": [
+    "ah-c-wp-shabana",
+    "ah-c-sc-shabana"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-13",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia infobox 2010–2013: 10/2; Stats Crew EGPL 2010-11: 8/1 (within tolerance). Position: attacking midfielder / M - Offensive Midfielder."
+  }
+ ],
+ "kits": [],
+ "rivals": [],
+ "skipped": [],
+ "missingLegends": []
+}
