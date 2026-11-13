@@ -27,8 +27,9 @@ const goalsKey=(v:Raw)=>{
 const day=(v:Raw)=>typeof v.on==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(v.on)?v.on:null
 const rank=(f:Raw)=>{
  const v=obj(f.value),id=String(f.id||'')
- // the curated id outranks a feed's richer copy: questions, goals and links already point at it, and the feed's eleven is borrowed anyway
- return [f.status==='approved'?1:0,/^(a-m-|ea-match-)/.test(id)?0:1,arr(v.lineup).length===11?1:0,arr(v.scorers).length?1:0,arr(f.sources).length]
+ // the curated id outranks a feed's richer copy (questions, goals and links already point at it, and the feed's eleven is borrowed
+ // anyway); the season-history feed (`h-`, scripts/ingest/clubs/history-scotland.ts) ranks below the match feeds
+ return [f.status==='approved'?1:0,/^h-/.test(id)?0:/^(a-m-|ea-match-)/.test(id)?1:2,arr(v.lineup).length===11?1:0,arr(v.scorers).length?1:0,arr(f.sources).length]
 }
 const better=(a:Raw,b:Raw)=>{const x=rank(a),y=rank(b);for(let i=0;i<x.length;i++)if(x[i]!==y[i])return x[i]!>y[i]!;return String(a.id)<String(b.id)}
 
