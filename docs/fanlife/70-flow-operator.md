@@ -53,6 +53,12 @@ worker edits → the film arrives on Telegram
    * CLASSIFIED panels: Image, 16:9, the panel prompt (it carries the house style).
 5. Each result, in the tab: `fetch(src)` → blob (check type video/mp4 or image/*, size > 50 KB) → `op:'urls'` →
    `PUT` the blob to the url (`x-upsert: true`) → after a job's files, `op:'done'` with the names that went up.
+   Images: the tile's `flow-content.google/image/…` src fetches fine. **Videos (13.11.2026):** the `<video>` src
+   (`/asb/…`) redirects to googlevideo.com with no CORS, so `fetch` fails. Instead, in the tab, wrap
+   `URL.createObjectURL` to keep each Blob and make `HTMLAnchorElement.prototype.click` a no-op, then press the
+   tile's download button: Flow builds the mp4 Blob in the page (the file name ends in the media id, which tells
+   the clips apart) and nothing reaches the computer's disk. Upload that Blob.
+   Type one prompt and submit it before typing the next; two prompts typed back to back merge into one image.
 6. Flow out of credits, a refusal, or anything unexpected → stop; the rest waits for the next hour. One short line
    to the owner only when something needs him. A finished Short reaches his Telegram by itself.
 
