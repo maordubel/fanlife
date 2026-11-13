@@ -23,7 +23,7 @@ export async function POST(r:Request){
  if(o&&!ORIGINS.includes(o))return json({error:'Not this origin.'},403)
  if(limited('flow-operator',120,60_000))return cors(json({error:'Too many requests.'},429),at)
  try{
-  const b=await body(r) as Record<string,unknown>
+  const b=await body(r,400_000) as Record<string,unknown> // the queue carries the manifest + library spec (~145 KB)
   if(!await ticketOk(b.ticket))return cors(json({error:'No valid ticket.'},401),at)
   if(b.op==='queue')return cors(json(await flowQueue(panelNeeds({files:(b.manifest&&typeof b.manifest==='object'?(b.manifest as {files?:never}).files:undefined)??{}}),Array.isArray(b.library)?b.library as LibPiece[]:[])),at)
   if(b.op==='urls')return cors(json(await flowUrls(b)),at)
