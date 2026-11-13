@@ -9,3 +9,4 @@ Cause: every public page is `force-dynamic`, one render costs seconds of the ins
 - Never shelved: `/api`, `/master`, `/qa`, `/auth`, signed pages (`/studio-cancel`, `/final-whistle-render`), files, non-GET, a request carrying the admin or tester cookie, an answer that is not a whole 200 or that sets a cookie.
 - A change made in the desk shows on public pages within a minute (the first visitor after it may still see the previous copy once). A deploy starts with an empty shelf.
 - The answer carries `x-fanlife-shelf: hit | stale | miss`; that header is how the speed is checked on production.
+- The shelf is per instance, and a second instance starts cold (measured 13.11: 21 s for the front page). So one instance takes 60 requests and at most 3 run (`deploy-cloudrun.yml`; it was 6 × 10 when every request was a render), and a new instance lays its own table before visitors pay for it: the front page, then the club pages and doors it links to, one at a time (`warm`).

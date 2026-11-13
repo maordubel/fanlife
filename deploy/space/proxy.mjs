@@ -90,20 +90,42 @@ function upstream(req) {
 }
 /** One render behind a stale answer: at most one per page at a time, and a failure leaves the shelf as it was. */
 function renew(key, req) {
-  if (renewing.has(key)) return
+  if (renewing.has(key)) return Promise.resolve(null)
   renewing.add(key)
-  const done = () => renewing.delete(key)
-  const headers = { ...upstream(req), 'accept-encoding': 'identity' }
-  delete headers['if-none-match']; delete headers['if-modified-since']
-  const up = http.request({ ...UP, method: 'GET', path: req.url, headers }, (r) => {
-    const parts = []; let n = 0
-    r.on('data', (c) => { n += c.length; if (n <= MAX_BODY) parts.push(c) })
-    r.on('end', () => { if (shelvable(r.statusCode || 0, r.headers, n)) shelf.put(key, 200, clean(r.headers), Buffer.concat(parts)); done() })
-    r.on('error', done)
+  return new Promise((ok) => {
+    const done = (body) => { renewing.delete(key); ok(body || null) }
+    const headers = { ...upstream(req), 'accept-encoding': 'identity' }
+    delete headers['if-none-match']; delete headers['if-modified-since']
+    const up = http.request({ ...UP, method: 'GET', path: req.url, headers }, (r) => {
+      const parts = []; let n = 0
+      r.on('data', (c) => { n += c.length; if (n <= MAX_BODY) parts.push(c) })
+      r.on('end', () => {
+        const body = Buffer.concat(parts), keep = shelvable(r.statusCode || 0, r.headers, n)
+        if (keep) shelf.put(key, 200, clean(r.headers), body)
+        done(keep ? body : null)
+      })
+      r.on('error', () => done())
+    })
+    up.setTimeout(180_000, () => up.destroy())
+    up.on('error', () => done())
+    up.end()
   })
-  up.setTimeout(180_000, () => up.destroy())
-  up.on('error', done)
-  up.end()
+}
+// A new instance starts with an empty shelf, and its first visitors would pay for every render at once. So it lays the
+// table itself: the front page, then every club page and door the front page links to (as linked, ?lang included), one at a time so a real visitor's request
+// is never behind sixteen renders. The site host is the one visitors use (the Worker sends it as X-Fanlife-Host).
+export const SITE_HOST = (() => { try { return new URL(process.env.NEXT_PUBLIC_SITE_URL || '').host } catch { return 'fanlife.dubelteam.com' } })() || 'fanlife.dubelteam.com'
+export const warmList = (html) => [...new Set([...String(html).matchAll(/href="(\/(?:clubs\/[a-z0-9-]+(?:\?lang=[a-z-]{2,5})?|shop|market|our-games))"/g)].map((m) => m[1]))].slice(0, 40)
+async function warm() {
+  const ask = (path) => {
+    const req = { method: 'GET', url: path, headers: { host: SITE_HOST, 'x-forwarded-host': SITE_HOST, 'x-forwarded-proto': 'https', accept: 'text/html', 'user-agent': 'FanLife-FrontDoor/1.0 (warm)' } }
+    const key = shelfKey(req)
+    return key && !shelf.get(key) ? renew(key, req) : Promise.resolve(null)
+  }
+  try {
+    const home = await ask('/')
+    for (const p of home ? warmList(home.toString('utf8')) : []) await ask(p)
+  } catch { /* the shelf fills on demand instead */ }
 }
 const server = http.createServer((req, res) => {
   const key = shelfKey(req)
@@ -139,4 +161,5 @@ const ready = () => new Promise((ok) => {
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
 for (let i = 0; i < 600 && !(await ready()); i++) await new Promise((r) => setTimeout(r, 100))
 server.listen(Number(process.env.PORT) || 7860, '0.0.0.0')
+warm()
 }
