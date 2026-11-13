@@ -2,25 +2,22 @@ name: probe-history (temporary)
 on:
   push:
     branches: ['claude/archive-refresh-2026-11-12']
-    paths: ['scripts/ingest/clubs/probe-history.mjs', 'scripts/ingest/clubs/history-scotland.ts', '.github/workflows/probe-history-tmp.yml']
+    paths: ['scripts/ingest/clubs/olympiacos-history-players.ts', '.github/workflows/probe-history-tmp.yml']
 permissions: {contents: write}
 concurrency: {group: probe-history, cancel-in-progress: true}
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: {node-version: 22, cache: npm}
-      - run: node scripts/ingest/clubs/probe-history.mjs
-      - if: false
-        run: npm ci
-      - if: false
-        run: npx tsx scripts/ingest/clubs/history-scotland.ts --club celtic --from 1888 --to 2026 && echo done
+      - run: npm ci
+      - run: npx tsx scripts/ingest/clubs/olympiacos-history-players.ts
       - name: Commit the collected file to this review branch
         run: |
           git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add club-packs/celtic/wave-history-scotland.json
-          git commit -m "Celtic history: collected on the review branch" || exit 0
+          git add club-packs/olympiacos/wave-olympiacos-history.json
+          git commit -m "Olympiacos careers: collected on the review branch" || exit 0
           git pull --rebase -q origin claude/archive-refresh-2026-11-12 && git push -q origin HEAD:claude/archive-refresh-2026-11-12
