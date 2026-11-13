@@ -14,7 +14,7 @@ const SHADE_L={light:'Light colours',dark:'Dark colours',all:'Every colour'} as 
 export function DesignControls({value,onChange,library,margin}:{value:ProductDesign;onChange:(d:ProductDesign)=>void;library:boolean;margin:number}){
  const set=(p:Partial<ProductDesign>)=>onChange({...value,...p})
  const chips=<K extends string>(label:string,map:Record<K,string>,cur:K,pick:(k:K)=>void)=><div className="shop-design-row"><span className="desk-fine">{label}</span>
-  <div className="desk-chips" role="radiogroup" aria-label={label}>{(Object.keys(map) as K[]).map(k=><button key={k} type="button" role="radio" aria-checked={cur===k} className="desk-chip" aria-current={cur===k} onClick={()=>pick(k)}>{map[k]}</button>)}</div></div>
+  <div className="desk-chips" role="radiogroup" aria-label={label}>{(Object.keys(map) as K[]).map(k=><button key={k} type="button" role="radio" aria-checked={cur===k} className="desk-chip min-h-tap" aria-current={cur===k} onClick={()=>pick(k)}>{map[k]}</button>)}</div></div>
  return <div className="shop-design">
   {chips('Print on',SIDE_L,value.sides??'front',k=>set({sides:k}))}
   {chips('Print size (garments, bags)',SIZE_L,value.size??'auto',k=>set({size:k}))}
