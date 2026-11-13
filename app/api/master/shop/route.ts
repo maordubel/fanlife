@@ -2,7 +2,7 @@ import {NextResponse} from 'next/server'
 import {adminFromRequest} from '@/lib/master/admin'
 import {sameOrigin} from '@/lib/master/request'
 import {readShop,updateShop,printifyToken,saveToken} from '@/lib/shop/store'
-import {catalogueFor,client,connect,matchKind,pressProduct,refreshProduct,removeProduct} from '@/lib/shop/build'
+import {optionsFor,catalogueFor,client,connect,matchKind,pressProduct,refreshProduct,removeProduct} from '@/lib/shop/build'
 import {draftOf,launchSet,NOTE,shortTitle} from '@/lib/shop/plan'
 import {KIND_SPECS} from '@/lib/shop/kinds'
 import {SUBJECT_IDS,isSubject} from '@/lib/shop/subjects'
@@ -18,6 +18,8 @@ const designOf=(v:unknown):ProductDesign|undefined=>{if(!v||typeof v!=='object')
  if(SIDES.includes(o.sides as never))d.sides=o.sides as ProductDesign['sides'];if(SIZES.includes(o.size as never))d.size=o.size as ProductDesign['size']
  if(SHADES.includes(o.shades as never))d.shades=o.shades as ProductDesign['shades'];if(o.cutout===true)d.cutout=true
  if(typeof o.margin==='number'&&o.margin>=10&&o.margin<=300)d.margin=Math.round(o.margin)
+ const names=(x:unknown)=>Array.isArray(x)?x.filter((n):n is string=>typeof n==='string'&&n.length<60).slice(0,100):[]
+ const cs=names(o.colors),zs=names(o.sizes);if(cs.length)d.colors=cs;if(zs.length)d.sizes=zs
  return Object.keys(d).length?d:undefined}
 const state=async()=>({doc:await readShop(),connected:!!(await printifyToken())})
 
@@ -42,6 +44,8 @@ export async function POST(r:Request){
      if(typeof b.margin==='number'&&b.margin>=0&&b.margin<=300)d.settings.margin=Math.round(b.margin)
      if(typeof b.popupUrl==='string'){const u=b.popupUrl.trim();if(u&&!/^https:\/\/[a-z0-9-]+\.printify\.me\/?$/i.test(u))throw new Error('The Pop-Up address looks like https://your-name.printify.me');d.settings.popupUrl=u}
      if(typeof b.shopId==='number')d.settings.shopId=b.shopId});break
+   case 'options':{const kind=KINDS.find(k=>k===b.kind&&k!=='more'),bp=typeof b.blueprintId==='number'?b.blueprintId:undefined
+    if(!kind&&!bp)return json({error:'Which product?'},422);return json({options:await optionsFor({kind,blueprintId:bp},by)})}
    case 'catalog':return json({catalog:await catalogueFor(await client())})
    case 'launch':{const ids=b.subject==='all'?SUBJECT_IDS:[String(b.subject)].filter(isSubject)
     await updateShop(by,`Launch drafts: ${ids.length===1?ids[0]:'all'}`,d=>{for(const sid of ids)for(const p of launchSet(sid,now))if(!d.products.some(x=>x.id===p.id))d.products.push(p)});break}

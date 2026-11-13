@@ -11,14 +11,26 @@ import type {ProductDesign} from '@/lib/shop/types'
 const SIDE_L={front:'Front',back:'Back',both:'Front + back'} as const
 const SIZE_L={auto:'Automatic',badge:'Small badge',medium:'Medium',large:'Large',full:'Full width'} as const
 const SHADE_L={light:'Light colours',dark:'Dark colours',all:'Every colour'} as const
-export function DesignControls({value,onChange,library,margin}:{value:ProductDesign;onChange:(d:ProductDesign)=>void;library:boolean;margin:number}){
+export type Stock={printer:string;product:string;variants:number;colors:{name:string;hex:string|null;light:boolean;variants:number}[];sizes:string[]}
+export function DesignControls({value,onChange,library,margin,stock,loadStock,busy}:{value:ProductDesign;onChange:(d:ProductDesign)=>void;library:boolean;margin:number;stock?:Stock|null;loadStock?:()=>void;busy?:boolean}){
  const set=(p:Partial<ProductDesign>)=>onChange({...value,...p})
  const chips=<K extends string>(label:string,map:Record<K,string>,cur:K,pick:(k:K)=>void)=><div className="shop-design-row"><span className="desk-fine">{label}</span>
   <div className="desk-chips" role="radiogroup" aria-label={label}>{(Object.keys(map) as K[]).map(k=><button key={k} type="button" role="radio" aria-checked={cur===k} className="desk-chip min-h-tap" aria-current={cur===k} onClick={()=>pick(k)}>{map[k]}</button>)}</div></div>
  return <div className="shop-design">
   {chips('Print on',SIDE_L,value.sides??'front',k=>set({sides:k}))}
   {chips('Print size (garments, bags)',SIZE_L,value.size??'auto',k=>set({size:k}))}
-  {chips('Garment colours',SHADE_L,value.shades??'light',k=>set({shades:k}))}
+  {chips('Garment colours',SHADE_L,value.shades??'light',k=>set({shades:k,colors:undefined}))}
+  {loadStock&&!stock&&<button type="button" className="desk-btn ghost min-h-tap" disabled={busy} onClick={loadStock}>Choose exact colours and sizes from the printer’s stock</button>}
+  {stock&&<div className="shop-stock">
+   <p className="desk-fine"><b>{stock.product}</b> · {stock.printer} · {stock.colors.length} colours and {stock.sizes.length} sizes in stock now. {value.colors?.length?`${value.colors.length} chosen.`:'None chosen — the “Garment colours” choice above decides.'}</p>
+   {stock.colors.length>0&&<div className="shop-swatches" role="group" aria-label="Colours in stock">{stock.colors.map(c=>{const on=!!value.colors?.includes(c.name);return <button key={c.name} type="button" className="shop-swatch min-h-tap" aria-pressed={on} title={`${c.name} · ${c.variants} sizes`}
+    onClick={()=>set({colors:on?value.colors!.filter(x=>x!==c.name):[...(value.colors??[]),c.name]})}><span className="shop-dot" style={{background:c.hex??undefined}} data-unknown={c.hex?undefined:true} aria-hidden="true"/><span>{c.name}</span></button>})}</div>}
+   {stock.colors.length>0&&<div className="shop-row"><button type="button" className="desk-chip min-h-tap" onClick={()=>set({colors:stock.colors.filter(c=>c.light).map(c=>c.name)})}>All light</button><button type="button" className="desk-chip min-h-tap" onClick={()=>set({colors:stock.colors.filter(c=>!c.light).map(c=>c.name)})}>All dark</button><button type="button" className="desk-chip min-h-tap" onClick={()=>set({colors:undefined})}>Clear</button></div>}
+   {stock.sizes.length>1&&<div className="desk-chips" role="group" aria-label="Sizes">{stock.sizes.map(z=>{const on=!value.sizes?.length||value.sizes.includes(z);return <button key={z} type="button" className="desk-chip min-h-tap" aria-pressed={on} aria-current={on}
+    onClick={()=>{const cur=value.sizes?.length?value.sizes:stock.sizes;const next=on?cur.filter(x=>x!==z):[...cur,z];set({sizes:next.length===stock.sizes.length?undefined:next})}}>{z}</button>})}</div>}
+   {(value.colors?.length??1)*(value.sizes?.length||stock.sizes.length)>100&&<p className="desk-fine shop-warn">Printify takes at most 100 colour-and-size combinations per product — the first 100 are used.</p>}
+   {value.colors?.some(n=>!stock.colors.find(c=>c.name===n)?.light)&&library&&!value.cutout&&<p className="desk-fine shop-warn">Dark colours chosen: switch on “Remove background” unless the picture is already cut out.</p>}
+  </div>}
   {value.shades&&value.shades!=='light'&&!value.cutout&&library&&<p className="desk-fine shop-warn">On dark colours a picture with a paper ground prints as a box — switch on “Remove background”.</p>}
   {library&&<label className="shop-switch"><input type="checkbox" checked={!!value.cutout} onChange={e=>set({cutout:e.target.checked})}/><span>Remove background (the paper ground goes; the art stays)</span></label>}
   <label className="shop-field shop-margin"><span>Margin for these products (empty = the shop’s {margin}%)</span>

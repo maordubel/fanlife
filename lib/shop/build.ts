@@ -111,3 +111,14 @@ async function cleanOriginal(url:string):Promise<string|null>{
  if(gone<.02)throw new Error('This picture has no plain background to remove — switch “Remove background” off for it.')
  return (await sharp(data,{raw:{width:info.width,height:info.height,channels:4}}).png().toBuffer()).toString('base64')
 }
+
+/** the printer's stock for a product: every colour (with a swatch) and size it can print right now, for the builder */
+export async function optionsFor(target:{kind?:Kind;blueprintId?:number},by:string){
+ const api=await client(),m=target.blueprintId?await matchBlueprintId(api,target.blueprintId,by):await matchKind(api,target.kind!,by)
+ const vs=(await api.variants(m.blueprintId,m.providerId)).variants,{swatch,isLight}=await import('./colours')
+ const opt=(v:typeof vs[number],re:RegExp)=>Object.entries(v.options||{}).find(([k])=>re.test(k))?.[1]
+ const colours=new Map<string,number>(),sizes:string[]=[]
+ for(const v of vs){const c=opt(v,/colou?r/i),z=opt(v,/size/i);if(c)colours.set(c,(colours.get(c)||0)+1);if(z&&!sizes.includes(z))sizes.push(z)}
+ return {printer:m.provider,product:m.title,variants:vs.length,
+  colors:[...colours].map(([name,n])=>({name,hex:swatch(name),light:isLight(name),variants:n})).sort((a,b)=>Number(b.light)-Number(a.light)||a.name.localeCompare(b.name)),sizes}
+}

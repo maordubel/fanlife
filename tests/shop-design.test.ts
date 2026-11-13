@@ -45,6 +45,17 @@ describe('listing text that sells',()=>{
   expect(l.description).toMatch(/Olympiacos supporters from Piraeus/);expect(l.description).toMatch(/not an official club product/);expect(l.tags).toContain('Olympiacos gift');expect(l.tags.length).toBeLessThanOrEqual(13)
  })
 })
+describe('exact colours from the printer',()=>{
+ it('a chosen list overrides the light/dark choice and lifts the cap to 100',async()=>{
+  const {shadedSpec}=await import('@/lib/shop/plan');const {KIND_SPECS}=await import('@/lib/shop/kinds')
+  const sp=shadedSpec(KIND_SPECS.tee,{shades:'light',colors:['Heather Navy','Kelly Green'],sizes:['M','L']})
+  expect(sp.colors!.test('kelly green')).toBe(true);expect(sp.colors!.test('White')).toBe(false);expect(sp.sizes!.test('XL')).toBe(false);expect(sp.maxVariants).toBe(100)
+ })
+ it('knows the common garment colours and calls light and dark right',async()=>{
+  const {swatch,isLight}=await import('@/lib/shop/colours')
+  expect(swatch('Black')).toBe('#111111');expect(swatch('Unknown Glitter')).toBeNull();expect(isLight('Natural')).toBe(true);expect(isLight('Navy')).toBe(false)
+ })
+})
 describe('a picture that is already cut out',()=>{
  it('is recognised by its transparent border',async()=>{
   const {transparentBorder}=await import('@/lib/shop/cutout');const w=10,h=10,d=new Uint8ClampedArray(w*h*4)
