@@ -1,0 +1,14 @@
+name: probe-history (temporary)
+on:
+  push:
+    branches: ['claude/archive-refresh-2026-11-12']
+    paths: ['scripts/ingest/clubs/probe-history.mjs', '.github/workflows/probe-history-tmp.yml']
+permissions: {contents: read}
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 22}
+      - run: node scripts/ingest/clubs/probe-history.mjs
