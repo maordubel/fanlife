@@ -1555,6 +1555,15 @@
     "bodyHash": "94406068fc3143401186df10f19ea38e56466e2b0af7eb075b53fb4087e73128",
     "fetchedAt": "2026-11-03T11:03:15.282Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/miscellaneous/african-descent-players/",
+    "locator": "p103",
+    "quote": "In the 18th minute, Inacio bowled into a Motherwell defender, purloined the ball from him and hammered it into the net. Seven minutes later, di Sousa nudged him through. Though wide of the goal, Inacio thwacked in a shot that swerved its way home as if cartwheeling along a rainbow. Hundreds of children ran over the cinder, on to the pitch and mobbed tomorrow’s heroes. It was, continued Taylor in the Record, “a Brazilian bombshell” and a “football fiesta”.",
+    "bodyHash": "55ced88129e9e2b597d658abcf850e236d29b5ad678b1a245c66f43a4adf56c7",
+    "fetchedAt": "2026-11-13T11:14:28.890Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1562,8 +1571,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-03T11:03:15.282Z",
-  "updatedAt": "2026-11-03T11:03:15.282Z"
+  "createdAt": "2026-11-13T11:14:28.890Z",
+  "updatedAt": "2026-11-13T11:14:28.890Z"
  },
  {
   "id": "ga-f5fa00d30830a3a2",

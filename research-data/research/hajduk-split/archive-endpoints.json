@@ -13,7 +13,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-11-12T11:51:01.494Z"
+  "checkedAt": "2026-11-13T11:14:59.233Z"
  },
  "torcida:/wp-json/wp/v2/pages": {
   "endpoint": "/wp-json/wp/v2/pages",
@@ -21,7 +21,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-11-12T11:51:05.284Z"
+  "checkedAt": "2026-11-13T11:15:04.325Z"
  },
  "wikipedia-hajduk-records:/wiki/HNK_Hajduk_Split_statistics_and_records": {
   "endpoint": "/wiki/HNK_Hajduk_Split_statistics_and_records",
@@ -29,7 +29,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-11-12T11:51:05.538Z"
+  "checkedAt": "2026-11-13T11:15:04.830Z"
  },
  "hajduk-official-history-en:/eng/history": {
   "endpoint": "/eng/history",
