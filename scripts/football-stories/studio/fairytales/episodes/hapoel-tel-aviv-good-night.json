@@ -51,8 +51,8 @@
   }
  ],
  "pronounce": {
-  "he": "נאמר בשקט ובאיטיות, כמו סיפור לפני השינה. בלומפילד: \"בְּלוּמְפִילְד\". שייע: \"שַׁיֶּיע\". קלשצ'נקו: kle-SHCHEN-ko. צ'לסי: CHEL-see. בנפיקה: ben-FEE-ka.",
-  "en": "Read softly and slowly, like a bedtime story. Bloomfield: BLOOM-field. Kleshchenko: kle-SHCHEN-ko. Shaya: SHAH-yeh. Feigenbaum: FY-gen-bowm. Hodorov: kho-DOR-ov. Tikva: TEEK-vah. Toama: TOO-ah-mah. Benfica: ben-FEE-ka."
+  "he": "נאמר בשקט ובאיטיות, כמו סיפור לפני השינה. בלומפילד: \"בְּלוּמְפִילְד\". שייע: \"שַׁיֶּיע\". קלשצ'נקו: kle-SHCHEN-ko. צ'לסי: CHEL-see. בנפיקה: ben-FEE-ka. אקהויז: \"אֶקְהוֹיְז\". לנדאו: \"לַנְדָּאוּ\". בלילי: \"בַּלִּילִי\". קוקוס: \"קוֹקוֹס\". קלדרון: \"קַלְדֶּרוֹן\". אלימלך: \"אֱלִימֶלֶךְ\". דמארי: \"דַּמָּארִי\". סימרוטיץ': \"סִימְרוֹטִיץ'\".",
+  "en": "Read softly and slowly, like a bedtime story. Bloomfield: BLOOM-field. Kleshchenko: kle-SHCHEN-ko. Shaya: SHAH-yeh. Feigenbaum: FY-gen-bowm. Hodorov: kho-DOR-ov. Tikva: TEEK-vah. Toama: TOO-ah-mah. Benfica: ben-FEE-ka. Ekhoiz: EK-hoyz. Landau: LAN-dow. Balili: bah-LEE-lee. Udi: OO-dee. Kokos: KOH-kos. Calderon: kal-deh-RON. Elimelech: eh-lee-MEH-lekh. Damari: dah-MAH-ree. Cimirotič: see-mee-ROH-tich."
  },
  "shots": [
   {
@@ -439,8 +439,8 @@
    "id": "stars",
    "plate": "gn-stars",
    "delivery": "secret",
-   "en": "And up in the sky, the stars come out. Some people say that every star is one Hapoel player, keeping watch over the city.",
-   "he": "ולמעלה, בשמיים, יוצאים הכוכבים. יש אנשים שאומרים שכל כוכב הוא שחקן אחד של הפועל, ששומר על העיר.",
+   "en": "And now, before we close our eyes, let's count the stars. Every star in the sky over Tel Aviv is one red player, keeping watch over the city.",
+   "he": "ועכשיו, לפני שעוצמים עיניים, בואו נספור כוכבים. כל כוכב בשמיים של תל אביב הוא שחקן אדום אחד, ששומר על העיר.",
    "sources": [
     "story frame"
    ],
@@ -456,8 +456,8 @@
    "id": "star-hodorov",
    "plate": "gn-star-keeper",
    "delivery": "tender",
-   "en": "There is Hodorov, the great goalkeeper, still guarding the sky, his arms open wide.",
-   "he": "הנה חודורוב, השוער הגדול, עדיין שומר על השמיים, עם הידיים פתוחות לרווחה.",
+   "en": "Star number one: Ya'akov Hodorov, the great goalkeeper, still guarding the sky, his arms open wide.",
+   "he": "כוכב אחד: יעקב חודורוב, השוער הגדול, עדיין שומר על השמיים, עם הידיים פתוחות לרווחה.",
    "sources": [
     "Vikipoel יעקב חודורוב (see Good Morning)"
    ],
@@ -485,13 +485,88 @@
    }
   },
   {
+   "id": "star-ekhoiz",
+   "plate": "gn-star-defender",
+   "transition": "dissolve",
+   "en": "Star number two: Yaakov Ekhoiz, the strong centre-back, jumping high to clear every ball.",
+   "he": "שני כוכבים: יעקב אקהויז, הבלם החזק, שקופץ גבוה ומרחיק כל כדור.",
+   "sources": [
+    "content/generated/player-master.json p_c324982118 יעקב אקהויז: DF (בלם, Vikipoel infobox), 1974–1992"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "EKHOIZ",
+      "at": 0.3,
+      "xy": [
+       1450,
+       220
+      ],
+      "size": 90,
+      "rot": -4
+     }
+    ]
+   }
+  },
+  {
+   "id": "star-1986",
+   "plate": "gn-star-1986",
+   "transition": "slide",
+   "en": "Star number three has been shining since 1986. Gili Landau scored against Maccabi Haifa, in the 86th minute — and we won the championship!",
+   "he": "שלושה כוכבים: הכוכב הזה זורח עוד מ־1986. גילי לנדאו כבש נגד מכבי חיפה, בדקה השמונים ושש — ולקחנו אליפות!",
+   "sources": [
+    "content/manual/matches.json 24.5.1986, Bloomfield: Hapoel Tel Aviv 1–0 Maccabi Haifa; goals.json Gili Landau 86' (confidence 2, Maariv Sport + the owner's ticket; rule 49)",
+    "content/manual/trophies.json 1985/86 league title"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.1
+    ],
+    "tags": [
+     {
+      "text": "1986",
+      "at": 0.15,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     },
+     {
+      "text": "LANDAU",
+      "at": 0.6,
+      "xy": [
+       1450,
+       250
+      ],
+      "size": 90,
+      "rot": 4
+     }
+    ],
+    "punch": [
+     0.6
+    ],
+    "confettiAt": 0.82
+   },
+   "cap": {
+    "he": "שלושה כוכבים: הכוכב הזה זורח עוד מ־1986. גילי לנדאו כבש נגד מכבי חיפה, בדקה ה־86 — ולקחנו אליפות!"
+   }
+  },
+  {
    "id": "star-seven",
    "plate": "gn-star-seven",
    "delivery": "playful",
-   "en": "And there, a star with the number seven — Moshe Sinai. And next to him, number fourteen — Shalom Tikva, with the gentlest chip in the world.",
-   "he": "והנה כוכב עם המספר שבע — משה סיני. ולידו, מספר ארבע־עשרה — שלום תקוה, עם הצ'יפ הכי עדין בעולם.",
+   "en": "Four… five: Moshe Sinai, number seven, who set up that goal. And next to him, number fourteen — Shalom Tikva, with the gentlest chip in the world.",
+   "he": "ארבעה… חמישה: משה סיני, מספר שבע, שבישל את השער ההוא. ולידו, מספר ארבע־עשרה — שלום תקוה, עם הצ'יפ הכי עדין בעולם.",
    "sources": [
-    "Vikipoel משה סיני (מספר בהפועל=7); שלום תקוה (14)"
+    "Vikipoel משה סיני (מספר בהפועל=7); שלום תקוה (14)",
+    "content/manual/goals.json + match-events.json, 24.5.1986: Landau 86', assist Moshe Sinai (rule 49)"
    ],
    "visual": {
     "push": [
@@ -535,11 +610,132 @@
    }
   },
   {
+   "id": "star-double",
+   "plate": "gn-star-double",
+   "transition": "dissolve",
+   "en": "Six… seven: Pini Balili and Kfir Udi, who helped us win the Double in 2000 — the league and the cup, in the same season!",
+   "he": "שש… שבע: פיני בלילי וכפיר אודי, שעזרו לנו לקחת דאבל בשנת 2000 — גם אליפות וגם גביע, באותה עונה!",
+   "sources": [
+    "Wikipedia, Hapoel Tel Aviv F.C.: 1999–2000 double (league title and State Cup, beating Beitar Jerusalem on penalties)",
+    "content/generated/player-master.json: Pini Balili FW 1997–2003, Kfir Udi FW 1996–2007"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.09
+    ],
+    "tags": [
+     {
+      "text": "2000",
+      "at": 0.2,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     },
+     {
+      "text": "DOUBLE!",
+      "at": 0.7,
+      "xy": [
+       1450,
+       250
+      ],
+      "size": 100,
+      "rot": 4
+     }
+    ],
+    "punch": [
+     0.7
+    ]
+   }
+  },
+  {
+   "id": "star-teddy",
+   "plate": "gn-star-teddy",
+   "transition": "slide",
+   "en": "And another Double, in 2010! On the last night of the season, in the 92nd minute — goal! It was at Teddy, Beitar Jerusalem's stadium, and we don't like them. And the Maccabi Haifa fans, who already thought they were champions, were very, very sad.",
+   "he": "ועוד דאבל, ב־2010! בערב האחרון של העונה, בדקה התשעים ושתיים — גול! זה היה בטדי, האצטדיון של בית\"ר ירושלים, ואותם אנחנו לא אוהבים. ואוהדי מכבי חיפה, שכבר חשבו שהם אלופים, היו עצובים מאוד מאוד.",
+   "sources": [
+    "UEFA.com 15.5.2010 \"Last-gasp Hapoel snatch title from Haifa\": 2–1 at Beitar Jerusalem, winner in the final minute; Maccabi Haifa drew 1–1; added to the State Cup won in midweek",
+    "Wikipedia, 2009–10 Hapoel Tel Aviv F.C. season: 15 May 2010, Beitar Jerusalem (A) 2–1, Vermuth 3', Zahavi 92'; venue Teddy Stadium",
+    "FourFourTwo 2010 \"Hapoel Tel Aviv celebrate unlikely double\": tears at Teddy, the mood sombre in Haifa",
+    "owner, 13.11.2026: \"בטדי! האיצטדיון של בית\"ר ירושלים! אותם אנחנו לא אוהבים\""
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.11
+    ],
+    "tags": [
+     {
+      "text": "2010",
+      "at": 0.12,
+      "xy": [
+       380,
+       240
+      ],
+      "size": 110,
+      "rot": -3
+     },
+     {
+      "text": "90+2'",
+      "at": 0.32,
+      "xy": [
+       1450,
+       250
+      ],
+      "size": 110,
+      "rot": 4
+     }
+    ],
+    "punch": [
+     0.32
+    ],
+    "confettiAt": 0.36
+   },
+   "cap": {
+    "he": "ועוד דאבל, ב־2010! בערב האחרון של העונה, בדקה ה־92 — גול! זה היה בטדי, האצטדיון של בית\"ר ירושלים, ואותם אנחנו לא אוהבים. ואוהדי מכבי חיפה, שכבר חשבו שהם אלופים, היו עצובים מאוד מאוד.",
+    "en": "And another Double, in 2010! On the last night of the season, in the 92nd minute — goal! It was at Teddy, Beitar Jerusalem's stadium, and we don't like them. And the Maccabi Haifa fans, who already thought they were champions, were very, very sad."
+   }
+  },
+  {
+   "id": "star-names",
+   "plate": "gn-star-names",
+   "transition": "dissolve",
+   "en": "And there, more and more stars: Eli \"Kokos\" Cohen, and Roni Calderon, and Shavit Elimelech the goalkeeper, and Omer Damari, and Sebastjan Cimirotič…",
+   "he": "ושם, עוד ועוד כוכבים: אלי \"קוקוס\" כהן, ורוני קלדרון, ושביט אלימלך השוער, ועומר דמארי, וסבסטיאן סימרוטיץ'…",
+   "sources": [
+    "content/generated/player-master.json: אלי \"קוקוס\" כהן FW 1979–1993; רוני קלדרון MF 1968–1972; שביט אלימלך GK 1996–2007; עומר דמארי FW 2011–2020; סבסטיאן סימרוטיץ' FW 1997–2000",
+    "N12/mako 2025: Cimirotič, the Slovenian striker, one of Hapoel's most loved foreigners (arrived January 1998)",
+    "owner, 13.11.2026: the names"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "KOKOS",
+      "at": 0.18,
+      "xy": [
+       1450,
+       220
+      ],
+      "size": 90,
+      "rot": -4
+     }
+    ]
+   }
+  },
+  {
    "id": "star-crowd",
    "plate": "gn-star-many",
    "delivery": "warm",
-   "en": "And Shaya Feigenbaum, and Jimmy Turk, and Salim Toama, and so many more… so many, you could count stars all night long.",
-   "he": "ושייע פייגנבוים, וג'ימי טורק, וסלים טועמה, ועוד הרבה הרבה… כל כך הרבה, שאפשר לספור כוכבים כל הלילה.",
+   "en": "And Shaya Feigenbaum, and Jimmy Turk, and Salim Toama, and more and more and more… so many stars, you could count them all night long.",
+   "he": "ושייע פייגנבוים, וג'ימי טורק, וסלים טועמה, ועוד ועוד ועוד… כל כך הרבה כוכבים, שאפשר לספור אותם כל הלילה.",
    "sources": [
     "Vikipoel players (see Good Morning)"
    ],
@@ -552,6 +748,23 @@
    "transition": "dissolve",
    "say": {
     "he": "ושַׁיֶּיע פַייגֶנְבּוֹים, וג'ימי טוּרְק, וסלים טוּעְמֶה, ועוד הרבה הרבה… כל כך הרבה, שאפשר לספור כוכבים כל הלילה."
+   }
+  },
+  {
+   "id": "count",
+   "plate": "gn-count",
+   "transition": "fade",
+   "en": "Shhh… the eyes are getting heavy. We'll count a few more, slowly, slowly… one more star… and another… and one more…",
+   "he": "ששש… העיניים כבר כבדות. נספור עוד כמה, לאט לאט… עוד כוכב… ועוד כוכב… ועוד אחד…",
+   "sources": [
+    "story frame"
+   ],
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ],
+    "extra": 1.5
    }
   },
   {

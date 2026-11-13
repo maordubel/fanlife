@@ -43,6 +43,14 @@ CUT_SFX = {'page': (SFX / 'page.m4a', 0.7), 'slide': (KIT_SFX / 'whoosh-short.mp
 # where a shot has no `transition`: the page turn opens every fourth shot, the rest rotate so no cut repeats
 CYCLE = ['iris', 'slide', 'zoom', 'dissolve', 'torn', 'slide', 'iris', 'zoom']
 LEAD, TAIL, TURN = 0.55, 0.85, 0.5
+# a Good Night episode (`night: true`) breathes slower and every cut is a lullaby sound (owner, 13.11.2026: "gentler,
+# calmer, sleepier"): a music-box chime under a page or a slide, a breath of air under the rest, a twinkle for a card
+NIGHT_SFX = Path(__file__).resolve().parent / 'sfx'
+NIGHT_CUT_SFX = {'page': (NIGHT_SFX / 'night-chime.wav', 0.30), 'slide': (NIGHT_SFX / 'night-chime.wav', 0.24),
+                 'torn': (NIGHT_SFX / 'night-chime.wav', 0.26), 'zoom': (NIGHT_SFX / 'night-breath.wav', 0.30),
+                 'iris': (NIGHT_SFX / 'night-breath.wav', 0.30), 'dissolve': (NIGHT_SFX / 'night-breath.wav', 0.22),
+                 'fade': (None, 0)}
+NIGHT_LEAD, NIGHT_TAIL = 1.1, 1.9
 W, H, FPS = pt.W, pt.H, pt.FPS
 
 
@@ -267,19 +275,21 @@ def music_plan(ep: dict, shots: list[dict], total: float, xf: float = 3.0) -> li
     return out
 
 
-def sfx_events(shots: list[dict]) -> list[tuple]:
+def sfx_events(shots: list[dict], night: bool = False) -> list[tuple]:
     """(file, time, level): a soft sound under every cut, a pop when a card lands, a sparkle with the confetti."""
     ev = []
+    cuts = NIGHT_CUT_SFX if night else CUT_SFX
     for k, s in enumerate(shots):
-        f, lv = CUT_SFX[s['cut']]
+        f, lv = cuts[s['cut']]
         if k and f:
             ev.append((f, s['start'], lv))
         v = s['shot'].get('visual', {})
         for g in v.get('tags', []) + v.get('crests', []):
-            ev.append((KIT_SFX / 'pop.mp3', s['start'] + g['at'] * s['dur'] + 0.12, 0.12))
+            ev.append(((NIGHT_SFX / 'night-twinkle.wav', s['start'] + g['at'] * s['dur'] + 0.12, 0.16) if night else
+                       (KIT_SFX / 'pop.mp3', s['start'] + g['at'] * s['dur'] + 0.12, 0.12)))
         if v.get('confettiAt') is not None:
-            ev.append((KIT_SFX / 'sparkle.mp3', s['start'] + v['confettiAt'] * s['dur'], 0.28))
-            ev.append((LIFE_SFX / 'crowd-claps.m4a', s['start'] + v['confettiAt'] * s['dur'], 0.22))
+            ev.append((KIT_SFX / 'sparkle.mp3', s['start'] + v['confettiAt'] * s['dur'], 0.14 if night else 0.28))
+            ev.append((LIFE_SFX / 'crowd-claps.m4a', s['start'] + v['confettiAt'] * s['dur'], 0.12 if night else 0.22))
         for x in v.get('sfx', []):                                   # the owner's crowd, a whistle, a kick — by name
             ev.append((LIFE_SFX / f"{x['file']}.m4a", s['start'] + x['at'] * s['dur'], x.get('level', 0.3)))
     return ev
@@ -290,6 +300,9 @@ def main() -> None:
     ep = json.loads(ep_path.read_text())
     outd.mkdir(parents=True, exist_ok=True)
     langs = [l for l in ep['voice'] if l != 'chosen']
+    if ep.get('night'):
+        global LEAD, TAIL
+        LEAD, TAIL = NIGHT_LEAD, NIGHT_TAIL
     fb, fs = work / 'Fraunces-Black-Soft.ttf', work / 'Fraunces-Bold.ttf'
     shots = plan(ep, narr, langs)
     total = shots[-1]['start'] + shots[-1]['dur']
@@ -357,7 +370,7 @@ def main() -> None:
         pt.encode(frames(), silent)
     timing = []
     music = music_plan(ep, shots, total)
-    events = sfx_events(shots)
+    events = sfx_events(shots, bool(ep.get('night')))
     for lang in langs:
         inputs, parts = [], []
         for k, s in enumerate(shots):
