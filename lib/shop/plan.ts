@@ -102,7 +102,7 @@ export function launchSet(subject:string,now:string,library:LibraryPicture[]=LIB
  */
 export function listingOf(p:Pick<ShopProduct,'title'|'subject'|'kind'>,club:{name:string;city?:string}|null,what:string):{description:string;tags:string[]}{
  const who=club?`${club.name} supporters`:'football supporters'
- const description=[`${p.title.split(' · ')[0]} — original paper-cut supporter art for ${who}${club?.city?` from ${club.city}`:''}.`,
+ const description=[`${p.title.split(' · ')[0]} — original supporter art for ${who}${club?.city?` from ${club.city}`:''}.`,
   `${what}, printed to order and shipped to your door.`,
   'An independent FAN LIFE fan design — not an official club product.'].join(' ')
  // marketplace rule of thumb: at most 13 tags of at most 20 characters, the most specific first
