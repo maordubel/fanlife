@@ -3,7 +3,7 @@ import {useEffect,useMemo,useRef,useState} from 'react'
 import {useAdminApi} from '@/components/master/adminApi'
 import {KIND_SPECS} from '@/lib/shop/kinds'
 import {DesignControls,CutoutPreview,type Stock} from './ShopDesign'
-import {KINDS,type ProductDesign,type Kind,type ShopDoc,type ShopProduct} from '@/lib/shop/types'
+import {KINDS,type ArtRef,type ProductDesign,type Kind,type ShopDoc,type ShopProduct} from '@/lib/shop/types'
 
 /**
  * THE SHOP DESK (owner, 12.11.2026: "click and sell"). Four steps down one page, each with one main button:
@@ -28,6 +28,9 @@ export function ShopDesk({initial,subjects,pictures}:{initial:State;subjects:Sub
  const [nSub,setNSub]=useState(subjects[0]?.id||'fanlife'),[nKinds,setNKinds]=useState<Kind[]>(['poster']),[nPic,setNPic]=useState<string>('own'),[nTitle,setNTitle]=useState(''),file=useRef<HTMLInputElement>(null)
  const [nDesign,setNDesign]=useState<ProductDesign>({}),[ownFile,setOwnFile]=useState<File|null>(null),[clean,setClean]=useState<string|null>(null),[editing,setEditing]=useState<string|null>(null),[eDesign,setEDesign]=useState<ProductDesign>({})
  const [nStock,setNStock]=useState<Stock|null>(null),[eStock,setEStock]=useState<Stock|null>(null)
+ const uploadArt=async(f:File)=>{const data=await new Promise<string>((ok,no)=>{const r=new FileReader();r.onload=()=>ok(String(r.result));r.onerror=()=>no(r.error);r.readAsDataURL(f)})
+  return (await api.post<{art:ArtRef}>('shop',{action:'art',name:f.name,data},'Picture uploaded for this area.'))?.art??null}
+ const picOptions=(sub:string)=>pictures.filter(p=>p.subject===sub||p.subject==='fanlife').filter(p=>!p.review).map(p=>({id:p.id,name:`${p.folder} · ${p.name}`}))
  const stockOf=async(t:{kind?:Kind;blueprintId?:number})=>(await api.post<{options:Stock}>('shop',{action:'options',...t},'The printer’s stock is loaded.'))?.options??null
  const [cat,setCat]=useState<CatItem[]|null>(null),[cq,setCq]=useState(''),[cg,setCg]=useState('All'),[picked,setPicked]=useState<{id:number;title:string}[]>([])
  const nTarget=nKinds.length+picked.length===1?(picked[0]?{blueprintId:picked[0].id}:{kind:nKinds[0]}):null
@@ -122,7 +125,7 @@ export function ShopDesk({initial,subjects,pictures}:{initial:State;subjects:Sub
        <button className="desk-btn ghost" disabled={api.busy} onClick={()=>{const t=window.prompt('Product title',p.title);if(t&&t!==p.title)void act('edit',{id:p.id,title:t})}}>Rename</button>
        <button className="desk-btn ghost" disabled={api.busy} onClick={()=>{if(window.confirm(`Delete “${p.title}” here and in Printify? This cannot be undone.`))void act('remove',{id:p.id},'Deleted.')}}>Delete</button>
       </div>
-      {editing===p.id&&<div className="shop-edit"><DesignControls value={eDesign} onChange={setEDesign} library={'library' in p.art} margin={s.margin} busy={api.busy} stock={eStock} loadStock={()=>{void stockOf(p.blueprint?{blueprintId:p.blueprint.id}:{kind:p.kind}).then(setEStock)}}/>
+      {editing===p.id&&<div className="shop-edit"><DesignControls value={eDesign} onChange={setEDesign} library={'library' in p.art} margin={s.margin} busy={api.busy} stock={eStock} loadStock={()=>{void stockOf(p.blueprint?{blueprintId:p.blueprint.id}:{kind:p.kind}).then(setEStock)}} pictures={picOptions(p.subject)} uploadArt={uploadArt}/>
        <p className="desk-fine">Applying presses the product again with these settings. It is hidden until you show it again.</p>
        <button className="desk-btn min-h-tap" disabled={api.busy||!st.connected} onClick={async()=>{if(await act('design',{id:p.id,design:eDesign},'Pressed again with the new design.'))setEditing(null)}}>Apply and press again</button></div>}
       </div></li>})}</ul>}
@@ -143,7 +146,7 @@ export function ShopDesk({initial,subjects,pictures}:{initial:State;subjects:Sub
     </>}
    </details>
    {picked.length>0&&<div className="desk-chips" role="group" aria-label="Chosen from the catalogue">{picked.map(c=><button key={c.id} className="desk-chip" aria-current={true} onClick={()=>togglePick(c)}>{c.title} ✕</button>)}</div>}
-   <details className="desk-more shop-design-box"><summary className="min-h-tap">Design — print side, size, colours, background, price</summary><DesignControls value={nDesign} onChange={setNDesign} library={nPic!=='own'} margin={s.margin} busy={api.busy} stock={nTarget?nStock:null} loadStock={nTarget?()=>{void stockOf(nTarget).then(setNStock)}:undefined}/>{!nTarget&&<p className="desk-fine">To choose exact colours and sizes, pick one product at a time.</p>}</details>
+   <details className="desk-more shop-design-box"><summary className="min-h-tap">Design — print side, size, colours, background, price</summary><DesignControls value={nDesign} onChange={setNDesign} library={nPic!=='own'} margin={s.margin} busy={api.busy} stock={nTarget?nStock:null} loadStock={nTarget?()=>{void stockOf(nTarget).then(setNStock)}:undefined} pictures={picOptions(nSub)} uploadArt={uploadArt}/>{!nTarget&&<p className="desk-fine">To choose exact colours and sizes, pick one product at a time.</p>}</details>
    <p className="desk-fine">Picture — from your library ({name(nSub)}’s shelf first, then FAN LIFE’s), or your own</p>
    <button role="radio" aria-checked={nPic==='own'} className="shop-pick own wide" onClick={()=>setNPic('own')}><span className="shop-plus" aria-hidden="true">+</span><span>Upload my own picture</span></button>
    {nPic==='own'&&<div className="shop-form"><label className="shop-field"><span>Picture (PNG or JPG, the larger the better — 3000px or more)</span><input ref={file} type="file" accept="image/png,image/jpeg" onChange={e=>setOwnFile(e.target.files?.[0]??null)}/></label>

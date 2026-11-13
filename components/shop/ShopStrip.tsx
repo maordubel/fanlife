@@ -10,7 +10,9 @@ export function ShopCard({p}:{p:PublicProduct}){
  return <li className="wks-card wk-panel">
   <a className="wks-card-in" href={p.url} target="_blank" rel="noopener noreferrer" aria-label={copy.buyAria.replace('{title}',p.title)}>
    {/* eslint-disable-next-line @next/next/no-img-element */}
-   <img className="wks-img" src={p.image} alt="" loading="lazy" width={600} height={600}/>
+   <span className="wks-pics"><img className="wks-img" src={p.image} alt="" loading="lazy" width={600} height={600}/>
+    {/* eslint-disable-next-line @next/next/no-img-element */}
+    {p.back?<span className="wks-back"><img src={p.back} alt={copy.backAlt} loading="lazy" width={240} height={240}/><span>{copy.back}</span></span>:null}</span>
    <span className="wks-t"><b>{p.title}</b><span className="wk-k">{copy.from.replace('{price}',money(p.priceFrom,p.currency))}{p.eur?<span className="wks-eur">{copy.eur.replace('{eur}',String(p.eur))}</span>:null}</span></span>
    <span className="wk-btn wks-buy">{copy.buy} <span aria-hidden="true">↗</span></span>
   </a>

@@ -8,6 +8,8 @@
  "house": "FAN LIFE",
  "from": "from {price}",
   "eur": " · ≈ €{eur}",
+  "back": "Back",
+  "backAlt": "The back of the product",
  "buy": "Buy",
  "buyAria": "Buy {title} — opens the secure checkout",
  "empty": "Nothing on this shelf yet. More is on the press.",

@@ -7,7 +7,7 @@ import {draftOf,launchSet,NOTE,shortTitle} from '@/lib/shop/plan'
 import {KIND_SPECS} from '@/lib/shop/kinds'
 import {SUBJECT_IDS,isSubject} from '@/lib/shop/subjects'
 import {pictureById} from '@/lib/shop/library'
-import {KINDS,SHADES,SIDES,SIZES,type Kind,type ProductDesign,type ShopProduct} from '@/lib/shop/types'
+import {KINDS,PLACES,SHADES,SIDES,SIZES,type AreaDesign,type ArtRef,type Kind,type ProductDesign,type ShopProduct} from '@/lib/shop/types'
 export const dynamic='force-dynamic'
 export const maxDuration=120
 const json=(d:unknown,s=200)=>NextResponse.json(d,{status:s,headers:{'Cache-Control':'no-store'}})
@@ -16,11 +16,22 @@ const blueprintsOf=(v:unknown)=>(Array.isArray(v)?v:[]).filter((x):x is {id:numb
 /** the builder's edits, checked: only known choices, a margin between 10% and 300% */
 const designOf=(v:unknown):ProductDesign|undefined=>{if(!v||typeof v!=='object')return undefined;const o=v as Record<string,unknown>,d:ProductDesign={}
  if(SIDES.includes(o.sides as never))d.sides=o.sides as ProductDesign['sides'];if(SIZES.includes(o.size as never))d.size=o.size as ProductDesign['size']
+ if(PLACES.includes(o.place as never))d.place=o.place as ProductDesign['place']
  if(SHADES.includes(o.shades as never))d.shades=o.shades as ProductDesign['shades'];if(o.cutout===true)d.cutout=true
  if(typeof o.margin==='number'&&o.margin>=10&&o.margin<=300)d.margin=Math.round(o.margin)
  const names=(x:unknown)=>Array.isArray(x)?x.filter((n):n is string=>typeof n==='string'&&n.length<60).slice(0,100):[]
  const cs=names(o.colors),zs=names(o.sizes);if(cs.length)d.colors=cs;if(zs.length)d.sizes=zs
+ if(o.areas&&typeof o.areas==='object'){const areas:Record<string,AreaDesign>={}
+  for(const [pos,raw] of Object.entries(o.areas as Record<string,unknown>).slice(0,8)){if(!/^[a-z_]{2,30}$/.test(pos)||!raw||typeof raw!=='object')continue;const r=raw as Record<string,unknown>,a:AreaDesign={}
+   if(PLACES.includes(r.place as never))a.place=r.place as AreaDesign['place'];if(SIZES.includes(r.size as never))a.size=r.size as AreaDesign['size'];if(r.cutout===true)a.cutout=true
+   const art=artOf(r.art);if(art)a.art=art;areas[pos]=a}
+  if(Object.keys(areas).length)d.areas=areas}
  return Object.keys(d).length?d:undefined}
+/** a picture reference from the desk: a library picture by id, or an upload the desk made with the 'art' action */
+const artOf=(v:unknown):ArtRef|undefined=>{if(!v||typeof v!=='object')return undefined;const o=v as Record<string,Record<string,unknown>|undefined>
+ if(o.library&&typeof o.library.id==='string'){const pic=pictureById(o.library.id);return pic?{library:{id:pic.id,name:pic.name}}:undefined}
+ const u=o.upload;if(u&&typeof u.id==='string'&&typeof u.width==='number'&&typeof u.height==='number')return {upload:{id:u.id,name:String(u.name||'art.png').slice(0,80),preview:String(u.preview||''),width:u.width,height:u.height}}
+ return undefined}
 const state=async()=>({doc:await readShop(),connected:!!(await printifyToken())})
 
 export async function GET(r:Request){
@@ -46,6 +57,9 @@ export async function POST(r:Request){
      if(typeof b.shopId==='number')d.settings.shopId=b.shopId});break
    case 'options':{const kind=KINDS.find(k=>k===b.kind&&k!=='more'),bp=typeof b.blueprintId==='number'?b.blueprintId:undefined
     if(!kind&&!bp)return json({error:'Which product?'},422);return json({options:await optionsFor({kind,blueprintId:bp},by)})}
+   case 'art':{const data=typeof b.data==='string'?b.data.replace(/^data:image\/(png|jpe?g);base64,/,''):'',name=String(b.name||'art.png').replace(/[^a-zA-Z0-9._-]/g,'-').slice(-80)
+    if(!data)return json({error:'Choose a picture (PNG or JPG).'},422);if(data.length>28e6)return json({error:'That picture is over 20MB.'},413)
+    const up=await (await client()).upload(name,data);return json({art:{upload:{id:up.id,name,preview:up.preview_url,width:up.width,height:up.height}}})}
    case 'catalog':return json({catalog:await catalogueFor(await client())})
    case 'launch':{const ids=b.subject==='all'?SUBJECT_IDS:[String(b.subject)].filter(isSubject)
     await updateShop(by,`Launch drafts: ${ids.length===1?ids[0]:'all'}`,d=>{for(const sid of ids)for(const p of launchSet(sid,now))if(!d.products.some(x=>x.id===p.id))d.products.push(p)});break}
