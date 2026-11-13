@@ -438,7 +438,7 @@
    "url": "https://webws.365scores.com/web/game/?gameId=4739293",
    "publisher": "365Scores",
    "access": "available",
-   "checkedAt": "2026-11-12"
+   "checkedAt": "2026-11-13"
   },
   {
    "id": "s365-4739296",
@@ -454,7 +454,7 @@
    "url": "https://webws.365scores.com/web/game/?gameId=4739306",
    "publisher": "365Scores",
    "access": "available",
-   "checkedAt": "2026-11-12"
+   "checkedAt": "2026-11-13"
   },
   {
    "id": "s365-4739310",
@@ -462,7 +462,7 @@
    "url": "https://webws.365scores.com/web/game/?gameId=4739310",
    "publisher": "365Scores",
    "access": "available",
-   "checkedAt": "2026-11-12"
+   "checkedAt": "2026-11-13"
   },
   {
    "id": "s365-4739319",
@@ -470,7 +470,7 @@
    "url": "https://webws.365scores.com/web/game/?gameId=4739319",
    "publisher": "365Scores",
    "access": "available",
-   "checkedAt": "2026-11-12"
+   "checkedAt": "2026-11-13"
   },
   {
    "id": "ls-lu-1800665",
@@ -535,7 +535,7 @@
    "sources": [
     "s365-4739293"
    ],
-   "researchedAt": "2026-11-12",
+   "researchedAt": "2026-11-13",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "One publisher only — LiveScore's eleven differs (9/11 surnames agree).",
@@ -628,7 +628,7 @@
    "sources": [
     "s365-4739306"
    ],
-   "researchedAt": "2026-11-12",
+   "researchedAt": "2026-11-13",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "One publisher only — LiveScore's eleven differs (9/11 surnames agree).",
@@ -674,7 +674,7 @@
    "sources": [
     "s365-4739310"
    ],
-   "researchedAt": "2026-11-12",
+   "researchedAt": "2026-11-13",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "One publisher only — LiveScore's eleven differs (9/11 surnames agree).",
@@ -720,7 +720,7 @@
    "sources": [
     "s365-4739319"
    ],
-   "researchedAt": "2026-11-12",
+   "researchedAt": "2026-11-13",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",

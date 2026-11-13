@@ -478,7 +478,7 @@
    "url": "https://webws.365scores.com/web/game/?gameId=4815899",
    "publisher": "365Scores",
    "access": "available",
-   "checkedAt": "2026-11-12"
+   "checkedAt": "2026-11-13"
   },
   {
    "id": "s365-4739303",
@@ -661,7 +661,7 @@
    "sources": [
     "s365-4815899"
    ],
-   "researchedAt": "2026-11-12",
+   "researchedAt": "2026-11-13",
    "parserCertainty": "high",
    "conflictFree": true,
    "notes": "One publisher only — LiveScore has no full eleven for this match.",

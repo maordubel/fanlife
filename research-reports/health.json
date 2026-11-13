@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-12T12:15:55.951Z",
+ "generatedAt": "2026-11-13T11:55:05.850Z",
  "alarms": [
   {
    "club": "maccabi-haifa",
@@ -50,16 +50,6 @@
    "club": "fenerbahce",
    "code": "waiting-owner",
    "text": "Fenerbahçe: 9 gates open on your approval — nothing more to collect for them first."
-  },
-  {
-   "club": "hapoel-tel-aviv",
-   "code": "no-uefa",
-   "text": "Hapoel Tel Aviv: UEFA returned no matches — its UEFA team was not found under the names on file. The next run tries the wider name list."
-  },
-  {
-   "club": "st-pauli",
-   "code": "no-uefa",
-   "text": "FC St. Pauli: UEFA returned no matches — its UEFA team was not found under the names on file. The next run tries the wider name list."
   }
  ]
 }

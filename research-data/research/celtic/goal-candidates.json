@@ -226,15 +226,6 @@
   "evidence": [
    {
     "sourceId": "thecelticwiki",
-    "url": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1888-2/1888-10-27-rangers-1-6-celtic-glasgow-cup/",
-    "locator": "p55",
-    "quote": "Rangers had selected two youngsters, Wilson and Whyte, up front who had won the Junior cup the year before with Fairfield and it was Wilson who, dodging the Celtic backs, broke the deadlock in the 20th minute ‘amidst deafening roars.’ This was a setback for the Bhoys given their strong play so far. The Celtic fans in the crowd wondered how they would respond. Straight from kick-off Celtic launched a counter-attack on the Rangers defence. According to the Herald, ‘Immediately thereafter the cheering was, if anything, intensified when Groves equalised.’ ‘Darlin’ Willie, as the 20-year-old signin",
-    "bodyHash": "dffae77a98fc846d6e77fffecf88769d3739ea52e64c00ff76cac66617c559b9",
-    "fetchedAt": "2026-10-20T08:42:32.368Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "thecelticwiki",
     "url": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1891-2/1891-12-12-celtic-7-1-clyde-glasgow-cup/",
     "locator": "p21",
     "quote": "Goals: 1-0 McCallum (20 min.), 2-0 Brady (30 min.), 3-1 McMahon, 4-1 Kelly, 5-1 Madden, 6-1 Campbell, 7-1 Madden.",
@@ -295,6 +286,15 @@
     "bodyHash": "00099a3c829858ca6a4611732937a4891fb3dccc7e82906cc13ee18af9a52732",
     "fetchedAt": "2026-11-04T11:34:39.863Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/legends-and-supporters/the-green-brigade/green-brigade-misc-articles/",
+    "locator": "p337",
+    "quote": "Then not long after the 20th minute, fans in the corner of the Lisbon Lions stand, in the area of the Green Brigade, unfurled a banner which summed up the views of not just Celtic fans but football supporters around the world.",
+    "bodyHash": "31e4bbede558465207c8d6640148cb10174b372f8fef32cd709a0104915cd70a",
+    "fetchedAt": "2026-11-13T11:31:56.438Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -302,8 +302,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-04T11:34:39.863Z",
-  "updatedAt": "2026-11-04T11:34:39.863Z"
+  "createdAt": "2026-11-13T11:31:56.438Z",
+  "updatedAt": "2026-11-13T11:31:56.438Z"
  },
  {
   "id": "ga-577d3a63d33d9c1c",
@@ -637,6 +637,24 @@
     "bodyHash": "2b1d5009878769aa2d9707de5eea5bc0fbc47d97b5ec1b16f3d87071e75f2e5b",
     "fetchedAt": "2026-11-01T10:48:17.301Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-wetpaint-articles/i-was-there/i-was-there-celtic-1-rangers-0-1980-scottish-cup-final/",
+    "locator": "p13",
+    "quote": "Top of the UK single chart at the time of the cup final was Dexy's Midnight Runners with 'Geno'. Other No1's in early months of 1980 included The Jam 'Going Underground', Pretenders 'Brass In Pocket', Blondie 'Atomic', Kenny Rodgers 'Coward of the County' and the Detroit Spinners 'Working My Way Back To You'.",
+    "bodyHash": "51ade0a420bbf95b01dc7a119bccb1b0eb98aaf70852b78c76c36abbb1e33cba",
+    "fetchedAt": "2026-11-13T11:31:38.444Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/miscellaneous/minute-silence-applause-black-arm-bands/",
+    "locator": "p18",
+    "quote": "[Minutes applause now >1min!]",
+    "bodyHash": "af973b7c7156bcbafa0da899645e81980b87caf811af0ef1905b1b04fdcfab79",
+    "fetchedAt": "2026-11-13T11:31:41.439Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -644,8 +662,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-01T10:48:17.301Z",
-  "updatedAt": "2026-11-01T10:48:17.301Z"
+  "createdAt": "2026-11-13T11:31:41.439Z",
+  "updatedAt": "2026-11-13T11:31:41.439Z"
  },
  {
   "id": "ga-544a8ee2a77de76d",
@@ -991,24 +1009,6 @@
   "evidence": [
    {
     "sourceId": "thecelticwiki",
-    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/70s-pictures/1969-70-pics/1970-04-11-aberdeen-3-1-celtic-scottish-cup-final-pictures/",
-    "locator": "p1",
-    "quote": "Match | 1969-70 Pictures | 1969 – 1970 | 70's Pictures | Year By Year Pictures | Picture Library",
-    "bodyHash": "3c45692634642867e5e1b314d23b9c6383c1be167ef885f46eb8aaa33b657f5e",
-    "fetchedAt": "2026-11-10T11:25:02.077Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "thecelticwiki",
-    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/70s-pictures/1970-71-pics/1970-07-31-limerick-0-6-celtic-friendly-pictures/",
-    "locator": "p1",
-    "quote": "Match | 1970-71 Pictures | 1970 – 1971 | 70's Pictures | Year By Year Pictures | Picture Library",
-    "bodyHash": "6ba10fb842ee7bfb15cd89fc55db843625608d892bb36a698b381c4d7c04dc79",
-    "fetchedAt": "2026-11-12T11:50:07.012Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "thecelticwiki",
     "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/70s-pictures/1970-71-pics/1970-08-02-cork-hibernians-0-3-celtic-league-pictures/",
     "locator": "p1",
     "quote": "Match | 1970-71 Pictures | 1970 – 1971 | 70's Pictures | Year By Year Pictures | Picture Library",
@@ -1060,6 +1060,24 @@
     "bodyHash": "6ba10fb842ee7bfb15cd89fc55db843625608d892bb36a698b381c4d7c04dc79",
     "fetchedAt": "2026-11-12T11:50:10.067Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-wetpaint-articles/most-memorable-game/1988-05-14-celtic-2-1-dundee-utd-scottish-cup-final-most-memorable-game-by-tht/",
+    "locator": "p9",
+    "quote": "Celtic: McKnight; Morris, McCarthy, Whyte (sub: Stark 70min); Rogan, Miller, Aitken, McStay, Burns, McAvennie, Walker (sub: McGhee 70min).",
+    "bodyHash": "0e27982865ae4874443b8c545499104adcfb6356ec3f374f2b56d350a9faac4b",
+    "fetchedAt": "2026-11-13T11:31:41.446Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-wetpaint-articles/most-memorable-game/one-good-turn-centenary-championees/",
+    "locator": "p5",
+    "quote": "The first title win after our first game was in 1986 when we famously beat St Mirren 5-0 and Albert Kidd did the business against Hearts. We were at a friends house, huddled round a radio listening to the crackled transmission and realising it was the first Championship we'd really experienced as true Celtic supporters. Sure there were the triumphs in the 70's and early 80's but this was the first \"real\" one for us. And it felt fantastic.",
+    "bodyHash": "25e70f9d347ab27833d710a80a3f3059cab05b96e2c884275a6f8e3ed47be3ac",
+    "fetchedAt": "2026-11-13T11:31:41.448Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1067,8 +1085,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-12T11:50:10.067Z",
-  "updatedAt": "2026-11-12T11:50:10.067Z"
+  "createdAt": "2026-11-13T11:31:41.448Z",
+  "updatedAt": "2026-11-13T11:31:41.448Z"
  },
  {
   "id": "ga-e21180845e547f26",
@@ -1082,15 +1100,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "thecelticwiki",
-    "url": "https://www.thecelticwiki.com/media/fanzines/hail-hail-fanzine/",
-    "locator": "p6",
-    "quote": "While there's nothing wrong with a bit of Hun bashing the fanzine's pro-board stance obviously did not sit well with many supporters at a time when the club was clearly suffering from the mismanagement and incompetence of the Kelly/White cartel. Consequently by the end of season 1989-90 'Hail! Hail!' disappeared from view after just four issues.",
-    "bodyHash": "0ab628dfc5540c8815d08b5be6d6f11225ca1d46af8712d47d13d5934e9baee2",
-    "fetchedAt": "2026-10-30T10:27:24.324Z",
-    "language": "en"
-   },
    {
     "sourceId": "thecelticwiki",
     "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/a/aitken-roy/",
@@ -1153,6 +1162,15 @@
     "bodyHash": "f917a644ade7ec093fbaef695cc34277bc1ecafa5b3ff803b15123c8f3b4c00a",
     "fetchedAt": "2026-11-10T11:24:53.190Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/legends-and-supporters/songs-and-anthems/just-cant-get-enough-song/",
+    "locator": "p53",
+    "quote": "“In 90min we have decided that the first place goes to the fans of Celtic from Scotland, who show that their fans are not just a few hundred but the whole stadium who start a real party in the stands every time ”I Just Can’t Get Enough’ is blasted out.",
+    "bodyHash": "712171d170fb2abf538a194910992db5a41412e92b69130f3b929b7b4c114a14",
+    "fetchedAt": "2026-11-13T11:31:50.617Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1160,8 +1178,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-10T11:24:53.190Z",
-  "updatedAt": "2026-11-10T11:24:53.190Z"
+  "createdAt": "2026-11-13T11:31:50.617Z",
+  "updatedAt": "2026-11-13T11:31:50.617Z"
  },
  {
   "id": "ga-22353df6dc5d1642",
@@ -2128,6 +2146,15 @@
     "bodyHash": "c51afeaa79934f1738cbb84a954863943b6ff89ef4dc8caa7343bc07a87b22a0",
     "fetchedAt": "2026-11-03T11:03:03.279Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/miscellaneous/light-displays-supporters/",
+    "locator": "p10",
+    "quote": "Begun in the Green Brigade section (as all else seemed to have become the case), on the 67th minute of matches there was a cross-support lights display from those in the Green Brigade section using camera flashlights (as below), whilst the ‘ Celtic 1967 ‘ song was heartily sung. It was impressive and spread across the support in the ground, and when done in unison by all the fans, it was quite a sight and sound to behold. Wonderful atmosphere and incredible gesture. Looked good as it went viral on the social media sites.",
+    "bodyHash": "c96ae484bf7ebf2afc8190354865bb9302952a219db18480ba0ffd7ed10b8b5e",
+    "fetchedAt": "2026-11-13T11:31:38.454Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2135,8 +2162,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-03T11:03:03.279Z",
-  "updatedAt": "2026-11-03T11:03:03.279Z"
+  "createdAt": "2026-11-13T11:31:38.454Z",
+  "updatedAt": "2026-11-13T11:31:38.454Z"
  },
  {
   "id": "ga-88685149807493b8",
@@ -2278,6 +2305,15 @@
     "bodyHash": "62b2060000b9602d6c80dd37507202e750f29c34c638ce7fddb45afb386bd448",
     "fetchedAt": "2026-10-31T09:58:12.067Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-wetpaint-articles/i-was-there/i-was-there-celtic-defeat-2-0-liverpool-at-anfield-on-road-to-seville-uefa-cup/",
+    "locator": "p23",
+    "quote": "It was level pegging until the 45th minute when the keyboards in the press gallery went ballistic. Celtic earned a free-kick to the right of the Liverpool box. Larsson ran to strike and dummied for Alan Thompson. As the wall jumped in anticipation of a high strike, Thommo kept his head down and drilled a vicious low shot underneath the leaping Red defenders and into the near corner past a static Dudek.",
+    "bodyHash": "39b32596fa0a4e2b619abfceffe582079d06b6d15eda08f0ebc93aaa27ecf58b",
+    "fetchedAt": "2026-11-13T11:31:41.445Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2285,8 +2321,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-31T09:58:12.067Z",
-  "updatedAt": "2026-10-31T09:58:12.067Z"
+  "createdAt": "2026-11-13T11:31:41.445Z",
+  "updatedAt": "2026-11-13T11:31:41.445Z"
  },
  {
   "id": "ga-ab6e8936b9675094",
@@ -2308,6 +2344,15 @@
     "bodyHash": "fe66e88af0a8f8e984a8865d1887afe045474ce88e00c2f1c32fd315d2455da2",
     "fetchedAt": "2026-10-31T09:58:15.300Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/opposition/barcelona/",
+    "locator": "p20",
+    "quote": "Taxis are an affordable alternative to public transport. A 15 min’s journey will only cost about 5 Euros. Licensed Taxis have to charge you the amount displayed on the meter. However if you are carrying extra luggage there may be a small surcharge. Rates will be displayed inside the cab.",
+    "bodyHash": "513e38f958afe13a8ad5effc22d13e8f153218fb86d62f2450ed55502e99c0bb",
+    "fetchedAt": "2026-11-13T11:31:59.426Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2315,8 +2360,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-31T09:58:15.300Z",
-  "updatedAt": "2026-10-31T09:58:15.300Z"
+  "createdAt": "2026-11-13T11:31:59.426Z",
+  "updatedAt": "2026-11-13T11:31:59.426Z"
  },
  {
   "id": "ga-3db3feff3a923f53",
@@ -2584,6 +2629,15 @@
     "bodyHash": "13766178c25473598630c10694aebdbb52cf6e79bf84e5e83ae9b798e49df2cb",
     "fetchedAt": "2026-11-01T10:48:29.315Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/miscellaneous/video-assistance-referee-var/",
+    "locator": "p65",
+    "quote": "Lennon had no complaints with the award of a 79th minute penalty to the Danish side as Celtic became the first Scottish side ever to be sanctioned by a VAR decision during their 1-1 draw in the first leg of the Europa League last 32 tie.",
+    "bodyHash": "462b6f43f86343ddc2c5a8bbf3e231c435480405d3f0afd644d4b6df75e330c6",
+    "fetchedAt": "2026-11-13T11:31:47.389Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2591,8 +2645,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-01T10:48:29.315Z",
-  "updatedAt": "2026-11-01T10:48:29.315Z"
+  "createdAt": "2026-11-13T11:31:47.389Z",
+  "updatedAt": "2026-11-13T11:31:47.389Z"
  },
  {
   "id": "ga-ec0c2d4ae7f813ef",
@@ -2875,5 +2929,185 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-11-07T10:41:37.449Z",
   "updatedAt": "2026-11-07T10:41:37.449Z"
+ },
+ {
+  "id": "ga-3adcb4a863973613",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "61",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/miscellaneous/internationals-at-celtic-park/",
+    "locator": "p197",
+    "quote": "Scotland Goals: Andrew Wilson 61′, 83′",
+    "bodyHash": "89a160b6f5acafb22231fb67c0ec9c14b760b9f5f66d94afd54cd79bc1f8a365",
+    "fetchedAt": "2026-11-13T11:31:38.449Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-13T11:31:38.449Z",
+  "updatedAt": "2026-11-13T11:31:38.449Z"
+ },
+ {
+  "id": "ga-fdddd250fdbd2f55",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "43",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/miscellaneous/internationals-at-celtic-park/",
+    "locator": "p198",
+    "quote": "Ireland Goal: Billy Gillespie 43′",
+    "bodyHash": "89a160b6f5acafb22231fb67c0ec9c14b760b9f5f66d94afd54cd79bc1f8a365",
+    "fetchedAt": "2026-11-13T11:31:38.449Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-13T11:31:38.449Z",
+  "updatedAt": "2026-11-13T11:31:38.449Z"
+ },
+ {
+  "id": "ga-56a395e8f985b86d",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "71",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/celtic-wetpaint-articles/most-memorable-game/1988-05-14-celtic-2-1-dundee-utd-scottish-cup-final-most-memorable-game-by-tht/",
+    "locator": "p10",
+    "quote": "Dundee United: Bowman, Hegarty, Narey, Malpas, McKinlay, McInally, Bannon, Ferguson, Gallacher, Paatelainen (sub: Clark 71 min).",
+    "bodyHash": "0e27982865ae4874443b8c545499104adcfb6356ec3f374f2b56d350a9faac4b",
+    "fetchedAt": "2026-11-13T11:31:41.446Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-13T11:31:41.446Z",
+  "updatedAt": "2026-11-13T11:31:41.446Z"
+ },
+ {
+  "id": "ga-96d0124ba418e4aa",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "98",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/miscellaneous/video-assistance-referee-var/",
+    "locator": "p48",
+    "quote": "If one set of incidents more than any other proved the value of VAR, then it was in nail-biting finale matches for Celtic & Hearts at the end of season 2025/26. Hearts claimed a penalty should have been given in their third last game of the season but wasn’t. Arguable but as per SFA Head of Referee Willie Collum’s point : “This is a difficult decision in terms of the VAR cameras being able to analyse the decision. There is nothing absolutely conclusive here which identifies that this is a wrong decision”. Celtic were given a penalty against in the 98th minute following a VAR review after a a M",
+    "bodyHash": "462b6f43f86343ddc2c5a8bbf3e231c435480405d3f0afd644d4b6df75e330c6",
+    "fetchedAt": "2026-11-13T11:31:47.389Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-13T11:31:47.389Z",
+  "updatedAt": "2026-11-13T11:31:47.389Z"
+ },
+ {
+  "id": "ga-dcb092e776206c83",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "87",
+  "scorerAlias": "Celtic",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/miscellaneous/video-assistance-referee-var/",
+    "locator": "p49",
+    "quote": "The big one was in the final do-or-die winner takes all league title decider  v Hearts. Both sides went into the game with the ability to take the league title, but Celtic had to win the game whilst Hearts only needed a draw. On the 87th minute Celtic scored but the goal was initially ruled out as offside breaking hearts across the Celtic stands. However, VAR rightly intervened to overturn the decision with replays clearly showing that Osmand was onside by at least a metre before receiving the ball to tee the ball up to Maeda to score! Without VAR the league title may have NOT been won by Celt",
+    "bodyHash": "462b6f43f86343ddc2c5a8bbf3e231c435480405d3f0afd644d4b6df75e330c6",
+    "fetchedAt": "2026-11-13T11:31:47.389Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-13T11:31:47.389Z",
+  "updatedAt": "2026-11-13T11:31:47.389Z"
+ },
+ {
+  "id": "ga-613485844d6de31e",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "72",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/legends-and-supporters/songs-and-anthems/graffiti-on-the-wall-song/",
+    "locator": "p111",
+    "quote": "The crunch game between Scotland and Republic of Ireland was decided by a single goal from striker Amber Barrett in the 72nd minute and condemned Pedro Martinez-Losa’s side to an exit from the World Cup play offs.",
+    "bodyHash": "3653a953fe897af28d46386a73832875f49d4dc7a56c870d6286c0ec39f7e43d",
+    "fetchedAt": "2026-11-13T11:31:47.391Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-13T11:31:47.391Z",
+  "updatedAt": "2026-11-13T11:31:47.391Z"
  }
 ]
