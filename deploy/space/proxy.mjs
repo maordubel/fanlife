@@ -116,7 +116,7 @@ function renew(key, req) {
 // is never behind sixteen renders. The site host is the one visitors use (the Worker sends it as X-Fanlife-Host).
 export const SITE_HOST = (() => { try { return new URL(process.env.NEXT_PUBLIC_SITE_URL || '').host } catch { return 'fanlife.dubelteam.com' } })() || 'fanlife.dubelteam.com'
 export const warmList = (html) => [...new Set([...String(html).matchAll(/href="(\/(?:clubs\/[a-z0-9-]+(?:\?lang=[a-z-]{2,5})?|shop|market|our-games))"/g)].map((m) => m[1]))].slice(0, 40)
-async function warm() {
+async function warm(onHome = () => {}) {
   const ask = (path) => {
     const req = { method: 'GET', url: path, headers: { host: SITE_HOST, 'x-forwarded-host': SITE_HOST, 'x-forwarded-proto': 'https', accept: 'text/html', 'user-agent': 'FanLife-FrontDoor/1.0 (warm)' } }
     const key = shelfKey(req)
@@ -124,8 +124,10 @@ async function warm() {
   }
   try {
     const home = await ask('/')
+    onHome()
     for (const p of home ? warmList(home.toString('utf8')) : []) await ask(p)
   } catch { /* the shelf fills on demand instead */ }
+  onHome()
 }
 const server = http.createServer((req, res) => {
   const key = shelfKey(req)
@@ -160,6 +162,9 @@ const ready = () => new Promise((ok) => {
 })
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
 for (let i = 0; i < 600 && !(await ready()); i++) await new Promise((r) => setTimeout(r, 100))
+// Cloud Run gives a starting instance its CPU (boosted) but takes it away between requests, so the table is laid while
+// starting: the door opens once the front page is on the shelf, or after twelve seconds at most; the other pages follow
+// behind. On a deploy the old revision keeps serving meanwhile, so nobody waits for it.
+await Promise.race([new Promise((ok) => { warm(ok) }), new Promise((ok) => setTimeout(ok, 12_000))])
 server.listen(Number(process.env.PORT) || 7860, '0.0.0.0')
-warm()
 }

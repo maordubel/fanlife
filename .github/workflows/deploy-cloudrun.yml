@@ -1,6 +1,6 @@
 name: Deploy · Cloud Run
 
-# FAN LIFE runs on Google Cloud Run (scales to zero, 2 GB; one instance takes 60 requests because public pages come from the front door's shelf) behind a Cloudflare Worker, since Vercel's Hobby CPU cap
+# FAN LIFE runs on Google Cloud Run (scales to zero, 2 GB; one instance takes every request because public pages come from the front door's shelf) behind a Cloudflare Worker, since Vercel's Hobby CPU cap
 # shut it off on 10.11.2026. GitHub builds the site, packs it into a container and deploys it. No key is stored
 # anywhere: GitHub proves who it is to Google (OIDC, keyless), and deploy/cloudrun/target.json says where to go.
 # The server keys come from this repository's own secrets and go only to the owner's Cloud Run service (owner's
@@ -109,7 +109,7 @@ jobs:
           gcloud run deploy "${{ steps.cfg.outputs.service }}" \
             --project "${{ steps.cfg.outputs.project }}" --region "${{ steps.cfg.outputs.region }}" \
             --image "${{ steps.img.outputs.image }}" --port 8080 --memory 2Gi --cpu 1 \
-            --min-instances 0 --max-instances 3 --concurrency 60 --cpu-boost --timeout 300 \
+            --min-instances 0 --max-instances 1 --concurrency 80 --cpu-boost --timeout 300 \
             --no-invoker-iam-check "${EXTRA[@]}" --quiet
           URL=$(gcloud run services describe "${{ steps.cfg.outputs.service }}" --project "${{ steps.cfg.outputs.project }}" --region "${{ steps.cfg.outputs.region }}" --format 'value(status.url)')
           echo "::notice title=Cloud Run::$URL"
