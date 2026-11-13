@@ -1,4 +1,5 @@
 import {issueLinkCode} from '@/lib/final-whistle/link'
+import {SITE_URL} from '@/lib/brand'
 import {NextRequest, NextResponse} from 'next/server'
 import {adminFromRequest} from '@/lib/master/admin'
 import {audit, mutate} from '@/lib/master/store'
@@ -48,7 +49,7 @@ export async function POST(r: NextRequest, {params}: {params: {action: string}})
         if (!got) return json({job: null})
         const secret = process.env.CRON_SECRET || ''
         const {exp, sig} = signRender(secret, got.job.id, now.getTime())
-        return json({...got, renderUrl: `${r.nextUrl.origin}/final-whistle-render?job=${got.job.id}&exp=${exp}&sig=${sig}`})
+        return json({...got, renderUrl: `${SITE_URL.replace(/\/$/,'')}/final-whistle-render?job=${got.job.id}&exp=${exp}&sig=${sig}`})
       }
       if (a === 'link') { const chat = str(b.chatId, 40); if (!/^-?\d{4,20}$/.test(chat)) return json({error: 'chatId must be a number.'}, 400); await linkDestination(chat, now); return json({ok: true}) }
       const id = str(b.jobId, 64), by = str(b.by, 80) || 'runner'

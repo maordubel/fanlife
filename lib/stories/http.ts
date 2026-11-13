@@ -1,4 +1,5 @@
 import 'server-only'
+import {ownOrigin} from '@/lib/origin'
 import {NextResponse} from 'next/server'
 import {StoryError} from './jobs'
 import {SocialError} from './social'
@@ -6,8 +7,7 @@ import {SocialError} from './social'
 export const json=(v:unknown,status=200)=>NextResponse.json(v,{status,headers:{'Cache-Control':'no-store, private','X-Robots-Tag':'noindex, nofollow'}})
 /** State-changing owner requests must come from the studio's own origin (CSRF): a cross-site form or fetch is refused. */
 export function sameOrigin(r:Request):boolean{
- const origin=r.headers.get('origin')
- return !!origin&&origin===new URL(r.url).origin&&r.headers.get('sec-fetch-site')!=='cross-site'
+ return ownOrigin(r)&&r.headers.get('sec-fetch-site')!=='cross-site'
 }
 export async function body(r:Request,max=8000):Promise<unknown>{
  const raw=await r.text()
