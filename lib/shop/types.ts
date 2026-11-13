@@ -1,6 +1,10 @@
 /** The shop's own record (file area `shop`): what the print room has made, what Printify answered and what the public sees. */
 export const KINDS=['poster','framed','canvas','tote','tee','hoodie','kids-tee','mug','sticker','phone-case','puzzle','notebook','more'] as const
 export type Kind=(typeof KINDS)[number]
+export const SIDES=['front','back','both'] as const
+export const SIZES=['auto','badge','medium','large','full'] as const
+export const SHADES=['light','dark','all'] as const
+export type ProductDesign={sides?:(typeof SIDES)[number];size?:(typeof SIZES)[number];shades?:(typeof SHADES)[number];cutout?:boolean;margin?:number}
 export type ProductStatus='draft'|'building'|'ready'|'live'|'error'
 export type ShopProduct={
  id:string
@@ -13,6 +17,8 @@ export type ShopProduct={
  status:ProductStatus;error?:string
  /** any product of Printify's whole catalogue, chosen in the desk's catalogue (kind 'more'): its catalogue number and name */
  blueprint?:{id:number;title:string}
+ /** the owner's edits in the builder (13.11.2026): where it prints, how big, on which colours, its own margin, a clean background */
+ design?:ProductDesign
  /** automatic re-presses after a passing failure (the hourly check-up, at most two) */
  retries?:number
  /** shown on /shop — the owner's switch; only a `live` product with a link can be shown */
