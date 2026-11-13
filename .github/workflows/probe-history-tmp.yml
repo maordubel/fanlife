@@ -14,7 +14,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: {node-version: 22, cache: npm}
       - run: npm ci
-      - run: npx tsx scripts/ingest/clubs/olympiacos-history-players.ts
+      - run: node --require ./scripts/master/server-only.cjs --import tsx scripts/ingest/clubs/olympiacos-history-players.ts
       - name: Commit the collected file to this review branch
         run: |
           git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
