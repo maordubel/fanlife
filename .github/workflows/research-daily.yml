@@ -7,6 +7,10 @@ name: research-daily
 # id is saved; the staged clubs get their "what a yes opens" preview; the report names what waits for the owner.
 on:
   workflow_dispatch:
+    inputs:
+      league_depth:
+        description: 'How many finished matches per club the league feed reads (30 every day; 300 to fill history once)'
+        default: '30'
   schedule:
     - cron: '41 3 * * *'
 permissions:
@@ -16,7 +20,7 @@ concurrency: {group: research-daily, cancel-in-progress: false}
 jobs:
   daily:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 240
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -48,7 +52,7 @@ jobs:
           for dir in club-packs/*/; do
             id=$(basename "$dir")
             [ -f "$dir/ingest.json" ] || continue
-            npx tsx scripts/ingest/clubs/league-lineups.ts --club "$id" --max 30 2>&1 | tee -a wave.log || echo "::warning::$id league feed failed"
+            npx tsx scripts/ingest/clubs/league-lineups.ts --club "$id" --max "${{ inputs.league_depth || '30' }}" 2>&1 | tee -a wave.log || echo "::warning::$id league feed failed"
           done
       - name: Census
         run: npm run -s research:census -- --out census.json

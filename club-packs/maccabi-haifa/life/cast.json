@@ -1,0 +1,13 @@
+{
+ "schemaVersion": 1,
+ "clubId": "maccabi-haifa",
+ "status": "proposed",
+ "note": "Proposed fictional first names; awaiting owner approval. Nobody here is a real person.",
+ "names": {
+  "dad": "Avi",
+  "mum": "Orna",
+  "friend": "Yossi",
+  "kiosk": "Shlomo",
+  "elder": "Saba Moshe"
+ }
+}

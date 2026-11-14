@@ -55,6 +55,8 @@ export const providers:Record<string,()=>Promise<{data:ClubData;diagnostics:Diag
  'wydad-casablanca':async()=>compilePackEuro(mergeWave(mergeWave((await import('@/club-packs/wydad-casablanca/core.json')).default as never,(await import('@/club-packs/wydad-casablanca/wave-research-2026-11-12.json')).default as never),(await import('@/club-packs/wydad-casablanca/wave-history-2026-11-13.json')).default as never),REGISTRY.find(c=>c.id==='wydad-casablanca')!),
  'al-ahly':async()=>compilePackEuro(mergeWave(mergeWave((await import('@/club-packs/al-ahly/core.json')).default as never,(await import('@/club-packs/al-ahly/wave-research-2026-11-12.json')).default as never),(await import('@/club-packs/al-ahly/wave-history-2026-11-13.json')).default as never),REGISTRY.find(c=>c.id==='al-ahly')!),
  // ↓ promoted from the research desk (scripts/clubs/promote.ts) — one line per club
+ 'atalanta':async()=>compilePackEuro(mergeWave((await import('@/club-packs/atalanta/core.json')).default as never,(await import('@/club-packs/atalanta/wave-research-2026-11-14.json')).default as never) as never,REGISTRY.find(c=>c.id==='atalanta')!),
+ 'maccabi-haifa':async()=>compilePackEuro(mergeWave((await import('@/club-packs/maccabi-haifa/core.json')).default as never,(await import('@/club-packs/maccabi-haifa/wave-research-2026-11-14.json')).default as never) as never,REGISTRY.find(c=>c.id==='maccabi-haifa')!),
 }
 /** What `loadClubBase` adds on top of a provider's output: the roster wave, then the forged English trivia. */
 export {withForgedTrivia,withArchiveMysteries,mergeWave,withMemoryPairs}

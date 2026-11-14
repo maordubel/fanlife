@@ -12,6 +12,8 @@ export const CRESTS: Readonly<Record<string, string>> = {
   'hapoel-petah-tikva': '/crests/hapoel-petah-tikva.png',
   'hapoel-tel-aviv': '/crests/hapoel-tel-aviv.png',
   'zrinjski-mostar': '/crests/zrinjski-mostar.png',
+  'atalanta': '/crests/atalanta.png',
+  'maccabi-haifa': '/crests/maccabi-haifa.png',
 }
 
 export const crestFor = (clubId: string | null | undefined): string | null => (clubId ? CRESTS[clubId] ?? null : null)

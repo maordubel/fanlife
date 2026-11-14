@@ -1,0 +1,13 @@
+{
+ "schemaVersion": 1,
+ "clubId": "atalanta",
+ "status": "proposed",
+ "note": "Proposed fictional first names; awaiting owner approval. Nobody here is a real person.",
+ "names": {
+  "dad": "Marco",
+  "mum": "Giulia",
+  "friend": "Luca",
+  "kiosk": "Gino",
+  "elder": "Nonno Pietro"
+ }
+}

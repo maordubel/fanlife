@@ -142,7 +142,7 @@ async function main(){
  // validate
  let bad=0;const fail=(m:string)=>{bad++;console.log('FAIL',m)}
  for(const id of CORE_CLUB_IDS){const d=await loadClub(id);const c=doc.clubs[id];if(!d||!c){fail(`${id}: no price list`);continue}
-  const dropped=new Set(mergesFor(id).map(m=>m.drop)),names=(d.data.players??[]).filter(p=>isMan(p.value.name)&&!dropped.has(p.value.id)),ids=new Set(names.map(p=>p.value.id))
+  const dropped=new Set(mergesFor(id).map(m=>m.drop)),names=(d.data.players??[]).filter(p=>isMan(p.value.name)&&!dropped.has(p.value.id)&&!p.value.archiveOnly),ids=new Set(names.map(p=>p.value.id))
   for(const p of names)if(!c.players[p.value.id])fail(`${id}: ${p.value.name} has no price`)
   for(const pid of Object.keys(c.players))if(!ids.has(pid))fail(`${id}: ${pid} is not in the archive`)
   const n=Object.keys(c.players).length,have={1:0,2:0,3:0,4:0,5:0} as Record<number,number>

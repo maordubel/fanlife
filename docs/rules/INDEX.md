@@ -215,5 +215,5 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [shop-sales](shop-sales.md) · Real price-cut sales (club / category / design, dates, never under cost + 10%), ribbon, free shipping, favourites, best sellers; the megastore order of /shop and the browse view (14.11.2026)
 - [shop-checks-itself](shop-checks-itself.md) · The shop re-reads every product from Printify hourly, repairs links and pictures, hides what was deleted, re-presses passing failures; never shows anything itself (12.11.2026)
 - [hub-order](hub-order.md) · The hub and a club home are put in order, not redesigned: nothing hidden, the features indexed, clubs as a slide on a phone, no next-match box (12.11.2026)
-- [archive-official-source](archive-official-source.md) · A source published by the competition's own league or federation approves a record on its own (13.11.2026)
+- [archive-official-source](archive-official-source.md) · An official source approves a record on its own: league, federation, competition, or the club's own site (13.11.2026, widened 14.11.2026)
 - [archive-one-night](archive-one-night.md) · One record per match night, a daily self-refreshing league feed, and the archive door every game links through (12.11.2026)

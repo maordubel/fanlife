@@ -1,0 +1,2676 @@
+{
+ "schemaVersion": 1,
+ "clubId": "maccabi-haifa",
+ "contentLocale": "en",
+ "sources": [
+  {
+   "id": "mh-k-fka-2023-24-home",
+   "title": "Maccabi Haifa 2023-24 Home Kit",
+   "url": "https://footballkitarchive.com/maccabi-haifa-2023-24-home-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-fka-2023-24-home-2",
+   "title": "Maccabi Haifa 2023-24 Home 2 Kit",
+   "url": "https://footballkitarchive.com/maccabi-haifa-2023-24-home-2-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-fka-2023-24-away-2",
+   "title": "Maccabi Haifa 2023-24 Away 2 Kit",
+   "url": "https://footballkitarchive.com/maccabi-haifa-2023-24-away-2-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-fka-2023-24-third",
+   "title": "Maccabi Haifa 2023-24 Third Kit",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2023-24-third-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-fka-2022-23-home",
+   "title": "Maccabi Haifa 2022-23 Home Kit",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2022-23-home-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-fka-2022-23-home-3",
+   "title": "Maccabi Haifa 2022-23 Home 3 Kit",
+   "url": "https://footballkitarchive.com/maccabi-haifa-2022-23-home-3-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-fka-2022-23-away",
+   "title": "Maccabi Haifa 2022-23 Away Kit",
+   "url": "https://footballkitarchive.com/maccabi-haifa-2022-23-away-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-fka-2022-23-european-away",
+   "title": "Maccabi Haifa 2022-23 European Away Kit",
+   "url": "https://footballkitarchive.com/maccabi-haifa-2022-23-european-away-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-fka-2022-23-third",
+   "title": "Maccabi Haifa 2022-23 Third Kit",
+   "url": "https://footballkitarchive.com/maccabi-haifa-2022-23-third-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-fka-2021-22-home",
+   "title": "Maccabi Haifa 2021-22 Home Kit",
+   "url": "https://footballkitarchive.com/maccabi-haifa-2021-22-home-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-fka-2020-21-third",
+   "title": "Maccabi Haifa 2020-21 Third Kit",
+   "url": "https://footballkitarchive.com/maccabi-haifa-2020-21-third-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-fka-2019-20-home",
+   "title": "Maccabi Haifa 2019-20 Home Kit",
+   "url": "https://footballkitarchive.com/maccabi-haifa-2019-20-home-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-fka-2019-20-third",
+   "title": "Maccabi Haifa 2019-20 Third Kit",
+   "url": "https://footballkitarchive.com/maccabi-haifa-2019-20-third-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-fka-2018-19-third",
+   "title": "Maccabi Haifa 2018-19 Third Kit",
+   "url": "https://footballkitarchive.com/maccabi-haifa-2018-19-third-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-fka-2017-18-third",
+   "title": "Maccabi Haifa 2017-18 Third Kit",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2017-18-third-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-fka-2015-16-home",
+   "title": "Maccabi Haifa 2015-16 Home Kit",
+   "url": "https://footballkitarchive.com/maccabi-haifa-2015-16-home-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-fka-2015-16-third",
+   "title": "Maccabi Haifa 2015-16 Third Kit",
+   "url": "https://footballkitarchive.com/maccabi-haifa-2015-16-third-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-fka-2014-15-third",
+   "title": "Maccabi Haifa 2014-15 Third Kit",
+   "url": "https://footballkitarchive.com/maccabi-haifa-2014-15-third-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-fka-2013-14-home",
+   "title": "Maccabi Haifa 2013-14 Home Kit",
+   "url": "https://footballkitarchive.com/maccabi-haifa-2013-14-home-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-fka-2013-14-third",
+   "title": "Maccabi Haifa 2013-14 Third Kit",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2013-14-third-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-fka-2010-11-third",
+   "title": "Maccabi Haifa 2010-11 Third Kit",
+   "url": "https://footballkitarchive.com/maccabi-haifa-2010-11-third-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-fka-2009-10-home",
+   "title": "Maccabi Haifa 2009-10 Home Kit",
+   "url": "https://footballkitarchive.com/maccabi-haifa-2009-10-home-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-fka-2009-10-third",
+   "title": "Maccabi Haifa 2009-10 Third Kit",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2009-10-third-kit/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-fka-2008-09-third",
+   "title": "Maccabi Haifa 2008-09 Third Kit",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2008-09-third-kit/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-fka-2003-04-away",
+   "title": "Maccabi Haifa 2003-04 Away Kit",
+   "url": "https://footballkitarchive.com/maccabi-haifa-2003-04-away-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-fka-2002-03-home",
+   "title": "Maccabi Haifa 2002-03 Home Kit",
+   "url": "https://footballkitarchive.com/maccabi-haifa-2002-03-home-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-cultkits-2002-03-cl-home",
+   "title": "2002/03 Maccabi Haifa match worn Champions League home shirt (Israilevich #18)",
+   "url": "https://www.cultkits.com/collections/the-cult-archive/products/2002-03-maccabi-haifa-israilevish-18-match-worn-vs-c-l-home-shirt-l-lotto685",
+   "publisher": "Cult Kits",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-fka-1993-94-home",
+   "title": "Maccabi Haifa 1993-94 Home Kit",
+   "url": "https://footballkitarchive.com/maccabi-haifa-1993-94-home-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-fka-1993-94-away",
+   "title": "Maccabi Haifa 1993-94 Away Kit",
+   "url": "https://footballkitarchive.com/maccabi-haifa-1993-94-away-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-fka-1990-91-home",
+   "title": "Maccabi Haifa 1990-91 Home Kit",
+   "url": "https://footballkitarchive.com/maccabi-haifa-1990-91-home-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-fka-1990-91-away",
+   "title": "Maccabi Haifa 1990-91 Away Kit",
+   "url": "https://footballkitarchive.com/maccabi-haifa-1990-91-away-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-fka-1985-86-home",
+   "title": "Maccabi Haifa 1985-86 Home Kit",
+   "url": "https://footballkitarchive.com/maccabi-haifa-1985-86-home-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-k-fka-1984-85-home",
+   "title": "Maccabi Haifa 1984-85 Home Kit",
+   "url": "https://footballkitarchive.com/maccabi-haifa-1984-85-home-kit",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-d-wiki-haifa-derby",
+   "title": "Haifa derby",
+   "url": "https://en.wikipedia.org/wiki/Haifa_derby",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-d-club-2026-01-05",
+   "title": "Maccabi Haifa v Hapoel Haifa match report (fixture 17)",
+   "url": "https://en.mhaifafc.com/news/37141",
+   "publisher": "Maccabi Haifa FC",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available",
+   "official": "club"
+  },
+  {
+   "id": "mh-d-sportsmole-2026-01-05",
+   "title": "Maccabi Haifa vs Hapoel Haifa, Israeli Premier League Gameweek 17",
+   "url": "https://www.sportsmole.co.uk/football/israeli-premier-league/maccabi-haifa-vs-hapoel-haifa_game_236172.html",
+   "publisher": "Sports Mole",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-d-club-2025-09-21",
+   "title": "Hapoel Haifa v Maccabi Haifa match report (fixture 4)",
+   "url": "https://en.mhaifafc.com/news/36935",
+   "publisher": "Maccabi Haifa FC",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available",
+   "official": "club"
+  },
+  {
+   "id": "mh-d-club-2025-05-03",
+   "title": "Maccabi Haifa v Hapoel Haifa match report (fixture 33)",
+   "url": "https://en.mhaifafc.com/news/36651",
+   "publisher": "Maccabi Haifa FC",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available",
+   "official": "club"
+  },
+  {
+   "id": "mh-d-sportsmole-2025-05-03",
+   "title": "Maccabi Haifa vs Hapoel Haifa, Israeli Premier League Gameweek 7",
+   "url": "https://www.sportsmole.co.uk/football/israeli-premier-league/maccabi-haifa-vs-hapoel-haifa_game_222450.html",
+   "publisher": "Sports Mole",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-d-sportsrabbi-2025-05-03",
+   "title": "Hapoel smashes Maccabi 5-1 in Haifa Derby",
+   "url": "https://sportsrabbi.com/en/?p=140112",
+   "publisher": "Sports Rabbi",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-d-club-2025-03-29",
+   "title": "Hapoel Haifa v Maccabi Haifa match report (fixture 28)",
+   "url": "https://en.mhaifafc.com/news/36540",
+   "publisher": "Maccabi Haifa FC",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available",
+   "official": "club"
+  },
+  {
+   "id": "mh-d-sportsmole-2025-03-29",
+   "title": "Hapoel Haifa vs Maccabi Haifa, Israeli Premier League Gameweek 2",
+   "url": "https://www.sportsmole.co.uk/football/israeli-premier-league/hapoel-haifa-vs-maccabi-haifa_game_222340.html",
+   "publisher": "Sports Mole",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-d-sportsmole-2025-02-10",
+   "title": "Maccabi Haifa vs Hapoel Haifa, Israeli Premier League Gameweek 22",
+   "url": "https://www.sportsmole.co.uk/football/israeli-premier-league/maccabi-haifa-vs-hapoel-haifa_game_203338.html",
+   "publisher": "Sports Mole",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-d-club-2024-11-04",
+   "title": "Hapoel Haifa v Maccabi Haifa match report (fixture 9)",
+   "url": "https://en.mhaifafc.com/news/36226",
+   "publisher": "Maccabi Haifa FC",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available",
+   "official": "club"
+  },
+  {
+   "id": "mh-d-sportsmole-2024-11-04",
+   "title": "Hapoel Haifa vs Maccabi Haifa, Israeli Premier League Gameweek 9",
+   "url": "https://sportsmole.co.uk/football/israeli-premier-league/hapoel-haifa-vs-maccabi-haifa_game_203247.html",
+   "publisher": "Sports Mole",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-d-jpost-2024-11-04",
+   "title": "Haifa derby report (article 827688)",
+   "url": "https://jpost.com/israel-news/sports/article-827688",
+   "publisher": "The Jerusalem Post",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-d-club-2024-05-25",
+   "title": "Maccabi Haifa v Hapoel Haifa match report (matchweek 36)",
+   "url": "https://en.mhaifafc.com/news/35912",
+   "publisher": "Maccabi Haifa FC",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available",
+   "official": "club"
+  },
+  {
+   "id": "mh-d-sportsmole-2024-05-25",
+   "title": "Maccabi Haifa vs Hapoel Haifa, Israeli Premier League Gameweek 10",
+   "url": "https://www.sportsmole.co.uk/football/israeli-premier-league/maccabi-haifa-vs-hapoel-haifa_game_198029.html",
+   "publisher": "Sports Mole",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-d-club-2024-04-29",
+   "title": "Hapoel Haifa v Maccabi Haifa match report (matchweek 31)",
+   "url": "https://en.mhaifafc.com/news/35849",
+   "publisher": "Maccabi Haifa FC",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available",
+   "official": "club"
+  },
+  {
+   "id": "mh-d-sportsmole-2024-04-29",
+   "title": "Hapoel Haifa vs Maccabi Haifa, Israeli Premier League Gameweek 5",
+   "url": "https://www.sportsmole.co.uk/football/israeli-premier-league/hapoel-haifa-vs-maccabi-haifa_game_198002.html",
+   "publisher": "Sports Mole",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-d-sportsrabbi-2023-03-06",
+   "title": "Atzily hat-trick gives Greens Haifa Derby",
+   "url": "https://sportsrabbi.com/en/atzily-hat-trick-gives-greens-haifa-derby/",
+   "publisher": "Sports Rabbi",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-d-soccerway-2023-01-04",
+   "title": "Maccabi Haifa v Hapoel Haifa, State Cup 2022/23, 04/01/2023",
+   "url": "https://ca.soccerway.com/matches/2023/01/04/israel/state-cup/maccabi-haifa/hapoel-haifa/4000075",
+   "publisher": "Soccerway",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-d-worldfootball-cup-h2h",
+   "title": "Hapoel Haifa v Maccabi Haifa, State Cup head-to-head",
+   "url": "https://worldfootball.net/teams/hapoel-haifa/maccabi-haifa/11/",
+   "publisher": "worldfootball.net",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-d-planetsport-2022-04-19",
+   "title": "Israel State Cup semi-final: Maccabi Haifa vs Hapoel Haifa, 2022-04-19",
+   "url": "https://livesoccer.planetsport.com/live/soccer/match-detail/israel-state-cup-maccabi-haifa-vs-hapoel-haifa/2022-04-19/2104338/overview",
+   "publisher": "Planet Sport",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-d-babagol-2022-04-19",
+   "title": "Maccabi Haifa dominate rivals Hapoel in Israel State Cup semi-final",
+   "url": "https://www.babagol.net/blog/2022/4/20/maccabi-haifa-dominate-rivals-hapoel-in-israel-state-cup-semi-final",
+   "publisher": "Babagol",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-d-planetsport-2021-12-02",
+   "title": "Ligat HaAl: Maccabi Haifa vs Hapoel Haifa, 2021-12-02",
+   "url": "https://livesoccer.planetsport.com/live/soccer/match-detail/israel-ligat-haal-maccabi-haifa-vs-hapoel-haifa/2021-12-02/1747724/overview",
+   "publisher": "Planet Sport",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-d-sportsrabbi-2021-12-02",
+   "title": "Maccabi paints Haifa Green, Beer Sheva wins, Nof HaGalil holds Maccabi",
+   "url": "https://sportsrabbi.com/en/maccabi-paints-haifa-green-beer-sheva-wins-nof-hagalil-holds-maccabi/",
+   "publisher": "Sports Rabbi",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-d-jpost-2020-11-21",
+   "title": "Hapoel Haifa earns shock derby triumph",
+   "url": "https://www.pressreader.com/israel/jerusalem-post/20201124/281732682036992",
+   "publisher": "The Jerusalem Post (via PressReader)",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-d-fotmob-2020-07-01",
+   "title": "Hapoel Haifa vs Maccabi Haifa, Ligat HaAl Championship Group round 34",
+   "url": "https://www.fotmob.com/livescores/3286333",
+   "publisher": "FotMob",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-d-jpost-2013-10-27",
+   "title": "Hapoel smothers Maccabi for 1-0 Haifa derby conquest",
+   "url": "https://www.jpost.com/sports/hapoel-smothers-maccabi-for-1-0-haifa-derby-conquest-329898",
+   "publisher": "The Jerusalem Post",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-d-jpost-2009-12-28",
+   "title": "Maccabi wins a tense Haifa derby 1-0",
+   "url": "https://m.jpost.com/sports/maccabi-wins-a-tense-haifa-derby-1-0",
+   "publisher": "The Jerusalem Post",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "mh-d-rsssf-1995-96",
+   "title": "Israel 1995/96",
+   "url": "https://rsssf.org/tablesi/isra96.html",
+   "publisher": "RSSSF",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  }
+ ],
+ "kits": [
+  {
+   "id": "mh-kit-2023-24-home",
+   "value": {
+    "name": "Maccabi Haifa 2023/24 home",
+    "season": "2023/24",
+    "type": "home",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "plain adidas Tiro 23 Competition Match template",
+     "colors": "green"
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-2023-24-home"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "FKA: adidas, Tiro 23 Competition Match template, green shirt referencing club heritage; no sponsor stated on the page."
+  },
+  {
+   "id": "mh-kit-2023-24-home-2",
+   "value": {
+    "name": "Maccabi Haifa 2023/24 home (second version)",
+    "season": "2023/24",
+    "type": "home",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "plain",
+     "colors": "green/white"
+    },
+    "sponsor": "Volvo",
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-2023-24-home-2"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "FKA lists it as 'Home 2': adidas, Volvo, plain, green/white."
+  },
+  {
+   "id": "mh-kit-2023-24-away-2",
+   "value": {
+    "name": "Maccabi Haifa 2023/24 away (second version)",
+    "season": "2023/24",
+    "type": "away",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "plain",
+     "colors": "white"
+    },
+    "sponsor": "Volvo",
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-2023-24-away-2"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "FKA lists it as 'Away 2': adidas, Volvo, plain, white. The primary 2023/24 away page was not reached."
+  },
+  {
+   "id": "mh-kit-2023-24-third",
+   "value": {
+    "name": "Maccabi Haifa 2023/24 third",
+    "season": "2023/24",
+    "type": "third",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": "plain",
+     "colors": "black/white"
+    },
+    "sponsor": "Volvo",
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-2023-24-third"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "FKA: adidas, Volvo, plain, black/white."
+  },
+  {
+   "id": "mh-kit-2022-23-home",
+   "value": {
+    "name": "Maccabi Haifa 2022/23 home",
+    "season": "2022/23",
+    "type": "home",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "stripes on the front (Nike team template)",
+     "colors": "green/white"
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-2022-23-home"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "FKA: Nike, green and white striped front on a Nike team template; no sponsor stated."
+  },
+  {
+   "id": "mh-kit-2022-23-home-3",
+   "value": {
+    "name": "Maccabi Haifa 2022/23 home (third version)",
+    "season": "2022/23",
+    "type": "home",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": null,
+     "colors": null
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-2022-23-home-3"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "FKA lists it as 'Home 3', brand Nike; no colours, design or sponsor stated in page text."
+  },
+  {
+   "id": "mh-kit-2022-23-away",
+   "value": {
+    "name": "Maccabi Haifa 2022/23 away",
+    "season": "2022/23",
+    "type": "away",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "contrast sleeves",
+     "colors": "anthracite/black"
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-2022-23-away"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "FKA: Nike, mainly anthracite body with black sleeves; no sponsor stated."
+  },
+  {
+   "id": "mh-kit-2022-23-european-away",
+   "value": {
+    "name": "Maccabi Haifa 2022/23 European away",
+    "season": "2022/23",
+    "type": "away",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "Nike Vaporknit III template",
+     "colors": null
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-2022-23-european-away"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "FKA lists it as 'European Away', Nike, Vaporknit III template; colours not stated in page text."
+  },
+  {
+   "id": "mh-kit-2022-23-third",
+   "value": {
+    "name": "Maccabi Haifa 2022/23 third",
+    "season": "2022/23",
+    "type": "third",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "Nike Strike II template",
+     "colors": null
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-2022-23-third"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "FKA: Nike, Strike II template; colours not stated."
+  },
+  {
+   "id": "mh-kit-2021-22-home",
+   "value": {
+    "name": "Maccabi Haifa 2021/22 home",
+    "season": "2021/22",
+    "type": "home",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "halves (green left, white right) with collar and cuffs split in the opposite colour",
+     "colors": "green/white"
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-2021-22-home"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "FKA: Nike, half-and-half design, green on the left and white on the right, collar and cuffs split opposite; no sponsor listed; FKA cites a club Facebook photo as its source."
+  },
+  {
+   "id": "mh-kit-2020-21-third",
+   "value": {
+    "name": "Maccabi Haifa 2020/21 third",
+    "season": "2020/21",
+    "type": "third",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "Nike Vapor II template",
+     "colors": "white/black/green"
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-2020-21-third"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "FKA: Nike Vapor II template in white, black and Maccabi green."
+  },
+  {
+   "id": "mh-kit-2019-20-home",
+   "value": {
+    "name": "Maccabi Haifa 2019/20 home",
+    "season": "2019/20",
+    "type": "home",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "Nike Digital 18 template",
+     "colors": null
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-2019-20-home"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "FKA: Nike, Digital 18 template; colours not stated."
+  },
+  {
+   "id": "mh-kit-2019-20-third",
+   "value": {
+    "name": "Maccabi Haifa 2019/20 third",
+    "season": "2019/20",
+    "type": "third",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": null,
+     "colors": null
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-2019-20-third"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "FKA: Nike; no colours, design or sponsor stated."
+  },
+  {
+   "id": "mh-kit-2018-19-third",
+   "value": {
+    "name": "Maccabi Haifa 2018/19 third",
+    "season": "2018/19",
+    "type": "third",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "hoops",
+     "colors": "green/white"
+    },
+    "sponsor": "Volvo",
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-2018-19-third"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "FKA: Nike, Volvo, green/white hoops."
+  },
+  {
+   "id": "mh-kit-2017-18-third",
+   "value": {
+    "name": "Maccabi Haifa 2017/18 third",
+    "season": "2017/18",
+    "type": "third",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "contrasting sleeves",
+     "colors": "black/grey"
+    },
+    "sponsor": "Honda",
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-2017-18-third"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "FKA: Nike, Honda, black/gray with contrasting sleeves."
+  },
+  {
+   "id": "mh-kit-2015-16-home",
+   "value": {
+    "name": "Maccabi Haifa 2015/16 home",
+    "season": "2015/16",
+    "type": "home",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": null,
+     "colors": null
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-2015-16-home"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "FKA: Nike; no colours, design or sponsor stated."
+  },
+  {
+   "id": "mh-kit-2015-16-third",
+   "value": {
+    "name": "Maccabi Haifa 2015/16 third",
+    "season": "2015/16",
+    "type": "third",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": null,
+     "colors": null
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-2015-16-third"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "FKA: Nike; no colours, design or sponsor stated."
+  },
+  {
+   "id": "mh-kit-2014-15-third",
+   "value": {
+    "name": "Maccabi Haifa 2014/15 third",
+    "season": "2014/15",
+    "type": "third",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "Nike Victory II template",
+     "colors": null
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-2014-15-third"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "FKA: Nike, Victory II template; colours not stated."
+  },
+  {
+   "id": "mh-kit-2013-14-home",
+   "value": {
+    "name": "Maccabi Haifa 2013/14 home",
+    "season": "2013/14",
+    "type": "home",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "Nike Striker III template",
+     "colors": null
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-2013-14-home"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "FKA: Nike, Striker III template; colours not stated."
+  },
+  {
+   "id": "mh-kit-2013-14-third",
+   "value": {
+    "name": "Maccabi Haifa 2013/14 third",
+    "season": "2013/14",
+    "type": "third",
+    "manufacturer": "Nike",
+    "construction": {
+     "design": "Nike Revolution II template",
+     "colors": null
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-2013-14-third"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "FKA: Nike, Revolution II template; colours not stated."
+  },
+  {
+   "id": "mh-kit-2010-11-third",
+   "value": {
+    "name": "Maccabi Haifa 2010/11 third",
+    "season": "2010/11",
+    "type": "third",
+    "manufacturer": "Lotto",
+    "construction": {
+     "design": "stripes",
+     "colors": "black/white"
+    },
+    "sponsor": "Honda",
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-2010-11-third"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "FKA: Lotto, Honda, black/white stripes."
+  },
+  {
+   "id": "mh-kit-2009-10-home",
+   "value": {
+    "name": "Maccabi Haifa 2009/10 home",
+    "season": "2009/10",
+    "type": "home",
+    "manufacturer": "Lotto",
+    "construction": {
+     "design": null,
+     "colors": null
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-2009-10-home"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "FKA: Lotto (Champions League group-stage season); colours and sponsor not stated."
+  },
+  {
+   "id": "mh-kit-2009-10-third",
+   "value": {
+    "name": "Maccabi Haifa 2009/10 third",
+    "season": "2009/10",
+    "type": "third",
+    "manufacturer": "Lotto",
+    "construction": {
+     "design": null,
+     "colors": null
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-2009-10-third"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "FKA: Lotto; colours and sponsor not stated."
+  },
+  {
+   "id": "mh-kit-2008-09-third",
+   "value": {
+    "name": "Maccabi Haifa 2008/09 third",
+    "season": "2008/09",
+    "type": "third",
+    "manufacturer": "Lotto",
+    "construction": {
+     "design": null,
+     "colors": null
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-2008-09-third"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "FKA: Lotto; colours and sponsor not stated."
+  },
+  {
+   "id": "mh-kit-2003-04-away",
+   "value": {
+    "name": "Maccabi Haifa 2003/04 away",
+    "season": "2003/04",
+    "type": "away",
+    "manufacturer": "Lotto",
+    "construction": {
+     "design": "plain",
+     "colors": "white/green"
+    },
+    "sponsor": "Honda",
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-2003-04-away"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "FKA: Lotto, Honda, plain, white/green."
+  },
+  {
+   "id": "mh-kit-2002-03-home",
+   "value": {
+    "name": "Maccabi Haifa 2002/03 home",
+    "season": "2002/03",
+    "type": "home",
+    "manufacturer": null,
+    "construction": {
+     "design": null,
+     "colors": null
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-2002-03-home",
+    "mh-k-cultkits-2002-03-cl-home"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "confidence": 1,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Manufacturer disputed, so null: FKA lists the 2002-03 home kit as Puma; Cult Kits lists a match-worn 2002/03 Champions League home shirt as Lotto and mentions green patches covering the Lotto logos on the sleeves. Possibly different versions (league vs UEFA); unresolved."
+  },
+  {
+   "id": "mh-kit-1993-94-home",
+   "value": {
+    "name": "Maccabi Haifa 1993/94 home",
+    "season": "1993/94",
+    "type": "home",
+    "manufacturer": "Lotto",
+    "construction": {
+     "design": null,
+     "colors": null
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-1993-94-home"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "FKA: Lotto; colours and sponsor not stated. FKA also has a separate 'Home 1' variant for this season, not recorded."
+  },
+  {
+   "id": "mh-kit-1993-94-away",
+   "value": {
+    "name": "Maccabi Haifa 1993/94 away",
+    "season": "1993/94",
+    "type": "away",
+    "manufacturer": "Lotto",
+    "construction": {
+     "design": "graphic",
+     "colors": "green/white"
+    },
+    "sponsor": "Volvo",
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-1993-94-away"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "FKA: Lotto, Volvo, graphic design, green/white."
+  },
+  {
+   "id": "mh-kit-1990-91-home",
+   "value": {
+    "name": "Maccabi Haifa 1990/91 home",
+    "season": "1990/91",
+    "type": "home",
+    "manufacturer": "Lotto",
+    "construction": {
+     "design": null,
+     "colors": null
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-1990-91-home"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "FKA: Lotto; colours and sponsor not stated."
+  },
+  {
+   "id": "mh-kit-1990-91-away",
+   "value": {
+    "name": "Maccabi Haifa 1990/91 away",
+    "season": "1990/91",
+    "type": "away",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": null,
+     "colors": null
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-1990-91-away"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "FKA: adidas (note: the same season's home is listed as Lotto); colours and sponsor not stated."
+  },
+  {
+   "id": "mh-kit-1985-86-home",
+   "value": {
+    "name": "Maccabi Haifa 1985/86 home",
+    "season": "1985/86",
+    "type": "home",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": null,
+     "colors": null
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-1985-86-home"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "FKA: adidas; colours and sponsor not stated."
+  },
+  {
+   "id": "mh-kit-1984-85-home",
+   "value": {
+    "name": "Maccabi Haifa 1984/85 home",
+    "season": "1984/85",
+    "type": "home",
+    "manufacturer": "adidas",
+    "construction": {
+     "design": null,
+     "colors": null
+    },
+    "sponsor": null,
+    "shorts": {
+     "colour": null,
+     "trim": null
+    },
+    "socks": {
+     "colour": null,
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-k-fka-1984-85-home"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "confidence": 2,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "FKA: adidas; colours and sponsor not stated."
+  }
+ ],
+ "matches": [
+  {
+   "id": "hd-2026-01-05",
+   "value": {
+    "name": "Maccabi Haifa 2-0 Hapoel Haifa",
+    "on": "2026-01-05",
+    "competition": "Israeli Premier League",
+    "score": "2-0",
+    "venue": "Sammy Ofer Stadium",
+    "scorers": [
+     "Ethan Azoulay",
+     "Guy Melamed"
+    ]
+   },
+   "sources": [
+    "mh-d-club-2026-01-05",
+    "mh-d-sportsmole-2026-01-05",
+    "mh-d-wiki-haifa-derby"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Club (official): 2-0 at Sammy Ofer, fixture 17, Azoulay 35', Melamed 45+12'. Sports Mole: Mon 5 Jan 2026, 2-0, Melamed 45+11'. Wikipedia: 5 Jan 2026, 45+11'. Minute taken from the club report."
+  },
+  {
+   "id": "hd-2025-09-21",
+   "value": {
+    "name": "Hapoel Haifa 1-1 Maccabi Haifa",
+    "on": "2025-09-21",
+    "competition": "Israeli Premier League",
+    "score": "1-1",
+    "venue": "Sammy Ofer Stadium",
+    "scorers": [
+     "Trivante Stewart"
+    ]
+   },
+   "sources": [
+    "mh-d-club-2025-09-21",
+    "mh-d-wiki-haifa-derby",
+    "mh-d-sportsmole-2026-01-05"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Club (official, report dated 22 Sep): 1-1, Stewart 14', Zikri 38'. Wikipedia: 21 Sep 2025, 1-1, Zikri listed at 33'. Sports Mole H2H: 21 Sep 2025 Hapoel 1-1 Maccabi. Minutes per club."
+  },
+  {
+   "id": "hd-2025-05-03",
+   "value": {
+    "name": "Maccabi Haifa 1-5 Hapoel Haifa",
+    "on": "2025-05-03",
+    "competition": "Israeli Premier League",
+    "score": "1-5",
+    "venue": "Sammy Ofer Stadium",
+    "scorers": [
+     "Guy Melamed"
+    ]
+   },
+   "sources": [
+    "mh-d-club-2025-05-03",
+    "mh-d-sportsmole-2025-05-03",
+    "mh-d-sportsrabbi-2025-05-03",
+    "mh-d-wiki-haifa-derby"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Club (official, dated 4 May): 1-5, East 12/29/54, Diarra 41/50, Melamed 79. Sports Mole: Sat 3 May 2025, East third at 52'. Sports Rabbi: East 52'. Wikipedia: 3 May 2025, East 54'. Minutes per club."
+  },
+  {
+   "id": "hd-2025-03-29",
+   "value": {
+    "name": "Hapoel Haifa 0-2 Maccabi Haifa",
+    "on": "2025-03-29",
+    "competition": "Israeli Premier League",
+    "score": "0-2",
+    "venue": "Sammy Ofer Stadium",
+    "scorers": [
+     "Kenny Saief",
+     "Guy Melamed"
+    ]
+   },
+   "sources": [
+    "mh-d-club-2025-03-29",
+    "mh-d-sportsmole-2025-03-29",
+    "mh-d-wiki-haifa-derby"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Club (official, dated 30 Mar) and Sports Mole (29 Mar 2025): 0-2, Saief 38', Melamed 75'. Wikipedia lists Melamed at 52' (outvoted)."
+  },
+  {
+   "id": "hd-2025-02-10",
+   "value": {
+    "name": "Maccabi Haifa 1-1 Hapoel Haifa",
+    "on": "2025-02-10",
+    "competition": "Israeli Premier League",
+    "score": "1-1",
+    "venue": null,
+    "scorers": [
+     "Lior Refaelov"
+    ]
+   },
+   "sources": [
+    "mh-d-sportsmole-2025-02-10",
+    "mh-d-wiki-haifa-derby"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Sports Mole: 10 Feb 2025, 1-1, Goldberg o.g. 55', Refaelov 90+8'. Wikipedia: same, o.g. credited to Hapoel. Venue Sammy Ofer only per Sports Mole, so null."
+  },
+  {
+   "id": "hd-2024-11-04",
+   "value": {
+    "name": "Hapoel Haifa 1-4 Maccabi Haifa",
+    "on": "2024-11-04",
+    "competition": "Israeli Premier League",
+    "score": "1-4",
+    "venue": "Teddy Stadium, Jerusalem",
+    "scorers": [
+     "Dia Saba",
+     "Lior Refaelov",
+     "Dia Saba",
+     "Xander Severina"
+    ]
+   },
+   "sources": [
+    "mh-d-club-2024-11-04",
+    "mh-d-sportsmole-2024-11-04",
+    "mh-d-jpost-2024-11-04",
+    "mh-d-wiki-haifa-derby"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Club (official): Hapoel home at Teddy Stadium (security situation), 1-4; Saba 41' and 84' pen, Refaelov 72' pen, Severina 90+3', Melamed 52' pen (club intro also says 83'/73'). Sports Mole: 4 Nov 2024, Refaelov 73'. JPost: Monday 4 Nov, Melamed 53'. Wikipedia agrees with club timeline. Minutes per club timeline."
+  },
+  {
+   "id": "hd-2024-05-25",
+   "value": {
+    "name": "Maccabi Haifa 0-2 Hapoel Haifa",
+    "on": "2024-05-25",
+    "competition": "Israeli Premier League",
+    "score": "0-2",
+    "venue": "Sammy Ofer Stadium",
+    "scorers": []
+   },
+   "sources": [
+    "mh-d-club-2024-05-25",
+    "mh-d-sportsmole-2024-05-25",
+    "mh-d-wiki-haifa-derby"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Club (official): Maccabi home, Hapoel won 2-0, Melamed (then Hapoel) 45+13' pen and 48'. Sports Mole: 25 May 2024, header 0-2 (its goal list also shows a David 36' entry inconsistent with that score; ignored). Wikipedia: 25 May 2024, 0-2."
+  },
+  {
+   "id": "hd-2024-04-29",
+   "value": {
+    "name": "Hapoel Haifa 0-2 Maccabi Haifa",
+    "on": "2024-04-29",
+    "competition": "Israeli Premier League",
+    "score": "0-2",
+    "venue": "Sammy Ofer Stadium",
+    "scorers": [
+     "Din David",
+     "Din David"
+    ]
+   },
+   "sources": [
+    "mh-d-club-2024-04-29",
+    "mh-d-sportsmole-2024-04-29",
+    "mh-d-wiki-haifa-derby"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Club (official): Hapoel home at Sammy Ofer, 0-2, David 72' and 73'. Sports Mole: 29 Apr 2024, David 72' and 74'. Wikipedia: 72', 74'. Minutes per club."
+  },
+  {
+   "id": "hd-2024-02-18",
+   "value": {
+    "name": "Maccabi Haifa 1-1 Hapoel Haifa",
+    "on": "2024-02-18",
+    "competition": "Israeli Premier League",
+    "score": "1-1",
+    "venue": null,
+    "scorers": []
+   },
+   "sources": [
+    "mh-d-wiki-haifa-derby",
+    "mh-d-sportsmole-2024-04-29"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia and Sports Mole H2H agree: 18 Feb 2024, Maccabi 1-1 Hapoel. Scorers (Kinda 15', Yosefi 56') only on Wikipedia, so null."
+  },
+  {
+   "id": "hd-2023-12-17",
+   "value": {
+    "name": "Hapoel Haifa 0-3 Maccabi Haifa",
+    "on": "2023-12-17",
+    "competition": "Israeli Premier League",
+    "score": "0-3",
+    "venue": null,
+    "scorers": []
+   },
+   "sources": [
+    "mh-d-wiki-haifa-derby",
+    "mh-d-sportsmole-2024-04-29"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia and Sports Mole H2H agree: 17 Dec 2023, Hapoel 0-3 Maccabi. Scorers (Refaelov 2, David) only on Wikipedia, so null."
+  },
+  {
+   "id": "hd-2023-03-06",
+   "value": {
+    "name": "Maccabi Haifa 4-1 Hapoel Haifa",
+    "on": "2023-03-06",
+    "competition": "Israeli Premier League",
+    "score": "4-1",
+    "venue": null,
+    "scorers": [
+     "Omer Atzili",
+     "Omer Atzili",
+     "Tjaronn Chery",
+     "Omer Atzili"
+    ]
+   },
+   "sources": [
+    "mh-d-wiki-haifa-derby",
+    "mh-d-sportsrabbi-2023-03-06"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "notes": "Wikipedia: 6 Mar 2023, 4-1, Atzili 3/5/72, Chery 56, Serdal 69. Sports Rabbi (dated 6 Mar 2023): 4-1, Atzili two inside five minutes, Chery 56', Sardel about a quarter-hour later, Atzili third (no minute). Names agree; only Chery's 56' is stated by both, so all other minutes are null."
+  },
+  {
+   "id": "hd-2023-01-04",
+   "value": {
+    "name": "Maccabi Haifa 5-1 Hapoel Haifa",
+    "on": "2023-01-04",
+    "competition": "Israel State Cup, round of 16",
+    "score": "5-1",
+    "venue": null,
+    "scorers": []
+   },
+   "sources": [
+    "mh-d-wiki-haifa-derby",
+    "mh-d-soccerway-2023-01-04",
+    "mh-d-worldfootball-cup-h2h"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia: 4 Jan 2023, R16, 5-1. Soccerway: 04/01/2023 State Cup 1/8-final, Maccabi home 5-1. worldfootball.net: 2022/23 R16 Maccabi 5:1 (HT 2:0). Scorers only on Wikipedia, so null."
+  },
+  {
+   "id": "hd-2022-04-19",
+   "value": {
+    "name": "Maccabi Haifa 2-0 Hapoel Haifa",
+    "on": "2022-04-19",
+    "competition": "Israel State Cup, semi-final",
+    "score": "2-0",
+    "venue": null,
+    "scorers": []
+   },
+   "sources": [
+    "mh-d-planetsport-2022-04-19",
+    "mh-d-babagol-2022-04-19",
+    "mh-d-worldfootball-cup-h2h",
+    "mh-d-wiki-haifa-derby"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "Planet Sport and Babagol: 19 Apr 2022, semi-final, 2-0. Wikipedia lists 19 May 2022 (outvoted). Venue disputed (Planet Sport: Sammy Ofer; Babagol: Bloomfield) so null. First scorer disputed (Planet Sport: Menachem 43'; Babagol and Wikipedia: Dean David ~43') and Chery's minute differs (52/~51), so scorers null."
+  },
+  {
+   "id": "hd-2021-12-02",
+   "value": {
+    "name": "Maccabi Haifa 5-1 Hapoel Haifa",
+    "on": "2021-12-02",
+    "competition": "Israeli Premier League",
+    "score": "5-1",
+    "venue": null,
+    "scorers": [
+     "Din David",
+     "Dolev Haziza",
+     "Din David",
+     "Omer Atzili",
+     "Godsway Donyoh"
+    ]
+   },
+   "sources": [
+    "mh-d-planetsport-2021-12-02",
+    "mh-d-sportsrabbi-2021-12-02",
+    "mh-d-wiki-haifa-derby"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "notes": "Planet Sport: 2 Dec 2021, round 11, Maccabi home 5-1; goals 16' and 45' unnamed, Haziza 18', Ožbolt 56', Atzili 72', Donyoh 90'. Sports Rabbi: David 2, Atzili, Haziza, Donyoh; Ožbolt. Wikipedia: David 16/45, Haziza 18, Ožbolt 57, Atzili 72, Donyoh 84. Names agree; Ožbolt and Donyoh minutes disagree and David's minutes rest on one named source, so those are null."
+  },
+  {
+   "id": "hd-2020-11-21",
+   "value": {
+    "name": "Hapoel Haifa 2-1 Maccabi Haifa",
+    "on": "2020-11-21",
+    "competition": "Israeli Premier League",
+    "score": "2-1",
+    "venue": null,
+    "scorers": [
+     "Nikita Rukavytsya"
+    ]
+   },
+   "sources": [
+    "mh-d-wiki-haifa-derby",
+    "mh-d-jpost-2020-11-21"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia: 21 Nov 2020, Hapoel 2-1, Zamir 69, Rukavytsya 84, Serdal 90+1. JPost (24 Nov 2020, 'over the weekend'): Hapoel 2-1, Zamir 69', Rukavytsya pen 84', Sardel 91'. Date from Wikipedia, consistent with JPost's weekend."
+  },
+  {
+   "id": "hd-2020-07-01",
+   "value": {
+    "name": "Hapoel Haifa 1-4 Maccabi Haifa",
+    "on": "2020-07-01",
+    "competition": "Israeli Premier League, championship round",
+    "score": "1-4",
+    "venue": null,
+    "scorers": [
+     "Nikita Rukavytsya",
+     "Sintayehu Sallalich",
+     "Nikita Rukavytsya",
+     "Sintayehu Sallalich"
+    ]
+   },
+   "sources": [
+    "mh-d-wiki-haifa-derby",
+    "mh-d-fotmob-2020-07-01"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Wikipedia: 1 Jul 2020, Hapoel 1-4, Rukavytsya 4/23, Sallalich 9/25, Sylvestr 70. FotMob: 1 Jul 2020, Championship Group round 34, Rukavytsya 4/23, Sallalich 9/26, Sylvestr 72. Sallalich second and Sylvestr minutes disagree, so null."
+  },
+  {
+   "id": "hd-2013-10-27",
+   "value": {
+    "name": "Maccabi Haifa 0-1 Hapoel Haifa",
+    "on": "2013-10-27",
+    "competition": "Israeli Premier League",
+    "score": "0-1",
+    "venue": null,
+    "scorers": []
+   },
+   "sources": [
+    "mh-d-wiki-haifa-derby",
+    "mh-d-jpost-2013-10-27"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "notes": "Wikipedia: 27 Oct 2013, Maccabi 0-1 Hapoel, Korać 13'. JPost (published 28 Oct 2013): Hapoel 1-0 'Haifa derby conquest', Korac 13'. JPost gives no match date or home side; date and home from Wikipedia, consistent with the next-day article. Confidence lowered for that reason."
+  },
+  {
+   "id": "hd-2009-12-28",
+   "value": {
+    "name": "Hapoel Haifa 0-1 Maccabi Haifa",
+    "on": "2009-12-28",
+    "competition": "Israeli Premier League",
+    "score": "0-1",
+    "venue": null,
+    "scorers": [
+     "Eyal Golasa"
+    ]
+   },
+   "sources": [
+    "mh-d-wiki-haifa-derby",
+    "mh-d-jpost-2009-12-28"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "notes": "Wikipedia: 28 Dec 2009 (a Monday), Hapoel 0-1 Maccabi, Golasa 33'. JPost: league match on a Monday night at Kiryat Eliezer, Hapoel 0-1, Golasa 32'. Minute disagrees by one, so null; venue only in JPost, so null."
+  },
+  {
+   "id": "hd-1996-05-04",
+   "value": {
+    "name": "Maccabi Haifa 2-0 Hapoel Haifa",
+    "on": "1996-05-04",
+    "competition": "Israeli top division (Liga Leumit)",
+    "score": "2-0",
+    "venue": null,
+    "scorers": [
+     "Alon Harazi",
+     "Alon Hazan"
+    ]
+   },
+   "sources": [
+    "mh-d-rsssf-1995-96",
+    "mh-d-wiki-haifa-derby"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "RSSSF: round 28, 4 May 1996, Maccabi 2-0, Harazi 88, Hazan 90. Wikipedia identical."
+  },
+  {
+   "id": "hd-1995-12-16",
+   "value": {
+    "name": "Hapoel Haifa 2-1 Maccabi Haifa",
+    "on": "1995-12-16",
+    "competition": "Israeli top division (Liga Leumit)",
+    "score": "2-1",
+    "venue": null,
+    "scorers": [
+     "Sergei Kandaurov"
+    ]
+   },
+   "sources": [
+    "mh-d-rsssf-1995-96",
+    "mh-d-wiki-haifa-derby"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "RSSSF: round 13, 16 Dec 1995, Hapoel 2-1, Atar 31 pen, Turjeman 52, Kandaurov 72. Wikipedia: Atar 32, Turgeman 51, Kandaurov 72. Atar and Turgeman minutes differ by one, so null."
+  }
+ ],
+ "archive": [
+  {
+   "id": "hd-2026-01-05-moment",
+   "value": {
+    "id": "hd-2026-01-05-moment",
+    "name": "Maccabi Haifa 2-0 Hapoel Haifa",
+    "on": "2026-01-05",
+    "precision": "day",
+    "sport": "football",
+    "sensitive": false,
+    "hint": "Haifa derby · Israeli Premier League"
+   },
+   "sources": [
+    "mh-d-club-2026-01-05",
+    "mh-d-sportsmole-2026-01-05",
+    "mh-d-wiki-haifa-derby"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "The derby night as a dated moment (same sources as the match record)."
+  },
+  {
+   "id": "hd-2025-09-21-moment",
+   "value": {
+    "id": "hd-2025-09-21-moment",
+    "name": "Hapoel Haifa 1-1 Maccabi Haifa",
+    "on": "2025-09-21",
+    "precision": "day",
+    "sport": "football",
+    "sensitive": false,
+    "hint": "Haifa derby · Israeli Premier League"
+   },
+   "sources": [
+    "mh-d-club-2025-09-21",
+    "mh-d-wiki-haifa-derby",
+    "mh-d-sportsmole-2026-01-05"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "The derby night as a dated moment (same sources as the match record)."
+  },
+  {
+   "id": "hd-2025-05-03-moment",
+   "value": {
+    "id": "hd-2025-05-03-moment",
+    "name": "Maccabi Haifa 1-5 Hapoel Haifa",
+    "on": "2025-05-03",
+    "precision": "day",
+    "sport": "football",
+    "sensitive": false,
+    "hint": "Haifa derby · Israeli Premier League"
+   },
+   "sources": [
+    "mh-d-club-2025-05-03",
+    "mh-d-sportsmole-2025-05-03",
+    "mh-d-sportsrabbi-2025-05-03",
+    "mh-d-wiki-haifa-derby"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "The derby night as a dated moment (same sources as the match record)."
+  },
+  {
+   "id": "hd-2025-03-29-moment",
+   "value": {
+    "id": "hd-2025-03-29-moment",
+    "name": "Hapoel Haifa 0-2 Maccabi Haifa",
+    "on": "2025-03-29",
+    "precision": "day",
+    "sport": "football",
+    "sensitive": false,
+    "hint": "Haifa derby · Israeli Premier League"
+   },
+   "sources": [
+    "mh-d-club-2025-03-29",
+    "mh-d-sportsmole-2025-03-29",
+    "mh-d-wiki-haifa-derby"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "The derby night as a dated moment (same sources as the match record)."
+  },
+  {
+   "id": "hd-2025-02-10-moment",
+   "value": {
+    "id": "hd-2025-02-10-moment",
+    "name": "Maccabi Haifa 1-1 Hapoel Haifa",
+    "on": "2025-02-10",
+    "precision": "day",
+    "sport": "football",
+    "sensitive": false,
+    "hint": "Haifa derby · Israeli Premier League"
+   },
+   "sources": [
+    "mh-d-sportsmole-2025-02-10",
+    "mh-d-wiki-haifa-derby"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "The derby night as a dated moment (same sources as the match record)."
+  },
+  {
+   "id": "hd-2024-11-04-moment",
+   "value": {
+    "id": "hd-2024-11-04-moment",
+    "name": "Hapoel Haifa 1-4 Maccabi Haifa",
+    "on": "2024-11-04",
+    "precision": "day",
+    "sport": "football",
+    "sensitive": false,
+    "hint": "Haifa derby · Israeli Premier League"
+   },
+   "sources": [
+    "mh-d-club-2024-11-04",
+    "mh-d-sportsmole-2024-11-04",
+    "mh-d-jpost-2024-11-04",
+    "mh-d-wiki-haifa-derby"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "The derby night as a dated moment (same sources as the match record)."
+  },
+  {
+   "id": "hd-2024-05-25-moment",
+   "value": {
+    "id": "hd-2024-05-25-moment",
+    "name": "Maccabi Haifa 0-2 Hapoel Haifa",
+    "on": "2024-05-25",
+    "precision": "day",
+    "sport": "football",
+    "sensitive": false,
+    "hint": "Haifa derby · Israeli Premier League"
+   },
+   "sources": [
+    "mh-d-club-2024-05-25",
+    "mh-d-sportsmole-2024-05-25",
+    "mh-d-wiki-haifa-derby"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "The derby night as a dated moment (same sources as the match record)."
+  },
+  {
+   "id": "hd-2024-04-29-moment",
+   "value": {
+    "id": "hd-2024-04-29-moment",
+    "name": "Hapoel Haifa 0-2 Maccabi Haifa",
+    "on": "2024-04-29",
+    "precision": "day",
+    "sport": "football",
+    "sensitive": false,
+    "hint": "Haifa derby · Israeli Premier League"
+   },
+   "sources": [
+    "mh-d-club-2024-04-29",
+    "mh-d-sportsmole-2024-04-29",
+    "mh-d-wiki-haifa-derby"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "The derby night as a dated moment (same sources as the match record)."
+  },
+  {
+   "id": "hd-2024-02-18-moment",
+   "value": {
+    "id": "hd-2024-02-18-moment",
+    "name": "Maccabi Haifa 1-1 Hapoel Haifa",
+    "on": "2024-02-18",
+    "precision": "day",
+    "sport": "football",
+    "sensitive": false,
+    "hint": "Haifa derby · Israeli Premier League"
+   },
+   "sources": [
+    "mh-d-wiki-haifa-derby",
+    "mh-d-sportsmole-2024-04-29"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "The derby night as a dated moment (same sources as the match record)."
+  },
+  {
+   "id": "hd-2023-12-17-moment",
+   "value": {
+    "id": "hd-2023-12-17-moment",
+    "name": "Hapoel Haifa 0-3 Maccabi Haifa",
+    "on": "2023-12-17",
+    "precision": "day",
+    "sport": "football",
+    "sensitive": false,
+    "hint": "Haifa derby · Israeli Premier League"
+   },
+   "sources": [
+    "mh-d-wiki-haifa-derby",
+    "mh-d-sportsmole-2024-04-29"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "The derby night as a dated moment (same sources as the match record)."
+  },
+  {
+   "id": "hd-2023-03-06-moment",
+   "value": {
+    "id": "hd-2023-03-06-moment",
+    "name": "Maccabi Haifa 4-1 Hapoel Haifa",
+    "on": "2023-03-06",
+    "precision": "day",
+    "sport": "football",
+    "sensitive": false,
+    "hint": "Haifa derby · Israeli Premier League"
+   },
+   "sources": [
+    "mh-d-wiki-haifa-derby",
+    "mh-d-sportsrabbi-2023-03-06"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "The derby night as a dated moment (same sources as the match record)."
+  },
+  {
+   "id": "hd-2023-01-04-moment",
+   "value": {
+    "id": "hd-2023-01-04-moment",
+    "name": "Maccabi Haifa 5-1 Hapoel Haifa",
+    "on": "2023-01-04",
+    "precision": "day",
+    "sport": "football",
+    "sensitive": false,
+    "hint": "Haifa derby · Israel State Cup, round of 16"
+   },
+   "sources": [
+    "mh-d-wiki-haifa-derby",
+    "mh-d-soccerway-2023-01-04",
+    "mh-d-worldfootball-cup-h2h"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "The derby night as a dated moment (same sources as the match record)."
+  },
+  {
+   "id": "hd-2022-04-19-moment",
+   "value": {
+    "id": "hd-2022-04-19-moment",
+    "name": "Maccabi Haifa 2-0 Hapoel Haifa",
+    "on": "2022-04-19",
+    "precision": "day",
+    "sport": "football",
+    "sensitive": false,
+    "hint": "Haifa derby · Israel State Cup, semi-final"
+   },
+   "sources": [
+    "mh-d-planetsport-2022-04-19",
+    "mh-d-babagol-2022-04-19",
+    "mh-d-worldfootball-cup-h2h",
+    "mh-d-wiki-haifa-derby"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "The derby night as a dated moment (same sources as the match record)."
+  },
+  {
+   "id": "hd-2021-12-02-moment",
+   "value": {
+    "id": "hd-2021-12-02-moment",
+    "name": "Maccabi Haifa 5-1 Hapoel Haifa",
+    "on": "2021-12-02",
+    "precision": "day",
+    "sport": "football",
+    "sensitive": false,
+    "hint": "Haifa derby · Israeli Premier League"
+   },
+   "sources": [
+    "mh-d-planetsport-2021-12-02",
+    "mh-d-sportsrabbi-2021-12-02",
+    "mh-d-wiki-haifa-derby"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "The derby night as a dated moment (same sources as the match record)."
+  },
+  {
+   "id": "hd-2020-11-21-moment",
+   "value": {
+    "id": "hd-2020-11-21-moment",
+    "name": "Hapoel Haifa 2-1 Maccabi Haifa",
+    "on": "2020-11-21",
+    "precision": "day",
+    "sport": "football",
+    "sensitive": false,
+    "hint": "Haifa derby · Israeli Premier League"
+   },
+   "sources": [
+    "mh-d-wiki-haifa-derby",
+    "mh-d-jpost-2020-11-21"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "The derby night as a dated moment (same sources as the match record)."
+  },
+  {
+   "id": "hd-2020-07-01-moment",
+   "value": {
+    "id": "hd-2020-07-01-moment",
+    "name": "Hapoel Haifa 1-4 Maccabi Haifa",
+    "on": "2020-07-01",
+    "precision": "day",
+    "sport": "football",
+    "sensitive": false,
+    "hint": "Haifa derby · Israeli Premier League, championship round"
+   },
+   "sources": [
+    "mh-d-wiki-haifa-derby",
+    "mh-d-fotmob-2020-07-01"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "The derby night as a dated moment (same sources as the match record)."
+  },
+  {
+   "id": "hd-2013-10-27-moment",
+   "value": {
+    "id": "hd-2013-10-27-moment",
+    "name": "Maccabi Haifa 0-1 Hapoel Haifa",
+    "on": "2013-10-27",
+    "precision": "day",
+    "sport": "football",
+    "sensitive": false,
+    "hint": "Haifa derby · Israeli Premier League"
+   },
+   "sources": [
+    "mh-d-wiki-haifa-derby",
+    "mh-d-jpost-2013-10-27"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "The derby night as a dated moment (same sources as the match record)."
+  },
+  {
+   "id": "hd-2009-12-28-moment",
+   "value": {
+    "id": "hd-2009-12-28-moment",
+    "name": "Hapoel Haifa 0-1 Maccabi Haifa",
+    "on": "2009-12-28",
+    "precision": "day",
+    "sport": "football",
+    "sensitive": false,
+    "hint": "Haifa derby · Israeli Premier League"
+   },
+   "sources": [
+    "mh-d-wiki-haifa-derby",
+    "mh-d-jpost-2009-12-28"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "The derby night as a dated moment (same sources as the match record)."
+  },
+  {
+   "id": "hd-1996-05-04-moment",
+   "value": {
+    "id": "hd-1996-05-04-moment",
+    "name": "Maccabi Haifa 2-0 Hapoel Haifa",
+    "on": "1996-05-04",
+    "precision": "day",
+    "sport": "football",
+    "sensitive": false,
+    "hint": "Haifa derby · Israeli top division (Liga Leumit)"
+   },
+   "sources": [
+    "mh-d-rsssf-1995-96",
+    "mh-d-wiki-haifa-derby"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "The derby night as a dated moment (same sources as the match record)."
+  },
+  {
+   "id": "hd-1995-12-16-moment",
+   "value": {
+    "id": "hd-1995-12-16-moment",
+    "name": "Hapoel Haifa 2-1 Maccabi Haifa",
+    "on": "1995-12-16",
+    "precision": "day",
+    "sport": "football",
+    "sensitive": false,
+    "hint": "Haifa derby · Israeli top division (Liga Leumit)"
+   },
+   "sources": [
+    "mh-d-rsssf-1995-96",
+    "mh-d-wiki-haifa-derby"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "The derby night as a dated moment (same sources as the match record)."
+  }
+ ],
+ "skipped": [
+  {
+   "what": "Israel State Cup final 1995 (Maccabi Haifa 2-0 Hapoel Haifa, Shitrit 9', Glam 60', Ramat Gan)",
+   "reason": "Score and scorers agree (RSSSF, Wikipedia) but the date does not: RSSSF 31 May 1995, Wikipedia 30 May 1995."
+  },
+  {
+   "what": "Israel State Cup final 1963 (Hapoel Haifa 1-0 Maccabi Haifa)",
+   "reason": "Date only on Wikipedia (27 May 1963); RSSSF gives season and score, no date."
+  },
+  {
+   "what": "1994/95 league derbies (Maccabi 4-0, Hapoel 2-3 Maccabi)",
+   "reason": "RSSSF gives rounds and scores but no dates; dates (24 Dec 1994, 20 May 1995) only on Wikipedia."
+  },
+  {
+   "what": "1 Dec 2018 derby",
+   "reason": "Wikipedia lists Maccabi 3-1 Hapoel with Hapoel scorers; JPost (Vermouth brace) reports Hapoel won 3-1 at Sammy Ofer. Score orientation conflicts."
+  },
+  {
+   "what": "State Cup 2010/11 QF, 2012/13 R16, 2015/16 R16, 2017/18 QF (two legs)",
+   "reason": "worldfootball.net gives season and score only; dates only on Wikipedia."
+  },
+  {
+   "what": "Remaining ~150 meetings 1930s-2019 on Wikipedia",
+   "reason": "No second publisher or official source fetched for date and score within this session."
+  },
+  {
+   "what": "football.org.il / Israeli league site records",
+   "reason": "Not reached via search in this session."
+  }
+ ]
+}
