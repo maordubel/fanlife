@@ -7,25 +7,29 @@ import {createHash} from 'node:crypto'
 import type {State,Finding,AuditEntry} from './types'
 import {seedState} from './seed'
 import LAUNCH from './launch-defaults.json'
+import HOLD from './owner-hold.json'
 import {dataRoot,onServerless} from '@/lib/dataRoot'
 import {durable,blobAuthReport,storeSoftFailure,migrationPending,blobRetired} from './durable'
 const root=dataRoot
 const globals=globalThis as typeof globalThis & {fanWrites?:Promise<unknown>}
 /** Owner, 8.10.2026: "open everything that can open". A non-paused club with a compiled pack is live with all its playable gates (gates are only ever added; paused stays closed). */
 function withLaunch(s:State):State{for(const c of s.clubs){const g=(LAUNCH as Record<string,number[]>)[c.id];if(!g||c.status==='paused')continue;c.status='live';c.gates=[...new Set([...c.gates,...g])].sort((a,b)=>a-b)}return s}
+/** Owner, 14.11.2026: a held club is closed to the public until the owner opens it himself (ownerOpenedAt, stamped by the control room). Runs last. */
+const HELD=new Set<string>(HOLD.clubs)
+export function withHold(s:State):State{for(const c of s.clubs){if(!HELD.has(c.id)||(c.ownerOpenedAt&&c.ownerOpenedAt>=HOLD.since))continue;if(c.status==='live')c.status='review';c.gates=[]}return s}
 function withRegistry(s:State):State{const have=new Set(s.clubs.map(c=>c.id));const add=seedState().clubs.filter(c=>!have.has(c.id));return withLaunch(add.length?{...s,clubs:[...s.clubs,...add]}:s)}
 export const findingId=(f:Pick<Finding,'field'|'value'|'sources'>)=>'f-'+createHash('sha256').update(JSON.stringify([f.field,f.value,[...f.sources].sort()])).digest('hex').slice(0,16)
 export const contentHash=(text:string)=>createHash('sha256').update(text).digest('hex').slice(0,24)
 /** Older control files have findings without ids; give them their stable id on read. */
 function withIds(s:State):State{for(const c of s.clubs)for(const f of c.findings){f.id??=findingId(f);if(f.approved&&!f.decision)f.decision='approved'}return s}
 const CONTROL='control.json'
-const parse=(text:string)=>withIds(withRegistry(JSON.parse(text)))
+const parse=(text:string)=>withHold(withIds(withRegistry(JSON.parse(text))))
 /** The control state and, when a durable store is connected, the ETag it was read at (for a conditional write). */
 /** Public pages may share a read this instance made in the last second (one page render reads the state several times); a SAVE always
  *  re-reads (`mutate` passes 0), and the store answers an unchanged file with 304, so even that costs no download. */
 const PAGE_READ_MS=1000
-async function readWithTag(maxAgeMs=0,shared=false):Promise<{state:State;etag:string|null}>{const d=durable();if(d){const r=await d.read(CONTROL,shared?{maxAgeMs,soft:false}:{fresh:true});return r?{state:parse(r.text),etag:r.etag}:{state:withIds(withRegistry(seedState())),etag:null}}
- try{return{state:parse(await readFile(path.join(root(),CONTROL),'utf8')),etag:null}}catch(e){if((e as NodeJS.ErrnoException).code==='ENOENT')return{state:withIds(withRegistry(seedState())),etag:null};throw e}}
+async function readWithTag(maxAgeMs=0,shared=false):Promise<{state:State;etag:string|null}>{const d=durable();if(d){const r=await d.read(CONTROL,shared?{maxAgeMs,soft:false}:{fresh:true});return r?{state:parse(r.text),etag:r.etag}:{state:withHold(withIds(withRegistry(seedState()))),etag:null}}
+ try{return{state:parse(await readFile(path.join(root(),CONTROL),'utf8')),etag:null}}catch(e){if((e as NodeJS.ErrnoException).code==='ENOENT')return{state:withHold(withIds(withRegistry(seedState()))),etag:null};throw e}}
 /** The last error the durable store gave on a read, for the admin's storage line; null once a read succeeds. */
 const health=globalThis as typeof globalThis & {fanStoreError?:string|null;fanLastGood?:string;fanLastGoodAt?:number;fanFailAt?:number}
 /**
@@ -53,7 +57,7 @@ function fallback():State{return health.fanLastGood&&Date.now()-(health.fanLastG
 const LAST_GOOD_MS=10*60_000
 function remember(s:State){health.fanLastGood=JSON.stringify(s);health.fanLastGoodAt=Date.now()}
 export function closedSeed():State{const s=seedState();for(const c of s.clubs){c.status='paused';c.gates=[]}return s}
-export function publishedSeed():State{return withLaunch(seedState())}
+export function publishedSeed():State{return withHold(withLaunch(seedState()))}
 /** True when the last read failed and pages are running on a fallback (last good or closed). */
 export const stateUnavailable=()=>!!health.fanStoreError
 /** Where the control room keeps its state, for the health line in the admin. */

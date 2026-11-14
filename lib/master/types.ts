@@ -17,7 +17,7 @@ export type FindingRecord={kind:'player';name:string;sourceUrl?:string;seasons?:
  * `research` is the research layer's own status (audit F05): research never moves `status`.
  */
 export type ResearchStatus={state:'collected'|'needs-review';lastRunId:string;lastAdapter:string;at:string}
-export type Club={id:string;name:string;city:string;country:string;initials:string;primary:string;secondary:string;status:'research'|'review'|'live'|'paused';version:number;gates:number[];sources:Source[];findings:Finding[];gaps:string[];research?:ResearchStatus}
+export type Club={id:string;name:string;city:string;country:string;initials:string;primary:string;secondary:string;status:'research'|'review'|'live'|'paused';version:number;gates:number[];sources:Source[];findings:Finding[];gaps:string[];research?:ResearchStatus;/** set when the owner himself opens the club to fans in the control room (owner hold, 14.11.2026) */ownerOpenedAt?:string}
 export type Job={id:string;clubId:string;query:string;title?:string;adapter?:string;status:'queued'|'running'|'completed'|'failed';attempts:number;createdAt:string;startedAt?:string;error?:string;lease?:string;baseVersion?:number}
 export type State={schemaVersion:1;revision:number;clubs:Club[];jobs:Job[];audit:AuditEntry[];upstream:{installed:string;latest:string;behind:number;checkedAt:string;url:string}|null;lifeDisplay?:LifeDisplayState;ads?:import('@/lib/top-ad').TopAdSetting;features?:Partial<import('@/lib/features').Features>}
 /** Who did it (actor + role, audit F19), to what, the value before and after, and why (audit A12). Old entries carry only at/action/target/detail. */
