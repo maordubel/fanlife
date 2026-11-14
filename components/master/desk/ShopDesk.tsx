@@ -52,6 +52,7 @@ export function ShopDesk({initial,subjects,pictures}:{initial:State;subjects:Sub
   return [...m].map(([key,items])=>({key,items,name:s.designNames?.[key]??items[0]!.title.split(' · ')[0]!})).sort((a,b)=>b.items[0]!.updatedAt.localeCompare(a.items[0]!.updatedAt))},[list,s.designNames])
  const allDesigns=useMemo(()=>{const m=new Map<string,string>();for(const p of doc.products){const k=designKey(p);if(!m.has(k))m.set(k,s.designNames?.[k]??p.title.split(' · ')[0]!)}return [...m].map(([key,name])=>({key,name})).sort((a,b)=>a.name.localeCompare(b.name))},[doc.products,s.designNames])
  const todo=doc.products.filter(p=>p.status==='draft'||p.status==='error'||p.status==='building'),live=doc.products.filter(p=>p.status==='live'),shown=live.filter(p=>p.visible)
+ const softLive=live.filter(p=>qualityOf(p)<.5)
  const coachTips=useMemo(()=>{const t:{text:string;cta?:string;go?:()=>void}[]=[],pr=s.promoters??{}
   const hiddenOk=live.filter(p=>!p.visible&&qualityOf(p)>=MIN_QUALITY)
   if(hiddenOk.length)t.push({text:`${hiddenOk.length} product(s) are made and sharp but hidden — a hidden product sells nothing.`,cta:'Show them',go:()=>{void act('visible',{ids:hiddenOk.map(p=>p.id),visible:true},'Shown.')}})
@@ -113,7 +114,8 @@ export function ShopDesk({initial,subjects,pictures}:{initial:State;subjects:Sub
    <p className="desk-fine">Once a day the shop mends your slips by itself (names, duplicates, soft prints) and lists what needs your eye. {doc.doctor?`Last visit ${ago(doc.doctor.at)}.`:'First visit within the day.'}</p>
    {doc.doctor&&<>{doc.doctor.fixed.length>0&&<><p className="desk-fine"><b>Fixed by itself</b></p><ul className="desk-list">{doc.doctor.fixed.map(f=><li key={f}>{f}</li>)}</ul></>}
     {doc.doctor.needs.length>0?<><p className="desk-fine"><b>Needs your eye</b></p><ul className="desk-list">{doc.doctor.needs.map(f=><li key={f}>{f}</li>)}</ul></>:<p className="desk-fine">Nothing needs your eye.</p>}</>}
-   <div className="shop-row"><button className="desk-btn ghost min-h-tap" disabled={api.busy||!st.connected} onClick={()=>act('doctor',{},'The doctor has been round.')}>Run the doctor now</button></div>
+   <div className="shop-row"><button className="desk-btn ghost min-h-tap" disabled={api.busy||!st.connected} onClick={()=>act('doctor',{},'The doctor has been round.')}>Run the doctor now</button>
+    {softLive.length>0&&<button className="desk-btn min-h-tap" disabled={!!run||api.busy||!st.connected} onClick={()=>{if(window.confirm(`Press ${softLive.length} product(s) again with quality-first sizes? About 20 seconds each — keep this page open. Each gets a new checkout link; the shop updates by itself.`))void pressMany(softLive.map(p=>p.id))}}>Re-press all {softLive.length} soft product(s)</button>}</div>
   </section>
   <section className="desk-card shop-health" aria-labelledby="shh" data-ok={doc.health?doc.health.ok:undefined}><h2 className="desk-h2" id="shh">Health</h2>
    <p className="desk-fine">{doc.health?<>{doc.health.ok?'All well':'Needs a look'} · checked {ago(doc.health.at)} · {doc.health.checked} product(s) read from Printify, {doc.health.repaired} repaired. The shop checks itself every hour.</>:'Not checked yet. The shop checks itself every hour.'}</p>
