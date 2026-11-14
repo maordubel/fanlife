@@ -98,7 +98,7 @@ async function main(){
  const v=varName(id)
  // 3 · a repository club
  edit('lib/clubs/resolver-ids.ts',`'${id}'`,s=>s.replace(/(STATIC_CLUB_IDS:readonly string\[\]=\[[^\]]*)\]/,`$1,'${id}']`),changed)
- edit('lib/clubs/providers.ts',`'${id}':async()`,s=>insertAfter(s,'// ↓ promoted from the research desk (scripts/clubs/promote.ts) — one line per club',` '${id}':async()=>compilePackEuro((await import('@/club-packs/${id}/core.json')).default as never,REGISTRY.find(c=>c.id==='${id}')!),`),changed)
+ edit('lib/clubs/providers.ts',`'${id}':async()`,s=>insertBeforeClose(s,'// ↓ promoted from the research desk (scripts/clubs/promote.ts) — one line per club',` '${id}':async()=>compilePackEuro((await import('@/club-packs/${id}/core.json')).default as never,REGISTRY.find(c=>c.id==='${id}')!),`),changed)
  edit('lib/clubs/euro-wave.ts',`${v}PromotedAuto`,s=>insertAfter(insertAfter(s,'// ↓ promoted wave-auto imports (scripts/clubs/promote.ts)',`import ${v}PromotedAuto from '@/club-packs/${id}/wave-auto.json'`),'const AUTO:Record<string,unknown>={',`'${id}':${v}PromotedAuto,`),changed)
  edit('lib/clubs/life/packs.ts',`${v}PromotedCast`,s=>{
   let t=insertAfter(s,'// ↓ promoted LIFE imports (scripts/clubs/promote.ts)',`import ${v}PromotedCast from '@/club-packs/${id}/life/cast.json'\nimport ${v}PromotedTimeline from '@/club-packs/${id}/life/timeline.json'`)

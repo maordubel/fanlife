@@ -52800,6 +52800,3232 @@
      "reviewedAt": "2026-10-28"
     }
    }
+  },
+  "atalanta": {
+   "quotaMode": "full",
+   "size": 183,
+   "quota": {
+    "1": 49,
+    "2": 64,
+    "3": 40,
+    "4": 20,
+    "5": 10
+   },
+   "players": {
+    "atalanta:p-u-409cc7d05a9938f8": {
+     "priceM": 5,
+     "priceTier": "ICON",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.993 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-95bca433162c5ca0": {
+     "priceM": 5,
+     "priceTier": "ICON",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.983 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-7b6e43061da1d544": {
+     "priceM": 5,
+     "priceTier": "ICON",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.960 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-bbcfc68ff1835465": {
+     "priceM": 5,
+     "priceTier": "ICON",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.959 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-0397b9bd503737f8": {
+     "priceM": 5,
+     "priceTier": "ICON",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.949 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-9f452b2dfbe6a27c": {
+     "priceM": 5,
+     "priceTier": "ICON",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.936 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-a5d8cc4cc513d576": {
+     "priceM": 5,
+     "priceTier": "ICON",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.933 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-2dc2e8db2594e8c2": {
+     "priceM": 5,
+     "priceTier": "ICON",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.919 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-bafa57305d25d0c6": {
+     "priceM": 5,
+     "priceTier": "ICON",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.916 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-2dec1e8fc7ec0ad1": {
+     "priceM": 5,
+     "priceTier": "ICON",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.916 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-2b9d75cd827a6b3c": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.912 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-406a02add2929c16": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.907 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-2a5db0eeb968f72a": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.897 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-eca6b28e94632e04": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.891 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-e1db671f5d5b4d0e": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.891 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-ba185866b12c345b": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.888 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-ec9d4e7cc9b07bac": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.886 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-1de11cfb6c56984f": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.870 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-1dabc4fabd6281d3": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.855 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-7aca5e352429bf40": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.854 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-b9449faee4d367b4": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.837 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-74e5c7693fba2701": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.833 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-2d9e1f93256b9835": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.833 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-5746d590b94cc585": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.827 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-8949d9155f453c18": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.827 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-f9fcdb3bdc80895b": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.827 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-10f6d23cba13ed8c": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.802 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-2821c884a8a288a4": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.802 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-339ed219120be5a3": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.802 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-a7ab286fb31bffc9": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.802 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-b2a0f760e3ab81d9": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.797 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-753f093315a13783": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.772 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-80d5620a7f6cee02": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.772 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-e685eca539f20d68": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.772 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-efce933c099ad545": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.772 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-7fdf05db2fa917c9": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.765 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-8364e8f1a7ac12a7": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.750 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-74af650f20e0f671": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.747 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-d06bd9a5ff4237d1": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.747 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-d0f74704c9205dd7": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.747 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-d3e8759ae19766b8": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.747 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-49394daa4c2af88d": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.746 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-ece2b85c7aeff1af": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.720 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-02f9e1f3aaefa369": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.677 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-48f96ccf72ae5576": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.677 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-4a17835a580a6ab8": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.677 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-68dd2bf82ed281c3": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.677 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-72392cb6390a5069": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.677 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-aa1a50c28dce80c4": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.677 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-afc6f6c7c40533f9": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.677 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-0b9fb7fd9259425f": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.664 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-71a526b233c1b722": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.664 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-113631396b4abcc6": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.663 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-2147da1df625ffe6": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.663 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-59ff06211fcf01ce": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.663 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-858a8a45c4021f72": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.663 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-8b9c3ddbe9defff6": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.663 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-dd5ff471677bd664": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.663 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-0d62c03fbb03428a": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.597 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-3e5cd16b446ff5b8": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.597 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-8a0c8e049e331d9a": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.597 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-e8f7769367722ae1": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.597 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-0c5eb560a7953c08": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.594 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-ef3be44f64730a50": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.594 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-175fd6905c548dfc": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.592 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-28048d14900b076e": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.592 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-2de1a340be2ddfa0": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.592 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-3249d1b3aab2cb37": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.592 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-4a769d0ed56c08bb": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.592 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-4f6de871d3271200": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.592 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-5955c0a93e3fca44": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.592 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-82e93c91bf7ce05f": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.592 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-cb2b201f0504a7b8": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.592 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-c82d0a6aca512f41": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.573 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-f9d5bf7535441005": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.552 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-198f8be2c1042953": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.534 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-c723039aaa53ab87": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.534 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-e79b5e7b0644927b": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.530 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-5c3b259d32594de7": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.519 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-049fe9666f1a5438": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.500 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-1bdc6c4e8418db0f": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.500 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-27edb8a08318efc1": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.500 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-2c94b0d1ba60210d": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.500 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-527a35579a97ebbf": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.500 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-5959a2b13fa908b7": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.500 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-605c52d101834cd9": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.500 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-88c7488f8d1b5a40": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.500 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-979c2606468b1e0d": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.500 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-98ba7af5495828a2": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.500 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-abf3350792bf54aa": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.500 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-ad4159a93a689d0d": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.500 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-b297f31e987a07c2": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.500 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-c6643b661f19cccf": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.500 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-df226eb7fc1f1c43": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.500 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-21fa840bec5fe3f3": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.498 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-f529ef5cda7df002": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.498 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-d8b3a0b51d8efcff": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.496 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-e754a5f98dc1d9d1": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.496 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-ecd203c4ea31fe71": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.376 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-55113d21e0bd8f5a": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.312 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-f732394fba9f872f": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.312 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-0edc26e228030d22": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-13c11d038e8124f3": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-14e2ce89ff07c959": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-1b403ce15b5cf089": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-22bf24dec4caed82": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-4824c15a4e12b854": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-48d3bf11c03c95ee": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-58f63cfe8a34d2f2": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-5f8053b7367bd9a9": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-67bee443ee6ac4e7": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-67e6bfb8e817c782": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-6b264f2afd46bc41": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-7e72f7e8639bafc9": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-84f4436e10e77ebb": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-8ba8a24b8a9ebac5": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-8dd0a6997ba7fc42": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-9af0b0997db11c75": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-9feb99f1e5bc7ae8": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-a53971ab9eff4469": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-aab8eac007f47b2b": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-aba88c0b8517697a": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-b352dbcd34668116": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-bd56046f0373c700": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-cdbfb3f2b125e686": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-d2c3414357b849a3": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-d99fbb362d49e1a7": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-dc389a474422a072": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-ddc4c9eebb8c2879": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-e226d021d7fd0072": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-e60921d965913b30": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-e9b1b7668aac2ff8": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-e9e75f8c9d9ae865": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-f94d6ae6130566e0": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-f96c5220d2a397da": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-f982ef6280745620": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.262 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-0bfef0b21261d7d5": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.193 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-13ba7b51ca861818": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.193 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-6ed5d6ccc01aba2c": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.193 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-7e78d58a1b5a67b5": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.193 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-88e303d6dcfd4c45": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.193 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-02696f9e815736b3": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.119 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-098baaed60bb6f5b": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.119 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-29609c6c81aeb962": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.119 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-2a6b92ea189226ff": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.119 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-2b97f0a69b3e9507": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.119 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-2d879918eaa06c2e": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.119 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-2e3420f6edc46f65": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.119 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-5178ac7afe34d5ec": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.119 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-5384ffa517643eb7": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.119 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-564136e9696ef049": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.119 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-5d6c4ff69b7d923d": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.119 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-5ddf963291f9eae1": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.119 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-5f947ab61e7353f7": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.119 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-6cdcfb77facb6d58": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.119 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-7aa63b9612839104": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.119 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-7af11877fba3a8f6": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.119 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-8063adc8b0ed4c30": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.119 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-99bf6c5abb82c8fc": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.119 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-99c627c1c8681e7d": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.119 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-9d3d2c8b01694ff1": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.119 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-b3f7f41bf29d1ee5": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.119 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-cb0f3273208003b1": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.119 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-d11d96418147d65f": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.119 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-d4c681caffa11ad7": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.119 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-df3ff84f1465405f": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.119 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-ec049efeb1d3a319": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.119 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-ec0af3cb4e3aba09": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.119 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-ed479f2b82c3ab65": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.119 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-fdd92ffd8c4f34d3": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.119 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-107831b935faf13b": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.037 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-d577b4f329b9d433": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.037 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-f41023fbf4fc6965": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.037 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-2c5a2887f1a03f41": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.018 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-3487d2886f8fc6b5": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.018 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-4bdd218c71154589": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.018 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-b7750c4445ca49f4": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.018 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-ecbf4123d19924cf": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.018 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-6b864ebe5c52b643": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.015 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-7a9dec2b85172c39": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.015 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-a5a8ec48f3b0f77e": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.015 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-c3e4ade505733488": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.015 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "atalanta:p-u-f7786578a6502836": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.015 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    }
+   }
+  },
+  "maccabi-haifa": {
+   "quotaMode": "full",
+   "size": 217,
+   "quota": {
+    "1": 68,
+    "2": 76,
+    "3": 43,
+    "4": 20,
+    "5": 10
+   },
+   "players": {
+    "maccabi-haifa:p-u-b9e3924824fdf221": {
+     "priceM": 5,
+     "priceTier": "ICON",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.988 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-12c68ec905e984a0": {
+     "priceM": 5,
+     "priceTier": "ICON",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.980 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-b5d05b176528d53f": {
+     "priceM": 5,
+     "priceTier": "ICON",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.950 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-df7851d4145b5239": {
+     "priceM": 5,
+     "priceTier": "ICON",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.948 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-8306ddfd5773cb01": {
+     "priceM": 5,
+     "priceTier": "ICON",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.936 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-21b5ee0749d65166": {
+     "priceM": 5,
+     "priceTier": "ICON",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.935 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-8973ec5add998d0f": {
+     "priceM": 5,
+     "priceTier": "ICON",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.927 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-900b4cd20fa31802": {
+     "priceM": 5,
+     "priceTier": "ICON",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.915 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-2ed6e1be2c635324": {
+     "priceM": 5,
+     "priceTier": "ICON",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.913 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-e1a8aabf3a55f6db": {
+     "priceM": 5,
+     "priceTier": "ICON",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.911 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-c22c5d2c72957644": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.911 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-6fffe7b05dc17220": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.908 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-b86077636f385492": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.902 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-d605d026d27276b3": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.899 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-e414af02c5b5d937": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.899 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-ae2c7d44b7da37ee": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.899 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-2847f07daa88c0ba": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.896 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-0ef44f2dc5979f9a": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.882 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-b8b13cc4cdff1be0": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.878 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-aa0760c879d77296": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.877 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-6f3c74ed1827e7ac": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.870 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-5cec35d90b3489b3": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.865 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-934a638005d1fd10": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.865 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-64da06f155ca34d3": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.861 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-5bdc47ccd085e2f0": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.849 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-bdb30f07d3d170c5": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.843 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-f6da20767fc467b7": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.840 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-b8833fc0e14d131c": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.834 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-2a015a416b12e1b9": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.821 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-803131be530a4dce": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.821 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-b3a0198e8a84dd3d": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.821 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-f94f0584ac8e00f8": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.821 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-e89a4955f8d7e1f0": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.815 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-591f54e9edabfce8": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.800 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-9c83c1b698d3392d": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.792 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-69240b3f4a3cb6af": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.790 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-6a58c51323d93d22": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.790 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-2fb9ef493a5810af": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.787 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-a2610731ecef9ad0": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.776 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-0d80bd13e42dc117": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.772 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-30932b54eefe85d3": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.772 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-375794a0770fbdb0": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.772 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-e041edbc62b64fad": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.772 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-e98391fe3855a2f2": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.772 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-f99710e26608c657": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.772 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-cac2530fb91179e2": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.764 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-ded55cc00d4d1155": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.758 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-ed3afdb38bcdbea4": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.740 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-3962dd22f6415f24": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.738 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-3ce9d3d4273bc7db": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.738 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-d3a3edb197bb0ee9": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.738 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-d654a966d461b537": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.738 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-f5967ddbc6b977f9": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.738 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-4e3c179630073984": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.717 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-3615044b32ab8da9": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.717 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-4a054a38c6776424": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.715 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-43fffed235208d4f": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.688 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-6fc5cc65d8e37962": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.688 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-023d1bcbdb5ddfae": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.670 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-0fb44bdbfb886b94": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.670 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-591f32ae9a7b89fa": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.670 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-5c78da16e77569c1": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.670 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-7cc093d55a98ede5": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.670 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-955429a8231c13ad": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.670 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-97bde071c91d53ed": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.670 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-f2217dcf761706ac": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.670 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-fb9c5a62a7abcf64": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.670 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-d4e371346028b823": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.632 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-8c0ec1bedd1afc9f": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.632 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-82a0740e6b6f993e": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.629 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-9ef0aad3fd3ffa9f": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.627 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-354c6b3a6cfc41b6": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.623 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-21df4c4910d9d95b": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.623 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-2dd7f10257fe5ce2": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.623 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-3ae9928063ac1041": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.623 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-8739990a16a8d292": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.623 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-8ac1d457b1e1997b": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.623 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-b4c5245238f7aa9c": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.623 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-de63594576649a41": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.623 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-dbb64d8ba73d3dc9": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.610 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-d3c536a619586bce": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.593 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-9cc32b7f09c60fd1": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.587 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-42de79a94d939a41": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.550 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-3be0d039de4968dc": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.548 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-8aaffcdc3ebdb169": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.548 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-152dbbb9cde9a09f": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.541 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-215edb9ea19c8617": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.541 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-36b666975293e4d0": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.541 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-54d2463a1c7444f8": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.541 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-58627b143d27c769": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.541 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-5d4634bc01bb2f89": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.541 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-6a9c2381f45b53f9": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.541 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-87d2cb77631cbeb5": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.541 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-8be5cad900c9db70": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.541 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-8f4de932672177e4": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.541 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-92744d53d6a4d282": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.541 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-ac9ae1caafd03a9a": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.541 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-addd6bdbddf9a603": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.541 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-c9993ece85329b5f": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.541 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-cb6d007e25e34718": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.541 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-ea2e236377bfeef5": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.541 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-f60cb4fcc2cfdb40": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.541 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-f7edc2df8cf38d33": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.541 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-174030dd7bda5df5": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.519 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-996941878ec4a2a5": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.519 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-007259b51e3500f1": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.490 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-9c73e1b13968c67b": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.449 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-aa92d790f7907c5f": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.439 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-12b68c584bcfa679": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.410 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-5105c15291742e5f": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.410 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-700b97628f3f5417": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.410 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-ccc6cf19d0463db0": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.410 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-3057e6a5a691640c": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.335 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-559ecab0590364d9": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.335 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-981499ff40628ce7": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.335 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-f4ab685bdcf9b907": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.335 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-6969e4de8fc8a8d8": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.330 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-ce7bebbff2c2070f": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.330 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-0853ea4374642769": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-12731c39d539a75e": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-1a774c92b276b9ed": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-1c225ecd5845c2b2": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-1c7aa157310da27c": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-219b6fccfefa52e4": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-27b3e564dd25df25": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-37693cf445a20c83": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-3e660fa7722796d4": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-43f7b55647e62d33": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-4522bee35e9f96e5": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-4738824754cf1297": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-495354e26d7ecfba": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-4aa1486c3aea6429": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-510858e32634692b": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-5244fb372fbcefb9": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-5e07328730f3a293": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-626c2748cf587e8a": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-63c13f0c6cde188b": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-664cb63d5fe7ee0f": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-6a3ccbef7896ac7b": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-6ae8031c9274fe94": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-6f46b8681dcb4325": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-75520f965e9fed4c": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-8548427189f26e06": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-8a07a2e34afbc224": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-8d8122dfa30ff3f9": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-90e61634582859a3": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-9576c814a857576f": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-9717075810d5ca1a": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-982910a7120c55e9": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-a30a39d2d5274834": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-af856708eabbd321": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-b25159eea033c50b": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-b4c75328d36d4d4e": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-b867c475881e9434": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-c0608dbfdb92e767": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-c0d4723de7b4c7a5": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-e5d5b4c9cb1bb153": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-f69321a92bb826c7": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-ffb7ac524202e8e5": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.275 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-10476d1bedf65f09": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.177 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-66f11143ce24095e": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.177 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-08f64fd296d70f9e": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-0eb46b87ac49aebf": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-10b5f8ccf7db8d6f": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-1b66adb2531779d9": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-1fc701f84584b966": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-20bf099a62016f3a": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-216e7727f6cedf7f": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-2f9d93563f9f2e09": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-34c5e596db9bb150": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-34e69b822a6f9cb8": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-46b0c40846071f2d": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-4ad74e9ea3a20e22": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-5704976ae7f0b5ef": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-5d792003c8ed97a4": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-602d3f996d9e2b07": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-62426c2be9c4a183": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-6c90f4c32ba19d55": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-6cce0e0e6998fa59": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-7743aa25b78f79b7": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-79cba2f58f568722": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-7c4e8415711257cc": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-81b30e04673dc7f5": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-820c28b0d8c6a5e7": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-853210cc60f7fd6a": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-8f6c0b972c35e8fb": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-901f743fe3be9869": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-92e5de7cc9b57167": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-93c2819b5703ed14": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-9554cca9018429ca": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-9ae1e4c0009a0907": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-9fb37d5225dd5aa0": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-aa81a08d2bc45973": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-bb1d62ad5e001c2b": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-c2f39da234143f5d": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-d34c73898f0f8070": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-d3b064cb87b5aeeb": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-d7216d48f246d71f": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-e2acc39ac62edfdd": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-f88d599f1e313b7d": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-fd70bb5be8a98149": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.124 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-342d0bfae5b2266e": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.037 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-804c53e031edad30": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.037 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-8aaaf41b166aa7dc": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.037 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-beda68d35bfe13b9": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.037 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-d14e063685a0b9e3": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.037 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-41e4e1769c5d4b74": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.017 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-56d143aa8f7560c1": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.017 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-693cca59b7aca817": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.017 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-bd00e08ecff4617b": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.017 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-cfa7148e040460b6": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.017 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-f73c7b2101546d6e": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.017 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-0dbd09eb72bfdc9e": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.014 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-25d316c5a8352d6a": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.014 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-4c4a6afe3f223efb": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.014 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-84984b86e00a575d": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.014 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:p-u-ec4fdbabcf4f1bb6": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "auto",
+     "rationale": "score 0.014 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-14"
+    }
+   }
   }
  }
 }

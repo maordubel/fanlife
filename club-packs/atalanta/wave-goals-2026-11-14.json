@@ -1,0 +1,629 @@
+{
+ "schemaVersion": 1,
+ "clubId": "atalanta",
+ "contentLocale": "en",
+ "sources": [
+  {
+   "id": "at-g-uefa-2024-uel-final",
+   "title": "Atalanta 3-0 Leverkusen: Lookman treble brings UEFA Europa League glory to Bergamo",
+   "url": "https://www.uefa.com/uefaeuropaleague/news/028d-1af3bf5e7e68-7d9202792002-1000--report-lookman-treble-wins-the-europa-league-for-atalanta/",
+   "publisher": "UEFA",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available",
+   "official": "competition"
+  },
+  {
+   "id": "at-g-sky-2024-uel-final",
+   "title": "Atalanta 3-0 Bayer Leverkusen: Ademola Lookman nets stunning hat-trick in Europa League final",
+   "url": "https://www.skysports.com/football/atalanta-vs-bayer-leverkusen/report/504398",
+   "publisher": "Sky Sports",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "at-g-uefa-2024-liv-ata",
+   "title": "Swissquote match analysis: Liverpool 0-3 Atalanta",
+   "url": "https://www.uefa.com/uefaeuropaleague/news/028c-1aa2e196ac4d-1e57ac12b25f-1000--swissquote-match-analysis-liverpool-0-3-atalanta",
+   "publisher": "UEFA",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available",
+   "official": "competition"
+  },
+  {
+   "id": "at-g-sky-2024-liv-ata",
+   "title": "Liverpool 0-3 Atalanta: Gianluca Scamacca double helps Italians stun Anfield",
+   "url": "https://www.skysports.com/football/liverpool-vs-atalanta/report/504388",
+   "publisher": "Sky Sports",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "at-g-guardian-2024-liv-ata",
+   "title": "Liverpool's dream of Dublin Europa League final in tatters after defeat to Atalanta (Andy Hunter, Guardian copy)",
+   "url": "https://www.irishtimes.com/sport/soccer/2024/04/11/liverpools-dream-of-dublin-europa-league-final-in-tatters-after-defeat-to-atalanta/",
+   "publisher": "The Irish Times / The Guardian",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "at-g-sky-2020-liv-ata",
+   "title": "Liverpool 0-2 Atalanta: Josip Ilicic and Robin Gosens on target as Reds suffer rude awakening",
+   "url": "https://www.skysports.com/football/liverpool-vs-atalanta/report/439011",
+   "publisher": "Sky Sports",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "at-g-fi-2020-liv-ata",
+   "title": "CL: Atalanta conquer Anfield",
+   "url": "https://www.football-italia.net/162594/cl-atalanta-conquer-anfield",
+   "publisher": "Football Italia",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "at-g-uefa-2020-ata-val",
+   "title": "Atalanta 4-1 Valencia: Hateboer double as debutants dazzle",
+   "url": "https://www.uefa.com/uefachampionsleague/news/025a-0ebdc9bc194d-20c7442866f3-1000/",
+   "publisher": "UEFA",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available",
+   "official": "competition"
+  },
+  {
+   "id": "at-g-fi-2020-ata-val",
+   "title": "CL: Four-star Atalanta crush Valencia",
+   "url": "https://www.football-italia.net/150263/cl-four-star-atalanta-crush-valencia",
+   "publisher": "Football Italia",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "at-g-fif-2020-aja-ata",
+   "title": "Super-sub Muriel sends Atalanta past Ajax into the Champions League's knockout rounds",
+   "url": "https://forzaitalianfootball.com/2020/12/super-sub-muriel-sends-atalanta-past-ajax-into-the-champions-leagues-knockout-rounds/",
+   "publisher": "Forza Italian Football",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "at-g-afp-2020-aja-ata",
+   "title": "Muriel goal books Atalanta spot in last 16 (AFP)",
+   "url": "https://worldsoccertalk.com/2020/12/09/muriel-goal-books-atalanta-spot-in-last-16/",
+   "publisher": "AFP (via World Soccer Talk)",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  },
+  {
+   "id": "at-g-ajax-2020-aja-ata",
+   "title": "Ajax condemned to Europa League after defeat",
+   "url": "https://english.ajax.nl/articles/ajax-condemned-to-europa-league-after-defeat/",
+   "publisher": "AFC Ajax",
+   "language": "en",
+   "checkedAt": "2026-11-14",
+   "access": "available"
+  }
+ ],
+ "goals": [
+  {
+   "id": "goal-2024-05-22-ademola-lookman-12",
+   "value": {
+    "name": "12' · Ademola Lookman v Bayer Leverkusen",
+    "subtitle": "2024-05-22 · 12'",
+    "on": "2024-05-22",
+    "competition": "UEFA Europa League final",
+    "opponent": "Bayer Leverkusen",
+    "score": "1-0",
+    "narrative": "Teun Koopmeiners: won the ball and played Zappacosta in. Davide Zappacosta: sent an angled ball back across the box. Ademola Lookman: arrived behind his marker and finished at the far post.",
+    "sequence": [
+     {
+      "actor": "Teun Koopmeiners",
+      "side": "club",
+      "action": "pass",
+      "zone": "C3",
+      "position": "after a partially cleared corner",
+      "note": "won the ball and played Zappacosta in."
+     },
+     {
+      "actor": "Davide Zappacosta",
+      "side": "club",
+      "action": "pass",
+      "zone": "D1",
+      "position": "right side of the box",
+      "note": "sent an angled ball back across the box."
+     },
+     {
+      "actor": "Ademola Lookman",
+      "side": "club",
+      "action": "shot",
+      "zone": "B1",
+      "position": "far post",
+      "note": "arrived behind his marker and finished at the far post."
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "at-g-uefa-2024-uel-final",
+    "at-g-sky-2024-uel-final"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-atalanta-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Score is Atalanta's tally first, after the goal. UEFA (official): Koopmeiners played in Zappacosta, who sent an angled ball back across the box; Lookman, lurking behind two team-mates, finished from the far post. Sky Sports: Koopmeiners won the ball after a partially cleared corner and passed inside to Zappacosta, who pulled it back across the box; Lookman got behind Palacios and side-footed in. Agree on all three contacts."
+  },
+  {
+   "id": "goal-2024-05-22-ademola-lookman-26",
+   "value": {
+    "name": "26' · Ademola Lookman v Bayer Leverkusen",
+    "subtitle": "2024-05-22 · 26'",
+    "on": "2024-05-22",
+    "competition": "UEFA Europa League final",
+    "opponent": "Bayer Leverkusen",
+    "score": "2-0",
+    "narrative": "Ademola Lookman: picked up the loose ball and wove his way to the edge of the area. Ademola Lookman: beat Kovar with a low shot from distance.",
+    "sequence": [
+     {
+      "actor": "Ademola Lookman",
+      "side": "club",
+      "action": "dribble",
+      "zone": "C2",
+      "position": "towards the edge of the box",
+      "note": "picked up the loose ball and wove his way to the edge of the area."
+     },
+     {
+      "actor": "Ademola Lookman",
+      "side": "club",
+      "action": "shot",
+      "zone": "C2",
+      "position": "edge of the box",
+      "note": "beat Kovar with a low shot from distance."
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "at-g-uefa-2024-uel-final",
+    "at-g-sky-2024-uel-final"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-atalanta-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Score is Atalanta's tally first, after the goal. UEFA (official): Lookman needed no help, wove to the edge of the box and hit a low effort past Kovar. Sky Sports: Leverkusen lost the ball in transition, Lookman collected it, played it through Xhaka's legs and curled a shot in from about 20 yards. The Xhaka nutmeg and the 20-yard distance are Sky-only details, kept in notes, not in the sequence."
+  },
+  {
+   "id": "goal-2024-05-22-ademola-lookman-75",
+   "value": {
+    "name": "75' · Ademola Lookman v Bayer Leverkusen",
+    "subtitle": "2024-05-22 · 75'",
+    "on": "2024-05-22",
+    "competition": "UEFA Europa League final",
+    "opponent": "Bayer Leverkusen",
+    "score": "3-0",
+    "narrative": "Gianluca Scamacca: played Lookman in as Leverkusen retreated. Ademola Lookman: steadied himself with a stepover and blasted a left-footed shot past Kovar.",
+    "sequence": [
+     {
+      "actor": "Gianluca Scamacca",
+      "side": "club",
+      "action": "throughBall",
+      "zone": "C3",
+      "position": "not stated",
+      "note": "played Lookman in as Leverkusen retreated."
+     },
+     {
+      "actor": "Ademola Lookman",
+      "side": "club",
+      "action": "shot",
+      "zone": "A2",
+      "position": "left side",
+      "note": "steadied himself with a stepover and blasted a left-footed shot past Kovar."
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "at-g-uefa-2024-uel-final",
+    "at-g-sky-2024-uel-final"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-atalanta-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Score is Atalanta's tally first, after the goal. UEFA (official): Scamacca played Lookman in; Lookman steadied himself and blasted it past Kovar. Sky Sports: Scamacca found Lookman on the left, who made space with a stepover and hit a powerful left-footed shot. Left side and left foot come from Sky only, consistent with UEFA."
+  },
+  {
+   "id": "goal-2024-04-11-gianluca-scamacca-38",
+   "value": {
+    "name": "38' · Gianluca Scamacca v Liverpool",
+    "subtitle": "2024-04-11 · 38'",
+    "on": "2024-04-11",
+    "competition": "UEFA Europa League quarter-final, first leg",
+    "opponent": "Liverpool",
+    "score": "1-0",
+    "narrative": "Davide Zappacosta: had time on the right and sent a low ball into the box. Gianluca Scamacca: peeled away from his markers and finished first time under Kelleher.",
+    "sequence": [
+     {
+      "actor": "Davide Zappacosta",
+      "side": "club",
+      "action": "cross",
+      "zone": "E2",
+      "position": "right flank",
+      "note": "had time on the right and sent a low ball into the box."
+     },
+     {
+      "actor": "Gianluca Scamacca",
+      "side": "club",
+      "action": "shot",
+      "zone": "C1",
+      "position": "central, inside the box",
+      "note": "peeled away from his markers and finished first time under Kelleher."
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "at-g-uefa-2024-liv-ata",
+    "at-g-sky-2024-liv-ata",
+    "at-g-guardian-2024-liv-ata"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-atalanta-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Score is Atalanta's tally first, after the goal. UEFA (official analysis): cross from the right, Scamacca first-time right-foot finish. Sky Sports: Zappacosta low cross, Scamacca peeled off Konate and Van Dijk into a central position, first-time finish past Kelleher; minute 38. Guardian/Irish Times: Zappacosta on the right found an unmarked Scamacca, low finish under Kelleher. The preceding Koopmeiners pass is stated only by the Guardian and is outside the replay."
+  },
+  {
+   "id": "goal-2024-04-11-gianluca-scamacca-60",
+   "value": {
+    "name": "60' · Gianluca Scamacca v Liverpool",
+    "subtitle": "2024-04-11 · 60'",
+    "on": "2024-04-11",
+    "competition": "UEFA Europa League quarter-final, first leg",
+    "opponent": "Liverpool",
+    "score": "2-0",
+    "narrative": "Charles De Ketelaere: drifted wide and delivered a first-time cross. Gianluca Scamacca: left alone by the defence, cushioned a first-time left-footed finish into the bottom corner.",
+    "sequence": [
+     {
+      "actor": "Charles De Ketelaere",
+      "side": "club",
+      "action": "cross",
+      "zone": "E2",
+      "position": "wide right",
+      "note": "drifted wide and delivered a first-time cross."
+     },
+     {
+      "actor": "Gianluca Scamacca",
+      "side": "club",
+      "action": "shot",
+      "zone": "C1",
+      "position": "inside the box, unmarked",
+      "note": "left alone by the defence, cushioned a first-time left-footed finish into the bottom corner."
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "at-g-uefa-2024-liv-ata",
+    "at-g-sky-2024-liv-ata",
+    "at-g-guardian-2024-liv-ata"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-atalanta-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Score is Atalanta's tally first, after the goal. UEFA (official analysis): De Ketelaere slid wide and delivered a first-time cross from the right; Scamacca finished first time with his left foot. Sky Sports: De Ketelaere delivered after a pass down the right (passer unnamed); side-footed finish, Konate and Gomez left him free; minute 60. Guardian: De Ketelaere first-time cross, Konate left Scamacca alone, finish into the bottom corner."
+  },
+  {
+   "id": "goal-2024-04-11-mario-pasalic-83",
+   "value": {
+    "name": "83' · Mario Pašalić v Liverpool",
+    "subtitle": "2024-04-11 · 83'",
+    "on": "2024-04-11",
+    "competition": "UEFA Europa League quarter-final, first leg",
+    "opponent": "Liverpool",
+    "score": "3-0",
+    "narrative": "Dominik Szoboszlai: gave the ball away with a loose pass. A team-mate: the loose ball was moved on to free Ederson. Ederson: shot first time; Kelleher could only parry. Mario Pašalić: tapped the rebound into the empty net.",
+    "sequence": [
+     {
+      "actor": "Dominik Szoboszlai",
+      "side": "opponent",
+      "action": "pass",
+      "zone": "C3",
+      "position": "midfield",
+      "note": "gave the ball away with a loose pass."
+     },
+     {
+      "actor": "",
+      "side": "unnamed",
+      "action": "pass",
+      "zone": "C3",
+      "position": "midfield",
+      "note": "the loose ball was moved on to free Ederson."
+     },
+     {
+      "actor": "Ederson",
+      "side": "club",
+      "action": "shot",
+      "zone": "C2",
+      "position": "not stated",
+      "note": "shot first time; Kelleher could only parry."
+     },
+     {
+      "actor": "Mario Pašalić",
+      "side": "club",
+      "action": "shot",
+      "zone": "C1",
+      "position": "close range",
+      "note": "tapped the rebound into the empty net."
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "at-g-sky-2024-liv-ata",
+    "at-g-guardian-2024-liv-ata"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-atalanta-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Score is Atalanta's tally first, after the goal. Sky Sports: Szoboszlai lost the ball in midfield, Ederson was freed, Kelleher's poor parry left the net open and Pasalic tapped in; text says 84, match header 83 (minute 83 used, header). Guardian/Irish Times: Szoboszlai's loose pass, Scamacca played in Ederson, whose first-time shot was saved, Pasalic converted the rebound. The freeing pass is named (Scamacca) only by the Guardian, so it is kept unnamed."
+  },
+  {
+   "id": "goal-2020-11-25-josip-ilicic-60",
+   "value": {
+    "name": "60' · Josip Iličić v Liverpool",
+    "subtitle": "2020-11-25 · 60'",
+    "on": "2020-11-25",
+    "competition": "UEFA Champions League group stage",
+    "opponent": "Liverpool",
+    "score": "1-0",
+    "narrative": "Alejandro Gómez: lifted a ball over the top from the left. Josip Iličić: slid in and stabbed a low volley under Alisson.",
+    "sequence": [
+     {
+      "actor": "Alejandro Gómez",
+      "side": "club",
+      "action": "cross",
+      "zone": "A3",
+      "position": "left flank",
+      "note": "lifted a ball over the top from the left."
+     },
+     {
+      "actor": "Josip Iličić",
+      "side": "club",
+      "action": "shot",
+      "zone": "C1",
+      "position": "close range",
+      "note": "slid in and stabbed a low volley under Alisson."
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "at-g-sky-2020-liv-ata",
+    "at-g-fi-2020-liv-ata"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-atalanta-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Score is Atalanta's tally first, after the goal. Sky Sports: Papu Gomez crossed from the left, Ilicic stabbed it home from close range under Alisson. Football Italia: Gomez sent a high ball over the top from the left, Ilicic slid in for a low volley from close range. Agree."
+  },
+  {
+   "id": "goal-2020-11-25-robin-gosens-64",
+   "value": {
+    "name": "64' · Robin Gosens v Liverpool",
+    "subtitle": "2020-11-25 · 64'",
+    "on": "2020-11-25",
+    "competition": "UEFA Champions League group stage",
+    "opponent": "Liverpool",
+    "score": "2-0",
+    "narrative": "Alejandro Gómez: crossed into the box again. Hans Hateboer: headed the cross back across goal towards the back post. Robin Gosens: unmarked, volleyed it in.",
+    "sequence": [
+     {
+      "actor": "Alejandro Gómez",
+      "side": "club",
+      "action": "cross",
+      "zone": "C3",
+      "position": "flank not stated",
+      "note": "crossed into the box again."
+     },
+     {
+      "actor": "Hans Hateboer",
+      "side": "club",
+      "action": "header",
+      "zone": "D1",
+      "position": "in the box",
+      "note": "headed the cross back across goal towards the back post."
+     },
+     {
+      "actor": "Robin Gosens",
+      "side": "club",
+      "action": "shot",
+      "zone": "B1",
+      "position": "back post, about six to seven yards out",
+      "note": "unmarked, volleyed it in."
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "at-g-sky-2020-liv-ata",
+    "at-g-fi-2020-liv-ata"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-atalanta-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Score is Atalanta's tally first, after the goal. Sky Sports: Gomez's cross was headed back across goal by Hateboer and Gosens, unmarked about seven yards out, volleyed in. Football Italia: Gomez crossed again, Hateboer nodded down to the back post, Gosens volleyed from about six yards. Flank of the cross not stated; zones of the header and finish are coarse anchors only."
+  },
+  {
+   "id": "goal-2020-02-19-hans-hateboer-16",
+   "value": {
+    "name": "16' · Hans Hateboer v Valencia",
+    "subtitle": "2020-02-19 · 16'",
+    "on": "2020-02-19",
+    "competition": "UEFA Champions League round of 16, first leg",
+    "opponent": "Valencia",
+    "score": "1-0",
+    "narrative": "Alejandro Gómez: dribbled into the area down the left. Alejandro Gómez: bent a low ball across the six-yard line. Hans Hateboer: slid in to turn it home.",
+    "sequence": [
+     {
+      "actor": "Alejandro Gómez",
+      "side": "club",
+      "action": "dribble",
+      "zone": "B1",
+      "position": "left side, into the box",
+      "note": "dribbled into the area down the left."
+     },
+     {
+      "actor": "Alejandro Gómez",
+      "side": "club",
+      "action": "cross",
+      "zone": "B1",
+      "position": "left side of the box",
+      "note": "bent a low ball across the six-yard line."
+     },
+     {
+      "actor": "Hans Hateboer",
+      "side": "club",
+      "action": "shot",
+      "zone": "D1",
+      "position": "back post",
+      "note": "slid in to turn it home."
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "at-g-uefa-2020-ata-val",
+    "at-g-fi-2020-ata-val"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-atalanta-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Score is Atalanta's tally first, after the goal. UEFA (official): Gomez delivered a low cross from the left and Hateboer turned it in, after an earlier Domenech save from Pasalic in the move. Football Italia: Gomez dribbled into the box down the left, bent a precise ball across the six-yard line, Hateboer slid in at the back post; minute 16. Played at San Siro."
+  },
+  {
+   "id": "goal-2020-12-09-luis-muriel-85",
+   "value": {
+    "name": "85' · Luis Muriel v Ajax",
+    "subtitle": "2020-12-09 · 85'",
+    "on": "2020-12-09",
+    "competition": "UEFA Champions League group stage",
+    "opponent": "Ajax",
+    "score": "1-0",
+    "narrative": "Remo Freuler: won the ball back and played it into Muriel's path. Luis Muriel: ran onto the pass and went round Onana. Luis Muriel: rolled the ball into the empty net.",
+    "sequence": [
+     {
+      "actor": "Remo Freuler",
+      "side": "club",
+      "action": "pass",
+      "zone": "C3",
+      "position": "high up the pitch",
+      "note": "won the ball back and played it into Muriel's path."
+     },
+     {
+      "actor": "Luis Muriel",
+      "side": "club",
+      "action": "dribble",
+      "zone": "C1",
+      "position": "in the box",
+      "note": "ran onto the pass and went round Onana."
+     },
+     {
+      "actor": "Luis Muriel",
+      "side": "club",
+      "action": "shot",
+      "zone": "C1",
+      "position": "open goal",
+      "note": "rolled the ball into the empty net."
+     }
+    ],
+    "reconstructionScope": "Final documented contacts; not the entire possession.",
+    "spatialPolicy": "Regions are coarse diagram anchors for the positions described in the sources. No measured coordinates, complete build-up, unspecified flank or exact distance is claimed. Reconstructions may begin with the final contiguous two to five contacts; omitted upstream contacts are outside the replay scope."
+   },
+   "sources": [
+    "at-g-fif-2020-aja-ata",
+    "at-g-afp-2020-aja-ata",
+    "at-g-ajax-2020-aja-ata"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-atalanta-2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Score is Atalanta's tally first, after the goal. Forza Italian Football: Freuler won the ball high up and played it into the path of substitute Muriel, who rounded Onana and finished into an open goal. AFP: Freuler played Muriel in, Muriel rounded Onana and slotted home five minutes from time, after Gravenberch's red card. Ajax.nl confirms the 85th minute only. Away match in Amsterdam (Ajax 0-1 Atalanta)."
+  }
+ ],
+ "skipped": [
+  {
+   "what": "2020-08-12 Atalanta 1-2 PSG, Mario Pašalić 27'",
+   "reason": "Sources (Forza Italian Football, AFP) describe only a loose ball falling to Pašalić before his first-time left-footed curler; no second documented contact, so no 2-contact sequence."
+  },
+  {
+   "what": "2020-02-19 Atalanta 4-1 Valencia: Iličić 42', Freuler 57', Hateboer 62'",
+   "reason": "Each is described as a single-player action (no passer named by UEFA or Football Italia); fewer than two documented contacts."
+  },
+  {
+   "what": "Coppa Italia and older historic goals",
+   "reason": "Not reached in this round; no touch-by-touch sources gathered."
+  },
+  {
+   "what": "atalanta.it report of Liverpool 0-2 Atalanta (en.atalanta.it/news/ucl-liverpool-0-2-atalanta)",
+   "reason": "Fetch blocked (permission not granted); goals built from Sky Sports and Football Italia instead."
+  }
+ ]
+}

@@ -72,6 +72,24 @@
       "source": "owner upload (14.10.2026)",
       "sourcePath": "owner-supplied image",
       "sourceCommit": null
+    },
+    {
+      "club": "atalanta",
+      "file": "public/crests/atalanta.png",
+      "sha256": "4c349dfb0de734061a42cbcd220235ede0f28fc3d738aa9312cb0faf692cec15",
+      "bytes": 18571,
+      "source": "https://github.com/luukhopman/football-logos",
+      "sourcePath": "logos/Italy - Serie A/Atalanta BC.png",
+      "sourceCommit": "2a3978f0b4730645c205d855a4bda54c161183e9"
+    },
+    {
+      "club": "maccabi-haifa",
+      "file": "public/crests/maccabi-haifa.png",
+      "sha256": "a8709eeeb563ff736a2165b2e42a1ac0ee378c28811cf4321b73312ad7fd72fa",
+      "bytes": 34160,
+      "source": "https://github.com/luukhopman/football-logos",
+      "sourcePath": "logos/Israel - Ligat ha'Al/Maccabi Haifa.png",
+      "sourceCommit": "2a3978f0b4730645c205d855a4bda54c161183e9"
     }
   ]
 }

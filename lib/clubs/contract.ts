@@ -11,7 +11,7 @@ export type Fact<T> = {
   id:string; value:T; sources:string[]; confidence:Confidence; status:FactStatus
   researchedAt:string|null; approvedAt:string|null; approvedBy:string|null; notes:string
 }
-export type Source = {id:string;title:string;url:string|null;publisher:string;access:'available'|'blocked'|'unknown';checkedAt:string|null;official?:'league'|'federation'}
+export type Source = {id:string;title:string;url:string|null;publisher:string;access:'available'|'blocked'|'unknown';checkedAt:string|null;official?:'league'|'federation'|'competition'|'club'}
 export type Readiness = {state:ReadinessState;playable:boolean;eligible:number;target:number;reasons:string[]}
 export type Entity = {id:string;name:string}
 /** Optional finer evidence (rulebook PO-R03): `centreBack` only where a source states it beyond DF; `foreignSlot` is the club's own foreign-slot record, never a passport. */

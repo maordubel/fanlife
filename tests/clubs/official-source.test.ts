@@ -6,7 +6,7 @@ import type {Diagnostic,Source} from '@/lib/clubs/contract'
 const src=(id:string,publisher:string,official?:'league'|'federation'):Source=>({id,title:id,url:'https://x.example/'+id,publisher,access:'available',checkedAt:'2026-11-13',...(official?{official}:{})})
 const man=(sources:string[])=>({id:'p1',value:{name:'Test Man',sport:'football',positions:['MF'],fromYear:2020,toYear:null,sensitive:false},sources,confidence:3,status:'approved',researchedAt:'2026-11-13',approvedAt:'2026-11-13',approvedBy:'automated:test',parserCertainty:'high',conflictFree:true})
 describe('owner decision 13.11.2026: the competition’s own league or federation is enough on its own',()=>{
- it('reads the mark and nothing else',()=>{expect(officialOf('league')).toBe('league');expect(officialOf('federation')).toBe('federation');expect(officialOf('club')).toBeUndefined();expect(officialOf(true)).toBeUndefined()})
+ it('reads the mark and nothing else',()=>{expect(officialOf('league')).toBe('league');expect(officialOf('federation')).toBe('federation');expect(officialOf('club')).toBe('club');expect(officialOf('competition')).toBe('competition');expect(officialOf('broadcaster')).toBeUndefined();expect(officialOf(true)).toBeUndefined()})
  it('one official publisher is enough; one ordinary publisher is not; two ordinary are',()=>{
   expect(enoughPublishers([src('a','LNFP','league')])).toBe(true)
   expect(enoughPublishers([src('a','365Scores')])).toBe(false)
