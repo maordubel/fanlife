@@ -21,7 +21,7 @@ jobs:
         run: |
           cd "$RUNNER_TEMP"
           tar cf pull.tar pull
-          openssl rand -out k.bin 32
+          openssl rand -hex -out k.bin 32
           openssl enc -aes-256-cbc -pbkdf2 -salt -in pull.tar -out pull.enc -pass file:k.bin
           openssl pkeyutl -encrypt -pubin -inkey "$GITHUB_WORKSPACE/.github/drive-pull/pub.pem" -in k.bin -out k.enc
           rm -f k.bin pull.tar
