@@ -37,14 +37,14 @@ const markOf=(group,name)=>{const M=typeof MARKS!=='undefined'?MARKS:null;return
 function sponsorSVG(name,base,opt){
   const T=typeof SPONSOR_TYPE!=='undefined'?SPONSOR_TYPE:{default:{},styles:{}},st=T.styles[name]||T.styles[String(name).toLowerCase()]||{},d=T.default||{};
   const light=lum(base)>150,auto=light?'#111':'#fff',halo=light?'#fff':'#000',useBrand=!(opt&&opt.neutral);
-  const lines=st.lines||[{t:name,...st}],W=150,H=46,cx=170,top=164,n=lines.length;
-  const base1=n>1?22:34,sizes=lines.map(l=>base1*(l.scale||1));let y=top+(n>1?-1:2);
+  const lines=st.lines||[{t:name,...st}],W=Math.round(108*(st.w||1)),cx=170,top=128+(st.dy||0),n=lines.length;
+  const base1=n>1?19:28,sizes=lines.map(l=>base1*(l.scale||1));let y=top+(n>1?-1:2);
   return lines.map((l,i)=>{
     const f=Object.assign({},d,st,l),cs=f.case==='lower'?'toLowerCase':f.case==='asis'?null:'toUpperCase',tx=cs?String(l.t||name)[cs]():String(l.t||name);
     const wc=opt&&opt.patterned&&opt.trim?Math.min(contrast(f.brand||'#000000',base),contrast(f.brand||'#000000',opt.trim)):f.brand?contrast(f.brand,base):0,ink=useBrand&&f.brand&&wc>=3.2?f.brand:auto;
     let sz=sizes[i];const est=tx.length*sz*(f.fam==='cond'?.42:.58)+tx.length*sz*(f.track||0);if(est>W)sz=sz*W/est;
     const yy=y+sz*.8;y+=sizes[i]*(n>1?.98:1);
-    const sm=markOf('sponsors',String(l.t||name));if(sm&&sm.replace){const mh=n>1?15:36,ar=(()=>{const q=sm.viewBox.split(' ').map(Number);return q[2]/q[3]})(),my=(n>1?yy-mh*.35:top+22),mc=useBrand&&f.brand&&wc>=3.2?f.brand:auto,mw=Math.min(W-14,mh*ar),plate=sm.plate&&(lum(base)<190||(opt&&opt.patterned))?`<rect x="${(cx-mw/2-6).toFixed(1)}" y="${(my-mh/2-4).toFixed(1)}" width="${(mw+12).toFixed(1)}" height="${(mh+8).toFixed(1)}" rx="5" fill="#f4f0e6" fill-opacity=".94"/>`:'';return plate+markG(sm,cx,my,mw,mh,mc,halo)}
+    const sm=markOf('sponsors',String(l.t||name));if(sm&&sm.replace){const mh=n>1?14:(st.mh||28),ar=(()=>{const q=sm.viewBox.split(' ').map(Number);return q[2]/q[3]})(),my=(n>1?yy-mh*.35:top+22),mc=useBrand&&f.brand&&wc>=3.2?f.brand:auto,mw=Math.min(W-14,mh*ar),plate=sm.plate&&(lum(base)<190||(opt&&opt.patterned))?`<rect x="${(cx-mw/2-6).toFixed(1)}" y="${(my-mh/2-4).toFixed(1)}" width="${(mw+12).toFixed(1)}" height="${(mh+8).toFixed(1)}" rx="5" fill="#f4f0e6" fill-opacity=".94"/>`:'';return plate+markG(sm,cx,my,mw,mh,mc,halo)}
     const vf=tx.toLowerCase()==='vodafone'?markOf('sponsors','vodafone'):null,gh=sz*.95,tcx=vf?cx+gh*.55:cx;
     const glyph=vf?markG(vf,tcx-est*.5-gh*.45,(n>1?yy:top+30)-sz*.3,gh,gh,useBrand&&wc>=3.2?'#e60000':auto,halo):'';
     return glyph+`<text x="${tcx}" y="${n>1?yy:top+30}" text-anchor="middle" font-family="${FAM[f.fam]||FAM.cond}" font-weight="${f.weight||700}" ${f.italic?'font-style="italic" ':''}font-size="${sz.toFixed(1)}" letter-spacing="${((f.track||0)*sz).toFixed(2)}" fill="${ink}" stroke="${halo}" stroke-opacity="${opt&&opt.patterned?.92:.55}" stroke-width="${opt&&opt.patterned?5.2:2.4}" paint-order="stroke" stroke-linejoin="round"${est>W&&n===1?` textLength="${W}" lengthAdjust="spacingAndGlyphs"`:''}>${esc(tx)}</text>`}).join('');
@@ -53,7 +53,10 @@ function shirtG(k,id){
   const b=hex(k,0),t=k.shirt.colours.length>1?hex(k,1):shade(hex(k,0),-.14),m=k.shirt.measured||{},d=k.shirt.design;
   const art=k.shirt.artwork||{};
   let pat='',sleeveInk=b;
-  if(art.centralPanel){pat=`<rect x="${art.centralPanel.x}" y="20" width="${art.centralPanel.width}" height="290" fill="${t}"/>`}
+  const runInk=i=>k.shirt.hex[k.shirt.colours[i]]||b,ry=m.runsY,rx=m.runsX;
+  if(!art.centralPanel&&d==='hoops'&&ry&&ry.length>=3){pat=ry.map(r=>`<rect x="0" y="${(30+r[0]*266).toFixed(1)}" width="340" height="${((r[1]-r[0])*266+.6).toFixed(1)}" fill="${runInk(r[2])}"/>`).join('')}
+  else if(!art.centralPanel&&(d==='stripes'||d==='pinstripes')&&rx&&rx.length>=3){pat=rx.map(r=>`<rect x="${(82+r[0]*176).toFixed(1)}" y="20" width="${((r[1]-r[0])*176+.6).toFixed(1)}" height="290" fill="${runInk(r[2])}"/>`).join('')}
+  else if(art.centralPanel){pat=`<rect x="${art.centralPanel.x}" y="20" width="${art.centralPanel.width}" height="290" fill="${t}"/>`}
   else if(d==='stripes'){const n=Math.max(1,m.stripes||4),w=176/(2*n+1);for(let i=0;i<n;i++)pat+=`<rect x="${82+w*(2*i+1)}" y="20" width="${w}" height="290" fill="${t}"/>`}
   else if(d==='hoops'){const n=Math.max(1,m.hoops||3),h=240/(2*n+1);for(let i=0;i<n;i++)pat+=`<rect x="0" y="${64+h*(2*i+1)}" width="340" height="${h}" fill="${t}"/>`}
   else if(d==='pinstripes'){for(let x=94;x<258;x+=17)pat+=`<rect x="${x}" y="20" width="3.5" height="290" fill="${t}" opacity=".9"/>`}
@@ -67,7 +70,7 @@ function shirtG(k,id){
   const light=lum(b)>150,ink=light?'#111':'#fff',edge=shade(b,-.55);
   const collar=d==='contrasting sleeves'?b:t;
   const asset=(src)=>typeof RESOLVE==='function'?RESOLVE(src):src;
-  const sp=art.sponsorSrc?`<image href="${esc(asset(art.sponsorSrc))}" x="96" y="158" width="148" height="48" preserveAspectRatio="xMidYMid meet"/>`:k.sponsor?sponsorSVG(k.sponsor,b,{neutral:!!k.neutralSponsor,trim:t,patterned:['stripes','hoops','pinstripes','half-and-half','sash','chest band','diagonal','graphic'].includes(d)}):'';
+  const sp=art.sponsorSrc?`<image href="${esc(asset(art.sponsorSrc))}" x="110" y="128" width="120" height="40" preserveAspectRatio="xMidYMid meet"/>`:k.sponsor?sponsorSVG(k.sponsor,b,{neutral:!!k.neutralSponsor,trim:t,patterned:['stripes','hoops','pinstripes','half-and-half','sash','chest band','diagonal','graphic'].includes(d)}):'';
   const mm=k.maker?markOf('makers',k.maker):null,mAr=mm?(q=>q[2]/q[3])(mm.viewBox.split(' ').map(Number)):1;
   const mk=k.maker?(mm?markG(mm,132,95,mAr>3?34:(mm.kind==='stroke'?30:24),mAr>3?9:(mm.kind==='stroke'?17:15),art.makerInk||ink,art.makerHalo||(light?'#fff':'#000')):`<text x="132" y="98" text-anchor="middle" font-family="Archivo,Arial,sans-serif" font-weight="700" font-size="${k.maker.length>8?9:11}" letter-spacing=".6" fill="${ink}" fill-opacity=".8">${esc(k.maker.toUpperCase())}</text>`):'';
   return `<defs><clipPath id="${id}c"><path d="${BODY}"/></clipPath>
@@ -79,7 +82,7 @@ function shirtG(k,id){
 <linearGradient id="${id}g" x1="0" y1="0" x2="0" y2="1"><stop offset=".2" stop-color="${b}"/><stop offset="1" stop-color="${t}"/></linearGradient></defs>
 <ellipse cx="170" cy="304" rx="104" ry="9" fill="#000" opacity=".16" filter="url(#${id}b)"/>
 <g clip-path="url(#${id}c)"><rect width="340" height="320" fill="${b}"/>${pat}
-<path d="${SL_L}" fill="${sleeveInk}"/><path d="${SL_R}" fill="${sleeveInk}"/>
+${d==='hoops'&&ry&&ry.length>=3?'':`<path d="${SL_L}" fill="${sleeveInk}"/><path d="${SL_R}" fill="${sleeveInk}"/>`}
 ${art.plainCuffs?'':`<path d="M16 120 62 148 76 124 30 98Z M324 120 278 148 264 124 310 98Z" fill="${d==='contrasting sleeves'?b:t}" opacity=".96"/>`}${art.shoulderStripes?`\n<g fill="none" stroke="${t}" stroke-width="3.2" stroke-linecap="round"><path d="M111 30Q79 38 56 61"/><path d="M114 35Q82 43 59 66"/><path d="M117 40Q85 48 62 71"/><path d="M229 30Q261 38 284 61"/><path d="M226 35Q258 43 281 66"/><path d="M223 40Q255 48 278 71"/></g>`:''}
 <path d="M30 98 76 124M310 98 264 124" stroke="#000" stroke-opacity=".28" stroke-width="1"/>
 <rect width="340" height="320" fill="url(#${id}f)"/><rect width="340" height="320" fill="url(#${id}v)"/>
