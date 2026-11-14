@@ -23,8 +23,8 @@ FANLIFE KIDS, CLASSIFIED), with `model-film` (the order and the package) and `no
 |---|---|---|
 | 1 Inks | `studio/paper.inked`, applied by `docu/plan.ink` to every picture the media index gives a documentary | **in the pipeline** (14.11.2026) |
 | 2 Cold open + question card | `docu/editor.COLD_OPEN_S` (first 12 s: a different picture on every look), `docu/plan.question_cards` (the narration's planted question set in type when asked, before 0:15, and again as the bookend before the hand-over); `qa.experience` "the stake" | **in the pipeline** (14.11.2026) |
-| 3 Numbers as objects | `build.Film` `mini` (score flips on the cut), `form`, `explain number` | the held scoreboard and the flip board are not built yet |
-| 4 One shape | — | not built (gap #19) |
+| 3 Numbers as objects | `build.Film.flap` (split-flap board, each character turns on the word), `docu/plan.year_flaps` (the first year the narration says in a chapter turns from the last one; one a chapter, four a film); `mini` (score flips on the cut), `form`, `explain number` | flip board **in the pipeline** (14.11.2026); held scoreboard not built yet |
+| 4 One shape | `build.SHAPES`, `build.CLUB_SHAPES` (Panathinaikos and Celtic shamrock, Hapoel star, Olympiacos ball, else ticket), set by `docu/plan` on the storyboard; the chapter `dive` opens the next chapter inside the shape over the old shot, and boards on the old shot fade under it | wipe **in the pipeline** (14.11.2026); window and frame not built yet |
 | 5 20 s per language | `studio/qa.experience` and `studio/docu/model.gate` check **language run** (24 s with 4 s tolerance) | **enforced** in the pipeline: a run over it is re-planned tighter, then fails the gate |
 
 A rule marked "not built" is still the rule: a film cut by hand follows it, and the automatic pipeline gets it next.

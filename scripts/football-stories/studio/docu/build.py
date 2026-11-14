@@ -69,6 +69,27 @@ BLOOM_S, BLOOM_TO = 1.4, 0.3
 # its travel to this — a detail look is a dolly or a rack AT 1.42, never the old constant glide.
 FRAME_BASE = {'wide': (1.0, '50% 50%'), 'detail': (1.42, '34% 40%'), 'reverse': (1.16, '50% 58%'), 'turn': (1.04, '50% 46%')}
 TAILS = {'cut': 0.0, 'fade': 0.0, 'match': 0.0, 'whip': 0.3, 'tear': 0.45, 'dive': 0.4}
+TAILS['shape'] = 0.55
+# ONE SHAPE PER FILM (docs/rules/editing-language.md rule 4): the film's own shape, taken from its story, opens every
+# chapter as a window that grows over the frame. Drawn on a 100×100 box, black = the window.
+SHAPES = {
+    'shamrock': '<circle cx="50" cy="27" r="19"/><circle cx="29" cy="52" r="19"/><circle cx="71" cy="52" r="19"/>'
+                '<circle cx="50" cy="46" r="14"/><path d="M46 58 Q48 80 40 96 L48 96 Q56 80 54 58 Z"/>',
+    'ticket': '<path d="M8 22 H92 V40 A10 10 0 0 0 92 60 V78 H8 V60 A10 10 0 0 0 8 40 Z"/>',
+    'tab': '<path d="M6 30 H40 L48 20 H94 V86 H6 Z"/>',
+    'stripe': '<path d="M0 34 H100 V66 H0 Z"/>',
+    'star': '<path d="M50 6 L61 38 H95 L67 58 L78 92 L50 71 L22 92 L33 58 L5 38 H39 Z"/>',
+    'ball': '<circle cx="50" cy="50" r="44"/>',
+}
+CLUB_SHAPES = {'panathinaikos': 'shamrock', 'celtic': 'shamrock', 'hapoel-tel-aviv': 'star', 'olympiacos': 'ball'}
+
+
+def shape_mask(name: str) -> str:
+    import urllib.parse
+    svg = f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">{SHAPES.get(name, SHAPES["ticket"])}</svg>'
+    return "url(\"data:image/svg+xml;utf8," + urllib.parse.quote(svg) + "\")"
+
+
 TEAR = (4, -3, 5, -4, 3, -5, 4, -2, 3)   # the torn edge: how far each of nine points sits off the tear line, in % of the width
 # A card that holds still is a dead frame (docs/fanlife/71: "the camera never stops dead"): it creeps in by this much a
 # second — 0.13 px a frame at the edge of the screen, far under rule 142's 0.6 px.
@@ -152,7 +173,7 @@ class Film:
 
     # ── primitives ──────────────────────────────────────────────────────────────────────────────────────────────────
     def clip(self, cid, t, d, inner, z, cls='', style=''):
-        self.made.append({'id': cid, 't': t, 'z': t + d})
+        self.made.append({'id': cid, 't': t, 'z': t + d, 'layer': z})
         self.clips.append(f'<div id="{cid}" class="clip {cls}" data-start="{r2(t)}" data-duration="{r2(d)}" style="z-index:{z};{style}">{inner}</div>')
 
     def tween(self, js: str):
@@ -267,6 +288,25 @@ class Film:
         self.tween(f'tl.fromTo("#{cid} .sb",{{y:-260,opacity:0}},{{y:0,opacity:1,duration:0.55,ease:"back.out(1.6)"}},{r2(t)});')
         if s.get('shrink_at') is not None:
             self.tween(f'tl.fromTo("#{cid}",{{y:0,scale:1}},{{y:-300,scale:0.62,duration:0.7,ease:"power3.inOut",immediateRender:false}},{r2(t + s["shrink_at"])});')
+
+    def flap(self, s, t, d):
+        """NUMBERS ARE OBJECTS (editing rule 3): a split-flap board — each character a tile that turns over once from the
+        number before to this one (a year: the film travels back; a score: it changes on the cut). One turn per tile,
+        eased, staggered left to right; nothing flickers (rule 142). `frm` and `to` are strings of the same length."""
+        cid = self.id('flap')
+        a, b = str(s.get('frm', '')), str(s['to'])
+        a = a.rjust(len(b))[-len(b):] if a else ' ' * len(b)
+        at = s.get('at', 0.0)
+        tiles = ''.join(f'<div class="fp"><b class="fa">{e(x)}</b><b class="fb">{e(y)}</b></div>' for x, y in zip(a, b))
+        small = f'<small>{e(s["small"])}</small>' if s.get('small') else ''
+        self.clip(cid, t + at, d - at, f'<div class="flapw"><div class="flaps">{tiles}</div>{small}</div>', s.get('z', 14), 'paper' if s.get('full') else '')
+        T = t + at + 0.35
+        for i in range(len(b)):
+            if a[i] == b[i]:
+                self.tween(f'tl.set("#{cid} .fp:nth-child({i + 1}) .fa",{{opacity:0}},{r2(t + at)});tl.set("#{cid} .fp:nth-child({i + 1}) .fb",{{rotationX:0}},{r2(t + at)});')
+                continue
+            self.tween(f'tl.fromTo("#{cid} .fp:nth-child({i + 1}) .fa",{{rotationX:0}},{{rotationX:-90,duration:0.22,ease:"power2.in"}},{r2(T + 0.12 * i)});'
+                       f'tl.fromTo("#{cid} .fp:nth-child({i + 1}) .fb",{{rotationX:90}},{{rotationX:0,duration:0.26,ease:"power2.out"}},{r2(T + 0.12 * i + 0.22)});')
 
     def badge(self, src, name) -> str:
         """A crest when one is on file; otherwise the club's initials on a plain roundel — never a borrowed badge."""
@@ -761,6 +801,16 @@ class Film:
                        f'tl.set("{IN}",{{clipPath:"none"}},{r2(T + TAILS["tear"])});')
             if out:
                 self.tween(f'tl.fromTo("{OUT}",{{clipPath:"{poly(100, -8)}"}},{{clipPath:"{poly(100, 108)}",duration:{TAILS["tear"]},ease:"power2.inOut",immediateRender:false}},{r2(T)});')
+        elif name == 'dive' and self.sb.get('shape'):
+            # the film's shape opens over the frame and the chapter appears inside it (one move, eased, no bounce)
+            mk = shape_mask(self.sb['shape'])
+            self.tween(f'tl.set("{IN}",{{webkitMaskImage:\'{mk}\',maskImage:\'{mk}\',webkitMaskRepeat:"no-repeat",maskRepeat:"no-repeat",'
+                       f'webkitMaskPosition:"50% 50%",maskPosition:"50% 50%"}},{r2(T)});'
+                       f'tl.fromTo("{IN}",{{webkitMaskSize:"6% 6%",maskSize:"6% 6%"}},{{webkitMaskSize:"900% 900%",maskSize:"900% 900%",duration:{TAILS["shape"]},ease:"power2.in"}},{r2(T)});'
+                       f'tl.set("{IN}",{{webkitMaskImage:"none",maskImage:"none"}},{r2(T + TAILS["shape"])});')
+            for m in out:   # anything the old beat laid on top (a board, a stamp) must not sit over the new chapter
+                if m.get('layer', 0) > 9:
+                    self.tween(f'tl.to("#{m["id"]}",{{opacity:0,duration:{TAILS["shape"] * 0.6:.2f},ease:"power1.in"}},{r2(T)});')
         elif name == 'dive':
             self.tween(f'tl.fromTo("{IN}",{{scale:0.82,opacity:0}},{{scale:1,opacity:1,duration:{TAILS["dive"]},ease:"power3.out"}},{r2(T)});')
             for m in out:
@@ -795,7 +845,8 @@ class Film:
             # A beat with `in` is an edited beat (docu/editor.py): it enters by a transition, and stays under the next
             # beat for as long as that beat's transition needs. A storyboard written by hand has no `in` and is drawn as before.
             edited = 'in' in b
-            tail = TAILS[beats[i + 1].get('in') or 'cut'] if edited and i + 1 < len(beats) else 0.0
+            nxt = (beats[i + 1].get('in') or 'cut') if edited and i + 1 < len(beats) else None
+            tail = 0.0 if nxt is None else TAILS['shape'] if nxt == 'dive' and self.sb.get('shape') else TAILS[nxt]
             k0, end = len(self.made), b['t'] + b['d']
             for s in b['shots']:
                 dt = s.get('dt', 0)
@@ -931,7 +982,7 @@ video.clip{{width:1920px;height:1080px}}
 .prn{{position:absolute;left:210px;top:92px;width:1500px;height:844px;overflow:hidden;border:18px solid #fff;box-shadow:22px 22px 0 rgba(20,17,13,.5)}} .prn .phi{{width:100%;height:100%}}
 .duo{{position:absolute;left:0;top:0;width:1920px;height:1080px;mix-blend-mode:multiply;opacity:.85}}
 .subw .sub.kar{{top:auto;bottom:54px;font:400 46px/1.25 'Head';text-transform:uppercase;letter-spacing:1px;color:{P};background:rgba(20,17,13,.88);padding:10px 26px;max-width:1500px}} .sub.kar span{{padding:0 4px}}
-.fw{{position:absolute;left:150px;top:150px;width:1620px;color:{INK}}} .fh b{{display:block;font:400 92px/1 'Ultra'}} .fh span{{font:700 40px 'Caps';letter-spacing:8px}}
+.flapw{{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px}} .flaps{{display:flex;gap:14px;perspective:1400px}} .fp{{position:relative;width:170px;height:240px}} .fp b{{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:{INK};color:{P};font:400 190px/1 'Ultra';border-radius:10px;box-shadow:0 10px 0 rgba(0,0,0,.35);backface-visibility:hidden;transform-origin:50% 50%}} .fp b::after{{content:'';position:absolute;left:0;right:0;top:50%;height:3px;background:rgba(255,255,255,.18)}} .fp .fb{{transform:rotateX(90deg)}} .flapw small{{font:700 40px 'Caps';letter-spacing:10px;color:{INK};background:{P};padding:8px 22px}} .fw{{position:absolute;left:150px;top:150px;width:1620px;color:{INK}}} .fh b{{display:block;font:400 92px/1 'Ultra'}} .fh span{{font:700 40px 'Caps';letter-spacing:8px}}
 .fg{{display:grid;gap:12px;margin-top:40px}} .ft{{height:96px;display:flex;align-items:center;justify-content:center;color:#fff;font:400 52px 'Ultra';border:4px solid {INK};box-shadow:6px 6px 0 {INK}}}
 .fbr{{margin-top:44px;text-align:left}} .fwb{{top:120px}} .fwb .fh b{{font-size:170px}} .fwb .fh span{{font-size:46px}} .fwb .fbr span{{font-size:60px;padding:12px 30px}}
 .fbr span{{display:inline-block;margin-top:14px;background:{INK};color:#fff;font:700 40px 'Caps';letter-spacing:4px;padding:8px 22px}}

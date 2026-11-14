@@ -57,3 +57,39 @@ class Telling(unittest.TestCase):
         person = H.score_option({'text': 'Kalitzakis had seventy caps and no goal. So why was he up there?'}, led)
         self.assertLess(club['laws']['stake'], person['laws']['stake'])
         self.assertEqual(H.score_option({'text': 'We track the rivalry of 3 decades with Kalitzakis.'}, led)['laws']['cliche'], 0)
+
+
+class YearFlaps(unittest.TestCase):
+    """Editing rule 3: a year the narration says turns on a split-flap board, one a chapter, four a film at most."""
+    def run_on(self, texts, chapters):
+        a = Adapter.__new__(Adapter)
+        a.plan = {'shots': [shot(i, i * 10.0, 300, t) for i, t in enumerate(texts)]}
+        beats = [{'t': s['start'], 'd': 10.0, 'shots': [], 'meta': {'n': s['n'], 'type': 'illustration', 'chapter': c}}
+                 for s, c in zip(a.plan['shots'], chapters)]
+        a.year_flaps(beats)
+        return [x for b in beats for x in b['shots'] if x['kind'] == 'flap']
+
+    def test_a_spoken_year_turns_the_board_from_the_last_one(self):
+        f = self.run_on(['It was 1994 in Athens.', 'Then came 1996 and a final.'], [0, 1])
+        self.assertEqual([(x['frm'], x['to']) for x in f][1], ('1994', '1996'))
+        self.assertEqual(f[0]['to'], '1994')
+
+    def test_one_board_a_chapter(self):
+        self.assertEqual(len(self.run_on(['In 1994 they won.', 'By 1995 they lost.'], [0, 0])), 1)
+
+    def test_no_year_no_board(self):
+        self.assertEqual(self.run_on(['They scored three goals.'], [0]), [])
+
+    def test_four_boards_at_most(self):
+        years = [f'It was {1990 + i} then.' for i in range(7)]
+        self.assertEqual(len(self.run_on(years, list(range(7)))), 4)
+
+
+class FilmShape(unittest.TestCase):
+    """Editing rule 4: one shape a film, from the club, closed (no hole in the window)."""
+    def test_club_shape_and_default(self):
+        from studio.docu import build as B
+        self.assertEqual(B.CLUB_SHAPES['panathinaikos'], 'shamrock')
+        self.assertIn('svg', B.shape_mask('ticket'))
+        self.assertIn('circle', B.shape_mask('shamrock'))
+        self.assertEqual(B.shape_mask('nope'), B.shape_mask('ticket'))

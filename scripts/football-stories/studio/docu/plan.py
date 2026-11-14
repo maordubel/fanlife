@@ -719,7 +719,33 @@ class Adapter:
                 b['subs'] = subtitles(s)
             out.append(b)
         self.question_cards(out)
+        self.year_flaps(out)
         return out
+
+    YEAR = re.compile(r'^(19[0-9]{2}|20[0-3][0-9])[.,;:!?]?$')
+    FLAPS_MAX = 4
+
+    def year_flaps(self, beats: list[dict]) -> None:
+        """Editing rule 3, numbers are objects: the first time the narration says a year, a split-flap board turns from
+        the year before (or this year, the first time) to it, on the word. At most one a chapter, four a film. Only a
+        year the narration says — the board prints nothing the script does not."""
+        by_n = {s['n']: s for s in self.plan['shots']}
+        shown, last, chapters = 0, str(Date.today().year), set()
+        for b in beats:
+            if shown >= self.FLAPS_MAX or b['meta']['type'] in ('end', 'follow', 'chapter', 'open'):
+                continue
+            s = by_n.get(b['meta']['n']) or {}
+            if s.get('voice_at') is None or b['meta'].get('chapter') in chapters:
+                continue
+            for w in s.get('words') or []:
+                m = self.YEAR.match(str(w.get('w') or '').strip('"\'’”('))
+                if m and m.group(1) != last:
+                    at = round(s['voice_at'] + w['start'] - 0.2, 3)
+                    if 0 <= at <= b['d'] - 2.2:
+                        b['shots'].append({'kind': 'flap', 'frm': last, 'to': m.group(1), 'at': max(0.0, at), 'd': round(max(0.0, at) + 2.6, 3), 'z': 14})
+                        last, shown = m.group(1), shown + 1
+                        chapters.add(b['meta'].get('chapter'))
+                    break
 
     QUESTION_MAX_WORDS = 9      # a question card is read at a glance (editing rule 2: "the film's question in type")
     QUESTION_BY_S = 15.0        # on screen before 0:15 (rule model-film 3; qa.STAKE_BY_S)
@@ -846,7 +872,9 @@ def write_project(job_dir: Path, plan: dict, palette: Palette, root: Path) -> tu
     if fl.exists():
         shutil.copyfile(fl, root / 'assets' / 'img' / 'fanlife.png')
     them = NEUTRAL
-    sb = {'palette': {'us': palette.accent, 'them': them}, 'silent': True, 'karaoke': True, 'sub_limit': 44}
+    sb = {'palette': {'us': palette.accent, 'them': them}, 'silent': True, 'karaoke': True, 'sub_limit': 44,
+          'shape': B.CLUB_SHAPES.get(palette.club_id, 'ticket'),            # editing rule 4: one shape per film, from its club
+          'mark': (root / 'assets' / 'img' / 'fanlife.png').exists()}       # model-film rule 9: the channel's mark the whole film
     film = B.Film(sb, root)
     film.agg_moves = []
     D = film.build(beats)
