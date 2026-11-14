@@ -6,7 +6,7 @@ import {clubTheme,rivalBans,themeStyle,type ClubTheme} from '@/lib/clubs/theme'
 import {localeDirection,type UiLocale} from '@/lib/clubs/locale'
 import {TabBar} from './TabBar'
 import {Suspense} from 'react'
-import {ShopNavLink} from '@/components/shop/ShopStrip'
+import {ShopNavLink,shopIsOpen} from '@/components/shop/ShopStrip'
 import {evaluationMode} from '@/lib/master/mode'
 import {readState} from '@/lib/master/store'
 import {Contents} from '@/components/weekly/Contents'
@@ -28,7 +28,7 @@ export function Shell({children,club,theme,locale='en',stop}:{children:ReactNode
  return <div className={`fl mag${identity?' club-theme':''}`} data-club={club?.id} data-pattern={identity?.pattern} data-rival-no={identity?rivalBans(identity).join(' ')||undefined:undefined} dir={localeDirection(locale)} lang={locale} style={identity?themeStyle(identity,locale):{'--club':MASTER_PRIMARY} as CSSProperties}>
   <div className="mag-top"><div className="mag-top-in">
    <Link href="/" className="mag-logo" aria-label="FAN LIFE"><img className="mag-seal-logo" src={identity?'/brand/fanlife/logo-mono.webp':'/brand/fanlife/logo-96.png'} alt="" width={40} height={40}/>Fan <b>Life</b></Link>
-   <nav className="mag-nav" aria-label={copy.primaryNav}><Link href="/#clubs">{copy.clubs}</Link><Link href="/our-games">{copy.tabOurGames}</Link><Link href="/market">{copy.tabMarket}</Link><Suspense fallback={null}><ShopNavLink/></Suspense><Link href="/me">{copy.corner}</Link></nav>
+   <nav className="mag-nav" aria-label={copy.primaryNav}><Link href="/#clubs">{copy.clubs}</Link><Link href="/our-games">{copy.tabOurGames}</Link><Suspense fallback={null}><ShopNavLink/></Suspense><Link href="/market">{copy.tabMarket}</Link><Link href="/me">{copy.corner}</Link></nav>
    <HubMenu locale={locale} current={club?.id??null} theme={identity}/>
   </div></div>
   {stop!==undefined?<div className="mag-stop">{stop}</div>:evaluationMode()?<div className="mag-stop"><div className="mag-stop-in"><b>{copy.stopPress}</b><span>{copy.evaluation} · {copy.evaluationNote}</span></div></div>:null}
@@ -48,8 +48,8 @@ export {Mark} from './Mark'
 
 /** THE WEEKLY's menu in the masthead (rule 124): the contents page — the paper, your corner, every club. */
 async function HubMenu({locale,current,theme}:{locale:UiLocale;current:string|null;theme?:ClubTheme}) {
- const t=menuCopy(locale),state=await readState().catch(()=>null),pins=featuresOf(state).pins||isOwner()
+ const t=menuCopy(locale),[state,shop]=await Promise.all([readState().catch(()=>null),shopIsOpen()]),pins=featuresOf(state).pins||isOwner()
  return <Contents tone="paper" rivalNo={theme?rivalBans(theme).join(' ')||undefined:undefined} paint={theme?themeStyle(theme,locale) as Record<string,string>:undefined}
   copy={{menu:t.wkMenu,title:t.wkContents,kicker:t.wkKickerHub,close:t.wkClose,corner:t.wkCorner,clubs:t.wkClubs,fanlife:t.wkFanLife,section:t.wkPaper,apps:t.pinApps}} pins={pins} locale={locale} apps={menuApps(locale,current)}
-  sections={hubSections(locale)} corner={menuCorner(locale)} clubs={menuClubs(state?.clubs??[],current,locale,theme)} fanlife={menuFanLife(locale)}/>
+  sections={hubSections(locale,{shop})} corner={menuCorner(locale)} clubs={menuClubs(state?.clubs??[],current,locale,theme)} fanlife={menuFanLife(locale)}/>
 }
