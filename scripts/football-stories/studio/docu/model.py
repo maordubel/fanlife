@@ -22,6 +22,9 @@ from ..thumbs import render as R
 from . import build as B
 
 
+
+LANGUAGE_RUN_MAX_S = 24.0   # the Vox reference runs ~20 s; 4 s of tolerance for a chapter card landing inside a run
+
 def plan_of(sb: dict, project: Path) -> dict:
     durs = json.loads((project / 'assets' / 'vo' / 'durations.json').read_text())
     beats = B.timeline(sb['beats'], durs)
@@ -47,6 +50,8 @@ def gate(film: Path, sb: dict, project: Path, intro_s: float = 0.0) -> dict:
     for s in j['shots']:
         run = run + s['d'] if s.get('language') == last else s['d']
         last, worst = s.get('language'), max(worst, run)
+    # Editing rule 5 (docs/rules/editing-language.md): never more than ~20 s in one visual language — enforced, not reported.
+    exp['checks'].append(('language run', worst <= LANGUAGE_RUN_MAX_S, f'longest run in one language {worst:.1f} s (max {LANGUAGE_RUN_MAX_S:.0f} s)'))
     cams: dict = {}
     for s in j['shots']:
         for p in s['pictures']:

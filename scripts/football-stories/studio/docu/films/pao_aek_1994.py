@@ -47,7 +47,6 @@ LIB = {'lib-trophy': (['trophy', 'archive'], ['calm'], 'beat:common/archive-trop
        'lib-whistle': (['referee', 'clock'], ['tension'], 'beat:common/final-whistle-arms-kr'),
        'lib-radio': (['archive'], ['calm'], 'beat:common/radio-scarf-ticket-table'),
        'lib-desk': (['archive', 'newspaper'], ['calm'], 'beat:common/scrapbook-desk-kr'),
-       'lib-demolition': (['stadium', 'stand', 'crowd'], ['defiance'], 'beat:common/demolition-stand-kr'),
        'lib-tunnel': (['tunnel', 'stadium'], ['tension'], 'beat:common/tunnel-gate-silhouette-n')}
 
 
@@ -311,7 +310,9 @@ beat(None, word('WHAT WAS A DEFENDER|DOING UP THERE?', bg='ink', size=128, small
 beat("One last page. Before the decade was out, Giannis Kalitzakis changed clubs. He signed for AEK",
      img('lib-tunnel.jpg', 'push', veil=0.25), type='turning', emotion='wonder', intensity=0.6, pad=0.9, sound=[('page', 0.0, 1.0, 0.5)])
 beat("And the ground where it happened is gone. The old Nikos Goumas Stadium was demolished in two thousand and three.",
-     img('lib-demolition.jpg', 'pull', veil=0.1), type='illustration', emotion='grief', intensity=0.5, pad=0.6)
+     word('NIKOS GOUMAS|1930 – 2003', bg='ink', size=170, small='NEA FILADELFEIA', d=4.2),
+     word('WHERE IT|HAPPENED', bg='paper', size=190, small='DEMOLISHED IN 2003', at=4.2),   # a card: no stand-in picture of the ground (model-film rule 19), and it breaks the documentary run (editing rule 5)
+     type='trailer', emotion='grief', intensity=0.5, pad=0.6)
 beat("The cup final they met in that spring is a story for another night. Subscribe, and it will find you.",
      img('badge.jpg', 'push', veil=0.3), dict(kind='follow', club='Panathinaikos · AEK', press_at=4.6, dt=1.2),
      type='follow', pad=1.0, sound=[('claps', 4.6, 2.0, 0.4)])
