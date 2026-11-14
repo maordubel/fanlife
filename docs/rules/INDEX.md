@@ -102,6 +102,7 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [model-film](model-film.md) · Every Football Stories film is assembled in the model's order and ships as the model's package: hook, question card, chapters on a turn, bookend, Shorts, Reels, marketing (13.11.2026)
 - [no-sliced-parallax](no-sliced-parallax.md) · Never slice a picture into bands that move apart to fake depth; a still moves as one sheet, only a real cut-out moves in front of it (owner, 14.11.2026)
 - [editing-language](editing-language.md) · Five editing rules for every film: one world of four inks, a 12 s cold open then the question card, numbers as objects, one shape per film, never over 20 s in one visual language (enforced by the gate) (owner, 14.11.2026)
+- [studio-pictures](studio-pictures.md) · Rival colour read from the picture pixels; a named real person never gets a generic figure; the PNG library enters every documentary through the media index (owner, 14.11.2026)
 
 ## Control room, research desk and CRM
 
