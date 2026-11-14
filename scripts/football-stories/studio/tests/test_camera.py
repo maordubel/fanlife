@@ -121,8 +121,8 @@ class Director(unittest.TestCase):
         D = f.build(out)
         page = f.page(D)
         self.assertEqual(len(f.cams), len(pics))
-        self.assertIn('class="phi fore"', page)                                 # the near plane …
-        self.assertIn('mask-image:linear-gradient', page)
+        self.assertNotIn('class="phi fore"', page)                              # never a sliced near plane (owner, 14.11.2026)
+        self.assertNotIn('mask-image:linear-gradient', page)
         self.assertIn('class="vig"', page)                                      # … and the vignette plane
         self.assertIn('var glide=function', page)
         for c in f.cams:                                                        # every move as laid is calm at its own length
