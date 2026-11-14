@@ -1,0 +1,29 @@
+name: crests fetch (temporary)
+on:
+  push:
+    branches: [claude/crests-caf]
+    paths: [.github/workflows/crests-fetch-tmp.yml]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get install -y -qq librsvg2-bin imagemagick >/dev/null
+      - name: Crest = the club article's own infobox image (MediaWiki pageimages, original)
+        run: |
+          mkdir -p research-data/crests-2026-11-14
+          UA="FanLife-archive/1.0 (https://github.com/maordubel/fanlife)"
+          for pair in "raja-casablanca|Raja_CA" "wydad-casablanca|Wydad_AC" "al-ahly|Al_Ahly_SC"; do
+            id=${pair%%|*}; t=${pair##*|}
+            url=$(curl -s -A "$UA" "https://en.wikipedia.org/w/api.php?action=query&prop=pageimages&piprop=original|name&format=json&redirects=1&titles=$t" | python3 -c "import sys,json;p=list(json.load(sys.stdin)['query']['pages'].values())[0];print(p.get('original',{}).get('source',''),p.get('pageimage',''))")
+            echo "$id $url" | tee -a research-data/crests-2026-11-14/sources.txt
+            src=${url%% *}; [ -n "$src" ] || continue
+            ext=${src##*.}; curl -sL -A "$UA" -o "/tmp/$id.$ext" "$src"
+            if [ "$ext" = "svg" ]; then rsvg-convert -h 512 -a "/tmp/$id.svg" -o "research-data/crests-2026-11-14/$id.png"; else convert "/tmp/$id.$ext" -resize x512 "research-data/crests-2026-11-14/$id.png"; fi
+            sha256sum "/tmp/$id.$ext" >> research-data/crests-2026-11-14/sources.txt
+          done
+      - run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898699+github-actions[bot]@users.noreply.github.com"
+          git add research-data/crests-2026-11-14 && git commit -m "crests: Raja, Wydad, Al Ahly from their Wikipedia infoboxes" && git push
