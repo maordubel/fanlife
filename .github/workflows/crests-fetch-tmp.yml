@@ -11,13 +11,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: sudo apt-get install -y -qq librsvg2-bin imagemagick >/dev/null
-      - name: Crest = the club article's own infobox image (MediaWiki pageimages, original)
+      - name: Crest = the club article's own infobox image field, its original file
         run: |
           mkdir -p research-data/crests-2026-11-14
           UA="FanLife-archive/1.0 (https://github.com/maordubel/fanlife)"
           for pair in "raja-casablanca|Raja_CA" "wydad-casablanca|Wydad_AC" "al-ahly|Al_Ahly_SC"; do
             id=${pair%%|*}; t=${pair##*|}
-            url=$(curl -s -A "$UA" "https://en.wikipedia.org/w/api.php?action=query&prop=pageimages&piprop=original|name&format=json&redirects=1&titles=$t" | python3 -c "import sys,json;p=list(json.load(sys.stdin)['query']['pages'].values())[0];print(p.get('original',{}).get('source',''),p.get('pageimage',''))")
+            f=$(curl -s -A "$UA" "https://en.wikipedia.org/w/api.php?action=parse&prop=wikitext&section=0&format=json&redirects=1&page=$t" | python3 -c "import sys,json,re;w=json.load(sys.stdin)['parse']['wikitext']['*'];m=re.search(r'^\s*\|\s*(?:image|logo|crest)\s*=\s*(?:\[\[)?(?:File:|Image:)?([^|\]\n]+)',w,re.M|re.I);print(m.group(1).strip() if m else '')")
+            url=$(curl -s -A "$UA" "https://en.wikipedia.org/w/api.php?action=query&prop=imageinfo&iiprop=url|sha1&format=json&titles=File:$(python3 -c "import urllib.parse,sys;print(urllib.parse.quote(sys.argv[1]))" "$f")" | python3 -c "import sys,json;p=list(json.load(sys.stdin)['query']['pages'].values())[0];print(p.get('imageinfo',[{}])[0].get('url',''))")
+            url="$url File:$f"
             echo "$id $url" | tee -a research-data/crests-2026-11-14/sources.txt
             src=${url%% *}; [ -n "$src" ] || continue
             ext=${src##*.}; curl -sL -A "$UA" -o "/tmp/$id.$ext" "$src"
