@@ -189,7 +189,7 @@ beat("And in November nineteen ninety-four, AEK are the champions of Greece. Not
      pad=0.5, sound=[('impact', 4.2, 1.4, 0.6)])
 beat("Their manager is Dušan Bajević. For three seasons, every other club in the country has been chasing his team.",
      word('DUŠAN|BAJEVIĆ', bg='ink', size=210, small='AEK · THE MANAGER · 1994/95', d=4.1),   # a card, never a silhouette passed off as the man
-     word('EVERYONE|IS CHASING', bg='paper', size=200, small='THREE SEASONS · ONE TEAM AHEAD', at=4.1),
+     word('EVERYONE|IS CHASING', bg='us', size=200, small='THREE SEASONS · ONE TEAM AHEAD', at=4.1),
      type='illustration', emotion='dread', intensity=0.5, pad=0.4)
 beat("But this autumn, one club is not chasing. It is running away.",
      img('lib-bowl.jpg', 'push', veil=0.3), dict(kind='question', small='AUTUMN 1994', text='ONE CLUB IS|[RUNNING AWAY]', dt=1.4),
@@ -311,7 +311,7 @@ beat("One last page. Before the decade was out, Giannis Kalitzakis changed clubs
      img('lib-tunnel.jpg', 'push', veil=0.25), type='turning', emotion='wonder', intensity=0.6, pad=0.9, sound=[('page', 0.0, 1.0, 0.5)])
 beat("And the ground where it happened is gone. The old Nikos Goumas Stadium was demolished in two thousand and three.",
      word('NIKOS GOUMAS|1930 – 2003', bg='ink', size=170, small='NEA FILADELFEIA', d=4.2),
-     word('WHERE IT|HAPPENED', bg='paper', size=190, small='DEMOLISHED IN 2003', at=4.2),   # a card: no stand-in picture of the ground (model-film rule 19), and it breaks the documentary run (editing rule 5)
+     word('WHERE IT|HAPPENED', bg='us', size=190, small='DEMOLISHED IN 2003', at=4.2),   # a card: no stand-in picture of the ground (model-film rule 19), and it breaks the documentary run (editing rule 5)
      type='trailer', emotion='grief', intensity=0.5, pad=0.6)
 beat("The cup final they met in that spring is a story for another night. Subscribe, and it will find you.",
      img('badge.jpg', 'push', veil=0.3), dict(kind='follow', club='Panathinaikos · AEK', press_at=4.6, dt=1.2),
