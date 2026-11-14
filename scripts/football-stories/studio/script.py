@@ -607,6 +607,9 @@ COLD_TITLE = re.compile(r'^\s*(in|during)\s+(the\s+)?(\d{4}|season|summer|autumn
 TABLE_TALK = re.compile(r'\b(league table|the table|the standings|top of the (league|pile)|bottom of the (league|table)|'
                         r'league leaders|top spot|(first|second|third|fourth|fifth|top|bottom|last|\d+(st|nd|rd|th)) place|'
                         r'points? (clear|behind|ahead|adrift|gap)|relegation zone|\d+ points)\b', re.I)
+META_NARRATION = re.compile(r"\b(we (track|revisit|look (at|back)|explore|follow|trace|examine|will see|dive)|you will see|join us|"
+                            r"in this (video|film|documentary|episode)|this is (a|the) (record|story|tale|chronicle) of|"
+                            r"the story of how|let'?s (look|go|take|dive))\b", re.I)
 TURN_WORDS = re.compile(r'\b(but|until|then|yet|still|only|nobody|no one|not yet|what|who|how|why|would|could|next|waiting|'
                         r'remember|unless|before|soon|coming|ahead|tomorrow|almost|if)\b', re.I)
 
@@ -957,6 +960,20 @@ def director_rules(s: dict, seq: list, ledger: dict, story: dict, kind: str, by:
         last = sentences[-1] if sentences else ''
         if not (last.endswith(('?', '…', '...', '—', '-')) or TURN_WORDS.search(last)):
             errs.append(f'Chapter {ci + 1}: [director rule 5] its last line must end on a question, a cliffhanger or a turn')
+
+    # 6 · the narrator tells the story; he never talks about the film (owner, 14.11.2026: "boring, a long slideshow")
+    for ci, ch in enumerate(chs):
+        for b in ch.get('beats') or []:
+            if not isinstance(b, dict) or (b.get('visual') or {}).get('type') in ('follow', 'end'):
+                continue   # the studio's own hand-over (rule 136) speaks to the viewer by design
+            m = META_NARRATION.search(str(b.get('narration') or ''))
+            if m:
+                errs.append(f'Chapter {ci + 1}: [director rule 6] "{m.group(0)}" talks about the film — tell the moment itself '
+                            f'(who, where, the minute, what happened)')
+
+    # 7 · the opening asks its question out loud (one short "?" sentence in the first fifteen seconds, set in type by
+    # docu/plan.question_cards). Asked of the writer in its brief, not enforced here: a script without it is not wrong,
+    # it only loses its question card — and a hard rule would send good scripts back for want of a punctuation mark.
     return errs
 
 

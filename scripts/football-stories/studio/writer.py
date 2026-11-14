@@ -122,6 +122,11 @@ HOOK LAWS (the first 5 seconds decide everything; every opening, title, thumbnai
   after the midpoint of the film, citing the same claim. Give the film at least one moment of real TENSION (one match
   or decision told against its clock) and one of pure JOY (the goal, the win, the celebration on its own beat).
   Set "drama": 1.
+- ASK THE QUESTION OUT LOUD. Inside the first fifteen seconds, one short sentence of at most nine words that ends in
+  "?" ("So what was a defender doing up there?"). It is set on screen in type; the film answers it after the midpoint.
+- TELL, NEVER PRESENT. The narrator never talks about the film or the viewer: no "we track", "we revisit", "you will
+  see", "this is the story of", "join us", "let's look". Every line is the moment itself: who, where, which minute,
+  what happened, what it cost. Vague lines ("a rivalry of fine margins", "one match changed a decade") are cut.
 - MINI-DRAMA. Start with a concrete paradox or decisive moment. Rewind to the fixture and the stakes, let a setback
   narrow the options, build a believable moment of hope, and show the decision that changes the outcome. Close on what
   the result meant to the people involved. Give each chapter one change and an honest question to carry into the next.

@@ -84,3 +84,14 @@ specs and the gap list against the automatic pipeline are in `docs/fanlife/74-mo
     narrator); its own thumbnail; captions from `film.srt`; the pinned comment; the film in the series playlist.
 36. Only to the channel **FanLife: Football Stories** (`UC2KULoLBFCSZC4jeRGYkKfQ`); evening slots in Europe/Athens
     time; nothing goes public before the gate passed and the contact sheet was looked at.
+
+## G. Writing (owner, 14.11.2026: "boring, the feel of a long slideshow")
+
+37. **Tell, never present.** The narrator never talks about the film or the viewer ("we track", "we revisit", "you will
+    see", "this is the story of", "join us"). A line that does fails the script (`script.director_rules` rule 6) and
+    is rewritten. The studio's own hand-over (rule 136) is the one exception.
+38. **The opening asks its question out loud** in one sentence of at most nine words ending in "?", inside the first
+    fifteen seconds; the editor sets it in type and brings it back as the bookend. Asked of the writer; a script
+    without it is not refused, it only loses its card.
+39. **A club's name is not a stake.** The hook judge gives the stake law only for a person, a ground or a city from the
+    record with a number; an opening that talks about the film scores no cliché points.
