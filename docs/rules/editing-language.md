@@ -28,3 +28,8 @@ FANLIFE KIDS, CLASSIFIED), with `model-film` (the order and the package) and `no
 | 5 20 s per language | `studio/qa.experience` and `studio/docu/model.gate` check **language run** (24 s with 4 s tolerance) | **enforced** in the pipeline: a run over it is re-planned tighter, then fails the gate |
 
 A rule marked "not built" is still the rule: a film cut by hand follows it, and the automatic pipeline gets it next.
+
+**Interest (owner, 14.11.2026: "objects, interest and editing").** The story's turns are seen as well as heard:
+`docu/plan.turn_cards` sets a short reversal the narration says ("But…", "Until…", "Then…", "Nobody…", 3–8 words) in
+type on the word, in the film's ink, two a film at most, 45 s apart, never in the cold open or over a goal, a card or
+the hand-over. Only the narration's own words.

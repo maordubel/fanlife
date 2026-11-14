@@ -154,3 +154,23 @@ class CutoutEntrance(unittest.TestCase):
         js = ' '.join(f.tweens)
         self.assertNotRegex(js, r'back\\.|elastic|bounce|yoyo|repeat')
         self.assertEqual(js.count('fromTo'), len(B.Film.ENTRANCES))
+
+
+class TurnCards(unittest.TestCase):
+    """Interest: the narration's reversal lines are set in type, two a film, far apart, never in the cold open."""
+    def run_on(self, texts, starts):
+        a = Adapter.__new__(Adapter)
+        a.plan = {'shots': [shot(i, st, 300, t) for i, (t, st) in enumerate(zip(texts, starts))]}
+        beats = [{'t': st, 'd': 10.0, 'shots': [], 'meta': {'n': i, 'type': 'illustration'}} for i, st in enumerate(starts)]
+        a.turn_cards(beats)
+        return [x['text'] for b in beats for x in b['shots'] if x['kind'] == 'word']
+
+    def test_a_reversal_is_set_in_type(self):
+        self.assertEqual(self.run_on(['They led at half time. But Athens went quiet.'], [30.0]), ['BUT ATHENS|WENT QUIET.'])
+        self.assertEqual(self.run_on(['They led at half time and Athens went quiet.'], [30.0]), [])
+        self.assertEqual(self.run_on(['But Athens went quiet. They led.'], [30.0]), ['BUT ATHENS|WENT QUIET.'])
+
+    def test_not_in_the_cold_open_and_two_at_most_far_apart(self):
+        self.assertEqual(self.run_on(['But Athens went quiet.'], [5.0]), [])
+        texts = ['But Athens went quiet.'] * 4
+        self.assertEqual(len(self.run_on(texts, [20.0, 40.0, 70.0, 120.0])), 2)

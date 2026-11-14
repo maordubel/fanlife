@@ -777,6 +777,7 @@ class Adapter:
                 b['subs'] = subtitles(s)
             out.append(b)
         self.question_cards(out)
+        self.turn_cards(out)
         self.year_flaps(out)
         self.score_board(out)
         self.chapter_windows(out)
@@ -857,6 +858,47 @@ class Adapter:
 
     QUESTION_MAX_WORDS = 9      # a question card is read at a glance (editing rule 2: "the film's question in type")
     QUESTION_BY_S = 15.0        # on screen before 0:15 (rule model-film 3; qa.STAKE_BY_S)
+
+    TURN = re.compile(r"^(But|Until|Then|Instead|Except|And then|Yet|Nobody|No one)\b")
+    TURN_MAX, TURN_GAP_S, TURN_WORDS = 2, 45.0, (3, 8)
+
+    def turn_cards(self, beats: list[dict]) -> None:
+        """Interest (owner, 14.11.2026: "objects, interest and editing"): the story's turns are felt, not only heard. A
+        short sentence the narration opens with a reversal ("But…", "Until…", "Then…", "Nobody…") is set in type on the
+        word, in the film's ink, the way the question card is. Only the narration's own words; two a film, 45 s apart,
+        never in the cold open or on a card, a goal or the hand-over."""
+        by_n = {s['n']: s for s in self.plan['shots']}
+        shown, last_t = 0, -1e9
+        for b in beats:
+            if shown >= self.TURN_MAX:
+                return
+            if b['t'] < self.QUESTION_BY_S or b['meta']['type'] not in ('illustration', 'turning', 'map', 'race') or b['t'] - last_t < self.TURN_GAP_S:
+                continue
+            if any(x.get('kind') in ('word', 'flap') for x in b['shots']):
+                continue
+            s = by_n.get(b['meta']['n']) or {}
+            ws = s.get('words') or []
+            if not ws or s.get('voice_at') is None:
+                continue
+            i0 = 0
+            for j, w in enumerate(ws):
+                tok = str(w.get('w') or '')
+                if not re.search(r'[.!?]["\'’”)]*$', tok):
+                    continue
+                words = [str(x.get('w') or '') for x in ws[i0:j + 1]]
+                lo, hi = self.TURN_WORDS
+                if lo <= len(words) <= hi and self.TURN.match(' '.join(words)) and not words[-1].endswith('?'):
+                    a = s['voice_at'] + ws[i0]['start']
+                    z = s['voice_at'] + ws[j].get('end', ws[j]['start'] + 0.4)
+                    d = min(b['d'] - a, z - a + 0.9)
+                    if d >= 1.2:
+                        t = ' '.join(words).upper()
+                        h = (len(words) + 1) // 2
+                        t = ' '.join(t.split()[:h]) + '|' + ' '.join(t.split()[h:])
+                        b['shots'].append({'kind': 'word', 'text': t, 'bg': 'ink', 'size': 120, 'at': round(a, 3), 'd': round(a + d, 3), 'z': 16})
+                        shown, last_t = shown + 1, b['t'] + a
+                    break
+                i0 = j + 1
 
     def question_cards(self, beats: list[dict]) -> None:
         """Editing rule 2 and model-film rules 3 and 9: the question the writer plants in the opening is set as a full-
