@@ -1035,6 +1035,9 @@ def check(sb: dict, beats: list[dict], D: float) -> list[str]:
     return errs
 
 
+
+PUNCH_SNAP = 0.6   # a punch this close to a picture cut is moved onto it (see edited)
+
 def edited(sb: dict, beats: list[dict], root: Path) -> list[dict]:
     """A HAND-WRITTEN storyboard cut by the studio's own editor (`"edit": true` — the model film, docs/fanlife/74): the
     writer gives each beat its `meta` (type, chapter, emotion, intensity) and the editor does what it does for the
@@ -1101,6 +1104,19 @@ def edited(sb: dict, beats: list[dict], root: Path) -> list[dict]:
             b['shots'].append(k)
             b['lang'] = X.languages(b['shots'], b['d'])
     out = E.cut(beats, None, related, None, None, None)
+    for b in out:
+        # A punch's veil landing a few frames after a picture cut reads as a flash (rule 142, qa.FLASH_RISE): the cut shows
+        # the bright picture, then the veil darkens it. The punch moves onto the cut, so the veil and the new picture arrive together.
+        cuts = [x['dt'] for x in b['shots'] if x['kind'] == 'image' and x.get('dt', 0) > 0]
+        for k in b['shots']:
+            if k['kind'] != 'kinetic' or not cuts:
+                continue
+            c = min(cuts, key=lambda c: abs(c - k['dt']))
+            delta = round(c - k['dt'], 3)
+            if 0 < abs(delta) < PUNCH_SNAP and k['d'] - delta > 0.6:
+                k['dt'], k['d'] = c, round(k['d'] - delta, 3)
+                for w in k['words']:
+                    w['at'] = round(max(0.0, w['at'] - delta), 3)
     for b in out:
         lg = b['lang'] = X.languages(b['shots'], b['d'])
         b['language'] = max(lg, key=lambda k: (lg[k], k == 'documentary'))
