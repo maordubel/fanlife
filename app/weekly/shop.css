@@ -224,3 +224,55 @@ main.wks ul { margin: 0; padding: 0; }
   .wks-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .wks-buybox { position: sticky; inset-block-start: 90px; padding: 22px; }
 }
+/* ═════ THE SHOP, CLEAN (14.11.2026): one thing per row; picture categories; club chips; plain product cards ═════ */
+.wks2 { gap: 20px; }
+.wks2-hero { position: relative; overflow: hidden; padding: 18px 16px; border: 3px solid var(--mag-ink); box-shadow: 5px 5px 0 var(--mag-ink); }
+.wks2-hero > div { position: relative; display: grid; gap: 6px; max-inline-size: 640px; }
+.wks2-hero-art { position: absolute; inset-block-end: -6px; inset-inline-end: 6px; block-size: 70px; opacity: .9; }
+.wks2-hero-h1 { font-size: clamp(34px, 10vw, 64px); line-height: .92; color: var(--mag-paper); margin: 0; }
+.wks2-hero .wk-banner { color: var(--mag-paper); }
+.wks2-go { justify-self: start; margin-block-start: 6px; }
+.wks2-cats ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.wks2-cat { display: grid; gap: 6px; justify-items: center; text-align: center; color: var(--mag-ink); text-decoration: none; }
+.wks2-cat img { inline-size: 100%; block-size: auto; aspect-ratio: 1; object-fit: cover; border-radius: 50%; border: 3px solid var(--mag-ink); background: var(--mag-paper); transition: transform .15s ease; }
+.wks2-cat b { font-family: var(--mag-mono); font-size: 12px; font-weight: 900; text-transform: uppercase; line-height: 1.15; }
+.wks2-cat.sale img { border-color: var(--mag-vermilion); box-shadow: 0 0 0 3px var(--mag-vermilion); }
+.wks2-cat.sale b { color: var(--mag-vermilion); }
+.wks2-cat[aria-current] img { box-shadow: 0 0 0 3px var(--mag-paper), 0 0 0 6px var(--mag-ink); }
+.wks2-cat:hover img, .wks2-cat:focus-visible img { transform: translateY(-2px); }
+.wks2-clubs { display: grid; gap: 8px; }
+.wks2-label { font-family: var(--mag-mono); font-size: 12px; font-weight: 900; text-transform: uppercase; }
+.wks2-clubs ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.wks2-club { display: inline-flex; align-items: center; gap: 8px; padding: 0 14px; border: 2px solid var(--mag-ink); border-radius: 999px; background: var(--mag-paper); color: var(--mag-ink); font-weight: 800; font-size: 14px; text-decoration: none; }
+.wks2-club i { inline-size: 12px; block-size: 12px; border-radius: 50%; background: var(--club); border: 2px solid var(--mag-ink); }
+.wks2-club[aria-current] { background: var(--mag-ink); color: var(--mag-paper); }
+.wks2-sale { position: relative; overflow: hidden; display: grid; grid-template-columns: 76px minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 12px 14px; border: 3px solid var(--mag-ink); box-shadow: 4px 4px 0 var(--mag-ink); color: var(--mag-paper); text-decoration: none; }
+.wks2-sale .wks-burst { inline-size: 72px; block-size: 72px; font-size: 20px; }
+.wks2-sale b { display: block; margin: 0; font-size: 24px; }
+.wks2-sale small { font-size: 13px; }
+.wks2-all { justify-self: center; min-inline-size: min(100%, 420px); justify-content: center; }
+.wks2-browse { display: grid; gap: 4px; }
+.wks2-h1 { font-size: clamp(30px, 9vw, 54px); margin: 0; }
+/* the plain card: the picture, the name, the price — the whole card opens the product */
+.wks-card { padding: 0; display: block; }
+.wks-card-in { display: grid; gap: 8px; padding: 0; color: var(--mag-ink); text-decoration: none; }
+.wks-card .wks-img { border: 2px solid var(--mag-ink); background: var(--mag-paper); transition: box-shadow .15s ease, transform .15s ease; }
+.wks-card-in:hover .wks-img, .wks-card-in:focus-visible .wks-img { box-shadow: 4px 4px 0 var(--mag-ink); transform: translate(-2px, -2px); }
+.wks-card .wks-t { gap: 2px; padding-inline: 2px; }
+.wks-card .wks-t b { font-size: 15px; }
+.wks-card .wks-price { font-size: 15px; margin-block-start: 2px; }
+@media (min-width: 560px) { .wks2-cats ul { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (min-width: 900px) {
+  .wks2 { gap: 28px; }
+  .wks2-hero { padding: 30px 34px; }
+  .wks2-hero-art { block-size: 150px; inset-block-end: 0; inset-inline-end: 30px; }
+  .wks2-cats ul { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 16px; }
+  .wks2-cat b { font-size: 13px; }
+  .wks2-sale { grid-template-columns: 100px minmax(0, 1fr) auto; padding: 16px 22px; }
+  .wks2-sale .wks-burst { inline-size: 96px; block-size: 96px; font-size: 26px; }
+  .wks-grid { gap: 22px 18px; }
+}
+@media (prefers-reduced-motion: reduce) { .wks2-cat img, .wks-card .wks-img { transition: none; } }
+.wks2-cats ul { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px 8px; }
+.wks2-cat b { font-size: 11px; }
+@media (min-width: 900px) { .wks2-cats ul { grid-template-columns: repeat(var(--n, 8), minmax(0, 1fr)); } .wks2-cat b { font-size: 12px; } }
