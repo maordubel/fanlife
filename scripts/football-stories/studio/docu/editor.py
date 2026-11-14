@@ -22,7 +22,7 @@ from .. import camera as C
 # A still held longer than this reads as a slide (measured on the pilot: stills of 8–13 s, 5.6 shots a minute; the
 # hand-written films the owner approved change picture every 2–4 s).
 MAX_STILL = 4.0
-TARGET = 3.4        # what a split aims for, so a cut can move to a beat or a word and still be under MAX_STILL
+TARGET = 2.6        # owner 14.11.2026, "more emphasis on editing": 3.4 → 2.6, towards the reference's ~45 changes a minute (editing-language). What a split aims for, so a cut can move to a beat or a word and still be under MAX_STILL
 MIN_SUB = 1.4       # a look shorter than this is a flicker, not a look (rule 142)
 MAX_CARD = 6.0      # a full-frame card is read in this time; after it the frame is paper with nothing happening
 WORD_HOLD = 2.6     # a slammed word (the turn of the story) lands, is read, and gets out of the picture's way
@@ -54,7 +54,7 @@ def span(dev: dict, d: float) -> tuple[float, float]:
 
 
 OPENING = 2.6       # the film's first cut comes by here: the gate wants a change inside its first three seconds (qa.FIRST_CHANGE_S)
-TIGHT = 2.4         # the re-plan's target for a shot the gate measured as too long or too still
+TIGHT = 1.8         # the re-plan's target for a shot the gate measured as too long or too still
 
 
 # THE PACE FOLLOWS THE SCORE SHEET (studio/drama.py). What a look aims to last, by the beat's emotion and intensity:

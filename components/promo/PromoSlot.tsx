@@ -15,6 +15,6 @@ export function isGreek(h:Headers):boolean{return (h.get('x-vercel-ip-country')|
 export async function PromoSlot(){
  const h=headers(),israel=isIsraeli(h),greece=isGreek(h),doc=await readPromo()
  if(!doc.settings.enabled)return israel?<RoundLockStrip/>:null
- const banners=doc.banners.filter(b=>b.enabled&&(b.audience==='all'||(b.audience==='israel'&&israel)||b.audience==='greece')).map(b=>({...b,note:''}))
+ const banners=doc.banners.filter(b=>b.enabled&&(b.audience==='all'||(b.audience==='israel'&&israel)||(b.audience==='world'&&!israel)||b.audience==='greece')).map(b=>({...b,note:''}))
  return <>{israel?<RoundLockStrip/>:null}{banners.length>0?<PromoBanner doc={{v:1,settings:doc.settings,banners,audit:[]}} israel={israel} greece={greece}/>:null}</>
 }

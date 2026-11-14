@@ -55,7 +55,9 @@ export async function shopCheckup(by='autopilot'):Promise<ShopHealth>{
  // 5 · sales start and end on time: prices follow the sales (a few per run); sold counts from the orders
  try{const r=await (await import('./saleRun')).applySales(by,10);repaired+=r.done;for(const e of r.errors.slice(0,3))notes.push(e)}catch(e){notes.push(`Sales: ${(e as Error).message}`)}
  try{await (await import('./saleRun')).countSold(by)}catch{/* orders are a nicety: never a failed check */}
- // 6 · the shop is open but shows nothing: say so
+ // 6 · once a day, the doctor mends the owner's slips (titles, duplicates, soft prints) and lists what needs his eye
+ try{const dr=await import('./doctor');if(dr.dueToday((await readShop()).doctor?.at)){const {syncListing}=await import('./build');await dr.shopDoctor(by,id=>pressProduct(id,by),syncListing)}}catch(e){notes.push(`Doctor: ${(e as Error).message}`)}
+ // 7 · the shop is open but shows nothing: say so
  const fresh=await readShop(),shown=fresh.products.filter(p=>p.visible&&p.status==='live').length
  if(fresh.settings.open&&!shown)notes.push('The shop is open but no product is shown.')
  return save(notes.length===0||notes.every(n=>/open but no product/.test(n)))

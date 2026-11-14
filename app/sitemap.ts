@@ -11,6 +11,7 @@ import { loadClub } from '@/lib/clubs/resolver'
 import { clubAwayData } from '@/lib/away-days/club'
 import { featuresOf } from '@/lib/features'
 import { legacyOpen } from '@/lib/master/legacy-access'
+import { BACK_PAGES } from '@/lib/back-pages/posts'
 
 /**
  * מפת האתר — every public gate, derived from `lib/gates.ts` so it can never drift from
@@ -67,6 +68,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...REGISTRY.filter((club) => live.has(club.id)).map((club) => ({ url: `${SITE_URL}/clubs/${club.id}`, lastModified: now })),
     ...(await clubPages(state, live, now)),
     { url: `${SITE_URL}/sources`, lastModified: now },
+    // Plan v8 (14.11.2026): the Back Pages, dated by their own last edit so a crawler sees what really changed.
+    { url: `${SITE_URL}/back-pages`, lastModified: new Date(`${BACK_PAGES.map((p) => p.updated).sort().at(-1)}T12:00:00Z`) },
+    ...BACK_PAGES.map((p) => ({ url: `${SITE_URL}/back-pages/${p.slug}`, lastModified: new Date(`${p.updated}T12:00:00Z`) })),
     // SEO pass (30.10.2026): the pages Google asks every publisher for, and the hub's own sections.
     ...['/about', '/privacy', '/terms', '/contact', '/our-games', '/market', '/shop', '/shirts'].map((path) => ({ url: `${SITE_URL}${path}`, lastModified: now })),
     // ALL FOOTBALL and Legends Manager are listed only while their switch is on for everyone (off = owner preview, a 404 to the public).

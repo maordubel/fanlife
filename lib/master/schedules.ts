@@ -5,6 +5,7 @@
  */
 export type Schedule={workflow:string;name:string;cron:string;utc:string;what:string;needs:string|null}
 export const SCHEDULES:readonly Schedule[]=[
+ {workflow:'indexnow.yml',name:'IndexNow — the whole sitemap',cron:'17 5 * * 0',utc:'Sundays 05:17 UTC',what:'Reports every page in the sitemap to IndexNow (Bing, and through it ChatGPT and Copilot search). After every deploy it also reports the Back Pages on its own.',needs:'Nothing: the key is public by design (public/<key>.txt)'},
  {workflow:'features-weekly.yml',name:'FAN LIFE feature videos',cron:'17 15 * * 0',utc:'Sundays 15:17 UTC',what:'Builds next week\'s seven challenge Shorts and one feature film, clubs in rotation, and sends them to your Telegram for approval.',needs:'Variable FAN_LIFE_RESEARCH_URL + secrets FAN_LIFE_CRON_SECRET and TELEGRAM_BOT_TOKEN'},
  {workflow:'stories-pitch.yml',name:'Football Stories · daily pitch',cron:'23 4 * * *',utc:'Daily 04:23 UTC',what:'Proposes the day\'s film ideas to the studio from the clubs\' recorded nights; nothing is made until you approve one.',needs:'Variable FAN_LIFE_RESEARCH_URL + secret FAN_LIFE_CRON_SECRET'},
  {workflow:'deploy-apps.yml',name:'Other apps · Cloud Run',cron:'23 * * * *',utc:'Every hour at :23',what:'Rebuilds THE WORKER, FUCK YOU, DUBID and dubelteam.com from their own repositories and deploys them to Cloud Run when their main branch moved.',needs:'Nothing: keyless Google access (deploy/cloudrun/target.json).'},

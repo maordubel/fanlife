@@ -95,13 +95,16 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [136](136.md) · Every Football Stories film asks once to follow, as a supporter would (2.11.2026)
 - [141](141.md) · A thumbnail's hook is read off the record (5.11.2026)
 - [142](142.md) · CLASSIFIED is drawn on VOX's case board, and nothing on it flickers (5.11.2026)
+- [book-channel-banners](book-channel-banners.md) · The novel and The Kypseli Tapes in the slide-up rotation: Hebrew to Israel, English ('world') to everyone else, one family each, a Sunday "new tape tonight" variant (14.11.2026)
 - [studio-autopilot](studio-autopilot.md) · The studio's autopilot publishes only after the owner had two hours to cancel on Telegram; a film nobody uploads loses its big files after seven days (12.11.2026)
 - [front-door-shelf](front-door-shelf.md) · A public page is answered from the front door's shelf, fresh for a minute and stale while it is renewed; the desk, APIs and the owner's session always reach the server (13.11.2026)
 - [studio-experience](studio-experience.md) · Every Football Stories film is an experience: a judged hook, a DOCU edit with no still past 4 s, the hand-made graphics on data only, and a gate that measures it (12.11.2026)
+- [back-pages](back-pages.md) · The Back Pages answer a real question, promise only what is live, end at a door, and are reported to IndexNow after each deploy (14.11.2026)
 - [writer-salvage](writer-salvage.md) · The studio always makes a film and never says what it cannot prove: a failing script is repaired in code (re-cite, remove, copy the hook), made shorter, never padded; a thin archive is written short (13.11.2026)
 - [model-film](model-film.md) · Every Football Stories film is assembled in the model's order and ships as the model's package: hook, question card, chapters on a turn, bookend, Shorts, Reels, marketing (13.11.2026)
 - [no-sliced-parallax](no-sliced-parallax.md) · Never slice a picture into bands that move apart to fake depth; a still moves as one sheet, only a real cut-out moves in front of it (owner, 14.11.2026)
 - [editing-language](editing-language.md) · Five editing rules for every film: one world of four inks, a 12 s cold open then the question card, numbers as objects, one shape per film, never over 20 s in one visual language (enforced by the gate) (owner, 14.11.2026)
+- [studio-pictures](studio-pictures.md) · Rival colour read from the picture pixels; a named real person never gets a generic figure; the PNG library enters every documentary through the media index (owner, 14.11.2026)
 
 ## Control room, research desk and CRM
 
@@ -213,6 +216,7 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [shop-design-controls](shop-design-controls.md) · Front/back/both, size, garment colours, background removal, per-product margin, selling listing text (13.11.2026)
 - [shop-storefront](shop-storefront.md) · The selling /shop: promises, shop by club, curated shelves, same-design cross-sell, JSON-LD, listing limits, automatic fitting; desk in four tabs (13.11.2026)
 - [shop-sales](shop-sales.md) · Real price-cut sales (club / category / design, dates, never under cost + 10%), ribbon, free shipping, favourites, best sellers; the megastore order of /shop and the browse view (14.11.2026)
+- [shop-quality-brand](shop-quality-brand.md) · Builder in four steps with front/back/two pictures; quality-first blanks, printers and sizes; wrap covers; FAN LIFE seal on every garment; categories; daily doctor; sales coach (14.11.2026)
 - [shop-checks-itself](shop-checks-itself.md) · The shop re-reads every product from Printify hourly, repairs links and pictures, hides what was deleted, re-presses passing failures; never shows anything itself (12.11.2026)
 - [hub-order](hub-order.md) · The hub and a club home are put in order, not redesigned: nothing hidden, the features indexed, clubs as a slide on a phone, no next-match box (12.11.2026)
 - [archive-official-source](archive-official-source.md) · An official source approves a record on its own: league, federation, competition, or the club's own site (13.11.2026, widened 14.11.2026)

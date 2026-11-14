@@ -19,12 +19,12 @@ export type KindSpec={
 const LIGHT=/^(white|natural|sand|ash|soft cream|ivory|vintage white|heather dust|bone)$/i
 const ADULT=/^(s|m|l|xl|2xl|xxl)$/i
 export const KIND_SPECS:Record<Kind,KindSpec>={
- poster:{label:'Poster',plural:'Posters',find:[/^matte vertical posters?$/i,/vertical.*poster/i,/poster/i],avoid:/frame|hanger|horizontal/i,positions:['front'],maxVariants:8,scale:1},
- framed:{label:'Framed print',plural:'Framed prints',find:[/framed vertical poster/i,/framed.*(poster|print|paper)/i],avoid:/horizontal/i,positions:['front'],maxVariants:8,scale:1},
- canvas:{label:'Canvas',plural:'Canvases',find:[/^matte canvas.*stretched/i,/canvas.*(stretched|gallery|wrap)/i],avoid:/horizontal|bag|tote|shoe|sneaker/i,positions:['front'],maxVariants:6,scale:1},
+ poster:{label:'Poster',plural:'Posters',find:[/^fine art posters?$/i,/^giclee art prints?$/i,/^premium matte vertical posters?$/i,/^matte vertical posters?$/i,/vertical.*poster/i,/poster/i],avoid:/frame|hanger|horizontal/i,positions:['front'],maxVariants:8,scale:1},
+ framed:{label:'Framed print',plural:'Framed prints',find:[/^premium framed vertical posters?$/i,/framed vertical poster/i,/framed.*(poster|print|paper)/i],avoid:/horizontal/i,positions:['front'],maxVariants:8,scale:1},
+ canvas:{label:'Canvas',plural:'Canvases',find:[/^matte canvas, stretched, 1\.25/i,/^canvas gallery wraps?$/i,/^matte canvas.*stretched/i,/canvas.*(stretched|gallery|wrap)/i],avoid:/horizontal|bag|tote|shoe|sneaker/i,positions:['front'],maxVariants:6,scale:1},
  tote:{label:'Tote bag',plural:'Tote bags',find:[/^cotton canvas tote bag$/i,/cotton.*tote/i,/tote bag/i],avoid:/aop|all[- ]over|weekender/i,positions:['front'],colors:/^(natural|white|beige|ecru)$/i,maxVariants:4,scale:.86},
- tee:{label:'T-shirt',plural:'T-shirts',find:[/^unisex jersey short sleeve tee$/i,/^unisex heavy cotton tee$/i,/unisex.*(tee|t-shirt)/i],avoid:/kids|youth|toddler|infant|baby|aop|women|long sleeve/i,positions:['front'],colors:LIGHT,sizes:ADULT,maxVariants:24,scale:.78},
- hoodie:{label:'Hoodie',plural:'Hoodies',find:[/^unisex heavy blend.*hooded sweatshirt$/i,/unisex.*hood/i],avoid:/kids|youth|toddler|aop|zip/i,positions:['front'],colors:LIGHT,sizes:ADULT,maxVariants:24,scale:.74},
+ tee:{label:'T-shirt',plural:'T-shirts',find:[/^unisex garment-dyed t-shirt$/i,/^unisex jersey short sleeve tee$/i,/^unisex heavy cotton tee$/i,/unisex.*(tee|t-shirt)/i],avoid:/kids|youth|toddler|infant|baby|aop|women|long sleeve/i,positions:['front'],colors:LIGHT,sizes:ADULT,maxVariants:24,scale:.78},
+ hoodie:{label:'Hoodie',plural:'Hoodies',find:[/^unisex premium pullover hoodie$/i,/^unisex garment-dyed hoodie$/i,/^unisex heavy blend.*hooded sweatshirt$/i,/unisex.*hood/i],avoid:/kids|youth|toddler|aop|zip/i,positions:['front'],colors:LIGHT,sizes:ADULT,maxVariants:24,scale:.74},
  'kids-tee':{label:'Kids T-shirt',plural:'Kids T-shirts',find:[/^kids heavy cotton.*tee$/i,/(kids|youth).*(tee|t-shirt)/i],avoid:/aop|long sleeve|toddler|infant|baby/i,positions:['front'],colors:LIGHT,maxVariants:16,scale:.78,kids:true},
  mug:{label:'Mug',plural:'Mugs',find:[/^ceramic mug.*11\s?oz/i,/^(white )?ceramic mug/i,/mug.*11\s?oz/i],avoid:/travel|enamel|accent|color morphing|magic|latte/i,positions:['front'],maxVariants:2,scale:1},
  sticker:{label:'Sticker',plural:'Stickers',find:[/^kiss[- ]cut stickers?$/i,/square stickers?/i,/sticker/i],avoid:/sheet|bumper|roll|label/i,positions:['front'],maxVariants:4,scale:1},
@@ -33,8 +33,12 @@ export const KIND_SPECS:Record<Kind,KindSpec>={
  more:{label:'From the catalogue',plural:'More',find:[],positions:['front','default'],maxVariants:24,scale:1},
  notebook:{label:'Notebook',plural:'Notebooks',find:[/^hardcover journal/i,/^spiral notebook/i,/(journal|notebook)/i],avoid:/sticker/i,positions:['front','cover'],maxVariants:3,scale:1},
 }
-/** print providers we would rather print with (Europe first: the audience is here and the parcel is cheaper), then anyone */
-export const PROVIDER_ORDER=[/print clever/i,/textildruck europa/i,/opt ondemand/i,/printify choice/i,/x-print/i,/stoked on printing/i,/fyby|prima printing/i,/monster digital/i,/sps|swiftpod/i]
+/**
+ * Print providers in order of preference — QUALITY FIRST (owner, 14.11.2026: "the better products the supplier offers, quality
+ * above all"): Printify Choice routes each order to a top-rated provider under Printify's Quality Promise; then the European
+ * printers known for it (the audience is here and the parcel is cheaper), then anyone.
+ */
+export const PROVIDER_ORDER=[/printify choice/i,/print clever/i,/textildruck europa/i,/opt ondemand/i,/x-print/i,/stoked on printing/i,/fyby|prima printing/i,/monster digital/i,/sps|swiftpod/i]
 /** the launch set: each chosen library picture is offered on these, the things a supporter buys first */
 export const LAUNCH_KINDS:Kind[]=['poster','tote','tee','mug']
 /** how many library pictures per subject go into the launch drafts */

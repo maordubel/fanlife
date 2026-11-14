@@ -24,17 +24,17 @@ export const MIN_PERCENT=5,MAX_PERCENT=60
 export const FLOOR_SHARE=.1
 
 export const isActive=(s:Sale,now=Date.now())=>s.on&&s.percent>0&&(!s.starts||Date.parse(s.starts)<=now)&&(!s.until||Date.parse(s.until)>now)
-export const covers=(s:Sale,p:Pick<ShopProduct,'subject'|'kind'|'blueprint'|'art'>)=>{
+export const covers=(s:Sale,p:Pick<ShopProduct,'subject'|'kind'|'blueprint'|'art'|'shelves'>)=>{
  const v=s.scope.value
  switch(s.scope.type){
   case 'all':return true
   case 'club':return p.subject===v
-  case 'shelf':return shelfOf(p.kind,p.blueprint?.title)===(v as Shelf)
+  case 'shelf':return shelfOf(p.kind,p.blueprint?.title)===(v as Shelf)||!!p.shelves?.includes(v as Shelf)
   case 'design':return designKey(p as ShopProduct)===v
  }
 }
 /** the sale a product should carry now: the deepest active one that covers it */
-export function saleFor(p:Pick<ShopProduct,'subject'|'kind'|'blueprint'|'art'>,sales:Sale[]|undefined,now=Date.now()):Sale|null{
+export function saleFor(p:Pick<ShopProduct,'subject'|'kind'|'blueprint'|'art'|'shelves'>,sales:Sale[]|undefined,now=Date.now()):Sale|null{
  let best:Sale|null=null
  for(const s of sales??[])if(isActive(s,now)&&covers(s,p)&&(!best||s.percent>best.percent))best=s
  return best

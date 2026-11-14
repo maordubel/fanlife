@@ -2,7 +2,8 @@
  * The owner's own advertising: 320×50 banners for his other apps, slid up from the bottom of the screen.
  * Pure types and rules — no server, no DOM — so the server layout, the browser and the control room judge a banner by the SAME code.
  */
-export type Audience='all'|'israel'|'greece'
+/** 'world' = every visitor outside Israel: the English half of a banner whose Hebrew twin is 'israel' */
+export type Audience='all'|'israel'|'greece'|'world'
 export type Targeting={home:boolean;allClubs:boolean;clubs:string[];other:boolean;paths:string[];exclude:string[]}
 export type Banner={
  id:string;name:string;enabled:boolean

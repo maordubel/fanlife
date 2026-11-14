@@ -1,0 +1,46 @@
+name: IndexNow · tell search engines
+
+# Plan v8 (14.11.2026): after every production deploy, FAN LIFE reports its Back Pages to IndexNow (Bing, Yandex,
+# Seznam, Naver — Bing also feeds ChatGPT and Copilot search). Once a week it reports every page in the sitemap.
+# The key is public by design: the protocol proves ownership by serving it at /<key>.txt (public/).
+# Google does not take IndexNow; it reads the sitemap submitted in Search Console.
+
+on:
+  workflow_run:
+    workflows: ['Deploy · Cloud Run']
+    types: [completed]
+  schedule:
+    - cron: '17 5 * * 0'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      SITE: https://fanlife.dubelteam.com
+      KEY: 70fceae2292df955b1ca7e3cb2a1f4a7
+      FULL: ${{ github.event_name != 'workflow_run' }}
+    steps:
+      - name: Collect URLs from the live sitemap
+        run: |
+          curl -fsSL --retry 5 --retry-delay 20 "$SITE/sitemap.xml" -o sitemap.xml
+          grep -o '<loc>[^<]*</loc>' sitemap.xml | sed 's#</\?loc>##g' > all.txt
+          if [ "$FULL" = "true" ]; then cp all.txt urls.txt; else { echo "$SITE"; grep '/back-pages' all.txt; } > urls.txt; fi
+          echo "$(wc -l < urls.txt) URLs"
+      - name: Key is served?
+        run: test "$(curl -fsSL "$SITE/$KEY.txt")" = "$KEY"
+      - name: Submit
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request
+          urls = [u for u in open('urls.txt').read().split() if u][:10000]
+          body = json.dumps({'host': 'fanlife.dubelteam.com', 'key': os.environ['KEY'], 'keyLocation': f"{os.environ['SITE']}/{os.environ['KEY']}.txt", 'urlList': urls}).encode()
+          req = urllib.request.Request('https://api.indexnow.org/indexnow', data=body, headers={'content-type': 'application/json; charset=utf-8'})
+          with urllib.request.urlopen(req, timeout=30) as r:
+              print('IndexNow', r.status, len(urls), 'URLs')
+          PY

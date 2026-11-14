@@ -47,7 +47,7 @@ export default async function Shop({searchParams}:{searchParams:{club?:string;sh
  const design=all.some(p=>p.design===searchParams.design)?searchParams.design!:null,sort=SORTS.find(s=>s===searchParams.sort)??null
  const browsing=!!(dept||budget||design||sort||searchParams.view==='all')
  const mine=who?all.filter(p=>p.subject===who):all
- const inDept=(p:PublicProduct,d:Dept)=>d==='new'?isNew(p):d==='gifts'?eurOf(p)<=25:d==='sale'?!!p.was:d==='fav'?fav.has(p.design)||p.sold>0:p.shelf===d
+ const inDept=(p:PublicProduct,d:Dept)=>d==='new'?isNew(p):d==='gifts'?eurOf(p)<=25:d==='sale'?!!p.was:d==='fav'?fav.has(p.design)||p.sold>0:p.shelf===d||!!p.also?.includes(d as Shelf)
  const href=(q:Partial<Record<'club'|'shelf'|'design'|'sort'|'price'|'view',string|null>>)=>{const u=new URLSearchParams()
   const v={club:who,shelf:dept,design,sort,price:budget,view:null,...q};for(const [k,x] of Object.entries(v))if(x)u.set(k,x);const t=u.toString();return t?`/shop?${t}`:'/shop'}
  const perDesign=new Map<string,number>();for(const p of all)perDesign.set(p.design,(perDesign.get(p.design)||0)+1)

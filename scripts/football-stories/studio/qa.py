@@ -158,6 +158,7 @@ JITTER_PX, SHAKE_REVERSALS = 6.0, 3
 # VOX's `worst_jerk`: the largest change of the frame's speed from one frame to the next, outside cuts (film px). VOX
 # guards its camera at 130; a rendered film is held to the same.
 WORST_JERK_PX = 130.0
+LANGUAGE_RUN_MAX_S = 24.0   # editing rule 5: ~20 s in one visual language, 4 s of tolerance for a card landing inside a run
 
 
 def read_frames(path: Path, start: float = 0.0):
@@ -437,6 +438,20 @@ def experience(master: Path, plan: dict, job_dir: Path | None = None, intro_s: f
     calm = not num['flashes'] and not num['shakes'] and num['worst_jerk'] <= WORST_JERK_PX
     checks.append(('experience · calm picture', calm, f'{len(num["flashes"])} flashes, {len(num["shakes"])} shakes, worst jerk {num["worst_jerk"]} px (limit {WORST_JERK_PX:.0f})'
                    + (f' — a flash at {num["flashes"][0]}s' if num['flashes'] else f' — the picture shakes at {num["shakes"][0]}s' if num['shakes'] else '')))
+    if shots and all('d' in x and 'language' in x for x in shots):
+        # Editing rule 5 (docs/rules/editing-language.md): never more than ~20 s in one visual language. A failure re-plans
+        # like a long shot: the run's shots are cut tighter, which lets the editor's punches and explainers break it.
+        run, last, worst, at_s, t0 = 0.0, None, 0.0, 0.0, 0.0
+        for x in shots:
+            lang = x.get('language')
+            run, t0 = (run + x['d'], t0) if lang == last else (x['d'], x.get('t', 0.0))
+            last = lang
+            if run > worst:
+                worst, at_s = run, t0
+        ok_run = worst <= LANGUAGE_RUN_MAX_S
+        checks.append(('experience · language run', ok_run, f'longest run in one visual language {worst:.1f}s from {at_s:.1f}s (max {LANGUAGE_RUN_MAX_S:.0f}s)'))
+        if not ok_run:
+            at(at_s, 'long', worst)
     if cut_errors:
         checks.append(('experience · the editor\'s rules', False, '; '.join(cut_errors[:4])))
     if not enforced:
