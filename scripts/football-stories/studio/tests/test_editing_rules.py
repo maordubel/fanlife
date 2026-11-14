@@ -93,3 +93,28 @@ class FilmShape(unittest.TestCase):
         self.assertIn('svg', B.shape_mask('ticket'))
         self.assertIn('circle', B.shape_mask('shamrock'))
         self.assertEqual(B.shape_mask('nope'), B.shape_mask('ticket'))
+
+
+class HeldScoreboard(unittest.TestCase):
+    """Editing rule 3: one score board a match chapter, turning on each goal, instead of a box per goal picture."""
+    def test_goals_in_one_chapter_share_one_board(self):
+        a = Adapter.__new__(Adapter)
+        def g(t, ch, frm, to):
+            return {'t': t, 'd': 4.0, 'meta': {'type': 'goal', 'chapter': ch},
+                    'shots': [{'kind': 'image', 'mini': {'home': 'Pao', 'away': 'Aek', 'score': frm, 'at': 0.4, 'flip': {'score': to, 'at': 1.5}}}]}
+        beats = [g(10, 1, '0–0', '1–0'), {'t': 14, 'd': 4.0, 'meta': {'type': 'illustration', 'chapter': 1}, 'shots': []},
+                 g(18, 1, '1–0', '2–0'), g(30, 2, '2–0', '2–1')]
+        a.score_board(beats)
+        boards = [(b['t'], x) for b in beats for x in b['shots'] if x['kind'] == 'flap']
+        self.assertEqual(len(boards), 2)
+        t, first = boards[0]
+        self.assertEqual((t, first['frm'], first['to'], first['turns']), (10, '0–0', '1–0', [[9.5, '2–0']]))
+        self.assertAlmostEqual(first['d'], 11.9)
+        self.assertEqual(first['small'], 'PAO · AEK')
+        self.assertFalse(any('mini' in x for b in beats for x in b['shots']))
+
+    def test_a_goal_without_order_keeps_its_box(self):
+        a = Adapter.__new__(Adapter)
+        beats = [{'t': 0, 'd': 4.0, 'meta': {'type': 'goal', 'chapter': 0}, 'shots': [{'kind': 'image', 'mini': {'score': '3–1', 'at': 1.2}}]}]
+        a.score_board(beats)
+        self.assertIn('mini', beats[0]['shots'][0])

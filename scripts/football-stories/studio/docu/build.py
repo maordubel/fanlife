@@ -290,23 +290,39 @@ class Film:
             self.tween(f'tl.fromTo("#{cid}",{{y:0,scale:1}},{{y:-300,scale:0.62,duration:0.7,ease:"power3.inOut",immediateRender:false}},{r2(t + s["shrink_at"])});')
 
     def flap(self, s, t, d):
-        """NUMBERS ARE OBJECTS (editing rule 3): a split-flap board — each character a tile that turns over once from the
-        number before to this one (a year: the film travels back; a score: it changes on the cut). One turn per tile,
-        eased, staggered left to right; nothing flickers (rule 142). `frm` and `to` are strings of the same length."""
+        """NUMBERS ARE OBJECTS (editing rule 3): a split-flap board — each character a tile that turns over from the
+        number before to the next (a year: the film travels back; a score: it changes on the goal). One turn per tile per
+        change, eased, staggered left to right; nothing flickers (rule 142). `frm` and `to` are strings of the same
+        length. `turns` [[at, text], ...] keeps turning the same board later (the held scoreboard: one board a match
+        chapter, a turn on every goal); `corner` sets it small in the top corner instead of centred."""
         cid = self.id('flap')
-        a, b = str(s.get('frm', '')), str(s['to'])
+        b = str(s['to'])
+        a = str(s.get('frm', ''))
         a = a.rjust(len(b))[-len(b):] if a else ' ' * len(b)
         at = s.get('at', 0.0)
+        seq = [(t + max(at + 0.35, s.get('turn_at') or 0), a, b)]   # the first turn: on the goal word, or as it lands
+        cur = b
+        for k, nxt in s.get('turns') or []:
+            nxt = str(nxt).rjust(len(b))[-len(b):]
+            seq.append((t + k, cur, nxt))
+            cur = nxt
         tiles = ''.join(f'<div class="fp"><b class="fa">{e(x)}</b><b class="fb">{e(y)}</b></div>' for x, y in zip(a, b))
         small = f'<small>{e(s["small"])}</small>' if s.get('small') else ''
-        self.clip(cid, t + at, d - at, f'<div class="flapw"><div class="flaps">{tiles}</div>{small}</div>', s.get('z', 14), 'paper' if s.get('full') else '')
-        T = t + at + 0.35
-        for i in range(len(b)):
-            if a[i] == b[i]:
-                self.tween(f'tl.set("#{cid} .fp:nth-child({i + 1}) .fa",{{opacity:0}},{r2(t + at)});tl.set("#{cid} .fp:nth-child({i + 1}) .fb",{{rotationX:0}},{r2(t + at)});')
-                continue
-            self.tween(f'tl.fromTo("#{cid} .fp:nth-child({i + 1}) .fa",{{rotationX:0}},{{rotationX:-90,duration:0.22,ease:"power2.in"}},{r2(T + 0.12 * i)});'
-                       f'tl.fromTo("#{cid} .fp:nth-child({i + 1}) .fb",{{rotationX:90}},{{rotationX:0,duration:0.26,ease:"power2.out"}},{r2(T + 0.12 * i + 0.22)});')
+        cls = 'flapw corner' if s.get('corner') else 'flapw'
+        self.clip(cid, t + at, d - at, f'<div class="{cls}"><div class="flaps">{tiles}</div>{small}</div>', s.get('z', 14), 'paper' if s.get('full') else '')
+        for n, (T, x, y) in enumerate(seq):
+            for i in range(len(y)):
+                fa, fb = f'#{cid} .fp:nth-child({i + 1}) .fa', f'#{cid} .fp:nth-child({i + 1}) .fb'
+                if n:   # the board as it stands is the front face again, the next number waits on the back
+                    self.tween(f'tl.set("{fa}",{{textContent:"{e(x[i])}",rotationX:0,opacity:1}},{r2(T - 0.01)});'
+                               f'tl.set("{fb}",{{textContent:"{e(y[i])}",rotationX:90}},{r2(T - 0.01)});')
+                if x[i] == y[i]:
+                    self.tween(f'tl.set("{fa}",{{opacity:0}},{r2(T)});tl.set("{fb}",{{rotationX:0}},{r2(T)});')
+                    continue
+                self.tween(f'tl.fromTo("{fa}",{{rotationX:0}},{{rotationX:-90,duration:0.22,ease:"power2.in",immediateRender:false}},{r2(T + 0.12 * i)});'
+                           f'tl.fromTo("{fb}",{{rotationX:90}},{{rotationX:0,duration:0.26,ease:"power2.out",immediateRender:false}},{r2(T + 0.12 * i + 0.22)});')
+            if n:
+                self.sound('stamp', T, None, 0.35)
 
     def badge(self, src, name) -> str:
         """A crest when one is on file; otherwise the club's initials on a plain roundel — never a borrowed badge."""
@@ -862,7 +878,7 @@ class Film:
             if edited:
                 mine = self.made[k0:]
                 self.transition(b['in'], b['t'], [m for m in mine if abs(m['t'] - b['t']) < 0.02], out_ids)
-                out_ids = [m for m in mine if m['z'] >= end - 0.02]
+                out_ids = [m for m in mine if end - 0.02 <= m['z'] <= end + 1.0]   # a held board runs on: no transition moves it
             for snd in b.get('sound', []):
                 self.sound(snd[0], b['t'] + snd[1], snd[2] if len(snd) > 2 else None, snd[3] if len(snd) > 3 else 0.6)
             if b.get('flash') is not None:
@@ -982,7 +998,7 @@ video.clip{{width:1920px;height:1080px}}
 .prn{{position:absolute;left:210px;top:92px;width:1500px;height:844px;overflow:hidden;border:18px solid #fff;box-shadow:22px 22px 0 rgba(20,17,13,.5)}} .prn .phi{{width:100%;height:100%}}
 .duo{{position:absolute;left:0;top:0;width:1920px;height:1080px;mix-blend-mode:multiply;opacity:.85}}
 .subw .sub.kar{{top:auto;bottom:54px;font:400 46px/1.25 'Head';text-transform:uppercase;letter-spacing:1px;color:{P};background:rgba(20,17,13,.88);padding:10px 26px;max-width:1500px}} .sub.kar span{{padding:0 4px}}
-.flapw{{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px}} .flaps{{display:flex;gap:14px;perspective:1400px}} .fp{{position:relative;width:170px;height:240px}} .fp b{{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:{INK};color:{P};font:400 190px/1 'Ultra';border-radius:10px;box-shadow:0 10px 0 rgba(0,0,0,.35);backface-visibility:hidden;transform-origin:50% 50%}} .fp b::after{{content:'';position:absolute;left:0;right:0;top:50%;height:3px;background:rgba(255,255,255,.18)}} .fp .fb{{transform:rotateX(90deg)}} .flapw small{{font:700 40px 'Caps';letter-spacing:10px;color:{INK};background:{P};padding:8px 22px}} .fw{{position:absolute;left:150px;top:150px;width:1620px;color:{INK}}} .fh b{{display:block;font:400 92px/1 'Ultra'}} .fh span{{font:700 40px 'Caps';letter-spacing:8px}}
+.flapw{{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px}} .flaps{{display:flex;gap:14px;perspective:1400px}} .fp{{position:relative;width:170px;height:240px}} .fp b{{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:{INK};color:{P};font:400 190px/1 'Ultra';border-radius:10px;box-shadow:0 10px 0 rgba(0,0,0,.35);backface-visibility:hidden;transform-origin:50% 50%}} .fp b::after{{content:'';position:absolute;left:0;right:0;top:50%;height:3px;background:rgba(255,255,255,.18)}} .fp .fb{{transform:rotateX(90deg)}} .flapw.corner{{inset:auto;right:90px;top:120px;gap:12px;align-items:flex-end}} .flapw.corner .fp{{width:74px;height:104px}} .flapw.corner .fp b{{font-size:80px;border-radius:6px;box-shadow:0 6px 0 rgba(0,0,0,.35)}} .flapw.corner small{{font-size:24px;letter-spacing:5px;padding:5px 12px}} .flapw small{{font:700 40px 'Caps';letter-spacing:10px;color:{INK};background:{P};padding:8px 22px}} .fw{{position:absolute;left:150px;top:150px;width:1620px;color:{INK}}} .fh b{{display:block;font:400 92px/1 'Ultra'}} .fh span{{font:700 40px 'Caps';letter-spacing:8px}}
 .fg{{display:grid;gap:12px;margin-top:40px}} .ft{{height:96px;display:flex;align-items:center;justify-content:center;color:#fff;font:400 52px 'Ultra';border:4px solid {INK};box-shadow:6px 6px 0 {INK}}}
 .fbr{{margin-top:44px;text-align:left}} .fwb{{top:120px}} .fwb .fh b{{font-size:170px}} .fwb .fh span{{font-size:46px}} .fwb .fbr span{{font-size:60px;padding:12px 30px}}
 .fbr span{{display:inline-block;margin-top:14px;background:{INK};color:#fff;font:700 40px 'Caps';letter-spacing:4px;padding:8px 22px}}

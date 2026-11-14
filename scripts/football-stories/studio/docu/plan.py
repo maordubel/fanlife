@@ -720,6 +720,7 @@ class Adapter:
             out.append(b)
         self.question_cards(out)
         self.year_flaps(out)
+        self.score_board(out)
         return out
 
     YEAR = re.compile(r'^(19[0-9]{2}|20[0-3][0-9])[.,;:!?]?$')
@@ -746,6 +747,36 @@ class Adapter:
                         last, shown = m.group(1), shown + 1
                         chapters.add(b['meta'].get('chapter'))
                     break
+
+    def score_board(self, beats: list[dict]) -> None:
+        """Editing rule 3, the held scoreboard: in a chapter with goals told in the record's order, the score is one board
+        that stays up from the first goal to the end of the chapter and turns on every goal, instead of a new score box on
+        each goal picture. Only scores the record gives (the beat's `mini` with its `flip`); a goal without order keeps
+        its own box."""
+        def mini_of(b):
+            for sh in b['shots']:
+                m = sh.get('mini')
+                if m and m.get('flip'):
+                    return sh, m
+            return None, None
+        groups: dict = {}
+        for b in beats:
+            sh, m = mini_of(b)
+            if m:
+                groups.setdefault(b['meta'].get('chapter'), []).append((b, sh, m))
+        for ch, goals in groups.items():
+            first, sh0, m0 = goals[0]
+            last = max((b for b in beats if b['meta'].get('chapter') == ch), key=lambda b: b['t'] + b['d'])
+            end = last['t'] + last['d'] - first['t'] - 0.1
+            board = {'kind': 'flap', 'corner': True, 'frm': m0['score'], 'to': m0['flip']['score'], 'at': m0.get('at', 0.4),
+                     'turns': [], 'd': round(end, 3), 'z': 13,
+                     'small': f"{str(m0.get('home') or '').upper()} · {str(m0.get('away') or '').upper()}".strip(' ·')}
+            board['turn_at'] = m0['flip']['at']
+            for b, sh, m in goals[1:]:
+                board['turns'].append([round(b['t'] - first['t'] + m['flip']['at'], 3), m['flip']['score']])
+            for b, sh, m in goals:
+                sh.pop('mini', None)
+            first['shots'].append(board)
 
     QUESTION_MAX_WORDS = 9      # a question card is read at a glance (editing rule 2: "the film's question in type")
     QUESTION_BY_S = 15.0        # on screen before 0:15 (rule model-film 3; qa.STAKE_BY_S)
