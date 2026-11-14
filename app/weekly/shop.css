@@ -82,3 +82,119 @@
   .wks-make { grid-template-columns: minmax(0, 1fr) auto; align-items: center; padding: 22px; }
 }
 @media (min-width: 1100px) { .wks-clubgrid { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
+/* ═════ THE MEGASTORE ROUND (14.11.2026): ribbon, short cover, promises, categories, crests, sale, budgets, filters, questions ═════ */
+.wks-ribbon { display: block; margin-block-end: -6px; padding: 9px 12px; background: var(--mag-ink); color: var(--mag-paper); font-family: var(--mag-mono); font-size: 13px; font-weight: 800; text-align: center; text-decoration: none; text-transform: uppercase; letter-spacing: .02em; }
+.wks-ribbon.sale { background: var(--mag-vermilion); border: 3px solid var(--mag-ink); }
+.wks-head { grid-template-columns: 64px minmax(0, 1fr); padding: 14px 12px; }
+.wks-head-art { block-size: 76px; }
+.wks-h1 { font-size: clamp(32px, 10vw, 68px); }
+.wks-sub { margin-block: 4px 0; max-inline-size: 46ch; }
+.wks-ctas { display: flex; flex-wrap: wrap; gap: 8px; margin-block: 12px 0; }
+.wks-ctas .wk-btn { min-block-size: 44px; }
+.wks-promises { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 3px solid var(--mag-ink); background: var(--mag-paper); }
+.wks-promises li { display: grid; gap: 2px; padding: 8px; border-inline-start: 2px dashed var(--mag-ink); }
+.wks-promises li:first-child { border-inline-start: 0; }
+.wks-promises b { font-family: var(--mag-mono); font-size: 12px; text-transform: uppercase; line-height: 1.15; }
+.wks-promises b::before { content: '✓ '; color: var(--mag-vermilion); }
+.wks-promises span { display: none; font-size: 12px; opacity: .8; }
+.wks-clubs h2 { margin: 0; }
+.wks-depts { display: grid; gap: 10px; }
+.wks-depts .wk-head { margin: 0; }
+.wks-deptgrid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.wks-dept { display: grid; color: var(--mag-ink); text-decoration: none; border: 3px solid var(--mag-ink); background: var(--mag-paper); box-shadow: 4px 4px 0 var(--mag-ink); overflow: hidden; }
+.wks-dept img { inline-size: 100%; block-size: auto; aspect-ratio: 4 / 3; object-fit: cover; background: var(--mag-card, var(--mag-paper)); border-block-end: 3px solid var(--mag-ink); transition: transform .2s ease; }
+.wks-dept > span { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 8px; padding: 8px 10px; }
+.wks-dept b { font-family: var(--mag-mono); font-size: 14px; font-weight: 900; text-transform: uppercase; }
+.wks-dept small { font-size: 12px; opacity: .75; }
+.wks-dept.sale > span { background: var(--mag-vermilion); color: var(--mag-paper); }
+.wks-dept:hover img, .wks-dept:focus-visible img { transform: scale(1.04); }
+.wks-sale { position: relative; overflow: hidden; display: grid; gap: 14px; padding: 14px; border: 3px solid var(--mag-ink); box-shadow: 5px 5px 0 var(--mag-ink); }
+.wks-sale-head { position: relative; display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 12px; align-items: center; }
+.wks-sale-head .wks-burst { inline-size: 84px; block-size: 84px; font-size: 22px; }
+.wks-sale-head .wk-head { margin: 0; }
+.wks-sale .wks-grid, .wks-sale-all { position: relative; }
+.wks-sale-all { justify-self: start; }
+.wks-more { display: inline-flex; align-items: center; gap: 6px; padding-inline: 4px; font-family: var(--mag-mono); font-size: 13px; font-weight: 800; text-transform: uppercase; color: var(--mag-ink); text-decoration: underline; text-underline-offset: 4px; }
+.wks-stack { display: grid; gap: 18px; }
+.wks-budget { display: grid; gap: 12px; padding: 14px; }
+.wks-budget .wk-head { margin: 0; }
+.wks-budgets { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; }
+.wks-budgets .wk-btn { inline-size: 100%; justify-content: space-between; }
+.wks-budgets small { font-size: 11px; opacity: .7; }
+.wks-faq { display: grid; gap: 8px; }
+.wks-faq .wk-head { margin: 0 0 4px; }
+.wks-fold { border: 3px solid var(--mag-ink); background: var(--mag-paper); }
+.wks-fold summary { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 12px; cursor: pointer; font-weight: 800; list-style: none; }
+.wks-fold summary::-webkit-details-marker { display: none; }
+.wks-fold summary::after { content: '+'; font-family: var(--mag-mono); font-size: 20px; }
+.wks-fold[open] summary::after { content: '−'; }
+.wks-fold p { margin: 0; padding: 0 12px 12px; }
+/* the browse view */
+.wks-browse-head { display: grid; gap: 4px; }
+.wks-browse-head a { color: inherit; }
+.wks-browse-h1 { font-size: clamp(28px, 8vw, 52px); margin: 0; }
+.wks-filterbar { display: flex; flex-wrap: wrap; align-items: start; justify-content: space-between; gap: 10px; }
+.wks-filter { flex: 1 1 100%; }
+.wks-filter summary { list-style: none; cursor: pointer; display: inline-flex; }
+.wks-filter summary::-webkit-details-marker { display: none; }
+.wks-filter summary::before { content: '☰ '; white-space: pre; }
+.wks-filter-in { display: grid; gap: 12px; margin-block-start: 10px; padding: 12px; border: 3px solid var(--mag-ink); background: var(--mag-paper); box-shadow: 4px 4px 0 var(--mag-ink); }
+.wks-filter fieldset { margin: 0; padding: 0; border: 0; display: grid; gap: 6px; }
+.wks-filter legend { padding: 0; margin-block-end: 6px; font-family: var(--mag-mono); font-size: 12px; font-weight: 800; text-transform: uppercase; }
+.wks-count { margin: 0; font-family: var(--mag-mono); font-size: 13px; font-weight: 700; }
+.wks-chip.on { background: var(--mag-ink); color: var(--mag-paper); }
+/* the card, tighter: one short Buy bar */
+.wks-buy { min-block-size: 44px; padding-block: 0; font-size: 15px; white-space: nowrap; }
+.wks-badge.hot { background: var(--mag-navy, var(--mag-ink)); }
+.wks-price { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 4px; }
+@media (min-width: 560px) {
+  .wks-promises span { display: block; }
+  .wks-deptgrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (min-width: 760px) {
+  .wks-ribbon { font-size: 14px; }
+  .wks-head { grid-template-columns: 150px minmax(0, 1fr); padding: 26px 28px; }
+  .wks-head-art { block-size: 160px; }
+  .wks-promises li { padding: 12px 16px; }
+  .wks-promises b { font-size: 14px; }
+  .wks-clubgrid { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+  .wks-deptgrid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+  .wks-sale { padding: 22px; }
+  .wks-sale-head { grid-template-columns: 110px minmax(0, 1fr); }
+  .wks-sale-head .wks-burst { inline-size: 110px; block-size: 110px; font-size: 28px; }
+  .wks-budget { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; padding: 22px; }
+  .wks-filter { flex: 0 1 auto; }
+  .wks-filter[open] { flex: 1 1 100%; }
+  .wks-filter-in { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .wks-faq { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 14px; }
+  .wks-faq > .wk-banner, .wks-faq > .wk-head { grid-column: 1 / -1; }
+}
+@media (prefers-reduced-motion: reduce) { .wks-dept img { transition: none; } .wks-dept:hover img { transform: none; } }
+/* the site's prose list style (`.fl ul`) must not indent the shop's grids */
+main.wks ul { margin: 0; padding: 0; }
+/* the cover on a phone: the words take the width, the scarf stands in the corner */
+.wks-head { grid-template-columns: minmax(0, 1fr); }
+.wks-head > div { position: relative; }
+.wks-head-art { position: absolute; inset-block-start: 8px; inset-inline-end: 8px; block-size: 58px; opacity: .95; }
+.wks-head .wk-banner, .wks-h1 { padding-inline-end: 74px; }
+.wks-ctas .wk-btn { flex: 1 1 auto; justify-content: center; }
+.wks-sale .wk-banner { color: var(--mag-paper); }
+.wks-budgets .wk-btn { font-size: 16px; white-space: nowrap; }
+.wks-budgets small { font-family: var(--mag-mono); font-style: normal; }
+@media (min-width: 760px) {
+  .wks-head { grid-template-columns: 210px minmax(0, 1fr); }
+  .wks-head-art { position: relative; inset: auto; block-size: 150px; justify-self: center; }
+  .wks-head .wk-banner, .wks-h1 { padding-inline-end: 0; }
+  .wks-ctas .wk-btn { flex: 0 0 auto; }
+}
+@media (min-width: 760px) { .wks-clubgrid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); } }
+/* the shirt-market plate on a phone: same as the cover — words first, the picture in the corner */
+.wks-market { grid-template-columns: minmax(0, 1fr); }
+.wks-market > div { position: relative; }
+.wks-market-art { position: absolute; inset-block-start: 8px; inset-inline-end: 8px; block-size: 56px; }
+.wks-market .wk-k, .wks-market .wk-head { padding-inline-end: 70px; }
+@media (min-width: 760px) {
+  .wks-market { grid-template-columns: 170px minmax(0, 1fr); }
+  .wks-market-art { position: relative; inset: auto; block-size: 130px; justify-self: center; }
+  .wks-market .wk-k, .wks-market .wk-head { padding-inline-end: 0; }
+}

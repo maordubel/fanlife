@@ -52,7 +52,10 @@ export async function shopCheckup(by='autopilot'):Promise<ShopHealth>{
  // 4 · a press that failed on a passing error is pressed again (two per run)
  const again=(await readShop()).products.filter(p=>(p.status==='ready'||(p.status==='error'&&(!p.error||PASSING.test(p.error)||/half-way/.test(p.error))))&&(p.retries??0)<RETRIES).slice(0,2)
  for(const p of again){await patch(by,p.id,x=>{x.retries=(x.retries??0)+1});const out=await pressProduct(p.id,by);if(out.status==='live')repaired++;else notes.push(`${p.title}: ${out.error||'still not on sale'}`)}
- // 5 · the shop is open but shows nothing: say so
+ // 5 · sales start and end on time: prices follow the sales (a few per run); sold counts from the orders
+ try{const r=await (await import('./saleRun')).applySales(by,10);repaired+=r.done;for(const e of r.errors.slice(0,3))notes.push(e)}catch(e){notes.push(`Sales: ${(e as Error).message}`)}
+ try{await (await import('./saleRun')).countSold(by)}catch{/* orders are a nicety: never a failed check */}
+ // 6 · the shop is open but shows nothing: say so
  const fresh=await readShop(),shown=fresh.products.filter(p=>p.visible&&p.status==='live').length
  if(fresh.settings.open&&!shown)notes.push('The shop is open but no product is shown.')
  return save(notes.length===0||notes.every(n=>/open but no product/.test(n)))

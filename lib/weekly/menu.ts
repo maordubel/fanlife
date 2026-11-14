@@ -44,24 +44,27 @@ export function menuFanLife(locale:UiLocale,portal=''):ContentsItem[]{
   {href:`${portal}/`,title:t.wkFront,icon:'home'},
   {href:'/all-football',title:t.wkAllFootball,icon:'globe'},
   {href:`${portal}/#life`,title:t.tabLife,icon:'life'},
-  {href:'/sources',title:t.wkSources,icon:'sources'},
   {href:`${CHANNEL.url}?utm_source=fanlife&utm_medium=menu`,title:t.wkWatch,sub:t.wkWatchSub,icon:'watch'},
+  {href:'/sources',title:t.wkSources,icon:'sources'},
+  {href:'/about',title:t.wkAbout,icon:'book'},
  ]
 }
 
-export function hubSections(locale:UiLocale):ContentsItem[]{
+/** The paper's sections, in the order of the desktop bar (14.11.2026): home, clubs, games, LIFE, the shop (while it sells), the market, all football. */
+export function hubSections(locale:UiLocale,o:{shop?:boolean}={}):ContentsItem[]{
  const t=menuCopy(locale)
  return [
   {href:'/',title:t.home,sub:t.wkHomeSub,icon:'home'},
   {href:'/#clubs',title:t.clubs,sub:t.wkClubsSub,icon:'clubs'},
+  {href:'/our-games',title:t.tabOurGames,sub:t.wkGamesSub,icon:'play'},
   {href:'/#life',title:t.tabLife,sub:t.wkLifeSub,icon:'life'},
+  ...(o.shop?[{href:'/shop',title:t.wkShop,sub:t.wkShopSub,icon:'bag'}]:[]),
   {href:'/market',title:t.wkMarket,sub:t.wkMarketSub,icon:'shirt'},
-  {href:'/me',title:t.corner,sub:t.wkCornerSub,icon:'me'},
   {href:'/all-football',title:t.wkAllFootball,sub:t.wkAllFootballSub,icon:'globe'},
  ]
 }
 
-export function clubSections(clubId:string,locale:UiLocale,o:{terrace:string;away:string|null;kitArchive:boolean}):ContentsItem[]{
+export function clubSections(clubId:string,locale:UiLocale,o:{terrace:string;away:string|null;kitArchive:boolean;shop?:boolean}):ContentsItem[]{
  const t=menuCopy(locale)
  const rows:ContentsItem[]=[
   {href:clubHref(clubId,'',locale),title:t.clubTabHome,sub:t.wkClubHomeSub,icon:'home'},
@@ -71,6 +74,7 @@ export function clubSections(clubId:string,locale:UiLocale,o:{terrace:string;awa
  ]
  if(o.kitArchive)rows.push({href:clubHref(clubId,'kit-archive',locale),title:t.wkKitArchive,sub:t.wkKitArchiveSub,icon:'shirt'})
  if(o.away)rows.push({href:o.away,title:t.wkAwayDays,sub:t.wkAwayDaysSub,icon:'plane'})
+ if(o.shop)rows.push({href:`/shop?club=${clubId}`,title:t.wkClubShop,sub:t.wkShopSub,icon:'bag'})
  return rows
 }
 

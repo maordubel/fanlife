@@ -552,3 +552,9 @@ select.pcc-inline { inline-size: 92px; cursor: pointer; } select.pcc-inline:disa
 .shop-more[open] .shop-card-a { position: relative; margin-block-start: 6px; }
 .shop-packs .desk-chip { border-style: dashed; }
 @media (max-width: 760px) { .shop-prow { grid-template-columns: 56px minmax(0, 1fr); } .shop-prow img { inline-size: 56px; block-size: 56px; } .shop-dhead { grid-template-columns: 72px minmax(0, 1fr); } .shop-dhead img { inline-size: 72px; block-size: 72px; } }
+/* the shop desk's sales (14.11.2026) */
+.shop-sales { list-style: none; margin: 0 0 10px; padding: 0; display: grid; gap: 8px; }
+.shop-sale { display: grid; gap: 4px; padding: 10px 12px; border: 2px solid var(--desk-line, currentColor); border-radius: 10px; }
+.shop-sale[data-on] { border-color: var(--mag-vermilion); }
+.shop-sale .desk-btn { justify-self: start; }
+.shop-field select { min-block-size: 44px; }

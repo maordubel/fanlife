@@ -10,6 +10,7 @@ const P:Record<string,string>={
  pin:'M9 3h6l-1 6 3 3H7l3-3zM12 12v9',
  sources:'M4 5h7v14H4zM13 5h7v14h-7zM6.5 9h2M15.5 9h2',
  watch:'M3 6h18v12H3zM10 9.5l5 2.5-5 2.5z',
+ bag:'M5 8h14l-1 12H6zM9 8V6a3 3 0 0 1 6 0v2',
 }
 export type IconName=keyof typeof P
 export function Icon({name,size=22}:{name:string;size?:number}){
