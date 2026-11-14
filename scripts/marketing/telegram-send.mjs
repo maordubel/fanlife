@@ -14,7 +14,8 @@ let bad = 0
 /** The kit picture(s) for a post go first; the text that follows carries the hook, caption and link. A picture that
  *  cannot be drawn or is refused never holds the post back — only the text decides whether it was delivered. */
 let visualsFor = async () => []
-try { ({visualsFor} = await import('./kit/visual.mjs')) } catch (e) { console.log(`::warning title=DUBEL TEAM plan::visuals off — ${String(e?.message || e).slice(0, 160)}`) }
+let storyFor = async () => null
+try { ({visualsFor, storyFor} = await import('./kit/visual.mjs')) } catch (e) { console.log(`::warning title=DUBEL TEAM plan::visuals off — ${String(e?.message || e).slice(0, 160)}`) }
 const tg = (method, form) => fetch(`https://api.telegram.org/bot${token}/${method}`, {method: 'POST', body: form, signal: AbortSignal.timeout(60_000)})
   .then(async r => ({status: r.status, ...(await r.json().catch(() => ({})))})).catch(e => ({unknown: true, description: String(e?.name || e)}))
 let publishToMeta = async () => ({line: ''})
@@ -43,6 +44,9 @@ for (const p of posts) {
   // plan v5: published on both, nothing left for the owner's hands → one quiet line, no pictures
   const quiet = !(Array.isArray(p.kit?.to) && p.kit.to.includes('tiktok')) && String(meta.facebook || '').startsWith('published') && String(meta.instagram || '').startsWith('published')
   if (!quiet) await sendVisuals(p, pngs).catch(() => {})
+  // v4: the story that moves, ready for Instagram, Facebook and TikTok stories
+  const mp4 = await storyFor(p.kit || null).catch(() => null)
+  if (mp4) { const f = new FormData(); f.append('chat_id', p.chat_id); f.append('disable_notification', 'true'); f.append('supports_streaming', 'true'); f.append('video', new Blob([mp4], {type: 'video/mp4'}), 'story.mp4'); f.append('caption', '🎬 Story that moves — post it to Instagram, Facebook and TikTok stories.'); await tg('sendVideo', f).catch(() => {}) }
   if (meta.facebook) console.log(`meta ${p.id}: facebook ${meta.facebook} · instagram ${meta.instagram}`)
   const x = await publishToX(p, pngs).catch(() => ({line: ''}))
   if (x.x) console.log(`x ${p.id}: ${x.x}`)

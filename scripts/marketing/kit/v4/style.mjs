@@ -70,6 +70,8 @@ html,body{margin:0;background:#000}
 .cell .num{font-size:26px;color:var(--hot,#E8432B)}
 .cell b{font:italic 900 30px/.98 Archivo;font-stretch:74%;text-transform:uppercase}
 .split{position:absolute;inset:0;z-index:0}
+.dare{position:relative;z-index:6;flex:none;margin:0 64px 22px;align-self:flex-start;transform:rotate(-2deg);background:var(--hot,#D71920);color:var(--bg);padding:14px 24px;box-shadow:6px 6px 0 rgba(0,0,0,.45)}
+.dare span{font:italic 900 40px/1 Archivo;font-stretch:76%;text-transform:uppercase;white-space:nowrap}
 /* motion (stories): each [data-in] element enters once; the frame grabber seeks every animation to the frame's time */
 @keyframes up{from{transform:translateY(80px);opacity:0}to{transform:none;opacity:1}}
 @keyframes left{from{transform:translateX(-140px);opacity:0}to{transform:none;opacity:1}}
@@ -89,5 +91,5 @@ html,body{margin:0;background:#000}
 /** the whole page: one post, sized for a feed (1080 × 1350) or a story (1080 × 1920) */
 export function shell(inner, {story = false, motion = false, vars = '', light = false} = {}) {
   const h = story ? 1920 : 1350
-  return `<!doctype html><html><head><meta charset="utf-8"><style>${FACES}${CSS}</style></head><body><div class="post${motion ? ' motion' : ''}${light ? ' light' : ''}" style="height:${h}px;${vars}">${inner}</div></body></html>`
+  return `<!doctype html><html><head><meta charset="utf-8"><style>${FACES}${CSS}</style></head><body><script>addEventListener('DOMContentLoaded',()=>document.querySelectorAll('[data-d]').forEach(e=>{e.style.animationDelay=e.dataset.d+'s'}))</script><div class="post${motion ? ' motion' : ''}${light ? ' light' : ''}" style="height:${h}px;${vars}">${inner}</div></body></html>`
 }

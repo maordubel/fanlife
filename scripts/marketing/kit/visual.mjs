@@ -224,6 +224,16 @@ const APP_OF = {fanlife: 'fanlife', theworker: 'worker', worker: 'worker', dubid
 /** PNG buffers for one Telegram message (and, when the plan made it, the post's own kit). Never throws.
  *  Every post gets a picture (owner, 27.10.2026): when its own layout cannot be drawn, its app's L-CARD is. */
 export let lastError = null
+async function fetchBuf(u) {
+  const r = await fetch(u, {redirect: 'follow', signal: AbortSignal.timeout(20_000)})
+  if (!r.ok) throw Error(`${r.status} ${u.slice(-60)}`)
+  return Buffer.from(await r.arrayBuffer())
+}
+/** the v4 story that moves (MP4), or null */
+export async function storyFor(kit) {
+  if (!kit?.v4?.story) return null
+  try { return await fetchBuf(kit.v4.story) } catch { return null }
+}
 const png = d => sharp(Buffer.from(d.svg)).png({compressionLevel: 9}).toBuffer()
 export async function drawKit(kit, fallbackApp = 'fanlife') {
   const app = APP_OF[kit.data.app] || fallbackApp
@@ -240,6 +250,10 @@ async function card(post) {
 export async function visualsFor(msg, kit = null) {
   lastError = null
   if (kit?.t === 'none') return [] // the morning briefing: operations, no picture
+  // v4 (owner, 14.11.2026): pictures drawn ahead of time in Actions (kit/v4/prerender.mjs) — fetched, never redrawn here
+  if (Array.isArray(kit?.v4?.png) && kit.v4.png.length) {
+    try { return await Promise.all(kit.v4.png.map(u => fetchBuf(u))) } catch (e) { lastError = `v4 fetch: ${String(e?.message || e).slice(0, 160)}` }
+  }
   const post = readPost(msg)
   try {
     // a carousel: one picture per slide, in order, sent as one album (owner, 27.10.2026)

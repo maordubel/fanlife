@@ -1,0 +1,30 @@
+name: Marketing · Pictures v4
+# Social pictures v4 (owner, 14.11.2026): draws the feed pictures and the moving stories of the fixed posts due in the
+# next 36 hours, with a real screen of each game in a phone, and stores them as assets of the "social-pictures" release.
+# The sender fetches them (scripts/marketing/kit/visual.mjs); a post without them gets its v2 picture. Assets older than
+# five days are deleted on every run.
+on:
+  schedule:
+    - cron: '17 */2 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: marketing-pictures
+  cancel-in-progress: false
+jobs:
+  draw:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 20, cache: npm}
+      - run: npm ci --ignore-scripts
+      - run: npx playwright install --with-deps chromium
+      - run: sudo apt-get install -y -qq ffmpeg > /dev/null
+      - run: node scripts/marketing/kit/v4/prerender.mjs

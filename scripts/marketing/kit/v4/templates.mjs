@@ -5,18 +5,21 @@ import {shell} from './style.mjs'
 import {brand, clubId, crest, lifeShot, legendsFx, local, paint, plate, shirts, CLUBS, mix} from './assets.mjs'
 
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]))
-const at = (kind, s) => ` data-in="${kind}" style="animation-delay:${s}s"`
+const at = (kind, s) => ` data-in="${kind}" data-d="${s}"`
 const yearIn = s => String(s || '').match(/\b(18[89]\d|19\d\d|20\d\d)\b/)?.[0]
 const strip = p => `<div class="strip" style="--s1:${p.s1};--s2:${p.s2}"></div>`
 const top = (p, right = '') => `<div class="top"${at('up', .05)}><div class="brand"><img src="${brand.fanlife}" alt=""><b>FAN LIFE</b></div>${right}</div>`
 const crestImg = c => (c ? `<img class="crest" src="${c}" alt="">` : '')
-const foot = (label, url = 'fanlife.dubelteam.com') => `<div class="foot"${at('up', .9)}><span class="u">${esc(url)}</span><span class="btn" data-pulse>${esc(label)} <b>→</b></span></div>`
+const foot = (label, url = 'fanlife.dubelteam.com', dare = '') => `${dare ? `<div class="dare"${at('wipe', 1.2)}><span>${esc(dare)}</span></div>` : ''}<div class="foot"${at('up', .9)}><span class="u">${esc(url)}</span><span class="btn" data-pulse>${esc(label)} <b>→</b></span></div>`
 const tag = (s, hot = false, delay = .2) => `<p class="tag${hot ? ' hot' : ''}"${at('left', delay)}><i></i>${esc(s)}</p>`
 const vars = (p, extra = '') => `--bg:${p.bg};--on:${p.on};--hot:${p.light ? '#15130F' : '#FF5A4E'};--btn:${p.light ? '#15130F' : '#FFFBF2'};--btnText:${p.light ? '#FFFBF2' : '#15130F'};${extra}`
 const dots = (col, extra = '') => `<div class="dots" style="--d:${col};${extra}"></div>`
 const sized = (s, big, mid, small, a = 18, b = 34) => (String(s).length <= a ? big : String(s).length <= b ? mid : small)
 
 /** a gate's own comic plate on a paper card, as the club page shows it */
+/** a real screen of the game inside a phone: the clearest way to say "come in and play" */
+export const phone = (src, w = 430, delay = .45, tilt = -4) => src ? `<div style="width:${w}px;aspect-ratio:390/844;border-radius:${w * .14}px;background:#0B0B0B;padding:${w * .035}px;box-shadow:18px 18px 0 rgba(0,0,0,.4),0 0 0 3px #2A2A2A inset;transform:rotate(${tilt}deg);flex:none"${at('pop', delay)}><div style="width:100%;height:100%;border-radius:${w * .11}px;overflow:hidden;position:relative;background:#F4ECD8"><img src="${src}" alt="" style="width:100%;height:100%;object-fit:cover;object-position:top"><span style="position:absolute;left:50%;top:${w * .03}px;width:${w * .3}px;height:${w * .07}px;margin-left:-${w * .15}px;border-radius:${w * .04}px;background:#0B0B0B"></span></div></div>` : ''
+
 const plateCard = (pl, h = 520, tone = '#FFFBF2', delay = .45) => pl ? `<div class="plate" style="height:${h}px;--tone:${tone};margin-top:34px"${at('pop', delay)}>${pl.tone ? `<div class="tone" style="-webkit-mask-image:url(${pl.tone});mask-image:url(${pl.tone});background:${tone}"></div>` : ''}<img class="line" src="${pl.line}" alt=""></div>` : ''
 
 // ── features ─────────────────────────────────────────────────────────────────────
@@ -32,6 +35,9 @@ async function gate(d, o) {
     const ks = await shirts(id, 3)
     if (ks.length) hero = `<div class="paper" style="margin:40px -64px 0;padding:30px 44px 26px;display:grid;grid-template-columns:repeat(${ks.length},minmax(0,1fr));gap:12px;flex:1;min-height:420px"${at('wipe', .45)}>${ks.map((k, i) => `<div style="display:flex;flex-direction:column;align-items:center;justify-content:flex-end;min-height:0"><img src="${k.src}" alt="" style="width:100%;flex:1;min-height:0;object-fit:contain;filter:drop-shadow(10px 12px 0 rgba(0,0,0,.18))"${at('up', .6 + i * .15)}><span class="num" style="font-size:64px;margin-top:8px"${at('slam', .9 + i * .15)}>${k.year}</span></div>`).join('')}</div>`
   }
+  const scr = local(d.screen)
+  if (hero && scr) hero = `<div style="position:relative;flex:1;display:flex;min-height:0">${hero}<div style="position:absolute;right:-30px;bottom:-60px;z-index:4">${phone(scr, o.story ? 330 : 250, 1, 6)}</div></div>`
+  if (!hero && scr) hero = `<div style="flex:1;display:flex;align-items:center;justify-content:center;gap:40px;min-height:0;margin-top:20px"><div style="width:${o.story ? 420 : 380}px;flex:none">${plateCard(plate(d.name), o.story ? 420 : 360, '#FFFBF2', .4)}</div>${phone(scr, o.story ? 470 : 360, .6, -4)}</div>`
   if (!hero) hero = `<div style="flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0">${plateCard(plate(d.name), o.story ? 760 : 480, '#FFFBF2')}</div>`
   const title = d.name || 'FAN LIFE'
   return {vars: vars(p), light: p.light, inner: `${dots(p.light ? 'rgba(0,0,0,.18)' : 'rgba(0,0,0,.28)')}${strip(p)}${top(p, crestImg(c))}
@@ -83,7 +89,7 @@ async function legends(d, o) {
   return {vars: vars(p, '--hot:#D4A84A'), inner: `${dots('rgba(212,168,74,.35)')}${strip(p)}${top(p, `<img class="applogo" src="${brand.legends}" alt="">`)}
 <div class="body" style="padding-top:${o.story ? 120 : 30}px">${tag('Legends Manager · free', true)}
 <p class="h shadowed" style="font-size:118px;margin-top:14px"${at('slam', .3)}>${esc(d.headline || 'A season with your legends.')}</p>
-<div style="flex:1;display:flex;align-items:center;justify-content:center;min-height:0"><img src="${legendsFx(fx)}" alt="" style="max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(12px 12px 0 rgba(0,0,0,.45))"${at('pop', .6)}></div>
+<div style="flex:1;display:flex;align-items:center;justify-content:center;gap:30px;min-height:0"><img src="${legendsFx(fx)}" alt="" style="width:${d.screen ? '48%' : '100%'};height:100%;object-fit:contain;filter:drop-shadow(12px 12px 0 rgba(0,0,0,.45))"${at('pop', .6)}>${d.screen ? phone(local(d.screen), o.story ? 440 : 330, .8, 4) : ''}</div>
 ${(d.body || []).slice(0, 2).map((s, i) => `<p class="lead" style="font-size:30px;opacity:.9"${at('up', .9 + i * .12)}>${esc(s)}</p>`).join('')}
 </div>${foot('Kick off')}`}
 }
@@ -108,9 +114,9 @@ async function quiz(d, o) {
   return {vars: vars(pd, `--hot:${hot}`), inner: `${dots(mix(hot, '#000000', .2) + '99', 'right:auto;bottom:auto;width:720px;height:720px')}${strip({s1: '#FFFBF2', s2: hot})}${top(pd, crestImg(c))}
 <div class="body" style="padding-top:${o.story ? 140 : 40}px">
 <div style="display:flex;justify-content:space-between;align-items:center">${tag((d.level || 'Quiz') + ' · only real fans', true)}<span class="lamp"${at('pop', .3)}><span>1</span><span>0</span></span></div>
-<p class="h" style="font-size:${sized(d.question, 112, 88, 70, 40, 80)}px;margin-top:30px"${at('up', .35)}>${esc(d.question)}</p>
-<div style="flex:1;min-height:30px"></div>
-<div class="grid2">${opts.map((x, i) => `<div class="ans" style="height:${o.story ? 230 : 190}px"${at(i % 2 ? 'right' : 'left', .6 + i * .12)}><span class="num">${'ABCD'[i]}</span><b style="font-size:${sized(x, 52, 44, 36, 14, 24)}px">${esc(x)}</b></div>`).join('')}</div>
+<p class="h" style="font-size:${sized(d.question, 112, 84, 62, 40, 72)}px;margin-top:30px"${at('up', .35)}>${esc(d.question)}</p>
+<div style="flex:1;min-height:20px"></div>
+<div class="grid2">${opts.map((x, i) => `<div class="ans" style="height:${o.story ? 230 : 146}px;padding:16px 24px"${at(i % 2 ? 'right' : 'left', .6 + i * .12)}><span class="num">${'ABCD'[i]}</span><b style="font-size:${sized(x, 52, 44, 36, 14, 24)}px">${esc(x)}</b></div>`).join('')}</div>
 </div>${foot('Answer in the comments')}`}
 }
 
@@ -130,7 +136,7 @@ ${cj ? `<img src="${cj}" alt="" style="position:absolute;right:44px;top:${o.stor
 <p class="h" style="position:absolute;left:64px;top:${o.story ? 790 : 640}px;font-size:52px;z-index:3"${at('up', .55)}>1 · ${esc(L.name || '')}</p>
 <p class="h" style="position:absolute;right:64px;top:${o.story ? 300 : 210}px;font-size:52px;text-align:right;z-index:3;max-width:420px"${at('up', .6)}>2 · ${esc(R.name || '')}</p>
 <div style="position:absolute;left:0;top:${band}px;width:1080px;min-height:250px;background:#FFFBF2;color:#15130F;display:flex;flex-direction:column;justify-content:center;padding:30px 64px;gap:14px;z-index:3"${at('wipe', .9)}>
-<span class="k" style="color:${lc}">Comment 1 or 2</span><p class="h" style="font-size:${sized(d.question, 84, 72, 60, 34, 60)}px">${esc(d.question)}</p></div>
+<span class="k" style="color:${lc}">Comment 1 or 2 · ${esc(dareFor('L-DEBATE', d))}</span><p class="h" style="font-size:${sized(d.question, 84, 72, 60, 34, 60)}px">${esc(d.question)}</p></div>
 <div style="flex:1"></div>${foot('Vote in the comments')}`}
 }
 
@@ -271,11 +277,11 @@ async function zoom(d, o) {
   const k = (await shirts(id, 1, d.season ? [String(d.season).slice(0, 4)] : null))[0]
   const R = o.story ? 760 : 560
   const glass = d.s === 'reveal'
-    ? `<div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:0">${k ? `<img src="${k.src}" alt="" style="max-width:${R + 120}px;max-height:${R}px;object-fit:contain;filter:drop-shadow(14px 14px 0 rgba(0,0,0,.35))"${at('pop', .3)}>` : ''}</div><p class="num" style="font-size:150px;text-align:center;text-shadow:10px 10px 0 rgba(0,0,0,.3);margin-bottom:30px"${at('slam', .6)}>${esc(d.answer || k?.season || '')}</p>`
-    : `<div style="flex:1;display:flex;align-items:center;justify-content:center;min-height:0"><div style="position:relative;width:${R}px;height:${R}px;border-radius:50%;overflow:hidden;background:#FFFBF2;box-shadow:16px 16px 0 rgba(0,0,0,.4);outline:3px solid ${p.on};outline-offset:14px"${at('pop', .3)}>${k ? `<img src="${k.src}" alt="" style="position:absolute;width:${R * 3.2}px;height:${R * 3.2}px;left:${-R * (d.focus?.[0] ?? 1.1)}px;top:${-R * (d.focus?.[1] ?? .45)}px;object-fit:contain" data-kb>` : ''}</div></div>`
+    ? `<div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:0">${k ? `<img src="${k.src}" alt="" style="max-width:${R + 120}px;max-height:100%;object-fit:contain;filter:drop-shadow(14px 14px 0 rgba(0,0,0,.35))"${at('pop', .3)}>` : ''}</div><p class="num" style="font-size:150px;text-align:center;text-shadow:10px 10px 0 rgba(0,0,0,.3);margin-bottom:30px"${at('slam', .6)}>${esc(d.answer || k?.season || '')}</p>`
+    : `<div style="flex:1;display:flex;align-items:center;justify-content:center;min-height:0"><div style="position:relative;width:${R}px;height:${R}px;border-radius:50%;overflow:hidden;background:#FFFBF2;box-shadow:16px 16px 0 rgba(0,0,0,.4);outline:3px solid ${p.on};outline-offset:14px"${at('pop', .3)}>${k ? `<img src="${k.src}" alt="" style="position:absolute;width:${R * 3.2}px;height:${R * 3.2}px;left:${R / 2 - (d.focus?.[0] ?? .66) * R * 3.2}px;top:${R / 2 - (d.focus?.[1] ?? .3) * R * 3.2}px;object-fit:contain" data-kb>` : ''}</div></div>`
   return {vars: vars(p), light: p.light, inner: `${dots(p.light ? 'rgba(0,0,0,.18)' : 'rgba(0,0,0,.28)')}${strip(p)}${top(p, crestImg(c))}
 <div class="body" style="padding-top:${o.story ? 120 : 36}px">${tag(d.s === 'reveal' ? 'Zoom · 2 of 2 · the answer' : 'Zoom · 1 of 2')}
-<p class="h shadowed" style="font-size:132px;margin-top:14px"${at('slam', .25)}>${esc(d.s === 'reveal' ? (d.title || 'Did you get it?') : (d.question || 'Name the season.'))}</p>
+<p class="h shadowed" style="font-size:${d.s === 'reveal' ? 110 : 132}px;margin-top:14px;position:relative;z-index:2"${at('slam', .25)}>${esc(d.s === 'reveal' ? (d.title || 'Did you get it?') : (d.question || 'Name the season.'))}</p>
 ${glass}
 </div>${foot(d.s === 'reveal' ? 'Play Shirt collection' : 'Swipe for the answer')}`}
 }
@@ -323,6 +329,14 @@ async function article(d, o) {
 </div>${foot('Read it')}`}
 }
 
+/** the dare above the foot: one line that pokes the supporter's pride (owner, 14.11.2026: "lots of hooks, emotion, ego") */
+const DARE = {'L-GATE': 'Bet you can’t do it first time', 'L-LIFE': 'Your club. Your streets. Your story.', 'L-LOADING': 'Coming soon. Your city first?', 'L-LEGENDS': 'Think you can manage them? Prove it.',
+  'L-FACT': 'Tag the one mate who knew this', 'T10-NERDS': 'Real fans don’t need the options', 'L-QUIZ': 'Real fans don’t need the options', 'L-DEBATE': 'Pick a side. No fence-sitting.',
+  'T9-OTD': 'Were you there? Prove it in the comments', 'T11-SPICY': 'Were you there? Tell us.', 'L-FILM': 'Watch it before your mates do', 'L-NUMBERS': 'Is your club on the board?',
+  'L-BINGO': 'Under 8? Not a real fan.', 'L-ZOOM': 'Real fans need one look', 'L-TIER': 'Wrong? Fight us in the comments', 'L-VOTE': 'Your club not on top? Send this.',
+  'L-SHOP': 'Wear it to the next match', 'L-MARKET': 'One supporter’s shirt. Your wardrobe next.', 'L-ARTICLE': 'Read it. Then argue with your dad.'}
+export const dareFor = (t, d) => d?.dare === '' ? '' : d?.dare || DARE[t] || ''
+
 const MAP = {'L-GATE': gate, 'L-LIFE': life, 'L-LOADING': loading, 'L-LEGENDS': legends, 'L-FACT': fact, 'T10-NERDS': quiz, 'L-QUIZ': quiz, 'L-DEBATE': debate, 'T9-OTD': otd, 'T11-SPICY': spicy,
   'L-FILM': film, 'L-SLIDE': slide, 'L-NUMBERS': numbers, 'L-CARD': card, 'L-DUBID-SYSTEM': (d, o) => system(d, o, 'dubid'), 'L-OFFSIDES-SYSTEM': (d, o) => system(d, o, 'offsides'),
   'L-FIXTURES': (d, o) => matchList(d, o, 'L-FIXTURES'), 'L-RESULTS': (d, o) => matchList(d, o, 'L-RESULTS'), 'L-VOTE': vote, 'L-BINGO': bingo, 'L-ZOOM': zoom, 'L-TIER': tier, 'L-SHOP': shop, 'L-MARKET': market, 'L-ARTICLE': article}
@@ -333,5 +347,9 @@ export async function page(t, app, data, {story = false, motion = false} = {}) {
   const fn = MAP[t]
   if (!fn) return null
   const r = await fn(data || {}, {story}, app)
-  return shell(r.inner, {story, motion, vars: r.vars, light: r.light})
+  const nm = String(data?.name || '').toUpperCase()
+  const key = t === 'L-GATE' && nm === 'LIFE' ? 'L-LIFE' : t === 'L-GATE' && (nm === 'LEGENDS MANAGER' || data?.brand === 'legends') ? 'L-LEGENDS' : t
+  const dare = (t === 'L-SLIDE' && data?.s !== 'cta') || t === 'L-DEBATE' ? '' : dareFor(key, data)
+  const inner = dare ? r.inner.replace('<div class="foot"', `<div class="dare"${at('wipe', 1.2)}><span>${esc(dare)}</span></div><div class="foot"`) : r.inner
+  return shell(inner, {story, motion, vars: r.vars, light: r.light})
 }
