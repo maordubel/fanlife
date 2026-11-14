@@ -246,6 +246,10 @@ def horizon(path) -> float | None:
     return round(at / 48, 3) if at is not None and best >= 0.12 else None
 
 
+# OWNER, 14.11.2026 (docs/rules/no-sliced-parallax.md): NEVER slice one picture into bands that move apart to fake depth.
+# "That effect — cutting the picture to make an illusion that it moves — is awful and ugly; I don't want to use it."
+# The still moves as ONE sheet (back plane + vignette); only a real cut-out (a transparent PNG) may move in front of it.
+SLICE_PLANES = False
 FORE_DEFAULT = 0.58     # with no horizon to read, the lower 42% is the near plane
 FEATHER = 0.14          # the mask's soft edge, as a share of the height: a hard line would show the planes' seam
 
@@ -256,9 +260,9 @@ def planes(src_css: str, cid: str, h: float | None, extra_style: str = '') -> st
     top = FORE_DEFAULT if h is None else h
     a, b = round(max(0.0, top - FEATHER / 2) * 100, 1), round(min(1.0, top + FEATHER / 2) * 100, 1)
     mask = f'linear-gradient(to bottom,transparent {a}%,#000 {b}%)'
-    return (f'<div class="phi" id="{cid}i" style="{src_css}{extra_style}"></div>'
-            f'<div class="phi fore" id="{cid}f" style="{src_css}{extra_style}-webkit-mask-image:{mask};mask-image:{mask}"></div>'
-            f'<div class="vig" id="{cid}v"></div>')
+    fore = (f'<div class="phi fore" id="{cid}f" style="{src_css}{extra_style}-webkit-mask-image:{mask};mask-image:{mask}"></div>'
+            if SLICE_PLANES else '')
+    return f'<div class="phi" id="{cid}i" style="{src_css}{extra_style}"></div>{fore}<div class="vig" id="{cid}v"></div>'
 
 
 CSS = ('.fore{will-change:transform}'

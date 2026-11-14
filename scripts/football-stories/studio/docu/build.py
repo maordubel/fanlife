@@ -404,7 +404,7 @@ class Film:
         """Kinetic type: one or two words slammed onto the glass; the plate settles once, it never shakes (rule 142)."""
         cid = self.id('wd')
         col = {'us': self.US, 'them': self.THEM, 'ink': self.INK, 'paper': self.PAPER}.get(s.get('bg', 'ink'), s.get('bg'))
-        fg = s.get('fg', '#fff')
+        fg = s.get('fg', self.INK if s.get('bg') == 'paper' else '#fff')   # white type on a paper card is unreadable (14.11.2026)
         lines = '<br>'.join(e(x) for x in s['text'].split('|'))
         at0 = s.get('at', 0)
         t, d, s = t + at0, d - at0, {**s, 'at': 0}

@@ -56,7 +56,7 @@ specs and the gap list against the automatic pipeline are in `docs/fanlife/74-mo
 
 ## D. Pace and mix (gate)
 
-23. No still past 4 s; no measurable static stretch over 1.5 s (gate: static shot).
+23. No still past 4 s; no measurable static stretch over 1.5 s (gate: static shot). A picture moves as one sheet — never sliced into depth bands (rule no-sliced-parallax).
 24. Plain art ≤ 55 % (+3) of the running time; an explainer in every chapter (gate: language mix).
 25. No more than about 20 s in one visual language (scene → explainer → type → scene) (model gate: language run).
 26. Never the same camera move, treatment or transition three times running; the move follows the beat's emotion
