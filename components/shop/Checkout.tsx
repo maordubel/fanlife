@@ -24,7 +24,7 @@ export function CheckoutButton({url,copy,className=''}:{url:string;copy:Copy;cla
   window.setTimeout(()=>setState('open'),350)}
  return <>
   <a className={`wk-btn min-h-tap wks-buybig ${className}`} href={url} target="_blank" rel="noopener" onClick={open} aria-busy={state==='opening'||undefined}>{state==='opening'?copy.opening:copy.buy} <span aria-hidden="true">↗</span></a>
-  {(state==='open'||state==='blocked')&&<div className="wks-checkout" role="dialog" aria-modal="true" aria-labelledby="wks-co-h">
+  {(state==='open'||state==='blocked')&&<div className="wks-checkout z-[95]" role="dialog" aria-modal="true" aria-labelledby="wks-co-h">
    <div className="wks-checkout-in wk-panel">
     <p className="wk-banner">{copy.k}</p>
     <h2 className="wk-head" id="wks-co-h">{state==='blocked'?copy.blocked:copy.t}</h2>
