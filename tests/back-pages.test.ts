@@ -25,3 +25,18 @@ describe('The Back Pages', () => {
   expect(readFileSync(`public/${key}.txt`, 'utf8')).toBe(key)
  })
 })
+
+describe('Back Pages go live by date (Athens time)', () => {
+ it('a post dated tomorrow is hidden today and shown tomorrow', async () => {
+  const {isLive, athensToday} = await import('@/lib/back-pages/posts')
+  const p = BACK_PAGES.find((x) => x.published === '2026-11-20')!
+  expect(isLive(p, new Date('2026-11-19T21:00:00Z'))).toBe(false) // 23:00 in Athens on the 19th
+  expect(isLive(p, new Date('2026-11-19T22:30:00Z'))).toBe(true) // 00:30 in Athens on the 20th
+  expect(athensToday(new Date('2026-11-19T22:30:00Z'))).toBe('2026-11-20')
+ })
+ it('every post links only to English doors (the root gates are the Hebrew Hapoel edition)', () => {
+  const src = readFileSync('lib/back-pages/posts.tsx', 'utf8')
+  const roots = [...src.matchAll(/href="(\/[a-z-]+)"/g)].map((m) => m[1])
+  for (const r of roots) expect(['/today', '/our-games', '/all-football', '/back-pages']).toContain(r)
+ })
+})

@@ -2,8 +2,9 @@ import Link from 'next/link'
 import type {Metadata} from 'next'
 import {Shell} from '@/components/master/Shell'
 import {SITE_URL} from '@/lib/brand'
-import {BACK_PAGES} from '@/lib/back-pages/posts'
+import {liveBackPages} from '@/lib/back-pages/posts'
 
+export const revalidate = 3600
 export const metadata: Metadata = {
  title: 'The Back Pages — FAN LIFE',
  description: 'Answers for football supporters: free browser football games, trivia by club, fair play without loot boxes — each ending at a game you can play.',
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 
 /** /back-pages (plan v8): the index of FAN LIFE's articles, newest first. */
 export default function BackPages() {
- const posts = [...BACK_PAGES].sort((a, b) => b.updated.localeCompare(a.updated))
+ const posts = [...liveBackPages()].sort((a, b) => b.updated.localeCompare(a.updated))
  return <Shell locale="en"><main id="main" className="wkh-doc">
   <header className="wkh-doc-head">
    <p className="wk-banner">FAN LIFE</p>
