@@ -22,7 +22,7 @@ FANLIFE KIDS, CLASSIFIED), with `model-film` (the order and the package) and `no
 | Rule | Where | State (14.11.2026) |
 |---|---|---|
 | 1 Inks | `studio/paper.inked`, applied by `docu/plan.ink` to every picture the media index gives a documentary | **in the pipeline** (14.11.2026) |
-| 2 Cold open + question card | `studio/qa.experience` "the stake" (≤ 15 s) | the card time is gated; the 4–6 picture montage is hand-built in the model, not yet cut by `docu/editor.cut` (gap #4, #5) |
+| 2 Cold open + question card | `docu/editor.COLD_OPEN_S` (first 12 s: a different picture on every look), `docu/plan.question_cards` (the narration's planted question set in type when asked, before 0:15, and again as the bookend before the hand-over); `qa.experience` "the stake" | **in the pipeline** (14.11.2026) |
 | 3 Numbers as objects | `build.Film` `mini` (score flips on the cut), `form`, `explain number` | the held scoreboard and the flip board are not built yet |
 | 4 One shape | — | not built (gap #19) |
 | 5 20 s per language | `studio/qa.experience` and `studio/docu/model.gate` check **language run** (24 s with 4 s tolerance) | **enforced** in the pipeline: a run over it is re-planned tighter, then fails the gate |

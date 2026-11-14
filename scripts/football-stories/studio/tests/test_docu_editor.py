@@ -57,8 +57,14 @@ class CutPoints(unittest.TestCase):
 
 
 class Cut(unittest.TestCase):
+    def test_the_cold_open_shows_a_different_picture_on_every_look(self):
+        got = E.cut([beat(0, 0, 9.0, [img('first.webp')])], None, related=lambda n, i: f'rel-{i}.webp')[0]   # editing rule 2
+        srcs = [x['src'] for x in got['shots'] if x['kind'] == 'image']
+        self.assertGreaterEqual(len(srcs), 3)
+        self.assertEqual(len(set(srcs)), len(srcs))
+
     def test_a_long_still_becomes_wide_detail_reverse_and_then_a_related_picture(self):
-        got = E.cut([beat(0, 0, 3.0, [img('first.webp')]), beat(1, 3.0, 13.0, [img(tag={'big': 'X'})])], None, related=lambda n, i: f'rel-{i}.webp')[1]
+        got = E.cut([beat(0, 0, 14.0, [img('first.webp')]), beat(1, 14.0, 13.0, [img(tag={'big': 'X'})])], None, related=lambda n, i: f'rel-{i}.webp')[1]
         p = got['shots']
         # TARGET 2.6 (owner 14.11.2026, "more emphasis on editing"): a 13 s line is now five looks, the related picture cut twice
         self.assertEqual([x.get('frame') for x in p], [None, 'detail', 'reverse', 'wide', 'detail'])

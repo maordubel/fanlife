@@ -718,7 +718,51 @@ class Adapter:
             if s.get('narration') and s.get('voice_at') is not None and v_type(s) != 'end':
                 b['subs'] = subtitles(s)
             out.append(b)
+        self.question_cards(out)
         return out
+
+    QUESTION_MAX_WORDS = 9      # a question card is read at a glance (editing rule 2: "the film's question in type")
+    QUESTION_BY_S = 15.0        # on screen before 0:15 (rule model-film 3; qa.STAKE_BY_S)
+
+    def question_cards(self, beats: list[dict]) -> None:
+        """Editing rule 2 and model-film rules 3 and 9: the question the writer plants in the opening is set as a full-
+        screen type card the moment the narrator asks it, and the same card comes back before the hand-over, where the
+        film has answered it (the bookend). Only a real question the narration asks (ending in "?"), never invented."""
+        by_n = {s['n']: s for s in self.plan['shots']}
+        q = None
+        for b in beats:
+            if b['t'] >= self.QUESTION_BY_S:
+                break
+            s = by_n.get(b['meta']['n']) or {}
+            ws = s.get('words') or []
+            if not ws or s.get('voice_at') is None:
+                continue
+            i0 = 0
+            for j, w in enumerate(ws):
+                tok = str(w.get('w') or '')
+                if tok.endswith('.') or tok.endswith('!'):
+                    i0 = j + 1
+                elif tok.rstrip('"\'’”)').endswith('?'):
+                    words = [str(x.get('w') or '') for x in ws[i0:j + 1]]
+                    if 2 <= len(words) <= self.QUESTION_MAX_WORDS:
+                        a = s['voice_at'] + ws[i0]['start']
+                        z = s['voice_at'] + ws[j].get('end', ws[j]['start'] + 0.4)
+                        if b['t'] + a < self.QUESTION_BY_S:
+                            q = {'text': ' '.join(words).upper(), 'beat': b, 'at': round(a, 3), 'd': round(min(b['d'] - a, z - a + 1.0), 3)}
+                    i0 = j + 1
+                if q:
+                    break
+            if q:
+                break
+        if not q or q['d'] < 1.2:
+            return
+        half = len(q['text'].split()) // 2 + (len(q['text'].split()) % 2)
+        text = ' '.join(q['text'].split()[:half]) + '|' + ' '.join(q['text'].split()[half:])
+        q['beat']['shots'].append({'kind': 'word', 'text': text, 'bg': 'ink', 'size': 130, 'small': 'THE QUESTION', 'at': q['at'], 'd': round(q['at'] + q['d'], 3), 'z': 16})   # word() counts its `at` inside d
+        last = next((b for b in reversed(beats) if b['meta']['type'] not in ('end', 'follow', 'chapter') and b['d'] >= 4.0), None)
+        if last is not None and last is not q['beat']:
+            last['shots'].append({'kind': 'word', 'text': text, 'bg': 'ink', 'size': 130, 'small': 'THE OPENING QUESTION', 'at': 0.0, 'd': 2.4, 'z': 16})
+        self.question = q['text']
 
     def beats(self) -> list[dict]:
         """The film's beats, edited (docu/editor.py): long stills cut into looks, cards that leave, a transition into
