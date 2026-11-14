@@ -60,3 +60,19 @@ describe('social pictures v4', () => {
     for (const f of ['archivo-latin-wdth-italic.woff2', 'shrikhand-latin-400-normal.woff2', 'ultra-latin-400-normal.woff2', 'OFL.txt']) expect(existsSync(`scripts/marketing/kit/v4/fonts/${f}`), f).toBe(true)
   })
 })
+
+describe('social cleanup', () => {
+  it('flags repeats (keeps the first), test posts and empty posts — nothing else', async () => {
+    // @ts-expect-error plain ESM
+    const {flag} = await import('../../scripts/marketing/social-cleanup.mjs')
+    const items = [
+      {id: 'a', t: '2026-11-01', text: 'Who scored for Olympiacos against Rangers? Answer in the comments', pic: true},
+      {id: 'b', t: '2026-11-02', text: 'Who scored for Olympiacos against Rangers? Answer in the comments https://x.y', pic: true},
+      {id: 'c', t: '2026-11-03', text: 'test', pic: true},
+      {id: 'd', t: '2026-11-04', text: '', pic: false},
+      {id: 'e', t: '2026-11-05', text: 'A completely different post about Celtic shirts and the archive', pic: true},
+    ]
+    const f = flag(items, (x: {text: string}) => x.text, (x: {pic: boolean}) => x.pic)
+    expect(f.map((x: {id: string}) => x.id).sort()).toEqual(['b', 'c', 'd'])
+  })
+})
