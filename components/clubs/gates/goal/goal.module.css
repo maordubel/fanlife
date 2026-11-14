@@ -232,3 +232,9 @@ h3.fine { font-family: var(--mag-mono); font-weight: 700; font-size: 11px; lette
 /* 12.11.2026 — the archive door under a rebuilt goal */
 .archiveRow { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-block: 6px 2px; }
 .archiveRow a { display: inline-flex; align-items: center; min-height: 44px; font-family: var(--mag-display); font-size: 15px; text-transform: uppercase; color: inherit; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+
+.touchCompare { border:1px solid currentColor; padding:10px; display:grid; gap:8px; }
+.touchCompare h3 { font-weight:800; }
+.touchCards { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+.touchCards > div { border:1px solid rgb(128 128 128 / .5); padding:8px; overflow-wrap:anywhere; }
+.touchActions { display:flex; flex-wrap:wrap; gap:8px; }

@@ -45,5 +45,7 @@
  "xi.rankless": "Not a ranking. Not a verdict.",
  "xi.shout": "Pick your legends!",
  "xi.tab.worstSub": "your opinion only",
- "xi.sheet": "Team sheet"
+ "xi.sheet": "Team sheet",
+ "xi.undo": "Undo last edit",
+ "xi.undo.done": "Last edit undone."
 }

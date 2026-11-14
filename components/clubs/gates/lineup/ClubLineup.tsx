@@ -14,8 +14,8 @@ import {markStep} from '@/lib/analytics/meter'
 import type {GameCopy} from '@/lib/clubs/game-copy'
 import type {UiLocale} from '@/lib/clubs/locale'
 import {kitFor,type RumbleWardrobe} from '@/lib/clubs/rumble-kit'
-import {BANDS,aimAfter,bandOf,counts,emptyBoard,filled,isBand,isComplete,onBoard,picksOf,place,remove,sheetOf,toggleLock,wire,type Band,type Board,type CoachNote,type GradeResult,type Mark} from '@/lib/clubs/lineup-model'
-import {askLineupCoach,gradeLineupSheet} from './coach-action'
+import {BANDS,aimAfter,bandOf,counts,emptyBoard,filled,isBand,isComplete,onBoard,picksOf,place,remove,sheetOf,toggleLock,wire,type Band,type Board,type CoachNote,type Mark} from '@/lib/clubs/lineup-model'
+import {askLineupCoach,gradeLineupSheet,type SheetVerdict} from './coach-action'
 import {BandPitch,type PitchLabels} from './BandPitch'
 import {LockerRack,type RackLabels} from './LockerRack'
 import css from './lineup.module.css'
@@ -23,7 +23,7 @@ import {Plate} from '@/components/weekly/Plate'
 import {sharedGate} from '@/lib/clubs/gates'
 
 export type LineupItem={id:string;title:string;competition:string;on:string|null;year:number|null;score:string|null;pool:string[];/** how many coach notes this match can give (0 when the sheet has nothing to count) */coachBudget:number;sources:{title:string;url:string|null}[]}
-type Graded=GradeResult&{sources:string[]}
+type Graded=SheetVerdict
 type Sheet=null|'info'|'coach'|'all'|'handin'|'result'
 type Say=(k:string,v?:Record<string,string|number>)=>string
 
@@ -230,15 +230,17 @@ function Match({m,n,total,started,onStart,onNext,club,clubName,version,locale,co
      <p className={css.scoreKicker}>{tx('lu.result.scoreLabel')} · {tx('lu.mode.name')}</p>
      <p className={css.scoreLine}>{sheetData.correct===11?tx('lu.result.perfect'):sheetData.correct>=8?tx('lu.result.strong'):tx('lu.result.keep')}</p>
     </div>
-    <div className={css.sheetBands} aria-label={tx('lu.result.yours')}>
-     {[...BANDS].reverse().map(b=>{
-      const rows=sheetData.rows.filter(r=>r.band===b)
-      return rows.length>0&&<div key={b} className={css.sheetBand}><b>{tx(`lu.short.${b}`)}</b>
-       <div className={css.chips} lang={contentLocale}>{rows.map(r=><span key={r.name} className={css.chip} data-mark={r.mark}><span className={css.chipShirt}>{shirtOf(r.name)}</span><span dir="auto">{r.name}</span><span className={css.chipMark} aria-label={tx(r.mark==='right'?'lu.result.right':'lu.result.wrong')}>{r.mark==='right'?'✓':'✗'}{r.locked?` ${tx('lu.lockMark')}`:''}</span></span>)}</div></div>
-     })}
+    <p className={css.fine}>{tx('lu.result.positionsUnrecorded')}</p>
+    <div className={css.compare} data-testid="lineup-compare">
+     <section>
+      <h3>{tx('lu.result.yours')}</h3>
+      <ul>{sheetData.rows.map(row=><li key={row.name}><bdi>{row.name}</bdi><small>{tx(row.mark==='right'?'lu.result.starter':'lu.result.notStarter')}</small></li>)}</ul>
+     </section>
+     <section>
+      <h3>{tx('lu.result.actual')}</h3>
+      <ul>{grade.starters.map(name=><li key={name}><bdi>{name}</bdi>{grade.missed.includes(name)&&<small>{tx('lu.result.notPicked')}</small>}</li>)}</ul>
+     </section>
     </div>
-    {sheetData.missed.length>0&&<div><h3 className={css.fine}>{tx('lu.result.missed')}</h3>
-     <div className={css.chips} lang={contentLocale}>{sheetData.missed.map(name=><span key={name} className={css.chip} data-ghost="true"><span className={css.chipShirt}>{shirtOf(name)}</span><span dir="auto">{name}</span></span>)}</div></div>}
     <div className={css.tally}>
      {sheetData.locksUsed>0&&<span>{tx('lu.result.locks',{n:sheetData.locksRight,of:sheetData.locksUsed})}</span>}
      <span>{tx('lu.result.coach',{n:notes.length})}</span>

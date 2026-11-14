@@ -98,5 +98,10 @@
  "lu.intro.start": "התחלה",
  "lu.result.scoreLabel": "פותחים שנקבו",
  "lu.result.archive": "בארכיון",
- "lu.result.archiveNight": "הערב הזה בארכיון"
+ "lu.result.archiveNight": "הערב הזה בארכיון",
+ "lu.result.actual": "ההרכב שפתח",
+ "lu.result.positionsUnrecorded": "הארכיון מתעד מי פתח. העמדות אינן נבדקות.",
+ "lu.result.starter": "פתח בהרכב",
+ "lu.result.notStarter": "לא פתח",
+ "lu.result.notPicked": "לא בחרת בשחקן הזה"
 }

@@ -73,7 +73,16 @@ function XIBoard({kind,tabs,players,club,clubName,locale,contentLocale,wardrobe,
  // a formation change can remove the aimed slot — re-aim at the first empty one
  useEffect(()=>{if(active!==TWELFTH&&!slots.some(s=>s.slotId===active))setActive(firstEmpty(xi)??slots[0]!.slotId)},[active,slots,xi])
 
+ const [previous,setPrevious]=useState<{xi:XIState;active:Where;railOpen:boolean}|null>(null)
+ function undo(){
+  if(!previous)return
+  setXI(previous.xi);setActive(previous.active);setRailOpen(previous.railOpen)
+  setPrevious(null);setNotice(t('xi.undo.done'))
+ }
+
  function commit(next:XIState,landed?:Where){
+  if(next===xi||JSON.stringify(next)===JSON.stringify(xi))return
+  setPrevious({xi,active,railOpen})
   const was=isComplete(xi);setXI(next);setNotice('');markStep(filledCount(next))
   if(!was&&isComplete(next)){setRailOpen(false);setSheet('result')}
   else if(landed!==undefined){const n=nextEmpty(next,landed);if(n)setActive(n)}
@@ -133,6 +142,7 @@ function XIBoard({kind,tabs,players,club,clubName,locale,contentLocale,wardrobe,
 
  const main=<div className={css.main}>
   <div className={css.bar}>{tabs}
+   <button type="button" className={`min-h-tap ${css.tool}`} disabled={!previous} onClick={undo} aria-label={t('xi.undo')} title={t('xi.undo')} data-testid="xi-undo">↶</button>
    <button type="button" className={`min-h-tap ${css.tool}`} aria-pressed={activeMan?xi.captain===activeMan.id:false} disabled={!activeMan||active===TWELFTH} onClick={()=>commit(setCaptain(xi,activeMan!.id))} aria-label={t('xi.captainMake')} title={t('xi.captainMake')}>C</button>
    <button type="button" className={`min-h-tap ${css.tool}`} disabled={!activeMan} onClick={()=>{commit(vacate(xi,active))}} aria-label={t('xi.remove')} title={t('xi.remove')}>✕</button>
   </div>

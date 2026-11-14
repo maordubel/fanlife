@@ -98,5 +98,10 @@
  "lu.intro.start": "Start",
  "lu.result.scoreLabel": "starters named",
  "lu.result.archive": "In the archive",
- "lu.result.archiveNight": "The night in the archive"
+ "lu.result.archiveNight": "The night in the archive",
+ "lu.result.actual": "Actual starting XI",
+ "lu.result.positionsUnrecorded": "The archive records who started. Positions are ungraded.",
+ "lu.result.starter": "Started",
+ "lu.result.notStarter": "Did not start",
+ "lu.result.notPicked": "You missed this starter"
 }

@@ -99,5 +99,9 @@
  "gl.move.at": "{verb} · {zone}",
  "gl.result.archive": "In the archive",
  "gl.result.archiveNight": "The night in the archive",
- "gl.result.archiveScorer": "{name} in the archive"
+ "gl.result.archiveScorer": "{name} in the archive",
+ "gl.result.touch": "Touch {n} of {total}",
+ "gl.result.noArchiveTouch": "No corresponding archive touch.",
+ "gl.result.prevTouch": "Previous touch",
+ "gl.result.nextTouch": "Next touch"
 }

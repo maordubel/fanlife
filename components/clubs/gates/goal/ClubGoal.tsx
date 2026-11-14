@@ -143,6 +143,8 @@ function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,c
   })
  }
  function replay(r:GoalVerdict,mine:Draft){
+  const first=r.steps.findIndex(step=>step.actor===false||!step.action||step.zone!=='exact')
+  setComparison(first<0?(mine.length>r.truth.length?r.truth.length:0):first)
   setPhase('yours')
   ball.play(buildTimeline(mine),()=>{
    setPhase('archive')
@@ -172,6 +174,7 @@ function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,c
  // eslint-disable-next-line react-hooks/exhaustive-deps -- `tx` only closes over `copy`
  [copy])
 
+ const [comparison,setComparison]=useState(0)
  const replaying=phase==='yours'||phase==='archive'
  const prompt=phase==='yours'?tx('gl.replay.yours'):phase==='archive'?tx('gl.replay.archive'):phase==='done'?tx('gl.replay.done')
   :active!==null?tx('gl.prompt.touch',{n:active+1,name:`⁨${labelOf(draft[active]?.actor??'')}⁩`})
@@ -271,17 +274,23 @@ function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,c
      <p className={css.scoreLine}>{tx(`gl.tier.${tierOf(verdict.quality,verdict.perfect)}`)} · {tx(verdict.countRight?'gl.result.countRight':'gl.result.countWrong',{n:verdict.truth.length})}</p>
      <p className={css.scoreKicker}>{verdict.points}/{verdict.max} {tx('gl.result.points')}{verdict.hinted?` · ${tx('gl.result.hintCost',{cost:HINT_COST})}`:''}{verdict.extra>0?` · ${tx('gl.result.extraCost',{n:verdict.extra})}`:''}</p>
     </div>
-    <ol className={css.rows} lang={contentLocale}>
-     {verdict.truth.map((t,i)=>{
-      const v=verdict.steps[i]!,mine=draft[i],mark=(ok:boolean)=><span className={css.markOk} data-ok={ok} aria-label={tx(ok?'gl.result.yes':'gl.result.no')}>{ok?'✓':'✗'}</span>
-      return <li key={i}><b className={css.rowNo}>{i+1}</b><div>
-       <span className={css.rowName} dir="auto">{t.actor||unnamed} · {verbWord(t.action)} · <span className={css.zoneCode}>{t.zone}</span></span>
-       <span className={css.rowMeta}>{tx('gl.who')} {v.actor===null?<span className={css.markOk} data-ok="na" aria-label={tx('gl.result.na')}>–</span>:mark(v.actor)} · {tx('gl.what')} {mark(v.action)} · {tx('gl.where')} <span data-zone={v.zone}>{tx(`gl.zone.${v.zone}`)}</span></span>
-       <span className={css.rowMine}>{mine?tx('gl.result.yours',{name:mine.actor||unnamed,verb:verbWord(mine.action),zone:mine.zone}):tx('gl.result.missing')}</span>
-       {t.note&&<small className={css.rowNote} dir="auto">{t.note}</small>}
-      </div></li>})}
-     {draft.slice(verdict.truth.length).map((t,j)=><li key={`x${j}`} data-extra="true"><b className={css.rowNo}>{verdict.truth.length+j+1}</b><div><span className={css.rowMine}>{tx('gl.result.extra',{name:t.actor||unnamed,verb:verbWord(t.action),zone:t.zone})}</span></div></li>)}
-    </ol>
+    {(()=> {
+     const count=Math.max(verdict.truth.length,draft.length)
+     const archived=verdict.truth[comparison],mine=draft[comparison],step=verdict.steps[comparison]
+     return <section className={css.touchCompare} data-testid="goal-touch-review">
+      <h3 aria-live="polite">{tx('gl.result.touch',{n:comparison+1,total:count})}</h3>
+      <div className={css.touchCards}>
+       <div><b>{tx('gl.replay.yours')}</b><p dir="auto">{mine?[mine.actor||unnamed,verbWord(mine.action),mine.zone].join(' · '):tx('gl.result.missing')}</p></div>
+       <div><b>{tx('gl.replay.archive')}</b><p dir="auto">{archived?[archived.actor||unnamed,verbWord(archived.action),archived.zone].join(' · '):tx('gl.result.noArchiveTouch')}</p></div>
+      </div>
+      {step&&mine&&<p className={css.rowMeta}>{tx('gl.who')} {step.actor===null?'–':tx(step.actor?'gl.result.yes':'gl.result.no')} · {tx('gl.what')} {tx(step.action?'gl.result.yes':'gl.result.no')} · {tx('gl.where')} {tx(`gl.zone.${step.zone}`)}</p>}
+      {archived?.note&&<p className={css.rowNote} dir="auto">{archived.note}</p>}
+      <div className={css.touchActions}>
+       <button type="button" className={`min-h-tap ${css.btn}`} disabled={comparison===0} onClick={()=>setComparison(comparison-1)}>{tx('gl.result.prevTouch')}</button>
+       <button type="button" className={`min-h-tap ${css.btn}`} disabled={comparison>=count-1} onClick={()=>setComparison(comparison+1)}>{tx('gl.result.nextTouch')}</button>
+      </div>
+     </section>
+    })()}
     {verdict.narrative&&<p className={css.narrative} lang={contentLocale} dir="auto">{verdict.narrative}</p>}
     {/* 12.11.2026 — back into the archive: the night this goal was scored, and the man who scored it */}
     {(()=>{const scorer=[...verdict.truth].reverse().find(t=>t.side!=='opponent'&&t.actor)?.actor??null
