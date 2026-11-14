@@ -41,10 +41,12 @@ export function Shell({children,club,theme,locale='en',stop}:{children:ReactNode
    <nav className="mag-mono mag-foot-legal" aria-label="FAN LIFE"><Link className="mag-credit" href="/about">About</Link> · <Link className="mag-credit" href="/privacy">Privacy</Link> · <Link className="mag-credit" href="/terms">Terms</Link> · <Link className="mag-credit" href="/contact">Contact</Link> · <a className="mag-credit" href="https://www.dubelteam.com/games.html">More games ↗</a></nav>
    <a className="mag-credit" href="https://DubelTeam.com" target="_blank" rel="noopener noreferrer" aria-label={copy.creditAria}>{copy.credit} ↗</a>
   </div></footer>
-  <TabBar locale={locale}/>
+  <Suspense fallback={<TabBar locale={locale}/>}><ShellTabBar locale={locale}/></Suspense>
  </div>
 }
 export {Mark} from './Mark'
+/** the phone's bar knows whether the shop sells anything (one cached read a minute) */
+async function ShellTabBar({locale}:{locale:UiLocale}){return <TabBar locale={locale} shop={await shopIsOpen()}/>}
 
 /** THE WEEKLY's menu in the masthead (rule 124): the contents page — the paper, your corner, every club. */
 async function HubMenu({locale,current,theme}:{locale:UiLocale;current:string|null;theme?:ClubTheme}) {
