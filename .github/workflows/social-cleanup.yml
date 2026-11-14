@@ -1,0 +1,25 @@
+name: Social · Cleanup
+# Lists the redundant posts on the business Facebook Page and Instagram (repeats, test posts, empty posts) and, when run
+# with apply = true, deletes the Facebook ones (scripts/marketing/social-cleanup.mjs). Manual only.
+on:
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: 'Delete the flagged Facebook posts (otherwise only list them)'
+        type: boolean
+        default: false
+permissions: {}
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      META_PAGE_ID: ${{ vars.META_PAGE_ID }}
+      META_IG_USER_ID: ${{ vars.META_IG_USER_ID }}
+      META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+      CLEANUP_APPLY: ${{ inputs.apply && '1' || '0' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 20}
+      - run: node scripts/marketing/social-cleanup.mjs

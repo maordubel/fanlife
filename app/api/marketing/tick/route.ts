@@ -85,6 +85,24 @@ async function sendVisuals(token: string, chat: string, kit: unknown, {pngs, why
   return r.ok ? `sent ${pngs.length}${note}` : `refused: ${String(r.description || r.status).split(token).join('[token]').slice(0, 200)}`
 }
 
+/** v4: the story that moves (MP4, drawn ahead in Actions) — to Telegram, ready for Instagram, Facebook and TikTok stories */
+async function sendStory(token: string, chat: string, kit: unknown): Promise<string> {
+  try {
+    const file = pathToFileURL(path.join(process.cwd(), 'scripts/marketing/kit/visual.mjs')).href
+    const mod = await import(/* webpackIgnore: true */ file)
+    const mp4: Buffer | null = await mod.storyFor(kit)
+    if (!mp4) return 'none'
+    const form = new FormData()
+    form.append('chat_id', chat)
+    form.append('disable_notification', 'true')
+    form.append('supports_streaming', 'true')
+    form.append('video', new Blob([new Uint8Array(mp4)], {type: 'video/mp4'}), 'story.mp4')
+    form.append('caption', '🎬 Story that moves — post it to Instagram, Facebook and TikTok stories.')
+    const r = await tg(token, 'sendVideo', form)
+    return r.ok ? 'sent' : `refused: ${String(r.description || r.status).slice(0, 120)}`
+  } catch (e) { return `error: ${String((e as Error)?.message || e).slice(0, 120)}` }
+}
+
 export async function POST(r: NextRequest) {
   let b: {nonce?: unknown} = {}
   try { b = await r.json() } catch { /* empty */ }
@@ -100,7 +118,7 @@ export async function POST(r: NextRequest) {
     const sample = await visuals('📌 Post · <b>FAN LIFE</b>\n\n🪝 <b>HOOK</b>\n<b>Football. Forever.</b>\n\n🎨 <i>Visual: T1 Quote card.</i>', null)
     return json({ok: true, probe: true, reachable: !!c.ok, why: c.ok ? null : String(c.description || c.status).slice(0, 120), render: sample.pngs.length ? `ok ${sample.pngs[0]!.length} bytes` : sample.why})
   }
-  const done: {id: number; outcome: string; visual: string; facebook?: string; instagram?: string; x?: string}[] = []
+  const done: {id: number; outcome: string; visual: string; story?: string; facebook?: string; instagram?: string; x?: string}[] = []
   const cache = {}
   for (const due of got.posts || []) {
     // a live slot (matches, results, a DUBID round, OFFSIDES today) is composed now from real data, or stays quiet
@@ -114,6 +132,7 @@ export async function POST(r: NextRequest) {
     // needs hands (TikTok, a refusal, Meta switched off) comes as the full copy-paste draft with its pictures
     const quiet = done_everywhere(meta, p.kit)
     const visual = quiet ? 'not sent (published)' : await sendVisuals(token, p.chat_id, p.kit, drawn).catch(e => `error: ${String(e).slice(0, 200)}`)
+    const story = await sendStory(token, p.chat_id, p.kit)
     const tiktok = Array.isArray((p.kit as {to?: unknown} | null)?.to) && ((p.kit as {to: string[]}).to).includes('tiktok') ? '📱 <b>TikTok</b>: post these slides as a photo carousel (Photo mode); caption and tags from the box below.' : ''
     const head = [meta.line, x.line, tiktok].filter(Boolean).join('\n')
     const text = quiet ? quietLine(p.msg, meta) : head ? `${head}\n${p.msg}` : p.msg
@@ -123,7 +142,7 @@ export async function POST(r: NextRequest) {
     await rpc('worker_marketing_report', {p_id: p.id, p_outcome: outcome, p_error: error})
     // plan v6: where it went out, for the morning briefing's ✅ / ✋ / ❌ (best effort: the post is out either way)
     await rpc('worker_marketing_published', {p_id: p.id, p_result: {facebook: meta.facebook || null, instagram: meta.instagram || null, x: x.x || null}}).catch(() => null)
-    done.push({id: p.id, outcome, visual, facebook: meta.facebook, instagram: meta.instagram, x: x.x})
+    done.push({id: p.id, outcome, visual, story, facebook: meta.facebook, instagram: meta.instagram, x: x.x})
   }
   // the studio's Reels and posts on Facebook and Instagram, on this five-minute clock (lib/stories/metaSocial.ts)
   const studio = await runMetaSocial().catch(() => [] as string[])

@@ -1,0 +1,23 @@
+name: Marketing · Game screens
+# Real screens of FAN LIFE's own games for the v4 social pictures (scripts/marketing/kit/v4/screens.mjs).
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  screens:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 20, cache: npm}
+      - run: npm ci --ignore-scripts
+      - run: npx playwright install --with-deps chromium
+      - run: node scripts/marketing/kit/v4/screens.mjs screens
+      - name: Keep the screens on the marketing-screens branch (the design desk reads them from git)
+        if: always()
+        run: |
+          cd screens && git init -q -b marketing-screens && git add -A
+          git -c user.name=fanlife-bot -c user.email=bot@dubelteam.com commit -qm "game screens $(date -u +%F)"
+          git push -qf "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" marketing-screens
