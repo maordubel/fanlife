@@ -20,6 +20,7 @@ import {clubApp,iconHref,manifestHref} from '@/lib/clubs/pwa'
 import en from '@/messages/clubs/en.json'
 import he from '@/messages/clubs/he.json'
 import {Contents} from '@/components/weekly/Contents'
+import {shopHas} from '@/components/shop/ShopStrip'
 import {clubSections,menuApps,menuClubs,menuCopy,menuCorner,menuFanLife} from '@/lib/weekly/menu'
 import {featuresOf} from '@/lib/features'
 import {isOwner} from '@/lib/features-server'
@@ -58,7 +59,7 @@ export default async function ClubLayout({children,params}:{children:ReactNode;p
  const host=headers().get('host'),preview=evaluationMode()
  const id=resolveClubId(host,params.slug,preview)
  if(!id)return <>{children}</>
- const [state,core]=await Promise.all([readState(),loadClub(id)])
+ const [state,core,shop]=await Promise.all([readState(),loadClub(id),shopHas(id)])
  const c=state.clubs.find(x=>x.id===id)
  if(!c)return <>{children}</>
  const locale=uiLocale(headers().get('x-fan-life-locale')||undefined),copy=locale==='he'?he:en
@@ -82,7 +83,7 @@ export default async function ClubLayout({children,params}:{children:ReactNode;p
     <Link className="club-who" href={clubHref(id,'',locale)} aria-label={`${c.name} — ${copy.clubTabHome}`}><span className="club-who-kicker">{world.voice.kicker}</span></Link>
     <Contents rivalNo={rivalBans(theme).join(' ')||undefined} paint={themeStyle(theme,locale) as Record<string,string>}
      copy={{menu:t.wkMenu,title:t.wkContents,kicker:t.wkKickerClub.replace('{club}',c.name),close:t.wkClose,gates:t.wkGates,quick:t.wkQuick,deep:t.wkDeep,archive:t.wkArchive,corner:t.wkCorner,clubs:t.wkClubs,fanlife:t.wkFanLife,section:t.wkTheClub,apps:t.pinApps}} pins={featuresOf(state).pins||isOwner()} locale={locale} apps={menuApps(locale,id)}
-     sections={clubSections(id,locale,{terrace:labels.terrace,away,kitArchive:!!core})} gates={gates} corner={menuCorner(locale)} clubs={menuClubs(state.clubs,id,locale,theme,portal)} fanlife={menuFanLife(locale,portal)}/>
+     sections={clubSections(id,locale,{terrace:labels.terrace,away,kitArchive:!!core,shop})} gates={gates} corner={menuCorner(locale)} clubs={menuClubs(state.clubs,id,locale,theme,portal)} fanlife={menuFanLife(locale,portal)}/>
     <a className="club-exit" href={exitHref} aria-label={copy.clubExitLabel}><img src="/brand/fanlife/logo-mono.webp" alt="" width={34} height={34}/></a>
    </div>
    <span className="club-band mag-band" data-livery={lv?.pattern} aria-hidden="true"/>

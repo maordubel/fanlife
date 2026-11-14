@@ -27,6 +27,8 @@ export function Contents({copy,sections,gates,corner,clubs,fanlife,tone='dark',r
   return ()=>{root.style.overflow=prev;window.removeEventListener('keydown',key);opener?.focus()}
  },[open])
  const shut=()=>setOpen(false)
+ // one door per page in the menu (14.11.2026): what the sections list is not repeated in the corner or the FAN LIFE tiles
+ const listed=new Set(sections.map(s=>s.href)),cornerHere=corner.filter(c=>!listed.has(c.href)),fanlifeHere=fanlife.filter(f=>!listed.has(f.href))
  const sheet=open?<>
   <div className="wk-scrim" onClick={shut} aria-hidden="true"/>
   <div className="wk-sheet wk-menu z-[91]" role="dialog" aria-modal="true" aria-labelledby="wk-menu-h">
@@ -53,14 +55,14 @@ export function Contents({copy,sections,gates,corner,clubs,fanlife,tone='dark',r
     </section>}
     <section className="wk-menu-col" aria-label={copy.corner}>
      <h3 className="wk-head" style={{fontSize:20}}>{copy.corner}</h3>
-     <nav className="wk-tiles">{corner.map(c=><Link key={c.href} href={c.href} onClick={shut} aria-current={c.current?'page':undefined}><Icon name={c.icon}/><b>{c.title}</b>{c.sub&&<small>{c.sub}</small>}</Link>)}</nav>
+     <nav className="wk-tiles">{cornerHere.map(c=><Link key={c.href} href={c.href} onClick={shut} aria-current={c.current?'page':undefined}><Icon name={c.icon}/><b>{c.title}</b>{c.sub&&<small>{c.sub}</small>}</Link>)}</nav>
      <h3 className="wk-head" style={{fontSize:20,marginTop:14}}>{copy.clubs}</h3>
      <nav className="wk-crests">{clubs.map(c=><Link key={c.id} href={c.href} onClick={shut} className="wk-crest" aria-current={c.current?'true':undefined}>
       {c.crest?<img src={c.crest} alt="" width={44} height={44} data-rival={c.rival||undefined}/>:<span className="mag-badge" aria-hidden="true">{c.initials}</span>}
       <span style={{minWidth:0}}><b>{c.name}</b><small>{c.city}</small></span>
      </Link>)}</nav>
      <h3 className="wk-head" style={{fontSize:20,marginTop:14}}>{copy.fanlife}</h3>
-     <nav className="wk-tiles two">{fanlife.map(f=>f.href.startsWith('https://')?<a key={f.href} href={f.href} target="_blank" rel="noopener" onClick={shut}><Icon name={f.icon}/><b>{f.title}</b>{f.sub&&<small>{f.sub}</small>}</a>:<Link key={f.href} href={f.href} onClick={shut}><Icon name={f.icon}/><b>{f.title}</b>{f.sub&&<small>{f.sub}</small>}</Link>)}</nav>
+     <nav className="wk-tiles two">{fanlifeHere.map(f=>f.href.startsWith('https://')?<a key={f.href} href={f.href} target="_blank" rel="noopener" onClick={shut}><Icon name={f.icon}/><b>{f.title}</b>{f.sub&&<small>{f.sub}</small>}</a>:<Link key={f.href} href={f.href} onClick={shut}><Icon name={f.icon}/><b>{f.title}</b>{f.sub&&<small>{f.sub}</small>}</Link>)}</nav>
      {pins&&apps.length>0&&<><h3 className="wk-head" style={{fontSize:20,marginTop:14}}>{copy.apps}</h3>
       <ul className="wkp-apps">{apps.map(a=><li key={a.href}><a href={a.href} onClick={shut}><Icon name={a.icon}/><span><b>{a.title}</b>{a.sub&&<small>{a.sub}</small>}</span></a>{a.pin&&<PinToggle href={a.pin} label={a.title} locale={locale}/>}</li>)}</ul></>}
     </section>

@@ -46,5 +46,7 @@ export async function ShopStrip({subject,limit=4,className=''}:{subject?:string;
 }
 /** Is there anything to sell? Menus and doors ask this before they show a way in. */
 export const shopIsOpen=async()=>{const s=await publicShop().catch(()=>null);return !!s?.open&&s.products.length>0}
+/** Does the shop sell anything for this club? (a club's menu shows its shop only then) */
+export const shopHas=async(subject:string)=>{const s=await publicShop().catch(()=>null);return !!s?.open&&s.products.some(p=>p.subject===subject)}
 /** The menu's way in: printed only while there is something to sell. */
 export async function ShopNavLink({className}:{className?:string}){return (await shopIsOpen())?<Link className={className} href="/shop">{copy.navShop}</Link>:null}
