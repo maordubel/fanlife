@@ -41,3 +41,19 @@ class QuestionCard(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class Telling(unittest.TestCase):
+    def test_the_narrator_never_talks_about_the_film(self):
+        from studio.script import META_NARRATION
+        for bad in ('We track the rivalry that defined an era.', 'You will see exactly how it turned.', 'This is a record of pride.'):
+            self.assertTrue(META_NARRATION.search(bad), bad)
+        self.assertFalse(META_NARRATION.search('Borrelli stands over the ball, out on the right.'))
+
+    def test_a_club_name_alone_is_not_a_stake(self):
+        from studio import hook_judge as H
+        led = {'club_name': 'Panathinaikos', 'claims': [{'id': 'c1', 'fact': {'opponent': 'OFI', 'scorers': [{'name': 'Kalitzakis'}]}}]}
+        club = H.score_option({'text': 'Three goals down against OFI, and the stands were ready to turn.'}, led)
+        person = H.score_option({'text': 'Kalitzakis had seventy caps and no goal. So why was he up there?'}, led)
+        self.assertLess(club['laws']['stake'], person['laws']['stake'])
+        self.assertEqual(H.score_option({'text': 'We track the rivalry of 3 decades with Kalitzakis.'}, led)['laws']['cliche'], 0)

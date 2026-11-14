@@ -75,9 +75,11 @@ def score_option(option: dict, ledger: dict) -> dict:
     names = set()
     for c in ledger.get('claims') or []:
         _name_words(c.get('fact') or {}, names)
-    for w in _fold(str(ledger.get('club_name') or '')).split():
-        if len(w) > 2:
-            names.add(w)
+    # a club's name alone is not a stake ("against OFI"): sentence one names a person, a ground or a city (14.11.2026)
+    teams = set(_fold(str(ledger.get('club_name') or '')).split())
+    for c in ledger.get('claims') or []:
+        teams |= set(_fold(str((c.get('fact') or {}).get('opponent') or '')).split())
+    names -= teams
     said = set(_fold(first).split())
     has_name, has_number = bool(said & names), bool(numbers_in_text(first))
     laws['stake'] = POINTS['stake'] if (has_name and has_number) else round(POINTS['stake'] * 0.7) if (has_name or has_number) else 0
@@ -94,14 +96,15 @@ def score_option(option: dict, ledger: dict) -> dict:
     last = sents[-1] if sents else ''
     question = '?' in text
     turn = bool(PARADOX.search(first)) or bool(TURN_WORDS.search(last))
-    laws['loop'] = POINTS['loop'] if (question and turn) else round(POINTS['loop'] * 0.75) if (question or PARADOX.search(first)) else round(POINTS['loop'] * 0.4) if turn else 0
+    laws['loop'] = POINTS['loop'] if (question and turn) else round(POINTS['loop'] * 0.75) if question else round(POINTS['loop'] * 0.4) if (turn or PARADOX.search(first)) else 0
     notes.append('opens a question the film must answer' if laws['loop'] >= POINTS['loop'] * 0.75 else 'a soft turn, no question' if laws['loop'] else 'opens no question')
     # budget — sentence one inside the first ten seconds
     n1 = len(first.split())
     laws['budget'] = POINTS['budget'] if 0 < n1 <= FIRST_WORDS else max(0, POINTS['budget'] - (n1 - FIRST_WORDS)) if n1 else 0
     notes.append(f'sentence one is {n1} words ({n1 * 60 / WORDS_PER_MINUTE:.1f}s; the budget is {FIRST_WORDS})')
     # cliche — the openers and hype words the laws ban
-    banned, hype = bool(CLICHE.search(first) or COLD_TITLE.search(first)), HYPE.findall(text)
+    from .script import META_NARRATION
+    banned, hype = bool(CLICHE.search(first) or COLD_TITLE.search(first) or META_NARRATION.search(text)), HYPE.findall(text)
     laws['cliche'] = 0 if banned else max(0, POINTS['cliche'] - 5 * len(hype))
     if banned:
         laws['stake'] = min(laws['stake'], round(POINTS['stake'] * 0.4))   # a name inside a banned opener is still a banned opener
