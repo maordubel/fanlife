@@ -17,6 +17,7 @@ jobs:
       META_PAGE_ID: ${{ vars.META_PAGE_ID }}
       META_IG_USER_ID: ${{ vars.META_IG_USER_ID }}
       META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
       CLEANUP_APPLY: ${{ inputs.apply && '1' || '0' }}
     steps:
       - uses: actions/checkout@v4
