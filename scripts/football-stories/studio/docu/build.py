@@ -1113,8 +1113,8 @@ def edited(sb: dict, beats: list[dict], root: Path) -> list[dict]:
                 continue
             c = min(cuts, key=lambda c: abs(c - k['dt']))
             delta = round(c - k['dt'], 3)
-            if 0 < abs(delta) < PUNCH_SNAP and k['d'] - delta > 0.6:
-                k['dt'], k['d'] = c, round(k['d'] - delta, 3)
+            if abs(delta) < PUNCH_SNAP and k['d'] - delta > 0.6:
+                k['dt'], k['d'], k['on_cut'] = c, round(k['d'] - delta, 3), True   # on the cut: the veil is there in the first frame, it does not fade in over a bright one
                 for w in k['words']:
                     w['at'] = round(max(0.0, w['at'] - delta), 3)
     for b in out:
