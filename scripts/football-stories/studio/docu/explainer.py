@@ -39,7 +39,7 @@ EXPLAIN_MIN_S = 3.2        # an explainer shorter than this cannot be read (the 
 # … and one longer than this is a held shot to the gate (qa.MAX_SHOT_S 4.5: measured on the pilot, a 6 s board failed
 # 'shot length' — its ticks arriving are not a change of picture). The picture carries the rest of the beat.
 EXPLAIN_MAX_S = 4.2
-EXPLAIN_KINDS = {'explain', 'table', 'form', 'ledger', 'tally', 'cities', 'chalk', 'stat', 'locator'}
+EXPLAIN_KINDS = {'flap', 'explain', 'table', 'form', 'ledger', 'tally', 'cities', 'chalk', 'stat', 'locator'}
 READ_S = {'question': 3.0, 'lead': 3.0, 'word': 2.6}   # a title is type while it arrives and is read; a slammed word leaves after editor.WORD_HOLD
 KINETIC_KINDS = {'kinetic', 'word', 'quote', 'question', 'lead', 'rule', 'verdict'}
 GOAL_TALK = re.compile(r'\b(goals?|scored|scorer|minutes?|extra time|late|early|apart|equalis\w+|winner)\b', re.I)

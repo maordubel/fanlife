@@ -127,7 +127,7 @@ class Director(unittest.TestCase):
         self.assertIn('var glide=function', page)
         for c in f.cams:                                                        # every move as laid is calm at its own length
             self.assertEqual(C.problems(c['move'], c['d'], intensity=c['ci']), [], c)
-        self.assertNotRegex(page, r'yoyo|repeat:|elastic|bounce')
+        self.assertNotRegex(page, r'yoyo|(?<![-\w])repeat:|elastic|bounce')
 
     def test_a_storyboard_written_by_hand_is_drawn_as_before(self):
         f = B.Film({'palette': {'us': '#c00', 'them': '#222'}, 'silent': True}, Path('/tmp'))

@@ -69,6 +69,27 @@ BLOOM_S, BLOOM_TO = 1.4, 0.3
 # its travel to this — a detail look is a dolly or a rack AT 1.42, never the old constant glide.
 FRAME_BASE = {'wide': (1.0, '50% 50%'), 'detail': (1.42, '34% 40%'), 'reverse': (1.16, '50% 58%'), 'turn': (1.04, '50% 46%')}
 TAILS = {'cut': 0.0, 'fade': 0.0, 'match': 0.0, 'whip': 0.3, 'tear': 0.45, 'dive': 0.4}
+TAILS['shape'] = 0.55
+# ONE SHAPE PER FILM (docs/rules/editing-language.md rule 4): the film's own shape, taken from its story, opens every
+# chapter as a window that grows over the frame. Drawn on a 100×100 box, black = the window.
+SHAPES = {
+    'shamrock': '<circle cx="50" cy="27" r="19"/><circle cx="29" cy="52" r="19"/><circle cx="71" cy="52" r="19"/>'
+                '<circle cx="50" cy="46" r="14"/><path d="M46 58 Q48 80 40 96 L48 96 Q56 80 54 58 Z"/>',
+    'ticket': '<path d="M8 22 H92 V40 A10 10 0 0 0 92 60 V78 H8 V60 A10 10 0 0 0 8 40 Z"/>',
+    'tab': '<path d="M6 30 H40 L48 20 H94 V86 H6 Z"/>',
+    'stripe': '<path d="M0 34 H100 V66 H0 Z"/>',
+    'star': '<path d="M50 6 L61 38 H95 L67 58 L78 92 L50 71 L22 92 L33 58 L5 38 H39 Z"/>',
+    'ball': '<circle cx="50" cy="50" r="44"/>',
+}
+CLUB_SHAPES = {'panathinaikos': 'shamrock', 'celtic': 'shamrock', 'hapoel-tel-aviv': 'star', 'olympiacos': 'ball'}
+
+
+def shape_mask(name: str) -> str:
+    import urllib.parse
+    svg = f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">{SHAPES.get(name, SHAPES["ticket"])}</svg>'
+    return "url(\"data:image/svg+xml;utf8," + urllib.parse.quote(svg) + "\")"
+
+
 TEAR = (4, -3, 5, -4, 3, -5, 4, -2, 3)   # the torn edge: how far each of nine points sits off the tear line, in % of the width
 # A card that holds still is a dead frame (docs/fanlife/71: "the camera never stops dead"): it creeps in by this much a
 # second — 0.13 px a frame at the edge of the screen, far under rule 142's 0.6 px.
@@ -152,7 +173,7 @@ class Film:
 
     # ── primitives ──────────────────────────────────────────────────────────────────────────────────────────────────
     def clip(self, cid, t, d, inner, z, cls='', style=''):
-        self.made.append({'id': cid, 't': t, 'z': t + d})
+        self.made.append({'id': cid, 't': t, 'z': t + d, 'layer': z})
         self.clips.append(f'<div id="{cid}" class="clip {cls}" data-start="{r2(t)}" data-duration="{r2(d)}" style="z-index:{z};{style}">{inner}</div>')
 
     def tween(self, js: str):
@@ -268,6 +289,41 @@ class Film:
         if s.get('shrink_at') is not None:
             self.tween(f'tl.fromTo("#{cid}",{{y:0,scale:1}},{{y:-300,scale:0.62,duration:0.7,ease:"power3.inOut",immediateRender:false}},{r2(t + s["shrink_at"])});')
 
+    def flap(self, s, t, d):
+        """NUMBERS ARE OBJECTS (editing rule 3): a split-flap board — each character a tile that turns over from the
+        number before to the next (a year: the film travels back; a score: it changes on the goal). One turn per tile per
+        change, eased, staggered left to right; nothing flickers (rule 142). `frm` and `to` are strings of the same
+        length. `turns` [[at, text], ...] keeps turning the same board later (the held scoreboard: one board a match
+        chapter, a turn on every goal); `corner` sets it small in the top corner instead of centred."""
+        cid = self.id('flap')
+        b = str(s['to'])
+        a = str(s.get('frm', ''))
+        a = a.rjust(len(b))[-len(b):] if a else ' ' * len(b)
+        at = s.get('at', 0.0)
+        seq = [(t + max(at + 0.35, s.get('turn_at') or 0), a, b)]   # the first turn: on the goal word, or as it lands
+        cur = b
+        for k, nxt in s.get('turns') or []:
+            nxt = str(nxt).rjust(len(b))[-len(b):]
+            seq.append((t + k, cur, nxt))
+            cur = nxt
+        tiles = ''.join(f'<div class="fp"><b class="fa">{e(x)}</b><b class="fb">{e(y)}</b></div>' for x, y in zip(a, b))
+        small = f'<small>{e(s["small"])}</small>' if s.get('small') else ''
+        cls = 'flapw corner' if s.get('corner') else 'flapw'
+        self.clip(cid, t + at, d - at, f'<div class="{cls}"><div class="flaps">{tiles}</div>{small}</div>', s.get('z', 14), 'paper' if s.get('full') else '')
+        for n, (T, x, y) in enumerate(seq):
+            for i in range(len(y)):
+                fa, fb = f'#{cid} .fp:nth-child({i + 1}) .fa', f'#{cid} .fp:nth-child({i + 1}) .fb'
+                if n:   # the board as it stands is the front face again, the next number waits on the back
+                    self.tween(f'tl.set("{fa}",{{textContent:"{e(x[i])}",rotationX:0,opacity:1}},{r2(T - 0.01)});'
+                               f'tl.set("{fb}",{{textContent:"{e(y[i])}",rotationX:90}},{r2(T - 0.01)});')
+                if x[i] == y[i]:
+                    self.tween(f'tl.set("{fa}",{{opacity:0}},{r2(T)});tl.set("{fb}",{{rotationX:0}},{r2(T)});')
+                    continue
+                self.tween(f'tl.fromTo("{fa}",{{rotationX:0}},{{rotationX:-90,duration:0.22,ease:"power2.in",immediateRender:false}},{r2(T + 0.12 * i)});'
+                           f'tl.fromTo("{fb}",{{rotationX:90}},{{rotationX:0,duration:0.26,ease:"power2.out",immediateRender:false}},{r2(T + 0.12 * i + 0.22)});')
+            if n:
+                self.sound('stamp', T, None, 0.35)
+
     def badge(self, src, name) -> str:
         """A crest when one is on file; otherwise the club's initials on a plain roundel — never a borrowed badge."""
         if src:
@@ -293,8 +349,16 @@ class Film:
 
     def ticket(self, s, t, d):
         cid = self.id('tk')
-        self.clip(cid, t, d, f'<div class="ticket{" tc" if s.get("compact") else ""}"><small style="color:{self.US}">{e(s["small"])}</small><b>{e(s["big"])}</b><span>{e(s.get("line", ""))}</span></div>', 9, '' if s.get('compact') else 'paper')
+        win = ''
+        if s.get('window') and self.sb.get('shape') and not s.get('compact'):
+            # editing rule 4, the shape as a window: the chapter's first picture seen through the film's shape, behind the card
+            mk = shape_mask(self.sb['shape']).replace('"', "'")   # inside a style attribute
+            win = (f'<div class="win" style="background-image:url(assets/img/{e(s["window"])});-webkit-mask-image:{mk};mask-image:{mk}"></div>')
+        self.clip(cid, t, d, win + f'<div class="ticket{" tc" if s.get("compact") else ""}{" tw" if win else ""}"><small style="color:{self.US}">{e(s["small"])}</small><b>{e(s["big"])}</b><span>{e(s.get("line", ""))}</span></div>', 9, '' if s.get('compact') else 'paper')
         self.tween(f'tl.fromTo("#{cid} .ticket",{{rotation:-6,scale:0.6,opacity:0}},{{rotation:-2,scale:1,opacity:1,duration:0.35,ease:"back.out(2)"}},{r2(t)});')
+        if win:
+            self.tween(f'tl.fromTo("#{cid} .win",{{scale:0.7,opacity:0}},{{scale:1,opacity:1,duration:0.45,ease:"power3.out"}},{r2(t)});'
+                       f'tl.fromTo("#{cid} .win",{{scale:1}},{{scale:1.06,duration:{r2(max(0.5, d - 0.45))},ease:"none",immediateRender:false}},{r2(t + 0.45)});')
         if d > 1.0:   # the card keeps turning very slowly and its lines open: a chapter card measured under the motion floor (qa.MOTION_FLOOR) when it only crept
             self.tween(f'tl.fromTo("#{cid} .ticket",{{rotation:-2}},{{rotation:{-2 + 0.9 * min(d, 4):.2f},duration:{r2(d - 0.4)},ease:"none",immediateRender:false}},{r2(t + 0.4)});'
                        f'tl.fromTo("#{cid} .ticket small",{{letterSpacing:"10px"}},{{letterSpacing:"{10 + 3 * min(d, 4):.0f}px",duration:{r2(d)},ease:"none"}},{r2(t)});')
@@ -542,12 +606,41 @@ class Film:
                    f'tl.fromTo("#{cid}h",{{scaleX:0}},{{scaleX:1,duration:0.6,ease:"power1.inOut",transformOrigin:"left center"}},{r2(t + 2.3)});'
                    f'tl.fromTo("#{cid} .prt",{{y:200,opacity:0}},{{y:0,opacity:1,duration:0.45,ease:"power3.out"}},{r2(t + 2.9)});')
 
+    ENTRANCES = ('rise', 'slide', 'walk', 'toss', 'drop')
+
     def cutout(self, s, t, d):
-        """A cut-out figure (transparent PNG) rising in front of the picture behind it, on its own parallax plane."""
+        """A cut-out (transparent PNG) entering the picture as the thing it is (owner, 14.11.2026: "elements and figures
+        that enter the edit nicely into a situation in motion"): a person walks in from his side of the frame, a ball or
+        a scarf is tossed in on an arc, a ticket or a newspaper drops onto the scene, a celebrating figure rises; then
+        it travels gently with the camera. Every entrance eases out and stops — nothing overshoots or comes back (rule
+        142). `way` 1 = it stands on the right and comes from the right."""
         cid = self.id('cu')
-        self.clip(cid, t, d, f'<img class="cut" id="{cid}i" src="assets/img/{e(s["src"])}" style="left:{s.get("x", 1180)}px;height:{s.get("h", 1000)}px">', s.get('z', 6))
-        self.tween(f'tl.fromTo("#{cid}i",{{y:500,opacity:0}},{{y:{s.get("y", 120)},opacity:1,duration:0.7,ease:"power3.out"}},{r2(t)});'
-                   f'tl.to("#{cid}i",{{x:{-60 * s.get("way", 1)},duration:{r2(max(0.5, d - 0.7))},ease:"none"}},{r2(t + 0.7)});')   # the nearest plane: it travels with the camera's move
+        way = s.get('way', 1)
+        x, y = s.get('x', 1180), s.get('y', 120)
+        enter = s.get('enter', 'rise')
+        self.clip(cid, t, d, f'<img class="cut" id="{cid}i" src="assets/img/{e(s["src"])}" style="left:{x}px;height:{s.get("h", 1000)}px">', s.get('z', 6))
+        I = f'#{cid}i'
+        if enter == 'slide':
+            dur, frm = 0.75, f'x:{900 * way},y:{y},opacity:1'
+            to, ease = f'x:0,y:{y}', 'power3.out'
+        elif enter == 'walk':
+            dur, frm = 1.3, f'x:{1100 * way},y:{y},rotation:{3 * way},opacity:1'
+            to, ease = f'x:0,y:{y},rotation:0', 'power2.out'
+        elif enter == 'toss':
+            dur, frm = 0.8, f'x:{700 * way},y:{y - 520},rotation:{-28 * way},opacity:1'
+            to, ease = f'x:0,y:{y},rotation:{-4 * way}', 'power2.out'
+        elif enter == 'drop':
+            dur, frm = 0.55, f'x:0,y:{y - 760},rotation:{7 * way},opacity:1'
+            to, ease = f'x:0,y:{y},rotation:{2 * way}', 'power2.in'
+        else:
+            dur, frm = 0.7, f'x:0,y:500,opacity:0'
+            to, ease = f'x:0,y:{y},opacity:1', 'power3.out'
+        self.tween(f'tl.fromTo("{I}",{{{frm}}},{{{to},duration:{dur},ease:"{ease}"}},{r2(t)});')
+        if enter == 'drop':   # it lands with the sound of paper, not a bounce
+            self.sound('page', t + dur - 0.05, None, 0.4)
+        elif enter == 'toss':
+            self.sound('swish', t, None, 0.3)
+        self.tween(f'tl.to("{I}",{{x:{-60 * way},duration:{r2(max(0.5, d - dur))},ease:"none"}},{r2(t + dur)});')   # the nearest plane: it travels with the camera's move
 
     def clockdev(self, s, t, d):
         """Time pressure, drawn: the match clock as a bar across the top that fills to the minute the line is at — a minute
@@ -726,8 +819,13 @@ class Film:
 
     def end(self, s, t, d):
         cid = self.id('end')
+        frame = ''
+        if self.sb.get('shape'):
+            # editing rule 4, the shape as a frame: the film's last card sits inside its outline
+            frame = (f'<svg class="endf" viewBox="0 0 100 100" fill="none" stroke="{self.US}" stroke-width="0.6" opacity="0.5">'
+                     f'{SHAPES.get(self.sb["shape"], SHAPES["ticket"])}</svg>')
         self.clip(cid, t, d, f'<div class="end"><img src="assets/img/fanlife.png"><small>FAN LIFE · FOOTBALL STORIES</small><b>{e(s["title"])}</b><span>{e(s.get("line", ""))}</span>'
-                             f'<i class="endl" id="{cid}l" style="background:{self.US}"></i></div>', 13, 'ink')
+                             f'<i class="endl" id="{cid}l" style="background:{self.US}"></i></div>' + frame, 13, 'ink')
         self.tween(f'tl.fromTo("#{cid} .end",{{opacity:0,y:30}},{{opacity:1,y:0,duration:0.6,ease:"power2.out"}},{r2(t)});'
                    # the last card is on screen for YouTube's end screen: a line travels under it and the mark grows, so it is never a dead frame
                    f'tl.fromTo("#{cid}l",{{scaleX:0}},{{scaleX:1,duration:{r2(max(0.5, d - 0.3))},ease:"none",transformOrigin:"left center"}},{r2(t + 0.3)});'
@@ -761,6 +859,16 @@ class Film:
                        f'tl.set("{IN}",{{clipPath:"none"}},{r2(T + TAILS["tear"])});')
             if out:
                 self.tween(f'tl.fromTo("{OUT}",{{clipPath:"{poly(100, -8)}"}},{{clipPath:"{poly(100, 108)}",duration:{TAILS["tear"]},ease:"power2.inOut",immediateRender:false}},{r2(T)});')
+        elif name == 'dive' and self.sb.get('shape'):
+            # the film's shape opens over the frame and the chapter appears inside it (one move, eased, no bounce)
+            mk = shape_mask(self.sb['shape'])
+            self.tween(f'tl.set("{IN}",{{webkitMaskImage:\'{mk}\',maskImage:\'{mk}\',webkitMaskRepeat:"no-repeat",maskRepeat:"no-repeat",'
+                       f'webkitMaskPosition:"50% 50%",maskPosition:"50% 50%"}},{r2(T)});'
+                       f'tl.fromTo("{IN}",{{webkitMaskSize:"6% 6%",maskSize:"6% 6%"}},{{webkitMaskSize:"900% 900%",maskSize:"900% 900%",duration:{TAILS["shape"]},ease:"power2.in"}},{r2(T)});'
+                       f'tl.set("{IN}",{{webkitMaskImage:"none",maskImage:"none"}},{r2(T + TAILS["shape"])});')
+            for m in out:   # anything the old beat laid on top (a board, a stamp) must not sit over the new chapter
+                if m.get('layer', 0) > 9:
+                    self.tween(f'tl.to("#{m["id"]}",{{opacity:0,duration:{TAILS["shape"] * 0.6:.2f},ease:"power1.in"}},{r2(T)});')
         elif name == 'dive':
             self.tween(f'tl.fromTo("{IN}",{{scale:0.82,opacity:0}},{{scale:1,opacity:1,duration:{TAILS["dive"]},ease:"power3.out"}},{r2(T)});')
             for m in out:
@@ -795,7 +903,8 @@ class Film:
             # A beat with `in` is an edited beat (docu/editor.py): it enters by a transition, and stays under the next
             # beat for as long as that beat's transition needs. A storyboard written by hand has no `in` and is drawn as before.
             edited = 'in' in b
-            tail = TAILS[beats[i + 1].get('in') or 'cut'] if edited and i + 1 < len(beats) else 0.0
+            nxt = (beats[i + 1].get('in') or 'cut') if edited and i + 1 < len(beats) else None
+            tail = 0.0 if nxt is None else TAILS['shape'] if nxt == 'dive' and self.sb.get('shape') else TAILS[nxt]
             k0, end = len(self.made), b['t'] + b['d']
             for s in b['shots']:
                 dt = s.get('dt', 0)
@@ -811,7 +920,7 @@ class Film:
             if edited:
                 mine = self.made[k0:]
                 self.transition(b['in'], b['t'], [m for m in mine if abs(m['t'] - b['t']) < 0.02], out_ids)
-                out_ids = [m for m in mine if m['z'] >= end - 0.02]
+                out_ids = [m for m in mine if end - 0.02 <= m['z'] <= end + 1.0]   # a held board runs on: no transition moves it
             for snd in b.get('sound', []):
                 self.sound(snd[0], b['t'] + snd[1], snd[2] if len(snd) > 2 else None, snd[3] if len(snd) > 3 else 0.6)
             if b.get('flash') is not None:
@@ -871,7 +980,7 @@ video.clip{{width:1920px;height:1080px}}
 .sbcap{{position:absolute;left:260px;top:612px;width:1400px;text-align:center;font:700 34px 'Cond';color:{P};letter-spacing:6px}}
 .stamp{{width:auto;height:auto;padding:4px 40px;border:14px solid;font:400 230px/1 'Ultra';background:rgba(241,232,211,.08)}}
 .q{{position:absolute;left:0;width:1920px;top:250px;text-align:center;font:400 104px/1.12 'Head';color:{P};text-shadow:6px 6px 0 {INK}}} .q em{{font-style:normal;color:#fff;padding:0 14px}}
-.ticket{{position:absolute;left:460px;top:330px;width:1000px;padding:40px 60px;background:#fff;border:6px dashed {INK};text-align:center;color:{INK}}}
+.ticket.tw{{left:850px;width:860px}} .ticket{{position:absolute;left:460px;top:330px;width:1000px;padding:40px 60px;background:#fff;border:6px dashed {INK};text-align:center;color:{INK}}}
 .ticket small{{display:block;font:700 40px 'Cond';letter-spacing:10px}} .ticket b{{display:block;font:400 132px/1 'Ultra'}} .ticket span{{display:block;font:700 30px 'Cond';letter-spacing:3px;margin-top:14px}}
 .lt{{position:absolute;left:58px;top:820px;background:{INK};color:{P};padding:18px 34px;display:flex;gap:26px;align-items:baseline}} .lt b{{font:400 58px 'Ultra';color:#fff}} .lt span{{font:700 32px 'Cond';letter-spacing:2px}}
 .clockbar{{position:absolute;left:140px;top:120px;width:1640px;display:flex;align-items:center;gap:20px;font:700 40px 'Cond';color:{INK}}}
@@ -931,7 +1040,7 @@ video.clip{{width:1920px;height:1080px}}
 .prn{{position:absolute;left:210px;top:92px;width:1500px;height:844px;overflow:hidden;border:18px solid #fff;box-shadow:22px 22px 0 rgba(20,17,13,.5)}} .prn .phi{{width:100%;height:100%}}
 .duo{{position:absolute;left:0;top:0;width:1920px;height:1080px;mix-blend-mode:multiply;opacity:.85}}
 .subw .sub.kar{{top:auto;bottom:54px;font:400 46px/1.25 'Head';text-transform:uppercase;letter-spacing:1px;color:{P};background:rgba(20,17,13,.88);padding:10px 26px;max-width:1500px}} .sub.kar span{{padding:0 4px}}
-.fw{{position:absolute;left:150px;top:150px;width:1620px;color:{INK}}} .fh b{{display:block;font:400 92px/1 'Ultra'}} .fh span{{font:700 40px 'Caps';letter-spacing:8px}}
+.flapw{{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px}} .flaps{{display:flex;gap:14px;perspective:1400px}} .fp{{position:relative;width:170px;height:240px}} .fp b{{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:{INK};color:{P};font:400 190px/1 'Ultra';border-radius:10px;box-shadow:0 10px 0 rgba(0,0,0,.35);backface-visibility:hidden;transform-origin:50% 50%}} .fp b::after{{content:'';position:absolute;left:0;right:0;top:50%;height:3px;background:rgba(255,255,255,.18)}} .fp .fb{{transform:rotateX(90deg)}} .win{{position:absolute;left:130px;top:170px;width:740px;height:740px;background-size:cover;background-position:center;-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}} .endf{{position:absolute;left:50%;top:50%;width:980px;height:980px;margin:-490px 0 0 -490px;pointer-events:none}} .flapw.corner{{inset:auto;right:90px;top:120px;gap:12px;align-items:flex-end}} .flapw.corner .fp{{width:74px;height:104px}} .flapw.corner .fp b{{font-size:80px;border-radius:6px;box-shadow:0 6px 0 rgba(0,0,0,.35)}} .flapw.corner small{{font-size:24px;letter-spacing:5px;padding:5px 12px}} .flapw small{{font:700 40px 'Caps';letter-spacing:10px;color:{INK};background:{P};padding:8px 22px}} .fw{{position:absolute;left:150px;top:150px;width:1620px;color:{INK}}} .fh b{{display:block;font:400 92px/1 'Ultra'}} .fh span{{font:700 40px 'Caps';letter-spacing:8px}}
 .fg{{display:grid;gap:12px;margin-top:40px}} .ft{{height:96px;display:flex;align-items:center;justify-content:center;color:#fff;font:400 52px 'Ultra';border:4px solid {INK};box-shadow:6px 6px 0 {INK}}}
 .fbr{{margin-top:44px;text-align:left}} .fwb{{top:120px}} .fwb .fh b{{font-size:170px}} .fwb .fh span{{font-size:46px}} .fwb .fbr span{{font-size:60px;padding:12px 30px}}
 .fbr span{{display:inline-block;margin-top:14px;background:{INK};color:#fff;font:700 40px 'Caps';letter-spacing:4px;padding:8px 22px}}

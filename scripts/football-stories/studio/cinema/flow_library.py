@@ -146,6 +146,8 @@ def pieces() -> list[dict]:
                     'prompt': f'{STYLE} Inside a football ground of the {d}s during a match: {GROUND[d]}. {SCENE}'})
     for slug, what in CITIES.items():
         out.append({'stem': f'city-{slug}-fl1-kr', 'aspect': '16:9', 'prompt': f'{STYLE} {what}, on a match day. {SCENE}'})
+    from .. import looks   # the real people the films name, drawn from their grounded look (studio/looks.py)
+    out += looks.pieces()
     return out
 
 

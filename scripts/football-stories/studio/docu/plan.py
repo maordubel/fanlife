@@ -171,6 +171,11 @@ class Adapter:
         fresh against this film and the last films — and never the picture of the shot before."""
         if n in self.spares:   # a shot may ask twice (its background and its card): the same picture both times
             return self.spares[n]
+        mine = self.own_picture(n)
+        if mine:   # the named person's own picture comes first (docs/rules/studio-pictures.md 2–3)
+            self.spares[n] = self.ink(Path(mine['path']))
+            self.keys.setdefault(n, mine['id'])
+            return self.spares[n]
         before = self.keys.get(max((k for k in self.keys if k < n), default=-1))
         q = self.query(n)
         av = ({before} if before else set()) | self.people_pictures(n)
@@ -284,17 +289,69 @@ class Adapter:
                     if isinstance(x, dict) and x.get('name'):
                         names.add(x['name'])
             self._names = names
+        return bool(self.names_on(text))
+
+    def names_on(self, text: str) -> list[str]:
+        """The real people this line names (see `named`), longest name first."""
+        if not hasattr(self, '_names'):
+            self.named('')
         low = text or ''
-        return any(re.search(r'\b' + re.escape(n) + r'\b', low) for n in self._names)
+        return [n for n in sorted(self._names, key=len, reverse=True) if re.search(r'\b' + re.escape(n) + r'\b', low)]
+
+    def own_picture(self, n: int) -> dict | None:
+        """A picture made for the person this line names (studio/looks.py → Flow → `person-<slug>-<era>-…`), of the
+        film's era when there is one. Found: it is the beat's picture. Not found: the person is written to the job's Flow
+        orders (`missing_people`, flow-people.json) and the line keeps its card or place picture."""
+        from .. import looks
+        s = next((x for x in self.plan.get('shots') or [] if x['n'] == n), None) or {}
+        names = self.names_on(s.get('narration') or '')
+        if not names:
+            return None
+        era = looks.era_of(self.led.get('season') if isinstance(self.led, dict) else '')
+        for name in names:
+            tag = f'person-{looks.slug(name)}-'
+            mine = [r for r in self.picker.records if tag in r['id']]
+            if era:
+                mine = [r for r in mine if f'-{era}-' in r['id']] or [r for r in mine if not re.search(r'-\d{4}s-', r['id'])]
+            if mine:
+                r = sorted(mine, key=lambda r: (r['id'] in self.picker.shots, r['id']))[0]   # a pose not shown yet first
+                if n not in self.picker.shots.get(r['id'], set()):
+                    self.picker.use(r['id'], n, s.get('start'), why=[f'tagged for {name}'])
+                return r
+            if not hasattr(self, 'missing_people'):
+                self.missing_people = {}
+            o = self.missing_people.setdefault(name, {'name': name, 'club': self.pal.club_id, 'era': era,
+                                                      'season': str(self.led.get('season') or '') if isinstance(self.led, dict) else '', 'beats': []})
+            if n not in o['beats']:
+                o['beats'].append(n)
+        return None
 
     def people_pictures(self, n: int) -> set[str]:
         """On a line that names a real person: every library picture of a figure, so no generic player or face stands in
         for him (owner, 14.11.2026: "if the player is dark-skinned the graphic must be too" — a library figure cannot know).
         The line is carried by the place, the crowd, the archive or a card instead."""
         s = next((x for x in self.plan.get('shots') or [] if x['n'] == n), None) or {}
-        if not self.named(s.get('narration') or ''):
-            return set()
-        return {r['id'] for r in self.picker.records if 'portrait-silhouette' in (r.get('subjects') or []) or self.FIGURE.search(r['id'])}
+        if not self.named(s.get('narration') or ''):   # a real person's own picture is shown only on a line about him
+            return {r['id'] for r in self.picker.records if re.search(r'(^|[/:])person-[a-z0-9-]+-(\d{4}s-)?(portrait|celebrate|action)-', r['id'])}
+        own = (self.own_picture(n) or {}).get('id')
+        return {r['id'] for r in self.picker.records if r['id'] != own and ('portrait-silhouette' in (r.get('subjects') or []) or self.FIGURE.search(r['id']))}
+
+    TOSSED = re.compile(r'ball|scarf|flare|flag|hat|boot|shirt|confetti|ribbon|bottle|can\b', re.I)
+    DROPPED = re.compile(r'ticket|newspaper|paper|programme|program|letter|document|photo|telegram|card|cutting|clipping|page', re.I)
+    ROSE = re.compile(r'celebrat|jump|leap|trophy|cup-lift|lift', re.I)
+
+    def entrance(self, rid: str, person: bool) -> str:
+        """How a cut-out enters, by what it is (build.Film.cutout): a person walks in (a celebration rises), a thrown
+        thing is tossed in, paper drops onto the scene, anything else slides in from its side."""
+        if self.ROSE.search(rid):
+            return 'rise'
+        if person:
+            return 'walk'
+        if self.DROPPED.search(rid):
+            return 'drop'
+        if self.TOSSED.search(rid):
+            return 'toss'
+        return 'slide'
 
     def index_cutout(self, s: dict) -> list[dict]:
         """A cut-out from the PNG library (studio/kit/cutouts, through the media index) in front of the picture: the beat's
@@ -326,7 +383,8 @@ class Adapter:
             except OSError:
                 return []
             return [{'kind': 'cutout', 'role': 'actor' if person else 'object', 'src': self.asset(png, 'cut'), 'h': h,
-                     'x': (B.W - w - 130) if right else 130, 'y': B.H - h - (18 if person else int(B.H * 0.2)), 'dt': 0.5}]
+                     'x': (B.W - w - 130) if right else 130, 'y': B.H - h - (18 if person else int(B.H * 0.2)), 'dt': 0.5,
+                     'way': 1 if right else -1, 'enter': self.entrance(r['id'], person)}]
         return []
 
     def lib_figures(self, s: dict) -> list[dict]:
@@ -719,10 +777,128 @@ class Adapter:
                 b['subs'] = subtitles(s)
             out.append(b)
         self.question_cards(out)
+        self.turn_cards(out)
+        self.year_flaps(out)
+        self.score_board(out)
+        self.chapter_windows(out)
         return out
+
+    YEAR = re.compile(r'^(19[0-9]{2}|20[0-3][0-9])[.,;:!?]?$')
+    FLAPS_MAX = 4
+
+    def year_flaps(self, beats: list[dict]) -> None:
+        """Editing rule 3, numbers are objects: the first time the narration says a year, a split-flap board turns from
+        the year before (or this year, the first time) to it, on the word. At most one a chapter, four a film. Only a
+        year the narration says — the board prints nothing the script does not."""
+        by_n = {s['n']: s for s in self.plan['shots']}
+        shown, last, chapters = 0, str(Date.today().year), set()
+        for b in beats:
+            if shown >= self.FLAPS_MAX or b['meta']['type'] in ('end', 'follow', 'chapter', 'open'):
+                continue
+            s = by_n.get(b['meta']['n']) or {}
+            if s.get('voice_at') is None or b['meta'].get('chapter') in chapters:
+                continue
+            for w in s.get('words') or []:
+                m = self.YEAR.match(str(w.get('w') or '').strip('"\'’”('))
+                if m and m.group(1) != last:
+                    at = round(s['voice_at'] + w['start'] - 0.2, 3)
+                    if 0 <= at <= b['d'] - 2.2:
+                        b['shots'].append({'kind': 'flap', 'frm': last, 'to': m.group(1), 'at': max(0.0, at), 'd': round(max(0.0, at) + 2.6, 3), 'z': 14})
+                        last, shown = m.group(1), shown + 1
+                        chapters.add(b['meta'].get('chapter'))
+                    break
+
+    def chapter_windows(self, beats: list[dict]) -> None:
+        """Editing rule 4, the shape as a window: each chapter card shows the chapter's first picture through the film's
+        shape (build.Film.ticket draws it when the film has a shape). The picture is the one the chapter opens on, so the
+        window is a promise the next cut keeps."""
+        for k, b in enumerate(beats):
+            if b['meta']['type'] != 'chapter':
+                continue
+            card = next((x for x in b['shots'] if x.get('kind') == 'ticket'), None)
+            if not card:
+                continue
+            for nb in beats[k + 1:]:
+                if nb['meta']['type'] == 'chapter':
+                    break
+                src = next((x.get('src') for x in nb['shots'] if x.get('kind') == 'image' and x.get('src')), None)
+                if src:
+                    card['window'] = src
+                    break
+
+    def score_board(self, beats: list[dict]) -> None:
+        """Editing rule 3, the held scoreboard: in a chapter with goals told in the record's order, the score is one board
+        that stays up from the first goal to the end of the chapter and turns on every goal, instead of a new score box on
+        each goal picture. Only scores the record gives (the beat's `mini` with its `flip`); a goal without order keeps
+        its own box."""
+        def mini_of(b):
+            for sh in b['shots']:
+                m = sh.get('mini')
+                if m and m.get('flip'):
+                    return sh, m
+            return None, None
+        groups: dict = {}
+        for b in beats:
+            sh, m = mini_of(b)
+            if m:
+                groups.setdefault(b['meta'].get('chapter'), []).append((b, sh, m))
+        for ch, goals in groups.items():
+            first, sh0, m0 = goals[0]
+            last = max((b for b in beats if b['meta'].get('chapter') == ch), key=lambda b: b['t'] + b['d'])
+            end = last['t'] + last['d'] - first['t'] - 0.1
+            board = {'kind': 'flap', 'corner': True, 'frm': m0['score'], 'to': m0['flip']['score'], 'at': m0.get('at', 0.4),
+                     'turns': [], 'd': round(end, 3), 'z': 13,
+                     'small': f"{str(m0.get('home') or '').upper()} · {str(m0.get('away') or '').upper()}".strip(' ·')}
+            board['turn_at'] = m0['flip']['at']
+            for b, sh, m in goals[1:]:
+                board['turns'].append([round(b['t'] - first['t'] + m['flip']['at'], 3), m['flip']['score']])
+            for b, sh, m in goals:
+                sh.pop('mini', None)
+            first['shots'].append(board)
 
     QUESTION_MAX_WORDS = 9      # a question card is read at a glance (editing rule 2: "the film's question in type")
     QUESTION_BY_S = 15.0        # on screen before 0:15 (rule model-film 3; qa.STAKE_BY_S)
+
+    TURN = re.compile(r"^(But|Until|Then|Instead|Except|And then|Yet|Nobody|No one)\b")
+    TURN_MAX, TURN_GAP_S, TURN_WORDS = 2, 45.0, (3, 8)
+
+    def turn_cards(self, beats: list[dict]) -> None:
+        """Interest (owner, 14.11.2026: "objects, interest and editing"): the story's turns are felt, not only heard. A
+        short sentence the narration opens with a reversal ("But…", "Until…", "Then…", "Nobody…") is set in type on the
+        word, in the film's ink, the way the question card is. Only the narration's own words; two a film, 45 s apart,
+        never in the cold open or on a card, a goal or the hand-over."""
+        by_n = {s['n']: s for s in self.plan['shots']}
+        shown, last_t = 0, -1e9
+        for b in beats:
+            if shown >= self.TURN_MAX:
+                return
+            if b['t'] < self.QUESTION_BY_S or b['meta']['type'] not in ('illustration', 'turning', 'map', 'race') or b['t'] - last_t < self.TURN_GAP_S:
+                continue
+            if any(x.get('kind') in ('word', 'flap') for x in b['shots']):
+                continue
+            s = by_n.get(b['meta']['n']) or {}
+            ws = s.get('words') or []
+            if not ws or s.get('voice_at') is None:
+                continue
+            i0 = 0
+            for j, w in enumerate(ws):
+                tok = str(w.get('w') or '')
+                if not re.search(r'[.!?]["\'’”)]*$', tok):
+                    continue
+                words = [str(x.get('w') or '') for x in ws[i0:j + 1]]
+                lo, hi = self.TURN_WORDS
+                if lo <= len(words) <= hi and self.TURN.match(' '.join(words)) and not words[-1].endswith('?'):
+                    a = s['voice_at'] + ws[i0]['start']
+                    z = s['voice_at'] + ws[j].get('end', ws[j]['start'] + 0.4)
+                    d = min(b['d'] - a, z - a + 0.9)
+                    if d >= 1.2:
+                        t = ' '.join(words).upper()
+                        h = (len(words) + 1) // 2
+                        t = ' '.join(t.split()[:h]) + '|' + ' '.join(t.split()[h:])
+                        b['shots'].append({'kind': 'word', 'text': t, 'bg': 'ink', 'size': 120, 'at': round(a, 3), 'd': round(a + d, 3), 'z': 16})
+                        shown, last_t = shown + 1, b['t'] + a
+                    break
+                i0 = j + 1
 
     def question_cards(self, beats: list[dict]) -> None:
         """Editing rule 2 and model-film rules 3 and 9: the question the writer plants in the opening is set as a full-
@@ -823,6 +999,11 @@ def write_project(job_dir: Path, plan: dict, palette: Palette, root: Path) -> tu
     script = read_json(job_dir / 'script.json')
     ad = Adapter(job_dir, plan, palette, ledger, script)
     beats = ad.beats()
+    from .. import looks
+    book = looks.load()
+    people = [{**o, 'look': 'ready' if looks.ready(book.get(looks.slug(o['name']) + '-' + (o.get('era') or ''))) else 'needs research'}
+              for o in getattr(ad, 'missing_people', {}).values()]
+    write_json(job_dir / 'flow-people.json', {'people': people})   # named with no picture of their own: studio/looks.py orders them
     write_json(job_dir / 'docu-shots.json', {'shots': E.shot_list(beats), 'errors': E.errors(beats) if beats and 'in' in beats[0] else [],
                                              'beat_grid': bool(plan.get('beat_grid')), 'library': sorted(set(ad.lib_used)),
                                              **({'mix': X.mix(beats)} if beats and 'lang' in beats[0] else {})})
@@ -846,7 +1027,9 @@ def write_project(job_dir: Path, plan: dict, palette: Palette, root: Path) -> tu
     if fl.exists():
         shutil.copyfile(fl, root / 'assets' / 'img' / 'fanlife.png')
     them = NEUTRAL
-    sb = {'palette': {'us': palette.accent, 'them': them}, 'silent': True, 'karaoke': True, 'sub_limit': 44}
+    sb = {'palette': {'us': palette.accent, 'them': them}, 'silent': True, 'karaoke': True, 'sub_limit': 44,
+          'shape': B.CLUB_SHAPES.get(palette.club_id, 'ticket'),            # editing rule 4: one shape per film, from its club
+          'mark': (root / 'assets' / 'img' / 'fanlife.png').exists()}       # model-film rule 9: the channel's mark the whole film
     film = B.Film(sb, root)
     film.agg_moves = []
     D = film.build(beats)
@@ -868,6 +1051,11 @@ def render_film(job_dir: Path, plan: dict, palette: Palette, log, workers: int |
         write_json(sd / f'shot-{s["n"]:04d}.cues.json', {'cues': cues.get(s['n'], []), 'kind': s['visual']['type'], 'engine': ENGINE,
                                                         'required_asset': s.get('required_asset')})
     log(f'DOCU: {len(plan["shots"])} shots composed in {time.time() - t0:.1f}s ({D / 60:.2f} min)')
+    try:   # the people the film named with no picture of their own: their look researched, their picture ordered in Flow
+        from .. import looks
+        looks.after_film(job_dir, log)
+    except Exception as x:  # noqa: BLE001 — never the film's problem
+        log(f'Looks: skipped ({str(x)[:120]})')
     used = read_json(job_dir / 'docu-shots.json').get('library') or []
     log(f'DOCU: {len(used)} moving-art library pieces on screen' if used else 'DOCU: no moving-art library on this machine (STORIES_CINEMA_LIB) — spare pictures only')
     if tick:
