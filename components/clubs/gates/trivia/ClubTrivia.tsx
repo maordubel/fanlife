@@ -342,29 +342,28 @@ function Ready({club,clubName,seed,cursor,locale,plan,practice,onPractice,pace,o
     </div>
     {review&&(review.retired+review.withdrawn+review.merged>0)&&<p className={css.fine} role="note">{t('tq.revenge.explain',{retired:review.retired,withdrawn:review.withdrawn,merged:review.merged})}</p>}
     {!revengeReady&&review&&<p className={css.fine}>{t('tq.revenge.need',{n:MIN_ROUND})}</p>}
+    <div className={css.kickRow}>
+     <button type="button" className={`min-h-tap wk-kick ${css.start}`} disabled={!startable} aria-busy={loading} onClick={()=>onStart()} data-testid="trivia-start">
+      <span className="wk-kick-gate" aria-hidden="true"><small>{copy.ticketGate}</small><b>{gateNo}</b></span>
+      <span className="wk-kick-go"><span className="wk-speed" aria-hidden="true" style={{['--sx' as string]:'100%',['--sy' as string]:'50%'}}/><span>{loading?t('tq.loading'):size>=MIN_ROUND?t('tq.startCount',{n:size}):t('tq.start')}</span><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" className={css.ballFill}/><path d="M20 11l7 5-3 8h-8l-3-8z" className={css.ballInk}/></svg></span>
+     </button>
+    </div>
     <button type="button" className={`min-h-tap ${css.couponBtn}`} aria-haspopup="dialog" onClick={()=>setCoupon(true)}>
      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8M14 4v6M8 14v6"/></svg>
      <span><b>{topicName} · {eraName}</b><small>{t('tq.ready.coupon.open')}</small></span>
      <svg viewBox="0 0 24 24" aria-hidden="true"><path d={locale==='he'?'M15 5l-7 7 7 7':'M9 5l7 7-7 7'}/></svg>
     </button>
-    <div className={css.inline}>{settings}</div>
     {error&&<p className={css.errorLine} role="alert" data-testid="trivia-start-error">{t(error)}</p>}
-    <div className={css.kickRow}>
-     <button type="button" className={`min-h-tap wk-kick ${css.start}`} disabled={!startable} aria-busy={loading} onClick={()=>onStart()} data-testid="trivia-start">
-      <span className="wk-kick-gate" aria-hidden="true"><small>{copy.ticketGate}</small><b>{gateNo}</b></span>
-      <span className="wk-kick-go"><span className="wk-speed" aria-hidden="true" style={{['--sx' as string]:'100%',['--sy' as string]:'50%'}}/><span>{loading?t('tq.loading'):t('tq.start')}</span><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" className={css.ballFill}/><path d="M20 11l7 5-3 8h-8l-3-8z" className={css.ballInk}/></svg></span>
-     </button>
-     <div className={css.toggles}>
-      <button type="button" className={`min-h-tap ${css.practiceLink}`} aria-pressed={practice} onClick={()=>onPractice(!practice)}>{t('tq.pick.practice')}</button>
-      <button type="button" className={`min-h-tap ${css.practiceLink}`} aria-pressed={pace==='tap'} onClick={()=>onPace(pace==='tap'?'auto':'tap')}>{t('tq.pick.tap')}</button>
-     </div>
-    </div>
    </div>
   </div>
   <SlideSheet open={coupon} onClose={()=>setCoupon(false)} title={t('tq.ready.coupon.title')} closeLabel={copy['play.close']} size="full"
    footer={<div className={css.couponFoot}><Link className={`min-h-tap ${css.tool}`} href={href({mode:sel.mode??plan.modes.find(m=>m.available)?.id})}>{t('tq.ready.coupon.clear')}</Link><button type="button" className={`min-h-tap ${css.couponDone}`} onClick={()=>setCoupon(false)}>{t('tq.ready.coupon.done')}</button></div>}>
    <p className={css.couponKicker}>{t('tq.ready.coupon.kicker')}</p>
    {settings}
+     <div className={css.toggles}>
+      <button type="button" className={`min-h-tap ${css.practiceLink}`} aria-pressed={practice} onClick={()=>onPractice(!practice)}>{t('tq.pick.practice')}</button>
+      <button type="button" className={`min-h-tap ${css.practiceLink}`} aria-pressed={pace==='tap'} onClick={()=>onPace(pace==='tap'?'auto':'tap')}>{t('tq.pick.tap')}</button>
+     </div>
   </SlideSheet>
  </section>
 }

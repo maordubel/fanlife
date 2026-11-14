@@ -166,5 +166,6 @@
   "tq.ready.coupon.open": "Choose a topic or a decade",
   "tq.ready.coupon.done": "Done",
   "tq.ready.coupon.clear": "Clear",
-  "tq.report.where": "Where next"
+  "tq.report.where": "Where next",
+  "tq.startCount": "Play {n} questions"
 }

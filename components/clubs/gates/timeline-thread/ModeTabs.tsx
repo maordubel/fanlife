@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import en from '@/messages/timeline/en.json'
+import he from '@/messages/timeline/he.json'
 import css from './thread.module.css'
 
 export type TimelineMode='chronology'|'thread'|'chronicle'
@@ -9,8 +11,9 @@ export type TimelineMode='chronology'|'thread'|'chronicle'
  * documented history in order). A view that cannot open says so on its own page, with exact counts.
  */
 export function ModeTabs({mode,locale,labels,aria}:{mode:TimelineMode;locale:string;labels:Record<TimelineMode,string>;aria:string}){
+ const description=(locale==='he'?he:en).modeDescription
  const href=(m:TimelineMode)=>`?${new URLSearchParams(m==='chronology'?{lang:locale}:{mode:m,lang:locale})}`
  return <nav className={`wk-seg ${css.modes}`} aria-label={aria} data-testid="timeline-modes">
-  {(['chronology','thread','chronicle'] as const).map(m=><Link key={m} prefetch={false} className={css.mode} href={href(m)} aria-current={mode===m?'page':undefined} data-testid={`timeline-mode-${m}`}>{labels[m]}</Link>)}
+  {(['chronology','thread','chronicle'] as const).map(m=><Link key={m} prefetch={false} className={css.mode} href={href(m)} aria-current={mode===m?'page':undefined} data-testid={`timeline-mode-${m}`}>{labels[m]}<small className="block normal-case">{description[m]}</small></Link>)}
  </nav>
 }

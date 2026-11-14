@@ -32,8 +32,7 @@ export function RevealLines({t,copy,state,locale,contentLocale,onRetry,fallbackF
  if(state.status==='failed'||!state.reveal)return <p className={css.plateKind}>{fallbackFact?`${fallbackFact} · `:''}{t('mem.reveal.failed')}{onRetry&&<> <button type="button" className={`min-h-tap ${css.inlineBtn}`} onClick={onRetry}>{t('mem.reveal.retry')}</button></>}</p>
  const r=state.reveal
  return <>
-  <p className={css.plateKind}><b>{t('mem.reveal.relation')}</b> {t(`mem.type.${r.type}`)} · {memoryKindLabel(r.kind,locale)}</p>
-  {r.fact&&<p className={css.plateKind} lang={contentLocale} dir="auto">{r.fact}</p>}
+  <p className={css.plateKind} lang={r.fact?contentLocale:locale} dir="auto" data-testid="memory-pair-explanation">{r.fact||t('mem.reveal.explain',{relation:t(`mem.type.${r.type}`)})}</p>
   {r.source&&<p className={css.plateKind} lang={contentLocale} dir="auto"><b>{t('mem.reveal.source')}</b> {r.source.url?<a className={css.plateLink} href={r.source.url} target="_blank" rel="noopener noreferrer">{r.source.publisher} — {r.source.title}</a>:`${r.source.publisher} — ${r.source.title}`}</p>}
   {r.href&&<Link className={css.plateLink} href={r.href}>{copy.archiveEntry} →</Link>}
  </>
