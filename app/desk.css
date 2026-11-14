@@ -574,3 +574,5 @@ select.pcc-inline { inline-size: 92px; cursor: pointer; } select.pcc-inline:disa
 .shop-coach-list li { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 10px; border-inline-start: 4px solid var(--mag-vermilion); background: color-mix(in srgb, currentColor 5%, transparent); }
 .shop-cats { margin: 0 0 10px; padding: 0; border: 0; display: grid; gap: 6px; }
 @media (max-width: 560px) { .shop-sides-grid { grid-template-columns: minmax(0, 1fr); } }
+/* a crest needs no shield cut or colour block (14.11.2026) */
+.fl .club-mark.club-mark-crest, .desk .club-mark.club-mark-crest { clip-path: none; background: transparent; padding: 2px; }
