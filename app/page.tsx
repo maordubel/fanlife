@@ -154,7 +154,9 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
    </div>
    <div className="wkh-market-ctas"><Link className="wk-btn paper" href="/market">{copy.marketCta} <Arrow/></Link></div>
   </section>
-   {shopOpen&&<Link className="wkh-door wk-greenplate" href="/shop" data-testid="hub-shop"><Plate art="scarf" ink="orange"/><span><span className="wk-k white">{shopCopy.doorK}</span><b className="wk-logo">{shopCopy.doorT}</b></span><Arrow/></Link>}
+   {shopOpen&&<Link className="wkh-door wk-greenplate" href="/shop" data-testid="hub-shop"><Plate art="scarf" ink="orange" className="wkh-door-art"/>
+    <span className="wkh-door-copy"><span className="wk-k">{shopCopy.doorK}</span><b className="wk-logo">{shopCopy.doorT}</b><small>{shopCopy.rowShopSub}</small></span>
+    <span className="wk-btn paper wkh-door-cta">{shopCopy.doorCta} <Arrow/></span></Link>}
   </div>
 
   {/* INSIDE THIS ISSUE: the index of our features — three cells a row on a phone, the contents column on a desktop. */}

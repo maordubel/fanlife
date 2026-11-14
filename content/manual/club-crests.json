@@ -120,6 +120,70 @@
       "sourcePath": "en.wikipedia.org infobox (File:Al Ahly SC logo.svg)",
       "sourceCommit": null,
       "addedAt": "2026-11-14"
+    },
+    {
+      "club": "fenerbahce",
+      "file": "public/universe-crests/fenerbahce.png",
+      "sha256": "9a37578d37aef1751382363a9b1af0f5ab32b9075aa9ca72330706104c000dff",
+      "bytes": 31506,
+      "source": "https://github.com/maordubel/fanlife/tree/c66a125d/public/universe-crests",
+      "sourcePath": "universe-crests/fenerbahce.png"
+    },
+    {
+      "club": "borussia-dortmund",
+      "file": "public/universe-crests/borussia-dortmund.png",
+      "sha256": "6224c00dc0376cf74d96d15ff04de65d35c729da8b0870276a54f02a7ce7729b",
+      "bytes": 16017,
+      "source": "https://github.com/maordubel/fanlife/tree/c66a125d/public/universe-crests",
+      "sourcePath": "universe-crests/borussia-dortmund.png"
+    },
+    {
+      "club": "dinamo-zagreb",
+      "file": "public/universe-crests/gnk-dinamo-zagreb.png",
+      "sha256": "dc77d5b442f27635a485860702adaede4b14d3e465d784ae798367e14b308eec",
+      "bytes": 16815,
+      "source": "https://github.com/maordubel/fanlife/tree/c66a125d/public/universe-crests",
+      "sourcePath": "universe-crests/gnk-dinamo-zagreb.png"
+    },
+    {
+      "club": "hajduk-split",
+      "file": "public/universe-crests/hnk-hajduk-split.png",
+      "sha256": "aeb646c2d4649657e10ee6bdfe4028f689539c9b0ff706999a2e320c71d23301",
+      "bytes": 20605,
+      "source": "https://github.com/maordubel/fanlife/tree/c66a125d/public/universe-crests",
+      "sourcePath": "universe-crests/hnk-hajduk-split.png"
+    },
+    {
+      "club": "partizan-belgrade",
+      "file": "public/universe-crests/fk-partizan-belgrade.png",
+      "sha256": "2e79c9460d5346998742e4f06f0259a21cef9b9eb2450b9010c4c9eadc521468",
+      "bytes": 28036,
+      "source": "https://github.com/maordubel/fanlife/tree/c66a125d/public/universe-crests",
+      "sourcePath": "universe-crests/fk-partizan-belgrade.png"
+    },
+    {
+      "club": "union-berlin",
+      "file": "public/universe-crests/1fc-union-berlin.png",
+      "sha256": "feae734c99d0c15d9d6eaf146914bc09650715130ff04faa91bbfbc82efdde95",
+      "bytes": 9510,
+      "source": "https://github.com/maordubel/fanlife/tree/c66a125d/public/universe-crests",
+      "sourcePath": "universe-crests/1fc-union-berlin.png"
+    },
+    {
+      "club": "paok",
+      "file": "public/universe-crests/paok-thessaloniki.png",
+      "sha256": "7c4fccd72443e0113fa9606ae19910b9804edaba95099f9e4a5c4f9eeef6a4ad",
+      "bytes": 31116,
+      "source": "https://github.com/maordubel/fanlife/tree/c66a125d/public/universe-crests",
+      "sourcePath": "universe-crests/paok-thessaloniki.png"
+    },
+    {
+      "club": "leicester-city",
+      "file": "public/crests/leicester-city.png",
+      "sha256": "4294564d7b5f8e6059ed3b249c31df1753ffb299e47dbb2fc43b0feb20c283a8",
+      "bytes": 22365,
+      "source": "https://resources.premierleague.com/premierleague/badges/100/t13.png",
+      "sourcePath": "crests/leicester-city.png"
     }
   ]
 }

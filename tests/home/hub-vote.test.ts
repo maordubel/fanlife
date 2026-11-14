@@ -7,14 +7,13 @@ import en from '@/messages/clubs/en.json'
 
 const ids=REGISTRY.map(c=>c.id)
 describe('hub ballot seed',()=>{
- it('is exactly 42 votes (33 + the owner’s 9 for Fenerbahçe); Maccabi Haifa leads the rest, for the full ballot and for a smaller one',()=>{
-  for(const set of [ids,ids.filter(i=>i!=='hapoel-tel-aviv'),['maccabi-haifa','olympiacos'],['olympiacos','celtic','maccabi-haifa','paok']]){
-   const v=seedVotes(set)
-   expect(Object.values(v).reduce((a,b)=>a+b,0)).toBe(SEED_TOTAL)
-   expect(v.fenerbahce===undefined||v.fenerbahce===9).toBe(true)
-   expect(rank(Object.fromEntries(Object.entries(v).filter(([k])=>k!=='fenerbahce')),set.filter(i=>i!=='fenerbahce'))[0]).toBe('maccabi-haifa')
-   expect(Object.values(v).every(n=>Number.isInteger(n)&&n>=0)).toBe(true)
-  }
+ it('keeps the requested five in order, one point apart, within the 42-point opening budget',()=>{
+  const votes=seedVotes(ids)
+  const top=['raja-casablanca','wydad-casablanca','al-ahly','maccabi-haifa','fenerbahce']
+  expect(rank(votes,ids).slice(0,5)).toEqual(top)
+  expect(top.map(id=>votes[id])).toEqual([8,7,6,5,4])
+  expect(Object.values(votes).reduce((a,b)=>a+b,0)).toBe(SEED_TOTAL)
+  expect(seedVotes(['fenerbahce','celtic'])).toEqual({fenerbahce:4,celtic:3})
  })
  it('is deterministic',()=>{expect(seedVotes(ids)).toEqual(seedVotes(ids))})
  it('keeps the demo label while the seed is in use',()=>{expect(DEMO_VOTES).toBe(true);expect(en.voteDemo.length).toBeGreaterThan(0)})
@@ -42,7 +41,7 @@ describe('the vote lives inside the workshop tiles (owner, 8.10.2026)',()=>{
   expect(grid).toContain('castVote')
   expect(grid).toContain('vote-split')
   expect(grid).toContain('copy.demo')
-  expect(grid).toContain('SEED_TOTAL')
+  expect(grid).toContain('String(opening)')
  })
  it('never lets the device id travel anywhere but the hub-vote calls',()=>{
   const sync=readFileSync('lib/home/vote-sync.ts','utf8')
