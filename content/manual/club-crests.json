@@ -1,5 +1,5 @@
 {
-  "note": "Club crests. Owner approved their use everywhere a club mark appears (10.10.2026). Trademarks of their clubs, shown as identification. Zrinjski Mostar: supplied by the owner (14.10.2026). Modern marks only: AWAY DAYS opponents are historical clubs and are not given today's crest.",
+  "note": "Club crests. Owner approved their use everywhere a club mark appears (10.10.2026). Trademarks of their clubs, shown as identification. Zrinjski Mostar: supplied by the owner (14.10.2026). Modern marks only: AWAY DAYS opponents are historical clubs and are not given today's crest. Raja, Wydad, Al Ahly (14.11.2026): the club article's infobox crest on English Wikipedia, not in the shared catalogue.",
   "crests": [
     {
       "club": "aek-athens",
@@ -90,6 +90,36 @@
       "source": "https://github.com/luukhopman/football-logos",
       "sourcePath": "logos/Israel - Ligat ha'Al/Maccabi Haifa.png",
       "sourceCommit": "2a3978f0b4730645c205d855a4bda54c161183e9"
+    },
+    {
+      "club": "raja-casablanca",
+      "file": "public/crests/raja-casablanca.png",
+      "sha256": "211145f56665c2911505d65f268f5b618601232484346b6f7e9fa11e6ab618b2",
+      "bytes": 66955,
+      "source": "https://upload.wikimedia.org/wikipedia/en/b/bd/Raja_CA_logo.png",
+      "sourcePath": "en.wikipedia.org infobox (File:Raja CA logo.png)",
+      "sourceCommit": null,
+      "addedAt": "2026-11-14"
+    },
+    {
+      "club": "wydad-casablanca",
+      "file": "public/crests/wydad-casablanca.png",
+      "sha256": "bfea647bfe2b9476b3444a2a8ae7b856602a879217966fcd812d016b0bb41de6",
+      "bytes": 37291,
+      "source": "https://upload.wikimedia.org/wikipedia/en/1/18/Wydad_AC_crest_%282022%29.svg",
+      "sourcePath": "en.wikipedia.org infobox (File:Wydad_AC_crest_(2022).svg)",
+      "sourceCommit": null,
+      "addedAt": "2026-11-14"
+    },
+    {
+      "club": "al-ahly",
+      "file": "public/crests/al-ahly.png",
+      "sha256": "a48ac50f5ccfb1240b6ce679ed565cb2d2ad16d0fc9db9f06b0025ea9c1b9284",
+      "bytes": 36898,
+      "source": "https://upload.wikimedia.org/wikipedia/en/7/70/Al_Ahly_SC_logo.svg",
+      "sourcePath": "en.wikipedia.org infobox (File:Al Ahly SC logo.svg)",
+      "sourceCommit": null,
+      "addedAt": "2026-11-14"
     }
   ]
 }
