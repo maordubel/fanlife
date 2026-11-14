@@ -23,8 +23,10 @@ export async function capture(page, route, {play = false, scroll = 0} = {}) {
   await page.addStyleTag({content: QUIET}).catch(() => {})
   // the small floating ad card and its ✕, if the page drew one
   await page.evaluate(() => document.querySelectorAll('[class*="ad"] button, [aria-label*="lose ad" i]').forEach(b => b.closest('[class*="ad"]')?.remove())).catch(() => {})
+  // the gate's "How to play" sheet opens over the game: close it, the game itself is the shot
+  for (let i = 0; i < 2; i++) { const c = page.getByRole('button', {name: /^close$/i}).first(); if (await c.isVisible().catch(() => false)) { await c.click().catch(() => {}); await page.waitForTimeout(700) } }
   if (play) {
-    const go = page.getByRole('button', {name: /kick off|start|play|let'?s go|deal|spin/i}).first()
+    const go = page.getByRole('button', {name: /^(kick off|start|play|let'?s go|deal|spin)/i}).first()
     if (await go.isVisible().catch(() => false)) { await go.click().catch(() => {}); await page.waitForTimeout(1800) }
   }
   if (scroll) { await page.evaluate(y => window.scrollTo(0, y), scroll); await page.waitForTimeout(400) }
@@ -47,7 +49,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const page = await phonePage(browser)
   const shots = [['hub-today', '/today'], ['hub-our-games', '/our-games'], ['legends', '/all-football/legends'], ['legends-play', '/all-football/legends', true]]
   for (const c of clubs) {
-    shots.push([`${c}-home`, `/clubs/${c}`], [`${c}-life`, `/clubs/${c}/life?lang=en`])
+    shots.push([`${c}-home`, `/clubs/${c}`])
     for (const g of GATE_KEYS) shots.push([`${c}-${g}-play`, `/clubs/${c}/${g}`, true])
   }
   for (const [name, route, play] of shots) {
