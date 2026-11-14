@@ -32,12 +32,24 @@ async function gate(d, o) {
   const label = [num ? `Gate ${num}` : String(d.gate || '').split('·').pop().trim(), d.name].filter(Boolean).join(' · ')
   let hero = ''
   if (name === 'SHIRT COLLECTION') {
-    const ks = await shirts(id, 3)
+    const ks = await shirts(id, d.screen ? 2 : 3)
     if (ks.length) hero = `<div class="paper" style="margin:40px -64px 0;padding:30px 44px 26px;display:grid;grid-template-columns:repeat(${ks.length},minmax(0,1fr));gap:12px;flex:1;min-height:420px"${at('wipe', .45)}>${ks.map((k, i) => `<div style="display:flex;flex-direction:column;align-items:center;justify-content:flex-end;min-height:0"><img src="${k.src}" alt="" style="width:100%;flex:1;min-height:0;object-fit:contain;filter:drop-shadow(10px 12px 0 rgba(0,0,0,.18))"${at('up', .6 + i * .15)}><span class="num" style="font-size:64px;margin-top:8px"${at('slam', .9 + i * .15)}>${k.year}</span></div>`).join('')}</div>`
   }
   const scr = local(d.screen)
   if (hero && scr) hero = `<div style="position:relative;flex:1;display:flex;min-height:0">${hero}<div style="position:absolute;right:-30px;bottom:-60px;z-index:4">${phone(scr, o.story ? 330 : 250, 1, 6)}</div></div>`
-  if (!hero && scr) hero = `<div style="flex:1;display:flex;align-items:center;justify-content:center;gap:40px;min-height:0;margin-top:20px"><div style="width:${o.story ? 420 : 380}px;flex:none">${plateCard(plate(d.name), o.story ? 420 : 360, '#FFFBF2', .4)}</div>${phone(scr, o.story ? 470 : 360, .6, -4)}</div>`
+  if (!hero && scr) {
+    // the real game in a phone on the right; the gate's plate, its promise and its line on the left
+    const title = d.name || 'FAN LIFE'
+    return {vars: vars(p), light: p.light, inner: `${dots(p.light ? 'rgba(0,0,0,.18)' : 'rgba(0,0,0,.28)')}${strip(p)}${top(p, crestImg(c))}
+<div class="body" style="padding-top:${o.story ? 120 : 36}px">${tag(label)}
+<p class="h shadowed"${at('slam', .3)} style="font-size:${sized(title, 150, 124, 96, 12, 18)}px;margin-top:14px">${esc(title)}</p>
+<div style="flex:1;display:flex;gap:44px;align-items:center;min-height:0;margin-top:26px">
+<div style="flex:1;display:flex;flex-direction:column;gap:26px;min-width:0">${plateCard(plate(d.name), o.story ? 420 : 300, '#FFFBF2', .4).replace('margin-top:34px', 'margin-top:0')}
+<p class="lead" style="font-size:36px"${at('up', .8)}>${esc(d.headline || '')}</p>
+${(d.body || []).length ? `<p class="k" style="opacity:.8;letter-spacing:.1em;font-size:20px"${at('up', .95)}>${esc((d.body || [])[0])}</p>` : ''}</div>
+${phone(scr, o.story ? 470 : 318, .6, 3)}</div>
+</div>${foot('Play free')}`}
+  }
   if (!hero) hero = `<div style="flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0">${plateCard(plate(d.name), o.story ? 760 : 480, '#FFFBF2')}</div>`
   const title = d.name || 'FAN LIFE'
   return {vars: vars(p), light: p.light, inner: `${dots(p.light ? 'rgba(0,0,0,.18)' : 'rgba(0,0,0,.28)')}${strip(p)}${top(p, crestImg(c))}
@@ -89,7 +101,7 @@ async function legends(d, o) {
   return {vars: vars(p, '--hot:#D4A84A'), inner: `${dots('rgba(212,168,74,.35)')}${strip(p)}${top(p, `<img class="applogo" src="${brand.legends}" alt="">`)}
 <div class="body" style="padding-top:${o.story ? 120 : 30}px">${tag('Legends Manager · free', true)}
 <p class="h shadowed" style="font-size:118px;margin-top:14px"${at('slam', .3)}>${esc(d.headline || 'A season with your legends.')}</p>
-<div style="flex:1;display:flex;align-items:center;justify-content:center;gap:30px;min-height:0"><img src="${legendsFx(fx)}" alt="" style="width:${d.screen ? '48%' : '100%'};height:100%;object-fit:contain;filter:drop-shadow(12px 12px 0 rgba(0,0,0,.45))"${at('pop', .6)}>${d.screen ? phone(local(d.screen), o.story ? 440 : 330, .8, 4) : ''}</div>
+<div style="flex:1;display:flex;align-items:center;justify-content:center;gap:30px;min-height:0"><img src="${legendsFx(fx)}" alt="" style="width:${d.screen ? '48%' : '100%'};height:100%;object-fit:contain;filter:drop-shadow(12px 12px 0 rgba(0,0,0,.45))"${at('pop', .6)}>${d.screen ? phone(local(d.screen), o.story ? 440 : 280, .8, 4) : ''}</div>
 ${(d.body || []).slice(0, 2).map((s, i) => `<p class="lead" style="font-size:30px;opacity:.9"${at('up', .9 + i * .12)}>${esc(s)}</p>`).join('')}
 </div>${foot('Kick off')}`}
 }

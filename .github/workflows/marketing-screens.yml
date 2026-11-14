@@ -2,9 +2,6 @@ name: Marketing · Game screens
 # Real screens of FAN LIFE's own games for the v4 social pictures (scripts/marketing/kit/v4/screens.mjs).
 on:
   workflow_dispatch:
-  push:
-    branches: [claude/social-v4]
-    paths: [scripts/marketing/kit/v4/screens.mjs, .github/workflows/marketing-screens.yml]
 permissions:
   contents: write
 jobs:
