@@ -10,7 +10,7 @@
  "eur": " · ≈ €{eur}",
  "back": "Back",
  "backAlt": "The back of the product",
- "buy": "Buy now",
+ "buy": "Buy",
  "buyAria": "Buy {title} — opens the secure checkout",
  "empty": "Nothing on this shelf yet. More is on the press.",
  "soonK": "Opening soon",
@@ -46,9 +46,9 @@
   "more": "More"
  },
  "trust": [
-  "Original fan art — made by FAN LIFE",
-  "Printed when you order, shipped worldwide",
-  "Pay by card, Apple Pay or Google Pay"
+  "Original fan art",
+  "Printed to order",
+  "Secure checkout"
  ],
  "byClub": "Shop by club",
  "byClubAll": "Every club",
@@ -104,5 +104,80 @@
  "makeOn": "On {n} products",
  "makeOpen": "Choose a product",
  "was": "was {price}",
- "clubAria": "{club} — {n} products"
+ "clubAria": "{club} — {n} products",
+ "trustSub": [
+  "Designed by FAN LIFE — on nothing you can buy elsewhere",
+  "Made for you, shipped worldwide",
+  "Card, Apple Pay or Google Pay"
+ ],
+ "ribbonDefault": "Printed to order · shipped worldwide · secure checkout",
+ "ribbonSale": "{label}: −{n}% · {left}",
+ "ribbonShip": "Free shipping on orders over {price}",
+ "ribbonCode": "Code {code} at checkout",
+ "leftDays": "ends in {d} days {h} h",
+ "leftDay": "ends in 1 day {h} h",
+ "leftHours": "ends in {h} hours",
+ "leftSoon": "last hours",
+ "leftOpen": "on now",
+ "ctaSale": "Shop the sale",
+ "ctaNew": "See what’s new",
+ "ctaAll": "Shop everything",
+ "deptK": "Shop by category",
+ "deptT": "What are you after?",
+ "depts": {
+  "sale": "Sale",
+  "new": "New in",
+  "wear": "Clothing",
+  "wall": "Wall art",
+  "gear": "Matchday gear",
+  "home": "Home & mugs",
+  "kids": "Kids",
+  "small": "Gifts & small things",
+  "fav": "Fan favourites",
+  "gifts": "Gifts under €25"
+ },
+ "items": "{n} items",
+ "saleK": "Limited time",
+ "saleT": "On sale now",
+ "saleSub": "The price is already cut — no code needed at checkout.",
+ "favK": "Picked by FAN LIFE",
+ "favT": "Fan favourites",
+ "bestK": "What supporters buy",
+ "bestT": "Best sellers",
+ "badgePopular": "Popular",
+ "budgetK": "Gift finder",
+ "budgetT": "Find a present by budget",
+ "budgets": {
+  "u20": "Under €20",
+  "20-40": "€20 – €40",
+  "o40": "Over €40"
+ },
+ "filters": "Filters",
+ "filterClub": "Club",
+ "filterType": "Category",
+ "filterPrice": "Price",
+ "clearAll": "Clear all",
+ "remove": "Remove {what}",
+ "browseT": "The whole shop",
+ "faqK": "Good to know",
+ "faqT": "Questions before you order",
+ "faq": [
+  [
+   "How is it made?",
+   "Every piece is printed when you order it, by our print partner nearest to you, and sent straight to your door."
+  ],
+  [
+   "Which currency?",
+   "The checkout charges in US dollars; the euro next to each price is a guide at today’s rate. Your card converts it."
+  ],
+  [
+   "What if it arrives damaged or misprinted?",
+   "Reply to your order email with a photo within 30 days and it is reprinted or refunded."
+  ],
+  [
+   "Is this official club merchandise?",
+   "No. This is independent supporter art made by FAN LIFE — not an official club product."
+  ]
+ ],
+ "sortPop": "Most popular"
 }

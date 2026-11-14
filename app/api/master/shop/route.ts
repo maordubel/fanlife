@@ -3,6 +3,7 @@ import {adminFromRequest} from '@/lib/master/admin'
 import {sameOrigin} from '@/lib/master/request'
 import {readShop,updateShop,printifyToken,saveToken} from '@/lib/shop/store'
 import {forgetPublicShop} from '@/lib/shop/store'
+import {saleFromForm} from '@/lib/shop/sales'
 import {syncListing,optionsFor,catalogueFor,client,connect,matchKind,pressProduct,refreshProduct,removeProduct} from '@/lib/shop/build'
 import {draftOf,fitTitle,launchSet,NOTE,shortTitle} from '@/lib/shop/plan'
 import {KIND_SPECS} from '@/lib/shop/kinds'
@@ -91,6 +92,14 @@ export async function POST(r:Request){
      for(const p of d.products)if(designKey(p)===key){p.title=fitTitle(name,p.blueprint?shortTitle(p.blueprint.title):KIND_SPECS[p.kind].label);p.updatedAt=now;ids.push(p.id)}})
     for(const pid of ids)await syncListing(pid).catch(()=>{});forgetPublicShop();break}
    case 'promo':{const pc=Number(b.percent);await updateShop(by,pc>0?`Sale on: ${pc}%`:'Sale off',d=>{d.settings.promo=pc>0&&pc<=80?{percent:Math.round(pc),label:String(b.label||'').trim().slice(0,60)||'Sale',until:typeof b.until==='string'&&b.until?b.until:null,code:typeof b.code==='string'&&b.code.trim()?b.code.trim().slice(0,24):undefined,freeShipping:b.freeShipping===true}:null});forgetPublicShop();break}
+   case 'sale':{const sale=saleFromForm(b as Record<string,unknown>);if(!sale)return json({error:'A sale needs 5–60% off, what it covers, and an end date that has not passed.'},422)
+    await updateShop(by,`Sale “${sale.label}”: ${sale.percent}% off`,d=>{const l=(d.settings.sales??[]).filter(x=>x.id!==sale.id);d.settings.sales=[...l,sale].slice(-12)});forgetPublicShop();break}
+   case 'saleEnd':{const sid=String(b.sale||'');await updateShop(by,'Sale ended',d=>{for(const x of d.settings.sales??[])if(x.id===sid)x.on=false;d.settings.sales=(d.settings.sales??[]).filter(x=>x.on||(d.products.some(p=>p.printify?.sale?.id===x.id)))});forgetPublicShop();break}
+   case 'saleForget':{await updateShop(by,'',d=>{d.settings.sales=(d.settings.sales??[]).filter(x=>x.on||d.products.some(p=>p.printify?.sale?.id===x.id))});break}
+   case 'promoters':{const n=Number(b.freeShipOver);await updateShop(by,'Shop promoters saved',d=>{const cur=d.settings.promoters??{}
+    d.settings.promoters={...cur,ribbon:typeof b.ribbon==='string'?b.ribbon.trim().replace(/\s+/g,' ').slice(0,90):cur.ribbon,freeShipOver:b.freeShipOver===null||b.freeShipOver===''?null:n>0&&n<1000?Math.round(n):cur.freeShipOver??null}});forgetPublicShop();break}
+   case 'feature':{const key=String(b.design||'');if(!/^[lu]-[\w-]{1,12}$/.test(key))return json({error:'Which design?'},422)
+    await updateShop(by,b.on?'Design featured':'Design unfeatured',d=>{const cur=d.settings.promoters??{},f=(cur.featured??[]).filter(x=>x!==key);d.settings.promoters={...cur,featured:b.on?[key,...f].slice(0,12):f}});forgetPublicShop();break}
    case 'remove':await removeProduct(id,by);break
    case 'match':if(!kind||typeof b.blueprintId!=='number')return json({error:'Give the product type and a catalogue number.'},422)
     await matchKind(await client(),kind,by,{blueprintId:b.blueprintId,providerId:typeof b.providerId==='number'?b.providerId:undefined});break

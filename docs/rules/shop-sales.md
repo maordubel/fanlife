@@ -1,0 +1,11 @@
+# Sales and promoters (owner, 14.11.2026)
+
+"Still messy — another round of design and order, ideas from club shops and souvenir shops; a discount option and all kinds of sales promoters."
+
+- **A sale is a real price cut** (`lib/shop/sales.ts`, `lib/shop/saleRun.ts`): % off for dates, on everything, one club, one category or one design. The shop lowers each variant's price in Printify (no code at checkout) and puts it back when the sale ends. One product carries the deepest sale that covers it. Never below the printer's cost + 10% (`salePrice`). End dates are end of day, Athens time.
+- Prices follow the sales from the desk's **Apply now** (`/api/master/shop/sales`, ~30 s a call) and the hourly job (sales route in a loop, then the check-up), so a sale starts and ends within the hour by itself. A re-pressed product loses its cut and gets it back on the next run.
+- The storefront shows a sale only while it is true: ribbon with the real countdown, sale tile, sale shelf with a burst, "was" price and −% badge. Countdowns come only from a real end date; reviews and stock counts are never invented.
+- **Promoters**: ribbon line (sale → owner's line → free shipping over $X → the three promises), free shipping threshold (only after the owner sets it in Printify), fan favourites (★ Feature on a design in Products) and best sellers from Printify's orders (`countSold`, hourly). A "Popular" badge at 2+ sold. The Printify-code promotion stays as an alternative.
+- **The storefront, megastore order**: ribbon → short cover with one main button → three promises → shop by club (initials roundels — no official crests on merchandise) → shop by category (tiles with a real product picture) → sale → favourites → shelves → gift finder by budget (under €20, €20–40, over €40) → make your own → shirt market → questions before ordering. Any filter opens the browse view: one Filters panel (club, category, price, sort), the active chips with ✕, count, grid. Links only; nothing scrolls sideways.
+- Cards show at most two badges (sale, new, popular, front + back — in that order) and one short Buy bar.
+- The desk gains a **Sales** tab: sales list with how many products are priced, ready-made sales (weekend, derby week, payday, Black Friday, Christmas), the sale form, promoters, and the Printify code.

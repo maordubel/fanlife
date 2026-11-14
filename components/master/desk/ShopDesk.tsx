@@ -3,6 +3,7 @@ import {useEffect,useMemo,useRef,useState} from 'react'
 import {useAdminApi} from '@/components/master/adminApi'
 import {KIND_SPECS} from '@/lib/shop/kinds'
 import {DesignControls,CutoutPreview,type Stock} from './ShopDesign'
+import {ShopSales} from './ShopSales'
 import {designKey,KINDS,MIN_QUALITY,qualityOf,type ArtRef,type ProductDesign,type Kind,type ShopDoc,type ShopProduct} from '@/lib/shop/types'
 
 /**
@@ -18,7 +19,7 @@ export type DeskPicture={id:string;name:string;folder:string;subject:string;appr
 const thumb=(id:string)=>`https://drive.google.com/thumbnail?id=${id}&sz=w320`
 const money=(c:number,cur:string)=>new Intl.NumberFormat('en',{style:'currency',currency:cur}).format(c/100)
 const BASIC=KINDS.filter(k=>k!=='more')
-const TAB_L={overview:'Overview',create:'Create',products:'Products',settings:'Settings'} as const
+const TAB_L={overview:'Overview',create:'Create',products:'Products',sales:'Sales',settings:'Settings'} as const
 type CatItem={id:number;title:string;brand:string;image:string;group:string}
 const STATUS:Record<ShopProduct['status'],string>={draft:'Draft',building:'Pressing…',ready:'Made — waiting for its link',live:'On sale',error:'Needs a retry'}
 
@@ -28,7 +29,7 @@ export function ShopDesk({initial,subjects,pictures}:{initial:State;subjects:Sub
  const [run,setRun]=useState<{done:number;total:number}|null>(null),stop=useRef(false)
  const [nSub,setNSub]=useState(subjects[0]?.id||'fanlife'),[nKinds,setNKinds]=useState<Kind[]>(['poster']),[nPic,setNPic]=useState<string>('own'),[nTitle,setNTitle]=useState(''),file=useRef<HTMLInputElement>(null)
  const [nDesign,setNDesign]=useState<ProductDesign>({}),[ownFile,setOwnFile]=useState<File|null>(null),[clean,setClean]=useState<string|null>(null),[editing,setEditing]=useState<string|null>(null),[eDesign,setEDesign]=useState<ProductDesign>({})
- const [tab,setTab]=useState<'overview'|'create'|'products'|'settings'>(initial.doc.products.length?'products':'create')
+ const [tab,setTab]=useState<'overview'|'create'|'products'|'sales'|'settings'>(initial.doc.products.length?'products':'create')
  const [nStock,setNStock]=useState<Stock|null>(null),[eStock,setEStock]=useState<Stock|null>(null)
  const uploadArt=async(f:File)=>{const data=await new Promise<string>((ok,no)=>{const r=new FileReader();r.onload=()=>ok(String(r.result));r.onerror=()=>no(r.error);r.readAsDataURL(f)})
   return (await api.post<{art:ArtRef}>('shop',{action:'art',name:f.name,data},'Picture uploaded for this area.'))?.art??null}
@@ -47,6 +48,7 @@ export function ShopDesk({initial,subjects,pictures}:{initial:State;subjects:Sub
  const list=useMemo(()=>doc.products.filter(p=>(who==='all'||p.subject===who)&&(show==='all'||(show==='shown'?p.visible:show==='hidden'?!p.visible&&p.status==='live':p.status!=='live'))),[doc.products,who,show])
  const groups=useMemo(()=>{const m=new Map<string,ShopProduct[]>();for(const p of list){const k=designKey(p);m.set(k,[...(m.get(k)??[]),p])}
   return [...m].map(([key,items])=>({key,items,name:s.designNames?.[key]??items[0]!.title.split(' · ')[0]!})).sort((a,b)=>b.items[0]!.updatedAt.localeCompare(a.items[0]!.updatedAt))},[list,s.designNames])
+ const allDesigns=useMemo(()=>{const m=new Map<string,string>();for(const p of doc.products){const k=designKey(p);if(!m.has(k))m.set(k,s.designNames?.[k]??p.title.split(' · ')[0]!)}return [...m].map(([key,name])=>({key,name})).sort((a,b)=>a.name.localeCompare(b.name))},[doc.products,s.designNames])
  const todo=doc.products.filter(p=>p.status==='draft'||p.status==='error'||p.status==='building'),live=doc.products.filter(p=>p.status==='live'),shown=live.filter(p=>p.visible)
  const syncMany=async(ids:string[])=>{setRun({done:0,total:ids.length});for(let k=0;k<ids.length;k++){await api.post('shop',{action:'sync',id:ids[k]},'');setRun({done:k+1,total:ids.length})}
   setRun(null);const fresh=await api.get<State>('shop');if(fresh)setSt({doc:fresh.doc,connected:fresh.connected})}
@@ -69,7 +71,7 @@ export function ShopDesk({initial,subjects,pictures}:{initial:State;subjects:Sub
   <header className="desk-head"><p className="desk-kicker">Shop</p><h1 className="desk-h1">The print room</h1>
    <p className="desk-fine">Printed and shipped by Printify. {shown.length} shown in the shop · {live.length} on sale · {todo.length} waiting to be pressed.</p>
    <p className="desk-actions"><a className="desk-btn ghost" href="/shop" target="_blank" rel="noreferrer">Open the shop ↗</a><a className="desk-btn ghost" href="https://printify.com/app/orders" target="_blank" rel="noreferrer">Orders in Printify ↗</a></p></header>
-  <nav className="shop-tabs" aria-label="Shop desk">{(['overview','create','products','settings'] as const).map(t=><button key={t} type="button" className="desk-chip min-h-tap" aria-current={tab===t?'page':undefined} onClick={()=>setTab(t)}>{TAB_L[t]}{t==='products'?` · ${doc.products.length}`:''}{t==='overview'&&!(doc.health?.ok??true)?' •':''}</button>)}</nav>
+  <nav className="shop-tabs" aria-label="Shop desk">{(['overview','create','products','sales','settings'] as const).map(t=><button key={t} type="button" className="desk-chip min-h-tap" aria-current={tab===t?'page':undefined} onClick={()=>setTab(t)}>{TAB_L[t]}{t==='products'?` · ${doc.products.length}`:''}{t==='sales'&&(s.sales??[]).some(x=>x.on)?' · on':''}{t==='overview'&&!(doc.health?.ok??true)?' •':''}</button>)}</nav>
   {api.error&&<p className="desk-state" role="alert" data-tone="bad">{api.error}</p>}
   {api.notice&&!run&&<p className="desk-state" role="status">{api.notice}</p>}
   {run&&<p className="desk-state shop-run" role="status"><b>Pressing {run.done} of {run.total}…</b> Keep this page open. <button className="desk-btn ghost" onClick={()=>{stop.current=true}}>Stop after this one</button></p>}
@@ -165,6 +167,7 @@ export function ShopDesk({initial,subjects,pictures}:{initial:State;subjects:Sub
         <button className="desk-btn ghost min-h-tap" disabled={api.busy} onClick={()=>{const n=window.prompt('Name this design (it names every product made from it)',g.name);if(n&&n.trim()&&n.trim()!==g.name)void act('renameDesign',{design:g.key,name:n.trim()},'Renamed, in the shop and in Printify.')}}>Name</button>
         <button className="desk-btn ghost min-h-tap" disabled={api.busy} onClick={()=>act('visible',{ids:g.items.filter(p=>p.status==='live'&&qualityOf(p)>=MIN_QUALITY).map(p=>p.id),visible:true},'Shown.')}>Show all</button>
         <button className="desk-btn ghost min-h-tap" disabled={api.busy} onClick={()=>act('visible',{ids:g.items.map(p=>p.id),visible:false},'Hidden.')}>Hide all</button>
+        <button className="desk-btn ghost min-h-tap" disabled={api.busy} aria-pressed={!!s.promoters?.featured?.includes(g.key)} onClick={()=>act('feature',{design:g.key,on:!s.promoters?.featured?.includes(g.key)},s.promoters?.featured?.includes(g.key)?'Taken off fan favourites.':'On the fan favourites shelf.')}>{s.promoters?.featured?.includes(g.key)?'★ Featured':'☆ Feature'}</button>
         <a className="desk-btn ghost min-h-tap" href={`/shop?design=${g.key}`} target="_blank" rel="noreferrer">In the shop ↗</a>
        </div></div>
      </header>
@@ -190,19 +193,8 @@ export function ShopDesk({initial,subjects,pictures}:{initial:State;subjects:Sub
   </section>
 
   </>}
+  {tab==='sales'&&<ShopSales doc={doc} act={act} api={api} connected={st.connected} subjects={subjects} designs={allDesigns} onDoc={async()=>{const fresh=await api.get<State>('shop');if(fresh)setSt({doc:fresh.doc,connected:fresh.connected})}}/>}
   {tab==='settings'&&<>
-  <section className="desk-card" aria-labelledby="shpromo"><h2 className="desk-h2" id="shpromo">Sale</h2>
-   <p className="desk-fine">1 · Create the sale in Printify (<a href="https://printify.com/app/store/promotions" target="_blank" rel="noreferrer">Promotions ↗</a> — a store-wide % off, and/or cheaper shipping). 2 · Put the same % here: the site shows the sale banner, “was” prices and a −% badge until the end date.</p>
-   <form className="shop-row" onSubmit={e=>{e.preventDefault();const f=new FormData(e.currentTarget);void act('promo',{percent:Number(f.get('percent')||0),label:String(f.get('label')||''),until:String(f.get('until')||'')||null,code:String(f.get('code')||''),freeShipping:f.get('ship')==='on'},'Sale saved — the shop shows it now.')}}>
-    <label className="shop-field"><span>% off</span><input name="percent" type="number" min={0} max={80} defaultValue={s.promo?.percent??''} placeholder="20"/></label>
-    <label className="shop-field"><span>Headline</span><input name="label" defaultValue={s.promo?.label??''} placeholder="Derby week sale"/></label>
-    <label className="shop-field"><span>Ends</span><input name="until" type="date" defaultValue={s.promo?.until?.slice(0,10)??''}/></label>
-    <label className="shop-field"><span>Code (if the sale needs one)</span><input name="code" defaultValue={s.promo?.code??''}/></label>
-    <label className="shop-switch"><input name="ship" type="checkbox" defaultChecked={!!s.promo?.freeShipping}/><span>Cheaper shipping too</span></label>
-    <button className="desk-btn min-h-tap" disabled={api.busy}>Save the sale</button>
-    {s.promo&&<button type="button" className="desk-btn ghost min-h-tap" disabled={api.busy} onClick={()=>act('promo',{percent:0},'Sale ended on the site.')}>End the sale</button>}
-   </form>
-  </section>
   <section className="desk-card" aria-labelledby="shrelist"><h2 className="desk-h2" id="shrelist">Listings</h2>
    <p className="desk-fine">Send every product’s name, description and tags to Printify again (club, city, what it is, gift words) — after renaming designs, or once after an update.</p>
    <button className="desk-btn min-h-tap" disabled={!!run||api.busy||!st.connected} onClick={()=>syncMany(doc.products.filter(p=>p.printify).map(p=>p.id))}>Rewrite all {doc.products.filter(p=>p.printify).length} listings</button>

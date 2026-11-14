@@ -12,7 +12,7 @@ jobs:
   checkup:
     if: vars.FAN_LIFE_RESEARCH_URL != ''
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 20
     steps:
       - name: Check the shop
         env:
@@ -21,6 +21,12 @@ jobs:
         run: |
           set -euo pipefail
           if [ "${#CRON_SECRET}" -lt 32 ]; then echo "::error::FAN_LIFE_CRON_SECRET is missing."; exit 1; fi
+          # prices follow the sales first (a sale starts or ends on time), then the check-up
+          for i in 1 2 3 4 5 6 7 8; do
+            curl --silent --show-error --max-time 130 -X POST -o sales.json -H "Authorization: Bearer $CRON_SECRET" "$URL/api/master/shop/sales" || break
+            cat sales.json; echo
+            python3 -c "import json,sys;d=json.load(open('sales.json'));sys.exit(0 if d.get('pending',0)>0 and d.get('done',0)>0 else 1)" || break
+          done
           code=$(curl --silent --show-error --max-time 150 -X POST -o out.json -w '%{http_code}' -H "Authorization: Bearer $CRON_SECRET" "$URL/api/master/shop/checkup")
           cat out.json; echo
           if [ "$code" != "200" ]; then echo "::error title=Shop check-up answered $code::$(head -c 300 out.json)"; exit 1; fi

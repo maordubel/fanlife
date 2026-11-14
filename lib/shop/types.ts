@@ -1,3 +1,4 @@
+import type {Sale,Promoters} from './sales'
 /** The shop's own record (file area `shop`): what the print room has made, what Printify answered and what the public sees. */
 export const KINDS=['poster','framed','canvas','tote','tee','hoodie','kids-tee','mug','sticker','phone-case','puzzle','notebook','more'] as const
 export type Kind=(typeof KINDS)[number]
@@ -38,7 +39,11 @@ export type ShopProduct={
  /** the mock-up of the back, when the product prints there */
  backImage?:string;
  /** how sharp the print is: picture pixels ÷ pixels the product wants (1 = full; under .2 the shop hides it) */
- quality?:number}
+ quality?:number;
+ /** the sale whose price Printify charges now: its id, the % actually cut and the lowest regular price (cents) */
+ sale?:{id:string;percent:number;was:number}}
+ /** pieces sold, read from Printify's orders by the hourly check-up */
+ sold?:number
  createdAt:string;updatedAt:string
 }
 export type KindMatch={blueprintId:number;providerId:number;title:string;provider:string}
@@ -47,6 +52,10 @@ export type ShopSettings={
  open:boolean
  /** the sale the owner runs in Printify's Promotions (13.11.2026): the site shows it only while it is on — the same % as in Printify */
  promo?:{percent:number;label:string;until:string|null;code?:string;freeShipping?:boolean}|null
+ /** real price cuts (14.11.2026): the shop lowers the price in Printify for the sale's time and puts it back after */
+ sales?:Sale[]
+ /** the ribbon line, free-shipping threshold and fan favourites */
+ promoters?:Promoters
  /** the names the owner gave his designs, by design key — every product of the design carries it */
  designNames?:Record<string,string>
  shopId:number|null;shopTitle:string|null;channel:string|null
@@ -69,7 +78,9 @@ export type PublicProduct={
  /** the price before the store-wide sale, when one is on (cents) */
  was?:number|null;id:string;subject:string;kind:Kind;title:string;description:string;image:string;images:string[];back?:string;
  /** the storefront's shelf, the design it shares with sibling products, when it went on sale */
- shelf:Shelf;design:string;since:string|null;priceFrom:number;currency:string;url:string;/** ≈ whole euros at today's ECB rate (a guide; the checkout is in dollars) */eur?:number|null}
+ shelf:Shelf;design:string;since:string|null;sold:number;
+ /** the sale this product is in (its id), when one is on */
+ sale?:string|null;priceFrom:number;currency:string;url:string;/** ≈ whole euros at today's ECB rate (a guide; the checkout is in dollars) */eur?:number|null}
 /** below this share of the pixels a product needs, the print comes out blurred: the shop does not sell it, whatever the switch says */
 export const MIN_QUALITY=.2
 export const qualityOf=(p:ShopProduct)=>p.printify?.quality??(()=>{const m=/\((\d+)% of the print size\)/.exec(p.error||'');return m?Number(m[1])/100:1})()
@@ -88,4 +99,4 @@ export function shelfOf(kind:Kind,catalogue?:string):Shelf{
 }
 /** the design a product shares with its siblings: the same picture on several products */
 export const designKey=(p:ShopProduct)=>'library' in p.art?`l-${p.art.library.id.slice(-10)}`:`u-${p.art.upload.id.slice(-10)}`
-export const toPublic=(p:ShopProduct):PublicProduct=>({shelf:shelfOf(p.kind,p.blueprint?.title),design:designKey(p),since:p.printify!.publishedAt,id:p.id,subject:p.subject,kind:p.kind,title:p.title,description:p.description,image:p.printify!.images[0]!,images:p.printify!.images.slice(0,4),...(p.printify!.backImage?{back:p.printify!.backImage}:{}),priceFrom:p.printify!.priceFrom,currency:p.printify!.currency,url:p.printify!.url!})
+export const toPublic=(p:ShopProduct):PublicProduct=>({sold:p.sold??0,...(p.printify!.sale?.percent?{sale:p.printify!.sale.id,was:p.printify!.sale.was}:{}),shelf:shelfOf(p.kind,p.blueprint?.title),design:designKey(p),since:p.printify!.publishedAt,id:p.id,subject:p.subject,kind:p.kind,title:p.title,description:p.description,image:p.printify!.images[0]!,images:p.printify!.images.slice(0,4),...(p.printify!.backImage?{back:p.printify!.backImage}:{}),priceFrom:p.printify!.priceFrom,currency:p.printify!.currency,url:p.printify!.url!})
