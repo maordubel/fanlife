@@ -165,3 +165,10 @@ export function brandPlace(sheet:Sheet,pic:{width:number;height:number},spot:Bra
 }
 /** is this a garment (where a fashion label belongs)? */
 export const isGarment=(kind:Kind,title?:string)=>kind==='tee'||kind==='hoodie'||kind==='kids-tee'||(kind==='more'&&/shirt|tee|hood|sweat|tank|jacket|jersey|polo|crewneck|long sleeve|zip/i.test(title||''))
+
+/** where a design really prints (its own art, not FAN LIFE's mark): front, back or both; `hasBack` = the press put art on the back */
+export function printSide(d?:ProductDesign,hasBack=true):'front'|'back'|'both'{
+ if(!hasBack)return 'front'
+ if(d?.areas&&Object.keys(d.areas).length){const pos=Object.keys(d.areas),back=pos.includes('back'),other=pos.some(x=>x!=='back');return back&&other?'both':back?'back':'front'}
+ return d?.sides==='both'?'both':d?.sides==='back'?'back':'front'
+}
