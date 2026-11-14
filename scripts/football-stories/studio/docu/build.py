@@ -349,8 +349,16 @@ class Film:
 
     def ticket(self, s, t, d):
         cid = self.id('tk')
-        self.clip(cid, t, d, f'<div class="ticket{" tc" if s.get("compact") else ""}"><small style="color:{self.US}">{e(s["small"])}</small><b>{e(s["big"])}</b><span>{e(s.get("line", ""))}</span></div>', 9, '' if s.get('compact') else 'paper')
+        win = ''
+        if s.get('window') and self.sb.get('shape') and not s.get('compact'):
+            # editing rule 4, the shape as a window: the chapter's first picture seen through the film's shape, behind the card
+            mk = shape_mask(self.sb['shape']).replace('"', "'")   # inside a style attribute
+            win = (f'<div class="win" style="background-image:url(assets/img/{e(s["window"])});-webkit-mask-image:{mk};mask-image:{mk}"></div>')
+        self.clip(cid, t, d, win + f'<div class="ticket{" tc" if s.get("compact") else ""}{" tw" if win else ""}"><small style="color:{self.US}">{e(s["small"])}</small><b>{e(s["big"])}</b><span>{e(s.get("line", ""))}</span></div>', 9, '' if s.get('compact') else 'paper')
         self.tween(f'tl.fromTo("#{cid} .ticket",{{rotation:-6,scale:0.6,opacity:0}},{{rotation:-2,scale:1,opacity:1,duration:0.35,ease:"back.out(2)"}},{r2(t)});')
+        if win:
+            self.tween(f'tl.fromTo("#{cid} .win",{{scale:0.7,opacity:0}},{{scale:1,opacity:1,duration:0.45,ease:"power3.out"}},{r2(t)});'
+                       f'tl.fromTo("#{cid} .win",{{scale:1}},{{scale:1.06,duration:{r2(max(0.5, d - 0.45))},ease:"none",immediateRender:false}},{r2(t + 0.45)});')
         if d > 1.0:   # the card keeps turning very slowly and its lines open: a chapter card measured under the motion floor (qa.MOTION_FLOOR) when it only crept
             self.tween(f'tl.fromTo("#{cid} .ticket",{{rotation:-2}},{{rotation:{-2 + 0.9 * min(d, 4):.2f},duration:{r2(d - 0.4)},ease:"none",immediateRender:false}},{r2(t + 0.4)});'
                        f'tl.fromTo("#{cid} .ticket small",{{letterSpacing:"10px"}},{{letterSpacing:"{10 + 3 * min(d, 4):.0f}px",duration:{r2(d)},ease:"none"}},{r2(t)});')
@@ -782,8 +790,13 @@ class Film:
 
     def end(self, s, t, d):
         cid = self.id('end')
+        frame = ''
+        if self.sb.get('shape'):
+            # editing rule 4, the shape as a frame: the film's last card sits inside its outline
+            frame = (f'<svg class="endf" viewBox="0 0 100 100" fill="none" stroke="{self.US}" stroke-width="0.6" opacity="0.5">'
+                     f'{SHAPES.get(self.sb["shape"], SHAPES["ticket"])}</svg>')
         self.clip(cid, t, d, f'<div class="end"><img src="assets/img/fanlife.png"><small>FAN LIFE · FOOTBALL STORIES</small><b>{e(s["title"])}</b><span>{e(s.get("line", ""))}</span>'
-                             f'<i class="endl" id="{cid}l" style="background:{self.US}"></i></div>', 13, 'ink')
+                             f'<i class="endl" id="{cid}l" style="background:{self.US}"></i></div>' + frame, 13, 'ink')
         self.tween(f'tl.fromTo("#{cid} .end",{{opacity:0,y:30}},{{opacity:1,y:0,duration:0.6,ease:"power2.out"}},{r2(t)});'
                    # the last card is on screen for YouTube's end screen: a line travels under it and the mark grows, so it is never a dead frame
                    f'tl.fromTo("#{cid}l",{{scaleX:0}},{{scaleX:1,duration:{r2(max(0.5, d - 0.3))},ease:"none",transformOrigin:"left center"}},{r2(t + 0.3)});'
@@ -938,7 +951,7 @@ video.clip{{width:1920px;height:1080px}}
 .sbcap{{position:absolute;left:260px;top:612px;width:1400px;text-align:center;font:700 34px 'Cond';color:{P};letter-spacing:6px}}
 .stamp{{width:auto;height:auto;padding:4px 40px;border:14px solid;font:400 230px/1 'Ultra';background:rgba(241,232,211,.08)}}
 .q{{position:absolute;left:0;width:1920px;top:250px;text-align:center;font:400 104px/1.12 'Head';color:{P};text-shadow:6px 6px 0 {INK}}} .q em{{font-style:normal;color:#fff;padding:0 14px}}
-.ticket{{position:absolute;left:460px;top:330px;width:1000px;padding:40px 60px;background:#fff;border:6px dashed {INK};text-align:center;color:{INK}}}
+.ticket.tw{{left:850px;width:860px}} .ticket{{position:absolute;left:460px;top:330px;width:1000px;padding:40px 60px;background:#fff;border:6px dashed {INK};text-align:center;color:{INK}}}
 .ticket small{{display:block;font:700 40px 'Cond';letter-spacing:10px}} .ticket b{{display:block;font:400 132px/1 'Ultra'}} .ticket span{{display:block;font:700 30px 'Cond';letter-spacing:3px;margin-top:14px}}
 .lt{{position:absolute;left:58px;top:820px;background:{INK};color:{P};padding:18px 34px;display:flex;gap:26px;align-items:baseline}} .lt b{{font:400 58px 'Ultra';color:#fff}} .lt span{{font:700 32px 'Cond';letter-spacing:2px}}
 .clockbar{{position:absolute;left:140px;top:120px;width:1640px;display:flex;align-items:center;gap:20px;font:700 40px 'Cond';color:{INK}}}
@@ -998,7 +1011,7 @@ video.clip{{width:1920px;height:1080px}}
 .prn{{position:absolute;left:210px;top:92px;width:1500px;height:844px;overflow:hidden;border:18px solid #fff;box-shadow:22px 22px 0 rgba(20,17,13,.5)}} .prn .phi{{width:100%;height:100%}}
 .duo{{position:absolute;left:0;top:0;width:1920px;height:1080px;mix-blend-mode:multiply;opacity:.85}}
 .subw .sub.kar{{top:auto;bottom:54px;font:400 46px/1.25 'Head';text-transform:uppercase;letter-spacing:1px;color:{P};background:rgba(20,17,13,.88);padding:10px 26px;max-width:1500px}} .sub.kar span{{padding:0 4px}}
-.flapw{{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px}} .flaps{{display:flex;gap:14px;perspective:1400px}} .fp{{position:relative;width:170px;height:240px}} .fp b{{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:{INK};color:{P};font:400 190px/1 'Ultra';border-radius:10px;box-shadow:0 10px 0 rgba(0,0,0,.35);backface-visibility:hidden;transform-origin:50% 50%}} .fp b::after{{content:'';position:absolute;left:0;right:0;top:50%;height:3px;background:rgba(255,255,255,.18)}} .fp .fb{{transform:rotateX(90deg)}} .flapw.corner{{inset:auto;right:90px;top:120px;gap:12px;align-items:flex-end}} .flapw.corner .fp{{width:74px;height:104px}} .flapw.corner .fp b{{font-size:80px;border-radius:6px;box-shadow:0 6px 0 rgba(0,0,0,.35)}} .flapw.corner small{{font-size:24px;letter-spacing:5px;padding:5px 12px}} .flapw small{{font:700 40px 'Caps';letter-spacing:10px;color:{INK};background:{P};padding:8px 22px}} .fw{{position:absolute;left:150px;top:150px;width:1620px;color:{INK}}} .fh b{{display:block;font:400 92px/1 'Ultra'}} .fh span{{font:700 40px 'Caps';letter-spacing:8px}}
+.flapw{{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px}} .flaps{{display:flex;gap:14px;perspective:1400px}} .fp{{position:relative;width:170px;height:240px}} .fp b{{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:{INK};color:{P};font:400 190px/1 'Ultra';border-radius:10px;box-shadow:0 10px 0 rgba(0,0,0,.35);backface-visibility:hidden;transform-origin:50% 50%}} .fp b::after{{content:'';position:absolute;left:0;right:0;top:50%;height:3px;background:rgba(255,255,255,.18)}} .fp .fb{{transform:rotateX(90deg)}} .win{{position:absolute;left:130px;top:170px;width:740px;height:740px;background-size:cover;background-position:center;-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}} .endf{{position:absolute;left:50%;top:50%;width:980px;height:980px;margin:-490px 0 0 -490px;pointer-events:none}} .flapw.corner{{inset:auto;right:90px;top:120px;gap:12px;align-items:flex-end}} .flapw.corner .fp{{width:74px;height:104px}} .flapw.corner .fp b{{font-size:80px;border-radius:6px;box-shadow:0 6px 0 rgba(0,0,0,.35)}} .flapw.corner small{{font-size:24px;letter-spacing:5px;padding:5px 12px}} .flapw small{{font:700 40px 'Caps';letter-spacing:10px;color:{INK};background:{P};padding:8px 22px}} .fw{{position:absolute;left:150px;top:150px;width:1620px;color:{INK}}} .fh b{{display:block;font:400 92px/1 'Ultra'}} .fh span{{font:700 40px 'Caps';letter-spacing:8px}}
 .fg{{display:grid;gap:12px;margin-top:40px}} .ft{{height:96px;display:flex;align-items:center;justify-content:center;color:#fff;font:400 52px 'Ultra';border:4px solid {INK};box-shadow:6px 6px 0 {INK}}}
 .fbr{{margin-top:44px;text-align:left}} .fwb{{top:120px}} .fwb .fh b{{font-size:170px}} .fwb .fh span{{font-size:46px}} .fwb .fbr span{{font-size:60px;padding:12px 30px}}
 .fbr span{{display:inline-block;margin-top:14px;background:{INK};color:#fff;font:700 40px 'Caps';letter-spacing:4px;padding:8px 22px}}

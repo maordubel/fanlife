@@ -118,3 +118,17 @@ class HeldScoreboard(unittest.TestCase):
         beats = [{'t': 0, 'd': 4.0, 'meta': {'type': 'goal', 'chapter': 0}, 'shots': [{'kind': 'image', 'mini': {'score': '3–1', 'at': 1.2}}]}]
         a.score_board(beats)
         self.assertIn('mini', beats[0]['shots'][0])
+
+
+class ShapeWindow(unittest.TestCase):
+    """Editing rule 4: the chapter card shows the chapter's first picture through the film's shape."""
+    def test_chapter_card_gets_the_next_picture(self):
+        a = Adapter.__new__(Adapter)
+        beats = [{'meta': {'type': 'chapter'}, 'shots': [{'kind': 'ticket'}]},
+                 {'meta': {'type': 'illustration'}, 'shots': [{'kind': 'word'}]},
+                 {'meta': {'type': 'illustration'}, 'shots': [{'kind': 'image', 'src': 'a.jpg'}]},
+                 {'meta': {'type': 'chapter'}, 'shots': [{'kind': 'ticket'}]},
+                 {'meta': {'type': 'end'}, 'shots': [{'kind': 'end'}]}]
+        a.chapter_windows(beats)
+        self.assertEqual(beats[0]['shots'][0]['window'], 'a.jpg')
+        self.assertNotIn('window', beats[3]['shots'][0])

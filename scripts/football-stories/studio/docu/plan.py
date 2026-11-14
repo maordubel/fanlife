@@ -721,6 +721,7 @@ class Adapter:
         self.question_cards(out)
         self.year_flaps(out)
         self.score_board(out)
+        self.chapter_windows(out)
         return out
 
     YEAR = re.compile(r'^(19[0-9]{2}|20[0-3][0-9])[.,;:!?]?$')
@@ -746,6 +747,24 @@ class Adapter:
                         b['shots'].append({'kind': 'flap', 'frm': last, 'to': m.group(1), 'at': max(0.0, at), 'd': round(max(0.0, at) + 2.6, 3), 'z': 14})
                         last, shown = m.group(1), shown + 1
                         chapters.add(b['meta'].get('chapter'))
+                    break
+
+    def chapter_windows(self, beats: list[dict]) -> None:
+        """Editing rule 4, the shape as a window: each chapter card shows the chapter's first picture through the film's
+        shape (build.Film.ticket draws it when the film has a shape). The picture is the one the chapter opens on, so the
+        window is a promise the next cut keeps."""
+        for k, b in enumerate(beats):
+            if b['meta']['type'] != 'chapter':
+                continue
+            card = next((x for x in b['shots'] if x.get('kind') == 'ticket'), None)
+            if not card:
+                continue
+            for nb in beats[k + 1:]:
+                if nb['meta']['type'] == 'chapter':
+                    break
+                src = next((x.get('src') for x in nb['shots'] if x.get('kind') == 'image' and x.get('src')), None)
+                if src:
+                    card['window'] = src
                     break
 
     def score_board(self, beats: list[dict]) -> None:
