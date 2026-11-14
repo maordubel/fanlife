@@ -3109,13 +3109,13 @@
     "sensitive": false
    },
    "sources": [
-    "s365-4699960",
-    "ls-lu-1765478"
+    "s365-4699965",
+    "ls-lu-1765474"
    ],
    "confidence": 3,
    "status": "approved",
-   "researchedAt": "2026-11-13",
-   "approvedAt": "2026-11-13",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
    "approvedBy": "automated:cross-source-review-league-lineups-celtic",
    "parserCertainty": "high",
    "conflictFree": true,

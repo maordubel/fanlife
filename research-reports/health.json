@@ -1,11 +1,6 @@
 {
- "generatedAt": "2026-11-13T11:55:05.850Z",
+ "generatedAt": "2026-11-14T11:21:21.697Z",
  "alarms": [
-  {
-   "club": "maccabi-haifa",
-   "code": "waiting-owner",
-   "text": "Maccabi Haifa: 9 gates open on your approval — nothing more to collect for them first."
-  },
   {
    "club": "paok",
    "code": "waiting-owner",
@@ -30,11 +25,6 @@
    "club": "leicester-city",
    "code": "waiting-owner",
    "text": "Leicester City: 10 gates open on your approval — nothing more to collect for them first."
-  },
-  {
-   "club": "atalanta",
-   "code": "waiting-owner",
-   "text": "Atalanta: 9 gates open on your approval — nothing more to collect for them first."
   },
   {
    "club": "partizan-belgrade",

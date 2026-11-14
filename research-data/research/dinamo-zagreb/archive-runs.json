@@ -1904,5 +1904,70 @@
   ],
   "completeArchiveClaim": false,
   "approvedForProduction": 0
+ },
+ {
+  "schemaVersion": 1,
+  "id": "2026-11-14T10-55-20-716Z-9ae79b",
+  "clubId": "dinamo-zagreb",
+  "startedAt": "2026-11-14T10:55:20.716Z",
+  "finishedAt": "2026-11-14T10:55:32.639Z",
+  "providers": [
+   "dinamo-official",
+   "bad-blue-boys",
+   "hns-semafor",
+   "wikipedia-dinamo-records",
+   "nft-dinamo"
+  ],
+  "state": "partial_budget",
+  "counts": {
+   "requests": 6,
+   "documentsRead": 94,
+   "newDocuments": 0,
+   "changedDocuments": 2,
+   "unchangedDocuments": 92,
+   "recordsExtracted": 0,
+   "blockedEndpoints": 0,
+   "budgetLeft": 14
+  },
+  "diagnostics": [
+   {
+    "code": "NEEDS_PARSER",
+    "providerId": "dinamo-official",
+    "url": null,
+    "message": "No tested parser for GNK Dinamo Zagreb yet: documents are kept, nothing is extracted."
+   },
+   {
+    "code": "NEEDS_PARSER",
+    "providerId": "bad-blue-boys",
+    "url": null,
+    "message": "No tested parser for Bad Blue Boys yet (bbb-history-v1 is planned): documents are kept, nothing is extracted."
+   },
+   {
+    "code": "NEEDS_PARSER",
+    "providerId": "hns-semafor",
+    "url": null,
+    "message": "No tested parser for HNS Semafor yet: documents are kept, nothing is extracted."
+   },
+   {
+    "code": "NEEDS_PARSER",
+    "providerId": "wikipedia-dinamo-records",
+    "url": null,
+    "message": "No tested parser for Wikipedia yet: documents are kept, nothing is extracted."
+   },
+   {
+    "code": "NEEDS_PARSER",
+    "providerId": "nft-dinamo",
+    "url": null,
+    "message": "No tested parser for National Football Teams yet: documents are kept, nothing is extracted."
+   },
+   {
+    "code": "BUDGET_EXHAUSTED",
+    "providerId": "*",
+    "url": null,
+    "message": "Budget used; the next run resumes from the checkpoint."
+   }
+  ],
+  "completeArchiveClaim": false,
+  "approvedForProduction": 0
  }
 ]
