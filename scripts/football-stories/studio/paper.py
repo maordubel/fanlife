@@ -300,3 +300,32 @@ def halftone_overlay(im: Image.Image, cell: int = 7, strength: float = 0.18) -> 
     m = 1 - strength * (dots > g) * (1 - g)
     a = np.asarray(im.convert('RGB'), 'float32') * m[..., None]
     return Image.fromarray(np.clip(a, 0, 255).astype('uint8'), 'RGB').filter(ImageFilter.SMOOTH)
+
+
+INK_DARK, INK_CREAM = (0x15, 0x13, 0x0F), (0xF4, 0xEC, 0xD8)   # The Weekly's ink and cream (editing rule 1)
+
+
+def inked(im: Image.Image, accent: str | None) -> Image.Image:
+    """ONE WORLD, FOUR INKS (docs/rules/editing-language.md, rule 1; from the model film's `inked`): a library picture is
+    redrawn in the house inks — ink to cream by its lightness, a halftone grain — and only the club's own colour survives,
+    in the club's tone. Pictures from different sets read as one film, a rival's colour cannot survive, and one picture
+    can serve as several different looks."""
+    a = np.asarray(im.convert('RGB'), 'float32') / 255
+    hsv = np.asarray(im.convert('HSV'), 'float32')
+    lum = 0.299 * a[..., 0] + 0.587 * a[..., 1] + 0.114 * a[..., 2]
+    h, w = lum.shape
+    yy, xx = np.mgrid[0:h, 0:w]
+    dots = 0.5 + 0.5 * np.sin(xx * 1.05 + yy * 0.6) * np.sin(yy * 1.05 - xx * 0.6)   # a 45° screen, about 6 px
+    lum = np.clip(lum + (dots - 0.5) * 0.10 * (1 - np.abs(lum - 0.5) * 2), 0, 1)
+    lum = np.clip((lum - 0.04) / 0.92, 0, 1) ** 0.95
+    ink, cream = np.array(INK_DARK, 'float32'), np.array(INK_CREAM, 'float32')
+    out = ink + (cream - ink) * lum[..., None]
+    if accent:
+        acc = np.array(hex_rgb(accent), 'float32')
+        ah = np.asarray(Image.new('RGB', (1, 1), tuple(int(c) for c in acc)).convert('HSV'), 'float32')[0, 0, 0] * (360 / 255)
+        deg = hsv[..., 0] * (360 / 255)
+        near = np.minimum(np.abs(deg - ah), 360 - np.abs(deg - ah)) < 32
+        keep = near & (hsv[..., 1] > 0.3 * 255) & (hsv[..., 2] > 0.18 * 255)
+        tone = np.clip(0.55 + lum * 0.9, 0, 1.45)[..., None]
+        out = np.where(keep[..., None], np.clip(acc * tone, 0, 255), out)
+    return Image.fromarray(out.astype('uint8'), 'RGB')

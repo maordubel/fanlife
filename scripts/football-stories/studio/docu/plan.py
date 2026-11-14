@@ -175,7 +175,7 @@ class Adapter:
         q = self.query(n)
         av = ({before} if before else set()) | self.people_pictures(n)
         r = self.picker.pick(q, avoid=av) or self.picker.pick(q, avoid=self.people_pictures(n))
-        self.spares[n] = Path(r['path']) if r else None
+        self.spares[n] = self.ink(Path(r['path'])) if r else None
         if r:
             self.keys.setdefault(n, r['id'])
         return self.spares[n]
@@ -187,7 +187,24 @@ class Adapter:
         r = self.picker.pick({**self.query(n), 'n': n}, avoid=({own} if own else set()) | self.people_pictures(n))
         if r:
             self.also.setdefault(n, []).append(r['id'])
-        return self.asset(r['path'], 'img') if r else None
+        return self.asset(self.ink(Path(r['path'])), 'img') if r else None
+
+    def ink(self, path: Path) -> Path:
+        """The library picture redrawn in the house inks with the club's colour as the one accent (paper.inked; editing
+        rule 1). Cached per job; a clip or an unreadable file is passed through."""
+        if path.suffix.lower() not in ('.jpg', '.jpeg', '.png', '.webp'):
+            return path
+        out = self.jd / 'inked' / f'{path.stem}-{hashlib.sha1(str(path).encode()).hexdigest()[:8]}.jpg'
+        if not out.exists():
+            try:
+                from PIL import Image
+                from ..paper import inked
+                out.parent.mkdir(parents=True, exist_ok=True)
+                with Image.open(path) as im:
+                    inked(im, self.pal.accent).save(out, quality=90)
+            except OSError:
+                return path
+        return out
 
     def focus(self, src: str) -> str | None:
         """Where a detail look should look on this picture: the busiest part of it (most edges), as a transform origin —
