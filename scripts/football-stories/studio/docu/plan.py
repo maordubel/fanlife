@@ -171,6 +171,11 @@ class Adapter:
         fresh against this film and the last films — and never the picture of the shot before."""
         if n in self.spares:   # a shot may ask twice (its background and its card): the same picture both times
             return self.spares[n]
+        mine = self.own_picture(n)
+        if mine:   # the named person's own picture comes first (docs/rules/studio-pictures.md 2–3)
+            self.spares[n] = self.ink(Path(mine['path']))
+            self.keys.setdefault(n, mine['id'])
+            return self.spares[n]
         before = self.keys.get(max((k for k in self.keys if k < n), default=-1))
         q = self.query(n)
         av = ({before} if before else set()) | self.people_pictures(n)
@@ -284,17 +289,52 @@ class Adapter:
                     if isinstance(x, dict) and x.get('name'):
                         names.add(x['name'])
             self._names = names
+        return bool(self.names_on(text))
+
+    def names_on(self, text: str) -> list[str]:
+        """The real people this line names (see `named`), longest name first."""
+        if not hasattr(self, '_names'):
+            self.named('')
         low = text or ''
-        return any(re.search(r'\b' + re.escape(n) + r'\b', low) for n in self._names)
+        return [n for n in sorted(self._names, key=len, reverse=True) if re.search(r'\b' + re.escape(n) + r'\b', low)]
+
+    def own_picture(self, n: int) -> dict | None:
+        """A picture made for the person this line names (studio/looks.py → Flow → `person-<slug>-<era>-…`), of the
+        film's era when there is one. Found: it is the beat's picture. Not found: the person is written to the job's Flow
+        orders (`missing_people`, flow-people.json) and the line keeps its card or place picture."""
+        from .. import looks
+        s = next((x for x in self.plan.get('shots') or [] if x['n'] == n), None) or {}
+        names = self.names_on(s.get('narration') or '')
+        if not names:
+            return None
+        era = looks.era_of(self.led.get('season') if isinstance(self.led, dict) else '')
+        for name in names:
+            tag = f'person-{looks.slug(name)}-'
+            mine = [r for r in self.picker.records if tag in r['id']]
+            if era:
+                mine = [r for r in mine if f'-{era}-' in r['id']] or [r for r in mine if not re.search(r'-\d{4}s-', r['id'])]
+            if mine:
+                r = sorted(mine, key=lambda r: (r['id'] in self.picker.shots, r['id']))[0]   # a pose not shown yet first
+                if n not in self.picker.shots.get(r['id'], set()):
+                    self.picker.use(r['id'], n, s.get('start'), why=[f'tagged for {name}'])
+                return r
+            if not hasattr(self, 'missing_people'):
+                self.missing_people = {}
+            o = self.missing_people.setdefault(name, {'name': name, 'club': self.pal.club_id, 'era': era,
+                                                      'season': str(self.led.get('season') or '') if isinstance(self.led, dict) else '', 'beats': []})
+            if n not in o['beats']:
+                o['beats'].append(n)
+        return None
 
     def people_pictures(self, n: int) -> set[str]:
         """On a line that names a real person: every library picture of a figure, so no generic player or face stands in
         for him (owner, 14.11.2026: "if the player is dark-skinned the graphic must be too" — a library figure cannot know).
         The line is carried by the place, the crowd, the archive or a card instead."""
         s = next((x for x in self.plan.get('shots') or [] if x['n'] == n), None) or {}
-        if not self.named(s.get('narration') or ''):
-            return set()
-        return {r['id'] for r in self.picker.records if 'portrait-silhouette' in (r.get('subjects') or []) or self.FIGURE.search(r['id'])}
+        if not self.named(s.get('narration') or ''):   # a real person's own picture is shown only on a line about him
+            return {r['id'] for r in self.picker.records if re.search(r'(^|[/:])person-[a-z0-9-]+-(\d{4}s-)?(portrait|celebrate|action)-', r['id'])}
+        own = (self.own_picture(n) or {}).get('id')
+        return {r['id'] for r in self.picker.records if r['id'] != own and ('portrait-silhouette' in (r.get('subjects') or []) or self.FIGURE.search(r['id']))}
 
     def index_cutout(self, s: dict) -> list[dict]:
         """A cut-out from the PNG library (studio/kit/cutouts, through the media index) in front of the picture: the beat's
@@ -899,6 +939,11 @@ def write_project(job_dir: Path, plan: dict, palette: Palette, root: Path) -> tu
     script = read_json(job_dir / 'script.json')
     ad = Adapter(job_dir, plan, palette, ledger, script)
     beats = ad.beats()
+    from .. import looks
+    book = looks.load()
+    people = [{**o, 'look': 'ready' if looks.ready(book.get(looks.slug(o['name']) + '-' + (o.get('era') or ''))) else 'needs research'}
+              for o in getattr(ad, 'missing_people', {}).values()]
+    write_json(job_dir / 'flow-people.json', {'people': people})   # named with no picture of their own: studio/looks.py orders them
     write_json(job_dir / 'docu-shots.json', {'shots': E.shot_list(beats), 'errors': E.errors(beats) if beats and 'in' in beats[0] else [],
                                              'beat_grid': bool(plan.get('beat_grid')), 'library': sorted(set(ad.lib_used)),
                                              **({'mix': X.mix(beats)} if beats and 'lang' in beats[0] else {})})
@@ -946,6 +991,11 @@ def render_film(job_dir: Path, plan: dict, palette: Palette, log, workers: int |
         write_json(sd / f'shot-{s["n"]:04d}.cues.json', {'cues': cues.get(s['n'], []), 'kind': s['visual']['type'], 'engine': ENGINE,
                                                         'required_asset': s.get('required_asset')})
     log(f'DOCU: {len(plan["shots"])} shots composed in {time.time() - t0:.1f}s ({D / 60:.2f} min)')
+    try:   # the people the film named with no picture of their own: their look researched, their picture ordered in Flow
+        from .. import looks
+        looks.after_film(job_dir, log)
+    except Exception as x:  # noqa: BLE001 — never the film's problem
+        log(f'Looks: skipped ({str(x)[:120]})')
     used = read_json(job_dir / 'docu-shots.json').get('library') or []
     log(f'DOCU: {len(used)} moving-art library pieces on screen' if used else 'DOCU: no moving-art library on this machine (STORIES_CINEMA_LIB) — spare pictures only')
     if tick:

@@ -14,8 +14,13 @@ that enter the edit inside a moving situation; build a PNG library that fits all
    gets no library figure: no generic player picture behind it (`people_pictures`) and no figure cut-out in front of it.
    The place, the crowd, the archive or a card carries the line, until a picture tagged for that person exists.
 3. **Pictures of a named person are made for him**, in Flow, through the art library (`cinema/flow_library.json` →
-   the Flow operator, docs/fanlife/70): described by kit, build, skin, hair and era from the research, never by name in
-   the prompt. *Not automatic yet:* the plan does not write these orders; until it does, the card in rule 2 holds.
+   the Flow operator, docs/fanlife/70): described by kit, build, skin, hair and era, never by name, year or club in the
+   prompt. **Automatic (14.11.2026):** the plan writes every named person with no picture of his own to the job's
+   `flow-people.json`; after the film, `studio/looks.after_film` researches his look with grounded Google Search and keeps
+   a feature only when a source covers it (`kit/people/looks.json`, with the sources). Skin, hair and build all grounded →
+   three pieces (`person-<slug>-<era>-portrait|celebrate|action-fl1-kr`) join the Flow list and the worker commits them;
+   anything less → no order, asked again in 30 days, the card holds. Once drawn, the plan puts his own picture of the
+   film's era on his lines (`docu/plan.own_picture`) and never on a line that does not name him.
 4. **The PNG library is used in every documentary.** The Flow library's keyed pieces (people, supporters, objects,
    documents, era objects — cut from their paper in `cinema/library.cut_out`) and the kit's cut-outs enter through the
    media index (`kind: cutout`). Each picture beat gets the cut-out whose subject matches its line, rising in on its
