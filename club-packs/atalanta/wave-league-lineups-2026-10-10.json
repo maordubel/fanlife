@@ -1,0 +1,2549 @@
+{
+ "sources": [
+  {
+   "id": "s365-4732636",
+   "title": "365Scores: Monza 0-1 Atalanta, 2026-11-08",
+   "url": "https://webws.365scores.com/web/game/?gameId=4732636",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "ls-lu-1785439",
+   "title": "LiveScore: Monza 0-1 Atalanta, 2026-11-08 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1785439",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "s365-4732650",
+   "title": "365Scores: Atalanta 0-3 Parma, 2026-11-02",
+   "url": "https://webws.365scores.com/web/game/?gameId=4732650",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "ls-lu-1785383",
+   "title": "LiveScore: Atalanta 0-3 Parma, 2026-11-02 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1785383",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "s365-4732660",
+   "title": "365Scores: Fiorentina 2-2 Atalanta, 2026-10-29",
+   "url": "https://webws.365scores.com/web/game/?gameId=4732660",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "ls-lu-1785369",
+   "title": "LiveScore: Fiorentina 2-2 Atalanta, 2026-10-29 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1785369",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "s365-4732670",
+   "title": "365Scores: Atalanta 4-4 Frosinone, 2026-10-25",
+   "url": "https://webws.365scores.com/web/game/?gameId=4732670",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "ls-lu-1785377",
+   "title": "LiveScore: Atalanta 4-4 Frosinone, 2026-10-25 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1785377",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "s365-4732676",
+   "title": "365Scores: AC Milan 3-2 Atalanta, 2026-10-18",
+   "url": "https://webws.365scores.com/web/game/?gameId=4732676",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "ls-lu-1785373",
+   "title": "LiveScore: AC Milan 3-2 Atalanta, 2026-10-18 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1785373",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "s365-4732690",
+   "title": "365Scores: Atalanta 3-1 Venezia, 2026-10-12",
+   "url": "https://webws.365scores.com/web/game/?gameId=4732690",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "ls-lu-1785372",
+   "title": "LiveScore: Atalanta 3-1 Venezia, 2026-10-12 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1785372",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "s365-4732697",
+   "title": "365Scores: Juventus 2-0 Atalanta, 2026-09-20",
+   "url": "https://webws.365scores.com/web/game/?gameId=4732697",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "ls-lu-1785357",
+   "title": "LiveScore: Juventus 2-0 Atalanta, 2026-09-20 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1785357",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "s365-4732710",
+   "title": "365Scores: Atalanta 1-2 Cagliari, 2026-09-12",
+   "url": "https://webws.365scores.com/web/game/?gameId=4732710",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "ls-lu-1785358",
+   "title": "LiveScore: Atalanta 1-2 Cagliari, 2026-09-12 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1785358",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "s365-4732712",
+   "title": "365Scores: AS Roma 2-1 Atalanta, 2026-09-05",
+   "url": "https://webws.365scores.com/web/game/?gameId=4732712",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "ls-lu-1785333",
+   "title": "LiveScore: AS Roma 2-1 Atalanta, 2026-09-05 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1785333",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "s365-4732730",
+   "title": "365Scores: Atalanta 1-0 Bologna, 2026-08-31",
+   "url": "https://webws.365scores.com/web/game/?gameId=4732730",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "ls-lu-1785323",
+   "title": "LiveScore: Atalanta 1-0 Bologna, 2026-08-31 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1785323",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "s365-4732350",
+   "title": "365Scores: Atalanta 2-1 Sassuolo, 2026-08-23",
+   "url": "https://webws.365scores.com/web/game/?gameId=4732350",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "ls-lu-1785318",
+   "title": "LiveScore: Atalanta 2-1 Sassuolo, 2026-08-23 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1785318",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "s365-4764890",
+   "title": "365Scores: Feyenoord 2-1 Atalanta, 2026-08-02",
+   "url": "https://webws.365scores.com/web/game/?gameId=4764890",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "s365-4445117",
+   "title": "365Scores: Fiorentina 1-1 Atalanta, 2026-05-22",
+   "url": "https://webws.365scores.com/web/game/?gameId=4445117",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "ls-lu-1520205",
+   "title": "LiveScore: Fiorentina 1-1 Atalanta, 2026-05-22 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1520205",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "s365-4445126",
+   "title": "365Scores: Atalanta 0-1 Bologna, 2026-05-17",
+   "url": "https://webws.365scores.com/web/game/?gameId=4445126",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "ls-lu-1520194",
+   "title": "LiveScore: Atalanta 0-1 Bologna, 2026-05-17 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1520194",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "s365-4445156",
+   "title": "365Scores: AS Roma 1-1 Atalanta, 2026-04-18",
+   "url": "https://webws.365scores.com/web/game/?gameId=4445156",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "ls-lu-1520158",
+   "title": "LiveScore: AS Roma 1-1 Atalanta, 2026-04-18 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1520158",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "s365-4671122",
+   "title": "365Scores: Atalanta 1-1 Lazio, 2026-04-22",
+   "url": "https://webws.365scores.com/web/game/?gameId=4671122",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "s365-4445149",
+   "title": "365Scores: Cagliari 3-2 Atalanta, 2026-04-27",
+   "url": "https://webws.365scores.com/web/game/?gameId=4445149",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "ls-lu-1520183",
+   "title": "LiveScore: Cagliari 3-2 Atalanta, 2026-04-27 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1520183",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "s365-4445142",
+   "title": "365Scores: Atalanta 0-0 Genoa, 2026-05-02",
+   "url": "https://webws.365scores.com/web/game/?gameId=4445142",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "ls-lu-1520168",
+   "title": "LiveScore: Atalanta 0-0 Genoa, 2026-05-02 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1520168",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "s365-4445130",
+   "title": "365Scores: AC Milan 2-3 Atalanta, 2026-05-10",
+   "url": "https://webws.365scores.com/web/game/?gameId=4445130",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "ls-lu-1520216",
+   "title": "LiveScore: AC Milan 2-3 Atalanta, 2026-05-10 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1520216",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "s365-4445182",
+   "title": "365Scores: Atalanta 1-0 Hellas Verona, 2026-03-22",
+   "url": "https://webws.365scores.com/web/game/?gameId=4445182",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "ls-lu-1520125",
+   "title": "LiveScore: Atalanta 1-0 Hellas Verona, 2026-03-22 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1520125",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "s365-4445171",
+   "title": "365Scores: Lecce 0-3 Atalanta, 2026-04-06",
+   "url": "https://webws.365scores.com/web/game/?gameId=4445171",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "ls-lu-1520146",
+   "title": "LiveScore: Lecce 0-3 Atalanta, 2026-04-06 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1520146",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "s365-4445166",
+   "title": "365Scores: Atalanta 0-1 Juventus, 2026-04-11",
+   "url": "https://webws.365scores.com/web/game/?gameId=4445166",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "ls-lu-1520162",
+   "title": "LiveScore: Atalanta 0-1 Juventus, 2026-04-11 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1520162",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "s365-4445214",
+   "title": "365Scores: Atalanta 2-1 Napoli, 2026-02-22",
+   "url": "https://webws.365scores.com/web/game/?gameId=4445214",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "ls-lu-1520095",
+   "title": "LiveScore: Atalanta 2-1 Napoli, 2026-02-22 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1520095",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "s365-4445850",
+   "title": "365Scores: Sassuolo 2-1 Atalanta, 2026-03-01",
+   "url": "https://webws.365scores.com/web/game/?gameId=4445850",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "ls-lu-1520111",
+   "title": "LiveScore: Sassuolo 2-1 Atalanta, 2026-03-01 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1520111",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "s365-4671121",
+   "title": "365Scores: Lazio 2-2 Atalanta, 2026-03-04",
+   "url": "https://webws.365scores.com/web/game/?gameId=4671121",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "s365-4445197",
+   "title": "365Scores: Atalanta 2-2 Udinese, 2026-03-07",
+   "url": "https://webws.365scores.com/web/game/?gameId=4445197",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "ls-lu-1520114",
+   "title": "LiveScore: Atalanta 2-2 Udinese, 2026-03-07 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1520114",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "s365-4445189",
+   "title": "365Scores: Inter Milan 1-1 Atalanta, 2026-03-14",
+   "url": "https://webws.365scores.com/web/game/?gameId=4445189",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "ls-lu-1520122",
+   "title": "LiveScore: Inter Milan 1-1 Atalanta, 2026-03-14 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1520122",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "s365-4445247",
+   "title": "365Scores: Atalanta 4-0 Parma, 2026-01-25",
+   "url": "https://webws.365scores.com/web/game/?gameId=4445247",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "ls-lu-1520056",
+   "title": "LiveScore: Atalanta 4-0 Parma, 2026-01-25 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1520056",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "s365-4445235",
+   "title": "365Scores: Como 0-0 Atalanta, 2026-02-01",
+   "url": "https://webws.365scores.com/web/game/?gameId=4445235",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "ls-lu-1520066",
+   "title": "LiveScore: Como 0-0 Atalanta, 2026-02-01 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1520066",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  },
+  {
+   "id": "s365-4626224",
+   "title": "365Scores: Atalanta 3-0 Juventus, 2026-02-05",
+   "url": "https://webws.365scores.com/web/game/?gameId=4626224",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-14"
+  }
+ ],
+ "matches": [
+  {
+   "id": "a-m-2026-11-08-monza-atalanta",
+   "value": {
+    "name": "Monza 0-1 Atalanta",
+    "on": "2026-11-08",
+    "competition": "Serie A",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Lorenzo Bernasconi",
+     "Sead Kolasinac",
+     "Giorgio Scalvini",
+     "Davide Zappacosta",
+     "Mario Pasalic",
+     "Éderson",
+     "Nicola Zalewski",
+     "Charles de Ketelaere",
+     "Eljif Elmas",
+     "Nikola Krstovic"
+    ],
+    "bench": [
+     "Relja Obrić",
+     "Franck Kessié",
+     "Jonathan Rowe",
+     "Mattia Sonzogni",
+     "Marco Sportiello",
+     "Matteo Plaia",
+     "Javison Idele",
+     "Lazar Samardzic",
+     "Kamaldeen Sulemana",
+     "Gianluca Scamacca"
+    ],
+    "scorers": [
+     "Nikola Krstovic"
+    ]
+   },
+   "sources": [
+    "s365-4732636",
+    "ls-lu-1785439"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta"
+  },
+  {
+   "id": "a-m-2026-11-02-atalanta-parma",
+   "value": {
+    "name": "Atalanta 0-3 Parma",
+    "on": "2026-11-02",
+    "competition": "Serie A",
+    "score": "0-3",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Lorenzo Bernasconi",
+     "Relja Obrić",
+     "Giorgio Scalvini",
+     "Davide Zappacosta",
+     "Mario Pasalic",
+     "Éderson",
+     "Jonathan Rowe",
+     "Charles de Ketelaere",
+     "Nicola Zalewski",
+     "Nikola Krstovic"
+    ],
+    "bench": [
+     "Javison Idele",
+     "Eljif Elmas",
+     "Lazar Samardzic",
+     "Kamaldeen Sulemana",
+     "Mattia Sonzogni",
+     "Marco Sportiello",
+     "Matteo Plaia",
+     "Sergej Levak"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4732650",
+    "ls-lu-1785383"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta"
+  },
+  {
+   "id": "a-m-2026-10-29-fiorentina-atalanta",
+   "value": {
+    "name": "Fiorentina 2-2 Atalanta",
+    "on": "2026-10-29",
+    "competition": "Serie A",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Lorenzo Bernasconi",
+     "Relja Obrić",
+     "Thomas Kristensen",
+     "Davide Zappacosta",
+     "Éderson",
+     "Gianluca Gaetano",
+     "Nicola Zalewski",
+     "Charles de Ketelaere",
+     "Eljif Elmas",
+     "Nikola Krstovic"
+    ],
+    "bench": [
+     "Giorgio Scalvini",
+     "Mario Pasalic",
+     "Jonathan Rowe",
+     "Kamaldeen Sulemana",
+     "Mattia Sonzogni",
+     "Marco Sportiello",
+     "Matteo Plaia",
+     "Javison Idele",
+     "Lazar Samardzic"
+    ],
+    "scorers": [
+     "Charles de Ketelaere",
+     "Nicola Zalewski"
+    ]
+   },
+   "sources": [
+    "s365-4732660",
+    "ls-lu-1785369"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta"
+  },
+  {
+   "id": "a-m-2026-10-25-atalanta-frosinone",
+   "value": {
+    "name": "Atalanta 4-4 Frosinone",
+    "on": "2026-10-25",
+    "competition": "Serie A",
+    "score": "4-4",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Davide Zappacosta",
+     "Relja Obrić",
+     "Thomas Kristensen",
+     "Raoul Bellanova",
+     "Éderson",
+     "Gianluca Gaetano",
+     "Jonathan Rowe",
+     "Charles de Ketelaere",
+     "Eljif Elmas",
+     "Nikola Krstovic"
+    ],
+    "bench": [
+     "Mario Pasalic",
+     "Lorenzo Bernasconi",
+     "Nicola Zalewski",
+     "Lazar Samardzic",
+     "Gianluca Scamacca",
+     "Mattia Sonzogni",
+     "Marco Sportiello",
+     "Matteo Plaia",
+     "Javison Idele"
+    ],
+    "scorers": [
+     "Nikola Krstovic",
+     "Éderson",
+     "Nikola Krstovic",
+     "Eljif Elmas"
+    ]
+   },
+   "sources": [
+    "s365-4732670",
+    "ls-lu-1785377"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta"
+  },
+  {
+   "id": "a-m-2026-10-18-ac-milan-atalanta",
+   "value": {
+    "name": "AC Milan 3-2 Atalanta",
+    "on": "2026-10-18",
+    "competition": "Serie A",
+    "score": "3-2",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Lorenzo Bernasconi",
+     "Sead Kolasinac",
+     "Thomas Kristensen",
+     "Raoul Bellanova",
+     "Mario Pasalic",
+     "Éderson",
+     "Lazar Samardzic",
+     "Jonathan Rowe",
+     "Nikola Krstovic",
+     "Charles de Ketelaere"
+    ],
+    "bench": [
+     "Relja Obrić",
+     "Gianluca Gaetano",
+     "Davide Zappacosta",
+     "Nicola Zalewski",
+     "Gianluca Scamacca",
+     "Mattia Sonzogni",
+     "Marco Sportiello",
+     "Matteo Plaia",
+     "Digne Kaelas Pounga",
+     "Javison Idele"
+    ],
+    "scorers": [
+     "Gianluca Gaetano",
+     "Nikola Krstovic"
+    ]
+   },
+   "sources": [
+    "s365-4732676",
+    "ls-lu-1785373"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta"
+  },
+  {
+   "id": "a-m-2026-10-12-atalanta-venezia",
+   "value": {
+    "name": "Atalanta 3-1 Venezia",
+    "on": "2026-10-12",
+    "competition": "Serie A",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Davide Zappacosta",
+     "Giorgio Scalvini",
+     "Thomas Kristensen",
+     "Raoul Bellanova",
+     "Éderson",
+     "Franck Kessié",
+     "Jonathan Rowe",
+     "Charles de Ketelaere",
+     "Eljif Elmas",
+     "Nikola Krstovic"
+    ],
+    "bench": [
+     "Sead Kolasinac",
+     "Gianluca Gaetano",
+     "Lorenzo Bernasconi",
+     "Nicola Zalewski",
+     "Lazar Samardzic",
+     "Mattia Sonzogni",
+     "Marco Sportiello",
+     "Relja Obrić",
+     "Mario Pasalic",
+     "Javison Idele",
+     "Giacomo Raspadori",
+     "Gianluca Scamacca"
+    ],
+    "scorers": [
+     "Franck Kessié",
+     "Nikola Krstovic",
+     "Nikola Krstovic"
+    ]
+   },
+   "sources": [
+    "s365-4732690",
+    "ls-lu-1785372"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta"
+  },
+  {
+   "id": "a-m-2026-09-20-juventus-atalanta",
+   "value": {
+    "name": "Juventus 2-0 Atalanta",
+    "on": "2026-09-20",
+    "competition": "Serie A",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Lorenzo Bernasconi",
+     "Giorgio Scalvini",
+     "Thomas Kristensen",
+     "Raoul Bellanova",
+     "Éderson",
+     "Franck Kessié",
+     "Lazar Samardzic",
+     "Jonathan Rowe",
+     "Nikola Krstovic",
+     "Charles de Ketelaere"
+    ],
+    "bench": [
+     "Gianluca Gaetano",
+     "Eljif Elmas",
+     "Giacomo Raspadori",
+     "Gianluca Scamacca",
+     "Thomas Pompei",
+     "Marco Sportiello",
+     "Sead Kolasinac",
+     "Jacopo Mirra",
+     "Relja Obrić",
+     "Mario Pasalic",
+     "Davide Zappacosta",
+     "Nicola Zalewski"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4732697",
+    "ls-lu-1785357"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta"
+  },
+  {
+   "id": "a-m-2026-09-12-atalanta-cagliari",
+   "value": {
+    "name": "Atalanta 1-2 Cagliari",
+    "on": "2026-09-12",
+    "competition": "Serie A",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Sead Kolasinac",
+     "Giorgio Scalvini",
+     "Odilon Kossounou",
+     "Raoul Bellanova",
+     "Éderson",
+     "Franck Kessié",
+     "Lazar Samardzic",
+     "Jonathan Rowe",
+     "Gianluca Scamacca",
+     "Charles de Ketelaere"
+    ],
+    "bench": [
+     "Mario Pasalic",
+     "Lorenzo Bernasconi",
+     "Giacomo Raspadori",
+     "Nikola Krstovic",
+     "Thomas Pompei",
+     "Marco Sportiello",
+     "Relja Obrić",
+     "Thomas Kristensen",
+     "Davide Zappacosta",
+     "Nicola Zalewski",
+     "Eljif Elmas"
+    ],
+    "scorers": [
+     "Gianluca Scamacca"
+    ]
+   },
+   "sources": [
+    "s365-4732710",
+    "ls-lu-1785358"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta"
+  },
+  {
+   "id": "a-m-2026-09-05-as-roma-atalanta",
+   "value": {
+    "name": "AS Roma 2-1 Atalanta",
+    "on": "2026-09-05",
+    "competition": "Serie A",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Sead Kolasinac",
+     "Giorgio Scalvini",
+     "Odilon Kossounou",
+     "Raoul Bellanova",
+     "Éderson",
+     "Gianluca Gaetano",
+     "Lazar Samardzic",
+     "Eljif Elmas",
+     "Gianluca Scamacca",
+     "Charles de Ketelaere"
+    ],
+    "bench": [
+     "Franck Kessié",
+     "Mario Pasalic",
+     "Davide Zappacosta",
+     "Nicola Zalewski",
+     "Nikola Krstovic",
+     "Thomas Pompei",
+     "Marco Sportiello",
+     "Relja Obrić",
+     "Thomas Kristensen",
+     "Lorenzo Bernasconi",
+     "Jonathan Rowe",
+     "Giacomo Raspadori"
+    ],
+    "scorers": [
+     "Éderson"
+    ]
+   },
+   "sources": [
+    "s365-4732712",
+    "ls-lu-1785333"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta"
+  },
+  {
+   "id": "a-m-2026-08-31-atalanta-bologna",
+   "value": {
+    "name": "Atalanta 1-0 Bologna",
+    "on": "2026-08-31",
+    "competition": "Serie A",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Sead Kolasinac",
+     "Giorgio Scalvini",
+     "Odilon Kossounou",
+     "Davide Zappacosta",
+     "Éderson",
+     "Gianluca Gaetano",
+     "Mario Pasalic",
+     "Giacomo Raspadori",
+     "Gianluca Scamacca",
+     "Charles de Ketelaere"
+    ],
+    "bench": [
+     "Raoul Bellanova",
+     "Nicola Zalewski",
+     "Eljif Elmas",
+     "Lazar Samardzic",
+     "Nikola Krstovic",
+     "Marco Sportiello",
+     "Paolo Vismara",
+     "Relja Obrić",
+     "Ibrahim Sulemana",
+     "Federico Cassa",
+     "Lorenzo Bernasconi"
+    ],
+    "scorers": [
+     "Lazar Samardzic"
+    ]
+   },
+   "sources": [
+    "s365-4732730",
+    "ls-lu-1785323"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta"
+  },
+  {
+   "id": "a-m-2026-08-23-atalanta-sassuolo",
+   "value": {
+    "name": "Atalanta 2-1 Sassuolo",
+    "on": "2026-08-23",
+    "competition": "Serie A",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Lorenzo Bernasconi",
+     "Giorgio Scalvini",
+     "Odilon Kossounou",
+     "Davide Zappacosta",
+     "Éderson",
+     "Gianluca Gaetano",
+     "Mario Pasalic",
+     "Giacomo Raspadori",
+     "Gianluca Scamacca",
+     "Nicola Zalewski"
+    ],
+    "bench": [
+     "Sead Kolasinac",
+     "Charles de Ketelaere",
+     "Eljif Elmas",
+     "Lazar Samardzic",
+     "Nikola Krstovic",
+     "Marco Sportiello",
+     "Paolo Vismara",
+     "Relja Obrić",
+     "Ibrahim Sulemana",
+     "Marten De Roon",
+     "Federico Cassa",
+     "Raoul Bellanova"
+    ],
+    "scorers": [
+     "Giacomo Raspadori",
+     "Nikola Krstovic"
+    ]
+   },
+   "sources": [
+    "s365-4732350",
+    "ls-lu-1785318"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta"
+  },
+  {
+   "id": "a-m-2026-08-02-feyenoord-atalanta",
+   "value": {
+    "name": "Feyenoord 2-1 Atalanta",
+    "on": "2026-08-02",
+    "competition": "Club Friendlies",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Honest Ahanor",
+     "Berat Djimsiti",
+     "Giorgio Scalvini",
+     "Lazar Samardzic",
+     "Éderson",
+     "Gianluca Gaetano",
+     "Davide Zappacosta",
+     "Giacomo Raspadori",
+     "Kamaldeen Sulemana",
+     "Nikola Krstovic"
+    ],
+    "bench": [
+     "Marco Sportiello",
+     "Sead Kolasinac",
+     "Odilon Kossounou",
+     "Ibrahim Sulemana",
+     "Marten De Roon",
+     "Mario Pasalic",
+     "Raoul Bellanova",
+     "Lorenzo Bernasconi",
+     "Nicola Zalewski",
+     "Daniel Maldini",
+     "Gianluca Scamacca",
+     "Paolo Vismara",
+     "Relja Obrić",
+     "Federico Cassa"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4764890"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore has no full eleven for this match.",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-05-22-fiorentina-atalanta",
+   "value": {
+    "name": "Fiorentina 1-1 Atalanta",
+    "on": "2026-05-22",
+    "competition": "Serie A",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Marco Sportiello",
+     "Honest Ahanor",
+     "Isak Hien",
+     "Giorgio Scalvini",
+     "Yunus Musah",
+     "Mario Pasalic",
+     "Marten De Roon",
+     "Raoul Bellanova",
+     "Kamaldeen Sulemana",
+     "Lazar Samardzic",
+     "Giacomo Raspadori"
+    ],
+    "bench": [
+     "Berat Djimsiti",
+     "Davide Zappacosta",
+     "Charles de Ketelaere",
+     "Dominic Vavassori",
+     "Gianluca Scamacca",
+     "Marco Carnesecchi",
+     "Francesco Rossi",
+     "Sead Kolasinac",
+     "Relja Obrić",
+     "Éderson",
+     "Mitchel Bakker",
+     "Nicola Zalewski",
+     "Nikola Krstovic"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4445117",
+    "ls-lu-1520205"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta"
+  },
+  {
+   "id": "a-m-2026-05-17-atalanta-bologna",
+   "value": {
+    "name": "Atalanta 0-1 Bologna",
+    "on": "2026-05-17",
+    "competition": "Serie A",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Honest Ahanor",
+     "Berat Djimsiti",
+     "Giorgio Scalvini",
+     "Nicola Zalewski",
+     "Éderson",
+     "Marten De Roon",
+     "Davide Zappacosta",
+     "Giacomo Raspadori",
+     "Charles de Ketelaere",
+     "Nikola Krstovic"
+    ],
+    "bench": [
+     "Sead Kolasinac",
+     "Yunus Musah",
+     "Mario Pasalic",
+     "Mitchel Bakker",
+     "Kamaldeen Sulemana",
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Relja Obrić",
+     "Raoul Bellanova",
+     "Lazar Samardzic",
+     "Dominic Vavassori",
+     "Gianluca Scamacca"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4445126",
+    "ls-lu-1520194"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta"
+  },
+  {
+   "id": "a-m-2026-05-10-ac-milan-atalanta",
+   "value": {
+    "name": "AC Milan 2-3 Atalanta",
+    "on": "2026-05-10",
+    "competition": "Serie A",
+    "score": "2-3",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Sead Kolasinac",
+     "Isak Hien",
+     "Giorgio Scalvini",
+     "Nicola Zalewski",
+     "Éderson",
+     "Marten De Roon",
+     "Davide Zappacosta",
+     "Giacomo Raspadori",
+     "Charles de Ketelaere",
+     "Nikola Krstovic"
+    ],
+    "bench": [
+     "Honest Ahanor",
+     "Odilon Kossounou",
+     "Mario Pasalic",
+     "Raoul Bellanova",
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Relja Obrić",
+     "Yunus Musah",
+     "Mitchel Bakker",
+     "Lazar Samardzic",
+     "Kamaldeen Sulemana",
+     "Dominic Vavassori",
+     "Gianluca Scamacca"
+    ],
+    "scorers": [
+     "Éderson",
+     "Davide Zappacosta",
+     "Giacomo Raspadori"
+    ]
+   },
+   "sources": [
+    "s365-4445130",
+    "ls-lu-1520216"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta"
+  },
+  {
+   "id": "a-m-2026-05-02-atalanta-genoa",
+   "value": {
+    "name": "Atalanta 0-0 Genoa",
+    "on": "2026-05-02",
+    "competition": "Serie A",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Honest Ahanor",
+     "Berat Djimsiti",
+     "Giorgio Scalvini",
+     "Nicola Zalewski",
+     "Éderson",
+     "Marten De Roon",
+     "Davide Zappacosta",
+     "Charles de Ketelaere",
+     "Nikola Krstovic",
+     "Gianluca Scamacca"
+    ],
+    "bench": [
+     "Isak Hien",
+     "Yunus Musah",
+     "Mario Pasalic",
+     "Lazar Samardzic",
+     "Giacomo Raspadori",
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Sead Kolasinac",
+     "Odilon Kossounou",
+     "Raoul Bellanova",
+     "Mitchel Bakker",
+     "Kamaldeen Sulemana"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4445142",
+    "ls-lu-1520168"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta"
+  },
+  {
+   "id": "a-m-2026-04-27-cagliari-atalanta",
+   "value": {
+    "name": "Cagliari 3-2 Atalanta",
+    "on": "2026-04-27",
+    "competition": "Serie A",
+    "score": "3-2",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Sead Kolasinac",
+     "Berat Djimsiti",
+     "Giorgio Scalvini",
+     "Davide Zappacosta",
+     "Mario Pasalic",
+     "Marten De Roon",
+     "Raoul Bellanova",
+     "Giacomo Raspadori",
+     "Charles de Ketelaere",
+     "Gianluca Scamacca"
+    ],
+    "bench": [
+     "Odilon Kossounou",
+     "Éderson",
+     "Nicola Zalewski",
+     "Lazar Samardzic",
+     "Nikola Krstovic",
+     "Piotr Pardel",
+     "Marco Sportiello",
+     "Honest Ahanor",
+     "Isak Hien",
+     "Relja Obrić",
+     "Yunus Musah",
+     "Mitchel Bakker",
+     "Kamaldeen Sulemana"
+    ],
+    "scorers": [
+     "Gianluca Scamacca",
+     "Gianluca Scamacca"
+    ]
+   },
+   "sources": [
+    "s365-4445149",
+    "ls-lu-1520183"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta"
+  },
+  {
+   "id": "a-m-2026-04-22-atalanta-lazio",
+   "value": {
+    "name": "Atalanta 1-1 Lazio",
+    "on": "2026-04-22",
+    "competition": "Coppa Italia - Semi Finals",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Sead Kolasinac",
+     "Berat Djimsiti",
+     "Giorgio Scalvini",
+     "Lorenzo Bernasconi",
+     "Éderson",
+     "Marten De Roon",
+     "Davide Zappacosta",
+     "Nicola Zalewski",
+     "Charles de Ketelaere",
+     "Nikola Krstovic"
+    ],
+    "bench": [
+     "Honest Ahanor",
+     "Odilon Kossounou",
+     "Mario Pasalic",
+     "Raoul Bellanova",
+     "Giacomo Raspadori",
+     "Gianluca Scamacca",
+     "Piotr Pardel",
+     "Marco Sportiello",
+     "Relja Obrić",
+     "Yunus Musah",
+     "Mitchel Bakker",
+     "Lazar Samardzic",
+     "Kamaldeen Sulemana"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4671122"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-04-18-as-roma-atalanta",
+   "value": {
+    "name": "AS Roma 1-1 Atalanta",
+    "on": "2026-04-18",
+    "competition": "Serie A",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Sead Kolasinac",
+     "Berat Djimsiti",
+     "Giorgio Scalvini",
+     "Davide Zappacosta",
+     "Éderson",
+     "Marten De Roon",
+     "Raoul Bellanova",
+     "Giacomo Raspadori",
+     "Charles de Ketelaere",
+     "Nikola Krstovic"
+    ],
+    "bench": [
+     "Honest Ahanor",
+     "Odilon Kossounou",
+     "Mario Pasalic",
+     "Lorenzo Bernasconi",
+     "Nicola Zalewski",
+     "Piotr Pardel",
+     "Marco Sportiello",
+     "Relja Obrić",
+     "Yunus Musah",
+     "Mitchel Bakker",
+     "Lazar Samardzic",
+     "Gianluca Scamacca"
+    ],
+    "scorers": [
+     "Nikola Krstovic"
+    ]
+   },
+   "sources": [
+    "s365-4445156",
+    "ls-lu-1520158"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta"
+  },
+  {
+   "id": "a-m-2026-04-11-atalanta-juventus",
+   "value": {
+    "name": "Atalanta 0-1 Juventus",
+    "on": "2026-04-11",
+    "competition": "Serie A",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Sead Kolasinac",
+     "Berat Djimsiti",
+     "Giorgio Scalvini",
+     "Lorenzo Bernasconi",
+     "Éderson",
+     "Marten De Roon",
+     "Davide Zappacosta",
+     "Nicola Zalewski",
+     "Charles de Ketelaere",
+     "Nikola Krstovic"
+    ],
+    "bench": [
+     "Honest Ahanor",
+     "Mario Pasalic",
+     "Raoul Bellanova",
+     "Giacomo Raspadori",
+     "Gianluca Scamacca",
+     "Piotr Pardel",
+     "Marco Sportiello",
+     "Odilon Kossounou",
+     "Relja Obrić",
+     "Sergej Levak",
+     "Yunus Musah",
+     "Mitchel Bakker",
+     "Lazar Samardzic"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4445166",
+    "ls-lu-1520162"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta"
+  },
+  {
+   "id": "a-m-2026-04-06-lecce-atalanta",
+   "value": {
+    "name": "Lecce 0-3 Atalanta",
+    "on": "2026-04-06",
+    "competition": "Serie A",
+    "score": "0-3",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Sead Kolasinac",
+     "Berat Djimsiti",
+     "Giorgio Scalvini",
+     "Lorenzo Bernasconi",
+     "Éderson",
+     "Marten De Roon",
+     "Davide Zappacosta",
+     "Nicola Zalewski",
+     "Charles de Ketelaere",
+     "Nikola Krstovic"
+    ],
+    "bench": [
+     "Odilon Kossounou",
+     "Mario Pasalic",
+     "Raoul Bellanova",
+     "Kamaldeen Sulemana",
+     "Giacomo Raspadori",
+     "Piotr Pardel",
+     "Marco Sportiello",
+     "Honest Ahanor",
+     "Albert Navarro",
+     "Yunus Musah",
+     "Mitchel Bakker",
+     "Lazar Samardzic"
+    ],
+    "scorers": [
+     "Giorgio Scalvini",
+     "Nikola Krstovic",
+     "Giacomo Raspadori"
+    ]
+   },
+   "sources": [
+    "s365-4445171",
+    "ls-lu-1520146"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta"
+  },
+  {
+   "id": "a-m-2026-03-22-atalanta-hellas-verona",
+   "value": {
+    "name": "Atalanta 1-0 Hellas Verona",
+    "on": "2026-03-22",
+    "competition": "Serie A",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Sead Kolasinac",
+     "Berat Djimsiti",
+     "Giorgio Scalvini",
+     "Lorenzo Bernasconi",
+     "Éderson",
+     "Marten De Roon",
+     "Davide Zappacosta",
+     "Nicola Zalewski",
+     "Charles de Ketelaere",
+     "Nikola Krstovic"
+    ],
+    "bench": [
+     "Isak Hien",
+     "Yunus Musah",
+     "Mario Pasalic",
+     "Lazar Samardzic",
+     "Giacomo Raspadori",
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Honest Ahanor",
+     "Odilon Kossounou",
+     "Raoul Bellanova",
+     "Mitchel Bakker",
+     "Kamaldeen Sulemana"
+    ],
+    "scorers": [
+     "Davide Zappacosta"
+    ]
+   },
+   "sources": [
+    "s365-4445182",
+    "ls-lu-1520125"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta"
+  },
+  {
+   "id": "a-m-2026-03-14-inter-milan-atalanta",
+   "value": {
+    "name": "Inter Milan 1-1 Atalanta",
+    "on": "2026-03-14",
+    "competition": "Serie A",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Sead Kolasinac",
+     "Berat Djimsiti",
+     "Giorgio Scalvini",
+     "Lorenzo Bernasconi",
+     "Mario Pasalic",
+     "Marten De Roon",
+     "Davide Zappacosta",
+     "Nicola Zalewski",
+     "Lazar Samardzic",
+     "Gianluca Scamacca"
+    ],
+    "bench": [
+     "Isak Hien",
+     "Éderson",
+     "Charles de Ketelaere",
+     "Kamaldeen Sulemana",
+     "Nikola Krstovic",
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Honest Ahanor",
+     "Odilon Kossounou",
+     "Yunus Musah",
+     "Raoul Bellanova",
+     "Mitchel Bakker"
+    ],
+    "scorers": [
+     "Nikola Krstovic"
+    ]
+   },
+   "sources": [
+    "s365-4445189",
+    "ls-lu-1520122"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta"
+  },
+  {
+   "id": "a-m-2026-03-07-atalanta-udinese",
+   "value": {
+    "name": "Atalanta 2-2 Udinese",
+    "on": "2026-03-07",
+    "competition": "Serie A",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Sead Kolasinac",
+     "Isak Hien",
+     "Odilon Kossounou",
+     "Lorenzo Bernasconi",
+     "Mario Pasalic",
+     "Yunus Musah",
+     "Raoul Bellanova",
+     "Kamaldeen Sulemana",
+     "Lazar Samardzic",
+     "Gianluca Scamacca"
+    ],
+    "bench": [
+     "Berat Djimsiti",
+     "Marten De Roon",
+     "Davide Zappacosta",
+     "Nicola Zalewski",
+     "Nikola Krstovic",
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Honest Ahanor",
+     "Sergej Levak",
+     "Mitchel Bakker",
+     "Dominic Vavassori"
+    ],
+    "scorers": [
+     "Gianluca Scamacca",
+     "Gianluca Scamacca"
+    ]
+   },
+   "sources": [
+    "s365-4445197",
+    "ls-lu-1520114"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta"
+  },
+  {
+   "id": "a-m-2026-03-04-lazio-atalanta",
+   "value": {
+    "name": "Lazio 2-2 Atalanta",
+    "on": "2026-03-04",
+    "competition": "Coppa Italia - Semi Finals",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Sead Kolasinac",
+     "Isak Hien",
+     "Giorgio Scalvini",
+     "Lorenzo Bernasconi",
+     "Mario Pasalic",
+     "Marten De Roon",
+     "Davide Zappacosta",
+     "Nicola Zalewski",
+     "Lazar Samardzic",
+     "Nikola Krstovic"
+    ],
+    "bench": [
+     "Honest Ahanor",
+     "Odilon Kossounou",
+     "Yunus Musah",
+     "Kamaldeen Sulemana",
+     "Gianluca Scamacca",
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Berat Djimsiti",
+     "Raoul Bellanova",
+     "Mitchel Bakker",
+     "Dominic Vavassori"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4671121"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-03-01-sassuolo-atalanta",
+   "value": {
+    "name": "Sassuolo 2-1 Atalanta",
+    "on": "2026-03-01",
+    "competition": "Serie A",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Sead Kolasinac",
+     "Berat Djimsiti",
+     "Giorgio Scalvini",
+     "Lorenzo Bernasconi",
+     "Mario Pasalic",
+     "Marten De Roon",
+     "Raoul Bellanova",
+     "Nicola Zalewski",
+     "Lazar Samardzic",
+     "Gianluca Scamacca"
+    ],
+    "bench": [
+     "Isak Hien",
+     "Yunus Musah",
+     "Davide Zappacosta",
+     "Kamaldeen Sulemana",
+     "Nikola Krstovic",
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Odilon Kossounou",
+     "Mitchel Bakker",
+     "Dominic Vavassori"
+    ],
+    "scorers": [
+     "Yunus Musah"
+    ]
+   },
+   "sources": [
+    "s365-4445850",
+    "ls-lu-1520111"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta"
+  },
+  {
+   "id": "a-m-2026-02-22-atalanta-napoli",
+   "value": {
+    "name": "Atalanta 2-1 Napoli",
+    "on": "2026-02-22",
+    "competition": "Serie A",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Sead Kolasinac",
+     "Isak Hien",
+     "Giorgio Scalvini",
+     "Davide Zappacosta",
+     "Mario Pasalic",
+     "Marten De Roon",
+     "Raoul Bellanova",
+     "Nicola Zalewski",
+     "Kamaldeen Sulemana",
+     "Nikola Krstovic"
+    ],
+    "bench": [
+     "Honest Ahanor",
+     "Berat Djimsiti",
+     "Lorenzo Bernasconi",
+     "Lazar Samardzic",
+     "Gianluca Scamacca",
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Odilon Kossounou",
+     "Yunus Musah",
+     "Éderson",
+     "Mitchel Bakker",
+     "Dominic Vavassori"
+    ],
+    "scorers": [
+     "Mario Pasalic",
+     "Lazar Samardzic"
+    ]
+   },
+   "sources": [
+    "s365-4445214",
+    "ls-lu-1520095"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta"
+  },
+  {
+   "id": "a-m-2026-02-05-atalanta-juventus",
+   "value": {
+    "name": "Atalanta 3-0 Juventus",
+    "on": "2026-02-05",
+    "competition": "Coppa Italia - Quarter Finals",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Honest Ahanor",
+     "Berat Djimsiti",
+     "Giorgio Scalvini",
+     "Lorenzo Bernasconi",
+     "Éderson",
+     "Marten De Roon",
+     "Davide Zappacosta",
+     "Giacomo Raspadori",
+     "Charles de Ketelaere",
+     "Gianluca Scamacca"
+    ],
+    "bench": [
+     "Odilon Kossounou",
+     "Mario Pasalic",
+     "Raoul Bellanova",
+     "Kamaldeen Sulemana",
+     "Nikola Krstovic",
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Isak Hien",
+     "Sead Kolasinac",
+     "Yunus Musah",
+     "Mitchel Bakker",
+     "Nicola Zalewski",
+     "Lazar Samardzic"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4626224"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-02-01-como-atalanta",
+   "value": {
+    "name": "Como 0-0 Atalanta",
+    "on": "2026-02-01",
+    "competition": "Serie A",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Honest Ahanor",
+     "Berat Djimsiti",
+     "Giorgio Scalvini",
+     "Lorenzo Bernasconi",
+     "Éderson",
+     "Marten De Roon",
+     "Davide Zappacosta",
+     "Nicola Zalewski",
+     "Charles de Ketelaere",
+     "Gianluca Scamacca"
+    ],
+    "bench": [
+     "Odilon Kossounou",
+     "Raoul Bellanova",
+     "Kamaldeen Sulemana",
+     "Nikola Krstovic",
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Isak Hien",
+     "Sead Kolasinac",
+     "Yunus Musah",
+     "Mario Pasalic",
+     "Lazar Samardzic",
+     "Giacomo Raspadori"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4445235",
+    "ls-lu-1520066"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta"
+  },
+  {
+   "id": "a-m-2026-01-25-atalanta-parma",
+   "value": {
+    "name": "Atalanta 4-0 Parma",
+    "on": "2026-01-25",
+    "competition": "Serie A",
+    "score": "4-0",
+    "venue": null,
+    "lineup": [
+     "Marco Carnesecchi",
+     "Honest Ahanor",
+     "Berat Djimsiti",
+     "Giorgio Scalvini",
+     "Nicola Zalewski",
+     "Éderson",
+     "Marten De Roon",
+     "Davide Zappacosta",
+     "Giacomo Raspadori",
+     "Charles de Ketelaere",
+     "Gianluca Scamacca"
+    ],
+    "bench": [
+     "Isak Hien",
+     "Mario Pasalic",
+     "Lorenzo Bernasconi",
+     "Nikola Krstovic",
+     "A. Lookman",
+     "Francesco Rossi",
+     "Marco Sportiello",
+     "Sead Kolasinac",
+     "Odilon Kossounou",
+     "Yunus Musah",
+     "Daniel Maldini",
+     "Lazar Samardzic",
+     "Kamaldeen Sulemana"
+    ],
+    "scorers": [
+     "Gianluca Scamacca",
+     "Marten De Roon",
+     "Giacomo Raspadori",
+     "Nikola Krstovic"
+    ]
+   },
+   "sources": [
+    "s365-4445247",
+    "ls-lu-1520056"
+   ],
+   "researchedAt": "2026-11-14",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta"
+  }
+ ],
+ "players": [
+  {
+   "id": "p-u-e685eca539f20d68",
+   "value": {
+    "name": "Marco Carnesecchi",
+    "positions": [
+     "GK"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4445235",
+    "ls-lu-1520066"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: GK."
+  },
+  {
+   "id": "p-u-d8b3a0b51d8efcff",
+   "value": {
+    "name": "Sead Kolašinac",
+    "positions": [
+     "DF"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4445189",
+    "ls-lu-1520122"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
+  },
+  {
+   "id": "p-u-c723039aaa53ab87",
+   "value": {
+    "name": "Giorgio Scalvini",
+    "positions": [
+     "DF"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4445235",
+    "ls-lu-1520066"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
+  },
+  {
+   "id": "p-u-409cc7d05a9938f8",
+   "value": {
+    "name": "Mario Pašalić",
+    "positions": [
+     "MF"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4445189",
+    "ls-lu-1520122"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
+  },
+  {
+   "id": "p-u-49394daa4c2af88d",
+   "value": {
+    "name": "Éderson",
+    "positions": [
+     "MF"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4445235",
+    "ls-lu-1520066"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
+  },
+  {
+   "id": "p-u-cb2b201f0504a7b8",
+   "value": {
+    "name": "Nicola Zalewski",
+    "positions": [
+     "MF"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4445235",
+    "ls-lu-1520066"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
+  },
+  {
+   "id": "p-u-eca6b28e94632e04",
+   "value": {
+    "name": "Charles De Ketelaere",
+    "positions": [
+     "MF"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4445235",
+    "ls-lu-1520066"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
+  },
+  {
+   "id": "p-u-107831b935faf13b",
+   "value": {
+    "name": "Eljif Elmas",
+    "positions": [
+     "MF"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4732690",
+    "ls-lu-1785372"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
+  },
+  {
+   "id": "p-u-f529ef5cda7df002",
+   "value": {
+    "name": "Nikola Krstović",
+    "positions": [
+     "FW"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4445214",
+    "ls-lu-1520095"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: FW."
+  },
+  {
+   "id": "p-u-98ba7af5495828a2",
+   "value": {
+    "name": "Relja Obrić",
+    "positions": [
+     "DF"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4732670",
+    "ls-lu-1785377"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
+  },
+  {
+   "id": "p-u-ed479f2b82c3ab65",
+   "value": {
+    "name": "Thomas Kristensen",
+    "positions": [
+     "DF"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4732697",
+    "ls-lu-1785357"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
+  },
+  {
+   "id": "p-u-5f8053b7367bd9a9",
+   "value": {
+    "name": "Gianluca Gaetano",
+    "positions": [
+     "MF"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4732350",
+    "ls-lu-1785318"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
+  },
+  {
+   "id": "p-u-df3ff84f1465405f",
+   "value": {
+    "name": "Jonathan Rowe",
+    "positions": [
+     "FW"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4732710",
+    "ls-lu-1785358"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: FW."
+  },
+  {
+   "id": "p-u-858a8a45c4021f72",
+   "value": {
+    "name": "Odilon Kossounou",
+    "positions": [
+     "DF"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4445197",
+    "ls-lu-1520114"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
+  },
+  {
+   "id": "p-u-2dec1e8fc7ec0ad1",
+   "value": {
+    "name": "Gianluca Scamacca",
+    "positions": [
+     "FW"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4445235",
+    "ls-lu-1520066"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: FW."
+  },
+  {
+   "id": "p-u-6b864ebe5c52b643",
+   "value": {
+    "name": "Giacomo Raspadori",
+    "positions": [
+     "FW"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4445117",
+    "ls-lu-1520205"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: FW."
+  },
+  {
+   "id": "p-u-95bca433162c5ca0",
+   "value": {
+    "name": "Marco Sportiello",
+    "positions": [
+     "GK"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4445117",
+    "ls-lu-1520205"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: GK."
+  },
+  {
+   "id": "p-u-605c52d101834cd9",
+   "value": {
+    "name": "Honest Ahanor",
+    "positions": [
+     "DF"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4445235",
+    "ls-lu-1520066"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
+  },
+  {
+   "id": "p-u-dd5ff471677bd664",
+   "value": {
+    "name": "Isak Hien",
+    "positions": [
+     "DF"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4445197",
+    "ls-lu-1520114"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
+  },
+  {
+   "id": "p-u-3249d1b3aab2cb37",
+   "value": {
+    "name": "Yunus Musah",
+    "positions": [
+     "MF"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4445197",
+    "ls-lu-1520114"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
+  },
+  {
+   "id": "p-u-2dc2e8db2594e8c2",
+   "value": {
+    "name": "Marten de Roon",
+    "positions": [
+     "MF"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4445235",
+    "ls-lu-1520066"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
+  },
+  {
+   "id": "p-u-198f8be2c1042953",
+   "value": {
+    "name": "Raoul Bellanova",
+    "positions": [
+     "MF"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4445197",
+    "ls-lu-1520114"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
+  },
+  {
+   "id": "p-u-0397b9bd503737f8",
+   "value": {
+    "name": "Berat Djimsiti",
+    "positions": [
+     "DF"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4445235",
+    "ls-lu-1520066"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: DF."
+  },
+  {
+   "id": "p-u-e79b5e7b0644927b",
+   "value": {
+    "name": "Davide Zappacosta",
+    "positions": [
+     "MF"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4445235",
+    "ls-lu-1520066"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
+  },
+  {
+   "id": "p-u-abf3350792bf54aa",
+   "value": {
+    "name": "Lorenzo Bernasconi",
+    "positions": [
+     "MF"
+    ],
+    "sensitive": false
+   },
+   "sources": [
+    "s365-4445235",
+    "ls-lu-1520066"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-14",
+   "approvedAt": "2026-11-14",
+   "approvedBy": "automated:cross-source-review-league-lineups-atalanta",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: MF."
+  }
+ ],
+ "kits": [],
+ "rivals": []
+}

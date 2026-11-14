@@ -1,7 +1,7 @@
 {
  "club": "panathinaikos",
- "snapshotAsOf": "2026-11-13",
- "researchVersion": 30,
+ "snapshotAsOf": "2026-11-14",
+ "researchVersion": 31,
  "approvedForProduction": 0,
  "counts": {
   "sources": 3,
@@ -11,7 +11,7 @@
  },
  "collection": {
   "schemaVersion": 1,
-  "runId": "2026-11-13T11-32-28-958Z-7a7c7a",
+  "runId": "2026-11-14T10-55-48-421Z-45ded0",
   "state": "partial_budget",
   "historicalOnly": true,
   "completeArchiveClaim": false,

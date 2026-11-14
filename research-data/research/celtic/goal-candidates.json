@@ -226,15 +226,6 @@
   "evidence": [
    {
     "sourceId": "thecelticwiki",
-    "url": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1891-2/1891-12-12-celtic-7-1-clyde-glasgow-cup/",
-    "locator": "p21",
-    "quote": "Goals: 1-0 McCallum (20 min.), 2-0 Brady (30 min.), 3-1 McMahon, 4-1 Kelly, 5-1 Madden, 6-1 Campbell, 7-1 Madden.",
-    "bodyHash": "bf25ec611b713ae557d926cf51ccf753fe6d4d5b681fbd6686e2ebe0a5112469",
-    "fetchedAt": "2026-10-23T08:41:33.974Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "thecelticwiki",
     "url": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1895-2/1895-05-25-celtic-4-0-rangers-glasgow-charity-cup-final/",
     "locator": "p14",
     "quote": "The goals: 1-0 McMahon (20 min.), 2-0 Kelly, 3-0 McMahon (70 min.), 4-0 McMahon",
@@ -295,6 +286,15 @@
     "bodyHash": "31e4bbede558465207c8d6640148cb10174b372f8fef32cd709a0104915cd70a",
     "fetchedAt": "2026-11-13T11:31:56.438Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/opposition/queens-park/",
+    "locator": "p50",
+    "quote": "\"The Brazen Head is only a 20min walk to the ground\"",
+    "bodyHash": "017cf9572ff362354b8a38988206d95004e6cfc8c37fa951f1c3793a305a8e31",
+    "fetchedAt": "2026-11-14T10:54:49.012Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -302,8 +302,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-13T11:31:56.438Z",
-  "updatedAt": "2026-11-13T11:31:56.438Z"
+  "createdAt": "2026-11-14T10:54:49.012Z",
+  "updatedAt": "2026-11-14T10:54:49.012Z"
  },
  {
   "id": "ga-577d3a63d33d9c1c",
@@ -502,6 +502,15 @@
     "bodyHash": "e6d4cca676a3519f9f26b6a5efcda7cc35945ffc00ef783455ae319667293ae6",
     "fetchedAt": "2026-10-23T08:51:00.695Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1928-11-28-partick-thistle-3-1-celtic-glasgow-dental-cup-semi-final/",
+    "locator": "p7",
+    "quote": "It was another new boy, though, Joe Riley, a B.Sc. student at Glasgow University who got the first two goals &ndash; in the 7th and 30th minute &ndash; and an older star, Tommy McInally, who scored two more in the second half to give Celtic a 4-0 victory and a place in the second round against Partick Thistle.",
+    "bodyHash": "f106e604ab3780865cc53dacefa9574473e184f0122b24008c65875ec6ace3ea",
+    "fetchedAt": "2026-11-14T10:54:58.161Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -509,8 +518,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-23T08:51:00.695Z",
-  "updatedAt": "2026-10-23T08:51:00.695Z"
+  "createdAt": "2026-11-14T10:54:58.161Z",
+  "updatedAt": "2026-11-14T10:54:58.161Z"
  },
  {
   "id": "ga-83acbc41412b298f",
@@ -1009,15 +1018,6 @@
   "evidence": [
    {
     "sourceId": "thecelticwiki",
-    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/70s-pictures/1970-71-pics/1970-08-02-cork-hibernians-0-3-celtic-league-pictures/",
-    "locator": "p1",
-    "quote": "Match | 1970-71 Pictures | 1970 – 1971 | 70's Pictures | Year By Year Pictures | Picture Library",
-    "bodyHash": "6ba10fb842ee7bfb15cd89fc55db843625608d892bb36a698b381c4d7c04dc79",
-    "fetchedAt": "2026-11-12T11:50:07.016Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "thecelticwiki",
     "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/70s-pictures/1970-71-pics/1970-08-10-celtic-3-1-rangers-glasgow-cup-final-pictures/",
     "locator": "p1",
     "quote": "Match | 1969-70 Pictures | 1969 – 1970 | 70's Pictures | Year By Year Pictures | Picture Library",
@@ -1078,6 +1078,15 @@
     "bodyHash": "25e70f9d347ab27833d710a80a3f3059cab05b96e2c884275a6f8e3ed47be3ac",
     "fetchedAt": "2026-11-13T11:31:41.448Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1930-01-25-clyde-2-3-celtic-league-division-1/",
+    "locator": "p3",
+    "quote": "Parkhead-born defender, Danny Blair, scored (a very rare event in this country) the opener for Clyde in 5 minutes from the penalty spot, but then Celtic added three from Wilson , Bertie , McGrory , and it was not until the 70th minute that Harry Borland reduced Celtic's lead. In the end the visitors were hanging on to a one-goal advantage as Clyde pressed.",
+    "bodyHash": "2d7ff79802e2acbe747339c0cc4d72cd153924d0677e49c1d53379be2656240e",
+    "fetchedAt": "2026-11-14T10:55:01.116Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1085,8 +1094,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-13T11:31:41.448Z",
-  "updatedAt": "2026-11-13T11:31:41.448Z"
+  "createdAt": "2026-11-14T10:55:01.116Z",
+  "updatedAt": "2026-11-14T10:55:01.116Z"
  },
  {
   "id": "ga-e21180845e547f26",
@@ -2041,6 +2050,15 @@
     "bodyHash": "24f4401e2cc05f0b818ae8a620b42f4cd8fc4450cc3fe528caab5788b76bd76d",
     "fetchedAt": "2026-10-31T09:58:03.104Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1931-09-12-celtic-2-2-queens-park-league-division-1/",
+    "locator": "p5",
+    "quote": "The match at Parkead was something of a disappointment, which was hardly surprising given the pervading air of sadness at the passing of a young and popular player. The visitors opened the scoring in 31 minutes through James Crawford and it was not until 15 minutes into the second-half that Charlie Napier equalised from the penalty spot following a foul on Bertie in the box. Then in 70 minutes Crawford beat goalkeeper Falconer a second time to regain the lead for Queen’s, but the new bhoy “Jerry” Solis equalised in the 85th minute and the game ended in a draw.",
+    "bodyHash": "a2f3066fdddfc554d16da429222fe435b4f5a265e86d3d7b6db1497f5b6938b6",
+    "fetchedAt": "2026-11-14T10:55:10.135Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2048,8 +2066,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-31T09:58:03.104Z",
-  "updatedAt": "2026-10-31T09:58:03.104Z"
+  "createdAt": "2026-11-14T10:55:10.135Z",
+  "updatedAt": "2026-11-14T10:55:10.135Z"
  },
  {
   "id": "ga-e24879da1fce45a8",
@@ -2950,6 +2968,15 @@
     "bodyHash": "89a160b6f5acafb22231fb67c0ec9c14b760b9f5f66d94afd54cd79bc1f8a365",
     "fetchedAt": "2026-11-13T11:31:38.449Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1931-08-08-leith-athletic-0-3-celtic-league-division-1/",
+    "locator": "p3",
+    "quote": "A new season starts with familiar faces as Jimmy McGrory with goals in the 36th and 61st minute, and Bertie Thomson in 73 minutes secures the points for the bhoys.",
+    "bodyHash": "22e32250196c95e54b822161edb76d371149c4bfa93bc8131a36f5eb29f34467",
+    "fetchedAt": "2026-11-14T10:55:10.133Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2957,8 +2984,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-13T11:31:38.449Z",
-  "updatedAt": "2026-11-13T11:31:38.449Z"
+  "createdAt": "2026-11-14T10:55:10.133Z",
+  "updatedAt": "2026-11-14T10:55:10.133Z"
  },
  {
   "id": "ga-fdddd250fdbd2f55",
@@ -3109,5 +3136,185 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-11-13T11:31:47.391Z",
   "updatedAt": "2026-11-13T11:31:47.391Z"
+ },
+ {
+  "id": "ga-afa7c08f5da7ec08",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "68",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1928-08-11-dundee-0-1-celtic-league-division-1/",
+    "locator": "p3",
+    "quote": "McGrory's 68th minute shot proves to be the winner in a tight game at Dens, in which a makeshift Celtic forward-line includes two debutants, Gray and Riley from Maryhill Hibs.",
+    "bodyHash": "2216f7887283e7725645a1036486fde55714eabbc004547228cd5ca50ccf5e04",
+    "fetchedAt": "2026-11-14T10:54:58.160Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-14T10:54:58.160Z",
+  "updatedAt": "2026-11-14T10:54:58.160Z"
+ },
+ {
+  "id": "ga-87c89924aaf4cdb2",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "29",
+  "scorerAlias": "Celtic",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1930-10-18-celtic-3-1-st-mirren-league-division-1/",
+    "locator": "p3",
+    "quote": "Celtic scored three goals ( Scarff & McGrory , (2)) in a burst between the 25th and 29th minute and killed the game off as a contest. George Walker scored a consolation goal for the Buddies with 4 minutes remaining. Alex Stewart was said to have been the best of the St. Mirren forwards.",
+    "bodyHash": "07189b6507f68ef1fda8f5c65b29b2ce3a4228e66a0f7c15ff2aa0008c7a2090",
+    "fetchedAt": "2026-11-14T10:55:04.146Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-14T10:55:04.146Z",
+  "updatedAt": "2026-11-14T10:55:04.146Z"
+ },
+ {
+  "id": "ga-95fadea4846531ea",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "70",
+  "scorerAlias": "Charlie Napier",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1931-02-04-dundee-united-2-3-celtic-scottish-cup/",
+    "locator": "p3",
+    "quote": "The match at Tannadice was played on a snow-field and United more than matched Celtic, with goals from Jackie Kay and centre-forward Bennett, until the 70th minute when Peter Scarff levelled the scores at 2-2 then Charlie Napier scored the winner from a free-kick 20-yards out. Ex-Celtic outside-right Denis McCallum had a hand in both United goals.",
+    "bodyHash": "0439e9e304c01ab2ee55d8bb36dbc10b4a8d3645a2875bfa3714b5d1c78a0d67",
+    "fetchedAt": "2026-11-14T10:55:07.139Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-14T10:55:07.139Z",
+  "updatedAt": "2026-11-14T10:55:07.139Z"
+ },
+ {
+  "id": "ga-43e2cd4619731adb",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "65",
+  "scorerAlias": "Bertie Thomson",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1931-03-25-celtic-2-2-dundee-league-division-1/",
+    "locator": "p3",
+    "quote": "Five minutes before the interval at Celtic Park, Davie Balfour, Dundee's centre-forward, opened the scoring for the visitors, a lead that was held until the 65th minute, when Willie Hughes equalised. Nine minutes later Alec Troup restored the visitor's lead until Bertie Thomson scored Celtic's second equaliser in the 81st minute.",
+    "bodyHash": "7b99dd32e6d07743d9391eb57342336e31dc2ac0e28df3977ce3746d6943daad",
+    "fetchedAt": "2026-11-14T10:55:07.141Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-14T10:55:07.141Z",
+  "updatedAt": "2026-11-14T10:55:07.141Z"
+ },
+ {
+  "id": "ga-7247d0e4230cb0d9",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "56",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1931-09-02-third-lanark-3-3-celtic-league-division-1/",
+    "locator": "p4",
+    "quote": "In this Wednesday evening game at Cathkin, Celtic were shocked after only twelve minutes, when Fifer, Joe Breslin, opened the scoring, and though Jimmy McGrory equalised shortly afterwards Celtic went in at half-time 3-1 down thanks to further goals from left-back James Warden (pen) and ex-trawlerman, Neilly Dewar . Only a spirited second-half fight back by the Celts, with goals by Peter Scarff (56min) and again McGrory (60min), salvaged a point.",
+    "bodyHash": "7c13da1375db61e55b9aba1dbbc14d933eb0a7cf114f4224be5f17032a8ba76f",
+    "fetchedAt": "2026-11-14T10:55:10.134Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-14T10:55:10.134Z",
+  "updatedAt": "2026-11-14T10:55:10.134Z"
+ },
+ {
+  "id": "ga-4d7000d882f113db",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "10",
+  "scorerAlias": "Jimmy McGrory",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1932-01-01-celtic-1-2-rangers-league-division-1/",
+    "locator": "p3",
+    "quote": "Rangers led at half-time through goals by Sandy Archibald , (10 min) and Jimmy Marshall , (23 min). Jimmy McGrory scored with a header for Celtic in 84 minutes. The Glasgow Herald opined \" Scarff missed\", and there were never two truer word printed in that newspaper, but it was not thought at the time that Peter Scarff would never play again.",
+    "bodyHash": "4579569a5df5fa99e7ffbe9134ff358efde7556e75d45e5745bc026e90d740ba",
+    "fetchedAt": "2026-11-14T10:55:13.184Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-14T10:55:13.184Z",
+  "updatedAt": "2026-11-14T10:55:13.184Z"
  }
 ]

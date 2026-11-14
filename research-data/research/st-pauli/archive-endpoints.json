@@ -5,7 +5,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-11-13T11:33:11.342Z"
+  "checkedAt": "2026-11-14T10:56:33.378Z"
  },
  "millernton:/wp-json/wp/v2/pages": {
   "endpoint": "/wp-json/wp/v2/pages",
@@ -13,7 +13,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-11-13T11:33:14.052Z"
+  "checkedAt": "2026-11-14T10:56:36.010Z"
  },
  "fcstpauli-museum:/wp-json/wp/v2/posts": {
   "endpoint": "/wp-json/wp/v2/posts",
@@ -21,7 +21,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-11-13T11:33:21.918Z"
+  "checkedAt": "2026-11-14T10:56:42.423Z"
  },
  "fcstpauli-museum:/wp-json/wp/v2/pages": {
   "endpoint": "/wp-json/wp/v2/pages",
@@ -29,6 +29,6 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-11-13T11:33:27.156Z"
+  "checkedAt": "2026-11-14T10:56:48.141Z"
  }
 }

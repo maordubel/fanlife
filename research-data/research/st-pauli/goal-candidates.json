@@ -199,24 +199,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2022/09/06/lage-am-millerntor-06-september-2022/",
-    "locator": "p37",
-    "quote": "Trainer des Bundesligateams ist Markus Högner, der im Interview bei 90min u.a. darüber spricht wie es so ist, wenn man Jahr für Jahr Nationalspielerinnen an „größere“ Vereine verliert und trotzdem weiter eine gute Rolle in der Liga spielen will.",
-    "bodyHash": "516e6383900cea58cffa263360928f2f9de593d07c10aeaf1a372432c1058386",
-    "fetchedAt": "2026-11-03T11:22:00.372Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
-    "url": "https://millernton.de/2022/11/18/lage-am-millerntor-18-november-2022/",
-    "locator": "p72",
-    "quote": "Lisa Vicari (Serienfans evtl. aus der Netflix-Serie „Dark“ bekannt) spielt in einem NDR-Spielfilm (90min) eine junge Polizistin in Hamburg, die in ihrem Job bei der Bereitschaftspolizei nicht unbedingt all das wiederfindet, was man sich so unter „Freund und Helfer“ in einer romantisch verklärten Vorstellung von der Polizei erhofft. Stattdessen geht es um Machtmissbrauch, Rassismus und Alkoholprobleme unter den Beamten, ein Flüchtling wird erschossen. Ja, ich hab nochmal nachgeschaut, es ist wirklich keine Doku, sondern nur ein Spielfilm.",
-    "bodyHash": "2b7f9a03e6872218a950179313325f0c787cf0876a9e74d3051508f6b47e4b18",
-    "fetchedAt": "2026-11-04T11:35:58.150Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2023/01/17/wunderdinge-aus-daenemark/",
     "locator": "p25",
     "quote": "90min – Daten, Daten, Daten: Der revolutionäre Aufstieg des FC Midtjylland",
@@ -268,6 +250,24 @@
     "bodyHash": "964d8ea54f8205407676d64728321d98069af21465042ac8701704c0e58be383",
     "fetchedAt": "2026-11-13T11:33:00.039Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/12/05/lage-am-millerntor-05-dezember-2024/",
+    "locator": "p56",
+    "quote": "Newcastle [3] – 3 Liverpool – Schar 90′",
+    "bodyHash": "723355805514106273ea695b1a9cf5a9d8aa40333bc249906c3a41fba4fbb17f",
+    "fetchedAt": "2026-11-14T10:56:30.179Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/12/09/lage-am-millerntor-09-dezember-2024/",
+    "locator": "p84",
+    "quote": "Um den Film, der eine Länge von rund 90 min. haben wird und im Herbst 2025 erscheinen soll, fertigzustellen, brauchen wir voraussichtlich noch etwa 20.000 €. Der größte Anteil wird hoffentlich von freundlichen Stiftungen und Sponsor:innen übernommen werden – wobei das Feld der Förderung von Filmen ganz schön schwierig ist! Wir möchten aber auch gerne noch private Spender:innen finden. Wir würden uns also sehr freuen, wenn Ihr mithelft, das Filmprojekt von Janni zu realisieren.",
+    "bodyHash": "4f87ca940a9c797d689ed93024501fb0bdac4795bc03a3d9f92afea93c50928b",
+    "fetchedAt": "2026-11-14T10:56:30.183Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -275,8 +275,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-13T11:33:00.039Z",
-  "updatedAt": "2026-11-13T11:33:00.039Z"
+  "createdAt": "2026-11-14T10:56:30.183Z",
+  "updatedAt": "2026-11-14T10:56:30.183Z"
  },
  {
   "id": "ga-a41e98643556d4b1",
@@ -472,15 +472,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2022/05/09/lage-am-millerntor-09-mai-2022/",
-    "locator": "p64",
-    "quote": "Denkwürdiges gab es in der Regionalliga Südwest : Vor dem letzten Spieltag hat die SV Elversberg drei Punkte und 19 Tore Vorsprung auf den SSV Ulm, ähnliches (drei Punkte und 14 Tore) gilt auf den Nicht-Abstiegsplätzen für den FSV Frankfurt – und diese Situation manifestierten beide Teams dann beim 1:1 gestern auf dem Platz, indem der Ball in den letzten 15 Minuten nur noch hin und her gespielt wurde ( Video beim Kicker , ab ca. 4min).",
-    "bodyHash": "aa2c5ba1d095917ed5499670d49ac67da80471d896c6f814e5d939581e044cc1",
-    "fetchedAt": "2026-11-01T10:49:50.593Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2022/05/31/lage-am-millerntor-31-mai-2022/",
     "locator": "p28",
     "quote": "Der DFB hat ein Videointerview (4min) mit Lutz Michael Fröhlich veröffentlicht, in dem der Verantwortliche für die Elite-Schiedsrichter u.a. über die Auswirkungen der Pandemie und die Kritik am VAR sprach.",
@@ -541,6 +532,15 @@
     "bodyHash": "73e64c6ccbb5fa5378bed3a6b38ab55ddd1db7af67945a724dd980ba463ae57c",
     "fetchedAt": "2026-11-06T11:31:20.121Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/11/01/lage-am-millerntor-01-november-2024/",
+    "locator": "p85",
+    "quote": "Die Rote Flora gehört zum Stadtteil – wie es überhaupt dazu kam, dass es in solch prominenter Lage ein besetztes Zentrum geben kann, hat der NDR in diesem empfehlenswerten Videobeitrag (4min) aufbereitet.",
+    "bodyHash": "ec801c3ad9e2572481d985389dfcb501e0c611601ba7e4c486e2b78531a7d380",
+    "fetchedAt": "2026-11-14T10:56:22.252Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -548,8 +548,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-06T11:31:20.121Z",
-  "updatedAt": "2026-11-06T11:31:20.121Z"
+  "createdAt": "2026-11-14T10:56:22.252Z",
+  "updatedAt": "2026-11-14T10:56:22.252Z"
  },
  {
   "id": "ga-d9e05cc99bd5657b",
@@ -868,15 +868,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2020/05/19/lage-am-millerntor-19-05-2020/",
-    "locator": "p10",
-    "quote": "Der NDR hat außerdem einen Kurzbericht (2 Min) darüber veröffentlicht, wie im Viertel das Spiel verfolgt wurde, Danke an Thomas für den Link gestern in den Kommentaren.",
-    "bodyHash": "0161bf1b8109e0a91d371d5e625147ef7d4295b1ca2c06f528f98cacd6b97dd0",
-    "fetchedAt": "2026-10-25T08:45:17.495Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2020/10/03/ich-vermisse-dich-afm-radio-oder-svs-fcsp/",
     "locator": "p43",
     "quote": "Sicher alles kein Beinbruch – aber ärgerlich und unnötig, denn ein Punkt wäre am Hardtwald schon drin gewesen und die Länderspielpause hätte etwas positiver begonnen werden können. Ähnlich äußerte sich Robin Himmelmann nach dem Spiel beim NDR (2min).",
@@ -928,6 +919,24 @@
     "bodyHash": "47c91f0e52784c5dd6c49bfeb03064cb5fccfacad10887722a0754295ba62545",
     "fetchedAt": "2026-11-13T11:15:33.212Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/11/15/lage-am-millerntor-15-november-2024/",
+    "locator": "p45",
+    "quote": "Der Kapitän der Nationalmannschaft hat sich auf einer Pressekonferenz in einem „Einerseits / Andererseits“-Statement ( Sportschau, 2min ) dazu geäußert, wie politisch aus seiner Sicht der Sport und die Sportler*innen sein sollten. Einerseits würde er gerne für Werte stehen „die nicht verhandelbar“ sind, andererseits sei er „politisch auch kein Experte“ und es gäbe ja extra dafür auch die Politiker. Konkret bezog er das auf die WM in Katar, bei der man „als DFB, als Nationalmannschaft, als Deutschland“ keine gute Rolle gespielt habe, auch abgesehen von den sportlichen Ergebnissen.",
+    "bodyHash": "6cf977e486069867cc38ce0eb6586f07a43bf54967e9169e62fb56e841fe7ace",
+    "fetchedAt": "2026-11-14T10:56:24.921Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/11/17/fc-st-pauli-mitgliederversammlung-2024/",
+    "locator": "p76",
+    "quote": "– Bericht Hamburg Journal ( NDR, 2min )",
+    "bodyHash": "9737cfcc7cdf78c54d257aaa42c213fc3b703fbd962219000cbe48661f26c199",
+    "fetchedAt": "2026-11-14T10:56:24.923Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -935,8 +944,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-13T11:15:33.212Z",
-  "updatedAt": "2026-11-13T11:15:33.212Z"
+  "createdAt": "2026-11-14T10:56:24.923Z",
+  "updatedAt": "2026-11-14T10:56:24.923Z"
  },
  {
   "id": "ga-215c67467d8ebaef",
@@ -1183,6 +1192,15 @@
     "bodyHash": "62f05279bb2adb0a09c9e1c4c09e3180fe2f49ee33bdb1fd28e611c0414cf5be",
     "fetchedAt": "2026-11-13T11:15:30.646Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/12/04/lage-am-millerntor-04-dezember-2024/",
+    "locator": "p40",
+    "quote": "Schöne Geschichte, festgehalten von Tom Theunissen. // YouTube (12min)",
+    "bodyHash": "e35f1e216f240c41a2fe30db8002d5298b822b55b408daf3cc23df1c53215837",
+    "fetchedAt": "2026-11-14T10:56:30.179Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1190,8 +1208,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-13T11:15:30.646Z",
-  "updatedAt": "2026-11-13T11:15:30.646Z"
+  "createdAt": "2026-11-14T10:56:30.179Z",
+  "updatedAt": "2026-11-14T10:56:30.179Z"
  },
  {
   "id": "ga-c85bb1efc815c755",
@@ -2053,6 +2071,15 @@
     "bodyHash": "555e9c992b71d69bac52e96e99873687e8f3ef0cdd5562e5f581c3dea306afc8",
     "fetchedAt": "2026-11-12T11:51:40.579Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/12/04/fifa-wm-2034-die-vergabe-an-saudi-arabien/",
+    "locator": "p93",
+    "quote": "Ansonsten findet man bei Sport Inside den hörenswerten Podcast „ Applaus für Saudi-Arabien – Das System Infantino und die FIFA“ (34min) , beim Deutschlandfunk einen Bericht über die absehbaren Schwierigkeiten bei der Terminfindung (24min) und ganz generell bei der Sportschau unter dem Thema WM 2034 jede Menge lesenswerte Artikel.",
+    "bodyHash": "348060d4eaf5ea4bdba2f2abab93ef154b065ccff9f2940a0075cea97e75dd13",
+    "fetchedAt": "2026-11-14T10:56:30.180Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2060,8 +2087,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-12T11:51:40.579Z",
-  "updatedAt": "2026-11-12T11:51:40.579Z"
+  "createdAt": "2026-11-14T10:56:30.180Z",
+  "updatedAt": "2026-11-14T10:56:30.180Z"
  },
  {
   "id": "ga-63f41d8e36a414eb",
@@ -2083,6 +2110,15 @@
     "bodyHash": "9c9eb7eb17783c80db56d7032038fa2f9a7ddc250281f61d19931725e60781e8",
     "fetchedAt": "2026-10-28T10:02:40.073Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/12/02/lage-am-millerntor-02-dezember-2024/",
+    "locator": "p15",
+    "quote": "38′ – Entscheidung nach VAR-Prüfung",
+    "bodyHash": "e9b42fc35e89bbdf07f4e829c1a450c2e0f9d3b5535586653f912d9a4b9f7a8f",
+    "fetchedAt": "2026-11-14T10:56:26.993Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2090,8 +2126,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-28T10:02:40.073Z",
-  "updatedAt": "2026-10-28T10:02:40.073Z"
+  "createdAt": "2026-11-14T10:56:26.993Z",
+  "updatedAt": "2026-11-14T10:56:26.993Z"
  },
  {
   "id": "ga-bbc736d301460ebb",
@@ -2140,6 +2176,15 @@
     "bodyHash": "cd047d422d137df363d824a813095f8e1a129c615a99ad2f0997889372b2f154",
     "fetchedAt": "2026-11-13T11:33:05.524Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/12/02/lage-am-millerntor-02-dezember-2024/",
+    "locator": "p13",
+    "quote": "37′ – VAR-Prüfung",
+    "bodyHash": "e9b42fc35e89bbdf07f4e829c1a450c2e0f9d3b5535586653f912d9a4b9f7a8f",
+    "fetchedAt": "2026-11-14T10:56:26.993Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2147,8 +2192,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-13T11:33:05.524Z",
-  "updatedAt": "2026-11-13T11:33:05.524Z"
+  "createdAt": "2026-11-14T10:56:26.993Z",
+  "updatedAt": "2026-11-14T10:56:26.993Z"
  },
  {
   "id": "ga-0eb50d0b362777e7",
@@ -2764,15 +2809,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2022/12/08/lage-am-millerntor-08-dezember-2022/",
-    "locator": "p10",
-    "quote": "– ZDF: Die Skandal-WM – Wie Katar den Fußball kauft (44min)",
-    "bodyHash": "7ae458ed8099b42a9507d2d3870e903c4895ba2c2f2d47c909b87ed138b1bc72",
-    "fetchedAt": "2026-11-04T11:36:02.704Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2022/12/09/lage-am-millerntor-09-dezember-2022-2/",
     "locator": "p10",
     "quote": "– ZDF: Die Skandal-WM – Wie Katar den Fußball kauft (44min)",
@@ -2833,6 +2869,15 @@
     "bodyHash": "d47a1bd0d7eeb8cf4570e49c2cdc8aedaedaf11cec779a840e1239713b6d218f",
     "fetchedAt": "2026-11-13T11:33:00.044Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/10/23/lage-am-millerntor-23-oktober-2024/",
+    "locator": "p46",
+    "quote": "Wo wir schon beim Thema Nachwuchsfußballer sind: Beim ZDF gibt es einen Videobeitrag (44min), in dem die Arbeit der Topclubs rund um „die besten Talente der Welt“ gezeigt wird. „Wer es schafft, ist ein Mensch mit Preisschild“ ist einer der bemerkenswerten (und zweifelsohne korrekten) Sätze.",
+    "bodyHash": "2c438cdb37882694455c58fcf33039a63ac063eac02b99c0d400eb86213a26fd",
+    "fetchedAt": "2026-11-14T10:56:22.238Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2840,8 +2885,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-13T11:33:00.044Z",
-  "updatedAt": "2026-11-13T11:33:00.044Z"
+  "createdAt": "2026-11-14T10:56:22.238Z",
+  "updatedAt": "2026-11-14T10:56:22.238Z"
  },
  {
   "id": "ga-468216f78ee2fc35",
@@ -2998,6 +3043,15 @@
     "bodyHash": "f37b5e9fad8173d87c25416ab79d600bad19dde04cce393603a35368a052a80b",
     "fetchedAt": "2026-11-08T10:47:50.879Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/12/03/lage-am-millerntor-03-dezember-2024/",
+    "locator": "p33",
+    "quote": "Seid dabei, wenn ein Blinder Autoscooter fährt und von einem Koch (Ole Plogstedt) mit viel „Links, links, links… AAAAAAAAaaaahhh!“ mehr oder weniger gelenkt wird. Man lernt etwas über Ampeln (ganz ohne politischen Bezug), den Aktionstag gegen Gewalt an Frauen und vieles mehr – und natürlich auch den Heimsieg gegen Holstein Kiel. // YouTube (16min)",
+    "bodyHash": "81b5a0a0cfac501d8888e8ff4c6bf8cbf45bcd4471672e41960bec2fe8f5233c",
+    "fetchedAt": "2026-11-14T10:56:30.177Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -3005,8 +3059,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-08T10:47:50.879Z",
-  "updatedAt": "2026-11-08T10:47:50.879Z"
+  "createdAt": "2026-11-14T10:56:30.177Z",
+  "updatedAt": "2026-11-14T10:56:30.177Z"
  },
  {
   "id": "ga-23538979652ce03b",
@@ -3046,6 +3100,15 @@
     "bodyHash": "a609b7b74c03684c21d92785a062f6c2c6e72799be81ac6e3ef1ba26c8ace2e1",
     "fetchedAt": "2026-11-13T11:15:35.653Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/11/15/lage-am-millerntor-15-november-2024/",
+    "locator": "p53",
+    "quote": "Die weiteren Bewerber: Fabian Drescher (42, Rechtsanwalt), Olaf Brandt (56, Gastronom), Uwe Dinnebier (Autohändler) und Stepan Timoshin (23, „Sneaker-Millionär“). Spannende Personalien. Während Dinnebier im offiziellen Steckbrief sein Geburtsdatum nicht nennt, ist Brandt erst seit Oktober letzten Jahres Vereinsmitglied. Und Timoshin? Spannende Personalie, in jedem Fall ( ARD Alpha, 28min ).",
+    "bodyHash": "6cf977e486069867cc38ce0eb6586f07a43bf54967e9169e62fb56e841fe7ace",
+    "fetchedAt": "2026-11-14T10:56:24.921Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -3053,8 +3116,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-13T11:15:35.653Z",
-  "updatedAt": "2026-11-13T11:15:35.653Z"
+  "createdAt": "2026-11-14T10:56:24.921Z",
+  "updatedAt": "2026-11-14T10:56:24.921Z"
  },
  {
   "id": "ga-22637ca0f1c3482a",
@@ -3352,6 +3415,15 @@
     "bodyHash": "455c4507f664ebb1e1f5db0856aa69a32586ab1908a3b69775b246260c66f7f8",
     "fetchedAt": "2026-11-09T12:08:38.659Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/12/02/lage-am-millerntor-02-dezember-2024/",
+    "locator": "p11",
+    "quote": "36′",
+    "bodyHash": "e9b42fc35e89bbdf07f4e829c1a450c2e0f9d3b5535586653f912d9a4b9f7a8f",
+    "fetchedAt": "2026-11-14T10:56:26.993Z",
+    "language": "other"
    }
   ],
   "steps": [],
@@ -3359,8 +3431,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-09T12:08:38.659Z",
-  "updatedAt": "2026-11-09T12:08:38.659Z"
+  "createdAt": "2026-11-14T10:56:26.993Z",
+  "updatedAt": "2026-11-14T10:56:26.993Z"
  },
  {
   "id": "ga-d537512c2e048a18",
@@ -3511,5 +3583,35 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-11-13T11:15:33.214Z",
   "updatedAt": "2026-11-13T11:15:33.214Z"
+ },
+ {
+  "id": "ga-79e2ed66270bed76",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "68",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/12/05/lage-am-millerntor-05-dezember-2024/",
+    "locator": "p50",
+    "quote": "Kylian Mbappé penalty miss against Athletic Club (68′)",
+    "bodyHash": "723355805514106273ea695b1a9cf5a9d8aa40333bc249906c3a41fba4fbb17f",
+    "fetchedAt": "2026-11-14T10:56:30.179Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-14T10:56:30.179Z",
+  "updatedAt": "2026-11-14T10:56:30.179Z"
  }
 ]
