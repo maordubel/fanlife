@@ -179,5 +179,27 @@
    "No. This is independent supporter art made by FAN LIFE — not an official club product."
   ]
  ],
- "sortPop": "Most popular"
+ "sortPop": "Most popular",
+ "pdpBack": "Back to the shop",
+ "pdpPick": "Choose the colour and size in the next step — your basket and payment are on the FAN LIFE checkout.",
+ "pdpBuy": "Buy now",
+ "pdpOpening": "Opening the FAN LIFE checkout…",
+ "pdpOpenK": "Secure checkout",
+ "pdpOpenT": "Your checkout is open in its own window.",
+ "pdpOpenSub": "Pick colour and size, pay, and the window closes back to the shop. Printed for you, shipped to your door.",
+ "pdpReopen": "Open the checkout again",
+ "pdpClose": "Back to the shop",
+ "pdpBlocked": "Your browser kept the checkout window closed.",
+ "pdpBlockedCta": "Open the checkout",
+ "pdpDetails": "About this piece",
+ "pdpPromise": [
+  "Original FAN LIFE art — you will not find it elsewhere",
+  "Printed to order on a quality blank, by a top-rated printer",
+  "Card, Apple Pay or Google Pay"
+ ],
+ "pdpSame": "The same design on",
+ "pdpMore": "More from {club}",
+ "pdpFront": "Front",
+ "pdpBackSide": "Back",
+ "pdpView": "View {title}"
 }

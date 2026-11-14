@@ -18,7 +18,7 @@ export const isNew=(p:PublicProduct)=>!!p.since&&Date.now()-Date.parse(p.since)<
  */
 export function ShopCard({p,siblings=0,clubLabel}:{p:PublicProduct;siblings?:number;clubLabel?:string}){
  return <li className="wks-card wk-panel">
-  <a className="wks-card-in" href={p.url} target="_blank" rel="noopener noreferrer" aria-label={copy.buyAria.replace('{title}',p.title)}>
+  <Link className="wks-card-in" href={`/shop/p/${encodeURIComponent(p.id)}`} aria-label={copy.pdpView.replace('{title}',p.title)}>
    <span className="wks-pics">
     {/* eslint-disable-next-line @next/next/no-img-element */}
     <img className="wks-img" src={p.image} alt="" loading="lazy" width={600} height={600}/>
@@ -28,8 +28,8 @@ export function ShopCard({p,siblings=0,clubLabel}:{p:PublicProduct;siblings?:num
    </span>
    <span className="wks-t">{clubLabel?<span className="wks-club">{clubLabel}</span>:null}<b>{p.title.split(' · ')[0]}</b><span className="wks-what">{p.title.split(' · ')[1]??''}</span>
     <span className="wks-price">{p.was?<s className="wks-was" aria-label={copy.was.replace('{price}',money(p.was,p.currency))}>{money(p.was,p.currency)}</s>:null}{money(p.priceFrom,p.currency)}{p.eur?<span className="wks-eur">{copy.eur.replace('{eur}',String(p.eur))}</span>:null}</span></span>
-   <span className="wk-btn wks-buy">{copy.buy} <span aria-hidden="true">↗</span></span>
-  </a>
+   <span className="wk-btn wks-buy">{copy.buy} <span aria-hidden="true">→</span></span>
+  </Link>
   {siblings>0?<Link className="wks-same min-h-tap" href={`/shop?design=${p.design}`}>{copy.sameDesign.replace('{n}',String(siblings))} <span aria-hidden="true">→</span></Link>:null}
  </li>
 }
