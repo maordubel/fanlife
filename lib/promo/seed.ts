@@ -24,4 +24,27 @@ export const SEED_ADDED:Banner[]=[
  {...base,id:'dubid-gr',name:'Dubid (Greek)',audience:'greece' as const,href:'https://dubid.dubelteam.com',alt:'Dubid — μια διαφορετική φαντασία, ένα εντελώς νέο παιχνίδι. Παίξε τώρα!',img1x:'/ads/dubid-gr-1x.webp',img2x:'/ads/dubid-gr-2x.webp',
   targeting:{home:true,allClubs:true,clubs:['aek-athens','olympiacos','panathinaikos'],other:true,paths:[],exclude:[]},note:'Visitors from Greece on any page; anyone on a Greek club page.'},
 ]
-export const SEED_DOC:PromoDoc={v:1,settings:{enabled:true,delaySec:3,showSec:7,gapSec:45,maxPerSession:3,pageRules:[]},banners:[...SEED_BANNERS,...SEED_ADDED],audit:[]}
+const BOOK='https://www.dubelteam.com/broken-collective',TAPES='https://www.youtube.com/@TheKypseliTapes'
+const every={home:true,allClubs:true,clubs:[],other:true,paths:[],exclude:[]}
+const art=(id:string)=>({img1x:`/ads/${id}-1x.webp`,img2x:`/ads/${id}-2x.webp`})
+/**
+ * Added 14.11.2026 (owner): the novel "Broken Collective" and its YouTube channel, The Kypseli Tapes. Each is a Hebrew
+ * banner for Israeli visitors and an English twin for everyone else ('world'), so nobody gets both languages; the twins
+ * are one family (attention.ts), so one visit shows the book at most once and the channel at most once. On Sundays,
+ * before the 19:00 Athens premiere, the channel's banner becomes "new tape tonight" and is weighted to win the rotation.
+ */
+export const SEED_BOOK:Banner[]=[
+ {...base,id:'book-he',name:'Broken Collective — the book (Hebrew)',audience:'israel',href:`${BOOK}/he/`,alt:'קולקטיב שבור — רומן. ים אחד, שני חופים, חוט אדום אחד. לקריאה חינם.',...art('book-he'),
+  targeting:every,weight:12,maxPerDay:2,note:'The novel, free to read. Israeli visitors; the English twin is book-en.'},
+ {...base,id:'book-en',name:'Broken Collective — the book (English)',audience:'world',href:`${BOOK}/en/`,alt:'Broken Collective — a novel. One sea, two shores, one red thread. Read free.',...art('book-en'),
+  targeting:every,weight:12,maxPerDay:2,note:'The novel, free to read. Visitors outside Israel; the Hebrew twin is book-he.'},
+ {...base,id:'kypseli-he',name:'The Kypseli Tapes — channel (Hebrew)',audience:'israel',href:TAPES,alt:'The Kypseli Tapes — קולקטיב שבור, קלטת אחרי קלטת. כתוביות בעברית. לצפייה.',...art('kypseli-he'),
+  targeting:every,weight:10,maxPerDay:2,note:'The YouTube channel. Israeli visitors.'},
+ {...base,id:'kypseli-en',name:'The Kypseli Tapes — channel (English)',audience:'world',href:TAPES,alt:'The Kypseli Tapes — Broken Collective, the novel, tape by tape. Watch.',...art('kypseli-en'),
+  targeting:every,weight:10,maxPerDay:2,note:'The YouTube channel. Visitors outside Israel.'},
+ {...base,id:'kypseli-sunday-he',name:'The Kypseli Tapes — new tape tonight (Hebrew)',audience:'israel',href:TAPES,alt:'קלטת חדשה הערב ב־19:00 — The Kypseli Tapes. לצפייה.',...art('kypseli-sunday-he'),
+  targeting:every,days:[0],fromHour:8,toHour:19,weight:40,maxPerDay:2,note:'Sundays 08:00–19:00 Athens, before the weekly premiere.'},
+ {...base,id:'kypseli-sunday-en',name:'The Kypseli Tapes — new tape tonight (English)',audience:'world',href:TAPES,alt:'New tape tonight, 19:00 Athens — The Kypseli Tapes. Watch.',...art('kypseli-sunday-en'),
+  targeting:every,days:[0],fromHour:8,toHour:19,weight:40,maxPerDay:2,note:'Sundays 08:00–19:00 Athens, before the weekly premiere.'},
+]
+export const SEED_DOC:PromoDoc={v:1,settings:{enabled:true,delaySec:3,showSec:7,gapSec:45,maxPerSession:3,pageRules:[]},banners:[...SEED_BANNERS,...SEED_ADDED,...SEED_BOOK],audit:[]}

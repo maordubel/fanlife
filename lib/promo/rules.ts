@@ -50,6 +50,7 @@ export type Viewer={israel:boolean;greece?:boolean}
 export function audienceAllows(b:Pick<Banner,'audience'|'targeting'>,v:Viewer,p:Page):boolean{
  if(b.audience==='all')return true
  if(b.audience==='israel')return v.israel
+ if(b.audience==='world')return !v.israel
  return !!v.greece||(p.kind==='club'&&b.targeting.clubs.includes(p.club))
 }
 /** every banner that may be put in front of this viewer on this page right now, before frequency caps */
@@ -109,7 +110,7 @@ export function cleanBanner(raw:unknown):Banner{
  if(!u||u.protocol!=='https:')throw new PromoInvalid(`${id}: the link must be a full https:// address.`)
  const img1x=img(r.img1x),img2x=img(r.img2x)||img1x;if(!img1x)throw new PromoInvalid(`${id}: the 1× image must be an /ads/… file or an https address.`)
  return {id,name:String(r.name??id).trim().slice(0,80)||id,enabled:r.enabled===true,href:u.toString(),alt:String(r.alt??'').trim().slice(0,160),img1x,img2x,
-  audience:r.audience==='israel'?'israel':r.audience==='greece'?'greece':'all',
+  audience:r.audience==='israel'?'israel':r.audience==='greece'?'greece':r.audience==='world'?'world':'all',
   targeting:{home:t.home===true,allClubs:t.allClubs===true,clubs:strs(t.clubs,SLUG),other:t.other===true,paths:pathList(t.paths),exclude:pathList(t.exclude)},
   startsAt:date(r.startsAt),endsAt:date(r.endsAt),
   days:[...new Set((Array.isArray(r.days)?r.days:[]).map(Number).filter(n=>Number.isInteger(n)&&n>=0&&n<=6))].sort(),

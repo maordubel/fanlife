@@ -95,6 +95,7 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [136](136.md) · Every Football Stories film asks once to follow, as a supporter would (2.11.2026)
 - [141](141.md) · A thumbnail's hook is read off the record (5.11.2026)
 - [142](142.md) · CLASSIFIED is drawn on VOX's case board, and nothing on it flickers (5.11.2026)
+- [book-channel-banners](book-channel-banners.md) · The novel and The Kypseli Tapes in the slide-up rotation: Hebrew to Israel, English ('world') to everyone else, one family each, a Sunday "new tape tonight" variant (14.11.2026)
 - [studio-autopilot](studio-autopilot.md) · The studio's autopilot publishes only after the owner had two hours to cancel on Telegram; a film nobody uploads loses its big files after seven days (12.11.2026)
 - [front-door-shelf](front-door-shelf.md) · A public page is answered from the front door's shelf, fresh for a minute and stale while it is renewed; the desk, APIs and the owner's session always reach the server (13.11.2026)
 - [studio-experience](studio-experience.md) · Every Football Stories film is an experience: a judged hook, a DOCU edit with no still past 4 s, the hand-made graphics on data only, and a gate that measures it (12.11.2026)
