@@ -36,9 +36,12 @@ def runs(px,inks,minrun):
 def measure(img,inks):
     im=Image.open(img).convert('RGB')
     if not(150<=im.width<=165 and 205<=im.height<=220):return None
-    col=[im.getpixel((x,y)) for x in (TX0+5,TX0+6,TX0+7) for y in range(TY0,TY1)]
-    # average the three columns per row
-    n=TY1-TY0;colY=[tuple(sum(col[k*n+y][c] for k in range(3))//3 for c in range(3)) for y in range(n)]
+    # nine columns at the side of the torso, each pixel classed, majority per row (textured cloth reads as noise otherwise)
+    def cls(p):return min(range(len(inks)),key=lambda i:sum((a-b)**2 for a,b in zip(p,inks[i])))
+    n=TY1-TY0;colY=[]
+    for y in range(TY0,TY1):
+        votes=[cls(im.getpixel((x,y))) for x in range(TX0+3,TX0+12)]
+        colY.append(inks[max(set(votes),key=votes.count)])
     rowY=TY0+int((TY1-TY0)*.9);rowX=[tuple(sum(im.getpixel((x,yy))[c] for yy in (rowY-1,rowY,rowY+1))//3 for c in range(3)) for x in range(TX0,TX1)]
     return {'runsY':runs(colY,inks,4),'runsX':runs(rowX,inks,3)}
 clubs=sys.argv[1:] or [f[len('kit-archive-'):-5] for f in os.listdir(f'{R}/content/manual') if f.startswith('kit-archive-')]+['aek-athens']
@@ -56,5 +59,18 @@ for club in clubs:
         m=measure(f,inks)
         if not m:continue
         s.setdefault('measured',{}).update(m);n+=1
+    # a kit whose reference is a photograph (no template to sample) borrows the runs of the nearest-season catalogue kit of the
+    # same design — same type first, then any type, at most eight seasons away; runsFrom names the kit it borrowed from
+    yr=lambda k:int(str(k['season'])[:4]) if str(k['season'])[:4].isdigit() else None
+    measured=[k for k in d['kits'] if (k['shirt'].get('measured') or {}).get('runsY') and not (k['shirt'].get('measured') or {}).get('runsFrom')]
+    b=0
+    for k in d['kits']:
+        s=k['shirt'];m=s.get('measured') or {}
+        if s['design'] not in('hoops','stripes','pinstripes') or (m.get('runsY') and not m.get('runsFrom')) or yr(k) is None:continue
+        pool=[x for x in measured if x['shirt']['design']==s['design'] and yr(x) is not None and abs(yr(x)-yr(k))<=8 and x['shirt']['colours'][:2]==s['colours'][:2]]
+        pool.sort(key=lambda x:(x['type']!=k['type'],abs(yr(x)-yr(k))))
+        if not pool:continue
+        src=pool[0]['shirt']['measured'];s['measured']={**m,'runsY':src['runsY'],'runsX':src['runsX'],'runsFrom':pool[0]['id']};b+=1
+    print(club,'borrowed',b)
     open(p,'w').write(json.dumps(d,ensure_ascii=False,indent=1)+'\n')
     print(club,'measured',n)
