@@ -1,0 +1,33 @@
+name: sponsor marks fetch (temporary)
+on:
+  push:
+    branches: [claude/sponsor-marks-fetch]
+    paths: [.github/workflows/sponsor-fetch-tmp.yml]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Commons search, three candidates per sponsor (file + preview)
+        run: |
+          UA="FanLife-archive/1.0 (https://github.com/maordubel/fanlife)"
+          cd research-data/sponsor-marks; : > found.tsv
+          while IFS='|' read -r id q; do
+            [ -n "$id" ] || continue
+            curl -s -A "$UA" --get "https://commons.wikimedia.org/w/api.php" --data-urlencode "action=query" --data-urlencode "format=json" --data-urlencode "generator=search" --data-urlencode "gsrnamespace=6" --data-urlencode "gsrlimit=3" --data-urlencode "gsrsearch=$q" --data-urlencode "prop=imageinfo" --data-urlencode "iiprop=url|mime|extmetadata" --data-urlencode "iiurlwidth=360" > /tmp/r.json
+            python3 - "$id" >> found.tsv <<'PY'
+          import json,sys
+          d=json.load(open('/tmp/r.json'));ps=sorted((d.get('query') or {}).get('pages',{}).values(),key=lambda p:p.get('index',9))
+          for i,p in enumerate(ps):
+              ii=p['imageinfo'][0];lic=(ii.get('extmetadata',{}).get('LicenseShortName',{}) or {}).get('value','')
+              print('\t'.join([sys.argv[1],str(i),p['title'],ii['url'],ii.get('thumburl',''),ii.get('mime',''),lic]))
+          PY
+            sleep 1
+          done < queries.txt
+          mkdir -p prev; while IFS=$'\t' read -r id i t url th mime lic; do curl -s -A "$UA" -o "prev/$id-$i.png" "$th"; sleep .5; done < found.tsv
+          ls prev | wc -l
+      - run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898699+github-actions[bot]@users.noreply.github.com"
+          git add research-data/sponsor-marks && git commit -m "sponsor marks: Commons candidates" && git push
