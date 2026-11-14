@@ -114,7 +114,7 @@ export function listingOf(p:Pick<ShopProduct,'title'|'subject'|'kind'>,club:{nam
 export function areasOf(spec:KindSpec,variants:PVariant[],d?:ProductDesign):[string[],AreaDesign][]{
  if(d?.areas&&Object.keys(d.areas).length){const have=new Set(variants.flatMap(v=>v.placeholders.map(p=>p.position)))
   const out=Object.entries(d.areas).filter(([pos])=>have.has(pos)).map(([pos,a])=>[[pos],a] as [string[],AreaDesign]);if(out.length)return out}
- return sidesOf(spec,variants,d).map(side=>[side,{size:d?.size,cutout:d?.cutout,...(side[0]!=='back'&&d?.place?{place:d.place}:{})}])
+ return sidesOf(spec,variants,d).map(side=>[side,{size:d?.size,cutout:d?.cutout,...(side[0]!=='back'&&d?.place?{place:d.place}:{}),...(side[0]==='back'&&d?.backArt?{art:d.backArt}:{})}])
 }
 /** every print area a product has at this printer, with how many variants offer it and its size in pixels */
 export function positionsOf(variants:PVariant[]):{position:string;variants:number;w:number;h:number}[]{
@@ -123,3 +123,45 @@ export function positionsOf(variants:PVariant[]):{position:string;variants:numbe
  const order=['front','back','left_sleeve','right_sleeve','neck','left_chest','right_chest']
  return [...m.values()].sort((a,b)=>((order.indexOf(a.position)+1)||99)-((order.indexOf(b.position)+1)||99))
 }
+
+/**
+ * QUALITY FIRST, SIZE BY SIZE (owner, 14.11.2026: "the system adjusts itself for the best print — size, layout, puzzle,
+ * notebook"). Every size of a product asks for its own number of pixels: a 12″ poster is sharp where a 36″ one is soft.
+ * For each candidate variant the picture's sharpness on that variant is worked out (pixels it has ÷ pixels the print needs,
+ * after the picture is fitted), and its shape against the picture's shape. Kept:
+ *  · on a full-bleed product, variants whose shape suits the picture (a portrait print is not sold on a landscape canvas)
+ *    when there are any;
+ *  · the sizes that print sharp (≥ SHARP_KEEP); if none does, those still above the shop's floor; if none, the sharpest one;
+ *  · then the kind's cap. The quality the product reports is the softest variant kept.
+ */
+export const SHARP_KEEP=.5
+const shapeMatch=(a:number,b:number)=>Math.min(a/b,b/a)
+export function bestVariants(spec:KindSpec,variants:PVariant[],pic:{width:number;height:number},positions:string[]=spec.positions,floor=.2):{variants:PVariant[];quality:number;dropped:number}{
+ const a=pic.width/pic.height,full=spec.scale>=1
+ const rows=variants.map(v=>{const ph=positions.map(pos=>v.placeholders.find(p=>p.position===pos)).find(Boolean)
+  if(!ph)return {v,sharp:1,shape:1}
+  const A=ph.width/ph.height,shape=shapeMatch(a,A)
+  // fitted whole (extended with its own paper to the area's shape, never cropped): the extended picture spans the area,
+  // so its sharpness is the larger of the two ratios; a garment print covers `scale` of the area's width
+  const sharp=full?Math.max(pic.width/ph.width,pic.height/ph.height):pic.width/(ph.width*spec.scale)
+  return {v,sharp,shape}})
+ let pool=rows
+ if(full){const fit=pool.filter(r=>r.shape>=.8);if(fit.length)pool=fit}
+ const sharpOnes=pool.filter(r=>r.sharp>=SHARP_KEEP),okOnes=pool.filter(r=>r.sharp>=floor)
+ const kept=(sharpOnes.length?sharpOnes:okOnes.length?okOnes:[...pool].sort((x,y)=>y.sharp-x.sharp).slice(0,1)).slice(0,spec.maxVariants)
+ return {variants:kept.map(r=>r.v),quality:kept.length?Math.min(...kept.map(r=>r.sharp)):0,dropped:variants.length-kept.length}
+}
+
+/**
+ * FAN LIFE'S OWN MARKS (owner, 14.11.2026: "every product as branded FAN LIFE as possible — a fashion brand"). On a garment
+ * the seal goes where a fashion label goes, wherever the printer offers the place and the owner's design does not use it:
+ * the inside neck label, the left sleeve, and high on the back under the collar. Contained, never cropped.
+ */
+export const BRAND_SPOTS={neck:{positions:['neck','neck_label','inside_label'],share:.82,top:null},sleeve:{positions:['left_sleeve'],share:.62,top:null},backNeck:{positions:['back'],share:.14,top:.05}} as const
+export type BrandSpot=keyof typeof BRAND_SPOTS
+export function brandPlace(sheet:Sheet,pic:{width:number;height:number},spot:BrandSpot):{x:number;y:number;scale:number}{
+ const s=BRAND_SPOTS[spot],a=pic.width/pic.height,A=sheet.w/sheet.h,scale=s.share*Math.min(1,a/A),h=scale/a*A,r=(n:number)=>Math.round(n*1000)/1000
+ return {x:.5,y:r(s.top===null?.5:Math.min(.5,s.top+h/2)),scale:r(scale)}
+}
+/** is this a garment (where a fashion label belongs)? */
+export const isGarment=(kind:Kind,title?:string)=>kind==='tee'||kind==='hoodie'||kind==='kids-tee'||(kind==='more'&&/shirt|tee|hood|sweat|tank|jacket|jersey|polo|crewneck|long sleeve|zip/i.test(title||''))

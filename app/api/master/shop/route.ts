@@ -9,9 +9,10 @@ import {draftOf,fitTitle,launchSet,NOTE,shortTitle} from '@/lib/shop/plan'
 import {KIND_SPECS} from '@/lib/shop/kinds'
 import {SUBJECT_IDS,isSubject} from '@/lib/shop/subjects'
 import {pictureById} from '@/lib/shop/library'
-import {designKey,KINDS,PLACES,SHADES,SIDES,SIZES,type AreaDesign,type ArtRef,type Kind,type ProductDesign,type ShopProduct} from '@/lib/shop/types'
+import {designKey,shelfOf,KINDS,PLACES,SHADES,SIDES,SIZES,type Shelf,type AreaDesign,type ArtRef,type Kind,type ProductDesign,type ShopProduct} from '@/lib/shop/types'
 export const dynamic='force-dynamic'
 export const maxDuration=120
+const SHELVES:Shelf[]=['wall','wear','gear','home','kids','small']
 const json=(d:unknown,s=200)=>NextResponse.json(d,{status:s,headers:{'Cache-Control':'no-store'}})
 /** catalogue choices from the desk: [{id,title}], at most 40, each a real catalogue number */
 const blueprintsOf=(v:unknown)=>(Array.isArray(v)?v:[]).filter((x):x is {id:number;title:string}=>!!x&&typeof (x as {id:unknown}).id==='number'&&typeof (x as {title:unknown}).title==='string').slice(0,40).map(x=>({id:x.id,title:x.title.slice(0,120)}))
@@ -23,6 +24,7 @@ const designOf=(v:unknown):ProductDesign|undefined=>{if(!v||typeof v!=='object')
  if(typeof o.margin==='number'&&o.margin>=10&&o.margin<=300)d.margin=Math.round(o.margin)
  const names=(x:unknown)=>Array.isArray(x)?x.filter((n):n is string=>typeof n==='string'&&n.length<60).slice(0,100):[]
  const cs=names(o.colors),zs=names(o.sizes);if(cs.length)d.colors=cs;if(zs.length)d.sizes=zs
+ const back=artOf(o.backArt);if(back)d.backArt=back
  if(o.areas&&typeof o.areas==='object'){const areas:Record<string,AreaDesign>={}
   for(const [pos,raw] of Object.entries(o.areas as Record<string,unknown>).slice(0,8)){if(!/^[a-z_]{2,30}$/.test(pos)||!raw||typeof raw!=='object')continue;const r=raw as Record<string,unknown>,a:AreaDesign={}
    if(PLACES.includes(r.place as never))a.place=r.place as AreaDesign['place'];if(SIZES.includes(r.size as never))a.size=r.size as AreaDesign['size'];if(r.cutout===true)a.cutout=true
@@ -56,7 +58,11 @@ export async function POST(r:Request){
      if(typeof b.open==='boolean')d.settings.open=b.open
      if(typeof b.margin==='number'&&b.margin>=0&&b.margin<=300)d.settings.margin=Math.round(b.margin)
      if(typeof b.popupUrl==='string'){const u=b.popupUrl.trim();if(u&&!/^https:\/\/[a-z0-9-]+\.printify\.me\/?$/i.test(u))throw new Error('The Pop-Up address looks like https://your-name.printify.me');d.settings.popupUrl=u}
+     if(b.brand&&typeof b.brand==='object'){const o=b.brand as Record<string,unknown>,cur=d.settings.brand??{};d.settings.brand={...cur,...Object.fromEntries((['neck','sleeve','backNeck'] as const).filter(k=>typeof o[k]==='boolean').map(k=>[k,o[k] as boolean]))}}
+     if(b.rematch===true){d.settings.matches={};d.settings.picked={}}
      if(typeof b.shopId==='number')d.settings.shopId=b.shopId});break
+   case 'shelves':{const keep=(Array.isArray(b.shelves)?b.shelves:[]).filter((x):x is Shelf=>SHELVES.includes(x as Shelf));const ids=Array.isArray(b.ids)?b.ids.map(String):[id]
+    await updateShop(by,`Categories for ${ids.length} product(s)`,d=>{for(const p of d.products)if(ids.includes(p.id)){const own=shelfOf(p.kind,p.blueprint?.title);p.shelves=keep.filter(x=>x!==own);if(!p.shelves.length)delete p.shelves}});forgetPublicShop();break}
    case 'options':{const kind=KINDS.find(k=>k===b.kind&&k!=='more'),bp=typeof b.blueprintId==='number'?b.blueprintId:undefined
     if(!kind&&!bp)return json({error:'Which product?'},422);return json({options:await optionsFor({kind,blueprintId:bp},by)})}
    case 'art':{const data=typeof b.data==='string'?b.data.replace(/^data:image\/(png|jpe?g);base64,/,''):'',name=String(b.name||'art.png').replace(/[^a-zA-Z0-9._-]/g,'-').slice(-80)
@@ -100,6 +106,7 @@ export async function POST(r:Request){
     d.settings.promoters={...cur,ribbon:typeof b.ribbon==='string'?b.ribbon.trim().replace(/\s+/g,' ').slice(0,90):cur.ribbon,freeShipOver:b.freeShipOver===null||b.freeShipOver===''?null:n>0&&n<1000?Math.round(n):cur.freeShipOver??null}});forgetPublicShop();break}
    case 'feature':{const key=String(b.design||'');if(!/^[lu]-[\w-]{1,12}$/.test(key))return json({error:'Which design?'},422)
     await updateShop(by,b.on?'Design featured':'Design unfeatured',d=>{const cur=d.settings.promoters??{},f=(cur.featured??[]).filter(x=>x!==key);d.settings.promoters={...cur,featured:b.on?[key,...f].slice(0,12):f}});forgetPublicShop();break}
+   case 'doctor':{const {shopDoctor}=await import('@/lib/shop/doctor');await shopDoctor(by,pid=>pressProduct(pid,by),syncListing);break}
    case 'remove':await removeProduct(id,by);break
    case 'match':if(!kind||typeof b.blueprintId!=='number')return json({error:'Give the product type and a catalogue number.'},422)
     await matchKind(await client(),kind,by,{blueprintId:b.blueprintId,providerId:typeof b.providerId==='number'?b.providerId:undefined});break

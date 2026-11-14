@@ -16,12 +16,12 @@ const posName=(p:string)=>POS_L[p]??p.replace(/_/g,' ')
 const SHADE_L={light:'Light colours',dark:'Dark colours',all:'Every colour'} as const
 export type Stock={printer:string;product:string;variants:number;positions?:{position:string;variants:number;w:number;h:number}[];colors:{name:string;hex:string|null;light:boolean;variants:number}[];sizes:string[]}
 export type PicOption={id:string;name:string}
-export function DesignControls({value,onChange,library,margin,stock,loadStock,busy,pictures=[],uploadArt}:{value:ProductDesign;onChange:(d:ProductDesign)=>void;library:boolean;margin:number;stock?:Stock|null;loadStock?:()=>void;busy?:boolean;pictures?:PicOption[];uploadArt?:(f:File)=>Promise<ArtRef|null>}){
+export function DesignControls({value,onChange,library,margin,stock,loadStock,busy,pictures=[],uploadArt,noSides=false}:{noSides?:boolean;value:ProductDesign;onChange:(d:ProductDesign)=>void;library:boolean;margin:number;stock?:Stock|null;loadStock?:()=>void;busy?:boolean;pictures?:PicOption[];uploadArt?:(f:File)=>Promise<ArtRef|null>}){
  const set=(p:Partial<ProductDesign>)=>onChange({...value,...p})
  const chips=<K extends string>(label:string,map:Record<K,string>,cur:K,pick:(k:K)=>void)=><div className="shop-design-row"><span className="desk-fine">{label}</span>
   <div className="desk-chips" role="radiogroup" aria-label={label}>{(Object.keys(map) as K[]).map(k=><button key={k} type="button" role="radio" aria-checked={cur===k} className="desk-chip min-h-tap" aria-current={cur===k} onClick={()=>pick(k)}>{map[k]}</button>)}</div></div>
  return <div className="shop-design">
-  {!value.areas&&chips('Print on',SIDE_L,value.sides??'front',k=>set({sides:k}))}
+  {!value.areas&&!noSides&&<div className="shop-design-row"><span className="desk-fine">How it prints</span><PrintSides value={value} onChange={onChange} pictures={pictures} uploadArt={uploadArt}/></div>}
   {!value.areas&&chips('Front placement',PLACE_L,value.place??'auto',k=>set({place:k}))}
   {value.areas&&<p className="desk-fine">Printing on the areas chosen below. <button type="button" className="desk-chip min-h-tap" onClick={()=>set({areas:undefined})}>Back to the quick choice</button></p>}
   {chips('Print size (garments, bags)',SIZE_L,value.size??'auto',k=>set({size:k}))}
@@ -42,6 +42,31 @@ export function DesignControls({value,onChange,library,margin,stock,loadStock,bu
   {library&&<label className="shop-switch"><input type="checkbox" checked={!!value.cutout} onChange={e=>set({cutout:e.target.checked})}/><span>Remove background (the paper ground goes; the art stays)</span></label>}
   <label className="shop-field shop-margin"><span>Margin for these products (empty = the shop’s {margin}%)</span>
    <input type="number" inputMode="numeric" min={10} max={300} step={5} value={value.margin??''} placeholder={`${margin}`} onChange={e=>set({margin:e.target.value?Math.max(10,Math.min(300,Number(e.target.value))):undefined})}/></label>
+ </div>
+}
+
+/**
+ * HOW IT PRINTS — chosen first, at the opening of a product (owner, 14.11.2026): front only, back only, the same picture on both
+ * sides, or two different pictures (the back's own picture from the library or an upload). A product without a back prints the front.
+ */
+const MODE_L={front:'Front only',back:'Back only',same:'Front + back · same picture',two:'Front + back · two pictures'} as const
+type Mode=keyof typeof MODE_L
+export const modeOf=(d:ProductDesign):Mode=>d.sides==='back'?'back':d.sides==='both'?(d.backArt?'two':'same'):'front'
+export function PrintSides({value,onChange,pictures=[],uploadArt}:{value:ProductDesign;onChange:(d:ProductDesign)=>void;pictures?:PicOption[];uploadArt?:(f:File)=>Promise<ArtRef|null>}){
+ const mode=modeOf(value),[busy,setBusy]=useState(false),[two,setTwo]=useState(mode==='two')
+ const pick=(m:Mode)=>{setTwo(m==='two');onChange({...value,areas:undefined,sides:m==='front'?'front':m==='back'?'back':'both',backArt:m==='two'?value.backArt:undefined})}
+ const back=value.backArt,backKey=back?('library' in back?`lib:${back.library.id}`:'upload'):''
+ return <div className="shop-sides">
+  <div className="shop-sides-grid" role="radiogroup" aria-label="How it prints">{(Object.keys(MODE_L) as Mode[]).map(m=><button key={m} type="button" role="radio" aria-checked={(two?'two':mode)===m} className="shop-side min-h-tap" onClick={()=>pick(m)}>
+   <span className="shop-side-ico" aria-hidden="true" data-m={m}><i/><i/></span><span>{MODE_L[m]}</span></button>)}</div>
+  {(two||mode==='two')&&<div className="shop-form">
+   <label className="shop-field"><span>The back’s picture</span><select value={backKey} onChange={e=>{const v=e.target.value,pc=pictures.find(x=>`lib:${x.id}`===v);if(pc)onChange({...value,sides:'both',backArt:{library:{id:pc.id,name:pc.name}}})}}>
+    <option value="" disabled>Choose a picture…</option>{backKey==='upload'&&<option value="upload">{back&&'upload' in back?back.upload.name:'Uploaded picture'}</option>}
+    {pictures.map(pc=><option key={pc.id} value={`lib:${pc.id}`}>{pc.name}</option>)}</select></label>
+   {uploadArt&&<label className="shop-field"><span>…or upload the back’s picture</span><input type="file" accept="image/png,image/jpeg" disabled={busy} onChange={async e=>{const f=e.target.files?.[0];if(!f)return;setBusy(true);const art=await uploadArt(f);setBusy(false);if(art)onChange({...value,sides:'both',backArt:art})}}/></label>}
+   {busy&&<p className="desk-fine">Uploading…</p>}
+   {!back&&<p className="desk-fine shop-warn">Choose the back’s picture — until then the back repeats the front.</p>}
+  </div>}
  </div>
 }
 

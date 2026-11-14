@@ -4,7 +4,7 @@ import {isActive,type Sale} from './sales'
 import {EMPTY_SHOP,isPublic,toPublic,type PublicProduct,type ShopDoc} from './types'
 
 const area=fileArea('shop'),FILE='shop.json',secret=fileArea('shop-secret'),KEY='printify.json'
-const clean=(d:Partial<ShopDoc>|null):ShopDoc=>({v:1,settings:{...EMPTY_SHOP.settings,...(d?.settings??{})},products:Array.isArray(d?.products)?d!.products:[],audit:(d?.audit??[]).slice(-80),...(d?.health?{health:d.health}:{})})
+const clean=(d:Partial<ShopDoc>|null):ShopDoc=>({v:1,settings:{...EMPTY_SHOP.settings,...(d?.settings??{})},products:Array.isArray(d?.products)?d!.products:[],audit:(d?.audit??[]).slice(-80),...(d?.health?{health:d.health}:{}),...(d?.doctor?{doctor:d.doctor}:{})})
 /** A store that refuses is an empty, closed shop — the shop never closes another screen (rule 105). */
 /** Always a fresh read: the desk must see its own save at once (the store's read cache answered a stale copy, 12.11.2026); the public page has its own one-minute memory below. */
 export async function readShop():Promise<ShopDoc>{try{const r=await area.read(FILE,true);return clean(r?JSON.parse(r.text) as Partial<ShopDoc>:null)}catch{return EMPTY_SHOP}}
