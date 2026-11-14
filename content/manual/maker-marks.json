@@ -1,5 +1,5 @@
 {
- "_note": "Real maker and sponsor marks, printed on the archive drawings and on the gate 4/5 cloth. Vector paths from simple-icons 13.21.0 (CC0 data; the marks are trademarks of their owners, used with the owner's approval, chat 10.10.2026: '\u05e9\u05d9\u05de\u05d5\u05e9 \u05e0\u05db\u05d5\u05df \u05d1\u05dc\u05d5\u05d2\u05d5\u05d0\u05d9\u05dd'). Umbro: the Worker's own two-diamond mark (public/kits/assembly/2009-10/parts/maker-umbro.svg). A maker with no mark here is lettered. Raster marks (kind 'raster') are the Worker's own approved artwork under public/kits: 'mono' ones are white shapes printed through a mask in the cloth's ink, 'colour' ones as they are.",
+ "_note": "Real maker and sponsor marks, printed on the archive drawings and on the gate 4/5 cloth. Vector paths from simple-icons 13.21.0 (CC0 data; the marks are trademarks of their owners, used with the owner's approval, chat 10.10.2026: 'שימוש נכון בלוגואים'). Umbro: the Worker's own two-diamond mark (public/kits/assembly/2009-10/parts/maker-umbro.svg). A maker with no mark here is lettered. Raster marks (kind 'raster') are the Worker's own approved artwork under public/kits: 'mono' ones are white shapes printed through a mask in the cloth's ink, 'colour' ones as they are. Sponsor marks added 14.11.2026 (owner: sponsor graphics identical to the original): the brands' own logo files from Wikimedia Commons (public-domain text logos), cut to the printed shapes; 'mono' ones print in the shirt's sponsor ink as on the real kits, 'colour' ones in their own colours on a light plate where the shirt is dark.",
  "makers": {
   "nike": {
    "viewBox": "0 7.8 24 8.4",
@@ -103,6 +103,182 @@
    "print": "colour",
    "replace": true,
    "source": "The Worker (public/kits)"
+  },
+  "stoiximan": {
+   "viewBox": "0 0 500 75",
+   "kind": "raster",
+   "src": "/kits/marks/sponsor-stoiximan.webp",
+   "print": "mono",
+   "replace": true,
+   "source": "Wikimedia Commons, File:Stoiximan logo (2025).svg"
+  },
+  "dafabet": {
+   "viewBox": "0 0 132 30",
+   "kind": "raster",
+   "src": "/kits/marks/sponsor-dafabet.webp",
+   "print": "mono",
+   "replace": true,
+   "source": "Wikimedia Commons, File:Dafabet-logo-official.png"
+  },
+  "congstar": {
+   "viewBox": "0 0 499 162",
+   "kind": "raster",
+   "src": "/kits/marks/sponsor-congstar.webp",
+   "print": "colour",
+   "replace": true,
+   "source": "Wikimedia Commons, File:Congstar Logo 2023.svg — printed on the St Pauli shirts as white tiles with dark lettering"
+  },
+  "interamerican": {
+   "viewBox": "0 0 483 52",
+   "kind": "raster",
+   "src": "/kits/marks/sponsor-interamerican.webp",
+   "print": "mono",
+   "replace": true,
+   "source": "Wikimedia Commons, File:Interamerican (logo).svg"
+  },
+  "cosmote": {
+   "viewBox": "0 0 500 174",
+   "kind": "raster",
+   "src": "/kits/marks/sponsor-cosmote.webp",
+   "print": "mono",
+   "replace": true,
+   "source": "Wikimedia Commons, File:Cosmote 2005 logo.svg"
+  },
+  "ote": {
+   "viewBox": "0 0 474 291",
+   "kind": "raster",
+   "src": "/kits/marks/sponsor-ote.webp",
+   "print": "mono",
+   "replace": true,
+   "source": "Wikimedia Commons, File:OTE Logo.svg"
+  },
+  "ntl:": {
+   "viewBox": "0 0 500 175",
+   "kind": "raster",
+   "src": "/kits/marks/sponsor-ntl.webp",
+   "print": "colour",
+   "replace": true,
+   "source": "Wikimedia Commons, File:NTL 2001.svg",
+   "plate": true
+  },
+  "opap": {
+   "viewBox": "0 0 496 196",
+   "kind": "raster",
+   "src": "/kits/marks/sponsor-opap.webp",
+   "print": "colour",
+   "replace": true,
+   "source": "Wikimedia Commons, File:OPAP logo.svg",
+   "plate": true
+  },
+  "unicef": {
+   "viewBox": "0 0 500 120",
+   "kind": "raster",
+   "src": "/kits/marks/sponsor-unicef.webp",
+   "print": "mono",
+   "replace": true,
+   "source": "Wikimedia Commons, File:Logo of UNICEF.svg"
+  },
+  "tim": {
+   "viewBox": "0 0 207 90",
+   "kind": "raster",
+   "src": "/kits/marks/sponsor-tim.webp",
+   "print": "mono",
+   "replace": true,
+   "source": "Wikimedia Commons, File:TIM logo (2004-2014).svg"
+  },
+  "superbet": {
+   "viewBox": "0 0 500 89",
+   "kind": "raster",
+   "src": "/kits/marks/sponsor-superbet.webp",
+   "print": "mono",
+   "replace": true,
+   "source": "Wikimedia Commons, File:Superbet Logo.svg"
+  },
+  "ola energy": {
+   "viewBox": "0 0 385 332",
+   "kind": "raster",
+   "src": "/kits/marks/sponsor-ola-energy.webp",
+   "print": "colour",
+   "replace": true,
+   "source": "Wikimedia Commons, File:Ola energy PNG.png",
+   "plate": true
+  },
+  "motor oil hellas": {
+   "viewBox": "0 0 500 123",
+   "kind": "raster",
+   "src": "/kits/marks/sponsor-motor-oil-hellas.webp",
+   "print": "colour",
+   "replace": true,
+   "source": "Wikimedia Commons, File:Motor oil hellas corinth logo.svg",
+   "plate": true
+  },
+  "piraeus bank": {
+   "viewBox": "0 0 500 138",
+   "kind": "raster",
+   "src": "/kits/marks/sponsor-piraeus-bank.webp",
+   "print": "colour",
+   "replace": true,
+   "source": "Wikimedia Commons, File:Piraeus Bank logo 2000.svg",
+   "plate": true
+  },
+  "1xbet": {
+   "viewBox": "0 0 500 105",
+   "kind": "raster",
+   "src": "/kits/marks/sponsor-1xbet.webp",
+   "print": "mono",
+   "replace": true,
+   "source": "Wikimedia Commons, File:1xBet-Logo.png"
+  },
+  "mobilcom": {
+   "viewBox": "0 0 490 57",
+   "kind": "raster",
+   "src": "/kits/marks/sponsor-mobilcom.webp",
+   "print": "mono",
+   "replace": true,
+   "source": "Wikimedia Commons, File:Mobilcom-2.svg"
+  },
+  "citizen": {
+   "viewBox": "0 0 496 90",
+   "kind": "raster",
+   "src": "/kits/marks/sponsor-citizen.webp",
+   "print": "mono",
+   "replace": true,
+   "source": "Wikimedia Commons, File:Citizen logo.svg"
+  },
+  "securvita": {
+   "viewBox": "0 0 494 113",
+   "kind": "raster",
+   "src": "/kits/marks/sponsor-securvita.webp",
+   "print": "colour",
+   "replace": true,
+   "source": "Wikimedia Commons, File:Securvita logo.svg",
+   "plate": true
+  },
+  "ibi": {
+   "viewBox": "0 0 498 499",
+   "kind": "raster",
+   "src": "/kits/marks/sponsor-ibi.webp",
+   "print": "mono",
+   "replace": true,
+   "source": "Wikimedia Commons, File:IBI Investment House logo.jpg"
+  },
+  "ingelec": {
+   "viewBox": "0 0 388 110",
+   "kind": "raster",
+   "src": "/kits/marks/sponsor-ingelec.webp",
+   "print": "colour",
+   "replace": true,
+   "source": "Wikimedia Commons, File:Logo-ingelec.png",
+   "plate": true
+  },
+  "aluminij": {
+   "viewBox": "0 0 487 98",
+   "kind": "raster",
+   "src": "/kits/marks/sponsor-aluminij.webp",
+   "print": "colour",
+   "replace": true,
+   "source": "Wikimedia Commons, File:Aluminij.svg",
+   "plate": true
   }
  }
 }

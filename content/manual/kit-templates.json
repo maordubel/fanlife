@@ -419,6 +419,302 @@
         "lossy-webp-measured"
       ],
       "measuredOn": "2026-09-23"
+    },
+    {
+      "file": "marks/sponsor-1xbet.webp",
+      "role": "granted-mark",
+      "bytes": 796,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "commons-file",
+        "cut-printed-shapes",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-11-14"
+    },
+    {
+      "file": "marks/sponsor-aluminij.webp",
+      "role": "granted-mark",
+      "bytes": 4632,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "commons-file",
+        "cut-printed-shapes",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-11-14"
+    },
+    {
+      "file": "marks/sponsor-citizen.webp",
+      "role": "granted-mark",
+      "bytes": 732,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "commons-file",
+        "cut-printed-shapes",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-11-14"
+    },
+    {
+      "file": "marks/sponsor-congstar.webp",
+      "role": "granted-mark",
+      "bytes": 1136,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "commons-file",
+        "cut-printed-shapes",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-11-14"
+    },
+    {
+      "file": "marks/sponsor-cosmote.webp",
+      "role": "granted-mark",
+      "bytes": 1214,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "commons-file",
+        "cut-printed-shapes",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-11-14"
+    },
+    {
+      "file": "marks/sponsor-dafabet.webp",
+      "role": "granted-mark",
+      "bytes": 310,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "commons-file",
+        "cut-printed-shapes",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-11-14"
+    },
+    {
+      "file": "marks/sponsor-ibi.webp",
+      "role": "granted-mark",
+      "bytes": 1154,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "commons-file",
+        "cut-printed-shapes",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-11-14"
+    },
+    {
+      "file": "marks/sponsor-ingelec.webp",
+      "role": "granted-mark",
+      "bytes": 1750,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "commons-file",
+        "cut-printed-shapes",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-11-14"
+    },
+    {
+      "file": "marks/sponsor-interamerican.webp",
+      "role": "granted-mark",
+      "bytes": 814,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "commons-file",
+        "cut-printed-shapes",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-11-14"
+    },
+    {
+      "file": "marks/sponsor-mobilcom.webp",
+      "role": "granted-mark",
+      "bytes": 644,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "commons-file",
+        "cut-printed-shapes",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-11-14"
+    },
+    {
+      "file": "marks/sponsor-motor-oil-hellas.webp",
+      "role": "granted-mark",
+      "bytes": 9800,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "commons-file",
+        "cut-printed-shapes",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-11-14"
+    },
+    {
+      "file": "marks/sponsor-ntl.webp",
+      "role": "granted-mark",
+      "bytes": 2690,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "commons-file",
+        "cut-printed-shapes",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-11-14"
+    },
+    {
+      "file": "marks/sponsor-ola-energy.webp",
+      "role": "granted-mark",
+      "bytes": 6018,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "commons-file",
+        "cut-printed-shapes",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-11-14"
+    },
+    {
+      "file": "marks/sponsor-opap.webp",
+      "role": "granted-mark",
+      "bytes": 10118,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "commons-file",
+        "cut-printed-shapes",
+        "trim-alpha",
+        "yellow-reinked-orange"
+      ],
+      "measuredOn": "2026-11-14"
+    },
+    {
+      "file": "marks/sponsor-ote.webp",
+      "role": "granted-mark",
+      "bytes": 1706,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "commons-file",
+        "cut-printed-shapes",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-11-14"
+    },
+    {
+      "file": "marks/sponsor-piraeus-bank.webp",
+      "role": "granted-mark",
+      "bytes": 8002,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "commons-file",
+        "cut-printed-shapes",
+        "trim-alpha",
+        "yellow-reinked-orange"
+      ],
+      "measuredOn": "2026-11-14"
+    },
+    {
+      "file": "marks/sponsor-securvita.webp",
+      "role": "granted-mark",
+      "bytes": 5560,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "commons-file",
+        "cut-printed-shapes",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-11-14"
+    },
+    {
+      "file": "marks/sponsor-stoiximan.webp",
+      "role": "granted-mark",
+      "bytes": 834,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "commons-file",
+        "cut-printed-shapes",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-11-14"
+    },
+    {
+      "file": "marks/sponsor-superbet.webp",
+      "role": "granted-mark",
+      "bytes": 800,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "commons-file",
+        "cut-printed-shapes",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-11-14"
+    },
+    {
+      "file": "marks/sponsor-tim.webp",
+      "role": "granted-mark",
+      "bytes": 326,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "commons-file",
+        "cut-printed-shapes",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-11-14"
+    },
+    {
+      "file": "marks/sponsor-unicef.webp",
+      "role": "granted-mark",
+      "bytes": 1588,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "commons-file",
+        "cut-printed-shapes",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-11-14"
     }
   ]
 }
