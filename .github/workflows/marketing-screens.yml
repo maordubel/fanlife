@@ -1,0 +1,22 @@
+name: Marketing · Game screens
+# Real screens of FAN LIFE's own games for the v4 social pictures (scripts/marketing/kit/v4/screens.mjs).
+on:
+  workflow_dispatch:
+  push:
+    branches: [claude/social-v4]
+    paths: [scripts/marketing/kit/v4/screens.mjs, .github/workflows/marketing-screens.yml]
+permissions:
+  contents: read
+jobs:
+  screens:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 20, cache: npm}
+      - run: npm ci --ignore-scripts
+      - run: npx playwright install --with-deps chromium
+      - run: node scripts/marketing/kit/v4/screens.mjs screens
+      - uses: actions/upload-artifact@v4
+        with: {name: game-screens, path: screens, retention-days: 7}
