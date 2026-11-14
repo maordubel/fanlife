@@ -13,6 +13,8 @@ export function familyOf(id: string, href: string): Family {
   try {
     const u = new URL(href)
     if (HOSTS[u.hostname]) return HOSTS[u.hostname]!
+    if (/(^|\.)youtube\.com$/.test(u.hostname) && /^\/@thekypselitapes(\/|$)/i.test(u.pathname)) return 'kypseli'
+    if (/(^|\.)dubelteam\.com$/.test(u.hostname) && u.pathname.startsWith('/broken-collective')) return 'book'
     if (u.hostname.endsWith('fanlife.dubelteam.com')) {
       if (u.pathname.startsWith('/all-football/legends')) return 'legends'
       if (/\/life(\/|$)/.test(u.pathname) || u.hash === '#life') return 'life'
