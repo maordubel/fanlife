@@ -53,6 +53,7 @@ def span(dev: dict, d: float) -> tuple[float, float]:
     return dt, dev.get('d', d - dev.get('dt', 0.0))
 
 
+COLD_OPEN_S = 12.0  # editing rule 2: the first ~12 s are a montage — every look a different picture of the story
 OPENING = 2.6       # the film's first cut comes by here: the gate wants a change inside its first three seconds (qa.FIRST_CHANGE_S)
 TIGHT = 1.8         # the re-plan's target for a shot the gate measured as too long or too still
 
@@ -104,7 +105,7 @@ def cut_points(t0: float, d: float, words: list[float], grid: list[float] | None
     return out
 
 
-def looks(dev: dict, d: float, cuts: list[float], related, key, focus=None) -> list[dict]:
+def looks(dev: dict, d: float, cuts: list[float], related, key, focus=None, every: int = 3) -> list[dict]:
     """One picture device over `d` seconds → its sub-shots. The first is the device as the adapter made it (its move, its
     tint, its tag — the tag and mini score stay for the whole hold); then detail → reverse → wide of the same picture;
     every fourth look is a related picture (`related(i)` → src or None), so a very long line still shows something new."""
@@ -116,7 +117,7 @@ def looks(dev: dict, d: float, cuts: list[float], related, key, focus=None) -> l
         if i == 0:
             out.append({**dev, 'd': round(z - a, 3), 'hold': d})
             continue
-        if i % 3 == 0:
+        if i % every == 0:   # `every` 1 = the cold open: a different picture on every look (editing rule 2)
             src = (related(i) if related else None) or dev['src']
         frame = FRAMES[(i - 1) % 3]
         # a detail looks where the picture has something to look at (`focus(src)`, read off the picture); else a fixed corner
@@ -190,7 +191,8 @@ def cut(beats: list[dict], grid: list[float] | None = None, related=None, backdr
             if prev is None and dev['kind'] in PICTURES and dt == 0 and hold >= OPENING + MIN_SUB:
                 pts = [min((pts or [OPENING])[0], OPENING), *pts[1:]]   # the opening: its first look is over inside three seconds
             if pts:
-                cutup += looks(dev, hold, pts, (lambda i, n=m.get('n'): related(n, i)) if related else None, m.get('n') or 0, focus)
+                cold = b['t'] + dt < COLD_OPEN_S and m.get('type') not in ('chapter', 'open')
+                cutup += looks(dev, hold, pts, (lambda i, n=m.get('n'): related(n, i)) if related else None, m.get('n') or 0, focus, 1 if cold else 3)
             else:
                 cutup.append(dev)
         # a figure in front of a picture belongs to the look it rose over: it leaves at the first cut behind it that gives it time to be seen
