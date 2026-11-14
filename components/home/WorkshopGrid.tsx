@@ -40,13 +40,13 @@ export function WorkshopGrid({clubs,copy}:{clubs:ShopClub[];copy:ShopCopy}){
  const most=Math.max(1,...clubs.map(votes))
  const acc=clubs.reduce((sum,c)=>sum+(tally?.[c.id]?.account??0),0)
  const gst=clubs.reduce((sum,c)=>sum+(tally?.[c.id]?.guest??0),0)
- const total=acc+gst
+ const total=clubs.reduce((sum,c)=>sum+votes(c),0)
  const opening=clubs.reduce((sum,c)=>sum+c.seed,0)
  return <div className="wkh-ballot">
   <div className="wkh-ballot-head">
    <p className="wk-k red">{copy.ballot} · {copy.kicker}</p>
    <h3 className="wk-head wkh-ballot-q">{copy.question}</h3>
-   <p className="wk-roundel wkh-ballot-count"><b className="wk-num tabular-nums" aria-live="polite">{tally?total:"—"}</b><span className="wk-k">{copy.count}</span></p>
+   <p className="wk-roundel wkh-ballot-count"><b className="wk-num tabular-nums" aria-live="polite">{total}</b><span className="wk-k">{copy.count}</span></p>
    <p className="wk-small wk-muted wkh-ballot-note">{copy.demo} {copy.note}</p>
    {tally&&<p className="wk-small wk-muted wkh-ballot-split" data-testid="vote-split">{copy.accounts.replace('{n}',String(acc))} · {copy.guests.replace('{n}',String(gst))} · {copy.base.replace('{n}',String(opening))}</p>}
    {msg&&<p className="wk-small wkh-ballot-msg" role="status">{msg}</p>}
