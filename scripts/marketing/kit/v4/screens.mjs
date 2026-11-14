@@ -17,7 +17,9 @@ const QUIET = `
   *{animation-duration:0s!important;transition-duration:0s!important;caret-color:transparent!important}`
 
 export async function capture(page, route, {play = false, scroll = 0} = {}) {
-  await page.goto(SITE + route, {waitUntil: 'networkidle', timeout: 45000}).catch(() => {})
+  await page.goto(SITE + route, {waitUntil: 'domcontentloaded', timeout: 30000}).catch(() => {})
+  await page.waitForLoadState('load', {timeout: 8000}).catch(() => {})
+  await page.waitForTimeout(1500)
   await page.addStyleTag({content: QUIET}).catch(() => {})
   // the small floating ad card and its ✕, if the page drew one
   await page.evaluate(() => document.querySelectorAll('[class*="ad"] button, [aria-label*="lose ad" i]').forEach(b => b.closest('[class*="ad"]')?.remove())).catch(() => {})
@@ -39,14 +41,14 @@ export async function phonePage(browser) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const {chromium} = await import('playwright')
   const out = process.argv[2] || 'screens'
-  const clubs = process.argv.slice(3).length ? process.argv.slice(3) : ['olympiacos', 'panathinaikos', 'aek-athens', 'celtic', 'st-pauli', 'hapoel-tel-aviv', 'zrinjski-mostar']
+  const clubs = process.argv.slice(3).length ? process.argv.slice(3) : ['olympiacos', 'celtic', 'aek-athens']
   mkdirSync(out, {recursive: true})
   const browser = await chromium.launch()
   const page = await phonePage(browser)
   const shots = [['hub-today', '/today'], ['hub-our-games', '/our-games'], ['legends', '/all-football/legends'], ['legends-play', '/all-football/legends', true]]
   for (const c of clubs) {
     shots.push([`${c}-home`, `/clubs/${c}`], [`${c}-life`, `/clubs/${c}/life?lang=en`])
-    for (const g of GATE_KEYS) shots.push([`${c}-${g}`, `/clubs/${c}/${g}`], [`${c}-${g}-play`, `/clubs/${c}/${g}`, true])
+    for (const g of GATE_KEYS) shots.push([`${c}-${g}-play`, `/clubs/${c}/${g}`, true])
   }
   for (const [name, route, play] of shots) {
     try { writeFileSync(path.join(out, name + '.png'), await capture(page, route, {play})); console.log('ok', name) } catch (e) { console.log('miss', name, String(e?.message || e).slice(0, 120)) }
