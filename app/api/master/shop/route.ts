@@ -100,6 +100,12 @@ export async function POST(r:Request){
     d.settings.promoters={...cur,ribbon:typeof b.ribbon==='string'?b.ribbon.trim().replace(/\s+/g,' ').slice(0,90):cur.ribbon,freeShipOver:b.freeShipOver===null||b.freeShipOver===''?null:n>0&&n<1000?Math.round(n):cur.freeShipOver??null}});forgetPublicShop();break}
    case 'feature':{const key=String(b.design||'');if(!/^[lu]-[\w-]{1,12}$/.test(key))return json({error:'Which design?'},422)
     await updateShop(by,b.on?'Design featured':'Design unfeatured',d=>{const cur=d.settings.promoters??{},f=(cur.featured??[]).filter(x=>x!==key);d.settings.promoters={...cur,featured:b.on?[key,...f].slice(0,12):f}});forgetPublicShop();break}
+   case 'partner':{const raw=String(b.spreadshop||'').trim()
+    if(!raw){await updateShop(by,'Spreadshop disconnected',d=>{d.settings.partner={...(d.settings.partner??{}),spreadshop:null}});forgetPublicShop();break}
+    const m=/^(?:https?:\/\/)?([a-z0-9-]{2,40})\.(myspreadshop\.[a-z.]{2,8})\/?$/i.exec(raw)||/^([a-z0-9-]{2,40})$/i.exec(raw)
+    if(!m)return json({error:'Paste the shop address, e.g. https://fanlife.myspreadshop.net'},422)
+    const shop=m[1]!.toLowerCase(),host=m[2]?.toLowerCase()??'myspreadshop.net'
+    await updateShop(by,`Spreadshop connected: ${shop}`,d=>{d.settings.partner={...(d.settings.partner??{}),spreadshop:{shop,prefix:`https://${shop}.${host}`,label:String(b.label||'').trim().slice(0,30)||undefined}}});forgetPublicShop();break}
    case 'remove':await removeProduct(id,by);break
    case 'match':if(!kind||typeof b.blueprintId!=='number')return json({error:'Give the product type and a catalogue number.'},422)
     await matchKind(await client(),kind,by,{blueprintId:b.blueprintId,providerId:typeof b.providerId==='number'?b.providerId:undefined});break

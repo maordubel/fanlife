@@ -15,7 +15,7 @@ export async function updateShop(by:string,what:string,fn:(d:ShopDoc)=>ShopDoc|v
 }
 /** what /shop shows: nothing unless the owner opened the shop */
 export type PublicSale={id:string;label:string;percent:number;until:string|null;scope:Sale['scope']}
-type Public={open:boolean;popupUrl:string;promo:ShopDoc['settings']['promo'];products:PublicProduct[];sales:PublicSale[];promoters:{ribbon:string|null;freeShipOver:number|null;featured:string[]}}
+type Public={open:boolean;popupUrl:string;promo:ShopDoc['settings']['promo'];products:PublicProduct[];sales:PublicSale[];promoters:{ribbon:string|null;freeShipOver:number|null;featured:string[]};partner:{shop:string;prefix:string;label:string}|null}
 let kept:{at:number;value:Public}|null=null
 /** Read at most once a minute per server: every page's menu asks, and the answer changes only when the owner saves. */
 export async function publicShop():Promise<Public>{
@@ -27,6 +27,7 @@ export async function publicShop():Promise<Public>{
  const value={open:d.settings.open,popupUrl:d.settings.popupUrl,promo,products:d.settings.open?d.products.filter(isPublic).map(toPublic).map(p=>{
   const now=promo?Math.round(p.priceFrom*(1-promo.percent/100)):p.priceFrom
   return {...p,...(promo?{was:p.was??p.priceFrom,priceFrom:now}:{}),...(p.sale&&!sales.some(x=>x.id===p.sale)?{sale:null}:{}),eur:p.currency==='USD'?eurGuide(now,rate):null}}):[],
+  partner:d.settings.open&&d.settings.partner?.spreadshop?{shop:d.settings.partner.spreadshop.shop,prefix:d.settings.partner.spreadshop.prefix,label:d.settings.partner.spreadshop.label||'More styles'}:null,
   sales,promoters:{ribbon:pm?.ribbon||null,freeShipOver:pm?.freeShipOver??null,featured:pm?.featured??[]}}
  kept={at:Date.now(),value};return value
 }

@@ -224,3 +224,5 @@ main.wks ul { margin: 0; padding: 0; }
   .wks-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .wks-buybox { position: sticky; inset-block-start: 90px; padding: 22px; }
 }
+/* the second print partner's collection inside our page (14.11.2026) */
+.wks-partner { min-block-size: 60vh; border: 3px solid var(--mag-ink); background: var(--mag-paper); padding: 8px; overflow: hidden; }

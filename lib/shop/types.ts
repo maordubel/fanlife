@@ -54,6 +54,8 @@ export type ShopSettings={
  promo?:{percent:number;label:string;until:string|null;code?:string;freeShipping?:boolean}|null
  /** real price cuts (14.11.2026): the shop lowers the price in Printify for the sale's time and puts it back after */
  sales?:Sale[]
+ /** a second print partner shown inside our shop (14.11.2026): Spreadshop, embedded on /shop/more — its own catalogue, checkout and shipping */
+ partner?:{spreadshop?:{shop:string;prefix:string;label?:string}|null}
  /** the ribbon line, free-shipping threshold and fan favourites */
  promoters?:Promoters
  /** the names the owner gave his designs, by design key — every product of the design carries it */

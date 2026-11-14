@@ -127,7 +127,9 @@ export default async function Shop({searchParams}:{searchParams:{club?:string;sh
    <section className="wks-depts" aria-labelledby="wks-dept-h"><div><p className="wk-banner">{copy.deptK}</p><h2 className="wk-head" id="wks-dept-h">{copy.deptT}</h2></div>
     <ul className="wks-deptgrid">{deptTiles.map(t=><li key={t.d}><Link className={`wks-dept min-h-tap${t.d==='sale'?' sale':''}`} href={href({shelf:t.d})}>
      {/* eslint-disable-next-line @next/next/no-img-element */}
-     <img src={t.img} alt="" loading="lazy" width={300} height={300}/><span><b>{copy.depts[t.d]}</b><small>{copy.items.replace('{n}',String(t.n))}</small></span></Link></li>)}</ul></section>
+     <img src={t.img} alt="" loading="lazy" width={300} height={300}/><span><b>{copy.depts[t.d]}</b><small>{copy.items.replace('{n}',String(t.n))}</small></span></Link></li>)}
+     {/* eslint-disable-next-line @next/next/no-img-element */}
+     {shop.partner&&<li><Link className="wks-dept min-h-tap" href="/shop/more"><img src="/brand/fanlife/logo-512.png" alt="" loading="lazy" width={300} height={300}/><span><b>{shop.partner.label}</b><small>{copy.moreK}</small></span></Link></li>}</ul></section>
    {onSale.length>0&&sale&&<section className="wks-sale wk-redplate" aria-labelledby="wks-sale-h"><span className="wk-speed" aria-hidden="true"/>
     <div className="wks-sale-head"><span className="wks-burst" aria-hidden="true">−{sale.percent}%</span>
      <div><p className="wk-banner">{copy.saleK} · {leftText(sale.until)}</p><h2 className="wk-head white" id="wks-sale-h">{sale.label}</h2><p className="wk-small white">{copy.saleSub}</p></div></div>
