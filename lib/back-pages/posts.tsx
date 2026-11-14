@@ -207,8 +207,8 @@ export const BACK_PAGES: BackPage[] = [
   description: 'Short animated stories about a club\'s legends and stadiums, made for the morning and for bedtime — in English and in the club\'s own language.',
   kicker: 'The Back Pages · Family',
   lede: 'The club is usually handed down at home, long before the first match. Football Fairy Tales are short animated stories made for that moment.',
-  published: '2026-11-19',
-  updated: '2026-11-19',
+  published: '2026-11-21',
+  updated: '2026-11-21',
   cluster: 'family-fair-play',
   topics: [19, 35],
   cta: {href: '/back-pages/football-trivia-questions-by-club', label: 'Family trivia for when they are older'},
@@ -243,6 +243,27 @@ export const BACK_PAGES: BackPage[] = [
    <p>Pick the same club in <Link href="/all-football/legends">Legends Manager</Link>, draft seventeen legends each and compare your first season&rsquo;s table.</p>
    <h2>Settle it with an all-time XI</h2>
    <p>Each club&rsquo;s all-time XI gate gives you eleven places and a whole history to fill them from. Build yours, share it, and let the comments decide.</p>
+  </>,
+ },
+ {
+  slug: 'open-world-football-fan-game',
+  title: 'LIFE: An Open-World Football Fan Game, Coming Soon',
+  description: 'LIFE is the open world of football fans: your club\'s city, matchday missions and a supporter\'s whole life. In build now, coming soon to FAN LIFE.',
+  kicker: 'The Back Pages · Coming soon',
+  lede: 'This week the whole gaming world is talking about open worlds. Football supporters have never had one of their own. We are building it.',
+  published: '2026-11-19',
+  updated: '2026-11-19',
+  cluster: 'manager-fantasy',
+  topics: [24, 39],
+  cta: {href: '/our-games', label: 'See LIFE and the games you can play now'},
+  body: () => <>
+   <h2>What LIFE is</h2>
+   <p>LIFE is a supporter&rsquo;s life as a game. You start at your first match and live the seasons that follow: the streets around your ground, the friends you go with, the promises you make and the choices that change the story.</p>
+   <h2>Two ways to play</h2>
+   <p>Everyday life moves at its own pace. A mission changes the tempo: get across the city before kick-off, find what was lost before the gates open, be there on the night everyone will talk about. Every club gets its own city and its own missions, tied to its real history.</p>
+   <h2>When</h2>
+   <p>LIFE is in build. It will open free, in the browser, on FAN LIFE. Until then, every club&rsquo;s thirteen gates and <Link href="/all-football/legends">Legends Manager</Link> are open now.</p>
+   <p><i>LIFE is an original FAN LIFE game. It is not affiliated with, or endorsed by, any other game publisher.</i></p>
   </>,
  },
 ]
