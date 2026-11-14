@@ -2,7 +2,7 @@
 
 "Selling, beautiful, inviting, marketing, every sales trick, smart groups." `/shop`:
 
-- **Hook** with three honest promises (original fan art · printed when you order, shipped worldwide · card / Apple Pay / Google Pay). No invented reviews, counts or countdowns: urgency is only the true "New" badge (21 days).
+- **Hook** with three honest promises (original fan art · printed when you order, shipped worldwide · card / Apple Pay / Google Pay). No invented reviews, counts or countdowns: urgency is the true "New" badge (21 days) and a real sale's end date (see shop-sales).
 - **Shop by club** chips with counts; then **curated shelves** of four: Just printed, For the wall, Wear it, Matchday gear, Gifts under €25, Home & mugs, Little supporters, Small things (`shelfOf`). One product per design on a shelf; **"Also on N more"** opens the design across every product (cross-sell). A shelf opens to its full grid with sort (newest, price up, price down). Links, not script; the grid wraps (no sideways rail); 2 a row on a phone, 4 on a desk.
 - Cards: back mock-up inset, badges (New, Front + back), club, name, product, $ with ≈ €, Buy.
 - Search: `ItemList` of `Product` JSON-LD; titles ≤ 60 characters (`fitTitle`, the design name gives way), page description ≤ 160, ≤ 13 tags of ≤ 20 characters (club first).

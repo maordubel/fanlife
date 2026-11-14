@@ -36,6 +36,7 @@ export function printify(token:string){
   product:(shop:number,id:string)=>call<PProduct>('Reading the product',`/shops/${shop}/products/${id}.json`),
   publish:(shop:number,id:string)=>call<object>('Publishing the product',`/shops/${shop}/products/${id}/publish.json`,{method:'POST',body:{title:true,description:true,images:true,variants:true,tags:true,keyFeatures:true,shipping_template:true}}),
   unpublish:(shop:number,id:string)=>call<object>('Unpublishing the product',`/shops/${shop}/products/${id}/unpublish.json`,{method:'POST',body:{}}),
+  orders:(shop:number,page=1)=>call<{current_page?:number;last_page?:number;data?:{id:string;status?:string;line_items?:{product_id:string;quantity?:number}[]}[]}>('Reading orders',`/shops/${shop}/orders.json?limit=50&page=${page}`),
   remove:(shop:number,id:string)=>call<object>('Deleting the product',`/shops/${shop}/products/${id}.json`,{method:'DELETE'}),
  }
 }

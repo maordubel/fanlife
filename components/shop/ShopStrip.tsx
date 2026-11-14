@@ -6,6 +6,10 @@ import '@/app/weekly/shop.css'
 
 const money=(c:number,cur:string)=>new Intl.NumberFormat('en',{style:'currency',currency:cur,maximumFractionDigits:c%100?2:0}).format(c/100)
 const NEW_DAYS=21
+import {timeLeft} from '@/lib/shop/sales'
+/** how long a sale still runs, in the ribbon's words */
+export function leftText(until:string|null){const t=timeLeft(until);if(!t)return copy.leftOpen
+ return t.days>1?copy.leftDays.replace('{d}',String(t.days)).replace('{h}',String(t.hours)):t.days===1?copy.leftDay.replace('{h}',String(t.hours)):t.hours>2?copy.leftHours.replace('{h}',String(t.hours)):copy.leftSoon}
 export const isNew=(p:PublicProduct)=>!!p.since&&Date.now()-Date.parse(p.since)<NEW_DAYS*864e5
 /**
  * One product as a sticker card (13.11.2026, the selling storefront): the mock-up with the back in a corner when it prints
@@ -20,7 +24,7 @@ export function ShopCard({p,siblings=0,clubLabel}:{p:PublicProduct;siblings?:num
     <img className="wks-img" src={p.image} alt="" loading="lazy" width={600} height={600}/>
     {/* eslint-disable-next-line @next/next/no-img-element */}
     {p.back?<span className="wks-back"><img src={p.back} alt={copy.backAlt} loading="lazy" width={240} height={240}/><span>{copy.back}</span></span>:null}
-    <span className="wks-badges">{p.was?<span className="wks-badge sale">−{Math.round((1-p.priceFrom/p.was)*100)}%</span>:null}{isNew(p)?<span className="wks-badge new">{copy.badgeNew}</span>:null}{p.back?<span className="wks-badge">{copy.badgeBoth}</span>:null}</span>
+    <span className="wks-badges">{[p.was?<span key="s" className="wks-badge sale">−{Math.round((1-p.priceFrom/p.was)*100)}%</span>:null,isNew(p)?<span key="n" className="wks-badge new">{copy.badgeNew}</span>:null,p.sold>=2?<span key="h" className="wks-badge hot">{copy.badgePopular}</span>:null,p.back?<span key="b" className="wks-badge">{copy.badgeBoth}</span>:null].filter(Boolean).slice(0,2)}</span>
    </span>
    <span className="wks-t">{clubLabel?<span className="wks-club">{clubLabel}</span>:null}<b>{p.title.split(' · ')[0]}</b><span className="wks-what">{p.title.split(' · ')[1]??''}</span>
     <span className="wks-price">{p.was?<s className="wks-was" aria-label={copy.was.replace('{price}',money(p.was,p.currency))}>{money(p.was,p.currency)}</s>:null}{money(p.priceFrom,p.currency)}{p.eur?<span className="wks-eur">{copy.eur.replace('{eur}',String(p.eur))}</span>:null}</span></span>
