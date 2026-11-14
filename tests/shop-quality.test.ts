@@ -1,3 +1,5 @@
+import {vi} from 'vitest'
+vi.mock('server-only',()=>({}))
 import {describe,expect,it} from 'vitest'
 import {KIND_SPECS} from '@/lib/shop/kinds'
 import {areasOf,bestVariants,brandPlace,isGarment,pickProvider} from '@/lib/shop/plan'
@@ -28,5 +30,13 @@ describe('quality first, size by size',()=>{
  })
  it('asks for Printify Choice first — top-rated printers',()=>{
   expect(pickProvider([{id:1,title:'Print Clever'},{id:2,title:'Printify Choice'}])!.id).toBe(2)
+ })
+})
+describe('the pictures follow where the design prints',()=>{
+ it('leads with the back for a back print, keeps fronts only for a front print',async()=>{
+  const {mockups}=await import('@/lib/shop/build')
+  const l=[{src:'f.jpg?camera_label=front',is_default:true},{src:'b.jpg?camera_label=back',is_default:false}]
+  expect(mockups(l,'back').images[0]).toContain('b.jpg');expect(mockups(l,'front').images).toEqual(['f.jpg?camera_label=front'])
+  expect(mockups(l,'both').backImage).toContain('b.jpg')
  })
 })

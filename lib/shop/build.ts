@@ -1,6 +1,6 @@
 import 'server-only'
 import {KIND_SPECS,catalogueSpec,groupOf} from './kinds'
-import {BRAND_SPOTS,NOTE,SHARP_KEEP,areasOf,bestVariants,brandPlace,isGarment,type BrandSpot,listingOf,matchBlueprint,pickProvider,pickVariants,placeAt,positionsOf,price,printAreas,shadedSpec,sheets,sharpness,sizedSpec} from './plan'
+import {BRAND_SPOTS,printSide,NOTE,SHARP_KEEP,areasOf,bestVariants,brandPlace,isGarment,type BrandSpot,listingOf,matchBlueprint,pickProvider,pickVariants,placeAt,positionsOf,price,printAreas,shadedSpec,sheets,sharpness,sizedSpec} from './plan'
 import {subjectName} from './subjects'
 import {REGISTRY} from '@/lib/master/registry'
 import {SITE_URL} from '@/lib/brand'
@@ -90,14 +90,14 @@ export async function pressProduct(id:string,by:string):Promise<ShopProduct>{
   if(!placed.length)throw new Error(`“${m.title}” has none of the print areas chosen.`)
   // FAN LIFE's own marks on a garment (14.11.2026): the seal on the neck label, the sleeve and under the collar — where the printer
   // offers the place and the design does not use it. A club's product carries the seal in one ink (a club's rival colours never ride on it).
-  const brand={neck:true,sleeve:true,backNeck:true,...(doc.settings.brand??{})}
+  let brandId='';const brand={neck:true,sleeve:true,backNeck:true,...(doc.settings.brand??{})}
   if(isGarment(p.kind,p.blueprint?.title??m.title)){
    const used=new Set(placed.map(x=>x.sheet.position)),seal=p.subject==='fanlife'?'logo-512.png':'seal-mono-512.png'
    let mark:{id:string;width:number;height:number}|null=null
    for(const spot of Object.keys(BRAND_SPOTS) as BrandSpot[]){if(!brand[spot])continue
     const pos=BRAND_SPOTS[spot].positions.find(x=>!used.has(x)&&variants.some(v=>v.placeholders.some(ph=>ph.position===x)));if(!pos)continue
     try{mark??=await api.uploadUrl(`fanlife-${seal}`,`${SITE_URL}/brand/fanlife/${seal}`).then(u=>({id:u.id,width:u.width,height:u.height}))}catch{break}
-    const mk=mark!;for(const sheet of sheets(spec,variants,[pos])){placed.push({sheet,imageId:mk.id,...brandPlace(sheet,mk,spot)});used.add(pos)}}
+    const mk=mark!;brandId=mk.id;for(const sheet of sheets(spec,variants,[pos])){placed.push({sheet,imageId:mk.id,...brandPlace(sheet,mk,spot)});used.add(pos)}}
   }
   const ids=new Set(variants.map(v=>v.id))
   if(p.printify?.productId)await api.remove(shop,p.printify.productId).catch(()=>{})
@@ -112,7 +112,7 @@ export async function pressProduct(id:string,by:string):Promise<ShopProduct>{
    for(let i=0;i<4&&!url;i++){await new Promise(r=>setTimeout(r,2500));url=(await api.product(shop,made.id)).external?.handle||null}
   }catch(e){await set(id,{error:`Created, not published yet: ${(e as Error).message}`})}
   if(soft<SHARP_KEEP)await set(id,{error:`On sale, but this picture is small for a ${spec.label.toLowerCase()} (${Math.round(soft*100)}% of the print size) — it may print soft. A larger original is better.`})
-  const {images,backImage}=mockups(made.images,placed.some(x=>x.sheet.position==='back'))
+  const {images,backImage}=mockups(made.images,printSide(d,placed.some(x=>x.sheet.position==='back'&&x.imageId!==brandId)))
   url=url||(doc.settings.popupUrl?doc.settings.popupUrl.replace(/\/$/,''):null)
   await set(id,{retries:publishedAt&&url?0:p.retries,status:publishedAt&&url?'live':'ready',printify:{productId:made.id,blueprintId:m.blueprintId,providerId:m.providerId,images,...(backImage?{backImage}:{}),quality:Math.round(soft*100)/100,priceFrom:Math.min(...priced.map(v=>v.price)),currency:'USD',url,publishedAt}})
  }catch(e){await set(id,{status:'error',error:(e as Error).message.slice(0,400)})}
@@ -122,7 +122,7 @@ export async function pressProduct(id:string,by:string):Promise<ShopProduct>{
 export async function refreshProduct(id:string){
  const doc=await readShop(),p=doc.products.find(x=>x.id===id),shop=doc.settings.shopId;if(!p?.printify||!shop)return p
  const api=await client(),live=await api.product(shop,p.printify.productId),url=live.external?.handle||p.printify.url||(doc.settings.popupUrl||null)
- await set(id,{status:p.printify.publishedAt&&url?'live':p.status,printify:{...p.printify,url,...(live.images.length?mockups(live.images,!!p.printify.backImage):{})}})
+ await set(id,{status:p.printify.publishedAt&&url?'live':p.status,printify:{...p.printify,url,...(live.images.length?mockups(live.images,printSide(p.design)):{})}})
  return (await readShop()).products.find(x=>x.id===id)
 }
 export async function removeProduct(id:string,by:string){
@@ -155,10 +155,18 @@ export async function optionsFor(target:{kind?:Kind;blueprintId?:number},by:stri
 }
 
 /** the mock-ups to keep: the default first, the back mock-up kept apart when the product prints on its back */
-export function mockups(list:{src:string;is_default:boolean;position?:string}[],back:boolean):{images:string[];backImage?:string}{
+/**
+ * The pictures the shop shows, by where the design prints (14.11.2026: "blank shirts must never show"): a back-only design
+ * leads with the back; a two-sided one leads with the front and keeps the back for the inset; a front one shows only fronts.
+ * FAN LIFE's own small mark under the collar does not make a product "printed on the back".
+ */
+export function mockups(list:{src:string;is_default:boolean;position?:string}[],side:'front'|'back'|'both'|boolean):{images:string[];backImage?:string}{
+ const mode=side===true?'both':side===false?'front':side
  const sorted=[...list].sort((a,b)=>Number(b.is_default)-Number(a.is_default)),isBack=(i:{src:string;position?:string})=>i.position==='back'||/camera_label=back/.test(i.src)
- const b=back?sorted.find(isBack):undefined,front=sorted.filter(i=>!isBack(i))
- return {images:[...front.slice(0,5),...(b?[b]:[])].map(i=>i.src),...(b?{backImage:b.src}:{})}
+ const backs=sorted.filter(isBack),fronts=sorted.filter(i=>!isBack(i))
+ if(mode==='back'&&backs.length)return {images:backs.slice(0,6).map(i=>i.src)}
+ const b=mode==='both'?backs[0]:undefined
+ return {images:[...fronts.slice(0,5),...(b?[b]:[])].map(i=>i.src),...(b?{backImage:b.src}:{})}
 }
 
 /**

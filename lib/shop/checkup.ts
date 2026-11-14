@@ -1,6 +1,7 @@
 import 'server-only'
 import {PrintifyError} from './printify'
 import {client,mockups,pressProduct} from './build'
+import {printSide} from './plan'
 import {readShop,updateShop,printifyToken} from './store'
 import type {ShopProduct} from './types'
 
@@ -40,7 +41,7 @@ export async function shopCheckup(by='autopilot'):Promise<ShopHealth>{
  const withId=[...doc.products].filter(p=>p.printify?.productId).sort((a,b)=>a.updatedAt.localeCompare(b.updatedAt)).slice(0,PER_RUN)
  for(const p of withId){
   try{const live=await api.product(shop,p.printify!.productId);checked++
-   const url=live.external?.handle||p.printify!.url,mk=live.images.length?mockups(live.images,!!p.printify!.backImage):{images:p.printify!.images,backImage:p.printify!.backImage}
+   const url=live.external?.handle||p.printify!.url,mk=live.images.length?mockups(live.images,printSide(p.design)):{images:p.printify!.images,backImage:p.printify!.backImage}
    if(url!==p.printify!.url||mk.images[0]!==p.printify!.images[0]){repaired++;await patch(by,p.id,x=>{x.printify={...x.printify!,url,images:mk.images,...(mk.backImage?{backImage:mk.backImage}:{})}})}
   }catch(e){
    if(e instanceof PrintifyError&&e.status===404){repaired++;notes.push(`“${p.title}” was deleted in Printify — hidden here.`)

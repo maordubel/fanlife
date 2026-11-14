@@ -23,7 +23,9 @@ export function ShopCard({p,clubLabel}:{p:PublicProduct;siblings?:number;clubLab
    <span className="wks-pics">
     {/* eslint-disable-next-line @next/next/no-img-element */}
     <img className="wks-img" src={p.image} alt="" loading="lazy" width={600} height={600}/>
-    {badge?<span className="wks-badges">{badge}</span>:null}
+    {/* eslint-disable-next-line @next/next/no-img-element */}
+    {p.back?<span className="wks-back"><img src={p.back} alt={copy.backAlt} loading="lazy" width={240} height={240}/><span>{copy.back}</span></span>:null}
+    {badge||p.back?<span className="wks-badges">{badge}{p.back&&!badge?<span className="wks-badge">{copy.badgeBoth}</span>:null}</span>:null}
    </span>
    <span className="wks-t">{clubLabel?<span className="wks-club">{clubLabel}</span>:null}<b>{p.title.split(' · ')[0]}</b><span className="wks-what">{p.title.split(' · ')[1]??''}</span>
     <span className="wks-price">{p.was?<s className="wks-was" aria-label={copy.was.replace('{price}',money(p.was,p.currency))}>{money(p.was,p.currency)}</s>:null}{money(p.priceFrom,p.currency)}{p.eur?<span className="wks-eur">{copy.eur.replace('{eur}',String(p.eur))}</span>:null}</span></span>
