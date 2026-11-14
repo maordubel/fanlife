@@ -1,7 +1,8 @@
 name: IndexNow · tell search engines
 
 # Plan v8 (14.11.2026): after every production deploy, FAN LIFE reports its Back Pages to IndexNow (Bing, Yandex,
-# Seznam, Naver — Bing also feeds ChatGPT and Copilot search). Once a week it reports every page in the sitemap.
+# Seznam, Naver — Bing also feeds ChatGPT and Copilot search). Every morning it reports the Back Pages again, so a post
+# scheduled for today is announced the day it goes live; on Sundays it reports every page in the sitemap.
 # The key is public by design: the protocol proves ownership by serving it at /<key>.txt (public/).
 # Google does not take IndexNow; it reads the sitemap submitted in Search Console.
 
@@ -10,7 +11,7 @@ on:
     workflows: ['Deploy · Cloud Run']
     types: [completed]
   schedule:
-    - cron: '17 5 * * 0'
+    - cron: '17 5 * * *'
   workflow_dispatch:
 
 permissions:
@@ -24,13 +25,13 @@ jobs:
     env:
       SITE: https://fanlife.dubelteam.com
       KEY: 70fceae2292df955b1ca7e3cb2a1f4a7
-      FULL: ${{ github.event_name != 'workflow_run' }}
+      EVENT: ${{ github.event_name }}
     steps:
       - name: Collect URLs from the live sitemap
         run: |
           curl -fsSL --retry 5 --retry-delay 20 "$SITE/sitemap.xml" -o sitemap.xml
           grep -o '<loc>[^<]*</loc>' sitemap.xml | sed 's#</\?loc>##g' > all.txt
-          if [ "$FULL" = "true" ]; then cp all.txt urls.txt; else { echo "$SITE"; grep '/back-pages' all.txt; } > urls.txt; fi
+          if [ "$EVENT" = "workflow_dispatch" ] || { [ "$EVENT" = "schedule" ] && [ "$(date -u +%u)" = "7" ]; }; then cp all.txt urls.txt; else { echo "$SITE"; grep '/back-pages' all.txt; } > urls.txt; fi
           echo "$(wc -l < urls.txt) URLs"
       - name: Key is served?
         run: test "$(curl -fsSL "$SITE/$KEY.txt")" = "$KEY"

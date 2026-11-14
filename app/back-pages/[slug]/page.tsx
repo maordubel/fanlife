@@ -3,12 +3,10 @@ import type {Metadata} from 'next'
 import {notFound} from 'next/navigation'
 import {Shell} from '@/components/master/Shell'
 import {SITE_URL} from '@/lib/brand'
-import {BACK_PAGES, backPage} from '@/lib/back-pages/posts'
+import {backPage, liveBackPages} from '@/lib/back-pages/posts'
 
-export const dynamicParams = false
-export function generateStaticParams() {
- return BACK_PAGES.map((p) => ({slug: p.slug}))
-}
+// Posts go live by date (one a day, Athens time): the page is renewed hourly, so a scheduled post appears without a deploy.
+export const revalidate = 3600
 
 export function generateMetadata({params}: {params: {slug: string}}): Metadata {
  const p = backPage(params.slug)
@@ -38,7 +36,7 @@ export default function BackPageArticle({params}: {params: {slug: string}}) {
    {'@type': 'ListItem', position: 3, name: p.title, item: url},
   ]},
  ]
- const more = BACK_PAGES.filter((x) => x.slug !== p.slug)
+ const more = liveBackPages().filter((x) => x.slug !== p.slug)
  return <Shell locale="en"><main id="main" className="wkh-doc">
   <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(ld)}}/>
   <header className="wkh-doc-head">
