@@ -25,9 +25,16 @@ clean=lambda s:re.sub(r'[^a-z0-9_-]','-',s.replace('+','plus').lower())
 for club in ['atalanta','maccabi-haifa']:
     k=load(club,'kits') or {'sources':[],'kits':[]};d=load(club,'derby') or {'sources':[],'matches':[]};g=load(club,'goals')
     kits=[dict(x,id=clean(x['id'])) for x in k['kits'] if x['value'].get('season')]
-    matches=[dict(x,id=clean(x['id'])) for x in d.get('matches',[])]
+    def match(x):
+        v=x['value'];us='home' if v['home'].startswith('Maccabi Haifa') or v['home'].startswith('Atalanta') else 'away'
+        sc=[g['name'] for g in (v.get('scorers') or []) if g.get('side')==us and g.get('name')]
+        return dict(x,id=clean(x['id']),value={'name':f"{v['home']} {v['score']} {v['away']}",'on':v['on'],'competition':v['competition'],'score':v['score'],'venue':v.get('venue'),'scorers':sc})
+    matches=[match(x) for x in d.get('matches',[])]
     srcs={s['id']:s for s in k['sources']+d['sources']};used={s for r in kits+matches for s in r['sources']}
-    write(f'{ROOT}/club-packs/{club}/wave-research-2026-11-14.json',{'schemaVersion':1,'clubId':club,'contentLocale':'en','sources':[s for i,s in srcs.items() if i in used],'kits':kits,'matches':matches,'skipped':d.get('skipped',[])})
+    # each sourced derby night is also a dated moment of the club's timeline (exact day, two publishers or the club's own report)
+    archive=[{'id':f"{x['id']}-moment",'value':{'id':f"{x['id']}-moment",'name':x['value']['name'],'on':x['value']['on'],'precision':'day','sport':'football','sensitive':False,'hint':f"{d.get('derby','Haifa derby')} · {x['value']['competition']}"},
+              'sources':x['sources'],'confidence':x['confidence'],'status':x['status'],'researchedAt':x['researchedAt'],'approvedAt':x.get('approvedAt'),'approvedBy':x.get('approvedBy'),'parserCertainty':'high','conflictFree':True,'notes':'The derby night as a dated moment (same sources as the match record).'} for x in matches if x['status']=='approved' and x['confidence']>=2]
+    write(f'{ROOT}/club-packs/{club}/wave-research-2026-11-14.json',{'schemaVersion':1,'clubId':club,'contentLocale':'en','sources':[s for i,s in srcs.items() if i in used],'kits':kits,'matches':matches,'archive':archive,'skipped':d.get('skipped',[])})
     out=[];skipped=list((g or {}).get('skipped',[]))
     for x in (g or {}).get('goals',[]):
         x=json.loads(json.dumps(x));x['id']=clean(x['id']);seq=x['value']['sequence']
