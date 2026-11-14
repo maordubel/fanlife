@@ -60,8 +60,9 @@ class Cut(unittest.TestCase):
     def test_a_long_still_becomes_wide_detail_reverse_and_then_a_related_picture(self):
         got = E.cut([beat(0, 0, 3.0, [img('first.webp')]), beat(1, 3.0, 13.0, [img(tag={'big': 'X'})])], None, related=lambda n, i: f'rel-{i}.webp')[1]
         p = got['shots']
-        self.assertEqual([x.get('frame') for x in p], [None, 'detail', 'reverse', 'wide'])
-        self.assertEqual([x['src'] for x in p], ['a.webp', 'a.webp', 'a.webp', 'rel-3.webp'])
+        # TARGET 2.6 (owner 14.11.2026, "more emphasis on editing"): a 13 s line is now five looks, the related picture cut twice
+        self.assertEqual([x.get('frame') for x in p], [None, 'detail', 'reverse', 'wide', 'detail'])
+        self.assertEqual([x['src'] for x in p], ['a.webp', 'a.webp', 'a.webp', 'rel-3.webp', 'rel-3.webp'])
         self.assertEqual(p[0]['hold'], 13.0)            # the name tag stays for the whole line
         self.assertTrue(all('tag' not in x for x in p[1:]))
         self.assertAlmostEqual(sum(x['d'] for x in p), 13.0, places=2)

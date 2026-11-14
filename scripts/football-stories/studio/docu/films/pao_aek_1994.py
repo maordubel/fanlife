@@ -22,6 +22,7 @@ is the scoreboard card and a scarf on a slow crane.
     python3 -m studio.docu.films.pao_aek_1994 storyboard.json            # the storyboard
     python3 -m studio.docu.films.pao_aek_1994 --pack OWNER_DIR ASSETS    # the asset pack the storyboard names
 """
+import shutil
 import json
 import sys
 from pathlib import Path
@@ -81,6 +82,9 @@ def pack(owner: Path, out: Path) -> dict:
     c.save(out / 'crest-pao.png')
     (out / 'crest-src.png').unlink()
     made['crest-pao.png'] = made.pop('crest-src.png')
+    # AEK's crest from the one crest library (ecosystem/crests → public/crests, sourced from OFFSIDES), never an initials roundel
+    shutil.copy(Path(__file__).resolve().parents[5] / 'public' / 'crests' / 'aek-athens.png', out / 'crest-aek.png')
+    made['crest-aek.png'] = 'public/crests/aek-athens.png'
     # two portraits as prints with a paper border (cut-out layers: they stand in front of a picture, never stretched to 16:9)
     for name in ('portrait.jpg', 'applause.jpg'):
         im = Image.open(out / name).convert('RGB')
@@ -218,7 +222,7 @@ beat("And at the back, the centre-back. Giannis Kalitzakis. Twenty-eight years o
      type='illustration', emotion='pride', intensity=0.6, pad=0.4,
      sound=[('stamp', 2.2, 1.0, 0.6), ('stamp', 4.0, 1.0, 0.6)])
 beat("Then the fixture list sends the perfect record to the one ground where it is supposed to end. The home of the champions.",
-     dict(kind='cities', a=dict(name='AEK', small='CHAMPIONS · 1992 · 1993 · 1994', bg=COAL), b=dict(name='PANATHINAIKOS', small='PLAYED 7 · WON 7', bg=GREEN, crest='crest-pao.png', size=70),
+     dict(kind='cities', a=dict(name='AEK', small='CHAMPIONS · 1992 · 1993 · 1994', bg=COAL, crest='crest-aek.png', size=70), b=dict(name='PANATHINAIKOS', small='PLAYED 7 · WON 7', bg=GREEN, crest='crest-pao.png', size=70),
           mid='MATCHDAY 8', mid_at=2.4, d=4.4),
      word('MATCHDAY 8', bg='ink', size=180, small='THE HOME OF THE CHAMPIONS', at=4.4),
      type='versus', emotion='tension', intensity=0.85, pad=0.6, sound=[('swish', 0.0, 1.0, 0.6), ('clang', 0.9, 1.0, 0.4), ('riser', 4.0, 2.2, 0.4)])
@@ -264,7 +268,7 @@ beat("Ninety.", img('lib-corner.jpg', 'push', veil=0.1), clock(90), type='illust
 beat("And the referee ends it.", img('lib-whistle.jpg', 'slam', veil=0.0), type='goal', emotion='release', intensity=0.9, meta=dict(plain=True), pad=0.4,
      sound=[('whistle', 0.9, 1.6, 0.8), ('final', 1.4, 6.0, 0.5)])
 beat("AEK nil. Panathinaikos one.",
-     dict(kind='score', us='PANATHINAIKOS', them='AEK', us_goals=1, them_goals=0, us_crest='crest-pao.png', cap='FULL TIME · NIKOS GOUMAS STADIUM · 7 NOVEMBER 1994', bg='scarf.jpg'),
+     dict(kind='score', us='PANATHINAIKOS', them='AEK', us_goals=1, them_goals=0, us_crest='crest-pao.png', them_crest='crest-aek.png', cap='FULL TIME · NIKOS GOUMAS STADIUM · 7 NOVEMBER 1994', bg='scarf.jpg'),
      type='score', emotion='joy', intensity=0.9, meta=dict(outcome='win', plain=True, claims=['result']), pad=0.5)
 beat("Eight matches. Eight wins.",
      dict(kind='form', title='EIGHT FROM EIGHT', sub='PANATHINAIKOS · AFTER MATCHDAY 8', results=list('WWWWWWWW'), per_row=8, step=0.16, bracket=(7, 7, 'AEK 0–1 · NEA FILADELFEIA')),

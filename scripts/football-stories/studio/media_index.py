@@ -397,6 +397,32 @@ def beat_query(shot: dict, emotion: str | None = None, era: str | None = None) -
     return {'n': shot.get('n'), 'type': t, 'subjects': list(dict.fromkeys([*said, *subj])), 'said': said, 'moods': mood, 'era': era}
 
 
+
+RIVAL_SHARE = 0.015   # a banned colour family covering this share of a picture's saturated pixels (scarves, flags, a shirt) refuses it
+_PRINTED: dict = {}
+
+
+def printed(path) -> list[str]:
+    """The saturated colour families a picture actually prints (cinema/library.families on a 160 px thumbnail), cached by
+    path and mtime. [] for a file that cannot be read — unknown is not a pass for a ban: the caller checks `families` too."""
+    try:
+        p = Path(path)
+        key = (str(p), p.stat().st_mtime)
+    except OSError:
+        return []
+    if key not in _PRINTED:
+        try:
+            import numpy as np
+            from PIL import Image
+            from .cinema.library import families
+            with Image.open(p) as im:
+                th = im.convert('RGB')
+                th.thumbnail((160, 160))
+            _PRINTED[key] = sorted(families(np.asarray(th), RIVAL_SHARE))
+        except Exception:  # noqa: BLE001
+            _PRINTED[key] = []
+    return _PRINTED[key]
+
 class Picker:
     """One film's view of the index. `bans` are the colour families refused on this film (the caller passes the
     palette's — rule 95; a piece drawn in the signal red that is repainted in the club's colour is not red, exactly as
@@ -424,6 +450,10 @@ class Picker:
         fam = set(r.get('families') or []) - ({'red'} if r.get('accent') == 'key-red' else set())
         if fam & self.bans:
             return 'a rival\'s colour'
+        if self.bans and r.get('accent') != 'key-red' and set(printed(r['path'])) & self.bans:
+            # Owner, 14.11.2026: "a film about Panathinaikos cannot pick a crowd with red scarves". The metadata's families
+            # are not enough (a Drive or library picture often has none): the picture's own pixels are read.
+            return 'a rival\'s colour in the picture'
         if len(self.shots.get(r['id'], ())) >= MAX_SHOTS:
             return f'already on {MAX_SHOTS} shots of this film'
         return None

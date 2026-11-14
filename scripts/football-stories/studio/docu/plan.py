@@ -173,8 +173,9 @@ class Adapter:
             return self.spares[n]
         before = self.keys.get(max((k for k in self.keys if k < n), default=-1))
         q = self.query(n)
-        r = self.picker.pick(q, avoid={before} if before else ()) or self.picker.pick(q)
-        self.spares[n] = Path(r['path']) if r else None
+        av = ({before} if before else set()) | self.people_pictures(n)
+        r = self.picker.pick(q, avoid=av) or self.picker.pick(q, avoid=self.people_pictures(n))
+        self.spares[n] = self.ink(Path(r['path'])) if r else None
         if r:
             self.keys.setdefault(n, r['id'])
         return self.spares[n]
@@ -183,10 +184,27 @@ class Adapter:
         """Another picture for a line so long that three looks at its own picture are not enough (docu/editor.looks): the
         index's next best for the same beat, never the one this shot already shows."""
         own = self.keys.get(n)
-        r = self.picker.pick({**self.query(n), 'n': n}, avoid={own} if own else ())
+        r = self.picker.pick({**self.query(n), 'n': n}, avoid=({own} if own else set()) | self.people_pictures(n))
         if r:
             self.also.setdefault(n, []).append(r['id'])
-        return self.asset(r['path'], 'img') if r else None
+        return self.asset(self.ink(Path(r['path'])), 'img') if r else None
+
+    def ink(self, path: Path) -> Path:
+        """The library picture redrawn in the house inks with the club's colour as the one accent (paper.inked; editing
+        rule 1). Cached per job; a clip or an unreadable file is passed through."""
+        if path.suffix.lower() not in ('.jpg', '.jpeg', '.png', '.webp'):
+            return path
+        out = self.jd / 'inked' / f'{path.stem}-{hashlib.sha1(str(path).encode()).hexdigest()[:8]}.jpg'
+        if not out.exists():
+            try:
+                from PIL import Image
+                from ..paper import inked
+                out.parent.mkdir(parents=True, exist_ok=True)
+                with Image.open(path) as im:
+                    inked(im, self.pal.accent).save(out, quality=90)
+            except OSError:
+                return path
+        return out
 
     def focus(self, src: str) -> str | None:
         """Where a detail look should look on this picture: the busiest part of it (most edges), as a transform origin —
@@ -247,6 +265,69 @@ class Adapter:
             im.save(out, quality=90)
         self.lib_used.append(piece['stem'])
         return out
+
+    FIGURE = re.compile(r'(^|[/:])(pup|ppl|fig|sup|person|player)-', re.I)   # a cut-out that is a person (the rest are objects)
+
+    def named(self, text: str) -> bool:
+        """Does this line name a real person? Names the narrator knows (studio/kit/pronounce/lexicon.json) and the match's
+        scorers. A line that names someone never gets a generic figure (rule model-film 19; owner, 14.11.2026: "a player
+        named in the film appears only in a picture tagged for him, right in look and era — otherwise a card")."""
+        if not hasattr(self, '_names'):
+            names: set[str] = set()
+            try:
+                lex = json.loads((Path(__file__).resolve().parents[1] / 'kit' / 'pronounce' / 'lexicon.json').read_text())
+                names |= {k for k in (lex.get('names') or {}) if k[:1].isupper() and len(k) > 3}
+            except (OSError, ValueError):
+                pass
+            for f in (self.led.get('facts') or []) if isinstance(self.led, dict) else []:
+                for x in (f.get('fact') or {}).get('scorers') or []:
+                    if isinstance(x, dict) and x.get('name'):
+                        names.add(x['name'])
+            self._names = names
+        low = text or ''
+        return any(re.search(r'\b' + re.escape(n) + r'\b', low) for n in self._names)
+
+    def people_pictures(self, n: int) -> set[str]:
+        """On a line that names a real person: every library picture of a figure, so no generic player or face stands in
+        for him (owner, 14.11.2026: "if the player is dark-skinned the graphic must be too" — a library figure cannot know).
+        The line is carried by the place, the crowd, the archive or a card instead."""
+        s = next((x for x in self.plan.get('shots') or [] if x['n'] == n), None) or {}
+        if not self.named(s.get('narration') or ''):
+            return set()
+        return {r['id'] for r in self.picker.records if 'portrait-silhouette' in (r.get('subjects') or []) or self.FIGURE.search(r['id'])}
+
+    def index_cutout(self, s: dict) -> list[dict]:
+        """A cut-out from the PNG library (studio/kit/cutouts, through the media index) in front of the picture: the beat's
+        object or supporter, sized to the frame and rising in on its own layer (build.Film.cutout). Never a person when
+        the line names a real one; never another club's or a rival's colour (Picker.refused reads the pixels)."""
+        n = s['n']
+        q = {**self.query(n), 'n': n}
+        named = self.named(s.get('narration') or '')
+        for _, r, why in self.picker.ranked(q, 'cutout'):
+            if named and self.FIGURE.search(r['id']):
+                continue
+            if 'subject' not in ' '.join(why) and not (set(r.get('subjects') or []) & set(q.get('subjects') or [])):
+                continue   # a cut-out that has nothing to do with the line is decoration, not direction
+            self.picker.use(r['id'], n, s.get('start'), why=why)
+            person = bool(self.FIGURE.search(r['id']))
+            h = int(B.H * (0.62 if person else 0.34))
+            right = n % 2 == 0
+            png = self.jd / 'cut' / f"{Path(r['path']).stem}-{h}.png"
+            try:
+                from PIL import Image
+                from ..cinema import library as L
+                if not png.exists():   # painted like every library piece: key-red becomes the club's colour, banned families scrubbed
+                    png.parent.mkdir(parents=True, exist_ok=True)
+                    im = Image.open(r['path']).convert('RGBA')
+                    im = im.resize((max(1, round(im.width * h / im.height)), h), Image.LANCZOS)
+                    L.paint(im, 'kr' if r.get('accent') == 'key-red' else None, self.pal.accent, self.pal.render_bans).save(png, compress_level=1)
+                with Image.open(png) as im:
+                    w = im.width
+            except OSError:
+                return []
+            return [{'kind': 'cutout', 'role': 'actor' if person else 'object', 'src': self.asset(png, 'cut'), 'h': h,
+                     'x': (B.W - w - 130) if right else 130, 'y': B.H - h - (18 if person else int(B.H * 0.2)), 'dt': 0.5}]
+        return []
 
     def lib_figures(self, s: dict) -> list[dict]:
         """The library's people and objects the plan chose for this shot, as cut-out layers (build.Film.cutout: each rises
@@ -505,7 +586,7 @@ class Adapter:
             cu = self.design.cutout(s)
             # the figure the writer asked for by key comes first; else the library's own people for this shot — over a
             # picture only (under a full-frame card nobody would see them), and never over the city split or the board
-            out += [cu] if cu else ([] if any(x and E.opaque(x) for x in out) else self.lib_figures(s))
+            out += [cu] if cu else ([] if any(x and E.opaque(x) for x in out) else (self.lib_figures(s) or self.index_cutout(s)))
         out = self.speak(s, d, f, [x for x in out if x])
         self.last = next((x['kind'] for x in out if x['kind'] in ('cities', 'table', 'chalk', 'verdict', 'rule', 'press')), None)
         return out
