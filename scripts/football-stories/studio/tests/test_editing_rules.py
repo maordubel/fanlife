@@ -132,3 +132,25 @@ class ShapeWindow(unittest.TestCase):
         a.chapter_windows(beats)
         self.assertEqual(beats[0]['shots'][0]['window'], 'a.jpg')
         self.assertNotIn('window', beats[3]['shots'][0])
+
+
+class CutoutEntrance(unittest.TestCase):
+    """A PNG enters as the thing it is (owner, 14.11.2026), and never overshoots (rule 142)."""
+    def test_entrance_by_what_it_is(self):
+        a = Adapter.__new__(Adapter)
+        self.assertEqual(a.entrance('obj-match-ticket-fl1-kr', False), 'drop')
+        self.assertEqual(a.entrance('obj-leather-ball', False), 'toss')
+        self.assertEqual(a.entrance('ppl-drummer-fl1-kr', True), 'walk')
+        self.assertEqual(a.entrance('ppl-player-celebrate-fl2-kr', True), 'rise')
+        self.assertEqual(a.entrance('obj-radio', False), 'slide')
+
+    def test_no_entrance_overshoots(self):
+        from studio.docu import build as B
+        f = B.Film.__new__(B.Film)
+        f.n, f.made, f.clips, f.tweens, f.audio, f.sb = 0, [], [], [], [], {'silent': True}
+        f.tween = f.tweens.append
+        for k in B.Film.ENTRANCES:
+            f.cutout({'src': 'x.png', 'enter': k, 'way': -1}, 1.0, 4.0)
+        js = ' '.join(f.tweens)
+        self.assertNotRegex(js, r'back\\.|elastic|bounce|yoyo|repeat')
+        self.assertEqual(js.count('fromTo'), len(B.Film.ENTRANCES))

@@ -336,6 +336,23 @@ class Adapter:
         own = (self.own_picture(n) or {}).get('id')
         return {r['id'] for r in self.picker.records if r['id'] != own and ('portrait-silhouette' in (r.get('subjects') or []) or self.FIGURE.search(r['id']))}
 
+    TOSSED = re.compile(r'ball|scarf|flare|flag|hat|boot|shirt|confetti|ribbon|bottle|can\b', re.I)
+    DROPPED = re.compile(r'ticket|newspaper|paper|programme|program|letter|document|photo|telegram|card|cutting|clipping|page', re.I)
+    ROSE = re.compile(r'celebrat|jump|leap|trophy|cup-lift|lift', re.I)
+
+    def entrance(self, rid: str, person: bool) -> str:
+        """How a cut-out enters, by what it is (build.Film.cutout): a person walks in (a celebration rises), a thrown
+        thing is tossed in, paper drops onto the scene, anything else slides in from its side."""
+        if self.ROSE.search(rid):
+            return 'rise'
+        if person:
+            return 'walk'
+        if self.DROPPED.search(rid):
+            return 'drop'
+        if self.TOSSED.search(rid):
+            return 'toss'
+        return 'slide'
+
     def index_cutout(self, s: dict) -> list[dict]:
         """A cut-out from the PNG library (studio/kit/cutouts, through the media index) in front of the picture: the beat's
         object or supporter, sized to the frame and rising in on its own layer (build.Film.cutout). Never a person when
@@ -366,7 +383,8 @@ class Adapter:
             except OSError:
                 return []
             return [{'kind': 'cutout', 'role': 'actor' if person else 'object', 'src': self.asset(png, 'cut'), 'h': h,
-                     'x': (B.W - w - 130) if right else 130, 'y': B.H - h - (18 if person else int(B.H * 0.2)), 'dt': 0.5}]
+                     'x': (B.W - w - 130) if right else 130, 'y': B.H - h - (18 if person else int(B.H * 0.2)), 'dt': 0.5,
+                     'way': 1 if right else -1, 'enter': self.entrance(r['id'], person)}]
         return []
 
     def lib_figures(self, s: dict) -> list[dict]:

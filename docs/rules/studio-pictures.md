@@ -25,6 +25,8 @@ that enter the edit inside a moving situation; build a PNG library that fits all
    documents, era objects — cut from their paper in `cinema/library.cut_out`) and the kit's cut-outs enter through the
    media index (`kind: cutout`). Each picture beat gets the cut-out whose subject matches its line, rising in on its
    own layer in front of the picture (`docu/plan.index_cutout`), painted in the club's colour. A cut-out that has nothing
-   to do with the line is not used.
+   to do with the line is not used. It enters as the thing it is (`docu/plan.entrance` → `build.Film.cutout`): a person
+   walks in from his side, a celebration rises, a ball or scarf is tossed in on an arc, a ticket or a newspaper drops
+   onto the scene, anything else slides in; every entrance eases out and stops (rule 142).
 5. The picture still moves as one sheet (`no-sliced-parallax`); the editing rules are `editing-language`; the order of
    a film and its package are `model-film`.

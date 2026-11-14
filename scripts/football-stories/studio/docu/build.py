@@ -606,12 +606,41 @@ class Film:
                    f'tl.fromTo("#{cid}h",{{scaleX:0}},{{scaleX:1,duration:0.6,ease:"power1.inOut",transformOrigin:"left center"}},{r2(t + 2.3)});'
                    f'tl.fromTo("#{cid} .prt",{{y:200,opacity:0}},{{y:0,opacity:1,duration:0.45,ease:"power3.out"}},{r2(t + 2.9)});')
 
+    ENTRANCES = ('rise', 'slide', 'walk', 'toss', 'drop')
+
     def cutout(self, s, t, d):
-        """A cut-out figure (transparent PNG) rising in front of the picture behind it, on its own parallax plane."""
+        """A cut-out (transparent PNG) entering the picture as the thing it is (owner, 14.11.2026: "elements and figures
+        that enter the edit nicely into a situation in motion"): a person walks in from his side of the frame, a ball or
+        a scarf is tossed in on an arc, a ticket or a newspaper drops onto the scene, a celebrating figure rises; then
+        it travels gently with the camera. Every entrance eases out and stops — nothing overshoots or comes back (rule
+        142). `way` 1 = it stands on the right and comes from the right."""
         cid = self.id('cu')
-        self.clip(cid, t, d, f'<img class="cut" id="{cid}i" src="assets/img/{e(s["src"])}" style="left:{s.get("x", 1180)}px;height:{s.get("h", 1000)}px">', s.get('z', 6))
-        self.tween(f'tl.fromTo("#{cid}i",{{y:500,opacity:0}},{{y:{s.get("y", 120)},opacity:1,duration:0.7,ease:"power3.out"}},{r2(t)});'
-                   f'tl.to("#{cid}i",{{x:{-60 * s.get("way", 1)},duration:{r2(max(0.5, d - 0.7))},ease:"none"}},{r2(t + 0.7)});')   # the nearest plane: it travels with the camera's move
+        way = s.get('way', 1)
+        x, y = s.get('x', 1180), s.get('y', 120)
+        enter = s.get('enter', 'rise')
+        self.clip(cid, t, d, f'<img class="cut" id="{cid}i" src="assets/img/{e(s["src"])}" style="left:{x}px;height:{s.get("h", 1000)}px">', s.get('z', 6))
+        I = f'#{cid}i'
+        if enter == 'slide':
+            dur, frm = 0.75, f'x:{900 * way},y:{y},opacity:1'
+            to, ease = f'x:0,y:{y}', 'power3.out'
+        elif enter == 'walk':
+            dur, frm = 1.3, f'x:{1100 * way},y:{y},rotation:{3 * way},opacity:1'
+            to, ease = f'x:0,y:{y},rotation:0', 'power2.out'
+        elif enter == 'toss':
+            dur, frm = 0.8, f'x:{700 * way},y:{y - 520},rotation:{-28 * way},opacity:1'
+            to, ease = f'x:0,y:{y},rotation:{-4 * way}', 'power2.out'
+        elif enter == 'drop':
+            dur, frm = 0.55, f'x:0,y:{y - 760},rotation:{7 * way},opacity:1'
+            to, ease = f'x:0,y:{y},rotation:{2 * way}', 'power2.in'
+        else:
+            dur, frm = 0.7, f'x:0,y:500,opacity:0'
+            to, ease = f'x:0,y:{y},opacity:1', 'power3.out'
+        self.tween(f'tl.fromTo("{I}",{{{frm}}},{{{to},duration:{dur},ease:"{ease}"}},{r2(t)});')
+        if enter == 'drop':   # it lands with the sound of paper, not a bounce
+            self.sound('page', t + dur - 0.05, None, 0.4)
+        elif enter == 'toss':
+            self.sound('swish', t, None, 0.3)
+        self.tween(f'tl.to("{I}",{{x:{-60 * way},duration:{r2(max(0.5, d - dur))},ease:"none"}},{r2(t + dur)});')   # the nearest plane: it travels with the camera's move
 
     def clockdev(self, s, t, d):
         """Time pressure, drawn: the match clock as a bar across the top that fills to the minute the line is at — a minute
