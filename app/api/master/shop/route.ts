@@ -57,7 +57,7 @@ export async function POST(r:Request){
    case 'settings':await updateShop(by,'Shop settings',d=>{
      if(typeof b.open==='boolean')d.settings.open=b.open
      if(typeof b.margin==='number'&&b.margin>=0&&b.margin<=300)d.settings.margin=Math.round(b.margin)
-     if(typeof b.popupUrl==='string'){const u=b.popupUrl.trim();if(u&&!/^https:\/\/[a-z0-9-]+\.printify\.me\/?$/i.test(u))throw new Error('The Pop-Up address looks like https://your-name.printify.me');d.settings.popupUrl=u}
+     if(typeof b.popupUrl==='string'){const u=b.popupUrl.trim();if(u&&!/^https:\/\/([a-z0-9-]+\.printify\.me|[a-z0-9-]+(\.[a-z0-9-]+)+)\/?$/i.test(u))throw new Error('The Pop-Up address looks like https://your-name.printify.me');d.settings.popupUrl=u}
      if(b.brand&&typeof b.brand==='object'){const o=b.brand as Record<string,unknown>,cur=d.settings.brand??{};d.settings.brand={...cur,...Object.fromEntries((['neck','sleeve','backNeck'] as const).filter(k=>typeof o[k]==='boolean').map(k=>[k,o[k] as boolean]))}}
      if(b.rematch===true){d.settings.matches={};d.settings.picked={}}
      if(typeof b.shopId==='number')d.settings.shopId=b.shopId});break
