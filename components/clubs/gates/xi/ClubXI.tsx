@@ -8,6 +8,7 @@ import {firePickFxAt} from '@/components/stage/PickFx'
 import {ClubShirt} from '@/components/clubs/stage/ClubShirt'
 import {tr,shortName,nameLabeler} from '@/components/clubs/rumble/shared'
 import {ShareComposer} from '@/components/share/v3/ShareComposer'
+import {PersonalPrint} from '@/components/shop/PersonalPrint'
 import {xiShare} from '@/lib/share/v3/adapters'
 import {FORMATIONS} from '@/lib/game/formations'
 import {fitOf} from '@/lib/xi/roles'
@@ -148,7 +149,8 @@ function XIBoard({kind,tabs,players,club,clubName,locale,contentLocale,wardrobe,
     :complete
      ?<div className={css.strip} data-testid="xi-complete"><h2>{t(kind==='best'?'xi.complete.title':'xi.complete.worst')}</h2>
        <button type="button" className={`min-h-tap ${css.tool}`} onClick={lockIn}>{copy.save}</button>
-       <button type="button" className={`min-h-tap ${css.tool}`} onClick={open('result')}>{t('xi.share')}</button></div>
+       <button type="button" className={`min-h-tap ${css.tool}`} onClick={open('result')}>{t('xi.share')}</button>
+       {kind==='best'&&<PersonalPrint className={`${css.tool} ${css.primary}`} req={{club,formation:xi.formation,picks:xi.picks as Record<string,string>,captain:xi.captain??null,twelfth:xi.twelfth??null}}/>}</div>
      :<p className={css.hint}>{t('xi.hintReopen')}</p>}
    <p className={css.status} role="status">{notice}</p>
   </div>
@@ -191,6 +193,7 @@ function XIBoard({kind,tabs,players,club,clubName,locale,contentLocale,wardrobe,
    footer={<div className={css.actions}>
     <button type="button" className={`min-h-tap ${css.tool} ${css.primary}`} onClick={lockIn}>{copy.save}</button>
     {kind==='best'&&complete?<ShareComposer label={t('xi.share')} draft={xiShare(club,{formation:xi.formation,lines:cardLines(xi,byId,label),captain:xi.captain?label(byId.get(xi.captain)?.name||'')||null:null})}/>:<button type="button" className={`min-h-tap ${css.tool}`} onClick={share}>{t('xi.share')}</button>}
+    {kind==='best'&&complete?<PersonalPrint className={css.tool} req={{club,formation:xi.formation,picks:xi.picks as Record<string,string>,captain:xi.captain??null,twelfth:xi.twelfth??null}}/>:null}
     <button type="button" className={`min-h-tap ${css.tool}`} onClick={closeSheet}>{t('xi.poster.keep')}</button></div>}>
    <div className={css.poster} data-testid="xi-poster">
     <div className={css.posterHead}><p className={css.posterKicker}>{clubName} · {xi.formation}</p><h2 className={css.posterTitle}>{t(kind==='best'?'xi.poster.mine':'xi.poster.worst')}</h2></div>

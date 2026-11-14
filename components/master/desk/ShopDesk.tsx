@@ -26,7 +26,9 @@ type CatItem={id:number;title:string;brand:string;image:string;group:string}
 const STATUS:Record<ShopProduct['status'],string>={draft:'Draft',building:'Pressing…',ready:'Made — waiting for its link',live:'On sale',error:'Needs a retry'}
 
 export function ShopDesk({initial,subjects,pictures}:{initial:State;subjects:Subject[];pictures:DeskPicture[]}){
- const [st,setSt]=useState(initial),api=useAdminApi(),{doc}=st,s=doc.settings
+ const [st,setSt]=useState(initial),api=useAdminApi(),personalN=st.doc.products.filter(p=>p.personal).length
+ // a supporter's own prints (the XI framed) live in the same record but are not the owner's catalogue: counted, not listed
+ const doc=useMemo(()=>({...st.doc,products:st.doc.products.filter(p=>!p.personal)}),[st.doc]),s=doc.settings
  const [token,setToken]=useState(''),[who,setWho]=useState('all'),[show,setShow]=useState<'all'|'shown'|'hidden'|'todo'>('all')
  const [run,setRun]=useState<{done:number;total:number}|null>(null),stop=useRef(false)
  const [nSub,setNSub]=useState(subjects[0]?.id||'fanlife'),[nKinds,setNKinds]=useState<Kind[]>(['poster']),[nPic,setNPic]=useState<string>('own'),[nTitle,setNTitle]=useState(''),file=useRef<HTMLInputElement>(null)
@@ -85,7 +87,7 @@ export function ShopDesk({initial,subjects,pictures}:{initial:State;subjects:Sub
  const step=(n:number,done:boolean)=><span className="shop-no" data-done={done||undefined} aria-hidden="true">{done?'✓':n}</span>
  return <div className="desk-content shopd">
   <header className="desk-head"><p className="desk-kicker">Shop</p><h1 className="desk-h1">The print room</h1>
-   <p className="desk-fine">Printed and shipped by Printify. {shown.length} shown in the shop · {live.length} on sale · {todo.length} waiting to be pressed.</p>
+   <p className="desk-fine">Printed and shipped by Printify. {shown.length} shown in the shop · {live.length} on sale · {todo.length} waiting to be pressed.{personalN?` · ${personalN} supporters’ own prints (kept three days unless sold)`:""}</p>
    <p className="desk-actions"><a className="desk-btn ghost" href="/shop" target="_blank" rel="noreferrer">Open the shop ↗</a><a className="desk-btn ghost" href="https://printify.com/app/orders" target="_blank" rel="noreferrer">Orders in Printify ↗</a></p></header>
   <nav className="shop-tabs" aria-label="Shop desk">{(['overview','create','products','sales','settings'] as const).map(t=><button key={t} type="button" className="desk-chip min-h-tap" aria-current={tab===t?'page':undefined} onClick={()=>setTab(t)}>{TAB_L[t]}{t==='products'?` · ${doc.products.length}`:''}{t==='sales'&&(s.sales??[]).some(x=>x.on)?' · on':''}{t==='overview'&&!(doc.health?.ok??true)?' •':''}</button>)}</nav>
   {api.error&&<p className="desk-state" role="alert" data-tone="bad">{api.error}</p>}
