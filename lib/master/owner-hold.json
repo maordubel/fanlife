@@ -1,0 +1,5 @@
+{
+ "_note": "Owner, 14.11.2026: \"I did not ask to open any club to the public — only to update the archive. Close them and let me decide when to open them.\" A club listed here stays closed to the public (status review, no gates) until the owner opens it himself in the control room (Open playable / Save as live), which stamps ownerOpenedAt. Nothing automatic opens a held club: not the launch defaults, not the research desk, not a promotion.",
+ "since": "2026-11-14",
+ "clubs": ["atalanta", "maccabi-haifa", "al-ahly", "raja-casablanca", "wydad-casablanca"]
+}
