@@ -56,6 +56,9 @@ export async function shopCheckup(by='autopilot'):Promise<ShopHealth>{
  // 5 · sales start and end on time: prices follow the sales (a few per run); sold counts from the orders
  try{const r=await (await import('./saleRun')).applySales(by,10);repaired+=r.done;for(const e of r.errors.slice(0,3))notes.push(e)}catch(e){notes.push(`Sales: ${(e as Error).message}`)}
  try{await (await import('./saleRun')).countSold(by)}catch{/* orders are a nicety: never a failed check */}
+ // 5b · a supporter's own prints are kept three days unless sold: the printer's list stays clean
+ try{const old=(await readShop()).products.filter(p=>p.personal&&!(p.sold&&p.sold>0)&&Date.now()-Date.parse(p.createdAt)>3*864e5).slice(0,10)
+  if(old.length){const {removeProduct}=await import('./build');for(const p of old)await removeProduct(p.id,by).catch(()=>{})}}catch{/* tomorrow */}
  // 6 · once a day, the doctor mends the owner's slips (titles, duplicates, soft prints) and lists what needs his eye
  try{const dr=await import('./doctor');if(dr.dueToday((await readShop()).doctor?.at)){const {syncListing}=await import('./build');await dr.shopDoctor(by,id=>pressProduct(id,by),syncListing)}}catch(e){notes.push(`Doctor: ${(e as Error).message}`)}
  // 7 · the shop is open but shows nothing: say so

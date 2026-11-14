@@ -35,6 +35,8 @@ export type ShopProduct={
  design?:ProductDesign
  /** automatic re-presses after a passing failure (the hourly check-up, at most two) */
  retries?:number
+ /** a supporter's own print (14.11.2026: the all-time XI framed): made on demand, never on /shop, cleared after 3 days unless sold */
+ personal?:boolean
  /** shown on /shop — the owner's switch; only a `live` product with a link can be shown */
  visible:boolean
  printify?:{productId:string;blueprintId:number;providerId:number;images:string[];priceFrom:number;currency:string;url:string|null;publishedAt:string|null;
@@ -94,7 +96,7 @@ export type PublicProduct={
 /** below this share of the pixels a product needs, the print comes out blurred: the shop does not sell it, whatever the switch says */
 export const MIN_QUALITY=.2
 export const qualityOf=(p:ShopProduct)=>p.printify?.quality??(()=>{const m=/\((\d+)% of the print size\)/.exec(p.error||'');return m?Number(m[1])/100:1})()
-export const isPublic=(p:ShopProduct)=>p.visible&&p.status==='live'&&!!p.printify?.url&&p.printify.images.length>0&&qualityOf(p)>=MIN_QUALITY
+export const isPublic=(p:ShopProduct)=>!p.personal&&p.visible&&p.status==='live'&&!!p.printify?.url&&p.printify.images.length>0&&qualityOf(p)>=MIN_QUALITY
 /** the storefront's shelf for a product: by kind, and for a catalogue product by its name */
 export function shelfOf(kind:Kind,catalogue?:string):Shelf{
  if(kind==='poster'||kind==='framed'||kind==='canvas')return 'wall';if(kind==='tee'||kind==='hoodie')return 'wear';if(kind==='kids-tee')return 'kids'

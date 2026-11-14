@@ -1,0 +1,33 @@
+/* "Your XI, framed" — the personal print offer (14.11.2026). A wall, the proof in its frame, the order beside it. */
+.xip { position: fixed; inset: 0; display: grid; place-items: center; padding: 12px; background: rgb(21 19 15 / .78); }
+.xip-in { display: grid; grid-template-columns: minmax(0, 1fr); inline-size: min(100%, 1080px); max-block-size: calc(100dvh - 24px); overflow: auto; border: 3px solid var(--mag-ink, #15130F); box-shadow: 6px 6px 0 var(--mag-vermilion, #D71920); background: var(--mag-paper, #FFFBF2); }
+.xip-wall { display: grid; justify-items: center; gap: 8px; padding: 22px 16px 14px; background: #E2D8BF; }
+.xip-frame { display: grid; place-items: center; inline-size: min(64vw, 300px); aspect-ratio: 3 / 4; background: #F4ECD8; box-shadow: 6px 8px 0 rgb(21 19 15 / .35); }
+.xip-wall[data-product='framed'] .xip-frame { border: 14px solid #1d1a16; padding: 14px; background: #F7F1E3; box-shadow: 8px 10px 0 rgb(21 19 15 / .35), inset 0 0 0 2px #3a332b; }
+.xip-frame img { display: block; inline-size: 100%; block-size: 100%; object-fit: contain; }
+.xip-wait { inline-size: 40px; block-size: 40px; border-radius: 50%; border: 4px solid rgb(21 19 15 / .2); border-top-color: var(--mag-ink, #15130F); animation: xip-spin 1s linear infinite; }
+@keyframes xip-spin { to { transform: rotate(360deg); } }
+.xip-fine { margin: 0; font-size: 11px; opacity: .7; }
+.xip-side { position: relative; display: grid; gap: 12px; align-content: start; padding: 18px 18px 20px; color: var(--mag-ink, #15130F); }
+.xip-x { position: absolute; inset-block-start: 6px; inset-inline-end: 6px; inline-size: 44px; border: 0; background: transparent; font-size: 20px; font-weight: 900; color: inherit; cursor: pointer; }
+.xip-k { margin: 0; font-family: var(--mag-mono, monospace); font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--mag-vermilion, #D71920); }
+.xip-h { margin: 0; font-family: Archivo, system-ui, sans-serif; font-weight: 900; font-size: clamp(34px, 9vw, 58px); line-height: .92; letter-spacing: -.03em; }
+.xip-sub { margin: 0; font-size: 15px; line-height: 1.45; }
+.xip-seg { display: grid; grid-template-columns: 1fr 1fr; border: 2px solid currentColor; }
+.xip-seg button { border: 0; background: transparent; color: inherit; font-weight: 800; font-size: 15px; cursor: pointer; }
+.xip-seg button[aria-checked='true'] { background: var(--mag-ink, #15130F); color: var(--mag-paper, #FFFBF2); }
+.xip-field { display: grid; gap: 4px; font-size: 13px; font-weight: 700; }
+.xip-field input { min-block-size: 44px; padding: 0 12px; border: 2px solid currentColor; background: #fff; font: inherit; font-size: 16px; }
+.xip-field small { font-weight: 500; opacity: .75; }
+.xip-go { display: flex; align-items: center; justify-content: center; border: 0; background: var(--mag-vermilion, #D71920); color: #fff; font-weight: 900; font-size: 17px; text-decoration: none; cursor: pointer; }
+.xip-go:disabled { opacity: .7; cursor: progress; }
+.xip-back { justify-self: center; border: 0; background: transparent; color: inherit; text-decoration: underline; font-size: 14px; cursor: pointer; }
+.xip-ok { margin: 0; font-weight: 800; color: #1F8A4C; }
+.xip-err { margin: 0; font-weight: 700; color: var(--mag-vermilion, #D71920); }
+@media (min-width: 820px) {
+  .xip-in { grid-template-columns: 1.15fr 1fr; }
+  .xip-wall { padding: 46px 30px 18px; align-content: center; }
+  .xip-frame { inline-size: 340px; }
+  .xip-side { padding: 46px 40px 30px; align-content: center; }
+}
+@media (prefers-reduced-motion: reduce) { .xip-wait { animation: none; } }

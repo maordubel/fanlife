@@ -203,5 +203,22 @@
  "pdpBackSide": "Back",
  "pdpView": "View {title}",
  "shopAll": "Shop all {n} products",
- "picksT": "Our picks"
+ "picksT": "Our picks",
+ "xiPrint": {
+  "cta": "Frame it",
+  "k": "FAN LIFE prints",
+  "t": "Your XI, framed.",
+  "sub": "The eleven you picked, laid out in your formation and printed for your wall.",
+  "framed": "Framed print",
+  "poster": "Poster",
+  "manager": "Manager’s name (optional)",
+  "managerHint": "Your name on it: “{name}’s All-Time XI”.",
+  "make": "Make my print",
+  "making": "Printing your proof… about 20 seconds",
+  "ready": "Your print is ready.",
+  "open": "Open the checkout",
+  "back": "Back to my XI",
+  "proof": "Proof · the printed piece is 3600 × 4800",
+  "error": "Something went wrong — try again."
+ }
 }
