@@ -201,5 +201,7 @@
  "pdpMore": "More from {club}",
  "pdpFront": "Front",
  "pdpBackSide": "Back",
- "pdpView": "View {title}"
+ "pdpView": "View {title}",
+ "shopAll": "Shop all {n} products",
+ "picksT": "Our picks"
 }
