@@ -126,4 +126,16 @@ describe('Meta publishing (docs/fanlife/53-meta-publishing.md)', () => {
     expect(calls).toHaveLength(0)
     expect((await publishToMeta({id: 11, msg: msg('Story'), kit: {t: 'x', data: {}, to: ['feed', 'tiktok']}}, [png], {env: ON, fetcher})).facebook).toMatch(/^published/)
   })
+
+  it('plan v9: a feed + story post goes to both, and the Instagram story is the v4 moving video', async () => {
+    const {calls, fetcher} = fakeGraph()
+    const kit = {t: 'L-GATE', data: {}, to: ['feed', 'story', 'tiktok'], v4: {ver: '4.0', png: ['https://x/p.png'], story: 'https://github.com/maordubel/fanlife/releases/download/social-pictures/p1-story-v4.0.mp4'}}
+    const r = await publishToMeta({id: 12, msg: msg('Post'), kit}, [png], {env: ON, fetcher})
+    expect(r.facebook).toMatch(/^published/)
+    expect(r.story).toBe(true)
+    expect(calls.some(c => c.url.endsWith('/photo_stories'))).toBe(true)
+    const st = calls.find(c => c.url.endsWith('/media') && c.body.media_type === 'STORIES')!
+    expect(st.body.video_url).toContain('p1-story-v4.0.mp4')
+    expect(calls.some(c => c.url.endsWith('/media') && c.body.caption)).toBe(true) // the feed post too
+  })
 })

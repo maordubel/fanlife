@@ -106,11 +106,13 @@ async function publishStory(p, png, cfg, api) {
     const st = await api(`${cfg.page}/photo_stories`, {photo_id: photo.id})
     out.facebook = `published ${st.post_id || st.id || photo.id}`
   } catch (e) { out.facebook = `refused: ${clean(e?.message || e, cfg.token)}` }
+  const video = p.kit?.v4?.story || ''
   if (!cfg.ig) out.instagram = 'skipped: no Instagram account (META_IG_USER_ID)'
-  else if (!url) out.instagram = 'skipped: Facebook did not hand back the picture URL'
+  else if (!url && !video) out.instagram = 'skipped: Facebook did not hand back the picture URL'
   else try {
-    const creation = (await api(`${cfg.ig}/media`, {image_url: url, media_type: 'STORIES'})).id
-    for (let i = 0; i < 6; i++) {
+    // v4: the story that moves (a public MP4 from the social-pictures release) when there is one, else the picture
+    const creation = (await api(`${cfg.ig}/media`, video ? {video_url: video, media_type: 'STORIES'} : {image_url: url, media_type: 'STORIES'})).id
+    for (let i = 0; i < (video ? 30 : 6); i++) {
       const s = await api(creation, {fields: 'status_code'}, {method: 'GET'}).catch(() => ({}))
       if (s.status_code === 'FINISHED') break
       if (s.status_code === 'ERROR') throw new Error('Instagram could not process the picture')
@@ -132,7 +134,10 @@ export async function publishToMeta(p, pngs, {env = process.env, fetcher = fetch
   const why = skipReason(p, parts, pngs, cfg)
   if (why) return {facebook: `skipped: ${why}`, instagram: `skipped: ${why}`, line: why === 'off' ? '' : `ℹ️ Not auto-published: ${why}.`}
   const api = graph(cfg, fetcher)
-  if (targetsOf(p, parts).story) return publishStory(p, pngs[0], cfg, api)
+  // a post meant for the feed AND the stories (plan v9) goes to both, in parallel; a story-only post stops here
+  const tg = targetsOf(p, parts)
+  let st = null
+  if (tg.story) { st = await publishStory(p, pngs[0], cfg, api); if (!tg.feed) return st }
   const files = await Promise.all(pngs.slice(0, 10).map(b => asJpeg(b).catch(() => ({buf: b, type: 'image/png', ig: false}))))
   const out = {facebook: '', instagram: ''}
   const urls = []
@@ -181,5 +186,5 @@ export async function publishToMeta(p, pngs, {env = process.env, fetcher = fetch
 
   const line = `${mark(out.facebook)} Facebook · ${mark(out.instagram)} Instagram` +
     (out.facebook.startsWith('refused') || out.instagram.startsWith('refused') ? ' — post the ⚠️ one by hand from the boxes below.' : ' — published automatically.')
-  return {...out, line}
+  return st ? {...out, line: `${line}\n${st.line}`, story: true, storyResult: {facebook: st.facebook, instagram: st.instagram}} : {...out, line}
 }
