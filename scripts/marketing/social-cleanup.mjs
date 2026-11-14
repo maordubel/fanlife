@@ -5,7 +5,7 @@
  *  Redundant = an exact repeat of an earlier post's caption (the earlier one stays, it carries the engagement), a post
  *  with no picture and almost no text, or a test post. Nothing else is touched. */
 const env = process.env
-const PAGE = env.META_PAGE_ID || '', IG = env.META_IG_USER_ID || '', TOKEN = env.META_PAGE_TOKEN || ''
+let PAGE = env.META_PAGE_ID || '', IG = env.META_IG_USER_ID || '', TOKEN = env.META_PAGE_TOKEN || ''
 const APPLY = env.CLEANUP_APPLY === '1'
 const G = 'https://graph.facebook.com/v21.0/'
 const get = async (path, q = {}) => { const u = new URL(G + path); for (const [k, v] of Object.entries({...q, access_token: TOKEN})) u.searchParams.set(k, v); const r = await fetch(u); const j = await r.json(); if (!r.ok) throw Error(j?.error?.message || r.status); return j }
@@ -26,7 +26,17 @@ export function flag(items, textOf, hasMedia) {
   return out
 }
 
+/** the Page connection the live publisher uses (handed over to the server-only store by meta-handoff.yml) */
+async function stored() {
+  const db = (env.SUPABASE_URL || 'https://afxpjfxwpdjvlmuoawda.supabase.co').replace(/\/$/, ''), key = env.SUPABASE_SERVICE_ROLE_KEY || ''
+  if (!key) return null
+  const r = await fetch(`${db}/rest/v1/worker_fanlife_files?name=eq.marketing%2Fmeta.json&select=body`, {headers: {apikey: key, Authorization: `Bearer ${key}`}})
+  const row = r.ok ? (await r.json())[0] : null
+  try { return row ? JSON.parse(typeof row.body === 'string' ? row.body : JSON.stringify(row.body)) : null } catch { return null }
+}
 async function main() {
+  const live = await stored().catch(() => null)
+  if (live?.token) { TOKEN = live.token; PAGE = live.page || PAGE; IG = live.ig || IG }
   if (!PAGE || !TOKEN) throw Error('META_PAGE_ID / META_PAGE_TOKEN missing')
   const fb = (await all(`${PAGE}/posts`, {fields: 'id,message,created_time,full_picture,permalink_url', limit: 100})).map(p => ({id: p.id, t: p.created_time, text: p.message, pic: !!p.full_picture, link: p.permalink_url}))
   const fbFlags = flag(fb, x => x.text, x => x.pic)

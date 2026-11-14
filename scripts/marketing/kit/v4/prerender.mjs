@@ -14,7 +14,7 @@ import {capture, phonePage, GATE_ROUTE} from './screens.mjs'
 import {clubId} from './assets.mjs'
 
 export const V4_VERSION = '4.0'
-const DB = (process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL || '').replace(/\/$/, '')
+const DB = (process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://afxpjfxwpdjvlmuoawda.supabase.co').replace(/\/$/, '') // Football Master's public address
 const KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || ''
 const GH = process.env.GITHUB_TOKEN || ''
 const REPO = process.env.GITHUB_REPOSITORY || 'maordubel/fanlife'
