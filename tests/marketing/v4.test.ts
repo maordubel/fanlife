@@ -38,7 +38,7 @@ describe('social pictures v4', () => {
   it('every feature post carries a dare and a call to action', async () => {
     const {page, dareFor} = await load()
     for (const t of ['L-GATE', 'L-FACT', 'T10-NERDS', 'L-BINGO', 'L-ZOOM', 'T9-OTD', 'L-FILM']) expect(dareFor(t, {}), t).not.toBe('')
-    const html = await page('L-GATE', 'fanlife', samples[0][1])
+    const html = await page('L-GATE', 'fanlife', samples[0]![1])
     expect(html).toContain('class="dare"')
     expect(html).toContain('class="btn"')
   })

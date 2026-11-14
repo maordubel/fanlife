@@ -6,7 +6,7 @@ on:
     branches: [claude/social-v4]
     paths: [scripts/marketing/kit/v4/screens.mjs, .github/workflows/marketing-screens.yml]
 permissions:
-  contents: read
+  contents: write
 jobs:
   screens:
     runs-on: ubuntu-latest
@@ -18,6 +18,9 @@ jobs:
       - run: npm ci --ignore-scripts
       - run: npx playwright install --with-deps chromium
       - run: node scripts/marketing/kit/v4/screens.mjs screens
-      - uses: actions/upload-artifact@v4
+      - name: Keep the screens on the marketing-screens branch (the design desk reads them from git)
         if: always()
-        with: {name: game-screens, path: screens, retention-days: 7}
+        run: |
+          cd screens && git init -q -b marketing-screens && git add -A
+          git -c user.name=fanlife-bot -c user.email=bot@dubelteam.com commit -qm "game screens $(date -u +%F)"
+          git push -qf "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" marketing-screens
