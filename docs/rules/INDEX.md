@@ -227,3 +227,4 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [archive-one-night](archive-one-night.md) · One record per match night, a daily self-refreshing league feed, and the archive door every game links through (12.11.2026)
 - [shop-live-mockups.md](shop-live-mockups.md) — the first picture of a product is the product in use; gallery with thumbnails and a glass
 - [studio-club-language](studio-club-language.md) · Studio films carry on-screen text in the club's own language under the English (16.11.2026)
+- [studio-motion-and-cutouts](studio-motion-and-cutouts.md) · Motion blur, paper-edge cut-outs inside the frame, grain + vignette, crest-traced club shapes (16.11.2026)
