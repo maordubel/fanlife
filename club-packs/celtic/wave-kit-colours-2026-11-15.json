@@ -1,0 +1,84 @@
+{
+ "schemaVersion": 1,
+ "clubId": "celtic",
+ "contentLocale": "en",
+ "note": "Kit colour amendments (15.11.2026): each record fills colours into the pack kit of the same id, only where that kit names none and only when two independent publishers agree (status approved). Single-publisher records stay in review for the owner.",
+ "sources": [
+  {
+   "id": "ce-kc-cw-hometops",
+   "title": "Celtic Kit – Home tops 1888-1991 – The Celtic Wiki",
+   "url": "https://www.thecelticwiki.com/?p=5673",
+   "publisher": "The Celtic Wiki",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-kc-wp-celtic",
+   "title": "Celtic F.C. – Wikipedia (Crest and colours)",
+   "url": "https://en.wikipedia.org/wiki/Celtic_F.C.",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-kc-cs-hoops",
+   "title": "118 Years Of The Hoops – The Celtic Star",
+   "url": "https://thecelticstar.com/?p=68302",
+   "publisher": "The Celtic Star",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  }
+ ],
+ "kits": [
+  {
+   "id": "k-a43d3cec",
+   "value": {
+    "season": "1888",
+    "type": "home",
+    "construction": {
+     "colors": "white/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ce-kc-cw-hometops",
+    "ce-kc-wp-celtic"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "notes": "Shirt white, agreed by The Celtic Wiki (white top, green collar, red-and-green Celtic cross) and Wikipedia (white top, Marist Brothers' cross badge); green is the collar (The Celtic Wiki). Wikipedia alone gives black shorts and black-and-green hooped socks: one publisher, not set.",
+   "approvedAt": "2026-11-15",
+   "approvedBy": "automated:cross-source-review-celtic-2026-11-15"
+  },
+  {
+   "id": "k-3bb87b8a",
+   "value": {
+    "season": "1903",
+    "type": "home",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-kc-cs-hoops",
+    "ce-kc-wp-celtic"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "notes": "Green and white hoops from 1903, agreed by The Celtic Star (horizontal green and white stripes, most likely first worn 29 August 1903) and Wikipedia. Shorts and socks not stated by either for 1903.",
+   "approvedAt": "2026-11-15",
+   "approvedBy": "automated:cross-source-review-celtic-2026-11-15"
+  }
+ ],
+ "skipped": []
+}

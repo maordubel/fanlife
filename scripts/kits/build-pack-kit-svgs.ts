@@ -20,7 +20,7 @@ const INK:Record<string,string>={
  white:'#ffffff',cream:'#f1e8cf',ivory:'#f4ecd8',black:'#111111',red:'#c8102e',crimson:'#a6192e',maroon:'#7a1f2b',burgundy:'#6d1a36',claret:'#7b1e3a',
  green:'#00874f',emerald:'#00874f','dark green':'#00543c','light green':'#5cb85c',lime:'#9bd13f',teal:'#008080',
  blue:'#1f4ea8','royal blue':'#1f4ea8','navy':'#14213d','navy blue':'#14213d','sky blue':'#6cace4',skyblue:'#6cace4','light blue':'#6cace4',
- yellow:'#f2c500',gold:'#c9a227',golden:'#c9a227',orange:'#f26b21',purple:'#5b2a86',violet:'#5b2a86',pink:'#e8749a',
+ coral:'#f2735f',yellow:'#f2c500',gold:'#c9a227',golden:'#c9a227',orange:'#f26b21',purple:'#5b2a86',violet:'#5b2a86',pink:'#e8749a',
  grey:'#8a8d8f',gray:'#8a8d8f',silver:'#b8bcc0',charcoal:'#36454f',brown:'#6b4226',beige:'#d8c9a3',turquoise:'#30b7c0',
 }
 const DESIGNS=new Set(['stripes','hoops','pinstripes','half-and-half','sash','chest band','diagonal','contrasting sleeves','gradient','graphic'])

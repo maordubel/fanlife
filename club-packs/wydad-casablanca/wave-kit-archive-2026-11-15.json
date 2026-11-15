@@ -1,0 +1,2075 @@
+{
+ "schemaVersion": 1,
+ "clubId": "wydad-casablanca",
+ "contentLocale": "en",
+ "note": "Kit archive completion (15.11.2026): every outfield kit Football Kit Archive shows for a season and type the pack had no kit for, first variant only, colours and design read by eye from its photograph (INK colour words of scripts/kits/build-pack-kit-svgs.ts). Unclear photographs are listed in skipped, not drawn.",
+ "sources": [
+  {
+   "id": "wy-fka-s-448373",
+   "title": "Wydad Casablanca 1977/78 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-1977-78-away-kit-448373/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-341483",
+   "title": "Wydad Casablanca 1977/78 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-1977-78-home-kit-341483/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-287721",
+   "title": "Wydad Casablanca 1978/79 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-1978-79-home-kit-287721/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-448374",
+   "title": "Wydad Casablanca 1981/82 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-1981-82-home-kit-448374/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-448375",
+   "title": "Wydad Casablanca 1986/87 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-1986-87-home-kit-448375/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-347567",
+   "title": "Wydad Casablanca 1990/91 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-1990-91-home-kit-347567/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-448376",
+   "title": "Wydad Casablanca 1991/92 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-1991-92-away-kit-448376/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-447932",
+   "title": "Wydad Casablanca 1991/92 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-1991-92-home-kit-447932/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-448362",
+   "title": "Wydad Casablanca 1991/92 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-1991-92-third-kit-448362/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-448364",
+   "title": "Wydad Casablanca 1992/93 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-1992-93-away-kit-448364/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-448363",
+   "title": "Wydad Casablanca 1992/93 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-1992-93-home-kit-448363/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-448379",
+   "title": "Wydad Casablanca 1993/94 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-1993-94-home-kit-448379/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-232370",
+   "title": "Wydad Casablanca 1996/97 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-1996-97-away-kit-232370/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-448369",
+   "title": "Wydad Casablanca 1999/00 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-1999-00-home-kit-448369/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-448367",
+   "title": "Wydad Casablanca 2001/02 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2001-02-away-kit-448367/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-180859",
+   "title": "Wydad Casablanca 2001/02 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2001-02-home-kit-180859/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-448368",
+   "title": "Wydad Casablanca 2002/03 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2002-03-away-kit-448368/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-448380",
+   "title": "Wydad Casablanca 2005/06 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2005-06-away-kit-448380/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-232033",
+   "title": "Wydad Casablanca 2005/06 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2005-06-home-kit-232033/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-287678",
+   "title": "Wydad Casablanca 2006/07 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2006-07-home-kit-287678/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-180866",
+   "title": "Wydad Casablanca 2007/08 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2007-08-home-kit-180866/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-180864",
+   "title": "Wydad Casablanca 2008/09 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2008-09-away-kit-180864/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-180860",
+   "title": "Wydad Casablanca 2008/09 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2008-09-home-kit-180860/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-369431",
+   "title": "Wydad Casablanca 2009 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2009-home-kit-369431/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-450323",
+   "title": "Wydad Casablanca 2009/10 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2009-10-away-kit-450323/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-116591",
+   "title": "Wydad Casablanca 2009/10 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2009-10-home-kit-116591/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-180867",
+   "title": "Wydad Casablanca 2010/11 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2010-11-away-kit-180867/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-180868",
+   "title": "Wydad Casablanca 2010/11 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2010-11-home-kit-180868/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-195844",
+   "title": "Wydad Casablanca 2010/11 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2010-11-third-kit-195844/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-180870",
+   "title": "Wydad Casablanca 2011/12 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2011-12-home-kit-180870/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-448359",
+   "title": "Wydad Casablanca 2011/12 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2011-12-third-kit-448359/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-211387",
+   "title": "Wydad Casablanca 2012/13 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2012-13-away-kit-211387/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-450322",
+   "title": "Wydad Casablanca 2012/13 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2012-13-home-kit-450322/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-195836",
+   "title": "Wydad Casablanca 2012/13 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2012-13-third-kit-195836/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-180880",
+   "title": "Wydad Casablanca 2013/14 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2013-14-away-kit-180880/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-180881",
+   "title": "Wydad Casablanca 2013/14 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2013-14-home-kit-180881/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-448378",
+   "title": "Wydad Casablanca 2013/14 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2013-14-third-kit-448378/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-180879",
+   "title": "Wydad Casablanca 2014/15 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2014-15-away-kit-180879/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-448128",
+   "title": "Wydad Casablanca 2014/15 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2014-15-home-kit-448128/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-180876",
+   "title": "Wydad Casablanca 2015/16 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2015-16-away-kit-180876/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-180877",
+   "title": "Wydad Casablanca 2015/16 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2015-16-home-kit-180877/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-180878",
+   "title": "Wydad Casablanca 2016/17 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2016-17-home-kit-180878/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-250188",
+   "title": "Wydad Casablanca 2018/19 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2018-19-away-kit-250188/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-18544",
+   "title": "Wydad Casablanca 2019/20 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2019-20-away-kit-18544/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-18543",
+   "title": "Wydad Casablanca 2019/20 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2019-20-home-kit-18543/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-18545",
+   "title": "Wydad Casablanca 2019/20 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2019-20-third-kit-18545/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-18389",
+   "title": "Wydad Casablanca 2020/21 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2020-21-away-kit-18389/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-18388",
+   "title": "Wydad Casablanca 2020/21 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2020-21-home-kit-18388/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-18390",
+   "title": "Wydad Casablanca 2020/21 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2020-21-third-kit-18390/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-448383",
+   "title": "Wydad Casablanca 2021/22 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2021-22-away-kit-448383/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-79554",
+   "title": "Wydad Casablanca 2021/22 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2021-22-home-kit-79554/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-79556",
+   "title": "Wydad Casablanca 2021/22 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2021-22-third-kit-79556/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-184516",
+   "title": "Wydad Casablanca 2023/24 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2023-24-away-kit-184516/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-184517",
+   "title": "Wydad Casablanca 2023/24 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2023-24-home-kit-184517/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-184515",
+   "title": "Wydad Casablanca 2023/24 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2023-24-third-kit-184515/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-310921",
+   "title": "Wydad Casablanca 2024/25 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2024-25-away-kit-310921/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-289605",
+   "title": "Wydad Casablanca 2024/25 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2024-25-home-kit-289605/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-309290",
+   "title": "Wydad Casablanca 2024/25 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2024-25-third-kit-309290/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-422938",
+   "title": "Wydad Casablanca 2025/26 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2025-26-away-kit-422938/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-528712",
+   "title": "Wydad Casablanca 2026/27 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2026-27-away-kit-528712/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-525393",
+   "title": "Wydad Casablanca 2026/27 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2026-27-home-kit-525393/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-fka-s-536313",
+   "title": "Wydad Casablanca 2026/27 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2026-27-third-kit-536313/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  }
+ ],
+ "kits": [
+  {
+   "id": "wy-fka-448373",
+   "value": {
+    "name": "Wydad Casablanca 1977/78 away",
+    "season": "1977/78",
+    "type": "away",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-448373"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (team photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-341483",
+   "value": {
+    "name": "Wydad Casablanca 1977/78 home",
+    "season": "1977/78",
+    "type": "home",
+    "construction": {
+     "colors": "red/white",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "wy-fka-s-341483"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (team photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-287721",
+   "value": {
+    "name": "Wydad Casablanca 1978/79 home",
+    "season": "1978/79",
+    "type": "home",
+    "manufacturer": "adidas",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-287721"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-448374",
+   "value": {
+    "name": "Wydad Casablanca 1981/82 home",
+    "season": "1981/82",
+    "type": "home",
+    "construction": {
+     "colors": "red/white",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "wy-fka-s-448374"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (team photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-448375",
+   "value": {
+    "name": "Wydad Casablanca 1986/87 home",
+    "season": "1986/87",
+    "type": "home",
+    "construction": {
+     "colors": "red/white",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "wy-fka-s-448375"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (match photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-347567",
+   "value": {
+    "name": "Wydad Casablanca 1990/91 home",
+    "season": "1990/91",
+    "type": "home",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-347567"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (team photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-448376",
+   "value": {
+    "name": "Wydad Casablanca 1991/92 away",
+    "season": "1991/92",
+    "type": "away",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-448376"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (match photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-447932",
+   "value": {
+    "name": "Wydad Casablanca 1991/92 home",
+    "season": "1991/92",
+    "type": "home",
+    "construction": {
+     "colors": "white/red",
+     "design": "contrasting sleeves"
+    }
+   },
+   "sources": [
+    "wy-fka-s-447932"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-448362",
+   "value": {
+    "name": "Wydad Casablanca 1991/92 third",
+    "season": "1991/92",
+    "type": "third",
+    "construction": {
+     "colors": "purple/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-448362"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (team photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-448364",
+   "value": {
+    "name": "Wydad Casablanca 1992/93 away",
+    "season": "1992/93",
+    "type": "away",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-448364"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (portrait photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-448363",
+   "value": {
+    "name": "Wydad Casablanca 1992/93 home",
+    "season": "1992/93",
+    "type": "home",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-448363"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (team photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-448379",
+   "value": {
+    "name": "Wydad Casablanca 1993/94 home",
+    "season": "1993/94",
+    "type": "home",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-448379"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (match photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-232370",
+   "value": {
+    "name": "Wydad Casablanca 1996/97 away",
+    "season": "1996/97",
+    "type": "away",
+    "manufacturer": "Uhlsport",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-232370"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; portrait photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-448369",
+   "value": {
+    "name": "Wydad Casablanca 1999/00 home",
+    "season": "1999/00",
+    "type": "home",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-448369"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (team photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-448367",
+   "value": {
+    "name": "Wydad Casablanca 2001/02 away",
+    "season": "2001/02",
+    "type": "away",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-448367"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (team photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-180859",
+   "value": {
+    "name": "Wydad Casablanca 2001/02 home",
+    "season": "2001/02",
+    "type": "home",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-180859"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-448368",
+   "value": {
+    "name": "Wydad Casablanca 2002/03 away",
+    "season": "2002/03",
+    "type": "away",
+    "construction": {
+     "colors": "white/red",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "wy-fka-s-448368"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-448380",
+   "value": {
+    "name": "Wydad Casablanca 2005/06 away",
+    "season": "2005/06",
+    "type": "away",
+    "manufacturer": "adidas",
+    "sponsor": "Ingelec",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-448380"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-232033",
+   "value": {
+    "name": "Wydad Casablanca 2005/06 home",
+    "season": "2005/06",
+    "type": "home",
+    "sponsor": "Ingelec",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-232033"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-287678",
+   "value": {
+    "name": "Wydad Casablanca 2006/07 home",
+    "season": "2006/07",
+    "type": "home",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-287678"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (match photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-180866",
+   "value": {
+    "name": "Wydad Casablanca 2007/08 home",
+    "season": "2007/08",
+    "type": "home",
+    "sponsor": "Ingelec",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-180866"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-180864",
+   "value": {
+    "name": "Wydad Casablanca 2008/09 away",
+    "season": "2008/09",
+    "type": "away",
+    "sponsor": "Kia",
+    "construction": {
+     "colors": "white/red",
+     "design": "contrasting sleeves"
+    }
+   },
+   "sources": [
+    "wy-fka-s-180864"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-180860",
+   "value": {
+    "name": "Wydad Casablanca 2008/09 home",
+    "season": "2008/09",
+    "type": "home",
+    "manufacturer": "adidas",
+    "sponsor": "Ingelec",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-180860"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-369431",
+   "value": {
+    "name": "Wydad Casablanca 2009 home",
+    "season": "2009",
+    "type": "home",
+    "sponsor": "Kia",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-369431"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-450323",
+   "value": {
+    "name": "Wydad Casablanca 2009/10 away",
+    "season": "2009/10",
+    "type": "away",
+    "manufacturer": "Nike",
+    "sponsor": "Ingelec",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-450323"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-116591",
+   "value": {
+    "name": "Wydad Casablanca 2009/10 home",
+    "season": "2009/10",
+    "type": "home",
+    "sponsor": "Ingelec",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-116591"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-180867",
+   "value": {
+    "name": "Wydad Casablanca 2010/11 away",
+    "season": "2010/11",
+    "type": "away",
+    "manufacturer": "Nike",
+    "sponsor": "Ingelec",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-180867"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-180868",
+   "value": {
+    "name": "Wydad Casablanca 2010/11 home",
+    "season": "2010/11",
+    "type": "home",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-180868"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (match photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-195844",
+   "value": {
+    "name": "Wydad Casablanca 2010/11 third",
+    "season": "2010/11",
+    "type": "third",
+    "manufacturer": "Nike",
+    "sponsor": "Ingelec",
+    "construction": {
+     "colors": "blue/white",
+     "design": "chest band"
+    }
+   },
+   "sources": [
+    "wy-fka-s-195844"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; white chevron). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-180870",
+   "value": {
+    "name": "Wydad Casablanca 2011/12 home",
+    "season": "2011/12",
+    "type": "home",
+    "sponsor": "Ingelec",
+    "construction": {
+     "colors": "red/white",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "wy-fka-s-180870"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-448359",
+   "value": {
+    "name": "Wydad Casablanca 2011/12 third",
+    "season": "2011/12",
+    "type": "third",
+    "construction": {
+     "colors": "purple/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-448359"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (match photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-211387",
+   "value": {
+    "name": "Wydad Casablanca 2012/13 away",
+    "season": "2012/13",
+    "type": "away",
+    "sponsor": "Ingelec",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-211387"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; team photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-450322",
+   "value": {
+    "name": "Wydad Casablanca 2012/13 home",
+    "season": "2012/13",
+    "type": "home",
+    "sponsor": "Ingelec",
+    "construction": {
+     "colors": "red/white",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "wy-fka-s-450322"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-195836",
+   "value": {
+    "name": "Wydad Casablanca 2012/13 third",
+    "season": "2012/13",
+    "type": "third",
+    "sponsor": "Ingelec",
+    "construction": {
+     "colors": "sky blue/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-195836"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-180880",
+   "value": {
+    "name": "Wydad Casablanca 2013/14 away",
+    "season": "2013/14",
+    "type": "away",
+    "manufacturer": "adidas",
+    "sponsor": "Ingelec",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-180880"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-180881",
+   "value": {
+    "name": "Wydad Casablanca 2013/14 home",
+    "season": "2013/14",
+    "type": "home",
+    "sponsor": "Ingelec",
+    "construction": {
+     "colors": "red/white",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "wy-fka-s-180881"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-448378",
+   "value": {
+    "name": "Wydad Casablanca 2013/14 third",
+    "season": "2013/14",
+    "type": "third",
+    "sponsor": "Ingelec",
+    "construction": {
+     "colors": "navy/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-448378"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-180879",
+   "value": {
+    "name": "Wydad Casablanca 2014/15 away",
+    "season": "2014/15",
+    "type": "away",
+    "sponsor": "Ingelec",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-180879"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-448128",
+   "value": {
+    "name": "Wydad Casablanca 2014/15 home",
+    "season": "2014/15",
+    "type": "home",
+    "manufacturer": "adidas",
+    "sponsor": "Ingelec",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-448128"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-180876",
+   "value": {
+    "name": "Wydad Casablanca 2015/16 away",
+    "season": "2015/16",
+    "type": "away",
+    "sponsor": "Ingelec",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-180876"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-180877",
+   "value": {
+    "name": "Wydad Casablanca 2015/16 home",
+    "season": "2015/16",
+    "type": "home",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-180877"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (match photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-180878",
+   "value": {
+    "name": "Wydad Casablanca 2016/17 home",
+    "season": "2016/17",
+    "type": "home",
+    "sponsor": "Ingelec",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-180878"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-250188",
+   "value": {
+    "name": "Wydad Casablanca 2018/19 away",
+    "season": "2018/19",
+    "type": "away",
+    "manufacturer": "Macron",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-250188"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-18544",
+   "value": {
+    "name": "Wydad Casablanca 2019/20 away",
+    "season": "2019/20",
+    "type": "away",
+    "manufacturer": "Macron",
+    "construction": {
+     "colors": "red/white",
+     "design": "gradient"
+    }
+   },
+   "sources": [
+    "wy-fka-s-18544"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-18543",
+   "value": {
+    "name": "Wydad Casablanca 2019/20 home",
+    "season": "2019/20",
+    "type": "home",
+    "manufacturer": "Macron",
+    "construction": {
+     "colors": "white/red",
+     "design": "gradient"
+    }
+   },
+   "sources": [
+    "wy-fka-s-18543"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-18545",
+   "value": {
+    "name": "Wydad Casablanca 2019/20 third",
+    "season": "2019/20",
+    "type": "third",
+    "manufacturer": "Macron",
+    "construction": {
+     "colors": "navy/red",
+     "design": "gradient"
+    }
+   },
+   "sources": [
+    "wy-fka-s-18545"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-18389",
+   "value": {
+    "name": "Wydad Casablanca 2020/21 away",
+    "season": "2020/21",
+    "type": "away",
+    "manufacturer": "Macron",
+    "construction": {
+     "colors": "white/gold",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-18389"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-18388",
+   "value": {
+    "name": "Wydad Casablanca 2020/21 home",
+    "season": "2020/21",
+    "type": "home",
+    "manufacturer": "Macron",
+    "construction": {
+     "colors": "red/white",
+     "design": "gradient"
+    }
+   },
+   "sources": [
+    "wy-fka-s-18388"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-18390",
+   "value": {
+    "name": "Wydad Casablanca 2020/21 third",
+    "season": "2020/21",
+    "type": "third",
+    "manufacturer": "Macron",
+    "construction": {
+     "colors": "navy/red",
+     "design": "gradient"
+    }
+   },
+   "sources": [
+    "wy-fka-s-18390"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-448383",
+   "value": {
+    "name": "Wydad Casablanca 2021/22 away",
+    "season": "2021/22",
+    "type": "away",
+    "sponsor": "Ingelec",
+    "construction": {
+     "colors": "white/red",
+     "design": "contrasting sleeves"
+    }
+   },
+   "sources": [
+    "wy-fka-s-448383"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; match photograph, close). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-79554",
+   "value": {
+    "name": "Wydad Casablanca 2021/22 home",
+    "season": "2021/22",
+    "type": "home",
+    "manufacturer": "Macron",
+    "sponsor": "Ingelec",
+    "construction": {
+     "colors": "red/white",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "wy-fka-s-79554"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-79556",
+   "value": {
+    "name": "Wydad Casablanca 2021/22 third",
+    "season": "2021/22",
+    "type": "third",
+    "sponsor": "Ingelec",
+    "construction": {
+     "colors": "white/red",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "wy-fka-s-79556"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; match photograph, close). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-184516",
+   "value": {
+    "name": "Wydad Casablanca 2023/24 away",
+    "season": "2023/24",
+    "type": "away",
+    "manufacturer": "Macron",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-184516"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-184517",
+   "value": {
+    "name": "Wydad Casablanca 2023/24 home",
+    "season": "2023/24",
+    "type": "home",
+    "manufacturer": "Macron",
+    "construction": {
+     "colors": "red/white",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "wy-fka-s-184517"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-184515",
+   "value": {
+    "name": "Wydad Casablanca 2023/24 third",
+    "season": "2023/24",
+    "type": "third",
+    "manufacturer": "Macron",
+    "construction": {
+     "colors": "blue/white",
+     "design": "chest band"
+    }
+   },
+   "sources": [
+    "wy-fka-s-184515"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-310921",
+   "value": {
+    "name": "Wydad Casablanca 2024/25 away",
+    "season": "2024/25",
+    "type": "away",
+    "manufacturer": "Macron",
+    "sponsor": "Ingelec",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-310921"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-289605",
+   "value": {
+    "name": "Wydad Casablanca 2024/25 home",
+    "season": "2024/25",
+    "type": "home",
+    "manufacturer": "Macron",
+    "sponsor": "Ingelec",
+    "construction": {
+     "colors": "red/white",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "wy-fka-s-289605"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-309290",
+   "value": {
+    "name": "Wydad Casablanca 2024/25 third",
+    "season": "2024/25",
+    "type": "third",
+    "manufacturer": "Macron",
+    "sponsor": "Ingelec",
+    "construction": {
+     "colors": "blue/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-309290"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-422938",
+   "value": {
+    "name": "Wydad Casablanca 2025/26 away",
+    "season": "2025/26",
+    "type": "away",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-422938"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (decorated red centre band, not drawn). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-528712",
+   "value": {
+    "name": "Wydad Casablanca 2026/27 away",
+    "season": "2026/27",
+    "type": "away",
+    "manufacturer": "Kappa",
+    "construction": {
+     "colors": "white/red",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "wy-fka-s-528712"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-525393",
+   "value": {
+    "name": "Wydad Casablanca 2026/27 home",
+    "season": "2026/27",
+    "type": "home",
+    "manufacturer": "Kappa",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-525393"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "wy-fka-536313",
+   "value": {
+    "name": "Wydad Casablanca 2026/27 third",
+    "season": "2026/27",
+    "type": "third",
+    "manufacturer": "Kappa",
+    "sponsor": "Ingelec",
+    "construction": {
+     "colors": "black/grey",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-fka-s-536313"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  }
+ ],
+ "skipped": [
+  {
+   "what": "Wydad Casablanca 1975/76 home (Football Kit Archive 341478)",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-1975-76-home-kit-341478/",
+   "reason": "Left out, not drawn: team photograph, shirt pattern ambiguous."
+  },
+  {
+   "what": "Wydad Casablanca 1996/97 home (Football Kit Archive 448365)",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-1996-97-home-2-kit-448365/",
+   "reason": "Left out, not drawn: crowd photograph, shirts partly hidden."
+  },
+  {
+   "what": "Wydad Casablanca 2003/04 away (Football Kit Archive 448371)",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2003-04-away-kit-448371/",
+   "reason": "Left out, not drawn: player far from the camera."
+  },
+  {
+   "what": "Wydad Casablanca 2003/04 home (Football Kit Archive 448372)",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2003-04-home-kit-448372/",
+   "reason": "Left out, not drawn: team photograph from a distance."
+  },
+  {
+   "what": "Wydad Casablanca 2014/15 third (Football Kit Archive 448366)",
+   "url": "https://www.footballkitarchive.com/wydad-athletic-club-2014-15-third-kit-448366/",
+   "reason": "Left out, not drawn: team photograph from a distance."
+  }
+ ]
+}

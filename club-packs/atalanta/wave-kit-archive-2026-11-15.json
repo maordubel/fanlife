@@ -1,0 +1,2931 @@
+{
+ "schemaVersion": 1,
+ "clubId": "atalanta",
+ "contentLocale": "en",
+ "note": "Kit archive completion (15.11.2026): every outfield kit Football Kit Archive shows for a season and type the pack had no kit for, first variant only, colours and design read by eye from its photograph (INK colour words of scripts/kits/build-pack-kit-svgs.ts). Unclear photographs are listed in skipped, not drawn.",
+ "sources": [
+  {
+   "id": "at-fka-s-75888",
+   "title": "Atalanta 1963/64 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1963-64-home-kit-75888/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-533378",
+   "title": "Atalanta 1972/73 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1972-73-away-kit-533378/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-533377",
+   "title": "Atalanta 1972/73 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1972-73-home-kit-533377/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-205928",
+   "title": "Atalanta 1976/77 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1976-77-away-kit-205928/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-205927",
+   "title": "Atalanta 1977/78 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1977-78-away-kit-205927/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-205926",
+   "title": "Atalanta 1978/79 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1978-79-away-kit-205926/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-484939",
+   "title": "Atalanta 1981/82 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1981-82-home-kit-484939/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-72558",
+   "title": "Atalanta 1982/83 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1982-83-home-kit-72558/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-205929",
+   "title": "Atalanta 1982/83 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1982-83-third-kit-205929/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-440867",
+   "title": "Atalanta 1983/84 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1983-84-away-kit-440867/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-72559",
+   "title": "Atalanta 1983/84 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1983-84-home-kit-72559/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-155289",
+   "title": "Atalanta 1984/85 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1984-85-away-kit-155289/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-43788",
+   "title": "Atalanta 1985/86 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1985-86-away-kit-43788/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-72561",
+   "title": "Atalanta 1985/86 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1985-86-home-kit-72561/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-216887",
+   "title": "Atalanta 1986/87 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1986-87-away-kit-216887/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-72562",
+   "title": "Atalanta 1986/87 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1986-87-home-kit-72562/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-72563",
+   "title": "Atalanta 1987/88 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1987-88-away-kit-72563/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-72564",
+   "title": "Atalanta 1987/88 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1987-88-home-kit-72564/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-72565",
+   "title": "Atalanta 1988/89 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1988-89-away-kit-72565/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-72566",
+   "title": "Atalanta 1988/89 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1988-89-home-kit-72566/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-72578",
+   "title": "Atalanta 1989/90 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1989-90-away-kit-72578/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-8108",
+   "title": "Atalanta 1990/91 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1990-91-home-kit-8108/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-27132",
+   "title": "Atalanta 1991/92 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1991-92-away-kit-27132/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-2836",
+   "title": "Atalanta 1991/92 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1991-92-home-kit-2836/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-27131",
+   "title": "Atalanta 1992/93 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1992-93-away-kit-27131/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-40594",
+   "title": "Atalanta 1997/98 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1997-98-home-kit-40594/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-38717",
+   "title": "Atalanta 1997/98 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1997-98-third-kit-38717/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-40592",
+   "title": "Atalanta 1998/99 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1998-99-away-kit-40592/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-20082",
+   "title": "Atalanta 1998/99 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1998-99-home-kit-20082/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-27139",
+   "title": "Atalanta 1999/00 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1999-00-away-kit-27139/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-20081",
+   "title": "Atalanta 1999/00 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1999-00-home-kit-20081/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-20080",
+   "title": "Atalanta 2000/01 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2000-01-away-kit-20080/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-27140",
+   "title": "Atalanta 2000/01 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2000-01-home-kit-27140/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-20084",
+   "title": "Atalanta 2000/01 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2000-01-third-kit-20084/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-27141",
+   "title": "Atalanta 2001/02 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2001-02-away-kit-27141/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-27142",
+   "title": "Atalanta 2001/02 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2001-02-home-kit-27142/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-131797",
+   "title": "Atalanta 2001/02 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2001-02-third-kit-131797/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-38326",
+   "title": "Atalanta 2002/03 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2002-03-away-kit-38326/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-38390",
+   "title": "Atalanta 2002/03 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2002-03-home-kit-38390/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-91681",
+   "title": "Atalanta 2003/04 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2003-04-away-kit-91681/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-27143",
+   "title": "Atalanta 2003/04 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2003-04-home-kit-27143/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-27145",
+   "title": "Atalanta 2004/05 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2004-05-away-kit-27145/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-27146",
+   "title": "Atalanta 2004/05 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2004-05-home-kit-27146/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-67853",
+   "title": "Atalanta 2005/06 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2005-06-away-kit-67853/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-27147",
+   "title": "Atalanta 2005/06 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2005-06-home-kit-27147/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-38953",
+   "title": "Atalanta 2006/07 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2006-07-away-kit-38953/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-27148",
+   "title": "Atalanta 2006/07 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2006-07-home-kit-27148/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-38388",
+   "title": "Atalanta 2007/08 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2007-08-away-kit-38388/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-27149",
+   "title": "Atalanta 2007/08 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2007-08-home-kit-27149/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-234054",
+   "title": "Atalanta 2007/08 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2007-08-third-kit-234054/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-27150",
+   "title": "Atalanta 2008/09 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2008-09-away-kit-27150/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-27151",
+   "title": "Atalanta 2008/09 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2008-09-home-kit-27151/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-27152",
+   "title": "Atalanta 2009/10 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2009-10-away-kit-27152/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-2837",
+   "title": "Atalanta 1992/93 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1992-93-home-kit-2837/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-40597",
+   "title": "Atalanta 1993/94 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1993-94-home-kit-40597/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-27134",
+   "title": "Atalanta 1994/95 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1994-95-away-kit-27134/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-27135",
+   "title": "Atalanta 1995/96 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1995-96-away-kit-27135/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-27136",
+   "title": "Atalanta 1995/96 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1995-96-home-kit-27136/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-40595",
+   "title": "Atalanta 1996/97 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1996-97-away-kit-40595/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-27138",
+   "title": "Atalanta 1997/98 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1997-98-away-kit-27138/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-37797",
+   "title": "Atalanta 2009/10 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2009-10-home-kit-37797/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-426956",
+   "title": "Atalanta 2009/10 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2009-10-third-kit-426956/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-67852",
+   "title": "Atalanta 2010/11 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2010-11-away-kit-67852/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-38284",
+   "title": "Atalanta 2010/11 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2010-11-home-kit-38284/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-2860",
+   "title": "Atalanta 2011/12 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2011-12-away-kit-2860/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-2859",
+   "title": "Atalanta 2011/12 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2011-12-home-kit-2859/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-2857",
+   "title": "Atalanta 2012/13 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2012-13-away-kit-2857/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-2856",
+   "title": "Atalanta 2012/13 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2012-13-home-kit-2856/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-2858",
+   "title": "Atalanta 2012/13 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2012-13-third-kit-2858/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-2854",
+   "title": "Atalanta 2013/14 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2013-14-away-kit-2854/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-2853",
+   "title": "Atalanta 2013/14 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2013-14-home-kit-2853/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-2855",
+   "title": "Atalanta 2013/14 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2013-14-third-kit-2855/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-2851",
+   "title": "Atalanta 2014/15 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2014-15-away-kit-2851/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-2847",
+   "title": "Atalanta 2014/15 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2014-15-home-kit-2847/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-2852",
+   "title": "Atalanta 2014/15 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2014-15-third-kit-2852/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-2849",
+   "title": "Atalanta 2015/16 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2015-16-away-kit-2849/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-2848",
+   "title": "Atalanta 2015/16 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2015-16-home-kit-2848/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-2850",
+   "title": "Atalanta 2015/16 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2015-16-third-kit-2850/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-2846",
+   "title": "Atalanta 2016/17 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2016-17-away-kit-2846/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-2845",
+   "title": "Atalanta 2016/17 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2016-17-home-kit-2845/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-2842",
+   "title": "Atalanta 2017/18 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2017-18-away-kit-2842/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-2841",
+   "title": "Atalanta 2017/18 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2017-18-home-kit-2841/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-2843",
+   "title": "Atalanta 2017/18 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2017-18-third-kit-2843/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-2840",
+   "title": "Atalanta 2018/19 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2018-19-away-kit-2840/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-2838",
+   "title": "Atalanta 2018/19 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2018-19-home-kit-2838/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-2839",
+   "title": "Atalanta 2018/19 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2018-19-third-kit-2839/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-fka-s-8954",
+   "title": "Atalanta 2019/20 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-2019-20-third-kit-8954/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  }
+ ],
+ "kits": [
+  {
+   "id": "at-fka-75888",
+   "value": {
+    "name": "Atalanta 1963/64 home",
+    "season": "1963/64",
+    "type": "home",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-75888"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-533378",
+   "value": {
+    "name": "Atalanta 1972/73 away",
+    "season": "1972/73",
+    "type": "away",
+    "construction": {
+     "colors": "white/black",
+     "design": "chest band"
+    }
+   },
+   "sources": [
+    "at-fka-s-533378"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (magazine photograph, close). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-533377",
+   "value": {
+    "name": "Atalanta 1972/73 home",
+    "season": "1972/73",
+    "type": "home",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-533377"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (magazine photograph, close). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-205928",
+   "value": {
+    "name": "Atalanta 1976/77 away",
+    "season": "1976/77",
+    "type": "away",
+    "construction": {
+     "colors": "white/blue",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "at-fka-s-205928"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-205927",
+   "value": {
+    "name": "Atalanta 1977/78 away",
+    "season": "1977/78",
+    "type": "away",
+    "construction": {
+     "colors": "white/navy",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "at-fka-s-205927"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-205926",
+   "value": {
+    "name": "Atalanta 1978/79 away",
+    "season": "1978/79",
+    "type": "away",
+    "construction": {
+     "colors": "white/navy",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "at-fka-s-205926"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-484939",
+   "value": {
+    "name": "Atalanta 1981/82 home",
+    "season": "1981/82",
+    "type": "home",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-484939"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (team photograph, close). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-72558",
+   "value": {
+    "name": "Atalanta 1982/83 home",
+    "season": "1982/83",
+    "type": "home",
+    "sponsor": "Sit-in",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-72558"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-205929",
+   "value": {
+    "name": "Atalanta 1982/83 third",
+    "season": "1982/83",
+    "type": "third",
+    "sponsor": "Sit-in",
+    "construction": {
+     "colors": "orange/yellow",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "at-fka-s-205929"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-440867",
+   "value": {
+    "name": "Atalanta 1983/84 away",
+    "season": "1983/84",
+    "type": "away",
+    "sponsor": "Sit-in",
+    "construction": {
+     "colors": "white/black",
+     "design": "pinstripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-440867"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-72559",
+   "value": {
+    "name": "Atalanta 1983/84 home",
+    "season": "1983/84",
+    "type": "home",
+    "sponsor": "Sit-in",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-72559"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-155289",
+   "value": {
+    "name": "Atalanta 1984/85 away",
+    "season": "1984/85",
+    "type": "away",
+    "sponsor": "Sit-in",
+    "construction": {
+     "colors": "white/navy",
+     "design": "pinstripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-155289"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-43788",
+   "value": {
+    "name": "Atalanta 1985/86 away",
+    "season": "1985/86",
+    "type": "away",
+    "sponsor": "Sit-in",
+    "construction": {
+     "colors": "white/black",
+     "design": "pinstripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-43788"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-72561",
+   "value": {
+    "name": "Atalanta 1985/86 home",
+    "season": "1985/86",
+    "type": "home",
+    "sponsor": "Sit-in",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-72561"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-216887",
+   "value": {
+    "name": "Atalanta 1986/87 away",
+    "season": "1986/87",
+    "type": "away",
+    "sponsor": "Sit-in",
+    "construction": {
+     "colors": "white/black",
+     "design": "pinstripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-216887"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-72562",
+   "value": {
+    "name": "Atalanta 1986/87 home",
+    "season": "1986/87",
+    "type": "home",
+    "sponsor": "Sit-in",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-72562"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-72563",
+   "value": {
+    "name": "Atalanta 1987/88 away",
+    "season": "1987/88",
+    "type": "away",
+    "sponsor": "Sit-in",
+    "construction": {
+     "colors": "white/black",
+     "design": "pinstripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-72563"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-72564",
+   "value": {
+    "name": "Atalanta 1987/88 home",
+    "season": "1987/88",
+    "type": "home",
+    "sponsor": "Sit-in",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-72564"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-72565",
+   "value": {
+    "name": "Atalanta 1988/89 away",
+    "season": "1988/89",
+    "type": "away",
+    "sponsor": "Sit-in",
+    "construction": {
+     "colors": "white/black",
+     "design": "pinstripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-72565"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-72566",
+   "value": {
+    "name": "Atalanta 1988/89 home",
+    "season": "1988/89",
+    "type": "home",
+    "sponsor": "Sit-in",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-72566"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-72578",
+   "value": {
+    "name": "Atalanta 1989/90 away",
+    "season": "1989/90",
+    "type": "away",
+    "sponsor": "Tamoil",
+    "construction": {
+     "colors": "white/blue",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "at-fka-s-72578"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-8108",
+   "value": {
+    "name": "Atalanta 1990/91 home",
+    "season": "1990/91",
+    "type": "home",
+    "sponsor": "Tamoil",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-8108"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-27132",
+   "value": {
+    "name": "Atalanta 1991/92 away",
+    "season": "1991/92",
+    "type": "away",
+    "sponsor": "Tamoil",
+    "construction": {
+     "colors": "white/blue",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "at-fka-s-27132"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-2836",
+   "value": {
+    "name": "Atalanta 1991/92 home",
+    "season": "1991/92",
+    "type": "home",
+    "sponsor": "Tamoil",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-2836"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-27131",
+   "value": {
+    "name": "Atalanta 1992/93 away",
+    "season": "1992/93",
+    "type": "away",
+    "sponsor": "Tamoil",
+    "construction": {
+     "colors": "white/blue",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "at-fka-s-27131"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-40594",
+   "value": {
+    "name": "Atalanta 1997/98 home",
+    "season": "1997/98",
+    "type": "home",
+    "manufacturer": "Asics",
+    "sponsor": "Somet",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-40594"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-38717",
+   "value": {
+    "name": "Atalanta 1997/98 third",
+    "season": "1997/98",
+    "type": "third",
+    "manufacturer": "Asics",
+    "sponsor": "Somet",
+    "construction": {
+     "colors": "yellow/black",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "at-fka-s-38717"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-40592",
+   "value": {
+    "name": "Atalanta 1998/99 away",
+    "season": "1998/99",
+    "type": "away",
+    "manufacturer": "Asics",
+    "sponsor": "Somet",
+    "construction": {
+     "colors": "white/blue",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "at-fka-s-40592"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-20082",
+   "value": {
+    "name": "Atalanta 1998/99 home",
+    "season": "1998/99",
+    "type": "home",
+    "manufacturer": "Asics",
+    "sponsor": "Somet",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-20082"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-27139",
+   "value": {
+    "name": "Atalanta 1999/00 away",
+    "season": "1999/00",
+    "type": "away",
+    "manufacturer": "Asics",
+    "sponsor": "Somet",
+    "construction": {
+     "colors": "white/blue",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "at-fka-s-27139"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-20081",
+   "value": {
+    "name": "Atalanta 1999/00 home",
+    "season": "1999/00",
+    "type": "home",
+    "manufacturer": "Asics",
+    "sponsor": "Somet",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-20081"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-20080",
+   "value": {
+    "name": "Atalanta 2000/01 away",
+    "season": "2000/01",
+    "type": "away",
+    "manufacturer": "Asics",
+    "sponsor": "Ortobell",
+    "construction": {
+     "colors": "white/blue",
+     "design": "contrasting sleeves"
+    }
+   },
+   "sources": [
+    "at-fka-s-20080"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-27140",
+   "value": {
+    "name": "Atalanta 2000/01 home",
+    "season": "2000/01",
+    "type": "home",
+    "manufacturer": "Asics",
+    "sponsor": "Ortobell",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-27140"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-20084",
+   "value": {
+    "name": "Atalanta 2000/01 third",
+    "season": "2000/01",
+    "type": "third",
+    "manufacturer": "Asics",
+    "sponsor": "Ortobell",
+    "construction": {
+     "colors": "yellow/black",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "at-fka-s-20084"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-27141",
+   "value": {
+    "name": "Atalanta 2001/02 away",
+    "season": "2001/02",
+    "type": "away",
+    "manufacturer": "Asics",
+    "sponsor": "Ortobell",
+    "construction": {
+     "colors": "white/blue",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "at-fka-s-27141"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-27142",
+   "value": {
+    "name": "Atalanta 2001/02 home",
+    "season": "2001/02",
+    "type": "home",
+    "manufacturer": "Asics",
+    "sponsor": "Ortobell",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-27142"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-131797",
+   "value": {
+    "name": "Atalanta 2001/02 third",
+    "season": "2001/02",
+    "type": "third",
+    "manufacturer": "Asics",
+    "sponsor": "Ortobell",
+    "construction": {
+     "colors": "sky blue/black",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "at-fka-s-131797"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; black centre stripe, not drawn). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-38326",
+   "value": {
+    "name": "Atalanta 2002/03 away",
+    "season": "2002/03",
+    "type": "away",
+    "manufacturer": "Asics",
+    "sponsor": "Promatech",
+    "construction": {
+     "colors": "white/blue",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "at-fka-s-38326"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-38390",
+   "value": {
+    "name": "Atalanta 2002/03 home",
+    "season": "2002/03",
+    "type": "home",
+    "manufacturer": "Asics",
+    "sponsor": "Promatech",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-38390"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-91681",
+   "value": {
+    "name": "Atalanta 2003/04 away",
+    "season": "2003/04",
+    "type": "away",
+    "manufacturer": "Asics",
+    "sponsor": "Promatech",
+    "construction": {
+     "colors": "white/blue",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "at-fka-s-91681"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-27143",
+   "value": {
+    "name": "Atalanta 2003/04 home",
+    "season": "2003/04",
+    "type": "home",
+    "manufacturer": "Asics",
+    "sponsor": "Promatech",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-27143"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-27145",
+   "value": {
+    "name": "Atalanta 2004/05 away",
+    "season": "2004/05",
+    "type": "away",
+    "sponsor": "Promatech",
+    "construction": {
+     "colors": "white/blue",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "at-fka-s-27145"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-27146",
+   "value": {
+    "name": "Atalanta 2004/05 home",
+    "season": "2004/05",
+    "type": "home",
+    "sponsor": "Promatech",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-27146"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-67853",
+   "value": {
+    "name": "Atalanta 2005/06 away",
+    "season": "2005/06",
+    "type": "away",
+    "manufacturer": "Asics",
+    "sponsor": "Sit-in Sport",
+    "construction": {
+     "colors": "white/blue",
+     "design": "contrasting sleeves"
+    }
+   },
+   "sources": [
+    "at-fka-s-67853"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-27147",
+   "value": {
+    "name": "Atalanta 2005/06 home",
+    "season": "2005/06",
+    "type": "home",
+    "manufacturer": "Asics",
+    "sponsor": "Sit-in Sport",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-27147"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-38953",
+   "value": {
+    "name": "Atalanta 2006/07 away",
+    "season": "2006/07",
+    "type": "away",
+    "sponsor": "Sit-in Sport",
+    "construction": {
+     "colors": "white/blue",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "at-fka-s-38953"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-27148",
+   "value": {
+    "name": "Atalanta 2006/07 home",
+    "season": "2006/07",
+    "type": "home",
+    "manufacturer": "Asics",
+    "sponsor": "Sit-in Sport",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-27148"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-38388",
+   "value": {
+    "name": "Atalanta 2007/08 away",
+    "season": "2007/08",
+    "type": "away",
+    "manufacturer": "Errea",
+    "sponsor": "Sit-in Sport",
+    "construction": {
+     "colors": "white/blue",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "at-fka-s-38388"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-27149",
+   "value": {
+    "name": "Atalanta 2007/08 home",
+    "season": "2007/08",
+    "type": "home",
+    "manufacturer": "Errea",
+    "sponsor": "Sit-in Sport",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-27149"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-234054",
+   "value": {
+    "name": "Atalanta 2007/08 third",
+    "season": "2007/08",
+    "type": "third",
+    "manufacturer": "Errea",
+    "sponsor": "Sit-in Sport",
+    "construction": {
+     "colors": "black/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "at-fka-s-234054"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-27150",
+   "value": {
+    "name": "Atalanta 2008/09 away",
+    "season": "2008/09",
+    "type": "away",
+    "manufacturer": "Errea",
+    "sponsor": "Sit-in Sport",
+    "construction": {
+     "colors": "white/blue",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "at-fka-s-27150"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-27151",
+   "value": {
+    "name": "Atalanta 2008/09 home",
+    "season": "2008/09",
+    "type": "home",
+    "manufacturer": "Errea",
+    "sponsor": "Sit-in Sport",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-27151"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-27152",
+   "value": {
+    "name": "Atalanta 2009/10 away",
+    "season": "2009/10",
+    "type": "away",
+    "manufacturer": "Errea",
+    "sponsor": "Sit-in Sport",
+    "construction": {
+     "colors": "white/black",
+     "design": "pinstripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-27152"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-2837",
+   "value": {
+    "name": "Atalanta 1992/93 home",
+    "season": "1992/93",
+    "type": "home",
+    "manufacturer": "Lotto",
+    "sponsor": "Tamoil",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-2837"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-40597",
+   "value": {
+    "name": "Atalanta 1993/94 home",
+    "season": "1993/94",
+    "type": "home",
+    "manufacturer": "Lotto",
+    "sponsor": "Tamoil",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-40597"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-27134",
+   "value": {
+    "name": "Atalanta 1994/95 away",
+    "season": "1994/95",
+    "type": "away",
+    "manufacturer": "Lotto",
+    "sponsor": "Somet",
+    "construction": {
+     "colors": "white/blue",
+     "design": "chest band"
+    }
+   },
+   "sources": [
+    "at-fka-s-27134"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-27135",
+   "value": {
+    "name": "Atalanta 1995/96 away",
+    "season": "1995/96",
+    "type": "away",
+    "manufacturer": "Asics",
+    "sponsor": "Somet",
+    "construction": {
+     "colors": "white/blue",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "at-fka-s-27135"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-27136",
+   "value": {
+    "name": "Atalanta 1995/96 home",
+    "season": "1995/96",
+    "type": "home",
+    "manufacturer": "Asics",
+    "sponsor": "Somet",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-27136"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-40595",
+   "value": {
+    "name": "Atalanta 1996/97 away",
+    "season": "1996/97",
+    "type": "away",
+    "manufacturer": "Asics",
+    "sponsor": "Somet",
+    "construction": {
+     "colors": "white/blue",
+     "design": "gradient"
+    }
+   },
+   "sources": [
+    "at-fka-s-40595"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-27138",
+   "value": {
+    "name": "Atalanta 1997/98 away",
+    "season": "1997/98",
+    "type": "away",
+    "manufacturer": "Asics",
+    "sponsor": "Somet",
+    "construction": {
+     "colors": "white/blue",
+     "design": "gradient"
+    }
+   },
+   "sources": [
+    "at-fka-s-27138"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-37797",
+   "value": {
+    "name": "Atalanta 2009/10 home",
+    "season": "2009/10",
+    "type": "home",
+    "manufacturer": "Errea",
+    "sponsor": "Sit-in Sport",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-37797"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-426956",
+   "value": {
+    "name": "Atalanta 2009/10 third",
+    "season": "2009/10",
+    "type": "third",
+    "manufacturer": "Errea",
+    "sponsor": "Sit-in Sport",
+    "construction": {
+     "colors": "white/black",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "at-fka-s-426956"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-67852",
+   "value": {
+    "name": "Atalanta 2010/11 away",
+    "season": "2010/11",
+    "type": "away",
+    "manufacturer": "Errea",
+    "construction": {
+     "colors": "white/blue",
+     "design": "sash"
+    }
+   },
+   "sources": [
+    "at-fka-s-67852"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-38284",
+   "value": {
+    "name": "Atalanta 2010/11 home",
+    "season": "2010/11",
+    "type": "home",
+    "manufacturer": "Errea",
+    "sponsor": "AXA",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-38284"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-2860",
+   "value": {
+    "name": "Atalanta 2011/12 away",
+    "season": "2011/12",
+    "type": "away",
+    "manufacturer": "Errea",
+    "sponsor": "AXA",
+    "construction": {
+     "colors": "white/blue",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "at-fka-s-2860"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-2859",
+   "value": {
+    "name": "Atalanta 2011/12 home",
+    "season": "2011/12",
+    "type": "home",
+    "manufacturer": "Errea",
+    "sponsor": "AXA",
+    "construction": {
+     "colors": "blue/black",
+     "design": "half-and-half"
+    }
+   },
+   "sources": [
+    "at-fka-s-2859"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-2857",
+   "value": {
+    "name": "Atalanta 2012/13 away",
+    "season": "2012/13",
+    "type": "away",
+    "manufacturer": "Errea",
+    "sponsor": "AXA",
+    "construction": {
+     "colors": "white/blue",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "at-fka-s-2857"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-2856",
+   "value": {
+    "name": "Atalanta 2012/13 home",
+    "season": "2012/13",
+    "type": "home",
+    "manufacturer": "Errea",
+    "sponsor": "AXA",
+    "construction": {
+     "colors": "blue/black",
+     "design": "half-and-half"
+    }
+   },
+   "sources": [
+    "at-fka-s-2856"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-2858",
+   "value": {
+    "name": "Atalanta 2012/13 third",
+    "season": "2012/13",
+    "type": "third",
+    "sponsor": "AXA",
+    "construction": {
+     "colors": "white/blue",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "at-fka-s-2858"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; shop mannequin photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-2854",
+   "value": {
+    "name": "Atalanta 2013/14 away",
+    "season": "2013/14",
+    "type": "away",
+    "sponsor": "AXA",
+    "construction": {
+     "colors": "yellow/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-2854"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-2853",
+   "value": {
+    "name": "Atalanta 2013/14 home",
+    "season": "2013/14",
+    "type": "home",
+    "sponsor": "AXA",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-2853"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-2855",
+   "value": {
+    "name": "Atalanta 2013/14 third",
+    "season": "2013/14",
+    "type": "third",
+    "sponsor": "AXA",
+    "construction": {
+     "colors": "white/black",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "at-fka-s-2855"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-2851",
+   "value": {
+    "name": "Atalanta 2014/15 away",
+    "season": "2014/15",
+    "type": "away",
+    "manufacturer": "Nike",
+    "sponsor": "SuisseGas",
+    "construction": {
+     "colors": "white/black",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "at-fka-s-2851"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-2847",
+   "value": {
+    "name": "Atalanta 2014/15 home",
+    "season": "2014/15",
+    "type": "home",
+    "manufacturer": "Nike",
+    "sponsor": "SuisseGas",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-2847"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-2852",
+   "value": {
+    "name": "Atalanta 2014/15 third",
+    "season": "2014/15",
+    "type": "third",
+    "manufacturer": "Nike",
+    "sponsor": "SuisseGas",
+    "construction": {
+     "colors": "orange/black",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "at-fka-s-2852"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-2849",
+   "value": {
+    "name": "Atalanta 2015/16 away",
+    "season": "2015/16",
+    "type": "away",
+    "manufacturer": "Nike",
+    "sponsor": "SuisseGas",
+    "construction": {
+     "colors": "white/black",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "at-fka-s-2849"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-2848",
+   "value": {
+    "name": "Atalanta 2015/16 home",
+    "season": "2015/16",
+    "type": "home",
+    "manufacturer": "Nike",
+    "sponsor": "SuisseGas",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-2848"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-2850",
+   "value": {
+    "name": "Atalanta 2015/16 third",
+    "season": "2015/16",
+    "type": "third",
+    "manufacturer": "Nike",
+    "sponsor": "SuisseGas",
+    "construction": {
+     "colors": "lime",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "at-fka-s-2850"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-2846",
+   "value": {
+    "name": "Atalanta 2016/17 away",
+    "season": "2016/17",
+    "type": "away",
+    "sponsor": "TWS",
+    "construction": {
+     "colors": "white/blue",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "at-fka-s-2846"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-2845",
+   "value": {
+    "name": "Atalanta 2016/17 home",
+    "season": "2016/17",
+    "type": "home",
+    "sponsor": "TWS",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-2845"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-2842",
+   "value": {
+    "name": "Atalanta 2017/18 away",
+    "season": "2017/18",
+    "type": "away",
+    "sponsor": "Veratour",
+    "construction": {
+     "colors": "white/blue",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "at-fka-s-2842"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-2841",
+   "value": {
+    "name": "Atalanta 2017/18 home",
+    "season": "2017/18",
+    "type": "home",
+    "manufacturer": "Joma",
+    "sponsor": "Veratour",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-2841"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-2843",
+   "value": {
+    "name": "Atalanta 2017/18 third",
+    "season": "2017/18",
+    "type": "third",
+    "manufacturer": "Joma",
+    "construction": {
+     "colors": "green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "at-fka-s-2843"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-2840",
+   "value": {
+    "name": "Atalanta 2018/19 away",
+    "season": "2018/19",
+    "type": "away",
+    "manufacturer": "Joma",
+    "sponsor": "Radici Group",
+    "construction": {
+     "colors": "white/black",
+     "design": "chest band"
+    }
+   },
+   "sources": [
+    "at-fka-s-2840"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-2838",
+   "value": {
+    "name": "Atalanta 2018/19 home",
+    "season": "2018/19",
+    "type": "home",
+    "manufacturer": "Joma",
+    "sponsor": "Radici Group",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-fka-s-2838"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-2839",
+   "value": {
+    "name": "Atalanta 2018/19 third",
+    "season": "2018/19",
+    "type": "third",
+    "manufacturer": "Joma",
+    "sponsor": "Radici Group",
+    "construction": {
+     "colors": "sky blue/navy",
+     "design": "gradient"
+    }
+   },
+   "sources": [
+    "at-fka-s-2839"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "at-fka-8954",
+   "value": {
+    "name": "Atalanta 2019/20 third",
+    "season": "2019/20",
+    "type": "third",
+    "manufacturer": "Joma",
+    "sponsor": "Radici Group",
+    "construction": {
+     "colors": "green/black",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "at-fka-s-8954"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  }
+ ],
+ "skipped": [
+  {
+   "what": "Atalanta 1972/73 third (Football Kit Archive 533376)",
+   "url": "https://www.footballkitarchive.com/atalanta-bc-1972-73-third-kit-533376/",
+   "reason": "Left out, not drawn: faded magazine print, colour not reliable."
+  }
+ ]
+}

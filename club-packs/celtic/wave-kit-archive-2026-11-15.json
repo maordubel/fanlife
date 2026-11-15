@@ -1,0 +1,1855 @@
+{
+ "schemaVersion": 1,
+ "clubId": "celtic",
+ "contentLocale": "en",
+ "note": "Kit archive completion (15.11.2026): every outfield kit Football Kit Archive shows for a season and type the pack had no kit for, first variant only, colours and design read by eye from its photograph (INK colour words of scripts/kits/build-pack-kit-svgs.ts). Unclear photographs are listed in skipped, not drawn.",
+ "sources": [
+  {
+   "id": "ce-fka-s-117719",
+   "title": "Celtic 1910/11 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1910-11-home-kit-117719/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-187796",
+   "title": "Celtic 1925/26 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1925-26-home-kit-187796/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-56420",
+   "title": "Celtic 1932–36 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1932-36-home-kit-56420/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-8693",
+   "title": "Celtic 1946/47 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1946-47-home-kit-8693/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-8694",
+   "title": "Celtic 1957/58 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1957-58-home-kit-8694/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-347565",
+   "title": "Celtic 1960 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1960-home-kit-347565/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-226377",
+   "title": "Celtic 1967/68 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1967-68-home-kit-226377/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-8695",
+   "title": "Celtic 1969/70 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1969-70-home-kit-8695/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-226372",
+   "title": "Celtic 1970/71 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1970-71-home-kit-226372/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-187795",
+   "title": "Celtic 1972/73 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1972-73-home-kit-187795/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-187794",
+   "title": "Celtic 1973/74 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1973-74-home-kit-187794/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-8696",
+   "title": "Celtic 1974/75 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1974-75-home-kit-8696/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-187793",
+   "title": "Celtic 1975/76 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1975-76-home-kit-187793/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-8627",
+   "title": "Celtic 1978/79 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1978-79-away-kit-8627/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-8697",
+   "title": "Celtic 1978/79 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1978-79-home-kit-8697/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-78505",
+   "title": "Celtic 1979/80 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1979-80-home-kit-78505/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-8678",
+   "title": "Celtic 1980/81 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1980-81-home-kit-8678/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-78506",
+   "title": "Celtic 1981/82 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1981-82-home-kit-78506/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-187792",
+   "title": "Celtic 1982/83 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1982-83-away-kit-187792/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-187791",
+   "title": "Celtic 1982/83 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1982-83-home-kit-187791/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-187790",
+   "title": "Celtic 1982/83 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1982-83-third-kit-187790/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-8699",
+   "title": "Celtic 1983/84 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1983-84-away-kit-8699/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-8621",
+   "title": "Celtic 1983/84 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1983-84-home-kit-8621/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-8698",
+   "title": "Celtic 1983/84 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1983-84-third-kit-8698/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-78507",
+   "title": "Celtic 1984/85 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1984-85-away-kit-78507/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-140653",
+   "title": "Celtic 1984/85 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1984-85-home-kit-140653/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-451511",
+   "title": "Celtic 1984/85 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1984-85-third-kit-451511/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-78508",
+   "title": "Celtic 1985/86 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1985-86-away-kit-78508/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-187789",
+   "title": "Celtic 1985/86 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1985-86-home-kit-187789/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-8701",
+   "title": "Celtic 1986/87 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1986-87-away-kit-8701/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-8700",
+   "title": "Celtic 1986/87 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1986-87-home-kit-8700/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-78510",
+   "title": "Celtic 1987/88 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1987-88-away-kit-78510/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-187788",
+   "title": "Celtic 1988/89 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1988-89-away-kit-187788/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-78509",
+   "title": "Celtic 1988/89 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1988-89-home-kit-78509/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-8705",
+   "title": "Celtic 1990/91 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1990-91-away-kit-8705/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-8615",
+   "title": "Celtic 1990/91 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1990-91-home-kit-8615/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-8656",
+   "title": "Celtic 1992/93 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1992-93-home-kit-8656/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-8709",
+   "title": "Celtic 1993/94 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1993-94-away-kit-8709/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-8711",
+   "title": "Celtic 1994/95 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1994-95-home-kit-8711/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-8629",
+   "title": "Celtic 1995/96 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1995-96-away-kit-8629/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-8652",
+   "title": "Celtic 1996/97 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1996-97-home-kit-8652/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-89858",
+   "title": "Celtic 1997/98 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1997-98-away-kit-89858/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-8718",
+   "title": "Celtic 1998/99 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1998-99-home-kit-8718/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-8723",
+   "title": "Celtic 2001/02 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-2001-02-third-kit-8723/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-8690",
+   "title": "Celtic 2002/03 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-2002-03-home-kit-8690/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-351019",
+   "title": "Celtic 2004/05 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-2004-05-third-kit-351019/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-8654",
+   "title": "Celtic 2005/06 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-2005-06-third-kit-8654/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-328989",
+   "title": "Celtic 2007/08 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-2007-08-third-kit-328989/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-6541",
+   "title": "Celtic 2011/12 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-2011-12-home-kit-6541/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-8746",
+   "title": "Celtic 2012/13 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-2012-13-third-kit-8746/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-8637",
+   "title": "Celtic 2014/15 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-2014-15-home-kit-8637/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-450593",
+   "title": "Celtic 2026/27 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-2026-27-away-kit-450593/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-450594",
+   "title": "Celtic 2026/27 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-2026-27-home-kit-450594/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ce-fka-s-487283",
+   "title": "Celtic 2026/27 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/celtic-fc-2026-27-third-kit-487283/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  }
+ ],
+ "kits": [
+  {
+   "id": "ce-fka-117719",
+   "value": {
+    "name": "Celtic 1910/11 home",
+    "season": "1910/11",
+    "type": "home",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-117719"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (framed shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-187796",
+   "value": {
+    "name": "Celtic 1925/26 home",
+    "season": "1925/26",
+    "type": "home",
+    "construction": {
+     "colors": "white/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ce-fka-s-187796"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (white shirt with green shamrock badge). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-56420",
+   "value": {
+    "name": "Celtic 1932–36 home",
+    "season": "1932–36",
+    "type": "home",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-56420"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (coloured illustration of a player). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-8693",
+   "value": {
+    "name": "Celtic 1946/47 home",
+    "season": "1946/47",
+    "type": "home",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-8693"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-8694",
+   "value": {
+    "name": "Celtic 1957/58 home",
+    "season": "1957/58",
+    "type": "home",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-8694"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-347565",
+   "value": {
+    "name": "Celtic 1960 home",
+    "season": "1960",
+    "type": "home",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-347565"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-226377",
+   "value": {
+    "name": "Celtic 1967/68 home",
+    "season": "1967/68",
+    "type": "home",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-226377"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (colour team photograph, close). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-8695",
+   "value": {
+    "name": "Celtic 1969/70 home",
+    "season": "1969/70",
+    "type": "home",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-8695"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-226372",
+   "value": {
+    "name": "Celtic 1970/71 home",
+    "season": "1970/71",
+    "type": "home",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-226372"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (colour match photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-187795",
+   "value": {
+    "name": "Celtic 1972/73 home",
+    "season": "1972/73",
+    "type": "home",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-187795"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-187794",
+   "value": {
+    "name": "Celtic 1973/74 home",
+    "season": "1973/74",
+    "type": "home",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-187794"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-8696",
+   "value": {
+    "name": "Celtic 1974/75 home",
+    "season": "1974/75",
+    "type": "home",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-8696"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-187793",
+   "value": {
+    "name": "Celtic 1975/76 home",
+    "season": "1975/76",
+    "type": "home",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-187793"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-8627",
+   "value": {
+    "name": "Celtic 1978/79 away",
+    "season": "1978/79",
+    "type": "away",
+    "construction": {
+     "colors": "green/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ce-fka-s-8627"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-8697",
+   "value": {
+    "name": "Celtic 1978/79 home",
+    "season": "1978/79",
+    "type": "home",
+    "manufacturer": "Umbro",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-8697"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-78505",
+   "value": {
+    "name": "Celtic 1979/80 home",
+    "season": "1979/80",
+    "type": "home",
+    "manufacturer": "Umbro",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-78505"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-8678",
+   "value": {
+    "name": "Celtic 1980/81 home",
+    "season": "1980/81",
+    "type": "home",
+    "manufacturer": "Umbro",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-8678"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-78506",
+   "value": {
+    "name": "Celtic 1981/82 home",
+    "season": "1981/82",
+    "type": "home",
+    "manufacturer": "Umbro",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-78506"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-187792",
+   "value": {
+    "name": "Celtic 1982/83 away",
+    "season": "1982/83",
+    "type": "away",
+    "manufacturer": "Umbro",
+    "construction": {
+     "colors": "white/green",
+     "design": "pinstripes"
+    }
+   },
+   "sources": [
+    "ce-fka-s-187792"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-187791",
+   "value": {
+    "name": "Celtic 1982/83 home",
+    "season": "1982/83",
+    "type": "home",
+    "manufacturer": "Umbro",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-187791"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-187790",
+   "value": {
+    "name": "Celtic 1982/83 third",
+    "season": "1982/83",
+    "type": "third",
+    "manufacturer": "Umbro",
+    "construction": {
+     "colors": "green/white",
+     "design": "pinstripes"
+    }
+   },
+   "sources": [
+    "ce-fka-s-187790"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-8699",
+   "value": {
+    "name": "Celtic 1983/84 away",
+    "season": "1983/84",
+    "type": "away",
+    "manufacturer": "Umbro",
+    "construction": {
+     "colors": "light green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ce-fka-s-8699"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-8621",
+   "value": {
+    "name": "Celtic 1983/84 home",
+    "season": "1983/84",
+    "type": "home",
+    "manufacturer": "Umbro",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-8621"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-8698",
+   "value": {
+    "name": "Celtic 1983/84 third",
+    "season": "1983/84",
+    "type": "third",
+    "manufacturer": "Umbro",
+    "construction": {
+     "colors": "green/white",
+     "design": "pinstripes"
+    }
+   },
+   "sources": [
+    "ce-fka-s-8698"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-78507",
+   "value": {
+    "name": "Celtic 1984/85 away",
+    "season": "1984/85",
+    "type": "away",
+    "manufacturer": "Umbro",
+    "sponsor": "CR Smith",
+    "construction": {
+     "colors": "light green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ce-fka-s-78507"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-140653",
+   "value": {
+    "name": "Celtic 1984/85 home",
+    "season": "1984/85",
+    "type": "home",
+    "manufacturer": "Umbro",
+    "sponsor": "CR Smith",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-140653"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-451511",
+   "value": {
+    "name": "Celtic 1984/85 third",
+    "season": "1984/85",
+    "type": "third",
+    "manufacturer": "Umbro",
+    "sponsor": "CR Smith",
+    "construction": {
+     "colors": "yellow/white",
+     "design": "pinstripes"
+    }
+   },
+   "sources": [
+    "ce-fka-s-451511"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-78508",
+   "value": {
+    "name": "Celtic 1985/86 away",
+    "season": "1985/86",
+    "type": "away",
+    "manufacturer": "Umbro",
+    "sponsor": "CR Smith",
+    "construction": {
+     "colors": "light green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ce-fka-s-78508"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-187789",
+   "value": {
+    "name": "Celtic 1985/86 home",
+    "season": "1985/86",
+    "type": "home",
+    "manufacturer": "Umbro",
+    "sponsor": "CR Smith",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-187789"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-8701",
+   "value": {
+    "name": "Celtic 1986/87 away",
+    "season": "1986/87",
+    "type": "away",
+    "manufacturer": "Umbro",
+    "sponsor": "CR Smith",
+    "construction": {
+     "colors": "yellow/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ce-fka-s-8701"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-8700",
+   "value": {
+    "name": "Celtic 1986/87 home",
+    "season": "1986/87",
+    "type": "home",
+    "sponsor": "CR Smith",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-8700"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-78510",
+   "value": {
+    "name": "Celtic 1987/88 away",
+    "season": "1987/88",
+    "type": "away",
+    "manufacturer": "Umbro",
+    "sponsor": "CR Smith",
+    "construction": {
+     "colors": "yellow/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ce-fka-s-78510"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-187788",
+   "value": {
+    "name": "Celtic 1988/89 away",
+    "season": "1988/89",
+    "type": "away",
+    "manufacturer": "Umbro",
+    "sponsor": "CR Smith",
+    "construction": {
+     "colors": "yellow/green",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "ce-fka-s-187788"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-78509",
+   "value": {
+    "name": "Celtic 1988/89 home",
+    "season": "1988/89",
+    "type": "home",
+    "manufacturer": "Umbro",
+    "sponsor": "CR Smith",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-78509"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-8705",
+   "value": {
+    "name": "Celtic 1990/91 away",
+    "season": "1990/91",
+    "type": "away",
+    "manufacturer": "Umbro",
+    "sponsor": "CR Smith",
+    "construction": {
+     "colors": "yellow/green",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "ce-fka-s-8705"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-8615",
+   "value": {
+    "name": "Celtic 1990/91 home",
+    "season": "1990/91",
+    "type": "home",
+    "manufacturer": "Umbro",
+    "sponsor": "CR Smith",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-8615"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-8656",
+   "value": {
+    "name": "Celtic 1992/93 home",
+    "season": "1992/93",
+    "type": "home",
+    "manufacturer": "Umbro",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-8656"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-8709",
+   "value": {
+    "name": "Celtic 1993/94 away",
+    "season": "1993/94",
+    "type": "away",
+    "manufacturer": "Umbro",
+    "sponsor": "CR Smith",
+    "construction": {
+     "colors": "navy/blue",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "ce-fka-s-8709"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-8711",
+   "value": {
+    "name": "Celtic 1994/95 home",
+    "season": "1994/95",
+    "type": "home",
+    "manufacturer": "Umbro",
+    "sponsor": "CR Smith",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-8711"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-8629",
+   "value": {
+    "name": "Celtic 1995/96 away",
+    "season": "1995/96",
+    "type": "away",
+    "manufacturer": "Umbro",
+    "sponsor": "CR Smith",
+    "construction": {
+     "colors": "charcoal/green",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "ce-fka-s-8629"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; charcoal body, green-white-black striped centre panel). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-8652",
+   "value": {
+    "name": "Celtic 1996/97 home",
+    "season": "1996/97",
+    "type": "home",
+    "manufacturer": "Umbro",
+    "sponsor": "CR Smith",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-8652"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-89858",
+   "value": {
+    "name": "Celtic 1997/98 away",
+    "season": "1997/98",
+    "type": "away",
+    "manufacturer": "Umbro",
+    "construction": {
+     "colors": "lime/dark green",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-89858"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; Umbro wordmark across the chest). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-8718",
+   "value": {
+    "name": "Celtic 1998/99 home",
+    "season": "1998/99",
+    "type": "home",
+    "manufacturer": "Umbro",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-8718"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; Umbro wordmark across the chest). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-8723",
+   "value": {
+    "name": "Celtic 2001/02 third",
+    "season": "2001/02",
+    "type": "third",
+    "manufacturer": "Umbro",
+    "sponsor": "ntl:",
+    "construction": {
+     "colors": "yellow/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ce-fka-s-8723"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-8690",
+   "value": {
+    "name": "Celtic 2002/03 home",
+    "season": "2002/03",
+    "type": "home",
+    "manufacturer": "Umbro",
+    "sponsor": "ntl:",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-8690"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-351019",
+   "value": {
+    "name": "Celtic 2004/05 third",
+    "season": "2004/05",
+    "type": "third",
+    "manufacturer": "Umbro",
+    "sponsor": "Carling",
+    "construction": {
+     "colors": "black/gold",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ce-fka-s-351019"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-8654",
+   "value": {
+    "name": "Celtic 2005/06 third",
+    "season": "2005/06",
+    "type": "third",
+    "manufacturer": "Nike",
+    "sponsor": "Carling",
+    "construction": {
+     "colors": "black/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ce-fka-s-8654"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-328989",
+   "value": {
+    "name": "Celtic 2007/08 third",
+    "season": "2007/08",
+    "type": "third",
+    "manufacturer": "Nike",
+    "sponsor": "Carling",
+    "construction": {
+     "colors": "black/green",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "ce-fka-s-328989"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-6541",
+   "value": {
+    "name": "Celtic 2011/12 home",
+    "season": "2011/12",
+    "type": "home",
+    "manufacturer": "Nike",
+    "sponsor": "Tennent's",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-6541"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-8746",
+   "value": {
+    "name": "Celtic 2012/13 third",
+    "season": "2012/13",
+    "type": "third",
+    "manufacturer": "Nike",
+    "construction": {
+     "colors": "white/black",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ce-fka-s-8746"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-8637",
+   "value": {
+    "name": "Celtic 2014/15 home",
+    "season": "2014/15",
+    "type": "home",
+    "manufacturer": "Nike",
+    "sponsor": "Magners",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-8637"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-450593",
+   "value": {
+    "name": "Celtic 2026/27 away",
+    "season": "2026/27",
+    "type": "away",
+    "manufacturer": "adidas",
+    "sponsor": "dafabet",
+    "construction": {
+     "colors": "black/dark green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ce-fka-s-450593"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-450594",
+   "value": {
+    "name": "Celtic 2026/27 home",
+    "season": "2026/27",
+    "type": "home",
+    "manufacturer": "adidas",
+    "sponsor": "dafabet",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ce-fka-s-450594"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ce-fka-487283",
+   "value": {
+    "name": "Celtic 2026/27 third",
+    "season": "2026/27",
+    "type": "third",
+    "manufacturer": "adidas",
+    "sponsor": "dafabet",
+    "construction": {
+     "colors": "cream/black",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ce-fka-s-487283"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  }
+ ],
+ "skipped": [
+  {
+   "what": "Celtic 1888/89 home (Football Kit Archive 59143)",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1888-89-home-kit-59143/",
+   "reason": "Left out, not drawn: same shirt as the pack's 1888 home (season written differently), not added twice."
+  },
+  {
+   "what": "Celtic 1891/92 away (Football Kit Archive 226391)",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1891-92-away-kit-226391/",
+   "reason": "Left out, not drawn: black-and-white photograph, colours not readable."
+  },
+  {
+   "what": "Celtic 1891/92 home (Football Kit Archive 226392)",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1891-92-home-kit-226392/",
+   "reason": "Left out, not drawn: black-and-white photograph, colours not readable."
+  },
+  {
+   "what": "Celtic 1898/99 home (Football Kit Archive 226389)",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1898-99-home-kit-226389/",
+   "reason": "Left out, not drawn: black-and-white team photograph."
+  },
+  {
+   "what": "Celtic 1902–04 home (Football Kit Archive 226388)",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1902-04-home-kit-226388/",
+   "reason": "Left out, not drawn: black-and-white team photograph (the pack's 1903 home covers this shirt)."
+  },
+  {
+   "what": "Celtic 1906/07 home (Football Kit Archive 226305)",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1906-07-home-kit-226305/",
+   "reason": "Left out, not drawn: black-and-white team photograph."
+  },
+  {
+   "what": "Celtic 1937 home (Football Kit Archive 226386)",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1937-home-kit-226386/",
+   "reason": "Left out, not drawn: black-and-white photograph."
+  },
+  {
+   "what": "Celtic 1964 home (Football Kit Archive 226379)",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1964-home-kit-226379/",
+   "reason": "Left out, not drawn: black-and-white team photograph."
+  },
+  {
+   "what": "Celtic 1965/66 home (Football Kit Archive 226375)",
+   "url": "https://www.footballkitarchive.com/celtic-fc-1965-66-home-kit-226375/",
+   "reason": "Left out, not drawn: black-and-white match photograph, tiny."
+  },
+  {
+   "what": "Celtic 2027/28 third (Football Kit Archive 535513)",
+   "url": "https://www.footballkitarchive.com/celtic-fc-2027-28-third-kit-535513/",
+   "reason": "Left out, not drawn: a fan prediction marked highly speculative on the picture, not a real kit."
+  }
+ ]
+}

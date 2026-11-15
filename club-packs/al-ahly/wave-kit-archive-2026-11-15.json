@@ -1,0 +1,2835 @@
+{
+ "schemaVersion": 1,
+ "clubId": "al-ahly",
+ "contentLocale": "en",
+ "note": "Kit archive completion (15.11.2026): every outfield kit Football Kit Archive shows for a season and type the pack had no kit for, first variant only, colours and design read by eye from its photograph (INK colour words of scripts/kits/build-pack-kit-svgs.ts). Unclear photographs are listed in skipped, not drawn.",
+ "sources": [
+  {
+   "id": "ah-fka-s-48508",
+   "title": "Al Ahly 1980/81 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1980-81-away-kit-48508/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-48509",
+   "title": "Al Ahly 1980/81 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1980-81-home-kit-48509/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-48481",
+   "title": "Al Ahly 1981/82 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1981-82-home-kit-48481/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-48502",
+   "title": "Al Ahly 1982/83 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1982-83-away-kit-48502/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-48503",
+   "title": "Al Ahly 1982/83 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1982-83-home-kit-48503/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-48499",
+   "title": "Al Ahly 1983/84 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1983-84-away-kit-48499/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-48480",
+   "title": "Al Ahly 1983/84 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1983-84-home-kit-48480/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-48496",
+   "title": "Al Ahly 1984/85 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1984-85-away-kit-48496/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-48497",
+   "title": "Al Ahly 1984/85 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1984-85-home-kit-48497/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-48493",
+   "title": "Al Ahly 1985/86 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1985-86-home-kit-48493/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-48491",
+   "title": "Al Ahly 1986/87 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1986-87-home-kit-48491/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-48482",
+   "title": "Al Ahly 1987/88 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1987-88-home-kit-48482/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-48545",
+   "title": "Al Ahly 1988/89 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1988-89-away-kit-48545/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-48546",
+   "title": "Al Ahly 1988/89 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1988-89-home-kit-48546/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-48542",
+   "title": "Al Ahly 1989/90 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1989-90-home-kit-48542/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-48537",
+   "title": "Al Ahly 1990/91 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1990-91-home-kit-48537/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-500784",
+   "title": "Al Ahly 1991/92 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1991-92-away-2-kit-500784/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-48536",
+   "title": "Al Ahly 1991/92 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1991-92-home-kit-48536/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-48534",
+   "title": "Al Ahly 1992/93 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1992-93-away-kit-48534/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-48535",
+   "title": "Al Ahly 1992/93 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1992-93-home-kit-48535/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-48531",
+   "title": "Al Ahly 1993/94 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1993-94-away-kit-48531/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-48533",
+   "title": "Al Ahly 1993/94 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1993-94-home-kit-48533/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-48528",
+   "title": "Al Ahly 1994/95 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1994-95-home-kit-48528/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-48520",
+   "title": "Al Ahly 1995/96 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1995-96-home-kit-48520/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-48565",
+   "title": "Al Ahly 1996/97 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1996-97-away-kit-48565/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-48566",
+   "title": "Al Ahly 1996/97 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1996-97-home-kit-48566/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-48568",
+   "title": "Al Ahly 1997/98 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1997-98-away-kit-48568/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-96212",
+   "title": "Al Ahly 1997/98 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1997-98-third-kit-96212/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-96183",
+   "title": "Al Ahly 1998/99 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1998-99-away-kit-96183/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-92998",
+   "title": "Al Ahly 1998/99 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1998-99-home-kit-92998/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-92995",
+   "title": "Al Ahly 1999/00 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1999-00-away-kit-92995/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-92996",
+   "title": "Al Ahly 1999/00 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1999-00-home-kit-92996/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-433550",
+   "title": "Al Ahly 2000/01 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2000-01-away-kit-433550/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-93002",
+   "title": "Al Ahly 2000/01 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2000-01-home-kit-93002/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-92986",
+   "title": "Al Ahly 2001/02 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2001-02-away-kit-92986/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-93000",
+   "title": "Al Ahly 2001/02 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2001-02-home-kit-93000/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-96201",
+   "title": "Al Ahly 2001/02 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2001-02-third-kit-96201/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-92989",
+   "title": "Al Ahly 2002/03 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2002-03-away-kit-92989/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-93001",
+   "title": "Al Ahly 2002/03 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2002-03-home-kit-93001/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-93003",
+   "title": "Al Ahly 2003/04 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2003-04-home-kit-93003/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-92113",
+   "title": "Al Ahly 2004/05 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2004-05-away-kit-92113/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-92114",
+   "title": "Al Ahly 2004/05 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2004-05-home-kit-92114/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-92992",
+   "title": "Al Ahly 2004/05 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2004-05-third-kit-92992/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-92111",
+   "title": "Al Ahly 2005/06 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2005-06-away-kit-92111/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-92112",
+   "title": "Al Ahly 2005/06 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2005-06-home-kit-92112/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-92109",
+   "title": "Al Ahly 2006/07 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2006-07-away-kit-92109/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-92110",
+   "title": "Al Ahly 2006/07 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2006-07-home-kit-92110/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-402505",
+   "title": "Al Ahly 2007/08 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2007-08-away-kit-402505/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-402506",
+   "title": "Al Ahly 2007/08 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2007-08-home-kit-402506/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-92999",
+   "title": "Al Ahly 2008/09 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2008-09-away-kit-92999/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-53439",
+   "title": "Al Ahly 2008/09 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2008-09-home-kit-53439/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-51436",
+   "title": "Al Ahly 2009/10 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2009-10-home-kit-51436/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-53436",
+   "title": "Al Ahly 2010/11 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2010-11-away-kit-53436/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-53435",
+   "title": "Al Ahly 2011/12 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2011-12-home-kit-53435/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-53434",
+   "title": "Al Ahly 2012/13 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2012-13-home-kit-53434/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-53433",
+   "title": "Al Ahly 2013/14 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2013-14-home-kit-53433/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-46910",
+   "title": "Al Ahly 2014/15 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2014-15-away-kit-46910/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-46911",
+   "title": "Al Ahly 2014/15 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2014-15-home-kit-46911/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-46912",
+   "title": "Al Ahly 2015/16 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2015-16-away-kit-46912/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-46913",
+   "title": "Al Ahly 2015/16 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2015-16-home-kit-46913/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-28957",
+   "title": "Al Ahly 2016/17 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2016-17-away-kit-28957/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-28958",
+   "title": "Al Ahly 2016/17 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2016-17-home-kit-28958/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-28959",
+   "title": "Al Ahly 2017/18 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2017-18-away-kit-28959/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-28960",
+   "title": "Al Ahly 2017/18 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2017-18-home-kit-28960/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-29103",
+   "title": "Al Ahly 2017/18 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2017-18-third-kit-29103/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-26800",
+   "title": "Al Ahly 2018/19 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2018-19-home-kit-26800/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-24795",
+   "title": "Al Ahly 2019/20 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2019-20-away-kit-24795/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-24794",
+   "title": "Al Ahly 2019/20 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2019-20-third-kit-24794/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-15264",
+   "title": "Al Ahly 2020/21 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2020-21-away-kit-15264/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-15263",
+   "title": "Al Ahly 2020/21 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2020-21-home-kit-15263/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-15265",
+   "title": "Al Ahly 2020/21 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2020-21-third-kit-15265/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-43851",
+   "title": "Al Ahly 2021/22 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2021-22-away-kit-43851/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-43850",
+   "title": "Al Ahly 2021/22 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2021-22-home-kit-43850/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-88546",
+   "title": "Al Ahly 2022/23 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2022-23-home-kit-88546/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-96190",
+   "title": "Al Ahly 2022/23 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2022-23-third-kit-96190/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-169645",
+   "title": "Al Ahly 2023/24 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2023-24-home-kit-169645/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-285304",
+   "title": "Al Ahly 2024/25 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2024-25-away-kit-285304/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-287046",
+   "title": "Al Ahly 2024/25 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2024-25-third-kit-287046/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-376961",
+   "title": "Al Ahly 2025/26 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2025-26-third-kit-376961/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-480711",
+   "title": "Al Ahly 2026/27 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2026-27-away-kit-480711/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-480712",
+   "title": "Al Ahly 2026/27 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2026-27-home-kit-480712/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-fka-s-480710",
+   "title": "Al Ahly 2026/27 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-2026-27-third-kit-480710/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  }
+ ],
+ "kits": [
+  {
+   "id": "ah-fka-48508",
+   "value": {
+    "name": "Al Ahly 1980/81 away",
+    "season": "1980/81",
+    "type": "away",
+    "manufacturer": "adidas",
+    "sponsor": "Old Spice",
+    "construction": {
+     "colors": "blue/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-48508"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; portrait photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-48509",
+   "value": {
+    "name": "Al Ahly 1980/81 home",
+    "season": "1980/81",
+    "type": "home",
+    "manufacturer": "adidas",
+    "sponsor": "Old Spice",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-48509"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-48481",
+   "value": {
+    "name": "Al Ahly 1981/82 home",
+    "season": "1981/82",
+    "type": "home",
+    "sponsor": "National",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-48481"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; portrait photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-48502",
+   "value": {
+    "name": "Al Ahly 1982/83 away",
+    "season": "1982/83",
+    "type": "away",
+    "sponsor": "National",
+    "construction": {
+     "colors": "green/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-48502"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-48503",
+   "value": {
+    "name": "Al Ahly 1982/83 home",
+    "season": "1982/83",
+    "type": "home",
+    "sponsor": "National",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-48503"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-48499",
+   "value": {
+    "name": "Al Ahly 1983/84 away",
+    "season": "1983/84",
+    "type": "away",
+    "manufacturer": "Umbro",
+    "construction": {
+     "colors": "sky blue/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-48499"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; portrait photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-48480",
+   "value": {
+    "name": "Al Ahly 1983/84 home",
+    "season": "1983/84",
+    "type": "home",
+    "manufacturer": "Puma",
+    "sponsor": "Coca-Cola",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-48480"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-48496",
+   "value": {
+    "name": "Al Ahly 1984/85 away",
+    "season": "1984/85",
+    "type": "away",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-48496"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (portrait photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-48497",
+   "value": {
+    "name": "Al Ahly 1984/85 home",
+    "season": "1984/85",
+    "type": "home",
+    "manufacturer": "Puma",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-48497"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-48493",
+   "value": {
+    "name": "Al Ahly 1985/86 home",
+    "season": "1985/86",
+    "type": "home",
+    "manufacturer": "Puma",
+    "sponsor": "Coca-Cola",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-48493"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; portrait photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-48491",
+   "value": {
+    "name": "Al Ahly 1986/87 home",
+    "season": "1986/87",
+    "type": "home",
+    "sponsor": "Coca-Cola",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-48491"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-48482",
+   "value": {
+    "name": "Al Ahly 1987/88 home",
+    "season": "1987/88",
+    "type": "home",
+    "sponsor": "Coca-Cola",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-48482"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; match photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-48545",
+   "value": {
+    "name": "Al Ahly 1988/89 away",
+    "season": "1988/89",
+    "type": "away",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-48545"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (portrait photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-48546",
+   "value": {
+    "name": "Al Ahly 1988/89 home",
+    "season": "1988/89",
+    "type": "home",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-48546"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-48542",
+   "value": {
+    "name": "Al Ahly 1989/90 home",
+    "season": "1989/90",
+    "type": "home",
+    "sponsor": "Coca-Cola",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-48542"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-48537",
+   "value": {
+    "name": "Al Ahly 1990/91 home",
+    "season": "1990/91",
+    "type": "home",
+    "manufacturer": "Umbro",
+    "sponsor": "Coca-Cola",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-48537"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; portrait photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-500784",
+   "value": {
+    "name": "Al Ahly 1991/92 away",
+    "season": "1991/92",
+    "type": "away",
+    "sponsor": "Coca-Cola",
+    "construction": {
+     "colors": "white/blue",
+     "design": "contrasting sleeves"
+    }
+   },
+   "sources": [
+    "ah-fka-s-500784"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; close photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-48536",
+   "value": {
+    "name": "Al Ahly 1991/92 home",
+    "season": "1991/92",
+    "type": "home",
+    "manufacturer": "Umbro",
+    "sponsor": "Coca-Cola",
+    "construction": {
+     "colors": "red/white",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "ah-fka-s-48536"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; portrait photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-48534",
+   "value": {
+    "name": "Al Ahly 1992/93 away",
+    "season": "1992/93",
+    "type": "away",
+    "sponsor": "Coca-Cola",
+    "construction": {
+     "colors": "blue/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-48534"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; white shoulders). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-48535",
+   "value": {
+    "name": "Al Ahly 1992/93 home",
+    "season": "1992/93",
+    "type": "home",
+    "sponsor": "Coca-Cola",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-48535"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; match photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-48531",
+   "value": {
+    "name": "Al Ahly 1993/94 away",
+    "season": "1993/94",
+    "type": "away",
+    "sponsor": "Coca-Cola",
+    "construction": {
+     "colors": "green/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-48531"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; match photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-48533",
+   "value": {
+    "name": "Al Ahly 1993/94 home",
+    "season": "1993/94",
+    "type": "home",
+    "manufacturer": "adidas",
+    "sponsor": "Coca-Cola",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-48533"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-48528",
+   "value": {
+    "name": "Al Ahly 1994/95 home",
+    "season": "1994/95",
+    "type": "home",
+    "manufacturer": "adidas",
+    "construction": {
+     "colors": "red/white",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "ah-fka-s-48528"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; portrait photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-48520",
+   "value": {
+    "name": "Al Ahly 1995/96 home",
+    "season": "1995/96",
+    "type": "home",
+    "sponsor": "Coca-Cola",
+    "construction": {
+     "colors": "red/black",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-48520"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-48565",
+   "value": {
+    "name": "Al Ahly 1996/97 away",
+    "season": "1996/97",
+    "type": "away",
+    "sponsor": "Coca-Cola",
+    "construction": {
+     "colors": "white/blue",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "ah-fka-s-48565"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; match photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-48566",
+   "value": {
+    "name": "Al Ahly 1996/97 home",
+    "season": "1996/97",
+    "type": "home",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-48566"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (match photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-48568",
+   "value": {
+    "name": "Al Ahly 1997/98 away",
+    "season": "1997/98",
+    "type": "away",
+    "sponsor": "Coca-Cola",
+    "construction": {
+     "colors": "green/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-48568"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-96212",
+   "value": {
+    "name": "Al Ahly 1997/98 third",
+    "season": "1997/98",
+    "type": "third",
+    "manufacturer": "adidas",
+    "construction": {
+     "colors": "white/orange",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-96212"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; portrait photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-96183",
+   "value": {
+    "name": "Al Ahly 1998/99 away",
+    "season": "1998/99",
+    "type": "away",
+    "manufacturer": "adidas",
+    "sponsor": "Coca-Cola",
+    "construction": {
+     "colors": "blue/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-96183"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-92998",
+   "value": {
+    "name": "Al Ahly 1998/99 home",
+    "season": "1998/99",
+    "type": "home",
+    "manufacturer": "adidas",
+    "sponsor": "Coca-Cola",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-92998"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-92995",
+   "value": {
+    "name": "Al Ahly 1999/00 away",
+    "season": "1999/00",
+    "type": "away",
+    "manufacturer": "adidas",
+    "sponsor": "Coca-Cola",
+    "construction": {
+     "colors": "navy/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-92995"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-92996",
+   "value": {
+    "name": "Al Ahly 1999/00 home",
+    "season": "1999/00",
+    "type": "home",
+    "manufacturer": "adidas",
+    "sponsor": "Coca-Cola",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-92996"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-433550",
+   "value": {
+    "name": "Al Ahly 2000/01 away",
+    "season": "2000/01",
+    "type": "away",
+    "manufacturer": "Nike",
+    "sponsor": "Click GSM",
+    "construction": {
+     "colors": "blue/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-433550"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-93002",
+   "value": {
+    "name": "Al Ahly 2000/01 home",
+    "season": "2000/01",
+    "type": "home",
+    "manufacturer": "Nike",
+    "sponsor": "Click GSM",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-93002"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-92986",
+   "value": {
+    "name": "Al Ahly 2001/02 away",
+    "season": "2001/02",
+    "type": "away",
+    "manufacturer": "Nike",
+    "sponsor": "Coca-Cola",
+    "construction": {
+     "colors": "blue/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-92986"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-93000",
+   "value": {
+    "name": "Al Ahly 2001/02 home",
+    "season": "2001/02",
+    "type": "home",
+    "manufacturer": "Nike",
+    "sponsor": "Coca-Cola",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-93000"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-96201",
+   "value": {
+    "name": "Al Ahly 2001/02 third",
+    "season": "2001/02",
+    "type": "third",
+    "manufacturer": "Nike",
+    "sponsor": "Coca-Cola",
+    "construction": {
+     "colors": "green/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-96201"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-92989",
+   "value": {
+    "name": "Al Ahly 2002/03 away",
+    "season": "2002/03",
+    "type": "away",
+    "manufacturer": "Nike",
+    "sponsor": "Vodafone",
+    "construction": {
+     "colors": "blue/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-92989"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-93001",
+   "value": {
+    "name": "Al Ahly 2002/03 home",
+    "season": "2002/03",
+    "type": "home",
+    "sponsor": "Vodafone",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-93001"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-93003",
+   "value": {
+    "name": "Al Ahly 2003/04 home",
+    "season": "2003/04",
+    "type": "home",
+    "manufacturer": "Nike",
+    "sponsor": "Vodafone",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-93003"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-92113",
+   "value": {
+    "name": "Al Ahly 2004/05 away",
+    "season": "2004/05",
+    "type": "away",
+    "manufacturer": "Puma",
+    "sponsor": "Vodafone",
+    "construction": {
+     "colors": "blue/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-92113"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-92114",
+   "value": {
+    "name": "Al Ahly 2004/05 home",
+    "season": "2004/05",
+    "type": "home",
+    "manufacturer": "Puma",
+    "sponsor": "Vodafone",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-92114"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-92992",
+   "value": {
+    "name": "Al Ahly 2004/05 third",
+    "season": "2004/05",
+    "type": "third",
+    "manufacturer": "Puma",
+    "sponsor": "Vodafone",
+    "construction": {
+     "colors": "gold/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-92992"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-92111",
+   "value": {
+    "name": "Al Ahly 2005/06 away",
+    "season": "2005/06",
+    "type": "away",
+    "manufacturer": "Puma",
+    "sponsor": "Vodafone",
+    "construction": {
+     "colors": "blue/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-92111"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-92112",
+   "value": {
+    "name": "Al Ahly 2005/06 home",
+    "season": "2005/06",
+    "type": "home",
+    "manufacturer": "Puma",
+    "sponsor": "Vodafone",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-92112"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-92109",
+   "value": {
+    "name": "Al Ahly 2006/07 away",
+    "season": "2006/07",
+    "type": "away",
+    "manufacturer": "Puma",
+    "sponsor": "Vodafone",
+    "construction": {
+     "colors": "blue/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-92109"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-92110",
+   "value": {
+    "name": "Al Ahly 2006/07 home",
+    "season": "2006/07",
+    "type": "home",
+    "manufacturer": "Puma",
+    "sponsor": "Vodafone",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-92110"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-402505",
+   "value": {
+    "name": "Al Ahly 2007/08 away",
+    "season": "2007/08",
+    "type": "away",
+    "manufacturer": "Puma",
+    "sponsor": "Vodafone",
+    "construction": {
+     "colors": "blue/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-402505"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-402506",
+   "value": {
+    "name": "Al Ahly 2007/08 home",
+    "season": "2007/08",
+    "type": "home",
+    "manufacturer": "Puma",
+    "sponsor": "Vodafone",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-402506"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-92999",
+   "value": {
+    "name": "Al Ahly 2008/09 away",
+    "season": "2008/09",
+    "type": "away",
+    "manufacturer": "Puma",
+    "sponsor": "Vodafone",
+    "construction": {
+     "colors": "blue/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-92999"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-53439",
+   "value": {
+    "name": "Al Ahly 2008/09 home",
+    "season": "2008/09",
+    "type": "home",
+    "manufacturer": "Puma",
+    "sponsor": "Vodafone",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-53439"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-51436",
+   "value": {
+    "name": "Al Ahly 2009/10 home",
+    "season": "2009/10",
+    "type": "home",
+    "manufacturer": "adidas",
+    "sponsor": "Vodafone",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-51436"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-53436",
+   "value": {
+    "name": "Al Ahly 2010/11 away",
+    "season": "2010/11",
+    "type": "away",
+    "manufacturer": "adidas",
+    "sponsor": "Vodafone",
+    "construction": {
+     "colors": "navy/gold",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-53436"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-53435",
+   "value": {
+    "name": "Al Ahly 2011/12 home",
+    "season": "2011/12",
+    "type": "home",
+    "manufacturer": "adidas",
+    "sponsor": "Etisalat",
+    "construction": {
+     "colors": "red/gold",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-53435"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-53434",
+   "value": {
+    "name": "Al Ahly 2012/13 home",
+    "season": "2012/13",
+    "type": "home",
+    "manufacturer": "adidas",
+    "sponsor": "Etisalat",
+    "construction": {
+     "colors": "red/crimson",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "ah-fka-s-53434"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; tonal stripes). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-53433",
+   "value": {
+    "name": "Al Ahly 2013/14 home",
+    "season": "2013/14",
+    "type": "home",
+    "manufacturer": "adidas",
+    "sponsor": "Etisalat",
+    "construction": {
+     "colors": "red/crimson",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "ah-fka-s-53433"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; tonal stripes). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-46910",
+   "value": {
+    "name": "Al Ahly 2014/15 away",
+    "season": "2014/15",
+    "type": "away",
+    "sponsor": "Etisalat",
+    "construction": {
+     "colors": "blue/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-46910"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-46911",
+   "value": {
+    "name": "Al Ahly 2014/15 home",
+    "season": "2014/15",
+    "type": "home",
+    "sponsor": "Etisalat",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-46911"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-46912",
+   "value": {
+    "name": "Al Ahly 2015/16 away",
+    "season": "2015/16",
+    "type": "away",
+    "sponsor": "Vodafone",
+    "construction": {
+     "colors": "blue/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-46912"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-46913",
+   "value": {
+    "name": "Al Ahly 2015/16 home",
+    "season": "2015/16",
+    "type": "home",
+    "sponsor": "Vodafone",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-46913"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-28957",
+   "value": {
+    "name": "Al Ahly 2016/17 away",
+    "season": "2016/17",
+    "type": "away",
+    "sponsor": "Vodafone",
+    "construction": {
+     "colors": "purple/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-28957"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-28958",
+   "value": {
+    "name": "Al Ahly 2016/17 home",
+    "season": "2016/17",
+    "type": "home",
+    "sponsor": "Vodafone",
+    "construction": {
+     "colors": "red/black",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-28958"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; darker centre panel, not drawn). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-28959",
+   "value": {
+    "name": "Al Ahly 2017/18 away",
+    "season": "2017/18",
+    "type": "away",
+    "sponsor": "Vodafone",
+    "construction": {
+     "colors": "blue/navy",
+     "design": "gradient"
+    }
+   },
+   "sources": [
+    "ah-fka-s-28959"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-28960",
+   "value": {
+    "name": "Al Ahly 2017/18 home",
+    "season": "2017/18",
+    "type": "home",
+    "sponsor": "Vodafone",
+    "construction": {
+     "colors": "red/black",
+     "design": "gradient"
+    }
+   },
+   "sources": [
+    "ah-fka-s-28960"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-29103",
+   "value": {
+    "name": "Al Ahly 2017/18 third",
+    "season": "2017/18",
+    "type": "third",
+    "sponsor": "Vodafone",
+    "construction": {
+     "colors": "black/grey",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "ah-fka-s-29103"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-26800",
+   "value": {
+    "name": "Al Ahly 2018/19 home",
+    "season": "2018/19",
+    "type": "home",
+    "manufacturer": "Umbro",
+    "sponsor": "WE",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-26800"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-24795",
+   "value": {
+    "name": "Al Ahly 2019/20 away",
+    "season": "2019/20",
+    "type": "away",
+    "manufacturer": "Umbro",
+    "sponsor": "WE",
+    "construction": {
+     "colors": "black/yellow",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "ah-fka-s-24795"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-24794",
+   "value": {
+    "name": "Al Ahly 2019/20 third",
+    "season": "2019/20",
+    "type": "third",
+    "manufacturer": "Umbro",
+    "sponsor": "WE",
+    "construction": {
+     "colors": "light green/white",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "ah-fka-s-24794"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-15264",
+   "value": {
+    "name": "Al Ahly 2020/21 away",
+    "season": "2020/21",
+    "type": "away",
+    "manufacturer": "Umbro",
+    "sponsor": "WE",
+    "construction": {
+     "colors": "grey/black",
+     "design": "contrasting sleeves"
+    }
+   },
+   "sources": [
+    "ah-fka-s-15264"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-15263",
+   "value": {
+    "name": "Al Ahly 2020/21 home",
+    "season": "2020/21",
+    "type": "home",
+    "manufacturer": "Umbro",
+    "sponsor": "WE",
+    "construction": {
+     "colors": "red/gold",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-15263"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-15265",
+   "value": {
+    "name": "Al Ahly 2020/21 third",
+    "season": "2020/21",
+    "type": "third",
+    "manufacturer": "Umbro",
+    "sponsor": "WE",
+    "construction": {
+     "colors": "navy/red",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "ah-fka-s-15265"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-43851",
+   "value": {
+    "name": "Al Ahly 2021/22 away",
+    "season": "2021/22",
+    "type": "away",
+    "manufacturer": "Umbro",
+    "sponsor": "WE",
+    "construction": {
+     "colors": "black/red",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "ah-fka-s-43851"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-43850",
+   "value": {
+    "name": "Al Ahly 2021/22 home",
+    "season": "2021/22",
+    "type": "home",
+    "manufacturer": "Umbro",
+    "sponsor": "WE",
+    "construction": {
+     "colors": "red/white",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "ah-fka-s-43850"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-88546",
+   "value": {
+    "name": "Al Ahly 2022/23 home",
+    "season": "2022/23",
+    "type": "home",
+    "manufacturer": "adidas",
+    "sponsor": "e&",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-88546"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-96190",
+   "value": {
+    "name": "Al Ahly 2022/23 third",
+    "season": "2022/23",
+    "type": "third",
+    "manufacturer": "adidas",
+    "sponsor": "e&",
+    "construction": {
+     "colors": "beige/black",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-96190"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-169645",
+   "value": {
+    "name": "Al Ahly 2023/24 home",
+    "season": "2023/24",
+    "type": "home",
+    "manufacturer": "adidas",
+    "sponsor": "e&",
+    "construction": {
+     "colors": "red/maroon",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "ah-fka-s-169645"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-285304",
+   "value": {
+    "name": "Al Ahly 2024/25 away",
+    "season": "2024/25",
+    "type": "away",
+    "manufacturer": "adidas",
+    "sponsor": "e&",
+    "construction": {
+     "colors": "navy/gold",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-285304"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-287046",
+   "value": {
+    "name": "Al Ahly 2024/25 third",
+    "season": "2024/25",
+    "type": "third",
+    "manufacturer": "adidas",
+    "sponsor": "e&",
+    "construction": {
+     "colors": "beige/white",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "ah-fka-s-287046"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; camouflage print). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-376961",
+   "value": {
+    "name": "Al Ahly 2025/26 third",
+    "season": "2025/26",
+    "type": "third",
+    "manufacturer": "adidas",
+    "sponsor": "e&",
+    "construction": {
+     "colors": "sky blue/gold",
+     "design": "gradient"
+    }
+   },
+   "sources": [
+    "ah-fka-s-376961"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-480711",
+   "value": {
+    "name": "Al Ahly 2026/27 away",
+    "season": "2026/27",
+    "type": "away",
+    "manufacturer": "adidas",
+    "sponsor": "Vodafone",
+    "construction": {
+     "colors": "black/gold",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-fka-s-480711"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-480712",
+   "value": {
+    "name": "Al Ahly 2026/27 home",
+    "season": "2026/27",
+    "type": "home",
+    "manufacturer": "adidas",
+    "sponsor": "Vodafone",
+    "construction": {
+     "colors": "red/black",
+     "design": "pinstripes"
+    }
+   },
+   "sources": [
+    "ah-fka-s-480712"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "ah-fka-480710",
+   "value": {
+    "name": "Al Ahly 2026/27 third",
+    "season": "2026/27",
+    "type": "third",
+    "manufacturer": "adidas",
+    "sponsor": "Vodafone",
+    "construction": {
+     "colors": "cream/maroon",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "ah-fka-s-480710"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  }
+ ],
+ "skipped": [
+  {
+   "what": "Al Ahly 1911 away (Football Kit Archive 527083)",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1911-away-kit-527083/",
+   "reason": "Left out, not drawn: tinted old photograph, colours not reliable."
+  },
+  {
+   "what": "Al Ahly 1911 home (Football Kit Archive 405036)",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1911-home-kit-405036/",
+   "reason": "Left out, not drawn: black-and-white photograph."
+  },
+  {
+   "what": "Al Ahly 1915 home (Football Kit Archive 405037)",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1915-home-kit-405037/",
+   "reason": "Left out, not drawn: black-and-white photograph."
+  },
+  {
+   "what": "Al Ahly 1922 home (Football Kit Archive 405038)",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1922-home-kit-405038/",
+   "reason": "Left out, not drawn: black-and-white photograph."
+  },
+  {
+   "what": "Al Ahly 1933 home (Football Kit Archive 405039)",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1933-home-kit-405039/",
+   "reason": "Left out, not drawn: black-and-white photograph."
+  },
+  {
+   "what": "Al Ahly 1935 home (Football Kit Archive 405040)",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1935-home-kit-405040/",
+   "reason": "Left out, not drawn: black-and-white photograph."
+  },
+  {
+   "what": "Al Ahly 1948 home (Football Kit Archive 405041)",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1948-home-kit-405041/",
+   "reason": "Left out, not drawn: black-and-white photograph."
+  },
+  {
+   "what": "Al Ahly 1950 home (Football Kit Archive 405042)",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1950-home-kit-405042/",
+   "reason": "Left out, not drawn: black-and-white photograph."
+  },
+  {
+   "what": "Al Ahly 1961 home (Football Kit Archive 405043)",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1961-home-kit-405043/",
+   "reason": "Left out, not drawn: black-and-white photograph."
+  },
+  {
+   "what": "Al Ahly 1972 home (Football Kit Archive 405044)",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1972-home-kit-405044/",
+   "reason": "Left out, not drawn: black-and-white photograph."
+  },
+  {
+   "what": "Al Ahly 1979 home (Football Kit Archive 405045)",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1979-home-kit-405045/",
+   "reason": "Left out, not drawn: black-and-white photograph."
+  },
+  {
+   "what": "Al Ahly 1989/90 away (Football Kit Archive 48541)",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1989-90-away-kit-48541/",
+   "reason": "Left out, not drawn: faded, cropped photograph."
+  },
+  {
+   "what": "Al Ahly 1994/95 away (Football Kit Archive 48527)",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1994-95-away-kit-48527/",
+   "reason": "Left out, not drawn: small, faded photograph."
+  },
+  {
+   "what": "Al Ahly 1995/96 away (Football Kit Archive 48518)",
+   "url": "https://www.footballkitarchive.com/al-ahly-sc-1995-96-away-kit-48518/",
+   "reason": "Left out, not drawn: tangle of players, shirt not readable."
+  }
+ ]
+}

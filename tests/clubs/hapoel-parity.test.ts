@@ -22,7 +22,7 @@ describe('Hapoel Tel Aviv — Worker parity in the hub',()=>{
  it('carries the Kit Master kits with sourced maker and design, never a guessed colour',async()=>{
   const d=(await loadClub('hapoel-tel-aviv'))!.data
   expect(kitViews(d).length).toBeGreaterThanOrEqual(30)
-  for(const k of buildableKits(d)){expect(k.maker).toBeTruthy();expect(k.design).toBeTruthy();for(const c of k.colours)expect(['red','cream','white','black','grey','maroon']).toContain(c)}
+  for(const k of buildableKits(d)){expect(k.maker).toBeTruthy();expect(k.design).toBeTruthy();for(const c of k.colours)expect(['red','cream','white','black','grey','maroon','navy']).toContain(c)}  // navy: the 2010/11 and 2026/27 third shirts (Football Kit Archive photographs, 15.11.2026); yellow stays out (rule 95)
  })
  it('rival is Maccabi Tel Aviv only (Worker rule 13) and the wall reads the full match archive',async()=>{
   const d=(await loadClub('hapoel-tel-aviv'))!.data,r=rivalsOf(d)
