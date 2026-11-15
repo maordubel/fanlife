@@ -1,0 +1,1233 @@
+{
+ "schemaVersion": 1,
+ "clubId": "aek-athens",
+ "contentLocale": "en",
+ "note": "Kit archive completion (15.11.2026): every outfield kit Football Kit Archive shows for a season and type the pack had no kit for, first variant only, colours and design read by eye from its photograph (INK colour words of scripts/kits/build-pack-kit-svgs.ts). Unclear photographs are listed in skipped, not drawn.",
+ "sources": [
+  {
+   "id": "aek-fka-s-196213",
+   "title": "AEK Athens 1924/25 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-1924-25-home-kit-196213/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-426985",
+   "title": "AEK Athens 1965/66 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-1965-66-home-kit-426985/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-196212",
+   "title": "AEK Athens 1970/71 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-1970-71-home-kit-196212/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-196211",
+   "title": "AEK Athens 1971/72 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-1971-72-home-kit-196211/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-92907",
+   "title": "AEK Athens 1973/74 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-1973-74-home-kit-92907/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-35461",
+   "title": "AEK Athens 1976/77 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-1976-77-home-kit-35461/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-35416",
+   "title": "AEK Athens 1977/78 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-1977-78-home-kit-35416/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-208380",
+   "title": "AEK Athens 1978/79 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-1978-79-away-kit-208380/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-35417",
+   "title": "AEK Athens 1978/79 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-1978-79-home-kit-35417/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-208379",
+   "title": "AEK Athens 1979/80 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-1979-80-away-kit-208379/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-35460",
+   "title": "AEK Athens 1979/80 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-1979-80-home-kit-35460/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-35419",
+   "title": "AEK Athens 1982/83 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-1982-83-home-kit-35419/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-208378",
+   "title": "AEK Athens 1983/84 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-1983-84-home-kit-208378/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-35418",
+   "title": "AEK Athens 1984/85 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-1984-85-home-kit-35418/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-35462",
+   "title": "AEK Athens 1985/86 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-1985-86-home-kit-35462/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-208377",
+   "title": "AEK Athens 1986/87 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-1986-87-home-kit-208377/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-35420",
+   "title": "AEK Athens 1987/88 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-1987-88-home-kit-35420/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-35421",
+   "title": "AEK Athens 1988/89 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-1988-89-home-kit-35421/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-208376",
+   "title": "AEK Athens 1989/90 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-1989-90-away-kit-208376/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-35422",
+   "title": "AEK Athens 1989/90 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-1989-90-home-kit-35422/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-35423",
+   "title": "AEK Athens 1990/91 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-1990-91-home-kit-35423/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-35424",
+   "title": "AEK Athens 1991/92 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-1991-92-home-kit-35424/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-35425",
+   "title": "AEK Athens 1992/93 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-1992-93-home-kit-35425/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-35350",
+   "title": "AEK Athens 1993/94 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-1993-94-third-kit-35350/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-35338",
+   "title": "AEK Athens 1995/96 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-1995-96-away-kit-35338/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-35343",
+   "title": "AEK Athens 1996/97 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-1996-97-away-kit-35343/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-35116",
+   "title": "AEK Athens 1996/97 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-1996-97-home-kit-35116/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-35341",
+   "title": "AEK Athens 1997/98 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-1997-98-away-kit-35341/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-35114",
+   "title": "AEK Athens 1997/98 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-1997-98-home-kit-35114/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-35259",
+   "title": "AEK Athens 1998/99 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-1998-99-home-kit-35259/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-35267",
+   "title": "AEK Athens 2002/03 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-2002-03-third-kit-35267/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-35427",
+   "title": "AEK Athens 2003/04 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-2003-04-third-kit-35427/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-35217",
+   "title": "AEK Athens 2004/05 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-2004-05-third-kit-35217/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-35158",
+   "title": "AEK Athens 2013/14 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-2013-14-third-kit-35158/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-35159",
+   "title": "AEK Athens 2014/15 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-2014-15-away-kit-35159/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-35454",
+   "title": "AEK Athens 2014/15 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-2014-15-third-kit-35454/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "aek-fka-s-35129",
+   "title": "AEK Athens 2015/16 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/aek-athens-2015-16-third-kit-35129/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  }
+ ],
+ "kits": [
+  {
+   "id": "aek-fka-196213",
+   "value": {
+    "name": "AEK Athens 1924/25 home",
+    "season": "1924/25",
+    "type": "home",
+    "construction": {
+     "colors": "yellow/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "aek-fka-s-196213"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-426985",
+   "value": {
+    "name": "AEK Athens 1965/66 home",
+    "season": "1965/66",
+    "type": "home",
+    "construction": {
+     "colors": "yellow/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "aek-fka-s-426985"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-196212",
+   "value": {
+    "name": "AEK Athens 1970/71 home",
+    "season": "1970/71",
+    "type": "home",
+    "construction": {
+     "colors": "yellow/black",
+     "design": "chest band"
+    }
+   },
+   "sources": [
+    "aek-fka-s-196212"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-196211",
+   "value": {
+    "name": "AEK Athens 1971/72 home",
+    "season": "1971/72",
+    "type": "home",
+    "construction": {
+     "colors": "yellow/black",
+     "design": "chest band"
+    }
+   },
+   "sources": [
+    "aek-fka-s-196211"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-92907",
+   "value": {
+    "name": "AEK Athens 1973/74 home",
+    "season": "1973/74",
+    "type": "home",
+    "construction": {
+     "colors": "yellow/black",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "aek-fka-s-92907"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-35461",
+   "value": {
+    "name": "AEK Athens 1976/77 home",
+    "season": "1976/77",
+    "type": "home",
+    "construction": {
+     "colors": "yellow/black",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "aek-fka-s-35461"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-35416",
+   "value": {
+    "name": "AEK Athens 1977/78 home",
+    "season": "1977/78",
+    "type": "home",
+    "manufacturer": "adidas",
+    "construction": {
+     "colors": "yellow/black",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "aek-fka-s-35416"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-208380",
+   "value": {
+    "name": "AEK Athens 1978/79 away",
+    "season": "1978/79",
+    "type": "away",
+    "construction": {
+     "colors": "yellow/black",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "aek-fka-s-208380"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-35417",
+   "value": {
+    "name": "AEK Athens 1978/79 home",
+    "season": "1978/79",
+    "type": "home",
+    "manufacturer": "adidas",
+    "construction": {
+     "colors": "yellow/black",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "aek-fka-s-35417"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-208379",
+   "value": {
+    "name": "AEK Athens 1979/80 away",
+    "season": "1979/80",
+    "type": "away",
+    "manufacturer": "adidas",
+    "construction": {
+     "colors": "black/yellow",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "aek-fka-s-208379"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-35460",
+   "value": {
+    "name": "AEK Athens 1979/80 home",
+    "season": "1979/80",
+    "type": "home",
+    "manufacturer": "adidas",
+    "construction": {
+     "colors": "yellow/black",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "aek-fka-s-35460"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-35419",
+   "value": {
+    "name": "AEK Athens 1982/83 home",
+    "season": "1982/83",
+    "type": "home",
+    "sponsor": "Citizen",
+    "construction": {
+     "colors": "yellow/black",
+     "design": "pinstripes"
+    }
+   },
+   "sources": [
+    "aek-fka-s-35419"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-208378",
+   "value": {
+    "name": "AEK Athens 1983/84 home",
+    "season": "1983/84",
+    "type": "home",
+    "sponsor": "Citizen",
+    "construction": {
+     "colors": "yellow/black",
+     "design": "pinstripes"
+    }
+   },
+   "sources": [
+    "aek-fka-s-208378"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-35418",
+   "value": {
+    "name": "AEK Athens 1984/85 home",
+    "season": "1984/85",
+    "type": "home",
+    "sponsor": "Nissan",
+    "construction": {
+     "colors": "yellow/orange",
+     "design": "pinstripes"
+    }
+   },
+   "sources": [
+    "aek-fka-s-35418"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-35462",
+   "value": {
+    "name": "AEK Athens 1985/86 home",
+    "season": "1985/86",
+    "type": "home",
+    "construction": {
+     "colors": "yellow",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "aek-fka-s-35462"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-208377",
+   "value": {
+    "name": "AEK Athens 1986/87 home",
+    "season": "1986/87",
+    "type": "home",
+    "sponsor": "Εθνική Ασφαλιστική",
+    "construction": {
+     "colors": "yellow/black",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "aek-fka-s-208377"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; thin horizontal black pinlines, not drawn). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-35420",
+   "value": {
+    "name": "AEK Athens 1987/88 home",
+    "season": "1987/88",
+    "type": "home",
+    "sponsor": "Εθνική Ασφαλιστική",
+    "construction": {
+     "colors": "yellow/black",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "aek-fka-s-35420"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-35421",
+   "value": {
+    "name": "AEK Athens 1988/89 home",
+    "season": "1988/89",
+    "type": "home",
+    "sponsor": "Εθνική Ασφαλιστική",
+    "construction": {
+     "colors": "yellow/black",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "aek-fka-s-35421"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-208376",
+   "value": {
+    "name": "AEK Athens 1989/90 away",
+    "season": "1989/90",
+    "type": "away",
+    "sponsor": "Εθνική Ασφαλιστική",
+    "construction": {
+     "colors": "black/yellow",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "aek-fka-s-208376"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-35422",
+   "value": {
+    "name": "AEK Athens 1989/90 home",
+    "season": "1989/90",
+    "type": "home",
+    "sponsor": "Εθνική Ασφαλιστική",
+    "construction": {
+     "colors": "yellow",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "aek-fka-s-35422"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-35423",
+   "value": {
+    "name": "AEK Athens 1990/91 home",
+    "season": "1990/91",
+    "type": "home",
+    "sponsor": "Εθνική Ασφαλιστική",
+    "construction": {
+     "colors": "yellow/black",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "aek-fka-s-35423"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-35424",
+   "value": {
+    "name": "AEK Athens 1991/92 home",
+    "season": "1991/92",
+    "type": "home",
+    "sponsor": "Εθνική Ασφαλιστική",
+    "construction": {
+     "colors": "yellow/black",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "aek-fka-s-35424"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-35425",
+   "value": {
+    "name": "AEK Athens 1992/93 home",
+    "season": "1992/93",
+    "type": "home",
+    "sponsor": "Φοίνιξ Ασφάλειες",
+    "construction": {
+     "colors": "yellow/black",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "aek-fka-s-35425"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-35350",
+   "value": {
+    "name": "AEK Athens 1993/94 third",
+    "season": "1993/94",
+    "type": "third",
+    "sponsor": "Φοίνιξ Ασφάλειες",
+    "construction": {
+     "colors": "white/grey",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "aek-fka-s-35350"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-35338",
+   "value": {
+    "name": "AEK Athens 1995/96 away",
+    "season": "1995/96",
+    "type": "away",
+    "manufacturer": "Kappa",
+    "sponsor": "Εθνική Ασφαλιστική",
+    "construction": {
+     "colors": "white/grey",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "aek-fka-s-35338"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-35343",
+   "value": {
+    "name": "AEK Athens 1996/97 away",
+    "season": "1996/97",
+    "type": "away",
+    "manufacturer": "Kappa",
+    "sponsor": "Γενική Τράπεζα",
+    "construction": {
+     "colors": "white/grey",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "aek-fka-s-35343"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-35116",
+   "value": {
+    "name": "AEK Athens 1996/97 home",
+    "season": "1996/97",
+    "type": "home",
+    "manufacturer": "Kappa",
+    "sponsor": "Γενική Τράπεζα",
+    "construction": {
+     "colors": "yellow/black",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "aek-fka-s-35116"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-35341",
+   "value": {
+    "name": "AEK Athens 1997/98 away",
+    "season": "1997/98",
+    "type": "away",
+    "manufacturer": "Kappa",
+    "sponsor": "Γενική Τράπεζα",
+    "construction": {
+     "colors": "white/grey",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "aek-fka-s-35341"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-35114",
+   "value": {
+    "name": "AEK Athens 1997/98 home",
+    "season": "1997/98",
+    "type": "home",
+    "manufacturer": "Kappa",
+    "sponsor": "Γενική Τράπεζα",
+    "construction": {
+     "colors": "yellow/black",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "aek-fka-s-35114"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-35259",
+   "value": {
+    "name": "AEK Athens 1998/99 home",
+    "season": "1998/99",
+    "type": "home",
+    "manufacturer": "Kappa",
+    "sponsor": "Firestone",
+    "construction": {
+     "colors": "black/yellow",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "aek-fka-s-35259"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-35267",
+   "value": {
+    "name": "AEK Athens 2002/03 third",
+    "season": "2002/03",
+    "type": "third",
+    "construction": {
+     "colors": "sky blue/white",
+     "design": "gradient"
+    }
+   },
+   "sources": [
+    "aek-fka-s-35267"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-35427",
+   "value": {
+    "name": "AEK Athens 2003/04 third",
+    "season": "2003/04",
+    "type": "third",
+    "manufacturer": "Nike",
+    "sponsor": "Piraeus Bank",
+    "construction": {
+     "colors": "maroon/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "aek-fka-s-35427"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-35217",
+   "value": {
+    "name": "AEK Athens 2004/05 third",
+    "season": "2004/05",
+    "type": "third",
+    "manufacturer": "Nike",
+    "construction": {
+     "colors": "white/grey",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "aek-fka-s-35217"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-35158",
+   "value": {
+    "name": "AEK Athens 2013/14 third",
+    "season": "2013/14",
+    "type": "third",
+    "manufacturer": "Puma",
+    "sponsor": "Τζόκερ",
+    "construction": {
+     "colors": "white/blue",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "aek-fka-s-35158"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-35159",
+   "value": {
+    "name": "AEK Athens 2014/15 away",
+    "season": "2014/15",
+    "type": "away",
+    "manufacturer": "Puma",
+    "sponsor": "Jeep",
+    "construction": {
+     "colors": "black/yellow",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "aek-fka-s-35159"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-35454",
+   "value": {
+    "name": "AEK Athens 2014/15 third",
+    "season": "2014/15",
+    "type": "third",
+    "manufacturer": "Puma",
+    "sponsor": "Jeep",
+    "construction": {
+     "colors": "white/black",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "aek-fka-s-35454"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "aek-fka-35129",
+   "value": {
+    "name": "AEK Athens 2015/16 third",
+    "season": "2015/16",
+    "type": "third",
+    "manufacturer": "Nike",
+    "construction": {
+     "colors": "claret/yellow",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "aek-fka-s-35129"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  }
+ ],
+ "skipped": []
+}
