@@ -1,0 +1,31 @@
+name: ft-align (temporary)
+on:
+  push:
+    branches: [ft-align-tmp]
+permissions:
+  contents: write
+jobs:
+  align:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install -q faster-whisper
+      - name: Word timings
+        run: |
+          python - <<'P'
+          import json, glob, os
+          from faster_whisper import WhisperModel
+          m = WhisperModel('medium', device='cpu', compute_type='int8')
+          out = {}
+          for f in sorted(glob.glob('w/*.wav')):
+              lang = 'el' if f.endswith('-el.wav') else 'en'
+              segs, _ = m.transcribe(f, language=lang, word_timestamps=True, beam_size=5)
+              out[os.path.basename(f)] = [{'w': w.word, 's': round(w.start, 3), 'e': round(w.end, 3)} for s in segs for w in s.words]
+              print(f, len(out[os.path.basename(f)]))
+          json.dump(out, open('words.json', 'w'), ensure_ascii=False, indent=1)
+          P
+      - run: |
+          git config user.name ft-align; git config user.email ft-align@users.noreply.github.com
+          git add words.json && git commit -m words && git push
