@@ -297,8 +297,9 @@ try {
   await page.getByTestId('goal-whistle').click()
   const result=page.getByTestId('goal-result')
   await result.waitFor({timeout:30000})
-  assert.equal(await result.locator('[data-ok="false"], [data-zone="miss"], [data-zone="near"]').count(),0,`${slug}: correct replay was marked wrong`)
-  assert.equal(await result.locator('[data-zone="exact"]').count(),g.sequence.length)
+  // since 14.11.2026 the review shows one touch at a time; the sheet carries the verdict's counts for the whole replay
+  assert.equal(await result.getAttribute('data-wrong'),'0',`${slug}: correct replay was marked wrong`)
+  assert.equal(await result.getAttribute('data-exact'),String(g.sequence.length))
   assert((await result.locator('a[href^="https://"]').count())>=1,`${slug}: missing source link`)
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`${slug}: goal mobile overflow`)
   await page.screenshot({path:`/tmp/fanlife-m1-browser/${slug}-goal.png`})

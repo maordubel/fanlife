@@ -271,7 +271,7 @@ function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,c
     <button type="button" className={`min-h-tap ${css.btn} ${css.btnMain}`} onClick={()=>{setSheet(null);onNext()}} data-testid="goal-sheet-next">{pos<of-1?tx('gl.next'):tx('gl.finish')} →</button>
     <button type="button" className={`min-h-tap ${css.btn}`} onClick={closeSheet}>{tx('gl.result.review')}</button>
     {verdict&&<ShareComposer label={tx('gl.share')} draft={goalShare(club,{percent:Math.round(verdict.quality*100),goalId:g.id,zonePractice:true,forbidden:verdict.truth.flatMap(t=>t.actor?[t.actor]:[])})}/>}</div>}>
-   {verdict&&<div className={css.sheetBody} data-testid="goal-result">
+   {verdict&&<div className={css.sheetBody} data-testid="goal-result" data-exact={verdict.steps.filter(x=>x.zone==='exact').length} data-wrong={verdict.steps.filter(x=>x.actor===false||!x.action||x.zone==='miss'||x.zone==='near').length}>
     <div className={css.score}>
      <p className={css.scoreKicker}>{tx('gl.result.kicker')} · <bdi lang={contentLocale}>{g.title}</bdi></p>
      <p className={css.scoreNum}>{Math.round(verdict.quality*100)}%</p>
