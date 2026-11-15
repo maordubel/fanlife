@@ -53,7 +53,7 @@ describe('shared kit artwork',()=>{
   const svg='/club-kits/hapoel-tel-aviv/svg/cof-k-31.svg',data='data:image/svg+xml;base64,AAA='
   const eleven=Array.from({length:11},(_,i)=>'Name '+(i+1))
   const draft=xiShare('hapoel-tel-aviv',{formation:'4-4-2',lines:[eleven.slice(0,1),eleven.slice(1,5),eleven.slice(5,9),eleven.slice(9)],captain:null,kits:[{id:'cof-k-31',season:'2025/26',svg}]})
-  const assets={logo:'',shirt:'other-shirt',art:{},fontCss:'',kitImages:{[svg]:data}} as ShareAssets
+  const assets:ShareAssets={logo:'',shirt:'other-shirt',fontCss:'',kitImages:{[svg]:data},art:{'archive-objects':'','away-supporters':'','father-child':'',footballer:'','scarf-fan':'','shirt-exchange':'','terrace-crowd':'','vintage-shirt':''}}
   const image=renderShare(draft.template,draft.data,'story',{assets,measure:(s,n)=>s.length*n/2}).svg
   expect(image).toContain('href="'+data+'"')
   expect(image).toContain('href="other-shirt"')

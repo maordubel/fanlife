@@ -15,7 +15,7 @@ export async function xiPlayers(club: string, ids: string[]): Promise<Record<str
   if(!pack)return {}
   const wardrobe=clubWardrobe(pack.data)
   const out: Awaited<ReturnType<typeof xiPlayers>> = {}
-  for (const {value:player} of pack.data.players) {
+  for (const {value:player} of pack.data.players ?? []) {
     if(!want.has(player.id))continue
     const field=kitFor(player,'us',wardrobe),keeper=kitFor(player,'us',wardrobe,{keeper:true})
     out[player.id]={name:player.name,shirt:field.source==='archive'?field.kit.svg:undefined,keeperShirt:keeper.source==='archive'?keeper.kit.svg:undefined}
