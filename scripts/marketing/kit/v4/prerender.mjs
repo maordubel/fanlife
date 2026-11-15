@@ -70,7 +70,7 @@ export function pickArt(images, turn = 0) {
   const scene = imgs.find(u => /person|lifestyle|context|hanging/.test(label(u)))
   const studio = imgs.find(u => /^folded/.test(label(u))) || imgs.find(u => /^front/.test(label(u))) || imgs.find(u => /^back/.test(label(u))) || imgs[0]
   const detail = imgs.find(u => /close/.test(label(u))) || null
-  return {scene: turn % 2 === 0 || !studio ? scene || null : null, studio, detail}
+  return {scene: scene || null, studio, detail}
 }
 /** the studio background (white or near white, flat) flooded away from the edges; null if the product would go with it */
 export async function cutOut(buf) {
@@ -85,6 +85,22 @@ export async function cutOut(buf) {
   while (head < tail) { const i = q[head++], x = i % w; if (x > 0) seed(i - 1); if (x < w - 1) seed(i + 1); if (i >= w) seed(i - w); if (i < w * (h - 1)) seed(i + w) }
   const gone = tail / (w * h)
   if (gone < .2 || gone > .9) return null // no studio background, or the product itself was pale and went with it
+  // a pale product (a white mug, a white tee) on a pale background has no edge to cut along: refuse rather than chew it
+  let edge = 0, paleEdge = 0
+  for (let i = w; i < w * (h - 1); i++) {
+    if (bg[i]) continue
+    const x = i % w
+    if ((x > 0 && bg[i - 1]) || (x < w - 1 && bg[i + 1]) || bg[i - w] || bg[i + w]) {
+      edge++; const r = data[i * 4], g = data[i * 4 + 1], b = data[i * 4 + 2]
+      if (Math.min(r, g, b) >= 236) paleEdge++
+    }
+  }
+  if (!edge || paleEdge / edge > .3) return null
+  // then the soft studio shadow that rings the product goes too (light grey, flat, touching the background)
+  const shade = i => { const r = data[i * 4], g = data[i * 4 + 1], b = data[i * 4 + 2]; return Math.min(r, g, b) >= 190 && Math.max(r, g, b) - Math.min(r, g, b) < 14 }
+  head = 0; tail = 0
+  for (let i = 0; i < w * h; i++) if (bg[i]) q[tail++] = i
+  while (head < tail) { const i = q[head++], x = i % w; for (const n of [x > 0 ? i - 1 : -1, x < w - 1 ? i + 1 : -1, i - w, i + w]) if (n >= 0 && n < w * h && !bg[n] && shade(n)) { bg[n] = 1; q[tail++] = n } }
   for (let i = 0; i < w * h; i++) if (bg[i]) data[i * 4 + 3] = 0
   return sharp(data, {raw: {width: w, height: h, channels: 4}}).trim({threshold: 1}).png().toBuffer()
 }
@@ -164,7 +180,7 @@ async function main() {
             const r = await fetch(a.studio, {signal: AbortSignal.timeout(30_000)})
             const cut = r.ok ? await cutOut(Buffer.from(await r.arrayBuffer())) : null
             if (cut) { const file = path.join(dir, `cut-${post.id}.png`); writeFileSync(file, cut); data.cut = file; if (a.detail) data.detail = a.detail }
-            else data.photo = a.studio
+            else data.card = a.studio // the studio shot as it is, on a card on the stage
           }
           data.stage = post.id; s.data = data
           for (const k of ['hook', 'body']) if (post.fill?.[k]) patch[k] = fillWords(post.fill[k], f.words)

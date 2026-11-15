@@ -340,7 +340,7 @@ async function tier(d, o) {
 /** shop: one live product from the open shop (prerender.mjs picks it at random for each post); its mock-up is the hero */
 const money = (cents, cur = 'USD') => cents ? `${cur === 'EUR' ? '€' : cur === 'GBP' ? '£' : '$'}${(Number(cents) / 100).toFixed(2).replace(/\.00$/, '')}` : ''
 async function shop(d, o) {
-  if (d.photo || d.cut) return tee({...d, look: undefined, words: d.name || String(d.title || '').split(' · ')[0], kind_label: d.kind_label || `${String(d.title || '').split(' · ')[1] || 'FAN LIFE shop'} · printed to order`}, o)
+  if (d.photo || d.cut || d.card) return tee({...d, look: undefined, words: d.name || String(d.title || '').split(' · ')[0], kind_label: d.kind_label || `${String(d.title || '').split(' · ')[1] || 'FAN LIFE shop'} · printed to order`}, o)
   const id = clubId({club: d.subject && d.subject !== 'fanlife' ? {id: d.subject} : d.club}), p = id ? paint(id) : {bg: '#121212', on: '#FFFBF2', s1: '#FFFBF2', s2: '#D71920', light: false}
   const c = id ? await crest(p.name) : null
   const img = local(d.image)
@@ -363,7 +363,7 @@ async function tee(d, o) {
   const H = o.story ? 1920 : 1350
   const art = f => local(`v4/art/shop/${f}`)
   // the flagship tee's own files
-  let look = d.look || (d.photo ? 'look' : 'cut'), photo = local(d.photo), cut = local(d.cut), detail = local(d.detail), rot = 0
+  let look = d.look || (d.photo ? 'look' : 'cut'), photo = local(d.photo), cut = local(d.cut), card = local(d.card), detail = local(d.detail), rot = 0
   if (d.look === 'look') photo = art('football-forever-tee-white.jpg')
   if (d.look === 'back') { look = 'cut'; cut = art('football-forever-tee-back-cut.png'); detail = art('football-forever-print.jpg') }
   if (d.look === 'fold') { look = 'cut'; cut = art('football-forever-tee-black-cut.png'); detail = art('football-forever-print.jpg'); rot = -6 }
@@ -394,7 +394,7 @@ ${spec('#FFFBF2')}
 ${top({})}
 <p class="k" style="position:absolute;z-index:2;left:64px;top:${o.story ? 210 : 178}px;font-size:18px;letter-spacing:.3em;color:${st.ink};opacity:.75"${at('left', .2)}>${esc(kicker)}</p>
 <p class="h" style="position:absolute;z-index:1;left:52px;right:40px;top:${o.story ? 250 : 210}px;font-size:${Math.round(size)}px;line-height:.84;color:${st.ink}"${at('slam', .3)}>${esc(l1)}${l2 ? `<br><span style="color:transparent;-webkit-text-stroke:4px ${st.ink}">${esc(l2)}</span>` : ''}</p>
-<div style="position:absolute;z-index:3;left:0;right:0;top:${o.story ? 520 : 360}px;bottom:${o.story ? 300 : 200}px;display:flex;align-items:flex-end;justify-content:${rot || !d.look ? 'center' : 'flex-end'};padding-right:${rot || !d.look ? 0 : 150}px">${cut ? `<img src="${cut}" alt="" style="max-height:100%;max-width:${d.look === 'back' ? 60 : 82}%;object-fit:contain;filter:drop-shadow(0 30px 30px rgba(0,0,0,.3));${rot ? `transform:rotate(${rot}deg)` : ''}"${at('up', .6)} data-kb>` : ''}</div>
+<div style="position:absolute;z-index:3;left:0;right:0;top:${o.story ? 520 : 360}px;bottom:${o.story ? 300 : 200}px;display:flex;align-items:flex-end;justify-content:${rot || !d.look ? 'center' : 'flex-end'};padding-right:${rot || !d.look ? 0 : 150}px">${!cut && card ? `<div style="height:78%;max-width:80%;aspect-ratio:1;background:#FFFBF2;padding:18px;box-shadow:18px 18px 0 rgba(0,0,0,.3);transform:rotate(-2deg)"${at('pop', .6)}><img src="${card}" alt="" style="width:100%;height:100%;object-fit:cover" data-kb></div>` : ''}${cut ? `<img src="${cut}" alt="" style="max-height:100%;max-width:${d.look === 'back' ? 60 : 82}%;object-fit:contain;filter:drop-shadow(0 30px 30px rgba(0,0,0,.3));${rot ? `transform:rotate(${rot}deg)` : ''}"${at('up', .6)} data-kb>` : ''}</div>
 ${lens}${price}
 <div class="body" style="z-index:5"></div>${foot(d.cta || (d.look ? 'Shop the tee' : 'Shop now'), 'fanlife.dubelteam.com/shop')}`}
 }
