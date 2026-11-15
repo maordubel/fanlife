@@ -10,6 +10,8 @@ export async function readPromo():Promise<PromoDoc>{
  try{const r=await area.read(FILE);if(!r)return SEED_DOC;const raw=JSON.parse(r.text),doc=cleanDoc(raw,(raw.audit??[]).slice(-50))
   // a banner we ship later is offered once to a saved doc; one the owner deleted (named in the audit) stays gone
   const add=[...SEED_ADDED,...SEED_BOOK,...SEED_SHOP].filter(b=>!doc.banners.some(x=>x.id===b.id)&&!doc.audit.some(a=>a.what.includes(b.id)||a.what.includes(b.name)))
+  // a shop card saved before its live price existed takes the seed's price roundel (16.11.2026)
+  for(const b of doc.banners){const seed=SEED_SHOP.find(x=>x.id===b.id);if(seed&&!b.price&&seed.price)b.price=seed.price}
   return add.length?{...doc,banners:[...doc.banners,...add]}:doc}catch{return SEED_DOC}
 }
 /** The control room's save: validated whole, written compare-and-swap, one audit line. */

@@ -117,8 +117,10 @@ export function cleanBanner(raw:unknown):Banner{
   fromHour:num(r.fromHour,0,23,0),toHour:num(r.toHour,0,23,0),
   delaySec:r.delaySec==null||r.delaySec===''?null:num(r.delaySec,0,120,3),showSec:r.showSec==null||r.showSec===''?null:num(r.showSec,2,60,7),
   weight:num(r.weight,0,100,10),maxPerSession:num(r.maxPerSession,0,50,1),maxPerDay:num(r.maxPerDay,0,200,0),cooldownMin:num(r.cooldownMin,0,10080,0),
-  note:String(r.note??'').trim().slice(0,300),...(r.format==='card'?{format:'card' as const}:{})}
+  note:String(r.note??'').trim().slice(0,300),...(r.format==='card'?{format:'card' as const}:{}),...priceOf(r.price)}
 }
+const priceOf=(raw:unknown):{price?:{product:string;label:string}}=>{const o=(raw&&typeof raw==='object'?raw:null) as Record<string,unknown>|null
+ const product=String(o?.product??'').trim();return product&&/^[a-z0-9.-]{3,80}$/i.test(product)?{price:{product,label:String(o?.label??'From').trim().slice(0,12)||'From'}}:{}}
 export function cleanSettings(raw:unknown):PromoSettings{
  const r=(raw&&typeof raw==='object'?raw:{}) as Record<string,unknown>
  const rules=(Array.isArray(r.pageRules)?r.pageRules:[]).map(x=>{const o=(x&&typeof x==='object'?x:{}) as Record<string,unknown>

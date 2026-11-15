@@ -77,6 +77,7 @@ export function PromoBanner({doc,israel,greece=false}:{doc:PromoDoc;israel:boole
   <a className="promo-link" href={outbound(b,page)} {...(isOwn(b)?{}:{target:'_blank',rel:'noopener noreferrer sponsored'})} aria-label={b.alt||b.name}>
    <img src={b.img1x} srcSet={`${b.img1x} 1x, ${b.img2x} 2x`} width={isCard?400:320} height={isCard?500:50} alt={b.alt||b.name} decoding="async"/>
   </a>
+  {isCard&&b.price&&b.priceNow?<span className="promo-price" aria-hidden="true"><small>{b.price.label}</small><b>{b.priceNow}</b></span>:null}
   <button type="button" className="promo-x min-h-tap" onClick={dismiss} aria-label="Close advertisement">×</button>
   <span className="promo-tag" aria-hidden="true">Ad</span>
  </aside>

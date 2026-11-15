@@ -54,7 +54,7 @@ export const SEED_BOOK:Banner[]=[
  * on its own (ADSENSE-APPROVAL §5).
  */
 const TEE=`${SITE}/shop?q=${encodeURIComponent('Football Forever')}`
-const card=(id:string,name:string,alt:string):Banner=>({...base,id,name,href:TEE,alt,...art(id),format:'card',
+const card=(id:string,name:string,alt:string):Banner=>({...base,id,name,href:TEE,alt,...art(id),format:'card',price:{product:'fanlife.own-200de6b6.tee',label:'From'},
  targeting:{...every,exclude:['/shop']},weight:14,maxPerSession:1,maxPerDay:1,cooldownMin:240,showSec:10,note:'Shop lookbook card (4:5), corner pop-up.'})
 export const SEED_SHOP:Banner[]=[
  card('shop-tee-back','Shop · Football. Forever. tee (back print)','Football. Forever. — the tee with the ground on its back. Wear it. Let them read it. Shop the tee.'),
