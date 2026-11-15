@@ -26,7 +26,7 @@ describe('shop sales',()=>{
  })
  it('cuts to .99 and never under cost + 10%',()=>{
   expect(salePrice(2999,1500,20)).toBe(2399)
-  expect(salePrice(2999,2500,50)).toBe(2750)
+  expect(salePrice(2999,2500,50)).toBe(2775)
   expect(salePrice(999,900,5)).toBe(999)
  })
  it('reads the desk form and refuses a bad sale',()=>{

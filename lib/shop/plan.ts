@@ -80,8 +80,10 @@ export function printAreas(placed:{sheet:Sheet;imageId:string;x:number;y:number;
  for(const [v,phs] of per){const key=JSON.stringify(phs),g=groups.get(key);if(g)g.variant_ids.push(v);else groups.set(key,{variant_ids:[v],placeholders:phs})}
  return [...groups.values()]
 }
-/** cost (cents) → price (cents): the margin on top, rounded UP to the next .99 */
-export const price=(cost:number,margin:number)=>Math.max(499,Math.ceil(cost*(1+margin/100)/100)*100-1)
+/** Printify's package insert (the FAN LIFE card in every order, 15.11.2026): 25¢ the shop pays per order — the customer carries it in the price */
+export const INSERT_CENTS=25
+/** cost (cents) → price (cents): the margin on top, plus the order card, rounded UP to the next .99 */
+export const price=(cost:number,margin:number)=>Math.max(499,Math.ceil((cost*(1+margin/100)+INSERT_CENTS)/100)*100-1)
 
 export const NOTE='Original supporter art from the FAN LIFE library — an independent fan design, not an official club product. Printed to order.'
 export const productId=(subject:string,pictureId:string,kind:Kind,bp?:number)=>`${subject}.${pictureId.slice(-10).replace(/[^a-zA-Z0-9]/g,'x')}.${kind}${bp?`-${bp}`:''}`

@@ -50,7 +50,7 @@ describe('the shop: Printify decisions',()=>{
   const at=place(KIND_SPECS.tee,{w:4000,h:5000,position:'front',variantIds:[1]},{width:2000,height:3000})
   expect(at.scale).toBeLessThan(.8);expect(at.y).toBeLessThanOrEqual(.5);expect(at.scale/(2000/3000)*(4000/5000)).toBeLessThanOrEqual(1)
  })
- it('prices at cost plus margin, rounded up to .99',()=>{expect(price(1234,45)).toBe(1799);expect(price(100,45)).toBe(499);expect(price(2000,0)).toBe(1999)})
+ it('prices at cost plus margin plus the order card, rounded up to .99',()=>{expect(price(1234,45)).toBe(1899);expect(price(1200,45)).toBe(1799);expect(price(100,45)).toBe(499);expect(price(2000,0)).toBe(2099)})
  it('shows the public only a live, switched-on product with a link and a picture',()=>{
   const base:ShopProduct={id:'a',subject:'fanlife',kind:'poster',art:{library:{id:'x',name:'x.png'}},title:'t',description:'d',status:'live',visible:true,createdAt:'',updatedAt:'',printify:{productId:'1',blueprintId:1,providerId:1,images:['https://i/1.jpg'],priceFrom:1999,currency:'USD',url:'https://s.printify.me/p',publishedAt:'x'}}
   expect(isPublic(base)).toBe(true);expect(isPublic({...base,visible:false})).toBe(false);expect(isPublic({...base,status:'ready'})).toBe(false);expect(isPublic({...base,printify:{...base.printify!,url:null}})).toBe(false)
