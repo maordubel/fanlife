@@ -1,0 +1,2271 @@
+{
+ "schemaVersion": 1,
+ "clubId": "maccabi-haifa",
+ "contentLocale": "en",
+ "note": "Kit archive completion (15.11.2026): every outfield kit Football Kit Archive shows for a season and type the pack had no kit for, first variant only, colours and design read by eye from its photograph (INK colour words of scripts/kits/build-pack-kit-svgs.ts). Unclear photographs are listed in skipped, not drawn.",
+ "sources": [
+  {
+   "id": "mh-fka-s-70777",
+   "title": "Maccabi Haifa 1984/85 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-1984-85-away-kit-70777/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-125046",
+   "title": "Maccabi Haifa 1988/89 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-1988-89-home-kit-125046/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-99266",
+   "title": "Maccabi Haifa 1989/90 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-1989-90-home-kit-99266/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-88234",
+   "title": "Maccabi Haifa 1991/92 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-1991-92-home-kit-88234/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-90231",
+   "title": "Maccabi Haifa 1992/93 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-1992-93-home-kit-90231/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-70774",
+   "title": "Maccabi Haifa 1993/94 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-1993-94-third-kit-70774/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-99264",
+   "title": "Maccabi Haifa 1994/95 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-1994-95-home-kit-99264/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-99787",
+   "title": "Maccabi Haifa 1995/96 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-1995-96-away-kit-99787/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-24753",
+   "title": "Maccabi Haifa 1995/96 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-1995-96-home-kit-24753/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-24752",
+   "title": "Maccabi Haifa 1996/97 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-1996-97-home-kit-24752/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-24751",
+   "title": "Maccabi Haifa 1997/98 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-1997-98-away-kit-24751/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-24750",
+   "title": "Maccabi Haifa 1997/98 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-1997-98-home-kit-24750/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-99788",
+   "title": "Maccabi Haifa 1997/98 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-1997-98-third-kit-99788/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-88810",
+   "title": "Maccabi Haifa 1998/99 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-1998-99-away-kit-88810/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-88812",
+   "title": "Maccabi Haifa 1998/99 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-1998-99-home-kit-88812/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-316205",
+   "title": "Maccabi Haifa 1999/00 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-1999-00-away-kit-316205/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-70773",
+   "title": "Maccabi Haifa 1999/00 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-1999-00-home-kit-70773/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-24749",
+   "title": "Maccabi Haifa 2000/01 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2000-01-away-kit-24749/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-112856",
+   "title": "Maccabi Haifa 2000/01 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2000-01-home-kit-112856/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-231950",
+   "title": "Maccabi Haifa 2001/02 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2001-02-home-kit-231950/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-316204",
+   "title": "Maccabi Haifa 2002/03 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2002-03-away-kit-316204/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-316478",
+   "title": "Maccabi Haifa 2002/03 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2002-03-home-kit-316478/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-152411",
+   "title": "Maccabi Haifa 2003/04 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2003-04-home-kit-152411/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-24747",
+   "title": "Maccabi Haifa 2004/05 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2004-05-away-kit-24747/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-24748",
+   "title": "Maccabi Haifa 2004/05 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2004-05-home-kit-24748/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-153726",
+   "title": "Maccabi Haifa 2005/06 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2005-06-away-kit-153726/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-316202",
+   "title": "Maccabi Haifa 2005/06 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2005-06-home-kit-316202/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-24745",
+   "title": "Maccabi Haifa 2006/07 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2006-07-away-kit-24745/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-24746",
+   "title": "Maccabi Haifa 2006/07 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2006-07-home-kit-24746/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-24743",
+   "title": "Maccabi Haifa 2007/08 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2007-08-away-kit-24743/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-24744",
+   "title": "Maccabi Haifa 2007/08 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2007-08-home-kit-24744/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-24742",
+   "title": "Maccabi Haifa 2007/08 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2007-08-third-kit-24742/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-24740",
+   "title": "Maccabi Haifa 2008/09 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2008-09-away-kit-24740/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-24741",
+   "title": "Maccabi Haifa 2008/09 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2008-09-home-kit-24741/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-20139",
+   "title": "Maccabi Haifa 2009/10 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2009-10-away-kit-20139/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-20143",
+   "title": "Maccabi Haifa 2010/11 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2010-11-away-kit-20143/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-20144",
+   "title": "Maccabi Haifa 2010/11 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2010-11-home-kit-20144/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-20147",
+   "title": "Maccabi Haifa 2011/12 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2011-12-away-kit-20147/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-20148",
+   "title": "Maccabi Haifa 2011/12 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2011-12-home-kit-20148/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-20146",
+   "title": "Maccabi Haifa 2011/12 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2011-12-third-kit-20146/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-20149",
+   "title": "Maccabi Haifa 2012/13 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2012-13-away-kit-20149/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-20150",
+   "title": "Maccabi Haifa 2012/13 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2012-13-home-kit-20150/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-20151",
+   "title": "Maccabi Haifa 2012/13 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2012-13-third-kit-20151/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-20153",
+   "title": "Maccabi Haifa 2013/14 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2013-14-away-kit-20153/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-20157",
+   "title": "Maccabi Haifa 2014/15 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2014-15-away-kit-20157/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-20158",
+   "title": "Maccabi Haifa 2014/15 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2014-15-home-kit-20158/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-20161",
+   "title": "Maccabi Haifa 2015/16 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2015-16-away-kit-20161/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-20163",
+   "title": "Maccabi Haifa 2016/17 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2016-17-away-kit-20163/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-20164",
+   "title": "Maccabi Haifa 2016/17 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2016-17-home-kit-20164/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-20167",
+   "title": "Maccabi Haifa 2017/18 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2017-18-away-kit-20167/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-20166",
+   "title": "Maccabi Haifa 2017/18 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2017-18-home-kit-20166/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-122273",
+   "title": "Maccabi Haifa 2018/19 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2018-19-away-kit-122273/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-20168",
+   "title": "Maccabi Haifa 2018/19 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2018-19-home-kit-20168/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-20170",
+   "title": "Maccabi Haifa 2019/20 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2019-20-away-kit-20170/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-16812",
+   "title": "Maccabi Haifa 2020/21 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2020-21-away-kit-16812/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-16810",
+   "title": "Maccabi Haifa 2020/21 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2020-21-home-kit-16810/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-30783",
+   "title": "Maccabi Haifa 2021/22 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2021-22-away-kit-30783/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-30782",
+   "title": "Maccabi Haifa 2021/22 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2021-22-third-kit-30782/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-271771",
+   "title": "Maccabi Haifa 2024/25 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2024-25-away-kit-271771/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-271775",
+   "title": "Maccabi Haifa 2024/25 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2024-25-home-kit-271775/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-271769",
+   "title": "Maccabi Haifa 2024/25 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2024-25-third-kit-271769/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-402615",
+   "title": "Maccabi Haifa 2025/26 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2025-26-away-kit-402615/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-389857",
+   "title": "Maccabi Haifa 2025/26 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2025-26-home-kit-389857/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-389856",
+   "title": "Maccabi Haifa 2025/26 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2025-26-third-kit-389856/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-510589",
+   "title": "Maccabi Haifa 2026/27 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2026-27-away-kit-510589/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-496395",
+   "title": "Maccabi Haifa 2026/27 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2026-27-home-kit-496395/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-fka-s-497651",
+   "title": "Maccabi Haifa 2026/27 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/maccabi-haifa-2026-27-third-kit-497651/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  }
+ ],
+ "kits": [
+  {
+   "id": "mh-fka-70777",
+   "value": {
+    "name": "Maccabi Haifa 1984/85 away",
+    "season": "1984/85",
+    "type": "away",
+    "sponsor": "Volvo",
+    "construction": {
+     "colors": "white/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-70777"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-125046",
+   "value": {
+    "name": "Maccabi Haifa 1988/89 home",
+    "season": "1988/89",
+    "type": "home",
+    "sponsor": "Volvo",
+    "construction": {
+     "colors": "green/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-125046"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-99266",
+   "value": {
+    "name": "Maccabi Haifa 1989/90 home",
+    "season": "1989/90",
+    "type": "home",
+    "sponsor": "Volvo",
+    "construction": {
+     "colors": "green/white/yellow",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "mh-fka-s-99266"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-88234",
+   "value": {
+    "name": "Maccabi Haifa 1991/92 home",
+    "season": "1991/92",
+    "type": "home",
+    "sponsor": "Isracard",
+    "construction": {
+     "colors": "green/white",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "mh-fka-s-88234"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-90231",
+   "value": {
+    "name": "Maccabi Haifa 1992/93 home",
+    "season": "1992/93",
+    "type": "home",
+    "sponsor": "Volvo",
+    "construction": {
+     "colors": "green/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-90231"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-70774",
+   "value": {
+    "name": "Maccabi Haifa 1993/94 third",
+    "season": "1993/94",
+    "type": "third",
+    "sponsor": "Isracard",
+    "construction": {
+     "colors": "green/white",
+     "design": "gradient"
+    }
+   },
+   "sources": [
+    "mh-fka-s-70774"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-99264",
+   "value": {
+    "name": "Maccabi Haifa 1994/95 home",
+    "season": "1994/95",
+    "type": "home",
+    "sponsor": "Isracard",
+    "construction": {
+     "colors": "white/green",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "mh-fka-s-99264"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-99787",
+   "value": {
+    "name": "Maccabi Haifa 1995/96 away",
+    "season": "1995/96",
+    "type": "away",
+    "sponsor": "Volvo",
+    "construction": {
+     "colors": "white/grey",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "mh-fka-s-99787"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-24753",
+   "value": {
+    "name": "Maccabi Haifa 1995/96 home",
+    "season": "1995/96",
+    "type": "home",
+    "sponsor": "Isracard",
+    "construction": {
+     "colors": "green/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-24753"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-24752",
+   "value": {
+    "name": "Maccabi Haifa 1996/97 home",
+    "season": "1996/97",
+    "type": "home",
+    "manufacturer": "Nike",
+    "sponsor": "Isracard",
+    "construction": {
+     "colors": "green/white",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "mh-fka-s-24752"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-24751",
+   "value": {
+    "name": "Maccabi Haifa 1997/98 away",
+    "season": "1997/98",
+    "type": "away",
+    "manufacturer": "Lotto",
+    "sponsor": "Volvo",
+    "construction": {
+     "colors": "white/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-24751"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-24750",
+   "value": {
+    "name": "Maccabi Haifa 1997/98 home",
+    "season": "1997/98",
+    "type": "home",
+    "manufacturer": "Lotto",
+    "construction": {
+     "colors": "green/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-24750"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-99788",
+   "value": {
+    "name": "Maccabi Haifa 1997/98 third",
+    "season": "1997/98",
+    "type": "third",
+    "construction": {
+     "colors": "blue/navy",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "mh-fka-s-99788"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-88810",
+   "value": {
+    "name": "Maccabi Haifa 1998/99 away",
+    "season": "1998/99",
+    "type": "away",
+    "manufacturer": "Lotto",
+    "sponsor": "Volvo",
+    "construction": {
+     "colors": "white/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-88810"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-88812",
+   "value": {
+    "name": "Maccabi Haifa 1998/99 home",
+    "season": "1998/99",
+    "type": "home",
+    "manufacturer": "Lotto",
+    "sponsor": "Volvo",
+    "construction": {
+     "colors": "green/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-88812"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-316205",
+   "value": {
+    "name": "Maccabi Haifa 1999/00 away",
+    "season": "1999/00",
+    "type": "away",
+    "manufacturer": "Lotto",
+    "sponsor": "Volvo",
+    "construction": {
+     "colors": "white/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-316205"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-70773",
+   "value": {
+    "name": "Maccabi Haifa 1999/00 home",
+    "season": "1999/00",
+    "type": "home",
+    "manufacturer": "Lotto",
+    "sponsor": "Volvo",
+    "construction": {
+     "colors": "green/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-70773"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-24749",
+   "value": {
+    "name": "Maccabi Haifa 2000/01 away",
+    "season": "2000/01",
+    "type": "away",
+    "manufacturer": "Lotto",
+    "sponsor": "Volvo",
+    "construction": {
+     "colors": "white/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-24749"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-112856",
+   "value": {
+    "name": "Maccabi Haifa 2000/01 home",
+    "season": "2000/01",
+    "type": "home",
+    "manufacturer": "Lotto",
+    "sponsor": "Volvo",
+    "construction": {
+     "colors": "green/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-112856"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-231950",
+   "value": {
+    "name": "Maccabi Haifa 2001/02 home",
+    "season": "2001/02",
+    "type": "home",
+    "manufacturer": "Lotto",
+    "construction": {
+     "colors": "green/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-231950"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-316204",
+   "value": {
+    "name": "Maccabi Haifa 2002/03 away",
+    "season": "2002/03",
+    "type": "away",
+    "sponsor": "Honda",
+    "construction": {
+     "colors": "white/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-316204"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-316478",
+   "value": {
+    "name": "Maccabi Haifa 2002/03 home",
+    "season": "2002/03",
+    "type": "home",
+    "manufacturer": "Lotto",
+    "sponsor": "Honda",
+    "construction": {
+     "colors": "green/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-316478"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-152411",
+   "value": {
+    "name": "Maccabi Haifa 2003/04 home",
+    "season": "2003/04",
+    "type": "home",
+    "sponsor": "Honda",
+    "construction": {
+     "colors": "green/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-152411"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-24747",
+   "value": {
+    "name": "Maccabi Haifa 2004/05 away",
+    "season": "2004/05",
+    "type": "away",
+    "manufacturer": "Puma",
+    "sponsor": "Honda",
+    "construction": {
+     "colors": "white/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-24747"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-24748",
+   "value": {
+    "name": "Maccabi Haifa 2004/05 home",
+    "season": "2004/05",
+    "type": "home",
+    "manufacturer": "Puma",
+    "sponsor": "Honda",
+    "construction": {
+     "colors": "green/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-24748"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-153726",
+   "value": {
+    "name": "Maccabi Haifa 2005/06 away",
+    "season": "2005/06",
+    "type": "away",
+    "manufacturer": "Puma",
+    "sponsor": "Honda",
+    "construction": {
+     "colors": "white/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-153726"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-316202",
+   "value": {
+    "name": "Maccabi Haifa 2005/06 home",
+    "season": "2005/06",
+    "type": "home",
+    "manufacturer": "Puma",
+    "sponsor": "Honda",
+    "construction": {
+     "colors": "green/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-316202"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-24745",
+   "value": {
+    "name": "Maccabi Haifa 2006/07 away",
+    "season": "2006/07",
+    "type": "away",
+    "manufacturer": "Puma",
+    "sponsor": "Honda",
+    "construction": {
+     "colors": "white/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-24745"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-24746",
+   "value": {
+    "name": "Maccabi Haifa 2006/07 home",
+    "season": "2006/07",
+    "type": "home",
+    "manufacturer": "Puma",
+    "sponsor": "Honda",
+    "construction": {
+     "colors": "green/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-24746"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-24743",
+   "value": {
+    "name": "Maccabi Haifa 2007/08 away",
+    "season": "2007/08",
+    "type": "away",
+    "manufacturer": "Lotto",
+    "sponsor": "Honda",
+    "construction": {
+     "colors": "white/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-24743"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-24744",
+   "value": {
+    "name": "Maccabi Haifa 2007/08 home",
+    "season": "2007/08",
+    "type": "home",
+    "manufacturer": "Lotto",
+    "sponsor": "Honda",
+    "construction": {
+     "colors": "green/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-24744"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-24742",
+   "value": {
+    "name": "Maccabi Haifa 2007/08 third",
+    "season": "2007/08",
+    "type": "third",
+    "manufacturer": "Lotto",
+    "sponsor": "Honda",
+    "construction": {
+     "colors": "black/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-24742"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-24740",
+   "value": {
+    "name": "Maccabi Haifa 2008/09 away",
+    "season": "2008/09",
+    "type": "away",
+    "manufacturer": "Lotto",
+    "sponsor": "Honda",
+    "construction": {
+     "colors": "white/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-24740"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-24741",
+   "value": {
+    "name": "Maccabi Haifa 2008/09 home",
+    "season": "2008/09",
+    "type": "home",
+    "manufacturer": "Lotto",
+    "sponsor": "Honda",
+    "construction": {
+     "colors": "green/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-24741"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-20139",
+   "value": {
+    "name": "Maccabi Haifa 2009/10 away",
+    "season": "2009/10",
+    "type": "away",
+    "manufacturer": "Lotto",
+    "sponsor": "Honda",
+    "construction": {
+     "colors": "white/green",
+     "design": "contrasting sleeves"
+    }
+   },
+   "sources": [
+    "mh-fka-s-20139"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-20143",
+   "value": {
+    "name": "Maccabi Haifa 2010/11 away",
+    "season": "2010/11",
+    "type": "away",
+    "manufacturer": "Lotto",
+    "sponsor": "Honda",
+    "construction": {
+     "colors": "white/green",
+     "design": "pinstripes"
+    }
+   },
+   "sources": [
+    "mh-fka-s-20143"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-20144",
+   "value": {
+    "name": "Maccabi Haifa 2010/11 home",
+    "season": "2010/11",
+    "type": "home",
+    "manufacturer": "Lotto",
+    "sponsor": "Honda",
+    "construction": {
+     "colors": "green/white",
+     "design": "pinstripes"
+    }
+   },
+   "sources": [
+    "mh-fka-s-20144"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-20147",
+   "value": {
+    "name": "Maccabi Haifa 2011/12 away",
+    "season": "2011/12",
+    "type": "away",
+    "sponsor": "Honda",
+    "construction": {
+     "colors": "white/black",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-20147"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-20148",
+   "value": {
+    "name": "Maccabi Haifa 2011/12 home",
+    "season": "2011/12",
+    "type": "home",
+    "manufacturer": "Nike",
+    "sponsor": "Honda",
+    "construction": {
+     "colors": "green/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-20148"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-20146",
+   "value": {
+    "name": "Maccabi Haifa 2011/12 third",
+    "season": "2011/12",
+    "type": "third",
+    "sponsor": "Honda",
+    "construction": {
+     "colors": "green/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "mh-fka-s-20146"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-20149",
+   "value": {
+    "name": "Maccabi Haifa 2012/13 away",
+    "season": "2012/13",
+    "type": "away",
+    "manufacturer": "Nike",
+    "sponsor": "Honda",
+    "construction": {
+     "colors": "grey/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-20149"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-20150",
+   "value": {
+    "name": "Maccabi Haifa 2012/13 home",
+    "season": "2012/13",
+    "type": "home",
+    "manufacturer": "Nike",
+    "sponsor": "Honda",
+    "construction": {
+     "colors": "green/white",
+     "design": "contrasting sleeves"
+    }
+   },
+   "sources": [
+    "mh-fka-s-20150"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-20151",
+   "value": {
+    "name": "Maccabi Haifa 2012/13 third",
+    "season": "2012/13",
+    "type": "third",
+    "sponsor": "Honda",
+    "construction": {
+     "colors": "green/white",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "mh-fka-s-20151"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-20153",
+   "value": {
+    "name": "Maccabi Haifa 2013/14 away",
+    "season": "2013/14",
+    "type": "away",
+    "manufacturer": "Nike",
+    "sponsor": "Honda",
+    "construction": {
+     "colors": "black/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-20153"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-20157",
+   "value": {
+    "name": "Maccabi Haifa 2014/15 away",
+    "season": "2014/15",
+    "type": "away",
+    "manufacturer": "Nike",
+    "sponsor": "Honda",
+    "construction": {
+     "colors": "white/black",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-20157"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-20158",
+   "value": {
+    "name": "Maccabi Haifa 2014/15 home",
+    "season": "2014/15",
+    "type": "home",
+    "manufacturer": "Nike",
+    "sponsor": "Honda",
+    "construction": {
+     "colors": "green/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-20158"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-20161",
+   "value": {
+    "name": "Maccabi Haifa 2015/16 away",
+    "season": "2015/16",
+    "type": "away",
+    "manufacturer": "Nike",
+    "sponsor": "Honda",
+    "construction": {
+     "colors": "white/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-20161"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-20163",
+   "value": {
+    "name": "Maccabi Haifa 2016/17 away",
+    "season": "2016/17",
+    "type": "away",
+    "manufacturer": "Nike",
+    "sponsor": "Honda",
+    "construction": {
+     "colors": "white/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-20163"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-20164",
+   "value": {
+    "name": "Maccabi Haifa 2016/17 home",
+    "season": "2016/17",
+    "type": "home",
+    "manufacturer": "Nike",
+    "sponsor": "Honda",
+    "construction": {
+     "colors": "green/white",
+     "design": "contrasting sleeves"
+    }
+   },
+   "sources": [
+    "mh-fka-s-20164"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-20167",
+   "value": {
+    "name": "Maccabi Haifa 2017/18 away",
+    "season": "2017/18",
+    "type": "away",
+    "manufacturer": "Nike",
+    "sponsor": "Honda",
+    "construction": {
+     "colors": "green/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-20167"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-20166",
+   "value": {
+    "name": "Maccabi Haifa 2017/18 home",
+    "season": "2017/18",
+    "type": "home",
+    "manufacturer": "Nike",
+    "sponsor": "Honda",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "mh-fka-s-20166"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-122273",
+   "value": {
+    "name": "Maccabi Haifa 2018/19 away",
+    "season": "2018/19",
+    "type": "away",
+    "manufacturer": "Nike",
+    "sponsor": "Volvo",
+    "construction": {
+     "colors": "white/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-122273"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-20168",
+   "value": {
+    "name": "Maccabi Haifa 2018/19 home",
+    "season": "2018/19",
+    "type": "home",
+    "manufacturer": "Nike",
+    "sponsor": "Volvo",
+    "construction": {
+     "colors": "green/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-20168"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-20170",
+   "value": {
+    "name": "Maccabi Haifa 2019/20 away",
+    "season": "2019/20",
+    "type": "away",
+    "manufacturer": "Nike",
+    "sponsor": "Volvo",
+    "construction": {
+     "colors": "white/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-20170"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-16812",
+   "value": {
+    "name": "Maccabi Haifa 2020/21 away",
+    "season": "2020/21",
+    "type": "away",
+    "manufacturer": "Nike",
+    "sponsor": "Volvo",
+    "construction": {
+     "colors": "black/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-16812"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-16810",
+   "value": {
+    "name": "Maccabi Haifa 2020/21 home",
+    "season": "2020/21",
+    "type": "home",
+    "manufacturer": "Nike",
+    "sponsor": "Volvo",
+    "construction": {
+     "colors": "green/white",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "mh-fka-s-16810"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-30783",
+   "value": {
+    "name": "Maccabi Haifa 2021/22 away",
+    "season": "2021/22",
+    "type": "away",
+    "manufacturer": "Nike",
+    "sponsor": "Volvo",
+    "construction": {
+     "colors": "black/grey",
+     "design": "contrasting sleeves"
+    }
+   },
+   "sources": [
+    "mh-fka-s-30783"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-30782",
+   "value": {
+    "name": "Maccabi Haifa 2021/22 third",
+    "season": "2021/22",
+    "type": "third",
+    "manufacturer": "Nike",
+    "sponsor": "Volvo",
+    "construction": {
+     "colors": "white/grey",
+     "design": "contrasting sleeves"
+    }
+   },
+   "sources": [
+    "mh-fka-s-30782"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-271771",
+   "value": {
+    "name": "Maccabi Haifa 2024/25 away",
+    "season": "2024/25",
+    "type": "away",
+    "manufacturer": "adidas",
+    "sponsor": "Volvo",
+    "construction": {
+     "colors": "white/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-271771"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-271775",
+   "value": {
+    "name": "Maccabi Haifa 2024/25 home",
+    "season": "2024/25",
+    "type": "home",
+    "manufacturer": "adidas",
+    "sponsor": "Volvo",
+    "construction": {
+     "colors": "green/white",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "mh-fka-s-271775"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-271769",
+   "value": {
+    "name": "Maccabi Haifa 2024/25 third",
+    "season": "2024/25",
+    "type": "third",
+    "manufacturer": "adidas",
+    "sponsor": "Volvo",
+    "construction": {
+     "colors": "charcoal/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-271769"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-402615",
+   "value": {
+    "name": "Maccabi Haifa 2025/26 away",
+    "season": "2025/26",
+    "type": "away",
+    "manufacturer": "adidas",
+    "sponsor": "Volvo",
+    "construction": {
+     "colors": "white/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-402615"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-389857",
+   "value": {
+    "name": "Maccabi Haifa 2025/26 home",
+    "season": "2025/26",
+    "type": "home",
+    "manufacturer": "adidas",
+    "sponsor": "Volvo",
+    "construction": {
+     "colors": "green/white",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "mh-fka-s-389857"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-389856",
+   "value": {
+    "name": "Maccabi Haifa 2025/26 third",
+    "season": "2025/26",
+    "type": "third",
+    "manufacturer": "adidas",
+    "sponsor": "Volvo",
+    "construction": {
+     "colors": "black/green",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "mh-fka-s-389856"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-510589",
+   "value": {
+    "name": "Maccabi Haifa 2026/27 away",
+    "season": "2026/27",
+    "type": "away",
+    "manufacturer": "adidas",
+    "sponsor": "Volvo",
+    "construction": {
+     "colors": "white/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-fka-s-510589"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-496395",
+   "value": {
+    "name": "Maccabi Haifa 2026/27 home",
+    "season": "2026/27",
+    "type": "home",
+    "manufacturer": "adidas",
+    "sponsor": "Volvo",
+    "construction": {
+     "colors": "green/white",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "mh-fka-s-496395"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "mh-fka-497651",
+   "value": {
+    "name": "Maccabi Haifa 2026/27 third",
+    "season": "2026/27",
+    "type": "third",
+    "manufacturer": "adidas",
+    "sponsor": "Volvo",
+    "construction": {
+     "colors": "black/grey",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "mh-fka-s-497651"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  }
+ ],
+ "skipped": []
+}
