@@ -1277,6 +1277,11 @@ def edited(sb: dict, beats: list[dict], root: Path) -> list[dict]:
             b['lang'] = X.languages(b['shots'], b['d'])
     held_boards(beats)
     turn_cards(beats)
+
+    def backdrop(n):   # editing rule "not a slide": a card stands on a picture of its own chapter, never on a plain ground
+        p = related(n, 7)
+        return {'kind': 'image', 'src': p, 'move': 'push', 'veil': 0.45} if p else None
+    E.ground(beats, backdrop)
     out = E.cut(beats, None, related, None, None, None)
     for b in out:
         # A punch's veil landing a few frames after a picture cut reads as a flash (rule 142, qa.FLASH_RISE): the cut shows

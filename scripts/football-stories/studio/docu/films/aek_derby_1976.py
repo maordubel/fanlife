@@ -40,6 +40,12 @@ CUTS = {'cut-striker.png': ('fig-striker-shoot-kr', YELLOW), 'cut-celebrate.png'
         'cut-scarves.png': ('crowd-row-scarves-up-kr', YELLOW), 'cut-flags.png': ('crowd-row-flags-b-kr', YELLOW),
         'cut-still.png': ('crowd-row-still-kr', CREAM), 'cut-ticket.png': ('close-ticket-in-hand-c-kr', YELLOW),
         'cut-keeper.png': ('fig-keeper-dive-n', None), 'cut-knee.png': ('fig-celebrate-knee-slide-kr', YELLOW)}
+# The common library through the media index, redrawn in the house inks with AEK yellow as the one accent (editing rule 1).
+LIB = {'lib-bowl': 'beat:common/stadium-night-bowl-n', 'lib-europe': 'beat:common/europe-stadium-night-n', 'lib-corner': 'beat:common/corner-flag-night',
+       'lib-clock': 'beat:common/last-minute-clock-n', 'lib-desk': 'beat:common/scrapbook-desk-kr', 'lib-rain': 'beat:common/stand-roof-rain-kr',
+       'lib-bus': 'beat:common/away-bus-floodlights', 'lib-flags': 'beat:common/flags-pole-kr', 'lib-pile': 'beat:common/celebration-pile-kr',
+       'lib-dugout': 'beat:common/dugout-substitutes', 'lib-kickoff': 'beat:common/kick-off-centre-b-kr', 'lib-shootout': 'beat:common/shootout-line-kr',
+       'lib-spot': 'beat:common/penalty-spot-close-n', 'lib-tunnel': 'beat:common/tunnel-walk-out', 'lib-booth': 'beat:common/commentator-booth-night'}
 
 
 def pack(flow: Path, out: Path) -> dict:
@@ -71,6 +77,17 @@ def pack(flow: Path, out: Path) -> dict:
             im.putalpha(a)
         im.save(out / name)
         made[name] = f'cutouts/common/{src}'
+    from studio import media_index as M
+    pk = M.Picker(M.build(), club='aek-athens', era='1970s', film=SB['slug'], ledger=M.Ledger())
+    for n, (role, want) in enumerate(LIB.items()):
+        rec = pk.by.get(want)
+        if rec is None:
+            raise SystemExit(f'the media index has no {want}')
+        pk.use(want, n)
+        with Image.open(rec['path']) as im:
+            paper.inked(im.convert('RGB'), YELLOW).save(out / f'{role}.jpg', quality=92)
+        made[f'{role}.jpg'] = want
+    (out / 'media-index-usage.json').write_text(json.dumps({'film': SB['slug'], 'club': 'aek-athens', 'uses': pk.close()}, indent=1))
     shutil.copy(here.parents[5] / 'public' / 'crests' / 'aek-athens.png', out / 'crest-aek.png')
     made['crest-aek.png'] = 'public/crests/aek-athens.png'
     (out / 'fanlife.png').write_bytes((here.parents[5] / 'public' / 'brand' / 'fanlife' / 'logo-512.png').read_bytes())
@@ -111,27 +128,26 @@ beat("Twelve goals in one night.", img('fog.jpg', 'push', veil=0.15), stamp('12'
      type='open', emotion='tension', intensity=0.8, pre=0.2, pad=0.15, meta=dict(plain=True), sound=[('stamp', 0.5, 1.0, 0.7)])
 beat("Eight more, four days before Athens.", img('fog-b.jpg', 'push', veil=0.2), stamp('+8', 'us', x=760, y=330, dt=0.4, size=240, rot=5),
      type='open', emotion='tension', intensity=0.8, pad=0.15, meta=dict(plain=True), sound=[('stamp', 0.4, 1.0, 0.7)])
-beat("Champions of England, the season before last.", img('lineup-b.jpg', 'push', veil=0.2),
-     cut('cut-still.png', 'slide', x=40, h=520, y=560, way=-1),
+beat("Champions of England, the season before last.", img('lib-europe.jpg', 'push', veil=0.1),
      type='open', emotion='dread', intensity=0.7, pad=0.15, meta=dict(plain=True))
 beat("And the UEFA Cup sends them to Athens.", img('athens.jpg', 'push', veil=0.05), flap('2026', '1976', at=0.2, d=2.6, small='UEFA CUP · OCTOBER'),
      type='open', emotion='tension', intensity=0.8, pad=0.2, meta=dict(plain=True), sound=[('whoosh', 0.0, 1.2, 0.4)])
 beat("So who stops a team that scores twelve?", img('net.jpg', 'push', veil=0.3),
      word('WHO STOPS A TEAM|THAT SCORES TWELVE?', bg='ink', size=124, small='UEFA CUP · SECOND ROUND · 1976', at=0.6),
-     type='turning', emotion='tension', intensity=0.9, pad=0.8, meta=dict(plain=True), sound=[('riser', 0.0, 1.6, 0.5), ('impact', 0.6, 1.6, 0.7)])
-beat(None, word('TWELVE', bg='ink', size=300, d=1.1), word('THE TEAM THAT|SCORED TWELVE', bg='us', fg=COAL, size=150, small='AEK v DERBY COUNTY · 1976', at=1.1),
+     type='turning', emotion='tension', intensity=0.9, pad=0.8, meta=dict(plain=True, claims=['result']), sound=[('riser', 0.0, 1.6, 0.5), ('impact', 0.6, 1.6, 0.7)])
+beat(None, word('TWELVE', bg='ink', size=300, d=1.1), word('THE TEAM THAT|SCORED TWELVE', bg='ink', fg=YELLOW, size=150, small='AEK v DERBY COUNTY · 1976', at=1.1),
      type='trailer', hold=3.2, sound=[('impact', 0.0, 1.4, 0.7), ('impact2', 1.1, 2.0, 0.9)])
 
 # ── CHAPTER ONE · THE MACHINE ──
 chapter('CHAPTER ONE', 'THE MACHINE', 'DERBY COUNTY · AUTUMN 1976', 'fog.jpg')
 beat("Derby County. Champions of England in nineteen seventy-five. Their manager, Dave Mackay.",
-     img('fog.jpg', 'pull', veil=0.1, d=3.6), word('DAVE|MACKAY', bg='ink', size=200, small='DERBY COUNTY · THE MANAGER', at=3.6),
+     img('lib-bowl.jpg', 'pull', veil=0.1, d=3.6), word('DAVE|MACKAY', bg='ink', size=200, small='DERBY COUNTY · THE MANAGER', at=3.6),
      type='illustration', emotion='dread', intensity=0.6, pad=0.4)
 beat("In September they open their European season against Finn Harps, from Ireland. They win twelve nil.",
      img('lineup-b.jpg', 'push', veil=0.35), dict(kind='stat', value='12–0', label='DERBY v FINN HARPS · 15 SEPTEMBER 1976', dt=4.6),
      type='stat', emotion='dread', intensity=0.7, pad=0.5, sound=[('impact', 4.6, 1.4, 0.6)])
 beat("Kevin Hector scores five of them on his own.",
-     word('HECTOR|×5', bg='paper', size=230, small='FIVE GOALS · ONE NIGHT', at=0.2),
+     img('lib-kickoff.jpg', 'push', veil=0.55), word('HECTOR|×5', bg='ink', fg=YELLOW, size=230, small='FIVE GOALS · ONE NIGHT', at=0.9),
      type='stat', emotion='dread', intensity=0.7, pad=0.4)
 beat("A month later they beat Tottenham eight two. That is the team AEK have drawn.",
      img('fog-b.jpg', 'push', veil=0.25), dict(kind='stat', value='8–2', label='DERBY v TOTTENHAM · 16 OCTOBER 1976', dt=2.0),
@@ -147,14 +163,14 @@ beat("Wednesday, the twentieth of October. Nea Filadelfeia. Thirty-two thousand 
      img('athens.jpg', 'panr', veil=0.0), cut('cut-scarves.png', 'rise', x=0, h=520, y=600), type='matchday', emotion='defiance', intensity=0.7, pad=0.4,
      meta=dict(board=dict(L1, score='0–0'), subjects=['crowd', 'flag']), sound=[('chant', 0.0, 7.0, 0.35)])
 beat("On the bench, František Fadrhonc. In goal, Lakis Stergioudas. Up front, Thomas Mavros.",
-     word('FADRHONC', bg='ink', size=170, small='AEK · THE COACH', d=2.7), word('STERGIOUDAS', bg='us', fg=COAL, size=150, small='IN GOAL', at=2.7, d=5.2),
+     img('lib-dugout.jpg', 'push', veil=0.6), word('FADRHONC', bg='ink', size=170, small='AEK · THE COACH', d=3.0), word('STERGIOUDAS', bg='ink', fg=YELLOW, size=150, small='IN GOAL', at=2.7, d=5.5),
      word('MAVROS', bg='ink', size=200, small='UP FRONT', at=5.2),
      type='illustration', emotion='defiance', intensity=0.6, pad=0.3, meta=dict(board=dict(L1, score='0–0')))
 beat("And beside him, a forward from West Germany. Walter Wagner.",
      img('volley-b.jpg', 'push', veil=0.2, focus='60% 40%'), stamp('WALTER WAGNER', 'us', x=160, y=200, dt=2.4, size=100, rot=-3, plate=True),
      type='illustration', emotion='pride', intensity=0.6, pad=0.4, meta=dict(board=dict(L1, score='0–0'), plain=True), sound=[('stamp', 2.4, 1.0, 0.6)])
 beat("Forty-five minutes. Nothing.",
-     img('lineup.jpg', 'push', veil=0.1), clock(45), type='illustration', emotion='tension', intensity=0.8, pad=0.5,
+     img('lib-clock.jpg', 'push', veil=0.1), clock(45), type='illustration', emotion='tension', intensity=0.8, pad=0.5,
      meta=dict(board=dict(L1, score='0–0'), breath=True), sound=[('whistle', 1.4, 1.2, 0.4)])
 beat("Sixty-five minutes. Wagner.",
      img('volley.jpg', 'slam', veil=0.0, focus='50% 40%'), cut('cut-striker.png', 'walk', x=1150, h=820, y=220), clock(65),
@@ -167,14 +183,14 @@ beat("Two nil. The team that scored twelve has not scored at all.",
      img('celebrate.jpg', 'push', veil=0.0), cut('cut-celebrate.png', 'rise', x=1240, h=760, y=300),
      type='illustration', emotion='joy', intensity=0.9, pad=0.6, meta=dict(board=dict(L1, score='2–0')), sound=[('claps', 0.0, 4.0, 0.4)])
 beat("But Derby score twelve at home. And the second leg is in Derby.",
-     img('fog.jpg', 'pull', veil=0.2), type='turning', emotion='dread', intensity=0.8, pad=0.8, meta=dict(turn=True))
+     img('fog.jpg', 'pull', veil=0.2), type='turning', emotion='dread', intensity=0.8, pad=0.8, meta=dict(turn=True, plain=True))
 
 # ── CHAPTER THREE · THE BASEBALL GROUND ── (the mini-drama: a want, a clock, the held breath; the result after 60 %)
 chapter('CHAPTER THREE', 'THE BASEBALL GROUND', 'DERBY · 3 NOVEMBER 1976', 'plane-b.jpg')
 beat("Two weeks later, AEK travel to England.",
      img('plane-b.jpg', 'push', veil=0.05), cut('cut-ticket.png', 'drop', x=1250, h=600, y=380), type='illustration', emotion='tension', intensity=0.6, pad=0.3)
 beat("The Baseball Ground. Twenty-eight thousand. Derby need three goals just to stay alive.",
-     img('fog-b.jpg', 'push', veil=0.1), cut('cut-still.png', 'rise', x=0, h=540, y=580),
+     img('lib-rain.jpg', 'push', veil=0.1), cut('cut-still.png', 'rise', x=0, h=540, y=580),
      dict(kind='stat', value='3', label='GOALS DERBY NEED', dt=4.4),
      type='illustration', emotion='dread', intensity=0.8, pad=0.4, meta=dict(board=dict(L2, score='0–0')), sound=[('build', 0.0, 7.0, 0.35)])
 beat("A team that scores twelve. Ninety minutes. One goal at a time.",
@@ -187,34 +203,34 @@ beat("Three names change the night.",
      img('freekick.jpg', 'push', veil=0.0), type='turning', emotion='defiance', intensity=1.0, pad=0.5,
      meta=dict(board=dict(L2, score='0–0'), breath=True), sound=[('hush', 0.0, 2.6, 0.5)])
 beat("Takis Nikoloudis. Tasos Konstantinou, from Cyprus. And Walter Wagner, one more time.",
-     img('celebrate.jpg', 'pull', veil=0.0), cut('cut-knee.png', 'slide', x=1100, h=640, y=420),
-     stamp('NIKOLOUDIS', 'us', x=120, y=170, dt=0.4, size=84, rot=-3), stamp('KONSTANTINOU', 'us', x=120, y=320, dt=1.9, size=84, rot=2),
-     stamp('WAGNER', 'us', x=120, y=470, dt=4.3, size=84, rot=-2),
+     img('lib-pile.jpg', 'pull', veil=0.0), cut('cut-knee.png', 'slide', x=1100, h=640, y=420),
+     stamp('NIKOLOUDIS', 'us', x=120, y=170, dt=0.4, size=84, rot=-3), stamp('KONSTANTINOU', 'us', x=120, y=360, dt=1.9, size=84, rot=2),
+     stamp('WAGNER', 'us', x=120, y=560, dt=4.3, size=84, rot=-2),
      type='goal', emotion='release', intensity=1.0, pad=0.5, meta=dict(board=dict(L2, score='2–3', flip_at=5.0), plain=True),
      sound=[('stamp', 0.4, 1.0, 0.6), ('stamp', 1.9, 1.0, 0.6), ('stamp', 4.3, 1.0, 0.6), ('goal', 5.0, 6.0, 0.7)])
 beat("Derby two. AEK three. In Derby.",
-     dict(kind='score', us='AEK', them='DERBY', us_goals=3, them_goals=2, us_crest='crest-aek.png', cap='BASEBALL GROUND · 3 NOVEMBER 1976 · FULL TIME', bg='athens.jpg'),
+     dict(kind='score', us='AEK', them='DERBY', us_goals=3, them_goals=2, us_crest='crest-aek.png', cap='BASEBALL GROUND · 3 NOVEMBER 1976 · FULL TIME'), img('lib-corner.jpg', 'push', veil=0.5),
      type='score', emotion='joy', intensity=0.95, pad=0.5, meta=dict(outcome='win', plain=True, claims=['result']), sound=[('final', 0.3, 5.0, 0.5)])
 beat("Over two matches, five two. AEK are through.",
      dict(kind='ledger', title='UEFA CUP · SECOND ROUND', us='AEK', them='DERBY', compact=True, rows=[['ATHENS · 20 OCT', 2, 0], ['DERBY · 3 NOV', 3, 2]], row_at=[0.3, 1.1], d=3.0),
-     word('5 – 2', bg='us', fg=COAL, size=320, small='AEK · THROUGH TO THE THIRD ROUND', at=3.0),
-     type='record', emotion='joy', intensity=0.9, pad=0.5)
+     img('lib-flags.jpg', 'push', veil=0.4), word('5 – 2', bg='ink', fg=YELLOW, size=320, small='AEK · THROUGH TO THE THIRD ROUND', at=3.0),
+     type='record', emotion='joy', intensity=0.9, pad=0.5, meta=dict(claims=['result']))
 
 # ── CHAPTER FOUR · WHAT IT STARTED ──
 chapter('CHAPTER FOUR', 'WHAT IT STARTED', 'WINTER 1976 · SPRING 1977', 'radio-print.png')
 beat("But the story does not end in Derby.",
      img('lineup.jpg', 'pull', veil=0.3), cut('radio-print.png', 'drop', x=1120, h=640, y=260),
-     type='turning', emotion='wonder', intensity=0.7, pad=0.4, meta=dict(turn=True))
+     type='turning', emotion='wonder', intensity=0.7, pad=0.4, meta=dict(turn=True, plain=True))
 beat("Three weeks later, on the twenty-fifth of November, Derby sacked Dave Mackay.",
-     img('fog.jpg', 'push', veil=0.5), stamp('25 NOVEMBER 1976', 'them', x=520, y=300, dt=2.2, size=96, rot=-3, plate=True),
+     img('lib-desk.jpg', 'push', veil=0.3), stamp('25 NOVEMBER 1976', 'them', x=520, y=300, dt=2.2, size=96, rot=-3, plate=True),
      word('MACKAY|SACKED', bg='ink', size=190, small='DERBY COUNTY', at=4.4),
      type='illustration', emotion='grief', intensity=0.6, pad=0.4, sound=[('stamp', 2.2, 1.0, 0.6)])
 beat("AEK went on. Past Red Star Belgrade, on away goals.",
-     img('athens.jpg', 'push', veil=0.2), stamp('RED STAR · AWAY GOALS', 'us', x=200, y=640, dt=1.6, size=86, rot=-3, plate=True),
+     img('lib-bus.jpg', 'push', veil=0.2), stamp('RED STAR · AWAY GOALS', 'us', x=200, y=640, dt=1.6, size=86, rot=-3, plate=True),
      type='illustration', emotion='pride', intensity=0.7, pad=0.3, sound=[('stamp', 1.6, 1.0, 0.6)])
 beat("Against Queens Park Rangers they lost the first leg three nil. They won the second three nil. Then seven six, on penalties.",
-     dict(kind='ledger', title='QUARTER-FINAL · QPR', us='AEK', them='QPR', compact=True, rows=[['LONDON', 0, 3], ['ATHENS', 3, 0], ['PENALTIES', 7, 6]], row_at=[0.4, 2.6, 5.0], d=6.8),
-     img('keeper-b.jpg', 'pull', veil=0.1, dt=6.8),
+     dict(kind='ledger', title='QUARTER-FINAL · QPR', us='AEK', them='QPR', compact=True, rows=[['LONDON', 0, 3], ['ATHENS', 3, 0], ['PENALTIES', 7, 6]], row_at=[0.3, 1.6, 2.9], d=4.2),
+     img('lib-shootout.jpg', 'push', veil=0.35, d=4.2), img('lib-spot.jpg', 'pull', veil=0.1, dt=4.2),
      type='record', emotion='joy', intensity=0.9, pad=0.4)
 beat("The semi-finals of the UEFA Cup. Against Juventus.",
      img('lineup-b.jpg', 'push', veil=0.2), cut('cut-flags.png', 'rise', x=0, h=520, y=600),
@@ -225,10 +241,10 @@ beat("And it began with the team that scored twelve.",
 
 # ── CLOSE ── the question answered, the hand-over
 beat(None, word('WHO STOPS A TEAM|THAT SCORES TWELVE?', bg='ink', size=124, small='THE OPENING QUESTION', d=2.2),
-     word('AEK.|TWICE.', bg='us', fg=COAL, size=260, small='ATHENS 2–0 · DERBY 2–3', at=2.2), type='trailer', hold=5.0,
+     word('AEK.|TWICE.', bg='ink', fg=YELLOW, size=260, small='ATHENS 2–0 · DERBY 2–3', at=2.2), type='trailer', hold=5.0,
      sound=[('impact', 0.0, 1.6, 0.6), ('impact2', 2.2, 2.0, 0.9)])
 beat("Their semi-final against Juventus is a story for another night. Subscribe, and it will find you.",
-     img('athens.jpg', 'pull', veil=0.45), cut('shirt-print.png', 'drop', x=1180, h=620, y=240),
+     img('lib-tunnel.jpg', 'pull', veil=0.45), cut('shirt-print.png', 'drop', x=1180, h=620, y=240),
      dict(kind='follow', club='AEK Athens', press_at=4.8, dt=1.0), type='follow', pad=1.0, sound=[('claps', 4.8, 2.0, 0.4)])
 beat(None, img('celebrate.jpg', 'push', veil=0.55), dict(kind='end', title='The Team That Scored Twelve', line='MUSIC · DUBELTEAM · @FanLifeFootballStories'), type='end', hold=4.4)
 
