@@ -80,6 +80,7 @@ function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,c
  const tx:Say=(k,v)=>tr(copy,k,v)
  const [draft,setDraft]=useState<Draft>([]),[actor,setActor]=useState<string|null>(null),[verb,setVerbPick]=useState<ReplayAction|null>(null),[active,setActive]=useState<number|null>(null)
  const [phase,setPhase]=useState<Phase>('build'),[verdict,setVerdict]=useState<GoalVerdict|null>(null),[sheet,setSheet]=useState<Sheet>(null)
+ const [comparison,setComparison]=useState(0)
  const [tab,setTab]=useState<'who'|'what'>('who')
  const [hintN,setHintN]=useState<number|null>(null),[hinted,setHinted]=useState(false),[err,setErr]=useState(false),[notice,setNotice]=useState(''),[warn,setWarn]=useState(false),[pending,start]=useTransition()
  const ball=useBallRun(),opener=useRef<HTMLElement|null>(null)
@@ -174,7 +175,6 @@ function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,c
  // eslint-disable-next-line react-hooks/exhaustive-deps -- `tx` only closes over `copy`
  [copy])
 
- const [comparison,setComparison]=useState(0)
  const replaying=phase==='yours'||phase==='archive'
  const prompt=phase==='yours'?tx('gl.replay.yours'):phase==='archive'?tx('gl.replay.archive'):phase==='done'?tx('gl.replay.done')
   :active!==null?tx('gl.prompt.touch',{n:active+1,name:`⁨${labelOf(draft[active]?.actor??'')}⁩`})
@@ -217,6 +217,9 @@ function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,c
     </div></div>
    </div>
 
+   {building&&!full&&<ol className={css.steps} aria-label={tx('gl.buildSteps')}>
+    {['who','what','where'].map((step,index)=><li key={step} aria-current={index===(active!==null||armed?2:actor===null?0:1)?'step':undefined}>{index+1}. {tx(`gl.${step}`)}</li>)}
+   </ol>}
    <div className={css.dock} data-tab={picking?tab:'what'}>
     {picking&&<div className={`wk-seg ${css.seg}`} role="group" aria-label={`${tx('gl.who')} · ${tx('gl.what')}`}>
      <button type="button" className="min-h-tap" aria-pressed={tab==='who'} onClick={()=>setTab('who')}>{tx('gl.who')}<small dir="auto">{actor!==null?labelOf(actor):'—'}</small></button>
@@ -279,6 +282,10 @@ function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,c
      const archived=verdict.truth[comparison],mine=draft[comparison],step=verdict.steps[comparison]
      return <section className={css.touchCompare} data-testid="goal-touch-review">
       <h3 aria-live="polite">{tx('gl.result.touch',{n:comparison+1,total:count})}</h3>
+      <GoalPitch layers={[
+       ...(mineToks[comparison]?[{id:'yours' as const,tone:'yours' as const,toks:[mineToks[comparison]!],pts:[minePts[comparison]!],reached:1,compact:true,goal:false}]:[]),
+       ...(truthToks[comparison]?[{id:'archive' as const,tone:'archive' as const,toks:[truthToks[comparison]!],pts:[truthPts[comparison]!],reached:1,compact:true,goal:false}]:[])
+      ]} previewTouch={comparison} ball={null} lift={0} goalHit={false} interactive={false} armed={false} active={null} cam={null} shirtOf={shirtOf} labels={pitchLabels} contentLocale={contentLocale} onZone={tapZone} onToken={tapToken} onMove={dropToken}/>
       <div className={css.touchCards}>
        <div><b>{tx('gl.replay.yours')}</b><p dir="auto">{mine?[mine.actor||unnamed,verbWord(mine.action),mine.zone].join(' · '):tx('gl.result.missing')}</p></div>
        <div><b>{tx('gl.replay.archive')}</b><p dir="auto">{archived?[archived.actor||unnamed,verbWord(archived.action),archived.zone].join(' · '):tx('gl.result.noArchiveTouch')}</p></div>

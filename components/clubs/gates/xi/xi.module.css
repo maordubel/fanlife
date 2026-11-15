@@ -45,8 +45,9 @@
 .plate { max-width: 100%; padding: 2px 5px 1px; background: var(--mag-white); color: var(--xi-ink); border: 2px solid var(--xi-ink); font-family: var(--mag-display); font-size: clamp(10px, 3.6cqw, 14px); line-height: 1.1; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 [lang='he'] .plate { text-transform: none; font-family: var(--mag-body); font-weight: 800; }
 .empty { width: 56%; max-width: 54px; aspect-ratio: 1; display: grid; place-items: center; border: 3px dashed color-mix(in srgb, var(--mag-white) 78%, transparent); border-radius: 50%; background: color-mix(in srgb, var(--mag-white) 6%, transparent); font-family: var(--mag-display); font-size: clamp(10px, 3.4cqw, 14px); color: var(--mag-white); transition: transform .14s ease; }
-.token[data-active='true'] .empty { border: 4px solid var(--mag-white); background: var(--mag-vermilion); box-shadow: 0 0 0 3px var(--xi-ink); animation: xiPulse 1.1s ease-in-out infinite; }
-.token[data-active='true'] .shirt { animation: xiNudge .9s ease-in-out infinite; }
+.token[data-active='true'] .empty { border: 4px solid var(--mag-white); background: var(--mag-vermilion); box-shadow: 0 0 0 3px var(--xi-ink);  }
+.token[data-active='true'] { z-index: 3; }
+.token[data-active='true'] .shirt { outline: 2px solid var(--mag-white); outline-offset: 2px; border-radius: 4px; }
 .token[data-active='true'] .plate { background: var(--mag-vermilion); color: var(--mag-white); }
 .chair { --w: max(17cqw, 44px); inset-inline-start: auto; inset-inline-end: 3cqw; margin-inline-start: 0; inset-block-end: 3%; transform: none; z-index: 3; }
 .chair .empty { border-radius: 6px; }
@@ -60,7 +61,7 @@
 .dockHead { margin: 0; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .dockHead :global(.wk-logo) { font-size: 22px; transform: rotate(-2deg); }
 [lang='he'] .dockHead :global(.wk-logo) { font-family: var(--mag-body); font-weight: 900; }
-.dockTarget { padding: 3px 9px; background: var(--mag-vermilion); color: var(--mag-white); font-family: var(--mag-display); font-size: 15px; text-transform: uppercase; border: 2px solid var(--xi-ink); }
+.dockTarget { overflow-wrap: anywhere; padding: 3px 9px; background: var(--mag-vermilion); color: var(--mag-white); font-family: var(--mag-display); font-size: 15px; text-transform: uppercase; border: 2px solid var(--xi-ink); }
 .dock :global([data-pick-rail]) { border: 0; background: transparent; animation: none; }
 .dock :global([data-pick-rail]) > div:first-child { flex-wrap: wrap; padding: 0; gap: 6px; }
 .dock :global([data-pick-rail]) > div:first-child > p:first-child { display: none; }

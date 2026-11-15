@@ -103,5 +103,6 @@
  "gl.result.touch": "נגיעה {n} מתוך {total}",
  "gl.result.noArchiveTouch": "אין נגיעה מקבילה בארכיון.",
  "gl.result.prevTouch": "נגיעה קודמת",
- "gl.result.nextTouch": "נגיעה הבאה"
+ "gl.result.nextTouch": "נגיעה הבאה",
+ "gl.buildSteps": "שלבי בניית נגיעה"
 }

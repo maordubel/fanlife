@@ -47,5 +47,7 @@
  "xi.tab.worstSub": "your opinion only",
  "xi.sheet": "Team sheet",
  "xi.undo": "Undo last edit",
- "xi.undo.done": "Last edit undone."
+ "xi.undo.done": "Last edit undone.",
+ "xi.resumeDraft": "Draft restored: {n}/11 selected.",
+ "xi.pickTarget": "Pick for {role}"
 }

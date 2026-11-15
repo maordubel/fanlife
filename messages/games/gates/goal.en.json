@@ -103,5 +103,6 @@
  "gl.result.touch": "Touch {n} of {total}",
  "gl.result.noArchiveTouch": "No corresponding archive touch.",
  "gl.result.prevTouch": "Previous touch",
- "gl.result.nextTouch": "Next touch"
+ "gl.result.nextTouch": "Next touch",
+ "gl.buildSteps": "Build a touch"
 }

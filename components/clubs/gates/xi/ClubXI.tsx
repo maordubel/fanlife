@@ -66,7 +66,7 @@ function XIBoard({kind,tabs,players,club,clubName,locale,contentLocale,wardrobe,
  const slots=slotsOf(xi),role=active===TWELFTH?null:(slots.find(s=>s.slotId===active)?.role??null)
 
  useEffect(()=>{
-  try{const raw=localStorage.getItem(storageKey);if(raw&&raw.length<20000){const next=validateXI(JSON.parse(raw),players);setXI(next);setActive(firstEmpty(next)??'GK');if(isComplete(next))setRailOpen(false)}}catch{/* Invalid or unavailable device saves are not used. */}
+  try{const raw=localStorage.getItem(storageKey);if(raw&&raw.length<20000){const next=validateXI(JSON.parse(raw),players);setXI(next);setActive(firstEmpty(next)??'GK');if(isComplete(next))setRailOpen(false);else if(filledCount(next)>0)setNotice(t('xi.resumeDraft',{n:filledCount(next)}))}}catch{/* Invalid or unavailable device saves are not used. */}
   setLoaded(true)
  },[storageKey,players])
  useEffect(()=>{if(!loaded)return;try{localStorage.setItem(storageKey,JSON.stringify(xi))}catch{/* a draft that cannot be kept is still playable */}},[xi,loaded,storageKey])
@@ -150,7 +150,7 @@ function XIBoard({kind,tabs,players,club,clubName,locale,contentLocale,wardrobe,
   <XIPitch plateOf={label} xi={xi} byId={byId} wardrobe={wardrobe} side={side} kind={kind} active={active} contentLocale={contentLocale} flip={localeDirection(locale)==='ltr'} label={roleLabel} chairLabel={t('xi.twelfth')} chairTag={t('xi.twelfth')} onSelect={select} onMove={move}
    hud={{count:t('xi.count',{n:filledCount(xi)}),done:complete,formation:xi.formation,onFormation:open('formation'),formationLabel:t('xi.formationBtn',{name:xi.formation})}}/>
   <div className={css.dock}>
-   {railOpen&&<p className={css.dockHead}><span className="wk-logo red sm">{t('xi.shout')}</span><span className={css.dockTarget}>{target}</span></p>}
+   {railOpen&&<p className={css.dockHead}><span className="wk-logo red sm">{t('xi.shout')}</span><span className={css.dockTarget} aria-live="polite">{t('xi.pickTarget',{role:target})}</span></p>}
    {railOpen
     ?<PickRail target={target} targetSub={activeMan?.name??t('xi.pickFor')} items={items} onPick={pick} onDrop={drop} onClose={()=>setRailOpen(false)} labels={labels} onQuery={setQuery}
        chips={role?[{key:'fit',label:t('xi.fits'),pressed:fitOnly,onClick:()=>setFitOnly(v=>!v)}]:[]}
