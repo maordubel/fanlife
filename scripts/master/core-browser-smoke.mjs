@@ -191,10 +191,13 @@ try {
   const bank=new Map((await loadClub(slug)).data.trivia.questions.map(q=>[q.id,q]))
   let answers=0
   // This flow proves the shared run end to end; it is not a speed test. Practice mode has no question clock (server and screen), so a slow runner cannot turn a right answer into TIME'S UP.
+  // since 14.11.2026 the practice and pace switches live in the start card's coupon sheet ("Choose a topic or a decade")
+  await page.getByRole('button',{name:/Choose a topic or a decade/}).click()
   await page.getByRole('button',{name:'Practice',exact:true}).click()
   { // the verdict waits for a tap: a slow runner cannot miss it when it auto-advances (the pace is remembered across clubs, so only switch it on)
    const tap=page.getByRole('button',{name:'Tap to go on',exact:true});if((await tap.getAttribute('aria-pressed'))!=='true')await tap.click()
   }
+  await page.getByRole('button',{name:'Done',exact:true}).click()
   await page.getByTestId('trivia-start').click()
   while(await page.getByTestId('trivia-result').count()===0){
    const board=page.getByTestId('trivia-question');await board.waitFor()
