@@ -10,7 +10,7 @@
 
 ## Looks, kits and the tee (owner, 15.11.2026)
 - Five looks, the supporter chooses: Touchline, Club Archive, Night Match, Kit Collection, My Dream Team. A sixth is added only if it is a real new layout.
-- Each man wears our own drawing of the club's documented kit nearest his years (`public/club-kits/<club>/svg`). For print the crest picture and the sponsor's word are removed: an official mark is not ours to sell. A club without drawings gets the kit plate in the kit's colours.
+- Each man wears our own drawing of the club's documented kit nearest his years (`public/club-kits/<club>/svg`), the shirt alone — never shorts or socks, one frame (0 20 340 300) for every drawing so all prints look alike. For print the crest picture and the sponsor's word are removed: an official mark is not ours to sell. A club without drawings gets the kit plate in the kit's colours.
 - The pitch is green only where green is not a rival's colour; the Dream Team sky is blue only where blue is not (rule 95). Otherwise cream.
 - Names print in the archive's Latin spelling when it has one; otherwise as kept, in visual order.
 - The tee: a small XI mark on the chest, the eleven on the back, two inks on light shirts only.

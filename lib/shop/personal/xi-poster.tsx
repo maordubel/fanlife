@@ -59,10 +59,11 @@ function Plate({kit,col,w,id}:{kit?:Man['k'];col:string;w:number;id:string}){
   </g>
   <path d={BODY} fill="none" stroke={INK} strokeWidth="9" strokeLinejoin="round"/></svg>
 }
-/** one man's kit at width w (design units already scaled): the drawing (430×470: shirt, shorts, socks) or the plate */
+/** one man's shirt in a box w wide: the drawing (cropped to the shirt alone, 340×300) or the plate — never shorts or socks */
 function Kit({p,i,w,col,art}:{p:Man;i:number;w:number;col:string;art:Record<number,string>}){
+ const sw=Math.round(w*1.12),h=Math.round(sw*300/340)
  // eslint-disable-next-line @next/next/no-img-element
- return art[i]?<img src={art[i]} width={w} height={Math.round(w*470/430)} alt=""/>:<div style={{display:'flex',height:Math.round(w*470/430),alignItems:'center'}}><Plate kit={p.k} col={col} w={Math.round(w*.8)} id={`k${i}`}/></div>
+ return <div style={{display:'flex',width:sw,height:h,alignItems:'center',justifyContent:'center'}}>{art[i]?<img src={art[i]} width={sw} height={h} alt=""/>:<Plate kit={p.k} col={col} w={Math.round(sw*.94)} id={`k${i}`}/>}</div>
 }
 /** the lines of the formation, attack first: men grouped by depth, each line left to right */
 export function linesOf(n:Man[]):Man[][]{

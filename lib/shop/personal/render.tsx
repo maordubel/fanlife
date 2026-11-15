@@ -26,6 +26,8 @@ export function kitPrint(club:string,id:string):Promise<string|null>{
  let p=kitCache.get(key)
  if(!p){p=readFile(join(process.cwd(),'public/club-kits',club,'svg',`${id}.svg`),'utf8').then(s=>{
    const clean=s.replace(/<image\b[^>]*?(\/>|>[\s\S]*?<\/image>)/g,'').replace(/<text\b[\s\S]*?<\/text>/g,'')
+    // one look across every club: the shirt alone (some drawings carry shorts and socks beside it) — the same frame for all
+    .replace(/<svg\b[^>]*>/,t=>t.replace(/\s(width|height|viewBox)="[^"]*"/g,'').replace(/>$/,' viewBox="0 20 340 300">'))
    return `data:image/svg+xml;base64,${Buffer.from(clean).toString('base64')}`}).catch(()=>null)
   kitCache.set(key,p)}
  return p
