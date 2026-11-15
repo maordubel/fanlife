@@ -1,5 +1,6 @@
 'use client'
 import {useEffect,useRef,useState} from 'react'
+import {createPortal} from 'react-dom'
 import copyAll from '@/messages/en.shop.json'
 import './personal-print.css'
 
@@ -35,7 +36,7 @@ export function PersonalPrint({req,kind='xi',className=''}:{req:Req;kind?:Kind;c
    setUrl(j.url);setState('ready');go(j.url)}catch{setState('error');setMsg(copy.error)}}
  return <>
   <button type="button" className={`min-h-tap ${className}`} onClick={()=>setOpen(true)}>{copy.cta} <span aria-hidden="true">→</span></button>
-  {open&&<div className="xip z-[95]" role="dialog" aria-modal="true" aria-labelledby="xip-h" onKeyDown={e=>{if(e.key==='Escape')setOpen(false)}}>
+  {open&&createPortal(<div className="xip z-[95]" role="dialog" aria-modal="true" aria-labelledby="xip-h" onKeyDown={e=>{if(e.key==='Escape')setOpen(false)}}>
    <div className="xip-in">
     <div className="xip-wall" data-product={product}>
      <div className="xip-frame">{/* eslint-disable-next-line @next/next/no-img-element */}
@@ -47,7 +48,7 @@ export function PersonalPrint({req,kind='xi',className=''}:{req:Req;kind?:Kind;c
      <p className="xip-k">{copy.k}</p>
      <h2 className="xip-h" id="xip-h">{copy.t}</h2>
      <p className="xip-sub">{copy.sub}</p>
-     <div className="xip-seg" role="radiogroup" aria-label={copy.t}>{products.map(k=><button key={k} type="button" role="radio" aria-checked={product===k} className="min-h-tap" onClick={()=>setProduct(k)}>{copy[k]}</button>)}</div>
+     <div className="xip-seg" role="radiogroup" aria-label={copy.t} style={{gridTemplateColumns:`repeat(${products.length},minmax(0,1fr))`}}>{products.map(k=><button key={k} type="button" role="radio" aria-checked={product===k} className="min-h-tap" onClick={()=>setProduct(k)}>{copy[k]}</button>)}</div>
      {!xi?null:product==='tee'?<p className="xip-sub">{copy.teeNote}</p>
       :<div className="xip-looks" role="radiogroup" aria-label={copy.look}><span className="xip-k">{copy.look}</span>{LOOKS.map(k=><button key={k} type="button" role="radio" aria-checked={template===k} className="min-h-tap" onClick={()=>setTemplate(k)}>{copy.looks[k]}</button>)}</div>}
      <label className="xip-field"><span>{copy.manager}</span><input value={manager} maxLength={22} onChange={e=>setManager(e.target.value)} autoComplete="nickname"/>{manager.trim()?<small>{copy.managerHint.replace('{name}',manager.trim())}</small>:null}</label>
@@ -62,6 +63,6 @@ export function PersonalPrint({req,kind='xi',className=''}:{req:Req;kind?:Kind;c
      <button type="button" className="xip-back min-h-tap" onClick={()=>setOpen(false)}>{copy.back}</button>
     </div>
    </div>
-  </div>}
+  </div>,document.body)}
  </>
 }
