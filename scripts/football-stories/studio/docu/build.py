@@ -672,6 +672,7 @@ class Film:
 
     ENTRANCES = ('rise', 'slide', 'walk', 'toss', 'drop')
 
+    ENTRANCES = ('walk', 'rise', 'toss', 'drop', 'slide')
     CUT_MAX_H, CUT_MARGIN = 700, 36   # a figure is part of the scene, never a second picture over it
 
     def cutout(self, s, t, d):
@@ -687,9 +688,9 @@ class Film:
         w = h
         try:
             from PIL import Image
-            with Image.open(self.root / 'assets' / 'img' / s['src']) as im:
+            with Image.open(Path(getattr(self, 'root', '.')) / 'assets' / 'img' / s['src']) as im:
                 w = round(h * im.width / im.height)
-        except OSError:
+        except (OSError, ValueError):
             pass
         x = max(self.CUT_MARGIN, min(s.get('x', 1180), W - w - self.CUT_MARGIN))
         y = s.get('y', H - h)
