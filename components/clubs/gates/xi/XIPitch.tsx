@@ -26,8 +26,6 @@ function Lines(){
 export type PitchProps={
  plateOf?:(n:string)=>string;xi:ClubXI;byId:ReadonlyMap<string,ClubPlayer>;wardrobe:RumbleWardrobe;side:'us'|'them';kind:'best'|'worst'
  active:Where;contentLocale:string
- /** LTR screens mirror the formation: the right back stands on the right of the screen, as on a match-day graphic */
- flip:boolean
  label:(role:string,name:string|null)=>string
  chairLabel:string;chairTag:string
  onSelect:(where:Where)=>void
@@ -35,14 +33,14 @@ export type PitchProps={
  hud:{count:string;done:boolean;formation:string;onFormation:()=>void;formationLabel:string}
 }
 
-function Token({where,role,x,y,plateOf,xi,byId,wardrobe,side,active,contentLocale,flip,label,onSelect,onMove,chair,chairTag}:{where:Where;role:string;x?:number;y?:number}&Omit<PitchProps,'kind'|'hud'|'chairLabel'|'chairTag'>&{chair?:boolean;chairTag?:string}){
+function Token({where,role,x,y,plateOf,xi,byId,wardrobe,side,active,contentLocale,label,onSelect,onMove,chair,chairTag}:{where:Where;role:string;x?:number;y?:number}&Omit<PitchProps,'kind'|'hud'|'chairLabel'|'chairTag'>&{chair?:boolean;chairTag?:string}){
  const id=occupant(xi,where),p=id?byId.get(id)??null:null
  const drag=useDragSource({payload:`slot:${where}`,disabled:!p,onDrop:zone=>onMove(where,zone)})
- const style=chair?undefined:{insetInlineStart:`${flip?100-x!:x}%`,top:`${topOf(y!)}%`}
+ const style=chair?undefined:{left:`${x}%`,top:`${topOf(y!)}%`}
  return <button type="button" {...drag} {...dropZone(`xi:${where}`)} className={`min-h-tap ${css.token} ${chair?css.chair:''}`} style={{...drag.style,...style}}
   data-slot={where} data-active={active===where} aria-pressed={active===where} aria-label={label(role,p?.name??null)} onClick={()=>onSelect(where)} data-player-id={p?.id}>
   {p
-   ?<><span className={css.shirt} key={p.id}><ClubShirt player={p} wardrobe={wardrobe} side={side}/>{xi.captain===p.id&&where!==TWELFTH&&<span className={css.cap} aria-hidden="true">C</span>}</span>
+   ?<><span className={css.shirt} key={p.id}><ClubShirt player={p} wardrobe={wardrobe} side={side} keeper={role==='GK'}/>{xi.captain===p.id&&where!==TWELFTH&&<span className={css.cap} aria-hidden="true">C</span>}</span>
      <span className={css.plate} lang={contentLocale} dir="auto">{(plateOf??shortName)(p.name)}</span></>
    :<><span className={css.empty} aria-hidden="true">{chair?'12':role}</span>{chair&&<span className={css.chairTag}>{chairTag}</span>}</>}
  </button>

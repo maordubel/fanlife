@@ -40,3 +40,5 @@ export async function makePersonal(r:Request,o:{id:string;subject:string;kind:'f
   return {url:onOwn(doc.settings.popupUrl,done.printify.url),image:done.printify.images[0]??proof,proof}
  }catch(e){return {error:String((e as Error)?.message||e).slice(0,200),status:502}}
 }
+/** the drawing's id from the shared wardrobe's path (/club-kits/<club>/svg/<id>.svg) */
+export const drawingOf=(svg?:string)=>svg?/\/svg\/([a-z0-9-]+)\.svg$/i.exec(svg)?.[1]:undefined

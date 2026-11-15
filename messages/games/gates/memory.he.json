@@ -110,5 +110,6 @@
   "mem.coupon.done": "סיום",
   "mem.keys.title": "במקלדת",
   "mem.keys.move": "מעבר בין קלפים",
-  "mem.keys.turn": "הפיכת קלף"
+  "mem.keys.turn": "הפיכת קלף",
+  "mem.reveal.explain": "הזוג מחבר בין {relation}."
 }

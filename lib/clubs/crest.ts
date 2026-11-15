@@ -17,6 +17,14 @@ export const CRESTS: Readonly<Record<string, string>> = {
   'raja-casablanca': '/crests/raja-casablanca.png',
   'wydad-casablanca': '/crests/wydad-casablanca.png',
   'al-ahly': '/crests/al-ahly.png',
+  'fenerbahce': '/universe-crests/fenerbahce.png',
+  'borussia-dortmund': '/universe-crests/borussia-dortmund.png',
+  'dinamo-zagreb': '/universe-crests/gnk-dinamo-zagreb.png',
+  'hajduk-split': '/universe-crests/hnk-hajduk-split.png',
+  'partizan-belgrade': '/universe-crests/fk-partizan-belgrade.png',
+  'union-berlin': '/universe-crests/1fc-union-berlin.png',
+  'paok': '/universe-crests/paok-thessaloniki.png',
+  'leicester-city': '/crests/leicester-city.png',
 }
 
 export const crestFor = (clubId: string | null | undefined): string | null => (clubId ? CRESTS[clubId] ?? null : null)

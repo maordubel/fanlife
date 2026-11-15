@@ -54,25 +54,25 @@ function Token({tok,i,pt,tone,compact,active,interactive,shirt,labels,onTap,onMo
  * tap/drop zones laid over it, and the touches as men standing where they played. The tap grid is the whole interaction
  * for keyboard and thumb; dragging a shirt onto a zone, or a man to another zone, is the same action by another route.
  */
-export function GoalPitch({layers,ball,lift,goalHit,interactive,armed,active,cam,shirtOf,labels,contentLocale,onZone,onToken,onMove}:{layers:Layer[];ball:Pt|null;lift:number;goalHit:boolean;interactive:boolean;armed:boolean;active:number|null;cam:{s:number;tx:number;ty:number}|null;shirtOf:(t:Tok)=>ReactNode;labels:PitchLabels;contentLocale:string;onZone:(zone:string)=>void;onToken:(i:number)=>void;onMove:(i:number,zone:string)=>void}){
+export function GoalPitch({layers,ball,lift,goalHit,interactive,armed,active,cam,shirtOf,labels,contentLocale,onZone,onToken,onMove,previewTouch}:{previewTouch?:number;layers:Layer[];ball:Pt|null;lift:number;goalHit:boolean;interactive:boolean;armed:boolean;active:number|null;cam:{s:number;tx:number;ty:number}|null;shirtOf:(t:Tok)=>ReactNode;labels:PitchLabels;contentLocale:string;onZone:(zone:string)=>void;onToken:(i:number)=>void;onMove:(i:number,zone:string)=>void}){
  const camStyle:CSSProperties|undefined=cam&&cam.s>1?{transform:`translate(${cam.tx*100}%,${cam.ty*100}%) scale(${cam.s})`}:undefined
- return <div className={css.pitch} data-testid="goal-pitch" data-armed={armed}>
+ return <div className={css.pitch} data-testid="goal-pitch" data-armed={armed} data-review={previewTouch!==undefined||undefined}>
   <div className={css.cam} style={camStyle}>
-   <svg className={css.svg} viewBox={`${VIEW.x} ${VIEW.y} ${VIEW.w} ${VIEW.h}`} aria-hidden="true" focusable="false">
+   <svg className={css.svg} viewBox={`${VIEW.x} ${VIEW.y} ${VIEW.w} ${VIEW.h}`} preserveAspectRatio="none" aria-hidden="true" focusable="false">
     <Chalk/>
     <Net hit={goalHit} label={labels.goal}/>
     {layers.map(l=><Paths key={l.id} layer={l}/>)}
     {ball&&<g className={css.ball}><ellipse cx={ball.x} cy={ball.y+3} rx={5} ry={2.2} data-k="shadow"/><circle cx={ball.x} cy={ball.y-lift} r={6.5}/><path d={`M${ball.x-3} ${ball.y-lift-1} l3 -3 l3 3 l-1.5 3.5 h-3z`}/></g>}
    </svg>
-   <div className={css.zones} role="group" aria-label={labels.zone('')}>
+   {interactive&&<div className={css.zones} role="group" aria-label={labels.zone('')}>
     {ROWS.flatMap(r=>COLS.map(c=>{
      const z=`${c}${r}`,p=zonePercent(z)!
      return <button key={z} type="button" className={`${css.zone} min-h-tap`} data-zone={z} data-testid={`zone-${z}`} {...dropZone(`zone-${z}`)} style={{left:`${p.left}%`,top:`${p.top}%`,width:`${p.width}%`,height:`${p.height}%`}} aria-label={labels.zone(z)} onClick={()=>onZone(z)}/>
     }))}
-   </div>
+   </div>}
    <div className={css.tokens} lang={contentLocale}>
     {layers.flatMap(l=>l.toks.slice(0,l.reached).map((tok,i)=>
-     <Token key={`${l.id}${i}`} tok={tok} i={i} pt={l.pts[i]!} tone={l.tone} compact={l.compact} active={l.id==='yours'&&active===i} interactive={interactive&&l.id==='yours'} shirt={shirtOf(tok)} labels={labels} onTap={onToken} onMove={onMove}/>))}
+     <Token key={`${l.id}${i}`} tok={tok} i={previewTouch??i} pt={l.pts[i]!} tone={l.tone} compact={l.compact} active={l.id==='yours'&&active===i} interactive={interactive&&l.id==='yours'} shirt={shirtOf(tok)} labels={labels} onTap={onToken} onMove={onMove}/>))}
    </div>
   </div>
  </div>

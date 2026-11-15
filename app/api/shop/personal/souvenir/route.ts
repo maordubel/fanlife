@@ -1,9 +1,9 @@
 import {NextResponse} from 'next/server'
 import {REGISTRY} from '@/lib/master/registry'
 import {loadClub} from '@/lib/clubs/resolver'
-import {bannedHere,forbiddenColor} from '@/lib/clubs/theme'
-import {kitViews} from '@/lib/clubs/gate-content'
-import {kitFor,rumbleWardrobe,SWATCH} from '@/lib/clubs/rumble-kit'
+import {bannedHere} from '@/lib/clubs/theme'
+import {clubWardrobe} from '@/lib/clubs/kit-wardrobe'
+import {kitFor,SWATCH} from '@/lib/clubs/rumble-kit'
 import {kitArt} from '@/lib/clubs/kit-sources'
 import {FORMATIONS as XI_SLOTS} from '@/lib/clubs/rumble-xi/formations'
 import {clubAwayData} from '@/lib/away-days/club'
@@ -13,7 +13,7 @@ import {readCareer} from '@/lib/legends/store'
 import {viewer} from '@/lib/legends/owner'
 import {cleanLine,cleanManager} from '@/lib/shop/personal/sign'
 import {renderSouvenir} from '@/lib/shop/personal/render'
-import {hashOf,makePersonal,recipe,today} from '@/lib/shop/personal/make'
+import {drawingOf,hashOf,makePersonal,recipe,today} from '@/lib/shop/personal/make'
 import {PROBE,type Man} from '@/lib/shop/personal/xi-poster'
 import type {AwayStop,SouvenirSpec} from '@/lib/shop/personal/souvenirs'
 import {readShop} from '@/lib/shop/store'
@@ -55,7 +55,7 @@ async function clubBase(clubId:string){
  const club=await loadClub(clubId).catch(()=>null);if(!club)return null
  const th=club.data.theme
  return {club,base:{c:clubId,cn:club.data.identity.name,col:reg.primary,d:today(),g:!(th&&bannedHere(th,PROBE.green)),b:!(th&&bannedHere(th,PROBE.blue))},
-  wardrobe:rumbleWardrobe(kitViews(club.data),hex=>!!th&&forbiddenColor(th,hex))}
+  wardrobe:clubWardrobe(club.data)}
 }
 async function build(kind:Kind,b:Record<string,unknown>,m:Mine):Promise<{spec:SouvenirSpec}|{error:string;status:number}>{
  const mine={who:m.who,line:m.line}
@@ -106,8 +106,8 @@ async function build(kind:Kind,b:Record<string,unknown>,m:Mine):Promise<{spec:So
  if(!rec||!team)return {error:'Finish a season first.',status:422}
  const slots=XI_SLOTS[team.lineup.formation],n:Man[]=[]
  team.lineup.xi.forEach((id,i)=>{const card=team.cards[id],s=slots?.[i];if(!card||!s)return
-  const w=kitFor({fromYear:card.from,toYear:card.to},'us',cb.wardrobe),kit=w.source==='archive'?w.kit:null
-  const file=kit?kitArt(clubId,kit.id,kit.season,'home')?.svg.split('/').pop()?.replace(/\.svg$/,''):undefined,c2=kit?hexOf(kit.colours):null
+  const w=kitFor({fromYear:card.from,toYear:card.to},'us',cb.wardrobe,{keeper:s.fine==='GK'}),kit=w.source==='archive'?w.kit:null
+  const file=drawingOf(kit?.svg),c2=kit?hexOf(kit.colours):null
   n.push({x:s.x,y:12+(s.y-20)/64*84,name:card.name.trim().split(/\s+/).at(-1)!,...(file?{u:file}:{}),...(c2?{k:{d:kit!.design||'',...c2}}:{}),...(team.lineup.captain===id?{cap:true}:{})})})
  if(n.length!==11)return {error:'Your eleven is not complete.',status:422}
  return {spec:{...cb.base,...mine,w:'legends',team:c.clubName,season:rec.ordinal,pts:rec.points,place:rec.place,of:rec.of,champ:rec.champion,rec:[rec.w,rec.d,rec.l],f:team.lineup.formation,n}}

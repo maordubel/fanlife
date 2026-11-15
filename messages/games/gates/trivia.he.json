@@ -166,5 +166,6 @@
   "tq.ready.coupon.open": "בחרו נושא או עשור",
   "tq.ready.coupon.done": "סיום",
   "tq.ready.coupon.clear": "ניקוי",
-  "tq.report.where": "לאן עכשיו"
+  "tq.report.where": "לאן עכשיו",
+  "tq.startCount": "שחקו {n} שאלות"
 }

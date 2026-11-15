@@ -8,6 +8,8 @@ import {LIVES,MAX_MULTIPLIER} from '@/lib/game/session'
 import {formatDate,roundScore,secondsFor,type BlindCard,type DatedCard} from '@/lib/game/timeline-run'
 import type {Locale} from '@/lib/clubs/contract'
 import {localizedDate,type UiLocale} from '@/lib/clubs/locale'
+import enFeedback from '@/messages/timeline/en.json'
+import heFeedback from '@/messages/timeline/he.json'
 import type {InsertVerdict} from '@/lib/game/timeline-engine'
 export type TimelineCopy={lives:string;where:string;right:string;wrong:string;intro:string;note:string;slot:string;here:string;error:string}
 export type ResultProps={run:Run;board:DatedCard[];seed:number;cursor:number;missed:string[];queue:BlindCard[]}
@@ -144,18 +146,22 @@ export function SharedTimelineBoard({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [run.placed, run.over, locked, coachOpen, error])
 
-  /** after the feedback has been read, the next card deals itself */
+  const clearFeedback = useCallback(() => {
+    setFeedback(null)
+    setBurst(null)
+    setCelebrate(false)
+    inFlight.current = false
+    setLocked(false)
+  }, [])
   useEffect(() => {
-    if (!feedback) return
-    const wait = window.setTimeout(() => {
-      setFeedback(null)
-      setBurst(null)
-      setCelebrate(false)
-      inFlight.current = false
-      setLocked(false)
-    }, 1700)
+    if (!feedback?.correct) return
+    const wait = window.setTimeout(clearFeedback, 1700)
     return () => window.clearTimeout(wait)
-  }, [feedback])
+  }, [feedback, clearFeedback])
+
+  const wording=dateLocale==='he'?heFeedback:enFeedback
+  const before=feedback?board[feedback.position-1]:undefined
+  const after=feedback?board[feedback.position+1]:undefined
 
   if (run.over && !feedback)
     return renderResult({run, board, seed, cursor, missed, queue})
@@ -230,6 +236,14 @@ export function SharedTimelineBoard({
           <p className="mt-1 font-mono text-[13px] text-paper">
             <Num>{showDate(feedback.card.on)}</Num>
           </p>
+          {!feedback.correct && <div className="mt-2 text-paper" data-testid="timeline-correction">
+            <p>{wording.correctPlace}</p>
+            <ul className="text-sm">
+              {before&&<li>{wording.afterEvent} <bdi>{before.title}</bdi></li>}
+              {after&&<li>{wording.beforeEvent} <bdi>{after.title}</bdi></li>}
+            </ul>
+            <button type="button" className="min-h-tap mt-2 border-hair border-paper px-3" onClick={clearFeedback}>{wording.continueRound}</button>
+          </div>}
         </div>
       )}
 

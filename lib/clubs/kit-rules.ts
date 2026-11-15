@@ -23,15 +23,15 @@ export type KitGame='assembly'|'practice'|'recognition'
 export const GAMES:readonly KitGame[]=['assembly','practice','recognition']
 export const gameFrom=(raw:string|string[]|undefined):KitGame|null=>{const v=Array.isArray(raw)?raw[0]:raw;return (GAMES as readonly string[]).includes(v??'')?v as KitGame:null}
 
-export type KitMode='quick'|'full'
-export const MODE_SIZE:Readonly<Record<KitMode,number>>={quick:3,full:5}
+export type KitMode='single'|'quick'|'full'
+export const MODE_SIZE:Readonly<Record<KitMode,number>>={single:1,quick:3,full:5}
 /** version of the dealing and grading rules; carried in links and in the unlock receipt (KB-R11, KB-R12) */
 export const RULES='kb2'
 export const KIT_ROUND=5,MIN_SHIRTS=3,HINT_PENALTY=8,HINT_LIMIT=3,PERFECT_BONUS=15,SHIRT_POINTS=100,DNA_THRESHOLD=75
 /** options per step by the shirt's place in the round: a warm-up, a middle, an expert close (KB-R07) */
 export const OPTION_RAMP:readonly number[]=[3,4,4,4,5]
 /** `?n=3` → quick, `?n=5` → full, anything else asks */
-export function kitModeFrom(raw:string|string[]|undefined):KitMode|null{const v=Number(Array.isArray(raw)?raw[0]:raw);return v===MODE_SIZE.quick?'quick':v===MODE_SIZE.full?'full':null}
+export function kitModeFrom(raw:string|string[]|undefined):KitMode|null{const v=Number(Array.isArray(raw)?raw[0]:raw);return v===MODE_SIZE.single?'single':v===MODE_SIZE.quick?'quick':v===MODE_SIZE.full?'full':null}
 export const nextCursor=(cursor:number,consumed:number)=>(Number.isFinite(cursor)&&cursor>0?Math.floor(cursor):0)+Math.max(0,Math.floor(consumed))
 
 export type Option={id:string;step:Step;patch:Partial<ClothSpec>;/** how many of the club's drawable kits carry this value */seen:number}

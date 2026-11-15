@@ -70,10 +70,10 @@ function reelOf(c:Career,f:Played,kits:Record<string,ClubKit|undefined>,opts:{ch
   const man=(m:{id:string;from:number|null;to:number|null})=>({id:m.id,fromYear:m.from,toYear:m.to})
   const dressed=(m:{id:string;from:number|null;to:number|null})=>{const k=kitOfMan(man(m),'us',kit.wardrobe,kit.primary);return home&&clash(k,home)?{k:kitOfMan(man(m),'them',kit.wardrobe,kit.primary),v:'them' as const}:{k,v:'us' as const}}
   // the garment of the documented kit he wears, when the renderer can draw it faithfully
-  const garment=(m:{id:string;from:number|null;to:number|null},v:'us'|'them')=>{const w=kitFor(man(m),v,kit.wardrobe);return w.source==='archive'?kit.cloth?.[w.kit.id]:undefined}
+  const garment=(m:{id:string;from:number|null;to:number|null},v:'us'|'them')=>{const w=kitFor(man(m),v,kit.wardrobe);return w.source==='archive'?{cloth:kit.cloth?.[w.kit.id],kitSvg:w.kit.svg}:{}}
   const dress=(m:{id:string;from:number|null;to:number|null})=>dressed(m).k
   const sd=res.sides![side],xi=numberEleven(sd.xi)
-  const lineup:ReelPlayer[]=xi.map(m=>{const d=dressed(m),g=garment(m,d.v);return {id:m.id,no:m.no,name:m.name,pos:m.pos,kit:d.k,...(g?{cloth:g}:{})}})
+  const lineup:ReelPlayer[]=xi.map(m=>{const d=dressed(m),g=garment(m,d.v);return {id:m.id,no:m.no,name:m.name,pos:m.pos,kit:d.k,...g}})
   // the men who came on: from the log, named from the club's own card
   let no=12
   for(const e of res.events)if(e.kind==='sub'&&e.side===side&&e.player&&!lineup.some(p=>p.id===e.player)){
@@ -84,7 +84,7 @@ function reelOf(c:Career,f:Played,kits:Record<string,ClubKit|undefined>,opts:{ch
   // the side's shirt on the board: the garment most of its outfield men wear tonight
   const tally=new Map<string,{c:ClothSpec;n:number}>();for(const p of lineup)if(p.cloth&&p.pos!=='GK'&&!p.bench){const k=JSON.stringify(p.cloth),o=tally.get(k);tally.set(k,{c:p.cloth,n:(o?.n??0)+1})}
   const cloth=[...tally.values()].sort((x,y)=>y.n-x.n)[0]?.c??null
-  return {name:t?.name??club,code:clubCode(t?.name??club),kit:shirt,keeper:shirt,lineup,formation:sd.formation,crest:crestFor(club),cloth}
+  return {name:t?.name??club,code:clubCode(t?.name??club),kit:shirt,keeper:shirt,lineup,formation:sd.formation,crest:crestFor(club),cloth,kitSvg:lineup.find(p=>p.pos!=='GK'&&!p.bench&&p.kitSvg)?.kitSvg}
  }
  const h=build(0,null),a=build(1,h.kit)
  h.keeper=keeperKit(h.kit,a.kit,0);a.keeper=keeperKit(a.kit,h.kit,3)

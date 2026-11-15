@@ -339,7 +339,6 @@
   .side { gap: 16px; }
   .stickers { justify-content: flex-start; gap: 20px; padding: 6px 0; }
   .stickers li { inline-size: 120px; block-size: 90px; }
-  .couponBtn { display: none; }
   .inline { display: block; }
   .tick { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .tickRow:nth-child(odd) { border-inline-end: 0; }

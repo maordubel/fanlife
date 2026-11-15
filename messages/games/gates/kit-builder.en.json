@@ -123,7 +123,7 @@
   "kb.game.assembly": "Full assembly",
   "kb.game.assembly.note": "Five parts — body, construction, crest, maker, sponsor — scored on ten fields out of 100.",
   "kb.game.practice": "Reduced-parts practice",
-  "kb.game.practice.note": "This club's archive states colours, a pattern, a maker and sometimes a sponsor — not collar, sleeves or crest. So each shirt is scored out of 100 on the parts its record documents, and a part nobody wrote down is never asked.",
+  "kb.game.practice.note": "Build the parts the archive documents for each shirt. Some seasons include a historical club crest.",
   "kb.game.recognition": "Recognition mode",
   "kb.game.recognition.note": "The older game: pick the season, maker and design of one shirt.",
   "kb.game.recognition.link": "Prefer the older season, maker and design game? Recognition mode →",
@@ -154,5 +154,16 @@
   "kb.own.market": "{n} in the market →",
   "kb.own.saved": "Saved.",
   "kb.own.label": "Your closet",
-  "kb.intro.burst": "Dress it!"
+  "kb.intro.burst": "Dress it!",
+  "kb.mode.single": "Build one shirt",
+  "kb.step.next": "Next part",
+  "kb.step.crest": "Club crest",
+  "kb.q.crest": "Which crest was on this kit?",
+  "kb.info.crest": "An archived version of the club crest.",
+  "kb.reveal.archiveArt": "Season-specific kit drawing from the archive.",
+  "kb.crest.circle-1923": "circle 1923",
+  "kb.crest.circle-1927": "circle 1927",
+  "kb.crest.keter-ball-patch": "keter ball patch",
+  "kb.crest.keter-ball-black": "keter ball black",
+  "kb.retryShirt": "Try this shirt again"
 }

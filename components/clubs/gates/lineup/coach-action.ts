@@ -15,7 +15,7 @@ export async function askLineupCoach(slug:string,version:string,matchId:string,n
  return m?coachNote(m,names,index):null
 }
 
-export type SheetVerdict={correct:number;missed:string[];wrong:string[];sources:string[];/** the archive records no bands for this match, so none is graded */bandGraded:false}
+export type SheetVerdict={correct:number;starters:string[];missed:string[];wrong:string[];sources:string[];/** the archive records no bands for this match, so none is graded */bandGraded:false}
 /**
  * Gate 3 grading with the rulebook's input rules (LI-R08): exactly eleven rows, each man once, each from this match's
  * dealt room, each in a real band. A forged or malformed sheet is REFUSED whole — nothing is silently dropped and then graded
@@ -33,5 +33,5 @@ export async function gradeLineupSheet(slug:string,version:string,matchId:string
  const pool=buildPool({matchId:m.id,starters:m.starters,decoys:m.decoys,roster:(resolved.data.players||[]).map(p=>p.value),year:matchYear(m.on)})
  if(!names.every(n=>pool.includes(n)))return null
  const set=new Set(names)
- return {correct:m.starters.filter(s=>set.has(s)).length,missed:m.starters.filter(s=>!set.has(s)),wrong:names.filter(n=>!m.starters.includes(n)),sources:m.sources,bandGraded:false}
+ return {starters:[...m.starters],correct:m.starters.filter(s=>set.has(s)).length,missed:m.starters.filter(s=>!set.has(s)),wrong:names.filter(n=>!m.starters.includes(n)),sources:m.sources,bandGraded:false}
 }

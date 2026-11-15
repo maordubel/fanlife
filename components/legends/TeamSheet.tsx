@@ -102,7 +102,7 @@ export function TeamSheet({v,busy,send,mode='sheet'}:{v:CareerView;busy:boolean;
     <svg className="tl-lines" viewBox="0 0 100 140" preserveAspectRatio="none" aria-hidden="true"><rect x="3" y="3" width="94" height="134"/><line x1="3" y1="70" x2="97" y2="70"/><circle cx="50" cy="70" r="12"/><rect x="24" y="3" width="52" height="20"/><rect x="24" y="117" width="52" height="20"/><rect x="38" y="3" width="24" height="7"/><rect x="38" y="130" width="24" height="7"/></svg>
     {slots.map((sl,i)=>{const id=s.xi[i]||'',m=men.get(id),k=keyOf({z:'xi',i}),off=offLine(i),isSel=sel&&keyOf(sel)===k,fit=held&&!heldSlot?held.pos===sl.family:false
      return <button key={sl.id} type="button" className="tl-spot min-h-tap" data-drop={k} data-over={over===k||undefined} data-sel={isSel||undefined} data-off={off||undefined} data-empty={!m||undefined} data-hint={sel&&!isSel?(fit?'natural':'any'):undefined}
-      style={{insetInlineStart:`clamp(34px, ${sl.x}%, calc(100% - 34px))`,insetBlockStart:`${yOn(sl.y)}%`}} {...handlers({z:'xi',i})}
+      style={{left:`clamp(34px, ${sl.x}%, calc(100% - 34px))`,insetBlockStart:`${yOn(sl.y)}%`}} {...handlers({z:'xi',i})}
       aria-pressed={isSel||false} aria-label={`${sl.fine}: ${m?`${m.name}, ${posName(m.pos)}${off?', out of his line':''}${s.cap===id?', captain':s.vice===id?', vice-captain':''}`:'empty'}`}>
       <span className="tl-disc">{m?<LegendShirt man={m}/>:<i className="tl-plus" aria-hidden="true">+</i>}
        {m&&s.cap===id?<i className="tl-arm" data-arm="c" data-wearing={armband===id||undefined} aria-hidden="true">C</i>:m&&s.vice===id?<i className="tl-arm" data-arm="v" data-wearing={armband===id||undefined} aria-hidden="true">V</i>:null}
@@ -154,7 +154,7 @@ export function TeamSheet({v,busy,send,mode='sheet'}:{v:CareerView;busy:boolean;
      :<button type="button" className="lgm-go min-h-tap" disabled={busy||!full} onClick={save} data-testid="legends-save-sheet">Save</button>}
    </div>:null}
   </div></Portal>:null}
-  {ghost?<Portal><div className="tl-ghost" style={{insetInlineStart:ghost.x,insetBlockStart:ghost.y}} aria-hidden="true"><span className="tl-disc">{men.get(ghost.id)?<LegendShirt man={men.get(ghost.id)!}/>:null}</span><b>{surname(men.get(ghost.id)?.name??'')}</b></div></Portal>:null}
+  {ghost?<Portal><div className="tl-ghost" style={{left:ghost.x,insetBlockStart:ghost.y}} aria-hidden="true"><span className="tl-disc">{men.get(ghost.id)?<LegendShirt man={men.get(ghost.id)!}/>:null}</span><b>{surname(men.get(ghost.id)?.name??'')}</b></div></Portal>:null}
 
   {card?<Sheet id="lgm-card" kicker={posName(card.pos)} title={card.name} onClose={()=>setCard(null)}>
    <LegendCard c={card} shirt><p className="lgm-fine">{card.appsTotal} appearances · {card.goals} goals this season · {card.yellows} yellows · signed for {money(card.paid)}</p>

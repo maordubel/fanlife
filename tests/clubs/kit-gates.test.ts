@@ -62,7 +62,7 @@ describe('gate 4 · the deal',()=>{
     for(const s of dealt.puzzle.steps){if(s.step==='maker')expect(dealt.eligible.cloth.maker).toBeTruthy();if(s.step==='sponsor')expect(dealt.eligible.cloth.sponsor).toBeTruthy()}
     const noSponsor=!dealt.eligible.cloth.sponsor
     if(noSponsor){expect(dealt.scored).not.toContain('sponsor');expect(dealt.puzzle.steps.map(s=>s.step)).not.toContain('sponsor')}
-    for(const f of ['collar','collarInk','sleeves','sleeveInk','crest'] as Field[])expect(dealt.scored).not.toContain(f)
+    for(const f of ['collar','collarInk','sleeves','sleeveInk'] as Field[])expect(dealt.scored).not.toContain(f)
    }
   }
  },60000)
@@ -96,6 +96,17 @@ describe('gate 4 · the deal',()=>{
   const full=await club('celtic'),z={...full,kits:(full.kits as unknown[]).slice(0,2),gates:{...full.gates,'kit-builder':{...full.gates['kit-builder'],playable:false}}} as typeof full
   expect(canRun(eligibleKits(z))).toBe(false);expect(dealKitRun(eligibleKits(z),1,0)).toEqual([]);expect(gate4Playable(z)).toBe(false)
  },60000)
+ it('grades a documented historical crest and offers distinct archive versions',async()=>{
+  const list=eligibleKits(await club('hapoel-tel-aviv'))
+  const deal=Array.from({length:list.length},(_,cursor)=>dealKitRun(list,9,cursor,1))
+   .find(run=>run[0]?.puzzle.steps.some(row=>row.step==='crest'))
+  expect(deal).toBeDefined()
+  const row=deal![0]!.puzzle.steps.find(step=>step.step==='crest')!
+  const wrong=row.options.find(option=>option.id!==deal![0]!.correct.crest)!
+  expect(wrong.patch.crestArt).toBeTruthy()
+  expect(gradePuzzle(deal!,0,deal![0]!.correct,0)?.steps.find(step=>step.step==='crest')?.ok).toBe(true)
+  expect(gradePuzzle(deal!,0,{...deal![0]!.correct,crest:wrong.id},0)?.steps.find(step=>step.step==='crest')?.ok).toBe(false)
+ })
  it('names the games: the five-part assembly needs a kit that documents all ten fields — none does yet — so the reduced-parts practice is the run',async()=>{
   for(const id of ['hapoel-tel-aviv','olympiacos']){
    const list=eligibleKits(await club(id))
@@ -106,7 +117,7 @@ describe('gate 4 · the deal',()=>{
   }
   expect(gameFrom('recognition')).toBe('recognition');expect(gameFrom(['practice'])).toBe('practice');expect(gameFrom('x')).toBeNull();expect(gameFrom(undefined)).toBeNull()
  },60000)
- it('mode comes from ?n=',()=>{expect(kitModeFrom('3')).toBe('quick');expect(kitModeFrom(['5'])).toBe('full');expect(kitModeFrom('4')).toBeNull();expect(kitModeFrom(undefined)).toBeNull()})
+ it('mode comes from ?n=',()=>{expect(kitModeFrom('1')).toBe('single');expect(kitModeFrom('3')).toBe('quick');expect(kitModeFrom(['5'])).toBe('full');expect(kitModeFrom('4')).toBeNull();expect(kitModeFrom(undefined)).toBeNull()})
 })
 
 describe('gate 4 · the grade',()=>{

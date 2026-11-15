@@ -2036,8 +2036,8 @@ function XIPitch({
         )
         // Display only: the keeper's stack (tile, plate, season) is taller than the gap
         // under him, so the drawing lifts the lowest row a little rather than clip it.
-        const style = { insetInlineStart: `${slot.x}%`, top: `${Math.min(slot.y, compact ? 90 : 87)}%` }
-        const place = 'absolute -translate-x-1/2 -translate-y-1/2 rtl:translate-x-1/2'
+        const style = { left: `${slot.x}%`, top: `${Math.min(slot.y, compact ? 90 : 87)}%` }
+        const place = 'absolute -translate-x-1/2 -translate-y-1/2'
         if (!onTap) {
           return (
             <div key={slot.slotId} style={style} className={place}>
@@ -2190,7 +2190,7 @@ function SlotToken({
     disabled: !entry,
     onDrop: (zone) => onSwap(slot.slotId, zone),
   })
-  const style = { insetInlineStart: `${slot.x}%`, top: `${Math.min(slot.y, 90)}%` }
+  const style = { left: `${slot.x}%`, top: `${Math.min(slot.y, 90)}%` }
   return (
     <button
       type="button"
@@ -2200,7 +2200,7 @@ function SlotToken({
       aria-pressed={live}
       aria-label={entry ? `${slot.roleHe} — ${entry.nameHe}` : slot.roleHe}
       style={style}
-      className="absolute -translate-x-1/2 -translate-y-1/2 rtl:translate-x-1/2 min-h-tap min-w-tap transition-transform duration-press ease-stamp active:scale-[.94] motion-reduce:transition-none"
+      className="absolute -translate-x-1/2 -translate-y-1/2 min-h-tap min-w-tap transition-transform duration-press ease-stamp active:scale-[.94] motion-reduce:transition-none"
     >
       {entry ? (
         <ShirtToken

@@ -9,6 +9,9 @@ import type {ShirtArt} from '@/lib/highlights/board'
  * lib (the kit); nothing here names one.
  */
 export function Shirt({art,className,title}:{art:ShirtArt;className?:string;title?:string}){
+
+ // eslint-disable-next-line @next/next/no-img-element -- full catalogue artwork in its original proportions
+ if(art.kind==='archive')return <img src={art.svg} alt={title??''} className={className} loading="lazy"/>
  if(art.kind==='cloth')return <KitCloth spec={art.spec} view={art.spec.number!==null||art.spec.name?'back':'front'} texture={false} crestSrc={art.crest} monogram="" className={className} title={title} viewBox="40 36 240 268"/>
  return <PixelShirt art={art} className={className} title={title}/>
 }

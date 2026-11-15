@@ -12,7 +12,7 @@ import type {Moment,MomentKind,Reel,ReelTeam,Shape} from './types'
  * every man wears the shirt `kitFor` already gives him on the pitch. Nothing is decided here. The line-up board draws a documented
  * shirt as a garment when its colours and cut can be drawn (the wardrobe already holds only the colours this page may show).
  */
-const garment=(k:RumbleKit):ClothSpec|null=>documentedCloth({colours:k.colours,design:k.design,maker:null,sponsor:null},()=>false)
+const garment=(k:RumbleKit):ClothSpec|null=>documentedCloth({colours:k.colours,design:k.design,maker:k.parts?.maker??null,sponsor:k.parts?.sponsor??null},()=>false)
 const END:Partial<Record<Move['end'],MomentKind>>={goal:'goal',save:'save',miss:'miss',block:'block',post:'post',offside:'offside',card:'yellow'}
 function shapeOf(m:Move):Shape|undefined{
  const kinds=m.steps.map(s=>s.kind),last=kinds[kinds.length-1]
@@ -27,9 +27,9 @@ function shapeOf(m:Move):Shape|undefined{
 export function rumbleReel(script:ShowScript,wardrobe:RumbleWardrobe,faces:{us:{name:string;primary:string};them:{name:string;primary:string}},seed:number,keepers?:readonly string[]):Reel{
  const team=(side:'us'|'them',men:ShowPlayer[],face:{name:string;primary:string},other:ReelTeam|null):ReelTeam=>{
   const numbered=numberEleven(men.map(p=>({...p,pos:p.position})))
-  const lineup=numbered.map(p=>{const w=kitFor(p,side,wardrobe),g=w.source==='archive'?garment(w.kit):null;return {id:p.id,no:p.no,name:p.name,pos:p.position,kit:kitOfMan(p,side,wardrobe,face.primary),...(g?{cloth:g}:{})}})
+  const lineup=numbered.map(p=>{const w=kitFor(p,side,wardrobe,{keeper:p.position==='GK'}),g=w.source==='archive'?garment(w.kit):null;return {id:p.id,no:p.no,name:p.name,pos:p.position,kit:kitOfMan(p,side,wardrobe,face.primary),...(g?{cloth:g}:{}),...(w.source==='archive'&&w.kit.svg?{kitSvg:w.kit.svg}:{})}})
   const kit=lineup.find(p=>p.pos!=='GK')?.kit??lineup[0]!.kit,cloth=lineup.find(p=>p.pos!=='GK'&&p.cloth)?.cloth??null
-  return {name:face.name,code:clubCode(face.name),kit,keeper:keeperKit(kit,other?.kit??kit,side==='us'?0:3,keepers),lineup,cloth,...(script.formation?{formation:script.formation}:{})}
+  return {name:face.name,code:clubCode(face.name),kit,keeper:keeperKit(kit,other?.kit??kit,side==='us'?0:3,keepers),lineup,cloth,...(script.formation?{formation:script.formation}:{}),kitSvg:lineup.find(p=>p.pos!=='GK'&&p.kitSvg)?.kitSvg}
  }
  const us=team('us',script.us,faces.us,null),them=team('them',script.them,faces.them,us)
  us.keeper=keeperKit(us.kit,them.kit,0,keepers)

@@ -10,7 +10,7 @@ export type PitchSlot = {
    * positions (`lib/xi/roles.ts`).
    */
   role: SlotRole
-  /** percentages, origin at the defensive end */
+  /** Percentages from the left and top of a pitch with the attacking goal at the top. */
   x: number
   y: number
 }
@@ -38,15 +38,14 @@ function row(prefix: string, roles: RowSlot[], y: number): PitchSlot[] {
     slotId: `${prefix}${index + 1}`,
     roleHe,
     role,
-    x: Math.round(start + gap * index),
+    x: Math.round(start + gap * (count - 1 - index)),
     y,
   }))
 }
 
 /*
- * The row order is the pitch's own: index 0 sits at the lowest inline-start, which in
- * an RTL layout is the RIGHT of the screen — so `מגן ימני` leads a back four and the
- * codes follow the same order.
+ * Keep the existing slot IDs and right-to-left role order for saved XIs.
+ * The horizontal coordinate is measured from the physical left edge.
  */
 export const FORMATIONS: Record<string, Formation> = {
   '4-4-2': {

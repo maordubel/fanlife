@@ -31,12 +31,13 @@ export function MemoryReady({t,copy,plan,clubName,locale,seed,cursor,shelf,bests
  const smaller=deal.size<6?plan.sizes.find(s=>s.size===6)?.blocker:undefined
  const [coupon,setCoupon]=useState(false)
  const gateNo=String(sharedGate('memory')?.number??6).padStart(2,'0'),gateName=(copy as Record<string,string>)['gate.memory']??t('mem.kicker')
- const themeName=sel.theme?decadeLabel(t,Number(sel.theme.slice(1))):t('mem.theme.all')
+ const labelTheme=(theme:string)=>theme.startsWith('type:')?t(`mem.type.${theme.slice(5)}`):decadeLabel(t,Number(theme.slice(1)))
+ const themeName=sel.theme?labelTheme(sel.theme):t('mem.theme.all')
  const settings=<div className={css.settings}>
   {plan.themes.length>0&&<div className={css.setBlock}><h3 className={css.setHead}>{t('mem.theme.label')}</h3>
    <div className={css.optGrid} role="group" aria-label={t('mem.theme.label')}>
     <Link className={css.chip} data-on={!sel.theme||undefined} aria-current={!sel.theme?'true':undefined} href={href({theme:null})} replace scroll={false} data-testid="memory-theme-all">{t('mem.theme.all')}</Link>
-    {plan.themes.map(x=><Link key={x.theme} className={css.chip} data-on={x.theme===sel.theme||undefined} aria-current={x.theme===sel.theme?'true':undefined} href={href({theme:x.theme})} replace scroll={false} data-testid={`memory-theme-${x.theme}`}>{decadeLabel(t,x.decade)}<small>{t('mem.theme.max',{n:x.maxSize})}</small></Link>)}
+    {plan.themes.map(x=><Link key={x.theme} className={css.chip} data-on={x.theme===sel.theme||undefined} aria-current={x.theme===sel.theme?'true':undefined} href={href({theme:x.theme})} replace scroll={false} data-testid={`memory-theme-${x.theme}`}>{labelTheme(x.theme)}<small>{t('mem.theme.max',{n:x.maxSize})}</small></Link>)}
    </div></div>}
   <div className={css.setBlock}><h3 className={css.setHead}>{t('mem.peek.label')}</h3>
    <div className={`wk-seg ${css.seg}`} role="group" aria-label={t('mem.peek.label')}>

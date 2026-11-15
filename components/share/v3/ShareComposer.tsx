@@ -6,7 +6,7 @@ import {track} from '@/lib/analytics/meter'
 import {renderShare,shareCaption,SHARE_FORMATS,type ShareAssets,type ShareFormat} from '@/lib/share/v3/render'
 import {validateDraft,type ShareDraft} from '@/lib/share/v3/adapters'
 import {sharePalette,shareClub,type InkMode} from '@/lib/share/v3/theme'
-import {canvasMeasure,loadShareAssets,svgToPng,svgUrl} from '@/lib/share/v3/client'
+import {canvasMeasure,loadShareAssets,loadShareKitImages,svgToPng,svgUrl} from '@/lib/share/v3/client'
 
 /**
  * THE SHARE COMPOSER (V3 handoff §6.2, §10). One button on a finished result opens the card at once: the format, the
@@ -36,7 +36,14 @@ function Sheet({draft,onClose}:{draft:ShareDraft;onClose:()=>void}){
  const club=shareClub(draft.data.club)!,P=sharePalette(club,ink)
  const data=useMemo(()=>({...draft.data,statement,showAlias:sign,alias:alias.slice(0,18),inkMode:ink}),[draft.data,statement,sign,alias,ink])
  useEffect(()=>{closeRef.current?.focus();const k=(e:KeyboardEvent)=>{if(e.key==='Escape')onClose()};document.addEventListener('keydown',k);const o=document.body.style.overflow;document.body.style.overflow='hidden';return ()=>{document.removeEventListener('keydown',k);document.body.style.overflow=o}},[onClose])
- useEffect(()=>{loadShareAssets().then(setAssets).catch(()=>setFailed(true))},[])
+ const kits=draft.data.kits
+ useEffect(()=>{
+  let current=true
+  Promise.all([loadShareAssets(),loadShareKitImages(kits)])
+   .then(([base,kitImages])=>{if(current)setAssets({...base,kitImages})})
+   .catch(()=>{if(current)setFailed(true)})
+  return ()=>{current=false}
+ },[kits])
  // print: preview at once, the PNG straight after — ready before the share button is pressed
  useEffect(()=>{if(!assets)return;const v=++version.current;setPng(null)
   const timer=setTimeout(()=>{try{const r=renderShare(draft.template,data,format,{assets,measure:canvasMeasure});const url=svgUrl(r.svg);setPreview(old=>{if(old)URL.revokeObjectURL(old);return url})

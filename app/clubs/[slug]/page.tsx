@@ -106,6 +106,7 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
 
   {/* ═════ the cover story: today's pick ═════ */}
   {core&&open.length>0&&<Link className="wk-btn wkk-allgames min-h-tap" href={clubHref(id,'play',locale)} data-testid="all-club-games">{copy.wkkAllClubGames} <span aria-hidden="true">→</span></Link>}
+  {open.includes('kit-builder')&&<Link className="wk-btn paper min-h-tap wkk-span" href={clubHref(id,'kit-builder',locale)} data-testid="club-build-kit">{copy.buildKitEntry} <span aria-hidden="true">→</span></Link>}
   <div className="wkk-lead" data-story={core&&pickGate?'':undefined}>
   {core&&pickGate&&<section className="wkk-story" aria-labelledby="cs-h">
    <Link className="wk-panel wk-lift wkk-story-in" href={pickHref} tabIndex={-1} aria-hidden="true">

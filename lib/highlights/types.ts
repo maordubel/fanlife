@@ -9,10 +9,10 @@ import type {ClothSpec} from '@/lib/clubs/kit-model'
 export type Pattern='plain'|'stripes'|'hoops'|'halves'|'sash'|'band'
 export type PixelKit={shirt:string;second:string|null;pattern:Pattern;shorts:string;socks:string}
 export type ReelPlayer={id:string;no:number;name:string;pos:'GK'|'DF'|'MF'|'FW';kit:PixelKit;/** came on from the bench — named when he does something, never on the line-up board, never a stand-in */bench?:true;
- /** the documented shirt he wears as a drawable garment (logo, sponsor), when the archive can draw it faithfully */cloth?:ClothSpec}
+ /** the documented shirt he wears as a drawable garment (logo, sponsor), when the archive can draw it faithfully */cloth?:ClothSpec;kitSvg?:string}
 export type ReelTeam={name:string;code:string;kit:PixelKit;keeper:PixelKit;lineup:ReelPlayer[];formation?:string;
  /** the club's own crest (`lib/clubs/crest.ts`) — null/absent: the colour chip */crest?:string|null;
- /** the side's shirt as a drawable garment: the documented kit most of its eleven wear tonight — absent: the pixel kit's colours */cloth?:ClothSpec|null}
+ /** the side's shirt as a drawable garment: the documented kit most of its eleven wear tonight — absent: the pixel kit's colours */cloth?:ClothSpec|null;kitSvg?:string}
 /** how the attack that ended in the moment was built — a hint; the builder picks a scene that fits */
 export type Shape='cross'|'cutback'|'through'|'dribble'|'long'|'combo'|'corner'|'free-kick'|'penalty'|'counter'|'rebound'|'lob'|'volley'
 export type MomentKind='goal'|'save'|'miss'|'post'|'block'|'offside'|'yellow'|'red'|'injury'

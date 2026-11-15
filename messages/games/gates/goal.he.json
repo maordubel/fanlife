@@ -99,5 +99,10 @@
  "gl.move.at": "{verb} · {zone}",
  "gl.result.archive": "בארכיון",
  "gl.result.archiveNight": "הערב הזה בארכיון",
- "gl.result.archiveScorer": "{name} בארכיון"
+ "gl.result.archiveScorer": "{name} בארכיון",
+ "gl.result.touch": "נגיעה {n} מתוך {total}",
+ "gl.result.noArchiveTouch": "אין נגיעה מקבילה בארכיון.",
+ "gl.result.prevTouch": "נגיעה קודמת",
+ "gl.result.nextTouch": "נגיעה הבאה",
+ "gl.buildSteps": "שלבי בניית נגיעה"
 }

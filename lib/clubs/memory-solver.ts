@@ -194,8 +194,8 @@ export function boardAt(pool:readonly Cand[],size:MemSize,seed:number,cursor:num
 }
 
 /** the pool filtered to one decade theme (`d1990`) — the only way a theme deck is built (ME-R11) */
-export const inTheme=(pool:readonly Cand[],theme:string|null|undefined)=>theme?pool.filter(c=>c.theme===theme):[...pool]
-export const isTheme=(v:unknown):v is string=>typeof v==='string'&&/^d(1[89]|20)\d0$/.test(v)
+export const inTheme=(pool:readonly Cand[],theme:string|null|undefined)=>theme?pool.filter(c=>theme.startsWith('type:')?c.type===theme.slice(5):c.theme===theme):[...pool]
+export const isTheme=(v:unknown):v is string=>typeof v==='string'&&(/^[d](1[89]|20)\d0$/.test(v)||/^type:(trophy-season|goal-year|moment-year|moment-date|tie-season|crest-years|maker-span|candidate-votes)$/.test(v))
 
 /** why this size cannot be dealt from this pool — the first rule that fails, with the numbers behind it */
 export function blockerFor(pool:readonly Cand[],size:MemSize,theme?:string|null):MemoryBlocker{
@@ -219,7 +219,7 @@ export function greedyDistinct(ordered:readonly Cand[]):number{
 }
 
 export type SizeMode={size:MemSize;available:boolean;boards:number;blocker?:MemoryBlocker}
-export type ThemeMode={theme:string;decade:number;facts:number;maxSize:MemSize|0;boards:number}
+export type ThemeMode={theme:string;decade:number|null;facts:number;maxSize:MemSize|0;boards:number}
 /** which sizes this scope (the whole pool, or one decade of it) can open, with the blocker for each one it cannot */
 export function sizeModes(pool:readonly Cand[],theme?:string|null,key?:string):SizeMode[]{
  const scope=inTheme(pool,theme),k=key?(theme?`${key}|${theme}`:key):undefined
@@ -231,9 +231,10 @@ export function sizeModes(pool:readonly Cand[],theme?:string|null,key?:string):S
 /** which sizes and which decade themes this pool can honestly open; a decade that cannot field even two pairs is not offered */
 export function memoryModes(pool:readonly Cand[],stats:PoolStats,key?:string):{sizes:SizeMode[];themes:ThemeMode[];stats:PoolStats}{
  const decades=[...new Set(pool.map(c=>c.theme).filter(t=>t!=='undated'))].sort()
- const themes=decades.map<ThemeMode>(theme=>{
+ const categories=[...new Set(pool.map(c=>`type:${c.type}`))].filter(isTheme).sort()
+ const themes=[...categories,...decades].map<ThemeMode>(theme=>{
   const open=sizeModes(pool,theme,key).find(m=>m.available)
-  return {theme,decade:Number(theme.slice(1)),facts:inTheme(pool,theme).length,maxSize:open?.size??0,boards:open?.boards??0}
+  return {theme,decade:theme.startsWith('type:')?null:Number(theme.slice(1)),facts:inTheme(pool,theme).length,maxSize:open?.size??0,boards:open?.boards??0}
  }).filter(t=>t.maxSize>0)
  return {sizes:sizeModes(pool,null,key),themes,stats}
 }

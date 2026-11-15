@@ -37,6 +37,16 @@ describe('gate 8 draft rules',()=>{
 })
 
 describe('gate 8 geometry',()=>{
+ it('aligns touches and replay paths with the physical left and right zones',()=>{
+  const [left,right]=pointsFor(['A2','E2']).map(percentOf)
+  expect(left!.left).toBeLessThan(50)
+  expect(right!.left).toBeGreaterThan(50)
+  for(const [zone,point] of [['A2',left!],['E2',right!]] as const){
+   const bounds=zonePercent(zone)!
+   expect(point.left).toBeCloseTo(bounds.left+bounds.width/2)
+   expect(point.top).toBeCloseTo(bounds.top+bounds.height/2)
+  }
+ })
  it('puts a second touch in one zone beside the first, not on it',()=>{
   const [a,b]=pointsFor(['B2','B2'])
   expect(a).not.toEqual(b)

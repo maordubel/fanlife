@@ -2,9 +2,7 @@ import {notFound} from 'next/navigation'
 import {ClubArchive,type ArchiveTab} from '@/components/clubs/gates/archive/ClubArchive'
 import {archiveProjection} from '@/lib/clubs/archive-door'
 import {gateAvailability} from '@/lib/clubs/gates'
-import {rumbleWardrobe} from '@/lib/clubs/rumble-kit'
-import {forbiddenColor} from '@/lib/clubs/theme'
-import {kitViews} from '@/lib/clubs/gate-content'
+import {clubWardrobe} from '@/lib/clubs/kit-wardrobe'
 import type {GateView} from '../types'
 
 const TABS:ArchiveTab[]=['today','time','dig','search','mine']
@@ -29,5 +27,5 @@ export const view:GateView=({club,locale,copy,round,searchParams,allowed})=>{
  return <ClubArchive club={club.identity.id} clubName={club.identity.name} version={club.version} locale={locale} contentLocale={club.locales.content} copy={copy}
   wire={wire} seed={round.seed} initial={{tab,q,event:resolved||null}}
   links={{xi:playable('xi')?`/clubs/${club.identity.id}/xi?lang=${locale}`:null,derby:hasRival&&playable('derby')?`/clubs/${club.identity.id}/derby?lang=${locale}`:null}}
-  wardrobe={rumbleWardrobe(kitViews(club),hex=>forbiddenColor(club.theme,hex))}/>
+  wardrobe={clubWardrobe(club)}/>
 }

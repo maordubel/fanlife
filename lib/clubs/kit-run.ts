@@ -1,3 +1,4 @@
+import {kitPartsFor} from './kit-parts'
 import type {ClubData} from './contract'
 import {kitViews,type KitView} from './gate-content'
 import {forbiddenColor} from './theme'
@@ -10,7 +11,7 @@ import {cycleSeed,takeFrom} from '@/lib/rotation/deck'
  * Gate 4 · Build the Kit — the deal, the hints and the grade, for ANY club (Wave kits, 8.10.2026; rulebook §6).
  *
  * The Worker's shirt is built in five steps and scored on ten fields that add up to 100. A FAN LIFE club documents the two
- * body colours, a design name, a maker and sometimes a sponsor — never a collar, sleeves or crest. So a shirt is scored on
+ * body colours, a design name, a maker and sometimes a sponsor — and, for some shirts, a documented historical crest. So a shirt is scored on
  * the fields ITS row documents, renormalised to 100 (largest remainder); a part the archive does not state is not asked and
  * not scored (rule 11 — an unknown sponsor is never a "verified blank"). The full five-part assembly is offered only for a
  * kit that documents all ten fields, which no club pack does yet, so today the reduced-parts run is the game and the
@@ -25,12 +26,13 @@ export type Eligible={kit:KitView;cloth:ClothSpec;variant:Variant}
 /** the club's kits that can be drawn from their documented fields alone, under the club's own colour policy (rule 95) */
 export function eligibleKits(data:ClubData):Eligible[]{
  const forbidden=(hex:string)=>forbiddenColor(data.theme,hex)
- return kitViews(data).flatMap(kit=>{const cloth=documentedCloth(kit,forbidden);return cloth?[{kit,cloth,variant:variantOf(kit.type)}]:[]}).sort((a,b)=>a.kit.id.localeCompare(b.kit.id))
+ return kitViews(data).flatMap(kit=>{const cloth=documentedCloth(kit,forbidden);if(!cloth)return [];const crest=kitPartsFor(data.identity.id,kit).crest,crestArt=crest?.kind==='historical'?crest.src:null;return [{kit,cloth:crestArt?{...cloth,crest:true,crestArt}:cloth,variant:variantOf(kit.type)}]}).sort((a,b)=>a.kit.id.localeCompare(b.kit.id))
 }
 
-/** the fields this kit's archive row actually states. Collar, sleeves and crest are not stated by any club pack today. */
+/** the fields this kit's archive row actually states. A crest requires a documented era asset. */
 export function documentedFields(e:Eligible):Field[]{
  const out:Field[]=['base','secondary','pattern']
+ if(e.cloth.crestArt)out.push('crest')
  if(e.cloth.maker)out.push('maker')
  if(e.cloth.sponsor)out.push('sponsor')
  return FIELDS.filter(f=>out.includes(f))
@@ -45,9 +47,9 @@ function shuffled<T>(xs:readonly T[],seed:number):T[]{const r=rng(seed),a=[...xs
 /** which kits a game deals from: the assembly only the fully documented, the practice every drawable kit */
 export const poolFor=(list:Eligible[],game:Exclude<KitGame,'recognition'>)=>game==='assembly'?list.filter(documentsEverything):list
 
-const keyOf=(step:Step,c:ClothSpec)=>step==='body'?`${c.base}|${c.trim??''}`:step==='construction'?c.pattern:step==='maker'?(c.maker??'').toLowerCase():step==='sponsor'?(c.sponsor??'').toLowerCase():''
-/** a step is asked of a kit only when the kit's row states it ('crest' is stated by no club pack yet) */
-const hasStep=(step:Step,c:ClothSpec)=>step==='body'||step==='construction'||(step==='maker'&&!!c.maker)||(step==='sponsor'&&!!c.sponsor)
+const keyOf=(step:Step,c:ClothSpec)=>step==='body'?`${c.base}|${c.trim??''}`:step==='construction'?c.pattern:step==='crest'?c.crestArt??'':step==='maker'?(c.maker??'').toLowerCase():step==='sponsor'?(c.sponsor??'').toLowerCase():''
+/** a step is asked of a kit only when the kit's row states it */
+const hasStep=(step:Step,c:ClothSpec)=>step==='body'||step==='construction'||(step==='crest'&&!!c.crestArt)||(step==='maker'&&!!c.maker)||(step==='sponsor'&&!!c.sponsor)
 type Pool=Map<string,{patch:Partial<ClothSpec>;seen:number;variants:Set<Variant>}>
 function poolOf(list:Eligible[],step:Step):Pool{
  const pool:Pool=new Map(),spell=new Map<string,Map<string,number>>()
@@ -59,7 +61,7 @@ function poolOf(list:Eligible[],step:Step):Pool{
  }
  for(const [k,row] of pool){
   const c=list.find(e=>hasStep(step,e.cloth)&&keyOf(step,e.cloth)===k)!.cloth
-  row.patch=step==='body'?{base:c.base,trim:c.trim}:step==='construction'?{pattern:c.pattern}:step==='maker'?{maker:best(spell.get(k)!)}:{sponsor:best(spell.get(k)!)}
+  row.patch=step==='body'?{base:c.base,trim:c.trim}:step==='construction'?{pattern:c.pattern}:step==='crest'?{crest:true,crestArt:c.crestArt}:step==='maker'?{maker:best(spell.get(k)!)}:{sponsor:best(spell.get(k)!)}
  }
  return pool
 }
@@ -123,6 +125,7 @@ const same=(f:Field,a:Option|null,b:Option)=>{
   case 'base':return a.patch.base===b.patch.base
   case 'secondary':return (a.patch.trim??null)===(b.patch.trim??null)
   case 'pattern':return a.patch.pattern===b.patch.pattern
+  case 'crest':return a.patch.crestArt===b.patch.crestArt
   case 'maker':return (a.patch.maker??'').toLowerCase()===(b.patch.maker??'').toLowerCase()
   case 'sponsor':return (a.patch.sponsor??'').toLowerCase()===(b.patch.sponsor??'').toLowerCase()
   default:return false

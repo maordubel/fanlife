@@ -1,8 +1,7 @@
 import {ClubLineup} from '@/components/clubs/gates/lineup/ClubLineup'
-import {kitViews,lineupMatches} from '@/lib/clubs/gate-content'
+import {lineupMatches} from '@/lib/clubs/gate-content'
 import {buildPool,coachBudget,matchYear} from '@/lib/clubs/lineup-model'
-import {rumbleWardrobe} from '@/lib/clubs/rumble-kit'
-import {forbiddenColor} from '@/lib/clubs/theme'
+import {clubWardrobe} from '@/lib/clubs/kit-wardrobe'
 import type {GateView} from '../types'
 const rotate=<T,>(a:T[],by:number)=>a.length?[...a.slice(by%a.length),...a.slice(0,by%a.length)]:a
 
@@ -17,5 +16,5 @@ export const view:GateView=({club,locale,copy,round,gameKey,searchParams})=>{
    pool:buildPool({matchId:m.id,starters:m.starters,decoys:m.decoys,roster,year}),
    sources:m.sources.flatMap(id=>{const s=club.sources.find(x=>x.id===id);return s?[{title:s.title,url:s.url}]:[]})}
  })
- return <ClubLineup key={gameKey} items={items} club={club.identity.id} clubName={club.identity.name} version={club.version} locale={locale} contentLocale={club.locales.content} copy={copy} wardrobe={rumbleWardrobe(kitViews(club),hex=>forbiddenColor(club.theme,hex))}/>
+ return <ClubLineup key={gameKey} items={items} club={club.identity.id} clubName={club.identity.name} version={club.version} locale={locale} contentLocale={club.locales.content} copy={copy} wardrobe={clubWardrobe(club)}/>
 }

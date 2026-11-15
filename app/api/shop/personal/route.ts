@@ -10,10 +10,10 @@ import {encode,signOf,cleanManager} from '@/lib/shop/personal/sign'
 import {renderXI} from '@/lib/shop/personal/render'
 import {TEMPLATES,SHEET,PROBE,type XIPrintSpec} from '@/lib/shop/personal/xi-poster'
 import type {ShopProduct} from '@/lib/shop/types'
-import {kitViews} from '@/lib/clubs/gate-content'
-import {forbiddenColor,bannedHere} from '@/lib/clubs/theme'
-import {kitArt} from '@/lib/clubs/kit-sources'
-import {kitFor,rumbleWardrobe,SWATCH} from '@/lib/clubs/rumble-kit'
+import {bannedHere} from '@/lib/clubs/theme'
+import {clubWardrobe} from '@/lib/clubs/kit-wardrobe'
+import {drawingOf} from '@/lib/shop/personal/make'
+import {kitFor,SWATCH} from '@/lib/clubs/rumble-kit'
 
 export const runtime='nodejs'
 export const dynamic='force-dynamic'
@@ -48,12 +48,14 @@ export async function POST(r:Request){
  const picks=(b.picks&&typeof b.picks==='object'?b.picks:{}) as Record<string,unknown>,seen=new Set<string>()
  const n:XIPrintSpec['n']=[]
  // each man in the club's documented kit nearest his years (the board's own rule), never a rival's colour; else the club colour
- const wardrobe=rumbleWardrobe(kitViews(club.data),hex=>!!club.data.theme&&forbiddenColor(club.data.theme,hex))
- const kitOf=(p:{id:string;fromYear:number|null;toYear:number|null})=>{const w=kitFor(p,'us',wardrobe);if(w.source!=='archive')return {}
-  const [a,b]=w.kit.colours.map(c=>SWATCH[c]!),file=kitArt(clubId,w.kit.id,w.kit.season,'home')?.svg.split('/').pop()?.replace(/\.svg$/,'')
+ // each man in the club's documented kit nearest his years — the shared wardrobe (lib/clubs/kit-wardrobe: drawing + parts), a keeper in a
+ // keeper's kit when the record has one; never a rival's colour; else the club colour
+ const wardrobe=clubWardrobe(club.data)
+ const kitOf=(p:{id:string;fromYear:number|null;toYear:number|null},keeper:boolean)=>{const w=kitFor(p,'us',wardrobe,{keeper});if(w.source!=='archive')return {}
+  const [a,b]=w.kit.colours.map(c=>SWATCH[c]!),file=drawingOf(w.kit.svg)
   return {...(a?{k:{d:w.kit.design||'',a,b:b??null}}:{}),...(file?{u:file}:{}),s:w.kit.season}}
  for(const s of slots){const id=String(picks[s.slotId]||''),p=byId.get(id);if(!p||seen.has(id))return json({error:'Pick all eleven first.'},422);seen.add(id)
-  n.push({x:100-s.x,y:s.y,name:printName(p),...kitOf(p),...(b.captain===id?{cap:true}:{})})}
+  n.push({x:100-s.x,y:s.y,name:printName(p),...kitOf(p,s.role==='GK'),...(b.captain===id?{cap:true}:{})})}
  const tw=b.twelfth?byId.get(String(b.twelfth)):null,twelfth=tw?printName(tw):null
  const d=new Date().toLocaleDateString('en-GB',{timeZone:'Europe/Athens'}).replace(/\//g,'.')
  const th=club.data.theme,spec:XIPrintSpec={c:clubId,cn:club.data.identity.name,col:reg.primary,f:formation,n,t:twelfth,m:manager,d,v,g:!(th&&bannedHere(th,PROBE.green)),b:!(th&&bannedHere(th,PROBE.blue))}

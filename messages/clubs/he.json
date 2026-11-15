@@ -284,10 +284,10 @@
   "tileOpen": "פתוח",
   "tileWorkshop": "בעבודה",
   "tilePreview": "תצוגה מקדימה",
-  "voteCount": "אוהדים הצביעו",
+  "voteCount": "נקודות בסקר",
   "voteCta": "הצבעה",
   "voteVoted": "הצבעתם",
-  "voteDemo": "ספירה ראשונית, בזמן שהקלפי נפתחת.",
+  "voteDemo": "הדירוג כולל נקודות פתיחה להמחשה.",
   "dockTitle": "העולם שלכם",
   "dockContinue": "להמשיך ב{club}",
   "dockRounds": "{n} סיבובים שוחקו",
@@ -613,7 +613,7 @@
   "awayd_lost": "הפסדים {n}",
   "voteAccounts": "{n} חשבונות",
   "voteGuests": "{n} אורחים",
-  "voteBase": "{n} ספירה ראשונית",
+  "voteBase": "{n} נקודות פתיחה",
   "voteOffline": "נשמר במכשיר. לא הצלחנו להגיע לקלפי, נסו שוב מאוחר יותר.",
   "voteTooMany": "המכשיר הזה כבר הצביע בקלפיות רבות מדי.",
   "terraceDailyKicker": "היציע היומי",
@@ -671,5 +671,6 @@
   "wkClubShop": "חנות המועדון",
   "wkGamesSub": "כל המשחקים שלנו",
   "wkAbout": "על FAN LIFE",
-  "tabShop": "חנות"
+  "tabShop": "חנות",
+  "buildKitEntry": "בנו את החולצה"
 }

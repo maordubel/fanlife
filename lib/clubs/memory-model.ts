@@ -102,7 +102,7 @@ export type MemoryPlan={
  deal:PublicDeal|null
  selected:{size:MemSize;theme:string|null;peek:boolean}
  sizes:{size:MemSize;available:boolean;boards:number;blocker?:MemoryBlocker}[]
- themes:{theme:string;decade:number;facts:number;maxSize:number;boards:number}[]
+ themes:{theme:string;decade:number|null;facts:number;maxSize:number;boards:number}[]
  pool:{valid:number;excluded:number;dateOnly:boolean;recognisable:number}
  asked?:{size?:MemSize;theme?:string;blocker:MemoryBlocker}
  blocker?:MemoryBlocker

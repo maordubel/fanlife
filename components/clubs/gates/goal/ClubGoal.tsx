@@ -23,8 +23,9 @@ import {GoalBench,VerbRow} from './GoalBench'
 import {useBallRun} from './useBallRun'
 import css from './goal.module.css'
 
+const NO_OPPONENT_KITS:RumbleWardrobe={home:[],away:[],awayNeutral:true}
 export type GoalItem={id:string;title:string;subtitle:string;competition:string;opponent:string;score:string;on:string|null;year:number|null;pool:string[]}
-export type ClubGoalProps={items:GoalItem[];club:string;clubName:string;version:string;seed:number;locale:UiLocale;contentLocale:string;wardrobe:RumbleWardrobe;copy:GameCopy}
+export type ClubGoalProps={items:GoalItem[];club:string;clubName:string;version:string;seed:number;locale:UiLocale;contentLocale:string;wardrobe:RumbleWardrobe;opponents?:Record<string,RumbleWardrobe>;copy:GameCopy}
 type Phase='build'|'yours'|'archive'|'done'
 type Sheet=null|'info'|'result'
 type Say=(k:string,v?:Record<string,string|number>)=>string
@@ -76,10 +77,11 @@ function RunSummary({results,onAgain,club,copy,contentLocale}:ClubGoalProps&{res
  </div>
 }
 
-function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,contentLocale,wardrobe,copy}:ClubGoalProps&{g:GoalItem;run:number;pos:number;of:number;onResult:(r:GoalResult)=>void;onNext:()=>void}){
+function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,contentLocale,wardrobe,opponents={},copy}:ClubGoalProps&{g:GoalItem;run:number;pos:number;of:number;onResult:(r:GoalResult)=>void;onNext:()=>void}){
  const tx:Say=(k,v)=>tr(copy,k,v)
  const [draft,setDraft]=useState<Draft>([]),[actor,setActor]=useState<string|null>(null),[verb,setVerbPick]=useState<ReplayAction|null>(null),[active,setActive]=useState<number|null>(null)
  const [phase,setPhase]=useState<Phase>('build'),[verdict,setVerdict]=useState<GoalVerdict|null>(null),[sheet,setSheet]=useState<Sheet>(null)
+ const [comparison,setComparison]=useState(0)
  const [tab,setTab]=useState<'who'|'what'>('who')
  const [hintN,setHintN]=useState<number|null>(null),[hinted,setHinted]=useState(false),[err,setErr]=useState(false),[notice,setNotice]=useState(''),[warn,setWarn]=useState(false),[pending,start]=useTransition()
  const ball=useBallRun(),opener=useRef<HTMLElement|null>(null)
@@ -89,9 +91,9 @@ function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,c
  const armed=building&&!full&&active===null&&actor!==null&&verb!==null
 
  // ---- shirts: one era for the whole room; the report's side decides which colours a man wears
- const shirtFor=(name:string,side:'us'|'them')=><ClubShirt player={{id:name||'x',fromYear:g.year,toYear:g.year}} wardrobe={wardrobe} side={side} className="h-full w-full"/>
+ const shirtFor=(name:string,side:'us'|'them',keeper=false)=><ClubShirt player={{id:name||'x',fromYear:g.year,toYear:g.year}} wardrobe={side==='us'?wardrobe:opponents[g.id]??NO_OPPONENT_KITS} side={side} playedOn={g.on} keeper={keeper} className="h-full w-full"/>
  const unknownShirt=<span className={css.unknown} aria-hidden="true">?</span>
- const shirtOf=(t:Tok):ReactNode=>t.side==='unnamed'?unknownShirt:shirtFor(t.actor,t.side)
+ const shirtOf=(t:Tok):ReactNode=>t.side==='unnamed'?unknownShirt:shirtFor(t.actor,t.side,t.action==='save')
  const labelOf=(name:string)=>name?shortName(name):unnamed
 
  // ---- building
@@ -143,6 +145,8 @@ function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,c
   })
  }
  function replay(r:GoalVerdict,mine:Draft){
+  const first=r.steps.findIndex(step=>step.actor===false||!step.action||step.zone!=='exact')
+  setComparison(first<0?(mine.length>r.truth.length?r.truth.length:0):first)
   setPhase('yours')
   ball.play(buildTimeline(mine),()=>{
    setPhase('archive')
@@ -214,6 +218,9 @@ function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,c
     </div></div>
    </div>
 
+   {building&&!full&&<ol className={css.steps} aria-label={tx('gl.buildSteps')}>
+    {['who','what','where'].map((step,index)=><li key={step} aria-current={index===(active!==null||armed?2:actor===null?0:1)?'step':undefined}>{index+1}. {tx(`gl.${step}`)}</li>)}
+   </ol>}
    <div className={css.dock} data-tab={picking?tab:'what'}>
     {picking&&<div className={`wk-seg ${css.seg}`} role="group" aria-label={`${tx('gl.who')} · ${tx('gl.what')}`}>
      <button type="button" className="min-h-tap" aria-pressed={tab==='who'} onClick={()=>setTab('who')}>{tx('gl.who')}<small dir="auto">{actor!==null?labelOf(actor):'—'}</small></button>
@@ -271,17 +278,27 @@ function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,c
      <p className={css.scoreLine}>{tx(`gl.tier.${tierOf(verdict.quality,verdict.perfect)}`)} · {tx(verdict.countRight?'gl.result.countRight':'gl.result.countWrong',{n:verdict.truth.length})}</p>
      <p className={css.scoreKicker}>{verdict.points}/{verdict.max} {tx('gl.result.points')}{verdict.hinted?` · ${tx('gl.result.hintCost',{cost:HINT_COST})}`:''}{verdict.extra>0?` · ${tx('gl.result.extraCost',{n:verdict.extra})}`:''}</p>
     </div>
-    <ol className={css.rows} lang={contentLocale}>
-     {verdict.truth.map((t,i)=>{
-      const v=verdict.steps[i]!,mine=draft[i],mark=(ok:boolean)=><span className={css.markOk} data-ok={ok} aria-label={tx(ok?'gl.result.yes':'gl.result.no')}>{ok?'✓':'✗'}</span>
-      return <li key={i}><b className={css.rowNo}>{i+1}</b><div>
-       <span className={css.rowName} dir="auto">{t.actor||unnamed} · {verbWord(t.action)} · <span className={css.zoneCode}>{t.zone}</span></span>
-       <span className={css.rowMeta}>{tx('gl.who')} {v.actor===null?<span className={css.markOk} data-ok="na" aria-label={tx('gl.result.na')}>–</span>:mark(v.actor)} · {tx('gl.what')} {mark(v.action)} · {tx('gl.where')} <span data-zone={v.zone}>{tx(`gl.zone.${v.zone}`)}</span></span>
-       <span className={css.rowMine}>{mine?tx('gl.result.yours',{name:mine.actor||unnamed,verb:verbWord(mine.action),zone:mine.zone}):tx('gl.result.missing')}</span>
-       {t.note&&<small className={css.rowNote} dir="auto">{t.note}</small>}
-      </div></li>})}
-     {draft.slice(verdict.truth.length).map((t,j)=><li key={`x${j}`} data-extra="true"><b className={css.rowNo}>{verdict.truth.length+j+1}</b><div><span className={css.rowMine}>{tx('gl.result.extra',{name:t.actor||unnamed,verb:verbWord(t.action),zone:t.zone})}</span></div></li>)}
-    </ol>
+    {(()=> {
+     const count=Math.max(verdict.truth.length,draft.length)
+     const archived=verdict.truth[comparison],mine=draft[comparison],step=verdict.steps[comparison]
+     return <section className={css.touchCompare} data-testid="goal-touch-review">
+      <h3 aria-live="polite">{tx('gl.result.touch',{n:comparison+1,total:count})}</h3>
+      <GoalPitch layers={[
+       ...(mineToks[comparison]?[{id:'yours' as const,tone:'yours' as const,toks:[mineToks[comparison]!],pts:[minePts[comparison]!],reached:1,compact:true,goal:false}]:[]),
+       ...(truthToks[comparison]?[{id:'archive' as const,tone:'archive' as const,toks:[truthToks[comparison]!],pts:[truthPts[comparison]!],reached:1,compact:true,goal:false}]:[])
+      ]} previewTouch={comparison} ball={null} lift={0} goalHit={false} interactive={false} armed={false} active={null} cam={null} shirtOf={shirtOf} labels={pitchLabels} contentLocale={contentLocale} onZone={tapZone} onToken={tapToken} onMove={dropToken}/>
+      <div className={css.touchCards}>
+       <div><b>{tx('gl.replay.yours')}</b><p dir="auto">{mine?[mine.actor||unnamed,verbWord(mine.action),mine.zone].join(' · '):tx('gl.result.missing')}</p></div>
+       <div><b>{tx('gl.replay.archive')}</b><p dir="auto">{archived?[archived.actor||unnamed,verbWord(archived.action),archived.zone].join(' · '):tx('gl.result.noArchiveTouch')}</p></div>
+      </div>
+      {step&&mine&&<p className={css.rowMeta}>{tx('gl.who')} {step.actor===null?'–':tx(step.actor?'gl.result.yes':'gl.result.no')} · {tx('gl.what')} {tx(step.action?'gl.result.yes':'gl.result.no')} · {tx('gl.where')} {tx(`gl.zone.${step.zone}`)}</p>}
+      {archived?.note&&<p className={css.rowNote} dir="auto">{archived.note}</p>}
+      <div className={css.touchActions}>
+       <button type="button" className={`min-h-tap ${css.btn}`} disabled={comparison===0} onClick={()=>setComparison(comparison-1)}>{tx('gl.result.prevTouch')}</button>
+       <button type="button" className={`min-h-tap ${css.btn}`} disabled={comparison>=count-1} onClick={()=>setComparison(comparison+1)}>{tx('gl.result.nextTouch')}</button>
+      </div>
+     </section>
+    })()}
     {verdict.narrative&&<p className={css.narrative} lang={contentLocale} dir="auto">{verdict.narrative}</p>}
     {/* 12.11.2026 — back into the archive: the night this goal was scored, and the man who scored it */}
     {(()=>{const scorer=[...verdict.truth].reverse().find(t=>t.side!=='opponent'&&t.actor)?.actor??null

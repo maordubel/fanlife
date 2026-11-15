@@ -123,7 +123,7 @@
   "kb.game.assembly": "הרכבה מלאה",
   "kb.game.assembly.note": "חמישה חלקים – גוף, גזרה, סמל, יצרן, נותן חסות – עם ניקוד על עשרה שדות מתוך 100.",
   "kb.game.practice": "אימון בחלקים מצומצמים",
-  "kb.game.practice.note": "ארכיון המועדון מציין צבעים, דוגמה, יצרן ולפעמים נותן חסות – לא צווארון, שרוולים או סמל. לכן כל חולצה נבחנת מתוך 100 על החלקים שהרשומה שלה מתעדת, וחלק שאף אחד לא רשם לא נשאל.",
+  "kb.game.practice.note": "הרכיבו את החלקים שמתועדים בארכיון. בחלק מהעונות אפשר לבחור גם את סמל המועדון.",
   "kb.game.recognition": "מצב זיהוי",
   "kb.game.recognition.note": "המשחק הישן: בוחרים עונה, יצרן ועיצוב של חולצה אחת.",
   "kb.game.recognition.link": "מעדיפים את המשחק הישן של עונה, יצרן ועיצוב? מצב זיהוי ←",
@@ -154,5 +154,16 @@
   "kb.own.market": "{n} בשוק ←",
   "kb.own.saved": "נשמר.",
   "kb.own.label": "הארון שלך",
-  "kb.intro.burst": "תלבישו!"
+  "kb.intro.burst": "תלבישו!",
+  "kb.mode.single": "בניית חולצה אחת",
+  "kb.step.next": "לחלק הבא",
+  "kb.step.crest": "סמל המועדון",
+  "kb.q.crest": "איזה סמל הופיע על המדים האלה?",
+  "kb.info.crest": "גרסה של סמל המועדון מתוך הארכיון.",
+  "kb.reveal.archiveArt": "איור המדים של העונה מתוך הארכיון.",
+  "kb.crest.circle-1923": "סמל circle 1923",
+  "kb.crest.circle-1927": "סמל circle 1927",
+  "kb.crest.keter-ball-patch": "סמל keter ball patch",
+  "kb.crest.keter-ball-black": "סמל keter ball black",
+  "kb.retryShirt": "נסו שוב את החולצה הזאת"
 }

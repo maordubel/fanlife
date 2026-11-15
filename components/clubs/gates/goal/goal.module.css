@@ -83,7 +83,7 @@
 .tokens { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
 .tokenAt { position: absolute; width: 0; height: 0; z-index: 1; }
 .tokenAt[data-tone='archive'] { z-index: 2; }
-.token { position: absolute; inset-inline-start: 0; inset-block-start: 0; translate: -50% -50%; display: flex; flex-direction: column; align-items: center; min-width: 44px; min-height: 44px; justify-content: center; padding: 0; border: 0; background: transparent; color: var(--mag-paper); font: inherit; cursor: pointer; pointer-events: auto; touch-action: none; -webkit-tap-highlight-color: transparent; }
+.token { position: absolute; left: 0; top: 0; translate: -50% -50%; display: flex; flex-direction: column; align-items: center; min-width: 44px; min-height: 44px; justify-content: center; padding: 0; border: 0; background: transparent; color: var(--mag-paper); font: inherit; cursor: pointer; pointer-events: auto; touch-action: none; -webkit-tap-highlight-color: transparent; }
 span.token { pointer-events: none; cursor: default; }
 .magnet { position: relative; width: clamp(26px, 11cqw, 42px); aspect-ratio: 1; display: grid; place-items: center; padding: 3px; background: var(--mag-paper); border: 2px solid var(--gl-ink); border-radius: 50%; box-shadow: 0 0 0 2px var(--mag-paper); animation: glPop .3s cubic-bezier(.3, 1.6, .5, 1); }
 .magnet[data-tone='archive'] { box-shadow: 0 0 0 3px var(--gl-lit), 0 0 0 5px var(--mag-paper); }
@@ -232,3 +232,16 @@ h3.fine { font-family: var(--mag-mono); font-weight: 700; font-size: 11px; lette
 /* 12.11.2026 — the archive door under a rebuilt goal */
 .archiveRow { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-block: 6px 2px; }
 .archiveRow a { display: inline-flex; align-items: center; min-height: 44px; font-family: var(--mag-display); font-size: 15px; text-transform: uppercase; color: inherit; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+
+.touchCompare { border:1px solid currentColor; padding:10px; display:grid; gap:8px; }
+.touchCompare h3 { font-weight:800; }
+.touchCards { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+.touchCards > div { border:1px solid color-mix(in srgb, var(--gl-ink) 28%, transparent); padding:8px; overflow-wrap:anywhere; }
+.touchActions { display:flex; flex-wrap:wrap; gap:8px; }
+
+.steps { display:flex; flex-wrap:wrap; gap:6px; margin:6px 0; padding:0; list-style:none; }
+.steps li { padding:4px 8px; border:1px solid currentColor; font-weight:700; }
+.steps [aria-current='step'] { background:var(--mag-ink); color:var(--mag-white); }
+.touchCompare .pitch { max-inline-size:320px; inline-size:100%; margin-inline:auto; }
+.pitch[data-review] .tokenAt[data-tone='yours'] { z-index:3; }
+.pitch[data-review] .tokenAt[data-tone='yours'] .dot { outline:2px dashed currentColor; outline-offset:3px; }

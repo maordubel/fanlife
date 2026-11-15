@@ -112,8 +112,8 @@ type DragState = {
   px: { x: number; y: number }
 }
 
-function pct(p: Pt): { insetInlineStart: string; top: string } {
-  return { insetInlineStart: `${(p.x / PITCH.w) * 100}%`, top: `${((p.y - VIEW_TOP) / VIEW_H) * 100}%` }
+function pct(p: Pt): { left: string; top: string } {
+  return { left: `${(p.x / PITCH.w) * 100}%`, top: `${((p.y - VIEW_TOP) / VIEW_H) * 100}%` }
 }
 
 /** where a flight starts and lands: beside the feet of whoever has the ball */
@@ -705,7 +705,7 @@ export function GoalPitch({
       )}
 
       <div ref={cam} data-goal="camera" className="absolute inset-0 origin-top-left [container-type:inline-size] will-change-transform">
-        <svg viewBox={`0 ${VIEW_TOP} ${PITCH.w} ${VIEW_H}`} className="block h-full w-full" aria-hidden="true">
+        <svg viewBox={`0 ${VIEW_TOP} ${PITCH.w} ${VIEW_H}`} preserveAspectRatio="none" className="block h-full w-full" aria-hidden="true">
           <defs>
             <symbol id="figGuard" viewBox="0 0 70 80">
               <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
@@ -1001,7 +1001,7 @@ export function GoalPitch({
             data-goal="mouth"
             className="pointer-events-auto absolute disabled:cursor-default"
             style={{
-              insetInlineStart: `${(100 / PITCH.w) * 100}%`,
+              left: `${(100 / PITCH.w) * 100}%`,
               // down from the foot of the stand's first rows to the goal line: a target is
               // not a drawing, and at 360×640 the air alone measured 38px
               top: `${((MOUTH_TOP - VIEW_TOP) / VIEW_H) * 100}%`,
@@ -1027,7 +1027,7 @@ export function GoalPitch({
                   data-zone={id}
                   className="pointer-events-auto absolute disabled:cursor-default"
                   style={{
-                    insetInlineStart: `${(rect.x / PITCH.w) * 100}%`,
+                    left: `${(rect.x / PITCH.w) * 100}%`,
                     top: `${((rect.y - VIEW_TOP) / VIEW_H) * 100}%`,
                     width: `${(rect.w / PITCH.w) * 100}%`,
                     height: `${(rect.h / VIEW_H) * 100}%`,
@@ -1123,7 +1123,7 @@ export function GoalPitch({
           dir="ltr"
           aria-hidden="true"
           className="pointer-events-none absolute z-40 -translate-x-1/2"
-          style={{ insetInlineStart: drag.px.x, top: Math.max(4, drag.px.y - 64) }}
+          style={{ left: drag.px.x, top: Math.max(4, drag.px.y - 64) }}
         >
           <span dir="rtl" className="block whitespace-nowrap border-plate border-ink bg-ink px-2 py-1 font-display text-[15px] leading-none text-paper">
             {fingerLabel}

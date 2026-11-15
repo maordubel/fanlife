@@ -1,5 +1,6 @@
 import type {KitView} from './gate-content'
 import type {RumbleCard} from './rumble'
+import type {KitParts} from './kit-parts'
 /**
  * Who wears what in the club Royal Rumble (gate 9) — the port of the Worker's `RumbleShirt` rule
  * ("no player without a shirt") to every club:
@@ -8,8 +9,8 @@ import type {RumbleCard} from './rumble'
  * Colour rule 95: a kit colour the club page may not show (the rival's family, or one the magazine
  * cannot paint) is dropped before anything is drawn; a kit left with no colour is not worn.
  */
-export type RumbleKit={id:string;season:string;design:string|null;colours:string[];/** shorts and socks when the record names them (the match highlights paint them) */shortsColour?:string|null;socksColour?:string|null}
-export type RumbleWardrobe={home:RumbleKit[];away:RumbleKit[];/** a photograph of the man's own shirt of his period (Hapoel Tel Aviv, from the kit archive), by card id — worn by the side that is his club's */photos?:Record<string,{src:string;label:string}>}
+export type RumbleKit={id:string;season:string;design:string|null;colours:string[];svg?:string;type?:string;parts?:KitParts;/** shorts and socks when the record names them (the match highlights paint them) */shortsColour?:string|null;socksColour?:string|null;shorts?:KitView['shorts'];socks?:KitView['socks']}
+export type RumbleWardrobe={home:RumbleKit[];away:RumbleKit[];keepers?:RumbleKit[];awayKeepers?:RumbleKit[];awayNeutral?:true;/** a photograph of the man's own shirt of his period (Hapoel Tel Aviv, from the kit archive), by card id — worn by the side that is his club's */photos?:Record<string,{src:string;label:string}>}
 /** `approx`: a documented kit of a nearby season, not one of his own years — the screen must say so. `neutral`: no documented kit near his years (or no years at all), so the shirt claims no season. */
 export type Worn={source:'archive';kit:RumbleKit;approx?:true}|{source:'livery';variant:'home'|'away';neutral?:true}
 /** seasons outside a man's recorded years a documented kit may still stand in (audit F10, 22.10.2026) */
@@ -28,26 +29,49 @@ export function allowedColours(colours:string[],forbidden:(hex:string)=>boolean)
 }
 export const seasonYear=(season:string)=>{const m=/(\d{4})/.exec(season);return m?Number(m[1]):null}
 
-export function rumbleWardrobe(kits:KitView[],forbidden:(hex:string)=>boolean):RumbleWardrobe{
- const part=(p:KitView['shorts'])=>p&&allowedColours([p.colour],forbidden).length?p.colour:null
- const dress=(k:KitView):RumbleKit|null=>{const colours=allowedColours(k.colours,forbidden);return colours.length&&seasonYear(k.season)!==null?{id:k.id,season:k.season,design:k.design,colours,...(part(k.shorts)?{shortsColour:part(k.shorts)}:{}),...(part(k.socks)?{socksColour:part(k.socks)}:{})}:null}
- const by=(types:string[])=>kits.filter(k=>types.includes((k.type||'home').toLowerCase())).map(dress).filter((k):k is RumbleKit=>!!k).sort((a,b)=>seasonYear(a.season)!-seasonYear(b.season)!||a.id.localeCompare(b.id))
- return {home:by(['home']),away:by(['away','third'])}
+export function rumbleWardrobe(kits:KitView[],forbidden:(hex:string)=>boolean,visual?:(k:KitView)=>{svg?:string;parts:KitParts}):RumbleWardrobe{
+ const part=(p:KitView['shorts'])=>p&&allowedColours([p.colour],forbidden).length
+  ?{...p,trim:p.trim&&allowedColours([p.trim],forbidden).length?p.trim:null}:null
+ const dress=(k:KitView):RumbleKit|null=>{
+  const colours=allowedColours(k.colours,forbidden),shorts=part(k.shorts),socks=part(k.socks)
+  const art=visual?.(k)
+  const known=[...k.colours,...[k.shorts,k.socks].flatMap(p=>p?[p.colour,...(p.trim?[p.trim]:[])]:[])]
+  const svg=allowedColours(known,forbidden).length===known.length?art?.svg:undefined
+  if((!colours.length&&!svg)||seasonYear(k.season)===null)return null
+  return {id:k.id,season:k.season,type:k.type,design:k.design,colours,...(svg?{svg}:{}),...(art?{parts:art.parts}:{}),
+   ...(shorts?{shorts,shortsColour:shorts.colour}:{}),...(socks?{socks,socksColour:socks.colour}:{})}
+ }
+ const by=(types:string[])=>kits.filter(k=>types.includes((k.type||'home').trim().toLowerCase())).map(dress).filter((k):k is RumbleKit=>!!k).sort((a,b)=>seasonYear(a.season)!-seasonYear(b.season)!||a.id.localeCompare(b.id))
+ const keepers=by(['gk','keeper','goalkeeper'])
+ return {home:by(['home']),away:by(['away','third']),...(keepers.length?{keepers}:{})}
 }
 
 /** the middle of his documented years, or whichever end is known */
 export const eraOf=(c:Pick<RumbleCard,'fromYear'|'toYear'>)=>c.fromYear!==null&&c.toYear!==null?Math.round((c.fromYear+c.toYear)/2):c.fromYear??c.toYear
 
-export function kitFor(card:Pick<RumbleCard,'fromYear'|'toYear'>,side:'us'|'them',w:RumbleWardrobe):Worn{
+export type KitContext={playedOn?:string|null;keeper?:boolean;kitId?:string}
+export function kitFor(card:Pick<RumbleCard,'fromYear'|'toYear'>,side:'us'|'them',w:RumbleWardrobe,context:KitContext={}):Worn{
  const list=side==='us'?w.home:w.away,variant=side==='us'?'home' as const:'away' as const
+ const keepers=side==='us'?w.keepers:w.awayKeepers??w.keepers
+ if(context.kitId){
+  const exact=[...list,...(keepers??[])].find(k=>k.id===context.kitId)
+  if(exact)return {source:'archive',kit:exact}
+ }
+ if(context.keeper&&keepers?.length){
+  const worn=kitFor(card,side,{home:keepers,away:keepers},{playedOn:context.playedOn})
+  if(worn.source==='archive'&&!worn.approx)return worn
+ }
  if(!list.length)return {source:'livery',variant}
- const from=card.fromYear??card.toYear,to=card.toYear??card.fromYear
+ const date=/^(\d{4})-(0[1-9]|1[0-2])-\d{2}$/.exec(context.playedOn??'')
+ const year=date?Number(date[1]):null
+ const from=card.fromYear??card.toYear??year,to=card.toYear??card.fromYear??year
  // no recorded years: a shirt must not claim a season it cannot know — the neutral livery stands in
  if(from===null||to===null)return {source:'livery',variant,neutral:true}
  const mid=(from+to)/2
- const gap=(k:RumbleKit)=>{const y=seasonYear(k.season)!;return y<from?from-y:y>to?y-to:0}
+ const target=(k:RumbleKit)=>date?Number(date[1])-((Number(date[2])<8&&/\d{4}\s*[-/–]\s*\d{2,4}/.test(k.season))?1:0):mid
+ const gap=(k:RumbleKit)=>{const y=seasonYear(k.season)!;if(date)return Math.abs(y-target(k));return y<from?from-y:y>to?y-to:0}
  let best=list[0]!
- for(const k of list){const d=gap(k),bd=gap(best);if(d<bd||(d===bd&&Math.abs(seasonYear(k.season)!-mid)<Math.abs(seasonYear(best.season)!-mid)))best=k}
+ for(const k of list){const d=gap(k),bd=gap(best);if(d<bd||(d===bd&&Math.abs(seasonYear(k.season)!-target(k))<Math.abs(seasonYear(best.season)!-target(best))))best=k}
  const g=gap(best)
  if(g===0)return {source:'archive',kit:best}
  if(g<=APPROX_SEASONS)return {source:'archive',kit:best,approx:true}
