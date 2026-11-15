@@ -4,6 +4,9 @@ import copyAll from '@/messages/en.shop.json'
 import './personal-print.css'
 
 const copy=copyAll.xiPrint
+type Product='framed'|'poster'|'tee'
+const LOOKS=['touchline','archive','night','kits','dream'] as const
+type Look=(typeof LOOKS)[number]
 type Req={club:string;formation:string;picks:Record<string,string>;captain:string|null;twelfth:string|null}
 /**
  * "YOUR XI, FRAMED" (owner, 14.11.2026). Offered when a supporter has picked his all-time eleven: the proof of his own print
@@ -11,13 +14,13 @@ type Req={club:string;formation:string;picks:Record<string,string>;captain:strin
  * the product at the printer (about 20 s) and opens the FAN LIFE checkout in its own window over this page; the page stays.
  */
 export function PersonalPrint({req,className=''}:{req:Req;className?:string}){
- const [on,setOn]=useState(false),[open,setOpen]=useState(false),[product,setProduct]=useState<'framed'|'poster'>('framed'),[manager,setManager]=useState('')
+ const [on,setOn]=useState(false),[open,setOpen]=useState(false),[product,setProduct]=useState<Product>('framed'),[template,setTemplate]=useState<Look>('touchline'),[manager,setManager]=useState('')
  const [proof,setProof]=useState<string|null>(null),[state,setState]=useState<'idle'|'making'|'ready'|'error'>('idle'),[msg,setMsg]=useState(''),[url,setUrl]=useState<string|null>(null),win=useRef<Window|null>(null)
  useEffect(()=>{fetch('/api/shop/personal').then(r=>r.json()).then(j=>setOn(!!j.open)).catch(()=>{})},[])
- const body=JSON.stringify({...req,manager,product})
- useEffect(()=>{if(!open)return;const t=window.setTimeout(()=>{fetch('/api/shop/personal',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({...req,manager,dry:true})}).then(r=>r.json()).then(j=>{if(j.proof)setProof(j.proof);else if(j.error)setMsg(j.error)}).catch(()=>{})},manager?600:0);return ()=>window.clearTimeout(t)
+ const body=JSON.stringify({...req,manager,product,template})
+ useEffect(()=>{if(!open)return;const t=window.setTimeout(()=>{fetch('/api/shop/personal',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({...req,manager,product,template,dry:true})}).then(r=>r.json()).then(j=>{if(j.proof)setProof(j.proof);else if(j.error)setMsg(j.error)}).catch(()=>{})},manager?600:0);return ()=>window.clearTimeout(t)
  // eslint-disable-next-line react-hooks/exhaustive-deps
- },[open,manager,req.formation,JSON.stringify(req.picks),req.captain,req.twelfth])
+ },[open,manager,product,template,req.formation,JSON.stringify(req.picks),req.captain,req.twelfth])
  useEffect(()=>{setState('idle');setUrl(null)},[body])
  if(!on)return null
  const go=(u:string)=>{const w=Math.min(520,screen.availWidth-40),h=Math.min(860,screen.availHeight-60),phone=window.matchMedia('(max-width: 760px)').matches
@@ -40,7 +43,9 @@ export function PersonalPrint({req,className=''}:{req:Req;className?:string}){
      <p className="xip-k">{copy.k}</p>
      <h2 className="xip-h" id="xip-h">{copy.t}</h2>
      <p className="xip-sub">{copy.sub}</p>
-     <div className="xip-seg" role="radiogroup" aria-label={copy.t}>{(['framed','poster'] as const).map(k=><button key={k} type="button" role="radio" aria-checked={product===k} className="min-h-tap" onClick={()=>setProduct(k)}>{copy[k]}</button>)}</div>
+     <div className="xip-seg" role="radiogroup" aria-label={copy.t}>{(['framed','poster','tee'] as const).map(k=><button key={k} type="button" role="radio" aria-checked={product===k} className="min-h-tap" onClick={()=>setProduct(k)}>{copy[k]}</button>)}</div>
+     {product==='tee'?<p className="xip-sub">{copy.teeNote}</p>
+      :<div className="xip-looks" role="radiogroup" aria-label={copy.look}><span className="xip-k">{copy.look}</span>{LOOKS.map(k=><button key={k} type="button" role="radio" aria-checked={template===k} className="min-h-tap" onClick={()=>setTemplate(k)}>{copy.looks[k]}</button>)}</div>}
      <label className="xip-field"><span>{copy.manager}</span><input value={manager} maxLength={22} onChange={e=>setManager(e.target.value)} autoComplete="nickname"/>{manager.trim()?<small>{copy.managerHint.replace('{name}',manager.trim())}</small>:null}</label>
      {state==='ready'&&url
       ?<a className="xip-go min-h-tap" href={url} target="_blank" rel="noopener" onClick={e=>{e.preventDefault();go(url)}}>{copy.open} ↗</a>

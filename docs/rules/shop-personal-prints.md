@@ -7,3 +7,10 @@
 - **Safety**: the eleven travel by player id and the names printed are the archive's own; the manager's name is letters and numbers only, ≤22, with a block list (`cleanManager`). The recipe travels in a signed URL (`lib/shop/personal/sign.ts`), so nobody can forge a print. Six prints per visitor a day.
 - **At the printer**: a `personal` ShopProduct made by `pressProduct` on the quality-first rules (sharp sizes only); the same XI is the same product. Never listed on /shop, not in the doctor or the desk's lists (counted in Overview), cleared after three days unless sold (hourly check-up).
 - **Next templates** use the same engine (`renderXI` → one renderer per template): any list a supporter builds in FAN LIFE that is his own — collections, legends squads, match memories.
+
+## Looks, kits and the tee (owner, 15.11.2026)
+- Five looks, the supporter chooses: Touchline, Club Archive, Night Match, Kit Collection, My Dream Team. A sixth is added only if it is a real new layout.
+- Each man wears our own drawing of the club's documented kit nearest his years (`public/club-kits/<club>/svg`). For print the crest picture and the sponsor's word are removed: an official mark is not ours to sell. A club without drawings gets the kit plate in the kit's colours.
+- The pitch is green only where green is not a rival's colour; the Dream Team sky is blue only where blue is not (rule 95). Otherwise cream.
+- Names print in the archive's Latin spelling when it has one; otherwise as kept, in visual order.
+- The tee: a small XI mark on the chest, the eleven on the back, two inks on light shirts only.
