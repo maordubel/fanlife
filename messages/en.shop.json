@@ -208,5 +208,10 @@
  "pdpZoomClose": "Close",
  "pdpPics": "Pictures",
  "pdpPicOf": "Picture {n} of {total}",
- "pdpLive": "In use"
+ "pdpLive": "In use",
+ "searchT": "Results for “{q}”",
+ "searchL": "Search the shop",
+ "searchP": "Search: a club, a player, a shirt…",
+ "searchGo": "Search",
+ "searchNone": "Nothing matches “{q}” yet."
 }

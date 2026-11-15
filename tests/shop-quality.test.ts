@@ -50,3 +50,12 @@ describe('the pictures follow where the design prints',()=>{
   expect([liveness('a?camera_label=lifestyle'),liveness('a?camera_label=context-2'),liveness('a?camera_label=front')]).toEqual([0,1,2])
  })
 })
+describe('the owner’s first picture',()=>{
+ it('leads while Printify still draws it, and falls back to the automatic order when it is gone',async()=>{
+  const {withCover}=await import('@/lib/shop/build')
+  const mk={images:['a','b','c']}
+  expect(withCover(mk,'c',[{src:'a'},{src:'b'},{src:'c'}]).images).toEqual(['c','a','b'])
+  expect(withCover(mk,'z',[{src:'a'}]).images).toEqual(['a','b','c'])
+  expect(withCover(mk,undefined,[{src:'a'}])).toBe(mk)
+ })
+})

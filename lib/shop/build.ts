@@ -122,7 +122,7 @@ export async function pressProduct(id:string,by:string):Promise<ShopProduct>{
 export async function refreshProduct(id:string){
  const doc=await readShop(),p=doc.products.find(x=>x.id===id),shop=doc.settings.shopId;if(!p?.printify||!shop)return p
  const api=await client(),live=await api.product(shop,p.printify.productId),url=live.external?.handle||p.printify.url||(doc.settings.popupUrl||null)
- await set(id,{status:p.printify.publishedAt&&url?'live':p.status,printify:{...p.printify,url,...(live.images.length?mockups(live.images,printSide(p.design)):{})}})
+ await set(id,{status:p.printify.publishedAt&&url?'live':p.status,printify:{...p.printify,url,...(live.images.length?withCover(mockups(live.images,printSide(p.design)),p.printify.cover,live.images):{})}})
  return (await readShop()).products.find(x=>x.id===id)
 }
 export async function removeProduct(id:string,by:string){
@@ -181,6 +181,11 @@ const isBackShot=(i:{src:string;position?:string})=>{const c=cameraOf(i.src);ret
  * A back print leads with a back; a two-sided one keeps its plain back for the inset. FAN LIFE's mark under the collar is a
  * detail, never "printed on the back".
  */
+/** the owner's chosen first picture (15.11.2026) leads while Printify still draws it; otherwise the automatic order stands */
+export function withCover(mk:{images:string[];backImage?:string},cover:string|undefined,live:{src:string}[]):{images:string[];backImage?:string}{
+ if(!cover||!live.some(i=>i.src===cover))return mk
+ return {...mk,images:[cover,...mk.images.filter(x=>x!==cover)].slice(0,8)}
+}
 export function mockups(list:Mock[],side:'front'|'back'|'both'|boolean):{images:string[];backImage?:string}{
  const mode=side===true?'both':side===false?'front':side
  const sorted=[...list].sort((a,b)=>Number(b.is_default)-Number(a.is_default)),v0=sorted[0]?.variant_ids?.[0]

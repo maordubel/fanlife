@@ -85,6 +85,37 @@ export async function POST(r:Request){
      ...bps.map(bp=>({id:`${sub.id}.own-${up.id.slice(-8)}.more-${bp.id}`,subject:sub.id,kind:'more' as const,blueprint:bp,art,title:`${title} · ${shortTitle(bp.title)}`,description:desc,status:'draft' as const,visible:false,createdAt:now,updatedAt:now}))]
     const design=designOf(b.design);if(design)for(const it of items)it.design={...design,cutout:undefined}
     await updateShop(by,`Uploaded art for ${items.length} product(s)`,d=>{for(const it of items)if(!d.products.some(x=>x.id===it.id))d.products.push(it)});return json({...(await state()),made:items.map(x=>x.id)})}
+   // ── the desk's product manager (15.11.2026: "smarter, easier editing; order") ──
+   case 'cover':{const src=String(b.src||'');await updateShop(by,`New first picture for ${id}`,d=>{const p=d.products.find(x=>x.id===id);if(!p?.printify)return
+     if(!src){delete p.printify.cover;return}
+     if(!p.printify.images.includes(src)&&p.printify.backImage!==src)return
+     p.printify.cover=src;p.printify.images=[src,...p.printify.images.filter(x=>x!==src)].slice(0,8);p.updatedAt=now});forgetPublicShop();break}
+   case 'shelvesAdd':{const add=SHELVES.find(x=>x===b.shelf),ids=Array.isArray(b.ids)?b.ids.map(String):[];if(!add||!ids.length)return json({error:'Which category, which products?'},422)
+    await updateShop(by,`${b.off?'Took':'Put'} ${ids.length} product(s) ${b.off?'out of':'in'} ${add}`,d=>{for(const p of d.products)if(ids.includes(p.id)){const cur=new Set(p.shelves??[]);if(b.off)cur.delete(add);else if(shelfOf(p.kind,p.blueprint?.title)!==add)cur.add(add);p.shelves=[...cur]}});forgetPublicShop();break}
+   case 'clone':{// the same picture and print settings on more products: new drafts beside the original, pressed by the desk
+    const doc=await readShop(),src=doc.products.find(x=>x.id===id);if(!src)return json({error:'Which product?'},422)
+    const kinds=(Array.isArray(b.kinds)?b.kinds:[]).filter((k):k is Kind=>KINDS.includes(k as Kind)&&k!=='more'),bps=blueprintsOf(b.blueprints)
+    if(!(kinds.length+bps.length))return json({error:'Choose at least one product to add.'},422)
+    const base=src.id.replace(/\.[^.]+$/,''),name=src.title.split(' · ')[0]!,keep=src.design?{...src.design,colors:undefined,sizes:undefined}:undefined
+    const want:{id:string;kind:Kind;label:string;blueprint?:{id:number;title:string}}[]=[...kinds.map(k=>({id:`${base}.${k}`,kind:k,label:KIND_SPECS[k].label})),...bps.map(bp=>({id:`${base}.more-${bp.id}`,kind:'more' as const,blueprint:bp,label:shortTitle(bp.title)}))]
+    const items:ShopProduct[]=want
+     .filter(x=>!doc.products.some(p=>p.id===x.id)).map(x=>({id:x.id,subject:src.subject,kind:x.kind,...(x.blueprint?{blueprint:x.blueprint}:{}),art:src.art,title:`${name} · ${x.label}`.slice(0,90),description:src.description,
+      ...(keep?{design:keep}:{}),...(src.shelves?.length?{shelves:src.shelves}:{}),status:'draft' as const,visible:false,createdAt:now,updatedAt:now}))
+    if(!items.length)return json({error:'Those products already exist for this design.'},409)
+    await updateShop(by,`Added ${items.length} product(s) to ${name}`,d=>{for(const it of items)if(!d.products.some(x=>x.id===it.id))d.products.push(it)});return json({...(await state()),made:items.map(x=>x.id)})}
+   case 'import':{// products made straight in Printify join the desk (so everything is managed in one place); nothing is changed in Printify
+    const doc=await readShop(),shop=doc.settings.shopId;if(!shop)return json({error:'Connect Printify first.'},422)
+    const api=await client(),have=new Set(doc.products.map(p=>p.printify?.productId).filter(Boolean)),found:ShopProduct[]=[]
+    for(let page=1;page<=10;page++){const r=await api.products(shop,page)
+     for(const x of r.data){if(have.has(x.id))continue
+      const prices=x.variants.filter(v=>v.is_enabled).map(v=>v.price),imgs=x.images.filter(i=>i.is_default).concat(x.images.filter(i=>!i.is_default)).map(i=>i.src)
+      const url=x.external?.handle??null
+      found.push({id:`fanlife.printify-${x.id.slice(-10)}`,subject:'fanlife',kind:'more',blueprint:{id:x.blueprint_id,title:x.title.slice(0,60)},art:{upload:{id:'printify',name:x.title.slice(0,60),preview:imgs[0]??'',width:0,height:0}},
+       title:x.title.slice(0,90),description:String(x.description||'').replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim().slice(0,600)||NOTE,status:url?'live':'ready',visible:false,createdAt:now,updatedAt:now,
+       printify:{productId:x.id,blueprintId:x.blueprint_id,providerId:x.print_provider_id,images:imgs.slice(0,8),priceFrom:prices.length?Math.min(...prices):0,currency:'USD',url,publishedAt:url?now:null}})}
+     if(r.current_page>=r.last_page)break}
+    if(found.length)await updateShop(by,`Joined ${found.length} product(s) made in Printify`,d=>{for(const p of found)if(!d.products.some(x=>x.id===p.id||x.printify?.productId===p.printify?.productId))d.products.push(p)})
+    return json({...(await state()),imported:found.length})}
    case 'press':if(!id)return json({error:'Which product?'},422);await pressProduct(id,by);break
    case 'refresh':await refreshProduct(id);break
    case 'visible':{const ids=Array.isArray(b.ids)?b.ids.map(String):[id];await updateShop(by,`${b.visible?'Showed':'Hid'} ${ids.length} product(s)`,d=>{for(const p of d.products)if(ids.includes(p.id))p.visible=!!b.visible});break}

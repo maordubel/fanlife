@@ -4,6 +4,7 @@ import {useAdminApi} from '@/components/master/adminApi'
 import {KIND_SPECS} from '@/lib/shop/kinds'
 import {DesignControls,CutoutPreview,PrintSides,modeOf,type Stock} from './ShopDesign'
 import {ShopSales} from './ShopSales'
+import {ShopManager} from './ShopManager'
 import {designKey,shelfOf,KINDS,MIN_QUALITY,qualityOf,type ArtRef,type ProductDesign,type Kind,type ShopDoc,type ShopProduct} from '@/lib/shop/types'
 
 /**
@@ -17,22 +18,20 @@ type State={doc:ShopDoc;connected:boolean}
 type Subject={id:string;name:string}
 export type DeskPicture={id:string;name:string;folder:string;subject:string;approved:boolean;review:boolean}
 const thumb=(id:string)=>`https://drive.google.com/thumbnail?id=${id}&sz=w320`
-const money=(c:number,cur:string)=>new Intl.NumberFormat('en',{style:'currency',currency:cur}).format(c/100)
 const BASIC=KINDS.filter(k=>k!=='more')
 const isWear=(p:ShopProduct)=>p.kind==='tee'||p.kind==='hoodie'||p.kind==='kids-tee'
 const CAT_L={wear:'Clothing',wall:'Wall art',gear:'Matchday gear',home:'Home & mugs',kids:'Kids',small:'Gifts & small things'} as const
 const TAB_L={overview:'Overview',create:'Create',products:'Products',sales:'Sales',settings:'Settings'} as const
 type CatItem={id:number;title:string;brand:string;image:string;group:string}
-const STATUS:Record<ShopProduct['status'],string>={draft:'Draft',building:'Pressing…',ready:'Made — waiting for its link',live:'On sale',error:'Needs a retry'}
 
 export function ShopDesk({initial,subjects,pictures}:{initial:State;subjects:Subject[];pictures:DeskPicture[]}){
  const [st,setSt]=useState(initial),api=useAdminApi(),{doc}=st,s=doc.settings
- const [token,setToken]=useState(''),[who,setWho]=useState('all'),[show,setShow]=useState<'all'|'shown'|'hidden'|'todo'>('all')
+ const [token,setToken]=useState(''),who='all'
  const [run,setRun]=useState<{done:number;total:number}|null>(null),stop=useRef(false)
  const [nSub,setNSub]=useState(subjects[0]?.id||'fanlife'),[nKinds,setNKinds]=useState<Kind[]>(['poster']),[nPic,setNPic]=useState<string>('own'),[nTitle,setNTitle]=useState(''),file=useRef<HTMLInputElement>(null)
- const [nDesign,setNDesign]=useState<ProductDesign>({}),[ownFile,setOwnFile]=useState<File|null>(null),[clean,setClean]=useState<string|null>(null),[editing,setEditing]=useState<string|null>(null),[eDesign,setEDesign]=useState<ProductDesign>({})
+ const [nDesign,setNDesign]=useState<ProductDesign>({}),[ownFile,setOwnFile]=useState<File|null>(null),[clean,setClean]=useState<string|null>(null)
  const [tab,setTab]=useState<'overview'|'create'|'products'|'sales'|'settings'>(initial.doc.products.length?'products':'create')
- const [nStock,setNStock]=useState<Stock|null>(null),[eStock,setEStock]=useState<Stock|null>(null)
+ const [nStock,setNStock]=useState<Stock|null>(null)
  const uploadArt=async(f:File)=>{const data=await new Promise<string>((ok,no)=>{const r=new FileReader();r.onload=()=>ok(String(r.result));r.onerror=()=>no(r.error);r.readAsDataURL(f)})
   return (await api.post<{art:ArtRef}>('shop',{action:'art',name:f.name,data},'Picture uploaded for this area.'))?.art??null}
  const picOptions=(sub:string)=>pictures.filter(p=>p.subject===sub||p.subject==='fanlife').filter(p=>!p.review).map(p=>({id:p.id,name:`${p.folder} · ${p.name}`}))
@@ -46,10 +45,6 @@ export function ShopDesk({initial,subjects,pictures}:{initial:State;subjects:Sub
  const togglePick=(c:{id:number;title:string})=>setPicked(v=>v.some(x=>x.id===c.id)?v.filter(x=>x.id!==c.id):v.length>=40?v:[...v,{id:c.id,title:c.title}])
  const act=async(action:string,data:Record<string,unknown>={},msg='Saved.')=>{const out=await api.post<State&{made?:string[]}>('shop',{action,...data},msg);if(out)setSt({doc:out.doc,connected:out.connected});return out}
  const name=(id:string)=>subjects.find(x=>x.id===id)?.name||id
- const [openD,setOpenD]=useState<string|null>(null)
- const list=useMemo(()=>doc.products.filter(p=>(who==='all'||p.subject===who)&&(show==='all'||(show==='shown'?p.visible:show==='hidden'?!p.visible&&p.status==='live':p.status!=='live'))),[doc.products,who,show])
- const groups=useMemo(()=>{const m=new Map<string,ShopProduct[]>();for(const p of list){const k=designKey(p);m.set(k,[...(m.get(k)??[]),p])}
-  return [...m].map(([key,items])=>({key,items,name:s.designNames?.[key]??items[0]!.title.split(' · ')[0]!})).sort((a,b)=>b.items[0]!.updatedAt.localeCompare(a.items[0]!.updatedAt))},[list,s.designNames])
  const allDesigns=useMemo(()=>{const m=new Map<string,string>();for(const p of doc.products){const k=designKey(p);if(!m.has(k))m.set(k,s.designNames?.[k]??p.title.split(' · ')[0]!)}return [...m].map(([key,name])=>({key,name})).sort((a,b)=>a.name.localeCompare(b.name))},[doc.products,s.designNames])
  const todo=doc.products.filter(p=>p.status==='draft'||p.status==='error'||p.status==='building'),live=doc.products.filter(p=>p.status==='live'),shown=live.filter(p=>p.visible)
  const softLive=live.filter(p=>qualityOf(p)<.5)
@@ -186,50 +181,9 @@ export function ShopDesk({initial,subjects,pictures}:{initial:State;subjects:Sub
   </section>
 
   </>}
-  {tab==='products'&&<>
-  <section className="desk-card" aria-labelledby="shp"><h2 className="desk-h2" id="shp">Products</h2>
-   <div className="desk-chips" role="group" aria-label="Club">{[{id:'all',name:'All'},...subjects].map(x=>{const n=x.id==='all'?doc.products.length:doc.products.filter(p=>p.subject===x.id).length;return <button key={x.id} className="desk-chip" aria-current={who===x.id} onClick={()=>setWho(x.id)}>{x.name} · {n}</button>})}</div>
-   <div className="desk-chips" role="group" aria-label="Show">{([['all','All'],['shown','Shown'],['hidden','On sale, hidden'],['todo','Not on sale']] as const).map(([k,l])=><button key={k} className="desk-chip" aria-current={show===k} onClick={()=>setShow(k)}>{l}</button>)}</div>
-   {list.length===0?<p className="desk-state">Nothing here yet.</p>:<div className="shop-designs">{groups.map(g=>{const first=g.items[0]!,img=g.items.find(p=>p.printify?.images[0])?.printify?.images[0]||('library' in first.art?thumb(first.art.library.id):first.art.upload.preview)
-    const shownN=g.items.filter(p=>p.visible&&p.status==='live').length,low=g.items.filter(p=>qualityOf(p)<MIN_QUALITY).length
-    return <article key={g.key} className="shop-design-card" data-open={openD===g.key?'1':'0'}>
-     <header className="shop-dhead">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={img} alt="" loading="lazy" width={96} height={96} referrerPolicy="no-referrer"/>
-      <div className="shop-dt"><b>{g.name}</b><small>{name(first.subject)} · {g.items.length} product{g.items.length>1?'s':''} · {shownN} shown{low?` · ${low} too soft to sell`:''}</small>
-       <div className="shop-card-a">
-        <button className="desk-btn min-h-tap" aria-expanded={openD===g.key} onClick={()=>setOpenD(openD===g.key?null:g.key)}>{openD===g.key?'Close':'Open'}</button>
-        <button className="desk-btn ghost min-h-tap" disabled={api.busy} onClick={()=>{const n=window.prompt('Name this design (it names every product made from it)',g.name);if(n&&n.trim()&&n.trim()!==g.name)void act('renameDesign',{design:g.key,name:n.trim()},'Renamed, in the shop and in Printify.')}}>Name</button>
-        <button className="desk-btn ghost min-h-tap" disabled={api.busy} onClick={()=>act('visible',{ids:g.items.filter(p=>p.status==='live'&&qualityOf(p)>=MIN_QUALITY).map(p=>p.id),visible:true},'Shown.')}>Show all</button>
-        <button className="desk-btn ghost min-h-tap" disabled={api.busy} onClick={()=>act('visible',{ids:g.items.map(p=>p.id),visible:false},'Hidden.')}>Hide all</button>
-        <button className="desk-btn ghost min-h-tap" disabled={api.busy} aria-pressed={!!s.promoters?.featured?.includes(g.key)} onClick={()=>act('feature',{design:g.key,on:!s.promoters?.featured?.includes(g.key)},s.promoters?.featured?.includes(g.key)?'Taken off fan favourites.':'On the fan favourites shelf.')}>{s.promoters?.featured?.includes(g.key)?'★ Featured':'☆ Feature'}</button>
-        <a className="desk-btn ghost min-h-tap" href={`/shop?design=${g.key}`} target="_blank" rel="noreferrer">In the shop ↗</a>
-       </div></div>
-     </header>
-     {openD===g.key&&<ul className="shop-prows">{g.items.map(p=>{const q=qualityOf(p),pimg=p.printify?.images[0]
-      return <li key={p.id} className="shop-prow" data-status={p.status} data-soft={q<MIN_QUALITY?'1':q<.5?'0':undefined}>
-       {/* eslint-disable-next-line @next/next/no-img-element */}
-       {pimg?<img src={pimg} alt="" loading="lazy" width={64} height={64}/>:<span className="shop-plus" aria-hidden="true">…</span>}
-       <div className="shop-pt"><b>{p.title.split(' · ')[1]??p.title}</b>
-        <small>{STATUS[p.status]}{p.printify?` · ${money(p.printify.priceFrom,p.printify.currency)}`:''} · sharpness {Math.round(q*100)}%{q<MIN_QUALITY?' — too soft, not sold':q<.5?' — may print soft':''}</small>
-        {p.error&&!/print size/.test(p.error)&&<small className="shop-err">{p.error}</small>}</div>
-       <label className="shop-switch"><input type="checkbox" checked={p.visible} disabled={api.busy||p.status!=='live'} onChange={e=>act('visible',{id:p.id,visible:e.target.checked},e.target.checked?'Shown in the shop.':'Hidden from the shop.')}/><span>Shown</span></label>
-       <details className="shop-more"><summary className="desk-btn ghost min-h-tap">More</summary><div className="shop-card-a">
-        {p.status!=='live'&&<button className="desk-btn" disabled={!!run||api.busy||!st.connected} onClick={()=>pressMany([p.id])}>{p.status==='draft'?'Press':'Retry'}</button>}
-        {p.printify?.url&&<a className="desk-btn ghost" href={p.printify.url} target="_blank" rel="noreferrer">View in the store ↗</a>}
-        <button className="desk-btn ghost" disabled={api.busy} onClick={()=>{setEditing(editing===p.id?null:p.id);setEDesign(p.design??{});setEStock(null)}}>Edit print</button>
-        <button className="desk-btn ghost" disabled={api.busy} onClick={()=>{if(window.confirm(`Delete “${p.title}” here and in Printify? This cannot be undone.`))void act('remove',{id:p.id},'Deleted.')}}>Delete</button>
-       </div></details>
-       {editing===p.id&&<div className="shop-edit"><fieldset className="shop-cats"><legend className="desk-fine"><b>Categories in the shop</b> — tick every one it suits (it is always in its own)</legend><div className="desk-chips">{(['wear','wall','gear','home','kids','small'] as const).map(c=>{const own=shelfOf(p.kind,p.blueprint?.title)===c,on=own||!!p.shelves?.includes(c)
-         return <button key={c} type="button" className="desk-chip min-h-tap" aria-pressed={on} aria-current={on} disabled={own||api.busy} onClick={()=>{const cur=p.shelves??[];void act('shelves',{id:p.id,shelves:on?cur.filter(x=>x!==c):[...cur,c]},'Categories saved.')}}>{CAT_L[c]}{own?' · its own':''}</button>})}</div></fieldset>
-        <DesignControls value={eDesign} onChange={setEDesign} library={'library' in p.art} margin={s.margin} busy={api.busy} stock={eStock} loadStock={()=>{void stockOf(p.blueprint?{blueprintId:p.blueprint.id}:{kind:p.kind}).then(setEStock)}} pictures={picOptions(p.subject)} uploadArt={uploadArt}/>
-        <p className="desk-fine">Applying presses the product again with these settings. It is hidden until you show it again.</p>
-        <button className="desk-btn min-h-tap" disabled={api.busy||!st.connected} onClick={async()=>{if(await act('design',{id:p.id,design:eDesign},'Pressed again with the new design.'))setEditing(null)}}>Apply and press again</button></div>}
-      </li>})}</ul>}
-    </article>})}</div>}
-  </section>
-
-  </>}
+  {tab==='products'&&<ShopManager doc={doc} subjects={subjects} act={act} busy={api.busy} connected={st.connected} running={!!run} press={pressMany} sync={syncMany}
+   featured={s.promoters?.featured??[]} onFeature={(design,on)=>{void act('feature',{design,on},on?'On the fan favourites shelf.':'Taken off fan favourites.')}}
+   printEditor={p=><PrintEdit key={p.id} p={p} margin={s.margin} busy={api.busy} connected={st.connected} act={act} stockOf={stockOf} pictures={picOptions(p.subject)} uploadArt={uploadArt}/>}/>}
   {tab==='sales'&&<ShopSales doc={doc} act={act} api={api} connected={st.connected} subjects={subjects} designs={allDesigns} onDoc={async()=>{const fresh=await api.get<State>('shop');if(fresh)setSt({doc:fresh.doc,connected:fresh.connected})}}/>}
   {tab==='settings'&&<>
   <section className="desk-card" aria-labelledby="shrelist"><h2 className="desk-h2" id="shrelist">Listings</h2>
@@ -253,4 +207,14 @@ export function ShopDesk({initial,subjects,pictures}:{initial:State;subjects:Sub
   </details>
   </>}
  </div>
+}
+
+/** the print of one product, edited in the manager's "Print" pane: applying presses it again (hidden until shown) */
+function PrintEdit({p,margin,busy,connected,act,stockOf,pictures,uploadArt}:{p:ShopProduct;margin:number;busy:boolean;connected:boolean;act:(a:string,d?:Record<string,unknown>,m?:string)=>Promise<unknown>
+ stockOf:(t:{kind?:Kind;blueprintId?:number})=>Promise<Stock|null>;pictures:{id:string;name:string}[];uploadArt:(f:File)=>Promise<ArtRef|null>}){
+ const [d,setD]=useState<ProductDesign>(p.design??{}),[stock,setStock]=useState<Stock|null>(null)
+ return <div className="shop-edit">
+  <DesignControls value={d} onChange={setD} library={'library' in p.art} margin={margin} busy={busy} stock={stock} loadStock={()=>{void stockOf(p.blueprint?{blueprintId:p.blueprint.id}:{kind:p.kind}).then(setStock)}} pictures={pictures} uploadArt={uploadArt}/>
+  <p className="desk-fine">Applying presses the product again with these settings. It is hidden until you show it again.</p>
+  <button className="desk-btn min-h-tap" disabled={busy||!connected} onClick={()=>act('design',{id:p.id,design:d},'Pressed again with the new design.')}>Apply and press again</button></div>
 }

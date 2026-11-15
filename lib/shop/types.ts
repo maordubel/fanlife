@@ -40,6 +40,8 @@ export type ShopProduct={
  printify?:{productId:string;blueprintId:number;providerId:number;images:string[];priceFrom:number;currency:string;url:string|null;publishedAt:string|null;
  /** the mock-up of the back, when the product prints there */
  backImage?:string;
+ /** the owner chose this picture to lead (15.11.2026): the check-up keeps it first while Printify still has it */
+ cover?:string;
  /** how sharp the print is: picture pixels ÷ pixels the product wants (1 = full; under .2 the shop hides it) */
  quality?:number;
  /** the sale whose price Printify charges now: its id, the % actually cut and the lowest regular price (cents) */
