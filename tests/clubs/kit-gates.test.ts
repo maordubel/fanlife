@@ -230,7 +230,8 @@ describe('gate 5 · the collection',()=>{
   for(const r of rows.filter(r=>r.open))expect(r.open!.cloth,`${r.id} is open without a build, so it can never have been a gate-4 puzzle`).toBeNull()
  },60000)
  it('a club whose gate 4 is closed shows every documented shirt on the shelf — there is nothing to earn it with',async()=>{
-  const full=await club('celtic'),z={...full,kits:(full.kits as unknown[]).slice(0,2)} as typeof full,rows=collectionOf(z)
+  // 15.11.2026: gate 4 is closed here explicitly (the first two Celtic kits once named no colour, which closed it by accident)
+  const full=await club('celtic'),z={...full,kits:(full.kits as unknown[]).slice(0,2),gates:{...full.gates,'kit-builder':{...full.gates['kit-builder'],playable:false}}} as typeof full,rows=collectionOf(z)
   expect(rows.length).toBeGreaterThan(0);expect(rows.every(r=>r.open)).toBe(true)
  },60000)
  it('openBuiltKits opens exactly the shirts with a valid receipt for 75+ field points, once each',async()=>{

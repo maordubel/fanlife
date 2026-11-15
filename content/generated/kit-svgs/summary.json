@@ -30,10 +30,10 @@
   "noColour": 0
  },
  "celtic": {
-  "drawn": 101,
+  "drawn": 103,
   "fromArchive": 101,
-  "fromPack": 0,
-  "noColour": 2
+  "fromPack": 2,
+  "noColour": 0
  },
  "st-pauli": {
   "drawn": 54,
@@ -60,21 +60,21 @@
   "noColour": 8
  },
  "al-ahly": {
-  "drawn": 8,
+  "drawn": 9,
   "fromArchive": 0,
-  "fromPack": 8,
-  "noColour": 7
+  "fromPack": 9,
+  "noColour": 6
  },
  "atalanta": {
-  "drawn": 24,
+  "drawn": 26,
   "fromArchive": 0,
-  "fromPack": 24,
-  "noColour": 5
+  "fromPack": 26,
+  "noColour": 3
  },
  "maccabi-haifa": {
-  "drawn": 12,
+  "drawn": 14,
   "fromArchive": 0,
-  "fromPack": 12,
-  "noColour": 16
+  "fromPack": 14,
+  "noColour": 14
  }
 }

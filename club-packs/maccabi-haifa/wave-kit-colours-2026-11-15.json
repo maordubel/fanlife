@@ -1,0 +1,317 @@
+{
+ "schemaVersion": 1,
+ "clubId": "maccabi-haifa",
+ "contentLocale": "en",
+ "note": "Kit colour amendments (15.11.2026): each record fills colours into the pack kit of the same id, only where that kit names none and only when two independent publishers agree (status approved). Single-publisher records stay in review for the owner.",
+ "sources": [
+  {
+   "id": "mh-kc-cof-p1",
+   "title": "Maccabi Haifa – Colours of Football",
+   "url": "https://www.colours-of-football.com/colours03/israel/maccabi_haifa/maccabi_haifa_1.html",
+   "publisher": "Colours of Football",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-kc-cof-p2",
+   "title": "Maccabi Haifa 2 – Colours of Football",
+   "url": "https://www.colours-of-football.com/colours03/israel/maccabi_haifa/maccabi_haifa_2.html",
+   "publisher": "Colours of Football",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-kc-wp-1920",
+   "title": "2019–20 Maccabi Haifa F.C. season – Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/2019–20_Maccabi_Haifa_F.C._season",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-kc-wp-1314",
+   "title": "2013–14 Maccabi Haifa F.C. season – Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/2013–14_Maccabi_Haifa_F.C._season",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-kc-wp-1415",
+   "title": "2014–15 Maccabi Haifa F.C. season – Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/2014–15_Maccabi_Haifa_F.C._season",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-kc-wp-0910",
+   "title": "2009–10 Maccabi Haifa F.C. season – Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/2009–10_Maccabi_Haifa_F.C._season",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "mh-kc-wp-2223",
+   "title": "2022–23 Maccabi Haifa F.C. season – Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/2022–23_Maccabi_Haifa_F.C._season",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  }
+ ],
+ "kits": [
+  {
+   "id": "mh-kit-2019-20-home",
+   "value": {
+    "season": "2019/20",
+    "type": "home",
+    "construction": {
+     "colors": "white/green",
+     "design": "contrasting sleeves"
+    },
+    "shorts": {
+     "colour": "green",
+     "trim": null
+    },
+    "socks": {
+     "colour": "green",
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-kc-cof-p2",
+    "mh-kc-wp-1920"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "notes": "White body with green sleeves, green shorts, green socks: the Colours of Football drawing (white body with a green wave pattern, green sleeves) and the Wikipedia season kit (white body, green arms, shorts and socks) agree.",
+   "approvedAt": "2026-11-15",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-15"
+  },
+  {
+   "id": "mh-kit-2013-14-home",
+   "value": {
+    "season": "2013/14",
+    "type": "home",
+    "construction": {
+     "colors": "green",
+     "design": "plain"
+    },
+    "shorts": {
+     "colour": "green",
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-kc-cof-p1",
+    "mh-kc-wp-1314"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "notes": "Green shirt and green shorts agreed by Colours of Football and the Wikipedia season kit. Colours of Football also shows one white vertical panel (Wikipedia does not): not set. Socks disagree (Colours of Football green, Wikipedia white): not set.",
+   "approvedAt": "2026-11-15",
+   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-15"
+  },
+  {
+   "id": "mh-kit-2022-23-european-away",
+   "value": {
+    "season": "2022/23",
+    "type": "away",
+    "construction": {
+     "colors": "teal",
+     "design": "plain"
+    },
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-kc-cof-p2"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "One publisher: Colours of Football draws a teal European kit for 2022-23 (file marked 'e', captioned third), white shorts and socks. That it is the kit FKA calls the European away is a match by competition, not stated by either; held for the owner."
+  },
+  {
+   "id": "mh-kit-2019-20-third",
+   "value": {
+    "season": "2019/20",
+    "type": "third",
+    "construction": {
+     "colors": "light green",
+     "design": "plain"
+    },
+    "shorts": {
+     "colour": "light green",
+     "trim": null
+    },
+    "socks": {
+     "colour": "light green",
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-kc-wp-1920"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "One publisher: the Wikipedia season kit shows a light green kit (shirt, shorts, socks)."
+  },
+  {
+   "id": "mh-kit-2015-16-home",
+   "value": {
+    "season": "2015/16",
+    "type": "home",
+    "construction": {
+     "colors": "green/white",
+     "design": "gradient"
+    },
+    "shorts": {
+     "colour": "green",
+     "trim": null
+    },
+    "socks": {
+     "colour": "green",
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-kc-cof-p1"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "One publisher: Colours of Football draws green and white checks fading to white, green shorts and socks. The Wikipedia season page's kit boxes are ambiguous (several kit sets) and were not read as a second publisher."
+  },
+  {
+   "id": "mh-kit-2014-15-third",
+   "value": {
+    "season": "2014/15",
+    "type": "third",
+    "construction": {
+     "colors": "light green/black",
+     "design": "contrasting sleeves"
+    },
+    "shorts": {
+     "colour": "black",
+     "trim": null
+    },
+    "socks": {
+     "colour": "black",
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-kc-wp-1415"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "One publisher: the Wikipedia season kit shows a light green body with black sleeves, black shorts and socks."
+  },
+  {
+   "id": "mh-kit-2009-10-home",
+   "value": {
+    "season": "2009/10",
+    "type": "home",
+    "construction": {
+     "colors": "green/white",
+     "design": "plain"
+    },
+    "shorts": {
+     "colour": "green",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "mh-kc-wp-0910"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "One publisher: the Wikipedia season kit shows a green shirt with white shoulder detail, green shorts, white socks."
+  }
+ ],
+ "skipped": [
+  {
+   "id": "mh-kit-2022-23-third",
+   "reason": "Publishers disagree: Colours of Football draws a grey body with black sleeves; the Wikipedia season kit is all black. Shorts and socks (black) agree, the shirt does not."
+  },
+  {
+   "id": "mh-kit-2013-14-third",
+   "reason": "Publishers disagree: Colours of Football draws an all-black third kit; the Wikipedia season kit shows an all-green third."
+  },
+  {
+   "id": "mh-kit-2009-10-third",
+   "reason": "Only the Wikipedia kit box, and its pattern (stripes-on-white over a green body) cannot be read as colours without guessing."
+  },
+  {
+   "id": "mh-kit-2022-23-home-3",
+   "reason": "No publisher with the colours found (FKA text has none; Colours of Football and Wikipedia show one home kit)."
+  },
+  {
+   "id": "mh-kit-2015-16-third",
+   "reason": "No publisher with the colours found."
+  },
+  {
+   "id": "mh-kit-2008-09-third",
+   "reason": "Only the Wikipedia kit box, whose shirt is a custom pattern image (no colour stated); shorts and socks black there. Not found."
+  },
+  {
+   "id": "mh-kit-1993-94-home",
+   "reason": "No publisher with the colours found."
+  },
+  {
+   "id": "mh-kit-1990-91-home",
+   "reason": "No publisher with the colours found."
+  },
+  {
+   "id": "mh-kit-1990-91-away",
+   "reason": "No publisher with the colours found."
+  },
+  {
+   "id": "mh-kit-1985-86-home",
+   "reason": "No publisher with the colours found."
+  },
+  {
+   "id": "mh-kit-1984-85-home",
+   "reason": "No publisher with the colours found."
+  }
+ ]
+}

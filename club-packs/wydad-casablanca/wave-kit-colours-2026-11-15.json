@@ -1,0 +1,94 @@
+{
+ "schemaVersion": 1,
+ "clubId": "wydad-casablanca",
+ "contentLocale": "en",
+ "note": "Kit colour amendments (15.11.2026): each record fills colours into the pack kit of the same id, only where that kit names none and only when two independent publishers agree (status approved). Single-publisher records stay in review for the owner.",
+ "sources": [
+  {
+   "id": "wy-kc-ck-1718h",
+   "title": "2017/18 Wydad Casablanca M.Hoda #10 Home Shirt (XL) Macron – Cult Kits",
+   "url": "https://www.cultkits.com/products/2017-18-wydad-casablanca-m-hoda-10-home-shirt-xl-macron",
+   "publisher": "Cult Kits",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "wy-kc-fh-cwc",
+   "title": "Wydad Casablanca 2023 Club World Cup kits – Footy Headlines",
+   "url": "https://www.footyheadlines.com/2023/02/wydad-casablanca-2023-club-world-cup.html",
+   "publisher": "Footy Headlines",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  }
+ ],
+ "kits": [
+  {
+   "id": "wy-kit-2017-18-home",
+   "value": {
+    "season": "2017/18",
+    "type": "home",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-kc-ck-1718h"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "One publisher: the Cult Kits photograph of a 2017/18 Macron home shirt shows red with white collar and side panels."
+  },
+  {
+   "id": "wy-kit-2022-23-third",
+   "value": {
+    "season": "2022/23",
+    "type": "third",
+    "construction": {
+     "colors": "black/gold",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-kc-fh-cwc"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "One publisher: Footy Headlines describes the Club World Cup (Feb 2023) third as the home design in black with gold. FKA lists a separate '2022 Club World Cup third' beside this '2022-23 third', so the two may differ; held for the owner."
+  }
+ ],
+ "skipped": [
+  {
+   "id": "wy-kit-2018-19-home",
+   "reason": "Only the Wikipedia kit box, which lists white as kit 1 and red as kit 2 (order unclear); no second publisher."
+  },
+  {
+   "id": "wy-kit-2017-18-away",
+   "reason": "No publisher with the colours found."
+  },
+  {
+   "id": "wy-kit-2011-12-away",
+   "reason": "No publisher with the colours found."
+  },
+  {
+   "id": "wy-kit-2007-08-away",
+   "reason": "No publisher with the colours found."
+  },
+  {
+   "id": "wy-kit-1998-99-away",
+   "reason": "No publisher with the colours found."
+  },
+  {
+   "id": "wy-kit-1989-90-home",
+   "reason": "No publisher with the colours found."
+  }
+ ]
+}

@@ -1,0 +1,209 @@
+{
+ "schemaVersion": 1,
+ "clubId": "al-ahly",
+ "contentLocale": "en",
+ "note": "Kit colour amendments (15.11.2026): each record fills colours into the pack kit of the same id, only where that kit names none and only when two independent publishers agree (status approved). Single-publisher records stay in review for the owner.",
+ "sources": [
+  {
+   "id": "ah-kc-ff-1920h",
+   "title": "Al Ahly SC 2019/20 Umbro Home Kit – Football Fashion",
+   "url": "https://footballfashion.org/wordpress/2019/09/28/al-ahly-sc-2019-20-umbro-home-kit",
+   "publisher": "Football Fashion",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-kc-s360-1920h",
+   "title": "Al Ahly hark back to tradition for 19/20 Umbro kit – Sport360",
+   "url": "https://revamp-en.sport360.com/article/football/336764/egyptian-premier-league-giants-al-ahly-hark-back-to-tradition-for-1920-umbro-kit",
+   "publisher": "Sport360",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-kc-wp-0910",
+   "title": "2009–10 Al Ahly SC season – Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/2009–10_Al_Ahly_SC_season",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-kc-wp-1112",
+   "title": "2011–12 Al Ahly SC season – Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/2011–12_Al_Ahly_SC_season",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-kc-wp-1213",
+   "title": "2012–13 Al Ahly SC season – Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/2012–13_Al_Ahly_SC_season",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "ah-kc-wp-1819",
+   "title": "2018–19 Al Ahly SC season – Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/2018–19_Al_Ahly_SC_season",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  }
+ ],
+ "kits": [
+  {
+   "id": "ah-kit-2019-20-home",
+   "value": {
+    "season": "2019/20",
+    "type": "home",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-kc-ff-1920h",
+    "ah-kc-s360-1920h"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "notes": "Red shirt with white accents at the collar and cuffs, a retro Umbro design: Football Fashion and Sport360 agree (the Wikipedia season kit is red too). Wikipedia alone gives white shorts and red socks: not set.",
+   "approvedAt": "2026-11-15",
+   "approvedBy": "automated:cross-source-review-al-ahly-2026-11-15"
+  },
+  {
+   "id": "ah-kit-2009-10-away",
+   "value": {
+    "season": "2009/10",
+    "type": "away",
+    "construction": {
+     "colors": "blue",
+     "design": "plain"
+    },
+    "shorts": {
+     "colour": "blue",
+     "trim": null
+    },
+    "socks": {
+     "colour": "blue",
+     "trim": null
+    }
+   },
+   "sources": [
+    "ah-kc-wp-0910"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "One publisher: the Wikipedia season kit shows an all-blue away kit."
+  },
+  {
+   "id": "ah-kit-2011-12-away",
+   "value": {
+    "season": "2011/12",
+    "type": "away",
+    "construction": {
+     "colors": "navy",
+     "design": "plain"
+    },
+    "shorts": {
+     "colour": "navy",
+     "trim": null
+    },
+    "socks": {
+     "colour": "navy",
+     "trim": null
+    }
+   },
+   "sources": [
+    "ah-kc-wp-1112"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "One publisher: the Wikipedia season kit shows an all-navy away kit."
+  },
+  {
+   "id": "ah-kit-2012-13-away",
+   "value": {
+    "season": "2012/13",
+    "type": "away",
+    "construction": {
+     "colors": "blue",
+     "design": "plain"
+    },
+    "shorts": {
+     "colour": "blue",
+     "trim": null
+    },
+    "socks": {
+     "colour": "blue",
+     "trim": null
+    }
+   },
+   "sources": [
+    "ah-kc-wp-1213"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "One publisher: the Wikipedia season kit shows an all-blue away kit."
+  },
+  {
+   "id": "ah-kit-2018-19-away",
+   "value": {
+    "season": "2018/19",
+    "type": "away",
+    "construction": {
+     "colors": "blue",
+     "design": "plain"
+    },
+    "shorts": {
+     "colour": "blue",
+     "trim": null
+    },
+    "socks": {
+     "colour": "blue",
+     "trim": null
+    }
+   },
+   "sources": [
+    "ah-kc-wp-1819"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "One publisher: the Wikipedia season kit shows an all-blue away kit. (A 2018/19 turquoise Umbro away found in search is Saudi Al Ahli, not this club.)"
+  }
+ ],
+ "skipped": [
+  {
+   "id": "ah-kit-2013-14-away",
+   "reason": "Only the Wikipedia kit box, which reuses the 2012-13 pattern files (copied, not a separate account)."
+  },
+  {
+   "id": "ah-kit-1997-98-home",
+   "reason": "No publisher with the colours found (no Wikipedia season kit, FKA text has none)."
+  }
+ ]
+}

@@ -1,0 +1,196 @@
+{
+ "schemaVersion": 1,
+ "clubId": "raja-casablanca",
+ "contentLocale": "en",
+ "note": "Kit colour amendments (15.11.2026): each record fills colours into the pack kit of the same id, only where that kit names none and only when two independent publishers agree (status approved). Single-publisher records stay in review for the owner.",
+ "sources": [
+  {
+   "id": "rj-kc-shop-2324h",
+   "title": "Maillot Domicile Green Raja Club Athletic UMBRO 23/24 – Raja Shop",
+   "url": "https://www.rajashop.ma/products/maillot-domicile-green-raja-club-athletic-umbro-23-24",
+   "publisher": "Raja Club Athletic (official shop)",
+   "language": "fr",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "rj-kc-shop-2324a",
+   "title": "Maillot Exterieur Black Raja Club Athletic UMBRO 23/24 – Raja Shop",
+   "url": "https://www.rajashop.ma/products/maillot-exterieur-black-raja-club-athletic-umbro-23-24",
+   "publisher": "Raja Club Athletic (official shop)",
+   "language": "fr",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "rj-kc-wp-2122",
+   "title": "2021–22 Raja CA season – Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/2021–22_Raja_CA_season",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "rj-kc-wp-1415",
+   "title": "2014–15 Raja CA season – Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/2014–15_Raja_CA_season",
+   "publisher": "Wikipedia",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  }
+ ],
+ "kits": [
+  {
+   "id": "rj-kit-2023-24-home",
+   "value": {
+    "season": "2023/24",
+    "type": "home",
+    "construction": {
+     "colors": "green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "rj-kc-shop-2324h"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "One publisher: the club shop's product title names the 2023/24 Umbro home shirt green (the page itself was not reachable from here; title read from the search index). Held for the owner."
+  },
+  {
+   "id": "rj-kit-2023-24-away",
+   "value": {
+    "season": "2023/24",
+    "type": "away",
+    "construction": {
+     "colors": "black",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "rj-kc-shop-2324a"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "One publisher: the club shop's product title names the 2023/24 Umbro away shirt black (page not reachable from here; title from the search index). Held for the owner."
+  },
+  {
+   "id": "rj-kit-2021-22-away",
+   "value": {
+    "season": "2021/22",
+    "type": "away",
+    "construction": {
+     "colors": "white/green",
+     "design": "plain"
+    },
+    "shorts": {
+     "colour": "white",
+     "trim": null
+    },
+    "socks": {
+     "colour": "white",
+     "trim": null
+    }
+   },
+   "sources": [
+    "rj-kc-wp-2122"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "One publisher: the Wikipedia season kit shows a white Kappa away kit with green trim, white shorts and socks."
+  },
+  {
+   "id": "rj-kit-2014-15-away",
+   "value": {
+    "season": "2014/15",
+    "type": "away",
+    "construction": {
+     "colors": "blue",
+     "design": "plain"
+    },
+    "shorts": {
+     "colour": "blue",
+     "trim": null
+    },
+    "socks": {
+     "colour": "blue",
+     "trim": null
+    }
+   },
+   "sources": [
+    "rj-kc-wp-1415"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "One publisher: the Wikipedia season kit shows an all-blue away kit."
+  }
+ ],
+ "skipped": [
+  {
+   "id": "rj-kit-2022-23-away",
+   "reason": "Only the Wikipedia kit box, which reuses the 2021-22 pattern files (copied, not a separate account)."
+  },
+  {
+   "id": "rj-kit-2021-22-home",
+   "reason": "Wikipedia's shirt is a custom pattern image (no body colour stated); no second publisher."
+  },
+  {
+   "id": "rj-kit-2023-24-third",
+   "reason": "No publisher with the shirt colour found (Wikipedia gives only black shorts and socks)."
+  },
+  {
+   "id": "rj-kit-2022-23-third",
+   "reason": "No publisher with the colours found."
+  },
+  {
+   "id": "rj-kit-2010-11-home",
+   "reason": "No publisher with the colours found."
+  },
+  {
+   "id": "rj-kit-2009-10-away",
+   "reason": "No publisher with the colours found."
+  },
+  {
+   "id": "rj-kit-2008-09-home",
+   "reason": "No publisher with the colours found."
+  },
+  {
+   "id": "rj-kit-2008-09-away",
+   "reason": "No publisher with the colours found."
+  },
+  {
+   "id": "rj-kit-1996-97-away",
+   "reason": "No publisher with the colours found."
+  },
+  {
+   "id": "rj-kit-1995-96-home",
+   "reason": "No publisher with the colours found."
+  },
+  {
+   "id": "rj-kit-1992-93-home",
+   "reason": "No publisher with the colours found."
+  },
+  {
+   "id": "rj-kit-1988-89-away",
+   "reason": "No publisher with the colours found."
+  },
+  {
+   "id": "rj-kit-1977-78-away",
+   "reason": "No publisher with the colours found."
+  }
+ ]
+}
