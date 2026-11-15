@@ -225,3 +225,4 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [archive-one-night](archive-one-night.md) · One record per match night, a daily self-refreshing league feed, and the archive door every game links through (12.11.2026)
 - [shop-live-mockups.md](shop-live-mockups.md) — the first picture of a product is the product in use; gallery with thumbnails and a glass
 - [shop-desk-manager.md](shop-desk-manager.md) — the desk's product manager: search, filters, bulk bar, editor, first picture, more products, import from Printify; shop search
+- [shop-brand-label-postcard.md](shop-brand-label-postcard.md) — FAN LIFE on the neck label only (one ink, light on dark), the postcard in every order, enlarged pictures for soft prints

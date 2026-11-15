@@ -626,3 +626,5 @@ select.pcc-inline { inline-size: 92px; cursor: pointer; } select.pcc-inline:disa
  .shopm-body[data-open='1'] { grid-template-columns: minmax(0, 1fr) minmax(0, 440px); }
  .shopm-ed { position: sticky; inset: auto; inset-block-start: calc(var(--desk-bar) + 60px); z-index: 4; max-block-size: calc(100vh - var(--desk-bar) - 80px); border: 3px solid var(--mag-ink); box-shadow: 5px 5px 0 var(--mag-ink); background: var(--mag-card); }
 }
+.shop-label-light { background: var(--mag-card); border: 1px solid var(--mag-ink); }
+.shop-label-dark { background: var(--mag-ink); }

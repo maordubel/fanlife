@@ -116,7 +116,7 @@ function Editor({p,doc,pane,setPane,act,busy,connected,running,press,name,fav,on
     <label className="shop-switch"><input type="checkbox" checked={p.visible} disabled={busy||p.status!=='live'} onChange={e=>act('visible',{id:p.id,visible:e.target.checked},e.target.checked?'Shown in the shop.':'Hidden from the shop.')}/><span>Shown in the shop</span></label>
     <label className="shop-switch"><input type="checkbox" checked={fav} disabled={busy} onChange={e=>onFeature(e.target.checked)}/><span>Fan favourite (the whole design)</span></label>
    </div>
-   <p className="desk-fine">{STATUS[p.status]}{p.printify?` · from ${money(p.printify.priceFrom,p.printify.currency)}`:''} · sharpness {Math.round(qualityOf(p)*100)}%{p.sold?` · ${p.sold} sold`:''}{p.error?` · ${p.error}`:''}</p>
+   <p className="desk-fine">{STATUS[p.status]}{p.printify?` · from ${money(p.printify.priceFrom,p.printify.currency)}`:''} · sharpness {Math.round(qualityOf(p)*100)}%{p.printify?.upscaled?` (picture enlarged ×${p.printify.upscaled} — a sharper original prints better)`:''}{p.sold?` · ${p.sold} sold`:''}{p.error?` · ${p.error}`:''}</p>
    <p className="desk-actions">{p.status!=='live'&&<button type="button" className="desk-btn min-h-tap" disabled={busy||running||!connected} onClick={()=>press([p.id])}>{p.status==='draft'?'Press':'Retry'}</button>}
     {p.printify&&<button type="button" className="desk-btn ghost min-h-tap" disabled={busy||!connected} onClick={()=>act('refresh',{id:p.id},'Read again from Printify.')}>Read again from Printify</button>}
     {p.status==='live'&&<a className="desk-btn ghost min-h-tap" href={`/shop/p/${encodeURIComponent(p.id)}`} target="_blank" rel="noreferrer">Its page ↗</a>}

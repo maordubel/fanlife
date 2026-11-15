@@ -1,6 +1,6 @@
 import 'server-only'
 import {KIND_SPECS,catalogueSpec,groupOf} from './kinds'
-import {BRAND_SPOTS,printSide,NOTE,SHARP_KEEP,areasOf,bestVariants,brandPlace,isGarment,type BrandSpot,listingOf,matchBlueprint,pickProvider,pickVariants,placeAt,positionsOf,price,printAreas,shadedSpec,sheets,sharpness,sizedSpec} from './plan'
+import {BRAND_SPOTS,labelInk,variantColour,printSide,NOTE,SHARP_KEEP,areasOf,bestVariants,brandPlace,isGarment,listingOf,matchBlueprint,pickProvider,pickVariants,placeAt,positionsOf,price,printAreas,shadedSpec,sheets,sharpness,sizedSpec} from './plan'
 import {subjectName} from './subjects'
 import {REGISTRY} from '@/lib/master/registry'
 import {SITE_URL} from '@/lib/brand'
@@ -62,13 +62,21 @@ export async function pressProduct(id:string,by:string):Promise<ShopProduct>{
   const candidates=pickVariants({...spec,positions:wanted,maxVariants:100},all)
   if(!candidates.length)throw new Error(`“${m.title}” at ${m.provider} has nothing in stock to print on.`)
   // the pictures: each print area its own (or the product's), sent to Printify once each
-  const sent=new Map<string,{id:string;width:number;height:number}>()
+  const sent=new Map<string,{id:string;width:number;height:number}>();let upscaled=0
   const picOf=async(art:ArtRef,cutout:boolean)=>{const key=JSON.stringify(art)+cutout;const got=sent.get(key);if(got)return got
    let pic:{id:string;width:number;height:number}
    if('library' in art){const lib=pictureById(art.library.id);if(!lib)throw new Error('A picture is no longer in the library inventory.')
     const fname=lib.name.replace(/[^a-zA-Z0-9._-]/g,'-').slice(-80)||'art.png',clean=cutout?await cleanOriginal(original(lib.id)):null
     const up=clean?await api.upload(fname.replace(/\.\w+$/,'')+'-cutout.png',clean):await api.uploadUrl(fname,original(lib.id));pic={id:up.id,width:up.width,height:up.height}
    }else pic={id:art.upload.id,width:art.upload.width,height:art.upload.height}
+   // SOFT PRINTS (owner, 15.11.2026: "handle every soft print"): when the picture is smaller than the biggest print it must cover,
+   // a high-quality enlargement (Lanczos, a light sharpen, up to 4×, at most 36 MP) is sent instead — the print area is filled with
+   // pixels made from the picture, never stretched by the printer. It adds no detail the file did not have; a truly blurry file still
+   // needs a sharper original, and the desk says so.
+   const need=Math.max(0,...candidates.flatMap(v=>v.placeholders.filter(ph=>wanted.includes(ph.position)).map(ph=>Math.max(ph.width/pic.width,ph.height/pic.height)*Math.min(1,spec.scale))))
+   const f=Math.min(4,need*.85,Math.sqrt(36e6/(pic.width*pic.height)))
+   if(f>=1.25&&!cutout){const src='library' in art?original(art.library.id):art.upload.preview,big=src?await enlarge(src,f).catch(()=>null):null
+    if(big){const up=await api.upload(`x${f.toFixed(1)}-${('library' in art?art.library.name:art.upload.name).replace(/[^a-zA-Z0-9._-]/g,'-').replace(/\.\w+$/,'').slice(-60)}.${big.png?'png':'jpg'}`,big.data);pic={id:up.id,width:up.width,height:up.height};upscaled=Math.max(upscaled,Math.round(f*10)/10)}}
    sent.set(key,pic);return pic}
   // quality first, size by size (14.11.2026): only the sizes this picture prints sharp on, in the shape that suits it
   const [frontSide,frontArea]=areasOf(spec,candidates,d)[0]!,frontPic=await picOf(frontArea.art??p.art,!!(frontArea.cutout??d?.cutout))
@@ -88,16 +96,16 @@ export async function pressProduct(id:string,by:string):Promise<ShopProduct>{
    for(const sheet of sheets(spec,variants,side)){const full=spec.scale>=1&&(!area.place||area.place==='auto')&&!cut
     const use=(full?await fitOf(art,sheet,pic):null)??pic,at=placeAt(spec,sheet,use,area);soft=Math.min(soft,sharpness(sheet,use,at.scale));placed.push({sheet,imageId:use.id,...at})}}
   if(!placed.length)throw new Error(`“${m.title}” has none of the print areas chosen.`)
-  // FAN LIFE's own marks on a garment (14.11.2026): the seal on the neck label, the sleeve and under the collar — where the printer
-  // offers the place and the design does not use it. A club's product carries the seal in one ink (a club's rival colours never ride on it).
-  let brandId='';const brand={neck:true,sleeve:true,backNeck:true,...(doc.settings.brand??{})}
-  if(isGarment(p.kind,p.blueprint?.title??m.title)){
-   const used=new Set(placed.map(x=>x.sheet.position)),seal=p.subject==='fanlife'?'logo-512.png':'seal-mono-512.png'
-   let mark:{id:string;width:number;height:number}|null=null
-   for(const spot of Object.keys(BRAND_SPOTS) as BrandSpot[]){if(!brand[spot])continue
-    const pos=BRAND_SPOTS[spot].positions.find(x=>!used.has(x)&&variants.some(v=>v.placeholders.some(ph=>ph.position===x)));if(!pos)continue
-    try{mark??=await api.uploadUrl(`fanlife-${seal}`,`${SITE_URL}/brand/fanlife/${seal}`).then(u=>({id:u.id,width:u.width,height:u.height}))}catch{break}
-    const mk=mark!;brandId=mk.id;for(const sheet of sheets(spec,variants,[pos])){placed.push({sheet,imageId:mk.id,...brandPlace(sheet,mk,spot)});used.add(pos)}}
+  // FAN LIFE's mark on a garment — the inside neck label and nowhere else (15.11.2026): one ink, the light ink on dark colours,
+  // and only where the printer offers a label print and the design does not use it
+  let brandId='';const brand={neck:true,...(doc.settings.brand??{})}
+  if(brand.neck&&isGarment(p.kind,p.blueprint?.title??m.title)){
+   const used=new Set(placed.map(x=>x.sheet.position)),{isLight}=await import('./colours')
+   const pos=BRAND_SPOTS.neck.positions.find(x=>!used.has(x)&&variants.some(v=>v.placeholders.some(ph=>ph.position===x)))
+   if(pos){const marks:Record<'ink'|'light',{id:string;width:number;height:number}|null>={ink:null,light:null}
+    for(const tone of ['ink','light'] as const){const vs=variants.filter(v=>labelInk(variantColour(v),isLight)===tone);if(!vs.length)continue
+     try{marks[tone]??=await api.uploadUrl(`fanlife-neck-label-${tone}.png`,`${SITE_URL}/brand/fanlife/neck-label-${tone}.png`).then(u=>({id:u.id,width:u.width,height:u.height}))}catch{continue}
+     const mk=marks[tone]!;brandId=brandId||mk.id;for(const sheet of sheets(spec,vs,[pos]))placed.push({sheet,imageId:mk.id,...brandPlace(sheet,mk,'neck')})}}
   }
   const ids=new Set(variants.map(v=>v.id))
   if(p.printify?.productId)await api.remove(shop,p.printify.productId).catch(()=>{})
@@ -114,7 +122,7 @@ export async function pressProduct(id:string,by:string):Promise<ShopProduct>{
   if(soft<SHARP_KEEP)await set(id,{error:`On sale, but this picture is small for a ${spec.label.toLowerCase()} (${Math.round(soft*100)}% of the print size) — it may print soft. A larger original is better.`})
   const {images,backImage}=mockups(made.images,printSide(d,placed.some(x=>x.sheet.position==='back'&&x.imageId!==brandId)))
   url=url||(doc.settings.popupUrl?doc.settings.popupUrl.replace(/\/$/,''):null)
-  await set(id,{retries:publishedAt&&url?0:p.retries,status:publishedAt&&url?'live':'ready',printify:{productId:made.id,blueprintId:m.blueprintId,providerId:m.providerId,images,...(backImage?{backImage}:{}),quality:Math.round(soft*100)/100,priceFrom:Math.min(...priced.map(v=>v.price)),currency:'USD',url,publishedAt}})
+  await set(id,{retries:publishedAt&&url?0:p.retries,status:publishedAt&&url?'live':'ready',printify:{productId:made.id,blueprintId:m.blueprintId,providerId:m.providerId,images,...(backImage?{backImage}:{}),quality:Math.round(soft*100)/100,...(upscaled?{upscaled}:{}),priceFrom:Math.min(...priced.map(v=>v.price)),currency:'USD',url,publishedAt}})
  }catch(e){await set(id,{status:'error',error:(e as Error).message.slice(0,400)})}
  return (await readShop()).products.find(x=>x.id===id)!
 }
@@ -222,6 +230,14 @@ export async function wrapCover(url:string,shape:number):Promise<string|null>{
  let out=await sharp({create:{width:W0,height:H0,channels:3,background:bg}}).composite([{input:art,left,top}]).jpeg({quality:92}).toBuffer()
  const k=Math.min(1,Math.sqrt(36e6/(W0*H0)));if(k<1)out=await sharp(out).resize(Math.round(W0*k),Math.round(H0*k)).jpeg({quality:92}).toBuffer()
  return out.toString('base64')
+}
+/** a picture enlarged f× for print (Lanczos 3 and a light unsharp mask), PNG when it has transparency, else JPEG 92 */
+export async function enlarge(url:string,f:number):Promise<{data:string;png:boolean}|null>{
+ const r=await fetch(url,{signal:AbortSignal.timeout(90e3)});if(!r.ok)return null
+ const sharp=(await import('sharp')).default,input=Buffer.from(await r.arrayBuffer()),meta=await sharp(input).metadata()
+ if(!meta.width||!meta.height)return null
+ const pipe=sharp(input).resize(Math.round(meta.width*f),Math.round(meta.height*f),{kernel:'lanczos3'}).sharpen({sigma:.8,m1:.5,m2:1.2}),png=!!meta.hasAlpha
+ return {data:(await (png?pipe.png({compressionLevel:9}):pipe.jpeg({quality:92,mozjpeg:true})).toBuffer()).toString('base64'),png}
 }
 export async function extendToShape(url:string,shape:number):Promise<string|null>{
  const r=await fetch(url,{signal:AbortSignal.timeout(60e3)});if(!r.ok)return null

@@ -23,9 +23,11 @@ describe('quality first, size by size',()=>{
   const areas=areasOf(KIND_SPECS.tee,vs,{sides:'both',backArt:back})
   expect(areas.map(([s])=>s[0])).toEqual(['front','back']);expect(areas[1]![1].art).toEqual(back);expect(areas[0]![1].art).toBeUndefined()
  })
- it('places the FAN LIFE seal whole, small under the collar',()=>{
-  const sheet={w:4000,h:4500,position:'back',variantIds:[1]}
-  const at=brandPlace(sheet,{width:512,height:512},'backNeck');expect(at.scale).toBeLessThan(.2);expect(at.y).toBeLessThan(.15)
+ it('prints FAN LIFE on the neck label only — small, centred, the light ink on dark cloth',async()=>{
+  const {BRAND_SPOTS,labelInk}=await import('@/lib/shop/plan')
+  expect(Object.keys(BRAND_SPOTS)).toEqual(['neck'])
+  const at=brandPlace({w:1500,h:1500,position:'neck',variantIds:[1]},{width:1200,height:1200},'neck');expect(at.scale).toBeLessThan(.6);expect(at.x).toBe(.5)
+  const light=(n:string)=>/white|natural/i.test(n);expect(labelInk('Black',light)).toBe('light');expect(labelInk('White',light)).toBe('ink');expect(labelInk(undefined,light)).toBe('ink')
   expect(isGarment('tee')).toBe(true);expect(isGarment('mug')).toBe(false);expect(isGarment('more','Unisex Garment-Dyed Hoodie')).toBe(true)
  })
  it('asks for Printify Choice first — top-rated printers',()=>{

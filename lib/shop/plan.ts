@@ -157,7 +157,13 @@ export function bestVariants(spec:KindSpec,variants:PVariant[],pic:{width:number
  * the seal goes where a fashion label goes, wherever the printer offers the place and the owner's design does not use it:
  * the inside neck label, the left sleeve, and high on the back under the collar. Contained, never cropped.
  */
-export const BRAND_SPOTS={neck:{positions:['neck','neck_label','inside_label'],share:.82,top:null},sleeve:{positions:['left_sleeve'],share:.62,top:null},backNeck:{positions:['back'],share:.14,top:.05}} as const
+/** FAN LIFE's mark (owner, 15.11.2026: "our logo on the label, and only there — small, beautiful, dignified"): the inside neck label
+ * only, never a sleeve or the back; the label art is one ink (public/brand/fanlife/neck-label-ink|light.png), the light ink on dark
+ * garments. */
+export const BRAND_SPOTS={neck:{positions:['neck','neck_label','inside_label'],share:.56,top:null}} as const
+/** which ink the label prints in on a garment colour: light ink on dark cloth */
+export const labelInk=(colour:string|undefined,isLight:(n:string)=>boolean)=>colour&&!isLight(colour)?'light':'ink'
+export const variantColour=(v:PVariant)=>opt(v,/colou?r/i)
 export type BrandSpot=keyof typeof BRAND_SPOTS
 export function brandPlace(sheet:Sheet,pic:{width:number;height:number},spot:BrandSpot):{x:number;y:number;scale:number}{
  const s=BRAND_SPOTS[spot],a=pic.width/pic.height,A=sheet.w/sheet.h,scale=s.share*Math.min(1,a/A),h=scale/a*A,r=(n:number)=>Math.round(n*1000)/1000
