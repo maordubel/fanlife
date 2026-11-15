@@ -25,6 +25,7 @@ import {crestFor} from '@/lib/clubs/crest'
 import {gameCopy} from '@/lib/clubs/game-copy'
 import en from '@/messages/clubs/en.json'
 import he from '@/messages/clubs/he.json'
+import {FirstMatchPrint} from '@/components/shop/FirstMatchPrint'
 export const dynamic='force-dynamic'
 export function generateMetadata({params}:{params:{slug:string}}){const c=REGISTRY.find(r=>r.id===params.slug);return c?clubSubMetadata({id:c.id,name:c.name,sub:'history'}):{title:en.historyTitle}}
 
@@ -129,6 +130,7 @@ export default async function History({params,searchParams}:{params:{slug:string
     <span className="wkk-door-t"><b className="wk-head">{d.title} <span aria-hidden="true">→</span></b><small className="wk-k">{d.sub}</small></span>
    </Link>)}</div>
   </section>}
+  <FirstMatchPrint club={id}/>
   {credit.length>0&&<p className="wkk-credit" data-testid="history-credit">{copy.historySources}: {credit.join(' · ')}</p>}
  </main></ClubSurface>
 }
