@@ -16,6 +16,10 @@ export type Banner={
  note:string
  /** 'strip' = the 320×50 slide-up (default); 'card' = a 4:5 poster card in the corner (15.11.2026: the shop's lookbook ads) */
  format?:'strip'|'card'
+ /** a card's live price roundel (16.11.2026, owner: "add FROM"): the shop product whose current price is printed, and the word above it */
+ price?:{product:string;label:string}
+ /** filled by the server for this view: the product's price right now, sale included (never stored) */
+ priceNow?:string
 }
 export type PageRule={page:string;mode:'auto'|'off'|'only';only:string[]}
 export type PromoSettings={enabled:boolean;delaySec:number;showSec:number;gapSec:number;maxPerSession:number;pageRules:PageRule[]}

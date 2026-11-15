@@ -106,3 +106,12 @@ describe('Dubid EN/GR banners',()=>{
   expect(has('dubid-gr',at('celtic'),{israel:false})).toBe(false)})
 })
 
+
+describe('a card’s live price (16.11.2026)',()=>{
+ it('keeps the product and the word, and drops a malformed price',async()=>{
+  const {cleanBanner}=await import('@/lib/promo/rules')
+  const base={id:'shop-tee-x',href:'https://fanlife.dubelteam.com/shop',img1x:'/ads/a.webp',format:'card'}
+  expect(cleanBanner({...base,price:{product:'fanlife.own-200de6b6.tee',label:'From'}}).price).toEqual({product:'fanlife.own-200de6b6.tee',label:'From'})
+  expect(cleanBanner({...base,price:{product:'bad id!'}}).price).toBeUndefined()
+ })
+})
