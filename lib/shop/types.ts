@@ -42,6 +42,10 @@ export type ShopProduct={
  printify?:{productId:string;blueprintId:number;providerId:number;images:string[];priceFrom:number;currency:string;url:string|null;publishedAt:string|null;
  /** the mock-up of the back, when the product prints there */
  backImage?:string;
+ /** the owner chose this picture to lead (15.11.2026): the check-up keeps it first while Printify still has it */
+ cover?:string;
+ /** the picture was enlarged this many times for print (15.11.2026, soft prints): the sharpness counts the enlarged file */
+ upscaled?:number;
  /** how sharp the print is: picture pixels ÷ pixels the product wants (1 = full; under .2 the shop hides it) */
  quality?:number;
  /** the sale whose price Printify charges now: its id, the % actually cut and the lowest regular price (cents) */
@@ -60,7 +64,7 @@ export type ShopSettings={
  promo?:{percent:number;label:string;until:string|null;code?:string;freeShipping?:boolean}|null
  /** real price cuts (14.11.2026): the shop lowers the price in Printify for the sale's time and puts it back after */
  sales?:Sale[]
- /** FAN LIFE's own marks on every garment (14.11.2026: "a fashion brand"): inside neck label, sleeve, back of the neck */
+ /** FAN LIFE's mark on garments: the inside neck label only (15.11.2026); sleeve and back-of-neck marks were retired */
  brand?:{neck?:boolean;sleeve?:boolean;backNeck?:boolean}
  /** the ribbon line, free-shipping threshold and fan favourites */
  promoters?:Promoters

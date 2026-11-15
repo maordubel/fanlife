@@ -34,6 +34,8 @@ export function printify(token:string){
   create:(shop:number,body:unknown)=>call<PProduct>('Creating the product',`/shops/${shop}/products.json`,{method:'POST',body}),
   update:(shop:number,id:string,body:unknown)=>call<PProduct>('Pricing the product',`/shops/${shop}/products/${id}.json`,{method:'PUT',body}),
   product:(shop:number,id:string)=>call<PProduct>('Reading the product',`/shops/${shop}/products/${id}.json`),
+  /** every product in the store, a page at a time (50 a page) */
+  products:(shop:number,page=1)=>call<{current_page:number;last_page:number;data:(PProduct&{blueprint_id:number;print_provider_id:number;description?:string;tags?:string[];external?:{id?:string;handle?:string}})[]}>('Reading the store’s products',`/shops/${shop}/products.json?limit=50&page=${page}`),
   publish:(shop:number,id:string)=>call<object>('Publishing the product',`/shops/${shop}/products/${id}/publish.json`,{method:'POST',body:{title:true,description:true,images:true,variants:true,tags:true,keyFeatures:true,shipping_template:true}}),
   unpublish:(shop:number,id:string)=>call<object>('Unpublishing the product',`/shops/${shop}/products/${id}/unpublish.json`,{method:'POST',body:{}}),
   orders:(shop:number,page=1)=>call<{current_page?:number;last_page?:number;data?:{id:string;status?:string;line_items?:{product_id:string;quantity?:number}[]}[]}>('Reading orders',`/shops/${shop}/orders.json?limit=50&page=${page}`),

@@ -80,8 +80,10 @@ export function printAreas(placed:{sheet:Sheet;imageId:string;x:number;y:number;
  for(const [v,phs] of per){const key=JSON.stringify(phs),g=groups.get(key);if(g)g.variant_ids.push(v);else groups.set(key,{variant_ids:[v],placeholders:phs})}
  return [...groups.values()]
 }
-/** cost (cents) → price (cents): the margin on top, rounded UP to the next .99 */
-export const price=(cost:number,margin:number)=>Math.max(499,Math.ceil(cost*(1+margin/100)/100)*100-1)
+/** Printify's package insert (the FAN LIFE card in every order, 15.11.2026): 25¢ the shop pays per order — the customer carries it in the price */
+export const INSERT_CENTS=25
+/** cost (cents) → price (cents): the margin on top, plus the order card, rounded UP to the next .99 */
+export const price=(cost:number,margin:number)=>Math.max(499,Math.ceil((cost*(1+margin/100)+INSERT_CENTS)/100)*100-1)
 
 export const NOTE='Original supporter art from the FAN LIFE library — an independent fan design, not an official club product. Printed to order.'
 export const productId=(subject:string,pictureId:string,kind:Kind,bp?:number)=>`${subject}.${pictureId.slice(-10).replace(/[^a-zA-Z0-9]/g,'x')}.${kind}${bp?`-${bp}`:''}`
@@ -157,7 +159,13 @@ export function bestVariants(spec:KindSpec,variants:PVariant[],pic:{width:number
  * the seal goes where a fashion label goes, wherever the printer offers the place and the owner's design does not use it:
  * the inside neck label, the left sleeve, and high on the back under the collar. Contained, never cropped.
  */
-export const BRAND_SPOTS={neck:{positions:['neck','neck_label','inside_label'],share:.82,top:null},sleeve:{positions:['left_sleeve'],share:.62,top:null},backNeck:{positions:['back'],share:.14,top:.05}} as const
+/** FAN LIFE's mark (owner, 15.11.2026: "our logo on the label, and only there — small, beautiful, dignified"): the inside neck label
+ * only, never a sleeve or the back; the label art is one ink (public/brand/fanlife/neck-label-ink|light.png), the light ink on dark
+ * garments. */
+export const BRAND_SPOTS={neck:{positions:['neck','neck_label','inside_label'],share:.56,top:null}} as const
+/** which ink the label prints in on a garment colour: light ink on dark cloth */
+export const labelInk=(colour:string|undefined,isLight:(n:string)=>boolean)=>colour&&!isLight(colour)?'light':'ink'
+export const variantColour=(v:PVariant)=>opt(v,/colou?r/i)
 export type BrandSpot=keyof typeof BRAND_SPOTS
 export function brandPlace(sheet:Sheet,pic:{width:number;height:number},spot:BrandSpot):{x:number;y:number;scale:number}{
  const s=BRAND_SPOTS[spot],a=pic.width/pic.height,A=sheet.w/sheet.h,scale=s.share*Math.min(1,a/A),h=scale/a*A,r=(n:number)=>Math.round(n*1000)/1000
