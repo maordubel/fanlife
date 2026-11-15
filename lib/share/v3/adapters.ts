@@ -1,7 +1,7 @@
 import {checkShare,type ShareSurface} from '@/lib/share/contract'
 import {templateById,type ShareTemplate} from './templates'
 import {clubOrigin,shareClub,PORTAL_ORIGIN} from './theme'
-import type {ShareData} from './render'
+import type {ShareData,ShareKit} from './render'
 
 /**
  * PUBLIC SHARE ADAPTERS (V3 handoff §6–§7). Each builder takes only what may be printed — a finished result, the
@@ -37,9 +37,9 @@ export function triviaShare(clubId:string,r:Run&{correct:number;answered:number;
   link:clubUrl(clubId,`/clubs/${clubId}/trivia`,{seed:r.seed,r:r.cursor,topic:r.topic,era:r.era,hard:r.hard,lang:'en'})},{origin:'device-reported'})
 }
 /** 02 — the person's eleven, back line first, left to right; a creation, not an answer */
-export function xiShare(clubId:string,x:{formation:string;lines:string[][];captain:string|null}){
+export function xiShare(clubId:string,x:{formation:string;lines:string[][];captain:string|null;kits?:Array<ShareKit|null>}){
  const rows=x.lines.flat()
- return draft('02-all-time-xi',clubId,'xi','prompt',{main:x.formation,rows,detail:x.captain?`Captain: ${x.captain}`:'One fan’s eleven.',statement:'These are the eleven I’d pick.',link:clubUrl(clubId,`/clubs/${clubId}/xi`,{lang:'en'})})
+ return draft('02-all-time-xi',clubId,'xi','prompt',{main:x.formation,rows,kits:x.kits,detail:x.captain?`Captain: ${x.captain}`:'One fan’s eleven.',statement:'These are the eleven I’d pick.',link:clubUrl(clubId,`/clubs/${clubId}/xi`,{lang:'en'})})
 }
 /** 04 — the match the round named (already disclosed) and how many starters were found; never the eleven */
 export function lineupShare(clubId:string,x:{title:string;on:string|null;competition:string;correct:number;forbidden:string[];/** the canonical match id: the link opens THIS match (F20) */matchId?:string}){

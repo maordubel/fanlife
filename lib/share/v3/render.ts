@@ -13,9 +13,10 @@ export const SHARE_FORMATS:Record<ShareFormat,{w:number;h:number;label:string}>=
 export type FontKey='display'|'condensed'|'body'|'mono'|'serif'
 export const SHARE_FONTS:Record<FontKey,{family:string;weight:number;file:string}>={display:{family:'FLBowlby',weight:400,file:'FLBowlby'},condensed:{family:'FLKarantina',weight:700,file:'FLKarantina'},body:{family:'FLArchivo',weight:600,file:'FLArchivo'},mono:{family:'FLCourier',weight:400,file:'FLCourier'},serif:{family:'FLSerif',weight:700,file:'FLSerif'}}
 export type Measure=(text:string,size:number,font:FontKey)=>number
-export type ShareAssets={logo:string;shirt:string;art:Record<ShareArt,string>;fontCss:string}
+export type ShareAssets={logo:string;shirt:string;art:Record<ShareArt,string>;fontCss:string;kitImages?:Record<string,string>}
 /** The public, already-filtered data a card prints. Nothing private or secret may be put here. */
-export type ShareData={club:string;headline:string;context:string;main:string;label:string;detail:string;cta:string;rows:string[]
+export type ShareKit={id:string;season:string;svg?:string}
+export type ShareData={club:string;headline:string;context:string;main:string;label:string;detail:string;cta:string;rows:string[];kits?:Array<ShareKit|null>
  statement?:string;alias?:string;showAlias?:boolean;inkMode?:InkMode;photo?:string;photoMode?:'monochrome'|'original';art?:ShareArt;sample?:boolean;link:string}
 export type Rendered={svg:string;warnings:string[];palette:SharePalette;size:{w:number;h:number}}
 
@@ -104,7 +105,10 @@ export function renderShare(t:ShareTemplate,d:ShareData,format:ShareFormat,{asse
   let formation=String(main).split('-').map(Number);const valid=formation.length>=3&&formation.length<=4&&formation.every(x=>Number.isInteger(x)&&x>0&&x<=5)&&formation.reduce((a,b)=>a+b,0)===10
   if(!valid){warnings.push('Use a formation of 10 outfield players, for example 4-3-3.');formation=[4,3,3]}
   const points:[number,number][]=[[500,h-54]];formation.forEach((n,i)=>{const y=h-140-i*((h-218)/(formation.length-1));for(let j=0;j<n;j++)points.push([n===1?500:130+j*740/(n-1),y])})
-  const gap=(h-218)/(formation.length-1),sh=Math.max(30,Math.min(64,gap*.5)),nm=Math.max(20,Math.min(story?36:31,gap*.36));points.forEach(([x,y],i)=>{image(A.shirt,x-sh/2,y-sh*.85,sh,sh*.92);tx(rows[i]||'',x,y+nm*.95,nm,'body',P.ink,176,'middle','rows.'+i)})
+  const gap=(h-218)/(formation.length-1),sh=Math.max(30,Math.min(64,gap*.5)),nm=Math.max(20,Math.min(story?36:31,gap*.36));points.forEach(([x,y],i)=>{
+   const kit=d.kits?.[i],asset=kit?.svg?A.kitImages?.[kit.svg]:undefined
+   image(asset??A.shirt,x-sh/2,y-sh*.85,sh,sh*.92,!!asset&&d.inkMode==='club')
+   tx(rows[i]||'',x,y+nm*.95,nm,'body',P.ink,176,'middle','rows.'+i)})
   rect(0,bottom-29,1000,65,P.paper);m(16,bottom+5,42,180);tx(label,985,bottom+4,24,'mono',P.ink,650,'end','label')
  }else if(t.layout==='score'){
   rough(460,20,545,bottom,P.slabA);photograph(427,-8,580,t.kind==='freeze'?bottom+45:820);m(8,Math.min(255,bottom*.58),t.kind==='freeze'?240:300,425);l(13,Math.min(305,bottom*.7),390,30)

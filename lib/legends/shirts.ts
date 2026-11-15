@@ -10,13 +10,13 @@ import {seasonYear} from '@/lib/clubs/rumble-kit'
  * not say (no crest, no collar is invented). A kit the garment cannot draw faithfully is left out. ALL FOOTBALL is a hub
  * surface: every club wears its own colours (rule 95), so nothing is dropped for a rival's palette.
  */
-export type CareerShirt={year:number;season:string;cloth:ClothSpec}
+export type CareerShirt={id:string;year:number;season:string;cloth:ClothSpec}
 const g=globalThis as typeof globalThis&{legendsShirts?:Map<string,{key:string;shirts:CareerShirt[]}>}
 const cache=g.legendsShirts??=new Map()
 export async function careerShirts(club:string):Promise<CareerShirt[]>{
  const r=await loadClub(club).catch(()=>null);if(!r)return []
  const hit=cache.get(club);if(hit&&hit.key===r.data.version)return hit.shirts
- const shirts=kitViews(r.data).filter(k=>variantOf(k.type)==='home').flatMap(k=>{const year=seasonYear(k.season),cloth=documentedCloth(k,()=>false);return year!==null&&cloth?[{year,season:k.season,cloth}]:[]})
+ const shirts=kitViews(r.data).filter(k=>variantOf(k.type)==='home').flatMap(k=>{const year=seasonYear(k.season),cloth=documentedCloth(k,()=>false);return year!==null&&cloth?[{id:k.id,year,season:k.season,cloth}]:[]})
   .sort((a,b)=>a.year-b.year||a.season.localeCompare(b.season))
  cache.set(club,{key:r.data.version,shirts});return shirts
 }

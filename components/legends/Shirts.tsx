@@ -3,7 +3,7 @@ import {createContext,useContext,type ReactNode} from 'react'
 import {KitCloth} from '@/components/clubs/gates/kit-builder/KitCloth'
 import {RumbleShirt} from '@/components/clubs/rumble/shared'
 import {crestFor} from '@/lib/clubs/crest'
-import type {RumbleWardrobe} from '@/lib/clubs/rumble-kit'
+import {kitFor,type RumbleWardrobe} from '@/lib/clubs/rumble-kit'
 import type {CareerShirt} from '@/lib/legends/shirts'
 import {KitChip} from './Sheet'
 
@@ -17,18 +17,13 @@ type Ctx={shirts:CareerShirt[];wardrobe:RumbleWardrobe;colours:Record<string,{sh
 const ShirtCtx=createContext<Ctx>({shirts:[],wardrobe:{home:[],away:[]},colours:{}})
 export function ShirtProvider({value,children}:{value:Ctx;children:ReactNode}){return <ShirtCtx.Provider value={value}>{children}</ShirtCtx.Provider>}
 
-const eraOf=(m:{from:number|null;to:number|null})=>m.from!==null&&m.to!==null?Math.round((m.from+m.to)/2):m.from??m.to
-export function shirtFor(shirts:readonly CareerShirt[],m:{from:number|null;to:number|null}):CareerShirt|null{
- if(!shirts.length)return null
- const y=eraOf(m);if(y===null)return shirts[shirts.length-1]!
- let best=shirts[0]!
- for(const s of shirts){const d=Math.abs(s.year-y),bd=Math.abs(best.year-y);if(d<bd||(d===bd&&s.year>best.year))best=s}
- return best
-}
-export function LegendShirt({man,className}:{man:{id:string;from:number|null;to:number|null};className?:string}){
- const {shirts,wardrobe}=useContext(ShirtCtx),s=shirtFor(shirts,man)
- if(s)return <span className={`lgm-shirt ${className??''}`} data-shirt="cloth"><KitCloth spec={s.cloth} texture={false} title={`${s.season} home shirt`}/></span>
- return <span className={`lgm-shirt ${className??''}`} data-shirt="plate"><RumbleShirt card={{id:man.id,fromYear:man.from,toYear:man.to}} side="us" wardrobe={wardrobe}/></span>
+export function LegendShirt({man,className}:{man:{id:string;from:number|null;to:number|null;pos?:string};className?:string}){
+ const {shirts,wardrobe}=useContext(ShirtCtx)
+ const card={id:man.id,fromYear:man.from,toYear:man.to},keeper=man.pos==='GK'
+ const worn=kitFor(card,'us',wardrobe,{keeper})
+ const cloth=worn.source==='archive'&&!worn.kit.svg?shirts.find(s=>s.id===worn.kit.id):null
+ if(cloth)return <span className={['lgm-shirt',className].filter(Boolean).join(' ')} data-shirt="cloth"><KitCloth spec={cloth.cloth} texture={false} title={cloth.season}/></span>
+ return <span className={['lgm-shirt',className].filter(Boolean).join(' ')}><RumbleShirt card={card} side="us" wardrobe={wardrobe} keeper={keeper}/></span>
 }
 export function ClubMark({club,name,size=28}:{club:string;name?:string;size?:number}){
  const {colours}=useContext(ShirtCtx),src=crestFor(club)

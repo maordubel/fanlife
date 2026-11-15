@@ -16,6 +16,7 @@ import {kitShare} from '@/lib/share/v3/adapters'
 import {saveBuilt} from '@/lib/clubs/kit-studio'
 import {gradeKitShirt,hintKitShirt,type Fail,type Graded} from './actions'
 import {KitCloth} from './KitCloth'
+import {KitPartMark} from '@/components/clubs/games/KitPartMark'
 import css from './kit-builder.module.css'
 import {KitOwnBar,KitOwnProvider} from '@/components/clubs/KitOwn'
 import { crestFor } from '@/lib/clubs/crest'
@@ -275,8 +276,8 @@ function OptionCard({o,label,copy,selected,struck,wide,cloth,contentLocale,monog
    <span className={css.cardArt}>
     {o.step==='body'&&<span className={css.discs} aria-hidden="true"><i style={{background:colourHex(o.patch.base!)}}/>{o.patch.trim&&<i style={{background:colourHex(o.patch.trim)}}/>}</span>}
     {o.step==='construction'&&<KitCloth spec={{...preview,base:cloth.base??'grey',trim:cloth.trim??(cloth.base?null:'white')}} texture={false} monogram={monogram} viewBox="40 36 240 262"/>}
-    {o.step==='crest'&&<img src={o.patch.crestArt} alt="" width={60} height={60}/>}
-    {(o.step==='maker'||o.step==='sponsor')&&<span className={css.word} lang={contentLocale} dir="auto" data-kind={o.step}>{(label||'').toUpperCase()}</span>}
+    {o.step==='crest'&&o.patch.crestArt&&<KitPartMark parts={{crest:{src:o.patch.crestArt,kind:'historical'}}} kind="crest"/>}
+    {(o.step==='maker'||o.step==='sponsor')&&<span lang={contentLocale} dir="auto" data-kind={o.step}><KitPartMark parts={{maker:o.patch.maker??null,sponsor:o.patch.sponsor??null}} kind={o.step} className={css.word}/></span>}
    </span>
    <span className={css.cardLabel} lang={o.step==='maker'||o.step==='sponsor'?contentLocale:undefined} dir="auto">{label}</span>
   </button>

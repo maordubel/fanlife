@@ -1,7 +1,8 @@
 'use client'
 import {useId} from 'react'
 import {sponsorLines,SPONSOR_FONT} from '@/lib/clubs/sponsor-type'
-import {fitMark,makerMark,sponsorMark,type Mark} from '@/lib/clubs/marks'
+import {kitMark} from '@/lib/clubs/kit-parts'
+import {fitMark,type Mark} from '@/lib/clubs/marks'
 import {SLOTS,colourHex,darken,lightCloth,wordmark,type ClothSpec,type CollarId,type PatternId,type SlotKey} from '@/lib/clubs/kit-model'
 
 /**
@@ -85,7 +86,7 @@ function Word({slot,text,ink,halo,size}:{slot:SlotKey;text:string|null;ink:strin
  const b=SLOTS[slot]
  // the sponsor slot takes the documented lettering (weight, case, tracking, line breaks); the maker stays plain capitals
  if(slot==='sponsor'){
-  const sm=sponsorMark(text)
+  const sm=kitMark({maker:null,sponsor:text},'sponsor')?.art
   if(sm?.replace){const ar=(q=>q[2]!/q[3]!)(sm.viewBox.split(' ').map(Number));return <MarkArt mark={sm} cx={b.x+b.w/2} cy={b.y+b.h/2} w={Math.min(b.w-6,26*ar)} h={26} ink={ink} halo={halo} id={`mk-sp-${text.toLowerCase().replace(/\W/g,'')}`} logo={text.toLowerCase()} slot="sponsor"/>}
   const ls=sponsorLines(text),n=ls.length,cx=b.x+b.w/2,sz0=n>1?size*0.86:size*1.1
   let y=b.y+(n>1?-1:b.h/2+sz0*0.34)+(n>1?sz0*0.8:0)
@@ -95,7 +96,7 @@ function Word({slot,text,ink,halo,size}:{slot:SlotKey;text:string|null;ink:strin
    return <text key={i} x={cx} y={yy} textAnchor="middle" fill={ink} stroke={halo} strokeWidth="4" strokeLinejoin="round" paintOrder="stroke" textLength={over?b.w:undefined} lengthAdjust="spacingAndGlyphs" fontStyle={l.italic?'italic':undefined} style={{fontFamily:SPONSOR_FONT[l.fam],fontWeight:l.weight,fontSize:sz,letterSpacing:over?0:l.track*sz}} data-w={Math.round(Math.min(est,b.w))}>{l.t}</text>})}</g>
  }
  if(slot==='maker'){
-  const m=makerMark(text)
+  const m=kitMark({maker:text,sponsor:null},'maker')?.art
   if(m){const ar=(q=>q[2]!/q[3]!)(m.viewBox.split(' ').map(Number));return <MarkArt mark={m} cx={b.x+b.w/2} cy={b.y+b.h/2} w={ar>3?36:(m.kind==='stroke'?30:26)} h={ar>3?10:16} ink={ink} halo={halo} id={`mk-${slot}-${text.toLowerCase().replace(/\W/g,'')}`} logo={text.toLowerCase()} slot="maker"/>}
  }
  const s=wordmark(text),est=s.length*size*0.66,w=Math.min(est,b.w)

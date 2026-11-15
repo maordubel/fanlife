@@ -40,7 +40,7 @@ function Token({where,role,x,y,plateOf,xi,byId,wardrobe,side,active,contentLocal
  return <button type="button" {...drag} {...dropZone(`xi:${where}`)} className={`min-h-tap ${css.token} ${chair?css.chair:''}`} style={{...drag.style,...style}}
   data-slot={where} data-active={active===where} aria-pressed={active===where} aria-label={label(role,p?.name??null)} onClick={()=>onSelect(where)} data-player-id={p?.id}>
   {p
-   ?<><span className={css.shirt} key={p.id}><ClubShirt player={p} wardrobe={wardrobe} side={side}/>{xi.captain===p.id&&where!==TWELFTH&&<span className={css.cap} aria-hidden="true">C</span>}</span>
+   ?<><span className={css.shirt} key={p.id}><ClubShirt player={p} wardrobe={wardrobe} side={side} keeper={role==='GK'}/>{xi.captain===p.id&&where!==TWELFTH&&<span className={css.cap} aria-hidden="true">C</span>}</span>
      <span className={css.plate} lang={contentLocale} dir="auto">{(plateOf??shortName)(p.name)}</span></>
    :<><span className={css.empty} aria-hidden="true">{chair?'12':role}</span>{chair&&<span className={css.chairTag}>{chairTag}</span>}</>}
  </button>
