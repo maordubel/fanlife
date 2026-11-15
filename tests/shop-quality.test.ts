@@ -61,3 +61,13 @@ describe('the owner’s first picture',()=>{
   expect(withCover(mk,undefined,[{src:'a'}])).toBe(mk)
  })
 })
+describe('perfect mock-ups (15.11.2026)',()=>{
+ it('shows one take of each scene before a second take, and the back third on a two-sided product',async()=>{
+  const {mockups}=await import('@/lib/shop/build')
+  const m=(c:string)=>({src:`x.jpg?camera_label=${c}`,is_default:true,variant_ids:[1]})
+  const f=mockups([m('front'),m('person-1'),m('person-2'),m('person-3'),m('context-1'),m('lifestyle-1')],'front').images.map(s=>s.split('=')[1])
+  expect(f.slice(0,4)).toEqual(['person-1','front','lifestyle-1','context-1']);expect(f.slice(4)).toEqual(['person-2','person-3'])
+  const b=mockups([m('front'),m('context-1'),m('back'),m('context-2'),m('context-3')],'both').images.map(s=>s.split('=')[1])
+  expect(b.slice(0,3)).toEqual(['context-1','front','back'])
+ })
+})
