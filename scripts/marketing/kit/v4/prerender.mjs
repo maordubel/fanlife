@@ -6,7 +6,7 @@
  *       quota) and their addresses are written on the post: main.kit.v4 = {ver, png:[…], story}.
  *  The sender (kit/visual.mjs) fetches them; when they are missing it draws the v2 picture as before.
  *  Assets older than five days are deleted on every run (the retention job of this pipeline). */
-import {readFileSync, writeFileSync, mkdtempSync} from 'node:fs'
+import {readFileSync, writeFileSync, mkdtempSync, existsSync} from 'node:fs'
 import {tmpdir} from 'node:os'
 import path from 'node:path'
 import {png, story, close} from './render.mjs'
@@ -44,6 +44,46 @@ async function upload(rel, existing, name, buf, type) {
   return (await r.json()).browser_download_url
 }
 
+
+// ── live fills: a post that names a moving target is filled at drawing time, from the real source ───────────────────
+/** the open shop's live products (the storefront's own rule: visible, live, a Printify page and a picture) */
+async function shopProducts() {
+  const r = await fetch(`${DB}/rest/v1/worker_fanlife_files?name=eq.shop%2Fshop.json&select=body`, {headers: {apikey: KEY, Authorization: `Bearer ${KEY}`}, signal: AbortSignal.timeout(30_000)})
+  if (!r.ok) return []
+  let doc = (await r.json())[0]?.body
+  for (let i = 0; i < 2 && typeof doc === 'string'; i++) doc = JSON.parse(doc)
+  if (doc?.settings?.open === false) return []
+  return (doc?.products || []).filter(p => p.visible && p.status === 'live' && p.printify?.url && p.printify?.images?.length && p.printify?.priceFrom)
+}
+const money = (c, cur = 'USD') => `${cur === 'EUR' ? '€' : cur === 'GBP' ? '£' : '$'}${(c / 100).toFixed(2).replace(/\.00$/, '')}`
+/** a different random product for every shop post of a run; the caption's {product} and {price} are filled with it */
+export function pickProduct(list, used, rnd = Math.random) {
+  const fresh = list.filter(p => !used.has(p.id)), pool = fresh.length ? fresh : list
+  const p = pool[Math.floor(rnd() * pool.length)]
+  if (p) used.add(p.id)
+  return p
+}
+export function shopFill(p) {
+  const [name, kind] = String(p.title).split(' · ')
+  return {data: {title: p.title, image: p.printify.images[0], price: p.printify.priceFrom, currency: p.printify.currency || 'USD', subject: p.subject, kind: p.kind, kicker: `The FAN LIFE shop${kind ? ' · ' + kind : ''}`},
+    words: {product: p.title, name, price: money(p.printify.priceFrom, p.printify.currency)}}
+}
+/** a YouTube film: the first id YouTube itself confirms; its thumbnail becomes the picture and its link the post's */
+async function youtube(ids) {
+  for (const id of [].concat(ids || [])) {
+    try {
+      const r = await fetch(`https://www.youtube.com/oembed?format=json&url=${encodeURIComponent('https://www.youtube.com/watch?v=' + id)}`, {signal: AbortSignal.timeout(15_000)})
+      if (!r.ok) continue
+      const max = await fetch(`https://i.ytimg.com/vi/${id}/maxresdefault.jpg`, {method: 'HEAD', signal: AbortSignal.timeout(15_000)})
+      return {id, thumb: `https://i.ytimg.com/vi/${id}/${max.ok ? 'maxresdefault' : 'hqdefault'}.jpg`}
+    } catch {}
+  }
+  return null
+}
+export const fillWords = (s, w) => String(s ?? '').replace(/\{(product|name|price)\}/g, (m, k) => w[k] ?? m)
+/** campaigns waiting for a feature: released the first run after the feature's file is on main */
+export const HOLDS = {'frame-xi': 'app/api/shop/personal/route.ts'}
+
 /** the real screen behind a post: a gate's own game (pressed past its start), LIFE, Legends Manager */
 async function screenFor(page, kit, dir) {
   const d = kit.data || {}, id = clubId(d), name = String(d.name || '').toUpperCase()
@@ -56,6 +96,9 @@ async function screenFor(page, kit, dir) {
 async function main() {
   if (!DB || !KEY) throw Error('SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY missing')
   if (!GH) throw Error('GITHUB_TOKEN missing')
+  for (const [hold, file] of Object.entries(HOLDS)) if (existsSync(file)) {
+    try { const r = await rpc('worker_marketing_release', {p_hold: hold}); if (r?.n) console.log(`released ${r.n} post(s) held for ${hold}`) } catch (e) { console.log(`::warning title=release ${hold}::${e.message}`) }
+  }
   const queue = (await rpc('worker_marketing_v4_queue', {p_hours: HOURS, p_ver: V4_VERSION})).slice(0, LIMIT)
   console.log(`queue: ${queue.length} post(s) without v${V4_VERSION} pictures in the next ${HOURS}h`)
   const rel = await release()
@@ -70,13 +113,27 @@ async function main() {
   const shotBrowser = await chromium.launch()
   const phone = await phonePage(shotBrowser)
   const dir = mkdtempSync(path.join(tmpdir(), 'fl-pre-'))
-  let ok = 0, bad = 0
+  let ok = 0, bad = 0, products = null
+  const used = new Set()
   for (const post of queue) {
     try {
       const kit = post.kit || {}, slides = Array.isArray(kit.slides) && kit.slides.length ? kit.slides : [kit]
-      const urls = []
+      const urls = [], patch = {}
       for (const [i, s] of slides.entries()) {
         const data = {...(s.data || {})}
+        if (s.t === 'L-SHOP' && data.random) {
+          products ??= await shopProducts()
+          const p = pickProduct(products, used)
+          if (!p) throw Error('the shop has no live product')
+          const f = shopFill(p)
+          Object.assign(data, f.data); s.data = data
+          for (const k of ['hook', 'body']) if (post.fill?.[k]) patch[k] = fillWords(post.fill[k], f.words)
+        }
+        if (data.yt) {
+          const y = await youtube(data.yt)
+          if (!y) throw Error('YouTube does not confirm the film')
+          data.thumb = y.thumb; s.data = data; patch.url = `https://youtu.be/${y.id}`
+        }
         const screen = await screenFor(phone, s, dir)
         if (screen) data.screen = screen
         const buf = await png(s.t, post.app || 'fanlife', data)
@@ -90,6 +147,7 @@ async function main() {
         const file = await story(s.t, post.app || 'fanlife', data, {seconds: 7, out: path.join(dir, `p${post.id}.mp4`)})
         if (file) storyUrl = await upload(rel, existing, `p${post.id}-story-v${V4_VERSION}.mp4`, readFileSync(file), 'video/mp4')
       }
+      if (Object.keys(patch).length) await rpc('worker_marketing_v4_patch', {p_id: post.id, p_patch: patch})
       const r = await rpc('worker_marketing_v4_set', {p_id: post.id, p_v4: {ver: V4_VERSION, png: urls, story: storyUrl}})
       if (!r?.ok) throw Error('post no longer pending')
       ok++; console.log(`ok ${post.id} ${slides[0].t} · ${urls.length} picture(s)${storyUrl ? ' + story' : ''}`)

@@ -513,6 +513,7 @@ describe('פרויקט משותף עם DUBID — THE WORKER touches only what it
       '20261104150000_worker_marketing_athens.sql', // 4.11.2026: plan v5 — the four marketing functions on Athens time, rewritten in place — standalone
       '20261109120000_worker_marketing_v6.sql', // 9.11.2026: plan v6 — vote / numbers / pulse live kinds, each post's publishing result, the briefing's ledger — standalone
       '20261114110000_worker_marketing_v4.sql', // 14.11.2026: social pictures v4 — queue and set the pictures drawn ahead in Actions — standalone
+      '20261115200000_worker_marketing_fill_hold.sql', // 15.11.2026: social pictures v4 — live fills (random shop product, YouTube film) and campaigns held for a feature — standalone
     ]
     for (const name of readdirSync(dir)) {
       if (live.includes(name)) continue

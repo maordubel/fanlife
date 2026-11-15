@@ -18,6 +18,11 @@ const samples: [string, Record<string, unknown>][] = [
   ['L-BINGO', {club: {id: 'celtic'}, cells: Array.from({length: 16}, (_, i) => `Moment ${i + 1}`)}],
   ['L-ZOOM', {s: 'zoom', club: {id: 'celtic'}}],
   ['L-TIER', {club: {id: 'celtic'}}],
+  ['L-SHOP', {title: 'Football. Forever. · T-shirt', price: 2399, currency: 'USD', subject: 'fanlife', kind: 'tee'}],
+  ['L-TEE', {look: 'back', price: 2399}], ['L-TEE', {look: 'fold', price: 2399}], ['L-TEE', {look: 'look', price: 2399}],
+  ['L-FRAME', {club: {id: 'celtic'}, manager: 'Dad', names: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'], format: 'framed'}],
+  ['L-GTA', {art: 'cover-life', n: 1, mission: 'The march', headline: 'The whole street sings.'}], ['L-GTA', {art: 'next-generation', headline: 'Keep close, kid.'}],
+  ['L-FILM', {club: {id: 'panathinaikos'}, title: 'Καλημέρα, Παναθηναϊκέ', cta: 'Δες το τώρα', channel: 'Ποδοσφαιρικά Παραμύθια'}],
   ['L-ARTICLE', {title: 'LIFE: An Open-World Football Fan Game', lede: 'Football supporters have never had one of their own.'}],
 ]
 
@@ -74,5 +79,21 @@ describe('social cleanup', () => {
     ]
     const f = flag(items, (x: {text: string}) => x.text, (x: {pic: boolean}) => x.pic)
     expect(f.map((x: {id: string}) => x.id).sort()).toEqual(['b', 'c', 'd'])
+  })
+
+  it('the shop campaign fills a random live product, the film a confirmed id, the frame campaign waits for its feature', async () => {
+    const pre = await import('../../scripts/marketing/kit/v4/prerender.mjs')
+    const list = [{id: 'a', title: 'Celtic 7-1 · Mug', subject: 'fanlife', kind: 'mug', printify: {images: ['x'], priceFrom: 699, currency: 'USD'}}, {id: 'b', title: 'THE KICK · Hoodie', subject: 'fanlife', kind: 'hoodie', printify: {images: ['y'], priceFrom: 5799, currency: 'USD'}}]
+    const used = new Set<string>()
+    const one = pre.pickProduct(list, used, () => 0), two = pre.pickProduct(list, used, () => 0)
+    expect(one.id).not.toBe(two.id)
+    const f = pre.shopFill(list[1]!)
+    expect(pre.fillWords('{product} — from {price}', f.words)).toBe('THE KICK · Hoodie — from $57.99')
+    expect(f.data.kicker).toBe('The FAN LIFE shop · Hoodie')
+    expect(pre.HOLDS['frame-xi']).toBe('app/api/shop/personal/route.ts')
+    const {page} = await load()
+    expect(await page('L-FILM', 'fanlife', {club: {id: 'panathinaikos'}, title: 'Καλημέρα'}, {})).toContain('lang="el"')
+    expect(await page('L-FILM', 'fanlife', {club: {id: 'panathinaikos'}, title: 'x'}, {})).not.toContain('--s2:#D71920')
+    for (const f of ['cover-life', 'cover-fanlife', 'next-generation', 'panels-wide', 'panels-graffiti']) expect(existsSync(`scripts/marketing/kit/v4/art/life-gta/${f}.jpg`), f).toBe(true)
   })
 })
