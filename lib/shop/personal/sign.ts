@@ -18,3 +18,10 @@ export function cleanManager(raw:unknown):{ok:true;value:string|null}|{ok:false}
  if(!/^[\p{L}\p{N} .'’\-]+$/u.test(s)||BLOCK.test(s))return {ok:false}
  return {ok:true,value:s}
 }
+/** one short line of his own (a memory, a note under a shirt): words and the usual punctuation, nothing offensive */
+export function cleanLine(raw:unknown,max=90):{ok:true;value:string|null}|{ok:false}{
+ const s=String(raw??'').normalize('NFKC').replace(/\s+/g,' ').trim().replace(/^["“”']+|["“”']+$/g,'').slice(0,max)
+ if(!s)return {ok:true,value:null}
+ if(!/^[\p{L}\p{N} .,'’!?:;&()\-–]+$/u.test(s)||BLOCK.test(s))return {ok:false}
+ return {ok:true,value:s}
+}

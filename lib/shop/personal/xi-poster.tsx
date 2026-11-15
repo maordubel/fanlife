@@ -7,7 +7,9 @@
  * crest picture and the sponsor's word taken out for print (an official mark is not ours to sell). A club without drawings
  * gets the kit plate in the kit's colours. The club's colour is the only accent; a colour its rivalry bans never appears.
  */
-import {visual} from '@/lib/og/bidi'
+import {visual as bidi} from '@/lib/og/bidi'
+/** Hebrew in visual order for the renderer; Latin untouched (the reorder marks would knock a face off its glyphs) */
+const visual=(t:string)=>/[\u0590-\u05FF]/.test(t)?bidi(t):t
 
 export const TEMPLATES=['touchline','archive','night','kits','dream'] as const
 export type Template=(typeof TEMPLATES)[number]
@@ -15,7 +17,9 @@ export type Man={x:number;y:number;name:string;cap?:boolean
  /** his kit: design and two colours (hex) — for the plate when the club has no drawing */
  k?:{d:string;a:string;b:string|null}
  /** the drawing's file id under public/club-kits/<club>/svg, and the kit's season */
- u?:string;s?:string}
+ u?:string;s?:string
+ /** the club whose drawing it is, when not the sheet's own (a closet holds shirts of every club) */
+ cl?:string}
 export type XIPrintSpec={
  /** club id, display name, colour */
  c:string;cn:string;col:string
@@ -33,12 +37,12 @@ export type Layout='print'|'tee-back'|'tee-front'|'tee-proof'
 /** the sheet of each layout, in design units */
 export const SHEET:Record<Layout,{w:number;h:number}>={print:{w:1200,h:1600},'tee-back':{w:1200,h:1400},'tee-front':{w:1200,h:1200},'tee-proof':{w:1200,h:1600}}
 
-const INK='#15130F',CREAM='#F7F0E1'
+export const INK='#15130F',CREAM='#F7F0E1'
 const rgb=(hex:string)=>{const h=hex.replace('#','');const n=parseInt(h.length===3?h.split('').map(x=>x+x).join(''):h,16);return [n>>16&255,n>>8&255,n&255] as const}
-const light=(hex:string)=>{const [r,g,b]=rgb(hex);return 0.299*r+0.587*g+0.114*b>170}
-const mix=(hex:string,to:string,t:number)=>{const a=rgb(hex),b=rgb(to);return '#'+a.map((x,i)=>Math.round(x+(b[i]!-x)*t).toString(16).padStart(2,'0')).join('')}
+export const light=(hex:string)=>{const [r,g,b]=rgb(hex);return 0.299*r+0.587*g+0.114*b>170}
+export const mix=(hex:string,to:string,t:number)=>{const a=rgb(hex),b=rgb(to);return '#'+a.map((x,i)=>Math.round(x+(b[i]!-x)*t).toString(16).padStart(2,'0')).join('')}
 /** the accent that reads on a light sheet: the club colour, deepened when it is pale (white, sky) */
-const inkOf=(col:string)=>light(col)?mix(col,INK,.55):mix(col,INK,.12)
+export const inkOf=(col:string)=>light(col)?mix(col,INK,.55):mix(col,INK,.12)
 
 const BODY='M82 18 L120 6 Q170 28 220 6 L258 18 L312 74 L282 110 L252 92 L252 300 L88 300 L88 92 L58 110 L28 74 Z'
 /** the kit plate (components/clubs/games/KitPlate) in hex, for a club without kit drawings */
@@ -60,7 +64,7 @@ function Plate({kit,col,w,id}:{kit?:Man['k'];col:string;w:number;id:string}){
   <path d={BODY} fill="none" stroke={INK} strokeWidth="9" strokeLinejoin="round"/></svg>
 }
 /** one man's shirt in a box w wide: the drawing (cropped to the shirt alone, 340×300) or the plate — never shorts or socks */
-function Kit({p,i,w,col,art}:{p:Man;i:number;w:number;col:string;art:Record<number,string>}){
+export function Kit({p,i,w,col,art}:{p:Man;i:number;w:number;col:string;art:Record<number,string>}){
  const sw=Math.round(w*1.12),h=Math.round(sw*300/340)
  // eslint-disable-next-line @next/next/no-img-element
  return <div style={{display:'flex',width:sw,height:h,alignItems:'center',justifyContent:'center'}}>{art[i]?<img src={art[i]} width={sw} height={h} alt=""/>:<Plate kit={p.k} col={col} w={Math.round(sw*.94)} id={`k${i}`}/>}</div>
@@ -128,8 +132,8 @@ function ArchiveSheet({spec,k,art}:P){
   <div style={{display:'flex',justifyContent:'space-between'}}><div style={{...mono,fontSize:u(24),color:acc}}>Fan Life</div><div style={{...mono,fontSize:u(24),color:INK}}>All-time XI / {spec.f}</div></div>
   <div style={{height:u(2),background:rule,marginTop:u(26),display:'flex'}}/>
   <div style={{display:'flex',flexDirection:'column',marginTop:u(40)}}>
-   <div style={{fontFamily:'Frank, Heebo, HeeboX',fontWeight:900,fontSize:u(h1.length>12?96:124),lineHeight:0.9,color:INK,display:'flex'}}>{h1}</div>
-   <div style={{fontFamily:'Frank, Heebo, HeeboX',fontWeight:900,fontSize:u(124),lineHeight:0.98,color:acc,display:'flex'}}>{h2}</div>
+   <div style={{fontFamily:'FrankL, Frank, Heebo, HeeboX',fontWeight:900,fontSize:u(h1.length>12?96:124),lineHeight:0.9,color:INK,display:'flex'}}>{h1}</div>
+   <div style={{fontFamily:'FrankL, Frank, Heebo, HeeboX',fontWeight:900,fontSize:u(124),lineHeight:0.98,color:acc,display:'flex'}}>{h2}</div>
    <div style={{...mono,fontSize:u(26),color:INK,marginTop:u(26)}}>{spec.cn}</div>
   </div>
   <div style={{display:'flex',flexDirection:'column',marginTop:u(30),borderTop:`${u(2)}px solid ${rule}`}}>
@@ -167,8 +171,8 @@ function KitsSheet({spec,k,art}:P){
  return <div style={{width:u(1200),height:u(1600),display:'flex',flexDirection:'column',background:'#EFE1C6',padding:`${u(64)}px ${u(80)}px`}}>
   <div style={{...mono,fontSize:u(22),color:INK}}>Fan Life / {spec.cn}</div>
   <div style={{display:'flex',flexDirection:'column',marginTop:u(26)}}>
-   <div style={{fontFamily:'Frank, Heebo, HeeboX',fontWeight:900,fontSize:u(110),lineHeight:0.9,color:acc,display:'flex'}}>{m?`${m}’s eleven.`:'Eleven kits.'}</div>
-   <div style={{fontFamily:'Frank, Heebo, HeeboX',fontWeight:900,fontSize:u(110),lineHeight:0.98,color:acc,display:'flex'}}>One club.</div>
+   <div style={{fontFamily:'FrankL, Frank, Heebo, HeeboX',fontWeight:900,fontSize:u(110),lineHeight:0.9,color:acc,display:'flex'}}>{m?`${m}’s eleven.`:'Eleven kits.'}</div>
+   <div style={{fontFamily:'FrankL, Frank, Heebo, HeeboX',fontWeight:900,fontSize:u(110),lineHeight:0.98,color:acc,display:'flex'}}>One club.</div>
   </div>
   <div style={{display:'flex',flexWrap:'wrap',width:u(1050),marginTop:u(26),marginLeft:u(-8)}}>
    {order.map((p,j)=>cell(p,j===10))}

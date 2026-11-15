@@ -4,12 +4,15 @@ import {readFile} from 'node:fs/promises'
 import {join} from 'node:path'
 import {ogFonts} from '@/lib/og/fonts'
 import {XIPoster,SHEET,type Layout,type XIPrintSpec} from './xi-poster'
+import {SouvenirSheet,kitsOf,type MapArt,type SouvenirSpec} from './souvenirs'
+import {drawMap} from './map'
 
 let seal:Promise<string>|null=null
-let ext:Promise<{name:string;data:Buffer;weight:800;style:'normal'}[]>|null=null
+let ext:Promise<{name:string;data:Buffer;weight:800|900;style:'normal'}[]>|null=null
 /** names carry č, ć, đ, š, ž (Zrinjski, Partizan, Olympiacos' Serbs): the house faces plus their Latin-extended subsets */
-const extFonts=()=>ext??=Promise.all([readFile(join(process.cwd(),'lib/og/fonts/heebo-latin-ext-800.ttf')),readFile(join(process.cwd(),'lib/og/fonts/archivo-latin-ext-800.ttf'))])
- .then(([h,a])=>[{name:'HeeboX',data:h,weight:800 as const,style:'normal' as const},{name:'ArchivoX',data:a,weight:800 as const,style:'normal' as const}])
+const extFonts=()=>ext??=Promise.all([readFile(join(process.cwd(),'lib/og/fonts/heebo-latin-ext-800.ttf')),readFile(join(process.cwd(),'lib/og/fonts/archivo-latin-ext-800.ttf')),readFile(join(process.cwd(),'lib/og/fonts/frank-ruhl-libre-latin-900.ttf'))])
+ // the serif's Latin under its own name: under the shared "Frank" the Hebrew subset answers first and the Latin falls to Heebo
+ .then(([h,a,f])=>[{name:'HeeboX',data:h,weight:800 as const,style:'normal' as const},{name:'ArchivoX',data:a,weight:800 as const,style:'normal' as const},{name:'FrankL',data:f,weight:900 as const,style:'normal' as const}])
 /** the FAN LIFE seal in one ink: a club's print never carries another colour than its own */
 const sealUri=()=>seal??=readFile(join(process.cwd(),'public/brand/fanlife/seal-mono-512.png')).then(b=>`data:image/png;base64,${b.toString('base64')}`)
 export const PRINT={w:3600,h:4800}
@@ -38,4 +41,14 @@ export async function renderXI(spec:XIPrintSpec,k:number,layout:Layout='print'):
  if(layout!=='tee-front')await Promise.all(spec.n.map(async(p,i)=>{if(p.u){const a=await kitPrint(spec.c,p.u);if(a)art[i]=a}}))
  const s=SHEET[layout]
  return new ImageResponse(<XIPoster spec={spec} k={k} seal={await sealUri()} art={art} layout={layout}/>,{width:Math.round(s.w*k),height:Math.round(s.h*k),fonts:[...await ogFonts(),...await extFonts()]})
+}
+
+/** a souvenir sheet (shirts · legends · first match · away) as a PNG at scale k */
+export async function renderSouvenir(spec:SouvenirSpec,k:number):Promise<ImageResponse>{
+ const art:Record<number,string>={}
+ await Promise.all(kitsOf(spec).map(async(p,i)=>{if(p.u){const a=await kitPrint(p.cl||spec.c,p.u);if(a)art[i]=a}}))
+ let map:MapArt|undefined
+ if(spec.w==='away'){const w=1040,h=spec.stops.length>8?520:600,m=drawMap([spec.home,...spec.stops],w,h)
+  map={land:m.land,borders:m.borders,pts:spec.stops.map(s=>m.at(s)),home:m.at(spec.home),w,h}}
+ return new ImageResponse(<SouvenirSheet spec={spec} k={k} art={art} map={map}/>,{width:Math.round(1200*k),height:Math.round(1600*k),fonts:[...await ogFonts(),...await extFonts()]})
 }

@@ -14,3 +14,8 @@
 - The pitch is green only where green is not a rival's colour; the Dream Team sky is blue only where blue is not (rule 95). Otherwise cream.
 - Names print in the archive's Latin spelling when it has one; otherwise as kept, in visual order.
 - The tee: a small XI mark on the chest, the eleven on the back, two inks on light shirts only.
+
+## Souvenirs (owner, 15.11.2026)
+- Four more prints on the same engine (`/api/shop/personal/souvenir`, kind = shirts · legends · first · away): My Shirt Collection (from the closet), the Legends Manager season (his own career only, checked against the device/account owner), My First Match (a match from the club's record, picked on the club's history page) and I Was There (the nights away he marked on Away Days, on a map from world-atlas).
+- From the supporter only: his name, one line (90), a note under a shirt (28), his age, his gate — all through `cleanLine`/`cleanManager`. Everything else is the archive's.
+- The serif's Latin is registered as `FrankL`: under the shared "Frank" name the Hebrew subset answers first and Latin falls to Heebo.
