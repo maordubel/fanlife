@@ -49,7 +49,7 @@ describe('Gate 6 · the dealt wall (ME-R01..R04) on the real clubs',()=>{
 })
 
 describe('Gate 6 · ME-R11 themes on the real pool',()=>{
- it('every themed wall holds only pairs of its decade (or its pair type), and passes the same validator',()=>{
+ it('every themed wall holds only pairs of its decade or kind, and passes the same validator',()=>{
   const plan=planMemory(hapoel,{seed:3,cursor:0})
   expect(plan.themes.length).toBeGreaterThan(0)
   for(const t of plan.themes){

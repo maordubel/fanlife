@@ -191,9 +191,9 @@ try {
   const bank=new Map((await loadClub(slug)).data.trivia.questions.map(q=>[q.id,q]))
   let answers=0
   // This flow proves the shared run end to end; it is not a speed test. Practice mode has no question clock (server and screen), so a slow runner cannot turn a right answer into TIME'S UP.
-  // since 14.11.2026 the practice and pace switches live in the start card's coupon sheet ("Choose a topic or a decade")
+  // Practice and the pace live in the coupon sheet since 5312c19 ("Simplify trivia start"): open it, set both, close it
   await page.getByRole('button',{name:/Choose a topic or a decade/}).click()
-  await page.getByRole('button',{name:'Practice',exact:true}).click()
+  { const practice=page.getByRole('button',{name:'Practice',exact:true});if((await practice.getAttribute('aria-pressed'))!=='true')await practice.click() }
   { // the verdict waits for a tap: a slow runner cannot miss it when it auto-advances (the pace is remembered across clubs, so only switch it on)
    const tap=page.getByRole('button',{name:'Tap to go on',exact:true});if((await tap.getAttribute('aria-pressed'))!=='true')await tap.click()
   }
@@ -297,9 +297,13 @@ try {
   await page.getByTestId('goal-whistle').click()
   const result=page.getByTestId('goal-result')
   await result.waitFor({timeout:30000})
-  // since 14.11.2026 the review shows one touch at a time; the sheet carries the verdict's counts for the whole replay
-  assert.equal(await result.getAttribute('data-wrong'),'0',`${slug}: correct replay was marked wrong`)
-  assert.equal(await result.getAttribute('data-exact'),String(g.sequence.length))
+  // the review shows one touch at a time since b165d21: walk them and read each touch's verdict
+  for(let i=0;i<g.sequence.length;i++){
+   const row=result.locator('[data-testid="goal-touch-review"] [data-zone]')
+   assert.equal(await row.getAttribute('data-zone'),'exact',`${slug}: touch ${i+1} of a correct replay was not placed exactly`)
+   assert.equal(await row.getAttribute('data-ok'),'true',`${slug}: touch ${i+1} of a correct replay was marked wrong`)
+   if(i<g.sequence.length-1)await result.getByRole('button',{name:'Next touch',exact:true}).click()
+  }
   assert((await result.locator('a[href^="https://"]').count())>=1,`${slug}: missing source link`)
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`${slug}: goal mobile overflow`)
   await page.screenshot({path:`/tmp/fanlife-m1-browser/${slug}-goal.png`})

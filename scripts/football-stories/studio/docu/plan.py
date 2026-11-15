@@ -110,6 +110,8 @@ class Adapter:
         self.keys: dict[int, str] = {}               # shot → the key of the picture it shows (the designer reads its index entry)
         self.also: dict[int, list[str]] = {}         # shot → the further pictures a long line was given
         self.design = Designer(self)                 # the richer devices, each only when the beat's data earns it (docu/designer.py)
+        self._sight: dict[int, dict] | None = None   # the director's shot list (studio/sight.direct): what each line SHOWS
+        self.banned = self.critic_bans()             # shot → pictures the critic called wrong on the last render
 
     # ── assets ──────────────────────────────────────────────────────────────────────────────────────────────────────
     def asset(self, p: Path | str | None, prefix: str = 'a') -> str | None:
@@ -142,6 +144,9 @@ class Adapter:
                 if s['n'] not in self.shown:   # the plan's own choice is a use too: the index keeps away from it elsewhere
                     self.picker.use(self.keys[s['n']], s['n'], s.get('start'))
                 break
+        if p and not s.get('required_asset') and self.keys.get(s['n']) in self.refusals(s['n']):
+            p = None   # the plan's own picture would mislead on this line (the director or the critic said so): the index chooses again
+            self.keys.pop(s['n'], None)
         if not p and v['type'] == 'follow':
             p = media(f'beat:common/{FOLLOW[s["n"] % len(FOLLOW)]}')
         p = p or self.spare(s['n'])
@@ -178,8 +183,9 @@ class Adapter:
             return self.spares[n]
         before = self.keys.get(max((k for k in self.keys if k < n), default=-1))
         q = self.query(n)
-        av = ({before} if before else set()) | self.people_pictures(n)
-        r = self.picker.pick(q, avoid=av) or self.picker.pick(q, avoid=self.people_pictures(n))
+        no = self.refusals(n)
+        av = ({before} if before else set()) | self.people_pictures(n) | no
+        r = self.sight_pick(n, av) or self.picker.pick(q, avoid=av) or self.picker.pick(q, avoid=self.people_pictures(n) | no)
         self.spares[n] = self.ink(Path(r['path'])) if r else None
         if r:
             self.keys.setdefault(n, r['id'])
@@ -189,10 +195,71 @@ class Adapter:
         """Another picture for a line so long that three looks at its own picture are not enough (docu/editor.looks): the
         index's next best for the same beat, never the one this shot already shows."""
         own = self.keys.get(n)
-        r = self.picker.pick({**self.query(n), 'n': n}, avoid=({own} if own else set()) | self.people_pictures(n))
+        r = self.picker.pick({**self.query(n), 'n': n}, avoid=({own} if own else set()) | self.people_pictures(n) | self.refusals(n))
         if r:
             self.also.setdefault(n, []).append(r['id'])
         return self.asset(self.ink(Path(r['path'])), 'img') if r else None
+
+    # ── sight (studio/sight.py): pictures chosen by what they SHOW, not by their file names ─────────────────────────
+    def sight(self) -> dict[int, dict]:
+        """The director's shot list for the whole film, asked once and kept in the job (a re-plan reuses it): for every
+        line, what the viewer sees, the candidate that shows it, and the candidates that would mislead. {} with no key."""
+        if self._sight is not None:
+            return self._sight
+        self._sight = {}
+        if os.environ.get('STORIES_SIGHT', '1') == '0':
+            return self._sight
+        fp = self.jd / 'sight-shots.json'
+        lines = [s for s in self.plan.get('shots') or [] if (s.get('narration') or '').strip() and v_type(s) not in ('end', 'chapter')]
+        sig = hashlib.sha1(json.dumps([[s['n'], s.get('narration')] for s in lines]).encode()).hexdigest()[:12]
+        old = read_json(fp) if fp.exists() else {}
+        if old.get('sig') == sig:
+            self._sight = {int(k): v for k, v in (old.get('shots') or {}).items()}
+            return self._sight
+        from .. import gemini
+        if not gemini.api_key():
+            return self._sight
+        from .. import sight as SG
+        caps = SG.load_captions()
+        asks = []
+        for s in lines:
+            q = {**self.query(s['n']), 'n': s['n']}
+            named = self.named(s.get('narration') or '')   # the same people rule as people_pictures, without ordering a picture
+            figures = {r['id'] for r in self.picker.records if named and ('portrait-silhouette' in (r.get('subjects') or []) or self.FIGURE.search(r['id']))}
+            top = self.picker.ranked(q, 'still', avoid=figures)[:SG.CANDIDATES]
+            if top:
+                asks.append({'n': s['n'], 'type': v_type(s), 'text': s['narration'],
+                             'candidates': [{'id': r['id'], 'shows': SG.describe(r, caps)} for _, r, _ in top]})
+        self._sight = SG.direct(asks, log=lambda m: print(m, flush=True))
+        write_json(fp, {'sig': sig, 'shots': {str(k): v for k, v in self._sight.items()}})
+        return self._sight
+
+    def sight_pick(self, n: int, avoid: set) -> dict | None:
+        """The director's picture for line `n`, when the index still allows it here (not used twice, not the shot before)."""
+        pick = (self.sight().get(n) or {}).get('pick')
+        r = self.picker.by.get(pick) if pick else None
+        if not r or r['id'] in avoid or self.picker.refused(r):
+            return None
+        s = next((x for x in self.plan.get('shots') or [] if x['n'] == n), {})
+        self.picker.use(r['id'], n, s.get('start'), why=['sight: shows the line'])
+        return r
+
+    def refusals(self, n: int) -> set[str]:
+        """Pictures that must not stand on line `n`: refused by the director as misleading, or called wrong by the critic."""
+        return set((self.sight().get(n) or {}).get('reject') or []) | self.banned.get(n, set())
+
+    def critic_bans(self) -> dict[int, set[str]]:
+        """The re-plan after the critic (studio/qa.experience → 'mismatch'): the pictures the last render showed on
+        the shots it called wrong, read from that render's usage, are refused on those shots this time."""
+        fp, up = self.jd / 'experience-replan.json', self.jd / 'media-index-usage.json'
+        if not fp.exists() or not up.exists():
+            return {}
+        wrong = {int(k) for k, v in (read_json(fp).get('shots') or {}).items() if 'mismatch' in (v or [])}
+        out: dict[int, set[str]] = {}
+        for u in read_json(up).get('uses') or []:
+            if u.get('shot') in wrong:
+                out.setdefault(u['shot'], set()).add(u['asset'])
+        return out
 
     def ink(self, path: Path) -> Path:
         """The library picture redrawn in the house inks with the club's colour as the one accent (paper.inked; editing
@@ -1044,6 +1111,9 @@ def render_film(job_dir: Path, plan: dict, palette: Palette, log, workers: int |
     from ..hyperframes.render import hf_render
     t0 = time.time()
     proj = job_dir / 'docu'
+    if os.environ.get('STORIES_SIGHT', '1') != '0':   # the pictures not yet looked at are described before the director chooses
+        from .. import sight
+        sight.after_captions(log)
     _, D, cues = write_project(job_dir, plan, palette, proj)
     sd = job_dir / 'shots'
     sd.mkdir(parents=True, exist_ok=True)

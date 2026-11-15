@@ -21,6 +21,7 @@ re-plan those shots once (studio/pipeline.py) before it gives the film to the ow
 from __future__ import annotations
 
 import json
+import os
 import re
 import subprocess
 from pathlib import Path
@@ -438,6 +439,42 @@ def experience(master: Path, plan: dict, job_dir: Path | None = None, intro_s: f
     calm = not num['flashes'] and not num['shakes'] and num['worst_jerk'] <= WORST_JERK_PX
     checks.append(('experience · calm picture', calm, f'{len(num["flashes"])} flashes, {len(num["shakes"])} shakes, worst jerk {num["worst_jerk"]} px (limit {WORST_JERK_PX:.0f})'
                    + (f' — a flash at {num["flashes"][0]}s' if num['flashes'] else f' — the picture shakes at {num["shakes"][0]}s' if num['shakes'] else '')))
+    # SIGHT (studio/sight.py; owner, 15.11.2026: "it is still not a film"): how much of the film is a slide, measured on
+    # its own frames — and, when a judge can be asked, whether each picture fits the words spoken over it.
+    if enforced and master is not None and Path(master).exists() and frames is None:
+        from . import sight as SG
+        fl = SG.flat(Path(master))
+        if fl['share'] is not None:
+            times = [t - intro_s for t in fl['times'] if t >= intro_s]
+            num['flat'] = {'share': fl['share'], 'run_s': fl['run_s'], 'run_at': fl['run_at']}
+            ok_flat = fl['share'] <= SG.FLAT_MAX + MIX_GRAIN and (fl['run_s'] or 0) <= SG.FLAT_RUN_MAX_S
+            if not ok_flat:
+                for t in times:
+                    at(t, 'flat')
+            checks.append(('experience · not a slide', ok_flat, f'{fl["share"]:.0%} of the film is type or a diagram on a plain ground (at most {SG.FLAT_MAX:.0%}); '
+                           f'longest run {fl["run_s"]}s (at most {SG.FLAT_RUN_MAX_S:.0f}s)'))
+        if os.environ.get('STORIES_SIGHT', '1') != '0':
+            from . import gemini
+            judged = None
+            if gemini.api_key():
+                try:
+                    judged = SG.critic(Path(master), plan, intro_s, log=lambda m: print(m, flush=True))
+                except Exception:  # noqa: BLE001 — a judge that cannot answer blocks nothing
+                    judged = None
+            if judged:
+                num['sight'] = {k: judged[k] for k in ('fit', 'generic', 'slides', 'wrong_frames')}
+                if job_dir:
+                    (Path(job_dir) / 'sight-critic.json').write_text(json.dumps(judged, indent=1, ensure_ascii=False))
+                ok_fit = judged['wrong_frames'] <= SG.WRONG_MAX
+                if not ok_fit:
+                    for n in judged['wrong']:
+                        replan.setdefault(n, [])
+                        if 'mismatch' not in replan[n]:
+                            replan[n].append('mismatch')
+                worst = [f for f in judged['frames'] if f['fit'] == 0][:3]
+                checks.append(('experience · pictures fit the words', ok_fit, f'judged {len(judged["frames"])} frames: fit {judged["fit"]}/2, '
+                               f'{judged["generic"]:.0%} generic, {judged["wrong_frames"]} wrong (at most {SG.WRONG_MAX})'
+                               + (' — ' + '; '.join(f'{f["t"]}s: {f["note"]}' for f in worst) if worst else '')))
     if shots and all('d' in x and 'language' in x for x in shots):
         # Editing rule 5 (docs/rules/editing-language.md): never more than ~20 s in one visual language. A failure re-plans
         # like a long shot: the run's shots are cut tighter, which lets the editor's punches and explainers break it.
