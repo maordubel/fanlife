@@ -1,0 +1,1176 @@
+{
+ "schemaVersion": 1,
+ "clubId": "olympiacos",
+ "contentLocale": "en",
+ "note": "Kit archive completion (15.11.2026): every outfield kit Football Kit Archive shows for a season and type the pack had no kit for, first variant only, colours and design read by eye from its photograph (INK colour words of scripts/kits/build-pack-kit-svgs.ts). Unclear photographs are listed in skipped, not drawn.",
+ "sources": [
+  {
+   "id": "oly-fka-s-304832",
+   "title": "Olympiacos 1925/26 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-1925-26-home-kit-304832/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-218011",
+   "title": "Olympiacos 1933/34 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-1933-34-home-kit-218011/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-110859",
+   "title": "Olympiacos 1983/84 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-1983-84-away-kit-110859/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-110857",
+   "title": "Olympiacos 1984/85 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-1984-85-away-kit-110857/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-110858",
+   "title": "Olympiacos 1984/85 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-1984-85-home-kit-110858/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-401612",
+   "title": "Olympiacos 1985/86 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-1985-86-away-kit-401612/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-111431",
+   "title": "Olympiacos 1985/86 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-1985-86-home-kit-111431/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-111430",
+   "title": "Olympiacos 1986/87 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-1986-87-home-kit-111430/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-101131",
+   "title": "Olympiacos 1988/89 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-1988-89-away-kit-101131/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-304844",
+   "title": "Olympiacos 1988/89 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-1988-89-home-kit-304844/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-111428",
+   "title": "Olympiacos 1989/90 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-1989-90-home-kit-111428/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-111427",
+   "title": "Olympiacos 1990/91 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-1990-91-home-kit-111427/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-111426",
+   "title": "Olympiacos 1991/92 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-1991-92-home-kit-111426/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-111433",
+   "title": "Olympiacos 1992/93 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-1992-93-away-kit-111433/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-304841",
+   "title": "Olympiacos 1993/94 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-1993-94-away-kit-304841/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-111435",
+   "title": "Olympiacos 1993/94 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-1993-94-home-kit-111435/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-401613",
+   "title": "Olympiacos 1993/94 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-1993-94-third-kit-401613/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-304839",
+   "title": "Olympiacos 1994/95 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-1994-95-away-kit-304839/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-110865",
+   "title": "Olympiacos 1994/95 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-1994-95-home-kit-110865/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-304836",
+   "title": "Olympiacos 1994/95 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-1994-95-third-kit-304836/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-304842",
+   "title": "Olympiacos 1995/96 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-1995-96-away-kit-304842/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-111432",
+   "title": "Olympiacos 1995/96 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-1995-96-home-kit-111432/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-390546",
+   "title": "Olympiacos 1995/96 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-1995-96-third-kit-390546/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-19712",
+   "title": "Olympiacos 1996/97 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-1996-97-home-kit-19712/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-303849",
+   "title": "Olympiacos 1997/98 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-1997-98-away-kit-303849/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-80866",
+   "title": "Olympiacos 1997/98 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-1997-98-home-kit-80866/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-301269",
+   "title": "Olympiacos 1998/99 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-1998-99-third-kit-301269/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-80865",
+   "title": "Olympiacos 1999/00 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-1999-00-away-kit-80865/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-395295",
+   "title": "Olympiacos 1999/00 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-1999-00-third-kit-395295/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-110868",
+   "title": "Olympiacos 2000/01 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-2000-01-away-kit-110868/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-262873",
+   "title": "Olympiacos 2000/01 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-2000-01-third-kit-262873/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-106873",
+   "title": "Olympiacos 2001/02 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-2001-02-third-kit-106873/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-80858",
+   "title": "Olympiacos 2003/04 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-2003-04-third-kit-80858/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-19702",
+   "title": "Olympiacos 2010/11 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-2010-11-third-kit-19702/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "oly-fka-s-31400",
+   "title": "Olympiacos 2011/12 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-2011-12-third-kit-31400/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  }
+ ],
+ "kits": [
+  {
+   "id": "oly-fka-304832",
+   "value": {
+    "name": "Olympiacos 1925/26 home",
+    "season": "1925/26",
+    "type": "home",
+    "construction": {
+     "colors": "red/white",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "oly-fka-s-304832"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (museum shirt, lace-up collar). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-218011",
+   "value": {
+    "name": "Olympiacos 1933/34 home",
+    "season": "1933/34",
+    "type": "home",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "oly-fka-s-218011"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-110859",
+   "value": {
+    "name": "Olympiacos 1983/84 away",
+    "season": "1983/84",
+    "type": "away",
+    "sponsor": "Fiat",
+    "construction": {
+     "colors": "white/blue",
+     "design": "contrasting sleeves"
+    }
+   },
+   "sources": [
+    "oly-fka-s-110859"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-110857",
+   "value": {
+    "name": "Olympiacos 1984/85 away",
+    "season": "1984/85",
+    "type": "away",
+    "sponsor": "Travel Plan",
+    "construction": {
+     "colors": "white/red",
+     "design": "contrasting sleeves"
+    }
+   },
+   "sources": [
+    "oly-fka-s-110857"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-110858",
+   "value": {
+    "name": "Olympiacos 1984/85 home",
+    "season": "1984/85",
+    "type": "home",
+    "sponsor": "Travel Plan",
+    "construction": {
+     "colors": "red/white",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "oly-fka-s-110858"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-401612",
+   "value": {
+    "name": "Olympiacos 1985/86 away",
+    "season": "1985/86",
+    "type": "away",
+    "sponsor": "Citizen",
+    "construction": {
+     "colors": "blue/white",
+     "design": "pinstripes"
+    }
+   },
+   "sources": [
+    "oly-fka-s-401612"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-111431",
+   "value": {
+    "name": "Olympiacos 1985/86 home",
+    "season": "1985/86",
+    "type": "home",
+    "sponsor": "Citizen",
+    "construction": {
+     "colors": "red/white",
+     "design": "pinstripes"
+    }
+   },
+   "sources": [
+    "oly-fka-s-111431"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-111430",
+   "value": {
+    "name": "Olympiacos 1986/87 home",
+    "season": "1986/87",
+    "type": "home",
+    "sponsor": "Citizen",
+    "construction": {
+     "colors": "red/white",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "oly-fka-s-111430"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-101131",
+   "value": {
+    "name": "Olympiacos 1988/89 away",
+    "season": "1988/89",
+    "type": "away",
+    "sponsor": "Citizen",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "oly-fka-s-101131"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-304844",
+   "value": {
+    "name": "Olympiacos 1988/89 home",
+    "season": "1988/89",
+    "type": "home",
+    "sponsor": "Toyota",
+    "construction": {
+     "colors": "red/white",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "oly-fka-s-304844"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-111428",
+   "value": {
+    "name": "Olympiacos 1989/90 home",
+    "season": "1989/90",
+    "type": "home",
+    "sponsor": "Τράπεζα Κρήτης",
+    "construction": {
+     "colors": "red/white",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "oly-fka-s-111428"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-111427",
+   "value": {
+    "name": "Olympiacos 1990/91 home",
+    "season": "1990/91",
+    "type": "home",
+    "sponsor": "diana",
+    "construction": {
+     "colors": "red/white",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "oly-fka-s-111427"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-111426",
+   "value": {
+    "name": "Olympiacos 1991/92 home",
+    "season": "1991/92",
+    "type": "home",
+    "sponsor": "diana",
+    "construction": {
+     "colors": "red/white",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "oly-fka-s-111426"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-111433",
+   "value": {
+    "name": "Olympiacos 1992/93 away",
+    "season": "1992/93",
+    "type": "away",
+    "construction": {
+     "colors": "red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "oly-fka-s-111433"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-304841",
+   "value": {
+    "name": "Olympiacos 1993/94 away",
+    "season": "1993/94",
+    "type": "away",
+    "sponsor": "diana",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "oly-fka-s-304841"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-111435",
+   "value": {
+    "name": "Olympiacos 1993/94 home",
+    "season": "1993/94",
+    "type": "home",
+    "sponsor": "diana",
+    "construction": {
+     "colors": "red/white",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "oly-fka-s-111435"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-401613",
+   "value": {
+    "name": "Olympiacos 1993/94 third",
+    "season": "1993/94",
+    "type": "third",
+    "sponsor": "diana",
+    "construction": {
+     "colors": "blue/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "oly-fka-s-401613"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-304839",
+   "value": {
+    "name": "Olympiacos 1994/95 away",
+    "season": "1994/95",
+    "type": "away",
+    "sponsor": "Εθνοκάρτα MasterCard",
+    "construction": {
+     "colors": "red/white",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "oly-fka-s-304839"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-110865",
+   "value": {
+    "name": "Olympiacos 1994/95 home",
+    "season": "1994/95",
+    "type": "home",
+    "sponsor": "Εθνοκάρτα MasterCard",
+    "construction": {
+     "colors": "red/white",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "oly-fka-s-110865"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-304836",
+   "value": {
+    "name": "Olympiacos 1994/95 third",
+    "season": "1994/95",
+    "type": "third",
+    "sponsor": "Εθνοκάρτα MasterCard",
+    "construction": {
+     "colors": "white/red",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "oly-fka-s-304836"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-304842",
+   "value": {
+    "name": "Olympiacos 1995/96 away",
+    "season": "1995/96",
+    "type": "away",
+    "sponsor": "Εθνοκάρτα MasterCard",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "oly-fka-s-304842"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-111432",
+   "value": {
+    "name": "Olympiacos 1995/96 home",
+    "season": "1995/96",
+    "type": "home",
+    "sponsor": "Εθνοκάρτα MasterCard",
+    "construction": {
+     "colors": "red/white",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "oly-fka-s-111432"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-390546",
+   "value": {
+    "name": "Olympiacos 1995/96 third",
+    "season": "1995/96",
+    "type": "third",
+    "construction": {
+     "colors": "white/red",
+     "design": "contrasting sleeves"
+    }
+   },
+   "sources": [
+    "oly-fka-s-390546"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (match photograph, player close to camera). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-19712",
+   "value": {
+    "name": "Olympiacos 1996/97 home",
+    "season": "1996/97",
+    "type": "home",
+    "manufacturer": "Puma",
+    "sponsor": "Εθνοκάρτα MasterCard",
+    "construction": {
+     "colors": "red/white",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "oly-fka-s-19712"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-303849",
+   "value": {
+    "name": "Olympiacos 1997/98 away",
+    "season": "1997/98",
+    "type": "away",
+    "manufacturer": "Puma",
+    "sponsor": "Aspis Pronoia",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "oly-fka-s-303849"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-80866",
+   "value": {
+    "name": "Olympiacos 1997/98 home",
+    "season": "1997/98",
+    "type": "home",
+    "sponsor": "Aspis Bank",
+    "construction": {
+     "colors": "red/white",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "oly-fka-s-80866"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-301269",
+   "value": {
+    "name": "Olympiacos 1998/99 third",
+    "season": "1998/99",
+    "type": "third",
+    "manufacturer": "Puma",
+    "sponsor": "Aspis Pronoia",
+    "construction": {
+     "colors": "black/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "oly-fka-s-301269"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-80865",
+   "value": {
+    "name": "Olympiacos 1999/00 away",
+    "season": "1999/00",
+    "type": "away",
+    "sponsor": "Aspis Pronoia",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "oly-fka-s-80865"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-395295",
+   "value": {
+    "name": "Olympiacos 1999/00 third",
+    "season": "1999/00",
+    "type": "third",
+    "sponsor": "Aspis Pronoia",
+    "construction": {
+     "colors": "blue/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "oly-fka-s-395295"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-110868",
+   "value": {
+    "name": "Olympiacos 2000/01 away",
+    "season": "2000/01",
+    "type": "away",
+    "manufacturer": "Umbro",
+    "sponsor": "Siemens",
+    "construction": {
+     "colors": "grey/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "oly-fka-s-110868"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-262873",
+   "value": {
+    "name": "Olympiacos 2000/01 third",
+    "season": "2000/01",
+    "type": "third",
+    "manufacturer": "Umbro",
+    "sponsor": "Siemens mobile",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "oly-fka-s-262873"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-106873",
+   "value": {
+    "name": "Olympiacos 2001/02 third",
+    "season": "2001/02",
+    "type": "third",
+    "manufacturer": "Umbro",
+    "sponsor": "Siemens mobile",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "oly-fka-s-106873"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-80858",
+   "value": {
+    "name": "Olympiacos 2003/04 third",
+    "season": "2003/04",
+    "type": "third",
+    "manufacturer": "Umbro",
+    "sponsor": "Siemens mobile",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "oly-fka-s-80858"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-19702",
+   "value": {
+    "name": "Olympiacos 2010/11 third",
+    "season": "2010/11",
+    "type": "third",
+    "manufacturer": "Puma",
+    "sponsor": "Pame Stoixima",
+    "construction": {
+     "colors": "white/red",
+     "design": "contrasting sleeves"
+    }
+   },
+   "sources": [
+    "oly-fka-s-19702"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "oly-fka-31400",
+   "value": {
+    "name": "Olympiacos 2011/12 third",
+    "season": "2011/12",
+    "type": "third",
+    "manufacturer": "Puma",
+    "construction": {
+     "colors": "blue/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "oly-fka-s-31400"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  }
+ ],
+ "skipped": [
+  {
+   "what": "Olympiacos 1952/53 home (Football Kit Archive 312878)",
+   "url": "https://www.footballkitarchive.com/olympiacos-fc-1952-53-home-kit-312878/",
+   "reason": "Unclear in the archive photograph: team photograph, shirts too small to read. Not drawn."
+  }
+ ]
+}
