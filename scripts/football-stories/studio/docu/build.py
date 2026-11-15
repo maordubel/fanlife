@@ -81,8 +81,12 @@ SHAPES = {
     'stripe': '<path d="M0 34 H100 V66 H0 Z"/>',
     'star': '<path d="M50 6 L61 38 H95 L67 58 L78 92 L50 71 L22 92 L33 58 L5 38 H39 Z"/>',
     'ball': '<circle cx="50" cy="50" r="44"/>',
+    # AEK's double-headed eagle, cut as one paper silhouette: two heads, spread wings, the tail
+    'eagle': '<path d="M50 40 L44 30 L38 16 L30 11 L33 21 L27 23 L36 28 L40 38 L24 31 L5 22 L13 36 L3 41 L17 47 L8 55 L26 55 L38 53 '
+             'L42 65 L35 82 L46 75 L50 94 L54 75 L65 82 L58 65 L62 53 L74 55 L92 55 L83 47 L97 41 L87 36 L95 22 L76 31 L60 38 '
+             'L64 28 L73 23 L67 21 L70 11 L62 16 L56 30 Z"/>',
 }
-CLUB_SHAPES = {'panathinaikos': 'shamrock', 'celtic': 'shamrock', 'hapoel-tel-aviv': 'star', 'olympiacos': 'ball'}
+CLUB_SHAPES = {'panathinaikos': 'shamrock', 'celtic': 'shamrock', 'hapoel-tel-aviv': 'star', 'olympiacos': 'ball', 'aek-athens': 'eagle'}
 
 
 def shape_mask(name: str) -> str:
@@ -1271,6 +1275,8 @@ def edited(sb: dict, beats: list[dict], root: Path) -> list[dict]:
                     w['at'] = round(w['at'] + lead, 3)
             b['shots'].append(k)
             b['lang'] = X.languages(b['shots'], b['d'])
+    held_boards(beats)
+    turn_cards(beats)
     out = E.cut(beats, None, related, None, None, None)
     for b in out:
         # A punch's veil landing a few frames after a picture cut reads as a flash (rule 142, qa.FLASH_RISE): the cut shows
@@ -1290,6 +1296,55 @@ def edited(sb: dict, beats: list[dict], root: Path) -> list[dict]:
         b['language'] = max(lg, key=lambda k: (lg[k], k == 'documentary'))
     (root / 'docu-shots.json').write_text(json.dumps({'shots': E.shot_list(out), 'errors': E.errors(out), 'mix': X.mix(out)}, indent=1, ensure_ascii=False))
     return out
+
+
+TURN_MAX, TURN_GAP_S, TURN_WORDS = 2, 45.0, (3, 8)   # as docu/plan.Adapter.turn_cards
+
+
+def held_boards(beats: list[dict]) -> None:
+    """Editing rule 3 for a hand-written storyboard, the held scoreboard (as docu/plan.score_board does for the
+    pipeline): every beat of a match carries `meta.board` {id, score, small, flip_at}; one split-flap board stands in the
+    corner from the first of them to the last and turns on the beat whose score changes, `flip_at` seconds into it. The
+    writer gives only scores the record orders."""
+    runs: dict = {}
+    for b in beats:
+        bd = (b.get('meta') or {}).get('board')
+        if bd:
+            runs.setdefault(bd['id'], []).append((b, bd))
+    for rid, run in runs.items():
+        first, bd0 = run[0]
+        last = run[-1][0]
+        board = {'kind': 'flap', 'corner': True, 'frm': bd0['score'], 'to': bd0['score'], 'at': bd0.get('at', 0.4), 'turns': [],
+                 'd': round(last['t'] + last['d'] - first['t'] - 0.1, 3), 'z': 13, 'small': bd0.get('small', '')}
+        cur = bd0['score']
+        for b, bd in run[1:]:
+            if bd['score'] != cur:
+                board['turns'].append([round(b['t'] - first['t'] + bd.get('flip_at', 0.3), 3), bd['score']])
+                cur = bd['score']
+        first['shots'].append(board)
+
+
+def turn_cards(beats: list[dict]) -> None:
+    """The story's turns in type, for a hand-written storyboard (as docu/plan.turn_cards): a beat marked `meta.turn`
+    sets its narration's first sentence — a reversal of 3–8 words, "But…" / "Until…" — on the words, in the film's ink.
+    Two a film at most, 45 s apart; a third, or one too close, is dropped rather than crowding the cut."""
+    shown, last = 0, -1e9
+    for b in beats:
+        m = b.get('meta') or {}
+        if not m.get('turn') or not b.get('vo'):
+            continue
+        ws, at = b['vo'].split(), m.get('words') or []
+        j = next((i for i, w in enumerate(ws) if re.search(r'[.!?]["\'’”)]*$', w)), len(ws) - 1)
+        lo, hi = TURN_WORDS
+        if shown >= TURN_MAX or b['t'] - last < TURN_GAP_S or not lo <= j + 1 <= hi or len(at) <= j:
+            continue
+        a = at[0] - b['t']
+        z = (at[j + 1] if j + 1 < len(at) else b['vo_t'] + b['vo_d']) - b['t']
+        words = ' '.join(ws[:j + 1]).upper().split()
+        h = (len(words) + 1) // 2
+        b['shots'].append({'kind': 'word', 'text': ' '.join(words[:h]) + '|' + ' '.join(words[h:]), 'bg': 'ink', 'size': 120,
+                           'at': round(a, 3), 'd': round(min(b['d'], z + 0.9), 3), 'z': 16})
+        shown, last = shown + 1, b['t']
 
 
 def build(storyboard: Path, assets: Path, root: Path, voice: bool = True) -> tuple[Path, float]:
