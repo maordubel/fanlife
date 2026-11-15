@@ -1,0 +1,3 @@
+{"code":"NEEDS_PARSER","providerId":"thecelticwiki","url":null,"message":"No tested parser for The Celtic Wiki yet (celticwiki-football-v1 is planned): documents are kept, nothing is extracted."}
+{"code":"NEEDS_PARSER","providerId":"celtic-official","url":null,"message":"No tested parser for Celtic FC yet: documents are kept, nothing is extracted."}
+{"code":"BUDGET_EXHAUSTED","providerId":"*","url":null,"message":"Budget used; the next run resumes from the checkpoint."}

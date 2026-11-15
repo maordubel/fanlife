@@ -24,7 +24,7 @@ from .. import camera as C
 MAX_STILL = 4.0
 TARGET = 2.6        # owner 14.11.2026, "more emphasis on editing": 3.4 → 2.6, towards the reference's ~45 changes a minute (editing-language). What a split aims for, so a cut can move to a beat or a word and still be under MAX_STILL
 MIN_SUB = 1.4       # a look shorter than this is a flicker, not a look (rule 142)
-MAX_CARD = 6.0      # a full-frame card is read in this time; after it the frame is paper with nothing happening
+MAX_CARD = 4.0      # a full-frame card is read in this time (owner 15.11.2026: 42% of the PAO film was type on a flat ground — 6 s → 4 s)
 WORD_HOLD = 2.6     # a slammed word (the turn of the story) lands, is read, and gets out of the picture's way
 BEAT_SNAP = 0.3     # a cut moves this far to sit on a music beat …
 WORD_SNAP = 0.7     # … or this far to sit on the start of a word
@@ -222,7 +222,75 @@ def cut(beats: list[dict], grid: list[float] | None = None, related=None, backdr
         out.append({**b, 'shots': cutup, 'in': name})
         prev = m
     rules(out)
+    ground(out, backdrop, fixes)
     return out
+
+
+# ── no slide (owner, 15.11.2026: "it is still not a film") ──────────────────────────────────────────────────────────
+# A card is read OVER the story's picture, never on an empty ground: every full-frame card and every slammed word gets
+# the beat's picture moving under it and turns to glass (build: the ground thins towards the edges, so the picture is
+# seen around the type). The film's cards together may take CARD_SHARE of its running time; past that, the latest-
+# placed cards are cut to WORD_HOLD.
+CARD_SHARE = 0.15
+BUDGET_FROM_S = 60.0
+TYPE_KINDS = ('word', 'question', 'stat', 'lead')
+
+
+def shown(dev: dict, d: float) -> tuple[float, float]:
+    """When a device is on screen inside its beat, exactly: (start, length). A word's `at` is inside its own `d`."""
+    at, hold = span(dev, d)
+    return at, max(0.0, hold - (dev.get('at', 0.0) if dev['kind'] == 'word' else 0.0))
+
+
+def covered(dev: dict) -> bool:
+    """A device that would leave the frame as type on a plain ground if nothing moved under it."""
+    return opaque(dev) or dev['kind'] in TYPE_KINDS
+
+
+def ground(beats: list[dict], backdrop=None, fixes: dict | None = None) -> None:
+    """In place: a picture under every card, every card glass, and the film's card time inside CARD_SHARE."""
+    total = sum(b['d'] for b in beats) or 1.0
+    cards: list[tuple[float, dict, dict]] = []
+    for b in beats:
+        m = b.get('meta') or {}
+        if m.get('type') in ('end', 'follow'):
+            continue
+        flat_fix = 'flat' in set((fixes or {}).get(m.get('n')) or [])
+        for dev in [x for x in b['shots'] if covered(x)]:
+            at, hold = shown(dev, b['d'])
+            if flat_fix and hold > WORD_HOLD:
+                dev['d'] = round(WORD_HOLD + (dev.get('at', 0.0) if dev['kind'] == 'word' else 0.0), 3)
+                at, hold = shown(dev, b['d'])
+            under = [x for x in b['shots'] if x['kind'] in PICTURES + ('video',) and x.get('dt', 0.0) <= at + 0.05
+                     and x.get('dt', 0.0) + x.get('d', b['d'] - x.get('dt', 0.0)) >= at + hold - 0.05]
+            if not under and backdrop:
+                pic = backdrop(m.get('n'))
+                if pic:
+                    alone = not any(x['kind'] in PICTURES + ('video',) for x in b['shots'])   # nothing else in the beat: the picture runs its whole length
+                    a0, h0 = (0.0, b['d']) if alone else (at, hold)
+                    b['shots'].insert(0, {**pic, 'dt': round(a0, 3), 'd': round(h0, 3), 'z': 2, 'under': True,
+                                          **({'fade': False, 'move': 'push'} if pic['kind'] == 'image' else {})})
+                    under = [pic]
+            if under:
+                dev['glass'] = True
+            if opaque(dev) or dev['kind'] == 'word':
+                cards.append((b['t'] + at, dev, b))
+    if total < BUDGET_FROM_S:   # a teaser or a single passage is not a film: its card is its point
+        return
+    used = sum(shown(d_, b_['d'])[1] for _, d_, b_ in cards)
+    for _, dev, b in sorted(cards, key=lambda x: -x[0]):   # the latest cards give way first: the opening's question keeps its time
+        if used <= CARD_SHARE * total:
+            break
+        at, hold = shown(dev, b['d'])
+        if hold > WORD_HOLD:
+            dev['d'] = round(WORD_HOLD + (dev.get('at', 0.0) if dev['kind'] == 'word' else 0.0), 3)
+            used -= hold - WORD_HOLD
+
+
+def card_share(beats: list[dict]) -> float:
+    """The share of the film's running time that full-frame cards and slammed words take."""
+    total = sum(b['d'] for b in beats) or 1.0
+    return round(sum(shown(x, b['d'])[1] for b in beats for x in b['shots'] if opaque(x) or x['kind'] == 'word') / total, 3)
 
 
 # The adapter's old one-layer tweens, as the camera moves that mean the same (a plan with no score sheet — an older

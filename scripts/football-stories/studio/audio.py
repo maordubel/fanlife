@@ -257,7 +257,7 @@ def _fetch_drive_track(t: dict, path: Path) -> None:
 DIRECTOR_TAGS = {'drive': ['drive', 'hype', 'matchday'], 'warm': ['warm', 'memory', 'light'], 'epic': ['epic', 'tension', 'drive']}
 TONE_TAGS = {'triumph': ['triumph', 'joy', 'anthem'], 'heartbreak': ['heartbreak', 'sad', 'sombre'], 'underdog': ['hope', 'drive'],
              'rivalry': ['drive', 'tension'], 'nostalgia': ['memory', 'warm'], 'drama': ['tension', 'epic'],
-             'laugh': ['laugh', 'humour', 'quirky'], 'war': ['war', 'tension', 'sombre'], 'heart': ['memory', 'hope', 'warm'],
+             'laugh': ['laugh', 'humour', 'quirky', 'light'], 'classified': ['classified', 'tension', 'sombre'], 'war': ['war', 'tension', 'sombre'], 'heart': ['memory', 'hope', 'warm'],
              'vlog': ['vlog', 'light', 'warm'], 'explainer': ['explainer', 'light']}
 
 

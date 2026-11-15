@@ -49,7 +49,7 @@ describe('Gate 6 · the dealt wall (ME-R01..R04) on the real clubs',()=>{
 })
 
 describe('Gate 6 · ME-R11 themes on the real pool',()=>{
- it('every themed wall holds only pairs of its decade, and passes the same validator',()=>{
+ it('every themed wall holds only pairs of its decade or kind, and passes the same validator',()=>{
   const plan=planMemory(hapoel,{seed:3,cursor:0})
   expect(plan.themes.length).toBeGreaterThan(0)
   for(const t of plan.themes){
@@ -57,7 +57,7 @@ describe('Gate 6 · ME-R11 themes on the real pool',()=>{
    for(const cursor of [0,1]){
     const d=dealMemory(hapoel,{size:t.maxSize as 2|4|6,theme:t.theme,seed:3,cursor})
     if('blocked' in d)continue
-    expect(d.pairs.every(c=>c.theme===t.theme)).toBe(true);expect(deckReport(d.pairs,t.maxSize as 2|4|6).problems).toEqual([])
+    expect(d.pairs.every(c=>t.theme.startsWith('type:')?c.type===t.theme.slice(5):c.theme===t.theme)).toBe(true);expect(deckReport(d.pairs,t.maxSize as 2|4|6).problems).toEqual([])
     expect(d.deal.theme).toBe(t.theme)
    }
   }

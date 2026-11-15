@@ -430,7 +430,7 @@ def run_casefile(st, job: dict, jd: Path, progress, log) -> dict:
     spec = job.get('spec') or {}
     progress('research', 0.05, f"Researching: {spec.get('topic')}")
     r = casefile.make(spec['topic'], spec.get('tone') or 'LAUGH', spec.get('notes') or '', jd / 'cache', log,
-                      number=(spec.get('file') or '').removeprefix('file') or None)
+                      number=(spec.get('file') or '').removeprefix('file') or None, minutes=spec.get('minutes') or 6)
     progress('package', 0.9, f"Saving FILE {r['number']} · {r['title']}")
     commit = _commit([r['script'], 'scripts/football-stories/comic/classified_manifest.json',
                       f"scripts/football-stories/comic/episodes/{r['file']}-*.json"],

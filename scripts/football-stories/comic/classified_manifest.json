@@ -10,17 +10,17 @@
     "LAUGH": {
       "color": "#1B9AD6",
       "label": "LAUGH",
-      "music": "zolvi-march-of-the-mini-monsters"
+      "music": "dubelteam-after-the-final-whistle"
     },
     "WAR": {
       "color": "#D71920",
       "label": "WAR",
-      "music": "leberch-dark"
+      "music": "dubelteam-under-the-iron-watch"
     },
     "HEART": {
       "color": "#233C8F",
       "label": "HEART",
-      "music": "pufino-enlivening"
+      "music": "dubelteam-the-weight-of-stillness"
     }
   },
   "kit": [
