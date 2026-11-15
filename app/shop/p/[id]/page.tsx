@@ -4,6 +4,7 @@ import {notFound} from 'next/navigation'
 import {Shell} from '@/components/master/Shell'
 import {ShopCard,isNew,leftText} from '@/components/shop/ShopStrip'
 import {CheckoutButton} from '@/components/shop/Checkout'
+import {Gallery} from '@/components/shop/Gallery'
 import {publicShop} from '@/lib/shop/store'
 import {subjectName} from '@/lib/shop/subjects'
 import copy from '@/messages/en.shop.json'
@@ -27,7 +28,7 @@ export default async function Product({params}:{params:{id:string}}){
  const shop=await publicShop();if(!shop.open)notFound()
  const p=shop.products.find(x=>x.id===decodeURIComponent(params.id));if(!p)notFound()
  const [design,what]=[p.title.split(' · ')[0]!,p.title.split(' · ')[1]??''],club=p.subject==='fanlife'?copy.house:subjectName(p.subject)
- const pics=[...new Set([p.image,...(p.back?[p.back]:[]),...p.images])].slice(0,6)
+ const pics=[...new Set([p.image,...p.images,...(p.back?[p.back]:[])])].slice(0,8)
  const same=shop.products.filter(x=>x.design===p.design&&x.id!==p.id),more=shop.products.filter(x=>x.subject===p.subject&&x.design!==p.design)
  const seen=new Set<string>(),moreOne=more.filter(x=>!seen.has(x.design)&&(seen.add(x.design),true)).slice(0,4)
  const sale=p.sale?shop.sales.find(x=>x.id===p.sale):null
@@ -38,10 +39,7 @@ export default async function Product({params}:{params:{id:string}}){
   <nav className="wks-crumbs" aria-label={copy.title}><Link href="/shop">{copy.title}</Link> <span aria-hidden="true">›</span> <Link href={`/shop?club=${p.subject}`}>{club}</Link> <span aria-hidden="true">›</span> <span>{design}</span></nav>
   <div className="wks-pdp-grid">
    <section className="wks-gallery" aria-label={copy.pdpView.replace('{title}',p.title)}>
-    {pics.map((src,i)=><figure key={src} className={i===0?'main':''}>
-     {/* eslint-disable-next-line @next/next/no-img-element */}
-     <img src={src} alt={i===0?p.title:''} width={900} height={900} loading={i===0?'eager':'lazy'}/>
-     {p.back&&src===p.back?<figcaption>{copy.pdpBackSide}</figcaption>:i===0&&p.back?<figcaption>{copy.pdpFront}</figcaption>:null}</figure>)}
+    <Gallery alt={p.title} pics={pics.map(src=>({src,label:p.back&&src===p.back?copy.pdpBackSide:null}))} copy={{zoom:copy.pdpZoom,close:copy.pdpZoomClose,pick:copy.pdpPics,of:copy.pdpPicOf}}/>
    </section>
    <section className="wks-buybox wk-panel" aria-labelledby="wks-pdp-h">
     <p className="wk-banner">{club}{what?` · ${what}`:''}</p>

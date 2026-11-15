@@ -1,6 +1,164 @@
 {
- "note": "Music the owner supplied. Owner rule (5.11.2026): every film is scored ONLY with a track he supplied (owner: true) — never the synthesiser, never a library he did not choose. A film may name one (brief music: track:<id>); otherwise the studio picks by director, tone and mood (studio/audio.pick_owner_track). Tracks with 'drive' live in the owner's public Drive folder and are fetched on first use into kit/music/cache/ (gitignored, never committed: Free To Use forbids redistribution). Free To Use tracks need the attribution block in the description (package.py prints it). The Tanner Helland entries remain for reference only and are never picked.",
+ "note": "Owner rule (15.11.2026): every film, Short, Reel and promo is scored ONLY with the DubelTeam tracks in kit/music/dubelteam/ (owner: true), credited 'Music: DubelTeam'. Every earlier track is retired (owner: false) and is never picked. A film may name one (brief music: track:<id>); otherwise studio/audio.pick_owner_track picks by director, tone and mood. Music the owner supplied. Owner rule (5.11.2026): every film is scored ONLY with a track he supplied (owner: true) — never the synthesiser, never a library he did not choose. A film may name one (brief music: track:<id>); otherwise the studio picks by director, tone and mood (studio/audio.pick_owner_track). Tracks with 'drive' live in the owner's public Drive folder and are fetched on first use into kit/music/cache/ (gitignored, never committed: Free To Use forbids redistribution). Free To Use tracks need the attribution block in the description (package.py prints it). The Tanner Helland entries remain for reference only and are never picked.",
  "tracks": [
+  {
+   "id": "dubelteam-under-the-iron-watch",
+   "file": "dubelteam/under-the-iron-watch.mp3",
+   "title": "Under the Iron Watch",
+   "artist": "DubelTeam",
+   "supplied": "2026-11-15",
+   "origin": "composed and edited by the owner (DubelTeam)",
+   "licence": "DubelTeam original — no third-party rights",
+   "credit": "Under the Iron Watch — DubelTeam",
+   "owner": true,
+   "mood": "tense, watchful, dossier",
+   "tags": [
+    "tension",
+    "war",
+    "sombre",
+    "drama",
+    "classified"
+   ]
+  },
+  {
+   "id": "dubelteam-before-the-collapse",
+   "file": "dubelteam/before-the-collapse.mp3",
+   "title": "Before the Collapse",
+   "artist": "DubelTeam",
+   "supplied": "2026-11-15",
+   "origin": "composed and edited by the owner (DubelTeam)",
+   "licence": "DubelTeam original — no third-party rights",
+   "credit": "Before the Collapse — DubelTeam",
+   "owner": true,
+   "mood": "dread building to a break",
+   "tags": [
+    "tension",
+    "drama",
+    "epic",
+    "heartbreak",
+    "classified"
+   ]
+  },
+  {
+   "id": "dubelteam-a-seat-by-the-exit",
+   "file": "dubelteam/a-seat-by-the-exit.mp3",
+   "title": "A Seat by the Exit",
+   "artist": "DubelTeam",
+   "supplied": "2026-11-15",
+   "origin": "composed and edited by the owner (DubelTeam)",
+   "licence": "DubelTeam original — no third-party rights",
+   "credit": "A Seat by the Exit — DubelTeam",
+   "owner": true,
+   "mood": "sad, alone, reflective",
+   "tags": [
+    "sad",
+    "heartbreak",
+    "reflective",
+    "sombre",
+    "memory"
+   ]
+  },
+  {
+   "id": "dubelteam-the-weight-of-stillness",
+   "file": "dubelteam/the-weight-of-stillness.mp3",
+   "title": "The Weight of Stillness",
+   "artist": "DubelTeam",
+   "supplied": "2026-11-15",
+   "origin": "composed and edited by the owner (DubelTeam)",
+   "licence": "DubelTeam original — no third-party rights",
+   "credit": "The Weight of Stillness — DubelTeam",
+   "owner": true,
+   "mood": "still, heavy, reflective",
+   "tags": [
+    "calm",
+    "reflective",
+    "memory",
+    "sombre",
+    "explainer"
+   ]
+  },
+  {
+   "id": "dubelteam-after-the-final-whistle",
+   "file": "dubelteam/after-the-final-whistle.mp3",
+   "title": "After the Final Whistle",
+   "artist": "DubelTeam",
+   "supplied": "2026-11-15",
+   "origin": "composed and edited by the owner (DubelTeam)",
+   "licence": "DubelTeam original — no third-party rights",
+   "credit": "After the Final Whistle — DubelTeam",
+   "owner": true,
+   "mood": "warm, looking back",
+   "tags": [
+    "memory",
+    "warm",
+    "hope",
+    "nostalgia",
+    "reflective",
+    "light",
+    "vlog"
+   ]
+  },
+  {
+   "id": "dubelteam-the-tapans-final-surge",
+   "file": "dubelteam/the-tapans-final-surge.mp3",
+   "title": "The Tapan's Final Surge",
+   "artist": "DubelTeam",
+   "supplied": "2026-11-15",
+   "origin": "composed and edited by the owner (DubelTeam)",
+   "licence": "DubelTeam original — no third-party rights",
+   "credit": "The Tapan's Final Surge — DubelTeam",
+   "owner": true,
+   "mood": "drums, drive, the last push",
+   "tags": [
+    "drive",
+    "epic",
+    "hype",
+    "balkan",
+    "matchday",
+    "rivalry",
+    "shorts"
+   ]
+  },
+  {
+   "id": "dubelteam-ninety-minutes-of-glory",
+   "file": "dubelteam/ninety-minutes-of-glory.mp3",
+   "title": "Ninety Minutes of Glory",
+   "artist": "DubelTeam",
+   "supplied": "2026-11-15",
+   "origin": "composed and edited by the owner (DubelTeam)",
+   "licence": "DubelTeam original — no third-party rights",
+   "credit": "Ninety Minutes of Glory — DubelTeam",
+   "owner": true,
+   "mood": "triumph, anthem",
+   "tags": [
+    "triumph",
+    "joy",
+    "anthem",
+    "epic",
+    "drive"
+   ]
+  },
+  {
+   "id": "dubelteam-a-stand-of-thousands",
+   "file": "dubelteam/a-stand-of-thousands.mp3",
+   "title": "A Stand of Thousands",
+   "artist": "DubelTeam",
+   "supplied": "2026-11-15",
+   "origin": "composed and edited by the owner (DubelTeam)",
+   "licence": "DubelTeam original — no third-party rights",
+   "credit": "A Stand of Thousands — DubelTeam",
+   "owner": true,
+   "mood": "the terrace, rising",
+   "tags": [
+    "anthem",
+    "drive",
+    "matchday",
+    "hype",
+    "joy",
+    "rivalry",
+    "shorts"
+   ]
+  },
   {
    "id": "kontraa-balkan-drill",
    "file": "kontraa-balkan-drill.mp3",
@@ -10,11 +168,12 @@
    "origin": "owner-supplied (Pixabay, item 573741)",
    "licence": "Pixabay Content License — owner-supplied",
    "mood": "Balkan, rhythmic, upbeat",
-   "owner": true,
+   "owner": false,
    "tags": [
     "drive",
     "balkan"
-   ]
+   ],
+   "retired": "2026-11-15: replaced by the DubelTeam tracks (owner rule)"
   },
   {
    "id": "sub-clair-lofi-study",
@@ -25,13 +184,14 @@
    "origin": "owner-supplied (Pixabay, item 628178)",
    "licence": "Pixabay Content License — owner-supplied",
    "mood": "calm, reflective, talk",
-   "owner": true,
+   "owner": false,
    "tags": [
     "calm",
     "reflective",
     "warm",
     "memory"
-   ]
+   ],
+   "retired": "2026-11-15: replaced by the DubelTeam tracks (owner rule)"
   },
   {
    "id": "gr0za-energy",
@@ -42,13 +202,14 @@
    "origin": "owner-supplied (Pixabay, item 627556)",
    "licence": "Pixabay Content License — owner-supplied",
    "mood": "high energy, hype, Shorts",
-   "owner": true,
+   "owner": false,
    "tags": [
     "hype",
     "drive",
     "shorts",
     "joy"
-   ]
+   ],
+   "retired": "2026-11-15: replaced by the DubelTeam tracks (owner rule)"
   },
   {
    "id": "atlasaudio-sports",
@@ -59,13 +220,14 @@
    "origin": "owner-supplied (Pixabay, item 625740)",
    "licence": "Pixabay Content License — owner-supplied",
    "mood": "drive, matchday, promo",
-   "owner": true,
+   "owner": false,
    "tags": [
     "drive",
     "matchday",
     "joy",
     "triumph"
-   ]
+   ],
+   "retired": "2026-11-15: replaced by the DubelTeam tracks (owner rule)"
   },
   {
    "id": "leberch-dark",
@@ -76,14 +238,15 @@
    "origin": "owner-supplied (Pixabay, item 625667)",
    "licence": "Pixabay Content License — owner-supplied",
    "mood": "sombre, tension, documentary — I WAS THERE Bloomfield 2024",
-   "owner": true,
+   "owner": false,
    "tags": [
     "sombre",
     "tension",
     "sad",
     "war",
     "heartbreak"
-   ]
+   ],
+   "retired": "2026-11-15: replaced by the DubelTeam tracks (owner rule)"
   },
   {
    "id": "helland-a-memory-away",
@@ -562,7 +725,7 @@
     "name": "Pufino - Rock Me Now",
     "id": "1PdoLb4GxInsgD_pQKMDQ8L0-DJJbQbk4"
    },
-   "owner": true,
+   "owner": false,
    "mood": "drive, matchday, rock, hype",
    "tags": [
     "drive",
@@ -571,7 +734,8 @@
     "triumph",
     "anthem",
     "hype"
-   ]
+   ],
+   "retired": "2026-11-15: replaced by the DubelTeam tracks (owner rule)"
   },
   {
    "id": "zambolino-hummer",
@@ -588,14 +752,15 @@
     "name": "Zambolino - Hummer",
     "id": "1rZj18v4jsBGUCVeZFjjRFTASpW06A0P8"
    },
-   "owner": true,
+   "owner": false,
    "mood": "high energy, groove, fast",
    "tags": [
     "drive",
     "hype",
     "joy",
     "shorts"
-   ]
+   ],
+   "retired": "2026-11-15: replaced by the DubelTeam tracks (owner rule)"
   },
   {
    "id": "pufino-enlivening",
@@ -612,7 +777,7 @@
     "name": "Pufino - Enlivening",
     "id": "1QgINEfcRcnIQMteBzcEpUaFCo34lm74X"
    },
-   "owner": true,
+   "owner": false,
    "mood": "soft, uplifting, reflective",
    "tags": [
     "warm",
@@ -620,7 +785,8 @@
     "reflective",
     "calm",
     "hope"
-   ]
+   ],
+   "retired": "2026-11-15: replaced by the DubelTeam tracks (owner rule)"
   },
   {
    "id": "zambolino-lighthearted",
@@ -637,7 +803,7 @@
     "name": "Zambolino - Lighthearted",
     "id": "1posMWbwARC7s8M-ajzZW8kznqyjgLnom"
    },
-   "owner": true,
+   "owner": false,
    "mood": "light, warm, playful",
    "tags": [
     "warm",
@@ -645,7 +811,8 @@
     "vlog",
     "humour",
     "calm"
-   ]
+   ],
+   "retired": "2026-11-15: replaced by the DubelTeam tracks (owner rule)"
   },
   {
    "id": "zolvi-march-of-the-mini-monsters",
@@ -662,13 +829,14 @@
     "name": "Zolvi - March of the Mini Monsters",
     "id": "1jF5Hri_VCdHdjhVjDfE01FrNCIZQHIcX"
    },
-   "owner": true,
+   "owner": false,
    "mood": "quirky march, comic",
    "tags": [
     "laugh",
     "humour",
     "quirky"
-   ]
+   ],
+   "retired": "2026-11-15: replaced by the DubelTeam tracks (owner rule)"
   },
   {
    "id": "zolvi-unanswered-call",
@@ -685,7 +853,7 @@
     "name": "Zolvi - Unanswered Call",
     "id": "1rSPtRqdfhKoCUQDuzjH331rHYNpaS2fL"
    },
-   "owner": true,
+   "owner": false,
    "mood": "sombre, tension, heartbreak",
    "tags": [
     "sad",
@@ -693,7 +861,8 @@
     "tension",
     "war",
     "sombre"
-   ]
+   ],
+   "retired": "2026-11-15: replaced by the DubelTeam tracks (owner rule)"
   },
   {
    "id": "aetheric-snap-crackle",
@@ -710,14 +879,15 @@
     "name": "Aetheric - Snap Crackle",
     "id": "1NIi5gHqssWFYtJ__jjLJ5XPvJqGiKtjN"
    },
-   "owner": true,
+   "owner": false,
    "mood": "playful, crisp, explainer",
    "tags": [
     "explainer",
     "light",
     "tension",
     "quirky"
-   ]
+   ],
+   "retired": "2026-11-15: replaced by the DubelTeam tracks (owner rule)"
   }
  ]
 }

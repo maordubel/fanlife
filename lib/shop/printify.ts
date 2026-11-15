@@ -10,7 +10,7 @@ export type PBlueprint={id:number;title:string;brand:string;model:string;images:
 export type PProvider={id:number;title:string}
 export type PVariant={id:number;title:string;options:Record<string,string>;placeholders:{position:string;width:number;height:number}[]}
 export type PUpload={id:string;file_name:string;width:number;height:number;preview_url:string}
-export type PProduct={id:string;title:string;visible:boolean;is_locked:boolean;variants:{id:number;cost:number;price:number;is_enabled:boolean}[];images:{src:string;is_default:boolean;position?:string}[];external?:{id?:string;handle?:string}}
+export type PProduct={id:string;title:string;visible:boolean;is_locked:boolean;variants:{id:number;cost:number;price:number;is_enabled:boolean}[];images:{src:string;is_default:boolean;position?:string;variant_ids?:number[]}[];external?:{id?:string;handle?:string}}
 export type PrintArea={variant_ids:number[];placeholders:{position:string;images:{id:string;x:number;y:number;scale:number;angle:number}[]}[]}
 
 export function printify(token:string){

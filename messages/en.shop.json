@@ -268,5 +268,10 @@
    "t": "I was there.",
    "sub": "Every night away you marked, on the map of the road from home — from UEFA’s own record of each match."
   }
- }
+ },
+ "pdpZoom": "Look closer",
+ "pdpZoomClose": "Close",
+ "pdpPics": "Pictures",
+ "pdpPicOf": "Picture {n} of {total}",
+ "pdpLive": "In use"
 }

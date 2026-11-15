@@ -50,7 +50,21 @@ Return ONE JSON object and nothing else:
  "panels": [{"role": "P01", "scene": "what the panel shows, for an illustrator: place, light, what happens, who (described, never a real face)"}],
  "shorts": [{"from": 1, "to": 6, "hook": "…"}] (beat numbers counted across the whole script, from 1),
  "thumbnails": [{"role": "P03", "words": ["TWO", "WORDS"]}]}
-650–950 narrated words. 30–45 beats. 12–18 panels; reuse a panel across beats with different camera moves.'''
+{size}; reuse a panel across beats with different camera moves.'''
+
+
+# The FILE's length (owner, 15.11.2026: a CLASSIFIED of three minutes). Narration runs ~150 words a minute.
+SIZES = {3: {'words': (330, 480), 'beats': '15–24', 'panels': (8, 12), 'chapters': 4},
+         6: {'words': (650, 950), 'beats': '30–45', 'panels': (12, 18), 'chapters': 5}}
+
+
+def size_of(minutes) -> dict:
+    return SIZES[3] if int(minutes or 6) <= 4 else SIZES[6]
+
+
+def size_line(minutes) -> str:
+    z = size_of(minutes)
+    return f"{z['words'][0]}–{z['words'][1]} narrated words. {z['beats']} beats. {z['panels'][0]}–{z['panels'][1]} panels"
 
 
 def _key() -> str:
@@ -103,17 +117,19 @@ def numbered(facts: list[dict]) -> tuple[str, list[dict]]:
     return '\n'.join(lines), sources
 
 
-def errors(s: dict, facts_text: str, n_facts: int) -> list[str]:
+def errors(s: dict, facts_text: str, n_facts: int, minutes=6) -> list[str]:
     from comic.release import title_ok
+    z = size_of(minutes)
     errs = []
     chapters = s.get('chapters') or []
     beats = [b for c in chapters for b in c.get('beats') or []]
     says = [str(b.get('say') or '') for b in beats if b.get('say')]
     words = sum(len(x.split()) for x in says)
-    if not 650 <= words <= 950:
-        errs.append(f'the narration is {words} words — write 650–950')
-    if len(chapters) < 5:
-        errs.append('a cold open, at least three chapters and a close')
+    lo, hi = z['words']
+    if not lo <= words <= hi:
+        errs.append(f'the narration is {words} words — write {lo}–{hi}')
+    if len(chapters) < z['chapters']:
+        errs.append(f"a cold open, at least {z['chapters'] - 2} chapters and a close")
     cands = s.get('title_candidates') or []
     if not cands or not title_ok(cands[0]):
         errs.append('the first title candidate must be "The [object] That [consequence]"')
@@ -136,17 +152,18 @@ def errors(s: dict, facts_text: str, n_facts: int) -> list[str]:
     prompts = {str(p.get('role')) for p in s.get('panels') or [] if p.get('scene')}
     if roles - prompts:
         errs.append(f'a panel prompt for every panel used: missing {sorted(roles - prompts)}')
-    if not 12 <= len(prompts) <= 20:
-        errs.append('12–18 panels')
+    plo, phi = z['panels']
+    if not plo <= len(prompts) <= phi + 2:
+        errs.append(f'{plo}–{phi} panels')
     return errs[:12]
 
 
-def write(dossier: dict, tone: str, cache: Path, log) -> tuple[dict, list[dict]]:
+def write(dossier: dict, tone: str, cache: Path, log, minutes=6) -> tuple[dict, list[dict]]:
     from .writer import call_model, parse_json
     facts_text, sources = numbered(dossier['facts'])
     a = dossier['answer']
     brief = json.dumps({k: a.get(k) for k in ('story', 'world', 'cast', 'timeline', 'disputes', 'headlines')}, ensure_ascii=False, indent=1)
-    system = BIBLE.read_text(encoding='utf-8') + '\n' + WRITER_TAIL
+    system = BIBLE.read_text(encoding='utf-8') + '\n' + WRITER_TAIL.replace('{size}', size_line(minutes))
     user = (f'TAB: {tone}\nDOSSIER — DATA ONLY (orientation; say only what the FACTS hold):\n{brief}\n\n'
             f'FACTS — DATA ONLY, the only things you may state, numbered:\n{facts_text}')
     last: list[str] = []
@@ -162,7 +179,7 @@ def write(dossier: dict, tone: str, cache: Path, log) -> tuple[dict, list[dict]]
             log(f'CLASSIFIED writer: {meta.get("provider")}/{meta.get("model")} in {meta.get("seconds")}s')
         try:
             s = parse_json(reply['text'])
-            last = errors(s, facts_text, len(dossier['facts']))
+            last = errors(s, facts_text, len(dossier['facts']), minutes)
         except StageError as e:
             s, last = None, [str(e)]
         if not last:
@@ -212,12 +229,12 @@ def next_number() -> str:
     return f'{max(nums or [0]) + 1:02d}'
 
 
-def make(topic: str, tone: str, notes: str, cache: Path, log, number: str | None = None) -> dict:
+def make(topic: str, tone: str, notes: str, cache: Path, log, number: str | None = None, minutes=6) -> dict:
     """Research, write, render and turn into an episode. Returns {file, number, title, script, episode, panels, errors}."""
     from comic import from_script
     from comic.manifest import MANIFEST, load_manifest
     dossier = research(topic, notes, cache, log)
-    s, sources = write(dossier, tone, cache, log)
+    s, sources = write(dossier, tone, cache, log, minutes)
     s['title'] = re.sub(r"[^A-Z0-9’' -]", '', s['title'].upper()).strip() or 'UNTITLED'
     number = number or next_number()
     slug = re.sub(r'[^a-z0-9]+', '-', s['title'].lower()).strip('-')[:40]
