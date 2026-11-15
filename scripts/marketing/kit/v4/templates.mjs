@@ -340,6 +340,7 @@ async function tier(d, o) {
 /** shop: one live product from the open shop (prerender.mjs picks it at random for each post); its mock-up is the hero */
 const money = (cents, cur = 'USD') => cents ? `${cur === 'EUR' ? '€' : cur === 'GBP' ? '£' : '$'}${(Number(cents) / 100).toFixed(2).replace(/\.00$/, '')}` : ''
 async function shop(d, o) {
+  if (d.photo || d.cut) return tee({...d, look: undefined, words: d.name || String(d.title || '').split(' · ')[0], kind_label: d.kind_label || `${String(d.title || '').split(' · ')[1] || 'FAN LIFE shop'} · printed to order`}, o)
   const id = clubId({club: d.subject && d.subject !== 'fanlife' ? {id: d.subject} : d.club}), p = id ? paint(id) : {bg: '#121212', on: '#FFFBF2', s1: '#FFFBF2', s2: '#D71920', light: false}
   const c = id ? await crest(p.name) : null
   const img = local(d.image)
@@ -352,39 +353,50 @@ ${d.price ? `<div class="stamp" style="right:-10px;bottom:30px;width:230px;heigh
 </div>${foot(d.cta || 'Shop now', 'fanlife.dubelteam.com/shop')}`}
 }
 
-/** a flagship garment as a lookbook page: the shirt cut out of its studio background, oversized type behind it,
- *  a detail lens on the print, colourways and a price tag. look: 'back' | 'fold' | 'look' (the lifestyle photo, full bleed) */
+/** every shop product as a lookbook page (the owner's rule, 15.11: the product itself, cut clean or in a real mock-up,
+ *  fashionable and striking — never a drawing). Two looks:
+ *   · 'look' — a real lifestyle mock-up (a person, a room) full bleed, the name over a dark fade;
+ *   · 'cut'  — the product cut out of its studio background on a coloured stage, oversized type behind it.
+ *  d.photo / d.cut / d.detail are image addresses; the Football. Forever. tee keeps its own files (d.look back|fold|look). */
+const STAGES = [{bg: '#ECE6DB', ink: '#15130F', light: true}, {bg: '#123B26', ink: '#F3EEE4'}, {bg: '#1B1F2A', ink: '#F3EEE4'}, {bg: '#7A1E22', ink: '#F7EFE4'}]
 async function tee(d, o) {
-  const H = o.story ? 1920 : 1350, look = d.look || 'back'
+  const H = o.story ? 1920 : 1350
   const art = f => local(`v4/art/shop/${f}`)
-  const [l1, l2] = String(d.words || 'Football. Forever.').split(/(?<=\.)\s+/)
-  const price = `<div style="position:absolute;z-index:7;right:${look === 'look' ? 56 : 60}px;top:${o.story ? 640 : 470}px;width:190px;height:190px;border-radius:50%;background:#15130F;color:#FFFBF2;display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(8deg);box-shadow:8px 8px 0 #C8102E"${at('pop', 1)}><span class="k" style="font-size:16px;letter-spacing:.2em">From</span><span class="num" style="font-size:52px;line-height:1">${esc(money(d.price || 2399, d.currency))}</span></div>`
-  const swatch = (o.story ? ['#F6F4EF', '#1A1A1A', '#7B7B79'] : ['#F6F4EF', '#1A1A1A', '#7B7B79']).map(c => `<i style="width:34px;height:34px;border-radius:50%;background:${c};box-shadow:0 0 0 3px currentColor;display:inline-block"></i>`).join('')
-  const spec = (col) => `<div style="display:flex;flex-direction:column;gap:14px;color:${col}"${at('left', .9)}>
-<p class="k" style="font-size:18px;letter-spacing:.22em;opacity:.7">${esc(d.kind_label || 'Heavyweight tee · garment-dyed')}</p>
-<div style="display:flex;gap:14px;align-items:center">${swatch}<span class="k" style="font-size:18px;letter-spacing:.16em;margin-left:6px">White · Black · Granite</span></div></div>`
-  if (look === 'look') return {vars: vars({bg: '#15130F', on: '#FFFBF2', light: false}, '--hot:#C8102E'), inner: `
-<div style="position:absolute;inset:0"><img src="${art('football-forever-tee-white.jpg')}" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 30%" data-kb></div>
+  // the flagship tee's own files
+  let look = d.look || (d.photo ? 'look' : 'cut'), photo = local(d.photo), cut = local(d.cut), detail = local(d.detail), rot = 0
+  if (d.look === 'look') photo = art('football-forever-tee-white.jpg')
+  if (d.look === 'back') { look = 'cut'; cut = art('football-forever-tee-back-cut.png'); detail = art('football-forever-print.jpg') }
+  if (d.look === 'fold') { look = 'cut'; cut = art('football-forever-tee-black-cut.png'); detail = art('football-forever-print.jpg'); rot = -6 }
+  const words = String(d.words || d.name || 'Football. Forever.')
+  let [l1, l2] = words.split(/(?<=\.)\s+/)
+  if (!l2 && words.split(' ').length > 1) { const w = words.split(' '), h = Math.ceil(w.length / 2); l1 = w.slice(0, h).join(' '); l2 = w.slice(h).join(' ') }
+  const big = Math.max(l1.length, (l2 || '').length)
+  const size = (o.story ? 210 : 164) * Math.min(1, 11 / Math.max(big, 1))
+  const price = d.price ? `<div style="position:absolute;z-index:7;right:${look === 'look' ? 56 : 60}px;top:${o.story ? 640 : 470}px;width:190px;height:190px;border-radius:50%;background:#15130F;color:#FFFBF2;display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(8deg);box-shadow:8px 8px 0 #C8102E"${at('pop', 1)}><span class="k" style="font-size:16px;letter-spacing:.2em">From</span><span class="num" style="font-size:${money(d.price, d.currency).length > 6 ? 44 : 52}px;line-height:1">${esc(money(d.price, d.currency))}</span></div>` : ''
+  const swatches = d.swatches === false ? [] : d.swatches || (String(d.look || '') ? [['#F6F4EF', 'White'], ['#1A1A1A', 'Black'], ['#7B7B79', 'Granite']] : [])
+  const spec = col => `<div style="display:flex;flex-direction:column;gap:14px;color:${col}"${at('left', .9)}>
+<p class="k" style="font-size:18px;letter-spacing:.22em;opacity:.7">${esc(d.kind_label || (d.look ? 'Heavyweight tee · garment-dyed' : 'Printed to order · shipped to your door'))}</p>
+${swatches.length ? `<div style="display:flex;gap:14px;align-items:center">${swatches.map(([c]) => `<i style="width:34px;height:34px;border-radius:50%;background:${c};box-shadow:0 0 0 3px currentColor;display:inline-block"></i>`).join('')}<span class="k" style="font-size:18px;letter-spacing:.16em;margin-left:6px">${esc(swatches.map(s => s[1]).join(' · '))}</span></div>` : ''}</div>`
+  const kicker = d.kicker || 'Lookbook · FAN LIFE shop'
+  if (look === 'look' && photo) return {vars: vars({bg: '#15130F', on: '#FFFBF2', light: false}, '--hot:#C8102E'), inner: `
+<div style="position:absolute;inset:0"><img src="${photo}" alt="" style="width:100%;height:100%;object-fit:cover;object-position:${d.pos || '50% 30%'}" data-kb></div>
 <div style="position:absolute;left:0;right:0;bottom:0;height:${o.story ? 900 : 640}px;background:linear-gradient(rgba(21,19,15,0),rgba(21,19,15,.78) 45%,#15130F)"></div>
 <div style="position:absolute;left:0;right:0;top:0;height:220px;background:linear-gradient(rgba(21,19,15,.55),transparent)"></div>
 ${top({})}${price}
 <div class="body" style="justify-content:flex-end;gap:18px;padding-bottom:22px">
-<p class="k" style="font-size:20px;letter-spacing:.3em"${at('left', .3)}>${esc(d.kicker || 'Lookbook · FAN LIFE shop')}</p>
-<p class="h" style="font-size:${o.story ? 150 : 128}px;line-height:.86"${at('slam', .5)}>${esc(l1)}<br><span style="color:transparent;-webkit-text-stroke:3px #FFFBF2">${esc(l2 || '')}</span></p>
+<p class="k" style="font-size:20px;letter-spacing:.3em"${at('left', .3)}>${esc(kicker)}</p>
+<p class="h" style="font-size:${Math.round(size * .78)}px;line-height:.86"${at('slam', .5)}>${esc(l1)}${l2 ? `<br><span style="color:transparent;-webkit-text-stroke:3px #FFFBF2">${esc(l2)}</span>` : ''}</p>
 ${spec('#FFFBF2')}
-</div>${foot(d.cta || 'Shop the tee', 'fanlife.dubelteam.com/shop')}`}
-  const fold = look === 'fold'
-  const bg = fold ? '#123B26' : '#ECE6DB', ink = fold ? '#F3EEE4' : '#15130F'
-  const hero = fold ? art('football-forever-tee-black-cut.png') : art('football-forever-tee-back-cut.png')
-  const lens = `<div style="position:absolute;z-index:6;left:64px;bottom:${o.story ? 470 : 290}px;width:${o.story ? 300 : 240}px;height:${o.story ? 300 : 240}px;border-radius:50%;overflow:hidden;border:6px solid ${fold ? '#F3EEE4' : '#15130F'};box-shadow:10px 10px 0 rgba(0,0,0,.28);background:#7B7B79"${at('pop', 1.2)}><img src="${art('football-forever-print.jpg')}" alt="" style="width:100%;height:100%;object-fit:cover;transform:scale(1.15)"></div>
-`
-  return {vars: vars({bg, on: ink, light: !fold}, '--hot:#C8102E'), light: !fold, inner: `${dots(fold ? 'rgba(0,0,0,.25)' : 'rgba(0,0,0,.06)')}
+</div>${foot(d.cta || (d.look ? 'Shop the tee' : 'Shop now'), 'fanlife.dubelteam.com/shop')}`}
+  const st = d.stage != null ? STAGES[d.stage % STAGES.length] : d.look === 'fold' ? STAGES[1] : STAGES[0]
+  const lens = detail ? `<div style="position:absolute;z-index:6;left:64px;bottom:${o.story ? 470 : 290}px;width:${o.story ? 300 : 240}px;height:${o.story ? 300 : 240}px;border-radius:50%;overflow:hidden;border:6px solid ${st.ink};box-shadow:10px 10px 0 rgba(0,0,0,.28);background:#7B7B79"${at('pop', 1.2)}><img src="${detail}" alt="" style="width:100%;height:100%;object-fit:cover;transform:scale(1.15)"></div>` : ''
+  return {vars: vars({bg: st.bg, on: st.ink, light: !!st.light}, '--hot:#C8102E'), light: !!st.light, inner: `${dots(st.light ? 'rgba(0,0,0,.06)' : 'rgba(0,0,0,.25)')}
 ${top({})}
-<p class="h" style="position:absolute;z-index:1;left:52px;right:40px;top:${o.story ? 250 : 210}px;font-size:${o.story ? 210 : 164}px;line-height:.84;color:${ink}"${at('slam', .3)}>${esc(l1)}<br><span style="color:transparent;-webkit-text-stroke:4px ${ink}">${esc(l2 || '')}</span></p>
-<div style="position:absolute;z-index:3;left:0;right:0;top:${o.story ? 520 : 330}px;bottom:${o.story ? 300 : 200}px;display:flex;align-items:flex-end;justify-content:${fold ? 'center' : 'flex-end'};padding-right:${fold ? 0 : 150}px"><img src="${hero}" alt="" style="max-height:100%;max-width:${fold ? 82 : 60}%;object-fit:contain;filter:drop-shadow(0 30px 30px rgba(0,0,0,.28));${fold ? 'transform:rotate(-6deg)' : ''}"${at('up', .6)}></div>
+<p class="k" style="position:absolute;z-index:2;left:64px;top:${o.story ? 210 : 178}px;font-size:18px;letter-spacing:.3em;color:${st.ink};opacity:.75"${at('left', .2)}>${esc(kicker)}</p>
+<p class="h" style="position:absolute;z-index:1;left:52px;right:40px;top:${o.story ? 250 : 210}px;font-size:${Math.round(size)}px;line-height:.84;color:${st.ink}"${at('slam', .3)}>${esc(l1)}${l2 ? `<br><span style="color:transparent;-webkit-text-stroke:4px ${st.ink}">${esc(l2)}</span>` : ''}</p>
+<div style="position:absolute;z-index:3;left:0;right:0;top:${o.story ? 520 : 360}px;bottom:${o.story ? 300 : 200}px;display:flex;align-items:flex-end;justify-content:${rot || !d.look ? 'center' : 'flex-end'};padding-right:${rot || !d.look ? 0 : 150}px">${cut ? `<img src="${cut}" alt="" style="max-height:100%;max-width:${d.look === 'back' ? 60 : 82}%;object-fit:contain;filter:drop-shadow(0 30px 30px rgba(0,0,0,.3));${rot ? `transform:rotate(${rot}deg)` : ''}"${at('up', .6)} data-kb>` : ''}</div>
 ${lens}${price}
-<p class="k" style="position:absolute;z-index:2;left:64px;top:${o.story ? 210 : 178}px;font-size:18px;letter-spacing:.3em;color:${ink};opacity:.75"${at('left', .2)}>${esc(d.kicker || 'Lookbook · FAN LIFE shop')}</p>
-<div class="body" style="z-index:5"></div>${foot(d.cta || 'Shop the tee', 'fanlife.dubelteam.com/shop')}`}
+<div class="body" style="z-index:5"></div>${foot(d.cta || (d.look ? 'Shop the tee' : 'Shop now'), 'fanlife.dubelteam.com/shop')}`}
 }
 
 /** FLAGSHIP — Frame your All-Time XI: the fan's own XI, printed and framed on a wall (or as a poster) with his name */

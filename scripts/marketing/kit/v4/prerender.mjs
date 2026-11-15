@@ -63,6 +63,31 @@ export function pickProduct(list, used, rnd = Math.random) {
   if (p) used.add(p.id)
   return p
 }
+/** the product's own pictures: a real scene (a person, a room) or a studio shot cut clean out of its background */
+const label = u => (String(u).match(/camera_label=([^&]+)/)?.[1] || 'front').toLowerCase()
+export function pickArt(images, turn = 0) {
+  const imgs = (images || []).filter(u => !/size-chart/.test(label(u)))
+  const scene = imgs.find(u => /person|lifestyle|context|hanging/.test(label(u)))
+  const studio = imgs.find(u => /^folded/.test(label(u))) || imgs.find(u => /^front/.test(label(u))) || imgs.find(u => /^back/.test(label(u))) || imgs[0]
+  const detail = imgs.find(u => /close/.test(label(u))) || null
+  return {scene: turn % 2 === 0 || !studio ? scene || null : null, studio, detail}
+}
+/** the studio background (white or near white, flat) flooded away from the edges; null if the product would go with it */
+export async function cutOut(buf) {
+  const sharp = (await import('sharp')).default
+  const {data, info} = await sharp(buf).ensureAlpha().raw().toBuffer({resolveWithObject: true})
+  const {width: w, height: h} = info, bg = new Uint8Array(w * h), q = new Int32Array(w * h)
+  const pale = i => { const r = data[i * 4], g = data[i * 4 + 1], b = data[i * 4 + 2]; return Math.min(r, g, b) >= 226 && Math.max(r, g, b) - Math.min(r, g, b) < 16 }
+  let head = 0, tail = 0
+  const seed = i => { if (!bg[i] && pale(i)) { bg[i] = 1; q[tail++] = i } }
+  for (let x = 0; x < w; x++) { seed(x); seed((h - 1) * w + x) }
+  for (let y = 0; y < h; y++) { seed(y * w); seed(y * w + w - 1) }
+  while (head < tail) { const i = q[head++], x = i % w; if (x > 0) seed(i - 1); if (x < w - 1) seed(i + 1); if (i >= w) seed(i - w); if (i < w * (h - 1)) seed(i + w) }
+  const gone = tail / (w * h)
+  if (gone < .2 || gone > .9) return null // no studio background, or the product itself was pale and went with it
+  for (let i = 0; i < w * h; i++) if (bg[i]) data[i * 4 + 3] = 0
+  return sharp(data, {raw: {width: w, height: h, channels: 4}}).trim({threshold: 1}).png().toBuffer()
+}
 export function shopFill(p) {
   const [name, kind] = String(p.title).split(' · ')
   return {data: {title: p.title, image: p.printify.images[0], price: p.printify.priceFrom, currency: p.printify.currency || 'USD', subject: p.subject, kind: p.kind, kicker: `The FAN LIFE shop${kind ? ' · ' + kind : ''}`},
@@ -132,7 +157,16 @@ async function main() {
           const p = pickProduct(products, used)
           if (!p) throw Error('the shop has no live product')
           const f = shopFill(p)
-          Object.assign(data, f.data); s.data = data
+          Object.assign(data, f.data)
+          const a = pickArt(p.printify.images, post.id)
+          if (a.scene) data.photo = a.scene
+          else if (a.studio) {
+            const r = await fetch(a.studio, {signal: AbortSignal.timeout(30_000)})
+            const cut = r.ok ? await cutOut(Buffer.from(await r.arrayBuffer())) : null
+            if (cut) { const file = path.join(dir, `cut-${post.id}.png`); writeFileSync(file, cut); data.cut = file; if (a.detail) data.detail = a.detail }
+            else data.photo = a.studio
+          }
+          data.stage = post.id; s.data = data
           for (const k of ['hook', 'body']) if (post.fill?.[k]) patch[k] = fillWords(post.fill[k], f.words)
         }
         if (s.t === 'L-FILM' && (data.yt || ytId(post.url))) {
