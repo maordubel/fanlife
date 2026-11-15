@@ -7,6 +7,7 @@ import zrinjskiArchive from '@/club-packs/zrinjski-mostar/wave-existing-archive-
 import stPauliArchive from '@/club-packs/st-pauli/wave-existing-archive-2026-10-09.json'
 import stPauliCof from '@/club-packs/st-pauli/wave-kits-cof-2026-10-09.json'
 import htaCof from '@/club-packs/hapoel-tel-aviv/wave-kits-cof-2026-10-10.json'
+import htaFka from '@/club-packs/hapoel-tel-aviv/wave-kit-archive-2026-11-15.json'
 import olympiacosCof from '@/club-packs/olympiacos/wave-kits-cof-2026-10-09.json'
 import celticCof from '@/club-packs/celtic/wave-kits-cof-2026-10-09.json'
 import panathinaikosCof from '@/club-packs/panathinaikos/wave-kits-cof-2026-10-09.json'
@@ -37,7 +38,9 @@ export const providers:Record<string,()=>Promise<{data:ClubData;diagnostics:Diag
  'hapoel-tel-aviv':async()=>{
   // The Worker's own data (Kit Master, archive, timeline), plus the catalogue's drawings of the shirts the Kit Master has no entry for; the owner-approved
   // catalogue kits ride on the same record shape, and `kitViews` folds a shirt both sources describe into one card.
-  const base=(await import('./adapters/hapoel')).getHapoelData(),wave=htaCof as unknown as {sources:ClubData['sources'];kits:ClubData['kits']}
+  // 15.11.2026 — plus the Football Kit Archive shirts neither has (wave-kit-archive: one per season and type, read from its photograph)
+  const base=(await import('./adapters/hapoel')).getHapoelData(),cof=htaCof as unknown as {sources:ClubData['sources'];kits:ClubData['kits']},fka=htaFka as unknown as {sources:ClubData['sources'];kits:ClubData['kits']}
+  const wave={sources:[...cof.sources,...fka.sources],kits:[...(cof.kits||[]),...(fka.kits||[])]}
   const have=new Set(base.sources.map(x=>x.id)),kits=(wave.kits||[]).filter(k=>k.status==='approved'&&k.confidence>=2).map(k=>({...k,id:`hapoel-tel-aviv:${k.id}`}))
   // 13.11.2026 — the checked corrections (content/manual/archive-corrections-*.json) apply to The Worker's rows too
   return {data:{...base,matches:base.matches?correctMatches('hapoel-tel-aviv',base.matches):base.matches,kits:[...(base.kits||[]),...kits],sources:[...base.sources,...wave.sources.filter(x=>!have.has(x.id))]},diagnostics:[]}
