@@ -71,3 +71,11 @@ describe('perfect mock-ups (15.11.2026)',()=>{
   expect(b.slice(0,3)).toEqual(['context-1','front','back'])
  })
 })
+describe('mock-up families with numbered takes inside the label (16.11.2026)',()=>{
+ it('treats person-1-front and person-3-front as one scene and a bare sleeve as a detail',async()=>{
+  const {mockups}=await import('@/lib/shop/build')
+  const m=(c:string)=>({src:`x.jpg?camera_label=${c}`,is_default:true,variant_ids:[1]})
+  const f=mockups([m('person-5-context'),m('front'),m('person-1-front'),m('person-3-left-sleeve'),m('person-3-front'),m('person-2')],'front').images.map(s=>s.split('=')[1])
+  expect(f.at(-1)).toBe('person-3-left-sleeve');expect(f.indexOf('person-3-front')).toBeGreaterThan(f.indexOf('person-2'))
+ })
+})
