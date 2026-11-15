@@ -77,7 +77,8 @@ ground with no picture; "note": at most ten words on what is wrong, or "". Answe
 
 
 # ── the Gemini call (one place; tests pass `call`) ────────────────────────────────────────────────────────────────────
-def _call(system: str, parts: list[dict], log=print, budget_s: float = 600) -> list:
+def _call(system: str, parts: list[dict], log=print, budget_s: float = 90) -> list:
+    """One answer. A short wait budget: sight is a polish, it never holds a film behind the writer's free quota."""
     from . import gemini
     key = gemini.api_key()
     if not key:
