@@ -49,8 +49,20 @@ export function fanShirts(): Promise<FanShirt[]> {
   cached ??= (async () => {
     const out: FanShirt[] = []
     const hapoel = REGISTRY.find((c) => c.id === 'hapoel-tel-aviv')!
+    // Hapoel Tel Aviv's photographed shirts carry the archive's kit of the same shirt (by kit id, else one kit of that season and
+    // type), so every surface that draws them — the closet, the personal prints — wears the shared drawing and colours
+    const hapoelKits = kitViews((await loadClub(hapoel.id))?.data ?? ({ kits: [] } as never))
+    const kitOf = (shirt: { kitId: string | null; seasonLabel: string | null; year: number; variant: string }) => {
+      const season = shirt.seasonLabel ?? `${shirt.year}/${String((shirt.year + 1) % 100).padStart(2, '0')}`
+      const exact = shirt.kitId ? hapoelKits.find((k) => k.id === shirt.kitId || k.id.endsWith(`:${shirt.kitId}`) || k.also?.includes(shirt.kitId!)) : null
+      if (exact) return exact
+      const same = hapoelKits.filter((k) => k.season === season && kitTypeKey(k.type) === kitTypeKey(shirt.variant))
+      return same.length === 1 ? same[0]! : null
+    }
     for (const shirt of collectorShirts()) {
-      out.push({ ...shirt, variantHe: `${hapoel.name} ${label(shirt.variant).toLowerCase()}`, spoiler: null, club: hapoel.id, clubName: hapoel.name, kit: null })
+      const k = kitOf(shirt)
+      out.push({ ...shirt, variantHe: `${hapoel.name} ${label(shirt.variant).toLowerCase()}`, spoiler: null, club: hapoel.id, clubName: hapoel.name,
+        kit: k ? { id: k.id, design: k.design, colours: k.colours, season: k.season, shorts: k.shorts ?? null, socks: k.socks ?? null } : null })
     }
     for (const id of CORE_CLUB_IDS) {
       if (id === 'hapoel-tel-aviv') continue

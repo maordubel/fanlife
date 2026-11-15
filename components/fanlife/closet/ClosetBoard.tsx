@@ -29,7 +29,6 @@ import { PhotoMigration } from '@/components/fanlife/closet/PhotoMigration'
 
 import type { ClosetApi } from '@/components/fanlife/closet/api'
 import { ClosetMetrics } from '@/components/fanlife/closet/ClosetMetrics'
-import { PersonalPrint } from '@/components/shop/PersonalPrint'
 import { ItemEditor } from '@/components/fanlife/closet/ItemEditor'
 import { closetPath, PrivacyPanel } from '@/components/fanlife/closet/PrivacyPanel'
 
@@ -343,13 +342,6 @@ export function ClosetBoard({
           <PhotoMigration onMoved={reloadCloset} />
           <ClosetMetrics items={items} shirts={shirts} archive={archiveForCloset(archive, items, shirts)} shareRoute={sharePath} />
           <ClosetShare closet={closet} held={held} shirts={shirts} summary={summary} route={sharePath} />
-          {held.length > 0 && (
-            <PersonalPrint
-              kind="shirts"
-              req={{ slugs: [...new Set(held.map((item) => item.archiveSlug))].slice(0, 9) }}
-              className="flex w-full items-center justify-center gap-1 border-plate border-ink bg-paper px-3 font-body text-step--1 font-extrabold text-ink"
-            />
-          )}
           <PrivacyPanel closet={closet} api={api} onChange={(profile) => setCloset((state) => ({ ...state, profile }))} />
         </aside>
       </div>
