@@ -18,9 +18,9 @@
   "noColour": 0
  },
  "panathinaikos": {
-  "drawn": 128,
+  "drawn": 130,
   "fromArchive": 65,
-  "fromPack": 63,
+  "fromPack": 65,
   "noColour": 0
  },
  "aek-athens": {
@@ -66,9 +66,9 @@
   "noColour": 0
  },
  "atalanta": {
-  "drawn": 27,
+  "drawn": 114,
   "fromArchive": 0,
-  "fromPack": 27,
+  "fromPack": 114,
   "noColour": 2
  },
  "maccabi-haifa": {
