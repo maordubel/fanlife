@@ -203,5 +203,10 @@
  "pdpBackSide": "Back",
  "pdpView": "View {title}",
  "shopAll": "Shop all {n} products",
- "picksT": "Our picks"
+ "picksT": "Our picks",
+ "pdpZoom": "Look closer",
+ "pdpZoomClose": "Close",
+ "pdpPics": "Pictures",
+ "pdpPicOf": "Picture {n} of {total}",
+ "pdpLive": "In use"
 }

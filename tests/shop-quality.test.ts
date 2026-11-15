@@ -39,4 +39,14 @@ describe('the pictures follow where the design prints',()=>{
   expect(mockups(l,'back').images[0]).toContain('b.jpg');expect(mockups(l,'front').images).toEqual(['f.jpg?camera_label=front'])
   expect(mockups(l,'both').backImage).toContain('b.jpg')
  })
+ it('leads with the product in use, then the plain product, only the default colour, details last',async()=>{
+  const {mockups,liveness}=await import('@/lib/shop/build')
+  const m=(c:string,v=[1],d=false)=>({src:`x.jpg?camera_label=${c}`,is_default:d,variant_ids:v})
+  const l=[m('front',[1],true),m('back-collar-closeup'),m('context-1'),m('person-1'),m('front',[9]),m('person-2-back'),m('back'),m('size-chart')]
+  const f=mockups(l,'front').images.map(s=>s.split('=')[1])
+  expect(f).toEqual(['person-1','front','context-1','back-collar-closeup','size-chart'])
+  expect(mockups(l,'back').images.map(s=>s.split('=')[1])[0]).toBe('person-2-back')
+  const b=mockups(l,'both');expect(b.backImage).toContain('=back');expect(b.images[0]).toContain('person-1')
+  expect([liveness('a?camera_label=lifestyle'),liveness('a?camera_label=context-2'),liveness('a?camera_label=front')]).toEqual([0,1,2])
+ })
 })

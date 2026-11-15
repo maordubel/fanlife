@@ -223,3 +223,4 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [owner-opens-clubs](owner-opens-clubs.md) · Only the owner opens a club to the public; archive work never does (14.11.2026)
 - [archive-official-source](archive-official-source.md) · An official source approves a record on its own: league, federation, competition, or the club's own site (13.11.2026, widened 14.11.2026)
 - [archive-one-night](archive-one-night.md) · One record per match night, a daily self-refreshing league feed, and the archive door every game links through (12.11.2026)
+- [shop-live-mockups.md](shop-live-mockups.md) — the first picture of a product is the product in use; gallery with thumbnails and a glass
