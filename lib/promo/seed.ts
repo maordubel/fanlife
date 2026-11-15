@@ -47,4 +47,18 @@ export const SEED_BOOK:Banner[]=[
  {...base,id:'kypseli-sunday-en',name:'The Kypseli Tapes — new tape tonight (English)',audience:'world',href:TAPES,alt:'New tape tonight, 19:00 Athens — The Kypseli Tapes. Watch.',...art('kypseli-sunday-en'),
   targeting:every,days:[0],fromHour:8,toHour:19,weight:40,maxPerDay:2,note:'Sundays 08:00–19:00 Athens, before the weekly premiere.'},
 ]
-export const SEED_DOC:PromoDoc={v:1,settings:{enabled:true,delaySec:3,showSec:7,gapSec:45,maxPerSession:3,pageRules:[]},banners:[...SEED_BANNERS,...SEED_ADDED,...SEED_BOOK],audit:[]}
+/**
+ * Added 15.11.2026 (owner: "a promotional pop-up now and then, the pictures cut beautifully"): the shop's three lookbook
+ * posters for the Football. Forever. tee, as 4:5 corner cards. One family (the shop), so a visit sees at most one; at most one
+ * a day per device and four hours apart, never on the shop itself. Not an interstitial: no backdrop, nothing blocked, it leaves
+ * on its own (ADSENSE-APPROVAL §5).
+ */
+const TEE=`${SITE}/shop?q=${encodeURIComponent('Football Forever')}`
+const card=(id:string,name:string,alt:string):Banner=>({...base,id,name,href:TEE,alt,...art(id),format:'card',
+ targeting:{...every,exclude:['/shop']},weight:14,maxPerSession:1,maxPerDay:1,cooldownMin:240,showSec:10,note:'Shop lookbook card (4:5), corner pop-up.'})
+export const SEED_SHOP:Banner[]=[
+ card('shop-tee-back','Shop · Football. Forever. tee (back print)','Football. Forever. — the tee with the ground on its back. Wear it. Let them read it. Shop the tee.'),
+ card('shop-tee-black','Shop · Football. Forever. tee (black)','Football. Forever. — the black tee. One for Saturday, one for Sunday. Shop the tee.'),
+ card('shop-tee-white','Shop · Football. Forever. tee (white)','Football. Forever. — the white heavyweight tee. Matchday or Monday, same shirt. Shop the tee.'),
+]
+export const SEED_DOC:PromoDoc={v:1,settings:{enabled:true,delaySec:3,showSec:7,gapSec:45,maxPerSession:3,pageRules:[]},banners:[...SEED_BANNERS,...SEED_ADDED,...SEED_BOOK,...SEED_SHOP],audit:[]}

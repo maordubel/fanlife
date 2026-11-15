@@ -1,0 +1,1764 @@
+{
+ "schemaVersion": 1,
+ "clubId": "st-pauli",
+ "contentLocale": "en",
+ "note": "Kit archive completion (15.11.2026): every outfield kit Football Kit Archive shows for a season and type the pack had no kit for, first variant only, colours and design read by eye from its photograph (INK colour words of scripts/kits/build-pack-kit-svgs.ts). Unclear photographs are listed in skipped, not drawn.",
+ "sources": [
+  {
+   "id": "stp-fka-s-140413",
+   "title": "FC St. Pauli 1956/57 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-1956-57-away-kit-140413/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-140412",
+   "title": "FC St. Pauli 1956/57 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-1956-57-home-kit-140412/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-140415",
+   "title": "FC St. Pauli 1972/73 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-1972-73-home-kit-140415/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-140416",
+   "title": "FC St. Pauli 1974/75 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-1974-75-home-kit-140416/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-140411",
+   "title": "FC St. Pauli 1977/78 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-1977-78-home-kit-140411/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-304928",
+   "title": "FC St. Pauli 1984/85 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-1984-85-home-kit-304928/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-422064",
+   "title": "FC St. Pauli 1986/87 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-1986-87-home-kit-422064/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-422063",
+   "title": "FC St. Pauli 1987/88 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-1987-88-home-kit-422063/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-140410",
+   "title": "FC St. Pauli 1988/89 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-1988-89-home-kit-140410/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-216778",
+   "title": "FC St. Pauli 1989/90 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-1989-90-home-kit-216778/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-216780",
+   "title": "FC St. Pauli 1990/91 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-1990-91-away-kit-216780/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-8846",
+   "title": "FC St. Pauli 1990/91 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-1990-91-home-kit-8846/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-422059",
+   "title": "FC St. Pauli 1991/92 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-1991-92-away-kit-422059/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-8847",
+   "title": "FC St. Pauli 1991/92 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-1991-92-home-kit-8847/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-150789",
+   "title": "FC St. Pauli 1992/93 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-1992-93-away-kit-150789/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-422119",
+   "title": "FC St. Pauli 1993/94 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-1993-94-away-kit-422119/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-140417",
+   "title": "FC St. Pauli 1993/94 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-1993-94-home-kit-140417/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-8850",
+   "title": "FC St. Pauli 1994/95 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-1994-95-home-kit-8850/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-421499",
+   "title": "FC St. Pauli 1995/96 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-1995-96-away-kit-421499/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-8838",
+   "title": "FC St. Pauli 1995/96 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-1995-96-home-kit-8838/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-216763",
+   "title": "FC St. Pauli 1995/96 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-1995-96-third-kit-216763/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-8842",
+   "title": "FC St. Pauli 1996/97 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-1996-97-home-kit-8842/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-8853",
+   "title": "FC St. Pauli 1997/98 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-1997-98-away-kit-8853/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-216767",
+   "title": "FC St. Pauli 1997/98 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-1997-98-third-kit-216767/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-216762",
+   "title": "FC St. Pauli 1998/99 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-1998-99-away-kit-216762/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-8845",
+   "title": "FC St. Pauli 1998/99 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-1998-99-home-kit-8845/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-216768",
+   "title": "FC St. Pauli 1998/99 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-1998-99-third-kit-216768/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-8854",
+   "title": "FC St. Pauli 1999/00 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-1999-00-home-kit-8854/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-8858",
+   "title": "FC St. Pauli 2000/01 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-2000-01-away-kit-8858/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-90089",
+   "title": "FC St. Pauli 2001/02 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-2001-02-away-kit-90089/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-90088",
+   "title": "FC St. Pauli 2001/02 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-2001-02-home-kit-90088/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-8863",
+   "title": "FC St. Pauli 2003/04 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-2003-04-away-kit-8863/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-8862",
+   "title": "FC St. Pauli 2003/04 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-2003-04-home-kit-8862/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-8865",
+   "title": "FC St. Pauli 2004/05 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-2004-05-away-kit-8865/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-8864",
+   "title": "FC St. Pauli 2004/05 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-2004-05-home-kit-8864/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-8867",
+   "title": "FC St. Pauli 2005/06 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-2005-06-away-kit-8867/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-8868",
+   "title": "FC St. Pauli 2005/06 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-2005-06-third-kit-8868/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-8883",
+   "title": "FC St. Pauli 2006/07 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-2006-07-away-kit-8883/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-8869",
+   "title": "FC St. Pauli 2006/07 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-2006-07-home-kit-8869/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-8843",
+   "title": "FC St. Pauli 2008/09 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-2008-09-away-kit-8843/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-8840",
+   "title": "FC St. Pauli 2008/09 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-2008-09-home-kit-8840/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-8834",
+   "title": "FC St. Pauli 2009/10 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-2009-10-away-kit-8834/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-8833",
+   "title": "FC St. Pauli 2009/10 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-2009-10-home-kit-8833/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-8835",
+   "title": "FC St. Pauli 2009/10 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-2009-10-third-kit-8835/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-8878",
+   "title": "FC St. Pauli 2012/13 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-2012-13-away-kit-8878/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-8877",
+   "title": "FC St. Pauli 2012/13 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-2012-13-home-kit-8877/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-216782",
+   "title": "FC St. Pauli 2012/13 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-2012-13-third-kit-216782/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-8828",
+   "title": "FC St. Pauli 2013/14 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-2013-14-away-kit-8828/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-8827",
+   "title": "FC St. Pauli 2013/14 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-2013-14-home-kit-8827/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-8829",
+   "title": "FC St. Pauli 2013/14 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-2013-14-third-kit-8829/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-488458",
+   "title": "FC St. Pauli 2026/27 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-2026-27-away-kit-488458/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-484428",
+   "title": "FC St. Pauli 2026/27 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-2026-27-home-kit-484428/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "stp-fka-s-488244",
+   "title": "FC St. Pauli 2026/27 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/fc-st-pauli-2026-27-third-kit-488244/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  }
+ ],
+ "kits": [
+  {
+   "id": "stp-fka-140413",
+   "value": {
+    "name": "FC St. Pauli 1956/57 away",
+    "season": "1956/57",
+    "type": "away",
+    "construction": {
+     "colors": "white/brown",
+     "design": "contrasting sleeves"
+    }
+   },
+   "sources": [
+    "stp-fka-s-140413"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-140412",
+   "value": {
+    "name": "FC St. Pauli 1956/57 home",
+    "season": "1956/57",
+    "type": "home",
+    "construction": {
+     "colors": "brown/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "stp-fka-s-140412"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-140415",
+   "value": {
+    "name": "FC St. Pauli 1972/73 home",
+    "season": "1972/73",
+    "type": "home",
+    "construction": {
+     "colors": "cream/brown",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "stp-fka-s-140415"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (single brown-and-red vertical stripe, not drawn). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-140416",
+   "value": {
+    "name": "FC St. Pauli 1974/75 home",
+    "season": "1974/75",
+    "type": "home",
+    "construction": {
+     "colors": "white/brown",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "stp-fka-s-140416"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-140411",
+   "value": {
+    "name": "FC St. Pauli 1977/78 home",
+    "season": "1977/78",
+    "type": "home",
+    "sponsor": "Minolta",
+    "construction": {
+     "colors": "white/black",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "stp-fka-s-140411"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-304928",
+   "value": {
+    "name": "FC St. Pauli 1984/85 home",
+    "season": "1984/85",
+    "type": "home",
+    "manufacturer": "Puma",
+    "sponsor": "Deutscher Ring",
+    "construction": {
+     "colors": "brown/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "stp-fka-s-304928"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-422064",
+   "value": {
+    "name": "FC St. Pauli 1986/87 home",
+    "season": "1986/87",
+    "type": "home",
+    "sponsor": "Deutscher Ring",
+    "construction": {
+     "colors": "white/brown",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "stp-fka-s-422064"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-422063",
+   "value": {
+    "name": "FC St. Pauli 1987/88 home",
+    "season": "1987/88",
+    "type": "home",
+    "manufacturer": "Puma",
+    "sponsor": "Deutscher Ring",
+    "construction": {
+     "colors": "white/brown",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "stp-fka-s-422063"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-140410",
+   "value": {
+    "name": "FC St. Pauli 1988/89 home",
+    "season": "1988/89",
+    "type": "home",
+    "sponsor": "Deutscher Ring",
+    "construction": {
+     "colors": "white/brown",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "stp-fka-s-140410"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-216778",
+   "value": {
+    "name": "FC St. Pauli 1989/90 home",
+    "season": "1989/90",
+    "type": "home",
+    "sponsor": "Deutscher Ring",
+    "construction": {
+     "colors": "white/brown",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "stp-fka-s-216778"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-216780",
+   "value": {
+    "name": "FC St. Pauli 1990/91 away",
+    "season": "1990/91",
+    "type": "away",
+    "sponsor": "Deutscher Ring",
+    "construction": {
+     "colors": "purple/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "stp-fka-s-216780"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-8846",
+   "value": {
+    "name": "FC St. Pauli 1990/91 home",
+    "season": "1990/91",
+    "type": "home",
+    "sponsor": "Deutscher Ring",
+    "construction": {
+     "colors": "white/brown",
+     "design": "sash"
+    }
+   },
+   "sources": [
+    "stp-fka-s-8846"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-422059",
+   "value": {
+    "name": "FC St. Pauli 1991/92 away",
+    "season": "1991/92",
+    "type": "away",
+    "sponsor": "Deutscher Ring",
+    "construction": {
+     "colors": "blue/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "stp-fka-s-422059"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-8847",
+   "value": {
+    "name": "FC St. Pauli 1991/92 home",
+    "season": "1991/92",
+    "type": "home",
+    "sponsor": "Deutscher Ring",
+    "construction": {
+     "colors": "brown/white",
+     "design": "half-and-half"
+    }
+   },
+   "sources": [
+    "stp-fka-s-8847"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-150789",
+   "value": {
+    "name": "FC St. Pauli 1992/93 away",
+    "season": "1992/93",
+    "type": "away",
+    "sponsor": "Deutscher Ring",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "stp-fka-s-150789"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-422119",
+   "value": {
+    "name": "FC St. Pauli 1993/94 away",
+    "season": "1993/94",
+    "type": "away",
+    "sponsor": "Deutscher Ring",
+    "construction": {
+     "colors": "white/brown",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "stp-fka-s-422119"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-140417",
+   "value": {
+    "name": "FC St. Pauli 1993/94 home",
+    "season": "1993/94",
+    "type": "home",
+    "sponsor": "Deutscher Ring",
+    "construction": {
+     "colors": "brown/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "stp-fka-s-140417"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; white diagonal lower panel, not drawn). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-8850",
+   "value": {
+    "name": "FC St. Pauli 1994/95 home",
+    "season": "1994/95",
+    "type": "home",
+    "sponsor": "Deutscher Ring",
+    "construction": {
+     "colors": "brown/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "stp-fka-s-8850"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-421499",
+   "value": {
+    "name": "FC St. Pauli 1995/96 away",
+    "season": "1995/96",
+    "type": "away",
+    "sponsor": "Böklunder",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "stp-fka-s-421499"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-8838",
+   "value": {
+    "name": "FC St. Pauli 1995/96 home",
+    "season": "1995/96",
+    "type": "home",
+    "sponsor": "Böklunder",
+    "construction": {
+     "colors": "brown/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "stp-fka-s-8838"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-216763",
+   "value": {
+    "name": "FC St. Pauli 1995/96 third",
+    "season": "1995/96",
+    "type": "third",
+    "sponsor": "Böklunder",
+    "construction": {
+     "colors": "red/blue",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "stp-fka-s-216763"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-8842",
+   "value": {
+    "name": "FC St. Pauli 1996/97 home",
+    "season": "1996/97",
+    "type": "home",
+    "sponsor": "Böklunder",
+    "construction": {
+     "colors": "white/brown",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "stp-fka-s-8842"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-8853",
+   "value": {
+    "name": "FC St. Pauli 1997/98 away",
+    "season": "1997/98",
+    "type": "away",
+    "manufacturer": "Puma",
+    "sponsor": "Jack Daniel's",
+    "construction": {
+     "colors": "navy/yellow",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "stp-fka-s-8853"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-216767",
+   "value": {
+    "name": "FC St. Pauli 1997/98 third",
+    "season": "1997/98",
+    "type": "third",
+    "sponsor": "Jack Daniel's",
+    "construction": {
+     "colors": "red/white",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "stp-fka-s-216767"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-216762",
+   "value": {
+    "name": "FC St. Pauli 1998/99 away",
+    "season": "1998/99",
+    "type": "away",
+    "sponsor": "Jack Daniel's",
+    "construction": {
+     "colors": "navy/yellow",
+     "design": "chest band"
+    }
+   },
+   "sources": [
+    "stp-fka-s-216762"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-8845",
+   "value": {
+    "name": "FC St. Pauli 1998/99 home",
+    "season": "1998/99",
+    "type": "home",
+    "manufacturer": "Puma",
+    "sponsor": "Jack Daniel's",
+    "construction": {
+     "colors": "white/brown",
+     "design": "chest band"
+    }
+   },
+   "sources": [
+    "stp-fka-s-8845"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-216768",
+   "value": {
+    "name": "FC St. Pauli 1998/99 third",
+    "season": "1998/99",
+    "type": "third",
+    "sponsor": "Jack Daniel's",
+    "construction": {
+     "colors": "red/white",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "stp-fka-s-216768"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-8854",
+   "value": {
+    "name": "FC St. Pauli 1999/00 home",
+    "season": "1999/00",
+    "type": "home",
+    "manufacturer": "Puma",
+    "sponsor": "Jack Daniel's",
+    "construction": {
+     "colors": "white/brown",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "stp-fka-s-8854"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-8858",
+   "value": {
+    "name": "FC St. Pauli 2000/01 away",
+    "season": "2000/01",
+    "type": "away",
+    "manufacturer": "Kappa",
+    "construction": {
+     "colors": "black/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "stp-fka-s-8858"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-90089",
+   "value": {
+    "name": "FC St. Pauli 2001/02 away",
+    "season": "2001/02",
+    "type": "away",
+    "manufacturer": "Kappa",
+    "sponsor": "securvita",
+    "construction": {
+     "colors": "black/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "stp-fka-s-90089"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-90088",
+   "value": {
+    "name": "FC St. Pauli 2001/02 home",
+    "season": "2001/02",
+    "type": "home",
+    "manufacturer": "Kappa",
+    "sponsor": "securvita",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "stp-fka-s-90088"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-8863",
+   "value": {
+    "name": "FC St. Pauli 2003/04 away",
+    "season": "2003/04",
+    "type": "away",
+    "sponsor": "mobilcom",
+    "construction": {
+     "colors": "black/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "stp-fka-s-8863"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-8862",
+   "value": {
+    "name": "FC St. Pauli 2003/04 home",
+    "season": "2003/04",
+    "type": "home",
+    "sponsor": "mobilcom",
+    "construction": {
+     "colors": "white/brown",
+     "design": "contrasting sleeves"
+    }
+   },
+   "sources": [
+    "stp-fka-s-8862"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-8865",
+   "value": {
+    "name": "FC St. Pauli 2004/05 away",
+    "season": "2004/05",
+    "type": "away",
+    "sponsor": "mobilcom",
+    "construction": {
+     "colors": "white/brown",
+     "design": "sash"
+    }
+   },
+   "sources": [
+    "stp-fka-s-8865"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-8864",
+   "value": {
+    "name": "FC St. Pauli 2004/05 home",
+    "season": "2004/05",
+    "type": "home",
+    "sponsor": "mobilcom",
+    "construction": {
+     "colors": "brown/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "stp-fka-s-8864"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; split diagonally brown over white, not drawn). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-8867",
+   "value": {
+    "name": "FC St. Pauli 2005/06 away",
+    "season": "2005/06",
+    "type": "away",
+    "sponsor": "mobilcom",
+    "construction": {
+     "colors": "brown/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "stp-fka-s-8867"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-8868",
+   "value": {
+    "name": "FC St. Pauli 2005/06 third",
+    "season": "2005/06",
+    "type": "third",
+    "sponsor": "mobilcom",
+    "construction": {
+     "colors": "white/brown",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "stp-fka-s-8868"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-8883",
+   "value": {
+    "name": "FC St. Pauli 2006/07 away",
+    "season": "2006/07",
+    "type": "away",
+    "sponsor": "congster",
+    "construction": {
+     "colors": "white/brown",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "stp-fka-s-8883"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-8869",
+   "value": {
+    "name": "FC St. Pauli 2006/07 home",
+    "season": "2006/07",
+    "type": "home",
+    "sponsor": "congster",
+    "construction": {
+     "colors": "black/grey",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "stp-fka-s-8869"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-8843",
+   "value": {
+    "name": "FC St. Pauli 2008/09 away",
+    "season": "2008/09",
+    "type": "away",
+    "sponsor": "congstar",
+    "construction": {
+     "colors": "white/grey",
+     "design": "contrasting sleeves"
+    }
+   },
+   "sources": [
+    "stp-fka-s-8843"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-8840",
+   "value": {
+    "name": "FC St. Pauli 2008/09 home",
+    "season": "2008/09",
+    "type": "home",
+    "sponsor": "congstar",
+    "construction": {
+     "colors": "brown/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "stp-fka-s-8840"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-8834",
+   "value": {
+    "name": "FC St. Pauli 2009/10 away",
+    "season": "2009/10",
+    "type": "away",
+    "sponsor": "Dacia",
+    "construction": {
+     "colors": "white/red",
+     "design": "chest band"
+    }
+   },
+   "sources": [
+    "stp-fka-s-8834"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-8833",
+   "value": {
+    "name": "FC St. Pauli 2009/10 home",
+    "season": "2009/10",
+    "type": "home",
+    "sponsor": "Dacia",
+    "construction": {
+     "colors": "brown/white",
+     "design": "chest band"
+    }
+   },
+   "sources": [
+    "stp-fka-s-8833"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-8835",
+   "value": {
+    "name": "FC St. Pauli 2009/10 third",
+    "season": "2009/10",
+    "type": "third",
+    "sponsor": "Dacia",
+    "construction": {
+     "colors": "red/brown",
+     "design": "chest band"
+    }
+   },
+   "sources": [
+    "stp-fka-s-8835"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-8878",
+   "value": {
+    "name": "FC St. Pauli 2012/13 away",
+    "season": "2012/13",
+    "type": "away",
+    "sponsor": "Fernsehlotterie",
+    "construction": {
+     "colors": "white/brown",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "stp-fka-s-8878"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-8877",
+   "value": {
+    "name": "FC St. Pauli 2012/13 home",
+    "season": "2012/13",
+    "type": "home",
+    "sponsor": "Fernsehlotterie",
+    "construction": {
+     "colors": "brown/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "stp-fka-s-8877"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-216782",
+   "value": {
+    "name": "FC St. Pauli 2012/13 third",
+    "season": "2012/13",
+    "type": "third",
+    "sponsor": "Fernsehlotterie",
+    "construction": {
+     "colors": "beige/brown",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "stp-fka-s-216782"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; camouflage print). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-8828",
+   "value": {
+    "name": "FC St. Pauli 2013/14 away",
+    "season": "2013/14",
+    "type": "away",
+    "construction": {
+     "colors": "white/red",
+     "design": "sash"
+    }
+   },
+   "sources": [
+    "stp-fka-s-8828"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-8827",
+   "value": {
+    "name": "FC St. Pauli 2013/14 home",
+    "season": "2013/14",
+    "type": "home",
+    "construction": {
+     "colors": "brown/red",
+     "design": "sash"
+    }
+   },
+   "sources": [
+    "stp-fka-s-8827"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-8829",
+   "value": {
+    "name": "FC St. Pauli 2013/14 third",
+    "season": "2013/14",
+    "type": "third",
+    "sponsor": "Kiezhelden",
+    "construction": {
+     "colors": "black/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "stp-fka-s-8829"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-488458",
+   "value": {
+    "name": "FC St. Pauli 2026/27 away",
+    "season": "2026/27",
+    "type": "away",
+    "manufacturer": "Puma",
+    "sponsor": "congstar",
+    "construction": {
+     "colors": "white/brown",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "stp-fka-s-488458"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-484428",
+   "value": {
+    "name": "FC St. Pauli 2026/27 home",
+    "season": "2026/27",
+    "type": "home",
+    "manufacturer": "Puma",
+    "sponsor": "congstar",
+    "construction": {
+     "colors": "brown/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "stp-fka-s-484428"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "stp-fka-488244",
+   "value": {
+    "name": "FC St. Pauli 2026/27 third",
+    "season": "2026/27",
+    "type": "third",
+    "manufacturer": "Puma",
+    "sponsor": "congstar",
+    "construction": {
+     "colors": "white/light green",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "stp-fka-s-488244"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  }
+ ],
+ "skipped": []
+}

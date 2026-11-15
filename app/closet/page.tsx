@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { AdoptShirts } from '@/components/fanlife/AdoptShirts'
 import { FanPage } from '@/components/fanlife/FanPage'
 import { ClosetScreen } from '@/components/fanlife/closet/ClosetScreen'
+import { ClosetPrint } from '@/components/shop/ClosetPrint'
 import { fanShirtMap } from '@/lib/fanlife/catalog'
 import { t } from '@/lib/fanlife/i18n'
 
@@ -16,6 +17,7 @@ export default async function ClosetPage() {
     <FanPage active="closet" mast="full" title={t('collector.closet.title')} sub={t('collector.closet.lede')}>
       <AdoptShirts shirts={shirts} />
       <ClosetScreen shirts={shirts} archive={Object.values(shirts)} />
+      <ClosetPrint />
     </FanPage>
   )
 }

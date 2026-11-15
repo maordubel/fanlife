@@ -1,0 +1,1829 @@
+{
+ "schemaVersion": 1,
+ "clubId": "hapoel-tel-aviv",
+ "contentLocale": "en",
+ "note": "Kit archive completion (15.11.2026): every outfield kit Football Kit Archive shows for a season and type the pack had no kit for, first variant only, colours and design read by eye from its photograph (INK colour words of scripts/kits/build-pack-kit-svgs.ts). Unclear photographs are listed in skipped, not drawn.",
+ "sources": [
+  {
+   "id": "hta-fka-s-90673",
+   "title": "Hapoel Tel Aviv 1949/50 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-1949-50-home-kit-90673/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-90672",
+   "title": "Hapoel Tel Aviv 1951/52 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-1951-52-home-kit-90672/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-90671",
+   "title": "Hapoel Tel Aviv 1952/53 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-1952-53-home-kit-90671/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-90670",
+   "title": "Hapoel Tel Aviv 1957/58 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-1957-58-home-kit-90670/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-90669",
+   "title": "Hapoel Tel Aviv 1958/59 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-1958-59-home-kit-90669/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-90668",
+   "title": "Hapoel Tel Aviv 1959/60 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-1959-60-home-kit-90668/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-90667",
+   "title": "Hapoel Tel Aviv 1962/63 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-1962-63-home-kit-90667/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-90666",
+   "title": "Hapoel Tel Aviv 1965/66 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-1965-66-home-kit-90666/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-90665",
+   "title": "Hapoel Tel Aviv 1974/75 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-1974-75-home-kit-90665/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-90664",
+   "title": "Hapoel Tel Aviv 1975/76 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-1975-76-home-kit-90664/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-70783",
+   "title": "Hapoel Tel Aviv 1980/81 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-1980-81-home-kit-70783/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-24631",
+   "title": "Hapoel Tel Aviv 1982/83 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-1982-83-home-kit-24631/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-24629",
+   "title": "Hapoel Tel Aviv 1984/85 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-1984-85-away-kit-24629/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-24628",
+   "title": "Hapoel Tel Aviv 1986/87 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-1986-87-home-kit-24628/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-125037",
+   "title": "Hapoel Tel Aviv 1988/89 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-1988-89-away-kit-125037/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-70781",
+   "title": "Hapoel Tel Aviv 1989/90 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-1989-90-away-kit-70781/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-70782",
+   "title": "Hapoel Tel Aviv 1989/90 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-1989-90-home-kit-70782/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-99785",
+   "title": "Hapoel Tel Aviv 1991/92 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-1991-92-away-kit-99785/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-70780",
+   "title": "Hapoel Tel Aviv 1991/92 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-1991-92-home-kit-70780/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-24625",
+   "title": "Hapoel Tel Aviv 1994/95 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-1994-95-home-kit-24625/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-24623",
+   "title": "Hapoel Tel Aviv 1995/96 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-1995-96-away-kit-24623/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-24624",
+   "title": "Hapoel Tel Aviv 1995/96 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-1995-96-home-kit-24624/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-231946",
+   "title": "Hapoel Tel Aviv 1996/97 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-1996-97-home-kit-231946/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-231947",
+   "title": "Hapoel Tel Aviv 1996/97 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-1996-97-third-kit-231947/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-24620",
+   "title": "Hapoel Tel Aviv 1997/98 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-1997-98-away-kit-24620/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-24619",
+   "title": "Hapoel Tel Aviv 1998/99 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-1998-99-home-kit-24619/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-24615",
+   "title": "Hapoel Tel Aviv 2000/01 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-2000-01-away-kit-24615/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-24616",
+   "title": "Hapoel Tel Aviv 2000/01 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-2000-01-home-kit-24616/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-231945",
+   "title": "Hapoel Tel Aviv 2001/02 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-2001-02-home-kit-231945/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-24613",
+   "title": "Hapoel Tel Aviv 2004/05 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-2004-05-home-kit-24613/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-24611",
+   "title": "Hapoel Tel Aviv 2005/06 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-2005-06-away-kit-24611/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-24610",
+   "title": "Hapoel Tel Aviv 2005/06 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-2005-06-third-kit-24610/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-24606",
+   "title": "Hapoel Tel Aviv 2007/08 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-2007-08-away-kit-24606/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-24607",
+   "title": "Hapoel Tel Aviv 2007/08 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-2007-08-home-kit-24607/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-24603",
+   "title": "Hapoel Tel Aviv 2009/10 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-2009-10-away-kit-24603/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-24602",
+   "title": "Hapoel Tel Aviv 2009/10 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-2009-10-third-kit-24602/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-20113",
+   "title": "Hapoel Tel Aviv 2010/11 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-2010-11-away-kit-20113/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-20115",
+   "title": "Hapoel Tel Aviv 2010/11 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-2010-11-home-kit-20115/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-20114",
+   "title": "Hapoel Tel Aviv 2010/11 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-2010-11-third-kit-20114/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-20116",
+   "title": "Hapoel Tel Aviv 2011/12 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-2011-12-third-kit-20116/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-90663",
+   "title": "Hapoel Tel Aviv 2013/14 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-2013-14-home-kit-90663/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-20121",
+   "title": "Hapoel Tel Aviv 2014/15 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-2014-15-third-kit-20121/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-70326",
+   "title": "Hapoel Tel Aviv 2015/16 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-2015-16-away-kit-70326/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-273661",
+   "title": "Hapoel Tel Aviv 2015/16 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-2015-16-third-kit-273661/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-397201",
+   "title": "Hapoel Tel Aviv 2017/18 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-2017-18-away-kit-397201/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-90662",
+   "title": "Hapoel Tel Aviv 2017/18 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-2017-18-home-kit-90662/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-397200",
+   "title": "Hapoel Tel Aviv 2017/18 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-2017-18-third-kit-397200/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-20132",
+   "title": "Hapoel Tel Aviv 2019/20 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-2019-20-away-kit-20132/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-20130",
+   "title": "Hapoel Tel Aviv 2019/20 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-2019-20-third-kit-20130/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-274750",
+   "title": "Hapoel Tel Aviv 2024/25 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-2024-25-away-kit-274750/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-274751",
+   "title": "Hapoel Tel Aviv 2024/25 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-2024-25-home-kit-274751/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-274749",
+   "title": "Hapoel Tel Aviv 2024/25 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-2024-25-third-kit-274749/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-496704",
+   "title": "Hapoel Tel Aviv 2026/27 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-2026-27-away-kit-496704/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-496705",
+   "title": "Hapoel Tel Aviv 2026/27 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-2026-27-home-kit-496705/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "hta-fka-s-537535",
+   "title": "Hapoel Tel Aviv 2026/27 third kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/hapoel-tel-aviv-2026-27-third-kit-537535/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  }
+ ],
+ "kits": [
+  {
+   "id": "hta-fka-90673",
+   "value": {
+    "name": "Hapoel Tel Aviv 1949/50 home",
+    "season": "1949/50",
+    "type": "home",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-90673"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (illustration). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-90672",
+   "value": {
+    "name": "Hapoel Tel Aviv 1951/52 home",
+    "season": "1951/52",
+    "type": "home",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-90672"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (illustration). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-90671",
+   "value": {
+    "name": "Hapoel Tel Aviv 1952/53 home",
+    "season": "1952/53",
+    "type": "home",
+    "construction": {
+     "colors": "red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-90671"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (illustration). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-90670",
+   "value": {
+    "name": "Hapoel Tel Aviv 1957/58 home",
+    "season": "1957/58",
+    "type": "home",
+    "construction": {
+     "colors": "red/white",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "hta-fka-s-90670"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (illustration). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-90669",
+   "value": {
+    "name": "Hapoel Tel Aviv 1958/59 home",
+    "season": "1958/59",
+    "type": "home",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-90669"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (illustration). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-90668",
+   "value": {
+    "name": "Hapoel Tel Aviv 1959/60 home",
+    "season": "1959/60",
+    "type": "home",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-90668"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (illustration). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-90667",
+   "value": {
+    "name": "Hapoel Tel Aviv 1962/63 home",
+    "season": "1962/63",
+    "type": "home",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-90667"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (illustration). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-90666",
+   "value": {
+    "name": "Hapoel Tel Aviv 1965/66 home",
+    "season": "1965/66",
+    "type": "home",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-90666"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (illustration). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-90665",
+   "value": {
+    "name": "Hapoel Tel Aviv 1974/75 home",
+    "season": "1974/75",
+    "type": "home",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-90665"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (illustration; twin red stripes down the centre). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-90664",
+   "value": {
+    "name": "Hapoel Tel Aviv 1975/76 home",
+    "season": "1975/76",
+    "type": "home",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-90664"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (illustration; twin red stripes down the centre). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-70783",
+   "value": {
+    "name": "Hapoel Tel Aviv 1980/81 home",
+    "season": "1980/81",
+    "type": "home",
+    "sponsor": "אתא",
+    "construction": {
+     "colors": "red/white",
+     "design": "contrasting sleeves"
+    }
+   },
+   "sources": [
+    "hta-fka-s-70783"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-24631",
+   "value": {
+    "name": "Hapoel Tel Aviv 1982/83 home",
+    "season": "1982/83",
+    "type": "home",
+    "sponsor": "VISA",
+    "construction": {
+     "colors": "red/black",
+     "design": "contrasting sleeves"
+    }
+   },
+   "sources": [
+    "hta-fka-s-24631"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-24629",
+   "value": {
+    "name": "Hapoel Tel Aviv 1984/85 away",
+    "season": "1984/85",
+    "type": "away",
+    "sponsor": "VISA",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-24629"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-24628",
+   "value": {
+    "name": "Hapoel Tel Aviv 1986/87 home",
+    "season": "1986/87",
+    "type": "home",
+    "sponsor": "VISA",
+    "construction": {
+     "colors": "red/white",
+     "design": "pinstripes"
+    }
+   },
+   "sources": [
+    "hta-fka-s-24628"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-125037",
+   "value": {
+    "name": "Hapoel Tel Aviv 1988/89 away",
+    "season": "1988/89",
+    "type": "away",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-125037"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-70781",
+   "value": {
+    "name": "Hapoel Tel Aviv 1989/90 away",
+    "season": "1989/90",
+    "type": "away",
+    "manufacturer": "Diadora",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-70781"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-70782",
+   "value": {
+    "name": "Hapoel Tel Aviv 1989/90 home",
+    "season": "1989/90",
+    "type": "home",
+    "manufacturer": "Diadora",
+    "construction": {
+     "colors": "red/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "hta-fka-s-70782"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-99785",
+   "value": {
+    "name": "Hapoel Tel Aviv 1991/92 away",
+    "season": "1991/92",
+    "type": "away",
+    "sponsor": "הסנה",
+    "construction": {
+     "colors": "white/grey",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "hta-fka-s-99785"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-70780",
+   "value": {
+    "name": "Hapoel Tel Aviv 1991/92 home",
+    "season": "1991/92",
+    "type": "home",
+    "sponsor": "צור שמיר",
+    "construction": {
+     "colors": "red",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "hta-fka-s-70780"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; tonal red pattern). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-24625",
+   "value": {
+    "name": "Hapoel Tel Aviv 1994/95 home",
+    "season": "1994/95",
+    "type": "home",
+    "sponsor": "שיכון עובדים",
+    "construction": {
+     "colors": "red/white",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "hta-fka-s-24625"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-24623",
+   "value": {
+    "name": "Hapoel Tel Aviv 1995/96 away",
+    "season": "1995/96",
+    "type": "away",
+    "construction": {
+     "colors": "white/red/black",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "hta-fka-s-24623"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-24624",
+   "value": {
+    "name": "Hapoel Tel Aviv 1995/96 home",
+    "season": "1995/96",
+    "type": "home",
+    "sponsor": "שיכון עובדים",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-24624"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-231946",
+   "value": {
+    "name": "Hapoel Tel Aviv 1996/97 home",
+    "season": "1996/97",
+    "type": "home",
+    "sponsor": "שיכון עובדים",
+    "construction": {
+     "colors": "red/blue",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "hta-fka-s-231946"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-231947",
+   "value": {
+    "name": "Hapoel Tel Aviv 1996/97 third",
+    "season": "1996/97",
+    "type": "third",
+    "sponsor": "שיכון עובדים",
+    "construction": {
+     "colors": "blue/red",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "hta-fka-s-231947"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-24620",
+   "value": {
+    "name": "Hapoel Tel Aviv 1997/98 away",
+    "season": "1997/98",
+    "type": "away",
+    "manufacturer": "Nike",
+    "sponsor": "Keter",
+    "construction": {
+     "colors": "white/red",
+     "design": "contrasting sleeves"
+    }
+   },
+   "sources": [
+    "hta-fka-s-24620"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-24619",
+   "value": {
+    "name": "Hapoel Tel Aviv 1998/99 home",
+    "season": "1998/99",
+    "type": "home",
+    "manufacturer": "Nike",
+    "sponsor": "Keter",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-24619"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-24615",
+   "value": {
+    "name": "Hapoel Tel Aviv 2000/01 away",
+    "season": "2000/01",
+    "type": "away",
+    "sponsor": "Keter",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-24615"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-24616",
+   "value": {
+    "name": "Hapoel Tel Aviv 2000/01 home",
+    "season": "2000/01",
+    "type": "home",
+    "sponsor": "Keter",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-24616"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-231945",
+   "value": {
+    "name": "Hapoel Tel Aviv 2001/02 home",
+    "season": "2001/02",
+    "type": "home",
+    "sponsor": "Keter",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-231945"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-24613",
+   "value": {
+    "name": "Hapoel Tel Aviv 2004/05 home",
+    "season": "2004/05",
+    "type": "home",
+    "manufacturer": "Kappa",
+    "sponsor": "Keter",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-24613"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-24611",
+   "value": {
+    "name": "Hapoel Tel Aviv 2005/06 away",
+    "season": "2005/06",
+    "type": "away",
+    "manufacturer": "Kappa",
+    "sponsor": "Subaru",
+    "construction": {
+     "colors": "black/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-24611"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-24610",
+   "value": {
+    "name": "Hapoel Tel Aviv 2005/06 third",
+    "season": "2005/06",
+    "type": "third",
+    "sponsor": "Subaru",
+    "construction": {
+     "colors": "grey/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-24610"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-24606",
+   "value": {
+    "name": "Hapoel Tel Aviv 2007/08 away",
+    "season": "2007/08",
+    "type": "away",
+    "sponsor": "אפריקה ישראל",
+    "construction": {
+     "colors": "white/black",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-24606"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-24607",
+   "value": {
+    "name": "Hapoel Tel Aviv 2007/08 home",
+    "season": "2007/08",
+    "type": "home",
+    "sponsor": "אפריקה ישראל",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-24607"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-24603",
+   "value": {
+    "name": "Hapoel Tel Aviv 2009/10 away",
+    "season": "2009/10",
+    "type": "away",
+    "sponsor": "Subaru",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-24603"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-24602",
+   "value": {
+    "name": "Hapoel Tel Aviv 2009/10 third",
+    "season": "2009/10",
+    "type": "third",
+    "sponsor": "Subaru",
+    "construction": {
+     "colors": "black/grey",
+     "design": "gradient"
+    }
+   },
+   "sources": [
+    "hta-fka-s-24602"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-20113",
+   "value": {
+    "name": "Hapoel Tel Aviv 2010/11 away",
+    "season": "2010/11",
+    "type": "away",
+    "manufacturer": "Umbro",
+    "sponsor": "Keter",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-20113"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-20115",
+   "value": {
+    "name": "Hapoel Tel Aviv 2010/11 home",
+    "season": "2010/11",
+    "type": "home",
+    "manufacturer": "Umbro",
+    "sponsor": "Keter",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-20115"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-20114",
+   "value": {
+    "name": "Hapoel Tel Aviv 2010/11 third",
+    "season": "2010/11",
+    "type": "third",
+    "manufacturer": "Umbro",
+    "construction": {
+     "colors": "navy/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-20114"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-20116",
+   "value": {
+    "name": "Hapoel Tel Aviv 2011/12 third",
+    "season": "2011/12",
+    "type": "third",
+    "construction": {
+     "colors": "black/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-20116"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026. No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-90663",
+   "value": {
+    "name": "Hapoel Tel Aviv 2013/14 home",
+    "season": "2013/14",
+    "type": "home",
+    "sponsor": "Fujicom",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-90663"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; match photograph, shirt close to camera). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-20121",
+   "value": {
+    "name": "Hapoel Tel Aviv 2014/15 third",
+    "season": "2014/15",
+    "type": "third",
+    "manufacturer": "Umbro",
+    "sponsor": "Fujicom",
+    "construction": {
+     "colors": "black/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-20121"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-70326",
+   "value": {
+    "name": "Hapoel Tel Aviv 2015/16 away",
+    "season": "2015/16",
+    "type": "away",
+    "sponsor": "Fujitsu",
+    "construction": {
+     "colors": "white/red",
+     "design": "sash"
+    }
+   },
+   "sources": [
+    "hta-fka-s-70326"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-273661",
+   "value": {
+    "name": "Hapoel Tel Aviv 2015/16 third",
+    "season": "2015/16",
+    "type": "third",
+    "manufacturer": "Puma",
+    "sponsor": "Fujitsu",
+    "construction": {
+     "colors": "grey/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-273661"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-397201",
+   "value": {
+    "name": "Hapoel Tel Aviv 2017/18 away",
+    "season": "2017/18",
+    "type": "away",
+    "manufacturer": "Macron",
+    "sponsor": "Arkia",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-397201"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-90662",
+   "value": {
+    "name": "Hapoel Tel Aviv 2017/18 home",
+    "season": "2017/18",
+    "type": "home",
+    "manufacturer": "Macron",
+    "sponsor": "Arkia",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-90662"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-397200",
+   "value": {
+    "name": "Hapoel Tel Aviv 2017/18 third",
+    "season": "2017/18",
+    "type": "third",
+    "manufacturer": "Macron",
+    "sponsor": "Arkia",
+    "construction": {
+     "colors": "black/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-397200"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-20132",
+   "value": {
+    "name": "Hapoel Tel Aviv 2019/20 away",
+    "season": "2019/20",
+    "type": "away",
+    "manufacturer": "Macron",
+    "sponsor": "Arkia",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-20132"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-20130",
+   "value": {
+    "name": "Hapoel Tel Aviv 2019/20 third",
+    "season": "2019/20",
+    "type": "third",
+    "sponsor": "Arkia",
+    "construction": {
+     "colors": "black/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-20130"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; match photograph). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-274750",
+   "value": {
+    "name": "Hapoel Tel Aviv 2024/25 away",
+    "season": "2024/25",
+    "type": "away",
+    "manufacturer": "Nike",
+    "sponsor": "IBI",
+    "construction": {
+     "colors": "white/grey",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "hta-fka-s-274750"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-274751",
+   "value": {
+    "name": "Hapoel Tel Aviv 2024/25 home",
+    "season": "2024/25",
+    "type": "home",
+    "manufacturer": "Nike",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-274751"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-274749",
+   "value": {
+    "name": "Hapoel Tel Aviv 2024/25 third",
+    "season": "2024/25",
+    "type": "third",
+    "manufacturer": "Nike",
+    "construction": {
+     "colors": "black/grey",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "hta-fka-s-274749"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-496704",
+   "value": {
+    "name": "Hapoel Tel Aviv 2026/27 away",
+    "season": "2026/27",
+    "type": "away",
+    "manufacturer": "Nike",
+    "sponsor": "IBI",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-496704"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-496705",
+   "value": {
+    "name": "Hapoel Tel Aviv 2026/27 home",
+    "season": "2026/27",
+    "type": "home",
+    "manufacturer": "Nike",
+    "sponsor": "IBI",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-496705"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "hta-fka-537535",
+   "value": {
+    "name": "Hapoel Tel Aviv 2026/27 third",
+    "season": "2026/27",
+    "type": "third",
+    "manufacturer": "Nike",
+    "sponsor": "IBI",
+    "construction": {
+     "colors": "navy/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "hta-fka-s-537535"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  }
+ ],
+ "skipped": []
+}

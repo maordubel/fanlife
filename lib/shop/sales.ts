@@ -6,6 +6,7 @@
  * Pure functions only; the server work is lib/shop/saleRun.ts.
  */
 import {shelfOf,designKey,type ShopProduct,type Shelf} from './types'
+import {INSERT_CENTS} from './plan'
 
 export const SALE_SCOPES=['all','club','shelf','design'] as const
 export type SaleScope={type:(typeof SALE_SCOPES)[number];value?:string}
@@ -41,7 +42,7 @@ export function saleFor(p:Pick<ShopProduct,'subject'|'kind'|'blueprint'|'art'|'s
 }
 /** a variant's sale price (cents): the cut, rounded to .99, never under cost + floor */
 export function salePrice(regular:number,cost:number,percent:number){
- const cut=Math.ceil(regular*(1-percent/100)/100)*100-1,floor=Math.ceil(cost*(1+FLOOR_SHARE))
+ const cut=Math.ceil(regular*(1-percent/100)/100)*100-1,floor=Math.ceil(cost*(1+FLOOR_SHARE))+INSERT_CENTS
  return Math.min(regular,Math.max(cut,floor))
 }
 /** "2 days 4 hours" / "5 hours" / "less than an hour" — how long a sale still runs */

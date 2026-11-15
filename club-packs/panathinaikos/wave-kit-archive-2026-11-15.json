@@ -1,0 +1,79 @@
+{
+ "schemaVersion": 1,
+ "clubId": "panathinaikos",
+ "contentLocale": "en",
+ "note": "Kit archive completion (15.11.2026): every outfield kit Football Kit Archive shows for a season and type the pack had no kit for, first variant only, colours and design read by eye from its photograph (INK colour words of scripts/kits/build-pack-kit-svgs.ts). Unclear photographs are listed in skipped, not drawn.",
+ "sources": [
+  {
+   "id": "pao-fka-s-75172",
+   "title": "Panathinaikos 1994/95 away kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/panathinaikos-fc-1994-95-away-kit-75172/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "pao-fka-s-75171",
+   "title": "Panathinaikos 1994/95 home kit — Football Kit Archive",
+   "url": "https://www.footballkitarchive.com/panathinaikos-fc-1994-95-home-kit-75171/",
+   "publisher": "Football Kit Archive",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  }
+ ],
+ "kits": [
+  {
+   "id": "pao-fka-75172",
+   "value": {
+    "name": "Panathinaikos 1994/95 away",
+    "season": "1994/95",
+    "type": "away",
+    "manufacturer": "Kappa",
+    "sponsor": "InterAmerican",
+    "construction": {
+     "colors": "white/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "pao-fka-s-75172"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  },
+  {
+   "id": "pao-fka-75171",
+   "value": {
+    "name": "Panathinaikos 1994/95 home",
+    "season": "1994/95",
+    "type": "home",
+    "manufacturer": "Kappa",
+    "sponsor": "InterAmerican",
+    "construction": {
+     "colors": "green/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "pao-fka-s-75171"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "approvedAt": "2026-11-15",
+   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
+   "notes": "Shirt colours and design read by eye from the Football Kit Archive photograph, 15.11.2026 (maker/sponsor as legible on the shirt; white centre panel and shoulders, not drawn). No shorts or socks (shirt photograph). Single publisher, approved under the owner's standing decision of 8.10.2026 that kit records need no second source."
+  }
+ ],
+ "skipped": []
+}

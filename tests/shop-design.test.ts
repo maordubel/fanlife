@@ -84,3 +84,13 @@ describe('print areas: two pictures, a chest logo, every area the printer has',(
   expect(m.backImage).toBe('b.jpg?camera_label=back');expect(m.images[0]).toBe('f.jpg?camera_label=front')
  })
 })
+
+describe('two sides by default on objects (15.11.2026)',()=>{
+ it('prints a cushion or a tote on both sides, wear on the front, and keeps an explicit choice',async()=>{
+  const {sidesOf,twoSidedByDefault}=await import('@/lib/shop/plan'),{catalogueSpec}=await import('@/lib/shop/kinds')
+  const pillow=catalogueSpec('Spun Polyester Square Pillow'),v=[{id:1,title:'18x18',options:{size:'18x18'},placeholders:[{position:'front',width:2000,height:2000},{position:'back',width:2000,height:2000}]}] as never
+  expect(twoSidedByDefault(pillow)).toBe(true);expect(sidesOf(pillow,v)).toEqual([pillow.positions.filter(p=>p!=='back'),['back']])
+  expect(sidesOf(pillow,v,{sides:'front'})).toEqual([pillow.positions.filter(p=>p!=='back')])
+  expect(twoSidedByDefault(KIND_SPECS.tee)).toBe(false);expect(twoSidedByDefault(KIND_SPECS.tote)).toBe(true)
+ })
+})

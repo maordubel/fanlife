@@ -16,8 +16,8 @@ export const FACES = `
 @font-face{font-family:Archivo;font-style:italic;font-weight:100 900;font-stretch:62% 125%;src:url(${font('archivo-latin-wdth-italic.woff2')}) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2190-2199,U+2212,U+2215}
 @font-face{font-family:Archivo;font-style:normal;font-weight:100 900;font-stretch:62% 125%;src:url(${font('archivo-latin-ext-wdth-normal.woff2')}) format('woff2');unicode-range:U+0100-024F,U+1E00-1EFF}
 @font-face{font-family:Archivo;font-style:italic;font-weight:100 900;font-stretch:62% 125%;src:url(${font('archivo-latin-ext-wdth-italic.woff2')}) format('woff2');unicode-range:U+0100-024F,U+1E00-1EFF}
-@font-face{font-family:Archivo;font-style:italic;font-weight:900;src:url(${font('fira-sans-extra-condensed-greek-900-italic.woff2')}) format('woff2');unicode-range:U+0370-03FF,U+1F00-1FFF}
-@font-face{font-family:Archivo;font-style:normal;font-weight:400 900;src:url(${font('fira-sans-greek-700-normal.woff2')}) format('woff2');unicode-range:U+0370-03FF,U+1F00-1FFF}
+@font-face{font-family:Archivo;font-style:italic;font-weight:100 900;font-stretch:62% 125%;src:url(${font('fira-sans-extra-condensed-greek-900-italic.woff2')}) format('woff2');unicode-range:U+0370-03FF,U+1F00-1FFF}
+@font-face{font-family:Archivo;font-style:normal;font-weight:100 900;font-stretch:62% 125%;src:url(${font('fira-sans-greek-700-normal.woff2')}) format('woff2');unicode-range:U+0370-03FF,U+1F00-1FFF}
 @font-face{font-family:Shrikhand;src:url(${font('shrikhand-latin-400-normal.woff2')}) format('woff2')}
 @font-face{font-family:Ultra;src:url(${font('ultra-latin-400-normal.woff2')}) format('woff2')}
 @font-face{font-family:Knewave;src:url(${font('knewave-latin-400-normal.woff2')}) format('woff2')}`
@@ -91,5 +91,5 @@ html,body{margin:0;background:#000}
 /** the whole page: one post, sized for a feed (1080 × 1350) or a story (1080 × 1920) */
 export function shell(inner, {story = false, motion = false, vars = '', light = false} = {}) {
   const h = story ? 1920 : 1350
-  return `<!doctype html><html><head><meta charset="utf-8"><style>${FACES}${CSS}</style></head><body><script>addEventListener('DOMContentLoaded',()=>document.querySelectorAll('[data-d]').forEach(e=>{e.style.animationDelay=e.dataset.d+'s'}))</script><div class="post${motion ? ' motion' : ''}${light ? ' light' : ''}" style="height:${h}px;${vars}">${inner}</div></body></html>`
+  return `<!doctype html><html${/[\u0370-\u03FF]/.test(inner) ? ' lang="el"' : ''}><head><meta charset="utf-8"><style>${FACES}${CSS}</style></head><body><script>addEventListener('DOMContentLoaded',()=>document.querySelectorAll('[data-d]').forEach(e=>{e.style.animationDelay=e.dataset.d+'s'}))</script><div class="post${motion ? ' motion' : ''}${light ? ' light' : ''}" style="height:${h}px;${vars}">${inner}</div></body></html>`
 }

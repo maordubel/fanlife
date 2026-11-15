@@ -297,3 +297,6 @@ main.wks ul { margin: 0; padding: 0; }
 .wks-gal-bar .wks-gal-x { background: var(--mag-paper); color: var(--mag-ink); font-size: 15px; }
 @media (min-width: 900px) { .wks-gal-thumbs { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
 @media (prefers-reduced-motion: reduce) { .wks-gal-main img, .wks-gal-stage img { transition: none; } }
+/* the shop's search (15.11.2026) */
+.wks-search { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px; }
+.wks-search input { min-block-size: 44px; min-inline-size: 0; padding: 0 12px; border: 3px solid var(--mag-ink); background: var(--mag-paper); font: inherit; font-size: 16px; }

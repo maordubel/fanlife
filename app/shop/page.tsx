@@ -34,18 +34,21 @@ const face=(l:PublicProduct[])=>l.find(p=>p.shelf==='wear')??l.find(p=>p.shelf==
  * top, one Filters panel for the rest, the chips that are on, the grid. Cards are a picture, a name and a price — the whole
  * card opens the product on our site. Links only; nothing scrolls sideways; two cards a row on a phone, four on a desk.
  */
-export default async function Shop({searchParams}:{searchParams:{club?:string;shelf?:string;design?:string;sort?:string;price?:string;view?:string}}){
+export default async function Shop({searchParams}:{searchParams:{club?:string;shelf?:string;design?:string;sort?:string;price?:string;view?:string;q?:string}}){
  const shop=await publicShop(),all=shop.products,fav=new Set(shop.promoters.featured)
  const subjects=[...new Set(all.map(p=>p.subject))].sort((a,b)=>a==='fanlife'?-1:b==='fanlife'?1:subjectName(a).localeCompare(subjectName(b)))
  const name=(s:string)=>s==='fanlife'?copy.house:subjectName(s)
  const who=subjects.includes(searchParams.club||'')?searchParams.club!:null
  const dept=DEPTS.find(s=>s===searchParams.shelf)??null,budget=BUDGETS.find(b=>b===searchParams.price)??null
  const design=all.some(p=>p.design===searchParams.design)?searchParams.design!:null,sort=SORTS.find(s=>s===searchParams.sort)??null
- const browsing=!!(dept||budget||design||sort||who||searchParams.view==='all')
- const mine=who?all.filter(p=>p.subject===who):all
+ const q=String(searchParams.q??'').replace(/\s+/g,' ').trim().slice(0,60),words=q.toLowerCase().split(' ').filter(Boolean)
+ const browsing=!!(dept||budget||design||sort||who||q||searchParams.view==='all')
+ // search (15.11.2026): every word must appear in the name, the club, the category or the description
+ const found=(p:PublicProduct)=>{const hay=`${p.title} ${p.subject==='fanlife'?copy.house:subjectName(p.subject)} ${copy.depts[p.shelf as keyof typeof copy.depts]??''} ${p.description}`.toLowerCase();return words.every(w=>hay.includes(w))}
+ const mine=(who?all.filter(p=>p.subject===who):all).filter(p=>!words.length||found(p))
  const inDept=(p:PublicProduct,d:Dept)=>d==='new'?isNew(p):d==='gifts'?eurOf(p)<=25:d==='sale'?!!p.was:d==='fav'?fav.has(p.design)||p.sold>0:p.shelf===d||!!p.also?.includes(d as Shelf)
- const href=(q:Partial<Record<'club'|'shelf'|'design'|'sort'|'price'|'view',string|null>>)=>{const u=new URLSearchParams()
-  const v={club:who,shelf:dept,design,sort,price:budget,view:null,...q};for(const [k,x] of Object.entries(v))if(x)u.set(k,x);const t=u.toString();return t?`/shop?${t}`:'/shop?view=all'}
+ const href=(o:Partial<Record<'club'|'shelf'|'design'|'sort'|'price'|'view'|'q',string|null>>)=>{const u=new URLSearchParams()
+  const v={club:who,shelf:dept,design,sort,price:budget,q:q||null,view:null,...o};for(const [k,x] of Object.entries(v))if(x)u.set(k,x);const t=u.toString();return t?`/shop?${t}`:'/shop?view=all'}
  const card=(p:PublicProduct)=><ShopCard key={p.id} p={p} clubLabel={!who&&p.subject!=='fanlife'?name(p.subject):undefined}/>
  const open=shop.open&&all.length>0
  const sale:PublicSale|null=[...shop.sales].sort((a,b)=>b.percent-a.percent)[0]??null
@@ -56,6 +59,8 @@ export default async function Shop({searchParams}:{searchParams:{club?:string;sh
   :shop.promo?.code?{text:`${shop.promo.label} · ${copy.ribbonCode.replace('{code}',shop.promo.code)}`,href:null}
   :{text:copy.ribbonDefault,href:null}
  const ld=all.length?{'@context':'https://schema.org','@type':'ItemList',itemListElement:mine.slice(0,30).map((p,i)=>({'@type':'ListItem',position:i+1,item:{'@type':'Product',name:p.title,image:p.image,description:p.description.slice(0,300),brand:{'@type':'Brand',name:'FAN LIFE'},offers:{'@type':'Offer',url:`/shop/p/${encodeURIComponent(p.id)}`,priceCurrency:p.currency,price:(p.priceFrom/100).toFixed(2),availability:'https://schema.org/InStock'}}}))}:null
+ // the search box: a plain GET form (works without script), the club and category kept
+ const searchEl=<form className="wks-search" action="/shop" role="search" aria-label={copy.searchL}>{who?<input type="hidden" name="club" value={who}/>:null}{dept?<input type="hidden" name="shelf" value={dept}/>:null}<input type="search" name="q" defaultValue={q} placeholder={copy.searchP} aria-label={copy.searchL} maxLength={60} enterKeyHint="search"/><button type="submit" className="wk-btn min-h-tap">{copy.searchGo}</button></form>
  const ribbonEl=ribbon.href?<Link className="wks-ribbon sale" href={ribbon.href}>{ribbon.text} <span aria-hidden="true">→</span></Link>:<p className="wks-ribbon">{ribbon.text}</p>
  // the categories: a picture each (the most bought, else the newest), only those that have something
  const cats=DEPTS.filter(d=>d!=='fav'&&d!=='gifts').map(d=>{const l=mine.filter(p=>inDept(p,d));return {d,n:l.length,img:face(sorted(l,'pop'))?.image}}).filter(t=>t.n>0&&t.img)
@@ -70,11 +75,12 @@ export default async function Shop({searchParams}:{searchParams:{club?:string;sh
   let list=design?all.filter(p=>p.design===design):mine
   if(dept)list=list.filter(p=>inDept(p,dept));if(budget)list=list.filter(p=>inBudget(p,budget))
   list=sorted(list,sort??(dept==='fav'?'pop':'new'))
-  const title=design?(list[0]?.title.split(' · ')[0]??''):dept?copy.depts[dept]:who?copy.clubShop.replace('{club}',name(who)):budget?copy.budgets[budget]:copy.browseT
-  const on=[who&&{k:'club',l:name(who)},dept&&{k:'shelf',l:copy.depts[dept]},budget&&{k:'price',l:copy.budgets[budget]},design&&{k:'design',l:title}].filter(Boolean) as {k:'club'|'shelf'|'price'|'design';l:string}[]
+  const title=q&&!design&&!dept?copy.searchT.replace('{q}',q):design?(list[0]?.title.split(' · ')[0]??''):dept?copy.depts[dept]:who?copy.clubShop.replace('{club}',name(who)):budget?copy.budgets[budget]:copy.browseT
+  const on=[q&&{k:'q',l:`“${q}”`},who&&{k:'club',l:name(who)},dept&&{k:'shelf',l:copy.depts[dept]},budget&&{k:'price',l:copy.budgets[budget]},design&&{k:'design',l:title}].filter(Boolean) as {k:'q'|'club'|'shelf'|'price'|'design';l:string}[]
   const opt=(k:'price'|'sort',v:string|null,l:string,cur:boolean)=><Link key={`${k}-${v}`} className="wks-chip min-h-tap" href={href({[k]:cur?null:v,view:'all'})} aria-current={cur?'true':undefined}>{l}</Link>
   return <Shell locale="en"><main id="main" className="wks wks2">
    {ribbonEl}
+   {searchEl}
    <header className="wks2-browse"><nav className="wks-crumbs" aria-label={copy.title}><Link href="/shop">{copy.title}</Link>{on.length?<><span aria-hidden="true">›</span><span>{title}</span></>:null}</nav>
     <h1 className="wk-head wks2-h1">{title}</h1>{dept==='sale'&&sale?<p className="wk-small">{copy.saleSub} <b>{leftText(sale.until)}</b></p>:null}</header>
    <nav className="wks-chips small wks2-catchips" aria-label={copy.deptK}>{cats.map(t=><Link key={t.d} className="wks-chip min-h-tap" href={dept===t.d?href({shelf:null,view:'all'}):href({shelf:t.d,design:null})} aria-current={dept===t.d?'true':undefined}>{copy.depts[t.d]}</Link>)}</nav>
@@ -89,7 +95,7 @@ export default async function Shop({searchParams}:{searchParams:{club?:string;sh
    </div>
    {on.length>0&&<nav className="wks-chips small wks-on" aria-label={copy.filters}>{on.map(o=><Link key={o.k} className="wks-chip on min-h-tap" href={href({[o.k]:null,view:'all'})} aria-label={copy.remove.replace('{what}',o.l)}>{o.l} <span aria-hidden="true">✕</span></Link>)}
     <Link className="wks-chip min-h-tap" href="/shop?view=all">{copy.clearAll}</Link></nav>}
-   {list.length?<ul className="wks-grid">{list.map(card)}</ul>:<p className="wk-small">{copy.empty}</p>}
+   {list.length?<ul className="wks-grid">{list.map(card)}</ul>:<p className="wk-small">{q?copy.searchNone.replace('{q}',q):copy.empty}</p>}
    <p className="wk-small wks-note">{copy.note}</p>
   </main></Shell>
  }
@@ -100,6 +106,7 @@ export default async function Shop({searchParams}:{searchParams:{club?:string;sh
  return <Shell locale="en"><main id="main" className="wks wks2">
   {ld?<script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(ld).replace(/</g,'\u003c')}}/>:null}
   {open&&ribbonEl}
+  {open&&searchEl}
   <header className="wks2-hero wk-greenplate"><span className="wk-speed" aria-hidden="true"/><Plate art="scarf" ink="orange" className="wks2-hero-art"/>
    <div><p className="wk-banner">{open?copy.kicker:copy.soonK}</p><h1 className="wk-logo wks2-hero-h1">{open?copy.h1:copy.soonT}</h1><p className="wk-small white">{open?copy.sub:copy.soonSub}</p>
     {open&&<Link className="wk-btn min-h-tap wks2-go" href="/shop?view=all">{copy.shopAll.replace('{n}',String(all.length))} <span aria-hidden="true">→</span></Link>}</div>

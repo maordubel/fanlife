@@ -24,6 +24,7 @@ import {AssistantNotes} from './AssistantNote'
 import {MatchReportCard} from './MatchReportCard'
 import {CompareSheet} from './CompareSheet'
 import HallOfFame from './HallOfFame'
+import {PersonalPrint} from '@/components/shop/PersonalPrint'
 import {ClubMark,ShirtProvider} from './Shirts'
 import type {CareerShirt} from '@/lib/legends/shirts'
  import {useDressingRoom} from './Talk'
@@ -95,6 +96,7 @@ function SeasonEnd({v,busy,send}:{v:CareerView;busy:boolean;send:Send}){
    <dl className="lgm-sum">{e.bonuses.map(b=><div key={b.why}><dt>{b.why}</dt><dd className="lgm-plus">+ {money(b.amount)}</dd></div>)}<div data-total><dt>Board grant for next season</dt><dd>+ {money(e.grant)}</dd></div></dl>
    {e.reputation.length?<ul className="lgm-scene-list">{e.reputation.map(r=><li key={r.why}><span>{r.why}</span><b>+{r.points} reputation</b></li>)}</ul>:null}
    <p className="lgm-actions"><button type="button" className="lgm-go lgm-go-big min-h-tap" disabled={busy} onClick={()=>send({kind:'next-season'},`Season ${v.season+1} begins.`)}>Start season {v.season+1}</button><button type="button" className="lgm-link min-h-tap" disabled={busy} onClick={()=>send({kind:'ack'})}>Stay a while</button></p>
+   <p className="lgm-actions"><PersonalPrint kind="legends" req={{club:v.clubId,career:v.id}} className="lgm-link"/></p>
   </div>
  </Sheet>
 }

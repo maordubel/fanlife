@@ -219,6 +219,7 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [shop-storefront](shop-storefront.md) · The selling /shop: promises, shop by club, curated shelves, same-design cross-sell, JSON-LD, listing limits, automatic fitting; desk in four tabs (13.11.2026)
 - [shop-sales](shop-sales.md) · Real price-cut sales (club / category / design, dates, never under cost + 10%), ribbon, free shipping, favourites, best sellers; the megastore order of /shop and the browse view (14.11.2026)
 - [shop-quality-brand](shop-quality-brand.md) · Builder in four steps with front/back/two pictures; quality-first blanks, printers and sizes; wrap covers; FAN LIFE seal on every garment; categories; daily doctor; sales coach (14.11.2026)
+- [shop-personal-prints](shop-personal-prints.md) · "Your XI, framed": the supporter's own XI as a framed print or poster, made at the printer on demand, manager's name optional, signed recipes, cleared in 3 days unless sold (14.11.2026)
 - [shop-checks-itself](shop-checks-itself.md) · The shop re-reads every product from Printify hourly, repairs links and pictures, hides what was deleted, re-presses passing failures; never shows anything itself (12.11.2026)
 - [hub-order](hub-order.md) · The hub and a club home are put in order, not redesigned: nothing hidden, the features indexed, clubs as a slide on a phone, no next-match box (12.11.2026)
 - [kit-drawings-measured](kit-drawings-measured.md) · Kit SVGs: stripes/hoops measured from the reference, sponsor on the armpit line at ~60% of the chest, real sponsor logo files (14.11.2026)
@@ -228,3 +229,6 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [shop-live-mockups.md](shop-live-mockups.md) — the first picture of a product is the product in use; gallery with thumbnails and a glass
 - [studio-club-language](studio-club-language.md) · Studio films carry on-screen text in the club's own language under the English (16.11.2026)
 - [studio-motion-and-cutouts](studio-motion-and-cutouts.md) · Motion blur, paper-edge cut-outs inside the frame, grain + vignette, crest-traced club shapes (16.11.2026)
+- [shop-desk-manager.md](shop-desk-manager.md) — the desk's product manager: search, filters, bulk bar, editor, first picture, more products, import from Printify; shop search
+- [shop-brand-label-postcard.md](shop-brand-label-postcard.md) — FAN LIFE on the neck label only (one ink, light on dark), the postcard in every order, enlarged pictures for soft prints
+- [shop-lookbook-cards](shop-lookbook-cards.md) · The shop's 4:5 lookbook posters as corner cards in the promo rotation: one a day, never on /shop, never an interstitial (15.11.2026)

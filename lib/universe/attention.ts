@@ -19,6 +19,7 @@ export function familyOf(id: string, href: string): Family {
       if (u.pathname.startsWith('/all-football/legends')) return 'legends'
       if (/\/life(\/|$)/.test(u.pathname) || u.hash === '#life') return 'life'
       if (/\/(market|kits|closet)(\/|$)/.test(u.pathname)) return 'market'
+      if (/^\/shop(\/|$)/.test(u.pathname)) return 'shop'
       return 'fanlife'
     }
   } catch { /* fall through to the id */ }

@@ -49,12 +49,12 @@ export function DesignControls({value,onChange,library,margin,stock,loadStock,bu
  * HOW IT PRINTS — chosen first, at the opening of a product (owner, 14.11.2026): front only, back only, the same picture on both
  * sides, or two different pictures (the back's own picture from the library or an upload). A product without a back prints the front.
  */
-const MODE_L={front:'Front only',back:'Back only',same:'Front + back · same picture',two:'Front + back · two pictures'} as const
+const MODE_L={auto:'Automatic · both sides on cushions & bags, front on wear',front:'Front only',back:'Back only',same:'Front + back · same picture',two:'Front + back · two pictures'} as const
 type Mode=keyof typeof MODE_L
-export const modeOf=(d:ProductDesign):Mode=>d.sides==='back'?'back':d.sides==='both'?(d.backArt?'two':'same'):'front'
+export const modeOf=(d:ProductDesign):Mode=>d.sides==='back'?'back':d.sides==='both'?(d.backArt?'two':'same'):d.sides==='front'?'front':'auto'
 export function PrintSides({value,onChange,pictures=[],uploadArt}:{value:ProductDesign;onChange:(d:ProductDesign)=>void;pictures?:PicOption[];uploadArt?:(f:File)=>Promise<ArtRef|null>}){
  const mode=modeOf(value),[busy,setBusy]=useState(false),[two,setTwo]=useState(mode==='two')
- const pick=(m:Mode)=>{setTwo(m==='two');onChange({...value,areas:undefined,sides:m==='front'?'front':m==='back'?'back':'both',backArt:m==='two'?value.backArt:undefined})}
+ const pick=(m:Mode)=>{setTwo(m==='two');onChange({...value,areas:undefined,sides:m==='auto'?undefined:m==='front'?'front':m==='back'?'back':'both',backArt:m==='two'?value.backArt:undefined})}
  const back=value.backArt,backKey=back?('library' in back?`lib:${back.library.id}`:'upload'):''
  return <div className="shop-sides">
   <div className="shop-sides-grid" role="radiogroup" aria-label="How it prints">{(Object.keys(MODE_L) as Mode[]).map(m=><button key={m} type="button" role="radio" aria-checked={(two?'two':mode)===m} className="shop-side min-h-tap" onClick={()=>pick(m)}>

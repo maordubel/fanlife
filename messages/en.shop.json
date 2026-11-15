@@ -204,9 +204,79 @@
  "pdpView": "View {title}",
  "shopAll": "Shop all {n} products",
  "picksT": "Our picks",
+ "xiPrint": {
+  "cta": "Frame it",
+  "k": "FAN LIFE prints",
+  "t": "Your XI, framed.",
+  "sub": "The eleven you picked, laid out in your formation and printed for your wall.",
+  "framed": "Framed print",
+  "poster": "Poster",
+  "tee": "T-shirt",
+  "look": "Pick a look",
+  "looks": {
+   "touchline": "Touchline",
+   "archive": "Club Archive",
+   "night": "Night Match",
+   "kits": "Kit Collection",
+   "dream": "My Dream Team"
+  },
+  "teeNote": "Your eleven on the back, a small XI on the chest. Light shirts, sizes S–3XL.",
+  "manager": "Manager’s name (optional)",
+  "managerHint": "Your name on it: “{name}’s All-Time XI”.",
+  "make": "Make my print",
+  "making": "Printing your proof… about 20 seconds",
+  "ready": "Your print is ready.",
+  "open": "Open the checkout",
+  "back": "Back to my XI",
+  "proof": "Proof · the printed piece is 3600 × 4800",
+  "error": "Something went wrong — try again."
+ },
+ "souvenir": {
+  "common": {
+   "k": "FAN LIFE souvenirs",
+   "manager": "Your name (optional)",
+   "managerHint": "Printed on it: {name}.",
+   "line": "Your line (optional) — one memory, up to 90 letters",
+   "proof": "Proof · the printed piece is 3600 × 4800",
+   "back": "Back"
+  },
+  "shirts": {
+   "cta": "Frame my collection",
+   "t": "Your shirts, framed.",
+   "sub": "The first shirt you picked takes the card; the rest line up beneath, each with its season.",
+   "note": "A note under the first shirt (optional)"
+  },
+  "legends": {
+   "cta": "Frame this season",
+   "t": "Your season, framed.",
+   "sub": "The final place, the points, your eleven in their shirts — the season you managed, printed for the wall."
+  },
+  "first": {
+   "cta": "Frame my first match",
+   "t": "Your first match, framed.",
+   "sub": "The ticket of the day, the score from the club’s own record, and your line.",
+   "age": "How old were you?",
+   "gate": "Gate (optional)",
+   "pick": "My first match",
+   "year": "Year",
+   "match": "The match",
+   "choose": "Choose a year, then the match.",
+   "none": "No matches of that year on record."
+  },
+  "away": {
+   "cta": "Frame where I was",
+   "t": "I was there.",
+   "sub": "Every night away you marked, on the map of the road from home — from UEFA’s own record of each match."
+  }
+ },
  "pdpZoom": "Look closer",
  "pdpZoomClose": "Close",
  "pdpPics": "Pictures",
  "pdpPicOf": "Picture {n} of {total}",
- "pdpLive": "In use"
+ "pdpLive": "In use",
+ "searchT": "Results for “{q}”",
+ "searchL": "Search the shop",
+ "searchP": "Search: a club, a player, a shirt…",
+ "searchGo": "Search",
+ "searchNone": "Nothing matches “{q}” yet."
 }

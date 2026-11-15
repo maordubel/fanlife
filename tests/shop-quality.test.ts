@@ -23,9 +23,11 @@ describe('quality first, size by size',()=>{
   const areas=areasOf(KIND_SPECS.tee,vs,{sides:'both',backArt:back})
   expect(areas.map(([s])=>s[0])).toEqual(['front','back']);expect(areas[1]![1].art).toEqual(back);expect(areas[0]![1].art).toBeUndefined()
  })
- it('places the FAN LIFE seal whole, small under the collar',()=>{
-  const sheet={w:4000,h:4500,position:'back',variantIds:[1]}
-  const at=brandPlace(sheet,{width:512,height:512},'backNeck');expect(at.scale).toBeLessThan(.2);expect(at.y).toBeLessThan(.15)
+ it('prints FAN LIFE on the neck label only — small, centred, the light ink on dark cloth',async()=>{
+  const {BRAND_SPOTS,labelInk}=await import('@/lib/shop/plan')
+  expect(Object.keys(BRAND_SPOTS)).toEqual(['neck'])
+  const at=brandPlace({w:1500,h:1500,position:'neck',variantIds:[1]},{width:1200,height:1200},'neck');expect(at.scale).toBeLessThan(.6);expect(at.x).toBe(.5)
+  const light=(n:string)=>/white|natural/i.test(n);expect(labelInk('Black',light)).toBe('light');expect(labelInk('White',light)).toBe('ink');expect(labelInk(undefined,light)).toBe('ink')
   expect(isGarment('tee')).toBe(true);expect(isGarment('mug')).toBe(false);expect(isGarment('more','Unisex Garment-Dyed Hoodie')).toBe(true)
  })
  it('asks for Printify Choice first — top-rated printers',()=>{
@@ -48,5 +50,24 @@ describe('the pictures follow where the design prints',()=>{
   expect(mockups(l,'back').images.map(s=>s.split('=')[1])[0]).toBe('person-2-back')
   const b=mockups(l,'both');expect(b.backImage).toContain('=back');expect(b.images[0]).toContain('person-1')
   expect([liveness('a?camera_label=lifestyle'),liveness('a?camera_label=context-2'),liveness('a?camera_label=front')]).toEqual([0,1,2])
+ })
+})
+describe('the owner’s first picture',()=>{
+ it('leads while Printify still draws it, and falls back to the automatic order when it is gone',async()=>{
+  const {withCover}=await import('@/lib/shop/build')
+  const mk={images:['a','b','c']}
+  expect(withCover(mk,'c',[{src:'a'},{src:'b'},{src:'c'}]).images).toEqual(['c','a','b'])
+  expect(withCover(mk,'z',[{src:'a'}]).images).toEqual(['a','b','c'])
+  expect(withCover(mk,undefined,[{src:'a'}])).toBe(mk)
+ })
+})
+describe('perfect mock-ups (15.11.2026)',()=>{
+ it('shows one take of each scene before a second take, and the back third on a two-sided product',async()=>{
+  const {mockups}=await import('@/lib/shop/build')
+  const m=(c:string)=>({src:`x.jpg?camera_label=${c}`,is_default:true,variant_ids:[1]})
+  const f=mockups([m('front'),m('person-1'),m('person-2'),m('person-3'),m('context-1'),m('lifestyle-1')],'front').images.map(s=>s.split('=')[1])
+  expect(f.slice(0,4)).toEqual(['person-1','front','lifestyle-1','context-1']);expect(f.slice(4)).toEqual(['person-2','person-3'])
+  const b=mockups([m('front'),m('context-1'),m('back'),m('context-2'),m('context-3')],'both').images.map(s=>s.split('=')[1])
+  expect(b.slice(0,3)).toEqual(['context-1','front','back'])
  })
 })

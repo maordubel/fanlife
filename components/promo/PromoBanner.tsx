@@ -71,10 +71,11 @@ export function PromoBanner({doc,israel,greece=false}:{doc:PromoDoc;israel:boole
  if(!shown)return null
  const {b,page}=shown
  const dismiss=()=>{snooze(familyOf(b.id,b.href));const ss=read<Session>('session',SKEY,blank());ss.stop=true;ss.last=Date.now();write('session',SKEY,ss);clear();setUp(false);window.setTimeout(()=>setShown(null),reduce()?0:460)}
- return <aside className="promo" data-up={up?'true':'false'} data-discovery-unit="promo" data-family={familyOf(b.id,b.href)} data-promo={b.id} role="complementary" aria-label="Advertisement"
+ const isCard=b.format==='card'
+ return <aside className={isCard?'promo promo-card':'promo'} data-up={up?'true':'false'} data-discovery-unit="promo" data-family={familyOf(b.id,b.href)} data-promo={b.id} role="complementary" aria-label="Advertisement"
   onPointerEnter={()=>{hold.current=true}} onPointerLeave={()=>{hold.current=false}} onFocusCapture={()=>{hold.current=true}} onBlurCapture={()=>{hold.current=false}}>
   <a className="promo-link" href={outbound(b,page)} {...(isOwn(b)?{}:{target:'_blank',rel:'noopener noreferrer sponsored'})} aria-label={b.alt||b.name}>
-   <img src={b.img1x} srcSet={`${b.img1x} 1x, ${b.img2x} 2x`} width={320} height={50} alt={b.alt||b.name} decoding="async"/>
+   <img src={b.img1x} srcSet={`${b.img1x} 1x, ${b.img2x} 2x`} width={isCard?400:320} height={isCard?500:50} alt={b.alt||b.name} decoding="async"/>
   </a>
   <button type="button" className="promo-x min-h-tap" onClick={dismiss} aria-label="Close advertisement">×</button>
   <span className="promo-tag" aria-hidden="true">Ad</span>

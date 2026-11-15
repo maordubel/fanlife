@@ -392,14 +392,24 @@ export function forgeTrivia(club:ClubData,extras:ForgeExtras={}):{trivia:ClubTri
  }
  // Three home shirts, three distinct makers: one unambiguous answer per season.
  const homeKits=kits.filter(k=>k.type==='home'&&k.maker&&k.source.url&&kitKey.get(`${k.season}|home`)===1).sort((a,b)=>a.season.localeCompare(b.season))
- for(let i=0;i<homeKits.length;i+=3){
-  const trio:Kit[]=[],seen=new Set<string>()
-  for(const k of homeKits.slice(i)){if(seen.has(normKey(k.maker!)))continue;seen.add(normKey(k.maker!));trio.push(k);if(trio.length===3)break}
-  if(trio.length!==3)continue
+ const addKitTrio=(trio:Kit[])=>{
+  if(trio.length!==3||new Set(trio.map(k=>normKey(k.maker!))).size!==3)return
   const L=2
   add({key:`kit-pairs:${trio.map(k=>k.id).join(',')}`,template:'fl-kit-pairs',type:'match',topic:'kits',level:L,
    prompt:`Three shirts from ${NAME}'s past. Match each home-shirt season to its maker.`,left:trio.map(k=>k.season),answer:trio.map(k=>k.maker!),
    explanation:trio.map(k=>`${k.season}: ${k.maker}`).join(' · ')+'.',hint:{kind:'context'},factIds:trio.map(k=>k.id),decades:[...new Set(trio.map(k=>decadeOf(seasonYear(k.season))))],source:trio[0]!.source,facets:[`level:${L}`,'kit']})
+ }
+ for(let i=0;i<homeKits.length;i+=3){
+  const trio:Kit[]=[],seen=new Set<string>()
+  for(const k of homeKits.slice(i)){if(seen.has(normKey(k.maker!)))continue;seen.add(normKey(k.maker!));trio.push(k);if(trio.length===3)break}
+  addKitTrio(trio)
+ }
+ // As with players: a reviewed shirt trio must not disappear because the archive grew (15.11.2026, 641 new kits shifted
+ // every trio). Rebuilt only from current approved, unambiguous home kits with a maker; curation still withdraws a changed one.
+ const homeById=new Map(homeKits.map(k=>[k.id,k]))
+ for(const edit of reviewed){
+  if(edit.factIds.length!==3||edit.factIds.some(f=>f.startsWith('pos:')))continue
+  const trio=edit.factIds.map(f=>homeById.get(f)).filter((k):k is Kit=>!!k);if(trio.length===3)addKitTrio(trio)
  }
 
  // Original questions from individually reviewed primary-source facts. Related variants share a fact group.

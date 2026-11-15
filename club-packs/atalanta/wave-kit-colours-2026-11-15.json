@@ -1,0 +1,139 @@
+{
+ "schemaVersion": 1,
+ "clubId": "atalanta",
+ "contentLocale": "en",
+ "note": "Kit colour amendments (15.11.2026): each record fills colours into the pack kit of the same id, only where that kit names none and only when two independent publishers agree (status approved). Single-publisher records stay in review for the owner.",
+ "sources": [
+  {
+   "id": "at-kc-cof-p4",
+   "title": "Atalanta (page 4) – Colours of Football",
+   "url": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_4.html",
+   "publisher": "Colours of Football",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-kc-cfs-9697h",
+   "title": "1996-97 Atalanta Home L/S Shirt – Classic Football Shirts",
+   "url": "https://www.classicfootballshirts.co.uk/1996-97-atalanta-home-ls-shirt-810-s-atah96965957.html",
+   "publisher": "Classic Football Shirts",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-kc-itwp-9697",
+   "title": "Atalanta Bergamasca Calcio 1996-1997 – Wikipedia (it)",
+   "url": "https://it.wikipedia.org/wiki/Atalanta_Bergamasca_Calcio_1996-1997",
+   "publisher": "Wikipedia",
+   "language": "it",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  },
+  {
+   "id": "at-kc-cfs-9495h",
+   "title": "1994-95 Atalanta Match Issue Home Shirt #2 – Classic Football Shirts",
+   "url": "https://www.classicfootballshirts.co.uk/1994-95-atalanta-match-issue-home-shirt-2-atah94mw182.html",
+   "publisher": "Classic Football Shirts",
+   "language": "en",
+   "checkedAt": "2026-11-15",
+   "access": "available"
+  }
+ ],
+ "kits": [
+  {
+   "id": "at-kit-2021-22-third",
+   "value": {
+    "season": "2021/22",
+    "type": "third",
+    "construction": {
+     "colors": "coral/blue",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "at-k-fka-2021-22-third",
+    "at-kc-cof-p4"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "notes": "Coral shirt with blue trim and an embossed image of the Renaissance stand: Football Kit Archive's description ('coral', embossed stand) and the Colours of Football drawing (coral body, blue collar and trim, embossed stand) agree. FKA's own colours field (red/blue/black) contradicts its description and is not used. Colours of Football alone shows coral shorts and socks: not set.",
+   "approvedAt": "2026-11-15",
+   "approvedBy": "automated:cross-source-review-atalanta-2026-11-15"
+  },
+  {
+   "id": "at-kit-1996-97-home",
+   "value": {
+    "season": "1996/97",
+    "type": "home",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-kc-cfs-9697h",
+    "at-kc-itwp-9697"
+   ],
+   "confidence": 3,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": true,
+   "notes": "Blue and black vertical stripes (Asics, Somet): the Classic Football Shirts photograph and the it.wikipedia season kit (blue body, black stripes) agree. Wikipedia alone gives black shorts and socks: not set.",
+   "approvedAt": "2026-11-15",
+   "approvedBy": "automated:cross-source-review-atalanta-2026-11-15"
+  },
+  {
+   "id": "at-kit-1994-95-home",
+   "value": {
+    "season": "1994/95",
+    "type": "home",
+    "construction": {
+     "colors": "blue/black",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "at-kc-cfs-9495h"
+   ],
+   "confidence": 2,
+   "status": "review",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "medium",
+   "conflictFree": false,
+   "notes": "One publisher: the Classic Football Shirts photograph of a match-issue 1994-95 home shirt shows blue and black stripes (Lotto); the listing notes a Somet sponsor applied over the 1993-94 Tamoil one. No second publisher found; held for the owner."
+  },
+  {
+   "id": "at-kit-1990-91-away",
+   "value": {
+    "season": "1990/91",
+    "type": "away",
+    "construction": {
+     "colors": "white/blue/black",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "at-k-fka-1990-91-away",
+    "at-k-fka-index"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
+  }
+ ],
+ "skipped": [
+  {
+   "id": "at-kit-1993-94-away",
+   "reason": "No publisher with the colours found: FKA page text has none; no retailer or season kit found for 1993-94 away."
+  }
+ ]
+}

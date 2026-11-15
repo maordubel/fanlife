@@ -7,6 +7,7 @@ import { myJourney, isBeen, type BeenLedger } from '@/lib/away-days/been'
 import type { JourneyData } from '@/lib/away-days/journey'
 import { SITE_URL } from '@/lib/brand'
 import { t } from '@/lib/i18n'
+import { PersonalPrint } from '@/components/shop/PersonalPrint'
 import { formatDate } from './VisitCard'
 
 /**
@@ -108,6 +109,7 @@ export function MyJourney({
                 {t('away89.share.copy')}
               </button>
             </div>
+            <PersonalPrint kind="away" req={{ club: 'hapoel-tel-aviv', visits: ticked.map((v) => v.id) }} className="mt-2 flex w-full items-center justify-center gap-1 border-plate border-ink bg-paper px-3 font-body text-step--1 font-extrabold text-ink" />
             {note && (
               <p className="mt-1.5 font-body text-[11.5px] text-muted" role="status">
                 {note}
