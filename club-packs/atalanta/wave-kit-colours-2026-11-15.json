@@ -107,16 +107,33 @@
    "parserCertainty": "medium",
    "conflictFree": false,
    "notes": "One publisher: the Classic Football Shirts photograph of a match-issue 1994-95 home shirt shows blue and black stripes (Lotto); the listing notes a Somet sponsor applied over the 1993-94 Tamoil one. No second publisher found; held for the owner."
+  },
+  {
+   "id": "at-kit-1990-91-away",
+   "value": {
+    "season": "1990/91",
+    "type": "away",
+    "construction": {
+     "colors": "white/blue/black",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "at-k-fka-1990-91-away",
+    "at-k-fka-index"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
   }
  ],
  "skipped": [
   {
    "id": "at-kit-1993-94-away",
    "reason": "No publisher with the colours found: FKA page text has none; no retailer or season kit found for 1993-94 away."
-  },
-  {
-   "id": "at-kit-1990-91-away",
-   "reason": "No publisher with the colours found: FKA page text has none; retailers list only 1990-91 home shirts."
   }
  ]
 }

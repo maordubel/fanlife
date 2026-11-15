@@ -43,74 +43,6 @@
  ],
  "kits": [
   {
-   "id": "rj-kit-2023-24-home",
-   "value": {
-    "season": "2023/24",
-    "type": "home",
-    "construction": {
-     "colors": "green",
-     "design": "plain"
-    }
-   },
-   "sources": [
-    "rj-kc-shop-2324h"
-   ],
-   "confidence": 2,
-   "status": "review",
-   "researchedAt": "2026-11-15",
-   "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "One publisher: the club shop's product title names the 2023/24 Umbro home shirt green (the page itself was not reachable from here; title read from the search index). Held for the owner."
-  },
-  {
-   "id": "rj-kit-2023-24-away",
-   "value": {
-    "season": "2023/24",
-    "type": "away",
-    "construction": {
-     "colors": "black",
-     "design": "plain"
-    }
-   },
-   "sources": [
-    "rj-kc-shop-2324a"
-   ],
-   "confidence": 2,
-   "status": "review",
-   "researchedAt": "2026-11-15",
-   "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "One publisher: the club shop's product title names the 2023/24 Umbro away shirt black (page not reachable from here; title from the search index). Held for the owner."
-  },
-  {
-   "id": "rj-kit-2021-22-away",
-   "value": {
-    "season": "2021/22",
-    "type": "away",
-    "construction": {
-     "colors": "white/green",
-     "design": "plain"
-    },
-    "shorts": {
-     "colour": "white",
-     "trim": null
-    },
-    "socks": {
-     "colour": "white",
-     "trim": null
-    }
-   },
-   "sources": [
-    "rj-kc-wp-2122"
-   ],
-   "confidence": 2,
-   "status": "review",
-   "researchedAt": "2026-11-15",
-   "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "One publisher: the Wikipedia season kit shows a white Kappa away kit with green trim, white shorts and socks."
-  },
-  {
    "id": "rj-kit-2014-15-away",
    "value": {
     "season": "2014/15",
@@ -137,59 +69,295 @@
    "parserCertainty": "medium",
    "conflictFree": false,
    "notes": "One publisher: the Wikipedia season kit shows an all-blue away kit."
-  }
- ],
- "skipped": [
-  {
-   "id": "rj-kit-2022-23-away",
-   "reason": "Only the Wikipedia kit box, which reuses the 2021-22 pattern files (copied, not a separate account)."
   },
   {
-   "id": "rj-kit-2021-22-home",
-   "reason": "Wikipedia's shirt is a custom pattern image (no body colour stated); no second publisher."
+   "id": "rj-kit-1977-78-away",
+   "value": {
+    "season": "1977/78",
+    "type": "away",
+    "construction": {
+     "colors": "green/white",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "rj-k-1977-78-away"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
   },
   {
-   "id": "rj-kit-2023-24-third",
-   "reason": "No publisher with the shirt colour found (Wikipedia gives only black shorts and socks)."
-  },
-  {
-   "id": "rj-kit-2022-23-third",
-   "reason": "No publisher with the colours found."
-  },
-  {
-   "id": "rj-kit-2010-11-home",
-   "reason": "No publisher with the colours found."
-  },
-  {
-   "id": "rj-kit-2009-10-away",
-   "reason": "No publisher with the colours found."
-  },
-  {
-   "id": "rj-kit-2008-09-home",
-   "reason": "No publisher with the colours found."
-  },
-  {
-   "id": "rj-kit-2008-09-away",
-   "reason": "No publisher with the colours found."
+   "id": "rj-kit-1988-89-away",
+   "value": {
+    "season": "1988/89",
+    "type": "away",
+    "construction": {
+     "colors": "white/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "rj-k-1988-89-away"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
   },
   {
    "id": "rj-kit-1996-97-away",
-   "reason": "No publisher with the colours found."
+   "value": {
+    "season": "1996/97",
+    "type": "away",
+    "construction": {
+     "colors": "white/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "rj-k-1996-97-away"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
   },
+  {
+   "id": "rj-kit-2008-09-away",
+   "value": {
+    "season": "2008/09",
+    "type": "away",
+    "construction": {
+     "colors": "white/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "rj-k-2008-09-away"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
+  },
+  {
+   "id": "rj-kit-2008-09-home",
+   "value": {
+    "season": "2008/09",
+    "type": "home",
+    "construction": {
+     "colors": "green/white",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "rj-k-2008-09-home"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
+  },
+  {
+   "id": "rj-kit-2009-10-away",
+   "value": {
+    "season": "2009/10",
+    "type": "away",
+    "construction": {
+     "colors": "green/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "rj-k-2009-10-away"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
+  },
+  {
+   "id": "rj-kit-2010-11-home",
+   "value": {
+    "season": "2010/11",
+    "type": "home",
+    "construction": {
+     "colors": "green/white",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "rj-k-2010-11-home"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
+  },
+  {
+   "id": "rj-kit-2021-22-away",
+   "value": {
+    "season": "2021/22",
+    "type": "away",
+    "construction": {
+     "colors": "white/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "rj-k-2021-22-away"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
+  },
+  {
+   "id": "rj-kit-2021-22-home",
+   "value": {
+    "season": "2021/22",
+    "type": "home",
+    "construction": {
+     "colors": "green/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "rj-k-2021-22-home"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
+  },
+  {
+   "id": "rj-kit-2022-23-away",
+   "value": {
+    "season": "2022/23",
+    "type": "away",
+    "construction": {
+     "colors": "grey/green",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "rj-k-2022-23-away"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
+  },
+  {
+   "id": "rj-kit-2022-23-third",
+   "value": {
+    "season": "2022/23",
+    "type": "third",
+    "construction": {
+     "colors": "black/gold",
+     "design": "graphic"
+    }
+   },
+   "sources": [
+    "rj-k-2022-23-third"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
+  },
+  {
+   "id": "rj-kit-2023-24-away",
+   "value": {
+    "season": "2023/24",
+    "type": "away",
+    "construction": {
+     "colors": "white/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "rj-k-2023-24-away"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
+  },
+  {
+   "id": "rj-kit-2023-24-home",
+   "value": {
+    "season": "2023/24",
+    "type": "home",
+    "construction": {
+     "colors": "green/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "rj-k-2023-24-home"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
+  },
+  {
+   "id": "rj-kit-2023-24-third",
+   "value": {
+    "season": "2023/24",
+    "type": "third",
+    "construction": {
+     "colors": "black/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "rj-k-2023-24-third"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
+  }
+ ],
+ "skipped": [
   {
    "id": "rj-kit-1995-96-home",
    "reason": "No publisher with the colours found."
   },
   {
    "id": "rj-kit-1992-93-home",
-   "reason": "No publisher with the colours found."
-  },
-  {
-   "id": "rj-kit-1988-89-away",
-   "reason": "No publisher with the colours found."
-  },
-  {
-   "id": "rj-kit-1977-78-away",
    "reason": "No publisher with the colours found."
   }
  ]

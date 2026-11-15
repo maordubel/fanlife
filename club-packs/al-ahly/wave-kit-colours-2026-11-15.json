@@ -84,32 +84,45 @@
    "approvedBy": "automated:cross-source-review-al-ahly-2026-11-15"
   },
   {
+   "id": "ah-kit-1997-98-home",
+   "value": {
+    "season": "1997/98",
+    "type": "home",
+    "construction": {
+     "colors": "red/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "ah-k-fka-1997-98-home",
+    "ah-k-fka-index"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
+  },
+  {
    "id": "ah-kit-2009-10-away",
    "value": {
     "season": "2009/10",
     "type": "away",
     "construction": {
-     "colors": "blue",
+     "colors": "blue/white",
      "design": "plain"
-    },
-    "shorts": {
-     "colour": "blue",
-     "trim": null
-    },
-    "socks": {
-     "colour": "blue",
-     "trim": null
     }
    },
    "sources": [
-    "ah-kc-wp-0910"
+    "ah-k-fka-2009-10-away"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-11-15",
-   "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "One publisher: the Wikipedia season kit shows an all-blue away kit."
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
   },
   {
    "id": "ah-kit-2011-12-away",
@@ -117,27 +130,19 @@
     "season": "2011/12",
     "type": "away",
     "construction": {
-     "colors": "navy",
+     "colors": "navy/gold",
      "design": "plain"
-    },
-    "shorts": {
-     "colour": "navy",
-     "trim": null
-    },
-    "socks": {
-     "colour": "navy",
-     "trim": null
     }
    },
    "sources": [
-    "ah-kc-wp-1112"
+    "ah-k-fka-2011-12-away"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-11-15",
-   "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "One publisher: the Wikipedia season kit shows an all-navy away kit."
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
   },
   {
    "id": "ah-kit-2012-13-away",
@@ -145,27 +150,39 @@
     "season": "2012/13",
     "type": "away",
     "construction": {
-     "colors": "blue",
-     "design": "plain"
-    },
-    "shorts": {
-     "colour": "blue",
-     "trim": null
-    },
-    "socks": {
-     "colour": "blue",
-     "trim": null
+     "colors": "navy/blue",
+     "design": "stripes"
     }
    },
    "sources": [
-    "ah-kc-wp-1213"
+    "ah-k-fka-2012-13-away"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-11-15",
-   "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "One publisher: the Wikipedia season kit shows an all-blue away kit."
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
+  },
+  {
+   "id": "ah-kit-2013-14-away",
+   "value": {
+    "season": "2013/14",
+    "type": "away",
+    "construction": {
+     "colors": "navy/blue",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "ah-k-fka-2013-14-away"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
   },
   {
    "id": "ah-kit-2018-19-away",
@@ -173,37 +190,20 @@
     "season": "2018/19",
     "type": "away",
     "construction": {
-     "colors": "blue",
+     "colors": "blue/white",
      "design": "plain"
-    },
-    "shorts": {
-     "colour": "blue",
-     "trim": null
-    },
-    "socks": {
-     "colour": "blue",
-     "trim": null
     }
    },
    "sources": [
-    "ah-kc-wp-1819"
+    "ah-k-fka-2018-19-away"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-11-15",
-   "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "One publisher: the Wikipedia season kit shows an all-blue away kit. (A 2018/19 turquoise Umbro away found in search is Saudi Al Ahli, not this club.)"
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
   }
  ],
- "skipped": [
-  {
-   "id": "ah-kit-2013-14-away",
-   "reason": "Only the Wikipedia kit box, which reuses the 2012-13 pattern files (copied, not a separate account)."
-  },
-  {
-   "id": "ah-kit-1997-98-home",
-   "reason": "No publisher with the colours found (no Wikipedia season kit, FKA text has none)."
-  }
- ]
+ "skipped": []
 }

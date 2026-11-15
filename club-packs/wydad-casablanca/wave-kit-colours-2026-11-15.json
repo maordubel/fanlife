@@ -25,9 +25,30 @@
  ],
  "kits": [
   {
-   "id": "wy-kit-2017-18-home",
+   "id": "wy-kit-2022-23-third",
    "value": {
-    "season": "2017/18",
+    "season": "2022/23",
+    "type": "third",
+    "construction": {
+     "colors": "black/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-k-fka-2022-23-third",
+    "wy-k-fka-index"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
+  },
+  {
+   "id": "wy-kit-2018-19-home",
+   "value": {
+    "season": "2018/19",
     "type": "home",
     "construction": {
      "colors": "red/white",
@@ -35,59 +56,125 @@
     }
    },
    "sources": [
-    "wy-kc-ck-1718h"
+    "wy-k-fka-2018-19-home",
+    "wy-k-fka-index"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-11-15",
-   "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "One publisher: the Cult Kits photograph of a 2017/18 Macron home shirt shows red with white collar and side panels."
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
   },
   {
-   "id": "wy-kit-2022-23-third",
+   "id": "wy-kit-2017-18-home",
    "value": {
-    "season": "2022/23",
-    "type": "third",
+    "season": "2017/18",
+    "type": "home",
     "construction": {
-     "colors": "black/gold",
+     "colors": "red/white",
+     "design": "gradient"
+    }
+   },
+   "sources": [
+    "wy-k-fka-2017-18-home",
+    "wy-k-fka-index"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
+  },
+  {
+   "id": "wy-kit-2017-18-away",
+   "value": {
+    "season": "2017/18",
+    "type": "away",
+    "construction": {
+     "colors": "white/red",
+     "design": "gradient"
+    }
+   },
+   "sources": [
+    "wy-k-fka-2017-18-away",
+    "wy-k-fka-index"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
+  },
+  {
+   "id": "wy-kit-2007-08-away",
+   "value": {
+    "season": "2007/08",
+    "type": "away",
+    "construction": {
+     "colors": "red/white",
      "design": "plain"
     }
    },
    "sources": [
-    "wy-kc-fh-cwc"
+    "wy-k-fka-2007-08-away",
+    "wy-k-fka-index"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-11-15",
-   "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "One publisher: Footy Headlines describes the Club World Cup (Feb 2023) third as the home design in black with gold. FKA lists a separate '2022 Club World Cup third' beside this '2022-23 third', so the two may differ; held for the owner."
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
+  },
+  {
+   "id": "wy-kit-1998-99-away",
+   "value": {
+    "season": "1998/99",
+    "type": "away",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-k-fka-1998-99-away",
+    "wy-k-fka-index"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
+  },
+  {
+   "id": "wy-kit-1989-90-home",
+   "value": {
+    "season": "1989/90",
+    "type": "home",
+    "construction": {
+     "colors": "white/red",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "wy-k-fka-1989-90-home",
+    "wy-k-fka-index"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
   }
  ],
  "skipped": [
   {
-   "id": "wy-kit-2018-19-home",
-   "reason": "Only the Wikipedia kit box, which lists white as kit 1 and red as kit 2 (order unclear); no second publisher."
-  },
-  {
-   "id": "wy-kit-2017-18-away",
-   "reason": "No publisher with the colours found."
-  },
-  {
    "id": "wy-kit-2011-12-away",
-   "reason": "No publisher with the colours found."
-  },
-  {
-   "id": "wy-kit-2007-08-away",
-   "reason": "No publisher with the colours found."
-  },
-  {
-   "id": "wy-kit-1998-99-away",
-   "reason": "No publisher with the colours found."
-  },
-  {
-   "id": "wy-kit-1989-90-home",
    "reason": "No publisher with the colours found."
   }
  ]

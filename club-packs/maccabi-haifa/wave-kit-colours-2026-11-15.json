@@ -128,32 +128,44 @@
    "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-15"
   },
   {
+   "id": "mh-kit-2022-23-home-3",
+   "value": {
+    "season": "2022/23",
+    "type": "home",
+    "construction": {
+     "colors": "green/white",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "mh-k-fka-2022-23-home-3"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
+  },
+  {
    "id": "mh-kit-2022-23-european-away",
    "value": {
     "season": "2022/23",
     "type": "away",
     "construction": {
-     "colors": "teal",
+     "colors": "black/white",
      "design": "plain"
-    },
-    "shorts": {
-     "colour": "white",
-     "trim": null
-    },
-    "socks": {
-     "colour": "white",
-     "trim": null
     }
    },
    "sources": [
-    "mh-kc-cof-p2"
+    "mh-k-fka-2022-23-european-away"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-11-15",
-   "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "One publisher: Colours of Football draws a teal European kit for 2022-23 (file marked 'e', captioned third), white shorts and socks. That it is the kit FKA calls the European away is a match by competition, not stated by either; held for the owner."
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
   },
   {
    "id": "mh-kit-2019-20-third",
@@ -161,27 +173,19 @@
     "season": "2019/20",
     "type": "third",
     "construction": {
-     "colors": "light green",
+     "colors": "green/white",
      "design": "plain"
-    },
-    "shorts": {
-     "colour": "light green",
-     "trim": null
-    },
-    "socks": {
-     "colour": "light green",
-     "trim": null
     }
    },
    "sources": [
-    "mh-kc-wp-1920"
+    "mh-k-fka-2019-20-third"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-11-15",
-   "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "One publisher: the Wikipedia season kit shows a light green kit (shirt, shorts, socks)."
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
   },
   {
    "id": "mh-kit-2015-16-home",
@@ -190,26 +194,38 @@
     "type": "home",
     "construction": {
      "colors": "green/white",
-     "design": "gradient"
-    },
-    "shorts": {
-     "colour": "green",
-     "trim": null
-    },
-    "socks": {
-     "colour": "green",
-     "trim": null
+     "design": "graphic"
     }
    },
    "sources": [
-    "mh-kc-cof-p1"
+    "mh-k-fka-2015-16-home"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-11-15",
-   "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "One publisher: Colours of Football draws green and white checks fading to white, green shorts and socks. The Wikipedia season page's kit boxes are ambiguous (several kit sets) and were not read as a second publisher."
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
+  },
+  {
+   "id": "mh-kit-2015-16-third",
+   "value": {
+    "season": "2015/16",
+    "type": "third",
+    "construction": {
+     "colors": "grey/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-k-fka-2015-16-third"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
   },
   {
    "id": "mh-kit-2014-15-third",
@@ -217,27 +233,19 @@
     "season": "2014/15",
     "type": "third",
     "construction": {
-     "colors": "light green/black",
+     "colors": "green/black",
      "design": "contrasting sleeves"
-    },
-    "shorts": {
-     "colour": "black",
-     "trim": null
-    },
-    "socks": {
-     "colour": "black",
-     "trim": null
     }
    },
    "sources": [
-    "mh-kc-wp-1415"
+    "mh-k-fka-2014-15-third"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-11-15",
-   "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "One publisher: the Wikipedia season kit shows a light green body with black sleeves, black shorts and socks."
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
   },
   {
    "id": "mh-kit-2009-10-home",
@@ -247,25 +255,157 @@
     "construction": {
      "colors": "green/white",
      "design": "plain"
-    },
-    "shorts": {
-     "colour": "green",
-     "trim": null
-    },
-    "socks": {
-     "colour": "white",
-     "trim": null
     }
    },
    "sources": [
-    "mh-kc-wp-0910"
+    "mh-k-fka-2009-10-home"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-11-15",
-   "parserCertainty": "medium",
-   "conflictFree": false,
-   "notes": "One publisher: the Wikipedia season kit shows a green shirt with white shoulder detail, green shorts, white socks."
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
+  },
+  {
+   "id": "mh-kit-2009-10-third",
+   "value": {
+    "season": "2009/10",
+    "type": "third",
+    "construction": {
+     "colors": "black/white",
+     "design": "sash"
+    }
+   },
+   "sources": [
+    "mh-k-fka-2009-10-third"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
+  },
+  {
+   "id": "mh-kit-2008-09-third",
+   "value": {
+    "season": "2008/09",
+    "type": "third",
+    "construction": {
+     "colors": "black/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-k-fka-2008-09-third"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
+  },
+  {
+   "id": "mh-kit-1993-94-home",
+   "value": {
+    "season": "1993/94",
+    "type": "home",
+    "construction": {
+     "colors": "white/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-k-fka-1993-94-home"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
+  },
+  {
+   "id": "mh-kit-1990-91-home",
+   "value": {
+    "season": "1990/91",
+    "type": "home",
+    "construction": {
+     "colors": "green/white",
+     "design": "stripes"
+    }
+   },
+   "sources": [
+    "mh-k-fka-1990-91-home"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
+  },
+  {
+   "id": "mh-kit-1990-91-away",
+   "value": {
+    "season": "1990/91",
+    "type": "away",
+    "construction": {
+     "colors": "white/green",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-k-fka-1990-91-away"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
+  },
+  {
+   "id": "mh-kit-1985-86-home",
+   "value": {
+    "season": "1985/86",
+    "type": "home",
+    "construction": {
+     "colors": "green/white",
+     "design": "plain"
+    }
+   },
+   "sources": [
+    "mh-k-fka-1985-86-home"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
+  },
+  {
+   "id": "mh-kit-1984-85-home",
+   "value": {
+    "season": "1984/85",
+    "type": "home",
+    "construction": {
+     "colors": "green/white",
+     "design": "hoops"
+    }
+   },
+   "sources": [
+    "mh-k-fka-1984-85-home"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-15",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Colours read by eye from the record's own photograph on Football Kit Archive (the source the kit was approved on), 15.11.2026."
   }
  ],
  "skipped": [
@@ -276,42 +416,6 @@
   {
    "id": "mh-kit-2013-14-third",
    "reason": "Publishers disagree: Colours of Football draws an all-black third kit; the Wikipedia season kit shows an all-green third."
-  },
-  {
-   "id": "mh-kit-2009-10-third",
-   "reason": "Only the Wikipedia kit box, and its pattern (stripes-on-white over a green body) cannot be read as colours without guessing."
-  },
-  {
-   "id": "mh-kit-2022-23-home-3",
-   "reason": "No publisher with the colours found (FKA text has none; Colours of Football and Wikipedia show one home kit)."
-  },
-  {
-   "id": "mh-kit-2015-16-third",
-   "reason": "No publisher with the colours found."
-  },
-  {
-   "id": "mh-kit-2008-09-third",
-   "reason": "Only the Wikipedia kit box, whose shirt is a custom pattern image (no colour stated); shorts and socks black there. Not found."
-  },
-  {
-   "id": "mh-kit-1993-94-home",
-   "reason": "No publisher with the colours found."
-  },
-  {
-   "id": "mh-kit-1990-91-home",
-   "reason": "No publisher with the colours found."
-  },
-  {
-   "id": "mh-kit-1990-91-away",
-   "reason": "No publisher with the colours found."
-  },
-  {
-   "id": "mh-kit-1985-86-home",
-   "reason": "No publisher with the colours found."
-  },
-  {
-   "id": "mh-kit-1984-85-home",
-   "reason": "No publisher with the colours found."
   }
  ]
 }

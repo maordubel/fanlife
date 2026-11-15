@@ -48,33 +48,33 @@
   "noColour": 0
  },
  "raja-casablanca": {
-  "drawn": 8,
+  "drawn": 22,
   "fromArchive": 0,
-  "fromPack": 8,
-  "noColour": 17
+  "fromPack": 22,
+  "noColour": 3
  },
  "wydad-casablanca": {
-  "drawn": 5,
+  "drawn": 12,
   "fromArchive": 0,
-  "fromPack": 5,
-  "noColour": 8
+  "fromPack": 12,
+  "noColour": 1
  },
  "al-ahly": {
-  "drawn": 9,
+  "drawn": 15,
   "fromArchive": 0,
-  "fromPack": 9,
-  "noColour": 6
+  "fromPack": 15,
+  "noColour": 0
  },
  "atalanta": {
+  "drawn": 27,
+  "fromArchive": 0,
+  "fromPack": 27,
+  "noColour": 2
+ },
+ "maccabi-haifa": {
   "drawn": 26,
   "fromArchive": 0,
   "fromPack": 26,
-  "noColour": 3
- },
- "maccabi-haifa": {
-  "drawn": 14,
-  "fromArchive": 0,
-  "fromPack": 14,
-  "noColour": 14
+  "noColour": 2
  }
 }
