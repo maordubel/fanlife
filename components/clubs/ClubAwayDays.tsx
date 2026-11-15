@@ -4,6 +4,7 @@ import {useCallback,useEffect,useMemo,useRef,useState,type ReactNode} from 'reac
 import {firePickFxAt} from '@/components/stage/PickFx'
 import {haversineKm} from '@/lib/away-days/distance'
 import {useBeen} from '@/components/away-days/useBeen'
+import {PersonalPrint} from '@/components/shop/PersonalPrint'
 import type {Camera,MapMarker} from '@/components/away-days/AwayDaysMap'
 import type {VenueLite} from '@/lib/away-days/journey'
 import {bySeason,countryName,totalKm,visitKey,type ClubAwayData,type ClubStadium,type ClubVisit} from '@/lib/away-days/club'
@@ -84,6 +85,7 @@ function Explore({data,locale,copy}:{data:ClubAwayData;locale:'en'|'he';copy:Cop
     </div>
     {sel&&<button type="button" className="wk-applied wkk-explore-sel min-h-tap" onClick={()=>setSel(null)}>{copy.selected.replace('{name}',st[sel]!.name)} · {copy.clear} <i aria-hidden="true">×</i></button>}
     {mine>0&&<p className="wk-stamp wkk-mine">{copy.youVisited.replace('{n}',String(mine))}</p>}
+    {mine>0&&<PersonalPrint kind="away" req={{club:data.clubId,visits:data.visits.filter(v=>v.physicallyAbroad&&ledger[visitKey(v)]?.b).map(v=>v.id)}} className="wk-btn wkk-print"/>}
     <Whole data={data} copy={copy} locale={locale}/>
    </div>
   </div>

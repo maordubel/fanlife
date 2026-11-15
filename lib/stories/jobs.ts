@@ -511,7 +511,7 @@ export function validateShort(v:unknown,clubs:Map<string,string>,findMatch:(club
  * A story → the studio researches it (grounded), writes the FILE by docs/fanlife/classified/WRITERS-ROOM.md and commits
  * it; Claude makes its panels in Google Flow; the owner reads and approves it, and only then is it produced. */
 export const CASE_TONES=['LAUGH','WAR','HEART'] as const
-export type CasefileSpec={topic:string;tone:typeof CASE_TONES[number];notes:string;file:string|null}
+export type CasefileSpec={topic:string;tone:typeof CASE_TONES[number];notes:string;file:string|null;minutes?:3|6}
 export function validateCasefile(v:unknown,files:{file:string}[]):{brief:Brief;spec:CasefileSpec}{
  if(!v||typeof v!=='object')throw new StoryError('BRIEF','Write the story.')
  const b=v as Record<string,unknown>
@@ -521,8 +521,9 @@ export function validateCasefile(v:unknown,files:{file:string}[]):{brief:Brief;s
  const topic=clean(b.topic,400)
  if(topic.length<12)throw new StoryError('BRIEF','Write the story in a sentence or two: who, where, when, what happened.')
  const tone=(CASE_TONES as readonly string[]).includes(String(b.tone))?b.tone as CasefileSpec['tone']:'LAUGH'
- const spec:CasefileSpec={topic,tone,notes:clean(b.notes,4000),file}
- const brief:Brief={club_id:'classified',club_name:'CLASSIFIED',season:file?file.toUpperCase():'NEW FILE',topic,duration:6,visual_style:'mixed',
+ const minutes:3|6=b.minutes===3||b.duration===3?3:6   // owner, 15.11.2026: a three-minute FILE
+ const spec:CasefileSpec={topic,tone,notes:clean(b.notes,4000),file,minutes}
+ const brief:Brief={club_id:'classified',club_name:'CLASSIFIED',season:file?file.toUpperCase():'NEW FILE',topic,duration:minutes,visual_style:'mixed',
   voice:'kokoro',review:'auto',privacy:'private',publish_at:null,scripts:1,choice:null,drive:false,reel_to_telegram:false,art:[],hold:false}
  return {brief,spec}
 }

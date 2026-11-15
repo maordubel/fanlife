@@ -160,13 +160,38 @@ export async function optionsFor(target:{kind?:Kind;blueprintId?:number},by:stri
  * leads with the back; a two-sided one leads with the front and keeps the back for the inset; a front one shows only fronts.
  * FAN LIFE's own small mark under the collar does not make a product "printed on the back".
  */
-export function mockups(list:{src:string;is_default:boolean;position?:string}[],side:'front'|'back'|'both'|boolean):{images:string[];backImage?:string}{
+export type Mock={src:string;is_default:boolean;position?:string;variant_ids?:number[]}
+/** Printify's camera, from the mock-up's address: front · back · person-1 · context-2 · lifestyle · back-collar-closeup … */
+export const cameraOf=(src:string)=>/camera_label=([a-z0-9-]+)/i.exec(src)?.[1]?.toLowerCase()??''
+/**
+ * 0 — the product in use: worn by a model, held, on a child (owner, 15.11.2026: "the first look is always a live mock-up");
+ * 1 — in its place: on the wall, in a room, on the table, on the dog; 2 — the plain product; 3 — details and charts.
+ */
+export function liveness(src:string):number{
+ const c=cameraOf(src)
+ if(/size|chart|collar|closeup|close-up|label|tag|detail|zoom/.test(c))return 3
+ if(/person|model|lifestyle|wear|on-hand|hand|half|duo|kid|baby|man|woman|girl|boy/.test(c))return 0
+ if(/context|room|wall|scene|interior|nightstand|desk|table|shelf|hanging|pet|dog|cat|outdoor|car|kitchen|sofa|bed|frame-/.test(c))return 1
+ return 2
+}
+const isBackShot=(i:{src:string;position?:string})=>{const c=cameraOf(i.src);return i.position==='back'||(/(^|-)back($|-)/.test(c)&&!/collar|closeup/.test(c))}
+/**
+ * The pictures a product shows, best first. Only the default colour's mock-ups (Printify sends every colour's). The first one is
+ * live — the product in use — whenever Printify drew one; then the plain product; then the other scenes; details last.
+ * A back print leads with a back; a two-sided one keeps its plain back for the inset. FAN LIFE's mark under the collar is a
+ * detail, never "printed on the back".
+ */
+export function mockups(list:Mock[],side:'front'|'back'|'both'|boolean):{images:string[];backImage?:string}{
  const mode=side===true?'both':side===false?'front':side
- const sorted=[...list].sort((a,b)=>Number(b.is_default)-Number(a.is_default)),isBack=(i:{src:string;position?:string})=>i.position==='back'||/camera_label=back/.test(i.src)
- const backs=sorted.filter(isBack),fronts=sorted.filter(i=>!isBack(i))
- if(mode==='back'&&backs.length)return {images:backs.slice(0,6).map(i=>i.src)}
- const b=mode==='both'?backs[0]:undefined
- return {images:[...fronts.slice(0,5),...(b?[b]:[])].map(i=>i.src),...(b?{backImage:b.src}:{})}
+ const sorted=[...list].sort((a,b)=>Number(b.is_default)-Number(a.is_default)),v0=sorted[0]?.variant_ids?.[0]
+ const own=v0?sorted.filter(i=>!i.variant_ids||i.variant_ids.includes(v0)):sorted,pool=own.length?own:sorted
+ const order=(xs:Mock[])=>{const by=[...xs].sort((a,b)=>liveness(a.src)-liveness(b.src)),live=by.find(i=>liveness(i.src)<=1),plain=xs.find(i=>liveness(i.src)===2)
+  return [...new Set([...(live?[live]:[]),...(plain?[plain]:[]),...by].map(i=>i.src))]}
+ const backs=pool.filter(isBackShot),fronts=pool.filter(i=>!isBackShot(i))
+ if(mode==='back'&&backs.length)return {images:order(backs).slice(0,8)}
+ const plainBack=mode==='both'?backs.find(i=>liveness(i.src)===2)??backs[0]:undefined
+ const images=[...order(fronts).slice(0,7),...(mode==='both'?order(backs).slice(0,2):[])]
+ return {images:[...new Set(images)].slice(0,8),...(plainBack?{backImage:plainBack.src}:{})}
 }
 
 /**

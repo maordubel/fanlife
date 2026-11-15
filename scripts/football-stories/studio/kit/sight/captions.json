@@ -1,0 +1,3295 @@
+{
+"version": 1,
+"pictures": {
+"01809f6c8ce71970": {
+"caption": "Papercraft illustration of red-shirted football players celebrating a goal in a corner of the pitch while fans cheer in the stands.",
+"people": 25,
+"faces": false,
+"action": "players celebrating in a huddle",
+"place": "stadium",
+"mood": "joy",
+"avoid": [
+"last minute winner",
+"final whistle"
+],
+"id": "beat:common/celebration-pile-b-kr"
+},
+"02f500a68e11f5df": {
+"caption": "Papercraft view of a packed football stadium where red-shirted players celebrate a goal near the corner flag.",
+"people": 30,
+"faces": false,
+"action": "players celebrating together on pitch",
+"place": "stadium",
+"mood": "joy",
+"avoid": [
+"championship winning goal",
+"cup final celebration"
+],
+"id": "beat:common/celebration-pile-kr"
+},
+"03c36e6d1877742c": {
+"caption": "A person looks out a window overlooking a coastal city skyline, with a trophy and a football newspaper on the sill.",
+"people": 1,
+"faces": false,
+"action": "looking out window",
+"place": "room",
+"mood": "calm",
+"avoid": [
+"stadium pitch",
+"active match"
+],
+"id": "beat:hapoel-tel-aviv-1999-00/window-trophy-newspaper"
+},
+"04acdcffcad6ad5b": {
+"caption": "A person in a dark shirt adjusts a bright red armband on their upper arm.",
+"people": 1,
+"faces": false,
+"action": "adjusting armband",
+"place": "other",
+"mood": "tension",
+"avoid": [
+"a medical injury",
+"a protest"
+],
+"id": "beat:common/close-armband-b-kr"
+},
+"04de60c289c642e2": {
+"caption": "A large crowd of supporters filling the stadium terraces with red scarves and flags.",
+"people": 40,
+"faces": false,
+"action": "supporters waving scarves",
+"place": "terrace",
+"era": "1970s",
+"mood": "defiance",
+"avoid": [
+"empty stands",
+"quiet afternoon"
+],
+"id": "beat:common/terrace-full-kr"
+},
+"04e1a6a13c095327": {
+"caption": "A pair of vintage football boots and a retro leather football rest near the touchline of a pitch with papercraft styling.",
+"people": 0,
+"faces": false,
+"action": "Displaying equipment",
+"place": "pitch",
+"era": "1970s",
+"mood": "calm",
+"avoid": [
+"modern football",
+"players playing",
+"crowd reactions"
+],
+"id": "beat:papercut-library/vintage-football-boots-beside-ball-0c42434f"
+},
+"05d92d1a3e259468": {
+"caption": "An aerial illustration of an empty stadium with a green pitch.",
+"people": 0,
+"faces": false,
+"place": "stadium",
+"mood": "calm",
+"avoid": [
+"stadium full of fans",
+"matchday atmosphere"
+],
+"id": "beat:common/stadium-green-pitch-kr"
+},
+"0608f5ab89fe8581": {
+"caption": "A close-up of dynamic red, black, and white paper confetti pieces floating in mid-air.",
+"people": 0,
+"faces": false,
+"action": "confetti falling",
+"place": "abstract",
+"mood": "joy",
+"avoid": [
+"match action",
+"player interview"
+],
+"id": "beat:common/tr-confetti-cover-kr"
+},
+"063dbd5ee265d2c1": {
+"caption": "A collage celebrating Panathinaikos with the club crest, historic programs, and fans holding green and white scarves.",
+"people": 12,
+"faces": false,
+"action": "fans holding scarves",
+"place": "stadium",
+"era": "1970s",
+"mood": "defiance",
+"text": "ΠΑΝΑΘΗΝΑΪΚΟΣ ΠΡΟΓΡΑΜΜΑ ΑΓΩΝΟΣ ΠΑΝΑΘΗΝΑΪΚΟΣ 1970 1908",
+"avoid": [
+"AEK Athens match",
+"yellow and black club colours"
+],
+"id": "beat:job-19324d9d-b95c-4388-a19b-062dd2002d03/01-identity-63f141dea3266d4c"
+},
+"072bc7dac38fb298": {
+"caption": "Fans walk through stadium gates toward a view of the pitch and filled stands.",
+"people": 8,
+"faces": false,
+"action": "entering stadium",
+"place": "stadium",
+"mood": "tension",
+"avoid": [
+"empty stadium",
+"post-match"
+],
+"id": "beat:hapoel-tel-aviv-1999-00/tunnel-view-pitch"
+},
+"07b6dc582864baac": {
+"caption": "A player lifts a trophy in the center of a crowded stadium filled with cheering fans.",
+"people": 50,
+"faces": false,
+"action": "lifting a trophy",
+"place": "stadium",
+"era": "1970s",
+"mood": "joy",
+"avoid": [
+"empty stadium",
+"defeat",
+"quiet moments"
+],
+"id": "beat:common/trophy-lift-crowd-b-kr"
+},
+"07dd1b08417f9eb7": {
+"caption": "A crowd of fans raise red scarves up in the air against a dark background.",
+"people": 15,
+"faces": false,
+"action": "raising scarves in a crowd",
+"place": "terrace",
+"mood": "joy",
+"avoid": [
+"night matches only",
+"protests"
+],
+"id": "beat:common/crowd-scarves-night-kr"
+},
+"087a0c34ef215173": {
+"caption": "A folded red scarf rests on a concrete step among a crowd of supporters watching a floodlit football match.",
+"people": 15,
+"faces": false,
+"action": "watching from stands",
+"place": "stadium",
+"era": "1950s",
+"mood": "defiance",
+"avoid": [
+"lost property",
+"memorial tribute"
+],
+"id": "beat:common/follow-seat-kept-kr"
+},
+"08cb85e31b9af613": {
+"caption": "Three young players in matching kits sit on a bench facing away from the camera next to a training pitch.",
+"people": 3,
+"faces": false,
+"action": "sitting on a bench together",
+"place": "pitch",
+"mood": "calm",
+"avoid": [
+"senior professional match",
+"match celebration"
+],
+"id": "beat:hapoel-tel-aviv-1999-00/players-bench-training"
+},
+"0991e97a08289ce7": {
+"caption": "Several football players in red and white striped kits celebrate with their arms around each other in front of cheering fans.",
+"people": 10,
+"faces": false,
+"action": "celebrating a victory",
+"place": "stadium",
+"era": "1980s",
+"mood": "joy",
+"avoid": [
+"players walking off after a defeat",
+"a silent stadium"
+],
+"id": "beat:olympiacos-maccabi-2024/06-victory-away-end"
+},
+"0a488d4b1776672b": {
+"caption": "A player in a red kit executes a bicycle kick inside the penalty box in front of defenders.",
+"people": 4,
+"faces": true,
+"action": "bicycle kick",
+"place": "pitch",
+"era": "2020s",
+"mood": "tension",
+"text": "ISRAEL CANADA",
+"avoid": [
+"prison bars: never for a transfer or a signing",
+"goalkeeper error"
+],
+"id": "beat:olympiacos-maccabi-2024/bicycle-kick"
+},
+"0d1ce69edc9ba012": {
+"caption": "A cardboard diorama showing three football players in green and white striped kits celebrating near a stadium fence.",
+"people": 8,
+"faces": true,
+"action": "players celebrating by fence",
+"place": "stadium",
+"era": "1980s",
+"mood": "joy",
+"avoid": [
+"real players",
+"prison bars: never for a transfer or a signing"
+],
+"id": "beat:job-19324d9d-b95c-4388-a19b-062dd2002d03/unnamed-9-3bbd7d5dd15f963b"
+},
+"0d3dd6c43fe24c7f": {
+"caption": "An illustrated view of stadium stands and floodlight towers under a cloudy daytime sky.",
+"people": 0,
+"faces": false,
+"place": "stadium",
+"mood": "calm",
+"avoid": [
+"night matches",
+"filled stadiums",
+"modern bowl arena"
+],
+"id": "beat:common/foreign-stadium-stands-n"
+},
+"0d4287c82f8fd31c": {
+"caption": "A papercraft stadium scene shows medical personnel carrying an injured player off the field.",
+"people": 25,
+"faces": false,
+"action": "carrying injured player",
+"place": "pitch",
+"era": "1950s",
+"mood": "grief",
+"avoid": [
+"celebration"
+],
+"id": "beat:common/injury-stretcher-kr"
+},
+"0e446e783cbac218": {
+"caption": "Paper cutout artwork depicts a football match in a packed stadium with fans cheering.",
+"people": 11,
+"faces": false,
+"action": "attacking play in penalty box",
+"place": "stadium",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"prison bars: never for a transfer or a signing",
+"real match footage"
+],
+"id": "beat:common/volley-edge-box-kr"
+},
+"0f308e9605c52391": {
+"caption": "Players and officials walk through a dark stadium tunnel toward the bright pitch and filled stands.",
+"people": 9,
+"faces": false,
+"action": "walking out of tunnel",
+"place": "stadium",
+"era": "1970s",
+"mood": "defiance",
+"avoid": [
+"escaping from prison",
+"leaving a match early"
+],
+"id": "beat:common/tunnel-walk-out"
+},
+"1030397869a261ad": {
+"caption": "A fist aggressively grips a decorative match ticket.",
+"people": 1,
+"faces": false,
+"action": "gripping a ticket",
+"place": "studio",
+"mood": "defiance",
+"avoid": [
+"ticket sales"
+],
+"id": "beat:common/close-ticket-in-hand-kr"
+},
+"10e2d4b8b36a713b": {
+"caption": "An illustrated vintage wooden football stand next to a worn dirt pitch with simple goalposts.",
+"people": 0,
+"faces": false,
+"place": "stadium",
+"era": "1900s",
+"mood": "calm",
+"avoid": [
+"modern stadiums",
+"floodlit arenas",
+"packed crowds"
+],
+"id": "beat:common/old-ground-wooden-n"
+},
+"132761ceae08d127": {
+"caption": "A road leading towards a stadium silhouetted against a dramatic red and black sunset sky.",
+"people": 0,
+"faces": false,
+"place": "street",
+"mood": "tension",
+"avoid": [
+"fires outside stadium",
+"riots after match"
+],
+"id": "beat:common/street-dusk-kr"
+},
+"1504ab857e4e97ab": {
+"caption": "A goalkeeper crouches in front of the goal waiting for a penalty kick during a night match.",
+"people": 1,
+"faces": false,
+"action": "goalkeeper waiting in goal",
+"place": "stadium",
+"mood": "tension",
+"avoid": [
+"daytime training",
+"celebrating a goal"
+],
+"id": "beat:hapoel-tel-aviv-1999-00/penalty-spot-keeper-view"
+},
+"1617f762a3d8d128": {
+"caption": "A diorama art piece depicting a football match at night with red flares lit in the stands behind the goal.",
+"people": 8,
+"faces": true,
+"action": "match action with flares",
+"place": "stadium",
+"era": "1980s",
+"mood": "defiance",
+"text": "ΘΥΡΑ",
+"avoid": [
+"real match photography",
+"actual video clip"
+],
+"id": "beat:job-19324d9d-b95c-4388-a19b-062dd2002d03/player-heading-football-in-stadium-9e44c776-7b09298e10c53f61"
+},
+"1810a12588244e3a": {
+"caption": "A man purchasing a ticket at a stadium window while other fans walk towards the entrance.",
+"people": 15,
+"faces": false,
+"action": "buying match ticket",
+"place": "stadium",
+"era": "1970s",
+"mood": "calm",
+"avoid": [
+"full match",
+"goal celebration"
+],
+"id": "beat:common/ticket-office-window-kr"
+},
+"1829bfba7898a2b0": {
+"caption": "A papercraft desk setup shows a signed contract, red jersey, and camera silhouettes simulating a press conference.",
+"people": 4,
+"faces": false,
+"action": "signing a new player contract",
+"place": "studio",
+"mood": "joy",
+"avoid": [
+"real press conference",
+"actual player signing photo"
+],
+"id": "beat:common/signing-desk-kr"
+},
+"182a56ffa17b02f0": {
+"caption": "Two players stand at the centre circle ready for kick-off under the watchful eye of a referee.",
+"people": 25,
+"faces": false,
+"action": "waiting for kick off",
+"place": "pitch",
+"era": "1950s",
+"mood": "tension",
+"avoid": [
+"full time whistle",
+"trophy lift"
+],
+"id": "beat:common/kick-off-centre-b-kr"
+},
+"184d87f1ee851088": {
+"caption": "Passengers wearing red scarves sit and stand inside a crowded train carriage passing a rural landscape.",
+"people": 25,
+"faces": false,
+"action": "travelling on train",
+"place": "other",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"stadium entrance",
+"match day riots",
+"victory parade"
+],
+"id": "beat:common/train-supporters-b-kr"
+},
+"19af3c8d0832678e": {
+"caption": "A football sits on the touchline of a historic stadium with empty stands and city buildings in the background.",
+"people": 1,
+"faces": false,
+"place": "stadium",
+"mood": "calm",
+"avoid": [
+"crowded modern stadium",
+"match day chaos"
+],
+"id": "beat:hapoel-tel-aviv-1999-00/ball-touchline-old-ground"
+},
+"1b51d5ddd02f8bc5": {
+"caption": "A thick sheet of off-white paper is torn down the middle, revealing a black textured background.",
+"people": 0,
+"faces": false,
+"action": "tearing paper",
+"place": "abstract",
+"mood": "tension",
+"avoid": [
+"document destruction",
+"contract cancellation"
+],
+"id": "beat:common/tr-paper-tear-b-n"
+},
+"1c5724bb87fbad38": {
+"caption": "A queue of people waiting outside a stadium ticket office window to buy tickets.",
+"people": 25,
+"faces": false,
+"action": "queuing for tickets",
+"place": "stadium",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"match kickoff",
+"empty stadium"
+],
+"id": "beat:common/ticket-office-window-b-kr"
+},
+"1fc1a61218ec37a9": {
+"caption": "An illustrated papercraft style view of fans watching a football match in a stadium during a heavy rainstorm.",
+"people": 15,
+"faces": false,
+"action": "watching football in rain",
+"place": "stadium",
+"era": "1980s",
+"mood": "grief",
+"avoid": [
+"celebration: never for a win",
+"summer sun: never for warm weather"
+],
+"id": "beat:common/relegation-rain-b-kr"
+},
+"208489de0d0c9553": {
+"caption": "An illustrated view from the pitch looking towards a packed stadium end filled with red flags during a night match.",
+"people": 0,
+"faces": false,
+"action": "supporters waving flags",
+"place": "stadium",
+"mood": "tension",
+"avoid": [
+"empty stadium",
+"daytime fixture",
+"quiet stands"
+],
+"id": "beat:common/home-end-night-b-kr"
+},
+"20f16797967a4bfa": {
+"caption": "Fans in green and white colors holding up scarves inside a stadium under floodlights.",
+"people": 5,
+"faces": true,
+"action": "holding up scarves",
+"place": "terrace",
+"era": "1990s",
+"mood": "defiance",
+"avoid": [
+"quiet moments",
+"empty stands"
+],
+"id": "beat:job-19324d9d-b95c-4388-a19b-062dd2002d03/04-terrace-background-07d53795f8718411"
+},
+"21c0ce3cddb466c2": {
+"caption": "Fans in flat caps and red scarves pack the stands of an old stadium with industrial chimneys in the background.",
+"people": 50,
+"faces": false,
+"action": "watching football match",
+"place": "stadium",
+"era": "1920s",
+"mood": "joy",
+"avoid": [
+"modern Premier League stadium",
+"empty stadium during pandemic"
+],
+"id": "beat:common/old-ground-wide-b-kr"
+},
+"2567329e24a7fbe0": {
+"caption": "A crowd of fans behind a wire fence hold up red scarves in a stadium.",
+"people": 35,
+"faces": false,
+"action": "holding scarves aloft",
+"place": "terrace",
+"mood": "joy",
+"avoid": [
+"empty stadium",
+"boardroom meeting"
+],
+"id": "beat:common/terrace-fence-scarves-kr"
+},
+"2589c8f412b39f78": {
+"caption": "A commentator wearing headphones sits in a press box overlooking a floodlit football match at night.",
+"people": 1,
+"faces": true,
+"action": "broadcasting from the booth",
+"place": "room",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"watching television at home",
+"playing video games"
+],
+"id": "beat:common/commentator-booth-night"
+},
+"25ca863e65ff2576": {
+"caption": "A layered paper-cut illustration shows a large red scarf flowing over a traditional mountainous landscape with silhouetted travellers.",
+"people": 6,
+"faces": false,
+"action": "scarf sweeping over mountains",
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"modern football match",
+"dressing room"
+],
+"id": "beat:common/tr-curtain-scarf-kr"
+},
+"272cb5e9dd87cdc3": {
+"caption": "A crowd of fans watch from behind a fence as a stadium grandstand undergoes demolition.",
+"people": 14,
+"faces": false,
+"action": "watching stadium demolition",
+"place": "stadium",
+"mood": "grief",
+"avoid": [
+"victory parade"
+],
+"id": "beat:common/demolition-stand-kr"
+},
+"28ac4df796be9031": {
+"caption": "A clipboard with a form lies in the foreground while a player stands on the pitch at night.",
+"people": 7,
+"faces": false,
+"action": "tactical setup",
+"place": "pitch",
+"mood": "tension",
+"avoid": [
+"referee whistle",
+"coach interview"
+],
+"id": "beat:hapoel-tel-aviv-1999-00/clipboard-player-night"
+},
+"299e9a03823badb6": {
+"caption": "A group of travelers with bags stand by terminal windows looking out at an airplane on the tarmac.",
+"people": 8,
+"faces": false,
+"action": "waiting at airport gate",
+"place": "room",
+"era": "1970s",
+"mood": "calm",
+"avoid": [
+"team departure for an away match",
+"protesters at the airport"
+],
+"id": "beat:common/airport-gate-b-kr"
+},
+"2bd77cc281f2cf9b": {
+"caption": "A pair of illustrated hands with crossed fingers and a red wristband rests against dark legs.",
+"people": 1,
+"faces": false,
+"action": "crossing fingers",
+"place": "abstract",
+"mood": "tension",
+"avoid": [
+"hand injury",
+"handcuffs"
+],
+"id": "beat:common/close-fingers-crossed-b-kr"
+},
+"2e560fc7ab9e55c6": {
+"caption": "An illustrated exterior view of a football stadium at dusk with red illuminated floodlights.",
+"people": 0,
+"faces": false,
+"place": "stadium",
+"mood": "tension",
+"avoid": [
+"bright daylight",
+"inside the bowl",
+"crowded terraces"
+],
+"id": "beat:common/home-end-night-kr"
+},
+"2ea539cbe549b123": {
+"caption": "Two players sliding tackle on a muddy pitch during a night match under floodlights.",
+"people": 2,
+"faces": true,
+"action": "sliding tackle",
+"place": "pitch",
+"era": "1980s",
+"mood": "tension",
+"text": "ACASTHI Carl",
+"avoid": [
+"dry pitch",
+"daytime games"
+],
+"id": "beat:job-19324d9d-b95c-4388-a19b-062dd2002d03/football-tackle-on-muddy-grass-e4aa238e-77d84e65d4be8078"
+},
+"2eab0a2f8d2e2c1a": {
+"caption": "Papercraft illustration of a player scoring with a header inside a stadium during a match.",
+"people": 5,
+"faces": false,
+"action": "scoring a header",
+"place": "stadium",
+"mood": "tension",
+"avoid": [
+"referee whistle",
+"red card"
+],
+"id": "beat:common/header-goalmouth-kr"
+},
+"2f1df08eda04f989": {
+"caption": "A large crowd of supporters carrying red scarves and flags marches down a city street toward a stadium.",
+"people": 40,
+"faces": false,
+"action": "marching to match",
+"place": "street",
+"era": "1970s",
+"mood": "defiance",
+"avoid": [
+"post-match riot celebration",
+"quiet empty residential lane"
+],
+"id": "beat:common/street-matchday-crowd-b-kr"
+},
+"2fb82b99ebe81180": {
+"caption": "Paper cutout artwork portrays an observer watching a youth football training session on a muddy field.",
+"people": 11,
+"faces": false,
+"action": "training session on muddy pitch",
+"place": "pitch",
+"era": "1950s",
+"mood": "calm",
+"avoid": [
+"prison bars: never for a transfer or a signing",
+"senior team match"
+],
+"id": "beat:common/youth-academy-kr"
+},
+"2fe46f9cdbd3724b": {
+"caption": "A sports magazine collage features an aerial view of a stadium flanked by pictures of celebrating players and text indicating a 4-3 score.",
+"people": 5,
+"faces": true,
+"action": "Celebrating victory",
+"place": "stadium",
+"era": "2020s",
+"mood": "joy",
+"text": "Zrinjski - Az Alkmaar 4 3",
+"avoid": [
+"single team focus",
+"training session",
+"empty stadium"
+],
+"id": "beat:zrinjski-az-2023/bijeli-brijeg-collage"
+},
+"31ef06b3bf2d39fa": {
+"caption": "A piece of off-white paper has a jagged horizontal tear exposing a dark background.",
+"people": 0,
+"faces": false,
+"action": "ripping paper",
+"place": "abstract",
+"mood": "tension",
+"avoid": [
+"paper shredding incident",
+"censorship act"
+],
+"id": "beat:common/tr-paper-tear-n"
+},
+"33bbadad3bb6ee95": {
+"caption": "Papercraft stadium scene with a football hitting the back of the net and cheering fans holding red scarves in the foreground.",
+"people": 15,
+"faces": false,
+"action": "scoring a goal",
+"place": "stadium",
+"mood": "joy",
+"avoid": [
+"missed penalty",
+"goalless draw",
+"training session"
+],
+"id": "beat:common/ball-in-net-b-kr"
+},
+"35c440c7c29c4f01": {
+"caption": "A stylized paper-cut illustration of a sunrise over a horizon with swirling clouds.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"a specific match day",
+"a stadium location"
+],
+"id": "beat:common/city-sunrise-sky-n"
+},
+"361234e914f25cf9": {
+"caption": "A paper cutout diorama of a crowded pub with fans watching a small television before a match.",
+"people": 23,
+"faces": false,
+"action": "gathering in pub",
+"place": "room",
+"era": "1970s",
+"mood": "camaraderie",
+"avoid": [
+"post-match celebration",
+"empty pub"
+],
+"id": "beat:common/pub-before-b-kr"
+},
+"3648cda56c724c26": {
+"caption": "A papercut illustration from the corner flag angle shows players gathered in the penalty box for a set piece.",
+"people": 22,
+"faces": false,
+"action": "preparing for a corner kick",
+"place": "stadium",
+"mood": "tension",
+"avoid": [
+"goal celebration"
+],
+"id": "beat:common/corner-taker-kr"
+},
+"396f6dbf3a90ee9d": {
+"caption": "A papercut artwork depicts an aerial view of a stadium with fans walking past in the foreground and a city skyline behind.",
+"people": 23,
+"faces": false,
+"action": "fans walking to match",
+"place": "city",
+"era": "2000s",
+"mood": "calm",
+"avoid": [
+"match kickoff",
+"riot police",
+"inside the dressing room"
+],
+"id": "beat:common/new-stadium-wide-kr"
+},
+"398ba840e6fe188a": {
+"caption": "Fans queue outside a stadium turnstile under an overcast sky while a police officer stands watch.",
+"people": 25,
+"faces": false,
+"action": "waiting in queue",
+"place": "stadium",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"celebrating a trophy",
+"watching television",
+"sunny day"
+],
+"id": "beat:common/turnstile-queue-b-kr"
+},
+"3a0aeb7bbd6b09b3": {
+"caption": "An illustrated paper-craft style image of a locker room interior with red jerseys hanging and a pair of boots on the floor.",
+"people": 0,
+"faces": false,
+"action": "empty dressing room",
+"place": "room",
+"mood": "calm",
+"avoid": [
+"post-match celebration",
+"team talk",
+"players changing"
+],
+"id": "beat:common/dressing-room-silence-b-kr"
+},
+"3a9a9958e99e57d6": {
+"caption": "A close-up view of muddy football boots standing on a concrete floor in a tunnel.",
+"people": 1,
+"faces": false,
+"action": "standing",
+"place": "stadium",
+"mood": "tension",
+"avoid": [
+"a post-match celebration",
+"a street scene"
+],
+"id": "beat:common/close-boots-tunnel-b-n"
+},
+"3bf41111387a85df": {
+"caption": "Supporters wearing red scarves and tops ride inside a vintage train carriage with luggage racks overhead.",
+"people": 22,
+"faces": false,
+"action": "riding train",
+"place": "other",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"players celebrating",
+"manager press conference",
+"boardroom meeting"
+],
+"id": "beat:common/train-supporters-kr"
+},
+"3deb62c62bd712a7": {
+"caption": "An away team bus travels down a winding countryside road toward an illuminated stadium under a dramatic dusk sky.",
+"people": 8,
+"faces": false,
+"action": "bus travelling on road",
+"place": "street",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"home fixture",
+"walking to the match"
+],
+"id": "beat:common/away-bus-floodlights"
+},
+"3fe4f41c901d1128": {
+"caption": "The interior of a pub with red scarves hanging on the wall and an open door showing a stadium down the street.",
+"people": 0,
+"faces": false,
+"place": "room",
+"era": "1970s",
+"mood": "calm",
+"avoid": [
+"matchday celebration",
+"pub brawl"
+],
+"id": "beat:common/follow-pub-door-kr"
+},
+"40abdf3e2d498a08": {
+"caption": "A papercraft model shows a team lined up on a pitch facing a packed stadium under floodlights.",
+"people": 50,
+"faces": false,
+"action": "lining up before a match",
+"place": "stadium",
+"mood": "tension",
+"avoid": [
+"actual human players",
+"real stadium footage"
+],
+"id": "beat:common/shootout-line-b-kr"
+},
+"418af71e5b2e873f": {
+"caption": "A newspaper front page shows a player celebrating with arms wide open under large Hebrew headlines.",
+"people": 3,
+"faces": true,
+"action": "celebrating",
+"place": "abstract",
+"era": "2020s",
+"mood": "joy",
+"text": "ISRAEL CANADA",
+"avoid": [
+"match report defeat",
+"financial scandal"
+],
+"id": "beat:olympiacos-maccabi-2024/press-israel"
+},
+"42a4cbace1382d38": {
+"caption": "A paper art depiction of fans gathered around a vintage car in a city street near floodlights.",
+"people": 9,
+"faces": false,
+"action": "listening to car radio",
+"place": "street",
+"era": "1950s",
+"mood": "tension",
+"avoid": [
+"car crash",
+"modern traffic"
+],
+"id": "beat:common/radio-street-b-kr"
+},
+"42eb5cf27a07674f": {
+"caption": "A large stadium clock dominates the view overlooking a floodlit night match with fans watching from the stands.",
+"people": 15,
+"faces": false,
+"action": "watching time pass",
+"place": "stadium",
+"mood": "tension",
+"avoid": [
+"empty stadium",
+"daytime match",
+"close up of players"
+],
+"id": "beat:hapoel-tel-aviv-1999-00/stadium-clock-crowd"
+},
+"44313461678ca175": {
+"caption": "A striker in a red and white striped kit battles for the ball against two defenders in yellow.",
+"people": 3,
+"faces": true,
+"action": "contesting the ball",
+"place": "pitch",
+"era": "2020s",
+"mood": "tension",
+"text": "ISRAEL CANADA",
+"avoid": [
+"penalty kick",
+"red card"
+],
+"id": "beat:olympiacos-maccabi-2024/el-kaabi-strike"
+},
+"44ad28b836c357a1": {
+"caption": "A textured paper page with black silhouette art depicting figures and landscape is being turned.",
+"people": 5,
+"faces": false,
+"action": "turning book page",
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"real pilgrimage documentary",
+"historical travelogue"
+],
+"id": "beat:common/tr-page-turn-b-n"
+},
+"47d71383e0ae330d": {
+"caption": "A line of supporters wearing red scarves waits by a stadium turnstile next to a police officer.",
+"people": 15,
+"faces": false,
+"action": "queuing for entry",
+"place": "stadium",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"post-match celebrations",
+"empty turnstiles",
+"indoor scenes"
+],
+"id": "beat:common/turnstile-queue-kr"
+},
+"48054cb9312a12fa": {
+"caption": "A player in red heads the ball towards the goalmouth while defenders and the goalkeeper react in a stadium.",
+"people": 6,
+"faces": false,
+"action": "heading the ball",
+"place": "stadium",
+"mood": "tension",
+"avoid": [
+"save by goalkeeper",
+"penalty kick"
+],
+"id": "beat:common/header-goalmouth-b-kr"
+},
+"490b962d67d23e46": {
+"caption": "A referee stands with a raised arm blowing a whistle in a packed stadium.",
+"people": 10,
+"faces": true,
+"action": "refereeing match",
+"place": "pitch",
+"mood": "tension",
+"avoid": [
+"player celebration",
+"empty stadium"
+],
+"id": "beat:hapoel-tel-aviv-1999-00/referee-whistle"
+},
+"4934eaf376d50ec7": {
+"caption": "A footballer stretches to kick the ball as a defender in yellow closes in during a match.",
+"people": 4,
+"faces": true,
+"action": "shooting the ball",
+"place": "pitch",
+"era": "2020s",
+"mood": "tension",
+"text": "ISRAEL CANADA",
+"avoid": [
+"missed chance",
+"injury"
+],
+"id": "beat:olympiacos-maccabi-2024/el-kaabi-volley"
+},
+"49f46d65deaf1194": {
+"caption": "Two players prepare to kick off at the centre circle while a referee stands nearby in front of a full stadium.",
+"people": 25,
+"faces": false,
+"action": "kick off",
+"place": "pitch",
+"era": "1950s",
+"mood": "tension",
+"avoid": [
+"full time"
+],
+"id": "beat:common/kick-off-centre-kr"
+},
+"4b2a4ccdb302c83c": {
+"caption": "A person in a dark shirt adjusts a bright red armband on their upper arm.",
+"people": 1,
+"faces": false,
+"action": "adjusting armband",
+"place": "other",
+"mood": "tension",
+"avoid": [
+"a medical injury",
+"a protest"
+],
+"id": "beat:common/close-armband-kr"
+},
+"4d291c5ba4f2db02": {
+"caption": "A crowd of fans on a ferry deck wave red flags and scarves as the vessel navigates calm waters near a mountainous shore.",
+"people": 32,
+"faces": false,
+"action": "Wave red flags",
+"place": "other",
+"mood": "joy",
+"avoid": [
+"matchday at the stadium",
+"arrival at port"
+],
+"id": "beat:common/ferry-deck-kr"
+},
+"4dca8c8162853e1d": {
+"caption": "A layered cardboard cutout sculpture showing a male football player clapping in front of a stadium fence.",
+"people": 2,
+"faces": true,
+"action": "player applauding crowd",
+"place": "stadium",
+"era": "1990s",
+"mood": "joy",
+"text": "diadora",
+"avoid": [
+"real photograph of a person",
+"digital painting"
+],
+"id": "beat:job-19324d9d-b95c-4388-a19b-062dd2002d03/unnamed-5-963d80a92f32f029"
+},
+"4dd5c24d188ccd6b": {
+"caption": "A child's hand rests on a metal railing, with a red sleeve visible.",
+"people": 1,
+"faces": false,
+"action": "resting hand",
+"place": "terrace",
+"mood": "calm",
+"avoid": [
+"a prison scene",
+"a dangerous situation"
+],
+"id": "beat:common/close-child-hand-railing-kr"
+},
+"4dd64fbd49f58ffb": {
+"caption": "A stadium bowl illuminated by tall floodlights at night.",
+"people": 0,
+"faces": false,
+"action": "floodlights on",
+"place": "stadium",
+"mood": "tension",
+"avoid": [
+"night match celebration",
+"floodlight failure"
+],
+"id": "beat:common/stadium-night-bowl-n"
+},
+"4fe19a87fdbdff4b": {
+"caption": "Packed stadium stands under floodlights feature fans waving large red and white flags and holding scarves aloft.",
+"people": 45,
+"faces": false,
+"action": "Waving flags and scarves",
+"place": "stadium",
+"mood": "defiance",
+"avoid": [
+"empty stadium",
+"post match"
+],
+"id": "beat:common/flags-pole-kr"
+},
+"50763973c1a45e75": {
+"caption": "Goalkeeper gloves, football boots, and an old-fashioned ball are arranged in front of a stadium silhouette at dusk.",
+"people": 1,
+"faces": false,
+"place": "pitch",
+"era": "1950s",
+"mood": "calm",
+"avoid": [
+"modern football",
+"transfer deadline",
+"match day"
+],
+"id": "beat:hapoel-tel-aviv-1999-00/boots-gloves-dusk"
+},
+"518489af101b0376": {
+"caption": "An illustrated papercraft style view from behind a referee in a striped shirt holding a red card high as a player walks away dejectedly.",
+"people": 3,
+"faces": false,
+"action": "refereeing match",
+"place": "stadium",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"prison bars: never for a transfer or a signing",
+"victory: never for winning a trophy"
+],
+"id": "beat:common/referee-red-card-n"
+},
+"5267baa2096e9ac2": {
+"caption": "A papercraft model of a football stadium featuring a large central clock shows packed stands and silhouettes of figures.",
+"people": 16,
+"faces": false,
+"action": "stadium view with clock",
+"place": "stadium",
+"era": "1960s",
+"mood": "tension",
+"avoid": [
+"real stadium",
+"live match action",
+"referee blowing whistle"
+],
+"id": "beat:common/last-minute-clock-b-n"
+},
+"53227914b33eacff": {
+"caption": "A supporter from behind raises a scarf overhead in a floodlit stadium crowd.",
+"people": 15,
+"faces": false,
+"action": "holding scarf",
+"place": "terrace",
+"mood": "defiance",
+"avoid": [
+"empty stands",
+"pitch action"
+],
+"id": "beat:hapoel-tel-aviv-1999-00/supporter-scarf-raised"
+},
+"54617368b645fb06": {
+"caption": "An illustrated paper-craft style image of an adult and child walking hand in hand up a cobbled street towards a floodlit stadium.",
+"people": 10,
+"faces": false,
+"action": "walking to the match",
+"place": "street",
+"era": "1960s",
+"mood": "calm",
+"avoid": [
+"leaving the stadium after defeat",
+"riot",
+"empty streets"
+],
+"id": "beat:common/father-son-walk-b-kr"
+},
+"5672c3fcc19b167b": {
+"caption": "A football player in a red and white striped shirt with number 9 leaps high to head the ball towards the goal.",
+"people": 7,
+"faces": false,
+"action": "heading the ball",
+"place": "stadium",
+"era": "1980s",
+"mood": "tension",
+"text": "9",
+"avoid": [
+"a goalkeeper making a safe catch",
+"a penalty kick"
+],
+"id": "beat:olympiacos-maccabi-2024/04-el-kaabi-header"
+},
+"5751c149bb4efdf2": {
+"caption": "A few figures walk towards an empty stadium illuminated by a single set of floodlights.",
+"people": 4,
+"faces": false,
+"action": "walking into stadium",
+"place": "stadium",
+"era": "1970s",
+"mood": "calm",
+"avoid": [
+"packed cup final atmosphere",
+"floodlight failure mid-game"
+],
+"id": "beat:common/stadium-lights-off-n"
+},
+"59a82f482c3cd63c": {
+"caption": "A red and white football lies near a torn ticket on the ground in front of a turnstile.",
+"people": 0,
+"faces": false,
+"place": "stadium",
+"mood": "tension",
+"avoid": [
+"prison bars: never for a transfer or a signing"
+],
+"id": "beat:hapoel-tel-aviv-1999-00/ticket-ball-turnstile"
+},
+"5a0fae65a5feecbc": {
+"caption": "A supporter wearing a flat cap holds up a scarf in front of empty stadium stands at an old ground.",
+"people": 1,
+"faces": false,
+"action": "holding scarf aloft",
+"place": "terrace",
+"era": "1950s",
+"mood": "defiance",
+"avoid": [
+"full stadium",
+"matchday crowd surge"
+],
+"id": "beat:common/supporter-cap-old-ground"
+},
+"5c5237d4836a525a": {
+"caption": "An abstract arrangement of beige and black framed blocks resembles scattered layouts.",
+"people": 0,
+"faces": false,
+"action": "scattering blocks",
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"newspapers",
+"photographs",
+"documents"
+],
+"id": "beat:common/tr-newspaper-cover-b-n"
+},
+"5ccb25b256b28705": {
+"caption": "A coach holding an umbrella watches players in red kits train on a wet pitch during a heavy downpour.",
+"people": 11,
+"faces": false,
+"action": "training in rain",
+"place": "pitch",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"matchday crowd",
+"sunny afternoon game",
+"indoor training"
+],
+"id": "beat:common/training-rain-b-kr"
+},
+"5dff8805f485f1c4": {
+"caption": "An illustrated interior brick corridor with exposed pipes and handrails leading towards a corner.",
+"people": 0,
+"faces": false,
+"place": "other",
+"mood": "tension",
+"avoid": [
+"prison bars",
+"dressing room"
+],
+"id": "beat:common/tunnel-brick-n"
+},
+"5e0af7431bb4b60a": {
+"caption": "A large crowd of people walk down a cobblestone street toward stadium gates.",
+"people": 50,
+"faces": false,
+"action": "walking down street",
+"place": "street",
+"mood": "defiance",
+"avoid": [
+"individual player profile",
+"indoor tactics meeting"
+],
+"id": "beat:common/street-to-ground-cobbles-kr"
+},
+"5e3c5489342bb1d4": {
+"caption": "A silhouetted referee holds up a checkered flag against a collaged sky.",
+"people": 1,
+"faces": false,
+"action": "raising offside flag",
+"place": "abstract",
+"era": "1930s",
+"mood": "tension",
+"avoid": [
+"referee running across pitch",
+"modern VAR review"
+],
+"id": "beat:common/offside-flag-b-n"
+},
+"5fb92b7d3cb61e6c": {
+"caption": "An illustrated monochrome exterior view of a large modern football stadium at night under a starry sky.",
+"people": 0,
+"faces": false,
+"place": "stadium",
+"mood": "calm",
+"avoid": [
+"daytime matches",
+"empty training ground",
+"historical local grounds"
+],
+"id": "beat:common/europe-stadium-night-n"
+},
+"605e9c16fb569d59": {
+"caption": "Black paper cutouts and splatters sweep across a cream textured background.",
+"people": 0,
+"faces": false,
+"action": "splattering and splashing",
+"place": "abstract",
+"mood": "tension",
+"avoid": [
+"paint spill",
+"liquid leak",
+"wave"
+],
+"id": "beat:common/tr-ink-wipe-n"
+},
+"60b59354ae035d50": {
+"caption": "Papercraft stadium model viewed from pitch level with a group of red-clad fans cheering in a fenced section.",
+"people": 25,
+"faces": false,
+"action": "supporting the team",
+"place": "stadium",
+"mood": "defiance",
+"avoid": [
+"empty stadium quiet atmosphere",
+"modern arena interior",
+"real match photography"
+],
+"id": "beat:common/away-end-arrival-kr"
+},
+"612d2650c8b017b4": {
+"caption": "An empty stadium tier features a striped scarf and discarded newspaper on the concrete steps.",
+"people": 0,
+"faces": false,
+"place": "terrace",
+"mood": "grief",
+"avoid": [
+"match in progress",
+"crowded stands"
+],
+"id": "beat:hapoel-tel-aviv-1999-00/scarf-step-newspaper"
+},
+"63a690587a23b130": {
+"caption": "A silhouetted linesman waves a checkered flag under a grey torn-paper sky.",
+"people": 1,
+"faces": false,
+"action": "signalling offside",
+"place": "abstract",
+"era": "1930s",
+"mood": "tension",
+"avoid": [
+"referee running across pitch",
+"modern VAR review"
+],
+"id": "beat:common/offside-flag-n"
+},
+"654b44d9761846ee": {
+"caption": "Solid yellow background with text reading AEK App Icon in the center.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "AEK App Icon",
+"avoid": [
+"match action",
+"real players"
+],
+"id": "beat:job-19324d9d-b95c-4388-a19b-062dd2002d03/aek-app-icon-512-125e2ee915f103bc"
+},
+"6606d31a09e933cf": {
+"caption": "Fans stand behind a fence waving red flags while a stadium stand is being demolished by a crane.",
+"people": 15,
+"faces": false,
+"action": "watching stadium demolition",
+"place": "stadium",
+"mood": "grief",
+"avoid": [
+"new stadium opening"
+],
+"id": "beat:common/demolition-stand-b-kr"
+},
+"6647c70cec220367": {
+"caption": "A single trophy stands on a pedestal under a spotlight inside a dark archive filled with shelves of paperwork.",
+"people": 0,
+"faces": false,
+"action": "trophy illuminated in archive",
+"place": "room",
+"mood": "calm",
+"avoid": [
+"pitch presentation",
+"trophy lift by players"
+],
+"id": "beat:common/archive-trophy-spotlight"
+},
+"685696e3189f31ad": {
+"caption": "An illustrated set of clasped prayer hands emerges from a torn paper background, wearing red and dark sleeves.",
+"people": 1,
+"faces": false,
+"action": "praying",
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"funeral",
+"injury"
+],
+"id": "beat:common/close-hands-clasp-prayer-b-kr"
+},
+"6882242e41e210d2": {
+"caption": "A vintage-style match ticket for Maccabi Tel Aviv versus Olympiacos FC is shown against a textured background of newspaper clippings.",
+"people": 0,
+"faces": false,
+"action": "Displaying ticket",
+"place": "abstract",
+"era": "2020s",
+"mood": "tension",
+"text": "Maccabi Tel Aviv FC - Olympiacos FC",
+"avoid": [
+"matchday experience",
+"live match action",
+"actual game highlights"
+],
+"id": "beat:olympiacos-maccabi-2024/ticket-backa-topola"
+},
+"696ad0326604c5ed": {
+"caption": "An elderly person wearing a cap sits alone on a bench outside stadium gates with a red scarf draped on the seat.",
+"people": 1,
+"faces": false,
+"action": "sitting alone",
+"place": "stadium",
+"mood": "grief",
+"avoid": [
+"manager resigning",
+"player transfer"
+],
+"id": "beat:common/grandfather-bench-b-kr"
+},
+"6aaec12255e190ef": {
+"caption": "Several strips of light-colored masking tape are diagonally placed across a black textured surface.",
+"people": 0,
+"faces": false,
+"action": "applying tape strips",
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"crime scene taping",
+"box packaging"
+],
+"id": "beat:common/tr-tape-strip-b-n"
+},
+"6aafbae636abeba1": {
+"caption": "A close-up cardboard sculpture portrait of a football player wearing a green and white striped jersey with a club crest.",
+"people": 1,
+"faces": true,
+"action": "player posing for portrait",
+"place": "studio",
+"era": "1990s",
+"mood": "calm",
+"text": "INTERAMERICAN 1908",
+"avoid": [
+"action on the pitch",
+"match celebration"
+],
+"id": "beat:job-19324d9d-b95c-4388-a19b-062dd2002d03/unnamed-7-151017148fe428de"
+},
+"6bb8521c1a39bca9": {
+"caption": "A low-angle papercraft view shows a football player standing over a ball on the pitch with a stadium in the background.",
+"people": 1,
+"faces": false,
+"action": "preparing to kick",
+"place": "pitch",
+"mood": "tension",
+"avoid": [
+"celebrating a goal",
+"referee blowing the whistle",
+"substitution"
+],
+"id": "beat:common/penalty-spot-close-b-n"
+},
+"6e55ffd5c616e498": {
+"caption": "A lone figure sits on a bench outside the gates of a large stadium under a cloudy sky.",
+"people": 1,
+"faces": false,
+"action": "sitting on a bench",
+"place": "stadium",
+"mood": "grief",
+"avoid": [
+"matchday atmosphere",
+"celebration"
+],
+"id": "beat:common/grandfather-bench-kr"
+},
+"6e63cb643f290f1c": {
+"caption": "Cream-colored background featuring a large empty circle with a thin black border and small text.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "AEK Mono",
+"avoid": [
+"match action",
+"real players"
+],
+"id": "beat:job-19324d9d-b95c-4388-a19b-062dd2002d03/aek-crest-mono-512-55427c064f32f571"
+},
+"6f7f10d893eee752": {
+"caption": "Fans hold umbrellas and watch a game from the stands as rain falls heavily on the pitch.",
+"people": 30,
+"faces": false,
+"action": "watching match under rain",
+"place": "terrace",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"dry drought conditions",
+"concert event"
+],
+"id": "beat:common/stand-roof-rain-kr"
+},
+"6f872acbdc0bc9d6": {
+"caption": "A wall decorated with empty picture frames and red pennants features a cabinet and tiny figures below.",
+"people": 4,
+"faces": false,
+"action": "displaying club history",
+"place": "room",
+"era": "1950s",
+"mood": "calm",
+"avoid": [
+"modern art gallery exhibition",
+"match action"
+],
+"id": "beat:common/old-photo-wall-b-kr"
+},
+"70bc4c36d081cfaf": {
+"caption": "A person wears a red winter scarf wrapped tightly around the lower part of their face.",
+"people": 1,
+"faces": true,
+"action": "wearing winter clothing",
+"place": "studio",
+"mood": "tension",
+"avoid": [
+"medical masks",
+"identity concealment"
+],
+"id": "beat:common/close-scarf-over-mouth-kr"
+},
+"734c04cb9b040bee": {
+"caption": "A vintage football and a pair of laced boots sit on the touchline beside a pitch.",
+"people": 0,
+"faces": false,
+"action": "boots and ball resting",
+"place": "pitch",
+"era": "1970s",
+"mood": "calm",
+"avoid": [
+"match in play",
+"goal celebration"
+],
+"id": "beat:common/boots-ball-touchline"
+},
+"7532d196409df36e": {
+"caption": "An illustrated paper-craft style image of a player in a red kit kneeling on the grass with head bowed in a packed stadium.",
+"people": 12,
+"faces": false,
+"action": "player kneeling defeated",
+"place": "stadium",
+"era": "1970s",
+"mood": "grief",
+"avoid": [
+"celebration",
+"winning goal",
+"jubilation"
+],
+"id": "beat:common/despair-kneeling-kr"
+},
+"753a7c43c9067752": {
+"caption": "Various overlapping strips of translucent tape and torn paper pieces are scattered on a dark surface.",
+"people": 0,
+"faces": false,
+"action": "arranging tape and paper",
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"forensic evidence collection",
+"desk cleanup"
+],
+"id": "beat:common/tr-tape-strip-n"
+},
+"7542d52dad728b17": {
+"caption": "An illustrated hand grips a chain-link fence from behind.",
+"people": 1,
+"faces": false,
+"action": "gripping fence",
+"place": "terrace",
+"mood": "defiance",
+"avoid": [
+"prison bars",
+"arrest"
+],
+"id": "beat:common/close-hands-fence-b-kr"
+},
+"761cc6de896b1569": {
+"caption": "An illustrated paper-craft style image of a football player kneeling in despair on a pitch while crowds cheer in the stands.",
+"people": 15,
+"faces": false,
+"action": "player kneeling in despair",
+"place": "stadium",
+"era": "1970s",
+"mood": "grief",
+"avoid": [
+"victory celebration",
+"trophy lift",
+"successful penalty taker"
+],
+"id": "beat:common/despair-kneeling-b-kr"
+},
+"783b91802b8edcfe": {
+"caption": "A stylized vintage poster features a football player from behind looking at a stadium with Greek and Serbian text.",
+"people": 5,
+"faces": false,
+"action": "looking at the stadium",
+"place": "stadium",
+"era": "1980s",
+"mood": "defiance",
+"text": "Η ΜΕΓΑΛΗ ΑΝΑΤΡΟΠΗ ΣΕΡΒΙΑ 2024",
+"avoid": [
+"a modern live broadcast screenshot",
+"an English Premier League match"
+],
+"id": "beat:olympiacos-maccabi-2024/07-greek-poster"
+},
+"79ae2bf3c9c01f12": {
+"caption": "A papercraft diorama of a boardroom table facing a cut-out window that looks out onto a football stadium.",
+"people": 0,
+"faces": false,
+"place": "room",
+"mood": "calm",
+"avoid": [
+"board meeting",
+"director negotiation"
+],
+"id": "beat:common/boardroom-table-b-n"
+},
+"7a37fdab4b75fa30": {
+"caption": "An elevated papercraft view shows a double-decker bus driving down a narrow city street packed with cheering crowds.",
+"people": 100,
+"faces": false,
+"action": "bus moving through crowd",
+"place": "city",
+"mood": "joy",
+"avoid": [
+"matchday traffic jam",
+"empty street",
+"riot scene"
+],
+"id": "beat:common/open-top-bus-kr"
+},
+"7b1557cffb19d024": {
+"caption": "A papercraft artwork shows stacks of newspapers at a stand with a distant stadium silhouette under a bright sky.",
+"people": 1,
+"faces": false,
+"action": "selecting newspapers",
+"place": "street",
+"era": "1960s",
+"mood": "calm",
+"avoid": [
+"digital screens",
+"modern press conference",
+"live television broadcast"
+],
+"id": "beat:common/newspaper-stand-n"
+},
+"7bd7dffdec46c101": {
+"caption": "Cream-colored background featuring a large yellow circle with a thin black border and small text.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "AEK Crest",
+"avoid": [
+"match action",
+"real players"
+],
+"id": "beat:job-19324d9d-b95c-4388-a19b-062dd2002d03/aek-crest-full-1024-90672463d83f1e1c"
+},
+"7c718a9bef41434f": {
+"caption": "A man stands on a balcony overlooking a city and a stadium with a scarf and newspapers on a table nearby.",
+"people": 1,
+"faces": false,
+"action": "looking at the stadium",
+"place": "city",
+"mood": "calm",
+"avoid": [
+"match day",
+"celebration",
+"transfer announcement"
+],
+"id": "beat:hapoel-tel-aviv-1999-00/desk-scarf-newspapers"
+},
+"7df144e42bbe0de3": {
+"caption": "Supporters wearing yellow and black scarves walk down a street towards a brightly lit stadium at night.",
+"people": 10,
+"faces": false,
+"action": "walking to match",
+"place": "street",
+"era": "1970s",
+"mood": "anticipation",
+"avoid": [
+"empty streets",
+"morning commute"
+],
+"id": "beat:job-19324d9d-b95c-4388-a19b-062dd2002d03/03-matchday-walk-9da733041cf6ba58"
+},
+"8030aa023b97a2cd": {
+"caption": "An aerial diorama shows a double-decker bus moving down a city street surrounded by a massive crowd of cheering fans.",
+"people": 100,
+"faces": false,
+"action": "victory parade celebration",
+"place": "city",
+"mood": "joy",
+"avoid": [
+"quiet transfer announcement",
+"empty stadium",
+"riot or civil unrest"
+],
+"id": "beat:common/open-top-bus-b-kr"
+},
+"80823ffbd34aad65": {
+"caption": "A classic football and two match tickets rest on the pitchside turf of a packed stadium under floodlights.",
+"people": 0,
+"faces": false,
+"action": "match preparation",
+"place": "stadium",
+"mood": "tension",
+"avoid": [
+"empty stadium",
+"training ground",
+"afternoon match"
+],
+"id": "beat:hapoel-tel-aviv-1999-00/ball-pitch-ticket-night"
+},
+"80ff045ed7574140": {
+"caption": "A papercraft illustration shows a stadium pitch with a clock tower and multiple silhouetted players.",
+"people": 15,
+"faces": false,
+"action": "match in paper stadium",
+"place": "stadium",
+"era": "1960s",
+"mood": "tension",
+"avoid": [
+"actual photograph of players",
+"modern arena",
+"crowd celebrating"
+],
+"id": "beat:common/last-minute-clock-n"
+},
+"824300b75d660f1b": {
+"caption": "A crowd of fans carrying red and white scarves and flags march down a palm-lined street toward a stadium.",
+"people": 15,
+"faces": false,
+"action": "street march",
+"place": "street",
+"mood": "defiance",
+"avoid": [
+"empty streets",
+"post-match riot"
+],
+"id": "beat:hapoel-tel-aviv-1999-00/street-march-scarves"
+},
+"84df564cccc29807": {
+"caption": "Workers in red tops paint large red and black patterned banners spread across the floor inside a factory.",
+"people": 20,
+"faces": false,
+"action": "painting tifo banners",
+"place": "studio",
+"era": "1970s",
+"mood": "calm",
+"avoid": [
+"match action",
+"stadium stands",
+"crowd cheering"
+],
+"id": "beat:common/tifo-making-kr"
+},
+"8664fb8608cf45f8": {
+"caption": "An empty stadium terrace features a red and white scarf and a trophy resting on the concrete steps.",
+"people": 0,
+"faces": false,
+"action": "trophy display",
+"place": "terrace",
+"mood": "calm",
+"avoid": [
+"fans cheering",
+"matchday crowd"
+],
+"id": "beat:hapoel-tel-aviv-1999-00/empty-terrace-scarf-cup"
+},
+"86686de9eaa5c2db": {
+"caption": "A player prepares to take a free-kick facing a defensive wall inside a stadium depicted in papercraft style.",
+"people": 7,
+"faces": false,
+"action": "free kick",
+"place": "stadium",
+"mood": "tension",
+"avoid": [
+"prison bars",
+"refereeing controversy"
+],
+"id": "beat:common/free-kick-wall-b-kr"
+},
+"874200175c72a6cd": {
+"caption": "A man in a tracksuit stands in a room looking at a tactical board with a pitch diagram.",
+"people": 1,
+"faces": false,
+"action": "planning tactics",
+"place": "room",
+"mood": "calm",
+"avoid": [
+"match day",
+"celebration",
+"player signing"
+],
+"id": "beat:hapoel-tel-aviv-1999-00/manager-tactics-board"
+},
+"886bbd7c9423ff5a": {
+"caption": "A papercut style view from behind the goal shows a player placing the ball in the corner arc during a match.",
+"people": 22,
+"faces": false,
+"action": "taking a corner kick",
+"place": "stadium",
+"mood": "tension",
+"avoid": [
+"full time whistle celebration"
+],
+"id": "beat:common/corner-taker-b-kr"
+},
+"887f07c615756997": {
+"caption": "An empty football stadium shown from a high angle with sweeping terracing and dark stands.",
+"people": 0,
+"faces": false,
+"action": "empty stands perspective",
+"place": "stadium",
+"era": "1970s",
+"mood": "calm",
+"avoid": [
+"full stadium",
+"match action"
+],
+"id": "beat:common/terrace-empty-old-n"
+},
+"8a4a5a166538a932": {
+"caption": "A collage wall of empty picture frames and red pennants arches over a crowd of fans waving flags.",
+"people": 30,
+"faces": false,
+"action": "celebrating club history",
+"place": "room",
+"era": "1950s",
+"mood": "joy",
+"avoid": [
+"modern art gallery exhibition",
+"match action"
+],
+"id": "beat:common/old-photo-wall-kr"
+},
+"8bd793125d7e5534": {
+"caption": "A goalkeeper in a red jersey dives to make a save in a crowded stadium.",
+"people": 5,
+"faces": false,
+"action": "goalkeeper diving",
+"place": "pitch",
+"mood": "tension",
+"avoid": [
+"celebration",
+"goal scored",
+"penalty kick"
+],
+"id": "beat:hapoel-tel-aviv-1999-00/keeper-diving-save"
+},
+"8ca004e18dfcb364": {
+"caption": "A packed stadium terrace filled with cheering fans holding up red scarves.",
+"people": 50,
+"faces": false,
+"action": "cheering in stands",
+"place": "terrace",
+"era": "1970s",
+"mood": "joy",
+"avoid": [
+"empty stadium",
+"quiet match"
+],
+"id": "beat:common/terrace-full-b-kr"
+},
+"8d7362d9907e8551": {
+"caption": "A figure holding an umbrella watches players train around red cones on a rain-soaked football pitch under floodlights.",
+"people": 11,
+"faces": false,
+"action": "drills in rain",
+"place": "pitch",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"match day celebration",
+"trophy lifting",
+"warm weather training"
+],
+"id": "beat:common/training-rain-kr"
+},
+"8e700e0d510ff1d3": {
+"caption": "A high angle shot of scattered red, black, and white paper confetti on a dark surface.",
+"people": 0,
+"faces": false,
+"action": "confetti scattered",
+"place": "abstract",
+"mood": "joy",
+"avoid": [
+"specific player portrait",
+"match action"
+],
+"id": "beat:common/tr-confetti-cover-b-kr"
+},
+"8feaa9a71b069558": {
+"caption": "An illustrated papercraft style perspective looking down at fans in the stands during a rainy match.",
+"people": 10,
+"faces": false,
+"action": "watching match in rain",
+"place": "stadium",
+"era": "1980s",
+"mood": "grief",
+"avoid": [
+"sunny day: never for bright weather",
+"empty stadium: never for closed doors"
+],
+"id": "beat:common/relegation-rain-kr"
+},
+"902bf6e0629ce184": {
+"caption": "A referee stands in the foreground blowing his whistle while players and fans celebrate on the pitch and in the stands.",
+"people": 50,
+"faces": false,
+"action": "Referee blowing whistle",
+"place": "pitch",
+"mood": "joy",
+"avoid": [
+"kickoff",
+"half time"
+],
+"id": "beat:common/final-whistle-arms-b-kr"
+},
+"92bb2bc3e6c1a751": {
+"caption": "A worn corner flag stands on a pristine pitch under stadium floodlights at night.",
+"people": 0,
+"faces": false,
+"action": "flag fluttering at night",
+"place": "pitch",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"daytime match",
+"empty stadium abandonment"
+],
+"id": "beat:common/corner-flag-night"
+},
+"931ad7afce0e3596": {
+"caption": "Several substitutes wearing matching tracksuits sit on the bench inside a dugout watching a game.",
+"people": 7,
+"faces": false,
+"action": "sitting on the bench",
+"place": "stadium",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"celebrating a goal",
+"players walking off injured"
+],
+"id": "beat:common/dugout-substitutes"
+},
+"943960f9bb07c89d": {
+"caption": "An aerial papercut illustration shows a stadium nestled inside an industrial city skyline at dawn.",
+"people": 5,
+"faces": false,
+"action": "people standing on balconies overlooking stadium",
+"place": "city",
+"mood": "calm",
+"avoid": [
+"modern match day: never for an empty stadium",
+"transfer announcement"
+],
+"id": "beat:common/city-skyline-dawn-b-kr"
+},
+"95b5255e086adcc6": {
+"caption": "An usher or ticket collector stands at a turnstile welcoming fans into a packed football stadium.",
+"people": 10,
+"faces": false,
+"action": "welcoming fans through turnstiles",
+"place": "stadium",
+"era": "1920s",
+"mood": "joy",
+"avoid": [
+"modern security checks",
+"contemporary ticket scanning"
+],
+"id": "beat:common/follow-turnstile-welcome-kr"
+},
+"95d408e47432e0cf": {
+"caption": "A paper cutout illustration of a programme seller holding papers near a stadium entrance as fans walk towards it.",
+"people": 25,
+"faces": false,
+"action": "selling programmes outside stadium",
+"place": "stadium",
+"era": "1960s",
+"mood": "anticipation",
+"avoid": [
+"modern matchday",
+"prison bars"
+],
+"id": "beat:common/programme-seller-b-kr"
+},
+"983b1fe608dae6f3": {
+"caption": "A wide exterior view of a stadium under dark storm clouds and rain.",
+"people": 0,
+"faces": false,
+"action": "raining",
+"place": "stadium",
+"mood": "tension",
+"avoid": [
+"floodlight failure",
+"match postponement"
+],
+"id": "beat:common/rain-stadium-n"
+},
+"9852b11f0dea0b6a": {
+"caption": "A papercraft montage features a football, stadium, skyline, and cheering fans.",
+"people": 10,
+"faces": false,
+"action": "cheering",
+"place": "abstract",
+"mood": "joy",
+"avoid": [
+"actual match footage",
+"live action"
+],
+"id": "beat:hapoel-tel-aviv-1999-00/ball-crowd-skyline"
+},
+"9e50a419f8fcfa7c": {
+"caption": "A paper art stadium scene shows a player striking the ball on the volley during a match.",
+"people": 11,
+"faces": false,
+"action": "volley shot on goal",
+"place": "stadium",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"prison bars: never for a transfer or a signing",
+"real live players"
+],
+"id": "beat:common/volley-edge-box-b-kr"
+},
+"a01c4de9892c59fd": {
+"caption": "A silhouetted figure looks out from an open hotel window towards a distant stadium skyline.",
+"people": 1,
+"faces": false,
+"action": "looking out window",
+"place": "room",
+"era": "1950s",
+"mood": "calm",
+"avoid": [
+"prison bars",
+"indoor training"
+],
+"id": "beat:common/hotel-window-city-b-kr"
+},
+"a081a6255ad6783b": {
+"caption": "Supporters gather outside a shop window at night to watch a football game displayed on vintage televisions.",
+"people": 15,
+"faces": false,
+"action": "watching match on tv",
+"place": "street",
+"era": "1970s",
+"mood": "calm",
+"avoid": [
+"inside a pub",
+"empty street",
+"stadium stands"
+],
+"id": "beat:common/tv-shop-window-kr"
+},
+"a1335723b18caf6b": {
+"caption": "A football player seen from behind in silhouette walking through a heavy metal gate towards the light.",
+"people": 1,
+"faces": false,
+"action": "walking out",
+"place": "stadium",
+"mood": "tension",
+"avoid": [
+"prison release",
+"cell escape"
+],
+"id": "beat:common/tunnel-gate-silhouette-n"
+},
+"a28d642d6f6478f7": {
+"caption": "A football player wearing number 56 shoots the ball towards the goal in a packed stadium.",
+"people": 8,
+"faces": false,
+"action": "player shooting at goal",
+"place": "stadium",
+"era": "1980s",
+"mood": "tension",
+"text": "56",
+"avoid": [
+"a player scoring a winning goal",
+"a celebration scene"
+],
+"id": "beat:olympiacos-maccabi-2024/02-podence-early"
+},
+"a2d9bfc948b2b0aa": {
+"caption": "An empty football stadium viewed from the stands with floodlights glowing under a grey sky.",
+"people": 0,
+"faces": false,
+"action": "empty stadium view",
+"place": "stadium",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"match day atmosphere",
+"crowd celebrations"
+],
+"id": "beat:common/terrace-empty-dusk-n"
+},
+"a41925c4da21db53": {
+"caption": "An elevated view of an old football ground filled with spectators waving red flags.",
+"people": 45,
+"faces": false,
+"action": "cheering from terraces",
+"place": "stadium",
+"era": "1920s",
+"mood": "defiance",
+"avoid": [
+"modern Premier League stadium",
+"empty stadium during pandemic"
+],
+"id": "beat:common/old-ground-wide-kr"
+},
+"a63b59f3f1d5efe5": {
+"caption": "A view looking out from a stadium tunnel towards the pitch and stands under floodlights.",
+"people": 0,
+"faces": false,
+"place": "stadium",
+"mood": "tension",
+"avoid": [
+"empty stadium",
+"matchday crowd"
+],
+"id": "beat:common/tunnel-bright-pitch-n"
+},
+"a6442a936d09cc21": {
+"caption": "A man in a long coat stands facing a blank easel in the middle of a football pitch inside a large stadium.",
+"people": 1,
+"faces": true,
+"action": "standing before empty easel",
+"place": "stadium",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"painting a masterpiece",
+"art class on the pitch",
+"whiteboard tactics session"
+],
+"id": "beat:common/manager-blank-board-stadium"
+},
+"a6b390cb84cbe331": {
+"caption": "A football player wearing number 22 takes a shot on goal in a crowded penalty area during a night game.",
+"people": 9,
+"faces": false,
+"action": "shooting on goal",
+"place": "stadium",
+"era": "1980s",
+"mood": "tension",
+"text": "22",
+"avoid": [
+"a peaceful training session",
+"a penalty shootout"
+],
+"id": "beat:olympiacos-maccabi-2024/05-extra-time"
+},
+"a6eda28e7cc699b2": {
+"caption": "A portable radio, a striped scarf, and a match ticket rest on a table against a plain wall.",
+"people": 0,
+"faces": false,
+"action": "objects on table",
+"place": "room",
+"era": "1970s",
+"mood": "calm",
+"avoid": [
+"matchday stadium atmosphere",
+"players in dressing room"
+],
+"id": "beat:common/radio-scarf-ticket-table"
+},
+"a902a0b198d24d1e": {
+"caption": "Layered paper rings form a camera shutter focusing on a bright central light.",
+"people": 0,
+"faces": false,
+"action": "shutter opening",
+"place": "abstract",
+"mood": "tension",
+"avoid": [
+"lens mechanism",
+"eye",
+"sun"
+],
+"id": "beat:common/tr-iris-floodlight-n"
+},
+"aa03646b363ae1c2": {
+"caption": "A match ticket for Olympiacos FC versus Maccabi Tel Aviv rests among ripped sports newspaper fragments.",
+"people": 0,
+"faces": false,
+"action": "Displaying match ticket",
+"place": "abstract",
+"era": "2020s",
+"mood": "tension",
+"text": "OLYMPIACOS FC VS MACCABI TEL AVIV",
+"avoid": [
+"live stadium atmosphere",
+"fans cheering",
+"on-pitch action"
+],
+"id": "beat:olympiacos-maccabi-2024/ticket-piraeus"
+},
+"aadfafcfc207da18": {
+"caption": "An illustrated papercraft style view of a referee holding up a red card in a football stadium while a player walks away with his head down.",
+"people": 5,
+"faces": false,
+"action": "refereeing match",
+"place": "stadium",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"prison bars: never for a transfer or a signing",
+"celebration: never for a goal celebration"
+],
+"id": "beat:common/referee-red-card-b-n"
+},
+"abb6319012675fd9": {
+"caption": "A paper art depiction shows a spectator watching children play football on a muddy pitch.",
+"people": 8,
+"faces": false,
+"action": "children playing football",
+"place": "pitch",
+"era": "1950s",
+"mood": "calm",
+"avoid": [
+"prison bars: never for a transfer or a signing",
+"professional match"
+],
+"id": "beat:common/youth-academy-b-kr"
+},
+"ac20280734a35ff0": {
+"caption": "A papercraft illustration shows fans behind the goal holding scarves in a stadium.",
+"people": 20,
+"faces": false,
+"action": "watching match",
+"place": "stadium",
+"mood": "tension",
+"avoid": [
+"real stadium",
+"photograph"
+],
+"id": "beat:hapoel-tel-aviv-1999-00/crowd-behind-goal-scarves"
+},
+"adebeb9860eb0c07": {
+"caption": "An illustrated papercraft style view of a memorial tribute with a red scarf tied to iron railings and flowers on the ground outside a stadium.",
+"people": 5,
+"faces": false,
+"action": "memorial tribute",
+"place": "stadium",
+"mood": "grief",
+"avoid": [
+"prison bars: never for a transfer or a signing",
+"happy matchday: never for a normal match preview"
+],
+"id": "beat:common/scarf-on-railing-b-kr"
+},
+"b0b2902d397fba6f": {
+"caption": "Several fans wearing red scarves seated in the stands overlooking a floodlit football pitch.",
+"people": 6,
+"faces": false,
+"action": "watching a match",
+"place": "stadium",
+"era": "1960s",
+"mood": "tension",
+"avoid": [
+"empty seats",
+"away fans rioting"
+],
+"id": "beat:common/follow-away-end-gap-kr"
+},
+"b12bcc5a16e5fd7a": {
+"caption": "An illustrated old-style football ground surrounded by industrial factories emitting smoke from chimneys.",
+"people": 0,
+"faces": false,
+"place": "stadium",
+"era": "1920s",
+"mood": "defiance",
+"avoid": [
+"modern arenas",
+"clean countryside",
+"empty modern bowl"
+],
+"id": "beat:common/old-ground-chimneys-n"
+},
+"b20f6ed346eb1248": {
+"caption": "A flatlay composition shows an official certificate, match tickets, a red and white scarf, pens, and newspaper clippings.",
+"people": 0,
+"faces": false,
+"action": "documenting history",
+"place": "room",
+"mood": "calm",
+"avoid": [
+"live match",
+"stadium view",
+"modern digital screen"
+],
+"id": "beat:hapoel-tel-aviv-1999-00/collage-certificate-scarf"
+},
+"b37de605153d3e81": {
+"caption": "A paper cutout style illustration showing a crowd of football fans walking past a programme seller towards a stadium.",
+"people": 20,
+"faces": true,
+"action": "entering the stadium",
+"place": "stadium",
+"era": "1960s",
+"mood": "anticipation",
+"avoid": [
+"modern arena",
+"empty ground"
+],
+"id": "beat:common/programme-seller-kr"
+},
+"b4864abee327e868": {
+"caption": "A referee stands on the pitch with arms raised under floodlights as players celebrate in front of a packed stadium.",
+"people": 50,
+"faces": false,
+"action": "Final whistle celebration",
+"place": "pitch",
+"mood": "joy",
+"avoid": [
+"kickoff",
+"half time"
+],
+"id": "beat:common/final-whistle-arms-kr"
+},
+"b569ddafeac87893": {
+"caption": "Papercraft stadium scene showing fans in the stands displaying a red and white pattern choreography display.",
+"people": 45,
+"faces": false,
+"action": "crowd displaying stadium choreography",
+"place": "stadium",
+"mood": "defiance",
+"avoid": [
+"stadium opening",
+"anniversary celebration"
+],
+"id": "beat:common/choreography-kr"
+},
+"b5f4b14763e73f06": {
+"caption": "An open scrapbook lies flat on a dark desk surrounded by paper craft stadium stands and crafting tools.",
+"people": 25,
+"faces": false,
+"action": "crafting a miniature paper stadium",
+"place": "studio",
+"mood": "calm",
+"avoid": [
+"real stadium matches",
+"live fan violence"
+],
+"id": "beat:common/scrapbook-desk-b-kr"
+},
+"b820ed6c522e1373": {
+"caption": "A crowd of people wearing dark coats and red scarves walking past a street lamp.",
+"people": 19,
+"faces": false,
+"action": "walking",
+"place": "street",
+"mood": "calm",
+"avoid": [
+"fans rioting",
+"police escort"
+],
+"id": "beat:common/street-lamp-crowd-kr"
+},
+"b9f07de8c8eddebb": {
+"caption": "A wider papercraft view of a free-kick scene in a packed stadium with spectators in the stands.",
+"people": 8,
+"faces": false,
+"action": "free kick",
+"place": "stadium",
+"mood": "tension",
+"avoid": [
+"empty stadium",
+"training session"
+],
+"id": "beat:common/free-kick-wall-kr"
+},
+"ba9ad7be70546d5b": {
+"caption": "A papercraft cutout shows a modern oval stadium surrounded by fans holding red flags and wearing red scarves.",
+"people": 25,
+"faces": false,
+"action": "fans celebrating outside stadium",
+"place": "stadium",
+"era": "2000s",
+"mood": "joy",
+"avoid": [
+"real crowd riot",
+"empty stadium",
+"historical black and white archive"
+],
+"id": "beat:common/new-stadium-wide-b-kr"
+},
+"bcdc2aff2b0a5c6a": {
+"caption": "A football player in a red and white kit runs toward the goal as the ball hits the net.",
+"people": 2,
+"faces": false,
+"action": "scoring a goal",
+"place": "pitch",
+"mood": "joy",
+"avoid": [
+"missed penalty",
+"goalkeeper celebration"
+],
+"id": "beat:hapoel-tel-aviv-1999-00/striker-runs-goal"
+},
+"be3795daccb9119f": {
+"caption": "A papercraft model shows ground staff shovelling snow off a football pitch under floodlights.",
+"people": 30,
+"faces": false,
+"action": "clearing snow from the pitch",
+"place": "stadium",
+"mood": "calm",
+"avoid": [
+"real winter matches",
+"actual groundskeepers"
+],
+"id": "beat:common/snow-pitch-b-kr"
+},
+"c004c93b93a4df0b": {
+"caption": "A football team celebrates with a trophy on the pitch amidst a packed stadium.",
+"people": 100,
+"faces": false,
+"action": "celebrating victory",
+"place": "stadium",
+"era": "1970s",
+"mood": "joy",
+"avoid": [
+"training session",
+"empty stadium",
+"pre-match buildup"
+],
+"id": "beat:common/trophy-lift-crowd-kr"
+},
+"c175570d8cd4be5e": {
+"caption": "A player viewed from behind faces a goal during a night match with a full stadium in the background.",
+"people": 1,
+"faces": false,
+"action": "taking a penalty",
+"place": "pitch",
+"mood": "tension",
+"avoid": [
+"empty pitch",
+"daytime training",
+"celebration"
+],
+"id": "beat:hapoel-tel-aviv-1999-00/penalty-taker-back"
+},
+"c209216581c47630": {
+"caption": "A large crowd of fans wearing red scarves stand inside an airport terminal watching an airplane outside.",
+"people": 22,
+"faces": true,
+"action": "watching plane board",
+"place": "room",
+"era": "1970s",
+"mood": "joy",
+"avoid": [
+"travel ban protests",
+"strike at the airport"
+],
+"id": "beat:common/airport-gate-kr"
+},
+"c21878fc09557dc4": {
+"caption": "A papercraft press conference table features multiple microphones with cameras and reporters in the foreground.",
+"people": 4,
+"faces": false,
+"action": "waiting for speakers",
+"place": "room",
+"mood": "calm",
+"avoid": [
+"manager resigning live on tv",
+"post-match player interview",
+"empty room"
+],
+"id": "beat:common/press-conference-b-n"
+},
+"c240dcc473b2bba9": {
+"caption": "Silhouette fans hold up scarves in the stands while a match ticket rests on the concrete steps.",
+"people": 10,
+"faces": false,
+"action": "cheering in stands",
+"place": "terrace",
+"mood": "joy",
+"avoid": [
+"empty stadium",
+"quiet reflection",
+"night match pitch action"
+],
+"id": "beat:hapoel-tel-aviv-1999-00/terrace-scarves-scoreboard"
+},
+"c26af5e7204bad60": {
+"caption": "Several players in red and white striped kits celebrate together in a huddle on the pitch.",
+"people": 5,
+"faces": true,
+"action": "team celebration",
+"place": "pitch",
+"era": "2020s",
+"mood": "joy",
+"text": "7",
+"avoid": [
+"substitution",
+"red card"
+],
+"id": "beat:olympiacos-maccabi-2024/huddle-fortounis"
+},
+"c34aa4469a225274": {
+"caption": "Close up of an open cardboard box containing old photographs, a red and white scarf, and papers inside an attic.",
+"people": 0,
+"faces": false,
+"action": "displaying stored items",
+"place": "room",
+"era": "1970s",
+"mood": "calm",
+"avoid": [
+"match action",
+"crowd celebrations",
+"modern transfers"
+],
+"id": "beat:common/attic-box-scarf-kr"
+},
+"c49f7a1c5ae41654": {
+"caption": "An illustrated paper-craft style image showing an empty football dressing room with red shirts hanging and boots left in the middle.",
+"people": 0,
+"faces": false,
+"action": "empty dressing room",
+"place": "room",
+"mood": "calm",
+"avoid": [
+"manager celebration",
+"trophy presentation",
+"active dressing room"
+],
+"id": "beat:common/dressing-room-silence-kr"
+},
+"c53fb024a503adf2": {
+"caption": "A decorative paper page with intricate borders and landscape silhouettes is being turned.",
+"people": 3,
+"faces": false,
+"action": "turning decorative page",
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"ancient scroll discovery",
+"museum manuscript reveal"
+],
+"id": "beat:common/tr-page-turn-n"
+},
+"c5a561792e547b64": {
+"caption": "Spectators stand under the stadium roof watching a match while heavy rain pours down.",
+"people": 25,
+"faces": false,
+"action": "watching match in rain",
+"place": "terrace",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"scorching heatwave",
+"indoor arena"
+],
+"id": "beat:common/stand-roof-rain-b-kr"
+},
+"c5d51e43645af990": {
+"caption": "A paper cutout interior view of a pub filled with supporters wearing scarves while watching a television screen.",
+"people": 15,
+"faces": false,
+"action": "watching match on television",
+"place": "room",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"stadium stand",
+"outdoor street"
+],
+"id": "beat:common/pub-before-kr"
+},
+"c9a95226f5e38750": {
+"caption": "A hand holds a torn red match ticket.",
+"people": 1,
+"faces": false,
+"action": "holding a ticket",
+"place": "studio",
+"mood": "defiance",
+"avoid": [
+"buying new tickets"
+],
+"id": "beat:common/close-ticket-in-hand-b-kr"
+},
+"cc02dc41f3ebaf69": {
+"caption": "A paper-cut artwork features a flowing red scarf across a landscape with silhouetted trees and figures.",
+"people": 3,
+"faces": false,
+"action": "scarf waving over landscape",
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"modern stadium",
+"press conference"
+],
+"id": "beat:common/tr-curtain-scarf-b-kr"
+},
+"cc690616ad2c65de": {
+"caption": "An overhead view of a stadium model with tiny figures playing a match on the pitch.",
+"people": 12,
+"faces": false,
+"action": "playing a match",
+"place": "stadium",
+"mood": "calm",
+"avoid": [
+"real life match",
+"stadium construction",
+"aerial photography"
+],
+"id": "beat:hapoel-tel-aviv-1999-00/stadium-model-overhead"
+},
+"cd88cd7f21cee7bc": {
+"caption": "A papercraft scene depicts a person at a newspaper stand with a stadium visible in the background.",
+"people": 2,
+"faces": false,
+"action": "reading newspapers at stand",
+"place": "street",
+"era": "1960s",
+"mood": "calm",
+"avoid": [
+"players on pitch",
+"stadium full of roaring fans",
+"trophy lift"
+],
+"id": "beat:common/newspaper-stand-b-n"
+},
+"cde0c259640f6b65": {
+"caption": "An empty stadium row at dusk features a red and white scarf and a match program left on a seat.",
+"people": 0,
+"faces": false,
+"action": "waiting for the match",
+"place": "stadium",
+"mood": "calm",
+"avoid": [
+"packed crowd",
+"live action",
+"daytime bright sun"
+],
+"id": "beat:hapoel-tel-aviv-1999-00/empty-seats-scarf-dusk"
+},
+"d04027ecd2daa7c4": {
+"caption": "Many workers in red shirts paint large abstract banners across the floor of a large industrial warehouse.",
+"people": 22,
+"faces": false,
+"action": "painting banners",
+"place": "studio",
+"era": "1970s",
+"mood": "calm",
+"avoid": [
+"stadium match day",
+"players on the pitch",
+"post-match celebrations"
+],
+"id": "beat:common/tifo-making-b-kr"
+},
+"d07e398a08a1e5e5": {
+"caption": "An open book displays paper cutout stadium pages with tiny fans and a pitch scene.",
+"people": 30,
+"faces": false,
+"action": "showing paper cutout football scenes",
+"place": "studio",
+"mood": "calm",
+"avoid": [
+"real match broadcasts",
+"live players running"
+],
+"id": "beat:common/scrapbook-desk-kr"
+},
+"d26e28176a06eeb0": {
+"caption": "An elderly person gently folds a bright red football scarf.",
+"people": 1,
+"faces": false,
+"action": "folding a scarf",
+"place": "studio",
+"mood": "calm",
+"avoid": [
+"bandaging hands"
+],
+"id": "beat:common/close-old-man-hands-scarf-kr"
+},
+"d2849042f6884faf": {
+"caption": "Fans in yellow and black colors holding up scarves inside a stadium under floodlights with a torn paper overlay.",
+"people": 5,
+"faces": true,
+"action": "holding up scarves",
+"place": "terrace",
+"era": "1990s",
+"mood": "defiance",
+"avoid": [
+"quiet moments",
+"empty stands"
+],
+"id": "beat:job-19324d9d-b95c-4388-a19b-062dd2002d03/04-terrace-background-6ee60fadbe6d9fe9"
+},
+"d44cda30c7417c3b": {
+"caption": "Medical staff carry an injured player off the pitch on a stretcher while concerned teammates look on in a packed stadium.",
+"people": 25,
+"faces": false,
+"action": "carrying stretcher",
+"place": "pitch",
+"era": "1950s",
+"mood": "grief",
+"avoid": [
+"celebration",
+"goal scored"
+],
+"id": "beat:common/injury-stretcher-b-kr"
+},
+"d5913b17ab0c2a10": {
+"caption": "An illustrated close-up shows prayer hands in red sleeves against a neutral background.",
+"people": 1,
+"faces": false,
+"action": "praying",
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"monk meditation",
+"religious ceremony"
+],
+"id": "beat:common/close-hands-clasp-prayer-kr"
+},
+"d7a42976951bf9f2": {
+"caption": "An illustrated papercraft style view of a red scarf tied to an ornate black gate with flowers and cards laid at the base outside a stadium.",
+"people": 5,
+"faces": false,
+"action": "memorial tribute",
+"place": "stadium",
+"mood": "grief",
+"avoid": [
+"prison bars: never for a transfer or a signing",
+"matchday excitement: never for celebratory content"
+],
+"id": "beat:common/scarf-on-railing-kr"
+},
+"d7b533ddd95de068": {
+"caption": "A papercraft cutout shows a player's legs and a football on the pitch facing a distant goal.",
+"people": 1,
+"faces": false,
+"action": "standing near the ball",
+"place": "pitch",
+"mood": "tension",
+"avoid": [
+"goal celebration",
+"refereeing",
+"manager tactical instructions"
+],
+"id": "beat:common/penalty-spot-close-n"
+},
+"d8f86dc99549d18d": {
+"caption": "Two illustrated hands grip a chain-link fence tightly.",
+"people": 2,
+"faces": false,
+"action": "gripping fence",
+"place": "terrace",
+"mood": "tension",
+"avoid": [
+"prison riot",
+"detention"
+],
+"id": "beat:common/close-hands-fence-kr"
+},
+"daf8664afdc2c24a": {
+"caption": "A trophy sits on a bench in front of a cheering crowd with a ball and newspapers.",
+"people": 0,
+"faces": false,
+"action": "trophy display",
+"place": "stadium",
+"mood": "joy",
+"avoid": [
+"match day",
+"defeat",
+"manager sacking"
+],
+"id": "beat:hapoel-tel-aviv-1999-00/trophy-table-crowd"
+},
+"db06c5494e3df5e8": {
+"caption": "A papercraft diorama of a long white boardroom table facing a large window showing a football stadium pitch.",
+"people": 2,
+"faces": false,
+"action": "silhouettes standing by doors",
+"place": "room",
+"mood": "tension",
+"avoid": [
+"board meeting",
+"manager interview"
+],
+"id": "beat:common/boardroom-table-n"
+},
+"dbb77b27b064c044": {
+"caption": "An empty press conference table with microphones is set up against a paper-textured wall.",
+"people": 0,
+"faces": false,
+"action": "preparing for interview",
+"place": "room",
+"mood": "calm",
+"avoid": [
+"manager resignation",
+"live broadcast in progress",
+"player signing"
+],
+"id": "beat:common/press-conference-n"
+},
+"dc52acbbafeef500": {
+"caption": "Black curved paper cuts overlap against a cream background.",
+"people": 0,
+"faces": false,
+"action": "layered abstract shapes",
+"place": "abstract",
+"mood": "defiance",
+"avoid": [
+"ink spill",
+"oil leak",
+"hair strands"
+],
+"id": "beat:common/tr-ink-cover-n"
+},
+"de34902e1925ab48": {
+"caption": "A collage featuring the AEK Athens crest, historic match programs, and fans holding scarves in a stadium.",
+"people": 12,
+"faces": false,
+"action": "fans holding scarves",
+"place": "stadium",
+"era": "1970s",
+"mood": "defiance",
+"text": "ΑΕΚ ΑΘΗΝΩΝ ΑΕΚ ΠΡΟΓΡΑΜΜΑ ΑΓΩΝΟΣ 1970 1924",
+"avoid": [
+"Panathinaikos match",
+"modern league trophy celebration"
+],
+"id": "beat:job-19324d9d-b95c-4388-a19b-062dd2002d03/01-identity-23a0890030d4efe6"
+},
+"de92e2184e70e7e7": {
+"caption": "Fans at a football stadium hold up a scarf reading GATE 13 underneath green flags and floodlights.",
+"people": 15,
+"faces": false,
+"action": "holding scarves and flags",
+"place": "stadium",
+"era": "1970s",
+"mood": "defiance",
+"text": "ΠΑΝΑΘΗΝΑΙΚΟΣ Α.Ο. ΕΠΙΣΗΜΟΝ ΠΡΟΓΡΑΜΜΑ ΑΓΩΝΟΣ 1973 GATE 13",
+"avoid": [
+"empty stadium",
+"daytime match"
+],
+"id": "beat:job-19324d9d-b95c-4388-a19b-062dd2002d03/02-gate-13-63995d9ef4de26f4"
+},
+"e035fff8e3d757f1": {
+"caption": "A paper cutout illustration of supporters crowded around a classic car on a city street.",
+"people": 13,
+"faces": true,
+"action": "gathering around car",
+"place": "street",
+"era": "1950s",
+"mood": "joy",
+"avoid": [
+"modern highway",
+"car showroom"
+],
+"id": "beat:common/radio-street-kr"
+},
+"e08d06d605b8287f": {
+"caption": "An illustrated paper-craft style image of fans walking up a residential street towards a floodlit stadium at dusk.",
+"people": 15,
+"faces": false,
+"action": "fans walking to match",
+"place": "street",
+"era": "1960s",
+"mood": "calm",
+"avoid": [
+"riot",
+"post match dispersal",
+"empty town"
+],
+"id": "beat:common/father-son-walk-kr"
+},
+"e1695b7a5ad82bf5": {
+"caption": "Groundsmen shovel thick snow off a red-lined football pitch inside a packed stadium during a snowstorm.",
+"people": 30,
+"faces": false,
+"action": "clearing snow from pitch",
+"place": "stadium",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"sunny summer afternoon match",
+"modern dome stadium"
+],
+"id": "beat:common/snow-pitch-kr"
+},
+"e182ef93a40bafa0": {
+"caption": "Fans in red and white scarves crowd onto the deck of a moving ferry travelling past hilly coastlines.",
+"people": 35,
+"faces": false,
+"action": "Travelling by ferry",
+"place": "other",
+"mood": "joy",
+"avoid": [
+"matchday at the stadium",
+"players arriving"
+],
+"id": "beat:common/ferry-deck-b-kr"
+},
+"e2cad156a74cab7e": {
+"caption": "Distressed vintage-style illustration of dejected fans in red and white striped shirts looking down at a stadium pitch.",
+"people": 10,
+"faces": false,
+"action": "fans reacting in despair",
+"place": "stadium",
+"era": "1980s",
+"mood": "grief",
+"avoid": [
+"happy celebrations",
+"victory scenes"
+],
+"id": "beat:olympiacos-maccabi-2024/01-piraeus-shock"
+},
+"e3c394bac578d121": {
+"caption": "Close-up papercraft view of a football bulging the net with celebrating fans visible in the background.",
+"people": 10,
+"faces": false,
+"action": "ball hitting the net",
+"place": "stadium",
+"mood": "joy",
+"avoid": [
+"goalkeeper save",
+"defensive clearance",
+"empty goal"
+],
+"id": "beat:common/ball-in-net-kr"
+},
+"e52a1db8bbb506fb": {
+"caption": "Paper art illustration shows a group of fans wearing scarves behind a barrier and a fence.",
+"people": 7,
+"faces": true,
+"action": "fans cheering behind fence",
+"place": "terrace",
+"era": "1970s",
+"mood": "defiance",
+"avoid": [
+"prison bars: never for a transfer or a signing",
+"players on pitch"
+],
+"id": "beat:common/away-fence-group-kr"
+},
+"e59204535b4da919": {
+"caption": "A silhouetted person kneels on the floor of a dimly lit attic looking towards an open cardboard box containing a red and white scarf and memorabilia.",
+"people": 1,
+"faces": false,
+"action": "looking at old memorabilia",
+"place": "room",
+"era": "1970s",
+"mood": "calm",
+"avoid": [
+"active match play",
+"modern stadium atmosphere",
+"current player signing"
+],
+"id": "beat:common/attic-box-scarf-b-kr"
+},
+"e593b5009420f554": {
+"caption": "A football player in red and white stripes celebrates by sliding on his knees on the pitch.",
+"people": 6,
+"faces": true,
+"action": "knee slide celebration",
+"place": "pitch",
+"era": "2020s",
+"mood": "joy",
+"text": "32",
+"avoid": [
+"red card",
+"referee controversy"
+],
+"id": "beat:olympiacos-maccabi-2024/el-kaabi-knee-slide"
+},
+"e5ef88c56c315e2c": {
+"caption": "An elderly person holds a neatly folded red football scarf in their hands.",
+"people": 1,
+"faces": false,
+"action": "holding a folded scarf",
+"place": "studio",
+"mood": "calm",
+"avoid": [
+"giving away gifts",
+"hospital blankets"
+],
+"id": "beat:common/close-old-man-hands-scarf-b-kr"
+},
+"e6badbe5ad476708": {
+"caption": "An elevated papercraft stadium model showing empty stands and a fenced section filled with red-clad fans holding banners.",
+"people": 30,
+"faces": false,
+"action": "cheering in the stands",
+"place": "stadium",
+"mood": "defiance",
+"avoid": [
+"empty stadium documentary without fans",
+"historical black and white archive footage",
+"close up of a single player"
+],
+"id": "beat:common/away-end-arrival-b-kr"
+},
+"e72cda858e104031": {
+"caption": "Papercraft illustration of a stadium with fans holding up a red and white mosaic choreography display in the stands.",
+"people": 50,
+"faces": false,
+"action": "fans holding up mosaic cards",
+"place": "stadium",
+"mood": "defiance",
+"avoid": [
+"trophy presentation",
+"fan protest"
+],
+"id": "beat:common/choreography-b-kr"
+},
+"e826ca9869d3ff1d": {
+"caption": "A silhouetted person watches stadium floodlights glowing across the rooftops from a hotel room window.",
+"people": 1,
+"faces": false,
+"action": "viewing stadium from afar",
+"place": "room",
+"era": "1950s",
+"mood": "calm",
+"avoid": [
+"prison bars"
+],
+"id": "beat:common/hotel-window-city-kr"
+},
+"e99ef19e005e7208": {
+"caption": "An illustrated close-up shows intertwined hands with a red band on one wrist against a light background.",
+"people": 1,
+"faces": false,
+"action": "intertwining fingers",
+"place": "abstract",
+"mood": "tension",
+"avoid": [
+"handcuffed prisoner",
+"fight"
+],
+"id": "beat:common/close-fingers-crossed-kr"
+},
+"ea5fe53edd657b4d": {
+"caption": "A large crowd of fans inside a floodlit stadium display a banner reading ORIGINAL 21 alongside yellow flags.",
+"people": 20,
+"faces": false,
+"action": "displaying banner in crowd",
+"place": "stadium",
+"era": "1970s",
+"mood": "defiance",
+"text": "Α.Ε.Κ. ΠΡΟΓΡΑΜΜΑ ΑΓΩΝΟΣ 1970 ORIGINAL 21 Α.Ε.Κ. F.C.",
+"avoid": [
+"quiet moments",
+"calm atmosphere"
+],
+"id": "beat:job-19324d9d-b95c-4388-a19b-062dd2002d03/02-original-21-6d1324030458ccd8"
+},
+"ebafcb548edeecee": {
+"caption": "A football player in a red and white striped shirt with number 7 runs forward with the ball during a night match.",
+"people": 7,
+"faces": false,
+"action": "running with the ball",
+"place": "stadium",
+"era": "1980s",
+"mood": "tension",
+"text": "7",
+"avoid": [
+"a player celebrating",
+"a defender tackling cleanly"
+],
+"id": "beat:olympiacos-maccabi-2024/03-fortounis-break"
+},
+"ebe4920ad1f3224e": {
+"caption": "A papercut artwork depicts a football stadium surrounded by rooftops under a sunburst sky.",
+"people": 6,
+"faces": false,
+"action": "people watching stadium from rooftops",
+"place": "city",
+"mood": "calm",
+"avoid": [
+"matchday crowd: never for empty stadium scenes"
+],
+"id": "beat:common/city-skyline-dawn-kr"
+},
+"ec62076d96715ebb": {
+"caption": "A pair of black and red football boots, a red and white scarf, and small portrait cards are displayed on a white surface in front of a illustrated stadium backdrop.",
+"people": 0,
+"faces": false,
+"action": "memorabilia display",
+"place": "studio",
+"mood": "calm",
+"avoid": [
+"real players",
+"live match"
+],
+"id": "beat:hapoel-tel-aviv-1999-00/boots-scarf-cards"
+},
+"ec70198db5c735e0": {
+"caption": "An animated scene showing a football player in green and white striped kit heading the ball during a match at night.",
+"people": 7,
+"faces": true,
+"action": "player heading the ball",
+"place": "stadium",
+"era": "1980s",
+"mood": "tension",
+"text": "GATE 13 GRACK F",
+"avoid": [
+"real live-action footage",
+"modern stadium architecture"
+],
+"id": "beat:job-19324d9d-b95c-4388-a19b-062dd2002d03/gemini-generated-image-10ro9y10ro9y10ro-56608c86f047ad16"
+},
+"ece3725b08ff0d47": {
+"caption": "A paper cut style landscape showcases a large football stadium nestled among city rooftops at dawn.",
+"people": 0,
+"faces": false,
+"place": "city",
+"mood": "calm",
+"avoid": [
+"prison bars: never for a transfer or a signing",
+"match action"
+],
+"id": "beat:common/city-rooftops-dawn-n"
+},
+"ed0bdfac00e122e9": {
+"caption": "A camera aperture shutter design with concentric beige circles in the center.",
+"people": 0,
+"faces": false,
+"action": "opening shutter",
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"camera lens",
+"eye iris",
+"sunbeam"
+],
+"id": "beat:common/tr-iris-floodlight-b-n"
+},
+"efce330dd96441a8": {
+"caption": "A scattered collage of aged newspaper style print layouts over a dark background.",
+"people": 0,
+"faces": false,
+"action": "scattering newspapers",
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"real news",
+"actual press",
+"documents"
+],
+"id": "beat:common/tr-newspaper-cover-n"
+},
+"f0687c619996eef9": {
+"caption": "A bookcase containing sports memorabilia sits next to a window overlooking a cityscape.",
+"people": 0,
+"faces": false,
+"place": "room",
+"mood": "calm",
+"avoid": [
+"active stadium scenes",
+"live match action"
+],
+"id": "beat:hapoel-tel-aviv-1999-00/trophy-shelf-empty"
+},
+"f0f27f62d5b48436": {
+"caption": "An illustrated night-time view shows a corner flag fluttering on a green football pitch inside an empty stadium.",
+"people": 0,
+"faces": false,
+"action": "Flag fluttering",
+"place": "pitch",
+"mood": "calm",
+"avoid": [
+"match action",
+"crowd celebration",
+"daytime match"
+],
+"id": "beat:papercut-library/corner-flag-fluttering-on-pitch-8feb737b"
+},
+"f128b2bbbe3f74a6": {
+"caption": "An illustrated bus carrying supporters drives along a winding country road toward a floodlit stadium at sunset.",
+"people": 0,
+"faces": false,
+"action": "Bus driving to stadium",
+"place": "street",
+"mood": "tension",
+"avoid": [
+"hooligan violence",
+"players arriving",
+"stadium interior"
+],
+"id": "beat:papercut-library/supporters-bus-heading-toward-st-92b40091"
+},
+"f1e549b4486c5591": {
+"caption": "A crowd of people stands on a street watching a football match broadcast on multiple televisions in a shop window.",
+"people": 15,
+"faces": false,
+"action": "watching televisions",
+"place": "street",
+"era": "1970s",
+"mood": "calm",
+"avoid": [
+"live match in stadium",
+"empty street",
+"indoor living room"
+],
+"id": "beat:common/tv-shop-window-b-kr"
+},
+"f6ca9b60a92c64b8": {
+"caption": "Supporters march down a narrow urban street holding red scarves and banners beneath stadium floodlights.",
+"people": 35,
+"faces": false,
+"action": "marching through streets",
+"place": "street",
+"era": "1970s",
+"mood": "defiance",
+"avoid": [
+"isolated rural village",
+"abandoned ghost town"
+],
+"id": "beat:common/street-matchday-crowd-kr"
+},
+"f8c6f9851794ddfb": {
+"caption": "A football rests on the pitch near the goal net under stadium floodlights at night.",
+"people": 0,
+"faces": false,
+"place": "pitch",
+"mood": "tension",
+"avoid": [
+"daytime matches",
+"empty stadium daytime"
+],
+"id": "beat:hapoel-tel-aviv-1999-00/ball-goal-line-night"
+},
+"f996f3ff95422c6f": {
+"caption": "A close-up view of muddy football boots standing on a concrete floor in a tunnel.",
+"people": 1,
+"faces": false,
+"action": "standing",
+"place": "stadium",
+"mood": "tension",
+"avoid": [
+"a post-match celebration",
+"a street scene"
+],
+"id": "beat:common/close-boots-tunnel-n"
+},
+"fbf6c971999158b3": {
+"caption": "A papercraft stadium view depicts football players lined up on the pitch facing the stands.",
+"people": 45,
+"faces": false,
+"action": "players lined up facing crowd",
+"place": "stadium",
+"mood": "tension",
+"avoid": [
+"real players",
+"actual television broadcast"
+],
+"id": "beat:common/shootout-line-kr"
+},
+"fdb7df82ff7c9c31": {
+"caption": "Supporters in the stands wave large red and white flags and scarves inside a floodlit stadium during a match.",
+"people": 40,
+"faces": false,
+"action": "Waving flags in stands",
+"place": "stadium",
+"mood": "defiance",
+"avoid": [
+"empty stadium",
+"post match"
+],
+"id": "beat:common/flags-pole-b-kr"
+},
+"fefd54b31e3740a0": {
+"caption": "An empty football pitch and stands under heavy rainfall.",
+"people": 0,
+"faces": false,
+"action": "raining",
+"place": "stadium",
+"mood": "tension",
+"avoid": [
+"match abandoned due to weather",
+"players leaving the pitch"
+],
+"id": "beat:common/rain-pitch-n"
+}
+}
+}

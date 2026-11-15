@@ -20,7 +20,7 @@ const DAY=(iso:string)=>new Date(iso).toLocaleDateString('en-CA',{timeZone:'Euro
 export const dueToday=(last?:string)=>!last||DAY(last)!==DAY(new Date().toISOString())
 
 export async function shopDoctor(by='autopilot',press?:(id:string)=>Promise<unknown>,sync?:(id:string)=>Promise<unknown>):Promise<ShopDoctorNote>{
- const doc=await readShop(),fixed:string[]=[],needs:string[]=[],now=new Date().toISOString(),names=doc.settings.designNames??{}
+ const all=await readShop(),doc={...all,products:all.products.filter(p=>!p.personal)},fixed:string[]=[],needs:string[]=[],now=new Date().toISOString(),names=doc.settings.designNames??{}
  const nameOf=(p:ShopProduct)=>names[designKey(p)]??p.title.split(' · ')[0]!
  // 1 · titles
  const retitle:string[]=[]

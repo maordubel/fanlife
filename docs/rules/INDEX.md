@@ -105,6 +105,7 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [no-sliced-parallax](no-sliced-parallax.md) · Never slice a picture into bands that move apart to fake depth; a still moves as one sheet, only a real cut-out moves in front of it (owner, 14.11.2026)
 - [editing-language](editing-language.md) · Five editing rules for every film: one world of four inks, a 12 s cold open then the question card, numbers as objects, one shape per film, never over 20 s in one visual language (enforced by the gate) (owner, 14.11.2026)
 - [studio-pictures](studio-pictures.md) · Rival colour read from the picture pixels; a named real person never gets a generic figure; the PNG library enters every documentary through the media index (owner, 14.11.2026)
+- [studio-music-dubelteam](studio-music-dubelteam.md) · Every film is scored only with the eight DubelTeam tracks, credited "Music: DubelTeam"; earlier tracks are retired (owner, 15.11.2026)
 - [studio-sight](studio-sight.md) · The studio looks at what it shows: pictures described once and chosen by sight, a director's shot list, no card on an empty ground (15% budget, 4 s), and a gate that judges the frames (owner, 15.11.2026)
 
 ## Control room, research desk and CRM
@@ -218,9 +219,11 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [shop-storefront](shop-storefront.md) · The selling /shop: promises, shop by club, curated shelves, same-design cross-sell, JSON-LD, listing limits, automatic fitting; desk in four tabs (13.11.2026)
 - [shop-sales](shop-sales.md) · Real price-cut sales (club / category / design, dates, never under cost + 10%), ribbon, free shipping, favourites, best sellers; the megastore order of /shop and the browse view (14.11.2026)
 - [shop-quality-brand](shop-quality-brand.md) · Builder in four steps with front/back/two pictures; quality-first blanks, printers and sizes; wrap covers; FAN LIFE seal on every garment; categories; daily doctor; sales coach (14.11.2026)
+- [shop-personal-prints](shop-personal-prints.md) · "Your XI, framed": the supporter's own XI as a framed print or poster, made at the printer on demand, manager's name optional, signed recipes, cleared in 3 days unless sold (14.11.2026)
 - [shop-checks-itself](shop-checks-itself.md) · The shop re-reads every product from Printify hourly, repairs links and pictures, hides what was deleted, re-presses passing failures; never shows anything itself (12.11.2026)
 - [hub-order](hub-order.md) · The hub and a club home are put in order, not redesigned: nothing hidden, the features indexed, clubs as a slide on a phone, no next-match box (12.11.2026)
 - [kit-drawings-measured](kit-drawings-measured.md) · Kit SVGs: stripes/hoops measured from the reference, sponsor on the armpit line at ~60% of the chest, real sponsor logo files (14.11.2026)
 - [owner-opens-clubs](owner-opens-clubs.md) · Only the owner opens a club to the public; archive work never does (14.11.2026)
 - [archive-official-source](archive-official-source.md) · An official source approves a record on its own: league, federation, competition, or the club's own site (13.11.2026, widened 14.11.2026)
 - [archive-one-night](archive-one-night.md) · One record per match night, a daily self-refreshing league feed, and the archive door every game links through (12.11.2026)
+- [shop-live-mockups.md](shop-live-mockups.md) — the first picture of a product is the product in use; gallery with thumbnails and a glass
