@@ -91,6 +91,9 @@ describe('social cleanup', () => {
     expect(pre.fillWords('{product} — from {price}', f.words)).toBe('THE KICK · Hoodie — from $57.99')
     expect(f.data.kicker).toBe('The FAN LIFE shop · Hoodie')
     expect(pre.HOLDS['frame-xi']).toBe('app/api/shop/personal/route.ts')
+    expect(pre.HOLD_ART['frame-xi']!.test('frame-xi-celtic.jpg')).toBe(true)
+    expect(pre.ytId('https://youtu.be/I9HYkLFJaeI')).toBe('I9HYkLFJaeI')
+    expect(readFileSync('scripts/marketing/kit/v4/prerender.mjs', 'utf8')).toMatch(/maxres\$\{k\}\.jpg/) // a frame of the film, never the thumbnail
     const {page} = await load()
     expect(await page('L-FILM', 'fanlife', {club: {id: 'panathinaikos'}, title: 'Καλημέρα'}, {})).toContain('lang="el"')
     expect(await page('L-FILM', 'fanlife', {club: {id: 'panathinaikos'}, title: 'x'}, {})).not.toContain('--s2:#D71920')

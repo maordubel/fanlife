@@ -4,3 +4,5 @@ type P = {id: string; title: string; subject?: string; kind?: string; printify: 
 export function pickProduct(list: P[], used: Set<string>, rnd?: () => number): P
 export function shopFill(p: P): {data: Record<string, unknown> & {kicker: string}; words: Record<string, string>}
 export function fillWords(s: string, w: Record<string, string>): string
+export const HOLD_ART: Record<string, RegExp>
+export function ytId(u: string | null | undefined): string | null

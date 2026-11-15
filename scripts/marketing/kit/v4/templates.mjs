@@ -395,7 +395,7 @@ async function frame(d, o) {
   const who = String(d.manager || '').trim(), title = `${who ? who.toUpperCase().replace(/’S$|'S$/, '') + '’S' : 'MY'} ALL-TIME XI`
   const slots = [[.5, .88], [.14, .68], [.38, .71], [.62, .71], [.86, .68], [.24, .47], [.5, .5], [.76, .47], [.2, .24], [.5, .19], [.8, .24]]
   const poster = d.format === 'poster'
-  const W = o.story ? 760 : 460, H = Math.round(W * 1.33)
+  const W = o.story ? 760 : 460, H = Math.round(W * 1.33) // the drawn frame is a preview only; posts use a real mock-up (d.image)
   const pitch = `<div style="position:relative;width:100%;height:100%;background:${mix(p0.primary || '#0B7A3B', '#000000', .35)};overflow:hidden">
 <div style="position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 ${H / 10}px,transparent ${H / 10}px ${H / 5}px)"></div>
 <div style="position:absolute;inset:6% 7% 8%;border:2px solid rgba(255,251,242,.55)"></div><div style="position:absolute;left:7%;right:7%;top:50%;border-top:2px solid rgba(255,251,242,.55)"></div>
@@ -404,7 +404,8 @@ async function frame(d, o) {
 ${c ? `<img src="${c}" alt="" style="position:absolute;right:5%;bottom:2.4%;width:${W * .09}px;height:${W * .09}px;object-fit:contain">` : ''}
 ${names.map((n, i) => `<div style="position:absolute;left:${slots[i][0] * 100}%;top:${slots[i][1] * 100}%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:${W * .055}px;height:${W * .055}px;border-radius:50%;background:#FFFBF2;color:#15130F;display:flex;align-items:center;justify-content:center;font:400 ${W * .028}px/1 Ultra">${i + 1}</span><span style="font:italic 900 ${W * .026}px/1 Archivo;font-stretch:76%;text-transform:uppercase;color:#FFFBF2;white-space:nowrap">${esc(n)}</span></div>`).join('')}
 <p class="k" style="position:absolute;left:5%;bottom:3%;font-size:${W * .018}px;color:rgba(255,251,242,.7)">FAN LIFE · ${esc(p0.name || '')}</p></div>`
-  const art = poster
+  const real = local(d.image)
+  const art = real ? `<img src="${real}" alt="" style="max-width:100%;max-height:100%;object-fit:contain;box-shadow:0 30px 50px rgba(0,0,0,.45)"${at('pop', .5)} data-kb>` : poster
     ? `<div style="width:${W}px;height:${H}px;box-shadow:0 30px 50px rgba(0,0,0,.45);transform:rotate(-1.5deg)"${at('pop', .5)}>${pitch}</div>`
     : `<div style="width:${W + 60}px;height:${H + 60}px;background:#1A1714;padding:14px;box-shadow:0 34px 60px rgba(0,0,0,.55),inset 0 0 0 3px #2B2621"${at('pop', .5)}><div style="width:100%;height:100%;background:#F3EEE4;padding:16px">${pitch}</div></div>`
   const wall = `<div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,#3A332C,#141210 75%)"></div><div style="position:absolute;left:0;right:0;bottom:0;height:${o.story ? 300 : 170}px;background:linear-gradient(#2A241E,#1A1612)"></div>`

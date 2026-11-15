@@ -6,7 +6,7 @@
  *       quota) and their addresses are written on the post: main.kit.v4 = {ver, png:[…], story}.
  *  The sender (kit/visual.mjs) fetches them; when they are missing it draws the v2 picture as before.
  *  Assets older than five days are deleted on every run (the retention job of this pipeline). */
-import {readFileSync, writeFileSync, mkdtempSync, existsSync} from 'node:fs'
+import {readFileSync, writeFileSync, mkdtempSync, existsSync, readdirSync} from 'node:fs'
 import {tmpdir} from 'node:os'
 import path from 'node:path'
 import {png, story, close} from './render.mjs'
@@ -68,21 +68,27 @@ export function shopFill(p) {
   return {data: {title: p.title, image: p.printify.images[0], price: p.printify.priceFrom, currency: p.printify.currency || 'USD', subject: p.subject, kind: p.kind, kicker: `The FAN LIFE shop${kind ? ' · ' + kind : ''}`},
     words: {product: p.title, name, price: money(p.printify.priceFrom, p.printify.currency)}}
 }
-/** a YouTube film: the first id YouTube itself confirms; its thumbnail becomes the picture and its link the post's */
-async function youtube(ids) {
-  for (const id of [].concat(ids || [])) {
+/** a YouTube film: the first id YouTube itself confirms. The picture is a frame from the film itself (YouTube keeps
+ *  three, at about a quarter, half and three quarters: maxres1-3, else hq1-3), never the designed thumbnail. */
+export const ytId = u => String(u || '').match(/(?:youtu\.be\/|v=|shorts\/)([\w-]{11})/)?.[1] || null
+async function youtube(ids, frame = 2) {
+  const k = [1, 2, 3].includes(Number(frame)) ? Number(frame) : 2
+  for (const id of [].concat(ids || []).filter(Boolean)) {
     try {
       const r = await fetch(`https://www.youtube.com/oembed?format=json&url=${encodeURIComponent('https://www.youtube.com/watch?v=' + id)}`, {signal: AbortSignal.timeout(15_000)})
       if (!r.ok) continue
-      const max = await fetch(`https://i.ytimg.com/vi/${id}/maxresdefault.jpg`, {method: 'HEAD', signal: AbortSignal.timeout(15_000)})
-      return {id, thumb: `https://i.ytimg.com/vi/${id}/${max.ok ? 'maxresdefault' : 'hqdefault'}.jpg`}
+      const max = await fetch(`https://i.ytimg.com/vi/${id}/maxres${k}.jpg`, {method: 'HEAD', signal: AbortSignal.timeout(15_000)})
+      return {id, thumb: `https://i.ytimg.com/vi/${id}/${max.ok ? 'maxres' : 'hq'}${k}.jpg`}
     } catch {}
   }
   return null
 }
 export const fillWords = (s, w) => String(s ?? '').replace(/\{(product|name|price)\}/g, (m, k) => w[k] ?? m)
 /** campaigns waiting for a feature: released the first run after the feature's file is on main */
+/** the frame campaign also waits for real product mock-ups (the owner's rule: products are shown as the product, never
+ *  as a drawing): art/shop/frame-xi-*.jpg, a real Printify mock-up of a personal print */
 export const HOLDS = {'frame-xi': 'app/api/shop/personal/route.ts'}
+export const HOLD_ART = {'frame-xi': /^frame-xi-.+\.(jpe?g|png)$/}
 
 /** the real screen behind a post: a gate's own game (pressed past its start), LIFE, Legends Manager */
 async function screenFor(page, kit, dir) {
@@ -96,7 +102,7 @@ async function screenFor(page, kit, dir) {
 async function main() {
   if (!DB || !KEY) throw Error('SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY missing')
   if (!GH) throw Error('GITHUB_TOKEN missing')
-  for (const [hold, file] of Object.entries(HOLDS)) if (existsSync(file)) {
+  for (const [hold, file] of Object.entries(HOLDS)) if (existsSync(file) && (!HOLD_ART[hold] || readdirSync(path.join(path.dirname(new URL(import.meta.url).pathname), 'art', 'shop')).some(f => HOLD_ART[hold].test(f)))) {
     try { const r = await rpc('worker_marketing_release', {p_hold: hold}); if (r?.n) console.log(`released ${r.n} post(s) held for ${hold}`) } catch (e) { console.log(`::warning title=release ${hold}::${e.message}`) }
   }
   const queue = (await rpc('worker_marketing_v4_queue', {p_hours: HOURS, p_ver: V4_VERSION})).slice(0, LIMIT)
@@ -129,8 +135,8 @@ async function main() {
           Object.assign(data, f.data); s.data = data
           for (const k of ['hook', 'body']) if (post.fill?.[k]) patch[k] = fillWords(post.fill[k], f.words)
         }
-        if (data.yt) {
-          const y = await youtube(data.yt)
+        if (s.t === 'L-FILM' && (data.yt || ytId(post.url))) {
+          const y = await youtube(data.yt || ytId(post.url), data.frame ?? (post.id % 3) + 1)
           if (!y) throw Error('YouTube does not confirm the film')
           data.thumb = y.thumb; s.data = data; patch.url = `https://youtu.be/${y.id}`
         }
