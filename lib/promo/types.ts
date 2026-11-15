@@ -14,6 +14,8 @@ export type Banner={
  delaySec:number|null;showSec:number|null
  weight:number;maxPerSession:number;maxPerDay:number;cooldownMin:number
  note:string
+ /** 'strip' = the 320×50 slide-up (default); 'card' = a 4:5 poster card in the corner (15.11.2026: the shop's lookbook ads) */
+ format?:'strip'|'card'
 }
 export type PageRule={page:string;mode:'auto'|'off'|'only';only:string[]}
 export type PromoSettings={enabled:boolean;delaySec:number;showSec:number;gapSec:number;maxPerSession:number;pageRules:PageRule[]}
