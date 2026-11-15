@@ -168,6 +168,20 @@ class Source:
         return lens(frame, z, cx, cy)
 
 
+_CMAPS: dict[str, set[int]] = {}
+
+
+def _require_glyphs(font: Path, text: str) -> None:
+    """Fail the build when the card font lacks a letter (DUŠAN BAJEVIĆ once printed as DU▯AN BAJEVIC')."""
+    from fontTools.ttLib import TTFont
+    key = str(font)
+    if key not in _CMAPS:
+        _CMAPS[key] = set(TTFont(key).getBestCmap())
+    missing = sorted({c for c in text if not c.isspace() and ord(c) not in _CMAPS[key]})
+    if missing:
+        raise SystemExit(f'card font {Path(key).name} has no glyph for {"".join(missing)!r} in {text!r}')
+
+
 def tag(img: Image.Image, t: float, text: str, xy: tuple[int, int], font: Path, size: int = 84, sub: str = '',
         sub_font: Path | None = None, colour=pt.CREAM, ink=pt.INK, rot: float | None = None) -> Image.Image:
     """A cut-card label with a brass pin, dropped in on twos."""
@@ -175,6 +189,9 @@ def tag(img: Image.Image, t: float, text: str, xy: tuple[int, int], font: Path, 
         return img
     f = ImageFont.truetype(str(font), size)
     fs = ImageFont.truetype(str(sub_font or font), max(30, int(size * 0.5)))
+    _require_glyphs(font, text)                                      # a card never prints a box for a missing letter
+    if sub:
+        _require_glyphs(sub_font or font, sub)
     probe = ImageDraw.Draw(Image.new('RGB', (4, 4)))
     tw = probe.textlength(text, font=f)
     sw = probe.textlength(sub, font=fs) if sub else 0
