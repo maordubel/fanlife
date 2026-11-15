@@ -5,6 +5,8 @@ import type {GameCopy} from '@/lib/clubs/game-copy'
 import type {Pos,RumbleCard} from '@/lib/clubs/rumble'
 import {kitFor,type KitContext,type RumbleWardrobe} from '@/lib/clubs/rumble-kit'
 import {KitPlate} from '@/components/clubs/games/KitPlate'
+import {KitCloth} from '@/components/clubs/gates/kit-builder/KitCloth'
+import {documentedCloth} from '@/lib/clubs/kit-model'
 
 /** a key of the club game copy, filled — the English UI never reaches for a Worker string */
 export function tr(copy:GameCopy,key:string,vars:Record<string,string|number>={}):string{
@@ -48,6 +50,12 @@ export function RumbleShirt({card,side,wardrobe,className,playedOn,keeper}:{card
  const photo=side==='us'?wardrobe.photos?.[card.id]:undefined
   // eslint-disable-next-line @next/next/no-img-element -- the measured bytes are the shipped bytes (rule 69)
  if(photo&&!playedOn&&!keeper&&card.position!=='GK')return <img src={photo.src} alt="" data-archive-photo="" data-shirt="photo" title={photo.label} loading="lazy" decoding="async" draggable={false} className={className} style={{objectFit:'contain'}}/>
+ if(worn.source==='archive'&&worn.kit.parts){
+  const {kit}=worn,parts=kit.parts!
+  const cloth=documentedCloth({colours:kit.colours,design:parts.design,maker:parts.maker,sponsor:parts.sponsor},()=>false)
+  const crest=parts.crest?.kind==='historical'?parts.crest.src:null
+  if(cloth&&!kit.shorts&&!kit.socks)return <KitCloth spec={crest?{...cloth,crest:true,crestArt:crest}:cloth} texture={false} className={className}/>
+ }
  if(worn.source==='archive')return <KitPlate kit={{...worn.kit,id:`${worn.kit.id}-${side}`}} label={false} decorative className={className}/>
  const home=worn.variant==='home'
  return <KitPlate kit={{id:`livery-${worn.variant}`,design:home?'plain':'chest band',colours:[],season:''}} label={false} decorative className={className} paints={home?{a:'var(--club-primary)',b:null}:{a:'var(--mag-card)',b:wardrobe.awayNeutral?'var(--mag-muted)':'var(--club-primary)'}}/>
