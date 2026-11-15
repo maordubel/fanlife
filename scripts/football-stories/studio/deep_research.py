@@ -235,6 +235,11 @@ def enrich(ledger: dict, brief: dict, cache_dir: Path, log) -> dict:
         try:
             answer, meta = _call(subject, key, log)
         except StageError as e:
+            # Owner, 15.11.2026 (the AEK–Derby film written on two facts): a documentary is never written on the archive's
+            # bare scores because Google was busy. A busy or spent quota makes the film WAIT and start again by itself.
+            if e.code in ('WRITER_BUSY', 'WRITER_QUOTA_DAY') and os.environ.get('STORIES_THIN_OK') != '1':
+                log(f'Deep research could not run ({e.code}) — the film waits for it rather than go out thin')
+                raise
             log(f'Deep research skipped ({e.code}): {str(e)[:200]} — the film goes ahead on the archive')
             return ledger
         facts = grounded_facts(answer, meta['response'])

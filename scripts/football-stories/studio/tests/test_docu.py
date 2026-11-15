@@ -70,7 +70,9 @@ class Docu(unittest.TestCase):
     def test_the_score_is_the_claims(self):
         f = self.ed.by['m3']['fact']
         us, them = (f['score_home'], f['score_away']) if f['side'] != 'away' else (f['score_away'], f['score_home'])
-        self.assertRegex(self.page, rf'<div class="sbc"><b>{us}</b><i>–</i><b>{them}</b></div>')
+        # before the film's reveal point the board asks (?–?); after it, it prints the claim's score (owner, 15.11.2026)
+        self.assertRegex(self.page, rf'<div class="sbc"><b>({us}|\?)</b><i>–</i><b>({them}|\?)</b></div>')
+        self.assertNotRegex(self.page, r'<div class="sbc"><b>(?!\?)[^<]+</b><i>–</i><b>\?</b></div>')
 
     def test_subtitles_never_run_ahead_of_the_voice(self):
         for s in self.plan['shots']:

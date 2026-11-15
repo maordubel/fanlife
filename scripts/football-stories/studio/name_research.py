@@ -116,7 +116,7 @@ def entries(only: str | None = None) -> list[dict]:
         for m in d.get('matches') or []:
             v = m.get('value') or {}
             for s in v.get('scorers') or []:
-                add(s.get('name') or '', 'player', cname, country)
+                add((s.get('name') if isinstance(s, dict) else str(s or '')) or '', 'player', cname, country)   # a pack may list scorers as plain names
         world = ROOT / 'club-packs' / club / 'world.json'
         if world.exists():
             w = json.loads(world.read_text())
