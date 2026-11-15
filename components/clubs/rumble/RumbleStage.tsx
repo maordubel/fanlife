@@ -10,7 +10,7 @@ import s from './rumble.module.css'
 
 function Token({p,shown,active,pulse,wardrobe,copy,dense,carrier}:{p:ShowPlayer;shown:boolean;active:boolean;pulse:boolean;wardrobe:RumbleWardrobe;copy:GameCopy;dense:boolean;carrier?:boolean}){
  const at=screenPosFor(p,dense)
- return <div className={s.token} style={{insetInlineStart:`${at.x}%`,insetBlockStart:`${at.y}%`}} data-shown={shown} data-active={active} data-carrier={carrier||undefined} data-pulse={pulse} data-side={p.side} data-dense={dense||undefined} data-testid={`rumble-token-${p.side}`}>
+ return <div className={s.token} style={{left:`${at.x}%`,insetBlockStart:`${at.y}%`}} data-shown={shown} data-active={active} data-carrier={carrier||undefined} data-pulse={pulse} data-side={p.side} data-dense={dense||undefined} data-testid={`rumble-token-${p.side}`}>
   <div className={s.tokenBody}>
    <span className={s.tokenShirt}><RumbleShirt card={p} side={p.side} wardrobe={wardrobe}/></span>
    <span className={s.tokenName} dir="auto">{shortName(p.name)}</span>
@@ -26,7 +26,7 @@ export function RumblePitch({us,them,usCount,themCount,wardrobe,copy,active,ball
   {us.map((p,i)=><Token key={`us-${p.id}`} p={p} shown={i<usCount} active={active?.side==='us'&&active.id===p.id} pulse={pulse} wardrobe={wardrobe} copy={copy} dense={dense}/>)}
   {them.map((p,i)=><Token key={`them-${p.id}`} p={p} shown={i<themCount} active={active?.side==='them'&&active.id===p.id} pulse={false} wardrobe={wardrobe} copy={copy} dense={dense}/>)}
   {trail&&trail.length>1&&<svg className={s.ballPath} viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><polyline points={trail.map(t=>`${t.x},${t.y}`).join(' ')} data-side={trail[trail.length-1]!.side}/></svg>}
-  {ball&&<span className={s.ball} style={{insetInlineStart:`${ball.x}%`,insetBlockStart:`${ball.y}%`}} aria-hidden="true"/>}
+  {ball&&<span className={s.ball} style={{left:`${ball.x}%`,insetBlockStart:`${ball.y}%`}} aria-hidden="true"/>}
   {children}
  </div>
 }

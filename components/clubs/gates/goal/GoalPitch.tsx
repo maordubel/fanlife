@@ -58,7 +58,7 @@ export function GoalPitch({layers,ball,lift,goalHit,interactive,armed,active,cam
  const camStyle:CSSProperties|undefined=cam&&cam.s>1?{transform:`translate(${cam.tx*100}%,${cam.ty*100}%) scale(${cam.s})`}:undefined
  return <div className={css.pitch} data-testid="goal-pitch" data-armed={armed} data-review={previewTouch!==undefined||undefined}>
   <div className={css.cam} style={camStyle}>
-   <svg className={css.svg} viewBox={`${VIEW.x} ${VIEW.y} ${VIEW.w} ${VIEW.h}`} aria-hidden="true" focusable="false">
+   <svg className={css.svg} viewBox={`${VIEW.x} ${VIEW.y} ${VIEW.w} ${VIEW.h}`} preserveAspectRatio="none" aria-hidden="true" focusable="false">
     <Chalk/>
     <Net hit={goalHit} label={labels.goal}/>
     {layers.map(l=><Paths key={l.id} layer={l}/>)}

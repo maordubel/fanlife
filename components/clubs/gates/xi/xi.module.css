@@ -36,11 +36,12 @@
 .hudFormation:active { transform: translate(2px, 2px); }
 
 /* ------------------------------------------------------------- a man on the pitch: a shirt and a name plate */
-.token { --w: max(44px, 21cqw); position: absolute; z-index: 2; width: var(--w); margin-inline-start: calc(var(--w) / -2); transform: translateY(-50%); display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 0; border: 0; background: transparent; color: var(--mag-white); font: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.token { --w: max(44px, 21cqw); position: absolute; z-index: 2; width: var(--w); display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 0; border: 0; background: transparent; color: var(--mag-white); font: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; }
 .token[data-over='true'], .token[data-drop-over='true'] { z-index: 4; }
 .token[data-drop-over='true'] .shirt, .token[data-drop-over='true'] .empty { transform: scale(1.18); }
 .shirt { position: relative; width: 72%; max-width: 64px; aspect-ratio: 5 / 6; transition: transform .14s ease; animation: xiPop .32s cubic-bezier(.3, 1.6, .5, 1); filter: drop-shadow(2px 3px 0 var(--mag-ink)); }
 .shirt svg { width: 100%; height: 100%; display: block; }
+.token:not(.chair) { translate: -50% -50%; }
 .cap { position: absolute; inset-block-start: -4px; inset-inline-end: -4px; width: 19px; height: 19px; display: grid; place-items: center; border-radius: 50%; border: 2px solid var(--xi-ink); background: var(--mag-yellow); color: var(--xi-ink); font-family: var(--mag-goal); font-size: 10px; line-height: 1; }
 .plate { max-width: 100%; padding: 2px 5px 1px; background: var(--mag-white); color: var(--xi-ink); border: 2px solid var(--xi-ink); font-family: var(--mag-display); font-size: clamp(10px, 3.6cqw, 14px); line-height: 1.1; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 [lang='he'] .plate { text-transform: none; font-family: var(--mag-body); font-weight: 800; }

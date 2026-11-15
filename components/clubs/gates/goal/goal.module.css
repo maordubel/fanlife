@@ -83,7 +83,7 @@
 .tokens { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
 .tokenAt { position: absolute; width: 0; height: 0; z-index: 1; }
 .tokenAt[data-tone='archive'] { z-index: 2; }
-.token { position: absolute; inset-inline-start: 0; inset-block-start: 0; translate: -50% -50%; display: flex; flex-direction: column; align-items: center; min-width: 44px; min-height: 44px; justify-content: center; padding: 0; border: 0; background: transparent; color: var(--mag-paper); font: inherit; cursor: pointer; pointer-events: auto; touch-action: none; -webkit-tap-highlight-color: transparent; }
+.token { position: absolute; left: 0; top: 0; translate: -50% -50%; display: flex; flex-direction: column; align-items: center; min-width: 44px; min-height: 44px; justify-content: center; padding: 0; border: 0; background: transparent; color: var(--mag-paper); font: inherit; cursor: pointer; pointer-events: auto; touch-action: none; -webkit-tap-highlight-color: transparent; }
 span.token { pointer-events: none; cursor: default; }
 .magnet { position: relative; width: clamp(26px, 11cqw, 42px); aspect-ratio: 1; display: grid; place-items: center; padding: 3px; background: var(--mag-paper); border: 2px solid var(--gl-ink); border-radius: 50%; box-shadow: 0 0 0 2px var(--mag-paper); animation: glPop .3s cubic-bezier(.3, 1.6, .5, 1); }
 .magnet[data-tone='archive'] { box-shadow: 0 0 0 3px var(--gl-lit), 0 0 0 5px var(--mag-paper); }

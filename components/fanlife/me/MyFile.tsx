@@ -81,7 +81,7 @@ export function MyFile({ clubs, labels }: { clubs: MeClub[]; labels: Labels }) {
                     <ol>{x.rows.map((r) => {
                       const slot = FORMATIONS[x.formation]!.slots.find((sl) => sl.slotId === r.slot)
                       return (
-                        <li key={r.slot} style={{ insetInlineStart: `${slot?.x ?? 50}%`, insetBlockStart: `${slot?.y ?? 50}%` }} data-gk={r.role === 'GK' || undefined}>
+                        <li key={r.slot} style={{ left: `${slot?.x ?? 50}%`, insetBlockStart: `${slot?.y ?? 50}%` }} data-gk={r.role === 'GK' || undefined}>
                           <span className="wkc-xi-shirt" aria-hidden="true" />
                           <span className="wkc-xi-name"><span className="sr-only">{r.role} </span>{x.names[r.id] ?? '—'}{x.captain === r.id ? <em className="wkc-xi-c"> (C)</em> : null}</span>
                         </li>

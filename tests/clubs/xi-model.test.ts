@@ -9,6 +9,18 @@ const players=[P('gk',['GK']),P('cb',['DF']),P('st',['FW']),P('mf',['MF']),P('x'
 const byId=new Map(players.map(p=>[p.id,p]))
 
 describe('gate 1 pitch rules',()=>{
+ it('measures roles from the left edge and keeps existing full-back slot IDs',()=>{
+  const leftRoles=['LB','LWB','LM','LW'],rightRoles=['RB','RWB','RM','RW']
+  for(const formation of Object.values(FORMATIONS)){
+   for(const slot of formation.slots){
+    if(leftRoles.includes(slot.role))expect(slot.x).toBeLessThan(50)
+    if(rightRoles.includes(slot.role))expect(slot.x).toBeGreaterThan(50)
+   }
+  }
+  const saved=validateXI({formation:'4-4-2',picks:{D1:'cb',D4:'x'}},players)
+  expect(saved.picks).toEqual({D1:'cb',D4:'x'})
+  expect(FORMATIONS[saved.formation]!.slots.find(s=>s.slotId==='D4')?.role).toBe('LB')
+ })
  it('a man stands in one place: placing him again swaps, never duplicates',()=>{
   let xi=place(emptyXI(),'GK','gk');xi=place(xi,'D1','cb');xi=place(xi,'D2','gk')
   expect(occupant(xi,'D2')).toBe('gk');expect(occupant(xi,'GK')).toBeNull();expect(occupant(xi,'D1')).toBe('cb')

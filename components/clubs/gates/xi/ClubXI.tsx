@@ -13,7 +13,7 @@ import {FORMATIONS} from '@/lib/game/formations'
 import {fitOf} from '@/lib/xi/roles'
 import type {ClubPlayer} from '@/lib/clubs/contract'
 import type {GameCopy} from '@/lib/clubs/game-copy'
-import {localeDirection,type UiLocale} from '@/lib/clubs/locale'
+import type {UiLocale} from '@/lib/clubs/locale'
 import type {RumbleWardrobe} from '@/lib/clubs/rumble-kit'
 import {emptyXI,validateXI,searchClubPlayers,type ClubXI as XIState} from '@/lib/clubs/xi'
 import {xiKey,worstXiKey} from '@/lib/clubs/activity'
@@ -147,7 +147,7 @@ function XIBoard({kind,tabs,players,club,clubName,locale,contentLocale,wardrobe,
    <button type="button" className={`min-h-tap ${css.tool}`} disabled={!activeMan} onClick={()=>{commit(vacate(xi,active))}} aria-label={t('xi.remove')} title={t('xi.remove')}>✕</button>
   </div>
   {kind==='worst'&&<p className={css.note}>{t('xi.worstNote')}</p>}
-  <XIPitch plateOf={label} xi={xi} byId={byId} wardrobe={wardrobe} side={side} kind={kind} active={active} contentLocale={contentLocale} flip={localeDirection(locale)==='ltr'} label={roleLabel} chairLabel={t('xi.twelfth')} chairTag={t('xi.twelfth')} onSelect={select} onMove={move}
+  <XIPitch plateOf={label} xi={xi} byId={byId} wardrobe={wardrobe} side={side} kind={kind} active={active} contentLocale={contentLocale} label={roleLabel} chairLabel={t('xi.twelfth')} chairTag={t('xi.twelfth')} onSelect={select} onMove={move}
    hud={{count:t('xi.count',{n:filledCount(xi)}),done:complete,formation:xi.formation,onFormation:open('formation'),formationLabel:t('xi.formationBtn',{name:xi.formation})}}/>
   <div className={css.dock}>
    {railOpen&&<p className={css.dockHead}><span className="wk-logo red sm">{t('xi.shout')}</span><span className={css.dockTarget} aria-live="polite">{t('xi.pickTarget',{role:target})}</span></p>}
@@ -177,7 +177,7 @@ function XIBoard({kind,tabs,players,club,clubName,locale,contentLocale,wardrobe,
 
   <SlideSheet open={sheet==='formation'} onClose={closeSheet} title={t('xi.formationTitle')} closeLabel={copy['play.close']}>
    <ul className={css.formations}>{Object.keys(FORMATIONS).map(f=><li key={f}><button type="button" className={`min-h-tap ${css.formation}`} aria-pressed={xi.formation===f} onClick={()=>{commit(changeFormation(xi,f));closeSheet()}}>
-    <svg viewBox="0 0 100 133" aria-hidden="true">{FORMATIONS[f]!.slots.map(s=><circle key={s.slotId} cx={localeDirection(locale)==='ltr'?100-s.x:s.x} cy={(11+(s.y-14)*(77/80))*1.33} r="5"/>)}</svg>{f}</button></li>)}</ul>
+    <svg viewBox="0 0 100 133" aria-hidden="true">{FORMATIONS[f]!.slots.map(s=><circle key={s.slotId} cx={s.x} cy={(11+(s.y-14)*(77/80))*1.33} r="5"/>)}</svg>{f}</button></li>)}</ul>
   </SlideSheet>
 
   <SlideSheet open={sheet==='full'} onClose={closeSheet} title={`${t('xi.sheetTitle')} · ${target}`} size="full" closeLabel={copy['play.close']}>
@@ -204,7 +204,7 @@ function XIBoard({kind,tabs,players,club,clubName,locale,contentLocale,wardrobe,
     <button type="button" className={`min-h-tap ${css.tool}`} onClick={closeSheet}>{t('xi.poster.keep')}</button></div>}>
    <div className={css.poster} data-testid="xi-poster">
     <div className={css.posterHead}><p className={css.posterKicker}>{clubName} · {xi.formation}</p><h2 className={css.posterTitle}>{t(kind==='best'?'xi.poster.mine':'xi.poster.worst')}</h2></div>
-    <div className={css.posterRows}>{rowsOf(xi).map((ids,i)=><div key={i} className={css.posterRow}>{ids.map(id=>{const p=xi.picks[id]?byId.get(xi.picks[id]!):null;return p&&<div key={id} className={css.posterMan}><span className={css.shirt}><ClubShirt player={p} wardrobe={wardrobe} side={side}/>{xi.captain===p.id&&<span className={css.cap}>{t('xi.poster.captain')}</span>}</span><span className={css.plate} lang={contentLocale} dir="auto">{label(p.name)}</span></div>})}</div>)}
+    <div className={css.posterRows} dir="ltr">{rowsOf(xi).map((ids,i)=><div key={i} className={css.posterRow}>{ids.map(id=>{const p=xi.picks[id]?byId.get(xi.picks[id]!):null;return p?<div key={id} className={css.posterMan}><span className={css.shirt}><ClubShirt player={p} wardrobe={wardrobe} side={side}/>{xi.captain===p.id&&<span className={css.cap}>{t('xi.poster.captain')}</span>}</span><span className={css.plate} lang={contentLocale} dir="auto">{label(p.name)}</span></div>:<div key={id} className={css.posterMan} aria-hidden="true"/>})}</div>)}
      {xi.twelfth&&byId.get(xi.twelfth)&&<div className={css.posterRow}><div className={css.posterMan}><span className={css.shirt}><ClubShirt player={byId.get(xi.twelfth)!} wardrobe={wardrobe} side={side}/></span><span className={css.plate} lang={contentLocale} dir="auto">{label(byId.get(xi.twelfth)!.name)}</span><span className={css.chairTag}>{t('xi.twelfth')}</span></div></div>}</div>
     {Object.keys(spread).length>0&&<div className={css.spread}><p className={css.posterKicker}>{t('xi.poster.spread')}</p>{Object.entries(spread).sort((a,b)=>Number(a[0])-Number(b[0])).map(([d,n])=><div key={d} className={css.spreadRow}><span>{d}s</span><span className={css.spreadBar}><i style={{width:`${(n/maxSpread)*100}%`}}/></span><span>{n}</span></div>)}</div>}
     <p className={css.fine}>{kind==='worst'?t('xi.worstNote'):copy.localOnly}</p>

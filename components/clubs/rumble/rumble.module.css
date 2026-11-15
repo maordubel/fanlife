@@ -159,7 +159,6 @@
 .pitch i[data-line='goal-top'] { inset-inline: 38%; inset-block-start: 0; height: 3%; border-width: 0 3px 3px; border-color: var(--mag-paper); background: color-mix(in srgb, var(--mag-white) 20%, transparent); }
 .pitch i[data-line='goal-bottom'] { inset-inline: 38%; inset-block-end: 0; height: 3%; border-width: 3px 3px 0; border-color: var(--mag-paper); background: color-mix(in srgb, var(--mag-white) 20%, transparent); }
 .token { position: absolute; z-index: 10; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; width: 76px; }
-[dir='rtl'] .token { transform: translate(50%, -50%); }
 .tokenBody { display: flex; flex-direction: column; align-items: center; transform: scale(0); transition: transform .32s cubic-bezier(.2, 1.3, .4, 1); }
 .token[data-shown='true'] .tokenBody { transform: scale(1); }
 .token[data-active='true'] .tokenShirt { transform: scale(1.18); }
@@ -177,8 +176,7 @@
 .showPitch { grid-area: pitch; min-width: 0; }
 .showSide { grid-area: side; min-width: 0; }
 .showSide:empty { display: none; }
-.ball { position: absolute; z-index: 30; width: 13px; height: 13px; margin: -6.5px 0 0 -6.5px; border-radius: 50%; background: var(--mag-white); border: 2px solid var(--mag-ink); box-shadow: 0 0 10px var(--mag-white); transition: inset-inline-start .5s ease-out, inset-block-start .5s ease-out; }
-[dir='rtl'] .ball { margin: -6.5px -6.5px 0 0; }
+.ball { position: absolute; z-index: 30; width: 13px; height: 13px; margin: -6.5px 0 0 -6.5px; border-radius: 50%; background: var(--mag-white); border: 2px solid var(--mag-ink); box-shadow: 0 0 10px var(--mag-white); transition: left .5s ease-out, inset-block-start .5s ease-out; }
 .overlay { position: absolute; inset: 0; z-index: 40; display: grid; place-items: center; background: color-mix(in srgb, var(--mag-ink) 55%, transparent); }
 .overlay p { margin: 0; padding: 6px 18px; border-block: 4px solid var(--rr-lit); font-family: var(--mag-display); font-size: 38px; line-height: 1; text-transform: uppercase; color: var(--mag-paper); }
 .goalBand { position: absolute; inset-inline: 0; inset-block-start: 38%; z-index: 45; padding: 10px 8px; text-align: center; border-block: 4px solid var(--mag-paper); animation: rrGoal .34s ease-out 1; }
@@ -427,7 +425,6 @@
 .xiPitch i[data-line='box-top'] { display: none; }
 .xiPitch i[data-line='box-bottom'] { inset-inline: 22%; inset-block-end: 0; block-size: 16%; border-width: 2px 2px 0; }
 .xiSlot { position: absolute; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 1px; inline-size: 25%; min-block-size: 44px; padding: 2px 0; border: 0; background: transparent; color: var(--mag-paper); cursor: pointer; z-index: 5; }
-[dir='rtl'] .xiSlot { transform: translate(50%, -50%); }
 .xiSlot[aria-current='step'] { z-index: 8; }
 .xiSlot[aria-current='step'] .xiShirt, .xiSlot[aria-current='step'] .xiEmpty { outline: 3px solid var(--mag-paper); outline-offset: 2px; }
 .xiFine { font-size: 8.5px; letter-spacing: .5px; opacity: .85; }
