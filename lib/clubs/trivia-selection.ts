@@ -15,6 +15,12 @@ import {EDITORIAL_TAG,editorialKey,interaction,questionFamily,standardQuestion} 
 export const EDITORIAL_BUDGET=3
 const weave=<T,>(a:T[],b:T[]):T[]=>{const out:T[]=[];let i=0,j=0;while(i<a.length||j<b.length){if(i<a.length)out.push(a[i++]!);for(let k=0;k<2&&j<b.length;k++)out.push(b[j++]!)}return out}
 export function standardDeck(questions:readonly MasterQuestion[],seed:number,cursor:number):string[]|null{
+ // A greedy deal can corner itself (the caps are spent before slot 12). Re-deal from a few derived shuffles before giving up,
+ // so a seed never yields a short deck just because the archive grew (15.11.2026).
+ for(let tryN=0;tryN<8;tryN++){const d=dealOnce(questions,(seed+tryN*2654435761)>>>0,cursor);if(d)return d}
+ return null
+}
+function dealOnce(questions:readonly MasterQuestion[],seed:number,cursor:number):string[]|null{
  const pool=questions.filter(standardQuestion)
  const bands=[0,1,2].map(b=>pool.filter(q=>bandOf(q.difficulty,false)===b))
  if(bands.some(xs=>xs.length<4))return null
