@@ -25,6 +25,7 @@ archive). Colours are the storyboard palette's; the opponent keeps its own (brie
 from __future__ import annotations
 
 import html
+import re
 import json
 import shutil
 from pathlib import Path
@@ -120,6 +121,55 @@ XP_CSS = ('.bloom{position:absolute;left:0;top:0;width:1920px;height:1080px;mix-
           '.kq{font-style:normal}')
 
 
+def rgba(col: str, a: float) -> str:
+    """'#F1E8D3', 0.9 → 'rgba(241,232,211,0.9)' (a colour that is not a 6-digit hex is returned as it is)."""
+    c = str(col or '').lstrip('#')
+    if not re.fullmatch(r'[0-9a-fA-F]{6}', c):
+        return col
+    return f'rgba({int(c[0:2], 16)},{int(c[2:4], 16)},{int(c[4:6], 16)},{a})'
+
+
+def glass(col: str, solid: float, edge: float) -> str:
+    """The ground of a card read over a moving picture (editor.ground): solid where the type is, thinning to the edges."""
+    return f'radial-gradient(ellipse 68% 72% at 50% 50%,{rgba(col, solid)} 0%,{rgba(col, solid)} 52%,{rgba(col, edge)} 100%)'
+
+
+# The words of a subtitle already on screen as type (a slammed word, a question card, kinetic type) are not shown twice.
+SAID_KINDS = {'word': 'text', 'question': 'text', 'lead': 'text', 'card': 'text', 'stat': 'label'}
+DUP_SHARE = 0.6
+
+
+def tokens(text: str) -> list[str]:
+    return [w for w in re.findall(r"[a-z0-9']+", str(text or '').lower()) if len(w) > 2]
+
+
+def on_screen(beat: dict) -> list[tuple[float, float, set]]:
+    """(start, end, words) of every piece of type in a beat, on the film's clock."""
+    out = []
+    for x in beat['shots']:
+        k = x['kind']
+        if k == 'kinetic':
+            ws = {w for item in x.get('words') or [] for w in tokens(item.get('w'))}
+        elif k in SAID_KINDS:
+            ws = set(tokens(x.get(SAID_KINDS[k])))
+        else:
+            continue
+        a = beat['t'] + x.get('dt', 0.0) + (x.get('at', 0.0) if k == 'word' else 0.0)
+        z = beat['t'] + x.get('dt', 0.0) + x.get('d', beat['d'] - x.get('dt', 0.0))
+        if ws:
+            out.append((a, z, ws))
+    return out
+
+
+def doubled(part: str, at: float, dd: float, shown: list[tuple[float, float, set]]) -> bool:
+    """Is this subtitle mostly words that are on screen as type while it runs?"""
+    ws = tokens(part)
+    if not ws:
+        return False
+    here = set().union(*[w for a, z, w in shown if a < at + dd and at < z]) if shown else set()
+    return sum(1 for w in ws if w in here) >= DUP_SHARE * len(ws)
+
+
 def e(s) -> str:
     return html.escape(str(s), quote=True)
 
@@ -173,6 +223,8 @@ class Film:
 
     # ── primitives ──────────────────────────────────────────────────────────────────────────────────────────────────
     def clip(self, cid, t, d, inner, z, cls='', style=''):
+        if getattr(self, '_glass', False) and cls in ('paper', 'ink'):
+            cls += ' glass'   # a card over the beat's moving picture (editor.ground): its ground thins to the edges
         self.made.append({'id': cid, 't': t, 'z': t + d, 'layer': z})
         self.clips.append(f'<div id="{cid}" class="clip {cls}" data-start="{r2(t)}" data-duration="{r2(d)}" style="z-index:{z};{style}">{inner}</div>')
 
@@ -472,7 +524,8 @@ class Film:
         lines = '<br>'.join(e(x) for x in s['text'].split('|'))
         at0 = s.get('at', 0)
         t, d, s = t + at0, d - at0, {**s, 'at': 0}
-        self.clip(cid, t, d, f'<div class="word" style="background:{col}"><b style="color:{fg};font-size:{s.get("size", 220)}px">{lines}</b>'
+        bg = glass(col, 0.9, 0.42) if s.get('glass') else col
+        self.clip(cid, t, d, f'<div class="word" style="background:{bg}"><b style="color:{fg};font-size:{s.get("size", 220)}px">{lines}</b>'
                   + (f'<small style="color:{fg}">{e(s["small"])}</small>' if s.get('small') else '') + '</div>', s.get('z', 15))
         self.tween(f'tl.fromTo("#{cid} .word b",{{scale:3,opacity:0}},{{scale:1,opacity:1,duration:0.18,ease:"power4.in"}},{r2(t + s.get("at", 0))});'
                    f'tl.fromTo("#{cid} .word",{{scale:1.04}},{{scale:1,duration:0.5,ease:"power2.out",immediateRender:false}},{r2(t + s.get("at", 0) + 0.18)});')
@@ -911,7 +964,9 @@ class Film:
                 t, d = b['t'] + dt, s.get('d', b['d'] - dt)
                 last = abs(t + d - end) < 0.02
                 k = len(self.made)
+                self._glass = bool(s.get('glass'))
                 getattr(self, s['kind'])(s, t, d + (tail if last else 0))
+                self._glass = False
                 mine = self.made[k:]
                 if edited and s['kind'] in CREEPS and len(mine) == 1 and d > 1.5 and s.get('shrink_at') is None:
                     span = d - 0.6
@@ -935,8 +990,10 @@ class Film:
                     self.agg_moves.append((b['t'] + b.get('agg_dt', 0.6), b['agg']))
             if b.get('agg_off'):
                 self.agg_window = (agg_on, b['t'])
+            typed = on_screen(b)
             for (part, at, dd) in b.get('subs', []):
-                self.subline(part, at, dd)
+                if not doubled(part, at, dd, typed):
+                    self.subline(part, at, dd)
             if b.get('vo'):
                 self.audio.append(f'<audio id="{self.id("vo")}" class="clip" src="assets/vo/{b["vo_file"]}" data-start="{r2(b["vo_t"])}" data-duration="{r2(b["vo_d"])}" data-volume="1.15"></audio>')
                 # subtitles in short pieces (two lines at most), each on screen for its share of the line
@@ -945,7 +1002,8 @@ class Film:
                 at = b['vo_t']
                 for k, part in enumerate(parts):
                     dd = b['vo_d'] * len(part) / total
-                    self.subline(part, at, dd + (0.15 if k == len(parts) - 1 else 0))
+                    if not doubled(part, at, dd, typed):
+                        self.subline(part, at, dd + (0.15 if k == len(parts) - 1 else 0))
                     at += dd
         if agg_on is not None:
             a0, a1 = getattr(self, 'agg_window', (agg_on, beats[-1]['t']))
@@ -972,6 +1030,7 @@ video.clip{{width:1920px;height:1080px}}
 .veil{{position:absolute;left:0;top:0;width:1920px;height:1080px;background:{INK}}}
 .recon{{position:absolute;right:40px;top:34px;font:700 18px 'Mono';color:{P};opacity:.75;letter-spacing:1px}} .r2{{right:120px;top:90px}}
 .frame{{border:58px solid {P};box-sizing:border-box}} .paper{{background:{P}}} .ink{{background:{INK}}}
+.paper.glass{{background:{glass(P, 0.93, 0.5)}}} .ink.glass{{background:{glass(INK, 0.88, 0.35)}}}
 .sb{{position:absolute;left:260px;top:360px;width:1400px;height:230px;display:flex;background:{P};box-shadow:14px 14px 0 {INK};border:5px solid {INK}}}
 .sbl,.sbr{{flex:1;display:flex;align-items:center;gap:26px;padding:0 34px;font:400 46px/1 'Head';color:#fff}}
 .sbr{{justify-content:flex-end;color:{INK};border-left:5px solid {INK}}} .sbr .nm{{background:#fff;padding:6px 12px;border:4px solid {INK}}}

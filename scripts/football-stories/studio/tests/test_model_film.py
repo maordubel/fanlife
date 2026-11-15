@@ -87,7 +87,8 @@ class Cut(unittest.TestCase):
         mix = self.shots['mix']
         # the gate's limit is PLAIN_MAX + MIX_GRAIN on the narrator's own takes (56.8% measured); stand-in timings stretch the
         # short picture lines, so the cut made here is held three points looser — the rendered film is held by the gate itself
-        self.assertLessEqual(mix['documentary'], X.PLAIN_MAX + MIX_GRAIN + 0.03)
+        # (+0.04 since 15.11.2026: cards leave after 4 s, not 6, so the stand-in cut carries a point more picture time)
+        self.assertLessEqual(mix['documentary'], X.PLAIN_MAX + MIX_GRAIN + 0.04)
         self.assertGreater(mix['explainer'], 0.15)
         self.assertGreater(mix['kinetic'], 0.08)
         moves = {p.get('camera') for s in self.shots['shots'] for p in s['pictures']} - {None}
