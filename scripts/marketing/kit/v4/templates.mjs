@@ -80,6 +80,28 @@ ${strip({s1: '#FFFBF2', s2: hot})}${top(p, crestImg(c))}
 </div>${foot('Coming soon')}`}
 }
 
+/** LIFE — the GTA campaign: the owner's comic art is the hero, full size; a mission card from the real LIFE missions
+ *  (lib/life/rush) sits under it. Portrait art fills the post; wide art runs as a cinematic band. */
+const GTA_ART = {'cover-life': 'tall', 'cover-fanlife': 'tall', 'next-generation': 'wide', 'panels-wide': 'wide', 'panels-graffiti': 'wide'}
+async function gta(d, o) {
+  const art = GTA_ART[d.art] ? d.art : 'next-generation', tall = GTA_ART[art] === 'tall'
+  const src = local(`v4/art/life-gta/${art}.jpg`), hot = d.hot || '#E8212B'
+  const H = o.story ? 1920 : 1350, artH = tall ? H : o.story ? 1100 : 760
+  const mission = d.mission ? `<div style="align-self:flex-start;background:#FFFBF2;color:#15130F;border:4px solid #15130F;box-shadow:12px 12px 0 ${hot};padding:18px 30px 16px;transform:rotate(-2deg)"${at('slam', .5)}>
+<p class="k" style="font-size:20px;letter-spacing:.22em;color:${hot}">Mission${d.n ? ' ' + String(d.n).padStart(2, '0') : ''}</p>
+<p class="h" style="font-size:${sized(d.mission, 84, 70, 56, 12, 20)}px;color:#15130F;margin-top:4px">${esc(d.mission)}</p></div>` : ''
+  return {vars: vars({bg: '#0B0D14', on: '#FFFBF2', light: false}), inner: `
+<div style="position:absolute;left:0;top:0;width:1080px;height:${artH}px;overflow:hidden;background:#0B0D14"><img src="${src}" alt="" style="width:100%;height:100%;object-fit:cover;object-position:${d.pos || '50% 45%'}" data-kb></div>
+<div style="position:absolute;left:0;top:0;width:1080px;height:230px;background:linear-gradient(rgba(11,13,20,.82),transparent)"></div>
+<div style="position:absolute;left:0;top:${tall ? H - 760 : artH - 300}px;width:1080px;height:${tall ? 760 : 300}px;background:linear-gradient(rgba(11,13,20,0),rgba(11,13,20,.86) 55%,#0B0D14)"></div>
+${strip({s1: '#FFFBF2', s2: hot})}${top({}, `<span class="pill" style="--accent:${hot}">● LIFE · in build</span>`)}
+<div class="body" style="justify-content:flex-end;gap:22px;padding-bottom:26px">
+${mission}
+<p class="h shadowed" style="font-size:${sized(d.headline, 84, 72, 60, 22, 40)}px;max-width:960px"${at('up', .8)}>${esc(d.headline || 'The open world of football fans.')}</p>
+${d.line ? `<p class="k" style="opacity:.85;font-size:22px;letter-spacing:.14em"${at('up', 1)}>${esc(d.line)}</p>` : ''}
+</div>${foot(d.cta || 'Coming soon')}`}
+}
+
 /** LIFE — loading-screen tip (GTA week): the in-game shot, the tip, a loading bar */
 async function loading(d, o) {
   const id = clubId(d) || 'olympiacos', p = paint(id), c = await crest(d.crestName || p.name), hot = p.light ? '#D71920' : p.primary
@@ -178,14 +200,17 @@ async function spicy(d, o) {
 }
 
 async function film(d, o) {
-  const p = {bg: '#0B0B0B', on: '#FFFBF2', s1: '#FFFBF2', s2: '#D71920', light: false}
+  // a club's film wears the club's colour, never its rival's (Panathinaikos: no red)
+  const id = clubId(d), hot = id ? paint(id).primary || '#D71920' : '#D71920'
+  const p = {bg: '#0B0B0B', on: '#FFFBF2', s1: '#FFFBF2', s2: hot, light: false}
   const th = local(d.thumb)
-  return {vars: vars(p), inner: `${strip(p)}${top(p, `<span class="pill" style="box-shadow:none">▶ ${esc(d.kicker || 'Now on YouTube')}</span>`)}
+  return {vars: vars(p, `--hot:${hot};--accent:${hot}`), inner: `${strip(p)}${top(p, `<span class="pill" style="box-shadow:none">▶ ${esc(d.kicker || 'Now on YouTube')}</span>`)}
 <div class="body" style="padding-top:${o.story ? 160 : 50}px">
-<div class="frame" style="width:952px;height:535px"${at('pop', .3)}>${th ? `<img src="${th}" alt="" style="width:100%;height:100%;object-fit:cover" data-kb>` : ''}<span style="position:absolute;left:50%;top:50%;width:130px;height:130px;margin:-65px 0 0 -65px;border-radius:50%;background:#D71920;display:flex;align-items:center;justify-content:center;box-shadow:8px 8px 0 #000" data-pulse><i style="width:0;height:0;border-left:44px solid #FFFBF2;border-top:28px solid transparent;border-bottom:28px solid transparent;margin-left:10px"></i></span></div>
-<p class="tag hot" style="margin-top:56px"${at('left', .6)}><i></i>FanLife: Football Stories</p>
+<div class="frame" style="width:952px;height:535px"${at('pop', .3)}>${th ? `<img src="${th}" alt="" style="width:100%;height:100%;object-fit:cover" data-kb>` : ''}<span style="position:absolute;left:50%;top:50%;width:130px;height:130px;margin:-65px 0 0 -65px;border-radius:50%;background:${hot};display:flex;align-items:center;justify-content:center;box-shadow:8px 8px 0 #000" data-pulse><i style="width:0;height:0;border-left:44px solid #FFFBF2;border-top:28px solid transparent;border-bottom:28px solid transparent;margin-left:10px"></i></span></div>
+<p class="tag hot" style="margin-top:56px"${at('left', .6)}><i></i>${esc(d.channel || 'FanLife: Football Stories')}</p>
 <p class="h shadowed" style="font-size:${sized(d.title, 104, 88, 72, 26, 44)}px;margin-top:18px"${at('up', .75)}>${esc(d.title)}</p>
-</div>${foot('Watch now', 'YouTube · @FanLifeFootballStories')}`}
+${d.sub ? `<p class="lead" style="margin-top:18px;opacity:.85"${at('up', .9)}>${esc(d.sub)}</p>` : ''}
+</div>${foot(d.cta || 'Watch now', 'YouTube · @FanLifeFootballStories')}`}
 }
 
 async function slide(d, o) {
@@ -312,17 +337,83 @@ async function tier(d, o) {
 </div>${foot('Fix it in the comments')}`}
 }
 
-/** shop: the real product mock-up is the hero, the price, the club */
+/** shop: one live product from the open shop (prerender.mjs picks it at random for each post); its mock-up is the hero */
+const money = (cents, cur = 'USD') => cents ? `${cur === 'EUR' ? '€' : cur === 'GBP' ? '£' : '$'}${(Number(cents) / 100).toFixed(2).replace(/\.00$/, '')}` : ''
 async function shop(d, o) {
-  const id = clubId(d), p = paint(id), c = await crest(d.crestName || p.name)
+  const id = clubId({club: d.subject && d.subject !== 'fanlife' ? {id: d.subject} : d.club}), p = id ? paint(id) : {bg: '#121212', on: '#FFFBF2', s1: '#FFFBF2', s2: '#D71920', light: false}
+  const c = id ? await crest(p.name) : null
   const img = local(d.image)
+  const [name, kind] = String(d.title || '').split(' · ')
   return {vars: vars(p), light: p.light, inner: `${dots(p.light ? 'rgba(0,0,0,.18)' : 'rgba(0,0,0,.28)')}${strip(p)}${top(p, crestImg(c))}
-<div class="body" style="padding-top:${o.story ? 120 : 34}px">${tag(d.kicker || 'The FAN LIFE shop')}
-<p class="h shadowed" style="font-size:${sized(d.title, 120, 100, 84, 18, 32)}px;margin-top:14px"${at('slam', .3)}>${esc(d.title || '')}</p>
-<div style="flex:1;display:flex;align-items:center;justify-content:center;min-height:0;margin:20px 0"><div class="paper" style="height:100%;max-height:${o.story ? 980 : 640}px;aspect-ratio:1;box-shadow:16px 16px 0 rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;padding:20px"${at('pop', .5)}>${img ? `<img src="${img}" alt="" style="width:100%;height:100%;object-fit:contain">` : ''}</div></div>
-${d.price ? `<div class="stamp" style="right:64px;top:${o.story ? 1180 : 800}px;width:220px;height:130px"${at('pop', .8)}><span class="k" style="font-size:16px">From</span><span class="num" style="font-size:52px">${esc(d.price)}</span></div>` : ''}
-${d.line ? `<p class="lead" style="margin-bottom:30px"${at('up', .9)}>${esc(d.line)}</p>` : ''}
-</div>${foot(d.cta || 'Shop the drop')}`}
+<div class="body" style="padding-top:${o.story ? 120 : 34}px">${tag(d.kicker || `The FAN LIFE shop${kind ? ' · ' + kind : ''}`)}
+<p class="h shadowed" style="font-size:${sized(name, 120, 100, 80, 14, 26)}px;margin-top:14px"${at('slam', .3)}>${esc(name || '')}</p>
+<div style="flex:1;display:flex;align-items:center;justify-content:center;min-height:0;margin:24px 0 10px;position:relative"><div class="paper" style="height:100%;max-height:${o.story ? 980 : 620}px;aspect-ratio:1;box-shadow:16px 16px 0 rgba(0,0,0,.35);overflow:hidden"${at('pop', .5)}>${img ? `<img src="${img}" alt="" style="width:100%;height:100%;object-fit:cover" data-kb>` : ''}</div>
+${d.price ? `<div class="stamp" style="right:-10px;bottom:30px;width:230px;height:130px"${at('pop', .8)}><span class="k" style="font-size:16px">From</span><span class="num" style="font-size:50px">${esc(money(d.price, d.currency))}</span></div>` : ''}</div>
+</div>${foot(d.cta || 'Shop now', 'fanlife.dubelteam.com/shop')}`}
+}
+
+/** a flagship garment as a lookbook page: the shirt cut out of its studio background, oversized type behind it,
+ *  a detail lens on the print, colourways and a price tag. look: 'back' | 'fold' | 'look' (the lifestyle photo, full bleed) */
+async function tee(d, o) {
+  const H = o.story ? 1920 : 1350, look = d.look || 'back'
+  const art = f => local(`v4/art/shop/${f}`)
+  const [l1, l2] = String(d.words || 'Football. Forever.').split(/(?<=\.)\s+/)
+  const price = `<div style="position:absolute;z-index:7;right:${look === 'look' ? 56 : 60}px;top:${o.story ? 640 : 470}px;width:190px;height:190px;border-radius:50%;background:#15130F;color:#FFFBF2;display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(8deg);box-shadow:8px 8px 0 #C8102E"${at('pop', 1)}><span class="k" style="font-size:16px;letter-spacing:.2em">From</span><span class="num" style="font-size:52px;line-height:1">${esc(money(d.price || 2399, d.currency))}</span></div>`
+  const swatch = (o.story ? ['#F6F4EF', '#1A1A1A', '#7B7B79'] : ['#F6F4EF', '#1A1A1A', '#7B7B79']).map(c => `<i style="width:34px;height:34px;border-radius:50%;background:${c};box-shadow:0 0 0 3px currentColor;display:inline-block"></i>`).join('')
+  const spec = (col) => `<div style="display:flex;flex-direction:column;gap:14px;color:${col}"${at('left', .9)}>
+<p class="k" style="font-size:18px;letter-spacing:.22em;opacity:.7">${esc(d.kind_label || 'Heavyweight tee · garment-dyed')}</p>
+<div style="display:flex;gap:14px;align-items:center">${swatch}<span class="k" style="font-size:18px;letter-spacing:.16em;margin-left:6px">White · Black · Granite</span></div></div>`
+  if (look === 'look') return {vars: vars({bg: '#15130F', on: '#FFFBF2', light: false}, '--hot:#C8102E'), inner: `
+<div style="position:absolute;inset:0"><img src="${art('football-forever-tee-white.jpg')}" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 30%" data-kb></div>
+<div style="position:absolute;left:0;right:0;bottom:0;height:${o.story ? 900 : 640}px;background:linear-gradient(rgba(21,19,15,0),rgba(21,19,15,.78) 45%,#15130F)"></div>
+<div style="position:absolute;left:0;right:0;top:0;height:220px;background:linear-gradient(rgba(21,19,15,.55),transparent)"></div>
+${top({})}${price}
+<div class="body" style="justify-content:flex-end;gap:18px;padding-bottom:22px">
+<p class="k" style="font-size:20px;letter-spacing:.3em"${at('left', .3)}>${esc(d.kicker || 'Lookbook · FAN LIFE shop')}</p>
+<p class="h" style="font-size:${o.story ? 150 : 128}px;line-height:.86"${at('slam', .5)}>${esc(l1)}<br><span style="color:transparent;-webkit-text-stroke:3px #FFFBF2">${esc(l2 || '')}</span></p>
+${spec('#FFFBF2')}
+</div>${foot(d.cta || 'Shop the tee', 'fanlife.dubelteam.com/shop')}`}
+  const fold = look === 'fold'
+  const bg = fold ? '#123B26' : '#ECE6DB', ink = fold ? '#F3EEE4' : '#15130F'
+  const hero = fold ? art('football-forever-tee-black-cut.png') : art('football-forever-tee-back-cut.png')
+  const lens = `<div style="position:absolute;z-index:6;left:64px;bottom:${o.story ? 470 : 290}px;width:${o.story ? 300 : 240}px;height:${o.story ? 300 : 240}px;border-radius:50%;overflow:hidden;border:6px solid ${fold ? '#F3EEE4' : '#15130F'};box-shadow:10px 10px 0 rgba(0,0,0,.28);background:#7B7B79"${at('pop', 1.2)}><img src="${art('football-forever-print.jpg')}" alt="" style="width:100%;height:100%;object-fit:cover;transform:scale(1.15)"></div>
+`
+  return {vars: vars({bg, on: ink, light: !fold}, '--hot:#C8102E'), light: !fold, inner: `${dots(fold ? 'rgba(0,0,0,.25)' : 'rgba(0,0,0,.06)')}
+${top({})}
+<p class="h" style="position:absolute;z-index:1;left:52px;right:40px;top:${o.story ? 250 : 210}px;font-size:${o.story ? 210 : 164}px;line-height:.84;color:${ink}"${at('slam', .3)}>${esc(l1)}<br><span style="color:transparent;-webkit-text-stroke:4px ${ink}">${esc(l2 || '')}</span></p>
+<div style="position:absolute;z-index:3;left:0;right:0;top:${o.story ? 520 : 330}px;bottom:${o.story ? 300 : 200}px;display:flex;align-items:flex-end;justify-content:${fold ? 'center' : 'flex-end'};padding-right:${fold ? 0 : 150}px"><img src="${hero}" alt="" style="max-height:100%;max-width:${fold ? 82 : 60}%;object-fit:contain;filter:drop-shadow(0 30px 30px rgba(0,0,0,.28));${fold ? 'transform:rotate(-6deg)' : ''}"${at('up', .6)}></div>
+${lens}${price}
+<p class="k" style="position:absolute;z-index:2;left:64px;top:${o.story ? 210 : 178}px;font-size:18px;letter-spacing:.3em;color:${ink};opacity:.75"${at('left', .2)}>${esc(d.kicker || 'Lookbook · FAN LIFE shop')}</p>
+<div class="body" style="z-index:5"></div>${foot(d.cta || 'Shop the tee', 'fanlife.dubelteam.com/shop')}`}
+}
+
+/** FLAGSHIP — Frame your All-Time XI: the fan's own XI, printed and framed on a wall (or as a poster) with his name */
+async function frame(d, o) {
+  const id = clubId(d) || 'celtic', p0 = paint(id), c = await crest(p0.name)
+  const p = {...p0, bg: '#141210', on: '#FFFBF2', light: false}
+  const names = (d.names || []).slice(0, 11)
+  const who = String(d.manager || '').trim(), title = `${who ? who.toUpperCase().replace(/’S$|'S$/, '') + '’S' : 'MY'} ALL-TIME XI`
+  const slots = [[.5, .88], [.14, .68], [.38, .71], [.62, .71], [.86, .68], [.24, .47], [.5, .5], [.76, .47], [.2, .24], [.5, .19], [.8, .24]]
+  const poster = d.format === 'poster'
+  const W = o.story ? 760 : 460, H = Math.round(W * 1.33) // the drawn frame is a preview only; posts use a real mock-up (d.image)
+  const pitch = `<div style="position:relative;width:100%;height:100%;background:${mix(p0.primary || '#0B7A3B', '#000000', .35)};overflow:hidden">
+<div style="position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 ${H / 10}px,transparent ${H / 10}px ${H / 5}px)"></div>
+<div style="position:absolute;inset:6% 7% 8%;border:2px solid rgba(255,251,242,.55)"></div><div style="position:absolute;left:7%;right:7%;top:50%;border-top:2px solid rgba(255,251,242,.55)"></div>
+<div style="position:absolute;left:50%;top:50%;width:${W * .22}px;height:${W * .22}px;margin:-${W * .11}px;border:2px solid rgba(255,251,242,.55);border-radius:50%"></div>
+<p class="h" style="position:absolute;left:0;right:0;top:3.2%;text-align:center;font-size:${W * .07}px;color:#FFFBF2">${esc(title)}</p>
+${c ? `<img src="${c}" alt="" style="position:absolute;right:5%;bottom:2.4%;width:${W * .09}px;height:${W * .09}px;object-fit:contain">` : ''}
+${names.map((n, i) => `<div style="position:absolute;left:${slots[i][0] * 100}%;top:${slots[i][1] * 100}%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:${W * .055}px;height:${W * .055}px;border-radius:50%;background:#FFFBF2;color:#15130F;display:flex;align-items:center;justify-content:center;font:400 ${W * .028}px/1 Ultra">${i + 1}</span><span style="font:italic 900 ${W * .026}px/1 Archivo;font-stretch:76%;text-transform:uppercase;color:#FFFBF2;white-space:nowrap">${esc(n)}</span></div>`).join('')}
+<p class="k" style="position:absolute;left:5%;bottom:3%;font-size:${W * .018}px;color:rgba(255,251,242,.7)">FAN LIFE · ${esc(p0.name || '')}</p></div>`
+  const real = local(d.image)
+  const art = real ? `<img src="${real}" alt="" style="max-width:100%;max-height:100%;object-fit:contain;box-shadow:0 30px 50px rgba(0,0,0,.45)"${at('pop', .5)} data-kb>` : poster
+    ? `<div style="width:${W}px;height:${H}px;box-shadow:0 30px 50px rgba(0,0,0,.45);transform:rotate(-1.5deg)"${at('pop', .5)}>${pitch}</div>`
+    : `<div style="width:${W + 60}px;height:${H + 60}px;background:#1A1714;padding:14px;box-shadow:0 34px 60px rgba(0,0,0,.55),inset 0 0 0 3px #2B2621"${at('pop', .5)}><div style="width:100%;height:100%;background:#F3EEE4;padding:16px">${pitch}</div></div>`
+  const wall = `<div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,#3A332C,#141210 75%)"></div><div style="position:absolute;left:0;right:0;bottom:0;height:${o.story ? 300 : 170}px;background:linear-gradient(#2A241E,#1A1612)"></div>`
+  return {vars: vars(p, '--hot:#FFC72C'), inner: `${wall}${strip({s1: '#FFFBF2', s2: p0.primary || '#D71920'})}${top(p, crestImg(c))}
+<div class="body" style="padding-top:${o.story ? 100 : 22}px">${tag('New · Frame it', true)}
+<p class="h shadowed" style="font-size:${o.story ? 120 : 96}px;margin-top:12px"${at('slam', .3)}>${esc(d.headline || 'Your all-time XI. On your wall.')}</p>
+<div style="flex:1;display:flex;align-items:center;justify-content:center;min-height:0;margin-top:16px">${art}</div>
+</div>${foot(d.cta || 'Frame yours')}`}
 }
 
 /** the market: a real listing from a supporter, its photo the hero */
@@ -346,12 +437,14 @@ const DARE = {'L-GATE': 'Bet you can’t do it first time', 'L-LIFE': 'Your club
   'L-FACT': 'Tag the one mate who knew this', 'T10-NERDS': 'Real fans don’t need the options', 'L-QUIZ': 'Real fans don’t need the options', 'L-DEBATE': 'Pick a side. No fence-sitting.',
   'T9-OTD': 'Were you there? Prove it in the comments', 'T11-SPICY': 'Were you there? Tell us.', 'L-FILM': 'Watch it before your mates do', 'L-NUMBERS': 'Is your club on the board?',
   'L-BINGO': 'Under 8? Not a real fan.', 'L-ZOOM': 'Real fans need one look', 'L-TIER': 'Wrong? Fight us in the comments', 'L-VOTE': 'Your club not on top? Send this.',
-  'L-SHOP': 'Wear it to the next match', 'L-MARKET': 'One supporter’s shirt. Your wardrobe next.', 'L-ARTICLE': 'Read it. Then argue with your dad.'}
-export const dareFor = (t, d) => d?.dare === '' ? '' : d?.dare || DARE[t] || ''
+  'L-SHOP': 'Wear it to the next match', 'L-FRAME': 'Your name. Your XI. Your wall.', 'L-GTA': 'Real supporters only. Tourists wait outside.', 'L-TEE': 'Wear it. Let them read it.', 'L-MARKET': 'One supporter’s shirt. Your wardrobe next.', 'L-ARTICLE': 'Read it. Then argue with your dad.'}
+const SHOP_DARE = {framed: 'Put it where your mates can see it', poster: 'Put it where your mates can see it', canvas: 'Put it where your mates can see it', mug: 'Your club with every morning coffee',
+  'kids-tee': 'Start them young', puzzle: 'A thousand pieces of your club', sticker: 'Stick it everywhere', 'phone-case': 'Your club in your pocket', tote: 'Carry your club everywhere'}
+export const dareFor = (t, d) => d?.dare === '' ? '' : d?.dare || (t === 'L-SHOP' && SHOP_DARE[d?.kind]) || DARE[t] || ''
 
 const MAP = {'L-GATE': gate, 'L-LIFE': life, 'L-LOADING': loading, 'L-LEGENDS': legends, 'L-FACT': fact, 'T10-NERDS': quiz, 'L-QUIZ': quiz, 'L-DEBATE': debate, 'T9-OTD': otd, 'T11-SPICY': spicy,
   'L-FILM': film, 'L-SLIDE': slide, 'L-NUMBERS': numbers, 'L-CARD': card, 'L-DUBID-SYSTEM': (d, o) => system(d, o, 'dubid'), 'L-OFFSIDES-SYSTEM': (d, o) => system(d, o, 'offsides'),
-  'L-FIXTURES': (d, o) => matchList(d, o, 'L-FIXTURES'), 'L-RESULTS': (d, o) => matchList(d, o, 'L-RESULTS'), 'L-VOTE': vote, 'L-BINGO': bingo, 'L-ZOOM': zoom, 'L-TIER': tier, 'L-SHOP': shop, 'L-MARKET': market, 'L-ARTICLE': article}
+  'L-FIXTURES': (d, o) => matchList(d, o, 'L-FIXTURES'), 'L-RESULTS': (d, o) => matchList(d, o, 'L-RESULTS'), 'L-VOTE': vote, 'L-BINGO': bingo, 'L-ZOOM': zoom, 'L-TIER': tier, 'L-SHOP': shop, 'L-MARKET': market, 'L-FRAME': frame, 'L-GTA': gta, 'L-TEE': tee, 'L-ARTICLE': article}
 export const V4_TEMPLATES = Object.keys(MAP)
 
 /** the page for one kit, or null when v4 has no layout for it (v2 then draws it) */
