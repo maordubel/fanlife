@@ -28,10 +28,16 @@ export function sheets(spec:KindSpec,variants:PVariant[],positions:string[]=spec
   if(cur)cur.variantIds.push(v.id);else out.set(key,{w:ph.width,h:ph.height,position:ph.position,variantIds:[v.id]})}
  return [...out.values()]
 }
+/**
+ * TWO SIDES BY DEFAULT ON OBJECTS (owner, 15.11.2026: "two-sided printing on products like a pillow"). An object that is seen
+ * from both sides — a cushion, a tote, a blanket, a pennant — prints the picture on its back too unless the owner chose
+ * otherwise. Wear keeps a clean back (a print there is the owner's choice); a hat or a small accessory is never doubled.
+ */
+export const twoSidedByDefault=(spec:KindSpec)=>!spec.sizes&&!spec.kids&&spec.scale>=.86
 /** the sides a design prints on: the kind's own front, its back, or both (a back exists only where the product has one) */
 export function sidesOf(spec:KindSpec,variants:PVariant[],d?:ProductDesign):string[][]{
  const hasBack=variants.some(v=>v.placeholders.some(p=>p.position==='back'))
- const front=spec.positions.filter(p=>p!=='back'),want=d?.sides??'front'
+ const front=spec.positions.filter(p=>p!=='back'),want=d?.sides??(twoSidedByDefault(spec)?'both':'front')
  if(want==='back'&&hasBack)return [['back']]
  if(want==='both'&&hasBack)return [front,['back']]
  return [front]

@@ -88,8 +88,11 @@ export async function pressProduct(id:string,by:string):Promise<ShopProduct>{
   const fitOf=async(art:ArtRef,sheet:{w:number;h:number},pic:{width:number;height:number})=>{const A=sheet.w/sheet.h,a=pic.width/pic.height
    if(Math.min(a/A,A/a)>=.92)return null;const key=JSON.stringify(art)+A.toFixed(2);if(fitted.has(key))return fitted.get(key)!
    // a wrap-around cover (a journal: back, spine and front on one landscape sheet): the art goes on the front half, not over the spine
-   const wrap=WRAP.test(`${p.kind} ${p.blueprint?.title??''} ${m.title}`)&&A>1.2&&a<1.1
-   const src='library' in art?original(art.library.id):art.upload.preview,out=src?await (wrap?wrapCover(src,A):extendToShape(src,A)).catch(()=>null):null
+   const what=`${p.kind} ${p.blueprint?.title??''} ${m.title}`,wrap=WRAP.test(what)&&A>1.2&&a<1.1
+   // DRINKWARE (15.11.2026, "maximise the product"): a mug's wrap is ~2.3:1 — one picture in the middle faces away from the
+   // drinker for half the people holding it. The art prints twice, one on each side of the handle.
+   const twin=TWIN.test(what)&&A>=1.8&&a<1.3
+   const src='library' in art?original(art.library.id):art.upload.preview,out=src?await (wrap||twin?wrapCover(src,A,twin):extendToShape(src,A)).catch(()=>null):null
    const up=out?await api.upload(`fit-${Math.round(A*100)}-${('library' in art?art.library.name:art.upload.name).replace(/[^a-zA-Z0-9._-]/g,'-').replace(/\.\w+$/,'').slice(-60)}.jpg`,out):null
    const r=up?{id:up.id,width:up.width,height:up.height}:null;fitted.set(key,r);return r}
   for(const [side,area] of areasOf(spec,variants,d)){const art=area.art??p.art,cut=!!(area.cutout??d?.cutout),pic=await picOf(art,cut)
@@ -120,9 +123,10 @@ export async function pressProduct(id:string,by:string):Promise<ShopProduct>{
    for(let i=0;i<4&&!url;i++){await new Promise(r=>setTimeout(r,2500));url=(await api.product(shop,made.id)).external?.handle||null}
   }catch(e){await set(id,{error:`Created, not published yet: ${(e as Error).message}`})}
   if(soft<SHARP_KEEP)await set(id,{error:`On sale, but this picture is small for a ${spec.label.toLowerCase()} (${Math.round(soft*100)}% of the print size) — it may print soft. A larger original is better.`})
-  const {images,backImage}=mockups(made.images,printSide(d,placed.some(x=>x.sheet.position==='back'&&x.imageId!==brandId)))
+  const hasBack=placed.some(x=>x.sheet.position==='back'&&x.imageId!==brandId),hasFront=placed.some(x=>x.sheet.position!=='back'&&x.imageId!==brandId)
+  const side:'front'|'back'|'both'=hasBack&&hasFront?'both':hasBack?'back':'front',{images,backImage}=mockups(made.images,side)
   url=url||(doc.settings.popupUrl?doc.settings.popupUrl.replace(/\/$/,''):null)
-  await set(id,{retries:publishedAt&&url?0:p.retries,status:publishedAt&&url?'live':'ready',printify:{productId:made.id,blueprintId:m.blueprintId,providerId:m.providerId,images,...(backImage?{backImage}:{}),quality:Math.round(soft*100)/100,...(upscaled?{upscaled}:{}),priceFrom:Math.min(...priced.map(v=>v.price)),currency:'USD',url,publishedAt}})
+  await set(id,{retries:publishedAt&&url?0:p.retries,status:publishedAt&&url?'live':'ready',printify:{productId:made.id,blueprintId:m.blueprintId,providerId:m.providerId,images,side,...(backImage?{backImage}:{}),quality:Math.round(soft*100)/100,...(upscaled?{upscaled}:{}),priceFrom:Math.min(...priced.map(v=>v.price)),currency:'USD',url,publishedAt}})
  }catch(e){await set(id,{status:'error',error:(e as Error).message.slice(0,400)})}
  return (await readShop()).products.find(x=>x.id===id)!
 }
@@ -130,7 +134,7 @@ export async function pressProduct(id:string,by:string):Promise<ShopProduct>{
 export async function refreshProduct(id:string){
  const doc=await readShop(),p=doc.products.find(x=>x.id===id),shop=doc.settings.shopId;if(!p?.printify||!shop)return p
  const api=await client(),live=await api.product(shop,p.printify.productId),url=live.external?.handle||p.printify.url||(doc.settings.popupUrl||null)
- await set(id,{status:p.printify.publishedAt&&url?'live':p.status,printify:{...p.printify,url,...(live.images.length?withCover(mockups(live.images,printSide(p.design)),p.printify.cover,live.images):{})}})
+ await set(id,{status:p.printify.publishedAt&&url?'live':p.status,printify:{...p.printify,url,...(live.images.length?withCover(mockups(live.images,p.printify.side??printSide(p.design)),p.printify.cover,live.images):{})}})
  return (await readShop()).products.find(x=>x.id===id)
 }
 export async function removeProduct(id:string,by:string){
@@ -198,12 +202,19 @@ export function mockups(list:Mock[],side:'front'|'back'|'both'|boolean):{images:
  const mode=side===true?'both':side===false?'front':side
  const sorted=[...list].sort((a,b)=>Number(b.is_default)-Number(a.is_default)),v0=sorted[0]?.variant_ids?.[0]
  const own=v0?sorted.filter(i=>!i.variant_ids||i.variant_ids.includes(v0)):sorted,pool=own.length?own:sorted
+ // VARIETY (15.11.2026, "perfect mock-ups"): Printify draws several takes of one scene (person-1…person-5). The gallery shows one
+ // of each scene before any second take, so eight pictures are eight different looks at the product, not one look five times.
+ const family=(i:Mock)=>cameraOf(i.src).replace(/[-_]?\d+$/,'')||'plain'
  const order=(xs:Mock[])=>{const by=[...xs].sort((a,b)=>liveness(a.src)-liveness(b.src)),live=by.find(i=>liveness(i.src)<=1),plain=xs.find(i=>liveness(i.src)===2)
-  return [...new Set([...(live?[live]:[]),...(plain?[plain]:[]),...by].map(i=>i.src))]}
+  const seen=new Set<string>(),firsts:Mock[]=[],seconds:Mock[]=[]
+  for(const i of by){const f=family(i);if(seen.has(f))seconds.push(i);else{seen.add(f);firsts.push(i)}}
+  return [...new Set([...(live?[live]:[]),...(plain?[plain]:[]),...firsts,...seconds].map(i=>i.src))]}
  const backs=pool.filter(isBackShot),fronts=pool.filter(i=>!isBackShot(i))
  if(mode==='back'&&backs.length)return {images:order(backs).slice(0,8)}
  const plainBack=mode==='both'?backs.find(i=>liveness(i.src)===2)??backs[0]:undefined
- const images=[...order(fronts).slice(0,7),...(mode==='both'?order(backs).slice(0,2):[])]
+ // two-sided: the back is shown third — after the live picture and the plain front — so a buyer sees early that both sides print
+ const f=order(fronts),b=mode==='both'?order(backs):[]
+ const images=mode==='both'&&b.length?[...f.slice(0,2),b[0]!,...f.slice(2,6),...b.slice(1,2),...f.slice(6)]:f
  return {images:[...new Set(images)].slice(0,8),...(plainBack?{backImage:plainBack.src}:{})}
 }
 
@@ -212,12 +223,12 @@ export function mockups(list:Mock[],side:'front'|'back'|'both'|boolean):{images:
  * (a mug's wrap, a landscape canvas, a phone case) shows the whole art. A picture already cut out (transparent edges) is left
  * alone: it is placed whole on the product. Returns base64 JPEG, at most 36 megapixels.
  */
-const WRAP=/notebook|journal|book/i
+const WRAP=/notebook|journal|book/i,TWIN=/\bmug|tumbler|\bcup\b|bottle|stein|can cooler|koozie/i
 /**
  * A wrap-around cover: the sheet holds the back, the spine and the front side by side. The art is placed whole on the front
  * (the right half), on its own paper colour; the back stays plain paper. Nothing is cropped, nothing is stretched.
  */
-export async function wrapCover(url:string,shape:number):Promise<string|null>{
+export async function wrapCover(url:string,shape:number,twin=false):Promise<string|null>{
  const r=await fetch(url,{signal:AbortSignal.timeout(60e3)});if(!r.ok)return null
  const sharp=(await import('sharp')).default,{borderColour}=await import('./cutout')
  const input=Buffer.from(await r.arrayBuffer()),{data,info}=await sharp(input).ensureAlpha().raw().toBuffer({resolveWithObject:true})
@@ -227,7 +238,9 @@ export async function wrapCover(url:string,shape:number):Promise<string|null>{
  const k0=Math.min(1,half*.88/w),aw=Math.round(w*k0),ah=Math.round(h*k0)
  const art=k0<1?await sharp(input).flatten({background:bg}).resize(aw,ah).toBuffer():await sharp(input).flatten({background:bg}).toBuffer()
  const left=Math.round(half+(half-aw)/2),top=Math.round((H0-ah)/2)
- let out=await sharp({create:{width:W0,height:H0,channels:3,background:bg}}).composite([{input:art,left,top}]).jpeg({quality:92}).toBuffer()
+ // a drinkware wrap (twin): the same art on both halves, so it faces out whichever hand holds the cup
+ const layers=[{input:art,left,top},...(twin?[{input:art,left:Math.round((half-aw)/2),top}]:[])]
+ let out=await sharp({create:{width:W0,height:H0,channels:3,background:bg}}).composite(layers).jpeg({quality:92}).toBuffer()
  const k=Math.min(1,Math.sqrt(36e6/(W0*H0)));if(k<1)out=await sharp(out).resize(Math.round(W0*k),Math.round(H0*k)).jpeg({quality:92}).toBuffer()
  return out.toString('base64')
 }

@@ -42,6 +42,8 @@ export type ShopProduct={
  printify?:{productId:string;blueprintId:number;providerId:number;images:string[];priceFrom:number;currency:string;url:string|null;publishedAt:string|null;
  /** the mock-up of the back, when the product prints there */
  backImage?:string;
+ /** where the press really put the design (15.11.2026): the mock-up choice follows it, not the editor's default */
+ side?:'front'|'back'|'both';
  /** the owner chose this picture to lead (15.11.2026): the check-up keeps it first while Printify still has it */
  cover?:string;
  /** the picture was enlarged this many times for print (15.11.2026, soft prints): the sharpness counts the enlarged file */
