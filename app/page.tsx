@@ -72,7 +72,6 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
  const dockClubs=open.map(c=>({id:c.id,name:c.name})),dockOpen=live.map(c=>c.id)
  // INSIDE THIS ISSUE is the index of our own features (owner, 12.11.2026: "no feature may be missed"): one cell each, in the page's own order
  const inside=[
-  ...(model.some(c=>c.gates['kit-builder']?.href)?[{href:'#build-kit',title:copy.buildKitEntry,sub:copy.buildKitSub,go:'↓'}]:[]),
   {href:'#clubs',title:copy.clubs,sub:copy.wkhInClubs.replace('{n}',String(live.length)),go:'↓'},
   ...(fl.open?[{href:'#manager',title:copy.wkhLmTitle,sub:copy.wkhLmK,go:'↓'}]:[]),
   {href:'#life',title:copy.navLife,sub:`${copy.lifeEntryTitle} · ${copy.lifeGameSub}`,go:'↓'},
@@ -145,7 +144,6 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
 
   {/* THE COUNTER (12.11.2026): the supporters' shirt market and the shop, one place for both. */}
   <div className="wkh-counter">
-  {model.some(c=>c.gates['kit-builder']?.href)&&<div id="build-kit" style={{gridColumn:'1 / -1'}}><GateChooser gate="kit-builder" clubs={model} copy={chooser} className="wk-btn paper min-h-tap">{copy.buildKitEntry} <Arrow/></GateChooser></div>}
   {/* THE MARKET, compact: one line, one button (owner, 14.10.2026). */}
   <section className="wkh-market wkh-market-mini wk-redplate" id="market" aria-labelledby="market-h">
    <span className="wk-speed wkh-market-speed" aria-hidden="true"/>
