@@ -19,6 +19,7 @@ const samples: [string, Record<string, unknown>][] = [
   ['L-ZOOM', {s: 'zoom', club: {id: 'celtic'}}],
   ['L-TIER', {club: {id: 'celtic'}}],
   ['L-SHOP', {title: 'Football. Forever. · T-shirt', price: 2399, currency: 'USD', subject: 'fanlife', kind: 'tee'}],
+  ['L-SHOP', {title: 'THE KICK · Hoodie', price: 5799, cut: 'v4/art/shop/football-forever-tee-black-cut.png', stage: 1}], ['L-SHOP', {title: 'Match and Fans · T-shirt', price: 2699, photo: 'v4/art/shop/football-forever-tee-white.jpg'}],
   ['L-TEE', {look: 'back', price: 2399}], ['L-TEE', {look: 'fold', price: 2399}], ['L-TEE', {look: 'look', price: 2399}],
   ['L-FRAME', {club: {id: 'celtic'}, manager: 'Dad', names: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'], format: 'framed'}],
   ['L-GTA', {art: 'cover-life', n: 1, mission: 'The march', headline: 'The whole street sings.'}], ['L-GTA', {art: 'next-generation', headline: 'Keep close, kid.'}],
@@ -92,6 +93,10 @@ describe('social cleanup', () => {
     expect(f.data.kicker).toBe('The FAN LIFE shop · Hoodie')
     expect(pre.HOLDS['frame-xi']).toBe('app/api/shop/personal/route.ts')
     expect(pre.HOLD_ART['frame-xi']!.test('frame-xi-celtic.jpg')).toBe(true)
+    const imgs = ['https://x/a.jpg?camera_label=front', 'https://x/b.jpg?camera_label=size-chart', 'https://x/c.jpg?camera_label=person-1-front', 'https://x/d.jpg?camera_label=close-up']
+    expect(pre.pickArt(imgs, 0).scene).toContain('person-1') // a real scene first
+    expect(pre.pickArt(imgs, 1)).toMatchObject({scene: null, studio: imgs[0], detail: imgs[3]}) // or the studio shot, cut clean
+    expect(pre.pickArt(imgs.slice(0, 2), 0).scene).toBe(null) // never the size chart
     expect(pre.ytId('https://youtu.be/I9HYkLFJaeI')).toBe('I9HYkLFJaeI')
     expect(readFileSync('scripts/marketing/kit/v4/prerender.mjs', 'utf8')).toMatch(/maxres\$\{k\}\.jpg/) // a frame of the film, never the thumbnail
     const {page} = await load()
