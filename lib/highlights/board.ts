@@ -14,10 +14,12 @@ export function teamMark(t:Pick<ReelTeam,'crest'|'kit'>):TeamMark{
  const k=t.kit
  return {kind:'chip',background:k.second&&k.pattern!=='plain'?`linear-gradient(90deg,${k.shirt} 0 50%,${k.second} 50% 100%)`:`linear-gradient(90deg,${k.shirt} 0 50%,${k.shorts} 50%)`}
 }
-export type ShirtArt={kind:'cloth';spec:ClothSpec;crest:string|null}|{kind:'pixel';kit:PixelKit;number:number|null;name:string|null}
+export type ShirtArt={kind:'archive';svg:string}|{kind:'cloth';spec:ClothSpec;crest:string|null}|{kind:'pixel';kit:PixelKit;number:number|null;name:string|null}
 /** the side's shirt (front, for a board) or one man's (back, with his name and number — the goal cards) */
-export function shirtArt(team:Pick<ReelTeam,'cloth'|'crest'|'kit'>,player?:Pick<ReelPlayer,'cloth'|'kit'|'no'|'name'>,back=false):ShirtArt{
+export function shirtArt(team:Pick<ReelTeam,'cloth'|'crest'|'kit'|'kitSvg'>,player?:Pick<ReelPlayer,'cloth'|'kit'|'kitSvg'|'no'|'name'>,back=false):ShirtArt{
  const cloth=player?player.cloth??null:team.cloth??null,name=player&&back?surname(player.name):null,number=player&&back?player.no:null
+ const svg=player?player.kitSvg:team.kitSvg
+ if(!back&&svg)return {kind:'archive',svg}
  if(cloth)return {kind:'cloth',spec:{...cloth,crest:!!team.crest&&cloth.crest,name,number},crest:team.crest??null}
  return {kind:'pixel',kit:player?.kit??team.kit,number,name}
 }

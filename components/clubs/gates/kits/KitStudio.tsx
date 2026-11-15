@@ -16,6 +16,7 @@ import {templateById} from '@/lib/share/v3/templates'
 import {coverShare} from '@/lib/share/v3/adapters'
 import type {CollectionRow,OpenKit} from '@/lib/clubs/kit-collection'
 import {KitCloth} from '../kit-builder/KitCloth'
+import {KitPartMark} from '@/components/clubs/games/KitPartMark'
 import {colourLabel} from '../kit-builder/KitBuilder'
 import {openBuiltKits} from './actions'
 import css from './kits.module.css'
@@ -254,7 +255,7 @@ export function KitStudio(props:KitStudioProps){
      const body=<ul className={css.grid}>{pg.rows.map(r=>{
       const k=opened[r.id],b=built[r.id]
       return <li key={r.id}><button type="button" className={css.kcard} data-open={!!k} data-testid="ks-card" onClick={openSheet({k:'shirt',id:r.id})} aria-label={k?say('ks.card.open',{season:r.season,variant:variantName(r.variant)}):say('ks.card.locked',{season:r.season,variant:variantName(r.variant)})}>
-       <span className={css.kcardArt}>{k?(photos[k.id]?<img src={photos[k.id]} alt={`${k.season} ${variantName(k.variant)}`} width={160} height={160} loading="lazy" data-archive-photo/>:k.cloth?<KitCloth spec={k.cloth} texture={false} monogram={monogram} crestSrc={crestFor(club)} viewBox="24 30 292 270"/>:<span className={css.textOnly}><bdi>{k.design||variantName(k.variant)}</bdi></span>):<span className={css.locked}><KitCloth spec={BLANK} texture={false} viewBox="24 30 292 270"/></span>}</span>
+       <span className={css.kcardArt}>{k?((photos[k.id]||k.svg)?<img src={photos[k.id]||k.svg} alt={`${k.season} ${variantName(k.variant)}`} width={160} height={160} loading="lazy" data-archive-photo={photos[k.id]?'':undefined}/>:k.cloth?<KitCloth spec={k.cloth} texture={false} monogram={monogram} crestSrc={crestFor(club)} viewBox="24 30 292 270"/>:<span className={css.textOnly}><bdi>{k.design||variantName(k.variant)}</bdi></span>):<span className={css.locked}><KitCloth spec={BLANK} texture={false} viewBox="24 30 292 270"/></span>}</span>
        <span className={css.kcardText}><b><bdi>{r.season}</bdi></b><small>{variantName(r.variant)}{b?.p&&<i aria-label={say('ks.card.perfect')}> ★</i>}</small></span>
        {!k&&<span className={css.lockTag}>{say('ks.card.tag')}</span>}
        {k&&<span className={css.ownTag} data-ownership={r.open?'shelf':'earned'}>{r.open?say('ks.own.shelf'):say('ks.own.earned')}</span>}
@@ -282,19 +283,19 @@ export function KitStudio(props:KitStudioProps){
   <SlideSheet open={sheet?.k==='shirt'} onClose={closeSheet} title={sheetKit?`${sheetKit.season} · ${variantName(sheetKit.variant)}`:''} closeLabel={copy['play.close']}>
    {sheetKit&&<div className={css.sheetBody} data-testid="ks-shirt-card">
     {sheetOpen?<>
-     {photos[sheetOpen.id]?<div className={css.bigShirt}><img src={photos[sheetOpen.id]} alt={`${sheetOpen.season} ${variantName(sheetOpen.variant)}`} width={320} height={320} data-archive-photo/></div>:sheetOpen.cloth?<div className={css.bigShirt}><KitCloth spec={sheetOpen.cloth} monogram={monogram} crestSrc={crestFor(club)} title={`${sheetOpen.season} ${variantName(sheetOpen.variant)}`}/></div>:<p className={css.note}>{say('ks.card.undrawn')}</p>}
+     {(photos[sheetOpen.id]||sheetOpen.svg)?<div className={css.bigShirt}><img src={photos[sheetOpen.id]||sheetOpen.svg} alt={`${sheetOpen.season} ${variantName(sheetOpen.variant)}`} width={320} height={320} data-archive-photo={photos[sheetOpen.id]?'':undefined}/></div>:sheetOpen.cloth?<div className={css.bigShirt}><KitCloth spec={sheetOpen.cloth} monogram={monogram} crestSrc={crestFor(club)} title={`${sheetOpen.season} ${variantName(sheetOpen.variant)}`}/></div>:<p className={css.note}>{say('ks.card.undrawn')}</p>}
      <dl className={css.facts}>
       <div><dt>{say('ks.fact.season')}</dt><dd><bdi>{sheetOpen.season}</bdi></dd></div>
       <div><dt>{say('ks.fact.strip')}</dt><dd>{variantName(sheetOpen.variant)}</dd></div>
       {sheetOpen.colours.length>0&&<div><dt>{say('ks.fact.colours')}</dt><dd>{sheetOpen.cloth?colourLabel(copy,{base:sheetOpen.cloth.base,trim:sheetOpen.cloth.trim}):<bdi lang={contentLocale}>{sheetOpen.colours.join(' · ')}</bdi>}</dd></div>}
       {sheetOpen.design&&<div><dt>{say('ks.fact.design')}</dt><dd><bdi lang={contentLocale}>{sheetOpen.design}</bdi></dd></div>}
-      {sheetOpen.maker&&<div><dt>{say('ks.fact.maker')}</dt><dd><bdi lang={contentLocale}>{sheetOpen.maker}</bdi></dd></div>}
-      {sheetOpen.sponsor&&<div><dt>{say('ks.fact.sponsor')}</dt><dd><bdi lang={contentLocale}>{sheetOpen.sponsor}</bdi></dd></div>}
+      {sheetOpen.maker&&<div><dt>{say('ks.fact.maker')}</dt><dd><span lang={contentLocale}><KitPartMark parts={sheetOpen.parts} kind="maker"/></span></dd></div>}
+      {sheetOpen.sponsor&&<div><dt>{say('ks.fact.sponsor')}</dt><dd><span lang={contentLocale}><KitPartMark parts={sheetOpen.parts} kind="sponsor"/></span></dd></div>}
       <div><dt>{say('ks.fact.shelf')}</dt><dd>{rows.find(r=>r.id===sheetOpen.id)?.open?say('ks.own.shelf'):say('ks.own.earned')}</dd></div>
       {built[sheetOpen.id]&&<div><dt>{say('ks.fact.built')}</dt><dd>{say('ks.fact.builtAcc',{f:built[sheetOpen.id]!.f})} · {built[sheetOpen.id]!.p?say('ks.fact.builtPerfect'):say('ks.fact.builtBest',{n:built[sheetOpen.id]!.s})}</dd></div>}
      </dl>
      {slugs[sheetOpen.id]&&rows.find(r=>r.id===sheetOpen.id)?.open&&<KitOwnProvider slugs={[slugs[sheetOpen.id]!]}><KitOwnBar slug={slugs[sheetOpen.id]!} copy={{have:say('ks.own.have'),haveOn:say('ks.own.haveOn'),want:say('ks.own.want'),wantOn:say('ks.own.wantOn'),closet:say('ks.own.closet'),market:say('ks.own.market'),saved:say('ks.own.saved'),label:say('ks.own.label')}}/></KitOwnProvider>}
-     {sheetOpen.cloth&&<p className={css.fine}>{say('ks.card.recon')}</p>}
+     {sheetOpen.cloth&&!sheetOpen.svg&&!photos[sheetOpen.id]&&<p className={css.fine}>{say('ks.card.recon')}</p>}
      {sheetOpen.sources.length>0&&<p className={css.fine}>{say('ks.card.sources')}: {sheetOpen.sources.map((s,i)=><span key={i}>{s.url?<a href={s.url} target="_blank" rel="noreferrer noopener"><bdi>{s.title}</bdi></a>:<bdi>{s.title}</bdi>}{i<sheetOpen.sources.length-1?' · ':''}</span>)}</p>}
      {sheetOpen.cloth&&<button type="button" className={`min-h-tap ${css.cta} ${css.primary}`} onClick={()=>startFrom(sheetOpen)} data-testid="ks-design-from"><b>{say('ks.card.designFrom')}</b></button>}
     </>:<>

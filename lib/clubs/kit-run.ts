@@ -1,4 +1,4 @@
-import eraCrests from '@/content/manual/kit-crests-hapoel-tel-aviv.json'
+import {kitPartsFor} from './kit-parts'
 import type {ClubData} from './contract'
 import {kitViews,type KitView} from './gate-content'
 import {forbiddenColor} from './theme'
@@ -26,7 +26,7 @@ export type Eligible={kit:KitView;cloth:ClothSpec;variant:Variant}
 /** the club's kits that can be drawn from their documented fields alone, under the club's own colour policy (rule 95) */
 export function eligibleKits(data:ClubData):Eligible[]{
  const forbidden=(hex:string)=>forbiddenColor(data.theme,hex)
- return kitViews(data).flatMap(kit=>{const cloth=documentedCloth(kit,forbidden);if(!cloth)return [];const crestArt=data.identity.id==='hapoel-tel-aviv'?(eraCrests as Record<string,string|null>)[kit.season+'|'+kit.type.toLowerCase()]:null;return [{kit,cloth:crestArt?{...cloth,crest:true,crestArt}:cloth,variant:variantOf(kit.type)}]}).sort((a,b)=>a.kit.id.localeCompare(b.kit.id))
+ return kitViews(data).flatMap(kit=>{const cloth=documentedCloth(kit,forbidden);if(!cloth)return [];const crest=kitPartsFor(data.identity.id,kit).crest,crestArt=crest?.kind==='historical'?crest.src:null;return [{kit,cloth:crestArt?{...cloth,crest:true,crestArt}:cloth,variant:variantOf(kit.type)}]}).sort((a,b)=>a.kit.id.localeCompare(b.kit.id))
 }
 
 /** the fields this kit's archive row actually states. A crest requires a documented era asset. */

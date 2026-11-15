@@ -86,13 +86,15 @@ class Cut(unittest.TestCase):
         b = E.cut([beat(0, 0, 13.3, [ticket], 'chapter')], None, None, backdrop=lambda n: img('back.webp'))[0]
         card = next(x for x in b['shots'] if x['kind'] == 'ticket')
         self.assertEqual(card['d'], E.MAX_CARD)
-        pics = E.pictures(b)
+        self.assertTrue(card.get('glass'))              # read over the beat's picture, never on an empty ground (15.11.2026)
+        self.assertTrue(any(x.get('under') and x['dt'] == 0 for x in b['shots']))
+        pics = [x for x in E.pictures(b) if not x.get('under')]
         self.assertAlmostEqual(pics[0]['dt'], E.MAX_CARD)
         self.assertAlmostEqual(sum(x['d'] for x in pics), 13.3 - E.MAX_CARD, places=2)
         alone = E.cut([beat(0, 0, 13.3, [ticket], 'chapter')])[0]
         self.assertNotIn('d', alone['shots'][0])        # no picture to hand over to: the card stays, never an empty frame
-        short = E.cut([beat(0, 0, 6.5, [ticket], 'chapter')], None, None, backdrop=lambda n: img('back.webp'))[0]
-        self.assertEqual(len(short['shots']), 1)        # half a second of picture would be a flicker: the card stays
+        short = E.cut([beat(0, 0, 4.9, [ticket], 'chapter')], None, None, backdrop=lambda n: img('back.webp'))[0]
+        self.assertEqual([x['kind'] for x in short['shots'] if not x.get('under')], ['ticket'])   # under a second of picture would be a flicker: the card stays
 
     def test_the_slammed_word_gets_out_of_the_pictures_way(self):
         word = {'kind': 'word', 'text': 'THE TURN', 'bg': 'ink', 'at': 0.8}

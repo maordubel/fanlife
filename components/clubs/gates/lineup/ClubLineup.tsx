@@ -47,9 +47,9 @@ function Match({m,n,total,started,onStart,onNext,club,clubName,version,locale,co
  const graded=grade!==null,done=isComplete(board),locked=useMemo(()=>new Set(board.locks),[board.locks]),taken=useMemo(()=>new Set(picksOf(board)),[board])
  const bandName=(b:Band)=>tx(`lu.band.${b}`)
  const iso=(name:string)=>`\u2068${name}\u2069`
- const worn=useMemo(()=>kitFor({fromYear:m.year,toYear:m.year},'us',wardrobe),[m.year,wardrobe])
+ const worn=useMemo(()=>kitFor({fromYear:m.year,toYear:m.year},'us',wardrobe,{playedOn:m.on}),[m.year,m.on,wardrobe])
  // one shirt for every man in the room — a shirt can never tell you who started
- const shirtOf=(name:string):ReactNode=><ClubShirt player={{id:name,fromYear:m.year,toYear:m.year}} wardrobe={wardrobe} side="us" className="h-full w-full"/>
+ const shirtOf=(name:string):ReactNode=><ClubShirt player={{id:name,fromYear:m.year,toYear:m.year}} wardrobe={wardrobe} side="us" playedOn={m.on} className="h-full w-full"/>
  const sheetData=grade?sheetOf(board,grade):null
  const marks=useMemo(()=>sheetData?new Map<string,Mark>(sheetData.rows.map(r=>[r.name,r.mark])):null,[sheetData])
 

@@ -23,8 +23,9 @@ import {GoalBench,VerbRow} from './GoalBench'
 import {useBallRun} from './useBallRun'
 import css from './goal.module.css'
 
+const NO_OPPONENT_KITS:RumbleWardrobe={home:[],away:[],awayNeutral:true}
 export type GoalItem={id:string;title:string;subtitle:string;competition:string;opponent:string;score:string;on:string|null;year:number|null;pool:string[]}
-export type ClubGoalProps={items:GoalItem[];club:string;clubName:string;version:string;seed:number;locale:UiLocale;contentLocale:string;wardrobe:RumbleWardrobe;copy:GameCopy}
+export type ClubGoalProps={items:GoalItem[];club:string;clubName:string;version:string;seed:number;locale:UiLocale;contentLocale:string;wardrobe:RumbleWardrobe;opponents?:Record<string,RumbleWardrobe>;copy:GameCopy}
 type Phase='build'|'yours'|'archive'|'done'
 type Sheet=null|'info'|'result'
 type Say=(k:string,v?:Record<string,string|number>)=>string
@@ -76,7 +77,7 @@ function RunSummary({results,onAgain,club,copy,contentLocale}:ClubGoalProps&{res
  </div>
 }
 
-function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,contentLocale,wardrobe,copy}:ClubGoalProps&{g:GoalItem;run:number;pos:number;of:number;onResult:(r:GoalResult)=>void;onNext:()=>void}){
+function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,contentLocale,wardrobe,opponents={},copy}:ClubGoalProps&{g:GoalItem;run:number;pos:number;of:number;onResult:(r:GoalResult)=>void;onNext:()=>void}){
  const tx:Say=(k,v)=>tr(copy,k,v)
  const [draft,setDraft]=useState<Draft>([]),[actor,setActor]=useState<string|null>(null),[verb,setVerbPick]=useState<ReplayAction|null>(null),[active,setActive]=useState<number|null>(null)
  const [phase,setPhase]=useState<Phase>('build'),[verdict,setVerdict]=useState<GoalVerdict|null>(null),[sheet,setSheet]=useState<Sheet>(null)
@@ -90,9 +91,9 @@ function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,c
  const armed=building&&!full&&active===null&&actor!==null&&verb!==null
 
  // ---- shirts: one era for the whole room; the report's side decides which colours a man wears
- const shirtFor=(name:string,side:'us'|'them')=><ClubShirt player={{id:name||'x',fromYear:g.year,toYear:g.year}} wardrobe={wardrobe} side={side} className="h-full w-full"/>
+ const shirtFor=(name:string,side:'us'|'them',keeper=false)=><ClubShirt player={{id:name||'x',fromYear:g.year,toYear:g.year}} wardrobe={side==='us'?wardrobe:opponents[g.id]??NO_OPPONENT_KITS} side={side} playedOn={g.on} keeper={keeper} className="h-full w-full"/>
  const unknownShirt=<span className={css.unknown} aria-hidden="true">?</span>
- const shirtOf=(t:Tok):ReactNode=>t.side==='unnamed'?unknownShirt:shirtFor(t.actor,t.side)
+ const shirtOf=(t:Tok):ReactNode=>t.side==='unnamed'?unknownShirt:shirtFor(t.actor,t.side,t.action==='save')
  const labelOf=(name:string)=>name?shortName(name):unnamed
 
  // ---- building
@@ -290,7 +291,7 @@ function Round({g,run,pos,of,onResult,onNext,club,clubName,version,seed,locale,c
        <div><b>{tx('gl.replay.yours')}</b><p dir="auto">{mine?[mine.actor||unnamed,verbWord(mine.action),mine.zone].join(' · '):tx('gl.result.missing')}</p></div>
        <div><b>{tx('gl.replay.archive')}</b><p dir="auto">{archived?[archived.actor||unnamed,verbWord(archived.action),archived.zone].join(' · '):tx('gl.result.noArchiveTouch')}</p></div>
       </div>
-      {step&&mine&&<p className={css.rowMeta}>{tx('gl.who')} {step.actor===null?'–':tx(step.actor?'gl.result.yes':'gl.result.no')} · {tx('gl.what')} {tx(step.action?'gl.result.yes':'gl.result.no')} · {tx('gl.where')} {tx(`gl.zone.${step.zone}`)}</p>}
+      {step&&mine&&<p className={css.rowMeta} data-zone={step.zone} data-ok={step.action&&step.actor!==false?'true':'false'}>{tx('gl.who')} {step.actor===null?'–':tx(step.actor?'gl.result.yes':'gl.result.no')} · {tx('gl.what')} {tx(step.action?'gl.result.yes':'gl.result.no')} · {tx('gl.where')} {tx(`gl.zone.${step.zone}`)}</p>}
       {archived?.note&&<p className={css.rowNote} dir="auto">{archived.note}</p>}
       <div className={css.touchActions}>
        <button type="button" className={`min-h-tap ${css.btn}`} disabled={comparison===0} onClick={()=>setComparison(comparison-1)}>{tx('gl.result.prevTouch')}</button>

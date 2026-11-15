@@ -1,10 +1,10 @@
 import 'server-only'
 import {kitViews} from '@/lib/clubs/gate-content'
 import {loadClub} from '@/lib/clubs/resolver'
-import {rumbleWardrobe} from '@/lib/clubs/rumble-kit'
+import {clubWardrobe} from '@/lib/clubs/kit-wardrobe'
+import {kitPartsFor} from '@/lib/clubs/kit-parts'
 import {livery} from '@/lib/club-livery'
 import {documentedCloth,type ClothSpec} from '@/lib/clubs/kit-model'
-import {crestFor} from '@/lib/clubs/crest'
 import {legendsReel,liveReel,type ClubKit} from './reel'
 import {pixelKit} from '@/lib/highlights/kit'
 import {REGISTRY} from '@/lib/master/registry'
@@ -24,8 +24,8 @@ export async function clubKit(club:string):Promise<ClubKit|undefined>{
  const hit=cache.get(club);if(hit&&hit.key===r.data.version)return hit.kit
  const views=kitViews(r.data),cloth:Record<string,ClothSpec>={}
  // the garment renderer's spec of each documented kit it can draw faithfully: colours, cut, maker and sponsor; the crest when we hold one
- for(const k of views){const c=documentedCloth(k,()=>false);if(c)cloth[k.id]={...c,crest:!!crestFor(club)}}
- const kit={wardrobe:rumbleWardrobe(views,()=>false),primary:livery(club)?.primary??'#1C2F93',cloth}
+ for(const k of views){const c=documentedCloth(k,()=>false);if(c){const crest=kitPartsFor(club,k).crest;cloth[k.id]=crest?.kind==='historical'?{...c,crest:true,crestArt:crest.src}:c}}
+ const kit={wardrobe:clubWardrobe(r.data,()=>false),primary:livery(club)?.primary??'#1C2F93',cloth}
  cache.set(club,{key:r.data.version,kit});return kit
 }
 /** the view, with the reel of the manager's last result attached — the theatre plays it */

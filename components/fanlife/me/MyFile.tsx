@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
-import { xiNames } from '@/app/me/file/actions'
+import { xiPlayers } from '@/app/me/file/actions'
 import type { MeClub } from '@/app/me/data'
 import { xiKey } from '@/lib/clubs/activity'
 import { closetMine } from '@/lib/collector/api'
@@ -21,13 +21,13 @@ import { Badge } from '@/components/clubs/Badge'
  * "My file" — The Worker's /tik/file for a hub: every XI this device saved, every LIFE it started,
  * the shirts in the closet and the wanted list. Read after mount; names come from the club packs.
  */
-type SavedXI = { club: MeClub; formation: string; rows: { slot: string; role: string; id: string }[]; captain: string | null; names: Record<string, string> }
+type SavedXI = { club: MeClub; formation: string; rows: { slot: string; role: string; id: string }[]; captain: string | null; players: Awaited<ReturnType<typeof xiPlayers>> }
 type Life = { club: MeClub; chapters: number; at: string | null }
 type Labels = Record<string, { label: string; club: string }>
 
 const fmt = (iso: string) => new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(iso))
 
-function readXI(club: MeClub): Omit<SavedXI, 'names'> | null {
+function readXI(club: MeClub): Omit<SavedXI, 'players'> | null {
   try {
     const raw = localStorage.getItem(xiKey(club.id))
     if (!raw || raw.length > 20000) return null
@@ -47,8 +47,8 @@ export function MyFile({ clubs, labels }: { clubs: MeClub[]; labels: Labels }) {
   useEffect(() => {
     let live = true
     setBeen(beenList(readBeen()))
-    const found = clubs.map(readXI).filter((x): x is Omit<SavedXI, 'names'> => !!x)
-    void Promise.all(found.map(async (x) => ({ ...x, names: await xiNames(x.club.id, x.rows.map((r) => r.id)).catch(() => ({})) })))
+    const found = clubs.map(readXI).filter((x): x is Omit<SavedXI, 'players'> => !!x)
+    void Promise.all(found.map(async (x) => ({ ...x, players: await xiPlayers(x.club.id, x.rows.map((r) => r.id)).catch(() => ({})) })))
       .then((rows) => { if (live) setXis(rows) })
     setLives(clubs.map((club) => ({ club, ...lifeOf(club.id) })).filter((l) => l.chapters > 0))
     void closetMine().then((r) => { if (live && r.ok) setCloset(r) })
@@ -80,10 +80,13 @@ export function MyFile({ clubs, labels }: { clubs: MeClub[]; labels: Labels }) {
                     <span className="wkc-xi-lines" aria-hidden="true" />
                     <ol>{x.rows.map((r) => {
                       const slot = FORMATIONS[x.formation]!.slots.find((sl) => sl.slotId === r.slot)
+                      const player=x.players[r.id]
+                      const shirt=r.role==='GK'?player?.keeperShirt:player?.shirt
                       return (
                         <li key={r.slot} style={{ left: `${slot?.x ?? 50}%`, insetBlockStart: `${slot?.y ?? 50}%` }} data-gk={r.role === 'GK' || undefined}>
-                          <span className="wkc-xi-shirt" aria-hidden="true" />
-                          <span className="wkc-xi-name"><span className="sr-only">{r.role} </span>{x.names[r.id] ?? '—'}{x.captain === r.id ? <em className="wkc-xi-c"> (C)</em> : null}</span>
+                          {/* eslint-disable-next-line @next/next/no-img-element -- catalogue SVG at shirt-token size */}
+                          {shirt?<img src={shirt} alt="" width={24} height={24}/>:<span className="wkc-xi-shirt" aria-hidden="true" />}
+                          <span className="wkc-xi-name"><span className="sr-only">{r.role} </span>{player?.name ?? '—'}{x.captain === r.id ? <em className="wkc-xi-c"> (C)</em> : null}</span>
                         </li>
                       )
                     })}</ol>

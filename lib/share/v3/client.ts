@@ -1,5 +1,5 @@
 'use client'
-import {SHARE_FONTS,type FontKey,type Measure,type ShareAssets} from './render'
+import {SHARE_FONTS,type FontKey,type Measure,type ShareAssets,type ShareKit} from './render'
 import type {ShareArt} from './templates'
 
 /**
@@ -29,6 +29,12 @@ export function loadShareAssets():Promise<ShareAssets>{
   return {logo:logo!,shirt:shirt!,fontCss,art:Object.fromEntries(ART.map((a,i)=>[a,art[i]!])) as Record<ShareArt,string>}
  })().catch(e=>{loading=null;throw e})
  return loading
+}
+/** Only catalogue SVGs can be fetched for a public export. A missing drawing uses the normal shirt silhouette. */
+export async function loadShareKitImages(kits:ReadonlyArray<ShareKit|null> = []):Promise<Record<string,string>>{
+ const paths=[...new Set(kits.slice(0,11).flatMap(k=>k?.svg&&/^\/club-kits\/[a-z0-9-]+\/svg\/[a-z0-9_-]+\.svg$/i.test(k.svg)?[k.svg]:[]))]
+ const images=await Promise.allSettled(paths.map(async src=>[src,await dataUri(src)] as const))
+ return Object.fromEntries(images.flatMap(img=>img.status==='fulfilled'&&img.value[1].startsWith('data:image/svg+xml;')?[img.value]:[]))
 }
 let ctx:CanvasRenderingContext2D|null=null
 export const canvasMeasure:Measure=(s:string,n:number,k:FontKey)=>{ctx??=document.createElement('canvas').getContext('2d');const f=SHARE_FONTS[k];ctx!.font=`${f.weight} ${n}px ${f.family}`;return ctx!.measureText(s).width}
