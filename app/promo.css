@@ -8,6 +8,15 @@
 .promo-x::before{content:'×';display:grid;place-items:center;inline-size:22px;block-size:22px;border:2px solid var(--mag-ink,#111);border-radius:50%;background:var(--mag-ink,#111);color:var(--mag-paper,#fff);font-size:16px;line-height:1}
 .promo-tag{position:absolute;inset-block-start:0;inset-inline-start:0;padding:0 4px;font:700 9px/14px var(--mag-mono,monospace);letter-spacing:.06em;text-transform:uppercase;background:var(--mag-ink,#111);color:var(--mag-paper,#fff);pointer-events:none}
 @media (min-width:901px){.promo{inset-block-end:16px}}
+/* The shop's lookbook card (15.11.2026): a 4:5 poster in the corner, never centred over the page, no backdrop, leaves on its own */
+.promo.promo-card{inset-inline:10px auto;margin-inline:0;inline-size:min(188px,46vw);block-size:auto;aspect-ratio:4/5;transform:translateY(calc(100% + 120px)) rotate(-4deg);transform-origin:0 100%}
+.promo.promo-card[data-up="true"]{transform:translateY(0) rotate(-1.5deg)}
+.promo-card .promo-link{box-shadow:5px 5px 0 var(--mag-ink,#111)}
+.promo-card .promo-link img{object-fit:cover}
+.promo-card .promo-x{inset-block-start:-18px;inset-inline-end:-18px}
+.promo-card .promo-x::before{inline-size:28px;block-size:28px;font-size:19px}
+@media (min-width:901px){.promo.promo-card{inset-inline-start:20px;inset-block-end:20px;inline-size:248px}}
+@media (max-height:560px){.promo.promo-card{inline-size:132px}}
 @media (prefers-reduced-motion:reduce){.promo{transform:none;transition:opacity .15s}}
 
 /* Control room: the Advertising desk */

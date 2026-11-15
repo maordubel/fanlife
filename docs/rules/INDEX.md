@@ -229,3 +229,4 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [shop-live-mockups.md](shop-live-mockups.md) — the first picture of a product is the product in use; gallery with thumbnails and a glass
 - [shop-desk-manager.md](shop-desk-manager.md) — the desk's product manager: search, filters, bulk bar, editor, first picture, more products, import from Printify; shop search
 - [shop-brand-label-postcard.md](shop-brand-label-postcard.md) — FAN LIFE on the neck label only (one ink, light on dark), the postcard in every order, enlarged pictures for soft prints
+- [shop-lookbook-cards](shop-lookbook-cards.md) · The shop's 4:5 lookbook posters as corner cards in the promo rotation: one a day, never on /shop, never an interstitial (15.11.2026)
