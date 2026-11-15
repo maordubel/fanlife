@@ -46,6 +46,7 @@ export default async function OurGames({searchParams}:{searchParams:{lang?:strin
      {fl.open?<Link className="wk-btn paper wkg-cta min-h-tap" href="/all-football/legends">{copy.ourGamesPlay}{fl.preview?` · ${copy.wkhOwnerPreview}`:''} <Arrow/></Link>:<span className="wk-tag ink wkg-soon">{copy.ourGamesSoon}</span>}</div>
    </section>
   </div>
+  {model.some(c=>c.gates['kit-builder']?.href)&&<section className="wkg-world wk-navyplate"><Plate art="swap" ink="red" className="wkg-crowd"/><div className="wkg-wtxt"><h2 className="wk-head white">{copy.buildKitEntry}</h2><p className="wkg-line">{copy.buildKitSub}</p><GateChooser gate="kit-builder" clubs={model} copy={chooser} className="wk-btn paper wkg-cta">{copy.ourGamesPlay} <Arrow/></GateChooser></div></section>}
   <section className="wkg-world wk-greenplate" aria-labelledby="og-world">
    <span className="wk-speed" aria-hidden="true"/>
    <Plate art="fans" ink="orange" className="wkg-crowd"/>

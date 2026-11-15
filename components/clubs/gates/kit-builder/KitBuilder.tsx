@@ -24,7 +24,7 @@ type Phase='intro'|'play'|'reveal'|'summary'
 type Placed=Partial<Record<Step,string>>
 type HintState={n:number;struck:Partial<Record<Step,string[]>>;receipts:HintReceipt[]}
 const ADVANCE_MS=150
-const SLOT_OF:Partial<Record<Step,SlotKey>>={maker:'maker',sponsor:'sponsor'}
+const SLOT_OF:Partial<Record<Step,SlotKey>>={crest:'crest',maker:'maker',sponsor:'sponsor'}
 const noHints=():HintState=>({n:0,struck:{},receipts:[]})
 const NO_STEPS:PublicPuzzle['steps']=[],NO_PLACED:Placed={}
 
@@ -32,7 +32,7 @@ export type KitBuilderProps={club:string;clubName:string;version:string;locale:U
 
 /** Colour names, design names and variants — shared with the studio so a word is spelled once */
 export const colourLabel=(copy:GameCopy,patch:Partial<ClothSpec>)=>patch.base?[tr(copy,`kb.colour.${patch.base}`),patch.trim?tr(copy,`kb.colour.${patch.trim}`):null].filter(Boolean).join(' · '):''
-export const optionLabel=(copy:GameCopy,o:Option)=>o.step==='body'?colourLabel(copy,o.patch):o.step==='construction'?tr(copy,`kb.pattern.${o.patch.pattern}`):(o.step==='maker'?o.patch.maker:o.patch.sponsor)??''
+export const optionLabel=(copy:GameCopy,o:Option)=>o.step==='crest'?tr(copy,'kb.crest.'+(o.patch.crestArt?.split('/').pop()?.replace('.png','')??'')):o.step==='body'?colourLabel(copy,o.patch):o.step==='construction'?tr(copy,`kb.pattern.${o.patch.pattern}`):(o.step==='maker'?o.patch.maker:o.patch.sponsor)??''
 
 /** Gate 4 · Build the Kit — one shirt of a season on the glass: place its colours, design, maker and sponsor, check it, see the real one. */
 export function KitBuilder(props:KitBuilderProps){
@@ -41,7 +41,7 @@ export function KitBuilder(props:KitBuilderProps){
  const [mode,setMode]=useState<KitMode|null>(props.mode)
  const [phase,setPhase]=useState<Phase>(props.mode?'play':'intro')
  const size=mode?Math.min(MODE_SIZE[mode],puzzles.length):0
- const [idx,setIdx]=useState(0),[stepIx,setStepIx]=useState(0),[auto,setAuto]=useState(true)
+ const [idx,setIdx]=useState(0),[stepIx,setStepIx]=useState(0),[auto,setAuto]=useState(false)
  const [placed,setPlaced]=useState<Record<number,Placed>>({}),[hints,setHints]=useState<Record<number,HintState>>({})
  const [graded,setGraded]=useState<Record<number,Graded>>({}),[error,setError]=useState<Fail['error']|null>(null),[notice,setNotice]=useState('')
  const [pending,startGrade]=useTransition(),[sheet,setSheet]=useState<null|{kind:'info';option:Option}|{kind:'rules'}>(null)
@@ -89,9 +89,15 @@ export function KitBuilder(props:KitBuilderProps){
    if(!r.ok){setError(r.error);return}
    setGraded(g=>({...g,[idx]:r}))
    if(r.unlock)saveBuilt(club,r.unlock.kitId,{t:r.unlock.token,s:r.verdict.score,p:r.verdict.perfect,f:r.unlock.f,o:r.unlock.o,r:r.unlock.r,at:new Date().toISOString()})
-   markStep(Object.keys(graded).length+1)
+   markStep(Object.keys(graded).length+(graded[idx]?0:1))
    setPhase('reveal')
   })
+ }
+ function retryShirt(){
+  if(timer.current)window.clearTimeout(timer.current)
+  setPlaced(p=>({...p,[idx]:{}}))
+  setHints(h=>({...h,[idx]:noHints()}))
+  setStepIx(0);setNotice('');setError(null);setPhase('play')
  }
  function advance(){
   if(idx+1>=size){setPhase('summary');return}
@@ -134,6 +140,7 @@ export function KitBuilder(props:KitBuilderProps){
      <p className={css.fine} data-testid="kb-game-note">{say(`kb.game.${game}.note`)}</p>
      {legacy&&<p className={css.notice} role="note" data-testid="kb-legacy">{say('kb.legacy')}</p>}
      <ol className={css.partList}>{puzzles[0]!.steps.map(s=><li key={s.step}>{stepName(s.step)}</li>)}</ol>
+     <button type="button" className={`min-h-tap ${css.cta} ${css.primary}`} onClick={start('single')} data-testid="kb-single">{say('kb.mode.single')}</button>
      <div className={css.modes}>
       {quick===full
        ?<button type="button" className={`min-h-tap ${css.cta} ${css.primary}`} onClick={start('full')} data-testid="kb-start">{say('kb.mode.only',{n:full})}</button>
@@ -182,7 +189,7 @@ export function KitBuilder(props:KitBuilderProps){
      <p className={css.fine} data-testid="kb-field-accuracy">{say('kb.reveal.field',{f:v.fieldPoints})}</p>
     </header>
     <div className={css.pair}>
-     <figure><figcaption>{say('kb.reveal.real',{season:v.seasonLabel,variant:variantName})}</figcaption><div className={css.pairShirt}><KitCloth spec={v.answer} monogram={monogram} crestSrc={crestFor(club)} title={say('kb.reveal.real',{season:v.seasonLabel,variant:variantName})}/></div></figure>
+     <figure><figcaption>{say('kb.reveal.real',{season:v.seasonLabel,variant:variantName})}</figcaption><div className={css.pairShirt}>{g.archiveSvg?<img src={g.archiveSvg} alt={say('kb.reveal.archiveArt')} width={430} height={470}/>:<KitCloth spec={v.answer} monogram={monogram} crestSrc={crestFor(club)} title={say('kb.reveal.real',{season:v.seasonLabel,variant:variantName})}/>}</div></figure>
      <figure><figcaption>{say('kb.reveal.mine')}</figcaption><div className={css.pairShirt}><KitCloth spec={cloth} monogram={monogram} crestSrc={crestFor(club)} title={say('kb.reveal.mine')}/></div></figure>
     </div>
     <ul className={css.verdicts}>{v.steps.map(r=><li key={r.step} data-ok={r.ok}>
@@ -195,12 +202,12 @@ export function KitBuilder(props:KitBuilderProps){
      {v.hints>0&&<p>{say('kb.reveal.hints',{n:v.hints,pts:v.hints*HINT_PENALTY})}</p>}
      <p data-testid="kb-dna">{v.dna?say('kb.reveal.dna.yes',{n:DNA_THRESHOLD}):say('kb.reveal.dna.no',{n:DNA_THRESHOLD,f:v.fieldPoints})}</p>
      {v.unknown.length>0&&<p data-testid="kb-unknown">{say('kb.reveal.unknown',{parts:v.unknown.map(f=>say(`kb.field.${f}`)).join(', ')})}</p>}
-     <p>{say('kb.reveal.recon')}</p>
+     <p>{say(g.archiveSvg?'kb.reveal.archiveArt':'kb.reveal.recon')}</p>
      {g.sources.length>0&&<p className={css.sources}>{say('kb.reveal.sources')}: {g.sources.map((s,i)=><span key={i}>{s.url?<a href={s.url} target="_blank" rel="noreferrer noopener"><bdi>{s.title}</bdi></a>:<bdi>{s.title}</bdi>}{i<g.sources.length-1?' · ':''}</span>)}</p>}
      {g.shirtSlug&&<KitOwnProvider slugs={[g.shirtSlug]}><KitOwnBar slug={g.shirtSlug} copy={{have:say('kb.own.have'),haveOn:say('kb.own.haveOn'),want:say('kb.own.want'),wantOn:say('kb.own.wantOn'),closet:say('kb.own.closet'),market:say('kb.own.market'),saved:say('kb.own.saved'),label:say('kb.own.label')}}/></KitOwnProvider>}
      {g.unlock&&<p><Link href={`${base}/kits?lang=${locale}&kit=${encodeURIComponent(g.unlock.kitId)}`}>{say('kb.reveal.unlocked')}</Link></p>}
     </div>
-    <div className={css.dockFixed}><button type="button" className={`min-h-tap ${css.cta} ${css.primary}`} onClick={advance} data-testid="kb-next"><b>{last?say('kb.cert.see'):say('kb.next')}</b><span aria-hidden="true">{locale==='he'?'←':'→'}</span></button></div>
+    <div className={css.dockFixed}><button type="button" className={`min-h-tap ${css.cta}`} onClick={retryShirt}>{say('kb.retryShirt')}</button><button type="button" className={`min-h-tap ${css.cta} ${css.primary}`} onClick={advance} data-testid="kb-next"><b>{last?say('kb.cert.see'):say('kb.next')}</b><span aria-hidden="true">{locale==='he'?'←':'→'}</span></button></div>
    </div>
   </section>
  }
@@ -233,6 +240,7 @@ export function KitBuilder(props:KitBuilderProps){
     {!inReview&&row?<div className={css.panel} role="tabpanel">
      <p className={css.question}>{say(`kb.q.${row.step}`,{season:puzzle.seasonLabel,variant:variantName})}</p>
      <ul className={css.cards} data-testid="kb-cards">{row.options.map(o=><li key={o.id}><OptionCard o={o} label={optionLabel(copy,o)} copy={copy} selected={mine[row.step]===o.id} struck={struck.includes(o.id)} wide={wide} cloth={cloth} contentLocale={contentLocale} monogram={monogram} onPlace={()=>place(row.step,o.id)} onDropped={()=>place(row.step,o.id)} onInfo={openSheet({kind:'info',option:o})} infoLabel={say('kb.info.open',{name:optionLabel(copy,o)})} struckLabel={say('kb.struck')}/></li>)}</ul>
+     {!auto&&mine[row.step]&&!allPlaced&&<button type="button" className={`min-h-tap ${css.cta} ${css.primary}`} onClick={()=>setStepIx(nextOpen(stepIx,mine))}>{say('kb.step.next')}</button>}
      <label className={css.autoRow}><input type="checkbox" checked={auto} onChange={e=>setAuto(e.target.checked)}/>{say('kb.auto')}</label>
     </div>
     :<div className={css.panel} role="tabpanel" data-testid="kb-review">
@@ -267,6 +275,7 @@ function OptionCard({o,label,copy,selected,struck,wide,cloth,contentLocale,monog
    <span className={css.cardArt}>
     {o.step==='body'&&<span className={css.discs} aria-hidden="true"><i style={{background:colourHex(o.patch.base!)}}/>{o.patch.trim&&<i style={{background:colourHex(o.patch.trim)}}/>}</span>}
     {o.step==='construction'&&<KitCloth spec={{...preview,base:cloth.base??'grey',trim:cloth.trim??(cloth.base?null:'white')}} texture={false} monogram={monogram} viewBox="40 36 240 262"/>}
+    {o.step==='crest'&&<img src={o.patch.crestArt} alt="" width={60} height={60}/>}
     {(o.step==='maker'||o.step==='sponsor')&&<span className={css.word} lang={contentLocale} dir="auto" data-kind={o.step}>{(label||'').toUpperCase()}</span>}
    </span>
    <span className={css.cardLabel} lang={o.step==='maker'||o.step==='sponsor'?contentLocale:undefined} dir="auto">{label}</span>

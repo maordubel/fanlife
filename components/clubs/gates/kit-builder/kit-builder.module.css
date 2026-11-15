@@ -213,3 +213,6 @@
 .fieldRow i { font-style: normal; font-family: var(--mag-mono); }
 .fieldRow i[data-ok='false'] { text-decoration: underline dashed; text-underline-offset: 3px; }
 .notice { margin: 0; padding: 7px 10px; border: 3px solid var(--kb-ink); font-size: 13px; line-height: 1.4; background: var(--mag-lilac); }
+
+.pairShirt img { width:100%; height:100%; min-height:0; object-fit:contain; }
+.cardArt img { width: min(60px, 100%); height: 60px; object-fit: contain; }

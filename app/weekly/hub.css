@@ -695,6 +695,6 @@
 @media (min-width: 560px) and (max-width: 900px) { .wkh-stickers > .wkh-stk { flex-basis: 28%; } }
 @media (min-width: 901px) {
   .wkh-counter { grid-area: market; margin-block-start: 40px; grid-template-columns: 1fr 1fr; }
-  .wkh-counter:has(> :only-child) { grid-template-columns: 1fr; }
+  .wkh-counter:not(:has(> .wkh-door)) { grid-template-columns: 1fr; }
   .wkh-counter .wkh-market.wkh-market-mini { grid-area: auto; }
 }
