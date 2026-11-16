@@ -164,7 +164,7 @@ export function Theatre({reel,onDone,sound,allow=ALL,max=10,autoStart=false,segm
     <span className={css.score} data-testid="highlights-score"><b>{score[0]}</b><i>{minute}</i><b>{score[1]}</b></span>
     <span className={css.team} data-right><Arrow d={(-dir0) as Dir}/><b>{T[1].code}</b><Mark t={T[1]}/></span>
    </header>
-   {tag&&phase.k==='scene'?<span className={css.tag} style={{insetInlineStart:`${tag.x}%`,insetBlockStart:`${tag.y}%`}} data-side={tag.side}>{tag.text}<i aria-hidden="true">▼</i></span>:null}
+   {tag&&phase.k==='scene'?<span className={css.tag} style={{left:`${tag.x}%`,insetBlockStart:`${tag.y}%`}} data-side={tag.side}>{tag.text}<i aria-hidden="true">▼</i></span>:null}
    {fx?<Fx c={fx} key={`${fx}:${gkey}`}/>:letters?<b className={css.fxText} key={`${letters}:${gkey}`} aria-hidden="true">{letters}</b>:null}
    {card&&phase.k==='scene'?(card.against?<Against key={`a:${gkey}`} team={T[card.side]} player={card.player} hattrick={card.hattrick} from={attackDir(clock,card.side)}/>:<Scorer key={`s:${gkey}`} team={T[card.side]} player={card.player}/>):null}
    {phase.k==='done'?<div className={css.final}><p className={css.finalScore}><span>{T[0].name}</span><b>{reel.final[0]} – {reel.final[1]}</b><span>{T[1].name}</span></p>{reel.pens?<p className={css.small}>{reel.pens[0]}–{reel.pens[1]} on penalties</p>:null}<p className={css.small}>Full time</p></div>:null}

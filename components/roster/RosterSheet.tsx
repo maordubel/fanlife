@@ -563,12 +563,11 @@ function MiniFormation({
       </g>
       {slots.map((slot) => {
         const live = slot.slotId === active
-        // The pitch places a slot at `inset-inline-start: x%`, so in this RTL app a low x
-        // stands on the RIGHT. The drawing is physical, so it mirrors x to agree with it.
+        // x is measured from the physical left edge (lib/game/formations), as on the pitch.
         return (
           <rect
             key={slot.slotId}
-            x={3 + ((100 - slot.x) / 100) * 54 - (live ? 4 : 2.5)}
+            x={3 + (slot.x / 100) * 54 - (live ? 4 : 2.5)}
             y={3 + (slot.y / 100) * 72 - (live ? 4 : 2.5)}
             width={live ? 8 : 5}
             height={live ? 8 : 5}
