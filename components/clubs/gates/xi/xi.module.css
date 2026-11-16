@@ -156,3 +156,77 @@
 
 /* 12.11.2026 — a name on the team sheet opens the man in the archive */
 .archiveName { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+/* ------------------------------------------------------------- 16.11.2026 · the phone, put in order
+ * Owner: improve the best-XI page, mainly on mobile — graphic, visual and ease of use.
+ * The pitch fills the width (a touch wider, 0.88, markings redrawn in true proportion), the tools say what they do,
+ * the eleven era chips fold into one Era picker so the dock is ONE line of tools over a 4-up sticker grid that scrolls
+ * inside itself (no page scroll, no sideways scroll), and every shirt is the measured drawing, shirt only.
+ */
+.linesWide { display: none; }
+.eraPick { position: relative; display: flex; flex: 0 1 auto; min-width: 0; }
+.eraPick select { appearance: none; -webkit-appearance: none; min-height: 44px; inline-size: 100%; min-width: 0; padding: 0 26px 0 10px; border: 2px solid var(--xi-ink); border-radius: 0; background: var(--mag-paper); color: var(--xi-ink); font-family: var(--mag-body); font-size: 12px; font-weight: 800; cursor: pointer; text-overflow: ellipsis; }
+.eraPick::after { content: '▾'; position: absolute; inset-inline-end: 8px; inset-block-start: 50%; translate: 0 -50%; pointer-events: none; font-size: 12px; color: var(--xi-ink); }
+.eraPick[data-on='true'] select { background: var(--xi-ink); color: var(--mag-white); }
+.eraPick[data-on='true']::after { color: var(--mag-white); }
+.fullBtn { flex: none; display: flex; align-items: center; padding: 0 10px; border: 2px solid var(--xi-ink); background: var(--mag-paper); color: var(--xi-ink); font-family: var(--mag-body); font-size: 12px; font-weight: 800; cursor: pointer; }
+.iconTool { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; line-height: 1; }
+.iconTool b { font-weight: 400; font-size: 19px; line-height: 1; }
+.iconTool small { font-family: var(--mag-mono); font-size: 8.5px; letter-spacing: .4px; text-transform: uppercase; white-space: nowrap; }
+[lang='he'] .iconTool small { font-family: var(--mag-body); font-weight: 800; font-size: 10px; letter-spacing: 0; }
+
+@media (max-width: 900px) {
+  .stage { gap: 8px; padding-block-start: 8px; }
+  .main { gap: 8px; }
+  /* the field: full width, markings in true proportion */
+  .main > :global(.fitbox) { --fit-r: .88 !important; place-items: start center; }
+  .linesTall { display: none; }
+  .linesWide { display: block; }
+  .pitch { box-shadow: 4px 4px 0 var(--xi-ink); }
+  .token { --w: max(44px, 19.5cqw); }
+  .shirt { width: 78%; max-width: 70px; }
+  .empty { width: 54%; max-width: 56px; font-size: clamp(11px, 3.8cqw, 15px); background: color-mix(in srgb, var(--mag-white) 10%, transparent); }
+  .token[data-active='true'] .empty { animation: xiPulse 1.4s ease-in-out infinite; }
+  .plate { max-width: 96%; padding: 2px 3px 1px; border-width: 1.5px; font-size: clamp(9px, 3.05cqw, 13px); letter-spacing: -.1px; text-overflow: clip; }
+  .hudCount { min-height: 32px; font-size: 15px; }
+  .hudFormation { min-height: 40px; font-size: 15px; }
+  /* the bar: two tabs and three tools that say their name */
+  .bar { gap: 6px; }
+  .tab { min-height: 46px; font-size: 16px; }
+  .tool.iconTool { min-width: 48px; min-height: 46px; padding: 0 4px; box-shadow: 2px 2px 0 var(--xi-ink); }
+  /* the dock: a fixed tray — one line of tools, then the shirts scroll inside it */
+  .dock { block-size: 36dvh; max-block-size: none; min-block-size: 230px; overflow: hidden; gap: 6px; padding-block: 8px calc(6px + env(safe-area-inset-bottom)); }
+  .dock:has(.strip), .dock:has(.hint) { block-size: auto; min-block-size: 0; }
+  .dockHead :global(.wk-logo) { font-size: 18px; }
+  .dockTarget { font-size: 13px; padding: 2px 8px; }
+  .dock :global([data-pick-rail]) { flex: 1 1 0; min-block-size: 0; display: flex; flex-direction: column; }
+  .dock :global([data-pick-rail]) > div:first-child { flex: none; flex-wrap: nowrap; gap: 6px; }
+  .dock :global([data-pick-rail]) > div:first-child > div { flex: 0 0 auto; flex-basis: auto; order: 0; flex-wrap: nowrap; }
+  .dock :global([data-pick-rail]) > div:first-child > div button { min-width: 0; padding-inline: 10px; }
+  .dock :global([data-pick-rail]) > div:first-child > input { flex: 1 1 0; min-width: 0; }
+  .eraPick { flex: 1 1 0; }
+  .dock :global([data-pick-rail]) > div:first-child > button:last-child { flex: none; inline-size: 40px; min-inline-size: 44px; }
+  .dock :global([data-pick-rail]) ul { flex: 1 1 0; min-block-size: 0; max-block-size: none; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 7px; margin-block-start: 6px; padding: 2px 3px 8px 1px; align-content: start; }
+  .dock :global([data-pick-rail]) li > button { inline-size: 100%; padding: 3px 2px 2px; box-shadow: 2px 2px 0 var(--xi-ink); }
+  .dock :global([data-pick-rail]) li > button > span:first-child { inline-size: 100%; display: grid; place-items: center; }
+  .dock :global([data-pick-rail]) li > button > span:first-child > span { inline-size: min(100%, 64px) !important; block-size: auto !important; aspect-ratio: 336 / 298; }
+  .dock :global([data-pick-rail]) li > button > span:nth-child(2) { font-size: 11px; padding-inline: 2px; }
+  .dock :global([data-pick-rail]) li > button > span:nth-child(3) { block-size: 12px; }
+  .dock :global([data-pick-rail]) li > button > span:nth-child(3) span { color: var(--xi-ink); font-size: 9px; }
+  /* the poster on a phone: four men a row get the width a surname needs */
+  .posterRows { gap: 10px; padding: 12px 6px; }
+  .posterRow { gap: 4px; }
+  .posterMan { width: min(82px, 23%); }
+  .posterMan .shirt { width: 52px; max-width: 52px; }
+  .posterMan .plate { font-size: 10px; max-width: 100%; padding-inline: 3px; text-overflow: clip; }
+  .strip { flex-wrap: wrap; }
+  .strip h2 { flex-basis: 100%; font-size: 19px; }
+}
+@media (max-width: 380px) {
+  .tab { font-size: 14px; } .tab small { font-size: 8.5px; }
+  .dock :global([data-pick-rail]) ul { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .fullBtn { padding-inline: 7px; font-size: 11px; }
+  .iconTool small { font-size: 7.5px; }
+}
+@media (max-height: 700px) and (max-width: 900px) { .dock { min-block-size: 200px; } }
+@media (prefers-reduced-motion: reduce) { .token[data-active='true'] .empty { animation: none; } }

@@ -69,7 +69,7 @@ function XIBoard({kind,tabs,players,club,clubName,locale,contentLocale,wardrobe,
  const t=(k:string,v?:Record<string,string|number>)=>tr(copy,k,v)
  const storageKey=kind==='best'?xiKey(club):worstXiKey(club),side=kind==='best'?'us':'them'
  const [xi,setXI]=useState<XIState>(emptyXI),[active,setActive]=useState<Where>('GK'),[railOpen,setRailOpen]=useState(true),[loaded,setLoaded]=useState(false)
- const [sheet,setSheet]=useState<Sheet>(null),[notice,setNotice]=useState(''),[query,setQuery]=useState(''),[fitOnly,setFitOnly]=useState(false)
+ const [sheet,setSheet]=useState<Sheet>(null),[notice,setNotice]=useState(''),[query,setQuery]=useState(''),[fitOnly,setFitOnly]=useState(true),[era,setEra]=useState<number|null>(null)
  const [full,setFull]=useState({q:'',pos:'',era:'',fit:false,limit:40})
  const sheetOpener=useRef<HTMLElement|null>(null)
  const byId=useMemo(()=>new Map(players.map(p=>[p.id,p])),[players])
@@ -120,12 +120,12 @@ function XIBoard({kind,tabs,players,club,clubName,locale,contentLocale,wardrobe,
  // ---- the rail: fit-first for the aimed slot; a typed search reaches the whole roster
  const ranked=useMemo(()=>rankForSlot(players,role),[players,role])
  const items:RailItem[]=useMemo(()=>{
-  const pool=ranked.filter(p=>!fitOnly||!role||fitOf(p.positions,role)!=='other')
+  const pool=ranked.filter(p=>(!fitOnly||!role||fitOf(p.positions,role)!=='other')&&(era===null||decadesOf(p).includes(era)))
   const source=query.trim()?searchClubPlayers(pool,query):pool.slice(0,RAIL_MAX)
   return source.map(p=>{const parts=p.name.trim().split(/\s+/);return {
    key:p.id,family:parts.length>1?parts[parts.length-1]!:p.name,given:parts.length>1?parts.slice(0,-1).join(' '):undefined,years:years(p),
    shirt:<ClubShirt player={p} wardrobe={wardrobe} side={side} className="h-full w-full"/>,title:p.name,taken:whereIs(xi,p.id)!==null,decades:decadesOf(p),search:`${p.name} ${p.aliases.join(' ')}`}})
- },[ranked,fitOnly,role,query,xi,wardrobe,side])
+ },[ranked,fitOnly,era,role,query,xi,wardrobe,side])
 // eslint-disable-next-line react-hooks/exhaustive-deps -- `t` only closes over `copy`
  const labels:RailLabels=useMemo(()=>({allEras:t('xi.rail.allEras'),era:d=>t('xi.rail.era',{decade:d}),aria:target=>t('xi.rail.aria',{target}),search:t('xi.rail.search'),close:t('xi.rail.close'),empty:t('xi.rail.empty'),count:n=>t('xi.rail.count',{n}),taken:t('xi.rail.taken'),shirt:()=>''}),[copy])
 
@@ -153,9 +153,9 @@ function XIBoard({kind,tabs,players,club,clubName,locale,contentLocale,wardrobe,
 
  const main=<div className={css.main}>
   <div className={css.bar}>{tabs}
-   <button type="button" className={`min-h-tap ${css.tool}`} disabled={!previous} onClick={undo} aria-label={t('xi.undo')} title={t('xi.undo')} data-testid="xi-undo">↶</button>
-   <button type="button" className={`min-h-tap ${css.tool}`} aria-pressed={activeMan?xi.captain===activeMan.id:false} disabled={!activeMan||active===TWELFTH} onClick={()=>commit(setCaptain(xi,activeMan!.id))} aria-label={t('xi.captainMake')} title={t('xi.captainMake')}>C</button>
-   <button type="button" className={`min-h-tap ${css.tool}`} disabled={!activeMan} onClick={()=>{commit(vacate(xi,active))}} aria-label={t('xi.remove')} title={t('xi.remove')}>✕</button>
+   <button type="button" className={`min-h-tap ${css.tool} ${css.iconTool}`} disabled={!previous} onClick={undo} aria-label={t('xi.undo')} title={t('xi.undo')} data-testid="xi-undo"><b aria-hidden="true">↶</b><small aria-hidden="true">{t('xi.undoShort')}</small></button>
+   <button type="button" className={`min-h-tap ${css.tool} ${css.iconTool}`} aria-pressed={activeMan?xi.captain===activeMan.id:false} disabled={!activeMan||active===TWELFTH} onClick={()=>commit(setCaptain(xi,activeMan!.id))} aria-label={t('xi.captainMake')} title={t('xi.captainMake')}><b aria-hidden="true">C</b><small aria-hidden="true">{t('xi.captainMake')}</small></button>
+   <button type="button" className={`min-h-tap ${css.tool} ${css.iconTool}`} disabled={!activeMan} onClick={()=>{commit(vacate(xi,active))}} aria-label={t('xi.remove')} title={t('xi.remove')}><b aria-hidden="true">✕</b><small aria-hidden="true">{t('xi.remove')}</small></button>
   </div>
   {kind==='worst'&&<p className={css.note}>{t('xi.worstNote')}</p>}
   <XIPitch plateOf={label} xi={xi} byId={byId} wardrobe={wardrobe} side={side} kind={kind} active={active} contentLocale={contentLocale} label={roleLabel} chairLabel={t('xi.twelfth')} chairTag={t('xi.twelfth')} onSelect={select} onMove={move}
@@ -163,9 +163,12 @@ function XIBoard({kind,tabs,players,club,clubName,locale,contentLocale,wardrobe,
   <div className={css.dock}>
    {railOpen&&<p className={css.dockHead}><span className="wk-logo red sm">{t('xi.shout')}</span><span className={css.dockTarget} aria-live="polite">{t('xi.pickTarget',{role:target})}</span></p>}
    {railOpen
-    ?<PickRail target={target} targetSub={activeMan?.name??t('xi.pickFor')} items={items} onPick={pick} onDrop={drop} onClose={()=>setRailOpen(false)} labels={labels} onQuery={setQuery}
+    ?<PickRail target={target} targetSub={activeMan?.name??t('xi.pickFor')} items={items} onPick={pick} onDrop={drop} onClose={()=>setRailOpen(false)} labels={labels} onQuery={setQuery} eras={false}
        chips={role?[{key:'fit',label:t('xi.fits'),pressed:fitOnly,onClick:()=>setFitOnly(v=>!v)}]:[]}
-       extra={<button type="button" onClick={open('full')} className="flex min-h-tap shrink-0 items-center border-hair border-ink/40 px-2 font-body text-[11.5px] font-extrabold text-ink">{t('xi.fullList')}</button>}/>
+       extra={<>{allDecades.length>1&&<label className={css.eraPick} data-on={era!==null}><span className="sr-only">{t('xi.era')}</span>
+         <select value={era??''} onChange={e=>setEra(e.target.value?Number(e.target.value):null)} aria-label={t('xi.era')} data-testid="xi-era">
+          <option value="">{t('xi.rail.allEras')}</option>{allDecades.map(d=><option key={d} value={d}>{t('xi.rail.era',{decade:d})}</option>)}</select></label>}
+        <button type="button" onClick={open('full')} className={`min-h-tap ${css.fullBtn}`}>{t('xi.fullList')}</button></>}/>
     :complete
      ?<div className={css.strip} data-testid="xi-complete"><h2>{t(kind==='best'?'xi.complete.title':'xi.complete.worst')}</h2>
        <button type="button" className={`min-h-tap ${css.tool}`} onClick={lockIn}>{copy.save}</button>

@@ -41,12 +41,20 @@ export function useReducedMotion():boolean{
  * The shirt a man wears in the Rumble (port of the Worker's `RumbleShirt`): the club's documented kit
  * nearest his years, or the club livery — never an empty box, never a rival's colour (lib/clubs/rumble-kit).
  */
+/**
+ * Only the shirt (owner, 16.11.2026): a full-set drawing (430 × 470, shorts below, socks beside) is framed on its shirt
+ * by the SVG view fragment, so every man wears the same thing whether or not his kit has documented shorts and socks.
+ * A shirt-only drawing (0 20 340 300) sits inside the same frame. One file, no second copy.
+ */
+export const SHIRT_VIEW='#svgView(viewBox(0,20,336,298))'
+export const shirtView=(src:string)=>src.includes('#')?src:`${src}${SHIRT_VIEW}`
+
 export function RumbleShirt({card,side,wardrobe,className,playedOn,keeper}:{card:Pick<RumbleCard,'id'|'fromYear'|'toYear'>&Partial<Pick<RumbleCard,'position'>>;side:'us'|'them';wardrobe:RumbleWardrobe;className?:string}&KitContext){
  const worn=kitFor(card,side,wardrobe,{playedOn,keeper:keeper??card.position==='GK'})
  const [failed,setFailed]=useState<string|null>(null)
  const svg=worn.source==='archive'?worn.kit.svg:undefined
  // eslint-disable-next-line @next/next/no-img-element -- the archive ships a local SVG at its original size
- if(svg&&svg!==failed)return <img src={svg} alt="" data-shirt="archive-svg" title={worn.source==='archive'?(worn.approx?'~ ':'')+worn.kit.season:undefined} loading="lazy" decoding="async" draggable={false} className={className} style={{width:'100%',height:'100%',objectFit:'contain'}} onError={()=>setFailed(svg)}/>
+ if(svg&&svg!==failed)return <img src={shirtView(svg)} alt="" data-shirt="archive-svg" title={worn.source==='archive'?(worn.approx?'~ ':'')+worn.kit.season:undefined} loading="lazy" decoding="async" draggable={false} className={className} style={{width:'100%',height:'100%',objectFit:'contain'}} onError={()=>setFailed(svg)}/>
  const photo=side==='us'?wardrobe.photos?.[card.id]:undefined
   // eslint-disable-next-line @next/next/no-img-element -- the measured bytes are the shipped bytes (rule 69)
  if(photo&&!playedOn&&!keeper&&card.position!=='GK')return <img src={photo.src} alt="" data-archive-photo="" data-shirt="photo" title={photo.label} loading="lazy" decoding="async" draggable={false} className={className} style={{objectFit:'contain'}}/>
@@ -57,6 +65,10 @@ export function RumbleShirt({card,side,wardrobe,className,playedOn,keeper}:{card
   if(cloth&&!kit.shorts&&!kit.socks)return <KitCloth spec={crest?{...cloth,crest:true,crestArt:crest}:cloth} texture={false} className={className}/>
  }
  if(worn.source==='archive')return <KitPlate kit={{...worn.kit,id:`${worn.kit.id}-${side}`}} label={false} decorative className={className}/>
+ const classic=wardrobe.classic?.[worn.variant]
+ // the club's classic drawing, untitled: it dresses him in the club's look without claiming a season (16.11.2026)
+ // eslint-disable-next-line @next/next/no-img-element -- the archive ships a local SVG at its original size
+ if(classic&&classic!==failed)return <img src={shirtView(classic)} alt="" data-shirt="classic-svg" loading="lazy" decoding="async" draggable={false} className={className} style={{width:'100%',height:'100%',objectFit:'contain'}} onError={()=>setFailed(classic)}/>
  const home=worn.variant==='home'
  return <KitPlate kit={{id:`livery-${worn.variant}`,design:home?'plain':'chest band',colours:[],season:''}} label={false} decorative className={className} paints={home?{a:'var(--club-primary)',b:null}:{a:'var(--mag-card)',b:wardrobe.awayNeutral?'var(--mag-muted)':'var(--club-primary)'}}/>
 }

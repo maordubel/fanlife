@@ -39,7 +39,7 @@ export function PlayHeader({clubId,clubName,title,locale,help,copy,langLinks,asi
    {lv&&<Badge club={lv}/>}
    <div className="wga-hud-words">
     <p className="wga-hud-kicker"><bdi>{clubName}</bdi>{gateNo&&<span className="wga-hud-kgate"> · {gateWord} <bdi>{gateNo}</bdi></span>}</p>
-    <h1 className="wga-hud-name" data-long={title.length>13||undefined}><bdi>{title}</bdi></h1>
+    <h1 className="wga-hud-name" data-long={title.length>10||undefined}><bdi>{title}</bdi></h1>
    </div>
    {gateNo&&<span className="wga-hud-gate" aria-hidden="true">{gateWord} {gateNo}</span>}
   </div>

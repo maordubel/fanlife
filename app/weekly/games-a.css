@@ -34,6 +34,8 @@
 .wga-hud-name { margin: 0; font-family: var(--mag-brand); font-weight: 400; font-size: clamp(19px, 6vw, 25px); line-height: 1.12; color: var(--mag-white); text-shadow: 2px 2px 0 var(--mag-vermilion); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-block-end: 2px; padding-inline-end: 4px; }
 .wga-hud-gate { display: none; }
 @media (max-width: 900px) { .wga-hud-name[data-long] { font-size: clamp(16px, 4.9vw, 21px); } }
+/* 16.11.2026 — the name stays on one line: a global `bdi` rule had it breaking at its hyphen ("All- / time XI") */
+.wga-hud-name bdi { white-space: inherit; }
 .wga-hud-aside { flex: none; display: flex; align-items: center; gap: 6px; }
 .wga-hud-mark { flex: none; inline-size: 34px; block-size: 46px; display: inline-flex; align-items: center; justify-content: center; }
 .wga-hud-mark img { inline-size: 28px; block-size: 28px; border-radius: 50%; background: var(--mag-white); }

@@ -15,11 +15,15 @@ export const PITCH_RATIO=0.75
 /** formation y (14 = the striker's line … 94 = the keeper) → where the token's CENTRE sits, kept inside the touchlines */
 export const topOf=(y:number)=>11+(y-14)*(77/80)
 
-function Lines(){
- return <svg className={css.lines} viewBox="0 0 100 133" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-  <line x1="0" y1="66.5" x2="100" y2="66.5"/><circle cx="50" cy="66.5" r="10"/><circle className={css.spot} cx="50" cy="66.5" r=".9"/>
+/** The pitch on a phone is a touch wider (100 × 113.6): it fills the screen's width and leaves the dock room for two rows of shirts. */
+export const PHONE_RATIO=0.88
+/** The markings in true proportion for a pitch `h` tall: boxes and circles keep their size, only the halfway line and the far box move. */
+function Lines({h,className}:{h:number;className?:string}){
+ const mid=h/2
+ return <svg className={`${css.lines} ${className??""}`} viewBox={`0 0 100 ${h}`} preserveAspectRatio="none" aria-hidden="true" focusable="false">
+  <line x1="0" y1={mid} x2="100" y2={mid}/><circle cx="50" cy={mid} r="10"/><circle className={css.spot} cx="50" cy={mid} r=".9"/>
   <rect x="22" y="0" width="56" height="20"/><rect x="36" y="0" width="28" height="7.5"/><circle className={css.spot} cx="50" cy="15" r=".9"/>
-  <rect x="22" y="113" width="56" height="20"/><rect x="36" y="125.5" width="28" height="7.5"/><circle className={css.spot} cx="50" cy="118" r=".9"/>
+  <rect x="22" y={h-20} width="56" height="20"/><rect x="36" y={h-7.5} width="28" height="7.5"/><circle className={css.spot} cx="50" cy={h-15} r=".9"/>
  </svg>
 }
 
@@ -51,7 +55,7 @@ export function XIPitch(props:PitchProps){
  const {xi,kind,hud}=props
  return <FitBox ratio={PITCH_RATIO} always={false}>
   <div className={css.pitch} data-kind={kind} data-testid="xi-pitch">
-   <Lines/>
+   <Lines h={133} className={css.linesTall}/><Lines h={100/PHONE_RATIO} className={css.linesWide}/>
    <span className={css.hudCount} data-done={hud.done} role="status">{hud.count}</span>
    <button type="button" className={`min-h-tap ${css.hudFormation}`} onClick={hud.onFormation} aria-label={hud.formationLabel}>{hud.formation} ▾</button>
    {FORMATIONS[xi.formation]!.slots.map(s=><Token key={s.slotId} where={s.slotId} role={s.role} x={s.x} y={s.y} {...props}/>)}

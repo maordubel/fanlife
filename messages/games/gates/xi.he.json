@@ -49,5 +49,7 @@
  "xi.undo": "ביטול העריכה האחרונה",
  "xi.undo.done": "העריכה האחרונה בוטלה.",
  "xi.resumeDraft": "הטיוטה שוחזרה: נבחרו {n} מתוך 11.",
- "xi.pickTarget": "בחירה לעמדה: {role}"
+ "xi.pickTarget": "בחירה לעמדה: {role}",
+ "xi.undoShort": "בטל",
+ "xi.era": "תקופה"
 }
