@@ -216,7 +216,8 @@ export const nicknameLine=(w:ClubWorld):string=>w.nicknames.map(n=>n.text).join(
 /** Every distinct publisher behind what a club's History page shows, for the small "Sources" credit. */
 export function worldPublishers(w:ClubWorld):string[]{
  const blocks:Sourced[]=[...w.nicknames,...[w.ground,w.founded,w.emblem,w.colours,w.terrace].filter((x):x is NonNullable<typeof x>=>Boolean(x)),...w.facts,...(w.flavour??[])]
- return [...new Set([...blocks,...(w.culture??[])].flatMap(b=>b.sources.map(s=>s.publisher)))].sort()
+ // printed in English (16.11.2026): the owner's first-hand knowledge is credited to the team, never in Hebrew
+ return [...new Set([...blocks,...(w.culture??[])].flatMap(b=>b.sources.map(s=>s.publisher.startsWith(OWNER_KNOWLEDGE_LABEL)?'The FAN LIFE team':s.publisher)))].filter(p=>!NATIVE.test(p)).sort()
 }
 
 /** The flavour line for a given day, rotating through the list; `offset` picks a different one for a second spot on the same page. Deterministic, so server and client agree. */

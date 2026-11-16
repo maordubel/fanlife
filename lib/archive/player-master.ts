@@ -1,4 +1,5 @@
 import 'server-only'
+import { WORKER_ROUTE_CLUB } from '@/lib/goals-auto/types'
 
 import masterJson from '@/content/generated/player-master.json'
 import { englishName } from '@/lib/clubs/rumble-xi/names'
@@ -289,5 +290,5 @@ export function pickablePlayers(): PlayerMasterRecord[] {
  * own spelling — the identity key and the search target; this is the English form from the reviewed table.
  */
 export function printedName(p: { id: string; displayName: string }): string {
-  return englishName('hapoel-tel-aviv', p.id, p.displayName)
+  return englishName(WORKER_ROUTE_CLUB, p.id, p.displayName)
 }

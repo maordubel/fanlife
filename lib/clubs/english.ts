@@ -4,6 +4,7 @@ import {greekToEnglish, hebrewToEnglish, isGreek, isHebrew} from './rumble-xi/tr
 import {enClub, enCompetition, enSponsor, isLatin} from '@/lib/trivia/names'
 import phrases from '@/content/manual/names-en/phrases.json'
 import {englishTitle} from './title-en'
+import {OWNER_KNOWLEDGE_LABEL} from '@/lib/credits/groups'
 
 /**
  * EVERY NAME ON SCREEN IS ENGLISH (owner, 16.11.2026: "make sure all names appear in English only, in all clubs").
@@ -90,11 +91,35 @@ export function enTitle(s: string): string {
   return hasNonLatin(t) ? enLine(s) : t
 }
 
+/** publishers as Hebrew sources name them */
+const PUBLISHERS: [RegExp, string][] = [
+  [/^ויקיפועל/, 'Vikipoel'], [/^וואלה ספורט|^וואלה/, 'Walla Sport'], [/^הארץ/, 'Haaretz'], [/^מעריב ספורט|^מעריב/, 'Maariv Sport'],
+  [/^גלובס/, 'Globes'], [/^מוזיאון הפועל פתח[- ]תקו[ו]?ה/, 'Hapoel Petah Tikva Museum'], [/^מכביפדיה/, 'Maccabipedia'],
+  [/^ספריית הפרויקט/, 'Project library'], [/^ידיעות אחרונות/, 'Yedioth Ahronoth'], [/^ספורט 5/, 'Sport 5'], [/^ההתאחדות לכדורגל/, 'Israel Football Association'],
+]
+/**
+ * A citation in English: a Greek title is transliterated (they are mostly men's names), a Hebrew one keeps its publisher
+ * in English and says the article is in Hebrew — a headline transliterated letter by letter would help nobody find it.
+ */
+export function enSource(title: string): string {
+  if (!hasNonLatin(title)) return title
+  if (title.startsWith(OWNER_KNOWLEDGE_LABEL)) return 'The FAN LIFE team'
+  if (!isHebrew(title)) return enLine(title)
+  const t = title.trim()
+  for (const [rx, en] of PUBLISHERS) {
+    if (!rx.test(t)) continue
+    const game = /משחק\s+(\d+)/.exec(t)
+    return game ? `${en} — match ${game[1]}` : `${en} (in Hebrew)`
+  }
+  const lead = t.split(/\s+[—·–|]\s+|,\s+/)[0] ?? ''
+  return !hasNonLatin(lead) && lead ? `${lead} (in Hebrew)` : 'Hebrew source'
+}
+
 type Rec = Record<string, unknown>
 const isRec = (v: unknown): v is Rec => !!v && typeof v === 'object' && !Array.isArray(v)
 
 /** the display fields of a record, by kind; anything else (ids, keys, sources, approvals) is left as written */
-const LINE_FIELDS = new Set(['name', 'title', 'hint', 'text', 'label', 'fact', 'a', 'b', 'note', 'position', 'round', 'venue', 'city', 'caption', 'opponent', 'stage', 'kind', 'value', 'answer', 'options', 'prompt', 'question', 'correct', 'choices', 'clue', 'subtitle', 'headline', 'story'])
+const LINE_FIELDS = new Set(['name', 'title', 'hint', 'text', 'label', 'fact', 'a', 'b', 'note', 'position', 'round', 'venue', 'city', 'caption', 'opponent', 'stage', 'kind', 'value', 'answer', 'options', 'prompt', 'question', 'correct', 'choices', 'clue', 'subtitle', 'headline', 'story', 'design', 'colours', 'colour', 'trim', 'pattern', 'description', 'detail', 'details', 'collar', 'sleeves', 'nickname'])
 const NAME_FIELDS = new Set(['home', 'away', 'competition', 'sponsor', 'maker', 'manufacturer', 'club', 'rival', 'team'])
 
 function enValue(v: unknown, field: string, man: (s: string) => string): unknown {
@@ -119,6 +144,12 @@ function enValue(v: unknown, field: string, man: (s: string) => string): unknown
     let changed = false
     const out: Rec = {}
     for (const [k, x] of Object.entries(v)) {
+      // a question's printed citation
+      if (k === 'source' && isRec(x) && typeof x.title === 'string' && hasNonLatin(x.title)) {
+        out[k] = {...x, title: enSource(x.title)}
+        changed = true
+        continue
+      }
       // provenance stays exactly as the source wrote it
       if (k === 'sources' || k === 'approvedBy' || k === 'notes' || k === 'aliases' || k === 'factKey' || k === 'scope' || k.startsWith('source') || k === 'id') {
         out[k] = x
@@ -168,6 +199,12 @@ export function englishClub(data: ClubData): ClubData {
     memory: walk(data.memory),
     mysteries: walk(data.mysteries),
     trivia: {...data.trivia, questions: walk(data.trivia.questions)},
+    // a source's publisher and title are printed in the credits: English too; the owner's first-hand knowledge is the team's
+    sources: data.sources.map((src) =>
+      hasNonLatin(src.publisher) || hasNonLatin(src.title)
+        ? {...src, publisher: enSource(src.publisher), title: enSource(src.title)}
+        : src,
+    ),
   }
 }
 

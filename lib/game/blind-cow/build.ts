@@ -1,3 +1,4 @@
+import { WORKER_ROUTE_CLUB } from '@/lib/goals-auto/types'
 import { englishName } from '@/lib/clubs/rumble-xi/names'
 import { fold } from '@/lib/game/roster-search'
 import { createHash } from 'node:crypto'
@@ -878,7 +879,7 @@ export function buildBank(input: BuildInput): BlindCowBank {
       id: qid,
       version,
       targetPlayerId: d.p.id,
-      targetDisplayNameHe: englishName('hapoel-tel-aviv', d.p.id, d.p.displayName),
+      targetDisplayNameHe: englishName(WORKER_ROUTE_CLUB, d.p.id, d.p.displayName),
       clueIds,
       remaining,
       families,

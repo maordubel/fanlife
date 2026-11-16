@@ -164,7 +164,7 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
    <p className="wk-banner wkh-inside-k">{copy.insideTitle}</p>
    <ol>{inside.map((x,i)=><li key={x.href}><a href={x.href} className="min-h-tap"><span className="no wk-num" aria-hidden="true">{String(i+1).padStart(2,'0')}</span><span className="t"><b>{x.title}</b><small>{x.sub}</small></span><span className="pg" aria-hidden="true">{x.go}</span></a></li>)}</ol>
   </nav>
-  <HubDock part="continue" clubs={dockClubs} openIds={dockOpen} locale={locale} copy={dockCopy}/>
+  {/* the "continue at <club>" coupon left the page (16.11.2026): the hero's welcome-back card says the same, one screen up */}
 
   {/* TOP TEAMS: the sticker page — every open club, A–Z, in its own colours. A wrapping grid, never a rail. */}
   <section className="wkh-clubs" id="clubs" aria-labelledby="clubs-h">

@@ -62,5 +62,5 @@
   .mag .mag-tabbar[data-count='7'] .mag-tab-l { font-size: 10px; letter-spacing: 0; }
   .mag-tab[target='_blank'] svg { color: var(--mag-vermilion); }
 }
-@media (max-width: 374px) { .mag .mag-tabbar[data-count='7'] .mag-tab-l { font-size: 9px; letter-spacing: -.2px; } }
+@media (max-width: 389px) { .mag .mag-tabbar[data-count='7'] .mag-tab-l { font-size: 9px; letter-spacing: -.2px; } }
 @media (max-width: 340px) { .mag .mag-tabbar[data-count='7'] .mag-tab-l { font-size: 8.5px; letter-spacing: -.3px; } }

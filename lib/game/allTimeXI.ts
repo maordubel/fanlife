@@ -1,4 +1,5 @@
 import 'server-only'
+import { WORKER_ROUTE_CLUB } from '@/lib/goals-auto/types'
 
 import { pickablePlayers } from '@/lib/archive/player-master'
 import { FORMATIONS, DEFAULT_FORMATION, type Formation } from './lineup'
@@ -63,7 +64,7 @@ export function rosterIndex(window?: RosterWindow): RosterIndex {
     .map((player) => {
       const found = facetsOfPlayer(player)
       // Printed in English (owner, 16.11.2026: every name English, every club); the archive's Hebrew stays searchable.
-      const en = englishName('hapoel-tel-aviv', player.id, player.displayName)
+      const en = englishName(WORKER_ROUTE_CLUB, player.id, player.displayName)
       return {
         id: player.id,
         slug: player.slug,
