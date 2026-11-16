@@ -153,6 +153,19 @@
 ],
 "id": "beat:zrinjski-az-2023/free-kick-wall"
 },
+"05c0004b2d36ec80": {
+"caption": "A layered papercraft rosette with black, cream, and red ribbons.",
+"people": 0,
+"faces": false,
+"action": "paper rosette display",
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"real textile product",
+"trophy presentation"
+],
+"id": "lib:obj-rosette-kr"
+},
 "05d92d1a3e259468": {
 "caption": "An aerial illustration of an empty stadium with a green pitch.",
 "people": 0,
@@ -770,6 +783,19 @@
 ],
 "id": "beat:common/ticket-office-window-b-kr"
 },
+"1ce9b72a61b217e4": {
+"caption": "A dynamic graphic logo with a football and motion lines reading OffSide Bets.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "OffSide BETS",
+"avoid": [
+"real stadium",
+"live action"
+],
+"id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/20260514-171857-24b68147-e5a1-492f-8a29-dfd00b9e33-fba033d6196c5016"
+},
 "1e53f447de5969b8": {
 "caption": "An illustrated supporter in a dark hooded jacket and beanie holds up a red scarf.",
 "people": 1,
@@ -863,6 +889,20 @@
 ],
 "id": "beat:job-19324d9d-b95c-4388-a19b-062dd2002d03/04-terrace-background-07d53795f8718411"
 },
+"20fc071b812c96a8": {
+"caption": "A vintage-style flyer with Hebrew text featuring a woman, a child, and a dog.",
+"people": 2,
+"faces": true,
+"action": "smiling and posing",
+"place": "room",
+"mood": "joy",
+"text": "נטעיה +30 698 453 7410",
+"avoid": [
+"football match",
+"sports tournament"
+],
+"id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/20260512-102628-chatgpt-image-may-12-2026-10-26-27-2b6eaf8dba0f085b"
+},
 "21617b9f650277b8": {
 "caption": "A football match takes place on a pitch near a river with a famous stone arch bridge and minarets in the backdrop.",
 "people": 15,
@@ -904,6 +944,19 @@
 ],
 "id": "lib:obj-banner-rolled-fl2-kr"
 },
+"22bcc333252f8ee0": {
+"caption": "A glowing blue and green graphic logo for OffSide Bets against a dark background.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "OffSide BETS",
+"avoid": [
+"actual football match",
+"real players"
+],
+"id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/20260514-171745-a0dc475b-fdb1-4a8c-baa4-2b962ee6fe-9ca85b9ebe9dc6fc"
+},
 "2368474e8454a060": {
 "caption": "An illustrated view of a packed football stadium stand under floodlights.",
 "people": 0,
@@ -916,6 +969,21 @@
 "modern premier league"
 ],
 "id": "lib:layer-away-end-fl1-kr"
+},
+"237075d250bd1ee2": {
+"caption": "Several male characters stand against a green screen with descriptive Hebrew text boxes below them.",
+"people": 6,
+"faces": true,
+"action": "character lineup presentation",
+"place": "studio",
+"era": "1990s",
+"mood": "defiance",
+"text": "שחור",
+"avoid": [
+"actual stadium match",
+"live broadcast"
+],
+"id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/20260902-142147-chatgpt-image-sep-2-2026-02-21-46--968c90e1629fb480"
 },
 "250f89af27f4f601": {
 "caption": "Fists grip tightly onto a wire stadium fence while holding a red and white scarf.",
@@ -986,6 +1054,19 @@
 ],
 "id": "lib:ground-1970s-int-fl1-kr"
 },
+"265431b86ad873f1": {
+"caption": "An illustrated red and white rosette badge with detailed ribbon tails.",
+"people": 0,
+"faces": false,
+"action": "decorative rosette display",
+"place": "abstract",
+"mood": "joy",
+"avoid": [
+"real fabric rosette",
+"actual award ceremony"
+],
+"id": "lib:obj-rosette-fl1-kr"
+},
 "272cb5e9dd87cdc3": {
 "caption": "A crowd of fans watch from behind a fence as a stadium grandstand undergoes demolition.",
 "people": 14,
@@ -1049,6 +1130,19 @@
 "actual pennant exchange"
 ],
 "id": "lib:obj-pennant-kr"
+},
+"2a8de74451887cb5": {
+"caption": "An illustrated knitted football scarf with red, white, and black horizontal stripes.",
+"people": 0,
+"faces": false,
+"action": "draped scarf display",
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"real wool clothing",
+"supporter wearing scarf"
+],
+"id": "lib:obj-scarf-fl1-kr"
 },
 "2a926392fe66edc6": {
 "caption": "An aerial illustration of a stadium packed with fans waving flags, with a historic temple atop a hill in the background.",
@@ -1469,6 +1563,20 @@
 ],
 "id": "beat:common/close-boots-tunnel-b-n"
 },
+"3b298de352194eb4": {
+"caption": "A tabletop football game is laid out with various player cards, a formation dial, and tactical instruction boards on a green surface.",
+"people": 0,
+"faces": true,
+"place": "other",
+"era": "1990s",
+"mood": "calm",
+"text": "TACTICAL DECK, FORMATION, 5-3-2, ORDERS, PUSH UP, HOLD SHAPE, DROP BACK",
+"avoid": [
+"live action",
+"real match"
+],
+"id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/other-2026-10-12-image-mwaz6gd0-8ba66a0a72c21ba1"
+},
 "3bf41111387a85df": {
 "caption": "Supporters wearing red scarves and tops ride inside a vintage train carriage with luggage racks overhead.",
 "people": 22,
@@ -1497,6 +1605,21 @@
 "referee whistle"
 ],
 "id": "lib:ground-2000s-int-fl1-kr"
+},
+"3de613e84ef6c342": {
+"caption": "A black and white photograph captures a large crowd of spectators in a stadium stand during a night match.",
+"people": 50,
+"faces": true,
+"action": "watching a match",
+"place": "stadium",
+"era": "1970s",
+"mood": "tension",
+"text": "VOLVO, van kempen",
+"avoid": [
+"empty stadium",
+"modern arena"
+],
+"id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/other-2026-10-12-image-1hzggxja-fd06e67dc5d11f2e"
 },
 "3deb62c62bd712a7": {
 "caption": "An away team bus travels down a winding countryside road toward an illuminated stadium under a dramatic dusk sky.",
@@ -2279,6 +2402,21 @@
 ],
 "id": "beat:common/supporter-cap-old-ground"
 },
+"5a8a94fb29aadb8c": {
+"caption": "A production board for a 1980s stadium project details the approach, gate entrance, and interior views of Bloomfield Stadium.",
+"people": 7,
+"faces": true,
+"action": "planning stadium environment",
+"place": "studio",
+"era": "1980",
+"mood": "calm",
+"text": "BLOOMFIELD STADIUM - 1980, GATE 7, THE WORKER LIFE",
+"avoid": [
+"live match broadcast",
+"news footage"
+],
+"id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/20260902-133859-chatgpt-image-sep-2-2026-01-38-58--5f86a31a2f6aebe0"
+},
 "5ab681a84fb0ff1b": {
 "caption": "A high-angle view of a football match inside a crowded stadium beside a river with boats and minarets in the distance.",
 "people": 24,
@@ -2292,6 +2430,21 @@
 "Nile"
 ],
 "id": "lib:city-cairo-fl1-kr"
+},
+"5b976557884ca6de": {
+"caption": "A game design document presents a collection of 1980s character models, street props, and stadium environment layers.",
+"people": 7,
+"faces": true,
+"action": "displaying game production assets",
+"place": "studio",
+"era": "1980",
+"mood": "calm",
+"text": "THE WORKER LIFE - STAGE A, 1980 VERTICAL SLICE ASSET PACK",
+"avoid": [
+"real historical event",
+"documentary interview"
+],
+"id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/20260902-133614-chatgpt-image-sep-2-2026-01-36-12--12490564d441359d"
 },
 "5c5237d4836a525a": {
 "caption": "An abstract arrangement of beige and black framed blocks resembles scattered layouts.",
@@ -2413,6 +2566,20 @@
 "players on pitch"
 ],
 "id": "cut:common/crowd-row-flags-b-kr"
+},
+"5e8c9ca1eb7ab56f": {
+"caption": "A digital app icon features a stylized speech bubble containing a night view of the Acropolis in Athens under a crescent moon.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "TakeMeOut! YOUR NIGHT, PERFECTLY PLANNED.",
+"avoid": [
+"football match",
+"stadium atmosphere",
+"player transfer"
+],
+"id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/20260719-143941-chatgpt-image-jul-19-2026-02-39-39-68f53f2a0f6d0912"
 },
 "5f33c3fdb6b6c976": {
 "caption": "An illustrated vintage football match ticket stub with a player running with the ball.",
@@ -2792,6 +2959,21 @@
 ],
 "id": "beat:job-19324d9d-b95c-4388-a19b-062dd2002d03/aek-crest-mono-512-55427c064f32f571"
 },
+"6f15a14da05f024e": {
+"caption": "Character turnarounds and item collections display various men with vintage clothing and accessories.",
+"people": 15,
+"faces": true,
+"action": "character model sheet display",
+"place": "studio",
+"era": "1980s",
+"mood": "calm",
+"text": "הפועל תל-אביב",
+"avoid": [
+"prison bars",
+"transfer window"
+],
+"id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/20260902-135840-chatgpt-image-sep-2-2026-01-58-38--acdef1ba4dfa7a34"
+},
 "6f16bffcf324654d": {
 "caption": "A papercraft cutout crowd of spectators viewed from behind wearing rosettes.",
 "people": 25,
@@ -2860,6 +3042,18 @@
 ],
 "id": "cut:common/crowd-row-arms-up-c-kr"
 },
+"704926fe904b788a": {
+"caption": "A colorful balcony railing and architectural structure with vibrant painted panels and graffiti.",
+"people": 0,
+"faces": false,
+"place": "street",
+"mood": "calm",
+"avoid": [
+"football stadium",
+"match action"
+],
+"id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/20260503-123704-6f1e62ec-7c73-4026-8661-63fbdf1e84-31653619070e76f9"
+},
 "70b57c584e429877": {
 "caption": "An illustrated footballer in a red shirt and white shorts strikes a football.",
 "people": 1,
@@ -2886,6 +3080,20 @@
 "identity concealment"
 ],
 "id": "beat:common/close-scarf-over-mouth-kr"
+},
+"7224310a0d53499b": {
+"caption": "A comic-style speech bubble with the word QUIZ written in bold black letters.",
+"people": 0,
+"faces": false,
+"action": "displaying quiz title",
+"place": "abstract",
+"mood": "calm",
+"text": "QUIZ",
+"avoid": [
+"actual football match",
+"live broadcast"
+],
+"id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/sticker-quiz-proof-213bc61ae7b59c73"
 },
 "72d22ecd6d834880": {
 "caption": "A red and black football bulges into a goal net in a dynamic illustrated graphic.",
@@ -3024,6 +3232,21 @@
 "shaking hands after a match"
 ],
 "id": "cut:common/close-scarf-handover-kr"
+},
+"77ce13e3fd1da628": {
+"caption": "A technical design document for a 1980s-themed narrative game displays character sprites, street environments, and stadium assets.",
+"people": 7,
+"faces": true,
+"action": "designing game assets",
+"place": "studio",
+"era": "1980",
+"mood": "calm",
+"text": "THE WORKER LIFE - STAGE A, 1980 VERTICAL SLICE ASSET PACK",
+"avoid": [
+"real football match",
+"live news report"
+],
+"id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/20260902-132809-chatgpt-image-sep-2-2026-01-28-07--4d8a1a5cef1e363e"
 },
 "783b91802b8edcfe": {
 "caption": "A stylized vintage poster features a football player from behind looking at a stadium with Greek and Serbian text.",
@@ -3325,6 +3548,19 @@
 ],
 "id": "beat:hapoel-tel-aviv-1999-00/ball-pitch-ticket-night"
 },
+"808898d03b489727": {
+"caption": "A magazine spread features a timeline of football history with various photos, illustrations of kits, and text columns.",
+"people": 10,
+"faces": true,
+"place": "other",
+"mood": "calm",
+"text": "BRAZIL 1-2 URUGUAY, 1940-1959, £20,000, £91k",
+"avoid": [
+"current news",
+"single event"
+],
+"id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/other-2026-10-12-image-ntvs46kx-cfe75904c0cc2b3b"
+},
 "80ff045ed7574140": {
 "caption": "A papercraft illustration shows a stadium pitch with a clock tower and multiple silhouetted players.",
 "people": 15,
@@ -3462,6 +3698,20 @@
 "daytime scene"
 ],
 "id": "lib:layer-street-march-kr-bg"
+},
+"8576fefaf260bd3b": {
+"caption": "A young woman takes a selfie with a brindle dog sitting on a cobblestone street.",
+"people": 1,
+"faces": true,
+"action": "taking a selfie",
+"place": "street",
+"era": "2020s",
+"mood": "joy",
+"avoid": [
+"animal cruelty",
+"loneliness"
+],
+"id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/misc-2026-05-12-abcdfaee-478f-4a2a-b96f-a0e1975f9d-560e121283a9cc43"
 },
 "8664fb8608cf45f8": {
 "caption": "An empty stadium terrace features a red and white scarf and a trophy resting on the concrete steps.",
@@ -4228,6 +4478,21 @@
 ],
 "id": "beat:common/radio-scarf-ticket-table"
 },
+"a728c540432b9c1b": {
+"caption": "An extensive storyboard sheet shows character designs, interiors, street views, and props for an animation project.",
+"people": 25,
+"faces": true,
+"action": "character and asset reference layout",
+"place": "studio",
+"era": "1980s",
+"mood": "calm",
+"text": "THE WORKER LIFE",
+"avoid": [
+"prison bars",
+"signing session"
+],
+"id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/20260902-135015-chatgpt-image-sep-2-2026-01-50-14--7210a6c8b7fa961e"
+},
 "a78fa449ba9e7060": {
 "caption": "An illustrated referee stands blowing a whistle, viewed from slightly right behind.",
 "people": 1,
@@ -4462,6 +4727,21 @@
 ],
 "id": "beat:common/scarf-on-railing-b-kr"
 },
+"ae0e330f862d2858": {
+"caption": "A detailed game development asset sheet shows 1980s Jaffa street scenes, football pitch layouts, and stadium interior concepts.",
+"people": 7,
+"faces": true,
+"action": "showcasing game design elements",
+"place": "studio",
+"era": "1980",
+"mood": "calm",
+"text": "THE WORKER LIFE - STAGE A, 1980 VERTICAL SLICE ASSET PACK",
+"avoid": [
+"real historical footage",
+"photographic evidence"
+],
+"id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/20260902-133208-chatgpt-image-sep-2-2026-01-32-07--e87feab1e7ca315e"
+},
 "ae3790e07633dbdf": {
 "caption": "A football match takes place on the pitch with stadium construction and scaffolding in the background.",
 "people": 100,
@@ -4643,6 +4923,20 @@
 ],
 "id": "beat:common/choreography-kr"
 },
+"b56d65bc9ef507bc": {
+"caption": "A black and white comic-style illustration shows a man jumping in excitement while holding a portable radio as a cat leaps away from a chair.",
+"people": 1,
+"faces": true,
+"action": "jumping for joy",
+"place": "room",
+"era": "1950s",
+"mood": "joy",
+"avoid": [
+"silence",
+"boredom"
+],
+"id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/moment-radio-proof-9aa53bf2c599f5f0"
+},
 "b5b55d89adc3a82f": {
 "caption": "An illustrated ballboy sits on a folding stool holding a football from behind.",
 "people": 1,
@@ -4669,6 +4963,19 @@
 "live fan violence"
 ],
 "id": "beat:common/scrapbook-desk-b-kr"
+},
+"b64d071ec40ad2ab": {
+"caption": "A light grey terrazzo stone texture fills the entire frame.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"people",
+"faces",
+"football match"
+],
+"id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/a5-wall-athens-b-46ea50052176e85e"
 },
 "b657a70786b1882e": {
 "caption": "A cut-out paper animation style image features a large stopwatch in the foreground with a stadium scene behind it.",
@@ -5165,6 +5472,34 @@
 ],
 "id": "beat:common/pub-before-kr"
 },
+"c83343c717363e08": {
+"caption": "Character design sheets show multiple figures in casual wear alongside musical instruments and fan gear.",
+"people": 18,
+"faces": true,
+"action": "displaying character assets and props",
+"place": "studio",
+"era": "1980s",
+"mood": "calm",
+"text": "הפועל",
+"avoid": [
+"prison bars"
+],
+"id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/20260902-140642-chatgpt-image-sep-2-2026-02-06-41--a288da19e0629958"
+},
+"c8880f3d991ed6ac": {
+"caption": "Six promotional quiz graphics display club branding with a celebrating fan silhouette in different team colours.",
+"people": 6,
+"faces": true,
+"action": "trivia quiz template display",
+"place": "studio",
+"mood": "joy",
+"text": "THINK YOU KNOW YOUR CLUB?",
+"avoid": [
+"live stadium match",
+"real crowd"
+],
+"id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/fan-life-v3-preview-12c7a9ccca870ea2"
+},
 "c996061c91cf8fa0": {
 "caption": "A supporter wearing a red jersey and scarf jumps with arms raised in celebration.",
 "people": 1,
@@ -5273,6 +5608,33 @@
 "daytime bright sun"
 ],
 "id": "beat:hapoel-tel-aviv-1999-00/empty-seats-scarf-dusk"
+},
+"ce1853c10b2495f7": {
+"caption": "A papercraft collage showing a football stadium match viewed from the stands.",
+"people": 12,
+"faces": false,
+"action": "watching football match",
+"place": "stadium",
+"mood": "tension",
+"avoid": [
+"real live photograph",
+"television footage"
+],
+"id": "lib:obj-programme-closed-n"
+},
+"ce27152b6305748f": {
+"caption": "A promotional poster for a football prediction game featuring a celebrating player on a pitch.",
+"people": 1,
+"faces": true,
+"action": "celebrating a goal",
+"place": "pitch",
+"mood": "joy",
+"text": "THINK YOU SEE THE GAME DIFFERENTLY? OFFSIDES A NEW WAY TO PLAY FOOTBALL",
+"avoid": [
+"historical documentary stills",
+"black and white archival footage"
+],
+"id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/20260621-180232-chatgpt-image-jun-21-2026-06-02-30-3b72c3e7e7610658"
 },
 "cefc3a60d8436308": {
 "caption": "An illustrated crowd of supporters viewed from behind under a canopy of black umbrellas.",
@@ -5597,6 +5959,18 @@
 ],
 "id": "lib:ground-1980s-int-fl1-kr"
 },
+"dcc301244f93ba61": {
+"caption": "An aerial view of a dense city skyline under a blue sky with soft clouds.",
+"people": 0,
+"faces": false,
+"place": "city",
+"mood": "calm",
+"avoid": [
+"close-up match action",
+"interior scenes"
+],
+"id": "beat:commons-job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/9797937"
+},
 "de34902e1925ab48": {
 "caption": "A collage featuring the AEK Athens crest, historic match programs, and fans holding scarves in a stadium.",
 "people": 12,
@@ -5611,6 +5985,19 @@
 "modern league trophy celebration"
 ],
 "id": "beat:job-19324d9d-b95c-4388-a19b-062dd2002d03/01-identity-23a0890030d4efe6"
+},
+"de8c147cc506c92d": {
+"caption": "An illustrated red and white rosette badge featuring a classic football graphic in the center.",
+"people": 0,
+"faces": false,
+"action": "football rosette display",
+"place": "abstract",
+"mood": "joy",
+"avoid": [
+"real stadium scene",
+"actual match action"
+],
+"id": "lib:obj-rosette-fl2-kr"
 },
 "de92e2184e70e7e7": {
 "caption": "Fans at a football stadium hold up a scarf reading GATE 13 underneath green flags and floodlights.",
@@ -6305,6 +6692,22 @@
 ],
 "id": "prop:passenger_plane"
 },
+"f5afb706f7873cdf": {
+"caption": "A young man looks at his smartphone while holographic search results for Athens restaurants and events float in the air around him.",
+"people": 1,
+"faces": true,
+"action": "searching for information",
+"place": "terrace",
+"era": "modern",
+"mood": "tension",
+"text": "best restaurants Athens, Today in Athens, Athens night life, Best things to do in Athens",
+"avoid": [
+"historical documentary",
+"1980s setting",
+"football match"
+],
+"id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/20260820-153708-chatgpt-image-aug-20-2026-03-37-07-4630f89c89cd4ff7"
+},
 "f5c0fc693ea2a0e5": {
 "caption": "A goalkeeper in a grey kit dives horizontally to catch a football.",
 "people": 1,
@@ -6369,6 +6772,20 @@
 "a street scene"
 ],
 "id": "beat:common/close-boots-tunnel-n"
+},
+"faecd85915807436": {
+"caption": "Twelve vintage football jerseys from various European clubs are displayed on a rustic wall above a collection of old boots and balls.",
+"people": 0,
+"faces": true,
+"place": "room",
+"era": "1990s",
+"mood": "calm",
+"text": "Teka, OPEL, SHARP, PIRELLI, SONY, Candy, MISURA, ARISTON, SAN SIRO",
+"avoid": [
+"modern kits",
+"empty locker room"
+],
+"id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/other-2026-10-12-image-sofbdxnw-9388c9e3a828ea23"
 },
 "fb2e548f6698ed75": {
 "caption": "A retro comic illustration shows a marching drum with two red-headed mallets leaning against it.",
