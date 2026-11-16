@@ -30,10 +30,15 @@ export function PersonalPrint({req,kind='xi',className=''}:{req:Req;kind?:Kind;c
  if(!on)return null
  const go=(u:string)=>{const w=Math.min(520,screen.availWidth-40),h=Math.min(860,screen.availHeight-60),phone=window.matchMedia('(max-width: 760px)').matches
   win.current=phone?window.open(u,'fanlife-checkout'):window.open(u,'fanlife-checkout',`popup=yes,width=${w},height=${h},left=${Math.round((window.screenX||0)+(window.outerWidth-w)/2)},top=${Math.round((window.screenY||0)+60)}`)}
+ // the printer takes about two minutes: if the line drops on the way (a proxy's limit) or the print is still being made, the
+ // same request is asked again — it answers "pending" while the press runs and the link once it is ready (16.11.2026)
  const make=async()=>{setState('making');setMsg('')
-  try{const r=await fetch(endpoint,{method:'POST',headers:{'content-type':'application/json'},body});const j=await r.json()
-   if(!r.ok||!j.url){setState('error');setMsg(j.error||copy.error);return}
-   setUrl(j.url);setState('ready');go(j.url)}catch{setState('error');setMsg(copy.error)}}
+  for(let i=0;i<30;i++){let j:{url?:string;error?:string;pending?:boolean}|null=null,ok=false
+   try{const r=await fetch(endpoint,{method:'POST',headers:{'content-type':'application/json'},body});ok=r.ok;j=JSON.parse((await r.text()).trim()||'null')}catch{j=null}
+   if(j?.url){setUrl(j.url);setState('ready');go(j.url);return}
+   if(j?.error&&!j.pending&&(!ok||i>0||!/time/i.test(j.error))){setState('error');setMsg(j.error||copy.error);return}
+   await new Promise(r=>setTimeout(r,8000))}
+  setState('error');setMsg(copy.error)}
  return <>
   <button type="button" className={`min-h-tap ${className}`} onClick={()=>setOpen(true)}>{copy.cta} <span aria-hidden="true">→</span></button>
   {open&&createPortal(<div className="xip z-[95]" role="dialog" aria-modal="true" aria-labelledby="xip-h" onKeyDown={e=>{if(e.key==='Escape')setOpen(false)}}>

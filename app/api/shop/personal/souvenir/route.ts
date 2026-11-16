@@ -49,7 +49,7 @@ async function handle(r:Request):Promise<Response>{
  const id=`personal.${spec.c}.${hashOf(s,product)}.${product}`,name=who.value?`${who.value}’s ${KINDS[kind].replace(/^My /,'')}`:KINDS[kind]
  const out=await makePersonal(r,{id,subject:spec.c,kind:product,proof:path,size:{w:3600,h:4800},png:async()=>Buffer.from(await (await renderSouvenir(spec,3)).arrayBuffer()),
   title:`${name} · ${product==='framed'?'Framed print':'Poster'}`,description:`${name} — ${spec.cn}. A FAN LIFE souvenir, drawn from the club’s own record and printed to order. An independent fan design — not an official club product.`})
- return 'error' in out?json({error:out.error},out.status):json(out)
+ return 'error' in out?json({error:out.error},out.status):'pending' in out?json(out,202):json(out)
 }
 
 type Mine={who:string|null;line:string|null;note:string|null}

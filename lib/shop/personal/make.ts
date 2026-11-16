@@ -10,7 +10,7 @@ import {encode,signOf} from './sign'
  * The common road of every personal print (the XI, the souvenirs): the signed recipe, the product id (the same recipe twice is
  * the same product), a few a visitor a day, the press at Printify, and the link on the store's own domain.
  */
-export type Made={url:string;image:string;proof:string}|{error:string;status:number}
+export type Made={url:string;image:string;proof:string}|{error:string;status:number}|{pending:true;proof:string}
 const made=new Map<string,{day:string;n:number}>()
 export const DAY_LIMIT=6
 export const today=()=>new Date().toLocaleDateString('en-GB',{timeZone:'Europe/Athens'}).replace(/\//g,'.')
@@ -29,6 +29,7 @@ export async function makePersonal(r:Request,o:{id:string;subject:string;kind:'f
  const doc=await readShop(),proof=`${SITE_URL}${o.proof}`
  const have=doc.products.find(p=>p.id===o.id)
  if(have?.status==='live'&&have.printify?.url)return {url:onOwn(doc.settings.popupUrl,have.printify.url),image:have.printify.images[0]??proof,proof}
+ if((have?.status==='building'||have?.status==='draft')&&Date.now()-Date.parse(have.updatedAt)<6*60e3)return {pending:true,proof}
  if(!allow(r))return {error:'That is plenty of prints for today — come back tomorrow.',status:429}
  try{
   const api=await client(),up=await api.upload(`fanlife-${o.id.replace(/[^a-z0-9-]/gi,'-')}.png`,(await o.png()).toString('base64')),now=new Date().toISOString()
