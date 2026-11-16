@@ -1,0 +1,166 @@
+{
+ "schemaVersion": 1,
+ "id": "personal-demo-hta-gn",
+ "club": "hapoel-tel-aviv",
+ "series": "Football Fairy Tales",
+ "personal": true,
+ "title": {
+  "he": "לילה טוב, דר"
+ },
+ "voice": {
+  "he": "Leda",
+  "chosen": "owner, 11.11.2026"
+ },
+ "night": true,
+ "palette": {
+  "primary": "#B02D10",
+  "secondary": "#F6F0E4",
+  "bannedHue": [
+   36,
+   74
+  ],
+  "confetti": [
+   "#F6F0E4",
+   "#F6F0E4",
+   "#FFFFFF",
+   "#E9D9B8",
+   "#B02D10"
+  ]
+ },
+ "crests": {
+  "shirt": "/home/claude/ft/personal-demo/shirt-dar.png"
+ },
+ "music": [
+  {
+   "track": "fairytales-lullaby-long",
+   "from": "p-open"
+  }
+ ],
+ "pronounce": {
+  "he": "נאמר בשקט ובאיטיות, כמו סיפור לפני השינה. השם דר נאמר \"דַּר\" — Dar, כמו בַּר, הברה אחת קצרה. בלומפילד: \"בְּלוּמְפִילְד\"."
+ },
+ "shots": [
+  {
+   "id": "p-open",
+   "plate": "gn-sunset",
+   "delivery": "secret",
+   "he": "אי שם, לפני שנים רבות, השמש שקעה לתוך הים של יפו… והסיפור של הלילה הזה הוא רק בשביל דר.",
+   "say": {
+    "he": "אי שם, לפני שנים רבות, השמש שקעה לתוך הים של יפו… והסיפור של הלילה הזה הוא רק בשביל דַּר."
+   },
+   "visual": {
+    "push": [
+     1.0,
+     1.08
+    ],
+    "tags": [
+     {
+      "text": "הסיפור של דר",
+      "at": 0.72,
+      "xy": [
+       1380,
+       240
+      ],
+      "size": 96,
+      "rot": -3,
+      "font": "FredokaSemiBold.ttf"
+     }
+    ],
+    "sting": {
+     "at": 0.74
+    }
+   }
+  },
+  {
+   "id": "p-shirt",
+   "plate": "gn-bed",
+   "delivery": "tender",
+   "he": "ובחדר של דר, ליד הכרית, מחכה חולצה אדומה של הפועל, עם השם שלה על הגב.",
+   "say": {
+    "he": "ובחדר של דַּר, ליד הכרית, מחכה חולצה אדומה של הפועל, עם השם שלה על הגב."
+   },
+   "visual": {
+    "push": [
+     1.0,
+     1.07
+    ],
+    "centre": [
+     0.62,
+     0.5
+    ],
+    "crests": [
+     {
+      "crest": "shirt",
+      "at": 0.45,
+      "xy": [
+       1440,
+       420
+      ],
+      "size": 420
+     }
+    ],
+    "sting": {
+     "at": 0.5
+    }
+   }
+  },
+  {
+   "id": "p-star",
+   "plate": "gn-stars",
+   "delivery": "secret",
+   "he": "ושם למעלה, בין כל הכוכבים האדומים, יש כוכב אחד שמאיר הכי חזק… הכוכב של דר.",
+   "say": {
+    "he": "ושם למעלה, בין כל הכוכבים האדומים, יש כוכב אחד שמאיר הכי חזק… הכוכב של דַּר."
+   },
+   "visual": {
+    "push": [
+     1.0,
+     1.09
+    ],
+    "tags": [
+     {
+      "text": "הכוכב של דר",
+      "at": 0.74,
+      "xy": [
+       1460,
+       215
+      ],
+      "size": 84,
+      "rot": -4,
+      "font": "FredokaSemiBold.ttf"
+     }
+    ],
+    "sting": {
+     "at": 0.76
+    }
+   }
+  },
+  {
+   "id": "p-close",
+   "plate": "gn-close",
+   "delivery": "close",
+   "he": "לילה טוב, בלומפילד. לילה טוב, הפועל. ולילה טוב, דר.",
+   "say": {
+    "he": "לילה טוב, בלומפילד. לילה טוב, הפועל. וְלַיְלָה טוֹב, דַּר."
+   },
+   "visual": {
+    "extra": 2.4,
+    "tags": [
+     {
+      "text": "לילה טוב, דר",
+      "at": 0.6,
+      "xy": [
+       1450,
+       250
+      ],
+      "size": 100,
+      "rot": -3,
+      "font": "FredokaSemiBold.ttf"
+     }
+    ],
+    "wordmarkAt": 0.8,
+    "wordmarkTag": "Good Night, Hapoel Tel Aviv"
+   }
+  }
+ ]
+}
