@@ -3,7 +3,7 @@ import {PrintifyError} from './printify'
 import {client,mockups,pressProduct,withCover} from './build'
 import {printSide} from './plan'
 import {readShop,updateShop,printifyToken} from './store'
-import type {ShopProduct} from './types'
+import {madeInPrintify,type ShopProduct} from './types'
 
 /**
  * THE SHOP'S HOURLY CHECK-UP (owner, 12.11.2026: "full automation — a healthy, stable, smart system").
@@ -51,7 +51,7 @@ export async function shopCheckup(by='autopilot'):Promise<ShopHealth>{
   }
  }
  // 4 · a press that failed on a passing error is pressed again (two per run)
- const again=(await readShop()).products.filter(p=>(p.status==='ready'||(p.status==='error'&&(!p.error||PASSING.test(p.error)||/half-way/.test(p.error))))&&(p.retries??0)<RETRIES).slice(0,2)
+ const again=(await readShop()).products.filter(p=>!madeInPrintify(p)&&(p.status==='ready'||(p.status==='error'&&(!p.error||PASSING.test(p.error)||/half-way/.test(p.error))))&&(p.retries??0)<RETRIES).slice(0,2)
  for(const p of again){await patch(by,p.id,x=>{x.retries=(x.retries??0)+1});const out=await pressProduct(p.id,by);if(out.status==='live')repaired++;else notes.push(`${p.title}: ${out.error||'still not on sale'}`)}
  // 5 · sales start and end on time: prices follow the sales (a few per run); sold counts from the orders
  try{const r=await (await import('./saleRun')).applySales(by,10);repaired+=r.done;for(const e of r.errors.slice(0,3))notes.push(e)}catch(e){notes.push(`Sales: ${(e as Error).message}`)}

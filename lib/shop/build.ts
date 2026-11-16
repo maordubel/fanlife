@@ -4,7 +4,7 @@ import {BRAND_SPOTS,labelInk,variantColour,printSide,NOTE,SHARP_KEEP,areasOf,bes
 import {subjectName} from './subjects'
 import {REGISTRY} from '@/lib/master/registry'
 import {SITE_URL} from '@/lib/brand'
-import {MIN_QUALITY} from './types'
+import {MIN_QUALITY,madeInPrintify} from './types'
 import {original,pictureById} from './library'
 import {printify,type Printify} from './printify'
 import {printifyToken,readShop,updateShop} from './store'
@@ -51,6 +51,7 @@ const set=(id:string,patch:Partial<ShopProduct>)=>updateShop('press','',d=>{cons
 
 export async function pressProduct(id:string,by:string):Promise<ShopProduct>{
  const doc=await readShop(),p=doc.products.find(x=>x.id===id);if(!p)throw new Error('No such product.')
+ if(madeInPrintify(p)){await refreshProduct(id).catch(()=>{});return (await readShop()).products.find(x=>x.id===id)??p}
  const shop=doc.settings.shopId;if(!shop)throw new Error('Connect Printify first (Shop → Connect).')
  const api=await client(),d=p.design,base=p.blueprint?catalogueSpec(p.blueprint.title):KIND_SPECS[p.kind],spec=sizedSpec(shadedSpec({...base,positions:[...base.positions]},d),d)
  try{

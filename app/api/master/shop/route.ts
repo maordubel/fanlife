@@ -9,7 +9,7 @@ import {draftOf,fitTitle,launchSet,NOTE,shortTitle} from '@/lib/shop/plan'
 import {KIND_SPECS} from '@/lib/shop/kinds'
 import {SUBJECT_IDS,isSubject} from '@/lib/shop/subjects'
 import {pictureById} from '@/lib/shop/library'
-import {designKey,shelfOf,KINDS,PLACES,SHADES,SIDES,SIZES,type Shelf,type AreaDesign,type ArtRef,type Kind,type ProductDesign,type ShopProduct} from '@/lib/shop/types'
+import {designKey,madeInPrintify,shelfOf,KINDS,PLACES,SHADES,SIDES,SIZES,type Shelf,type AreaDesign,type ArtRef,type Kind,type ProductDesign,type ShopProduct} from '@/lib/shop/types'
 export const dynamic='force-dynamic'
 export const maxDuration=120
 const SHELVES:Shelf[]=['wall','wear','gear','home','kids','small']
@@ -120,6 +120,7 @@ export async function POST(r:Request){
    case 'refresh':await refreshProduct(id);break
    case 'visible':{const ids=Array.isArray(b.ids)?b.ids.map(String):[id];await updateShop(by,`${b.visible?'Showed':'Hid'} ${ids.length} product(s)`,d=>{for(const p of d.products)if(ids.includes(p.id))p.visible=!!b.visible});break}
    case 'design':{if(!id)return json({error:'Which product?'},422);const design=designOf(b.design)
+    {const cur=(await readShop()).products.find(x=>x.id===id);if(cur&&madeInPrintify(cur))return json({error:'This product was made in Printify. Change its design there; here it can be shown, hidden, renamed and priced.'},422)}
     await updateShop(by,`New design settings for ${id}`,d=>{const p=d.products.find(x=>x.id===id);if(p){p.design=design;p.status='draft';p.visible=false}});await pressProduct(id,by);break}
    case 'edit':await updateShop(by,`Edited ${id}`,d=>{const p=d.products.find(x=>x.id===id);if(!p)return;if(typeof b.title==='string'&&b.title.trim())p.title=b.title.trim().slice(0,90);if(typeof b.description==='string')p.description=b.description.trim().slice(0,600);p.updatedAt=now});await syncListing(id).catch(()=>{});forgetPublicShop();break
    case 'sync':if(!id)return json({error:'Which product?'},422);await syncListing(id);forgetPublicShop();break

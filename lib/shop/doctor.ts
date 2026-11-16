@@ -2,7 +2,7 @@ import 'server-only'
 import {KIND_SPECS} from './kinds'
 import {SHARP_KEEP,fitTitle,shortTitle} from './plan'
 import {readShop,updateShop,forgetPublicShop} from './store'
-import {designKey,qualityOf,type ShopDoctorNote,type ShopProduct} from './types'
+import {designKey,madeInPrintify,qualityOf,type ShopDoctorNote,type ShopProduct} from './types'
 
 /**
  * THE DAILY DOCTOR (owner, 14.11.2026: "the system fixes my mistakes by itself, once a day"). Runs from the hourly check-up,
@@ -36,8 +36,8 @@ export async function shopDoctor(by='autopilot',press?:(id:string)=>Promise<unkn
  if(retitle.length){fixed.push(`${retitle.length} product name(s) put in the “Design · Product” form`);for(const id of retitle.slice(0,5))try{await sync?.(id)}catch{/* the listing catches up at the next edit */}}
  if(hide.length)fixed.push(`${hide.length} duplicate(s) hidden (the same design on the same product twice) — the newer one stays`)
  // 3 · press again: drafts older than a day, soft prints (one a day)
- const stale=doc.products.filter(p=>p.status==='draft'&&Date.now()-Date.parse(p.createdAt)>864e5)
- const soft=doc.products.filter(p=>p.status==='live'&&p.printify&&qualityOf(p)<SHARP_KEEP)
+ const stale=doc.products.filter(p=>!madeInPrintify(p)&&p.status==='draft'&&Date.now()-Date.parse(p.createdAt)>864e5)
+ const soft=doc.products.filter(p=>!madeInPrintify(p)&&p.status==='live'&&p.printify&&qualityOf(p)<SHARP_KEEP)
  let pressed=0;for(const p of [...stale,...soft].slice(0,1)){if(!press)break;try{await press(p.id)}catch{/* stays listed for tomorrow */}pressed++}
  if(pressed)fixed.push(`${pressed} product(s) pressed again with quality-first sizes`)
  if(stale.length+soft.length>pressed)needs.push(`${stale.length+soft.length-pressed} more product(s) wait for a quality re-press — the doctor does one a day (or press them in Products)`)

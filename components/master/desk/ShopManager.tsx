@@ -1,7 +1,7 @@
 'use client'
 import {useEffect,useMemo,useState,type ReactNode} from 'react'
 import {KIND_SPECS} from '@/lib/shop/kinds'
-import {designKey,shelfOf,KINDS,MIN_QUALITY,qualityOf,type Kind,type Shelf,type ShopDoc,type ShopProduct} from '@/lib/shop/types'
+import {designKey,madeInPrintify,shelfOf,KINDS,MIN_QUALITY,qualityOf,type Kind,type Shelf,type ShopDoc,type ShopProduct} from '@/lib/shop/types'
 
 /**
  * THE PRODUCT MANAGER (owner, 15.11.2026: "adding a product more conveniently, smarter and easier editing, order and
@@ -49,7 +49,7 @@ export function ShopManager({doc,subjects,act,busy,connected,running,press,sync,
  useEffect(()=>{setSel(new Set())},[q,who,cat,state,byDesign])
  const allIds=list.flatMap(rowIds),picked=[...sel],every=allIds.length>0&&allIds.every(id=>sel.has(id))
  const tick=(ids:string[],on:boolean)=>setSel(s=>{const n=new Set(s);for(const id of ids)on?n.add(id):n.delete(id);return n})
- const pickedP=doc.products.filter(p=>sel.has(p.id)),live=pickedP.filter(p=>p.status==='live'),notLive=pickedP.filter(p=>p.status!=='live')
+ const pickedP=doc.products.filter(p=>sel.has(p.id)),live=pickedP.filter(p=>p.status==='live'),notLive=pickedP.filter(p=>p.status!=='live'&&!madeInPrintify(p))
  const cur=open?doc.products.find(p=>p.id===open)??null:null
  const counts=(s:State)=>doc.products.filter(p=>!isPersonal(p)).filter(p=>s==='shown'?p.visible&&p.status==='live':s==='hidden'?!p.visible&&p.status==='live':s==='todo'?p.status!=='live':s==='soft'?qualityOf(p)<.5:s==='sale'?onSale.has(p.id):s==='fav'?featured.includes(designKey(p)):true).length
  return <section className="desk-card shopm" aria-labelledby="shm-h">
@@ -100,12 +100,12 @@ export function ShopManager({doc,subjects,act,busy,connected,running,press,sync,
 function Editor({p,doc,pane,setPane,act,busy,connected,running,press,name,fav,onFeature,onClose,printEditor}:{p:ShopProduct;doc:ShopDoc;pane:'details'|'pictures'|'print'|'more';setPane:(x:'details'|'pictures'|'print'|'more')=>void
  act:Act;busy:boolean;connected:boolean;running:boolean;press:(ids:string[])=>Promise<void>;name:(id:string)=>string;fav:boolean;onFeature:(on:boolean)=>void;onClose:()=>void;printEditor:(p:ShopProduct)=>ReactNode}){
  const [title,setTitle]=useState(p.title),[desc,setDesc]=useState(p.description),[more,setMore]=useState<Kind[]>([])
- const own=shelfOf(p.kind,p.blueprint?.title),family=doc.products.filter(x=>designKey(x)===designKey(p)),have=new Set(family.map(x=>x.kind))
+ const made=madeInPrintify(p),own=shelfOf(p.kind,p.blueprint?.title),family=doc.products.filter(x=>designKey(x)===designKey(p)),have=new Set(family.map(x=>x.kind))
  const pics=[...new Set([...(p.printify?.images??[]),...(p.printify?.backImage?[p.printify.backImage]:[])])]
  const dirty=title.trim()!==p.title||desc.trim()!==p.description
  return <aside className="shopm-ed" aria-label={`Edit ${p.title}`}>
   <header className="shopm-edh"><div><p className="desk-kicker">{name(p.subject)} · {typeOf(p)}</p><b>{p.title}</b></div><button type="button" className="desk-btn ghost min-h-tap" onClick={onClose} aria-label="Close the editor">✕</button></header>
-  <nav className="desk-chips" aria-label="Edit">{(['details','pictures','print','more'] as const).map(k=><button key={k} type="button" className="desk-chip min-h-tap" aria-current={pane===k?'page':undefined} onClick={()=>setPane(k)}>{{details:'Details',pictures:'Pictures',print:'Print',more:'More products'}[k]}</button>)}</nav>
+  <nav className="desk-chips" aria-label="Edit">{(made?(['details','pictures'] as const):(['details','pictures','print','more'] as const)).map(k=><button key={k} type="button" className="desk-chip min-h-tap" aria-current={pane===k?'page':undefined} onClick={()=>setPane(k)}>{{details:'Details',pictures:'Pictures',print:'Print',more:'More products'}[k]}</button>)}</nav>
   {pane==='details'&&<div className="shopm-pane">
    <label className="shop-field"><span>Name (the shop and Printify)</span><input value={title} maxLength={90} onChange={e=>setTitle(e.target.value)}/></label>
    <label className="shop-field"><span>Description</span><textarea rows={5} value={desc} maxLength={600} onChange={e=>setDesc(e.target.value)}/></label>
@@ -117,7 +117,8 @@ function Editor({p,doc,pane,setPane,act,busy,connected,running,press,name,fav,on
     <label className="shop-switch"><input type="checkbox" checked={fav} disabled={busy} onChange={e=>onFeature(e.target.checked)}/><span>Fan favourite (the whole design)</span></label>
    </div>
    <p className="desk-fine">{STATUS[p.status]}{p.printify?` · from ${money(p.printify.priceFrom,p.printify.currency)}`:''} · sharpness {Math.round(qualityOf(p)*100)}%{p.printify?.upscaled?` (picture enlarged ×${p.printify.upscaled} — a sharper original prints better)`:''}{p.sold?` · ${p.sold} sold`:''}{p.error?` · ${p.error}`:''}</p>
-   <p className="desk-actions">{p.status!=='live'&&<button type="button" className="desk-btn min-h-tap" disabled={busy||running||!connected} onClick={()=>press([p.id])}>{p.status==='draft'?'Press':'Retry'}</button>}
+   {made&&<p className="desk-state">Made in Printify: its design is changed there. Here it is shown, hidden, renamed and priced; it is never re-pressed.</p>}
+   <p className="desk-actions">{p.status!=='live'&&!made&&<button type="button" className="desk-btn min-h-tap" disabled={busy||running||!connected} onClick={()=>press([p.id])}>{p.status==='draft'?'Press':'Retry'}</button>}
     {p.printify&&<button type="button" className="desk-btn ghost min-h-tap" disabled={busy||!connected} onClick={()=>act('refresh',{id:p.id},'Read again from Printify.')}>Read again from Printify</button>}
     {p.status==='live'&&<a className="desk-btn ghost min-h-tap" href={`/shop/p/${encodeURIComponent(p.id)}`} target="_blank" rel="noreferrer">Its page ↗</a>}
     <button type="button" className="desk-btn ghost min-h-tap shopm-danger" disabled={busy} onClick={()=>{if(window.confirm(`Delete “${p.title}” here and in Printify? This cannot be undone.`)){void act('remove',{id:p.id},'Deleted.');onClose()}}}>Delete</button></p>
@@ -130,7 +131,7 @@ function Editor({p,doc,pane,setPane,act,busy,connected,running,press,name,fav,on
      <img src={src} alt="" width={160} height={160} loading="lazy"/><small>{i===0?'First · ':''}{camera(src)}</small></button></li>)}</ul>}
    {p.printify?.cover&&<button type="button" className="desk-btn ghost min-h-tap" disabled={busy} onClick={()=>act('cover',{id:p.id,src:''},'Back to the automatic order.')}>Back to the automatic order</button>}
   </div>}
-  {pane==='print'&&<div className="shopm-pane">{printEditor(p)}</div>}
+  {pane==='print'&&!made&&<div className="shopm-pane">{printEditor(p)}</div>}
   {pane==='more'&&<div className="shopm-pane">
    <p className="desk-fine">The same picture and print settings on more products — each is made as a draft beside this one and pressed now.</p>
    <div className="desk-chips" role="group" aria-label="Products to add">{BASIC.map(k=><button key={k} type="button" className="desk-chip min-h-tap" disabled={have.has(k)} aria-pressed={more.includes(k)} aria-current={more.includes(k)} onClick={()=>setMore(v=>v.includes(k)?v.filter(x=>x!==k):[...v,k])}>{KIND_SPECS[k].label}{have.has(k)?' ✓':''}</button>)}</div>
