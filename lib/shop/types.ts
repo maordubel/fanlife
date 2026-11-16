@@ -117,4 +117,11 @@ export function shelfOf(kind:Kind,catalogue?:string):Shelf{
 }
 /** the design a product shares with its siblings: the same picture on several products */
 export const designKey=(p:ShopProduct)=>'library' in p.art?`l-${p.art.library.id.slice(-10)}`:`u-${p.art.upload.id.slice(-10)}`
+/**
+ * MADE IN PRINTIFY (16.11.2026, owner: "importing a product I made in Printify breaks its design"). A product joined from
+ * Printify has no FAN LIFE art: its "art" is only Printify's mock-up. Pressing it would delete the owner's product and rebuild
+ * it from that photo. Such a product is never pressed, re-designed or re-made here — its design lives in Printify; the desk only
+ * shows, hides, renames, prices and re-reads it.
+ */
+export const madeInPrintify=(p:Pick<ShopProduct,'art'>)=>'upload' in p.art&&p.art.upload.id==='printify'
 export const toPublic=(p:ShopProduct):PublicProduct=>({sold:p.sold??0,...(p.shelves?.length?{also:p.shelves}:{}),...(p.printify!.sale?.percent?{sale:p.printify!.sale.id,was:p.printify!.sale.was}:{}),shelf:shelfOf(p.kind,p.blueprint?.title),design:designKey(p),since:p.printify!.publishedAt,id:p.id,subject:p.subject,kind:p.kind,title:p.title,description:p.description,image:p.printify!.images[0]!,images:p.printify!.images.slice(0,4),...(p.printify!.backImage?{back:p.printify!.backImage}:{}),priceFrom:p.printify!.priceFrom,currency:p.printify!.currency,url:p.printify!.url!})
