@@ -507,6 +507,16 @@ class Adapter:
                 ((f.get('venue') or {}).get('name') if isinstance(f.get('venue'), dict) else None)]
         return ' · '.join(b for b in bits if b).upper()
 
+    REVEAL_AT = 0.6   # the share of the film before which no result is shown (the arc's own answer point when it has one)
+
+    def before_reveal(self, s: dict) -> bool:
+        """Is this shot before the film tells its result? Before it, a scoreboard shows the sides and '?–?'."""
+        D = float(self.plan.get('duration') or 0) or sum(x['frames'] for x in self.plan.get('shots') or []) / FPS
+        arc = (self.plan.get('sheet') or {}).get('arc') if isinstance(self.plan.get('sheet'), dict) else None
+        at = (arc or {}).get('answer_at')
+        cut = float(at) if isinstance(at, (int, float)) and 0.3 <= at <= 0.95 else self.REVEAL_AT
+        return D > 0 and float(s.get('start') or 0) < cut * D
+
     def cue(self, n: int, at: float, kind: str):
         self.cues.setdefault(n, []).append([round(at, 2), kind])
 
@@ -527,14 +537,18 @@ class Adapter:
             self.cue(n, 0.1, 'paper')
         elif t in ('score', 'versus') and f.get('kind') == 'match':
             sc = self.scoreline(f)
+            if self.before_reveal(s):   # owner, 15.11.2026: "the results are revealed in advance" — the board asks, it does not tell
+                sc = {**sc, 'ug': '?', 'tg': '?'}
+                f = {**f, 'outcome': None}
             bg = self.picture(s)
             if bg[0] and not bg[1]:   # the picture behind the board is its own device, so the editor can cut it into looks
                 out.append({'kind': 'image', 'src': bg[0], 'veil': 0.55, 'move': 'push', 'z': 1})
             out.append({'kind': 'score', 'us': B.e(sc['us']), 'them': sc['them'], 'us_goals': sc['ug'], 'them_goals': sc['tg'],
                         'us_crest': self.crest_of(sc['us']), 'them_crest': self.crest_of(sc['them']), 'cap': self.cap(f)})
             cid = v.get('claim') or (s.get('claim_ids') or [None])[0]
-            vd = self.design.verdict(s, f, cid) if d >= 6 else None
-            st = None if vd else self.design.stamp(s, f, cid)
+            hidden = self.before_reveal(s)
+            vd = self.design.verdict(s, f, cid) if d >= 6 and not hidden else None
+            st = None if vd or hidden else self.design.stamp(s, f, cid)
             if vd:      # the second half of the beat: the board has been read, now what the result meant
                 at = round(d - min(5.0, d * 0.5), 2)
                 out.append({**vd, 'dt': at, 'd': round(d - at, 2)})

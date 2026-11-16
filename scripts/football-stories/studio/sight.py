@@ -77,7 +77,8 @@ ground with no picture; "note": at most ten words on what is wrong, or "". Answe
 
 
 # ── the Gemini call (one place; tests pass `call`) ────────────────────────────────────────────────────────────────────
-def _call(system: str, parts: list[dict], log=print, budget_s: float = 600) -> list:
+def _call(system: str, parts: list[dict], log=print, budget_s: float = 90) -> list:
+    """One answer. A short wait budget: sight is a polish, it never holds a film behind the writer's free quota."""
     from . import gemini
     key = gemini.api_key()
     if not key:
@@ -218,7 +219,7 @@ def after_captions(log=print, commit=None) -> None:
         log('Sight: no Gemini key here — pictures are chosen by their names only')
         return
     try:
-        n = caption_library(log=log, limit=int(os.environ.get('STORIES_SIGHT_PER_FILM') or 240))   # the rest on the next film
+        n = caption_library(log=log, limit=int(os.environ.get('STORIES_SIGHT_PER_FILM') or 30))   # the rest on the next film: captions never eat the writer's quota
     except Exception as x:  # noqa: BLE001 — never the film's problem
         log(f'Sight: captions skipped ({str(x)[:140]})')
         return
