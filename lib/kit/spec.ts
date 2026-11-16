@@ -1,3 +1,5 @@
+import type {SponsorBox} from '@/lib/clubs/kit-model'
+
 /**
  * מערכת השכבות — a shirt is not a picture, it is a magazine of eight layers.
  *
@@ -132,6 +134,7 @@ export type KitSpec = {
   collarInk: KitColour
   /** lettered on the chest — the archive knows these per season */
   sponsorHe: string | null
+  sponsorBox?: SponsorBox
   makerHe: string | null
   nameset: NamesetId
   number: number | null

@@ -1,15 +1,15 @@
 'use client'
 import {useId} from 'react'
+import {DOUBLE_HOME_RED,DOUBLE_HOME_VIEWBOX,HapoelDoubleShirt} from '@/components/kit/HapoelDoubleShirt'
 import {sponsorLines,SPONSOR_FONT} from '@/lib/clubs/sponsor-type'
+import {fitMark,sponsorMark,type Mark,type SponsorContext} from '@/lib/clubs/marks'
+import {SLOTS,colourHex,darken,lightCloth,placeSponsor,wordmark,type ClothSpec,type CollarId,type PatternId,type ShirtOutline,type SlotKey,type SponsorBox} from '@/lib/clubs/kit-model'
 import {kitMark} from '@/lib/clubs/kit-parts'
-import {fitMark,type Mark} from '@/lib/clubs/marks'
-import {SLOTS,colourHex,darken,lightCloth,wordmark,type ClothSpec,type CollarId,type PatternId,type SlotKey} from '@/lib/clubs/kit-model'
 
 /**
  * The FAN LIFE garment — the Worker's `KitPlate` anatomy (curved silhouette, drawn folds, dashed seams, a knit under
  * everything; patterns are full-bleed shapes the garment clips) on the generic `ClothSpec` any club can fill.
- * Paints only the club-safe swatches (rule 95). The marks are LETTERED on the cloth — a maker or sponsor name is a
- * documented fact; its artwork is never ours to redraw (a trademark is not a club's to invent). Used by gates 4 and 5.
+ * Uses sourced marks when the archive has matching artwork and lettering for other documented names. Used by gates 4 and 5.
  */
 const SLEEVE_L='M104 54C84 62 62 92 46 132C54 144 66 152 82 156C88 140 90 126 92 112C94 92 100 74 104 54Z'
 const SLEEVE_R='M216 54C236 62 258 92 274 132C266 144 254 152 238 156C232 140 230 126 228 112C226 92 220 74 216 54Z'
@@ -18,10 +18,17 @@ const BODY_BACK='M136 48C126 49 114 51 104 54C100 74 94 92 92 112C88 150 84 190 
 const NECK='M136 48C142 70 178 70 184 48'
 const NECK_BACK='M136 48C142 58 178 58 184 48'
 const CUFFS='M52 125C60 137 70 147 85 152M268 125C260 137 250 147 235 152'
+const GARMENT={x:46,y:48,w:228,h:250}
 
-export type ClothProps={spec:ClothSpec;view?:'front'|'back';/** slots still to be filled, drawn as a dashed frame */missing?:SlotKey[];texture?:boolean;title?:string;className?:string;/** letters printed in the crest slot when `spec.crest` is on */monogram?:string;/** the club's own crest, printed in the crest slot instead of the monogram */crestSrc?:string|null;viewBox?:string}
+function shirtFrame(outline:ShirtOutline|undefined){
+ if(!outline)return GARMENT
+ const w=Math.min(GARMENT.w,GARMENT.h*outline.aspect),h=w/outline.aspect
+ return {x:160-w/2,y:GARMENT.y+(GARMENT.h-h)/2,w,h}
+}
 
-export function KitCloth({spec,view='front',missing=[],texture=true,title,className,monogram='',crestSrc=null,viewBox='20 30 300 285'}:ClothProps){
+export type ClothProps={spec:ClothSpec;view?:'front'|'back';/** slots still to be filled, drawn as a dashed frame */missing?:SlotKey[];texture?:boolean;title?:string;className?:string;/** letters printed in the crest slot when `spec.crest` is on */monogram?:string;/** the club's own crest, printed in the crest slot instead of the monogram */crestSrc?:string|null;viewBox?:string;sponsorContext?:SponsorContext;sponsorBox?:SponsorBox;shirtOutline?:ShirtOutline}
+
+export function KitCloth({spec,view='front',missing=[],texture=true,title,className,monogram='',crestSrc=null,viewBox='20 30 300 285',sponsorContext,sponsorBox,shirtOutline}:ClothProps){
  const uid=useId().replace(/:/g,''),id=(n:string)=>`${n}-${uid}`
  const baseHex=spec.base?colourHex(spec.base):null,trimHex=spec.trim?colourHex(spec.trim):null
  const baseFill=baseHex??'var(--mag-card)'
@@ -31,15 +38,31 @@ export function KitCloth({spec,view='front',missing=[],texture=true,title,classN
  const sleeve=inkOf(spec.sleeveInk),collar=inkOf(spec.collarInk)
  const light=lightCloth(spec.base),text=light?'var(--mag-ink)':'var(--mag-white)'
  const gone=new Set(missing),back=view==='back'
+ const printContext=sponsorContext?{...sponsorContext,base:spec.base}:undefined
+ const outline=back?undefined:shirtOutline,frame=shirtFrame(outline)
+ const outlineTransform=`translate(${frame.x} ${frame.y}) scale(${frame.w/100} ${frame.h/100})`
+ const sponsorSlot=sponsorBox?placeSponsor(sponsorBox,frame):undefined
+ if(!back&&spec.base&&spec.pattern==='twin-stripe'&&sponsorContext?.club==='hapoel-tel-aviv'&&sponsorContext.season==='1999/00'&&sponsorContext.variant==='home'){
+  const makerSrc=!gone.has('maker')&&spec.maker?.toLowerCase()==='nike'?'/club-kits/marks/nike-swoosh-white.svg':undefined
+  const sponsorSrc=!gone.has('sponsor')&&spec.sponsor?.trim()==='כתר'?sponsorMark(spec.sponsor,sponsorContext)?.src:undefined
+  return <svg viewBox={DOUBLE_HOME_VIEWBOX} preserveAspectRatio="xMidYMid meet" className={className} role={title?'img':'presentation'} aria-label={title} aria-hidden={title?undefined:true} data-cloth-view={view} data-cloth-base={spec.base} data-cloth-pattern={spec.pattern}>
+   <HapoelDoubleShirt base={spec.base==='red'?DOUBLE_HOME_RED:baseFill} stripes={patternInk} texture={texture} crest={!gone.has('crest')} makerSrc={makerSrc} sponsorSrc={sponsorSrc}>
+    {!makerSrc&&<g transform="translate(112 73) scale(1.6)">{gone.has('maker')?<Gap slot="maker"/>:<Word slot="maker" text={spec.maker} ink={text} halo={baseFill} size={12} markId={id('maker')}/>}</g>}
+    {!sponsorSrc&&<g transform="translate(191 136) scale(1.2)">{gone.has('sponsor')?<Gap slot="sponsor"/>:<Word slot="sponsor" text={spec.sponsor} ink={text} halo={baseFill} size={26} markId={id('sponsor')} sponsorContext={sponsorContext}/>}</g>}
+   </HapoelDoubleShirt>
+  </svg>
+ }
  return <svg viewBox={viewBox} preserveAspectRatio="xMidYMid meet" className={className} role={title?'img':'presentation'} aria-label={title} aria-hidden={title?undefined:true} data-cloth-view={view} data-cloth-base={spec.base??'blank'} data-cloth-pattern={spec.pattern}>
   <defs>
-   <clipPath id={id('cut')}><path d={back?BODY_BACK:BODY}/><path d={SLEEVE_L}/><path d={SLEEVE_R}/></clipPath>
+   <clipPath id={id('cut')}>{outline?<path d={outline.path} transform={outlineTransform}/>:<><path d={back?BODY_BACK:BODY}/><path d={SLEEVE_L}/><path d={SLEEVE_R}/></>}</clipPath>
    <filter id={id('weave')} x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch" result="n"/><feColorMatrix type="saturate" values="0" in="n"/></filter>
    <filter id={id('soft')} x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="7"/></filter>
   </defs>
-  <path d={SLEEVE_L} fill={sleeve} stroke="var(--mag-ink)" strokeWidth="2" strokeLinejoin="round"/>
-  <path d={SLEEVE_R} fill={sleeve} stroke="var(--mag-ink)" strokeWidth="2" strokeLinejoin="round"/>
-  <path d={back?BODY_BACK:BODY} fill={baseFill} stroke="var(--mag-ink)" strokeWidth="2" strokeLinejoin="round" strokeDasharray={spec.base?undefined:'6 4'}/>
+  {outline?<path d={outline.path} transform={outlineTransform} fill={baseFill} stroke="var(--mag-ink)" strokeWidth="2" strokeLinejoin="round" vectorEffect="non-scaling-stroke" data-kit-outline/>:<>
+   <path d={SLEEVE_L} fill={sleeve} stroke="var(--mag-ink)" strokeWidth="2" strokeLinejoin="round"/>
+   <path d={SLEEVE_R} fill={sleeve} stroke="var(--mag-ink)" strokeWidth="2" strokeLinejoin="round"/>
+   <path d={back?BODY_BACK:BODY} fill={baseFill} stroke="var(--mag-ink)" strokeWidth="2" strokeLinejoin="round" strokeDasharray={spec.base?undefined:'6 4'}/>
+  </>}
   <g clipPath={`url(#${id('cut')})`}>
    <Pattern id={spec.pattern} ink={patternInk}/>
    <g filter={`url(#${id('soft')})`}>
@@ -52,52 +75,53 @@ export function KitCloth({spec,view='front',missing=[],texture=true,title,classN
     <path d="M86 280C120 292 200 292 234 280C234 288 234 292 234 292C200 300 120 300 86 292Z" fill="var(--mag-ink)" opacity="0.1"/>
    </g>
    {texture&&<rect x="20" y="20" width="300" height="290" filter={`url(#${id('weave')})`} style={{mixBlendMode:'multiply'}} opacity="0.13"/>}
-   <g fill="none" stroke="var(--mag-ink)" strokeOpacity="0.3" strokeWidth="1" strokeDasharray="3 2.5">
+   {!outline&&<g fill="none" stroke="var(--mag-ink)" strokeOpacity="0.3" strokeWidth="1" strokeDasharray="3 2.5">
     <path d="M96 112C98 90 102 72 106 56"/><path d="M224 112C222 90 218 72 214 56"/><path d="M88 285C122 294 198 294 232 285"/><path d="M56 128C64 140 74 149 88 154"/><path d="M264 128C256 140 246 149 232 154"/>
-   </g>
+   </g>}
   </g>
-  <Collar id={spec.collar} colour={collar} back={back}/>
-  <path d={CUFFS} fill="none" stroke={sleeve} strokeWidth="7"/>
-  <path d={CUFFS} fill="none" stroke="var(--mag-ink)" strokeWidth="1.2" opacity="0.7"/>
+  {!outline&&<><Collar id={spec.collar} colour={collar} back={back}/>
+   <path d={CUFFS} fill="none" stroke={sleeve} strokeWidth="7"/>
+   <path d={CUFFS} fill="none" stroke="var(--mag-ink)" strokeWidth="1.2" opacity="0.7"/>
+  </>}
   {back?<Back name={spec.name} number={spec.number} ink={text} halo={baseFill}/>:<g clipPath={`url(#${id('cut')})`}>
-   {gone.has('maker')?<Gap slot="maker"/>:<Word slot="maker" text={spec.maker} ink={text} halo={baseFill} size={12}/>}
+   {gone.has('maker')?<Gap slot="maker"/>:<Word slot="maker" text={spec.maker} ink={text} halo={baseFill} size={12} markId={id('maker')}/>}
    {gone.has('crest')?<Gap slot="crest"/>:spec.crest?<Crest letters={monogram} src={spec.crestArt??crestSrc} ink={lightCloth(spec.trim??spec.base)?'var(--mag-ink)':'var(--mag-white)'} fill={trimHex??baseFill} halo={baseFill}/>:null}
-   {gone.has('sponsor')?<Gap slot="sponsor"/>:<Word slot="sponsor" text={spec.sponsor} ink={text} halo={baseFill} size={26}/>}
+   {gone.has('sponsor')?<Gap slot="sponsor" box={sponsorSlot}/>:<Word slot="sponsor" text={spec.sponsor} ink={text} halo={baseFill} size={26} markId={id('sponsor')} sponsorContext={printContext} box={sponsorSlot}/>}
   </g>}
  </svg>
 }
 
-function Gap({slot}:{slot:SlotKey}){const b=SLOTS[slot];return <rect x={b.x} y={b.y} width={b.w} height={b.h} fill="var(--mag-navy)" fillOpacity="0.1" stroke="var(--mag-navy)" strokeWidth="2" strokeDasharray="5 4" data-gap={slot}/>}
+function Gap({slot,box}:{slot:SlotKey;box?:SponsorBox}){const b=box??SLOTS[slot];return <rect x={b.x} y={b.y} width={b.w} height={b.h} fill="var(--mag-navy)" fillOpacity="0.1" stroke="var(--mag-navy)" strokeWidth="2" strokeDasharray="5 4" data-gap={slot}/>}
 
 /** a real mark in the cloth's contrast ink (vectors and mono rasters) or as it is (colour rasters); `halo` cuts it out of a pattern */
 function MarkArt({mark,cx,cy,w,h,ink,halo,id,logo,slot}:{mark:Mark;cx:number;cy:number;w:number;h:number;ink:string;halo:string;id:string;logo:string;slot:string}){
  const f=fitMark(mark,cx,cy,w,h),[x0,y0,vw,vh]=mark.viewBox.split(' ').map(Number) as [number,number,number,number]
- if(mark.kind==='raster'){
+ if(mark.kind==='raster'||mark.kind==='svg'){
   const img=<image href={mark.src} x={x0} y={y0} width={vw} height={vh} preserveAspectRatio="xMidYMid meet"/>
-  return <g data-mark={slot} data-logo={logo} transform={f.transform}>{mark.print==='mono'?<><mask id={id} maskUnits="userSpaceOnUse" x={x0} y={y0} width={vw} height={vh}>{img}</mask><rect x={x0} y={y0} width={vw} height={vh} fill={ink} mask={`url(#${id})`}/></>:img}</g>
+  return <g data-mark={slot} data-logo={logo} transform={f.transform}>{mark.print==='mono'?<><mask id={id} style={mark.kind==='svg'?{maskType:'alpha'}:undefined} maskUnits="userSpaceOnUse" x={x0} y={y0} width={vw} height={vh}>{img}</mask><rect x={x0} y={y0} width={vw} height={vh} fill={ink} mask={`url(#${id})`}/></>:img}</g>
  }
  const d=mark.d??''
  return <g data-mark={slot} data-logo={logo} transform={f.transform}>{mark.kind==='stroke'?<><path d={d} fill="none" stroke={halo} strokeOpacity="0.5" strokeWidth={(mark.strokeWidth??8)+5} strokeLinejoin="round"/><path d={d} fill="none" stroke={ink} strokeWidth={mark.strokeWidth} strokeLinejoin="round"/></>:<><path d={d} fill={halo} fillOpacity="0.5" stroke={halo} strokeOpacity="0.5" strokeWidth={1.6/f.k} strokeLinejoin="round"/><path d={d} fill={ink}/></>}</g>
 }
 
 /** a documented name, lettered on the cloth and condensed (never overflowing) into its slot; a halo cuts it out of any pattern */
-function Word({slot,text,ink,halo,size}:{slot:SlotKey;text:string|null;ink:string;halo:string;size:number}){
+function Word({slot,text,ink,halo,size,markId,sponsorContext,box}:{slot:SlotKey;text:string|null;ink:string;halo:string;size:number;markId:string;sponsorContext?:SponsorContext;box?:SponsorBox}){
  if(!text)return null
- const b=SLOTS[slot]
+ const b=box??SLOTS[slot]
  // the sponsor slot takes the documented lettering (weight, case, tracking, line breaks); the maker stays plain capitals
  if(slot==='sponsor'){
-  const sm=kitMark({maker:null,sponsor:text},'sponsor')?.art
-  if(sm?.replace){const ar=(q=>q[2]!/q[3]!)(sm.viewBox.split(' ').map(Number));return <MarkArt mark={sm} cx={b.x+b.w/2} cy={b.y+b.h/2} w={Math.min(b.w-6,26*ar)} h={26} ink={ink} halo={halo} id={`mk-sp-${text.toLowerCase().replace(/\W/g,'')}`} logo={text.toLowerCase()} slot="sponsor"/>}
-  const ls=sponsorLines(text),n=ls.length,cx=b.x+b.w/2,sz0=n>1?size*0.86:size*1.1
+  const sm=kitMark({maker:null,sponsor:text},'sponsor',sponsorContext)?.art
+  if(sm?.replace){const ar=(q=>q[2]!/q[3]!)(sm.viewBox.split(' ').map(Number));return <MarkArt mark={sm} cx={b.x+b.w/2} cy={b.y+b.h/2} w={box?b.w:Math.min(b.w-6,26*ar)} h={box?b.h:26} ink={ink} halo={halo} id={markId} logo={text.toLowerCase()} slot="sponsor"/>}
+  const ls=sponsorLines(text),n=ls.length,cx=b.x+b.w/2,sz0=box?b.h/(n>1?1.55:0.76):n>1?size*0.86:size*1.1
   let y=b.y+(n>1?-1:b.h/2+sz0*0.34)+(n>1?sz0*0.8:0)
   return <g data-mark={slot}>{ls.map((l,i)=>{
    let sz=sz0*l.scale;const est=l.t.length*sz*(l.fam==='cond'?0.42:0.6)*(1+l.track),over=est>b.w
    const yy=y;y+=sz0*l.scale*0.98
-   return <text key={i} x={cx} y={yy} textAnchor="middle" fill={ink} stroke={halo} strokeWidth="4" strokeLinejoin="round" paintOrder="stroke" textLength={over?b.w:undefined} lengthAdjust="spacingAndGlyphs" fontStyle={l.italic?'italic':undefined} style={{fontFamily:SPONSOR_FONT[l.fam],fontWeight:l.weight,fontSize:sz,letterSpacing:over?0:l.track*sz}} data-w={Math.round(Math.min(est,b.w))}>{l.t}</text>})}</g>
+   return <text key={i} x={cx} y={yy} textAnchor="middle" fill={ink} stroke={halo} strokeWidth="4" strokeLinejoin="round" paintOrder="stroke" textLength={over||(box&&n===1)?b.w:undefined} lengthAdjust="spacingAndGlyphs" fontStyle={l.italic?'italic':undefined} style={{fontFamily:SPONSOR_FONT[l.fam],fontWeight:l.weight,fontSize:sz,letterSpacing:over?0:l.track*sz}} data-w={Math.round(Math.min(est,b.w))}>{l.t}</text>})}</g>
  }
  if(slot==='maker'){
   const m=kitMark({maker:text,sponsor:null},'maker')?.art
-  if(m){const ar=(q=>q[2]!/q[3]!)(m.viewBox.split(' ').map(Number));return <MarkArt mark={m} cx={b.x+b.w/2} cy={b.y+b.h/2} w={ar>3?36:(m.kind==='stroke'?30:26)} h={ar>3?10:16} ink={ink} halo={halo} id={`mk-${slot}-${text.toLowerCase().replace(/\W/g,'')}`} logo={text.toLowerCase()} slot="maker"/>}
+  if(m){const ar=(q=>q[2]!/q[3]!)(m.viewBox.split(' ').map(Number));return <MarkArt mark={m} cx={b.x+b.w/2} cy={b.y+b.h/2} w={ar>3?36:(m.kind==='stroke'?30:26)} h={ar>3?10:16} ink={ink} halo={halo} id={markId} logo={text.toLowerCase()} slot="maker"/>}
  }
  const s=wordmark(text),est=s.length*size*0.66,w=Math.min(est,b.w)
  return <text x={b.x+b.w/2} y={b.y+b.h/2+size*0.36} textAnchor="middle" fill={ink} stroke={halo} strokeWidth="4" strokeLinejoin="round" paintOrder="stroke" textLength={est>b.w?b.w:undefined} lengthAdjust="spacingAndGlyphs" style={{fontFamily:'var(--mag-body)',fontWeight:800,fontSize:size,letterSpacing:est>b.w?0:1}} data-mark={slot} data-w={Math.round(w)}>{s}</text>

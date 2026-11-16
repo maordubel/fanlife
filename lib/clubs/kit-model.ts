@@ -75,3 +75,10 @@ export const slugOf=(s:string)=>s.toLowerCase().replace(/[^a-z0-9]+/g,'-').repla
 /** where the marks sit on the 340×320 board — fixed slots, so a missing part is a dashed frame in a known place */
 export const SLOTS={sponsor:{x:98,y:148,w:124,h:40},crest:{x:186,y:80,w:38,h:42},maker:{x:98,y:86,w:60,h:22}} as const
 export type SlotKey=keyof typeof SLOTS
+export type SponsorBox={x:number;y:number;w:number;h:number}
+export type ShirtOutline={path:string;aspect:number}
+
+/** Convert a measured print rectangle from percentages of the shirt outline to the drawing's units. */
+export function placeSponsor(box:SponsorBox, garment:SponsorBox):SponsorBox {
+ return {x:garment.x+box.x*garment.w/100,y:garment.y+box.y*garment.h/100,w:box.w*garment.w/100,h:box.h*garment.h/100}
+}

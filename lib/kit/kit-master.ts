@@ -1,4 +1,5 @@
 import 'server-only'
+import {kitFrontOf, measuredSponsor} from '@/lib/clubs/kit-fronts'
 
 import masterFile from '../../content/generated/kit-master.json'
 
@@ -46,6 +47,7 @@ export function accepted<T>(field: KitField<T>): T[] {
 /** The record as the engine draws it. */
 export function specOf(kit: KitMasterRecord): KitSpec {
   const f = kit.fields
+  const sponsorBox = measuredSponsor(kitFrontOf({id:`hapoel-tel-aviv:kit-${kit.id}`}))
   return {
     ...DEFAULT_SPEC,
     seasonLabel: kit.seasonLabel,
@@ -59,6 +61,7 @@ export function specOf(kit: KitMasterRecord): KitSpec {
     sleeveInk: f.sleeves.value?.ink ?? DEFAULT_SPEC.sleeveInk,
     makerHe: f.maker.value?.name ?? null,
     sponsorHe: f.sponsor.value?.name ?? null,
+    ...(sponsorBox ? {sponsorBox} : {}),
     crestKey: f.crest.value?.key ?? null,
     shorts: f.shorts.value ?? DEFAULT_SPEC.shorts,
     socks: f.socks.value ?? DEFAULT_SPEC.socks,

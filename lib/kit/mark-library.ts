@@ -1,5 +1,7 @@
 import type { KitPlacement } from './assembly'
 import { photoMarkFile } from './photo'
+import { sponsorMark } from '@/lib/clubs/marks'
+import type { KitVariant } from './spec'
 
 /**
  * הסימנים שאושרו — the real maker and sponsor logos, for gates 4 and 5 only.
@@ -35,6 +37,7 @@ function webp(name: string, label: string, print: GrantedMark['print']): Granted
 }
 
 const MAKERS: Record<string, (seasonYear: number | null) => GrantedMark | null> = {
+  nike: (year) => year === 1999 ? { src: '/club-kits/marks/nike-swoosh-white.svg', label: 'NIKE', aspect: 24 / 8.4, print: 'colour' } : null,
   umbro: () => ({ src: '/kits/assembly/2009-10/parts/maker-umbro.svg', label: 'umbro', aspect: 110 / 60, print: 'mono' }),
   adidas: (year) => (year !== null && year < 1992
     ? { src: '/kits/assembly/1985-86/parts/maker-adidas.svg', label: 'adidas', aspect: 80 / 82, print: 'mono' }
@@ -44,8 +47,13 @@ const MAKERS: Record<string, (seasonYear: number | null) => GrantedMark | null> 
 }
 
 const SPONSORS: Record<string, () => GrantedMark | null> = {
+  // The wide 2000 wordmark printed as the shirt sponsor in the 2008/09 archive.
+  umbro: () => ({ src: '/club-kits/marks/umbro-wordmark-2000.svg', label: 'UMBRO', aspect: 124.53647 / 45.913306, print: 'mono' }),
   visa: () => ({ src: '/kits/assembly/1985-86/parts/sponsor-visa.svg', label: 'VISA', aspect: 430 / 250, print: 'colour' }),
   subaru: () => ({ src: '/kits/assembly/2009-10/parts/sponsor-subaru.svg', label: 'SUBARU', aspect: 360 / 180, print: 'colour' }),
+  // Official one-colour lockup used on the 2025/26 home and away shirts.
+  // https://www.ibi.co.il/wp-content/uploads/2021/01/logo.svg
+  ibi: () => ({ src: '/kits/marks/sponsor-ibi.svg', label: 'IBI', aspect: 108 / 75, print: 'mono' }),
   fujitsu: () => webp('sponsor-fujitsu', 'FUJITSU', 'mono'),
   arkia: () => webp('sponsor-arkia', 'ARKIA', 'colour'),
 }
@@ -65,16 +73,24 @@ export function grantedMaker(maker: string | null, seasonLabel?: string): Grante
   return MAKERS[normalized(maker)]?.(yearOf(seasonLabel)) ?? null
 }
 
-export function grantedSponsor(sponsor: string | null): GrantedMark | null {
+export function grantedSponsor(sponsor: string | null, seasonLabel?: string, variant?: KitVariant, base?: string): GrantedMark | null {
   if (!sponsor) return null
-  return SPONSORS[normalized(sponsor)]?.() ?? null
+  const key = normalized(sponsor)
+  if (seasonLabel && variant) {
+    const mark = sponsorMark(sponsor, { club: 'hapoel-tel-aviv', season: seasonLabel, variant, base })
+    if (mark?.kind === 'svg' && mark.src && mark.print) {
+      const [, , width, height] = mark.viewBox.split(' ').map(Number)
+      return { src: mark.src, label: sponsor, aspect: width! / height!, print: mark.print }
+    }
+  }
+  return SPONSORS[key]?.() ?? null
 }
 
 /** Every file the granted table can ask for — the asset test checks each one is on disk. */
 export function grantedFiles(): string[] {
   const out = new Set<string>()
   for (const make of Object.values(MAKERS)) {
-    for (const year of [1985, 2010]) {
+    for (const year of [1985, 1999, 2010]) {
       const mark = make(year)
       if (mark) out.add(mark.src)
     }
@@ -83,6 +99,8 @@ export function grantedFiles(): string[] {
     const mark = make()
     if (mark) out.add(mark.src)
   }
+  const doubleShirtSponsor = grantedSponsor('כתר', '1999/00', 'home')
+  if (doubleShirtSponsor) out.add(doubleShirtSponsor.src)
   return [...out]
 }
 
@@ -102,8 +120,8 @@ function asAsset(mark: GrantedMark | null, slot: KitPlacement): MarkAsset | null
 export function makerAssetForName(maker: string | null, seasonLabel?: string): MarkAsset | null {
   return asAsset(grantedMaker(maker, seasonLabel), MAKER_SLOT)
 }
-export function sponsorAssetForName(sponsor: string | null): MarkAsset | null {
-  return asAsset(grantedSponsor(sponsor), SPONSOR_SLOT)
+export function sponsorAssetForName(sponsor: string | null, seasonLabel?: string, variant?: KitVariant, base?: string): MarkAsset | null {
+  return asAsset(grantedSponsor(sponsor, seasonLabel, variant, base), SPONSOR_SLOT)
 }
 export function markAsset(kind: MarkKind, value: string | null, seasonLabel?: string): MarkAsset | null {
   return kind === 'maker' ? makerAssetForName(value, seasonLabel) : sponsorAssetForName(value)

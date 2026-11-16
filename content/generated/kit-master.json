@@ -2,12 +2,12 @@
  "schemaVersion": 1,
  "counts": {
   "kits": 35,
-  "playable": 24,
-  "exactPhoto": 12,
-  "candidateOnly": 20,
+  "playable": 27,
+  "exactPhoto": 13,
+  "candidateOnly": 19,
   "noPhoto": 3,
   "conflicts": 3,
-  "photoComplete": 28
+  "photoComplete": 27
  },
  "kits": [
   {
@@ -158,7 +158,7 @@
     "marks": {
      "crest": "print",
      "maker": "alt-set",
-     "sponsor": "lettered"
+     "sponsor": "granted"
     }
    },
    "gate4": {
@@ -325,7 +325,7 @@
     "marks": {
      "crest": "print",
      "maker": "alt-set",
-     "sponsor": "lettered"
+     "sponsor": "granted"
     }
    },
    "gate4": {
@@ -510,7 +510,7 @@
     "marks": {
      "crest": "print",
      "maker": "alt-set",
-     "sponsor": "lettered"
+     "sponsor": "granted"
     }
    },
    "gate4": {
@@ -686,7 +686,7 @@
     "marks": {
      "crest": "print",
      "maker": "alt-set",
-     "sponsor": "lettered"
+     "sponsor": "granted"
     }
    },
    "gate4": {
@@ -855,7 +855,7 @@
     "marks": {
      "crest": "print",
      "maker": "granted",
-     "sponsor": "lettered"
+     "sponsor": "granted"
     }
    },
    "gate4": {
@@ -1005,7 +1005,7 @@
     "marks": {
      "crest": "print",
      "maker": "granted",
-     "sponsor": "lettered"
+     "sponsor": "granted"
     }
    },
    "gate4": {
@@ -1845,7 +1845,7 @@
     "marks": {
      "crest": "print",
      "maker": "alt-set",
-     "sponsor": "lettered"
+     "sponsor": "granted"
     }
    },
    "gate4": {
@@ -1994,7 +1994,7 @@
     "marks": {
      "crest": "print",
      "maker": "alt-set",
-     "sponsor": "lettered"
+     "sponsor": "granted"
     }
    },
    "gate4": {
@@ -2344,7 +2344,7 @@
     "marks": {
      "crest": "print",
      "maker": "granted",
-     "sponsor": "lettered"
+     "sponsor": "granted"
     }
    },
    "gate4": {
@@ -2511,7 +2511,7 @@
     "marks": {
      "crest": "print",
      "maker": "granted",
-     "sponsor": "lettered"
+     "sponsor": "granted"
     }
    },
    "gate4": {
@@ -2948,8 +2948,8 @@
     },
     "sponsor": {
      "value": {
-      "name": "במחיר",
-      "slug": null
+      "name": "בוני התיכון",
+      "slug": "בוני-התיכון"
      },
      "source": "kit-designs",
      "confidence": 3,
@@ -3025,7 +3025,7 @@
     "marks": {
      "crest": "print",
      "maker": "alt-set",
-     "sponsor": "lettered"
+     "sponsor": "granted"
     }
    },
    "gate4": {
@@ -3051,7 +3051,7 @@
    "sourceTitle": "colours-of-football — צילומי מסך שסיפק צוות The Worker, 1.9.2026",
    "sourceUrl": null,
    "confidence": 3,
-   "noteHe": "חולצה שמנת של KAPPA חלקה, צווארון עגול באדום וספונסר במחיר."
+   "noteHe": "חולצה שמנת של KAPPA חלקה, צווארון עגול באדום וספונסר בוני התיכון."
   },
   {
    "id": "kit-2011-12-home",
@@ -3125,8 +3125,8 @@
     },
     "sponsor": {
      "value": {
-      "name": "במחיר",
-      "slug": null
+      "name": "בוני התיכון",
+      "slug": "בוני-התיכון"
      },
      "source": "kit-designs",
      "confidence": 3,
@@ -3204,7 +3204,7 @@
     "marks": {
      "crest": "print",
      "maker": "alt-set",
-     "sponsor": "lettered"
+     "sponsor": "granted"
     }
    },
    "gate4": {
@@ -3230,7 +3230,7 @@
    "sourceTitle": "colours-of-football — צילומי מסך שסיפק צוות The Worker, 1.9.2026",
    "sourceUrl": null,
    "confidence": 3,
-   "noteHe": "חולצה אדומה של KAPPA עם כתפיים בשמנת, צווארון עגול בשמנת, שרוולי רגלן בשמנת וספונסר במחיר."
+   "noteHe": "חולצה אדומה של KAPPA עם כתפיים בשמנת, צווארון עגול בשמנת, שרוולי רגלן בשמנת וספונסר בוני התיכון."
   },
   {
    "id": "kit-2009-10-home",
@@ -3549,7 +3549,7 @@
     "marks": {
      "crest": "print",
      "maker": "granted",
-     "sponsor": "lettered"
+     "sponsor": "granted"
     }
    },
    "gate4": {
@@ -3726,7 +3726,7 @@
     "marks": {
      "crest": "print",
      "maker": "granted",
-     "sponsor": "lettered"
+     "sponsor": "granted"
     }
    },
    "gate4": {
@@ -4673,8 +4673,8 @@
     },
     "collar": {
      "value": {
-      "id": "v-neck",
-      "ink": "ink"
+      "id": "polo",
+      "ink": "red"
      },
      "source": "kit-designs",
      "confidence": 3,
@@ -4714,8 +4714,8 @@
     },
     "sponsor": {
      "value": {
-      "name": "CAL",
-      "slug": null
+      "name": "כתר",
+      "slug": "כתר"
      },
      "source": "kit-designs",
      "confidence": 3,
@@ -4738,7 +4738,15 @@
     }
    },
    "evidence": {
-    "exactPhoto": null,
+    "exactPhoto": {
+     "file": "vp-2000-home.webp",
+     "src": "/kits/vp-2000-home.webp",
+     "source": "vikipoel",
+     "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
+     "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+     "creditHe": "התצלומים באדיבות ישי צבי",
+     "yearRaw": null
+    },
     "candidatePhotos": [
      {
       "file": "vp-1999-home.webp",
@@ -4766,15 +4774,6 @@
       "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
       "creditHe": "התצלומים באדיבות ישי צבי",
       "yearRaw": 1999
-     },
-     {
-      "file": "vp-2000-home.webp",
-      "src": "/kits/vp-2000-home.webp",
-      "source": "vikipoel",
-      "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
-      "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
-      "creditHe": "התצלומים באדיבות ישי צבי",
-      "yearRaw": 2000
      }
     ],
     "assemblyMaster": null,
@@ -4793,29 +4792,31 @@
     "vector": true,
     "photo": {
      "template": "retro-90s-boxy",
-     "available": true,
-     "complete": true,
-     "missing": []
+     "available": false,
+     "complete": false,
+     "missing": [
+      "historical-cut"
+     ]
     },
     "marks": {
      "crest": "print",
-     "maker": "alt-set",
-     "sponsor": "lettered"
+     "maker": "granted",
+     "sponsor": "granted"
     }
    },
    "gate4": {
-    "playable": false,
-    "reason": "unresolved-source-dispute"
+    "playable": true,
+    "reason": null
    },
    "review": {
     "conflictType": "source-dispute",
-    "resolved": false,
-    "noteHe": "הרשומה: CAL. ויקיפועל מתעדת כתר כספונסר ראשי 1998–2000 (אופיס דיפו משני), ותמונות מראות כתר. הפסים השחורים נתמכים ויזואלית.",
+    "resolved": true,
+    "noteHe": "הדפס כתר בעברית נראה בתצלום של חולצת הבית עם הפסים השחורים ובתצלום שסיפק מאור. זיהוי זה מכריע את המחלוקת עם הרישום הקודם CAL עבור גרסה זו.",
     "sources": [
      "https://wiki.red-fans.com/index.php?title=%D7%A1%D7%A4%D7%95%D7%A0%D7%A1%D7%A8",
      "https://www.footballkitarchive.com/hapoel-tel-aviv-1999-00-home-kit-24618/"
     ],
-    "reviewedOn": "2026-09-29"
+    "reviewedOn": "2026-11-16"
    },
    "gate5": {
     "dnaFields": [
@@ -4832,10 +4833,10 @@
     ]
    },
    "source": "kit-designs",
-   "sourceTitle": "צילומי חולצות מקוריות שסיפק צוות The Worker, 1.9.2026",
-   "sourceUrl": null,
+   "sourceTitle": "תצלום החולצה שסיפק מאור והצלבה עם ויקיפועל ו־Football Kit Archive",
+   "sourceUrl": "https://www.footballkitarchive.com/hapoel-tel-aviv-1999-00-home-kit-24618/",
    "confidence": 3,
-   "noteHe": "חולצה אדומה של NIKE עם שני פסים אנכיים בשחור בחזית, צווארון וי בשחור, חפתים בשחור וספונסר CAL."
+   "noteHe": "חולצה אדומה של NIKE עם שני פסים אנכיים בשחור בחזית, צווארון פולו, חפתים בשחור וספונסר כתר."
   },
   {
    "id": "kit-1997-98-home",
@@ -5203,14 +5204,14 @@
      "conflict": null
     },
     "secondary": {
-     "value": "cream",
+     "value": "red",
      "source": "kit-designs",
      "confidence": 3,
      "alternates": [],
      "conflict": null
     },
     "pattern": {
-     "value": "sash",
+     "value": "solid",
      "source": "kit-designs",
      "confidence": 3,
      "alternates": [],
@@ -5219,7 +5220,7 @@
     "collar": {
      "value": {
       "id": "polo",
-      "ink": "cream"
+      "ink": "red"
      },
      "source": "kit-designs",
      "confidence": 3,
@@ -5327,22 +5328,23 @@
     "marks": {
      "crest": "print",
      "maker": "granted",
-     "sponsor": "lettered"
+     "sponsor": "granted"
     }
    },
    "gate4": {
-    "playable": false,
-    "reason": "unresolved-source-dispute"
+    "playable": true,
+    "reason": null
    },
    "review": {
     "conflictType": "source-dispute",
-    "resolved": false,
-    "noteHe": "SUZUKI מופיע בארכיון החולצות (Football Kit Archive), אך ויקיפועל מתארת אותו כספונסר משני/גב ולא בהכרח חזית. חסר מיקום הספונסר.",
+    "resolved": true,
+    "noteHe": "בתצלום החזית בוויקיפועל מופיע סוזוקי בעברית במרכז החזה.",
     "sources": [
      "https://wiki.red-fans.com/index.php?title=%D7%A1%D7%A4%D7%95%D7%A0%D7%A1%D7%A8",
-     "https://www.footballkitarchive.com/hapoel-tel-aviv-1992-93-home-kit/"
+     "https://www.footballkitarchive.com/hapoel-tel-aviv-1992-93-home-kit/",
+     "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)"
     ],
-    "reviewedOn": "2026-09-29"
+    "reviewedOn": "2026-11-16"
    },
    "gate5": {
     "dnaFields": [
@@ -5362,7 +5364,7 @@
    "sourceTitle": "Football Kit Archive — 1992/93 home kit",
    "sourceUrl": "https://www.footballkitarchive.com/hapoel-tel-aviv-1992-93-home-kit/",
    "confidence": 3,
-   "noteHe": "חולצה אדומה של PUMA עם אלכסון רחב (סאש) בשמנת, צווארון פולו בשמנת וספונסר SUZUKI."
+   "noteHe": "חולצה אדומה של PUMA חלקה, צווארון פולו וספונסר SUZUKI."
   },
   {
    "id": "kit-1988-89-home",
@@ -5405,7 +5407,7 @@
     },
     "sleeves": {
      "value": {
-      "id": "plain",
+      "id": "shoulder-stripe",
       "ink": "red"
      },
      "source": "kit-designs",
@@ -5436,7 +5438,7 @@
     },
     "sponsor": {
      "value": {
-      "name": "VISA",
+      "name": "קלאב הוטלס",
       "slug": null
      },
      "source": "kit-designs",
@@ -5490,17 +5492,18 @@
     }
    },
    "gate4": {
-    "playable": false,
-    "reason": "unresolved-source-dispute"
+    "playable": true,
+    "reason": null
    },
    "review": {
     "conflictType": "source-dispute",
-    "resolved": false,
-    "noteHe": "הרשומה: VISA. ויקיפועל מתעדת Club Hotels ב-1988/89. סתירה ישירה — כנראה הזזת ספונסר בין עונות.",
+    "resolved": true,
+    "noteHe": "תצלום חזית מאותה עונה מציג קלאב הוטלס, בהתאמה לתיעוד הספונסרים של ויקיפועל.",
     "sources": [
-     "https://wiki.red-fans.com/index.php?title=%D7%A1%D7%A4%D7%95%D7%A0%D7%A1%D7%A8"
+     "https://wiki.red-fans.com/index.php?title=%D7%A1%D7%A4%D7%95%D7%A0%D7%A1%D7%A8",
+     "https://www.footballkitarchive.com/hapoel-tel-aviv-1988-89-home-kit-24627/"
     ],
-    "reviewedOn": "2026-09-29"
+    "reviewedOn": "2026-11-16"
    },
    "gate5": {
     "dnaFields": [
@@ -5517,10 +5520,10 @@
     ]
    },
    "source": "kit-designs",
-   "sourceTitle": "צילומי חולצות מקוריות שסיפק צוות The Worker, 1.9.2026",
-   "sourceUrl": null,
+   "sourceTitle": "Football Kit Archive — 1988/89 home kit",
+   "sourceUrl": "https://www.footballkitarchive.com/hapoel-tel-aviv-1988-89-home-kit-24627/",
    "confidence": 3,
-   "noteHe": "חולצה אדומה של adidas עם פסי שיער בשמנת, צווארון עגול בשמנת וספונסר VISA."
+   "noteHe": "חולצה אדומה של adidas עם פסי שיער בשמנת, צווארון עגול בשמנת, פסי כתף באדום וספונסר קלאב הוטלס."
   },
   {
    "id": "kit-1985-86-home",
