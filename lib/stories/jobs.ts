@@ -297,7 +297,10 @@ export const LEASE_MS=6.5*3600_000
 /** The job the worker should take next: the oldest queued one, or a running one whose lease ran out (the worker died). */
 export function nextForWorker(jobs:Job[],now=new Date()):Job|null{
  const t=now.getTime()
- return jobs.filter(j=>(j.state==='queued'&&!(j.notBefore&&Date.parse(j.notBefore)>t))||(j.state==='running'&&j.lease!==null&&Date.parse(j.lease.until)<t)).sort((a,b)=>a.createdAt.localeCompare(b.createdAt))[0]??null
+ // A job that came back from a wait (its `notBefore`, e.g. Google's free writer was busy) queues behind the jobs that
+ // were already waiting when it came back: the oldest job can no longer hold the line forever by failing on every run.
+ const turn=(j:Job)=>j.notBefore&&j.notBefore>j.createdAt?j.notBefore:j.createdAt
+ return jobs.filter(j=>(j.state==='queued'&&!(j.notBefore&&Date.parse(j.notBefore)>t))||(j.state==='running'&&j.lease!==null&&Date.parse(j.lease.until)<t)).sort((a,b)=>turn(a).localeCompare(turn(b)))[0]??null
 }
 export function claim(job:Job,worker:string,now=new Date()):Job{
  const j=structuredClone(job),at=now.toISOString()

@@ -66,6 +66,11 @@ describe('Football Stories — the worker contract',()=>{
   expect(nextForWorker([live],now)).toBeNull()
   expect(nextForWorker([live,dead,a],now)?.id).toBe('job-0000004')
   expect(nextForWorker([job({state:'paused'}),job({state:'ready'})],now)).toBeNull()
+  // a job back from a wait takes its turn behind the jobs queued while it waited (no head-of-line starvation)
+  const waited=job({id:'job-0000005',notBefore:'2026-11-02T08:45:00Z'},'2026-11-01T20:00:00Z')
+  const fresh=job({id:'job-0000006'},'2026-11-02T08:00:00Z')
+  expect(nextForWorker([waited,fresh],now)?.id).toBe('job-0000006')
+  expect(nextForWorker([waited],now)?.id).toBe('job-0000005')
  })
  it('refuses progress and results from a worker that does not hold the lease',()=>{
   const c=claim(job(),'w1',now)
