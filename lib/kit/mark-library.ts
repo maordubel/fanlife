@@ -2,6 +2,7 @@ import type { KitPlacement } from './assembly'
 import { photoMarkFile } from './photo'
 import { sponsorMark } from '@/lib/clubs/marks'
 import type { KitVariant } from './spec'
+import {WORKER_ROUTE_CLUB} from '@/lib/goals-auto/types'
 
 /**
  * הסימנים שאושרו — the real maker and sponsor logos, for gates 4 and 5 only.
@@ -77,7 +78,7 @@ export function grantedSponsor(sponsor: string | null, seasonLabel?: string, var
   if (!sponsor) return null
   const key = normalized(sponsor)
   if (seasonLabel && variant) {
-    const mark = sponsorMark(sponsor, { club: 'hapoel-tel-aviv', season: seasonLabel, variant, base })
+    const mark = sponsorMark(sponsor, { club: WORKER_ROUTE_CLUB, season: seasonLabel, variant, base })
     if (mark?.kind === 'svg' && mark.src && mark.print) {
       const [, , width, height] = mark.viewBox.split(' ').map(Number)
       return { src: mark.src, label: sponsor, aspect: width! / height!, print: mark.print }

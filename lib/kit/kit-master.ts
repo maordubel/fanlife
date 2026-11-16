@@ -5,6 +5,7 @@ import masterFile from '../../content/generated/kit-master.json'
 
 import type { KitField, KitMaster, KitMasterRecord } from './kit-master-build'
 import { DEFAULT_SPEC, type KitSpec } from './spec'
+import {WORKER_ROUTE_CLUB} from '@/lib/goals-auto/types'
 
 /**
  * The Kit Master, read. Server-only, because a record is the ANSWER to a Gate 4 puzzle: the
@@ -47,7 +48,7 @@ export function accepted<T>(field: KitField<T>): T[] {
 /** The record as the engine draws it. */
 export function specOf(kit: KitMasterRecord): KitSpec {
   const f = kit.fields
-  const sponsorBox = measuredSponsor(kitFrontOf({id:`hapoel-tel-aviv:kit-${kit.id}`}))
+  const sponsorBox = measuredSponsor(kitFrontOf({id:`${WORKER_ROUTE_CLUB}:kit-${kit.id}`}))
   return {
     ...DEFAULT_SPEC,
     seasonLabel: kit.seasonLabel,

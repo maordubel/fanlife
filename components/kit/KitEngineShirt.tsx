@@ -11,7 +11,7 @@ import {
   type RenderBox,
 } from '@/lib/kit/engine'
 import type { KitBodyTemplate } from '@/lib/kit/body-templates'
-import { isDoubleHomeCut } from '@/lib/kit/hapoel-double'
+import { isDoubleHomeCut } from '@/lib/kit/double-home'
 import type { CollarId, KitSpec, NamesetId, PatternId, SleeveId } from '@/lib/kit/spec'
 
 /**
@@ -55,7 +55,7 @@ export function KitEngineShirt({
   if (isDoubleHomeCut(spec)) {
     const { maker, sponsor, crest } = plan.marks
     const makerSrc = !mini && maker?.kind === 'image' && spec.makerHe?.toLowerCase() === 'nike' ? maker.src : undefined
-    const sponsorSrc = !mini && sponsor?.kind === 'image' && spec.sponsorHe === 'כתר' ? sponsor.src : undefined
+    const sponsorSrc = !mini && sponsor?.kind === 'image' ? sponsor.src : undefined
     const ownCrest = spec.crestKey === 'keter-color'
     const top = crop === 'top'
     return (

@@ -26,7 +26,7 @@ import { describeKit } from './describe'
 import { crestMark } from './crestMarks'
 import { markFor, type MakerMarkId } from './maker-marks'
 import { grantedMaker, grantedSponsor } from './mark-library'
-import { isDoubleHomeCut } from './hapoel-double'
+import { isDoubleHomeCut } from './double-home'
 import { photoGeometry, photoMissing } from './photo'
 import type { CollarId, KitColour, KitVariant, PatternId, SleeveId } from './spec'
 

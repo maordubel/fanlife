@@ -3,7 +3,7 @@ import { BODY_TEMPLATES, bodyTemplateForSeason, type KitBodyTemplate, type KitBo
 import { crestArt, seasonStartYear } from './crestMarks'
 import { markFor, type MakerMarkId } from './maker-marks'
 import { grantedMaker, grantedSponsor, makerAssetForName, sponsorAssetForName } from './mark-library'
-import { isDoubleHomeCut } from './hapoel-double'
+import { isDoubleHomeCut } from './double-home'
 import { photoGeometry, photoMissing, type PhotoBox, type PhotoGeometry } from './photo'
 import { COLOUR_VAR, type KitSpec } from './spec'
 import { placeSponsor } from '@/lib/clubs/kit-model'

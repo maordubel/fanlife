@@ -44,7 +44,7 @@ export function KitCloth({spec,view='front',missing=[],texture=true,title,classN
  const sponsorSlot=sponsorBox?placeSponsor(sponsorBox,frame):undefined
  if(!back&&spec.base&&spec.pattern==='twin-stripe'&&sponsorContext?.club==='hapoel-tel-aviv'&&sponsorContext.season==='1999/00'&&sponsorContext.variant==='home'){
   const makerSrc=!gone.has('maker')&&spec.maker?.toLowerCase()==='nike'?'/club-kits/marks/nike-swoosh-white.svg':undefined
-  const sponsorSrc=!gone.has('sponsor')&&spec.sponsor?.trim()==='כתר'?sponsorMark(spec.sponsor,sponsorContext)?.src:undefined
+  const sponsorSrc=!gone.has('sponsor')&&spec.sponsor?sponsorMark(spec.sponsor,sponsorContext)?.src:undefined
   return <svg viewBox={DOUBLE_HOME_VIEWBOX} preserveAspectRatio="xMidYMid meet" className={className} role={title?'img':'presentation'} aria-label={title} aria-hidden={title?undefined:true} data-cloth-view={view} data-cloth-base={spec.base} data-cloth-pattern={spec.pattern}>
    <HapoelDoubleShirt base={spec.base==='red'?DOUBLE_HOME_RED:baseFill} stripes={patternInk} texture={texture} crest={!gone.has('crest')} makerSrc={makerSrc} sponsorSrc={sponsorSrc}>
     {!makerSrc&&<g transform="translate(112 73) scale(1.6)">{gone.has('maker')?<Gap slot="maker"/>:<Word slot="maker" text={spec.maker} ink={text} halo={baseFill} size={12} markId={id('maker')}/>}</g>}

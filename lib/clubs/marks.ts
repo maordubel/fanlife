@@ -9,7 +9,9 @@ import type { Variant } from './kit-model'
  */
 export type Mark={viewBox:string;kind:'fill'|'stroke'|'raster'|'svg';d?:string;strokeWidth?:number;/** Image mark under public/, printed through a mask (mono) or in its original colours. */src?:string;print?:'mono'|'colour';/** the mark stands in for the sponsor's lettering */replace?:boolean}
 type Table=Record<string,Mark>
-const key=(s:string)=>s.toLowerCase().trim()
+/** the club pages print sponsors in English (lib/clubs/english.ts); the artwork is filed under the archive's spelling */
+const ENGLISH:Record<string,string>={keter:'כתר',hachshara:'הכשרה','bonei hatichon':'בוני התיכון','club hotels':'קלאב הוטלס'}
+const key=(s:string)=>{const k=s.toLowerCase().trim();return ENGLISH[k]??k}
 export const makerMark=(name:string|null|undefined):Mark|null=>name?((marks.makers as unknown as Table)[key(name)]??null):null
 export type SponsorContext = { club: string; season: string; variant: Variant; base?: string | null }
 type SponsorVector = Pick<Mark, 'viewBox' | 'print'> & {
