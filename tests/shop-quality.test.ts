@@ -79,3 +79,10 @@ describe('mock-up families with numbered takes inside the label (16.11.2026)',()
   expect(f.at(-1)).toBe('person-3-left-sleeve');expect(f.indexOf('person-3-front')).toBeGreaterThan(f.indexOf('person-2'))
  })
 })
+describe('a product made in Printify is never re-pressed (16.11.2026)',()=>{
+ it('recognises the imported product by its Printify-only art',async()=>{
+  const {madeInPrintify}=await import('@/lib/shop/types')
+  expect(madeInPrintify({art:{upload:{id:'printify',name:'x',preview:'',width:0,height:0}}} as never)).toBe(true)
+  expect(madeInPrintify({art:{library:{id:'a',name:'b'}}} as never)).toBe(false)
+ })
+})
