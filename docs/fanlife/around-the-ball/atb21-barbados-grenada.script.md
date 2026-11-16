@@ -1,10 +1,11 @@
 # AROUND THE BALL · 21 · THE OWN GOAL THAT WON — script (draft 1, 10.11.2026)
 
-Tone: **LAUGH**. Status: **script ready**. Narrator: Kokoro George, Take B. Production: DOCU film + 3 Shorts + Reel + animated Short (see README).
+Tone: **LAUGH**. Status: **film made 16.11.2026** (DOCU, about nine minutes). Narrator: Kokoro George, Take B. Production: DOCU film + 3 Shorts + Reel + animated Short (see README).
 
 ## What the fact-check changed
 
 - Checked: Shell Caribbean Cup qualifying, 27 January 1994. A golden goal in extra time counted as two. Barbados needed to win by two; at 2–1 they scored an own goal to make it 2–2, then defended both ends while Grenada tried to score at either; Barbados won in extra time.
+- Corrected 16.11.2026 (b08): the double golden goal was used five times in the 1994 qualifiers, then scrapped — not "never used again".
 
 ## Dossier
 
@@ -25,7 +26,7 @@ Tone: **LAUGH**. Status: **script ready**. Narrator: Kokoro George, Take B. Prod
 
 ## Sources
 
-1. Barbados v Grenada, 27.1.1994 — Wikipedia article and RSSSF match record — slot, opened before recording (both publishers needed: the rule and the own goal)
+1. Barbados v Grenada, 27.1.1994 — filled 16.11.2026: Wikipedia (Barbados 4–2 Grenada; 1994 Caribbean Cup), These Football Times (24.7.2019), Infobae (20.3.2022). The long film's full ledger, with the golden-goal history and the 1998 Tiger Cup mirror, is `atb21-barbados-grenada.FACTS.md`; the film is `scripts/football-stories/studio/docu/films/atb_barbados_grenada_1994.py`.
 
 A slot is filled before recording; a beat that rests only on a slot is cut if the slot stays empty.
 

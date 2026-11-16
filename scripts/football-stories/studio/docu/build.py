@@ -363,6 +363,8 @@ class Film:
         a = str(s.get('frm', ''))
         a = a.rjust(len(b))[-len(b):] if a else ' ' * len(b)
         at = s.get('at', 0.0)
+        if d <= at:   # a board whose `d` does not reach past its `at` would never leave the frame (16.11.2026): `d` is then its own hold
+            d = at + d
         seq = [(t + max(at + 0.35, s.get('turn_at') or 0), a, b)]   # the first turn: on the goal word, or as it lands
         cur = b
         for k, nxt in s.get('turns') or []:
