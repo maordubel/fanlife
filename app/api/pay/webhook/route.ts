@@ -30,7 +30,7 @@ export async function POST(r:Request){
      if(d.status==='fulfilled'&&to&&t&&mailOpen()){
       const rec=o.recipe as {s?:string;sig?:string},preview=rec.s&&rec.sig?`${SITE_URL}/api/shop/personal/art?s=${rec.s}&sig=${rec.sig}`:null
       const price=new Intl.NumberFormat('en',{style:'currency',currency:o.currency.toUpperCase()}).format(o.amount_cents/100)
-      try{const mid=await sendMail(to,orderMail({kind:o.kind,id,price,link:`${SITE_URL}/order/${id}?t=${t}`,preview,name:CATALOG[o.kind].name}),`mail-${id}`);await moveOrder(id,['fulfilled'],{result:{...(d.result??{}),mail:mid}})}
+      try{const mid=await sendMail(to,orderMail({kind:o.kind,id,price,link:`${SITE_URL}/order/${id}?t=${t}`,preview,name:CATALOG[o.kind].name,who:obj.customer_details?.name??null,to}),`mail-${id}`);await moveOrder(id,['fulfilled'],{result:{...(d.result??{}),mail:mid}})}
       catch(e){await moveOrder(id,['fulfilled'],{error:`mail: ${String((e as Error).message).slice(0,280)}`})}}}
     catch(e){await moveOrder(id,['paid'],{error:String((e as Error).message).slice(0,300)})}}
   }

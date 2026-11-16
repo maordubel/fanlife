@@ -22,7 +22,7 @@ async function call<T>(path:string,body:Record<string,unknown>,idem?:string):Pro
  if(!r.ok)throw new Error(`Stripe: ${j.error?.message||r.status}`)
  return j
 }
-export type Session={id:string;url:string|null;payment_status?:string;status?:string;payment_intent?:string|null;customer_details?:{email?:string|null}|null;metadata?:Record<string,string>}
+export type Session={id:string;url:string|null;payment_status?:string;status?:string;payment_intent?:string|null;customer_details?:{email?:string|null;name?:string|null}|null;metadata?:Record<string,string>}
 /** one Checkout Session for one order: the price written in, our order id in metadata, back to the order page after */
 export const checkout=(o:{order:string;token:string;name:string;blurb:string;cents:number;currency:string;success:string;cancel:string;email?:string})=>call<Session>('checkout/sessions',{
  mode:'payment',success_url:o.success,cancel_url:o.cancel,client_reference_id:o.order,metadata:{order:o.order,t:o.token},payment_intent_data:{metadata:{order:o.order}},

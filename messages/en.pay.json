@@ -17,26 +17,78 @@
   "mail": {
     "from": "FAN LIFE <fanlife@dubelteam.com>",
     "replyTo": "fanlife@dubelteam.com",
-    "preheader": "Your {name} is ready — the download is inside.",
+    "preheader": "Your order is confirmed and your {name} is ready to download.",
+    "online": "Open your order page",
     "kicker": "Football. Forever.",
+    "dateline": "Order confirmed · No. {id} · {date}",
+    "stamp": "Paid · Ready",
     "hello": "Thank you{who}.",
-    "line": "It was made for you alone, from FAN LIFE's archive of the game. Keep this email: the button below is your way back to it.",
-    "order": "Order {id} · {price}",
-    "help": "Something not right? Reply to this email and a person will put it right.",
-    "small": "You are getting this email because you bought it on fanlife.dubelteam.com. We send nothing else unless you ask.",
+    "caption": "Made for you alone · {name}",
+    "keep": "Keep this email. The button is your private way back to your order, any time.",
+    "receipt": {
+      "title": "Your receipt",
+      "item": "Item",
+      "order": "Order",
+      "date": "Date",
+      "paid": "Paid",
+      "to": "Sent to",
+      "small": "Paid securely with Stripe. The charge appears on your statement as DUBEL TEAM."
+    },
+    "moreTitle": "More from FAN LIFE",
+    "moreLine": "The archive of the game, the club you love and the people who carried it to you.",
+    "doors": [
+      {
+        "title": "Make another print",
+        "line": "Your eleven, a famous night, a shirt that meant something. Made for you in a minute.",
+        "cta": "Make a print"
+      },
+      {
+        "title": "The FAN LIFE shop",
+        "line": "Shirts, posters and keepsakes in the colours of your club, printed to order.",
+        "cta": "Visit the shop"
+      },
+      {
+        "title": "Football Stories",
+        "line": "The great nights and the people behind them, told in films on our YouTube channel.",
+        "cta": "Watch the films"
+      }
+    ],
+    "helpTitle": "A person reads every reply.",
+    "help": "Anything not right with your order? Reply to this email, or write to",
+    "small": "You are receiving this email because you placed an order on fanlife.dubelteam.com. It is the only email this order sends.",
+    "foot": {
+      "home": "FAN LIFE",
+      "shop": "Shop",
+      "privacy": "Privacy",
+      "terms": "Terms"
+    },
     "credit": "Made by Dubel Team",
     "kinds": {
       "print-file": {
         "subject": "Your FAN LIFE print is ready",
         "title": "Your print,\nready to hang.",
+        "line": "It was made for you alone, from the FAN LIFE archive of the game. The full-size file is waiting behind the button below.",
         "button": "Download your print",
-        "note": "Full size, 3600 × 4800 px — sharp at any print shop up to A3."
+        "note": "Full size: 3600 × 4800 px, a sharp print up to A3.",
+        "tipsTitle": "Print it right",
+        "tips": [
+          "Ask the print shop for 30 × 40 cm or A3: the file is made for that shape.",
+          "Choose matte or satin paper of 200 g or more; the inks look their best on it.",
+          "Print at 100% with no cropping, so the frame stays whole."
+        ]
       },
       "film": {
         "subject": "Your FAN LIFE film is ready",
         "title": "Your film\nis ready.",
+        "line": "It was made for you in the FAN LIFE studio, with your own dedication. Watch it and download it behind the button below.",
         "button": "Watch and download",
-        "note": "Made in the FAN LIFE studio, with your own dedication."
+        "note": "Made in the FAN LIFE studio, with your own dedication.",
+        "tipsTitle": "Make the most of it",
+        "tips": [
+          "Watch it once on a big screen: it was cut for one.",
+          "Download it, so it stays with you whatever happens.",
+          "Send the film to the person it was made for."
+        ]
       }
     }
   },
