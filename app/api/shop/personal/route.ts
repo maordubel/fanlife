@@ -69,6 +69,8 @@ async function handle(r:Request):Promise<Response>{
  const own=/^https:\/\/(?![^/]*printify\.me)[^/]+/i.exec(doc.settings.popupUrl||'')?.[0]??null,onOwn=(u:string)=>own?u.replace(/^https:\/\/[^/]+\.printify\.me/i,own):u
  const have=doc.products.find(p=>p.id===id)
  if(have?.status==='live'&&have.printify?.url)return json({url:onOwn(have.printify.url),image:have.printify.images[0]??proof,proof})
+ // the same print already at the printer: the supporter's page asks again until it is ready (never a second press)
+ if((have?.status==='building'||have?.status==='draft')&&Date.now()-Date.parse(have.updatedAt)<6*60e3)return json({pending:true,proof},202)
  // a few a day for each visitor
  const ip=(r.headers.get('x-forwarded-for')||'').split(',')[0]!.trim()||'?',today=d,cnt=made.get(ip)
  if(cnt&&cnt.day===today&&cnt.n>=DAY_LIMIT)return json({error:'That is plenty of prints for today — come back tomorrow.'},429)
