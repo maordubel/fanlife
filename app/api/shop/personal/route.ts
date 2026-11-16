@@ -32,7 +32,7 @@ const DAY_LIMIT=6
  * Takes the eleven by player id (never by free text: the names printed are the archive's own), the formation, the captain,
  * the 12th man and, if he wants, the manager's name (his own, checked). Draws the 3600×4800 print, sends it to Printify,
  * makes the product on the quality-first rules (sharp sizes only, the store's own domain) and answers with its checkout link.
- * The same XI asked twice is the same product. Personal prints are never listed on /shop and are cleared after three days
+ * The same XI asked twice is the same product. Personal prints are never listed on /shop and are cleared after 24 hours
  * unless sold (the hourly check-up).
  */
 export async function POST(r:Request){

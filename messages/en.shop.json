@@ -225,7 +225,7 @@
   "managerHint": "Your name on it: “{name}’s All-Time XI”.",
   "make": "Make my print",
   "making": "Printing your proof… about 20 seconds",
-  "ready": "Your print is ready.",
+  "ready": "Your print is ready. Its checkout stays open for 24 hours.",
   "open": "Open the checkout",
   "back": "Back to my XI",
   "proof": "Proof · the printed piece is 3600 × 4800",
