@@ -63,7 +63,18 @@ BURST = 1.9         # a release or a joy at full intensity: a burst of quick cut
 HELD = 3.9          # the held breath before a turn: the fewest cuts MAX_STILL allows
 
 
+# The house editor cutting this film (studio/house.editor_profile: the Cutter, the Storyteller or the Montage), set by
+# docu/plan around the cut. His tempo scales a look's length inside [MIN_SUB, MAX_STILL]; his card factor only ever
+# shortens a card (MAX_CARD stays the ceiling). None: the rhythm of this file alone.
+PROFILE: dict | None = None
+
+
 def pace(meta: dict) -> float:
+    from ..house import paced
+    return paced(_pace(meta), meta.get('emotion'), PROFILE, MIN_SUB + 0.1, MAX_STILL)
+
+
+def _pace(meta: dict) -> float:
     """The target length of a look in this beat: short as tension rises (TARGET down to TIGHT at full intensity), ONE
     long held look for the breath before the turn, a burst of quick cuts at the release, a little longer for grief,
     wonder and pride. A beat with no emotion on the sheet keeps TARGET."""
@@ -172,7 +183,7 @@ def cut(beats: list[dict], grid: list[float] | None = None, related=None, backdr
                 if not opaque(dev):
                     continue
                 at, hold = span(dev, d)
-                limit = WORD_HOLD if dev['kind'] == 'word' else MAX_CARD * (0.6 if tight else 1)
+                limit = WORD_HOLD if dev['kind'] == 'word' else MAX_CARD * (0.6 if tight else 1) * min(1.0, (PROFILE or {}).get('card', 1.0))
                 rest = d - (at + limit)
                 if hold <= limit or rest < MIN_SUB:
                     continue

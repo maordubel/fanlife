@@ -5,7 +5,14 @@ import { kitByLegacyKey, kitRecords, playableKits } from '@/lib/kit/kit-master'
 
 /** Deep QA 29.9.2026 — the disputed shirts are held out of gate 4; the description is generated. */
 describe('gate 4 — open historical disputes block the shirt', () => {
-  const held = ['1984/85|home', '1988/89|home', '1992/93|home', '1997/98|home', '1999/00|home', '2002/03|home', '2005/06|home', '2008/09|home']
+  const held = ['1984/85|home', '1997/98|home', '2002/03|home', '2005/06|home', '2008/09|home']
+  // settled 16.11.2026 from front photographs (Club Hotels 1988/89, Suzuki 1992/93, Keter 1999/00): resolved and dealt again
+  it.each(['1988/89|home', '1992/93|home', '1999/00|home'])('%s is resolved with its sources and dealt', (key) => {
+    const kit = kitByLegacyKey(key)!
+    expect(kit.review?.resolved).toBe(true)
+    expect(kit.review!.sources.length).toBeGreaterThan(0)
+    expect(kit.gate4.playable).toBe(true)
+  })
   it.each(held)('%s is not dealt while its dispute is open', (key) => {
     const kit = kitByLegacyKey(key)!
     expect(kit.review?.resolved).toBe(false)

@@ -38,6 +38,10 @@ describe('מאסטר השאלות — the file is current', () => {
 
 /** legacy keys whose old answer lost to Maor's decision of 1.10.2026 (fact-conflicts.json) */
 const SETTLED_ON_1_10_2026 = [
+  // settled 16.11.2026 from front photographs: 1988/89 Club Hotels (not VISA), 1999/00 Keter (not CAL), 2011/12 Bonei HaTichon
+  'kit-sponsor-season:1988/89',
+  'kit-sponsor-season:1999/00',
+  'kit-sponsor-season:2011/12',
   'אייל ציתיאת', // the spelling is אייל צטיאט
   'shirt:18:2021/22', // Davida wore 7
   'which-number:ויאם עמאשה:2016/17', // 16 was Sagiv Yehezkel

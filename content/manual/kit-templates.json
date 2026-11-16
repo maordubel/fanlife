@@ -278,6 +278,18 @@
       "measuredOn": "2026-09-23"
     },
     {
+      "file": "marks/sponsor-ibi.svg",
+      "role": "granted-mark",
+      "bytes": 2398,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "svg-colour-table",
+      "treatment": [
+        "source-vector"
+      ],
+      "measuredOn": "2026-11-15"
+    },
+    {
       "file": "marks/sponsor-fujitsu.webp",
       "role": "granted-mark",
       "bytes": 20876,

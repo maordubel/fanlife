@@ -56,14 +56,25 @@ describe('public/kits — nothing but the photographs is exempt', () => {
   it('found zero yellow in every one of them, on the bytes that ship', () => {
     for (const row of ledger.records) {
       expect(row.yellowPx, row.file).toBe(0)
-      expect(statSync(join(KITS, row.file)).size, `${row.file}: rebuild with npm run kits:templates`).toBe(row.bytes)
+      const path = join(KITS, row.file)
+      const bytes = path.endsWith('.svg')
+        ? Buffer.byteLength(readFileSync(path, 'utf8').replace(/\r\n/g, '\n'))
+        : statSync(path).size
+      expect(bytes, `${row.file}: rebuild with npm run kits:templates`).toBe(row.bytes)
       expect(row.method, row.file).toBe(row.file.endsWith('.svg') ? 'svg-colour-table' : 'decoded-rgba')
     }
   })
 
-  it('ships the photo templates and marks as WebP, never as a layered PNG', () => {
-    for (const file of others.filter((f) => f.startsWith('templates/') || f.startsWith('marks/'))) {
+  it('ships photo templates as WebP and marks as WebP or standalone vectors', () => {
+    for (const file of others.filter((f) => f.startsWith('templates/'))) {
       expect(file).toMatch(/\.webp$/)
+    }
+    for (const file of others.filter((f) => f.startsWith('marks/'))) {
+      expect(file).toMatch(/\.(webp|svg)$/)
+      if (file.endsWith('.svg')) {
+        const svg = readFileSync(join(KITS, file), 'utf8')
+        expect(svg, file).not.toMatch(/<(?:image|text|foreignObject|script)\b/i)
+      }
     }
     expect(others.filter((file) => file.includes('knowledge-v1'))).toEqual([])
   })

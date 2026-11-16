@@ -163,7 +163,7 @@ export function KitBuilder(props:KitBuilderProps){
    <div className={css.cert} data-testid="kb-certificate">
     <header className={`wk-panel wk-lift wk-sky ${css.certHead}`}><p className={css.kicker}>{clubName} · {say(`kb.game.${game}`)}</p><h2>{say('kb.cert.title')}</h2><p className={`wk-burst ${css.certScore}`}><b className="wk-num">{total}</b><span>{say('kb.cert.pts')}</span></p></header>
     <ul className={css.certRows}>{verdicts.map(v=><li key={v.index}>
-     <span className={css.certShirt}><KitCloth spec={v.answer} texture={false} monogram={monogram} crestSrc={crestFor(club)} title={`${v.seasonLabel} ${say(`kb.variant.${v.variant}`)}`}/></span>
+     <span className={css.certShirt}>{v.referencePhoto?<img src={v.referencePhoto} alt={`${v.seasonLabel} ${say(`kb.variant.${v.variant}`)}`} width={52} height={50} loading="lazy"/>:<KitCloth spec={v.answer} sponsorContext={{club,season:v.seasonLabel,variant:v.variant}} sponsorBox={puzzles[v.index]?.sponsorBox} shirtOutline={puzzles[v.index]?.shirtOutline} texture={false} monogram={monogram} crestSrc={crestFor(club)} title={`${v.seasonLabel} ${say(`kb.variant.${v.variant}`)}`}/>}</span>
      <span className={css.certName}><b><bdi>{v.seasonLabel}</bdi></b><small>{say(`kb.variant.${v.variant}`)} · {say('kb.cert.field',{f:v.fieldPoints})}{v.dna?` · ${say('kb.cert.dna')}`:''}</small></span>
      <span className={css.certPts} data-perfect={v.perfect}>{v.score}{v.perfect&&<i aria-label={say('kb.cert.perfect')}> ★</i>}</span></li>)}</ul>
     <p className={css.fine}>{say('kb.cert.fine',{perfect,n:verdicts.length,dna:DNA_THRESHOLD})}</p>
@@ -181,6 +181,8 @@ export function KitBuilder(props:KitBuilderProps){
  // ---------------------------------------------------------------- reveal
  if(phase==='reveal'){
   const g=graded[idx]!,v=g.verdict,last=idx+1>=size
+  const referenceTitle=say('kb.reveal.real',{season:v.seasonLabel,variant:variantName}), mineTitle=say('kb.reveal.mine')
+  const sponsorContext={club,season:v.seasonLabel,variant:v.variant}
   return <section className={css.stage} data-testid="kit-builder" data-phase="reveal">
    <div className={css.reveal}>
     <header className={`wk-panel wk-lift ${css.revealHead}`} data-perfect={v.perfect}>
@@ -190,8 +192,8 @@ export function KitBuilder(props:KitBuilderProps){
      <p className={css.fine} data-testid="kb-field-accuracy">{say('kb.reveal.field',{f:v.fieldPoints})}</p>
     </header>
     <div className={css.pair}>
-     <figure><figcaption>{say('kb.reveal.real',{season:v.seasonLabel,variant:variantName})}</figcaption><div className={css.pairShirt}>{g.archiveSvg?<img src={g.archiveSvg} alt={say('kb.reveal.archiveArt')} width={430} height={470}/>:<KitCloth spec={v.answer} monogram={monogram} crestSrc={crestFor(club)} title={say('kb.reveal.real',{season:v.seasonLabel,variant:variantName})}/>}</div></figure>
-     <figure><figcaption>{say('kb.reveal.mine')}</figcaption><div className={css.pairShirt}><KitCloth spec={cloth} monogram={monogram} crestSrc={crestFor(club)} title={say('kb.reveal.mine')}/></div></figure>
+     <figure><figcaption>{referenceTitle}</figcaption><div className={css.pairShirt}>{v.referencePhoto?<img src={v.referencePhoto} alt={referenceTitle} width={320} height={320} data-kit-reference/>:g.archiveSvg?<img src={g.archiveSvg} alt={say('kb.reveal.archiveArt')} width={430} height={470}/>:<KitCloth spec={v.answer} sponsorContext={sponsorContext} sponsorBox={puzzle.sponsorBox} shirtOutline={puzzle.shirtOutline} monogram={monogram} crestSrc={crestFor(club)} title={referenceTitle}/>}</div></figure>
+     <figure><figcaption>{mineTitle}</figcaption><div className={css.pairShirt}><KitCloth spec={cloth} sponsorContext={sponsorContext} sponsorBox={puzzle.sponsorBox} shirtOutline={puzzle.shirtOutline} monogram={monogram} crestSrc={crestFor(club)} title={mineTitle}/></div></figure>
     </div>
     <ul className={css.verdicts}>{v.steps.map(r=><li key={r.step} data-ok={r.ok}>
      <span className={css.mark} aria-hidden="true">{r.ok?'✓':'✕'}</span>
@@ -203,7 +205,7 @@ export function KitBuilder(props:KitBuilderProps){
      {v.hints>0&&<p>{say('kb.reveal.hints',{n:v.hints,pts:v.hints*HINT_PENALTY})}</p>}
      <p data-testid="kb-dna">{v.dna?say('kb.reveal.dna.yes',{n:DNA_THRESHOLD}):say('kb.reveal.dna.no',{n:DNA_THRESHOLD,f:v.fieldPoints})}</p>
      {v.unknown.length>0&&<p data-testid="kb-unknown">{say('kb.reveal.unknown',{parts:v.unknown.map(f=>say(`kb.field.${f}`)).join(', ')})}</p>}
-     <p>{say(g.archiveSvg?'kb.reveal.archiveArt':'kb.reveal.recon')}</p>
+     <p>{say(v.referencePhoto||g.archiveSvg?'kb.reveal.archiveArt':'kb.reveal.recon')}</p>
      {g.sources.length>0&&<p className={css.sources}>{say('kb.reveal.sources')}: {g.sources.map((s,i)=><span key={i}>{s.url?<a href={s.url} target="_blank" rel="noreferrer noopener"><bdi>{s.title}</bdi></a>:<bdi>{s.title}</bdi>}{i<g.sources.length-1?' · ':''}</span>)}</p>}
      {g.shirtSlug&&<KitOwnProvider slugs={[g.shirtSlug]}><KitOwnBar slug={g.shirtSlug} copy={{have:say('kb.own.have'),haveOn:say('kb.own.haveOn'),want:say('kb.own.want'),wantOn:say('kb.own.wantOn'),closet:say('kb.own.closet'),market:say('kb.own.market'),saved:say('kb.own.saved'),label:say('kb.own.label')}}/></KitOwnProvider>}
      {g.unlock&&<p><Link href={`${base}/kits?lang=${locale}&kit=${encodeURIComponent(g.unlock.kitId)}`}>{say('kb.reveal.unlocked')}</Link></p>}
@@ -229,7 +231,7 @@ export function KitBuilder(props:KitBuilderProps){
     </div>
     <div className={`wk-sky ${css.garment}`} ref={garmentRef} {...dropZone('kit-shirt')} data-testid="kb-garment">
      <span className="wk-speed" aria-hidden="true"/>
-     <KitCloth spec={cloth} missing={missing} monogram={monogram} crestSrc={crestFor(club)} title={say('kb.garment.aria',{season:puzzle.seasonLabel,variant:variantName,done:progress,n:steps.length})}/>
+     <KitCloth spec={cloth} sponsorContext={{club,season:puzzle.seasonLabel,variant:puzzle.variant}} sponsorBox={puzzle.sponsorBox} shirtOutline={puzzle.shirtOutline} missing={missing} monogram={monogram} crestSrc={crestFor(club)} title={say('kb.garment.aria',{season:puzzle.seasonLabel,variant:variantName,done:progress,n:steps.length})}/>
     </div>
    </div>
    <div className={css.colWork}>

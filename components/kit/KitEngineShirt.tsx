@@ -1,6 +1,7 @@
 import { useId, type ReactNode } from 'react'
 
 import { MakerMark } from '@/components/kit/MakerMark'
+import { DOUBLE_HOME_RED, DOUBLE_HOME_VIEWBOX, HapoelDoubleShirt } from '@/components/kit/HapoelDoubleShirt'
 import {
   resolveKitRender,
   type KitLook,
@@ -10,6 +11,7 @@ import {
   type RenderBox,
 } from '@/lib/kit/engine'
 import type { KitBodyTemplate } from '@/lib/kit/body-templates'
+import { isDoubleHomeCut } from '@/lib/kit/double-home'
 import type { CollarId, KitSpec, NamesetId, PatternId, SleeveId } from '@/lib/kit/spec'
 
 /**
@@ -50,6 +52,26 @@ export function KitEngineShirt({
   const uid = useId().replace(/:/g, '')
   const mini = density === 'mini'
   const plan = onTheBand(resolveKitRender(spec, { look: mini ? 'vector' : look, marks }), spec)
+  if (isDoubleHomeCut(spec)) {
+    const { maker, sponsor, crest } = plan.marks
+    const makerSrc = !mini && maker?.kind === 'image' && spec.makerHe?.toLowerCase() === 'nike' ? maker.src : undefined
+    const sponsorSrc = !mini && sponsor?.kind === 'image' ? sponsor.src : undefined
+    const ownCrest = spec.crestKey === 'keter-color'
+    const top = crop === 'top'
+    return (
+      <span className={`relative inline-block ${className}`} style={{ aspectRatio: `696 / ${top ? 290 : 548}` }} data-kit-look="vector">
+        <svg viewBox={top ? '33 106 696 290' : DOUBLE_HOME_VIEWBOX} className="absolute inset-0 h-full w-full" role="img" aria-label={title ?? spec.seasonLabel}>
+          {title && <title>{title}</title>}
+          <HapoelDoubleShirt base={spec.base === 'red' ? DOUBLE_HOME_RED : plan.colours.base} stripes={plan.colours.secondary} texture={!mini} crest={ownCrest} makerSrc={makerSrc} sponsorSrc={sponsorSrc}>
+            {!ownCrest && crest && <image href={crest.src} x="419" y="194" width="69" height="69" />}
+            {!mini && !makerSrc && maker && <Mark mark={{ ...maker, box: { x: 294, y: 208, w: 42, h: 37 } }} uid={`${uid}-mk`} />}
+            {!mini && !sponsorSrc && sponsor && <Mark mark={{ ...sponsor, box: { x: 308, y: 297, w: 151, h: 87 } }} uid={`${uid}-sp`} />}
+            {!mini && spec.number !== null && <g transform="translate(78 87) scale(1.7)"><FrontNumber value={spec.number} nameset={spec.nameset} dark={plan.dark} /></g>}
+          </HapoelDoubleShirt>
+        </svg>
+      </span>
+    )
+  }
   const h = crop === 'top' ? Math.round(plan.height * (plan.photo ? 0.5 : 0.55)) : plan.height
   const viewBox = `0 0 ${plan.width} ${h}`
   return (

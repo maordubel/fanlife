@@ -1,5 +1,5 @@
 {
- "note": "ארון החולצות — per-season kit CUTS, read off the kit illustrations and shirt photographs Maor supplied on 1.9.2026. This file closes a gap the project has carried since the start: CLAUDE.md previously recorded that NO source stated a collar, sleeve or pattern for any given season, so the drawn figure wore the club's colours plain and the screen said so. These do. Every row is what is visible in the reference for that season and nothing more — where a reference does not show a detail the field takes the plain value rather than a guess, and the maker is recorded only where the mark is legible. colours-of-football.com itself returns 403 to automated reads and was NOT fetched; the illustrations came from Maor, and the source line says so. One deliberate omission: the 1988/89 adidas shirt's VISA block carries a colour the brand system forbids outright, so the sponsor is lettered as text like every other sponsor in this app rather than reproduced. Makers were corrected on 1.9.2026 against Football Kit Archive: 1978/79 was IN-HOUSE with no branded maker (not Umbro), and 1997/98 was Nike, not Diadora — Diadora's spell ended in 1996/97. The 1992/93 Puma SUZUKI sash shirt was identified from the same source. Maker names are LETTERED in the app's own type rather than drawn as logos: naming the manufacturer of a kit is a fact about the kit, reproducing another company's trademark artwork is a different thing and this project does not do it. 29.9.2026: שורות עם review הן סתירה פתוחה מול מקור אחר (QA היסטורי) — הן לא משוחקות בשער 4 עד שנפתרו (resolved:true) או פוצלו לרשומות תקופה.",
+ "note": "ארון החולצות — per-season kit CUTS, read off the kit illustrations and shirt photographs Maor supplied on 1.9.2026. This file closes a gap the project has carried since the start: CLAUDE.md previously recorded that NO source stated a collar, sleeve or pattern for any given season, so the drawn figure wore the club's colours plain and the screen said so. These do. Every row is what is visible in the reference for that season and nothing more — where a reference does not show a detail the field takes the plain value rather than a guess, and the maker is recorded only where the mark is legible. colours-of-football.com itself returns 403 to automated reads and was NOT fetched; the illustrations came from Maor, and the source line says so. Makers were corrected on 1.9.2026 against Football Kit Archive: 1978/79 was IN-HOUSE with no branded maker (not Umbro), and 1997/98 was Nike, not Diadora — Diadora's spell ended in 1996/97. The 1992/93 Puma SUZUKI sash shirt was identified from the same source. Maker names are LETTERED in the app's own type rather than drawn as logos: naming the manufacturer of a kit is a fact about the kit, reproducing another company's trademark artwork is a different thing and this project does not do it. 29.9.2026: שורות עם review הן סתירה פתוחה מול מקור אחר (QA היסטורי) — הן לא משוחקות בשער 4 עד שנפתרו (resolved:true) או פוצלו לרשומות תקופה.",
  "confidence": 3,
  "source": {
   "kind": "photograph",
@@ -60,29 +60,30 @@
    "seasonLabel": "1988/89",
    "variant": "home",
    "makerHe": "adidas",
-   "sponsorHe": "VISA",
+   "sponsorHe": "קלאב הוטלס",
    "base": "red",
    "pattern": "pinstripe",
    "patternInk": "cream",
-   "sleeves": "plain",
+   "sleeves": "shoulder-stripe",
    "sleeveInk": "red",
    "collar": "crew",
    "collarInk": "cream",
    "shorts": "red",
    "socks": "red",
-   "noteHe": "פסי שיער לבנים על אדום. בלוק הספונסר המקורי כלל צבע אסור במערכת, ולכן הספונסר נכתב כאן כטקסט בלבד.",
+   "noteHe": "חולצה אדומה עם פסי כתף לבנים והדפס קלאב הוטלס לבן וגדול, עם אילת וטבריה בתחתית.",
    "sport": "football",
    "confidence": 3,
-   "sourceTitle": "צילומי חולצות מקוריות שסיפק צוות The Worker, 1.9.2026",
-   "sourceUrl": null,
+   "sourceTitle": "Football Kit Archive — 1988/89 home kit",
+   "sourceUrl": "https://www.footballkitarchive.com/hapoel-tel-aviv-1988-89-home-kit-24627/",
    "review": {
     "conflictType": "source-dispute",
-    "resolved": false,
-    "noteHe": "הרשומה: VISA. ויקיפועל מתעדת Club Hotels ב-1988/89. סתירה ישירה — כנראה הזזת ספונסר בין עונות.",
+    "resolved": true,
+    "noteHe": "תצלום חזית מאותה עונה מציג קלאב הוטלס, בהתאמה לתיעוד הספונסרים של ויקיפועל.",
     "sources": [
-     "https://wiki.red-fans.com/index.php?title=%D7%A1%D7%A4%D7%95%D7%A0%D7%A1%D7%A8"
+     "https://wiki.red-fans.com/index.php?title=%D7%A1%D7%A4%D7%95%D7%A0%D7%A1%D7%A8",
+     "https://www.footballkitarchive.com/hapoel-tel-aviv-1988-89-home-kit-24627/"
     ],
-    "reviewedOn": "2026-09-29"
+    "reviewedOn": "2026-11-16"
    }
   },
   {
@@ -91,28 +92,29 @@
    "makerHe": "PUMA",
    "sponsorHe": "SUZUKI",
    "base": "red",
-   "pattern": "sash",
-   "patternInk": "cream",
+   "pattern": "solid",
+   "patternInk": "red",
    "sleeves": "plain",
    "sleeveInk": "red",
    "collar": "polo",
-   "collarInk": "cream",
+   "collarInk": "red",
    "shorts": "red",
    "socks": "red",
-   "noteHe": "סאש אלכסוני על אדום, צווארון פולו לבן. העונה היחידה של פומה לפני תקופת דיאדורה.",
+   "noteHe": "חולצת פומה אדומה עם צווארון מתקפל והדפס סוזוקי שחור בעברית על החזה.",
    "sport": "football",
    "confidence": 3,
    "sourceUrl": "https://www.footballkitarchive.com/hapoel-tel-aviv-1992-93-home-kit/",
    "sourceTitle": "Football Kit Archive — 1992/93 home kit",
    "review": {
     "conflictType": "source-dispute",
-    "resolved": false,
-    "noteHe": "SUZUKI מופיע בארכיון החולצות (Football Kit Archive), אך ויקיפועל מתארת אותו כספונסר משני/גב ולא בהכרח חזית. חסר מיקום הספונסר.",
+    "resolved": true,
+    "noteHe": "בתצלום החזית בוויקיפועל מופיע סוזוקי בעברית במרכז החזה.",
     "sources": [
      "https://wiki.red-fans.com/index.php?title=%D7%A1%D7%A4%D7%95%D7%A0%D7%A1%D7%A8",
-     "https://www.footballkitarchive.com/hapoel-tel-aviv-1992-93-home-kit/"
+     "https://www.footballkitarchive.com/hapoel-tel-aviv-1992-93-home-kit/",
+     "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)"
     ],
-    "reviewedOn": "2026-09-29"
+    "reviewedOn": "2026-11-16"
    }
   },
   {
@@ -169,30 +171,30 @@
    "seasonLabel": "1999/00",
    "variant": "home",
    "makerHe": "NIKE",
-   "sponsorHe": "CAL",
+   "sponsorHe": "כתר",
    "base": "red",
    "pattern": "twin-stripe",
    "patternInk": "ink",
    "sleeves": "cuff",
    "sleeveInk": "ink",
-   "collar": "v-neck",
-   "collarInk": "ink",
+   "collar": "polo",
+   "collarInk": "red",
    "shorts": "red",
    "socks": "red",
-   "noteHe": "שני פסים שחורים לאורך החזית, חפתים בשחור־לבן. עונת אליפות.",
+   "noteHe": "חולצת הבית האדומה של עונת הדאבל, עם שני פסים שחורים צרים, צווארון אדום מתקפל מעל מפתח וי שחור, חפתים בשחור־לבן והדפס כתר לבן בעברית.",
    "sport": "football",
    "confidence": 3,
-   "sourceTitle": "צילומי חולצות מקוריות שסיפק צוות The Worker, 1.9.2026",
-   "sourceUrl": null,
+   "sourceTitle": "תצלום החולצה שסיפק מאור והצלבה עם ויקיפועל ו־Football Kit Archive",
+   "sourceUrl": "https://www.footballkitarchive.com/hapoel-tel-aviv-1999-00-home-kit-24618/",
    "review": {
     "conflictType": "source-dispute",
-    "resolved": false,
-    "noteHe": "הרשומה: CAL. ויקיפועל מתעדת כתר כספונסר ראשי 1998–2000 (אופיס דיפו משני), ותמונות מראות כתר. הפסים השחורים נתמכים ויזואלית.",
+    "resolved": true,
+    "noteHe": "הדפס כתר בעברית נראה בתצלום של חולצת הבית עם הפסים השחורים ובתצלום שסיפק מאור. זיהוי זה מכריע את המחלוקת עם הרישום הקודם CAL עבור גרסה זו.",
     "sources": [
      "https://wiki.red-fans.com/index.php?title=%D7%A1%D7%A4%D7%95%D7%A0%D7%A1%D7%A8",
      "https://www.footballkitarchive.com/hapoel-tel-aviv-1999-00-home-kit-24618/"
     ],
-    "reviewedOn": "2026-09-29"
+    "reviewedOn": "2026-11-16"
    }
   },
   {
@@ -367,7 +369,7 @@
    "seasonLabel": "2011/12",
    "variant": "away",
    "makerHe": "KAPPA",
-   "sponsorHe": "במחיר",
+   "sponsorHe": "בוני התיכון",
    "base": "cream",
    "pattern": "solid",
    "patternInk": "cream",
@@ -387,7 +389,7 @@
    "seasonLabel": "2011/12",
    "variant": "home",
    "makerHe": "KAPPA",
-   "sponsorHe": "במחיר",
+   "sponsorHe": "בוני התיכון",
    "base": "red",
    "pattern": "shoulder-panel",
    "patternInk": "cream",

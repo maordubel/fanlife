@@ -24,6 +24,7 @@ from .common import CHANNEL_NAME, SLOGAN, StageError, read_json, sha256_json, wr
 from .paper import beat_index, clip_index
 from .script import beat_set, SCHEMA_TEXT, WORDS_PER_MINUTE, target_words, validate_script
 from . import gemini as gemini_keys
+from . import house
 from .gemini import generate
 
 _LOG = [None]  # the job's log while a script is written (the writer says when it waits for Google)
@@ -290,7 +291,9 @@ def call_model(system: str, user: str, *, max_tokens: int = 16000) -> tuple[str,
     else:
         body = {'systemInstruction': {'parts': [{'text': system}]}, 'contents': [{'role': 'user', 'parts': [{'text': user}]}],
                 'generationConfig': {'responseMimeType': 'application/json', 'maxOutputTokens': max(max_tokens, 32000)}}
-        r, model = generate(key, body, wanted=os.environ.get('STORIES_GEMINI_MODEL'), log=_LOG[0])
+        # a busy tier is waited out only briefly: the house writers take over (studio/house.py, owner 16.11.2026)
+        r, model = generate(key, body, wanted=os.environ.get('STORIES_GEMINI_MODEL'), log=_LOG[0],
+                            budget_s=float(os.environ.get('STORIES_WRITER_WAIT_S') or 90))
         text = ''.join(p_.get('text', '') for c in r.get('candidates', []) for p_ in c.get('content', {}).get('parts', []))
         usage = {'input': r.get('usageMetadata', {}).get('promptTokenCount'), 'output': r.get('usageMetadata', {}).get('candidatesTokenCount')}
     if not text.strip():
@@ -658,6 +661,32 @@ def failure_line(ledger: dict, asked: float, detail: str = '') -> str:
             + (f' ({detail[:80]})' if detail else '') + f'. The research holds {n} claims.')
 
 
+# Inside one write_options (three directors): the model failure that sent the first director to the house. One refusal is
+# enough — the other directors go straight to their house writers instead of spending requests on the same refusal.
+_MODEL_DOWN = [None, 0.0]
+_IN_OPTIONS = [False]
+HOUSE_CODES = ('WRITER_BUSY', 'WRITER_QUOTA_DAY', 'WRITER_UNREACHABLE', 'WRITER_NO_CREDIT', 'WRITER_KEY', 'WRITER_NOT_CONFIGURED', 'WRITER_EMPTY')
+
+
+def _down() -> str | None:
+    return _MODEL_DOWN[0] if _IN_OPTIONS[0] else None
+
+
+def _model_unavailable(e: StageError) -> bool:
+    """No key, no credit, a spent or busy quota, a provider that does not answer: the house writes (owner, 16.11.2026)."""
+    return e.code in HOUSE_CODES or e.code.startswith('WRITER_HTTP_')
+
+
+def _house(brief: dict, ledger: dict, director: dict | None, avoid: list[dict] | None, log, reason: str) -> dict:
+    """The director's script by his house writer (studio/house.py), held to the same checks as a model's script."""
+    def check_at(sc_, m):
+        return (validate_script(sc_, ledger, m, brief.get('kind')) + distinct_errors(sc_, avoid) + hook_option_errors(sc_, ledger)
+                + (["Every Short needs its own hook-led narration"] if any(not isinstance(x, dict) or not isinstance(x.get('narration'), str)
+                                                                         for x in sc_.get('shorts') or []) else []))
+    s = house.write(brief, ledger, (director or {}).get('id'), log=log, avoid=avoid, check_at=check_at, reason=reason)
+    return drama_pass(s, lambda sc_: check_at(sc_, s['_minutes']), '', '', Path('.'), log, rewrite=False)
+
+
 def write_script(brief: dict, ledger: dict, cache_dir: Path, log, angle: tuple[str, str] | None = None,
                  director: dict | None = None, avoid: list[dict] | None = None, drama: bool = False) -> dict:
     """One script. `director` (from studio/directors.py) makes it that director's film; `avoid` lists the options already
@@ -666,6 +695,9 @@ def write_script(brief: dict, ledger: dict, cache_dir: Path, log, angle: tuple[s
     rewritten, so three directors do not spend six calls of the free daily quota."""
     asked = float(brief['duration'])
     minutes = sized_minutes(asked, ledger)
+    if house.wanted() or _down():
+        return _house(brief, ledger, director, avoid, log, 'the house writes first (STORIES_WRITER=house)' if house.wanted()
+                      else f'the model is unavailable ({_down()})')
     if minutes < asked:
         log(f'Writer: {len(ledger.get("claims") or [])} proven claims and no deep research — writing a {minutes:g}-minute film, not {asked:g}')
     lo, hi = target_words(minutes)
@@ -722,7 +754,18 @@ def write_script(brief: dict, ledger: dict, cache_dir: Path, log, angle: tuple[s
             reply = read_json(cached)
             log(f'Writer: reused cached answer {cached.name}')
         else:
-            text, meta = call_model(SYSTEM, user)
+            try:
+                text, meta = call_model(SYSTEM, user)
+            except StageError as e:
+                if not _model_unavailable(e):
+                    raise
+                _MODEL_DOWN[:] = [e.code, time.monotonic()]
+                if best is not None:   # a round already gave an honest salvage: it is the film
+                    saved, report = best
+                    log(salvaging.line(who, report))
+                    saved['_writer'] = attempts
+                    return drama_pass(saved, (lambda sc: check_at(sc, report['minutes'])), user, '', cache_dir, log, rewrite=False)
+                return _house(brief, ledger, director, avoid, log, f'the model is unavailable ({e.code})')
             reply = {'text': text, 'meta': meta}
             write_json(cached, reply)
             log(f'Writer: {meta["provider"]}/{meta["model"]} in {meta["seconds"]}s · tokens in {meta.get("input")} out {meta.get("output")}')
@@ -767,7 +810,10 @@ def write_script(brief: dict, ledger: dict, cache_dir: Path, log, angle: tuple[s
         saved['_writer'] = attempts
         return drama_pass(saved, (lambda sc: check_at(sc, report['minutes'])), user, reply['text'], cache_dir, log, rewrite=False)
     log(f'Writer: {who} script could not be salvaged — ' + '; '.join(attempts[-1]['errors'][:10]))   # the detail stays in the log
-    raise StageError('SCRIPT_INVALID', failure_line(ledger, asked, attempts[-1]['errors'][0] if attempts[-1]['errors'] else ''))
+    try:   # the studio always makes a film: the house writer writes it from the record
+        return _house(brief, ledger, director, avoid, log, 'no model script passed the checks')
+    except StageError:
+        raise StageError('SCRIPT_INVALID', failure_line(ledger, asked, attempts[-1]['errors'][0] if attempts[-1]['errors'] else ''))
 
 
 def drama_pass(script: dict, check, user: str, answer: str, cache_dir: Path, log, rewrite: bool = True) -> dict:
@@ -827,6 +873,14 @@ def write_options(brief: dict, ledger: dict, cache_dir: Path, log, least: int = 
     from .directors import DIRECTORS
     out, errs, busy = [], [], None
     order = sorted(DIRECTORS, key=lambda d: d['id'] != (brief.get('lead_director') or '')) if least < 2 else DIRECTORS
+    _IN_OPTIONS[0], _MODEL_DOWN[:] = True, [None, 0.0]
+    try:
+        return _options(brief, ledger, cache_dir, log, least, order, out, errs, busy)
+    finally:
+        _IN_OPTIONS[0], _MODEL_DOWN[:] = False, [None, 0.0]
+
+
+def _options(brief, ledger, cache_dir, log, least, order, out, errs, busy) -> list[dict]:
     for d in order:
         try:
             avoid = [{'director': o['_angle'], 'title': _title_of(o), 'hook': o.get('hook')} for o in out]

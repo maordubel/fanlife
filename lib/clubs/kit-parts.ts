@@ -1,7 +1,7 @@
 import eraCrests from '@/content/manual/kit-crests-hapoel-tel-aviv.json'
 import {crestFor} from './crest'
 import type {KitView} from './gate-content'
-import {makerMark,sponsorMark} from './marks'
+import {makerMark,sponsorMark,type SponsorContext} from './marks'
 
 /** The independent, sourced parts of a kit; the complete drawing is optional. */
 export type KitParts=Pick<KitView,'maker'|'design'|'colours'|'shorts'|'socks'>&{
@@ -9,9 +9,9 @@ export type KitParts=Pick<KitView,'maker'|'design'|'colours'|'shorts'|'socks'>&{
  crest:{src:string;kind:'historical'|'club'}|null
 }
 
-export function kitMark(parts:Pick<KitParts,'maker'|'sponsor'>,slot:'maker'|'sponsor'){
+export function kitMark(parts:Pick<KitParts,'maker'|'sponsor'>,slot:'maker'|'sponsor',context?:SponsorContext){
  const label=parts[slot]
- return label?{label,art:slot==='maker'?makerMark(label):sponsorMark(label)}:null
+ return label?{label,art:slot==='maker'?makerMark(label):sponsorMark(label,context)}:null
 }
 
 const historical=eraCrests as Record<string,string|null>

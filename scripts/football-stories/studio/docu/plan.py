@@ -216,9 +216,7 @@ class Adapter:
         if old.get('sig') == sig:
             self._sight = {int(k): v for k, v in (old.get('shots') or {}).items()}
             return self._sight
-        from .. import gemini
-        if not gemini.api_key():
-            return self._sight
+        from .. import gemini, house
         from .. import sight as SG
         caps = SG.load_captions()
         asks = []
@@ -229,10 +227,21 @@ class Adapter:
             top = self.picker.ranked(q, 'still', avoid=figures)[:SG.CANDIDATES]
             if top:
                 asks.append({'n': s['n'], 'type': v_type(s), 'text': s['narration'],
-                             'candidates': [{'id': r['id'], 'shows': SG.describe(r, caps)} for _, r, _ in top]})
-        self._sight = SG.direct(asks, log=lambda m: print(m, flush=True))
+                             'candidates': [{'id': r['id'], 'shows': SG.describe(r, caps), 'subjects': list(r.get('subjects') or []),
+                                             'moods': list(r.get('moods') or [])} for _, r, _ in top]})
+        self._sight = SG.direct(asks, log=lambda m: print(m, flush=True)) if gemini.api_key() else {}
+        if not self._sight:   # no key, no credit, a busy tier: the house director chooses (studio/house.direct, 16.11.2026)
+            self._sight = house.direct(asks, self.director_id(), log=lambda m: print(m, flush=True))
         write_json(fp, {'sig': sig, 'shots': {str(k): v for k, v in self._sight.items()}})
         return self._sight
+
+    def director_id(self) -> str | None:
+        """The film's director (studio/directors.py id), read off the chosen script: his house director and editor work on it."""
+        try:
+            sc = read_json(self.jd / 'script.json')
+        except Exception:  # noqa: BLE001 — a plan made outside a job (tests, the desk) has no script on disk
+            return None
+        return (sc.get('_house') or {}).get('unit') or sc.get('_director')
 
     def sight_pick(self, n: int, avoid: set) -> dict | None:
         """The director's picture for line `n`, when the index still allows it here (not used twice, not the shot before)."""
@@ -1037,7 +1046,12 @@ class Adapter:
                 for x in b['shots']:
                     if x['kind'] == 'image' and not s.get('required_asset'):
                         x['src'] = self.related(b['meta']['n'], 0) or x['src']
-        out = E.cut(raw, self.plan.get('beat_grid'), self.related, self.backdrop, fixes, self.focus)
+        from .. import house
+        E.PROFILE = house.editor_profile(self.director_id())   # the house editor of the film's unit sets the rhythm
+        try:
+            out = E.cut(raw, self.plan.get('beat_grid'), self.related, self.backdrop, fixes, self.focus)
+        finally:
+            E.PROFILE = None
         for b in out:   # the camera's near plane, read off each picture it moves over
             for x in b['shots']:
                 if x.get('cam') and x['kind'] == 'image' and x.get('as') != 'print':

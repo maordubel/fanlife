@@ -23,14 +23,14 @@ export function DressBubble({ say }: { say: (Say & { n: number }) | null }) {
   }, [say])
 
   if (!shown) return null
-  // the card is RTL, so the inline-start edge is the right edge of the glass
+  // measured from the physical right edge, so it holds in either reading direction
   const startPct = Math.min(88, Math.max(4, (1 - shown.x) * 100 - 6))
   return (
     <p
       aria-hidden="true"
       data-life="dress-bubble"
       className={`pointer-events-none absolute z-10 border-rule border-ink bg-sheet px-2 py-1 font-body text-[13px] leading-none text-ink transition-opacity duration-300 motion-reduce:transition-none ${live ? 'opacity-100' : 'opacity-0'}`}
-      style={{ insetInlineStart: `${startPct}%`, top: `${Math.max(4, shown.y * 100 - 9)}%` }}
+      style={{ right: `${startPct}%`, top: `${Math.max(4, shown.y * 100 - 9)}%` }}
     >
       {shown.text}
     </p>

@@ -3,8 +3,10 @@ import { BODY_TEMPLATES, bodyTemplateForSeason, type KitBodyTemplate, type KitBo
 import { crestArt, seasonStartYear } from './crestMarks'
 import { markFor, type MakerMarkId } from './maker-marks'
 import { grantedMaker, grantedSponsor, makerAssetForName, sponsorAssetForName } from './mark-library'
+import { isDoubleHomeCut } from './double-home'
 import { photoGeometry, photoMissing, type PhotoBox, type PhotoGeometry } from './photo'
 import { COLOUR_VAR, type KitSpec } from './spec'
+import { placeSponsor } from '@/lib/clubs/kit-model'
 
 export type KitConstruction = {
   bodyTemplateId: KitBodyTemplateId
@@ -37,7 +39,7 @@ export function resolveKitConstruction(spec: KitSpec): KitConstruction {
     },
     exactArtwork: {
       maker: Boolean(makerAssetForName(spec.makerHe, spec.seasonLabel)),
-      sponsor: Boolean(sponsorAssetForName(spec.sponsorHe)),
+      sponsor: Boolean(sponsorAssetForName(spec.sponsorHe, spec.seasonLabel, spec.variant, spec.base)),
     },
     referenceLevel: assembly ? 'mastered' : 'modeled',
   }
@@ -109,9 +111,8 @@ function numbers(path: string): number[] {
   return (path.match(/-?\d+(?:\.\d+)?/g) ?? []).map(Number)
 }
 
-/** the vector body's bounding box, read off its own path */
-function vectorBodyBox(template: KitBodyTemplate): PhotoBox {
-  const n = numbers(template.bodyPath)
+function pathBox(path: string): PhotoBox {
+  const n = numbers(path)
   const xs = n.filter((_, i) => i % 2 === 0)
   const ys = n.filter((_, i) => i % 2 === 1)
   const x = Math.min(...xs)
@@ -124,7 +125,7 @@ function vectorBodyBox(template: KitBodyTemplate): PhotoBox {
  * so a hoop sits on the same part of the body in both looks and the photo needs no pattern files.
  */
 function patternTransform(template: KitBodyTemplate, geometry: PhotoGeometry): string {
-  const from = vectorBodyBox(template)
+  const from = pathBox(template.bodyPath)
   const to = geometry.torsoBox
   const sx = to.w / from.w
   const sy = to.h / from.h
@@ -144,7 +145,8 @@ export function resolveKitRender(
   { look = 'vector', marks = 'rule25' }: { look?: KitLook; marks?: KitMarksRegime } = {},
 ): KitRenderPlan {
   const template = templateFor(spec)
-  const geometry = look === 'photo' ? photoGeometry(template.id) : null
+  const doubleHome = isDoubleHomeCut(spec)
+  const geometry = look === 'photo' && !doubleHome ? photoGeometry(template.id) : null
   const missing = look === 'photo'
     ? photoMissing(template.id, { pattern: spec.pattern, collar: spec.collar, sleeves: spec.sleeves })
     : []
@@ -165,10 +167,15 @@ export function resolveKitRender(
     }
   }
 
+  if (spec.sponsorBox && !kitAssemblyForSeason(spec.seasonLabel, spec.variant)) {
+    const garment = pathBox(photo?.geometry.silhouette ?? [template.leftSleevePath, template.bodyPath, template.rightSleevePath].join(' '))
+    boxes.sponsor = placeSponsor(spec.sponsorBox, garment)
+  }
+
   const crestSrc = crestArt(spec.crestKey, dark, seasonStartYear(spec.seasonLabel))
   const realMaker = marks === 'granted' ? grantedMaker(spec.makerHe, spec.seasonLabel) : null
   const altMaker = markFor(spec.makerHe, spec.seasonLabel)
-  const realSponsor = marks === 'granted' ? grantedSponsor(spec.sponsorHe) : null
+  const realSponsor = marks === 'granted' ? grantedSponsor(spec.sponsorHe, spec.seasonLabel, spec.variant, spec.base) : null
 
   return {
     look: drawn,
@@ -185,7 +192,7 @@ export function resolveKitRender(
     },
     dark,
     photo,
-    missing: look === 'photo' && !geometry ? ['template'] : missing,
+    missing: look === 'photo' && !geometry ? [doubleHome ? 'historical-cut' : 'template'] : missing,
     marks: {
       crest: crestSrc ? { src: crestSrc, box: boxes.crest } : null,
       maker: realMaker

@@ -7,6 +7,7 @@ import {COLOUR_KEYS,colourHex,documentedCloth,variantOf,type ClothSpec,type Colo
 import type {StudioLimits} from './kit-studio'
 import type {StudioIdentity} from './kit-design'
 import {SWATCH} from './rumble-kit'
+import {kitFrontOf} from './kit-fronts'
 
 /**
  * Gate 5 · The Kit Studio — what the collection may show (Wave kits, 8.10.2026).
@@ -20,7 +21,7 @@ import {SWATCH} from './rumble-kit'
  *
  * Pure, server-side. Nothing here reads a browser API.
  */
-export type OpenKit={id:string;season:string;variant:Variant;type:string;maker:string|null;design:string|null;sponsor:string|null;colours:string[];/** null when the archive names something we cannot paint faithfully */cloth:ClothSpec|null;svg?:string;parts:KitParts;sources:{title:string;url:string|null}[]}
+export type OpenKit={id:string;season:string;variant:Variant;type:string;maker:string|null;design:string|null;sponsor:string|null;colours:string[];/** null when the archive names something we cannot paint faithfully */cloth:ClothSpec|null;svg?:string;parts:KitParts;sources:{title:string;url:string|null}[];referencePhoto?:string}
 export type CollectionRow={id:string;season:string;variant:Variant;/** facts travel only for an open shirt */open:OpenKit|null}
 
 const year=(season:string)=>{const m=/(\d{4})/.exec(season);return m?Number(m[1]):0}
@@ -30,7 +31,8 @@ const paintable=(data:ClubData)=>(hex:string)=>forbiddenColor(data.theme,hex)
 /** one kit as the collection card shows it, with the sources resolved to titles */
 export function openKit(data:ClubData,k:KitView):OpenKit{
  const cloth=documentedCloth(k,paintable(data))
- return {id:k.id,season:k.season,variant:variantOf(k.type),type:k.type,maker:k.maker,design:k.design,sponsor:k.sponsor??null,colours:k.colours,cloth,...kitVisual(data.identity.id,k),sources:k.sources.map(id=>data.sources.find(s=>s.id===id)).filter((s):s is NonNullable<typeof s>=>!!s).slice(0,4).map(s=>({title:s.title,url:s.url}))}
+ const referencePhoto=kitFrontOf(k)?.photo
+ return {id:k.id,season:k.season,variant:variantOf(k.type),type:k.type,maker:k.maker,design:k.design,sponsor:k.sponsor??null,colours:k.colours,cloth,...kitVisual(data.identity.id,k),sources:k.sources.map(id=>data.sources.find(s=>s.id===id)).filter((s):s is NonNullable<typeof s>=>!!s).slice(0,4).map(s=>({title:s.title,url:s.url})),...(referencePhoto?{referencePhoto}:{})}
 }
 /** a shirt gate 4 can deal: drawable under this club's colour policy */
 export const isBuildable=(data:ClubData,k:KitView)=>documentedCloth(k,paintable(data))!==null
