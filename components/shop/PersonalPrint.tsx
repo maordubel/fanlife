@@ -13,7 +13,7 @@ type Req=Record<string,unknown>
 /**
  * "YOUR XI, FRAMED" (owner, 14.11.2026). Offered when a supporter has picked his all-time eleven: the proof of his own print
  * (drawn on the server from his picks), framed print or poster, his name as the manager if he wants it. "Make my print" makes
- * the product at the printer (about 20 s) and opens the FAN LIFE checkout in its own window over this page; the page stays.
+ * the product at the printer (about two minutes) and opens the FAN LIFE checkout in its own window over this page; the page stays.
  */
 export function PersonalPrint({req,kind='xi',className=''}:{req:Req;kind?:Kind;className?:string}){
  const xi=kind==='xi',sv=copyAll.souvenir,copy:Copy=xi?copyAll.xiPrint:{...copyAll.xiPrint,...sv.common,...sv[kind as Exclude<Kind,'xi'>]}
