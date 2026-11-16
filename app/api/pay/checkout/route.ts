@@ -26,7 +26,7 @@ export async function POST(r:Request){
  const back=typeof b.back==='string'&&b.back.startsWith('/')&&!b.back.startsWith('//')?b.back:'/shop'
  try{
   await createOrder({id,kind:item.kind,recipe:{s,sig},amount_cents:item.cents,currency:item.currency,token_hash:hashOf(token),email})
-  const ses=await checkout({order:id,name:item.name,blurb:item.blurb,cents:item.cents,currency:item.currency,success:`${SITE_URL}/order/${id}?t=${token}`,cancel:`${SITE_URL}${back}`,...(email?{email}:{})})
+  const ses=await checkout({order:id,token,name:item.name,blurb:item.blurb,cents:item.cents,currency:item.currency,success:`${SITE_URL}/order/${id}?t=${token}`,cancel:`${SITE_URL}${back}`,...(email?{email}:{})})
   await moveOrder(id,['open'],{stripe_session:ses.id})
   return ses.url?json({url:ses.url}):json({error:'The payment page did not open — try again.'},502)
  }catch(e){return json({error:String((e as Error).message).slice(0,200)},502)}
