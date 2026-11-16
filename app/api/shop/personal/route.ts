@@ -59,7 +59,7 @@ async function handle(r:Request):Promise<Response>{
   const [a,b]=w.kit.colours.map(c=>SWATCH[c]!),file=drawingOf(w.kit.svg)
   return {...(a?{k:{d:w.kit.design||'',a,b:b??null}}:{}),...(file?{u:file}:{}),s:w.kit.season}}
  for(const s of slots){const id=String(picks[s.slotId]||''),p=byId.get(id);if(!p||seen.has(id))return json({error:'Pick all eleven first.'},422);seen.add(id)
-  n.push({x:100-s.x,y:s.y,name:printName(p),...kitOf(p,s.role==='GK'),...(b.captain===id?{cap:true}:{})})}
+  n.push({x:s.x,y:s.y,name:printName(p),...kitOf(p,s.role==='GK'),...(b.captain===id?{cap:true}:{})})}
  const tw=b.twelfth?byId.get(String(b.twelfth)):null,twelfth=tw?printName(tw):null
  const d=new Date().toLocaleDateString('en-GB',{timeZone:'Europe/Athens'}).replace(/\//g,'.')
  const th=club.data.theme,spec:XIPrintSpec={c:clubId,cn:club.data.identity.name,col:reg.primary,f:formation,n,t:twelfth,m:manager,d,v,g:!(th&&bannedHere(th,PROBE.green)),b:!(th&&bannedHere(th,PROBE.blue))}

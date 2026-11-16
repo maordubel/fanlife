@@ -42,7 +42,7 @@ function place(nodes: RelationshipNode[]): Placed[] {
     members.forEach((node, i) => {
       const angle = ((SECTOR[category] + (i - (members.length - 1) / 2) * step) * Math.PI) / 180
       const r = RADIUS[node.tier]
-      // x is measured from the inline START (the right, in Hebrew), so the drawing is RTL
+      // x is measured from the physical RIGHT edge, in either reading direction
       const x = Math.min(86, Math.max(14, 50 + r * Math.sin(angle)))
       const y = Math.min(88, Math.max(12, 50 - r * Math.cos(angle)))
       out.push({ ...node, x, y })
@@ -140,7 +140,7 @@ export function RelationshipMap({ reading, selfPortrait }: { reading: Relationsh
           ) : null}
 
           {/* אני */}
-          <div className="absolute flex translate-x-1/2 -translate-y-1/2 flex-col items-center" style={{ insetInlineStart: '50%', top: '50%' }}>
+          <div className="absolute flex translate-x-1/2 -translate-y-1/2 flex-col items-center" style={{ right: '50%', top: '50%' }}>
             <span className="relative flex h-[52px] w-[52px] items-center justify-center border-rule border-red bg-sheet">
               {selfPortrait ? (
                 // eslint-disable-next-line @next/next/no-img-element
@@ -165,7 +165,7 @@ export function RelationshipMap({ reading, selfPortrait }: { reading: Relationsh
               }}
               className={`${css.node} absolute flex min-h-tap min-w-tap translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center`}
               style={{
-                insetInlineStart: `${settled ? node.x : 50}%`,
+                right: `${settled ? node.x : 50}%`,
                 top: `${settled ? node.y : 50}%`,
                 opacity: settled ? (picked && picked !== node.id ? 0.35 : node.tier === 'distant' ? 0.7 : 1) : 0,
                 transitionDelay: settled ? `${i * 60}ms` : '0ms',
@@ -202,7 +202,7 @@ export function RelationshipMap({ reading, selfPortrait }: { reading: Relationsh
               aria-pressed={emptyPicked}
               aria-label={t('life90h.people.romanceEmpty')}
               className={`${css.node} absolute flex min-h-tap min-w-tap translate-x-1/2 -translate-y-1/2 items-center justify-center`}
-              style={{ insetInlineStart: `${settled ? 72 : 50}%`, top: `${settled ? 30 : 50}%`, opacity: settled ? 1 : 0 }}
+              style={{ right: `${settled ? 72 : 50}%`, top: `${settled ? 30 : 50}%`, opacity: settled ? 1 : 0 }}
             >
               <span className="block h-[30px] w-[30px] border-2 border-dashed border-concrete/45" />
             </button>
