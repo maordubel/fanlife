@@ -1,4 +1,5 @@
 import {NextResponse} from 'next/server'
+import {streamed} from '@/lib/shop/personal/stream'
 import {createHash} from 'node:crypto'
 import {loadClub} from '@/lib/clubs/resolver'
 import {FORMATIONS} from '@/lib/game/formations'
@@ -35,7 +36,9 @@ const DAY_LIMIT=6
  * The same XI asked twice is the same product. Personal prints are never listed on /shop and are cleared after 24 hours
  * unless sold (the hourly check-up).
  */
-export async function POST(r:Request){
+/** answered as a stream: the press outlasts Cloudflare's 100 s (lib/shop/personal/stream) */
+export const POST=(r:Request)=>streamed(()=>handle(r))
+async function handle(r:Request):Promise<Response>{
  let b:Record<string,unknown>;try{b=await r.json()}catch{return json({error:'Bad request.'},400)}
  const doc=await readShop()
  if(!doc.settings.open||!doc.settings.shopId)return json({error:'The shop is closed for now.'},503)
