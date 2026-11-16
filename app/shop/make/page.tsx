@@ -4,6 +4,7 @@ import {Shell} from '@/components/master/Shell'
 import {publicShop} from '@/lib/shop/store'
 import {subjectName} from '@/lib/shop/subjects'
 import type {PublicProduct} from '@/lib/shop/types'
+import {inClub} from '@/lib/shop/types'
 import copy from '@/messages/en.shop.json'
 import '../../weekly/shop.css'
 export const dynamic='force-dynamic'
@@ -15,8 +16,8 @@ export const metadata:Metadata={title:`${copy.makeH1} — ${copy.title}`,descrip
  * the supporter picks the product, the colour and the size at the Printify checkout. No new product is made per visitor.
  */
 export default async function Make({searchParams}:{searchParams:{club?:string}}){
- const shop=await publicShop(),club=searchParams.club&&shop.products.some(p=>p.subject===searchParams.club)?searchParams.club:null
- const by=new Map<string,PublicProduct[]>();for(const p of shop.products)if(!club||p.subject===club){const l=by.get(p.design)??[];l.push(p);by.set(p.design,l)}
+ const shop=await publicShop(),club=searchParams.club&&shop.products.some(p=>inClub(p,searchParams.club!))?searchParams.club:null
+ const by=new Map<string,PublicProduct[]>();for(const p of shop.products)if(!club||inClub(p,club)){const l=by.get(p.design)??[];l.push(p);by.set(p.design,l)}
  const face=(l:PublicProduct[])=>l.find(p=>p.shelf==='wall')??l.find(p=>p.shelf==='wear')??l[0]!
  const designs=[...by.values()].sort((a,b)=>b.length-a.length)
  return <Shell locale="en"><main id="main" className="wks">

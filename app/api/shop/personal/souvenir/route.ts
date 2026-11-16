@@ -1,4 +1,5 @@
 import {NextResponse} from 'next/server'
+import {streamed} from '@/lib/shop/personal/stream'
 import {REGISTRY} from '@/lib/master/registry'
 import {loadClub} from '@/lib/clubs/resolver'
 import {bannedHere} from '@/lib/clubs/theme'
@@ -32,7 +33,9 @@ const hexOf=(names:string[])=>{const [a,b]=names.map(c=>SWATCH[c]).filter(Boolea
  * from UEFA's journey, a season from his own Legends career (his only) — and from him only his name, one line, his age, his gate.
  * `dry` answers the proof; otherwise the product is made at the printer and its checkout link is returned (as the XI does).
  */
-export async function POST(r:Request){
+/** answered as a stream: the press outlasts Cloudflare's 100 s (lib/shop/personal/stream) */
+export const POST=(r:Request)=>streamed(()=>handle(r))
+async function handle(r:Request):Promise<Response>{
  let b:Record<string,unknown>;try{b=await r.json()}catch{return json({error:'Bad request.'},400)}
  const kind=String(b.kind||'') as Kind;if(!(kind in KINDS))return json({error:'Which print?'},422)
  const shop=await readShop();if(!shop.settings.open||!shop.settings.shopId)return json({error:'The shop is closed for now.'},503)
