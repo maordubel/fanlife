@@ -69,6 +69,20 @@
 ],
 "id": "lib:ground-2000s-ext-fl1-kr"
 },
+"03bb4fe28fd52318": {
+"caption": "An illustrated manager wearing a flat cap and winter coat stands with arms crossed.",
+"people": 1,
+"faces": true,
+"action": "standing with arms crossed",
+"place": "abstract",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"celebrating a goal",
+"young player"
+],
+"id": "lib:ppl-manager-dugout-fl1-kr"
+},
 "03c36e6d1877742c": {
 "caption": "A person looks out a window overlooking a coastal city skyline, with a trophy and a football newspaper on the sill.",
 "people": 1,
@@ -649,6 +663,19 @@
 ],
 "id": "beat:common/street-dusk-kr"
 },
+"1493d4ae5fb4d12e": {
+"caption": "An illustrated young boy stands holding a football under his arm, seen from behind.",
+"people": 1,
+"faces": false,
+"action": "holding football",
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"match action",
+"front view"
+],
+"id": "lib:ppl-kid-ball-kr"
+},
 "1497868d4b5233a0": {
 "caption": "A referee in a black kit blows a whistle and points with one hand.",
 "people": 1,
@@ -687,6 +714,20 @@
 "sunshine"
 ],
 "id": "lib:layer-rain-stand-kr-bg"
+},
+"159f7dd62f46cdef": {
+"caption": "A cartoon goalkeeper with a mustache wearing a red jersey dives through the air to reach a football.",
+"people": 1,
+"faces": true,
+"action": "diving for the ball",
+"place": "pitch",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"striker scoring a goal",
+"holding the trophy"
+],
+"id": "lib:ppl-keeper-dive-fl2-kr"
 },
 "15dd73fde904e75c": {
 "caption": "An illustrated line of football fans wearing red scarves standing still and facing forward.",
@@ -1717,6 +1758,20 @@
 ],
 "id": "lib:layer-rain-stand-fl1-kr"
 },
+"38e43b5a0150690a": {
+"caption": "A photographer with medium-length hair and a red vest kneels down, holding a camera with a large telephoto lens to his eye.",
+"people": 1,
+"faces": true,
+"action": "taking a photograph",
+"place": "abstract",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"player celebrating goal",
+"referee on pitch"
+],
+"id": "lib:ppl-photographer-fl2-kr"
+},
 "39460139183649fb": {
 "caption": "A solid brown circle inside a light-colored background with tiny text St_Pauli Crest.",
 "people": 0,
@@ -1992,6 +2047,20 @@
 "financial scandal"
 ],
 "id": "beat:olympiacos-maccabi-2024/press-israel"
+},
+"41c4d57e4562f65b": {
+"caption": "An elderly woman wearing glasses, a headscarf, and a winter coat happily holds up a red and white scarf with both hands.",
+"people": 1,
+"faces": true,
+"action": "holding up a scarf",
+"place": "abstract",
+"era": "1970s",
+"mood": "joy",
+"avoid": [
+"young player signing contract",
+"referee showing red card"
+],
+"id": "lib:ppl-old-woman-scarf-fl2-kr"
 },
 "424e6f039067c8f6": {
 "caption": "Fans walk along the street outside an older football stadium with traditional floodlight pylons.",
@@ -2352,6 +2421,20 @@
 ],
 "id": "lib:doc-photo-old-fl2-kr"
 },
+"4ca563c075cea6fc": {
+"caption": "A man in a suit carrying a medical bag runs across a pitch toward a stadium with spectators in the background.",
+"people": 1,
+"faces": false,
+"action": "running with medical bag",
+"place": "pitch",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"player celebrating",
+"fan in stands"
+],
+"id": "lib:ppl-physio-n"
+},
 "4cb35b3f54bbb9c5": {
 "caption": "An open, weathered manila folder with blank papers inside sits on a white background.",
 "people": 0,
@@ -2487,6 +2570,20 @@
 ],
 "id": "lib:obj-drum-kr"
 },
+"4f073bafd7798fcf": {
+"caption": "A football player in a red shirt jumps to head a ball while an opponent in a white shirt watches.",
+"people": 2,
+"faces": true,
+"action": "heading the ball",
+"place": "pitch",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"goalkeeping",
+"tackling"
+],
+"id": "lib:ppl-player-header-fl2-kr"
+},
 "4f20565bb2ea4787": {
 "caption": "A classic black and white patterned football sits against a dark background.",
 "people": 0,
@@ -2511,6 +2608,20 @@
 "breaking news"
 ],
 "id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/t9-otd-five-rows-84a46bd44a365675"
+},
+"4f62fcd528eb3392": {
+"caption": "A cartoon journalist in a red coat and hat sits at a small desk writing notes with a microphone nearby.",
+"people": 1,
+"faces": true,
+"action": "writing notes at desk",
+"place": "studio",
+"era": "1970s",
+"mood": "calm",
+"avoid": [
+"standing reporter",
+"outdoor match"
+],
+"id": "lib:ppl-journalist-fl2-kr"
 },
 "4fe19a87fdbdff4b": {
 "caption": "Packed stadium stands under floodlights feature fans waving large red and white flags and holding scarves aloft.",
@@ -2636,6 +2747,20 @@
 ],
 "id": "cut:common/fig-supporter-child-shoulders-kr"
 },
+"52f689d156a366e1": {
+"caption": "A male footballer with long hair and sideburns wearing a red shirt and striped socks celebrates with arms outstretched.",
+"people": 1,
+"faces": true,
+"action": "celebrating a goal",
+"place": "abstract",
+"era": "1970s",
+"mood": "joy",
+"avoid": [
+"referee showing red card",
+"physio running on pitch"
+],
+"id": "lib:ppl-player-celebrate-fl1-kr"
+},
 "53227914b33eacff": {
 "caption": "A supporter from behind raises a scarf overhead in a floodlit stadium crowd.",
 "people": 15,
@@ -2720,6 +2845,19 @@
 ],
 "id": "beat:common/stadium-lights-off-n"
 },
+"579ffd077a5e18cc": {
+"caption": "An illustrated person sits crouched inside a stadium dugout shelter.",
+"people": 1,
+"faces": false,
+"action": "sitting in dugout",
+"place": "stadium",
+"mood": "tension",
+"avoid": [
+"active match play",
+"crowd celebration"
+],
+"id": "lib:ppl-manager-dugout-n"
+},
 "57b227332fce1aff": {
 "caption": "An illustrated footballer in a red shirt and white shorts kneels on the ground holding his head in his hands.",
 "people": 1,
@@ -2760,6 +2898,20 @@
 "a manager being sacked"
 ],
 "id": "lib:ppl-doctor-n"
+},
+"5994fdd4861b497f": {
+"caption": "An illustrated football player in a red kit walks out of a stadium tunnel carrying boots.",
+"people": 1,
+"faces": true,
+"action": "walking from the tunnel",
+"place": "stadium",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"celebrating a win",
+"walking barefoot"
+],
+"id": "lib:ppl-player-tunnel-fl2-kr"
 },
 "59a82f482c3cd63c": {
 "caption": "A red and white football lies near a torn ticket on the ground in front of a turnstile.",
@@ -3370,6 +3522,20 @@
 ],
 "id": "beat:common/penalty-spot-close-b-n"
 },
+"6cc9a048232bf673": {
+"caption": "A photographer wearing a beanie, red vest, and jacket kneels down while aiming a large telephoto lens.",
+"people": 1,
+"faces": true,
+"action": "photographing action",
+"place": "abstract",
+"era": "1980s",
+"mood": "tension",
+"avoid": [
+"fan celebration",
+"manager walking pitch"
+],
+"id": "lib:ppl-photographer-fl1-kr"
+},
 "6cd33c99e5ebf844": {
 "caption": "A large, empty stadium scoreboard stands in the dark surrounded by thick smoke or fog.",
 "people": 0,
@@ -3435,6 +3601,20 @@
 "live match action"
 ],
 "id": "lib:layer-old-ground-kr-fg"
+},
+"6f1b2060c7e2c708": {
+"caption": "A cartoon goalkeeper in a red jersey dives horizontally to punch away a football.",
+"people": 1,
+"faces": true,
+"action": "diving to save a ball",
+"place": "pitch",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"penalty shootout celebration",
+"referee giving a card"
+],
+"id": "lib:ppl-keeper-dive-fl1-kr"
 },
 "6f7f10d893eee752": {
 "caption": "Fans hold umbrellas and watch a game from the stands as rain falls heavily on the pitch.",
@@ -3667,6 +3847,19 @@
 "successful penalty taker"
 ],
 "id": "beat:common/despair-kneeling-b-kr"
+},
+"762ef0e664b6ef88": {
+"caption": "A paper-cut figure of a policeman stands seen from behind, wearing a peaked cap and dark coat.",
+"people": 1,
+"faces": false,
+"action": "standing facing away",
+"place": "other",
+"mood": "tension",
+"avoid": [
+"football player celebration",
+"pitch action"
+],
+"id": "lib:ppl-policeman-n"
 },
 "77a8cb04cbe798ca": {
 "caption": "One hand hands over a folded red scarf to another outstretched hand.",
@@ -4661,6 +4854,21 @@
 ],
 "id": "lib:layer-kitchen-radio-fl1-kr"
 },
+"99b200ac7d76eb3b": {
+"caption": "A football player in a red shirt and white shorts celebrates with arms outstretched.",
+"people": 1,
+"faces": true,
+"action": "celebrating",
+"place": "pitch",
+"era": "1970s",
+"mood": "joy",
+"avoid": [
+"injury",
+"defeat",
+"substitution"
+],
+"id": "lib:ppl-player-celebrate-fl2-kr"
+},
 "9aa55a0b1cbca8d8": {
 "caption": "An illustrated goalkeeper diving through the air to his left, seen from behind.",
 "people": 1,
@@ -4965,6 +5173,20 @@
 "whiteboard tactics session"
 ],
 "id": "beat:common/manager-blank-board-stadium"
+},
+"a64655d1a97f936f": {
+"caption": "A cartoon journalist in a red coat writes in a notepad at a desk with a typewriter, microphone, and telephone.",
+"people": 1,
+"faces": true,
+"action": "writing in a notepad",
+"place": "studio",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"prison bars",
+"modern smartphone"
+],
+"id": "lib:ppl-journalist-fl1-kr"
 },
 "a6b390cb84cbe331": {
 "caption": "A football player wearing number 22 takes a shot on goal in a crowded penalty area during a night game.",
@@ -5312,6 +5534,34 @@
 ],
 "id": "lib:obj-thermos-fl1-kr"
 },
+"af5287f08dd65186": {
+"caption": "A football player in a red shirt and black shorts kicks a ball with force.",
+"people": 1,
+"faces": true,
+"action": "kicking the ball",
+"place": "pitch",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"goalkeeping",
+"celebration"
+],
+"id": "lib:ppl-player-shot-fl1-kr"
+},
+"b0b1ee2912721971": {
+"caption": "An illustrated football player in a light-coloured kit walks along barefoot, holding his boots.",
+"people": 1,
+"faces": true,
+"action": "walking barefoot holding boots",
+"place": "abstract",
+"era": "1970s",
+"mood": "grief",
+"avoid": [
+"running on the pitch",
+"scoring a goal"
+],
+"id": "lib:ppl-player-tunnel-fl1-kr"
+},
 "b0b2902d397fba6f": {
 "caption": "Several fans wearing red scarves seated in the stands overlooking a floodlit football pitch.",
 "people": 6,
@@ -5478,6 +5728,21 @@
 ],
 "id": "lib:obj-ball-old-n"
 },
+"b4ad4038186d8739": {
+"caption": "A football player in a red shirt and shorts kneels on the ground with his head in his hands.",
+"people": 1,
+"faces": true,
+"action": "kneeling in despair",
+"place": "pitch",
+"era": "1970s",
+"mood": "grief",
+"avoid": [
+"celebration",
+"victory",
+"prayer"
+],
+"id": "lib:ppl-player-despair-fl1-kr"
+},
 "b569ddafeac87893": {
 "caption": "Papercraft stadium scene showing fans in the stands displaying a red and white pattern choreography display.",
 "people": 45,
@@ -5601,6 +5866,20 @@
 ],
 "id": "cut:common/close-hands-clasp-prayer-c-kr"
 },
+"b78d6608fdcdfce4": {
+"caption": "A cartoon boy in a red and white striped jersey juggles a football with his knee.",
+"people": 1,
+"faces": true,
+"action": "juggling a football",
+"place": "abstract",
+"era": "1970s",
+"mood": "joy",
+"avoid": [
+"professional adult player",
+"referee whistle"
+],
+"id": "lib:ppl-kid-ball-fl1-kr"
+},
 "b820ed6c522e1373": {
 "caption": "A crowd of people wearing dark coats and red scarves walking past a street lamp.",
 "people": 19,
@@ -5684,6 +5963,20 @@
 "referee blowing the final whistle"
 ],
 "id": "cut:common/fig-referee-card-b-n"
+},
+"bae45e1ffc902919": {
+"caption": "A grayscale illustrated reporter in a trench coat and fedora stands at the edge of a stadium writing in a notepad.",
+"people": 1,
+"faces": false,
+"action": "observing and taking notes",
+"place": "stadium",
+"era": "1950s",
+"mood": "calm",
+"avoid": [
+"color photograph",
+"modern arena"
+],
+"id": "lib:ppl-journalist-n"
 },
 "bae4622bcf25c679": {
 "caption": "A rolled-up paper banner secured with red ribbons.",
@@ -5779,6 +6072,20 @@
 ],
 "id": "lib:ins-ball-spin-fl1-kr"
 },
+"bdafce63885c0404": {
+"caption": "An illustrated manager in a red coat stands with arms crossed.",
+"people": 1,
+"faces": true,
+"action": "standing with arms crossed",
+"place": "abstract",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"cheering",
+"player on pitch"
+],
+"id": "lib:ppl-manager-dugout-fl2-kr"
+},
 "bde493b98df70996": {
 "caption": "A cutout of a football player in a white kit celebrating with arms raised against a black background.",
 "people": 1,
@@ -5817,6 +6124,20 @@
 "fans entering the ground"
 ],
 "id": "prop:match_ticket"
+},
+"bf129e7183eef80d": {
+"caption": "A silhouetted photographer in a cap and vest kneels down with a large camera lens against a neutral background.",
+"people": 1,
+"faces": false,
+"action": "taking photos",
+"place": "abstract",
+"era": "1990s",
+"mood": "calm",
+"avoid": [
+"player scoring goal",
+"coach running"
+],
+"id": "lib:ppl-photographer-n"
 },
 "bf7c7bad087c1c7d": {
 "caption": "A driver in uniform boards an old fashioned bus outside a stadium with floodlights.",
@@ -6676,6 +6997,21 @@
 ],
 "id": "beat:job-19324d9d-b95c-4388-a19b-062dd2002d03/02-gate-13-63995d9ef4de26f4"
 },
+"def1443606a4e8ef": {
+"caption": "A football player in a red shirt and shorts kneels on the ground with his hands on his head.",
+"people": 1,
+"faces": true,
+"action": "kneeling in despair",
+"place": "pitch",
+"era": "1970s",
+"mood": "grief",
+"avoid": [
+"celebration",
+"victory",
+"prayer"
+],
+"id": "lib:ppl-player-despair-fl2-kr"
+},
 "df19ffee5a53bff9": {
 "caption": "A solid brown square background featuring small white text reading St_Pauli App Icon.",
 "people": 0,
@@ -6715,6 +7051,20 @@
 "referees officiating"
 ],
 "id": "lib:era-scoreboard-fl2-kr"
+},
+"dfc30d7b45be167a": {
+"caption": "An illustrated young boy juggles a football with his knee.",
+"people": 1,
+"faces": true,
+"action": "juggling football",
+"place": "abstract",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"professional match play",
+"adult player"
+],
+"id": "lib:ppl-kid-ball-fl2-kr"
 },
 "e035fff8e3d757f1": {
 "caption": "A paper cutout illustration of supporters crowded around a classic car on a city street.",
@@ -6756,6 +7106,19 @@
 "empty town"
 ],
 "id": "beat:common/father-son-walk-kr"
+},
+"e0c4f9d0db1ccedd": {
+"caption": "An illustrated elderly woman joyfully holds up a football scarf.",
+"people": 1,
+"faces": true,
+"action": "holding up scarf",
+"place": "abstract",
+"mood": "joy",
+"avoid": [
+"manager tactical meeting",
+"sadness"
+],
+"id": "lib:ppl-old-woman-scarf-fl1-kr"
 },
 "e1695b7a5ad82bf5": {
 "caption": "Groundsmen shovel thick snow off a red-lined football pitch inside a packed stadium during a snowstorm.",
@@ -6808,6 +7171,20 @@
 "actual match"
 ],
 "id": "lib:layer-away-end-kr-full"
+},
+"e24c2fb6af860520": {
+"caption": "An illustrated footballer in a red kit is depicted kicking a football powerfully.",
+"people": 1,
+"faces": true,
+"action": "striking a football",
+"place": "abstract",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"goal celebration",
+"referee whistle"
+],
+"id": "lib:ppl-player-shot-fl2-kr"
 },
 "e28e071723527590": {
 "caption": "A stack of vintage newspaper pages features comic-style illustrations of a football player and match scenes.",
@@ -7148,6 +7525,20 @@
 ],
 "id": "beat:job-19324d9d-b95c-4388-a19b-062dd2002d03/02-original-21-6d1324030458ccd8"
 },
+"ea7164472e0735ae": {
+"caption": "An illustrated referee in a black and red uniform runs while blowing a whistle and pointing.",
+"people": 1,
+"faces": true,
+"action": "running and blowing whistle",
+"place": "abstract",
+"era": "1970s",
+"mood": "defiance",
+"avoid": [
+"player scoring",
+"quiet match"
+],
+"id": "lib:ppl-referee-fl1-kr"
+},
 "eb5e7cfb47d09c7d": {
 "caption": "A graphic design slide featuring a sketch of a footballer kicking a ball and the text Make a memory.",
 "people": 1,
@@ -7202,6 +7593,19 @@
 "matchday crowd: never for empty stadium scenes"
 ],
 "id": "beat:common/city-skyline-dawn-kr"
+},
+"ec0e00b536b313bd": {
+"caption": "A paper-cut artwork shows a lone figure walking through a dark tunnel towards an illuminated stadium.",
+"people": 1,
+"faces": false,
+"action": "walking into the stadium",
+"place": "stadium",
+"mood": "calm",
+"avoid": [
+"crowded match",
+"fans cheering"
+],
+"id": "lib:ppl-player-tunnel-n"
 },
 "ec62076d96715ebb": {
 "caption": "A pair of black and red football boots, a red and white scarf, and small portrait cards are displayed on a white surface in front of a illustrated stadium backdrop.",
@@ -7486,6 +7890,20 @@
 "crash"
 ],
 "id": "prop:passenger_plane"
+},
+"f5785c30790c577f": {
+"caption": "A football player in a red shirt jumps to head a ball while an opponent in a white shirt watches.",
+"people": 2,
+"faces": true,
+"action": "heading the ball",
+"place": "pitch",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"goalkeeping",
+"tackling"
+],
+"id": "lib:ppl-player-header-fl1-kr"
 },
 "f5afb706f7873cdf": {
 "caption": "A young man looks at his smartphone while holographic search results for Athens restaurants and events float in the air around him.",
