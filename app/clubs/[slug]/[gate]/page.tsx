@@ -1,6 +1,7 @@
 import {clubSubMetadata,GATE_DESCRIPTION} from '@/lib/seo/club'
 import Link from 'next/link'
 import {Suspense} from 'react'
+import {ShopStrip} from '@/components/shop/ShopStrip'
 import {NextStep} from '@/components/universe/NextStep'
 import {REGISTRY} from '@/lib/master/registry'
 import {notFound} from 'next/navigation'
@@ -15,6 +16,8 @@ import {PlayHeader} from '@/components/clubs/PlayHeader'
 import {modeOf,isPlayMode} from '@/lib/clubs/layout-mode'
 import {GATE_VIEWS} from '@/components/clubs/gates/registry'
 import type {GateSearch,ViewKey} from '@/components/clubs/gates/types'
+/** the gates that are about shirts: their end shows the club's shirts for sale */
+const SHIRT_GATES=new Set(['kits','kit-builder'])
 export const dynamic='force-dynamic'
 export async function generateMetadata({params}:{params:{slug:string;gate:string}}){const c=REGISTRY.find(r=>r.id===params.slug),g=sharedGate(params.gate),name=g?(gameCopy('en') as Record<string,string>)[`gate.${g.key}`]:null;if(!c||!g)return {title:[name,c?.name].filter(Boolean).join(' · ')||'Club games'};return clubSubMetadata({id:c.id,name:c.name,sub:g.key,title:name||g.name,description:GATE_DESCRIPTION[g.key]?.(c.name)})}
 export default async function Page({params,searchParams}:{params:{slug:string;gate:string};searchParams:GateSearch}){
@@ -34,6 +37,8 @@ export default async function Page({params,searchParams}:{params:{slug:string;ga
    {await View({club,locale,copy:copy as never,round,gameKey,searchParams,state:readiness.state,allowed:k=>{const g=sharedGate(k);return !!g&&resolved.allowGate(g.number)}})}
    {/* CF-01: rendered for every gate, shown only once the game has put its result on screen (DiscoveryUnit `after`) */}
    <Suspense fallback={null}><NextStep gate={gate.key} club={club.identity.id} name={club.identity.name} locale={locale} floating={compact}/></Suspense>
+   {/* the shirt games end at the club's shirts for sale (16.11.2026); nothing renders while the shop has none */}
+   {SHIRT_GATES.has(gate.key)&&<Suspense fallback={null}><ShopStrip subject={club.identity.id} limit={2} className="wkk-shop"/></Suspense>}
   </>}
  </main></ClubSurface>
 }

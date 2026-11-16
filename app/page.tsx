@@ -122,7 +122,7 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
     <GateChooser gate="xi" clubs={model} copy={chooser} className="wkh-teaser"><b>{copy.teaseXiK}</b><small>{copy.teaseXi}</small></GateChooser>
     <GateChooser gate="trivia" clubs={model} copy={chooser} className="wkh-teaser"><b>{copy.teaseQuizK}</b><small>{copy.teaseQuiz}</small></GateChooser>
    </div>
-   <p className="wkh-plus"><span className="wk-tag red">{copy.plusK}</span><span className="wk-k white wkh-plus-t"><span>{copy.plus1}</span><span className="wkh-plus-sep"> · </span><span>{copy.plus2}</span></span><Image className="wkh-seal" src="/brand/fanlife/logo-192.png" alt="" width={192} height={192} priority unoptimized/></p>
+   <p className="wkh-plus"><span className="wk-tag red">{copy.plusK}</span><span className="wk-k white wkh-plus-t"><span>{copy.plus1}</span><span className="wkh-plus-sep"> · </span><span>{copy.plus2}</span></span><Image className="wkh-seal" src="/brand/fanlife/logo-192.webp" alt="" width={192} height={192} priority unoptimized/></p>
   </section>
 
   {/* THE GAME: LIFE, the app's central feature (owner, 7.10.2026). */}

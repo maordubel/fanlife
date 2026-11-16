@@ -27,7 +27,7 @@ export function Shell({children,club,theme,locale='en',stop}:{children:ReactNode
  const identity=theme||(club?clubTheme(club):undefined)
  return <div className={`fl mag${identity?' club-theme':''}`} data-club={club?.id} data-pattern={identity?.pattern} data-rival-no={identity?rivalBans(identity).join(' ')||undefined:undefined} dir={localeDirection(locale)} lang={locale} style={identity?themeStyle(identity,locale):{'--club':MASTER_PRIMARY} as CSSProperties}>
   <div className="mag-top"><div className="mag-top-in">
-   <Link href="/" className="mag-logo" aria-label="FAN LIFE"><img className="mag-seal-logo" src={identity?'/brand/fanlife/logo-mono.webp':'/brand/fanlife/logo-96.png'} alt="" width={40} height={40}/>Fan <b>Life</b></Link>
+   <Link href="/" className="mag-logo" aria-label="FAN LIFE"><img className="mag-seal-logo" src={identity?'/brand/fanlife/logo-mono.webp':'/brand/fanlife/logo-96.webp'} alt="" width={40} height={40}/>Fan <b>Life</b></Link>
    <nav className="mag-nav" aria-label={copy.primaryNav}><Link href="/#clubs">{copy.clubs}</Link><Link href="/our-games">{copy.tabOurGames}</Link><Suspense fallback={null}><ShopNavLink/></Suspense><Link href="/market">{copy.tabMarket}</Link><Link href="/me">{copy.corner}</Link></nav>
    <HubMenu locale={locale} current={club?.id??null} theme={identity}/>
   </div></div>
@@ -35,7 +35,7 @@ export function Shell({children,club,theme,locale='en',stop}:{children:ReactNode
   {children}
   <footer className="mag-foot"><div className="mag-printbar" aria-hidden="true"><i/><i/><i/><i/><i/><i/><u>+</u></div><div className="mag-foot-in">
    <div className="mag-mono">FAN LIFE · {copy.issue}<br/>{copy.footer}<br/>{copy.printed}</div>
-   <img className="mag-foot-logo" src={identity?'/brand/fanlife/logo-mono.webp':'/brand/fanlife/logo-192.png'} alt="FAN LIFE — Football. Forever." width={96} height={96} loading="lazy"/>
+   <img className="mag-foot-logo" src={identity?'/brand/fanlife/logo-mono.webp':'/brand/fanlife/logo-192.webp'} alt="FAN LIFE — Football. Forever." width={96} height={96} loading="lazy"/>
    <div className="mag-barcode" aria-hidden="true"/>
    <div className="mag-mono"><Link className="mag-credit" href="/sources">{copy.credits}</Link><br/><Link className="mag-credit" href="/master/admin">{copy.administration}</Link></div>
    <nav className="mag-mono mag-foot-legal" aria-label="FAN LIFE"><Link className="mag-credit" href="/about">About</Link> · <Link className="mag-credit" href="/privacy">Privacy</Link> · <Link className="mag-credit" href="/terms">Terms</Link> · <Link className="mag-credit" href="/contact">Contact</Link> · <a className="mag-credit" href="https://www.dubelteam.com/games.html">More games ↗</a></nav>

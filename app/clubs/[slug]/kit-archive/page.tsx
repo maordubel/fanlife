@@ -2,7 +2,8 @@ import {clubSubMetadata} from '@/lib/seo/club'
 import Link from 'next/link'
 import {headers} from 'next/headers'
 import {notFound} from 'next/navigation'
-import type {CSSProperties} from 'react'
+import {Suspense,type CSSProperties} from 'react'
+import {ShopStrip} from '@/components/shop/ShopStrip'
 import {ClubSurface} from '@/components/clubs/ClubSurface'
 import {KitPlate} from '@/components/clubs/games/KitPlate'
 import {ShirtMark} from '@/components/clubs/ClubGateWall'
@@ -124,5 +125,7 @@ export default async function KitArchive({params,searchParams}:{params:{slug:str
     </>}
    </div>
   </div></KitOwnProvider>
+  {/* the shirts end where a fan can wear them (16.11.2026): the club's own products, nothing while the shop is closed */}
+  <Suspense fallback={null}><ShopStrip subject={id} limit={2} className="wkk-shop"/></Suspense>
  </main></ClubSurface>
 }
