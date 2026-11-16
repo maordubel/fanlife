@@ -218,6 +218,9 @@ EDITORIAL_KEYS = ('subject', 'competition_format', 'before', 'timeline', 'tactic
                   'thumbnail_objects', 'disputes', 'gaps')
 
 
+WAITS_MAX = 2   # times a film waits for Google's grounded research before it goes ahead on the archive
+
+
 def enrich(ledger: dict, brief: dict, cache_dir: Path, log) -> dict:
     """Add deep research to the ledger in place. Never fails the film: a missing key or a spent quota is logged."""
     from .gemini import api_key  # the key LIST: the one known to work first
@@ -237,9 +240,17 @@ def enrich(ledger: dict, brief: dict, cache_dir: Path, log) -> dict:
         except StageError as e:
             # Owner, 15.11.2026 (the AEK–Derby film written on two facts): a documentary is never written on the archive's
             # bare scores because Google was busy. A busy or spent quota makes the film WAIT and start again by itself.
-            if e.code in ('WRITER_BUSY', 'WRITER_QUOTA_DAY') and os.environ.get('STORIES_THIN_OK') != '1':
-                log(f'Deep research could not run ({e.code}) — the film waits for it rather than go out thin')
+            # …but the wait is bounded (16.11.2026: three films waited all night, one 10-minute busy-wait per run, and
+            # held the queue): after WAITS_MAX waits for the same subject the film goes ahead on the archive, and says so.
+            wk = ck.with_name(ck.stem + '.waits.json')
+            waited = (read_json(wk).get('n', 0) if wk.exists() else 0)
+            if e.code in ('WRITER_BUSY', 'WRITER_QUOTA_DAY') and os.environ.get('STORIES_THIN_OK') != '1' and waited < WAITS_MAX:
+                wk.parent.mkdir(parents=True, exist_ok=True)
+                write_json(wk, {'n': waited + 1})
+                log(f'Deep research could not run ({e.code}) — the film waits for it rather than go out thin '
+                    f'(wait {waited + 1} of {WAITS_MAX})')
                 raise
+            ledger['research_thin'] = f'deep research unavailable ({e.code}) after {waited} waits'
             log(f'Deep research skipped ({e.code}): {str(e)[:200]} — the film goes ahead on the archive')
             return ledger
         facts = grounded_facts(answer, meta['response'])
