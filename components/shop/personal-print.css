@@ -45,3 +45,8 @@
 .fmp-f { display: grid; gap: 4px; flex: 1 1 120px; }
 .fmp-wide { flex: 3 1 220px; min-inline-size: 0; }
 .fmp-f select { inline-size: 100%; min-inline-size: 0; border: 2px solid currentColor; background: #fff; font: inherit; font-size: 16px; padding-inline: 8px; }
+/* our own product beside the print (16.11.2026): the full-size file, a quieter second button */
+.xip-file { display: grid; gap: 4px; justify-items: stretch; text-align: center; }
+.xip-file-b { min-block-size: 44px; border: 2px solid currentColor; background: transparent; color: inherit; font-weight: 800; letter-spacing: .02em; cursor: pointer; }
+.xip-file-b:disabled { opacity: .6; cursor: progress; }
+.xip-file small { font-size: 12px; opacity: .8; }

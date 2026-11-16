@@ -300,3 +300,12 @@ main.wks ul { margin: 0; padding: 0; }
 /* the shop's search (15.11.2026) */
 .wks-search { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px; }
 .wks-search input { min-block-size: 44px; min-inline-size: 0; padding: 0 12px; border: 3px solid var(--mag-ink); background: var(--mag-paper); font: inherit; font-size: 16px; }
+
+/* the buyer's order page (16.11.2026): one panel, mobile first */
+.wks-order { padding: 16px; display: grid; place-items: start center; }
+.wks-order-card { inline-size: min(100%, 560px); display: grid; gap: 12px; padding: 20px; }
+.wks-order-card .wks-h1 { color: var(--mag-ink); padding-inline-end: 0; font-size: clamp(30px, 9vw, 48px); }
+.wks-order-card .wks-kicker { color: var(--mag-vermilion); font-weight: 800; letter-spacing: .12em; text-transform: uppercase; font-size: 12px; margin: 0; }
+.wks-order-card .wks-fine { color: var(--mag-muted); font-size: 14px; margin: 0; }
+.wks-order-card .wks-buy { display: inline-flex; align-items: center; padding-inline: 18px; }
+@media (min-width: 901px) { .wks-order { padding-block: 48px; } .wks-order-card { padding: 32px; } }

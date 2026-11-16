@@ -1,4 +1,5 @@
 'use client'
+import pay from '@/messages/en.pay.json'
 import {useEffect,useRef,useState} from 'react'
 import {createPortal} from 'react-dom'
 import copyAll from '@/messages/en.shop.json'
@@ -22,6 +23,12 @@ export function PersonalPrint({req,kind='xi',className=''}:{req:Req;kind?:Kind;c
  const [on,setOn]=useState(false),[open,setOpen]=useState(false),[product,setProduct]=useState<Product>('framed'),[template,setTemplate]=useState<Look>('touchline'),[manager,setManager]=useState('')
  const [proof,setProof]=useState<string|null>(null),[state,setState]=useState<'idle'|'making'|'ready'|'error'>('idle'),[msg,setMsg]=useState(''),[url,setUrl]=useState<string|null>(null),win=useRef<Window|null>(null)
  useEffect(()=>{fetch('/api/shop/personal').then(r=>r.json()).then(j=>setOn(!!j.open)).catch(()=>{})},[])
+ // our own product beside the printed one (16.11.2026): the full-size file, paid with our Stripe — shown only when payments are open
+ const [file,setFile]=useState<{cents:number;currency:string}|null>(null),[paying,setPaying]=useState(false)
+ useEffect(()=>{fetch('/api/pay/checkout').then(r=>r.json()).then((j:{items?:{kind:string;cents:number;currency:string}[]})=>{const f=j.items?.find(i=>i.kind==='print-file');if(f)setFile({cents:f.cents,currency:f.currency})}).catch(()=>{})},[])
+ const buyFile=async()=>{if(!proof)return;const u=new URL(proof,location.origin),s=u.searchParams.get('s'),sig=u.searchParams.get('sig');if(!s||!sig)return;setPaying(true);setMsg('')
+  try{const r=await fetch('/api/pay/checkout',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({kind:'print-file',s,sig,back:location.pathname})});const j=await r.json()
+   if(j.url){location.href=j.url;return}setMsg(j.error||copy.error)}catch{setMsg(copy.error)}setPaying(false)}
  const mine=xi?{manager,template}:{kind,who:manager,line,note,age:age?Number(age):null,gate},body=JSON.stringify({...req,...mine,product})
  useEffect(()=>{if(!open)return;const t=window.setTimeout(()=>{fetch(endpoint,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({...req,...mine,product,dry:true})}).then(r=>r.json()).then(j=>{if(j.proof){setProof(j.proof);setMsg('')}else if(j.error)setMsg(j.error)}).catch(()=>{})},manager||line||note||age||gate?600:0);return ()=>window.clearTimeout(t)
  // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -64,6 +71,7 @@ export function PersonalPrint({req,kind='xi',className=''}:{req:Req;kind?:Kind;c
       ?<a className="xip-go min-h-tap" href={url} target="_blank" rel="noopener" onClick={e=>{e.preventDefault();go(url)}}>{copy.open} ↗</a>
       :<button type="button" className="xip-go min-h-tap" disabled={state==='making'||!proof} onClick={make}>{state==='making'?copy.making:<>{copy.make} →</>}</button>}
      {state==='ready'?<p className="xip-ok" role="status">{copy.ready}</p>:null}
+     {file&&product!=='tee'&&proof?<div className="xip-file"><button type="button" className="xip-file-b min-h-tap" disabled={paying} onClick={buyFile}>{pay.buyFile.replace('{price}',new Intl.NumberFormat('en',{style:'currency',currency:file.currency.toUpperCase()}).format(file.cents/100))}</button><small>{pay.buyFileNote}</small></div>:null}
      {msg?<p className="xip-err" role="alert">{msg}</p>:null}
      <button type="button" className="xip-back min-h-tap" onClick={()=>setOpen(false)}>{copy.back}</button>
     </div>
