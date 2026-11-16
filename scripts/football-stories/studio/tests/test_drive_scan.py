@@ -10,7 +10,7 @@ sys.path.insert(0, str(HERE))
 
 from studio import drive_scan  # noqa: E402
 
-F = '01_Football_Stories_מועדונים_ומשחקים'
+F = '01_Football_Stories_Clubs_and_Matches'
 TREE = {'folders': [{'id': f'id{i}', 'path': p} for i, p in enumerate([
     F, f'{F}/AEK-Athens', f'{F}/Panathinaikos', f'{F}/FanLife_Olympiacos_Maccabi_2024_Art_and_Research',
     f'{F}/FanLife_Olympiacos_Maccabi_2024_Art_and_Research/art', f'{F}/Fouad_Derby_Newspaper_Graphic_Pack',

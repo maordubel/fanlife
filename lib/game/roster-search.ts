@@ -318,7 +318,7 @@ export function byInitial(entries: Searchable[]): { letter: string; names: Searc
   return [...buckets.entries()]
     .map(([letter, names]) => ({
       letter,
-      names: names.sort((a, b) => fold(a.familyHe).localeCompare(fold(b.familyHe), 'he')),
+      names: names.sort((a, b) => fold(a.familyHe).localeCompare(fold(b.familyHe), 'en')),
     }))
-    .sort((a, b) => a.letter.localeCompare(b.letter, 'he'))
+    .sort((a, b) => a.letter.localeCompare(b.letter, 'en'))
 }

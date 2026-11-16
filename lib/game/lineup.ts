@@ -3,7 +3,7 @@ import 'server-only'
 import lineupsFile from '@/content/manual/lineups.json'
 import squadsFile from '@/content/manual/squads.json'
 import { matchById, sourceOf } from '@/lib/archive/match-master'
-import { playerById, pickablePlayers, resolvePlayerId } from '@/lib/archive/player-master'
+import { playerById, pickablePlayers, resolvePlayerId, printedName } from '@/lib/archive/player-master'
 import { kitForSeason } from '@/lib/kit/seasons'
 import type { KitSpec } from '@/lib/kit/spec'
 import { positionOf, takeFrom } from '@/lib/rotation/deck'
@@ -113,7 +113,8 @@ export function playableLineups(): readonly LineupRecord[] {
 
 /** The display name of an id: the Player Master's canonical spelling (never a second roster). */
 function displayName(id: string): string {
-  return playerById(id)?.displayName ?? id
+  const p = playerById(id)
+  return p ? printedName(p) : id
 }
 
 /** The line a starter started in, by id. */

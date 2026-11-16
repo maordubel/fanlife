@@ -168,7 +168,8 @@ def brief_for_pipeline(job: dict, art_dir: Path | None = None) -> dict:
 def drive_folder_fits(club_id: str, club_name: str, path: str) -> bool:
     """Recognize complete club identities across projects; sharing 'Tel Aviv' is not a match."""
     from .media_assets import named_clubs
-    clubs = named_clubs(path)
+    from . import drive_index
+    clubs = named_clubs(path) | drive_index.folder_clubs(path)   # the owner's tag map knows "Approved Graphics" is Hapoel's
     return club_id in clubs
 
 

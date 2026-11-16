@@ -1,7 +1,7 @@
 import 'server-only'
 
 import vikipoel from '@/content/manual/player-facts-vikipoel.json'
-import { allPlayers, type PlayerMasterRecord } from '@/lib/archive/player-master'
+import { allPlayers, type PlayerMasterRecord, printedName } from '@/lib/archive/player-master'
 
 import { shuffle } from '../../archive'
 import { fact, hash, seeded, type Draft, type Template } from '../draft'
@@ -62,7 +62,7 @@ export function knownPlayers(): Known[] {
     const positions = (record.positions?.codes ?? []).filter((code) => POSITION_HE[code])
     out.push({
       record,
-      name: record.displayName,
+      name: printedName(record),
       from: span.from,
       to: span.to,
       position: positions.length === 1 ? (POSITION_HE[positions[0] as string] as string) : null,

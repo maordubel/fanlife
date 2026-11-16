@@ -7,8 +7,9 @@ import {REGISTRY} from '@/lib/master/registry'
 import raw from '@/tests/fixtures/olympiacos-core-m1.json'
 import golden from '@/tests/fixtures/timeline-golden.json'
 import {englishTitle} from '@/lib/clubs/title-en'
-/** the captured deals were recorded with The Worker's Hebrew lines; an English page prints them through englishTitle (28.10.2026) — same cards, same order */
-const en=<T,>(x:T):T=>JSON.parse(JSON.stringify(x),(k,v)=>k==='title'&&typeof v==='string'?englishTitle(v):v)
+import {enLine,enTitle} from '@/lib/clubs/english'
+/** the captured deals were recorded with The Worker's Hebrew lines (every club is read in English since 16.11.2026: lib/clubs/english.ts); an English page prints them through englishTitle (28.10.2026) — same cards, same order */
+const en=<T,>(x:T):T=>JSON.parse(JSON.stringify(x),(k,v)=>typeof v!=='string'?v:k==='title'?englishTitle(enTitle(v)):k==='hint'?enLine(v):v)
 const registry=REGISTRY.find(c=>c.id==='olympiacos')!
 const compile=(change:(p:typeof raw)=>void=()=>{})=>{const p=structuredClone(raw);change(p);return compilePack(p,registry)}
 describe('M1 shared chronology',()=>{

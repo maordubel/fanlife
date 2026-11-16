@@ -231,28 +231,38 @@ def library_records(root: str | Path | None = None, spec: Path = FLOW_SPEC) -> l
 
 
 def drive_records(inventory: Path = INVENTORY, kit_sources: set[str] | None = None) -> list[dict]:
-    """The Drive library's pictures and clips, from its committed inventory (metadata only: path, name, type, bytes).
-    No pixel was read, so size and colours are unknown; the folder guide says drafts and source photographs need a look
-    before publication, so every one is `needs-check`. A file already brought into the kit (same original file name) is
-    marked `in_kit` and is not a second candidate."""
+    """The Drive library's pictures and clips, from its committed inventory (metadata only: path, name, type, bytes),
+    with the owner's tags from the Drive index (studio/drive_index.py, 16.11.2026): the clubs a folder belongs to, its
+    subjects, its status and rights. Drafts, documents, rendered films and vlog footage are not candidates; an approved
+    owner-made folder is `owner-made`, everything else stays `needs-check` (the folder guide). A file already brought
+    into the kit (same original file name) is marked `in_kit` and is not a second candidate."""
     from .media_assets import named_clubs
+    from . import drive_index
     if not inventory.exists():
         return []
+    tagged = {r['id']: r for r in drive_index.index().get('files') or []}
     out = []
     for f in json.loads(inventory.read_text(encoding='utf-8')).get('files') or []:
         mime = f.get('mime') or ''
         if not mime.startswith(('image/', 'video/')) or mime == 'image/svg+xml':
             continue
+        t = tagged.get(f['id'], {})
+        if t.get('status') in ('draft', 'doc', 'reference', 'vlog'):
+            continue
         where = f"{f.get('path') or ''}/{f.get('name') or ''}"
-        clubs = set(named_clubs(where.replace('_', ' ').replace('-', ' ')))
+        clubs = set(named_clubs(where.replace('_', ' ').replace('-', ' '))) | set(t.get('clubs') or [])
         if 'the worker' in where.lower().replace('-', ' '):
             clubs.add('hapoel-tel-aviv')          # THE WORKER is the Hapoel Tel Aviv edition (CLAUDE.md, the universe table)
         stem = Path(f.get('name') or '').stem
-        kind = 'clip' if mime.startswith('video/') else 'cutout' if re.search(r'cut-?outs?', where, re.I) else 'texture' if any(w in TEXTURE for w in words(stem)) else 'still'
-        out.append(record(f'drive:{f["id"]}', 'drive', kind, f'{stem} {(f.get("path") or "").split("/")[-1]}', ref=f['id'], clubs=clubs,
-                          era=era_of(stem, f.get('path')), rights='needs-check',
-                          extra={'folder': f.get('path') or '', 'name': f.get('name'), 'bytes': f.get('bytes'),
-                                 **({'in_kit': True} if kit_sources and f.get('name') in kit_sources else {})}))
+        kind = 'clip' if mime.startswith('video/') else t.get('kind') if t.get('kind') in ('cutout', 'texture') else 'cutout' if re.search(r'cut-?outs?', where, re.I) else 'texture' if any(w in TEXTURE for w in words(stem)) else 'still'
+        rights = 'owner-made' if t.get('rights') == 'owner-made' and t.get('status') == 'approved' else 'needs-check'
+        rec = record(f'drive:{f["id"]}', 'drive', kind, f'{stem} {(f.get("path") or "").split("/")[-1]} {" ".join(t.get("subjects") or [])}', ref=f['id'], clubs=clubs,
+                     era=era_of(stem, f.get('path')) or t.get('era'), rights=rights,
+                     extra={'folder': f.get('path') or '', 'name': f.get('name'), 'bytes': f.get('bytes'),
+                            **({'use': t['use']} if t.get('use') else {}), **({'series': t['series']} if t.get('series') else {}),
+                            **({'in_kit': True} if kit_sources and f.get('name') in kit_sources else {})})
+        rec['subjects'] = sorted(set(rec['subjects']) | ({x for x in t.get('subjects') or [] if x in SUBJECTS}))
+        out.append(rec)
     return out
 
 
@@ -273,7 +283,7 @@ def fingerprint(kit: Path = KIT, inventory: Path = INVENTORY, lib_root: str | No
     index — by content. Unchanged sources → the saved index is the index (a rebuild costs one hash of a few small files)."""
     from .cinema import library as L
     h = hashlib.sha256(f'v{VERSION}'.encode())
-    files = sorted(kit.glob('*/*/index.json')) + [inventory, FLOW_SPEC]
+    files = sorted(kit.glob('*/*/index.json')) + [inventory, inventory.parent / 'tags.json', FLOW_SPEC]
     root = lib_root or os.environ.get(L.ENV)
     if root:
         files.append(Path(root).expanduser() / 'index.json')

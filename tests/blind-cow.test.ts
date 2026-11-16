@@ -200,12 +200,12 @@ describe('the guess drawer finds a man by Hebrew, Latin and alias — and answer
   })
 
   it('by family name first', () => {
-    expect(searchPlayers(entries, 'שבתאי לוי')[0]?.nameHe).toBe('שבתאי לוי')
+    expect(searchPlayers(entries, 'שבתאי לוי')[0]?.nameHe).toBe('Shabtai Levi')
   })
 
   it('by Latin spelling', () => {
     const hit = searchPlayers(entries, 'shabtai')
-    expect(hit.map((e) => e.nameHe)).toContain('שבתאי לוי')
+    expect(hit.map((e) => e.nameHe)).toContain('Shabtai Levi')
   })
 
   it('by a reviewed Hebrew alias', () => {

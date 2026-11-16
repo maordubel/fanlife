@@ -1,6 +1,7 @@
 import {NextResponse} from 'next/server'
 import {createHash} from 'node:crypto'
 import {loadClub} from '@/lib/clubs/resolver'
+import {enLine,hasNonLatin} from '@/lib/clubs/english'
 import {FORMATIONS} from '@/lib/game/formations'
 import {REGISTRY} from '@/lib/master/registry'
 import {SITE_URL} from '@/lib/brand'
@@ -22,8 +23,8 @@ export const maxDuration=120
 export async function GET(){const d=await readShop();return json({open:!!(d.settings.open&&d.settings.shopId)})}
 const json=(d:unknown,s=200)=>NextResponse.json(d,{status:s,headers:{'Cache-Control':'no-store'}})
 
-/** the printed name: the archive's own Latin spelling when it has one (the print speaks English), else the name as kept */
-const printName=(p:{name:string;aliases?:string[]})=>/[\u0590-\u05FF]/.test(p.name)?(p.aliases||[]).find(a=>/^[\p{Script=Latin}\s.'’-]+$/u.test(a))??p.name:p.name
+/** the printed name: the club is already read in English (lib/clubs/english.ts); a stray native spelling is still never printed */
+const printName=(p:{name:string;aliases?:string[]})=>hasNonLatin(p.name)?(p.aliases||[]).find(a=>/^[\p{Script=Latin}\s.'’-]+$/u.test(a))??enLine(p.name):p.name
 /** a few prints per visitor a day: each one is a real product at the printer */
 const made=new Map<string,{day:string;n:number}>()
 const DAY_LIMIT=6

@@ -1,6 +1,6 @@
 """Bring pictures from the owner's public Google Drive library into the studio kit.
 
-    python3 -m studio.drive_sync --folder "02_סטודיו_דוקומנטרי_ונכסים/Paper-Cut Football Scene Library" \
+    python3 -m studio.drive_sync --folder "02_Documentary_Studio_Assets/Paper-Cut Football Scene Library" \
         --set papercut-library [--illustrated] [--club olympiacos --season 2023/24] [--limit 200]
 
 The library is listed in `docs/fanlife/drive-library/inventory.json` (built from the Drive listing; it names every file

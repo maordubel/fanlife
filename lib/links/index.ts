@@ -2,7 +2,7 @@ import 'server-only'
 
 import { entity } from '@/lib/archive/graph'
 import { matchById, momentForGoal } from '@/lib/archive/match-master'
-import { playerById } from '@/lib/archive/player-master'
+import { playerById, printedName } from '@/lib/archive/player-master'
 import { awayDaysMaster } from '@/lib/away-days/data'
 import { BANK } from '@/lib/game/blind-cow/bank'
 import { lineupYears } from '@/lib/game/lineup'
@@ -172,7 +172,8 @@ export function matchSubject(matchId: string): string | null {
 }
 
 export function playerSubject(playerId: string): string | null {
-  return playerById(playerId)?.displayName ?? entity(playerId)?.titleHe ?? null
+  const p = playerById(playerId)
+  return p ? printedName(p) : entity(playerId)?.titleHe ?? null
 }
 
 /* ------------------------------------------------------------------ sets */

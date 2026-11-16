@@ -155,6 +155,17 @@ def story_terms(brief: dict) -> list[tuple[tuple[str, ...], float]]:
     return t
 
 
+def tag_words(path: str) -> str:
+    """What the owner's tag map says about a folder (studio/drive_index.py): its clubs, story, labels and series —
+    so a folder named in Hebrew, or "Approved Graphics", is still found for the film it belongs to."""
+    try:
+        from . import drive_index
+        t = drive_index.tags_for(path=path)
+    except Exception:  # noqa: BLE001 — an index that cannot be read leaves the names alone
+        return ''
+    return ' '.join([*(c.replace('-', ' ') for c in t.get('clubs') or []), t.get('story') or '', t.get('series') or '', *(t.get('labels') or [])[-1:]])
+
+
 def score(path: str, terms) -> float:
     have = set(re.split(r'[^a-z0-9]+', fold(path)))
     total = 0.0
@@ -175,7 +186,7 @@ def targeted_folders(tree: dict, terms, pinned: str | None = None) -> list[dict]
     if pinned:
         known = next((f for f in tree['folders'] if f['id'] == pinned), None)
         out.append({'id': pinned, 'path': known['path'] if known else pinned, 'score': 99.0, 'pinned': True})
-    scored = sorted(({**f, 'score': score(f['path'].split('/')[-1], terms) + 0.5 * score(f['path'], terms)} for f in tree['folders']),
+    scored = sorted(({**f, 'score': score(f['path'].split('/')[-1] + ' ' + tag_words(f['path']), terms) + 0.5 * score(f['path'], terms)} for f in tree['folders']),
                     key=lambda f: -f['score'])
     best = scored[0]['score'] if scored else 0
     for f in scored:

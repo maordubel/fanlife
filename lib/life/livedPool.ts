@@ -1,7 +1,7 @@
 import 'server-only'
 
 import { entity } from '@/lib/archive/graph'
-import { allPlayers, playerById, resolvePlayerId } from '@/lib/archive/player-master'
+import { allPlayers, playerById, resolvePlayerId, printedName } from '@/lib/archive/player-master'
 import { canDealRoyalRumble, rumbleDepth, type RumbleWindow } from '@/lib/game/royal-rumble'
 
 import { lifeBridge } from './bridge'
@@ -74,7 +74,7 @@ export function livedPlayers(chapters: readonly string[]): LivedPlayer[] {
   for (const player of allPlayers()) {
     const inSeason = seasons.size > 0 && player.spells.some((spell) => spell.seasons.some((label) => seasons.has(label)))
     if (!inSeason && !ids.has(player.id)) continue
-    out.push({ id: player.id, slug: player.slug, nameHe: player.displayName })
+    out.push({ id: player.id, slug: player.slug, nameHe: printedName(player) })
   }
   if (cache.size > 64) cache.clear()
   cache.set(key, out)
@@ -100,7 +100,7 @@ export function stayedWithMe(chapters: readonly string[], refs: readonly unknown
     const id = resolvePlayerId(ref)
     const player = id ? playerById(id) : null
     if (!player || !lived.has(player.id) || out.some((p) => p.id === player.id)) continue
-    out.push({ id: player.id, slug: player.slug, nameHe: player.displayName })
+    out.push({ id: player.id, slug: player.slug, nameHe: printedName(player) })
   }
   return out
 }
