@@ -622,6 +622,21 @@
 ],
 "id": "lib:obj-pennant-fl2-kr"
 },
+"12628b472192f5ae": {
+"caption": "A paper craft model of a vintage stadium scoreboard with small figures on scaffolding.",
+"people": 3,
+"faces": false,
+"action": "maintenance",
+"place": "stadium",
+"era": "1970s",
+"mood": "calm",
+"avoid": [
+"modern technology",
+"digital screens",
+"high-tech stadium"
+],
+"id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/shared-era-scoreboard-1970s-n-vqdis-3d426233d98d8a8c"
+},
 "132761ceae08d127": {
 "caption": "A road leading towards a stadium silhouetted against a dramatic red and black sunset sky.",
 "people": 0,
@@ -700,6 +715,19 @@
 "actual video clip"
 ],
 "id": "beat:job-19324d9d-b95c-4388-a19b-062dd2002d03/player-heading-football-in-stadium-9e44c776-7b09298e10c53f61"
+},
+"17c41a04108d0159": {
+"caption": "A family of four is seen from behind walking together while holding hands.",
+"people": 4,
+"faces": false,
+"action": "walking",
+"place": "other",
+"mood": "calm",
+"avoid": [
+"a specific famous family",
+"a funeral procession"
+],
+"id": "lib:ppl-family-four-kr"
 },
 "17f18da841f41f34": {
 "caption": "A man wearing headphones and a red jacket shouts into a microphone with his fist clenched.",
@@ -918,6 +946,20 @@
 ],
 "id": "lib:layer-tunnel-n-fg"
 },
+"1f465c03cbd8f54a": {
+"caption": "A paper craft model of a stadium scoreboard featuring multiple screens and speaker arrays.",
+"people": 0,
+"faces": false,
+"place": "stadium",
+"era": "1990s",
+"mood": "calm",
+"avoid": [
+"historical match",
+"vintage scoreboard",
+"manual operation"
+],
+"id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/shared-era-scoreboard-1990s-n-oe2kv-6397d0dacc1c424a"
+},
 "1fc1a61218ec37a9": {
 "caption": "An illustrated papercraft style view of fans watching a football match in a stadium during a heavy rainstorm.",
 "people": 15,
@@ -1012,6 +1054,20 @@
 ],
 "id": "lib:city-mostar-fl1-kr"
 },
+"21a5a17248279f47": {
+"caption": "A tablet screen displays a tactical football formation overlay against a blurred stadium background.",
+"people": 0,
+"faces": false,
+"action": "tactical planning",
+"place": "stadium",
+"mood": "calm",
+"text": "Offside BETS offsidebets.dubel.team",
+"avoid": [
+"live match footage",
+"coaching staff meeting"
+],
+"id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/offsides-promo-arena-open-pitch-phone-ad-v1-193d0987b32895f2"
+},
 "21c0ce3cddb466c2": {
 "caption": "Fans in flat caps and red scarves pack the stands of an old stadium with industrial chimneys in the background.",
 "people": 50,
@@ -1038,6 +1094,21 @@
 "celebrations"
 ],
 "id": "lib:obj-banner-rolled-fl2-kr"
+},
+"228d4bad25bce589": {
+"caption": "A digital graphic overlay of a football tactical formation is superimposed over a blurred stadium background.",
+"people": 0,
+"faces": false,
+"action": "tactical planning",
+"place": "stadium",
+"mood": "calm",
+"text": "Offside BETS, offsidebets.dubel.team",
+"avoid": [
+"live match",
+"player interview",
+"manager press conference"
+],
+"id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/offsides-promo-arena-open-pitch-phone-ad-v3-210b648ee19e2df1"
 },
 "22bcc333252f8ee0": {
 "caption": "A glowing blue and green graphic logo for OffSide Bets against a dark background.",
@@ -1079,6 +1150,20 @@
 "live broadcast"
 ],
 "id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/20260902-142147-chatgpt-image-sep-2-2026-02-21-46--968c90e1629fb480"
+},
+"23c5e3ea7151abd7": {
+"caption": "A family of four walks together with the father carrying a small child on his shoulders.",
+"people": 4,
+"faces": true,
+"action": "walking",
+"place": "other",
+"era": "1970s",
+"mood": "joy",
+"avoid": [
+"a specific famous family",
+"a protest march"
+],
+"id": "lib:ppl-family-four-fl2-kr"
 },
 "250f89af27f4f601": {
 "caption": "Fists grip tightly onto a wire stadium fence while holding a red and white scarf.",
@@ -1253,6 +1338,19 @@
 ],
 "id": "lib:city-athens-fl1-kr"
 },
+"2bd59942a6f410c6": {
+"caption": "A graphic design title card with the text The story behind the season.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "FANLIFE / FOOTBALL STORIES, THE STORY BEHIND THE SEASON, CLUB / YEAR",
+"avoid": [
+"live action",
+"documentary footage"
+],
+"id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/title-01-film-open-81198d2862dea8ef"
+},
 "2bd77cc281f2cf9b": {
 "caption": "A pair of illustrated hands with crossed fingers and a red wristband rests against dark legs.",
 "people": 1,
@@ -1358,6 +1456,21 @@
 ],
 "id": "beat:common/street-matchday-crowd-b-kr"
 },
+"2f72110d49765d20": {
+"caption": "A digital graphic overlay of a football tactical formation is superimposed over a blurred stadium background.",
+"people": 0,
+"faces": false,
+"action": "tactical planning",
+"place": "stadium",
+"mood": "calm",
+"text": "Offside BETS, THE ARENA IS OPEN!, offsidebets.dubel.team",
+"avoid": [
+"live match",
+"player interview",
+"manager press conference"
+],
+"id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/offsides-promo-arena-open-pitch-phone-ad-v2-3b765a6c465f01e8"
+},
 "2fb82b99ebe81180": {
 "caption": "Paper cutout artwork portrays an observer watching a youth football training session on a muddy field.",
 "people": 11,
@@ -1414,6 +1527,21 @@
 "club crest close-up"
 ],
 "id": "lib:obj-pennant-fl1-kr"
+},
+"309b71733e44183e": {
+"caption": "A promotional graphic showing a retro illustration of a football player kicking a ball alongside text Find Your Game.",
+"people": 1,
+"faces": false,
+"action": "kicking a ball",
+"place": "studio",
+"era": "1970s",
+"mood": "joy",
+"text": "FAN LIFE 3 FIND YOUR GAME. Choose a feature. Make it your own. 03/05 FANLIFE.DUBELTEAM.COM",
+"avoid": [
+"modern gameplay",
+"live broadcast footage"
+],
+"id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/t7-slide-03-1ec710223af58c63"
 },
 "30f5e933f23a634a": {
 "caption": "A papercraft illustration of a large trophy centered in a stadium surrounded by cheering silhouetted fans.",
@@ -1589,6 +1717,19 @@
 ],
 "id": "lib:layer-rain-stand-fl1-kr"
 },
+"39460139183649fb": {
+"caption": "A solid brown circle inside a light-colored background with tiny text St_Pauli Crest.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "St_Pauli Crest",
+"avoid": [
+"team logos",
+"real badges"
+],
+"id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/st-pauli-crest-full-1024-9fdd4ae544e453ee"
+},
 "396f6dbf3a90ee9d": {
 "caption": "A papercut artwork depicts an aerial view of a stadium with fans walking past in the foreground and a city skyline behind.",
 "people": 23,
@@ -1684,6 +1825,20 @@
 "real match"
 ],
 "id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/other-2026-10-12-image-mwaz6gd0-8ba66a0a72c21ba1"
+},
+"3b96f71454fca26d": {
+"caption": "A stylized illustration of a fan wearing a beanie and scarf playing a large bass drum.",
+"people": 1,
+"faces": true,
+"action": "playing a drum",
+"place": "terrace",
+"era": "1980s",
+"mood": "defiance",
+"avoid": [
+"professional musician",
+"orchestra"
+],
+"id": "lib:ppl-drummer-fl2-kr"
 },
 "3bf41111387a85df": {
 "caption": "Supporters wearing red scarves and tops ride inside a vintage train carriage with luggage racks overhead.",
@@ -2157,6 +2312,19 @@
 ],
 "id": "cut:common/fig-celebrate-arms-kr"
 },
+"4b2632d11589933d": {
+"caption": "A composite image shows four different street scenes with people standing near walls and a stadium entrance.",
+"people": 8,
+"faces": false,
+"action": "standing",
+"place": "street",
+"mood": "calm",
+"avoid": [
+"matchday crowd",
+"protest"
+],
+"id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/fanlife-game-art-living-pass-board-v1-9b2039aae61cd4d7"
+},
 "4b2a4ccdb302c83c": {
 "caption": "A person in a dark shirt adjusts a bright red armband on their upper arm.",
 "people": 1,
@@ -2183,6 +2351,19 @@
 "referee giving a card"
 ],
 "id": "lib:doc-photo-old-fl2-kr"
+},
+"4cb35b3f54bbb9c5": {
+"caption": "An open, weathered manila folder with blank papers inside sits on a white background.",
+"people": 0,
+"faces": false,
+"place": "room",
+"mood": "calm",
+"avoid": [
+"legal proceedings",
+"police investigation",
+"secret documents"
+],
+"id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/shared-cl-folder-open-wjni9c-843b1b3d6ce3439c"
 },
 "4cf01d387bf8f23b": {
 "caption": "An illustrated vintage-style football match is played in front of a grandstand.",
@@ -2266,6 +2447,20 @@
 ],
 "id": "cut:common/prop-member-card-blank-n"
 },
+"4e41aa84a767bc4c": {
+"caption": "A family of four walks together with the father carrying a small child on his shoulders.",
+"people": 4,
+"faces": true,
+"action": "walking",
+"place": "other",
+"era": "1970s",
+"mood": "joy",
+"avoid": [
+"a specific famous family",
+"a protest march"
+],
+"id": "lib:ppl-family-four-fl1-kr"
+},
 "4e9de0e59244fd14": {
 "caption": "A tactics board on a metal stand displays a football pitch diagram with magnetic pieces.",
 "people": 0,
@@ -2303,6 +2498,19 @@
 "goal celebration"
 ],
 "id": "prop:football"
+},
+"4f338943b93116ba": {
+"caption": "A list of five football clubs and years displayed as archive results on a graphic design slide.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "FAN LIFE, ON THIS DAY, 26 OCT, CELTIC 1988, ZRINJSKI MOSTAR 2006, FENERBAHÇE 2016, OLYMPIACOS 2019, HAPOEL TEL AVIV 2023, FANLIFE.DUBELTEAM.COM",
+"avoid": [
+"live match reporting",
+"breaking news"
+],
+"id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/t9-otd-five-rows-84a46bd44a365675"
 },
 "4fe19a87fdbdff4b": {
 "caption": "Packed stadium stands under floodlights feature fans waving large red and white flags and holding scarves aloft.",
@@ -2890,6 +3098,19 @@
 ],
 "id": "cut:common/crowd-row-scarves-up-c-kr"
 },
+"627f29ffe33eb5fd": {
+"caption": "A person in a hooded jacket seen from behind plays a large drum with mallets.",
+"people": 1,
+"faces": false,
+"action": "drumming",
+"place": "other",
+"mood": "tension",
+"avoid": [
+"a specific band member",
+"a professional musician"
+],
+"id": "lib:ppl-drummer-kr"
+},
 "63a5102a8bbebdf4": {
 "caption": "An illustrated crowd of people in red hoodies raising scarves and flags in celebration.",
 "people": 28,
@@ -3148,6 +3369,18 @@
 "substitution"
 ],
 "id": "beat:common/penalty-spot-close-b-n"
+},
+"6cd33c99e5ebf844": {
+"caption": "A large, empty stadium scoreboard stands in the dark surrounded by thick smoke or fog.",
+"people": 0,
+"faces": false,
+"place": "stadium",
+"mood": "tension",
+"avoid": [
+"celebration",
+"match victory"
+],
+"id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/fanlife-generic-background-blank-stadium-scoreboar-88fd0d59229224f3"
 },
 "6e55ffd5c616e498": {
 "caption": "A lone figure sits on a bench outside the gates of a large stadium under a cloudy sky.",
@@ -4062,6 +4295,19 @@
 ],
 "id": "beat:hapoel-tel-aviv-1999-00/keeper-diving-save"
 },
+"8c1b86ef88179a03": {
+"caption": "A simple black outline of a circle on a cream-colored background with the text St_Pauli Mono.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "St_Pauli Mono",
+"avoid": [
+"team badges",
+"app screens"
+],
+"id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/st-pauli-crest-mono-512-84b0816bec038ca8"
+},
 "8c3184660c4ca93a": {
 "caption": "A crowd of supporters walks down a residential street toward a floodlit stadium at dusk.",
 "people": 50,
@@ -4157,6 +4403,20 @@
 ],
 "id": "lib:doc-telegram-fl2-kr"
 },
+"8f41853c6e0433f7": {
+"caption": "A stylized illustration of a fan wearing a scarf and playing a large bass drum.",
+"people": 1,
+"faces": true,
+"action": "playing a drum",
+"place": "terrace",
+"era": "1970s",
+"mood": "defiance",
+"avoid": [
+"professional musician",
+"orchestra"
+],
+"id": "lib:ppl-drummer-fl1-kr"
+},
 "8f6c3cc9cb3bd915": {
 "caption": "A papercraft model of an empty stadium bowl with two floodlight pylons.",
 "people": 0,
@@ -4168,6 +4428,20 @@
 "real people"
 ],
 "id": "lib:layer-away-end-kr-bg"
+},
+"8f7a41e6b768243c": {
+"caption": "A paper craft model of a large modern stadium scoreboard with silhouettes of people at the base.",
+"people": 6,
+"faces": false,
+"place": "stadium",
+"era": "2010s",
+"mood": "calm",
+"avoid": [
+"old stadium",
+"manual scoreboard",
+"historical footage"
+],
+"id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/shared-era-scoreboard-2010s-n-yrdmfn-5a13d0f8a86bd79c"
 },
 "8feaa9a71b069558": {
 "caption": "An illustrated papercraft style perspective looking down at fans in the stands during a rainy match.",
@@ -5095,6 +5369,19 @@
 ],
 "id": "lib:ins-whistle-lips-n"
 },
+"b1e902b6f91aff14": {
+"caption": "A stylized graphic shows a yellow arrow rotating around a blue globe.",
+"people": 0,
+"faces": false,
+"action": "rotating",
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"geography lesson",
+"travel documentary"
+],
+"id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/badge-me-against-world-66dd43ff1c8ecc5f"
+},
 "b20f6ed346eb1248": {
 "caption": "A flatlay composition shows an official certificate, match tickets, a red and white scarf, pens, and newspaper clippings.",
 "people": 0,
@@ -5410,6 +5697,20 @@
 "match play"
 ],
 "id": "lib:obj-banner-rolled-kr"
+},
+"bb7fd4f4f5e3922d": {
+"caption": "A young person with long hair enthusiastically waves a large red and black flag.",
+"people": 1,
+"faces": true,
+"action": "waving flag",
+"place": "other",
+"era": "1970s",
+"mood": "defiance",
+"avoid": [
+"a specific political rally",
+"a national victory celebration"
+],
+"id": "lib:ppl-girl-flag-fl2-kr"
 },
 "bbc7df2a959d5d37": {
 "caption": "A dented red and silver thermos flask stands next to a matching red cup.",
@@ -6135,6 +6436,19 @@
 ],
 "id": "beat:common/close-hands-clasp-prayer-kr"
 },
+"d5ea88ac0455ba24": {
+"caption": "A graphic design slide with a red star icon containing a pitch diagram and the text Link in bio.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "FAN LIFE, FAN LIFE, fanlife.dubelteam.com, LINK IN BIO, 05/05, FANLIFE.DUBELTEAM.COM",
+"avoid": [
+"actual game highlights",
+"player interviews"
+],
+"id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/t7-slide-05-908a7e96a259466a"
+},
 "d79e9550e681d165": {
 "caption": "An illustrated red and black paper bag spilling wrapped candies on a pale background.",
 "people": 0,
@@ -6362,6 +6676,19 @@
 ],
 "id": "beat:job-19324d9d-b95c-4388-a19b-062dd2002d03/02-gate-13-63995d9ef4de26f4"
 },
+"df19ffee5a53bff9": {
+"caption": "A solid brown square background featuring small white text reading St_Pauli App Icon.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "St_Pauli App Icon",
+"avoid": [
+"live action matches",
+"team celebrations"
+],
+"id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/st-pauli-app-icon-512-01c133c00392b6a7"
+},
 "df4cf55fbdec56e8": {
 "caption": "An illustrated goalkeeper diving through the air to his right, seen from behind.",
 "people": 1,
@@ -6402,6 +6729,18 @@
 "car showroom"
 ],
 "id": "beat:common/radio-street-kr"
+},
+"e085c587b9d2dc00": {
+"caption": "A collection of stylized illustrations including anchors, footballs, waves, scarves, megaphones, and stadium stairs.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "defiance",
+"avoid": [
+"photographs",
+"real fans"
+],
+"id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/st-pauli-fan-life-sticker-atlas-7651de1d1340a550"
 },
 "e08d06d605b8287f": {
 "caption": "An illustrated paper-craft style image of fans walking up a residential street towards a floodlit stadium at dusk.",
@@ -6676,6 +7015,20 @@
 ],
 "id": "beat:common/choreography-b-kr"
 },
+"e7867255fb69c42a": {
+"caption": "A young person with long hair enthusiastically waves a large flag.",
+"people": 1,
+"faces": true,
+"action": "waving flag",
+"place": "other",
+"era": "1970s",
+"mood": "joy",
+"avoid": [
+"a specific political rally",
+"a national victory celebration"
+],
+"id": "lib:ppl-girl-flag-fl1-kr"
+},
 "e7c69f3efeadc733": {
 "caption": "An illustration of a football captain in a red shirt and black socks lifting a silver trophy above his head seen from behind.",
 "people": 1,
@@ -6794,6 +7147,34 @@
 "calm atmosphere"
 ],
 "id": "beat:job-19324d9d-b95c-4388-a19b-062dd2002d03/02-original-21-6d1324030458ccd8"
+},
+"eb5e7cfb47d09c7d": {
+"caption": "A graphic design slide featuring a sketch of a footballer kicking a ball and the text Make a memory.",
+"people": 1,
+"faces": true,
+"action": "kicking a ball",
+"place": "abstract",
+"mood": "calm",
+"text": "FAN LIFE, 4, MAKE A MEMORY, Keep your story. Share it your way., 04/05, FANLIFE.DUBELTEAM.COM",
+"avoid": [
+"real match footage",
+"live stadium atmosphere"
+],
+"id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/t7-slide-04-ee655fce9101be29"
+},
+"eba981d8eb062135": {
+"caption": "A promotional poster layout with bold text reading Fan Life: One Club. More Ways To Play.",
+"people": 0,
+"faces": false,
+"action": "swiping",
+"place": "studio",
+"mood": "calm",
+"text": "FAN LIFE ONE CLUB. MORE WAYS TO PLAY. SWIPE FANLIFE.DUBELTEAM.COM",
+"avoid": [
+"matchday action",
+"stadium crowds"
+],
+"id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/t7-slide-01-92bb099846e58b8d"
 },
 "ebafcb548edeecee": {
 "caption": "A football player in a red and white striped shirt with number 7 runs forward with the ball during a night match.",
@@ -7067,6 +7448,19 @@
 ],
 "id": "lib:ins-net-bulge-n"
 },
+"f43cf39910b0125c": {
+"caption": "A minimalist digital scoreboard shows a 0-0 draw.",
+"people": 0,
+"faces": false,
+"place": "other",
+"mood": "calm",
+"text": "HOME 0-0 AWAY",
+"avoid": [
+"live match coverage",
+"dramatic final score"
+],
+"id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/02-scoreboard-1e5e43d68859763c"
+},
 "f4c9a33b3310ac72": {
 "caption": "An illustrated row of football supporters hold scarves and raise their arms in the air.",
 "people": 12,
@@ -7252,6 +7646,20 @@
 "actual stadium architecture"
 ],
 "id": "lib:obj-flag-stick-kr"
+},
+"fe5508988f3e0769": {
+"caption": "A fan in a stadium holds a phone displaying a 5-a-side formation graphic while cheering.",
+"people": 1,
+"faces": false,
+"action": "cheering",
+"place": "stadium",
+"mood": "joy",
+"text": "FAN LIFE ROYAL RUMBLE BUILD YOUR FIVE 5-v-5",
+"avoid": [
+"professional match analysis",
+"official team announcement"
+],
+"id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/01-build-your-five-0119a42a0be43af1"
 },
 "fefd54b31e3740a0": {
 "caption": "An empty football pitch and stands under heavy rainfall.",
