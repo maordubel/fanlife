@@ -206,7 +206,7 @@ def _call(subject: dict, key: str, log) -> tuple[dict, dict]:
             'tools': [{'google_search': {}}],
             'generationConfig': {'maxOutputTokens': 24000, 'temperature': 0.3}}
     wanted = os.environ.get('STORIES_RESEARCH_MODEL') or 'gemini-2.5-flash'
-    r, model = gemini.generate(key, body, wanted=wanted, budget_s=600, log=log)
+    r, model = gemini.generate(key, body, wanted=wanted, budget_s=float(os.environ.get('STORIES_WRITER_WAIT_S') or 90), log=log)   # no long wait: the house crew writes (16.11.2026)
     text = ''.join(p.get('text', '') for c in r.get('candidates', []) for p in c.get('content', {}).get('parts', []))
     if not text.strip():
         raise StageError('RESEARCH_EMPTY', 'The research call returned no text')
@@ -219,6 +219,11 @@ EDITORIAL_KEYS = ('subject', 'competition_format', 'before', 'timeline', 'tactic
 
 
 WAITS_MAX = 2   # times a film waits for Google's grounded research before it goes ahead on the archive
+
+
+def house_writes() -> bool:
+    from .house import wanted
+    return wanted()
 
 
 def enrich(ledger: dict, brief: dict, cache_dir: Path, log) -> dict:
@@ -244,7 +249,11 @@ def enrich(ledger: dict, brief: dict, cache_dir: Path, log) -> dict:
             # held the queue): after WAITS_MAX waits for the same subject the film goes ahead on the archive, and says so.
             wk = ck.with_name(ck.stem + '.waits.json')
             waited = (read_json(wk).get('n', 0) if wk.exists() else 0)
-            if e.code in ('WRITER_BUSY', 'WRITER_QUOTA_DAY') and os.environ.get('STORIES_THIN_OK') != '1' and waited < WAITS_MAX:
+            # (owner, 16.11.2026: "produce without waiting for Google when it is unavailable or out of credit") the film no
+            # longer waits by default: the house crew writes it from the archive. A busy minute is waited for (bounded) only
+            # when the repository variable STORIES_RESEARCH_WAITS=1 asks for it; a spent day or no credit never is.
+            if (e.code == 'WRITER_BUSY' and os.environ.get('STORIES_RESEARCH_WAITS') == '1' and os.environ.get('STORIES_THIN_OK') != '1'
+                    and not house_writes() and waited < WAITS_MAX):
                 wk.parent.mkdir(parents=True, exist_ok=True)
                 write_json(wk, {'n': waited + 1})
                 log(f'Deep research could not run ({e.code}) — the film waits for it rather than go out thin '

@@ -1,4 +1,5 @@
-"""Deep research waits for Google at most WAITS_MAX times, then the film goes ahead on the archive (16.11.2026)."""
+"""Deep research never makes a film wait by default (owner, 16.11.2026: the house crew writes from the archive); with
+STORIES_RESEARCH_WAITS=1 it waits for a busy Google at most WAITS_MAX times, then goes ahead on the archive."""
 import os
 import tempfile
 import unittest
@@ -19,10 +20,19 @@ class BoundedWait(unittest.TestCase):
                 mock.patch('studio.gemini.api_key', lambda: 'k'), \
                 mock.patch.object(D, '_subject', lambda ledger, brief: {'s': 1}), \
                 mock.patch.object(D, '_call', busy), \
-                mock.patch.dict(os.environ, {'STORIES_THIN_OK': ''}):
+                mock.patch.dict(os.environ, {'STORIES_THIN_OK': '', 'STORIES_RESEARCH_WAITS': '1', 'STORIES_WRITER': ''}):
             for _ in range(D.WAITS_MAX):
                 with self.assertRaises(StageError):
                     D.enrich({'claims': []}, {}, Path(tmp), lambda m: None)
+            led = D.enrich({'claims': []}, {}, Path(tmp), lambda m: None)
+            self.assertIn('research_thin', led)
+
+    def test_no_wait_by_default(self):
+        with tempfile.TemporaryDirectory() as tmp, \
+                mock.patch('studio.gemini.api_key', lambda: 'k'), \
+                mock.patch.object(D, '_subject', lambda ledger, brief: {'s': 1}), \
+                mock.patch.object(D, '_call', busy), \
+                mock.patch.dict(os.environ, {'STORIES_THIN_OK': '', 'STORIES_RESEARCH_WAITS': ''}):
             led = D.enrich({'claims': []}, {}, Path(tmp), lambda m: None)
             self.assertIn('research_thin', led)
 

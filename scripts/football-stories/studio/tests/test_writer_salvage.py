@@ -380,16 +380,33 @@ class WriteScript(unittest.TestCase):
         self.assertEqual(out['_minutes'], asked)
         self.assertFalse(any('salvaged' in m for m in logs))
 
-    def test_nothing_to_salvage_fails_in_one_short_line_and_the_detail_stays_in_the_log(self):
+    def test_nothing_to_salvage_the_house_writes_it_and_the_detail_stays_in_the_log(self):
+        # owner, 16.11.2026: the studio always makes a film — when no model script passes, the house writer writes it
         self.s['title_candidates'] = self.s['title_candidates'][:9]
         thin = celtic()
-        err, logs, calls = self.run_writer(self.s, thin, 10)
+        out, logs, calls = self.run_writer(self.s, thin, 10)
+        self.assertNotIsInstance(out, StageError)
+        self.assertEqual(out['_writer'][0]['source'], 'house')
+        self.assertIn('no model script passed', out['_house']['why'])
+        self.assertTrue(any('title candidates' in m for m in logs))
+        self.assertTrue(any('writing a 3-minute film, not 10' in m for m in logs))
+
+    def test_nothing_to_salvage_and_no_house_film_fails_in_one_short_line(self):
+        self.s['title_candidates'] = self.s['title_candidates'][:9]
+        from studio import house
+
+        def refuse(*a, **k):
+            raise StageError('SCRIPT_INVALID', 'house: nothing')
+        keep, house.write = house.write, refuse
+        try:
+            err, logs, calls = self.run_writer(self.s, celtic(), 10)
+        finally:
+            house.write = keep
         self.assertIsInstance(err, StageError)
         self.assertEqual(err.code, 'SCRIPT_INVALID')
         self.assertIn('Too few proven facts', str(err))
         self.assertNotIn('title candidates', str(err))
         self.assertTrue(any('title candidates' in m for m in logs))
-        self.assertTrue(any('writing a 3-minute film, not 10' in m for m in logs))
 
     def test_three_directors_none_salvageable_fail_in_the_same_short_line(self):
         logs = []
