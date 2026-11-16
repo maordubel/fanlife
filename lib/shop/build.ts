@@ -181,7 +181,7 @@ export const cameraOf=(src:string)=>/camera_label=([a-z0-9-]+)/i.exec(src)?.[1]?
  */
 export function liveness(src:string):number{
  const c=cameraOf(src)
- if(/size|chart|collar|closeup|close-up|label|tag|detail|zoom/.test(c))return 3
+ if(/size|chart|collar|closeup|close-up|label|tag|detail|zoom|sleeve/.test(c))return 3
  if(/person|model|lifestyle|wear|on-hand|hand|half|duo|kid|baby|man|woman|girl|boy/.test(c))return 0
  if(/context|room|wall|scene|interior|nightstand|desk|table|shelf|hanging|pet|dog|cat|outdoor|car|kitchen|sofa|bed|frame-/.test(c))return 1
  return 2
@@ -204,11 +204,12 @@ export function mockups(list:Mock[],side:'front'|'back'|'both'|boolean):{images:
  const own=v0?sorted.filter(i=>!i.variant_ids||i.variant_ids.includes(v0)):sorted,pool=own.length?own:sorted
  // VARIETY (15.11.2026, "perfect mock-ups"): Printify draws several takes of one scene (person-1…person-5). The gallery shows one
  // of each scene before any second take, so eight pictures are eight different looks at the product, not one look five times.
- const family=(i:Mock)=>cameraOf(i.src).replace(/[-_]?\d+$/,'')||'plain'
+ const family=(i:Mock)=>cameraOf(i.src).replace(/[-_]?\d+/g,'')||'plain'
  const order=(xs:Mock[])=>{const by=[...xs].sort((a,b)=>liveness(a.src)-liveness(b.src)),live=by.find(i=>liveness(i.src)<=1),plain=xs.find(i=>liveness(i.src)===2)
   const seen=new Set<string>(),firsts:Mock[]=[],seconds:Mock[]=[]
-  for(const i of by){const f=family(i);if(seen.has(f))seconds.push(i);else{seen.add(f);firsts.push(i)}}
-  return [...new Set([...(live?[live]:[]),...(plain?[plain]:[]),...firsts,...seconds].map(i=>i.src))]}
+  for(const i of by.filter(x=>liveness(x.src)<3)){const f=family(i);if(seen.has(f))seconds.push(i);else{seen.add(f);firsts.push(i)}}
+  // details (a size chart, a collar, a bare sleeve) come after every scene
+  return [...new Set([...(live?[live]:[]),...(plain?[plain]:[]),...firsts,...seconds,...by.filter(x=>liveness(x.src)===3)].map(i=>i.src))]}
  const backs=pool.filter(isBackShot),fronts=pool.filter(i=>!isBackShot(i))
  if(mode==='back'&&backs.length)return {images:order(backs).slice(0,8)}
  const plainBack=mode==='both'?backs.find(i=>liveness(i.src)===2)??backs[0]:undefined
