@@ -76,7 +76,10 @@ export async function pressProduct(id:string,by:string):Promise<ShopProduct>{
    // needs a sharper original, and the desk says so.
    const need=Math.max(0,...candidates.flatMap(v=>v.placeholders.filter(ph=>wanted.includes(ph.position)).map(ph=>Math.max(ph.width/pic.width,ph.height/pic.height)*Math.min(1,spec.scale))))
    const f=Math.min(4,need*.85,Math.sqrt(36e6/(pic.width*pic.height)))
-   if(f>=1.25&&!cutout){const src='library' in art?original(art.library.id):art.upload.preview,big=src?await enlarge(src,f).catch(()=>null):null
+   // a supporter's own print (16.11.2026, "personal prints load for long and fail") is drawn for the printer already — its preview is
+   // only the small screen proof, so enlarging that would replace the real print file with a blown-up proof, and the 36 MP work
+   // on one CPU is what ran the request out of time. It is never enlarged.
+   if(f>=1.25&&!cutout&&!p.personal){const src='library' in art?original(art.library.id):art.upload.preview,big=src?await enlarge(src,f).catch(()=>null):null
     if(big){const up=await api.upload(`x${f.toFixed(1)}-${('library' in art?art.library.name:art.upload.name).replace(/[^a-zA-Z0-9._-]/g,'-').replace(/\.\w+$/,'').slice(-60)}.${big.png?'png':'jpg'}`,big.data);pic={id:up.id,width:up.width,height:up.height};upscaled=Math.max(upscaled,Math.round(f*10)/10)}}
    sent.set(key,pic);return pic}
   // quality first, size by size (14.11.2026): only the sizes this picture prints sharp on, in the shape that suits it
@@ -115,7 +118,9 @@ export async function pressProduct(id:string,by:string):Promise<ShopProduct>{
   if(p.printify?.productId)await api.remove(shop,p.printify.productId).catch(()=>{})
   const club=p.subject==='fanlife'?null:REGISTRY.find(c=>c.id===p.subject),list=listingOf(p,club?{name:subjectName(p.subject),city:club.city}:null,p.blueprint?p.blueprint.title.replace(/\s*\([^)]*\)/g,''):base.label)
   const description=p.description&&p.description!==NOTE?p.description:list.description
-  const made=await api.create(shop,{title:p.title,description,tags:list.tags,blueprint_id:m.blueprintId,print_provider_id:m.providerId,
+  // A SUPPORTER'S OWN PRINT IS NOT IN THE STORE'S CATALOGUE (16.11.2026, owner: "a temporary product other customers don't see"):
+  // it is made hidden in the sales channel; only its own checkout link, handed to the supporter who made it, opens it
+  const made=await api.create(shop,{title:p.title,description,tags:list.tags,blueprint_id:m.blueprintId,print_provider_id:m.providerId,...(p.personal?{visible:false}:{}),
    variants:[...ids].map(v=>({id:v,price:9900,is_enabled:true})),print_areas:printAreas(placed)})
   const priced=made.variants.filter(v=>ids.has(v.id)).map(v=>({id:v.id,price:price(v.cost,d?.margin??doc.settings.margin),is_enabled:true}))
   await api.update(shop,made.id,{variants:priced})
@@ -277,7 +282,7 @@ export async function syncListing(id:string){
  const api=await client(),base=p.blueprint?p.blueprint.title.replace(/\s*\([^)]*\)/g,''):KIND_SPECS[p.kind].label
  const club=p.subject==='fanlife'?null:REGISTRY.find(c=>c.id===p.subject),list=listingOf(p,club?{name:subjectName(p.subject),city:club.city}:null,base)
  const description=p.description&&p.description!==NOTE&&!p.description.startsWith('Original supporter art from the FAN LIFE library')?p.description:list.description
- await api.update(shop,p.printify.productId,{title:p.title,description,tags:list.tags})
+ await api.update(shop,p.printify.productId,{title:p.title,description,tags:list.tags,...(p.personal?{visible:false}:{})})
  if(p.printify.publishedAt)await api.publish(shop,p.printify.productId).catch(()=>{})
  await set(id,{description})
 }
