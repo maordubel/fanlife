@@ -255,7 +255,7 @@ beat("The last match. Barbados against Grenada, at the National Stadium in Barba
 beat("And the maths is brutal. Barbados cannot just win.", img('board.jpg', 'push', veil=0.05, focus='50% 45%'),
      type='illustration', emotion='tension', intensity=0.7, pad=0.2)
 beat("Win by one, two one say, and all three teams finish on three points. Then Grenada's goal difference is plus one. Barbados's is zero. Grenada go through.",
-     dict(kind='ledger', title='WHAT BARBADOS NEED', us='BARBADOS', them='GRENADA', compact=True, rows=[['WIN BY ONE · 2–1', 'GD 0 · OUT', 'GD +1 · THROUGH']], row_at=[0.6], d=7.0),
+     word('WIN BY ONE|GRENADA THROUGH', bg='them', size=150, small='2–1 · GOAL DIFFERENCE · GRENADA +1 · BARBADOS 0'),
      type='record', emotion='dread', intensity=0.7, pad=0.2)
 beat("Barbados need to win by two goals. Nothing less.",
      dict(kind='stat', value='+2', label='THE ONLY RESULT THAT WORKS FOR BARBADOS', dt=0.6),
@@ -309,8 +309,8 @@ chapter('CHAPTER FOUR', 'BOTH ENDS', 'THE LAST THREE MINUTES', 'pieces.jpg')
 beat("Grenada work it out fast. And then they work out something even stranger.",
      img('grid.jpg', 'push', veil=0.05), type='illustration', emotion='wonder', intensity=0.8, pad=0.3, meta=dict(board=dict(G, score='2–2')))
 beat("A goal at the Barbados end, and Grenada win the match. A goal in their own net, and Barbados win by only one.",
-     dict(kind='ledger', title='ANY GOAL BEFORE 90', us='GRENADA', them='BARBADOS', compact=True,
-          rows=[['AT THE BARBADOS END', 'THROUGH', 'OUT'], ['IN GRENADA’S OWN NET', 'THROUGH', 'OUT']], row_at=[0.4, 3.6], d=6.6),
+     word('A GOAL AT THE|BARBADOS END', bg='them', size=140, small='GRENADA WIN · GRENADA THROUGH', d=3.8),
+     word('A GOAL IN|GRENADA’S OWN NET', bg='ink', size=140, small='BARBADOS WIN BY ONE · GRENADA THROUGH', at=3.8),
      type='record', emotion='tension', intensity=0.9, pad=0.3, meta=dict(board=dict(G, score='2–2')))
 beat("Either way, Grenada go through.", word('ANY GOAL.|EITHER END.', bg='them', size=180, small='GRENADA THROUGH'),
      type='stat', emotion='tension', intensity=0.9, pad=0.4, meta=dict(board=dict(G, score='2–2')), sound=[('impact', 0.0, 1.4, 0.6)])
@@ -368,7 +368,7 @@ beat("Barbados went on to the finals, in Trinidad and Tobago. A draw with Guadel
 beat("Out in the group. The trick had won them one match. Not the tournament.", img('lib-dressing.jpg', 'push', veil=0.1),
      type='illustration', emotion='grief', intensity=0.6, pad=0.5)
 beat("Four years later, on the other side of the world, the same trick came back. Turned inside out.",
-     img('lib-airport.jpg', 'push', veil=0.1), flap('1994', '1998', at=2.8, d=2.6, small='SOUTH-EAST ASIA'),
+     img('lib-airport.jpg', 'push', veil=0.1), flap('1994', '1998', at=2.8, d=5.4, small='SOUTH-EAST ASIA'),
      type='turning', emotion='dread', intensity=0.8, pad=0.8, meta=dict(turn=True), sound=[('whoosh', 2.6, 1.2, 0.4)])
 
 # ── CHAPTER SIX · THE OTHER OWN GOAL ── the mirror: a team scoring against itself to lose
@@ -379,7 +379,7 @@ beat("In Ho Chi Minh City, Thailand play Indonesia in the last match of their gr
      img('lib-bowl.jpg', 'pull', veil=0.1), word('THAILAND v INDONESIA', bg='ink', size=150, small='TIGER CUP · HO CHI MINH CITY · LAST GROUP MATCH', at=2.4),
      type='versus', emotion='tension', intensity=0.6, pad=0.3)
 beat("The winner would meet the hosts, Vietnam, in the semi-final. And have to move to Hanoi to play it.",
-     dict(kind='ledger', title='THE SEMI-FINAL DRAW', us='WIN', them='LOSE', compact=True, rows=[['OPPONENT', 'VIETNAM', 'SINGAPORE'], ['WHERE', 'HANOI', '—']], row_at=[0.4, 3.4], d=6.0),
+     word('WIN: VIETNAM|IN HANOI', bg='ink', size=150, small='THE HOSTS · THE SEMI-FINAL'),
      type='record', emotion='tension', intensity=0.7, pad=0.3)
 beat("The loser would meet Singapore. On paper, the easier draw.", img('lib-airport.jpg', 'pull', veil=0.2),
      type='illustration', emotion='wonder', intensity=0.6, pad=0.3)
@@ -399,7 +399,8 @@ beat("And Mursyid Effendi was banned from international football for life.",
      img('folder.jpg', 'push', veil=0.05), stamp('BANNED FOR LIFE', 'them', x=520, y=470, dt=2.6, size=130, rot=4, plate=True),
      type='illustration', emotion='grief', intensity=0.9, pad=0.6, sound=[('stamp', 2.6, 1.0, 0.9)])
 beat("It did not even work. Indonesia lost their semi-final to Singapore. Thailand lost theirs to Vietnam.",
-     dict(kind='ledger', title='THE SEMI-FINALS', us='RESULT', them='BEATEN BY', compact=True, rows=[['INDONESIA', 'LOST', 'SINGAPORE'], ['THAILAND', 'LOST', 'VIETNAM']], row_at=[2.4, 4.6], d=6.4),
+     word('INDONESIA|LOST TO SINGAPORE', bg='ink', size=130, small='THE SEMI-FINALS', d=3.4),
+     word('THAILAND|LOST TO VIETNAM', bg='them', size=130, small='THE SEMI-FINALS', at=3.4),
      type='record', emotion='grief', intensity=0.6, pad=0.3)
 beat("And Singapore won the final, one nil, against Vietnam.", img('lib-pile-b.jpg', 'pull', veil=0.2),
      stamp('SINGAPORE 1 – 0 VIETNAM', 'us', x=200, y=200, dt=1.6, size=92, rot=-2, plate=True),
@@ -415,7 +416,7 @@ beat("Because of what each own goal was for. Barbados scored against themselves 
 beat("Barbados broke no rule. Indonesia and Thailand, FIFA said, broke the spirit of the game.",
      img('referee.jpg', 'pull', veil=0.05), type='illustration', emotion='pride', intensity=0.7, pad=0.6)
 beat("One last page. The golden goal itself did not last. Before Euro two thousand and four, football's law-makers announced it would go after the tournament.",
-     img('lib-tvshop.jpg', 'pull', veil=0.2), flap('1998', '2004', at=5.0, d=2.6, small='THE END OF THE GOLDEN GOAL'),
+     img('lib-tvshop.jpg', 'pull', veil=0.2), flap('1998', '2004', at=5.0, d=7.6, small='THE END OF THE GOLDEN GOAL'),
      type='turning', emotion='wonder', intensity=0.6, pad=0.4, sound=[('page', 0.0, 1.0, 0.5)])
 beat("UEFA had already tried a gentler version, the silver goal. At Euro two thousand and four it sent Greece through to the final, with a Traianos Dellas header against the Czech Republic.",
      img('lib-header-b.jpg', 'pull', veil=0.2), stamp('SILVER GOAL · DELLAS', 'us', x=300, y=200, dt=5.2, size=96, rot=-3, plate=True),
