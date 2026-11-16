@@ -20,3 +20,4 @@
 - From the supporter only: his name, one line (90), a note under a shirt (28), his age, his gate — all through `cleanLine`/`cleanManager`. Everything else is the archive's.
 - The serif's Latin is registered as `FrankL`: under the shared "Frank" name the Hebrew subset answers first and Latin falls to Heebo.
 - **Never enlarged** (16.11.2026): a personal print's file is drawn at print size by the art route; its `preview` is the small screen proof. The soft-print enlargement skips `personal` products, so the press uploads the real print file and finishes inside the request.
+- **Not in the catalogue** (owner, 16.11.2026): a personal print is created and re-listed with Printify's `visible:false`, so it does not appear in the store's product grid (shop.fanlife.dubelteam.com) for other customers; the checkout link handed to the supporter who made it is the only door. Our own shop never lists `personal` products either.
