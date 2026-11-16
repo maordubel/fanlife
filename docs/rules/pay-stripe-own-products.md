@@ -1,0 +1,9 @@
+# Our own products are paid with our Stripe (owner, 16.11.2026)
+
+- **Two checkouts, one line between them.** Anything printed and shipped stays on the Printify store and its checkout. What FAN LIFE makes and delivers itself — a personal print's full-size file, later the personal film — is sold through FAN LIFE's own Stripe account (`lib/pay`).
+- **Off until both keys exist.** `payOpen()` needs `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET` and the Supabase service key. Without them every pay door answers 503 and no page shows a pay button. The keys are GitHub secrets passed to Cloud Run by `deploy-cloudrun.yml`; they never reach a page.
+- **The catalogue is code** (`lib/pay/catalog.ts`): kind, name, price in euro cents, `on`, delivery. A product is `on` only when its delivery exists (the film is off until the studio's film-for-one job answers orders).
+- **An order is a row** in `public.worker_pay_orders` (RLS on, no policies, service key only). It keeps the signed recipe (`s`, `sig` — the same signed recipe as the proof, so nothing typed reaches the file unchecked), the price, the status, and only the hash of the buyer's secret token. Unpaid rows are swept after two days (`marketing:pay-orders-sweep`); paid rows stay as the sales record.
+- **Only Stripe's signed word moves money states.** `/api/pay/webhook` checks the HMAC signature and a 5-minute window, and moves an order only from the state it expects (a repeated event changes nothing): `checkout.session.completed` + paid → paid → delivered; `checkout.session.expired`; `charge.refunded`.
+- **The buyer's door** is `/order/<id>?t=<token>` (Stripe's success address): status, then the download (`/api/pay/file/<id>?t=`, drawn full size from the recipe). The page reloads itself while the payment is being confirmed.
+- **Not yet:** VAT on digital sales in the EU (OSS) is the owner's accountant's call before switching on; `automatic_tax` is off.

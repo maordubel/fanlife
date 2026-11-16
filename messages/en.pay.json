@@ -1,0 +1,17 @@
+{
+  "title": "Your order",
+  "kicker": "FAN LIFE · Order",
+  "open": "Waiting for the payment to be confirmed. This page updates by itself.",
+  "paid": "Paid — we are making it now. This page updates by itself.",
+  "fulfilled": "Paid and ready.",
+  "failed": "Something went wrong on our side. Write to us with this order number and we will put it right.",
+  "refunded": "This order was refunded.",
+  "expired": "This payment page expired before it was paid. Nothing was charged.",
+  "download": "Download your file",
+  "keep": "Keep this link: it is the only way back to your order.",
+  "number": "Order {id}",
+  "missing": "We could not find that order. Check the link from your payment page.",
+  "back": "Back to FAN LIFE",
+  "buyFile": "Get the file · {price}",
+  "buyFileNote": "The full-size file, yours to print anywhere. Paid securely with Stripe."
+}
