@@ -13,5 +13,33 @@
   "missing": "We could not find that order. Check the link from your payment page.",
   "back": "Back to FAN LIFE",
   "buyFile": "Get the file · {price}",
-  "buyFileNote": "The full-size file, yours to print anywhere. Paid securely with Stripe."
+  "buyFileNote": "The full-size file, yours to print anywhere. Paid securely with Stripe.",
+  "mail": {
+    "from": "FAN LIFE <fanlife@dubelteam.com>",
+    "replyTo": "fanlife@dubelteam.com",
+    "preheader": "Your {name} is ready — the download is inside.",
+    "kicker": "Football. Forever.",
+    "hello": "Thank you{who}.",
+    "line": "It was made for you alone, from FAN LIFE's archive of the game. Keep this email: the button below is your way back to it.",
+    "order": "Order {id} · {price}",
+    "help": "Something not right? Reply to this email and a person will put it right.",
+    "small": "You are getting this email because you bought it on fanlife.dubelteam.com. We send nothing else unless you ask.",
+    "credit": "Made by Dubel Team",
+    "kinds": {
+      "print-file": {
+        "subject": "Your FAN LIFE print is ready",
+        "title": "Your print,\nready to hang.",
+        "button": "Download your print",
+        "note": "Full size, 3600 × 4800 px — sharp at any print shop up to A3."
+      },
+      "film": {
+        "subject": "Your FAN LIFE film is ready",
+        "title": "Your film\nis ready.",
+        "button": "Watch and download",
+        "note": "Made in the FAN LIFE studio, with your own dedication."
+      }
+    }
+  },
+  "emailLabel": "Email for your file",
+  "emailNote": "We send the file here, from fanlife@dubelteam.com."
 }
