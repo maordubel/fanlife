@@ -74,7 +74,7 @@ describe('התאמה לעמדה — computed from the four the sources actually 
     // a forward AND as a defender — so a striker's slot and a centre back's slot both
     // accept him, and neither answer throws the other away.
     const roster = rosterIndex()
-    const shaye = roster.all.find((entry) => entry.nameHe === 'שייע פייגנבוים')
+    const shaye = roster.all.find((entry) => entry.nameHe === 'Shiye Feigenbaum')
     expect(shaye).toBeTruthy()
     expect([...positionsOf(shaye as Searchable)]).toEqual(['FW', 'DF'])
     expect(fitFor(shaye as Searchable, 'ST')).toBe('fit')
@@ -322,14 +322,14 @@ describe('גרסאות שחקן — derived from the squad table, never from an 
       expect(versions.map((version) => version.id), slug).toContain(start)
     }
     // a single-spell man is absent from both maps
-    const tikva = roster.all.find((entry) => entry.nameHe === 'שלום תקוה')
+    const tikva = roster.all.find((entry) => entry.aliasesHe?.includes('שלום תקוה'))
     expect(tikva).toBeTruthy()
     expect(board.versions[(tikva as Searchable).slug]).toBeUndefined()
     expect(board.defaultVersion[(tikva as Searchable).slug]).toBeUndefined()
   })
 
   it('opens a multi-spell man on the version holding the shirt he is identified with', () => {
-    const sinai = roster.all.find((entry) => entry.nameHe === 'משה סיני') as Searchable
+    const sinai = roster.all.find((entry) => entry.nameHe === 'Moshe Sinai') as Searchable
     const start = board.defaultVersion[sinai.slug]
     const chosen = board.versions[sinai.slug]?.find((version) => version.id === start)
     expect(chosen?.seasonLabel).toBe(board.bySlug[sinai.slug]?.seasonLabel)

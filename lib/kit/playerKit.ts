@@ -341,12 +341,13 @@ export function squadSlugKeys(): Map<string, string> {
  * a comment, because a player who gets no shirt deserves to know the archive is missing
  * the season and not that he is missing from it.
  */
-export function shirtCoverage(roster: ReadonlyArray<{ nameHe: string }>): {
+export function shirtCoverage(roster: ReadonlyArray<{ nameHe: string; aliasesHe?: readonly string[] }>): {
   total: number
   withShirt: number
   withoutShirt: number
 } {
   const index = shirtIndex()
-  const withShirt = roster.filter((entry) => index.has(fold(entry.nameHe))).length
+  // the printed name is English since 16.11.2026; the shirt index is keyed by the archive's spelling (an alias)
+  const withShirt = roster.filter((entry) => [entry.nameHe, ...(entry.aliasesHe ?? [])].some((name) => index.has(fold(name)))).length
   return { total: roster.length, withShirt, withoutShirt: roster.length - withShirt }
 }

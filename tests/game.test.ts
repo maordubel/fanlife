@@ -712,11 +712,15 @@ describe('חיפוש שחקנים — the roster sheet', () => {
     expect(searchRoster(roster.all, 'זזזזזז')).toHaveLength(0)
   })
 
-  it('actually finds real players by family name alone', () => {
-    for (const family of ['אבוקסיס', 'זהבי', 'טועמה']) {
-      const found = searchRoster(roster.all, family)
-      expect(found.length, family).toBeGreaterThan(0)
-      expect(found[0]?.familyHe, family).toContain(family)
+  it('actually finds real players by family name alone — in English, and by the archive\'s Hebrew', () => {
+    // 16.11.2026: names are printed in English; the archive's Hebrew spelling still finds the man
+    for (const [he, en] of [['אבוקסיס', 'Abukasis'], ['זהבי', 'Zahavi'], ['טועמה', 'Toama']] as const) {
+      const byEn = searchRoster(roster.all, en)
+      expect(byEn.length, en).toBeGreaterThan(0)
+      expect(byEn[0]?.familyHe, en).toContain(en)
+      const byHe = searchRoster(roster.all, he)
+      expect(byHe.length, he).toBeGreaterThan(0)
+      expect(byHe[0]?.aliasesHe?.some((a) => a.includes(he)), he).toBe(true)
     }
   })
 })
@@ -847,14 +851,14 @@ describe('the verified Chelsea XI', () => {
   })
 
   it('marks a squad man as not in the XI', () => {
-    const rahmin = (dealChallenge(seed)?.bank ?? []).find((locker) => locker.nameHe === 'ניר רחמין')
+    const rahmin = (dealChallenge(seed)?.bank ?? []).find((locker) => locker.nameHe === 'Nir Rahamin')
     expect(rahmin).toBeTruthy()
     const verdict = gradeLineup(seed, [{ playerId: rahmin!.id, line: 'GK', order: 0 }])
     expect(verdict?.rows[0]?.status).toBe('not_in_xi')
   })
 
   it('marks a keeper played outfield as the wrong line', () => {
-    const keeper = (dealChallenge(seed)?.bank ?? []).find((locker) => locker.nameHe === 'שביט אלימלך')
+    const keeper = (dealChallenge(seed)?.bank ?? []).find((locker) => locker.nameHe === 'Shavit Elimelech')
     expect(keeper, 'no dealt XI contains the keeper').toBeTruthy()
     const verdict = gradeLineup(seed, [{ playerId: keeper!.id, line: 'F', order: 0 }])
     expect(verdict?.rows[0]?.status).toBe('wrong_line')

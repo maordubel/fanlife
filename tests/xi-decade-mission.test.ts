@@ -27,7 +27,7 @@ import { migrateSheet, restore, type SavedXI } from '@/lib/xi/store'
 const roster = rosterIndex()
 const board = shirtBoard(roster)
 const byName = (nameHe: string): Searchable => {
-  const entry = roster.all.find((row) => row.nameHe === nameHe)
+  const entry = roster.all.find((row) => row.nameHe === nameHe || row.aliasesHe?.includes(nameHe))
   if (!entry) throw new Error(`no ${nameHe} in the roster`)
   return entry
 }

@@ -3,7 +3,7 @@ import 'server-only'
 import { createHash, randomInt } from 'node:crypto'
 
 import bankJson from '@/content/generated/blind-cow-bank.json'
-import { allPlayers, playerById } from '@/lib/archive/player-master'
+import { allPlayers, playerById, printedName } from '@/lib/archive/player-master'
 import { splitName } from '@/lib/game/roster-search'
 
 import type { SearchEntry } from './search'
@@ -121,13 +121,14 @@ export function searchEntries(): SearchEntry[] {
   return allPlayers()
     .filter((p) => p.kind === 'player')
     .map((p) => {
-      const parts = splitName(p.displayName)
+      const shown = printedName(p)
+      const parts = splitName(shown)
       return {
         id: p.id,
-        nameHe: p.displayName,
+        nameHe: shown,
         givenHe: parts.givenHe,
         familyHe: parts.familyHe,
-        aliasesHe: [...p.aliases.he, ...p.slugAliases.map((s) => s.replace(/-/g, ' '))].filter((a) => a && a !== p.displayName),
+        aliasesHe: [...p.aliases.he, ...p.slugAliases.map((s) => s.replace(/-/g, ' ')), p.displayName].filter((a) => a && a !== shown),
         latin: p.aliases.latin,
         years: yearsHe(p.id),
       }

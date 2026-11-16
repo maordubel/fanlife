@@ -1,0 +1,655 @@
+{
+ "version": 1,
+ "root": "1CNLhWlab7Irfq4jJw-QRGHI37tpJcucw",
+ "about": "The tag map of the FAN LIFE Drive library (owner, 16.11.2026: complete the tagging index and make the system work with it perfectly). Folder tags are inherited by everything below; rules add tags by path; studio/drive_index.py writes index.json, one tagged row per file. A rule's `on` says whether it reads folder names, file names or both (any).",
+ "vocab": {
+  "use": [
+   "studio",
+   "shop",
+   "marketing",
+   "site",
+   "life",
+   "reference"
+  ],
+  "status": [
+   "approved",
+   "draft",
+   "reference",
+   "source-photo",
+   "doc",
+   "vlog"
+  ],
+  "rights": [
+   "owner-made",
+   "needs-check",
+   "library"
+  ],
+  "kind": [
+   "still",
+   "clip",
+   "cutout",
+   "texture",
+   "vector",
+   "3d",
+   "doc",
+   "archive"
+  ]
+ },
+ "folders": {
+  "18gkag-xe01zB4d0FRkoO-KMOT_VWABYQ": {
+   "label": "Football Stories — per club and match packs",
+   "use": [
+    "studio",
+    "marketing"
+   ],
+   "status": "approved",
+   "rights": "owner-made"
+  },
+  "1vNU9MrF1rGmKTcSFoodV0sa0POlSM27K": {
+   "label": "AEK Athens identity set",
+   "clubs": [
+    "aek-athens"
+   ],
+   "subjects": [
+    "stadium",
+    "crowd",
+    "stand"
+   ],
+   "use": [
+    "studio",
+    "marketing",
+    "site"
+   ]
+  },
+  "16KPsQJEKxt8yymJXcagZxygY6GW3reMs": {
+   "label": "Olympiacos v Maccabi 2024 — art and research",
+   "clubs": [
+    "olympiacos"
+   ],
+   "era": "2020s",
+   "subjects": [
+    "goal",
+    "crowd",
+    "newspaper"
+   ]
+  },
+  "1ZATpwuysk5SNNFGq7xWkEMgk9s4oqXqg": {
+   "label": "Olympiacos v Maccabi 2024 — photo-based illustrations",
+   "subjects": [
+    "newspaper",
+    "goal"
+   ],
+   "status": "approved"
+  },
+  "1JyieaMIAcaWNs_gdCUlqc3SJmOkZqyrQ": {
+   "label": "Olympiacos v Maccabi 2024 — story art",
+   "subjects": [
+    "goal"
+   ],
+   "status": "approved"
+  },
+  "1d1-hx0-aYxYeobMpQV4gQviCEMkDL0tE": {
+   "label": "Panathinaikos identity set",
+   "clubs": [
+    "panathinaikos"
+   ],
+   "subjects": [
+    "stadium",
+    "crowd",
+    "stand"
+   ],
+   "use": [
+    "studio",
+    "marketing",
+    "site"
+   ]
+  },
+  "1XHhovIvU34fp5M550WMwZchrgtp8UmCN": {
+   "label": "Zrinjski v AZ 2023 — art",
+   "clubs": [
+    "zrinjski-mostar"
+   ],
+   "era": "2020s"
+  },
+  "1SoGfcQx2_ZFuUgeFJAtiwo57Rr1wwaud": {
+   "label": "Zrinjski v AZ 2023 — illustrations",
+   "subjects": [
+    "stadium",
+    "goal"
+   ],
+   "status": "approved"
+  },
+  "1gsuQmC1uXRMK_Y22ITGhUPsamH002ge7": {
+   "label": "Zrinjski v AZ 2023 — broadcast source frames",
+   "status": "source-photo",
+   "rights": "needs-check",
+   "use": [
+    "reference"
+   ]
+  },
+  "1XsNCcPcflgQUlczKGC42Qvds09Q1VH6w": {
+   "label": "Hapoel Petah Tikva — story pack",
+   "clubs": [
+    "hapoel-petah-tikva"
+   ]
+  },
+  "1WnuKV-kQC4BHzIDbrR3gHUvmVCVXK8Za": {
+   "label": "Hapoel Tel Aviv 2005 relegation-escape story pack",
+   "clubs": [
+    "hapoel-tel-aviv"
+   ],
+   "era": "2000s",
+   "subjects": [
+    "tunnel",
+    "crowd"
+   ],
+   "story": "the night an empire refused to die"
+  },
+  "1S6Tkh7W7AEPs6koEcxoxm_pOkfqmzs58": {
+   "label": "Documentary studio — shared assets for every club",
+   "use": [
+    "studio"
+   ],
+   "rights": "owner-made"
+  },
+  "1POPVrHfTAsS2HXqKdJ4orbtSaT2zmsqJ": {
+   "label": "Universal story beats and image prompts",
+   "status": "doc",
+   "use": [
+    "studio"
+   ]
+  },
+  "1tAsiJnAK_u7NXEtuzxsn37iYVUlreyrV": {
+   "label": "Documentary art drafts (zips)",
+   "status": "draft",
+   "subjects": [
+    "crowd",
+    "portrait-silhouette"
+   ]
+  },
+  "15if9D6VW-QiBixuSgMYSwSc4xjKoj150": {
+   "label": "Follow-the-moment art drafts",
+   "status": "draft"
+  },
+  "1isLLhLBkHVkO6s43EVTN6R-JDhPxIiGM": {
+   "label": "Motion tests and animatics",
+   "status": "draft",
+   "kind": "clip"
+  },
+  "1Rvq4ArAxjeF5u9yyMls1FokOL9kAya2N": {
+   "label": "Paper-cut football scene library",
+   "status": "approved",
+   "subjects": [
+    "stadium",
+    "crowd",
+    "goal"
+   ],
+   "use": [
+    "studio",
+    "shop",
+    "marketing"
+   ],
+   "style": "paper-cut"
+  },
+  "1vdVaTXzVjsPCu8LnavulAhDy8KCLEjFu": {
+   "label": "Documentary cut-outs",
+   "status": "approved",
+   "kind": "cutout",
+   "subjects": [
+    "portrait-silhouette",
+    "crowd"
+   ]
+  },
+  "13lOto2i36Z-4XeZX1dn43EQSSAyuRt5b": {
+   "label": "Story graphics v2",
+   "status": "approved",
+   "use": [
+    "studio",
+    "marketing"
+   ]
+  },
+  "14JoNA-IV_MPLdIS8u6IjsNodKZurVDQk": {
+   "label": "Story graphics v2 — backgrounds",
+   "kind": "texture"
+  },
+  "1iJlRhjpJqJIyoSJs_y-1IFsgnBdYnq50": {
+   "label": "Story graphics v2 — cut-outs",
+   "kind": "cutout"
+  },
+  "1PrVnWdGiw4Yci5Phybur3mreCTv3lc2Y": {
+   "label": "Games and features — art per game",
+   "use": [
+    "site",
+    "marketing"
+   ]
+  },
+  "1JTMBpvzgmrhsFqO-aCB1vGBY82QiE7Fp": {
+   "label": "Manager of Legends art",
+   "feature": "legends",
+   "status": "approved"
+  },
+  "1gtkEpBOwaH5c7YCwRDjmdjyWPNRaZ9dG": {
+   "label": "Royal Rumble art",
+   "feature": "royal-rumble",
+   "status": "approved"
+  },
+  "1qreW79HNfdTmSb94ZTiD4Umt6u-OBzN4": {
+   "label": "THE WORKER — Hapoel Tel Aviv art",
+   "clubs": [
+    "hapoel-tel-aviv"
+   ],
+   "rights": "owner-made",
+   "status": "approved"
+  },
+  "1IxXTEt5FE9DYRCeKoUE5HR-l9lFwDjCS": {
+   "label": "Ussishkin arena 3D",
+   "clubs": [
+    "hapoel-tel-aviv"
+   ],
+   "subjects": [
+    "stadium"
+   ],
+   "kind": "3d",
+   "status": "approved"
+  },
+  "1NzySWwM8HlJm2DUmBrlQ0ugDmGEDISZf": {
+   "label": "Owner favourite graphics",
+   "status": "approved",
+   "priority": 1
+  },
+  "1SxbGu9dUk4i5d_2K1m4XUqFANTXj2Ztf": {
+   "label": "Owner favourites — work in progress",
+   "status": "draft"
+  },
+  "1_flLG6rjCeZd94TEX16GUkmH--WKYGf4": {
+   "label": "Branding and shared assets",
+   "use": [
+    "site",
+    "marketing",
+    "shop"
+   ],
+   "rights": "owner-made"
+  },
+  "1poamko0attr9CbLIACZlvfriKE351aE7": {
+   "label": "FAN LIFE logos and posters",
+   "status": "approved",
+   "subjects": [
+    "brand"
+   ],
+   "use": [
+    "site",
+    "marketing",
+    "shop"
+   ]
+  },
+  "1Q_fkA2lDxfN2uruNg9QEEP8OByYRqH1d": {
+   "label": "Social matchday and video templates",
+   "status": "approved",
+   "use": [
+    "marketing"
+   ]
+  },
+  "1030bGh38A7CjCmTnUmQ51nXjDxG9qUgp": {
+   "label": "Product concepts and infographics",
+   "status": "reference",
+   "use": [
+    "shop"
+   ]
+  },
+  "16oHsexLfxvNVY31-2Bk9Mv6slWjUDIUr": {
+   "label": "Club stickers",
+   "status": "approved",
+   "use": [
+    "shop",
+    "marketing"
+   ],
+   "subjects": [
+    "brand"
+   ]
+  },
+  "17mAB5HChWNqIjNYMyeUdi37FeiOsfg_Z": {
+   "label": "Approved graphics — THE WORKER and Hapoel Tel Aviv",
+   "clubs": [
+    "hapoel-tel-aviv"
+   ],
+   "status": "approved"
+  },
+  "1-Ebd07Io36Nyks7H6tEpvIQyfHD9_Pug": {
+   "label": "Characters and people",
+   "subjects": [
+    "portrait-silhouette",
+    "crowd"
+   ]
+  },
+  "1HV8JBuLOU7_URPTrvq2HRn_DabIaiFei": {
+   "label": "Stadiums and city backgrounds",
+   "subjects": [
+    "stadium",
+    "street"
+   ],
+   "kind": "texture"
+  },
+  "13R1Y_DWuXmcVymWzp24-v9N4n81I9oho": {
+   "label": "Props, shirts and badges",
+   "subjects": [
+    "kit",
+    "crest"
+   ],
+   "kind": "cutout"
+  },
+  "1hDRd6yqp5o4Ga1-nCWbQ-rJXhtLOEZzA": {
+   "label": "THE WORKER LIFE backgrounds (27.9.2026)",
+   "use": [
+    "life",
+    "studio"
+   ],
+   "subjects": [
+    "street",
+    "stadium"
+   ]
+  },
+  "1RoWJ1-rMGzd0LKcdsVJOKIo-L9QIdDLR": {
+   "label": "LIFE backgrounds — priority A",
+   "priority": 1
+  },
+  "1YDQ7Kwa4ieCWynl82md9cJTLV4XFHSuK": {
+   "label": "LIFE backgrounds — priority B",
+   "priority": 2
+  },
+  "1KPrRYZy5tXcLEyF2JqtnoJbXnKJnOVNr": {
+   "label": "LIFE backgrounds — extras",
+   "priority": 3
+  },
+  "1YT6Yr8bJDSmEFZX3bK1PwHQdbrLjwi2W": {
+   "label": "Supergoal magazine scans — Hapoel",
+   "subjects": [
+    "newspaper"
+   ],
+   "status": "source-photo",
+   "rights": "needs-check",
+   "use": [
+    "studio",
+    "reference"
+   ]
+  },
+  "1hUzzDCI1_ldxjTmUw_LKy-vhgzSeV2oI": {
+   "label": "Supergoal 2002-03",
+   "era": "2000s"
+  },
+  "1UZK9esoadbm28Bs3fSNdlCtO5mzl-oah": {
+   "label": "Supergoal 1992-93",
+   "era": "1990s"
+  },
+  "1XnrjHcOVYc-IF58oOp3dOqVYcQmLxyK_": {
+   "label": "Supergoal — general-use materials"
+  },
+  "1VIYvagyaW0bGcuGl_188tpBc8XjaHl5k": {
+   "label": "Shared brands — Dubel Team and apps",
+   "subjects": [
+    "brand"
+   ],
+   "use": [
+    "site",
+    "marketing"
+   ],
+   "status": "approved"
+  },
+  "1P8UP6NDPr9O2AB9ZuJ3kgTfha6kaKMMp": {
+   "label": "FAN LIFE graphic kit",
+   "status": "approved",
+   "subjects": [
+    "brand"
+   ],
+   "use": [
+    "site",
+    "marketing",
+    "shop",
+    "studio"
+   ]
+  },
+  "10xVOuZIm3C1osgTABhNoOhOCp31bwfQT": {
+   "label": "Graphic kit — backgrounds",
+   "kind": "texture"
+  },
+  "1dHEFcYaudhcNlWBdJ_QKzRNTLeSi4BiH": {
+   "label": "Graphic kit — previews",
+   "status": "reference"
+  },
+  "19tokUIlQpl9IPwDDOv93Kn6lBt2um5yu": {
+   "label": "Documents and plans",
+   "status": "doc",
+   "use": [
+    "reference"
+   ]
+  },
+  "1gPb8Uw2FDbyv67hFy2G0ivv7pw2HZFxr": {
+   "label": "Packages and archive (zips)",
+   "status": "reference",
+   "use": [
+    "reference"
+   ]
+  },
+  "18QNZBDA4bMnkvmGl0UlbmbE1nK4xjqkL": {
+   "label": "Graphics by project",
+   "use": [
+    "site",
+    "marketing"
+   ]
+  },
+  "1DA_UyOnJPz-CBE-u4wHIVLwh73tbKmFk": {
+   "label": "FAN LIFE project graphics",
+   "status": "approved",
+   "use": [
+    "site",
+    "marketing",
+    "shop",
+    "studio"
+   ]
+  },
+  "1ALd16ujCGgJQd6wqe71ybAscczTbJmMy": {
+   "label": "THE WORKER project graphics",
+   "clubs": [
+    "hapoel-tel-aviv"
+   ],
+   "project": "the-worker"
+  },
+  "1Rh2D8mLPJZnzEpmhCh0xDVh230KtJ-Pm": {
+   "label": "OFFSIDES project graphics",
+   "project": "offsides",
+   "use": [
+    "reference"
+   ]
+  },
+  "1peOtRF4qBQQfx4Mj8xinO2Bi6Xdb1w0H": {
+   "label": "TakeMeOut project graphics",
+   "project": "takemeout",
+   "use": [
+    "reference"
+   ]
+  },
+  "1GepncMknAnTZry5fV1X08blqLxa1Z2Gf": {
+   "label": "Other projects",
+   "use": [
+    "reference"
+   ]
+  },
+  "1hpNDwo0B1xyCIpaz7-kBEZKxnTvfVpGJ": {
+   "label": "Opening movies (channel and film intros)",
+   "kind": "clip",
+   "use": [
+    "studio",
+    "marketing"
+   ],
+   "status": "approved"
+  },
+  "14slBwt82SScd5i57kFZB9GTUgPnoqkmc": {
+   "label": "Flow stock stills and clips (any club)",
+   "status": "approved",
+   "use": [
+    "studio",
+    "marketing"
+   ],
+   "rights": "owner-made",
+   "subjects": [
+    "stadium",
+    "crowd",
+    "tunnel",
+    "trophy"
+   ]
+  },
+  "1rzAJfmzOBJ7ykuL9ujhN1fA1pueyFj_e": {
+   "label": "Rendered films and shorts (finished output, not source art)",
+   "status": "reference",
+   "use": [
+    "marketing",
+    "reference"
+   ],
+   "kind": "clip"
+  }
+ },
+ "rules": [
+  {
+   "match": "(?i)olympiacos",
+   "clubs": [
+    "olympiacos"
+   ],
+   "on": "any"
+  },
+  {
+   "match": "(?i)panathinaikos|\\bpao\\b",
+   "clubs": [
+    "panathinaikos"
+   ],
+   "on": "any"
+  },
+  {
+   "match": "(?i)\\baek\\b",
+   "clubs": [
+    "aek-athens"
+   ],
+   "on": "any"
+  },
+  {
+   "match": "(?i)zrinjski",
+   "clubs": [
+    "zrinjski-mostar"
+   ],
+   "on": "any"
+  },
+  {
+   "match": "(?i)petah[ -_]?tikva",
+   "clubs": [
+    "hapoel-petah-tikva"
+   ],
+   "on": "any"
+  },
+  {
+   "match": "(?i)hapoel[ -_]?tel[ -_]?aviv|the[ -_]worker|ussishkin",
+   "clubs": [
+    "hapoel-tel-aviv"
+   ],
+   "on": "any"
+  },
+  {
+   "match": "(?i)celtic",
+   "clubs": [
+    "celtic"
+   ],
+   "on": "any"
+  },
+  {
+   "match": "(?i)st\\.?[ -_]?pauli",
+   "clubs": [
+    "st-pauli"
+   ],
+   "on": "any"
+  },
+  {
+   "match": "(?i)\\braja\\b",
+   "clubs": [
+    "raja-casablanca"
+   ],
+   "on": "any"
+  },
+  {
+   "match": "(?i)wydad",
+   "clubs": [
+    "wydad-casablanca"
+   ],
+   "on": "any"
+  },
+  {
+   "match": "(?i)al[ -_]?ahly",
+   "clubs": [
+    "al-ahly"
+   ],
+   "on": "any"
+  },
+  {
+   "match": "(?i)atalanta",
+   "clubs": [
+    "atalanta"
+   ],
+   "on": "any"
+  },
+  {
+   "match": "(?i)maccabi[ -_]?haifa",
+   "clubs": [
+    "maccabi-haifa"
+   ],
+   "on": "any"
+  },
+  {
+   "match": "(?i)classified",
+   "series": "classified",
+   "use": [
+    "studio"
+   ],
+   "on": "any"
+  },
+  {
+   "match": "(?i)kids|fairy|good[ -_]?night|good[ -_]?morning",
+   "series": "fanlife-kids",
+   "use": [
+    "studio",
+    "shop"
+   ],
+   "on": "any"
+  },
+  {
+   "match": "(?i)draft|test|animatic|preview",
+   "status": "draft",
+   "on": "folder"
+  },
+  {
+   "match": "(?i)source[ -_]?(frames|references|photos)|reference",
+   "status": "source-photo",
+   "rights": "needs-check",
+   "on": "folder"
+  },
+  {
+   "match": "(?i)cut-?outs?|\\bpng\\b",
+   "kind": "cutout",
+   "on": "folder"
+  },
+  {
+   "match": "(?i)background|backdrop",
+   "kind": "texture",
+   "on": "folder"
+  },
+  {
+   "match": "(?i)\\bsvg\\b",
+   "kind": "vector",
+   "on": "folder"
+  },
+  {
+   "match": "(?i)IMG_\\d+\\.MOV$",
+   "status": "vlog",
+   "use": [
+    "studio"
+   ],
+   "protect": true,
+   "on": "file"
+  }
+ ]
+}

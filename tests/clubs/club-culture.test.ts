@@ -1,6 +1,6 @@
 import {readFileSync} from 'node:fs'
 import {describe, expect, it} from 'vitest'
-import {clubWorld, cultureInYear, cultureIssues, cultureMissing, cultureOf, validCulture, validateWorld, WORLD_IDS, CULTURE_KINDS} from '@/lib/clubs/world'
+import {clubWorld,clubWorldRaw, cultureInYear, cultureIssues, cultureMissing, cultureOf, validCulture, validateWorld, WORLD_IDS, CULTURE_KINDS} from '@/lib/clubs/world'
 import {cultureLineFor, homeOf} from '@/lib/life/universal/culture'
 import {OWNER_KNOWLEDGE_LABEL} from '@/lib/credits/groups'
 
@@ -27,7 +27,7 @@ describe('matchday culture in world.json', () => {
   it('every shipped line passes and is copied from the research with its sources', () => {
     for (const id of WORLD_IDS) {
       const raw = JSON.parse(readFileSync(`club-packs/${id}/world.json`, 'utf8'))
-      const w = clubWorld(id)!
+      const w = clubWorldRaw(id)!
       expect(w, id).not.toBeNull()
       expect(w.culture ?? [], id).toEqual(raw.culture ?? [])
       const open = cultureMissing(w)

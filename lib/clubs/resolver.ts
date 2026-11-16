@@ -11,6 +11,7 @@ import {readPrecompiled} from './precompiled'
 import {withPlayerOverrides} from '@/lib/players/apply'
 import {refreshSnapshot} from '@/lib/players/snapshot'
 import {getSnapshot} from '@/lib/players/effective'
+import {englishClub} from './english'
 /** Review-only clubs: material staged, nothing approved — loadable (gates show LOCKED), never in the playable set. */
 export const REVIEW_CLUB_IDS:string[]=[]
 /** The repository packs (lib/clubs/resolver-ids.ts). Kept apart so the heavy compile path (about 9 MB of wave JSON) is imported only when a pre-compiled club is missing. */
@@ -32,7 +33,8 @@ export function loadClubBase(id:string):Promise<{data:ClubData;diagnostics:Diagn
 function freeze<T>(v:T):T {if(v&&typeof v==='object'&&!Object.isFrozen(v)){Object.freeze(v);for(const item of Object.values(v))freeze(item)}return v}
 /** The readiness pass every loaded club gets (polls, Blind Cow and the wave-C gates are judged on the compiled data). Mutates; `finish` freezes after it. */
 export function readinessPass(result:{data:ClubData;diagnostics:Diagnostic[]}){result.data.gates.polls=gateReadiness(clubPolls(result.data,'en').length,T.polls.target,T.polls.minimum,T.polls.unit);result.data.gates['blind-cow']=gateReadiness(clubMystery(result.data).poolSize,T['blind-cow'].target,T['blind-cow'].minimum,T['blind-cow'].unit);for(const [k,r] of Object.entries(waveCReadiness(result.data)))(result.data.gates as Record<string,unknown>)[k]=r;return result}
-function finish(result:{data:ClubData;diagnostics:Diagnostic[]}){return freeze(readinessPass(result))}
+/** every loaded club is read in English (lib/clubs/english.ts — owner, 16.11.2026: all names in English, every club) */
+function finish(result:{data:ClubData;diagnostics:Diagnostic[]}){return freeze(readinessPass({...result,data:englishClub(result.data)}))}
 /** A club with no repository pack is played from its DESK PACK — built in the control room from the owner's approvals,
  * compiled by the same compiler. It can change at any time, so it is re-read after a minute (and at once after a build). */
 const DESK_TTL_MS=60_000

@@ -2,7 +2,7 @@ import 'server-only'
 import {createHash} from 'node:crypto'
 import kitMaster from '@/content/generated/kit-master.json'
 import {allMatches} from '@/lib/archive/match-master'
-import {playerById} from '@/lib/archive/player-master'
+import {playerById, printedName } from '@/lib/archive/player-master'
 import {playableLineups} from '@/lib/game/lineup'
 import {eligibleGoalRecords} from '@/lib/game/goal'
 import {actorKindOf} from '@/lib/game/replay/actors'
@@ -25,7 +25,7 @@ export function sourceAdder(sources:Map<string,Source>):Add{
  return (title,url)=>{const id=createHash('sha256').update(`${title}:${url||''}`).digest('hex').slice(0,16);if(!sources.has(id))sources.set(id,{id,title,url:url||null,publisher:title,access:'unknown',checkedAt:null});return id}
 }
 const club=(slug:string|null|undefined)=>(slug||'').replace(/-/g,' ')
-const nameOf=(id:string)=>playerById(id)?.displayName??null
+const nameOf=(id:string)=>{const p=playerById(id);return p?printedName(p):null}
 
 /** Every dated football match with a scoreline, plus the documented eleven where the Line-up Master holds one. */
 export function hapoelMatches(add:Add):Fact<Entity>[]{

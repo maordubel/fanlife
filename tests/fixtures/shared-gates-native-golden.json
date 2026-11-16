@@ -1,7 +1,7 @@
 {
  "capturedFrom": "ed65709f1d12c6b277d1966ba56cb4c2d399460b",
  "recapturedForUpstreamContent": "edaa80bd300435d31223a8538f52ba27fef2231f",
- "note": "Engine unchanged; re-captured because the upstream question/memory content bank advanced in the Worker sync of 2026-10-06.",
+ "note": "Engine unchanged; re-captured because the upstream question/memory content bank advanced in the Worker sync of 2026-10-06. Re-captured 2026-11-16: names printed in English (lib/clubs/english.ts, question master rebuilt); engine unchanged.",
  "trivia": [
   {
    "seed": 1,
@@ -11,7 +11,7 @@
     "decade": null,
     "hard": false
    },
-   "hash": "37615cc78ed3930775e17abf7c82cbfa2682a9337e4dc940e7c9137ed9af7294"
+   "hash": "85e12c155977fc955bd7c22e2f281636303c48dd543bfef013023dd8f7c1f56b"
   },
   {
    "seed": 1,
@@ -21,7 +21,7 @@
     "decade": null,
     "hard": false
    },
-   "hash": "7a395f087eb17016dfec5d855b139659f7ed5fd66a003f52d9e3be2fbe1ff982"
+   "hash": "21c2fd4ef663ecfa24292386c341a23dd50f1165730e793a321303124da59cd9"
   },
   {
    "seed": 1,
@@ -41,7 +41,7 @@
     "decade": 1990,
     "hard": false
    },
-   "hash": "99232625a6c674d64577e68464dbc27ad89bb6c127e3f305ff2a71c9cca1a19f"
+   "hash": "7e69989565f0ce4e7434f6724cde0c7e6428771e839cde23b66b4fd83d42d6b2"
   },
   {
    "seed": 42,
@@ -51,7 +51,7 @@
     "decade": null,
     "hard": false
    },
-   "hash": "14c1a2f366a98763879ebcc5e4e87ed51ae4c4f7c86793d748e46255ad92214f"
+   "hash": "b4608dbbbdba6448920d152d0e83291980682c149a4184fbd5ab89a58ec2042d"
   },
   {
    "seed": 42,
@@ -61,7 +61,7 @@
     "decade": null,
     "hard": false
    },
-   "hash": "b008ade6ca8e5d6a0525ab8bdb34b2c4a4fb20f2fd4b150ecdfb4b3d25a45c45"
+   "hash": "af42ac804ff6efb1a8f2e1fb7fd9a91a80f4ec50daca8bf3703e8c90fa186d68"
   },
   {
    "seed": 42,
@@ -81,7 +81,7 @@
     "decade": 1990,
     "hard": false
    },
-   "hash": "03092a3ff54b4b84e21fc0964c9eaf011fdceade086fbed4e3c71a73b69bc23d"
+   "hash": "2cf00b419453b0e6dc6b967244ac7765a5ae49f5e4a09979c22d643fe834eabd"
   },
   {
    "seed": 95,
@@ -91,7 +91,7 @@
     "decade": null,
     "hard": false
    },
-   "hash": "3b2d4cd381edb11c0db650a41bdccbaedc1e977ecbd78fc0ce9fd4c256bc0118"
+   "hash": "fff49d127c9643cec0959fcbba1ee13ed88184823697b71e0b829bf9b4c0d947"
   },
   {
    "seed": 95,
@@ -101,7 +101,7 @@
     "decade": null,
     "hard": false
    },
-   "hash": "383a8d2f0810ccba64df5afee91b0904a745d3fc48e32d257fda245a64727806"
+   "hash": "0b93e7450dd86e4355229c9b98b7ba26a3977ccaabf797b979fac03b441f5f68"
   },
   {
    "seed": 95,
@@ -121,7 +121,7 @@
     "decade": 1990,
     "hard": false
    },
-   "hash": "1db8b644f56a2d62ffb6ca4797f37f4c02409552ff374d0be7da316c551fc453"
+   "hash": "41338cfd9700969022f90088a16440f23031518ac38e30996276f3b3a581c769"
   }
  ],
  "memory": [

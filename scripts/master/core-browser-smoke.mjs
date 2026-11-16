@@ -372,8 +372,8 @@ try {
  await hit('Goran Karačić').getByRole('button',{name:/^Open:/}).click();await page.getByTestId('archive-detail').waitFor();assert((await page.getByTestId('archive-detail').locator('a[target="_blank"]').count())>=1)
  await page.goto(`${base}/clubs/hapoel-petah-tikva/archive?q=${encodeURIComponent('1954/55')}`);await hit('1955').waitFor()
  assert.equal(await hit('1955').locator('time').count(),0)
- await page.goto(`${base}/clubs/hapoel-petah-tikva/archive?q=${encodeURIComponent('עומר כץ')}`);await hit('עומר כץ').waitFor()
- await hit('עומר כץ').getByRole('button',{name:/^Open:/}).click();await page.getByTestId('archive-detail').waitFor();assert((await page.getByTestId('archive-detail').locator('a[target="_blank"]').count())>=1)
+ await page.goto(`${base}/clubs/hapoel-petah-tikva/archive?q=${encodeURIComponent('Omer Katz')}`);await hit('Omer Katz').waitFor()
+ await hit('Omer Katz').getByRole('button',{name:/^Open:/}).click();await page.getByTestId('archive-detail').waitFor();assert((await page.getByTestId('archive-detail').locator('a[target="_blank"]').count())>=1)
  // gate 10 since the 9.10.2026 rebuild: entry cards, a clue stack, a guess drawer and a two-tap give-up. The answer never reaches the page
  // before the result: the run resumes from the server's sealed cookie, a wrong pick strikes the name, giving up reveals the man.
  await page.goto(`${base}/clubs/hapoel-tel-aviv/blind-cow?lang=en`);await page.getByTestId('mystery-board').waitFor()

@@ -172,7 +172,28 @@ export const cultureInYear=(c:Pick<WorldCulture,'fromYear'|'untilYear'>,year:num
  year===null||year===undefined?c.fromYear===undefined&&c.untilYear===undefined:(c.fromYear===undefined||year>=c.fromYear)&&(c.untilYear===undefined||year<=c.untilYear)
 
 /** The researched world for a club, or null. A file that fails validation is treated as absent — the app never shows a half-checked line. */
+/** Every name on screen is English (owner, 16.11.2026): a researched native spelling (`local`: "Θρύλος", "אצטדיון בלומפילד")
+ * stays in the file as evidence and is not printed. A `local` already in Latin letters (Croatian, German) is English-safe and kept. */
+const NATIVE=/[\u0370-\u03ff\u1f00-\u1fff\u0400-\u04ff\u0590-\u05ff\u0600-\u06ff]/
+const englishOnly=<T,>(v:T):T=>{
+ if(Array.isArray(v))return v.map(englishOnly) as T
+ if(!v||typeof v!=='object')return v
+ const out:Record<string,unknown>={}
+ for(const [k,x] of Object.entries(v as Record<string,unknown>)){if(k==='local'&&typeof x==='string'&&NATIVE.test(x))continue;out[k]=k==='sources'?x:englishOnly(x)}
+ return out as T
+}
+const worlds=new Map<string,ClubWorld|null>()
 export function clubWorld(id:string):ClubWorld|null{
+ if(worlds.has(id))return worlds.get(id)!
+ const w=raw[id]
+ if(!w||validateWorld(w,id).length){worlds.set(id,null);return null}
+ const world=englishOnly(w as ClubWorld)
+ const done=world.culture===undefined?world:{...world,culture:validCulture(world.culture,id)}
+ worlds.set(id,done)
+ return done
+}
+/** the world file as researched, native spellings included (evidence, the research desk) */
+export function clubWorldRaw(id:string):ClubWorld|null{
  const w=raw[id]
  if(!w||validateWorld(w,id).length)return null
  const world=w as ClubWorld
@@ -195,7 +216,8 @@ export const nicknameLine=(w:ClubWorld):string=>w.nicknames.map(n=>n.text).join(
 /** Every distinct publisher behind what a club's History page shows, for the small "Sources" credit. */
 export function worldPublishers(w:ClubWorld):string[]{
  const blocks:Sourced[]=[...w.nicknames,...[w.ground,w.founded,w.emblem,w.colours,w.terrace].filter((x):x is NonNullable<typeof x>=>Boolean(x)),...w.facts,...(w.flavour??[])]
- return [...new Set([...blocks,...(w.culture??[])].flatMap(b=>b.sources.map(s=>s.publisher)))].sort()
+ // printed in English (16.11.2026): the owner's first-hand knowledge is credited to the team, never in Hebrew
+ return [...new Set([...blocks,...(w.culture??[])].flatMap(b=>b.sources.map(s=>s.publisher.startsWith(OWNER_KNOWLEDGE_LABEL)?'The FAN LIFE team':s.publisher)))].filter(p=>!NATIVE.test(p)).sort()
 }
 
 /** The flavour line for a given day, rotating through the list; `offset` picks a different one for a second spot on the same page. Deterministic, so server and client agree. */

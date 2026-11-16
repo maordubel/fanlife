@@ -1,9 +1,11 @@
 import 'server-only'
+import { WORKER_ROUTE_CLUB } from '@/lib/goals-auto/types'
 
 import { pickablePlayers } from '@/lib/archive/player-master'
 import { FORMATIONS, DEFAULT_FORMATION, type Formation } from './lineup'
 import { facetsOfPlayer } from './roster-facets'
 import { byInitial, fold, splitName, type Searchable } from './roster-search'
+import { englishName } from '@/lib/clubs/rumble-xi/names'
 
 /**
  * הרכב כל הזמנים — the free-play builder.
@@ -61,11 +63,13 @@ export function rosterIndex(window?: RosterWindow): RosterIndex {
   const all: RosterEntry[] = pickablePlayers()
     .map((player) => {
       const found = facetsOfPlayer(player)
+      // Printed in English (owner, 16.11.2026: every name English, every club); the archive's Hebrew stays searchable.
+      const en = englishName(WORKER_ROUTE_CLUB, player.id, player.displayName)
       return {
         id: player.id,
         slug: player.slug,
-        nameHe: player.displayName,
-        ...splitName(player.displayName),
+        nameHe: en,
+        ...splitName(en),
         position: found.position,
         // Only where there is more than one: 653 single-element arrays in the payload
         // would be a second copy of `position` on every row (rule 59), sent to a phone.
@@ -76,13 +80,13 @@ export function rosterIndex(window?: RosterWindow): RosterIndex {
         // The club's foreign-slot record, kept apart from nationality (players.md §3.1):
         // the filter, the row badge and gate 1's challenges read THIS.
         foreignSlot: player.foreignSlot.status,
-        ...(player.aliases.he.length > 0 ? { aliasesHe: player.aliases.he } : {}),
+        aliasesHe: [...new Set([player.displayName, ...player.aliases.he].filter((name) => name !== en))],
         fromYear: found.fromYear,
         toYear: found.toYear,
       }
     })
     .filter((entry) => !window || (entry.fromYear !== null && entry.fromYear !== undefined && entry.fromYear < window.before))
-    .sort((a, b) => fold(a.familyHe).localeCompare(fold(b.familyHe), 'he'))
+    .sort((a, b) => fold(a.familyHe).localeCompare(fold(b.familyHe), 'en'))
 
   return {
     all,

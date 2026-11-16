@@ -42,7 +42,7 @@ export function GateBar({title,mode,back,gateNo,children}:{title:string;mode:Mod
     {gateNo?<span className="wga-hud-gate" aria-hidden="true">Gate {gateNo}</span>:null}
    </div>
    {/* eslint-disable-next-line @next/next/no-img-element -- 28px mark, shipped as measured */}
-   <Link className="wga-hud-mark" href="/" aria-label="FAN LIFE"><img src="/brand/fanlife/logo-96.png" alt="" width={28} height={28}/></Link>
+   <Link className="wga-hud-mark" href="/" aria-label="FAN LIFE"><img src="/brand/fanlife/logo-96.webp" alt="" width={28} height={28}/></Link>
   </header>
   {children?<div className="wkl-gate-from">{children}</div>:null}
  </>

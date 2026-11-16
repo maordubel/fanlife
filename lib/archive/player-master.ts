@@ -1,6 +1,8 @@
 import 'server-only'
+import { WORKER_ROUTE_CLUB } from '@/lib/goals-auto/types'
 
 import masterJson from '@/content/generated/player-master.json'
+import { englishName } from '@/lib/clubs/rumble-xi/names'
 import {
   buildIdentityIndex,
   identityKey,
@@ -281,4 +283,12 @@ export function pickerRoster(): PickerRoster {
 /** Pickable people only — the list `rosterIndex()` is built from. */
 export function pickablePlayers(): PlayerMasterRecord[] {
   return playerMaster.players.filter((p) => p.kind === 'player')
+}
+
+/**
+ * The name a screen prints (owner, 16.11.2026: every name in English, in every club). `displayName` stays the archive's
+ * own spelling — the identity key and the search target; this is the English form from the reviewed table.
+ */
+export function printedName(p: { id: string; displayName: string }): string {
+  return englishName(WORKER_ROUTE_CLUB, p.id, p.displayName)
 }

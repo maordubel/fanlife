@@ -3,7 +3,7 @@ import {signingKey} from '@/lib/secrets'
 
 import { createHmac } from 'node:crypto'
 
-import { allPlayers, namesOf, type PlayerMasterRecord } from '@/lib/archive/player-master'
+import { allPlayers, namesOf, type PlayerMasterRecord, printedName } from '@/lib/archive/player-master'
 import { t as rumbleText } from '@/lib/royal-rumble/i18n'
 import { voiceAction } from '@/lib/voice'
 
@@ -292,7 +292,7 @@ function pool(): PoolRow[] {
     const { fame, evidence, input } = evidenceOf(player, position)
     base.push({
       slug: player.slug,
-      nameHe: player.displayName,
+      nameHe: printedName(player),
       position,
       positions: [...player.positions.codes],
       fromYear: player.years.from,
