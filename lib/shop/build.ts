@@ -118,9 +118,9 @@ export async function pressProduct(id:string,by:string):Promise<ShopProduct>{
   if(p.printify?.productId)await api.remove(shop,p.printify.productId).catch(()=>{})
   const club=p.subject==='fanlife'?null:REGISTRY.find(c=>c.id===p.subject),list=listingOf(p,club?{name:subjectName(p.subject),city:club.city}:null,p.blueprint?p.blueprint.title.replace(/\s*\([^)]*\)/g,''):base.label)
   const description=p.description&&p.description!==NOTE?p.description:list.description
-  // A SUPPORTER'S OWN PRINT IS NOT IN THE STORE'S CATALOGUE (16.11.2026, owner: "a temporary product other customers don't see"):
-  // it is made hidden in the sales channel; only its own checkout link, handed to the supporter who made it, opens it
-  const made=await api.create(shop,{title:p.title,description,tags:list.tags,blueprint_id:m.blueprintId,print_provider_id:m.providerId,...(p.personal?{visible:false}:{}),
+  // (16.11.2026) Printify's visible:false hides a product from the Pop-Up grid but also 404s its own page, so a supporter's print
+  // stays visible — keeping it out of the catalogue is handled apart (see shop-personal-prints rule)
+  const made=await api.create(shop,{title:p.title,description,tags:list.tags,blueprint_id:m.blueprintId,print_provider_id:m.providerId,
    variants:[...ids].map(v=>({id:v,price:9900,is_enabled:true})),print_areas:printAreas(placed)})
   const priced=made.variants.filter(v=>ids.has(v.id)).map(v=>({id:v.id,price:price(v.cost,d?.margin??doc.settings.margin),is_enabled:true}))
   await api.update(shop,made.id,{variants:priced})
@@ -282,7 +282,7 @@ export async function syncListing(id:string){
  const api=await client(),base=p.blueprint?p.blueprint.title.replace(/\s*\([^)]*\)/g,''):KIND_SPECS[p.kind].label
  const club=p.subject==='fanlife'?null:REGISTRY.find(c=>c.id===p.subject),list=listingOf(p,club?{name:subjectName(p.subject),city:club.city}:null,base)
  const description=p.description&&p.description!==NOTE&&!p.description.startsWith('Original supporter art from the FAN LIFE library')?p.description:list.description
- await api.update(shop,p.printify.productId,{title:p.title,description,tags:list.tags,...(p.personal?{visible:false}:{})})
+ await api.update(shop,p.printify.productId,{title:p.title,description,tags:list.tags,...(p.personal?{visible:true}:{})})
  if(p.printify.publishedAt)await api.publish(shop,p.printify.productId).catch(()=>{})
  await set(id,{description})
 }
