@@ -75,7 +75,10 @@ export async function pressProduct(id:string,by:string):Promise<ShopProduct>{
    // needs a sharper original, and the desk says so.
    const need=Math.max(0,...candidates.flatMap(v=>v.placeholders.filter(ph=>wanted.includes(ph.position)).map(ph=>Math.max(ph.width/pic.width,ph.height/pic.height)*Math.min(1,spec.scale))))
    const f=Math.min(4,need*.85,Math.sqrt(36e6/(pic.width*pic.height)))
-   if(f>=1.25&&!cutout){const src='library' in art?original(art.library.id):art.upload.preview,big=src?await enlarge(src,f).catch(()=>null):null
+   // a supporter's own print (16.11.2026, "personal prints load for long and fail") is drawn for the printer already — its preview is
+   // only the small screen proof, so enlarging that would replace the real print file with a blown-up proof, and the 36 MP work
+   // on one CPU is what ran the request out of time. It is never enlarged.
+   if(f>=1.25&&!cutout&&!p.personal){const src='library' in art?original(art.library.id):art.upload.preview,big=src?await enlarge(src,f).catch(()=>null):null
     if(big){const up=await api.upload(`x${f.toFixed(1)}-${('library' in art?art.library.name:art.upload.name).replace(/[^a-zA-Z0-9._-]/g,'-').replace(/\.\w+$/,'').slice(-60)}.${big.png?'png':'jpg'}`,big.data);pic={id:up.id,width:up.width,height:up.height};upscaled=Math.max(upscaled,Math.round(f*10)/10)}}
    sent.set(key,pic);return pic}
   // quality first, size by size (14.11.2026): only the sizes this picture prints sharp on, in the shape that suits it
