@@ -26,6 +26,7 @@ import { describeKit } from './describe'
 import { crestMark } from './crestMarks'
 import { markFor, type MakerMarkId } from './maker-marks'
 import { grantedMaker, grantedSponsor } from './mark-library'
+import { isDoubleHomeCut } from './double-home'
 import { photoGeometry, photoMissing } from './photo'
 import type { CollarId, KitColour, KitVariant, PatternId, SleeveId } from './spec'
 
@@ -381,7 +382,8 @@ function record(row: DesignRow): KitMasterRecord {
     socks: field(row.socks, source, confidence),
   }
 
-  const missing = photoMissing(template, { pattern: row.pattern, collar: row.collar, sleeves: row.sleeves })
+  const doubleHome = isDoubleHomeCut(row)
+  const missing = doubleHome ? ['historical-cut'] : photoMissing(template, { pattern: row.pattern, collar: row.collar, sleeves: row.sleeves })
   const reasons: string[] = []
   if (!fields.crest.value) reasons.push('crest-art-missing')
   if (!fields.maker.value) reasons.push('maker-unknown')
@@ -405,11 +407,11 @@ function record(row: DesignRow): KitMasterRecord {
     },
     render: {
       vector: true,
-      photo: { template, available: photoGeometry(template) !== null, complete: missing.length === 0, missing },
+      photo: { template, available: !doubleHome && photoGeometry(template) !== null, complete: missing.length === 0, missing },
       marks: {
         crest: fields.crest.value ? 'print' : 'none',
         maker: grantedMaker(row.makerHe, seasonLabel) ? 'granted' : 'alt-set',
-        sponsor: grantedSponsor(row.sponsorHe) ? 'granted' : 'lettered',
+        sponsor: grantedSponsor(row.sponsorHe, seasonLabel, variant, row.base) ? 'granted' : 'lettered',
       },
     },
     gate4: { playable: reasons.length === 0, reason: reasons.length ? reasons.join(',') : null },

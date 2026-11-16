@@ -1,0 +1,707 @@
+{
+  "ibi": [
+    {
+      "src": "/kits/marks/sponsor-ibi.svg",
+      "viewBox": "0 0 108 75",
+      "print": "mono",
+      "source": "https://www.ibi.co.il/wp-content/uploads/2021/01/logo.svg",
+      "reference": "https://www.footballkitarchive.com/hapoel-tel-aviv-2025-26-home-kit-394020/"
+    }
+  ],
+  "congstar": [
+    {
+      "src": "/club-kits/marks/congstar-horizontal-light.svg",
+      "viewBox": "0 0 285 93",
+      "print": "colour",
+      "club": "st-pauli",
+      "seasons": [
+        "2024/25",
+        "2025/26"
+      ],
+      "source": "https://upload.wikimedia.org/wikipedia/commons/6/61/Congstar_Logo_2023.svg",
+      "reference": "https://www.colours-of-football.com/colours03/ger/st_pauli/st_pauli_1.html",
+      "treatment": "Original vector with the light plate worn on the shirt."
+    },
+    {
+      "src": "/club-kits/marks/congstar-stacked.svg",
+      "viewBox": "-1.4708598 -1.4708598 52.9300086 51.9703796",
+      "print": "mono",
+      "club": "st-pauli",
+      "seasons": [
+        "2017/18",
+        "2018/19",
+        "2019/20",
+        "2020/21",
+        "2021/22",
+        "2022/23",
+        "2023/24"
+      ],
+      "source": "https://upload.wikimedia.org/wikipedia/commons/1/13/Congstar_2020_logo.svg",
+      "reference": "https://www.colours-of-football.com/colours03/ger/st_pauli/st_pauli_1.html",
+      "periodSource": "https://www.congstar.de/fileadmin/files_congstar/images/presse/Pressemitteilungen/PM_Anmeldung_laeuft_FC_St_Pauli_und_congstar_suchen_den_KIEZ-CHAMPION_2018.pdf"
+    }
+  ],
+  "citibank": [
+    {
+      "src": "/club-kits/marks/citibank-2009.svg",
+      "viewBox": "0 0 300 81.234291",
+      "print": "colour",
+      "club": "olympiacos",
+      "seasons": [
+        "2009/10"
+      ],
+      "variant": "home",
+      "source": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Citibank.svg",
+      "reference": "https://www.colours-of-football.com/colours03/gre/olympiakos/olympiakos_1.html"
+    },
+    {
+      "src": "/club-kits/marks/citibank-2009-white.svg",
+      "viewBox": "0 0 300 81.234291",
+      "print": "colour",
+      "club": "olympiacos",
+      "seasons": [
+        "2009/10"
+      ],
+      "variant": "away",
+      "source": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Citibank.svg",
+      "reference": "https://www.colours-of-football.com/colours03/gre/olympiakos/olympiakos_1.html",
+      "treatment": "Original wordmark with the white lettering and red arc used on the dark shirts."
+    },
+    {
+      "src": "/club-kits/marks/citibank-2009-white.svg",
+      "viewBox": "0 0 300 81.234291",
+      "print": "colour",
+      "club": "olympiacos",
+      "seasons": [
+        "2009/10"
+      ],
+      "variant": "third",
+      "source": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Citibank.svg",
+      "reference": "https://www.colours-of-football.com/colours03/gre/olympiakos/olympiakos_1.html",
+      "treatment": "Original wordmark with the white lettering and red arc used on the dark shirts."
+    }
+  ],
+  "siemens": [
+    {
+      "src": "/club-kits/marks/siemens-2005.svg",
+      "viewBox": "0 0 210 50",
+      "print": "mono",
+      "club": "olympiacos",
+      "seasons": [
+        "2005/06"
+      ],
+      "source": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Siemens-logo.svg",
+      "reference": "https://www.colours-of-football.com/colours03/gre/olympiakos/olympiakos_1.html"
+    }
+  ],
+  "stoiximan": [
+    {
+      "src": "/club-kits/marks/stoiximan-wordmark.svg",
+      "viewBox": "15 45 270 60",
+      "print": "mono",
+      "club": "olympiacos",
+      "seasons": [
+        "2020/21",
+        "2021/22",
+        "2022/23",
+        "2023/24",
+        "2024/25"
+      ],
+      "source": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Stoiximan_(logo).svg",
+      "reference": "https://www.colours-of-football.com/colours03/gre/olympiakos/olympiakos_1.html",
+      "treatment": "Original wordmark paths isolated from the blue background."
+    },
+    {
+      "src": "/club-kits/marks/stoiximan-wordmark.svg",
+      "viewBox": "15 45 270 60",
+      "print": "mono",
+      "club": "panathinaikos",
+      "seasons": [
+        "2022/23",
+        "2023/24",
+        "2024/25"
+      ],
+      "source": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Stoiximan_(logo).svg",
+      "reference": "https://www.colours-of-football.com/colours03/gre/panathinaikos/panathinaikos_1.html",
+      "treatment": "Original wordmark paths isolated from the blue background."
+    }
+  ],
+  "dafabet": [
+    {
+      "src": "/club-kits/marks/dafabet-horizontal.svg",
+      "viewBox": "32 202 448 108",
+      "print": "colour",
+      "club": "celtic",
+      "seasons": [
+        "2016/17"
+      ],
+      "variant": "home",
+      "source": "https://brandeps.com/logo-download/D/Dafabet-logo-vector-01.svg",
+      "reference": "https://www.colours-of-football.com/colours03/sco/celtic/celtic_1.html",
+      "treatment": "Original horizontal artwork isolated from its red background."
+    }
+  ],
+  "aluminij": [
+    {
+      "src": "/club-kits/marks/aluminij-2010.svg",
+      "viewBox": "0 0 396.8504 85.03937",
+      "print": "colour",
+      "club": "zrinjski-mostar",
+      "seasons": [
+        "2010/11"
+      ],
+      "source": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Aluminij.svg",
+      "reference": "https://www.colours-of-football.com/colours03/bosnia/Zrinjski_Mostar/Zrinjski_Mostar_1.html",
+      "treatment": "Original paths in the blue shirt print, with the corporate tagline omitted."
+    }
+  ],
+  "unicef": [
+    {
+      "src": "/club-kits/marks/unicef-2012.svg",
+      "viewBox": "0 0 130.9 31.5",
+      "print": "colour",
+      "club": "olympiacos",
+      "seasons": [
+        "2013/14",
+        "2014/15"
+      ],
+      "variant": "home",
+      "source": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Logo_of_UNICEF.svg",
+      "reference": "https://www.olympiacos.org/2013/10/24/oi-faneles-me-unicef/"
+    },
+    {
+      "src": "/club-kits/marks/unicef-2012.svg",
+      "viewBox": "0 0 130.9 31.5",
+      "print": "colour",
+      "club": "olympiacos",
+      "seasons": [
+        "2014/15"
+      ],
+      "variant": "third",
+      "source": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Logo_of_UNICEF.svg",
+      "reference": "https://www.olympiacos.org/2013/10/24/oi-faneles-me-unicef/"
+    },
+    {
+      "src": "/club-kits/marks/unicef-2012.svg",
+      "viewBox": "0 0 130.9 31.5",
+      "print": "mono",
+      "club": "olympiacos",
+      "seasons": [
+        "2013/14",
+        "2014/15"
+      ],
+      "variant": "away",
+      "source": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Logo_of_UNICEF.svg",
+      "reference": "https://www.olympiacos.org/2013/10/24/oi-faneles-me-unicef/"
+    }
+  ],
+  "lg": [
+    {
+      "src": "/club-kits/marks/lg-aek-period.svg",
+      "viewBox": "0 -0.987 499.588 236.827",
+      "print": "colour",
+      "club": "aek-athens",
+      "seasons": [
+        "2006/07",
+        "2007/08",
+        "2008/09"
+      ],
+      "source": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Logo_of_the_LG_Corporation_%281995-2014%29_%282%29.svg",
+      "reference": "https://www.colours-of-football.com/colours03/gre/aek/aek_1.html",
+      "treatment": "Original badge and wordmark with the shirt’s white lettering."
+    }
+  ],
+  "tim": [
+    {
+      "src": "/club-kits/marks/tim-2005.svg",
+      "viewBox": "0 0 308.703 101.67912",
+      "print": "colour",
+      "club": "aek-athens",
+      "seasons": [
+        "2005/06"
+      ],
+      "source": "https://upload.wikimedia.org/wikipedia/commons/f/fa/TIM_logo_%282004-2014%29.svg",
+      "reference": "https://www.colours-of-football.com/colours03/gre/aek/aek_1.html"
+    }
+  ],
+  "cosmote": [
+    {
+      "src": "/club-kits/marks/cosmote-home.svg",
+      "viewBox": "617.95 0 238 84",
+      "print": "colour",
+      "club": "panathinaikos",
+      "seasons": [
+        "2006/07",
+        "2007/08",
+        "2008/09",
+        "2009/10",
+        "2010/11",
+        "2010–12"
+      ],
+      "variant": "home",
+      "source": "https://athens.euronext.com/en/documents/10180/2341643/COSMOTE-%20MOBILE%20TELECOMMUNICATIONS%20S.A%202006/b68eb6af-b5ab-4f17-a3c8-9ea6927d7bbf",
+      "reference": "https://www.colours-of-football.com/colours03/gre/panathinaikos/panathinaikos_1.html",
+      "treatment": "The nine white and lime logo paths extracted from the 2006 annual report cover."
+    }
+  ],
+  "siemens mobile": [
+    {
+      "viewBox": "0 0 234.3311 87.426934",
+      "print": "colour",
+      "club": "olympiacos",
+      "source": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Siemens_Mobile_Logo.svg",
+      "reference": "https://www.colours-of-football.com/colours03/gre/olympiakos/olympiakos_1.html",
+      "src": "/club-kits/marks/siemens-mobile-teal.svg",
+      "variant": "home",
+      "seasons": [
+        "2002/03"
+      ]
+    },
+    {
+      "viewBox": "0 0 234.3311 87.426934",
+      "print": "colour",
+      "club": "olympiacos",
+      "source": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Siemens_Mobile_Logo.svg",
+      "reference": "https://www.colours-of-football.com/colours03/gre/olympiakos/olympiakos_1.html",
+      "src": "/club-kits/marks/siemens-mobile-black.svg",
+      "variant": "home",
+      "seasons": [
+        "2003/04",
+        "2004/05"
+      ],
+      "treatment": "Original paths in the dark lettering used on the white chest panel."
+    },
+    {
+      "viewBox": "0 0 234.3311 87.426934",
+      "print": "colour",
+      "club": "olympiacos",
+      "source": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Siemens_Mobile_Logo.svg",
+      "reference": "https://www.colours-of-football.com/colours03/gre/olympiakos/olympiakos_1.html",
+      "src": "/club-kits/marks/siemens-mobile-white.svg",
+      "variant": "away",
+      "seasons": [
+        "2002/03",
+        "2003/04",
+        "2004/05"
+      ],
+      "treatment": "Original paths in the white lettering used on the black away shirt."
+    }
+  ],
+  "pame stoixima": [
+    {
+      "src": "/club-kits/marks/pame-stoixima.svg",
+      "viewBox": "14 10 100 44",
+      "print": "colour",
+      "source": "https://media.pamestoixima.gr/file/HR_a090724.pdf",
+      "treatment": "Original black, red and white paths extracted from the sponsor’s match coupon.",
+      "club": "aek-athens",
+      "seasons": [
+        "2018/19",
+        "2018–20",
+        "2019/20",
+        "2021/22",
+        "2022/23",
+        "2023/24",
+        "2024/25"
+      ],
+      "reference": "https://www.colours-of-football.com/colours03/gre/aek/aek_1.html"
+    },
+    {
+      "src": "/club-kits/marks/pame-stoixima.svg",
+      "viewBox": "14 10 100 44",
+      "print": "colour",
+      "source": "https://media.pamestoixima.gr/file/HR_a090724.pdf",
+      "treatment": "Original black, red and white paths extracted from the sponsor’s match coupon.",
+      "club": "panathinaikos",
+      "seasons": [
+        "2018/19",
+        "2019/20",
+        "2021/22"
+      ],
+      "reference": "https://www.colours-of-football.com/colours03/gre/panathinaikos/panathinaikos_1.html"
+    }
+  ],
+  "stoixima": [
+    {
+      "src": "/club-kits/marks/pame-stoixima.svg",
+      "viewBox": "14 10 100 44",
+      "print": "colour",
+      "source": "https://media.pamestoixima.gr/file/HR_a090724.pdf",
+      "treatment": "Original black, red and white paths extracted from the sponsor’s match coupon.",
+      "club": "panathinaikos",
+      "seasons": [
+        "2018/19",
+        "2019/20",
+        "2021/22"
+      ],
+      "reference": "https://www.colours-of-football.com/colours03/gre/panathinaikos/panathinaikos_1.html"
+    },
+    {
+      "src": "/club-kits/marks/pame-stoixima.svg",
+      "viewBox": "14 10 100 44",
+      "print": "colour",
+      "source": "https://media.pamestoixima.gr/file/HR_a090724.pdf",
+      "treatment": "Original black, red and white paths extracted from the sponsor’s match coupon.",
+      "club": "aek-athens",
+      "seasons": [
+        "2018/19"
+      ],
+      "variant": "third",
+      "reference": "https://www.colours-of-football.com/colours03/gre/aek/aek_1.html"
+    }
+  ],
+  "piraeus bank": [
+    {
+      "src": "/club-kits/marks/piraeus-bank-2000.svg",
+      "viewBox": "-0.9558 -0.9558 58.793822 16.1346",
+      "print": "colour",
+      "club": "aek-athens",
+      "seasons": [
+        "2003/04"
+      ],
+      "source": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Piraeus_Bank_logo_2000.svg",
+      "reference": "https://www.footballkitarchive.com/aek-athens-2003-04-home-kit-35122/"
+    }
+  ],
+  "superbet": [
+    {
+      "src": "/club-kits/marks/superbet.svg",
+      "viewBox": "0 0 512 90.718002",
+      "print": "colour",
+      "club": "panathinaikos",
+      "seasons": [
+        "2026/27"
+      ],
+      "variant": "home",
+      "source": "https://upload.wikimedia.org/wikipedia/commons/3/39/Superbet_Logo.svg",
+      "reference": "https://www.pao.gr/commercial/parousiastikan-oi-nees-emfaniseis-tis-sezon-2026-27-stin-kardia-tis-athinas/",
+      "treatment": "The original wordmark paths are printed in white on the home shirt."
+    },
+    {
+      "src": "/club-kits/marks/superbet.svg",
+      "viewBox": "0 0 512 90.718002",
+      "print": "colour",
+      "club": "panathinaikos",
+      "seasons": [
+        "2025/26"
+      ],
+      "variant": "home",
+      "source": "https://upload.wikimedia.org/wikipedia/commons/3/39/Superbet_Logo.svg",
+      "reference": "https://www.oldfootballshirts.com/en/teams/p/panathinaikos/old-panathinaikos-football-shirt-s96651.html",
+      "treatment": "The white print on the later 2025/26 home shirt, separately documented from the A Little Shelter home print."
+    }
+  ],
+  "umbro": [
+    {
+      "src": "/club-kits/marks/umbro-wordmark-2000.svg",
+      "viewBox": "0 0 124.53647 45.913306",
+      "print": "mono",
+      "club": "hapoel-tel-aviv",
+      "seasons": [
+        "2008/09"
+      ],
+      "source": "https://i.logos-download.com/46759/34740-b3eca5944c9942c6d68dc7b8971d7cf9.svg/Umbro_Logo_2000.svg",
+      "reference": "https://www.colours-of-football.com/colours03/israel/hapoel_tel-aviv/hapoel_tel-aviv_1.html",
+      "treatment": "Wide double diamond and lettering from the period original, used by the rows documenting Umbro as chest sponsor."
+    }
+  ],
+  "ote": [
+    {
+      "src": "/club-kits/marks/ote-oval.svg",
+      "viewBox": "0 0 840.75586 516.93304",
+      "print": "colour",
+      "club": "panathinaikos",
+      "seasons": [
+        "2001/02",
+        "2002/03",
+        "2003/04"
+      ],
+      "variant": "home",
+      "source": "https://commons.wikimedia.org/wiki/File:OTE_Logo.svg",
+      "reference": "https://fanelaclub.com/el/products/panathinaikos-2002-03-home-kit-with-konstantinidis-print-large",
+      "treatment": "The archived OTE oval and lettering paths, matched to the white chest print on the three home shirts."
+    }
+  ],
+  "כתר": [
+    {
+      "src": "/club-kits/marks/keter-1999-hebrew.svg",
+      "viewBox": "0 0 151 87",
+      "print": "colour",
+      "club": "hapoel-tel-aviv",
+      "seasons": [
+        "1999/00"
+      ],
+      "variant": "home",
+      "source": "https://wiki.red-fans.com/index.php?title=File:Foot_2000_home.jpg",
+      "reference": "https://www.footballkitarchive.com/hapoel-tel-aviv-1999-00-home-kit-24618/",
+      "treatment": "White Hebrew print and capsule recovered from the photographed shirt as vector outlines."
+    }
+  ],
+  "הכשרה": [
+    {
+      "src": "/club-kits/marks/hachshara-shirt-white.svg",
+      "viewBox": "25.67 25 231.67 58.67",
+      "print": "colour",
+      "club": "hapoel-tel-aviv",
+      "seasons": [
+        "2020/21",
+        "2021/22",
+        "2022/23",
+        "2023/24"
+      ],
+      "bases": [
+        "red",
+        "black",
+        "ink",
+        "navy",
+        "pink",
+        "deep"
+      ],
+      "source": "https://www.footballkitarchive.com/hapoel-tel-aviv-kits-t785/",
+      "reference": "/kits/fka-2020-21-home.webp",
+      "treatment": "Vector contours isolated from the corresponding chest print in the archive photograph."
+    },
+    {
+      "src": "/club-kits/marks/hachshara-shirt-red.svg",
+      "viewBox": "21 20 235 61.33",
+      "print": "colour",
+      "club": "hapoel-tel-aviv",
+      "seasons": [
+        "2020/21",
+        "2021/22",
+        "2022/23",
+        "2023/24"
+      ],
+      "bases": [
+        "white",
+        "cream",
+        "paper",
+        "grey",
+        "concrete"
+      ],
+      "source": "https://www.footballkitarchive.com/hapoel-tel-aviv-kits-t785/",
+      "reference": "/kits/fka-2020-21-away.webp",
+      "treatment": "Vector contours isolated from the corresponding chest print in the archive photograph."
+    }
+  ],
+  "fujicom": [
+    {
+      "src": "/club-kits/marks/fujicom-shirt.svg",
+      "viewBox": "10.33 16.67 246 72",
+      "print": "colour",
+      "club": "hapoel-tel-aviv",
+      "seasons": [
+        "2014/15",
+        "2016/17"
+      ],
+      "bases": [
+        "red",
+        "black",
+        "ink",
+        "deep"
+      ],
+      "source": "https://www.footballkitarchive.com/hapoel-tel-aviv-kits-t785/",
+      "reference": "/kits/fka-2016-17-home.webp",
+      "treatment": "Vector contours isolated from the corresponding chest print in the archive photograph."
+    },
+    {
+      "src": "/club-kits/marks/fujicom-shirt-red.svg",
+      "viewBox": "10.33 16.67 246 72",
+      "print": "colour",
+      "club": "hapoel-tel-aviv",
+      "seasons": [
+        "2014/15",
+        "2016/17"
+      ],
+      "bases": [
+        "white",
+        "cream",
+        "paper"
+      ],
+      "source": "https://www.footballkitarchive.com/hapoel-tel-aviv-kits-t785/",
+      "reference": "/kits/fka-2016-17-home.webp",
+      "treatment": "Vector contours isolated from the corresponding chest print in the archive photograph."
+    }
+  ],
+  "fujitsu": [
+    {
+      "src": "/club-kits/marks/fujitsu-shirt-israel.svg",
+      "viewBox": "38.67 1 173 107.33",
+      "print": "colour",
+      "club": "hapoel-tel-aviv",
+      "seasons": [
+        "2015/16"
+      ],
+      "bases": [
+        "red",
+        "black",
+        "ink",
+        "deep"
+      ],
+      "source": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "reference": "/kits/vp-2016-home.webp",
+      "treatment": "Vector contours isolated from the corresponding chest print in the archive photograph."
+    }
+  ],
+  "suzuki": [
+    {
+      "src": "/club-kits/marks/suzuki-hebrew-shirt.svg",
+      "viewBox": "9.33 19 264 85.67",
+      "print": "colour",
+      "club": "hapoel-tel-aviv",
+      "seasons": [
+        "1992/93"
+      ],
+      "source": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "reference": "/kits/vp-1993-home.webp",
+      "treatment": "Vector contours isolated from the corresponding chest print in the archive photograph."
+    }
+  ],
+  "subaru": [
+    {
+      "src": "/club-kits/marks/subaru-shirt-2006.svg",
+      "viewBox": "11.33 13.33 238.67 101.33",
+      "print": "colour",
+      "club": "hapoel-tel-aviv",
+      "seasons": [
+        "2005/06",
+        "2006/07"
+      ],
+      "bases": [
+        "red",
+        "black",
+        "ink",
+        "deep"
+      ],
+      "source": "https://www.footballkitarchive.com/hapoel-tel-aviv-kits-t785/",
+      "reference": "/kits/fka-2006-07-home.webp",
+      "treatment": "Vector contours isolated from the corresponding chest print in the archive photograph."
+    },
+    {
+      "src": "/club-kits/marks/subaru-shirt-2006-red.svg",
+      "viewBox": "11.33 13.33 238.67 101.33",
+      "print": "colour",
+      "club": "hapoel-tel-aviv",
+      "seasons": [
+        "2006/07"
+      ],
+      "bases": [
+        "white",
+        "cream",
+        "paper"
+      ],
+      "source": "https://www.footballkitarchive.com/hapoel-tel-aviv-kits-t785/",
+      "reference": "/kits/fka-2006-07-home.webp",
+      "treatment": "Vector contours isolated from the corresponding chest print in the archive photograph."
+    }
+  ],
+  "בוני התיכון": [
+    {
+      "src": "/club-kits/marks/boney-hatichon-shirt.svg",
+      "viewBox": "12 11.67 189.67 71.67",
+      "print": "colour",
+      "club": "hapoel-tel-aviv",
+      "seasons": [
+        "2011/12"
+      ],
+      "bases": [
+        "white",
+        "cream",
+        "paper"
+      ],
+      "source": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "reference": "/kits/vp-2012-home.webp",
+      "treatment": "The same outlines with the away shirt’s burgundy ink."
+    },
+    {
+      "src": "/club-kits/marks/boney-hatichon-white.svg",
+      "viewBox": "12 11.67 189.67 71.67",
+      "print": "colour",
+      "club": "hapoel-tel-aviv",
+      "seasons": [
+        "2011/12"
+      ],
+      "bases": [
+        "red",
+        "black",
+        "ink",
+        "deep"
+      ],
+      "source": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
+      "reference": "/kits/vp-2012-home.webp",
+      "treatment": "The white chest print traced from the dated Kappa home shirt."
+    }
+  ],
+  "arkia": [
+    {
+      "src": "/club-kits/marks/arkia-shirt-home.svg",
+      "viewBox": "14.67 0 189 124.67",
+      "print": "colour",
+      "club": "hapoel-tel-aviv",
+      "seasons": [
+        "2018/19"
+      ],
+      "source": "https://www.footballkitarchive.com/hapoel-tel-aviv-kits-t785/",
+      "reference": "/kits/fka-2018-19-home.webp",
+      "treatment": "Latin and Hebrew chest lock-up traced from the original photograph, including the coloured stripes.",
+      "variant": "third"
+    },
+    {
+      "src": "/club-kits/marks/arkia-shirt-home.svg",
+      "viewBox": "14.67 0 189 124.67",
+      "print": "colour",
+      "club": "hapoel-tel-aviv",
+      "seasons": [
+        "2017/18",
+        "2018/19",
+        "2019/20"
+      ],
+      "source": "https://www.footballkitarchive.com/hapoel-tel-aviv-kits-t785/",
+      "reference": "/kits/fka-2018-19-home.webp",
+      "treatment": "Latin and Hebrew chest lock-up traced from the original photograph, including the coloured stripes.",
+      "bases": [
+        "red",
+        "black",
+        "ink",
+        "navy",
+        "deep"
+      ]
+    },
+    {
+      "src": "/club-kits/marks/arkia-shirt-away.svg",
+      "viewBox": "9.67 0 194 131.67",
+      "print": "colour",
+      "club": "hapoel-tel-aviv",
+      "seasons": [
+        "2017/18",
+        "2018/19",
+        "2019/20"
+      ],
+      "source": "https://www.footballkitarchive.com/hapoel-tel-aviv-kits-t785/",
+      "reference": "/kits/fka-2018-19-away.webp",
+      "treatment": "Latin and Hebrew chest lock-up traced from the original photograph, including the coloured stripes.",
+      "bases": [
+        "white",
+        "paper",
+        "cream",
+        "grey",
+        "concrete"
+      ]
+    }
+  ],
+  "קלאב הוטלס": [
+    {
+      "src": "/club-kits/marks/club-hotel-1988.svg",
+      "viewBox": "20 15 428 338",
+      "print": "colour",
+      "club": "hapoel-tel-aviv",
+      "seasons": [
+        "1988/89"
+      ],
+      "variant": "home",
+      "source": "https://www.footballkitarchive.com/hapoel-tel-aviv-1988-89-home-kit-24627/",
+      "reference": "/club-kits/hapoel-tel-aviv/references/fka-1988-89-home.webp",
+      "treatment": "White chest print traced from the dated archive front."
+    }
+  ]
+}

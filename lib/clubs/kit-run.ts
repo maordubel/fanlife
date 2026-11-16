@@ -3,6 +3,7 @@ import type {ClubData} from './contract'
 import {kitViews,type KitView} from './gate-content'
 import {forbiddenColor} from './theme'
 import {documentedCloth,variantOf,type ClothSpec,type Variant} from './kit-model'
+import {kitFrontOf,measuredSponsor} from './kit-fronts'
 import {FIELDS,FIELD_WEIGHT,HINT_LIMIT,HINT_PENALTY,KIT_ROUND,MIN_SHIRTS,OPTION_RAMP,PERFECT_BONUS,SHIRT_POINTS,STEP_FIELDS,STEP_ORDER,unlocksDna,type Field,type FieldVerdict,type KitGame,type Option,type PublicPuzzle,type Step,type StepVerdict,type Verdict} from './kit-rules'
 export * from './kit-rules'
 import {cycleSeed,takeFrom} from '@/lib/rotation/deck'
@@ -104,7 +105,8 @@ export function dealKitRun(list:Eligible[],seed:number,cursor:number,count=KIT_R
   const puzzleId=`k${hash(`${seed}|${cursor}|${index}|${e.kit.id}|${game}`)}`,correct:Record<string,string>={}
   const rows=steps.filter(s=>hasStep(s,e.cloth)).map(step=>{const o=optionsFor(e,step,index,seed,pools,puzzleId);correct[step]=o.correctId;return {step,options:o.options}})
   const asked=rows.map(r=>r.step),doc=documentedFields(e),scored=FIELDS.filter(f=>doc.includes(f)&&asked.some(s=>STEP_FIELDS[s].includes(f)))
-  return {eligible:e,correct,scored,puzzle:{id:puzzleId,index,seasonLabel:e.kit.season,variant:e.variant,steps:rows}}
+  const front=kitFrontOf(e.kit),sponsorBox=measuredSponsor(front),shirtOutline=front?.outline
+  return {eligible:e,correct,scored,puzzle:{id:puzzleId,index,seasonLabel:e.kit.season,variant:e.variant,steps:rows,...(sponsorBox?{sponsorBox}:{}),...(shirtOutline?{shirtOutline}:{})}}
  })
 }
 /** strip the answer sheet: what the browser may hold */
@@ -147,7 +149,8 @@ export function gradePuzzle(run:Dealt[],index:number,picks:Record<string,unknown
  })
  const fieldPoints=fields.reduce((n,f)=>n+f.points,0),perfect=fields.length>0&&fields.every(f=>f.ok)
  const score=Math.max(0,fieldPoints-h*HINT_PENALTY)+(perfect?PERFECT_BONUS:0)
- return {index,seasonLabel:d.puzzle.seasonLabel,variant:d.puzzle.variant,steps,fields,right:steps.filter(s=>s.ok).length,perfect,fieldPoints,scored:fields.length,unknown:FIELDS.filter(f=>!d.scored.includes(f)),hints:h,score,dna:unlocksDna(fieldPoints),answer:d.eligible.cloth,kitId:d.eligible.kit.id,sources:d.eligible.kit.sources}
+ const referencePhoto=kitFrontOf(d.eligible.kit)?.photo
+ return {index,seasonLabel:d.puzzle.seasonLabel,variant:d.puzzle.variant,steps,fields,right:steps.filter(s=>s.ok).length,perfect,fieldPoints,scored:fields.length,unknown:FIELDS.filter(f=>!d.scored.includes(f)),hints:h,score,dna:unlocksDna(fieldPoints),answer:d.eligible.cloth,kitId:d.eligible.kit.id,sources:d.eligible.kit.sources,...(referencePhoto?{referencePhoto}:{})}
 }
 /** The wrong card a hint strikes on a step, given how many were already struck THERE (`nth`) — deterministic, and always leaves the right card and one other standing. */
 export function strikeFor(run:Dealt[],index:number,step:Step,nth:number):string|null{

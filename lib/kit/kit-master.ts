@@ -1,9 +1,11 @@
 import 'server-only'
+import {kitFrontOf, measuredSponsor} from '@/lib/clubs/kit-fronts'
 
 import masterFile from '../../content/generated/kit-master.json'
 
 import type { KitField, KitMaster, KitMasterRecord } from './kit-master-build'
 import { DEFAULT_SPEC, type KitSpec } from './spec'
+import {WORKER_ROUTE_CLUB} from '@/lib/goals-auto/types'
 
 /**
  * The Kit Master, read. Server-only, because a record is the ANSWER to a Gate 4 puzzle: the
@@ -46,6 +48,7 @@ export function accepted<T>(field: KitField<T>): T[] {
 /** The record as the engine draws it. */
 export function specOf(kit: KitMasterRecord): KitSpec {
   const f = kit.fields
+  const sponsorBox = measuredSponsor(kitFrontOf({id:`${WORKER_ROUTE_CLUB}:kit-${kit.id}`}))
   return {
     ...DEFAULT_SPEC,
     seasonLabel: kit.seasonLabel,
@@ -59,6 +62,7 @@ export function specOf(kit: KitMasterRecord): KitSpec {
     sleeveInk: f.sleeves.value?.ink ?? DEFAULT_SPEC.sleeveInk,
     makerHe: f.maker.value?.name ?? null,
     sponsorHe: f.sponsor.value?.name ?? null,
+    ...(sponsorBox ? {sponsorBox} : {}),
     crestKey: f.crest.value?.key ?? null,
     shorts: f.shorts.value ?? DEFAULT_SPEC.shorts,
     socks: f.socks.value ?? DEFAULT_SPEC.socks,

@@ -718,12 +718,12 @@
       "yellowPct": 0.0,
       "sport": "football",
       "confidence": 2,
-      "seasonLabel": null,
-      "seasonAmbiguous": true,
+      "seasonLabel": "1999/00",
+      "seasonAmbiguous": false,
       "yearRaw": 2000,
       "sourceTitle": "ויקיפועל — חולצות (כדורגל), באדיבות ישי צבי",
       "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%97%D7%95%D7%9C%D7%A6%D7%95%D7%AA_(%D7%9B%D7%93%D7%95%D7%A8%D7%92%D7%9C)",
-      "decade": 2000
+      "decade": 1990
     },
     {
       "slug": "vp-2001-away",

@@ -15,7 +15,7 @@ import type {GateView} from '../types'
 export const view:GateView=async({club,locale,copy,searchParams})=>{
  const rows=collectionOf(club),kit=typeof searchParams.kit==='string'?searchParams.kit:null
  const alsoOf=new Map(kitViews(club).map(k=>[k.id,k] as const))
- const photos:Record<string,string>={};for(const r of rows)if(r.open){const p=clubKitPhotoOf(club.identity.id,alsoOf.get(r.id)??{id:r.id})??cfsPhoto(club.identity.id,r.season,r.variant);if(p)photos[r.id]=p}
+ const photos:Record<string,string>={};for(const r of rows)if(r.open&&!r.open.referencePhoto){const p=clubKitPhotoOf(club.identity.id,alsoOf.get(r.id)??{id:r.id})??cfsPhoto(club.identity.id,r.season,r.variant);if(p)photos[r.id]=p}
  const slugs:Record<string,string>={};for(const r of rows)if(r.open){const sl=await shirtSlugFor(club.identity.id,{id:r.id,season:r.season,type:r.variant});if(sl)slugs[r.id]=sl}
  const shared=typeof searchParams.design==='string'?searchParams.design.slice(0,1200):null
  return <KitStudio builderNo={sharedGate('kit-builder')?.number??null} club={club.identity.id} clubName={club.identity.name} locale={locale} contentLocale={club.locales.content} copy={copy} monogram={livery(club.identity.id)?.initials??''} limits={studioLimits(club)} identity={identityOf(club)} rows={rows} gate4={gate4Playable(club)} focusKit={kit&&rows.some(r=>r.id===kit)?kit:null} sharedDesign={shared} photos={photos} slugs={slugs}/>

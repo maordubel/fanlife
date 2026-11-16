@@ -66,9 +66,11 @@ describe('Kit Master', () => {
     const kit = kitRecord('kit-1999-00-home')!
     expect(kit.fields.crest.value?.key).toBe('keter-color')
     expect(kit.render.marks.crest).toBe('print')
-    // since the Deep QA (29.9.2026) it is held back by an OPEN dispute (sponsor CAL vs כתר), not by missing art
-    expect(kit.gate4.reason).not.toContain('crest-art-missing')
-    expect(kit.gate4.reason).toContain('unresolved-source-dispute')
+    expect(kit.fields.sponsor.value?.name).toBe('כתר')
+    expect(kit.fields.collar.value).toEqual({id:'polo',ink:'red'})
+    expect(kit.evidence.exactPhoto?.file).toBe('vp-2000-home.webp')
+    expect(kit.render.marks).toMatchObject({maker:'granted',sponsor:'granted'})
+    expect(kit.gate4).toEqual({playable:true,reason:null})
     for (const row of master.kits) {
       if (row.fields.crest.value === null) expect(row.gate4.reason, row.id).toContain('crest-art-missing')
     }

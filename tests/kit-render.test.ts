@@ -53,8 +53,17 @@ describe('the kit engine — one plan, two looks', () => {
     const granted = resolveKitRender(s, { marks: 'granted' })
     expect(granted.marks.maker?.kind).toBe('image')
     expect(granted.marks.sponsor?.kind).toBe('image')
-    // a sponsor with no granted file is lettered either way
-    expect(resolveKitRender(spec('kit-2025-26-home'), { marks: 'granted' }).marks.sponsor?.kind).toBe('lettered')
+    for (const variant of ['home', 'away']) {
+      const ibi = spec(`kit-2025-26-${variant}`)
+      expect(resolveKitRender(ibi).marks.sponsor?.kind).toBe('lettered')
+      expect(resolveKitRender(ibi, { marks: 'granted' }).marks.sponsor).toMatchObject({
+        kind: 'image', src: '/kits/marks/sponsor-ibi.svg', print: 'mono',
+      })
+    }
+    expect(resolveKitRender(spec('kit-2008-09-away'), { marks: 'granted' }).marks.sponsor).toMatchObject({
+      kind: 'image', src: '/club-kits/marks/umbro-wordmark-2000.svg', print: 'mono',
+    })
+    expect(resolveKitRender(spec('kit-1984-85-home'), { marks: 'granted' }).marks.sponsor?.kind).toBe('lettered')
   })
 
   it('places every mark inside the board, in its own units', () => {

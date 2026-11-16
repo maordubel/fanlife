@@ -240,13 +240,12 @@ def _colours(text):
 GRADIENT = re.compile(r'<(linear|radial)Gradient\b.*?</\1Gradient>', re.S)
 
 
-def measure_svg(path):
+def measure_svg(text):
     """
     An SVG is its colour table: every fill/stroke/stop is a literal, so the proof is over the table
     (rule 27's argument for palette PNGs). A gradient paints the colours BETWEEN its stops too, so every
     pair of neighbouring stops is sampled along the line the renderer interpolates on.
     """
-    text = open(path, encoding='utf8').read()
     colours = _colours(text)
     for block in GRADIENT.finditer(text):
         stops = _colours(block.group(0))
@@ -483,22 +482,28 @@ def ledger_rows(files):
     for path in sorted(files):
         rel = os.path.relpath(path, os.path.join(PUBLIC, 'kits')).replace(os.sep, '/')
         if path.endswith('.svg'):
-            px, pct = measure_svg(path)
+            with open(path, encoding='utf8') as svg:
+                text = svg.read()
+            px, pct = measure_svg(text)
+            size = len(text.encode('utf8'))
             method = 'svg-colour-table'
         else:
             px, pct = measure_file(path)
+            size = os.path.getsize(path)
             method = 'decoded-rgba'
         if rel.startswith('templates/'):
             role, treatment = 'photo-template', ['shading-map', 'lossy-webp-measured']
         elif rel.startswith('marks/'):
             role = 'granted-mark'
-            treatment = ['cut-from-sheet', 'trim-alpha', 'de-yellow' if 'arkia' in rel else 'none']
+            treatment = ['source-vector'] if method == 'svg-colour-table' else [
+                'cut-from-sheet', 'trim-alpha', 'de-yellow' if 'arkia' in rel else 'none',
+            ]
         else:
             role, treatment = 'assembly', ['crop', 'trim-alpha']
         rows.append({
             'file': rel,
             'role': role,
-            'bytes': os.path.getsize(path),
+            'bytes': size,
             'yellowPx': px,
             'yellowPct': pct,
             'method': method,

@@ -1,4 +1,4 @@
-import type {ClothSpec,Variant} from './kit-model'
+import type {ClothSpec,ShirtOutline,SponsorBox,Variant} from './kit-model'
 
 /**
  * Gate 4 · Build the Kit — the rules and the shapes the browser may hold (rulebook §6, KB-R01..R12).
@@ -35,10 +35,10 @@ export function kitModeFrom(raw:string|string[]|undefined):KitMode|null{const v=
 export const nextCursor=(cursor:number,consumed:number)=>(Number.isFinite(cursor)&&cursor>0?Math.floor(cursor):0)+Math.max(0,Math.floor(consumed))
 
 export type Option={id:string;step:Step;patch:Partial<ClothSpec>;/** how many of the club's drawable kits carry this value */seen:number}
-export type PublicPuzzle={id:string;index:number;seasonLabel:string;variant:Variant;steps:{step:Step;options:Option[]}[]}
+export type PublicPuzzle={id:string;index:number;seasonLabel:string;variant:Variant;steps:{step:Step;options:Option[]}[];sponsorBox?:SponsorBox;shirtOutline?:ShirtOutline}
 export type FieldVerdict={field:Field;ok:boolean;points:number;max:number}
 export type StepVerdict={step:Step;ok:boolean;points:number;max:number;/** what the player placed, or null */chosen:Option|null;/** what the shirt wore */truth:Option}
-export type Verdict={index:number;seasonLabel:string;variant:Variant;steps:StepVerdict[];fields:FieldVerdict[];right:number;perfect:boolean;/** field accuracy out of 100, before any hint penalty or perfect bonus (KB-R05) */fieldPoints:number;/** distinct documented parts this shirt was scored on */scored:number;/** fields the archive does not state for this kit: not asked, not scored */unknown:Field[];hints:number;score:number;/** true when fieldPoints reached the DNA threshold */dna:boolean;answer:ClothSpec;kitId:string;sources:string[]}
+export type Verdict={index:number;seasonLabel:string;variant:Variant;steps:StepVerdict[];fields:FieldVerdict[];right:number;perfect:boolean;/** field accuracy out of 100, before any hint penalty or perfect bonus (KB-R05) */fieldPoints:number;/** distinct documented parts this shirt was scored on */scored:number;/** fields the archive does not state for this kit: not asked, not scored */unknown:Field[];hints:number;score:number;/** true when fieldPoints reached the DNA threshold */dna:boolean;answer:ClothSpec;kitId:string;sources:string[];referencePhoto?:string}
 /** a round's total: what the certificate adds up */
 export const roundScore=(vs:Pick<Verdict,'score'>[])=>vs.reduce((n,v)=>n+v.score,0)
 /** a hint the server issued: `r` is the signed receipt, never trusted from the client without verification */
