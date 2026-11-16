@@ -28,9 +28,12 @@ export function kitPrint(club:string,id:string):Promise<string|null>{
  const key=`${club}/${id}`
  let p=kitCache.get(key)
  if(!p){p=readFile(join(process.cwd(),'public/club-kits',club,'svg',`${id}.svg`),'utf8').then(s=>{
-   const clean=s.replace(/<image\b[^>]*?(\/>|>[\s\S]*?<\/image>)/g,'').replace(/<text\b[\s\S]*?<\/text>/g,'')
+   const full=/viewBox="0 0 430 470"/.test(s),clean=s.replace(/<image\b[^>]*?(\/>|>[\s\S]*?<\/image>)/g,'').replace(/<text\b[\s\S]*?<\/text>/g,'')
     // one look across every club: the shirt alone (some drawings carry shorts and socks beside it) — the same frame for all
     .replace(/<svg\b[^>]*>/,t=>t.replace(/\s(width|height|viewBox)="[^"]*"/g,'').replace(/>$/,' viewBox="0 20 340 300">'))
+    // and only the shirt (16.11.2026, owner: "a thin line beside some players"): the full drawings keep their socks at x 326+ and
+    // their shorts at y 318+, inside that frame — a clip to the shirt's own box takes the last sliver of them out
+    .replace(full?/(<svg\b[^>]*>)([\s\S]*)<\/svg>\s*$/:/$^/,(_m,open:string,body:string)=>`${open}<clipPath id="fl-shirt-only"><rect x="0" y="20" width="326" height="296"/></clipPath><g clip-path="url(#fl-shirt-only)">${body}</g></svg>`)
    return `data:image/svg+xml;base64,${Buffer.from(clean).toString('base64')}`}).catch(()=>null)
   kitCache.set(key,p)}
  return p
