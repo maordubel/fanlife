@@ -7,6 +7,7 @@ import {CheckoutButton} from '@/components/shop/Checkout'
 import {Gallery} from '@/components/shop/Gallery'
 import {publicShop} from '@/lib/shop/store'
 import {subjectName} from '@/lib/shop/subjects'
+import {inClub} from '@/lib/shop/types'
 import copy from '@/messages/en.shop.json'
 import '../../../weekly/shop.css'
 export const dynamic='force-dynamic'
@@ -29,7 +30,7 @@ export default async function Product({params}:{params:{id:string}}){
  const p=shop.products.find(x=>x.id===decodeURIComponent(params.id));if(!p)notFound()
  const [design,what]=[p.title.split(' · ')[0]!,p.title.split(' · ')[1]??''],club=p.subject==='fanlife'?copy.house:subjectName(p.subject)
  const pics=[...new Set([p.image,...p.images,...(p.back?[p.back]:[])])].slice(0,8)
- const same=shop.products.filter(x=>x.design===p.design&&x.id!==p.id),more=shop.products.filter(x=>x.subject===p.subject&&x.design!==p.design)
+ const same=shop.products.filter(x=>x.design===p.design&&x.id!==p.id),more=shop.products.filter(x=>inClub(x,p.subject)&&x.design!==p.design)
  const seen=new Set<string>(),moreOne=more.filter(x=>!seen.has(x.design)&&(seen.add(x.design),true)).slice(0,4)
  const sale=p.sale?shop.sales.find(x=>x.id===p.sale):null
  const ld={'@context':'https://schema.org','@type':'Product',name:p.title,image:pics,description:p.description.slice(0,500),brand:{'@type':'Brand',name:'FAN LIFE'},
@@ -57,7 +58,7 @@ export default async function Product({params}:{params:{id:string}}){
   {same.length>0&&<section className="wks-shelf" aria-labelledby="wks-same-h"><div className="wks-shelf-head"><div><p className="wk-banner">{design}</p><h2 className="wk-head" id="wks-same-h">{copy.pdpSame}</h2></div></div>
    <ul className="wks-grid">{same.slice(0,8).map(x=><ShopCard key={x.id} p={x}/>)}</ul></section>}
   {moreOne.length>0&&<section className="wks-shelf" aria-labelledby="wks-more-h"><div className="wks-shelf-head"><h2 className="wk-head" id="wks-more-h">{copy.pdpMore.replace('{club}',club)}</h2>
-   <Link className="wks-more min-h-tap" href={`/shop?club=${p.subject}`}>{copy.seeAll.replace('{n}',String(shop.products.filter(x=>x.subject===p.subject).length))} <span aria-hidden="true">→</span></Link></div>
+   <Link className="wks-more min-h-tap" href={`/shop?club=${p.subject}`}>{copy.seeAll.replace('{n}',String(shop.products.filter(x=>inClub(x,p.subject)).length))} <span aria-hidden="true">→</span></Link></div>
    <ul className="wks-grid">{moreOne.map(x=><ShopCard key={x.id} p={x} siblings={shop.products.filter(y=>y.design===x.design).length-1}/>)}</ul></section>}
   <p className="wk-small wks-note">{copy.note}</p>
  </main></Shell>

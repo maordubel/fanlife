@@ -54,6 +54,8 @@ export type ShopProduct={
  sale?:{id:string;percent:number;was:number}}
  /** more storefront categories this product also sits in, beside its own (owner, 14.11.2026) */
  shelves?:Shelf[]
+ /** more clubs it belongs to besides its own (16.11.2026, owner: "a product in several clubs"): it is listed under each */
+ clubs?:string[]
  /** pieces sold, read from Printify's orders by the hourly check-up */
  sold?:number
  createdAt:string;updatedAt:string
@@ -96,7 +98,7 @@ export type PublicProduct={
  /** the storefront's shelf, the design it shares with sibling products, when it went on sale */
  shelf:Shelf;design:string;since:string|null;sold:number;
  /** the other categories it also sits in */
- also?:Shelf[];
+ also?:Shelf[];/** every club it is listed under: its own first */clubs?:string[];
  /** the sale this product is in (its id), when one is on */
  sale?:string|null;priceFrom:number;currency:string;url:string;/** ≈ whole euros at today's ECB rate (a guide; the checkout is in dollars) */eur?:number|null}
 /** below this share of the pixels a product needs, the print comes out blurred: the shop does not sell it, whatever the switch says */
@@ -124,4 +126,6 @@ export const designKey=(p:ShopProduct)=>'library' in p.art?`l-${p.art.library.id
  * shows, hides, renames, prices and re-reads it.
  */
 export const madeInPrintify=(p:Pick<ShopProduct,'art'>)=>'upload' in p.art&&p.art.upload.id==='printify'
-export const toPublic=(p:ShopProduct):PublicProduct=>({sold:p.sold??0,...(p.shelves?.length?{also:p.shelves}:{}),...(p.printify!.sale?.percent?{sale:p.printify!.sale.id,was:p.printify!.sale.was}:{}),shelf:shelfOf(p.kind,p.blueprint?.title),design:designKey(p),since:p.printify!.publishedAt,id:p.id,subject:p.subject,kind:p.kind,title:p.title,description:p.description,image:p.printify!.images[0]!,images:p.printify!.images.slice(0,4),...(p.printify!.backImage?{back:p.printify!.backImage}:{}),priceFrom:p.printify!.priceFrom,currency:p.printify!.currency,url:p.printify!.url!})
+/** is this product listed under that club (its own, or one added) */
+export const inClub=(p:{subject:string;clubs?:string[]},club:string)=>p.subject===club||!!p.clubs?.includes(club)
+export const toPublic=(p:ShopProduct):PublicProduct=>({sold:p.sold??0,...(p.clubs?.length?{clubs:[p.subject,...p.clubs]}:{}),...(p.shelves?.length?{also:p.shelves}:{}),...(p.printify!.sale?.percent?{sale:p.printify!.sale.id,was:p.printify!.sale.was}:{}),shelf:shelfOf(p.kind,p.blueprint?.title),design:designKey(p),since:p.printify!.publishedAt,id:p.id,subject:p.subject,kind:p.kind,title:p.title,description:p.description,image:p.printify!.images[0]!,images:p.printify!.images.slice(0,4),...(p.printify!.backImage?{back:p.printify!.backImage}:{}),priceFrom:p.printify!.priceFrom,currency:p.printify!.currency,url:p.printify!.url!})
