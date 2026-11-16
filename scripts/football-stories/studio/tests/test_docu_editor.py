@@ -154,7 +154,7 @@ class OnTheRealPlan(unittest.TestCase):
         on, off = 0, 0
         for b in self.beats:
             for x in E.pictures(b)[1:]:
-                at = b['t'] + x['dt']
+                at = b['t'] + x.get('dt', 0.0)   # an underlay that starts with the beat carries no offset
                 near = any(abs(at - w) < 1e-3 for w in b['meta']['words'])
                 on, off = on + near, off + (not near)
         self.assertGreater(on, 0)
