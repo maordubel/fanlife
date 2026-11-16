@@ -282,7 +282,7 @@ export async function syncListing(id:string){
  const api=await client(),base=p.blueprint?p.blueprint.title.replace(/\s*\([^)]*\)/g,''):KIND_SPECS[p.kind].label
  const club=p.subject==='fanlife'?null:REGISTRY.find(c=>c.id===p.subject),list=listingOf(p,club?{name:subjectName(p.subject),city:club.city}:null,base)
  const description=p.description&&p.description!==NOTE&&!p.description.startsWith('Original supporter art from the FAN LIFE library')?p.description:list.description
- await api.update(shop,p.printify.productId,{title:p.title,description,tags:list.tags})
+ await api.update(shop,p.printify.productId,{title:p.title,description,tags:list.tags,...(p.personal?{visible:true}:{})})
  if(p.printify.publishedAt)await api.publish(shop,p.printify.productId).catch(()=>{})
  await set(id,{description})
 }
