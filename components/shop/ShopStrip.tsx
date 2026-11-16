@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import {publicShop} from '@/lib/shop/store'
 import type {PublicProduct} from '@/lib/shop/types'
+import {inClub} from '@/lib/shop/types'
 import copy from '@/messages/en.shop.json'
 import '@/app/weekly/shop.css'
 
@@ -38,7 +39,7 @@ export function ShopCard({p,clubLabel}:{p:PublicProduct;siblings?:number;clubLab
  */
 export async function ShopStrip({subject,limit=4,className=''}:{subject?:string;limit?:number;className?:string}){
  const shop=await publicShop().catch(()=>null);if(!shop?.open||!shop.products.length)return null
- const own=subject?shop.products.filter(p=>p.subject===subject):[],rest=shop.products.filter(p=>p.subject==='fanlife'&&!own.includes(p))
+ const own=subject?shop.products.filter(p=>inClub(p,subject)):[],rest=shop.products.filter(p=>p.subject==='fanlife'&&!own.includes(p))
  const seen=new Set<string>(),pick=[...own,...(subject?rest:shop.products)].filter(p=>{if(seen.has(p.design))return false;seen.add(p.design);return true}).slice(0,limit)
  if(!pick.length)return null
  return <section className={`wks-strip ${className}`} aria-labelledby="wks-strip-h">
@@ -50,6 +51,6 @@ export async function ShopStrip({subject,limit=4,className=''}:{subject?:string;
 /** Is there anything to sell? Menus and doors ask this before they show a way in. */
 export const shopIsOpen=async()=>{const s=await publicShop().catch(()=>null);return !!s?.open&&s.products.length>0}
 /** Does the shop sell anything for this club? (a club's menu shows its shop only then) */
-export const shopHas=async(subject:string)=>{const s=await publicShop().catch(()=>null);return !!s?.open&&s.products.some(p=>p.subject===subject)}
+export const shopHas=async(subject:string)=>{const s=await publicShop().catch(()=>null);return !!s?.open&&s.products.some(p=>inClub(p,subject))}
 /** The menu's way in: printed only while there is something to sell. */
 export async function ShopNavLink({className}:{className?:string}){return (await shopIsOpen())?<Link className={className} href="/shop">{copy.navShop}</Link>:null}

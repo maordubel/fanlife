@@ -7,6 +7,7 @@ import {publicShop,type PublicSale} from '@/lib/shop/store'
 import {subjectName} from '@/lib/shop/subjects'
 import {REGISTRY} from '@/lib/master/registry'
 import type {PublicProduct,Shelf} from '@/lib/shop/types'
+import {inClub} from '@/lib/shop/types'
 import copy from '@/messages/en.shop.json'
 import '../weekly/shop.css'
 export const dynamic='force-dynamic'
@@ -36,7 +37,7 @@ const face=(l:PublicProduct[])=>l.find(p=>p.shelf==='wear')??l.find(p=>p.shelf==
  */
 export default async function Shop({searchParams}:{searchParams:{club?:string;shelf?:string;design?:string;sort?:string;price?:string;view?:string;q?:string}}){
  const shop=await publicShop(),all=shop.products,fav=new Set(shop.promoters.featured)
- const subjects=[...new Set(all.map(p=>p.subject))].sort((a,b)=>a==='fanlife'?-1:b==='fanlife'?1:subjectName(a).localeCompare(subjectName(b)))
+ const subjects=[...new Set(all.flatMap(p=>p.clubs??[p.subject]))].sort((a,b)=>a==='fanlife'?-1:b==='fanlife'?1:subjectName(a).localeCompare(subjectName(b)))
  const name=(s:string)=>s==='fanlife'?copy.house:subjectName(s)
  const who=subjects.includes(searchParams.club||'')?searchParams.club!:null
  const dept=DEPTS.find(s=>s===searchParams.shelf)??null,budget=BUDGETS.find(b=>b===searchParams.price)??null
@@ -45,11 +46,11 @@ export default async function Shop({searchParams}:{searchParams:{club?:string;sh
  const browsing=!!(dept||budget||design||sort||who||q||searchParams.view==='all')
  // search (15.11.2026): every word must appear in the name, the club, the category or the description
  const found=(p:PublicProduct)=>{const hay=`${p.title} ${p.subject==='fanlife'?copy.house:subjectName(p.subject)} ${copy.depts[p.shelf as keyof typeof copy.depts]??''} ${p.description}`.toLowerCase();return words.every(w=>hay.includes(w))}
- const mine=(who?all.filter(p=>p.subject===who):all).filter(p=>!words.length||found(p))
+ const mine=(who?all.filter(p=>inClub(p,who)):all).filter(p=>!words.length||found(p))
  const inDept=(p:PublicProduct,d:Dept)=>d==='new'?isNew(p):d==='gifts'?eurOf(p)<=25:d==='sale'?!!p.was:d==='fav'?fav.has(p.design)||p.sold>0:p.shelf===d||!!p.also?.includes(d as Shelf)
  const href=(o:Partial<Record<'club'|'shelf'|'design'|'sort'|'price'|'view'|'q',string|null>>)=>{const u=new URLSearchParams()
   const v={club:who,shelf:dept,design,sort,price:budget,q:q||null,view:null,...o};for(const [k,x] of Object.entries(v))if(x)u.set(k,x);const t=u.toString();return t?`/shop?${t}`:'/shop?view=all'}
- const card=(p:PublicProduct)=><ShopCard key={p.id} p={p} clubLabel={!who&&p.subject!=='fanlife'?name(p.subject):undefined}/>
+ const card=(p:PublicProduct)=><ShopCard key={p.id} p={p} clubLabel={who?(who!==p.subject&&p.subject!=='fanlife'?name(p.subject):undefined):p.subject!=='fanlife'?name(p.subject):undefined}/>
  const open=shop.open&&all.length>0
  const sale:PublicSale|null=[...shop.sales].sort((a,b)=>b.percent-a.percent)[0]??null
  const onSale=mine.filter(p=>p.was)

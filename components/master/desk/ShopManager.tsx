@@ -1,7 +1,7 @@
 'use client'
 import {useEffect,useMemo,useState,type ReactNode} from 'react'
 import {KIND_SPECS} from '@/lib/shop/kinds'
-import {designKey,madeInPrintify,shelfOf,KINDS,MIN_QUALITY,qualityOf,type Kind,type Shelf,type ShopDoc,type ShopProduct} from '@/lib/shop/types'
+import {designKey,inClub,madeInPrintify,shelfOf,KINDS,MIN_QUALITY,qualityOf,type Kind,type Shelf,type ShopDoc,type ShopProduct} from '@/lib/shop/types'
 
 /**
  * THE PRODUCT MANAGER (owner, 15.11.2026: "adding a product more conveniently, smarter and easier editing, order and
@@ -33,11 +33,12 @@ export function ShopManager({doc,subjects,act,busy,connected,running,press,sync,
  const [q,setQ]=useState(''),[who,setWho]=useState('all'),[cat,setCat]=useState<'all'|Shelf>('all'),[state,setState]=useState<State>('all'),[sort,setSort]=useState<Sort>('new'),[byDesign,setByDesign]=useState(false)
  const [sel,setSel]=useState<Set<string>>(new Set()),[open,setOpen]=useState<string|null>(null),[pane,setPane]=useState<'details'|'pictures'|'print'|'more'>('details')
  const name=(id:string)=>subjects.find(x=>x.id===id)?.name||(id==='fanlife'?'FAN LIFE':id)
+ const clubList=[{id:'fanlife',name:'FAN LIFE'},...subjects.filter(s=>s.id!=='fanlife')]
  const onSale=new Set(doc.products.filter(p=>p.printify?.sale?.percent).map(p=>p.id))
  const list=useMemo(()=>{const t=q.trim().toLowerCase()
-  const l=doc.products.filter(p=>!isPersonal(p)).filter(p=>(who==='all'||p.subject===who)&&(cat==='all'||shelfOf(p.kind,p.blueprint?.title)===cat||(p.shelves??[]).includes(cat))
+  const l=doc.products.filter(p=>!isPersonal(p)).filter(p=>(who==='all'||inClub(p,who))&&(cat==='all'||shelfOf(p.kind,p.blueprint?.title)===cat||(p.shelves??[]).includes(cat))
    &&(state==='all'||(state==='shown'?p.visible&&p.status==='live':state==='hidden'?!p.visible&&p.status==='live':state==='todo'?p.status!=='live':state==='soft'?qualityOf(p)<.5:state==='sale'?onSale.has(p.id):featured.includes(designKey(p))))
-   &&(!t||`${p.title} ${name(p.subject)} ${typeOf(p)} ${p.description}`.toLowerCase().includes(t)))
+   &&(!t||`${p.title} ${[p.subject,...(p.clubs??[])].map(name).join(' ')} ${typeOf(p)} ${p.description}`.toLowerCase().includes(t)))
   const price=(p:ShopProduct)=>p.printify?.priceFrom??0
   l.sort((a,b)=>sort==='name'?a.title.localeCompare(b.title):sort==='price'?price(a)-price(b):sort==='sharp'?qualityOf(b)-qualityOf(a):sort==='sold'?(b.sold??0)-(a.sold??0):b.createdAt.localeCompare(a.createdAt))
   if(!byDesign)return l
@@ -57,7 +58,7 @@ export function ShopManager({doc,subjects,act,busy,connected,running,press,sync,
    <button type="button" className="desk-btn ghost min-h-tap" disabled={busy||!connected} title="Products made straight in Printify join the desk" onClick={()=>act('import',{},'Printify read — anything made there is now here too.')}>Bring in from Printify</button></div>
   <div className="shopm-bar" role="search">
    <input className="shopm-q" type="search" value={q} onChange={e=>setQ(e.target.value)} placeholder="Search by name, club or type" aria-label="Search products"/>
-   <label className="shopm-f"><span>Club</span><select value={who} onChange={e=>setWho(e.target.value)}><option value="all">All clubs</option>{[{id:'fanlife',name:'FAN LIFE'},...subjects.filter(s=>s.id!=='fanlife')].map(s=><option key={s.id} value={s.id}>{s.name} · {doc.products.filter(p=>p.subject===s.id&&!isPersonal(p)).length}</option>)}</select></label>
+   <label className="shopm-f"><span>Club</span><select value={who} onChange={e=>setWho(e.target.value)}><option value="all">All clubs</option>{[{id:'fanlife',name:'FAN LIFE'},...subjects.filter(s=>s.id!=='fanlife')].map(s=><option key={s.id} value={s.id}>{s.name} · {doc.products.filter(p=>inClub(p,s.id)&&!isPersonal(p)).length}</option>)}</select></label>
    <label className="shopm-f"><span>Category</span><select value={cat} onChange={e=>setCat(e.target.value as 'all'|Shelf)}><option value="all">All categories</option>{SHELVES.map(c=><option key={c} value={c}>{CAT_L[c]}</option>)}</select></label>
    <label className="shopm-f"><span>Sort</span><select value={sort} onChange={e=>setSort(e.target.value as Sort)}><option value="new">Newest</option><option value="name">Name</option><option value="price">Price</option><option value="sharp">Sharpest</option><option value="sold">Best selling</option></select></label>
   </div>
@@ -71,6 +72,9 @@ export function ShopManager({doc,subjects,act,busy,connected,running,press,sync,
     <button type="button" className="desk-btn ghost min-h-tap" disabled={busy} onClick={()=>act('visible',{ids:picked,visible:false},'Hidden from the shop.')}>Hide</button>
     <label className="shopm-f inline"><span className="sr-only">Add to a category</span><select value="" disabled={busy} onChange={e=>{const v=e.target.value;if(!v)return;const [op,c]=v.split(':');void act('shelvesAdd',{ids:picked,shelf:c,off:op==='out'},op==='out'?'Taken out of the category.':'Added to the category.')}}>
      <option value="">Category…</option>{SHELVES.map(c=><option key={c} value={`in:${c}`}>Add to {CAT_L[c]}</option>)}{SHELVES.map(c=><option key={'o'+c} value={`out:${c}`}>Take out of {CAT_L[c]}</option>)}</select></label>
+    <label className="shopm-f inline"><span className="sr-only">Clubs</span><select value="" disabled={busy} onChange={e=>{const v=e.target.value;if(!v)return;const [op,c]=v.split(':')
+     void act('clubs',op==='own'?{ids:picked,subject:c}:op==='out'?{ids:picked,off:c}:{ids:picked,add:c},op==='own'?`Now ${name(c!)}'s own.`:op==='out'?`Taken out of ${name(c!)}.`:`Added to ${name(c!)}.`)}}>
+     <option value="">Club…</option>{clubList.map(s=><option key={'a'+s.id} value={`in:${s.id}`}>Add to {s.name}</option>)}{clubList.map(s=><option key={'w'+s.id} value={`own:${s.id}`}>{`Make it ${s.name}'s own`}</option>)}{clubList.map(s=><option key={'o'+s.id} value={`out:${s.id}`}>Take out of {s.name}</option>)}</select></label>
     <button type="button" className="desk-btn ghost min-h-tap" disabled={busy||running||!connected} onClick={()=>sync(pickedP.filter(p=>p.printify).map(p=>p.id))}>Rewrite listings</button>
     {notLive.length>0&&<button type="button" className="desk-btn ghost min-h-tap" disabled={busy||running||!connected} onClick={()=>press(notLive.map(p=>p.id))}>Press {notLive.length}</button>}
     <button type="button" className="desk-btn ghost min-h-tap shopm-danger" disabled={busy||running} onClick={async()=>{if(!window.confirm(`Delete ${picked.length} product(s) here and in Printify? This cannot be undone.`))return;for(const id of picked)await act('remove',{id},'');setSel(new Set())}}>Delete</button>
@@ -86,19 +90,19 @@ export function ShopManager({doc,subjects,act,busy,connected,running,press,sync,
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={thumbOf(p)} alt="" width={56} height={56} loading="lazy" referrerPolicy="no-referrer"/>
       <span className="shopm-t"><b>{byDesign?(doc.settings.designNames?.[designKey(p)]??p.title.split(' · ')[0]):p.title}</b>
-       <small>{name(p.subject)} · {byDesign?`${fam.length} products · ${fam.filter(x=>x.visible&&x.status==='live').length} shown`:typeOf(p)}{p.printify?` · ${money(p.printify.priceFrom,p.printify.currency)}`:''}{p.sold?` · ${p.sold} sold`:''}</small>
+       <small>{name(p.subject)}{p.clubs?.length?` +${p.clubs.length}`:''} · {byDesign?`${fam.length} products · ${fam.filter(x=>x.visible&&x.status==='live').length} shown`:typeOf(p)}{p.printify?` · ${money(p.printify.priceFrom,p.printify.currency)}`:''}{p.sold?` · ${p.sold} sold`:''}</small>
        <span className="shopm-tags">{p.status!=='live'?<i data-k="todo">{STATUS[p.status]}</i>:p.visible?<i data-k="on">In the shop</i>:<i data-k="off">Hidden</i>}{q2<MIN_QUALITY?<i data-k="bad">Too soft</i>:q2<.5?<i data-k="soft">Soft · {Math.round(q2*100)}%</i>:null}{onSale.has(p.id)?<i data-k="sale">Sale</i>:null}{featured.includes(designKey(p))?<i data-k="fav">★ Favourite</i>:null}</span></span>
      </button>
      {!byDesign&&<label className="shop-switch shopm-vis"><input type="checkbox" checked={p.visible} disabled={busy||p.status!=='live'} onChange={e=>act('visible',{id:p.id,visible:e.target.checked},e.target.checked?'Shown in the shop.':'Hidden from the shop.')}/><span>Shown</span></label>}
     </li>})}</ul>}
-   {cur&&<Editor key={cur.id} p={cur} doc={doc} pane={pane} setPane={setPane} act={act} busy={busy} connected={connected} running={running} press={press} name={name}
+   {cur&&<Editor key={cur.id} p={cur} doc={doc} clubs={clubList} pane={pane} setPane={setPane} act={act} busy={busy} connected={connected} running={running} press={press} name={name}
      fav={featured.includes(designKey(cur))} onFeature={on=>onFeature(designKey(cur),on)} onClose={()=>setOpen(null)} printEditor={printEditor}/>}
   </div>
  </section>
 }
 
-function Editor({p,doc,pane,setPane,act,busy,connected,running,press,name,fav,onFeature,onClose,printEditor}:{p:ShopProduct;doc:ShopDoc;pane:'details'|'pictures'|'print'|'more';setPane:(x:'details'|'pictures'|'print'|'more')=>void
- act:Act;busy:boolean;connected:boolean;running:boolean;press:(ids:string[])=>Promise<void>;name:(id:string)=>string;fav:boolean;onFeature:(on:boolean)=>void;onClose:()=>void;printEditor:(p:ShopProduct)=>ReactNode}){
+function Editor({p,doc,clubs,pane,setPane,act,busy,connected,running,press,name,fav,onFeature,onClose,printEditor}:{p:ShopProduct;doc:ShopDoc;pane:'details'|'pictures'|'print'|'more';setPane:(x:'details'|'pictures'|'print'|'more')=>void
+ act:Act;busy:boolean;connected:boolean;running:boolean;press:(ids:string[])=>Promise<void>;name:(id:string)=>string;fav:boolean;onFeature:(on:boolean)=>void;onClose:()=>void;printEditor:(p:ShopProduct)=>ReactNode;clubs:Subject[]}){
  const [title,setTitle]=useState(p.title),[desc,setDesc]=useState(p.description),[more,setMore]=useState<Kind[]>([])
  const made=madeInPrintify(p),own=shelfOf(p.kind,p.blueprint?.title),family=doc.products.filter(x=>designKey(x)===designKey(p)),have=new Set(family.map(x=>x.kind))
  const pics=[...new Set([...(p.printify?.images??[]),...(p.printify?.backImage?[p.printify.backImage]:[])])]
@@ -112,6 +116,10 @@ function Editor({p,doc,pane,setPane,act,busy,connected,running,press,name,fav,on
    <p className="desk-actions"><button type="button" className="desk-btn min-h-tap" disabled={busy||!dirty} onClick={()=>act('edit',{id:p.id,title,description:desc},'Saved, here and in Printify.')}>Save and send to Printify</button>{dirty&&<button type="button" className="desk-btn ghost min-h-tap" onClick={()=>{setTitle(p.title);setDesc(p.description)}}>Undo</button>}</p>
    <fieldset className="shop-cats"><legend className="desk-fine"><b>Categories in the shop</b> — tick every one it suits</legend><div className="desk-chips">{SHELVES.map(c=>{const on=c===own||(p.shelves??[]).includes(c)
     return <button key={c} type="button" className="desk-chip min-h-tap" aria-pressed={on} aria-current={on} disabled={c===own||busy} onClick={()=>{const cur=p.shelves??[];void act('shelves',{id:p.id,shelves:on?cur.filter(x=>x!==c):[...cur,c]},'Categories saved.')}}>{CAT_L[c]}{c===own?' · its own':''}</button>})}</div></fieldset>
+   <fieldset className="shop-cats"><legend className="desk-fine"><b>Clubs</b> — its own club names the listing; tick every other club it belongs in too</legend>
+    <label className="shopm-f"><span>Its own club</span><select value={p.subject} disabled={busy} onChange={e=>act('clubs',{id:p.id,subject:e.target.value},'Its club is set — the listing is rewritten.')}>{clubs.map(s=><option key={s.id} value={s.id}>{s.name}</option>)}</select></label>
+    <div className="desk-chips">{clubs.filter(s=>s.id!==p.subject).map(s=>{const on=!!p.clubs?.includes(s.id)
+     return <button key={s.id} type="button" className="desk-chip min-h-tap" aria-pressed={on} aria-current={on} disabled={busy} onClick={()=>act('clubs',{id:p.id,...(on?{off:s.id}:{add:s.id})},on?`Taken out of ${s.name}.`:`Also in ${s.name}.`)}>{s.name}</button>})}</div></fieldset>
    <div className="shop-row">
     <label className="shop-switch"><input type="checkbox" checked={p.visible} disabled={busy||p.status!=='live'} onChange={e=>act('visible',{id:p.id,visible:e.target.checked},e.target.checked?'Shown in the shop.':'Hidden from the shop.')}/><span>Shown in the shop</span></label>
     <label className="shop-switch"><input type="checkbox" checked={fav} disabled={busy} onChange={e=>onFeature(e.target.checked)}/><span>Fan favourite (the whole design)</span></label>

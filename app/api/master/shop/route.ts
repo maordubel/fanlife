@@ -90,6 +90,15 @@ export async function POST(r:Request){
      if(!src){delete p.printify.cover;return}
      if(!p.printify.images.includes(src)&&p.printify.backImage!==src)return
      p.printify.cover=src;p.printify.images=[src,...p.printify.images.filter(x=>x!==src)].slice(0,8);p.updatedAt=now});forgetPublicShop();break}
+   case 'clubs':{// its own club and any more it is listed under (16.11.2026); the listing's club words follow its own club
+    const ids=Array.isArray(b.ids)?b.ids.map(String):[id],own=typeof b.subject==='string'&&isSubject(b.subject)?b.subject:null
+    const add=typeof b.add==='string'&&isSubject(b.add)?b.add:null,off=typeof b.off==='string'?b.off:null,set=Array.isArray(b.clubs)?b.clubs.map(String).filter(isSubject):null
+    if(!ids.length||(!own&&!add&&!off&&!set))return json({error:'Which club, which products?'},422)
+    const moved:string[]=[]
+    await updateShop(by,`Clubs for ${ids.length} product(s)`,d=>{for(const p of d.products)if(ids.includes(p.id)){
+     if(own&&own!==p.subject){p.subject=own;moved.push(p.id)}
+     const cur=new Set(set??p.clubs??[]);if(add)cur.add(add);if(off)cur.delete(off);cur.delete(p.subject);p.clubs=[...cur];if(!p.clubs.length)delete p.clubs}})
+    for(const pid of moved)await syncListing(pid).catch(()=>{});forgetPublicShop();break}
    case 'shelvesAdd':{const add=SHELVES.find(x=>x===b.shelf),ids=Array.isArray(b.ids)?b.ids.map(String):[];if(!add||!ids.length)return json({error:'Which category, which products?'},422)
     await updateShop(by,`${b.off?'Took':'Put'} ${ids.length} product(s) ${b.off?'out of':'in'} ${add}`,d=>{for(const p of d.products)if(ids.includes(p.id)){const cur=new Set(p.shelves??[]);if(b.off)cur.delete(add);else if(shelfOf(p.kind,p.blueprint?.title)!==add)cur.add(add);p.shelves=[...cur]}});forgetPublicShop();break}
    case 'clone':{// the same picture and print settings on more products: new drafts beside the original, pressed by the desk

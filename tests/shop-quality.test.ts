@@ -86,3 +86,12 @@ describe('a product made in Printify is never re-pressed (16.11.2026)',()=>{
   expect(madeInPrintify({art:{library:{id:'a',name:'b'}}} as never)).toBe(false)
  })
 })
+describe('a product in several clubs (16.11.2026)',()=>{
+ it('is listed under its own club and each added club, and a club sale covers it there',async()=>{
+  const {inClub,toPublic}=await import('@/lib/shop/types'),{covers}=await import('@/lib/shop/sales')
+  const p={subject:'fanlife',clubs:['celtic','hapoel-tel-aviv'],kind:'tee',art:{upload:{id:'x',name:'x',preview:'',width:1,height:1}},printify:{images:['a'],priceFrom:100,currency:'USD',url:'u',publishedAt:null}} as never
+  expect(inClub(p,'celtic')).toBe(true);expect(inClub(p,'fanlife')).toBe(true);expect(inClub(p,'olympiacos')).toBe(false)
+  expect(toPublic(p).clubs).toEqual(['fanlife','celtic','hapoel-tel-aviv'])
+  expect(covers({scope:{type:'club',value:'celtic'}} as never,p)).toBe(true)
+ })
+})
