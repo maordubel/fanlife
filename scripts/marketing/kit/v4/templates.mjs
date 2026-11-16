@@ -401,6 +401,9 @@ ${lens}${price}
 
 /** FLAGSHIP — Frame your All-Time XI: the fan's own XI, printed and framed on a wall (or as a poster) with his name */
 async function frame(d, o) {
+  // the real product (owner, 15.11: products are shown as the product — a Printify mock-up of a real personal print)
+  if (d.image) return tee({photo: d.image, look: undefined, words: d.words || 'Your XI. Framed.', kicker: d.kicker || 'New · Frame it', price: d.price, currency: d.currency,
+    swatches: false, kind_label: d.kind_label || 'Framed print or poster · your name on top', cta: d.cta || 'Frame yours', pos: d.pos || '50% 50%'}, o)
   const id = clubId(d) || 'celtic', p0 = paint(id), c = await crest(p0.name)
   const p = {...p0, bg: '#141210', on: '#FFFBF2', light: false}
   const names = (d.names || []).slice(0, 11)
