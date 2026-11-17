@@ -194,7 +194,7 @@ def choose(emotion: str | None, history: list[str], subjects=(), under_card: boo
     twice when another tells the beat as well)."""
     if under_card:
         return 'breath'
-    wants = list(BY_EMOTION.get(emotion) or BY_EMOTION[None])
+    wants = [m for m in (BY_EMOTION.get(emotion) or BY_EMOTION[None]) if m != 'snap'] or ['dolly']   # 17.11.2026: the snap read as a jolt
     hint = next((BY_SUBJECT[s] for s in subjects if s in BY_SUBJECT), None)
     if hint and (emotion is None or hint in wants):
         wants = [hint] + [m for m in wants if m != hint]

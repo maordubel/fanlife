@@ -128,7 +128,7 @@ FIRST_CHANGE_S = 3.0
 STAKE_BY_S = 15.0
 STAKE_TYPES = {'score', 'versus', 'goal', 'trailer', 'stat', 'record', 'turning', 'ticket'}
 # The editor cuts every still at 4 s (docu/editor.MAX_STILL); half a second on top is the measuring grain, not a licence.
-MAX_SHOT_S = 4.5
+MAX_SHOT_S = 12.5   # owner 17.11.2026 (film mode): a moving shot may run to the editor's LONG_HOLD (12 s); was 4.5
 # A visual change: a frame that differs from the one before by this many grey levels on average AND by CUT_RATIO times
 # what its neighbours do. A slow push moves 0.3–1.5 levels a frame; a cut, a whip, a tear or a card landing moves 4–60.
 CUT_ABS, CUT_RATIO = 3.0, 4.0

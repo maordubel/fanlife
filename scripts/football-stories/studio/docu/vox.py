@@ -35,9 +35,9 @@ import os
 import re
 from pathlib import Path
 
-SEG_LONG = 6.5      # a beat longer than this is cut into segments …
-SEG_MIN = 2.6       # … none shorter than this (a picture needs time to be seen) …
-SEG_MAX = 6.0       # … and none longer than this when a sentence start allows it
+SEG_LONG = 9.0      # a beat longer than this is cut into segments …
+SEG_MIN = 4.0       # … none shorter than this (a picture needs time to be seen) …
+SEG_MAX = 8.0       # … and none longer than this when a sentence start allows it
 ACCENT_MIN = 1.6
 ACCENT_MAX = 4.2
 SKIP = {'end', 'follow', 'trailer', 'quote'}   # never cut: the closing cards and a quote are read whole
@@ -219,6 +219,29 @@ def accent(seg: dict, text: str, last: list[str], ad) -> dict | None:
     return None
 
 
+def merge_blind(segs: list[dict]) -> list[dict]:
+    """A sentence with no picture of its own that shows it joins the segment before it: its picture runs on under one
+    camera move (film mode, 17.11.2026 — a cut to a closer framing of the same picture read as flicker)."""
+    out = [segs[0]]
+    for sg in segs[1:]:
+        if has_picture(sg):
+            out.append(sg)
+            continue
+        pv = out[-1]
+        for x in sg['shots']:
+            pv['shots'].append({**x, 'dt': round(x.get('dt', 0.0) + pv['d'], 3)})
+        for x in pv['shots']:
+            if x['kind'] in ('image', 'tint', 'video') and abs(x.get('dt', 0.0) + x.get('d', 0.0) - pv['d']) < 0.02:
+                x['d'] = round(x['d'] + sg['d'], 3)
+                if 'hold' in x:
+                    x['hold'] = x['d']
+        pv['d'] = round(pv['d'] + sg['d'], 3)
+        pv['meta'] = {**pv['meta'], 'words': (pv['meta'].get('words') or []) + (sg['meta'].get('words') or [])}
+    for k, sg in enumerate(out):
+        sg['meta'] = {**sg['meta'], 'seg': k, 'segs': len(out)}
+    return out
+
+
 def busy(seg: dict) -> bool:
     return any(x['kind'] in TYPED for x in seg['shots'])
 
@@ -239,12 +262,14 @@ def run(raw: list[dict], ad) -> list[dict]:
         text = s.get('narration') or ''
         cuts = cut_times(b, text) if m.get('type') not in SKIP and b['d'] > SEG_LONG else []
         segs = split(b, cuts) if cuts else [b]
+        for k in range(1, len(segs)):
+            if not has_picture(segs[k]):
+                pic = ad.segment_picture(m['n'], segs[k], text, k) if hasattr(ad, 'segment_picture') else None
+                if pic:
+                    segs[k]['shots'].insert(0, pic)
+        segs = merge_blind(segs)
         for k, sg in enumerate(segs):
             sg['_words_all'] = m.get('words') or []
-            if k and not has_picture(sg):
-                pic = ad.segment_picture(m['n'], sg, text, k) if hasattr(ad, 'segment_picture') else None
-                if pic:
-                    sg['shots'].insert(0, pic)
             if m.get('type') in SKIP or (m.get('type') in ('goal',) or m.get('type') in CARDS) and k == 0:
                 continue
             if busy(sg) and k == 0:
@@ -266,9 +291,49 @@ def run(raw: list[dict], ad) -> list[dict]:
                 elif dev['kind'] == 'explain':
                     ad.cue(m['n'], round(at + 0.35, 2), 'tick')
         for sg in segs:
-            sg.pop('_words_all', None)
+            ws = [(w, tt) for w, tt in word_times(text, sg.pop('_words_all', None) or []) if sg['t'] - 0.01 <= tt < sg['t'] + sg['d'] - 0.01]
+            sg['_key'] = key_word([w for w, _ in ws]) if m.get('type') not in SKIP else None
         out += segs
+    threads(out)
+    for sg in out:
+        sg.pop('_key', None)
     return out
+
+
+def key_word(ws: list[str]) -> str | None:
+    """The word a sentence is about, for its knot on the story thread: a name if it says one, else its longest strong word."""
+    bare = [w.strip('.,?!…;:—"“”()') for w in ws]
+    names = [w for i, w in enumerate(bare) if i and w[:1].isupper() and w.lower() not in WEAK_WORDS and w.lower() not in MONTHS and len(w) > 2]
+    if names:
+        return names[0].upper()[:18]
+    strong = [w for w in bare if w.lower() not in WEAK_WORDS and w.lower() not in MONTHS and not w.isdigit() and len(w) > 3]
+    return max(strong, key=len).upper()[:18] if strong else None
+
+
+THREAD_MIN = 3   # a chapter with fewer story knots than this keeps its picture clear
+
+
+def threads(beats: list[dict]) -> None:
+    """In place: the story thread (build.Film.thread) along each chapter — a knot and its key word at every sentence."""
+    chapters: dict = {}
+    for b in beats:
+        m = b.get('meta') or {}
+        if m.get('type') in ('end', 'follow') or m.get('chapter') is None:
+            continue
+        chapters.setdefault(m['chapter'], []).append(b)
+    for ch, bs in chapters.items():
+        first = bs[0]
+        t0, t1 = first['t'], bs[-1]['t'] + bs[-1]['d']
+        nodes, seen = [], set()
+        for b in bs:
+            k = b.get('_key')
+            if k and k not in seen:
+                seen.add(k)
+                nodes.append({'at': round(max(0.6, b['t'] - t0 + 0.4), 2), 'word': k})
+        if len(nodes) < THREAD_MIN or t1 - t0 < 12:
+            continue
+        nodes[-1]['hot'] = True
+        first['shots'].append({'kind': 'thread', 'nodes': nodes[:9], 'dt': 0.05, 'd': round(t1 - t0 - 0.05, 3)})
 
 
 def object_files(ids: list[str], palette, job_dir: Path) -> dict[str, Path]:

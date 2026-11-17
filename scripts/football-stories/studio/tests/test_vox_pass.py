@@ -108,7 +108,8 @@ class Pass(unittest.TestCase):
         out = V.run([beat(1, 0.0, 24.0, self.TEXT)], FakeAd({1: self.TEXT}))
         cut = E.cut(out)
         ways = [b['in'] for b in cut]
-        self.assertGreaterEqual(len(set(ways[1:])), 3)
+        self.assertGreaterEqual(len(set(ways[1:])), 2)
+        self.assertTrue(set(ways[1:]) <= {'dissolve', 'push', 'ink', 'match', 'cut'}, ways)   # film mode: the soft ways
         self.assertFalse(E.errors(cut) and any('three times' in x for x in E.errors(cut)))
 
     def test_a_card_keeps_its_first_segment_and_a_short_line_keeps_its_one_picture(self):
