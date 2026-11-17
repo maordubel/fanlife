@@ -327,6 +327,20 @@
 ],
 "id": "lib:ins-net-bulge-fl1-kr"
 },
+"086c9cbc7d5ea45e": {
+"caption": "A headshot portrait of a man with short brown hair and a full beard wearing a blue and white sports jersey.",
+"people": 1,
+"faces": true,
+"action": "posing for portrait",
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"avoid": [
+"action shots during a match",
+"celebrations on the pitch"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/43075120-aa0c076d9c2632a8"
+},
 "087a0c34ef215173": {
 "caption": "A folded red scarf rests on a concrete step among a crowd of supporters watching a floodlit football match.",
 "people": 15,
@@ -476,6 +490,20 @@
 ],
 "id": "lib:layer-rain-stand-kr-fg"
 },
+"0b28abf10a4ccb0f": {
+"caption": "A headshot portrait of a smiling male footballer with short dark hair against a pale background.",
+"people": 1,
+"faces": true,
+"action": "smiling for portrait",
+"place": "studio",
+"era": "2020s",
+"mood": "joy",
+"avoid": [
+"match action",
+"post-match interviews"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/42104419-775013e53c2c9f86"
+},
 "0c14ac7f13d35d21": {
 "caption": "A supporter carries a child on their shoulders, both wearing red scarves.",
 "people": 2,
@@ -502,6 +530,20 @@
 "taxi driver"
 ],
 "id": "lib:ppl-bus-driver-fl2-kr"
+},
+"0cef5d4f9d47be8c": {
+"caption": "A headshot of a young man with short dark hair and a light beard smiling at the camera.",
+"people": 1,
+"faces": true,
+"place": "studio",
+"era": "2020s",
+"mood": "joy",
+"avoid": [
+"grief",
+"tension",
+"match action"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/2000082821-7d0af82caf131b79"
 },
 "0d1ce69edc9ba012": {
 "caption": "A cardboard diorama showing three football players in green and white striped kits celebrating near a stadium fence.",
@@ -651,6 +693,20 @@
 ],
 "id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/shared-era-scoreboard-1970s-n-vqdis-3d426233d98d8a8c"
 },
+"128fd030dbab5fb7": {
+"caption": "A headshot of a male footballer against a plain background.",
+"people": 1,
+"faces": true,
+"action": "posing for portrait",
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"avoid": [
+"crowd scenes",
+"action shots on pitch"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/13162056-bd32460cb628588d"
+},
 "132761ceae08d127": {
 "caption": "A road leading towards a stadium silhouetted against a dramatic red and black sunset sky.",
 "people": 0,
@@ -741,6 +797,20 @@
 "pitch invasion"
 ],
 "id": "cut:common/crowd-row-still-kr"
+},
+"160aa2e04e4d9b72": {
+"caption": "A headshot of a young man with short curly dark hair looking directly at the camera.",
+"people": 1,
+"faces": true,
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"avoid": [
+"celebration",
+"match action",
+"crowd"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/2000223050-c7ebcb29bebf081d"
 },
 "1617f762a3d8d128": {
 "caption": "A diorama art piece depicting a football match at night with red flares lit in the stands behind the goal.",
@@ -947,6 +1017,21 @@
 "live action"
 ],
 "id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/20260514-171857-24b68147-e5a1-492f-8a29-dfd00b9e33-fba033d6196c5016"
+},
+"1e4eee9816b88e85": {
+"caption": "A headshot portrait of a man with short dark hair and a beard wearing a light blue and white jersey.",
+"people": 1,
+"faces": true,
+"action": "posing for a portrait",
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"avoid": [
+"action shots",
+"match action",
+"group celebrations"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/42069264-7c54ce53e667197b"
 },
 "1e53f447de5969b8": {
 "caption": "An illustrated supporter in a dark hooded jacket and beanie holds up a red scarf.",
@@ -1164,6 +1249,20 @@
 ],
 "id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/20260514-171745-a0dc475b-fdb1-4a8c-baa4-2b962ee6fe-9ca85b9ebe9dc6fc"
 },
+"230382ab14b12d0d": {
+"caption": "A headshot portrait of a male footballer looking directly forward.",
+"people": 1,
+"faces": true,
+"action": "posing for portrait",
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"avoid": [
+"crowd scenes",
+"action shots on pitch"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/14118432-02498fc9ee2a7e80"
+},
 "2368474e8454a060": {
 "caption": "An illustrated view of a packed football stadium stand under floodlights.",
 "people": 0,
@@ -1312,6 +1411,20 @@
 ],
 "id": "lib:layer-terrace-night-kr-bg"
 },
+"28258c6002f07169": {
+"caption": "A portrait of a male footballer with short faded hair and light facial hair posing against a light background.",
+"people": 1,
+"faces": true,
+"action": "posing for portrait",
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"avoid": [
+"historical archive footage",
+"match action"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/42104925-00fc9fbda377dc2f"
+},
 "28ac4df796be9031": {
 "caption": "A clipboard with a form lies in the foreground while a player stands on the pitch at night.",
 "people": 7,
@@ -1431,6 +1544,20 @@
 ],
 "id": "lib:ground-2010s-ext-fl1-kr"
 },
+"2d881d92283564b5": {
+"caption": "A close-up portrait of a male footballer with short dark hair and a light beard against a plain background.",
+"people": 1,
+"faces": true,
+"action": "posing for portrait",
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"avoid": [
+"historical archive footage",
+"match action"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/42101871-e2408b34c74b8781"
+},
 "2e00fde64afa11a3": {
 "caption": "A wooden bench in a locker room with a towel, boots, and a kit bag underneath on a white background.",
 "people": 0,
@@ -1454,6 +1581,20 @@
 "crowded terraces"
 ],
 "id": "beat:common/home-end-night-kr"
+},
+"2e6064607d0e401c": {
+"caption": "A portrait of a male footballer with short dark hair and facial stubble.",
+"people": 1,
+"faces": true,
+"action": "posing for portrait",
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"avoid": [
+"crowd scenes",
+"action shots on pitch"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/2000048554-a3af5fba83dad64f"
 },
 "2ea539cbe549b123": {
 "caption": "Two players sliding tackle on a muddy pitch during a night match under floodlights.",
@@ -1651,6 +1792,20 @@
 ],
 "id": "cut:common/crowd-row-still-c-kr"
 },
+"32588bd16de7d057": {
+"caption": "A headshot portrait of a young man with short dark hair and stubble in a light blue jersey.",
+"people": 1,
+"faces": true,
+"action": "posing for portrait",
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"avoid": [
+"action shots during a match",
+"celebrations on the pitch"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/42106932-6c7f78d821af9243"
+},
 "33bbadad3bb6ee95": {
 "caption": "Papercraft stadium scene with a football hitting the back of the net and cheering fans holding red scarves in the foreground.",
 "people": 15,
@@ -1677,6 +1832,21 @@
 "doorbells"
 ],
 "id": "cut:common/close-hand-press-n"
+},
+"354f31b0c5319f82": {
+"caption": "A headshot portrait of a man with short dark hair and a beard wearing a light blue and white jersey.",
+"people": 1,
+"faces": true,
+"action": "posing for a portrait",
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"avoid": [
+"action shots",
+"match action",
+"group celebrations"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/42057512-3fff99d76714f42c"
 },
 "35c440c7c29c4f01": {
 "caption": "A stylized paper-cut illustration of a sunrise over a horizon with swirling clouds.",
@@ -1924,6 +2094,20 @@
 ],
 "id": "lib:ground-2000s-int-fl1-kr"
 },
+"3c6f775e6dbbdc32": {
+"caption": "A headshot of a man with a shaved head and a short beard looking directly at the camera.",
+"people": 1,
+"faces": true,
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"avoid": [
+"celebration",
+"match action",
+"crowd"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/42000032-d4f5872a970feb53"
+},
 "3de613e84ef6c342": {
 "caption": "A black and white photograph captures a large crowd of spectators in a stadium stand during a night match.",
 "people": 50,
@@ -2117,6 +2301,20 @@
 "close up of players"
 ],
 "id": "beat:hapoel-tel-aviv-1999-00/stadium-clock-crowd"
+},
+"43045aa4f66a7f22": {
+"caption": "A headshot portrait of a man with dark hair and a beard wearing a light blue and white jersey.",
+"people": 1,
+"faces": true,
+"action": "posing for portrait",
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"avoid": [
+"action shots during a match",
+"celebrations on the pitch"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/42106780-43acb2a58d941da4"
 },
 "43fa133acc06d014": {
 "caption": "A red shirt hangs on a hook in a locker room while a silhouette walks through a doorway.",
@@ -2448,6 +2646,21 @@
 ],
 "id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/shared-cl-folder-open-wjni9c-843b1b3d6ce3439c"
 },
+"4cdad1ac054c2170": {
+"caption": "A headshot portrait of a man with dark curly hair and a goatee wearing an orange shirt.",
+"people": 1,
+"faces": true,
+"action": "posing for a portrait",
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"avoid": [
+"action shots",
+"match action",
+"group celebrations"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/42060922-a14aa0f88b0ea52a"
+},
 "4cf01d387bf8f23b": {
 "caption": "An illustrated vintage-style football match is played in front of a grandstand.",
 "people": 7,
@@ -2676,6 +2889,20 @@
 "match day"
 ],
 "id": "beat:hapoel-tel-aviv-1999-00/boots-gloves-dusk"
+},
+"50a36277ad2d82a5": {
+"caption": "A headshot of a male footballer with dark curly hair and a mustache against a neutral background.",
+"people": 1,
+"faces": true,
+"action": "posing for portrait",
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"avoid": [
+"historical archive footage",
+"match action"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/42101552-e3c4d6987e18d7a4"
 },
 "5157198561b1d7c0": {
 "caption": "Two silhouetted figures wearing caps and scarves stand near a wall with a street lamp.",
@@ -3226,6 +3453,21 @@
 ],
 "id": "beat:hapoel-tel-aviv-1999-00/scarf-step-newspaper"
 },
+"6151ed0dfa13c531": {
+"caption": "A headshot portrait of a man with styled dark hair and a beard wearing a light blue and white jersey.",
+"people": 1,
+"faces": true,
+"action": "posing for a portrait",
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"avoid": [
+"action shots",
+"match action",
+"group celebrations"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/42073024-c83fbb899af88d0b"
+},
 "622555641c2775e8": {
 "caption": "An illustrated silver cup trophy with red ribbons flowing from the handles and decorative stars around it.",
 "people": 0,
@@ -3384,6 +3626,20 @@
 ],
 "id": "beat:zrinjski-az-2023/touchline-celebration"
 },
+"665f3a59950902df": {
+"caption": "A studio headshot of a male footballer with short dark hair against a neutral background.",
+"people": 1,
+"faces": true,
+"action": "posing for portrait",
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"avoid": [
+"historical archive footage",
+"match action"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/42104452-c662af46cb4c170f"
+},
 "679cd0d1e4112fc3": {
 "caption": "An illustrated supporter from behind holds up a red scarf with both hands.",
 "people": 1,
@@ -3409,6 +3665,20 @@
 "injury"
 ],
 "id": "beat:common/close-hands-clasp-prayer-b-kr"
+},
+"6859238d4727ec2f": {
+"caption": "A headshot of a young man with dark hair looking directly at the camera.",
+"people": 1,
+"faces": true,
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"avoid": [
+"celebration",
+"match action",
+"crowd"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/2000074948-b5589300224c368c"
 },
 "6882242e41e210d2": {
 "caption": "A vintage-style match ticket for Maccabi Tel Aviv versus Olympiacos FC is shown against a textured background of newspaper clippings.",
@@ -3832,6 +4102,20 @@
 "real players"
 ],
 "id": "lib:doc-team-sheet-fl1-kr"
+},
+"759af68d94db4493": {
+"caption": "A headshot of a young man with dark hair and a light beard looking directly at the camera.",
+"people": 1,
+"faces": true,
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"avoid": [
+"celebration",
+"match action",
+"crowd"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/2000083674-ce67131fcb825950"
 },
 "761cc6de896b1569": {
 "caption": "An illustrated paper-craft style image of a football player kneeling in despair on a pitch while crowds cheer in the stands.",
@@ -4772,6 +5056,20 @@
 ],
 "id": "cut:common/fig-defender-slide-n"
 },
+"9594bd8d6306b9df": {
+"caption": "A close-up portrait of a male footballer against a plain background.",
+"people": 1,
+"faces": true,
+"action": "posing for portrait",
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"avoid": [
+"crowd scenes",
+"action shots on pitch"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/13224499-c40eb30c3ffb1115"
+},
 "95996c71a5c12903": {
 "caption": "A paper-textured cutout of a football player celebrating with arms raised against a dark background.",
 "people": 1,
@@ -4949,6 +5247,20 @@
 "photograph of a match"
 ],
 "id": "lib:layer-tunnel-n-full"
+},
+"9daab68819d5c648": {
+"caption": "A portrait shot of a young male footballer with a mustache and goatee.",
+"people": 1,
+"faces": true,
+"action": "posing for portrait",
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"avoid": [
+"crowd scenes",
+"action shots on pitch"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/2000065102-52ef0fc389d84fd3"
 },
 "9db190fc2d066836": {
 "caption": "A packed stadium terrace filled with cheering fans waving scarves under floodlights.",
@@ -6430,6 +6742,20 @@
 ],
 "id": "beat:common/pub-before-kr"
 },
+"c67c7b1b8d30647d": {
+"caption": "A headshot portrait of a man with short dark hair and a trimmed beard wearing a blue jersey.",
+"people": 1,
+"faces": true,
+"action": "posing for portrait",
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"avoid": [
+"action shots during a match",
+"celebrations on the pitch"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/7868835-0034a0d689327a05"
+},
 "c83343c717363e08": {
 "caption": "Character design sheets show multiple figures in casual wear alongside musical instruments and fan gear.",
 "people": 18,
@@ -6676,6 +7002,20 @@
 "dropping scarf"
 ],
 "id": "cut:common/close-scarf-over-mouth-c-kr"
+},
+"d208ea855b07c7a5": {
+"caption": "A portrait of a young male footballer with short dark hair looking directly at the camera.",
+"people": 1,
+"faces": true,
+"action": "posing for portrait",
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"avoid": [
+"historical archive footage",
+"match action"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/42104424-3ae9d6742b55f2ae"
 },
 "d26e28176a06eeb0": {
 "caption": "An elderly person gently folds a bright red football scarf.",
@@ -7338,6 +7678,20 @@
 ],
 "id": "lib:ground-2020s-int-fl1-kr"
 },
+"e6a53f58436df8ac": {
+"caption": "A headshot portrait of a Black man with short dark hair and a goatee in a teal jersey.",
+"people": 1,
+"faces": true,
+"action": "posing for portrait",
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"avoid": [
+"action shots during a match",
+"celebrations on the pitch"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/55042047-795dca2261434ea7"
+},
 "e6badbe5ad476708": {
 "caption": "An elevated papercraft stadium model showing empty stands and a fenced section filled with red-clad fans holding banners.",
 "people": 30,
@@ -7444,6 +7798,20 @@
 ],
 "id": "beat:common/hotel-window-city-kr"
 },
+"e85fe6be4f23a562": {
+"caption": "A close-up portrait of a male footballer with dark hair and a beard.",
+"people": 1,
+"faces": true,
+"action": "posing for portrait",
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"avoid": [
+"crowd scenes",
+"action shots on pitch"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/2000011218-8e661ac841991767"
+},
 "e8c8110bb50871ca": {
 "caption": "A crowd of fans holds up a large panel featuring a player illustration and a red flag.",
 "people": 10,
@@ -7539,6 +7907,21 @@
 ],
 "id": "lib:ppl-referee-fl1-kr"
 },
+"eb523a807681494a": {
+"caption": "A headshot portrait of a man with dark curly hair and a trimmed beard wearing a light blue and white jersey.",
+"people": 1,
+"faces": true,
+"action": "posing for a portrait",
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"avoid": [
+"action shots",
+"match action",
+"group celebrations"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/42068779-db5686468e108069"
+},
 "eb5e7cfb47d09c7d": {
 "caption": "A graphic design slide featuring a sketch of a footballer kicking a ball and the text Make a memory.",
 "people": 1,
@@ -7581,6 +7964,20 @@
 "a defender tackling cleanly"
 ],
 "id": "beat:olympiacos-maccabi-2024/03-fortounis-break"
+},
+"ebd52949b0af843f": {
+"caption": "A headshot of a bald man with a light beard looking directly at the camera.",
+"people": 1,
+"faces": true,
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"avoid": [
+"celebration",
+"match action",
+"crowd"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/42005137-357fb8beefa5e2e0"
 },
 "ebe4920ad1f3224e": {
 "caption": "A papercut artwork depicts a football stadium surrounded by rooftops under a sunburst sky.",
@@ -8012,6 +8409,20 @@
 ],
 "id": "lib:obj-drum-fl1-kr"
 },
+"fb7f08db516b136a": {
+"caption": "A headshot portrait of a man with dark hair and light stubble wearing a dark shirt.",
+"people": 1,
+"faces": true,
+"action": "posing for portrait",
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"avoid": [
+"action shots during a match",
+"celebrations on the pitch"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/7869523-bda14b16cc76e5d1"
+},
 "fbf6c971999158b3": {
 "caption": "A papercraft stadium view depicts football players lined up on the pitch facing the stands.",
 "people": 45,
@@ -8024,6 +8435,21 @@
 "actual television broadcast"
 ],
 "id": "beat:common/shootout-line-kr"
+},
+"fcd29ea9d0d52a8a": {
+"caption": "A headshot portrait of a man with short dark hair and a beard wearing a blue and white jersey.",
+"people": 1,
+"faces": true,
+"action": "posing for a portrait",
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"avoid": [
+"action shots",
+"match action",
+"group celebrations"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/42094194-766909f0f9e6c95a"
 },
 "fd81c74ac0221cfc": {
 "caption": "An illustrated goalkeeper stands ready from behind, wearing a full kit and goalie gloves.",
