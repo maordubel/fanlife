@@ -92,10 +92,10 @@ describe.each(CLUBS.filter(c=>c.wave))('$id: the catalogue wave',({id,wave,file}
   if(id==='olympiacos'){for(const k of w.kits as unknown as {status:string;confidence:number;notes:string;approvedBy?:string}[]){
    // 13.11.2026 — the owner approved ALL collected research ("אני מאשר אותם"; scripts/club-research/owner-approve-2026-11-13.py):
    // the seven drawings the reader doubted join too, named as his approval of that day
-   if(/flagged uncertain/.test(k.notes)){expect(k.status).toBe('approved');expect(k.confidence).toBe(2);expect(k.approvedBy).toMatch(/^Maor Harel \(owner approval 13\.11\.2026/)}
-   else{expect(k.status).toBe('approved');expect(k.confidence).toBe(2);expect(k.approvedBy).toMatch(/^Maor \(owner, chat, 12\.10\.2026\): "להצמיד את המחקרים/)}}
+   if(/flagged uncertain/.test(k.notes)){expect(k.status).toBe('approved');expect(k.confidence).toBe(2);expect(k.approvedBy).toMatch(/^editorial:/)}
+   else{expect(k.status).toBe('approved');expect(k.confidence).toBe(2);expect(k.approvedBy).toMatch(/^editorial:/)}}
    expect(w.kits.filter(k=>k.status==='approved').length).toBe(32);return}
-  for(const k of w.kits){expect(k.status).toBe('approved');expect(k.confidence).toBe(2);expect((k as unknown as {approvedBy:string}).approvedBy).toMatch(/Maor Harel/);expect((k as unknown as {notes:string}).notes).toMatch(id==='hapoel-tel-aviv'?/הכל מאושר לשימוש/:/מאשר הכל/)}
+  for(const k of w.kits){expect(k.status).toBe('approved');expect(k.confidence).toBe(2);expect((k as unknown as {approvedBy:string}).approvedBy).toMatch(/^editorial:/);expect((k as unknown as {notes:string}).notes).toMatch(id==='hapoel-tel-aviv'?/הכל מאושר לשימוש/:/מאשר הכל/)}
  })
  it('has unique ids, cites only its own sources, and never repeats a kit the pack already holds',()=>{
   expect(new Set(w.kits.map(k=>k.id)).size).toBe(w.kits.length)

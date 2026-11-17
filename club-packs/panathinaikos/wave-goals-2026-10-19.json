@@ -81,7 +81,7 @@
       "status": "approved",
       "researchedAt": "2026-10-19",
       "approvedAt": "2026-10-19",
-      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "approvedBy": "editorial:2026-10-19",
       "notes": ""
     },
     {
@@ -130,7 +130,7 @@
       "status": "approved",
       "researchedAt": "2026-10-19",
       "approvedAt": "2026-10-19",
-      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "approvedBy": "editorial:2026-10-19",
       "notes": "The goalkeeper comes out and misses: this is not recorded as a save or another ball contact. UEFA and club history differ by a minute; no minute is asserted."
     },
     {
@@ -171,7 +171,7 @@
       "status": "approved",
       "researchedAt": "2026-10-19",
       "approvedAt": "2026-10-19",
-      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "approvedBy": "editorial:2026-10-19",
       "notes": "UEFA prose gives 63 minutes; club history gives 64. Runtime omits a minute label until this discrepancy is settled. UEFA and club history differ by a minute; no minute is asserted."
     },
     {
@@ -212,7 +212,7 @@
       "status": "approved",
       "researchedAt": "2026-10-19",
       "approvedAt": "2026-10-19",
-      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "approvedBy": "editorial:2026-10-19",
       "notes": "Final two contacts only. Gabriel takes the earlier corner, but its side is not supplied."
     }
   ]

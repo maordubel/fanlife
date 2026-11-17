@@ -93,7 +93,7 @@
       "status": "approved",
       "researchedAt": "2026-10-19",
       "approvedAt": "2026-10-19",
-      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "approvedBy": "editorial:2026-10-19",
       "notes": "Match score after extra time; the separate 4-3 penalty shootout is not the match score."
     },
     {
@@ -134,7 +134,7 @@
       "status": "approved",
       "researchedAt": "2026-10-19",
       "approvedAt": "2026-10-19",
-      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "approvedBy": "editorial:2026-10-19",
       "notes": ""
     },
     {
@@ -176,7 +176,7 @@
       "status": "approved",
       "researchedAt": "2026-10-19",
       "approvedAt": "2026-10-19",
-      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "approvedBy": "editorial:2026-10-19",
       "notes": "Federation supplies the right-sided delivery; the event commentary corroborates the cross and places the header in the centre of the box."
     },
     {
@@ -217,7 +217,7 @@
       "status": "approved",
       "researchedAt": "2026-10-19",
       "approvedAt": "2026-10-19",
-      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "approvedBy": "editorial:2026-10-19",
       "notes": ""
     }
   ]

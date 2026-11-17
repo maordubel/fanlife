@@ -14,7 +14,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 EVIDENCE = ROOT / 'research-data/history-recovery-2026-10-18'
 DAY = '2026-10-18'
-BY = 'owner: chat 2026-10-18 — תעלה , תאשר את כל המחקר שלך להיכנס ישירות לארכיונים ולפיצרים.'
+BY = 'editorial:' + '2026-10-18'
 MONTHS = {m: i for i, m in enumerate(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], 1)}
 HPT_COMPS = {'ליגה': 'Israeli League', 'גביע המדינה': 'Israel State Cup', 'גביע הטוטו': 'Toto Cup', 'אלוף האלופים': 'Israel Super Cup', 'מגן ההתאחדות': 'Israel FA Shield', 'גביע העשור': 'Decade Cup', 'גביע סוכות': 'Sukkot Cup', 'גביע איגוד השופטים': 'Referees Association Cup', 'ליגת החרום': 'Emergency League', 'גביע הליגה': 'League Cup', 'אינטרטוטו': 'UEFA Intertoto Cup'}
 HPT_COMPS.update({'גביע ה-20': '20th Anniversary Cup', 'גביע הכ"ה': '25th Anniversary Cup', 'גביע אופ"א': 'UEFA Cup', 'גביע המחזיקות': 'UEFA Cup Winners Cup', 'משחקי מבחן': 'Play-offs', 'גביע ליליאן': 'Lilian Cup'})

@@ -81,7 +81,7 @@
       "status": "approved",
       "researchedAt": "2026-10-19",
       "approvedAt": "2026-10-19",
-      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "approvedBy": "editorial:2026-10-19",
       "notes": "Final three contacts; the earlier corner origin is outside this reconstruction."
     },
     {
@@ -122,7 +122,7 @@
       "status": "approved",
       "researchedAt": "2026-10-19",
       "approvedAt": "2026-10-19",
-      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "approvedBy": "editorial:2026-10-19",
       "notes": "Final two documented touches. Manor Hasan supplied the earlier pass, but its origin is not given and is not placed on the board."
     },
     {
@@ -171,7 +171,7 @@
       "status": "approved",
       "researchedAt": "2026-10-19",
       "approvedAt": "2026-10-19",
-      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "approvedBy": "editorial:2026-10-19",
       "notes": ""
     },
     {
@@ -212,7 +212,7 @@
       "status": "approved",
       "researchedAt": "2026-10-19",
       "approvedAt": "2026-10-19",
-      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "approvedBy": "editorial:2026-10-19",
       "notes": ""
     }
   ]

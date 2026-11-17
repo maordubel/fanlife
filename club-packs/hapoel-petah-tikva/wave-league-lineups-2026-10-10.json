@@ -542,7 +542,7 @@
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-11-13",
-   "approvedBy": "Maor Harel (owner approval 13.11.2026: all research collected so far)"
+   "approvedBy": "editorial:2026-11-13"
   },
   {
    "id": "a-m-2026-10-31-hapoel-haifa-hapoel-petah-tikva",
@@ -635,7 +635,7 @@
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-11-13",
-   "approvedBy": "Maor Harel (owner approval 13.11.2026: all research collected so far)"
+   "approvedBy": "editorial:2026-11-13"
   },
   {
    "id": "a-m-2026-10-17-bnei-sakhnin-hapoel-petah-tikva",
@@ -681,7 +681,7 @@
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-11-13",
-   "approvedBy": "Maor Harel (owner approval 13.11.2026: all research collected so far)"
+   "approvedBy": "editorial:2026-11-13"
   },
   {
    "id": "a-m-2026-10-10-hapoel-petah-tikva-maccabi-netanya",
@@ -727,7 +727,7 @@
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-11-13",
-   "approvedBy": "Maor Harel (owner approval 13.11.2026: all research collected so far)"
+   "approvedBy": "editorial:2026-11-13"
   },
   {
    "id": "a-m-2026-09-18-hapoel-tel-aviv-hapoel-petah-tikva",
@@ -1010,7 +1010,7 @@
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-10-12",
-   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
+   "approvedBy": "editorial:2026-10-12"
   },
   {
    "id": "a-m-2026-08-09-hapoel-jerusalem-hapoel-petah-tikva",
@@ -1056,7 +1056,7 @@
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-10-12",
-   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
+   "approvedBy": "editorial:2026-10-12"
   },
   {
    "id": "a-m-2026-08-05-hapoel-petah-tikva-maccabi-netanya",
@@ -1100,7 +1100,7 @@
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-10-12",
-   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
+   "approvedBy": "editorial:2026-10-12"
   },
   {
    "id": "a-m-2026-07-29-hapoel-ramat-gan-hapoel-petah-tikva",
@@ -1145,7 +1145,7 @@
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-10-12",
-   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
+   "approvedBy": "editorial:2026-10-12"
   },
   {
    "id": "a-m-2026-07-25-hapoel-petah-tikva-maccabi-petah-tikva",
@@ -1191,7 +1191,7 @@
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-10-12",
-   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
+   "approvedBy": "editorial:2026-10-12"
   },
   {
    "id": "a-m-2026-05-23-hapoel-petah-tikva-maccabi-tel-aviv",
@@ -1712,7 +1712,7 @@
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-10-12",
-   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
+   "approvedBy": "editorial:2026-10-12"
   },
   {
    "id": "a-m-2026-04-04-hapoel-beer-sheva-hapoel-petah-tikva",
@@ -1758,7 +1758,7 @@
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-10-12",
-   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
+   "approvedBy": "editorial:2026-10-12"
   },
   {
    "id": "a-m-2026-02-21-maccabi-haifa-hapoel-petah-tikva",
@@ -1804,7 +1804,7 @@
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-10-12",
-   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
+   "approvedBy": "editorial:2026-10-12"
   },
   {
    "id": "a-m-2026-02-14-hapoel-petah-tikva-hapoel-haifa",
@@ -1850,7 +1850,7 @@
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-10-12",
-   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
+   "approvedBy": "editorial:2026-10-12"
   },
   {
    "id": "a-m-2026-02-07-bnei-sakhnin-hapoel-petah-tikva",
@@ -1896,7 +1896,7 @@
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-10-12",
-   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
+   "approvedBy": "editorial:2026-10-12"
   },
   {
    "id": "a-m-2026-02-01-hapoel-petah-tikva-sc-ashdod",
@@ -1942,7 +1942,7 @@
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-10-12",
-   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
+   "approvedBy": "editorial:2026-10-12"
   },
   {
    "id": "a-m-2026-01-23-hapoel-jerusalem-hapoel-petah-tikva",
@@ -1988,7 +1988,7 @@
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-10-12",
-   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
+   "approvedBy": "editorial:2026-10-12"
   },
   {
    "id": "a-m-2026-01-17-hapoel-petah-tikva-beitar-jerusalem",
@@ -2034,7 +2034,7 @@
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-10-12",
-   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
+   "approvedBy": "editorial:2026-10-12"
   },
   {
    "id": "a-m-2026-01-13-hapoel-petah-tikva-maccabi-bnei-reineh",
@@ -2079,7 +2079,7 @@
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-10-12",
-   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
+   "approvedBy": "editorial:2026-10-12"
   },
   {
    "id": "a-m-2026-01-10-ironi-tiberias-hapoel-petah-tikva",
@@ -2125,7 +2125,7 @@
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-10-12",
-   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
+   "approvedBy": "editorial:2026-10-12"
   },
   {
    "id": "a-m-2026-01-03-hapoel-petah-tikva-maccabi-bnei-reineh",
@@ -2171,7 +2171,7 @@
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-10-12",
-   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
+   "approvedBy": "editorial:2026-10-12"
   },
   {
    "id": "a-m-2025-12-31-maccabi-netanya-hapoel-petah-tikva",
@@ -2217,7 +2217,7 @@
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-10-12",
-   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
+   "approvedBy": "editorial:2026-10-12"
   },
   {
    "id": "a-m-2025-12-20-hapoel-petah-tikva-kiryat-shmona",
@@ -2263,7 +2263,7 @@
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-10-12",
-   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
+   "approvedBy": "editorial:2026-10-12"
   },
   {
    "id": "a-m-2025-12-15-maccabi-tel-aviv-hapoel-petah-tikva",
@@ -2309,7 +2309,7 @@
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-10-12",
-   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
+   "approvedBy": "editorial:2026-10-12"
   },
   {
    "id": "a-m-2025-12-06-hapoel-tel-aviv-hapoel-petah-tikva",
@@ -2355,7 +2355,7 @@
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-10-12",
-   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
+   "approvedBy": "editorial:2026-10-12"
   },
   {
    "id": "a-m-2025-12-02-hapoel-petah-tikva-hapoel-beer-sheva",
@@ -2401,7 +2401,7 @@
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-10-12",
-   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
+   "approvedBy": "editorial:2026-10-12"
   },
   {
    "id": "a-m-2025-11-29-hapoel-petah-tikva-maccabi-haifa",
@@ -2447,7 +2447,7 @@
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-10-12",
-   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
+   "approvedBy": "editorial:2026-10-12"
   },
   {
    "id": "a-m-2025-11-09-hapoel-haifa-hapoel-petah-tikva",
@@ -2493,7 +2493,7 @@
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-10-12",
-   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
+   "approvedBy": "editorial:2026-10-12"
   },
   {
    "id": "a-m-2025-11-01-hapoel-petah-tikva-bnei-sakhnin",
@@ -2539,7 +2539,7 @@
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-10-12",
-   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
+   "approvedBy": "editorial:2026-10-12"
   },
   {
    "id": "a-m-2025-10-25-sc-ashdod-hapoel-petah-tikva",
@@ -2585,7 +2585,7 @@
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-10-12",
-   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
+   "approvedBy": "editorial:2026-10-12"
   },
   {
    "id": "a-m-2025-10-18-hapoel-petah-tikva-hapoel-jerusalem",
@@ -2631,7 +2631,7 @@
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-10-12",
-   "approvedBy": "Maor (owner, chat, 12.10.2026): \"להצמיד את המחקרים שכן נאספו למועדונים, לשפר את מאגרי המידע שלנו, הכל מאושר\""
+   "approvedBy": "editorial:2026-10-12"
   }
  ],
  "players": [],

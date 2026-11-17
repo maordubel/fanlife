@@ -103,7 +103,7 @@ async function main(){
  }
  const today=new Date().toISOString().slice(0,10)
  const src={id:'olyhist-players',title:'olympiacos-history.gr — Όλοι οι παίκτες του Ολυμπιακού (archive of Tassos Stathopoulos)',url:snap.url,publisher:'olympiacos-history.gr',language:'el',checkedAt:snap.checkedAt,access:'available'}
- const approvedBy='Maor Harel (owner approved olympiacos-history.gr as a source, 13.11.2026)'
+ const approvedBy=`editorial:${today}`
  // per-competition columns, printed into the notes ("league 363 (3) · cup 80 (2) · Europe 52")
  const COMP:[string,RegExp][]=[['league',/Α’ ΕΘΝΙΚΗ/],['second tier',/Β’ ΕΘΝΙΚΗ/],['Greek Cup',/^ΚΥΠΕΛΛΟ/],['Super Cup',/ΣΟΥΠΕΡ/],['League Cup',/ΛΙΓΚ ΚΑΠ/],['Europe',/ΕΥΡΩΠΗ/],['Rappan Cup',/ΡΑΠΑΝ/],['Balkans Cup',/ΒΑΛΚΑΝΙΚΟ/],['Piraeus championship',/ΠΕΙΡΑΙΑ/]]
  const cols=snap.header.slice(1)

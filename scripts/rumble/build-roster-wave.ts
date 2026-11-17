@@ -31,7 +31,7 @@ async function main(){
    players.push({id:pid,value:{id:pid,name,positions,fromYear:from,toYear:to,aliases},sources:[srcId],confidence:2,status:'approved',researchedAt:NOW,approvedAt:NOW,approvedBy:BY,notes})}
   // 1. the owner's file
   const csv=rev.filter(r=>r.club===id);let nCsv=0
-  if(csv.length){sources.push({id:'src-owner-roster-2026-10-10',title:'Owner consolidated roster and pricing review (2026-10-10)',url:'https://github.com/maordubel/fanlife/blob/main/content/manual/rumble-review-2026-10-10.json',publisher:'FAN LIFE owner review',access:'available',checkedAt:NOW})}
+  if(csv.length){sources.push({id:'src-owner-roster-2026-10-10',title:'FAN LIFE editorial roster review (2026-10-10)',url:'https://github.com/maordubel/fanlife/blob/main/content/manual/rumble-review-2026-10-10.json',publisher:'FAN LIFE editorial',access:'available',checkedAt:NOW})}
   for(const r of csv){const name=r.original.trim();if(!name||have.has(norm(name))||have.has(norm(r.nameEn)))continue
    const pos=['GK','DF','MF','FW'].includes(r.position)?[r.position]:[]
    const before=players.length

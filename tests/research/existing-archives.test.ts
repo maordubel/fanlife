@@ -46,7 +46,7 @@ describe('Completion of existing archives',()=>{
    const result=(await loadClub(club))!
    const newEvents=result.data.archive.filter(f=>f.id.includes(':ea-'))
    expect(newEvents.length).toBeGreaterThanOrEqual(total)
-   expect(newEvents.every(f=>f.status==='approved'&&f.approvedAt==='2026-10-09'&&/Maor Harel/.test(String(f.approvedBy)))).toBe(true)
+   expect(newEvents.every(f=>f.status==='approved'&&f.approvedAt==='2026-10-09'&&/^editorial:/.test(String(f.approvedBy)))).toBe(true)
    expect(result.data.timeline.every(f=>f.status==='approved')).toBe(true)
    expect(result.data.timeline.some(f=>f.id.includes(':ea-'))).toBe(true)
    expect(result.data.matches?.every(f=>f.status==='approved')).toBe(true)

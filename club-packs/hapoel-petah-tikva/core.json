@@ -2095,7 +2095,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Museum game 907 gives 16 September 1992; Wikipedia Feyenoord season page shows first leg 16 Sep and second leg 30 Sep for the first round but the extraction did not make the opponent line legible; result (0-1) from RSSSF European Cups. Downgraded to review for that reason. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   },
   {
    "id": "r26-cwc-r1-leg2",
@@ -2118,7 +2118,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Museum game 908 gives 30 September 1992; Wikipedia Feyenoord season shows second leg 30 Sep; scores 0-1 and 2-1 (2-2 on aggregate, Feyenoord through on away goals) per RSSSF and Wikipedia CWC page. Date match on the Wikipedia page not fully legible -> review. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   },
   {
    "id": "r26-uefa-r1-leg1",
@@ -2254,7 +2254,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Only the museum states the date (12 Aug 1997); Wikipedia UEFA Cup page confirms the 0-0 first-leg score but not the date. Single publisher for the date -> review. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   },
   {
    "id": "r26-hamoshava-opened",
@@ -2299,7 +2299,7 @@
    "researchedAt": "2026-10-06",
    "notes": "RSSSF (April 22) and museum (22/4/1986 Toto Cup final) agree; Wikipedia 1985-86 Toto Cup article states 21 January 1986, which the museum date search shows was a different Toto Cup match (vs Maccabi Netanya). Kept in review until the disagreement is resolved by a person. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   },
   {
    "id": "r26-toto-final-1990",
@@ -2320,7 +2320,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Date only from museum game 1945, whose extracted opponent text is inconsistent with the RSSSF final (Bnei Yehuda). Single date source -> review. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   },
   {
    "id": "r26-toto-final-1991",
@@ -2341,7 +2341,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Date only from museum game 1996 (15 April 1991); RSSSF confirms the final and opponent but gives no date. Single date source -> review. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   },
   {
    "id": "r26-grant-appointed",
@@ -2362,7 +2362,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Wikipedia club page lists Avram Grant (1 July 1986 - 30 June 1991); both items are Wikipedia -> single publisher, review. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   }
  ],
  "players": [
@@ -3251,7 +3251,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Position conflict: museum \"right half\" (midfield) vs Wikipedia \"right forward\"; positions left empty. Years agree (1951/52-1968/69 vs 1951-1969). Born 19 Jul 1936 per both. Consider human decision for position. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   },
   {
    "id": "r26-boaz-kofman",
@@ -3330,7 +3330,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Position conflict: museum midfielder vs Wikipedia defender; positions left empty. Spells 1993-2001, 2009/10. Born 22 Feb 1976 per both. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   },
   {
    "id": "r26-manor-hassan",
@@ -3355,7 +3355,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Position conflict: museum forward vs Wikipedia midfielder; positions left empty. Born 22 Aug 1976 per both (Wikipedia notes an internal discrepancy). Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   },
   {
    "id": "r26-yaniv-luzon",
@@ -3379,7 +3379,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Position conflict: museum extraction says goalkeeper vs Wikipedia midfielder (same birth date 6 Aug 1981); spell years also differ. Positions left empty. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   },
   {
    "id": "r26-beni-kozoshvili",
@@ -3405,7 +3405,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Right back, 1984/85-1998/99 per museum only; record 381 league appearances per museum appearances table. Single publisher. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   },
   {
    "id": "r26-eitan-bodenyuk",
@@ -3431,7 +3431,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Centre back, 1975/76-1990/91 per museum only. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   },
   {
    "id": "r26-yaakov-visoker",
@@ -3483,7 +3483,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Centre back, 1968/69-1981/82 per museum only. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   },
   {
    "id": "r26-dov-remler",
@@ -3508,7 +3508,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Forward, 1973/74-1981/82 per museum only. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   },
   {
    "id": "r26-meni-basson",
@@ -3533,7 +3533,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Forward, 1985/86-1992/93 (brief return 1995/96) per museum only. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   },
   {
    "id": "r26-noam-keysi",
@@ -3556,7 +3556,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Front defender / defensive midfielder per museum (ambiguous between DF and MF; positions left empty); 1985/86-1993/94. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   },
   {
    "id": "r26-shaul-hayak",
@@ -3581,7 +3581,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Forward, 1965/66-1972/73 per museum only. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   },
   {
    "id": "r26-shlomo-nahari",
@@ -3606,7 +3606,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Winger / centre forward, 1955/56-1964/65 per museum only. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   },
   {
    "id": "r26-zecharia-ratzabi",
@@ -3632,7 +3632,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Left winger, 1955/56-1962/63 per museum only. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   },
   {
    "id": "r26-amihai-shoham",
@@ -3657,7 +3657,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Centre forward, 1941/42-1953/54 per museum only. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   },
   {
    "id": "r26-moshe-varon",
@@ -3710,7 +3710,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Central midfielder, 1987/88-1993/94 per museum only. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   },
   {
    "id": "r26-gadi-tzelniker",
@@ -3735,7 +3735,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Forward, 1969/70-1974/75 per museum only. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   },
   {
    "id": "r26-ronen-hillel",
@@ -3760,7 +3760,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Forward, 1979/80-1985/86 per museum only. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   },
   {
    "id": "r26-meir-nevenhoiz",
@@ -3785,7 +3785,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Forward, 1939/40-1949/50 per museum only. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   },
   {
    "id": "r26-tzion-sharabi",
@@ -3810,7 +3810,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Forward, 1960/61-1969/70 per museum only. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   },
   {
    "id": "r26-moshe-shvaytzer",
@@ -3835,7 +3835,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Forward, 1973/74-1976/77 per museum only. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   }
  ],
  "mysteries": [
@@ -4653,7 +4653,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Target player is in review (see player record); mystery therefore review. Each clue individually sourced; no name/nickname. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   },
   {
    "id": "r26-m-boaz-kofman",
@@ -4826,7 +4826,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Target player is in review (see player record); mystery therefore review. Each clue individually sourced; no name/nickname. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   },
   {
    "id": "r26-m-eitan-bodenyuk",
@@ -4885,7 +4885,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Target player is in review (see player record); mystery therefore review. Each clue individually sourced; no name/nickname. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   },
   {
    "id": "r26-m-dov-remler",
@@ -4934,7 +4934,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Target player is in review (see player record); mystery therefore review. Each clue individually sourced; no name/nickname. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   },
   {
    "id": "r26-m-zecharia-ratzabi",
@@ -4991,7 +4991,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Target player is in review (see player record); mystery therefore review. Each clue individually sourced; no name/nickname. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   },
   {
    "id": "r26-m-meni-basson",
@@ -5041,7 +5041,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Target player is in review (see player record); mystery therefore review. Each clue individually sourced; no name/nickname. Museum scorer lists for the 1992 final conflict with RSSSF; do not publish until resolved. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   },
   {
    "id": "r26-m-moshe-varon",
@@ -5493,7 +5493,7 @@
    "researchedAt": "2026-10-06",
    "notes": "Museum only; Wikipedia 2025-26 article extraction did not show the club position. Approved by the owner in chat on 2026-10-09 (blanket approval of all staged values).",
    "approvedAt": "2026-10-09",
-   "approvedBy": "Maor Harel (owner, chat 2026-10-09)"
+   "approvedBy": "editorial:2026-10-09"
   }
  ],
  "matches": [

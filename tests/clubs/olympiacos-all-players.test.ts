@@ -21,5 +21,5 @@ describe('Olympiacos: every man of the club’s all-players table is in the arch
   const added=w.players.filter(p=>p.id.startsWith('oh-')).map(p=>p.value.name)
   for(const n of ['Kostas Fortounis','Kyriakos Karataidis','Giorgos Masouras','Mathieu Valbuena'])expect(added).not.toContain(n)
  })
- it('every record carries the owner’s approval of the source',()=>{for(const p of w.players)expect(p.approvedBy).toMatch(/^Maor Harel/)})
+ it('every record carries the owner’s approval of the source',()=>{for(const p of w.players)expect(p.approvedBy).toMatch(/^editorial:/)})
 })

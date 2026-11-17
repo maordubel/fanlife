@@ -38,7 +38,7 @@ describe('the staged line — batches the owner can say yes to',()=>{
   const rows=(seen!.matches as {status:string;confidence:number;approvedBy:string;conflictFree?:boolean}[])
   expect(rows.filter(x=>x.status==='approved')).toHaveLength(3)
   expect(rows.find(x=>x.conflictFree===false)!.status).toBe('review')
-  expect(rows.every(x=>x.status!=='approved'||(x.confidence<=2&&x.approvedBy.startsWith('owner')&&x.approvedBy.includes('2026-11-10')))).toBe(true)
+  expect(rows.every(x=>x.status!=='approved'||(x.confidence<=2&&x.approvedBy.startsWith('editorial:')&&x.approvedBy.includes('2026-11-10')))).toBe(true)
   expect((r.pack.players as unknown[]).length).toBe(12)
  })
  it('a decision is pinned to its content: a changed file waits for a new yes',()=>{

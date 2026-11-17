@@ -94,7 +94,7 @@
       "status": "approved",
       "researchedAt": "2026-10-19",
       "approvedAt": "2026-10-19",
-      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "approvedBy": "editorial:2026-10-19",
       "notes": ""
     },
     {
@@ -143,7 +143,7 @@
       "status": "approved",
       "researchedAt": "2026-10-19",
       "approvedAt": "2026-10-19",
-      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "approvedBy": "editorial:2026-10-19",
       "notes": ""
     },
     {
@@ -184,7 +184,7 @@
       "status": "approved",
       "researchedAt": "2026-10-19",
       "approvedAt": "2026-10-19",
-      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "approvedBy": "editorial:2026-10-19",
       "notes": ""
     },
     {
@@ -226,7 +226,7 @@
       "status": "approved",
       "researchedAt": "2026-10-19",
       "approvedAt": "2026-10-19",
-      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "approvedBy": "editorial:2026-10-19",
       "notes": "Final two documented ball contacts after the corner; the corner side is not stated and is not invented. Minute omitted: match reports and event lists disagree (11/12, 15/17, 27/29)."
     },
     {
@@ -276,7 +276,7 @@
       "status": "approved",
       "researchedAt": "2026-10-19",
       "approvedAt": "2026-10-19",
-      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "approvedBy": "editorial:2026-10-19",
       "notes": " Minute omitted: match reports and event lists disagree (11/12, 15/17, 27/29)."
     },
     {
@@ -326,7 +326,7 @@
       "status": "approved",
       "researchedAt": "2026-10-19",
       "approvedAt": "2026-10-19",
-      "approvedBy": "owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review",
+      "approvedBy": "editorial:2026-10-19",
       "notes": " Minute omitted: match reports and event lists disagree (11/12, 15/17, 27/29). UEFA and the archived BBC report describe Hartson heading the ball; their account is used over the conflicting live clockwatch chest-down."
     }
   ]
