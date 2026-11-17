@@ -301,6 +301,18 @@
 ],
 "id": "beat:common/trophy-lift-crowd-b-kr"
 },
+"07cc05acfc18a488": {
+"caption": "The club crest of Standard Liège features a crown and star above a red and white shield encircled by a golden laurel wreath.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "SL 1898",
+"avoid": [
+"match action: never for on-pitch play"
+],
+"id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/standard-li-ge-0bccb34166318017"
+},
 "07dd1b08417f9eb7": {
 "caption": "A crowd of fans raise red scarves up in the air against a dark background.",
 "people": 15,
@@ -381,6 +393,19 @@
 "match celebration"
 ],
 "id": "beat:hapoel-tel-aviv-1999-00/players-bench-training"
+},
+"08f652613159dca9": {
+"caption": "A papercraft collage shows a TV presenter from behind looking toward broadcast cameras.",
+"people": 1,
+"faces": false,
+"action": "broadcasting from a studio",
+"place": "studio",
+"mood": "calm",
+"avoid": [
+"live match play",
+"player interview on pitch"
+],
+"id": "lib:ppl-tv-presenter-n"
 },
 "0991e97a08289ce7": {
 "caption": "Several football players in red and white striped kits celebrate with their arms around each other in front of cheering fans.",
@@ -610,6 +635,19 @@
 "real match footage"
 ],
 "id": "beat:common/volley-edge-box-kr"
+},
+"0eff2b281af46afc": {
+"caption": "A paper-cut silhouette of a person on a viewing platform holding a megaphone.",
+"people": 1,
+"faces": false,
+"action": "standing on platform with megaphone",
+"place": "terrace",
+"mood": "defiance",
+"avoid": [
+"actual match",
+"real person"
+],
+"id": "lib:ppl-ultras-capo-kr"
 },
 "0f308e9605c52391": {
 "caption": "Players and officials walk through a dark stadium tunnel toward the bright pitch and filled stands.",
@@ -1004,6 +1042,20 @@
 ],
 "id": "beat:common/ticket-office-window-b-kr"
 },
+"1c63c78886c0069f": {
+"caption": "Disassembled paper cutout parts of a man in a coat and flat cap.",
+"people": 1,
+"faces": true,
+"place": "abstract",
+"era": "1950s",
+"mood": "calm",
+"avoid": [
+"a real person",
+"a match",
+"a dugout"
+],
+"id": "lib:pup-manager-n"
+},
 "1cc7658b1dfcfdd0": {
 "caption": "A metallic thermos flask is centered against a background of abstract geometric shapes.",
 "people": 0,
@@ -1085,6 +1137,21 @@
 ],
 "id": "lib:obj-flag-stick-fl1-kr"
 },
+"1eccbd277c72d36d": {
+"caption": "Drawing of a stern man in a red trench coat and flat cap resting his hand on an iron barred gate.",
+"people": 1,
+"faces": true,
+"action": "standing with hand on an iron gate",
+"place": "stadium",
+"era": "1960s",
+"mood": "tension",
+"avoid": [
+"prison bars: never for a transfer or a signing",
+"joyful victory",
+"match action"
+],
+"id": "lib:ppl-steward-fl1-kr"
+},
 "1f02c6016e0fed83": {
 "caption": "A lone silhouette of a figure walking down a dark tunnel towards a bright light.",
 "people": 1,
@@ -1137,6 +1204,21 @@
 "a scarf being used as a weapon"
 ],
 "id": "lib:obj-scarf-fl2-kr"
+},
+"202bdf80cd9258b6": {
+"caption": "Collage of four riot police officers in full tactical gear and helmets seen from behind holding shields.",
+"people": 4,
+"faces": false,
+"action": "standing in protective barrier formation",
+"place": "stadium",
+"era": "2010s",
+"mood": "tension",
+"avoid": [
+"peaceful celebration",
+"family atmosphere",
+"trophy lift"
+],
+"id": "lib:ppl-riot-line-n"
 },
 "208489de0d0c9553": {
 "caption": "An illustrated view from the pitch looking towards a packed stadium end filled with red flags during a night match.",
@@ -1650,6 +1732,19 @@
 ],
 "id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/2000048554-a3af5fba83dad64f"
 },
+"2e608f136f2c9711": {
+"caption": "A red and white club crest features an illustration of a seated stone lion statue above a foundation date.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "ΠΑΝΣΕΡΡΑΪΚΟΣ -1946-",
+"avoid": [
+"live animal: statue illustration only",
+"match play: never for match action"
+],
+"id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/panserraikos-12b7c20ee4e60447"
+},
 "2ea539cbe549b123": {
 "caption": "Two players sliding tackle on a muddy pitch during a night match under floodlights.",
 "people": 2,
@@ -1763,6 +1858,20 @@
 "post-match interview"
 ],
 "id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/89067474-fb10f3d93627c574"
+},
+"306b8ab0e1c7500f": {
+"caption": "Club crest featuring interlocking blue and yellow circles containing the letters USG beneath a royal crown.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "1897 USG",
+"avoid": [
+"player portrait",
+"match action",
+"stadium scene"
+],
+"id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/union-saint-gilloise-f5ef8f3fbca28a79"
 },
 "3079671d0bba9378": {
 "caption": "A vintage comic-style triangular pennant in red and white features decorative tassels and fringe.",
@@ -1997,6 +2106,19 @@
 "empty pub"
 ],
 "id": "beat:common/pub-before-b-kr"
+},
+"3645843dcfefdce3": {
+"caption": "The club crest of RSC Anderlecht is presented in purple and gold with three stars above a crowned shield.",
+"people": 1,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "S C A MENS SANA IN CORPORE SANO",
+"avoid": [
+"Belgian national team: club crest only",
+"match action: never for on-pitch play"
+],
+"id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/rsc-anderlecht-e56bc3dd3e43d2c3"
 },
 "3648cda56c724c26": {
 "caption": "A papercut illustration from the corner flag angle shows players gathered in the penalty box for a set piece.",
@@ -2326,6 +2448,19 @@
 "real stadium footage"
 ],
 "id": "beat:common/shootout-line-b-kr"
+},
+"41342bba6affb43d": {
+"caption": "A paper collage of a man walking away while carrying a bag full of fanzines.",
+"people": 1,
+"faces": false,
+"action": "walking with newspaper bag",
+"place": "street",
+"mood": "calm",
+"avoid": [
+"real person walking",
+"front view"
+],
+"id": "lib:ppl-vendor-n"
 },
 "41790be0589e5198": {
 "caption": "A vintage red and white bus driver leans against the open door with passengers visible inside.",
@@ -2729,6 +2864,19 @@
 ],
 "id": "beat:common/close-armband-kr"
 },
+"4c53e585a514a0c6": {
+"caption": "Disassembled paper cutout parts of a goalkeeper including head, torso, arms, legs, and gloves.",
+"people": 1,
+"faces": true,
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"a real player",
+"a match",
+"a training session"
+],
+"id": "lib:pup-keeper-n"
+},
 "4c5e6e59f94c5b50": {
 "caption": "A vintage team photograph shows players in red and white striped kits posing with coaches on a pitch.",
 "people": 15,
@@ -3069,6 +3217,20 @@
 "victory: never for winning a trophy"
 ],
 "id": "beat:common/referee-red-card-n"
+},
+"524492ab79163542": {
+"caption": "A smartphone application interface displays football fixtures and gaming arena options under the heading Offside.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"era": "2020s",
+"mood": "calm",
+"text": "Offside ME AGAINST THE WORLD CREATE PRIVATE ARENA ENTER CODE SCOUT ARENAS STANDS ARENAS BAR BVB LIV MIL MCI RMA BAY PSG ARS INT",
+"avoid": [
+"tactical analysis: never for match statistics",
+"video game: never for console FIFA gameplay"
+],
+"id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/offsides-mockup-phone-app-league-standings-v1-a2361b9ee659a350"
 },
 "5267baa2096e9ac2": {
 "caption": "A papercraft model of a football stadium featuring a large central clock shows packed stands and silhouettes of figures.",
@@ -3723,6 +3885,20 @@
 ],
 "id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/95076457-deb86b99a5c3f130"
 },
+"64141560e987e505": {
+"caption": "An illustrated man in a coat and flat cap holds a stack of fanzines and shouts.",
+"people": 1,
+"faces": true,
+"action": "shouting while holding fanzines",
+"place": "street",
+"era": "1980s",
+"mood": "defiance",
+"avoid": [
+"real photograph",
+"modern player"
+],
+"id": "lib:ppl-vendor-fl2-kr"
+},
 "647b75c4fa4305d9": {
 "caption": "A knitted striped football supporter scarf with fringed ends rests on a black background.",
 "people": 0,
@@ -4024,6 +4200,21 @@
 ],
 "id": "lib:ppl-photographer-fl1-kr"
 },
+"6cce6c7e7c368709": {
+"caption": "A paper cutout of a football captain in a red kit seen from behind.",
+"people": 1,
+"faces": false,
+"action": "standing",
+"place": "abstract",
+"era": "1970s",
+"mood": "calm",
+"avoid": [
+"a real player",
+"a photograph",
+"a match action"
+],
+"id": "lib:pup-captain-pose-kr"
+},
 "6cd33c99e5ebf844": {
 "caption": "A large, empty stadium scoreboard stands in the dark surrounded by thick smoke or fog.",
 "people": 0,
@@ -4061,6 +4252,20 @@
 "real players"
 ],
 "id": "beat:job-19324d9d-b95c-4388-a19b-062dd2002d03/aek-crest-mono-512-55427c064f32f571"
+},
+"6ef561c7d142ea96": {
+"caption": "An illustrated television presenter holding a microphone stands beside a vintage television camera.",
+"people": 1,
+"faces": true,
+"action": "presenting into a camera",
+"place": "studio",
+"era": "1970s",
+"mood": "calm",
+"avoid": [
+"modern digital broadcasting",
+"live match action"
+],
+"id": "lib:ppl-tv-presenter-fl1-kr"
 },
 "6f15a14da05f024e": {
 "caption": "Character turnarounds and item collections display various men with vintage clothing and accessories.",
@@ -4198,6 +4403,34 @@
 ],
 "id": "beat:common/close-scarf-over-mouth-kr"
 },
+"70c6f11ae0b67079": {
+"caption": "Football club crest featuring a black bat above a shield with red and yellow vertical stripes, a classic leather ball, and a blue banner.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "VALENCIA C.F.",
+"avoid": [
+"player celebration",
+"live match action",
+"stadium photo"
+],
+"id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/valencia-cf-010e5dff5c9ea1ed"
+},
+"719ee90d93fee792": {
+"caption": "An illustrated football fan wearing a scarf stands on a fence holding a megaphone.",
+"people": 1,
+"faces": true,
+"action": "cheering with a megaphone",
+"place": "terrace",
+"era": "1980s",
+"mood": "defiance",
+"avoid": [
+"a stadium riot",
+"pitch invasion"
+],
+"id": "lib:ppl-ultras-capo-fl1-kr"
+},
 "7224310a0d53499b": {
 "caption": "A comic-style speech bubble with the word QUIZ written in bold black letters.",
 "people": 0,
@@ -4211,6 +4444,21 @@
 "live broadcast"
 ],
 "id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/sticker-quiz-proof-213bc61ae7b59c73"
+},
+"7296ff42476717c8": {
+"caption": "Comic illustration of a referee in a vintage black kit sprinting while blowing a whistle and pointing forward.",
+"people": 1,
+"faces": true,
+"action": "referee running while blowing whistle and pointing",
+"place": "pitch",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"goal celebration",
+"friendly handshake",
+"relaxed atmosphere"
+],
+"id": "lib:ppl-referee-fl2-kr"
 },
 "72d22ecd6d834880": {
 "caption": "A red and black football bulges into a goal net in a dynamic illustrated graphic.",
@@ -5204,6 +5452,31 @@
 "players"
 ],
 "id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/fc-z-rich-5a0984d3b31eca67"
+},
+"90c3f5784fde8091": {
+"caption": "The club crest of Oud-Heverlee Leuven features an abstract figure above bold black text.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "OH LEUVEN",
+"avoid": [
+"match action: never for on-pitch play"
+],
+"id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/oud-heverlee-leuven-7d123743a1ea6f47"
+},
+"919ae6d5003a7b5c": {
+"caption": "Disassembled paper cutout parts of a football player including head, torso, arms, and legs.",
+"people": 1,
+"faces": true,
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"a real player",
+"a match",
+"a dressing room"
+],
+"id": "lib:pup-defender-n"
 },
 "92bb2bc3e6c1a751": {
 "caption": "A worn corner flag stands on a pristine pitch under stadium floodlights at night.",
@@ -6215,6 +6488,20 @@
 ],
 "id": "beat:hapoel-tel-aviv-1999-00/collage-certificate-scarf"
 },
+"b23190062a839d58": {
+"caption": "A yellow and blue shield crest depicts a muscular mythological figure carrying a massive stone.",
+"people": 1,
+"faces": true,
+"action": "carrying a boulder",
+"place": "abstract",
+"mood": "defiance",
+"text": "ΠΑΝΑΙΤΩΛΙΚΟΣ 1926",
+"avoid": [
+"real player: illustrated mythical figure only",
+"match play: never for match action"
+],
+"id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/panetolikos-gfs-7403ff5d700fa428"
+},
 "b342cc5130258985": {
 "caption": "An illustrated referee stands blowing a whistle from behind.",
 "people": 1,
@@ -6325,6 +6612,20 @@
 ],
 "id": "lib:ppl-player-despair-fl1-kr"
 },
+"b5523779c6d666ae": {
+"caption": "An illustrated older steward in a coat and flat cap stands by a metal gate.",
+"people": 1,
+"faces": true,
+"action": "standing by a gate",
+"place": "other",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"a prisoner behind bars",
+"a criminal locked up"
+],
+"id": "lib:ppl-steward-fl2-kr"
+},
 "b569ddafeac87893": {
 "caption": "Papercraft stadium scene showing fans in the stands displaying a red and white pattern choreography display.",
 "people": 45,
@@ -6405,6 +6706,21 @@
 "real crowd"
 ],
 "id": "lib:obj-trophy-plain-small"
+},
+"b62425809bd63ec1": {
+"caption": "An illustrated man in a cap and coat holds up a sports fanzine and shouts.",
+"people": 1,
+"faces": true,
+"action": "selling fanzines",
+"place": "street",
+"era": "1980s",
+"mood": "defiance",
+"text": "fanzine",
+"avoid": [
+"real photograph",
+"modern stadium"
+],
+"id": "lib:ppl-vendor-fl1-kr"
 },
 "b64d071ec40ad2ab": {
 "caption": "A light grey terrazzo stone texture fills the entire frame.",
@@ -7287,6 +7603,20 @@
 ],
 "id": "beat:common/scrapbook-desk-kr"
 },
+"d18d87d3929a843a": {
+"caption": "An illustrated man climbs a fence while holding a megaphone and waving a scarf.",
+"people": 1,
+"faces": true,
+"action": "climbing fence with megaphone",
+"place": "terrace",
+"era": "1970s",
+"mood": "defiance",
+"avoid": [
+"real photograph",
+"actual match footage"
+],
+"id": "lib:ppl-ultras-capo-fl2-kr"
+},
 "d19d9131b06d7fd3": {
 "caption": "Footballers in striped kits run out of a brick tunnel onto the pitch.",
 "people": 30,
@@ -7368,6 +7698,33 @@
 "empty stands"
 ],
 "id": "beat:job-19324d9d-b95c-4388-a19b-062dd2002d03/04-terrace-background-6ee60fadbe6d9fe9"
+},
+"d29afffad0e048f6": {
+"caption": "An illustrated television presenter holds a microphone with a vintage broadcast camera next to him.",
+"people": 1,
+"faces": true,
+"action": "speaking into a microphone",
+"place": "studio",
+"era": "1970s",
+"mood": "calm",
+"avoid": [
+"radio broadcasting",
+"podcast recording"
+],
+"id": "lib:ppl-tv-presenter-fl2-kr"
+},
+"d360be26fb77ff33": {
+"caption": "A paper doll kit of a football player's uniform pieces laid out flat with a trophy.",
+"people": 0,
+"faces": false,
+"action": "kit pieces laid out",
+"place": "studio",
+"mood": "calm",
+"avoid": [
+"real player",
+"actual match"
+],
+"id": "lib:pup-captain-kr"
 },
 "d44cda30c7417c3b": {
 "caption": "Medical staff carry an injured player off the pitch on a stretcher while concerned teammates look on in a packed stadium.",
@@ -8453,6 +8810,33 @@
 ],
 "id": "beat:zrinjski-az-2023/kozulj-arms-wide"
 },
+"edc1cfafb5833486": {
+"caption": "A papercraft collage depicts a steward in a high-vis vest facing a crowd.",
+"people": 0,
+"faces": false,
+"action": "steward holding back crowd",
+"place": "stadium",
+"mood": "tension",
+"avoid": [
+"a real football match security breach",
+"hooligan violence"
+],
+"id": "lib:ppl-steward-n"
+},
+"ede80a6e9a2bed11": {
+"caption": "A paper cutout of a football player in a grey kit standing in a wide stance.",
+"people": 1,
+"faces": false,
+"action": "standing",
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"a real player",
+"a match",
+"a stadium"
+],
+"id": "lib:pup-defender-pose-n"
+},
 "ee5c78ab88027add": {
 "caption": "A papercut artwork of a stadium with a medium-sized trophy on a pedestal and silhouetted reporters and fans in the foreground.",
 "people": 15,
@@ -8713,6 +9097,20 @@
 ],
 "id": "beat:common/street-matchday-crowd-kr"
 },
+"f704cfb1268430bb": {
+"caption": "Club crest displaying two crossed yellow hammers on a claret shield bordered in light blue.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "WEST HAM UNITED LONDON",
+"avoid": [
+"match footage",
+"player action",
+"crowd scene"
+],
+"id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/west-ham-united-2f815b58a947a041"
+},
 "f8c6f9851794ddfb": {
 "caption": "A football rests on the pitch near the goal net under stadium floodlights at night.",
 "people": 0,
@@ -8736,6 +9134,20 @@
 "prison bars: never for a transfer or a signing"
 ],
 "id": "cut:common/close-armband-c-kr"
+},
+"f958201af8ba23be": {
+"caption": "A paper cutout of a goalkeeper in a grey kit and gloves standing in a wide stance.",
+"people": 1,
+"faces": false,
+"action": "standing",
+"place": "abstract",
+"mood": "tension",
+"avoid": [
+"a real player",
+"a match",
+"a penalty save"
+],
+"id": "lib:pup-keeper-pose-n"
 },
 "f996f3ff95422c6f": {
 "caption": "A close-up view of muddy football boots standing on a concrete floor in a tunnel.",
