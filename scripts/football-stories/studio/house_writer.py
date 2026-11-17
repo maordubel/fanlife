@@ -79,6 +79,16 @@ class Book:
         self.quotes = [c for c in self.by.values() if (c.get('fact') or {}).get('kind') == 'quote' and c['fact'].get('text')]
         # the drama desk's counts (studio/drama_facts.py): what each match meant before kick-off
         self.ctx = {c['fact']['match_id']: c for c in self.by.values() if (c.get('fact') or {}).get('kind') == 'context'}
+        # the dossiers' story material (managers, the club, the season's standing, the European road, the final, the
+        # supporters, a match's own detail): one claim per kind, the first the ledger holds
+        self.dossier = {}
+        for c in self.by.values():
+            k = (c.get('fact') or {}).get('kind')
+            if k in ('managers', 'club', 'season', 'route', 'final', 'supporters') and k not in self.dossier:
+                self.dossier[k] = c
+        self.cast = {c['fact']['role']: c for c in self.by.values() if (c.get('fact') or {}).get('kind') == 'character'}
+        self.angle = ledger.get('angle') or 'rise'
+        self.detail = {c['fact'].get('date'): c for c in self.by.values() if (c.get('fact') or {}).get('kind') == 'match-detail' and c['fact'].get('date')}
 
     def f(self, mid: str) -> dict:
         return self.by[mid]['fact']
@@ -274,6 +284,10 @@ class Pen:
         b = self.b
         return self.pick(b.outcome(mid), who=self.who(), opp=b.opp(mid), score=b.score(mid))
 
+    def pick_hero(self, name: str) -> str:
+        opts = (f'And who else but {name}.', f'Of course it was {name}.', f'{name}, again — when it mattered most.')
+        return opts[self.rng.randrange(len(opts))]
+
     def cam(self) -> str:
         self.k += 1
         return self.v['cams'][self.k % len(self.v['cams'])]
@@ -353,6 +367,11 @@ def context_line(pen: Pen, mid: str) -> tuple[str, str | None]:
         cands.append((5, 'road', f'{tr["km"]:,} kilometres from {spoken(tr["from"])}.'))
     if x.get('first_on_record') and ('europe' in tags or 'final' in tags):
         cands.append((5, 'first', f'{opp}: the first meeting between them on record.'))
+    el = x.get('elo') or {}
+    if el.get('one_in'):   # the underdog night: said before the result, so a win lands as the upset it was
+        cands.append((9 if el.get('upset_of_season') else 7, 'odds', f'The ratings gave {club} about one chance in {el["one_in"]}.'))
+    elif el.get('strongest_of_season'):
+        cands.append((5, 'odds', f'By the ratings, {opp} were the strongest side {club} met all season.'))
     n = x.get('meetings_before', 0)
     if 'derby' in tags and n >= 10 and x.get('record_complete'):
         cands.append((5, 'record', f'Meeting number {x["meeting_number"]} on record: {x["won_before"]} {club} wins before it, {x["lost_before"]} for {opp}.'))
@@ -569,8 +588,9 @@ def pick_matches(book: Book, ids: list[str], exclude: set[str], k: int) -> list[
         x = (book.ctx.get(i) or {}).get('fact') or {}
         # a match with something at stake before kick-off (studio/drama_facts.py) tells better than one without
         stake = 0.12 * bool(x.get('never_beaten_in') or x.get('years_since_win', 0) >= 4 or (x.get('earlier_this_season') or {}).get('outcome') == 'loss'
-                            or x.get('league_left') == 0 or (x.get('trip') or {}).get('longest_of_season'))
-        return book.weight.get(i, 0) + 0.08 * len([t for t in tags if t not in ('first', 'last', 'streak-start', 'streak-end')]) + stake
+                            or x.get('league_left') == 0 or (x.get('trip') or {}).get('longest_of_season') or (x.get('elo') or {}).get('upset_of_season'))
+        cast = 0.15 * any(i == (c['fact'].get('match_id')) or i in (c['fact'].get('big_match_ids') or []) for c in book.cast.values())
+        return book.weight.get(i, 0) + 0.08 * len([t for t in tags if t not in ('first', 'last', 'streak-start', 'streak-end')]) + stake + cast
     cand = [i for i in ids if i not in exclude]
     best = sorted(cand, key=lambda i: (-w(i), book.order.get(i, 0)))[:k]
     return sorted(best, key=lambda i: book.order.get(i, 0))
@@ -762,7 +782,11 @@ def cold_open(pen: Pen, hook: dict) -> dict:
         back = {'chronicler': 'To understand it, start with the first meetings. How did it all begin?',
                 'poet': 'But you have to go back to the old days first. Where did it start?',
                 'mythmaker': 'Rewind. Back to the first time they met. Where does a rivalry begin?'}[pen.w]
-    beats.append(beat(back, [], {'type': 'turning', 'title': 'Rewind' if pen.w != 'poet' else 'Where it started', 'subtitle': 'How it came to this',
+    ids_back = []
+    if b.kind == 'season':   # the angle tells the viewer what kind of story this is, before it rewinds
+        al, ids_back = angle_line(pen)
+        back = f'{al} {back}'
+    beats.append(beat(back, ids_back, {'type': 'turning', 'title': 'Rewind' if pen.w != 'poet' else 'Where it started', 'subtitle': 'How it came to this',
                                  'backdrop': pen.art()}, 1.0, True, camera=pen.cam(), pace='slow'))
     title = {'chronicler': 'The Night', 'poet': 'That Night', 'mythmaker': 'The Climax'}[pen.w]
     return {'title': title, 'beats': beats}
@@ -785,6 +809,165 @@ def epilogue(pen: Pen, n: int, record: str | None, honours: list[dict]) -> dict:
                           0.9, False, camera=pen.cam(), sfx='roar'))
     beats.append(beat(pen.pick('end'), [], {'type': 'illustration', 'art': 'terrace-empty', 'caption': ''}, 1.0, True, camera=pen.cam(), pace='slow'))
     return {'title': pen.v['chapters'].get('Epilogue', 'Epilogue'), 'beats': beats}
+
+
+def manager_beats(pen: Pen) -> list[dict]:
+    """The bench as a story (a dossier's `managers` claim): every change of manager inside the season, said on its date —
+    "December 2023: Diego Martínez out, Carlos Carvalhal in. The second manager of the season." Placed by date among the
+    chapter's matches (act_chapter's extra)."""
+    c = pen.b.dossier.get('managers')
+    ms = [m for m in ((c or {}).get('fact') or {}).get('managers') or [] if m.get('name') and m.get('from')]
+    out = []
+    ordinal = {2: 'second', 3: 'third', 4: 'fourth', 5: 'fifth'}
+    for i in range(1, len(ms)):
+        prev, new = ms[i - 1], ms[i]
+        if not new['from'][:4].isdigit():
+            continue
+        th = ordinal.get(i + 1)
+        text = (f'{month(new["from"])}: {spoken(prev["name"])} out, {spoken(new["name"])} in.'
+                + (f' The {th} manager of the season.' if th else ''))
+        b_ = beat(text, [c['id']], {'type': 'illustration', 'art': pen.art(), 'caption': ''}, 0.85, False, camera=pen.cam())
+        b_['_date'] = new['from']
+        out.append(b_)
+    return out
+
+
+def dossier_lines(pen: Pen) -> dict[str, tuple[str, str]]:
+    """Sentences the dossiers carry for the film's big places — {where: (text, claim id)}: 'payoff' (said after the
+    final's result), 'joy' (the supporters), 'verdict' (the season's standing, the club). Every word is the claim's."""
+    b, out = pen.b, {}
+    fi = b.dossier.get('final')
+    if fi and fi['fact'].get('significance'):
+        x = fi['fact']
+        bits = [x['significance'].rstrip('.') + '.']
+        if isinstance(x.get('attendance'), int):
+            bits.append(f'{x["attendance"]:,} in the ground.')
+        out['payoff'] = (' '.join(bits), fi['id'])
+    cl = b.dossier.get('club')
+    if cl and isinstance(cl['fact'].get('days_from_centenary_to_final'), int) and cl['fact'].get('years'):
+        out['payoff_club'] = (f'{cl["fact"]["days_from_centenary_to_final"]} days after the club turned {cl["fact"]["years"]}.', cl['id'])
+    su = b.dossier.get('supporters')
+    if su and su['fact'].get('event'):
+        out['joy'] = (su['fact']['event'].rstrip('.') + '.', su['id'])
+    se = b.dossier.get('season')
+    if se and isinstance(se['fact'].get('league_position'), int) and se['fact'].get('league'):
+        x = se['fact']
+        pos = {1: 'first', 2: 'second', 3: 'third', 4: 'fourth', 5: 'fifth', 6: 'sixth'}.get(x['league_position'], f'number {x["league_position"]}')
+        line = f'In the {spoken(x["league"])}, {b.club} finished {pos}'   # points need a table claim (script: no position)
+        line += f'; {spoken(x["champions"])} took the title.' if x.get('champions') and x['champions'] != b.club else '.'
+        out['verdict'] = (line, se['id'])
+    if cl and cl['fact'].get('standing') and cl['fact'].get('founded'):
+        out['verdict_club'] = (f'{b.club}, founded in {cl["fact"]["founded"][:4]}: {cl["fact"]["standing"].rstrip(".")}.', cl['id'])
+    ro = b.dossier.get('route')
+    if ro and len(ro['fact'].get('rounds') or []) >= 3:
+        opps = [spoken(r['opponent']) for r in ro['fact']['rounds'] if r.get('opponent')]
+        from .director import same_club
+        mids = [c['id'] for c in b.by.values() if (c.get('fact') or {}).get('kind') == 'match'
+                and any(same_club(c['fact'].get('opponent'), [r['opponent']]) for r in ro['fact']['rounds'] if r.get('opponent'))]
+        out['road'] = (f'The road through Europe: {", ".join(opps[:-1])} and {opps[-1]}.', ro['id'], mids)   # the ties it names are cited (rule 1)
+    return out
+
+
+def weave_dossiers(pen: Pen, chapters: list[dict]) -> None:
+    """In place: the dossiers' story material in its places — managers by date in the chapter that holds the date, the
+    final's meaning after its result, the supporters with the joy, the season's standing and the club in the verdict."""
+    b = pen.b
+    lines = dossier_lines(pen)
+    for mb in manager_beats(pen):
+        d = mb.pop('_date')
+        for ch in chapters:
+            ds = [b.f(i)['date'] for x in ch['beats'] for i in x.get('claim_ids') or [] if i in b.by and b.by[i]['fact'].get('kind') == 'match']
+            if ds and min(ds) <= d <= max(ds):
+                pos = next((k for k, x in enumerate(ch['beats']) if k > 0 and any(i in b.by and b.by[i]['fact'].get('kind') == 'match' and b.f(i)['date'] > d
+                                                                         for i in x.get('claim_ids') or [])), len(ch['beats']))
+                ch['beats'].insert(max(1, pos), mb)
+                break
+    for ch in chapters:
+        for x in ch['beats']:
+            ids = x.get('claim_ids') or []
+            if 'payoff' in lines and x['visual'].get('type') in PAYOFF_VISUALS | {'score', 'matchday'} and any(
+                    i in b.by and b.by[i]['fact'].get('kind') == 'match' and b.by[i]['fact'].get('date') == b.dossier['final']['fact'].get('date') for i in ids):
+                for k_ in ('payoff', 'payoff_club'):
+                    if k_ in lines:
+                        x['narration'] += ' ' + lines[k_][0]
+                        x['claim_ids'] = ids = list(dict.fromkeys(ids + [lines[k_][1]]))
+                lines.pop('payoff', None)
+                lines.pop('payoff_club', None)
+            if 'joy' in lines and x['visual'].get('type') == 'illustration' and x.get('sfx') == 'roar':
+                x['narration'] += ' ' + lines['joy'][0]
+                x['claim_ids'] = list(dict.fromkeys(ids + [lines['joy'][1]]))
+                lines.pop('joy')
+    if chapters and any(k in lines for k in ('verdict', 'verdict_club')):
+        ep = chapters[-1]
+        add = [beat(lines[k][0], [lines[k][1]], {'type': 'illustration', 'art': pen.art(), 'caption': ''}, 0.8, False, camera=pen.cam())
+               for k in ('verdict', 'verdict_club') if k in lines]
+        ep['beats'][1:1] = add
+    if 'road' in lines:
+        for ch in chapters[1:]:
+            if any('europe' in b.tags(i) for x in ch['beats'] for i in x.get('claim_ids') or [] if i in b.mstory):
+                ch['beats'].insert(1, beat(lines['road'][0], [lines['road'][1], *lines['road'][2]], {'type': 'illustration', 'art': pen.art(), 'caption': ''}, 0.8, False,
+                                           camera=pen.cam()))
+                break
+
+
+ANGLE_OPEN = {   # one line in the opening that sets what kind of story this is (studio/characters.angle) — never about the film itself (director rule 6)
+    'hero': ('One name ran through this season: {hero}.', 'Remember one name tonight: {hero}.', 'Watch {hero}.'),
+    'road': ('Every trip mattered that season.', 'The road started a long way from home.'),
+    'tragedy': ('It came so close.', 'It would end in tears.'),
+    'redemption': ('It started with a wound.', 'First it fell apart.'),
+    'siege': ('Everyone came to take it from them.', 'They had it, and everyone wanted it.'),
+    'rise': ('Nobody saw where this season was going.', 'Nobody expected what came next.'),
+}
+
+
+def angle_line(pen: Pen) -> tuple[str, list[str]]:
+    b = pen.b
+    h = b.cast.get('hero')
+    a = b.angle if b.angle != 'hero' or h else 'rise'
+    opts = ANGLE_OPEN[a]
+    line = opts[pen.rng.randrange(len(opts))].format(hero=spoken(h['fact']['name']) if h else '')
+    return line, ([h['id']] if a == 'hero' and h else [])
+
+
+def cast_into(pen: Pen, chapters: list[dict]) -> None:
+    """In place: the hero planted early and paid off late; the wound named on its night. A hero is introduced in the
+    first chapter that holds one of his goals ("Remember the name …", his season's count — the character claim's own
+    numbers); on the big night he scored, the film says it was him. The wound's beat opens on the line that it went wrong."""
+    b = pen.b
+    h, w = b.cast.get('hero'), b.cast.get('wound')
+    if h:
+        x = h['fact']
+        name = spoken(x['name'])
+        mine = set(x['match_ids'])
+        for ch in chapters:
+            pos = next((k for k, bt in enumerate(ch['beats']) if mine & set(bt.get('claim_ids') or [])), None)
+            if pos is None:
+                continue
+            dec = x['decisive_goals']
+            rec = '' if x.get('scorers_complete') else ' on record'   # the archive's scorers, not every goal of the season
+            line = (f'Remember the name: {name}. By the end of the season, {x["goals"]} goals{rec}'
+                    + (f', {dec} of them the goal that decided a match.' if dec >= 2 else '.'))
+            ch['beats'].insert(pos, beat(line, [h['id']], {'type': 'illustration', 'art': pen.art(), 'caption': ''}, 0.95, True, camera=pen.cam()))
+            break
+        big = set(x['big_match_ids'])
+        for ch in chapters:
+            for bt in ch['beats']:
+                if big & set(bt.get('claim_ids') or []) and name.split()[-1] in bt['narration'] and 'Remember the name' not in bt['narration']:
+                    bt['narration'] += f' {pen.pick_hero(name)}'
+                    bt['claim_ids'] = list(dict.fromkeys((bt.get('claim_ids') or []) + [h['id']]))
+                    big = set()
+                    break
+    if w:
+        mid = w['fact']['match_id']
+        for ch in chapters:
+            for bt in ch['beats']:
+                if mid in (bt.get('claim_ids') or [])[:1] and not bt['narration'].startswith('This was the night'):
+                    first, _, rest = bt['narration'].partition('. ')
+                    if TURNED.search(first) or OBSTACLE.search(first):   # a craft lead ("Then it changed.") gives way to the wound
+                        bt['narration'] = rest
+                    bt['narration'] = f'This was the night it went wrong. {bt["narration"]}'
+                    bt['claim_ids'] = list(dict.fromkeys(bt['claim_ids'] + [w['id']]))
+                    return
 
 
 def ensure_joy(pen: Pen, chapters: list[dict]) -> None:
@@ -829,6 +1012,8 @@ def season_film(pen: Pen, words_lo: int) -> list[dict]:
     ensure_joy(pen, chapters)
     record = f'summary:{b.main}' if b.main else None
     chapters.append(epilogue(pen, len(chapters) + 2, record, b.honours))
+    weave_dossiers(pen, chapters)
+    cast_into(pen, chapters)
     return chapters
 
 
@@ -941,8 +1126,13 @@ def titles(pen: Pen) -> list[dict]:
     else:
         search = [f'{club} {season}: The Full Season Story', f'{club} {season} Season — Every Big Night', f'{club} in {season}: How It Happened',
                   f'{club} {season}: From Start To Finish', f'{club} {season} Explained']
-        disc = [f'The Night Against {opp}', 'The Season Nobody Saw Coming', 'How A Season Turned', 'A Season On The Edge',
-                'The Run That Changed Everything']
+        h = b.cast.get('hero')
+        lead = {'hero': f'{spoken(h["fact"]["name"])}\'s Season' if h else 'The Season Nobody Saw Coming', 'road': 'The Long Road',
+                'tragedy': 'So Close', 'redemption': 'From The Wound To The Trophy', 'siege': 'Nobody Could Take It',
+                'rise': 'The Season Nobody Saw Coming'}[b.angle if b.angle in ('road', 'tragedy', 'redemption', 'siege', 'rise', 'hero') else 'rise']
+        # the film's angle (studio/characters.angle) leads the discovery titles: two seasons never share a title
+        disc = [lead] + [t for t in (f'The Night Against {opp}', 'The Season Nobody Saw Coming', 'How A Season Turned', 'A Season On The Edge',
+                                     'The Run That Changed Everything') if t != lead][:4]
     order = {'chronicler': (0, 1, 2, 3, 4), 'poet': (2, 4, 0, 1, 3), 'mythmaker': (3, 0, 4, 2, 1)}[pen.w]
     out = [{'title': search[i][:100], 'angle': 'search'} for i in order] + [{'title': disc[i][:100], 'angle': 'discovery'} for i in order]
     return out

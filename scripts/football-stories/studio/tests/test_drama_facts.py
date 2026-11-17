@@ -63,3 +63,64 @@ class PlaceBook(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class Odds(unittest.TestCase):
+    def test_the_underdog_line_is_the_claims_own_number(self):
+        from studio import elo as E
+        self.assertAlmostEqual(E.chance(1500, 1500, None), 0.5)
+        self.assertLess(E.chance(1500, 1800, False), 0.15)
+        L = ledger()
+        orig = E.lookup
+        E.lookup = lambda: {'matches': {'hapoel-tel-aviv': {'2009-12-01': [1450, 1700]}}}
+        try:
+            D.attach(L)
+        finally:
+            E.lookup = orig
+        ctx = next(c for c in L['claims'] if c['id'] == 'b:context')
+        self.assertIn('one_in', ctx['fact']['elo'])
+        self.assertTrue(any('clubelo' in s['url'] for s in ctx['sources']))
+        b = H.Book(L, 'season')
+        b.story = {}
+        pen = H.Pen('chronicler', b, 'x')
+        line, cid = H.context_line(pen, 'b')
+        self.assertIn('one chance in', line)
+        from studio.script import fact_guard
+        self.assertEqual(fact_guard(line, L, ['b', cid]), [])
+
+
+class Cast(unittest.TestCase):
+    """The hero, the wound and the angle (studio/characters.py)."""
+
+    def season(self):
+        def m(i, d, cg, og, scorers, comp='Ligat HaAl', stage=None, side='home'):
+            return {'id': i, 'type': 'match', 'sources': [{'title': 's', 'url': 'https://example.org/' + i}], 'confidence': 2,
+                    'fact': {'kind': 'match', 'date': d, 'competition': comp, 'stage': stage, 'opponent': f'Opp {i}', 'side': side,
+                             'club_goals': cg, 'opponent_goals': og, 'outcome': 'win' if cg > og else 'draw' if cg == og else 'loss',
+                             'scorers': [{'name': n, 'minute': mi} for n, mi in scorers]}}
+        cl = [m(f'm{k}', f'2009-{8 + k // 4:02d}-{1 + 7 * (k % 4):02d}', 1, 0, [('Itay Shechter', 80)]) for k in range(8)]
+        cl.append(m('f', '2010-05-11', 3, 1, [('Itay Shechter', 26), ('Gil Vermouth', 39), ('Other Man', 58)], 'State Cup', 'Final'))
+        return {'club_id': 'x', 'club_name': 'Hapoel Tel Aviv', 'season': '2009/10', 'claims': cl}
+
+    def test_the_hero_is_counted_and_sourced_and_the_angle_follows(self):
+        from studio import characters as C
+        L = self.season()
+        C.attach(L)
+        h = next(c for c in L['claims'] if c['id'] == 'character:hero')
+        self.assertEqual(h['fact']['name'], 'Itay Shechter')
+        self.assertEqual(h['fact']['goals'], 9)
+        self.assertGreaterEqual(h['fact']['decisive_goals'], 8)
+        self.assertTrue(h['sources'][0]['url'].startswith('https://'))
+        self.assertEqual(L['angle'], 'hero')
+
+    def test_no_hero_when_the_archive_names_too_few_scorers(self):
+        from studio import characters as C
+        L = self.season()
+        for c in L['claims']:
+            c['fact']['club_goals'] += 20
+        self.assertIsNone(C.hero(L))
+
+    def test_the_angle_line_never_talks_about_the_film(self):
+        for lines in H.ANGLE_OPEN.values():
+            for t in lines:
+                self.assertNotRegex(t.lower(), r'this is the story|this film|in this video')

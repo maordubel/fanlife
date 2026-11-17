@@ -96,6 +96,8 @@ def counts(ledger: dict) -> dict[str, dict]:
                     trips[mid] = (there[0], km)
     longest = max(trips, key=lambda k: trips[k][1]) if len(trips) >= 3 else None
     complete = coverage(cid)
+    from . import elo as E
+    rated = ((E.lookup().get('matches') or {}).get(cid) or {})
     out: dict[str, dict] = {}
     for k, (mid, f) in enumerate(matches):
         opp, day = f.get('opponent') or '', f.get('date') or ''
@@ -144,7 +146,23 @@ def counts(ledger: dict) -> dict[str, dict]:
                 ctx['trip']['longest_of_season'] = True
         if _league(f.get('competition') or ''):   # every later league match, however the record spells the league that day
             ctx['league_left'] = sum(1 for _, f3 in matches[k + 1:] if _league(f3.get('competition') or ''))
+        r = rated.get(day)
+        if r:   # the ratings on the day (ClubElo, studio/elo.py): the chance they gave the club
+            p = E.chance(r[0], r[1], True if f.get('side') == 'home' else False if f.get('side') == 'away' else None)
+            ctx['elo'] = {'club': r[0], 'opponent': r[1], 'chance_pct': int(round(100 * p))}
+            if p <= 0.34:
+                ctx['elo']['one_in'] = max(3, int(round(1 / p)))
         out[mid] = ctx
+    # the season's extremes by the ratings: the strongest side met, and the biggest upset won
+    el = {k: v['elo'] for k, v in out.items() if 'elo' in v}
+    if len(el) >= 8:
+        top = max(el, key=lambda k: el[k]['opponent'])
+        out[top]['elo']['strongest_of_season'] = True
+        wins = [k for k in el if dict(matches)[k]['outcome'] == 'win']
+        if wins:
+            up = min(wins, key=lambda k: el[k]['chance_pct'])
+            if el[up]['chance_pct'] <= 40:
+                out[up]['elo']['upset_of_season'] = True
     return out
 
 
@@ -157,6 +175,9 @@ def attach(ledger: dict) -> dict:
         src = list((by.get(mid) or {}).get('sources') or [])
         if not src:
             continue
+        if 'elo' in fact:
+            from .elo import SOURCE
+            src = src + [SOURCE]
         ledger['claims'].append({'id': f'{mid}:context', 'type': 'context', 'fact': fact, 'sources': src,
                                  'confidence': (by.get(mid) or {}).get('confidence', 2),
                                  'derived': 'counted from the FAN LIFE archive and the place book (studio/drama_facts.py)'})

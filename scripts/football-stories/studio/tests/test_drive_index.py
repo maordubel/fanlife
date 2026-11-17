@@ -19,9 +19,12 @@ class DriveIndexTest(unittest.TestCase):
         committed = json.loads(D.INDEX.read_text(encoding='utf-8'))
         self.assertEqual(committed['files'], built['files'], 'run: python -m studio.drive_index build')
 
-    def test_folder_names_are_english(self):
+    def test_hebrew_folder_names_are_read_and_tagged(self):
+        # owner, 17.11.2026: folders in his Drive may carry Hebrew names ("_לבדיקה_ידנית", "סופרגול כללי"). The index reads
+        # them as they are and tags them like any folder; nothing is renamed in the owner's Drive.
         import re
-        self.assertEqual([f['path'] for f in self.inv['folders'] if re.search('[֐-׿]', f['path'])], [])
+        heb = {f['path'] for f in self.inv['folders'] if re.search('[֐-׿]', f['path'])}
+        self.assertFalse(heb & set(D.build_index(self.inv, self.tags)['untagged']))
 
     def test_tags_are_from_the_vocabulary(self):
         voc = self.tags['vocab']
