@@ -7,20 +7,22 @@ import {available} from './discipline'
 import {cashLeft,confirmCheck,deal,deficits,groups as draftGroups,minCostToFinish} from './draft'
 import {ABILITIES,nextSeasonGrant,saleQuote,seasonScore} from './economy'
 import {maxStopsOf,run,stopsV4} from './engine'
-import {captainOf,fieldable,lineupError,quotaCount} from './squad'
+import {captainOf,fieldable,lineupError,quotaCount,squadError} from './squad'
 import {seasonStats,type SeasonStats} from './stats'
 import {hash} from '@/lib/clubs/rumble-rng'
 import {windowKey} from './market'
 import {adviceFor,type AdviceNote} from './advice'
 import {matchReport} from './report'
+import {leagueRatings,seasonForm} from './form'
+import {roleOf} from './roles'
 import type {Card,Career,Fixture,MatchEventRow,Tactics} from './types'
 
 /**
  * What the browser may see of a career. Stars and attributes are the game's own values and shown; nothing else about a man's
  * hidden rating leaves the server (the catalog never stored it). Every line of the match log is written here with names.
  */
-export type CardView={id:string;name:string;pos:QuotaPos;alt?:QuotaPos[];price:number;stars:number;attrs:Record<string,number>;from:number|null;to:number|null;decades:number[]}
-export type SquadView=CardView&{quota:QuotaPos;paid:number;apps:number;appsTotal:number;goals:number;yellows:number;suspension:number;injury:number;injuryKind:string|null;fit:boolean;sale:{net:number;quoted:number;fees:number}|null;/** on the manager's transfer list */listed:boolean}
+export type CardView={id:string;name:string;pos:QuotaPos;/** his exact position where a source states it (17.11.2026) */role?:import('./roles').Role;alt?:QuotaPos[];price:number;stars:number;attrs:Record<string,number>;from:number|null;to:number|null;decades:number[]}
+export type SquadView=CardView&{quota:QuotaPos;paid:number;apps:number;appsTotal:number;goals:number;yellows:number;suspension:number;injury:number;injuryKind:string|null;fit:boolean;sale:{net:number;quoted:number;fees:number}|null;/** on the manager's transfer list */listed:boolean;/** this season's match ratings (17.11.2026): average, the last five, player-of-the-match awards */form?:import('./form').ManForm}
 export type LogLine={minute:number;side:0|1|null;kind:MatchEventRow['kind'];text:string;mine:boolean}
 export type ResultView={id:string;round:number;home:string;away:string;homeClub:string;awayClub:string;goals:[number,number];pens:[number,number]|null;log:LogLine[];mine:boolean;/** U02: the story of the manager's own match, from its stored log */report?:import('./report').MatchReport|null;/** the highlights reel — attached on the server (`kits.ts`) to the manager's last result */reel?:import('@/lib/highlights/types').Reel}
 export type CareerView={
@@ -31,7 +33,7 @@ export type CareerView={
  squad:SquadView[];quotas:Record<QuotaPos,number>;emergency:{id:string;name:string;pos:QuotaPos;games:number}[];
  lineup:{formation:string;xi:string[];bench:string[];tactics:Tactics;/** the manager's captain */captain:string|null;/** his vice-captain */vice:string|null;/** who wears the armband today: the captain in the eleven, else the vice in it, else the eleven's most-starred man */armband:string|null;error:string|null;slots:{id:string;fine:string;family:string;x:number;y:number}[]};
  /** a newspaper question waiting for an answer (answers are text only), and the reaction to the last one */press:null|{fixture:string;qid:string;paper:string;head:string;answers:string[]};pressLast:string|null;
- window:null|{which:'pre'|'early'|'mid';/** the men still on sale from this window's five (fixed when it opened — a signing leaves a gap, never a new name) */offers:CardView[];/** the men signed out of the five */signed:{id:string;name:string}[];/** market contacts: open at reputation 80, once a window */contacts:{open:boolean;used:boolean};sold:string[];/** bids for the manager's listed men */bids:{card:string;name:string;club:string;clubName:string;fee:number;quoted:number}[]};
+ window:null|{which:'pre'|'early'|'mid';/** the men still on sale from this window's five (fixed when it opened — a signing leaves a gap, never a new name) */offers:CardView[];/** the men signed out of the five */signed:{id:string;name:string}[];/** market contacts: open at reputation 80, once a window */contacts:{open:boolean;used:boolean};sold:string[];/** bids for the manager's listed men */bids:{card:string;name:string;club:string;clubName:string;fee:number;quoted:number;/** why this bid cannot be accepted today (the squad would fall below its minimum or a quota) — null: it can */blocked:string|null}[]};
  /** the round after which the next window opens, null when none is left this season */
  nextWindow:number|null;/** U01: up to three plain notes before a match */advice:AdviceNote[];
  /** Board trust (reputation 160): the grant if the season ended with the club where it stands — never promised, the table still moves */boardForecast:number|null;
@@ -48,13 +50,14 @@ export type CareerView={
  table:{club:string;name:string;p:number;w:number;d:number;l:number;gf:number;ga:number;gd:number;pts:number;form:string[];mine:boolean}[];tieNote:string;
  seasonEnd:null|{place:number;of:number;champion:boolean;playoff:boolean;grant:number;bonuses:{why:string;amount:number}[];reputation:{why:string;points:number}[];topScorer:{name:string;goals:number}|null};
  /** the season in numbers, from this career's own match logs */stats:SeasonStats;
+ /** match ratings across the league (17.11.2026): best averages, player-of-the-match awards, the team of the season */ratings?:import('./form').LeagueRatings;
  /** the champion of the season that has just ended, when the career knows it (a past season keeps only its own record) */lastChampion:string|null;
  history:Career['history'];ledger:{kind:string;amount:number;note:string|null;name:string|null;season:number}[]
  /** the dressing room: the talk waiting before the next match and after the last one, the last talk given, and the mood — in WORDS */
  talks:{pre:TalkView|null;post:TalkView|null;last:null|{fixture:string;when:'pre'|'post';tone:Tone;toneLabel:string;line:string;reaction:string};mood:{word:MoodWord;label:string;line:string};men:{id:string;name:string;mood:ManMood}[]}
 }
 export type TalkView={fixture:string;when:'pre'|'post';situation:string;kicker:string;prompt:string;opponent:string;answers:{tone:Tone;toneLabel:string;line:string}[]}
-const cv=(c:Card):CardView=>({id:c.id,name:c.name,pos:c.pos,...(c.alt?{alt:c.alt}:{}),price:c.price,stars:c.stars,attrs:c.attrs,from:c.from,to:c.to,decades:c.decades})
+const cv=(c:Card):CardView=>{const r=roleOf(c.id);return {id:c.id,name:c.name,pos:c.pos,...(r?{role:r}:{}),...(c.alt?{alt:c.alt}:{}),price:c.price,stars:c.stars,attrs:c.attrs,from:c.from,to:c.to,decades:c.decades}}
 function logOf(c:Career,events:readonly MatchEventRow[],f:Fixture,names:(side:0|1,id?:string)=>string):LogLine[]{
  const mine=f.home===c.clubId?0:f.away===c.clubId?1:-1
  return events.filter(e=>e.kind!=='chance'||e.minute%2===0).map(e=>{
@@ -82,8 +85,9 @@ export function careerView(c:Career):CareerView{
  const t=me(c),by=catalogMap(c),teams=new Map(c.teams.map(x=>[x.club,x]))
  const nameIn=(club:string,id?:string)=>{if(!id)return '—';const tm=teams.get(club);return (tm&&cardOf(c,tm,id)?.name)??'—'}
  const win=windowOpen(c)
+ const form=c.phase==='draft'?new Map():seasonForm(c)
  const squad:SquadView[]=t.squad.map(s=>{const card=by.get(s.id)!,st=t.status[s.id],q=win?saleQuote(card.price,s.paid,s.apps,card.stars,c.settings):null
-  return {...cv(card),quota:s.quota,paid:s.paid,apps:s.apps,appsTotal:s.appsTotal,goals:s.goals,yellows:st?.yellows??0,suspension:st?.suspension??0,injury:st?.injury??0,injuryKind:st?.injuryKind??null,fit:available(st),listed:(c.transferList??[]).includes(s.id),sale:q?{net:q.net,quoted:q.quoted,fees:Math.round((q.fee+q.guard)*10)/10}:null}})
+  return {...cv(card),quota:s.quota,paid:s.paid,apps:s.apps,appsTotal:s.appsTotal,goals:s.goals,yellows:st?.yellows??0,suspension:st?.suspension??0,injury:st?.injury??0,injuryKind:st?.injuryKind??null,fit:available(st),listed:(c.transferList??[]).includes(s.id),...(form.get(s.id)?{form:form.get(s.id)}:{}),sale:q?{net:q.net,quoted:q.quoted,fees:Math.round((q.fee+q.guard)*10)/10}:null}})
   .sort((a,b)=>QUOTA_POS.indexOf(a.quota)-QUOTA_POS.indexOf(b.quota)||b.stars-a.stars||a.name.localeCompare(b.name))
  const seed=hash(`${c.id}:draft`),d=c.draft&&c.phase==='draft'?deal(c.catalog.cards,c.draft,seed):null
  const draft=d?{budget:d.budget??null,slot:d.slot,required:R.initialDraftRequired,optional:R.initialDraftOptional,picks:d.picks.map(p=>({...cv(by.get(p.id)!),slot:p.slot})),spent:d.spent,left:cashLeft(d),minToFinish:minCostToFinish(c.catalog.cards,d),rerollsLeft:d.rerollsLeft,group:d.group,
@@ -110,7 +114,7 @@ export function careerView(c:Career):CareerView{
   reputation:c.reputation.events.filter(e=>e.season===hist.ordinal).map(e=>({why:e.why,points:e.points})),topScorer:hist.topScorer?{name:hist.topScorer.name,goals:hist.topScorer.goals}:null}:null
  // the market is five slots, the better-known names likelier (owner, 14.10.2026); bids come for the men on the transfer list
  const wOffers:CardView[]=win?marketSlots(c).map(cv):[]
- const wBids=win?bidsOf(c).map(b=>({...b,name:by.get(b.card)?.name??'—'})):[]
+ const myTeam=me(c),wBids=win?bidsOf(c).map(b=>{const err=squadError(myTeam.squad.filter(x=>x.id!==b.card));return {...b,name:by.get(b.card)?.name??'—',blocked:err?`${err} Sign a man first, then accept.`:null}}):[]
  const po=pressOffer(c),pl=(c.press??[]).slice(-1)[0],plq=pl&&pl.answer<4?pressById(pl.q)?.answers[pl.answer]:null
  const press=po?{fixture:po.fixture,qid:po.q.id,paper:po.q.paper,head:po.q.head.replace(/\{club\}/g,c.clubName),answers:po.q.answers.map(x=>x.line)}:null
  return {press,pressLast:plq&&pl?.fixture===lastMine(c)?.id?plq.reaction:null,id:c.id,revision:c.revision,status:c.status,phase:c.phase,cutscene:c.cutscene,clubId:c.clubId,clubName:c.clubName,season:c.season.ordinal,rounds:c.season.rounds,played:c.season.played,cash:t.cash,reputation:c.reputation.points,
@@ -121,7 +125,7 @@ export function careerView(c:Career):CareerView{
   window:win?{which:c.season.played===0?'pre':c.season.played<Math.floor(c.season.rounds/2)?'early':'mid',offers:wOffers,signed:signedOf(c).map(x=>({id:x.id,name:x.name})),contacts:{open:abilities(c).includes('contacts'),used:(c.market?.w===windowKey(c)?c.market.scouted:0)>0},sold:c.soldThisWindow,bids:wBids}:null,nextWindow:nextWindowOf(c),advice:adviceFor(c,(t,id)=>cardOf(c,t,id),{open:c.phase==='window',after:nextWindowOf(c)}),boardForecast:abilities(c).includes('board')&&c.season.played>0&&(c.phase==='season'||c.phase==='window')?grantForecast(c,rows.findIndex(r=>r.club===c.clubId)+1):null,clubs:clubsOf(c),next,bye:isBye(c),live,last,results,
   table:rows.map(r=>({club:r.club,name:r.name,p:r.p,w:r.w,d:r.d,l:r.l,gf:r.gf,ga:r.ga,gd:r.gd,pts:r.pts,form:r.form.slice(-5),mine:r.club===c.clubId})),
   tieNote:`Ties: points, goal difference, goals scored, head-to-head, then lots drawn at kick-off. A title level on everything but the lots goes to a play-off.`,
-  seasonEnd,stats:seasonStats(c,nameIn),lastChampion:c.phase==='season-end'&&c.season.ranks[0]?teams.get(c.season.ranks[0])?.name??null:null,history:c.history,
+  seasonEnd,stats:seasonStats(c,nameIn),...(c.phase==='draft'?{}:{ratings:leagueRatings(c,nameIn)}),lastChampion:c.phase==='season-end'&&c.season.ranks[0]?teams.get(c.season.ranks[0])?.name??null:null,history:c.history,
   ledger:[...c.ledger].reverse().slice(0,40).map(l=>({kind:l.kind,amount:l.amount,note:l.note??null,name:l.card?by.get(l.card)?.name??null:null,season:l.season})),talks:talksOf(c)}
 }
 export const cardView=cv

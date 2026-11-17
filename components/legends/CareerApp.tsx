@@ -15,7 +15,7 @@ import {LiveMatch,type Watch} from './Live'
 import {TeamSheet} from './TeamSheet'
 import {CampSheet,PressSheet} from './PreSeason'
 import {BoardNews,ClubSheet,WindowSheet} from './Popups'
-import {Sheet} from './Sheet'
+import {Portal,Sheet} from './Sheet'
 import {MeetSquad} from './MeetSquad'
 import {Thinking} from './Thinking'
 import {LeagueCentre,Table} from './Stats'
@@ -38,15 +38,21 @@ import type {CareerShirt} from '@/lib/legends/shirts'
 const newKey=()=>(globalThis.crypto?.randomUUID?.()??`${Date.now()}${Math.random()}`).replace(/[^A-Za-z0-9]/g,'').slice(0,32).padEnd(12,'0')
 const ordinal=(n:number)=>`${n}${n%10===1&&n!==11?'st':n%10===2&&n!==12?'nd':n%10===3&&n!==13?'rd':'th'}`
 type Send=(a:Record<string,unknown>,ok?:string)=>void
+const ACTION_TIMEOUT_MS=30_000
 
 export function CareerApp({initial,friendlies=false,decades,wardrobe,shirts=[]}:{initial:CareerView;friendlies?:boolean;decades:number[];wardrobe:RumbleWardrobe;/** the club's documented home kits, drawn on the cards and the team sheet */shirts?:CareerShirt[]}){
  const [v,setV]=useState(initial),[tab,setTab]=useState<Tab>('match'),[msg,setMsg]=useState<{kind:'ok'|'error';text:string}|null>(null),[busy,start]=useTransition()
  // the match being watched: opened by kick-off, kept open through the stops and the final part, closed at "Continue"
  const [watch,setWatch]=useState<Watch|null>(initial.live?{id:initial.live.fixture,from:initial.live.prevStop}:null)
  const [winOpen,setWinOpen]=useState(initial.phase==='window'),[club,setClub]=useState<string|null>(null)
+ // 17.11.2026 (the window "froze" at Thinking): a move that never answers, or a dropped connection, ends in words on the screen —
+ // never an endless loader. The server's own lane gives up after 15 s per store call; the screen waits 30 s at most.
  const send:Send=(a,ok)=>start(async()=>{
-  const r=await legendsAction(v.id,{...a,key:newKey(),rev:v.revision})
-  if(r.ok){setV(r.view);setMsg(r.note?{kind:'ok',text:r.note}:ok?{kind:'ok',text:ok}:null)}else{if(r.view)setV(r.view);setMsg({kind:'error',text:r.error})}
+  try{
+   const r=await Promise.race([legendsAction(v.id,{...a,key:newKey(),rev:v.revision}),new Promise<'late'>(res=>window.setTimeout(()=>res('late'),ACTION_TIMEOUT_MS))])
+   if(r==='late'){setMsg({kind:'error',text:'The ground did not answer in time. Nothing is lost — try again.'});return}
+   if(r.ok){setV(r.view);setMsg(r.note?{kind:'ok',text:r.note}:ok?{kind:'ok',text:ok}:null)}else{if(r.view)setV(r.view);setMsg({kind:'error',text:r.error})}
+  }catch{setMsg({kind:'error',text:'The connection dropped. Nothing is lost — try again.'})}
  })
  // a window that opens (after round 2, at halfway) comes up by itself as soon as the match is over
  useEffect(()=>{if(v.phase==='window'&&!watch)setWinOpen(true)},[v.phase,watch])
@@ -81,6 +87,7 @@ export function CareerApp({initial,friendlies=false,decades,wardrobe,shirts=[]}:
   {watching?<LiveMatch v={v} busy={busy} send={send} watch={watch} setWatch={setWatch} msg={msg}/>:null}
   {room.sheet}
  <Thinking active={busy&&!watching&&v.phase!=='draft'}/>
+  {msg?.kind==='error'&&!watching?<ErrorToast key={msg.text} text={msg.text} onClose={()=>setMsg(null)}/>:null}
   {!watching&&!room.open&&winOpen&&v.window&&!v.cutscene?<WindowSheet v={v} busy={busy} send={send} onMarket={()=>{setWinOpen(false);setTab('market')}} onClose={()=>setWinOpen(false)}/>:null}
   {club?<ClubSheet v={v} club={club} onClose={()=>setClub(null)}/>:null}
  </div></ShirtProvider>
@@ -92,6 +99,7 @@ function SeasonEnd({v,busy,send}:{v:CareerView;busy:boolean;send:Send}){
  return <Sheet id="lgm-end" tone="night" locked kicker={`Season ${v.season} · the final table`} title={e.champion?`Champions${e.playoff?' — after a play-off':''}`:`${ordinal(e.place)} of ${e.of}`}>
   <div className="lgm-news">
    {e.champion?<div className="lgm-confetti" aria-hidden="true">{Array.from({length:18},(_,i)=><span key={i} style={{animationDelay:`${i*60}ms`,insetInlineStart:`${(i*37)%100}%`}}/>)}</div>:null}
+   {v.ratings?.player?<p className="lgm-pots" data-testid="legends-player-of-season">★ Player of the season: <b>{v.ratings.player.name}</b> · {v.ratings.player.clubName} · {v.ratings.player.avg.toFixed(2)} average</p>:null}
    {e.topScorer?<p>Top scorer: <b>{e.topScorer.name}</b> · {e.topScorer.goals} goal{e.topScorer.goals===1?'':'s'}</p>:null}
    <dl className="lgm-sum">{e.bonuses.map(b=><div key={b.why}><dt>{b.why}</dt><dd className="lgm-plus">+ {money(b.amount)}</dd></div>)}<div data-total><dt>Board grant for next season</dt><dd>+ {money(e.grant)}</dd></div></dl>
    {e.reputation.length?<ul className="lgm-scene-list">{e.reputation.map(r=><li key={r.why}><span>{r.why}</span><b>+{r.points} reputation</b></li>)}</ul>:null}
@@ -197,3 +205,9 @@ function Club({v,friendlies}:{v:CareerView;friendlies?:import('react').ReactNode
 }
 const LEDGER:Record<string,string>={'draft-budget':'Draft budget','draft-buy':'Draft signing','board-grant':'Board grant',buy:'Signing',sell:'Sale','season-grant':'Season grant',bonus:'Bonus',emergency:'Emergency player'}
 export {years}
+
+/** an answer that went wrong is shown ABOVE every sheet (17.11.2026: an error behind the transfer window looked like a freeze) */
+function ErrorToast({text,onClose}:{text:string;onClose:()=>void}){
+ useEffect(()=>{const t=window.setTimeout(onClose,7000);return()=>window.clearTimeout(t)},[onClose])
+ return <Portal><div className="lgm-toast z-[80]" role="alert" data-testid="legends-error-toast"><p>{text}</p><button type="button" className="lgm-x min-h-tap" onClick={onClose} aria-label="Dismiss">×</button></div></Portal>
+}

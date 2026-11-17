@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-10-10",
- "source": "Wikipedia (English, Hebrew, Greek) football-biography infoboxes, position field — CC BY-SA 4.0",
+ "generatedAt": "2026-11-17",
+ "source": "Wikipedia (English, Hebrew, Greek) football-biography infoboxes, position field — CC BY-SA 4.0; from 17.11.2026 also Wikidata P413 for men who played for the club (P54), sharpened by the English Wikipedia infobox (entries marked src)",
  "rule": "accepted only on an exact title, a footballer page that names this club; nothing matched by surname",
  "positions": {
   "hapoel-tel-aviv": {
@@ -3381,6 +3381,20 @@
     "title": "Slaviša Stojanović (footballer, born 1989)",
     "rev": 1377286091,
     "lang": "en"
+   },
+   "hapoel-petah-tikva:wv-a0129ce817": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Gabi Lasri",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "hapoel-petah-tikva:wv-e707031231": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Jerry Haldi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
    }
   },
   "panathinaikos": {
@@ -5552,6 +5566,69 @@
     "raw": "Centre-back",
     "title": "Vitor Hugo (footballer, born 1991)",
     "rev": 1347746071,
+    "lang": "en"
+   },
+   "panathinaikos:wv-0b0d58bfad": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Roberto Agueropolis",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "panathinaikos:wv-255c0cb668": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Loukas Panourgias",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "panathinaikos:wv-460bcc1a47": {
+    "pos": "GK",
+    "raw": "GK",
+    "title": "Konstantinos Tsiklitiras",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "panathinaikos:wv-6448ec9334": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Giannis Vonortas",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "panathinaikos:wv-7751dc3693": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Athanasios Aravositas",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "panathinaikos:wv-a05b30120b": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Sakis Kouvas",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "panathinaikos:wv-c078ba34b4": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Mimis Pierrakos",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "panathinaikos:wv-e5cd39d795": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Victor Mitropoulos",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "panathinaikos:wv-f0bc4a7c8d": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Giorgos Kalafatis",
+    "src": "wikidata-p54-p413+enwiki",
     "lang": "en"
    }
   },
@@ -8583,6 +8660,307 @@
     "title": "Bobby Templeton (footballer, born 1880)",
     "rev": 1327562236,
     "lang": "en"
+   },
+   "celtic:p-15c62872b3a4ee": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "John McPhail",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-19eb23b47cb8a7": {
+    "pos": "DF",
+    "raw": "CB",
+    "title": "James Kelly",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-20d5eb0534f3df": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Sean Fallon",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-007aad1bae9b": {
+    "pos": "GK",
+    "raw": "GK",
+    "title": "Ian Andrews",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-05d40733d326": {
+    "pos": "MF",
+    "raw": "AM",
+    "title": "Charles Edward Napier",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-127202c68ce9": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Charles Patrick Tully",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-1303d5635c4d": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "Hugh O'Donnell",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-2909121336eb": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "Peter Joseph Kavanagh",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-2ace8be2b650": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "Thomas Morrison",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-2e857d5ec206": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "John Cunningham",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-30fc794097c5": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "John Aloysius Paton",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-34ec662ed52c": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "William Fulton Kivlichan",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-4d5e1397d450": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "John Wilson Blair",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-4f3dfb1b24da": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "William Angus",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-50ebe1c30280": {
+    "pos": "GK",
+    "raw": "GK",
+    "title": "Francis Haffey",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-549ba7d27b34": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "David Miller Duncan",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-5acbb7c97de5": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "Adam Scott Mathieson Duncan",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-636c584dec19": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Lassad Hassen Nouioui",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-6b1a332fad35": {
+    "pos": "MF",
+    "raw": "AM",
+    "title": "John Young",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-6c66709f5e86": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Hugh Bradley Long",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-77e90b5c6118": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "Anthony Hepburn",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-7e1bcc059fd0": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Thomas Edward Maley",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-839dd11ad0d8": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "John Carmichael Kelly",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-88fb73817370": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "David Pratt",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-89b5c18d14b0": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "John Higgins",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-8f4feb5b7744": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Nadir Ciftci",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-9bd3ab502bff": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "Thomas Bogan",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-9cca29b24832": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "David Hamilton",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-a093c0fb7640": {
+    "pos": "MF",
+    "raw": "AM",
+    "title": "James Henry Davidson*",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-b22a60946054": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "John Daniel Gould",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-c093cb35c5c1": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "Francis David Kelly",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-c50c4af573f6": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "John Browning",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-c7970c539bc4": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "Joseph Haverty",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-ea23140b8f6f": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "John Brodie",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:p-dh-fb0f5d5c7d72": {
+    "pos": "MF",
+    "raw": "AM",
+    "title": "William Patrick Gallacher",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:wv-174e766dc3": {
+    "pos": "GK",
+    "raw": "GK",
+    "title": "Bent Martin",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:wv-52ed7ad417": {
+    "pos": "FW",
+    "raw": "ST",
+    "title": "Willie Irvine",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:wv-748cfd9780": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Des McKeown",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:wv-a434dffea0": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Jack Bell",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:wv-b865b81153": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "George O'Neill",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:wv-c600b9767f": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Frank Nuttall",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:wv-e55b1b81e0": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Benny Higgins",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "celtic:wv-f7d113c221": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Gerry McElhinney",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
    }
   },
   "st-pauli": {
@@ -10232,6 +10610,13 @@
     "raw": "[[Forward (association football)",
     "title": "Yang Chen (footballer, born 1974)",
     "rev": 1360921899,
+    "lang": "en"
+   },
+   "st-pauli:wv-7dace7d8c7": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Tim Gutberlet",
+    "src": "wikidata-p54-p413+enwiki",
     "lang": "en"
    }
   },
@@ -14581,6 +14966,2499 @@
     "raw": "[[Midfielder#Winger",
     "title": "Willian (footballer, born 1988)",
     "rev": 1376299244,
+    "lang": "en"
+   }
+  },
+  "wydad-casablanca": {
+   "wydad-casablanca:p-mg-00803b36a2a9": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Mustapha Yaghcha",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-010569de8c7f": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Nana Nafihou",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-0111d7591573": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Abderrahmane Mssassi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-06310a125da5": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Moustapha Choukri",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-07307347f828": {
+    "pos": "GK",
+    "raw": "GK",
+    "title": "Abdeslem Benabdellah",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-0ce299030a12": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Mourad Lemsen",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-144a8cc17e08": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Fadel Jilal",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-15edae9adfde": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Mustapha Zeghrari",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-1b18bfdbaf0b": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Abdelkader Lecheheb",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-1c8eee22518f": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Mustapha Ben M'Barek",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-1da7617e5a91": {
+    "pos": "GK",
+    "raw": "GK",
+    "title": "Khalid Fouhami",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-1eb831c3f391": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Younès Houassi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-2073b30a449b": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Hicham El Amrani",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-20c5d7873076": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "Mohamed Onajem",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-21bf40185faf": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Ayoub Qasmi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-21cf52eaa499": {
+    "pos": "MF",
+    "raw": "AM",
+    "title": "Hassan Benabicha",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-23926e558363": {
+    "pos": "DF",
+    "raw": "FB",
+    "title": "Ayoub El Khaliqi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-251c159a420c": {
+    "pos": "FW",
+    "raw": "ST",
+    "title": "Farès Mecheri",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-253f5484c709": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Ahmed Alami Elouali",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-256ce71a13ea": {
+    "pos": "MF",
+    "raw": "AM",
+    "title": "Kamel Chafni",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-25ef8a2bc918": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Mohamed Amine Benhachem",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-28b7b0b42ed3": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Ahmed Talbi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-291e3b0488c1": {
+    "pos": "FW",
+    "raw": "ST",
+    "title": "Mohamed Borji",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-2d062b8c9ba2": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "Faouzi Abdelghani",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-2d16755af699": {
+    "pos": "DF",
+    "raw": "FB",
+    "title": "Jamal Alioui",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-2f4d0f8dad1a": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Abd al-Qadir al-Khumayri",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-2f6ab2f010e6": {
+    "pos": "GK",
+    "raw": "GK",
+    "title": "Nadir Lamyarghri",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-308beb090f14": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Oussama El Gharib",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-333f834b40d6": {
+    "pos": "DF",
+    "raw": "FB",
+    "title": "Youness Bellakhder",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-337327910373": {
+    "pos": "DF",
+    "raw": "CB",
+    "title": "Djameleddine Benlamri",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-37ea43f50b2c": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "Youssef Kaddioui",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-38d3787c9613": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Kalilou Traoré",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-3bdc0a7d3ae8": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Abdelfattah El Khattari",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-3cb302e708c9": {
+    "pos": "GK",
+    "raw": "GK",
+    "title": "Hakim Mouzaki",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-4098169001bc": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Hassan Moumen",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-40bd590ea464": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Mbaye Niang",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-41bbef98f636": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Mohammed Sahil",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-41c4f5ceab41": {
+    "pos": "FW",
+    "raw": "ST",
+    "title": "Moussa Ndao",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-43fbd7b88f1f": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "Sadio Sow",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-45fbd0363d48": {
+    "pos": "FW",
+    "raw": "ST",
+    "title": "Driss Joumad",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-4869e4eb5f15": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Abdelghani El Mansouri",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-48f5041a0bbc": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Farid El Alagui",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-4ba6e8629613": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Hamada Barakat",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-4dfd3c3a898f": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Omar Sarbout",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-4e4ef11173be": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Mohamed Khalfi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-5063052a436f": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "Amin Tighazoui",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-51cca1bc8ce7": {
+    "pos": "GK",
+    "raw": "GK",
+    "title": "Abdelkader Ouaraghli",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-527dee5e3b73": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Youssef Rabeh",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-538485c5f36f": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Mohammed Sahraoui",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-564231922e4b": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Jérémie N'Jock",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-57449821e0dc": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Mohammed Maaroufi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-595dbfdb5a88": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Yassine Lakhal",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-5a2990a681b2": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Brahim El Bahri",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-5a2c84a064bc": {
+    "pos": "DF",
+    "raw": "CB",
+    "title": "Issam El Adoua",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-5a63f3a26250": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Redallah Doulyazal",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-5bf344f6a8ba": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Salma Bouguerch",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-5c6e24a74b37": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Khalid Lebhij",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-5ff7e671641e": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "Ayman El Hassouni",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-61fe00b0245e": {
+    "pos": "GK",
+    "raw": "GK",
+    "title": "Badreddine Benachour",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-6283c4fae284": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Ibrahima Touré",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-65ae59ed53e1": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Esmei Cecile Amari",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-66b75eea462c": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "Hakim Ziyech",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-66ca59fd430e": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Houcine Zidoune",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-6706c7c01da8": {
+    "pos": "GK",
+    "raw": "GK",
+    "title": "Tarik El Jarmouni",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-674414b0aaa0": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Joel Madondo",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-6744df7a2522": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Abderrahmane Mahjoub",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-6826ecbeb543": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "Reda El Hajhouj",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-685a415493e3": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Farid Talhaoui",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-6890ea5f297f": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Youssef Belkhouja",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-6a025aa64701": {
+    "pos": "FW",
+    "raw": "ST",
+    "title": "Pan Pierre Koulibaly",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-6aa447021be3": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Abdoulaye Mbaye",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-6d3122241b73": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Mohammed Abderrazack",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-7281473a21cf": {
+    "pos": "GK",
+    "raw": "GK",
+    "title": "Mohammed Akid",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-7421ef767d41": {
+    "pos": "FW",
+    "raw": "ST",
+    "title": "Moussa Kaboré",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-7592110192d5": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Zakaria Zahid",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-78500bbaf409": {
+    "pos": "MF",
+    "raw": "AM",
+    "title": "Bobley Anderson",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-7b247f36430c": {
+    "pos": "FW",
+    "raw": "ST",
+    "title": "Abdelmajid Bouyboud",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-7b943a22df46": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Mohamed Mahjoub",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-7e1c521195b2": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Mourad Fellah",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-7f9b38f54678": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Larbi Aherdane",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-81009087e449": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Anas Al Asbahi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-82cc376beec9": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Nabil Loualji",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-83c8a7cecfe5": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "Ismail Haddad",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-84f7bab0559b": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Abdelaziz Bennij",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-8534155cbbc4": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Abdelhaq Ait Laarif",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-89a49df79f6c": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Said Zaidi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-8c594de5057b": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Abdelmajid Eddine",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-8c8cbfd644c2": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "Abdessamad Rafik",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-93be3f053711": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Tarik Ajouadi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-944b7cf1f419": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Dieylani Fall",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-94bcdc262d23": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Junior Moukoko",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-9d0341af3db6": {
+    "pos": "FW",
+    "raw": "ST",
+    "title": "Brahim Zahar",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-a2722f4896ad": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Bakaré Koné",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-ac229a8fa530": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Abdelsalem Ben Miloud Salem",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-ad62fc48bb23": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Adil Khalloufi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-b0dc368a6987": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Mohamed Saidi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-b1b79c3a9c36": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Abderahim Benkajjane",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-b87c3a546340": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Sofian El Moudane",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-bb0b78c26c0d": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Hicham Louissi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-be3d76ee5d96": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "Michel Babatunde",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-c4d4c777f782": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Youssef Meriana",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-c919be811828": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Abdelmajid Shaita",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-c920e0cf7626": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Omar Najdi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-c9e863a2577d": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Aziz Bouderbala",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-ca3c93b88224": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Youssef Oggadi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-cb9564f69e9b": {
+    "pos": "GK",
+    "raw": "GK",
+    "title": "Mouhamed El Baz",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-d03307364643": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Hassan Hormat Allah",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-d309f9675097": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Hamza Yacef",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-d365abb11395": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Abderrazak El Mnasfi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-d3d3d2ff31b7": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Youssef Fertout",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-d3f9c879d927": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Bilal Assoufi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-d49b4cba51a3": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Mustapha Bettache",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-d724627502f8": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Adil Serraj",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-dc3623a50b3c": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Brahim Nekkach",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-dde37950be8f": {
+    "pos": "DF",
+    "raw": "FB",
+    "title": "Badr El Kaddouri",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-e38bcf492980": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "Abderrahim Saïdi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-e8bbc523a5a5": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Anas Lemrabet",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-e91704188886": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Hamid Termina",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-ea71a21c0e9f": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Guillaume Dah Zadi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-ead8e9adb57e": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Zakaria Aboub",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-ebad02321549": {
+    "pos": "DF",
+    "raw": "CB",
+    "title": "Youssef Tourabi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-ed01c4a637c3": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Samir Sarsare",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-ee5b3252b768": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Ahmed Moujahid",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-f26488816066": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Faouzi El Brazi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-f33a6d607fed": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Ibrahim Maaroufi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-f488cb5a69df": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Rabil Lafoui",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-f626536d9472": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Bashiru Gambo",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-f961bbaf10cd": {
+    "pos": "GK",
+    "raw": "GK",
+    "title": "Zouheir Laaroubi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-f9831ba6a896": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Abdelghani Mouaoui",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-fb72d4f7648e": {
+    "pos": "DF",
+    "raw": "CB",
+    "title": "Mamadou Tall",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-fcc9fcc7c4e9": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Mohamed Chtouki",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-fd23cf32c570": {
+    "pos": "DF",
+    "raw": "FB",
+    "title": "Badr Gaddarine",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "wydad-casablanca:p-mg-ffdd59e075f7": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Ali Ben Dayan",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   }
+  },
+  "al-ahly": {
+   "al-ahly:p-mg-01857a085627": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Haitham El-Fazani",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-02993c74ed32": {
+    "pos": "MF",
+    "raw": "DM",
+    "title": "Mohamed Ashour El-Adham",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-059f66037720": {
+    "pos": "DF",
+    "raw": "FB",
+    "title": "Mo'men osman",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-07db88f38584": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Rifaat El-Fanagily",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-07deabccee6d": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Mohamed Abdullah",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-0c7ba8ccbdf8": {
+    "pos": "DF",
+    "raw": "FB",
+    "title": "Yahia Attiyat Allah",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-0d132d9f9fbc": {
+    "pos": "MF",
+    "raw": "DM",
+    "title": "Mohamed Hassan",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-0d2631ae220c": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Mohamed Emara",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-0ef42fe7a42b": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Mohamed Ramadan",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-13c42c7197ab": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "Ahmed El Sheikh",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-13db74f9b94b": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Alaa Mayhoub",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-14be5c9d5998": {
+    "pos": "DF",
+    "raw": "CB",
+    "title": "Ateya El-Belqasy",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-1540b98de6f7": {
+    "pos": "GK",
+    "raw": "GK",
+    "title": "Kamil Taha",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-1678d863520a": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Peter Ebimobowei",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-19bdba04ab87": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "Sayed Abdel Hafeez",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-1e4b4e559abf": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "Abdul-Aziz Abdul-Shafi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-1f5f8b59f4eb": {
+    "pos": "DF",
+    "raw": "FB",
+    "title": "Omar Rabie Yassin",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-2163ad7c976d": {
+    "pos": "DF",
+    "raw": "FB",
+    "title": "Ahmed Abou Moslem",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-21ac9084695e": {
+    "pos": "DF",
+    "raw": "FB",
+    "title": "Sayed Elshabrawi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-2843de5b5c27": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Faisal Al Badri",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-28f721840e83": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Mohamed El-Shamy",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-2acedf7224df": {
+    "pos": "DF",
+    "raw": "FB",
+    "title": "Muhammad al Maghrabi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-2b8c105ad9ae": {
+    "pos": "MF",
+    "raw": "AM",
+    "title": "Mostafa El Badry",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-2df1b32e207d": {
+    "pos": "MF",
+    "raw": "AM",
+    "title": "Amr Samaka",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-2ea3e6c1d9f9": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Abdelhamid Hassan",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-2f21f9606f0e": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Wagih El-Kashef",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-2f3422a982f7": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Shehab El-Din Ahmed",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-306997ec0750": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Ayman Shawky",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-31a1ed80e268": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Mohamed Abdel-Galil",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-34ac4b7390cd": {
+    "pos": "FW",
+    "raw": "ST",
+    "title": "Al-Sayed Hamdy",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-34ebe89ca48a": {
+    "pos": "FW",
+    "raw": "ST",
+    "title": "Ntot Ngijol Jean Pie",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-3526ba28a2fa": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Mohamed Khalaf",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-355b07f43db4": {
+    "pos": "DF",
+    "raw": "CB",
+    "title": "Sherif Hazem",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-35bfeb0e65d2": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Ahmed Nakhla",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-39b484ef1551": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Abdelaziz Dnibi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-3ab3e318944a": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Ahmed Abdelmonem",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-3b0f65748275": {
+    "pos": "DF",
+    "raw": "CB",
+    "title": "Ibrahim Said",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-3b384039f2f6": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Henry Makinwa",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-3e3a6dcd243f": {
+    "pos": "FW",
+    "raw": "ST",
+    "title": "Mohamed Hamdy Zaky",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-41c98e79eb40": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Hossam El Badry",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-41ce6c3f92ee": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Magdy Tolba",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-422c8c7f5624": {
+    "pos": "DF",
+    "raw": "FB",
+    "title": "Ahmed Ali",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-42967130494c": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Mohamed Gouda",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-42a014f1bddf": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "Tarek El-Said",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-44accce045d7": {
+    "pos": "FW",
+    "raw": "ST",
+    "title": "Ahmed Salah Hosny",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-463beb93077e": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Adel Abdelrahman",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-4738d91887a1": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Gedo",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-4a51a40eb447": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Alaa Ibrahim",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-4a8e32a97cbc": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "Kehriba nene",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-4b8a7512ff25": {
+    "pos": "MF",
+    "raw": "AM",
+    "title": "Mohamed Rizk",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-4ceda525d79b": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Saleh Selim",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-4d06dfb4a3f7": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Osama Orabi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-4e31a177f531": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Ahmed Reda",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-4eee0a0ebcde": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Mohamed Reda",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-51a3623dce0c": {
+    "pos": "DF",
+    "raw": "FB",
+    "title": "Ibrahim Hassan",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-5320daec0424": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Mohamed Farouk (1998)",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-534c8980451d": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Addis Hintsa",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-5361147090f5": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Hesham Hanafy",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-53a7933e8d87": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Abdullah Farouk",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-53cca4695d8e": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Gamal Abdel-Hamid",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-53fce192b323": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Khalil Housni",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-558ad0f332a6": {
+    "pos": "DF",
+    "raw": "CB",
+    "title": "Luca Badr",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-584bc7470272": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Yasser Rayyan",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-5863e5344e44": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Oussou Konan Anicet",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-5871c19e3115": {
+    "pos": "DF",
+    "raw": "FB",
+    "title": "Mohamed Hamdy Sharaf",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-5a1104f42e85": {
+    "pos": "MF",
+    "raw": "DM",
+    "title": "Hossam Ashour",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-5a3dc4980e7f": {
+    "pos": "DF",
+    "raw": "CB",
+    "title": "Badr Banoun",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-5c6f786166ee": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Hussein Ali",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-5cb897ffe8d4": {
+    "pos": "GK",
+    "raw": "GK",
+    "title": "Mostafa Kamal",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-5f6766bd8a0f": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "Zizo",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-62359e1e0214": {
+    "pos": "MF",
+    "raw": "AM",
+    "title": "Abdallah El Said",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-6373333a1076": {
+    "pos": "MF",
+    "raw": "AM",
+    "title": "Ahmed Shoukry",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-643d0d357d77": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Mimi El-Sherbini",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-64c361d8286b": {
+    "pos": "GK",
+    "raw": "GK",
+    "title": "Thabet El-Batal",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-6755e098f930": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Moataz Ben Amer",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-678fa86a1dad": {
+    "pos": "GK",
+    "raw": "GK",
+    "title": "Aziz Fahmy",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-67af053ef2b0": {
+    "pos": "GK",
+    "raw": "GK",
+    "title": "Ekramy El-Shahat",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-6acd901d4739": {
+    "pos": "FW",
+    "raw": "ST",
+    "title": "Hamza Abdelkarim",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-6b3dd8483961": {
+    "pos": "GK",
+    "raw": "GK",
+    "title": "Mossad Awad",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-6c729421b5f9": {
+    "pos": "GK",
+    "raw": "GK",
+    "title": "Adel Hekal",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-6d31b9f82a6e": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Radwan Yasser",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-6d38be48e085": {
+    "pos": "FW",
+    "raw": "ST",
+    "title": "Mahmoud El-Gohary",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-6f330393abe8": {
+    "pos": "GK",
+    "raw": "GK",
+    "title": "Mustafa Mansour",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-70931ce0e295": {
+    "pos": "MF",
+    "raw": "AM",
+    "title": "Wael Riad",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-712a32dc7c54": {
+    "pos": "FW",
+    "raw": "ST",
+    "title": "Felix Aboagye",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-716922cb15e1": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Mohamed Abdel Fattah",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-73b8f24406dc": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Sabry Raheel",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-7588e6ad20c8": {
+    "pos": "MF",
+    "raw": "DM",
+    "title": "Akwety Mensah",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-78f2cc1c01d8": {
+    "pos": "DF",
+    "raw": "FB",
+    "title": "Ahmad Shedid Qinawi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-7c876943210e": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Eyad salah",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-7d40e3526f8c": {
+    "pos": "MF",
+    "raw": "AM",
+    "title": "Didier Otokoré",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-7dc2a15c36c0": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Moaz El-Henawy",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-7f89fcf33699": {
+    "pos": "FW",
+    "raw": "ST",
+    "title": "Mohamed Tawakol",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-820652aa0ec7": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Ali El-Hassani",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-837c27744b96": {
+    "pos": "DF",
+    "raw": "CB",
+    "title": "Nano",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-851e85f61624": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Mohamed Talaat",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-865239be16a7": {
+    "pos": "FW",
+    "raw": "ST",
+    "title": "Sambégou Bangoura",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-87e62feac4de": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Hesham Mohamed",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-8991b1aa48d5": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Karim Bambo",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-8b28b1fe8d99": {
+    "pos": "MF",
+    "raw": "AM",
+    "title": "Islam Roshdi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-8c659aecaf96": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Mohamed Sedik",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-8e590419d2a8": {
+    "pos": "GK",
+    "raw": "GK",
+    "title": "Nader El-Sayed",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-924a837da149": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Mohamed Youssef",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-96f6050849d5": {
+    "pos": "FW",
+    "raw": "ST",
+    "title": "Chernor Mansaray",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-9a93dbe33d74": {
+    "pos": "DF",
+    "raw": "CB",
+    "title": "Hany Ramzy",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-9b948c830340": {
+    "pos": "GK",
+    "raw": "GK",
+    "title": "Mahmoud Abou El-Saoud",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-9d5d0e950db4": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Abdel Moneim Hussein",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-9dddf1d59b0a": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Moustafa Abdou",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-9ef883e1b1f5": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Ahmed Sary",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-9fb3b6449c5c": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Mohamed Azima",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-a17984bb57c9": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Riad Shawki",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-a57859ecbf62": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Sunday Chibuike",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-a5e0c2d1da56": {
+    "pos": "DF",
+    "raw": "CB",
+    "title": "Hamada Sedki",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-a7e0b484404e": {
+    "pos": "FW",
+    "raw": "ST",
+    "title": "Hussein Hegazi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-a96ed68124be": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Amr Warda",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-a9c81dadbc2b": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "George Arthur",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-aa7730c5a28a": {
+    "pos": "DF",
+    "raw": "FB",
+    "title": "Ahmad Sedik",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-ab2abe182da6": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Karim Walid",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-ab9f26e70f39": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Gamal Hamza",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-ae7e25fb7dd3": {
+    "pos": "MF",
+    "raw": "DM",
+    "title": "Magdi Abdelghani",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-b0205e54ccde": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Saladin Said",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-b0a7c10994cf": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Abdelilah Galal",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-b1d56bcc60e9": {
+    "pos": "DF",
+    "raw": "CB",
+    "title": "Emad El-Nahhas",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-b2ac07c5d6d2": {
+    "pos": "DF",
+    "raw": "CB",
+    "title": "Mohamed Nagieb",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-b380b2971785": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Khaled El-Amin",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-b83415ce0e59": {
+    "pos": "DF",
+    "raw": "FB",
+    "title": "Mohamed Abdelwahab",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-bc0715cd47e7": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "Trézéguet",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-bd2469d0c605": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "El-Sayed El-Dhizui",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-bf1e35305c21": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Bouchaib El Moubarki",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-c02a98b85b08": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Ali Maher",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-c18e9cfc0d6e": {
+    "pos": "MF",
+    "raw": "CM",
+    "title": "Hossam Ghaly",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-c1d5ccb03610": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Anis Boujelbene",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-c3851724f31c": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Taher Abouzeid",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-c4f9fc7b39b0": {
+    "pos": "FW",
+    "raw": "ST",
+    "title": "Reda El-Weshi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-c54825719a77": {
+    "pos": "FW",
+    "raw": "ST",
+    "title": "Mahmoud Mokhtar El-Tetsh",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-c60e2b71349e": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Mohamed Farouk (2014)",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-c67b1202de54": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Fathi Mabrouk",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-c6f87a3cf423": {
+    "pos": "DF",
+    "raw": "FB",
+    "title": "Ahmed Samir Farag",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-c84f973ea3cd": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Mokhtar Mokhtar",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-c99b8341b9ea": {
+    "pos": "DF",
+    "raw": "FB",
+    "title": "Hussein Sayed",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-c99e1b93829b": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Mohamed Samir",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-cb8284147745": {
+    "pos": "DF",
+    "raw": "FB",
+    "title": "Islam El-Shater",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-cee1c24d45a6": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Ramy Rabie",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-d08639cfc7e3": {
+    "pos": "MF",
+    "raw": "DM",
+    "title": "Mohamed Shawky",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-d0e416dea288": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Labib Mahmoud",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-d22d9879b419": {
+    "pos": "DF",
+    "raw": "CB",
+    "title": "Ahmed Alaa",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-d236af3f3512": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Hassan Hamdy",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-d2ff897cb019": {
+    "pos": "FW",
+    "raw": "ST",
+    "title": "Madiou Konate",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-d324b234b5d4": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Dominique Da Silva",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-d4aa2c6dc928": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Mohamed Al Ghanodi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-d67b8d252c0b": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Maher Hammam",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-d72d35ee22fa": {
+    "pos": "GK",
+    "raw": "GK",
+    "title": "Ahmed Adel Abd El-Moneam",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-d8292030accc": {
+    "pos": "MF",
+    "raw": "AM",
+    "title": "Mostafa Afroto",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-dc61b183396d": {
+    "pos": "DF",
+    "raw": "FB",
+    "title": "Rabie Yassin",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-dc83bdea9ee6": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Mahmoud Tobah",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-dd690a203745": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Ahmed Nabil \"Manga\"",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-e1d338ca2cf3": {
+    "pos": "DF",
+    "raw": "FB",
+    "title": "Ahmed Fathy",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-e4bb3b031148": {
+    "pos": "DF",
+    "raw": "FB",
+    "title": "Ahmad Adel",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-e4dc28496937": {
+    "pos": "MF",
+    "raw": "AM",
+    "title": "Mahmoud El Sayed Samir",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-e5196696cb98": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Amin Erbati",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-e83cba87f867": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Taha Ismail",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-eb7d128a45fa": {
+    "pos": "DF",
+    "raw": "CB",
+    "title": "Hany Saïd",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-ec5ebe2cf877": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Mahmoud El Khatib",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-ee6dc331663b": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Kamel Masoud",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-f0f7c1e90913": {
+    "pos": "DF",
+    "raw": "FB",
+    "title": "Islam Serry",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-f23ad162285a": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Zaki Osman",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-f55a4020903a": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Reda Shehata",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-f694bfcfd413": {
+    "pos": "FW",
+    "raw": "ST",
+    "title": "John Antwi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-f6ccb5c9597a": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Abdel Hamid Ahmed",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-f78bcf5f2c11": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Sayed Abaza",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-fa4ebc082142": {
+    "pos": "MF",
+    "raw": "DM",
+    "title": "Mostafa Shebeita",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-fb600bba3ada": {
+    "pos": "DF",
+    "raw": "FB",
+    "title": "Sabri Raheel",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "al-ahly:p-mg-fffab0fa9d13": {
+    "pos": "DF",
+    "raw": "CB",
+    "title": "Ali Salama",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   }
+  },
+  "atalanta": {
+   "atalanta:p-u-02f9e1f3aaefa369": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Tebaldo Bigliardi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-0edc26e228030d22": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Antonio Rizzolo",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-10f6d23cba13ed8c": {
+    "pos": "GK",
+    "raw": "GK",
+    "title": "Fabrizio Ferron",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-14e2ce89ff07c959": {
+    "pos": "GK",
+    "raw": "GK",
+    "title": "Davide Pinato",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-1b403ce15b5cf089": {
+    "pos": "DF",
+    "raw": "CB",
+    "title": "Francesco Zanoncelli",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-22bf24dec4caed82": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Giovanni Bonavita",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-2821c884a8a288a4": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Cesare Prandelli",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-339ed219120be5a3": {
+    "pos": "GK",
+    "raw": "GK",
+    "title": "Ottorino Piotti",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-4824c15a4e12b854": {
+    "pos": "DF",
+    "raw": "CB",
+    "title": "Roger Ibañez",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-48d3bf11c03c95ee": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Claudio Vertova",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-48f96ccf72ae5576": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Daniele Fortunato",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-58f63cfe8a34d2f2": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Flemming Nielsen",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-71a526b233c1b722": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Walter Bonacina",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-72392cb6390a5069": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Fabrizio Catelli",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-7e72f7e8639bafc9": {
+    "pos": "DF",
+    "raw": "FB",
+    "title": "Ali Adnan Khadim Al Tameemi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-7fdf05db2fa917c9": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Musa Barrow",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-84f4436e10e77ebb": {
+    "pos": "FW",
+    "raw": "ST",
+    "title": "Marco Tumminello",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-8ba8a24b8a9ebac5": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Armando Madonna",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-9af0b0997db11c75": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Mario Bortolazzi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-a53971ab9eff4469": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Luca Valzania",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-a7ab286fb31bffc9": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Renzo Contratto",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-aa1a50c28dce80c4": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Marco Monti",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-aba88c0b8517697a": {
+    "pos": "FW",
+    "raw": "ST",
+    "title": "Giuseppe Incocciati",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-b352dbcd34668116": {
+    "pos": "DF",
+    "raw": "FB",
+    "title": "Arkadiusz Reca",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-c82d0a6aca512f41": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Glenn Strömberg",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-cdbfb3f2b125e686": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "Marco D'Alessandro",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-dc389a474422a072": {
+    "pos": "DF",
+    "raw": "FB",
+    "title": "Lennart Czyborra",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-e9b1b7668aac2ff8": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Luca Vido",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-e9e75f8c9d9ae865": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Adrien Tameze",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-ecd203c4ea31fe71": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Carlo Perrone",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-ece2b85c7aeff1af": {
+    "pos": "FW",
+    "raw": "ST",
+    "title": "Aparecido Pauli Evair",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-f94d6ae6130566e0": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "Ebrima Colley",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-f96c5220d2a397da": {
+    "pos": "DF",
+    "raw": "CB",
+    "title": "Simon Kjær",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "atalanta:p-u-f9d5bf7535441005": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Roberto Bordin",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   }
+  },
+  "maccabi-haifa": {
+   "maccabi-haifa:p-u-1c7aa157310da27c": {
+    "pos": "DF",
+    "raw": "CB",
+    "title": "Orel Dgani",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "maccabi-haifa:p-u-2ed6e1be2c635324": {
+    "pos": "DF",
+    "raw": "CB",
+    "title": "Arik Benado",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "maccabi-haifa:p-u-495354e26d7ecfba": {
+    "pos": "FW",
+    "raw": "ST",
+    "title": "Hen Azriel",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "maccabi-haifa:p-u-510858e32634692b": {
+    "pos": "GK",
+    "raw": "GK",
+    "title": "Ron Shushan",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "maccabi-haifa:p-u-6969e4de8fc8a8d8": {
+    "pos": "MF",
+    "raw": "AM",
+    "title": "Hen Ezra",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "maccabi-haifa:p-u-804c53e031edad30": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Dino Ndlovu",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "maccabi-haifa:p-u-900b4cd20fa31802": {
+    "pos": "GK",
+    "raw": "GK",
+    "title": "Nir Davidovitch",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "maccabi-haifa:p-u-90e61634582859a3": {
+    "pos": "FW",
+    "raw": "W",
+    "title": "Sintayehu Sallalich",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "maccabi-haifa:p-u-9ef0aad3fd3ffa9f": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Alon Harazi",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "maccabi-haifa:p-u-af856708eabbd321": {
+    "pos": "MF",
+    "raw": "MF",
+    "title": "Tamir Cohen",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "maccabi-haifa:p-u-b8833fc0e14d131c": {
+    "pos": "FW",
+    "raw": "FW",
+    "title": "Alon Turgeman",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "maccabi-haifa:p-u-c0608dbfdb92e767": {
+    "pos": "DF",
+    "raw": "CB",
+    "title": "Edin Cocalić",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "maccabi-haifa:p-u-ce7bebbff2c2070f": {
+    "pos": "FW",
+    "raw": "ST",
+    "title": "Shimon Abuhazira",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "maccabi-haifa:p-u-ed3afdb38bcdbea4": {
+    "pos": "DF",
+    "raw": "DF",
+    "title": "Eitan Azaria",
+    "src": "wikidata-p54-p413+enwiki",
+    "lang": "en"
+   },
+   "maccabi-haifa:p-u-f69321a92bb826c7": {
+    "pos": "FW",
+    "raw": "ST",
+    "title": "Marlon De Jesus",
+    "src": "wikidata-p54-p413+enwiki",
     "lang": "en"
    }
   }

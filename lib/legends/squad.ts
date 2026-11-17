@@ -1,3 +1,4 @@
+import {familiarity,roleOf} from './roles'
 import {FORMATION_IDS,slotsOf} from '@/lib/clubs/rumble-xi/formations'
 import type {FormationId} from '@/lib/clubs/rumble-xi/types'
 import {LEGENDS_RULES as R,QUOTA_POS,type QuotaPos} from './config'
@@ -44,7 +45,7 @@ export function bestLineup(men:readonly Card[],prefer?:FormationId,tactics=DEFAU
  const best=prefer&&tries[0]!.f===prefer?tries[0]!:tries.sort((a,b)=>b.r!.value-a.r!.value)[0]!
  const inXi=new Set(best.r!.xi),rest=men.filter(c=>!inXi.has(c.id)).sort((a,b)=>b.stars-a.stars||a.id.localeCompare(b.id))
  const gk=rest.find(c=>c.pos==='GK'),bench=[...(gk?[gk]:[]),...rest.filter(c=>c!==gk)].slice(0,7).map(c=>c.id)
- const lu:Lineup={formation:best.f,xi:best.r!.xi,bench,tactics:{...tactics}}
+ const lu:Lineup={formation:best.f,xi:byRole(best.r!.xi,best.f),bench,tactics:{...tactics}}
  return {...lu,captain:captainOf(lu,id=>men.find(m=>m.id===id))}
 }
 /**
@@ -84,4 +85,22 @@ export function lineupError(l:Lineup,men:readonly Card[]):string|null{
  if(l.bench.length>7)return 'Seven on the bench at most.'
  for(const id of [...l.xi,...l.bench])if(!ok.has(id))return 'Every man must be fit and in your squad.'
  return null
+}
+
+/**
+ * Exact positions (17.11.2026): inside each family the chosen men are put where they play — a full-back at full-back, a winger
+ * wide, a holding man in the holding role — by their sourced role (`roles.ts`). Only the order inside a family moves; who plays
+ * is decided before this, so the eleven's strength is the same.
+ */
+function byRole(xi:readonly string[],f:FormationId):string[]{
+ const slots=slotsOf(f),out=[...xi],score=(id:string,fine:string)=>{const q=familiarity(roleOf(id),fine);return q==='natural'?2:q==='accomplished'?1:0}
+ for(const fam of ['GK','DF','MF','FW'] as const){
+  const idx=slots.map((s,i)=>s.family===fam?i:-1).filter(i=>i>=0);if(idx.length<2)continue
+  const men=idx.map(i=>xi[i]!);if(!men.some(m=>roleOf(m)))continue
+  let best=men,bestScore=-1
+  const perm=(a:string[],k:number)=>{if(k===a.length){const sc=a.reduce((t,m,j)=>t+score(m,slots[idx[j]!]!.fine),0);if(sc>bestScore){bestScore=sc;best=[...a]}return}for(let j=k;j<a.length;j++){[a[k],a[j]]=[a[j]!,a[k]!];perm(a,k+1);[a[k],a[j]]=[a[j]!,a[k]!]}}
+  perm([...men],0)
+  idx.forEach((i,j)=>{out[i]=best[j]!})
+ }
+ return out
 }

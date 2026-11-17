@@ -6,7 +6,10 @@ import {Theatre,type TheatreSound} from '@/components/highlights/Theatre'
 import {useRumbleSound} from '@/components/clubs/rumble/shared'
 import {KitChip,Portal} from './Sheet'
 import {MatchBoard} from './MatchBoard'
+import {useMatchAudio} from './useMatchAudio'
 import {familyLabel} from '@/lib/clubs/display-name'
+import {ratingLine,reelRatings} from '@/lib/legends/match-ratings'
+import {RatingChip} from './Rating'
 
 /**
  * The match, LIVE (owner, 12.10.2026: "a live experience — you don't know the result"; 13.10.2026: "at 65 and 70 only pop a
@@ -29,8 +32,12 @@ export const revealUpTo=(stage:'watch'|'break'|'ft',seg:{from:number;to:number},
 export type LiveMsg={kind:'ok'|'error';text:string}|null
 export function LiveMatch({v,busy,send,watch,setWatch,msg=null}:{v:CareerView;busy:boolean;send:Send;watch:Watch;setWatch:(w:Watch|null)=>void;/** the last action's answer — an error is shown INSIDE the live window (F03), never behind it */msg?:LiveMsg}){
  const snd=useRumbleSound(),L=v.live
- const sound:TheatreSound=n=>snd.play(n==='whistle'?'kickoff':n==='save'?'roar':n,n==='save'?.35:.6)
  const final=!L&&v.last?.id===watch.id?v.last:null
+ // 17.11.2026: a living ground — the crowd bed under the whole match, cues on every moment (useMatchAudio)
+ const cue=useMatchAudio(snd.on,!!L||!!final)
+ const sound:TheatreSound=n=>cue(n)
+ const won=final?(final.reel?.mine===0?final.goals[0]>final.goals[1]:final.reel?.mine===1?final.goals[1]>final.goals[0]:false):false
+ useEffect(()=>{if(final&&won)cue('win')},[final?.id]) // eslint-disable-line react-hooks/exhaustive-deps
  const [stage,setStage]=useState<'watch'|'break'|'ft'>('watch'),[asked,setAsked]=useState<number|null>(null)
  // the picture's minute, for the Tactics button; `jump` is the minute the manager asked the touchline for — its part was already watched
  const clock=useRef(0),jump=useRef<number|null>(null),undo=useRef<number|null>(null),[shown,setShown]=useState(0)
@@ -121,9 +128,28 @@ function FullTime({v,r,colours,onClose}:{v:CareerView;r:ResultView;colours:NonNu
  return <section className="lgm-ft" aria-label="Full time">
   <p className="lgm-ft-score"><span><KitChip c={home?colours[home]:undefined} size={28}/>{r.home}</span><b>{r.goals[0]} – {r.goals[1]}</b><span>{r.away}<KitChip c={away?colours[away]:undefined} size={28}/></span></p>
   {r.pens?<p className="lgm-fine">{r.pens[0]}–{r.pens[1]} on penalties</p>:null}
+  {r.reel?<Potm reel={r.reel} mineSide={r.reel.mine}/>:null}
   {goals.length?<ol className="lgm-ft-goals">{goals.map((g,i)=><li key={i} data-side={g.side??undefined} data-mine={g.mine||undefined}><b>{g.minute}′</b> {g.text.replace(/^Goal — /,'')}</li>)}</ol>:null}
   {others.length?<div className="lgm-ft-others"><p className="lgm-kicker">Round {r.round} · elsewhere</p><ul>{others.map(o=><li key={o.id}><span>{o.home}</span><b>{o.goals[0]}–{o.goals[1]}</b><span>{o.away}</span></li>)}</ul></div>:null}
   {place&&v.phase!=='season-end'?<p className="lgm-ft-place">{v.clubName} are <b>{place}{place===1?'st':place===2?'nd':place===3?'rd':'th'}</b> of {v.table.length}.</p>:null}
+  {r.reel?<MatchBoard reel={r.reel} final/>:null}
   <p className="lgm-actions"><button type="button" className="lgm-go min-h-tap" onClick={onClose} data-testid="legends-ft-continue">Continue</button></p>
+ </section>
+}
+
+/** PLAYER OF THE MATCH (17.11.2026): the night's best man, on a spotlight card — his rating, his line, his club's colours */
+function Potm({reel,mineSide}:{reel:NonNullable<ResultView['reel']>;mineSide:0|1|null}){
+ const rt=useMemo(()=>reelRatings(reel,{final:true}),[reel]),m=rt.men.find(x=>x.id===rt.potm)
+ if(!m)return null
+ const team=reel.teams[m.side],man=team.lineup.find(p=>p.id===m.id),ours=mineSide!==null&&m.side===mineSide
+ const top=rt.men.filter(x=>mineSide!==null&&x.side===mineSide&&x.id!==m.id).slice(0,3)
+ return <section className="lgm-potm" data-ours={ours||undefined} style={{'--potm-a':team.kit.shirt,'--potm-b':team.kit.second??team.kit.shorts} as React.CSSProperties} aria-label="Player of the match" data-testid="legends-potm">
+  <p className="lgm-potm-k"><span aria-hidden="true">★</span> Player of the match</p>
+  <div className="lgm-potm-row">
+   <span className="lgm-potm-no" aria-hidden="true">{man?.no??''}</span>
+   <div className="lgm-potm-who"><b>{man?.name??''}</b><small>{team.name} · {man?.pos}{ratingLine(m)?` · ${ratingLine(m)}`:''}</small></div>
+   <RatingChip r={m.rating} size="lg" potm/>
+  </div>
+  {top.length?<ul className="lgm-potm-also" aria-label="Your best men tonight">{top.map(x=>{const p=reel.teams[x.side].lineup.find(q=>q.id===x.id);return <li key={x.id}><span>{p?.name}</span><RatingChip r={x.rating} size="sm"/></li>})}</ul>:null}
  </section>
 }

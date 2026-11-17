@@ -129,13 +129,16 @@ export async function retireBlob(by: string): Promise<void> {
   await d.write(BLOB_RETIRED, JSON.stringify({ at: new Date().toISOString(), by }), null)
   migG.fanBlobRetired = { v: true, at: Date.now() }; migG.fanMigration = undefined
 }
+/** the longest one store round-trip may take before it is abandoned */
+export const STORE_TIMEOUT_MS = 15_000
 const randomTag = () => `"${globalThis.crypto?.randomUUID?.() ?? `${Date.now()}-${Math.random().toString(36).slice(2)}`}"`
 function supabaseStore(): DurableStore {
   // FAN_LIFE_STORE_URL: the browser sweeps point the store at a local PostgREST stand-in (scripts/qa/files-rest-shim.mjs).
   const base = () => `${(process.env.FAN_LIFE_STORE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL!).replace(/\/$/, '')}/rest/v1/${SB_TABLE}`
   const headers = (extra: Record<string, string> = {}) => { const k = process.env.SUPABASE_SERVICE_ROLE_KEY!; return { apikey: k, Authorization: `Bearer ${k}`, 'Content-Type': 'application/json', ...extra } }
   async function call(url: string, init: RequestInit = {}): Promise<unknown> {
-    const r = await fetch(url, { ...init, headers: { ...headers(), ...(init.headers as Record<string, string> | undefined) }, cache: 'no-store' })
+    // a store call that never answers must not hold a career's queue forever (Legends window freeze, 17.11.2026): 15 s, then it fails as itself
+    const r = await fetch(url, { ...init, headers: { ...headers(), ...(init.headers as Record<string, string> | undefined) }, cache: 'no-store', signal: init.signal ?? AbortSignal.timeout(STORE_TIMEOUT_MS) })
     const text = await r.text()
     if (!r.ok) {
       if (r.status === 404 || /PGRST205|42P01|does not exist|Could not find the table/i.test(text)) throw new TableMissing(`Supabase table ${SB_TABLE} is missing — run migration 20261012090000.`)

@@ -8,14 +8,15 @@ import {Portal} from './Sheet'
  * wait under 450ms shows nothing at all — a flash of a loader is worse than none.
  */
 export function Thinking({active,label='Thinking'}:{active:boolean;label?:string}){
- const [on,setOn]=useState(false),[pct,setPct]=useState(0)
+ const [on,setOn]=useState(false),[pct,setPct]=useState(0),[long,setLong]=useState(false)
  useEffect(()=>{
   if(!active){
    if(!on)return
    setPct(100);const t=window.setTimeout(()=>{setOn(false);setPct(0)},260);return()=>window.clearTimeout(t)
   }
-  const show=window.setTimeout(()=>{setOn(true);setPct(8)},450)
-  return()=>window.clearTimeout(show)
+  setLong(false)
+  const show=window.setTimeout(()=>{setOn(true);setPct(8)},450),slow=window.setTimeout(()=>setLong(true),8000)
+  return()=>{window.clearTimeout(show);window.clearTimeout(slow)}
  // eslint-disable-next-line react-hooks/exhaustive-deps
  },[active])
  useEffect(()=>{
@@ -25,6 +26,6 @@ export function Thinking({active,label='Thinking'}:{active:boolean;label?:string
  },[on,active])
  if(!on)return null
  return <Portal><div className="lgm-think z-[70]" role="status" aria-live="polite" aria-label={`${label} ${pct}%`}>
-  <div className="lgm-think-card"><p className="lgm-kicker">{label}…</p><b className="lgm-think-n" dir="ltr">{pct}%</b><span className="lgm-think-bar" aria-hidden="true"><i style={{inlineSize:`${pct}%`}}/></span></div>
+  <div className="lgm-think-card"><p className="lgm-kicker">{long?'Still on it':label}…</p><b className="lgm-think-n" dir="ltr">{pct}%</b><span className="lgm-think-bar" aria-hidden="true"><i style={{inlineSize:`${pct}%`}}/></span></div>
  </div></Portal>
 }

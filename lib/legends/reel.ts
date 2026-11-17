@@ -91,5 +91,6 @@ function reelOf(c:Career,f:Played,kits:Record<string,ClubKit|undefined>,opts:{ch
  for(const t of [h,a])for(const p of t.lineup)if(p.pos==='GK')p.kit=t.keeper
  const moments=momentsOf(res.events,seed)
  const mine=f.home===c.clubId?0:f.away===c.clubId?1:null
- return {id:`legends-${f.id}`,seed,teams:[h,a],moments,final:res.goals,pens:res.pens,mine,...(opts.champion?{champion:true}:{})}
+ const subs=res.events.filter(e=>e.kind==='sub'&&e.side!==null&&e.player&&e.other).map(e=>({minute:e.minute,side:e.side as 0|1,in:e.player!,out:e.other!}))
+ return {id:`legends-${f.id}`,seed,teams:[h,a],moments,final:res.goals,pens:res.pens,mine,subs,...(opts.champion?{champion:true}:{})}
 }

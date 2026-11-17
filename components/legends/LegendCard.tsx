@@ -13,11 +13,14 @@ export const posName=(p:string)=>POS[p]??p
 export const years=(c:{from:number|null;to:number|null})=>c.from&&c.to?(c.from===c.to?`${c.from}`:`${c.from}–${c.to}`):'Years not recorded'
 export const money=(m:number)=>`€${Number.isInteger(m)?m:m.toFixed(1)}M`
 const TIER:Record<string,string>={premium:'Premium',mid:'Squad',budget:'Bargain'}
+/** exact positions (17.11.2026) — the role a source states, in the words a fan uses */
+export const ROLE_LABEL:Record<string,string>={GK:'Goalkeeper',CB:'Centre-back',FB:'Full-back',DM:'Holding midfielder',CM:'Central midfielder',AM:'Attacking midfielder',W:'Winger',ST:'Striker'}
+export const ROLE_SHORT:Record<string,string>={GK:'GK',CB:'CB',FB:'FB',DM:'DM',CM:'CM',AM:'AM',W:'W',ST:'ST'}
 export function LegendCard({c,tier,locked,children,compact=false,shirt=false}:{c:CardView;tier?:string;locked?:string|null;children?:ReactNode;compact?:boolean;/** draw his era's shirt beside the name (the career's documented kits) */shirt?:boolean}){
  return <article className="lgm-card" data-pos={c.pos} data-tier={tier} data-locked={locked?'true':undefined} data-compact={compact||undefined} data-shirt={shirt||undefined}>
   {tier?<p className="lgm-card-tier">{TIER[tier]??tier}</p>:null}
   {shirt?<LegendShirt man={c} className="lgm-card-shirt"/>:null}
-  <header><p className="lgm-card-pos">{posName(c.pos)}{c.alt?.length?<small> · also {c.alt.join(', ')}</small>:null}</p><h3>{c.name}</h3><p className="lgm-card-years">{years(c)}</p></header>
+  <header><p className="lgm-card-pos">{c.role?ROLE_LABEL[c.role]:posName(c.pos)}{c.alt?.length?<small> · also {c.alt.join(', ')}</small>:null}</p><h3>{c.name}</h3><p className="lgm-card-years">{years(c)}</p></header>
   <div className="lgm-card-rate"><Stars value={c.stars} size={compact?'sm':'md'}/><b className="lgm-price">{money(c.price)}</b></div>
   {compact?null:<dl className="lgm-attrs">{(ROLE_ATTRS[c.pos]??[]).map(k=><div key={k}><dt>{ATTR_LABEL[k as AttrKey]}</dt><dd><Stars value={c.attrs[k]??c.stars} size="sm"/></dd></div>)}</dl>}
   {locked?<p className="lgm-card-lock" role="note">{locked}</p>:null}
