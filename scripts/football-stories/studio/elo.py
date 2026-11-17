@@ -37,11 +37,14 @@ OWN = {'hapoel-tel-aviv': 'Hapoel Tel Aviv', 'hapoel-petah-tikva': 'Hapoel Petah
 
 
 def _get(path: str, tries: int = 3) -> list[dict]:
+    req = urllib.request.Request(f'{API}/{path}', headers={'User-Agent': 'FanLife-FootballStories/1.0 (+https://fanlife.dubelteam.com)'})
     for k in range(tries):
         try:
-            with urllib.request.urlopen(f'{API}/{path}', timeout=30) as r:
-                return list(csv.DictReader(io.StringIO(r.read().decode('utf-8'))))
-        except Exception:  # noqa: BLE001 — a busy free API: wait and try again, then give up on this name
+            with urllib.request.urlopen(req, timeout=30) as r:
+                return list(csv.DictReader(io.StringIO(r.read().decode('utf-8-sig'))))
+        except Exception as e:  # noqa: BLE001 — a busy free API: wait and try again, then give up on this name
+            if k == tries - 1:
+                print(f'elo: {path}: {type(e).__name__}: {e}', flush=True)
             time.sleep(2 + 3 * k)
     return []
 

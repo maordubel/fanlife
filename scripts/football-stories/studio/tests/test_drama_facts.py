@@ -63,3 +63,27 @@ class PlaceBook(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class Odds(unittest.TestCase):
+    def test_the_underdog_line_is_the_claims_own_number(self):
+        from studio import elo as E
+        self.assertAlmostEqual(E.chance(1500, 1500, None), 0.5)
+        self.assertLess(E.chance(1500, 1800, False), 0.15)
+        L = ledger()
+        orig = E.lookup
+        E.lookup = lambda: {'matches': {'hapoel-tel-aviv': {'2009-12-01': [1450, 1700]}}}
+        try:
+            D.attach(L)
+        finally:
+            E.lookup = orig
+        ctx = next(c for c in L['claims'] if c['id'] == 'b:context')
+        self.assertIn('one_in', ctx['fact']['elo'])
+        self.assertTrue(any('clubelo' in s['url'] for s in ctx['sources']))
+        b = H.Book(L, 'season')
+        b.story = {}
+        pen = H.Pen('chronicler', b, 'x')
+        line, cid = H.context_line(pen, 'b')
+        self.assertIn('one chance in', line)
+        from studio.script import fact_guard
+        self.assertEqual(fact_guard(line, L, ['b', cid]), [])
