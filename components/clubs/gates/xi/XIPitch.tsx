@@ -1,4 +1,5 @@
 'use client'
+import type {CSSProperties} from 'react'
 import {FitBox} from '@/components/stage/FitBox'
 import {dropZone,useDragSource} from '@/components/stage/useDrag'
 import {ClubShirt} from '@/components/clubs/stage/ClubShirt'
@@ -15,8 +16,6 @@ export const PITCH_RATIO=0.75
 /** formation y (14 = the striker's line … 94 = the keeper) → where the token's CENTRE sits, kept inside the touchlines */
 export const topOf=(y:number)=>11+(y-14)*(77/80)
 
-/** The pitch on a phone is a touch wider (100 × 113.6): it fills the screen's width and leaves the dock room for two rows of shirts. */
-export const PHONE_RATIO=0.88
 /** The markings in true proportion for a pitch `h` tall: boxes and circles keep their size, only the halfway line and the far box move. */
 function Lines({h,className}:{h:number;className?:string}){
  const mid=h/2
@@ -45,7 +44,7 @@ function Token({where,role,x,y,plateOf,xi,byId,wardrobe,side,active,contentLocal
   data-slot={where} data-active={active===where} aria-pressed={active===where} aria-label={label(role,p?.name??null)} onClick={()=>onSelect(where)} data-player-id={p?.id}>
   {p
    ?<><span className={css.shirt} key={p.id}><ClubShirt player={p} wardrobe={wardrobe} side={side} keeper={role==='GK'}/>{xi.captain===p.id&&where!==TWELFTH&&<span className={css.cap} aria-hidden="true">C</span>}</span>
-     <span className={css.plate} lang={contentLocale} dir="auto">{(plateOf??shortName)(p.name)}</span></>
+     {(()=>{const n=(plateOf??shortName)(p.name);return <span className={css.plate} lang={contentLocale} dir="auto" style={{'--n':Math.max(6,n.length)} as CSSProperties}>{n}</span>})()}</>
    :<><span className={css.empty} aria-hidden="true">{chair?'12':role}</span>{chair&&<span className={css.chairTag}>{chairTag}</span>}</>}
  </button>
 }
@@ -55,7 +54,9 @@ export function XIPitch(props:PitchProps){
  const {xi,kind,hud}=props
  return <FitBox ratio={PITCH_RATIO} always={false}>
   <div className={css.pitch} data-kind={kind} data-testid="xi-pitch">
-   <Lines h={133} className={css.linesTall}/><Lines h={100/PHONE_RATIO} className={css.linesWide}/>
+   <Lines h={133} className={css.linesTall}/>
+   {/* phone: the markings in CSS, true to size at any height, so the field fills the screen instead of floating in it (17.11.2026) */}
+   <span className={css.marks} aria-hidden="true"><i data-m="half"/><i data-m="circle"/><i data-m="centre"/><i data-m="box-top"/><i data-m="six-top"/><i data-m="spot-top"/><i data-m="box-bottom"/><i data-m="six-bottom"/><i data-m="spot-bottom"/></span>
    <span className={css.hudCount} data-done={hud.done} role="status">{hud.count}</span>
    <button type="button" className={`min-h-tap ${css.hudFormation}`} onClick={hud.onFormation} aria-label={hud.formationLabel}>{hud.formation} ▾</button>
    {FORMATIONS[xi.formation]!.slots.map(s=><Token key={s.slotId} where={s.slotId} role={s.role} x={s.x} y={s.y} {...props}/>)}

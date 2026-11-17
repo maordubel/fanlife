@@ -45,12 +45,29 @@ describe('the XI board on a phone',()=>{
   expect(board).toContain('data-testid="xi-era"')
   expect(board).toMatch(/\[fitOnly,setFitOnly\]=useState\(true\)/)
  })
- it('fills the width with a wider field and a fixed tray of four shirts a row, and never scrolls sideways',()=>{
-  expect(css).toContain('--fit-r: .88 !important')
+ it('fills the screen with the field and a fixed tray of four shirts a row, and never scrolls sideways',()=>{
+  expect(css).toContain('height: min(100cqh, calc(100cqw / .66))')
   expect(css).toContain('grid-template-columns: repeat(4, minmax(0, 1fr))')
   expect(css).not.toMatch(/overflow-x:\s*(auto|scroll)/)
  })
  it('every new copy key exists in both locales',()=>{
   for(const l of ['en','he']){const m=JSON.parse(readFileSync(join(process.cwd(),`messages/games/gates/xi.${l}.json`),'utf8'));expect(m['xi.undoShort'],l).toBeTruthy();expect(m['xi.era'],l).toBeTruthy()}
+ })
+})
+
+describe('17.11.2026 — nothing on top of anything',()=>{
+ it('plates say "G. Vazos", not "GIANNIS VA…"',async()=>{
+  const {compactPlate}=await import('@/components/clubs/gates/xi/ClubXI')
+  expect(compactPlate('Giannis Vazos')).toBe('G. Vazos')
+  expect(compactPlate('Torosidis')).toBe('Torosidis')
+  expect(compactPlate('El Kaabi')).toBe('El Kaabi')
+  expect(compactPlate('A. Nikopolidis')).toBe('A. Nikopolidis')
+ })
+ it('on a phone the bar is a grid, the pitch carries no buttons and the page is one screen',()=>{
+  const css=readFileSync(join(process.cwd(),'components/clubs/gates/xi/xi.module.css'),'utf8')
+  const games=readFileSync(join(process.cwd(),'app/weekly/games-a.css'),'utf8')
+  expect(css).toContain("grid-template-areas: 'tabs tabs form form' 'meter t1 t2 t3'")
+  expect(css).toContain('.linesTall, .hudCount, .hudFormation { display: none; }')
+  expect(games).toContain(".mag-game[data-gate='xi'] { display: flex; flex-direction: column; block-size: 100dvh;")
  })
 })

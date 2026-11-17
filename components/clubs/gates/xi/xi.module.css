@@ -157,76 +157,119 @@
 /* 12.11.2026 — a name on the team sheet opens the man in the archive */
 .archiveName { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 
-/* ------------------------------------------------------------- 16.11.2026 · the phone, put in order
- * Owner: improve the best-XI page, mainly on mobile — graphic, visual and ease of use.
- * The pitch fills the width (a touch wider, 0.88, markings redrawn in true proportion), the tools say what they do,
- * the eleven era chips fold into one Era picker so the dock is ONE line of tools over a 4-up sticker grid that scrolls
- * inside itself (no page scroll, no sideways scroll), and every shirt is the measured drawing, shirt only.
+/* ------------------------------------------------------------- the phone, as an app screen (16–17.11.2026)
+ * Owner, 17.11: "buttons sit on each other, names hidden, the screen floats". On a phone:
+ * the screen is exactly one viewport and never bounces; the bar is two clean rows (tabs + formation, then the meter + three
+ * square tools), so nothing sits on the pitch; plates may run wider than the shirt and say "G. Vazos", never "GIANNIS VA…";
+ * the tray is one line of tools over a 4-up grid whose names wrap to two lines.
  */
-.linesWide { display: none; }
+.marks, .barFormation, .meter { display: none; }
+/* the phone's markings: one unit = 0.94cqw (the SVG's 100-wide field inside a 3% margin) */
+.marks { position: absolute; inset: 3%; pointer-events: none; --u: .94cqw; --line: color-mix(in srgb, var(--mag-white) 62%, transparent); }
+.marks i { position: absolute; display: block; border: 2px solid var(--line); }
+.marks [data-m='half'] { inset-inline: 0; inset-block-start: 50%; border-width: 2px 0 0; }
+.marks [data-m='circle'] { left: 50%; top: 50%; width: calc(20 * var(--u)); aspect-ratio: 1; border-radius: 50%; translate: -50% -50%; }
+.marks [data-m='centre'], .marks [data-m^='spot'] { left: 50%; width: 5px; height: 5px; border: 0; border-radius: 50%; background: var(--line); translate: -50% -50%; }
+.marks [data-m='centre'] { top: 50%; }
+.marks [data-m^='box'] { left: 22%; width: 56%; height: calc(20 * var(--u)); }
+.marks [data-m^='six'] { left: 36%; width: 28%; height: calc(7.5 * var(--u)); }
+.marks [data-m='box-top'], .marks [data-m='six-top'] { top: 0; border-block-start: 0; }
+.marks [data-m='box-bottom'], .marks [data-m='six-bottom'] { bottom: 0; border-block-end: 0; }
+.marks [data-m='spot-top'] { top: calc(15 * var(--u)); }
+.marks [data-m='spot-bottom'] { bottom: calc(15 * var(--u)); translate: -50% 50%; }
 .eraPick { position: relative; display: flex; flex: 0 1 auto; min-width: 0; }
-.eraPick select { appearance: none; -webkit-appearance: none; min-height: 44px; inline-size: 100%; min-width: 0; padding: 0 26px 0 10px; border: 2px solid var(--xi-ink); border-radius: 0; background: var(--mag-paper); color: var(--xi-ink); font-family: var(--mag-body); font-size: 12px; font-weight: 800; cursor: pointer; text-overflow: ellipsis; }
+.eraPick select { appearance: none; -webkit-appearance: none; min-height: 44px; inline-size: 100%; min-width: 0; padding: 0 24px 0 9px; border: 2px solid var(--xi-ink); border-radius: 0; background: var(--mag-paper); color: var(--xi-ink); font-family: var(--mag-body); font-size: 16px; font-weight: 800; cursor: pointer; text-overflow: ellipsis; }
 .eraPick::after { content: '▾'; position: absolute; inset-inline-end: 8px; inset-block-start: 50%; translate: 0 -50%; pointer-events: none; font-size: 12px; color: var(--xi-ink); }
 .eraPick[data-on='true'] select { background: var(--xi-ink); color: var(--mag-white); }
 .eraPick[data-on='true']::after { color: var(--mag-white); }
-.fullBtn { flex: none; display: flex; align-items: center; padding: 0 10px; border: 2px solid var(--xi-ink); background: var(--mag-paper); color: var(--xi-ink); font-family: var(--mag-body); font-size: 12px; font-weight: 800; cursor: pointer; }
+.fullBtn { flex: none; display: flex; align-items: center; padding: 0 10px; border: 2px solid var(--xi-ink); background: var(--mag-paper); color: var(--xi-ink); font-family: var(--mag-body); font-size: 12px; font-weight: 800; cursor: pointer; white-space: nowrap; }
 .iconTool { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; line-height: 1; }
 .iconTool b { font-weight: 400; font-size: 19px; line-height: 1; }
 .iconTool small { font-family: var(--mag-mono); font-size: 8.5px; letter-spacing: .4px; text-transform: uppercase; white-space: nowrap; }
 [lang='he'] .iconTool small { font-family: var(--mag-body); font-weight: 800; font-size: 10px; letter-spacing: 0; }
 
 @media (max-width: 900px) {
-  .stage { gap: 8px; padding-block-start: 8px; }
-  .main { gap: 8px; }
-  /* the field: full width, markings in true proportion */
-  .main > :global(.fitbox) { --fit-r: .88 !important; place-items: start center; }
-  .linesTall { display: none; }
-  .linesWide { display: block; }
+  /* one screen, no float */
+  .stage { height: auto; flex: 1 1 0; min-height: 0; gap: 6px; padding-block-start: 6px; }
+  .main { gap: 6px; }
+
+  /* the bar: row 1 tabs + formation, row 2 meter + tools — a grid, so nothing can overlap */
+  .bar { display: grid; grid-template-columns: minmax(0, 1fr) 46px 46px 46px; grid-template-areas: 'tabs tabs form form' 'meter t1 t2 t3'; gap: 6px; }
+  .bar > .tabs { grid-area: tabs; display: grid; grid-template-columns: 1fr 1fr; }
+  .tab { min-height: 44px; padding: 2px 4px; font-size: clamp(13px, 4vw, 16px); white-space: nowrap; }
+  .tab small { display: none; }
+  .barFormation { grid-area: form; display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 6px; border: 3px solid var(--xi-ink); background: var(--mag-night); color: var(--mag-lamp); font-family: var(--mag-goal); font-size: 16px; font-variant-numeric: tabular-nums; cursor: pointer; box-shadow: 2px 2px 0 var(--xi-ink); white-space: nowrap; }
+  .barFormation:active { transform: translate(2px, 2px); box-shadow: none; }
+  .meter { grid-area: meter; display: flex; align-items: center; gap: 6px; min-width: 0; padding: 0 6px; border: 3px solid var(--xi-ink); background: var(--mag-card); }
+  .meterTarget { flex: none; padding: 2px 6px; background: var(--mag-vermilion); color: var(--mag-white); font-family: var(--mag-display); font-size: 13px; line-height: 1.15; text-transform: uppercase; }
+  .pips { flex: 1 1 0; min-width: 0; display: grid; grid-template-columns: repeat(11, minmax(0, 1fr)); gap: 2px; }
+  .pips i { display: block; block-size: 10px; background: color-mix(in srgb, var(--xi-ink) 16%, transparent); }
+  .pips i[data-on='true'] { background: var(--xi-lit); box-shadow: inset 0 0 0 1px var(--xi-ink); }
+  .meterCount { flex: none; font-family: var(--mag-goal); font-size: 15px; font-variant-numeric: tabular-nums; color: var(--xi-ink); }
+  .bar > .tool:nth-of-type(2) { grid-area: t1; }
+  .bar > .tool:nth-of-type(3) { grid-area: t2; }
+  .bar > .tool:nth-of-type(4) { grid-area: t3; }
+  .tool.iconTool { min-width: 0; inline-size: 46px; min-height: 44px; padding: 0; box-shadow: 2px 2px 0 var(--xi-ink); }
+  .iconTool small { display: none; }
+  .note { padding: 4px 8px; font-size: 11px; }
+
+  /* the field: full width, nothing on top of it */
+  /* the field takes all the height the bar and the tray leave — between 0.66 (tall) and square — so it never floats */
+  .linesTall, .hudCount, .hudFormation { display: none; }
+  .marks { display: block; }
   .pitch { box-shadow: 4px 4px 0 var(--xi-ink); }
-  .token { --w: max(44px, 19.5cqw); }
-  .shirt { width: 78%; max-width: 70px; }
-  .empty { width: 54%; max-width: 56px; font-size: clamp(11px, 3.8cqw, 15px); background: color-mix(in srgb, var(--mag-white) 10%, transparent); }
+  .token { --w: max(44px, 18.5cqw); }
+  .shirt { width: 80%; max-width: 68px; }
+  .empty { width: 58%; max-width: 56px; font-size: clamp(11px, 3.8cqw, 15px); background: color-mix(in srgb, var(--mag-white) 10%, transparent); }
   .token[data-active='true'] .empty { animation: xiPulse 1.4s ease-in-out infinite; }
-  .plate { max-width: 96%; padding: 2px 3px 1px; border-width: 1.5px; font-size: clamp(9px, 3.05cqw, 13px); letter-spacing: -.1px; text-overflow: clip; }
-  .hudCount { min-height: 32px; font-size: 15px; }
-  .hudFormation { min-height: 40px; font-size: 15px; }
-  /* the bar: two tabs and three tools that say their name */
-  .bar { gap: 6px; }
-  .tab { min-height: 46px; font-size: 16px; }
-  .tool.iconTool { min-width: 48px; min-height: 46px; padding: 0 4px; box-shadow: 2px 2px 0 var(--xi-ink); }
-  /* the dock: a fixed tray — one line of tools, then the shirts scroll inside it */
-  .dock { block-size: 36dvh; max-block-size: none; min-block-size: 230px; overflow: hidden; gap: 6px; padding-block: 8px calc(6px + env(safe-area-inset-bottom)); }
+  /* a plate never wider than the gap to the next man (4 across = 19cqw apart): long names shrink to fit, then wrap on a space */
+  .plate { max-width: none; inline-size: max-content; max-inline-size: 18.5cqw; padding: 1px 2px; border-width: 1.5px; font-size: max(7.5px, min(12.5px, 3.1cqw, calc(17cqw * 1.35 / var(--n, 8)))); letter-spacing: -.2px; white-space: normal; text-align: center; overflow: hidden; text-overflow: clip; line-height: 1.05; }
+  .chair { --w: max(15cqw, 44px); inset-block-end: 2%; }
+
+  /* the tray: fixed, one line of tools, shirts scroll inside it */
+  .dock { block-size: 34dvh; max-block-size: none; min-block-size: 210px; overflow: hidden; gap: 0; padding-block: 6px calc(4px + env(safe-area-inset-bottom)); }
   .dock:has(.strip), .dock:has(.hint) { block-size: auto; min-block-size: 0; }
-  .dockHead :global(.wk-logo) { font-size: 18px; }
-  .dockTarget { font-size: 13px; padding: 2px 8px; }
+  .dockHead { display: none; }
   .dock :global([data-pick-rail]) { flex: 1 1 0; min-block-size: 0; display: flex; flex-direction: column; }
   .dock :global([data-pick-rail]) > div:first-child { flex: none; flex-wrap: nowrap; gap: 6px; }
   .dock :global([data-pick-rail]) > div:first-child > div { flex: 0 0 auto; flex-basis: auto; order: 0; flex-wrap: nowrap; }
-  .dock :global([data-pick-rail]) > div:first-child > div button { min-width: 0; padding-inline: 10px; }
-  .dock :global([data-pick-rail]) > div:first-child > input { flex: 1 1 0; min-width: 0; }
+  .dock :global([data-pick-rail]) > div:first-child > div button { min-width: 0; padding-inline: 9px; white-space: nowrap; }
+  .dock :global([data-pick-rail]) > div:first-child > input { flex: 1 1 0; min-width: 0; font-size: 16px; }
   .eraPick { flex: 1 1 0; }
-  .dock :global([data-pick-rail]) > div:first-child > button:last-child { flex: none; inline-size: 40px; min-inline-size: 44px; }
-  .dock :global([data-pick-rail]) ul { flex: 1 1 0; min-block-size: 0; max-block-size: none; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 7px; margin-block-start: 6px; padding: 2px 3px 8px 1px; align-content: start; }
-  .dock :global([data-pick-rail]) li > button { inline-size: 100%; padding: 3px 2px 2px; box-shadow: 2px 2px 0 var(--xi-ink); }
+  .dock :global([data-pick-rail]) > div:first-child > button:last-child { flex: none; min-inline-size: 44px; }
+  .dock :global([data-pick-rail]) ul { flex: 1 1 0; min-block-size: 0; max-block-size: none; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 7px; margin-block-start: 6px; padding: 2px 3px 8px 1px; align-content: start; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+  .dock :global([data-pick-rail]) li > button { inline-size: 100%; block-size: 100%; padding: 3px 2px 2px; box-shadow: 2px 2px 0 var(--xi-ink); }
   .dock :global([data-pick-rail]) li > button > span:first-child { inline-size: 100%; display: grid; place-items: center; }
-  .dock :global([data-pick-rail]) li > button > span:first-child > span { inline-size: min(100%, 64px) !important; block-size: auto !important; aspect-ratio: 336 / 298; }
-  .dock :global([data-pick-rail]) li > button > span:nth-child(2) { font-size: 11px; padding-inline: 2px; }
+  .dock :global([data-pick-rail]) li > button > span:first-child > span { inline-size: min(100%, 60px) !important; block-size: auto !important; aspect-ratio: 336 / 298; }
+  .dock :global([data-pick-rail]) li > button > span:nth-child(2) { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; white-space: normal; overflow: hidden; text-overflow: clip; min-block-size: 2.2em; font-size: 9.5px; letter-spacing: -.15px; overflow-wrap: normal; word-break: normal; line-height: 1.1; padding: 1px 2px; text-align: center; }
   .dock :global([data-pick-rail]) li > button > span:nth-child(3) { block-size: 12px; }
   .dock :global([data-pick-rail]) li > button > span:nth-child(3) span { color: var(--xi-ink); font-size: 9px; }
-  /* the poster on a phone: four men a row get the width a surname needs */
+  .strip { flex-wrap: wrap; }
+  .strip h2 { flex-basis: 100%; font-size: 19px; }
+
+  /* the full list on a phone: a bigger shirt, the whole name on whole words, the fit tag under it */
+  .row { grid-template-columns: 54px minmax(0, 1fr); column-gap: 10px; row-gap: 2px; padding: 6px 8px 6px 6px; }
+  .rowShirt { grid-row: 1 / span 2; inline-size: 54px; block-size: 48px; }
+  .rowName { overflow-wrap: normal; word-break: normal; font-size: 15px; line-height: 1.1; }
+  .rowFit { grid-column: 2; justify-self: start; font-size: 10px; text-align: start; }
+  .rowFit:empty { display: none; }
+  .filters input, .filters select { font-size: 16px; }
+  /* the poster on a phone: four men a row with room for the name */
   .posterRows { gap: 10px; padding: 12px 6px; }
   .posterRow { gap: 4px; }
   .posterMan { width: min(82px, 23%); }
   .posterMan .shirt { width: 52px; max-width: 52px; }
-  .posterMan .plate { font-size: 10px; max-width: 100%; padding-inline: 3px; text-overflow: clip; }
-  .strip { flex-wrap: wrap; }
-  .strip h2 { flex-basis: 100%; font-size: 19px; }
+  .posterMan .plate { font-size: 10px; max-inline-size: 100%; padding-inline: 3px; white-space: normal; text-align: center; }
 }
-@media (max-width: 380px) {
-  .tab { font-size: 14px; } .tab small { font-size: 8.5px; }
+@media (max-width: 767px) {
+  .main > :global(.fitbox) > :global(.fitbox-in) { width: min(100cqw, 100cqh); height: min(100cqh, calc(100cqw / .66)); }
+}
+@media (max-width: 370px) {
   .dock :global([data-pick-rail]) ul { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .fullBtn { padding-inline: 7px; font-size: 11px; }
-  .iconTool small { font-size: 7.5px; }
+  .bar { grid-template-columns: minmax(0, 1fr) 44px 44px 44px; gap: 5px; }
+  .tool.iconTool { inline-size: 44px; }
 }
-@media (max-height: 700px) and (max-width: 900px) { .dock { min-block-size: 200px; } }
+@media (max-width: 900px) and (max-height: 700px) { .dock { min-block-size: 180px; } }
 @media (prefers-reduced-motion: reduce) { .token[data-active='true'] .empty { animation: none; } }
+.token[data-active='true'] .plate { margin-block-start: 3px; }
