@@ -1,0 +1,65 @@
+/* THE BUYER'S ORDER (17.11.2026) — The Weekly: a plate, a press, a stamp. Phone first; the spread splits from 901px. */
+.pol-page { padding: 16px 14px 28px; display: grid; justify-items: center; gap: 14px; }
+.pol { box-sizing: border-box; inline-size: min(100%, 560px); display: grid; gap: 18px; background: var(--mag-card); color: var(--mag-ink); border: 3px solid var(--mag-ink); box-shadow: 6px 6px 0 var(--mag-ink); padding: 20px 18px 22px; }
+.pol-body { display: grid; gap: 12px; align-content: start; min-inline-size: 0; }
+.pol-kicker { margin: 0; font: 400 13px/1 var(--mag-display); letter-spacing: .14em; text-transform: uppercase; color: var(--mag-vermilion); }
+.pol-stamp { justify-self: start; color: var(--mag-card); background: var(--mag-cyan); border: 2px solid var(--mag-ink); padding: 6px 10px; transform: rotate(-2deg); }
+.pol-h { margin: 0; font: 400 clamp(34px, 10vw, 56px)/.95 var(--mag-brand); color: var(--mag-ink); letter-spacing: -.01em; }
+.pol-h2 { margin: 10px 0 0; font: 400 15px/1 var(--mag-display); letter-spacing: .14em; text-transform: uppercase; color: var(--mag-vermilion); }
+.pol-p { margin: 0; font-size: 16px; line-height: 1.55; }
+.pol-note { margin: 0; padding: 10px 12px; border-inline-start: 6px solid var(--mag-cyan); background: var(--mag-paper); font-size: 15px; line-height: 1.5; }
+.pol-fine { margin: 0; font-size: 13px; color: var(--mag-muted); }
+.pol-back { margin: 0; }
+.pol-back a { display: inline-flex; align-items: center; font-weight: 800; color: var(--mag-ink); }
+
+/* the press: two rollers and the sheet coming through them */
+.pol-press { position: relative; block-size: 132px; overflow: hidden; background: var(--mag-night); border: 3px solid var(--mag-ink); }
+.pol-roll { position: absolute; inset-inline: -10px; block-size: 26px; inset-block-start: 22px; background: repeating-linear-gradient(90deg, var(--mag-flap-top) 0 14px, var(--mag-flap-mid) 14px 18px); border-block: 3px solid var(--mag-ink); animation: pol-roll .6s linear infinite; }
+.pol-roll-b { inset-block-start: auto; inset-block-end: 22px; animation-direction: reverse; }
+.pol-sheet { position: absolute; inset-inline: 22%; inset-block-start: -110%; block-size: 100%; background: var(--mag-paper); border: 3px solid var(--mag-ink); display: grid; align-content: center; gap: 8px; padding-inline: 14%; animation: pol-sheet 2.4s cubic-bezier(.5,0,.4,1) infinite; }
+.pol-sheet i { display: block; block-size: 8px; background: var(--mag-vermilion); }
+.pol-sheet i:nth-child(2) { background: var(--mag-ink); inline-size: 70%; }
+.pol-sheet i:nth-child(3) { background: var(--mag-cyan); inline-size: 45%; }
+@keyframes pol-roll { to { background-position: 18px 0; } }
+@keyframes pol-sheet { 0% { inset-block-start: -110%; } 70%, 100% { inset-block-start: 110%; } }
+
+.pol-steps { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 8px; }
+.pol-steps li { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 700; color: var(--mag-muted); }
+.pol-steps li span { flex: none; display: grid; place-items: center; inline-size: 28px; block-size: 28px; border-radius: 50%; border: 2px solid currentColor; font-size: 13px; font-weight: 900; }
+.pol-steps li.is-done { color: var(--mag-green); }
+.pol-steps li.is-done span { background: var(--mag-green); color: var(--mag-card); border-color: var(--mag-green); }
+.pol-steps li.is-now { color: var(--mag-ink); }
+.pol-steps li.is-now span { background: var(--mag-vermilion); color: var(--mag-card); border-color: var(--mag-ink); animation: pol-beat 1.2s ease-in-out infinite; }
+@keyframes pol-beat { 50% { transform: scale(1.12); } }
+
+/* the plate: the print itself, framed */
+.pol-plate { box-sizing: border-box; margin: 0; justify-self: center; inline-size: min(100%, 300px); padding: 10px; background: var(--mag-paper); border: 3px solid var(--mag-ink); box-shadow: 5px 5px 0 var(--mag-ink); transform: rotate(-1.5deg); }
+.pol-plate img { display: block; inline-size: 100%; block-size: auto; border: 2px solid var(--mag-ink); }
+
+.pol-go { display: flex; align-items: center; justify-content: center; gap: 10px; min-block-size: 56px; padding-inline: 20px; background: var(--mag-vermilion); color: var(--mag-card); border: 3px solid var(--mag-ink); box-shadow: 4px 4px 0 var(--mag-ink); font: 400 20px/1 var(--mag-display); letter-spacing: .04em; text-transform: uppercase; text-decoration: none; }
+.pol-go:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--mag-ink); }
+.pol-go:focus-visible, .pol-door:focus-visible { outline: 3px solid var(--mag-cyan); outline-offset: 3px; }
+
+.pol-tips { margin: 0; padding-inline-start: 22px; display: grid; gap: 6px; font-size: 15px; line-height: 1.5; }
+.pol-doors { display: grid; gap: 10px; }
+.pol-door { display: grid; gap: 4px; padding: 12px 14px; min-block-size: 44px; color: var(--mag-ink); text-decoration: none; background: var(--mag-card); border: 2px solid var(--mag-ink); border-inline-start-width: 10px; box-shadow: 3px 3px 0 var(--mag-ink); }
+.pol-door b { font-size: 17px; }
+.pol-door span { font-size: 14px; line-height: 1.45; color: var(--mag-muted); }
+.pol-door em { font-style: normal; font-weight: 900; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+.pol-door-red { border-inline-start-color: var(--mag-vermilion); } .pol-door-red em { color: var(--mag-vermilion); }
+.pol-door-navy { border-inline-start-color: var(--mag-navy); } .pol-door-navy em { color: var(--mag-navy); }
+.pol-door-cyan { border-inline-start-color: var(--mag-cyan); } .pol-door-cyan em { color: var(--mag-cyan-text); }
+
+/* the spread: the plate beside the words */
+@media (min-width: 901px) {
+  .pol-page { padding-block: 48px; }
+  .pol { inline-size: min(100%, 980px); padding: 32px; gap: 32px; }
+  .pol-making, .pol-ready, .pol-done { grid-template-columns: 340px 1fr; align-items: start; }
+  .pol-making .pol-press { block-size: 100%; min-block-size: 360px; }
+  .pol-plate { inline-size: 100%; }
+  .pol-doors { grid-template-columns: repeat(3, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pol-roll, .pol-sheet, .pol-steps li.is-now span { animation: none; }
+  .pol-sheet { inset-block-start: 10%; block-size: 80%; }
+}

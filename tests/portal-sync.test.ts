@@ -516,6 +516,7 @@ describe('פרויקט משותף עם DUBID — THE WORKER touches only what it
       '20261115200000_worker_marketing_fill_hold.sql', // 15.11.2026: social pictures v4 — live fills (random shop product, YouTube film) and campaigns held for a feature — standalone
       '20261116090000_worker_marketing_day_range.sql', // 16.11.2026: the plan runs past 60 days (spread to March) — standalone
       '20261116130000_worker_pay_orders.sql', // 16.11.2026: our own Stripe orders (docs/rules/pay-stripe-own-products.md) — standalone
+      '20261117110000_worker_pay_files.sql', // 17.11.2026: the paid file made once and stored (docs/rules/pay-stripe-own-products.md) — standalone
       '20261117090000_worker_book_orders.sql', // 17.11.2026: Broken Collective's own sales (docs/rules/book-shop-separate.md) — standalone
     ]
     for (const name of readdirSync(dir)) {
