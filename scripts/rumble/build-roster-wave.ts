@@ -9,10 +9,11 @@ import {createHash} from 'node:crypto'
  * Candidates: (1) rows of the owner's consolidated file that no archive record matches by exact name; (2) the titles of the club's Wikipedia player category
  * (research-data/rosters/<club>.json, `scripts/rumble/research-wikipedia-rosters.mjs`). A candidate is skipped when the archive already holds the man:
  * exact name/alias, or the same family name with the same first letter and consonant skeleton (a likely twin — reported, not added; rule 11: no man twice).
- * Everything added is confidence 1, years/positions only where the owner's file states them.
+ * Everything added is confidence 2 — the owner approved single-source records on 17.11.2026 (rule archive-single-source) —
+ * years/positions only where the owner's file states them.
  */
 const rev=JSON.parse(readFileSync('content/manual/rumble-review-2026-10-10.json','utf8')) as {club:string;nameEn:string;original:string;position:string;start:number|null;end:number|null;enStatus:string}[]
-const NOW='2026-10-10',BY='Maor Harel (owner, chat)'
+const NOW='2026-10-10',BY='Maor Harel (owner, chat 2026-11-17: every single-source record approved)'
 const skel=(s:string)=>s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/ph/g,'f').replace(/th/g,'t').replace(/kh|ch/g,'h').replace(/[ckq]/g,'k').replace(/[wb]/g,'v').replace(/tz|ts/g,'s').replace(/[^a-z]/g,'').replace(/[aeiouyj]/g,'').replace(/(.)\1+/g,'$1')
 const latinOf=(club:string,name:string)=>isLatinName(name)?name:isGreek(name)?greekToEnglish(name):isHebrew(name)?hebrewToEnglish(name):name
 const twinKey=(latin:string)=>{const w=latin.replace(/\(.*?\)/g,'').trim().split(/\s+/);return w.length<2?null:`${skel(w.at(-1)!)}|${skel(w[0]!)[0]??''}`}
@@ -27,7 +28,7 @@ async function main(){
   const mk=(name:string,aliases:string[],positions:string[],from:number|null,to:number|null,srcId:string,notes:string)=>{
    const pid=`${id==='hapoel-tel-aviv'?'p_wv':id+':wv'}-${createHash('sha256').update(id+'|'+name).digest('hex').slice(0,10)}`
    if(ids.has(pid)||added.has(norm(name)))return;added.add(norm(name))
-   players.push({id:pid,value:{id:pid,name,positions,fromYear:from,toYear:to,aliases},sources:[srcId],confidence:1,status:'approved',researchedAt:NOW,approvedAt:NOW,approvedBy:BY,notes})}
+   players.push({id:pid,value:{id:pid,name,positions,fromYear:from,toYear:to,aliases},sources:[srcId],confidence:2,status:'approved',researchedAt:NOW,approvedAt:NOW,approvedBy:BY,notes})}
   // 1. the owner's file
   const csv=rev.filter(r=>r.club===id);let nCsv=0
   if(csv.length){sources.push({id:'src-owner-roster-2026-10-10',title:'Owner consolidated roster and pricing review (2026-10-10)',url:'https://github.com/maordubel/fanlife/blob/main/content/manual/rumble-review-2026-10-10.json',publisher:'FAN LIFE owner review',access:'available',checkedAt:NOW})}

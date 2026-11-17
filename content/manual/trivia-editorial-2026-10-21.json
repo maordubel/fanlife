@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-10-21",
+  "reviewedAt": "2026-11-17",
   "basis": "Editorial selection over approved club facts and the separately documented primary-source heritage research. A truth/source change withdraws the overlay.",
   "clubs": {
     "hapoel-tel-aviv": [
@@ -710,17 +710,17 @@
         "questionId": "q_deca13b05ec582a7",
         "answer": [
           "Igor Savić",
-          "Duje Dujmović",
-          "Nemanja Bilbija"
+          "Stefano Surdanović",
+          "Duje Dujmović"
         ],
         "factIds": [
           "zrinjski-mostar:a-m-2025-10-23-mainz-zrinjski"
         ],
         "sourceUrl": "https://www.uefa.com/uefachampionsleague/match/2046322--",
-        "prompt": "Which three names belong in Zrinjski Mostar's starting eleven against Mainz in the UEFA Conference League on 23 Oct 2025?",
-        "explanation": "Mainz 1-0 Zrinjski Mostar, UEFA Conference League, 23 Oct 2025. Starting eleven: Goran Karačić, Ilija Mašić, Marko Vranjković, Igor Savić, Jakov Pranjić, Stefano Surdanović, Mario Ćuže, Neven Djurasek, Kerim Memija, Duje Dujmović, Nemanja Bilbija.",
         "basePrompt": "Which three names belong in Zrinjski Mostar's starting eleven against Mainz in the UEFA Conference League on 23 Oct 2025?",
-        "baseExplanation": "Mainz 1-0 Zrinjski Mostar, UEFA Conference League, 23 Oct 2025. Starting eleven: Goran Karačić, Ilija Mašić, Marko Vranjković, Igor Savić, Jakov Pranjić, Stefano Surdanović, Mario Ćuže, Neven Djurasek, Kerim Memija, Duje Dujmović, Nemanja Bilbija."
+        "baseExplanation": "Mainz 1-0 Zrinjski Mostar, UEFA Conference League, 23 Oct 2025. Starting eleven: Goran Karačić, Ilija Mašić, Marko Vranjković, Igor Savić, Jakov Pranjić, Stefano Surdanović, Mario Ćuže, Neven Djurasek, Kerim Memija, Duje Dujmović, Nemanja Bilbija.",
+        "prompt": "Which three names belong in Zrinjski Mostar's starting eleven against Mainz in the UEFA Conference League on 23 Oct 2025?",
+        "explanation": "Mainz 1-0 Zrinjski Mostar, UEFA Conference League, 23 Oct 2025. Starting eleven: Goran Karačić, Ilija Mašić, Marko Vranjković, Igor Savić, Jakov Pranjić, Stefano Surdanović, Mario Ćuže, Neven Djurasek, Kerim Memija, Duje Dujmović, Nemanja Bilbija."
       },
       {
         "questionId": "q_4a18eb32ab359aee",
@@ -1098,40 +1098,40 @@
         "baseExplanation": "Yazen Nassar: Defender · Karim Kimbidi: Midfielder · Dani Nir'on: Forward."
       },
       {
-        "questionId": "q_0222134624c92257",
+        "questionId": "q_12fd32767c8e0d64",
         "answer": [
-          "Yitzhak Vissoker",
-          "Nir Levin",
-          "Manor Hassan"
+          "Yaron Brown",
+          "Ze'ev Haimovich",
+          "Ben Malka"
         ],
         "factIds": [
-          "span:hapoel-petah-tikva:r26-itzhak-vissoker",
-          "span:hapoel-petah-tikva:r26-nir-levin",
-          "span:hapoel-petah-tikva:r26-manor-hassan"
+          "span:hapoel-petah-tikva:wv-bcd897865c",
+          "span:hapoel-petah-tikva:wv-a5d945e897",
+          "span:hapoel-petah-tikva:wv-50fd3da6c3"
         ],
-        "sourceUrl": "https://www.hpt.co.il/?ShowPlayer=ItzikVisoker",
-        "prompt": "Three chapters of Hapoel Petah Tikva history. Put these players in order of their first recorded club year, earliest first.",
-        "explanation": "Yitzhak Vissoker (1963) → Nir Levin (1984) → Manor Hassan (1994)",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Category%3AHapoel_Petah_Tikva_F.C._players",
         "basePrompt": "Three chapters of Hapoel Petah Tikva history. Put these players in order of their first recorded club year, earliest first.",
-        "baseExplanation": "Yitzhak Vissoker (1963) → Nir Levin (1984) → Manor Hassan (1994)"
+        "baseExplanation": "Yaron Brown (1974) → Ze'ev Haimovich (2004) → Ben Malka (2015)",
+        "prompt": "Three chapters of Hapoel Petah Tikva history. Put these players in order of their first recorded club year, earliest first.",
+        "explanation": "Yaron Brown (1974) → Ze'ev Haimovich (2004) → Ben Malka (2015)"
       },
       {
-        "questionId": "q_604aba1317372839",
+        "questionId": "q_2449f6e8e8c0b3d4",
         "answer": [
-          "Nahum Stelmach",
-          "Gadi Tzelniker",
-          "Eli Mahfoud"
+          "Reuven Atar",
+          "Dalibor Višković",
+          "Robi Levkovich"
         ],
         "factIds": [
-          "span:hapoel-petah-tikva:r26-nahum-stelmach",
-          "span:hapoel-petah-tikva:r26-gadi-tzelniker",
-          "span:hapoel-petah-tikva:r26-eli-mahpud"
+          "span:hapoel-petah-tikva:wv-be246d14e2",
+          "span:hapoel-petah-tikva:wv-d58cfdc519",
+          "span:hapoel-petah-tikva:wv-3593c71b69"
         ],
-        "sourceUrl": "https://www.hpt.co.il/?ShowPlayer=NahumStelmah",
-        "prompt": "Three chapters of Hapoel Petah Tikva history. Put these players in order of their first recorded club year, earliest first.",
-        "explanation": "Nahum Stelmach (1951) → Gadi Tzelniker (1969) → Eli Mahfoud (1979)",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Category%3AHapoel_Petah_Tikva_F.C._players",
         "basePrompt": "Three chapters of Hapoel Petah Tikva history. Put these players in order of their first recorded club year, earliest first.",
-        "baseExplanation": "Nahum Stelmach (1951) → Gadi Tzelniker (1969) → Eli Mahfoud (1979)"
+        "baseExplanation": "Reuven Atar (1998) → Dalibor Višković (2005) → Robi Levkovich (2017)",
+        "prompt": "Three chapters of Hapoel Petah Tikva history. Put these players in order of their first recorded club year, earliest first.",
+        "explanation": "Reuven Atar (1998) → Dalibor Višković (2005) → Robi Levkovich (2017)"
       },
       {
         "questionId": "q_37aa0792988a5335",
@@ -1521,22 +1521,22 @@
         "baseExplanation": "The club’s history places the Perivola neighbourhood in Ambelokipi at the start of the Leoforos story."
       },
       {
-        "questionId": "q_05d55605d404bb07",
+        "questionId": "q_113f4eeb14b0668e",
         "answer": [
-          "Krzysztof Warzycha",
-          "Gilberto Silva",
-          "Aitor Cantalapiedra"
+          "Tomas Lafchis",
+          "Pantelis Konstantinidis",
+          "Kristo Shehu"
         ],
         "factIds": [
-          "span:panathinaikos:krzysztof-warzycha",
-          "span:panathinaikos:gilberto-silva",
-          "span:panathinaikos:aitor-cantalapiedra"
+          "span:panathinaikos:wv-cb4d81c88b",
+          "span:panathinaikos:wv-aed9e6667a",
+          "span:panathinaikos:wv-b221a8bab2"
         ],
-        "sourceUrl": "https://www.pao.gr/historyitem/all-time-roster/",
-        "prompt": "Three chapters of Panathinaikos history. Put these players in order of their first recorded club year, earliest first.",
-        "explanation": "Krzysztof Warzycha (1990) → Gilberto Silva (2008) → Aitor Cantalapiedra (2020)",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Category%3APanathinaikos_F.C._players",
         "basePrompt": "Three chapters of Panathinaikos history. Put these players in order of their first recorded club year, earliest first.",
-        "baseExplanation": "Krzysztof Warzycha (1990) → Gilberto Silva (2008) → Aitor Cantalapiedra (2020)"
+        "baseExplanation": "Tomas Lafchis (1979) → Pantelis Konstantinidis (2002) → Kristo Shehu (2018)",
+        "prompt": "Three chapters of Panathinaikos history. Put these players in order of their first recorded club year, earliest first.",
+        "explanation": "Tomas Lafchis (1979) → Pantelis Konstantinidis (2002) → Kristo Shehu (2018)"
       },
       {
         "questionId": "q_5c38033446ecb8f4",
@@ -1554,17 +1554,17 @@
         "questionId": "q_2c18dcb402ff4eb7",
         "answer": [
           "Athanasios Kolitsidakis",
-          "Krzysztof Warzycha",
-          "Józef Wandzik"
+          "Marinos Ouzounidis",
+          "Krzysztof Warzycha"
         ],
         "factIds": [
           "panathinaikos:a-m-1996-03-20-panathinaikos-legia-warszawa"
         ],
         "sourceUrl": "https://www.uefa.com/uefachampionsleague/match/52292--",
-        "prompt": "Which three names belong in Panathinaikos's starting eleven against Legia Warszawa in the UEFA Champions League on 20 Mar 1996?",
-        "explanation": "Panathinaikos 3-0 Legia Warszawa, UEFA Champions League, 20 Mar 1996. Starting eleven: Józef Wandzik, Efstratios Apostolakis, Marinos Ouzounidis, Georgios Georgiadis, Ioannis Kalitzakis, Athanasios Kolitsidakis, Juan Jose Borrelli, Georgios Kapouranis, Krzysztof Warzycha, Spyridon Marangos, Georgios Donis.",
         "basePrompt": "Which three names belong in Panathinaikos's starting eleven against Legia Warszawa in the UEFA Champions League on 20 Mar 1996?",
-        "baseExplanation": "Panathinaikos 3-0 Legia Warszawa, UEFA Champions League, 20 Mar 1996. Starting eleven: Józef Wandzik, Efstratios Apostolakis, Marinos Ouzounidis, Georgios Georgiadis, Ioannis Kalitzakis, Athanasios Kolitsidakis, Juan Jose Borrelli, Georgios Kapouranis, Krzysztof Warzycha, Spyridon Marangos, Georgios Donis."
+        "baseExplanation": "Panathinaikos 3-0 Legia Warszawa, UEFA Champions League, 20 Mar 1996. Starting eleven: Józef Wandzik, Efstratios Apostolakis, Marinos Ouzounidis, Georgios Georgiadis, Ioannis Kalitzakis, Athanasios Kolitsidakis, Juan Jose Borrelli, Georgios Kapouranis, Krzysztof Warzycha, Spyridon Marangos, Georgios Donis.",
+        "prompt": "Which three names belong in Panathinaikos's starting eleven against Legia Warszawa in the UEFA Champions League on 20 Mar 1996?",
+        "explanation": "Panathinaikos 3-0 Legia Warszawa, UEFA Champions League, 20 Mar 1996. Starting eleven: Józef Wandzik, Efstratios Apostolakis, Marinos Ouzounidis, Georgios Georgiadis, Ioannis Kalitzakis, Athanasios Kolitsidakis, Juan Jose Borrelli, Georgios Kapouranis, Krzysztof Warzycha, Spyridon Marangos, Georgios Donis."
       },
       {
         "questionId": "q_e4704725376e29e9",
@@ -1579,22 +1579,22 @@
         "baseExplanation": "Panathinaikos 2-2 Real Madrid, UEFA Champions League, 20 Mar 2002. Nikos Liberopoulos opened the scoring for Panathinaikos."
       },
       {
-        "questionId": "q_ad7775f25cf8e5b0",
+        "questionId": "q_14f5aa86f6614c2e",
         "answer": [
-          "Dimitris Saravakos",
-          "Antonis Nikopolidis",
-          "Zeca"
+          "Giorgos Kalafatis",
+          "Diomidis Symeonidis",
+          "Dimitris Theofanis"
         ],
         "factIds": [
-          "span:panathinaikos:dimitris-saravakos",
-          "span:panathinaikos:antonis-nikopolidis",
-          "span:panathinaikos:zeca"
+          "span:panathinaikos:wv-f0bc4a7c8d",
+          "span:panathinaikos:wv-67bc135759",
+          "span:panathinaikos:wv-224a5eedd2"
         ],
-        "sourceUrl": "https://www.pao.gr/historyitem/all-time-roster/",
-        "prompt": "Three chapters of Panathinaikos history. Put these players in order of their first recorded club year, earliest first.",
-        "explanation": "Dimitris Saravakos (1985) → Antonis Nikopolidis (1990) → Zeca (2011)",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Category%3APanathinaikos_F.C._players",
         "basePrompt": "Three chapters of Panathinaikos history. Put these players in order of their first recorded club year, earliest first.",
-        "baseExplanation": "Dimitris Saravakos (1985) → Antonis Nikopolidis (1990) → Zeca (2011)"
+        "baseExplanation": "Giorgos Kalafatis (1908) → Diomidis Symeonidis (1929) → Dimitris Theofanis (1956)",
+        "prompt": "Three chapters of Panathinaikos history. Put these players in order of their first recorded club year, earliest first.",
+        "explanation": "Giorgos Kalafatis (1908) → Diomidis Symeonidis (1929) → Dimitris Theofanis (1956)"
       },
       {
         "questionId": "q_898a3cbd98b1edb1",
@@ -1611,52 +1611,52 @@
       {
         "questionId": "q_ec7d7001e1467d37",
         "answer": [
-          "Józef Wandzik",
-          "Efstratios Apostolakis",
-          "Krzysztof Warzycha"
+          "Marinos Ouzounidis",
+          "Georgios Donis",
+          "Juan Jose Borrelli"
         ],
         "factIds": [
           "panathinaikos:a-m-1995-10-25-aab-panathinaikos"
         ],
         "sourceUrl": "https://www.uefa.com/uefachampionsleague/match/52109--",
-        "prompt": "Which three names belong in Panathinaikos's starting eleven against AaB in the UEFA Champions League on 25 Oct 1995?",
-        "explanation": "AaB 2-1 Panathinaikos, UEFA Champions League, 25 Oct 1995. Starting eleven: Józef Wandzik, Efstratios Apostolakis, Marinos Ouzounidis, Giorgos Georgiadis, Ioannis Kalitzakis, Juan Jose Borrelli, Georgios Kapouranis, Georgios Georgiadis, Krzysztof Warzycha, Dimitrios Markos, Georgios Donis.",
         "basePrompt": "Which three names belong in Panathinaikos's starting eleven against AaB in the UEFA Champions League on 25 Oct 1995?",
-        "baseExplanation": "AaB 2-1 Panathinaikos, UEFA Champions League, 25 Oct 1995. Starting eleven: Józef Wandzik, Efstratios Apostolakis, Marinos Ouzounidis, Giorgos Georgiadis, Ioannis Kalitzakis, Juan Jose Borrelli, Georgios Kapouranis, Georgios Georgiadis, Krzysztof Warzycha, Dimitrios Markos, Georgios Donis."
+        "baseExplanation": "AaB 2-1 Panathinaikos, UEFA Champions League, 25 Oct 1995. Starting eleven: Józef Wandzik, Efstratios Apostolakis, Marinos Ouzounidis, Giorgos Georgiadis, Ioannis Kalitzakis, Juan Jose Borrelli, Georgios Kapouranis, Georgios Georgiadis, Krzysztof Warzycha, Dimitrios Markos, Georgios Donis.",
+        "prompt": "Which three names belong in Panathinaikos's starting eleven against AaB in the UEFA Champions League on 25 Oct 1995?",
+        "explanation": "AaB 2-1 Panathinaikos, UEFA Champions League, 25 Oct 1995. Starting eleven: Józef Wandzik, Efstratios Apostolakis, Marinos Ouzounidis, Giorgos Georgiadis, Ioannis Kalitzakis, Juan Jose Borrelli, Georgios Kapouranis, Georgios Georgiadis, Krzysztof Warzycha, Dimitrios Markos, Georgios Donis."
       },
       {
         "questionId": "q_14be441b19a5a35e",
         "answer": [
+          "Georgios Donis",
           "Efstratios Apostolakis",
-          "Alexandros Alexoudis",
-          "Krzysztof Warzycha"
+          "Alexandros Alexoudis"
         ],
         "factIds": [
           "panathinaikos:a-m-1995-10-18-porto-panathinaikos"
         ],
         "sourceUrl": "https://www.uefa.com/uefachampionsleague/match/52113--",
-        "prompt": "Which three names belong in Panathinaikos's starting eleven against Porto in the UEFA Champions League on 18 Oct 1995?",
-        "explanation": "Porto 0-1 Panathinaikos, UEFA Champions League, 18 Oct 1995. Starting eleven: Józef Wandzik, Efstratios Apostolakis, Marinos Ouzounidis, Giorgos Georgiadis, Ioannis Kalitzakis, Juan Jose Borrelli, Dimitrios Markos, Georgios Georgiadis, Krzysztof Warzycha, Alexandros Alexoudis, Georgios Donis.",
         "basePrompt": "Which three names belong in Panathinaikos's starting eleven against Porto in the UEFA Champions League on 18 Oct 1995?",
-        "baseExplanation": "Porto 0-1 Panathinaikos, UEFA Champions League, 18 Oct 1995. Starting eleven: Józef Wandzik, Efstratios Apostolakis, Marinos Ouzounidis, Giorgos Georgiadis, Ioannis Kalitzakis, Juan Jose Borrelli, Dimitrios Markos, Georgios Georgiadis, Krzysztof Warzycha, Alexandros Alexoudis, Georgios Donis."
+        "baseExplanation": "Porto 0-1 Panathinaikos, UEFA Champions League, 18 Oct 1995. Starting eleven: Józef Wandzik, Efstratios Apostolakis, Marinos Ouzounidis, Giorgos Georgiadis, Ioannis Kalitzakis, Juan Jose Borrelli, Dimitrios Markos, Georgios Georgiadis, Krzysztof Warzycha, Alexandros Alexoudis, Georgios Donis.",
+        "prompt": "Which three names belong in Panathinaikos's starting eleven against Porto in the UEFA Champions League on 18 Oct 1995?",
+        "explanation": "Porto 0-1 Panathinaikos, UEFA Champions League, 18 Oct 1995. Starting eleven: Józef Wandzik, Efstratios Apostolakis, Marinos Ouzounidis, Giorgos Georgiadis, Ioannis Kalitzakis, Juan Jose Borrelli, Dimitrios Markos, Georgios Georgiadis, Krzysztof Warzycha, Alexandros Alexoudis, Georgios Donis."
       },
       {
-        "questionId": "q_85a76a06a7cd97ca",
+        "questionId": "q_187779b5d1f57eef",
         "answer": [
-          "Mimis Domazos",
-          "Juan Ramon Rocha",
-          "Giorgos Karagounis"
+          "Nikos Vamvakoulas",
+          "Zeca",
+          "Facundo Sánchez"
         ],
         "factIds": [
-          "span:panathinaikos:mimis-domazos",
-          "span:panathinaikos:juan-ramon-rocha",
-          "span:panathinaikos:giorgos-karagounis"
+          "span:panathinaikos:wv-af00eb157e",
+          "span:panathinaikos:zeca",
+          "span:panathinaikos:wv-d5849be897"
         ],
-        "sourceUrl": "https://www.pao.gr/historyitem/all-time-roster/",
-        "prompt": "Three chapters of Panathinaikos history. Put these players in order of their first recorded club year, earliest first.",
-        "explanation": "Mimis Domazos (1959) → Juan Ramon Rocha (1980) → Giorgos Karagounis (1995)",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Category%3APanathinaikos_F.C._players",
         "basePrompt": "Three chapters of Panathinaikos history. Put these players in order of their first recorded club year, earliest first.",
-        "baseExplanation": "Mimis Domazos (1959) → Juan Ramon Rocha (1980) → Giorgos Karagounis (1995)"
+        "baseExplanation": "Nikos Vamvakoulas (1985) → Zeca (2011) → Facundo Sánchez (2020)",
+        "prompt": "Three chapters of Panathinaikos history. Put these players in order of their first recorded club year, earliest first.",
+        "explanation": "Nikos Vamvakoulas (1985) → Zeca (2011) → Facundo Sánchez (2020)"
       }
     ],
     "aek-athens": [
@@ -1968,16 +1968,16 @@
         "answer": [
           "Michel Kreek",
           "Kostas Katsouranis",
-          "Michalis Kapsis"
+          "Nikos Liberopoulos"
         ],
         "factIds": [
           "aek-athens:m-dh-08b42f28439f"
         ],
         "sourceUrl": "https://aekdata.gr/agonas/98-aek-monaco-0-0",
-        "prompt": "Which three names belong in AEK Athens's starting eleven against Monaco in the UEFA Champions League on 10 Dec 2003?",
-        "explanation": "AEK Athens 0-0 Monaco, UEFA Champions League, 10 Dec 2003. Starting eleven: Chrisostomos Mihailidis, Vassilios Borbokis, Theodoros Zagorakis, Michel Kreek, Ioannis Okkas, Vasilis Tsiartas, Vangelis Moras, Kostas Katsouranis, Vasilis Lakis, Michalis Kapsis, Nikos Liberopoulos.",
         "basePrompt": "Which three names belong in AEK Athens's starting eleven against Monaco in the UEFA Champions League on 10 Dec 2003?",
-        "baseExplanation": "AEK Athens 0-0 Monaco, UEFA Champions League, 10 Dec 2003. Starting eleven: Chrisostomos Mihailidis, Vassilios Borbokis, Theodoros Zagorakis, Michel Kreek, Ioannis Okkas, Vasilis Tsiartas, Vangelis Moras, Kostas Katsouranis, Vasilis Lakis, Michalis Kapsis, Nikos Liberopoulos."
+        "baseExplanation": "AEK Athens 0-0 Monaco, UEFA Champions League, 10 Dec 2003. Starting eleven: Chrisostomos Mihailidis, Vassilios Borbokis, Theodoros Zagorakis, Michel Kreek, Ioannis Okkas, Vasilis Tsiartas, Vangelis Moras, Kostas Katsouranis, Vasilis Lakis, Michalis Kapsis, Nikos Liberopoulos.",
+        "prompt": "Which three names belong in AEK Athens's starting eleven against Monaco in the UEFA Champions League on 10 Dec 2003?",
+        "explanation": "AEK Athens 0-0 Monaco, UEFA Champions League, 10 Dec 2003. Starting eleven: Chrisostomos Mihailidis, Vassilios Borbokis, Theodoros Zagorakis, Michel Kreek, Ioannis Okkas, Vasilis Tsiartas, Vangelis Moras, Kostas Katsouranis, Vasilis Lakis, Michalis Kapsis, Nikos Liberopoulos."
       },
       {
         "questionId": "q_da49ee9a427092d6",
@@ -2010,18 +2010,18 @@
       {
         "questionId": "q_2c008f61f32ac4ce",
         "answer": [
+          "Nikos Liberopoulos",
           "Christos Kontis",
-          "Milen Petkov",
-          "Kostas Katsouranis"
+          "Milen Petkov"
         ],
         "factIds": [
           "aek-athens:m-dh-2bb5b5550c8e"
         ],
         "sourceUrl": "https://aekdata.gr/agonas/47-aek-gorica-1-0",
-        "prompt": "Which three names belong in AEK Athens's starting eleven against Gorica in the UEFA Cup on 30 Sept 2004?",
-        "explanation": "AEK Athens 1-0 Gorica, UEFA Cup, 30 Sept 2004. Starting eleven: Chrisostomos Mihailidis, Christos Kontis, Stavros Tziortziopoulos, Nikolaos Kostenoglou, Bruno Alves, Milen Petkov, Paulo Assunção, Kostas Katsouranis, Alessandro Soares, Asimakis Krassas, Nikos Liberopoulos.",
         "basePrompt": "Which three names belong in AEK Athens's starting eleven against Gorica in the UEFA Cup on 30 Sept 2004?",
-        "baseExplanation": "AEK Athens 1-0 Gorica, UEFA Cup, 30 Sept 2004. Starting eleven: Chrisostomos Mihailidis, Christos Kontis, Stavros Tziortziopoulos, Nikolaos Kostenoglou, Bruno Alves, Milen Petkov, Paulo Assunção, Kostas Katsouranis, Alessandro Soares, Asimakis Krassas, Nikos Liberopoulos."
+        "baseExplanation": "AEK Athens 1-0 Gorica, UEFA Cup, 30 Sept 2004. Starting eleven: Chrisostomos Mihailidis, Christos Kontis, Stavros Tziortziopoulos, Nikolaos Kostenoglou, Bruno Alves, Milen Petkov, Paulo Assunção, Kostas Katsouranis, Alessandro Soares, Asimakis Krassas, Nikos Liberopoulos.",
+        "prompt": "Which three names belong in AEK Athens's starting eleven against Gorica in the UEFA Cup on 30 Sept 2004?",
+        "explanation": "AEK Athens 1-0 Gorica, UEFA Cup, 30 Sept 2004. Starting eleven: Chrisostomos Mihailidis, Christos Kontis, Stavros Tziortziopoulos, Nikolaos Kostenoglou, Bruno Alves, Milen Petkov, Paulo Assunção, Kostas Katsouranis, Alessandro Soares, Asimakis Krassas, Nikos Liberopoulos."
       },
       {
         "questionId": "q_0dddd504cd97b33b",
@@ -2036,22 +2036,22 @@
         "baseExplanation": "Dinaburg 2-4 AEK Athens, European Cup Winners' Cup, 2 Oct 1997. Demis Nikolaidis opened the scoring for AEK Athens."
       },
       {
-        "questionId": "q_b26c1c50304988e8",
+        "questionId": "q_04bf121d4e33d379",
         "answer": [
-          "Kostas Negrepontis",
-          "Stayros Letsas",
-          "Levi Garcia"
+          "Michalis Delavinias",
+          "Giannis Dintsikos",
+          "Ziga Laci"
         ],
         "factIds": [
-          "span:aek-athens:p-dh-248f27479ac8",
-          "span:aek-athens:p-dh-1a92b5169009",
-          "span:aek-athens:p-dh-cc50e0056344"
+          "span:aek-athens:p-dh-d5f83f39d5b3",
+          "span:aek-athens:p-dh-7420b79a899d",
+          "span:aek-athens:p-dh-fc0488e09530"
         ],
-        "sourceUrl": "https://aekdata.gr/paiktis/295-kostas-negrepontis",
-        "prompt": "Three chapters of AEK Athens history. Put these players in order of their first recorded club year, earliest first.",
-        "explanation": "Kostas Negrepontis (1926) → Stayros Letsas (1979) → Levi Garcia (2020)",
+        "sourceUrl": "https://aekdata.gr/paiktis/292-michalis-delavinias",
         "basePrompt": "Three chapters of AEK Athens history. Put these players in order of their first recorded club year, earliest first.",
-        "baseExplanation": "Kostas Negrepontis (1926) → Stayros Letsas (1979) → Levi Garcia (2020)"
+        "baseExplanation": "Michalis Delavinias (1938) → Giannis Dintsikos (1981) → Ziga Laci (2019)",
+        "prompt": "Three chapters of AEK Athens history. Put these players in order of their first recorded club year, earliest first.",
+        "explanation": "Michalis Delavinias (1938) → Giannis Dintsikos (1981) → Ziga Laci (2019)"
       },
       {
         "questionId": "q_e9587f989a0dbe5d",
@@ -2366,17 +2366,17 @@
         "questionId": "q_3127c4526bc24416",
         "answer": [
           "Jos Hooiveld",
-          "Glenn Loovens",
-          "Scott Brown"
+          "Łukasz Załuska",
+          "Glenn Loovens"
         ],
         "factIds": [
           "celtic:a-m-2010-08-04-celtic-braga"
         ],
         "sourceUrl": "https://www.uefa.com/uefachampionsleague/match/2002744--",
-        "prompt": "Which three names belong in Celtic's starting eleven against Braga in the UEFA Champions League on 4 Aug 2010?",
-        "explanation": "Celtic 2-1 Braga, UEFA Champions League, 4 Aug 2010. Starting eleven: Łukasz Załuska, Efraín Juárez, Jos Hooiveld, Scott Brown, Giorgios Samaras, Cha Du-Ri, Shaun Maloney, Joe Ledley, Charlie Mulgrew, Glenn Loovens, Gary Hooper.",
         "basePrompt": "Which three names belong in Celtic's starting eleven against Braga in the UEFA Champions League on 4 Aug 2010?",
-        "baseExplanation": "Celtic 2-1 Braga, UEFA Champions League, 4 Aug 2010. Starting eleven: Łukasz Załuska, Efraín Juárez, Jos Hooiveld, Scott Brown, Giorgios Samaras, Cha Du-Ri, Shaun Maloney, Joe Ledley, Charlie Mulgrew, Glenn Loovens, Gary Hooper."
+        "baseExplanation": "Celtic 2-1 Braga, UEFA Champions League, 4 Aug 2010. Starting eleven: Łukasz Załuska, Efraín Juárez, Jos Hooiveld, Scott Brown, Giorgios Samaras, Cha Du-Ri, Shaun Maloney, Joe Ledley, Charlie Mulgrew, Glenn Loovens, Gary Hooper.",
+        "prompt": "Which three names belong in Celtic's starting eleven against Braga in the UEFA Champions League on 4 Aug 2010?",
+        "explanation": "Celtic 2-1 Braga, UEFA Champions League, 4 Aug 2010. Starting eleven: Łukasz Załuska, Efraín Juárez, Jos Hooiveld, Scott Brown, Giorgios Samaras, Cha Du-Ri, Shaun Maloney, Joe Ledley, Charlie Mulgrew, Glenn Loovens, Gary Hooper."
       },
       {
         "questionId": "q_f218815fca196657",
@@ -2796,58 +2796,58 @@
         "baseExplanation": "Max Kruse's recorded years at FC St. Pauli: 2009–2012."
       },
       {
-        "questionId": "q_069a3da763c609ec",
+        "questionId": "q_0bf65fcd92edf71a",
         "answer": [
-          "Rolf Börner",
-          "Arvo Heino Raudanma Hansen",
-          "Serkan Dursun"
+          "André Golke",
+          "Patrick Mölzl",
+          "Lennart Thy"
         ],
         "factIds": [
-          "span:st-pauli:p-dh-6eda6e01323b",
-          "span:st-pauli:p-dh-e470b28764dc",
-          "span:st-pauli:p-dh-cfd39d315f2f"
+          "span:st-pauli:p-dh-7c5a6d5bbfc6",
+          "span:st-pauli:wv-df7f6525fb",
+          "span:st-pauli:wv-34c7c965af"
         ],
-        "sourceUrl": "https://www.weltfussball.de/person/pe145465/rolf-boerner/",
-        "prompt": "Three chapters of FC St. Pauli history. Put these players in order of their first recorded club year, earliest first.",
-        "explanation": "Rolf Börner (1945) → Arvo Heino Raudanma Hansen (1974) → Serkan Dursun (2017)",
+        "sourceUrl": "https://www.weltfussball.de/person/pe43774/andre-golke/",
         "basePrompt": "Three chapters of FC St. Pauli history. Put these players in order of their first recorded club year, earliest first.",
-        "baseExplanation": "Rolf Börner (1945) → Arvo Heino Raudanma Hansen (1974) → Serkan Dursun (2017)"
+        "baseExplanation": "André Golke (1982) → Patrick Mölzl (2003) → Lennart Thy (2012)",
+        "prompt": "Three chapters of FC St. Pauli history. Put these players in order of their first recorded club year, earliest first.",
+        "explanation": "André Golke (1982) → Patrick Mölzl (2003) → Lennart Thy (2012)"
       },
       {
-        "questionId": "q_0768475faa8efeb8",
+        "questionId": "q_381cb28c09c48323",
+        "answer": [
+          "Berkan Algan",
+          "Robert Palikuča",
+          "Ryō Miyaichi"
+        ],
+        "factIds": [
+          "span:st-pauli:wv-af33ebde41",
+          "span:st-pauli:wv-aebce6c52a",
+          "span:st-pauli:p-dh-ad0b88bd96a0"
+        ],
+        "sourceUrl": "https://en.wikipedia.org/wiki/Category%3AFC_St._Pauli_players",
+        "basePrompt": "Three chapters of FC St. Pauli history. Put these players in order of their first recorded club year, earliest first.",
+        "baseExplanation": "Berkan Algan (1998) → Robert Palikuča (2004) → Ryō Miyaichi (2015)",
+        "prompt": "Three chapters of FC St. Pauli history. Put these players in order of their first recorded club year, earliest first.",
+        "explanation": "Berkan Algan (1998) → Robert Palikuča (2004) → Ryō Miyaichi (2015)"
+      },
+      {
+        "questionId": "q_4b7559bc8229b01f",
         "answer": [
           "Klaus Winkler",
-          "Michael Dahms",
+          "Klaus Thomforde",
           "Martino Gatti"
         ],
         "factIds": [
           "span:dfb-44029",
-          "span:st-pauli:p-dh-9137da24cc0f",
+          "span:st-pauli:wv-2b3aa662d5",
           "span:st-pauli:p-dh-3a5bee0dd168"
         ],
         "sourceUrl": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/1978-1979-nord/teams/fc-st-pauli",
-        "prompt": "Three chapters of FC St. Pauli history. Put these players in order of their first recorded club year, earliest first.",
-        "explanation": "Klaus Winkler (1977) → Michael Dahms (1982) → Martino Gatti (1991)",
         "basePrompt": "Three chapters of FC St. Pauli history. Put these players in order of their first recorded club year, earliest first.",
-        "baseExplanation": "Klaus Winkler (1977) → Michael Dahms (1982) → Martino Gatti (1991)"
-      },
-      {
-        "questionId": "q_175e0f6a02016644",
-        "answer": [
-          "Günther Ahrens",
-          "Klaus Ottens",
-          "Ralph Gunesch"
-        ],
-        "factIds": [
-          "span:st-pauli:p-dh-6e35f09cc45b",
-          "span:dfb-45867",
-          "span:st-pauli:p-dh-7e01828e4ed1"
-        ],
-        "sourceUrl": "https://www.weltfussball.de/person/pe256613/guenther-ahrens/",
+        "baseExplanation": "Klaus Winkler (1977) → Klaus Thomforde (1983) → Martino Gatti (1991)",
         "prompt": "Three chapters of FC St. Pauli history. Put these players in order of their first recorded club year, earliest first.",
-        "explanation": "Günther Ahrens (1955) → Klaus Ottens (1988) → Ralph Gunesch (2003)",
-        "basePrompt": "Three chapters of FC St. Pauli history. Put these players in order of their first recorded club year, earliest first.",
-        "baseExplanation": "Günther Ahrens (1955) → Klaus Ottens (1988) → Ralph Gunesch (2003)"
+        "explanation": "Klaus Winkler (1977) → Klaus Thomforde (1983) → Martino Gatti (1991)"
       },
       {
         "questionId": "q_cbeadb596f2a6928",
@@ -3040,16 +3040,16 @@
       },
       {
         "questionId": "q_07572fc8a5fdfdf4",
-        "answer": "Alejandro Dominguez",
+        "answer": "Alejandro Domínguez",
         "factIds": [
           "olympiacos:oly-goal-dominguez-man-utd",
           "olympiacos:r26-m-eu-manutd-home"
         ],
         "sourceUrl": "https://english.ahram.org.eg/News/95250.aspx",
-        "prompt": "Rewind to Olympiacos v Manchester United, 25 Feb 2014 (UEFA Champions League round of 16, first leg). Minute 38: who found the net?",
-        "explanation": "Alejandro Dominguez found the net against Manchester United in minute 38, 25 Feb 2014.",
         "basePrompt": "Rewind to Olympiacos v Manchester United, 25 Feb 2014 (UEFA Champions League round of 16, first leg). Minute 38: who found the net?",
-        "baseExplanation": "Alejandro Dominguez found the net against Manchester United in minute 38, 25 Feb 2014."
+        "baseExplanation": "Alejandro Domínguez found the net against Manchester United in minute 38, 25 Feb 2014.",
+        "prompt": "Rewind to Olympiacos v Manchester United, 25 Feb 2014 (UEFA Champions League round of 16, first leg). Minute 38: who found the net?",
+        "explanation": "Alejandro Domínguez found the net against Manchester United in minute 38, 25 Feb 2014."
       },
       {
         "questionId": "q_02589095bb7605b3",
@@ -3239,22 +3239,22 @@
         "baseExplanation": "Olympiacos 1-2 Anderlecht, UEFA Europa League, 25 Feb 2016. Kostas Fortounis scored for Olympiacos."
       },
       {
-        "questionId": "q_28b12094e9df00fe",
+        "questionId": "q_0c847aa0b8d7f88a",
         "answer": [
-          "Vangelis Kousoulakis",
-          "Vasilis Karapialis",
-          "Rivaldo"
+          "Konstantinos Orfanos",
+          "Kostas Mendrinos",
+          "Panagiotis Retsos"
         ],
         "factIds": [
-          "span:olympiacos:r26-kousoulakis",
-          "span:olympiacos:r26-karapialis",
-          "span:olympiacos:r26-rivaldo"
+          "span:olympiacos:wv-0eca782bbe",
+          "span:olympiacos:wv-c0a1870abb",
+          "span:olympiacos:wv-8b06c402e7"
         ],
-        "sourceUrl": "https://www.tovima.com/sports/vangelis-kousoulakis-ahead-of-his-time/",
-        "prompt": "Three chapters of Olympiacos history. Put these players in order of their first recorded club year, earliest first.",
-        "explanation": "Vangelis Kousoulakis (1979) → Vasilis Karapialis (1991) → Rivaldo (2004)",
+        "sourceUrl": "https://en.wikipedia.org/wiki/Category%3AOlympiacos_F.C._players",
         "basePrompt": "Three chapters of Olympiacos history. Put these players in order of their first recorded club year, earliest first.",
-        "baseExplanation": "Vangelis Kousoulakis (1979) → Vasilis Karapialis (1991) → Rivaldo (2004)"
+        "baseExplanation": "Konstantinos Orfanos (1980) → Kostas Mendrinos (2002) → Panagiotis Retsos (2016)",
+        "prompt": "Three chapters of Olympiacos history. Put these players in order of their first recorded club year, earliest first.",
+        "explanation": "Konstantinos Orfanos (1980) → Kostas Mendrinos (2002) → Panagiotis Retsos (2016)"
       },
       {
         "questionId": "q_b8ac8dfca8bb6210",

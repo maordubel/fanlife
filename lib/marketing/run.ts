@@ -4,6 +4,8 @@ import {CORE_CLUB_IDS} from '@/lib/clubs/resolver'
 import {serverFeatures} from '@/lib/features-server'
 import {composeBriefing, composeDubid, composeFixtures, composeNumbers, composeOffsides, composePulse, composeResults, composeVote, dayKey, isLiveKind, type ChannelVideo, type Composed, type FunnelRow, type LedgerRow, type LiveData, type VoteRow} from './live'
 import {REGISTRY} from '@/lib/master/registry'
+import {composeInsightDigest,shiftDay,athensDay,type Report as InsightReport} from '@/lib/analytics/insight-report'
+import {SITE_URL} from '@/lib/brand'
 
 /** The database side of the social plan (service role, server only). */
 export async function rpc<T = unknown>(name: string, body: Record<string, unknown>): Promise<T | null> {
@@ -35,6 +37,16 @@ export async function prepare(p: Due, now = new Date(), cache: {data?: LiveData 
       const [yesterday, today] = await Promise.all([rpc<LedgerRow[]>('worker_marketing_ledger', {p_day: dayKey(new Date(now.getTime() - 86400_000))}), rpc<LedgerRow[]>('worker_marketing_ledger', {p_day: dayKey(now)})])
       out = composeBriefing(feed.fixtures, feed.results ?? [], CORE_CLUB_IDS, cache.data ?? {dubid: [], offsides: [], posted: []}, now, NAMES,
         yesterday && today ? {yesterday, today} : null)
+      // FAN LIFE INSIGHT (owner, 17.11.2026: "a daily report sent to me in the morning Telegram update") — yesterday first
+      if (!('skip' in out)) {
+        const y = shiftDay(athensDay(now), -1)
+        const [day, week] = await Promise.all([
+          rpc<InsightReport>('worker_insight_report', {p_from: y, p_to: y}).catch(() => null),
+          rpc<InsightReport>('worker_insight_report', {p_from: shiftDay(y, -6), p_to: y}).catch(() => null),
+        ])
+        const digest = day?.totals ? composeInsightDigest(day, week?.totals ? week : null, SITE_URL.replace(/\/$/, '')) : '📊 <i>Yesterday’s audience report could not be read.</i>'
+        out = {...out, msg: `${digest}\n\n${out.msg}`.slice(0, 4000)}
+      }
     } else if (p.kind === 'fixtures' || p.kind === 'results') {
       const feed = await getFixtureFeed(now)
       cache.data ??= await rpc<LiveData>('worker_marketing_live_data', {})

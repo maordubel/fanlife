@@ -8,7 +8,7 @@ import {DeskSearch} from './DeskSearch'
  * The Editor's Desk frame (rule 99; CRM 1 §3, owner roadmap 12.10.2026): the control room's own chrome — never the
  * public masthead, stop-press strip or bottom tab bar. Seven WORK areas, ordered by what the owner does, then the
  * TOOLS. Desktop: a ruled sidebar with search in the top bar. Phone: a compact bar, search one tap away, and the desk's
- * own bottom navigation (Desk · Clubs · Players · Games · Studio · More). The `fl mag` classes stay on the root so existing
+ * own bottom navigation (Desk · Audience · Clubs · Studio · Shop · More). The `fl mag` classes stay on the root so existing
  * panels keep their dress; everything new is scoped under `.desk`.
  */
 import {SECTIONS,TOOLS,type Section} from '@/lib/master/crm/areas'
@@ -21,19 +21,21 @@ const ICON:Record<string,ReactNode>={
  players:<><circle cx="12" cy="7.5" r="3.5"/><path d="M5 20c.8-4 3.6-6 7-6s6.2 2 7 6"/></>,
  games:<><rect x="3" y="4" width="18" height="16"/><path d="M3 10h18M9 4v16M15 4v16"/></>,
  studio:<><rect x="3" y="6" width="13" height="12"/><path d="M16 10l5-3v10l-5-3z"/></>,
+ audience:<><path d="M4 20V11M10 20V5M16 20v-7M21 20H3"/></>,
  shop:<><path d="M4 8h16l-1.5 12h-13z"/><path d="M8.5 8V6.5a3.5 3.5 0 017 0V8"/></>,
  more:<><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></>,
 }
 const Icon=({k}:{k:string})=><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} aria-hidden="true">{ICON[k]}</svg>
-/** the phone's bar: the areas the owner opens most; everything else is under More (10.11.2026: Research joins, Games moves to More) */
-const BAR=['overview','clubs','studio','shop','research'] as const
+/** the phone's bar: the areas the owner opens most; everything else is under More (10.11.2026: Research joins, Games moves to More;
+ * 17.11.2026: Audience joins — the analytics he asked for — and Research moves to More) */
+const BAR=['overview','audience','clubs','studio','shop'] as const
 /** areas that read a club scope keep it when you move between them; the rest are application-wide */
 const SCOPED=new Set(['clubs','players','games','data','audience'])
 
 // Each menu creates its own Suspense boundary. Reusing one streamed badge element can break server rendering.
 export function AdminShell({section,club,clubName,owner,children,renderOverviewBadge}:{section:Section;club:string|null;clubName:string|null;owner:boolean;children:ReactNode;renderOverviewBadge?:()=>ReactNode}){
  const keep=(s:string)=>SCOPED.has(s)?{club:club||undefined}:{}
- const onMore=section==='more'||TOOLS.some(t=>t.key===section)||section==='players'||section==='market'||section==='community'||section==='audience'
+ const onMore=section==='more'||TOOLS.some(t=>t.key===section)||section==='players'||section==='market'||section==='community'||section==='research'
  return <div className="fl mag desk" lang="en" dir="ltr">
   <a className="desk-skip" href="#desk-main">Skip to the desk</a>
   <header className="desk-top">

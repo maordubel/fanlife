@@ -11,6 +11,7 @@ import {ClubGaps} from '@/components/master/ClubGaps'
 import {Admin,type AdapterInfo,type DeskSection} from '@/components/master/Admin'
 import {AdminShell,MoreMenu,type Section} from '@/components/master/desk/AdminShell'
 import {AudienceDesk} from '@/components/master/desk/AudienceDesk'
+import {InsightDesk,InsightGlance} from '@/components/master/desk/InsightDesk'
 import {PlayersDesk} from '@/components/master/desk/PlayersDesk'
 import {ResearchDesk} from '@/components/master/desk/ResearchDesk'
 import {TaskDesk} from '@/components/master/desk/TaskDesk'
@@ -38,6 +39,7 @@ import {SUBJECT_IDS,subjectName} from '@/lib/shop/subjects'
 import {LIBRARY} from '@/lib/shop/library'
 import '../../desk.css'
 import '../../research-desk.css'
+import '../../insight.css'
 export const dynamic='force-dynamic'
 
 const SECTION_KEYS=['overview','clubs','research','players','games','studio','shop','market','community','audience','data','operations','advertising','settings','more'] as const
@@ -46,7 +48,7 @@ const LEGACY:Record<string,{section:Section;view?:string}>={overview:{section:'o
 /** sections the Admin component draws (the rest are the desk's own panels) */
 const ADMIN_SECTIONS=new Set<Section>(['overview','clubs','data','audience','operations','settings'])
 
-type Params={section?:string;tab?:string;club?:string;view?:string;days?:string;gate?:string;pc?:string;lab?:string}
+type Params={section?:string;tab?:string;club?:string;view?:string;days?:string;gate?:string;pc?:string;lab?:string;range?:string;from?:string;to?:string;country?:string;device?:string;source?:string;path?:string}
 type Overview=Promise<Awaited<ReturnType<typeof deskNow>>>
 
 export default async function Page({searchParams}:{searchParams:Params}){
@@ -62,7 +64,7 @@ export default async function Page({searchParams}:{searchParams:Params}){
  const club=scoped?.id??null
  return <AdminShell section={section} club={club} clubName={scoped?.name??null} owner={owner}
   renderOverviewBadge={overview?()=> <Suspense fallback={null}><OverviewBadge overview={overview}/></Suspense>:undefined}>
-  <Suspense key={JSON.stringify([section,view,club,searchParams.days,searchParams.gate,searchParams.lab])}
+  <Suspense key={JSON.stringify([section,view,club,searchParams.days,searchParams.gate,searchParams.lab,searchParams.range,searchParams.from,searchParams.to,searchParams.country,searchParams.device,searchParams.source,searchParams.path])}
    fallback={<p className="desk-state" role="status">Loading the desk…</p>}>
    <DeskContent section={section} view={view} club={club} owner={owner} searchParams={searchParams} overview={overview} scopedState={state}/>
   </Suspense>
@@ -101,12 +103,13 @@ async function DeskContent({section,view,club,owner,searchParams,overview,scoped
  const initial=lightState(state),clubs=state.clubs
  const adapters:AdapterInfo[]=section==='clubs'&&club?ADAPTER_LIST.map(a=>({...a,available:{[club]:adapterAvailable(a.id,club)}})):[]
  const admin=ADMIN_SECTIONS.has(section)?section as DeskSection:'overview'
- return <Admin initial={initial} summaries={summaries} adapters={adapters} runs={runs} display={state.lifeDisplay||emptyDisplay()} ads={state.ads} storage={storage} features={features}
+ const glance=section==='overview'&&owner?<Suspense fallback={null}><InsightGlance/></Suspense>:null
+ return <>{glance}<Admin initial={initial} summaries={summaries} adapters={adapters} runs={runs} display={state.lifeDisplay||emptyDisplay()} ads={state.ads} storage={storage} features={features}
     section={admin} view={view} club={club} attention={overviewData?.items??[]}
     tasks={overviewData?<TaskDesk initial={overviewData.desk.view} scope={club} players={overviewData.desk.players}/>:undefined}
     ops={{storage:storageMap(),integrations:integrations(),release:release()}}
-    audience={admin==='audience'?<Suspense fallback={<p className="desk-state" role="status">Loading performance…</p>}><AudienceDesk days={searchParams.days} club={club} clubNames={Object.fromEntries(clubs.map(s=>[s.id,s.name]))}/></Suspense>:undefined}
+    audience={admin==='audience'?<><Suspense fallback={<p className="desk-state" role="status">Reading the audience…</p>}><InsightDesk club={club} clubNames={Object.fromEntries(clubs.map(s=>[s.id,s.name]))} q={{range:searchParams.range,from:searchParams.from,to:searchParams.to,country:searchParams.country?.toUpperCase().slice(0,2),device:searchParams.device,source:searchParams.source?.toLowerCase().slice(0,48),path:searchParams.path?.slice(0,160)}}/></Suspense><details className="desk-more ins-funnel"><summary className="min-h-tap">Games funnel — where supporters enter, play and stop</summary><Suspense fallback={<p className="desk-state" role="status">Loading performance…</p>}><AudienceDesk days={searchParams.days} club={club} clubNames={Object.fromEntries(clubs.map(s=>[s.id,s.name]))}/></Suspense></details></>:undefined}
     finalWhistle={admin==='operations'?<><FinalWhistleDesk clubs={state.clubs.map(c=>({id:c.id,name:c.name,live:c.status==='live',provider:FIXTURE_TEAMS.some(t=>t.clubId===c.id)})).sort((a,b)=>a.name.localeCompare(b.name))}/><MatchdayDesk clubs={state.clubs.map(c=>({id:c.id,name:c.name,provider:FIXTURE_TEAMS.some(t=>t.clubId===c.id)})).sort((a,b)=>a.name.localeCompare(b.name))}/></>:undefined}
     gaps={admin==='clubs'&&!club?<details className="desk-more"><summary className="min-h-tap">Club gaps — what each gate still needs</summary><ClubGaps summaries={summaries}/></details>:undefined}
-    provider={admin==='clubs'&&!club?<details className="desk-more"><summary className="min-h-tap">TheSportsDB check — grounds, founding years, badges and kits</summary><Suspense fallback={<p className="desk-state" role="status">Asking TheSportsDB…</p>}><ProviderCheck/></Suspense></details>:undefined}/>
+    provider={admin==='clubs'&&!club?<details className="desk-more"><summary className="min-h-tap">TheSportsDB check — grounds, founding years, badges and kits</summary><Suspense fallback={<p className="desk-state" role="status">Asking TheSportsDB…</p>}><ProviderCheck/></Suspense></details>:undefined}/></>
 }

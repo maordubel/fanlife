@@ -1,7 +1,7 @@
 /*
  * Gate 12 · The Living Archive — an archive desk: match programmes, player cards, clippings and index cards (rules 91 + 95).
  * Tokens only: --mag-* and the club livery; logical properties only; every motion stops under prefers-reduced-motion.
- * Phone: a sticky five-action dock over a focused deck; the page scrolls (an archive is read, not played in a viewport).
+ * Phone: a sticky six-action dock over a focused deck; the page scrolls (an archive is read, not played in a viewport).
  * 901px+: its own layout — two-up deck and lists, roomier dock.
  */
 .stage { --ar-ink: var(--mag-ink); --ar-lit: var(--club-primary, var(--mag-vermilion)); --ar-on: var(--club-on-primary, var(--mag-white)); --ar-dots: radial-gradient(color-mix(in srgb, var(--mag-ink) 16%, transparent) 1.6px, transparent 1.9px); display: flex; flex-direction: column; gap: 12px; min-width: 0; min-height: calc(100dvh - 120px); padding-block: 8px 24px; }
@@ -192,6 +192,51 @@ span.src { text-decoration: none; }
 .gateLinks { display: flex; flex-wrap: wrap; gap: 8px; }
 
 /* ------------------------------------------------------------- desktop: its own design */
+/* ------------------------------------------------------------- index (17.11.2026): seasons · opponents · competitions · players A–Z */
+.dock.six { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 4px; }
+.ixKey { text-transform: none; color: var(--mag-muted); }
+@media (max-width: 440px) { .six .dockBtn { font-size: 11px !important; letter-spacing: 0; } .six .dockBtn svg { width: 20px; height: 20px; } }
+.ix { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.ixSeg { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.ixSeg .chip { display: flex; align-items: center; justify-content: space-between; gap: 8px; text-align: start; font-size: 15px; }
+.ixSeg .chip small { font-family: var(--mag-mono); font-size: 12px; letter-spacing: .4px; opacity: .8; }
+.ixBody { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.ixRows { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.ixItem { min-width: 0; border: 3px solid var(--ar-ink); background: var(--mag-card); box-shadow: 4px 4px 0 var(--ar-ink); }
+.ixItem[data-open] { box-shadow: 4px 4px 0 var(--ar-lit); }
+.ixRow { inline-size: 100%; display: grid; grid-template-columns: minmax(0, 1fr) auto 28px; align-items: center; gap: 10px; padding: 10px 12px; border: 0; background: transparent; color: var(--ar-ink); text-align: start; cursor: pointer; }
+.ixRow:focus-visible { outline: 3px solid var(--ar-ink); outline-offset: -6px; }
+.ixLabel { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.ixLabel b { font-family: var(--mag-display); font-weight: 400; font-size: 19px; line-height: 1.05; text-transform: uppercase; overflow-wrap: anywhere; }
+.ixLabel small { font-family: var(--mag-mono); font-size: 11px; letter-spacing: .5px; color: var(--mag-muted); }
+.ixRecord { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; }
+.ixPWDL { display: inline-flex; gap: 3px; font-family: var(--mag-mono); font-size: 12px; }
+.ixPWDL b, .ixPWDL i { min-inline-size: 26px; padding: 2px 4px; border: 2px solid var(--ar-ink); font-style: normal; text-align: center; }
+.ixPWDL b { background: var(--ar-ink); color: var(--mag-white); }
+.ixPWDL i[data-k='w'] { background: color-mix(in srgb, var(--ar-lit) 28%, var(--mag-card)); }
+.ixPWDL i[data-k='l'] { background: color-mix(in srgb, var(--ar-ink) 12%, var(--mag-card)); }
+.ixGoals { font-family: var(--mag-mono); font-size: 11px; letter-spacing: .4px; color: var(--mag-muted); white-space: nowrap; }
+.ixBar { display: block; inline-size: 84px; block-size: 5px; background: color-mix(in srgb, var(--ar-ink) 14%, transparent); }
+.ixBar span { display: block; block-size: 100%; background: var(--ar-lit); }
+.ixChev { inline-size: 28px; block-size: 28px; display: grid; place-items: center; border: 2px solid var(--ar-ink); font-family: var(--mag-display); font-size: 20px; line-height: 1; }
+.ixOpen { display: flex; flex-direction: column; gap: 8px; padding: 0 10px 12px; border-block-start: 3px dashed var(--ar-ink); padding-block-start: 10px; }
+.ixLetters { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
+.ixLetter { min-height: 50px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 2px; border: 3px solid var(--ar-ink); background: var(--mag-card); color: var(--ar-ink); cursor: pointer; }
+.ixLetter b { font-family: var(--mag-display); font-weight: 400; font-size: 20px; line-height: 1; }
+.ixLetter small { font-family: var(--mag-mono); font-size: 10px; min-block-size: 12px; color: var(--mag-muted); }
+.ixLetter[aria-pressed='true'] { background: var(--ar-ink); color: var(--mag-white); }
+.ixLetter[aria-pressed='true'] small { color: var(--mag-white); }
+.ixLetter:disabled { opacity: .3; cursor: default; }
+.ixLetter:focus-visible { outline: 3px solid var(--ar-ink); outline-offset: 2px; }
+@media (max-width: 380px) { .ixLabel b { font-size: 17px; } .ixBar { inline-size: 64px; } .ixLetters { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
+@media (min-width: 901px) {
+ .ixSeg { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+ .ixRows { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 12px; }
+ .ixItem[data-open] { grid-column: 1 / -1; }
+ .ixLetters { grid-template-columns: repeat(14, minmax(0, 1fr)); }
+ .ixLabel b { font-size: 22px; }
+}
+
 @media (min-width: 901px) {
  .stage { display: grid; grid-template-columns: 250px minmax(0, 1fr); column-gap: 36px; row-gap: 12px; align-items: start; min-height: 0; padding-block-start: 18px; }
  .stage > * { grid-column: 2; }

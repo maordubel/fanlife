@@ -6,6 +6,7 @@ import { MarketAlerts } from '@/components/fanlife/market/MarketAlerts'
 import { ClosetBridge } from '@/components/collector/ClosetBridge'
 import { EcosystemBeacon } from '@/components/ecosystem/EcosystemBeacon'
 import { GateMeter } from '@/components/meter/GateMeter'
+import { InsightTracker } from '@/components/meter/InsightTracker'
 import { NavPulse } from '@/components/ui/NavPulse'
 import { TOP_AD_SRC, topAdAllowedOn, DEFAULT_TOP_AD, MONETAG_SITE_VERIFICATION } from '@/lib/top-ad'
 import { Suspense } from 'react'
@@ -171,6 +172,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         /> : null}
         {/* first-party measurement: views, starts, finishes, where people leave (lib/analytics) */}
         <GateMeter />
+        {/* FAN LIFE INSIGHT: page views, clicks, time on page, scroll, source, place (lib/analytics/insight.ts) */}
+        <Suspense fallback={null}><InsightTracker /></Suspense>
         <Suspense fallback={null}><NavPulse /></Suspense>
         <ClosetBridge />
         <EcosystemBeacon />

@@ -61,7 +61,7 @@ describe('the task desk (CRM 1 §7)',()=>{
 
 describe('the desk frame and the games matrix',()=>{
  it('ten work areas (the studio since 4.11.2026, research since 10.11.2026, the shop since 12.11.2026), then the tools — old section keys still exist',()=>{
-  expect(SECTIONS.map(s=>s.key)).toEqual(['overview','clubs','research','players','games','studio','shop','market','community','audience'])
+  expect(SECTIONS.map(s=>s.key)).toEqual(['overview','audience','clubs','research','players','games','studio','shop','market','community'])
   expect(TOOLS.map(s=>s.key)).toEqual(['data','operations','advertising','settings'])
   const page=readFileSync('app/master/admin/page.tsx','utf8')
   expect(page).toMatch(/section==='data'&&view==='players'\)section='players'/)

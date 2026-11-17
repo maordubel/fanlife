@@ -34,6 +34,7 @@ const nextConfig = {
       '/api/evaluation/db': EVALUATION_FILES,
       '/api/evaluation/files': EVALUATION_FILES,
       '/api/track': EVALUATION_FILES,
+      '/api/insight': EVALUATION_FILES,
       // pre-compiled club packs (lib/clubs/precompiled.ts): every route that may load a club reads them with fs
       // …and a club with no repository pack is compiled from its staged files (lib/research/staged, research desk 10.11.2026)
       '/**': ['./content/compiled/*.json', './research-staging/*/wave-*.json', './research-staging/*/ingest.json'],

@@ -1,6 +1,6 @@
 import 'server-only'
 import {createHash} from 'node:crypto'
-import {enoughPublishers,officialOf} from './official'
+import {automatedApprovalOK,officialOf} from './official'
 import {missingSections,timelineReadiness,type ClubData,type Diagnostic,type Fact,type HistoricalEvent,type Locale,type Source} from './contract'
 import type {RegistryClub} from '@/lib/master/registry'
 import {clubTheme} from './theme'
@@ -52,7 +52,7 @@ export function compilePack(raw:unknown,club:RegistryClub):{data:ClubData;diagno
   const fact:Fact<HistoricalEvent>={id:`${club.id}:${key}`,value:{id:`${club.id}:${key}`,name:text(value.name),on,precision,year:precision==='year'?year:on?Number(on.slice(0,4)):null,hint:hint(text(value.hint)),text:text(value.hint)||undefined,sport:'football',sensitive:value.sensitive!==false},sources:refs,confidence:level as 0|1|2|3,status,researchedAt:date(f.researchedAt),approvedAt:date(f.approvedAt),approvedBy:text(f.approvedBy)||null,notes:text(f.notes)}
   if(status==='approved'&&(!fact.approvedAt||!fact.approvedBy||!fact.researchedAt)){fact.status='review';issue(key,'APPROVAL_INCOMPLETE','Approval requires actor, research date and approval date.')}
   if(status==='approved'&&fact.approvedBy?.startsWith('automated:')) {
-   if(!enoughPublishers(refs.map(ref=>sources.find(s=>s.id===ref)))||level!==3||fact.value.sensitive||f.parserCertainty!=='high'||f.conflictFree!==true){fact.status='review';issue(key,'HUMAN_REVIEW','Automated approval requires two publishers (or the competition’s official body), high certainty, no conflict and non-sensitive facts.')}
+   if(!automatedApprovalOK({confidence:level,parserCertainty:f.parserCertainty,conflictFree:f.conflictFree},refs.map(ref=>sources.find(s=>s.id===ref)),fact.value.sensitive)){fact.status='review';issue(key,'HUMAN_REVIEW','Automated approval requires a cited source, confidence 2–3, a declared sure parse (high/medium), no conflict and non-sensitive facts.')}
   }
   archive.push(fact)
  }

@@ -14,12 +14,13 @@ describe('gate 12 copy',()=>{
  })
  it('dynamic keys resolve for every value they can take',()=>{
   const c=gameCopy('en') as Record<string,string>
-  for(const t of ['today','time','dig','search','mine'])expect(c[`ar.tab.${t}`],t).toBeTruthy()
+  for(const t of ['today','time','index','dig','search','mine'])expect(c[`ar.tab.${t}`],t).toBeTruthy()
   for(const f of ['all','moment','player'])expect(c[`ar.filter.${f}`],f).toBeTruthy()
   for(const p of ['day','year','unknown'])expect(c[`ar.sheet.precision.${p}`],p).toBeTruthy()
+  for(const v of ['season','opponent','competition','az'])expect(c[`ar.ix.view.${v}`],v).toBeTruthy()
  })
  it('every catalogue string is used by a presenter (no dead copy)',()=>{
-  const dynamic=['ar.tab.','ar.filter.','ar.sheet.precision.']
+  const dynamic=['ar.tab.','ar.filter.','ar.sheet.precision.','ar.ix.view.']
   for(const k of Object.keys(en))if(!dynamic.some(d=>k.startsWith(d)))expect(FILES.includes(`'${k}'`)||FILES.includes(`"${k}"`)||FILES.includes(`\`${k}\``),`${k} unused`).toBe(true)
  })
  it('keeps the placeholders of both languages identical',()=>{
