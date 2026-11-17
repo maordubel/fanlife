@@ -6,6 +6,7 @@ import {Bulbs,RumbleShirt,money,posShort,shortName,tr,years} from './shared'
 import {findPlayer} from './RumbleStage'
 import {statsAt} from '@/lib/clubs/rumble-play'
 import {StatBars} from './StatBars'
+import {RumbleMomentum,gradeBand} from './RumbleMomentum'
 import s from './rumble.module.css'
 import {ShareComposer} from '@/components/share/v3/ShareComposer'
 import {rumbleShare,rumbleXIShare} from '@/lib/share/v3/adapters'
@@ -25,7 +26,7 @@ export function RumbleFullTime({script,copy,wardrobe,againHref,recent,club,seed,
  const row=(p:ShowPlayer)=><div className={s.row} key={p.side+p.id} data-motm={p.side===m.side&&p.id===m.id}>
   <RumbleShirt card={p} side={p.side} wardrobe={wardrobe}/>
   <p><b dir="auto">{p.name}</b><small className={s.mono} dir="ltr">{posShort(copy,p.position)} · {years(copy,p)}</small></p>
-  <span dir="ltr">{grades[p.side+':'+p.id]!==undefined?<b className={s.grade} data-hi={grades[p.side+':'+p.id]!>=8||undefined}>{grades[p.side+':'+p.id]!.toFixed(1)}</b>:null} {money(p.price)}</span>
+  <span dir="ltr">{grades[p.side+':'+p.id]!==undefined?<b className={s.grade} data-hi={grades[p.side+':'+p.id]!>=8||undefined} data-band={gradeBand(grades[p.side+':'+p.id]!)}>{grades[p.side+':'+p.id]!.toFixed(1)}</b>:null} {money(p.price)}</span>
  </div>
  return <div className={s.game} data-phase="show" data-testid="rumble-result" data-verdict-rumble={verdict}>
   <section className={s.stage}>
@@ -36,10 +37,10 @@ export function RumbleFullTime({script,copy,wardrobe,againHref,recent,club,seed,
    <h2 className={s.stageTitle}>{tr(copy,`rr.${verdict}`)}</h2>
    <p className={s.stageLine}>{tr(copy,`rr.${verdict}Body`)}</p>
    {goals.length>0&&<ul className={s.scorers}>{goals.map(g=>{const p=findPlayer(script,g.side,g.player),a=findPlayer(script,g.side,g.assist);return <li key={g.id} data-side={g.side}><bdi dir="ltr">{g.minute}′</bdi><span dir="auto">{p?shortName(p.name):''}</span>{a&&<small>{tr(copy,'rr.assist',{name:shortName(a.name)})}</small>}</li>})}</ul>}
-   {mvp&&<div className={s.motm}><p className={`${s.mono} ${s.stageKicker}`}>{tr(copy,'rr.motm')}</p><b dir="auto">{mvp.name}</b><p style={{fontSize:12,opacity:.75}}>{reason}</p></div>}
+   {mvp&&<div className={s.motm} data-testid="rumble-motm"><p className={`${s.mono} ${s.stageKicker}`}><span aria-hidden="true">★ </span>{tr(copy,'rr.motm')}</p><div className={s.motmRow}><RumbleShirt card={mvp} side={mvp.side} wardrobe={wardrobe}/><p><b dir="auto">{mvp.name}</b><small>{posShort(copy,mvp.position)} · {reason}</small></p>{grades[mvp.side+':'+mvp.id]!==undefined?<span className={s.grade} data-band={gradeBand(grades[mvp.side+':'+mvp.id]!)} data-big>{grades[mvp.side+':'+mvp.id]!.toFixed(1)}</span>:null}</div></div>}
    <p className={s.summary}>{summary}</p>
-   {play&&<div className={s.ftStats}><p className={`${s.mono} ${s.stageKicker}`}>{tr(copy,'rr.mc.tab.stats')}</p><StatBars stats={statsAt(play,90)} copy={copy} testId="rumble-ft-stats"/></div>}
-   {top.length>0&&<div className={s.ftTop}><p className={`${s.mono} ${s.stageKicker}`}>{tr(copy,'rr.mc.top')}</p><ol>{top.map(x=><li key={x.side+x.p.id} data-side={x.side}><b dir="auto">{shortName(x.p.name)}</b><span className={s.grade} data-hi={x.g>=8||undefined}>{x.g.toFixed(1)}</span></li>)}</ol></div>}
+   {play&&<div className={s.ftStats}><p className={`${s.mono} ${s.stageKicker}`}>{tr(copy,'rr.mc.tab.stats')}</p><RumbleMomentum play={play} us={tr(copy,'rr.mc.you')} them={tr(copy,'rr.mc.them')} label={tr(copy,'rr.mc.momentum')}/><StatBars stats={statsAt(play,90)} copy={copy} testId="rumble-ft-stats"/></div>}
+   {top.length>0&&<div className={s.ftTop}><p className={`${s.mono} ${s.stageKicker}`}>{tr(copy,'rr.mc.top')}</p><ol>{top.map(x=><li key={x.side+x.p.id} data-side={x.side}><b dir="auto">{shortName(x.p.name)}</b><span className={s.grade} data-hi={x.g>=8||undefined} data-band={gradeBand(x.g)}>{x.g.toFixed(1)}</span></li>)}</ol></div>}
    <p className={s.secret}>{tr(copy,'rr.secret')}</p>
    {club&&seed!==undefined&&xi&&<ShareComposer draft={rumbleXIShare(club,{seed,us:f.us,them:f.them,formation:xi.formation,rival:xi.rival,rivalName:xi.rivalName,bill:money(script.bills.us)})}/>}
    {club&&seed!==undefined&&!xi&&<ShareComposer draft={rumbleShare(club,{vs,duel,seed,us:f.us,them:f.them,five:script.us.map(p=>({position:String(p.position),name:shortName(p.name)})),bill:money(script.bills.us)})}/>}

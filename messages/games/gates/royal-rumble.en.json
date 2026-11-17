@@ -159,5 +159,8 @@
  "rr.draft.meta": "Signing {n} of {total} · {position}",
  "rr.draft.freeRule": "Open any position first. The game only blocks a signing that would make a full squad impossible inside your money.",
  "rr.draft.ready": "Squad complete — lock it in.",
- "rr.draft.nextPlace": "Next: {place}"
+ "rr.draft.nextPlace": "Next: {place}",
+ "rr.mc.momentum": "Momentum",
+ "rr.mc.you": "You",
+ "rr.mc.them": "Them"
 }
