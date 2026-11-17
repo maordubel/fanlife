@@ -6,7 +6,7 @@ import type {ArchiveIndex,IndexRow,Tally} from '@/lib/clubs/archive-index'
 import css from './archive.module.css'
 
 /**
- * Gate 12 · INDEX (owner, 17.11.2026) — the archive as a yearbook's back pages: Seasons · Opponents · Competitions ·
+ * Gate 12 · INDEX (17.11.2026) — the archive as a yearbook's back pages: Seasons · Opponents · Competitions ·
  * Players A–Z. One segmented choice (never a sideways menu), one open row at a time, the row's own entries under it.
  * The three groupings are built on the server (lib/clubs/archive-index.ts); A–Z is read here from the entries.
  */

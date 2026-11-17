@@ -4,8 +4,7 @@ import type {Source} from './contract'
  * league or federation (LNFP/FRMF, the Egyptian Pro League/EFA, the IFA, UEFA…), by the competition itself, or by the
  * club's own official site is authoritative on its own. A pack marks such a source with `official`.
  *
- * Owner decision 17.11.2026 (rule archive-single-source): "players with one source are approved … another source is
- * approved too — put all the data into action". Any ONE checked, available source is now enough for an automated
+ * 17.11.2026 (rule archive-single-source): every researched record goes into action. Any ONE checked, available source is now enough for an automated
  * approval; the official mark stays as provenance. What still holds: confidence 2 or 3, the reviewer's own declaration
  * that the parse was sure ('high' or 'medium') and that nothing conflicts, and not sensitive.
  */
@@ -16,7 +15,7 @@ export const officialOf=(raw:unknown):OfficialBody|undefined=>typeof raw==='stri
 export function crossChecked(cited:readonly (Source|undefined)[]):boolean{
  return new Set(cited.map(s=>s?.publisher.toLowerCase())).size>=2||cited.some(s=>!!s?.official)
 }
-/** at least one cited source that exists (owner, 17.11.2026: a single source is approved) */
+/** at least one cited source that exists (17.11.2026) */
 export function enoughPublishers(cited:readonly (Source|undefined)[]):boolean{
  return cited.some(s=>!!s)
 }

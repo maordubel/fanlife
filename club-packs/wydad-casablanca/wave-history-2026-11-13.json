@@ -554,11 +554,11 @@
    "researchedAt": "2026-11-13",
    "parserCertainty": "medium",
    "conflictFree": true,
-   "notes": "Date, 3-1 and El Moutaraji's late goal agree. Only ESPN gives a Wydad XI, so lineup omitted. Approved by the owner in chat on 2026-11-17 (single source approved; all research put into action).",
+   "notes": "Date, 3-1 and El Moutaraji's late goal agree. Only ESPN gives a Wydad XI, so lineup omitted.",
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-11-17",
-   "approvedBy": "Maor Harel (owner, chat 2026-11-17: every single-source record approved)"
+   "approvedBy": "editorial:single-source-2026-11-17"
   },
   {
    "id": "m-2019-05-24-esperance",
@@ -623,11 +623,11 @@
    "researchedAt": "2026-11-13",
    "parserCertainty": "medium",
    "conflictFree": true,
-   "notes": "Date, 1-0 and Tighazoui 83' free kick agree (Wikipedia, Le360). Only Wikipedia gives an XI, so lineup omitted. Approved by the owner in chat on 2026-11-17 (single source approved; all research put into action).",
+   "notes": "Date, 1-0 and Tighazoui 83' free kick agree (Wikipedia, Le360). Only Wikipedia gives an XI, so lineup omitted.",
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-11-17",
-   "approvedBy": "Maor Harel (owner, chat 2026-11-17: every single-source record approved)"
+   "approvedBy": "editorial:single-source-2026-11-17"
   },
   {
    "id": "m-2011-11-06-esperance",
@@ -649,11 +649,11 @@
    "researchedAt": "2026-11-13",
    "parserCertainty": "medium",
    "conflictFree": true,
-   "notes": "Date and 0-0 agree. Only Wikipedia gives an XI, so lineup omitted. Approved by the owner in chat on 2026-11-17 (single source approved; all research put into action).",
+   "notes": "Date and 0-0 agree. Only Wikipedia gives an XI, so lineup omitted.",
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-11-17",
-   "approvedBy": "Maor Harel (owner, chat 2026-11-17: every single-source record approved)"
+   "approvedBy": "editorial:single-source-2026-11-17"
   },
   {
    "id": "m-2011-11-12-esperance",
@@ -675,11 +675,11 @@
    "researchedAt": "2026-11-13",
    "parserCertainty": "medium",
    "conflictFree": true,
-   "notes": "Wikipedia gives 12 Nov 2011; Le Matin (13 Nov) says Saturday, i.e. 12 Nov. 1-0, Afful 21'. Lineup omitted (Wikipedia mirror truncated; Le Matin gives none). Approved by the owner in chat on 2026-11-17 (single source approved; all research put into action).",
+   "notes": "Wikipedia gives 12 Nov 2011; Le Matin (13 Nov) says Saturday, i.e. 12 Nov. 1-0, Afful 21'. Lineup omitted (Wikipedia mirror truncated; Le Matin gives none).",
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-11-17",
-   "approvedBy": "Maor Harel (owner, chat 2026-11-17: every single-source record approved)"
+   "approvedBy": "editorial:single-source-2026-11-17"
   },
   {
    "id": "m-2025-06-18-manchester-city",
@@ -822,11 +822,11 @@
    "researchedAt": "2026-11-13",
    "parserCertainty": "medium",
    "conflictFree": true,
-   "notes": "ESPN and FourFourTwo agree on Tuesday 12 Dec 2017, 3-2 to Urawa, Wydad scorers Haddad and Hajhouj (pen). FourFourTwo lists Urawa first; ESPN order kept. Only ESPN gives an XI, so lineup omitted. Approved by the owner in chat on 2026-11-17 (single source approved; all research put into action).",
+   "notes": "ESPN and FourFourTwo agree on Tuesday 12 Dec 2017, 3-2 to Urawa, Wydad scorers Haddad and Hajhouj (pen). FourFourTwo lists Urawa first; ESPN order kept. Only ESPN gives an XI, so lineup omitted.",
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-11-17",
-   "approvedBy": "Maor Harel (owner, chat 2026-11-17: every single-source record approved)"
+   "approvedBy": "editorial:single-source-2026-11-17"
   }
  ],
  "players": [

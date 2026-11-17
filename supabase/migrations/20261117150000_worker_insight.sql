@@ -1,7 +1,5 @@
 -- =====================================================================
--- FAN LIFE INSIGHT — the site's own analytics (owner, 17.11.2026: "a real internal Google Analytics: as much data as
--- possible — usage, clicks, location, time … filters, charts, an entry counter, days and hours, a daily report in the
--- morning Telegram update").
+-- FAN LIFE INSIGHT — the site's own analytics (17.11.2026).
 --
 -- First-party only, no third party sees a request. A row is one page view, one click, one leave (time on page and
 -- scroll depth) or one named event. What is NOT stored: an IP address, a user-agent string, a name, an email, an

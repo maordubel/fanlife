@@ -10,7 +10,6 @@ import {Suspense} from 'react'
 import {ClubGaps} from '@/components/master/ClubGaps'
 import {Admin,type AdapterInfo,type DeskSection} from '@/components/master/Admin'
 import {AdminShell,MoreMenu,type Section} from '@/components/master/desk/AdminShell'
-import {AudienceDesk} from '@/components/master/desk/AudienceDesk'
 import {InsightDesk,InsightGlance} from '@/components/master/desk/InsightDesk'
 import {PlayersDesk} from '@/components/master/desk/PlayersDesk'
 import {ResearchDesk} from '@/components/master/desk/ResearchDesk'
@@ -108,7 +107,7 @@ async function DeskContent({section,view,club,owner,searchParams,overview,scoped
     section={admin} view={view} club={club} attention={overviewData?.items??[]}
     tasks={overviewData?<TaskDesk initial={overviewData.desk.view} scope={club} players={overviewData.desk.players}/>:undefined}
     ops={{storage:storageMap(),integrations:integrations(),release:release()}}
-    audience={admin==='audience'?<><Suspense fallback={<p className="desk-state" role="status">Reading the audience…</p>}><InsightDesk club={club} clubNames={Object.fromEntries(clubs.map(s=>[s.id,s.name]))} q={{range:searchParams.range,from:searchParams.from,to:searchParams.to,country:searchParams.country?.toUpperCase().slice(0,2),device:searchParams.device,source:searchParams.source?.toLowerCase().slice(0,48),path:searchParams.path?.slice(0,160)}}/></Suspense><details className="desk-more ins-funnel"><summary className="min-h-tap">Games funnel — where supporters enter, play and stop</summary><Suspense fallback={<p className="desk-state" role="status">Loading performance…</p>}><AudienceDesk days={searchParams.days} club={club} clubNames={Object.fromEntries(clubs.map(s=>[s.id,s.name]))}/></Suspense></details></>:undefined}
+    audience={admin==='audience'?<><Suspense fallback={<p className="desk-state" role="status">Reading the audience…</p>}><InsightDesk club={club} clubNames={Object.fromEntries(clubs.map(s=>[s.id,s.name]))} q={{view:view==='games'?'games':undefined,range:searchParams.range,from:searchParams.from,to:searchParams.to,country:searchParams.country?.toUpperCase().slice(0,2),device:searchParams.device,source:searchParams.source?.toLowerCase().slice(0,48),path:searchParams.path?.slice(0,160)}}/></Suspense></>:undefined}
     finalWhistle={admin==='operations'?<><FinalWhistleDesk clubs={state.clubs.map(c=>({id:c.id,name:c.name,live:c.status==='live',provider:FIXTURE_TEAMS.some(t=>t.clubId===c.id)})).sort((a,b)=>a.name.localeCompare(b.name))}/><MatchdayDesk clubs={state.clubs.map(c=>({id:c.id,name:c.name,provider:FIXTURE_TEAMS.some(t=>t.clubId===c.id)})).sort((a,b)=>a.name.localeCompare(b.name))}/></>:undefined}
     gaps={admin==='clubs'&&!club?<details className="desk-more"><summary className="min-h-tap">Club gaps — what each gate still needs</summary><ClubGaps summaries={summaries}/></details>:undefined}
     provider={admin==='clubs'&&!club?<details className="desk-more"><summary className="min-h-tap">TheSportsDB check — grounds, founding years, badges and kits</summary><Suspense fallback={<p className="desk-state" role="status">Asking TheSportsDB…</p>}><ProviderCheck/></Suspense></details>:undefined}/></>

@@ -1,5 +1,6 @@
 import type {ClubData,ClubPlayer,Source} from './contract'
 import {eligibleArchive} from './archive'
+import {publicNote} from './public-note'
 
 /**
  * The Living Archive's per-club read model (gate 12, 8.10.2026).
@@ -100,7 +101,7 @@ export function buildEntries(data:Pack):Entry[]{
   return {
    id:f.id,kind:p?'player':'moment',title:f.value.title,on,year,
    // a player's "hint" in the shared projection is the approval note — it is not text for a reader
-   hint:p?'':f.value.hint,confidence:f.confidence,sources:[...f.sources],note:legacy||!f.notes?null:f.notes,legacy,
+   hint:p?'':f.value.hint,confidence:f.confidence,sources:[...f.sources],note:legacy?null:publicNote(f.notes),legacy,
    player:p?{positions:[...p.positions],from:p.fromYear,to:p.toYear,aliases:[...p.aliases]}:null,names:[],refs:[],match:null,
   }
  })
@@ -157,7 +158,7 @@ function matchMoments(entries:Entry[],data:Pack):Entry[]{
   const v=m.value as MatchValue,on=validDay(v.on)?v.on!:null
   if(covered.has(m.id)||seen.has(m.id)||!on||!v.name||m.status!=='approved'||m.confidence<2||!m.sources.length||!m.sources.every(id=>ok.has(id)))continue
   out.push({id:m.id,kind:'moment',title:v.name,on,year:Number(on.slice(0,4)),hint:[v.competition,v.venue].filter((x):x is string=>typeof x==='string'&&!!x.trim()).join(' · '),
-   confidence:m.confidence,sources:[...m.sources],note:m.approvedBy==='legacy-curation'||!m.notes?null:m.notes,legacy:m.approvedBy==='legacy-curation',player:null,names:[],refs:[],match:null})
+   confidence:m.confidence,sources:[...m.sources],note:m.approvedBy==='legacy-curation'?null:publicNote(m.notes),legacy:m.approvedBy==='legacy-curation',player:null,names:[],refs:[],match:null})
  }
  return out
 }

@@ -1,43 +1,44 @@
 import Link from 'next/link'
 import {PRESETS,loadInsight,periodOf,shiftDay,type Report,type Row,type Totals} from '@/lib/analytics/insight-report'
+import {GamesFunnelDesk} from './GamesFunnelDesk'
 
 /**
- * Audience · INSIGHT (owner, 17.11.2026: "a real internal Google Analytics … filters, charts, an entry counter, days
- * and hours … as convenient as possible to understand, read and analyse"). Server-rendered: every filter is a link or a
+ * Audience · INSIGHT (17.11.2026). Server-rendered: every filter is a link or a
  * GET form, so a view is a URL that can be bookmarked or sent. Every row of every table is itself a filter — tap a
  * country, a page, a club or a source and the whole report narrows to it. Phone first: one column of cards; 900px+ a
  * grid. Charts are plain SVG drawn here (no chart library, nothing loaded in the browser).
  */
-type Q={range?:string;from?:string;to?:string;country?:string;device?:string;source?:string;path?:string}
+export type Q={view?:string;range?:string;from?:string;to?:string;country?:string;device?:string;source?:string;path?:string}
 const BASE='/master/admin'
 const nf=new Intl.NumberFormat('en-GB')
-const n=(v:unknown)=>nf.format(Number(v)||0)
+export const n=(v:unknown)=>nf.format(Number(v)||0)
 const mmss=(s:number)=>!s?'0s':s>=3600?`${Math.floor(s/3600)}h ${Math.round(s%3600/60)}m`:s>=60?`${Math.floor(s/60)}m ${String(Math.round(s%60)).padStart(2,'0')}s`:`${Math.round(s)}s`
 const flag=(cc:string)=>/^[A-Z]{2}$/.test(cc)?String.fromCodePoint(...[...cc].map(c=>0x1f1a5+c.charCodeAt(0))):'🏳'
 const COUNTRY=(()=>{try{return new Intl.DisplayNames(['en'],{type:'region'})}catch{return null}})()
 const countryName=(cc:string)=>{try{return COUNTRY?.of(cc)??cc}catch{return cc}}
 const LANG=(()=>{try{return new Intl.DisplayNames(['en'],{type:'language'})}catch{return null}})()
 const langName=(l:string)=>{try{return l==='??'?'Unknown':LANG?.of(l)??l}catch{return l}}
-const DAYS=['Mon','Tue','Wed','Thu','Fri','Sat','Sun']
+export const DAYS=['Mon','Tue','Wed','Thu','Fri','Sat','Sun']
 const DEPTH=['','0–25%','25–50%','50–75%','75–100%','100%']
 const LENGTH=['','< 10s','10–30s','30s–1m','1–3m','3–10m','10m +']
 const LOYAL=['','1 visit','2–3 visits','4–9 visits','10+ visits']
 
 function href(club:string|null,q:Q,patch:Partial<Q&{club:string|null}>){
  const p=new URLSearchParams({section:'audience'})
+ const view=patch.view!==undefined?patch.view:q.view;if(view==='games')p.set('view','games')
  const c=patch.club!==undefined?patch.club:club;if(c)p.set('club',c)
  const all={...q,...patch}
  for(const k of ['range','from','to','country','device','source','path'] as const){const v=all[k];if(v)p.set(k,v)}
  return `${BASE}?${p}`
 }
 
-function Delta({now,before,invert=false,unit=''}:{now:number;before:number;invert?:boolean;unit?:string}){
+export function Delta({now,before,invert=false,unit=''}:{now:number;before:number;invert?:boolean;unit?:string}){
  if(!before&&!now)return <span className="ins-delta" data-dir="flat">—</span>
  if(!before)return <span className="ins-delta" data-dir="up">new</span>
  const d=Math.round((now-before)/before*100),good=invert?d<0:d>0
  return <span className="ins-delta" data-dir={d===0?'flat':good?'up':'down'} title={`before: ${n(before)}${unit}`}>{d>0?'▲':d<0?'▼':'='} {Math.abs(d)}%</span>
 }
-function Kpi({label,value,now,before,invert,note}:{label:string;value:string;now:number;before:number;invert?:boolean;note?:string}){
+export function Kpi({label,value,now,before,invert,note}:{label:string;value:string;now:number;before:number;invert?:boolean;note?:string}){
  return <li className="ins-kpi"><span className="ins-kpi-l">{label}</span><b className="ins-kpi-v">{value}</b><Delta now={now} before={before} invert={invert}/>{note&&<small>{note}</small>}</li>
 }
 
@@ -59,13 +60,13 @@ function LineChart({series}:{series:Report['series']}){
   </g>)}
  </svg>
 }
-function Bars({rows,labels,aria}:{rows:[number,number,number][];labels:string[];aria:string}){
+export function Bars({rows,labels,aria}:{rows:[number,number,number][];labels:string[];aria:string}){
  const by=new Map(rows.map(r=>[r[0],r])),max=Math.max(1,...rows.map(r=>r[1]))
  return <ol className="ins-bars" aria-label={aria} style={{['--cols' as string]:labels.length}}>
   {labels.map((l,i)=>{const r=by.get(i),v=r?.[1]??0;return <li key={l} title={`${l}: ${v} views · ${r?.[2]??0} visitors`}><span className="ins-bar" style={{blockSize:`${Math.max(2,v/max*100)}%`}} data-top={v===max&&v>0||undefined}/><small>{l}</small></li>})}
  </ol>
 }
-function Heat({grid}:{grid:Report['grid']}){
+export function Heat({grid}:{grid:Report['grid']}){
  const at=new Map(grid.map(([d,h,v])=>[`${d}:${h}`,v])),max=Math.max(1,...grid.map(g=>g[2]))
  return <div className="ins-heat-wrap" role="region" aria-label="Page views by weekday and hour" tabIndex={0}>
   <table className="ins-heat"><thead><tr><th/>{Array.from({length:24},(_,h)=><th key={h} scope="col">{h%3===0?String(h).padStart(2,'0'):''}</th>)}</tr></thead>
@@ -76,8 +77,8 @@ function Heat({grid}:{grid:Report['grid']}){
 }
 
 /* ------------------------------------------------------------------ breakdowns: every row is a filter */
-type Col={k:string;label:string;fmt?:(v:unknown,r:Row)=>string}
-function Breakdown({title,rows,metric,cols,label,link,empty='Nothing recorded in this period.',limit=10,note}:{
+export type Col={k:string;label:string;fmt?:(v:unknown,r:Row)=>string}
+export function Breakdown({title,rows,metric,cols,label,link,empty='Nothing recorded in this period.',limit=10,note}:{
  title:string;rows:Row[];metric:string;cols?:Col[];label?:(r:Row)=>React.ReactNode;link?:(r:Row)=>string|null;empty?:string;limit?:number;note?:string}){
  const max=Math.max(1,...rows.map(r=>Number(r[metric])||0)),total=rows.reduce((s,r)=>s+(Number(r[metric])||0),0)
  const body=(list:Row[])=><ol className="ins-rows">{list.map((r,i)=>{const v=Number(r[metric])||0,to=link?.(r),name=label?label(r):String(r.key)
@@ -92,6 +93,7 @@ function Breakdown({title,rows,metric,cols,label,link,empty='Nothing recorded in
 }
 
 export async function InsightDesk({club,clubNames,q}:{club:string|null;clubNames:Record<string,string>;q:Q}){
+ const games=q.view==='games'
  const period=periodOf(q)
  const f={from:period.from,to:period.to,club,country:q.country||null,device:q.device||null,source:q.source||null,path:q.path||null}
  const loaded=await loadInsight(f)
@@ -108,7 +110,11 @@ export async function InsightDesk({club,clubNames,q}:{club:string|null;clubNames
  return <section className="desk-panel ins" aria-labelledby="ins-h">
   <header className="ins-head">
    <p className="desk-kicker">Audience · Insight</p>
-   <h1 id="ins-h" className="desk-h1">Who came, from where, and what they did</h1>
+   <h1 id="ins-h" className="desk-h1">{games?'Who plays, how far, and where they stop':'Who came, from where, and what they did'}</h1>
+   <div className="ins-views" role="group" aria-label="Report">
+    <Link prefetch={false} href={href(club,q,{view:'',country:undefined,device:undefined,source:undefined,path:undefined})} aria-current={!games?'page':undefined}><b>The site</b><small>visitors · places · clicks</small></Link>
+    <Link prefetch={false} href={href(club,{range:q.range,from:q.from,to:q.to},{view:'games'})} aria-current={games?'page':undefined}><b>The games</b><small>opened · started · finished</small></Link>
+   </div>
    {loaded.state==='ok'&&loaded.live&&<ul className="ins-live" aria-label="Live">
     <li data-hot={loaded.live.now5>0||undefined}><b><i aria-hidden="true"/>{n(loaded.live.now5)}</b><span>on the site now</span></li>
     <li><b>{n(loaded.live.now30)}</b><span>in the last 30 min</span></li>
@@ -122,21 +128,22 @@ export async function InsightDesk({club,clubNames,q}:{club:string|null;clubNames
    <summary className="min-h-tap">Filters{active.length?` · ${active.length} on`:''} · custom dates</summary>
    <form method="get" action={BASE} className="ins-form">
     <input type="hidden" name="section" value="audience"/>
+    {games&&<input type="hidden" name="view" value="games"/>}
     <label>From<input type="date" name="from" defaultValue={period.from} max={period.to}/></label>
     <label>To<input type="date" name="to" defaultValue={period.to}/></label>
     <label>Club<select name="club" defaultValue={club??''}><option value="">All clubs</option>{Object.entries(clubNames).sort((a,b)=>a[1].localeCompare(b[1])).map(([id,name])=><option key={id} value={id}>{name}</option>)}</select></label>
-    <label>Device<select name="device" defaultValue={q.device??''}><option value="">All devices</option><option value="mobile">Mobile</option><option value="tablet">Tablet</option><option value="desktop">Desktop</option></select></label>
+    {!games&&<><label>Device<select name="device" defaultValue={q.device??''}><option value="">All devices</option><option value="mobile">Mobile</option><option value="tablet">Tablet</option><option value="desktop">Desktop</option></select></label>
     <label>Country (2 letters)<input name="country" defaultValue={q.country??''} maxLength={2} placeholder="GR" pattern="[A-Za-z]{2}" autoCapitalize="characters"/></label>
     <label>Source<input name="source" defaultValue={q.source??''} placeholder="instagram, google, direct…"/></label>
-    <label className="ins-wide">Page<input name="path" defaultValue={q.path??''} placeholder="/clubs/olympiacos"/></label>
-    <div className="ins-form-actions"><button className="desk-btn" type="submit">Apply</button><Link className="desk-chip" prefetch={false} href={`${BASE}?section=audience`}>Clear all</Link></div>
+    <label className="ins-wide">Page<input name="path" defaultValue={q.path??''} placeholder="/clubs/olympiacos"/></label></>}
+    <div className="ins-form-actions"><button className="desk-btn" type="submit">Apply</button><Link className="desk-chip" prefetch={false} href={`${BASE}?section=audience${games?'&view=games':''}`}>Clear all</Link></div>
    </form>
   </details>
   {active.length>0&&<ul className="ins-active" aria-label="Active filters">{active.map(([label,k,patch])=><li key={k}><Link prefetch={false} href={go(patch)} aria-label={`Remove ${label}`}>{label} <span aria-hidden="true">✕</span></Link></li>)}</ul>}
 
-  {loaded.state==='unconfigured'&&<div className="desk-state" data-state="unconnected"><b>Not connected.</b> No database is configured for this deployment, so there are no numbers — this is not zero traffic.</div>}
-  {loaded.state==='error'&&<div className="desk-state" data-state="error"><b>Unavailable.</b> The report did not answer ({loaded.message}). If this is the first day, the database step in the delivery note has not run yet.</div>}
-  {loaded.state==='ok'&&<Body r={loaded.report} go={go} clubName={clubName}/>}
+  {!games&&loaded.state==='unconfigured'&&<div className="desk-state" data-state="unconnected"><b>Not connected.</b> No database is configured for this deployment, so there are no numbers — this is not zero traffic.</div>}
+  {!games&&loaded.state==='error'&&<div className="desk-state" data-state="error"><b>Unavailable.</b> The report did not answer ({loaded.message}). If this is the first day, the database step in the delivery note has not run yet.</div>}
+  {games?<GamesFunnelDesk club={club} clubNames={clubNames} q={q}/>:loaded.state==='ok'&&<Body r={loaded.report} go={go} clubName={clubName}/>}
  </section>
 }
 

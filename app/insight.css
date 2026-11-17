@@ -113,3 +113,27 @@ a.ins-row:focus-visible { box-shadow: inset 0 0 0 3px var(--mag-ink); }
 .ins-glance .ins-delta { font-size: 11px; }
 .ins-glance:hover, .ins-glance:focus-visible { box-shadow: 4px 4px 0 var(--mag-vermilion); outline: none; }
 @media (min-width: 900px) { .ins-glance { grid-template-columns: auto repeat(4, minmax(0, 1fr)) auto; } .ins-glance .ins-glance-k, .ins-glance .ins-glance-go { grid-column: auto; align-items: center; } }
+
+/* ------------------------------------------------------------- the two reports: the site · the games (17.11.2026) */
+.ins-head, .ins-views, .ins-live, .ins-periods, .ins-filters, .ins-kpis { align-self: stretch; inline-size: 100%; }
+.ins-views { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; border: 3px solid var(--mag-ink); }
+.ins-views a { display: flex; flex-direction: column; justify-content: center; gap: 2px; min-height: 56px; padding: 8px 12px; background: var(--mag-card); color: var(--mag-ink); text-decoration: none; }
+.ins-views a + a { border-inline-start: 3px solid var(--mag-ink); }
+.ins-views b { font-family: var(--mag-condensed); font-size: 20px; line-height: 1; text-transform: uppercase; }
+.ins-views small { font-family: var(--mag-mono); font-size: 11px; color: var(--mag-muted); }
+.ins-views a[aria-current='page'] { background: var(--mag-ink); color: var(--mag-paper); box-shadow: inset 0 -5px 0 var(--mag-vermilion); }
+.ins-views a[aria-current='page'] small { color: color-mix(in srgb, var(--mag-paper) 70%, transparent); }
+
+.gm-read ul { margin: 0; padding-inline-start: 18px; display: grid; gap: 6px; font-size: 15px; }
+.gm-funnel { display: grid; gap: 3px; }
+.gm-bar { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: 'bar n' 'lbl lbl'; align-items: center; gap: 0 8px; }
+.gm-bar i { grid-area: bar; display: block; block-size: 10px; min-inline-size: 0; }
+.gm-bar[data-k='o'] i { background: var(--mag-ink); }
+.gm-bar[data-k='s'] i { background: var(--mag-vermilion); }
+.gm-bar[data-k='f'] i { background: #13703a; }
+.gm-bar b { grid-area: n; font-family: var(--mag-condensed); font-size: 16px; min-inline-size: 2.4em; text-align: end; }
+.gm-bar small { grid-area: lbl; font-family: var(--mag-mono); font-size: 10px; color: var(--mag-muted); text-transform: uppercase; }
+.gm-line-f { stroke: #13703a; stroke-width: 3; }
+.gm-key-f { background: #13703a; }
+.desk .gm-games .ins-row { gap: 8px; }
+@media (min-width: 900px) { .gm-bar { grid-template-areas: 'lbl bar n'; grid-template-columns: 130px minmax(0, 1fr) auto; } }
