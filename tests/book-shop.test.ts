@@ -16,7 +16,7 @@ describe('Broken Collective shop (17.11.2026)',()=>{
   expect(t.metadata.book).toBe('bk_abcdefgh');expect(p.metadata.book).toBe('bk_abcdefgh')
   expect(form(p).join('&')).toContain('shipping_address_collection%5Ballowed_countries%5D%5B0%5D=IL')
   expect(p.phone_number_collection.enabled).toBe(true)
-  expect(p.shipping_options[0].shipping_rate_data.fixed_amount.amount).toBe(REGIONS.il.ship.express.cents)
+  expect(p.shipping_options[0]!.shipping_rate_data.fixed_amount.amount).toBe(REGIONS.il.ship.express.cents)
  })
  it('turns a paid Stripe session into a Lulu address, from either place Stripe keeps it',()=>{
   const address={line1:'1 Ermou',line2:null,city:'Athens',state:null,postal_code:'10563',country:'GR'}
@@ -27,8 +27,8 @@ describe('Broken Collective shop (17.11.2026)',()=>{
  })
  it('asks Lulu for one copy of the right edition',()=>{
   const b=jobBody({order:'bk_abcdefgh',lang:'he',level:'MAIL',contact:'c@x.io',address:{name:'R',street1:'1 Ermou',city:'Athens',postcode:'1',country_code:'GR',phone_number:'+30'}})
-  expect(b.line_items[0].printable_normalization.pod_package_id).toBe(BOOK_SKU)
-  expect(b.line_items[0].printable_normalization.interior.source_url).toBe(EDITIONS.he.interior)
+  expect(b.line_items[0]!.printable_normalization.pod_package_id).toBe(BOOK_SKU)
+  expect(b.line_items[0]!.printable_normalization.interior.source_url).toBe(EDITIONS.he.interior)
   expect(b.shipping_level).toBe('MAIL');expect(BOOK_SKU).toHaveLength(27)
  })
  it('takes a Lulu webhook only with the right signature',()=>{
