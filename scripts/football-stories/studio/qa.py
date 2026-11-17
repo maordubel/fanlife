@@ -288,7 +288,9 @@ def experience_numbers(m: dict) -> dict:
     near = np.zeros(n, bool)
     for t in ev:
         i = int(round(t * fps))
-        near[max(0, i - 2):min(n, i + max(3, int(0.5 * fps)))] = True
+        # a change's own frames: a soft way in (a 0.8 s dissolve or push, film mode 17.11.2026) blends two moving pictures,
+        # and the blend's shift is not a camera's jerk — the window covers the longest way in (docu/build.TAILS)
+        near[max(0, i - 2):min(n, i + max(3, int(0.95 * fps)))] = True
     shakes, jerk, half = [], 0.0, max(2, int(fps / 2))
     rev = []
     for i in range(2, n):

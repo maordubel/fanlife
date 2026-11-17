@@ -71,7 +71,7 @@ BLOOM_S, BLOOM_TO = 1.4, 0.3
 # The framing a camera move starts from (studio/camera.py): (the framing's own scale, its default origin). The move adds
 # its travel to this — a detail look is a dolly or a rack AT 1.42, never the old constant glide.
 FRAME_BASE = {'wide': (1.0, '50% 50%'), 'detail': (1.42, '34% 40%'), 'reverse': (1.16, '50% 58%'), 'turn': (1.04, '50% 46%')}
-TAILS = {'cut': 0.0, 'fade': 0.0, 'match': 0.0, 'whip': 0.3, 'tear': 0.45, 'dive': 0.4, 'slide': 0.35, 'zoom': 0.3,
+TAILS = {'cut': 0.0, 'fade': 0.8, 'match': 0.8, 'whip': 0.3, 'tear': 0.45, 'dive': 0.8, 'slide': 0.35, 'zoom': 0.3,
          'dissolve': 0.8, 'push': 0.85, 'ink': 0.8}   # film mode (17.11.2026): the soft ways in, each long enough to read as a move
 TAILS['shape'] = 0.55
 # ONE SHAPE PER FILM (docs/rules/editing-language.md rule 4): the film's own shape, taken from its story, opens every
@@ -135,7 +135,21 @@ XP_CSS = ('.bloom{position:absolute;left:0;top:0;width:1920px;height:1080px;mix-
           '.obl .hl{top:0;height:100%} .obl em{position:relative;font-style:normal;z-index:1}'
           '.thr{position:absolute;left:0;top:0;width:1920px;height:1080px;filter:drop-shadow(3px 3px 0 rgba(20,17,13,.6))}'
           '.thk{position:absolute;width:30px;height:30px;border-radius:50%;border:6px solid INK;box-sizing:border-box}'
-          ".thl{position:absolute;width:280px;text-align:center;font:700 34px 'Cond';letter-spacing:5px;color:PAPER;text-shadow:3px 3px 0 INK}")
+          ".thl{position:absolute;width:280px;text-align:center;font:700 34px 'Cond';letter-spacing:5px;color:PAPER;text-shadow:3px 3px 0 INK}"
+          # the atlas (docu/atlas.py): a printed sheet — a dotted sea that stays on the glass, land as cut paper on it
+          '.atl{position:absolute;left:0;top:0;width:1920px;height:1080px;background-color:#B9C2C4;'
+          'background-image:radial-gradient(rgba(20,17,13,.16) 2.4px,transparent 2.8px);background-size:14px 14px}'
+          '.atl svg{position:absolute;left:0;top:0;width:1920px;height:1080px;filter:drop-shadow(7px 9px 0 rgba(20,17,13,.22))}'
+          '.atl .ld path{fill:#EFE6CF;stroke:INK;stroke-width:2.2;stroke-linejoin:round;vector-effect:non-scaling-stroke}'
+          '.atl .gr{fill:none;stroke:rgba(20,17,13,.13);stroke-width:1.4;vector-effect:non-scaling-stroke}'
+          '.atl .rt{fill:none;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}'
+          ".atl text{font:400 46px 'Head';letter-spacing:2px;fill:INK} .atl text.sm{font:700 22px 'Cond';letter-spacing:4px}"
+          '.atl .vig{position:absolute;left:0;top:0;width:1920px;height:1080px;background:radial-gradient(ellipse at center,rgba(20,17,13,0) 55%,rgba(20,17,13,.38) 100%)}')
+
+
+def _atlas_ok() -> bool:
+    from .. import maps as M
+    return (M.ATLAS / 'countries-50m.json').exists()
 
 
 def rgba(col: str, a: float) -> str:
@@ -361,7 +375,7 @@ class Film:
         if s.get('bg'):
             self.image({'src': s['bg'], 'veil': 0.55, 'move': 'push'}, t, d, 1)
         self.clip(cid, t, d, inner, 5)
-        self.tween(f'tl.fromTo("#{cid} .sb",{{y:-260,opacity:0}},{{y:0,opacity:1,duration:0.55,ease:"back.out(1.6)"}},{r2(t)});')
+        self.tween(f'tl.fromTo("#{cid} .sb",{{y:-160,opacity:0}},{{y:0,opacity:1,duration:0.8,ease:"power2.out"}},{r2(t)});')
         if s.get('shrink_at') is not None:
             self.tween(f'tl.fromTo("#{cid}",{{y:0,scale:1}},{{y:-300,scale:0.62,duration:0.7,ease:"power3.inOut",immediateRender:false}},{r2(t + s["shrink_at"])});')
 
@@ -553,8 +567,8 @@ class Film:
         bg = glass(col, 0.9, 0.42) if s.get('glass') else col
         self.clip(cid, t, d, f'<div class="word" style="background:{bg}"><b style="color:{fg};font-size:{s.get("size", 220)}px">{lines}</b>'
                   + (f'<small style="color:{fg}">{e(s["small"])}</small>' if s.get('small') else '') + l2(s.get('small2'), fg) + '</div>', s.get('z', 15))
-        self.tween(f'tl.fromTo("#{cid} .word b",{{scale:3,opacity:0}},{{scale:1,opacity:1,duration:0.18,ease:"power4.in"}},{r2(t + s.get("at", 0))});'
-                   f'tl.fromTo("#{cid} .word",{{scale:1.04}},{{scale:1,duration:0.5,ease:"power2.out",immediateRender:false}},{r2(t + s.get("at", 0) + 0.18)});')
+        self.tween(f'tl.fromTo("#{cid} .word",{{opacity:0}},{{opacity:1,duration:0.6,ease:"sine.inOut"}},{r2(t + s.get("at", 0))});'
+                   f'tl.fromTo("#{cid} .word b",{{scale:1.3,opacity:0}},{{scale:1,opacity:1,duration:0.7,ease:"power2.out"}},{r2(t + s.get("at", 0) + 0.15)});')
         if d > 0.9:   # the type keeps pushing in for as long as it holds: a flat card with still letters measured as a dead shot (qa.MOTION_FLOOR)
             self.tween(f'tl.fromTo("#{cid} .word b",{{scale:1}},{{scale:{1 + 0.022 * min(d, 6):.4f},duration:{r2(d - 0.2)},ease:"none",immediateRender:false}},{r2(t + 0.2)});'
                        f'tl.fromTo("#{cid} .word small",{{letterSpacing:"10px"}},{{letterSpacing:"{10 + 3 * min(d, 6):.0f}px",duration:{r2(d)},ease:"none"}},{r2(t)});')
@@ -562,7 +576,15 @@ class Film:
             self.tween(f'tl.fromTo("#{cid} .word b",{{textShadow:"-14px 0 {self.US}, 14px 0 #3ad"}},{{textShadow:"0 0 transparent, 0 0 transparent",duration:0.35,ease:"power2.out"}},{r2(t + s.get("at", 0) + 0.18)});')
 
     def cities(self, s, t, d):
-        """Two places, two halves, a jagged line between them."""
+        """Two places, two halves, a jagged line between them — or, when the place book gave both their coordinates and
+        the atlas is installed, the journey itself: the camera flies from one to the other (docu/atlas.py)."""
+        a, b = s['a'], s['b']
+        if a.get('ll') and b.get('ll') and _atlas_ok():
+            from .atlas import country_of
+            hc = country_of(tuple(b['ll']))
+            return self.atlas({'stops': [{'name': a['name'], 'll': tuple(a['ll']), 'small': a.get('small'), 'home': True, 'at': 0.0},
+                                         {'name': b['name'], 'll': tuple(b['ll']), 'small': b.get('small'), 'at': min(3.0, max(1.8, d * 0.45))}],
+                               'highlight': [hc] if hc else [], 'z': s.get('z', 9)}, t, d)
         cid = self.id('ct')
         a, b = s['a'], s['b']
         size = lambda x: f' style="font-size:{int(x["size"])}px"' if x.get('size') else ''   # noqa: E731 — a long name is set smaller, never cut by the half's edge
@@ -759,7 +781,7 @@ class Film:
         strip = '<br>'.join(str(k) for k in range(10))
         cols = ''.join(f'<span class="od"><span class="ods" id="{oid}c{j}">{strip}</span></span>' for j in range(len(digits)))
         for j, ch in enumerate(digits):
-            self.tween(f'tl.fromTo("#{oid}c{j}",{{yPercent:0}},{{yPercent:{-10 * int(ch)},duration:{r2(dur + 0.12 * j)},ease:"power2.out",immediateRender:false}},{r2(t)});')
+            self.tween(f'tl.fromTo("#{oid}c{j}",{{yPercent:0}},{{yPercent:{-10 * int(ch)},duration:{r2(dur + 0.12 * j)},ease:"sine.inOut",immediateRender:false}},{r2(t)});')
         return f'<span class="odo {cls}">{cols}{e(suffix)}</span>'
 
     def pen(self, pts: list[tuple[float, float]], t: float, dur: float, width: float = 9, colour: str | None = None) -> str:
@@ -801,7 +823,7 @@ class Film:
                 if tk.get('hot'):
                     self.tween(f'tl.fromTo("#{tid}h",{{scaleX:0}},{{scaleX:1,duration:0.4,ease:"power2.inOut"}},{r2(at + 0.35)});')
         elif s['form'] == 'number':
-            inner += f'<div class="xpbig">{self.odo(s["value"], t + 0.35, "xpv", s.get("suffix", ""), 1.1)}<b id="{cid}l">{e(s["label"])}</b></div>'
+            inner += f'<div class="xpbig">{self.odo(s["value"], t + 0.35, "xpv", s.get("suffix", ""), 2.2)}<b id="{cid}l">{e(s["label"])}</b></div>'
             w = 60 * len(s['label']) * 0.62 + 80
             inner += self.pen([(960 - w / 2, 838), (960 - w / 6, 846), (960 + w / 6, 836), (960 + w / 2, 844)], t + 1.5, 0.45, 12, self.US)
             self.tween(f'tl.fromTo("#{cid}l",{{y:30,opacity:0}},{{y:0,opacity:1,duration:0.3,ease:"power2.out"}},{r2(t + 1.2)});')
@@ -870,6 +892,110 @@ class Film:
         self.tween(f'tl.fromTo("#{cid}p",{{strokeDashoffset:{L:.1f}}},{{strokeDashoffset:{L * (1 - min(1.0, (d - 0.6) / (span + 1.0))):.1f},duration:{r2(max(0.5, d - 0.6))},ease:"none"}},{r2(t)});'
                    f'tl.fromTo("#{cid} .thr",{{opacity:0}},{{opacity:1,duration:0.8,ease:"sine.inOut"}},{r2(t)});'
                    f'tl.to("#{cid} .thr",{{opacity:0,duration:0.6,ease:"sine.in"}},{r2(t + d - 0.6)});')
+
+    def atlas(self, s, t, d):
+        """THE ATLAS (docu/atlas.py; owner 17.11.2026, after the Search Party references: maps, movement between places).
+        One printed sheet; the camera FLIES over it — never a cut: onto a city from the region around it, or from one
+        city across to the next while the route is drawn and a marker travels it. Pins and paper tags keep their size
+        on screen whatever the zoom (each scales against the camera on the same eases). The destination's country fills
+        in the club's colour as the route lands. Everything eases; the sheet drifts until it leaves (rule 142)."""
+        from . import atlas as A
+        cid = self.id('at')
+        stops = s['stops']
+        pl = A.Plate([x for x in stops])
+        pts = [pl.xy(x['ll']) for x in stops]
+        fit_w = float(A.W)
+        if len(stops) == 1:
+            (cx, cy) = pts[0]
+            keys = [(cx, cy, fit_w * A.ZOOM_FROM), (cx, cy, fit_w), (cx, cy, fit_w * 0.9)]
+        else:
+            (ax, ay), (bx, by) = pts[0], pts[-1]
+            keys = [(ax, ay, fit_w * 0.55), (A.W / 2, A.H / 2, fit_w), (ax + (bx - ax) * 0.72, ay + (by - ay) * 0.72, fit_w * 0.7)]
+        wmax = max(k[2] for k in keys) * 1.25
+        box = (min(k[0] for k in keys) - wmax / 2, min(k[1] for k in keys) - wmax * A.H / A.W / 2,
+               max(k[0] for k in keys) + wmax / 2, max(k[1] for k in keys) + wmax * A.H / A.W / 2)
+        ldp, hlp = A.land(pl, box, fine=(wmax / pl.s / pl.k) < 14, highlight=set(s.get('highlight') or []))
+        vb = lambda k: '%.1f %.1f %.1f %.1f' % A.Plate.view(*k)   # noqa: E731
+        sc = lambda k: k[2] / A.W   # noqa: E731 — what a tag scales by to keep its size on screen
+        # timing: the arrival lands on the narrator's word for the last place
+        arrive = max(1.6, min(d - 1.2, stops[-1].get('at', 1.8) + 0.5))
+        fly0 = 0.15 if len(stops) == 1 else max(0.5, arrive - min(3.2, max(1.8, d * 0.45)))
+        mid = (fly0 + arrive) / 2
+        # the sheet
+        route = ''
+        if len(stops) > 1:
+            rp = []
+            for a, b in zip(pts, pts[1:]):
+                rp += A.arc(a, b)[(1 if rp else 0):]
+            rd = 'M' + 'L'.join(f'{x:.1f} {y:.1f}' for x, y in rp)
+            route = (f'<path class="rt" d="{rd}" stroke="{self.PAPER}" stroke-width="15" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" id="{cid}r0"/>'
+                     f'<path class="rt" d="{rd}" stroke="{self.US}" stroke-width="8" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" id="{cid}r1"/>')
+        tags, placed = '', []
+        for i, (st, (x, y)) in enumerate(zip(stops, pts)):
+            name = st['name'].upper()
+            small = (st.get('small') or '').upper()
+            tw_ = max(0.62 * 46 * len(name), 0.62 * 22 * len(small) * 1.25) + 44
+            h_ = 66 + (30 if small else 0)
+            above = y > A.H * 0.25
+            near = [j for j, (px, py) in enumerate(pts[:i]) if abs(px - x) < 330 and abs(py - y) < 230]
+            if near and above == placed[near[-1]]:
+                above = not above   # two cities close together: their tags stand on either side of the pins
+            placed.append(above)
+            y0 = -96 - h_ if above else 96
+            hot = i == len(stops) - 1
+            tags += (f'<g transform="translate({x:.1f} {y:.1f})"><g id="{cid}g{i}" transform="scale({sc(keys[0]):.4f})">'
+                     f'<g id="{cid}t{i}" opacity="0"><line x1="0" y1="0" x2="0" y2="{y0 + h_ if above else y0:.0f}" stroke="{self.INK}" stroke-width="5"/>'
+                     f'<rect x="{-tw_ / 2:.0f}" y="{y0:.0f}" width="{tw_:.0f}" height="{h_}" fill="{self.US if hot else self.PAPER}" stroke="{self.INK}" stroke-width="5"/>'
+                     f'<text x="0" y="{y0 + 52:.0f}" text-anchor="middle" style="fill:{"#fff" if hot else self.INK}">{e(name)}</text>'
+                     + (f'<text class="sm" x="0" y="{y0 + 84:.0f}" text-anchor="middle" style="fill:{"#fff" if hot else self.INK}">{e(small)}</text>' if small else '')
+                     + f'</g><g id="{cid}p{i}"><circle r="22" fill="{self.INK}" cx="4" cy="5"/><circle r="22" fill="{self.US if st.get("home") or hot else self.PAPER}" stroke="{self.INK}" stroke-width="6"/>'
+                     f'<circle r="7" fill="{self.INK}"/></g></g></g>')
+        ball = ''
+        if len(stops) > 1:
+            ball = (f'<g id="{cid}b" transform="translate({pts[0][0]:.1f} {pts[0][1]:.1f})" opacity="0"><g id="{cid}bs" transform="scale({sc(keys[0]):.4f})">'
+                    f'<circle r="27" fill="#fff" stroke="{self.INK}" stroke-width="7"/><path d="M-11 -8 L0 -16 L11 -8 L7 6 L-7 6Z" fill="{self.INK}"/></g></g>')
+        hcp = hlp.replace('<path ', f'<path style="fill:{self.US};stroke:none" ')
+        svg = (f'<svg id="{cid}s" viewBox="{vb(keys[0])}" preserveAspectRatio="xMidYMid slice">'
+               f'<path class="gr" d="{A.graticule(pl, box)}"/><g class="ld">{ldp}</g>'
+               f'<g class="ld" id="{cid}h">{hlp}</g><g id="{cid}hc" opacity="0">{hcp}</g>'
+               f'{route}{tags}{ball}</svg>')
+        self.clip(cid, t, d, f'<div class="atl" id="{cid}a">{svg}<div class="vig"></div></div>', s.get('z', 9))
+        ease_a = 'power2.inOut'
+        if len(stops) == 1:
+            seg = [(0.0, arrive, keys[0], keys[1], 'power3.inOut'), (arrive, d, keys[1], keys[2], 'none')]
+        else:
+            seg = [(0.0, fly0, keys[0], keys[0], 'none'), (fly0, mid, keys[0], keys[1], ease_a), (mid, arrive, keys[1], keys[2], ease_a),
+                   (arrive, d, keys[2], (keys[2][0], keys[2][1], keys[2][2] * 0.93), 'none')]
+        for a0, a1, k0, k1, ez in seg:
+            if a1 - a0 < 0.05:
+                continue
+            self.tween(f'tl.fromTo("#{cid}s",{{attr:{{viewBox:"{vb(k0)}"}}}},{{attr:{{viewBox:"{vb(k1)}"}},duration:{r2(a1 - a0)},ease:"{ez}",immediateRender:false}},{r2(t + a0)});')
+            for i in range(len(stops)):
+                self.tween(f'tl.fromTo("#{cid}g{i}",{{attr:{{transform:"scale({sc(k0):.4f})"}}}},{{attr:{{transform:"scale({sc(k1):.4f})"}},duration:{r2(a1 - a0)},ease:"{ez}",immediateRender:false}},{r2(t + a0)});')
+            if len(stops) > 1:
+                self.tween(f'tl.fromTo("#{cid}bs",{{attr:{{transform:"scale({sc(k0):.4f})"}}}},{{attr:{{transform:"scale({sc(k1):.4f})"}},duration:{r2(a1 - a0)},ease:"{ez}",immediateRender:false}},{r2(t + a0)});')
+        self.tween(f'tl.fromTo("#{cid}a",{{opacity:0}},{{opacity:1,duration:0.6,ease:"sine.inOut"}},{r2(t)});')
+        for i, st in enumerate(stops):
+            pin_at = (0.35 if i == 0 and len(stops) > 1 else arrive - 0.15) if i in (0, len(stops) - 1) else fly0 + (arrive - fly0) * i / (len(stops) - 1) - 0.1
+            self.tween(f'tl.fromTo("#{cid}p{i}",{{attr:{{transform:"translate(0 -60)"}},opacity:0}},{{attr:{{transform:"translate(0 0)"}},opacity:1,duration:0.5,ease:"power2.out"}},{r2(t + pin_at)});'
+                       f'tl.fromTo("#{cid}t{i}",{{opacity:0}},{{opacity:1,duration:0.5,ease:"power2.out"}},{r2(t + pin_at + 0.3)});')
+            if i < len(stops) - 1 and len(stops) > 1:   # the tag behind the camera steps back once the journey is under way
+                self.tween(f'tl.to("#{cid}t{i}",{{opacity:0.55,duration:0.6,ease:"sine.inOut"}},{r2(t + mid)});')
+        if len(stops) > 1:
+            rdur = arrive - fly0
+            self.tween(f'tl.fromTo("#{cid}r0,#{cid}r1",{{attr:{{"stroke-dashoffset":1}}}},{{attr:{{"stroke-dashoffset":0}},duration:{r2(rdur)},ease:"{ease_a}"}},{r2(t + fly0)});')
+            n = len(rp) - 1
+            kf = ','.join(f'{{attr:{{transform:"translate({x:.1f} {y:.1f})"}},duration:{rdur / n:.3f}}}' for x, y in rp[1:])
+            # the marker travels the route on the same ease as the line: the keyframes run evenly, the whole set eased once
+            self.tween(f'tl.fromTo("#{cid}b",{{opacity:0}},{{opacity:1,duration:0.3}},{r2(t + fly0)});'
+                       f'tl.to("#{cid}b",{{keyframes:[{kf}],ease:"{ease_a}",easeEach:"none"}},{r2(t + fly0)});'
+                       f'tl.to("#{cid}b",{{opacity:0,duration:0.4}},{r2(t + arrive)});')
+            self.sound('whoosh', t + fly0, None, 0.3)
+        if hlp:
+            self.tween(f'tl.fromTo("#{cid}hc",{{attr:{{opacity:0}}}},{{attr:{{opacity:{0.62 if len(stops) > 1 else 0.38}}},duration:0.9,ease:"sine.inOut"}},{r2(t + arrive - 0.2)});')
+        if s.get('fade_out', True):
+            self.tween(f'tl.to("#{cid}a",{{opacity:0,duration:0.5,ease:"sine.in"}},{r2(t + d - 0.5)});')
+        self.cams.append({'t': r2(t), 'd': r2(d), 'move': 'fly', 'ci': 0.6})
 
     OBJ_SPOTS = ((1250, 300, 470), (1540, 520, 340), (170, 330, 440), (560, 560, 300))   # (left, top, size): right third first, then left
 
@@ -975,8 +1101,9 @@ class Film:
         cid = self.id('tn')
         self.clip(cid, t, d, f'<div class="phi" id="{cid}i" style="background-image:url(assets/img/{e(s["src"])});background-position:{s.get("pos", "center")};filter:grayscale(1) contrast(1.4)"></div>'
                   f'<div class="duo" style="background:{self.US}"></div><div class="recon">{RECON if s.get("recon", True) else ""}</div>', 3, 'ph')
-        self.tween(f'tl.fromTo("#{cid}i",{{scale:1.5}},{{scale:1.08,duration:0.35,ease:"power4.in"}},{r2(t)});'
-                   f'tl.to("#{cid}i",{{scale:1.2,duration:{r2(max(0.5, d - 0.4))},ease:"none"}},{r2(t + 0.4)});')
+        # smooth flow (owner 17.11.2026): the colour comes up through the picture and the push never stops (the slam flashed)
+        self.tween(f'tl.fromTo("#{cid}",{{opacity:0}},{{opacity:1,duration:0.8,ease:"sine.inOut"}},{r2(t)});'
+                   f'tl.fromTo("#{cid}i",{{scale:1.04}},{{scale:1.2,duration:{r2(max(0.5, d))},ease:"none"}},{r2(t)});')
         if s.get('tag'):
             tg = s['tag']
             tid = self.id('tag')
@@ -1028,7 +1155,7 @@ class Film:
             return
         IN, OUT = ','.join(f'#{m["id"]}' for m in into), ','.join(f'#{m["id"]}' for m in out)
         if name == 'fade':
-            self.tween(f'tl.fromTo("{IN}",{{opacity:0}},{{opacity:1,duration:0.35}},{r2(T)});')
+            self.tween(f'tl.fromTo("{IN}",{{opacity:0}},{{opacity:1,duration:{TAILS["fade"]},ease:"sine.inOut"}},{r2(T)});')   # smooth flow (owner 17.11.2026): 0.35 s → 0.8 s
         elif name == 'whip':
             self.tween(f'tl.fromTo("{IN}",{{xPercent:100}},{{xPercent:0,duration:{TAILS["whip"]},ease:"power3.out"}},{r2(T)});')
             if out:
@@ -1051,9 +1178,9 @@ class Film:
                 if m.get('layer', 0) > 9:
                     self.tween(f'tl.to("#{m["id"]}",{{opacity:0,duration:{TAILS["shape"] * 0.6:.2f},ease:"power1.in"}},{r2(T)});')
         elif name == 'dive':
-            self.tween(f'tl.fromTo("{IN}",{{scale:0.82,opacity:0}},{{scale:1,opacity:1,duration:{TAILS["dive"]},ease:"power3.out"}},{r2(T)});')
+            self.tween(f'tl.fromTo("{IN}",{{scale:0.9,opacity:0}},{{scale:1,opacity:1,duration:{TAILS["dive"]},ease:"power2.inOut"}},{r2(T)});')
             for m in out:
-                self.tween(f'tl.fromTo("#{m["id"]}",{{scale:{m.get("sc", 1):.4f},opacity:1}},{{scale:1.5,opacity:0,duration:{TAILS["dive"]},ease:"power2.in",immediateRender:false}},{r2(T)});')
+                self.tween(f'tl.fromTo("#{m["id"]}",{{scale:{m.get("sc", 1):.4f},opacity:1}},{{scale:1.25,opacity:0,duration:{TAILS["dive"]},ease:"power2.inOut",immediateRender:false}},{r2(T)});')
         elif name == 'dissolve':   # film mode: the new picture comes up through the old one while both keep moving
             self.tween(f'tl.fromTo("{IN}",{{opacity:0}},{{opacity:1,duration:{TAILS["dissolve"]},ease:"sine.inOut"}},{r2(T)});')
         elif name == 'push':       # the new picture pushes the old one off, slowly and in one eased move (the 0.3 s whip flickered)
@@ -1074,9 +1201,10 @@ class Film:
             for m in out:
                 self.tween(f'tl.fromTo("#{m["id"]}",{{scale:{m.get("sc", 1):.4f}}},{{scale:1.35,duration:{TAILS["zoom"]},ease:"power2.in",immediateRender:false}},{r2(T)});')
         elif name == 'match':
-            self.tween(f'tl.fromTo("{IN}",{{scale:1.1}},{{scale:1,duration:0.3,ease:"power2.out"}},{r2(T)});')
+            # smooth flow (owner 17.11.2026): the shape match is now a dissolve on the scale — both heroes keep moving through it
+            self.tween(f'tl.fromTo("{IN}",{{scale:1.06,opacity:0}},{{scale:1,opacity:1,duration:{TAILS["match"]},ease:"sine.inOut"}},{r2(T)});')
             for m in out:
-                self.tween(f'tl.fromTo("#{m["id"]}",{{scale:{m.get("sc", 1):.4f}}},{{scale:{m.get("sc", 1) + 0.06:.4f},duration:0.2,ease:"power2.in",immediateRender:false}},{r2(T - 0.2)});')
+                self.tween(f'tl.fromTo("#{m["id"]}",{{scale:{m.get("sc", 1):.4f}}},{{scale:{m.get("sc", 1) + 0.05:.4f},duration:{TAILS["match"]},ease:"sine.inOut",immediateRender:false}},{r2(T)});')
 
     def subline(self, part: str, at: float, dd: float):
         """One subtitle: in the brand's face; with `karaoke`, each word lights in the club's colour as it is said."""

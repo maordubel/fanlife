@@ -17,6 +17,8 @@ The pass works on the narrator's own timing, between the adapter's raw beats and
                index's relevant pick: subjects and caption words — studio/media_index.Picker.pick_relevant); only when
                nothing shows it does the beat's own picture carry on in another framing.
   3  ACCENT    each segment gets one graphic idea on the word that asks for it, chosen from what the sentence says:
+                 place     a city or a country the line names: the atlas (docu/atlas.py) — the camera flies over a printed
+                           map onto it, or from the club's city across to it while the route is drawn
                  objects   the object library (studio/objects.py) — the ticket on "ticket", the plane on "flight", the
                            stopwatch on "the ninetieth minute" — printed in the club's inks, entering as the word is said
                  score     a scoreline the line says, slammed as type, the score highlighted
@@ -43,7 +45,7 @@ ACCENT_MAX = 4.2
 SKIP = {'end', 'follow', 'trailer', 'quote'}   # never cut: the closing cards and a quote are read whole
 CARDS = {'chapter', 'open', 'record', 'race', 'form', 'run', 'timeline', 'table'}   # cut after their card: the card keeps its first segment
 TYPED = {'kinetic', 'word', 'question', 'lead', 'rule', 'verdict', 'quote', 'stat', 'explain', 'flap', 'table', 'form', 'ledger',
-         'tally', 'cities', 'chalk', 'objects', 'score', 'ticket', 'card', 'press', 'clockdev', 'locator'}
+         'tally', 'cities', 'atlas', 'chalk', 'objects', 'score', 'ticket', 'card', 'press', 'clockdev', 'locator'}
 SCORE = re.compile(r'\b(\d{1,2})\s?[–-]\s?(\d{1,2})\b')
 NUM_NOUN = re.compile(r'\b(\d{2,6}|\d)\s+([a-z]{3,14})\b', re.I)
 NOUN_OK = {'matches', 'games', 'goals', 'minutes', 'seasons', 'years', 'days', 'weeks', 'months', 'points', 'wins', 'defeats', 'draws',
@@ -182,12 +184,15 @@ def accent(seg: dict, text: str, last: list[str], ad) -> dict | None:
     seg_text = ' '.join(w for w, _ in ws)
     tried = []
     obj = getattr(ad, 'object_device', None)
-    order = ['objects', 'score', 'number', 'phrase']
+    place = getattr(ad, 'place_device', None)
+    order = ['place', 'objects', 'score', 'number', 'phrase']
     if last[-2:] and len(set(last[-2:])) == 1:   # never the same kind three times running
         order = [k for k in order if k != last[-1]] + [last[-1]]
     for kind in order:
         dev = None
-        if kind == 'objects' and obj:
+        if kind == 'place' and place:
+            dev = place(seg_text, ws, t0, end, seg)
+        elif kind == 'objects' and obj:
             dev = obj(seg_text, ws, t0, end)
         elif kind == 'score':
             m = SCORE.search(seg_text)
@@ -290,6 +295,8 @@ def run(raw: list[dict], ad) -> list[dict]:
                     ad.cue(m['n'], round(at, 2), 'paper')
                 elif dev['kind'] == 'explain':
                     ad.cue(m['n'], round(at + 0.35, 2), 'tick')
+                elif dev['kind'] == 'atlas':
+                    ad.cue(m['n'], round(at + 0.4, 2), 'whoosh')
         for sg in segs:
             ws = [(w, tt) for w, tt in word_times(text, sg.pop('_words_all', None) or []) if sg['t'] - 0.01 <= tt < sg['t'] + sg['d'] - 0.01]
             sg['_key'] = key_word([w for w, _ in ws]) if m.get('type') not in SKIP else None

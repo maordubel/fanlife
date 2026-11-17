@@ -238,6 +238,81 @@ class Adapter:
         s = next((x for x in self.plan['shots'] if x['n'] == n), {})
         return round(s['voice_at'] + w['start'], 3) if s.get('voice_at') is not None and isinstance(w, dict) else None
 
+    def journey(self, s: dict, d: float) -> dict | None:
+        """A map beat's road on the atlas: the club's city, then every city its claims were played in (the place book's,
+        studio/maps.place_of), in the order the narration says them; each lands on its own word."""
+        from . import atlas as A
+        from ..maps import city_of, place_of
+        if os.environ.get('STORIES_ATLAS', '1') == '0' or not (A.M.ATLAS / 'countries-50m.json').exists() or d < 4.5:
+            return None
+        home = city_of(self.club)
+        stops, seen = [], {home[0]} if home else set()
+        for cid in s['visual'].get('claims') or []:
+            f = self.fact(cid)
+            if not f or f.get('kind') != 'match':
+                continue
+            there = place_of(f, self.club)
+            if there and there[0] not in seen:
+                seen.add(there[0])
+                stops.append({'name': there[0], 'll': list(there[1]), 'small': f.get('opponent') or ''})
+        if len(stops) < 2 or not home:
+            return None
+        stops = stops[:5]
+        text = s.get('narration') or ''
+        stops.sort(key=lambda x: text.find(x['name']) if x['name'] in text else 10 ** 6)
+        words = [(re.sub(r'[^\w]', '', str(w.get('w') or '').lower()), float(w.get('start') or 0.0)) for w in s.get('words') or []]
+        v0 = float(s.get('voice_at') or 0.0)
+        span = max(2.0, d * 0.7)
+        for k, x in enumerate(stops):
+            first = re.sub(r'[^\w]', '', x['name'].split()[0].lower())
+            hit = next((tt for w, tt in words if w == first), None)
+            x['at'] = round(v0 + hit, 3) if hit is not None else round(1.0 + span * (k + 1) / len(stops), 3)
+        return self.design.sourced({'kind': 'atlas', 'stops': [{'name': home[0], 'll': list(home[1]), 'small': self.club, 'home': True, 'at': 0.0}] + stops,
+                                    'highlight': [], 'fade_out': False}, s)
+
+    ATLAS_GAP_S = 24.0   # one map flight in this long at most: a map is a place in the story, not a wallpaper
+
+    def place_device(self, seg_text: str, ws: list[tuple[str, float]], t0: float, end: float, seg: dict) -> dict | None:
+        """The atlas (docu/atlas.py) for a line that names a place: one place → the camera flies onto it (from the club's
+        own city, when the place is abroad, the route drawn between them); two or more → the journey through them in
+        the order the line says them. The map holds to the end of the sentence's segment."""
+        from . import atlas as A
+        from ..maps import city_of
+        if os.environ.get('STORIES_ATLAS', '1') == '0' or not (A.M.ATLAS / 'countries-50m.json').exists():
+            return None
+        if t0 - getattr(self, '_atlas_t', -1e9) < self.ATLAS_GAP_S or end - t0 < 3.6:
+            return None
+        found = A.places_in(seg_text)[:3]
+        if not found:
+            return None
+        words = [(re.sub(r'[^\w]', '', w.lower()), tt) for w, tt in ws]
+
+        def said_at(name: str) -> float | None:
+            first = re.sub(r'[^\w]', '', name.split()[0].lower())
+            return next((tt for w, tt in words if w == first), None)
+        stops = []
+        for p in found:
+            at = said_at(p['name'])
+            if at is None:
+                continue
+            stops.append({'name': p['name'], 'll': p['ll'], 'at': at, 'country': p.get('atlas')})
+        if not stops:
+            return None
+        home = city_of(self.club)
+        if len(stops) == 1 and home and home[0] != stops[0]['name'] and stops[0]['country'] is None:
+            far = abs(home[1][0] - stops[0]['ll'][0]) + abs(home[1][1] - stops[0]['ll'][1])
+            if far > 1.5:   # abroad: the journey from the club's own city
+                stops.insert(0, {'name': home[0], 'll': home[1], 'at': stops[0]['at'], 'small': self.club, 'home': True})
+        a0 = max(t0, min(x['at'] for x in stops) - (1.2 if len(stops) > 1 else 0.6))
+        d = end - a0
+        if d < 3.4:
+            return None
+        hl = [x['country'] for x in stops if x.get('country')] or [c for c in [A.country_of(stops[-1]['ll'])] if c]
+        out = [{k: v for k, v in {'name': x['name'], 'll': list(x['ll']), 'small': x.get('small'), 'home': x.get('home'),
+                                  'at': round(max(0.0, x['at'] - a0), 3)}.items() if v not in (None, False)} for x in stops]
+        self._atlas_t = t0
+        return {'kind': 'atlas', 'stops': out, 'highlight': hl, 'dt': round(a0 - seg['t'], 3), 'd': round(d, 3), 'vox': True, 'fade_out': False}
+
     def object_device(self, seg_text: str, ws: list[tuple[str, float]], t0: float, end: float) -> dict | None:
         """The objects a sentence names (studio/objects.py), printed in this club's inks, entering on their own word."""
         from .. import objects as O
@@ -761,6 +836,9 @@ class Adapter:
             out += [b] if b else []
             out.append({'kind': 'question', 'text': '|'.join(v.get('lines') or []), 'dt': 0.3})
             self.cue(n, 0.3, 'drum')
+        elif t == 'map' and (jr := self.journey(s, d)):
+            out.append(jr)   # the road itself: the camera flies city to city in the order the line names them (docu/atlas.py)
+            self.cue(n, 0.6, 'whoosh')
         elif t == 'map':
             pins = []
             for cid in (v.get('claims') or [])[:4]:

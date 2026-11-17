@@ -43,6 +43,8 @@ def shown(dev: dict) -> list[str]:
     for side in ('a', 'b'):
         if isinstance(dev.get(side), dict):
             out += [str(dev[side].get(k) or '') for k in ('name', 'small')]
+    for st in dev.get('stops') or []:   # the atlas's tags (docu/atlas.py)
+        out += [str(st.get(k) or '') for k in ('name', 'small')]
     if dev.get('minute') is not None:
         out.append(str(dev['minute']))
     return [re.sub(r'<br>', ' ', x) for x in out if x]
@@ -97,8 +99,8 @@ class Designer:
             if not home or not there or there[0] == home[0]:
                 continue
             return self.sourced({'kind': 'cities', 'mid': (f.get('competition') or '').upper() or None, 'mid_at': 1.3,
-                                 'a': {'name': home[0].upper(), 'small': self.ad.club.upper(), 'crest': self.ad.crest_of(self.ad.club)},
-                                 'b': {'name': there[0].upper(), 'small': (f.get('opponent') or '').upper(),
+                                 'a': {'name': home[0].upper(), 'small': self.ad.club.upper(), 'crest': self.ad.crest_of(self.ad.club), 'll': list(home[1])},
+                                 'b': {'name': there[0].upper(), 'small': (f.get('opponent') or '').upper(), 'll': list(there[1]),
                                        'crest': self.ad.crest_of(f.get('opponent')), 'bg': '#2B2A33'}}, s)
         return None
 
