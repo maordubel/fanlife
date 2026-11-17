@@ -16,9 +16,11 @@ const kits=[...read('content/manual/kit-archive-hapoel-tel-aviv.json'),...read('
 const out:Record<string,string|null>={}
 for(const k of kits){
  const year=Number(k.season.slice(0,4)),base=k.shirt.colours[0]??'white',dark=['red','black','navy','maroon','blue','grey'].includes(base)
- // the Keter colour crest (1997–2000) carries yellow: its exemption is the file itself, never a shirt on a Hapoel page (rule 8) — that slot stays empty (rule 25)
+ // the Keter colour crest (1997–2000) carries yellow and its exemption is the file itself, never a shirt on a Hapoel page (rule 8).
+ // Its shirts print the red Keter mark the owner supplied on 17.11.2026 ("קח, תנקה אותו יפה ותעבוד איתו"), cleaned to three inks on a
+ // transparent ground; on red cloth it wears a white keyline so it reads (the variant follows the cloth, rule 25).
  const art=crestArt(keyFor(year),dark,year)
- out[`${k.season}|${k.type}`]=art&&/keter-color/.test(art)?null:art
+ out[`${k.season}|${k.type}`]=art&&/keter-color/.test(art)?`/club-kits/hapoel-tel-aviv/crests/${dark?'keter-red-onred':'keter-red'}.png`:art
 }
 writeFileSync('content/manual/kit-crests-hapoel-tel-aviv.json',JSON.stringify(out,null,1))
 console.log(Object.entries(out).map(([k,v])=>`${k} ${v}`).join('\n'))
