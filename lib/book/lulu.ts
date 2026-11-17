@@ -51,7 +51,7 @@ export const cost=(lang:BookLang,level:Level,address:Omit<Address,'name'|'phone_
   shipping_address:{phone_number:'+302100000000',...address}})
 
 /** the cover Lulu expects for this page count (checks the spine width print/build.py drew) */
-export const coverSize=(lang:BookLang)=>call<{width:string;height:string;unit:string}>('cover size','/cover-dimensions/',{pod_package_id:BOOK_SKU,interior_page_count:EDITIONS[lang].pages,unit:'in'})
+export const coverSize=(lang:BookLang)=>call<{width:string;height:string;unit:string}>('cover size','/cover-dimensions/',{pod_package_id:BOOK_SKU,interior_page_count:EDITIONS[lang].pages,unit:'pt'})
 
 /** Lulu signs its webhooks with HMAC-SHA256 of the raw body, keyed with the API secret (header Lulu-HMAC-SHA256) */
 export function luluSigned(raw:string,header:string|null,secret=process.env.LULU_CLIENT_SECRET||''):boolean{
