@@ -1,5 +1,5 @@
 'use client'
-import {useEffect,useMemo,useRef,useState} from 'react'
+import {useCallback,useEffect,useMemo,useRef,useState} from 'react'
 import {PickRail,flyShirt,type RailItem,type RailLabels} from '@/components/roster/PickRail'
 import Link from 'next/link'
 import {SlideSheet} from '@/components/stage/SlideSheet'
@@ -52,6 +52,15 @@ function shareLineup(xi:XIState,byId:ReadonlyMap<string,ClubPlayer>,label:(name:
  }
 }
 
+/** A plate fits under a shirt: "Giannis Vazos" → "G. Vazos"; a single name, or one with a particle, stays whole. */
+export function compactPlate(name:string):string{
+ const parts=name.trim().split(/\s+/)
+ if(parts.length<2)return name
+ const first=parts[0]!
+ if(first.length<=2||/\.$/.test(first))return name
+ return `${first[0]}. ${parts.slice(1).join(' ')}`
+}
+
 export type ClubXIProps={players:ClubPlayer[];club:string;clubName:string;locale:UiLocale;contentLocale:string;wardrobe:RumbleWardrobe;copy:GameCopy}
 
 /** Gate 1 · the all-time XI as a game: a printed pitch, shirts you tap or drag, a rail docked under it. */
@@ -69,11 +78,12 @@ function XIBoard({kind,tabs,players,club,clubName,locale,contentLocale,wardrobe,
  const t=(k:string,v?:Record<string,string|number>)=>tr(copy,k,v)
  const storageKey=kind==='best'?xiKey(club):worstXiKey(club),side=kind==='best'?'us':'them'
  const [xi,setXI]=useState<XIState>(emptyXI),[active,setActive]=useState<Where>('GK'),[railOpen,setRailOpen]=useState(true),[loaded,setLoaded]=useState(false)
- const [sheet,setSheet]=useState<Sheet>(null),[notice,setNotice]=useState(''),[query,setQuery]=useState(''),[fitOnly,setFitOnly]=useState(false)
+ const [sheet,setSheet]=useState<Sheet>(null),[notice,setNotice]=useState(''),[query,setQuery]=useState(''),[fitOnly,setFitOnly]=useState(true),[era,setEra]=useState<number|null>(null)
  const [full,setFull]=useState({q:'',pos:'',era:'',fit:false,limit:40})
  const sheetOpener=useRef<HTMLElement|null>(null)
  const byId=useMemo(()=>new Map(players.map(p=>[p.id,p])),[players])
  const label=useMemo(()=>nameLabeler(players.map(p=>p.name)),[players])
+ const plate=useCallback((name:string)=>compactPlate(label(name)),[label])
  const slots=slotsOf(xi),role=active===TWELFTH?null:(slots.find(s=>s.slotId===active)?.role??null)
 
  useEffect(()=>{
@@ -120,12 +130,12 @@ function XIBoard({kind,tabs,players,club,clubName,locale,contentLocale,wardrobe,
  // ---- the rail: fit-first for the aimed slot; a typed search reaches the whole roster
  const ranked=useMemo(()=>rankForSlot(players,role),[players,role])
  const items:RailItem[]=useMemo(()=>{
-  const pool=ranked.filter(p=>!fitOnly||!role||fitOf(p.positions,role)!=='other')
+  const pool=ranked.filter(p=>(!fitOnly||!role||fitOf(p.positions,role)!=='other')&&(era===null||decadesOf(p).includes(era)))
   const source=query.trim()?searchClubPlayers(pool,query):pool.slice(0,RAIL_MAX)
   return source.map(p=>{const parts=p.name.trim().split(/\s+/);return {
    key:p.id,family:parts.length>1?parts[parts.length-1]!:p.name,given:parts.length>1?parts.slice(0,-1).join(' '):undefined,years:years(p),
    shirt:<ClubShirt player={p} wardrobe={wardrobe} side={side} className="h-full w-full"/>,title:p.name,taken:whereIs(xi,p.id)!==null,decades:decadesOf(p),search:`${p.name} ${p.aliases.join(' ')}`}})
- },[ranked,fitOnly,role,query,xi,wardrobe,side])
+ },[ranked,fitOnly,era,role,query,xi,wardrobe,side])
 // eslint-disable-next-line react-hooks/exhaustive-deps -- `t` only closes over `copy`
  const labels:RailLabels=useMemo(()=>({allEras:t('xi.rail.allEras'),era:d=>t('xi.rail.era',{decade:d}),aria:target=>t('xi.rail.aria',{target}),search:t('xi.rail.search'),close:t('xi.rail.close'),empty:t('xi.rail.empty'),count:n=>t('xi.rail.count',{n}),taken:t('xi.rail.taken'),shirt:()=>''}),[copy])
 
@@ -153,19 +163,29 @@ function XIBoard({kind,tabs,players,club,clubName,locale,contentLocale,wardrobe,
 
  const main=<div className={css.main}>
   <div className={css.bar}>{tabs}
-   <button type="button" className={`min-h-tap ${css.tool}`} disabled={!previous} onClick={undo} aria-label={t('xi.undo')} title={t('xi.undo')} data-testid="xi-undo">↶</button>
-   <button type="button" className={`min-h-tap ${css.tool}`} aria-pressed={activeMan?xi.captain===activeMan.id:false} disabled={!activeMan||active===TWELFTH} onClick={()=>commit(setCaptain(xi,activeMan!.id))} aria-label={t('xi.captainMake')} title={t('xi.captainMake')}>C</button>
-   <button type="button" className={`min-h-tap ${css.tool}`} disabled={!activeMan} onClick={()=>{commit(vacate(xi,active))}} aria-label={t('xi.remove')} title={t('xi.remove')}>✕</button>
+   {/* phone only: the formation and the meter leave the pitch, so nothing sits on the men (17.11.2026) */}
+   <button type="button" className={`min-h-tap ${css.barFormation}`} onClick={open('formation')} aria-label={t('xi.formationBtn',{name:xi.formation})}>{xi.formation} ▾</button>
+   <div className={css.meter} aria-hidden="true">
+    {railOpen&&!complete&&<span className={css.meterTarget}>{target}</span>}
+    <span className={css.pips}>{Array.from({length:11},(_,i)=><i key={i} data-on={i<filledCount(xi)}/>)}</span>
+    <span className={css.meterCount} data-done={complete}>{filledCount(xi)}/11</span>
+   </div>
+   <button type="button" className={`min-h-tap ${css.tool} ${css.iconTool}`} disabled={!previous} onClick={undo} aria-label={t('xi.undo')} title={t('xi.undo')} data-testid="xi-undo"><b aria-hidden="true">↶</b><small aria-hidden="true">{t('xi.undoShort')}</small></button>
+   <button type="button" className={`min-h-tap ${css.tool} ${css.iconTool}`} aria-pressed={activeMan?xi.captain===activeMan.id:false} disabled={!activeMan||active===TWELFTH} onClick={()=>commit(setCaptain(xi,activeMan!.id))} aria-label={t('xi.captainMake')} title={t('xi.captainMake')}><b aria-hidden="true">C</b><small aria-hidden="true">{t('xi.captainMake')}</small></button>
+   <button type="button" className={`min-h-tap ${css.tool} ${css.iconTool}`} disabled={!activeMan} onClick={()=>{commit(vacate(xi,active))}} aria-label={t('xi.remove')} title={t('xi.remove')}><b aria-hidden="true">✕</b><small aria-hidden="true">{t('xi.remove')}</small></button>
   </div>
   {kind==='worst'&&<p className={css.note}>{t('xi.worstNote')}</p>}
-  <XIPitch plateOf={label} xi={xi} byId={byId} wardrobe={wardrobe} side={side} kind={kind} active={active} contentLocale={contentLocale} label={roleLabel} chairLabel={t('xi.twelfth')} chairTag={t('xi.twelfth')} onSelect={select} onMove={move}
+  <XIPitch plateOf={plate} xi={xi} byId={byId} wardrobe={wardrobe} side={side} kind={kind} active={active} contentLocale={contentLocale} label={roleLabel} chairLabel={t('xi.twelfth')} chairTag={t('xi.twelfth')} onSelect={select} onMove={move}
    hud={{count:t('xi.count',{n:filledCount(xi)}),done:complete,formation:xi.formation,onFormation:open('formation'),formationLabel:t('xi.formationBtn',{name:xi.formation})}}/>
   <div className={css.dock}>
    {railOpen&&<p className={css.dockHead}><span className="wk-logo red sm">{t('xi.shout')}</span><span className={css.dockTarget} aria-live="polite">{t('xi.pickTarget',{role:target})}</span></p>}
    {railOpen
-    ?<PickRail target={target} targetSub={activeMan?.name??t('xi.pickFor')} items={items} onPick={pick} onDrop={drop} onClose={()=>setRailOpen(false)} labels={labels} onQuery={setQuery}
+    ?<PickRail target={target} targetSub={activeMan?.name??t('xi.pickFor')} items={items} onPick={pick} onDrop={drop} onClose={()=>setRailOpen(false)} labels={labels} onQuery={setQuery} eras={false}
        chips={role?[{key:'fit',label:t('xi.fits'),pressed:fitOnly,onClick:()=>setFitOnly(v=>!v)}]:[]}
-       extra={<button type="button" onClick={open('full')} className="flex min-h-tap shrink-0 items-center border-hair border-ink/40 px-2 font-body text-[11.5px] font-extrabold text-ink">{t('xi.fullList')}</button>}/>
+       extra={<>{allDecades.length>1&&<label className={css.eraPick} data-on={era!==null}><span className="sr-only">{t('xi.era')}</span>
+         <select value={era??''} onChange={e=>setEra(e.target.value?Number(e.target.value):null)} aria-label={t('xi.era')} data-testid="xi-era">
+          <option value="">{t('xi.rail.allEras')}</option>{allDecades.map(d=><option key={d} value={d}>{t('xi.rail.era',{decade:d})}</option>)}</select></label>}
+        <button type="button" onClick={open('full')} className={`min-h-tap ${css.fullBtn}`}>{t('xi.fullList')}</button></>}/>
     :complete
      ?<div className={css.strip} data-testid="xi-complete"><h2>{t(kind==='best'?'xi.complete.title':'xi.complete.worst')}</h2>
        <button type="button" className={`min-h-tap ${css.tool}`} onClick={lockIn}>{copy.save}</button>
@@ -217,8 +237,8 @@ function XIBoard({kind,tabs,players,club,clubName,locale,contentLocale,wardrobe,
     <button type="button" className={`min-h-tap ${css.tool}`} onClick={closeSheet}>{t('xi.poster.keep')}</button></div>}>
    <div className={css.poster} data-testid="xi-poster">
     <div className={css.posterHead}><p className={css.posterKicker}>{clubName} · {xi.formation}</p><h2 className={css.posterTitle}>{t(kind==='best'?'xi.poster.mine':'xi.poster.worst')}</h2></div>
-    <div className={css.posterRows} dir="ltr">{rowsOf(xi).map((ids,i)=><div key={i} className={css.posterRow}>{ids.map(id=>{const p=xi.picks[id]?byId.get(xi.picks[id]!):null;return p?<div key={id} className={css.posterMan}><span className={css.shirt}><ClubShirt player={p} wardrobe={wardrobe} side={side} keeper={id==='GK'}/>{xi.captain===p.id&&<span className={css.cap}>{t('xi.poster.captain')}</span>}</span><span className={css.plate} lang={contentLocale} dir="auto">{label(p.name)}</span></div>:<div key={id} className={css.posterMan} aria-hidden="true"/>})}</div>)}
-     {xi.twelfth&&byId.get(xi.twelfth)&&<div className={css.posterRow}><div className={css.posterMan}><span className={css.shirt}><ClubShirt player={byId.get(xi.twelfth)!} wardrobe={wardrobe} side={side}/></span><span className={css.plate} lang={contentLocale} dir="auto">{label(byId.get(xi.twelfth)!.name)}</span><span className={css.chairTag}>{t('xi.twelfth')}</span></div></div>}</div>
+    <div className={css.posterRows} dir="ltr">{rowsOf(xi).map((ids,i)=><div key={i} className={css.posterRow}>{ids.map(id=>{const p=xi.picks[id]?byId.get(xi.picks[id]!):null;return p?<div key={id} className={css.posterMan}><span className={css.shirt}><ClubShirt player={p} wardrobe={wardrobe} side={side} keeper={id==='GK'}/>{xi.captain===p.id&&<span className={css.cap}>{t('xi.poster.captain')}</span>}</span><span className={css.plate} lang={contentLocale} dir="auto">{plate(p.name)}</span></div>:<div key={id} className={css.posterMan} aria-hidden="true"/>})}</div>)}
+     {xi.twelfth&&byId.get(xi.twelfth)&&<div className={css.posterRow}><div className={css.posterMan}><span className={css.shirt}><ClubShirt player={byId.get(xi.twelfth)!} wardrobe={wardrobe} side={side}/></span><span className={css.plate} lang={contentLocale} dir="auto">{plate(byId.get(xi.twelfth)!.name)}</span><span className={css.chairTag}>{t('xi.twelfth')}</span></div></div>}</div>
     {Object.keys(spread).length>0&&<div className={css.spread}><p className={css.posterKicker}>{t('xi.poster.spread')}</p>{Object.entries(spread).sort((a,b)=>Number(a[0])-Number(b[0])).map(([d,n])=><div key={d} className={css.spreadRow}><span>{d}s</span><span className={css.spreadBar}><i style={{width:`${(n/maxSpread)*100}%`}}/></span><span>{n}</span></div>)}</div>}
     <p className={css.fine}>{kind==='worst'?t('xi.worstNote'):copy.localOnly}</p>
     <p className={css.status} role="status">{notice}</p>

@@ -87,7 +87,7 @@ class Curves(unittest.TestCase):
 class Director(unittest.TestCase):
     def test_the_emotion_chooses_the_move(self):
         self.assertEqual(C.choose('tension', []), 'dolly')
-        self.assertEqual(C.choose('release', []), 'snap')
+        self.assertEqual(C.choose('release', []), 'orbit')   # 17.11.2026: the snap read as a jolt — never chosen
         self.assertEqual(C.choose('grief', []), 'pull')
         self.assertEqual(C.choose('defiance', []), 'track')
         self.assertEqual(C.choose('pride', [], subjects=['stadium']), 'crane')

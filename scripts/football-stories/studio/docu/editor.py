@@ -21,9 +21,10 @@ from .. import camera as C
 
 # A still held longer than this reads as a slide (measured on the pilot: stills of 8–13 s, 5.6 shots a minute; the
 # hand-written films the owner approved change picture every 2–4 s).
-MAX_STILL = 4.0
-TARGET = 2.6        # owner 14.11.2026, "more emphasis on editing": 3.4 → 2.6, towards the reference's ~45 changes a minute (editing-language). What a split aims for, so a cut can move to a beat or a word and still be under MAX_STILL
-MIN_SUB = 1.4       # a look shorter than this is a flicker, not a look (rule 142)
+LONG_HOLD = 12.0    # film mode: with no other picture that shows the line, one moving shot may run this long before the index must give one
+MAX_STILL = 7.0     # owner 17.11.2026, "everything flickers … more movement, more film": a moving shot holds up to 7 s (was 4)
+TARGET = 5.0        # owner 17.11.2026: 2.6 → 5.0 — the cut every 2.6 s into a closer look at the SAME picture read as flicker. Before: owner 14.11.2026, "more emphasis on editing": 3.4 → 2.6, towards the reference's ~45 changes a minute (editing-language). What a split aims for, so a cut can move to a beat or a word and still be under MAX_STILL
+MIN_SUB = 2.4       # 17.11.2026: 1.4 → 2.4. Before: a look shorter than this is a flicker, not a look (rule 142)
 MAX_CARD = 4.0      # a full-frame card is read in this time (owner 15.11.2026: 42% of the PAO film was type on a flat ground — 6 s → 4 s)
 WORD_HOLD = 2.6     # a slammed word (the turn of the story) lands, is read, and gets out of the picture's way
 BEAT_SNAP = 0.3     # a cut moves this far to sit on a music beat …
@@ -38,7 +39,11 @@ HARD = {'goal', 'trailer', 'turning', 'open'}
 CENTRED = {'score', 'versus', 'stat', 'record'}
 TRAVEL = {'matchday', 'map', 'race', 'ticket'}
 SOFT = {'follow', 'end', 'quote'}
-OTHER = {'cut': 'whip', 'whip': 'match', 'match': 'cut', 'fade': 'cut', 'tear': 'cut', 'dive': 'cut'}
+OTHER = {'cut': 'dissolve', 'whip': 'push', 'match': 'dissolve', 'fade': 'dissolve', 'tear': 'dissolve', 'dive': 'dissolve', 'slide': 'push',
+         'zoom': 'dissolve', 'dissolve': 'push', 'push': 'ink', 'ink': 'dissolve'}
+# Between the sentences of one line (docu/vox.py segments): the film moves on every sentence, never the same way twice
+# running — a slide up, a whip, a zoom through, a hard cut, a match on scale, a whip back.
+SEG_WAYS = ('dissolve', 'push', 'ink', 'dissolve', 'match', 'push', 'ink')   # 17.11.2026 film mode: soft, slow (0.7 s), one move each
 
 
 def opaque(dev: dict) -> bool:
@@ -55,12 +60,12 @@ def span(dev: dict, d: float) -> tuple[float, float]:
 
 COLD_OPEN_S = 12.0  # editing rule 2: the first ~12 s are a montage — every look a different picture of the story
 OPENING = 2.6       # the film's first cut comes by here: the gate wants a change inside its first three seconds (qa.FIRST_CHANGE_S)
-TIGHT = 1.8         # the re-plan's target for a shot the gate measured as too long or too still
+TIGHT = 3.4         # the re-plan's target for a shot the gate measured as too long or too still
 
 
 # THE PACE FOLLOWS THE SCORE SHEET (studio/drama.py). What a look aims to last, by the beat's emotion and intensity:
-BURST = 1.9         # a release or a joy at full intensity: a burst of quick cuts (never under MIN_SUB — rule 142: a look, not a flicker)
-HELD = 3.9          # the held breath before a turn: the fewest cuts MAX_STILL allows
+BURST = 3.6         # a release or a joy at full intensity: a burst of quick cuts (never under MIN_SUB — rule 142: a look, not a flicker)
+HELD = 6.5          # the held breath before a turn: the fewest cuts MAX_STILL allows
 
 
 # The house editor cutting this film (studio/house.editor_profile: the Cutter, the Storyteller or the Montage), set by
@@ -128,12 +133,22 @@ def looks(dev: dict, d: float, cuts: list[float], related, key, focus=None, ever
         if i == 0:
             out.append({**dev, 'd': round(z - a, 3), 'hold': d})
             continue
-        if i % every == 0:   # `every` 1 = the cold open: a different picture on every look (editing rule 2)
-            src = (related(i) if related else None) or dev['src']
-        frame = FRAMES[(i - 1) % 3]
-        # a detail looks where the picture has something to look at (`focus(src)`, read off the picture); else a fixed corner
-        out.append({'kind': 'image', 'src': src, 'frame': frame, 'focus': ((focus(src) if focus else None) or FOCUS[(key + i) % len(FOCUS)]) if frame == 'detail' else None,
-                    'dt': round(base + a, 3), 'd': round(z - a, 3), 'fade': False,
+        # FILM MODE (owner 17.11.2026, "everything flickers"): a cut goes to ANOTHER picture that shows the line, never to a
+        # closer framing of the same one (that jump cut was the flicker). With nothing else to show, the picture runs on
+        # under its one camera move.
+        nxt = related(i) if related else None
+        if (not nxt or nxt == src) and every != 1 and out[-1]['d'] + (z - a) > LONG_HOLD:
+            nxt = related(-i) if related else None   # -i: the index may now give its best picture even if it names nothing the line says
+        if (not nxt or nxt == src) and every != 1 and out[-1]['d'] + (z - a) <= LONG_HOLD:
+            out[-1]['d'] = round(out[-1]['d'] + (z - a), 3)
+            continue
+        frame = None
+        if not nxt or nxt == src:   # the cold open's montage only (editing rule 2): a new framing when no new picture exists
+            frame = FRAMES[(i - 1) % 3]
+        else:
+            src = nxt
+        out.append({'kind': 'image', 'src': src, 'dt': round(base + a, 3), 'd': round(z - a, 3), 'fade': False,
+                    **({'frame': frame, 'focus': (focus(src) if focus else None) or FOCUS[(key + i) % len(FOCUS)]} if frame == 'detail' else {'frame': frame} if frame else {}),
                     **{k: dev[k] for k in ('veil', 'pos', 'z', 'recon') if k in dev}})
     for x in out:
         if x.get('focus') is None:
@@ -146,20 +161,22 @@ def transition(prev: dict | None, meta: dict, history: list[str]) -> str:
     t = meta.get('type')
     if prev is None:
         name = 'cut'            # the film opens on its first frame: nothing fades up from black
+    elif meta.get('seg'):       # the next sentence of the same line (docu/vox.py)
+        name = 'fade' if meta.get('emotion') in ('grief', 'dread') and meta.get('seg', 0) % 2 else SEG_WAYS[(meta.get('n', 0) + 2 * meta['seg']) % len(SEG_WAYS)]
     elif t == 'chapter':
         name = 'dive'
     elif prev.get('type') == 'chapter':
         name = 'tear'           # out of the chapter card through the paper
-    elif t in SOFT or meta.get('outcome') == 'loss' or meta.get('pace') == 'slow' or (meta.get('emotion') in ('grief', 'dread') and t not in HARD):
+    elif t in SOFT or meta.get('outcome') == 'loss' or (meta.get('emotion') in ('grief', 'dread') and t not in HARD):
         name = 'fade'           # grief and dread arrive slowly (the score sheet, studio/drama.py)
     elif t in HARD or meta.get('emotion') == 'release':
         name = 'cut'            # the hit: the release is a hard cut on the moment
     elif t in CENTRED:
         name = 'match'
     elif t in TRAVEL or meta.get('camera') == 'whip':
-        name = 'whip'
+        name = 'push'           # travel: the next picture pushes the last one out, slowly (the 0.3 s whip read as a flicker)
     else:
-        name = ('cut', 'whip', 'match')[meta.get('n', 0) % 3]
+        name = ('dissolve', 'push', 'ink')[meta.get('n', 0) % 3]
     if history[-2:] == [name, name] and t != 'chapter':
         name = OTHER[name]      # never the same way in three times running
     return name
@@ -202,7 +219,7 @@ def cut(beats: list[dict], grid: list[float] | None = None, related=None, backdr
             if prev is None and dev['kind'] in PICTURES and dt == 0 and hold >= OPENING + MIN_SUB:
                 pts = [min((pts or [OPENING])[0], OPENING), *pts[1:]]   # the opening: its first look is over inside three seconds
             if pts:
-                cold = b['t'] + dt < COLD_OPEN_S and m.get('type') not in ('chapter', 'open')
+                cold = (b['t'] + dt < COLD_OPEN_S and m.get('type') not in ('chapter', 'open')) or prev is None   # the film's first shot is the montage too
                 cutup += looks(dev, hold, pts, (lambda i, n=m.get('n'): related(n, i)) if related else None, m.get('n') or 0, focus, 1 if cold else 3)
             else:
                 cutup.append(dev)
@@ -401,8 +418,8 @@ def errors(beats: list[dict]) -> list[str]:
             continue
         for x in pictures(b):
             hold = x.get('d', b['d'] - x.get('dt', 0))
-            if hold > MAX_STILL + 0.01:
-                errs.append(f'shot {n}: a still holds {hold:.1f}s (at most {MAX_STILL:.0f}s)')
+            if hold > LONG_HOLD + 0.01:
+                errs.append(f'shot {n}: a still holds {hold:.1f}s (at most {LONG_HOLD:.0f}s)')
     for i in range(2, len(beats)):
         if treatment(beats[i]) is not None and treatment(beats[i]) == treatment(beats[i - 1]) == treatment(beats[i - 2]):
             errs.append(f'shot {(beats[i].get("meta") or {}).get("n")}: the same picture treatment three times in a row')

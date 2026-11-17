@@ -72,12 +72,12 @@ class Numbers(unittest.TestCase):
         self.assertEqual((n['dead_frames'], n['flashes'], n['shakes'], g['replan']), (0, [], [], {}))
 
     def test_a_slideshow_fails_on_length_and_says_where(self):
-        frames = film(pan(texture(1), int(3 * F)), pan(texture(2), int(11 * F)), pan(texture(3), int(3 * F)))
-        g = gate(frames, plan(17.0, ('trailer', 'illustration', 'score', 'illustration')))
+        frames = film(pan(texture(1), int(3 * F)), pan(texture(2), int(15 * F)), pan(texture(3), int(3 * F)))   # film mode: 12.5 s is the limit
+        g = gate(frames, plan(21.0, ('trailer', 'illustration', 'score', 'illustration')))
         name, ok, detail = check(g, 'shot length')
         self.assertFalse(ok)
         self.assertIn('slideshow', detail)
-        self.assertAlmostEqual(g['numbers']['longest_shot_s'], 11.0, delta=0.1)
+        self.assertAlmostEqual(g['numbers']['longest_shot_s'], 15.0, delta=0.1)
         self.assertEqual(sorted(g['replan']), [0, 1, 2, 3])                                 # every plan shot the 11 s hold runs through …
         self.assertTrue(all(v == ['long'] for v in g['replan'].values()))                   # … and why
         self.assertGreater(qa.MAX_SHOT_S, 4.0)                                              # the editor's 4 s plus measuring grain
@@ -183,7 +183,7 @@ class Replan(unittest.TestCase):
         fixed = E.cut([b(0), b(1)], fixes={1: ['long', 'flash']})
         self.assertGreater(len(E.pictures(fixed[1])), len(E.pictures(plain[1])))
         self.assertLessEqual(max(x['d'] for x in E.pictures(fixed[1])), E.MAX_STILL)
-        self.assertEqual((plain[1]['in'], fixed[1]['in']), ('whip', 'cut'))
+        self.assertEqual((plain[1]['in'], fixed[1]['in']), ('push', 'cut'))
         self.assertTrue(all(E.motion(x) not in ('slam', 'pull', 'reverse', 'turn') for x in E.pictures(fixed[1])))
         self.assertEqual(E.pictures(fixed[0]), E.pictures(plain[0]))                         # the shots the gate did not name are untouched
 

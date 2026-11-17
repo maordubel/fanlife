@@ -52,12 +52,14 @@ async function main(){
   const archivePath=[`content/manual/kit-archive-${club}.json`,`content/manual/kit-${club}.json`].find(p=>existsSync(p))??''
   const archive=existsSync(archivePath)?JSON.parse(readFileSync(archivePath,'utf8')) as {kits:Record<string,unknown>[]}:{kits:[]}
   const have=new Set(archive.kits.map(k=>`${k.season}|${k.type}`))
+  // a pack record that carries an archive kit's own id is that same shirt under another label (e.g. 'home 2'): one id, one drawing (17.11.2026)
+  const ids=new Set(archive.kits.map(k=>String(k.id)))
   const kits:Record<string,unknown>[]=[...archive.kits]
   let fromPack=0,noColour=0
   for(const f of (data.kits||[])){
    if(f.status!=='approved')continue
    const v=f.value as unknown as Record<string,any>,season=String(v.season||''),type=String(v.type||'home')
-   if(!season||have.has(`${season}|${type}`))continue
+   if(!season||have.has(`${season}|${type}`)||ids.has(String(f.id).split(':').pop()!.replace(/[^a-z0-9_-]/gi,'-')))continue
    const cols=words(v.construction?.colors??v.colours??v.shirt?.colours)
    if(!cols.length){noColour++;continue}
    have.add(`${season}|${type}`)

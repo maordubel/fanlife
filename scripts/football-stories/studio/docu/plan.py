@@ -112,6 +112,7 @@ class Adapter:
         self.design = Designer(self)                 # the richer devices, each only when the beat's data earns it (docu/designer.py)
         self._sight: dict[int, dict] | None = None   # the director's shot list (studio/sight.direct): what each line SHOWS
         self.banned = self.critic_bans()             # shot → pictures the critic called wrong on the last render
+        self.objects_used: set[str] = set()          # the objects already in this film (docu/vox.py: each object once, then the next)
 
     # ── assets ──────────────────────────────────────────────────────────────────────────────────────────────────────
     def asset(self, p: Path | str | None, prefix: str = 'a') -> str | None:
@@ -161,7 +162,13 @@ class Adapter:
         refuses in a picture, its decade, and what the last films showed. Built on first use, once."""
         if self._picker is None:
             from .. import media_index as MI
-            self._picker = MI.Picker(MI.build(), self.pal.club_id, self.pal.render_bans, MI.era_of(self.led.get('season')), self.jd.name)
+            idx = MI.build()
+            try:   # the club scenes (studio/scenes.py): the film's own club colours, drawn for it, found by what they show
+                from .. import scenes
+                idx = {**idx, 'records': list(idx.get('records') or []) + scenes.records(self.pal, self.jd / 'scenes')}
+            except Exception as x:  # noqa: BLE001 — a film without its scenes still has the library
+                print(f'Scenes: skipped ({str(x)[:120]})', flush=True)
+            self._picker = MI.Picker(idx, self.pal.club_id, self.pal.render_bans, MI.era_of(self.led.get('season')), self.jd.name)
         return self._picker
 
     def query(self, n: int) -> dict:
@@ -185,7 +192,10 @@ class Adapter:
         q = self.query(n)
         no = self.refusals(n)
         av = ({before} if before else set()) | self.people_pictures(n) | no
-        r = self.sight_pick(n, av) or self.picker.pick(q, avoid=av) or self.picker.pick(q, avoid=self.people_pictures(n) | no)
+        # a picture that shows what the line names first (subjects it says, words of its caption — owner 17.11.2026:
+        # "unrelated pictures"); only when nothing in the library shows it, the best of the rest
+        r = self.sight_pick(n, av) or self.picker.pick_relevant(q, avoid=av) or self.picker.pick(q, avoid=av) \
+            or self.picker.pick(q, avoid=self.people_pictures(n) | no)
         self.spares[n] = self.ink(Path(r['path'])) if r else None
         if r:
             self.keys.setdefault(n, r['id'])
@@ -195,10 +205,60 @@ class Adapter:
         """Another picture for a line so long that three looks at its own picture are not enough (docu/editor.looks): the
         index's next best for the same beat, never the one this shot already shows."""
         own = self.keys.get(n)
-        r = self.picker.pick({**self.query(n), 'n': n}, avoid=({own} if own else set()) | self.people_pictures(n) | self.refusals(n))
+        # only a picture that shows the line (17.11.2026: "unrelated pictures") — else the editor lets the shot run on
+        av = ({own} if own else set()) | {*self.also.get(n, [])} | self.people_pictures(n) | self.refusals(n)
+        r = self.picker.pick_relevant({**self.query(n), 'n': n}, avoid=av)
+        if not r and i < 0:   # the shot has run LONG_HOLD on one picture: the best the index has, rather than a still slide
+            r = self.picker.pick({**self.query(n), 'n': n}, avoid=av)
         if r:
             self.also.setdefault(n, []).append(r['id'])
         return self.asset(self.ink(Path(r['path'])), 'img') if r else None
+
+    # ── the VOX pass (docu/vox.py): a picture and a graphic idea for every sentence ─────────────────────────────────
+    def segment_picture(self, n: int, seg: dict, text: str, k: int) -> dict | None:
+        """The picture for one sentence of a long line: the one that shows what THAT sentence names; else the line's own
+        picture in a closer framing (never a picture about something else)."""
+        from .. import media_index as MI
+        ws = text.split()
+        words = seg['meta'].get('words') or []
+        allw = [w for w in (next((x for x in self.plan['shots'] if x['n'] == n), {}).get('words') or [])]
+        part = ' '.join(ws[i] for i, w in enumerate(allw) if i < len(ws) and self.plan_t(n, w) in words) if allw else ''
+        part = part or text
+        q = {**MI.beat_query({'n': n, 'visual': {'type': 'illustration'}, 'narration': part}, (self.sheet.get(n) or {}).get('emotion')),
+             'n': n, 't': seg['t']}
+        seen = {self.keys.get(n), *self.also.get(n, [])} - {None}
+        av = seen | self.people_pictures(n) | self.refusals(n)
+        r = self.picker.pick_relevant(q, avoid=av)
+        if not r:   # film mode (17.11.2026): no closer framing of the same picture — the segment joins the one before it
+            return None
+        self.also.setdefault(n, []).append(r['id'])
+        return {'kind': 'image', 'src': self.asset(self.ink(Path(r['path'])), 'img'), 'move': ('panl', 'push', 'panr', 'pull')[k % 4], 'seg_pick': r['id']}
+
+    def plan_t(self, n: int, w: dict) -> float | None:
+        s = next((x for x in self.plan['shots'] if x['n'] == n), {})
+        return round(s['voice_at'] + w['start'], 3) if s.get('voice_at') is not None and isinstance(w, dict) else None
+
+    def object_device(self, seg_text: str, ws: list[tuple[str, float]], t0: float, end: float) -> dict | None:
+        """The objects a sentence names (studio/objects.py), printed in this club's inks, entering on their own word."""
+        from .. import objects as O
+        from . import vox
+        asked = [(k, w) for k, w in O.asked(seg_text, 3, avoid=self.objects_used) if O.allowed(k, self.pal)][:2]
+        if not asked:
+            return None
+        files = vox.object_files([k for k, _ in asked], self.pal, self.jd)
+        items = []
+        for j, (k, w) in enumerate(asked):
+            first = w.split()[0]
+            at = next((tt for ww, tt in ws if re.sub(r'[^a-z\-\']', '', ww.lower()) == first), ws[0][1])
+            items.append({'id': k, 'src': self.asset(files[k], 'obj'), 'at': round(max(0.0, at - t0), 3), 'word': w.upper()})
+        a0 = min(x['at'] for x in items)
+        hold = min(vox.ACCENT_MAX + 0.8, end - (t0 + a0))
+        if hold < vox.ACCENT_MIN:
+            return None
+        for x in items:
+            x['at'] = round(x['at'] - a0, 3)
+            self.objects_used.add(x['id'])
+        return {'kind': 'objects', 'items': items, 'dt': round(a0, 3), 'd': round(hold, 3), 'vox': True, 'side': len(self.objects_used) % 2}
 
     # ── sight (studio/sight.py): pictures chosen by what they SHOW, not by their file names ─────────────────────────
     def sight(self) -> dict[int, dict]:
@@ -1034,6 +1094,8 @@ class Adapter:
         """The film's beats, edited (docu/editor.py): long stills cut into looks, cards that leave, a transition into
         every beat, the docs/71 rules. STORIES_DOCU_EDIT=0 keeps the adapter's own one-still-per-line cut (for comparison)."""
         raw = self.raw_beats()
+        from . import vox
+        raw = vox.run(raw, self)   # a picture and a graphic idea for every sentence (owner, 17.11.2026)
         self.punch_up(raw)   # the language mix: kinetic lines where too much of the film is plain art (docu/explainer.py)
         if os.environ.get('STORIES_DOCU_EDIT', '1') == '0':
             return self.spoken(raw)

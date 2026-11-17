@@ -49,5 +49,7 @@
  "xi.undo": "Undo last edit",
  "xi.undo.done": "Last edit undone.",
  "xi.resumeDraft": "Draft restored: {n}/11 selected.",
- "xi.pickTarget": "Pick for {role}"
+ "xi.pickTarget": "Pick for {role}",
+ "xi.undoShort": "Undo",
+ "xi.era": "Era"
 }

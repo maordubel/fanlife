@@ -164,13 +164,13 @@ class Craft(unittest.TestCase):
         self.assertEqual(E.pace({'emotion': 'release', 'intensity': 1.0}), E.BURST)       # a burst at the release
         self.assertGreaterEqual(E.BURST, E.MIN_SUB)                                       # … of looks, never flickers (rule 142)
         img = {'kind': 'image', 'src': 'a.webp', 'move': 'push'}
-        mk = lambda **m: E.cut([{'t': 0, 'd': 2, 'shots': [dict(img)], 'meta': {'n': 0, 'type': 'open'}},   # noqa: E731
-                                {'t': 2, 'd': 11.4, 'shots': [dict(img)], 'meta': {'n': 1, 'type': 'illustration', **m}}])[1]
+        mk = lambda **m: E.cut([{'t': 0, 'd': 12.5, 'shots': [dict(img)], 'meta': {'n': 0, 'type': 'open'}},   # noqa: E731  (past the cold open's montage)
+                                {'t': 12.5, 'd': 11.4, 'shots': [dict(img)], 'meta': {'n': 1, 'type': 'illustration', **m}}])[1]
         looks = lambda b: [x['d'] for x in b['shots'] if x['kind'] == 'image']   # noqa: E731
         held, burst = mk(emotion='tension', intensity=0.8, breath=True), mk(emotion='release', intensity=1.0)
-        self.assertEqual(len(looks(held)), 3)
-        self.assertEqual(len(looks(burst)), 6)
-        self.assertTrue(all(E.MIN_SUB <= x <= E.MAX_STILL for x in looks(held) + looks(burst)))
+        self.assertLessEqual(len(looks(held)), 2)   # film mode (17.11.2026): no jump cut to its own detail; the index only past LONG_HOLD
+        self.assertLessEqual(len(looks(burst)), 2)
+        self.assertTrue(all(x <= E.LONG_HOLD for x in looks(held) + looks(burst)))
         self.assertEqual(burst['in'], 'cut')                                              # the release is a hard cut
         self.assertEqual(mk(emotion='grief', intensity=0.8)['in'], 'fade')                # grief arrives slowly
         self.assertEqual({x.get('grade') for x in burst['shots'] if x['kind'] == 'image'}, {'bloom'})

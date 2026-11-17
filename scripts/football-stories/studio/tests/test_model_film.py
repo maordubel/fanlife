@@ -81,7 +81,7 @@ class Cut(unittest.TestCase):
                 continue
             for p in s['pictures']:
                 if p['kind'] == 'image':
-                    self.assertLessEqual(p['d'], E.MAX_STILL + 0.01, (s['n'], p))
+                    self.assertLessEqual(p['d'], E.LONG_HOLD + 0.01, (s['n'], p))   # film mode (17.11.2026)
 
     def test_three_languages_and_a_named_camera(self):
         mix = self.shots['mix']

@@ -124,7 +124,7 @@ class SparePictures(unittest.TestCase):
         got = [ad.picture(self.bare(n))[0] for n in range(25)]
         self.assertEqual(len(set(got)), 25)                                # the index has hundreds: nothing repeats in 25 shots
         self.assertEqual(ad.picture(self.bare(3))[0], got[3])              # asked again for the same shot: the same picture
-        self.assertTrue(all(k.startswith(('beat:', 'art:')) for k in ad.keys.values()))   # each by its index key
+        self.assertTrue(all(k.startswith(('beat:', 'art:', 'scene:')) for k in ad.keys.values()))   # each by its index key (scene: the club scenes, studio/scenes.py)
 
     def test_the_same_film_draws_the_same_pictures_and_another_film_differs(self):
         a, b, c = (([ad.picture(self.bare(n))[0] for n in range(8)]) for ad in (self.adapter(), self.adapter(), self.adapter('job-b')))

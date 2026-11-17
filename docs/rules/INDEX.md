@@ -107,6 +107,8 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [studio-pictures](studio-pictures.md) · Rival colour read from the picture pixels; a named real person never gets a generic figure; the PNG library enters every documentary through the media index (owner, 14.11.2026)
 - [studio-music-dubelteam](studio-music-dubelteam.md) · Every film is scored only with the eight DubelTeam tracks, credited "Music: DubelTeam"; earlier tracks are retired (owner, 15.11.2026)
 - [studio-sight](studio-sight.md) · The studio looks at what it shows: pictures described once and chosen by sight, a director's shot list, no card on an empty ground (15% budget, 4 s), and a gate that judges the frames (owner, 15.11.2026)
+- [house-crew](house-crew.md) · Three in-house writers, directors and editors write, direct and cut a film from the archive in code when Google is unavailable or out of credit — never a wait (owner, 16.11.2026)
+- [studio-vox-pass](studio-vox-pass.md) · Every sentence is a shot with its own relevant picture and graphic idea (objects, scoreline, odometer, type); the object library and the club scenes in every club's inks; a busy Google never holds the queue (owner, 17.11.2026)
 
 ## Control room, research desk and CRM
 
@@ -235,3 +237,4 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [pay-stripe-own-products](pay-stripe-own-products.md) · Our own products (files, films) are paid with our Stripe; physical goods stay on Printify's checkout. Off until the keys exist; orders in worker_pay_orders; only the signed webhook moves an order (16.11.2026)
 - [pitch-left-is-left.md](pitch-left-is-left.md) — formation x is from the physical left; draw with `left`, never `inset-inline-start` or `100 - x` (16.11.2026)
 - [book-shop-separate](book-shop-separate.md) · Broken Collective sells through FAN LIFE's server and Stripe but never in FAN LIFE's shop: worker_book_orders, Lulu for the paperback, Printify's own "Broken Collective" store for the goods (17.11.2026)
+- [club-shirt-only](club-shirt-only.md) · A club game shows the man's shirt only, cropped from the measured SVG; drawn kits win ties; an undated man wears the club's classic drawing, untitled (16.11.2026)
