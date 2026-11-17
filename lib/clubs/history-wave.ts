@@ -7,6 +7,9 @@ import olympiacos20 from '@/club-packs/olympiacos/wave-history-2026-10-20.json'
 import panathinaikos20 from '@/club-packs/panathinaikos/wave-history-2026-10-20.json'
 import stpauli20 from '@/club-packs/st-pauli/wave-history-2026-10-20.json'
 import zrinjski20 from '@/club-packs/zrinjski-mostar/wave-history-2026-10-20.json'
+// 17.11.2026 — collected for the research desk on 20.10, held there; both clubs are repository clubs now and the owner approved every single-source record
+import atalanta20 from '@/club-packs/atalanta/wave-history-2026-10-20.json'
+import maccabiHaifa20 from '@/club-packs/maccabi-haifa/wave-history-2026-10-20.json'
 import {mergeWave} from './waves'
 import {enClub} from '@/lib/trivia/names'
 import aliases from '@/content/manual/names-en/history-side-aliases.json'
@@ -20,7 +23,7 @@ const key=(x:string)=>{
  return name.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase().replaceAll('ø','o').replaceAll('đ','d').replaceAll('ł','l').replace(/\b(?:hsk|nk|fk|fc|hapoel)\b/g,'').replace(/[^a-z0-9]/g,'')
 }
 /** Waves are applied in order; each one goes through the same day-collision gate, so a later wave never overrides an earlier fact. */
-const WAVES:Record<string,unknown[]>={'hapoel-petah-tikva':[petah],'zrinjski-mostar':[zrinjski,zrinjski20],'aek-athens':[aek20],'celtic':[celtic20],'olympiacos':[olympiacos20],'panathinaikos':[panathinaikos20],'st-pauli':[stpauli20]}
+const WAVES:Record<string,unknown[]>={'hapoel-petah-tikva':[petah],'zrinjski-mostar':[zrinjski,zrinjski20],'aek-athens':[aek20],'celtic':[celtic20],'olympiacos':[olympiacos20],'panathinaikos':[panathinaikos20],'st-pauli':[stpauli20],'atalanta':[atalanta20],'maccabi-haifa':[maccabiHaifa20]}
 
 /** Scores are HOME first in both source formats. Shootouts are a separate field. */
 function result(v:Raw):{home:string;away:string;hg:number;ag:number}|null{

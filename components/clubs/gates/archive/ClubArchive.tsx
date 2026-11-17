@@ -14,19 +14,22 @@ import {SAVED_EVENT,readSaved,savedIds,setSaved,type SavedBook} from '@/lib/club
 import {EntryCard,keyLabel,type CardCtx} from './ArchiveCards'
 import {ArchiveSheetBody} from './ArchiveSheet'
 import {DigBox} from './DigBox'
+import {IndexPanel} from './ArchiveIndex'
+import type {ArchiveIndex} from '@/lib/clubs/archive-index'
 import css from './archive.module.css'
 
-export type ArchiveTab='today'|'time'|'dig'|'search'|'mine'
-const TABS:ArchiveTab[]=['today','time','dig','search','mine']
+export type ArchiveTab='today'|'time'|'index'|'dig'|'search'|'mine'
+const TABS:ArchiveTab[]=['today','time','index','dig','search','mine']
 const PAGE=24
 export type ClubArchiveProps={
- club:string;clubName:string;version:string;locale:UiLocale;contentLocale:string;copy:GameCopy;wire:ArchiveWire;seed:number
+ club:string;clubName:string;version:string;locale:UiLocale;contentLocale:string;copy:GameCopy;wire:ArchiveWire;index:ArchiveIndex;seed:number
  initial:{tab:ArchiveTab;q:string;event:string|null};links:{xi:string|null;derby:string|null};wardrobe:RumbleWardrobe
 }
 
 const Icon=({tab}:{tab:ArchiveTab})=><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="round" strokeLinecap="round">
  {tab==='today'&&<><rect x="3.5" y="5" width="17" height="15" rx="1"/><path d="M3.5 10h17M8 3v4M16 3v4"/><circle cx="12" cy="15" r="1.6" fill="currentColor"/></>}
  {tab==='time'&&<><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2"/></>}
+ {tab==='index'&&<><path d="M5 3.5h11l3 3V20.5H5z"/><path d="M8.5 9h7M8.5 12.5h7M8.5 16h4.5"/><path d="M16 3.5v3h3"/></>}
  {tab==='dig'&&<><path d="M3 10l3-5h12l3 5v9H3z"/><path d="M3 10h6l1.5 2h3L15 10h6"/></>}
  {tab==='search'&&<><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></>}
  {tab==='mine'&&<path d="M6 3h12v18l-6-4.5L6 21z"/>}
@@ -43,8 +46,8 @@ function syncUrl(patch:{tab?:ArchiveTab;q?:string;event?:string|null}){
  }catch{/* the address bar is a convenience */}
 }
 
-/** Gate 12 · the Living Archive: Today · Time · Dig · Search · Mine over one set of entries, one drawer, one trail. */
-export function ClubArchive({club,clubName,version,locale,contentLocale,copy,wire,seed,initial,links,wardrobe}:ClubArchiveProps){
+/** Gate 12 · the Living Archive: Today · Time · Index · Dig · Search · Mine over one set of entries, one drawer, one trail. */
+export function ClubArchive({club,clubName,version,locale,contentLocale,copy,wire,index,seed,initial,links,wardrobe}:ClubArchiveProps){
  const t=useCallback((k:string,v?:Record<string,string|number>)=>tr(copy,k,v),[copy])
  const entries=useMemo(()=>decodeArchive(wire),[wire])
  const byId=useMemo(()=>new Map(entries.map(e=>[e.id,e])),[entries])
@@ -118,7 +121,7 @@ export function ClubArchive({club,clubName,version,locale,contentLocale,copy,wir
 
  const distinct=new Set(trail).size,done=distinct>=ROUND_DEPTH
  return <section className={`${css.stage} wgb`} data-testid="archive-board" data-tab={tab}>
-  <div className={`wk-folders five ${css.dock}`} role="tablist" aria-label={t('ar.tabs')} onKeyDown={onTabKey}>
+  <div className={`wk-folders ${css.dock} ${css.six}`} role="tablist" aria-label={t('ar.tabs')} onKeyDown={onTabKey}>
    {TABS.map(k=><button key={k} id={`ar-tab-${k}`} type="button" role="tab" className={css.dockBtn} aria-selected={tab===k} aria-controls={`ar-panel-${k}`} tabIndex={tab===k?0:-1} onClick={()=>setTab(k)}>
     <Icon tab={k}/><span>{t(`ar.tab.${k}`)}</span>{k==='mine'&&savedSet.size>0&&<i className={css.badge} aria-hidden="true">{savedSet.size}</i>}</button>)}
   </div>
@@ -133,6 +136,7 @@ export function ClubArchive({club,clubName,version,locale,contentLocale,copy,wir
   <div id={`ar-panel-${tab}`} role="tabpanel" aria-labelledby={`ar-tab-${tab}`} className={css.panel}>
    {tab==='today'&&<TodayPanel day={day} today={today} browse={browse} setBrowse={setBrowse} ix={ix} t={t} locale={locale} card={card} entriesCount={entries.length} onJumpTab={setTab} closeLabel={copy['play.close']}/>}
    {tab==='time'&&<TimePanel entries={entries} decade={decade} setDecade={setDecade} filter={filter} setFilter={setFilter} shown={shown} setShown={setShown} t={t} card={card}/>}
+   {tab==='index'&&<IndexPanel index={index} entries={entries} t={t} card={card}/>}
    {tab==='dig'&&<DigBox entries={entries} byId={byId} seed={seed} ctx={ctx} saved={savedSet} onOpen={onOpenCard} onToggleSave={onToggleSave}/>}
    {tab==='search'&&<SearchPanel entries={entries} q={q} setQ={v=>{setQ(v);setShown(PAGE);syncUrl({q:v})}} filter={filter} setFilter={setFilter} shown={shown} setShown={setShown} t={t} card={card}/>}
    {tab==='mine'&&<MinePanel club={club} byId={byId} savedIds={savedIds(saved)} trail={trail} beenTick={beenTick} t={t} card={card} onOpen={open}/>}

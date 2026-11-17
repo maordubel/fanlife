@@ -41,11 +41,11 @@
    "confidence": 2,
    "status": "approved",
    "researchedAt": "2026-11-13",
-   "approvedAt": "2026-11-13",
-   "approvedBy": "automated:cross-source-review-aek-athens-2026-11-13",
+   "approvedAt": "2026-11-17",
+   "approvedBy": "Maor Harel (owner, chat 2026-11-17: every single-source record approved)",
    "parserCertainty": "medium",
    "conflictFree": false,
-   "notes": "Wikipedia infobox (league): 481/236; The Greek Herald: 481/236 (label garbled, figures identical). Other bases: Wikipedia records list (all competitions, from AEK official stats) 583/301; OT.gr 566/289 (basis unstated)."
+   "notes": "Wikipedia infobox (league): 481/236; The Greek Herald: 481/236 (label garbled, figures identical). Other bases: Wikipedia records list (all competitions, from AEK official stats) 583/301; OT.gr 566/289 (basis unstated). Approved by the owner in chat on 2026-11-17 (single source approved; all research put into action)."
   }
  ],
  "matches": [],

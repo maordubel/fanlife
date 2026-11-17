@@ -1,6 +1,7 @@
 import 'server-only'
 import type {ClubData} from './contract'
 import {buildEntries,encodeArchive,tokensOf,type Entry} from './entities'
+import {buildArchiveIndex,type ArchiveIndex} from './archive-index'
 
 /**
  * The archive door (12.11.2026) — every gate's way back into the club's Living Archive (gate 12).
@@ -13,7 +14,7 @@ import {buildEntries,encodeArchive,tokensOf,type Entry} from './entities'
  * One projection per club version per instance (the archive page itself reads it from here too): building the entries
  * walks every record, so it is done once and kept, never per request.
  */
-type Projection={entries:Entry[];wire:ReturnType<typeof encodeArchive>;ids:Set<string>;door:Door}
+type Projection={entries:Entry[];wire:ReturnType<typeof encodeArchive>;ids:Set<string>;door:Door;index:ArchiveIndex}
 export type Door={
  /** an archive entry id for a player fact id, or null */
  player:(playerId:string|null|undefined)=>string|null
@@ -62,7 +63,7 @@ function makeDoor(entries:Entry[]):Door{
 export function archiveProjection(club:ClubData):Projection{
  const k=`${club.identity.id}:${club.version}`,hit=PROJECTED.get(k);if(hit)return hit
  const entries=buildEntries(club)
- const out={entries,wire:encodeArchive(entries,club.sources),ids:new Set(entries.map(e=>e.id)),door:makeDoor(entries)}
+ const out={entries,wire:encodeArchive(entries,club.sources),ids:new Set(entries.map(e=>e.id)),door:makeDoor(entries),index:buildArchiveIndex(club,entries)}
  if(PROJECTED.size>=24)PROJECTED.delete(PROJECTED.keys().next().value as string)
  PROJECTED.set(k,out);return out
 }

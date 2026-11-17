@@ -5,6 +5,8 @@ import {loadClubBase} from '@/lib/clubs/resolver'
 type W={clubId:string;matches:{id:string;status:string;value:{on:string;homeGoals:number;awayGoals:number;score:string;name:string;us?:string}}[]}
 const wave=(c:string):W=>JSON.parse(readFileSync(`club-packs/${c}/wave-history-2026-10-20.json`,'utf8'))
 const OPEN=['aek-athens','celtic','olympiacos','panathinaikos','st-pauli','zrinjski-mostar']
+// repository clubs since 13–14.11.2026: their staged history moved into their packs on 17.11.2026 (rule archive-single-source)
+const MOVED=['atalanta','maccabi-haifa']
 
 describe('research bundle 2026-10-20',()=>{
  for(const id of OPEN)it(`${id}: every approved record reaches the club or is reported as a conflict`,async()=>{
@@ -18,9 +20,15 @@ describe('research bundle 2026-10-20',()=>{
   const corroborated=missing.filter(m=>r.data.matches!.some(f=>(f.value as {on?:string}).on===m.value.on))
   expect(missing.length-corroborated.length).toBe(0)
  },60000)
+ for(const id of MOVED)it(`${id}: the staged history is in the pack, owner-approved, and every night reaches the club`,async()=>{
+  const w=wave(id);expect(w.matches.length).toBeGreaterThan(0);expect(w.matches.every(m=>m.status==='approved')).toBe(true)
+  const r=(await loadClubBase(id))!,days=new Set(r.data.matches!.map(f=>(f.value as {on?:string}).on))
+  expect(r.diagnostics.filter(x=>x.code==='HISTORY_CONFLICT')).toEqual([])
+  for(const m of w.matches)expect(days.has(m.value.on),`${id} ${m.value.on}`).toBe(true)
+ },60000)
  it('unopened clubs are staged, never wired, and none is approved',()=>{
   const dirs=readdirSync('research-staging').filter(d=>existsSync(`research-staging/${d}/wave-history-2026-10-20.json`))
-  expect(dirs.length).toBeGreaterThanOrEqual(10)
+  expect(dirs.length).toBeGreaterThanOrEqual(8)
   // 10.11.2026 (rule 143): a club the owner opened on the research desk is promoted — its pack says so, and the staged file stays as it was, the record of what he approved
   for(const d of dirs){const w=JSON.parse(readFileSync(`research-staging/${d}/wave-history-2026-10-20.json`,'utf8')) as W;expect(w.matches.every(m=>m.status==='review')).toBe(true)
    if(existsSync(`club-packs/${d}/core.json`))expect(String(JSON.parse(readFileSync(`club-packs/${d}/core.json`,'utf8')).note||'')).toMatch(/^Promoted from the research desk/);else expect(existsSync(`club-packs/${d}`)).toBe(false)}

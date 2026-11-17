@@ -19,6 +19,11 @@ async function forward(request, url, base, env, body) {
   const target = new URL(url.pathname + url.search, base)
   const headers = new Headers(request.headers)
   headers.set('x-fanlife-host', url.host)
+  // FAN LIFE INSIGHT (17.11.2026): the place the edge resolved, so the server never needs the address itself
+  const cf = request.cf || {}
+  if (cf.country) headers.set('x-fanlife-geo-country', String(cf.country))
+  if (cf.region) headers.set('x-fanlife-geo-region', encodeURIComponent(String(cf.region)))
+  if (cf.city) headers.set('x-fanlife-geo-city', encodeURIComponent(String(cf.city)))
   if (env && env.KEY) headers.set('x-fanlife-key', env.KEY)
   const init = { method: request.method, headers, redirect: 'manual' }
   if (body !== undefined) init.body = body

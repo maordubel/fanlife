@@ -25,17 +25,17 @@ describe('wave building',()=>{
   expect(second?.publisher).toBe('TheSportsDB')
   expect(corroborates({events:[{idEvent:'9',strHomeTeam:'Olympiacos',strAwayTeam:'Other FC',intHomeScore:'3',intAwayScore:'1'}]},m)).toBeNull()
  })
- it('two publishers approve; one publisher stays in review; club side is never guessed',()=>{
+ it('two publishers approve; one publisher is approved too (owner, 17.11.2026); club side is never guessed',()=>{
   const ok=toWaveFact(m,['Olympiacos'],{publisher:'TheSportsDB',title:'t',url:'https://www.thesportsdb.com/event/9'},'2026-10-06','olympiacos')!
   expect(ok.fact.status).toBe('approved');expect(ok.fact.confidence).toBe(3)
   // rule 102 (owner, 10.10.2026): UEFA's eleven and scorers are UEFA's own record — a second publisher confirming the result must not take them away (12.10.2026)
   expect((ok.fact.value as {lineup?:string[]}).lineup).toHaveLength(11);expect((ok.fact.value as {scorers?:unknown[]}).scorers).toEqual([{name:'A Scorer',minute:10}])
-  // a non-UEFA primary with a second publisher: the result is corroborated, the eleven is not (audit A04)
+  // a non-UEFA primary with a second publisher: the primary's eleven and scorers are approved with it (owner, 17.11.2026: a single source is approved)
   const other=toWaveFact({...m,provider:'other' as never,publisher:'Some Site'},['Olympiacos'],{publisher:'TheSportsDB',title:'t',url:'https://www.thesportsdb.com/event/9'},'2026-10-06','olympiacos')!
-  expect(other.fact.status).toBe('approved');expect('lineup' in other.fact.value).toBe(false);expect('scorers' in other.fact.value).toBe(false)
+  expect(other.fact.status).toBe('approved');expect((other.fact.value as {lineup?:string[]}).lineup).toHaveLength(11);expect((other.fact.value as {scorers?:unknown[]}).scorers).toEqual([{name:'A Scorer',minute:10}])
   expect(ok.fact.value.primaryOnly.lineup).toHaveLength(11);expect(ok.fact.value.primaryOnly.scorers).toEqual([{name:'A Scorer',minute:10}]);expect(ok.fact.approvedBy).toMatch(/^automated:/)
   const uefaAlone=toWaveFact(m,['Olympiacos'],null,'2026-10-06','olympiacos')!;expect(uefaAlone.fact.status).toBe('approved') // owner decision 10.10.2026 (rule 102): UEFA is sufficient for its own competitions
-  const one=toWaveFact({...m,provider:'other' as never,publisher:'Some Site'},['Olympiacos'],null,'2026-10-06','olympiacos')!;expect(one.fact.status).toBe('review');expect(one.fact.confidence).toBe(2)
+  const one=toWaveFact({...m,provider:'other' as never,publisher:'Some Site'},['Olympiacos'],null,'2026-10-06','olympiacos')!;expect(one.fact.status).toBe('approved');expect(one.fact.confidence).toBe(2);expect(one.fact.approvedBy).toMatch(/owner, chat 2026-11-17/)
   expect(toWaveFact(m,['Somebody Else'],null,'2026-10-06','x')).toBeNull()
   expect(buildWave([{m,second:null}],['Olympiacos'],'olympiacos','2026-10-06').matches).toHaveLength(1)
  })

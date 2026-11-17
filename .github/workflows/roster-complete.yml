@@ -1,7 +1,7 @@
 name: roster-complete
 # Click "Run workflow" (Actions tab): completes every open club's player archive from the public Wikipedia categories and infoboxes (all periods),
 # fills missing positions, adds the new men to the Rumble price list at €1M and restores the ladder with the fewest moves (rule 103).
-# Nothing here approves anything: new men stay confidence 1 (one publisher). The result is pushed to branch roster-complete/auto for review.
+# New men are confidence 2: the owner approved single-source records on 17.11.2026 (rule archive-single-source). The result is pushed to branch roster-complete/auto for review.
 on:
   workflow_dispatch:
     inputs:

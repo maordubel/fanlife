@@ -14,8 +14,8 @@ import {careerFor} from './careers'
 /**
  * Roster wave (10.10.2026): men the owner's consolidated pricing file and the public Wikipedia player categories name, who the archive did not yet hold.
  * Built by `scripts/rumble/build-roster-wave.ts` into `club-packs/<club>/wave-roster-2026-10-10.json`; added here on top of every club's compiled data, never over an
- * existing record (a name or alias already in the archive is skipped — exact match, rule 7). Confidence 1 (one source, unreviewed): the Rumble and the other
- * games that deal every man use them; the trivia generator (confidence ≥ 2) does not (rule 2). Years and positions are null/empty unless a source states them.
+ * existing record (a name or alias already in the archive is skipped — exact match, rule 7). Confidence 2 since 17.11.2026 (one source, approved by the owner: rule archive-single-source): every game, the trivia
+ * generator and the archive deal them. Years and positions are null/empty unless a source states them.
  */
 type Wave={sources:Source[];players:Fact<ClubPlayer>[]}
 const WAVES:Record<string,Wave>={celtic:cel,'aek-athens':aek,olympiacos:oly,panathinaikos:pao,'st-pauli':stp,'zrinjski-mostar':zri,'hapoel-petah-tikva':hpt,'hapoel-tel-aviv':hta} as unknown as Record<string,Wave>

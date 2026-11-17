@@ -1423,11 +1423,11 @@
    "researchedAt": "2026-11-14",
    "parserCertainty": "medium",
    "conflictFree": false,
-   "confidence": 1,
+   "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-14",
-   "approvedBy": "Maor Harel (owner standing decision 2026-10-08: kit records need no second source)",
-   "notes": "Manufacturer disputed, so null: FKA lists the 2002-03 home kit as Puma; Cult Kits lists a match-worn 2002/03 Champions League home shirt as Lotto and mentions green patches covering the Lotto logos on the sleeves. Possibly different versions (league vs UEFA); unresolved."
+   "approvedAt": "2026-11-17",
+   "approvedBy": "Maor Harel (owner, chat 2026-11-17: every single-source record approved)",
+   "notes": "Manufacturer disputed, so null: FKA lists the 2002-03 home kit as Puma; Cult Kits lists a match-worn 2002/03 Champions League home shirt as Lotto and mentions green patches covering the Lotto logos on the sleeves. Possibly different versions (league vs UEFA); unresolved. Approved by the owner in chat on 2026-11-17 (single source approved; all research put into action)."
   },
   {
    "id": "mh-kit-1993-94-home",
@@ -1910,11 +1910,11 @@
    "confidence": 3,
    "status": "approved",
    "researchedAt": "2026-11-14",
-   "approvedAt": "2026-11-14",
-   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "approvedAt": "2026-11-17",
+   "approvedBy": "Maor Harel (owner, chat 2026-11-17: every single-source record approved)",
    "parserCertainty": "medium",
    "conflictFree": true,
-   "notes": "Wikipedia: 6 Mar 2023, 4-1, Atzili 3/5/72, Chery 56, Serdal 69. Sports Rabbi (dated 6 Mar 2023): 4-1, Atzili two inside five minutes, Chery 56', Sardel about a quarter-hour later, Atzili third (no minute). Names agree; only Chery's 56' is stated by both, so all other minutes are null."
+   "notes": "Wikipedia: 6 Mar 2023, 4-1, Atzili 3/5/72, Chery 56, Serdal 69. Sports Rabbi (dated 6 Mar 2023): 4-1, Atzili two inside five minutes, Chery 56', Sardel about a quarter-hour later, Atzili third (no minute). Names agree; only Chery's 56' is stated by both, so all other minutes are null. Approved by the owner in chat on 2026-11-17 (single source approved; all research put into action)."
   },
   {
    "id": "hd-2023-01-04",
@@ -1959,11 +1959,11 @@
    "confidence": 3,
    "status": "approved",
    "researchedAt": "2026-11-14",
-   "approvedAt": "2026-11-14",
-   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "approvedAt": "2026-11-17",
+   "approvedBy": "Maor Harel (owner, chat 2026-11-17: every single-source record approved)",
    "parserCertainty": "medium",
    "conflictFree": false,
-   "notes": "Planet Sport and Babagol: 19 Apr 2022, semi-final, 2-0. Wikipedia lists 19 May 2022 (outvoted). Venue disputed (Planet Sport: Sammy Ofer; Babagol: Bloomfield) so null. First scorer disputed (Planet Sport: Menachem 43'; Babagol and Wikipedia: Dean David ~43') and Chery's minute differs (52/~51), so scorers null."
+   "notes": "Planet Sport and Babagol: 19 Apr 2022, semi-final, 2-0. Wikipedia lists 19 May 2022 (outvoted). Venue disputed (Planet Sport: Sammy Ofer; Babagol: Bloomfield) so null. First scorer disputed (Planet Sport: Menachem 43'; Babagol and Wikipedia: Dean David ~43') and Chery's minute differs (52/~51), so scorers null. Approved by the owner in chat on 2026-11-17 (single source approved; all research put into action)."
   },
   {
    "id": "hd-2021-12-02",
@@ -1989,11 +1989,11 @@
    "confidence": 3,
    "status": "approved",
    "researchedAt": "2026-11-14",
-   "approvedAt": "2026-11-14",
-   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "approvedAt": "2026-11-17",
+   "approvedBy": "Maor Harel (owner, chat 2026-11-17: every single-source record approved)",
    "parserCertainty": "medium",
    "conflictFree": true,
-   "notes": "Planet Sport: 2 Dec 2021, round 11, Maccabi home 5-1; goals 16' and 45' unnamed, Haziza 18', Ožbolt 56', Atzili 72', Donyoh 90'. Sports Rabbi: David 2, Atzili, Haziza, Donyoh; Ožbolt. Wikipedia: David 16/45, Haziza 18, Ožbolt 57, Atzili 72, Donyoh 84. Names agree; Ožbolt and Donyoh minutes disagree and David's minutes rest on one named source, so those are null."
+   "notes": "Planet Sport: 2 Dec 2021, round 11, Maccabi home 5-1; goals 16' and 45' unnamed, Haziza 18', Ožbolt 56', Atzili 72', Donyoh 90'. Sports Rabbi: David 2, Atzili, Haziza, Donyoh; Ožbolt. Wikipedia: David 16/45, Haziza 18, Ožbolt 57, Atzili 72, Donyoh 84. Names agree; Ožbolt and Donyoh minutes disagree and David's minutes rest on one named source, so those are null. Approved by the owner in chat on 2026-11-17 (single source approved; all research put into action)."
   },
   {
    "id": "hd-2020-11-21",
@@ -2065,11 +2065,11 @@
    "confidence": 2,
    "status": "approved",
    "researchedAt": "2026-11-14",
-   "approvedAt": "2026-11-14",
-   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "approvedAt": "2026-11-17",
+   "approvedBy": "Maor Harel (owner, chat 2026-11-17: every single-source record approved)",
    "parserCertainty": "medium",
    "conflictFree": true,
-   "notes": "Wikipedia: 27 Oct 2013, Maccabi 0-1 Hapoel, Korać 13'. JPost (published 28 Oct 2013): Hapoel 1-0 'Haifa derby conquest', Korac 13'. JPost gives no match date or home side; date and home from Wikipedia, consistent with the next-day article. Confidence lowered for that reason."
+   "notes": "Wikipedia: 27 Oct 2013, Maccabi 0-1 Hapoel, Korać 13'. JPost (published 28 Oct 2013): Hapoel 1-0 'Haifa derby conquest', Korac 13'. JPost gives no match date or home side; date and home from Wikipedia, consistent with the next-day article. Confidence lowered for that reason. Approved by the owner in chat on 2026-11-17 (single source approved; all research put into action)."
   },
   {
    "id": "hd-2009-12-28",
@@ -2090,11 +2090,11 @@
    "confidence": 2,
    "status": "approved",
    "researchedAt": "2026-11-14",
-   "approvedAt": "2026-11-14",
-   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "approvedAt": "2026-11-17",
+   "approvedBy": "Maor Harel (owner, chat 2026-11-17: every single-source record approved)",
    "parserCertainty": "medium",
    "conflictFree": true,
-   "notes": "Wikipedia: 28 Dec 2009 (a Monday), Hapoel 0-1 Maccabi, Golasa 33'. JPost: league match on a Monday night at Kiryat Eliezer, Hapoel 0-1, Golasa 32'. Minute disagrees by one, so null; venue only in JPost, so null."
+   "notes": "Wikipedia: 28 Dec 2009 (a Monday), Hapoel 0-1 Maccabi, Golasa 33'. JPost: league match on a Monday night at Kiryat Eliezer, Hapoel 0-1, Golasa 32'. Minute disagrees by one, so null; venue only in JPost, so null. Approved by the owner in chat on 2026-11-17 (single source approved; all research put into action)."
   },
   {
    "id": "hd-1996-05-04",
@@ -2564,11 +2564,11 @@
    "confidence": 2,
    "status": "approved",
    "researchedAt": "2026-11-14",
-   "approvedAt": "2026-11-14",
-   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "approvedAt": "2026-11-17",
+   "approvedBy": "Maor Harel (owner, chat 2026-11-17: every single-source record approved)",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "The derby night as a dated moment (same sources as the match record)."
+   "notes": "The derby night as a dated moment (same sources as the match record). Approved by the owner in chat on 2026-11-17 (single source approved; all research put into action)."
   },
   {
    "id": "hd-2009-12-28-moment",
@@ -2588,11 +2588,11 @@
    "confidence": 2,
    "status": "approved",
    "researchedAt": "2026-11-14",
-   "approvedAt": "2026-11-14",
-   "approvedBy": "automated:cross-source-review-maccabi-haifa-2026-11-14",
+   "approvedAt": "2026-11-17",
+   "approvedBy": "Maor Harel (owner, chat 2026-11-17: every single-source record approved)",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "The derby night as a dated moment (same sources as the match record)."
+   "notes": "The derby night as a dated moment (same sources as the match record). Approved by the owner in chat on 2026-11-17 (single source approved; all research put into action)."
   },
   {
    "id": "hd-1996-05-04-moment",

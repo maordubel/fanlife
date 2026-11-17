@@ -64,11 +64,13 @@
     "rj-kc-wp-1415"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-11-15",
    "parserCertainty": "medium",
    "conflictFree": false,
-   "notes": "One publisher: the Wikipedia season kit shows an all-blue away kit."
+   "notes": "One publisher: the Wikipedia season kit shows an all-blue away kit. Approved by the owner in chat on 2026-11-17 (single source approved; all research put into action).",
+   "approvedBy": "Maor Harel (owner, chat 2026-11-17: every single-source record approved)",
+   "approvedAt": "2026-11-17"
   },
   {
    "id": "rj-kit-1977-78-away",

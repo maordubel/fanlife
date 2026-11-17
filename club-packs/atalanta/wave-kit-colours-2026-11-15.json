@@ -61,9 +61,9 @@
    "researchedAt": "2026-11-15",
    "parserCertainty": "medium",
    "conflictFree": true,
-   "notes": "Coral shirt with blue trim and an embossed image of the Renaissance stand: Football Kit Archive's description ('coral', embossed stand) and the Colours of Football drawing (coral body, blue collar and trim, embossed stand) agree. FKA's own colours field (red/blue/black) contradicts its description and is not used. Colours of Football alone shows coral shorts and socks: not set.",
-   "approvedAt": "2026-11-15",
-   "approvedBy": "automated:cross-source-review-atalanta-2026-11-15"
+   "notes": "Coral shirt with blue trim and an embossed image of the Renaissance stand: Football Kit Archive's description ('coral', embossed stand) and the Colours of Football drawing (coral body, blue collar and trim, embossed stand) agree. FKA's own colours field (red/blue/black) contradicts its description and is not used. Colours of Football alone shows coral shorts and socks: not set. Approved by the owner in chat on 2026-11-17 (single source approved; all research put into action).",
+   "approvedAt": "2026-11-17",
+   "approvedBy": "Maor Harel (owner, chat 2026-11-17: every single-source record approved)"
   },
   {
    "id": "at-kit-1996-97-home",
@@ -84,9 +84,9 @@
    "researchedAt": "2026-11-15",
    "parserCertainty": "medium",
    "conflictFree": true,
-   "notes": "Blue and black vertical stripes (Asics, Somet): the Classic Football Shirts photograph and the it.wikipedia season kit (blue body, black stripes) agree. Wikipedia alone gives black shorts and socks: not set.",
-   "approvedAt": "2026-11-15",
-   "approvedBy": "automated:cross-source-review-atalanta-2026-11-15"
+   "notes": "Blue and black vertical stripes (Asics, Somet): the Classic Football Shirts photograph and the it.wikipedia season kit (blue body, black stripes) agree. Wikipedia alone gives black shorts and socks: not set. Approved by the owner in chat on 2026-11-17 (single source approved; all research put into action).",
+   "approvedAt": "2026-11-17",
+   "approvedBy": "Maor Harel (owner, chat 2026-11-17: every single-source record approved)"
   },
   {
    "id": "at-kit-1994-95-home",
@@ -102,11 +102,13 @@
     "at-kc-cfs-9495h"
    ],
    "confidence": 2,
-   "status": "review",
+   "status": "approved",
    "researchedAt": "2026-11-15",
    "parserCertainty": "medium",
    "conflictFree": false,
-   "notes": "One publisher: the Classic Football Shirts photograph of a match-issue 1994-95 home shirt shows blue and black stripes (Lotto); the listing notes a Somet sponsor applied over the 1993-94 Tamoil one. No second publisher found; held for the owner."
+   "notes": "One publisher: the Classic Football Shirts photograph of a match-issue 1994-95 home shirt shows blue and black stripes (Lotto); the listing notes a Somet sponsor applied over the 1993-94 Tamoil one. No second publisher found; held for the owner. Approved by the owner in chat on 2026-11-17 (single source approved; all research put into action).",
+   "approvedBy": "Maor Harel (owner, chat 2026-11-17: every single-source record approved)",
+   "approvedAt": "2026-11-17"
   },
   {
    "id": "at-kit-1990-91-away",

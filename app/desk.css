@@ -278,9 +278,9 @@
    Same paper and ink as the desk. Counts are mono figures, states are stamps with words, never colour alone. */
 .desk-count { display: inline-grid; place-items: center; min-inline-size: 22px; block-size: 22px; padding: 0 6px; margin-inline-start: 8px; vertical-align: 3px; font: 700 12px/1 var(--mag-mono); font-style: normal; letter-spacing: 0; background: var(--mag-ink); color: var(--mag-paper); border-radius: 11px; }
 .desk-count[data-hot] { background: var(--mag-vermilion); }
-.desk-bottom .desk-count { position: absolute; margin: 0; transform: translate(14px, -14px); }
+.desk-bottom .desk-count { position: absolute; margin: 0; inset-block-start: 4px; inset-inline-start: calc(50% + 6px); min-inline-size: 18px; block-size: 18px; font-size: 10px; padding: 0 4px; }
 .desk-bottom a { position: relative; }
-.desk-side-label { margin: 6px 18px 2px; font: 700 10px/1 var(--mag-mono); letter-spacing: 2px; text-transform: uppercase; color: var(--mag-vermilion); }
+.desk .desk-side .desk-side-label { margin: 6px 18px 2px; padding-inline-start: 5px; font: 700 10px/1 var(--mag-mono); letter-spacing: 2px; text-transform: uppercase; color: var(--mag-vermilion); }
 .desk-tools { list-style: none; margin: 0; padding: 0 0 6px; }
 .desk-side .desk-tools a { display: block; min-height: 44px; padding: 8px 18px; }
 .desk-tools small { margin-top: 1px; }
@@ -381,11 +381,14 @@
   .crm-matrix-wrap { display: none; }
   .crm-game-cards { display: grid; }
   .crm-tasks > li { grid-template-columns: minmax(0, 1fr); gap: 8px; }
-  .crm-task-act { justify-items: start; grid-auto-flow: column; justify-content: start; align-items: center; }
+  /* 17.11.2026: the action and its two quiet links wrap instead of overlapping on a narrow phone */
+  .crm-task-act { display: flex; flex-wrap: wrap; justify-content: flex-start; align-items: center; gap: 6px 10px; }
   .crm-exp { grid-template-columns: minmax(0, 1fr); }
   .crm-cleared li { grid-template-columns: minmax(0, 1fr); }
   .desk-search-pop li { grid-template-columns: minmax(0, 1fr); gap: 4px; } .desk-search-pop .desk-stamp { justify-self: start; }
-  .crm-filters [role='tablist'] { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; inline-size: 100%; padding-block-end: 2px; }
+  /* never a sideways-scrolling strip (owner: no sliding menus) — every filter visible, three to a row */
+  .crm-filters [role='tablist'] { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); inline-size: 100%; }
+  .crm-filters [role='tablist'] .pcc-chip { white-space: normal; justify-content: center; text-align: center; }
 }
 .desk-quick-after { margin-block-start: 22px; }
 /* LEGENDS MANAGER controls (Games → ALL FOOTBALL): the stars the fans see, drawn in the desk's ink */
