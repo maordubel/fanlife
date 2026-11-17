@@ -3,7 +3,9 @@
    hue of 26–28° — honour without a yellow (rule 8's scanner, lib/isYellow.ts, reads it as orange-brown). Tokens are declared
    here once and read everywhere below; inside a career the club's own colour (`--club-primary`) marks the rules and the table.
    Mobile first: one column, every target ≥44px; the desktop gets three offers abreast and the pitch beside the squad. */
-.lgm { --lgm-night: var(--mag-navy); --lgm-bronze: #A35E2A; --lgm-bronze-hi: #C98A55; --lgm-bronze-lo: #6E3D1B; --lgm-ivory: var(--mag-paper); --lgm-rule: color-mix(in srgb, var(--mag-ink) 22%, transparent);
+.lgm { --lgm-night: var(--mag-navy);
+  /* match ratings (17.11.2026): five bands, design tokens only, no yellow */
+  --lgm-rt-great: var(--mag-cyan); --lgm-rt-good: var(--mag-green); --lgm-rt-ok: var(--mag-white); --lgm-rt-low: var(--mag-orange); --lgm-rt-poor: var(--mag-vermilion); --lgm-bronze: #A35E2A; --lgm-bronze-hi: #C98A55; --lgm-bronze-lo: #6E3D1B; --lgm-ivory: var(--mag-paper); --lgm-rule: color-mix(in srgb, var(--mag-ink) 22%, transparent);
   max-inline-size: 1180px; margin: 0 auto; padding: 18px var(--gutter, 16px) 80px; }
 .lgm h2 { margin: 0 0 12px; font: 700 clamp(28px, 4vw, 42px)/.95 var(--mag-condensed); text-transform: uppercase; letter-spacing: .5px; }
 .lgm h2 small { font: 700 12px var(--mag-mono); letter-spacing: 1.5px; margin-inline-start: 8px; color: var(--lgm-bronze); }

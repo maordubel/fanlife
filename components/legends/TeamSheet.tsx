@@ -1,9 +1,10 @@
 'use client'
+import {FormBars,RatingChip} from './Rating'
 import {useEffect,useMemo,useRef,useState,type PointerEvent as ReactPointerEvent} from 'react'
 import type {CareerView,SquadView} from '@/lib/legends/view'
 import type {Tactics} from '@/lib/legends/types'
 import {Stars} from './Brand'
-import {LegendCard,money,posName,years} from './LegendCard'
+import {LegendCard,money,posName,ROLE_LABEL,years} from './LegendCard'
 import {LegendShirt} from './Shirts'
 import {Portal,Sheet} from './Sheet'
 import {familyLabel,nameLabeler} from '@/lib/clubs/display-name'
@@ -23,8 +24,12 @@ const APPROACH=[['defensive','Defensive'],['balanced','Balanced'],['attacking','
 const PRESS=[['low','Sit off'],['medium','Press'],['high','High press']] as const
 const TEMPO=[['slow','Patient'],['normal','Normal'],['fast','Fast']] as const
 const BENCH=7
+/** FM's familiarity in three words, from the man's sourced role and the slot's fine place (lib/legends/roles.ts, mirrored) */
+const NAT:Record<string,string[]>={GK:['GK'],CB:['CB'],FB:['LB','RB','LWB','RWB'],DM:['DM'],CM:['CM'],AM:['CM'],W:['LW','RW','LM','RM'],ST:['ST']}
+const NEAR:Record<string,string[]>={GK:[],CB:['DM','LB','RB'],FB:['CB','LM','RM'],DM:['CM','CB'],CM:['DM','LM','RM'],AM:['LW','RW','ST','LM','RM'],W:['ST','LWB','RWB'],ST:['LW','RW']}
+const fam=(role:string,fine:string)=>NAT[role]?.includes(fine)?'natural':NEAR[role]?.includes(fine)?'accomplished':'competent'
 export const surname=familyLabel
-type Man={id:string;name:string;pos:string;stars:number;fit:boolean;note:string;from:number|null;to:number|null;squad:SquadView|null}
+type Man={id:string;name:string;pos:string;role?:string;stars:number;fit:boolean;note:string;from:number|null;to:number|null;squad:SquadView|null}
 type Place={z:'xi';i:number}|{z:'bench';i:number}|{z:'rest';id?:string}
 type Sheet={xi:string[];bench:string[];t:Tactics;cap:string|null;vice:string|null}
 const keyOf=(p:Place)=>p.z==='rest'?`rest:${p.id??''}`:`${p.z}:${p.i}`
@@ -39,7 +44,7 @@ export function TeamSheet({v,busy,send,mode='sheet'}:{v:CareerView;busy:boolean;
  const [sel,setSel]=useState<Place|null>(null),[card,setCard]=useState<SquadView|null>(null)
  useEffect(()=>{setS(saved());setPast([]);setSel(null)},[v.revision]) // eslint-disable-line react-hooks/exhaustive-deps
  const men=useMemo(()=>{const m=new Map<string,Man>()
-  for(const q of v.squad)m.set(q.id,{id:q.id,name:q.name,pos:q.pos,stars:q.stars,fit:q.fit,from:q.from,to:q.to,squad:q,note:q.injury?`Injured · ${q.injury} round${q.injury===1?'':'s'}`:q.suspension?`Banned · ${q.suspension} match${q.suspension===1?'':'es'}`:''})
+  for(const q of v.squad)m.set(q.id,{id:q.id,name:q.name,pos:q.pos,...(q.role?{role:q.role}:{}),stars:q.stars,fit:q.fit,from:q.from,to:q.to,squad:q,note:q.injury?`Injured · ${q.injury} round${q.injury===1?'':'s'}`:q.suspension?`Banned · ${q.suspension} match${q.suspension===1?'':'es'}`:''})
   for(const e of v.emergency)m.set(e.id,{id:e.id,name:e.name,pos:e.pos,stars:0,fit:true,from:null,to:null,squad:null,note:'Emergency cover'})
   return m},[v.squad,v.emergency])
  const slots=v.lineup.slots
@@ -106,8 +111,9 @@ export function TeamSheet({v,busy,send,mode='sheet'}:{v:CareerView;busy:boolean;
       aria-pressed={isSel||false} aria-label={`${sl.fine}: ${m?`${m.name}, ${posName(m.pos)}${off?', out of his line':''}${s.cap===id?', captain':s.vice===id?', vice-captain':''}`:'empty'}`}>
       <span className="tl-disc">{m?<LegendShirt man={m}/>:<i className="tl-plus" aria-hidden="true">+</i>}
        {m&&s.cap===id?<i className="tl-arm" data-arm="c" data-wearing={armband===id||undefined} aria-hidden="true">C</i>:m&&s.vice===id?<i className="tl-arm" data-arm="v" data-wearing={armband===id||undefined} aria-hidden="true">V</i>:null}
-       {off?<i className="tl-off" aria-hidden="true">{m!.pos}</i>:null}</span>
-      <small>{sl.fine}</small><b>{m?surname(m.name):'Empty'}</b></button>})}
+       {off?<i className="tl-off" aria-hidden="true">{m!.pos}</i>:null}
+       {m?.squad?.form?.avg!=null?<span className="tl-rt"><RatingChip r={m.squad.form.avg} size="sm" label={`${m.name}'s average`}/></span>:null}</span>
+      <small>{sl.fine}{m?.role?<i className="tl-fam" data-fam={fam(m.role,sl.fine)} title={`${ROLE_LABEL[m.role]} — ${fam(m.role,sl.fine)} here`}>{m.role}</i>:null}</small><b>{m?surname(m.name):'Empty'}</b></button>})}
    </div>
    <p className="tl-legend" aria-hidden="true"><span><i className="tl-arm" data-arm="c">C</i> captain</span><span><i className="tl-arm" data-arm="v">V</i> vice — wears it when the captain is not in the eleven</span><span><i className="tl-off">DF</i> out of his line</span></p>
    {v.lineup.error&&!dirty?<p className="lgm-error" role="alert">{v.lineup.error} <button type="button" className="lgm-link min-h-tap" disabled={busy} onClick={()=>send({kind:'auto',formation:v.lineup.formation},'The best fit eleven.')}>Pick the best fit eleven</button></p>:null}
@@ -127,7 +133,7 @@ export function TeamSheet({v,busy,send,mode='sheet'}:{v:CareerView;busy:boolean;
       return <li key={m.id} data-out={!m.fit||undefined} data-natural={heldSlot&&m.pos===heldSlot.family?true:undefined}>
        <span className="tl-grip" aria-hidden="true" onPointerDown={h.onPointerDown} onPointerMove={h.onPointerMove} onPointerUp={h.onPointerUp} onPointerCancel={h.onPointerCancel}>⋮⋮</span>
        <button type="button" className="tl-row min-h-tap" disabled={!m.fit} data-sel={isSel||undefined} aria-pressed={isSel||false} onClick={h.onClick}>
-        <span className="lgm-pos" data-pos={m.pos}>{m.pos}</span><b>{m.name}</b>{m.stars?<Stars value={m.stars} size="sm"/>:null}<small>{m.note||(s.cap===m.id?'Captain':s.vice===m.id?'Vice-captain':years(m))}</small></button>
+        <span className="lgm-pos" data-pos={m.pos}>{m.role??m.pos}</span><b>{m.name}</b>{m.stars?<Stars value={m.stars} size="sm"/>:null}{m.squad?.form?.avg!=null?<RatingChip r={m.squad.form.avg} size="sm" label="Average"/>:null}<small>{m.note||(s.cap===m.id?'Captain':s.vice===m.id?'Vice-captain':years(m))}</small></button>
        {m.squad?<button type="button" className="tl-info min-h-tap" aria-label={`${m.name} — his card`} onClick={()=>setCard(m.squad)}>i</button>:null}</li>}):<li className="tl-none">Every fit man is in the eleven or on the bench.</li>}
     </ul>
    </div>
@@ -157,7 +163,8 @@ export function TeamSheet({v,busy,send,mode='sheet'}:{v:CareerView;busy:boolean;
   {ghost?<Portal><div className="tl-ghost" style={{left:ghost.x,insetBlockStart:ghost.y}} aria-hidden="true"><span className="tl-disc">{men.get(ghost.id)?<LegendShirt man={men.get(ghost.id)!}/>:null}</span><b>{surname(men.get(ghost.id)?.name??'')}</b></div></Portal>:null}
 
   {card?<Sheet id="lgm-card" kicker={posName(card.pos)} title={card.name} onClose={()=>setCard(null)}>
-   <LegendCard c={card} shirt><p className="lgm-fine">{card.appsTotal} appearances · {card.goals} goals this season · {card.yellows} yellows · signed for {money(card.paid)}</p>
+   <LegendCard c={card} shirt>{card.form?<div className="lgm-formcard" data-testid="legends-form"><span><small>Average</small><RatingChip r={card.form.avg} size="lg"/></span><span><small>Last {card.form.last.length}</small><FormBars last={card.form.last}/></span><span><small>Player of the match</small><b>{card.form.potm?`★ ${card.form.potm}`:'—'}</b></span></div>:null}
+    <p className="lgm-fine">{card.appsTotal} appearances · {card.goals} goals this season · {card.yellows} yellows · signed for {money(card.paid)}</p>
     <p className="lgm-actions"><button type="button" className="lgm-ghost min-h-tap" disabled={busy} aria-pressed={card.listed} onClick={()=>send({kind:'list',card:card.id,listed:!card.listed},card.listed?`${card.name} is off the transfer list.`:`${card.name} is on the transfer list. Bids come when a window opens.`)} data-testid="legends-list">{card.listed?'Take off the transfer list':'Put on the transfer list'}</button></p>
     {card.sale?<p className="lgm-actions"><button type="button" className="lgm-ghost min-h-tap" disabled={busy} onClick={()=>{send({kind:'sell',card:card.id},`${card.name} sold for ${money(card.sale!.net)}.`);setCard(null)}}>Sell · {money(card.sale.net)}</button></p>:<p className="lgm-fine">Sales happen in a transfer window.</p>}
    </LegendCard>

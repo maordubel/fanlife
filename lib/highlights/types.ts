@@ -19,7 +19,9 @@ export type MomentKind='goal'|'save'|'miss'|'post'|'block'|'offside'|'yellow'|'r
 export type Moment={minute:number;side:0|1;kind:MomentKind;player?:string;assist?:string;keeper?:string;by?:string;header?:boolean;shape?:Shape;score:[number,number];/** the extra-time / penalty marker the clock shows */label?:string}
 export type Reel={id:string;seed:number;teams:[ReelTeam,ReelTeam];moments:Moment[];final:[number,number];pens:[number,number]|null;
  /** whose match it is — their goals get the big celebration, their result picks the closing card; null = neutral */
- mine:0|1|null;champion?:boolean}
+ mine:0|1|null;champion?:boolean;
+ /** the changes, in order (Legends, 17.11.2026) — the match ratings need who was on the pitch when; absent on older reels */
+ subs?:{minute:number;side:0|1;in:string;out:string}[]}
 export type Celebration='goal'|'hattrick'|'fire-goal'|'win'|'champion'|'loss'|'game-over'
 export const CELEBRATIONS:readonly Celebration[]=['goal','hattrick','fire-goal','win','champion','loss','game-over']
 /** what plays after a goal: the celebration film for the side whose match it is (or both, on a neutral reel), and the muted

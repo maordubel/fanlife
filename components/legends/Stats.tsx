@@ -64,7 +64,10 @@ function Numbers({v}:{v:CareerView}){
   <section className="tl-headline lgm-panel"><p className="lgm-kicker">Season {v.season} · in numbers</p>
    <dl><div><dt>Matches</dt><dd>{st.played}</dd></div><div><dt>Goals</dt><dd>{st.goals}</dd></div><div><dt>Per match</dt><dd>{st.perMatch.toFixed(2)}</dd></div>{mine?<div data-mine><dt>{v.clubName}</dt><dd>{mine.gf}<small>–{mine.ga}</small></dd></div>:null}</dl>
   </section>
+  {v.ratings?.team.length?<TeamOfSeason v={v}/>:null}
   <div className="tl-boards">
+   {v.ratings?.top.length?<Board title="Best average rating" rows={v.ratings.top.map(r=>({...r,value:r.avg}))} unit={n=>n.toFixed(2)} empty="" testid="legends-stats-ratings"/>:null}
+   {v.ratings?.potm.length?<Board title="Player of the match" rows={v.ratings.potm.map(r=>({...r,value:r.potm}))} unit={n=>`★ ${n}`} empty=""/>:null}
    <Board title="Top scorers" rows={st.scorers} unit={pl('goal')} empty="Nobody has scored yet." testid="legends-stats-scorers"/>
    <Board title="Assists" rows={st.assists} unit={pl('assist')} empty="No assist recorded yet."/>
    <Board title="Appearances" rows={st.apps} unit={pl('game')} empty="No appearance recorded yet."/>
@@ -116,4 +119,13 @@ function SeasonSheet({id,ordinal:n,onClose}:{id:string;ordinal:number;onClose:()
    <ul className="wkl-leaders">{a.squad.map(s=><li key={s.id}><span>{s.name}</span> <small>{s.pos}</small> <b>{s.goals||''}</b></li>)}</ul>
   </div>}
  </Sheet>
+}
+
+/** the team of the season (17.11.2026): the best average at every place, drawn on a pitch — 4-3-3, keeper at the foot */
+function TeamOfSeason({v}:{v:CareerView}){
+ const t=v.ratings!.team,lines=(['FW','MF','DF','GK'] as const).map(p=>t.filter(m=>m.pos===p)).filter(l=>l.length)
+ return <section className="lgm-panel tl-tos" data-testid="legends-team-of-season"><p className="lgm-kicker">Season {v.season} · team of the season{v.phase==='season-end'?'':' so far'}</p>
+  {v.ratings!.player?<p className="tl-tos-pos">Player of the season{v.phase==='season-end'?'':' so far'}: <b>{v.ratings!.player.name}</b> <small>{v.ratings!.player.clubName} · {v.ratings!.player.avg.toFixed(2)} in {v.ratings!.player.games}</small></p>:null}
+  <div className="tl-tos-pitch">{lines.map((l,i)=><div key={i} className="tl-tos-line">{l.map(m=><span key={`${m.club}:${m.id}`} className="tl-tos-man" data-mine={m.mine||undefined}><ClubMark club={m.club} name={m.clubName} size={26}/><b>{m.name.split(' ').slice(-1)[0]}</b><i className="lgm-rt" data-size="sm" data-band={m.avg>=8?'great':m.avg>=7?'good':m.avg>=6.3?'ok':m.avg>=5.6?'low':'poor'}>{m.avg.toFixed(2)}</i></span>)}</div>)}</div>
+ </section>
 }
