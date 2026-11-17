@@ -2,7 +2,7 @@
   "title": "Your order",
   "kicker": "FAN LIFE · Order",
   "open": "Waiting for the payment to be confirmed. This page updates by itself.",
-  "paid": "Paid — we are making it now. This page updates by itself.",
+  "paid": "Paid. We are making your file now.",
   "fulfilled": "Paid and ready.",
   "failed": "Something went wrong on our side. Write to us with this order number and we will put it right.",
   "refunded": "This order was refunded.",
@@ -100,5 +100,33 @@
   "emailBad": "That email does not look right. Check it and try again.",
   "opening": "Opening the secure payment…",
   "secure": "Secure payment by Stripe · cards, Apple Pay, Google Pay",
-  "emailRequired": "Add a valid email: it is where your file goes."
+  "emailRequired": "Add a valid email: it is where your file goes.",
+  "live": {
+    "openH": "Confirming your payment",
+    "openP": "Stripe is confirming it. This takes a few seconds.",
+    "makingKicker": "Paid · On the press",
+    "makingH": "Your print is on the press.",
+    "makingP": "We are making the full-size file now. It usually takes under a minute.",
+    "makingMail": "You can close this page: the download link goes to {email} the moment it is ready.",
+    "makingMailNone": "You can close this page: this link opens your order whenever you come back.",
+    "steps": [
+      "Payment received",
+      "Making the 3600 × 4800 px file",
+      "Ready to download"
+    ],
+    "slow": "Taking a little longer than usual. It is still being made, and the email will follow.",
+    "readyKicker": "Ready",
+    "readyH": "It's yours.",
+    "readyP": "The full-size file, 3600 × 4800 px, a sharp print up to A3.",
+    "readyMail": "We have also emailed the link to {email}.",
+    "download": "Download your print",
+    "downloading": "Your download has started",
+    "doneKicker": "Enjoy it",
+    "doneH": "Hang it with pride.",
+    "doneP": "Nothing happened?",
+    "again": "Download it again",
+    "failedH": "Something went wrong on our side.",
+    "failedP": "Your payment is safe. Write to fanlife@dubelteam.com with order {id} and we will send your file by hand today.",
+    "previewAlt": "Your print"
+  }
 }
