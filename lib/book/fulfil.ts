@@ -1,5 +1,5 @@
 import 'server-only'
-import {REGIONS} from './catalog'
+import {REGIONS,isEdition} from './catalog'
 import {luluAddress,printifyAddress,type PaidSession} from './checkout'
 import {createJob,ensureLuluWebhook,luluOpen,type Job} from './lulu'
 import {orderGoods} from './printify'
@@ -39,7 +39,7 @@ export async function sendToPrinter(id:string,session:PaidSession):Promise<Job|n
  if(!luluOpen()){await moveBookOrder(id,['paid'],{error:'Lulu keys are not set — the order waits.'});return null}
  try{
   try{await ensureLuluWebhook()}catch{/* status mail waits for the hook; the job itself goes on */}
-  const job=await createJob({order:id,lang:o.lang,address,level:REGIONS[o.region].ship[o.ship]?.level??'MAIL',contact:process.env.BOOK_CONTACT_EMAIL||'fanlife@dubelteam.com'})
+  const job=await createJob({order:id,edition:isEdition(o.variant)?o.variant:o.lang,address,level:REGIONS[o.region].ship[o.ship]?.level??'MAIL',contact:process.env.BOOK_CONTACT_EMAIL||'fanlife@dubelteam.com'})
   await moveBookOrder(id,['paid'],{status:'printing',lulu_job:job.id,lulu_status:job.status?.name??null,lulu_cost:job.costs?.total_cost_incl_tax?`${job.costs.total_cost_incl_tax} ${job.costs.currency??''}`.trim():null,error:null})
   await mail(o.email,'printing',o.lang,{order:id})
   return job

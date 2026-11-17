@@ -2,7 +2,7 @@ import {describe,expect,it,vi} from 'vitest'
 vi.mock('server-only',()=>({}))
 import {createHmac} from 'node:crypto'
 import {form} from '@/lib/pay/stripe'
-import {BOOK_SKU,EDITIONS,REGIONS,tipCents} from '@/lib/book/catalog'
+import {BOOK_SKU,EDITIONS,REGIONS,parcelCents,tipCents} from '@/lib/book/catalog'
 import {luluAddress,paperbackSession,tipSession} from '@/lib/book/checkout'
 import {jobBody,luluSigned} from '@/lib/book/lulu'
 
@@ -12,7 +12,7 @@ describe('Broken Collective shop (17.11.2026)',()=>{
   expect(tipCents('1')).toBeNull();expect(tipCents('9999')).toBeNull();expect(tipCents('abc')).toBeNull();expect(tipCents(null)).toBeNull()
  })
  it('marks every book checkout with metadata.book so the shared webhook can route it',()=>{
-  const t=tipSession({order:'bk_abcdefgh',lang:'he',cents:600}),p=paperbackSession({order:'bk_abcdefgh',lang:'en',region:'il',ship:'standard'})
+  const t=tipSession({order:'bk_abcdefgh',lang:'he',cents:600}),p=paperbackSession({order:'bk_abcdefgh',lang:'en',edition:'en',region:'il',ship:'standard'})
   expect(t.metadata.book).toBe('bk_abcdefgh');expect(p.metadata.book).toBe('bk_abcdefgh')
   expect(form(p).join('&')).toContain('shipping_address_collection%5Ballowed_countries%5D%5B0%5D=IL')
   expect(p.phone_number_collection.enabled).toBe(true)
@@ -26,10 +26,19 @@ describe('Broken Collective shop (17.11.2026)',()=>{
   expect(luluAddress({customer_details:{name:'R'},shipping_details:{name:'R',address}})).toBeNull()
  })
  it('asks Lulu for one copy of the right edition',()=>{
-  const b=jobBody({order:'bk_abcdefgh',lang:'he',level:'MAIL',contact:'c@x.io',address:{name:'R',street1:'1 Ermou',city:'Athens',postcode:'1',country_code:'GR',phone_number:'+30'}})
+  const b=jobBody({order:'bk_abcdefgh',edition:'he',level:'MAIL',contact:'c@x.io',address:{name:'R',street1:'1 Ermou',city:'Athens',postcode:'1',country_code:'GR',phone_number:'+30'}})
   expect(b.line_items[0]!.printable_normalization.pod_package_id).toBe(BOOK_SKU)
   expect(b.line_items[0]!.printable_normalization.interior.source_url).toBe(EDITIONS.he.interior)
   expect(b.shipping_level).toBe('MAIL');expect(BOOK_SKU).toHaveLength(27)
+ })
+ it('puts both editions in one parcel and one charge',()=>{
+  const b=jobBody({order:'bk_abcdefgh',edition:'both',level:'MAIL',contact:'c@x.io',address:{name:'R',street1:'1 Ermou',city:'Athens',postcode:'1',country_code:'GR',phone_number:'+30'}})
+  expect(b.line_items.map(l=>l.printable_normalization.interior.source_url)).toEqual([EDITIONS.he.interior,EDITIONS.en.interior])
+  const one=parcelCents('he','eu','standard')!,two=parcelCents('both','eu','standard')!
+  expect(two.books).toBeLessThan(one.books*2);expect(two.post).toBeGreaterThan(one.post)
+  const p=paperbackSession({order:'bk_abcdefgh',lang:'he',edition:'both',region:'eu',ship:'standard'})
+  expect(p.line_items).toHaveLength(1);expect(p.line_items[0]!.price_data.unit_amount).toBe(two.books)
+  expect(p.shipping_options[0]!.shipping_rate_data.fixed_amount.amount).toBe(two.post)
  })
  it('takes a Lulu webhook only with the right signature',()=>{
   const raw='{"topic":"PRINT_JOB_STATUS_CHANGED"}',sig=createHmac('sha256','sec').update(raw).digest('hex')
