@@ -84,3 +84,17 @@ numbers became. Newest first. The skill reads this before touching the editor an
   writer would have said "had not beaten Panathinaikos in 2 years" across a hole in the record.
 - **Next**: league position before a match; an underdog factor (an archive Elo, or ClubElo through a GitHub Actions job:
   the external sites are blocked from this machine); silence in the mix before the decisive goal.
+
+## 17.11.2026 (late) — the cast, the angle, the dossiers told
+
+- **Owner**: "understand the material, read it right, vary from film to film, find the important points, understand
+  football and competition and tension — heroes, tragedies, every film a world of its own."
+- **Before**: the dossiers held managers, the centenary, the final's meaning, the crowd, the supporters, the league
+  finish — the house writer used none of it. Every season opened the same way. No player was a character.
+- **Changes**: `characters.py` (hero, wound, angle) and the writer's `cast_into` / `weave_dossiers`.
+- **Lessons**:
+  1. The archive names only 33 of Olympiacos' 116 goals in 2023/24. A count would undersell the hero ("15 goals" for a
+     33-goal season), so he is named without one.
+  2. A motif told in every chapter becomes a refrain: three "the road ran through…" beats in a 5-minute film. Now once.
+  3. Director rule 6 refuses lines about the film ("This is the story of…"). Angle lines speak about the season.
+- **Open**: ClubElo answered 502 to every request from the Actions runner on 17.11. The weekly job retries.
