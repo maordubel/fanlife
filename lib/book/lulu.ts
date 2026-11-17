@@ -1,6 +1,6 @@
 import 'server-only'
 import {createHmac,timingSafeEqual} from 'node:crypto'
-import {BOOK_SKU,EDITIONS,type BookLang} from './catalog'
+import {BOOK_SKU,EDITIONS,editionsOf,type BookLang,type Edition} from './catalog'
 
 /**
  * Lulu Print API (api.lulu.com/docs), spoken to directly: an OAuth client-credentials token, then JSON.
@@ -33,21 +33,20 @@ export type Address={name:string;street1:string;street2?:string;city:string;stat
 export type Level='MAIL'|'PRIORITY_MAIL'|'GROUND'|'EXPEDITED'|'EXPRESS'
 export type Job={id:number;status:{name:string;messages?:Record<string,unknown>};external_id?:string;line_items?:{tracking_id?:string|null;tracking_urls?:string[]|null;carrier_name?:string|null}[];costs?:{total_cost_incl_tax?:string;currency?:string}}
 
-/** the body of one print job: one copy of one edition to one address (pure — tested) */
-export function jobBody(o:{order:string;lang:BookLang;address:Address;level:Level;contact:string}){
- const e=EDITIONS[o.lang]
+/** the body of one print job: one copy of each edition in the parcel, to one address (pure — tested) */
+export function jobBody(o:{order:string;edition:Edition;address:Address;level:Level;contact:string}){
  return {external_id:o.order,contact_email:o.contact,shipping_level:o.level,
   shipping_address:{...o.address,name:o.address.name.slice(0,35),street1:o.address.street1.slice(0,30),...(o.address.street2?{street2:o.address.street2.slice(0,30)}:{})},
-  line_items:[{external_id:`${o.order}-1`,title:e.title.slice(0,255),quantity:1,
-   printable_normalization:{pod_package_id:BOOK_SKU,cover:{source_url:e.cover},interior:{source_url:e.interior}}}]}
+  line_items:editionsOf(o.edition).map((l,i)=>{const e=EDITIONS[l];return {external_id:`${o.order}-${i+1}`,title:e.title.slice(0,255),quantity:1,
+   printable_normalization:{pod_package_id:BOOK_SKU,cover:{source_url:e.cover},interior:{source_url:e.interior}}}})}
 }
 export const createJob=(o:Parameters<typeof jobBody>[0])=>call<Job>('print job','/print-jobs/',jobBody(o))
 export const getJob=(id:number)=>call<Job>('print job',`/print-jobs/${id}/`)
 
 /** Lulu's own price for one copy to a region, post included (the shop's margin check) */
-export const cost=(lang:BookLang,level:Level,address:Omit<Address,'name'|'phone_number'>&{phone_number?:string})=>
+export const cost=(edition:Edition,level:Level,address:Omit<Address,'name'|'phone_number'>&{phone_number?:string})=>
  call<{total_cost_incl_tax:string;currency:string;shipping_cost?:{total_cost_incl_tax:string};line_item_costs?:{total_cost_incl_tax:string}[]}>('price','/print-job-cost-calculations/',{
-  line_items:[{page_count:EDITIONS[lang].pages,pod_package_id:BOOK_SKU,quantity:1}],shipping_option:level,
+  line_items:editionsOf(edition).map(l=>({page_count:EDITIONS[l].pages,pod_package_id:BOOK_SKU,quantity:1})),shipping_option:level,
   shipping_address:{phone_number:'+302100000000',...address}})
 
 /** the cover Lulu expects for this page count (checks the spine width print/build.py drew) */

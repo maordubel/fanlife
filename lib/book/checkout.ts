@@ -1,4 +1,4 @@
-import {BOOK_SITE,GOODS,PAPERBACK,REGIONS,TIP,type BookLang,type GoodsKind,type Region,type Ship} from './catalog'
+import {BOOK_SITE,GOODS,PAPERBACK,REGIONS,TIP,parcelCents,type BookLang,type Edition,type GoodsKind,type Region,type Ship} from './catalog'
 
 /**
  * The two Stripe Checkout bodies the book opens (pure — tests/book-shop.test.ts).
@@ -16,17 +16,18 @@ export function tipSession(o:{order:string;lang:BookLang;cents:number}){
   automatic_tax:{enabled:false},expires_at:Math.floor(Date.now()/1000)+3600}
 }
 
-export function paperbackSession(o:{order:string;lang:BookLang;region:Region;ship:Ship;email?:string}){
- const r=REGIONS[o.region],s=r.ship[o.ship]
- if(!s)throw new Error('That post does not go there.')
- const name=o.ship==='express'?(o.lang==='he'?'משלוח מהיר':'Express post'):(o.lang==='he'?'דואר רגיל':'Standard post')
+export function paperbackSession(o:{order:string;lang:BookLang;edition:Edition;region:Region;ship:Ship;email?:string}){
+ const r=REGIONS[o.region],s=r.ship[o.ship],c=parcelCents(o.edition,o.region,o.ship)
+ if(!s||!c)throw new Error('That post does not go there.')
+ const name=o.ship==='express'?(o.lang==='he'?'משלוח מהיר':'Express post'):(o.lang==='he'?'משלוח':'Standard post')
+ const edName=o.edition==='both'?PAPERBACK.pairName[o.lang]:`${PAPERBACK.name[o.lang]} · ${o.edition==='he'?(o.lang==='he'?'עברית':'Hebrew'):(o.lang==='he'?'אנגלית':'English')}`
  return {mode:'payment',locale:o.lang==='he'?'auto':'en',client_reference_id:o.order,
   success_url:thanks(o.lang,'paperback'),cancel_url:back(o.lang,'#paperback'),
-  metadata:{book:o.order,kind:'paperback',lang:o.lang,region:o.region,ship:o.ship},
-  payment_intent_data:{metadata:{book:o.order,kind:'paperback'},description:PAPERBACK.name.en},
-  line_items:[{quantity:1,price_data:{currency:'eur',unit_amount:PAPERBACK.cents,product_data:{name:PAPERBACK.name[o.lang],description:PAPERBACK.blurb[o.lang]}}}],
+  metadata:{book:o.order,kind:'paperback',lang:o.lang,edition:o.edition,region:o.region,ship:o.ship},
+  payment_intent_data:{metadata:{book:o.order,kind:'paperback'},description:o.edition==='both'?PAPERBACK.pairName.en:PAPERBACK.name.en},
+  line_items:[{quantity:1,price_data:{currency:'eur',unit_amount:c.books,product_data:{name:edName,description:PAPERBACK.blurb[o.lang]}}}],
   shipping_address_collection:{allowed_countries:r.countries},phone_number_collection:{enabled:true},
-  shipping_options:[{shipping_rate_data:{type:'fixed_amount',display_name:name,fixed_amount:{amount:s.cents,currency:'eur'},
+  shipping_options:[{shipping_rate_data:{type:'fixed_amount',display_name:name,fixed_amount:{amount:c.post,currency:'eur'},
    delivery_estimate:{minimum:{unit:'business_day',value:s.days[0]},maximum:{unit:'business_day',value:s.days[1]}}}}],
   ...(o.email?{customer_email:o.email}:{}),allow_promotion_codes:true,automatic_tax:{enabled:false},expires_at:Math.floor(Date.now()/1000)+3600}
 }

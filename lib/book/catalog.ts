@@ -14,6 +14,10 @@
  * cost per region next to these numbers; adjust here when it drifts.
  */
 export type BookLang='he'|'en'
+/** what goes in the parcel: one edition, or both in one parcel and one charge (owner, 18.11.2026) */
+export type Edition=BookLang|'both'
+export const editionsOf=(e:Edition):BookLang[]=>e==='both'?['he','en']:[e]
+export const isEdition=(v:unknown):v is Edition=>v==='he'||v==='en'||v==='both'
 export type Region='il'|'eu'|'na'|'world'
 export type Ship='standard'|'express'
 
@@ -27,20 +31,21 @@ export const EDITIONS:Record<BookLang,{title:string;pages:number;interior:string
  en:{title:'Broken Collective (English)',pages:214,interior:`${FILES}/broken-collective-en-interior.pdf`,cover:`${FILES}/broken-collective-en-cover.pdf`},
 }
 
-export const PAPERBACK={cents:1800,name:{he:'קולקטיב שבור — הספר המודפס',en:'Broken Collective — the paperback'},
+export const PAPERBACK={cents:1800,pairCents:3200,name:{he:'קולקטיב שבור — הספר המודפס',en:'Broken Collective — the paperback'},
+ pairName:{he:'קולקטיב שבור — שתי המהדורות, עברית ואנגלית',en:'Broken Collective — both editions, Hebrew and English'},
  blurb:{he:'מהדורה ראשונה בכריכה רכה · עונות 2020–2025 · מודפס לפי הזמנה ונשלח אליכם.',en:'First paperback edition · Seasons 2020–2025 · printed on demand and posted to you.'}}
 
 const EU=['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','GB','CH','NO','IS']
-/** Lulu level per choice; cents are what the reader pays for the post */
-export const REGIONS:Record<Region,{label:{he:string;en:string};countries:string[];ship:Partial<Record<Ship,{cents:number;level:'MAIL'|'PRIORITY_MAIL'|'GROUND'|'EXPEDITED'|'EXPRESS';days:[number,number]}>>;sample:{city:string;postcode:string;country_code:string;street1:string;state_code?:string}}>={
+/** Lulu level per choice; cents are what the reader pays for the post of one book, pair what a second book in the same parcel adds */
+export const REGIONS:Record<Region,{label:{he:string;en:string};countries:string[];ship:Partial<Record<Ship,{cents:number;pair:number;level:'MAIL'|'PRIORITY_MAIL'|'GROUND'|'EXPEDITED'|'EXPRESS';days:[number,number]}>>;sample:{city:string;postcode:string;country_code:string;street1:string;state_code?:string}}>={
  il:{label:{he:'ישראל',en:'Israel'},countries:['IL'],sample:{street1:'1 Dizengoff St',city:'Tel Aviv',postcode:'6433201',country_code:'IL'},
-  ship:{standard:{cents:3200,level:'EXPEDITED',days:[6,12]}}},
+  ship:{standard:{cents:3200,pair:600,level:'EXPEDITED',days:[6,12]}}},
  eu:{label:{he:'אירופה ובריטניה',en:'Europe & UK'},countries:EU,sample:{street1:'1 Ermou St',city:'Athens',postcode:'10563',country_code:'GR'},
-  ship:{standard:{cents:700,level:'MAIL',days:[7,14]},express:{cents:1400,level:'PRIORITY_MAIL',days:[4,8]}}},
+  ship:{standard:{cents:700,pair:300,level:'MAIL',days:[7,14]},express:{cents:1400,pair:400,level:'PRIORITY_MAIL',days:[4,8]}}},
  na:{label:{he:'ארה״ב וקנדה',en:'USA & Canada'},countries:['US','CA'],sample:{street1:'1 Main St',city:'New York',state_code:'NY',postcode:'10001',country_code:'US'},
-  ship:{standard:{cents:600,level:'MAIL',days:[6,12]},express:{cents:1900,level:'EXPEDITED',days:[3,6]}}},
+  ship:{standard:{cents:600,pair:300,level:'MAIL',days:[6,12]},express:{cents:1900,pair:500,level:'EXPEDITED',days:[3,6]}}},
  world:{label:{he:'שאר העולם',en:'Rest of the world'},countries:['AU','NZ','JP','SG','KR','HK','ZA','AE','TR','IN','TH'],sample:{street1:'1 George St',city:'Sydney',state_code:'NSW',postcode:'2000',country_code:'AU'},
-  ship:{standard:{cents:900,level:'MAIL',days:[12,28]},express:{cents:1600,level:'EXPRESS',days:[5,9]}}},
+  ship:{standard:{cents:900,pair:400,level:'MAIL',days:[12,28]},express:{cents:1600,pair:500,level:'EXPRESS',days:[5,9]}}},
 }
 
 /** the tip jar: the three tiers the book's "bill" shows, plus the reader's own amount within these bounds */
@@ -78,3 +83,9 @@ export const GOODS:Record<GoodsKind,{cents:number;product:string;name:{he:string
   colours:['Black','Khaki'],sizes:['One size'],ship:{il:1000,eu:500,na:900,world:1100}},
 }
 export const isGoods=(v:unknown):v is GoodsKind=>v==='tee'||v==='cap'
+
+/** the charge for a parcel: books + post (pure — tests) */
+export function parcelCents(e:Edition,region:Region,ship:Ship):{books:number;post:number}|null{
+ const s=REGIONS[region].ship[ship];if(!s)return null
+ return e==='both'?{books:PAPERBACK.pairCents,post:s.cents+s.pair}:{books:PAPERBACK.cents,post:s.cents}
+}
