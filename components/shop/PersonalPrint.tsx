@@ -14,7 +14,7 @@ type Req=Record<string,unknown>
 /**
  * "YOUR XI, FRAMED" (owner, 14.11.2026). Offered when a supporter has picked his all-time eleven: the proof of his own print
  * (drawn on the server from his picks), framed print or poster, his name as the manager if he wants it. "Make my print" makes
- * the product at the printer (about two minutes) and opens the FAN LIFE checkout in its own window over this page; the page stays.
+ * the product at the printer (under a minute since the fast renderer, 17.11.2026) and opens the FAN LIFE checkout in its own window over this page; the page stays.
  */
 const EMAIL=/^[^@\s]{1,64}@[^@\s]{1,190}\.[a-z]{2,}$/i
 export function PersonalPrint({req,kind='xi',className=''}:{req:Req;kind?:Kind;className?:string}){
