@@ -15,3 +15,7 @@ The owner: "the results come out without effects, without VOX, without HyperFram
 7. **A busy Google never holds the queue**: CLASSIFIED research waits at most `STORIES_WRITER_WAIT_S` (90 s), and a job that goes back to waiting within five minutes does not use up the worker's run — the next job is made in the same run.
 
 `STORIES_DOCU_VOX=0` keeps the beats whole (for comparison). Held by `studio/tests/test_vox_pass.py`.
+
+## Film mode (owner, 17.11.2026, same day: "everything flickers … more movement, more film, graphic connections, connecting lines, storytelling")
+
+The VOX-pass sample measured 40 changes a minute, 17 flashes and a 408 px jerk. Now: a cut goes only to another picture that shows the line — never to a closer framing of the same picture (the cold open excepted); one moving shot may run up to `editor.LONG_HOLD` (12 s); looks aim at 5 s (`TARGET`), never under 2.4 s (`MIN_SUB`); sentences 4–8 s; transitions are soft (dissolve, push, ink, 0.8 s); type and objects ease in over 0.45–1 s and ease out; the camera never `snap`s. Every chapter with three sentences or more carries the story thread (a hand-drawn line with a knot and a key word per sentence); every object is joined to its word by a pen line, and two objects by an arc. Measured after: 17.7 changes a minute, 4 flashes, 33.5 px jerk. The log of every round: `docs/fanlife/studio-editing-lessons.md` (the `football-stories-film-editor` skill keeps it).

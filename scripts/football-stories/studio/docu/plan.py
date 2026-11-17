@@ -205,7 +205,11 @@ class Adapter:
         """Another picture for a line so long that three looks at its own picture are not enough (docu/editor.looks): the
         index's next best for the same beat, never the one this shot already shows."""
         own = self.keys.get(n)
-        r = self.picker.pick({**self.query(n), 'n': n}, avoid=({own} if own else set()) | self.people_pictures(n) | self.refusals(n))
+        # only a picture that shows the line (17.11.2026: "unrelated pictures") — else the editor lets the shot run on
+        av = ({own} if own else set()) | {*self.also.get(n, [])} | self.people_pictures(n) | self.refusals(n)
+        r = self.picker.pick_relevant({**self.query(n), 'n': n}, avoid=av)
+        if not r and i < 0:   # the shot has run LONG_HOLD on one picture: the best the index has, rather than a still slide
+            r = self.picker.pick({**self.query(n), 'n': n}, avoid=av)
         if r:
             self.also.setdefault(n, []).append(r['id'])
         return self.asset(self.ink(Path(r['path'])), 'img') if r else None
@@ -225,15 +229,10 @@ class Adapter:
         seen = {self.keys.get(n), *self.also.get(n, [])} - {None}
         av = seen | self.people_pictures(n) | self.refusals(n)
         r = self.picker.pick_relevant(q, avoid=av)
-        move = ('panl', 'push', 'panr', 'pull')[k % 4]
-        if r:
-            self.also.setdefault(n, []).append(r['id'])
-            return {'kind': 'image', 'src': self.asset(self.ink(Path(r['path'])), 'img'), 'move': move, 'seg_pick': r['id']}
-        own = self.shown.get(n)
-        if own:
-            return {'kind': 'image', 'src': self.asset(own, 'img'), 'move': move, 'frame': ('detail', 'reverse', 'wide')[k % 3]}
-        rel = self.related(n, k)
-        return {'kind': 'image', 'src': rel, 'move': move} if rel else None
+        if not r:   # film mode (17.11.2026): no closer framing of the same picture — the segment joins the one before it
+            return None
+        self.also.setdefault(n, []).append(r['id'])
+        return {'kind': 'image', 'src': self.asset(self.ink(Path(r['path'])), 'img'), 'move': ('panl', 'push', 'panr', 'pull')[k % 4], 'seg_pick': r['id']}
 
     def plan_t(self, n: int, w: dict) -> float | None:
         s = next((x for x in self.plan['shots'] if x['n'] == n), {})

@@ -37,7 +37,7 @@ class CutPoints(unittest.TestCase):
         self.assertEqual(E.cut_points(0, E.MAX_STILL, [], None), [])
 
     def test_every_look_is_a_look_and_none_is_a_slide(self):
-        for d in (4.1, 5.0, 7.8, 11.3, 13.44, 22.0, 41.7):
+        for d in (7.8, 11.3, 13.44, 22.0, 41.7):   # film mode (17.11.2026): a hold up to MAX_STILL (7 s) is one moving shot
             for words, grid in (([], None), ([x * 0.37 for x in range(200)], None), ([], [x * 0.5 for x in range(200)])):
                 parts = self.lengths(d, E.cut_points(0, d, words, grid))
                 self.assertGreaterEqual(len(parts), 2)
@@ -45,15 +45,22 @@ class CutPoints(unittest.TestCase):
                 self.assertGreaterEqual(min(parts), E.MIN_SUB - 1e-6, (d, parts))
 
     def test_a_cut_lands_on_the_music_beat_before_it_lands_on_a_word(self):
-        # a 7 s hold from film time 10: the arithmetic says 2.33 and 4.67; a beat at 12.5 and a word at 12.2 are both near
-        pts = E.cut_points(10, 7.0, [12.2, 14.9], [12.5, 20.0])
-        self.assertAlmostEqual(pts[0], 2.5)             # the beat
-        self.assertAlmostEqual(pts[1], 4.9)             # no beat within reach: the word
-        self.assertEqual(E.cut_points(10, 7.0, [], None), [round(7 / 3, 3), round(14 / 3, 3)])
+        # a 12 s hold from film time 10: the arithmetic says 4.0 and 8.0; a beat at 14.2 and a word at 18.5 are near
+        pts = E.cut_points(10, 12.0, [14.1, 18.5], [14.2, 30.0])
+        self.assertAlmostEqual(pts[0], 4.2)             # the beat
+        self.assertAlmostEqual(pts[1], 8.5)             # no beat within reach: the word
+        self.assertEqual(E.cut_points(10, 12.0, [], None), [4.0, 8.0])
 
-    def test_a_mark_that_would_break_a_look_is_not_taken(self):
-        pts = E.cut_points(0, 4.4, [0.9, 3.6], None)    # either word would leave a look under MIN_SUB
-        self.assertEqual(pts, [2.2])
+    def test_a_mark_never_breaks_a_look(self):
+        import random
+        rng = random.Random(7)
+        for _ in range(200):
+            d = rng.uniform(7.1, 30.0)
+            words = sorted(rng.uniform(0, d) for _ in range(rng.randint(0, 40)))
+            grid = sorted(rng.uniform(0, d) for _ in range(rng.randint(0, 30)))
+            e_ = [0.0, *E.cut_points(0, d, words, grid), d]
+            parts = [b - a for a, b in zip(e_, e_[1:])]
+            self.assertGreaterEqual(min(parts), E.MIN_SUB - 1e-6, (d, parts))
 
 
 class Cut(unittest.TestCase):
@@ -63,17 +70,19 @@ class Cut(unittest.TestCase):
         self.assertGreaterEqual(len(srcs), 3)
         self.assertEqual(len(set(srcs)), len(srcs))
 
-    def test_a_long_still_becomes_wide_detail_reverse_and_then_a_related_picture(self):
+    def test_a_long_still_cuts_to_other_pictures_never_to_a_closer_framing_of_itself(self):
+        # film mode (owner 17.11.2026, "everything flickers"): the cut to a detail of the SAME picture is gone
         got = E.cut([beat(0, 0, 14.0, [img('first.webp')]), beat(1, 14.0, 13.0, [img(tag={'big': 'X'})])], None, related=lambda n, i: f'rel-{i}.webp')[1]
         p = got['shots']
-        # TARGET 2.6 (owner 14.11.2026, "more emphasis on editing"): a 13 s line is now five looks, the related picture cut twice
-        self.assertEqual([x.get('frame') for x in p], [None, 'detail', 'reverse', 'wide', 'detail'])
-        self.assertEqual([x['src'] for x in p], ['a.webp', 'a.webp', 'a.webp', 'rel-3.webp', 'rel-3.webp'])
+        self.assertEqual([x.get('frame') for x in p], [None] * len(p))
+        self.assertEqual(p[0]['src'], 'a.webp')
+        self.assertTrue(all(x['src'].startswith('rel-') for x in p[1:]))
+        self.assertEqual(len({x['src'] for x in p}), len(p))
         self.assertEqual(p[0]['hold'], 13.0)            # the name tag stays for the whole line
-        self.assertTrue(all('tag' not in x for x in p[1:]))
         self.assertAlmostEqual(sum(x['d'] for x in p), 13.0, places=2)
-        self.assertAlmostEqual(p[1]['dt'], p[0]['d'], places=2)
         self.assertEqual(E.errors([got]), [])
+        alone = E.cut([beat(0, 0, 14.0, [img('first.webp')]), beat(1, 14.0, 6.5, [img()])], None, related=lambda n, i: None)[1]
+        self.assertEqual(len(E.pictures(alone)), 1, 'nothing else shows the line: one picture, one move, no jump cut')
 
     def test_the_plans_times_do_not_move(self):
         raw = [beat(i, i * 9.0, 9.0, [img(f'{i}.webp')]) for i in range(5)]
@@ -101,7 +110,7 @@ class Cut(unittest.TestCase):
         b = E.cut([beat(0, 0, 13.0, [{'kind': 'tint', 'src': 'a.webp'}, word], 'turning')])[0]
         self.assertAlmostEqual(next(x for x in b['shots'] if x['kind'] == 'word')['d'], E.WORD_HOLD + 0.8)
         self.assertEqual(b['shots'][0]['kind'], 'tint')
-        self.assertGreater(len(E.pictures(b)), 2)
+        self.assertGreaterEqual(len(E.pictures(b)), 1)
 
     def test_end_and_follow_cards_are_left_as_they_are(self):
         end = {'kind': 'end', 'title': 'x'}
@@ -112,7 +121,7 @@ class Cut(unittest.TestCase):
         beats = E.cut([beat(i, i * 3.0, 3.0, [img(f'{i}.webp')], t, chapter=int(i >= 4)) for i, t in enumerate(types)])
         ins = [b['in'] for b in beats]
         self.assertEqual(ins[0], 'cut')
-        self.assertEqual((ins[2], ins[3], ins[4], ins[5], ins[11]), ('match', 'whip', 'dive', 'tear', 'fade'))
+        self.assertEqual((ins[2], ins[3], ins[4], ins[5], ins[11]), ('match', 'push', 'dive', 'tear', 'fade'))
         self.assertTrue(all(not (a == b == c) for a, b, c in zip(ins, ins[1:], ins[2:])), ins)
         self.assertTrue(set(ins) <= set(B.TAILS))
         self.assertEqual(E.errors(beats), [])
@@ -157,8 +166,7 @@ class OnTheRealPlan(unittest.TestCase):
                 at = b['t'] + x.get('dt', 0.0)   # an underlay that starts with the beat carries no offset
                 near = any(abs(at - w) < 1e-3 for w in b['meta']['words'])
                 on, off = on + near, off + (not near)
-        self.assertGreater(on, 0)
-        self.assertGreaterEqual(on, off)
+        self.assertGreaterEqual(on, off)   # film mode: a beat is cut only where another picture shows the line; when it is, on a word
 
     def test_the_page_moves_whole_clips_and_nothing_flashes_or_shakes(self):
         tw = [ln for ln in self.page.splitlines() if ln.startswith('tl.')]
@@ -261,7 +269,7 @@ class Opening(unittest.TestCase):
     def test_the_films_first_look_is_over_inside_three_seconds(self):
         from studio import qa
         self.assertLess(E.OPENING, qa.FIRST_CHANGE_S)
-        for d, words in ((12.4, [3.1, 6.2, 9.3]), (4.1, []), (7.0, [2.9, 3.4])):
+        for d, words in ((12.4, [3.1, 6.2, 9.3]), (7.0, [2.9, 3.4]), (5.2, [])):   # film mode: under OPENING + MIN_SUB (5 s) the opening is one look
             b = E.cut([beat(0, 0, d, [img()], 'open', words=words), beat(1, d, d, [img('b.webp')])])
             self.assertLessEqual(E.pictures(b[0])[0]['d'], E.OPENING, d)
             self.assertEqual(E.errors(b), [])
