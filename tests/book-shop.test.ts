@@ -47,7 +47,7 @@ describe('Broken Collective goods (17.11.2026)',()=>{
   expect(variantFor(v,'black','One size')).toBe(5)
  })
  it('opens a goods checkout routed to the book and posts only inside the region',()=>{
-  const s=goodsSession({order:'bk_abcdefgh',lang:'he',kind:'tee',colour:'Ivory',size:'M',region:'il'})
+  const s=goodsSession({order:'bk_abcdefgh',lang:'he',kind:'tee',colour:'Natural Raw',size:'M',region:'il'})
   expect(s.metadata).toMatchObject({book:'bk_abcdefgh',kind:'tee',size:'M'});expect(s.shipping_address_collection.allowed_countries).toEqual(['IL'])
  })
  it('splits the Stripe name for Printify',()=>{

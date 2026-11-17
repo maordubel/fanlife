@@ -58,19 +58,20 @@ export const BOOK_SITE='https://www.dubelteam.com/broken-collective'
 
 /**
  * THE GOODS (owner, 17.11.2026: "a shirt and a cap through our supplier — and the book's products never in FAN LIFE's shop,
- * nor FAN LIFE's in the book's"). Two real Printify products in the API store "Broken Collective" (id 29791136, never FAN
- * LIFE's stores): each order names the product and the variant, Printify prints and posts it straight to the reader.
- * Costs at creation: tee USD 24–33 (Comfort Colors 1717, Marco Fine Arts, front + back DTG), cap USD 21 (Yupoong 6245CM,
- * Fulfill Engine, embroidery), both shipped from the US — prices below keep a margin after post.
+ * nor FAN LIFE's in the book's"; then "move to a European supplier, high quality at a lower price"). Two real Printify
+ * products in the API store "Broken Collective" (id 29791136, never FAN LIFE's stores), both made and posted inside the EU:
+ *   tee — Stanley/Stella Creator 2.0 (organic, 180 g/m²), Natural Raw, OPT OnDemand · front + back DTG · USD 15.63–18.42
+ *   cap — OTTO Cap distressed dad hat, embroidered by Printful (EU) · khaki or black · USD 18.28
+ * Each order names the product and the variant; Printify prints and posts it straight to the reader.
  */
 export type GoodsKind='tee'|'cap'
 export const GOODS:Record<GoodsKind,{cents:number;product:string;name:{he:string;en:string};blurb:{he:string;en:string}
  colours:string[];sizes:string[];ship:Record<Region,number>}>={
- tee:{cents:4500,product:'6afc0ca1fd4d7f230d0ac10b',name:{he:'חולצת קולקטיב שבור',en:'Broken Collective T-shirt'},
-  blurb:{he:'כותנה כבדה בצביעת בגד, צבע שנהב. מאחור: הסדק והחוט.',en:'Heavy garment-dyed cotton, ivory. On the back: the crack and the thread.'},
-  colours:['Ivory'],sizes:['S','M','L','XL','2XL'],ship:{il:1500,eu:1100,na:700,world:1500}},
- cap:{cents:3500,product:'6afc0ecbf17cef87cb02ee8e',name:{he:'כובע קולקטיב שבור',en:'Broken Collective cap'},
-  blurb:{he:'כובע אבא רקום. חוט אדום אחד, קשר אחד.',en:'Embroidered dad cap. One red thread, one knot.'},
-  colours:['Khaki','Black'],sizes:['One size'],ship:{il:1300,eu:1000,na:700,world:1300}},
+ tee:{cents:2900,product:'6afc1aa78235d40d740c8687',name:{he:'חולצת קולקטיב שבור',en:'Broken Collective T-shirt'},
+  blurb:{he:'כותנה אורגנית, Stanley/Stella, צבע נייר. מקדימה הקשר, מאחור הסדק.',en:'Organic cotton, Stanley/Stella, paper white. The knot on the chest, the crack on the back.'},
+  colours:['Natural Raw'],sizes:['XS','S','M','L','XL','2XL','3XL'],ship:{il:1000,eu:500,na:900,world:1100}},
+ cap:{cents:2900,product:'6afc1c5655472a51c00eeb8e',name:{he:'כובע קולקטיב שבור',en:'Broken Collective cap'},
+  blurb:{he:'כובע אבא בגימור שחוק, רקום. חוט אדום אחד, קשר אחד.',en:'Distressed dad cap, embroidered. One red thread, one knot.'},
+  colours:['Black','Khaki'],sizes:['One size'],ship:{il:1000,eu:500,na:900,world:1100}},
 }
 export const isGoods=(v:unknown):v is GoodsKind=>v==='tee'||v==='cap'
