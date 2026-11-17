@@ -22,6 +22,7 @@ competition in a sentence comes from a claim the beat cites (script.fact_guard h
 from __future__ import annotations
 
 import copy
+from datetime import date as Date
 import hashlib
 import random
 import re
@@ -76,6 +77,8 @@ class Book:
                      max(comps, key=lambda k: comps[k].get('played', 0)) if comps else None)
         self.top = self.moments[0]['id'] if self.moments else (self.matches[-1]['id'] if self.matches else None)
         self.quotes = [c for c in self.by.values() if (c.get('fact') or {}).get('kind') == 'quote' and c['fact'].get('text')]
+        # the drama desk's counts (studio/drama_facts.py): what each match meant before kick-off
+        self.ctx = {c['fact']['match_id']: c for c in self.by.values() if (c.get('fact') or {}).get('kind') == 'context'}
 
     def f(self, mid: str) -> dict:
         return self.by[mid]['fact']
@@ -315,12 +318,101 @@ def joy_beat(pen: Pen, mid: str) -> dict | None:
                 camera='orbit' if pen.w == 'mythmaker' else 'push', sfx='roar', pace='fast')
 
 
+def context_line(pen: Pen, mid: str) -> tuple[str, str | None]:
+    """The tension before the result (studio/drama_facts.py; docs/fanlife/studio-drama-playbook.md): one line of what
+    this match MEANT — a drought, a ground never conquered, a score to settle, the road, the clock. Said before the
+    result, so the result answers it. Every number in it is the context claim's. ('', None) when the record has nothing."""
+    b = pen.b
+    c = b.ctx.get(mid)
+    if not c:
+        return '', None
+    x, f, opp, club = c['fact'], b.f(mid), b.opp(mid), b.club
+    tags = b.tags(mid)
+    used = getattr(pen, 'ctx_used', [])   # the kinds told so far: never the same kind twice running, none more than twice a film
+    cands: list[tuple[int, str, str]] = []
+    if x.get('never_beaten_in', 0) >= 3:
+        cands.append((9, 'never', f'{x["never_beaten_in"]} meetings on record, and {club} had never beaten {opp}.'))
+    if x.get('years_since_win', 0) >= 4:
+        cands.append((8, 'drought', f'{club} had not beaten {opp} in {x["years_since_win"]} years.'))
+    if f.get('side') == 'away' and x.get('away_visits_before', 0) >= 3 and x.get('away_wins_before') == 0:
+        cands.append((8, 'fortress', f'{x["away_visits_before"]} visits there on record, and not one win.'))
+    elif f.get('side') == 'away' and x.get('years_since_away_win', 0) >= 4:
+        cands.append((7, 'fortress', f'No win on their ground in {x["years_since_away_win"]} years.'))
+    e = x.get('earlier_this_season')
+    if e and e['outcome'] == 'loss':
+        hi, lo = max(e['club_goals'], e['opponent_goals']), min(e['club_goals'], e['opponent_goals'])
+        cands.append((7, 'rematch', f'In {month(e["date"])} {opp} had beaten {club} {hi}–{lo}. Now they met again.'))
+    elif e and e['outcome'] == 'win' and ('decider' in tags or 'derby' in tags) and (Date.fromisoformat(x['date']) - Date.fromisoformat(e['date'])).days >= 30:
+        k_ = x.get('earlier_wins_this_season', 1)
+        times = 'once' if k_ == 1 else 'twice' if k_ == 2 else f'{k_} times'
+        cands.append((4, 'rematch', f'They had beaten {opp} {times} already that season, the last in {month(e["date"])}.'))
+    tr = x.get('trip')
+    if tr and tr.get('longest_of_season') and tr['km'] >= 800:
+        cands.append((6, 'road', f'The longest trip of the season: {tr["km"]:,} kilometres from {spoken(tr["from"])} to {spoken(tr["to"])}.'))
+    elif tr and tr['km'] >= 1500:
+        cands.append((5, 'road', f'{tr["km"]:,} kilometres from {spoken(tr["from"])}.'))
+    if x.get('first_on_record') and ('europe' in tags or 'final' in tags):
+        cands.append((5, 'first', f'{opp}: the first meeting between them on record.'))
+    n = x.get('meetings_before', 0)
+    if 'derby' in tags and n >= 10 and x.get('record_complete'):
+        cands.append((5, 'record', f'Meeting number {x["meeting_number"]} on record: {x["won_before"]} {club} wins before it, {x["lost_before"]} for {opp}.'))
+    left = x.get('league_left')
+    if left == 0 and len([1 for c_ in b.ctx.values() if c_['fact'].get('league_left') is not None]) >= 10:
+        cands.append((7, 'clock', 'The last league match of the season.'))
+    if left is not None and 1 <= left <= 4 and f.get('outcome') != 'draw':
+        cands.append((6, 'clock', f'{"One league match" if left == 1 else f"{left} league matches"} left after this one.'))
+    cands = [k for k in cands if (not used or k[1] != used[-1]) and used.count(k[1]) < 2]
+    if not cands:
+        return '', None
+    _, kind, line = max(cands, key=lambda k: k[0])
+    pen.ctx_used = used + [kind]
+    pen.ctx_also = [e['match_id']] if kind == 'rematch' and e else []   # the earlier result it tells is cited too (director rule 1)
+    return line, c['id']
+
+
+TEASE_Q = ('Could they finally do it?', 'Was this the night it changed?', 'Could they settle it this time?', 'What would be left standing?')
+
+
+def teasers(pen: Pen, chapters: list[dict]) -> None:
+    """In place: each chapter's cliff edge names what is WAITING in the next one (a plant the next chapter pays off):
+    the opponent who beat them last time, the ground never conquered, the drought. Every number is the context claim's,
+    which the cliff beat now cites. A chapter whose next one holds no such match keeps its own cliff."""
+    b = pen.b
+    for k in range(len(chapters) - 1):
+        cliff = chapters[k]['beats'][-1] if chapters[k]['beats'] else None
+        if not cliff or cliff['visual'].get('type') != 'illustration':
+            continue
+        for nb in chapters[k + 1]['beats']:
+            cid = next((i for i in nb.get('claim_ids') or [] if i.endswith(':context')), None)
+            if not cid:
+                continue
+            x = b.by[cid]['fact']
+            opp = spoken(x.get('opponent'))
+            e = x.get('earlier_this_season')
+            if e and e['outcome'] == 'loss':
+                hi, lo = max(e['club_goals'], e['opponent_goals']), min(e['club_goals'], e['opponent_goals'])
+                clause = f'{opp}, who had beaten them {hi}–{lo} in {month(e["date"])}'
+            elif x.get('never_beaten_in', 0) >= 3:
+                clause = f'{opp}, never beaten in {x["never_beaten_in"]} meetings on record'
+            elif x.get('years_since_win', 0) >= 4:
+                clause = f'{opp}, not beaten in {x["years_since_win"]} years'
+            else:
+                continue
+            q = TEASE_Q[pen.rng.randrange(len(TEASE_Q))]
+            cliff['narration'] = f'Waiting ahead: {clause}. {q}'
+            cliff['claim_ids'] = list(dict.fromkeys((cliff.get('claim_ids') or []) + [cid] + ([e['match_id']] if e and e['outcome'] == 'loss' else [])))
+            break
+
+
 def match_beat(pen: Pen, mid: str, lead: str = '', weight: float = 0.5, req: bool = False, payoff: bool = False, bare: bool = False) -> dict:
     """One match told: when, where, the competition, the result, the scorers (with their minutes), and its feeling."""
     b = pen.b
     f = b.f(mid)
     tags = b.tags(mid)
     bits = [lead] if lead else []
+    ctx_line, ctx_id = context_line(pen, mid) if not bare else ('', None)
+    if ctx_line:
+        bits.append(ctx_line)
     where = 'at home' if f.get('side') == 'home' else 'away' if f.get('side') == 'away' else ''
     v = b.venue(mid)
     place = f'at {v}' if v else where
@@ -366,7 +458,11 @@ def match_beat(pen: Pen, mid: str, lead: str = '', weight: float = 0.5, req: boo
         vis['prop'] = 'passenger_plane'
     elif pen.w == 'poet' and f.get('side') == 'away' and vis['type'] in ('ticket', 'matchday'):
         vis['prop'] = 'supporters_bus'
-    return beat(' '.join(x for x in bits if x), [mid], vis, weight, req, **extra)
+    if ctx_id:
+        weight = max(weight, 0.9)   # a match with its stakes said is the drama: it outlasts the craft lines in the cut
+    also = getattr(pen, 'ctx_also', []) if ctx_id else []
+    pen.ctx_also = []
+    return beat(' '.join(x for x in bits if x), [mid] + ([ctx_id] if ctx_id else []) + also, vis, weight, req, **extra)
 
 
 def tally_line(pen: Pen, ids: list[str], lead: str = '') -> str:
@@ -395,8 +491,12 @@ def chapter_card(pen: Pen, n: int, title: str, ids: list[str], first_mid: str | 
 
 def cliff_beat(pen: Pen, ids: list[str] | None = None) -> dict:
     """The chapter's cliff edge: an obstacle or a clock, then the question the next chapter answers."""
-    return beat(f"{pen.pick('clock')} {pen.pick('cliff')}", ids or [], {'type': 'illustration', 'art': pen.art(), 'caption': ''}, 1.0, True,
-                camera=pen.cam(), pace='slow')
+    # a short film keeps its matches before its craft lines: under five minutes the cliff is optional and goes first in
+    # the cut (17.11.2026 — a 3-minute Hapoel 2009/10 film had chapter cards and clocks and not one match with its stakes;
+    # the chapter still ends on a question: _mend adds one where rule 5 asks)
+    short = getattr(pen, 'short', False)
+    return beat(f"{pen.pick('clock')} {pen.pick('cliff')}", ids or [], {'type': 'illustration', 'art': pen.art(), 'caption': ''}, 0.3 if short else 1.0,
+                not short, camera=pen.cam(), pace='slow')
 
 
 def run_beat(pen: Pen, run: dict) -> dict | None:
@@ -431,7 +531,8 @@ def road_beat(pen: Pen, ids: list[str], req: bool = False) -> dict | None:
         if f.get('kind') != 'match' or f.get('side') != 'away':
             continue
         there = place_of(f, raw)
-        far = not home or abs(there[1][0] - home[1][0]) + abs(there[1][1] - home[1][1]) > 1.0 if there else False
+        from .drama_facts import _km
+        far = (not home or _km(home[1], there[1]) >= 300) if there else False
         if there and far and there[0] not in cities:   # a derby across the city is not a journey
             cities.append(there[0])
             mids.append(mid)
@@ -465,7 +566,11 @@ def pick_matches(book: Book, ids: list[str], exclude: set[str], k: int) -> list[
     """The matches that carry a stretch: the strongest moments first, then the tagged nights, in date order."""
     def w(i):
         tags = book.tags(i)
-        return book.weight.get(i, 0) + 0.08 * len([t for t in tags if t not in ('first', 'last', 'streak-start', 'streak-end')])
+        x = (book.ctx.get(i) or {}).get('fact') or {}
+        # a match with something at stake before kick-off (studio/drama_facts.py) tells better than one without
+        stake = 0.12 * bool(x.get('never_beaten_in') or x.get('years_since_win', 0) >= 4 or (x.get('earlier_this_season') or {}).get('outcome') == 'loss'
+                            or x.get('league_left') == 0 or (x.get('trip') or {}).get('longest_of_season'))
+        return book.weight.get(i, 0) + 0.08 * len([t for t in tags if t not in ('first', 'last', 'streak-start', 'streak-end')]) + stake
     cand = [i for i in ids if i not in exclude]
     best = sorted(cand, key=lambda i: (-w(i), book.order.get(i, 0)))[:k]
     return sorted(best, key=lambda i: book.order.get(i, 0))
@@ -1036,11 +1141,13 @@ def write_script(brief: dict, ledger: dict, writer: str, log=print, avoid: list[
     seed = f'{ledger.get("club_id")}|{book.season}|{kind}|{"-".join(sorted((ledger.get("focus") or {}).get("matches") or []))}'
     lo, hi = target_words(minutes)
     pen = Pen(writer, book, seed)
+    pen.short = minutes < 5
     hooks = hook_options(pen)
     opening = cold_open(pen, hooks[0])
     body = {'season': season_film, 'match': match_film, 'tie': match_film, 'rivalry': rivalry_film}[kind](pen, lo)
     chs = [opening, *body]
     trim(chs, hi - 45 if minutes > 4 else hi)
+    teasers(pen, chs[1:])   # after the cut: a chapter never promises a match the cut took away
     shape(pen, chs)
     house_rules(chs, pen.v['cams'])
     took = minutes_for(_count(chs), minutes)

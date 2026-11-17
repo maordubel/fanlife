@@ -1,5 +1,5 @@
 {
- "note": "Home towns of clubs, for map pins. A pin marks the CITY a club comes from (the label says the city), not a ground on a given night. Coordinates are the city's own, as Wikipedia gives them (degrees, rounded to 0.01). A club with no row gets no pin; nothing is geocoded at run time.",
+ "note": "Home towns of clubs, for map pins. A pin marks the CITY a club comes from (the label says the city), not a ground on a given night. Coordinates are the city's own, as Wikipedia gives them (degrees, rounded to 0.01). A club with no row gets no pin; nothing is geocoded at run time. Rows added 17.11.2026 by studio/place_book.py: the club's city from openfootball/clubs (CC0) and its coordinates from GeoNames (CC BY 4.0, the most populous place of that name in the club's country, rounded to 0.01°). A club neither dataset places has no row.",
  "source": {
   "title": "Wikipedia city articles (coordinates)",
   "url": "https://en.wikipedia.org/wiki/Geographic_coordinate_system",
@@ -157,6 +157,1906 @@
   "Madrid": [
    40.42,
    -3.7
+  ],
+  "Heidenheim an der Brenz": [
+   48.68,
+   10.15
+  ],
+  "Kaiserslautern": [
+   49.44,
+   7.77
+  ],
+  "Cologne": [
+   50.93,
+   6.95
+  ],
+  "Magdeburg": [
+   52.13,
+   11.63
+  ],
+  "Mulheim": [
+   51.43,
+   6.88
+  ],
+  "Nuremberg": [
+   49.45,
+   11.08
+  ],
+  "Saarbrucken": [
+   49.23,
+   7.01
+  ],
+  "Berlin": [
+   52.52,
+   13.41
+  ],
+  "Mainz": [
+   49.98,
+   8.28
+  ],
+  "Gottingen": [
+   51.53,
+   9.93
+  ],
+  "Sinsheim": [
+   49.25,
+   8.88
+  ],
+  "Cesena": [
+   44.14,
+   12.24
+  ],
+  "Milan": [
+   45.46,
+   9.19
+  ],
+  "Larisa": [
+   39.64,
+   22.42
+  ],
+  "Mesolongi": [
+   38.37,
+   21.43
+  ],
+  "Nikaia": [
+   37.97,
+   23.65
+  ],
+  "Larnaca": [
+   34.92,
+   33.62
+  ],
+  "Kalloni": [
+   39.23,
+   26.21
+  ],
+  "Limassol": [
+   34.68,
+   33.04
+  ],
+  "Stockholm": [
+   59.33,
+   18.07
+  ],
+  "Chania": [
+   35.51,
+   24.03
+  ],
+  "Karditsa": [
+   39.36,
+   21.92
+  ],
+  "Palaio Faliro": [
+   37.93,
+   23.7
+  ],
+  "Peristeri": [
+   38.02,
+   23.69
+  ],
+  "Nicosia": [
+   35.18,
+   33.36
+  ],
+  "Livorno": [
+   43.54,
+   10.33
+  ],
+  "Rome": [
+   41.89,
+   12.51
+  ],
+  "Kinshasa": [
+   -4.33,
+   15.31
+  ],
+  "Alkmaar": [
+   52.63,
+   4.75
+  ],
+  "Aalborg": [
+   57.05,
+   9.92
+  ],
+  "Arhus": [
+   56.16,
+   10.21
+  ],
+  "Aberdeen": [
+   57.14,
+   -2.1
+  ],
+  "Coimbra": [
+   40.21,
+   -8.42
+  ],
+  "Maria Enzersdorf": [
+   48.1,
+   16.28
+  ],
+  "Agios Dimitrios": [
+   37.93,
+   23.73
+  ],
+  "Agios Nikolaos": [
+   35.19,
+   25.72
+  ],
+  "Salamina": [
+   37.96,
+   23.5
+  ],
+  "Airdrie": [
+   55.87,
+   -3.98
+  ],
+  "Amsterdam": [
+   52.37,
+   4.89
+  ],
+  "Aktobe": [
+   50.28,
+   57.21
+  ],
+  "Jeddah": [
+   21.49,
+   39.19
+  ],
+  "Al Ain City": [
+   24.19,
+   55.76
+  ],
+  "Riyadh": [
+   24.69,
+   46.72
+  ],
+  "Alexandria": [
+   31.2,
+   29.92
+  ],
+  "Port Said": [
+   31.27,
+   32.3
+  ],
+  "Coatbridge": [
+   55.86,
+   -4.02
+  ],
+  "Aachen": [
+   50.78,
+   6.08
+  ],
+  "Alexandreia": [
+   40.63,
+   22.44
+  ],
+  "Alimos": [
+   37.91,
+   23.72
+  ],
+  "Alloa": [
+   56.12,
+   -3.79
+  ],
+  "Tiznit": [
+   29.7,
+   -9.73
+  ],
+  "Arta": [
+   39.16,
+   20.99
+  ],
+  "Epanomi": [
+   40.43,
+   22.93
+  ],
+  "Giannitsa": [
+   40.79,
+   22.41
+  ],
+  "Brussels": [
+   50.85,
+   4.35
+  ],
+  "Antwerp": [
+   51.22,
+   4.4
+  ],
+  "Arbroath": [
+   56.56,
+   -2.59
+  ],
+  "Pitesti": [
+   44.85,
+   24.87
+  ],
+  "Thessaloniki": [
+   40.64,
+   22.93
+  ],
+  "Bielefeld": [
+   52.03,
+   8.53
+  ],
+  "Hanover": [
+   52.37,
+   9.73
+  ],
+  "Arouca": [
+   40.93,
+   -8.24
+  ],
+  "Tripoli": [
+   37.51,
+   22.38
+  ],
+  "Vari": [
+   37.83,
+   23.8
+  ],
+  "Giurgiu": [
+   43.89,
+   25.96
+  ],
+  "Aswan": [
+   24.09,
+   32.9
+  ],
+  "Bergamo": [
+   45.7,
+   9.67
+  ],
+  "Bilbao": [
+   43.26,
+   -2.93
+  ],
+  "Delmenhorst": [
+   53.05,
+   8.63
+  ],
+  "Belo Horizonte": [
+   -19.92,
+   -43.94
+  ],
+  "Vienna": [
+   48.21,
+   16.37
+  ],
+  "Auxerre": [
+   47.8,
+   3.57
+  ],
+  "Ioannina": [
+   39.66,
+   20.85
+  ],
+  "Ayr": [
+   55.46,
+   -4.63
+  ],
+  "Dortmund": [
+   51.51,
+   7.47
+  ],
+  "Barysaw": [
+   54.23,
+   28.5
+  ],
+  "Bern": [
+   46.95,
+   7.45
+  ],
+  "Barcelona": [
+   41.39,
+   2.16
+  ],
+  "Bathgate": [
+   55.9,
+   -3.64
+  ],
+  "Leverkusen": [
+   51.03,
+   6.98
+  ],
+  "Munich": [
+   48.14,
+   11.58
+  ],
+  "Holon": [
+   32.01,
+   34.78
+  ],
+  "Kiryat Gat": [
+   31.61,
+   34.76
+  ],
+  "Ramla": [
+   31.93,
+   34.87
+  ],
+  "Октябрьскии": [
+   54.04,
+   28.2
+  ],
+  "Benevento": [
+   41.13,
+   14.78
+  ],
+  "Lisbon": [
+   38.72,
+   -9.13
+  ],
+  "Stara Zagora": [
+   42.43,
+   25.64
+  ],
+  "Berwick-Upon-Tweed": [
+   55.77,
+   -2.01
+  ],
+  "Sakhnin": [
+   32.86,
+   35.3
+  ],
+  "Bodø": [
+   67.28,
+   14.41
+  ],
+  "Bologna": [
+   44.49,
+   11.34
+  ],
+  "Bonn": [
+   50.73,
+   7.1
+  ],
+  "Banja Luka": [
+   44.78,
+   17.19
+  ],
+  "Bordeaux": [
+   44.84,
+   -0.58
+  ],
+  "Monchengladbach": [
+   51.19,
+   6.44
+  ],
+  "Plovdiv": [
+   42.15,
+   24.75
+  ],
+  "Braga": [
+   41.55,
+   -8.42
+  ],
+  "Braunschweig": [
+   52.27,
+   10.53
+  ],
+  "Ljubljana": [
+   46.05,
+   14.51
+  ],
+  "Brechin": [
+   56.73,
+   -2.66
+  ],
+  "Kopavogur": [
+   64.11,
+   -21.91
+  ],
+  "Bremen": [
+   53.08,
+   8.81
+  ],
+  "Strumica": [
+   41.44,
+   22.64
+  ],
+  "Brescia": [
+   45.54,
+   10.21
+  ],
+  "Brøndbyvester": [
+   55.65,
+   12.41
+  ],
+  "Citluk": [
+   43.23,
+   17.7
+  ],
+  "Podgorica": [
+   42.44,
+   19.26
+  ],
+  "Burnley": [
+   53.8,
+   -2.23
+  ],
+  "Burntisland": [
+   56.06,
+   -3.24
+  ],
+  "Cluj-Napoca": [
+   46.77,
+   23.6
+  ],
+  "Meknes": [
+   33.89,
+   -5.55
+  ],
+  "Moscow": [
+   55.75,
+   37.62
+  ],
+  "Sofia": [
+   42.7,
+   23.32
+  ],
+  "Cagliari": [
+   39.23,
+   9.12
+  ],
+  "Catania": [
+   37.49,
+   15.07
+  ],
+  "Capljina": [
+   43.12,
+   17.68
+  ],
+  "Cardiff": [
+   51.48,
+   -3.18
+  ],
+  "Zenica": [
+   44.2,
+   17.9
+  ],
+  "Celje": [
+   46.23,
+   15.26
+  ],
+  "Giza": [
+   30.01,
+   31.21
+  ],
+  "Chalkida": [
+   38.46,
+   23.6
+  ],
+  "Verona": [
+   45.43,
+   10.98
+  ],
+  "Бережани": [
+   49.45,
+   24.93
+  ],
+  "Brugge": [
+   51.21,
+   3.22
+  ],
+  "Cumbernauld": [
+   55.95,
+   -3.99
+  ],
+  "Clydebank": [
+   55.9,
+   -4.41
+  ],
+  "Copenhagen": [
+   55.68,
+   12.57
+  ],
+  "Cowdenbeath": [
+   56.11,
+   -3.34
+  ],
+  "Cwmbran": [
+   51.65,
+   -3.02
+  ],
+  "Gutersloh": [
+   51.91,
+   8.38
+  ],
+  "Daliyat al Karmel": [
+   32.69,
+   35.05
+  ],
+  "Darmstadt": [
+   49.87,
+   8.65
+  ],
+  "Pescara": [
+   42.46,
+   14.2
+  ],
+  "Derby": [
+   52.92,
+   -1.48
+  ],
+  "Rodos": [
+   36.44,
+   28.22
+  ],
+  "Dudelange": [
+   49.48,
+   6.09
+  ],
+  "Differdange": [
+   49.52,
+   5.89
+  ],
+  "Batumi": [
+   41.64,
+   41.63
+  ],
+  "Bucharest": [
+   44.43,
+   26.1
+  ],
+  "Tbilisi": [
+   41.69,
+   44.83
+  ],
+  "Zagreb": [
+   45.81,
+   15.98
+  ],
+  "Minsk": [
+   53.9,
+   27.57
+  ],
+  "Miskolc": [
+   48.1,
+   20.78
+  ],
+  "Domzale": [
+   46.14,
+   14.59
+  ],
+  "Drama": [
+   41.15,
+   24.15
+  ],
+  "Vyronas": [
+   37.96,
+   23.75
+  ],
+  "Visegrad": [
+   43.78,
+   19.29
+  ],
+  "Prague": [
+   50.09,
+   14.42
+  ],
+  "Dumbarton": [
+   55.94,
+   -4.57
+  ],
+  "Dumfries": [
+   55.07,
+   -3.61
+  ],
+  "Dundalk": [
+   54,
+   -6.42
+  ],
+  "Dundee": [
+   56.47,
+   -2.97
+  ],
+  "Dunfermline": [
+   56.07,
+   -3.46
+  ],
+  "Dresden": [
+   51.05,
+   13.74
+  ],
+  "Kyiv": [
+   50.45,
+   30.52
+  ],
+  "Methil": [
+   56.19,
+   -3.02
+  ],
+  "East Kilbride": [
+   55.76,
+   -4.18
+  ],
+  "Falkirk": [
+   56.0,
+   -3.79
+  ],
+  "Edessa": [
+   40.8,
+   22.05
+  ],
+  "Frankfurt am Main": [
+   50.12,
+   8.68
+  ],
+  "Trier": [
+   49.76,
+   6.64
+  ],
+  "Hurghada": [
+   27.26,
+   33.81
+  ],
+  "Boras": [
+   57.72,
+   12.94
+  ],
+  "Elgin": [
+   57.65,
+   -3.32
+  ],
+  "Empoli": [
+   43.72,
+   10.95
+  ],
+  "Cottbus": [
+   51.76,
+   14.33
+  ],
+  "Aue": [
+   50.59,
+   12.71
+  ],
+  "Kallithea": [
+   37.95,
+   23.7
+  ],
+  "Estoril": [
+   38.71,
+   -9.4
+  ],
+  "Caracal": [
+   44.12,
+   24.35
+  ],
+  "Homburg": [
+   49.33,
+   7.34
+  ],
+  "Augsburg": [
+   48.37,
+   10.9
+  ],
+  "Krefeld": [
+   51.34,
+   6.55
+  ],
+  "Jena": [
+   50.93,
+   11.59
+  ],
+  "Crotone": [
+   39.08,
+   17.13
+  ],
+  "Ingolstadt": [
+   48.77,
+   11.42
+  ],
+  "Farum": [
+   55.81,
+   12.36
+  ],
+  "Remscheid": [
+   51.18,
+   7.19
+  ],
+  "Gelsenkirchen": [
+   51.51,
+   7.1
+  ],
+  "Volendam": [
+   52.49,
+   5.07
+  ],
+  "Wurzburg": [
+   49.79,
+   9.95
+  ],
+  "Zwickau": [
+   50.73,
+   12.49
+  ],
+  "Rabat": [
+   34.01,
+   -6.83
+  ],
+  "Constanta": [
+   44.18,
+   28.63
+  ],
+  "Rotterdam": [
+   51.92,
+   4.48
+  ],
+  "Helsinki": [
+   60.17,
+   24.94
+  ],
+  "Vlore": [
+   40.47,
+   19.48
+  ],
+  "Tallinn": [
+   59.44,
+   24.75
+  ],
+  "Forfar": [
+   56.64,
+   -2.89
+  ],
+  "Forres": [
+   57.61,
+   -3.62
+  ],
+  "Dusseldorf": [
+   51.22,
+   6.78
+  ],
+  "Reykjavik": [
+   64.14,
+   -21.9
+  ],
+  "Frosinone": [
+   41.64,
+   13.34
+  ],
+  "Graz": [
+   47.07,
+   15.45
+  ],
+  "Katowice": [
+   50.26,
+   19.03
+  ],
+  "Gaziantep": [
+   37.06,
+   37.38
+  ],
+  "Genoa": [
+   44.4,
+   8.94
+  ],
+  "Ghent": [
+   51.05,
+   3.72
+  ],
+  "Ankara": [
+   39.92,
+   32.85
+  ],
+  "Belfast": [
+   54.6,
+   -5.93
+  ],
+  "Bistrita": [
+   47.13,
+   24.5
+  ],
+  "Deventer": [
+   52.26,
+   6.16
+  ],
+  "Zurich": [
+   47.37,
+   8.55
+  ],
+  "Greenock": [
+   55.95,
+   -4.76
+  ],
+  "Gretna": [
+   54.99,
+   -3.07
+  ],
+  "Grevenmacher": [
+   49.68,
+   6.44
+  ],
+  "Zabrze": [
+   50.32,
+   18.79
+  ],
+  "Split": [
+   43.51,
+   16.44
+  ],
+  "Valkeakoski": [
+   61.26,
+   24.03
+  ],
+  "Hamilton": [
+   55.77,
+   -4.03
+  ],
+  "Rostock": [
+   54.09,
+   12.14
+  ],
+  "Afula": [
+   32.61,
+   35.29
+  ],
+  "Ashkelon": [
+   31.67,
+   34.57
+  ],
+  "Bat Yam": [
+   32.02,
+   34.75
+  ],
+  "Lod": [
+   31.95,
+   34.89
+  ],
+  "Nazareth": [
+   32.7,
+   35.3
+  ],
+  "Even Yehuda": [
+   32.27,
+   34.89
+  ],
+  "Hadera": [
+   32.44,
+   34.9
+  ],
+  "Hod HaSharon": [
+   32.16,
+   34.89
+  ],
+  "Iksal": [
+   32.68,
+   35.32
+  ],
+  "Rehovot": [
+   31.89,
+   34.81
+  ],
+  "Ness Ziona": [
+   31.93,
+   34.8
+  ],
+  "Nof HaGalil": [
+   32.71,
+   35.32
+  ],
+  "Ra'anana": [
+   32.18,
+   34.87
+  ],
+  "Ramat HaSharon": [
+   32.15,
+   34.84
+  ],
+  "Safed": [
+   32.96,
+   35.5
+  ],
+  "Tiberias": [
+   32.79,
+   35.53
+  ],
+  "Umm el Fahm": [
+   32.52,
+   35.15
+  ],
+  "Yehud": [
+   32.03,
+   34.89
+  ],
+  "Agadir": [
+   30.42,
+   -9.6
+  ],
+  "Edinburgh": [
+   55.95,
+   -3.2
+  ],
+  "Heerenveen": [
+   52.96,
+   5.92
+  ],
+  "Helmond": [
+   51.48,
+   5.66
+  ],
+  "Helsingborg": [
+   56.05,
+   12.69
+  ],
+  "Køge": [
+   55.46,
+   12.18
+  ],
+  "Kiel": [
+   54.32,
+   10.13
+  ],
+  "Hradec Kralove": [
+   50.21,
+   15.83
+  ],
+  "Gothenburg": [
+   57.71,
+   11.97
+  ],
+  "Norrkoping": [
+   58.59,
+   16.18
+  ],
+  "Konjic": [
+   43.65,
+   17.96
+  ],
+  "Ilioupoli": [
+   37.93,
+   23.77
+  ],
+  "Bratislava": [
+   48.15,
+   17.11
+  ],
+  "Inverness": [
+   57.48,
+   -4.22
+  ],
+  "Kavala": [
+   40.94,
+   24.41
+  ],
+  "Psachna": [
+   38.58,
+   23.64
+  ],
+  "Nesher": [
+   32.77,
+   35.04
+  ],
+  "Ismailia": [
+   30.6,
+   32.27
+  ],
+  "Jablonec nad Nisou": [
+   50.72,
+   15.17
+  ],
+  "Białystok": [
+   53.13,
+   23.16
+  ],
+  "Regensburg": [
+   49.02,
+   12.1
+  ],
+  "Bijelo Polje": [
+   43.04,
+   19.75
+  ],
+  "Bihac": [
+   44.82,
+   15.87
+  ],
+  "Esch-sur-Alzette": [
+   49.5,
+   5.98
+  ],
+  "Turin": [
+   45.07,
+   7.69
+  ],
+  "Kokkola": [
+   63.84,
+   23.13
+  ],
+  "Sosnowiec": [
+   50.29,
+   19.1
+  ],
+  "Almaty": [
+   43.26,
+   76.93
+  ],
+  "Johannesburg": [
+   -26.2,
+   28.04
+  ],
+  "Kalamata": [
+   37.04,
+   22.11
+  ],
+  "Karlsruhe": [
+   49.01,
+   8.4
+  ],
+  "Kastoria": [
+   40.52,
+   21.26
+  ],
+  "Kaunas": [
+   54.9,
+   23.91
+  ],
+  "Keratsini": [
+   37.96,
+   23.62
+  ],
+  "Corfu": [
+   39.62,
+   19.92
+  ],
+  "Kilmarnock": [
+   55.61,
+   -4.5
+  ],
+  "Kiseljak": [
+   43.94,
+   18.08
+  ],
+  "Korinthos": [
+   37.94,
+   22.95
+  ],
+  "Kozani": [
+   40.3,
+   21.79
+  ],
+  "Kosice": [
+   48.71,
+   21.26
+  ],
+  "Krasnodar": [
+   45.04,
+   38.98
+  ],
+  "Linz": [
+   48.31,
+   14.29
+  ],
+  "Ahlen": [
+   51.76,
+   7.89
+  ],
+  "Laktasi": [
+   44.91,
+   17.3
+  ],
+  "Lamia": [
+   38.9,
+   22.43
+  ],
+  "Poznan": [
+   52.41,
+   16.93
+  ],
+  "Leeds": [
+   53.8,
+   -1.55
+  ],
+  "Warsaw": [
+   52.23,
+   21.01
+  ],
+  "Leicester": [
+   52.64,
+   -1.13
+  ],
+  "Leipzig": [
+   51.34,
+   12.37
+  ],
+  "Matosinhos": [
+   41.18,
+   -8.69
+  ],
+  "Lens": [
+   50.43,
+   2.83
+  ],
+  "Trebinje": [
+   42.71,
+   18.34
+  ],
+  "Livadeia": [
+   38.44,
+   22.88
+  ],
+  "Valencia": [
+   39.47,
+   -0.38
+  ],
+  "Liberec": [
+   50.77,
+   15.06
+  ],
+  "Lille": [
+   50.63,
+   3.06
+  ],
+  "Lovech": [
+   43.13,
+   24.72
+  ],
+  "Livingston": [
+   55.9,
+   -3.52
+  ],
+  "Ljubuski": [
+   43.2,
+   17.55
+  ],
+  "Lochgelly": [
+   56.13,
+   -3.31
+  ],
+  "Razgrad": [
+   43.53,
+   26.52
+  ],
+  "Luzern": [
+   47.05,
+   8.31
+  ],
+  "Lyon": [
+   45.75,
+   4.85
+  ],
+  "Dimona": [
+   31.07,
+   35.03
+  ],
+  "Kafr Qasim": [
+   32.11,
+   34.98
+  ],
+  "Duisburg": [
+   51.43,
+   6.77
+  ],
+  "Kafr Kanna": [
+   32.75,
+   35.34
+  ],
+  "maalot Tarshiha": [
+   33.02,
+   35.27
+  ],
+  "Tamra": [
+   32.85,
+   35.2
+  ],
+  "Yavne": [
+   31.88,
+   34.74
+  ],
+  "Tetouan": [
+   35.58,
+   -5.37
+  ],
+  "Malaga": [
+   36.72,
+   -4.42
+  ],
+  "Malmo": [
+   55.61,
+   13.0
+  ],
+  "Pretoria": [
+   -25.74,
+   28.19
+  ],
+  "Manchester": [
+   53.48,
+   -2.24
+  ],
+  "Maribor": [
+   46.55,
+   15.65
+  ],
+  "Marsaxlokk": [
+   35.84,
+   14.54
+  ],
+  "Marseille": [
+   43.3,
+   5.38
+  ],
+  "Mechelen": [
+   51.03,
+   4.48
+  ],
+  "Merthyr Tydfil": [
+   51.75,
+   -3.38
+  ],
+  "Kharkiv": [
+   49.98,
+   36.25
+  ],
+  "Herning": [
+   56.14,
+   8.98
+  ],
+  "Mlada Boleslav": [
+   50.41,
+   14.9
+  ],
+  "Doboj": [
+   44.73,
+   18.09
+  ],
+  "Molde": [
+   62.74,
+   7.16
+  ],
+  "Monaco": [
+   43.73,
+   7.42
+  ],
+  "Montpellier": [
+   43.61,
+   3.88
+  ],
+  "Montrose": [
+   56.72,
+   -2.47
+  ],
+  "Motherwell": [
+   55.79,
+   -3.99
+  ],
+  "Murska Sobota": [
+   46.66,
+   16.17
+  ],
+  "Rogaska Slatina": [
+   46.24,
+   15.64
+  ],
+  "Breda": [
+   51.59,
+   4.78
+  ],
+  "Nantes": [
+   47.22,
+   -1.55
+  ],
+  "Naples": [
+   40.85,
+   14.27
+  ],
+  "Jaffa": [
+   32.05,
+   34.75
+  ],
+  "Newcastle upon Tyne": [
+   54.97,
+   -1.61
+  ],
+  "Volos": [
+   39.36,
+   22.94
+  ],
+  "Armavir": [
+   40.15,
+   44.04
+  ],
+  "West Bridgford": [
+   52.93,
+   -1.13
+  ],
+  "Odense": [
+   55.4,
+   10.39
+  ],
+  "Safi": [
+   32.3,
+   -9.24
+  ],
+  "Sarajevo": [
+   43.85,
+   18.36
+  ],
+  "Wilhelmshaven": [
+   53.53,
+   8.11
+  ],
+  "Elliniko": [
+   37.89,
+   23.74
+  ],
+  "Khouribga": [
+   32.88,
+   -6.91
+  ],
+  "Orasje": [
+   45.03,
+   18.69
+  ],
+  "Orebro": [
+   59.27,
+   15.21
+  ],
+  "Osijek": [
+   45.55,
+   18.69
+  ],
+  "Eindhoven": [
+   51.44,
+   5.48
+  ],
+  "Patra": [
+   38.24,
+   21.73
+  ],
+  "Targu Jiu": [
+   45.05,
+   23.28
+  ],
+  "Elefsina": [
+   38.04,
+   23.54
+  ],
+  "Agrinio": [
+   38.62,
+   21.41
+  ],
+  "Serres": [
+   41.08,
+   23.55
+  ],
+  "Komotini": [
+   41.12,
+   25.41
+  ],
+  "Paris": [
+   48.85,
+   2.35
+  ],
+  "Parma": [
+   44.8,
+   10.33
+  ],
+  "Tirana": [
+   41.33,
+   19.82
+  ],
+  "Peebles": [
+   55.65,
+   -3.19
+  ],
+  "Peterhead": [
+   57.51,
+   -1.78
+  ],
+  "Asyut": [
+   27.18,
+   31.18
+  ],
+  "Blagoevgrad": [
+   42.02,
+   23.1
+  ],
+  "Bytom": [
+   50.35,
+   18.93
+  ],
+  "Port Glasgow": [
+   55.93,
+   -4.69
+  ],
+  "Preveza": [
+   38.96,
+   20.75
+  ],
+  "Teslic": [
+   44.61,
+   17.86
+  ],
+  "Liege": [
+   50.63,
+   5.57
+  ],
+  "Berkane": [
+   34.92,
+   -2.32
+  ],
+  "Skopje": [
+   42.0,
+   21.43
+  ],
+  "Santander": [
+   43.46,
+   -3.8
+  ],
+  "Bijeljina": [
+   44.76,
+   19.21
+  ],
+  "Kirkcaldy": [
+   56.12,
+   -3.16
+  ],
+  "Czestochowa": [
+   50.8,
+   19.12
+  ],
+  "Oued Zem": [
+   32.86,
+   -6.57
+  ],
+  "Salzburg": [
+   47.8,
+   13.04
+  ],
+  "Rennes": [
+   48.11,
+   -1.67
+  ],
+  "Riga": [
+   56.95,
+   24.11
+  ],
+  "Rijeka": [
+   45.33,
+   14.44
+  ],
+  "Pale": [
+   43.82,
+   18.57
+  ],
+  "Trondheim": [
+   63.43,
+   10.4
+  ],
+  "Dingwall": [
+   57.6,
+   -4.43
+  ],
+  "Rostov-na-Donu": [
+   47.23,
+   39.72
+  ],
+  "Essen": [
+   51.46,
+   7.01
+  ],
+  "Ludenscheid": [
+   51.22,
+   7.63
+  ],
+  "Oberhausen": [
+   51.48,
+   6.86
+  ],
+  "Kazan": [
+   55.79,
+   49.12
+  ],
+  "Prijedor": [
+   44.98,
+   16.71
+  ],
+  "Herford": [
+   52.11,
+   8.67
+  ],
+  "Paderborn": [
+   51.72,
+   8.75
+  ],
+  "Munster": [
+   51.96,
+   7.63
+  ],
+  "Herne": [
+   51.54,
+   7.23
+  ],
+  "Mohammedia": [
+   33.69,
+   -7.38
+  ],
+  "Bochum": [
+   51.48,
+   7.22
+  ],
+  "Ferrara": [
+   44.84,
+   11.62
+  ],
+  "Reutlingen": [
+   48.49,
+   9.2
+  ],
+  "Ulm": [
+   48.4,
+   9.99
+  ],
+  "Meppen": [
+   52.69,
+   7.29
+  ],
+  "Sandhausen": [
+   49.34,
+   8.66
+  ],
+  "Straelen": [
+   51.44,
+   6.27
+  ],
+  "Aschaffenburg": [
+   49.98,
+   9.15
+  ],
+  "Burghausen": [
+   48.17,
+   12.83
+  ],
+  "Mannheim": [
+   49.49,
+   8.47
+  ],
+  "Wiesbaden": [
+   50.08,
+   8.25
+  ],
+  "Saint-Etienne": [
+   45.43,
+   4.39
+  ],
+  "Samsun": [
+   41.28,
+   36.34
+  ],
+  "Sassuolo": [
+   44.54,
+   10.78
+  ],
+  "Donetsk": [
+   48.02,
+   37.8
+  ],
+  "Karagandy": [
+   49.8,
+   73.1
+  ],
+  "Dublin": [
+   53.33,
+   -6.25
+  ],
+  "Tiraspol": [
+   46.84,
+   29.63
+  ],
+  "Siroki Brijeg": [
+   43.38,
+   17.59
+  ],
+  "Sliema": [
+   35.91,
+   14.5
+  ],
+  "Tuzla": [
+   44.54,
+   18.67
+  ],
+  "Montbeliard": [
+   47.51,
+   6.8
+  ],
+  "Bayreuth": [
+   49.95,
+   11.58
+  ],
+  "Furth": [
+   49.48,
+   10.99
+  ],
+  "Unterhaching": [
+   48.07,
+   11.62
+  ],
+  "Trnava": [
+   48.38,
+   17.59
+  ],
+  "Perth": [
+   56.4,
+   -3.43
+  ],
+  "Paisley": [
+   55.83,
+   -4.43
+  ],
+  "Brasov": [
+   45.65,
+   25.61
+  ],
+  "Stenhousemuir": [
+   56.03,
+   -3.81
+  ],
+  "Stirling": [
+   56.12,
+   -3.94
+  ],
+  "Garðabær": [
+   64.09,
+   -21.92
+  ],
+  "Stranraer": [
+   54.9,
+   -5.03
+  ],
+  "Strasbourg": [
+   48.58,
+   7.75
+  ],
+  "Drammen": [
+   59.74,
+   10.2
+  ],
+  "Swansea": [
+   51.62,
+   -3.94
+  ],
+  "Turku": [
+   60.45,
+   22.27
+  ],
+  "Targu-Mures": [
+   46.54,
+   24.56
+  ],
+  "Santa Cruz de Tenerife": [
+   28.47,
+   -16.25
+  ],
+  "Teplice": [
+   50.64,
+   13.82
+  ],
+  "Oswestry": [
+   52.86,
+   -3.05
+  ],
+  "Lanark": [
+   55.67,
+   -3.78
+  ],
+  "Fyli": [
+   38.1,
+   23.67
+  ],
+  "Rafina": [
+   38.02,
+   24.01
+  ],
+  "Timisoara": [
+   45.75,
+   21.23
+  ],
+  "Tobol": [
+   52.69,
+   62.59
+  ],
+  "Kutaisi": [
+   42.27,
+   42.69
+  ],
+  "Trabzon": [
+   41.01,
+   39.73
+  ],
+  "Travnik": [
+   44.23,
+   17.67
+  ],
+  "Trikala": [
+   39.55,
+   21.77
+  ],
+  "Koblenz": [
+   50.35,
+   7.58
+  ],
+  "Enschede": [
+   52.22,
+   6.9
+  ],
+  "Lecce": [
+   40.35,
+   18.17
+  ],
+  "Palermo": [
+   38.13,
+   13.34
+  ],
+  "Udine": [
+   46.07,
+   13.24
+  ],
+  "Solingen": [
+   51.17,
+   7.08
+  ],
+  "Craiova": [
+   44.32,
+   23.8
+  ],
+  "Utrecht": [
+   52.09,
+   5.12
+  ],
+  "Vaduz": [
+   47.14,
+   9.52
+  ],
+  "Vale of Leven": [
+   55.97,
+   -4.58
+  ],
+  "Valletta": [
+   35.9,
+   14.51
+  ],
+  "Vaslui": [
+   46.63,
+   27.73
+  ],
+  "Vejle": [
+   55.71,
+   9.54
+  ],
+  "Venlo": [
+   51.37,
+   6.17
+  ],
+  "Ventspils": [
+   57.39,
+   21.56
+  ],
+  "Veroia": [
+   40.52,
+   22.2
+  ],
+  "Lubeck": [
+   53.87,
+   10.69
+  ],
+  "Oldenburg": [
+   53.14,
+   8.21
+  ],
+  "Osnabruck": [
+   52.27,
+   8.05
+  ],
+  "Wolfsburg": [
+   52.42,
+   10.78
+  ],
+  "Aalen": [
+   48.84,
+   10.09
+  ],
+  "Burstadt": [
+   49.64,
+   8.46
+  ],
+  "Arnhem": [
+   51.98,
+   5.91
+  ],
+  "Vitez": [
+   44.15,
+   17.79
+  ],
+  "Shkoder": [
+   42.07,
+   19.51
+  ],
+  "Novi Sad": [
+   45.25,
+   19.84
+  ],
+  "Megara": [
+   37.99,
+   23.34
+  ],
+  "Innsbruck": [
+   47.26,
+   11.39
+  ],
+  "Waterford": [
+   52.26,
+   -7.11
+  ],
+  "Watford": [
+   51.66,
+   -0.4
+  ],
+  "Krakow": [
+   50.06,
+   19.94
+  ],
+  "Wolverhampton": [
+   52.59,
+   -2.12
+  ],
+  "Wuppertal": [
+   51.26,
+   7.15
+  ],
+  "Temara": [
+   33.93,
+   -6.91
+  ],
+  "Neuchatel": [
+   46.99,
+   6.93
+  ],
+  "Xanthi": [
+   41.13,
+   24.89
+  ],
+  "Lankaran": [
+   38.75,
+   48.85
+  ],
+  "Berrechid": [
+   33.27,
+   -7.59
+  ],
+  "Zepce": [
+   44.43,
+   18.04
+  ],
+  "Chisinau": [
+   47.01,
+   28.86
+  ],
+  "Vaxjo": [
+   56.88,
+   14.81
+  ],
+  "Zilina": [
+   49.22,
+   18.74
   ]
  },
  "clubs": {
@@ -202,6 +2102,886 @@
   "Real Madrid": "Madrid",
   "Panathinaikos": "Athens",
   "AEK Athens": "Athens",
-  "Chelsea": "London"
- }
+  "Chelsea": "London",
+  "1. FC Heidenheim": "Heidenheim an der Brenz",
+  "1. FC Kaiserslautern": "Kaiserslautern",
+  "1. FC Köln": "Cologne",
+  "1. FC Magdeburg": "Magdeburg",
+  "1. FC Mülheim": "Mulheim",
+  "1. FC Nürnberg": "Nuremberg",
+  "1. FC Saarbrücken": "Saarbrucken",
+  "1. FC Union Berlin": "Berlin",
+  "1. FSV Mainz 05": "Mainz",
+  "1. SC Göttingen 05": "Gottingen",
+  "1.FC Heidenheim": "Heidenheim an der Brenz",
+  "1.FC Nürnberg": "Nuremberg",
+  "1899 Hoffenheim": "Sinsheim",
+  "AC Cesena": "Cesena",
+  "AC Milan": "Milan",
+  "ACF Fiorentina": "Florence",
+  "AE Larissa": "Larisa",
+  "AE Lárissa": "Larisa",
+  "AE Mesolongi": "Mesolongi",
+  "AE Nikaia": "Nikaia",
+  "AEK Athen": "Athens",
+  "AEK Larnaca": "Larnaca",
+  "AEL": "Larisa",
+  "AEL Kalloni": "Kalloni",
+  "AEL Larissa": "Larisa",
+  "AEL Limassol": "Limassol",
+  "AIK": "Stockholm",
+  "AIK Solna": "Stockholm",
+  "AO Chania": "Chania",
+  "AO Karditsa": "Karditsa",
+  "AO Palaio Faliro": "Palaio Faliro",
+  "AO Peristeri": "Peristeri",
+  "APOEL": "Nicosia",
+  "AS Livorno": "Livorno",
+  "AS Roma": "Rome",
+  "AS Vita Club": "Kinshasa",
+  "AZ Alkmaar": "Alkmaar",
+  "AaB": "Aalborg",
+  "AaB Aalborg": "Aalborg",
+  "Aarhus": "Arhus",
+  "Aberdeen": "Aberdeen",
+  "Académica de Coimbra": "Coimbra",
+  "Admira Wacker": "Maria Enzersdorf",
+  "Adumim Ashdod": "Ashdod",
+  "Agios Dimitrios": "Agios Dimitrios",
+  "Agios Nikolaos": "Agios Nikolaos",
+  "Aias Salamina": "Salamina",
+  "Airdrieonians": "Airdrie",
+  "Airdrieonians (Airdrie United)": "Airdrie",
+  "Ajax": "Amsterdam",
+  "Akratitos": "Athens",
+  "Aktobe": "Aktobe",
+  "Al Ahli Jeddah": "Jeddah",
+  "Al Ahly": "Cairo",
+  "Al Ain": "Al Ain City",
+  "Al Hilal": "Riyadh",
+  "Al Ittihad": "Alexandria",
+  "Al Masry": "Port Said",
+  "Al Mokawloon": "Cairo",
+  "Al Mokawloon Al Arab": "Cairo",
+  "Al Nassr": "Riyadh",
+  "Alashkert": "Yerevan",
+  "Albion Rovers": "Coatbridge",
+  "Alemannia Aachen": "Aachen",
+  "Alexandreia": "Alexandreia",
+  "Alimos": "Alimos",
+  "Alloa Athletic": "Alloa",
+  "Amal Tiznit": "Tiznit",
+  "Anagennisi Arta": "Arta",
+  "Anagennisi Epanomi": "Epanomi",
+  "Anagennisi Giannitsa": "Giannitsa",
+  "Anagennisi Karditsa": "Karditsa",
+  "Anderlecht": "Brussels",
+  "Anorthosis": "Larnaca",
+  "Antwerp": "Antwerp",
+  "Apollon": "Athens",
+  "Apollon Larissa": "Larisa",
+  "Apollon Smyrnis": "Athens",
+  "Ararat Yerevan": "Yerevan",
+  "Arbroath": "Arbroath",
+  "Arges Pitesti": "Pitesti",
+  "Aris": "Thessaloniki",
+  "Aris Limassol": "Limassol",
+  "Aris Nikaia": "Nikaia",
+  "Aris Piraeus": "Piraeus",
+  "Aris Saloniki": "Thessaloniki",
+  "Arminia Bielefeld": "Bielefeld",
+  "Arminia Hannover": "Hanover",
+  "Arouca": "Arouca",
+  "Arsenal": "London",
+  "Asteras Athens": "Athens",
+  "Asteras Tripolis": "Tripoli",
+  "Asteras Vari": "Vari",
+  "Astra": "Giurgiu",
+  "Aswan": "Aswan",
+  "Atalanta": "Bergamo",
+  "Athens Kallithea": "Athens",
+  "Athinaikos": "Athens",
+  "Athletic Bilbao": "Bilbao",
+  "Athletic Club": "Bilbao",
+  "Athletic Club Bilbao": "Bilbao",
+  "Atlas Delmenhorst": "Delmenhorst",
+  "Atletico Madrid": "Madrid",
+  "Atlético Madrid": "Madrid",
+  "Atlético Mineiro": "Belo Horizonte",
+  "Atromitos": "Athens",
+  "Atromitos Athinon": "Athens",
+  "Atromitos Piraeus": "Piraeus",
+  "Austria Wien": "Vienna",
+  "Auxerre": "Auxerre",
+  "Averof Ioannina": "Ioannina",
+  "Ayr United": "Ayr",
+  "B. Dortmund": "Dortmund",
+  "BATE Borisov": "Barysaw",
+  "BSC Young Boys": "Bern",
+  "Barcelona": "Barcelona",
+  "Bathgate": "Bathgate",
+  "Bayer 04 Leverkusen": "Leverkusen",
+  "Bayer Leverkusen": "Leverkusen",
+  "Bayern Munich": "Munich",
+  "Bayern München": "Munich",
+  "Başakşehir": "Istanbul",
+  "Beerschot": "Antwerp",
+  "Beitar Be'er Sheva": "Beersheba",
+  "Beitar Haifa": "Haifa",
+  "Beitar Holon": "Holon",
+  "Beitar Kiryat Gat": "Kiryat Gat",
+  "Beitar Netanya": "Netanya",
+  "Beitar Ramla": "Ramla",
+  "Beitar Shimshon Tel Aviv": "Tel Aviv",
+  "Beitar Tel Aviv": "Tel Aviv",
+  "Beitar Tel Aviv Bat Yam": "Tel Aviv",
+  "Beitar Tel Aviv Ramla": "Tel Aviv",
+  "Belshina": "Октябрьскии",
+  "Benevento Calcio": "Benevento",
+  "Benfica": "Lisbon",
+  "Beroe Stara Zagora": "Stara Zagora",
+  "Berwick Rangers": "Berwick-Upon-Tweed",
+  "Besiktas": "Istanbul",
+  "Beşiktaş": "Istanbul",
+  "Blau-Weiß 90 Berlin": "Berlin",
+  "Bnei Sakhnin": "Sakhnin",
+  "Bodø/Glimt": "Bodø",
+  "Bologna": "Bologna",
+  "Bologna FC": "Bologna",
+  "Bonner SC": "Bonn",
+  "Borac": "Banja Luka",
+  "Borac (Banja Luka)": "Banja Luka",
+  "Bordeaux": "Bordeaux",
+  "Borussia Dortmund": "Dortmund",
+  "Borussia Monchengladbach": "Monchengladbach",
+  "Borussia Mönchengladbach": "Monchengladbach",
+  "Botev Plovdiv": "Plovdiv",
+  "Braga": "Braga",
+  "Braunschweig": "Braunschweig",
+  "Bravo": "Ljubljana",
+  "Brechin City": "Brechin",
+  "Breiðablik": "Kopavogur",
+  "Bremen": "Bremen",
+  "Brera Strumica": "Strumica",
+  "Brescia Calcio": "Brescia",
+  "Brondby IF": "Brøndbyvester",
+  "Brotnjo": "Citluk",
+  "Buducnost": "Podgorica",
+  "Budućnost": "Podgorica",
+  "Burnley": "Burnley",
+  "Burntisland Shipyard": "Burntisland",
+  "CFR Cluj": "Cluj-Napoca",
+  "CODM Meknes": "Meknes",
+  "CSKA Moscow": "Moscow",
+  "CSKA Moskva": "Moscow",
+  "CSKA Sofia": "Sofia",
+  "Cagliari": "Cagliari",
+  "Cagliari Calcio": "Cagliari",
+  "Calcio Catania": "Catania",
+  "Capljina": "Capljina",
+  "Cardiff Met": "Cardiff",
+  "Celik": "Zenica",
+  "Celje": "Celje",
+  "Ceramica Cleopatra": "Giza",
+  "Cesena FC": "Cesena",
+  "Chalkida": "Chalkida",
+  "Chalkidona": "Athens",
+  "Chania": "Chania",
+  "Chievo Verona": "Verona",
+  "Chornomorets Odesa": "Бережани",
+  "Christian Club Jerusalem": "Jerusalem",
+  "Club Brugge": "Brugge",
+  "Clyde": "Cumbernauld",
+  "Clydebank[3]": "Clydebank",
+  "Clydebank[4]": "Clydebank",
+  "Copenhagen": "Copenhagen",
+  "Cowdenbeath": "Cowdenbeath",
+  "Crvena Zvezda": "Belgrade",
+  "Crystal Palace": "London",
+  "Cwmbran": "Cwmbran",
+  "DJK Gütersloh": "Gutersloh",
+  "Dafni Athens": "Athens",
+  "Daliyat al-Karmel": "Daliyat al Karmel",
+  "Darmstadt 98": "Darmstadt",
+  "Degel Zion Tel Aviv": "Tel Aviv",
+  "Delfino Pescara": "Pescara",
+  "Derby County": "Derby",
+  "Derzelez Zenica": "Zenica",
+  "Diagoras Rodos": "Rodos",
+  "Diddeleng": "Dudelange",
+  "Differdange": "Differdange",
+  "Dinamo Batumi": "Batumi",
+  "Dinamo Bucureşti": "Bucharest",
+  "Dinamo Tbilisi": "Tbilisi",
+  "Dinamo Zagreb": "Zagreb",
+  "Dinamo-Minsk": "Minsk",
+  "Diósgyőr": "Miskolc",
+  "Djurgarden": "Stockholm",
+  "Dnipro": "Бережани",
+  "Dnipro-1": "Бережани",
+  "Domžale": "Domzale",
+  "Doxa Drama": "Drama",
+  "Doxa Dramas": "Drama",
+  "Doxa Vyronas": "Vyronas",
+  "Drina HE (Višegrad)": "Visegrad",
+  "Dukla": "Prague",
+  "Dumbarton": "Dumbarton",
+  "Dumfries": "Dumfries",
+  "Dundalk": "Dundalk",
+  "Dundee": "Dundee",
+  "Dundee United": "Dundee",
+  "Dundee Utd": "Dundee",
+  "Dunfermline": "Dunfermline",
+  "Dunfermline Athletic": "Dunfermline",
+  "Dynamo Dresden": "Dresden",
+  "Dynamo Kyiv": "Kyiv",
+  "Dynamo Moscow": "Moscow",
+  "ENPPI": "Cairo",
+  "EPA Larnaca": "Larnaca",
+  "East Fife": "Methil",
+  "East Kilbride": "East Kilbride",
+  "East Stirlingshire": "Falkirk",
+  "Edessaikos": "Edessa",
+  "Egaleo": "Athens",
+  "Egged Tel Aviv": "Tel Aviv",
+  "Eintracht Braunschweig": "Braunschweig",
+  "Eintracht Frankfurt": "Frankfurt am Main",
+  "Eintracht Trier": "Trier",
+  "El Entag El Harby": "Cairo",
+  "El Gouna": "Hurghada",
+  "Elfsborg": "Boras",
+  "Elgin City": "Elgin",
+  "Empoli FC": "Empoli",
+  "Energie Cottbus": "Cottbus",
+  "Enppi": "Cairo",
+  "Erzgebirge Aue": "Aue",
+  "Espanyol": "Barcelona",
+  "Esperos Kallithea": "Kallithea",
+  "Estoril": "Estoril",
+  "Ethnikos": "Piraeus",
+  "Ethnikos Asteras": "Athens",
+  "Ethnikos Piraeus": "Piraeus",
+  "Everton": "Liverpool",
+  "Extensiv": "Caracal",
+  "F91 Dudelange": "Dudelange",
+  "FC 08 Homburg": "Homburg",
+  "FC Arges": "Pitesti",
+  "FC Augsburg": "Augsburg",
+  "FC Barcelona": "Barcelona",
+  "FC Bayer 05 Uerdingen": "Krefeld",
+  "FC Bayern München": "Munich",
+  "FC Carl Zeiss Jena": "Jena",
+  "FC Crotone": "Crotone",
+  "FC Dinamo-minsk": "Minsk",
+  "FC Gütersloh": "Gutersloh",
+  "FC Ingolstadt": "Ingolstadt",
+  "FC Magdeburg": "Magdeburg",
+  "FC Masr": "Giza",
+  "FC Nordsjælland": "Farum",
+  "FC Nürnberg": "Nuremberg",
+  "FC Remscheid": "Remscheid",
+  "FC Schalke 04": "Gelsenkirchen",
+  "FC St. Pauli": "Hamburg",
+  "FC Volendam": "Volendam",
+  "FC Würzburger Kickers": "Wurzburg",
+  "FK Borac": "Banja Luka",
+  "FSV Mainz 05": "Mainz",
+  "FSV Zwickau": "Zwickau",
+  "FUS Rabat": "Rabat",
+  "Falkirk": "Falkirk",
+  "Farul Constanta": "Constanta",
+  "Fenerbahce": "Istanbul",
+  "Ferencvaros": "Budapest",
+  "Ferencvarosi TC": "Budapest",
+  "Feyenoord": "Rotterdam",
+  "FinnPa Helsinki": "Helsinki",
+  "First Vienna": "Vienna",
+  "Flamurtari": "Vlore",
+  "Flora Tallinn": "Tallinn",
+  "Forfar Athletic": "Forfar",
+  "Forres Mechanics": "Forres",
+  "Fortuna Düsseldorf": "Dusseldorf",
+  "Fortuna Köln": "Cologne",
+  "Fram": "Reykjavik",
+  "Frosinone Calcio": "Frosinone",
+  "GAK": "Graz",
+  "GKS Katowice": "Katowice",
+  "GS Kallithea": "Kallithea",
+  "Galatasaray": "Istanbul",
+  "Gaziantepspor": "Gaziantep",
+  "Genoa CFC": "Genoa",
+  "Gent": "Ghent",
+  "Gençlerbirliği": "Ankara",
+  "Getafe": "Madrid",
+  "Glentoran": "Belfast",
+  "Gloria Bistriţa": "Bistrita",
+  "Go Ahead Eagles": "Deventer",
+  "Go Ahead Eagles (Deventer)": "Deventer",
+  "Grasshopper Club Zurich": "Zurich",
+  "Grasshoppers": "Zurich",
+  "Grazer AK": "Graz",
+  "Greenock Morton": "Greenock",
+  "Gretna": "Gretna",
+  "Grevenmacher": "Grevenmacher",
+  "Górnik Zabrze": "Zabrze",
+  "H. Beer-Sheva": "Beersheba",
+  "H. Haifa": "Haifa",
+  "H. Tel-Aviv": "Tel Aviv",
+  "HJK": "Helsinki",
+  "HJK Helsinki": "Helsinki",
+  "HaKokhav Tel Aviv": "Tel Aviv",
+  "HaTehiya Tel Aviv": "Tel Aviv",
+  "Hajduk Split": "Split",
+  "Haka": "Valkeakoski",
+  "Hakoah Amidar Ramat Gan": "Ramat Gan",
+  "Hakoah Tel Aviv": "Tel Aviv",
+  "Hamburg": "Hamburg",
+  "Hamburger SV": "Hamburg",
+  "Hamilton Academical": "Hamilton",
+  "Hamilton Academicals": "Hamilton",
+  "Hannover": "Hanover",
+  "Hannover 96": "Hanover",
+  "Hansa Rostock": "Rostock",
+  "Hapoel Acre": "Acre",
+  "Hapoel Afula": "Afula",
+  "Hapoel Ashdod": "Ashdod",
+  "Hapoel Ashkelon": "Ashkelon",
+  "Hapoel Bat Yam": "Bat Yam",
+  "Hapoel Bnei Lod": "Lod",
+  "Hapoel Bnei Nazareth": "Nazareth",
+  "Hapoel Even Yehuda": "Even Yehuda",
+  "Hapoel Hadera": "Hadera",
+  "Hapoel Haifa Port": "Haifa",
+  "Hapoel Herzliya": "Herzliya",
+  "Hapoel Hod HaSharon": "Hod HaSharon",
+  "Hapoel Holon": "Holon",
+  "Hapoel Iksal": "Iksal",
+  "Hapoel Katamon": "Jerusalem",
+  "Hapoel Katamon Jerusalem": "Jerusalem",
+  "Hapoel Lod": "Lod",
+  "Hapoel Marmorek": "Rehovot",
+  "Hapoel Nazareth Illit": "Nazareth",
+  "Hapoel Ness Ziona": "Ness Ziona",
+  "Hapoel Netanya": "Netanya",
+  "Hapoel Nof HaGalil": "Nof HaGalil",
+  "Hapoel Ra'anana": "Ra'anana",
+  "Hapoel Ramat Gan": "Ramat Gan",
+  "Hapoel Ramat HaSharon": "Ramat HaSharon",
+  "Hapoel Ramla": "Ramla",
+  "Hapoel Rehovot": "Rehovot",
+  "Hapoel Safed": "Safed",
+  "Hapoel Tiberias": "Tiberias",
+  "Hapoel Umm al-Fahm": "Umm el Fahm",
+  "Hapoel Yehud": "Yehud",
+  "Hassania Agadir": "Agadir",
+  "Heart of Midlothian": "Edinburgh",
+  "Hearts": "Edinburgh",
+  "Heerenveen": "Heerenveen",
+  "Hege Tel Aviv": "Tel Aviv",
+  "Hellas Verona": "Verona",
+  "Helmond Sport": "Helmond",
+  "Helsingborg": "Helsingborg",
+  "Herfolge": "Køge",
+  "Herfølge": "Køge",
+  "Hertha": "Berlin",
+  "Hertha BSC": "Berlin",
+  "Hibernian": "Edinburgh",
+  "Hoffenheim": "Sinsheim",
+  "Holstein Kiel": "Kiel",
+  "Homenetmen Jerusalem": "Jerusalem",
+  "Honvéd": "Budapest",
+  "Hradec Kralove": "Hradec Kralove",
+  "Hradec Králové": "Hradec Kralove",
+  "Häcken": "Gothenburg",
+  "IFK Göteborg": "Gothenburg",
+  "IFK Norrköping": "Norrkoping",
+  "Igman": "Konjic",
+  "Ilioupoli": "Ilioupoli",
+  "Inter": "Milan",
+  "Inter Bratislava": "Bratislava",
+  "Inter Milan": "Milan",
+  "Inverness Caledonian": "Inverness",
+  "Inverness Caledonian Thistle": "Inverness",
+  "Inverness Thistle": "Inverness",
+  "Ionikos": "Nikaia",
+  "Iraklis": "Thessaloniki",
+  "Iraklis Kavala": "Kavala",
+  "Iraklis Psachna": "Psachna",
+  "Ironi Ashdod": "Ashdod",
+  "Ironi Dorot Tiberias": "Tiberias",
+  "Ironi Nesher": "Nesher",
+  "Ironi Ramat HaSharon": "Ramat HaSharon",
+  "Ironi Tiberias": "Tiberias",
+  "Ismaily": "Ismailia",
+  "Jablonec": "Jablonec nad Nisou",
+  "Jagiellonia": "Białystok",
+  "Jahn Regensburg": "Regensburg",
+  "Jedinstvo": "Bijelo Polje",
+  "Jedinstvo Bihać": "Bihac",
+  "Jeunesse Esch": "Esch-sur-Alzette",
+  "Juventus": "Turin",
+  "KFC Uerdingen": "Krefeld",
+  "KFC Uerdingen 05": "Krefeld",
+  "KPV": "Kokkola",
+  "KR": "Reykjavik",
+  "KS Zagłębie Sosnowiec": "Sosnowiec",
+  "Kairat Almaty": "Almaty",
+  "Kaizer Chiefs": "Johannesburg",
+  "Kalamata": "Kalamata",
+  "Kallithea": "Kallithea",
+  "Kalloni": "Kalloni",
+  "Karlsruher": "Karlsruhe",
+  "Karlsruher SC": "Karlsruhe",
+  "Kastoria": "Kastoria",
+  "Kaunas": "Kaunas",
+  "Kavala": "Kavala",
+  "Keratsini": "Keratsini",
+  "Kerkyra": "Corfu",
+  "Kieler SV Holstein": "Kiel",
+  "Kifisia": "Athens",
+  "Kilmarnock": "Kilmarnock",
+  "Kiseljak": "Kiseljak",
+  "Koln": "Cologne",
+  "Korinthos": "Korinthos",
+  "Kozani": "Kozani",
+  "Košice": "Kosice",
+  "Krasnodar": "Krasnodar",
+  "Köln": "Cologne",
+  "LASK Linz": "Linz",
+  "LR Ahlen": "Ahlen",
+  "Laktaši": "Laktasi",
+  "Lamia": "Lamia",
+  "Larisa": "Larisa",
+  "Lazarus Holon": "Holon",
+  "Lazio": "Rome",
+  "Lazio Roma": "Rome",
+  "Lech Poznań": "Poznan",
+  "Leeds United": "Leeds",
+  "Legia Warsaw": "Warsaw",
+  "Legia Warszawa": "Warsaw",
+  "Leicester": "Leicester",
+  "Leipzig": "Leipzig",
+  "Leixões": "Matosinhos",
+  "Lens": "Lens",
+  "Leotar": "Trebinje",
+  "Levadiakos": "Livadeia",
+  "Levante": "Valencia",
+  "Leverkusen": "Leverkusen",
+  "Levski Sofia": "Sofia",
+  "Liberec": "Liberec",
+  "Lille": "Lille",
+  "Linfield": "Belfast",
+  "Litex": "Lovech",
+  "Litex Lovech": "Lovech",
+  "Livingston": "Livingston",
+  "Livingston (Meadowbank Thistle)": "Livingston",
+  "Livorno": "Livorno",
+  "Ljubuski": "Ljubuski",
+  "Lochgelly United": "Lochgelly",
+  "Lokomotiv Moscow": "Moscow",
+  "Lokomotiv Moskva": "Moscow",
+  "Lokomotiv Sofia": "Sofia",
+  "Ludogorets": "Razgrad",
+  "Ludogorets Razgrad": "Razgrad",
+  "Luzern": "Luzern",
+  "Lyon": "Lyon",
+  "M. Tel-Aviv": "Tel Aviv",
+  "MS Dimona": "Dimona",
+  "MS Even Yehuda": "Even Yehuda",
+  "MS Kafr Qasim": "Kafr Qasim",
+  "MSV Duisburg": "Duisburg",
+  "MTK": "Budapest",
+  "Maccabi Ahi Nazareth": "Nazareth",
+  "Maccabi Ashdod": "Ashdod",
+  "Maccabi Be'er Sheva": "Beersheba",
+  "Maccabi HaSharon Netanya": "Netanya",
+  "Maccabi Hadera": "Hadera",
+  "Maccabi Hashmonai Jerusalem": "Jerusalem",
+  "Maccabi Holon": "Holon",
+  "Maccabi Ironi Kiryat Ata": "Kiryat Gat",
+  "Maccabi Jaffa": "Tel Aviv",
+  "Maccabi Kafr Kanna": "Kafr Kanna",
+  "Maccabi Kiryat Gat": "Kiryat Gat",
+  "Maccabi Maalot Tarshiha": "maalot Tarshiha",
+  "Maccabi Ness Ziona": "Ness Ziona",
+  "Maccabi Ramat Gan": "Ramat Gan",
+  "Maccabi Rehovot": "Rehovot",
+  "Maccabi Tamra": "Tamra",
+  "Maccabi Yavne": "Yavne",
+  "Maghreb Tétouan": "Tetouan",
+  "Mainz": "Mainz",
+  "Malaga": "Malaga",
+  "Malmo Ff": "Malmo",
+  "Malmö": "Malmo",
+  "Mamelodi Sundowns": "Pretoria",
+  "Man City": "Manchester",
+  "Man Utd": "Manchester",
+  "Manchester City": "Manchester",
+  "Manchester United": "Manchester",
+  "Manchester Utd": "Manchester",
+  "Maribor": "Maribor",
+  "Marsaxlokk": "Marsaxlokk",
+  "Marseille": "Marseille",
+  "Mechelen": "Mechelen",
+  "Merthyr Tydfil": "Merthyr Tydfil",
+  "Metalist": "Kharkiv",
+  "Metalist 1925": "Kharkiv",
+  "Metalurh Zaporizhya": "Бережани",
+  "Midtjylland": "Herning",
+  "Milan": "Milan",
+  "Mlada Boleslav": "Mlada Boleslav",
+  "Mladost": "Doboj",
+  "Mladá Boleslav": "Mlada Boleslav",
+  "Modern Sport FC": "Cairo",
+  "Moghreb Tétouan": "Tetouan",
+  "Molde": "Molde",
+  "Monaco": "Monaco",
+  "Montpellier": "Montpellier",
+  "Montrose": "Montrose",
+  "Morton": "Greenock",
+  "Motherwell": "Motherwell",
+  "Motherwell. Scottish Cup Final": "Motherwell",
+  "Mura": "Murska Sobota",
+  "Málaga": "Malaga",
+  "Mönchengladbach": "Monchengladbach",
+  "NK Lokomotiva": "Zagreb",
+  "NK Rogaska": "Rogaska Slatina",
+  "Nac Breda": "Breda",
+  "Nantes": "Nantes",
+  "Napoli": "Naples",
+  "National Bank Of Egypt": "Cairo",
+  "National Sport Club Jaffa": "Jaffa",
+  "Nea Salamina": "Salamina",
+  "Newcastle": "Newcastle upon Tyne",
+  "Niki Volos": "Volos",
+  "Niki Volou": "Volos",
+  "Noah": "Armavir",
+  "Nordia Tel Aviv": "Tel Aviv",
+  "Nordsjælland": "Farum",
+  "Nott'm Forest": "West Bridgford",
+  "Nottingham Forest": "West Bridgford",
+  "OB": "Odense",
+  "OC Safi": "Safi",
+  "OFK Beograd": "Belgrade",
+  "Olimpic": "Sarajevo",
+  "Olimpija Ljubljana": "Ljubljana",
+  "Olympia Wilhelmshaven": "Wilhelmshaven",
+  "Olympiacos Volos": "Volos",
+  "Olympiacos Volou": "Volos",
+  "Olympiakos Chalkida": "Chalkida",
+  "Olympiakos Elliniko": "Elliniko",
+  "Olympiakos Nicosia": "Nicosia",
+  "Olympiakos Piraeus": "Piraeus",
+  "Olympic Club de Safi": "Safi",
+  "Olympique Club de Khouribga": "Khouribga",
+  "Olympique Lyonnais": "Lyon",
+  "Olympique Safi": "Safi",
+  "Omonia": "Nicosia",
+  "Omonia Nicosia": "Nicosia",
+  "Orasje": "Orasje",
+  "Orašje": "Orasje",
+  "Orebro": "Orebro",
+  "Orlando Pirates": "Johannesburg",
+  "Osijek": "Osijek",
+  "Osmanlıspor": "Ankara",
+  "PAOK": "Thessaloniki",
+  "PAOK Saloniki": "Thessaloniki",
+  "PAS Giannina": "Ioannina",
+  "PAS Lamia 1964": "Lamia",
+  "PSV": "Eindhoven",
+  "PSV Eindhoven": "Eindhoven",
+  "Panachaiki": "Patra",
+  "Panachaiki 2005": "Patra",
+  "Panathinaikos Elliniko": "Elliniko",
+  "Pandurii Târgu Jiu": "Targu Jiu",
+  "Panelefsiniakos": "Elefsina",
+  "Panetolikos": "Agrinio",
+  "Panionios": "Athens",
+  "Panionios GSS": "Athens",
+  "Panserraikos": "Serres",
+  "Panthrakikos": "Komotini",
+  "Paris": "Paris",
+  "Paris Saint Germain": "Paris",
+  "Paris Saint-Germain": "Paris",
+  "Parma": "Parma",
+  "Parma Calcio 1913": "Parma",
+  "Parma FC": "Parma",
+  "Partick Thistle": "Glasgow",
+  "Partizan": "Belgrade",
+  "Partizani": "Tirana",
+  "Partizani Tirana": "Tirana",
+  "Peebles Rovers": "Peebles",
+  "Peterhead": "Peterhead",
+  "Petrol Asyut": "Asyut",
+  "Pharco": "Alexandria",
+  "Pirin": "Blagoevgrad",
+  "Platanias": "Chania",
+  "Polonia Bytom": "Bytom",
+  "Polonia Warszawa": "Warsaw",
+  "Port Glasgow Athletic": "Port Glasgow",
+  "Porto": "Porto",
+  "Preveza": "Preveza",
+  "Proleter (Teslić)": "Teslic",
+  "Proodeftiki": "Nikaia",
+  "Pyramids": "Cairo",
+  "QPR": "London",
+  "Queen of the South": "Dumfries",
+  "Queens Park": "Glasgow",
+  "Queens Park Rangers": "London",
+  "RB Leipzig": "Leipzig",
+  "RC Lens": "Lens",
+  "RFC Liège": "Liege",
+  "RS Berkane": "Berkane",
+  "RSB Berkane": "Berkane",
+  "RaBa Leipzig": "Leipzig",
+  "Rabotnicki": "Skopje",
+  "Racing": "Santander",
+  "Rad": "Belgrade",
+  "Radnik": "Bijeljina",
+  "Radnik Bijeljina": "Bijeljina",
+  "Raith Rovers": "Kirkcaldy",
+  "Raja Casablanca": "Casablanca",
+  "Raków": "Czestochowa",
+  "Rangers": "Glasgow",
+  "Rapid Bucureşti": "Bucharest",
+  "Rapid Vienna": "Vienna",
+  "Rapide Oued Zem": "Oued Zem",
+  "Rayo Vallecano": "Madrid",
+  "Real Betis": "Seville",
+  "Red Bull Salzburg": "Salzburg",
+  "Red Star Belgrade": "Belgrade",
+  "Rennes": "Rennes",
+  "Riga": "Riga",
+  "Rijeka": "Rijeka",
+  "Rodos": "Rodos",
+  "Roma": "Rome",
+  "Romanija Pale": "Pale",
+  "Rosenborg": "Trondheim",
+  "Ross County": "Dingwall",
+  "Rostov": "Rostov-na-Donu",
+  "Rot Weiss Ahlen": "Ahlen",
+  "Rot-Weiss Essen": "Essen",
+  "Rot-Weiss Lüdenscheid": "Ludenscheid",
+  "Rot-Weiß Oberhausen": "Oberhausen",
+  "Rubin": "Kazan",
+  "Rubin Kazan": "Kazan",
+  "Rudar Prijedor": "Prijedor",
+  "SC Braga": "Braga",
+  "SC Freiburg": "Freiburg",
+  "SC Herford": "Herford",
+  "SC Ness Ziona": "Ness Ziona",
+  "SC Paderborn": "Paderborn",
+  "SC Paderborn 07": "Paderborn",
+  "SC Preußen Münster": "Munster",
+  "SC Viktoria Köln": "Cologne",
+  "SC Westfalia Herne": "Herne",
+  "SCC Mohammédia": "Mohammedia",
+  "SG Wattenscheid 09": "Bochum",
+  "SK Rapid Wien": "Vienna",
+  "SK Sturm Graz": "Graz",
+  "SPAL 2013 Ferrara": "Ferrara",
+  "SSC Napoli": "Naples",
+  "SSV Reutlingen": "Reutlingen",
+  "SSV Ulm 1846": "Ulm",
+  "SV Darmstadt 98": "Darmstadt",
+  "SV Meppen": "Meppen",
+  "SV Sandhausen": "Sandhausen",
+  "SV Straelen": "Straelen",
+  "SV Viktoria Aschaffenburg": "Aschaffenburg",
+  "SV Wacker Burghausen": "Burghausen",
+  "SV Waldhof Mannheim": "Mannheim",
+  "SV Wehen Wiesbaden": "Wiesbaden",
+  "SV Werder Bremen": "Bremen",
+  "Saarbrucken": "Saarbrucken",
+  "Saint-Etienne": "Saint-Etienne",
+  "Saint-Étienne": "Saint-Etienne",
+  "Salzburg": "Salzburg",
+  "Sampdoria": "Genoa",
+  "Samsunspor": "Samsun",
+  "Sarajevo": "Sarajevo",
+  "Sarajevo (Sarajevo)": "Sarajevo",
+  "Sassuolo Calcio": "Sassuolo",
+  "Schalke": "Gelsenkirchen",
+  "Schalke 04": "Gelsenkirchen",
+  "Schwarz-Weiß Essen": "Essen",
+  "Sektzia Ness Ziona": "Ness Ziona",
+  "Sevilla": "Seville",
+  "Shakhtar": "Donetsk",
+  "Shakhter": "Karagandy",
+  "Shamrock Rovers": "Dublin",
+  "Shelbourne": "Dublin",
+  "Sheriff": "Tiraspol",
+  "Shimshon Tel Aviv": "Tel Aviv",
+  "Siroki Brijeg": "Siroki Brijeg",
+  "Slavia Prague": "Prague",
+  "Slavia Praha": "Prague",
+  "Slavia Sofia": "Sofia",
+  "Slavija": "Sarajevo",
+  "Slavija (Srpsko Sarajevo)": "Sarajevo",
+  "Slavija Sarajevo": "Sarajevo",
+  "Sliema": "Sliema",
+  "Sloboda": "Tuzla",
+  "Sloboda Tuzla": "Tuzla",
+  "Sloga": "Doboj",
+  "Sloga (Doboj)": "Doboj",
+  "Sloga (Simin Han)": "Tuzla",
+  "Sloga Doboj": "Doboj",
+  "Sloga Ljubuški": "Ljubuski",
+  "Smouha": "Alexandria",
+  "Sochaux": "Montbeliard",
+  "SpVgg Bayreuth": "Bayreuth",
+  "SpVgg Fürth": "Furth",
+  "SpVgg Greuther Fürth": "Furth",
+  "SpVgg Unterhaching": "Unterhaching",
+  "Sparta Prague": "Prague",
+  "Sparta Praha": "Prague",
+  "Spartak Moscow": "Moscow",
+  "Spartak Moskva": "Moscow",
+  "Spartak Trnava": "Trnava",
+  "Sportul Studenţesc": "Bucharest",
+  "St Johnstone": "Perth",
+  "St Mirren": "Paisley",
+  "St-Étienne": "Saint-Etienne",
+  "St. Johnstone": "Perth",
+  "St. Mirren": "Paisley",
+  "St. Patrick's": "Dublin",
+  "Standard Liege": "Liege",
+  "Standard Liège": "Liege",
+  "Steagul Rosu Brasov": "Brasov",
+  "Steaua București": "Bucharest",
+  "Stenhousemuir": "Stenhousemuir",
+  "Stirling Albion": "Stirling",
+  "Stjarnan": "Garðabær",
+  "Stranraer": "Stranraer",
+  "Strasbourg": "Strasbourg",
+  "Strømsgodset": "Drammen",
+  "Sturm Graz": "Graz",
+  "Stuttgarter Kickers": "Stuttgart",
+  "Swansea": "Swansea",
+  "TPS": "Turku",
+  "TSG Hoffenheim": "Sinsheim",
+  "TSV 1860 München": "Munich",
+  "Tala'ea El Gaish": "Cairo",
+  "Targu Mures": "Targu-Mures",
+  "Tenerife": "Santa Cruz de Tenerife",
+  "Tennis Borussia Berlin": "Berlin",
+  "Teplice": "Teplice",
+  "The New Saints FC": "Oswestry",
+  "Third Lanark": "Lanark",
+  "Thrasyvoulos": "Fyli",
+  "Thyella Rafina": "Rafina",
+  "Timişoara": "Timisoara",
+  "Tirana": "Tirana",
+  "Tobol": "Tobol",
+  "Torino": "Turin",
+  "Torino FC": "Turin",
+  "Torpedo Kutaisi": "Kutaisi",
+  "Tottenham": "London",
+  "Tottenham Hotspur": "London",
+  "Trabzonspor": "Trabzon",
+  "Travnik": "Travnik",
+  "Triglia Rafina": "Rafina",
+  "Trikala": "Trikala",
+  "TuS Koblenz": "Koblenz",
+  "Tuzla City": "Tuzla",
+  "Twente": "Enschede",
+  "Tzafririm Holon": "Holon",
+  "US Lecce": "Lecce",
+  "US Palermo": "Palermo",
+  "Udinese": "Udine",
+  "Udinese Calcio": "Udine",
+  "Ujpest": "Budapest",
+  "Union Berlin": "Berlin",
+  "Union SG": "Brussels",
+  "Union Solingen": "Solingen",
+  "Univ. Craiova": "Craiova",
+  "Universitatea Craiova": "Craiova",
+  "Utrecht": "Utrecht",
+  "Vaduz": "Vaduz",
+  "Vale of Leven": "Vale of Leven",
+  "Valencia": "Valencia",
+  "Valletta": "Valletta",
+  "Valur": "Reykjavik",
+  "Vardar": "Skopje",
+  "Vasas": "Budapest",
+  "Vaslui": "Vaslui",
+  "Vejle": "Vejle",
+  "Velez": "Mostar",
+  "Velez Mostar": "Mostar",
+  "Velež": "Mostar",
+  "Velež (Mostar)": "Mostar",
+  "Venlo": "Venlo",
+  "Ventspils": "Ventspils",
+  "Veria": "Veroia",
+  "VfB Leipzig": "Leipzig",
+  "VfB Lübeck": "Lubeck",
+  "VfB Oldenburg": "Oldenburg",
+  "VfB Stuttgart": "Stuttgart",
+  "VfL Bochum": "Bochum",
+  "VfL Osnabrück": "Osnabruck",
+  "VfL Wolfsburg": "Wolfsburg",
+  "VfR Aalen": "Aalen",
+  "VfR Bürstadt": "Burstadt",
+  "Vitesse": "Arnhem",
+  "Vitez": "Vitez",
+  "Vllaznia": "Shkoder",
+  "Vojvodina": "Novi Sad",
+  "Vojvodina Novi Sad": "Novi Sad",
+  "Volos": "Volos",
+  "Volos NFC": "Volos",
+  "Volos Nfc": "Volos",
+  "Vorwärts": "Berlin",
+  "Vyzas Megara": "Megara",
+  "Víkingur R.": "Reykjavik",
+  "Wacker": "Innsbruck",
+  "Wacker 04 Berlin": "Berlin",
+  "Wadi Degla": "Cairo",
+  "Waterford": "Waterford",
+  "Watford": "Watford",
+  "Werder Bremen": "Bremen",
+  "Wiener Viktoria": "Vienna",
+  "Wisla Krakow": "Krakow",
+  "Wisła Kraków": "Krakow",
+  "Wolfsburg": "Wolfsburg",
+  "Wolverhampton Wanderers": "Wolverhampton",
+  "Wolves": "Wolverhampton",
+  "Wuppertaler SV": "Wuppertal",
+  "Wydad Casablanca": "Casablanca",
+  "Wydad Temara": "Temara",
+  "Xamax": "Neuchatel",
+  "Xanthi": "Xanthi",
+  "Xanthi FC": "Xanthi",
+  "Xäzär Länkäran": "Lankaran",
+  "YMCA Jerusalem": "Jerusalem",
+  "Young Boys": "Bern",
+  "Youssoufia Berrechid": "Berrechid",
+  "Zamalek": "Giza",
+  "Zamalek SC": "Giza",
+  "Zed FC": "Giza",
+  "Zepce": "Zepce",
+  "Zimbru Chișinău": "Chisinau",
+  "Zorya": "Бережани",
+  "Zrinjski Mostar": "Mostar",
+  "Zwickau": "Zwickau",
+  "Zürich": "Zurich",
+  "Örgryte": "Gothenburg",
+  "Öster": "Vaxjo",
+  "Újpest": "Budapest",
+  "Čelik": "Zenica",
+  "Čelik (Zenica)": "Zenica",
+  "Čelik Zenica": "Zenica",
+  "Široki Brijeg": "Siroki Brijeg",
+  "Žepče": "Zepce",
+  "Žilina": "Zilina"
+ },
+ "sources": [
+  {
+   "title": "openfootball/clubs (CC0)",
+   "url": "https://github.com/openfootball/clubs"
+  },
+  {
+   "title": "GeoNames cities1000 (CC BY 4.0) via all-the-cities",
+   "url": "https://www.geonames.org/"
+  }
+ ]
 }
