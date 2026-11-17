@@ -37,17 +37,17 @@ describe('Broken Collective shop (17.11.2026)',()=>{
  })
 })
 
-import {chooseVariants} from '@/lib/book/printify'
+import {variantFor} from '@/lib/book/printify'
 import {goodsSession,printifyAddress} from '@/lib/book/checkout'
 vi.mock('@/lib/shop/store',()=>({printifyToken:async()=>null}))
 describe('Broken Collective goods (17.11.2026)',()=>{
- it('picks one variant per size in the book colour',()=>{
-  const v=[{id:1,title:'Ivory / S',options:{color:'Ivory',size:'S'}},{id:2,title:'Black / M',options:{color:'Black',size:'M'}},{id:3,title:'Ivory / M',options:{color:'Ivory',size:'M'}},{id:4,title:'Ivory / XXL',options:{color:'Ivory',size:'XXL'}}]
-  expect(chooseVariants('tee',v)).toEqual({S:1,M:3,'2XL':4})
-  expect(chooseVariants('cap',[{id:9,title:'Stone / One size',options:{color:'Stone'}}])).toEqual({'One size':9})
+ it('finds the product variant by colour and size',()=>{
+  const v=[{id:1,title:'Ivory / S'},{id:2,title:'Ivory / XXL'},{id:3,title:'Ivory / M',is_available:false},{id:4,title:'Khaki / One size'},{id:5,title:'Black / One size'}]
+  expect(variantFor(v,'Ivory','S')).toBe(1);expect(variantFor(v,'Ivory','2XL')).toBe(2);expect(variantFor(v,'Ivory','M')).toBeNull()
+  expect(variantFor(v,'black','One size')).toBe(5)
  })
  it('opens a goods checkout routed to the book and posts only inside the region',()=>{
-  const s=goodsSession({order:'bk_abcdefgh',lang:'he',kind:'tee',size:'M',region:'il'})
+  const s=goodsSession({order:'bk_abcdefgh',lang:'he',kind:'tee',colour:'Ivory',size:'M',region:'il'})
   expect(s.metadata).toMatchObject({book:'bk_abcdefgh',kind:'tee',size:'M'});expect(s.shipping_address_collection.allowed_countries).toEqual(['IL'])
  })
  it('splits the Stripe name for Printify',()=>{

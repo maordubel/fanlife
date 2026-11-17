@@ -65,7 +65,8 @@ export async function sendToPrintify(id:string,session:PaidSession):Promise<stri
  const address=printifyAddress(session)
  if(!address){await moveBookOrder(id,['paid'],{error:'The address or phone from Stripe is incomplete.'});return null}
  try{
-  const made=await orderGoods({order:id,kind:o.kind,size:o.variant,address})
+  const [colour,size]=o.variant.split('|') as [string,string]
+  const made=await orderGoods({order:id,kind:o.kind,colour,size:size??'One size',address})
   await moveBookOrder(id,['paid'],{status:'printing',printify_order:made.id,error:null})
   await mail(o.email,'making',o.lang,{order:id})
   return made.id

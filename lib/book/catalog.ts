@@ -58,25 +58,19 @@ export const BOOK_SITE='https://www.dubelteam.com/broken-collective'
 
 /**
  * THE GOODS (owner, 17.11.2026: "a shirt and a cap through our supplier — and the book's products never in FAN LIFE's shop,
- * nor FAN LIFE's in the book's"). Made by Printify on demand and posted straight to the reader, ordered through the API into
- * the Printify store named "Broken Collective" (never FAN LIFE's pop-up store). No product is created in any store: each
- * order prints the book's own artwork (served from the book site) on the chosen garment.
+ * nor FAN LIFE's in the book's"). Two real Printify products in the API store "Broken Collective" (id 29791136, never FAN
+ * LIFE's stores): each order names the product and the variant, Printify prints and posts it straight to the reader.
+ * Costs at creation: tee USD 24–33 (Comfort Colors 1717, Marco Fine Arts, front + back DTG), cap USD 21 (Yupoong 6245CM,
+ * Fulfill Engine, embroidery), both shipped from the US — prices below keep a margin after post.
  */
 export type GoodsKind='tee'|'cap'
-const ART=process.env.BOOK_MERCH_ART_URL||'https://www.dubelteam.com/broken-collective/merch/v1'
-export const GOODS:Record<GoodsKind,{cents:number;name:{he:string;en:string};blurb:{he:string;en:string}
- /** found in Printify's catalogue by title (ids differ by region and change), first pattern wins */
- find:RegExp[];avoid?:RegExp;colour:RegExp;sizes:string[];art:Record<string,string>
- ship:Record<Region,number>}>={
- tee:{cents:3200,name:{he:'חולצת קולקטיב שבור',en:'Broken Collective T-shirt'},
+export const GOODS:Record<GoodsKind,{cents:number;product:string;name:{he:string;en:string};blurb:{he:string;en:string}
+ colours:string[];sizes:string[];ship:Record<Region,number>}>={
+ tee:{cents:4500,product:'6afc0ca1fd4d7f230d0ac10b',name:{he:'חולצת קולקטיב שבור',en:'Broken Collective T-shirt'},
   blurb:{he:'כותנה כבדה בצביעת בגד, צבע שנהב. מאחור: הסדק והחוט.',en:'Heavy garment-dyed cotton, ivory. On the back: the crack and the thread.'},
-  find:[/^unisex garment-dyed t-shirt$/i,/garment-dyed t-shirt/i,/^unisex heavy cotton tee$/i],avoid:/kids|youth|long sleeve|women/i,
-  colour:/^(ivory|natural|soft cream|white)$/i,sizes:['S','M','L','XL','2XL'],art:{front:`${ART}/tee-front.png`,back:`${ART}/tee-back.png`},
-  ship:{il:900,eu:600,na:600,world:1100}},
- cap:{cents:2800,name:{he:'כובע קולקטיב שבור',en:'Broken Collective cap'},
+  colours:['Ivory'],sizes:['S','M','L','XL','2XL'],ship:{il:1500,eu:1100,na:700,world:1500}},
+ cap:{cents:3500,product:'6afc0ecbf17cef87cb02ee8e',name:{he:'כובע קולקטיב שבור',en:'Broken Collective cap'},
   blurb:{he:'כובע אבא רקום. חוט אדום אחד, קשר אחד.',en:'Embroidered dad cap. One red thread, one knot.'},
-  find:[/^classic dad cap$/i,/dad (hat|cap)/i,/^low profile baseball cap$/i],avoid:/leather|patch|trucker|kids|youth|bucket|beanie/i,
-  colour:/^(stone|khaki|natural|black)$/i,sizes:['One size'],art:{front:`${ART}/cap-front.png`},
-  ship:{il:900,eu:600,na:600,world:1100}},
+  colours:['Khaki','Black'],sizes:['One size'],ship:{il:1300,eu:1000,na:700,world:1300}},
 }
 export const isGoods=(v:unknown):v is GoodsKind=>v==='tee'||v==='cap'

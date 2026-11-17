@@ -42,11 +42,11 @@ export function luluAddress(s:PaidSession){
   country_code:a.country,phone_number:phone,...(s.customer_details?.email?{email:s.customer_details.email}:{})}
 }
 
-export function goodsSession(o:{order:string;lang:BookLang;kind:GoodsKind;size:string;region:Region}){
- const g=GOODS[o.kind],r=REGIONS[o.region],size=o.size==='One size'?'':` · ${o.size}`
+export function goodsSession(o:{order:string;lang:BookLang;kind:GoodsKind;colour:string;size:string;region:Region}){
+ const g=GOODS[o.kind],r=REGIONS[o.region],size=`${g.colours.length>1?` · ${o.colour}`:''}${o.size==='One size'?'':` · ${o.size}`}`
  return {mode:'payment',locale:o.lang==='he'?'auto':'en',client_reference_id:o.order,
   success_url:thanks(o.lang,'goods'),cancel_url:back(o.lang,'#goods'),
-  metadata:{book:o.order,kind:o.kind,size:o.size,region:o.region},payment_intent_data:{metadata:{book:o.order,kind:o.kind},description:g.name.en},
+  metadata:{book:o.order,kind:o.kind,colour:o.colour,size:o.size,region:o.region},payment_intent_data:{metadata:{book:o.order,kind:o.kind},description:g.name.en},
   line_items:[{quantity:1,price_data:{currency:'eur',unit_amount:g.cents,product_data:{name:`${g.name[o.lang]}${size}`,description:g.blurb[o.lang]}}}],
   shipping_address_collection:{allowed_countries:r.countries},phone_number_collection:{enabled:true},
   shipping_options:[{shipping_rate_data:{type:'fixed_amount',display_name:o.lang==='he'?'משלוח':'Post',fixed_amount:{amount:g.ship[o.region],currency:'eur'},
