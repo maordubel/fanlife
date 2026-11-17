@@ -381,6 +381,20 @@
 ],
 "id": "cut:common/fig-kneel-despair-c-kr"
 },
+"08bb13a1040046e7": {
+"caption": "A retro-styled illustration depicts a football match under floodlights in a packed stadium.",
+"people": 25,
+"faces": true,
+"action": "playing football match",
+"place": "stadium",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"modern premier league match",
+"real archive photo"
+],
+"id": "lib:sky-fog-fl1-kr"
+},
 "08cb85e31b9af613": {
 "caption": "Three young players in matching kits sit on a bench facing away from the camera next to a training pitch.",
 "people": 3,
@@ -528,6 +542,18 @@
 "post-match interviews"
 ],
 "id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/42104419-775013e53c2c9f86"
+},
+"0bed09f0efc3c220": {
+"caption": "Paper-cut snowflakes are scattered over a dark, layered background of torn paper strips.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"stadium",
+"football match"
+],
+"id": "lib:sky-snow-n"
 },
 "0c14ac7f13d35d21": {
 "caption": "A supporter carries a child on their shoulders, both wearing red scarves.",
@@ -744,6 +770,19 @@
 "action shots on pitch"
 ],
 "id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/13162056-bd32460cb628588d"
+},
+"12afec03964cd745": {
+"caption": "A papercraft cutout of a child supporter seen from behind wearing a red shirt and black trousers.",
+"people": 1,
+"faces": true,
+"action": "standing",
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"actual child fan",
+"stadium crowd"
+],
+"id": "lib:pup-supporter-child-pose-kr"
 },
 "132761ceae08d127": {
 "caption": "A road leading towards a stadium silhouetted against a dramatic red and black sunset sky.",
@@ -1600,6 +1639,19 @@
 "actual pennant exchange"
 ],
 "id": "lib:obj-pennant-kr"
+},
+"29f4698b26884390": {
+"caption": "A papercraft cutout of an adult supporter seen from behind wearing a dark coat and red scarf.",
+"people": 1,
+"faces": true,
+"action": "standing",
+"place": "abstract",
+"mood": "defiance",
+"avoid": [
+"real supporter",
+"matchday atmosphere"
+],
+"id": "lib:pup-supporter-pose-kr"
 },
 "2a8de74451887cb5": {
 "caption": "An illustrated knitted football scarf with red, white, and black horizontal stripes.",
@@ -3425,6 +3477,21 @@
 ],
 "id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/aston-villa-2394fbb235a95a65"
 },
+"585c3176b9382654": {
+"caption": "A man leans out of a bus window waving a red and black scarf.",
+"people": 1,
+"faces": true,
+"action": "waving a scarf from a bus",
+"place": "street",
+"era": "1970s",
+"mood": "joy",
+"avoid": [
+"arriving at a match",
+"leaving a match",
+"team bus"
+],
+"id": "lib:sup-bus-window-fl1-kr"
+},
 "588fb6af113a3711": {
 "caption": "A papercraft illustration shows a crowded pub watching a football match on television with drinks raised.",
 "people": 23,
@@ -3490,6 +3557,19 @@
 "environmental protest"
 ],
 "id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/ae-kifisias-45897b954997430b"
+},
+"59c0592b2ec94ab8": {
+"caption": "A papercraft cutout of a football player in a red jersey and white shorts dribbling a ball.",
+"people": 1,
+"faces": true,
+"action": "dribbling football",
+"place": "abstract",
+"mood": "tension",
+"avoid": [
+"real match footage",
+"photograph of a real player"
+],
+"id": "lib:pup-striker-pose-kr"
 },
 "5a0fae65a5feecbc": {
 "caption": "A supporter wearing a flat cap holds up a scarf in front of empty stadium stands at an old ground.",
@@ -3924,6 +4004,18 @@
 "stadium atmosphere"
 ],
 "id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/atromitos-athens-0705e3962f7952a7"
+},
+"652f1bbf8a4d2d8c": {
+"caption": "A layered papercraft artwork depicts a pale pink sunset sky with undulating grey and cream clouds.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"real photograph",
+"actual weather report"
+],
+"id": "lib:sky-dawn-pink-n"
 },
 "654b44d9761846ee": {
 "caption": "Solid yellow background with text reading AEK App Icon in the center.",
@@ -4512,6 +4604,19 @@
 "quiet moment"
 ],
 "id": "cut:common/crowd-row-scarves-up-b-kr"
+},
+"739e59869b26348b": {
+"caption": "Disassembled papercraft doll parts including head, red shirt, arms, legs, trousers, and a small flag.",
+"people": 1,
+"faces": true,
+"action": "none",
+"place": "studio",
+"mood": "calm",
+"avoid": [
+"real person",
+"injury treatment"
+],
+"id": "lib:pup-supporter-child-kr"
 },
 "7532d196409df36e": {
 "caption": "An illustrated paper-craft style image of a player in a red kit kneeling on the grass with head bowed in a packed stadium.",
@@ -5145,6 +5250,19 @@
 ],
 "id": "beat:hapoel-tel-aviv-1999-00/manager-tactics-board"
 },
+"8781974299b9aebc": {
+"caption": "An adult and a child walk hand-in-hand, both wearing red scarves.",
+"people": 2,
+"faces": false,
+"action": "walking together",
+"place": "other",
+"mood": "calm",
+"avoid": [
+"arriving at a stadium",
+"leaving a stadium"
+],
+"id": "lib:sup-child-hand-kr"
+},
 "87b60fba8fceeccd": {
 "caption": "An illustration of a rolled red fabric banner tied with string.",
 "people": 0,
@@ -5157,6 +5275,18 @@
 "stadium displays"
 ],
 "id": "lib:obj-banner-rolled-fl1-kr"
+},
+"880c2c15b8325152": {
+"caption": "A layered papercraft night sky featuring a crescent moon, stars, and dark clouds.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"daytime matches",
+"weather forecast"
+],
+"id": "lib:sky-blue-hour-n"
 },
 "88405fd5eb03619f": {
 "caption": "A multi-layered papercraft stadium scene features silhouetted players and a large football in the foreground.",
@@ -5740,6 +5870,19 @@
 ],
 "id": "lib:ppl-chairman-fl1-kr"
 },
+"9c3678fdfcb6d4f0": {
+"caption": "Disassembled paper doll parts of an older man with a flat cap and red scarf.",
+"people": 0,
+"faces": false,
+"action": "disassembled paper doll",
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"real person",
+"dismemberment"
+],
+"id": "lib:pup-old-man-kr"
+},
 "9cdeed86cc199c4c": {
 "caption": "An illustrated football spins rapidly with stylized motion lines and red graphic accents.",
 "people": 0,
@@ -5865,6 +6008,20 @@
 ],
 "id": "cut:common/prop-handbell-n"
 },
+"a0dc8bdbed69f414": {
+"caption": "A man and a child walk hand-in-hand while looking up at a stadium floodlight tower.",
+"people": 2,
+"faces": true,
+"action": "walking to a stadium",
+"place": "stadium",
+"era": "1970s",
+"mood": "joy",
+"avoid": [
+"leaving the stadium",
+"post-match"
+],
+"id": "lib:sup-child-hand-fl1-kr"
+},
 "a1335723b18caf6b": {
 "caption": "A football player seen from behind in silhouette walking through a heavy metal gate towards the light.",
 "people": 1,
@@ -5948,6 +6105,18 @@
 "empty stadium during pandemic"
 ],
 "id": "beat:common/old-ground-wide-kr"
+},
+"a4d2641cabfe2752": {
+"caption": "A layered papercraft design features swirling patterns of black, grey, and cream paper resembling wind or mist.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "tension",
+"avoid": [
+"real weather map",
+"ocean waves"
+],
+"id": "lib:sky-fog-n"
 },
 "a5408c978a5c5fb0": {
 "caption": "An illustrated football player in a red shirt celebrates on his knees with arms raised.",
@@ -6075,6 +6244,18 @@
 "final whistle celebrations"
 ],
 "id": "cut:common/fig-referee-whistle-b-n"
+},
+"a82242386f75497e": {
+"caption": "A layered papercraft illustration shows dark grey storm clouds illuminated by a bright orange glow from underneath.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "tension",
+"avoid": [
+"real photograph",
+"wildfire documentary"
+],
+"id": "lib:sky-floodlit-night-n"
 },
 "a8ce9f7d7c1b2f2f": {
 "caption": "A silhouette of a crowd in a stadium stands while one person holds up a red card.",
@@ -6306,6 +6487,18 @@
 ],
 "id": "lib:obj-drum-fl2-kr"
 },
+"ad02bd16823a3c39": {
+"caption": "An abstract paper-cut composition features swirling grey and black layers punctuated by small white dots representing stars.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"stadium",
+"football match"
+],
+"id": "lib:sky-stars-n"
+},
 "ad1e0fda7c88fb97": {
 "caption": "An illustrated manager in a dark coat points forward.",
 "people": 1,
@@ -6473,6 +6666,18 @@
 "travel documentary"
 ],
 "id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/badge-me-against-world-66dd43ff1c8ecc5f"
+},
+"b1fd8501e5d31326": {
+"caption": "Disassembled paper doll pieces for a football player including a football, red shirt, shorts, limbs, and boots.",
+"people": 0,
+"faces": false,
+"action": "disassembled paper doll",
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"real person"
+],
+"id": "lib:pup-striker-kr"
 },
 "b20f6ed346eb1248": {
 "caption": "A flatlay composition shows an official certificate, match tickets, a red and white scarf, pens, and newspaper clippings.",
@@ -6847,6 +7052,19 @@
 "modern digital speakers"
 ],
 "id": "lib:era-radio-fl1-kr"
+},
+"b9e782363011cf01": {
+"caption": "A person seen from behind sits on a bus seat wearing a red scarf.",
+"people": 1,
+"faces": false,
+"action": "sitting on a bus",
+"place": "room",
+"mood": "calm",
+"avoid": [
+"travelling to a game",
+"away day"
+],
+"id": "lib:sup-bus-window-kr"
 },
 "b9f07de8c8eddebb": {
 "caption": "A wider papercraft view of a free-kick scene in a packed stadium with spectators in the stands.",
@@ -7384,6 +7602,18 @@
 ],
 "id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/7868835-0034a0d689327a05"
 },
+"c761a6fe1e37431e": {
+"caption": "Layered paper cutouts depict dark, swirling storm clouds in shades of grey and black.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "tension",
+"avoid": [
+"stadium",
+"football match"
+],
+"id": "lib:sky-storm-n"
+},
 "c797904d04026711": {
 "caption": "A detailed football club crest featuring two seahorses flanking a shield with black and white stripes.",
 "people": 0,
@@ -7464,6 +7694,35 @@
 "referee shaking hands"
 ],
 "id": "cut:common/fig-referee-card-n"
+},
+"cb4e32cf829c5511": {
+"caption": "A man in a flat cap and a child walk hand-in-hand toward a glowing stadium floodlight.",
+"people": 2,
+"faces": true,
+"action": "walking to a stadium",
+"place": "stadium",
+"era": "1970s",
+"mood": "joy",
+"avoid": [
+"leaving the stadium",
+"post-match"
+],
+"id": "lib:sup-child-hand-fl2-kr"
+},
+"cbd4e968491719f0": {
+"caption": "A vintage-style comic illustration shows a football player leaping to head the ball in a crowded penalty box under a bright sun.",
+"people": 12,
+"faces": true,
+"action": "heading the ball",
+"place": "pitch",
+"era": "1970s",
+"mood": "tension",
+"text": "1",
+"avoid": [
+"modern match",
+"real photograph"
+],
+"id": "lib:sky-heat-haze-fl1-kr"
 },
 "cc02dc41f3ebaf69": {
 "caption": "A paper-cut artwork features a flowing red scarf across a landscape with silhouetted trees and figures.",
@@ -7673,6 +7932,18 @@
 ],
 "id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/42104424-3ae9d6742b55f2ae"
 },
+"d21aba5e1c175c69": {
+"caption": "A layered papercraft artwork shows a bright sun bursting through dark clouds with visible rays.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "joy",
+"avoid": [
+"real photograph",
+"eclipse footage"
+],
+"id": "lib:sky-golden-hour-n"
+},
 "d26e28176a06eeb0": {
 "caption": "An elderly person gently folds a bright red football scarf.",
 "people": 1,
@@ -7726,6 +7997,18 @@
 ],
 "id": "lib:pup-captain-kr"
 },
+"d3957a766b978231": {
+"caption": "Disassembled paper doll pieces depicting a referee holding a whistle.",
+"people": 0,
+"faces": false,
+"action": "disassembled paper doll",
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"real person"
+],
+"id": "lib:pup-referee-n"
+},
 "d44cda30c7417c3b": {
 "caption": "Medical staff carry an injured player off the pitch on a stretcher while concerned teammates look on in a packed stadium.",
 "people": 25,
@@ -7766,6 +8049,21 @@
 "countryside"
 ],
 "id": "lib:ground-1970s-ext-fl1-kr"
+},
+"d57d45c7ce5ddcd4": {
+"caption": "A man wearing a beanie leans out of a bus window waving a red and black scarf.",
+"people": 1,
+"faces": true,
+"action": "waving a scarf from a bus",
+"place": "street",
+"era": "1970s",
+"mood": "joy",
+"avoid": [
+"arriving at a match",
+"leaving a match",
+"team bus"
+],
+"id": "lib:sup-bus-window-fl2-kr"
 },
 "d5913b17ab0c2a10": {
 "caption": "An illustrated close-up shows prayer hands in red sleeves against a neutral background.",
@@ -7832,6 +8130,19 @@
 "manager tactical instructions"
 ],
 "id": "beat:common/penalty-spot-close-n"
+},
+"d7e9db892295dfc5": {
+"caption": "Disassembled papercraft doll parts for an adult supporter with cap, dark coat, red scarves, arms, and legs.",
+"people": 1,
+"faces": true,
+"action": "none",
+"place": "studio",
+"mood": "calm",
+"avoid": [
+"real clothing",
+"hooligan violence"
+],
+"id": "lib:pup-supporter-kr"
 },
 "d8c4a75d073b5f6e": {
 "caption": "The Chelsea FC football club logo features a blue lion holding a staff inside a circular emblem.",
@@ -8317,6 +8628,18 @@
 "actual player portrait"
 ],
 "id": "cut:common/fig-striker-shoot-c-kr"
+},
+"e47fabc2c8143b78": {
+"caption": "A papercraft figure of a man in dark clothes and a cap viewed from behind.",
+"people": 1,
+"faces": false,
+"action": "standing",
+"place": "abstract",
+"mood": "tension",
+"avoid": [
+"real person"
+],
+"id": "lib:pup-referee-pose-n"
 },
 "e52a1db8bbb506fb": {
 "caption": "Paper art illustration shows a group of fans wearing scarves behind a barrier and a fence.",
@@ -8904,6 +9227,20 @@
 ],
 "id": "lib:layer-rain-stand-kr-full"
 },
+"ef79a23b21831294": {
+"caption": "Two football players in kits compete for the ball on a snow-covered pitch under bright stadium floodlights at night.",
+"people": 10,
+"faces": true,
+"action": "tackling for the ball",
+"place": "pitch",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"sunny day",
+"summer match"
+],
+"id": "lib:sky-snow-fl1-kr"
+},
 "efce330dd96441a8": {
 "caption": "A scattered collage of aged newspaper style print layouts over a dark background.",
 "people": 0,
@@ -8973,6 +9310,20 @@
 ],
 "id": "beat:common/tv-shop-window-b-kr"
 },
+"f1fc0b220407bf9c": {
+"caption": "Football players in kits battle for a ball on a muddy pitch during a heavy rainstorm with lightning in the background.",
+"people": 9,
+"faces": true,
+"action": "playing football in a storm",
+"place": "pitch",
+"era": "1980s",
+"mood": "tension",
+"avoid": [
+"sunny day",
+"clear weather"
+],
+"id": "lib:sky-storm-fl1-kr"
+},
 "f27372cd65adfead": {
 "caption": "A paper craft model of a stadium with floodlights and spectators is shown as a layered book.",
 "people": 10,
@@ -8999,6 +9350,19 @@
 "entrapment"
 ],
 "id": "lib:ins-net-bulge-n"
+},
+"f3feb0c7a42e01a9": {
+"caption": "Layered paper cutouts create an abstract representation of wavy, flowing lines in shades of grey and cream.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"stadium",
+"crowd",
+"football match"
+],
+"id": "lib:sky-heat-haze-n"
 },
 "f43cf39910b0125c": {
 "caption": "A minimalist digital scoreboard shows a 0-0 draw.",
@@ -9082,6 +9446,20 @@
 "celebration"
 ],
 "id": "cut:common/fig-keeper-dive-c-n"
+},
+"f633fbea174a32b7": {
+"caption": "A papercraft figure of a man in a tweed coat and flat cap stands with his back turned.",
+"people": 1,
+"faces": false,
+"action": "standing",
+"place": "abstract",
+"era": "1930s",
+"mood": "calm",
+"avoid": [
+"prison bars: never for a transfer or a signing",
+"real person"
+],
+"id": "lib:pup-manager-pose-n"
 },
 "f6ca9b60a92c64b8": {
 "caption": "Supporters march down a narrow urban street holding red scarves and banners beneath stadium floodlights.",
@@ -9256,6 +9634,19 @@
 "real flags"
 ],
 "id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/a8-stickers-hapoel-petah-tikva-original-5849cb0e820d0ced"
+},
+"fc482a127c65d083": {
+"caption": "A fully assembled paper craft figure of an elderly man wearing a flat cap and red scarf seen from behind.",
+"people": 1,
+"faces": false,
+"action": "standing",
+"place": "abstract",
+"era": "1950s",
+"mood": "calm",
+"avoid": [
+"real person"
+],
+"id": "lib:pup-old-man-pose-kr"
 },
 "fcd29ea9d0d52a8a": {
 "caption": "A headshot portrait of a man with short dark hair and a beard wearing a blue and white jersey.",
