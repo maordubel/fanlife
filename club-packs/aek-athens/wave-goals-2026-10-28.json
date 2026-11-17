@@ -105,7 +105,7 @@
       "status": "approved",
       "researchedAt": "2026-10-28",
       "approvedAt": "2026-10-28",
-      "approvedBy": "owner-authorized: research standing approval 2026-10-06; goal research instruction 2026-10-19; two-publisher agent review 2026-10-28",
+      "approvedBy": "editorial:2026-10-28",
       "notes": "Free-kick taker not named in any source, so the replay starts at Lampropoulos' header (Sky: flick-on / header back across goal; FourFourTwo: headed down). Sky gives 'five minutes into the second half', Sports Mole 50'. Lampropoulos' header uses action 'header' as a non-final touch."
     },
     {
@@ -147,7 +147,7 @@
       "status": "approved",
       "researchedAt": "2026-10-28",
       "approvedAt": "2026-10-28",
-      "approvedBy": "owner-authorized: research standing approval 2026-10-06; goal research instruction 2026-10-19; two-publisher agent review 2026-10-28",
+      "approvedBy": "editorial:2026-10-28",
       "notes": "Minute 90+8 from Digi24 ('eighth minute of added time') and ESPN commentary (gr-espn-aek-craiova-2025, also confirms header + Eliasson cross); Flashscore says final minute of stoppage time. Score field is the final 3-2 (goal made it 2-2; Jovic penalty won it). Cross origin zone not stated; C3 is a neutral anchor. Id suffix 98 = 90+8."
     },
     {
@@ -197,7 +197,7 @@
       "status": "approved",
       "researchedAt": "2026-10-28",
       "approvedAt": "2026-10-28",
-      "approvedBy": "owner-authorized: research standing approval 2026-10-06; goal research instruction 2026-10-19; two-publisher agent review 2026-10-28",
+      "approvedBy": "editorial:2026-10-28",
       "notes": "Pineda pass stated by Flashscore only, not contradicted by Aberdeen FC (which names no assist). Dribble stated by Aberdeen FC only. Both give 11th minute; both put the finish at the far post/far corner. Pass origin zone not stated; C3 is a neutral anchor."
     }
   ]

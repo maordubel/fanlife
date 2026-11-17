@@ -12,7 +12,7 @@ const arg=(k:string)=>{const i=process.argv.indexOf('--'+k);return i<0?null:proc
 const sleep=(ms:number)=>new Promise(r=>setTimeout(r,ms))
 const fold=(s:string)=>s.normalize('NFD').replace(/\p{M}+/gu,'').toLowerCase().replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim()
 type J=Record<string,any>
-const OWNER='Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)',DAY='2026-10-10'
+const OWNER='editorial:2026-10-10',DAY='2026-10-10'
 const POS:Record<string,string>={GOALKEEPER:'A goalkeeper.',DEFENDER:'A defender.',MIDFIELDER:'A midfielder.',FORWARD:'A forward.'}
 const MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December']
 async function get(url:string):Promise<any>{

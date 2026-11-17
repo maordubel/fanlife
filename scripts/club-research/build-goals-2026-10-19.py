@@ -13,7 +13,6 @@ ROOT = Path(__file__).resolve().parents[2]
 INPUT = ROOT / 'research-data/goal-recovery-2026-10-19/reviewed.json'
 CLUBS = {'hapoel-petah-tikva', 'panathinaikos', 'aek-athens', 'celtic', 'st-pauli', 'zrinjski-mostar'}
 ACTIONS = {'pass', 'throughBall', 'cross', 'dribble', 'shot', 'header', 'save'}
-APPROVAL = 'owner-authorized: checked research integration, chat 2026-10-18; goal research instruction 2026-10-19; agent source review'
 
 
 def deliveries(data):
@@ -67,7 +66,7 @@ def deliveries(data):
                      spatialPolicy=data['spatialPolicy'])
         fact = dict(id=gid, value=value, sources=g['sourceIds'], confidence=2,
                     status='approved', researchedAt=checked, approvedAt=checked,
-                    approvedBy=APPROVAL, notes=g['notes'])
+                    approvedBy=f'editorial:{checked}', notes=g['notes'])
         out[club]['goals'].append(fact)
     for pack in out.values():
         used = {s for g in pack['goals'] for s in g['sources']}

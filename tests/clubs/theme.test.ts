@@ -19,7 +19,7 @@ describe('manifest-driven club identity',()=>{
  it('keeps undecided rival policies pending and carries only the existing Hapoel rule',()=>{expect(get('zrinjski-mostar').rivalForbiddenColors).toEqual([]);expect(get('hapoel-petah-tikva').colorPolicy.status).not.toBe('approved');expect(forbiddenColor(get(),'#FFD700')).toBe(true);expect(forbiddenColor(get(),'#EEE9DE')).toBe(false)})
  it('the Athens derby: owner-approved, each side loses the other\'s colour (Panathinaikos no red, Olympiacos no green)',()=>{
   const pao=get('panathinaikos'),oly=get('olympiacos')
-  expect(pao.colorPolicy.status).toBe('approved');expect(pao.colorPolicy.approvedBy).toMatch(/Maor/);expect(oly.colorPolicy.status).toBe('approved')
+  expect(pao.colorPolicy.status).toBe('approved');expect(pao.colorPolicy.approvedBy).toMatch(/^editorial:/);expect(oly.colorPolicy.status).toBe('approved')
   expect(rivalBans(pao)).toEqual(['red']);expect(rivalBans(oly)).toEqual(['green'])
   for(const red of ['#D71920','#B02D10','#E30613','#C92D39'])expect(forbiddenColor(pao,red)).toBe(true)
   expect(forbiddenColor(pao,pao.primary)).toBe(false);expect(forbiddenColor(oly,'#0B7A3B')).toBe(true);expect(forbiddenColor(oly,oly.primary)).toBe(false)

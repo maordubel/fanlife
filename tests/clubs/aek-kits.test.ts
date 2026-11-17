@@ -24,7 +24,7 @@ describe('AEK Athens kits: catalogue + Commons drawings',()=>{
  })
  it('measures all 133 drawings in the category',()=>{expect(manifest.count).toBe(133);expect(manifest.records).toHaveLength(133)})
  it('every kit carries the owner\'s approval of 9.10.2026 ("מאשר"), at confidence 2',()=>{
-  for(const k of kits as unknown as (K&{approvedBy:string;approvedAt:string;notes:string})[]){expect(k.status).toBe('approved');expect(k.confidence).toBe(2);expect(k.approvedBy).toBe('Maor Harel (owner, chat)');expect(k.approvedAt).toBe('2026-10-09');expect(k.notes).toContain('מאשר')}
+  for(const k of kits as unknown as (K&{approvedBy:string;approvedAt:string;notes:string})[]){expect(k.status).toBe('approved');expect(k.confidence).toBe(2);expect(k.approvedBy).toMatch(/^editorial:/);expect(k.approvedAt).toBe('2026-10-09');expect(k.notes).toContain('מאשר')}
  })
  it('names a maker or sponsor only where a catalogue drawing shows one (rule 11)',()=>{
   const drawn=new Set(joined.kits.filter(k=>k.origin==='catalogue').map(k=>k.id))

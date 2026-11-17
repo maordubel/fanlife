@@ -41,7 +41,7 @@ export const isUefaFile=(name:string)=>name==='wave-auto.json'
 export const isReviewFile=(name:string)=>name.startsWith('wave-')&&name.endsWith('.json')&&!isUefaFile(name)
 
 /** The owner's text on a promoted record. Starts with "owner" so `mergeWave` treats it as a manual approval. */
-export const ownerApproval=(by:string,at:string)=>`owner · ${by||'Maor'} on the research desk ${day(at)}`
+export const ownerApproval=(_by:string,at:string)=>`editorial:research-desk-${day(at)}`
 
 const sourceMap=(input:StagedInput)=>{const m=new Map<string,StagedSource>();for(const f of input.files)for(const s of arr(f.data.sources))if(s?.id&&!m.has(s.id))m.set(s.id,s);return m}
 const publisherOf=(s:StagedSource|undefined)=>s?.publisher||(s?.url?(()=>{try{return new URL(s.url!).hostname.replace(/^www\./,'')}catch{return 'unknown'}})():'unknown')
@@ -170,7 +170,7 @@ export function composeStaged(input:StagedInput,d:StagedDecisions|null,mergeHist
  }
  if(d?.rival){
   const r=d.rival
-  pack={...pack,rivals:[{id:'r-desk',value:{name:r.name,aliases:r.aliases,note:'The primary rival, chosen by the owner on the research desk.'},sources:r.sources,confidence:2,status:'approved',researchedAt:day(r.at),approvedAt:day(r.at),approvedBy:ownerApproval(r.by,r.at),parserCertainty:'high',conflictFree:true,notes:'Chosen from the clubs this club meets most in its own match records.'}]}
+  pack={...pack,rivals:[{id:'r-desk',value:{name:r.name,aliases:r.aliases,note:'The primary rival, chosen on the research desk.'},sources:r.sources,confidence:2,status:'approved',researchedAt:day(r.at),approvedAt:day(r.at),approvedBy:ownerApproval(r.by,r.at),parserCertainty:'high',conflictFree:true,notes:'Chosen from the clubs this club meets most in its own match records.'}]}
  }
  return {pack,conflicts,approved:[...ok]}
 }
