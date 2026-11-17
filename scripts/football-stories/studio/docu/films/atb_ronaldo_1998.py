@@ -141,7 +141,7 @@ beat(None, word('THE MISSING', bg='ink', size=230, d=1.2), word('THE MISSING|NAM
      type='trailer', hold=3.2, sound=[('impact', 0.0, 1.4, 0.7), ('impact2', 1.2, 2.2, 0.9)])
 
 # ── CHAPTER ONE · THE PHENOMENON ── who he was in July 1998, and what was waiting
-chapter('CHAPTER ONE', 'THE PHENOMENON', 'FRANCE · JUNE–JULY 1998', 'stadium')
+chapter('CHAPTER ONE', 'FRANCE 98', 'THE PHENOMENON · JUNE–JULY 1998', 'stadium')
 beat("Start with who he was that summer. Ronaldo was twenty-one, a striker at Inter, billed by the press as the best player in the world.",
      img('crowd', 'push', veil=0.05), flap('2026', '1998', at=1.6, d=2.8, small='FRANCE · THE WORLD CUP'),
      type='illustration', emotion='wonder', intensity=0.6, pad=0.3, sound=[('page', 0.0, 1.0, 0.4)])
