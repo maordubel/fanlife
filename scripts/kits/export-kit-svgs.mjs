@@ -14,7 +14,8 @@ mkdirSync(`public/club-kits/${club}/svg`,{recursive:true})
 let n=0;const index=[]
 // a club with an era crest table (Hapoel Tel Aviv: kit-crests-<club>.json) prints the crest of each shirt's own era; an era with no artwork prints none (rule 25)
 const eraFile=`content/manual/kit-crests-${club}.json`,era=existsSync(eraFile)?JSON.parse(readFileSync(eraFile,'utf8')):null
-const eraCrest=p=>{if(!p)return null;const f=`public/club-kits/${club}/crests/${p.split('/').pop()}`;return existsSync(f)?'data:image/png;base64,'+readFileSync(f).toString('base64'):null}
+// the club's own copy first, then the brand library the table points at (17.11.2026: only 4 of the 12 era crests had a club copy, so 43 Hapoel shirts printed none)
+const eraCrest=p=>{if(!p)return null;const f=[`public/club-kits/${club}/crests/${p.split('/').pop()}`,`public${p}`].find(x=>existsSync(x));return f?'data:image/png;base64,'+readFileSync(f).toString('base64'):null}
 for(const k of data.kits){
   const label=`${club} ${k.type} ${k.season}`,attr=(n,v)=>v==null||v===''?'':` data-${n}="${String(v).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}"`
   // every drawing is tagged with its club, season, type, maker, sponsor and where it was read from, so a file can be found and filtered without the data

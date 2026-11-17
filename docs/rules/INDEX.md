@@ -236,3 +236,4 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [shop-lookbook-cards](shop-lookbook-cards.md) · The shop's 4:5 lookbook posters as corner cards in the promo rotation: one a day, never on /shop, never an interstitial (15.11.2026)
 - [pay-stripe-own-products](pay-stripe-own-products.md) · Our own products (files, films) are paid with our Stripe; physical goods stay on Printify's checkout. Off until the keys exist; orders in worker_pay_orders; only the signed webhook moves an order (16.11.2026)
 - [pitch-left-is-left.md](pitch-left-is-left.md) — formation x is from the physical left; draw with `left`, never `inset-inline-start` or `100 - x` (16.11.2026)
+- [club-shirt-only](club-shirt-only.md) · A club game shows the man's shirt only, cropped from the measured SVG; drawn kits win ties; an undated man wears the club's classic drawing, untitled (16.11.2026)
