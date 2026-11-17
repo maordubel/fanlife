@@ -12,7 +12,7 @@ describe('owner decision 13.11.2026: the competition’s own league or federatio
   expect(crossChecked([src('a','365Scores')])).toBe(false)
   expect(crossChecked([src('a','365Scores'),src('b','LiveScore')])).toBe(true)
  })
- it('owner decision 17.11.2026: any single cited source is enough; none is not',()=>{
+ it('17.11.2026: any single cited source is enough; none is not',()=>{
   expect(enoughPublishers([src('a','365Scores')])).toBe(true)
   expect(enoughPublishers([undefined])).toBe(false)
   expect(enoughPublishers([])).toBe(false)

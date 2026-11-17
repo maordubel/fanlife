@@ -11,7 +11,7 @@ import {deskHref} from '@/lib/master/attention'
  * An unconnected store is "Not connected", never zero.
  */
 const pct=(n:number,d:number)=>d?`${Math.round(n/d*100)}%`:'—'
-function label(gate:string,clubNames:Record<string,string>):{club:string|null;name:string}{
+export function label(gate:string,clubNames:Record<string,string>):{club:string|null;name:string}{
  const m=/^\/clubs\/([a-z0-9-]+)\/([a-z-]+)$/.exec(gate)
  if(m){const g=SHARED_GATES.find(x=>x.key===m[2]);return {club:m[1]!,name:`${clubNames[m[1]!]||m[1]} · ${g?.name||(m[2]==='life'?'LIFE':m[2]!)}`}}
  const key=gateTitleKey(gate);return {club:null,name:key?`The Worker · ${t(key)}`:gate==='/away-days'?'The Worker · Away days':gate==='/life'?'The Worker · LIFE':gate}

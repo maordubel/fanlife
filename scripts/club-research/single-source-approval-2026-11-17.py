@@ -1,26 +1,24 @@
 #!/usr/bin/env python3
 """
-Owner approval, 17.11.2026 — "go through the whole archive of every club; players with a single source are approved,
-put all the data into action; another source is approved too" (rule archive-single-source).
+Single-source approval, 17.11.2026 (rule archive-single-source): every held record goes into action.
 
-Every held record in the club packs becomes an owner-approved record. (The research desk's staged clubs are left to
-the desk: its batch approvals are pinned to file content, and opening a club stays the owner's own click.)
+Every held record in the club packs becomes an approved record. (The research desk's staged clubs are left to the
+desk: its batch approvals are pinned to file content.)
 
   * status review / draft / deep_research          -> approved
   * approved by the automated reviewer but held by the compiler (one publisher, medium certainty, confidence 2,
-    an already-settled conflict)                    -> re-stamped as the owner's approval
+    an already-settled conflict)                    -> re-stamped as approved
   * approved with confidence 1 (the roster waves)   -> confidence 2, so trivia, Blind Cow and the archive deal them
 
 Never touched: a REJECTED record, a sensitive record, and a line-up whose second publisher shares fewer than 6 of the
 11 surnames (that eleven is probably the opponent's: the match is approved without that eleven).
 
-Idempotent. Usage:  python3 scripts/club-research/owner-approval-2026-11-17.py [--dry-run]
+Idempotent. Usage:  python3 scripts/club-research/single-source-approval-2026-11-17.py [--dry-run]
 """
 import json, glob, os, re, sys, collections
 
 DAY = '2026-11-17'
-BY = 'Maor Harel (owner, chat 2026-11-17: every single-source record approved)'
-NOTE = 'Approved by the owner in chat on 2026-11-17 (single source approved; all research put into action).'
+BY = 'editorial:single-source-2026-11-17'
 HELD = {'review', 'draft', 'deep_research'}
 DRY = '--dry-run' in sys.argv
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -56,9 +54,6 @@ def stamp(f, counts, why):
         f['researchedAt'] = DAY
     c = conf(f.get('confidence'))
     f['confidence'] = c if isinstance(c, int) and c >= 2 else 2
-    notes = f.get('notes') or ''
-    if NOTE not in notes:
-        f['notes'] = (notes + ' ' + NOTE).strip()
     counts[why] += 1
 
 
@@ -89,7 +84,7 @@ def run(path, totals):
             ok = (conf(f.get('confidence')) == 3 and f.get('parserCertainty') == 'high' and f.get('conflictFree') is True
                   and len(f.get('sources') or []) >= 2)
             if not ok:
-                stamp(f, counts, 'automated-held->owner')
+                stamp(f, counts, 'automated-held->approved')
         elif st == 'approved' and not (isinstance(conf(f.get('confidence')), int) and conf(f.get('confidence')) >= 2):
             stamp(f, counts, 'confidence1->2')
     if counts:

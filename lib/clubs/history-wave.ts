@@ -7,7 +7,7 @@ import olympiacos20 from '@/club-packs/olympiacos/wave-history-2026-10-20.json'
 import panathinaikos20 from '@/club-packs/panathinaikos/wave-history-2026-10-20.json'
 import stpauli20 from '@/club-packs/st-pauli/wave-history-2026-10-20.json'
 import zrinjski20 from '@/club-packs/zrinjski-mostar/wave-history-2026-10-20.json'
-// 17.11.2026 — collected for the research desk on 20.10, held there; both clubs are repository clubs now and the owner approved every single-source record
+// 17.11.2026 — collected for the research desk on 20.10; both clubs are repository clubs now (rule archive-single-source)
 import atalanta20 from '@/club-packs/atalanta/wave-history-2026-10-20.json'
 import maccabiHaifa20 from '@/club-packs/maccabi-haifa/wave-history-2026-10-20.json'
 import {mergeWave} from './waves'

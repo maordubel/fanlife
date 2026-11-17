@@ -13,7 +13,7 @@ import {createHash} from 'node:crypto'
  * years/positions only where the owner's file states them.
  */
 const rev=JSON.parse(readFileSync('content/manual/rumble-review-2026-10-10.json','utf8')) as {club:string;nameEn:string;original:string;position:string;start:number|null;end:number|null;enStatus:string}[]
-const NOW='2026-10-10',BY='Maor Harel (owner, chat 2026-11-17: every single-source record approved)'
+const NOW='2026-10-10',BY='editorial:single-source-2026-11-17'
 const skel=(s:string)=>s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/ph/g,'f').replace(/th/g,'t').replace(/kh|ch/g,'h').replace(/[ckq]/g,'k').replace(/[wb]/g,'v').replace(/tz|ts/g,'s').replace(/[^a-z]/g,'').replace(/[aeiouyj]/g,'').replace(/(.)\1+/g,'$1')
 const latinOf=(club:string,name:string)=>isLatinName(name)?name:isGreek(name)?greekToEnglish(name):isHebrew(name)?hebrewToEnglish(name):name
 const twinKey=(latin:string)=>{const w=latin.replace(/\(.*?\)/g,'').trim().split(/\s+/);return w.length<2?null:`${skel(w.at(-1)!)}|${skel(w[0]!)[0]??''}`}

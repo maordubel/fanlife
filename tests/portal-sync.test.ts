@@ -518,6 +518,7 @@ describe('פרויקט משותף עם DUBID — THE WORKER touches only what it
       '20261116130000_worker_pay_orders.sql', // 16.11.2026: our own Stripe orders (docs/rules/pay-stripe-own-products.md) — standalone
       '20261117110000_worker_pay_files.sql', // 17.11.2026: the paid file made once and stored (docs/rules/pay-stripe-own-products.md) — standalone
       '20261117150000_worker_insight.sql', // 17.11.2026: FAN LIFE INSIGHT, the site's own analytics (tests/analytics/insight.test.ts) — standalone
+      '20261117190000_worker_events_insight.sql', // 17.11.2026: the games funnel as a report — standalone
       '20261117090000_worker_book_orders.sql', // 17.11.2026: Broken Collective's own sales (docs/rules/book-shop-separate.md) — standalone
     ]
     for (const name of readdirSync(dir)) {

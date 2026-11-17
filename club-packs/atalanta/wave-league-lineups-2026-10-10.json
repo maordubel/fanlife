@@ -1055,11 +1055,11 @@
    "researchedAt": "2026-11-15",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore has no full eleven for this match. Approved by the owner in chat on 2026-11-17 (single source approved; all research put into action).",
+   "notes": "One publisher only — LiveScore has no full eleven for this match.",
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-11-17",
-   "approvedBy": "Maor Harel (owner, chat 2026-11-17: every single-source record approved)"
+   "approvedBy": "editorial:single-source-2026-11-17"
   },
   {
    "id": "a-m-2026-05-22-fiorentina-atalanta",
@@ -1365,11 +1365,11 @@
    "researchedAt": "2026-11-15",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score). Approved by the owner in chat on 2026-11-17 (single source approved; all research put into action).",
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-11-17",
-   "approvedBy": "Maor Harel (owner, chat 2026-11-17: every single-source record approved)"
+   "approvedBy": "editorial:single-source-2026-11-17"
   },
   {
    "id": "a-m-2026-04-18-as-roma-atalanta",
@@ -1726,11 +1726,11 @@
    "researchedAt": "2026-11-15",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score). Approved by the owner in chat on 2026-11-17 (single source approved; all research put into action).",
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-11-17",
-   "approvedBy": "Maor Harel (owner, chat 2026-11-17: every single-source record approved)"
+   "approvedBy": "editorial:single-source-2026-11-17"
   },
   {
    "id": "a-m-2026-03-01-sassuolo-atalanta",
@@ -1879,11 +1879,11 @@
    "researchedAt": "2026-11-15",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score). Approved by the owner in chat on 2026-11-17 (single source approved; all research put into action).",
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
    "confidence": 2,
    "status": "approved",
    "approvedAt": "2026-11-17",
-   "approvedBy": "Maor Harel (owner, chat 2026-11-17: every single-source record approved)"
+   "approvedBy": "editorial:single-source-2026-11-17"
   },
   {
    "id": "a-m-2026-02-01-como-atalanta",

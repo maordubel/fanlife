@@ -1,6 +1,5 @@
 /**
- * FAN LIFE INSIGHT — the site's own analytics, the vocabulary both ends share (owner, 17.11.2026: "a real internal Google
- * Analytics … as much data as possible"). The browser sends hits; the server adds where and on what (edge geo, the
+ * FAN LIFE INSIGHT — the site's own analytics, the vocabulary both ends share (17.11.2026). The browser sends hits; the server adds where and on what (edge geo, the
  * user-agent's family) and the database keeps them (supabase/migrations/20261117150000_worker_insight.sql).
  *
  * A hit: a page VIEW (with where it came from on the session's landing), a CLICK (what was pressed), a LEAVE (time on the

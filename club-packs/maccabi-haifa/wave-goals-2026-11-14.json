@@ -477,10 +477,10 @@
    "status": "approved",
    "researchedAt": "2026-11-14",
    "approvedAt": "2026-11-17",
-   "approvedBy": "Maor Harel (owner, chat 2026-11-17: every single-source record approved)",
+   "approvedBy": "editorial:single-source-2026-11-17",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "Maccabi Haifa official report (official club source, sufficient alone): Haziza cross, Bataille heel lay-through, Azoulay first-time from the second line, 35'. Sammy Ofer Stadium; final 2-0. Date 5 Jan 2026 from Sports Mole and Wikipedia (club report dated 6 Jan). Approved by the owner in chat on 2026-11-17 (single source approved; all research put into action)."
+   "notes": "Maccabi Haifa official report (official club source, sufficient alone): Haziza cross, Bataille heel lay-through, Azoulay first-time from the second line, 35'. Sammy Ofer Stadium; final 2-0. Date 5 Jan 2026 from Sports Mole and Wikipedia (club report dated 6 Jan)."
   },
   {
    "id": "goal-2026-01-05-guy-melamed-45plus12",
@@ -528,10 +528,10 @@
    "status": "approved",
    "researchedAt": "2026-11-14",
    "approvedAt": "2026-11-17",
-   "approvedBy": "Maor Harel (owner, chat 2026-11-17: every single-source record approved)",
+   "approvedBy": "editorial:single-source-2026-11-17",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "Maccabi Haifa official report: 45+12', Gorre on the left, cut inside, cross, Melamed stretched leg. Minute per the club; Sports Mole and Wikipedia list 45+11'. Approved by the owner in chat on 2026-11-17 (single source approved; all research put into action)."
+   "notes": "Maccabi Haifa official report: 45+12', Gorre on the left, cut inside, cross, Melamed stretched leg. Minute per the club; Sports Mole and Wikipedia list 45+11'."
   }
  ],
  "skipped": [

@@ -37,7 +37,7 @@ export async function prepare(p: Due, now = new Date(), cache: {data?: LiveData 
       const [yesterday, today] = await Promise.all([rpc<LedgerRow[]>('worker_marketing_ledger', {p_day: dayKey(new Date(now.getTime() - 86400_000))}), rpc<LedgerRow[]>('worker_marketing_ledger', {p_day: dayKey(now)})])
       out = composeBriefing(feed.fixtures, feed.results ?? [], CORE_CLUB_IDS, cache.data ?? {dubid: [], offsides: [], posted: []}, now, NAMES,
         yesterday && today ? {yesterday, today} : null)
-      // FAN LIFE INSIGHT (owner, 17.11.2026: "a daily report sent to me in the morning Telegram update") — yesterday first
+      // FAN LIFE INSIGHT (17.11.2026) — yesterday first
       if (!('skip' in out)) {
         const y = shiftDay(athensDay(now), -1)
         const [day, week] = await Promise.all([

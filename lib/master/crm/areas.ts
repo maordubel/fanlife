@@ -1,7 +1,7 @@
 /** The control room's areas (CRM 1 §3; Studio added 4.11.2026, owner: "I don't see any video studio"; Research 10.11.2026, owner: "easy access, click only"): eight WORK areas ordered by what the owner does, then the TOOLS. */
 export const SECTIONS=[
  {key:'overview',label:'Desk',hint:'What needs you now'},
- // 17.11.2026 (owner: "a real internal Google Analytics … as convenient as possible"): the audience is the second thing he opens
+ // 17.11.2026: the audience is the second area
  {key:'audience',label:'Audience',hint:'Visitors, places, clicks, games'},
  {key:'clubs',label:'Clubs',hint:'Research, readiness, publish'},
  {key:'research',label:'Research',hint:'New clubs, one yes at a time'},

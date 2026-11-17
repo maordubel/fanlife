@@ -7,7 +7,7 @@ import type {ClubData} from '@/lib/clubs/contract'
 const moment=(id:string,title:string,on:string|null,hint='',match:Entry['match']=null):Entry=>({id,kind:'moment',title,on,year:on?Number(on.slice(0,4)):null,hint,confidence:2,sources:['s'],note:null,legacy:false,player:null,names:[],refs:[],match})
 const player=(id:string,title:string):Entry=>({id,kind:'player',title,on:null,year:null,hint:'',confidence:2,sources:['s'],note:null,legacy:false,player:{positions:['MF'],from:2000,to:2004,aliases:[]},names:[],refs:[],match:null})
 
-describe('archive index (owner, 17.11.2026)',()=>{
+describe('archive index (17.11.2026)',()=>{
  it('files a day in its July–June football year; a year-only record in none',()=>{
   expect(seasonOf('2013-08-25')).toBe('2013/14');expect(seasonOf('2014-05-01')).toBe('2013/14');expect(seasonOf('1999-07-01')).toBe('1999/00');expect(seasonOf(null)).toBeNull()
  })

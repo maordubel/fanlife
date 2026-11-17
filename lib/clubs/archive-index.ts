@@ -8,7 +8,7 @@ import {canonClub} from '@/lib/trivia/club-names'
 import {enClub} from '@/lib/trivia/names'
 
 /**
- * The archive INDEX (owner, 17.11.2026: "a perfect, convenient index, as much information as possible").
+ * The archive INDEX (17.11.2026).
  *
  * Gate 12's sixth door: the whole club archive ordered three ways a supporter looks things up in a printed yearbook —
  * by SEASON, by OPPONENT and by COMPETITION — each row with its record (P W D L, goals) and the entries behind it.

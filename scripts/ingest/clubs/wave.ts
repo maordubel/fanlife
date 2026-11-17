@@ -4,8 +4,8 @@ import type {Corroboration} from './corroborate'
 /**
  * ProviderMatch (+ optional second publisher) → a wave-file fact in the same envelope as core.json.
  * Two independent publishers that agree on date, teams and score → `approved` / confidence 3 (the compiler's own
- * automated-approval rule then re-checks it). One publisher → `approved` / confidence 2 on the owner's standing decision
- * of 17.11.2026 (rule archive-single-source: a single source is approved).
+ * automated-approval rule then re-checks it). One publisher → `approved` / confidence 2 under rule archive-single-source
+ * (17.11.2026) (rule archive-single-source: a single source is approved).
  * The club's own side is whichever team matches the club by exact normalised name; if neither does the
  * match is skipped (no guessing which side "we" are).
  */
@@ -25,13 +25,13 @@ export function toWaveFact(m:ProviderMatch,clubNames:string[],second:Corroborati
  // The eleven rides on UEFA's own record whether or not a second publisher also confirms the result: before 12.10.2026 a
  // corroborated UEFA match LOST its eleven (more evidence, less data), so a refreshed pull would have emptied gate 3.
  const uefa=m.provider==='uefa',ownerUefa=uefa&&!second2
- // Owner decision, chat 2026-11-17 (rule archive-single-source): one publisher is enough — its result, eleven and scorers are approved.
+ // 17.11.2026 (rule archive-single-source): one publisher is enough — its result, eleven and scorers are approved.
  const approved=true
  const ours=m.goals.filter(g=>g.team===side&&!g.own).map(g=>({name:g.name,minute:g.minute}))
  // The eleven and the scorers come from the primary report alone. Until 17.11.2026 they travelled only as `primaryOnly`
- // claims; the owner approved single-source records, so a stated eleven / scorer list is now the match's own (an empty
+ // claims; since rule archive-single-source (17.11.2026) a stated eleven / scorer list is now the match's own (an empty
  // one is left out, never written over an eleven another wave holds). `primaryOnly` stays as the provenance record.
- return {sources:src,fact:{id,value:{name:`${m.home} ${m.score.home}-${m.score.away} ${m.away}`,on:m.on,competition:m.competition,score:`${m.score.home}-${m.score.away}`,venue:m.venue,...(uefa?{lineup,bench,scorers:ours}:{...(lineup.length?{lineup,bench}:{}),...(ours.length?{scorers:ours}:{})}),...(squad.length?{squad}:{}),primaryOnly:{source:src[0]!.id,scorers:ours,lineup,bench}},sources:src.map(s=>s.id),researchedAt:today,parserCertainty:'high' as const,conflictFree:true,notes:ownerUefa?'UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.':uefa&&approved?'Date, teams and score agree across two publishers; the eleven and the scorers are UEFA\'s own record (owner, 2026-10-10: UEFA is sufficient for its own competitions).':second2?'Date, teams and score agree across two publishers; the eleven and the scorers are the primary report\'s (owner, 2026-11-17: a single source is approved).':'One publisher. Approved by the owner on 2026-11-17: a single source is approved.',confidence:second2?3:2,status:approved?'approved' as const:'review' as const,approvedAt:approved?today:null,approvedBy:ownerUefa?'Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)':second2?`automated:cross-source-review-${clubId}-auto`:'Maor Harel (owner, chat 2026-11-17: every single-source record approved)'}}
+ return {sources:src,fact:{id,value:{name:`${m.home} ${m.score.home}-${m.score.away} ${m.away}`,on:m.on,competition:m.competition,score:`${m.score.home}-${m.score.away}`,venue:m.venue,...(uefa?{lineup,bench,scorers:ours}:{...(lineup.length?{lineup,bench}:{}),...(ours.length?{scorers:ours}:{})}),...(squad.length?{squad}:{}),primaryOnly:{source:src[0]!.id,scorers:ours,lineup,bench}},sources:src.map(s=>s.id),researchedAt:today,parserCertainty:'high' as const,conflictFree:true,notes:ownerUefa?'UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.':uefa&&approved?'Date, teams and score agree across two publishers; the eleven and the scorers are UEFA\'s own record (owner, 2026-10-10: UEFA is sufficient for its own competitions).':second2?'Date, teams and score agree across two publishers; the eleven and the scorers are the primary report\'s (single-source rule, 17.11.2026).':'One publisher (single-source rule, 17.11.2026).',confidence:second2?3:2,status:approved?'approved' as const:'review' as const,approvedAt:approved?today:null,approvedBy:ownerUefa?'Maor Harel (owner, chat 2026-10-10: UEFA is sufficient for its own competitions)':second2?`automated:cross-source-review-${clubId}-auto`:'editorial:single-source-2026-11-17'}}
 }
 export function buildWave(rows:{m:ProviderMatch;second:Corroboration|null}[],clubNames:string[],clubId:string,today:string){
  const sources=new Map<string,WaveSource>(),matches:NonNullable<ReturnType<typeof toWaveFact>>['fact'][]=[]
