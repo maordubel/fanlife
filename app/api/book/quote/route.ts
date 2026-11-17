@@ -3,10 +3,10 @@ import {PAPERBACK,REGIONS,type BookLang,type Region,type Ship} from '@/lib/book/
 import {cost,coverSize,luluOpen} from '@/lib/book/lulu'
 
 export const runtime='nodejs'
-export const revalidate=3600
+export const dynamic='force-dynamic'
 /**
  * GET /api/book/quote — the owner's margin check, readable in a browser: for each edition, region and post, what the reader
- * pays (catalog) beside what Lulu charges (live), plus the cover size Lulu expects for the page count. Cached an hour.
+ * pays (catalog) beside what Lulu charges (live), plus the cover size Lulu expects for the page count. Live on every visit (the owner's page, rarely opened).
  */
 export async function GET(){
  if(!luluOpen())return NextResponse.json({error:'Lulu keys are not set.'},{status:503})
