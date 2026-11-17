@@ -16,6 +16,7 @@ type Req=Record<string,unknown>
  * (drawn on the server from his picks), framed print or poster, his name as the manager if he wants it. "Make my print" makes
  * the product at the printer (about two minutes) and opens the FAN LIFE checkout in its own window over this page; the page stays.
  */
+const EMAIL=/^[^@\s]{1,64}@[^@\s]{1,190}\.[a-z]{2,}$/i
 export function PersonalPrint({req,kind='xi',className=''}:{req:Req;kind?:Kind;className?:string}){
  const xi=kind==='xi',sv=copyAll.souvenir,copy:Copy=xi?copyAll.xiPrint:{...copyAll.xiPrint,...sv.common,...sv[kind as Exclude<Kind,'xi'>]}
  const endpoint=xi?'/api/shop/personal':'/api/shop/personal/souvenir',products:Product[]=xi?['framed','poster','tee']:['framed','poster']
@@ -24,10 +25,13 @@ export function PersonalPrint({req,kind='xi',className=''}:{req:Req;kind?:Kind;c
  const [proof,setProof]=useState<string|null>(null),[state,setState]=useState<'idle'|'making'|'ready'|'error'>('idle'),[msg,setMsg]=useState(''),[url,setUrl]=useState<string|null>(null),win=useRef<Window|null>(null)
  useEffect(()=>{fetch('/api/shop/personal').then(r=>r.json()).then(j=>setOn(!!j.open)).catch(()=>{})},[])
  // our own product beside the printed one (16.11.2026): the full-size file, paid with our Stripe — shown only when payments are open
- const [file,setFile]=useState<{cents:number;currency:string}|null>(null),[paying,setPaying]=useState(false),[email,setEmail]=useState('')
+ const [file,setFile]=useState<{cents:number;currency:string}|null>(null),[paying,setPaying]=useState(false),[email,setEmail]=useState(''),[touched,setTouched]=useState(false)
  useEffect(()=>{fetch('/api/pay/checkout').then(r=>r.json()).then((j:{items?:{kind:string;cents:number;currency:string}[]})=>{const f=j.items?.find(i=>i.kind==='print-file');if(f)setFile({cents:f.cents,currency:f.currency})}).catch(()=>{})},[])
- const buyFile=async()=>{if(!proof)return;const u=new URL(proof,location.origin),s=u.searchParams.get('s'),sig=u.searchParams.get('sig');if(!s||!sig)return;setPaying(true);setMsg('')
-  try{const r=await fetch('/api/pay/checkout',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({kind:'print-file',s,sig,back:location.pathname,...(email.trim()?{email:email.trim()}:{})})});const j=await r.json()
+ // the email is where the file goes (17.11.2026: required) — remembered on this device so the next print needs no typing
+ useEffect(()=>{try{const e=localStorage.getItem('fanlife.mail');if(e)setEmail(e)}catch{}},[])
+ const mailOk=EMAIL.test(email.trim()),mailBad=touched&&!mailOk
+ const buyFile=async(ev?:{preventDefault:()=>void})=>{ev?.preventDefault();setTouched(true);if(!proof||!mailOk)return;try{localStorage.setItem('fanlife.mail',email.trim())}catch{}const u=new URL(proof,location.origin),s=u.searchParams.get('s'),sig=u.searchParams.get('sig');if(!s||!sig)return;setPaying(true);setMsg('')
+  try{const r=await fetch('/api/pay/checkout',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({kind:'print-file',s,sig,back:location.pathname,email:email.trim()})});const j=await r.json()
    if(j.url){location.href=j.url;return}setMsg(j.error||copy.error)}catch{setMsg(copy.error)}setPaying(false)}
  const mine=xi?{manager,template}:{kind,who:manager,line,note,age:age?Number(age):null,gate},body=JSON.stringify({...req,...mine,product})
  useEffect(()=>{if(!open)return;const t=window.setTimeout(()=>{fetch(endpoint,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({...req,...mine,product,dry:true})}).then(r=>r.json()).then(j=>{if(j.proof){setProof(j.proof);setMsg('')}else if(j.error)setMsg(j.error)}).catch(()=>{})},manager||line||note||age||gate?600:0);return ()=>window.clearTimeout(t)
@@ -71,7 +75,13 @@ export function PersonalPrint({req,kind='xi',className=''}:{req:Req;kind?:Kind;c
       ?<a className="xip-go min-h-tap" href={url} target="_blank" rel="noopener" onClick={e=>{e.preventDefault();go(url)}}>{copy.open} ↗</a>
       :<button type="button" className="xip-go min-h-tap" disabled={state==='making'||!proof} onClick={make}>{state==='making'?copy.making:<>{copy.make} →</>}</button>}
      {state==='ready'?<p className="xip-ok" role="status">{copy.ready}</p>:null}
-     {file&&product!=='tee'&&proof?<div className="xip-file"><label className="xip-field"><span>{pay.emailLabel}</span><input type="email" inputMode="email" autoComplete="email" value={email} maxLength={120} onChange={e=>setEmail(e.target.value)}/><small>{pay.emailNote}</small></label><button type="button" className="xip-file-b min-h-tap" disabled={paying} onClick={buyFile}>{pay.buyFile.replace('{price}',new Intl.NumberFormat('en',{style:'currency',currency:file.currency.toUpperCase()}).format(file.cents/100))}</button><small>{pay.buyFileNote}</small></div>:null}
+     {file&&product!=='tee'&&proof?<form className="xip-file" noValidate onSubmit={buyFile}>
+      <b className="xip-file-h">{pay.fileTitle}</b><span className="xip-file-p">{pay.buyFileNote}</span>
+      <label className={`xip-field xip-mail${mailBad?' is-bad':''}`}><span>{pay.emailLabel}</span>
+       <input type="email" name="email" inputMode="email" autoComplete="email" autoCapitalize="none" spellCheck={false} required placeholder={pay.emailPlaceholder} value={email} maxLength={120} aria-invalid={mailBad} aria-describedby="xip-mail-note" onChange={e=>setEmail(e.target.value)} onBlur={()=>setTouched(true)}/>
+       <small id="xip-mail-note" role={mailBad?'alert':undefined}>{mailBad?(email.trim()?pay.emailBad:pay.emailNeeded):pay.emailNote}</small></label>
+      <button type="submit" className="xip-file-b min-h-tap" disabled={paying} aria-disabled={!mailOk}>{paying?pay.opening:pay.buyFile.replace('{price}',new Intl.NumberFormat('en',{style:'currency',currency:file.currency.toUpperCase()}).format(file.cents/100))}</button>
+      <small className="xip-file-s">{pay.secure}</small></form>:null}
      {msg?<p className="xip-err" role="alert">{msg}</p>:null}
      <button type="button" className="xip-back min-h-tap" onClick={()=>setOpen(false)}>{copy.back}</button>
     </div>

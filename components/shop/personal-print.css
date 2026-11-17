@@ -46,7 +46,14 @@
 .fmp-wide { flex: 3 1 220px; min-inline-size: 0; }
 .fmp-f select { inline-size: 100%; min-inline-size: 0; border: 2px solid currentColor; background: #fff; font: inherit; font-size: 16px; padding-inline: 8px; }
 /* our own product beside the print (16.11.2026): the full-size file, a quieter second button */
-.xip-file { display: grid; gap: 4px; justify-items: stretch; text-align: center; }
-.xip-file-b { min-block-size: 44px; border: 2px solid currentColor; background: transparent; color: inherit; font-weight: 800; letter-spacing: .02em; cursor: pointer; }
-.xip-file-b:disabled { opacity: .6; cursor: progress; }
-.xip-file small { font-size: 12px; opacity: .8; }
+.xip-file { display: grid; gap: 10px; padding: 14px; border: 2px dashed currentColor; text-align: start; }
+.xip-file-h { font-size: 17px; font-weight: 900; line-height: 1.2; }
+.xip-file-p { font-size: 13px; line-height: 1.45; opacity: .85; margin-block-start: -6px; }
+.xip-mail input::placeholder { opacity: .45; }
+.xip-mail input:focus-visible { outline: 3px solid var(--mag-cyan, #1B9AD6); outline-offset: 1px; }
+.xip-mail.is-bad input { border-color: var(--mag-vermilion, #D71920); box-shadow: inset 0 0 0 1px var(--mag-vermilion, #D71920); }
+.xip-mail.is-bad small { color: var(--mag-vermilion, #D71920); opacity: 1; font-weight: 700; }
+.xip-file-b { min-block-size: 48px; border: 2px solid currentColor; background: var(--mag-vermilion, #D71920); color: #fff; font-weight: 900; font-size: 16px; letter-spacing: .02em; cursor: pointer; box-shadow: 3px 3px 0 currentColor; }
+.xip-file-b[aria-disabled="true"] { background: transparent; color: inherit; box-shadow: none; }
+.xip-file-b:disabled { opacity: .7; cursor: progress; }
+.xip-file-s { font-size: 12px; opacity: .75; text-align: center; }
