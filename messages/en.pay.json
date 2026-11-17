@@ -13,7 +13,7 @@
   "missing": "We could not find that order. Check the link from your payment page.",
   "back": "Back to FAN LIFE",
   "buyFile": "Get the file · {price}",
-  "buyFileNote": "The full-size file, yours to print anywhere. Paid securely with Stripe.",
+  "buyFileNote": "The 3600 × 4800 px file of this print, yours to print anywhere. It arrives by email in a minute.",
   "mail": {
     "from": "FAN LIFE <fanlife@dubelteam.com>",
     "replyTo": "fanlife@dubelteam.com",
@@ -92,6 +92,13 @@
       }
     }
   },
-  "emailLabel": "Email for your file",
-  "emailNote": "We send the file here, from fanlife@dubelteam.com."
+  "emailLabel": "Your email",
+  "emailNote": "We send your file here, from fanlife@dubelteam.com. Nothing else.",
+  "fileTitle": "Get the full-size file",
+  "emailPlaceholder": "you@example.com",
+  "emailNeeded": "Add your email: it is where your file goes.",
+  "emailBad": "That email does not look right. Check it and try again.",
+  "opening": "Opening the secure payment…",
+  "secure": "Secure payment by Stripe · cards, Apple Pay, Google Pay",
+  "emailRequired": "Add a valid email: it is where your file goes."
 }
