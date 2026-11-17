@@ -29,6 +29,8 @@ worker edits → the film arrives on Telegram
 
 ## The operator's procedure (what the scheduled task does)
 
+> **17.11.2026 — no films for now** (rule `flow-no-films`): the operator skips every Short/promo job and makes still images only (CLASSIFIED panels, then art-library pieces). Steps 4–5 below for jobs are paused until the owner lifts it.
+
 1. Mint the ticket (Supabase connector, project `afxpjfxwpdjvlmuoawda`):
    ```sql
    with t as (select replace(gen_random_uuid()::text||gen_random_uuid()::text,'-','') v)
