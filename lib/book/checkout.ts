@@ -18,6 +18,7 @@ export function tipSession(o:{order:string;lang:BookLang;cents:number}){
 
 export function paperbackSession(o:{order:string;lang:BookLang;region:Region;ship:Ship;email?:string}){
  const r=REGIONS[o.region],s=r.ship[o.ship]
+ if(!s)throw new Error('That post does not go there.')
  const name=o.ship==='express'?(o.lang==='he'?'משלוח מהיר':'Express post'):(o.lang==='he'?'דואר רגיל':'Standard post')
  return {mode:'payment',locale:o.lang==='he'?'auto':'en',client_reference_id:o.order,
   success_url:thanks(o.lang,'paperback'),cancel_url:back(o.lang,'#paperback'),
