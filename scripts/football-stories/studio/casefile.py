@@ -85,7 +85,8 @@ def research(topic: str, notes: str, cache: Path, log) -> dict:
     body = {'systemInstruction': {'parts': [{'text': RESEARCH}]},
             'contents': [{'role': 'user', 'parts': [{'text': 'SUBJECT:\n' + json.dumps(subject, ensure_ascii=False)}]}],
             'tools': [{'google_search': {}}], 'generationConfig': {'maxOutputTokens': 24000, 'temperature': 0.3}}
-    r, model = gemini.generate(_key(), body, wanted=os.environ.get('STORIES_RESEARCH_MODEL') or 'gemini-2.5-flash', budget_s=600, log=log)
+    r, model = gemini.generate(_key(), body, wanted=os.environ.get('STORIES_RESEARCH_MODEL') or 'gemini-2.5-flash',
+                               budget_s=float(os.environ.get('STORIES_WRITER_WAIT_S') or 90), log=log)   # no ten-minute wait on a busy Google (16–17.11.2026)
     text = ''.join(p.get('text', '') for c in r.get('candidates', []) for p in c.get('content', {}).get('parts', []))
     answer = deep_research._parse(text)
     facts = deep_research.grounded_facts(answer, r)

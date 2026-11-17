@@ -394,6 +394,38 @@ EMOTION_MOOD = {'tension': 'tension', 'dread': 'tension', 'release': 'joy', 'joy
 # The weights, in the order they argue: what the LINE names (W_SUBJECT × SAID) outranks the club's own drawer, which
 # outranks what the beat's type merely suggests; the mood breaks ties between pictures of the same thing.
 W_CLUB, W_ERA, W_SUBJECT, W_MOOD, W_TECH, W_USED, W_RECENT, SAID = 2.5, 1.0, 2.5, 1.5, 2.0, 4.0, 0.8, 1.6
+# What the picture SHOWS (owner, 17.11.2026: "the system chooses pictures unrelated to the story"): the words of a line
+# found in the picture's own caption (studio/sight: Gemini looked at it once, kit/sight/captions.json) count like a
+# subject; a line that says what the caption marks "NOT for" refuses it outright.
+W_CAPTION, W_AVOID = 2.2, 9.0
+STOP = set('''the and that this with from they them their there then than were was have has had into onto over under
+about after before when where what which while would could should been being just only also very much more most some
+such those these other another every each both into upon your ours ourselves himself herself itself said says made make
+first last next back away home time year years season night match game team club side once again still even ever down'''.split())
+
+
+def content_words(text: str) -> set[str]:
+    """The words of a line that can name what a picture shows: four letters or more, not a function word."""
+    return {w for w in re.findall(r"[a-z]{4,}", (text or '').lower()) if w not in STOP}
+
+
+_CAP_WORDS: dict = {}
+
+
+def caption_words(r: dict) -> tuple[set[str], set[str]]:
+    """(what the picture shows, what it must not be used for), from its sight caption; empty when never looked at."""
+    if r['id'] not in _CAP_WORDS:
+        shows, avoid = set(), set()
+        try:
+            from .sight import caption_of, load_captions
+            caps = _CAP_WORDS.setdefault('__caps__', load_captions())
+            c = caption_of(r, caps) or {}
+            shows = content_words(' '.join(str(c.get(k) or '') for k in ('caption', 'action', 'place')))
+            avoid = content_words(' '.join(c.get('avoid') or []))
+        except Exception:  # noqa: BLE001 — a picture nobody looked at is judged by its tags alone
+            pass
+        _CAP_WORDS[r['id']] = (shows, avoid)
+    return _CAP_WORDS[r['id']]
 
 
 def beat_query(shot: dict, emotion: str | None = None, era: str | None = None) -> dict:
@@ -404,7 +436,8 @@ def beat_query(shot: dict, emotion: str | None = None, era: str | None = None) -
     text = shot.get('narration') or ''
     said = tags_of(text, SUBJECTS)
     mood = [EMOTION_MOOD[emotion]] if emotion in EMOTION_MOOD else list(moods) or tags_of(text, MOODS)
-    return {'n': shot.get('n'), 'type': t, 'subjects': list(dict.fromkeys([*said, *subj])), 'said': said, 'moods': mood, 'era': era}
+    return {'n': shot.get('n'), 'type': t, 'subjects': list(dict.fromkeys([*said, *subj])), 'said': said, 'moods': mood, 'era': era,
+            'words': sorted(content_words(text))}
 
 
 
@@ -479,6 +512,15 @@ class Picker:
             s += W_ERA if r['era'] == era else -W_ERA
             why.append('era' if r['era'] == era else 'other era')
         said = set(beat.get('said') or ())
+        words = set(beat.get('words') or ())
+        if words:
+            shows, avoid = caption_words(r)
+            seen = sorted(words & shows)
+            if words & avoid:
+                s -= W_AVOID
+                why.append('caption says not for this line')
+            s += W_CAPTION * min(3, len(seen))
+            why += [f'shows:{x}' for x in seen[:3]]
         hit = [x for x in beat.get('subjects') or () if x in r['subjects']]
         s += sum(W_SUBJECT * (SAID if x in said else 1.0) for x in hit[:3])   # what the line itself names counts for more than what its type suggests
         why += [f'subject:{x}' for x in hit[:3]]
@@ -515,6 +557,26 @@ class Picker:
         # films do not open the same drawer
         out.sort(key=lambda x: (-x[0], hashlib.sha256(f'{self.film}:{beat.get("n")}:{x[1]["id"]}'.encode()).hexdigest()))
         return out
+
+    def relevance(self, r: dict, beat: dict) -> int:
+        """How many things the line names the picture is known to show: subjects the line SAYS, and caption words."""
+        said = set(beat.get('said') or ())
+        n = len([x for x in r['subjects'] if x in said])
+        if beat.get('words'):
+            shows, avoid = caption_words(r)
+            if set(beat['words']) & avoid:
+                return -1
+            n += len(set(beat['words']) & shows)
+        return n
+
+    def pick_relevant(self, beat: dict, kind: str = 'still', avoid=(), floor: int = 1) -> dict | None:
+        """The best candidate that shows something the line names (`floor` things at least) — or None, and the caller
+        shows the line another way (an object, type) rather than a picture about something else."""
+        for s, r, why in self.ranked(beat, kind, avoid):
+            if self.relevance(r, beat) >= floor:
+                self.use(r['id'], beat.get('n'), beat.get('t'), why=why, score=s)
+                return r
+        return None
 
     def pick(self, beat: dict, kind: str = 'still', avoid=()) -> dict | None:
         """The best candidate for the beat (and it is marked used on that shot), or None when nothing may be shown."""

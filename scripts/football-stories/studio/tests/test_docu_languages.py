@@ -112,7 +112,8 @@ class Languages(unittest.TestCase):
         self.assertAlmostEqual(m['documentary'] + m['explainer'] + m['kinetic'], 1.0, places=2)
         self.assertGreater(m['kinetic'], 0.0)                                   # 100% art in three beats: the short lines became type
         self.assertTrue(any(x['kind'] == 'kinetic' for b in beats for x in b['shots']))
-        self.assertEqual(m['chapters']['0'], {'explainers': 1, 'possible': 1})
+        self.assertEqual(m['chapters']['0']['possible'], 1)
+        self.assertGreaterEqual(m['chapters']['0']['explainers'], 1)   # the VOX pass adds its objects and odometers (docu/vox.py)
         self.assertEqual(m['chapters_short'], [])
         self.assertEqual({b['language'] for b in beats} - {'documentary', 'explainer', 'kinetic'}, set())
         self.assertEqual((X.PLAIN_MAX, X.EXPLAINERS_PER_CHAPTER), (0.55, 1))

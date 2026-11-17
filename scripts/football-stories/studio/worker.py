@@ -501,8 +501,15 @@ def main() -> int:
     st = Studio(base, secret, os.environ.get('GITHUB_RUN_ID', socket.gethostname())[:60] + '-gh')
     log = lambda m: print(time.strftime('%H:%M:%S'), m, flush=True)
     report_keys(st, log)
-    # one film per run: a 6-hour runner is enough for one 25-minute film with room to spare
-    run_once(st, root, log)
+    # one film per run: a 6-hour runner is enough for one 25-minute film with room to spare. A job that went back to
+    # waiting within minutes (Google busy for a CLASSIFIED research, 17.11.2026: two such jobs took every run of a night)
+    # does not use up the run — the next job in the queue is made in the same run.
+    for _ in range(3):
+        t0 = time.time()
+        if not run_once(st, root, log) or time.time() - t0 > 300:
+            break
+        log('Worker: that job is waiting again — the next job in the queue goes now')
+        os.environ.pop('STORIES_PEEK', None)   # the restored checkpoints were that job's; the next one starts clean
     return 0
 
 
