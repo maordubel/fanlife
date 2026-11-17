@@ -76,6 +76,8 @@ export function matchRatings(inp:RatingInput):Ratings{
   // clean sheet: a keeper or a defender who held it for an hour
   if(mins>=60&&l.conceded===0)r+=CLEAN[s.pos]*Math.min(1,end/90)
   if(inp.final&&upTo>=90){const mine=score[s.side],theirs=score[s.side?0:1];r+=(mine>theirs?0.3:mine<theirs?-0.25:0.05)*k}
+  // the top of the scale is earned (17.11.2026: a defender's two goals in a 5–0 read 10.0): above 8.3 every point counts half
+  if(r>8.3)r=8.3+(r-8.3)*0.5
   if(l.goals>=3)r=Math.max(r,9);else if(l.goals===2)r=Math.max(r,8.1)
   men.push({id,side:s.side,pos:s.pos,rating:ratingClamp(r),line:l})
  }

@@ -234,3 +234,8 @@
 .lgm-sheet[data-tone='night'] small { opacity: .9; }
 .lgm-camp-svg { display: block; inline-size: 100%; block-size: auto; border: 3px solid var(--mag-ink); box-shadow: 5px 5px 0 var(--mag-ink); background: var(--mag-night); }
 .lgm-camp-goal { font-family: var(--mag-goal); fill: var(--mag-white); stroke: var(--mag-ink); stroke-width: 1px; paint-order: stroke; opacity: 0; }
+/* full time: the way on is always in reach, and the kickers read on the night card */
+.lgm-ft > .lgm-actions:last-child { position: sticky; inset-block-end: 0; z-index: 2; margin: 12px -12px -12px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0px)); background: color-mix(in srgb, var(--lgm-night) 92%, transparent); border-block-start: 2px solid var(--mag-ink); }
+.lgm-ft > .lgm-actions:last-child .lgm-go { inline-size: 100%; }
+.lgm-live .lgm-kicker, .lgm-ft .lgm-kicker { color: var(--lgm-bronze-hi); }
+@media (max-width: 420px) { .lgm-bd-card li { gap: 4px; font-size: 13px; } .lgm-bd-card li em { font-size: 10px; } }
