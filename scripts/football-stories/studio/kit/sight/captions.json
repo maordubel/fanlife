@@ -719,6 +719,18 @@
 ],
 "id": "beat:common/street-dusk-kr"
 },
+"147d189b451b07bd": {
+"caption": "A textured light beige plaster wall surface with subtle variations.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"brick stadium wall",
+"locker room interior"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/a5-wall-tel-aviv-a-f38844f94caae720"
+},
 "1493d4ae5fb4d12e": {
 "caption": "An illustrated young boy stands holding a football under his arm, seen from behind.",
 "people": 1,
@@ -1018,6 +1030,20 @@
 ],
 "id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/20260514-171857-24b68147-e5a1-492f-8a29-dfd00b9e33-fba033d6196c5016"
 },
+"1d7d9eac7b0616f7": {
+"caption": "A circular football club crest featuring a profile illustration of a Native American man in a headdress.",
+"people": 1,
+"faces": true,
+"place": "abstract",
+"mood": "calm",
+"text": "KAA GENT STAMNUMMER 7",
+"avoid": [
+"stadium",
+"crowd",
+"players"
+],
+"id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/kaa-gent-6bde38e2b2aa0bb0"
+},
 "1e4eee9816b88e85": {
 "caption": "A headshot portrait of a man with short dark hair and a beard wearing a light blue and white jersey.",
 "people": 1,
@@ -1291,6 +1317,20 @@
 ],
 "id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/20260902-142147-chatgpt-image-sep-2-2026-02-21-46--968c90e1629fb480"
 },
+"238f1f80bf3145f8": {
+"caption": "A circular football club crest featuring the letters GCZ and two stars above.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "GCZ",
+"avoid": [
+"stadium",
+"crowd",
+"players"
+],
+"id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/grasshopper-club-zurich-0ec555f062a17042"
+},
 "23c5e3ea7151abd7": {
 "caption": "A family of four walks together with the father carrying a small child on his shoulders.",
 "people": 4,
@@ -1304,6 +1344,20 @@
 "a protest march"
 ],
 "id": "lib:ppl-family-four-fl2-kr"
+},
+"241dd487a7a94983": {
+"caption": "A shield-shaped football club crest with a black and white striped background and red letters FFC.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "FFC",
+"avoid": [
+"stadium",
+"crowd",
+"players"
+],
+"id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/fulham-fc-07c4cd2f60d4919c"
 },
 "250f89af27f4f601": {
 "caption": "Fists grip tightly onto a wire stadium fence while holding a red and white scarf.",
@@ -1697,6 +1751,19 @@
 ],
 "id": "cut:common/fig-striker-run-b-kr"
 },
+"30557fef9a2fd71d": {
+"caption": "A headshot of a young dark-haired man with a short beard against a light background.",
+"people": 1,
+"faces": true,
+"action": "posing for portrait",
+"place": "studio",
+"mood": "calm",
+"avoid": [
+"goal celebration",
+"post-match interview"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/89067474-fb10f3d93627c574"
+},
 "3079671d0bba9378": {
 "caption": "A vintage comic-style triangular pennant in red and white features decorative tassels and fringe.",
 "people": 0,
@@ -1806,6 +1873,20 @@
 ],
 "id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/42106932-6c7f78d821af9243"
 },
+"33087470589fd28e": {
+"caption": "The Crystal Palace FC football club logo features an eagle perched on a football above a building silhouette.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "CRYSTAL PALACE F.C.",
+"avoid": [
+"player signing",
+"match action",
+"stadium atmosphere"
+],
+"id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/crystal-palace-0544c6819edcd288"
+},
 "33bbadad3bb6ee95": {
 "caption": "Papercraft stadium scene with a football hitting the back of the net and cheering fans holding red scarves in the foreground.",
 "people": 15,
@@ -1833,6 +1914,35 @@
 ],
 "id": "cut:common/close-hand-press-n"
 },
+"3527906c2f771483": {
+"caption": "A digital graphic for a football trivia quiz showing a fan cheering with a raised fist.",
+"people": 1,
+"faces": true,
+"action": "cheering",
+"place": "other",
+"mood": "joy",
+"text": "FAN LIFE, HAPOEL PETAH TIKVA, THINK YOU KNOW YOUR CLUB?",
+"avoid": [
+"real match footage",
+"historical archive photo",
+"stadium atmosphere"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/hapoel-petah-tikva-51e9cc5ef19acc01"
+},
+"3545738c9c53e65a": {
+"caption": "The BSC Young Boys football club logo features the letters YB in a yellow circle.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "BSC YOUNG BOYS 1898",
+"avoid": [
+"player signing",
+"match action",
+"stadium atmosphere"
+],
+"id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/bsc-young-boys-5258c62014b70188"
+},
 "354f31b0c5319f82": {
 "caption": "A headshot portrait of a man with short dark hair and a beard wearing a light blue and white jersey.",
 "people": 1,
@@ -1847,6 +1957,20 @@
 "group celebrations"
 ],
 "id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/42057512-3fff99d76714f42c"
+},
+"359a0deeb037982a": {
+"caption": "A shield-shaped football club crest depicting a castle, a football, and two smaller heraldic shields.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "KVC WESTERLO",
+"avoid": [
+"stadium",
+"crowd",
+"players"
+],
+"id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/kvc-westerlo-655b73e186744967"
 },
 "35c440c7c29c4f01": {
 "caption": "A stylized paper-cut illustration of a sunrise over a horizon with swirling clouds.",
@@ -2688,6 +2812,20 @@
 ],
 "id": "beat:common/ferry-deck-kr"
 },
+"4d676e14d5593a24": {
+"caption": "The FC Lausanne-Sport logo consists of the interlocking blue letters L and S.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "LS",
+"avoid": [
+"player signing",
+"match action",
+"stadium atmosphere"
+],
+"id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/fc-lausanne-sport-0df780087fcb64b9"
+},
 "4dca8c8162853e1d": {
 "caption": "A layered cardboard cutout sculpture showing a male football player clapping in front of a stadium fence.",
 "people": 2,
@@ -2988,6 +3126,18 @@
 ],
 "id": "lib:ppl-player-celebrate-fl1-kr"
 },
+"5305fd8d6120398f": {
+"caption": "A textured beige and off-white concrete wall surface.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"brick stadium wall",
+"locker room interior"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/a5-wall-tel-aviv-a-ef6aff7408a85818"
+},
 "53227914b33eacff": {
 "caption": "A supporter from behind raises a scarf overhead in a floodlit stadium crowd.",
 "people": 15,
@@ -3099,6 +3249,20 @@
 ],
 "id": "cut:common/fig-kneel-despair-kr"
 },
+"5828c4d2cce98f2b": {
+"caption": "The shield-shaped club crest of Aston Villa featuring a golden lion.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "ASTON VILLA, 1874",
+"avoid": [
+"wildlife documentary",
+"zoo footage",
+"heraldry history"
+],
+"id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/aston-villa-2394fbb235a95a65"
+},
 "588fb6af113a3711": {
 "caption": "A papercraft illustration shows a crowded pub watching a football match on television with drinks raised.",
 "people": 23,
@@ -3150,6 +3314,20 @@
 "prison bars: never for a transfer or a signing"
 ],
 "id": "beat:hapoel-tel-aviv-1999-00/ticket-ball-turnstile"
+},
+"59affe94b5e37ede": {
+"caption": "The shield-shaped club crest of Kifisia Football Club featuring a stylized leaf design.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "KIFISIA FOOTBALL CLUB, 1932",
+"avoid": [
+"botanical study",
+"nature documentary",
+"environmental protest"
+],
+"id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/ae-kifisias-45897b954997430b"
 },
 "5a0fae65a5feecbc": {
 "caption": "A supporter wearing a flat cap holds up a scarf in front of empty stadium stands at an old ground.",
@@ -3532,6 +3710,19 @@
 ],
 "id": "beat:common/offside-flag-n"
 },
+"63c7e22f333ac331": {
+"caption": "A headshot of a young man with curly dark hair and light facial hair against a plain background.",
+"people": 1,
+"faces": true,
+"action": "posing for portrait",
+"place": "studio",
+"mood": "calm",
+"avoid": [
+"goal celebration",
+"post-match interview"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/95076457-deb86b99a5c3f130"
+},
 "647b75c4fa4305d9": {
 "caption": "A knitted striped football supporter scarf with fringed ends rests on a black background.",
 "people": 0,
@@ -3543,6 +3734,20 @@
 "captain armband"
 ],
 "id": "prop:supporter_scarf"
+},
+"647bb18dc45a051d": {
+"caption": "The Atromitos Athens football club logo features a blue star inside a circular border.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "ATROMITOS ATHINON 1923",
+"avoid": [
+"player signing",
+"match action",
+"stadium atmosphere"
+],
+"id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/atromitos-athens-0705e3962f7952a7"
 },
 "654b44d9761846ee": {
 "caption": "Solid yellow background with text reading AEK App Icon in the center.",
@@ -3791,6 +3996,19 @@
 "substitution"
 ],
 "id": "beat:common/penalty-spot-close-b-n"
+},
+"6c9f207cf192aeb4": {
+"caption": "A headshot of a young dark-haired man with short hair and facial hair against a plain backdrop.",
+"people": 1,
+"faces": true,
+"action": "posing for portrait",
+"place": "studio",
+"mood": "calm",
+"avoid": [
+"goal celebration",
+"post-match interview"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/95076441-faa2a5533d7f3038"
 },
 "6cc9a048232bf673": {
 "caption": "A photographer wearing a beanie, red vest, and jacket kneels down while aiming a large telephoto lens.",
@@ -4785,6 +5003,19 @@
 ],
 "id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/st-pauli-crest-mono-512-84b0816bec038ca8"
 },
+"8c31086b8ddf8862": {
+"caption": "A grey paved ground made of square stone blocks arranged in a grid.",
+"people": 0,
+"faces": false,
+"place": "street",
+"mood": "calm",
+"avoid": [
+"indoor flooring",
+"carpet",
+"grass"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/a6-pavement-tel-aviv-a-551b8edf9aff0b07"
+},
 "8c3184660c4ca93a": {
 "caption": "A crowd of supporters walks down a residential street toward a floodlit stadium at dusk.",
 "people": 50,
@@ -4959,6 +5190,20 @@
 "half time"
 ],
 "id": "beat:common/final-whistle-arms-b-kr"
+},
+"90a23811f1a38367": {
+"caption": "A circular football club crest featuring the letters FCZ and a single star above.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "FCZ",
+"avoid": [
+"stadium",
+"crowd",
+"players"
+],
+"id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/fc-z-rich-5a0984d3b31eca67"
 },
 "92bb2bc3e6c1a751": {
 "caption": "A worn corner flag stands on a pristine pitch under stadium floodlights at night.",
@@ -5751,6 +5996,18 @@
 ],
 "id": "art:terrace-empty"
 },
+"ac064205996830fc": {
+"caption": "An overhead shot of square stone paving slabs forming a repetitive pattern.",
+"people": 0,
+"faces": false,
+"place": "street",
+"mood": "calm",
+"avoid": [
+"indoor tiles",
+"walls"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/a6-pavement-tel-aviv-a-d5a725ddeb7910bb"
+},
 "ac20280734a35ff0": {
 "caption": "A papercraft illustration shows fans behind the goal holding scarves in a stadium.",
 "people": 20,
@@ -6013,6 +6270,19 @@
 ],
 "id": "lib:obj-bag-of-sweets-fl1-kr"
 },
+"b3ff4448ef00eef2": {
+"caption": "A close-up view of a pale grey textured concrete wall.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"people",
+"bricks",
+"tiles"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/a5-wall-tel-aviv-b-ab17334b33d00b38"
+},
 "b4864abee327e868": {
 "caption": "A referee stands on the pitch with arms raised under floodlights as players celebrate in front of a packed stadium.",
 "people": 50,
@@ -6178,6 +6448,34 @@
 ],
 "id": "cut:common/close-hands-clasp-prayer-c-kr"
 },
+"b777a8151f06b8b7": {
+"caption": "The Atalanta BC football club logo features a stylized profile of a woman's head.",
+"people": 1,
+"faces": true,
+"place": "abstract",
+"mood": "calm",
+"text": "ATALANTA 1907",
+"avoid": [
+"player signing",
+"match action",
+"stadium atmosphere"
+],
+"id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/atalanta-bc-baa340a0913934d7"
+},
+"b7831300ac0775a9": {
+"caption": "A collage featuring a vintage ticket for Maccabi Tel Aviv FC versus Olympiacos FC layered over newspapers and a team flag.",
+"people": 0,
+"faces": true,
+"place": "room",
+"era": "2020s",
+"mood": "tension",
+"text": "FAN LIFE UEFA.com RESPECT Maccabi Tel Aviv FC - Olympiacos FC TSC Arena Serbia Seat 1 Row 1 Block PRESS Entrane PRESS Gate WEST 50295808 12230527 13097094",
+"avoid": [
+"real stadium seats",
+"live match photos"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/fanlife-maccabi-tel-aviv-collage-press-ticket-macc-55e30f2243789e2b"
+},
 "b78d6608fdcdfce4": {
 "caption": "A cartoon boy in a red and white striped jersey juggles a football with his knee.",
 "people": 1,
@@ -6246,6 +6544,20 @@
 "training session"
 ],
 "id": "beat:common/free-kick-wall-kr"
+},
+"ba22aefe127c8027": {
+"caption": "The official crest of Hapoel Petah Tikva featuring a stylized figure with a sickle.",
+"people": 1,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "הפועל פתח-תקווה",
+"avoid": [
+"political rally",
+"communist propaganda",
+"historical labor movement"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/hapoel-petah-tikva-050913bbcab792fd"
 },
 "ba9ad7be70546d5b": {
 "caption": "A papercraft cutout shows a modern oval stadium surrounded by fans holding red flags and wearing red scarves.",
@@ -6756,6 +7068,20 @@
 ],
 "id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/7868835-0034a0d689327a05"
 },
+"c797904d04026711": {
+"caption": "A detailed football club crest featuring two seahorses flanking a shield with black and white stripes.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "NEWCASTLE UNITED",
+"avoid": [
+"stadium",
+"crowd",
+"players"
+],
+"id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/newcastle-united-569584b166cac29e"
+},
 "c83343c717363e08": {
 "caption": "Character design sheets show multiple figures in casual wear alongside musical instruments and fan gear.",
 "people": 18,
@@ -7150,6 +7476,20 @@
 ],
 "id": "beat:common/penalty-spot-close-n"
 },
+"d8c4a75d073b5f6e": {
+"caption": "The Chelsea FC football club logo features a blue lion holding a staff inside a circular emblem.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "CHELSEA FOOTBALL CLUB",
+"avoid": [
+"player signing",
+"match action",
+"stadium atmosphere"
+],
+"id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/chelsea-fc-ca7245bd1c793aca"
+},
 "d8f86dc99549d18d": {
 "caption": "Two illustrated hands grip a chain-link fence tightly.",
 "people": 2,
@@ -7391,6 +7731,20 @@
 "referees officiating"
 ],
 "id": "lib:era-scoreboard-fl2-kr"
+},
+"dfad74ce0a98a20e": {
+"caption": "The circular club crest of Maccabi Tel Aviv FC featuring a Star of David.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "MACCABI TEL AVIV FC, SINCE 1906",
+"avoid": [
+"religious ceremony",
+"political protest",
+"national flag"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/maccabi-tel-aviv-b0332cd68fb6134d"
 },
 "dfc30d7b45be167a": {
 "caption": "An illustrated young boy juggles a football with his knee.",
@@ -7772,6 +8126,19 @@
 "player dropping ball"
 ],
 "id": "cut:common/fig-captain-cup-b-kr"
+},
+"e7d0d3a418da2bf6": {
+"caption": "A light grey textured abstract surface resembling weathered plaster.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"people",
+"players",
+"match action"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/a5-wall-tel-aviv-b-31769e66c8bea1dd"
 },
 "e7fc234440e07cac": {
 "caption": "A comic-book illustration depicts a plastic cup with a frothy head and red liquid inside.",
@@ -8409,6 +8776,34 @@
 ],
 "id": "lib:obj-drum-fl1-kr"
 },
+"fb796d99243c43a2": {
+"caption": "A headshot of a young Black man with braided dark hair and facial hair against a plain background.",
+"people": 1,
+"faces": true,
+"action": "posing for portrait",
+"place": "studio",
+"mood": "calm",
+"avoid": [
+"goal celebration",
+"post-match interview"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/98041110-b5c64f99e1b6b0da"
+},
+"fb7c2f369edb3ba4": {
+"caption": "The circular club crest of Asteras Tripolis featuring a horse and rider.",
+"people": 1,
+"faces": false,
+"action": "riding",
+"place": "abstract",
+"mood": "calm",
+"text": "ASTERAS TRIPOLIS F.C., 1931, ASTERAS AKTOR",
+"avoid": [
+"cavalry charge",
+"historical war footage",
+"equestrian sport"
+],
+"id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/asteras-aktor-ce03c61ce2711afd"
+},
 "fb7f08db516b136a": {
 "caption": "A headshot portrait of a man with dark hair and light stubble wearing a dark shirt.",
 "people": 1,
@@ -8435,6 +8830,20 @@
 "actual television broadcast"
 ],
 "id": "beat:common/shootout-line-kr"
+},
+"fc47ab17c34cdc46": {
+"caption": "A collection of blue and white illustrated football stickers featuring a football, scarf, megaphone, and stadium elements.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"era": "2020s",
+"mood": "joy",
+"avoid": [
+"actual merchandise",
+"real scarfs",
+"real flags"
+],
+"id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/a8-stickers-hapoel-petah-tikva-original-5849cb0e820d0ced"
 },
 "fcd29ea9d0d52a8a": {
 "caption": "A headshot portrait of a man with short dark hair and a beard wearing a blue and white jersey.",
