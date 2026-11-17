@@ -29,14 +29,14 @@ export const PAPERBACK={cents:1800,name:{he:'קולקטיב שבור — הספ�
 
 const EU=['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','GB','CH','NO','IS']
 /** Lulu level per choice; cents are what the reader pays for the post */
-export const REGIONS:Record<Region,{label:{he:string;en:string};countries:string[];ship:Record<Ship,{cents:number;level:'MAIL'|'PRIORITY_MAIL'|'GROUND'|'EXPEDITED'|'EXPRESS';days:[number,number]}>;sample:{city:string;postcode:string;country_code:string;street1:string}}>={
+export const REGIONS:Record<Region,{label:{he:string;en:string};countries:string[];ship:Record<Ship,{cents:number;level:'MAIL'|'PRIORITY_MAIL'|'GROUND'|'EXPEDITED'|'EXPRESS';days:[number,number]}>;sample:{city:string;postcode:string;country_code:string;street1:string;state_code?:string}}>={
  il:{label:{he:'ישראל',en:'Israel'},countries:['IL'],sample:{street1:'1 Dizengoff St',city:'Tel Aviv',postcode:'6433201',country_code:'IL'},
   ship:{standard:{cents:1100,level:'MAIL',days:[12,25]},express:{cents:2600,level:'EXPRESS',days:[5,9]}}},
  eu:{label:{he:'אירופה ובריטניה',en:'Europe & UK'},countries:EU,sample:{street1:'1 Ermou St',city:'Athens',postcode:'10563',country_code:'GR'},
   ship:{standard:{cents:700,level:'MAIL',days:[7,14]},express:{cents:1900,level:'EXPRESS',days:[3,6]}}},
- na:{label:{he:'ארה״ב וקנדה',en:'USA & Canada'},countries:['US','CA'],sample:{street1:'1 Main St',city:'New York',postcode:'10001',country_code:'US'},
+ na:{label:{he:'ארה״ב וקנדה',en:'USA & Canada'},countries:['US','CA'],sample:{street1:'1 Main St',city:'New York',state_code:'NY',postcode:'10001',country_code:'US'},
   ship:{standard:{cents:700,level:'MAIL',days:[6,12]},express:{cents:1900,level:'EXPRESS',days:[3,5]}}},
- world:{label:{he:'שאר העולם',en:'Rest of the world'},countries:['AU','NZ','JP','SG','KR','HK','ZA','AE','TR','IN','TH'],sample:{street1:'1 George St',city:'Sydney',postcode:'2000',country_code:'AU'},
+ world:{label:{he:'שאר העולם',en:'Rest of the world'},countries:['AU','NZ','JP','SG','KR','HK','ZA','AE','TR','IN','TH'],sample:{street1:'1 George St',city:'Sydney',state_code:'NSW',postcode:'2000',country_code:'AU'},
   ship:{standard:{cents:1300,level:'MAIL',days:[12,28]},express:{cents:3000,level:'EXPRESS',days:[5,9]}}},
 }
 
