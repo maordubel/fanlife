@@ -13,7 +13,7 @@ import {fanShirtMap} from '@/lib/fanlife/catalog'
 import {readCareer} from '@/lib/legends/store'
 import {viewer} from '@/lib/legends/owner'
 import {cleanLine,cleanManager} from '@/lib/shop/personal/sign'
-import {renderSouvenir} from '@/lib/shop/personal/render'
+import {printPng} from '@/lib/shop/personal/render'
 import {drawingOf,hashOf,makePersonal,recipe,today} from '@/lib/shop/personal/make'
 import {PROBE,type Man} from '@/lib/shop/personal/xi-poster'
 import type {AwayStop,SouvenirSpec} from '@/lib/shop/personal/souvenirs'
@@ -47,7 +47,7 @@ async function handle(r:Request):Promise<Response>{
  const spec=built.spec,{s,path}=recipe(spec)
  if(b.dry)return json({proof:path})
  const id=`personal.${spec.c}.${hashOf(s,product)}.${product}`,name=who.value?`${who.value}’s ${KINDS[kind].replace(/^My /,'')}`:KINDS[kind]
- const out=await makePersonal(r,{id,subject:spec.c,kind:product,proof:path,size:{w:3600,h:4800},png:async()=>Buffer.from(await (await renderSouvenir(spec,3)).arrayBuffer()),
+ const out=await makePersonal(r,{id,subject:spec.c,kind:product,proof:path,size:{w:3600,h:4800},png:()=>printPng(spec,{k:3}),
   title:`${name} · ${product==='framed'?'Framed print':'Poster'}`,description:`${name} — ${spec.cn}. A FAN LIFE souvenir, drawn from the club’s own record and printed to order. An independent fan design — not an official club product.`})
  return 'error' in out?json({error:out.error},out.status):'pending' in out?json(out,202):json(out)
 }

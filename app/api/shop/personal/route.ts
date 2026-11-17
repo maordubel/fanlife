@@ -9,7 +9,7 @@ import {SITE_URL} from '@/lib/brand'
 import {client,pressProduct} from '@/lib/shop/build'
 import {readShop,updateShop} from '@/lib/shop/store'
 import {encode,signOf,cleanManager} from '@/lib/shop/personal/sign'
-import {renderXI} from '@/lib/shop/personal/render'
+import {printPng} from '@/lib/shop/personal/render'
 import {TEMPLATES,SHEET,PROBE,type XIPrintSpec} from '@/lib/shop/personal/xi-poster'
 import type {ShopProduct} from '@/lib/shop/types'
 import {bannedHere} from '@/lib/clubs/theme'
@@ -77,7 +77,7 @@ async function handle(r:Request):Promise<Response>{
  if(cnt&&cnt.day===today&&cnt.n>=DAY_LIMIT)return json({error:'That is plenty of prints for today — come back tomorrow.'},429)
  made.set(ip,{day:today,n:(cnt?.day===today?cnt.n:0)+1})
  try{
-  const api=await client(),file=async(l:'print'|'tee-back'|'tee-front',tag:string)=>{const png=Buffer.from(await (await renderXI(spec,3,l)).arrayBuffer());const sz=SHEET[l]
+  const api=await client(),file=async(l:'print'|'tee-back'|'tee-front',tag:string)=>{const png=await printPng(spec,{k:3,layout:l});const sz=SHEET[l]
    const up=await api.upload(`fanlife-xi-${hash}-${tag}.png`,png.toString('base64'));return {upload:{id:up.id,name:`${tag}.png`,preview:`${proof}${l==='print'?'':`&l=${l}`}`,width:sz.w*3,height:sz.h*3}}}
   const now=new Date().toISOString(),name=manager?`${manager}’s All-Time XI`:'My All-Time XI'
   // the tee: a small XI mark on the chest, the eleven on the back, on light shirts only (two inks, transparent)
