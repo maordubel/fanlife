@@ -47,6 +47,6 @@ describe('FAN LIFE INSIGHT (17.11.2026)',()=>{
   expect(sql).not.toMatch(/\bip\b\s+(text|inet)|user_agent|\bua\s+text/i)
   expect(sql).toMatch(/grant execute on function public\.worker_insight_report\([^)]*\) to service_role;/)
   expect(sql).toMatch(/revoke all on function public\.worker_insight_report\([^)]*\) from public, anon, authenticated;/)
-  expect(sql).toMatch(/cron\.schedule\('fanlife:insight-sweep'/)
+  expect(sql).toMatch(/cron\.schedule\('marketing:insight-sweep'/)
  })
 })

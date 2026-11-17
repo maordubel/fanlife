@@ -241,7 +241,7 @@ grant execute on function public.worker_insight_live() to service_role;
 -- retention: raw rows older than 180 days go nightly (free tier, CLAUDE.md universe check 4)
 do $$ begin
   if exists (select 1 from pg_extension where extname = 'pg_cron') then
-    perform cron.unschedule(jobid) from cron.job where jobname = 'fanlife:insight-sweep';
-    perform cron.schedule('fanlife:insight-sweep', '41 2 * * *', $q$delete from public.worker_insight_hit where day < (now() at time zone 'Europe/Athens')::date - 180$q$);
+    perform cron.unschedule(jobid) from cron.job where jobname = 'marketing:insight-sweep';
+    perform cron.schedule('marketing:insight-sweep', '41 2 * * *', $q$delete from public.worker_insight_hit where day < (now() at time zone 'Europe/Athens')::date - 180$q$);
   end if;
 end $$;
