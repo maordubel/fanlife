@@ -27,7 +27,7 @@ Tone: **WAR**. Status: **script ready**. Narrator: Kokoro George, Take B. Produc
 ## Sources
 
 1. [1998 FIFA World Cup final — Wikipedia (Ronaldo's fit, the team sheets)](https://en.wikipedia.org/wiki/1998_FIFA_World_Cup_final)
-2. Second publisher (BBC / Reuters 1998; the CPI findings) — slot, opened before recording.
+2. Filled 17.11.2026 — The Irish Times (Guardian service), FourFourTwo, The National, Football Italia and more: the full ledger is [atb16-ronaldo-1998.FACTS.md](atb16-ronaldo-1998.FACTS.md). The long film (storyboard `scripts/football-stories/studio/docu/films/atb_ronaldo_1998.py`) tells the day, the inquiry and the 2002 answer.
 
 A slot is filled before recording; a beat that rests only on a slot is cut if the slot stays empty.
 
