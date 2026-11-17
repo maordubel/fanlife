@@ -66,37 +66,66 @@ export async function renderSouvenir(spec:SouvenirSpec,k:number):Promise<ImageRe
  * satori clips every box with a <mask> (rasterised pixel by pixel) — rectangle masks become clip paths; and each kit is a whole
  * SVG inside the SVG — each is drawn once to a PNG at its own size. 72 s → 6 s for an eleven on two cores.
  */
-export async function printPng(spec:XIPrintSpec|SouvenirSpec):Promise<Buffer>{
- const fonts=[...await ogFonts(),...await extFonts()]
+export async function printPng(spec:XIPrintSpec|SouvenirSpec,o:{k?:number;layout?:Layout}={}):Promise<Buffer>{
+ const fonts=[...await ogFonts(),...await extFonts()],k=o.k??3,layout=o.layout??'print'
  let el:JSX.Element,w:number,h:number
  if('w' in spec&&(SOUVENIRS as readonly string[]).includes(String((spec as {w?:unknown}).w))){
   const sv=spec as SouvenirSpec,art:Record<number,string>={}
   await Promise.all(kitsOf(sv).map(async(p,i)=>{if(p.u){const a=await kitPrint(p.cl||sv.c,p.u);if(a)art[i]=a}}))
   let map:MapArt|undefined
   if(sv.w==='away'){const mw=1040,mh=sv.stops.length>8?520:600,m=drawMap([sv.home,...sv.stops],mw,mh);map={land:m.land,borders:m.borders,pts:sv.stops.map(x=>m.at(x)),home:m.at(sv.home),w:mw,h:mh}}
-  el=<SouvenirSheet spec={sv} k={3} art={art} map={map}/>;w=3600;h=4800
+  el=<SouvenirSheet spec={sv} k={k} art={art} map={map}/>;w=Math.round(1200*k);h=Math.round(1600*k)
  }else{
   const xi=spec as XIPrintSpec,art:Record<number,string>={}
-  await Promise.all(xi.n.map(async(p,i)=>{if(p.u){const a=await kitPrint(xi.c,p.u);if(a)art[i]=a}}))
-  const sh=SHEET.print;el=<XIPoster spec={xi} k={3} seal={await sealUri()} art={art} layout="print"/>;w=Math.round(sh.w*3);h=Math.round(sh.h*3)
+  if(layout!=='tee-front')await Promise.all(xi.n.map(async(p,i)=>{if(p.u){const a=await kitPrint(xi.c,p.u);if(a)art[i]=a}}))
+  const sh=SHEET[layout];el=<XIPoster spec={xi} k={k} seal={await sealUri()} art={art} layout={layout}/>;w=Math.round(sh.w*k);h=Math.round(sh.h*k)
  }
- const svg=await flatKits(clipsNotMasks(await satori(el,{width:w,height:h,fonts})))
+ const raw=await satori(el,{width:w,height:h,fonts})
+ const svg=await flatKits(flatShadows(clipsNotMasks(raw)))
  return sharp(Buffer.from(svg),{limitInputPixels:false}).png({compressionLevel:6}).toBuffer()
 }
-/** satori's rectangle masks (and masks inside them) as clip paths: the same cut, drawn by geometry instead of per pixel */
+/**
+ * satori's rectangle cuts, flattened: every rectangle mask (and every rectangle clip path, however deeply satori chains them)
+ * becomes one clip path holding the single rectangle that is the intersection of the chain. Same cut, drawn by geometry
+ * instead of per pixel, and with no clip-on-clip chains (which not every rasteriser honours). Anything that is not a plain
+ * rectangle (rounded corners, shapes) stays exactly as satori wrote it.
+ */
+type Box={x:number;y:number;w:number;h:number}
+const boxOf=(attrs:string):Box|null=>{
+ if(/\b(rx|ry|transform)=/.test(attrs))return null
+ const n=(k:string)=>{const m=attrs.match(new RegExp(`\\b${k}="([-\\d.]+)"`));return m?Number(m[1]):k==='x'||k==='y'?0:NaN}
+ const b={x:n('x'),y:n('y'),w:n('width'),h:n('height')};return Object.values(b).every(Number.isFinite)?b:null}
+const cut=(a:Box,b:Box):Box=>{const x=Math.max(a.x,b.x),y=Math.max(a.y,b.y);return {x,y,w:Math.max(0,Math.min(a.x+a.w,b.x+b.w)-x),h:Math.max(0,Math.min(a.y+a.h,b.y+b.h)-y)}}
+const rectOf=(b:Box)=>`<rect x="${+b.x.toFixed(2)}" y="${+b.y.toFixed(2)}" width="${+b.w.toFixed(2)}" height="${+b.h.toFixed(2)}"/>`
 export function clipsNotMasks(svg:string):string{
- const rect=new Map<string,string>();let n=-1,s=svg
- while(n!==rect.size){n=rect.size
-  s=s.replace(/<mask id="([^"]+)"[^>]*><rect ([^>]*?)fill="#fff"(?: mask="url\(#([^)]+)\)")?\/>(?:<path [^>]*fill="none" stroke="#000"[^>]*\/>)?<\/mask>/g,(m,id:string,attrs:string,p?:string)=>{
-   if(p&&!rect.has(p))return m
-   rect.set(id,attrs.trim());return `<clipPath id="${id}"${p?` clip-path="url(#${p})"`:''}><rect ${attrs.trim()}/></clipPath>`})}
+ const own=new Map<string,{box:Box;up?:string}>()
+ for(const m of svg.matchAll(/<clipPath id="([^"]+)"(?: clip-path="url\(#([^)]+)\)")?><rect ([^>]*?)\/><\/clipPath>/g)){const b=boxOf(m[3]!);if(b)own.set(m[1]!,{box:b,up:m[2]})}
+ const masks=new Set<string>()
+ for(const m of svg.matchAll(/<mask id="([^"]+)"[^>]*><rect ([^>]*?)fill="#fff"(?: mask="url\(#([^)]+)\)")?\/>(?:<path [^>]*fill="none" stroke="#000"[^>]*\/>)?<\/mask>/g)){const b=boxOf(m[2]!);if(b){own.set(m[1]!,{box:b,up:m[3]});masks.add(m[1]!)}}
+ const memo=new Map<string,Box|null>()
+ const eff=(id:string,depth=0):Box|null=>{if(memo.has(id))return memo.get(id)!;const o=own.get(id);let r:Box|null=null
+  if(o&&depth<64){if(!o.up)r=o.box;else{const u=eff(o.up,depth+1);r=u?cut(o.box,u):null}}
+  memo.set(id,r);return r}
+ let s=svg.replace(/<clipPath id="([^"]+)"(?: clip-path="url\(#([^)]+)\)")?><rect ([^>]*?)\/><\/clipPath>/g,(m,id:string)=>{const b=eff(id);return b?`<clipPath id="${id}">${rectOf(b)}</clipPath>`:m})
+ s=s.replace(/<mask id="([^"]+)"[^>]*><rect ([^>]*?)fill="#fff"(?: mask="url\(#([^)]+)\)")?\/>(?:<path [^>]*fill="none" stroke="#000"[^>]*\/>)?<\/mask>/g,(m,id:string)=>{const b=masks.has(id)?eff(id):null;return b?`<clipPath id="${id}">${rectOf(b)}</clipPath>`:m})
  let k=0
  return s.replace(/<(\w+)\b([^>]*?) mask="url\(#([^)]+)\)"([^>]*?)(\/?)>/g,(m,tag:string,a:string,id:string,b:string,sl:string)=>{
-  if(!rect.has(id))return m
+  const mb=masks.has(id)?eff(id):null;if(!mb)return m
   const has=(a+b).match(/ clip-path="url\(#([^)]+)\)"/)
   if(!has)return `<${tag}${a} clip-path="url(#${id})"${b}${sl}>`
+  const cb=eff(has[1]!);if(!cb)return m
   const nid=`fl-c${k++}`
-  return `<clipPath id="${nid}" clip-path="url(#${has[1]})"><rect ${rect.get(id)} clip-path="url(#${id})"/></clipPath><${tag}${(a+b).replace(has[0],'')} clip-path="url(#${nid})"${sl}>`})
+  return `<clipPath id="${nid}">${rectOf(cut(mb,cb))}</clipPath><${tag}${(a+b).replace(has[0],'')} clip-path="url(#${nid})"${sl}>`})
+}
+/**
+ * satori's hard shadows (box-shadow with no blur) are a whole-sheet filter that blurs by nothing and floods one colour: the
+ * same shadow is the shape itself filled with that colour, inside the same mask. Blurred shadows are left as they are.
+ */
+export function flatShadows(svg:string):string{
+ const flood=new Map<string,string>()
+ for(const m of svg.matchAll(/<filter id="([^"]+)"[^>]*><feGaussianBlur stdDeviation="0" result="b"\/><feFlood flood-color="([^"]+)" in="SourceGraphic" result="f"\/><feComposite in="f" in2="b" operator="in"\/><\/filter>/g))flood.set(m[1]!,m[2]!)
+ return svg.replace(/<g( mask="url\(#[^)]+\)")? filter="url\(#([^)]+)\)"( opacity="1")?><(rect|path) ([^>]*?)fill="#fff" stroke="#fff"/g,(m,mk:string|undefined,f:string,op:string|undefined,tag:string,a:string)=>{
+  const c=flood.get(f);return c?`<g${mk??''}${op??''}><${tag} ${a}fill="${c}" stroke="${c}"`:m})
 }
 /** every kit (an SVG inside the SVG) drawn once to a PNG at the size it is placed at */
 async function flatKits(svg:string):Promise<string>{

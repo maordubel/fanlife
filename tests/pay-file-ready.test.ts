@@ -33,10 +33,10 @@ describe('the file is ready before anyone is told (17.11.2026)',()=>{
 })
 describe('satori masks become clip paths',()=>{
  it('turns rectangle masks, nested ones and bordered ones into clips',()=>{
-  const svg='<svg><mask id="a"><rect x="0" y="0" width="10" height="10" fill="#fff"/><path d="M0" fill="none" stroke="#000"/></mask><mask id="b"><rect x="1" y="1" width="5" height="5" fill="#fff" mask="url(#a)"/></mask><rect mask="url(#b)" clip-path="url(#z)" width="3"/><path mask="url(#a)"/></svg>'
+  const svg='<svg><clipPath id="z"><rect x="2" y="0" width="20" height="20"/></clipPath><mask id="a"><rect x="0" y="0" width="10" height="10" fill="#fff"/><path d="M0" fill="none" stroke="#000"/></mask><mask id="b"><rect x="1" y="1" width="5" height="5" fill="#fff" mask="url(#a)"/></mask><rect mask="url(#b)" clip-path="url(#z)" width="3"/><path mask="url(#a)"/></svg>'
   const out=clipsNotMasks(svg)
   expect(out).not.toContain('<mask');expect(out).not.toMatch(/ mask=/)
-  expect(out).toContain('<clipPath id="b" clip-path="url(#a)">')
-  expect((out.match(/clip-path=/g)??[]).length).toBeGreaterThanOrEqual(4)
+  expect(out).toContain('<clipPath id="b"><rect x="1" y="1" width="5" height="5"/></clipPath>')
+  expect((out.match(/clip-path=/g)??[]).length).toBeGreaterThanOrEqual(2)
  })
 })
