@@ -154,7 +154,7 @@ beat("Brazil came through the semi-final against the Netherlands on penalties.",
      img('shootout', 'push', veil=0.1), stamp('SEMI-FINAL · ON PENALTIES', 'us', x=300, y=200, dt=2.4, size=96, rot=-3, plate=True),
      type='record', emotion='tension', intensity=0.6, pad=0.3, sound=[('stamp', 2.4, 1.0, 0.6)])
 beat("Waiting for them in the final were the hosts. France had never won the World Cup.",
-     img('flags', 'push', veil=0.1), word('BRAZIL v FRANCE', bg='ink', size=170, small='THE HOLDERS · THE HOSTS', at=2.6),
+     img('flags', 'push', veil=0.1), word('BRAZIL v FRANCE', bg='ink', size=130, small='THE HOLDERS · THE HOSTS', at=2.6),
      type='versus', emotion='tension', intensity=0.7, pad=0.3)
 beat("France had a playmaker named Zinedine Zidane. Brazil had the phenomenon.",
      img('volley', 'push', veil=0.05), type='illustration', emotion='wonder', intensity=0.7, pad=0.3)
@@ -232,7 +232,7 @@ beat("At eight eighteen, a modified team sheet. Edmundo is on the bench. Ronaldo
      type='turning', emotion='release', intensity=1.0, pad=0.4, sound=[('impact2', 4.0, 2.0, 0.8)])
 beat("Thirty minutes. Two team sheets. One name.",
      dict(kind='explain', form='timeline', title='THE THIRTY MINUTES', left='7.48 PM', right='9.00 PM',
-          marks=[dict(at=0.0, label='EDMUNDO')], ticks=[dict(at=0.4, label='RONALDO', value=1, hot=True)]),
+          marks=[dict(at=0.2, label='EDMUNDO')], ticks=[dict(at=0.55, label='RONALDO', value=1, hot=True)]),
      type='record', emotion='tension', intensity=0.9, pad=0.5)
 beat("Forty-two minutes before the World Cup final, Brazil had changed their team. And put back a player who, that afternoon, had lost consciousness.",
      img('tunnel', 'pull', veil=0.2), type='illustration', emotion='dread', intensity=0.9, pad=0.5)
@@ -354,7 +354,7 @@ beat("He scores in every match, except the quarter-final against England.",
      word('SCORED IN|6 OF 7', bg='us', size=220, small='EVERY MATCH BUT THE QUARTER-FINAL v ENGLAND'),
      type='stat', emotion='pride', intensity=0.8, pad=0.4)
 beat("Brazil reach the final. Their opponents are Germany. Yokohama, the thirtieth of June.",
-     img('bowl', 'push', veil=0.05), word('GERMANY v BRAZIL', bg='ink', size=170, small='YOKOHAMA · 30 JUNE 2002', at=2.6),
+     img('bowl', 'push', veil=0.05), word('GERMANY v BRAZIL', bg='ink', size=120, small='YOKOHAMA · 30 JUNE 2002', at=2.6),
      type='versus', emotion='tension', intensity=0.8, pad=0.3)
 beat("Sixty-seven minutes. Rivaldo shoots. Germany's goalkeeper, Oliver Kahn, cannot hold it.",
      img('header-b', 'push', veil=0.0), clock(67), type='illustration', emotion='tension', intensity=1.0, pad=0.2,
