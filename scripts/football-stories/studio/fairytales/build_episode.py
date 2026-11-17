@@ -257,7 +257,24 @@ def deyellow(img: Image.Image, band=(36, 74), smin=0.30) -> Image.Image:
     return Image.fromarray(cv2.cvtColor(hsv, cv2.COLOR_HSV2RGB_FULL))
 
 
+# Hapoel's own plates (gn-/gm-) are painted in red shirts. Only a red club may borrow them; the rest need their own
+# recoloured copy (pgn-stars, agn-stars). The red-shirt stars once went out in the PAO and AEK films (owner, 17.11.2026).
+NEUTRAL_SHARED = {'gn-ball'}
+
+
+def check_plates(ep: dict) -> None:
+    h = ep['palette']['primary'].lstrip('#')
+    r, g, b = (int(h[i:i + 2], 16) for i in (0, 2, 4))
+    red_club = r > 120 and r > 2 * g and r > 2 * b
+    if ep.get('club') == 'hapoel-tel-aviv' or red_club:
+        return
+    bad = [s['plate'] for s in ep['shots'] if s['plate'].split('-')[0] in ('gn', 'gm') and s['plate'] not in NEUTRAL_SHARED]
+    if bad:
+        raise SystemExit(f"{ep.get('club')}: Hapoel's red-shirt plates {bad} — use the club's own recoloured plate")
+
+
 def plan(ep: dict, narr: Path, langs: list[str]) -> list[dict]:
+    check_plates(ep)
     t = 0.0
     out = []
     for s in ep['shots']:
