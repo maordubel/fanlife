@@ -38,3 +38,5 @@ export function verify(raw:string,header:string|null,secret=process.env.STRIPE_W
  const want=createHmac('sha256',secret).update(`${t}.${raw}`).digest('hex')
  return header.split(',').filter(p=>p.startsWith('v1=')).some(p=>{const a=Buffer.from(p.slice(3)),b=Buffer.from(want);return a.length===b.length&&timingSafeEqual(a,b)})
 }
+/** the same authenticated call for other sellers on this account (the book, 17.11.2026) */
+export const stripeCall=call
