@@ -1,0 +1,13 @@
+{
+ "_note": "Owner corrections to a drawn kit (rule 18: the owner is a source). Merged by scripts/kits/build-pack-kit-svgs.ts over the joined kit of the same club and id, after the archive and the pack; the evidence names the owner and the picture he sent.",
+ "hapoel-tel-aviv": {
+  "kit-kit-1999-00-home": {
+   "shirt": {"design": "stripes", "colours": ["red", "black"], "hex": {"red": "#d0141f", "black": "#111111"},
+    "measured": {"runsX": [[0, 0.19, 0], [0.19, 0.218, 1], [0.218, 0.782, 0], [0.782, 0.81, 1], [0.81, 1, 0]]},
+    "artwork": {"collarInk": "#d0141f"}},
+   "maker": "Nike",
+   "sponsor": "כתר",
+   "evidence": [{"publisher": "owner", "ref": "Maor, 17.11.2026: \"רק פס שחור אחד בכל צד, לא כל החולצה פסים\"", "image": "/club-kits/hapoel-tel-aviv/references/owner-1999-00-home.png"}]
+  }
+ }
+}

@@ -68,7 +68,7 @@ function shirtG(k,id){
   else if(d==='gradient'){pat=`<rect width="340" height="320" fill="url(#${id}g)"/>`}
   else if(d==='graphic'){pat=`<g fill="${t}" opacity=".18">${Array.from({length:60},(_,i)=>`<circle cx="${96+(i%10)*17+(Math.floor(i/10)%2)*8}" cy="${96+Math.floor(i/10)*30}" r="3.2"/>`).join('')}</g>`}
   const light=lum(b)>150,ink=light?'#111':'#fff',edge=shade(b,-.55);
-  const collar=d==='contrasting sleeves'?b:t;
+  const collar=art.collarInk||(d==='contrasting sleeves'?b:t);
   const asset=(src)=>typeof RESOLVE==='function'?RESOLVE(src):src;
   const sp=art.sponsorSrc?`<image href="${esc(asset(art.sponsorSrc))}" x="110" y="128" width="120" height="40" preserveAspectRatio="xMidYMid meet"/>`:k.sponsor?sponsorSVG(k.sponsor,b,{neutral:!!k.neutralSponsor,trim:t,patterned:['stripes','hoops','pinstripes','half-and-half','sash','chest band','diagonal','graphic'].includes(d)}):'';
   const mm=k.maker?markOf('makers',k.maker):null,mAr=mm?(q=>q[2]/q[3])(mm.viewBox.split(' ').map(Number)):1;
