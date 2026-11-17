@@ -116,9 +116,19 @@ class Cast(unittest.TestCase):
     def test_no_hero_when_the_archive_names_too_few_scorers(self):
         from studio import characters as C
         L = self.season()
+        for k, c in enumerate(L['claims']):
+            c['fact']['club_goals'] += 20
+            c['fact']['scorers'] = [{'name': f'Player {k % 5}', 'minute': 30}]
+        self.assertIsNone(C.hero(L))   # few scorers named, and nobody dominates them
+
+    def test_a_dominant_hero_with_incomplete_scorers_gets_no_count(self):
+        from studio import characters as C
+        L = self.season()
         for c in L['claims']:
             c['fact']['club_goals'] += 20
-        self.assertIsNone(C.hero(L))
+        C.attach(L)
+        h = next(c for c in L['claims'] if c['id'] == 'character:hero')
+        self.assertFalse(h['fact']['scorers_complete'])
 
     def test_the_angle_line_never_talks_about_the_film(self):
         for lines in H.ANGLE_OPEN.values():

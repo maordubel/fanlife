@@ -56,8 +56,9 @@ def hero(ledger: dict) -> dict | None:
         return None
     total = sum(g['goals'] for g in goals.values())
     scored = sum(c['fact']['club_goals'] for c in by.values() if (c.get('fact') or {}).get('kind') == 'match')
-    if scored and total < 0.5 * scored:
-        return None   # the archive names too few of the season's scorers to say who carried it
+    top = max(g['goals'] for g in goals.values())
+    if scored and total < 0.5 * scored and not (top >= 8 and top >= 0.4 * total):
+        return None   # the archive names too few of the season's scorers to say who carried it (unless one man dominates what it names)
     name, g = max(goals.items(), key=lambda kv: (kv[1]['goals'] + 2 * kv[1]['decisive'] + 3 * kv[1]['big'], kv[1]['goals']))
     if g['goals'] < 5 or g['goals'] < 0.2 * total:
         return None
