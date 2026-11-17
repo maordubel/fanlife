@@ -709,6 +709,15 @@
     "bodyHash": "55272ed97745e3a30af828e3925dc79dbf8dfd139e31892e66566f6493b37363",
     "fetchedAt": "2026-11-12T11:51:42.867Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/01/13/lage-am-millerntor-13-januar-2025/",
+    "locator": "p94",
+    "quote": "In einem Bericht der Sportschau wurde auf das anstehende Urteil bezüglich der Kosten bei Hochsicherheitsspielen geschaut. Dabei kommen mit Oke Göttlich sowie einem Anwalt, einem Politiker und einem Sportphilosophen(!) unterschiedliche Perspektiven zu Wort. // Sportschau (8min)",
+    "bodyHash": "49ecc64831129ba3764f2ff2ade9ee43203a82cbf769b2fadb666f75da9149e7",
+    "fetchedAt": "2026-11-17T12:06:44.694Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -716,8 +725,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-12T11:51:42.867Z",
-  "updatedAt": "2026-11-12T11:51:42.867Z"
+  "createdAt": "2026-11-17T12:06:44.694Z",
+  "updatedAt": "2026-11-17T12:06:44.694Z"
  },
  {
   "id": "ga-f0288a576187c45b",
@@ -1684,6 +1693,15 @@
     "bodyHash": "455c4507f664ebb1e1f5db0856aa69a32586ab1908a3b69775b246260c66f7f8",
     "fetchedAt": "2026-11-09T12:08:38.659Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/01/13/lage-am-millerntor-13-januar-2025/",
+    "locator": "p97",
+    "quote": "Bei ARTE gibt es aktuell eine Doku über „Die Beatles in Hamburg“ (53min)",
+    "bodyHash": "49ecc64831129ba3764f2ff2ade9ee43203a82cbf769b2fadb666f75da9149e7",
+    "fetchedAt": "2026-11-17T12:06:44.694Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1691,8 +1709,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-09T12:08:38.659Z",
-  "updatedAt": "2026-11-09T12:08:38.659Z"
+  "createdAt": "2026-11-17T12:06:44.694Z",
+  "updatedAt": "2026-11-17T12:06:44.694Z"
  },
  {
   "id": "ga-0ca8402e929e8694",
@@ -1831,15 +1849,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2022/12/08/lage-am-millerntor-08-dezember-2022/",
-    "locator": "p15",
-    "quote": "– WDR: Die WM-Sklaven (Podcast, 4 Folgen a‘ ca. 40min)",
-    "bodyHash": "7ae458ed8099b42a9507d2d3870e903c4895ba2c2f2d47c909b87ed138b1bc72",
-    "fetchedAt": "2026-11-04T11:36:02.704Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2022/12/09/lage-am-millerntor-09-dezember-2022-2/",
     "locator": "p15",
     "quote": "– WDR: Die WM-Sklaven (Podcast, 4 Folgen a‘ ca. 40min)",
@@ -1900,6 +1909,15 @@
     "bodyHash": "54bccb2233d26a7bd513eb647ced8fa56b5274c4b4ff68e13edbdccca7e3678c",
     "fetchedAt": "2026-11-08T10:47:48.400Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/01/14/lage-am-millerntor-14-januar-2025/",
+    "locator": "p10",
+    "quote": "Beim Werder & FCSP-Podcast Flugkopfball (40min) geht es gleich zu Beginn um das Spiel, ab 18m00s geht es kurz um den Gästeblock.",
+    "bodyHash": "6158f6c1693e914057dc51435d94b1de4b0b0fec1468a97a345e87d369bd9fc8",
+    "fetchedAt": "2026-11-17T12:06:44.696Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1907,8 +1925,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-08T10:47:48.400Z",
-  "updatedAt": "2026-11-08T10:47:48.400Z"
+  "createdAt": "2026-11-17T12:06:44.696Z",
+  "updatedAt": "2026-11-17T12:06:44.696Z"
  },
  {
   "id": "ga-c61079b9040fc062",
@@ -2809,15 +2827,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2022/12/09/lage-am-millerntor-09-dezember-2022-2/",
-    "locator": "p10",
-    "quote": "– ZDF: Die Skandal-WM – Wie Katar den Fußball kauft (44min)",
-    "bodyHash": "fbe06ee332050a946b01aa90959632c491797a675314e7c1a457d51088cb5de7",
-    "fetchedAt": "2026-11-04T11:36:02.705Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2022/12/12/lage-am-millerntor-12-dezember-2022/",
     "locator": "p10",
     "quote": "– ZDF: Die Skandal-WM – Wie Katar den Fußball kauft (44min)",
@@ -2878,6 +2887,15 @@
     "bodyHash": "2c438cdb37882694455c58fcf33039a63ac063eac02b99c0d400eb86213a26fd",
     "fetchedAt": "2026-11-15T11:31:08.063Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/01/09/lage-am-millerntor-09-januar-2025/",
+    "locator": "p43",
+    "quote": "Menschen, die in den 50er bis 70er Jahren Kinder im Stadtteil St. Pauli waren, erzählen von ihren Erinnerungen, ergänzt mit viel originalem Bildmaterial. // YouTube (44min)",
+    "bodyHash": "12a69769ddedb729abfcee4d1e5e6e1ddac4dddc2d3497941994befed876f5e8",
+    "fetchedAt": "2026-11-17T12:06:44.692Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2885,8 +2903,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-15T11:31:08.063Z",
-  "updatedAt": "2026-11-15T11:31:08.063Z"
+  "createdAt": "2026-11-17T12:06:44.692Z",
+  "updatedAt": "2026-11-17T12:06:44.692Z"
  },
  {
   "id": "ga-468216f78ee2fc35",
@@ -3226,6 +3244,15 @@
     "bodyHash": "2e94496c22d30c451a805c0d16b476a4bc097a113b57d961ccf25718ce30f67f",
     "fetchedAt": "2026-11-08T10:47:50.876Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2024/12/25/female-st-pauli-stories-28-jana/",
+    "locator": "p12",
+    "quote": "ARD-Doku: Blindenfußballerinnen bei der WM (31min)",
+    "bodyHash": "e73c7f6f38de27df3aeb8cacaa75b37784286428d36f2fbecf97b798b006a0aa",
+    "fetchedAt": "2026-11-17T12:06:41.919Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -3233,8 +3260,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-08T10:47:50.876Z",
-  "updatedAt": "2026-11-08T10:47:50.876Z"
+  "createdAt": "2026-11-17T12:06:41.919Z",
+  "updatedAt": "2026-11-17T12:06:41.919Z"
  },
  {
   "id": "ga-e7140d3faa9a7eb3",
@@ -3613,5 +3640,35 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-11-15T11:31:16.359Z",
   "updatedAt": "2026-11-15T11:31:16.359Z"
+ },
+ {
+  "id": "ga-2209803e6ad151b8",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "29",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/01/06/lage-am-millerntor-06-januar-2025/",
+    "locator": "p76",
+    "quote": "Birgit und Horst Lohmeyer wohnen in Jamel und kämpfen dort gegen alle Widerstände für mehr Demokratie. Beim NDR findet Ihr unter anderem eine Doku aus 2016 (29min) und die aktuelle Doku „Jamel – Lauter Widerstand“ (68min).",
+    "bodyHash": "ce03ab942d7cf2962f3d5dd1683cf60925ab6b90b364f006586b29181fbbe860",
+    "fetchedAt": "2026-11-17T12:06:44.687Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-17T12:06:44.687Z",
+  "updatedAt": "2026-11-17T12:06:44.687Z"
  }
 ]

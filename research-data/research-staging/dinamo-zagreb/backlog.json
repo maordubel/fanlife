@@ -64,14 +64,6 @@
   "owner": null
  },
  {
-  "id": "continue-bad-blue-boys-posts",
-  "priority": "P3",
-  "task": "Bad Blue Boys posts: 3 page(s) read of 4; the scheduled task continues from the checkpoint.",
-  "taskHe": "Bad Blue Boys posts: נקראו 3 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
-  "status": "queued",
-  "owner": null
- },
- {
   "id": "limit-bad-blue-boys-0",
   "priority": "P3",
   "task": "Fan-organisation history; not a results database.",

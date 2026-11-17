@@ -1824,5 +1824,63 @@
   ],
   "completeArchiveClaim": false,
   "approvedForProduction": 0
+ },
+ {
+  "schemaVersion": 1,
+  "id": "2026-11-17T12-05-53-206Z-02bf89",
+  "clubId": "hajduk-split",
+  "startedAt": "2026-11-17T12:05:53.206Z",
+  "finishedAt": "2026-11-17T12:06:19.906Z",
+  "providers": [
+   "hajduk-official",
+   "torcida",
+   "wikipedia-hajduk-records",
+   "hajduk-official-history-en"
+  ],
+  "state": "partial_budget",
+  "counts": {
+   "requests": 4,
+   "documentsRead": 43,
+   "newDocuments": 0,
+   "changedDocuments": 2,
+   "unchangedDocuments": 41,
+   "recordsExtracted": 0,
+   "blockedEndpoints": 0,
+   "budgetLeft": 8
+  },
+  "diagnostics": [
+   {
+    "code": "RETRY_LATER",
+    "providerId": "torcida",
+    "url": "https://www.torcida.hr/wp-json/wp/v2/posts?per_page=25&page=16&orderby=id&order=asc&_fields=id%2Clink%2Cslug%2Ctitle%2Ccontent%2Cdate_gmt%2Cmodified_gmt%2Ctype%2Cparent%2Ccategories",
+    "message": "The operation was aborted due to timeout"
+   },
+   {
+    "code": "NEEDS_PARSER",
+    "providerId": "hajduk-official",
+    "url": null,
+    "message": "No tested parser for HNK Hajduk Split yet: documents are kept, nothing is extracted."
+   },
+   {
+    "code": "NEEDS_PARSER",
+    "providerId": "torcida",
+    "url": null,
+    "message": "No tested parser for Torcida Split yet (torcida-history-v1 is planned): documents are kept, nothing is extracted."
+   },
+   {
+    "code": "NEEDS_PARSER",
+    "providerId": "wikipedia-hajduk-records",
+    "url": null,
+    "message": "No tested parser for Wikipedia yet: documents are kept, nothing is extracted."
+   },
+   {
+    "code": "NEEDS_PARSER",
+    "providerId": "hajduk-official-history-en",
+    "url": null,
+    "message": "No tested parser for HNK Hajduk yet: documents are kept, nothing is extracted."
+   }
+  ],
+  "completeArchiveClaim": false,
+  "approvedForProduction": 0
  }
 ]

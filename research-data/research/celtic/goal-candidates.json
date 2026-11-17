@@ -442,6 +442,15 @@
     "bodyHash": "4ff308b5fd3beefe1b5b344e5249c05b3b61c31fc4843b22c7a6ccba247313ea",
     "fetchedAt": "2026-11-04T11:34:48.872Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1933-12-25-queens-park-2-3-celtic-league-division-1/",
+    "locator": "p4",
+    "quote": "As early as three minutes Frank O’Donnell put Celtic ahead but in the same amount of time W. Browning equalised and in the 10th minute Charlie Napier put the bhoys in front. In the second half Browning again equalised in 51 minutes and in 80 minutes Jimmy McGrory put Celtic in front, but this time Browning could not respond as he was off injured.",
+    "bodyHash": "4cb2efd284eda3aca02668f4f47eb881be7d70695b8aff76719b6c31d997ce2b",
+    "fetchedAt": "2026-11-17T12:05:33.263Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -449,8 +458,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-04T11:34:48.872Z",
-  "updatedAt": "2026-11-04T11:34:48.872Z"
+  "createdAt": "2026-11-17T12:05:33.263Z",
+  "updatedAt": "2026-11-17T12:05:33.263Z"
  },
  {
   "id": "ga-5359cb1bdfb22aae",
@@ -1018,24 +1027,6 @@
   "evidence": [
    {
     "sourceId": "thecelticwiki",
-    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/70s-pictures/1970-71-pics/1970-08-10-celtic-3-1-rangers-glasgow-cup-final-pictures/",
-    "locator": "p1",
-    "quote": "Match | 1969-70 Pictures | 1969 – 1970 | 70's Pictures | Year By Year Pictures | Picture Library",
-    "bodyHash": "4d1c7f6268b953e4c4f355353acdc0f98d55fd98213ce3f6febb474b7f8f4b6f",
-    "fetchedAt": "2026-11-12T11:50:07.017Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "thecelticwiki",
-    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/70s-pictures/1970-71-pics/1970-08-12-celtic-5-3-clyde-league-cup-pictures/",
-    "locator": "p1",
-    "quote": "Match | 1970-71 Pictures | 1970 – 1971 | 70's Pictures | Year By Year Pictures | Picture Library",
-    "bodyHash": "6ba10fb842ee7bfb15cd89fc55db843625608d892bb36a698b381c4d7c04dc79",
-    "fetchedAt": "2026-11-12T11:50:07.017Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "thecelticwiki",
     "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/70s-pictures/1970-71-pics/1970-08-15-celtic-2-2-dundee-united-league-cup-pictures/",
     "locator": "p1",
     "quote": "Match | 1970-71 Pictures | 1970 – 1971 | 70's Pictures | Year By Year Pictures | Picture Library",
@@ -1087,6 +1078,24 @@
     "bodyHash": "2d7ff79802e2acbe747339c0cc4d72cd153924d0677e49c1d53379be2656240e",
     "fetchedAt": "2026-11-15T11:29:50.909Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1933-09-23-st-johnstone-1-1-celtic-league-division-1/",
+    "locator": "p3",
+    "quote": "Harry Fergusson put St Johnstone in front in 25 minutes and it was the 70th minute before Willie Buchan equalised. Napier went off hurt after the second-half was only five minutes' old and did not resume. McGrory was well held by Frank Moulds until he was hurt in the second-half and moved to the wing. Under the circumstances Celtic were fortunate to get a share of the points. Bobby Hogg was not at his best.",
+    "bodyHash": "b84b294ee3d3a4bb9890cadc7d9471577b9bb5070c978d743bda880eafa11a67",
+    "fetchedAt": "2026-11-17T12:05:30.292Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1935-10-12-rangers-2-0-celtic-glasgow-cup-final/",
+    "locator": "p3",
+    "quote": "After totally dominating the first-half Celtic succumbed to second half goals scored in the 65th and 70th minutes from James Fiddes whose shot hit the post and came out again, and Torry Gillick direct from a corner kick.",
+    "bodyHash": "244db66ff4f7ca8ef6a8139e47844be5007252d0513be190cdd348ae227ee7cd",
+    "fetchedAt": "2026-11-17T12:05:42.207Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1094,8 +1103,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-15T11:29:50.909Z",
-  "updatedAt": "2026-11-15T11:29:50.909Z"
+  "createdAt": "2026-11-17T12:05:42.207Z",
+  "updatedAt": "2026-11-17T12:05:42.207Z"
  },
  {
   "id": "ga-e21180845e547f26",
@@ -1651,6 +1660,15 @@
     "bodyHash": "31b3ce2a0b489beba610f2f6481c5f97209aaf9280eb3659497c7b4e78c983a0",
     "fetchedAt": "2026-10-30T10:27:51.632Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1933-12-30-falkirk-2-0-celtic-league-division-1/",
+    "locator": "p32",
+    "quote": "In the 23rd minute of the second half, however, Anderson completed a fine run by Meechan by securing a grand second goal. The Celtic roused themselves after that, but were defied by a sound defence, valiant service being given by Hutchieson, Murray, and Nesbit.",
+    "bodyHash": "d6713f1a10809504691a88b97e59bfb4a50714157a5988bbc8f5c2cc66b71d0b",
+    "fetchedAt": "2026-11-17T12:05:33.264Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1658,8 +1676,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-30T10:27:51.632Z",
-  "updatedAt": "2026-10-30T10:27:51.632Z"
+  "createdAt": "2026-11-17T12:05:33.264Z",
+  "updatedAt": "2026-11-17T12:05:33.264Z"
  },
  {
   "id": "ga-d5298ba35db99b78",
@@ -2173,6 +2191,15 @@
     "bodyHash": "c96ae484bf7ebf2afc8190354865bb9302952a219db18480ba0ffd7ed10b8b5e",
     "fetchedAt": "2026-11-13T11:31:38.454Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1933-09-30-celtic-3-1-queens-park-league-division-1/",
+    "locator": "p3",
+    "quote": "Goals by Hugh O'Donnell and Jimmy McStay saw Celtic take a 2-0 lead at the break, but early in the second-half Queen's Park pulled a goal back through iside-left Martin, and this was the position up to the 67th minute when Alec Thomson got Cetlic's third goal.",
+    "bodyHash": "2f42ad95676537f12db4371323aeaeff7cb83c6b191d96bf76f9085b675aa7c0",
+    "fetchedAt": "2026-11-17T12:05:30.292Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2180,8 +2207,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-13T11:31:38.454Z",
-  "updatedAt": "2026-11-13T11:31:38.454Z"
+  "createdAt": "2026-11-17T12:05:30.292Z",
+  "updatedAt": "2026-11-17T12:05:30.292Z"
  },
  {
   "id": "ga-88685149807493b8",
@@ -2263,6 +2290,15 @@
     "bodyHash": "7944803023de12989c73af77fa6ec95e062855a2132754775cad897f1511d4f2",
     "fetchedAt": "2026-10-31T09:58:09.080Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1935-03-23-ayr-united-1-0-celtic-league-division-1/",
+    "locator": "p3",
+    "quote": "In the 89th minute with Celtic pressing for the winner ex-Ranger Jimmy Fleming got the ball, ran upfield, and passed to Terry McGibbon who swung the ball over for Andy McCall to score with the very last kick of the match.",
+    "bodyHash": "0671d2e3c9f2cc647f88702a1b44adc61610672547eede636ee5d736936d4ded",
+    "fetchedAt": "2026-11-17T12:05:39.331Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2270,8 +2306,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-31T09:58:09.080Z",
-  "updatedAt": "2026-10-31T09:58:09.080Z"
+  "createdAt": "2026-11-17T12:05:39.331Z",
+  "updatedAt": "2026-11-17T12:05:39.331Z"
  },
  {
   "id": "ga-9b0d3052201c543d",
@@ -2839,15 +2875,6 @@
   "evidence": [
    {
     "sourceId": "thecelticwiki",
-    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/50s-pictures/1951-52-pics/1951-09-24-celtic-1-2-clyde-glasgow-cup-final-pictures/",
-    "locator": "p1",
-    "quote": "Match | 1951-52 Pictures | 1951 – 1952 | 50's Pictures | Year By Year Pictures | Picture Library",
-    "bodyHash": "d3e856b295fecc20716bea12c5775f06ead057e694dd6893c50bdeb1d5e910ae",
-    "fetchedAt": "2026-11-06T11:29:51.475Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "thecelticwiki",
     "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/50s-pictures/1952-53-pics/1952-09-20-celtic-2-1-rangers-league-pictures/",
     "locator": "p1",
     "quote": "Match | 1952-53 Pictures | 1952 – 1953 | 50's Pictures | Year By Year Pictures | Picture Library",
@@ -2908,6 +2935,15 @@
     "bodyHash": "decb60e7d42c6031fb157997395d8165264819aa175b89563012792c0b0f3d64",
     "fetchedAt": "2026-11-07T10:41:37.448Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1933-08-30-third-lanark-1-4-celtic-glasgow-cup/",
+    "locator": "p3",
+    "quote": "Charlie Napier opened the scoring for Celtic in the 50th minute and ten minutes later Johnny Crum made it 0-2. Thirds had chances and before Hasson pulled a goal back to make it 1-2, Joe Breslin should have scored. Crum got his second and Celtic's third before Jimmy McGrory put the issue beyond doubt in the last minute.",
+    "bodyHash": "3f6d945f152acae33add0a187dbd2cb999d3205470a503393dc487a45d272ff0",
+    "fetchedAt": "2026-11-17T12:05:30.290Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2915,8 +2951,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-07T10:41:37.448Z",
-  "updatedAt": "2026-11-07T10:41:37.448Z"
+  "createdAt": "2026-11-17T12:05:30.290Z",
+  "updatedAt": "2026-11-17T12:05:30.290Z"
  },
  {
   "id": "ga-ee5b3c55d11a63bc",
@@ -3316,5 +3352,194 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-11-15T11:30:02.917Z",
   "updatedAt": "2026-11-15T11:30:02.917Z"
+ },
+ {
+  "id": "ga-b761ec6091467ed6",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "75",
+  "scorerAlias": "Bertie Thomson",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1932-12-03-airdrieonians-0-3-celtic-league-division-1/",
+    "locator": "p3",
+    "quote": "Airdrieonians' attack was led by on-loan Celtic player Jack Connor who won a penalty at the end of the game, but his team-mate, full-back George McQueen, failed to convert. Celtic had earlier won a penalty when Jimmy Crapnell had fouled Hugh O'Donnell and Charlie Napier made no mistake from the spot. Fan's favourite Bertie Thomson scored in the 37th and 75th minutes.",
+    "bodyHash": "e8e6cebc3917fc6aacb9fdfdd8587ddfc987c7845ae935526717d88ddf0643a5",
+    "fetchedAt": "2026-11-17T12:05:27.307Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-17T12:05:27.307Z",
+  "updatedAt": "2026-11-17T12:05:27.307Z"
+ },
+ {
+  "id": "ga-f062681256553362",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "76",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1933-03-11-motherwell-4-2-celtic-league-division-1/",
+    "locator": "p3",
+    "quote": "Willie MacFadyen goals in 37 and 39 got Motherwell off to a flyer before Frank O'Donnell pulled one back in 43 minutes. In the second half there were no further goals until the 76th minute when it was again MacFadyen who scored only for McGrory to counter in 78 minutes but MacFadyen had the last word, scoring in 82 minutes.",
+    "bodyHash": "47c891a661ffc6a068ec2c5ac86f94225a4b26f4c2857871de109ac565fa0b4f",
+    "fetchedAt": "2026-11-17T12:05:30.284Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1935-02-09-celtic-1-1-partick-thistle-scottish-cup/",
+    "locator": "p3",
+    "quote": "With both goalkeepers in top form it took until the 76th minute to break the deadlock at Parkhead when Thistle took the lead through former Linlithgow Rose outside-right Robert Regan. Four minutes later Hugh O'Donnell equalised and forced the replay.",
+    "bodyHash": "e5e701fd5dae559303bf0bf2c0a4ba234fd60b56de518da62eade1390a20a529",
+    "fetchedAt": "2026-11-17T12:05:39.329Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-17T12:05:39.329Z",
+  "updatedAt": "2026-11-17T12:05:39.329Z"
+ },
+ {
+  "id": "ga-ccaa0e7fe16b7f33",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "89",
+  "scorerAlias": "Jimmy McGrory",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1933-12-02-celtic-4-2-airdrieonians-league-division-1/",
+    "locator": "p3",
+    "quote": "Alec Thomson opened the scoring in 17 minutes and Johnny Crum added another in 28 minutes to give Celtic a 2-0 lead at the break. Inside-left Collins pulled a goal back in 59 minutes but Jimmy McGrory scored again with a header from a cross from Willie Hughes in 67 minutes. Outside-left Tom Mooney of Airdrieonians scored his side's second in 85 to cut the leeway to one goal but Willie Hughes restored the two goal cushion in the 89th minute.",
+    "bodyHash": "643125c4527a00f96ad3f73b63f900f7708261b8bb4136ab989736374a288879",
+    "fetchedAt": "2026-11-17T12:05:33.262Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-17T12:05:33.262Z",
+  "updatedAt": "2026-11-17T12:05:33.262Z"
+ },
+ {
+  "id": "ga-85ddb82f5a3691d3",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "29",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1934-02-24-celtic-2-2-aberdeen-league-division-1/",
+    "locator": "p3",
+    "quote": "Goals from Johnny Crum and Willie Dunn in the 5th and 29th minutes are cancelled out by centre Paddy Moore , and outside-left Robertson strikes in the 39th and 68th minutes.",
+    "bodyHash": "cbe758f2d6c1127cedccc6e4a612fd6a985351ee860649aac96c4e4859e7e868",
+    "fetchedAt": "2026-11-17T12:05:33.266Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-17T12:05:33.266Z",
+  "updatedAt": "2026-11-17T12:05:33.266Z"
+ },
+ {
+  "id": "ga-d8abe1d68018ed6e",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "54",
+  "scorerAlias": "Torry Gillick",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1934-09-24-celtic-1-2-rangers-glasgow-cup-sf/",
+    "locator": "p3",
+    "quote": "Archie Macaulay puts Rangers in front after 9 minutes and held the lead until the 54th minute when John McInally equalised. This match which was watched by a small crowd for such games. Torry Gillick scored the winner for Rangers.",
+    "bodyHash": "70cc82e4d586b5ba99050328be59eb000772e61bf9456f1faa1c8f6fea0bb2c8",
+    "fetchedAt": "2026-11-17T12:05:36.248Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-17T12:05:36.248Z",
+  "updatedAt": "2026-11-17T12:05:36.248Z"
+ },
+ {
+  "id": "ga-2746235d2815561a",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "73",
+  "scorerAlias": "George Hay",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1935-09-30-celtic-1-1-third-lanark-glasgow-cup-sf/",
+    "locator": "p3",
+    "quote": "George Hay scored to put Third Lanark in front after 25 minutes and it was not until the 73rd minute that Johnny Crum equalised.",
+    "bodyHash": "b54babd00a8dc9e02f771eb17c438c715a7a4bb68e6aa092ef2ec8cc50695237",
+    "fetchedAt": "2026-11-17T12:05:42.206Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-17T12:05:42.206Z",
+  "updatedAt": "2026-11-17T12:05:42.206Z"
  }
 ]
