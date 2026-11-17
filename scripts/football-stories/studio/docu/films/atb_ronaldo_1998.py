@@ -127,7 +127,7 @@ beat("Saint-Denis. The World Cup final. Seventy-two minutes before kick-off, Bra
      img('signing', 'push', veil=0.05, focus='30% 55%'), type='open', emotion='tension', intensity=0.7, pre=0.2, pad=0.1,
      meta=dict(plain=True), sound=[('tick', 0.0, 2.4, 0.5)])
 beat("Ronaldo, twenty-one years old, Brazil's top scorer at the tournament, is not on it.",
-     img('tunnel-gate', 'push', veil=0.05), stamp('NOT ON THE SHEET', 'them', x=520, y=460, dt=2.6, size=120, rot=-4, plate=True),
+     img('tunnel-gate', 'push', veil=0.05), stamp('NOT ON THE SHEET', 'them', x=240, y=460, dt=2.6, size=120, rot=-4, plate=True),
      type='open', emotion='dread', intensity=0.9, pad=0.1, meta=dict(plain=True), sound=[('stamp', 2.6, 1.0, 0.7)])
 beat("That afternoon, in the team hotel, he had suffered a convulsive fit.",
      img('hotel', 'slam', veil=0.0), type='open', emotion='dread', intensity=0.9, pad=0.1, meta=dict(plain=True), sound=[('impact', 0.4, 1.4, 0.7)])
@@ -151,7 +151,7 @@ beat("On the way to the final, Ronaldo scored four goals.",
      dict(kind='stat', value='4', label='RONALDO · GOALS ON THE WAY TO THE FINAL', dt=0.4),
      type='stat', emotion='pride', intensity=0.7, pad=0.4, sound=[('impact', 0.4, 1.4, 0.6)])
 beat("Brazil came through the semi-final against the Netherlands on penalties.",
-     img('shootout', 'push', veil=0.1), stamp('SEMI-FINAL · ON PENALTIES', 'us', x=300, y=200, dt=2.4, size=96, rot=-3, plate=True),
+     img('shootout', 'push', veil=0.1), stamp('SEMI-FINAL · ON PENALTIES', 'us', x=140, y=200, dt=2.4, size=84, rot=-3, plate=True),
      type='record', emotion='tension', intensity=0.6, pad=0.3, sound=[('stamp', 2.4, 1.0, 0.6)])
 beat("Waiting for them in the final were the hosts. France had never won the World Cup.",
      img('flags', 'push', veil=0.1), word('BRAZIL v FRANCE', bg='ink', size=130, small='THE HOLDERS · THE HOSTS', at=2.6),
@@ -310,7 +310,7 @@ beat("Imagine if I stopped him playing and Brazil lost.",
      dict(kind='quote', text='“Imagine if I stopped him playing and Brazil lost.”', who='DR LÍDIO TOLEDO · TO THE INQUIRY'),
      type='quote', emotion='dread', intensity=0.9, pad=0.6)
 beat("Doctors from outside the team said later that he should never have played that night. One called it an absolute error.",
-     img('stretcher-b', 'pull', veil=0.2), stamp('AN ABSOLUTE ERROR', 'them', x=480, y=460, dt=4.2, size=110, rot=-3, plate=True),
+     img('stretcher-b', 'pull', veil=0.2), stamp('AN ABSOLUTE ERROR', 'them', x=200, y=460, dt=4.2, size=110, rot=-3, plate=True),
      type='illustration', emotion='dread', intensity=0.8, pad=0.4, sound=[('stamp', 4.2, 1.0, 0.6)])
 beat("The inquiry found no proof that Nike had forced anything. The questions about that afternoon were never fully answered.",
      img('archive', 'pull', veil=0.2), stamp('NO PROOF', 'us', x=520, y=460, dt=2.4, size=150, rot=-3, plate=True),
@@ -323,7 +323,7 @@ chapter('CHAPTER SIX', 'THE KNEE', 'INTER · 1999–2000', 'stretcher')
 beat("November nineteen ninety-nine. Ronaldo is playing for Inter, against Lecce.", img('rain', 'push', veil=0.05),
      flap('1998', '1999', at=2.4, d=3.0, small='NOVEMBER · SERIE A'), type='illustration', emotion='tension', intensity=0.6, pad=0.3)
 beat("His right knee gives way. A tendon is ruptured. He needs surgery.", img('stretcher', 'slam', veil=0.0),
-     stamp('TENDON RUPTURED', 'them', x=520, y=460, dt=2.6, size=120, rot=-4, plate=True),
+     stamp('TENDON RUPTURED', 'them', x=240, y=460, dt=2.6, size=120, rot=-4, plate=True),
      type='illustration', emotion='grief', intensity=0.9, pad=0.4, sound=[('stamp', 2.6, 1.0, 0.7)])
 beat("Five months later, April two thousand. The Coppa Italia final, against Lazio. Ronaldo comes back.",
      img('tunnel', 'push', veil=0.05), flap('1999', '2000', at=1.6, d=3.0, small='APRIL · COPPA ITALIA FINAL'),
