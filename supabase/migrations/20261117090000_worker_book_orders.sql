@@ -2,7 +2,7 @@
 -- Broken Collective's own sales through FAN LIFE's Stripe (owner, 17.11.2026): tips to keep the writing going, and the
 -- paperback printed and posted by Lulu. One row per checkout. RLS on, no policies: only the server (service key) reads or
 -- writes. Small by nature; an unpaid row leaves after two days, paid rows stay (they are the sales record).
-create table if not exists public.book_orders (
+create table if not exists public.worker_book_orders (
   id             text primary key check (id ~ '^bk_[A-Za-z0-9_-]{6,20}$'),
   kind           text not null check (kind in ('tip','paperback','tee','cap')),
   lang           text not null check (lang in ('he','en')),
@@ -26,14 +26,14 @@ create table if not exists public.book_orders (
   paid_at        timestamptz,
   shipped_at     timestamptz
 );
-alter table public.book_orders enable row level security;
-revoke all on public.book_orders from anon, authenticated;
-create index if not exists book_orders_status_created on public.book_orders (status, created_at);
+alter table public.worker_book_orders enable row level security;
+revoke all on public.worker_book_orders from anon, authenticated;
+create index if not exists worker_book_orders_status_created on public.worker_book_orders (status, created_at);
 
 do $$ begin
   if exists (select 1 from pg_extension where extname = 'pg_cron') then
-    perform cron.unschedule(jobid) from cron.job where jobname = 'book:orders-sweep';
-    perform cron.schedule('book:orders-sweep', '37 3 * * *',
-      $q$delete from public.book_orders where status in ('open','expired') and created_at < now() - interval '2 days'$q$);
+    perform cron.unschedule(jobid) from cron.job where jobname in ('book:orders-sweep','marketing:book-orders-sweep');
+    perform cron.schedule('marketing:book-orders-sweep', '37 3 * * *',
+      $q$delete from public.worker_book_orders where status in ('open','expired') and created_at < now() - interval '2 days'$q$);
   end if;
 end $$;
