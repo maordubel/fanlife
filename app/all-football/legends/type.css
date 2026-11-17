@@ -26,7 +26,7 @@
 .lgm .lgm-panel h2, .lgm .lgm-panel > header h2, .lgm .tl-league h2, .lgm .tl-numbers h2 { font: 400 var(--lgm-t-h2)/.95 var(--mag-display); letter-spacing: .01em; text-transform: uppercase; margin: 0 0 10px; }
 .lgm .lgm-panel h3, .lgm .tl-board h3, .lgm .tl-round h3, .lgm .lgm-clubline h3, .lgm .lgm-break-head h3 { font: 400 var(--lgm-t-h3)/1 var(--mag-display); letter-spacing: .02em; text-transform: uppercase; }
 /* a working title in the game is a title, not the brand's script */
-.lgm .lgm-app .wkl-assist .wk-logo { font: 400 var(--lgm-t-h2)/.95 var(--mag-display); letter-spacing: .01em; text-transform: uppercase; -webkit-text-stroke: 0; text-shadow: 2px 2px 0 var(--mag-ink); color: var(--mag-white); }
+.lgm .lgm-app .wkl-assist .wk-logo { font: 400 var(--lgm-t-h2)/.95 var(--mag-display); letter-spacing: .01em; text-transform: uppercase; -webkit-text-stroke: 0; text-shadow: none; color: var(--mag-ink); margin: 0 0 8px; }
 
 /* kickers and labels */
 .lgm .lgm-kicker, .lgm .lgm-ticket-top, .lgm .lgm-potm-k { font: 400 var(--lgm-t-kicker)/1.3 var(--mag-mono); letter-spacing: .14em; text-transform: uppercase; }
