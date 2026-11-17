@@ -5,6 +5,7 @@ import {useReducedMotion} from '@/components/clubs/rumble/shared'
 import {Stars} from './Brand'
 import {posName} from './LegendCard'
 import {Sheet} from './Sheet'
+import {CampScene} from './CampScene'
 
 type Send=(a:Record<string,unknown>,ok?:string)=>void
 
@@ -22,7 +23,7 @@ export function CampSheet({v,busy,send}:{v:CareerView;busy:boolean;send:Send}){
  useEffect(()=>{if(step!==0)return;const t=window.setTimeout(()=>setStep(1),4200);return()=>window.clearTimeout(t)},[step])
  const men=[...v.squad].sort((a,b)=>hash(`${v.id}:camp:${a.id}`)-hash(`${v.id}:camp:${b.id}`)).slice(0,4)
  return <Sheet id="lgm-camp" tone="night" locked wide kicker="Pre-season" title={step===0?'The training camp':step===1?'Camp report':'Who is for sale?'}>
-  {step===0?<div className="lgm-camp" data-testid="legends-camp"><div className="lgm-camp-pitch" aria-hidden="true"><i className="c1"/><i className="c2"/><i className="c3"/><i className="ball"/><b className="m1"/><b className="m2"/><b className="m3"/></div>
+  {step===0?<div className="lgm-camp" data-testid="legends-camp"><CampScene reduced={reduced}/>
     <p className="lgm-fine" aria-live="polite">Cones out, balls down. {v.clubName} start the work before the first whistle.</p>
     <p className="lgm-actions"><button type="button" className="lgm-ghost min-h-tap" onClick={()=>setStep(1)}>Skip</button></p></div>
   :step===1?<div className="lgm-camp-report" data-testid="legends-camp-report">

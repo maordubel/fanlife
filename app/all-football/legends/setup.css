@@ -145,7 +145,7 @@
 .lgm-contacts { margin-block-start: 10px; padding-block-start: 8px; border-block-start: 2px dashed var(--lgm-rule); }
 
 /* 17.11.2026 — an error is never hidden behind a sheet; a bid that cannot be accepted says why */
-.lgm-toast { position: fixed; inset-inline: 12px; inset-block-end: max(16px, env(safe-area-inset-bottom)); margin-inline: auto; max-inline-size: 520px; display: flex; align-items: center; gap: 10px; padding: 12px 14px; background: var(--mag-vermilion, var(--lgm-rt-poor)); color: var(--mag-white); border: 3px solid var(--mag-ink); box-shadow: 5px 5px 0 var(--mag-ink); font: 600 15px/1.35 var(--mag-body); animation: lgm-toast-in .22s ease-out; }
+.lgm-toast { position: fixed; inset-inline: 12px; inset-block-end: calc(88px + env(safe-area-inset-bottom, 0px)); margin-inline: auto; max-inline-size: 520px; display: flex; align-items: center; gap: 10px; padding: 12px 14px; background: var(--mag-vermilion); color: var(--mag-white); border: 3px solid var(--mag-ink); box-shadow: 5px 5px 0 var(--mag-ink); font: 600 15px/1.35 var(--mag-body); animation: lgm-toast-in .22s ease-out; }
 .lgm-toast p { flex: 1; margin: 0; }
 .lgm-toast .lgm-x { color: inherit; }
 @keyframes lgm-toast-in { from { transform: translateY(14px); opacity: 0 } to { transform: none; opacity: 1 } }
@@ -213,3 +213,29 @@
 .tl-fam[data-fam='natural'] { background: var(--lgm-rt-good); color: var(--mag-white); }
 .tl-fam[data-fam='accomplished'] { background: var(--lgm-rt-low); color: var(--mag-ink); }
 .tl-fam[data-fam='competent'] { background: var(--mag-lilac); }
+
+/* ───────── 17.11.2026 · round 2: the career on a phone ───────── */
+.lgm-toast-ok { background: var(--lgm-night); color: var(--mag-white); border-color: var(--mag-ink); }
+.lgm-toast-tick { display: grid; place-items: center; inline-size: 28px; block-size: 28px; flex: none; font: 400 16px/1 var(--mag-goal); color: var(--mag-white); background: var(--mag-green); border: 2px solid var(--mag-ink); border-radius: 50%; }
+@media (min-width: 900px) { .lgm-toast { inset-block-end: 24px; } }
+/* the career's header: one tight band on a phone, so the match card is above the fold */
+@media (max-width: 639px) {
+  .lgm .lgm-app > .lgm-head { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 10px; padding: 8px 12px 10px; }
+  .lgm .lgm-app > .lgm-head .lgm-emblem { inline-size: 40px; block-size: 40px; }
+  .lgm .lgm-app > .lgm-head h1 { font-size: clamp(22px, 7vw, 30px); line-height: .95; }
+  .lgm .lgm-app > .lgm-head .lgm-kicker { font-size: 10px; margin: 0; }
+  .lgm .lgm-app > .lgm-head .lgm-meter { grid-column: 1 / -1; inline-size: 100%; }
+  .lgm .lgm-app > .lgm-head .lgm-meter div { flex: 1; padding: 4px 8px; }
+  .lgm .lgm-app > .lgm-head .lgm-meter dd { font-size: 20px; }
+}
+/* stars that can be read on the night sheets and the header */
+.lgm-sheet[data-tone='night'] .lgm-star-off, .lgm-head .lgm-star-off, .lgm-ticket .lgm-star-off, .lgm-live .lgm-star-off { fill: color-mix(in srgb, var(--mag-white) 24%, transparent); }
+.lgm-sheet[data-tone='night'] .lgm-star-on, .lgm-ticket .lgm-star-on, .lgm-live .lgm-star-on { fill: var(--lgm-bronze-hi); stroke: var(--mag-ink); }
+.lgm-sheet[data-tone='night'] small { opacity: .9; }
+.lgm-camp-svg { display: block; inline-size: 100%; block-size: auto; border: 3px solid var(--mag-ink); box-shadow: 5px 5px 0 var(--mag-ink); background: var(--mag-night); }
+.lgm-camp-goal { font-family: var(--mag-goal); fill: var(--mag-white); stroke: var(--mag-ink); stroke-width: 1px; paint-order: stroke; opacity: 0; }
+/* full time: the way on is always in reach, and the kickers read on the night card */
+.lgm-ft > .lgm-actions:last-child { position: sticky; inset-block-end: 0; z-index: 2; margin: 12px -12px -12px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0px)); background: color-mix(in srgb, var(--lgm-night) 92%, transparent); border-block-start: 2px solid var(--mag-ink); }
+.lgm-ft > .lgm-actions:last-child .lgm-go { inline-size: 100%; }
+.lgm-live .lgm-kicker, .lgm-ft .lgm-kicker { color: var(--lgm-bronze-hi); }
+@media (max-width: 420px) { .lgm-bd-card li { gap: 4px; font-size: 13px; } .lgm-bd-card li em { font-size: 10px; } }

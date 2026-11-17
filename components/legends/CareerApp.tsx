@@ -71,7 +71,8 @@ export function CareerApp({initial,friendlies=false,decades,wardrobe,shirts=[]}:
     <div><dt>Place</dt><dd>{v.phase==='draft'||!v.played?'—':ordinal(v.table.findIndex(r=>r.mine)+1)}</dd></div>
    </dl>
   </header>
-  <p className="lgm-live-msg" role="status" aria-live="polite" data-kind={msg?.kind}>{watching?'':msg?.text??''}</p>
+  <p className="sr-only" role="status" aria-live="polite">{watching?'':msg?.kind==='ok'?msg.text:''}</p>
+  {msg?.kind==='ok'&&!watching?<OkToast key={msg.text} text={msg.text} onClose={()=>setMsg(null)}/>:null}
   {v.cutscene==='camp'&&!watching?<CampSheet v={v} busy={busy} send={send}/>:null}
   {!v.cutscene&&!watching&&!room.open&&(v.press||v.pressLast)?<PressSheet v={v} busy={busy} send={send}/>:null}
   {v.cutscene==='board-grant'?<BoardNews v={v} busy={busy} send={send}/>:v.cutscene==='season-end'&&!watching&&!room.open?<SeasonEnd v={v} busy={busy} send={send}/>:null}
@@ -113,7 +114,6 @@ function SeasonEnd({v,busy,send}:{v:CareerView;busy:boolean;send:Send}){
 function Matchday({v,busy,send,go,kickoff,resume,openWindow,openClub}:{v:CareerView;busy:boolean;send:Send;go:(t:Tab)=>void;kickoff:()=>void;resume:()=>void;openWindow:()=>void;openClub:(c:string)=>void}){
  const me=v.table.findIndex(r=>r.mine),[replay,setReplay]=useState(false),n=v.next
  return <div className="lgm-grid lgm-matchday">
-  {v.phase==='season'||v.phase==='window'?<AssistantNotes notes={v.advice} go={go}/>:null}
   {v.phase==='window'?<section className="lgm-panel lgm-window"><p className="lgm-kicker">The transfer window is open</p><p className="lgm-actions"><button type="button" className="lgm-go lgm-go-big min-h-tap" onClick={openWindow}>Open the window · {money(v.cash)}</button></p></section>:null}
   {v.phase==='season-end'?<section className="lgm-panel"><p className="lgm-kicker">Season {v.season} is over</p><h2>{v.history.at(-1)?.champion?'Champions':`${ordinal(v.history.at(-1)?.place??0)} place`}</h2><p className="lgm-actions"><button type="button" className="lgm-go lgm-go-big min-h-tap" disabled={busy} onClick={()=>send({kind:'next-season'},`Season ${v.season+1} begins.`)}>Start season {v.season+1}</button></p></section>:null}
   {v.live?<section className="lgm-ticket" data-live><p className="lgm-kicker"><span className="lgm-onair" aria-hidden="true"/>Your match is waiting at {v.live.minute}′</p><p className="lgm-actions"><button type="button" className="lgm-go lgm-go-big min-h-tap" onClick={resume}>Back to the touchline</button></p></section>
@@ -131,6 +131,7 @@ function Matchday({v,busy,send,go,kickoff,resume,openWindow,openClub}:{v:CareerV
    <p className="lgm-fine">Before kick-off, the dressing room. Half-time is the only break — the Tactics button is yours whenever you want it.</p>
   </section>:null}
   {v.bye?<section className="lgm-ticket"><p className="lgm-ticket-top"><span>Round {v.played+1}</span><span>Free week</span></p><p>{v.clubName} sit this round out. The others play.</p><p className="lgm-actions"><button type="button" className="lgm-go lgm-go-big min-h-tap" disabled={busy} onClick={()=>send({kind:'play-round'},'The round is played.')}>Play the round</button></p></section>:null}
+  {v.phase==='season'||v.phase==='window'?<AssistantNotes notes={v.advice} go={go}/>:null}
   {v.last?<section className="lgm-panel lgm-lastres"><p className="lgm-kicker">Last result · round {v.last.round>v.rounds?'play-off':v.last.round}</p>
    <button type="button" className="lgm-res lgm-res-big min-h-tap" onClick={()=>v.last?.reel&&setReplay(true)}><span className="tl-res-side"><ClubMark club={v.last.homeClub} size={28}/><span>{v.last.home}</span></span><b>{v.last.goals[0]}–{v.last.goals[1]}</b><span className="tl-res-side" data-end><span>{v.last.away}</span><ClubMark club={v.last.awayClub} size={28}/></span></button>
    <MatchReportCard report={v.last.report}/>
@@ -208,6 +209,12 @@ export {years}
 
 /** an answer that went wrong is shown ABOVE every sheet (17.11.2026: an error behind the transfer window looked like a freeze) */
 function ErrorToast({text,onClose}:{text:string;onClose:()=>void}){
- useEffect(()=>{const t=window.setTimeout(onClose,7000);return()=>window.clearTimeout(t)},[onClose])
+ useEffect(()=>{const t=window.setTimeout(onClose,7000);return()=>window.clearTimeout(t)},[]) // eslint-disable-line react-hooks/exhaustive-deps -- one slip, one timer
  return <Portal><div className="lgm-toast z-[80]" role="alert" data-testid="legends-error-toast"><p>{text}</p><button type="button" className="lgm-x min-h-tap" onClick={onClose} aria-label="Dismiss">×</button></div></Portal>
+}
+
+/** a move that worked says so in one line, on a slip that rises and goes (17.11.2026: the old line sat unstyled between the panels) */
+function OkToast({text,onClose}:{text:string;onClose:()=>void}){
+ useEffect(()=>{const t=window.setTimeout(onClose,3200);return()=>window.clearTimeout(t)},[]) // eslint-disable-line react-hooks/exhaustive-deps -- one slip, one timer
+ return <Portal><div className="lgm-toast lgm-toast-ok z-[80]" aria-hidden="true" data-testid="legends-ok-toast"><span className="lgm-toast-tick">✓</span><p>{text}</p></div></Portal>
 }

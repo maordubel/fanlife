@@ -1,0 +1,73 @@
+/*
+ * LEGENDS MANAGER — the type system (owner, 18.11.2026: "order the headings, the font sizes, the names — everything should look
+ * professional, beautiful, dignified and impressive"). Loaded LAST (styles.ts), so it is the one place the career's type is set.
+ *
+ * One scale, four voices:
+ *   · DISPLAY (Weekly Head, caps) — titles and the big names: hero, section, card
+ *   · CAPS (Weekly Caps) — kickers and labels, small and tracked
+ *   · BODY (Weekly Body) — sentences, and every name in a LIST, in its own case: long names read, nothing is cut
+ *   · GOAL (Ultra) — numbers only: scores, money, ratings
+ * The magazine's script (Shrikhand) stays for the brand mark, not for working titles inside the game.
+ */
+.lgm {
+  --lgm-t-hero: clamp(30px, 8vw, 46px);
+  --lgm-t-h2: clamp(22px, 5.8vw, 30px);
+  --lgm-t-h3: clamp(17px, 4.4vw, 21px);
+  --lgm-t-name: clamp(15px, 4vw, 16.5px);
+  --lgm-t-body: 15px;
+  --lgm-t-fine: 13.5px;
+  --lgm-t-kicker: 11.5px;
+  --lgm-t-btn: clamp(15px, 4vw, 17px);
+  --lgm-t-btn-big: clamp(18px, 5vw, 21px);
+}
+
+/* titles */
+.lgm .lgm-sheet-head h2 { font: 400 var(--lgm-t-hero)/.92 var(--mag-display); letter-spacing: .01em; text-transform: uppercase; }
+.lgm .lgm-panel h2, .lgm .lgm-panel > header h2, .lgm .tl-league h2, .lgm .tl-numbers h2 { font: 400 var(--lgm-t-h2)/.95 var(--mag-display); letter-spacing: .01em; text-transform: uppercase; margin: 0 0 10px; }
+.lgm .lgm-panel h3, .lgm .tl-board h3, .lgm .tl-round h3, .lgm .lgm-clubline h3, .lgm .lgm-break-head h3 { font: 400 var(--lgm-t-h3)/1 var(--mag-display); letter-spacing: .02em; text-transform: uppercase; }
+/* a working title in the game is a title, not the brand's script */
+.lgm .lgm-app .wkl-assist .wk-logo { font: 400 var(--lgm-t-h2)/.95 var(--mag-display); letter-spacing: .01em; text-transform: uppercase; -webkit-text-stroke: 0; text-shadow: none; color: var(--mag-ink); margin: 0 0 8px; }
+
+/* kickers and labels */
+.lgm .lgm-kicker, .lgm .lgm-ticket-top, .lgm .lgm-potm-k { font: 400 var(--lgm-t-kicker)/1.3 var(--mag-mono); letter-spacing: .14em; text-transform: uppercase; }
+.lgm .lgm-meter dt, .lgm .lgm-sum dt, .lgm .lgm-formcard small { font: 400 10.5px/1.2 var(--mag-mono); letter-spacing: .12em; text-transform: uppercase; }
+
+/* sentences */
+.lgm .lgm-fine, .lgm .tl-how, .lgm .tl-warn, .lgm .tl-legend { font-family: var(--mag-body); font-size: var(--lgm-t-fine); line-height: 1.5; font-weight: 500; }
+.lgm .lgm-panel > p:not([class]), .lgm .lgm-news > p:not([class]), .lgm .lgm-story-cap { font: 500 var(--lgm-t-body)/1.5 var(--mag-body); }
+
+/* names in lists: their own case, semibold, never cut */
+.lgm .lgm-bd-card li span, .lgm .tl-row b, .lgm .lgm-cand b, .lgm .lgm-deal b, .lgm .lgm-bids li b, .lgm .tl-board-who b, .lgm .lgm-sellrow b,
+.lgm .lgm-camp-report b, .lgm .lgm-camp-list b, .lgm .lgm-clubline li b, .lgm .lgm-potm-also span, .lgm .lgm-break-subs b, .lgm .lgm-break-subs span {
+  font: 600 var(--lgm-t-name)/1.25 var(--mag-body); text-transform: none; letter-spacing: 0; text-shadow: none; white-space: normal; overflow-wrap: anywhere;
+}
+.lgm .lgm-bd-card li { font-family: var(--mag-body); text-transform: none; text-shadow: none; }
+.lgm .lgm-bd-card li b { font: 400 13px/1 var(--mag-goal); }
+.lgm .lgm-bd-card li span { font-size: 14px; color: var(--mag-white); overflow: visible; text-overflow: clip; }
+.lgm .lgm-bd-card li em { font: 400 10px var(--mag-mono); letter-spacing: .1em; }
+.lgm .tl-board-who small, .lgm .lgm-cand small, .lgm .lgm-bids li small, .lgm .lgm-camp-list small, .lgm .lgm-camp-report small { font: 500 12.5px/1.35 var(--mag-body); letter-spacing: 0; text-transform: none; opacity: .85; }
+
+/* the pitch: a surname in caps, two lines when it needs them, never "SHMUE…" */
+@media (max-width: 639px) { .lgm .tl-spot { inline-size: 80px; } }
+.lgm .tl-spot b { max-inline-size: 80px; font: 400 11.5px/1.08 var(--mag-display); letter-spacing: .01em; white-space: normal; word-break: keep-all; overflow-wrap: normal; hyphens: none; overflow: hidden; text-overflow: clip; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; text-align: center; }
+@media (min-width: 640px) { .lgm .tl-spot b { max-inline-size: 104px; font-size: 13.5px; } }
+.lgm .tl-chip b { font: 400 12px/1.1 var(--mag-display); white-space: normal; word-break: keep-all; overflow-wrap: normal; text-overflow: clip; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+/* the assistant speaks in sentences */
+.lgm .wkl-assist .wk-cap { font: 600 14px/1.4 var(--mag-body); letter-spacing: 0; text-transform: none; }
+.lgm .tl-spot small { font: 400 9.5px var(--mag-mono); letter-spacing: .1em; }
+
+/* the big names stay display caps, balanced */
+.lgm .lgm-ticket-side b, .lgm .lgm-potm-who b, .lgm .lgm-ft-score span { text-wrap: balance; letter-spacing: .01em; }
+.lgm .lgm-ticket-side b { font-size: clamp(19px, 5.2vw, 30px); }
+
+/* full time: the round elsewhere reads like a results page, names in their own case */
+.lgm .lgm-ft-others li { grid-template-columns: minmax(0, 1fr) 3.4em minmax(0, 1fr); align-items: baseline; font: 600 14px/1.3 var(--mag-body); text-transform: none; font-style: normal; }
+.lgm .lgm-ft-others li b { font: 400 15px/1 var(--mag-goal); text-align: center; }
+.lgm .lgm-ft-others li span:last-child { text-align: end; }
+.lgm .lgm-ft-goals li { font: 500 14.5px/1.45 var(--mag-body); }
+.lgm .lgm-ft-goals li b { font: 400 13px var(--mag-goal); margin-inline-end: 4px; }
+
+/* buttons: one voice, tracked caps */
+.lgm .lgm-go, .lgm .lgm-ghost, .lgm .lgm-sign, .lgm .wk-btn { font-family: var(--mag-display); font-size: var(--lgm-t-btn); letter-spacing: .04em; text-transform: uppercase; font-style: normal; }
+.lgm .lgm-go-big { font-size: var(--lgm-t-btn-big); }
+.lgm .lgm-link { font-family: var(--mag-display); font-size: 14px; letter-spacing: .05em; text-transform: uppercase; }

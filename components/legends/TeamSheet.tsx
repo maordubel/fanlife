@@ -117,7 +117,7 @@ export function TeamSheet({v,busy,send,mode='sheet'}:{v:CareerView;busy:boolean;
    </div>
    <p className="tl-legend" aria-hidden="true"><span><i className="tl-arm" data-arm="c">C</i> captain</span><span><i className="tl-arm" data-arm="v">V</i> vice — wears it when the captain is not in the eleven</span><span><i className="tl-off">DF</i> out of his line</span></p>
    {v.lineup.error&&!dirty?<p className="lgm-error" role="alert">{v.lineup.error} <button type="button" className="lgm-link min-h-tap" disabled={busy} onClick={()=>send({kind:'auto',formation:v.lineup.formation},'The best fit eleven.')}>Pick the best fit eleven</button></p>:null}
-   {offCount?<p className="tl-warn" role="note">{offCount} man{offCount===1?'':'s'} out of his line — {offCount===1?'he plays':'they play'} below {offCount===1?'himself':'themselves'}.</p>:null}
+   {offCount?<p className="tl-warn" role="note">{offCount} {offCount===1?'man':'men'} out of {offCount===1?'his':'their'} line — {offCount===1?'he plays':'they play'} below {offCount===1?'himself':'themselves'}.</p>:null}
    {s.cap&&!inXi.has(s.cap)?<p className="tl-warn" role="note">{men.get(s.cap)?.name} is not in the eleven — {s.vice&&inXi.has(s.vice)?`${men.get(s.vice)?.name} wears the armband.`:'the eleven’s best man wears the armband.'}</p>:null}
   </section>
 

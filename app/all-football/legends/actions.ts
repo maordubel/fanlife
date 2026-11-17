@@ -39,7 +39,9 @@ export async function legendsAction(id:string,raw:unknown):Promise<{ok:true;view
   // load of every club's catalog — the one fresh read inside the compare-and-swap below checks the owner again anyway
   const local=LOCAL_ACTIONS.has(action.kind)
   const cur=local?null:await readCareer(id);if(!local&&(!cur||cur.career.owner!==owner))return {ok:false,error:'This career is not yours.',code:'forbidden'}
-  const ctx=cur?await ctxFor(cur.career):{now:new Date().toISOString(),catalogs:new Map()}
+  // 17.11.2026: only the moves that play a match or shut a window read the other clubs' catalogs (career.ts → ctx.catalogs);
+  // a sale, a bid, a lineup or a talk no longer loads every club's archive first — on a cold instance that took minutes
+  const ctx=cur&&NEEDS_CATALOGS.has(action.kind)?await ctxFor(cur.career):{now:new Date().toISOString(),catalogs:new Map()}
   let note:string|undefined
   const out=await mutateCareer(id,c=>{
    if(c.owner!==owner)return {error:{ok:false,error:'This career is not yours.',code:'forbidden'} satisfies Fail}
@@ -55,6 +57,8 @@ export async function legendsAction(id:string,raw:unknown):Promise<{ok:true;view
 }
 /** actions that read only the career itself — the draft, its confirm and the board's news (career.ts: no `ctx.catalogs`) */
 const LOCAL_ACTIONS=new Set(['draft','draft-confirm','ack'])
+/** the moves whose rules read `ctx.catalogs` (career.ts: close-window → aiWindow; a match → prepareSide for the AI sides) */
+const NEEDS_CATALOGS=new Set(['close-window','match-start','match-decide','match-finish','play-round'])
 /** during the draft nobody can open another club's squad, so the answer to each spin does not carry the league's sixteen squads */
 const slim=(v:CareerView):CareerView=>v.phase==='draft'?{...v,clubs:[]}:v
 
