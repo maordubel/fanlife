@@ -14,8 +14,8 @@ export async function GET(){
  const levels=['MAIL','PRIORITY_MAIL','GROUND','EXPEDITED','EXPRESS'] as const
  // every Lulu post level for every region (English edition — the Hebrew differs by page count only), next to what the reader pays now
  await Promise.all((Object.keys(REGIONS) as Region[]).flatMap(region=>levels.map(async level=>{
-  const now=(Object.keys(REGIONS[region].ship) as Ship[]).find(s=>REGIONS[region].ship[s].level===level)
-  const charge=now?(PAPERBACK.cents+REGIONS[region].ship[now].cents)/100:null
+  const now=(Object.keys(REGIONS[region].ship) as Ship[]).find(s=>REGIONS[region].ship[s]?.level===level)
+  const charge=now?(PAPERBACK.cents+(REGIONS[region].ship[now]?.cents??0))/100:null
   try{const c=await cost('en',level,REGIONS[region].sample);rows.push({region,level,ship:now??null,reader_pays_eur:charge,lulu_total:`${c.total_cost_incl_tax} ${c.currency}`})}
   catch(e){rows.push({region,level,ship:now??null,reader_pays_eur:charge,error:String((e as Error).message).slice(0,120)})}
  })))

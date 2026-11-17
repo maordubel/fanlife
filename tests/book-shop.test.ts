@@ -12,11 +12,11 @@ describe('Broken Collective shop (17.11.2026)',()=>{
   expect(tipCents('1')).toBeNull();expect(tipCents('9999')).toBeNull();expect(tipCents('abc')).toBeNull();expect(tipCents(null)).toBeNull()
  })
  it('marks every book checkout with metadata.book so the shared webhook can route it',()=>{
-  const t=tipSession({order:'bk_abcdefgh',lang:'he',cents:600}),p=paperbackSession({order:'bk_abcdefgh',lang:'en',region:'il',ship:'express'})
+  const t=tipSession({order:'bk_abcdefgh',lang:'he',cents:600}),p=paperbackSession({order:'bk_abcdefgh',lang:'en',region:'il',ship:'standard'})
   expect(t.metadata.book).toBe('bk_abcdefgh');expect(p.metadata.book).toBe('bk_abcdefgh')
   expect(form(p).join('&')).toContain('shipping_address_collection%5Ballowed_countries%5D%5B0%5D=IL')
   expect(p.phone_number_collection.enabled).toBe(true)
-  expect(p.shipping_options[0]!.shipping_rate_data.fixed_amount.amount).toBe(REGIONS.il.ship.express.cents)
+  expect(p.shipping_options[0]!.shipping_rate_data.fixed_amount.amount).toBe(REGIONS.il.ship.standard!.cents)
  })
  it('turns a paid Stripe session into a Lulu address, from either place Stripe keeps it',()=>{
   const address={line1:'1 Ermou',line2:null,city:'Athens',state:null,postal_code:'10563',country:'GR'}

@@ -1,5 +1,5 @@
 import {NextResponse} from 'next/server'
-import {BOOK_SITE,PAPERBACK,REGIONS,isLang,isRegion,isShip} from '@/lib/book/catalog'
+import {BOOK_SITE,PAPERBACK,REGIONS,isLang,isRegion,isShip,type Ship} from '@/lib/book/catalog'
 import {paperbackSession} from '@/lib/book/checkout'
 import {createBookOrder,moveBookOrder,newBookId} from '@/lib/book/orders'
 import {luluOpen} from '@/lib/book/lulu'
@@ -17,10 +17,12 @@ export async function GET(r:Request){
  const lang=q('lang'),L=isLang(lang)?lang:'en',home=`${BOOK_SITE}/${L}/#paperback`
  const region=q('region'),ship=q('ship')??'standard'
  if(!payOpen()||!luluOpen()||!isRegion(region)||!isShip(ship))return NextResponse.redirect(home,303)
- const id=newBookId(),cents=PAPERBACK.cents+REGIONS[region].ship[ship].cents
+ const post=REGIONS[region].ship[ship]??REGIONS[region].ship.standard
+ if(!post)return NextResponse.redirect(home,303)
+ const sh:Ship=REGIONS[region].ship[ship]?ship:'standard',id=newBookId(),cents=PAPERBACK.cents+post.cents
  try{
-  await createBookOrder({id,kind:'paperback',lang:L,region,ship,amount_cents:cents})
-  const s=await stripeCall<Session>('checkout/sessions',paperbackSession({order:id,lang:L,region,ship}),`book-${id}`)
+  await createBookOrder({id,kind:'paperback',lang:L,region,ship:sh,amount_cents:cents})
+  const s=await stripeCall<Session>('checkout/sessions',paperbackSession({order:id,lang:L,region,ship:sh}),`book-${id}`)
   await moveBookOrder(id,['open'],{stripe_session:s.id})
   return NextResponse.redirect(s.url||home,303)
  }catch{return NextResponse.redirect(`${home}?pay=error`,303)}
