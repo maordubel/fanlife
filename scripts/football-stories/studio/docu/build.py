@@ -71,7 +71,7 @@ BLOOM_S, BLOOM_TO = 1.4, 0.3
 # The framing a camera move starts from (studio/camera.py): (the framing's own scale, its default origin). The move adds
 # its travel to this — a detail look is a dolly or a rack AT 1.42, never the old constant glide.
 FRAME_BASE = {'wide': (1.0, '50% 50%'), 'detail': (1.42, '34% 40%'), 'reverse': (1.16, '50% 58%'), 'turn': (1.04, '50% 46%')}
-TAILS = {'cut': 0.0, 'fade': 0.0, 'match': 0.0, 'whip': 0.3, 'tear': 0.45, 'dive': 0.4}
+TAILS = {'cut': 0.0, 'fade': 0.0, 'match': 0.0, 'whip': 0.3, 'tear': 0.45, 'dive': 0.4, 'slide': 0.35, 'zoom': 0.3}
 TAILS['shape'] = 0.55
 # ONE SHAPE PER FILM (docs/rules/editing-language.md rule 4): the film's own shape, taken from its story, opens every
 # chapter as a window that grows over the frame. Drawn on a 100×100 box, black = the window.
@@ -122,7 +122,16 @@ XP_CSS = ('.bloom{position:absolute;left:0;top:0;width:1920px;height:1080px;mix-
           '.kv{position:absolute;left:0;top:0;width:1920px;height:1080px;background:INK}'
           ".kn{position:absolute;left:160px;top:250px;width:1600px;text-align:center;font-family:'Head';line-height:1.18;color:#fff}"
           ".kw{position:relative;display:inline-block;padding:0 14px;margin:0 2px} .kn small{display:block;margin-top:34px;font:700 40px 'Cond';letter-spacing:8px;color:PAPER}"
-          '.kq{font-style:normal}')
+          '.kq{font-style:normal}'
+          # the VOX pass (docu/vox.py): a sentence's type as paper strips over the picture, the object library's prints
+          '.kvx{position:absolute;left:0;top:0;width:1920px;height:1080px;background:linear-gradient(to top,rgba(20,17,13,.78) 0%,rgba(20,17,13,.35) 34%,rgba(20,17,13,0) 58%)}'
+          ".kn.vx{left:120px;top:auto;bottom:150px;width:1240px;text-align:left;line-height:1.02}"
+          ".kn.vx .kw{background:PAPER;color:INK;padding:6px 18px 2px;margin:0 10px 12px 0;box-shadow:8px 8px 0 INK;border:4px solid INK}"
+          ".kn.vx .kw.hot{color:#fff} .kn.vx .kw .hl{top:0;height:100%}"
+          '.obx{position:absolute;left:0;top:0;width:1920px;height:1080px}'
+          '.obj{position:absolute;filter:drop-shadow(14px 18px 0 rgba(20,17,13,.38));will-change:transform}'
+          ".obl{position:absolute;padding:8px 22px 4px;background:PAPER;color:INK;border:5px solid INK;box-shadow:10px 10px 0 INK;font:400 64px/1 'Head';letter-spacing:2px;white-space:nowrap}"
+          '.obl .hl{top:0;height:100%} .obl em{position:relative;font-style:normal;z-index:1}')
 
 
 def rgba(col: str, a: float) -> str:
@@ -818,10 +827,57 @@ class Film:
                 self.tween(f'tl.fromTo("#{cid}h{j}",{{scaleX:0}},{{scaleX:1,duration:0.35,ease:"power2.inOut"}},{r2(t + w["at"] + 0.15)});')
         size = 132 if len(s['words']) <= 5 else 104 if len(s['words']) <= 9 else 78
         who = f'<small>{e(s["who"])}</small>' if s.get('who') else ''
+        if s.get('vox'):   # the VOX pass: the sentence's core as paper strips low over the picture — the picture stays the shot
+            for j in hot:
+                spans = spans.replace(f'<span class="kw" id="{cid}w{j}">', f'<span class="kw hot" id="{cid}w{j}">')
+            self.clip(cid, t, d, f'<div class="kvx" id="{cid}v"></div><div class="kn vx" id="{cid}b" style="font-size:{min(size, 96)}px">{spans}</div>', s.get('z', 14))
+            self.tween(f'tl.fromTo("#{cid}v",{{opacity:0}},{{opacity:1,duration:0.35,ease:"power1.out"}},{r2(t)});'
+                       f'tl.fromTo("#{cid}b",{{x:-10}},{{x:14,duration:{r2(d)},ease:"none"}},{r2(t)});')
+            return
         self.clip(cid, t, d, f'<div class="kv" id="{cid}v"></div><div class="kn{" kq" if s.get("quote") else ""}" id="{cid}b" style="font-size:{size}px">{spans}{who}</div>', s.get('z', 14))
         # a line that starts WITH its beat brings its veil in on the cut: a veil fading over a picture that has just cut in bright read as a flash (qa.FLASH_RISE)
         self.tween(f'tl.fromTo("#{cid}v",{{opacity:{s.get("veil", 0.58) if s.get("on_cut") else 0}}},{{opacity:{s.get("veil", 0.58)},duration:0.35,ease:"power1.out"}},{r2(t)});'
                    f'tl.fromTo("#{cid}b",{{y:18}},{{y:-18,duration:{r2(d)},ease:"none"}},{r2(t)});')
+
+    OBJ_SPOTS = ((1250, 300, 470), (1540, 520, 340), (170, 330, 440), (560, 560, 300))   # (left, top, size): right third first, then left
+
+    def objects(self, s, t, d):
+        """The object library on the picture (docu/vox.py, studio/objects.py): each object the sentence names enters as
+        its word is said — dropped onto the scene, tossed in on an arc, or stamped down — in the club's inks with the hard
+        paper shadow of a cut-out, its word on a paper strip beside it with the highlighter under it. Once in, objects
+        float a little against the picture's move (the nearest plane). Every entrance eases out and stops (rule 142)."""
+        cid = self.id('ob')
+        side = s.get('side', 0)
+        spots = self.OBJ_SPOTS[2:] + self.OBJ_SPOTS[:2] if side else self.OBJ_SPOTS
+        inner, tw = '', []
+        for j, it in enumerate(s['items'][:2]):
+            x, y, size = spots[j]
+            oid = f'{cid}o{j}'
+            inner += f'<img class="obj" id="{oid}" src="assets/img/{e(it["src"])}" style="left:{x}px;top:{y}px;width:{size}px;height:{size}px">'
+            at = t + it.get('at', 0.0)
+            way = -1 if x > 960 else 1
+            enter = ('drop', 'toss', 'stamp')[(j + len(it['id'])) % 3]
+            if enter == 'drop':
+                tw.append(f'tl.fromTo("#{oid}",{{y:-760,rotation:{10 * way},opacity:1}},{{y:0,rotation:{-3 * way},duration:0.6,ease:"power3.out"}},{r2(at)});')
+                self.sound('page', at + 0.45, None, 0.35)
+            elif enter == 'toss':
+                tw.append(f'tl.fromTo("#{oid}",{{x:{-620 * way},y:-360,rotation:{-40 * way},opacity:1}},{{x:0,y:0,rotation:{4 * way},duration:0.75,ease:"power3.out"}},{r2(at)});')
+                self.sound('swish', at, None, 0.3)
+            else:
+                tw.append(f'tl.fromTo("#{oid}",{{scale:1.9,rotation:{-8 * way},opacity:0}},{{scale:1,rotation:{-2 * way},opacity:1,duration:0.32,ease:"power4.in"}},{r2(at)});')
+                self.sound('stamp', at + 0.3, None, 0.4)
+            rest = max(0.4, d - it.get('at', 0.0) - 0.7)
+            tw.append(f'tl.to("#{oid}",{{y:-22,x:{18 * way},rotation:{1.5 * way},duration:{r2(rest)},ease:"sine.inOut"}},{r2(at + 0.7)});')
+            if j == 0 and it.get('word'):
+                lid = f'{cid}l'
+                lx = x - 40 if x > 960 else x + size - 120
+                inner += (f'<div class="obl" id="{lid}" style="left:{min(1500, max(80, lx))}px;top:{y + size - 40}px">'
+                          f'<i class="hl" id="{lid}h" style="background:{self.US}"></i><em>{e(it["word"])}</em></div>')
+                tw.append(f'tl.fromTo("#{lid}",{{scaleX:0,opacity:1}},{{scaleX:1,duration:0.3,ease:"power3.out",transformOrigin:"left center"}},{r2(at + 0.35)});'
+                          f'tl.fromTo("#{lid}h",{{scaleX:0}},{{scaleX:1,duration:0.35,ease:"power2.inOut"}},{r2(at + 0.6)});')
+        self.clip(cid, t, d, f'<div class="obx">{inner}</div>', s.get('z', 11))
+        for js in tw:
+            self.tween(js)
 
     def locator(self, s, t, d):
         """A SCHEMATIC of where a ground sits in its city — drawn in code, labelled as not to scale, and never passed off
@@ -955,6 +1011,14 @@ class Film:
             self.tween(f'tl.fromTo("{IN}",{{scale:0.82,opacity:0}},{{scale:1,opacity:1,duration:{TAILS["dive"]},ease:"power3.out"}},{r2(T)});')
             for m in out:
                 self.tween(f'tl.fromTo("#{m["id"]}",{{scale:{m.get("sc", 1):.4f},opacity:1}},{{scale:1.5,opacity:0,duration:{TAILS["dive"]},ease:"power2.in",immediateRender:false}},{r2(T)});')
+        elif name == 'slide':   # the VOX page turn upward: the new sentence pushes the old one off the top, one move
+            self.tween(f'tl.fromTo("{IN}",{{yPercent:100}},{{yPercent:0,duration:{TAILS["slide"]},ease:"power3.out"}},{r2(T)});')
+            if out:
+                self.tween(f'tl.fromTo("{OUT}",{{yPercent:0}},{{yPercent:-100,duration:{TAILS["slide"]},ease:"power3.out",immediateRender:false}},{r2(T)});')
+        elif name == 'zoom':    # through the frame: the old picture grows past the lens, the new one settles from a step back
+            self.tween(f'tl.fromTo("{IN}",{{scale:0.86,opacity:0}},{{scale:1,opacity:1,duration:{TAILS["zoom"]},ease:"power3.out"}},{r2(T)});')
+            for m in out:
+                self.tween(f'tl.fromTo("#{m["id"]}",{{scale:{m.get("sc", 1):.4f}}},{{scale:1.35,duration:{TAILS["zoom"]},ease:"power2.in",immediateRender:false}},{r2(T)});')
         elif name == 'match':
             self.tween(f'tl.fromTo("{IN}",{{scale:1.1}},{{scale:1,duration:0.3,ease:"power2.out"}},{r2(T)});')
             for m in out:

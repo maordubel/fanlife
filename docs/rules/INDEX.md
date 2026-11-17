@@ -107,6 +107,8 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [studio-pictures](studio-pictures.md) · Rival colour read from the picture pixels; a named real person never gets a generic figure; the PNG library enters every documentary through the media index (owner, 14.11.2026)
 - [studio-music-dubelteam](studio-music-dubelteam.md) · Every film is scored only with the eight DubelTeam tracks, credited "Music: DubelTeam"; earlier tracks are retired (owner, 15.11.2026)
 - [studio-sight](studio-sight.md) · The studio looks at what it shows: pictures described once and chosen by sight, a director's shot list, no card on an empty ground (15% budget, 4 s), and a gate that judges the frames (owner, 15.11.2026)
+- [house-crew](house-crew.md) · Three in-house writers, directors and editors write, direct and cut a film from the archive in code when Google is unavailable or out of credit — never a wait (owner, 16.11.2026)
+- [studio-vox-pass](studio-vox-pass.md) · Every sentence is a shot with its own relevant picture and graphic idea (objects, scoreline, odometer, type); the object library and the club scenes in every club's inks; a busy Google never holds the queue (owner, 17.11.2026)
 
 ## Control room, research desk and CRM
 

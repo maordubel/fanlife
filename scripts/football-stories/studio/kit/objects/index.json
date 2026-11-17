@@ -1,0 +1,958 @@
+{
+ "version": 1,
+ "style": "FAN LIFE objects \u2014 thick ink line, three inks (club colour, paper, ink), halftone shadow, off-register print",
+ "objects": {
+  "ball": {
+   "words": [
+    "ball",
+    "football",
+    "kick",
+    "kicked",
+    "shot",
+    "struck",
+    "volley",
+    "header",
+    "headed"
+   ],
+   "subjects": [
+    "ball",
+    "goal"
+   ],
+   "moods": [
+    "tension",
+    "joy"
+   ],
+   "svg": "ball.svg",
+   "png": "png/ball.png"
+  },
+  "boot": {
+   "words": [
+    "boot",
+    "boots",
+    "left foot",
+    "right foot",
+    "kit"
+   ],
+   "subjects": [
+    "ball"
+   ],
+   "moods": [
+    "calm"
+   ],
+   "svg": "boot.svg",
+   "png": "png/boot.png"
+  },
+  "boots-pair": {
+   "words": [
+    "boots",
+    "retired",
+    "hung up"
+   ],
+   "subjects": [
+    "ball"
+   ],
+   "moods": [
+    "calm"
+   ],
+   "svg": "boots-pair.svg",
+   "png": "png/boots-pair.png"
+  },
+  "shirt": {
+   "words": [
+    "shirt",
+    "shirts",
+    "jersey",
+    "colours",
+    "kit",
+    "number"
+   ],
+   "subjects": [
+    "flag"
+   ],
+   "moods": [
+    "joy",
+    "defiance"
+   ],
+   "svg": "shirt.svg",
+   "png": "png/shirt.png"
+  },
+  "whistle": {
+   "words": [
+    "whistle",
+    "referee",
+    "final whistle",
+    "kick-off",
+    "kickoff",
+    "half-time",
+    "full-time",
+    "full time"
+   ],
+   "subjects": [
+    "referee"
+   ],
+   "moods": [
+    "tension"
+   ],
+   "svg": "whistle.svg",
+   "png": "png/whistle.png"
+  },
+  "card": {
+   "words": [
+    "red card",
+    "sent off",
+    "sending off",
+    "dismissed",
+    "sent-off",
+    "ten men"
+   ],
+   "subjects": [
+    "referee"
+   ],
+   "moods": [
+    "tension",
+    "grief"
+   ],
+   "colour": "red",
+   "svg": "card.svg",
+   "png": "png/card.png"
+  },
+  "trophy": {
+   "words": [
+    "trophy",
+    "cup",
+    "title",
+    "champions",
+    "championship",
+    "final",
+    "silverware",
+    "double",
+    "won the"
+   ],
+   "subjects": [
+    "trophy"
+   ],
+   "moods": [
+    "joy"
+   ],
+   "svg": "trophy.svg",
+   "png": "png/trophy.png"
+  },
+  "medal": {
+   "words": [
+    "medal",
+    "medals",
+    "winners",
+    "runners-up",
+    "podium"
+   ],
+   "subjects": [
+    "trophy"
+   ],
+   "moods": [
+    "joy"
+   ],
+   "svg": "medal.svg",
+   "png": "png/medal.png"
+  },
+  "scarf": {
+   "words": [
+    "scarf",
+    "scarves",
+    "supporters",
+    "fans",
+    "terrace",
+    "terraces",
+    "we"
+   ],
+   "subjects": [
+    "flag",
+    "crowd"
+   ],
+   "moods": [
+    "defiance",
+    "joy"
+   ],
+   "svg": "scarf.svg",
+   "png": "png/scarf.png"
+  },
+  "flag": {
+   "words": [
+    "flag",
+    "flags",
+    "banner",
+    "banners",
+    "tifo",
+    "colours"
+   ],
+   "subjects": [
+    "flag"
+   ],
+   "moods": [
+    "defiance"
+   ],
+   "svg": "flag.svg",
+   "png": "png/flag.png"
+  },
+  "ticket": {
+   "words": [
+    "ticket",
+    "tickets",
+    "sold out",
+    "sell-out",
+    "entry",
+    "season ticket"
+   ],
+   "subjects": [
+    "archive"
+   ],
+   "moods": [
+    "calm",
+    "tension"
+   ],
+   "svg": "ticket.svg",
+   "png": "png/ticket.png"
+  },
+  "programme": {
+   "words": [
+    "programme",
+    "program",
+    "matchday",
+    "souvenir"
+   ],
+   "subjects": [
+    "archive"
+   ],
+   "moods": [
+    "calm"
+   ],
+   "svg": "programme.svg",
+   "png": "png/programme.png"
+  },
+  "newspaper": {
+   "words": [
+    "newspaper",
+    "newspapers",
+    "headline",
+    "headlines",
+    "press",
+    "papers",
+    "reported",
+    "wrote",
+    "front page"
+   ],
+   "subjects": [
+    "newspaper"
+   ],
+   "moods": [
+    "calm"
+   ],
+   "svg": "newspaper.svg",
+   "png": "png/newspaper.png"
+  },
+  "radio": {
+   "words": [
+    "radio",
+    "commentary",
+    "commentator",
+    "listened",
+    "transistor"
+   ],
+   "subjects": [
+    "archive"
+   ],
+   "moods": [
+    "calm",
+    "tension"
+   ],
+   "svg": "radio.svg",
+   "png": "png/radio.png"
+  },
+  "tv": {
+   "words": [
+    "television",
+    "tv",
+    "broadcast",
+    "watched",
+    "screen",
+    "live"
+   ],
+   "subjects": [
+    "archive"
+   ],
+   "moods": [
+    "calm"
+   ],
+   "svg": "tv.svg",
+   "png": "png/tv.png"
+  },
+  "camera": {
+   "words": [
+    "camera",
+    "photograph",
+    "photo",
+    "picture",
+    "photographers"
+   ],
+   "subjects": [
+    "archive"
+   ],
+   "moods": [
+    "calm"
+   ],
+   "svg": "camera.svg",
+   "png": "png/camera.png"
+  },
+  "microphone": {
+   "words": [
+    "microphone",
+    "interview",
+    "said",
+    "told",
+    "press conference",
+    "speech"
+   ],
+   "subjects": [
+    "newspaper"
+   ],
+   "moods": [
+    "calm"
+   ],
+   "svg": "microphone.svg",
+   "png": "png/microphone.png"
+  },
+  "stopwatch": {
+   "words": [
+    "minute",
+    "minutes",
+    "clock",
+    "seconds",
+    "stoppage",
+    "injury time",
+    "extra time",
+    "late",
+    "time"
+   ],
+   "subjects": [
+    "clock"
+   ],
+   "moods": [
+    "tension"
+   ],
+   "svg": "stopwatch.svg",
+   "png": "png/stopwatch.png"
+  },
+  "hourglass": {
+   "words": [
+    "waited",
+    "wait",
+    "waiting",
+    "years",
+    "decades",
+    "generation",
+    "long",
+    "drought"
+   ],
+   "subjects": [
+    "clock"
+   ],
+   "moods": [
+    "tension",
+    "calm"
+   ],
+   "svg": "hourglass.svg",
+   "png": "png/hourglass.png"
+  },
+  "calendar": {
+   "words": [
+    "season",
+    "date",
+    "days",
+    "weeks",
+    "months",
+    "fixture",
+    "fixtures",
+    "schedule",
+    "weekend"
+   ],
+   "subjects": [
+    "clock"
+   ],
+   "moods": [
+    "calm"
+   ],
+   "svg": "calendar.svg",
+   "png": "png/calendar.png"
+  },
+  "scoreboard": {
+   "words": [
+    "score",
+    "scoreline",
+    "scoreboard",
+    "result",
+    "results",
+    "lead",
+    "level",
+    "draw",
+    "drew"
+   ],
+   "subjects": [
+    "clock"
+   ],
+   "moods": [
+    "tension"
+   ],
+   "svg": "scoreboard.svg",
+   "png": "png/scoreboard.png"
+  },
+  "goal": {
+   "words": [
+    "goal",
+    "goals",
+    "net",
+    "scored",
+    "scoring",
+    "crossbar",
+    "post",
+    "woodwork",
+    "equaliser",
+    "equalizer",
+    "winner"
+   ],
+   "subjects": [
+    "goal"
+   ],
+   "moods": [
+    "joy",
+    "tension"
+   ],
+   "svg": "goal.svg",
+   "png": "png/goal.png"
+  },
+  "penalty": {
+   "words": [
+    "penalty",
+    "penalties",
+    "spot",
+    "shootout",
+    "spot-kick"
+   ],
+   "subjects": [
+    "goal"
+   ],
+   "moods": [
+    "tension"
+   ],
+   "svg": "penalty.svg",
+   "png": "png/penalty.png"
+  },
+  "gloves": {
+   "words": [
+    "keeper",
+    "goalkeeper",
+    "save",
+    "saved",
+    "saves",
+    "clean sheet"
+   ],
+   "subjects": [
+    "keeper"
+   ],
+   "moods": [
+    "tension"
+   ],
+   "svg": "gloves.svg",
+   "png": "png/gloves.png"
+  },
+  "corner-flag": {
+   "words": [
+    "corner",
+    "corners",
+    "touchline",
+    "wing",
+    "winger"
+   ],
+   "subjects": [
+    "ball"
+   ],
+   "moods": [
+    "tension"
+   ],
+   "svg": "corner-flag.svg",
+   "png": "png/corner-flag.png"
+  },
+  "tactics": {
+   "words": [
+    "tactics",
+    "manager",
+    "coach",
+    "formation",
+    "system",
+    "plan",
+    "dugout",
+    "bench"
+   ],
+   "subjects": [
+    "bench"
+   ],
+   "moods": [
+    "tension",
+    "calm"
+   ],
+   "svg": "tactics.svg",
+   "png": "png/tactics.png"
+  },
+  "floodlight": {
+   "words": [
+    "floodlights",
+    "floodlight",
+    "night",
+    "evening",
+    "under the lights"
+   ],
+   "subjects": [
+    "stadium",
+    "night"
+   ],
+   "moods": [
+    "tension"
+   ],
+   "svg": "floodlight.svg",
+   "png": "png/floodlight.png"
+  },
+  "stadium": {
+   "words": [
+    "stadium",
+    "ground",
+    "arena",
+    "home",
+    "at home",
+    "capacity",
+    "crowd"
+   ],
+   "subjects": [
+    "stadium"
+   ],
+   "moods": [
+    "defiance",
+    "calm"
+   ],
+   "svg": "stadium.svg",
+   "png": "png/stadium.png"
+  },
+  "turnstile": {
+   "words": [
+    "turnstile",
+    "turnstiles",
+    "gates",
+    "queue",
+    "attendance",
+    "thousands"
+   ],
+   "subjects": [
+    "stadium",
+    "crowd"
+   ],
+   "moods": [
+    "calm"
+   ],
+   "svg": "turnstile.svg",
+   "png": "png/turnstile.png"
+  },
+  "megaphone": {
+   "words": [
+    "chant",
+    "chants",
+    "chanted",
+    "sang",
+    "songs",
+    "song",
+    "singing",
+    "capo",
+    "roar",
+    "shouted"
+   ],
+   "subjects": [
+    "crowd"
+   ],
+   "moods": [
+    "defiance",
+    "joy"
+   ],
+   "svg": "megaphone.svg",
+   "png": "png/megaphone.png"
+  },
+  "drum": {
+   "words": [
+    "drum",
+    "drums",
+    "ultras",
+    "beat of"
+   ],
+   "subjects": [
+    "crowd"
+   ],
+   "moods": [
+    "defiance"
+   ],
+   "svg": "drum.svg",
+   "png": "png/drum.png"
+  },
+  "flare": {
+   "words": [
+    "flare",
+    "flares",
+    "pyro",
+    "smoke",
+    "fireworks",
+    "torches"
+   ],
+   "subjects": [
+    "pyro"
+   ],
+   "moods": [
+    "defiance",
+    "joy"
+   ],
+   "svg": "flare.svg",
+   "png": "png/flare.png"
+  },
+  "bus": {
+   "words": [
+    "bus",
+    "coach trip",
+    "away day",
+    "away trip",
+    "travelled",
+    "convoy",
+    "parade"
+   ],
+   "subjects": [
+    "travel"
+   ],
+   "moods": [
+    "defiance",
+    "joy"
+   ],
+   "svg": "bus.svg",
+   "png": "png/bus.png"
+  },
+  "train": {
+   "words": [
+    "train",
+    "trains",
+    "station",
+    "railway",
+    "rail"
+   ],
+   "subjects": [
+    "travel"
+   ],
+   "moods": [
+    "calm"
+   ],
+   "svg": "train.svg",
+   "png": "png/train.png"
+  },
+  "plane": {
+   "words": [
+    "plane",
+    "flight",
+    "flew",
+    "flying",
+    "airport",
+    "abroad",
+    "europe",
+    "european"
+   ],
+   "subjects": [
+    "travel"
+   ],
+   "moods": [
+    "calm",
+    "tension"
+   ],
+   "svg": "plane.svg",
+   "png": "png/plane.png"
+  },
+  "suitcase": {
+   "words": [
+    "away",
+    "trip",
+    "journey",
+    "travel",
+    "travelling",
+    "hotel",
+    "left for",
+    "moved"
+   ],
+   "subjects": [
+    "travel"
+   ],
+   "moods": [
+    "calm"
+   ],
+   "svg": "suitcase.svg",
+   "png": "png/suitcase.png"
+  },
+  "pin": {
+   "words": [
+    "city",
+    "town",
+    "capital",
+    "where",
+    "country",
+    "map",
+    "there"
+   ],
+   "subjects": [
+    "map",
+    "city"
+   ],
+   "moods": [
+    "calm"
+   ],
+   "svg": "pin.svg",
+   "png": "png/pin.png"
+  },
+  "contract": {
+   "words": [
+    "signed",
+    "signing",
+    "contract",
+    "transfer",
+    "deal",
+    "joined",
+    "bought",
+    "sold",
+    "loan"
+   ],
+   "subjects": [
+    "bench"
+   ],
+   "moods": [
+    "calm"
+   ],
+   "svg": "contract.svg",
+   "png": "png/contract.png"
+  },
+  "money": {
+   "words": [
+    "money",
+    "fee",
+    "million",
+    "millions",
+    "euros",
+    "pounds",
+    "dollars",
+    "shekels",
+    "budget",
+    "debt",
+    "paid",
+    "price",
+    "cost"
+   ],
+   "subjects": [
+    "archive"
+   ],
+   "moods": [
+    "calm"
+   ],
+   "svg": "money.svg",
+   "png": "png/money.png"
+  },
+  "crown": {
+   "words": [
+    "king",
+    "kings",
+    "legend",
+    "legends",
+    "greatest",
+    "crowned",
+    "ruled",
+    "throne"
+   ],
+   "subjects": [
+    "trophy"
+   ],
+   "moods": [
+    "joy"
+   ],
+   "svg": "crown.svg",
+   "png": "png/crown.png"
+  },
+  "star": {
+   "words": [
+    "star",
+    "stars",
+    "hero",
+    "heroes",
+    "icon",
+    "idol",
+    "best"
+   ],
+   "subjects": [
+    "trophy"
+   ],
+   "moods": [
+    "joy"
+   ],
+   "svg": "star.svg",
+   "png": "png/star.png"
+  },
+  "bolt": {
+   "words": [
+    "suddenly",
+    "shock",
+    "stunned",
+    "stunning",
+    "thunder",
+    "electric",
+    "lightning",
+    "out of nowhere",
+    "blow"
+   ],
+   "subjects": [],
+   "moods": [
+    "tension"
+   ],
+   "svg": "bolt.svg",
+   "png": "png/bolt.png"
+  },
+  "heart": {
+   "words": [
+    "love",
+    "loved",
+    "heart",
+    "hearts",
+    "passion",
+    "forever",
+    "belong"
+   ],
+   "subjects": [
+    "crowd"
+   ],
+   "moods": [
+    "joy",
+    "calm"
+   ],
+   "svg": "heart.svg",
+   "png": "png/heart.png"
+  },
+  "broken-heart": {
+   "words": [
+    "heartbreak",
+    "heartbroken",
+    "broke",
+    "broken",
+    "tears",
+    "cried",
+    "pain",
+    "hurt",
+    "agony"
+   ],
+   "subjects": [
+    "despair"
+   ],
+   "moods": [
+    "grief"
+   ],
+   "svg": "broken-heart.svg",
+   "png": "png/broken-heart.png"
+  },
+  "arrow-up": {
+   "words": [
+    "rise",
+    "rose",
+    "climbed",
+    "climb",
+    "up",
+    "promotion",
+    "promoted",
+    "top",
+    "soared"
+   ],
+   "subjects": [],
+   "moods": [
+    "joy"
+   ],
+   "svg": "arrow-up.svg",
+   "png": "png/arrow-up.png"
+  },
+  "arrow-down": {
+   "words": [
+    "fell",
+    "fall",
+    "dropped",
+    "down",
+    "relegation",
+    "relegated",
+    "slide",
+    "slid",
+    "sank",
+    "collapse"
+   ],
+   "subjects": [
+    "despair"
+   ],
+   "moods": [
+    "grief"
+   ],
+   "svg": "arrow-down.svg",
+   "png": "png/arrow-down.png"
+  },
+  "question": {
+   "words": [
+    "why",
+    "how",
+    "who",
+    "what",
+    "question",
+    "mystery",
+    "nobody knew",
+    "could"
+   ],
+   "subjects": [],
+   "moods": [
+    "tension"
+   ],
+   "svg": "question.svg",
+   "png": "png/question.png"
+  },
+  "exclaim": {
+   "words": [
+    "incredible",
+    "unbelievable",
+    "amazing",
+    "remarkable",
+    "miracle",
+    "impossible"
+   ],
+   "subjects": [],
+   "moods": [
+    "joy",
+    "tension"
+   ],
+   "svg": "exclaim.svg",
+   "png": "png/exclaim.png"
+  },
+  "rosette": {
+   "words": [
+    "rosette",
+    "old days",
+    "founded",
+    "history",
+    "tradition",
+    "first ever",
+    "origins"
+   ],
+   "subjects": [
+    "archive"
+   ],
+   "moods": [
+    "calm"
+   ],
+   "svg": "rosette.svg",
+   "png": "png/rosette.png"
+  }
+ }
+}

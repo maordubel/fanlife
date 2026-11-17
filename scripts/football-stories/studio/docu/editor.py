@@ -38,7 +38,10 @@ HARD = {'goal', 'trailer', 'turning', 'open'}
 CENTRED = {'score', 'versus', 'stat', 'record'}
 TRAVEL = {'matchday', 'map', 'race', 'ticket'}
 SOFT = {'follow', 'end', 'quote'}
-OTHER = {'cut': 'whip', 'whip': 'match', 'match': 'cut', 'fade': 'cut', 'tear': 'cut', 'dive': 'cut'}
+OTHER = {'cut': 'whip', 'whip': 'match', 'match': 'cut', 'fade': 'cut', 'tear': 'cut', 'dive': 'cut', 'slide': 'zoom', 'zoom': 'slide'}
+# Between the sentences of one line (docu/vox.py segments): the film moves on every sentence, never the same way twice
+# running — a slide up, a whip, a zoom through, a hard cut, a match on scale, a whip back.
+SEG_WAYS = ('slide', 'whip', 'zoom', 'cut', 'match', 'whip', 'slide', 'cut', 'zoom')
 
 
 def opaque(dev: dict) -> bool:
@@ -146,11 +149,13 @@ def transition(prev: dict | None, meta: dict, history: list[str]) -> str:
     t = meta.get('type')
     if prev is None:
         name = 'cut'            # the film opens on its first frame: nothing fades up from black
+    elif meta.get('seg'):       # the next sentence of the same line (docu/vox.py)
+        name = 'fade' if meta.get('emotion') in ('grief', 'dread') and meta.get('seg', 0) % 2 else SEG_WAYS[(meta.get('n', 0) + 2 * meta['seg']) % len(SEG_WAYS)]
     elif t == 'chapter':
         name = 'dive'
     elif prev.get('type') == 'chapter':
         name = 'tear'           # out of the chapter card through the paper
-    elif t in SOFT or meta.get('outcome') == 'loss' or meta.get('pace') == 'slow' or (meta.get('emotion') in ('grief', 'dread') and t not in HARD):
+    elif t in SOFT or meta.get('outcome') == 'loss' or (meta.get('emotion') in ('grief', 'dread') and t not in HARD):
         name = 'fade'           # grief and dread arrive slowly (the score sheet, studio/drama.py)
     elif t in HARD or meta.get('emotion') == 'release':
         name = 'cut'            # the hit: the release is a hard cut on the moment

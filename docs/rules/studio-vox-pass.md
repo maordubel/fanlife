@@ -1,0 +1,17 @@
+# The VOX pass, the object library and the club scenes (owner, 17.11.2026)
+
+The owner: "the results come out without effects, without VOX, without HyperFrames; the system chooses pictures unrelated to the story." He asked for (a) a universal library and a library per club — many PNG objects, football atmosphere, retro, minimalist — with the index connected so the film always uses pictures relevant to the story; (b) a more precise editor: VOX, transitions, animation, motion; (c) general tightening and polish.
+
+**Measured before** (St. Pauli 2019/20, 16.11.2026, the gate's own numbers): 16 beats for six minutes; 84% of the running time plain pictures; the longest run in one visual language 349 s; a still held 21 s; a transition every ~22 s; pictures judged 36–43% generic. Of 945 indexed pictures, Hapoel Tel Aviv had 264 of its own, Olympiacos 30, Zrinjski 29, AEK and Panathinaikos 4 each, St. Pauli 1. The picker took the top score even when nothing in the picture matched the line.
+
+**The rules now:**
+
+1. **Every sentence is a shot** (`studio/docu/vox.py`). A line longer than 6.5 s is cut at its sentence starts (a long sentence at a comma) into segments of 2.6–6 s. Each segment is a beat to the editor: its own picture, its own looks, its own transition. A chapter card, a board or the opening's question keeps the first segment; the rest of the line goes on in sentences.
+2. **A picture shows what its sentence says** (`media_index.Picker.pick_relevant`). The line's words are matched against the picture's subjects and its sight caption (`kit/sight/captions.json`); a caption that says "NOT for" the line refuses it. When nothing shows the sentence, the line's own picture continues in a closer framing — never a picture about something else.
+3. **Every sentence gets one graphic idea on its own word**, chosen from what it says: the object it names (`studio/objects.py`), a scoreline slammed as type, a number with its noun rolled up as an odometer, or the sentence's core as paper-strip type. Never the same kind three times running. Everything printed is the narrator's own words or a claim's number.
+4. **Sentences arrive by different ways**: slide, whip, zoom, cut, match (`editor.SEG_WAYS`); never the same way three times running. A fade is kept for grief, dread and a defeat.
+5. **The object library** (`studio/objects.py`, `kit/objects/`): 49 football objects drawn in code in one hand — thick ink line, three inks, halftone shadow, off-register print. Universal files in the house inks (SVG + transparent PNG, `python -m studio.objects export`); every film prints them in its club's colour. An object whose meaning is a rival's colour (a red card on a Panathinaikos film) is not offered.
+6. **The club scenes** (`studio/scenes.py`): twelve full-frame compositions (terrace, the ground at night, the pitch from above, the ball in the net, the city at dusk, the road away, the desk of cuttings, the trophy, the empty stand, the clock, flags and smoke, the tunnel) printed for every film in its club's colours and added to the index with their own captions — so every club has its own pictures, found by what they show.
+7. **A busy Google never holds the queue**: CLASSIFIED research waits at most `STORIES_WRITER_WAIT_S` (90 s), and a job that goes back to waiting within five minutes does not use up the worker's run — the next job is made in the same run.
+
+`STORIES_DOCU_VOX=0` keeps the beats whole (for comparison). Held by `studio/tests/test_vox_pass.py`.
