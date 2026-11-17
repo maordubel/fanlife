@@ -166,7 +166,7 @@
    49.44,
    7.77
   ],
-  "Koln": [
+  "Cologne": [
    50.93,
    6.95
   ],
@@ -178,7 +178,7 @@
    51.43,
    6.88
   ],
-  "Nurnberg": [
+  "Nuremberg": [
    49.45,
    11.08
   ],
@@ -378,7 +378,7 @@
    50.85,
    4.35
   ],
-  "Antwerpen": [
+  "Antwerp": [
    51.22,
    4.4
   ],
@@ -398,7 +398,7 @@
    52.03,
    8.53
   ],
-  "Hannover": [
+  "Hanover": [
    52.37,
    9.73
   ],
@@ -714,7 +714,7 @@
    41.64,
    41.63
   ],
-  "Bucuresti": [
+  "Bucharest": [
    44.43,
    26.1
   ],
@@ -950,7 +950,7 @@
    44.4,
    8.94
   ],
-  "Gent": [
+  "Ghent": [
    51.05,
    3.72
   ],
@@ -1110,7 +1110,7 @@
    50.21,
    15.83
   ],
-  "Goteborg": [
+  "Gothenburg": [
    57.71,
    11.97
   ],
@@ -1618,10 +1618,6 @@
    32.86,
    -6.57
   ],
-  "Sevilla": [
-   37.38,
-   -5.97
-  ],
   "Salzburg": [
    47.8,
    13.04
@@ -2109,16 +2105,16 @@
   "Chelsea": "London",
   "1. FC Heidenheim": "Heidenheim an der Brenz",
   "1. FC Kaiserslautern": "Kaiserslautern",
-  "1. FC Köln": "Koln",
+  "1. FC Köln": "Cologne",
   "1. FC Magdeburg": "Magdeburg",
   "1. FC Mülheim": "Mulheim",
-  "1. FC Nürnberg": "Nurnberg",
+  "1. FC Nürnberg": "Nuremberg",
   "1. FC Saarbrücken": "Saarbrucken",
   "1. FC Union Berlin": "Berlin",
   "1. FSV Mainz 05": "Mainz",
   "1. SC Göttingen 05": "Gottingen",
   "1.FC Heidenheim": "Heidenheim an der Brenz",
-  "1.FC Nürnberg": "Nurnberg",
+  "1.FC Nürnberg": "Nuremberg",
   "1899 Hoffenheim": "Sinsheim",
   "AC Cesena": "Cesena",
   "AC Milan": "Milan",
@@ -2181,7 +2177,7 @@
   "Anagennisi Karditsa": "Karditsa",
   "Anderlecht": "Brussels",
   "Anorthosis": "Larnaca",
-  "Antwerp": "Antwerpen",
+  "Antwerp": "Antwerp",
   "Apollon": "Athens",
   "Apollon Larissa": "Larisa",
   "Apollon Smyrnis": "Athens",
@@ -2194,7 +2190,7 @@
   "Aris Piraeus": "Piraeus",
   "Aris Saloniki": "Thessaloniki",
   "Arminia Bielefeld": "Bielefeld",
-  "Arminia Hannover": "Hannover",
+  "Arminia Hannover": "Hanover",
   "Arouca": "Arouca",
   "Arsenal": "London",
   "Asteras Athens": "Athens",
@@ -2229,7 +2225,7 @@
   "Bayern Munich": "Munich",
   "Bayern München": "Munich",
   "Başakşehir": "Istanbul",
-  "Beerschot": "Antwerpen",
+  "Beerschot": "Antwerp",
   "Beitar Be'er Sheva": "Beersheba",
   "Beitar Haifa": "Haifa",
   "Beitar Holon": "Holon",
@@ -2315,7 +2311,7 @@
   "Diddeleng": "Dudelange",
   "Differdange": "Differdange",
   "Dinamo Batumi": "Batumi",
-  "Dinamo Bucureşti": "Bucuresti",
+  "Dinamo Bucureşti": "Bucharest",
   "Dinamo Tbilisi": "Tbilisi",
   "Dinamo Zagreb": "Zagreb",
   "Dinamo-Minsk": "Minsk",
@@ -2382,7 +2378,7 @@
   "FC Magdeburg": "Magdeburg",
   "FC Masr": "Giza",
   "FC Nordsjælland": "Farum",
-  "FC Nürnberg": "Nurnberg",
+  "FC Nürnberg": "Nuremberg",
   "FC Remscheid": "Remscheid",
   "FC Schalke 04": "Gelsenkirchen",
   "FC St. Pauli": "Hamburg",
@@ -2405,7 +2401,7 @@
   "Forfar Athletic": "Forfar",
   "Forres Mechanics": "Forres",
   "Fortuna Düsseldorf": "Dusseldorf",
-  "Fortuna Köln": "Koln",
+  "Fortuna Köln": "Cologne",
   "Fram": "Reykjavik",
   "Frosinone Calcio": "Frosinone",
   "GAK": "Graz",
@@ -2414,7 +2410,7 @@
   "Galatasaray": "Istanbul",
   "Gaziantepspor": "Gaziantep",
   "Genoa CFC": "Genoa",
-  "Gent": "Gent",
+  "Gent": "Ghent",
   "Gençlerbirliği": "Ankara",
   "Getafe": "Madrid",
   "Glentoran": "Belfast",
@@ -2443,8 +2439,8 @@
   "Hamburger SV": "Hamburg",
   "Hamilton Academical": "Hamilton",
   "Hamilton Academicals": "Hamilton",
-  "Hannover": "Hannover",
-  "Hannover 96": "Hannover",
+  "Hannover": "Hanover",
+  "Hannover 96": "Hanover",
   "Hansa Rostock": "Rostock",
   "Hapoel Acre": "Acre",
   "Hapoel Afula": "Afula",
@@ -2496,8 +2492,8 @@
   "Honvéd": "Budapest",
   "Hradec Kralove": "Hradec Kralove",
   "Hradec Králové": "Hradec Kralove",
-  "Häcken": "Goteborg",
-  "IFK Göteborg": "Goteborg",
+  "Häcken": "Gothenburg",
+  "IFK Göteborg": "Gothenburg",
   "IFK Norrköping": "Norrkoping",
   "Igman": "Konjic",
   "Ilioupoli": "Ilioupoli",
@@ -2545,12 +2541,12 @@
   "Kifisia": "Athens",
   "Kilmarnock": "Kilmarnock",
   "Kiseljak": "Kiseljak",
-  "Koln": "Koln",
+  "Koln": "Cologne",
   "Korinthos": "Korinthos",
   "Kozani": "Kozani",
   "Košice": "Kosice",
   "Krasnodar": "Krasnodar",
-  "Köln": "Koln",
+  "Köln": "Cologne",
   "LASK Linz": "Linz",
   "LR Ahlen": "Ahlen",
   "Laktaši": "Laktasi",
@@ -2747,11 +2743,11 @@
   "Raja Casablanca": "Casablanca",
   "Raków": "Czestochowa",
   "Rangers": "Glasgow",
-  "Rapid Bucureşti": "Bucuresti",
+  "Rapid Bucureşti": "Bucharest",
   "Rapid Vienna": "Vienna",
   "Rapide Oued Zem": "Oued Zem",
   "Rayo Vallecano": "Madrid",
-  "Real Betis": "Sevilla",
+  "Real Betis": "Seville",
   "Red Bull Salzburg": "Salzburg",
   "Red Star Belgrade": "Belgrade",
   "Rennes": "Rennes",
@@ -2777,7 +2773,7 @@
   "SC Paderborn": "Paderborn",
   "SC Paderborn 07": "Paderborn",
   "SC Preußen Münster": "Munster",
-  "SC Viktoria Köln": "Koln",
+  "SC Viktoria Köln": "Cologne",
   "SC Westfalia Herne": "Herne",
   "SCC Mohammédia": "Mohammedia",
   "SG Wattenscheid 09": "Bochum",
@@ -2809,7 +2805,7 @@
   "Schalke 04": "Gelsenkirchen",
   "Schwarz-Weiß Essen": "Essen",
   "Sektzia Ness Ziona": "Ness Ziona",
-  "Sevilla": "Sevilla",
+  "Sevilla": "Seville",
   "Shakhtar": "Donetsk",
   "Shakhter": "Karagandy",
   "Shamrock Rovers": "Dublin",
@@ -2842,7 +2838,7 @@
   "Spartak Moscow": "Moscow",
   "Spartak Moskva": "Moscow",
   "Spartak Trnava": "Trnava",
-  "Sportul Studenţesc": "Bucuresti",
+  "Sportul Studenţesc": "Bucharest",
   "St Johnstone": "Perth",
   "St Mirren": "Paisley",
   "St-Étienne": "Saint-Etienne",
@@ -2852,7 +2848,7 @@
   "Standard Liege": "Liege",
   "Standard Liège": "Liege",
   "Steagul Rosu Brasov": "Brasov",
-  "Steaua București": "Bucuresti",
+  "Steaua București": "Bucharest",
   "Stenhousemuir": "Stenhousemuir",
   "Stirling Albion": "Stirling",
   "Stjarnan": "Garðabær",
@@ -2968,7 +2964,7 @@
   "Zrinjski Mostar": "Mostar",
   "Zwickau": "Zwickau",
   "Zürich": "Zurich",
-  "Örgryte": "Goteborg",
+  "Örgryte": "Gothenburg",
   "Öster": "Vaxjo",
   "Újpest": "Budapest",
   "Čelik": "Zenica",

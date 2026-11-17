@@ -42,6 +42,11 @@ NOISE = {'fc', 'cf', 'sc', 'ac', 'afc', 'fk', 'sk', 'nk', 'ks', 'cd', 'sv', 'vfb
          'rcd', 'ca', 'cp', 'scp', 'sl', 'tsg', 'bsc', 'fsv', '1', 'jk', 'pae', 'gss', 'ao', 'apo', 'mfk', 'fcsb', 'and', 'the'}
 
 
+# the city as an English narrator says it (GeoNames keeps some local spellings)
+EXONYM = {'Antwerpen': 'Antwerp', 'Bucuresti': 'Bucharest', 'Gent': 'Ghent', 'Goteborg': 'Gothenburg', 'Hannover': 'Hanover',
+          'Koln': 'Cologne', 'Nurnberg': 'Nuremberg', 'Sevilla': 'Seville'}
+
+
 def fold(s: str) -> str:
     s = ''.join(ch for ch in unicodedata.normalize('NFKD', s or '') if not unicodedata.combining(ch)).lower()
     s = s.replace('ß', 'ss').replace('ø', 'o').replace('æ', 'ae').replace('ł', 'l').replace('đ', 'd').replace('ı', 'i')
@@ -216,6 +221,7 @@ def build(clubs_root: Path, cities_json: Path, dry: bool = False) -> dict:
         nm, lat, lon = where
         city = ''.join(ch for ch in unicodedata.normalize('NFKD', nm) if not unicodedata.combining(ch))   # GeoNames' own name for it (its English one where it has one: Munich, Turin, Lisbon)
         placed[opp] = (city, lat, lon, c['file'])
+    placed = {k: (EXONYM.get(v[0], v[0]), *v[1:]) for k, v in placed.items()}
     cities = dict(book['cities'])
     for opp, (city, lat, lon, _f) in placed.items():
         cities.setdefault(city, [lat, lon])

@@ -458,6 +458,8 @@ def match_beat(pen: Pen, mid: str, lead: str = '', weight: float = 0.5, req: boo
         vis['prop'] = 'passenger_plane'
     elif pen.w == 'poet' and f.get('side') == 'away' and vis['type'] in ('ticket', 'matchday'):
         vis['prop'] = 'supporters_bus'
+    if ctx_id:
+        weight = max(weight, 0.9)   # a match with its stakes said is the drama: it outlasts the craft lines in the cut
     also = getattr(pen, 'ctx_also', []) if ctx_id else []
     pen.ctx_also = []
     return beat(' '.join(x for x in bits if x), [mid] + ([ctx_id] if ctx_id else []) + also, vis, weight, req, **extra)
@@ -489,8 +491,12 @@ def chapter_card(pen: Pen, n: int, title: str, ids: list[str], first_mid: str | 
 
 def cliff_beat(pen: Pen, ids: list[str] | None = None) -> dict:
     """The chapter's cliff edge: an obstacle or a clock, then the question the next chapter answers."""
-    return beat(f"{pen.pick('clock')} {pen.pick('cliff')}", ids or [], {'type': 'illustration', 'art': pen.art(), 'caption': ''}, 1.0, True,
-                camera=pen.cam(), pace='slow')
+    # a short film keeps its matches before its craft lines: under five minutes the cliff is optional and goes first in
+    # the cut (17.11.2026 — a 3-minute Hapoel 2009/10 film had chapter cards and clocks and not one match with its stakes;
+    # the chapter still ends on a question: _mend adds one where rule 5 asks)
+    short = getattr(pen, 'short', False)
+    return beat(f"{pen.pick('clock')} {pen.pick('cliff')}", ids or [], {'type': 'illustration', 'art': pen.art(), 'caption': ''}, 0.3 if short else 1.0,
+                not short, camera=pen.cam(), pace='slow')
 
 
 def run_beat(pen: Pen, run: dict) -> dict | None:
@@ -1135,6 +1141,7 @@ def write_script(brief: dict, ledger: dict, writer: str, log=print, avoid: list[
     seed = f'{ledger.get("club_id")}|{book.season}|{kind}|{"-".join(sorted((ledger.get("focus") or {}).get("matches") or []))}'
     lo, hi = target_words(minutes)
     pen = Pen(writer, book, seed)
+    pen.short = minutes < 5
     hooks = hook_options(pen)
     opening = cold_open(pen, hooks[0])
     body = {'season': season_film, 'match': match_film, 'tie': match_film, 'rivalry': rivalry_film}[kind](pen, lo)
