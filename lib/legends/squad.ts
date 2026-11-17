@@ -34,7 +34,10 @@ export function bestEleven(men:readonly Card[],f:FormationId):{xi:string[];value
  const order=slots.map((s,i)=>({s,i,n:men.filter(c=>c.pos===s.family).length})).sort((a,b)=>a.n-b.n||a.i-b.i)
  let value=0
  for(const {s,i} of order){
-  const c=[...men].filter(x=>!used.has(x.id)).sort((a,b)=>qualityOf(b.stars)*fitFactor(b,s.family)-qualityOf(a.stars)*fitFactor(a,s.family)||a.id.localeCompare(b.id))[0]
+  // football first (17.11.2026: a four-star midfielder was put in goal over a one-star keeper because 82.5 × 0.55 > 45): a
+  // natural man always beats a stand-in, and the stars only decide among men of the same standing
+  const nat=(x:Card)=>x.pos===s.family?1:0
+  const c=[...men].filter(x=>!used.has(x.id)).sort((a,b)=>nat(b)-nat(a)||qualityOf(b.stars)*fitFactor(b,s.family)-qualityOf(a.stars)*fitFactor(a,s.family)||a.id.localeCompare(b.id))[0]
   if(!c)return null;used.add(c.id);xi[i]=c.id;value+=qualityOf(c.stars)*fitFactor(c,s.family)
  }
  return {xi,value}

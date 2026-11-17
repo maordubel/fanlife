@@ -1,6 +1,6 @@
-import {afterEach,describe,expect,it} from 'vitest'
+import {afterEach,describe,expect,it,vi} from 'vitest'
 import {memoryStore,useDurableStore,type DurableStore} from '@/lib/master/durable'
-import {ConflictError,inOrder,untilWon} from '@/lib/master/cas'
+import {ConflictError,inOrder,QUEUE_WAIT_MS,untilWon} from '@/lib/master/cas'
 import {readJson,update} from '@/lib/players/store'
 
 afterEach(()=>useDurableStore(null))
@@ -29,5 +29,17 @@ describe('compare-and-swap that survives a busy store (owner, 11.10.2026)',()=>{
  it('jobs on one key run one after another',async()=>{
   const order:number[]=[];await Promise.all([1,2,3].map(i=>inOrder('k',async()=>{await new Promise(r=>setTimeout(r,10*(4-i)));order.push(i)})))
   expect(order).toEqual([1,2,3])
+ })
+})
+
+describe('inOrder lane guard (17.11.2026)',()=>{
+ it('a job that never settles does not hold the lane forever',async()=>{
+  vi.useFakeTimers()
+  try{
+   void inOrder('stuck',()=>new Promise(()=>{}))
+   let ran=false;const next=inOrder('stuck',async()=>{ran=true})
+   await vi.advanceTimersByTimeAsync(QUEUE_WAIT_MS+10);await next
+   expect(ran).toBe(true)
+  }finally{vi.useRealTimers()}
  })
 })

@@ -33,3 +33,14 @@ describe('transfer window bids',()=>{
   }
  })
 })
+
+describe('best fit is football first (17.11.2026)',()=>{
+ it('a keeper keeps goal even when an outfield man has more stars',async()=>{
+  const {bestEleven}=await import('@/lib/legends/squad')
+  const mk=(id:string,pos:'GK'|'DF'|'MF'|'FW',stars:number)=>({id,name:id,pos,price:1 as const,stars,attrs:{},from:null,to:null,decades:[]})
+  const men=[mk('g1','GK',1),mk('g2','GK',1),...['d1','d2','d3','d4','d5'].map(i=>mk(i,'DF',2)),...['m1','m2','m3','m4','m5'].map(i=>mk(i,'MF',4.5)),...['f1','f2','f3'].map(i=>mk(i,'FW',3))]
+  const r=bestEleven(men,'4-3-3')!
+  expect(r.xi[0]).toMatch(/^g/)
+  expect(r.xi.slice(1,5).every(id=>id.startsWith('d'))).toBe(true)
+ })
+})

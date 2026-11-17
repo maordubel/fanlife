@@ -25,7 +25,8 @@ const toMatch=(c:Career)=>{for(let i=0;i<4&&isBye(c);i++)c=act(c,{kind:'play-rou
 describe('engine 3 — set pieces (owner, 13.10.2026)',()=>{
  it('engines 1 and 2 play exactly as they did before engine 3 (golden digests of 60 matches, quick and live)',()=>{
   // re-measured 13.10.2026: engine files are untouched, but the fixture squads come from the bot draft, which now chooses its own lines (free line choice). A match begun on an older engine must never be rewritten
-  const GOLDEN={'legends-engine-1':'e38f8b55ea1d1a6d81f4d27b7864211407c6ce871a576ce65ec1dddfa6ad89fc','legends-engine-2':'1995e62d14b44d71a5833aeae5d5626f863ecb18c69cfc25658e7b617f102f9d'} as const
+  // re-measured 17.11.2026: engine files untouched; the fixture elevens come from bestLineup, which now puts a natural man before a stand-in (no midfielder in goal)
+  const GOLDEN={'legends-engine-1':'24d395ca68c6508377bcc9e7d6e9141254d2b44fee606101ecc7050aa1f0882c','legends-engine-2':'5322a77d30c55efcc50611179ccb754bae3b0e5bf27feaee6b1f7fefd73dc866'} as const
   for(const e of ['legends-engine-1','legends-engine-2'] as const){
    const s=snapshotsOf(e,60),quick=s.map(x=>run(x,[],false)),live=s.map(x=>{let d:{stop:number}[]=[],r=run(x,d,true);const stops:number[]=[];while(!r.done){stops.push(r.pause.minute);d=[...d,{stop:r.pause.stop,...(d.length===0?{tactics:{approach:'attacking',pressing:'high',tempo:'fast'}}:{})} as {stop:number}];r=run(x,d,true)}return {stops,r}})
    expect(createHash('sha256').update(JSON.stringify([quick,live])).digest('hex')).toBe(GOLDEN[e])

@@ -15,10 +15,17 @@ const pause=(attempt:number)=>new Promise<void>(r=>setTimeout(r,Math.min(1200,60
 
 /** Run `job` after every earlier job on the same key in this instance has finished. */
 export function inOrder<T>(key:string,job:()=>Promise<T>):Promise<T>{
- const run=(queues.get(key)??Promise.resolve()).then(job,job)
+ // a job that never settles must not hold the lane forever (Legends, 17.11.2026: one hung store call froze a career's every
+ // later move on that instance): the NEXT job waits for the one before it at most QUEUE_WAIT_MS, then goes anyway
+ const prev=queues.get(key)??Promise.resolve()
+ let t:ReturnType<typeof setTimeout>|undefined
+ const waited=Promise.race([prev,new Promise(r=>{t=setTimeout(r,QUEUE_WAIT_MS);(t as {unref?:()=>void}).unref?.()})]).finally(()=>clearTimeout(t))
+ const run=waited.then(job,job)
  queues.set(key,run.catch(()=>undefined))
  return run
 }
+/** the longest a queued job waits for the one before it (the store's own calls give up at 15 s) */
+export const QUEUE_WAIT_MS=25_000
 
 export class ConflictError extends Error{constructor(what:string,readonly attempts:number){super(`${what} kept changing while saving (${attempts} attempts). Someone else is saving the same file — wait a few seconds and press Save again.`);this.name='ConflictError'}}
 
