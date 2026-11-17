@@ -70,6 +70,9 @@ async function main(){
     maker:real(v.manufacturer??v.maker),sponsor:real(v.sponsor),shortsSponsor:null,sources:f.sources,readUnsure:false})
    fromPack++
   }
+  // the owner's own corrections win over every other source (rule 18), field by field
+  const fixes=(JSON.parse(readFileSync('content/manual/kit-owner-corrections.json','utf8')) as Record<string,Record<string,Record<string,unknown>>>)[club]??{}
+  for(const k of kits){const fx=fixes[String(k.id)];if(fx)Object.assign(k,fx,{ownerCorrected:true})}
   const file=`content/generated/kit-svgs/${club}.json`
   writeFileSync(file,JSON.stringify({club,kits})+'\n')
   execFileSync('node',['scripts/kits/export-kit-svgs.mjs',club,file],{stdio:'inherit'})
