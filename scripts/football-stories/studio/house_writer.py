@@ -944,15 +944,17 @@ def cast_into(pen: Pen, chapters: list[dict]) -> None:
             if pos is None:
                 continue
             dec = x['decisive_goals']
-            rec = '' if x.get('scorers_complete') else ' on record'   # the archive's scorers, not every goal of the season
-            line = (f'Remember the name: {name}. By the end of the season, {x["goals"]} goals{rec}'
-                    + (f', {dec} of them the goal that decided a match.' if dec >= 2 else '.'))
+            if x.get('scorers_complete'):
+                line = (f'Remember the name: {name}. By the end of the season, {x["goals"]} goals'
+                        + (f', {dec} of them the goal that decided a match.' if dec >= 2 else '.'))
+            else:   # the archive names only some of the season's scorers: no count that would undersell him
+                line = f'Remember the name: {name}. His goals run all through this story.'
             ch['beats'].insert(pos, beat(line, [h['id']], {'type': 'illustration', 'art': pen.art(), 'caption': ''}, 0.95, True, camera=pen.cam()))
             break
-        big = set(x['big_match_ids'])
+        big = {b.top} if b.top in x['big_match_ids'] else set(x['big_match_ids'])   # the film's own big night first
         for ch in chapters:
             for bt in ch['beats']:
-                if big & set(bt.get('claim_ids') or []) and name.split()[-1] in bt['narration'] and 'Remember the name' not in bt['narration']:
+                if big & set((bt.get('claim_ids') or [])[:1]) and name.split()[-1] in bt['narration'] and 'Remember the name' not in bt['narration']:
                     bt['narration'] += f' {pen.pick_hero(name)}'
                     bt['claim_ids'] = list(dict.fromkeys((bt.get('claim_ids') or []) + [h['id']]))
                     big = set()
@@ -1002,8 +1004,9 @@ def season_film(pen: Pen, words_lo: int) -> list[dict]:
                 break
         if k == 1:
             extra.append(race_beat(pen, mark))
-        road = road_beat(pen, act['ids'], req=not any(x and x['visual'].get('type') == 'map' for ch in chapters for x in ch['beats']))
-        extra.append(road)
+        told = sum(1 for ch in chapters for x in ch['beats'] if x['visual'].get('type') == 'map')
+        if told < (2 if words_lo >= 8 * 110 else 1):   # the road is a motif, not a refrain: once a short film, twice a long one
+            extra.append(road_beat(pen, act['ids'], req=not told))
         if k == 0:
             extra.append(form_beat(pen, pick_matches(b, act['ids'], set(), 8), ROLE_TITLE.get((act.get('note') or '').split(':')[0].strip(), 'The start')))
         ch = act_chapter(pen, len(chapters) + 2, act, {top}, budget, extra, payoff=top if k == 2 else None)
