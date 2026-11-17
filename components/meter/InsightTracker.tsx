@@ -94,7 +94,7 @@ export function InsightTracker(){
    p.scroll=Math.max(p.scroll,Math.min(100,Math.round(window.scrollY/max*100)))}
   const onClick=(ev:MouseEvent)=>{
    const p=page.current;if(!p)return
-   const el=(ev.target as Element|null)?.closest?.('a,button,[role="button"],[role="tab"],summary,[data-insight]');if(!el)return
+   const el=(ev.target as Element|null)?.closest?.('a,button,[role=button],[role=tab],summary,[data-insight]');if(!el)return
    const target=labelOf(el);if(!target)return
    push({kind:'click',path:p.path,target})
   }
