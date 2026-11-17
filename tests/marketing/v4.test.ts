@@ -39,7 +39,7 @@ describe('social pictures v4', () => {
         expect(html).not.toMatch(/style="[^"]*"[^>]*\sstyle="/) // one style attribute per element (a second is ignored)
       }
     }
-  })
+  }, 60_000) // every template × feed/story with fonts inlined: ~5 s alone, longer on a loaded CI runner
 
   it('every feature post carries a dare and a call to action', async () => {
     const {page, dareFor} = await load()
