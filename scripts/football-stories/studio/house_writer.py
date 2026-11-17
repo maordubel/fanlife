@@ -86,6 +86,8 @@ class Book:
             k = (c.get('fact') or {}).get('kind')
             if k in ('managers', 'club', 'season', 'route', 'final', 'supporters') and k not in self.dossier:
                 self.dossier[k] = c
+        self.cast = {c['fact']['role']: c for c in self.by.values() if (c.get('fact') or {}).get('kind') == 'character'}
+        self.angle = ledger.get('angle') or 'rise'
         self.detail = {c['fact'].get('date'): c for c in self.by.values() if (c.get('fact') or {}).get('kind') == 'match-detail' and c['fact'].get('date')}
 
     def f(self, mid: str) -> dict:
@@ -281,6 +283,10 @@ class Pen:
     def result(self, mid: str) -> str:
         b = self.b
         return self.pick(b.outcome(mid), who=self.who(), opp=b.opp(mid), score=b.score(mid))
+
+    def pick_hero(self, name: str) -> str:
+        opts = (f'And who else but {name}.', f'Of course it was {name}.', f'{name}, again — when it mattered most.')
+        return opts[self.rng.randrange(len(opts))]
 
     def cam(self) -> str:
         self.k += 1
@@ -583,7 +589,8 @@ def pick_matches(book: Book, ids: list[str], exclude: set[str], k: int) -> list[
         # a match with something at stake before kick-off (studio/drama_facts.py) tells better than one without
         stake = 0.12 * bool(x.get('never_beaten_in') or x.get('years_since_win', 0) >= 4 or (x.get('earlier_this_season') or {}).get('outcome') == 'loss'
                             or x.get('league_left') == 0 or (x.get('trip') or {}).get('longest_of_season') or (x.get('elo') or {}).get('upset_of_season'))
-        return book.weight.get(i, 0) + 0.08 * len([t for t in tags if t not in ('first', 'last', 'streak-start', 'streak-end')]) + stake
+        cast = 0.15 * any(i == (c['fact'].get('match_id')) or i in (c['fact'].get('big_match_ids') or []) for c in book.cast.values())
+        return book.weight.get(i, 0) + 0.08 * len([t for t in tags if t not in ('first', 'last', 'streak-start', 'streak-end')]) + stake + cast
     cand = [i for i in ids if i not in exclude]
     best = sorted(cand, key=lambda i: (-w(i), book.order.get(i, 0)))[:k]
     return sorted(best, key=lambda i: book.order.get(i, 0))
@@ -775,7 +782,11 @@ def cold_open(pen: Pen, hook: dict) -> dict:
         back = {'chronicler': 'To understand it, start with the first meetings. How did it all begin?',
                 'poet': 'But you have to go back to the old days first. Where did it start?',
                 'mythmaker': 'Rewind. Back to the first time they met. Where does a rivalry begin?'}[pen.w]
-    beats.append(beat(back, [], {'type': 'turning', 'title': 'Rewind' if pen.w != 'poet' else 'Where it started', 'subtitle': 'How it came to this',
+    ids_back = []
+    if b.kind == 'season':   # the angle tells the viewer what kind of story this is, before it rewinds
+        al, ids_back = angle_line(pen)
+        back = f'{al} {back}'
+    beats.append(beat(back, ids_back, {'type': 'turning', 'title': 'Rewind' if pen.w != 'poet' else 'Where it started', 'subtitle': 'How it came to this',
                                  'backdrop': pen.art()}, 1.0, True, camera=pen.cam(), pace='slow'))
     title = {'chronicler': 'The Night', 'poet': 'That Night', 'mythmaker': 'The Climax'}[pen.w]
     return {'title': title, 'beats': beats}
@@ -899,6 +910,66 @@ def weave_dossiers(pen: Pen, chapters: list[dict]) -> None:
                 break
 
 
+ANGLE_OPEN = {   # one line in the opening that sets what kind of story this is (studio/characters.angle) — never about the film itself (director rule 6)
+    'hero': ('One name ran through this season: {hero}.', 'Remember one name tonight: {hero}.', 'Watch {hero}.'),
+    'road': ('Every trip mattered that season.', 'The road started a long way from home.'),
+    'tragedy': ('It came so close.', 'It would end in tears.'),
+    'redemption': ('It started with a wound.', 'First it fell apart.'),
+    'siege': ('Everyone came to take it from them.', 'They had it, and everyone wanted it.'),
+    'rise': ('Nobody saw where this season was going.', 'Nobody expected what came next.'),
+}
+
+
+def angle_line(pen: Pen) -> tuple[str, list[str]]:
+    b = pen.b
+    h = b.cast.get('hero')
+    a = b.angle if b.angle != 'hero' or h else 'rise'
+    opts = ANGLE_OPEN[a]
+    line = opts[pen.rng.randrange(len(opts))].format(hero=spoken(h['fact']['name']) if h else '')
+    return line, ([h['id']] if a == 'hero' and h else [])
+
+
+def cast_into(pen: Pen, chapters: list[dict]) -> None:
+    """In place: the hero planted early and paid off late; the wound named on its night. A hero is introduced in the
+    first chapter that holds one of his goals ("Remember the name …", his season's count — the character claim's own
+    numbers); on the big night he scored, the film says it was him. The wound's beat opens on the line that it went wrong."""
+    b = pen.b
+    h, w = b.cast.get('hero'), b.cast.get('wound')
+    if h:
+        x = h['fact']
+        name = spoken(x['name'])
+        mine = set(x['match_ids'])
+        for ch in chapters:
+            pos = next((k for k, bt in enumerate(ch['beats']) if mine & set(bt.get('claim_ids') or [])), None)
+            if pos is None:
+                continue
+            dec = x['decisive_goals']
+            rec = '' if x.get('scorers_complete') else ' on record'   # the archive's scorers, not every goal of the season
+            line = (f'Remember the name: {name}. By the end of the season, {x["goals"]} goals{rec}'
+                    + (f', {dec} of them the goal that decided a match.' if dec >= 2 else '.'))
+            ch['beats'].insert(pos, beat(line, [h['id']], {'type': 'illustration', 'art': pen.art(), 'caption': ''}, 0.95, True, camera=pen.cam()))
+            break
+        big = set(x['big_match_ids'])
+        for ch in chapters:
+            for bt in ch['beats']:
+                if big & set(bt.get('claim_ids') or []) and name.split()[-1] in bt['narration'] and 'Remember the name' not in bt['narration']:
+                    bt['narration'] += f' {pen.pick_hero(name)}'
+                    bt['claim_ids'] = list(dict.fromkeys((bt.get('claim_ids') or []) + [h['id']]))
+                    big = set()
+                    break
+    if w:
+        mid = w['fact']['match_id']
+        for ch in chapters:
+            for bt in ch['beats']:
+                if mid in (bt.get('claim_ids') or [])[:1] and not bt['narration'].startswith('This was the night'):
+                    first, _, rest = bt['narration'].partition('. ')
+                    if TURNED.search(first) or OBSTACLE.search(first):   # a craft lead ("Then it changed.") gives way to the wound
+                        bt['narration'] = rest
+                    bt['narration'] = f'This was the night it went wrong. {bt["narration"]}'
+                    bt['claim_ids'] = list(dict.fromkeys(bt['claim_ids'] + [w['id']]))
+                    return
+
+
 def ensure_joy(pen: Pen, chapters: list[dict]) -> None:
     """A film with a win in it has its moment of joy: after the best-weighted win told, when the payoff gave none."""
     b = pen.b
@@ -942,6 +1013,7 @@ def season_film(pen: Pen, words_lo: int) -> list[dict]:
     record = f'summary:{b.main}' if b.main else None
     chapters.append(epilogue(pen, len(chapters) + 2, record, b.honours))
     weave_dossiers(pen, chapters)
+    cast_into(pen, chapters)
     return chapters
 
 
@@ -1054,8 +1126,13 @@ def titles(pen: Pen) -> list[dict]:
     else:
         search = [f'{club} {season}: The Full Season Story', f'{club} {season} Season — Every Big Night', f'{club} in {season}: How It Happened',
                   f'{club} {season}: From Start To Finish', f'{club} {season} Explained']
-        disc = [f'The Night Against {opp}', 'The Season Nobody Saw Coming', 'How A Season Turned', 'A Season On The Edge',
-                'The Run That Changed Everything']
+        h = b.cast.get('hero')
+        lead = {'hero': f'{spoken(h["fact"]["name"])}\'s Season' if h else 'The Season Nobody Saw Coming', 'road': 'The Long Road',
+                'tragedy': 'So Close', 'redemption': 'From The Wound To The Trophy', 'siege': 'Nobody Could Take It',
+                'rise': 'The Season Nobody Saw Coming'}[b.angle if b.angle in ('road', 'tragedy', 'redemption', 'siege', 'rise', 'hero') else 'rise']
+        # the film's angle (studio/characters.angle) leads the discovery titles: two seasons never share a title
+        disc = [lead] + [t for t in (f'The Night Against {opp}', 'The Season Nobody Saw Coming', 'How A Season Turned', 'A Season On The Edge',
+                                     'The Run That Changed Everything') if t != lead][:4]
     order = {'chronicler': (0, 1, 2, 3, 4), 'poet': (2, 4, 0, 1, 3), 'mythmaker': (3, 0, 4, 2, 1)}[pen.w]
     out = [{'title': search[i][:100], 'angle': 'search'} for i in order] + [{'title': disc[i][:100], 'angle': 'discovery'} for i in order]
     return out

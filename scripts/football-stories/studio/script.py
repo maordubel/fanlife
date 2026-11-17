@@ -990,7 +990,7 @@ OBSTACLE = re.compile(r'\b(but|yet|against|behind|trail\w*|without|injur\w+|susp
                       r'favourites?|stronger|rivals?|doubt\w*|problem|trouble|debt|crisis|feared|unbeaten|had not won|had never)\b', re.I)
 CLOCKED = re.compile(r'\b(minutes?|seconds|hours?|days?|weeks?|months?|left|remaining|to go|deadline|last|final (day|game|match|whistle)|by (the end|then|may|june)|'
                      r'before|until|extra time|stoppage|penalt\w+|shoot-?out|the clock|time was|running out|\d{1,2}(st|nd|rd|th))\b', re.I)
-TURNED = re.compile(r'\b(then|until|suddenly|but then|turned|chang\w+|instead|equalis\w+|equaliz\w+|comeback|came back|that was when|and yet|everything|'
+TURNED = re.compile(r'\b(then|until|suddenly|but then|turned|chang\w+|instead|equalis\w+|equaliz\w+|comeback|came back|that was when|went wrong|and yet|everything|'
                     r'out of nowhere|this time|at last|finally)\b', re.I)
 PAYOFF_VISUALS = {'score', 'goal', 'versus', 'table', 'record', 'stat', 'form', 'run'}
 PLANTED = re.compile(r'\?|comes? down to|one (game|match|point|goal|kick|shoot-out|win) (from|away)|nobody knew|no one knew|still level|all to play for|'
