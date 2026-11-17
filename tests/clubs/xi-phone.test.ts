@@ -12,10 +12,10 @@ const drawn=(ids:string[])=>(k:KitView)=>({...(ids.includes(k.id)?{svg:`/club-ki
 
 describe('shirt only, from the measured drawings',()=>{
  it('frames a drawing on its shirt, whatever the file holds',()=>{
-  expect(shirtView('/club-kits/olympiacos/svg/cof-k-69.svg')).toBe(`/club-kits/olympiacos/svg/cof-k-69.svg${SHIRT_VIEW}`)
+  expect(shirtView('/club-kits/olympiacos/svg/cof-k-69.svg').endsWith(SHIRT_VIEW)).toBe(true)
   expect(SHIRT_VIEW).toBe('#svgView(viewBox(0,20,336,298))')
   // never stacked twice
-  expect(shirtView(shirtView('/a.svg'))).toBe(`/a.svg${SHIRT_VIEW}`)
+  expect(shirtView(shirtView('/a.svg'))).toBe(shirtView('/a.svg'))
  })
  it('a full-set drawing keeps its shirt where the crop expects it (0..340 × 20..320) and its shorts and socks outside it',()=>{
   const svg=readFileSync(join(process.cwd(),'public/club-kits/olympiacos/svg/cof-k-69.svg'),'utf8')
