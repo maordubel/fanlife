@@ -5,6 +5,7 @@ import {deliver} from '@/lib/pay/deliver'
 import {mailOpen,orderMail,sendMail} from '@/lib/pay/mail'
 import {CATALOG} from '@/lib/pay/catalog'
 import {SITE_URL} from '@/lib/brand'
+import {handleBookEvent} from '@/lib/book/fulfil'
 
 export const runtime='nodejs'
 export const dynamic='force-dynamic'
@@ -19,6 +20,8 @@ export async function POST(r:Request){
  if(!verify(raw,r.headers.get('stripe-signature')))return new NextResponse('bad signature',{status:400})
  const ev=JSON.parse(raw) as {type:string;data:{object:Session&{metadata?:Record<string,string>;payment_intent?:string|null}}}
  const obj=ev.data.object,id=obj.metadata?.order
+ // the book's own checkouts (Broken Collective, 17.11.2026) ride the same endpoint: metadata.book marks them
+ if(obj.metadata?.book){await handleBookEvent(ev as Parameters<typeof handleBookEvent>[0]);return NextResponse.json({ok:true})}
  if(!id)return NextResponse.json({ok:true})
  if(ev.type==='checkout.session.completed'&&obj.payment_status==='paid'){
   const now=new Date().toISOString()

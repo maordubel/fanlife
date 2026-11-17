@@ -94,10 +94,12 @@ jobs:
           STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
           STRIPE_WEBHOOK_SECRET: ${{ secrets.STRIPE_WEBHOOK_SECRET }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          LULU_CLIENT_KEY: ${{ secrets.LULU_CLIENT_KEY }}
+          LULU_CLIENT_SECRET: ${{ secrets.LULU_CLIENT_SECRET }}
         run: |
           python3 - <<'PY2'
           import os
-          names = ['CRON_SECRET','TELEGRAM_BOT_TOKEN','TELEGRAM_WEBHOOK_SECRET','TELEGRAM_APP_URL','THESPORTSDB_KEY','SUPABASE_SERVICE_ROLE_KEY','FAN_LIFE_ADMIN_KEY','STRIPE_SECRET_KEY','STRIPE_WEBHOOK_SECRET','RESEND_API_KEY']
+          names = ['CRON_SECRET','TELEGRAM_BOT_TOKEN','TELEGRAM_WEBHOOK_SECRET','TELEGRAM_APP_URL','THESPORTSDB_KEY','SUPABASE_SERVICE_ROLE_KEY','FAN_LIFE_ADMIN_KEY','STRIPE_SECRET_KEY','STRIPE_WEBHOOK_SECRET','RESEND_API_KEY','LULU_CLIENT_KEY','LULU_CLIENT_SECRET']
           have = [n for n in names if os.environ.get(n)]
           arg = ('^##^' + '##'.join(n + '=' + os.environ[n] for n in have)) if have else ''
           open(os.environ['RUNNER_TEMP'] + '/envs', 'w').write(arg)
