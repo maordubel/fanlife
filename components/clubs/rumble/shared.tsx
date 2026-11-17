@@ -7,6 +7,7 @@ import {kitFor,type KitContext,type RumbleWardrobe} from '@/lib/clubs/rumble-kit
 import {KitPlate} from '@/components/clubs/games/KitPlate'
 import {KitCloth} from '@/components/clubs/gates/kit-builder/KitCloth'
 import {documentedCloth} from '@/lib/clubs/kit-model'
+import {KIT_ART_VERSION} from '@/lib/clubs/kit-art-version'
 
 /** a key of the club game copy, filled — the English UI never reaches for a Worker string */
 export function tr(copy:GameCopy,key:string,vars:Record<string,string|number>={}):string{
@@ -47,7 +48,7 @@ export function useReducedMotion():boolean{
  * A shirt-only drawing (0 20 340 300) sits inside the same frame. One file, no second copy.
  */
 export const SHIRT_VIEW='#svgView(viewBox(0,20,336,298))'
-export const shirtView=(src:string)=>src.includes('#')?src:`${src}${SHIRT_VIEW}`
+export const shirtView=(src:string)=>src.includes('#')?src:`${src}${src.includes('?')?'':`?v=${KIT_ART_VERSION}`}${SHIRT_VIEW}`
 
 export function RumbleShirt({card,side,wardrobe,className,playedOn,keeper}:{card:Pick<RumbleCard,'id'|'fromYear'|'toYear'>&Partial<Pick<RumbleCard,'position'>>;side:'us'|'them';wardrobe:RumbleWardrobe;className?:string}&KitContext){
  const worn=kitFor(card,side,wardrobe,{playedOn,keeper:keeper??card.position==='GK'})

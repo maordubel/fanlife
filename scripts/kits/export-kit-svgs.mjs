@@ -26,3 +26,5 @@ for(const k of data.kits){
 }
 writeFileSync(`public/club-kits/${club}/svg/index.json`,JSON.stringify({club,count:n,kits:index})+'\n')
 console.log(club,n,'svgs',crest?'with crest':'no crest')
+// a redrawn shirt is a new URL at the edge (see stamp-kit-art-version.mjs)
+const {stamp}=await import('./stamp-kit-art-version.mjs');stamp()
