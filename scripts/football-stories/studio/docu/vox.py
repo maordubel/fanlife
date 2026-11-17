@@ -265,7 +265,9 @@ def run(raw: list[dict], ad) -> list[dict]:
         m = b.get('meta') or {}
         s = shots.get(m.get('n')) or {}
         text = s.get('narration') or ''
-        cuts = cut_times(b, text) if m.get('type') not in SKIP and b['d'] > SEG_LONG else []
+        # a map journey is one flight from its first city to its last: never cut under it (17.11.2026 — the cut left Glasgow unreached)
+        flight = any(x['kind'] == 'atlas' for x in b['shots'])
+        cuts = cut_times(b, text) if m.get('type') not in SKIP and b['d'] > SEG_LONG and not flight else []
         segs = split(b, cuts) if cuts else [b]
         for k in range(1, len(segs)):
             if not has_picture(segs[k]):

@@ -919,7 +919,7 @@ class Film:
         sc = lambda k: k[2] / A.W   # noqa: E731 — what a tag scales by to keep its size on screen
         # timing: the arrival lands on the narrator's word for the last place
         arrive = max(1.6, min(d - 1.2, stops[-1].get('at', 1.8) + 0.5))
-        fly0 = 0.15 if len(stops) == 1 else max(0.5, arrive - min(3.2, max(1.8, d * 0.45)))
+        fly0 = 0.15 if len(stops) == 1 else max(0.5, min(1.2, arrive - 1.8) if len(stops) > 2 else arrive - min(3.2, max(1.8, d * 0.45)))
         mid = (fly0 + arrive) / 2
         # the sheet
         route = ''
@@ -930,24 +930,35 @@ class Film:
             rd = 'M' + 'L'.join(f'{x:.1f} {y:.1f}' for x, y in rp)
             route = (f'<path class="rt" d="{rd}" stroke="{self.PAPER}" stroke-width="15" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" id="{cid}r0"/>'
                      f'<path class="rt" d="{rd}" stroke="{self.US}" stroke-width="8" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" id="{cid}r1"/>')
-        tags, placed = '', []
+        tags, placed = '', []   # placed: the tags' boxes in plate pixels
         for i, (st, (x, y)) in enumerate(zip(stops, pts)):
             name = st['name'].upper()
             small = (st.get('small') or '').upper()
             tw_ = max(0.62 * 46 * len(name), 0.62 * 22 * len(small) * 1.25) + 44
             h_ = 66 + (30 if small else 0)
-            above = y > A.H * 0.25
-            near = [j for j, (px, py) in enumerate(pts[:i]) if abs(px - x) < 330 and abs(py - y) < 230]
-            if near and above == placed[near[-1]]:
-                above = not above   # two cities close together: their tags stand on either side of the pins
-            placed.append(above)
+            # the tag's place: above the pin, else below, else to either side — the first that touches no tag already
+            # placed, measured at the scale the journey ends on (two cities close together never print over each other)
+            ks = sc(keys[-1])
+            pref = [('up', 0), ('down', 0), ('up', 1), ('down', -1), ('up', -1), ('down', 1)] if y > A.H * 0.25 else \
+                   [('down', 0), ('up', 0), ('down', 1), ('up', -1), ('down', -1), ('up', 1)]
+
+            def rect(side, dx):
+                yy = (-96 - h_) if side == 'up' else 96
+                cx = x + dx * (tw_ * 0.62) * ks
+                return (cx - tw_ / 2 * ks, y + yy * ks, cx + tw_ / 2 * ks, y + (yy + h_) * ks)
+            side, dx = next(((sd, d_) for sd, d_ in pref if not any(rect(sd, d_)[0] < r[2] and r[0] < rect(sd, d_)[2] and rect(sd, d_)[1] < r[3] and r[1] < rect(sd, d_)[3]
+                                                                     for r in placed)), pref[0])
+            placed.append(rect(side, dx))
+            above = side == 'up'
+            shift = dx * tw_ * 0.62
             y0 = -96 - h_ if above else 96
             hot = i == len(stops) - 1
+            lx = shift   # the tag's centre, beside the pin when it had to step aside
             tags += (f'<g transform="translate({x:.1f} {y:.1f})"><g id="{cid}g{i}" transform="scale({sc(keys[0]):.4f})">'
-                     f'<g id="{cid}t{i}" opacity="0"><line x1="0" y1="0" x2="0" y2="{y0 + h_ if above else y0:.0f}" stroke="{self.INK}" stroke-width="5"/>'
-                     f'<rect x="{-tw_ / 2:.0f}" y="{y0:.0f}" width="{tw_:.0f}" height="{h_}" fill="{self.US if hot else self.PAPER}" stroke="{self.INK}" stroke-width="5"/>'
-                     f'<text x="0" y="{y0 + 52:.0f}" text-anchor="middle" style="fill:{"#fff" if hot else self.INK}">{e(name)}</text>'
-                     + (f'<text class="sm" x="0" y="{y0 + 84:.0f}" text-anchor="middle" style="fill:{"#fff" if hot else self.INK}">{e(small)}</text>' if small else '')
+                     f'<g id="{cid}t{i}" opacity="0"><line x1="0" y1="0" x2="{lx:.0f}" y2="{y0 + h_ if above else y0:.0f}" stroke="{self.INK}" stroke-width="5"/>'
+                     f'<rect x="{lx - tw_ / 2:.0f}" y="{y0:.0f}" width="{tw_:.0f}" height="{h_}" fill="{self.US if hot else self.PAPER}" stroke="{self.INK}" stroke-width="5"/>'
+                     f'<text x="{lx:.0f}" y="{y0 + 52:.0f}" text-anchor="middle" style="fill:{"#fff" if hot else self.INK}">{e(name)}</text>'
+                     + (f'<text class="sm" x="{lx:.0f}" y="{y0 + 84:.0f}" text-anchor="middle" style="fill:{"#fff" if hot else self.INK}">{e(small)}</text>' if small else '')
                      + f'</g><g id="{cid}p{i}"><circle r="22" fill="{self.INK}" cx="4" cy="5"/><circle r="22" fill="{self.US if st.get("home") or hot else self.PAPER}" stroke="{self.INK}" stroke-width="6"/>'
                      f'<circle r="7" fill="{self.INK}"/></g></g></g>')
         ball = ''
