@@ -160,3 +160,27 @@ class Scenes(unittest.TestCase):
             self.assertEqual(pk.pick_relevant(q)['id'], 'scene:hapoel-tel-aviv/road')
             q = MI.beat_query({'n': 2, 'visual': {'type': 'illustration'}, 'narration': 'Time was running out in the last minutes.'})
             self.assertEqual(pk.pick_relevant(q)['id'], 'scene:hapoel-tel-aviv/clock')
+
+
+class Atlas(unittest.TestCase):
+    """The atlas (docu/atlas.py, owner 17.11.2026): a place the narrator names becomes a map the camera flies over."""
+
+    def test_places_in_order_and_never_a_club_name(self):
+        from studio.docu import atlas as A
+        self.assertEqual([p['name'] for p in A.places_in('Hapoel Tel Aviv flew to Glasgow, then on to Basel.')], ['Glasgow', 'Basel'])
+        self.assertEqual([p['name'] for p in A.places_in('They beat Real Madrid in Madrid.')], ['Madrid'])
+        self.assertEqual(A.places_in('The Israel State Cup final.'), [])
+        self.assertEqual([p['name'] for p in A.places_in('The road ran through Genk, Belgrade and Basel. Basel scored late.')], ['Genk', 'Belgrade', 'Basel'])
+
+    def test_the_device_flies_and_keeps_its_tags_on_screen(self):
+        from pathlib import Path
+        from studio.docu import build as B
+        f = B.Film({'palette': {'us': '#c00', 'them': '#222'}, 'silent': True}, Path('/tmp'))
+        f.agg_moves = []
+        f.atlas({'stops': [{'name': 'Tel Aviv', 'll': [32.08, 34.78], 'home': True, 'at': 0.0},
+                           {'name': 'Glasgow', 'll': [55.86, -4.25], 'at': 3.0}], 'highlight': ['United Kingdom']}, 0.0, 7.0)
+        js = ''.join(f.tw)
+        self.assertIn('viewBox', js)                 # the camera is a flight over one sheet, never a cut
+        self.assertIn('stroke-dashoffset', js)       # the route is drawn
+        self.assertIn('keyframes', js)               # a marker travels it
+        self.assertIn('GLASGOW', ''.join(f.clips))

@@ -37,3 +37,31 @@ numbers became. Newest first. The skill reads this before touching the editor an
 
 - Segments per sentence, relevant pictures by caption, objects library, club scenes. Mix 48/25/27 — but the cut rate
   doubled and it flickered (see the entry above). Lesson: more graphic ideas must not mean more cuts.
+
+## 17.11.2026 (afternoon) — the atlas: maps that move
+
+- **Owner**: "improve, and take inspiration from the films I attached — the maps, the movement between places, the graphics."
+  References: two Search Party films by Sam Ellis (ex Vox Atlas) — *How England's football league is breaking the sport*,
+  *How Mexico built the World Cup's best stadium*. The pages were readable; the videos could not be fetched here (YouTube is
+  outside the network allowlist), so the style is taken from the series' known language: a printed map, a camera that flies
+  over it, routes drawn city to city, pinned paper tags, the country filled as the story reaches it.
+- **Before**: a place was a split card (two halves, a bolt) — no map, no movement between places. The house writer never
+  named the away cities, so even the split card was rare.
+- **Changes**: `docu/atlas.py` + `build.Film.atlas` (one SVG sheet from Natural Earth, camera = an eased viewBox flight,
+  tags counter-scaled to keep their size, route drawn with a marker travelling it, destination country filled); `cities`
+  becomes the flight when both cities are placed; VOX accent `place` (a city or country the line names, never a club's
+  name, at most one flight per 24 s); map beats fly the whole road (`Adapter.journey`); the house writer writes the road
+  ("The road ran through Genk, Belgrade and London") from the away matches the place book can place.
+- **Owner, same round**: "make sure the flow is smooth, clean, fun."
+- **Smooth flow**: the last hard ways in became soft — `fade` 0.35 s → 0.8 s dissolve, `match` → a dissolve on the scale,
+  `dive` 0.4 → 0.8 s eased; the score board drops in without the back-ease overshoot; the turning tint and the slammed
+  word come up through the picture instead of slamming (the 22 s flash); odometers roll on a sine ease over 2.2 s.
+  A map flight is exempt from the card limits (`MAX_CARD`, the card budget) — it was cut to 2.6 s and left a picture
+  flashing behind it. The jerk gate's window after a change now covers the 0.8 s soft ways in: a dissolve blending two
+  moving pictures was measured as a camera jerk (every jerk over 130 px in this film sat inside a dissolve).
+- **Measured** (Olympiacos 2023/24, house writer, same plan, re-rendered): flashes 4 → 2 (left: the map → the next
+  picture at 55.5 s, the chapter card at 108.7 s), changes 18.1 a minute, worst jerk 19.7 px on the new window
+  (157.6 on the old one; the odometer ease change was not in this render).
+- **Next**: Search Party's other devices — the highlighted newspaper clipping, the stadium plan drawn from above, bar
+  charts standing on the map; more cities in the place book (only 37 today: every away ground the archive holds should
+  have one).

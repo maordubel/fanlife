@@ -414,6 +414,35 @@ def run_beat(pen: Pen, run: dict) -> dict | None:
     return beat(text, [i for i in ids if i != b.top] + ['story'], {'type': 'run', 'claims': ids, 'label': label}, 0.9, False, camera=pen.cam())
 
 
+ROAD = ('The road ran through {cities}.', 'Away from home, the journey ran through {cities}.', 'The trips that stretch took: {cities}.',
+        'On the road: {cities}.')
+
+
+def road_beat(pen: Pen, ids: list[str], req: bool = False) -> dict | None:
+    """The stretch's away journeys, city after city, in date order (the place book's cities: studio/maps.place_of) —
+    the film flies them on the atlas (docu/atlas.py). Only when at least two cities away from home are on record."""
+    from .maps import city_of, place_of
+    b = pen.b
+    raw = str(b.ledger.get('club_name') or '')
+    home = city_of(raw)
+    cities, mids = [], []
+    for mid in sorted(ids, key=lambda i: b.order.get(i, 0)):
+        f = b.f(mid) if mid in b.by else {}
+        if f.get('kind') != 'match' or f.get('side') != 'away':
+            continue
+        there = place_of(f, raw)
+        far = not home or abs(there[1][0] - home[1][0]) + abs(there[1][1] - home[1][1]) > 1.0 if there else False
+        if there and far and there[0] not in cities:   # a derby across the city is not a journey
+            cities.append(there[0])
+            mids.append(mid)
+    if len(cities) < 2:
+        return None
+    cities, mids = cities[:4], mids[:4]
+    names = ', '.join(cities[:-1]) + ' and ' + cities[-1]
+    line = ROAD[pen.rng.randrange(len(ROAD))].format(cities=names)
+    return beat(f'{line} {pen.pick("obstacle")}', mids, {'type': 'map', 'claims': mids, 'label': 'On the road'}, 0.85, req, camera=pen.cam())
+
+
 def form_beat(pen: Pen, ids: list[str], label: str) -> dict | None:
     ids = sorted(dict.fromkeys(ids), key=lambda i: pen.b.order.get(i, 0))[:12]
     if len(ids) < 3:
@@ -685,6 +714,8 @@ def season_film(pen: Pen, words_lo: int) -> list[dict]:
                 break
         if k == 1:
             extra.append(race_beat(pen, mark))
+        road = road_beat(pen, act['ids'], req=not any(x and x['visual'].get('type') == 'map' for ch in chapters for x in ch['beats']))
+        extra.append(road)
         if k == 0:
             extra.append(form_beat(pen, pick_matches(b, act['ids'], set(), 8), ROLE_TITLE.get((act.get('note') or '').split(':')[0].strip(), 'The start')))
         ch = act_chapter(pen, len(chapters) + 2, act, {top}, budget, extra, payoff=top if k == 2 else None)

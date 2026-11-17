@@ -49,7 +49,7 @@ SEG_WAYS = ('dissolve', 'push', 'ink', 'dissolve', 'match', 'push', 'ink')   # 1
 def opaque(dev: dict) -> bool:
     """A device that covers the whole frame with its own ground (paper or ink), so nothing under it is seen."""
     k = dev['kind']
-    return (k in ('ledger', 'quote', 'rule', 'tally', 'form', 'table', 'press', 'chalk', 'cities', 'verdict', 'word', 'explain', 'locator', 'ident')
+    return (k in ('ledger', 'quote', 'rule', 'tally', 'form', 'table', 'press', 'chalk', 'cities', 'atlas', 'verdict', 'word', 'explain', 'locator', 'ident')
             or (k == 'ticket' and not dev.get('compact')) or (k == 'card' and bool(dev.get('paper'))))
 
 
@@ -197,7 +197,7 @@ def cut(beats: list[dict], grid: list[float] | None = None, related=None, backdr
         if m.get('type') not in ('end', 'follow'):
             # b · a card that outstays its reading leaves; the picture under it (or one fetched for it) carries the rest
             for dev in shots:
-                if not opaque(dev):
+                if not opaque(dev) or dev['kind'] == 'atlas':   # a map flight is a moving shot, not a card to read: it holds its line
                     continue
                 at, hold = span(dev, d)
                 limit = WORD_HOLD if dev['kind'] == 'word' else MAX_CARD * (0.6 if tight else 1) * min(1.0, (PROFILE or {}).get('card', 1.0))
@@ -301,7 +301,7 @@ def ground(beats: list[dict], backdrop=None, fixes: dict | None = None) -> None:
                     under = [pic]
             if under:
                 dev['glass'] = True
-            if opaque(dev) or dev['kind'] == 'word':
+            if (opaque(dev) or dev['kind'] == 'word') and dev['kind'] != 'atlas':   # a map flight is a moving shot, not a card
                 cards.append((b['t'] + at, dev, b))
     if total < BUDGET_FROM_S:   # a teaser or a single passage is not a film: its card is its point
         return
