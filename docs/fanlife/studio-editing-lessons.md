@@ -65,3 +65,22 @@ numbers became. Newest first. The skill reads this before touching the editor an
 - **Next**: Search Party's other devices — the highlighted newspaper clipping, the stadium plan drawn from above, bar
   charts standing on the map; more cities in the place book (only 37 today: every away ground the archive holds should
   have one).
+
+## 17.11.2026 (evening) — the drama desk and a city for every away ground
+
+- **Owner**: "a city for every away ground, so every film with away matches gets a route on the map; everything that helps
+  the writer build mini-drama, tension, excitement; very comprehensive research to refine the pipelines."
+- **Before**: 43 clubs in the place book; away matches with a known city: a handful per club. The house writer said a
+  result with no stakes in front of it ("UEFA Cup, 25 March 2004, away: Celtic were held 0–0 by Barcelona").
+- **Changes**: `place_book.py` (openfootball CC0 + GeoNames CC BY) → 913 clubs, 514 cities; away matches placed: Celtic
+  99%, St. Pauli 96%, Atalanta 95%, Hapoel TA 94%, Hapoel PT 93%, PAO and Maccabi Haifa 90%, AEK and Olympiacos 88%, Al
+  Ahly 78%, Zrinjski 71%, the Moroccan clubs 41–46% (local clubs openfootball lacks). `drama_facts.py` counts each match's
+  stakes; the writer says them before the result; chapters tease the next chapter's match. Research:
+  `docs/fanlife/studio-drama-playbook.md`.
+- **Example lines** (Hapoel TA 2009/10): "The longest trip of the season: 4,000 kilometres from Tel Aviv to Glasgow." ·
+  "In October 2009 Hamburger SV had beaten Hapoel Tel Aviv 4–2. Now they met again." · "Waiting ahead: Rubin Kazan, who
+  had beaten them 3–0 in February 2010. Was this the night it changed?"
+- **Lesson**: the archive is uneven — Olympiacos holds 13–16 matches for some seasons. Without the coverage rule the
+  writer would have said "had not beaten Panathinaikos in 2 years" across a hole in the record.
+- **Next**: league position before a match; an underdog factor (an archive Elo, or ClubElo through a GitHub Actions job:
+  the external sites are blocked from this machine); silence in the mix before the decisive goal.

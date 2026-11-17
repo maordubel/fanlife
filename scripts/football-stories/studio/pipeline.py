@@ -133,7 +133,7 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
         if progress:
             progress(stage, frac, msg)
 
-    from . import director, research, writer, script as sc, voice, edit, audio, package, qa
+    from . import director, drama_facts, research, writer, script as sc, voice, edit, audio, package, qa
 
     brief = {**brief, 'media_cache': str(cache / 'images')}
     live_sets = ingest_art(brief, log)
@@ -184,6 +184,7 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
         from . import deep_research
         deep_research.enrich(ledger, brief, cache, log)
         director.attach(ledger)  # the story the record proves (docs/fanlife/66-directors-cut.md §1), after any focus or pick
+        drama_facts.attach(ledger)  # what each match meant before kick-off: the record, the drought, the road, the clock
         write_json(lp, ledger)
         log(f'Research: {len(ledger["claims"])} claims, {len(ledger["held"])} held')
     ledger = read_json(lp)
@@ -204,6 +205,7 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     write_json(lp, ledger)
     if owner_updated or not isinstance(ledger.get('story'), dict) or ledger['story'].get('version') != director.STORY_VERSION:
         director.attach(ledger)  # a ledger written before the Director's Cut: its story is read off its own claims
+        drama_facts.attach(ledger)
         write_json(lp, ledger)
 
     from . import commons

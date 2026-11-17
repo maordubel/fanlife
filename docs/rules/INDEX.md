@@ -109,6 +109,7 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [studio-sight](studio-sight.md) · The studio looks at what it shows: pictures described once and chosen by sight, a director's shot list, no card on an empty ground (15% budget, 4 s), and a gate that judges the frames (owner, 15.11.2026)
 - [house-crew](house-crew.md) · Three in-house writers, directors and editors write, direct and cut a film from the archive in code when Google is unavailable or out of credit — never a wait (owner, 16.11.2026)
 - [studio-vox-pass](studio-vox-pass.md) · Every sentence is a shot with its own relevant picture and graphic idea (objects, scoreline, odometer, type); the object library and the club scenes in every club's inks; a busy Google never holds the queue (owner, 17.11.2026)
+- [studio-drama-desk](studio-drama-desk.md) · A city for every archive opponent from open data (openfootball + GeoNames); the stakes of every match counted from the archive and said before the result; chapters plant the next chapter's match; "on record", never across a gap (owner, 17.11.2026)
 
 ## Control room, research desk and CRM
 
