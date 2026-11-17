@@ -172,6 +172,7 @@ class Atlas(unittest.TestCase):
         self.assertEqual(A.places_in('The Israel State Cup final.'), [])
         self.assertEqual([p['name'] for p in A.places_in('The road ran through Genk, Belgrade and Basel. Basel scored late.')], ['Genk', 'Belgrade', 'Basel'])
 
+    @unittest.skipUnless(__import__('studio.maps', fromlist=['ATLAS']).ATLAS.joinpath('countries-50m.json').exists(), 'world-atlas not installed (npm ci)')
     def test_the_device_flies_and_keeps_its_tags_on_screen(self):
         from pathlib import Path
         from studio.docu import build as B
