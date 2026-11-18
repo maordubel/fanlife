@@ -698,3 +698,7 @@
   .wkh-counter:has(> :only-child) { grid-template-columns: 1fr; }
   .wkh-counter .wkh-market.wkh-market-mini { grid-area: auto; }
 }
+
+/* THE ALBUM on the hub (18.11.2026): the packet itself, a little foil envelope tilted on the plate */
+.wkh-lm{display:grid;gap:12px}
+.wkh-album-pack{display:block;inline-size:58px;aspect-ratio:300/420;background:url('/album/art/scene-600.webp') center/cover;border:3px solid var(--mag-ink);box-shadow:inset 0 7px 0 var(--mag-muted),inset 0 -7px 0 var(--mag-muted),4px 4px 0 var(--mag-ink);transform:rotate(-6deg)}
