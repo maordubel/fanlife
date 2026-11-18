@@ -5,6 +5,7 @@ import {CATALOG,ERAS,KITS,PRESSED,openWings,readMe,signedIn} from '@/lib/album/s
 import {AlbumClient} from '@/components/album/AlbumClient'
 import {Shell} from '@/components/master/Shell'
 import './album.css'
+import './ritual.css'
 
 export const dynamic='force-dynamic'
 export const metadata:Metadata={title:'The Album · FAN LIFE',description:'A sticker album for every club: an envelope every day, two stickers inside, a wing for your club from its first season to today.',robots:{index:false}}

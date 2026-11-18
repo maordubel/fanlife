@@ -7,6 +7,7 @@ import type {WingInfo} from '@/lib/album/view'
 import {AlbumHarness} from './Harness'
 import {Shell} from '@/components/master/Shell'
 import '../../album/album.css'
+import '../../album/ritual.css'
 
 /**
  * THE ALBUM drawn from fixtures (this environment has no live database): `?view=` is `out` (signed out), `new`
