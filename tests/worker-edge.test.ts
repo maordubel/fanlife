@@ -77,6 +77,19 @@ describe('the front door', () => {
     expect(cache.m.size).toBe(0)
   })
 
+  it('keeps a page whose only cookie is the anonymous tester id, without the cookie', async () => {
+    const cache = memoryCache()
+    vi.stubGlobal('caches', { default: cache })
+    vi.stubGlobal('fetch', vi.fn(async () => new Response('<html>x</html>', { status: 200, headers: { 'content-type': 'text/html', 'set-cookie': 'fan-life-tester=1; Path=/; HttpOnly' } })))
+    const waits: Promise<unknown>[] = []
+    const res = await worker.fetch(page('https://fanlife.dubelteam.com/archive'), {}, { waitUntil: (p) => { waits.push(p) } })
+    expect(res.headers.get('set-cookie')).toContain('fan-life-tester=1')
+    await Promise.all(waits)
+    expect(cache.m.size).toBe(1)
+    const kept = [...cache.m.values()][0] as Response
+    expect(kept.headers.get('set-cookie')).toBeNull()
+  })
+
   it('the boot screen is small, self-contained and in the site language', () => {
     const html = bootPage('/clubs/olympiacos')
     expect(html.length).toBeLessThan(8000)

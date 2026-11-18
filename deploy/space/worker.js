@@ -62,13 +62,21 @@ export function edgeKey(request) {
   url.searchParams.sort()
   return `https://edge-copy.fanlife/${url.host}${url.pathname}?${url.searchParams.toString()}`
 }
-const storable = (res) => res.status === 200 && !res.headers.has('set-cookie') && String(res.headers.get('content-type') || '').includes('text/html')
+// the only cookie a public page may carry is the anonymous tester id the evaluation build hands a new visitor; it is
+// per-visitor, so the edge keeps the page without it (the visitor who caused the refresh still gets theirs)
+const ANON_COOKIE = /^fan-life-tester=/
+function setCookies(res) {
+  if (typeof res.headers.getSetCookie === 'function') return res.headers.getSetCookie()
+  const one = res.headers.get('set-cookie')
+  return one ? [one] : []
+}
+const storable = (res) => res.status === 200 && setCookies(res).every((c) => ANON_COOKIE.test(c)) && String(res.headers.get('content-type') || '').includes('text/html')
 async function keep(cache, key, res) {
   if (!cache || !storable(res)) return
   const h = new Headers(res.headers)
   h.set('cache-control', `public, max-age=${EDGE_KEEP_S}`)
   h.set('x-edge-stored', String(Date.now()))
-  h.delete('x-fanlife-shelf'); h.delete('content-encoding'); h.delete('content-length')
+  h.delete('x-fanlife-shelf'); h.delete('content-encoding'); h.delete('content-length'); h.delete('set-cookie')
   await cache.put(key, new Response(await res.arrayBuffer(), { status: 200, headers: h }))
 }
 function served(res, state) {
