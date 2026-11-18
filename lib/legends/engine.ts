@@ -22,6 +22,15 @@ import type {Decision,MatchEventRow,MatchOutcome,MatchSnapshot,SideSnapshot,Tact
  */
 export const RATES={chance:0.104,convert:0.14,yellow:1.7/90,red:0.03/90,rebooked:0.3,etFactor:0.8,penalty:0.76,spread:22,cap:0.9} as const
 /** engine 3: open play gives way to set pieces, so its chance rate is lower; the set-piece rates are per side per minute */
+/**
+ * engine 5 (owner, 18.11.2026 — "too many goals, the game is not realistic; the competition must really depend on the squad"):
+ * measured on 4,000 matches between real club squads, engine 4 gave 3.9 goals a game, a four-goal margin in 30% of matches, the
+ * clearly stronger side winning 98% and almost no home advantage. Engine 5 keeps the squad as the main force but plays like
+ * football: a narrower tilt (a better side makes more chances, not unlimited ones), a home crowd, keepers who matter, and the
+ * score changing the game — a side two up sits back, a side behind late throws men forward. Targets and the measurement are in
+ * docs/legends-manager-fm-research.md; tests/legends/realism.test.ts holds them.
+ */
+export const RATES5={chance:0.076,spread:30,cap:0.45,attack:30,attackCap:0.25,home:1.2,away:0.85,keeper:0.07,lead2:0.72,lead1Late:0.9,behindLate:1.12,behind2:1.12} as const
 export const RATES3={chance:0.079,corner:0.0555,cornerGoal:0.032,freeKick:0.0135,freeKickGoal:0.075,penalty:0.00135,penaltyGoal:0.77} as const
 type Man={id:string;name:string;pos:QuotaPos;stars:number;attrs:Record<string,number>;mood?:number}
 type Pitch={slot:QuotaPos;man:Man;fresh:boolean}
@@ -73,10 +82,10 @@ export function checkDecision(p:PauseState,side:0|1,d:Decision):string|null{
 
 /** engine 4's stops, in order: half-time, the minutes the manager asked for, and the silent hand-over at 89′ */
 export const stopsV4=(snap:Pick<MatchSnapshot,'stops'>):number[]=>[...new Set([...R.touchlineStopsV4,...(snap.stops??[])])].sort((a,b)=>a-b)
-export const maxStopsOf=(snap:Pick<MatchSnapshot,'engine'>)=>snap.engine==='legends-engine-4'?R.maxInterventionWindowsV4:R.maxInterventionWindows
+export const maxStopsOf=(snap:Pick<MatchSnapshot,'engine'>)=>snap.engine==='legends-engine-4'||snap.engine==='legends-engine-5'?R.maxInterventionWindowsV4:R.maxInterventionWindows
 
 export function run(snap:MatchSnapshot,decisions:readonly Decision[],interactive:boolean,mySide:0|1=0):RunResult{
- const v2=snap.engine!=='legends-engine-1',v4=snap.engine==='legends-engine-4',v3=snap.engine==='legends-engine-3'||v4,cap=v2?R.captainBoost:1,stopList:readonly number[]=v4?stopsV4(snap):v3?R.touchlineStopsV3:R.touchlineStops,maxStops=v4?R.maxInterventionWindowsV4:R.maxInterventionWindows
+ const v2=snap.engine!=='legends-engine-1',v5=snap.engine==='legends-engine-5',v4=snap.engine==='legends-engine-4'||v5,v3=snap.engine==='legends-engine-3'||v4,cap=v2?R.captainBoost:1,stopList:readonly number[]=v4?stopsV4(snap):v3?R.touchlineStopsV3:R.touchlineStops,maxStops=v4?R.maxInterventionWindowsV4:R.maxInterventionWindows
  const S:[SideState,SideState]=[sideState(snap.sides[0],cap,v3),sideState(snap.sides[1],cap,v3)],events:MatchEventRow[]=[],goals:[number,number]=[0,0]
  const push=(e:Omit<MatchEventRow,'seq'>)=>events.push({...e,seq:events.length})
  const yellows:[Record<string,number>,Record<string,number>]=[{},{}],reds:MatchOutcome['reds']=[{},{}],injuries:MatchOutcome['injuries']=[{},{}],scorers:MatchOutcome['scorers']=[{},{}]
@@ -100,6 +109,13 @@ export function run(snap:MatchSnapshot,decisions:readonly Decision[],interactive
   pitch:[0,1].map(i=>S[i]!.pitch.flatMap(p=>p?[{slot:p.slot,id:p.man.id,name:p.man.name}]:[])) as PauseState['pitch'],
   bench:[0,1].map(i=>S[i]!.bench.map(m=>({id:m.id,name:m.name,pos:m.pos}))) as PauseState['bench'],
   subsLeft:[R.maxSubs-S[0].subs,R.maxSubs-S[1].subs],tactics:[{...S[0].tactics},{...S[1].tactics}]})
+ /** engine 5: the home crowd, and the score changing the game (two up sits back; behind late throws men forward) */
+ const stateOf=(side:0|1,m:number,home:boolean|null)=>{
+  const d=goals[side]-goals[side?0:1],h=home===null?1:home?RATES5.home:RATES5.away
+  return h*(d>=2?RATES5.lead2:d===1&&m>60?RATES5.lead1Late:d<=-2?RATES5.behind2:d===-1&&m>60?RATES5.behindLate:1)
+ }
+ /** engine 5: a keeper matters — a five-star keeper turns a few more chances away than a one-star one */
+ const keeperOf=(them:SideState)=>Math.exp((3-(them.pitch.find(p=>p?.slot==='GK')?.man.stars??2))*RATES5.keeper)
  const end=(pens:[number,number]|null):RunResult=>({done:true,outcome:{goals,pens,events,stops,played:[[...S[0].played],[...S[1].played]],yellows,reds,injuries,scorers}})
  /**
   * engine 3 — one side's set pieces in one minute, eight draws whatever happens: a corner (headed home now and then, the taker
@@ -108,7 +124,7 @@ export function run(snap:MatchSnapshot,decisions:readonly Decision[],interactive
   */
  const setPiece=(side:0|1,me:SideState,them:SideState,a:{S:number;A:number},b:{S:number;D:number},tilt:number,y:number[],m:number,et:boolean):boolean=>{
   const men=me.pitch.filter((p):p is Pitch=>!!p),keeper=them.pitch.find(p=>p?.slot==='GK')?.man,et8=et?RATES.etFactor:1
-  const att=Math.exp(clamp((a.A-b.D)/22,-0.8,0.8)),goal=(scorer:Man,assist:Man|null,detail:string)=>{goals[side]++;scorers[side][scorer.id]=(scorers[side][scorer.id]??0)+1;push({minute:m,kind:'goal',side,player:scorer.id,...(assist?{other:assist.id}:{}),detail})}
+  const att=v5?Math.exp(clamp((a.A-b.D)/RATES5.attack,-RATES5.attackCap,RATES5.attackCap)):Math.exp(clamp((a.A-b.D)/22,-0.8,0.8)),goal=(scorer:Man,assist:Man|null,detail:string)=>{goals[side]++;scorers[side][scorer.id]=(scorers[side][scorer.id]??0)+1;push({minute:m,kind:'goal',side,player:scorer.id,...(assist?{other:assist.id}:{}),detail})}
   const taker=(w:(p:Pitch)=>number,r:number)=>pick(men.filter(p=>p.slot!=='GK'),w,r)?.man??null
   let sig=false
   if(y[0]!<RATES3.corner*Math.exp(tilt*0.5)*APPROACH[me.tactics.approach].own*et8){
@@ -133,10 +149,10 @@ export function run(snap:MatchSnapshot,decisions:readonly Decision[],interactive
    const me=S[side],them=S[side?0:1],home=snap.knockout?null:snap.sides[side].home
    const x=[r(),r(),r(),r(),r(),r(),r(),r()]
    const a=strength(me,m,home,them),b=strength(them,m,snap.knockout?null:snap.sides[side?0:1].home,me)
-   const tilt=clamp((a.S-b.S)/RATES.spread,-RATES.cap,RATES.cap)
-   const pChance=(v3?RATES3.chance:RATES.chance)*Math.exp(tilt)*APPROACH[me.tactics.approach].own*APPROACH[them.tactics.approach].opp*TEMPO[me.tactics.tempo]*(et?RATES.etFactor:1)
+   const tilt=v5?clamp((a.S-b.S)/RATES5.spread,-RATES5.cap,RATES5.cap):clamp((a.S-b.S)/RATES.spread,-RATES.cap,RATES.cap)
+   const pChance=(v5?RATES5.chance*stateOf(side,m,home):v3?RATES3.chance:RATES.chance)*Math.exp(tilt)*APPROACH[me.tactics.approach].own*APPROACH[them.tactics.approach].opp*TEMPO[me.tactics.tempo]*(et?RATES.etFactor:1)
    if(x[0]!<pChance){
-    const conv=RATES.convert*Math.exp(clamp((a.A-b.D)/22,-0.8,0.8))
+    const conv=v5?RATES.convert*Math.exp(clamp((a.A-b.D)/RATES5.attack,-RATES5.attackCap,RATES5.attackCap))*keeperOf(them):RATES.convert*Math.exp(clamp((a.A-b.D)/22,-0.8,0.8))
     const shooters=me.pitch.filter((p):p is Pitch=>!!p)
     const scorer=pick(shooters,p=>({GK:0,DF:1,MF:3,FW:6})[p.slot]*Math.pow(attr(p.man,'finishing')/3,2),x[2]!)
     if(scorer&&x[1]!<conv){

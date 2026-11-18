@@ -1,6 +1,6 @@
 import {hash} from '@/lib/clubs/rumble-rng'
 import {isFormation} from '@/lib/clubs/rumble-xi/formations'
-import {ENGINE_VERSION,LEGENDS_RULES as R,RULE_VERSION,roundTenths,type LegendsSettings,QUOTA_POS,type QuotaPos} from './config'
+import {ENGINE_VERSION,LEGENDS_RULES as R,RULE_VERSION,roundTenths,touchlineEngine,type LegendsSettings,QUOTA_POS,type QuotaPos} from './config'
 import {aiWindow,prepareEmergency} from './ai'
 import {afterBye,afterMatch,available,fresh,newSeason,type MatchBook} from './discipline'
 import {botDraft,budgetOf,confirmCheck,minCostToFinish,draftMove,emptyDraft,type DraftMove} from './draft'
@@ -295,7 +295,7 @@ function step(c:Career,a:Action,ctx:Ctx):ActionResult{
   // engine 4: the manager pressed Tactics at the minute he is watching — the match is paused THERE (owner, 14.10.2026).
   // Only a minute between the last decided stop and the stop the match now waits at can be asked for, so nothing already decided moves.
   case 'match-tactics':{
-   if(!c.live||c.live.mode!=='interactive'||c.live.snapshot.engine!=='legends-engine-4')return bad('No match is waiting for you.','closed')
+   if(!c.live||c.live.mode!=='interactive'||!touchlineEngine(c.live.snapshot.engine))return bad('No match is waiting for you.','closed')
    const snap=c.live.snapshot,list=stopsV4(snap),done=c.live.decisions.length,last=list[done-1]??0,waiting=list[done]
    if(waiting===undefined)return bad('The match has no stop left to move.')
    if(list.length>=maxStopsOf(snap))return bad('No more stops this match — the rest plays out.')

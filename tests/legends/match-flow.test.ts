@@ -34,8 +34,8 @@ describe('engine 3 — set pieces (owner, 13.10.2026)',()=>{
   }
  })
  it('new matches are engine 4, which stops at 45′ and hands over at 89′; engines 3 and 2 keep their stops',()=>{
-  expect(ENGINE_VERSION).toBe('legends-engine-4');expect(R.touchlineStopsV4).toEqual([45,89]);expect(R.touchlineStopsV3).toEqual([45,65,70]);expect(R.touchlineStops).toEqual([45,60,75])
-  for(const [e,want] of [['legends-engine-4',[45,89]],['legends-engine-3',[45,65,70]],['legends-engine-2',[45,60,75]]] as const){
+  expect(ENGINE_VERSION).toBe('legends-engine-5');expect(R.touchlineStopsV4).toEqual([45,89]);expect(R.touchlineStopsV3).toEqual([45,65,70]);expect(R.touchlineStops).toEqual([45,60,75])
+  for(const [e,want] of [['legends-engine-5',[45,89]],['legends-engine-4',[45,89]],['legends-engine-3',[45,65,70]],['legends-engine-2',[45,60,75]]] as const){
    const s=snapshotsOf(e,1)[0]!;let d:{stop:number}[]=[],r=run({...s,knockout:false,sides:[{...s.sides[0],home:true},{...s.sides[1],home:false}]},d,true);const got:number[]=[]
    while(!r.done){got.push(r.pause.minute);d=[...d,{stop:r.pause.stop}];r=run({...s,knockout:false,sides:[{...s.sides[0],home:true},{...s.sides[1],home:false}]},d,true)}
    expect(got).toEqual(want)
@@ -60,7 +60,7 @@ describe('engine 3 — set pieces (owner, 13.10.2026)',()=>{
   expect(pens).toBeGreaterThan(0);expect(corners).toBeGreaterThan(400);expect(fk).toBeGreaterThan(50);expect(spGoals).toBeGreaterThan(10);expect(saved).toBeGreaterThanOrEqual(0)
  })
  it('10,000 seeded matches stay calibrated: goals, draws, about a quarter of a penalty and ten corners a match',()=>{
-  const m=matchLab(LEAGUE,10000)
+  const m=matchLab(LEAGUE,10000,'legends-engine-3')
   expect(m.setPieces.penalties).toBeGreaterThan(0.18);expect(m.setPieces.penalties).toBeLessThan(0.34)
   expect(m.setPieces.corners).toBeGreaterThan(8.8);expect(m.setPieces.corners).toBeLessThan(11.2)
   expect(m.setPieces.goals).toBeGreaterThan(0.4);expect(m.setPieces.goals).toBeLessThan(1)
@@ -118,7 +118,7 @@ describe('the dressing room (owner, 13.10.2026)',()=>{
   expect(applyAction(c,keyed(c,{kind:'talk-pre',fixture:pre.fixture,answer:1}),ctx).ok).toBe(false)
   // the pre-match mood travels into the match snapshot
   const mood=me(c).mood??0;c=act(c,{kind:'match-start',mode:'interactive'});const side=c.live!.snapshot.sides.findIndex(s=>s.club===c.clubId)
-  expect(c.live!.snapshot.engine).toBe('legends-engine-4');expect(c.live!.snapshot.sides[side]!.mood??0).toBe(mood)
+  expect(c.live!.snapshot.engine).toBe('legends-engine-5');expect(c.live!.snapshot.sides[side]!.mood??0).toBe(mood)
   expect(talkOffers(c)).toEqual({pre:null,post:null}) // nothing while the match is on
   expect(applyAction(c,keyed(c,{kind:'talk-post',fixture:pre.fixture,answer:0}),ctx).ok).toBe(false)
   c=act(c,{kind:'match-finish'});const post=talkOffers(c).post!;expect(post.fixture).toBe(lastMine(c)!.id)

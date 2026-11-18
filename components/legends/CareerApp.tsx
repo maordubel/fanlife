@@ -16,6 +16,8 @@ import {TeamSheet} from './TeamSheet'
 import {CampSheet,PressSheet} from './PreSeason'
 import {BoardNews,ClubSheet,WindowSheet} from './Popups'
 import {Portal,Sheet} from './Sheet'
+import {Inbox,useInboxRead} from './Inbox'
+import type {InboxItem} from '@/lib/legends/inbox'
 import {MeetSquad} from './MeetSquad'
 import {Thinking} from './Thinking'
 import {LeagueCentre,Table} from './Stats'
@@ -61,6 +63,8 @@ export function CareerApp({initial,friendlies=false,decades,wardrobe,shirts=[]}:
  // the dressing room: kick-off goes through the pre-match talk; the post-match talk follows full time (Talk.tsx)
  const room=useDressingRoom(v,busy,send,!!watching,kickoffNow,()=>setTab('squad')),kickoff=room.kickoff
  const meet=v.cutscene==='meet-squad'&&v.phase!=='draft'
+ const inbox=useInboxRead(v.id,v.inbox)
+ const goTo=(to:NonNullable<InboxItem['to']>)=>{if(to==='window'){setTab('match');setWinOpen(true)}else setTab(to)}
  return <ShirtProvider value={{shirts,wardrobe,colours:v.colours??{}}}><div className="lgm-app tl-app" data-meet={meet||undefined}>
   <header className="lgm-head">
    <Emblem size={56}/>
@@ -78,8 +82,9 @@ export function CareerApp({initial,friendlies=false,decades,wardrobe,shirts=[]}:
   {v.cutscene==='board-grant'?<BoardNews v={v} busy={busy} send={send}/>:v.cutscene==='season-end'&&!watching&&!room.open?<SeasonEnd v={v} busy={busy} send={send}/>:null}
   {v.status==='archived'?<p className="lgm-error">This career is archived. Restore it from the Legends front page to play on.</p>:null}
   {v.phase==='draft'?<DraftRoom v={v} busy={busy} send={send} wardrobe={wardrobe}/>:meet?<MeetSquad v={v} busy={busy} send={send}/>:<>
-   <CareerNav tab={tab} setTab={t=>{setTab(t);setMsg(null)}} windowOpen={!!v.window} matchLabel={v.phase==='window'?'Window':'Match'}/>
+   <CareerNav tab={tab} setTab={t=>{setTab(t);setMsg(null)}} windowOpen={!!v.window} matchLabel={v.phase==='window'?'Window':'Match'} unread={inbox.unread}/>
    {tab==='match'?<Matchday v={v} busy={busy} send={send} go={setTab} kickoff={kickoff} resume={()=>v.live&&setWatch({id:v.live.fixture,from:v.live.prevStop})} openWindow={()=>setWinOpen(true)} openClub={setClub}/>:null}
+   {tab==='inbox'?<Inbox items={v.inbox} read={inbox.read} mark={inbox.mark} go={goTo}/>:null}
    {tab==='squad'?<TeamSheet v={v} busy={busy} send={send}/>:null}
    {tab==='market'?<Market v={v} busy={busy} send={send} decades={decades}/>:null}
    {tab==='league'?<LeagueCentre v={v} openClub={setClub}/>:null}
@@ -91,6 +96,7 @@ export function CareerApp({initial,friendlies=false,decades,wardrobe,shirts=[]}:
   {msg?.kind==='error'&&!watching?<ErrorToast key={msg.text} text={msg.text} onClose={()=>setMsg(null)}/>:null}
   {!watching&&!room.open&&winOpen&&v.window&&!v.cutscene?<WindowSheet v={v} busy={busy} send={send} onMarket={()=>{setWinOpen(false);setTab('market')}} onClose={()=>setWinOpen(false)}/>:null}
   {club?<ClubSheet v={v} club={club} onClose={()=>setClub(null)}/>:null}
+  {v.phase!=='draft'&&!meet&&!watching&&!room.open&&!winOpen&&!club&&!v.cutscene&&!v.press&&v.status!=='archived'?<ContinueBar v={v} busy={busy} send={send} kickoff={kickoff} resume={()=>v.live&&setWatch({id:v.live.fixture,from:v.live.prevStop})} openWindow={()=>setWinOpen(true)} go={t=>setTab(t)} urgent={v.inbox.filter(i=>i.tone==='urgent'&&!inbox.read.has(i.id)).length} tab={tab}/>:null}
  </div></ShirtProvider>
 }
 
@@ -217,4 +223,26 @@ function ErrorToast({text,onClose}:{text:string;onClose:()=>void}){
 function OkToast({text,onClose}:{text:string;onClose:()=>void}){
  useEffect(()=>{const t=window.setTimeout(onClose,3200);return()=>window.clearTimeout(t)},[]) // eslint-disable-line react-hooks/exhaustive-deps -- one slip, one timer
  return <Portal><div className="lgm-toast lgm-toast-ok z-[80]" aria-hidden="true" data-testid="legends-ok-toast"><span className="lgm-toast-tick">✓</span><p>{text}</p></div></Portal>
+}
+
+/**
+ * CONTINUE (18.11.2026, owner: "a Continue button like the real manager"). One button, always in the same place, that does the
+ * next thing the career is waiting for: an urgent message first (as FM stops you for it), then back to a match left at the
+ * touchline, the window, the free week, a broken eleven, the kick-off, or the next season. Under it, in words, what it will do.
+ */
+function ContinueBar({v,busy,send,kickoff,resume,openWindow,go,urgent,tab}:{v:CareerView;busy:boolean;send:Send;kickoff:()=>void;resume:()=>void;openWindow:()=>void;go:(t:Tab)=>void;urgent:number;tab:Tab}){
+ const n=v.next
+ const step:{sub:string;run:()=>void;tone?:'live'|'warn'}|null=
+  urgent&&tab!=='inbox'?{sub:`${urgent} urgent message${urgent===1?'':'s'}`,run:()=>go('inbox'),tone:'warn'}
+  :v.live?{sub:`Back to the touchline · ${v.live.minute}′`,run:resume,tone:'live'}
+  :v.phase==='season-end'?{sub:`Start season ${v.season+1}`,run:()=>send({kind:'next-season'},`Season ${v.season+1} begins.`)}
+  :v.phase==='window'?{sub:`The transfer window${v.window?.bids.length?` · ${v.window.bids.length} offer${v.window.bids.length===1?'':'s'}`:''}`,run:openWindow}
+  :v.bye?{sub:'Free week · the others play',run:()=>send({kind:'play-round'},'The round is played.')}
+  :v.lineup.error?{sub:'Fix the eleven first',run:()=>go('squad'),tone:'warn'}
+  :n?{sub:`${n.playoff?'Title play-off':`Round ${n.round}`} · ${n.atHome?'v':'at'} ${n.opponent.name}`,run:kickoff}
+  :null
+ if(!step)return null
+ return <div className="lgm-continue" data-tone={step.tone}><button type="button" className="lgm-continue-btn min-h-tap" disabled={busy} onClick={step.run} data-testid="legends-continue">
+  <span><b>Continue</b><small>{step.sub}</small></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l7 7-7 7M12 5l7 7-7 7"/></svg>
+ </button></div>
 }

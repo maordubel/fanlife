@@ -1,5 +1,5 @@
 import {slotsOf} from '@/lib/clubs/rumble-xi/formations'
-import {LEGENDS_RULES as R,QUOTA_POS,type QuotaPos} from './config'
+import {LEGENDS_RULES as R,QUOTA_POS,touchlineEngine,type QuotaPos} from './config'
 import {abilities,signedOf,bidsOf,pressOffer,pressById,slotsOf as marketSlots,cardOf,catalogMap,isBye,lastMine,me,nextFixture,pauseOf,situationById,table,talkOffers,windowOpen,type TalkOffer} from './career'
 import {manMood,MOOD_TEXT,moodScore,moodWord,type ManMood,type MoodWord} from './morale'
 import {fill,TONE_TEXT,type Tone} from './talks'
@@ -15,6 +15,7 @@ import {adviceFor,type AdviceNote} from './advice'
 import {matchReport} from './report'
 import {leagueRatings,seasonForm} from './form'
 import {roleOf} from './roles'
+import {inboxOf} from './inbox'
 import type {Card,Career,Fixture,MatchEventRow,Tactics} from './types'
 
 /**
@@ -26,6 +27,7 @@ export type SquadView=CardView&{quota:QuotaPos;paid:number;apps:number;appsTotal
 export type LogLine={minute:number;side:0|1|null;kind:MatchEventRow['kind'];text:string;mine:boolean}
 export type ResultView={id:string;round:number;home:string;away:string;homeClub:string;awayClub:string;goals:[number,number];pens:[number,number]|null;log:LogLine[];mine:boolean;/** U02: the story of the manager's own match, from its stored log */report?:import('./report').MatchReport|null;/** the highlights reel — attached on the server (`kits.ts`) to the manager's last result */reel?:import('@/lib/highlights/types').Reel}
 export type CareerView={
+ /** the inbox (18.11.2026): the world talking to the manager, read from the career — lib/legends/inbox.ts */inbox:import('./inbox').InboxItem[];
  id:string;revision:number;status:Career['status'];phase:Career['phase'];cutscene:Career['cutscene'];clubId:string;clubName:string;
  season:number;rounds:number;played:number;cash:number;reputation:number;abilities:{id:string;label:string;hint:string;at:number;open:boolean}[];
  settings:Career['settings'];rules:{minSquad:number;maxSquad:number;minimums:Record<QuotaPos,number>;maxSubs:number;stops:number};
@@ -103,7 +105,7 @@ export function careerView(c:Career):CareerView{
  const pause=pauseOf(c),liveFx=c.live?(c.season.playoff?.id===c.live.fixture?c.season.playoff:c.season.fixtures.find(f=>f.id===c.live!.fixture)):null
  const snapNames=(side:0|1,id?:string)=>{const s=c.live?.snapshot.sides[side];return [...(s?.xi??[]),...(s?.bench??[])].find(x=>x.id===id)?.name??'—'}
  const mySide=liveFx?.home===c.clubId?0:1
- const live=c.live&&pause&&liveFx?{mode:c.live.mode,minute:pause.minute,goals:pause.goals,log:logOf(c,pause.events,liveFx,snapNames),pitch:pause.pitch[mySide],bench:pause.bench[mySide],subsLeft:pause.subsLeft[mySide],tactics:pause.tactics[mySide],stopsLeft:maxStopsOf(c.live.snapshot)-c.live.decisions.length-(c.live.snapshot.engine==='legends-engine-4'?1:0),engine4:c.live.snapshot.engine==='legends-engine-4',canTactics:c.live.snapshot.engine==='legends-engine-4'&&stopsV4(c.live.snapshot).length<maxStopsOf(c.live.snapshot),home:c.live.snapshot.sides[0].name,away:c.live.snapshot.sides[1].name,fixture:c.live.fixture,homeClub:c.live.snapshot.sides[0].club,awayClub:c.live.snapshot.sides[1].club,mine:mySide as 0|1,prevStop:prevStopOf(c)}:null
+ const live=c.live&&pause&&liveFx?{mode:c.live.mode,minute:pause.minute,goals:pause.goals,log:logOf(c,pause.events,liveFx,snapNames),pitch:pause.pitch[mySide],bench:pause.bench[mySide],subsLeft:pause.subsLeft[mySide],tactics:pause.tactics[mySide],stopsLeft:maxStopsOf(c.live.snapshot)-c.live.decisions.length-(touchlineEngine(c.live.snapshot.engine)?1:0),engine4:touchlineEngine(c.live.snapshot.engine),canTactics:touchlineEngine(c.live.snapshot.engine)&&stopsV4(c.live.snapshot).length<maxStopsOf(c.live.snapshot),home:c.live.snapshot.sides[0].name,away:c.live.snapshot.sides[1].name,fixture:c.live.fixture,homeClub:c.live.snapshot.sides[0].club,awayClub:c.live.snapshot.sides[1].club,mine:mySide as 0|1,prevStop:prevStopOf(c)}:null
  const results:ResultView[]=[...c.season.fixtures,...(c.season.playoff?[c.season.playoff]:[])].filter(f=>f.result).map(f=>({id:f.id,round:f.round,home:teams.get(f.home)!.name,away:teams.get(f.away)!.name,homeClub:f.home,awayClub:f.away,goals:f.result!.goals,pens:f.result!.pens,mine:f.home===c.clubId||f.away===c.clubId,
   log:logOf(c,f.result!.events,f,(s,id)=>nameIn(s?f.away:f.home,id)),
   ...(f.home===c.clubId||f.away===c.clubId?{report:matchReport(f,c.clubId,club=>teams.get(club)?.name??club,(side,id)=>{if(!id)return '—';const club=side?f.away:f.home,kept=f.result!.sides?.[side]?.xi.find(x=>x.id===id)?.name,n=nameIn(club,id);return kept??(n!=='—'?n:club===c.clubId?by.get(id)?.name??'—':'—')})}:{})}))
@@ -117,7 +119,7 @@ export function careerView(c:Career):CareerView{
  const myTeam=me(c),wBids=win?bidsOf(c).map(b=>{const err=squadError(myTeam.squad.filter(x=>x.id!==b.card));return {...b,name:by.get(b.card)?.name??'—',blocked:err?`${err} Sign a man first, then accept.`:null}}):[]
  const po=pressOffer(c),pl=(c.press??[]).slice(-1)[0],plq=pl&&pl.answer<4?pressById(pl.q)?.answers[pl.answer]:null
  const press=po?{fixture:po.fixture,qid:po.q.id,paper:po.q.paper,head:po.q.head.replace(/\{club\}/g,c.clubName),answers:po.q.answers.map(x=>x.line)}:null
- return {press,pressLast:plq&&pl?.fixture===lastMine(c)?.id?plq.reaction:null,id:c.id,revision:c.revision,status:c.status,phase:c.phase,cutscene:c.cutscene,clubId:c.clubId,clubName:c.clubName,season:c.season.ordinal,rounds:c.season.rounds,played:c.season.played,cash:t.cash,reputation:c.reputation.points,
+ const out:Omit<CareerView,'inbox'>={press,pressLast:plq&&pl?.fixture===lastMine(c)?.id?plq.reaction:null,id:c.id,revision:c.revision,status:c.status,phase:c.phase,cutscene:c.cutscene,clubId:c.clubId,clubName:c.clubName,season:c.season.ordinal,rounds:c.season.rounds,played:c.season.played,cash:t.cash,reputation:c.reputation.points,
   abilities:ABILITIES.map(a=>({id:a.id,label:a.label,hint:a.hint,at:a.at,open:c.reputation.points>=a.at})),settings:c.settings,
   rules:{minSquad:R.minSquad,maxSquad:R.maxSquad,minimums:{...R.minimums},maxSubs:R.maxSubs,stops:R.maxInterventionWindows},draft,squad,quotas:quotaCount(t.squad),
   emergency:t.emergency.map(e=>({id:e.id,name:e.card.name,pos:e.card.pos,games:e.games})),
@@ -127,6 +129,7 @@ export function careerView(c:Career):CareerView{
   tieNote:`Ties: points, goal difference, goals scored, head-to-head, then lots drawn at kick-off. A title level on everything but the lots goes to a play-off.`,
   seasonEnd,stats:seasonStats(c,nameIn),...(c.phase==='draft'?{}:{ratings:leagueRatings(c,nameIn)}),lastChampion:c.phase==='season-end'&&c.season.ranks[0]?teams.get(c.season.ranks[0])?.name??null:null,history:c.history,
   ledger:[...c.ledger].reverse().slice(0,40).map(l=>({kind:l.kind,amount:l.amount,note:l.note??null,name:l.card?by.get(l.card)?.name??null:null,season:l.season})),talks:talksOf(c)}
+ return {...out,inbox:inboxOf(out,out.ratings)}
 }
 export const cardView=cv
 /** the minute of the stop before the current one — the live screen plays the moments after it */

@@ -21,6 +21,9 @@ export {FIVE,ELEVEN,SLOTS,BUDGET,OFFERS,type Pos,type Format} from './rumble-for
 import {FIVE,type Pos,type Format} from './rumble-format'
 /** a goal's worth of rating: ratings sit in a narrow band (about 60–95), so the gap is stretched before it becomes goals */
 export const POWER_SCALE=3.5
+/** five-a-side goals (18.11.2026): a side's base rate, how far the edge moves it, and the furthest it can */
+export const RUMBLE_BASE=1.3,RUMBLE_SPREAD=65,RUMBLE_EDGE_CAP=60
+const poissonDraw=(l:number,r:()=>number)=>{const L=Math.exp(-l);let k=0,p=1;do{k++;p*=r()}while(p>L&&k<9);return Math.min(7,k-1)}
 export type RumbleCard={id:string;name:string;position:Pos;/** a man whose position no source states: only ever signed by a scout, into any outfield slot */free?:boolean;/** other position families he has played (a man who played in several): he fits a slot of any of them */alt?:Pos[];/** classic: 1–5 whole; XI: €0.5M steps from 1 to 5 */price:number;fromYear:number|null;toYear:number|null}
 export type Rated=RumbleCard&{rating:number;/** how well known he is, 40–99 (hidden, like the rating): the Legends stars read the two together */reputation?:number;basis?:RatingBasis}
 const mulberry=(seed:number)=>()=>{seed=(seed+0x6D2B79F5)|0;let t=Math.imul(seed^(seed>>>15),1|seed);t=(t+Math.imul(t^(t>>>7),61|t))^t;return ((t^(t>>>14))>>>0)/4294967296}
@@ -165,7 +168,11 @@ export function play(pool:Rated[],seed:number,picks:string[],vs:Opponent=SELF,fo
 export function settle(youCards:Rated[],rivalCards:Rated[],seed:number,cost:number,rivalClub?:string):RumbleResult{
  const r=mulberry(seed^0x51ed270b)
  const you=youCards.reduce((s,c)=>s+c.rating,0),them=rivalCards.reduce((s,c)=>s+c.rating,0),edge=(you-them)*POWER_SCALE/Math.max(1,youCards.length/5)
- const goals:[number,number]=[Math.max(0,Math.round(2+edge/40+(r()-0.5))),Math.max(0,Math.round(2-edge/40+(r()-0.5)))]
- if(goals[0]===goals[1]&&Math.abs(edge)>=15)goals[edge>0?0:1]++
+ // 18.11.2026 (owner: "too many goals, not realistic; it must really depend on the squad"): measured on 3,080 rounds the old
+ // rule gave 4 goals a match, never a 0–0, and the side with the higher hidden rating won every single time. Now each side's
+ // goals are a Poisson draw around a football rate that the better five pushes up and the weaker pushes down: about 2.8 goals,
+ // draws and upsets possible, the better five clearly favoured (≈75% at a big edge). Still a pure function of the seed.
+ const e=Math.max(-RUMBLE_EDGE_CAP,Math.min(RUMBLE_EDGE_CAP,edge))
+ const goals:[number,number]=[poissonDraw(RUMBLE_BASE*Math.exp(e/RUMBLE_SPREAD),r),poissonDraw(RUMBLE_BASE*Math.exp(-e/RUMBLE_SPREAD),r)]
  return {you:{cards:youCards,power:you,cost},rival:{cards:rivalCards,power:them,...(rivalClub?{club:rivalClub}:{})},verdict:goals[0]>goals[1]?'win':goals[0]<goals[1]?'loss':'draw',goals}
 }

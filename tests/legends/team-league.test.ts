@@ -115,7 +115,7 @@ describe('the screens',()=>{
  })
  it('the career navigation never scrolls sideways',()=>{
   const css=readFileSync('app/all-football/legends/team-league.css','utf8'),nav=/\.tl-nav \{[^}]*\}/.exec(css)![0]
-  expect(nav).toMatch(/grid-template-columns: repeat\(5/);expect(nav).not.toMatch(/overflow-x/)
+  expect(nav).toMatch(/grid-template-columns: repeat\(6/);expect(nav).not.toMatch(/overflow-x/)
   expect(readFileSync('components/legends/CareerApp.tsx','utf8')).not.toMatch(/lgm-tabs/)
  })
  it('every legends page loads the one style index, and the index carries every legends sheet (rule 120)',()=>{

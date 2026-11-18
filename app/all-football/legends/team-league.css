@@ -3,7 +3,7 @@
    layout from 901px (rail + page, pitch beside the squad). Nothing here slides sideways; every target is at least 44px. */
 
 /* the career's five doors — a fixed bar under the masthead on a phone, a rail on a desk */
-.tl-nav { position: sticky; inset-block-start: var(--app-top, 0px); z-index: 6; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); margin-block: 8px 12px; background: var(--lgm-night); border: 2px solid var(--lgm-night); box-shadow: 0 3px 0 var(--lgm-accent); }
+.tl-nav { position: sticky; inset-block-start: var(--app-top, 0px); z-index: 6; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); margin-block: 8px 12px; background: var(--lgm-night); border: 2px solid var(--lgm-night); box-shadow: 0 3px 0 var(--lgm-accent); }
 .tl-nav button { position: relative; display: grid; justify-items: center; align-content: center; gap: 2px; min-block-size: 56px; padding: 6px 2px; background: none; border: 0; border-inline-end: 1px solid color-mix(in srgb, var(--lgm-ivory) 18%, transparent); color: color-mix(in srgb, var(--lgm-ivory) 78%, transparent); cursor: pointer; }
 .tl-nav button:last-child { border-inline-end: 0; }
 .tl-nav svg { inline-size: 22px; block-size: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linejoin: round; stroke-linecap: round; }
