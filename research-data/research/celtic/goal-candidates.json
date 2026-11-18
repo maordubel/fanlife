@@ -577,6 +577,15 @@
     "bodyHash": "756db0289802ba486a84244bd21ba4f67ff5f3c3e203172aac4514f1e0fa76c8",
     "fetchedAt": "2026-11-02T11:41:49.823Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1936-02-08-celtic-1-2-st-johnstone-scottish-cup/",
+    "locator": "p49",
+    "quote": "Well, there was one more – but it was for St Johnstone! Once again, it was John Beattie who picked up a cross ball which eluded Willie Lyon, then ran on and slipped the ball past the advancing Kennaway just a second before Hogg came across to tackle. This happened in the 75th minute, and from now on there was frantic Celtic pressure, but the Perth men had resisted it before and did so again.",
+    "bodyHash": "9939ea95f436773c19545f71154c2d2d81f69b34bb4a73d0c97776bc90a7123f",
+    "fetchedAt": "2026-11-18T12:13:43.358Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -584,8 +593,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-02T11:41:49.823Z",
-  "updatedAt": "2026-11-02T11:41:49.823Z"
+  "createdAt": "2026-11-18T12:13:43.358Z",
+  "updatedAt": "2026-11-18T12:13:43.358Z"
  },
  {
   "id": "ga-93c8b19a7ed75ec1",
@@ -1027,15 +1036,6 @@
   "evidence": [
    {
     "sourceId": "thecelticwiki",
-    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/70s-pictures/1970-71-pics/1970-08-15-celtic-2-2-dundee-united-league-cup-pictures/",
-    "locator": "p1",
-    "quote": "Match | 1970-71 Pictures | 1970 – 1971 | 70's Pictures | Year By Year Pictures | Picture Library",
-    "bodyHash": "023b740be9fe5f9d8d26f2333a10813662365da8c600842c95cfaf1106988955",
-    "fetchedAt": "2026-11-12T11:50:10.067Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "thecelticwiki",
     "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/70s-pictures/1970-71-pics/1970-08-22-celtic-4-2-heart-of-midlothian-league-cup-pictures/",
     "locator": "p1",
     "quote": "Match | 1970-71 Pictures | 1970 – 1971 | 70's Pictures | Year By Year Pictures | Picture Library",
@@ -1096,6 +1096,15 @@
     "bodyHash": "244db66ff4f7ca8ef6a8139e47844be5007252d0513be190cdd348ae227ee7cd",
     "fetchedAt": "2026-11-17T12:05:42.207Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1946-11-02-falkirk-1-4-celtic-league/",
+    "locator": "p3",
+    "quote": "On 4th October, George Paterson was exchanged with Brentford for Jerry McAloon . Paterson had been an outstanding player for Celtic before the war and, on enlistment to the RAF he had played on loan to a number of teams south of the border. At this time of his transfer to Brentford he was still suspended (for three months) having invited the referee to 'do something anatomically impossible' with the ball when the ref gave rangers a penalty in the 70th minute in the Victory Cup game of 5th June, 1946 . He would return to Celtic as an assistant coach / trainer / scout in 1952.",
+    "bodyHash": "1872404cebc615befad35ba013323937c7cc2d2701410e6749ddb28654d46d56",
+    "fetchedAt": "2026-11-18T12:14:10.326Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1103,8 +1112,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-17T12:05:42.207Z",
-  "updatedAt": "2026-11-17T12:05:42.207Z"
+  "createdAt": "2026-11-18T12:14:10.326Z",
+  "updatedAt": "2026-11-18T12:14:10.326Z"
  },
  {
   "id": "ga-e21180845e547f26",
@@ -1118,15 +1127,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "thecelticwiki",
-    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/a/aitken-roy/",
-    "locator": "p38",
-    "quote": "In 1987 Hay was sacked and McNeill returned as manager. He quickly regrouped the Celtic team and with Roy as captain he led Celts to a richly deserved league and cup double. In February 1988 he assumed a captain’s responsibility by scoring a 90th minute penalty against Morton at Parkhead to give Celtic a 1-0 win and two vital league points. Dundee United were again defeated 2-1 in the Scottish Cup final and Aitken made history as Celtic’s captain in their centenary season.",
-    "bodyHash": "169f5da2c4be9617381b4dabf40d63db6bf009e42ad4a03149517a20148ef770",
-    "fetchedAt": "2026-10-30T10:27:48.705Z",
-    "language": "en"
-   },
    {
     "sourceId": "thecelticwiki",
     "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/a/atajic-bahrudin/",
@@ -1189,6 +1189,15 @@
     "bodyHash": "712171d170fb2abf538a194910992db5a41412e92b69130f3b929b7b4c114a14",
     "fetchedAt": "2026-11-13T11:31:50.617Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1938-12-31-celtic-2-2-heart-of-midlothian-league-division-1/",
+    "locator": "p3",
+    "quote": "Weakened by an injury to Paterson but inspired by the performances of Fifers, Chic Geatons and Jackie Watters , Celtic seem to have done enough when in the 90th minute a moment of slackness by Willie Lyon is pounced on by Hearts new-boy Archie Garrett , and a draw is the result.",
+    "bodyHash": "4ea59dad75326edc9a3e0a81838954b3cdb9c5794e8f752bc279865c6c46592b",
+    "fetchedAt": "2026-11-18T12:13:58.326Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1196,8 +1205,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-13T11:31:50.617Z",
-  "updatedAt": "2026-11-13T11:31:50.617Z"
+  "createdAt": "2026-11-18T12:13:58.326Z",
+  "updatedAt": "2026-11-18T12:13:58.326Z"
  },
  {
   "id": "ga-22353df6dc5d1642",
@@ -1288,6 +1297,15 @@
     "bodyHash": "df2985954b4db319e0905bbbb900294688d61f71bc13078b6a7fb7d0aa0dc7df",
     "fetchedAt": "2026-10-30T10:27:39.583Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1937-02-27-east-fife-0-3-celtic-scottish-cup/",
+    "locator": "p3",
+    "quote": "Early McGrory goals in the 7th and 14th minutes shook East Fife and when Willie Buchan added a third in 61 minutes there was no way back for the Methil men in this cup-tie.",
+    "bodyHash": "199db988a987b1a500515312dbcd85d6afd80fbddea7d7faf76d5c5462ad1b7b",
+    "fetchedAt": "2026-11-18T12:13:49.331Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1295,8 +1313,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-30T10:27:39.583Z",
-  "updatedAt": "2026-10-30T10:27:39.583Z"
+  "createdAt": "2026-11-18T12:13:49.331Z",
+  "updatedAt": "2026-11-18T12:13:49.331Z"
  },
  {
   "id": "ga-18e251a89b44a400",
@@ -2554,6 +2572,15 @@
     "bodyHash": "6e1a100495560817e52958b3e7ad2dabc3aff302a52d71c976f2b22b5fd3ac9e",
     "fetchedAt": "2026-11-10T11:25:05.053Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1936-01-01-celtic-3-4-rangers-league-division-1/",
+    "locator": "p3",
+    "quote": "John \"Jim\" Foley is in goal for Celtic in place of Joe Kennaway , but the luck of the Irish deserts the keeper and though the Herald reporter states that he–together with his opposite number Jerry Dawson –was \"worthy of a special mention\" he couldn't stop Jimmy Smith's 86th minute header from a corner kick giving Rangers the win.",
+    "bodyHash": "3bdf8e21e306bacfafef4ee4171feedd15d93e54a87223dcd88ab28641fb32de",
+    "fetchedAt": "2026-11-18T12:13:43.351Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2561,8 +2588,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-10T11:25:05.053Z",
-  "updatedAt": "2026-11-10T11:25:05.053Z"
+  "createdAt": "2026-11-18T12:13:43.351Z",
+  "updatedAt": "2026-11-18T12:13:43.351Z"
  },
  {
   "id": "ga-6c1d11d189bd1d7a",
@@ -3541,5 +3568,335 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-11-17T12:05:42.206Z",
   "updatedAt": "2026-11-17T12:05:42.206Z"
+ },
+ {
+  "id": "ga-0f2888f7e924fcbf",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "28",
+  "scorerAlias": "Fagan",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1936-01-18-albion-rovers-0-3-celtic-league-division-1/",
+    "locator": "p26",
+    "quote": "There was no scoring in the first half but seven minutes after the restart Fagan scored for Celtic. In the 28th minute McGrory secured the second, and three minutes before the end Murphy registered a third. Murphy was Celtic's \"star\" forward and for the Rovers Gourlay gave a brilliant display in goal.",
+    "bodyHash": "6c03a118ac964863acceed284cb5f9a986a468dbf13dd7498feffd21fca6e1d0",
+    "fetchedAt": "2026-11-18T12:13:43.356Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-18T12:13:43.356Z",
+  "updatedAt": "2026-11-18T12:13:43.356Z"
+ },
+ {
+  "id": "ga-078f0fef5e8c1a26",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "69",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1936-02-08-celtic-1-2-st-johnstone-scottish-cup/",
+    "locator": "p48",
+    "quote": "And so it did, but it was not until the 69th minute that Celtic got the equaliser, but a fine goal it was scored by Willie Buchan who beat two opponents and scored from the edge of the box. Now surely more goals would come!",
+    "bodyHash": "9939ea95f436773c19545f71154c2d2d81f69b34bb4a73d0c97776bc90a7123f",
+    "fetchedAt": "2026-11-18T12:13:43.358Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-18T12:13:43.358Z",
+  "updatedAt": "2026-11-18T12:13:43.358Z"
+ },
+ {
+  "id": "ga-fa542e40c8982031",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "21",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1936-03-14-celtic-5-0-motherwell-league-division-1/",
+    "locator": "p25",
+    "quote": "The outstanding feature of the game between Celtic and Motherwell at Parkhead was the performance of McGrory, who scored three goals between the 18th and 21st minutes of the second half. The Celtic leader thoroughly earned the great ovation accorded him as he returned to his place.",
+    "bodyHash": "b195eb2d88ccccb9bd196826d2681492b8ebd076c60da9ed92272cac4a0c131e",
+    "fetchedAt": "2026-11-18T12:13:43.359Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-18T12:13:43.359Z",
+  "updatedAt": "2026-11-18T12:13:43.359Z"
+ },
+ {
+  "id": "ga-b4a613dd9c6bb8ff",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "63",
+  "scorerAlias": "George Paterson",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1936-10-24-celtic-5-1-hibernian-league-division-1/",
+    "locator": "p3",
+    "quote": "Celtic go two up with goals by Willie Buchan in 18 and Jimmy Delaney in 31 minutes before Patrick Farrell pulled a goal back for Hibs, just before half-time. The game was evenly contested in the second half until Hibs conceded a penalty in the 63rd minute and George Paterson converted. Johnny Crum with a quick one-two in 86 and 88 minutes completed a good win for the bhoys.",
+    "bodyHash": "f4a8631c3158c811a274abdb24a42f8b06bdef10cf8c3de120aee732797d792e",
+    "fetchedAt": "2026-11-18T12:13:46.315Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-18T12:13:46.315Z",
+  "updatedAt": "2026-11-18T12:13:46.315Z"
+ },
+ {
+  "id": "ga-7d37b190fc1a4d32",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "42",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1937-03-06-hibernian-2-2-celtic-league-division-1/",
+    "locator": "p3",
+    "quote": "Jonnny Crum opens the scoring in 5 minutes then James McLean levels in 9 minutes. Les Gardiner puts the Hibernian in the lead on the half-hour but Jimmy McGrory equalises in the 42nd minute.",
+    "bodyHash": "30bdec4bd977ecb1997f1ceeff33ef4cea162284d6a96d4cb9a61c2c211815d5",
+    "fetchedAt": "2026-11-18T12:13:49.332Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-18T12:13:49.332Z",
+  "updatedAt": "2026-11-18T12:13:49.332Z"
+ },
+ {
+  "id": "ga-ef21ddf62cab19c5",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "74",
+  "scorerAlias": "Leslie",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1937-08-28-kilmarnock-2-1-celtic-league-division-1/",
+    "locator": "p3",
+    "quote": "McGowan opened the score for Kilmarnock in 51 minutes but Buchan equalised in 62 minutes. The game was decided on a penalty for Kilmarnock which Leslie converted in the 74th minute.",
+    "bodyHash": "74ff09a7c78958af4825af40b4fe034635e2c83eef07e16ce3fe16860105e2e0",
+    "fetchedAt": "2026-11-18T12:13:52.352Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-18T12:13:52.352Z",
+  "updatedAt": "2026-11-18T12:13:52.352Z"
+ },
+ {
+  "id": "ga-84b28206bbaaf150",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "20",
+  "scorerAlias": "Celtic",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1938-04-30-celtic-3-0-hibernian-league-division-1/",
+    "locator": "p28",
+    "quote": "There was only one bright spell, from the 10th to the 20th minute of the second half, during which Celtic scored the three goals which gave them victory. For that brief space the League Champions played with considerable purpose, and their forwards gave some evidence of their power in front of goal.",
+    "bodyHash": "43dbd425db8f5cc121d7ec20c1730215e000a4af3bbdf45add4977ddb0046b43",
+    "fetchedAt": "2026-11-18T12:13:55.334Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-18T12:13:55.334Z",
+  "updatedAt": "2026-11-18T12:13:55.334Z"
+ },
+ {
+  "id": "ga-2f875f5395afb94c",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "96",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1938-06-10-celtic-1-0-everton-empire-exhibition-cup-final/",
+    "locator": "p34",
+    "quote": "Crum (96min).",
+    "bodyHash": "83101f02f37b8a6d9bd89766c8f917018bd6cfcba2c0b36ff3e1925b7d1bd400",
+    "fetchedAt": "2026-11-18T12:13:55.336Z",
+    "language": "other"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-18T12:13:55.336Z",
+  "updatedAt": "2026-11-18T12:13:55.336Z"
+ },
+ {
+  "id": "ga-c5a143f3d7923d2a",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "34",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1938-10-12-celtic-5-1-queen-of-the-south-league-division-1/",
+    "locator": "p5",
+    "quote": "Paterson, Delaney (Scorer, 34 min), Crum and Divers had played in the 0-2 victory over Ireland on the Saturday at Windsor Park, but Jimmy Delaney had saved a few goals for this league game.",
+    "bodyHash": "175d9449dd2a4b3813642b5da0e91ab774c24d27ed03d0f5ef25c7674e0c4b8b",
+    "fetchedAt": "2026-11-18T12:13:58.324Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-18T12:13:58.324Z",
+  "updatedAt": "2026-11-18T12:13:58.324Z"
+ },
+ {
+  "id": "ga-e8d9a962842ddbed",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "26",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1939-03-04-motherwell-3-1-celtic-scottish-cup/",
+    "locator": "p5",
+    "quote": "Johnny McCulloch gives Motherwell a two-goal lead with strikes in the 20th and 26th minute and Celtic struggle before Jimmy Delaney pulls one back in 75 minutes, but veteran George Stevenson restores Well’s two-goal lead minutes later with an overhead kick. Much praise goes to Andrew Murray, Motherwell’s goalkeeper.",
+    "bodyHash": "a2d20b678a5fa6ce8c319efe9671da464931c9859adeb4d4fe2db8992e678240",
+    "fetchedAt": "2026-11-18T12:14:01.351Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-18T12:14:01.351Z",
+  "updatedAt": "2026-11-18T12:14:01.351Z"
+ },
+ {
+  "id": "ga-388c7d9e043581b9",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "24",
+  "scorerAlias": "Morrison",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1939-12-09-partick-thistle-4-2-celtic-league-western-division/",
+    "locator": "p41",
+    "quote": "Celtic hardly deserved to lose. McKay should not have conceded the first goal of the game when he allowed a cross from Morrison to slip over his head into the net. The hard-working Carruth equalised 20 minutes later &ndash; in the 24th minute of the second half &ndash; and a minute later Morrison scored a second goal. Five minutes more and Younger and Crum had scored within minutes of each other, and then came McKennan&rsquo;s goal from Morrison&rsquo;s corner kick that brought the house down. Teams &ndash;",
+    "bodyHash": "b73a00fc4dbe4fc657f7d8efd8645ae46f88f637e4a6e0edf23e01142b63988a",
+    "fetchedAt": "2026-11-18T12:14:04.341Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-18T12:14:04.341Z",
+  "updatedAt": "2026-11-18T12:14:04.341Z"
  }
 ]

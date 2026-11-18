@@ -24,12 +24,12 @@
   "listings": [
    {
     "collection": "posts",
-    "state": "retry-later",
-    "pagesRead": 15,
+    "state": "partial_budget",
+    "pagesRead": 19,
     "observedTotalDocuments": 657,
     "observedTotalPages": 27,
     "queue": null,
-    "lastError": "The operation was aborted due to timeout"
+    "lastError": null
    },
    {
     "collection": "pages",

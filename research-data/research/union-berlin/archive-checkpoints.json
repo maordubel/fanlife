@@ -7,15 +7,10 @@
   "parserVersion": "immerunioner-v1",
   "nextPage": 0,
   "lastCommittedPage": 0,
-  "observedTotalDocuments": 829,
+  "observedTotalDocuments": 831,
   "observedTotalPages": null,
   "perPage": 1,
   "queue": [
-   "/spieler.php?getid=358",
-   "/spieler.php?getid=69&zahl=1",
-   "/spieler.php?getid=490",
-   "/spieler.php?getid=491",
-   "/spieler.php?getid=50",
    "/spieler.php?getid=51",
    "/spieler.php?getid=52",
    "/spieler.php?getid=53",
@@ -706,7 +701,9 @@
    "/spieler.php?getid=352&zahl=1",
    "/spieler.php?getid=356&zahl=1",
    "/spieler.php?getid=505",
-   "/spieler.php?getid=357&zahl=1"
+   "/spieler.php?getid=357&zahl=1",
+   "/spieler.php?getid=69&zahl=0",
+   "/spieler.php?getid=50&zahl=1"
   ],
   "seen": [
    "/listen.php",
@@ -841,10 +838,15 @@
    "/spieler.php?getid=355",
    "/spieler.php?getid=352",
    "/spieler.php?getid=356",
-   "/spieler.php?getid=357"
+   "/spieler.php?getid=357",
+   "/spieler.php?getid=358",
+   "/spieler.php?getid=69&zahl=1",
+   "/spieler.php?getid=490",
+   "/spieler.php?getid=491",
+   "/spieler.php?getid=50"
   ],
   "state": "partial_budget",
-  "updatedAt": "2026-11-17T12:07:13.047Z",
+  "updatedAt": "2026-11-18T12:15:59.076Z",
   "lastError": null
  },
  "union-official:html": {
@@ -863,7 +865,7 @@
    "/de/fussball/profis-maenner/saisonarchiv-maenner-kOKT?league=01938ba8-e83f-7ac5-a848-1ca5c29f77b9&season=01938ba9-27c0-731d-a3fd-c36f0ec9ddb0"
   ],
   "state": "listed",
-  "updatedAt": "2026-11-17T12:07:14.702Z",
+  "updatedAt": "2026-11-18T12:16:00.796Z",
   "lastError": null
  },
  "dfb-union:html": {
@@ -882,7 +884,7 @@
    "/en/clubs/1-fc-union-berlin"
   ],
   "state": "retry-later",
-  "updatedAt": "2026-11-17T12:07:14.702Z",
+  "updatedAt": "2026-11-18T12:16:00.796Z",
   "lastError": "HTTP 500"
  },
  "footballhistory-union:html": {
@@ -901,7 +903,7 @@
    "/club/union-berlin.html"
   ],
   "state": "listed",
-  "updatedAt": "2026-11-17T12:07:15.434Z",
+  "updatedAt": "2026-11-18T12:16:01.561Z",
   "lastError": null
  }
 }

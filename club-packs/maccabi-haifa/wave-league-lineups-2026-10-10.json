@@ -1648,13 +1648,13 @@
     "sensitive": false
    },
    "sources": [
-    "s365-4702032",
-    "ls-lu-1766836"
+    "s365-4702046",
+    "ls-lu-1766847"
    ],
    "confidence": 3,
    "status": "approved",
-   "researchedAt": "2026-11-15",
-   "approvedAt": "2026-11-15",
+   "researchedAt": "2026-11-18",
+   "approvedAt": "2026-11-18",
    "approvedBy": "automated:cross-source-review-league-lineups-maccabi-haifa",
    "parserCertainty": "high",
    "conflictFree": true,
@@ -1670,13 +1670,13 @@
     "sensitive": false
    },
    "sources": [
-    "s365-4702017",
-    "ls-lu-1766833"
+    "s365-4702046",
+    "ls-lu-1766847"
    ],
    "confidence": 3,
    "status": "approved",
-   "researchedAt": "2026-11-15",
-   "approvedAt": "2026-11-15",
+   "researchedAt": "2026-11-18",
+   "approvedAt": "2026-11-18",
    "approvedBy": "automated:cross-source-review-league-lineups-maccabi-haifa",
    "parserCertainty": "high",
    "conflictFree": true,
@@ -1692,13 +1692,13 @@
     "sensitive": false
    },
    "sources": [
-    "s365-4702032",
-    "ls-lu-1766836"
+    "s365-4702046",
+    "ls-lu-1766847"
    ],
    "confidence": 3,
    "status": "approved",
-   "researchedAt": "2026-11-15",
-   "approvedAt": "2026-11-15",
+   "researchedAt": "2026-11-18",
+   "approvedAt": "2026-11-18",
    "approvedBy": "automated:cross-source-review-league-lineups-maccabi-haifa",
    "parserCertainty": "high",
    "conflictFree": true,
@@ -1714,13 +1714,13 @@
     "sensitive": false
    },
    "sources": [
-    "s365-4702017",
-    "ls-lu-1766833"
+    "s365-4702046",
+    "ls-lu-1766847"
    ],
    "confidence": 3,
    "status": "approved",
-   "researchedAt": "2026-11-15",
-   "approvedAt": "2026-11-15",
+   "researchedAt": "2026-11-18",
+   "approvedAt": "2026-11-18",
    "approvedBy": "automated:cross-source-review-league-lineups-maccabi-haifa",
    "parserCertainty": "high",
    "conflictFree": true,
@@ -1741,8 +1741,8 @@
    ],
    "confidence": 3,
    "status": "approved",
-   "researchedAt": "2026-11-15",
-   "approvedAt": "2026-11-15",
+   "researchedAt": "2026-11-18",
+   "approvedAt": "2026-11-18",
    "approvedBy": "automated:cross-source-review-league-lineups-maccabi-haifa",
    "parserCertainty": "high",
    "conflictFree": true,

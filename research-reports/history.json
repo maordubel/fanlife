@@ -382,5 +382,133 @@
    "matches": 171,
    "records": 1326
   }
+ },
+ "2026-11-18": {
+  "hapoel-tel-aviv": {
+   "ready": 13,
+   "playable": 13,
+   "matches": 3154,
+   "records": 12392
+  },
+  "zrinjski-mostar": {
+   "ready": 13,
+   "playable": 13,
+   "matches": 985,
+   "records": 7286
+  },
+  "hapoel-petah-tikva": {
+   "ready": 12,
+   "playable": 13,
+   "matches": 3010,
+   "records": 13426
+  },
+  "panathinaikos": {
+   "ready": 13,
+   "playable": 13,
+   "matches": 1097,
+   "records": 9995
+  },
+  "aek-athens": {
+   "ready": 13,
+   "playable": 13,
+   "matches": 3413,
+   "records": 18214
+  },
+  "celtic": {
+   "ready": 13,
+   "playable": 13,
+   "matches": 6234,
+   "records": 19801
+  },
+  "st-pauli": {
+   "ready": 13,
+   "playable": 13,
+   "matches": 1474,
+   "records": 9430
+  },
+  "olympiacos": {
+   "ready": 13,
+   "playable": 13,
+   "matches": 625,
+   "records": 8634
+  },
+  "raja-casablanca": {
+   "ready": 12,
+   "playable": 13,
+   "matches": 86,
+   "records": 3001
+  },
+  "wydad-casablanca": {
+   "ready": 12,
+   "playable": 13,
+   "matches": 95,
+   "records": 1529
+  },
+  "al-ahly": {
+   "ready": 12,
+   "playable": 13,
+   "matches": 98,
+   "records": 2038
+  },
+  "atalanta": {
+   "ready": 13,
+   "playable": 13,
+   "matches": 617,
+   "records": 5348
+  },
+  "maccabi-haifa": {
+   "ready": 13,
+   "playable": 13,
+   "matches": 190,
+   "records": 3073
+  },
+  "paok": {
+   "ready": 0,
+   "playable": 0,
+   "matches": 200,
+   "records": 761
+  },
+  "dinamo-zagreb": {
+   "ready": 0,
+   "playable": 0,
+   "matches": 140,
+   "records": 541
+  },
+  "hajduk-split": {
+   "ready": 1,
+   "playable": 1,
+   "matches": 201,
+   "records": 1509
+  },
+  "borussia-dortmund": {
+   "ready": 0,
+   "playable": 0,
+   "matches": 140,
+   "records": 605
+  },
+  "leicester-city": {
+   "ready": 0,
+   "playable": 0,
+   "matches": 40,
+   "records": 185
+  },
+  "partizan-belgrade": {
+   "ready": 0,
+   "playable": 0,
+   "matches": 200,
+   "records": 738
+  },
+  "union-berlin": {
+   "ready": 0,
+   "playable": 0,
+   "matches": 28,
+   "records": 153
+  },
+  "fenerbahce": {
+   "ready": 1,
+   "playable": 1,
+   "matches": 201,
+   "records": 1558
+  }
  }
 }
