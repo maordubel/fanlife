@@ -20,5 +20,5 @@ jobs:
       - run: npm ci
       - run: npm run -s album:sync
         env:
-          SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL || 'https://afxpjfxwpdjvlmuoawda.supabase.co' }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
