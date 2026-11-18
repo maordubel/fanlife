@@ -80,7 +80,8 @@ describe('the front door', () => {
   it('keeps a page whose only cookie is the anonymous tester id, without the cookie', async () => {
     const cache = memoryCache()
     vi.stubGlobal('caches', { default: cache })
-    vi.stubGlobal('fetch', vi.fn(async () => new Response('<html>x</html>', { status: 200, headers: { 'content-type': 'text/html', 'set-cookie': 'fan-life-tester=1; Path=/; HttpOnly' } })))
+    vi.stubGlobal('fetch', vi.fn(async () => new Response('<html>x</html>', { status: 200, headers: { 'content-type': 'text/html', 'set-cookie': 'fan-life-tester=1; Path=/; HttpOnly', 'clear-site-data': '"cache"' } })))
+    // the proxy's one-time cache-clear marker is the same kind of one-off
     const waits: Promise<unknown>[] = []
     const res = await worker.fetch(page('https://fanlife.dubelteam.com/archive'), {}, { waitUntil: (p) => { waits.push(p) } })
     expect(res.headers.get('set-cookie')).toContain('fan-life-tester=1')
@@ -88,6 +89,20 @@ describe('the front door', () => {
     expect(cache.m.size).toBe(1)
     const kept = [...cache.m.values()][0] as Response
     expect(kept.headers.get('set-cookie')).toBeNull()
+    expect(kept.headers.get('clear-site-data')).toBeNull()
+  })
+
+  it('a visitor with a session is never answered from the copy and never stocks it', async () => {
+    const cache = memoryCache()
+    vi.stubGlobal('caches', { default: cache })
+    await cache.put('https://edge-copy.fanlife/fanlife.dubelteam.com/album?', new Response('<html>anon</html>', { headers: { 'content-type': 'text/html', 'x-edge-stored': String(Date.now()) } }))
+    vi.stubGlobal('fetch', vi.fn(async () => new Response('<html>mine</html>', { status: 200, headers: { 'content-type': 'text/html' } })))
+    for (const cookie of ['sb-afxpjfxwpdjvlmuoawda-auth-token=x', 'fan-life-tester=00000000-0000-0000-0000-000000000000']) {
+      const req = new Request('https://fanlife.dubelteam.com/album', { headers: { accept: 'text/html', cookie } })
+      const res = await worker.fetch(req, {}, { waitUntil: () => {} })
+      expect(await res.text()).toBe('<html>mine</html>')
+    }
+    expect(cache.m.size).toBe(1)
   })
 
   it('the boot screen is small, self-contained and in the site language', () => {

@@ -62,9 +62,10 @@ export function edgeKey(request) {
   url.searchParams.sort()
   return `https://edge-copy.fanlife/${url.host}${url.pathname}?${url.searchParams.toString()}`
 }
-// the only cookie a public page may carry is the anonymous tester id the evaluation build hands a new visitor; it is
-// per-visitor, so the edge keeps the page without it (the visitor who caused the refresh still gets theirs)
-const ANON_COOKIE = /^fan-life-tester=/
+// the only cookies a public page may carry are per-visitor one-offs: the anonymous tester id the evaluation build hands a
+// new visitor and the proxy's one-time cache-clear marker (fl_cache_<round>, with its Clear-Site-Data). The edge keeps
+// the page without them; the visitor whose request refreshed it still gets theirs
+const ANON_COOKIE = /^(fan-life-tester|fl_cache_\d+)=/
 function setCookies(res) {
   if (typeof res.headers.getSetCookie === 'function') return res.headers.getSetCookie()
   const one = res.headers.get('set-cookie')
@@ -76,7 +77,7 @@ async function keep(cache, key, res) {
   const h = new Headers(res.headers)
   h.set('cache-control', `public, max-age=${EDGE_KEEP_S}`)
   h.set('x-edge-stored', String(Date.now()))
-  h.delete('x-fanlife-shelf'); h.delete('content-encoding'); h.delete('content-length'); h.delete('set-cookie')
+  h.delete('x-fanlife-shelf'); h.delete('content-encoding'); h.delete('content-length'); h.delete('set-cookie'); h.delete('clear-site-data')
   await cache.put(key, new Response(await res.arrayBuffer(), { status: 200, headers: h }))
 }
 function served(res, state) {
@@ -109,14 +110,19 @@ function go(n){fetch(${JSON.stringify(path)},{headers:{accept:"text/html","x-fan
 </script></body></html>`
 }
 
+// A visitor with a session (signed in, or holding the evaluation build's tester id) may be rendered pages of their own,
+// so the edge never answers them from the copy and never keeps what they were sent; they still get the boot screen.
+const SESSION = /(?:^|;\s*)(sb-[a-z0-9]+-auth-token(?:\.\d+)?|fan-life-tester)=/
+const personal = (request) => SESSION.test(String(request.headers.get('cookie') || ''))
 async function edgeFetch(request, url, primary, env, ctx) {
   const key = edgeKey(request)
+  const own = personal(request)
   const cache = typeof caches !== 'undefined' ? caches.default : null
   if (!key || !cache) return null
   const waitUntil = (p) => { if (ctx && ctx.waitUntil) ctx.waitUntil(p.catch(() => {})); else p.catch(() => {}) }
   // the visitor's copy streams at once; the edge's own copy is read behind it
-  const refresh = () => forward(request, url, primary, env, undefined).then((res) => { if (storable(res)) waitUntil(keep(cache, key, res.clone())); return res })
-  const hit = await cache.match(key)
+  const refresh = () => forward(request, url, primary, env, undefined).then((res) => { if (!own && storable(res)) waitUntil(keep(cache, key, res.clone())); return res })
+  const hit = own ? null : await cache.match(key)
   if (hit) {
     const age = (Date.now() - Number(hit.headers.get('x-edge-stored') || 0)) / 1000
     if (age > EDGE_FRESH_S) waitUntil(refresh())
