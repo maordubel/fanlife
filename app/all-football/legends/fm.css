@@ -67,7 +67,11 @@
 .lgm-tape-head, .lgm-tape-row { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 8px; padding: 6px 10px; }
 .lgm-tape-head { background: var(--lgm-night); color: var(--mag-white); font: 400 14px/1.1 var(--mag-display); text-transform: uppercase; letter-spacing: .03em; }
 .lgm-tape-head b { min-inline-size: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.lgm-tape-head b:last-child, .lgm-tape-row > span:last-child { text-align: end; justify-self: end; }
+/* the two names share the bar half and half and shorten with an ellipsis; the caption sits above (it had run under a long name) */
+.lgm-tape-head { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.lgm-tape-head b:last-child { text-align: end; }
+.lgm-tape-row > span:last-child { text-align: end; justify-self: end; }
+.lgm-tape-cap { margin: 0; padding: 4px 10px 0; background: var(--lgm-night); color: var(--mag-cyan); font: 400 10px var(--mag-mono); letter-spacing: .12em; text-transform: uppercase; text-align: center; }
 .lgm-tape-head small, .lgm-tape-row small { font: 400 10px var(--mag-mono); letter-spacing: .1em; text-transform: uppercase; text-align: center; opacity: .8; }
 .lgm-tape-row { border-block-start: 1px solid color-mix(in srgb, var(--mag-ink) 14%, transparent); font: 700 15px/1.2 var(--mag-body); font-variant-numeric: tabular-nums; }
 .lgm-tape-row[data-lead='0'] > span:first-child, .lgm-tape-row[data-lead='1'] > span:last-child { color: var(--mag-green); }

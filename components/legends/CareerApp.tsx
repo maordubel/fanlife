@@ -164,7 +164,8 @@ function Tape({v}:{v:CareerView}){
  const form=(f:string[])=><span className="lgm-tape-form">{f.length?f.map((x,i)=><i key={i} data-r={x}>{x}</i>):'—'}</span>
  const better=(a:number,b:number,low=false):0|1|null=>a===b?null:(low?a<b:a>b)?0:1
  return <div className="lgm-tape" aria-label="The two sides compared" data-testid="legends-tape">
-  <div className="lgm-tape-head"><b>{v.clubName}</b><small>Tale of the tape</small><b>{n.opponent.name}</b></div>
+  <p className="lgm-tape-cap">Tale of the tape</p>
+  <div className="lgm-tape-head"><b>{v.clubName}</b><b>{n.opponent.name}</b></div>
   {line('Place',me.p?ordinal(mi+1):'—',them.p?ordinal(oi+1):'—',me.p&&them.p?better(mi,oi,true):null)}
   {line('Points',me.pts,them.pts,better(me.pts,them.pts))}
   {line('Form',form(me.form),form(them.form))}
