@@ -708,3 +708,23 @@ a.rpCard[aria-selected='true'] { background: var(--club-primary, var(--mag-ink))
 .xiSlot[data-next='true'] { outline: 3px solid var(--rr-lit); outline-offset: 2px; }
 @media (prefers-reduced-motion: no-preference) { .xiSlot[data-next='true'] { animation: rrNextPulse 1.2s ease-in-out infinite; } }
 @keyframes rrNextPulse { 50% { outline-offset: 5px; } }
+
+/* ───────── 17.11.2026 · from LEGENDS MANAGER: rating bands, a player-of-the-match spotlight, momentum ───────── */
+.grade[data-band='great'] { background: var(--mag-cyan); color: var(--mag-white); }
+.grade[data-band='good'] { background: var(--mag-green); color: var(--mag-white); }
+.grade[data-band='low'] { background: var(--mag-orange); color: var(--mag-ink); }
+.grade[data-band='poor'] { background: var(--mag-vermilion); color: var(--mag-white); }
+.grade[data-big] { min-inline-size: 2.6em; padding: 4px 8px; font: 400 24px/1 var(--mag-goal); border: 3px solid var(--mag-ink); box-shadow: 3px 3px 0 var(--mag-ink); border-radius: 0; }
+.motm { max-width: 440px; padding: 12px 14px; border: 3px solid var(--mag-ink); box-shadow: 5px 5px 0 var(--mag-ink); background: radial-gradient(120% 90% at 85% 0%, color-mix(in srgb, var(--rr-lit) 80%, var(--mag-white)), var(--rr-lit) 60%, color-mix(in srgb, var(--rr-lit) 60%, var(--mag-ink))); color: var(--rr-on); text-align: start; animation: rr-motm-in .6s cubic-bezier(.2,.9,.25,1.2) both; }
+.motmRow { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 10px; align-items: center; margin-block-start: 6px; }
+.motmRow b { font-size: clamp(20px, 5.4vw, 28px); text-shadow: 2px 2px 0 var(--mag-ink); overflow-wrap: normal; text-wrap: balance; }
+.motmRow small { display: block; margin-block-start: 3px; font: 600 13px/1.35 var(--mag-body); opacity: .92; }
+@keyframes rr-motm-in { from { transform: translateY(14px) scale(.95); opacity: 0 } to { transform: none; opacity: 1 } }
+@media (prefers-reduced-motion: reduce) { .motm { animation: none } }
+.momentum { margin: 6px 0 10px; }
+.momentum svg { display: block; inline-size: 100%; block-size: 50px; }
+.momentum line { stroke: color-mix(in srgb, currentColor 45%, transparent); stroke-width: .6; }
+.momentumHt { stroke-dasharray: 2 2; }
+.momentum rect[data-side='us'] { fill: var(--rr-lit); stroke: var(--mag-ink); stroke-width: .3; }
+.momentum rect[data-side='them'] { fill: color-mix(in srgb, currentColor 60%, transparent); }
+.momentum figcaption { display: flex; justify-content: space-between; font: 400 10.5px var(--mag-mono); letter-spacing: .1em; text-transform: uppercase; opacity: .8; }

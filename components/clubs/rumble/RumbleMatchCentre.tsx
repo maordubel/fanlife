@@ -7,6 +7,8 @@ import type {RumbleWardrobe} from '@/lib/clubs/rumble-kit'
 import {Badge} from '@/components/clubs/Badge'
 import {RumblePitch,findPlayer} from './RumbleStage'
 import {StatBars} from './StatBars'
+import {RumbleMomentum} from './RumbleMomentum'
+import {useMatchAudio} from '@/components/highlights/useMatchAudio'
 import {buildLine,endLine,stepLine} from './commentary'
 import {shortName,tr,type Sfx} from './shared'
 import s from './rumble.module.css'
@@ -35,6 +37,8 @@ export function RumbleMatchCentre({script,wardrobe,copy,reduced,sound,onSound,so
  speedRef.current=speed*(reduced?3:1)
  const pos=useCallback((p:ShowPlayer)=>screenPosFor(p,eleven),[eleven])
  const stats=useMemo(()=>statsAt(play,statMin),[play,statMin])
+ // 17.11.2026: the crowd under the whole match, as in LEGENDS MANAGER (the gate's own cues stay as they were)
+ useMatchAudio(soundOn,step!=='full-time')
 
  useEffect(()=>{
   let cancelled=false;timers.current=[]
@@ -138,7 +142,7 @@ export function RumbleMatchCentre({script,wardrobe,copy,reduced,sound,onSound,so
     </div>
     <div className={s.mcPanel} role="tabpanel">
      {tab==='live'&&(lastLog.length?<ol className={s.feed} data-testid="rumble-feed">{lastLog.map(m=><li key={m.id} data-side={m.side} data-end={m.end}><bdi dir="ltr">{m.minute}′</bdi><span><b data-end={m.end} aria-hidden="true"/>{endLine(copy,script,m)}</span></li>)}</ol>:<p className={s.mcEmpty}>{tr(copy,'rr.mc.calm')}</p>)}
-     {tab==='stats'&&<><StatBars stats={stats} copy={copy} testId="rumble-stats"/><p className={s.mcNote}>{tr(copy,'rr.mc.xgNote')}</p></>}
+     {tab==='stats'&&<><RumbleMomentum play={play} minute={statMin} us={tr(copy,'rr.mc.you')} them={tr(copy,'rr.mc.them')} label={tr(copy,'rr.mc.momentum')}/><StatBars stats={stats} copy={copy} testId="rumble-stats"/><p className={s.mcNote}>{tr(copy,'rr.mc.xgNote')}</p></>}
      {tab==='teams'&&<div className={s.teams}>
       {([['us',usClub,script.us],['them',themClub,script.them]] as const).map(([side,club,players])=><section key={side} data-side={side}><h3><Badge club={club} className={s.teamBadge}/> <bdi>{club.name}</bdi></h3><ol>{players.map(p=><li key={p.id}><span className={s.mono}>{p.slot?tr(copy,`rr.fines.${p.slot}`):''}</span><bdi dir="auto">{p.name}</bdi>{cards.get(side+p.id)?<i className={s.yc} aria-label={tr(copy,'rr.mc.stat.booked')}/>:null}</li>)}</ol></section>)}
      </div>}

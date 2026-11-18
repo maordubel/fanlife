@@ -7,6 +7,7 @@ import {rumbleReel} from '@/lib/highlights/rumble'
 import type {HighlightsAllow} from '@/lib/highlights/page'
 import {Theatre,type TheatreSound} from '@/components/highlights/Theatre'
 import {RumbleMatchCentre,type ClubFace} from './RumbleMatchCentre'
+import {useMatchAudio} from '@/components/highlights/useMatchAudio'
 import type {Sfx} from './shared'
 import s from './rumble.module.css'
 
@@ -17,7 +18,9 @@ import s from './rumble.module.css'
 export function RumbleHighlights({script,wardrobe,copy,reduced,sound,soundOn,onSound,onDone,usClub,themClub,allow,seed}:{script:ShowScript;wardrobe:RumbleWardrobe;copy:GameCopy;reduced:boolean;sound:(n:Sfx,v?:number)=>void;soundOn:boolean;onSound:()=>void;onDone:()=>void;usClub:ClubFace;themClub:ClubFace;allow:HighlightsAllow;seed:number}){
  const [centre,setCentre]=useState(false)
  const reel=useMemo(()=>rumbleReel(script,wardrobe,{us:{name:usClub.name,primary:allow.primary.us},them:{name:themClub.name,primary:allow.primary.them}},seed,allow.keepers),[script,wardrobe,usClub.name,themClub.name,allow,seed])
- const snd:TheatreSound=n=>sound(n==='whistle'?'kickoff':n==='save'?'roar':n,n==='save'?.35:.6)
+ // 17.11.2026: the living ground from LEGENDS MANAGER — the crowd bed, the swell, the ooh, the roar and the groan
+ const cue=useMatchAudio(soundOn,!centre)
+ const snd:TheatreSound=n=>cue(n)
  if(centre)return <RumbleMatchCentre script={script} wardrobe={wardrobe} copy={copy} reduced={reduced} sound={sound} soundOn={soundOn} onSound={onSound} onDone={onDone} usClub={usClub} themClub={themClub}/>
  return <div data-testid="rumble-highlights">
   <Theatre reel={reel} sound={snd} allow={allow} autoStart onDone={onDone}/>

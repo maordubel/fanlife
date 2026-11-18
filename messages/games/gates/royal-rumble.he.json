@@ -159,5 +159,8 @@
  "rr.draft.meta": "חתימה {n} מתוך {total} · {position}",
  "rr.draft.freeRule": "פותחים כל עמדה קודם. המשחק חוסם רק חתימה שהופכת סגל מלא לבלתי אפשרי בכסף שנשאר.",
  "rr.draft.ready": "הסגל מלא — נעלו אותו.",
- "rr.draft.nextPlace": "הבא: {place}"
+ "rr.draft.nextPlace": "הבא: {place}",
+ "rr.mc.momentum": "מומנטום",
+ "rr.mc.you": "אתם",
+ "rr.mc.them": "הם"
 }
