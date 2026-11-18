@@ -7,7 +7,7 @@ import {careerView} from '@/lib/legends/view'
 import {LEAGUE} from './fixtures'
 
 /** 18.11.2026 — manager ratings: real shape from the research pack, level from the stars, hidden outside the manager's own squad */
-const F=data as unknown as {keys:string[];men:Record<string,{r:string;v:string;k:number;s:string;e?:string}>;counts:Record<string,number>}
+const F=data as unknown as {keys:string[];men:Record<string,{r:string;v:string;k:number;s:string;e?:string}>;counts:{observed:number;partial:number;estimated:number}}
 describe('manager ratings · the data',()=>{
  it('every row is 47 slots of A–T or "." and an outfield man carries no goalkeeping attributes',()=>{
   expect(F.keys).toHaveLength(47)
