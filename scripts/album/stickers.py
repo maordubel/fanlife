@@ -124,7 +124,9 @@ def era_score(meta, club_name, y0, y1):
     named = any(w in meta['text'] for w in words)
     years = [int(y) for y in re.findall(r'(?<!\d)(19[0-9]{2}|20[0-9]{2})(?!\d)', meta['date'] + ' ' + meta['title'])]
     dated = bool(y0 and y1 and any(y0 - 1 <= y <= y1 + 1 for y in years))
-    return (4 if named else 0) + (3 if dated else 0), named and (dated or not years)
+    # the club frame only for a picture that names the club AND is dated inside his years: an undated portrait from a
+    # club category is often the man years later (a suit, a reunion), so it takes the archive frame instead
+    return (4 if named else 0) + (3 if dated else 0), named and dated
 
 
 _CASC = None
