@@ -3,7 +3,7 @@
  *  · one discovery unit on screen at a time (the slide-up banner OR the DUBID lock strip, never both)
  *  · nothing over a decision: a game in play, an open sheet or dialog, a form being sent
  *  · a family is one product, whatever the language: dubid, dubid-en and dubid-gr are ONE family
- *  · "Close" on a discovery unit snoozes its family for seven days on this device
+ *  · "×" on a discovery unit or a banner takes it off the screen for that moment only; nothing is snoozed (owner, 18.11.2026)
  */
 export type Family = 'dubid' | 'offsides' | 'theworker' | 'fuckyou' | 'legends' | 'life' | 'market' | 'fanlife' | string
 
@@ -26,15 +26,14 @@ export function familyOf(id: string, href: string): Family {
   return id.replace(/-(en|he|gr|el)$/, '')
 }
 
-export const SNOOZE_DAYS = 7
+/** Retired 18.11.2026 (owner): "×" no longer hides a family for a week. The API stays so callers compile; nothing is kept,
+ *  and the old device key is cleared on first read so visitors who pressed × before see banners again. */
+export const SNOOZE_DAYS = 0
 const KEY = 'fanlife.discovery.snooze.v1'
-type Snooze = Record<string, number>
-const read = (): Snooze => { try { const v = JSON.parse(localStorage.getItem(KEY) || '{}'); return v && typeof v === 'object' ? v as Snooze : {} } catch { return {} } }
-export function snoozed(family: Family, now = Date.now()): boolean { return (read()[family] ?? 0) > now }
-export function snooze(family: Family, days = SNOOZE_DAYS, now = Date.now()): void {
-  try { const s = read(); for (const k of Object.keys(s)) if (s[k]! <= now) delete s[k]; s[family] = now + days * 86_400_000; localStorage.setItem(KEY, JSON.stringify(s)) } catch { /* a convenience, never a requirement */ }
-}
-export function snoozedSet(now = Date.now()): Set<string> { const s = read(); return new Set(Object.keys(s).filter(k => s[k]! > now)) }
+const forget = () => { try { localStorage.removeItem(KEY) } catch { /* a convenience, never a requirement */ } }
+export function snoozed(_family: Family, _now = Date.now()): boolean { forget(); return false }
+export function snooze(_family: Family, _days = SNOOZE_DAYS, _now = Date.now()): void { forget() }
+export function snoozedSet(_now = Date.now()): Set<string> { forget(); return new Set() }
 
 /** a game in play, an open sheet or dialog, a form on its way: nothing slides up over a decision (rule 28) */
 export function busy(doc: Document = document): boolean {

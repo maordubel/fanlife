@@ -17,22 +17,40 @@
 .lgm-think-bar i { display: block; block-size: 100%; background: var(--club-primary, var(--mag-ink)); transition: inline-size .14s linear; }
 
 /* ── the budget machine ── */
-.lgm-bd { display: grid; gap: 10px; justify-items: center; text-align: center; padding: 22px 16px; background: var(--mag-paper); border: 3px solid var(--mag-ink); box-shadow: 5px 5px 0 var(--mag-ink); }
-.lgm-bd h2 { margin: 0; font: 400 28px/1 var(--mag-brand); }
-.lgm-bd-machine { position: relative; display: flex; align-items: center; gap: 14px; padding: 18px 70px 18px 18px; background: var(--mag-ink); border-radius: 10px; }
-.lgm-bd-window { display: flex; align-items: center; gap: 4px; padding: 8px 10px; background: var(--mag-paper); box-shadow: inset 0 0 0 3px var(--mag-ink), inset 0 6px 0 color-mix(in srgb, var(--mag-ink) 18%, transparent); }
-.lgm-bd-reel { display: grid; place-items: center; inline-size: 38px; block-size: 56px; overflow: hidden; background: var(--mag-white); box-shadow: inset 0 0 0 2px var(--mag-ink); }
-.lgm-bd-reel b { font: 400 40px/1 var(--mag-goal); color: var(--mag-ink); }
-.lgm-bd-reel[data-spinning] b { animation: lgm-bd-blur .14s linear infinite; }
-@keyframes lgm-bd-blur { from { transform: translateY(-6px); filter: blur(1.5px); } to { transform: translateY(6px); filter: blur(1.5px); } }
-.lgm-bd-eur, .lgm-bd-dot { font: 400 34px/1 var(--mag-goal); color: var(--mag-ink); padding-inline: 2px; }
-.lgm-bd-lever { position: absolute; inset-inline-end: 8px; inset-block: 8px; inline-size: 52px; display: grid; justify-items: center; align-content: start; gap: 2px; background: transparent; border: 0; color: var(--mag-paper); font: 700 11px/1 var(--mag-mono); text-transform: uppercase; cursor: pointer; }
-.lgm-bd-lever i { display: block; inline-size: 10px; block-size: 70%; background: var(--mag-paper); border-radius: 5px; position: relative; transition: transform .35s cubic-bezier(.3, 1.4, .5, 1); transform-origin: 50% 100%; }
-.lgm-bd-lever i::before { content: ''; position: absolute; inset-inline-start: 50%; inset-block-start: -14px; inline-size: 26px; block-size: 26px; margin-inline-start: -13px; border-radius: 50%; background: var(--club-primary, var(--mag-red)); box-shadow: 0 0 0 3px var(--mag-paper); }
-.lgm-bd-machine[data-pulled] .lgm-bd-lever i { transform: scaleY(.35); }
-.lgm-bd-lever:disabled { cursor: default; }
-@media (prefers-reduced-motion: reduce) { .lgm-bd-reel[data-spinning] b { animation: none; } .lgm-bd-lever i { transition: none; } }
-@media (max-width: 400px) { .lgm-bd-reel { inline-size: 32px; block-size: 50px; } .lgm-bd-reel b { font-size: 34px; } .lgm-bd-machine { padding-inline-end: 62px; } }
+/* the budget draw (18.11.2026): its own family, a lever you can see */
+.lgm-slot { display: grid; gap: 14px; justify-items: center; text-align: center; padding: 22px 16px 20px; background: var(--mag-paper); color: var(--mag-ink); border: 3px solid var(--mag-ink); box-shadow: 5px 5px 0 var(--mag-ink); }
+.lgm-slot-head { display: grid; gap: 6px; }
+.lgm-slot-head .lgm-kicker { margin: 0; }
+.lgm-slot h2 { margin: 0; font: 400 clamp(28px, 7vw, 40px)/1 var(--mag-display); text-transform: uppercase; letter-spacing: .02em; }
+.lgm-slot-rule { margin: 0; font: 500 15px/1.4 var(--mag-body); }
+.lgm-slot-rule b { font-weight: 800; }
+.lgm-slot-machine { position: relative; display: flex; align-items: center; gap: 12px; padding: 18px 14px; background: var(--lgm-night, var(--mag-ink)); border: 3px solid var(--mag-ink); border-radius: 14px; box-shadow: inset 0 0 0 3px var(--club-primary, var(--mag-navy)), 0 6px 0 var(--mag-ink); }
+.lgm-slot-window { display: flex; align-items: center; gap: 4px; padding: 10px; background: var(--mag-paper); border-radius: 6px; box-shadow: inset 0 0 0 3px var(--mag-ink), inset 0 8px 0 color-mix(in srgb, var(--mag-ink) 16%, transparent); }
+.lgm-slot-reel { display: grid; place-items: center; inline-size: 42px; block-size: 62px; overflow: hidden; background: var(--mag-white); border-radius: 4px; box-shadow: inset 0 0 0 2px var(--mag-ink), inset 0 -10px 12px color-mix(in srgb, var(--mag-ink) 12%, transparent), inset 0 10px 12px color-mix(in srgb, var(--mag-ink) 12%, transparent); }
+.lgm-slot-reel b { font: 400 44px/1 var(--mag-goal); color: var(--mag-ink); }
+.lgm-slot-reel[data-spinning] b { animation: lgm-slot-blur .12s linear infinite; }
+@keyframes lgm-slot-blur { from { transform: translateY(-8px); filter: blur(1.6px); } to { transform: translateY(8px); filter: blur(1.6px); } }
+.lgm-slot-sym { font: 400 34px/1 var(--mag-goal); color: var(--mag-ink); padding-inline: 2px; }
+.lgm-slot[data-state='done'] .lgm-slot-window { box-shadow: inset 0 0 0 3px var(--mag-green), inset 0 8px 0 color-mix(in srgb, var(--mag-ink) 16%, transparent); }
+.lgm-slot-lever { position: relative; flex: none; inline-size: 56px; block-size: 128px; padding: 0; background: transparent; border: 0; cursor: grab; touch-action: none; }
+.lgm-slot-lever:disabled { cursor: default; }
+.lgm-slot-lever:focus-visible { outline: 3px solid var(--mag-cyan); outline-offset: 2px; }
+.lgm-slot-track { position: absolute; inset-inline-start: 50%; inset-block: 30px 8px; inline-size: 12px; margin-inline-start: -6px; border-radius: 6px; background: var(--mag-ink); box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--mag-white) 25%, transparent); }
+.lgm-slot-stick { position: absolute; inset-inline-start: 50%; inset-block-start: 22px; inline-size: 8px; block-size: 66px; margin-inline-start: -4px; border-radius: 4px; background: var(--mag-white); transform: translateY(calc(var(--pull, 0) * 52px)); transition: transform .3s cubic-bezier(.3, 1.4, .5, 1); }
+.lgm-slot-stick i { position: absolute; inset-inline-start: 50%; inset-block-start: -22px; inline-size: 40px; block-size: 40px; margin-inline-start: -20px; border-radius: 50%; background: var(--mag-vermilion); box-shadow: inset -5px -6px 0 color-mix(in srgb, var(--mag-ink) 30%, transparent), inset 5px 5px 0 color-mix(in srgb, var(--mag-white) 35%, transparent), 0 0 0 3px var(--mag-ink); }
+.lgm-slot-hint { position: absolute; inset-inline-end: -6px; inset-block-start: 4px; font: 800 22px/1 var(--mag-body); color: var(--mag-white); animation: lgm-slot-nudge 1.1s ease-in-out infinite; }
+@keyframes lgm-slot-nudge { 0%, 100% { transform: translateY(0); opacity: .5; } 50% { transform: translateY(10px); opacity: 1; } }
+.lgm-slot-machine:not([data-pulled]) .lgm-slot-lever:hover .lgm-slot-stick { transform: translateY(8px); }
+.lgm-slot-range { display: grid; grid-template-columns: auto 1fr auto; gap: 10px; align-items: center; inline-size: min(100%, 340px); font: 400 12px var(--mag-mono); letter-spacing: .06em; }
+.lgm-slot-range div { position: relative; block-size: 10px; background: color-mix(in srgb, var(--mag-ink) 14%, var(--mag-paper)); border: 2px solid var(--mag-ink); }
+.lgm-slot-range u { position: absolute; inset-block: -6px; inline-size: 6px; margin-inline-start: -3px; background: var(--mag-green); border: 2px solid var(--mag-ink); }
+.lgm-slot-cta { margin: 0; inline-size: min(100%, 360px); }
+.lgm-slot-cta > button { inline-size: 100%; }
+.lgm-slot-pull { min-block-size: 54px; padding: 12px 18px; background: var(--mag-vermilion); color: var(--mag-white); border: 3px solid var(--mag-ink); box-shadow: 0 4px 0 var(--mag-ink); font: 400 20px/1 var(--mag-display); letter-spacing: .04em; text-transform: uppercase; cursor: pointer; }
+.lgm-slot-pull:active:not(:disabled) { transform: translateY(3px); box-shadow: 0 1px 0 var(--mag-ink); }
+.lgm-slot-pull:disabled { background: var(--lgm-night, var(--mag-ink)); cursor: default; }
+@media (prefers-reduced-motion: reduce) { .lgm-slot-reel[data-spinning] b, .lgm-slot-hint { animation: none; } .lgm-slot-stick { transition: none; } }
+@media (max-width: 380px) { .lgm-slot-reel { inline-size: 34px; block-size: 52px; } .lgm-slot-reel b { font-size: 36px; } .lgm-slot-sym { font-size: 28px; } .lgm-slot-lever { inline-size: 48px; } }
 
 /* ── league setup on the club roll ── */
 .lgm-setup { display: grid; gap: 8px; padding: 12px; border: 3px solid var(--mag-ink); background: var(--mag-paper); box-shadow: 4px 4px 0 var(--mag-ink); }

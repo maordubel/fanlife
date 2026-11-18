@@ -14,12 +14,12 @@ describe('Connected Football audit — every discovery surface goes through one 
     const done = src('lib/clubs/completion.ts')
     expect(done).toMatch(/export function completeRun[\s\S]{0,120}announceFinish\(club,gate\)/)
   })
-  it('CF-02 · the matchday card is a discovery unit: snooze, one unit on screen, its own deadline and re-check', () => {
+  it('CF-02 · the matchday card is a discovery unit: × for now only, one unit on screen, its own deadline and re-check', () => {
     const hub = src('components/home/HubFixtures.tsx')
     expect(hub).toMatch(/<DiscoveryUnit unit="matchday" family=\{a\.family\} actionId=\{a\.id\} expiresAt=\{a\.expiresAt\} recheck="\/api\/universe\/companion">/)
     expect(hub).toMatch(/hubDecision\(/)
     const unit = src('components/universe/DiscoveryUnit.tsx')
-    for (const needle of ['snoozed(family)', 'snooze(family)', 'data-discovery-unit={unit}', 'occupied(unit)', 'busy()', 'visibilitychange', 'IntersectionObserver'])
+    for (const needle of ['snoozed(family)', 'data-discovery-unit={unit}', 'occupied(unit)', 'busy()', 'visibilitychange', 'IntersectionObserver'])
       expect(unit, needle).toContain(needle)
   })
   it('CF-06 · the social plan and the hub read the same switch', () => {

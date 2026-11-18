@@ -1,0 +1,54 @@
+/* LEGENDS · polish pass (18.11.2026, owner: "easier on the eye, easier to play, clearer"). Loaded last. Phone first. */
+
+/* 1 · the career header is a slim bar on a phone: crest, name, three numbers — the screen belongs to the game */
+@media (max-width: 640px) {
+  .lgm .lgm-app > .lgm-head { grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 6px 10px; padding: 8px 10px 10px; border-block-end-width: 4px; }
+  .lgm .lgm-app > .lgm-head .lgm-emblem { inline-size: 34px; block-size: 34px; }
+  .lgm .lgm-app > .lgm-head > div { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 0 8px; grid-column: 2 / -1; }
+  .lgm .lgm-app > .lgm-head > div .lgm-kicker { grid-column: 1 / -1; font-size: 9.5px; }
+  .lgm .lgm-app > .lgm-head h1 { font-size: clamp(20px, 6.2vw, 26px); text-shadow: 2px 2px 0 var(--mag-ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .lgm .lgm-app > .lgm-head h1 .lgm-crest { inline-size: 24px; block-size: 24px; padding: 2px; vertical-align: -3px; }
+  .lgm .lgm-app > .lgm-head .wkp-toggle { justify-self: end; }
+  .lgm .lgm-app > .lgm-head .wkp-btn-t { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); }
+  .lgm .lgm-app > .lgm-head .lgm-meter { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); inline-size: 100%; }
+  .lgm .lgm-app > .lgm-head .lgm-meter div { display: flex; align-items: baseline; justify-content: center; gap: 6px; padding: 5px 4px; }
+  .lgm .lgm-app > .lgm-head .lgm-meter dt { font-size: 9.5px; }
+  .lgm .lgm-app > .lgm-head .lgm-meter dd { font-size: 16px; padding: 3px 6px 2px; }
+  .lgm .lgm-app > .lgm-head .lgm-meter dd small { font-size: 11px; }
+}
+
+/* 2 · the league table on a phone: place, club, played, goal difference, points — names get the room */
+@media (max-width: 480px) {
+  .lgm .lgm-table thead th:nth-child(4), .lgm .lgm-table thead th:nth-child(5), .lgm .lgm-table thead th:nth-child(6),
+  .lgm .lgm-table tbody td:nth-of-type(3), .lgm .lgm-table tbody td:nth-of-type(4), .lgm .lgm-table tbody td:nth-of-type(5),
+  .lgm .lgm-table .lgm-form, .lgm .lgm-table .lgm-form-h { display: none; }
+  .lgm .lgm-table th, .lgm .lgm-table td { padding-block: 2px; padding-inline: 5px; }
+  .lgm .lgm-table th[scope='row'] { font-size: 15px; }
+  .lgm .lgm-table th[scope='row'] .lgm-rowbtn { min-block-size: 40px; display: flex; align-items: center; padding: 0; background: none; border: 0; color: inherit; font: inherit; }
+  .lgm .lgm-table .tl-clubcell { display: flex; align-items: center; gap: 8px; min-inline-size: 0; }
+  .lgm .lgm-table .tl-clubcell > span:last-child, .lgm .lgm-table .tl-clubcell > button { min-inline-size: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .lgm .lgm-table td b { font-size: 17px; }
+}
+
+/* 3 · the club tab is four sections behind one segmented switch */
+.lgm-club-seg { display: grid; margin: 0; }
+.lgm-club-seg button[aria-selected='true'] { background: var(--lgm-night); color: var(--mag-white); }
+.lgm-rep { display: grid; grid-template-columns: auto 1fr; align-items: baseline; gap: 2px 10px; margin-block: 4px 12px; }
+.lgm-rep b { font: 400 40px/1 var(--mag-goal); }
+.lgm-rep span { font: 400 11px var(--mag-mono); letter-spacing: .12em; text-transform: uppercase; }
+.lgm-rep i { grid-column: 1 / -1; block-size: 10px; border: 2px solid var(--mag-ink); background: linear-gradient(90deg, var(--mag-green) 0 var(--p), var(--mag-white) var(--p)); }
+
+/* 4 · the market when it is shut: when it opens, what you have, how full the squad is */
+.lgm-shut h2 { margin-block: 2px 10px; }
+.lgm-shut-meter { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin: 0 0 10px; border: 3px solid var(--mag-ink); background: var(--lgm-night); color: var(--mag-white); }
+.lgm-shut-meter div { display: grid; gap: 4px; justify-items: center; padding: 8px 4px; border-inline-end: 2px solid color-mix(in srgb, var(--mag-white) 20%, transparent); text-align: center; }
+.lgm-shut-meter div:last-child { border: 0; }
+.lgm-shut-meter dt { font: 400 10px var(--mag-mono); letter-spacing: .1em; text-transform: uppercase; opacity: .8; }
+.lgm-shut-meter dd { margin: 0; font: 400 18px/1 var(--mag-display); text-transform: uppercase; }
+.lgm-shut-meter dd small { font-size: 12px; opacity: .8; }
+
+/* 5 · Continue steps above the ad strip while it is up; a full ad card has the screen to itself until it goes */
+body:has(.promo[data-up='true']:not(.promo-card)) .lgm-continue { inset-block-end: calc(80px + 50px + 18px + env(safe-area-inset-bottom, 0px)); transition: inset-block-end .25s ease-out; }
+body:has(.promo-card[data-up='true']) .lgm-continue { visibility: hidden; }
+@media (min-width: 900px) { body:has(.promo[data-up='true']:not(.promo-card)) .lgm-continue { inset-block-end: 24px; } }
+@media (prefers-reduced-motion: reduce) { .lgm-continue { transition: none; } }

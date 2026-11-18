@@ -1,0 +1,20 @@
+name: Legends · positions wave 3
+# one-off research run for the men without a stated position (removed before merge)
+on:
+  push:
+    branches: [claude/legends-polish]
+    paths: [scripts/legends/positions-wave3.mjs, .github/workflows/legends-positions.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 20}
+      - run: node scripts/legends/positions-wave3.mjs
+      - uses: actions/upload-artifact@v4
+        with: {name: positions-wave3, path: out/positions-wave3.json}

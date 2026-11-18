@@ -3,7 +3,7 @@ import {useEffect,useRef,useState} from 'react'
 import {usePathname} from 'next/navigation'
 import {capped,delayOf,eligible,isOwn,outbound,pageOf,pickBanner,showOf} from '@/lib/promo/rules'
 import type {Banner,Page,PromoDoc,Seen} from '@/lib/promo/types'
-import {busy as busyNow,familyOf,occupied,snooze,snoozed} from '@/lib/universe/attention'
+import {busy as busyNow,familyOf,occupied} from '@/lib/universe/attention'
 
 const KEY='fanlife.promo.v1',SKEY='fanlife.promo.session.v1'
 type Session={seen:Seen;shown:number;last:number;lastId:string|null;stop:boolean;/** where each shown banner led, so its family survives a config change */fam?:Record<string,string>}
@@ -19,8 +19,8 @@ function here():Page{
 }
 /** nothing over a decision (rule 28), and one discovery unit at a time (Connected Football §11) */
 const busy=()=>busyNow()||occupied('promo')
-/** one family per visit, whatever the language variant; a snoozed family stays away for seven days */
-const familyFree=(b:Banner,s:Session)=>{const f=familyOf(b.id,b.href);return !snoozed(f)&&!Object.keys(s.seen).some(id=>id!==b.id&&s.seen[id]&&familyOf(id,s.fam?.[id]??'')===f)}
+/** one family per visit, whatever the language variant */
+const familyFree=(b:Banner,s:Session)=>{const f=familyOf(b.id,b.href);return !Object.keys(s.seen).some(id=>id!==b.id&&s.seen[id]&&familyOf(id,s.fam?.[id]??'')===f)}
 
 /**
  * The slide-up banner. 3 s after the page loads (the owner's setting) one eligible banner rises from the bottom, stays
@@ -29,7 +29,7 @@ const familyFree=(b:Banner,s:Session)=>{const f=familyOf(b.id,b.href);return !sn
  */
 export function PromoBanner({doc,israel,greece=false}:{doc:PromoDoc;israel:boolean;greece?:boolean}){
  const path=usePathname(),[shown,setShown]=useState<{b:Banner;page:Page}|null>(null),[up,setUp]=useState(false)
- const hold=useRef(false),timers=useRef<number[]>([]),current=useRef<string|null>(null)
+ const hold=useRef(false),timers=useRef<number[]>([]),current=useRef<string|null>(null),resume=useRef<(()=>void)|null>(null)
  const clear=()=>{timers.current.forEach(clearTimeout);timers.current=[]}
  const later=(fn:()=>void,ms:number)=>{timers.current.push(window.setTimeout(fn,ms))}
 
@@ -62,6 +62,7 @@ export function PromoBanner({doc,israel,greece=false}:{doc:PromoDoc;israel:boole
      if(!(cap>0&&ss.shown>=cap)&&!ss.stop)later(attempt,Math.max(1000,doc.settings.gapSec*1000))},reduce()?0:460)}
    later(close,showOf(b,doc.settings))
   }
+  resume.current=()=>{const ss=read<Session>('session',SKEY,blank());if(!(cap>0&&ss.shown>=cap))later(attempt,Math.max(1000,doc.settings.gapSec*1000))}
   later(attempt,wait)
   void page0
   return clear
@@ -70,7 +71,8 @@ export function PromoBanner({doc,israel,greece=false}:{doc:PromoDoc;israel:boole
 
  if(!shown)return null
  const {b,page}=shown
- const dismiss=()=>{snooze(familyOf(b.id,b.href));const ss=read<Session>('session',SKEY,blank());ss.stop=true;ss.last=Date.now();write('session',SKEY,ss);clear();setUp(false);window.setTimeout(()=>setShown(null),reduce()?0:460)}
+ /** × takes this banner off the screen now; the rotation carries on after the usual gap (owner, 18.11.2026: no week-long hide) */
+ const dismiss=()=>{const ss=read<Session>('session',SKEY,blank());ss.last=Date.now();write('session',SKEY,ss);clear();hold.current=false;setUp(false);window.setTimeout(()=>{setShown(null);current.current=null},reduce()?0:460);resume.current?.()}
  const isCard=b.format==='card'
  return <aside className={isCard?'promo promo-card':'promo'} data-up={up?'true':'false'} data-discovery-unit="promo" data-family={familyOf(b.id,b.href)} data-promo={b.id} role="complementary" aria-label="Advertisement"
   onPointerEnter={()=>{hold.current=true}} onPointerLeave={()=>{hold.current=false}} onFocusCapture={()=>{hold.current=true}} onBlurCapture={()=>{hold.current=false}}>
