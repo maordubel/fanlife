@@ -98,7 +98,7 @@
 .rk-end-title{margin:0;font-family:var(--mag-display);text-transform:uppercase;font-size:2rem;line-height:1}
 
 /* ---------- the cover ---------- */
-.rk-cover-stage{position:relative;inline-size:min(100%,26rem);margin-inline:auto;aspect-ratio:5/7;perspective:1800px}
+.rk-cover-stage{position:relative;inline-size:min(100%,26rem);margin-inline:auto;aspect-ratio:300/420;perspective:1800px}
 .rk-endpaper{position:absolute;inset:0;border-radius:.3rem;background:repeating-linear-gradient(45deg,color-mix(in srgb,var(--club-primary) 22%,var(--mag-paper)) 0 6px,var(--mag-paper) 6px 12px);display:grid;place-items:center;
  box-shadow:0 26px 50px rgb(0 0 0 / .55)}
 .rk-endpaper-logo{inline-size:34%;aspect-ratio:1;background:url('/brand/fanlife/logo-192.png') center/contain no-repeat;opacity:.9}
@@ -117,6 +117,9 @@
 .rk-cover-label{display:grid;gap:.15rem;margin-block-start:.6rem;padding:.6rem 1rem;min-inline-size:70%;background:var(--mag-paper);color:var(--mag-ink);border:2px solid var(--mag-ink);transform:rotate(-1.5deg)}
 .rk-cover-label small{font-size:.65rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mag-muted)}
 .rk-cover-label b{font-family:var(--mag-display);font-weight:400;font-size:1.4rem;text-transform:uppercase}
+.rk-cover-retro{padding:0;display:block;background:none;box-shadow:0 30px 60px rgb(0 0 0 / .6)}
+.rk-cover-retro .rk-cover-open{position:absolute;inset-block-end:-2.4rem;inset-inline:0;color:var(--mag-paper);text-align:center}
+.rk-cover-stage{margin-block-end:2.6rem}
 .rk-cover-open{font-family:var(--mag-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.12em;animation:rk-nudge 1.6s ease-in-out infinite}
 .rk-cover-inside{transform:rotateY(180deg);background:repeating-linear-gradient(45deg,color-mix(in srgb,var(--club-primary) 22%,var(--mag-paper)) 0 6px,var(--mag-paper) 6px 12px)}
 .rk-book-in{animation:rk-fade .5s ease-out both}
@@ -147,3 +150,29 @@
 @keyframes rk-turn{from{transform:rotateY(0)}to{transform:rotateY(-178deg)}}
 @keyframes rk-turn-back{from{transform:rotateY(0)}to{transform:rotateY(178deg)}}
 @media (prefers-reduced-motion:reduce){.rk *,.rk,.rk-cover-stage *,.rk-leaf{animation:none!important;transition:none!important}.rk-leaf{display:none}}
+
+/* ---------- the printed front of the packet and the cover, after the owner's reference (rt-) ---------- */
+.rt{--rt-lime:#8FCB4E;--rt-blue:#1F57B5;--rt-red:#D9352B;--rt-teal:#1FA6A6;--rt-green:#2C8F3F;--rt-orange:#F0741F;--rt-board:#3A9A4A;
+ display:block;inline-size:100%;block-size:100%;overflow:visible}
+.rt-f-lime{fill:var(--rt-lime)}.rt-f-blue{fill:var(--rt-blue)}.rt-f-red{fill:var(--rt-red)}.rt-f-orange{fill:var(--rt-orange)}.rt-f-ivory{fill:var(--mag-paper)}.rt-f-board{fill:var(--rt-board)}
+.rt-s-ink{stroke:var(--mag-ink)}.rt-s-blue{stroke:var(--rt-blue)}
+.rt-st-teal{stop-color:var(--rt-teal)}.rt-st-blue{stop-color:var(--rt-blue)}.rt-st-green{stop-color:var(--rt-green)}.rt-st-orange{stop-color:var(--rt-orange)}.rt-st-red{stop-color:var(--rt-red)}
+.rt-arc{fill:none;stroke:var(--rt-red);stroke-width:9;stroke-linecap:round}
+.rt-staple{fill:var(--mag-muted);stroke:var(--mag-ink);stroke-width:.8}
+.rt text{font-family:'Bowlby One','Weekly Head',Impact,sans-serif;paint-order:stroke;stroke:var(--mag-ink);stroke-linejoin:round}
+.rt-small{font-size:11px;fill:var(--mag-paper);stroke-width:3px}
+.rt-big{font-size:38px;letter-spacing:-.5px;stroke-width:4px}
+.rt-mid{font-size:22px;stroke-width:3.5px}
+.rt-mid-s{font-size:17px}
+.rt-wing{stroke-width:3.5px;letter-spacing:.3px}
+.rt-shadow{fill:var(--mag-ink);stroke:var(--mag-ink)}
+.rt-big.rt-shadow{transform:translate(2.5px,2.5px)}
+.rt-line{font-size:12px;fill:var(--mag-paper);stroke-width:3px;letter-spacing:.3px}
+.rt-shield{font-size:9px;fill:var(--mag-paper);stroke-width:2px}
+.rt-count{font-family:'Ultra',serif!important;font-size:20px;fill:var(--mag-ink);stroke-width:0}
+.rt-count-s{font-size:6px;fill:var(--mag-ink);stroke-width:0}
+.rt-burst{font-size:6.5px;fill:var(--mag-ink);stroke-width:0}
+.rt-burst-big{font-family:'Ultra',serif!important;font-size:13px;fill:var(--mag-ink);stroke-width:0}
+.rt-foot{font-size:15px;fill:var(--mag-paper);stroke-width:3.5px;letter-spacing:.5px}
+.rt-label-s{font-size:4.2px;fill:var(--mag-muted);stroke-width:0;font-family:var(--mag-condensed)!important}
+.rt-label{font-size:8px;fill:var(--mag-ink);stroke-width:0}

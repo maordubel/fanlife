@@ -2,6 +2,7 @@
 import {useEffect,useMemo,useRef,useState,type CSSProperties} from 'react'
 import {albumSound} from '../sound'
 import type {WingInfo} from '@/lib/album/view'
+import {RetroFront} from './RetroFront'
 
 /**
  * The packet (18.11.2026): a foil envelope with crimped ends, printed like a kiosk packet, catching the light as the
@@ -10,16 +11,15 @@ import type {WingInfo} from '@/lib/album/view'
  * the foil crackles faster the faster you pull, the phone ticks under the thumb, and the last pull rips it away.
  * A tap on "Tear it for me" does the same at a child's speed. Then the stickers' backs peek out of the open packet.
  */
-const W=300,H=420,TY=64,CR=30
+const W=300,H=420,TY=33,CR=30 // the tear runs just under the crimped foil top
 function jag(seed:string){
  let h=2166136261;for(const c of seed)h=Math.imul(h^c.charCodeAt(0),16777619)
  const rnd=()=>{h=Math.imul(h^(h>>>15),2246822507);h=Math.imul(h^(h>>>13),3266489909);return ((h^=h>>>16)>>>0)/4294967296}
  return Array.from({length:61},(_,i)=>[i*W/60,TY+(rnd()-0.5)*6+(i%2?1.5:-1.5)] as const)
 }
 const line=(pts:readonly (readonly [number,number])[])=>pts.map(([x,y])=>`${x.toFixed(1)},${y.toFixed(1)}`).join(' ')
-const crimp=(y0:number,y1:number,top:boolean)=>{const n=30,pts:string[]=[];for(let i=0;i<=n;i++){const x=i*W/n;pts.push(`${x},${top?(i%2?y0+5:y0):(i%2?y1-5:y1)}`)};return top?`${pts.join(' ')} ${W},${y1} 0,${y1}`:`0,${y0} ${W},${y0} ${pts.reverse().join(' ')}`}
 
-export function Pack({id,wing,count,onOpen,peek}:{id:string;wing:WingInfo;count:number;onOpen:()=>void;peek:React.ReactNode}){
+export function Pack({id,wing,count,chips,onOpen,peek}:{id:string;wing:WingInfo;count:number;chips:string[];onOpen:()=>void;peek:React.ReactNode}){
  const pts=useMemo(()=>jag(id),[id])
  const [t,setT]=useState(0),[phase,setPhase]=useState<'sealed'|'ripped'|'open'>('sealed'),[hint,setHint]=useState(false)
  const box=useRef<HTMLDivElement>(null),drag=useRef<{x:number;at:number;last:number}|null>(null),tRef=useRef(0),ticked=useRef(0)
@@ -45,9 +45,7 @@ export function Pack({id,wing,count,onOpen,peek}:{id:string;wing:WingInfo;count:
   <div className="rk-pack-peek" aria-hidden={phase!=='open'}>{peek}</div>
   <svg className="rk-pack-svg" viewBox={`0 0 ${W} ${H}`} aria-hidden="true">
    <defs>
-    <linearGradient id={`f${id}`} x1="0" y1="0" x2="1" y2="1"><stop offset="0" style={{stopColor:'var(--club-primary)',stopOpacity:0.78}}/><stop offset=".45" style={{stopColor:'var(--club-primary)'}}/><stop offset=".55" style={{stopColor:'var(--club-primary)',stopOpacity:0.86}}/><stop offset="1" style={{stopColor:'var(--club-primary)'}}/></linearGradient>
     <linearGradient id={`s${id}`} x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="white" stopOpacity="0"/><stop offset=".5" stopColor="white" stopOpacity=".55"/><stop offset="1" stopColor="white" stopOpacity="0"/></linearGradient>
-    <pattern id={`r${id}`} width="4" height="10" patternUnits="userSpaceOnUse"><rect width="2" height="10" fill="black" opacity=".16"/></pattern>
     <clipPath id={`b${id}`}><polygon points={body}/></clipPath>
     <clipPath id={`t${id}`}><polygon points={strip}/></clipPath>
     <clipPath id={`l${id}`}><rect x="-20" y="-40" width={tx+20} height={TY+60}/></clipPath>
@@ -56,28 +54,18 @@ export function Pack({id,wing,count,onOpen,peek}:{id:string;wing:WingInfo;count:
    {/* the inside of the packet, seen once it is open */}
    <rect className="rk-f-ink" x="6" y={TY} width={W-12} height="40" opacity={t>0?.55:0}/>
    <g clipPath={`url(#b${id})`} className="rk-pack-front">
-    <rect className="rk-f-ink" width={W} height={H}/><rect width={W} height={H} fill={`url(#f${id})`}/>
-    <polygon points={crimp(H-CR,H,false)} fill={`url(#r${id})`}/>
-    <rect x="0" y={H-CR-3} width={W} height="3" fill="black" opacity=".18"/>
-    <circle className="rk-f-ivory rk-s-ink" cx={W/2} cy="168" r="66" strokeWidth="3"/>
-    <image href="/brand/fanlife/logo-192.png" x={W/2-56} y="112" width="112" height="112"/>
-    <text x={W/2} y="276" textAnchor="middle" className="rk-pack-title">THE ALBUM</text>
-    <rect className="rk-f-ink" x="34" y="292" width={W-68} height="26"/>
-    <text x={W/2} y="310" textAnchor="middle" className="rk-pack-wing">{wing.name.toUpperCase()}</text>
-    <text x={W/2} y="350" textAnchor="middle" className="rk-pack-fine">EDITION ONE · 2026</text>
-    <g transform="translate(238 92) rotate(12)"><polygon className="rk-f-ivory rk-s-ink" points="0,-34 9,-12 32,-16 16,2 28,22 6,15 0,36 -6,15 -28,22 -16,2 -32,-16 -9,-12" strokeWidth="2.5"/>
-     <text y="-1" textAnchor="middle" className="rk-pack-burst">{count}</text><text y="12" textAnchor="middle" className="rk-pack-burst-s">STICKERS</text></g>
+    <RetroFront kind="pack" wing={wing.name} count={count} chips={chips}/>
     <rect className="rk-pack-sheen" x="-160" y="0" width="160" height={H} fill={`url(#s${id})`}/>
     <polyline className="rk-s-ivory" points={line(tornL)} fill="none" strokeWidth="2.2" strokeLinejoin="round"/>
    </g>
    {/* the strip: the torn part lifts, hinged where the tear has reached; the rest still holds */}
    <g className="rk-pack-strip">
-    <g clipPath={`url(#r2${id})`}><g clipPath={`url(#t${id})`}><rect className="rk-f-ink" width={W} height={TY+6}/><rect width={W} height={TY+6} fill={`url(#f${id})`}/><polygon points={crimp(0,CR,true)} fill={`url(#r${id})`}/></g></g>
+    <g clipPath={`url(#r2${id})`}><g clipPath={`url(#t${id})`}><rect width={W} height={TY+6} className="rk-f-ink"/><image href="/album/art/foil-top.webp" width={W} height={CR} preserveAspectRatio="none"/><image href="/album/art/foil-side.webp" x="0" y={CR-2} width={W} height={TY-CR+8} preserveAspectRatio="none"/></g></g>
     <g clipPath={`url(#l${id})`} transform={`rotate(${angle} ${tx} ${TY})`}><g clipPath={`url(#t${id})`}>
-     <rect className="rk-f-ink" width={W} height={TY+6}/><rect width={W} height={TY+6} fill={`url(#f${id})`}/><polygon points={crimp(0,CR,true)} fill={`url(#r${id})`}/>
+     <rect width={W} height={TY+6} className="rk-f-ink"/><image href="/album/art/foil-top.webp" width={W} height={CR} preserveAspectRatio="none"/><image href="/album/art/foil-side.webp" x="0" y={CR-2} width={W} height={TY-CR+8} preserveAspectRatio="none"/>
      <polyline className="rk-s-ivory" points={line(tornL)} fill="none" strokeWidth="2.2"/></g></g>
     <line className="rk-s-ivory" x1="10" y1={TY} x2={W-10} y2={TY} strokeWidth="1.4" strokeDasharray="5 4" opacity={1-t}/>
-    <g transform={`translate(10 ${TY-16})`} opacity={1-t} className="rk-pack-notch" data-hint={hint||undefined}><polygon className="rk-f-ivory" points="0,10 10,16 0,22"/><text x="15" y="20" className="rk-pack-tearhere">TEAR HERE</text></g>
+    <g transform={`translate(10 ${TY-22})`} opacity={1-t} className="rk-pack-notch" data-hint={hint||undefined}><polygon className="rk-f-ivory" points="0,10 10,16 0,22"/><text x="15" y="20" className="rk-pack-tearhere">TEAR HERE</text></g>
    </g>
   </svg>
   {phase==='sealed'&&<>

@@ -129,7 +129,7 @@ export function AlbumApp({wings,catalog,eras,kits,pressed,me:initial,signedIn,pr
      {w.crest?/* eslint-disable-next-line @next/next/no-img-element -- a crest ships exactly as recorded */<img src={w.crest} alt="" width="32" height="32"/>:<span className="alb-initials">{w.initials}</span>}<span>{w.name}</span></button>)}</div></details>
   </section>
   <nav className="alb-wing-tabs" aria-label="Wings">{views.filter(v=>v.have>0||v.info.id===book.wing).map(v=><button key={v.info.id} type="button" className="alb-tab min-h-tap" aria-pressed={v.info.id===wing?.info.id} onClick={()=>{setViewWing(v.info.id);setPage(0)}}>{v.info.name} <small className="tabular-nums">{v.stuck}/{v.total}</small></button>)}</nav>
-  {wing&&covered&&<Cover w={wing.info} name={book.cover.name} since={since(book.since)} stuck={wing.stuck} total={wing.total} onOpen={()=>{setCovered(false);try{sessionStorage.setItem('alb-cover','1')}catch{/* */}}}/>}
+  {wing&&covered&&<Cover w={wing.info} name={book.cover.name} total={views.reduce((n,v)=>n+v.total,0)} chips={wings.map(x=>x.primary)} onOpen={()=>{setCovered(false);try{sessionStorage.setItem('alb-cover','1')}catch{/* */}}}/>}
   {wing&&!covered&&<div className="alb-book rk-book-in" aria-label={`${wing.info.name} wing`}>
    <div className="alb-phone rk-turn">{pages[page]&&<PageView p={pages[page]!} w={wing.info} act={act}/>}
     {leaf&&step===1&&pages[leaf.from]&&<div key={leaf.k} className="rk-leaf" data-dir={leaf.dir} onAnimationEnd={()=>setLeaf(null)} aria-hidden="true"><PageView p={pages[leaf.from]!} w={wing.info} act={act}/></div>}</div>

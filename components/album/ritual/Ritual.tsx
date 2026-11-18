@@ -36,7 +36,7 @@ export function Ritual({draw,wings,slots,pageOf,onStick,onDone,muted,setMuted}:{
    {stage!=='stick'&&<button type="button" className="alb-skip min-h-tap" onClick={onDone}>{stage==='end'?'Close':'Skip'}</button>}
   </div>
 
-  {stage==='pack'&&club&&<Pack id={draw.envelope} wing={club} count={ids.length} onOpen={opened}
+  {stage==='pack'&&club&&<Pack id={draw.envelope} wing={club} count={ids.length} chips={[...wings.values()].map(x=>x.primary)} onOpen={opened}
    peek={<span className="rk-peek">{ids.map((id,k)=>{const x=slots.get(id);return x?<span key={id} className="rk-peek-card" style={{['--k' as string]:k}}><Back s={x}/></span>:null})}</span>}/>}
 
   {stage==='stack'&&s&&w&&<div className="rk-stack">
