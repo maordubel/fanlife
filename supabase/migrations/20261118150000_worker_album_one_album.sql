@@ -231,6 +231,8 @@ end $$;
 
 -- retention: closed swaps leave after 60 days, with the opened packets (rule: a growing table ships with its sweep)
 do $$ begin
-  perform cron.unschedule('marketing:album-swaps-sweep') where exists (select 1 from cron.job where jobname = 'marketing:album-swaps-sweep');
-  perform cron.schedule('marketing:album-swaps-sweep', '23 3 * * *', $c$delete from public.worker_album_swap where status <> 'open' and closed_at < now() - interval '60 days'$c$);
+  if exists (select 1 from pg_extension where extname = 'pg_cron') then
+    execute $x$select cron.unschedule(jobid) from cron.job where jobname = 'marketing:album-swaps-sweep'$x$;
+    execute $x$select cron.schedule('marketing:album-swaps-sweep', '23 3 * * *', 'delete from public.worker_album_swap where status <> ''open'' and closed_at < now() - interval ''60 days''')$x$;
+  end if;
 end $$;
