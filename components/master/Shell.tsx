@@ -50,8 +50,8 @@ async function ShellTabBar({locale}:{locale:UiLocale}){return <TabBar locale={lo
 
 /** THE WEEKLY's menu in the masthead (rule 124): the contents page — the paper, your corner, every club. */
 async function HubMenu({locale,current,theme}:{locale:UiLocale;current:string|null;theme?:ClubTheme}) {
- const t=menuCopy(locale),[state,shop]=await Promise.all([readState().catch(()=>null),shopIsOpen()]),pins=featuresOf(state).pins||isOwner()
+ const t=menuCopy(locale),[state,shop]=await Promise.all([readState().catch(()=>null),shopIsOpen()]),pins=featuresOf(state).pins||isOwner(),album=featuresOf(state).album||isOwner()
  return <Contents tone="paper" rivalNo={theme?rivalBans(theme).join(' ')||undefined:undefined} paint={theme?themeStyle(theme,locale) as Record<string,string>:undefined}
   copy={{menu:t.wkMenu,title:t.wkContents,kicker:t.wkKickerHub,close:t.wkClose,corner:t.wkCorner,clubs:t.wkClubs,fanlife:t.wkFanLife,section:t.wkPaper,apps:t.pinApps}} pins={pins} locale={locale} apps={menuApps(locale,current)}
-  sections={hubSections(locale,{shop})} corner={menuCorner(locale)} clubs={menuClubs(state?.clubs??[],current,locale,theme)} fanlife={menuFanLife(locale)}/>
+  sections={hubSections(locale,{shop,album})} corner={menuCorner(locale)} clubs={menuClubs(state?.clubs??[],current,locale,theme)} fanlife={menuFanLife(locale)}/>
 }

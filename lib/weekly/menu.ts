@@ -51,7 +51,7 @@ export function menuFanLife(locale:UiLocale,portal=''):ContentsItem[]{
 }
 
 /** The paper's sections, in the order of the desktop bar (14.11.2026): home, clubs, games, LIFE, the shop (while it sells), the market, all football. */
-export function hubSections(locale:UiLocale,o:{shop?:boolean}={}):ContentsItem[]{
+export function hubSections(locale:UiLocale,o:{shop?:boolean;album?:boolean}={}):ContentsItem[]{
  const t=menuCopy(locale)
  return [
   {href:'/',title:t.home,sub:t.wkHomeSub,icon:'home'},
@@ -59,6 +59,7 @@ export function hubSections(locale:UiLocale,o:{shop?:boolean}={}):ContentsItem[]
   {href:'/our-games',title:t.tabOurGames,sub:t.wkGamesSub,icon:'play'},
   {href:'/#life',title:t.tabLife,sub:t.wkLifeSub,icon:'life'},
   ...(o.shop?[{href:'/shop',title:t.wkShop,sub:t.wkShopSub,icon:'bag'}]:[]),
+  ...(o.album?[{href:'/album',title:t.wkAlbum,sub:t.wkAlbumSub,icon:'grid'}]:[]),
   {href:'/market',title:t.wkMarket,sub:t.wkMarketSub,icon:'shirt'},
   {href:'/all-football',title:t.wkAllFootball,sub:t.wkAllFootballSub,icon:'globe'},
  ]
