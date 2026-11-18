@@ -149,6 +149,7 @@ export function TeamSheet({v,busy,send,mode='sheet'}:{v:CareerView;busy:boolean;
     <span className="tl-held-do">
      {held.squad?<><button type="button" className="tl-armbtn min-h-tap" data-arm="c" aria-pressed={s.cap===held.id} onClick={()=>setArm('cap',held.id)} data-testid="legends-make-captain"><i aria-hidden="true">C</i> Captain</button>
      <button type="button" className="tl-armbtn min-h-tap" data-arm="v" aria-pressed={s.vice===held.id} onClick={()=>setArm('vice',held.id)} data-testid="legends-make-vice"><i aria-hidden="true">V</i> Vice</button></>:null}
+     {held.squad?<button type="button" className="tl-traybtn min-h-tap" onClick={()=>{setCard(held.squad!);setSel(null)}} data-testid="legends-open-profile">Profile</button>:null}
      {sel?.z!=='rest'?<button type="button" className="tl-traybtn min-h-tap" onClick={()=>{move(sel!,{z:'rest'});setSel(null)}}>Out</button>:null}
      <button type="button" className="tl-traybtn min-h-tap" onClick={()=>setSel(null)} aria-label="Let go">✕</button></span>
    </div>:null}

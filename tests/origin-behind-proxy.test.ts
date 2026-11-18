@@ -18,3 +18,15 @@ describe('origin checks behind a proxy',()=>{
   expect(sameOrigin(req('https://fanlife.dubelteam.com',{'sec-fetch-site':'cross-site'}))).toBe(false)
  })
 })
+
+describe('publicOrigin — where a redirect sends the visitor (the Google sign-in, 18.11.2026)', () => {
+  it('is the forwarded public host behind the proxy, never the container', async () => {
+    const { publicOrigin } = await import('@/lib/origin')
+    const r = new Request('http://localhost:3000/auth/callback?code=1', { headers: { host: 'fanlife.dubelteam.com', 'x-forwarded-host': 'fanlife.dubelteam.com', 'x-forwarded-proto': 'https' } })
+    expect(publicOrigin(r)).toBe('https://fanlife.dubelteam.com')
+  })
+  it('falls back to the site, not localhost, when only the container address is known', async () => {
+    const { publicOrigin } = await import('@/lib/origin')
+    expect(publicOrigin(new Request('http://localhost:3000/auth/callback', { headers: { host: 'localhost:3000' } }))).toBe('https://fanlife.dubelteam.com')
+  })
+})

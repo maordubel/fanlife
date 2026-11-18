@@ -3,6 +3,7 @@ import {ATTR_LABEL,ROLE_ATTRS,type AttrKey} from '@/lib/legends/ratings'
 import type {CardView} from '@/lib/legends/view'
 import {Stars} from './Brand'
 import {LegendShirt} from './Shirts'
+import {FmSheet,HIDDEN_RATINGS} from './FmSheet'
 
 /**
  * One man as a collector's card: tier ribbon, name, line, years at the club, his stars and his role's attributes. The years
@@ -22,7 +23,8 @@ export function LegendCard({c,tier,locked,children,compact=false,shirt=false}:{c
   {shirt?<LegendShirt man={c} className="lgm-card-shirt"/>:null}
   <header><p className="lgm-card-pos">{c.role?ROLE_LABEL[c.role]:posName(c.pos)}{c.alt?.length?<small> · also {c.alt.join(', ')}</small>:null}</p><h3>{c.name}</h3><p className="lgm-card-years">{years(c)}</p></header>
   <div className="lgm-card-rate"><Stars value={c.stars} size={compact?'sm':'md'}/><b className="lgm-price">{money(c.price)}</b></div>
-  {compact?null:<dl className="lgm-attrs">{(ROLE_ATTRS[c.pos]??[]).map(k=><div key={k}><dt>{ATTR_LABEL[k as AttrKey]}</dt><dd><Stars value={c.attrs[k]??c.stars} size="sm"/></dd></div>)}</dl>}
+  {compact?null:Object.keys(c.attrs).length?<dl className="lgm-attrs">{(ROLE_ATTRS[c.pos]??[]).map(k=><div key={k}><dt>{ATTR_LABEL[k as AttrKey]}</dt><dd><Stars value={c.attrs[k]??c.stars} size="sm"/></dd></div>)}</dl>:<p className="lgm-card-hidden" data-testid="legends-ratings-hidden">{HIDDEN_RATINGS}</p>}
+  {!compact&&c.fm?<FmSheet fm={c.fm} name={c.name}/>:null}
   {locked?<p className="lgm-card-lock" role="note">{locked}</p>:null}
   {children}
  </article>

@@ -1,0 +1,6498 @@
+{
+ "edition": 1,
+ "builtOn": "2026-11-18",
+ "wings": {
+  "hapoel-tel-aviv": [
+   {
+    "slot": 1,
+    "page": 1,
+    "era": "1930s–1950s",
+    "person_id": "pl_63e81edd47",
+    "record_id": "p_b34ba373df",
+    "name": "Willi Berger",
+    "from": 1927,
+    "to": 1937,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-90673.svg"
+   },
+   {
+    "slot": 2,
+    "page": 1,
+    "era": "1930s–1950s",
+    "person_id": "pl_e193b87001",
+    "record_id": "p_161c5bc4dd",
+    "name": "Avraham Nudelmann",
+    "from": 1927,
+    "to": 1938,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-90673.svg"
+   },
+   {
+    "slot": 3,
+    "page": 1,
+    "era": "1930s–1950s",
+    "person_id": "pl_6e2ec589a1",
+    "record_id": "p_7204c0e5c4",
+    "name": "Shlomo Polyakov",
+    "from": 1927,
+    "to": 1941,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-90673.svg"
+   },
+   {
+    "slot": 4,
+    "page": 1,
+    "era": "1930s–1950s",
+    "person_id": "pl_308b265dba",
+    "record_id": "p_6a760d726a",
+    "name": "Avraham Palman",
+    "from": 1938,
+    "to": 1954,
+    "pos": [
+     "FW",
+     "DF"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-90673.svg"
+   },
+   {
+    "slot": 5,
+    "page": 1,
+    "era": "1930s–1950s",
+    "person_id": "pl_2642041911",
+    "record_id": "p_30f1a8b59b",
+    "name": "Ya'akov Hodorov",
+    "from": 1946,
+    "to": 1962,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-90671.svg"
+   },
+   {
+    "slot": 6,
+    "page": 1,
+    "era": "1930s–1950s",
+    "person_id": "pl_2811154cad",
+    "record_id": "p_59761a18d3",
+    "name": "Rehavia Rozenboim",
+    "from": 1950,
+    "to": 1964,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-90670.svg"
+   },
+   {
+    "slot": 7,
+    "page": 2,
+    "era": "1950s–1970s",
+    "person_id": "pl_434509234f",
+    "record_id": "p_43edb562c4",
+    "name": "Dani Elkayam",
+    "from": 1957,
+    "to": 1966,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-90667.svg"
+   },
+   {
+    "slot": 8,
+    "page": 2,
+    "era": "1950s–1970s",
+    "person_id": "pl_24eed6093f",
+    "record_id": "p_5f3ad834a6",
+    "name": "Gidon Tish",
+    "from": 1955,
+    "to": 1969,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-90667.svg"
+   },
+   {
+    "slot": 9,
+    "page": 2,
+    "era": "1950s–1970s",
+    "person_id": "pl_d405443efb",
+    "record_id": "p_1c74821a55",
+    "name": "Shimon Ben Yonatan",
+    "from": 1960,
+    "to": 1975,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-90666.svg"
+   },
+   {
+    "slot": 10,
+    "page": 2,
+    "era": "1950s–1970s",
+    "person_id": "pl_10c7e33702",
+    "record_id": "p_b232d1ebcf",
+    "name": "Yehezkel Hazum",
+    "from": 1964,
+    "to": 1977,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-90665.svg"
+   },
+   {
+    "slot": 11,
+    "page": 2,
+    "era": "1950s–1970s",
+    "person_id": "pl_d5f9b793fb",
+    "record_id": "p_b272171d0e",
+    "name": "Arie Bejarano",
+    "from": 1968,
+    "to": 1985,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-90664.svg"
+   },
+   {
+    "slot": 12,
+    "page": 2,
+    "era": "1950s–1970s",
+    "person_id": "pl_1a26a15de9",
+    "record_id": "p_9ee57e128a",
+    "name": "Rifaat Turk",
+    "from": 1971,
+    "to": 1985,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/kit-kit-1978-79-home.svg"
+   },
+   {
+    "slot": 13,
+    "page": 3,
+    "era": "1970s–1980s",
+    "person_id": "pl_3db861caff",
+    "record_id": "p_c57645355d",
+    "name": "Moshe Markovich",
+    "from": 1975,
+    "to": 1986,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-70783.svg"
+   },
+   {
+    "slot": 14,
+    "page": 3,
+    "era": "1970s–1980s",
+    "person_id": "pl_c445c3af47",
+    "record_id": "p_25fbe5fc0d",
+    "name": "Gili Landau",
+    "from": 1974,
+    "to": 1990,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-24631.svg"
+   },
+   {
+    "slot": 15,
+    "page": 3,
+    "era": "1970s–1980s",
+    "person_id": "pl_efbc167cad",
+    "record_id": "p_69e9291fab",
+    "name": "Kobi Hadadi",
+    "from": 1967,
+    "to": 1997,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-24631.svg"
+   },
+   {
+    "slot": 16,
+    "page": 3,
+    "era": "1970s–1980s",
+    "person_id": "pl_2d1eb74667",
+    "record_id": "p_1108a4ea15",
+    "name": "Shabtai Levi",
+    "from": 1977,
+    "to": 1989,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-24631.svg"
+   },
+   {
+    "slot": 17,
+    "page": 3,
+    "era": "1970s–1980s",
+    "person_id": "pl_5c50316169",
+    "record_id": "p_d5b6d6ee0a",
+    "name": "Moshe Sinai",
+    "from": 1979,
+    "to": 1993,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-24628.svg"
+   },
+   {
+    "slot": 18,
+    "page": 3,
+    "era": "1970s–1980s",
+    "person_id": "pl_87dc2ac8cb",
+    "record_id": "p_eb6dd2ac08",
+    "name": "Arie Alter",
+    "from": 1985,
+    "to": 1994,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-70782.svg"
+   },
+   {
+    "slot": 19,
+    "page": 4,
+    "era": "1990s–2000s",
+    "person_id": "pl_dc86253f5a",
+    "record_id": "p_9da3d676ab",
+    "name": "Eyal Abramov",
+    "from": 1988,
+    "to": 1994,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-70780.svg"
+   },
+   {
+    "slot": 20,
+    "page": 4,
+    "era": "1990s–2000s",
+    "person_id": "pl_8399b0cbcd",
+    "record_id": "p_d49e466873",
+    "name": "Yossi Abukasis",
+    "from": 1987,
+    "to": 2007,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/kit-kit-1997-98-home.svg"
+   },
+   {
+    "slot": 21,
+    "page": 4,
+    "era": "1990s–2000s",
+    "person_id": "pl_8005350048",
+    "record_id": "p_9a7b6e96a1",
+    "name": "Shavit Elimelech",
+    "from": 1996,
+    "to": 2007,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-231945.svg"
+   },
+   {
+    "slot": 22,
+    "page": 4,
+    "era": "1990s–2000s",
+    "person_id": "pl_6ac5c2b159",
+    "record_id": "p_a6f4efca3b",
+    "name": "Kfir Udi",
+    "from": 1996,
+    "to": 2007,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/hta-fka-231945.svg"
+   },
+   {
+    "slot": 23,
+    "page": 4,
+    "era": "1990s–2000s",
+    "person_id": "pl_0a23142965",
+    "record_id": "p_92e5eca2c1",
+    "name": "Nir Rahamin",
+    "from": 1998,
+    "to": 2006,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/cof-k-01.svg"
+   },
+   {
+    "slot": 24,
+    "page": 4,
+    "era": "1990s–2000s",
+    "person_id": "pl_a3a0da73ab",
+    "record_id": "p_2cc60c0e20",
+    "name": "Salim Toama",
+    "from": 1998,
+    "to": 2014,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/cof-k-04.svg"
+   },
+   {
+    "slot": 25,
+    "page": 5,
+    "era": "2000s–2010s",
+    "person_id": "pl_406969b780",
+    "record_id": "p_4252f24e61",
+    "name": "Galil Ben Sha'anan",
+    "from": 2002,
+    "to": 2011,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/cof-k-04.svg"
+   },
+   {
+    "slot": 26,
+    "page": 5,
+    "era": "2000s–2010s",
+    "person_id": "pl_1bf0230404",
+    "record_id": "p_c37eaf41cd",
+    "name": "Eran Zahavi",
+    "from": 2006,
+    "to": 2011,
+    "pos": [
+     "MF",
+     "FW"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/cof-k-06.svg"
+   },
+   {
+    "slot": 27,
+    "page": 5,
+    "era": "2000s–2010s",
+    "person_id": "pl_04a3c23a2f",
+    "record_id": "p_37bd946fc6",
+    "name": "Vincent Enyeama",
+    "from": 2007,
+    "to": 2011,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/kit-kit-2009-10-home.svg"
+   },
+   {
+    "slot": 28,
+    "page": 5,
+    "era": "2000s–2010s",
+    "person_id": "pl_108dc29b27",
+    "record_id": "p_1d8475b0ee",
+    "name": "Boris Kleyman",
+    "from": 2009,
+    "to": 2014,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/cof-k-08.svg"
+   },
+   {
+    "slot": 29,
+    "page": 5,
+    "era": "2000s–2010s",
+    "person_id": "pl_10e857a523",
+    "record_id": "p_d854744ec2",
+    "name": "Arik Yanko",
+    "from": 2008,
+    "to": 2020,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/cof-k-12.svg"
+   },
+   {
+    "slot": 30,
+    "page": 5,
+    "era": "2000s–2010s",
+    "person_id": "pl_ca7f32362a",
+    "record_id": "p_d20e3a28f6",
+    "name": "Ben Sahar",
+    "from": 2005,
+    "to": 2025,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/cof-k-14.svg"
+   },
+   {
+    "slot": 31,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_e39533a1f5",
+    "record_id": "p_b0f1c9f234",
+    "name": "David Alon",
+    "from": 2014,
+    "to": 2018,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/cof-k-15.svg"
+   },
+   {
+    "slot": 32,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_88d5b5e2c5",
+    "record_id": "p_0619566adc",
+    "name": "Anas Mahamid",
+    "from": 2015,
+    "to": 2027,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/photo-k-02.svg"
+   },
+   {
+    "slot": 33,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_2a440b4f17",
+    "record_id": "p_5375c40146",
+    "name": "Omri Altman",
+    "from": 2015,
+    "to": 2027,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/photo-k-02.svg"
+   },
+   {
+    "slot": 34,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_6e080062cd",
+    "record_id": "p_fde4eb7dae",
+    "name": "Rubi Levkovich",
+    "from": 2018,
+    "to": 2025,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/photo-k-02.svg"
+   },
+   {
+    "slot": 35,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_273c8fb6d6",
+    "record_id": "p_fe3d8cf84a",
+    "name": "Roy Baranes",
+    "from": 2019,
+    "to": 2024,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/photo-k-02.svg"
+   },
+   {
+    "slot": 36,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_cd4117daad",
+    "record_id": "p_b7afb0d472",
+    "name": "Ido Sharon",
+    "from": 2019,
+    "to": 2025,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/hapoel-tel-aviv/svg/cof-k-27.svg"
+   }
+  ],
+  "zrinjski-mostar": [
+   {
+    "slot": 1,
+    "page": 1,
+    "era": "1990s–2000s",
+    "person_id": "pl_d161b8fd6b",
+    "record_id": "zrinjski-mostar:wv-355a736a20",
+    "name": "Slaven Musa",
+    "from": 1992,
+    "to": 2002,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/fka-k-154126.svg"
+   },
+   {
+    "slot": 2,
+    "page": 1,
+    "era": "1990s–2000s",
+    "person_id": "pl_772995ddf3",
+    "record_id": "zrinjski-mostar:wv-898821c479",
+    "name": "Draženko Bogdan",
+    "from": 1996,
+    "to": 2001,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/fka-k-154126.svg"
+   },
+   {
+    "slot": 3,
+    "page": 1,
+    "era": "1990s–2000s",
+    "person_id": "pl_ebc776792d",
+    "record_id": "zrinjski-mostar:wv-eb5bb1fec0",
+    "name": "Nedeljko Jurić",
+    "from": 2000,
+    "to": 2003,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/fka-k-154140.svg"
+   },
+   {
+    "slot": 4,
+    "page": 1,
+    "era": "1990s–2000s",
+    "person_id": "pl_fb685c8f9d",
+    "record_id": "zrinjski-mostar:wv-7d19795560",
+    "name": "Armando Marenzi",
+    "from": 2001,
+    "to": 2003,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/fka-k-154138.svg"
+   },
+   {
+    "slot": 5,
+    "page": 1,
+    "era": "1990s–2000s",
+    "person_id": "pl_fb158b0beb",
+    "record_id": "zrinjski-mostar:wv-d265de4007",
+    "name": "Mario Ivanković",
+    "from": 1997,
+    "to": 2011,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/fka-k-154133.svg"
+   },
+   {
+    "slot": 6,
+    "page": 1,
+    "era": "1990s–2000s",
+    "person_id": "pl_cb5f1bb195",
+    "record_id": "zrinjski-mostar:wv-d6358231b7",
+    "name": "Romeo Mitrović",
+    "from": 2004,
+    "to": 2008,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/fka-k-154142.svg"
+   },
+   {
+    "slot": 7,
+    "page": 2,
+    "era": "2000s–2010s",
+    "person_id": "pl_6e75ceba14",
+    "record_id": "zrinjski-mostar:wv-9f5dfcb6d7",
+    "name": "Mladen Žižović",
+    "from": 2005,
+    "to": 2011,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/fka-k-154129.svg"
+   },
+   {
+    "slot": 8,
+    "page": 2,
+    "era": "2000s–2010s",
+    "person_id": "pl_e53b6b5b0f",
+    "record_id": "zrinjski-mostar:wv-7f9dba0d76",
+    "name": "Igor Žuržinov",
+    "from": 2005,
+    "to": 2013,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/fka-k-154134.svg"
+   },
+   {
+    "slot": 9,
+    "page": 2,
+    "era": "2000s–2010s",
+    "person_id": "pl_902e45915d",
+    "record_id": "zrinjski-mostar:wv-28c1154490",
+    "name": "Stanley Afedzie",
+    "from": 2009,
+    "to": 2010,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/fka-k-154134.svg"
+   },
+   {
+    "slot": 10,
+    "page": 2,
+    "era": "2000s–2010s",
+    "person_id": "pl_f8e5cff78e",
+    "record_id": "nft-46898",
+    "name": "Adnan Hadžić",
+    "from": 2009,
+    "to": 2013,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/cof-k-03.svg"
+   },
+   {
+    "slot": 11,
+    "page": 2,
+    "era": "2000s–2010s",
+    "person_id": "pl_0ee2145732",
+    "record_id": "zrinjski-mostar:r26-igor-melher",
+    "name": "Igor Melher",
+    "from": 2008,
+    "to": 2014,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/cof-k-03.svg"
+   },
+   {
+    "slot": 12,
+    "page": 2,
+    "era": "2000s–2010s",
+    "person_id": "pl_8ca2809627",
+    "record_id": "zrinjski-mostar:wv-220102f5a9",
+    "name": "Hrvoje Miličević",
+    "from": 2010,
+    "to": 2014,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/cof-k-05.svg"
+   },
+   {
+    "slot": 13,
+    "page": 3,
+    "era": "The 2010s",
+    "person_id": "pl_44cd69143f",
+    "record_id": "zrinjski-mostar:wv-6840417f04",
+    "name": "Danijel Stojanović",
+    "from": 2008,
+    "to": 2017,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/cof-k-05.svg"
+   },
+   {
+    "slot": 14,
+    "page": 3,
+    "era": "The 2010s",
+    "person_id": "pl_962de9bed2",
+    "record_id": "zrinjski-mostar:wv-b26a25c998",
+    "name": "Ratko Dujković",
+    "from": 2013,
+    "to": 2013,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/cof-k-05.svg"
+   },
+   {
+    "slot": 15,
+    "page": 3,
+    "era": "The 2010s",
+    "person_id": "pl_7c54d031b7",
+    "record_id": "zrinjski-mostar:wv-0d76a601d0",
+    "name": "Ivan Crnov",
+    "from": 2013,
+    "to": 2015,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/fka-k-479740.svg"
+   },
+   {
+    "slot": 16,
+    "page": 3,
+    "era": "The 2010s",
+    "person_id": "pl_48400df499",
+    "record_id": "zrinjski-mostar:wv-aa8762fc9f",
+    "name": "Krešimir Bandić",
+    "from": 2013,
+    "to": 2017,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/cof-k-08.svg"
+   },
+   {
+    "slot": 17,
+    "page": 3,
+    "era": "The 2010s",
+    "person_id": "pl_b30e8c92d0",
+    "record_id": "zrinjski-mostar:wv-fea7ccc821",
+    "name": "Oliver Petrak",
+    "from": 2014,
+    "to": 2017,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/cof-k-08.svg"
+   },
+   {
+    "slot": 18,
+    "page": 3,
+    "era": "The 2010s",
+    "person_id": "pl_4cc2d61b90",
+    "record_id": "zrinjski-mostar:wv-b2b5de12d1",
+    "name": "Filip Arežina",
+    "from": 2011,
+    "to": 2021,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/cof-k-09.svg"
+   },
+   {
+    "slot": 19,
+    "page": 4,
+    "era": "The 2010s",
+    "person_id": "pl_de1a83ef8c",
+    "record_id": "zrinjski-mostar:r26-milos-filipovic",
+    "name": "Miloš Filipović",
+    "from": 2015,
+    "to": 2019,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/cof-k-09.svg"
+   },
+   {
+    "slot": 20,
+    "page": 4,
+    "era": "The 2010s",
+    "person_id": "pl_d8f00a4b10",
+    "record_id": "zrinjski-mostar:wv-6f48cfef8e",
+    "name": "Kenan Pirić",
+    "from": 2017,
+    "to": 2018,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/cof-k-12.svg"
+   },
+   {
+    "slot": 21,
+    "page": 4,
+    "era": "The 2010s",
+    "person_id": "pl_806388380d",
+    "record_id": "zrinjski-mostar:r26-ognjen-todorovic",
+    "name": "Ognjen Todorović",
+    "from": 2014,
+    "to": 2022,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/cof-k-12.svg"
+   },
+   {
+    "slot": 22,
+    "page": 4,
+    "era": "The 2010s",
+    "person_id": "pl_13341cd524",
+    "record_id": "zrinjski-mostar:wv-e272041603",
+    "name": "Marko Tešija",
+    "from": 2015,
+    "to": 2022,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/cof-k-12.svg"
+   },
+   {
+    "slot": 23,
+    "page": 4,
+    "era": "The 2010s",
+    "person_id": "pl_c800f501f1",
+    "record_id": "zrinjski-mostar:wv-58a41bce74",
+    "name": "Edin Rustemović",
+    "from": 2018,
+    "to": 2020,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/fka-k-102799.svg"
+   },
+   {
+    "slot": 24,
+    "page": 4,
+    "era": "The 2010s",
+    "person_id": "pl_a05053bfd4",
+    "record_id": "zrinjski-mostar:wv-7284841393",
+    "name": "Staniša Mandić",
+    "from": 2019,
+    "to": 2019,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/fka-k-102799.svg"
+   },
+   {
+    "slot": 25,
+    "page": 5,
+    "era": "2010s–2020s",
+    "person_id": "pl_4b2b1ca8db",
+    "record_id": "zrinjski-mostar:wv-23c661bb02",
+    "name": "Ivan Brkić",
+    "from": 2018,
+    "to": 2021,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/fka-k-102799.svg"
+   },
+   {
+    "slot": 26,
+    "page": 5,
+    "era": "2010s–2020s",
+    "person_id": "pl_82edeeb6f1",
+    "record_id": "zrinjski-mostar:nardin-mulahusejnovic",
+    "name": "Nardin Mulahusejnović",
+    "from": 2017,
+    "to": 2025,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/photo-k-03.svg"
+   },
+   {
+    "slot": 27,
+    "page": 5,
+    "era": "2010s–2020s",
+    "person_id": "pl_da05acf513",
+    "record_id": "zrinjski-mostar:wv-2e1945b14f",
+    "name": "Ivan Bašić",
+    "from": 2020,
+    "to": 2022,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/photo-k-03.svg"
+   },
+   {
+    "slot": 28,
+    "page": 5,
+    "era": "2010s–2020s",
+    "person_id": "pl_303a6a2a99",
+    "record_id": "zrinjski-mostar:wv-59112cab5d",
+    "name": "Anes Mašić",
+    "from": 2019,
+    "to": 2023,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/photo-k-03.svg"
+   },
+   {
+    "slot": 29,
+    "page": 5,
+    "era": "2010s–2020s",
+    "person_id": "pl_efb59a7646",
+    "record_id": "zrinjski-mostar:wv-37120aeb6f",
+    "name": "Josip Čondrić",
+    "from": 2021,
+    "to": 2023,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/cof-k-17.svg"
+   },
+   {
+    "slot": 30,
+    "page": 5,
+    "era": "2010s–2020s",
+    "person_id": "pl_b0fa80a15c",
+    "record_id": "zrinjski-mostar:wv-bfc35a3329",
+    "name": "Dragan Juranović",
+    "from": 2021,
+    "to": 2023,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/cof-k-17.svg"
+   },
+   {
+    "slot": 31,
+    "page": 6,
+    "era": "The 2020s",
+    "person_id": "pl_7b8747b7cd",
+    "record_id": "zrinjski-mostar:matija-malekinusic",
+    "name": "Matija Malekinušić",
+    "from": 2021,
+    "to": 2025,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/fka-k-168611.svg"
+   },
+   {
+    "slot": 32,
+    "page": 6,
+    "era": "The 2020s",
+    "person_id": "pl_857480b698",
+    "record_id": "zrinjski-mostar:wv-8c7b019bbb",
+    "name": "Silvio Ilinković",
+    "from": 2022,
+    "to": 2024,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/fka-k-168611.svg"
+   },
+   {
+    "slot": 33,
+    "page": 6,
+    "era": "The 2020s",
+    "person_id": "pl_13ca4dbb46",
+    "record_id": "zrinjski-mostar:wv-b33fd4bdd6",
+    "name": "Franko Sabljić",
+    "from": 2021,
+    "to": 2025,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/fka-k-168611.svg"
+   },
+   {
+    "slot": 34,
+    "page": 6,
+    "era": "The 2020s",
+    "person_id": "pl_b05910aa37",
+    "record_id": "zrinjski-mostar:wv-dca00b5115",
+    "name": "Matej Šakota",
+    "from": 2022,
+    "to": 2026,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/kit-2024-25-home.svg"
+   },
+   {
+    "slot": 35,
+    "page": 6,
+    "era": "The 2020s",
+    "person_id": "pl_16598d61a4",
+    "record_id": "zrinjski-mostar:tomislav-kis",
+    "name": "Tomislav Kiš",
+    "from": 2023,
+    "to": 2026,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/kit-2024-25-home.svg"
+   },
+   {
+    "slot": 36,
+    "page": 6,
+    "era": "The 2020s",
+    "person_id": "pl_98fffe4cb0",
+    "record_id": "zrinjski-mostar:wv-1f40f0e154",
+    "name": "Toni Majić",
+    "from": 2025,
+    "to": 2026,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/zrinjski-mostar/svg/fka-k-396094.svg"
+   }
+  ],
+  "hapoel-petah-tikva": [
+   {
+    "slot": 1,
+    "page": 1,
+    "era": "1940s–1970s",
+    "person_id": "pl_e9dc9f5b2f",
+    "record_id": "hapoel-petah-tikva:wv-c5321bbac2",
+    "name": "Zvi Markus",
+    "from": 1955,
+    "to": 1964,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-24600.svg"
+   },
+   {
+    "slot": 2,
+    "page": 1,
+    "era": "1940s–1970s",
+    "person_id": "pl_996662bd18",
+    "record_id": "hapoel-petah-tikva:r26-nahum-stelmach",
+    "name": "Nahum Stelmach",
+    "from": 1951,
+    "to": 1969,
+    "pos": [],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-24600.svg"
+   },
+   {
+    "slot": 3,
+    "page": 1,
+    "era": "1940s–1970s",
+    "person_id": "pl_b03130201d",
+    "record_id": "hapoel-petah-tikva:wv-e707031231",
+    "name": "Jerry Haldi",
+    "from": 1952,
+    "to": 1968,
+    "pos": [],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-24600.svg"
+   },
+   {
+    "slot": 4,
+    "page": 1,
+    "era": "1940s–1970s",
+    "person_id": "pl_50a69a41a7",
+    "record_id": "hapoel-petah-tikva:wv-7bca350786",
+    "name": "Michael Sheinfeld",
+    "from": 1961,
+    "to": 1969,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-24600.svg"
+   },
+   {
+    "slot": 5,
+    "page": 1,
+    "era": "1940s–1970s",
+    "person_id": "pl_21e18dc426",
+    "record_id": "hapoel-petah-tikva:wv-6917d35447",
+    "name": "Chazom Chazom",
+    "from": 1966,
+    "to": 1972,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-24600.svg"
+   },
+   {
+    "slot": 6,
+    "page": 1,
+    "era": "1940s–1970s",
+    "person_id": "pl_610f51c917",
+    "record_id": "hapoel-petah-tikva:r26-itzhak-vissoker",
+    "name": "Yitzhak Vissoker",
+    "from": 1963,
+    "to": 1977,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-24600.svg"
+   },
+   {
+    "slot": 7,
+    "page": 2,
+    "era": "1970s–1990s",
+    "person_id": "pl_c3b8c68518",
+    "record_id": "hapoel-petah-tikva:r26-alon-hazan",
+    "name": "Alon Hazan",
+    "from": 1984,
+    "to": 1992,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-90245.svg"
+   },
+   {
+    "slot": 8,
+    "page": 2,
+    "era": "1970s–1990s",
+    "person_id": "pl_d8dd850cb4",
+    "record_id": "hapoel-petah-tikva:wv-6f7aa5bdda",
+    "name": "Carmelo Micciche",
+    "from": 1993,
+    "to": 1996,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-24596.svg"
+   },
+   {
+    "slot": 9,
+    "page": 2,
+    "era": "1970s–1990s",
+    "person_id": "pl_049c8292f7",
+    "record_id": "hapoel-petah-tikva:wv-dc39928c71",
+    "name": "Walid Badir",
+    "from": 1992,
+    "to": 1999,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-24592.svg"
+   },
+   {
+    "slot": 10,
+    "page": 2,
+    "era": "1970s–1990s",
+    "person_id": "pl_6ebc035880",
+    "record_id": "hapoel-petah-tikva:wv-9c2fee0a91",
+    "name": "Ilan Boaron",
+    "from": 1994,
+    "to": 2000,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-231960.svg"
+   },
+   {
+    "slot": 11,
+    "page": 2,
+    "era": "1970s–1990s",
+    "person_id": "pl_f55949fc7b",
+    "record_id": "hapoel-petah-tikva:wv-c6043a0edd",
+    "name": "Adoram Keisi",
+    "from": 1990,
+    "to": 2005,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-231960.svg"
+   },
+   {
+    "slot": 12,
+    "page": 2,
+    "era": "1970s–1990s",
+    "person_id": "pl_b4008496c2",
+    "record_id": "hapoel-petah-tikva:r26-rafi-cohen-gk",
+    "name": "Rafi Cohen",
+    "from": 1988,
+    "to": 2008,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-24587.svg"
+   },
+   {
+    "slot": 13,
+    "page": 3,
+    "era": "1990s–2000s",
+    "person_id": "pl_17db4112eb",
+    "record_id": "hapoel-petah-tikva:r26-moti-kakoun",
+    "name": "Moti Kakun",
+    "from": 1991,
+    "to": 2007,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-231959.svg"
+   },
+   {
+    "slot": 14,
+    "page": 3,
+    "era": "1990s–2000s",
+    "person_id": "pl_26a1365e3d",
+    "record_id": "hapoel-petah-tikva:wv-e89760c09f",
+    "name": "Najwan Ghrayib",
+    "from": 1995,
+    "to": 2004,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-231959.svg"
+   },
+   {
+    "slot": 15,
+    "page": 3,
+    "era": "1990s–2000s",
+    "person_id": "pl_646d75e9cf",
+    "record_id": "hapoel-petah-tikva:wv-533940af08",
+    "name": "Michael Zandberg",
+    "from": 1998,
+    "to": 2002,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-486298.svg"
+   },
+   {
+    "slot": 16,
+    "page": 3,
+    "era": "1990s–2000s",
+    "person_id": "pl_3738bec4e3",
+    "record_id": "hapoel-petah-tikva:wv-1a5d1573d3",
+    "name": "Enes Demirović",
+    "from": 2000,
+    "to": 2002,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-231958.svg"
+   },
+   {
+    "slot": 17,
+    "page": 3,
+    "era": "1990s–2000s",
+    "person_id": "pl_ee924ab642",
+    "record_id": "hapoel-petah-tikva:wv-3997dc41de",
+    "name": "Ohad Cohen",
+    "from": 2001,
+    "to": 2004,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-231957.svg"
+   },
+   {
+    "slot": 18,
+    "page": 3,
+    "era": "1990s–2000s",
+    "person_id": "pl_8d516274d5",
+    "record_id": "hapoel-petah-tikva:wv-9f0bc4deac",
+    "name": "Yossi Shivhon",
+    "from": 2000,
+    "to": 2006,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-24579.svg"
+   },
+   {
+    "slot": 19,
+    "page": 4,
+    "era": "2000s–2010s",
+    "person_id": "pl_a737374672",
+    "record_id": "hapoel-petah-tikva:wv-42f55da77e",
+    "name": "Elnatan Salami",
+    "from": 2003,
+    "to": 2010,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-52827.svg"
+   },
+   {
+    "slot": 20,
+    "page": 4,
+    "era": "2000s–2010s",
+    "person_id": "pl_4f004067ba",
+    "record_id": "hapoel-petah-tikva:wv-ae0645be42",
+    "name": "Shimon Abuhatzira",
+    "from": 2006,
+    "to": 2009,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-24577.svg"
+   },
+   {
+    "slot": 21,
+    "page": 4,
+    "era": "2000s–2010s",
+    "person_id": "pl_1097979730",
+    "record_id": "hapoel-petah-tikva:wv-b8319b2b67",
+    "name": "M'peti Nimba",
+    "from": 2007,
+    "to": 2009,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-24576.svg"
+   },
+   {
+    "slot": 22,
+    "page": 4,
+    "era": "2000s–2010s",
+    "person_id": "pl_65b1e4754d",
+    "record_id": "hapoel-petah-tikva:wv-a215e37fbd",
+    "name": "Armon Ben-Naim",
+    "from": 2008,
+    "to": 2013,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-24573.svg"
+   },
+   {
+    "slot": 23,
+    "page": 4,
+    "era": "2000s–2010s",
+    "person_id": "pl_6eccd278ca",
+    "record_id": "hapoel-petah-tikva:wv-2703db8197",
+    "name": "Shahar Balilti",
+    "from": 2008,
+    "to": 2014,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-24569.svg"
+   },
+   {
+    "slot": 24,
+    "page": 4,
+    "era": "2000s–2010s",
+    "person_id": "pl_315022e80e",
+    "record_id": "hapoel-petah-tikva:wv-d14582bf19",
+    "name": "Sagiv Cohen",
+    "from": 2006,
+    "to": 2017,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-24569.svg"
+   },
+   {
+    "slot": 25,
+    "page": 5,
+    "era": "The 2010s",
+    "person_id": "pl_872452577d",
+    "record_id": "hapoel-petah-tikva:wv-603f8c6450",
+    "name": "David Gomez",
+    "from": 2013,
+    "to": 2014,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-486297.svg"
+   },
+   {
+    "slot": 26,
+    "page": 5,
+    "era": "The 2010s",
+    "person_id": "pl_b4d3f61cb8",
+    "record_id": "hapoel-petah-tikva:wv-f94ee01759",
+    "name": "Lior Asulin",
+    "from": 2013,
+    "to": 2016,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-24565.svg"
+   },
+   {
+    "slot": 27,
+    "page": 5,
+    "era": "The 2010s",
+    "person_id": "pl_ed3c98c2de",
+    "record_id": "hapoel-petah-tikva:wv-2ad6bf4c25",
+    "name": "Matan Baltaxa",
+    "from": 2013,
+    "to": 2017,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-91441.svg"
+   },
+   {
+    "slot": 28,
+    "page": 5,
+    "era": "The 2010s",
+    "person_id": "pl_7e482fdcfe",
+    "record_id": "hapoel-petah-tikva:wv-956dd696fc",
+    "name": "Avi Ivgi",
+    "from": 2013,
+    "to": 2017,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-91441.svg"
+   },
+   {
+    "slot": 29,
+    "page": 5,
+    "era": "The 2010s",
+    "person_id": "pl_e6bc92dcc7",
+    "record_id": "hapoel-petah-tikva:wv-83460060fb",
+    "name": "Branko Mihajlović",
+    "from": 2015,
+    "to": 2018,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/cof-k-01.svg"
+   },
+   {
+    "slot": 30,
+    "page": 5,
+    "era": "The 2010s",
+    "person_id": "pl_8ff4014e8d",
+    "record_id": "hapoel-petah-tikva:wv-a157427451",
+    "name": "Yarin Hassan",
+    "from": 2016,
+    "to": 2019,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-52819.svg"
+   },
+   {
+    "slot": 31,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_7536991d39",
+    "record_id": "hapoel-petah-tikva:wv-3593c71b69",
+    "name": "Robi Levkovich",
+    "from": 2017,
+    "to": 2018,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-52819.svg"
+   },
+   {
+    "slot": 32,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_82e9075adc",
+    "record_id": "hapoel-petah-tikva:wv-89b1c0fa24",
+    "name": "Omer Vered",
+    "from": 2016,
+    "to": 2020,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-52819.svg"
+   },
+   {
+    "slot": 33,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_0ce95b9ccb",
+    "record_id": "hapoel-petah-tikva:wv-a80f6e5b67",
+    "name": "Gal Levi",
+    "from": 2018,
+    "to": 2019,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-52815.svg"
+   },
+   {
+    "slot": 34,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_0d96b759e5",
+    "record_id": "hapoel-petah-tikva:wv-86db7bacf4",
+    "name": "Oz Peretz",
+    "from": 2019,
+    "to": 2025,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/fka-k-144755.svg"
+   },
+   {
+    "slot": 35,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_ec9e19ed75",
+    "record_id": "hapoel-petah-tikva:wv-9981527bfa",
+    "name": "Chipyoka Songa",
+    "from": 2024,
+    "to": 2026,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/cof-k-04.svg"
+   },
+   {
+    "slot": 36,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_cdfc5abdbc",
+    "record_id": "hapoel-petah-tikva:wv-ddcea967ba",
+    "name": "Itay Rotman",
+    "from": 2024,
+    "to": 2026,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/hapoel-petah-tikva/svg/cof-k-04.svg"
+   }
+  ],
+  "panathinaikos": [
+   {
+    "slot": 1,
+    "page": 1,
+    "era": "1910s–1970s",
+    "person_id": "pl_b5ac3103bf",
+    "record_id": "panathinaikos:wv-095ecc1c9f",
+    "name": "Andreas Papaemmanouil",
+    "from": 1958,
+    "to": 1969,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/fka-k-208371.svg"
+   },
+   {
+    "slot": 2,
+    "page": 1,
+    "era": "1910s–1970s",
+    "person_id": "pl_cc0ed5384e",
+    "record_id": "panathinaikos:wv-22f7c21695",
+    "name": "Takis Loukanidis",
+    "from": 1961,
+    "to": 1969,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/fka-k-208371.svg"
+   },
+   {
+    "slot": 3,
+    "page": 1,
+    "era": "1910s–1970s",
+    "person_id": "pl_88c88ffa59",
+    "record_id": "panathinaikos:wv-57645bdb4d",
+    "name": "Frangiskos Sourpis",
+    "from": 1962,
+    "to": 1973,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/fka-k-208371.svg"
+   },
+   {
+    "slot": 4,
+    "page": 1,
+    "era": "1910s–1970s",
+    "person_id": "pl_c75b58b946",
+    "record_id": "panathinaikos:mimis-domazos",
+    "name": "Mimis Domazos",
+    "from": 1959,
+    "to": 1980,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/fka-k-208371.svg"
+   },
+   {
+    "slot": 5,
+    "page": 1,
+    "era": "1910s–1970s",
+    "person_id": "pl_7a38a7b7ed",
+    "record_id": "panathinaikos:wv-de01ecaeb8",
+    "name": "Charis Grammos",
+    "from": 1966,
+    "to": 1976,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/fka-k-459867.svg"
+   },
+   {
+    "slot": 6,
+    "page": 1,
+    "era": "1910s–1970s",
+    "person_id": "pl_f41b20db8a",
+    "record_id": "panathinaikos:wv-12d9966f52",
+    "name": "Mitsos Dimitriou",
+    "from": 1967,
+    "to": 1979,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/fka-k-459867.svg"
+   },
+   {
+    "slot": 7,
+    "page": 2,
+    "era": "1970s–1980s",
+    "person_id": "pl_5973d7c26d",
+    "record_id": "panathinaikos:wv-c380af7303",
+    "name": "Kostas Eleftherakis",
+    "from": 1968,
+    "to": 1980,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/fka-k-140744.svg"
+   },
+   {
+    "slot": 8,
+    "page": 2,
+    "era": "1970s–1980s",
+    "person_id": "pl_b301b8a856",
+    "record_id": "panathinaikos:wv-5b8d824ffd",
+    "name": "Óscar Álvarez",
+    "from": 1976,
+    "to": 1980,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/fka-k-459865.svg"
+   },
+   {
+    "slot": 9,
+    "page": 2,
+    "era": "1970s–1980s",
+    "person_id": "pl_8f985cf94a",
+    "record_id": "panathinaikos:wv-a6f9fb4991",
+    "name": "Grigoris Charalampidis",
+    "from": 1981,
+    "to": 1986,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/fka-k-140742.svg"
+   },
+   {
+    "slot": 10,
+    "page": 2,
+    "era": "1970s–1980s",
+    "person_id": "pl_069a7ca5b3",
+    "record_id": "panathinaikos:wv-e218091cce",
+    "name": "Thanasis Dimopoulos",
+    "from": 1982,
+    "to": 1987,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/fka-k-140757.svg"
+   },
+   {
+    "slot": 11,
+    "page": 2,
+    "era": "1970s–1980s",
+    "person_id": "pl_828e96b052",
+    "record_id": "panathinaikos:wv-09c2981cc1",
+    "name": "Kostas Antoniou",
+    "from": 1977,
+    "to": 1994,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/fka-k-140778.svg"
+   },
+   {
+    "slot": 12,
+    "page": 2,
+    "era": "1970s–1980s",
+    "person_id": "pl_c6216de7d2",
+    "record_id": "panathinaikos:wv-24a536a6c0",
+    "name": "Christos Dimopoulos",
+    "from": 1985,
+    "to": 1990,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/fka-k-140752.svg"
+   },
+   {
+    "slot": 13,
+    "page": 3,
+    "era": "1980s–1990s",
+    "person_id": "pl_5947620e94",
+    "record_id": "panathinaikos:wv-fc0028b338",
+    "name": "Kostas Mavridis",
+    "from": 1982,
+    "to": 1995,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/fka-k-420754.svg"
+   },
+   {
+    "slot": 14,
+    "page": 3,
+    "era": "1980s–1990s",
+    "person_id": "pl_fb3c07e268",
+    "record_id": "panathinaikos:wv-1b3536e13f",
+    "name": "Louis Christodoulou",
+    "from": 1987,
+    "to": 1997,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/fka-k-140761.svg"
+   },
+   {
+    "slot": 15,
+    "page": 3,
+    "era": "1980s–1990s",
+    "person_id": "pl_2fdd534337",
+    "record_id": "panathinaikos:wv-763f8f5e17",
+    "name": "Giannis Kalitzakis",
+    "from": 1987,
+    "to": 1997,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/fka-k-140761.svg"
+   },
+   {
+    "slot": 16,
+    "page": 3,
+    "era": "1980s–1990s",
+    "person_id": "pl_0773c8b7ce",
+    "record_id": "panathinaikos:wv-e54923f4dc",
+    "name": "Georgios Donis",
+    "from": 1988,
+    "to": 1996,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/fka-k-140761.svg"
+   },
+   {
+    "slot": 17,
+    "page": 3,
+    "era": "1980s–1990s",
+    "person_id": "pl_6e5d098fc2",
+    "record_id": "panathinaikos:antonis-nikopolidis",
+    "name": "Antonis Nikopolidis",
+    "from": 1990,
+    "to": 2004,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/fka-k-22905.svg"
+   },
+   {
+    "slot": 18,
+    "page": 3,
+    "era": "1980s–1990s",
+    "person_id": "pl_7006205c21",
+    "record_id": "panathinaikos:krzysztof-warzycha",
+    "name": "Krzysztof Warzycha",
+    "from": 1990,
+    "to": 2004,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/fka-k-22905.svg"
+   },
+   {
+    "slot": 19,
+    "page": 4,
+    "era": "1990s–2010s",
+    "person_id": "pl_de830e9aff",
+    "record_id": "panathinaikos:wv-f95e39bff9",
+    "name": "Georgios Nasiopoulos",
+    "from": 1996,
+    "to": 2001,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/fka-k-55653.svg"
+   },
+   {
+    "slot": 20,
+    "page": 4,
+    "era": "1990s–2010s",
+    "person_id": "pl_2ec8854188",
+    "record_id": "panathinaikos:angelos-basinas",
+    "name": "Angelos Basinas",
+    "from": 1995,
+    "to": 2006,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/fka-k-30950.svg"
+   },
+   {
+    "slot": 21,
+    "page": 4,
+    "era": "1990s–2010s",
+    "person_id": "pl_242b335503",
+    "record_id": "panathinaikos:emmanuel-olisadebe",
+    "name": "Emmanuel Olisadebe",
+    "from": 2001,
+    "to": 2006,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/cof-k-06.svg"
+   },
+   {
+    "slot": 22,
+    "page": 4,
+    "era": "1990s–2010s",
+    "person_id": "pl_576c8c46f7",
+    "record_id": "panathinaikos:giorgos-karagounis",
+    "name": "Giorgos Karagounis",
+    "from": 1995,
+    "to": 2012,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/cof-k-06.svg"
+   },
+   {
+    "slot": 23,
+    "page": 4,
+    "era": "1990s–2010s",
+    "person_id": "pl_607fbd170e",
+    "record_id": "panathinaikos:wv-b54a2c4a3b",
+    "name": "Mario Galinović",
+    "from": 2004,
+    "to": 2011,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/cof-k-14.svg"
+   },
+   {
+    "slot": 24,
+    "page": 4,
+    "era": "1990s–2010s",
+    "person_id": "pl_f8cab892a1",
+    "record_id": "panathinaikos:wv-a5cd094044",
+    "name": "Dimitris Salpingidis",
+    "from": 2006,
+    "to": 2010,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/cof-k-16.svg"
+   },
+   {
+    "slot": 25,
+    "page": 5,
+    "era": "2010s–2020s",
+    "person_id": "pl_60cff3ce83",
+    "record_id": "panathinaikos:marcus-berg",
+    "name": "Marcus Berg",
+    "from": 2013,
+    "to": 2017,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/cof-k-28.svg"
+   },
+   {
+    "slot": 26,
+    "page": 5,
+    "era": "2010s–2020s",
+    "person_id": "pl_e525bf65c3",
+    "record_id": "panathinaikos:wv-d12a8f3b0a",
+    "name": "Victor Klonaridis",
+    "from": 2013,
+    "to": 2017,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/cof-k-28.svg"
+   },
+   {
+    "slot": 27,
+    "page": 5,
+    "era": "2010s–2020s",
+    "person_id": "pl_36bb308848",
+    "record_id": "panathinaikos:wv-ab83855be6",
+    "name": "Anastasios Chatzigiovanis",
+    "from": 2016,
+    "to": 2022,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/cof-k-37.svg"
+   },
+   {
+    "slot": 28,
+    "page": 5,
+    "era": "2010s–2020s",
+    "person_id": "pl_9e69c098a0",
+    "record_id": "panathinaikos:wv-cd8ef9cd7a",
+    "name": "Dimitrios Kourbelis",
+    "from": 2016,
+    "to": 2023,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/cof-k-44.svg"
+   },
+   {
+    "slot": 29,
+    "page": 5,
+    "era": "2010s–2020s",
+    "person_id": "pl_e1908f3c0f",
+    "record_id": "panathinaikos:wv-9726735db7",
+    "name": "Sokratis Dioudis",
+    "from": 2017,
+    "to": 2023,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/cof-k-44.svg"
+   },
+   {
+    "slot": 30,
+    "page": 5,
+    "era": "2010s–2020s",
+    "person_id": "pl_9290102c2c",
+    "record_id": "panathinaikos:wv-c2fd31bc45",
+    "name": "Federico Macheda",
+    "from": 2018,
+    "to": 2022,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/cof-k-44.svg"
+   },
+   {
+    "slot": 31,
+    "page": 6,
+    "era": "The 2020s",
+    "person_id": "pl_7d4addcf72",
+    "record_id": "panathinaikos:wv-2a79cc291e",
+    "name": "Andreas Athanasakopoulos",
+    "from": 2019,
+    "to": 2024,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/cof-k-47.svg"
+   },
+   {
+    "slot": 32,
+    "page": 6,
+    "era": "The 2020s",
+    "person_id": "pl_cf5d25d7fa",
+    "record_id": "panathinaikos:wv-2ec00de6e1",
+    "name": "Fotis Ioannidis",
+    "from": 2020,
+    "to": 2025,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/cof-k-50.svg"
+   },
+   {
+    "slot": 33,
+    "page": 6,
+    "era": "The 2020s",
+    "person_id": "pl_12e2690bce",
+    "record_id": "panathinaikos:wv-cb9d38a246",
+    "name": "Sebastián Palacios",
+    "from": 2021,
+    "to": 2024,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/cof-k-50.svg"
+   },
+   {
+    "slot": 34,
+    "page": 6,
+    "era": "The 2020s",
+    "person_id": "pl_752dc7abd1",
+    "record_id": "panathinaikos:wv-d7aa35208a",
+    "name": "Andraž Šporar",
+    "from": 2022,
+    "to": 2025,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/cof-k-53.svg"
+   },
+   {
+    "slot": 35,
+    "page": 6,
+    "era": "The 2020s",
+    "person_id": "pl_5f2bc5b6f8",
+    "record_id": "panathinaikos:wv-b3e566fa94",
+    "name": "Adam Gnezda Čerin",
+    "from": 2022,
+    "to": 2026,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/cof-k-56.svg"
+   },
+   {
+    "slot": 36,
+    "page": 6,
+    "era": "The 2020s",
+    "person_id": "pl_8b95fc3568",
+    "record_id": "panathinaikos:wv-3f7e4f52ea",
+    "name": "Filip Đuričić",
+    "from": 2023,
+    "to": 2026,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/panathinaikos/svg/cof-k-56.svg"
+   }
+  ],
+  "aek-athens": [
+   {
+    "slot": 1,
+    "page": 1,
+    "era": "1920s–1940s",
+    "person_id": "pl_e70f0a00f1",
+    "record_id": "aek-athens:p-dh-6f9683346300",
+    "name": "Giorgos Giamalis",
+    "from": 1926,
+    "to": 1932,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/aek-athens/svg/aek-fka-196213.svg"
+   },
+   {
+    "slot": 2,
+    "page": 1,
+    "era": "1920s–1940s",
+    "person_id": "pl_f2e3cf335c",
+    "record_id": "aek-athens:wv-142f843af4",
+    "name": "Christos Ribas",
+    "from": 1929,
+    "to": 1929,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/aek-athens/svg/aek-fka-92907.svg"
+   },
+   {
+    "slot": 3,
+    "page": 1,
+    "era": "1920s–1940s",
+    "person_id": "pl_c02892598b",
+    "record_id": "aek-athens:p-dh-03af5f988038",
+    "name": "Dimitris Moungras",
+    "from": 1924,
+    "to": 1936,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/aek-athens/svg/aek-fka-196213.svg"
+   },
+   {
+    "slot": 4,
+    "page": 1,
+    "era": "1920s–1940s",
+    "person_id": "pl_846cb33418",
+    "record_id": "aek-athens:p-dh-360911b23eaf",
+    "name": "Spyros Sklavounos",
+    "from": 1935,
+    "to": 1940,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/aek-athens/svg/aek-fka-92907.svg"
+   },
+   {
+    "slot": 5,
+    "page": 1,
+    "era": "1920s–1940s",
+    "person_id": "pl_60051fe32e",
+    "record_id": "aek-athens:p-dh-2441b71a86df",
+    "name": "Christos Rimpas",
+    "from": 1928,
+    "to": 1948,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/aek-athens/svg/aek-fka-92907.svg"
+   },
+   {
+    "slot": 6,
+    "page": 1,
+    "era": "1920s–1940s",
+    "person_id": "pl_350c983656",
+    "record_id": "aek-athens:p-dh-c62a57018d06",
+    "name": "Theologos Spyridis",
+    "from": 1934,
+    "to": 1947,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/aek-athens/svg/aek-fka-92907.svg"
+   },
+   {
+    "slot": 7,
+    "page": 2,
+    "era": "1940s–1960s",
+    "person_id": "pl_23a6d0991c",
+    "record_id": "aek-athens:p-dh-174361f8cd75",
+    "name": "Tasos Paylis",
+    "from": 1933,
+    "to": 1950,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/aek-athens/svg/aek-fka-92907.svg"
+   },
+   {
+    "slot": 8,
+    "page": 2,
+    "era": "1940s–1960s",
+    "person_id": "pl_54c22f8785",
+    "record_id": "aek-athens:p-dh-29f6e793060a",
+    "name": "Kleanthis Maropoulos",
+    "from": 1935,
+    "to": 1952,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/aek-athens/svg/aek-fka-92907.svg"
+   },
+   {
+    "slot": 9,
+    "page": 2,
+    "era": "1940s–1960s",
+    "person_id": "pl_384adac983",
+    "record_id": "aek-athens:p-dh-80f758c370c3",
+    "name": "Giorgos Mageiras",
+    "from": 1938,
+    "to": 1949,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/aek-athens/svg/aek-fka-92907.svg"
+   },
+   {
+    "slot": 10,
+    "page": 2,
+    "era": "1940s–1960s",
+    "person_id": "pl_a9a4443429",
+    "record_id": "aek-athens:p-dh-d5f83f39d5b3",
+    "name": "Michalis Delavinias",
+    "from": 1938,
+    "to": 1954,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/aek-athens/svg/aek-fka-92907.svg"
+   },
+   {
+    "slot": 11,
+    "page": 2,
+    "era": "1940s–1960s",
+    "person_id": "pl_96ec6cc048",
+    "record_id": "aek-athens:p-dh-70e029adb3ba",
+    "name": "Paylos Emmanouilidis",
+    "from": 1947,
+    "to": 1961,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/aek-athens/svg/aek-fka-92907.svg"
+   },
+   {
+    "slot": 12,
+    "page": 2,
+    "era": "1940s–1960s",
+    "person_id": "pl_7039570931",
+    "record_id": "aek-athens:p-dh-5382338d40a2",
+    "name": "Kreon Kreouzas",
+    "from": 1953,
+    "to": 1958,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/aek-athens/svg/aek-fka-92907.svg"
+   },
+   {
+    "slot": 13,
+    "page": 3,
+    "era": "1960s–1970s",
+    "person_id": "pl_97b7ba7aa1",
+    "record_id": "aek-athens:wv-b28bfc6369",
+    "name": "Stelios Skevofilakas",
+    "from": 1961,
+    "to": 1972,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/aek-athens/svg/aek-fka-426985.svg"
+   },
+   {
+    "slot": 14,
+    "page": 3,
+    "era": "1960s–1970s",
+    "person_id": "pl_98d48b675c",
+    "record_id": "aek-athens:p-dh-680dacf0edff",
+    "name": "Panagiotis Ventouris",
+    "from": 1965,
+    "to": 1972,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/aek-athens/svg/aek-fka-196212.svg"
+   },
+   {
+    "slot": 15,
+    "page": 3,
+    "era": "1960s–1970s",
+    "person_id": "pl_dc836647ad",
+    "record_id": "aek-athens:p-dh-519ff79b62d7",
+    "name": "Stelios Konstantinidis",
+    "from": 1966,
+    "to": 1973,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/aek-athens/svg/aek-fka-196212.svg"
+   },
+   {
+    "slot": 16,
+    "page": 3,
+    "era": "1960s–1970s",
+    "person_id": "pl_2f0b1773bb",
+    "record_id": "aek-athens:p-bc8a5032677b79",
+    "name": "Mimis Papaioannou",
+    "from": 1962,
+    "to": 1979,
+    "pos": [],
+    "kit": "/club-kits/aek-athens/svg/aek-fka-196212.svg"
+   },
+   {
+    "slot": 17,
+    "page": 3,
+    "era": "1960s–1970s",
+    "person_id": "pl_f6cb9e958f",
+    "record_id": "aek-athens:p-dh-5ee1a173be32",
+    "name": "Giorgos Sidiropoulos",
+    "from": 1973,
+    "to": 1978,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/aek-athens/svg/aek-fka-35461.svg"
+   },
+   {
+    "slot": 18,
+    "page": 3,
+    "era": "1960s–1970s",
+    "person_id": "pl_77bc0fd9c6",
+    "record_id": "aek-athens:p-dh-608f81ea29f9",
+    "name": "Lakis Nikolaou",
+    "from": 1971,
+    "to": 1982,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/aek-athens/svg/aek-fka-35461.svg"
+   },
+   {
+    "slot": 19,
+    "page": 4,
+    "era": "1970s–1980s",
+    "person_id": "pl_58556d5d00",
+    "record_id": "aek-athens:p-dh-6ce02e1ca609",
+    "name": "Lakis Stergioudas",
+    "from": 1972,
+    "to": 1985,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/aek-athens/svg/aek-fka-35417.svg"
+   },
+   {
+    "slot": 20,
+    "page": 4,
+    "era": "1970s–1980s",
+    "person_id": "pl_3711f0302b",
+    "record_id": "aek-athens:p-dh-f56731f3b509",
+    "name": "Nikos Christidis",
+    "from": 1976,
+    "to": 1982,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/aek-athens/svg/aek-fka-35460.svg"
+   },
+   {
+    "slot": 21,
+    "page": 4,
+    "era": "1970s–1980s",
+    "person_id": "pl_90f19259eb",
+    "record_id": "aek-athens:p-2cef59e24a5992",
+    "name": "Thomas Mavros",
+    "from": 1976,
+    "to": 1987,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/aek-athens/svg/aek-fka-35419.svg"
+   },
+   {
+    "slot": 22,
+    "page": 4,
+    "era": "1970s–1980s",
+    "person_id": "pl_d223ea75f6",
+    "record_id": "aek-athens:p-dh-511f91d4a304",
+    "name": "Fanis Kofinas",
+    "from": 1982,
+    "to": 1992,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/aek-athens/svg/aek-fka-35420.svg"
+   },
+   {
+    "slot": 23,
+    "page": 4,
+    "era": "1970s–1980s",
+    "person_id": "pl_f9453fe8a0",
+    "record_id": "aek-athens:wv-1b68afe637",
+    "name": "Takis Karagiozopoulos",
+    "from": 1981,
+    "to": 1993,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/aek-athens/svg/aek-fka-35420.svg"
+   },
+   {
+    "slot": 24,
+    "page": 4,
+    "era": "1970s–1980s",
+    "person_id": "pl_cc155bb8d3",
+    "record_id": "aek-athens:wv-26ece03102",
+    "name": "Jim Patikas",
+    "from": 1985,
+    "to": 1992,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/aek-athens/svg/aek-fka-35421.svg"
+   },
+   {
+    "slot": 25,
+    "page": 5,
+    "era": "1980s–2000s",
+    "person_id": "pl_0fd42f4d48",
+    "record_id": "aek-athens:p-dh-45582336db09",
+    "name": "Daniel Batista",
+    "from": 1989,
+    "to": 1999,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/aek-athens/svg/commons-k-aek9496h.svg"
+   },
+   {
+    "slot": 26,
+    "page": 5,
+    "era": "1980s–2000s",
+    "person_id": "pl_c41722329f",
+    "record_id": "aek-athens:p-71fb3052fc14b5",
+    "name": "Ilias Atmatsidis",
+    "from": 1992,
+    "to": 2002,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/aek-athens/svg/aek-fka-35114.svg"
+   },
+   {
+    "slot": 27,
+    "page": 5,
+    "era": "1980s–2000s",
+    "person_id": "pl_f7544dce6a",
+    "record_id": "aek-athens:p-46c0ff1549ef2d",
+    "name": "Demis Nikolaidis",
+    "from": 1996,
+    "to": 2003,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/aek-athens/svg/commons-k-aek9900.svg"
+   },
+   {
+    "slot": 28,
+    "page": 5,
+    "era": "1980s–2000s",
+    "person_id": "pl_7f58983734",
+    "record_id": "aek-athens:p-4c863400e41628",
+    "name": "Vasilis Lakis",
+    "from": 1998,
+    "to": 2007,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/aek-athens/svg/cof-k-01.svg"
+   },
+   {
+    "slot": 29,
+    "page": 5,
+    "era": "1980s–2000s",
+    "person_id": "pl_1342acdb97",
+    "record_id": "aek-athens:wv-325adcd46b",
+    "name": "Nikos Liberopoulos",
+    "from": 2003,
+    "to": 2012,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/aek-athens/svg/cof-k-14.svg"
+   },
+   {
+    "slot": 30,
+    "page": 5,
+    "era": "1980s–2000s",
+    "person_id": "pl_e1aec092a7",
+    "record_id": "aek-athens:wv-b3902d8d01",
+    "name": "Giannis Arabatzis",
+    "from": 2002,
+    "to": 2013,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/aek-athens/svg/cof-k-14.svg"
+   },
+   {
+    "slot": 31,
+    "page": 6,
+    "era": "2000s–2020s",
+    "person_id": "pl_a8d67e5b53",
+    "record_id": "aek-athens:wv-58096d5acd",
+    "name": "Ignacio Scocco",
+    "from": 2008,
+    "to": 2011,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/aek-athens/svg/cof-k-20.svg"
+   },
+   {
+    "slot": 32,
+    "page": 6,
+    "era": "2000s–2020s",
+    "person_id": "pl_09265e24f0",
+    "record_id": "aek-athens:wv-c6e54e3bee",
+    "name": "Leonardo",
+    "from": 2009,
+    "to": 2012,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/aek-athens/svg/cof-k-23.svg"
+   },
+   {
+    "slot": 33,
+    "page": 6,
+    "era": "2000s–2020s",
+    "person_id": "pl_33e4b255fb",
+    "record_id": "aek-athens:wv-0346530c74",
+    "name": "Anastasios Bakasetas",
+    "from": 2016,
+    "to": 2019,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/aek-athens/svg/cof-k-31.svg"
+   },
+   {
+    "slot": 34,
+    "page": 6,
+    "era": "2000s–2020s",
+    "person_id": "pl_3d13627546",
+    "record_id": "aek-athens:p-dh-06966b9d3334",
+    "name": "Andre Simoes",
+    "from": 2015,
+    "to": 2022,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/aek-athens/svg/cof-k-34.svg"
+   },
+   {
+    "slot": 35,
+    "page": 6,
+    "era": "2000s–2020s",
+    "person_id": "pl_82c93f221a",
+    "record_id": "aek-athens:p-dh-9c67c3b82187",
+    "name": "Panagiotis Ginis",
+    "from": 2018,
+    "to": 2024,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/aek-athens/svg/cof-k-42.svg"
+   },
+   {
+    "slot": 36,
+    "page": 6,
+    "era": "2000s–2020s",
+    "person_id": "pl_5754d5c6f3",
+    "record_id": "aek-athens:p-dh-9be7268386a0",
+    "name": "Mijat Gacinovic",
+    "from": 2022,
+    "to": 2027,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/aek-athens/svg/cof-k-51.svg"
+   }
+  ],
+  "celtic": [
+   {
+    "slot": 1,
+    "page": 1,
+    "era": "1890s–1920s",
+    "person_id": "pl_f111a93f2b",
+    "record_id": "celtic:p-dh-c57451b38c42",
+    "name": "Michael Dolan",
+    "from": 1888,
+    "to": 1894,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/celtic/svg/k-a43d3cec.svg"
+   },
+   {
+    "slot": 2,
+    "page": 1,
+    "era": "1890s–1920s",
+    "person_id": "pl_d3c5864456",
+    "record_id": "celtic:p-dh-45898775ff65",
+    "name": "Daniel McArthur",
+    "from": 1892,
+    "to": 1903,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/celtic/svg/k-3bb87b8a.svg"
+   },
+   {
+    "slot": 3,
+    "page": 1,
+    "era": "1890s–1920s",
+    "person_id": "pl_fb7003bc1c",
+    "record_id": "celtic:p-dh-8a6fc9ba53e1",
+    "name": "David Robertson Adams",
+    "from": 1902,
+    "to": 1912,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/celtic/svg/ce-fka-117719.svg"
+   },
+   {
+    "slot": 4,
+    "page": 1,
+    "era": "1890s–1920s",
+    "person_id": "pl_6d5c3a52ed",
+    "record_id": "celtic:p-dh-46c386ccd9f0",
+    "name": "James Quinn",
+    "from": 1901,
+    "to": 1915,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/celtic/svg/ce-fka-117719.svg"
+   },
+   {
+    "slot": 5,
+    "page": 1,
+    "era": "1890s–1920s",
+    "person_id": "pl_538dd2b175",
+    "record_id": "celtic:wv-9887ff51d7",
+    "name": "Joe Dodds",
+    "from": 1908,
+    "to": 1922,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/celtic/svg/ce-fka-117719.svg"
+   },
+   {
+    "slot": 6,
+    "page": 1,
+    "era": "1890s–1920s",
+    "person_id": "pl_3cddd54cf6",
+    "record_id": "celtic:p-dh-3f6fb96bbd40",
+    "name": "Charles Shaw",
+    "from": 1913,
+    "to": 1925,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/celtic/svg/ce-fka-187796.svg"
+   },
+   {
+    "slot": 7,
+    "page": 2,
+    "era": "1920s–1940s",
+    "person_id": "pl_2f95c35e41",
+    "record_id": "celtic:p-dh-8a2cf223a3b3",
+    "name": "Alexander Thomson",
+    "from": 1922,
+    "to": 1934,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/celtic/svg/ce-fka-187796.svg"
+   },
+   {
+    "slot": 8,
+    "page": 2,
+    "era": "1920s–1940s",
+    "person_id": "pl_435d0c7139",
+    "record_id": "celtic:p-dh-9b5c06f31f47",
+    "name": "James Turnbull Kennaway",
+    "from": 1931,
+    "to": 1939,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/celtic/svg/ce-fka-56420.svg"
+   },
+   {
+    "slot": 9,
+    "page": 2,
+    "era": "1920s–1940s",
+    "person_id": "pl_9cf3443691",
+    "record_id": "celtic:wv-dd225a53a0",
+    "name": "Joe Kennaway",
+    "from": 1931,
+    "to": 1939,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/celtic/svg/ce-fka-56420.svg"
+   },
+   {
+    "slot": 10,
+    "page": 2,
+    "era": "1920s–1940s",
+    "person_id": "pl_f6249b545b",
+    "record_id": "celtic:wv-7dc388e720",
+    "name": "Frank Murphy",
+    "from": 1932,
+    "to": 1945,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/celtic/svg/ce-fka-56420.svg"
+   },
+   {
+    "slot": 11,
+    "page": 2,
+    "era": "1920s–1940s",
+    "person_id": "pl_47590e2152",
+    "record_id": "celtic:p-dh-2842c6f1daab",
+    "name": "Joseph Rae",
+    "from": 1942,
+    "to": 1948,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/celtic/svg/ce-fka-8693.svg"
+   },
+   {
+    "slot": 12,
+    "page": 2,
+    "era": "1920s–1940s",
+    "person_id": "pl_c9f2a420b2",
+    "record_id": "celtic:p-dh-66da601aeeb7",
+    "name": "William Miller",
+    "from": 1942,
+    "to": 1950,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/celtic/svg/ce-fka-8693.svg"
+   },
+   {
+    "slot": 13,
+    "page": 3,
+    "era": "1950s–1960s",
+    "person_id": "pl_719ad10616",
+    "record_id": "celtic:p-dh-15d4430915ed",
+    "name": "John Bonnar",
+    "from": 1948,
+    "to": 1958,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/celtic/svg/ce-fka-8694.svg"
+   },
+   {
+    "slot": 14,
+    "page": 3,
+    "era": "1950s–1960s",
+    "person_id": "pl_83dd005008",
+    "record_id": "celtic:p-14fe337856e5d5",
+    "name": "John Fallon",
+    "from": 1958,
+    "to": 1972,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/celtic/svg/ce-fka-226377.svg"
+   },
+   {
+    "slot": 15,
+    "page": 3,
+    "era": "1950s–1960s",
+    "person_id": "pl_dc60d90533",
+    "record_id": "celtic:p-d12cd9fa46644a",
+    "name": "Stevie Chalmers",
+    "from": 1959,
+    "to": 1971,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/celtic/svg/ce-fka-226377.svg"
+   },
+   {
+    "slot": 16,
+    "page": 3,
+    "era": "1950s–1960s",
+    "person_id": "pl_cfa6d56f74",
+    "record_id": "celtic:p-8566217ec75cbe",
+    "name": "Tommy Gemmell",
+    "from": 1961,
+    "to": 1971,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/celtic/svg/ce-fka-226377.svg"
+   },
+   {
+    "slot": 17,
+    "page": 3,
+    "era": "1950s–1960s",
+    "person_id": "pl_6ed005ffba",
+    "record_id": "celtic:p-bba452e5216b39",
+    "name": "Billy McNeill",
+    "from": 1957,
+    "to": 1975,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/celtic/svg/ce-fka-226377.svg"
+   },
+   {
+    "slot": 18,
+    "page": 3,
+    "era": "1950s–1960s",
+    "person_id": "pl_68d832eff1",
+    "record_id": "celtic:p-dh-c479d0222e08",
+    "name": "Robert Murdoch",
+    "from": 1959,
+    "to": 1973,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/celtic/svg/ce-fka-226377.svg"
+   },
+   {
+    "slot": 19,
+    "page": 4,
+    "era": "1960s–1980s",
+    "person_id": "pl_3e7be6a231",
+    "record_id": "celtic:p-dh-8d12be1cd643",
+    "name": "James Connelly Johnstone",
+    "from": 1963,
+    "to": 1975,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/celtic/svg/ce-fka-8695.svg"
+   },
+   {
+    "slot": 20,
+    "page": 4,
+    "era": "1960s–1980s",
+    "person_id": "pl_fb3257d9d3",
+    "record_id": "celtic:p-c96ae91376dc7a",
+    "name": "Bobby Lennox",
+    "from": 1961,
+    "to": 1980,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/celtic/svg/ce-fka-226372.svg"
+   },
+   {
+    "slot": 21,
+    "page": 4,
+    "era": "1960s–1980s",
+    "person_id": "pl_05d986469d",
+    "record_id": "celtic:p-dh-4054bc372efb",
+    "name": "Henry Anthony Hood",
+    "from": 1968,
+    "to": 1976,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/celtic/svg/ce-fka-187795.svg"
+   },
+   {
+    "slot": 22,
+    "page": 4,
+    "era": "1960s–1980s",
+    "person_id": "pl_5ee1a86104",
+    "record_id": "celtic:p-dh-606455c2c27a",
+    "name": "Kenneth Mathieson Dalglish",
+    "from": 1970,
+    "to": 1977,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/celtic/svg/ce-fka-187794.svg"
+   },
+   {
+    "slot": 23,
+    "page": 4,
+    "era": "1960s–1980s",
+    "person_id": "pl_0c25d009fc",
+    "record_id": "celtic:p-dh-b39556966720",
+    "name": "Peter William Latchford",
+    "from": 1975,
+    "to": 1987,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/celtic/svg/ce-fka-78506.svg"
+   },
+   {
+    "slot": 24,
+    "page": 4,
+    "era": "1960s–1980s",
+    "person_id": "pl_94d3304690",
+    "record_id": "celtic:p-dh-90f82e2e574b",
+    "name": "Murdo Davidson MacLeod",
+    "from": 1978,
+    "to": 1987,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/celtic/svg/ce-fka-187791.svg"
+   },
+   {
+    "slot": 25,
+    "page": 5,
+    "era": "1980s–2000s",
+    "person_id": "pl_270a9604bf",
+    "record_id": "celtic:p-dh-301d3c83fe72",
+    "name": "Patrick Joseph Bonner",
+    "from": 1978,
+    "to": 1995,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/celtic/svg/ce-fka-8700.svg"
+   },
+   {
+    "slot": 26,
+    "page": 5,
+    "era": "1980s–2000s",
+    "person_id": "pl_fa40661f56",
+    "record_id": "celtic:p-623e7c9b6d4040",
+    "name": "Paul McStay",
+    "from": 1981,
+    "to": 1997,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/celtic/svg/ce-fka-78509.svg"
+   },
+   {
+    "slot": 27,
+    "page": 5,
+    "era": "1980s–2000s",
+    "person_id": "pl_1797f048ac",
+    "record_id": "celtic:p-dh-0ce9a3aed813",
+    "name": "Gordon George Banks Marshall",
+    "from": 1991,
+    "to": 1998,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/celtic/svg/ce-fka-8711.svg"
+   },
+   {
+    "slot": 28,
+    "page": 5,
+    "era": "1980s–2000s",
+    "person_id": "pl_b4d62816ed",
+    "record_id": "celtic:wv-0bed93c891",
+    "name": "Stewart Kerr",
+    "from": 1991,
+    "to": 2001,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/celtic/svg/ce-fka-8652.svg"
+   },
+   {
+    "slot": 29,
+    "page": 5,
+    "era": "1980s–2000s",
+    "person_id": "pl_83542659d7",
+    "record_id": "celtic:p-f9f9d9206e0593",
+    "name": "Henrik Larsson",
+    "from": 1997,
+    "to": 2004,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/celtic/svg/cof-k-01.svg"
+   },
+   {
+    "slot": 30,
+    "page": 5,
+    "era": "1980s–2000s",
+    "person_id": "pl_4b502853a9",
+    "record_id": "celtic:p-dh-b885d3d6375a",
+    "name": "David Marshall",
+    "from": 2000,
+    "to": 2007,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/celtic/svg/cof-k-05.svg"
+   },
+   {
+    "slot": 31,
+    "page": 6,
+    "era": "2000s–2020s",
+    "person_id": "pl_49b1c0b0c6",
+    "record_id": "celtic:p-dh-4e013ac9e40f",
+    "name": "Kris Commons",
+    "from": 2010,
+    "to": 2017,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/celtic/svg/cof-k-27.svg"
+   },
+   {
+    "slot": 32,
+    "page": 6,
+    "era": "2000s–2020s",
+    "person_id": "pl_a0fbc69c50",
+    "record_id": "celtic:p-10312c3e5265d5",
+    "name": "Scott Brown",
+    "from": 2007,
+    "to": 2021,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/celtic/svg/ce-fka-8637.svg"
+   },
+   {
+    "slot": 33,
+    "page": 6,
+    "era": "2000s–2020s",
+    "person_id": "pl_f36acb36c7",
+    "record_id": "celtic:p-dh-8038dedf73cd",
+    "name": "Fraser Gerard Forster",
+    "from": 2010,
+    "to": 2020,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/celtic/svg/cof-k-31.svg"
+   },
+   {
+    "slot": 34,
+    "page": 6,
+    "era": "2000s–2020s",
+    "person_id": "pl_448fc237ef",
+    "record_id": "celtic:p-dh-a3c608f0f013",
+    "name": "Leigh Griffiths",
+    "from": 2013,
+    "to": 2022,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/celtic/svg/cof-k-39.svg"
+   },
+   {
+    "slot": 35,
+    "page": 6,
+    "era": "2000s–2020s",
+    "person_id": "pl_5a8b9bbd9d",
+    "record_id": "celtic:p-dh-699eb6b329aa",
+    "name": "James Forrest",
+    "from": 2013,
+    "to": 2024,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/celtic/svg/cof-k-43.svg"
+   },
+   {
+    "slot": 36,
+    "page": 6,
+    "era": "2000s–2020s",
+    "person_id": "pl_e1ae621d08",
+    "record_id": "celtic:p-dh-c98a18c59b7f",
+    "name": "Scott Bain",
+    "from": 2017,
+    "to": 2025,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/celtic/svg/cof-k-55.svg"
+   }
+  ],
+  "st-pauli": [
+   {
+    "slot": 1,
+    "page": 1,
+    "era": "1940s–1980s",
+    "person_id": "pl_e673aa139c",
+    "record_id": "st-pauli:p-dh-bc212c7d66ea",
+    "name": "Alfred Brüggen",
+    "from": 1952,
+    "to": 1963,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/st-pauli/svg/stp-fka-140412.svg"
+   },
+   {
+    "slot": 2,
+    "page": 1,
+    "era": "1940s–1980s",
+    "person_id": "pl_2c0466cb95",
+    "record_id": "st-pauli:p-dh-fe8279a34fab",
+    "name": "Rolf Bergeest",
+    "from": 1956,
+    "to": 1966,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/st-pauli/svg/stp-fka-140412.svg"
+   },
+   {
+    "slot": 3,
+    "page": 1,
+    "era": "1940s–1980s",
+    "person_id": "pl_483087c17b",
+    "record_id": "st-pauli:p-dh-a28fa44c9dc9",
+    "name": "Ingo Porges",
+    "from": 1955,
+    "to": 1968,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/st-pauli/svg/stp-fka-140412.svg"
+   },
+   {
+    "slot": 4,
+    "page": 1,
+    "era": "1940s–1980s",
+    "person_id": "pl_240717d804",
+    "record_id": "dfb-44869",
+    "name": "Reinhard Rietzke",
+    "from": 1974,
+    "to": 1979,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/st-pauli/svg/stp-fka-140411.svg"
+   },
+   {
+    "slot": 5,
+    "page": 1,
+    "era": "1940s–1980s",
+    "person_id": "pl_37f5139a16",
+    "record_id": "st-pauli:wv-f2161e04c9",
+    "name": "Jürgen Rynio",
+    "from": 1976,
+    "to": 1979,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/st-pauli/svg/stp-fka-140411.svg"
+   },
+   {
+    "slot": 6,
+    "page": 1,
+    "era": "1940s–1980s",
+    "person_id": "pl_3fd0f78d49",
+    "record_id": "st-pauli:wv-b6ac21062c",
+    "name": "Rüdiger Wenzel",
+    "from": 1974,
+    "to": 1990,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/st-pauli/svg/stp-fka-304928.svg"
+   },
+   {
+    "slot": 7,
+    "page": 2,
+    "era": "1980s–1990s",
+    "person_id": "pl_52afa7b955",
+    "record_id": "st-pauli:wv-e25e4a2408",
+    "name": "Volker Ippig",
+    "from": 1981,
+    "to": 1992,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/st-pauli/svg/stp-fka-422064.svg"
+   },
+   {
+    "slot": 8,
+    "page": 2,
+    "era": "1980s–1990s",
+    "person_id": "pl_ef55af8598",
+    "record_id": "st-pauli:p-dh-65e454ad5c8a",
+    "name": "Jürgen Gronau",
+    "from": 1981,
+    "to": 1997,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/st-pauli/svg/stp-fka-216778.svg"
+   },
+   {
+    "slot": 9,
+    "page": 2,
+    "era": "1980s–1990s",
+    "person_id": "pl_4ba7d8d0ec",
+    "record_id": "st-pauli:wv-d539663e2a",
+    "name": "Dirk Zander",
+    "from": 1986,
+    "to": 1994,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/st-pauli/svg/stp-fka-8846.svg"
+   },
+   {
+    "slot": 10,
+    "page": 2,
+    "era": "1980s–1990s",
+    "person_id": "pl_b947066947",
+    "record_id": "st-pauli:wv-2b3aa662d5",
+    "name": "Klaus Thomforde",
+    "from": 1983,
+    "to": 2000,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/st-pauli/svg/stp-fka-8847.svg"
+   },
+   {
+    "slot": 11,
+    "page": 2,
+    "era": "1980s–1990s",
+    "person_id": "pl_e00c86fc1d",
+    "record_id": "st-pauli:wv-7759700554",
+    "name": "Leonardo Manzi",
+    "from": 1989,
+    "to": 1996,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/st-pauli/svg/stp-fka-140417.svg"
+   },
+   {
+    "slot": 12,
+    "page": 2,
+    "era": "1980s–1990s",
+    "person_id": "pl_3ac666fafc",
+    "record_id": "st-pauli:wv-1035e3b47b",
+    "name": "André Trulsen",
+    "from": 1986,
+    "to": 2005,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/st-pauli/svg/stp-fka-8838.svg"
+   },
+   {
+    "slot": 13,
+    "page": 3,
+    "era": "1990s–2000s",
+    "person_id": "pl_dfa9257147",
+    "record_id": "st-pauli:wv-2a36c47697",
+    "name": "Carsten Pröpper",
+    "from": 1993,
+    "to": 1998,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/st-pauli/svg/stp-fka-8838.svg"
+   },
+   {
+    "slot": 14,
+    "page": 3,
+    "era": "1990s–2000s",
+    "person_id": "pl_7aec0aecd6",
+    "record_id": "st-pauli:wv-b5dc7fc394",
+    "name": "Matthias Scherz",
+    "from": 1994,
+    "to": 1999,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/st-pauli/svg/stp-fka-8842.svg"
+   },
+   {
+    "slot": 15,
+    "page": 3,
+    "era": "1990s–2000s",
+    "person_id": "pl_b3899f78ce",
+    "record_id": "st-pauli:wv-9bfb4576b4",
+    "name": "Marcus Marin",
+    "from": 1994,
+    "to": 2000,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/st-pauli/svg/stp-fka-8842.svg"
+   },
+   {
+    "slot": 16,
+    "page": 3,
+    "era": "1990s–2000s",
+    "person_id": "pl_a79f368f04",
+    "record_id": "st-pauli:wv-608e53af93",
+    "name": "Holger Stanislawski",
+    "from": 1993,
+    "to": 2004,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/st-pauli/svg/stp-fka-8845.svg"
+   },
+   {
+    "slot": 17,
+    "page": 3,
+    "era": "1990s–2000s",
+    "person_id": "pl_841541602b",
+    "record_id": "st-pauli:wv-eed4c75a2f",
+    "name": "Jens Scharping",
+    "from": 1993,
+    "to": 2007,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/st-pauli/svg/stp-fka-8854.svg"
+   },
+   {
+    "slot": 18,
+    "page": 3,
+    "era": "1990s–2000s",
+    "person_id": "pl_b74e2e6449",
+    "record_id": "st-pauli:p-dh-231abf25cc84",
+    "name": "Frank Dröge",
+    "from": 1998,
+    "to": 2006,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/st-pauli/svg/cof-k-01.svg"
+   },
+   {
+    "slot": 19,
+    "page": 4,
+    "era": "2000s–2010s",
+    "person_id": "pl_e64773570b",
+    "record_id": "st-pauli:wv-9cfa72894b",
+    "name": "Thomas Meggle",
+    "from": 1997,
+    "to": 2010,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/st-pauli/svg/stp-fka-8862.svg"
+   },
+   {
+    "slot": 20,
+    "page": 4,
+    "era": "2000s–2010s",
+    "person_id": "pl_802c4f0a4f",
+    "record_id": "st-pauli:p-dh-78ecb75c64a3",
+    "name": "Patrik Borger",
+    "from": 2005,
+    "to": 2010,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/st-pauli/svg/cof-k-03.svg"
+   },
+   {
+    "slot": 21,
+    "page": 4,
+    "era": "2000s–2010s",
+    "person_id": "pl_7602bd54b5",
+    "record_id": "st-pauli:wv-6b464cfbf9",
+    "name": "Benedikt Pliquett",
+    "from": 2004,
+    "to": 2013,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/st-pauli/svg/stp-fka-8840.svg"
+   },
+   {
+    "slot": 22,
+    "page": 4,
+    "era": "2000s–2010s",
+    "person_id": "pl_6fa37de643",
+    "record_id": "st-pauli:wv-f2738d44a0",
+    "name": "Timo Schultz",
+    "from": 2005,
+    "to": 2012,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/st-pauli/svg/stp-fka-8840.svg"
+   },
+   {
+    "slot": 23,
+    "page": 4,
+    "era": "2000s–2010s",
+    "person_id": "pl_30104e95ea",
+    "record_id": "st-pauli:wv-9373d46668",
+    "name": "Florian Bruns",
+    "from": 2006,
+    "to": 2013,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/st-pauli/svg/stp-fka-8833.svg"
+   },
+   {
+    "slot": 24,
+    "page": 4,
+    "era": "2000s–2010s",
+    "person_id": "pl_a576838474",
+    "record_id": "st-pauli:wv-ced4c2c819",
+    "name": "Alexander Meier",
+    "from": 2001,
+    "to": 2019,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/st-pauli/svg/cof-k-05.svg"
+   },
+   {
+    "slot": 25,
+    "page": 5,
+    "era": "The 2010s",
+    "person_id": "pl_582d072470",
+    "record_id": "st-pauli:wv-ba8d2de9ea",
+    "name": "Marius Ebbers",
+    "from": 2008,
+    "to": 2013,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/st-pauli/svg/cof-k-05.svg"
+   },
+   {
+    "slot": 26,
+    "page": 5,
+    "era": "The 2010s",
+    "person_id": "pl_2b7e961db0",
+    "record_id": "st-pauli:wv-b9b9a5c1fa",
+    "name": "Jan-Philipp Kalla",
+    "from": 2005,
+    "to": 2020,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/st-pauli/svg/stp-fka-8877.svg"
+   },
+   {
+    "slot": 27,
+    "page": 5,
+    "era": "The 2010s",
+    "person_id": "pl_95f851fe63",
+    "record_id": "st-pauli:wv-34c7c965af",
+    "name": "Lennart Thy",
+    "from": 2012,
+    "to": 2017,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/st-pauli/svg/cof-k-11.svg"
+   },
+   {
+    "slot": 28,
+    "page": 5,
+    "era": "The 2010s",
+    "person_id": "pl_90dc61c317",
+    "record_id": "st-pauli:wv-9dcc8b213b",
+    "name": "Lasse Sobiech",
+    "from": 2011,
+    "to": 2018,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/st-pauli/svg/cof-k-11.svg"
+   },
+   {
+    "slot": 29,
+    "page": 5,
+    "era": "The 2010s",
+    "person_id": "pl_3690a5a0c4",
+    "record_id": "st-pauli:wv-a374007a4d",
+    "name": "Choi Kyoung-rok",
+    "from": 2014,
+    "to": 2018,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/st-pauli/svg/cof-k-17.svg"
+   },
+   {
+    "slot": 30,
+    "page": 5,
+    "era": "The 2010s",
+    "person_id": "pl_2d3478826b",
+    "record_id": "st-pauli:wv-20954ddc38",
+    "name": "Robin Himmelmann",
+    "from": 2012,
+    "to": 2021,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/st-pauli/svg/cof-k-17.svg"
+   },
+   {
+    "slot": 31,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_1214260f2c",
+    "record_id": "st-pauli:p-dh-08079c9cc2b9",
+    "name": "Waldemar Sobota",
+    "from": 2014,
+    "to": 2020,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/st-pauli/svg/cof-k-20.svg"
+   },
+   {
+    "slot": 32,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_dfab3661d6",
+    "record_id": "st-pauli:wv-4c7ef14abf",
+    "name": "Jan-Marc Schneider",
+    "from": 2015,
+    "to": 2019,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/st-pauli/svg/cof-k-20.svg"
+   },
+   {
+    "slot": 33,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_b752c2af4f",
+    "record_id": "st-pauli:wv-06214fab52",
+    "name": "Svend Brodersen",
+    "from": 2015,
+    "to": 2021,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/st-pauli/svg/cof-k-23.svg"
+   },
+   {
+    "slot": 34,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_062980ce89",
+    "record_id": "st-pauli:wv-67396490d3",
+    "name": "Johannes Eggestein",
+    "from": 2022,
+    "to": 2025,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/st-pauli/svg/cof-k-38.svg"
+   },
+   {
+    "slot": 35,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_55eae7c823",
+    "record_id": "st-pauli:wv-be4b06d4b8",
+    "name": "Julian Ulbricht",
+    "from": 2023,
+    "to": 2025,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/st-pauli/svg/cof-k-41.svg"
+   },
+   {
+    "slot": 36,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_5da9b46e0e",
+    "record_id": "st-pauli:wv-7c1f2db1e8",
+    "name": "Dapo Afolayan",
+    "from": 2023,
+    "to": 2026,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/st-pauli/svg/cof-k-41.svg"
+   }
+  ],
+  "olympiacos": [
+   {
+    "slot": 1,
+    "page": 1,
+    "era": "1920s–1970s",
+    "person_id": "pl_d91694c669",
+    "record_id": "olympiacos:r26-vazos",
+    "name": "Giannis Vazos",
+    "from": 1931,
+    "to": 1949,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/olympiacos/svg/oly-fka-218011.svg"
+   },
+   {
+    "slot": 2,
+    "page": 1,
+    "era": "1920s–1970s",
+    "person_id": "pl_f37897bdc8",
+    "record_id": "olympiacos:wv-2612f52023",
+    "name": "Georgios Darivas",
+    "from": 1946,
+    "to": 1958,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/olympiacos/svg/fka-k-304833.svg"
+   },
+   {
+    "slot": 3,
+    "page": 1,
+    "era": "1920s–1970s",
+    "person_id": "pl_8cf849eb0d",
+    "record_id": "olympiacos:wv-21553e8ba1",
+    "name": "Babis Kotridis",
+    "from": 1945,
+    "to": 1961,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/olympiacos/svg/fka-k-304833.svg"
+   },
+   {
+    "slot": 4,
+    "page": 1,
+    "era": "1920s–1970s",
+    "person_id": "pl_5b2372f1c8",
+    "record_id": "olympiacos:wv-1418eb2827",
+    "name": "Thanasis Bebis",
+    "from": 1948,
+    "to": 1963,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/olympiacos/svg/fka-k-304833.svg"
+   },
+   {
+    "slot": 5,
+    "page": 1,
+    "era": "1920s–1970s",
+    "person_id": "pl_a4607c4c6c",
+    "record_id": "olympiacos:wv-611b3d1c4e",
+    "name": "Elias Yfantis",
+    "from": 1953,
+    "to": 1964,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/olympiacos/svg/fka-k-304833.svg"
+   },
+   {
+    "slot": 6,
+    "page": 1,
+    "era": "1920s–1970s",
+    "person_id": "pl_281d5b1b5e",
+    "record_id": "olympiacos:r26-sideris",
+    "name": "Giorgos Sideris",
+    "from": 1959,
+    "to": 1970,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/olympiacos/svg/fka-k-312877.svg"
+   },
+   {
+    "slot": 7,
+    "page": 2,
+    "era": "1970s–1980s",
+    "person_id": "pl_03ad8c4dbb",
+    "record_id": "olympiacos:wv-a6bed960d3",
+    "name": "Georgios Delikaris",
+    "from": 1969,
+    "to": 1978,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/olympiacos/svg/fka-k-304831.svg"
+   },
+   {
+    "slot": 8,
+    "page": 2,
+    "era": "1970s–1980s",
+    "person_id": "pl_aeeeee7580",
+    "record_id": "olympiacos:wv-fc0418641d",
+    "name": "Petros Karavitis",
+    "from": 1970,
+    "to": 1980,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/olympiacos/svg/fka-k-304831.svg"
+   },
+   {
+    "slot": 9,
+    "page": 2,
+    "era": "1970s–1980s",
+    "person_id": "pl_68311278eb",
+    "record_id": "olympiacos:wv-09e69be9bc",
+    "name": "Maik Galakos",
+    "from": 1973,
+    "to": 1981,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/olympiacos/svg/fka-k-314879.svg"
+   },
+   {
+    "slot": 10,
+    "page": 2,
+    "era": "1970s–1980s",
+    "person_id": "pl_99e80b876a",
+    "record_id": "olympiacos:wv-c86e449664",
+    "name": "Eleftherios Poupakis",
+    "from": 1973,
+    "to": 1984,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/olympiacos/svg/fka-k-314879.svg"
+   },
+   {
+    "slot": 11,
+    "page": 2,
+    "era": "1970s–1980s",
+    "person_id": "pl_a5f6379c0a",
+    "record_id": "olympiacos:wv-2428b9832f",
+    "name": "Nikos Sarganis",
+    "from": 1980,
+    "to": 1985,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/olympiacos/svg/fka-k-110861.svg"
+   },
+   {
+    "slot": 12,
+    "page": 2,
+    "era": "1970s–1980s",
+    "person_id": "pl_9c3e7f6119",
+    "record_id": "olympiacos:wv-3505d3d8eb",
+    "name": "Christos Arvanitis",
+    "from": 1978,
+    "to": 1987,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/olympiacos/svg/fka-k-110861.svg"
+   },
+   {
+    "slot": 13,
+    "page": 3,
+    "era": "1980s–1990s",
+    "person_id": "pl_f9ccf6e6f0",
+    "record_id": "olympiacos:r26-anastopoulos",
+    "name": "Nikos Anastopoulos",
+    "from": 1980,
+    "to": 1993,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/olympiacos/svg/oly-fka-111430.svg"
+   },
+   {
+    "slot": 14,
+    "page": 3,
+    "era": "1980s–1990s",
+    "person_id": "pl_3c13f31050",
+    "record_id": "olympiacos:r26-mitropoulos",
+    "name": "Tasos Mitropoulos",
+    "from": 1981,
+    "to": 1992,
+    "pos": [
+     "MF",
+     "FW"
+    ],
+    "kit": "/club-kits/olympiacos/svg/oly-fka-111430.svg"
+   },
+   {
+    "slot": 15,
+    "page": 3,
+    "era": "1980s–1990s",
+    "person_id": "pl_b216e31d7a",
+    "record_id": "olympiacos:wv-bb5638f667",
+    "name": "Nikos Tsiantakis",
+    "from": 1987,
+    "to": 1994,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/olympiacos/svg/oly-fka-111427.svg"
+   },
+   {
+    "slot": 16,
+    "page": 3,
+    "era": "1980s–1990s",
+    "person_id": "pl_6a067be6dc",
+    "record_id": "olympiacos:wv-0ca72771e2",
+    "name": "Panagiotis Tsalouchidis",
+    "from": 1987,
+    "to": 1995,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/olympiacos/svg/oly-fka-111426.svg"
+   },
+   {
+    "slot": 17,
+    "page": 3,
+    "era": "1980s–1990s",
+    "person_id": "pl_6d9b7d7d23",
+    "record_id": "olympiacos:wv-766ef960cd",
+    "name": "Theodoros Pachatouridis",
+    "from": 1988,
+    "to": 1995,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/olympiacos/svg/oly-fka-111426.svg"
+   },
+   {
+    "slot": 18,
+    "page": 3,
+    "era": "1980s–1990s",
+    "person_id": "pl_2b222112b2",
+    "record_id": "olympiacos:wv-ab443ed442",
+    "name": "Minas Hantzidis",
+    "from": 1988,
+    "to": 1996,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/olympiacos/svg/oly-fka-111426.svg"
+   },
+   {
+    "slot": 19,
+    "page": 4,
+    "era": "1990s–2000s",
+    "person_id": "pl_e6d3233714",
+    "record_id": "olympiacos:wv-befdcd8b82",
+    "name": "Alekos Rantos",
+    "from": 1988,
+    "to": 1998,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/olympiacos/svg/oly-fka-111435.svg"
+   },
+   {
+    "slot": 20,
+    "page": 4,
+    "era": "1990s–2000s",
+    "person_id": "pl_4bf4a33ff5",
+    "record_id": "olympiacos:r26-alexandris",
+    "name": "Alexandros Alexandris",
+    "from": 1994,
+    "to": null,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/olympiacos/svg/oly-fka-110865.svg"
+   },
+   {
+    "slot": 21,
+    "page": 4,
+    "era": "1990s–2000s",
+    "person_id": "pl_d9e4bd1595",
+    "record_id": "olympiacos:wv-e10d7ae078",
+    "name": "Dimitrios Eleftheropoulos",
+    "from": 1994,
+    "to": 2004,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/olympiacos/svg/fka-k-80864.svg"
+   },
+   {
+    "slot": 22,
+    "page": 4,
+    "era": "1990s–2000s",
+    "person_id": "pl_891baea909",
+    "record_id": "olympiacos:wv-c74b3833de",
+    "name": "Andreas Niniadis",
+    "from": 1996,
+    "to": 2004,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/olympiacos/svg/photo-k-02.svg"
+   },
+   {
+    "slot": 23,
+    "page": 4,
+    "era": "1990s–2000s",
+    "person_id": "pl_b25f5a3533",
+    "record_id": "olympiacos:wv-87748c4d97",
+    "name": "Predrag Đorđević",
+    "from": 1996,
+    "to": 2009,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/olympiacos/svg/cof-k-03.svg"
+   },
+   {
+    "slot": 24,
+    "page": 4,
+    "era": "1990s–2000s",
+    "person_id": "pl_56af0bc260",
+    "record_id": "olympiacos:r26-giannakopoulos",
+    "name": "Stelios Giannakopoulos",
+    "from": null,
+    "to": 2003,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/olympiacos/svg/cof-k-05.svg"
+   },
+   {
+    "slot": 25,
+    "page": 5,
+    "era": "2000s–2010s",
+    "person_id": "pl_6e5d098fc2",
+    "record_id": "olympiacos:r26-nikopolidis",
+    "name": "Antonis Nikopolidis",
+    "from": 2004,
+    "to": null,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/olympiacos/svg/cof-k-07.svg"
+   },
+   {
+    "slot": 26,
+    "page": 5,
+    "era": "2000s–2010s",
+    "person_id": "pl_c18d42a8a9",
+    "record_id": "olympiacos:r26-rivaldo",
+    "name": "Rivaldo",
+    "from": 2004,
+    "to": 2007,
+    "pos": [
+     "MF",
+     "FW"
+    ],
+    "kit": "/club-kits/olympiacos/svg/cof-k-09.svg"
+   },
+   {
+    "slot": 27,
+    "page": 5,
+    "era": "2000s–2010s",
+    "person_id": "pl_d7903346da",
+    "record_id": "olympiacos:r26-mitroglou",
+    "name": "Kostas Mitroglou",
+    "from": 2007,
+    "to": null,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/olympiacos/svg/cof-k-14.svg"
+   },
+   {
+    "slot": 28,
+    "page": 5,
+    "era": "2000s–2010s",
+    "person_id": "pl_3cc7728e69",
+    "record_id": "olympiacos:r26-djordjevic",
+    "name": "Predrag Djordjevic",
+    "from": null,
+    "to": 2009,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/olympiacos/svg/cof-k-19.svg"
+   },
+   {
+    "slot": 29,
+    "page": 5,
+    "era": "2000s–2010s",
+    "person_id": "pl_55aafcd300",
+    "record_id": "olympiacos:r26-torosidis",
+    "name": "Vasilis Torosidis",
+    "from": 2007,
+    "to": 2020,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/olympiacos/svg/cof-k-29.svg"
+   },
+   {
+    "slot": 30,
+    "page": 5,
+    "era": "2000s–2010s",
+    "person_id": "pl_8d32903a41",
+    "record_id": "olympiacos:r26-fortounis",
+    "name": "Kostas Fortounis",
+    "from": 2014,
+    "to": null,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/olympiacos/svg/cof-k-35.svg"
+   },
+   {
+    "slot": 31,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_fbc43a2d3e",
+    "record_id": "olympiacos:r26-valbuena",
+    "name": "Mathieu Valbuena",
+    "from": 2019,
+    "to": 2023,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/olympiacos/svg/cof-k-60.svg"
+   },
+   {
+    "slot": 32,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_424c9dd21e",
+    "record_id": "olympiacos:wv-8af5c0d589",
+    "name": "Mady Camara",
+    "from": 2018,
+    "to": 2024,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/olympiacos/svg/cof-k-60.svg"
+   },
+   {
+    "slot": 33,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_7e7d0e7b6b",
+    "record_id": "olympiacos:r26-elarabi",
+    "name": "Youssef El Arabi",
+    "from": 2019,
+    "to": 2024,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/olympiacos/svg/cof-k-60.svg"
+   },
+   {
+    "slot": 34,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_94388bf32f",
+    "record_id": "olympiacos:wv-41696fb690",
+    "name": "Daniel Podence",
+    "from": 2018,
+    "to": 2026,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/olympiacos/svg/cof-k-60.svg"
+   },
+   {
+    "slot": 35,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_ea727e18c9",
+    "record_id": "olympiacos:wv-a6356e99d6",
+    "name": "Georgios Masouras",
+    "from": 2019,
+    "to": 2026,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/olympiacos/svg/cof-k-60.svg"
+   },
+   {
+    "slot": 36,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_1526b220db",
+    "record_id": "olympiacos:r26-elkaabi",
+    "name": "Ayoub El Kaabi",
+    "from": 2023,
+    "to": null,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/olympiacos/svg/cof-k-63.svg"
+   }
+  ],
+  "raja-casablanca": [
+   {
+    "slot": 1,
+    "page": 1,
+    "era": "1950s–1960s",
+    "person_id": "pl_850f90e1f6",
+    "record_id": "raja-casablanca:p-mg-f2c1d33cb19a",
+    "name": "Mohamed Roudani",
+    "from": 1950,
+    "to": 1964,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-289049.svg"
+   },
+   {
+    "slot": 2,
+    "page": 1,
+    "era": "1950s–1960s",
+    "person_id": "pl_3794e3c283",
+    "record_id": "raja-casablanca:p-mg-17936867adc8",
+    "name": "Hamid Bahij",
+    "from": 1954,
+    "to": 1967,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-289050.svg"
+   },
+   {
+    "slot": 3,
+    "page": 1,
+    "era": "1950s–1960s",
+    "person_id": "pl_b795aa8809",
+    "record_id": "raja-casablanca:p-mg-b6cd6d7a1203",
+    "name": "Mustapha Fahim (Milazzo) (en)",
+    "from": 1956,
+    "to": 1967,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-289050.svg"
+   },
+   {
+    "slot": 4,
+    "page": 1,
+    "era": "1950s–1960s",
+    "person_id": "pl_f454206cde",
+    "record_id": "raja-casablanca:p-mg-2abc65e46878",
+    "name": "Mohamed Khalfi",
+    "from": 1956,
+    "to": 1968,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-289050.svg"
+   },
+   {
+    "slot": 5,
+    "page": 1,
+    "era": "1950s–1960s",
+    "person_id": "pl_794b7e989e",
+    "record_id": "raja-casablanca:p-mg-96f4b661f2f7",
+    "name": "Mohamed Bhaïja",
+    "from": 1956,
+    "to": 1971,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-289050.svg"
+   },
+   {
+    "slot": 6,
+    "page": 1,
+    "era": "1950s–1960s",
+    "person_id": "pl_da152e6bc5",
+    "record_id": "raja-casablanca:p-mg-1ae4f4f3982d",
+    "name": "Abdelkader Bakdir",
+    "from": 1960,
+    "to": 1972,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-289049.svg"
+   },
+   {
+    "slot": 7,
+    "page": 2,
+    "era": "1960s–1970s",
+    "person_id": "pl_f144b30254",
+    "record_id": "raja-casablanca:p-mg-7f2fafd554c0",
+    "name": "Ahmed Recchag",
+    "from": 1964,
+    "to": 1975,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-289047.svg"
+   },
+   {
+    "slot": 8,
+    "page": 2,
+    "era": "1960s–1970s",
+    "person_id": "pl_1492605672",
+    "record_id": "raja-casablanca:p-mg-d9bf2682d633",
+    "name": "Houmane Jarir",
+    "from": 1962,
+    "to": 1977,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-289047.svg"
+   },
+   {
+    "slot": 9,
+    "page": 2,
+    "era": "1960s–1970s",
+    "person_id": "pl_e24a389437",
+    "record_id": "raja-casablanca:p-mg-308b922a4752",
+    "name": "Mohamed Abdelalim (Bénini)",
+    "from": 1965,
+    "to": 1977,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-289047.svg"
+   },
+   {
+    "slot": 10,
+    "page": 2,
+    "era": "1960s–1970s",
+    "person_id": "pl_a43e7fa427",
+    "record_id": "raja-casablanca:p-mg-601e2994fe00",
+    "name": "Said Ghandi",
+    "from": 1964,
+    "to": 1979,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-289047.svg"
+   },
+   {
+    "slot": 11,
+    "page": 2,
+    "era": "1960s–1970s",
+    "person_id": "pl_f2909e8737",
+    "record_id": "raja-casablanca:p-mg-9006101aa11d",
+    "name": "Aziz Jawad",
+    "from": 1971,
+    "to": 1982,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-289044.svg"
+   },
+   {
+    "slot": 12,
+    "page": 2,
+    "era": "1960s–1970s",
+    "person_id": "pl_dd135cfc70",
+    "record_id": "raja-casablanca:p-mg-9995a2892ad1",
+    "name": "Abderrezak Deghay",
+    "from": 1970,
+    "to": 1983,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-289044.svg"
+   },
+   {
+    "slot": 13,
+    "page": 3,
+    "era": "1970s–1980s",
+    "person_id": "pl_a0ff919a8e",
+    "record_id": "raja-casablanca:p-mg-3878d16ec559",
+    "name": "Abdelhak Fethi",
+    "from": 1971,
+    "to": 1986,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-289044.svg"
+   },
+   {
+    "slot": 14,
+    "page": 3,
+    "era": "1970s–1980s",
+    "person_id": "pl_8814eb9eec",
+    "record_id": "raja-casablanca:p-mg-bc97151dc83b",
+    "name": "Najib Mokhles",
+    "from": 1975,
+    "to": 1982,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-289044.svg"
+   },
+   {
+    "slot": 15,
+    "page": 3,
+    "era": "1970s–1980s",
+    "person_id": "pl_f371678ccc",
+    "record_id": "raja-casablanca:p-mg-a89df2910cf1",
+    "name": "Naim Allah",
+    "from": 1977,
+    "to": 1982,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-289043.svg"
+   },
+   {
+    "slot": 16,
+    "page": 3,
+    "era": "1970s–1980s",
+    "person_id": "pl_1cb8bb2be5",
+    "record_id": "raja-casablanca:p-mg-47a2cac5b3b2",
+    "name": "Hassan Mouahid",
+    "from": 1978,
+    "to": 1990,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-281093.svg"
+   },
+   {
+    "slot": 17,
+    "page": 3,
+    "era": "1970s–1980s",
+    "person_id": "pl_7e087f99c5",
+    "record_id": "raja-casablanca:p-mg-4faee2ebef3b",
+    "name": "Driss Acha",
+    "from": 1979,
+    "to": 1990,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-281093.svg"
+   },
+   {
+    "slot": 18,
+    "page": 3,
+    "era": "1970s–1980s",
+    "person_id": "pl_c0bef5f093",
+    "record_id": "raja-casablanca:p-mg-6718826d4275",
+    "name": "Said Seddiki",
+    "from": 1979,
+    "to": 1991,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-314607.svg"
+   },
+   {
+    "slot": 19,
+    "page": 4,
+    "era": "1980s–1990s",
+    "person_id": "pl_ac43b9b462",
+    "record_id": "raja-casablanca:p-mg-7cc2ec94d8c0",
+    "name": "Abderrahim Hamraoui",
+    "from": 1982,
+    "to": 1993,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-289052.svg"
+   },
+   {
+    "slot": 20,
+    "page": 4,
+    "era": "1980s–1990s",
+    "person_id": "pl_7fa583499c",
+    "record_id": "raja-casablanca:p-mg-ce9ae2e13a2b",
+    "name": "Mohamed Madih",
+    "from": 1985,
+    "to": 1992,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-281092.svg"
+   },
+   {
+    "slot": 21,
+    "page": 4,
+    "era": "1980s–1990s",
+    "person_id": "pl_8035beea83",
+    "record_id": "raja-casablanca:p-mg-4eaa1f56c886",
+    "name": "Saïd Aït Saleh",
+    "from": 1987,
+    "to": 1992,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-289033.svg"
+   },
+   {
+    "slot": 22,
+    "page": 4,
+    "era": "1980s–1990s",
+    "person_id": "pl_14368bc3fb",
+    "record_id": "raja-casablanca:p-mg-08c3e7768fe7",
+    "name": "Mustapha Toutia",
+    "from": 1990,
+    "to": 1995,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-281088.svg"
+   },
+   {
+    "slot": 23,
+    "page": 4,
+    "era": "1980s–1990s",
+    "person_id": "pl_39610f6b33",
+    "record_id": "raja-casablanca:p-mg-342be4ab1aab",
+    "name": "Mustapha Khalif",
+    "from": 1988,
+    "to": 1999,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-281088.svg"
+   },
+   {
+    "slot": 24,
+    "page": 4,
+    "era": "1980s–1990s",
+    "person_id": "pl_45511bdf27",
+    "record_id": "raja-casablanca:p-mg-554b20b79261",
+    "name": "Mustapha Moustawdae",
+    "from": 1988,
+    "to": 2000,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-357002.svg"
+   },
+   {
+    "slot": 25,
+    "page": 5,
+    "era": "1990s–2000s",
+    "person_id": "pl_824b2c27d0",
+    "record_id": "raja-casablanca:p-mg-4f04fa23050d",
+    "name": "Redouane El Haimer",
+    "from": 1994,
+    "to": 2006,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-117726.svg"
+   },
+   {
+    "slot": 26,
+    "page": 5,
+    "era": "1990s–2000s",
+    "person_id": "pl_9f6e0142d8",
+    "record_id": "raja-casablanca:p-mg-bc35c7953fda",
+    "name": "Mohamed Bouabdellaoui",
+    "from": 1998,
+    "to": 2002,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-117726.svg"
+   },
+   {
+    "slot": 27,
+    "page": 5,
+    "era": "1990s–2000s",
+    "person_id": "pl_2ddbb946d5",
+    "record_id": "raja-casablanca:p-mg-436694741e14",
+    "name": "Mustapha Chadli",
+    "from": 1996,
+    "to": 2005,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-287718.svg"
+   },
+   {
+    "slot": 28,
+    "page": 5,
+    "era": "1990s–2000s",
+    "person_id": "pl_3af96a1cec",
+    "record_id": "raja-casablanca:p-mg-8cb4bb73dad7",
+    "name": "Hicham Misbah",
+    "from": 1999,
+    "to": 2007,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-94223.svg"
+   },
+   {
+    "slot": 29,
+    "page": 5,
+    "era": "1990s–2000s",
+    "person_id": "pl_d107703747",
+    "record_id": "raja-casablanca:p-mg-2bc8763ce8bf",
+    "name": "Sami Tajeddine",
+    "from": 2000,
+    "to": 2009,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-94225.svg"
+   },
+   {
+    "slot": 30,
+    "page": 5,
+    "era": "1990s–2000s",
+    "person_id": "pl_2bd21d1ddb",
+    "record_id": "raja-casablanca:p-mg-ecf52df1d501",
+    "name": "Hassan Taïr",
+    "from": 2006,
+    "to": 2012,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-kit-2008-09-home.svg"
+   },
+   {
+    "slot": 31,
+    "page": 6,
+    "era": "2000s–2020s",
+    "person_id": "pl_9f0a038458",
+    "record_id": "raja-casablanca:p-mg-3ccc7972b900",
+    "name": "Yassine El Had",
+    "from": 2007,
+    "to": 2014,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-kit-2010-11-home.svg"
+   },
+   {
+    "slot": 32,
+    "page": 6,
+    "era": "2000s–2020s",
+    "person_id": "pl_bffc223739",
+    "record_id": "raja-casablanca:p-mg-3f7506ddef6a",
+    "name": "Mohamed Oulhaj",
+    "from": 2007,
+    "to": 2019,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-106100.svg"
+   },
+   {
+    "slot": 33,
+    "page": 6,
+    "era": "2000s–2020s",
+    "person_id": "pl_b3c3c88813",
+    "record_id": "raja-casablanca:p-mg-b746eedca1ba",
+    "name": "Mohamed Bouamira",
+    "from": 2017,
+    "to": 2021,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-158001.svg"
+   },
+   {
+    "slot": 34,
+    "page": 6,
+    "era": "2000s–2020s",
+    "person_id": "pl_2b6e5322a6",
+    "record_id": "raja-casablanca:p-mg-e45510f0733b",
+    "name": "Anas Zniti",
+    "from": 2015,
+    "to": 2025,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-fka-199860.svg"
+   },
+   {
+    "slot": 35,
+    "page": 6,
+    "era": "2000s–2020s",
+    "person_id": "pl_e866b24331",
+    "record_id": "raja-casablanca:p-mg-20fb19a2811f",
+    "name": "Zakaria Habti",
+    "from": 2019,
+    "to": 2023,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-kit-2021-22-home.svg"
+   },
+   {
+    "slot": 36,
+    "page": 6,
+    "era": "2000s–2020s",
+    "person_id": "pl_b095846b58",
+    "record_id": "raja-casablanca:p-mg-c8c263ea3b9f",
+    "name": "Amir El Haddaoui",
+    "from": 2019,
+    "to": 2023,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/raja-casablanca/svg/rj-kit-2021-22-home.svg"
+   }
+  ],
+  "wydad-casablanca": [
+   {
+    "slot": 1,
+    "page": 1,
+    "era": "1940s–1980s",
+    "person_id": "pl_21e9519372",
+    "record_id": "wydad-casablanca:p-mg-45fbd0363d48",
+    "name": "Driss Joumad",
+    "from": 1945,
+    "to": 1954,
+    "pos": [],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-287721.svg"
+   },
+   {
+    "slot": 2,
+    "page": 1,
+    "era": "1940s–1980s",
+    "person_id": "pl_d98ca1acdc",
+    "record_id": "wydad-casablanca:p-mg-fcc9fcc7c4e9",
+    "name": "Mohamed Chtouki",
+    "from": 1945,
+    "to": 1958,
+    "pos": [],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-287721.svg"
+   },
+   {
+    "slot": 3,
+    "page": 1,
+    "era": "1940s–1980s",
+    "person_id": "pl_3a38ee24cc",
+    "record_id": "wydad-casablanca:p-mg-51cca1bc8ce7",
+    "name": "Abdelkader Ouaraghli",
+    "from": 1960,
+    "to": 1976,
+    "pos": [],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-341483.svg"
+   },
+   {
+    "slot": 4,
+    "page": 1,
+    "era": "1940s–1980s",
+    "person_id": "pl_4236668194",
+    "record_id": "wydad-casablanca:p-mg-7f9b38f54678",
+    "name": "Larbi Aherdane",
+    "from": 1970,
+    "to": 1983,
+    "pos": [],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-341483.svg"
+   },
+   {
+    "slot": 5,
+    "page": 1,
+    "era": "1940s–1980s",
+    "person_id": "pl_ec1bd909aa",
+    "record_id": "wydad-casablanca:p-mg-33be8eabf7ab",
+    "name": "Ezzaki Badou",
+    "from": 1978,
+    "to": 1986,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-448374.svg"
+   },
+   {
+    "slot": 6,
+    "page": 1,
+    "era": "1940s–1980s",
+    "person_id": "pl_cc5771fdff",
+    "record_id": "wydad-casablanca:p-mg-6b832f3d36a3",
+    "name": "Hassan Nader",
+    "from": 1983,
+    "to": 1990,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-448375.svg"
+   },
+   {
+    "slot": 7,
+    "page": 2,
+    "era": "1980s–2000s",
+    "person_id": "pl_0f90811cbe",
+    "record_id": "wydad-casablanca:p-mg-c9e863a2577d",
+    "name": "Aziz Bouderbala",
+    "from": 1977,
+    "to": 1997,
+    "pos": [],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-448375.svg"
+   },
+   {
+    "slot": 8,
+    "page": 2,
+    "era": "1980s–2000s",
+    "person_id": "pl_6bd522c71c",
+    "record_id": "wydad-casablanca:p-mg-776c818b487a",
+    "name": "Khalil Azmi",
+    "from": 1984,
+    "to": 1992,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-kit-1989-90-home.svg"
+   },
+   {
+    "slot": 9,
+    "page": 2,
+    "era": "1980s–2000s",
+    "person_id": "pl_61db26c62e",
+    "record_id": "wydad-casablanca:p-mg-144a8cc17e08",
+    "name": "Fadel Jilal",
+    "from": 1982,
+    "to": 1998,
+    "pos": [],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-347567.svg"
+   },
+   {
+    "slot": 10,
+    "page": 2,
+    "era": "1980s–2000s",
+    "person_id": "pl_b2b23916e0",
+    "record_id": "wydad-casablanca:p-mg-2e3cdfd732fe",
+    "name": "Rachid Daoudi",
+    "from": 1989,
+    "to": 2003,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-448379.svg"
+   },
+   {
+    "slot": 11,
+    "page": 2,
+    "era": "1980s–2000s",
+    "person_id": "pl_aa4776fb4b",
+    "record_id": "wydad-casablanca:p-mg-2ece59886190",
+    "name": "Lahcen Abrami",
+    "from": 1989,
+    "to": 2005,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-448369.svg"
+   },
+   {
+    "slot": 12,
+    "page": 2,
+    "era": "1980s–2000s",
+    "person_id": "pl_42b0e237d9",
+    "record_id": "wydad-casablanca:p-mg-fc3e0cbe121d",
+    "name": "Mohammed Benchrifa",
+    "from": 1995,
+    "to": 2006,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-180859.svg"
+   },
+   {
+    "slot": 13,
+    "page": 3,
+    "era": "The 2000s",
+    "person_id": "pl_d10f3ca923",
+    "record_id": "wydad-casablanca:p-mg-91ceb8a8b458",
+    "name": "Nadir Lamyaghri",
+    "from": 2000,
+    "to": 2008,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-232033.svg"
+   },
+   {
+    "slot": 14,
+    "page": 3,
+    "era": "The 2000s",
+    "person_id": "pl_ed1a546398",
+    "record_id": "wydad-casablanca:p-mg-d486fef896d0",
+    "name": "Mohamed Madihi",
+    "from": 2001,
+    "to": 2007,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-232033.svg"
+   },
+   {
+    "slot": 15,
+    "page": 3,
+    "era": "The 2000s",
+    "person_id": "pl_c7b3df4ac1",
+    "record_id": "wydad-casablanca:p-mg-f7de17bc5f1b",
+    "name": "Jean-Jacques Gosso",
+    "from": 2002,
+    "to": 2007,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-232033.svg"
+   },
+   {
+    "slot": 16,
+    "page": 3,
+    "era": "The 2000s",
+    "person_id": "pl_b101a0a6ac",
+    "record_id": "wydad-casablanca:p-mg-19a786a56370",
+    "name": "Youness Mankari",
+    "from": 1997,
+    "to": 2014,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-232033.svg"
+   },
+   {
+    "slot": 17,
+    "page": 3,
+    "era": "The 2000s",
+    "person_id": "pl_4fb7d282ac",
+    "record_id": "wydad-casablanca:p-mg-e38bcf492980",
+    "name": "Abderrahim Saïdi",
+    "from": 2002,
+    "to": 2009,
+    "pos": [],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-232033.svg"
+   },
+   {
+    "slot": 18,
+    "page": 3,
+    "era": "The 2000s",
+    "person_id": "pl_91241aa78a",
+    "record_id": "wydad-casablanca:p-mg-2d062b8c9ba2",
+    "name": "Faouzi Abdelghani",
+    "from": 2005,
+    "to": 2010,
+    "pos": [],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-180866.svg"
+   },
+   {
+    "slot": 19,
+    "page": 4,
+    "era": "2000s–2010s",
+    "person_id": "pl_bc1ea80216",
+    "record_id": "wydad-casablanca:p-mg-89a49df79f6c",
+    "name": "Said Zaidi",
+    "from": 2006,
+    "to": 2011,
+    "pos": [],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-180860.svg"
+   },
+   {
+    "slot": 20,
+    "page": 4,
+    "era": "2000s–2010s",
+    "person_id": "pl_911cd31050",
+    "record_id": "wydad-casablanca:p-mg-f633885e1d7d",
+    "name": "Karim Fegrouche",
+    "from": 2007,
+    "to": 2011,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-116591.svg"
+   },
+   {
+    "slot": 21,
+    "page": 4,
+    "era": "2000s–2010s",
+    "person_id": "pl_8ee2c19bd7",
+    "record_id": "wydad-casablanca:p-mg-4bd5603ed349",
+    "name": "Khalid Sekkat",
+    "from": 2005,
+    "to": 2014,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-116591.svg"
+   },
+   {
+    "slot": 22,
+    "page": 4,
+    "era": "2000s–2010s",
+    "person_id": "pl_b5db33915f",
+    "record_id": "wydad-casablanca:p-mg-41accb83f5bc",
+    "name": "Pascal Angan",
+    "from": 2008,
+    "to": 2012,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-180868.svg"
+   },
+   {
+    "slot": 23,
+    "page": 4,
+    "era": "2000s–2010s",
+    "person_id": "pl_c3649ce0fd",
+    "record_id": "wydad-casablanca:p-mg-685a415493e3",
+    "name": "Farid Talhaoui",
+    "from": 2008,
+    "to": 2012,
+    "pos": [],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-180868.svg"
+   },
+   {
+    "slot": 24,
+    "page": 4,
+    "era": "2000s–2010s",
+    "person_id": "pl_47b896c6a3",
+    "record_id": "wydad-casablanca:p-mg-7a913ebab772",
+    "name": "Ayoub Skouma",
+    "from": 2007,
+    "to": 2013,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-180868.svg"
+   },
+   {
+    "slot": 25,
+    "page": 5,
+    "era": "The 2010s",
+    "person_id": "pl_f1a370f71b",
+    "record_id": "wydad-casablanca:p-mg-f9831ba6a896",
+    "name": "Abdelghani Mouaoui",
+    "from": 2009,
+    "to": 2012,
+    "pos": [],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-180868.svg"
+   },
+   {
+    "slot": 26,
+    "page": 5,
+    "era": "The 2010s",
+    "person_id": "pl_2c2188ef75",
+    "record_id": "wydad-casablanca:p-mg-12ed010dbe7b",
+    "name": "Lys Mouithys",
+    "from": 2009,
+    "to": 2013,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-180870.svg"
+   },
+   {
+    "slot": 27,
+    "page": 5,
+    "era": "The 2010s",
+    "person_id": "pl_59a7e85590",
+    "record_id": "wydad-casablanca:p-mg-2d16755af699",
+    "name": "Jamal Alioui",
+    "from": 2010,
+    "to": 2013,
+    "pos": [],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-180870.svg"
+   },
+   {
+    "slot": 28,
+    "page": 5,
+    "era": "The 2010s",
+    "person_id": "pl_9bb1c728d4",
+    "record_id": "wydad-casablanca:p-mg-23926e558363",
+    "name": "Ayoub El Khaliqi",
+    "from": 2011,
+    "to": 2014,
+    "pos": [],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-450322.svg"
+   },
+   {
+    "slot": 29,
+    "page": 5,
+    "era": "The 2010s",
+    "person_id": "pl_6150f6acab",
+    "record_id": "wydad-casablanca:p-mg-2073b30a449b",
+    "name": "Hicham El Amrani",
+    "from": 2011,
+    "to": 2015,
+    "pos": [],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-180881.svg"
+   },
+   {
+    "slot": 30,
+    "page": 5,
+    "era": "The 2010s",
+    "person_id": "pl_27353e487c",
+    "record_id": "wydad-casablanca:p-mg-82cc376beec9",
+    "name": "Nabil Loualji",
+    "from": 2013,
+    "to": 2016,
+    "pos": [],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-448128.svg"
+   },
+   {
+    "slot": 31,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_55dfc473a7",
+    "record_id": "wydad-casablanca:p-mg-aa63018d9be7",
+    "name": "Walid El Karti",
+    "from": 2013,
+    "to": 2021,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-kit-2017-18-home.svg"
+   },
+   {
+    "slot": 32,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_b070c00283",
+    "record_id": "wydad-casablanca:p-mg-20c5d7873076",
+    "name": "Mohamed Onajem",
+    "from": 2015,
+    "to": 2026,
+    "pos": [],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-18388.svg"
+   },
+   {
+    "slot": 33,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_d52e6f9faf",
+    "record_id": "wydad-casablanca:p-mg-12e3c32bdd5b",
+    "name": "Juvhel Tsoumou",
+    "from": 2021,
+    "to": 2022,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-79554.svg"
+   },
+   {
+    "slot": 34,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_45abc59b16",
+    "record_id": "wydad-casablanca:p-mg-41a8e8551299",
+    "name": "Ahmed Reda Tagnaouti",
+    "from": 2017,
+    "to": 2026,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-fka-79554.svg"
+   },
+   {
+    "slot": 35,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_af8cb36737",
+    "record_id": "wydad-casablanca:p-mg-c945bb3a1586",
+    "name": "Ayoub El Amloud",
+    "from": 2018,
+    "to": 2026,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-kit-2022-23-home.svg"
+   },
+   {
+    "slot": 36,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_e2e8a351d6",
+    "record_id": "wydad-casablanca:p-mg-4c34ec79d5ef",
+    "name": "Yahya Jabrane",
+    "from": 2019,
+    "to": 2026,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/wydad-casablanca/svg/wy-kit-2022-23-home.svg"
+   }
+  ],
+  "al-ahly": [
+   {
+    "slot": 1,
+    "page": 1,
+    "era": "1920s–1970s",
+    "person_id": "pl_650d684a5d",
+    "record_id": "al-ahly:p-mg-c54825719a77",
+    "name": "Mahmoud Mokhtar El-Tetsh",
+    "from": 1922,
+    "to": 1940,
+    "pos": [],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-48509.svg"
+   },
+   {
+    "slot": 2,
+    "page": 1,
+    "era": "1920s–1970s",
+    "person_id": "pl_db06f0f23a",
+    "record_id": "al-ahly:p-mg-4ceda525d79b",
+    "name": "Saleh Selim",
+    "from": 1948,
+    "to": 1967,
+    "pos": [],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-48509.svg"
+   },
+   {
+    "slot": 3,
+    "page": 1,
+    "era": "1920s–1970s",
+    "person_id": "pl_981a482228",
+    "record_id": "al-ahly:p-mg-6c729421b5f9",
+    "name": "Adel Hekal",
+    "from": 1950,
+    "to": 1969,
+    "pos": [],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-48509.svg"
+   },
+   {
+    "slot": 4,
+    "page": 1,
+    "era": "1920s–1970s",
+    "person_id": "pl_f78ff10903",
+    "record_id": "al-ahly:p-mg-07db88f38584",
+    "name": "Rifaat El-Fanagily",
+    "from": 1955,
+    "to": 1967,
+    "pos": [],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-48509.svg"
+   },
+   {
+    "slot": 5,
+    "page": 1,
+    "era": "1920s–1970s",
+    "person_id": "pl_f346e97958",
+    "record_id": "al-ahly:p-mg-67af053ef2b0",
+    "name": "Ekramy El-Shahat",
+    "from": 1971,
+    "to": 1987,
+    "pos": [],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-48509.svg"
+   },
+   {
+    "slot": 6,
+    "page": 1,
+    "era": "1920s–1970s",
+    "person_id": "pl_ddac5edd4c",
+    "record_id": "al-ahly:p-mg-9dddf1d59b0a",
+    "name": "Moustafa Abdou",
+    "from": 1972,
+    "to": 1987,
+    "pos": [],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-48509.svg"
+   },
+   {
+    "slot": 7,
+    "page": 2,
+    "era": "1970s–1990s",
+    "person_id": "pl_0a079b5187",
+    "record_id": "al-ahly:p-mg-ec5ebe2cf877",
+    "name": "Mahmoud El Khatib",
+    "from": 1972,
+    "to": 1988,
+    "pos": [],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-48509.svg"
+   },
+   {
+    "slot": 8,
+    "page": 2,
+    "era": "1970s–1990s",
+    "person_id": "pl_b3a7642ebb",
+    "record_id": "al-ahly:p-mg-64c361d8286b",
+    "name": "Thabet El-Batal",
+    "from": 1973,
+    "to": 1991,
+    "pos": [],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-48503.svg"
+   },
+   {
+    "slot": 9,
+    "page": 2,
+    "era": "1970s–1990s",
+    "person_id": "pl_ac9a5448c9",
+    "record_id": "al-ahly:p-mg-c3851724f31c",
+    "name": "Taher Abouzeid",
+    "from": 1980,
+    "to": 1993,
+    "pos": [],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-48491.svg"
+   },
+   {
+    "slot": 10,
+    "page": 2,
+    "era": "1970s–1990s",
+    "person_id": "pl_4e256aaaa5",
+    "record_id": "al-ahly:p-mg-cd8a94cb5f64",
+    "name": "Hossam Hassan",
+    "from": 1975,
+    "to": 1999,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-48482.svg"
+   },
+   {
+    "slot": 11,
+    "page": 2,
+    "era": "1970s–1990s",
+    "person_id": "pl_4538ec084a",
+    "record_id": "al-ahly:p-mg-d637e625c619",
+    "name": "Ahmed Shobair",
+    "from": 1980,
+    "to": 1997,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-48546.svg"
+   },
+   {
+    "slot": 12,
+    "page": 2,
+    "era": "1970s–1990s",
+    "person_id": "pl_8e3b0c1788",
+    "record_id": "al-ahly:p-mg-4d06dfb4a3f7",
+    "name": "Osama Orabi",
+    "from": 1982,
+    "to": 1999,
+    "pos": [],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-48537.svg"
+   },
+   {
+    "slot": 13,
+    "page": 3,
+    "era": "1990s–2000s",
+    "person_id": "pl_3dbde887d3",
+    "record_id": "al-ahly:p-mg-51a3623dce0c",
+    "name": "Ibrahim Hassan",
+    "from": 1985,
+    "to": 1999,
+    "pos": [],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-48535.svg"
+   },
+   {
+    "slot": 14,
+    "page": 3,
+    "era": "1990s–2000s",
+    "person_id": "pl_b4184b8a86",
+    "record_id": "al-ahly:p-mg-924a837da149",
+    "name": "Mohamed Youssef",
+    "from": 1989,
+    "to": 1999,
+    "pos": [],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-48528.svg"
+   },
+   {
+    "slot": 15,
+    "page": 3,
+    "era": "1990s–2000s",
+    "person_id": "pl_46f37e6db1",
+    "record_id": "al-ahly:p-mg-ae53198f05e6",
+    "name": "Walid Salah El-Din",
+    "from": 1989,
+    "to": 2003,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-48566.svg"
+   },
+   {
+    "slot": 16,
+    "page": 3,
+    "era": "1990s–2000s",
+    "person_id": "pl_cfbfac2ca2",
+    "record_id": "al-ahly:p-mg-584bc7470272",
+    "name": "Yasser Rayyan",
+    "from": 1992,
+    "to": 2002,
+    "pos": [],
+    "kit": "/club-kits/al-ahly/svg/ah-kit-1997-98-home.svg"
+   },
+   {
+    "slot": 17,
+    "page": 3,
+    "era": "1990s–2000s",
+    "person_id": "pl_422b153468",
+    "record_id": "al-ahly:p-mg-b7550ed45782",
+    "name": "Hady Khashaba",
+    "from": 1991,
+    "to": 2006,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-92998.svg"
+   },
+   {
+    "slot": 18,
+    "page": 3,
+    "era": "1990s–2000s",
+    "person_id": "pl_3136df826d",
+    "record_id": "al-ahly:p-mg-19bdba04ab87",
+    "name": "Sayed Abdel Hafeez",
+    "from": 1996,
+    "to": 2006,
+    "pos": [],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-93000.svg"
+   },
+   {
+    "slot": 19,
+    "page": 4,
+    "era": "The 2000s",
+    "person_id": "pl_2358fe80db",
+    "record_id": "al-ahly:p-mg-479de91c753d",
+    "name": "Essam El-Hadary",
+    "from": 1996,
+    "to": 2008,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-93001.svg"
+   },
+   {
+    "slot": 20,
+    "page": 4,
+    "era": "The 2000s",
+    "person_id": "pl_f3b455103e",
+    "record_id": "al-ahly:p-mg-b2d1b81af203",
+    "name": "Shady Mohamed",
+    "from": 1999,
+    "to": 2009,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-92114.svg"
+   },
+   {
+    "slot": 21,
+    "page": 4,
+    "era": "The 2000s",
+    "person_id": "pl_f2649e06ce",
+    "record_id": "al-ahly:p-mg-b3dd2306678d",
+    "name": "Amir Abdelhamid",
+    "from": 1999,
+    "to": 2010,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-92114.svg"
+   },
+   {
+    "slot": 22,
+    "page": 4,
+    "era": "The 2000s",
+    "person_id": "pl_3fa0a6c2aa",
+    "record_id": "al-ahly:p-mg-4a4c78368a16",
+    "name": "Ahmed El-Sayed",
+    "from": 2000,
+    "to": 2012,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-92110.svg"
+   },
+   {
+    "slot": 23,
+    "page": 4,
+    "era": "The 2000s",
+    "person_id": "pl_9620b826ab",
+    "record_id": "al-ahly:p-mg-8cfa2f66e638",
+    "name": "Sebastião Gilberto",
+    "from": 2002,
+    "to": 2010,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-92110.svg"
+   },
+   {
+    "slot": 24,
+    "page": 4,
+    "era": "The 2000s",
+    "person_id": "pl_698cf1977a",
+    "record_id": "al-ahly:p-mg-c724c7e7b88c",
+    "name": "Mohamed Fadl",
+    "from": 2001,
+    "to": 2012,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-92110.svg"
+   },
+   {
+    "slot": 25,
+    "page": 5,
+    "era": "2000s–2010s",
+    "person_id": "pl_6cfcb73b0b",
+    "record_id": "al-ahly:p-mg-310f5ede1ad4",
+    "name": "Wael Gomaa",
+    "from": 2001,
+    "to": 2014,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-402506.svg"
+   },
+   {
+    "slot": 26,
+    "page": 5,
+    "era": "2000s–2010s",
+    "person_id": "pl_b4c12151ef",
+    "record_id": "al-ahly:p-mg-d08639cfc7e3",
+    "name": "Mohamed Shawky",
+    "from": 2003,
+    "to": 2012,
+    "pos": [],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-402506.svg"
+   },
+   {
+    "slot": 27,
+    "page": 5,
+    "era": "2000s–2010s",
+    "person_id": "pl_eb01dd34a1",
+    "record_id": "al-ahly:p-mg-95369348a7a5",
+    "name": "Mohamed Barakat",
+    "from": 2004,
+    "to": 2013,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-53439.svg"
+   },
+   {
+    "slot": 28,
+    "page": 5,
+    "era": "2000s–2010s",
+    "person_id": "pl_d72b74fc7b",
+    "record_id": "al-ahly:p-mg-60ac6c7935e8",
+    "name": "Mohamed Aboutrika",
+    "from": 2004,
+    "to": 2014,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-51436.svg"
+   },
+   {
+    "slot": 29,
+    "page": 5,
+    "era": "2000s–2010s",
+    "person_id": "pl_c5f368a13b",
+    "record_id": "al-ahly:p-mg-78f2cc1c01d8",
+    "name": "Ahmad Shedid Qinawi",
+    "from": 2005,
+    "to": 2014,
+    "pos": [],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-51436.svg"
+   },
+   {
+    "slot": 30,
+    "page": 5,
+    "era": "2000s–2010s",
+    "person_id": "pl_f8b93ab202",
+    "record_id": "al-ahly:p-mg-035556f03af8",
+    "name": "Walid Soliman",
+    "from": 2011,
+    "to": 2011,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-48509.svg"
+   },
+   {
+    "slot": 31,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_90887b126f",
+    "record_id": "al-ahly:p-mg-c94b638310e4",
+    "name": "Ayman Ashraf",
+    "from": 2009,
+    "to": 2014,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-51436.svg"
+   },
+   {
+    "slot": 32,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_92321623ac",
+    "record_id": "al-ahly:p-mg-9eab041f038a",
+    "name": "Amr Gamal",
+    "from": 2013,
+    "to": 2013,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-48509.svg"
+   },
+   {
+    "slot": 33,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_cb679228f7",
+    "record_id": "al-ahly:p-mg-e1d338ca2cf3",
+    "name": "Ahmed Fathy",
+    "from": 2007,
+    "to": 2020,
+    "pos": [],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-46911.svg"
+   },
+   {
+    "slot": 34,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_a9c9e7a42e",
+    "record_id": "al-ahly:p-mg-a15a4b8daf94",
+    "name": "Moamen Zakaria",
+    "from": 2015,
+    "to": 2015,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-46913.svg"
+   },
+   {
+    "slot": 35,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_5cdb8bb65b",
+    "record_id": "al-ahly:p-mg-31c69a63ffa8",
+    "name": "Marwan Mohsen",
+    "from": 2016,
+    "to": 2016,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-28958.svg"
+   },
+   {
+    "slot": 36,
+    "page": 6,
+    "era": "2010s–2020s",
+    "person_id": "pl_938a6be4b0",
+    "record_id": "al-ahly:p-mg-fbfe4d08a75c",
+    "name": "Junior Ajayi",
+    "from": 2016,
+    "to": 2021,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/al-ahly/svg/ah-fka-26800.svg"
+   }
+  ],
+  "atalanta": [
+   {
+    "slot": 1,
+    "page": 1,
+    "era": "1960s–1980s",
+    "person_id": "pl_f6126618d3",
+    "record_id": "atalanta:p-u-2821c884a8a288a4",
+    "name": "Cesare Prandelli",
+    "from": 1987,
+    "to": 1989,
+    "pos": [],
+    "kit": "/club-kits/atalanta/svg/at-fka-72566.svg"
+   },
+   {
+    "slot": 2,
+    "page": 1,
+    "era": "1960s–1980s",
+    "person_id": "pl_399258deca",
+    "record_id": "atalanta:p-u-339ed219120be5a3",
+    "name": "Ottorino Piotti",
+    "from": 1987,
+    "to": 1989,
+    "pos": [],
+    "kit": "/club-kits/atalanta/svg/at-fka-72566.svg"
+   },
+   {
+    "slot": 3,
+    "page": 1,
+    "era": "1960s–1980s",
+    "person_id": "pl_8ea42b3c32",
+    "record_id": "atalanta:p-u-8b9c3ddbe9defff6",
+    "name": "Costanzo Barcella",
+    "from": 1987,
+    "to": 1989,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/atalanta/svg/at-fka-72566.svg"
+   },
+   {
+    "slot": 4,
+    "page": 1,
+    "era": "1960s–1980s",
+    "person_id": "pl_c42387bbe7",
+    "record_id": "atalanta:p-u-2b9d75cd827a6b3c",
+    "name": "Eligio Nicolini",
+    "from": 1987,
+    "to": 1990,
+    "pos": [],
+    "kit": "/club-kits/atalanta/svg/at-fka-72566.svg"
+   },
+   {
+    "slot": 5,
+    "page": 1,
+    "era": "1960s–1980s",
+    "person_id": "pl_0804fffec7",
+    "record_id": "atalanta:p-u-71a526b233c1b722",
+    "name": "Walter Bonacina",
+    "from": 1987,
+    "to": 1991,
+    "pos": [],
+    "kit": "/club-kits/atalanta/svg/at-kit-1989-90-home.svg"
+   },
+   {
+    "slot": 6,
+    "page": 1,
+    "era": "1960s–1980s",
+    "person_id": "pl_200cad6be7",
+    "record_id": "atalanta:p-u-ec9d4e7cc9b07bac",
+    "name": "Luigino Pasciullo",
+    "from": 1987,
+    "to": 1991,
+    "pos": [],
+    "kit": "/club-kits/atalanta/svg/at-kit-1989-90-home.svg"
+   },
+   {
+    "slot": 7,
+    "page": 2,
+    "era": "1980s–2010s",
+    "person_id": "pl_86b11f6967",
+    "record_id": "atalanta:p-u-10f6d23cba13ed8c",
+    "name": "Fabrizio Ferron",
+    "from": 1989,
+    "to": 1991,
+    "pos": [],
+    "kit": "/club-kits/atalanta/svg/at-fka-8108.svg"
+   },
+   {
+    "slot": 8,
+    "page": 2,
+    "era": "1980s–2010s",
+    "person_id": "pl_cf5e3f392d",
+    "record_id": "atalanta:p-u-113631396b4abcc6",
+    "name": "Sergio Porrini",
+    "from": 1989,
+    "to": 1991,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/atalanta/svg/at-fka-8108.svg"
+   },
+   {
+    "slot": 9,
+    "page": 2,
+    "era": "1980s–2010s",
+    "person_id": "pl_a929bb50a6",
+    "record_id": "atalanta:p-u-a7ab286fb31bffc9",
+    "name": "Renzo Contratto",
+    "from": 1989,
+    "to": 1991,
+    "pos": [],
+    "kit": "/club-kits/atalanta/svg/at-fka-8108.svg"
+   },
+   {
+    "slot": 10,
+    "page": 2,
+    "era": "1980s–2010s",
+    "person_id": "pl_5d103a1046",
+    "record_id": "atalanta:p-u-d3e8759ae19766b8",
+    "name": "Claudio Caniggia",
+    "from": 1989,
+    "to": 1991,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/atalanta/svg/at-fka-8108.svg"
+   },
+   {
+    "slot": 11,
+    "page": 2,
+    "era": "1980s–2010s",
+    "person_id": "pl_a88150a824",
+    "record_id": "atalanta:p-u-0d62c03fbb03428a",
+    "name": "Andreas Cornelius",
+    "from": 2017,
+    "to": 2018,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/atalanta/svg/at-fka-2841.svg"
+   },
+   {
+    "slot": 12,
+    "page": 2,
+    "era": "1980s–2010s",
+    "person_id": "pl_6559a4d2e1",
+    "record_id": "atalanta:p-u-5c3b259d32594de7",
+    "name": "Bryan Cristante",
+    "from": 2017,
+    "to": 2018,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/atalanta/svg/at-fka-2841.svg"
+   },
+   {
+    "slot": 13,
+    "page": 3,
+    "era": "2010s–2020s",
+    "person_id": "pl_8e09fc373b",
+    "record_id": "atalanta:p-u-ba185866b12c345b",
+    "name": "Alejandro Gómez",
+    "from": 2017,
+    "to": 2020,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/atalanta/svg/at-fka-2838.svg"
+   },
+   {
+    "slot": 14,
+    "page": 3,
+    "era": "2010s–2020s",
+    "person_id": "pl_60638ade07",
+    "record_id": "atalanta:p-u-9f452b2dfbe6a27c",
+    "name": "Josip Iličić",
+    "from": 2017,
+    "to": 2021,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/atalanta/svg/at-kit-2019-20-home.svg"
+   },
+   {
+    "slot": 15,
+    "page": 3,
+    "era": "2010s–2020s",
+    "person_id": "pl_fd360870a9",
+    "record_id": "atalanta:p-u-bafa57305d25d0c6",
+    "name": "Pierluigi Gollini",
+    "from": 2017,
+    "to": 2021,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/atalanta/svg/at-kit-2019-20-home.svg"
+   },
+   {
+    "slot": 16,
+    "page": 3,
+    "era": "2010s–2020s",
+    "person_id": "pl_599f999cd1",
+    "record_id": "atalanta:p-u-e1db671f5d5b4d0e",
+    "name": "Robin Gosens",
+    "from": 2017,
+    "to": 2021,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/atalanta/svg/at-kit-2019-20-home.svg"
+   },
+   {
+    "slot": 17,
+    "page": 3,
+    "era": "2010s–2020s",
+    "person_id": "pl_d79ab8015e",
+    "record_id": "atalanta:p-u-a5d8cc4cc513d576",
+    "name": "Duván Zapata",
+    "from": 2018,
+    "to": 2022,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/atalanta/svg/at-kit-2020-21-home.svg"
+   },
+   {
+    "slot": 18,
+    "page": 3,
+    "era": "2010s–2020s",
+    "person_id": "pl_9c7036291f",
+    "record_id": "atalanta:p-u-406a02add2929c16",
+    "name": "Hans Hateboer",
+    "from": 2017,
+    "to": 2024,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/atalanta/svg/at-kit-2020-21-home.svg"
+   },
+   {
+    "slot": 19,
+    "page": 4,
+    "era": "The 2020s",
+    "person_id": "pl_b0a7e2e840",
+    "record_id": "atalanta:p-u-1de11cfb6c56984f",
+    "name": "Rafael Tolói",
+    "from": 2017,
+    "to": 2025,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/atalanta/svg/at-kit-2020-21-home.svg"
+   },
+   {
+    "slot": 20,
+    "page": 4,
+    "era": "The 2020s",
+    "person_id": "pl_94271898f4",
+    "record_id": "atalanta:p-u-7b6e43061da1d544",
+    "name": "Luis Muriel",
+    "from": 2019,
+    "to": 2023,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/atalanta/svg/at-kit-2020-21-home.svg"
+   },
+   {
+    "slot": 21,
+    "page": 4,
+    "era": "The 2020s",
+    "person_id": "pl_5b249f7002",
+    "record_id": "atalanta:p-u-0397b9bd503737f8",
+    "name": "Berat Djimsiti",
+    "from": 2018,
+    "to": 2026,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/atalanta/svg/at-kit-2022-23-home.svg"
+   },
+   {
+    "slot": 22,
+    "page": 4,
+    "era": "The 2020s",
+    "person_id": "pl_768aedec77",
+    "record_id": "atalanta:p-u-409cc7d05a9938f8",
+    "name": "Mario Pašalić",
+    "from": 2018,
+    "to": 2026,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/atalanta/svg/at-kit-2022-23-home.svg"
+   },
+   {
+    "slot": 23,
+    "page": 4,
+    "era": "The 2020s",
+    "person_id": "pl_21a339eb83",
+    "record_id": "atalanta:p-u-95bca433162c5ca0",
+    "name": "Marco Sportiello",
+    "from": 2019,
+    "to": 2026,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/atalanta/svg/at-kit-2022-23-home.svg"
+   },
+   {
+    "slot": 24,
+    "page": 4,
+    "era": "The 2020s",
+    "person_id": "pl_55b462aea5",
+    "record_id": "atalanta:p-u-bbcfc68ff1835465",
+    "name": "Francesco Rossi",
+    "from": 2020,
+    "to": 2026,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/atalanta/svg/at-kit-2023-24-home.svg"
+   },
+   {
+    "slot": 25,
+    "page": 5,
+    "era": "The 2020s",
+    "person_id": "pl_497fa2daf3",
+    "record_id": "atalanta:p-u-2a5db0eeb968f72a",
+    "name": "Ademola Lookman",
+    "from": 2023,
+    "to": 2026,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/atalanta/svg/at-kit-2024-25-home.svg"
+   },
+   {
+    "slot": 26,
+    "page": 5,
+    "era": "The 2020s",
+    "person_id": "pl_7d9a4ef5c1",
+    "record_id": "atalanta:p-u-2dec1e8fc7ec0ad1",
+    "name": "Gianluca Scamacca",
+    "from": 2023,
+    "to": 2026,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/atalanta/svg/at-kit-2024-25-home.svg"
+   },
+   {
+    "slot": 27,
+    "page": 5,
+    "era": "The 2020s",
+    "person_id": "pl_9f40a49dba",
+    "record_id": "atalanta:p-u-49394daa4c2af88d",
+    "name": "Éderson",
+    "from": 2023,
+    "to": 2026,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/atalanta/svg/at-kit-2024-25-home.svg"
+   },
+   {
+    "slot": 28,
+    "page": 5,
+    "era": "The 2020s",
+    "person_id": "pl_e7b07cc591",
+    "record_id": "atalanta:p-u-e685eca539f20d68",
+    "name": "Marco Carnesecchi",
+    "from": 2023,
+    "to": 2026,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/atalanta/svg/at-kit-2024-25-home.svg"
+   },
+   {
+    "slot": 29,
+    "page": 5,
+    "era": "The 2020s",
+    "person_id": "pl_862b513b5f",
+    "record_id": "atalanta:p-u-eca6b28e94632e04",
+    "name": "Charles De Ketelaere",
+    "from": 2023,
+    "to": 2026,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/atalanta/svg/at-kit-2024-25-home.svg"
+   },
+   {
+    "slot": 30,
+    "page": 5,
+    "era": "The 2020s",
+    "person_id": "pl_fa07b8a646",
+    "record_id": "atalanta:p-u-efce933c099ad545",
+    "name": "Paolo Vismara",
+    "from": 2023,
+    "to": 2026,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/atalanta/svg/at-kit-2024-25-home.svg"
+   },
+   {
+    "slot": 31,
+    "page": 6,
+    "era": "The 2020s",
+    "person_id": "pl_dfaa8d24cf",
+    "record_id": "atalanta:p-u-2d9e1f93256b9835",
+    "name": "Lazar Vujadin Samardžić",
+    "from": 2024,
+    "to": 2026,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/atalanta/svg/at-kit-2025-26-home.svg"
+   },
+   {
+    "slot": 32,
+    "page": 6,
+    "era": "The 2020s",
+    "person_id": "pl_ce5394e530",
+    "record_id": "atalanta:p-u-74af650f20e0f671",
+    "name": "Federico Cassa",
+    "from": 2024,
+    "to": 2026,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/atalanta/svg/at-kit-2025-26-home.svg"
+   },
+   {
+    "slot": 33,
+    "page": 6,
+    "era": "The 2020s",
+    "person_id": "pl_6fdcf24708",
+    "record_id": "atalanta:p-u-858a8a45c4021f72",
+    "name": "Odilon Kossounou",
+    "from": 2024,
+    "to": 2026,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/atalanta/svg/at-kit-2025-26-home.svg"
+   },
+   {
+    "slot": 34,
+    "page": 6,
+    "era": "The 2020s",
+    "person_id": "pl_11fbeebe32",
+    "record_id": "atalanta:p-u-d06bd9a5ff4237d1",
+    "name": "Dominic Vavassori",
+    "from": 2024,
+    "to": 2026,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/atalanta/svg/at-kit-2025-26-home.svg"
+   },
+   {
+    "slot": 35,
+    "page": 6,
+    "era": "The 2020s",
+    "person_id": "pl_b65436d72f",
+    "record_id": "atalanta:p-u-d0f74704c9205dd7",
+    "name": "Ibrahim Sulemana",
+    "from": 2024,
+    "to": 2026,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/atalanta/svg/at-kit-2025-26-home.svg"
+   },
+   {
+    "slot": 36,
+    "page": 6,
+    "era": "The 2020s",
+    "person_id": "pl_441b98217b",
+    "record_id": "atalanta:p-u-dd5ff471677bd664",
+    "name": "Isak Hien",
+    "from": 2024,
+    "to": 2026,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/atalanta/svg/at-kit-2025-26-home.svg"
+   }
+  ],
+  "maccabi-haifa": [
+   {
+    "slot": 1,
+    "page": 1,
+    "era": "The 2000s",
+    "person_id": "pl_b4008496c2",
+    "record_id": "maccabi-haifa:p-u-4a054a38c6776424",
+    "name": "Rafi Cohen",
+    "from": 2000,
+    "to": 2002,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-fka-231950.svg"
+   },
+   {
+    "slot": 2,
+    "page": 1,
+    "era": "The 2000s",
+    "person_id": "pl_ac228d1bdf",
+    "record_id": "maccabi-haifa:p-u-9c83c1b698d3392d",
+    "name": "Avishay Zano",
+    "from": 2000,
+    "to": 2003,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-fka-231950.svg"
+   },
+   {
+    "slot": 3,
+    "page": 1,
+    "era": "The 2000s",
+    "person_id": "pl_e1c2de65b6",
+    "record_id": "maccabi-haifa:p-u-cac2530fb91179e2",
+    "name": "Ayegbeni Yakubu",
+    "from": 2001,
+    "to": 2002,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-fka-231950.svg"
+   },
+   {
+    "slot": 4,
+    "page": 1,
+    "era": "The 2000s",
+    "person_id": "pl_5280fa4e64",
+    "record_id": "maccabi-haifa:p-u-e1a8aabf3a55f6db",
+    "name": "Walid Badier",
+    "from": 2000,
+    "to": 2004,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-fka-316478.svg"
+   },
+   {
+    "slot": 5,
+    "page": 1,
+    "era": "The 2000s",
+    "person_id": "pl_7b5e7876ef",
+    "record_id": "maccabi-haifa:p-u-2847f07daa88c0ba",
+    "name": "Giovanni Rosso",
+    "from": 2001,
+    "to": 2004,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-fka-316478.svg"
+   },
+   {
+    "slot": 6,
+    "page": 1,
+    "era": "The 2000s",
+    "person_id": "pl_b55955ea95",
+    "record_id": "maccabi-haifa:p-u-354c6b3a6cfc41b6",
+    "name": "Adoram Keise",
+    "from": 2000,
+    "to": 2007,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-fka-152411.svg"
+   },
+   {
+    "slot": 7,
+    "page": 2,
+    "era": "The 2000s",
+    "person_id": "pl_408cd698f6",
+    "record_id": "maccabi-haifa:p-u-9ef0aad3fd3ffa9f",
+    "name": "Alon Harazi",
+    "from": 2000,
+    "to": 2009,
+    "pos": [],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-fka-24748.svg"
+   },
+   {
+    "slot": 8,
+    "page": 2,
+    "era": "The 2000s",
+    "person_id": "pl_9468024b72",
+    "record_id": "maccabi-haifa:p-u-8973ec5add998d0f",
+    "name": "Roberto Colautti",
+    "from": 2004,
+    "to": 2007,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-fka-316202.svg"
+   },
+   {
+    "slot": 9,
+    "page": 2,
+    "era": "The 2000s",
+    "person_id": "pl_1084734489",
+    "record_id": "maccabi-haifa:p-u-900b4cd20fa31802",
+    "name": "Nir Davidovitch",
+    "from": 2000,
+    "to": 2011,
+    "pos": [],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-fka-316202.svg"
+   },
+   {
+    "slot": 10,
+    "page": 2,
+    "era": "The 2000s",
+    "person_id": "pl_9435fbe497",
+    "record_id": "maccabi-haifa:p-u-f94f0584ac8e00f8",
+    "name": "Ravid Gazal",
+    "from": 2004,
+    "to": 2007,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-fka-316202.svg"
+   },
+   {
+    "slot": 11,
+    "page": 2,
+    "era": "The 2000s",
+    "person_id": "pl_fad6735db8",
+    "record_id": "maccabi-haifa:p-u-12c68ec905e984a0",
+    "name": "Tom Al-Madon",
+    "from": 2002,
+    "to": 2010,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-fka-24746.svg"
+   },
+   {
+    "slot": 12,
+    "page": 2,
+    "era": "The 2000s",
+    "person_id": "pl_e19a7efc5a",
+    "record_id": "maccabi-haifa:p-u-b9e3924824fdf221",
+    "name": "Yaniv Katan",
+    "from": 2000,
+    "to": 2013,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-fka-24746.svg"
+   },
+   {
+    "slot": 13,
+    "page": 3,
+    "era": "2000s–2010s",
+    "person_id": "pl_296c685a5d",
+    "record_id": "maccabi-haifa:p-u-64da06f155ca34d3",
+    "name": "Shlomi Arbeitman",
+    "from": 2005,
+    "to": 2009,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-fka-24744.svg"
+   },
+   {
+    "slot": 14,
+    "page": 3,
+    "era": "2000s–2010s",
+    "person_id": "pl_091ad58deb",
+    "record_id": "maccabi-haifa:p-u-934a638005d1fd10",
+    "name": "Haim Magralashvili",
+    "from": 2004,
+    "to": 2011,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-fka-24744.svg"
+   },
+   {
+    "slot": 15,
+    "page": 3,
+    "era": "2000s–2010s",
+    "person_id": "pl_cac8ea585f",
+    "record_id": "maccabi-haifa:p-u-b86077636f385492",
+    "name": "Gustavo Boccoli",
+    "from": 2004,
+    "to": 2013,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-fka-24741.svg"
+   },
+   {
+    "slot": 16,
+    "page": 3,
+    "era": "2000s–2010s",
+    "person_id": "pl_e51c3df63e",
+    "record_id": "maccabi-haifa:p-u-aa0760c879d77296",
+    "name": "Dekel Keinan",
+    "from": 2003,
+    "to": 2016,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-kit-2009-10-home.svg"
+   },
+   {
+    "slot": 17,
+    "page": 3,
+    "era": "2000s–2010s",
+    "person_id": "pl_aa4690a359",
+    "record_id": "maccabi-haifa:p-u-b5d05b176528d53f",
+    "name": "Amir Edri",
+    "from": 2007,
+    "to": 2013,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-fka-20144.svg"
+   },
+   {
+    "slot": 18,
+    "page": 3,
+    "era": "2000s–2010s",
+    "person_id": "pl_c7bc70fb10",
+    "record_id": "maccabi-haifa:p-u-21b5ee0749d65166",
+    "name": "Eyal Golasa",
+    "from": 2009,
+    "to": 2013,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-fka-20148.svg"
+   },
+   {
+    "slot": 19,
+    "page": 4,
+    "era": "The 2010s",
+    "person_id": "pl_ab4c3c11ae",
+    "record_id": "maccabi-haifa:p-u-2fb9ef493a5810af",
+    "name": "Bojan Šaranov",
+    "from": 2011,
+    "to": 2013,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-fka-20150.svg"
+   },
+   {
+    "slot": 20,
+    "page": 4,
+    "era": "The 2010s",
+    "person_id": "pl_146816524f",
+    "record_id": "maccabi-haifa:p-u-f6da20767fc467b7",
+    "name": "Lior Refaelov",
+    "from": 2006,
+    "to": 2024,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-kit-2015-16-home.svg"
+   },
+   {
+    "slot": 21,
+    "page": 4,
+    "era": "The 2010s",
+    "person_id": "pl_57635ef453",
+    "record_id": "maccabi-haifa:p-u-5cec35d90b3489b3",
+    "name": "Ayad Habashi",
+    "from": 2013,
+    "to": 2020,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-fka-20164.svg"
+   },
+   {
+    "slot": 22,
+    "page": 4,
+    "era": "The 2010s",
+    "person_id": "pl_2a6957880c",
+    "record_id": "maccabi-haifa:p-u-2a015a416b12e1b9",
+    "name": "Omri Glazer",
+    "from": 2016,
+    "to": 2019,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-fka-20166.svg"
+   },
+   {
+    "slot": 23,
+    "page": 4,
+    "era": "The 2010s",
+    "person_id": "pl_cc5769488d",
+    "record_id": "maccabi-haifa:p-u-6fffe7b05dc17220",
+    "name": "Nikita Rukavytsya",
+    "from": 2016,
+    "to": 2022,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-kit-2019-20-home.svg"
+   },
+   {
+    "slot": 24,
+    "page": 4,
+    "era": "The 2010s",
+    "person_id": "pl_4b9d29ceb8",
+    "record_id": "maccabi-haifa:p-u-ae2c7d44b7da37ee",
+    "name": "Neta Lavi",
+    "from": 2016,
+    "to": 2022,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-kit-2019-20-home.svg"
+   },
+   {
+    "slot": 25,
+    "page": 5,
+    "era": "2010s–2020s",
+    "person_id": "pl_16a6a34c08",
+    "record_id": "maccabi-haifa:p-u-0ef44f2dc5979f9a",
+    "name": "Yuval Ashkenazi",
+    "from": 2019,
+    "to": 2021,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-fka-16810.svg"
+   },
+   {
+    "slot": 26,
+    "page": 5,
+    "era": "2010s–2020s",
+    "person_id": "pl_ba63c1c1de",
+    "record_id": "maccabi-haifa:p-u-803131be530a4dce",
+    "name": "Joshua Cohen",
+    "from": 2019,
+    "to": 2022,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-fka-16810.svg"
+   },
+   {
+    "slot": 27,
+    "page": 5,
+    "era": "2010s–2020s",
+    "person_id": "pl_9cf67de908",
+    "record_id": "maccabi-haifa:p-u-e414af02c5b5d937",
+    "name": "Tjaronn Chery",
+    "from": 2020,
+    "to": 2023,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-kit-2021-22-home.svg"
+   },
+   {
+    "slot": 28,
+    "page": 5,
+    "era": "2010s–2020s",
+    "person_id": "pl_7a8904f18a",
+    "record_id": "maccabi-haifa:p-u-8306ddfd5773cb01",
+    "name": "Dolev Haziza",
+    "from": 2019,
+    "to": 2025,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-kit-2022-23-home.svg"
+   },
+   {
+    "slot": 29,
+    "page": 5,
+    "era": "2010s–2020s",
+    "person_id": "pl_76a5a2f17a",
+    "record_id": "maccabi-haifa:p-u-d605d026d27276b3",
+    "name": "Din David",
+    "from": 2021,
+    "to": 2024,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-kit-2022-23-home.svg"
+   },
+   {
+    "slot": 30,
+    "page": 5,
+    "era": "2010s–2020s",
+    "person_id": "pl_4344d57676",
+    "record_id": "maccabi-haifa:p-u-df7851d4145b5239",
+    "name": "Shareef Keouf",
+    "from": 2020,
+    "to": 2025,
+    "pos": [
+     "GK"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-kit-2022-23-home.svg"
+   },
+   {
+    "slot": 31,
+    "page": 6,
+    "era": "The 2020s",
+    "person_id": "pl_6d138e0465",
+    "record_id": "maccabi-haifa:p-u-5bdc47ccd085e2f0",
+    "name": "Sean Goldberg",
+    "from": 2021,
+    "to": 2025,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-kit-2023-24-home.svg"
+   },
+   {
+    "slot": 32,
+    "page": 6,
+    "era": "The 2020s",
+    "person_id": "pl_322fef4dba",
+    "record_id": "maccabi-haifa:p-u-b8b13cc4cdff1be0",
+    "name": "Frantzdy Pierrot",
+    "from": 2022,
+    "to": 2024,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-kit-2023-24-home.svg"
+   },
+   {
+    "slot": 33,
+    "page": 6,
+    "era": "The 2020s",
+    "person_id": "pl_21e4eaef8f",
+    "record_id": "maccabi-haifa:p-u-e89a4955f8d7e1f0",
+    "name": "Ali Mohamed",
+    "from": 2021,
+    "to": 2025,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-kit-2023-24-home.svg"
+   },
+   {
+    "slot": 34,
+    "page": 6,
+    "era": "The 2020s",
+    "person_id": "pl_c58e3bfaf0",
+    "record_id": "maccabi-haifa:p-u-0d80bd13e42dc117",
+    "name": "Suf Podgoreanu",
+    "from": 2022,
+    "to": 2025,
+    "pos": [
+     "FW"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-kit-2023-24-home.svg"
+   },
+   {
+    "slot": 35,
+    "page": 6,
+    "era": "The 2020s",
+    "person_id": "pl_12dea11ecd",
+    "record_id": "maccabi-haifa:p-u-6f3c74ed1827e7ac",
+    "name": "Abdoulaye Seck",
+    "from": 2022,
+    "to": 2025,
+    "pos": [
+     "DF"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-kit-2023-24-home.svg"
+   },
+   {
+    "slot": 36,
+    "page": 6,
+    "era": "The 2020s",
+    "person_id": "pl_bf54e39730",
+    "record_id": "maccabi-haifa:p-u-69240b3f4a3cb6af",
+    "name": "Diaa Sabia",
+    "from": 2023,
+    "to": 2025,
+    "pos": [
+     "MF"
+    ],
+    "kit": "/club-kits/maccabi-haifa/svg/mh-fka-271775.svg"
+   }
+  ]
+ }
+}

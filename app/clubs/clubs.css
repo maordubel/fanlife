@@ -1,0 +1,88 @@
+/* THE CLUBS (18.11.2026) — the weekly's sticker page on its own spread. Prefix ckp-. Each club wears its own livery
+   (--club-primary / --club-on-primary); everything else is the magazine's ink. 3px ink lines, offset shadows, radius 0.
+   Phone first: two stickers a row; ≥48rem three; ≥64rem four and the masthead across the spread. No sideways scroll. */
+.ckp{max-inline-size:76rem;margin-inline:auto;padding:16px 14px calc(96px + env(safe-area-inset-bottom));display:grid;gap:22px;color:var(--mag-ink)}
+.ckp-mast{position:relative;overflow:hidden;display:grid;gap:8px;padding:22px 18px 26px;border:3px solid var(--mag-ink);box-shadow:5px 5px 0 var(--mag-ink)}
+.ckp-speed{position:absolute;inset:0;opacity:.35;pointer-events:none}
+.ckp-title{position:relative;margin:0;font-size:clamp(3rem,15vw,5.6rem);line-height:.9;color:var(--mag-white);-webkit-text-stroke:3px var(--mag-ink);paint-order:stroke;text-shadow:4px 4px 0 var(--mag-ink);transform:rotate(-3deg);transform-origin:left}
+.ckp-mast .wk-banner{position:relative;justify-self:start}
+.ckp-note{position:relative;margin:0;max-inline-size:36rem;font-size:.95rem;line-height:1.45}
+.ckp-mast .ckp-note{color:var(--mag-white)}
+.ckp-stamp{position:absolute;inset-block-start:16px;inset-inline-end:14px;transform:rotate(8deg)}
+
+.ckp-mine{display:grid;gap:8px}
+.ckp-mine .wk-k{margin:0}
+
+.ckp-tools{display:grid;gap:10px;padding-block:10px;background:var(--mag-paper)}
+.ckp-search{display:flex;align-items:center;gap:8px;padding-inline:12px;border:3px solid var(--mag-ink);background:var(--mag-white);box-shadow:3px 3px 0 var(--mag-ink)}
+.ckp-search svg{flex:none;inline-size:20px;block-size:20px;fill:none;stroke:var(--mag-ink);stroke-width:2.5;stroke-linecap:round}
+.ckp-search input{flex:1;min-inline-size:0;border:0;background:transparent;font:inherit;font-size:16px;color:var(--mag-ink);outline:none}
+.ckp-search:focus-within{outline:3px solid var(--mag-cyan);outline-offset:2px}
+.ckp-seg{display:grid;grid-template-columns:1fr 1fr;border:3px solid var(--mag-ink)}
+.ckp-seg button{border:0;background:var(--mag-paper);color:var(--mag-ink);font-family:var(--mag-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.08em;cursor:pointer}
+.ckp-seg button+button{border-inline-start:3px solid var(--mag-ink)}
+.ckp-seg button[aria-pressed='true']{background:var(--mag-ink);color:var(--mag-paper)}
+.ckp-chips{display:flex;flex-wrap:wrap;gap:6px}
+.ckp-chip{padding-inline:12px;border:2px solid var(--mag-ink);background:var(--mag-card);color:var(--mag-ink);font:inherit;font-weight:700;font-size:.85rem;cursor:pointer}
+.ckp-chip[aria-pressed='true']{background:var(--mag-green);color:var(--mag-white);box-shadow:2px 2px 0 var(--mag-ink)}
+
+.ckp-group{display:grid;gap:12px}
+.ckp-country{display:flex;align-items:baseline;gap:8px;margin:0;font-family:var(--mag-display);text-transform:uppercase;font-size:1.6rem;line-height:1;border-block-end:4px double var(--mag-ink);padding-block-end:6px}
+.ckp-country small{font-family:var(--mag-mono);font-size:.85rem}
+.ckp-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 14px}
+.ckp-grid-one{grid-template-columns:minmax(0,1fr)}
+.ckp-none{margin:0;padding:24px;border:3px dashed var(--mag-ink);text-align:center;font-weight:700}
+
+/* the sticker */
+.ckp-stk{--r:0deg;position:relative;display:flex;flex-direction:column;min-inline-size:0;background:var(--mag-card);color:var(--mag-ink);text-decoration:none;
+ border:3px solid var(--mag-ink);box-shadow:4px 4px 0 var(--mag-ink);transform:rotate(var(--r));transition:translate .08s,box-shadow .08s}
+.ckp-stk:hover{translate:-2px -2px;box-shadow:6px 6px 0 var(--mag-ink)}
+.ckp-stk:active{translate:2px 2px;box-shadow:2px 2px 0 var(--mag-ink)}
+.ckp-stk:focus-visible{outline:3px solid var(--mag-cyan);outline-offset:3px}
+.ckp-band{position:relative;display:grid;place-items:center;aspect-ratio:4/3;background:var(--club-primary);border-block-end:3px solid var(--mag-ink);
+ background-image:radial-gradient(color-mix(in srgb,var(--mag-ink) 12%,transparent) 1.4px,transparent 1.7px);background-size:7px 7px}
+.ckp-band[data-livery='stripes']{background-image:repeating-linear-gradient(90deg,var(--club-primary) 0 14%,var(--club-on-primary) 14% 28%)}
+.ckp-band[data-livery='hoops']{background-image:repeating-linear-gradient(0deg,var(--club-primary) 0 16%,var(--club-on-primary) 16% 32%)}
+.ckp-band[data-livery='sash']{background-image:linear-gradient(135deg,var(--club-primary) 38%,var(--club-on-primary) 38% 56%,var(--club-primary) 56%)}
+.ckp-no{position:absolute;inset-block-start:6px;inset-inline-start:6px;padding:1px 6px;background:var(--mag-ink);color:var(--mag-paper);font-family:var(--mag-goal);font-size:.8rem}
+.ckp-disc{display:grid;place-items:center;inline-size:58%;aspect-ratio:1;border-radius:50%;background:var(--mag-white);border:3px solid var(--mag-ink);box-shadow:3px 3px 0 color-mix(in srgb,var(--mag-ink) 35%,transparent)}
+.ckp-disc img{inline-size:76%;block-size:76%;object-fit:contain}
+.ckp-disc b{font-family:var(--mag-display);font-size:1.6rem}
+.ckp-nm{display:grid;gap:2px;padding:10px 10px 4px;min-inline-size:0}
+.ckp-nm b{font-family:var(--mag-display);text-transform:uppercase;font-size:1.05rem;line-height:1.05;overflow-wrap:anywhere}
+.ckp-nm small{font-size:.78rem;color:var(--mag-muted)}
+.ckp-nm em{font-style:normal;font-family:var(--mag-condensed);font-weight:700;font-size:.78rem;color:var(--club-type,var(--mag-ink))}
+.ckp-go{margin-block-start:auto;padding:4px 10px 10px;font-family:var(--mag-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.78rem}
+.ckp-peel{position:absolute;inset-block-end:-3px;inset-inline-end:-3px;inline-size:22px;block-size:22px}
+.ckp-peel .a{fill:var(--mag-paper)}.ckp-peel .b{fill:var(--mag-card);stroke:var(--mag-ink);stroke-width:1.5}
+.ckp-stk[data-mine]{flex-direction:row;transform:none}
+.ckp-stk[data-mine] .ckp-band{inline-size:38%;aspect-ratio:auto;border-block-end:0;border-inline-end:3px solid var(--mag-ink)}
+.ckp-stk[data-mine] .ckp-nm{align-content:center;padding:12px}
+.ckp-stk[data-mine] .ckp-nm b{font-size:1.4rem}
+.ckp-stk[data-mine] .ckp-go{align-self:center;margin:0;padding-inline-end:28px}
+
+/* the workshop */
+.ckp-soon{display:grid;gap:12px;padding:16px;border:3px dashed var(--mag-ink)}
+.ckp-soon-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(10rem,1fr));gap:8px}
+.ckp-soon-list li{display:flex;align-items:center;gap:8px;padding:6px 8px;background:var(--mag-card);border-inline-start:6px solid var(--club-primary);opacity:.85}
+.ckp-soon-list b{display:block;font-size:.85rem}.ckp-soon-list small{font-size:.72rem;color:var(--mag-muted)}
+.ckp-soon-disc{flex:none;display:grid;place-items:center;inline-size:36px;block-size:36px;border-radius:50%;background:var(--mag-white);font-family:var(--mag-display);font-size:.8rem;filter:grayscale(.6)}
+.ckp-soon-disc img{inline-size:30px;block-size:30px;object-fit:contain}
+.ckp-vote{justify-self:start}
+
+@media (min-width:48rem){.ckp-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.ckp-tools{grid-template-columns:minmax(0,1fr) 16rem;align-items:stretch}.ckp-chips{grid-column:1/-1}}
+@media (min-width:64rem){
+ .ckp{padding-inline:28px;gap:28px}
+ .ckp-mast{grid-template-columns:minmax(0,1fr) minmax(0,26rem);align-items:end;padding:30px 32px}
+ .ckp-mast .wk-banner,.ckp-title{grid-column:1}
+ .ckp-mast .ckp-note{grid-column:2;grid-row:2}
+ .ckp-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:26px 22px}
+ .ckp-grid-one{grid-template-columns:minmax(0,34rem)}
+}
+@media (prefers-reduced-motion:reduce){.ckp-stk{transition:none}}
+/* the house's form styles reach label and input; the chooser's own controls stay as drawn */
+.ckp .ckp-search{display:flex;flex-direction:row;align-items:center;min-block-size:52px;margin:0}
+.ckp .ckp-search input{min-block-size:46px;padding:0;margin:0;box-shadow:none;border:0;background:transparent;inline-size:auto}
+.ckp .ckp-seg{align-self:start;min-block-size:52px}
+.ckp-mast .wk-banner{background:var(--mag-paper);color:var(--mag-ink);padding:2px 8px}
+@media (min-width:64rem){.ckp-tools{position:sticky;inset-block-start:0;z-index:5}}

@@ -57,6 +57,7 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
  const now=new Date(),preview=evaluationMode()
  // one pass for both readings, and the LIFE doors alongside it (performance audit, 11.10.2026)
  const [{model,strict},life,fl,uv,lifeDoor,shopOpen]=await Promise.all([hubModels(open,locale),lifeEntries(open,preview),door('fanLeague'),door('universe'),lifeOpen(),shopIsOpen()])
+ const al=await door('album')
  const isOpen=(id:string)=>isOpenClub(strict.find(x=>x.id===id))
  const live=open.filter(c=>isOpen(c.id)),shop=open.filter(c=>!isOpen(c.id))
  const seed=seedVotes(shop.map(c=>c.id)),order2=rank(seed,shop.map(c=>c.id))
@@ -74,6 +75,7 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
  const inside=[
   {href:'#clubs',title:copy.clubs,sub:copy.wkhInClubs.replace('{n}',String(live.length)),go:'↓'},
   ...(fl.open?[{href:'#manager',title:copy.wkhLmTitle,sub:copy.wkhLmK,go:'↓'}]:[]),
+  ...(al.open?[{href:'/album',title:copy.wkAlbum,sub:copy.wkAlbumSub,go:'→'}]:[]),
   {href:'#life',title:copy.navLife,sub:`${copy.lifeEntryTitle} · ${copy.lifeGameSub}`,go:'↓'},
   ...(shopOpen?[{href:'/shop',title:shopCopy.navShop,sub:shopCopy.rowShopSub,go:'→'}]:[]),
   {href:'#market',title:copy.navMarket,sub:copy.marketTitle,go:'↓'},
@@ -101,11 +103,16 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
   <div className="wkp-strip wkh-pins"><PinsRow locale={locale} where="hub"/></div>
 
   {/* THE MANAGER: LEGENDS MANAGER leads the page, above the gates (owner, 14.10.2026). */}
-  {fl.open&&<section className="wkh-lm" id="manager" aria-label={copy.wkhLmTitle}>
-   <Link className="wkh-sp wkh-sp-lm wk-navyplate" href="/all-football/legends" data-preview={fl.preview||undefined}>
+  {(fl.open||al.open)&&<section className="wkh-lm" id="manager" aria-label={fl.open?copy.wkhLmTitle:copy.wkAlbum}>
+   {fl.open&&<Link className="wkh-sp wkh-sp-lm wk-navyplate" href="/all-football/legends" data-preview={fl.preview||undefined}>
     <Emblem size={76} label="" className="wkh-sp-emblem"/>
     <span className="wkh-sp-t"><span className="wk-k">{copy.wkhLmK}</span><b>{copy.wkhLmTitle}</b><small>{copy.wkhLmSub}{fl.preview?` · ${copy.wkhOwnerPreview}`:''}</small></span><Arrow/>
-   </Link>
+   </Link>}
+   {/* THE ALBUM (18.11.2026): the packet waits on the hub, behind its switch */}
+   {al.open&&<Link className="wkh-sp wkh-sp-lm wkh-sp-album wk-greenplate" href="/album" data-preview={al.preview||undefined}>
+    <span className="wkh-sp-emblem wkh-album-pack" aria-hidden="true"/>
+    <span className="wkh-sp-t"><span className="wk-k">{copy.wkhAlbumK}</span><b>{copy.wkAlbum}</b><small>{copy.wkhAlbumSub}{al.preview?` · ${copy.wkhOwnerPreview}`:''}</small></span><Arrow/>
+   </Link>}
   </section>}
 
   {/* THE COVER: orange plate, speed lines, the kicker, the two teasers that open a club chooser. */}

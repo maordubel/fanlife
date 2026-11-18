@@ -1,0 +1,18 @@
+{
+ "note": "Our clubs as Wikidata items (resolved through their English Wikipedia titles, 18.11.2026). Read by the People Registry's Wikidata pass and THE ALBUM's photo pass.",
+ "clubs": {
+  "hapoel-tel-aviv": "Q206585",
+  "zrinjski-mostar": "Q399282",
+  "hapoel-petah-tikva": "Q1130537",
+  "panathinaikos": "Q4122219",
+  "aek-athens": "Q201584",
+  "celtic": "Q19593",
+  "st-pauli": "Q6463",
+  "olympiacos": "Q19628",
+  "raja-casablanca": "Q1051514",
+  "wydad-casablanca": "Q1139095",
+  "al-ahly": "Q223566",
+  "atalanta": "Q1886",
+  "maccabi-haifa": "Q2129100"
+ }
+}

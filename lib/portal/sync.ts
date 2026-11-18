@@ -121,6 +121,70 @@ export async function signInWithGoogle(next = '/tik'): Promise<void> {
   }
 }
 
+export type SignInProvider = 'google' | 'facebook'
+
+/** Google or Facebook, back through `/auth/callback` (the same door, the same allow-listed bare callback URL). */
+export async function signInWith(provider: SignInProvider, next = '/me'): Promise<void> {
+  if (provider === 'google') return signInWithGoogle(next)
+  if (!portalConfigured() || typeof window === 'undefined') return
+  try {
+    document.cookie = `fl_next=${encodeURIComponent(next)}; path=/; max-age=600; samesite=lax`
+    await createClient().auth.signInWithOAuth({ provider, options: { redirectTo: `${window.location.origin}/auth/callback` } })
+  } catch {
+    // nothing thrown at the personal area
+  }
+}
+
+/**
+ * Which providers the shared project has switched on right now (Supabase's public settings). A button appears only
+ * for a door that opens — Facebook shows itself the day the provider is enabled, with no deploy.
+ */
+export async function enabledProviders(): Promise<{ google: boolean; facebook: boolean; email: boolean }> {
+  const off = { google: true, facebook: false, email: false }
+  if (!portalConfigured()) return off
+  try {
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL!, key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    const r = await fetch(`${url}/auth/v1/settings`, { headers: { apikey: key } })
+    if (!r.ok) return off
+    const s = (await r.json()) as { external?: Record<string, boolean> }
+    return { google: s.external?.google !== false, facebook: s.external?.facebook === true, email: s.external?.email === true }
+  } catch {
+    return off
+  }
+}
+
+/**
+ * E-mail without a password: Supabase sends a one-time code (and a link). The code is typed on the same screen, so it
+ * works even when the mail is opened on another device. Answers whether the mail went out.
+ */
+export async function sendEmailCode(email: string, next = '/me'): Promise<'sent' | 'invalid' | 'limited' | 'failed'> {
+  if (!portalConfigured() || typeof window === 'undefined') return 'failed'
+  const address = email.trim().toLowerCase()
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(address)) return 'invalid'
+  try {
+    document.cookie = `fl_next=${encodeURIComponent(next)}; path=/; max-age=3600; samesite=lax`
+    const { error } = await createClient().auth.signInWithOtp({
+      email: address,
+      options: { shouldCreateUser: true, emailRedirectTo: `${window.location.origin}/auth/callback` },
+    })
+    if (!error) return 'sent'
+    return error.status === 429 || /rate/i.test(error.message) ? 'limited' : 'failed'
+  } catch {
+    return 'failed'
+  }
+}
+
+/** The code from the mail. True when the person is now signed in on this device. */
+export async function verifyEmailCode(email: string, code: string): Promise<boolean> {
+  if (!portalConfigured()) return false
+  try {
+    const { error } = await createClient().auth.verifyOtp({ email: email.trim().toLowerCase(), token: code.replace(/\s+/g, ''), type: 'email' })
+    return !error
+  } catch {
+    return false
+  }
+}
+
 /**
  * Ends THIS browser's session only (`scope: 'local'`: the global default would also sign the person out of their
  * phone). With SSO the session cookie is shared on .dubelteam.com, so this browser leaves every app at once, and no other device. Answers whether it worked, so the screen never says "signed out"

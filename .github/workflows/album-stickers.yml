@@ -1,0 +1,36 @@
+name: album-stickers
+# THE ALBUM (18.11.2026): press the stickers. For each sticker of the curated edition, the person's Wikidata item → his
+# Commons photograph (free licence only) → cut, graded and set in the album frame → public/album/stickers/<club>/<slot>.webp,
+# with source, author and licence in content/generated/album-stickers.json. Opens ONE pull request. A man with no free
+# photo keeps the silhouette until one is found; the weekly run looks again.
+on:
+  workflow_dispatch:
+    inputs:
+      club: {description: 'One club id (empty = every wing)', default: ''}
+      redo: {description: 'Redraw stickers that already have a photo (true/false)', default: 'false'}
+  schedule:
+    - cron: '17 4 * * 1'
+permissions:
+  contents: write
+  pull-requests: write
+concurrency: {group: album-stickers, cancel-in-progress: false}
+jobs:
+  press:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install rembg onnxruntime pillow playwright "opencv-python-headless<5" numpy && python -m playwright install --with-deps chromium
+      - name: Press
+        run: python scripts/album/stickers.py ${{ inputs.club && format('--club {0}', inputs.club) || '' }} ${{ inputs.redo == 'true' && '--redo' || '' }}
+      - uses: peter-evans/create-pull-request@v6
+        with:
+          branch: album/stickers-auto
+          title: 'album: pressed stickers'
+          commit-message: 'album: pressed stickers (Commons photographs, free licences)'
+          add-paths: |
+            public/album/stickers/**
+            content/generated/album-stickers.json
+          body: 'Stickers pressed from Wikimedia Commons photographs under free licences (source, author and licence per sticker in content/generated/album-stickers.json). A man with no free photo wears his club''s measured shirt in a drawn figure until one is found.'

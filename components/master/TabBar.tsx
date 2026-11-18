@@ -19,7 +19,7 @@ export function TabBar({locale='en',shop=false}:{locale?:UiLocale;/** the shop s
  const at=(p:string)=>p==='/'?path==='/':path===p||path.startsWith(p+'/')
  type Tab={href:string;label:string;icon:JSX.Element;on:boolean;out?:boolean}
  const home:Tab={href:'/',label:copy.home,icon:<svg {...ICON}><path d="M3 11l9-7 9 7v9H3z"/></svg>,on:at('/')}
- const clubs:Tab={href:'/#clubs',label:copy.tabClubs,icon:<svg {...ICON}><circle cx="12" cy="12" r="9"/><path d="M12 8l4 3-1.5 5h-5L8 11z"/></svg>,on:path.startsWith('/clubs')&&!path.endsWith('/life')}
+ const clubs:Tab={href:'/clubs',label:copy.tabClubs,icon:<svg {...ICON}><circle cx="12" cy="12" r="9"/><path d="M12 8l4 3-1.5 5h-5L8 11z"/></svg>,on:path==='/clubs'||(path.startsWith('/clubs/')&&!path.endsWith('/life'))}
  const shopT:Tab={href:'/shop',label:copy.tabShop,icon:<svg {...ICON}><path d="M5 8h14l-1 12H6zM9 8V6a3 3 0 0 1 6 0v2"/></svg>,on:at('/shop')}
  const market:Tab={href:'/market',label:copy.tabMarket,icon:<svg {...ICON}><path d="M8 3l-5 4 3 4 2-1v11h8V10l2 1 3-4-5-4c-.5 1.5-2 2.5-4 2.5S8.5 4.5 8 3z"/></svg>,on:at('/market')}
  const watch:Tab={href:`${CHANNEL.url}?utm_source=fanlife&utm_medium=tabbar`,label:copy.tabWatch,icon:<svg {...ICON}><rect x="2.5" y="5" width="19" height="14" rx="1"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg>,on:false,out:true}

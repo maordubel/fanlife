@@ -63,7 +63,7 @@ export default function NotFound() {
         </figure>
         <div className="wkh-lost-ctas">
           <Link className="wk-btn red lg" href="/">{en.backHome} <svg className="wkh-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></Link>
-          <Link className="wk-btn paper" href="/#clubs"><Icon name="clubs" />{en.clubs}</Link>
+          <Link className="wk-btn paper" href="/clubs"><Icon name="clubs" />{en.clubs}</Link>
         </div>
       </main>
     </Shell>

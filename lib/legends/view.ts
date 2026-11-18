@@ -17,13 +17,14 @@ import {matchReport} from './report'
 import {leagueRatings,seasonForm} from './form'
 import {roleOf} from './roles'
 import {inboxOf} from './inbox'
+import {fmSheet} from './fm'
 import type {Card,Career,Fixture,MatchEventRow,Tactics} from './types'
 
 /**
  * What the browser may see of a career. Stars and attributes are the game's own values and shown; nothing else about a man's
  * hidden rating leaves the server (the catalog never stored it). Every line of the match log is written here with names.
  */
-export type CardView={id:string;/** his one profile across every club (People Registry, 18.11.2026) */person?:string;name:string;pos:QuotaPos;/** his exact position where a source states it (17.11.2026) */role?:import('./roles').Role;alt?:QuotaPos[];price:number;stars:number;attrs:Record<string,number>;from:number|null;to:number|null;decades:number[]}
+export type CardView={id:string;/** his one profile across every club (People Registry, 18.11.2026) */person?:string;name:string;pos:QuotaPos;/** his exact position where a source states it (17.11.2026) */role?:import('./roles').Role;alt?:QuotaPos[];price:number;stars:number;/** HIDDEN outside the manager's own squad (18.11.2026): empty for draft offers, the market, the window and rivals */attrs:Record<string,number>;/** his manager ratings — only on men in the manager's own squad */fm?:import('./fm').FmSheet;from:number|null;to:number|null;decades:number[]}
 export type SquadView=CardView&{quota:QuotaPos;paid:number;apps:number;appsTotal:number;goals:number;yellows:number;suspension:number;injury:number;injuryKind:string|null;fit:boolean;sale:{net:number;quoted:number;fees:number}|null;/** on the manager's transfer list */listed:boolean;/** this season's match ratings (17.11.2026): average, the last five, player-of-the-match awards */form?:import('./form').ManForm}
 export type LogLine={minute:number;side:0|1|null;kind:MatchEventRow['kind'];text:string;mine:boolean}
 export type ResultView={id:string;round:number;home:string;away:string;homeClub:string;awayClub:string;goals:[number,number];pens:[number,number]|null;log:LogLine[];mine:boolean;/** U02: the story of the manager's own match, from its stored log */report?:import('./report').MatchReport|null;/** the highlights reel — attached on the server (`kits.ts`) to the manager's last result */reel?:import('@/lib/highlights/types').Reel}
@@ -60,7 +61,10 @@ export type CareerView={
  talks:{pre:TalkView|null;post:TalkView|null;last:null|{fixture:string;when:'pre'|'post';tone:Tone;toneLabel:string;line:string;reaction:string};mood:{word:MoodWord;label:string;line:string};men:{id:string;name:string;mood:ManMood}[]}
 }
 export type TalkView={fixture:string;when:'pre'|'post';situation:string;kicker:string;prompt:string;opponent:string;answers:{tone:Tone;toneLabel:string;line:string}[]}
-const cv=(c:Card):CardView=>{const r=roleOf(c.id),person=personOfRecord(c.id);return {id:c.id,...(person?{person}:{}),name:c.name,pos:c.pos,...(r?{role:r}:{}),...(c.alt?{alt:c.alt}:{}),price:c.price,stars:c.stars,attrs:c.attrs,from:c.from,to:c.to,decades:c.decades}}
+/** a man the manager does not own: name, position, stars, price, years — his ratings stay hidden (owner, 18.11.2026) */
+const cv=(c:Card):CardView=>{const r=roleOf(c.id),person=personOfRecord(c.id);return {id:c.id,...(person?{person}:{}),name:c.name,pos:c.pos,...(r?{role:r}:{}),...(c.alt?{alt:c.alt}:{}),price:c.price,stars:c.stars,attrs:{},from:c.from,to:c.to,decades:c.decades}}
+/** a man in the manager's own squad: his game attributes and his full manager sheet */
+const own=(club:string,c:Card):CardView=>({...cv(c),attrs:c.attrs,fm:fmSheet(club,c.id,c.pos,c.stars)})
 function logOf(c:Career,events:readonly MatchEventRow[],f:Fixture,names:(side:0|1,id?:string)=>string):LogLine[]{
  const mine=f.home===c.clubId?0:f.away===c.clubId?1:-1
  return events.filter(e=>e.kind!=='chance'||e.minute%2===0).map(e=>{
@@ -90,10 +94,10 @@ export function careerView(c:Career):CareerView{
  const win=windowOpen(c)
  const form=c.phase==='draft'?new Map():seasonForm(c)
  const squad:SquadView[]=t.squad.map(s=>{const card=by.get(s.id)!,st=t.status[s.id],q=win?saleQuote(card.price,s.paid,s.apps,card.stars,c.settings):null
-  return {...cv(card),quota:s.quota,paid:s.paid,apps:s.apps,appsTotal:s.appsTotal,goals:s.goals,yellows:st?.yellows??0,suspension:st?.suspension??0,injury:st?.injury??0,injuryKind:st?.injuryKind??null,fit:available(st),listed:(c.transferList??[]).includes(s.id),...(form.get(s.id)?{form:form.get(s.id)}:{}),sale:q?{net:q.net,quoted:q.quoted,fees:Math.round((q.fee+q.guard)*10)/10}:null}})
+  return {...own(c.clubId,card),quota:s.quota,paid:s.paid,apps:s.apps,appsTotal:s.appsTotal,goals:s.goals,yellows:st?.yellows??0,suspension:st?.suspension??0,injury:st?.injury??0,injuryKind:st?.injuryKind??null,fit:available(st),listed:(c.transferList??[]).includes(s.id),...(form.get(s.id)?{form:form.get(s.id)}:{}),sale:q?{net:q.net,quoted:q.quoted,fees:Math.round((q.fee+q.guard)*10)/10}:null}})
   .sort((a,b)=>QUOTA_POS.indexOf(a.quota)-QUOTA_POS.indexOf(b.quota)||b.stars-a.stars||a.name.localeCompare(b.name))
  const seed=hash(`${c.id}:draft`),d=c.draft&&c.phase==='draft'?deal(c.catalog.cards,c.draft,seed):null
- const draft=d?{budget:d.budget??null,slot:d.slot,required:R.initialDraftRequired,optional:R.initialDraftOptional,picks:d.picks.map(p=>({...cv(by.get(p.id)!),slot:p.slot})),spent:d.spent,left:cashLeft(d),minToFinish:minCostToFinish(c.catalog.cards,d),rerollsLeft:d.rerollsLeft,group:d.group,
+ const draft=d?{budget:d.budget??null,slot:d.slot,required:R.initialDraftRequired,optional:R.initialDraftOptional,picks:d.picks.map(p=>({...own(c.clubId,by.get(p.id)!),slot:p.slot})),spent:d.spent,left:cashLeft(d),minToFinish:minCostToFinish(c.catalog.cards,d),rerollsLeft:d.rerollsLeft,group:d.group,
   lines:draftGroups(c.catalog.cards,d,seed),stuck:!d.group&&d.picks.length<R.initialDraftRequired&&draftGroups(c.catalog.cards,d,seed).every(g=>!g.open),
   strip:d.group?c.catalog.cards.filter(x=>x.pos===d.group&&!d.offers.some(o=>o.id===x.id)).sort((a,b)=>hash(`${seed}:${d.slot}:${a.id}`)-hash(`${seed}:${d.slot}:${b.id}`)).slice(0,16).map(x=>x.name):[],offers:d.offers.map(o=>({...cv(by.get(o.id)!),tier:o.tier,locked:o.locked})),deficits:deficits(d),canConfirm:confirmCheck(c.catalog.cards,{...d,optionalDone:true}),optionalOpen:d.picks.length>=R.initialDraftRequired&&!d.optionalDone}:null
  const fx=c.phase==='playoff'?c.season.playoff:nextFixture(c),ab=abilities(c)

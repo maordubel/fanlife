@@ -1722,3 +1722,6 @@ a.mag-tile.is-shop:hover { box-shadow: none; transform: none; }
 .mag-suggest-row input[name="club"]:focus-visible { outline: 3px solid var(--mag-vermilion); outline-offset: 2px; }
 .mag-suggest-thanks { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
 @media (max-width: 760px) { .mag-suggest-row > button { flex: 1 1 100%; } }
+
+/* two marks, never mixed (docs/rules/two-logos.md): FAN LIFE's roundel everywhere, THE WORKER's badge on its own host only */
+html:not([data-edition='worker']) [data-mark='worker'],html[data-edition='worker'] [data-mark='fanlife']{display:none!important}

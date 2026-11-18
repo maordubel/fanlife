@@ -32,6 +32,9 @@ export async function publicShop():Promise<Public>{
   sales,promoters:{ribbon:pm?.ribbon||null,freeShipOver:pm?.freeShipOver??null,featured:pm?.featured??[]}}
  kept={at:Date.now(),value};return value
 }
+/** while the tab bar streams in, it shows the Shop as this instance last saw it — open by default, so the tab never
+ * blinks out on a slow first read (owner, 18.11.2026: "the shop button disappeared from the phone menu") */
+export const shopLastKnown=()=>kept?kept.value.open&&kept.value.products.length>0:true
 /** after the desk changes what the public sees: the next visitor reads fresh */
 export const forgetPublicShop=()=>{kept=null}
 /** The Printify token: the environment first, else the server-only file the owner saved from the desk. Never sent to a browser. */

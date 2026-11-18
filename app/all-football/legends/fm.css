@@ -1,0 +1,27 @@
+/* LEGENDS · manager ratings (18.11.2026) — an FM-style sheet in the house's own dress; only on the manager's own men */
+.lgm-fm { display: grid; gap: 10px; margin-block-start: 12px; padding: 12px; background: var(--lgm-night); color: var(--mag-white); border: 3px solid var(--mag-ink); box-shadow: 4px 4px 0 var(--mag-ink); }
+.lgm-fm-head { display: flex; align-items: end; justify-content: space-between; gap: 10px; border-block-end: 2px solid color-mix(in srgb, var(--mag-white) 22%, transparent); padding-block-end: 8px; }
+.lgm-fm .lgm-kicker { margin: 0; color: var(--mag-white); }
+.lgm-fm-ability { display: grid; justify-items: end; margin: 0; }
+.lgm-fm-ability b { font: 400 30px/1 var(--mag-goal); }
+.lgm-fm-ability small { font: 400 10px var(--mag-mono); letter-spacing: .08em; text-transform: uppercase; opacity: .75; }
+.lgm-fm-lines { display: grid; gap: 4px; margin: 0; font: 600 13px/1.35 var(--mag-body); }
+.lgm-fm-lines small { display: inline-block; min-inline-size: 64px; font: 400 10px var(--mag-mono); letter-spacing: .1em; text-transform: uppercase; opacity: .75; }
+.lgm-fm-groups { display: grid; gap: 10px; }
+@media (min-width: 720px) { .lgm-fm-groups { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.lgm-fm-group h4 { margin: 0 0 4px; font: 400 14px/1 var(--mag-display); letter-spacing: .06em; text-transform: uppercase; color: var(--mag-cyan); }
+.lgm-fm-group ul { display: grid; gap: 2px; margin: 0; padding: 0; list-style: none; }
+/* a phone reads one column, full names: two columns cut "Command of Area" to "Com…" (seen on production 18.11.2026) */
+@media (min-width: 480px) and (max-width: 719px) { .lgm-fm-group ul { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 12px; } }
+.lgm-fm-group li { display: flex; align-items: center; justify-content: space-between; gap: 6px; min-block-size: 26px; padding-inline: 6px 2px; border-block-end: 1px solid color-mix(in srgb, var(--mag-white) 10%, transparent); font: 500 13px/1.2 var(--mag-body); }
+.lgm-fm-group li span { min-inline-size: 0; overflow-wrap: anywhere; }
+.lgm-fm-group li[data-key] span { font-weight: 800; }
+.lgm-fm-group li[data-key] { border-inline-start: 3px solid var(--mag-cyan); }
+.lgm-fm-group li b { flex: none; display: grid; place-items: center; inline-size: 30px; block-size: 22px; font: 400 15px/1 var(--mag-goal); border-radius: 3px; }
+.lgm-fm-group li b[data-band='weak'] { background: color-mix(in srgb, var(--mag-white) 12%, transparent); color: color-mix(in srgb, var(--mag-white) 75%, transparent); }
+.lgm-fm-group li b[data-band='fair'] { background: var(--mag-white); color: var(--mag-ink); }
+.lgm-fm-group li b[data-band='good'] { background: var(--mag-green); color: var(--mag-white); }
+.lgm-fm-group li b[data-band='elite'] { background: var(--mag-vermilion); color: var(--mag-white); }
+.lgm-fm-src { margin: 0; color: color-mix(in srgb, var(--mag-white) 78%, transparent); }
+.lgm-card-hidden, .lgm-offer-hidden { margin: 8px 0 0; padding: 6px 8px; border: 2px dashed currentColor; font: 400 11px/1.3 var(--mag-mono); letter-spacing: .06em; text-transform: uppercase; opacity: .8; }
+.lgm-offer-hidden { display: block; margin: 4px 0 0; padding: 4px 6px; font-size: 10px; }
