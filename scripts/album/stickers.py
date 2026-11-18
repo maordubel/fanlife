@@ -18,6 +18,9 @@ For every sticker of the curated edition (content/generated/album-edition-1.json
 Usage: python3 scripts/album/stickers.py [--club <id>] [--limit N] [--redo]
 """
 import argparse, base64, io, json, math, os, re, sys, time, urllib.parse, urllib.request
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import sources as SRC
+import portrait as POR
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -56,20 +59,37 @@ def claims(qids):
     return (j or {}).get('entities', {})
 
 
-def find_qid(name, club_q):
-    """ONE footballer item named so that lists this club — else nothing."""
-    s = get_json(WD + 'action=wbsearchentities&language=en&type=item&limit=8&search=' + urllib.parse.quote(name))
-    ids = [x['id'] for x in (s or {}).get('search', [])]
+def find_qid(name, club_q, year=None):
+    """ONE footballer item named so that lists this club — else, ONE footballer item of that name born 15 to 45 years
+    before his first season here — else nothing (rule 7: never a guess between two men)"""
+    ids = []
+    for lang in ('en', 'el', 'he', 'ar', 'hr', 'de', 'it'):
+        s = get_json(WD + f'action=wbsearchentities&language={lang}&type=item&limit=8&search=' + urllib.parse.quote(name))
+        ids += [x['id'] for x in (s or {}).get('search', [])]
+        if len(ids) >= 8:
+            break
+    ids = list(dict.fromkeys(ids))[:20]
     if not ids:
         return None
-    hits = []
+    club_hits, born_hits = [], []
     for q, e in claims(ids).items():
         c = e.get('claims', {})
         occ = [x['mainsnak'].get('datavalue', {}).get('value', {}).get('id') for x in c.get('P106', [])]
+        if 'Q937857' not in occ:
+            continue
         teams = [x['mainsnak'].get('datavalue', {}).get('value', {}).get('id') for x in c.get('P54', [])]
-        if 'Q937857' in occ and club_q in teams:
-            hits.append(q)
-    return hits[0] if len(hits) == 1 else None
+        if club_q in teams:
+            club_hits.append(q)
+            continue
+        born = [x['mainsnak'].get('datavalue', {}).get('value', {}).get('time', '') for x in c.get('P569', [])]
+        by = next((int(b[1:5]) for b in born if re.match(r'^[+-]\d{4}', b)), None)
+        if year and by and 15 <= year - by <= 45:
+            born_hits.append(q)
+    if len(club_hits) == 1:
+        return club_hits[0]
+    if not club_hits and len(born_hits) == 1:
+        return born_hits[0]
+    return None
 
 
 def image_of(qid):
@@ -124,7 +144,9 @@ def era_score(meta, club_name, y0, y1):
     named = any(w in meta['text'] for w in words)
     years = [int(y) for y in re.findall(r'(?<!\d)(19[0-9]{2}|20[0-9]{2})(?!\d)', meta['date'] + ' ' + meta['title'])]
     dated = bool(y0 and y1 and any(y0 - 1 <= y <= y1 + 1 for y in years))
-    return (4 if named else 0) + (3 if dated else 0), named and (dated or not years)
+    # the club frame only for a picture that names the club AND is dated inside his years: an undated portrait from a
+    # club category is often the man years later (a suit, a reunion), so it takes the archive frame instead
+    return (4 if named else 0) + (3 if dated else 0), named and dated
 
 
 _CASC = None
@@ -150,25 +172,40 @@ def face_of(im):
     return None
 
 
-def choose_photo(qid, club_name, y0, y1):
-    """every free picture of the man (P18 + his Commons category), best first; returns (meta, raw, frame) or None"""
+def choose_photo(qid, name, club_name, y0, y1):
+    """every free picture of the man, best first; returns (meta, raw, frame) or None.
+    Sources: P18, his Commons category, the lead picture of each of his Wikipedia articles (Commons files only),
+    Commons full-text search on his full name, Openverse (CC images, Flickr among them) — see sources.py"""
     from PIL import Image
-    first = image_of(qid)
-    titles = list(dict.fromkeys(([first] if first else []) + category_files(qid)))[:40]
+    first = image_of(qid) if qid else None
+    titles = []
+    if qid:
+        titles += ([first] if first else []) + category_files(qid) + [f for _, f in SRC.wiki_lead_images(get_json, qid)]
+    titles += SRC.commons_search(get_json, name)
+    titles = list(dict.fromkeys(t for t in titles if t))[:50]
     cands = []
     for t in titles:
         m = file_meta(t)
         if not m or not FREE.match(m['license'] or ''):
             continue
+        if not qid and club_name and not any(w in m['text'] for w in SRC.fold(club_name).split() if len(w) > 3):
+            continue  # found by name alone: it must also be about his club
         sc, club_era = era_score(m, club_name, y0, y1)
         cands.append((sc + (1 if t == first else 0), club_era, m))
+    for m in SRC.openverse(get_json, name, club_name):
+        if FREE.match(m['license']):
+            sc, club_era = era_score(m, club_name, y0, y1)
+            cands.append((sc - 1, club_era, m))
     cands.sort(key=lambda c: -c[0])
     best = None
-    for sc, club_era, m in cands[:6]:
+    for sc, club_era, m in cands[:8]:
         raw = get_bytes(m['url'])
         if not raw:
             continue
-        im = Image.open(io.BytesIO(raw))
+        try:
+            im = Image.open(io.BytesIO(raw))
+        except Exception:
+            continue
         f = face_of(im)
         if not f or f[2] < im.width * 0.08:
             continue  # head down, turned away or too small: not a sticker portrait
@@ -228,19 +265,20 @@ def kit_image(path):
     return base64.b64encode(src.encode()).decode(), vb
 
 
-def drawn_figure(st, x, y, w, h):
+def drawn_figure(st, x, y, w, h, traits=None):
     """no free photo: a figure in the weekly's manner wearing the club's measured shirt of his years — the shirt is
-    documented, the face is not, so the face stays a plain ink-lined oval (no likeness invented)"""
+    documented; the face is drawn from traits measured on his picture (skin, hair, beard — sources.traits), or the
+    era's usual look when no picture of him exists at all (the ledger marks it unmeasured)"""
     ey = y + h * EYE_Y
     k = kit_image(st.get('kit'))
     sw = w * 1.04
     sc = sw / 336
     sx = x + w / 2 - 170 * sc
-    sy = ey + 47 - (56 - 20) * sc
-    head = (f'<g stroke="#15130F" stroke-width="2.6" stroke-linejoin="round">'
-            f'<rect x="{x+w/2-12:.1f}" y="{ey+24:.1f}" width="24" height="30" fill="#E6D8BE"/>'
-            f'<ellipse cx="{x+w/2:.1f}" cy="{ey+3:.1f}" rx="26" ry="33" fill="#E6D8BE"/>'
-            f'<path d="M{x+w/2-27:.1f} {ey-4:.1f} C{x+w/2-29:.1f} {ey-40:.1f} {x+w/2+29:.1f} {ey-40:.1f} {x+w/2+27:.1f} {ey-4:.1f} C{x+w/2+20:.1f} {ey-22:.1f} {x+w/2-20:.1f} {ey-22:.1f} {x+w/2-27:.1f} {ey-4:.1f} Z" fill="#15130F"/></g>')
+    t = traits or SRC.era_default(st.get('from'))
+    sc_ = 27
+    head = POR.portrait_svg(x + w / 2, ey, sc_, t, t.get('shape'), uid='p%d' % st['slot'])
+    chin = ey + max(y_ for _, y_ in (t.get('shape') or POR.MEAN)[6:11]) * sc_
+    sy = chin + sc_ * 1.0 - (56 - 20) * sc
     if k:
         b64, (vx, vy, vw, vh) = k
         shirt = (f'<svg x="{sx:.1f}" y="{sy:.1f}" width="{sw:.1f}" height="{298*sc:.1f}" viewBox="0 20 336 298" overflow="visible">'
@@ -251,7 +289,7 @@ def drawn_figure(st, x, y, w, h):
     return f'<g style="filter:drop-shadow(5px 4px 0 rgb(0 0 0 / .28))">{head}{shirt}</g>'
 
 
-def sticker_svg(st, club, photo_b64, photo_wh, frame, logo_b64, variant='base'):
+def sticker_svg(st, club, photo_b64, photo_wh, frame, logo_b64, variant='base', traits=None):
     c, on, code = club['primary'], club['on'], club['code']
     x, y, w, h = WIN
     parts = st['name'].split(' ')
@@ -273,7 +311,7 @@ def sticker_svg(st, club, photo_b64, photo_wh, frame, logo_b64, variant='base'):
         img = (f'<image href="data:image/png;base64,{photo_b64}" x="{dx:.1f}" y="{dy:.1f}" width="{pw*sc:.1f}" height="{ph*sc:.1f}" filter="url(#drop)"/>'
                f'<image href="data:image/png;base64,{photo_b64}" x="{dx:.1f}" y="{dy:.1f}" width="{pw*sc:.1f}" height="{ph*sc:.1f}"{duo}/>')
     else:
-        img = drawn_figure(st, x, y, w, h)
+        img = drawn_figure(st, x, y, w, h, traits)
     field = '#E9E0CC' if archive else c
     edge = f'url(#m{variant})' if variant != 'base' else '#FBF6EA'
     metal, stamp = '', ''
@@ -350,6 +388,26 @@ def cutout(raw, session, frame):
     return edge, f
 
 
+def remove_mask(im, session):
+    from rembg import remove
+    return remove(im, session=session[0] if isinstance(session, tuple) else session, only_mask=True)
+
+
+def face_shape(raw):
+    """his face's proportions (68 landmarks, normalised and blended with the average face — portrait.py), or None"""
+    import cv2
+    import numpy as np
+    from PIL import Image
+    im = Image.open(io.BytesIO(raw)).convert('RGB')
+    s = 600 / max(im.size)
+    im = im.resize((max(1, int(im.width * s)), max(1, int(im.height * s))))
+    f = face_of(im)
+    if not f:
+        return None
+    lm = POR.landmarks(cv2.cvtColor(np.array(im), cv2.COLOR_RGB2BGR), f, os.environ['ALBUM_LBF'])
+    return POR.normalise(lm) if lm else None
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--club')
@@ -389,23 +447,30 @@ def main():
                 prev = ledger['stickers'].get(sid)
                 if prev and not a.redo and prev.get('person_id') == st['person_id'] and prev.get('status') == 'photo':
                     continue
-                qid = stint_qid.get(f'{club}:{st["record_id"]}') or (find_qid(st['name'], club_q[club]) if club in club_q else None)
+                qid = stint_qid.get(f'{club}:{st["record_id"]}') or (find_qid(st['name'], club_q[club], st.get('from')) if club in club_q else None)
                 photo, photo_wh, src, frame = None, None, None, 'club'
-                pick = choose_photo(qid, clubs[club]['name'], st.get('from'), st.get('to')) if qid else None
+                pick = choose_photo(qid, st['name'], clubs[club]['name'], st.get('from'), st.get('to'))
                 if pick:
                     meta, raw, frame = pick
                     got = cutout(raw, session, frame)
                     if got:
                         cut, f = got
                         bb = io.BytesIO(); cut.save(bb, 'PNG'); photo = base64.b64encode(bb.getvalue()).decode(); photo_wh = (*cut.size, *f)
-                        src = {'file': meta['title'], 'page': meta['page'], 'author': meta['artist'], 'license': meta['license'], 'licenseUrl': meta['licenseUrl'], 'date': meta['date']}
-                svg = sticker_svg(st, clubs[club], photo, photo_wh, frame, logo_b64)
+                        src = {'file': meta['title'], 'page': meta['page'], 'author': meta['artist'], 'license': meta['license'], 'licenseUrl': meta['licenseUrl'], 'date': meta['date'], 'via': meta.get('via', 'commons')}
+                traits = None
+                if not src:
+                    ref = SRC.any_wiki_picture(get_json, get_bytes, qid) if qid else None
+                    traits = (SRC.traits(ref, face_of, lambda im_: remove_mask(im_, session)) if ref else None) or SRC.era_default(st.get('from'))
+                    traits.setdefault('measured', bool(ref))
+                    if ref and traits.get('measured') and os.environ.get('ALBUM_LBF'):
+                        traits['shape'] = face_shape(ref)
+                svg = sticker_svg(st, clubs[club], photo, photo_wh, frame, logo_b64, traits=traits)
                 pg.set_content(f'<html><style>{css} body{{margin:0;background:transparent}} svg{{display:block}}</style><body>{svg}</body></html>')
                 pg.wait_for_timeout(150)
                 png = pg.locator('body > svg').screenshot(omit_background=True)
                 Image.open(io.BytesIO(png)).convert('RGBA').save(OUT_DIR / club / f'{st["slot"]}.webp', 'WEBP', quality=84, method=6)
                 ledger['stickers'][sid] = {'person_id': st['person_id'], 'name': st['name'], 'code': f"{clubs[club]['code']}{DASH}{st['slot']:02d}", 'status': 'photo' if src else 'silhouette',
-                                           'frame': frame if src else None, 'qid': qid, 'source': src, 'file': f'/album/stickers/{club}/{st["slot"]}.webp'}
+                                           'frame': frame if src else None, 'qid': qid, 'source': src, 'traits': traits, 'file': f'/album/stickers/{club}/{st["slot"]}.webp'}
                 done += 1
                 print(sid, 'photo' if src else 'silhouette', st['name'], flush=True)
                 time.sleep(0.4)

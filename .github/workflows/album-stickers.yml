@@ -17,13 +17,14 @@ concurrency: {group: album-stickers, cancel-in-progress: false}
 jobs:
   press:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 300
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: '3.12'}
-      - run: pip install rembg onnxruntime pillow playwright "opencv-python-headless<5" numpy && python -m playwright install --with-deps chromium
+      - run: pip install rembg onnxruntime pillow playwright "opencv-contrib-python-headless<5" numpy && curl -sSL -o "$RUNNER_TEMP/lbf.yaml" https://raw.githubusercontent.com/kurnianggoro/GSOC2017/master/data/lbfmodel.yaml && python -m playwright install --with-deps chromium
       - name: Press
+        env: {ALBUM_LBF: '${{ runner.temp }}/lbf.yaml'}
         run: python scripts/album/stickers.py ${{ inputs.club && format('--club {0}', inputs.club) || '' }} ${{ inputs.redo == 'true' && '--redo' || '' }}
       - uses: peter-evans/create-pull-request@v6
         with:
