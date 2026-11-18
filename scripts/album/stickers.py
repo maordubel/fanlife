@@ -172,7 +172,15 @@ def face_of(im):
     return None
 
 
-def choose_photo(qid, name, club_name, y0, y1):
+def faces_in(im):
+    import cv2
+    import numpy as np
+    face_of(im)  # loads the cascade
+    g = cv2.cvtColor(np.array(im.convert('RGB')), cv2.COLOR_RGB2GRAY)
+    return len(_CASC.detectMultiScale(g, 1.06, 9, minSize=(max(24, im.width // 16),) * 2))
+
+
+def choose_photo(qid, name, club_name, y0, y1, names=None, club_words=None):
     """every free picture of the man, best first; returns (meta, raw, frame) or None.
     Sources: P18, his Commons category, the lead picture of each of his Wikipedia articles (Commons files only),
     Commons full-text search on his full name, Openverse (CC images, Flickr among them) — see sources.py"""
@@ -181,8 +189,15 @@ def choose_photo(qid, name, club_name, y0, y1):
     titles = []
     if qid:
         titles += ([first] if first else []) + category_files(qid) + [f for _, f in SRC.wiki_lead_images(get_json, qid)]
-    titles += SRC.commons_search(get_json, name)
-    titles = list(dict.fromkeys(t for t in titles if t))[:50]
+    names = names or [name]
+    for n in names[:6]:
+        titles += SRC.commons_search(get_json, n)
+    # a surname with the club: archive match pictures (Anefo, Dan Hadani, GPO...) — kept only with ONE face in frame
+    crowd = set()
+    for t in SRC.surname_club_search(get_json, name, club_words or [club_name]):
+        if t not in titles:
+            titles.append(t); crowd.add(t)
+    titles = list(dict.fromkeys(t for t in titles if t))[:70]
     cands = []
     for t in titles:
         m = file_meta(t)
@@ -191,14 +206,14 @@ def choose_photo(qid, name, club_name, y0, y1):
         if not qid and club_name and not any(w in m['text'] for w in SRC.fold(club_name).split() if len(w) > 3):
             continue  # found by name alone: it must also be about his club
         sc, club_era = era_score(m, club_name, y0, y1)
-        cands.append((sc + (1 if t == first else 0), club_era, m))
+        cands.append((sc + (1 if t == first else 0) - (1 if t in crowd else 0), club_era, dict(m, crowd=t in crowd)))
     for m in SRC.openverse(get_json, name, club_name):
         if FREE.match(m['license']):
             sc, club_era = era_score(m, club_name, y0, y1)
             cands.append((sc - 1, club_era, m))
     cands.sort(key=lambda c: -c[0])
     best = None
-    for sc, club_era, m in cands[:8]:
+    for sc, club_era, m in cands[:10]:
         raw = get_bytes(m['url'])
         if not raw:
             continue
@@ -207,8 +222,10 @@ def choose_photo(qid, name, club_name, y0, y1):
         except Exception:
             continue
         f = face_of(im)
-        if not f or f[2] < im.width * 0.08:
+        if not f or f[2] < im.width * (0.05 if m.get('crowd') else 0.08):
             continue  # head down, turned away or too small: not a sticker portrait
+        if m.get('crowd') and faces_in(im) != 1:
+            continue  # a match or team picture: only when he is the one face in it
         score = sc + 3 + min(2, f[2] / im.width * 6)
         if best is None or score > best[0]:
             best = (score, m, raw, 'club' if club_era else 'archive')
@@ -436,6 +453,8 @@ def main():
     with sync_playwright() as pw:
         br = pw.chromium.launch()
         pg = br.new_page(viewport={'width': 240, 'height': 330}, device_scale_factor=2)
+        stints_all = json.loads((ROOT / 'content/generated/people-stints.json').read_text())['stints']
+        alias_of = {f"{x['club']}:{x['eid']}": [n for n in (x.get('aliases') or []) if n and n != x['name']] for x in stints_all}
         for club, rows in edition['wings'].items():
             if a.club and club != a.club:
                 continue
@@ -449,7 +468,8 @@ def main():
                     continue
                 qid = stint_qid.get(f'{club}:{st["record_id"]}') or (find_qid(st['name'], club_q[club], st.get('from')) if club in club_q else None)
                 photo, photo_wh, src, frame = None, None, None, 'club'
-                pick = choose_photo(qid, st['name'], clubs[club]['name'], st.get('from'), st.get('to'))
+                names = [st['name']] + alias_of.get(f"{club}:{st['record_id']}", []) + (SRC.labels(get_json, qid) if qid else [])
+                pick = choose_photo(qid, st['name'], clubs[club]['name'], st.get('from'), st.get('to'), names=list(dict.fromkeys(names)), club_words=[clubs[club]['name']] + SRC.club_names(club))
                 if pick:
                     meta, raw, frame = pick
                     got = cutout(raw, session, frame)
