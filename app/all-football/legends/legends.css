@@ -11,7 +11,8 @@
 .lgm h2 small { font: 700 12px var(--mag-mono); letter-spacing: 1.5px; margin-inline-start: 8px; color: var(--lgm-bronze); }
 .lgm-kicker { margin: 0 0 6px; font: 700 11px var(--mag-mono); letter-spacing: 2.2px; text-transform: uppercase; color: var(--lgm-bronze); }
 .lgm-fine { margin: 6px 0; font-size: 13px; line-height: 1.45; color: color-mix(in srgb, var(--mag-ink) 74%, transparent); }
-.lgm-error { margin: 10px 0; padding: 10px 12px; border-inline-start: 5px solid var(--mag-vermilion); background: var(--mag-card); font-weight: 600; }
+.lgm-error { margin: 10px 0; padding: 10px 12px; border-inline-start: 5px solid var(--mag-vermilion); background: var(--mag-card); color: var(--mag-ink); font-weight: 600; }
+/* 18.11.2026: on the night ticket the slip inherited the ivory text — ivory on card, invisible; it always reads in ink */
 .lgm-live-msg { min-block-size: 22px; margin: 4px 0 8px; font-weight: 600; } .lgm-live-msg[data-kind='error'] { color: var(--mag-vermilion); }
 .lgm-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 14px 0 0; }
 .lgm-go, .lgm-ghost, .lgm-sign { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-block-size: 48px; padding: 0 18px; font: 700 13px var(--mag-mono); letter-spacing: 1.2px; text-transform: uppercase; border: 2px solid var(--lgm-night); cursor: pointer; text-decoration: none; }
