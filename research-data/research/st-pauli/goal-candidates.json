@@ -13,15 +13,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2023/05/26/lage-am-millerntor-26-mai-2023/",
-    "locator": "p65",
-    "quote": "Organisiert vom Fanclub „Hexenkessel St. Pauli“ und dem Fanladen findet morgen um 19.00h ein Vortrag einer polnischen „No Borders“-Gruppe statt, die über die Situation von Flüchtlingen an der Grenze zwischen Polen und Belarus berichten werden. Außerdem wird der Film „The limits of humanity“ (30min) im Original mit deutschen Untertiteln gezeigt.",
-    "bodyHash": "8a357ff25c49d121345bf9d169e4ace745ba96a285455c3c2785680d5f7c2c0a",
-    "fetchedAt": "2026-11-06T11:31:17.664Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2023/11/02/lage-am-millerntor-02-november-2023/",
     "locator": "p123",
     "quote": "Die ARD-Doku „WM der Schande“ wurde mit vier Episoden im Oktober 2022 veröffentlicht. Wer gestern Abend nach den Zusammenfassungen der Pokalspiele noch dran blieb, konnte ab 0.00h den fünften und letzten Teil sehen, die „Ein Jahr danach“ -Episode (30min).",
@@ -82,6 +73,15 @@
     "bodyHash": "4a0d07b63b52a9a84b07a84c1259f536250e2b709e69b4dea41562c4d8809ce0",
     "fetchedAt": "2026-11-13T11:33:03.024Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/02/21/wenn-die-co-trainer-beim-fc-st-pauli-ran-muessen/",
+    "locator": "p5",
+    "quote": "Alexander Blessin fehlt dem FC St. Pauli aufgrund einer Sperre, doch er hat keine Rote Karte gesehen. Wieso also? Er hat ganz einfach zu viele Gelbe Karten gesammelt. Nach vier Gelben Karten wird ein Trainer für ein Spiel gesperrt und darf seine Mannschaft auf dem Platz nicht coachen. Allerdings: Während der Halbzeitpause darf er zur Mannschaft in die Kabine, anders als bei einer Rotsperre, bei der ein Kontaktverbot zur Mannschaft von 30 Min vor und nach dem Spiel gilt.",
+    "bodyHash": "6ef9802da2fd3f04204335271f9b9eb2344343c6e76a3c31fac5504cf4a18978",
+    "fetchedAt": "2026-11-18T12:15:20.308Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -89,8 +89,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-13T11:33:03.024Z",
-  "updatedAt": "2026-11-13T11:33:03.024Z"
+  "createdAt": "2026-11-18T12:15:20.308Z",
+  "updatedAt": "2026-11-18T12:15:20.308Z"
  },
  {
   "id": "ga-03973ac070b40b9b",
@@ -104,24 +104,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "millernton",
-    "url": "https://millernton.de/2021/01/18/lage-am-millerntor-18-januar-2021/",
-    "locator": "p20",
-    "quote": "In einem Bericht des NDR (3min) wurde mit Beteiligten der RL Nord (m) gesprochen.",
-    "bodyHash": "348b49e2e1974acdaa600bd73ab8c04bd9691c5fd5f97e1f63560d0e2b1b12d9",
-    "fetchedAt": "2026-10-27T09:22:18.693Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
-    "url": "https://millernton.de/2023/03/28/lage-am-millerntor-28-maerz-2023/",
-    "locator": "p47",
-    "quote": "Der DFB hat gerade eine Werbe-Kampagne für Schiedsrichter gestartet, weshalb das Thema auch verstärkt in den Medien ist. Beim NDR gibt es einen kurzen Beitrag (3min) über die Arbeit im „Kölner Keller“, sowie ein längeres Interview mit dem Hamburger Bundesliga-Schiedsrichter Patrick Ittrich (9min). Ergänzt wird der Artikel durch ein paar zahlen der Sporthochschule Köln, wonach bei Schiedsrichtern, Trainern und Spielern lediglich 20 Prozent der Befragten die negativen Aspekte des Videobeweises betonen. Ittrich betont aber auch, dass es in der Kommunikation mit den Zuschauern (vor allem im Stadio",
-    "bodyHash": "5a33569e5c53bc8ee1370d608b232e8d3d034b953eae6c791e2d3ed252ec7eee",
-    "fetchedAt": "2026-11-05T11:31:50.249Z",
-    "language": "en"
-   },
    {
     "sourceId": "millernton",
     "url": "https://millernton.de/2023/05/19/dfl-und-investoren-sind-denn-alle-bekloppt/",
@@ -175,6 +157,24 @@
     "bodyHash": "5367aea1757e67ff00215ef85a35f223473f713c6962e7e120ac35b4fd08a44c",
     "fetchedAt": "2026-11-13T11:33:11.346Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/01/31/lage-am-millerntor-31-januar-2025/",
+    "locator": "p27",
+    "quote": "David Nemeth und Philipp Treu standen dem Vereins-TV vor dem Spiele Rede und Antwort (3min):",
+    "bodyHash": "349d26376a5b0363e60ad0f4bb1bff6a759ed0fae377ca6cedeb9e62fc60a717",
+    "fetchedAt": "2026-11-18T12:15:15.016Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/02/13/lage-am-millerntor-13-februar-2025/",
+    "locator": "p34",
+    "quote": "Allen anderen wurde die Sportart jetzt auch im Hamburg Journal des NDR vorgestellt. (3min)",
+    "bodyHash": "e1e677fe4918ec68b49f2782304d07cb468a5bd6476f45ef924633b42bcb8619",
+    "fetchedAt": "2026-11-18T12:15:17.794Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -182,8 +182,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-13T11:33:11.346Z",
-  "updatedAt": "2026-11-13T11:33:11.346Z"
+  "createdAt": "2026-11-18T12:15:17.794Z",
+  "updatedAt": "2026-11-18T12:15:17.794Z"
  },
  {
   "id": "ga-841148b1b6e631c5",
@@ -197,15 +197,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "millernton",
-    "url": "https://millernton.de/2023/01/17/wunderdinge-aus-daenemark/",
-    "locator": "p25",
-    "quote": "90min – Daten, Daten, Daten: Der revolutionäre Aufstieg des FC Midtjylland",
-    "bodyHash": "8e34329142b444866e20a03c014310636e2f434adab3ee77fd38f67fd1ff5507",
-    "fetchedAt": "2026-11-04T11:36:09.732Z",
-    "language": "en"
-   },
    {
     "sourceId": "millernton",
     "url": "https://millernton.de/2023/06/22/lage-am-millerntor-22-juni-2023/",
@@ -268,6 +259,15 @@
     "bodyHash": "4f87ca940a9c797d689ed93024501fb0bdac4795bc03a3d9f92afea93c50928b",
     "fetchedAt": "2026-11-15T11:31:16.364Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/02/10/dapo-afolayan-ein-problem-fuer-die-defensive/",
+    "locator": "p19",
+    "quote": "Spieler Time-to-Press (Sek.) Verhinderter xT pro 90min xT pro Pass Verhinderte prog. Pässe pro 90min Umschaltmomente pro 90min",
+    "bodyHash": "5b8785bfdee4177cd0ccf05441ed39507e8a8cfcfd8b0c814a65b8611e159d62",
+    "fetchedAt": "2026-11-18T12:15:17.792Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -275,8 +275,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-15T11:31:16.364Z",
-  "updatedAt": "2026-11-15T11:31:16.364Z"
+  "createdAt": "2026-11-18T12:15:17.792Z",
+  "updatedAt": "2026-11-18T12:15:17.792Z"
  },
  {
   "id": "ga-a41e98643556d4b1",
@@ -329,15 +329,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "millernton",
-    "url": "https://millernton.de/2021/03/05/lage-am-millerntor-05-maerz-2021/",
-    "locator": "p40",
-    "quote": "Vielleicht wäre es doch am einfachsten, alle Teams die noch im Europapokal vertreten sind, für ein Wochenende nach Budapest zu schicken… und dann spielen die halt in so ’nem Kleinfeld Turnier (4vs4, 10Min, bei Unentschieden entscheidet Stein/Schere/Papier) den Sieger aus.",
-    "bodyHash": "023088beddda48c07ae026ca09a42d38349ff3995c6ef5eb049b45e81cf3e99c",
-    "fetchedAt": "2026-10-27T09:22:27.444Z",
-    "language": "en"
-   },
    {
     "sourceId": "millernton",
     "url": "https://millernton.de/2021/04/14/lage-am-millerntor-14-april-2021/",
@@ -400,6 +391,15 @@
     "bodyHash": "73e64c6ccbb5fa5378bed3a6b38ab55ddd1db7af67945a724dd980ba463ae57c",
     "fetchedAt": "2026-11-06T11:31:20.121Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/02/05/lage-am-millerntor-05-februar-2025/",
+    "locator": "p20",
+    "quote": "Unser Kapitän war bei arte „Tracks“ zu Gast – oder sie bei ihm, je nach Sichtweise. Neben dem Diebstahl von Konzertplakaten geht es wenig überraschend um Musik. // YouTube (10min)",
+    "bodyHash": "005bd957599f16989244b1deefc414481fce6825a42b89a5066352cab94b02f1",
+    "fetchedAt": "2026-11-18T12:15:15.028Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -407,8 +407,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-06T11:31:20.121Z",
-  "updatedAt": "2026-11-06T11:31:20.121Z"
+  "createdAt": "2026-11-18T12:15:15.028Z",
+  "updatedAt": "2026-11-18T12:15:15.028Z"
  },
  {
   "id": "ga-51b4860bcfa8ab6d",
@@ -3127,6 +3127,15 @@
     "bodyHash": "6cf977e486069867cc38ce0eb6586f07a43bf54967e9169e62fb56e841fe7ace",
     "fetchedAt": "2026-11-15T11:31:11.044Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/03/11/lage-am-millerntor-11-maerz-2025/",
+    "locator": "p39",
+    "quote": "USP hat eine Sammlung der Videos aus 2023 und 2024 veröffentlicht: YouTube (28min)",
+    "bodyHash": "b586f701f544c01b1e722bbd8c136e739db1dced8028dd1bc3a7237bfb81e556",
+    "fetchedAt": "2026-11-18T12:15:23.273Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -3134,8 +3143,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-15T11:31:11.044Z",
-  "updatedAt": "2026-11-15T11:31:11.044Z"
+  "createdAt": "2026-11-18T12:15:23.273Z",
+  "updatedAt": "2026-11-18T12:15:23.273Z"
  },
  {
   "id": "ga-22637ca0f1c3482a",
@@ -3157,6 +3166,15 @@
     "bodyHash": "d9c94cf5256c034de38eb959bc6d0bf9a7df7065dbfee2d3497a2d4be5c5f595",
     "fetchedAt": "2026-11-05T11:31:47.267Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/02/26/lage-am-millerntor-26-februar-2025/",
+    "locator": "p10",
+    "quote": "Christian und Zoltán sprechen bei „If you can hear us“ (33min) über die Niederlage in Mainz und das Spiel gegen Dortmund. Auch der Flugkopfball -Podcast (1h01m) bespricht (vor dem gestrigen Pokalspiel) die Situation bei Werder und St. Pauli.",
+    "bodyHash": "b91b12503a457b2698ac44f941865c04723a97da49604ebb3a58e47db3304f65",
+    "fetchedAt": "2026-11-18T12:15:20.310Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -3164,8 +3182,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-05T11:31:47.267Z",
-  "updatedAt": "2026-11-05T11:31:47.267Z"
+  "createdAt": "2026-11-18T12:15:20.310Z",
+  "updatedAt": "2026-11-18T12:15:20.310Z"
  },
  {
   "id": "ga-7c4815fc7c36128a",
@@ -3571,6 +3589,15 @@
     "bodyHash": "6d0ee8d99b3907f331785bb7987c42d6bf722bf1e37b55358528e64f93782f68",
     "fetchedAt": "2026-11-13T11:15:33.210Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/01/31/lage-am-millerntor-31-januar-2025/",
+    "locator": "p34",
+    "quote": "Auch die Sportschau hat die Wichtigkeit unseres Innenverteidigers jüngst hervorgehoben. Bevor Ihr das Video anklickt, spielt im Kopf einmal folgende Überlegung durch. Wenn ich Euch verrate, dass Wahl in dieser Saison noch keine Minute verpasst hat – wie viele Fouls hat er als Innenverteidiger wohl begangen und wie viele Karten erhalten? Die Antwort findet Ihr im Video beim NDR (1min) .",
+    "bodyHash": "349d26376a5b0363e60ad0f4bb1bff6a759ed0fae377ca6cedeb9e62fc60a717",
+    "fetchedAt": "2026-11-18T12:15:15.016Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -3578,8 +3605,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-13T11:15:33.210Z",
-  "updatedAt": "2026-11-13T11:15:33.210Z"
+  "createdAt": "2026-11-18T12:15:15.016Z",
+  "updatedAt": "2026-11-18T12:15:15.016Z"
  },
  {
   "id": "ga-0e2f5b25e1bf7839",
@@ -3670,5 +3697,65 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-11-17T12:06:44.687Z",
   "updatedAt": "2026-11-17T12:06:44.687Z"
+ },
+ {
+  "id": "ga-fde2f785d75897f6",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "61",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/03/14/lage-am-millerntor-14-maerz-2025/",
+    "locator": "p89",
+    "quote": "Tijuana 3-[1] Atlas – Matheus Dória 61′ (Scorpion Kick)",
+    "bodyHash": "00f24a368b5208fb231ded0cecff687f64934e1de4fab6b740cedd0e15556d05",
+    "fetchedAt": "2026-11-18T12:15:23.277Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-18T12:15:23.277Z",
+  "updatedAt": "2026-11-18T12:15:23.277Z"
+ },
+ {
+  "id": "ga-9fb8177d9c0f87ec",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "90+4",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/03/21/lage-am-millerntor-21-maerz-2025/",
+    "locator": "p59",
+    "quote": "USA 0-[1] Panama – Waterman 90+4′ + celebration with Henry",
+    "bodyHash": "ca1d95225277f10618e0f81f96bfc21713e4f4295c3ad68ddb56b1e2e3bfcc79",
+    "fetchedAt": "2026-11-18T12:15:26.375Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-18T12:15:26.375Z",
+  "updatedAt": "2026-11-18T12:15:26.375Z"
  }
 ]

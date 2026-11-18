@@ -6,7 +6,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/64923--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-15"
+   "checkedAt": "2026-11-18"
   },
   {
    "id": "a-src-uefa-64922",
@@ -14,7 +14,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/64922--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-15"
+   "checkedAt": "2026-11-18"
   },
   {
    "id": "a-src-uefa-54339",
@@ -22,7 +22,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/54339--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-15"
+   "checkedAt": "2026-11-18"
   },
   {
    "id": "a-src-uefa-54338",
@@ -30,7 +30,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/54338--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-15"
+   "checkedAt": "2026-11-18"
   },
   {
    "id": "a-src-uefa-54258",
@@ -38,7 +38,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/54258--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-15"
+   "checkedAt": "2026-11-18"
   },
   {
    "id": "a-src-uefa-54257",
@@ -46,7 +46,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/54257--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-15"
+   "checkedAt": "2026-11-18"
   },
   {
    "id": "a-src-uefa-54173",
@@ -54,7 +54,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/54173--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-15"
+   "checkedAt": "2026-11-18"
   },
   {
    "id": "a-src-uefa-54172",
@@ -62,7 +62,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/54172--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-15"
+   "checkedAt": "2026-11-18"
   },
   {
    "id": "a-src-uefa-51822",
@@ -70,7 +70,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/51822--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-15"
+   "checkedAt": "2026-11-18"
   },
   {
    "id": "a-src-uefa-51819",
@@ -78,7 +78,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/51819--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-15"
+   "checkedAt": "2026-11-18"
   },
   {
    "id": "a-src-uefa-51817",
@@ -86,7 +86,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/51817--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-15"
+   "checkedAt": "2026-11-18"
   },
   {
    "id": "a-src-uefa-51815",
@@ -94,7 +94,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/51815--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-15"
+   "checkedAt": "2026-11-18"
   },
   {
    "id": "a-src-uefa-6575",
@@ -102,7 +102,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/6575--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-15"
+   "checkedAt": "2026-11-18"
   },
   {
    "id": "a-src-uefa-6574",
@@ -110,7 +110,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/6574--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-15"
+   "checkedAt": "2026-11-18"
   },
   {
    "id": "a-src-uefa-6189",
@@ -118,7 +118,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/6189--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-15"
+   "checkedAt": "2026-11-18"
   },
   {
    "id": "a-src-uefa-6190",
@@ -126,7 +126,7 @@
    "url": "https://www.uefa.com/uefachampionsleague/match/6190--",
    "publisher": "UEFA",
    "access": "available",
-   "checkedAt": "2026-11-15"
+   "checkedAt": "2026-11-18"
   }
  ],
  "matches": [
@@ -347,14 +347,14 @@
    "sources": [
     "a-src-uefa-64923"
    ],
-   "researchedAt": "2026-11-15",
+   "researchedAt": "2026-11-18",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens).",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-15",
-   "approvedBy": "editorial:2026-11-15"
+   "approvedAt": "2026-11-18",
+   "approvedBy": "editorial:2026-11-18"
   },
   {
    "id": "a-m-2000-06-18-lask-h-petah-tikva",
@@ -553,14 +553,14 @@
    "sources": [
     "a-src-uefa-64922"
    ],
-   "researchedAt": "2026-11-15",
+   "researchedAt": "2026-11-18",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens).",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-15",
-   "approvedBy": "editorial:2026-11-15"
+   "approvedAt": "2026-11-18",
+   "approvedBy": "editorial:2026-11-18"
   },
   {
    "id": "a-m-1997-09-30-h-petah-tikva-sk-rapid",
@@ -779,14 +779,14 @@
    "sources": [
     "a-src-uefa-54339"
    ],
-   "researchedAt": "2026-11-15",
+   "researchedAt": "2026-11-18",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens).",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-15",
-   "approvedBy": "editorial:2026-11-15"
+   "approvedAt": "2026-11-18",
+   "approvedBy": "editorial:2026-11-18"
   },
   {
    "id": "a-m-1997-09-16-sk-rapid-h-petah-tikva",
@@ -995,14 +995,14 @@
    "sources": [
     "a-src-uefa-54338"
    ],
-   "researchedAt": "2026-11-15",
+   "researchedAt": "2026-11-18",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens).",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-15",
-   "approvedBy": "editorial:2026-11-15"
+   "approvedAt": "2026-11-18",
+   "approvedBy": "editorial:2026-11-18"
   },
   {
    "id": "a-m-1997-08-26-h-petah-tikva-vb",
@@ -1221,14 +1221,14 @@
    "sources": [
     "a-src-uefa-54258"
    ],
-   "researchedAt": "2026-11-15",
+   "researchedAt": "2026-11-18",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens).",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-15",
-   "approvedBy": "editorial:2026-11-15"
+   "approvedAt": "2026-11-18",
+   "approvedBy": "editorial:2026-11-18"
   },
   {
    "id": "a-m-1997-08-12-vb-h-petah-tikva",
@@ -1437,14 +1437,14 @@
    "sources": [
     "a-src-uefa-54257"
    ],
-   "researchedAt": "2026-11-15",
+   "researchedAt": "2026-11-18",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens).",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-15",
-   "approvedBy": "editorial:2026-11-15"
+   "approvedAt": "2026-11-18",
+   "approvedBy": "editorial:2026-11-18"
   },
   {
    "id": "a-m-1997-07-30-flora-tallinn-h-petah-tikva",
@@ -1661,14 +1661,14 @@
    "sources": [
     "a-src-uefa-54173"
    ],
-   "researchedAt": "2026-11-15",
+   "researchedAt": "2026-11-18",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens).",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-15",
-   "approvedBy": "editorial:2026-11-15"
+   "approvedAt": "2026-11-18",
+   "approvedBy": "editorial:2026-11-18"
   },
   {
    "id": "a-m-1997-07-23-h-petah-tikva-flora-tallinn",
@@ -1877,14 +1877,14 @@
    "sources": [
     "a-src-uefa-54172"
    ],
-   "researchedAt": "2026-11-15",
+   "researchedAt": "2026-11-18",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens).",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-15",
-   "approvedBy": "editorial:2026-11-15"
+   "approvedAt": "2026-11-18",
+   "approvedBy": "editorial:2026-11-18"
   },
   {
    "id": "a-m-1995-07-22-h-petah-tikva-strasbourg",
@@ -2073,14 +2073,14 @@
    "sources": [
     "a-src-uefa-51822"
    ],
-   "researchedAt": "2026-11-15",
+   "researchedAt": "2026-11-18",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens).",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-15",
-   "approvedBy": "editorial:2026-11-15"
+   "approvedAt": "2026-11-18",
+   "approvedBy": "editorial:2026-11-18"
   },
   {
    "id": "a-m-1995-07-08-wacker-h-petah-tikva",
@@ -2269,14 +2269,14 @@
    "sources": [
     "a-src-uefa-51819"
    ],
-   "researchedAt": "2026-11-15",
+   "researchedAt": "2026-11-18",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens).",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-15",
-   "approvedBy": "editorial:2026-11-15"
+   "approvedAt": "2026-11-18",
+   "approvedBy": "editorial:2026-11-18"
   },
   {
    "id": "a-m-1995-07-01-h-petah-tikva-floriana",
@@ -2465,14 +2465,14 @@
    "sources": [
     "a-src-uefa-51817"
    ],
-   "researchedAt": "2026-11-15",
+   "researchedAt": "2026-11-18",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens).",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-15",
-   "approvedBy": "editorial:2026-11-15"
+   "approvedAt": "2026-11-18",
+   "approvedBy": "editorial:2026-11-18"
   },
   {
    "id": "a-m-1995-06-25-genclerbirligi-h-petah-tikva",
@@ -2661,14 +2661,14 @@
    "sources": [
     "a-src-uefa-51815"
    ],
-   "researchedAt": "2026-11-15",
+   "researchedAt": "2026-11-18",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens).",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-15",
-   "approvedBy": "editorial:2026-11-15"
+   "approvedAt": "2026-11-18",
+   "approvedBy": "editorial:2026-11-18"
   },
   {
    "id": "a-m-1992-09-30-h-petah-tikva-feyenoord",
@@ -2875,14 +2875,14 @@
    "sources": [
     "a-src-uefa-6575"
    ],
-   "researchedAt": "2026-11-15",
+   "researchedAt": "2026-11-18",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens).",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-15",
-   "approvedBy": "editorial:2026-11-15"
+   "approvedAt": "2026-11-18",
+   "approvedBy": "editorial:2026-11-18"
   },
   {
    "id": "a-m-1992-09-16-feyenoord-h-petah-tikva",
@@ -2905,14 +2905,14 @@
    "sources": [
     "a-src-uefa-6574"
    ],
-   "researchedAt": "2026-11-15",
+   "researchedAt": "2026-11-18",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens).",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-15",
-   "approvedBy": "editorial:2026-11-15"
+   "approvedAt": "2026-11-18",
+   "approvedBy": "editorial:2026-11-18"
   },
   {
    "id": "a-m-1992-09-02-h-petah-tikva-str-msgodset",
@@ -2945,14 +2945,14 @@
    "sources": [
     "a-src-uefa-6189"
    ],
-   "researchedAt": "2026-11-15",
+   "researchedAt": "2026-11-18",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens).",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-15",
-   "approvedBy": "editorial:2026-11-15"
+   "approvedAt": "2026-11-18",
+   "approvedBy": "editorial:2026-11-18"
   },
   {
    "id": "a-m-1992-08-19-str-msgodset-h-petah-tikva",
@@ -2985,14 +2985,14 @@
    "sources": [
     "a-src-uefa-6190"
    ],
-   "researchedAt": "2026-11-15",
+   "researchedAt": "2026-11-18",
    "parserCertainty": "high",
    "conflictFree": true,
-   "notes": "UEFA match record (date, teams, score, scorers, starting elevens). Approved by the owner on 2026-10-10: UEFA is sufficient for its own competitions.",
+   "notes": "UEFA match record (date, teams, score, scorers, starting elevens).",
    "confidence": 2,
    "status": "approved",
-   "approvedAt": "2026-11-15",
-   "approvedBy": "editorial:2026-11-15"
+   "approvedAt": "2026-11-18",
+   "approvedBy": "editorial:2026-11-18"
   }
  ],
  "kits": [],

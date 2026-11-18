@@ -2761,13 +2761,13 @@
     "sensitive": false
    },
    "sources": [
-    "s365-4694829",
-    "ls-lu-1759016"
+    "s365-4694791",
+    "ls-lu-1759025"
    ],
    "confidence": 3,
    "status": "approved",
-   "researchedAt": "2026-11-15",
-   "approvedAt": "2026-11-15",
+   "researchedAt": "2026-11-18",
+   "approvedAt": "2026-11-18",
    "approvedBy": "automated:cross-source-review-league-lineups-olympiacos",
    "parserCertainty": "high",
    "conflictFree": true,
@@ -2783,13 +2783,13 @@
     "sensitive": false
    },
    "sources": [
-    "s365-4694829",
-    "ls-lu-1759016"
+    "s365-4694791",
+    "ls-lu-1759025"
    ],
    "confidence": 3,
    "status": "approved",
-   "researchedAt": "2026-11-15",
-   "approvedAt": "2026-11-15",
+   "researchedAt": "2026-11-18",
+   "approvedAt": "2026-11-18",
    "approvedBy": "automated:cross-source-review-league-lineups-olympiacos",
    "parserCertainty": "high",
    "conflictFree": true,
