@@ -3,7 +3,7 @@ import {useCallback,useEffect,useRef,useState,type ReactNode} from 'react'
 import type {GameCopy} from '@/lib/clubs/game-copy'
 import {goalPos,screenPosFor,type ShowEvent,type ShowPlayer,type ShowScript,type Side} from '@/lib/clubs/rumble-show'
 import type {RumbleWardrobe} from '@/lib/clubs/rumble-kit'
-import {Bulbs,RumbleShirt,money,posShort,shortName,tr,type Sfx} from './shared'
+import {Bulbs,RumbleShirt,money,posShort,rolePos,shortName,tr,type Sfx} from './shared'
 import s from './rumble.module.css'
 
 /* ---------------------------------------------------------------- the pitch both fives stand on (port of RumblePitchFive) */
@@ -65,7 +65,7 @@ export function RumbleReveal({script,step,onStep,onDone,wardrobe,copy,reduced}:{
    <div className={s.showHead}>
     <p className={`${s.mono} ${s.stageKicker}`}>{tr(copy,ours?'rr.entranceKicker':step==='opponent'?'rr.opponentKicker':'rr.h2h')}</p>
     <h2 className={s.stageTitle}>{tr(copy,step==='five'?'rr.entranceFive':ours?'rr.entranceTitle':step==='opponent'?'rr.opponentTitle':'rr.h2h')}</h2>
-    <p className={s.stageLine} aria-live="polite">{step==='entrance'&&arrived?<><span className={s.mono}>{posShort(copy,arrived.position)}</span> · <bdi>{arrived.name}</bdi></>:''}</p>
+    <p className={s.stageLine} aria-live="polite">{step==='entrance'&&arrived?<><span className={s.mono}>{rolePos(copy,arrived)}</span> · <bdi>{arrived.name}</bdi></>:''}</p>
     <Bulbs n={15} className={`${s.bulbs} ${s.stageBulbs}`}/>
    </div>
    <div className={s.showPitch}><RumblePitch us={script.us} them={ours?[]:script.them} usCount={usCount} themCount={themCount} wardrobe={wardrobe} copy={copy} pulse={step==='five'}/></div>

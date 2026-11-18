@@ -1,16 +1,16 @@
 'use client'
 import {useEffect, useRef, useState, type ReactNode} from 'react'
-import {busy, occupied, snooze, snoozed} from '@/lib/universe/attention'
+import {busy, occupied, snoozed} from '@/lib/universe/attention'
 import {RUN_DONE, type RunDone} from '@/lib/clubs/completion'
 
 /**
  * Connected Football — one client shell for every discovery unit (CF-02, CF-05, CF-01).
- *  · a snoozed family stays away; "×" snoozes it for seven days, here and in the slide-up banner alike
+ *  · "×" takes the unit off the screen for now; it comes back on the next page or visit (owner, 18.11.2026)
  *  · `data-discovery-unit` + `data-up` let the banner and the DUBID strip see it: one unit on screen at a time
  *  · `expiresAt` hides the promise the moment it stops being true; a tab back from the background asks `recheck`
  *    whether the hub would still make the same promise, and hides it if not
  *  · `after` keeps it out of sight until the game on this page has shown its result (lib/clubs/completion.ts)
- * Nothing here is stored about the visitor beyond the existing snooze.
+ * Nothing here is stored about the visitor.
  */
 type After = {club: string; gate: string}
 export function DiscoveryUnit({unit, family, actionId, expiresAt, recheck, after, floating, children}: {
@@ -65,11 +65,11 @@ export function DiscoveryUnit({unit, family, actionId, expiresAt, recheck, after
   }, [state, floating])
 
   if (state !== 'show') return null
-  const close = () => { snooze(family); setState('gone') }
+  const close = () => { setState('gone') }
   return <div ref={ref} data-discovery-unit={unit} data-family={family} data-up={floating || inView ? 'true' : 'false'} data-action={actionId}
     className={floating ? 'uv-unit uv-float' : 'uv-unit'} style={floating ? {position: 'fixed', insetInline: 12, bottom: 'calc(var(--app-bottom, 0px) + env(safe-area-inset-bottom, 0px) + 12px)', zIndex: 45, maxWidth: 520, marginInline: 'auto'} : {position: 'relative'}}>
     {children}
-    <button type="button" className="min-h-tap" aria-label="Not now — hide for a week" onClick={close}
+    <button type="button" className="min-h-tap" aria-label="Close" onClick={close}
       style={{position: 'absolute', insetBlockStart: 4, insetInlineEnd: 4, minWidth: 44, minHeight: 44, background: 'none', border: 0, color: 'inherit', font: '700 20px/1 var(--mag-body, system-ui)', cursor: 'pointer'}}>×</button>
   </div>
 }
