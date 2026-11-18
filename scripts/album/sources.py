@@ -76,6 +76,16 @@ CLUB_WORDS = {'hapoel-tel-aviv': ['הפועל תל אביב'], 'hapoel-petah-tik
               'zrinjski-mostar': ['Zrinjski'], 'celtic': ['Celtic'], 'st-pauli': ['St. Pauli', 'Sankt Pauli'], 'atalanta': ['Atalanta']}
 
 
+FOOTBALL = ['football', 'footballer', 'soccer', 'fußball', 'fussball', 'fußballspieler', 'calcio', 'calciatore', 'fudbal', 'nogomet', 'futbol', 'futebol', 'fútbol',
+            'voetbal', 'ποδόσφαιρ', 'ποδοσφαιρ', 'כדורגל', 'כדורגלן', 'كرة القدم', 'لاعب', 'association football', 'stadium', 'fc ', ' f.c.']
+
+
+def football_context(text, club_words):
+    """the picture's own words speak of football or of his club"""
+    t = fold(text)
+    return any(fold(w) in t for w in FOOTBALL) or any(len(w) > 2 and fold(w) in t for cw in club_words for w in [cw])
+
+
 def club_names(club):
     return CLUB_WORDS.get(club, [])
 
