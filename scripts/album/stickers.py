@@ -20,6 +20,7 @@ Usage: python3 scripts/album/stickers.py [--club <id>] [--limit N] [--redo]
 import argparse, base64, io, json, math, os, re, sys, time, urllib.parse, urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import sources as SRC
+import portrait as POR
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -273,8 +274,11 @@ def drawn_figure(st, x, y, w, h, traits=None):
     sw = w * 1.04
     sc = sw / 336
     sx = x + w / 2 - 170 * sc
-    sy = ey + 47 - (56 - 20) * sc
-    head = SRC.head_svg(x + w / 2, ey, traits or SRC.era_default(st.get('from')))
+    t = traits or SRC.era_default(st.get('from'))
+    sc_ = 27
+    head = POR.portrait_svg(x + w / 2, ey, sc_, t, t.get('shape'), uid='p%d' % st['slot'])
+    chin = ey + max(y_ for _, y_ in (t.get('shape') or POR.MEAN)[6:11]) * sc_
+    sy = chin + sc_ * 1.0 - (56 - 20) * sc
     if k:
         b64, (vx, vy, vw, vh) = k
         shirt = (f'<svg x="{sx:.1f}" y="{sy:.1f}" width="{sw:.1f}" height="{298*sc:.1f}" viewBox="0 20 336 298" overflow="visible">'
@@ -384,6 +388,26 @@ def cutout(raw, session, frame):
     return edge, f
 
 
+def remove_mask(im, session):
+    from rembg import remove
+    return remove(im, session=session[0] if isinstance(session, tuple) else session, only_mask=True)
+
+
+def face_shape(raw):
+    """his face's proportions (68 landmarks, normalised and blended with the average face — portrait.py), or None"""
+    import cv2
+    import numpy as np
+    from PIL import Image
+    im = Image.open(io.BytesIO(raw)).convert('RGB')
+    s = 600 / max(im.size)
+    im = im.resize((max(1, int(im.width * s)), max(1, int(im.height * s))))
+    f = face_of(im)
+    if not f:
+        return None
+    lm = POR.landmarks(cv2.cvtColor(np.array(im), cv2.COLOR_RGB2BGR), f, os.environ['ALBUM_LBF'])
+    return POR.normalise(lm) if lm else None
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--club')
@@ -436,8 +460,10 @@ def main():
                 traits = None
                 if not src:
                     ref = SRC.any_wiki_picture(get_json, get_bytes, qid) if qid else None
-                    traits = (SRC.traits(ref, face_of) if ref else None) or SRC.era_default(st.get('from'))
+                    traits = (SRC.traits(ref, face_of, lambda im_: remove_mask(im_, session)) if ref else None) or SRC.era_default(st.get('from'))
                     traits.setdefault('measured', bool(ref))
+                    if ref and traits.get('measured') and os.environ.get('ALBUM_LBF'):
+                        traits['shape'] = face_shape(ref)
                 svg = sticker_svg(st, clubs[club], photo, photo_wh, frame, logo_b64, traits=traits)
                 pg.set_content(f'<html><style>{css} body{{margin:0;background:transparent}} svg{{display:block}}</style><body>{svg}</body></html>')
                 pg.wait_for_timeout(150)

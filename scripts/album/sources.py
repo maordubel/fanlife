@@ -148,7 +148,7 @@ def traits(raw, face_of, mask_of=None):
     jaw = box(x + w * .18, y + h * .80, x + w * .82, y + h * 1.0)
     lip = box(x + w * .36, y + h * .69, x + w * .64, y + h * .77)
     darkish = lambda px: (dist(px, skin) > 75) & (lum(px) < sl - 35) if len(px) else np.zeros(0, bool)
-    beard = len(jaw) > 30 and float(darkish(jaw).mean()) > 0.55
+    beard = len(jaw) > 30 and float(darkish(jaw).mean()) > 0.66  # stubble and jaw shadow stay below this
     tache = len(lip) > 15 and float(darkish(lip).mean()) > 0.5
     if hl > 170 and sat < 30:
         hc = 'white'
