@@ -28,6 +28,7 @@ async function call<T>(url:string,init?:RequestInit):Promise<{ok:boolean;status:
 }
 
 import {ReportsPanel,BulkPanel,MergePanel} from './PlayersTools'
+import {PeoplePanel} from './PeoplePanel'
 export function PlayersDesk(){
  const router=useRouter(),path=usePathname(),sp=useSearchParams()
  const [data,setData]=useState<Listing|null>(null),[err,setErr]=useState<string|null>(null),[busy,setBusy]=useState(false),[open,setOpen]=useState<{club:string;id:string}|null>(null)
@@ -53,8 +54,8 @@ export function PlayersDesk(){
  return <div className="pcc">
   <header className="desk-head"><p className="desk-kicker">Players · Player Control Center</p><h1 className="desk-h1">Every player, every club</h1>
    <p className="pcc-lede">Change a price, a score, a reputation, positions or a name right in the table — or tick several men and set their price together. It saves at once and every game uses it. Click a column name to sort. <b>Edit</b> opens the rest: a note, removing a man, merging.</p></header>
-  <nav className="pcc-tabs" aria-label="Player Control Center">{([['','Players'],['reports','Reports'],['merge','Merge duplicates'],['bulk','Bulk edit (CSV)']] as const).map(([k,l])=><button key={k} type="button" className="pcc-chip" aria-pressed={(sp.get('tab')||'')===k} onClick={()=>set('tab',k||null)}>{l}</button>)}</nav>
-  {tab==='reports'?<ReportsPanel club={(sp.get('club')||'').split(',')[0]||null}/>:tab==='merge'?<MergePanel club={(sp.get('club')||'').split(',')[0]||null}/>:tab==='bulk'?<BulkPanel/>:<>
+  <nav className="pcc-tabs" aria-label="Player Control Center">{([['','Players'],['reports','Reports'],['merge','Merge duplicates'],['people','Across clubs'],['bulk','Bulk edit (CSV)']] as const).map(([k,l])=><button key={k} type="button" className="pcc-chip" aria-pressed={(sp.get('tab')||'')===k} onClick={()=>set('tab',k||null)}>{l}</button>)}</nav>
+  {tab==='reports'?<ReportsPanel club={(sp.get('club')||'').split(',')[0]||null}/>:tab==='merge'?<MergePanel club={(sp.get('club')||'').split(',')[0]||null}/>:tab==='people'?<PeoplePanel club={(sp.get('club')||'').split(',')[0]||null}/>:tab==='bulk'?<BulkPanel/>:<>
   {data&&!data.storage.durable&&<p role="alert" className="desk-state" data-state="error"><b>Changes here will not survive a restart.</b> The control room has no durable store connected ({data.storage.kind}). Set SUPABASE_SERVICE_ROLE_KEY before relying on it.</p>}
   {data?.storage.error&&<p role="alert" className="desk-state" data-state="error">The player files are unreachable ({data.storage.error}). The games keep the last published values.</p>}
   {err&&<p role="alert" className="desk-state" data-state="error">{err}</p>}

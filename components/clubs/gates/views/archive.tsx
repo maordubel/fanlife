@@ -4,6 +4,8 @@ import {archiveProjection} from '@/lib/clubs/archive-door'
 import {gateAvailability} from '@/lib/clubs/gates'
 import {clubWardrobe} from '@/lib/clubs/kit-wardrobe'
 import type {GateView} from '../types'
+import {door as featureDoor} from '@/lib/features-server'
+import {people,peopleFromRepo} from '@/lib/people/registry'
 
 const TABS:ArchiveTab[]=['today','time','index','dig','search','mine']
 /**
@@ -12,7 +14,7 @@ const TABS:ArchiveTab[]=['today','time','index','dig','search','mine']
  *   ?tab=index opens the Index (seasons · opponents · competitions · players A–Z, 17.11.2026) · ?q=… opens Search · ?today=1 opens Today · ?event=<id> opens that entry's sheet (unknown id → 404) · ?tab=… picks a mode ·
  *   ?player= / ?match=&on=&score= / ?name=&y= open the entry a game names (lib/clubs/archive-door.ts), else search the name.
  */
-export const view:GateView=({club,locale,copy,round,searchParams,allowed})=>{
+export const view:GateView=async({club,locale,copy,round,searchParams,allowed})=>{
  const {wire,ids,door,index}=archiveProjection(club)
  if(searchParams.event&&!ids.has(searchParams.event))notFound()
  // 12.11.2026 — the door every gate links through: ?player=<id> · ?match=<id>&on=<day>&score=<x-y> · ?name=<printed name>&y=<year>.
@@ -24,8 +26,17 @@ export const view:GateView=({club,locale,copy,round,searchParams,allowed})=>{
  // switched on for this club AND playable from its data — the same two checks the target page makes (review F04)
  const playable=(k:'xi'|'derby')=>allowed(k)&&gateAvailability(club,k).playable
  const hasRival=!!club.rivals?.length
+ // People Registry (18.11.2026): a player entry opens his one profile across every club, when profiles are open (or the owner previews)
+ const profiles=(await featureDoor('profiles')).open?await peopleFor(club.identity.id,ids):undefined
  return <ClubArchive club={club.identity.id} clubName={club.identity.name} version={club.version} locale={locale} contentLocale={club.locales.content} copy={copy}
   wire={wire} index={index} seed={round.seed} initial={{tab,q,event:resolved||null}}
-  links={{xi:playable('xi')?`/clubs/${club.identity.id}/xi?lang=${locale}`:null,derby:hasRival&&playable('derby')?`/clubs/${club.identity.id}/derby?lang=${locale}`:null}}
+  links={{xi:playable('xi')?`/clubs/${club.identity.id}/xi?lang=${locale}`:null,derby:hasRival&&playable('derby')?`/clubs/${club.identity.id}/derby?lang=${locale}`:null,...(profiles?{profiles}:{})}}
   wardrobe={clubWardrobe(club)}/>
+}
+
+/** entry id → person id for this club's player entries (a player entry's id is his record id) */
+async function peopleFor(clubId:string,ids:ReadonlySet<string>):Promise<Record<string,string>>{
+ const reg=await people().catch(()=>peopleFromRepo()),out:Record<string,string>={}
+ for(const id of ids){const p=reg.personOf(clubId,id);if(p)out[id]=p.id}
+ return out
 }

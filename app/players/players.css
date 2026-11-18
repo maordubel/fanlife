@@ -1,0 +1,39 @@
+/* Player profiles (People Registry, 18.11.2026) — a page of the weekly: newsprint, one ink plate, every club on its own
+   colour band (worn through --club-primary, never painted by hand). Prefix plp-. Tokens only, logical properties only. */
+.plp{max-inline-size:72rem;margin-inline:auto;padding:1rem;display:grid;gap:1.5rem;color:var(--mag-ink);background:var(--mag-paper)}
+.plp-kicker{font-family:var(--mag-condensed);text-transform:uppercase;letter-spacing:.08em;color:var(--mag-red-deep);font-size:.9rem;margin:0}
+.plp-head{display:grid;gap:1rem;grid-template-columns:7.5rem minmax(0,1fr);align-items:start}
+.plp-photo{margin:0;display:grid;gap:.4rem;text-align:center}
+.plp-sil{display:grid;place-items:center;aspect-ratio:3/4;border:2px dashed var(--mag-muted);border-radius:.6rem;background:var(--mag-card)}
+.plp-sil svg{inline-size:58%;fill:var(--mag-muted);opacity:.45}
+.plp-photo figcaption{font-size:.72rem;line-height:1.3;color:var(--mag-muted)}
+.plp-title h1{font-family:var(--mag-display);font-size:clamp(2rem,9vw,4.25rem);line-height:.92;margin:0;text-transform:uppercase;letter-spacing:.01em;overflow-wrap:anywhere}
+.plp-aka{margin:.35rem 0 0;color:var(--mag-muted);font-size:.9rem}
+.plp-facts{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin:.9rem 0 0}
+.plp-facts div{display:grid;gap:.1rem}
+.plp-facts dt{font-family:var(--mag-condensed);text-transform:uppercase;font-size:.75rem;letter-spacing:.06em;color:var(--mag-muted)}
+.plp-facts dd{margin:0;font-weight:700}
+.plp-stars{display:inline-flex;gap:.08rem;vertical-align:middle}
+.plp-star{color:var(--mag-muted);opacity:.35;font-size:1.05em;line-height:1}
+.plp-star[data-fill='full']{color:var(--mag-orange);opacity:1}
+.plp-star[data-fill='1'],.plp-star[data-fill='2'],.plp-star[data-fill='3']{color:var(--mag-orange);opacity:.6}
+.plp-sub{font-family:var(--mag-condensed);text-transform:uppercase;font-size:1.25rem;letter-spacing:.06em;margin:0 0 .6rem;border-block-end:3px double var(--mag-ink);padding-block-end:.3rem}
+.plp-list{list-style:none;margin:0;padding:0;display:grid;gap:.75rem}
+.plp-stint{display:grid;grid-template-columns:3.25rem minmax(0,1fr);gap:.4rem .9rem;align-items:center;padding:.8rem;border-radius:.6rem;background:var(--mag-card);border-inline-start:.55rem solid var(--club-primary,var(--mag-ink));box-shadow:3px 3px 0 var(--mag-shadow)}
+.plp-crest{inline-size:3.25rem;block-size:3.25rem;display:grid;place-items:center;border-radius:50%;background:var(--mag-paper)}
+.plp-crest img{inline-size:2.6rem;block-size:2.6rem;object-fit:contain}
+.plp-initials{display:grid;place-items:center;inline-size:2.6rem;block-size:2.6rem;border-radius:50%;background:var(--club-primary,var(--mag-ink));color:var(--club-on-primary,var(--mag-white));font-family:var(--mag-condensed);font-weight:700}
+.plp-stint h3{margin:0;font-family:var(--mag-condensed);text-transform:uppercase;font-size:1.15rem;letter-spacing:.04em}
+.plp-closed{font-size:.75rem;color:var(--mag-red-deep);text-transform:none;letter-spacing:0}
+.plp-years,.plp-line{margin:.15rem 0 0;font-size:.92rem}
+.plp-door{grid-column:1/-1;justify-self:start;display:inline-flex;align-items:center;padding-inline:1rem;border-radius:999px;background:var(--mag-ink);color:var(--mag-paper);font-family:var(--mag-condensed);text-transform:uppercase;letter-spacing:.05em;font-size:.85rem;text-decoration:none}
+.plp-door:focus-visible{outline:3px solid var(--mag-cyan);outline-offset:2px}
+.plp-note{margin:0;font-size:.8rem;color:var(--mag-muted)}
+@media (min-width:48rem){
+ .plp{padding:2rem 1.5rem}
+ .plp-head{grid-template-columns:11rem minmax(0,1fr);gap:2rem}
+ .plp-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .plp-stint{grid-template-columns:4rem minmax(0,1fr) auto}
+ .plp-crest{inline-size:4rem;block-size:4rem}
+ .plp-door{grid-column:auto;justify-self:end}
+}
