@@ -55,7 +55,7 @@ export function hubSections(locale:UiLocale,o:{shop?:boolean;album?:boolean}={})
  const t=menuCopy(locale)
  return [
   {href:'/',title:t.home,sub:t.wkHomeSub,icon:'home'},
-  {href:'/#clubs',title:t.clubs,sub:t.wkClubsSub,icon:'clubs'},
+  {href:'/clubs',title:t.clubs,sub:t.wkClubsSub,icon:'clubs'},
   {href:'/our-games',title:t.tabOurGames,sub:t.wkGamesSub,icon:'play'},
   {href:'/#life',title:t.tabLife,sub:t.wkLifeSub,icon:'life'},
   ...(o.shop?[{href:'/shop',title:t.wkShop,sub:t.wkShopSub,icon:'bag'}]:[]),
