@@ -1,6 +1,6 @@
 {
  "generatedAt": "2026-11-17",
- "source": "Wikipedia (English, Hebrew, Greek) football-biography infoboxes, position field — CC BY-SA 4.0; from 17.11.2026 also Wikidata P413 for men who played for the club (P54), sharpened by the English Wikipedia infobox (entries marked src)",
+ "source": "Wikipedia (English, Hebrew, Greek) football-biography infoboxes, position field — CC BY-SA 4.0; from 17.11.2026 also Wikidata P413 for men who played for the club (P54), sharpened by the English Wikipedia infobox (entries marked src); from 18.11.2026 also Wikidata aliases and Wikipedia search on the cleaned full name, exactly one footballer of this club (entries marked src)",
  "rule": "accepted only on an exact title, a footballer page that names this club; nothing matched by surname",
  "positions": {
   "hapoel-tel-aviv": {
@@ -241,6 +241,62 @@
     "title": "Felipe Rodríguez (footballer, born 1990)",
     "rev": 1354231325,
     "lang": "en"
+   },
+   "p_wv-b69d973def": {
+    "pos": "MF",
+    "raw": "Attacking midfielder",
+    "title": "Caio (footballer, born 1986)",
+    "rev": 1385553061,
+    "lang": "en",
+    "src": "wikipedia-search-wave3"
+   },
+   "p_wv-d122002e1b": {
+    "pos": "DF",
+    "raw": "[[Full back (association football)",
+    "title": "Claudemir (footballer, born 1984)",
+    "rev": 1385380432,
+    "lang": "en",
+    "src": "wikipedia-search-wave3"
+   },
+   "p_wv-28a9f328c9": {
+    "pos": "MF",
+    "raw": "Attacking midfielder",
+    "title": "Dudu (footballer, born 1998)",
+    "rev": 1384890658,
+    "lang": "en",
+    "src": "wikipedia-search-wave3"
+   },
+   "p_wv-4393deb60d": {
+    "pos": "FW",
+    "raw": "forward",
+    "title": "Q726192",
+    "rev": 0,
+    "lang": "wikidata",
+    "src": "wikidata-p54-p413-alias"
+   },
+   "p_wv-9b2a77af0b": {
+    "pos": "FW",
+    "raw": "forward",
+    "title": "Q68101566",
+    "rev": 0,
+    "lang": "wikidata",
+    "src": "wikidata-p54-p413-alias"
+   },
+   "p_wv-fbcbd4226b": {
+    "pos": "FW",
+    "raw": "forward",
+    "title": "Q7090115",
+    "rev": 0,
+    "lang": "wikidata",
+    "src": "wikidata-p54-p413-alias"
+   },
+   "p_wv-6fff22ca33": {
+    "pos": "FW",
+    "raw": "forward",
+    "title": "Q7499556",
+    "rev": 0,
+    "lang": "wikidata",
+    "src": "wikidata-p54-p413-alias"
    }
   },
   "zrinjski-mostar": {
@@ -3395,6 +3451,14 @@
     "title": "Jerry Haldi",
     "src": "wikidata-p54-p413+enwiki",
     "lang": "en"
+   },
+   "hapoel-petah-tikva:wv-82fd67557d": {
+    "pos": "FW",
+    "raw": "forward",
+    "title": "Q274869",
+    "rev": 0,
+    "lang": "wikidata",
+    "src": "wikidata-p54-p413-alias"
    }
   },
   "panathinaikos": {
@@ -5630,6 +5694,70 @@
     "title": "Giorgos Kalafatis",
     "src": "wikidata-p54-p413+enwiki",
     "lang": "en"
+   },
+   "panathinaikos:wv-70c2d653ba": {
+    "pos": "DF",
+    "raw": "[[Defender (association football)#Full-back",
+    "title": "Antoñito (footballer, born 1987)",
+    "rev": 1384574305,
+    "lang": "en",
+    "src": "wikipedia-search-wave3"
+   },
+   "panathinaikos:wv-5f95029a38": {
+    "pos": "FW",
+    "raw": "[[Forward (association football)",
+    "title": "Carlitos (footballer, born 1990)",
+    "rev": 1385951670,
+    "lang": "en",
+    "src": "wikipedia-search-wave3"
+   },
+   "panathinaikos:wv-0937596e9a": {
+    "pos": "MF",
+    "raw": "midfielder",
+    "title": "Q180283",
+    "rev": 0,
+    "lang": "wikidata",
+    "src": "wikidata-p54-p413-alias"
+   },
+   "panathinaikos:wv-d120e528c9": {
+    "pos": "MF",
+    "raw": "midfielder",
+    "title": "Q14648064",
+    "rev": 0,
+    "lang": "wikidata",
+    "src": "wikidata-p54-p413-alias"
+   },
+   "panathinaikos:wv-68387fb592": {
+    "pos": "MF",
+    "raw": "midfielder",
+    "title": "Q2067020",
+    "rev": 0,
+    "lang": "wikidata",
+    "src": "wikidata-p54-p413-alias"
+   },
+   "panathinaikos:wv-84307aae9f": {
+    "pos": "FW",
+    "raw": "[[Forward (association football)",
+    "title": "Miloš Pantović (footballer, born 2002)",
+    "rev": 1385429959,
+    "lang": "en",
+    "src": "wikipedia-search-wave3"
+   },
+   "panathinaikos:wv-55608641a5": {
+    "pos": "FW",
+    "raw": "[[Forward (association football)#Striker",
+    "title": "Kostas Papageorgiou (footballer, born 1941)",
+    "rev": 1385461145,
+    "lang": "en",
+    "src": "wikipedia-search-wave3"
+   },
+   "panathinaikos:wv-bff0bbb430": {
+    "pos": "MF",
+    "raw": "[[Midfielder#Winger",
+    "title": "Sebastián Romero (footballer, born 1978)",
+    "rev": 1382675349,
+    "lang": "en",
+    "src": "wikipedia-search-wave3"
    }
   },
   "aek-athens": {
@@ -6171,6 +6299,54 @@
     "title": "Paulinho (footballer, born 1991)",
     "rev": 1360208820,
     "lang": "en"
+   },
+   "aek-athens:wv-9a369d6516": {
+    "pos": "FW",
+    "raw": "wing half",
+    "title": "Q166974",
+    "rev": 0,
+    "lang": "wikidata",
+    "src": "wikidata-p54-p413-alias"
+   },
+   "aek-athens:wv-04420308ac": {
+    "pos": "MF",
+    "raw": "midfielder",
+    "title": "Q1335595",
+    "rev": 0,
+    "lang": "wikidata",
+    "src": "wikidata-p54-p413-alias"
+   },
+   "aek-athens:wv-285c91ca95": {
+    "pos": "MF",
+    "raw": "Midfielder, [[Defender (association football),",
+    "title": "Anastasios Kritikos (footballer, born 1914)",
+    "rev": 1383014026,
+    "lang": "en",
+    "src": "wikipedia-search-wave3"
+   },
+   "aek-athens:wv-c6e54e3bee": {
+    "pos": "MF",
+    "raw": "Attacking midfielder, [[winger (association football)",
+    "title": "Leonardo (footballer, born September 1986)",
+    "rev": 1385051392,
+    "lang": "en",
+    "src": "wikipedia-search-wave3"
+   },
+   "aek-athens:wv-69740a74a0": {
+    "pos": "MF",
+    "raw": "midfielder",
+    "title": "Q561099",
+    "rev": 0,
+    "lang": "wikidata",
+    "src": "wikidata-p54-p413-alias"
+   },
+   "aek-athens:wv-1a3b26835a": {
+    "pos": "DF",
+    "raw": "Center back, Midfielder",
+    "title": "Rodrigo (footballer, born October 1980)",
+    "rev": 1382647128,
+    "lang": "en",
+    "src": "wikipedia-search-wave3"
    }
   },
   "celtic": {
@@ -8961,6 +9137,86 @@
     "title": "Gerry McElhinney",
     "src": "wikidata-p54-p413+enwiki",
     "lang": "en"
+   },
+   "celtic:p-dh-4071a73a6667": {
+    "pos": "FW",
+    "raw": "forward",
+    "title": "Q27831179",
+    "rev": 0,
+    "lang": "wikidata",
+    "src": "wikidata-p54-p413-alias"
+   },
+   "celtic:p-dh-22304ef4bf4f": {
+    "pos": "DF",
+    "raw": "Centre-half, [[Goalkeeper (association football)",
+    "title": "James Boyle (footballer, born 1866)",
+    "rev": 1383247938,
+    "lang": "en",
+    "src": "wikipedia-search-wave3"
+   },
+   "celtic:wv-6c70aeb178": {
+    "pos": "MF",
+    "raw": "midfielder",
+    "title": "Q165639",
+    "rev": 0,
+    "lang": "wikidata",
+    "src": "wikidata-p54-p413-alias"
+   },
+   "celtic:wv-f00777d4cc": {
+    "pos": "FW",
+    "raw": "wing half",
+    "title": "Q630350",
+    "rev": 0,
+    "lang": "wikidata",
+    "src": "wikidata-p54-p413-alias"
+   },
+   "celtic:wv-4cadccb0f3": {
+    "pos": "FW",
+    "raw": "forward",
+    "title": "Q63279997",
+    "rev": 0,
+    "lang": "wikidata",
+    "src": "wikidata-p54-p413-alias"
+   },
+   "celtic:wv-69e5b395bc": {
+    "pos": "FW",
+    "raw": "forward",
+    "title": "Q3180127",
+    "rev": 0,
+    "lang": "wikidata",
+    "src": "wikidata-p54-p413-alias"
+   },
+   "celtic:wv-19a7d1ae82": {
+    "pos": "DF",
+    "raw": "Right-back",
+    "title": "Ben McPherson (Scottish footballer)",
+    "rev": 1383046946,
+    "lang": "en",
+    "src": "wikipedia-search-wave3"
+   },
+   "celtic:wv-119f80a5b5": {
+    "pos": "GK",
+    "raw": "goalkeeper",
+    "title": "Q4761078",
+    "rev": 0,
+    "lang": "wikidata",
+    "src": "wikidata-p54-p413-alias"
+   },
+   "celtic:wv-7dc388e720": {
+    "pos": "FW",
+    "raw": "wing half",
+    "title": "Q5488588",
+    "rev": 0,
+    "lang": "wikidata",
+    "src": "wikidata-p54-p413-alias"
+   },
+   "celtic:wv-88bc0e422c": {
+    "pos": "MF",
+    "raw": "[[Midfielder#Winger",
+    "title": "Jim Murphy (footballer, born 1956)",
+    "rev": 1383142045,
+    "lang": "en",
+    "src": "wikipedia-search-wave3"
    }
   },
   "st-pauli": {
@@ -10618,6 +10874,22 @@
     "title": "Tim Gutberlet",
     "src": "wikidata-p54-p413+enwiki",
     "lang": "en"
+   },
+   "st-pauli:wv-d4d01db89e": {
+    "pos": "FW",
+    "raw": "forward",
+    "title": "Q274869",
+    "rev": 0,
+    "lang": "wikidata",
+    "src": "wikidata-p54-p413-alias"
+   },
+   "st-pauli:wv-ed3d057384": {
+    "pos": "FW",
+    "raw": "forward",
+    "title": "Q373163",
+    "rev": 0,
+    "lang": "wikidata",
+    "src": "wikidata-p54-p413-alias"
    }
   },
   "olympiacos": {
@@ -14967,6 +15239,78 @@
     "title": "Willian (footballer, born 1988)",
     "rev": 1376299244,
     "lang": "en"
+   },
+   "olympiacos:wv-35f25dbfe8": {
+    "pos": "FW",
+    "raw": "forward",
+    "title": "Q110882527",
+    "rev": 0,
+    "lang": "wikidata",
+    "src": "wikidata-p54-p413-alias"
+   },
+   "olympiacos:wv-dc85c61ff4": {
+    "pos": "MF",
+    "raw": "midfielder",
+    "title": "Q17486571",
+    "rev": 0,
+    "lang": "wikidata",
+    "src": "wikidata-p54-p413-alias"
+   },
+   "olympiacos:wv-ef15d144f8": {
+    "pos": "FW",
+    "raw": "forward",
+    "title": "Q1509439",
+    "rev": 0,
+    "lang": "wikidata",
+    "src": "wikidata-p54-p413-alias"
+   },
+   "olympiacos:wv-7bfbec9ae0": {
+    "pos": "DF",
+    "raw": "full-back",
+    "title": "Q38136",
+    "rev": 0,
+    "lang": "wikidata",
+    "src": "wikidata-p54-p413-alias"
+   },
+   "olympiacos:wv-16ec24d4ad": {
+    "pos": "GK",
+    "raw": "goalkeeper",
+    "title": "Q1992032",
+    "rev": 0,
+    "lang": "wikidata",
+    "src": "wikidata-p54-p413-alias"
+   },
+   "olympiacos:wv-ac741fb792": {
+    "pos": "MF",
+    "raw": "midfielder",
+    "title": "Q277772",
+    "rev": 0,
+    "lang": "wikidata",
+    "src": "wikidata-p54-p413-alias"
+   },
+   "olympiacos:wv-792ab142ad": {
+    "pos": "DF",
+    "raw": "full-back",
+    "title": "Q174926",
+    "rev": 0,
+    "lang": "wikidata",
+    "src": "wikidata-p54-p413-alias"
+   },
+   "olympiacos:wv-7bc378b0aa": {
+    "pos": "DF",
+    "raw": "Left-back",
+    "title": "Ramon (footballer, born 2001)",
+    "rev": 1385439517,
+    "lang": "en",
+    "src": "wikipedia-search-wave3"
+   },
+   "olympiacos:wv-d5d87e00b4": {
+    "pos": "FW",
+    "raw": "[[Winger (association football)",
+    "title": "Wanderson (footballer, born February 1994)",
+    "rev": 1385098176,
+    "lang": "en",
+    "src": "wikipedia-search-wave3"
    }
   },
   "wydad-casablanca": {
@@ -17468,1256 +17812,765 @@
    {
     "id": "p_6fa23a3cdc",
     "name": "אבי אדרי",
-    "why": "he: not a football biography"
+    "why": "he: no page titled with this full name"
    },
    {
     "id": "p_a9f3874b86",
     "name": "אברהם פרידריך",
-    "why": "he: no page with that exact title"
+    "why": "he: no page titled with this full name"
    },
    {
     "id": "p_5f8d21fbb0",
     "name": "אמרה יעקבי",
-    "why": "he: infobox states no position"
+    "why": "he: no football biography naming this club states a position"
    },
    {
     "id": "p_6780090f07",
     "name": "בן ציון ריידר",
-    "why": "he: no page with that exact title"
+    "why": "he: no page titled with this full name"
    },
    {
     "id": "p_81af211a4f",
     "name": "בני גולדשטיין",
-    "why": "he: no page with that exact title"
+    "why": "he: no page titled with this full name"
    },
    {
     "id": "p_a605ffbd7f",
     "name": "יהושע זילברשטיין",
-    "why": "he: no page with that exact title"
+    "why": "he: no page titled with this full name"
    },
    {
     "id": "p_df55a90930",
     "name": "יונה פוקס",
-    "why": "he: no page with that exact title"
+    "why": "he: no page titled with this full name"
    },
    {
     "id": "p_45cd55bc49",
     "name": "ליאונרדו בוארב",
-    "why": "he: no page with that exact title"
+    "why": "he: no page titled with this full name"
    },
    {
     "id": "p_72181cf8a0",
     "name": "מאיר ברנר",
-    "why": "he: not a football biography"
+    "why": "he: no page titled with this full name"
    },
    {
     "id": "p_90d21ac295",
     "name": "מוניה גושן",
-    "why": "he: no page with that exact title"
+    "why": "he: no page titled with this full name"
    },
    {
     "id": "p_d2cf8ead07",
     "name": "משה מוסטרל",
-    "why": "he: no page with that exact title"
+    "why": "he: no page titled with this full name"
    },
    {
     "id": "p_abff31f026",
     "name": "משה פיימן",
-    "why": "he: no page with that exact title"
+    "why": "he: no page titled with this full name"
    },
    {
     "id": "p_e50849c7c4",
     "name": "משה רסקין",
-    "why": "he: not a football biography"
+    "why": "he: no page titled with this full name"
    },
    {
     "id": "p_3761a4caa2",
     "name": "נסים חלפון",
-    "why": "he: no page with that exact title"
+    "why": "he: no page titled with this full name"
    },
    {
     "id": "p_82db47f9fa",
     "name": "נפתלי שוואלב",
-    "why": "he: no page with that exact title"
+    "why": "he: no page titled with this full name"
    },
    {
     "id": "p_f73e868810",
     "name": "עומאר גאריבה",
-    "why": "he: no page with that exact title"
+    "why": "he: no page titled with this full name"
    },
    {
     "id": "p_67db828630",
     "name": "עמי אדמוני",
-    "why": "he: no page with that exact title"
+    "why": "he: no page titled with this full name"
    },
    {
     "id": "p_c5d2cb22a6",
     "name": "שמחה חינקיס",
-    "why": "he: not a football biography"
+    "why": "he: no page titled with this full name"
    },
    {
     "id": "p_3768acb435",
     "name": "שמעון בנודיס",
-    "why": "he: no page with that exact title"
+    "why": "he: no page titled with this full name"
    },
    {
     "id": "p_1ddc859543",
     "name": "שמעון צימרמן",
-    "why": "he: no page with that exact title"
-   },
-   {
-    "id": "p_wv-b69d973def",
-    "name": "Caio",
-    "why": "en: disambiguation page"
-   },
-   {
-    "id": "p_wv-d122002e1b",
-    "name": "Claudemir",
-    "why": "en: not a football biography"
-   },
-   {
-    "id": "p_wv-28a9f328c9",
-    "name": "Dudu",
-    "why": "en: disambiguation page"
-   },
-   {
-    "id": "p_wv-4393deb60d",
-    "name": "Fábio Júnior",
-    "why": "en: not a football biography"
+    "why": "he: no page titled with this full name"
    },
    {
     "id": "p_wv-ba0c960b03",
     "name": "אברהם בנימין",
-    "why": "no source consulted for this script/club"
+    "why": "he: no page titled with this full name"
    },
    {
     "id": "p_wv-8fea373aaf",
     "name": "אלי גוטמן",
-    "why": "no source consulted for this script/club"
-   },
-   {
-    "id": "p_wv-9b2a77af0b",
-    "name": "עמנואל בואטנג",
-    "why": "no source consulted for this script/club"
+    "why": "he: no football biography naming this club states a position"
    },
    {
     "id": "p_wv-69683bc290",
     "name": "אמנון חרלפ",
-    "why": "no source consulted for this script/club"
-   },
-   {
-    "id": "p_wv-fbcbd4226b",
-    "name": "עומר פרץ",
-    "why": "no source consulted for this script/club"
-   },
-   {
-    "id": "p_wv-6fff22ca33",
-    "name": "שלומי אזולאי",
-    "why": "no source consulted for this script/club"
+    "why": "he: no page titled with this full name"
    }
   ],
   "zrinjski-mostar": [
    {
     "id": "zrinjski-mostar:luka-marin",
     "name": "Luka Marin",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "zrinjski-mostar:aldin-hrvanovic",
     "name": "Aldin Hrvanović",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "zrinjski-mostar:matej-senic",
     "name": "Matej Senić",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "zrinjski-mostar:wv-d614712abe",
     "name": "Filip Brekalo",
-    "why": "en: several footballers of this name played for this club"
+    "why": "several footballers of this name played for this club"
    }
   ],
   "hapoel-petah-tikva": [
    {
     "id": "hapoel-petah-tikva:eric-billa",
     "name": "אריק בילה",
-    "why": "he: no page with that exact title"
+    "why": "he: no page titled with this full name"
    },
    {
     "id": "hapoel-petah-tikva:roei-levi",
     "name": "רועי לוי",
-    "why": "he: page does not name this club"
+    "why": "he: no football biography naming this club states a position"
    },
    {
     "id": "hapoel-petah-tikva:hamidou-keita",
     "name": "חמידו קייטה",
-    "why": "he: no page with that exact title"
+    "why": "he: no page titled with this full name"
    },
    {
     "id": "hapoel-petah-tikva:r26-noam-keysi",
     "name": "נועם קייסי",
-    "why": "he: no page with that exact title"
+    "why": "he: no page titled with this full name"
    },
    {
     "id": "hapoel-petah-tikva:wv-29e9861761",
     "name": "Elisha Abas",
-    "why": "en: not a football biography"
-   },
-   {
-    "id": "hapoel-petah-tikva:wv-82fd67557d",
-    "name": "Émerson",
-    "why": "en: disambiguation page"
-   },
-   {
-    "id": "hapoel-petah-tikva:wv-e707031231",
-    "name": "Jerry Haldi",
-    "why": "en: infobox states no position"
+    "why": "en: no football biography naming this club states a position"
    },
    {
     "id": "hapoel-petah-tikva:wv-e4933153bd",
     "name": "Eliezer Kalina",
-    "why": "en: not a football biography"
+    "why": "en: no football biography naming this club states a position"
    },
    {
     "id": "hapoel-petah-tikva:wv-ff7f8c360e",
     "name": "Eyal Lahman",
-    "why": "en: infobox states no position"
-   },
-   {
-    "id": "hapoel-petah-tikva:wv-a0129ce817",
-    "name": "Gabi Lasri",
-    "why": "en: infobox states no position"
+    "why": "en: no football biography naming this club states a position"
    }
   ],
   "panathinaikos": [
    {
-    "id": "panathinaikos:wv-0b0d58bfad",
-    "name": "Roberto Agueropolis",
-    "why": "en: not a football biography"
-   },
-   {
-    "id": "panathinaikos:wv-70c2d653ba",
-    "name": "Antoñito",
-    "why": "en: page does not name this club"
-   },
-   {
-    "id": "panathinaikos:wv-7751dc3693",
-    "name": "Athanasios Aravositas",
-    "why": "en: not a football biography"
-   },
-   {
     "id": "panathinaikos:wv-6081d9ee39",
     "name": "John Cyril Campbell",
-    "why": "en: not a football biography"
-   },
-   {
-    "id": "panathinaikos:wv-5f95029a38",
-    "name": "Carlitos",
-    "why": "en: disambiguation page"
+    "why": "en: no football biography naming this club states a position"
    },
    {
     "id": "panathinaikos:wv-e32dba9394",
     "name": "Andreas Christodoulou",
-    "why": "en: disambiguation page"
-   },
-   {
-    "id": "panathinaikos:wv-0937596e9a",
-    "name": "Georgios Georgiadis",
-    "why": "en: several footballers of this name played for this club"
+    "why": "en: no football biography naming this club states a position"
    },
    {
     "id": "panathinaikos:wv-93010b39d1",
     "name": "Severiano Irala",
-    "why": "en: not a football biography"
-   },
-   {
-    "id": "panathinaikos:wv-f0bc4a7c8d",
-    "name": "Giorgos Kalafatis",
-    "why": "en: infobox states no position"
-   },
-   {
-    "id": "panathinaikos:wv-a05b30120b",
-    "name": "Sakis Kouvas",
-    "why": "en: not a football biography"
+    "why": "en: no football biography naming this club states a position"
    },
    {
     "id": "panathinaikos:wv-b055daf0b2",
     "name": "Nikos Kovis",
-    "why": "en: not a football biography"
-   },
-   {
-    "id": "panathinaikos:wv-d120e528c9",
-    "name": "Anastasios Kritikos",
-    "why": "en: page does not name this club"
+    "why": "en: no football biography naming this club states a position"
    },
    {
     "id": "panathinaikos:wv-cd596cc1bc",
     "name": "Víctor David López",
-    "why": "en: not a football biography"
-   },
-   {
-    "id": "panathinaikos:wv-68387fb592",
-    "name": "Maurício",
-    "why": "en: page does not name this club"
-   },
-   {
-    "id": "panathinaikos:wv-e5cd39d795",
-    "name": "Victor Mitropoulos",
-    "why": "en: not a football biography"
+    "why": "en: no football biography naming this club states a position"
    },
    {
     "id": "panathinaikos:wv-28cf66d283",
     "name": "Petros Panopoulos",
-    "why": "en: not a football biography"
-   },
-   {
-    "id": "panathinaikos:wv-255c0cb668",
-    "name": "Loukas Panourgias",
-    "why": "en: not a football biography"
-   },
-   {
-    "id": "panathinaikos:wv-84307aae9f",
-    "name": "Miloš Pantović",
-    "why": "en: page does not name this club"
-   },
-   {
-    "id": "panathinaikos:wv-55608641a5",
-    "name": "Kostas Papageorgiou",
-    "why": "en: page does not name this club"
-   },
-   {
-    "id": "panathinaikos:wv-c078ba34b4",
-    "name": "Mimis Pierrakos",
-    "why": "en: not a football biography"
-   },
-   {
-    "id": "panathinaikos:wv-bff0bbb430",
-    "name": "Sebastián Romero",
-    "why": "en: disambiguation page"
-   },
-   {
-    "id": "panathinaikos:wv-460bcc1a47",
-    "name": "Konstantinos Tsiklitiras",
-    "why": "en: not a football biography"
+    "why": "en: no football biography naming this club states a position"
    },
    {
     "id": "panathinaikos:wv-413ae9047f",
     "name": "Grigoris Tsinos",
-    "why": "en: infobox states no position"
-   },
-   {
-    "id": "panathinaikos:wv-6448ec9334",
-    "name": "Giannis Vonortas",
-    "why": "en: infobox states no position"
+    "why": "en: no football biography naming this club states a position"
    }
   ],
-  "aek-athens": [
-   {
-    "id": "aek-athens:wv-9a369d6516",
-    "name": "Edinho",
-    "why": "en: disambiguation page"
-   },
-   {
-    "id": "aek-athens:wv-04420308ac",
-    "name": "Emerson",
-    "why": "en: not a football biography"
-   },
-   {
-    "id": "aek-athens:wv-285c91ca95",
-    "name": "Anastasios Kritikos",
-    "why": "en: page does not name this club"
-   },
-   {
-    "id": "aek-athens:wv-c6e54e3bee",
-    "name": "Leonardo",
-    "why": "en: disambiguation page"
-   },
-   {
-    "id": "aek-athens:wv-69740a74a0",
-    "name": "Míchel",
-    "why": "en: not a football biography"
-   },
-   {
-    "id": "aek-athens:wv-1a3b26835a",
-    "name": "Rodrigo",
-    "why": "en: several footballers of this name played for this club"
-   }
-  ],
+  "aek-athens": [],
   "celtic": [
-   {
-    "id": "celtic:p-dh-007aad1bae9b",
-    "name": "Andrews, Ian",
-    "why": "name is not in Latin script; no exact English title"
-   },
-   {
-    "id": "celtic:p-dh-8f4feb5b7744",
-    "name": "Ciftci, Nadir",
-    "why": "name is not in Latin script; no exact English title"
-   },
    {
     "id": "celtic:p-dh-6adc0ace1105",
     "name": "James Trainer, Rowan",
-    "why": "name is not in Latin script; no exact English title"
-   },
-   {
-    "id": "celtic:p-dh-127202c68ce9",
-    "name": "Charles Patrick TullyImage: Tully, Charlie - Pic†wikifoundryimages.s3.amazonaws.com",
-    "why": "name is not in Latin script; no exact English title"
-   },
-   {
-    "id": "celtic:p-dh-a093c0fb7640",
-    "name": "James Henry Davidson*",
-    "why": "name is not in Latin script; no exact English title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-1d552be07da0",
     "name": "Matthew Flannagan or Michael Joseph Flannagan [see notes below & CGS Forum†www.celticgraves.com ]",
-    "why": "name is not in Latin script; no exact English title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-0673cf3f376b",
     "name": "John Betram Jackson*",
-    "why": "name is not in Latin script; no exact English title"
-   },
-   {
-    "id": "celtic:p-dh-1303d5635c4d",
-    "name": "Hugh O’Donnell",
-    "why": "name is not in Latin script; no exact English title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-65ecac5a339c",
     "name": "Patrick O’Sullivan",
-    "why": "name is not in Latin script; no exact English title"
-   },
-   {
-    "id": "celtic:p-19eb23b47cb8a7",
-    "name": "James Kelly",
-    "why": "en: page does not name this club"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-1a16aad70e8bb9",
     "name": "James Hay",
-    "why": "en: page does not name this club"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-914ba9df56e7f1",
     "name": "Sunny Jim Young",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-d465e660b274c0",
     "name": "Willie McStay",
-    "why": "en: several footballers of this name played for this club"
-   },
-   {
-    "id": "celtic:p-15c62872b3a4ee",
-    "name": "John McPhail",
-    "why": "en: position \"{{ublist\" is not one of the four families"
-   },
-   {
-    "id": "celtic:p-20d5eb0534f3df",
-    "name": "Sean Fallon",
-    "why": "en: infobox states no position"
+    "why": "several footballers of this name played for this club"
    },
    {
     "id": "celtic:p-3da89d4ff70bde",
     "name": "Jackie McNamara (Jnr)",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-9d183880722f",
     "name": "Oliver Anderson",
-    "why": "en: not a football biography"
-   },
-   {
-    "id": "celtic:p-dh-4f3dfb1b24da",
-    "name": "William Angus",
-    "why": "en: disambiguation page"
-   },
-   {
-    "id": "celtic:p-dh-4071a73a6667",
-    "name": "Dr John Atkinson",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-b06aa3e17db9",
     "name": "James Birrell",
-    "why": "en: not a football biography"
-   },
-   {
-    "id": "celtic:p-dh-4d5e1397d450",
-    "name": "John Wilson Blair",
-    "why": "en: no page with that exact title"
-   },
-   {
-    "id": "celtic:p-dh-9bd3ab502bff",
-    "name": "Thomas Bogan",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-2dfc01840a1c",
     "name": "William Boland",
-    "why": "en: not a football biography"
-   },
-   {
-    "id": "celtic:p-dh-22304ef4bf4f",
-    "name": "James Boyle",
-    "why": "en: several footballers of this name played for this club"
-   },
-   {
-    "id": "celtic:p-dh-ea23140b8f6f",
-    "name": "John Brodie",
-    "why": "en: not a football biography"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-53a8f9864b51",
     "name": "Francis Brogan",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-43e741e2978d",
     "name": "John Brown",
-    "why": "en: disambiguation page"
+    "why": "several footballers of this name played for this club"
    },
    {
     "id": "celtic:p-dh-ad42fa15337b",
     "name": "William Brown",
-    "why": "en: disambiguation page"
-   },
-   {
-    "id": "celtic:p-dh-c50c4af573f6",
-    "name": "John Browning",
-    "why": "en: several footballers of this name played for this club"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-9d648f255d72",
     "name": "John Burns",
-    "why": "en: not a football biography"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-cab1ec6cf639",
     "name": "James Scott Cameron",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-76ec9d02e51b",
     "name": "Bernard Cannon",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-0137f16eff42",
     "name": "James Carlin",
-    "why": "en: disambiguation page"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-56e36e8edf12",
     "name": "Joseph James Clark",
-    "why": "en: not a football biography"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-603f0a0d29f1",
     "name": "John Coleman",
-    "why": "en: disambiguation page"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-11be242160f6",
     "name": "John Conway",
-    "why": "en: disambiguation page"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-fb8e1daf8c69",
     "name": "Edward Corrigan",
-    "why": "en: disambiguation page"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-3935eb93d7d3",
     "name": "William Paul Craig",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-ea470d9de455",
     "name": "Alexander Crawford",
-    "why": "en: disambiguation page"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-6ecd8a0735c2",
     "name": "James Paterson Lyle Crozier",
-    "why": "en: no page with that exact title"
-   },
-   {
-    "id": "celtic:p-dh-2e857d5ec206",
-    "name": "John Cunningham",
-    "why": "en: disambiguation page"
-   },
-   {
-    "id": "celtic:p-dh-30fc794097c5",
-    "name": "John Aloysius Paton",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-b4cc9d0ee047",
     "name": "Robert Paton",
-    "why": "en: page does not name this club"
-   },
-   {
-    "id": "celtic:p-dh-88fb73817370",
-    "name": "David Pratt",
-    "why": "en: position \"{{ublist\" is not one of the four families"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-980738cda00e",
     "name": "Francis Quinn",
-    "why": "en: not a football biography"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-fac41d1d0af4",
     "name": "William James Rennet",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-a753cdc5b890",
     "name": "William Ribchester",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-20d927deef41",
     "name": "John Lochery Riley",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-1cae0919034a",
     "name": "William Smith Robertson",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-fca571a519ee",
     "name": "Patrick Edward Rodgers",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-900d4e9f169c",
     "name": "Andrew Ross",
-    "why": "en: disambiguation page"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-8bdd07a618ff",
     "name": "Robert Sanderson",
-    "why": "en: disambiguation page"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-29f8521e669f",
     "name": "William Semple",
-    "why": "en: page does not name this club"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-e32f071c2cdb",
     "name": "Hugh Crawford Shaw",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-0f92c9d99670",
     "name": "Daniel Harold Shea",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-db03a72696c3",
     "name": "Jerome Solis",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-6edb89443c19",
     "name": "William Taylor",
-    "why": "en: disambiguation page"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-b2c7fc209341",
     "name": "Cornelius Tierney",
-    "why": "en: not a football biography"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-084ffa46f0f8",
     "name": "Patrick Turner",
-    "why": "en: not a football biography"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-45df01080e38",
     "name": "James Walls",
-    "why": "en: page does not name this club"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-2a294c8a1a75",
     "name": "Charles Watson",
-    "why": "en: disambiguation page"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-fc66ba5a4277",
     "name": "Thomas John Black Whitney",
-    "why": "en: no page with that exact title"
-   },
-   {
-    "id": "celtic:p-dh-6b1a332fad35",
-    "name": "John Young",
-    "why": "en: not a football biography"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-8672d6f8c414",
     "name": "James Devlin",
-    "why": "en: disambiguation page"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-7259cd5bbf27",
     "name": "John Devlin",
-    "why": "en: disambiguation page"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-d17673391d10",
     "name": "John Patrick Divers",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-9ba820f15047",
     "name": "Hugh Doherty",
-    "why": "en: not a football biography"
+    "why": "en: no football biography naming this club states a position"
    },
    {
     "id": "celtic:p-dh-fd4ca79bc131",
     "name": "Andrew Clark Donaldson",
-    "why": "en: no page with that exact title"
-   },
-   {
-    "id": "celtic:p-dh-5acbb7c97de5",
-    "name": "Adam Scott Mathieson Duncan",
-    "why": "en: no page with that exact title"
-   },
-   {
-    "id": "celtic:p-dh-549ba7d27b34",
-    "name": "David Miller Duncan",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-03f123f104db",
     "name": "James B Duncan",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-1035a32aff60",
     "name": "Isaac English",
-    "why": "en: page does not name this club"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-41f5522e49cd",
     "name": "Albert James Fisher",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-df36866bc935",
     "name": "John Thomas Fitzsimons",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-35540a68416c",
     "name": "Thomas Fitzsimmons",
-    "why": "en: disambiguation page"
-   },
-   {
-    "id": "celtic:p-dh-fb0f5d5c7d72",
-    "name": "William Patrick Gallacher",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-98b50cd5ba4f",
     "name": "William Brownie Garden",
-    "why": "en: not a football biography"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-cc40581512d5",
     "name": "George Gillan",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-e2cc675fd1c9",
     "name": "Hugh Gilmartin",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-46b86f575382",
     "name": "Charles Gorevin",
-    "why": "en: no page with that exact title"
-   },
-   {
-    "id": "celtic:p-dh-b22a60946054",
-    "name": "John Daniel Gould",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-659378bc491d",
     "name": "John Lang Graham",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-b51256e1e289",
     "name": "Alexander Gray",
-    "why": "en: disambiguation page"
-   },
-   {
-    "id": "celtic:p-dh-50ebe1c30280",
-    "name": "Francis Haffey",
-    "why": "en: no page with that exact title"
-   },
-   {
-    "id": "celtic:p-dh-9cca29b24832",
-    "name": "David Hamilton",
-    "why": "en: page does not name this club"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-545a2a818a29",
     "name": "John Hastie",
-    "why": "en: disambiguation page"
-   },
-   {
-    "id": "celtic:p-dh-c7970c539bc4",
-    "name": "Joseph Haverty",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-571e0aefa969",
     "name": "James Healy",
-    "why": "en: disambiguation page"
-   },
-   {
-    "id": "celtic:p-dh-77e90b5c6118",
-    "name": "Anthony Hepburn",
-    "why": "en: no page with that exact title"
-   },
-   {
-    "id": "celtic:p-dh-89b5c18d14b0",
-    "name": "John Higgins",
-    "why": "en: not a football biography"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-35d0532769f7",
     "name": "Dennis Aloysius Hill",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-5bde0b40e503",
     "name": "John Hill",
-    "why": "en: page does not name this club"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-754521e27cff",
     "name": "John McGeachie Hodge",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-aef284d73e5f",
     "name": "William Hughes",
-    "why": "en: disambiguation page"
+    "why": "en: no football biography naming this club states a position"
    },
    {
     "id": "celtic:p-dh-c86d0acde46e",
     "name": "Michael Jackson",
-    "why": "en: disambiguation page"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-2de83570e61e",
     "name": "Robert Jeffrey",
-    "why": "en: not a football biography"
-   },
-   {
-    "id": "celtic:p-dh-2909121336eb",
-    "name": "Peter Joseph Kavanagh",
-    "why": "en: no page with that exact title"
-   },
-   {
-    "id": "celtic:p-dh-c093cb35c5c1",
-    "name": "Francis David Kelly",
-    "why": "en: no page with that exact title"
-   },
-   {
-    "id": "celtic:p-dh-839dd11ad0d8",
-    "name": "John Carmichael Kelly",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-3107192c6e85",
     "name": "Alexander Anderson Kiddie",
-    "why": "en: no page with that exact title"
-   },
-   {
-    "id": "celtic:p-dh-34ec662ed52c",
-    "name": "William Fulton Kivlichan",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-9b4f6b860792",
     "name": "William Smith Leitch",
-    "why": "en: no page with that exact title"
-   },
-   {
-    "id": "celtic:p-dh-6c66709f5e86",
-    "name": "Hugh Bradley Long",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-66c9c399f665",
     "name": "Allan Lynch",
-    "why": "en: not a football biography"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-bdaad02eda57",
     "name": "James Macdonald",
-    "why": "en: page does not name this club"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-3ec764b9765a",
     "name": "Malcolm MacDonald",
-    "why": "en: not a football biography"
+    "why": "en: no football biography naming this club states a position"
    },
    {
     "id": "celtic:p-dh-086ca8cac99f",
     "name": "Thomas Joseph Mackle",
-    "why": "en: no page with that exact title"
-   },
-   {
-    "id": "celtic:p-dh-7e1bcc059fd0",
-    "name": "Thomas Edward Maley",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-b948b15da7dc",
     "name": "William Henry B. Malloy",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-6889ccd8a6b0",
     "name": "John McArdle",
-    "why": "en: not a football biography"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-2a2d5ce2e84a",
     "name": "Anthony McAtee",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-1826f9938976",
     "name": "Patrick McCabe",
-    "why": "en: disambiguation page"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-783af6942929",
     "name": "Denis McCallum",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-ab98bb9626d4",
     "name": "Daniel McCann",
-    "why": "en: not a football biography"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-d1c1d7ff31da",
     "name": "Edward McCann",
-    "why": "en: not a football biography"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-8d4629494aff",
     "name": "Henry McCormick",
-    "why": "en: not a football biography"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-226b583efa7b",
     "name": "Alexander McGregor",
-    "why": "en: disambiguation page"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-45a4aca69211",
     "name": "John McIlhatton",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-d4df1083bdb3",
     "name": "Finlay McLean",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-6918426236bc",
     "name": "Thomas McMillan",
-    "why": "en: page does not name this club"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-571f6f0031c7",
     "name": "Matthew McVittie",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-f7c418ad63ba",
     "name": "Robert McMilan McWilliam",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-bfb97ac0bfab",
     "name": "James Ronald Mitchell",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-ed92eb9c29d4",
     "name": "William Mitchell",
-    "why": "en: page does not name this club"
-   },
-   {
-    "id": "celtic:p-dh-2ace8be2b650",
-    "name": "Thomas Morrison",
-    "why": "en: several footballers of this name played for this club"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-7c114abb257f",
     "name": "Michael Mulvey",
-    "why": "en: disambiguation page"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-24e5c04f7c90",
     "name": "Donald Munro",
-    "why": "en: disambiguation page"
-   },
-   {
-    "id": "celtic:p-dh-05d40733d326",
-    "name": "Charles Edward Napier",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-0f90fa913f44",
     "name": "William A Naughton",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:p-dh-c7e1e69aa4d4",
     "name": "James Park Nelson",
-    "why": "en: no page with that exact title"
-   },
-   {
-    "id": "celtic:p-dh-636c584dec19",
-    "name": "Lassad Hassen Nouioui",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:wv-99e4941728",
     "name": "Davie Adams",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:wv-6cfb849fea",
     "name": "Willie Angus",
-    "why": "en: not a football biography"
-   },
-   {
-    "id": "celtic:wv-a434dffea0",
-    "name": "Jack Bell",
-    "why": "en: disambiguation page"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "celtic:wv-969fec9ab3",
     "name": "Jackie Clarke",
-    "why": "en: not a football biography"
+    "why": "en: no football biography naming this club states a position"
    },
    {
     "id": "celtic:wv-926dfe6127",
     "name": "Thomas Clifford",
-    "why": "en: position \"Centre half\" is not one of the four families"
-   },
-   {
-    "id": "celtic:wv-6c70aeb178",
-    "name": "Michael Doyle",
-    "why": "en: several footballers of this name played for this club"
+    "why": "en: no football biography naming this club states a position"
    },
    {
     "id": "celtic:wv-6197005db1",
     "name": "Peter Farmer",
-    "why": "en: infobox states no position"
-   },
-   {
-    "id": "celtic:wv-f00777d4cc",
-    "name": "James Forrest",
-    "why": "en: several footballers of this name played for this club"
+    "why": "en: no football biography naming this club states a position"
    },
    {
     "id": "celtic:wv-2b14862598",
     "name": "Ray Franchetti",
-    "why": "en: not a football biography"
+    "why": "en: no football biography naming this club states a position"
    },
    {
     "id": "celtic:wv-9b33920620",
     "name": "Jackie Gallacher",
-    "why": "en: not a football biography"
+    "why": "en: no football biography naming this club states a position"
    },
    {
     "id": "celtic:wv-73d2a4df5e",
     "name": "Barry Hepburn",
-    "why": "en: position \"{{hlist\" is not one of the four families"
-   },
-   {
-    "id": "celtic:wv-e55b1b81e0",
-    "name": "Benny Higgins",
-    "why": "en: not a football biography"
-   },
-   {
-    "id": "celtic:wv-52ed7ad417",
-    "name": "Willie Irvine",
-    "why": "en: page does not name this club"
+    "why": "en: no football biography naming this club states a position"
    },
    {
     "id": "celtic:wv-95389b25eb",
     "name": "Scott Kellacher",
-    "why": "en: infobox states no position"
-   },
-   {
-    "id": "celtic:wv-4cadccb0f3",
-    "name": "Mick Leonard",
-    "why": "en: not a football biography"
+    "why": "en: no football biography naming this club states a position"
    },
    {
     "id": "celtic:wv-96ebe82f47",
     "name": "Gerard Lyttle",
-    "why": "en: not a football biography"
-   },
-   {
-    "id": "celtic:wv-174e766dc3",
-    "name": "Bent Martin",
-    "why": "en: not a football biography"
-   },
-   {
-    "id": "celtic:wv-69e5b395bc",
-    "name": "Joe McBride",
-    "why": "en: several footballers of this name played for this club"
-   },
-   {
-    "id": "celtic:wv-f7d113c221",
-    "name": "Gerry McElhinney",
-    "why": "en: infobox states no position"
-   },
-   {
-    "id": "celtic:wv-748cfd9780",
-    "name": "Des McKeown",
-    "why": "en: not a football biography"
-   },
-   {
-    "id": "celtic:wv-19a7d1ae82",
-    "name": "Ben McPherson",
-    "why": "en: not a football biography"
-   },
-   {
-    "id": "celtic:wv-119f80a5b5",
-    "name": "Andy Murdoch",
-    "why": "en: several footballers of this name played for this club"
-   },
-   {
-    "id": "celtic:wv-7dc388e720",
-    "name": "Frank Murphy",
-    "why": "en: not a football biography"
-   },
-   {
-    "id": "celtic:wv-88bc0e422c",
-    "name": "Jim Murphy",
-    "why": "en: not a football biography"
-   },
-   {
-    "id": "celtic:wv-c600b9767f",
-    "name": "Frank Nuttall",
-    "why": "en: infobox states no position"
-   },
-   {
-    "id": "celtic:wv-b865b81153",
-    "name": "George O'Neill",
-    "why": "en: disambiguation page"
+    "why": "en: no football biography naming this club states a position"
    },
    {
     "id": "celtic:wv-bc5ce982f9",
     "name": "Jackie Watters",
-    "why": "en: not a football biography"
+    "why": "en: no football biography naming this club states a position"
    }
   ],
   "st-pauli": [
    {
     "id": "st-pauli:p-3f82457c62e546",
     "name": "Sören Ahlers",
-    "why": "en: no page with that exact title"
+    "why": "en: no page titled with this full name"
    },
    {
     "id": "st-pauli:wv-64396d8147",
     "name": "Arne Barez",
-    "why": "en: not a football biography"
-   },
-   {
-    "id": "st-pauli:wv-d4d01db89e",
-    "name": "Émerson",
-    "why": "en: disambiguation page"
-   },
-   {
-    "id": "st-pauli:wv-7dace7d8c7",
-    "name": "Tim Gutberlet",
-    "why": "en: infobox states no position"
-   },
-   {
-    "id": "st-pauli:wv-ed3d057384",
-    "name": "Marcão",
-    "why": "en: not a football biography"
+    "why": "en: no football biography naming this club states a position"
    },
    {
     "id": "st-pauli:wv-ea6c08cfe3",
     "name": "Julien Yanda",
-    "why": "en: position \"{{hlist\" is not one of the four families"
+    "why": "en: no football biography naming this club states a position"
    }
   ],
   "olympiacos": [
    {
-    "id": "olympiacos:wv-35f25dbfe8",
-    "name": "André Luiz",
-    "why": "en: disambiguation page"
-   },
-   {
-    "id": "olympiacos:wv-dc85c61ff4",
-    "name": "Chiquinho",
-    "why": "en: disambiguation page"
-   },
-   {
     "id": "olympiacos:wv-6cfef3f71a",
     "name": "Dani García",
-    "why": "en: several footballers of this name played for this club"
-   },
-   {
-    "id": "olympiacos:wv-ef15d144f8",
-    "name": "Georgios Kostikos",
-    "why": "en: several footballers of this name played for this club"
-   },
-   {
-    "id": "olympiacos:wv-7bfbec9ae0",
-    "name": "Marcelo",
-    "why": "en: disambiguation page"
-   },
-   {
-    "id": "olympiacos:wv-16ec24d4ad",
-    "name": "Nikos Papadopoulos",
-    "why": "en: several footballers of this name played for this club"
-   },
-   {
-    "id": "olympiacos:wv-ac741fb792",
-    "name": "Pelé",
-    "why": "en: page does not name this club"
-   },
-   {
-    "id": "olympiacos:wv-792ab142ad",
-    "name": "Rafinha",
-    "why": "en: not a football biography"
-   },
-   {
-    "id": "olympiacos:wv-7bc378b0aa",
-    "name": "Ramon",
-    "why": "en: disambiguation page"
-   },
-   {
-    "id": "olympiacos:wv-d5d87e00b4",
-    "name": "Wanderson",
-    "why": "en: not a football biography"
+    "why": "several footballers of this name played for this club"
    }
   ]
  }
