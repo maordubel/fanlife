@@ -1,6 +1,7 @@
 import {readFileSync,writeFileSync} from 'node:fs'
 import path from 'node:path'
 import {foldName,linkKey,type Candidate,type Link,type Stint} from '@/lib/people/model'
+import clubWikidata from '@/content/manual/club-wikidata.json'
 
 /**
  * `npm run people:links` — the system decides what a public source settles (18.11.2026).
@@ -15,7 +16,7 @@ import {foldName,linkKey,type Candidate,type Link,type Stint} from '@/lib/people
  */
 const ROOT=process.cwd(),LINKS='content/manual/people-links.json',STINTS='content/generated/people-stints.json'
 /** our clubs as Wikidata items (resolved through their English Wikipedia titles, 18.11.2026) */
-export const CLUB_QID:Record<string,string>={'hapoel-tel-aviv':'Q206585','zrinjski-mostar':'Q399282','hapoel-petah-tikva':'Q1130537','panathinaikos':'Q4122219','aek-athens':'Q201584','celtic':'Q19593','st-pauli':'Q6463','olympiacos':'Q19628','raja-casablanca':'Q1051514','wydad-casablanca':'Q1139095','al-ahly':'Q223566','atalanta':'Q1886','maccabi-haifa':'Q2129100'}
+export const CLUB_QID:Record<string,string>=(clubWikidata as {clubs:Record<string,string>}).clubs
 const API='https://www.wikidata.org/w/api.php?format=json&'
 const UA={'User-Agent':'FANLIFE-people-registry/1.0 (https://fanlife.dubelteam.com; fanlife@dubelteam.com)'}
 const sleep=(ms:number)=>new Promise(r=>setTimeout(r,ms))

@@ -1,5 +1,6 @@
 'use client'
 
+import { markFor } from '@/lib/brand/logos'
 import { useEffect, useState } from 'react'
 
 import { closetCard, gapsCard, matchCard, wantedCard } from '@/lib/collector/cards'
@@ -361,7 +362,7 @@ export function StoryProof() {
         const image = new Image()
         image.onload = () => resolve(image)
         image.onerror = () => resolve(null)
-        image.src = '/brand/logo-512.png'
+        image.src = markFor(window.location.host)
       })
 
       const report: Report = {}

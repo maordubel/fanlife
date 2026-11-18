@@ -1,0 +1,24 @@
+name: album-sync
+# THE ALBUM (18.11.2026): when the curated edition changes on main, write it into the album catalog (worker_album_sticker)
+# through the service-role function worker_album_catalog_sync. Click "Run workflow" to write it again.
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths: ['content/generated/album-edition-1.json']
+permissions:
+  contents: read
+concurrency: {group: album-sync, cancel-in-progress: false}
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 22, cache: npm}
+      - run: npm ci
+      - run: npm run -s album:sync
+        env:
+          SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
