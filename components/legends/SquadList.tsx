@@ -21,11 +21,11 @@ export function SquadList({v,open}:{v:CareerView;open:(m:SquadView)=>void}){
  const tap=(c:Col)=>setSort(s=>s.c===c?{c,down:!s.down}:{c,down:c!=='pos'&&c!=='name'})
  return <div className="lgm-sql" data-testid="legends-squad-list">
   <table>
-   <thead><tr>{HEAD.map(([c,l,full,wide])=><th key={c} scope="col" data-wide={wide||undefined} aria-sort={sort.c===c?(sort.down?'descending':'ascending'):'none'}><button type="button" onClick={()=>tap(c)} title={full} aria-label={`Sort by ${full}`}>{l}{sort.c===c?<i aria-hidden="true">{sort.down?'▾':'▴'}</i>:null}</button></th>)}<th scope="col"><span className="lgm-sql-vh">Status</span></th></tr></thead>
+   <thead><tr>{HEAD.map(([c,l,full,wide])=><th key={c} scope="col" data-wide={wide||undefined} aria-sort={sort.c===c?(sort.down?'descending':'ascending'):'none'}><button type="button" className="min-h-tap" onClick={()=>tap(c)} title={full} aria-label={`Sort by ${full}`}>{l}{sort.c===c?<i aria-hidden="true">{sort.down?'▾':'▴'}</i>:null}</button></th>)}<th scope="col"><span className="lgm-sql-vh">Status</span></th></tr></thead>
    <tbody>{rows.map(m=>{const st=m.injury?'inj':m.suspension?'ban':xi.has(m.id)?'xi':bench.has(m.id)?'sub':'out'
     return <tr key={m.id} data-st={st} data-pos={m.pos}>
      <td><span className="lgm-sql-pos">{m.role?ROLE_SHORT[m.role]:m.pos}</span></td>
-     <th scope="row"><button type="button" className="lgm-sql-name" onClick={()=>open(m)} aria-label={`${m.name} — his profile`}>{m.name}</button></th>
+     <th scope="row"><button type="button" className="lgm-sql-name min-h-tap" onClick={()=>open(m)} aria-label={`${m.name} — his profile`}>{m.name}</button></th>
      <td data-wide>{m.stars.toFixed(2).replace(/\.?0+$/,'')}</td>
      <td><b className="lgm-sql-key" data-band={band(m.fm?.ability)}>{m.fm?m.fm.ability.toFixed(1):'—'}</b></td>
      <td>{m.form?.avg!=null&&m.form.games?m.form.avg.toFixed(2):"—"}</td>
