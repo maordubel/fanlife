@@ -114,8 +114,8 @@ def portrait_svg(cx, ey, scale, t, shape=None, uid='p'):
         e = [P[i] for i in rng]
         ecx, ecy = sum(p[0] for p in e) / 6, sum(p[1] for p in e) / 6
         ew = abs(e[3][0] - e[0][0])
-        eh = max(scale * .09, abs(e[4][1] - e[1][1]) * 1.1)
-        r = min(eh * .62, ew * .24)
+        eh = max(scale * .11, abs(e[4][1] - e[1][1]) * 1.25)
+        r = min(eh * .7, ew * .27)
         eyes += (f'<path d="{_path(e, True)}" fill="#F4EEE6"/>'
                  f'<clipPath id="{uid}e{rng.start}"><path d="{_path(e, True)}"/></clipPath>'
                  f'<g clip-path="url(#{uid}e{rng.start})"><circle cx="{ecx:.1f}" cy="{ecy+eh*.05:.1f}" r="{r:.1f}" fill="{iris}"/><circle cx="{ecx:.1f}" cy="{ecy+eh*.05:.1f}" r="{r*.45:.1f}" fill="#0E0B0A"/>'
@@ -139,7 +139,7 @@ def portrait_svg(cx, ey, scale, t, shape=None, uid='p'):
             f'<ellipse cx="{n[34][0]:.1f}" cy="{n[34][1]-scale*.01:.1f}" rx="{scale*.045:.1f}" ry="{scale*.025:.1f}" fill="{sk_dd}"/>'
             f'<ellipse cx="{n[30][0]-scale*.02:.1f}" cy="{n[30][1]-scale*.04:.1f}" rx="{scale*.05:.1f}" ry="{scale*.035:.1f}" fill="{sk_l}" opacity=".8"/>'
             f'<path d="{_path([(n[33][0]-scale*.18, n[33][1]+scale*.05), (n[33][0], n[33][1]+scale*.1), (n[33][0]+scale*.18, n[33][1]+scale*.05)])}" fill="none" stroke="{sk_d}" stroke-width="2" opacity=".6"/>')
-    lip, lip_d = shade(skin, .74) if True else skin, shade(skin, .6)
+    lip, lip_d = shade(skin, .8), shade(skin, .64)
     up_lip = [P[i] for i in (48, 49, 50, 51, 52, 53, 54)] + [P[i] for i in (64, 63, 62, 61, 60)]
     lo_lip = [P[i] for i in (54, 55, 56, 57, 58, 59, 48)] + [P[i] for i in (60, 67, 66, 65, 64)]
     mouth = (f'<path d="{_path(up_lip, True)}" fill="{lip_d}"/>'
@@ -195,7 +195,7 @@ def portrait_svg(cx, ey, scale, t, shape=None, uid='p'):
             f'{back}{ears}'
             f'<path d="{head}" fill="{skin}" stroke="{ink}" stroke-width="1.3"/>'
             f'<clipPath id="{uid}h"><path d="{head}"/></clipPath>'
-            f'<g clip-path="url(#{uid}h)"><path d="{shadow}" fill="{sk_d}" opacity=".55"/>'
+            f'<g clip-path="url(#{uid}h)"><path d="{shadow}" fill="{sk_d}" opacity=".7"/>'
             f'<path d="{cheek}" fill="none" stroke="{sk_d}" stroke-width="{scale*.16:.1f}" stroke-linecap="round" opacity=".35"/>'
             f'<path d="{cheek_r}" fill="none" stroke="{sk_d}" stroke-width="{scale*.16:.1f}" stroke-linecap="round" opacity=".5"/>'
             f'<path d="{under_jaw}" fill="none" stroke="{sk_dd}" stroke-width="2" opacity=".4"/>'
