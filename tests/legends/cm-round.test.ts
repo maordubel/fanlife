@@ -36,3 +36,8 @@ describe('the CM 01/02 round',()=>{
   expect(v.next).not.toBeNull();expect(JSON.stringify(v.clubs)).not.toMatch(/"fm"|"attrs"/)
  })
 })
+describe('slips read on every panel',()=>{
+ it('an error slip carries its own ink (it inherited ivory on the night ticket and vanished)',async()=>{
+  const {readFileSync}=await import('node:fs');expect(readFileSync('app/all-football/legends/legends.css','utf8')).toMatch(/\.lgm-error \{[^}]*background: var\(--mag-card\); color: var\(--mag-ink\)/)
+ })
+})
