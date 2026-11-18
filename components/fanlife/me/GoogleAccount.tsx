@@ -5,7 +5,8 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { fl } from '@/lib/fanlife/copy'
 import { evaluationMode } from '@/lib/master/mode'
 import { portalConfigured } from '@/lib/portal/env'
-import { currentAccount, signInWithGoogle, signOut, syncProfile, watchAccount, type Account } from '@/lib/portal/sync'
+import { SignInChoices } from './SignInChoices'
+import { currentAccount, signOut, syncProfile, watchAccount, type Account } from '@/lib/portal/sync'
 
 type State = 'checking' | 'out' | 'syncing' | 'synced' | 'failed' | 'signing-out'
 
@@ -110,7 +111,7 @@ export function GoogleAccount({ onChange }: { onChange?: () => void }) {
           <p className="wk-small">{fl('account.body')}</p>
           {note === 'authFailed' ? <p className="wk-small" role="alert">{fl('account.authFailed')}</p> : null}
           {note === 'signedOut' ? <p className="wk-small" role="status">{fl('account.signOutDone')}</p> : null}
-          <button type="button" className="wk-btn paper block min-h-tap" disabled={state === 'signing-out'} onClick={() => void signInWithGoogle(comeBackTo())}>{fl('account.signIn')}</button>
+          <SignInChoices next={comeBackTo()} onSignedIn={() => void refresh()} />
         </>
       ) : (
         <>

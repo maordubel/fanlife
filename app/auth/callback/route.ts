@@ -3,6 +3,7 @@ import { NextResponse } from 'next/server'
 
 import { portalConfigured } from '@/lib/portal/env'
 import { createClient } from '@/lib/supabase/server'
+import { publicOrigin } from '@/lib/origin'
 
 /**
  * החזרה מגוגל — the whole server side of signing in, and deliberately all of it.
@@ -34,16 +35,18 @@ export const dynamic = 'force-dynamic'
 
 export async function GET(request: Request) {
   const url = new URL(request.url)
+  // the visitor's own address, not the container's (behind the proxy request.url is localhost:3000)
+  const origin = publicOrigin(request)
   const cookieNext = /(?:^|;\s*)fl_next=([^;]*)/.exec(request.headers.get('cookie') ?? '')?.[1]
   const back = safePath(url.searchParams.get('next') ?? (cookieNext ? decode(cookieNext) : null))
 
-  if (evaluationMode() || !portalConfigured()) return NextResponse.redirect(new URL(back, url.origin))
+  if (evaluationMode() || !portalConfigured()) return NextResponse.redirect(new URL(back, origin))
 
   const code = url.searchParams.get('code')
   if (code !== null) {
     try {
       const { error } = await createClient().auth.exchangeCodeForSession(code)
-      if (!error) return clear(NextResponse.redirect(new URL(back, url.origin)))
+      if (!error) return clear(NextResponse.redirect(new URL(back, origin)))
     } catch {
       // fall through to the same place with the failure marked
     }
@@ -52,7 +55,7 @@ export async function GET(request: Request) {
   // A failure lands on the personal area with a flag rather than on an error page: the
   // card is still there, still readable, still playable. Signing in is an addition to it
   // and a failed addition must not take the screen away.
-  return NextResponse.redirect(new URL(`${back}${back.includes('?') ? '&' : '?'}auth=failed`, url.origin))
+  return NextResponse.redirect(new URL(`${back}${back.includes('?') ? '&' : '?'}auth=failed`, origin))
 }
 
 function decode(v: string): string | null {
