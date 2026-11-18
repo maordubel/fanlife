@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import {FANLIFE_LOGO,WORKER_BADGE} from '@/lib/brand/logos'
 
 /**
  * הסמל — Maor's badge, and the only mark this product has.
@@ -17,9 +18,11 @@ export function Badge({
   className?: string
   priority?: boolean
 }) {
+  // both marks ship; <html data-edition> shows FAN LIFE's roundel everywhere but THE WORKER's own host (docs/rules/two-logos.md)
   return (
-    <Image
-      src="/brand/logo-192.png"
+    <>
+      {(['fanlife','worker'] as const).map(e=><Image key={e} data-mark={e}
+      src={e==='fanlife'?FANLIFE_LOGO[192]:WORKER_BADGE[192]}
       alt=""
       aria-hidden="true"
       width={size}
@@ -28,5 +31,7 @@ export function Badge({
       priority={priority}
       className={className}
     />
+      )}
+    </>
   )
 }

@@ -1,0 +1,232 @@
+/* THE ALBUM (18.11.2026) — an eighties sticker album on a kitchen table. Ivory pages with a printed grain, a spine with
+   two staples, numbered frames in the club's colour, stickers stuck at a slight tilt with a soft lift shadow; the envelope
+   is foil-wrapped with a perforated strip you tear. Prefix alb-. Tokens + the club's livery only; logical properties only.
+   Phone first: one page at a time, two slots a row; desktop (≥64rem) gets the open spread and three a row. */
+.alb{--alb-c:var(--club-primary,var(--mag-vermilion));--alb-on:var(--club-on-primary,var(--mag-white));--alb-page:var(--mag-paper);
+ min-block-size:100vh;padding:1rem .85rem calc(6rem + env(safe-area-inset-bottom));display:grid;gap:1rem;align-content:start;color:var(--mag-ink);font-family:var(--mag-body);
+ background:var(--mag-night) radial-gradient(circle at 20% 0%,rgb(255 255 255 / .06),transparent 60%);overflow-x:clip;grid-template-columns:minmax(0,1fr)}
+.alb > *{min-inline-size:0}
+.alb *,.alb *::before,.alb *::after{box-sizing:border-box}
+.alb :focus-visible{outline:3px solid var(--mag-cyan);outline-offset:2px}
+.alb-k{margin:0;font-family:var(--mag-condensed);text-transform:uppercase;letter-spacing:.1em;font-size:.78rem;color:var(--mag-muted)}
+.alb-title{margin:0;font-family:var(--mag-display);text-transform:uppercase;font-size:clamp(3rem,15vw,6rem);line-height:.88;letter-spacing:.01em}
+.alb-title.sm{font-size:clamp(1.9rem,8vw,2.8rem)}
+.alb-fine{margin:0;font-size:.78rem;line-height:1.45;color:var(--mag-muted);max-inline-size:44rem}
+.alb-err{margin:0;padding:.7rem .9rem;border-radius:.5rem;background:var(--mag-red-deep);color:var(--mag-white);font-weight:700}
+.alb-ok{margin:0;padding:.6rem .9rem;border-radius:.5rem;background:var(--mag-green);color:var(--mag-white);font-weight:700}
+.alb-note{margin:0;padding:.7rem .9rem;border-radius:.5rem;background:var(--mag-card);border-inline-start:.4rem solid var(--alb-c)}
+.alb-btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;padding-inline:1.15rem;border:0;border-radius:999px;cursor:pointer;
+ background:var(--mag-ink);color:var(--mag-paper);font-family:var(--mag-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.95rem;text-decoration:none}
+.alb-btn.big{min-block-size:3.5rem;font-size:1.05rem;padding-inline:1.6rem}
+.alb-btn.ghost{background:transparent;color:inherit;box-shadow:inset 0 0 0 2px currentColor}
+.alb-btn:disabled{opacity:.45;cursor:default}
+.alb-link{border:0;background:none;padding:0 .2rem;color:var(--mag-red-deep);font-weight:700;text-decoration:underline;cursor:pointer;font-size:.8rem}
+
+/* the cover (signed out / first visit) */
+.alb-front{place-items:center}
+.alb-cover{position:relative;inline-size:min(100%,34rem);display:grid;gap:1rem;padding:2rem 1.25rem 1.5rem;border-radius:.4rem .9rem .9rem .4rem;
+ background:var(--alb-page) var(--mag-grain);box-shadow:inset .7rem 0 0 var(--mag-ink),inset .95rem 0 0 rgb(255 255 255 / .35),0 22px 50px rgb(0 0 0 / .55)}
+.alb-cover-logo{display:block;inline-size:4.5rem;aspect-ratio:1;background:url('/brand/fanlife/logo-512.png') center/contain no-repeat}
+.alb-cover-logo.sm{inline-size:2.75rem}
+.alb-lede{margin:0;font-size:1.05rem;line-height:1.5}
+.alb-wings{border:0;padding:0;margin:0;display:grid;gap:.6rem}
+.alb-wings legend{font-family:var(--mag-condensed);text-transform:uppercase;letter-spacing:.06em;font-weight:700;margin-block-end:.5rem}
+.alb-wing-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(9.5rem,1fr));gap:.5rem}
+.alb-wing-pick{display:flex;align-items:center;gap:.55rem;padding:.4rem .6rem;border:2px solid transparent;border-radius:.6rem;background:var(--mag-card);color:var(--mag-ink);
+ cursor:pointer;font:inherit;font-weight:700;font-size:.85rem;text-align:start;border-inline-start:.4rem solid var(--club-primary)}
+.alb-wing-pick[data-on]{border-color:var(--mag-ink);box-shadow:3px 3px 0 var(--mag-ink)}
+.alb-wing-pick img{flex:none;inline-size:2rem;block-size:2rem;object-fit:contain}
+.alb-initials{flex:none;display:grid;place-items:center;inline-size:2rem;block-size:2rem;border-radius:50%;background:var(--club-primary);color:var(--club-on-primary);font-family:var(--mag-condensed);font-size:.75rem}
+.alb-field{display:grid;gap:.3rem;font-weight:700;font-size:.9rem}
+.alb-field input{border:2px solid var(--mag-ink);border-radius:.5rem;padding-inline:.8rem;font:inherit;background:var(--mag-white);color:var(--mag-ink)}
+
+/* the masthead over the book */
+.alb-mast{display:grid;gap:.8rem;color:var(--mag-paper)}
+.alb-mast .alb-k{color:var(--mag-paper);opacity:.75}
+.alb-mast-cover{display:flex;align-items:center;gap:.75rem}
+.alb-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem;margin:0}
+.alb-stats div{padding:.55rem .65rem;border-radius:.55rem;background:rgb(255 255 255 / .07);min-inline-size:0}
+.alb-stats dt{font-family:var(--mag-condensed);text-transform:uppercase;letter-spacing:.06em;font-size:.68rem;opacity:.75;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.alb-stats dd{margin:0;font-family:var(--mag-display);font-size:1.45rem;line-height:1.1}
+.alb-dots{display:inline-flex;gap:.25rem;padding-block-start:.45rem}
+.alb-dots i{inline-size:.7rem;block-size:.7rem;border-radius:50%;box-shadow:inset 0 0 0 2px var(--mag-paper);opacity:.6}
+.alb-dots i[data-on]{background:var(--mag-paper);opacity:1}
+
+/* the desk: today's envelope */
+.alb-desk{display:grid;gap:.6rem}
+.alb-env-card{display:flex;align-items:center;gap:.9rem;inline-size:100%;padding:.8rem 1rem;border:0;border-radius:.75rem;cursor:pointer;text-align:start;color:var(--alb-on);font:inherit;
+ background:linear-gradient(135deg,var(--alb-c),color-mix(in srgb,var(--alb-c) 70%,var(--mag-ink)));box-shadow:0 10px 24px rgb(0 0 0 / .4);animation:alb-nudge 3.2s ease-in-out infinite}
+.alb-env-card b{display:block;font-family:var(--mag-condensed);text-transform:uppercase;letter-spacing:.05em;font-size:1.1rem}
+.alb-env-card small{display:block;opacity:.85;font-size:.82rem}
+.alb-env-mini{flex:none;inline-size:3.2rem;aspect-ratio:3/4;border-radius:.3rem;background:var(--mag-paper) url('/brand/fanlife/logo-512.png') center 40%/62% no-repeat;
+ box-shadow:inset 0 .55rem 0 var(--mag-ink),0 4px 10px rgb(0 0 0 / .35);transform:rotate(-6deg)}
+.alb-env-done{margin:0;padding:.8rem 1rem;border-radius:.75rem;background:rgb(255 255 255 / .07);color:var(--mag-paper)}
+.alb-change{color:var(--mag-paper)}
+.alb-change summary{display:flex;align-items:center;cursor:pointer;font-size:.85rem;opacity:.85}
+.alb-change[open] .alb-wing-grid{margin-block-start:.5rem}
+.alb-wing-tabs{display:flex;flex-wrap:wrap;gap:.4rem}
+.alb-tab{flex:none;padding-inline:.9rem;border:0;border-radius:999px;background:rgb(255 255 255 / .08);color:var(--mag-paper);font:inherit;font-weight:700;font-size:.85rem;cursor:pointer}
+.alb-tab[aria-pressed='true']{background:var(--mag-paper);color:var(--mag-ink)}
+.alb-tab small{opacity:.7;margin-inline-start:.25rem}
+
+/* the book */
+.alb-book{display:grid;gap:.8rem}
+.alb-spread{display:none}
+.alb-page{position:relative;padding:1rem .8rem 1.6rem;border-radius:.35rem;background:var(--alb-page) var(--mag-grain);box-shadow:0 18px 40px rgb(0 0 0 / .5),inset 0 0 0 1px rgb(0 0 0 / .06)}
+.alb-page::before{content:'';position:absolute;inset-block:0;inset-inline-start:0;inline-size:1.1rem;background:linear-gradient(90deg,rgb(0 0 0 / .14),transparent);border-start-start-radius:.35rem;border-end-start-radius:.35rem}
+.alb-page-head{display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:.6rem;padding-block-end:.5rem;margin-block-end:.8rem;border-block-end:4px solid var(--alb-c)}
+.alb-page-head .alb-k{color:var(--alb-c);font-weight:700}
+.alb-page-head h3{margin:0;font-family:var(--mag-display);text-transform:uppercase;font-size:1.35rem;line-height:1}
+.alb-page-done{font-family:var(--mag-mono);font-weight:700;font-size:.85rem}
+.alb-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem .7rem}
+.alb-slot{display:grid;gap:.35rem;min-inline-size:0}
+.alb-frame{position:relative;aspect-ratio:5/7;border-radius:.3rem;background:color-mix(in srgb,var(--alb-c) 9%,var(--alb-page));box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--alb-c) 45%,transparent)}
+.alb-frame-no{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--mag-display);font-size:3.2rem;color:color-mix(in srgb,var(--alb-c) 25%,transparent);pointer-events:none}
+.alb-empty{position:absolute;inset:18% 20% 0;display:grid;align-items:end}
+.alb-empty svg{inline-size:100%;fill:color-mix(in srgb,var(--alb-c) 14%,transparent)}
+.alb-peel{position:absolute;inset:.5rem;display:grid;place-content:center;gap:.15rem;border:2px dashed var(--alb-c);border-radius:.3rem;background:color-mix(in srgb,var(--alb-page) 70%,transparent);
+ color:var(--mag-ink);font:inherit;cursor:pointer;animation:alb-glow 2.4s ease-in-out infinite}
+.alb-peel span{font-family:var(--mag-condensed);text-transform:uppercase;letter-spacing:.08em;font-weight:700;font-size:1.05rem}
+.alb-peel small{font-size:.72rem;color:var(--mag-muted)}
+.alb-stuck{position:absolute;inset:0;padding:0;border:0;background:none;cursor:zoom-in;transform:rotate(var(--tilt,0deg));animation:alb-press .45s cubic-bezier(.2,1.4,.4,1) both}
+.alb-cap{margin:0;display:flex;gap:.3rem;align-items:baseline;font-size:.78rem;line-height:1.2;min-inline-size:0}
+.alb-cap span{flex:none;white-space:nowrap;font-family:var(--mag-mono);font-weight:700;color:var(--alb-c)}
+.alb-cap b{font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-inline-size:0}
+.alb-spares{flex:none;font-style:normal;font-size:.68rem;font-weight:700;padding:0 .3rem;border-radius:.3rem;background:var(--mag-ink);color:var(--mag-paper)}
+.alb-slot-act{margin:0;display:flex;flex-wrap:wrap;gap:0 .4rem}
+.alb-folio{margin:0;position:absolute;inset-block-end:.4rem;inset-inline:0;text-align:center;font-family:var(--mag-mono);font-size:.7rem;color:var(--mag-muted)}
+.alb-pager{display:flex;align-items:center;justify-content:space-between;gap:.5rem;color:var(--mag-paper)}
+.alb-pages{display:flex;flex-wrap:wrap;justify-content:center;gap:.2rem;min-inline-size:0}
+.alb-pg{flex:none;min-inline-size:2.75rem;border:0;border-radius:.4rem;background:transparent;color:var(--mag-paper);font-family:var(--mag-mono);font-weight:700;cursor:pointer;opacity:.6}
+.alb-pg[aria-current]{background:var(--mag-paper);color:var(--mag-ink);opacity:1}
+.alb-book + .alb-fine,.alb > .alb-fine{color:var(--mag-paper);opacity:.6}
+
+/* a sticker (owner notes 18.11.2026): calm club colour, faint dots, an ivory printed plate, the code (AEK–05), a thin
+   ink line; gold and silver keep the club's colours and add a metal edge, a stamp and a slow sheen — readable when still */
+.alb-stk{--ivory:var(--mag-paper);position:relative;display:block;inline-size:100%;block-size:100%;border-radius:.45rem;overflow:hidden;background:var(--ivory);
+ padding:3%;box-shadow:0 1px 0 rgb(0 0 0 / .2),0 5px 12px rgb(0 0 0 / .22);container-type:inline-size}
+.alb-stk:has(.alb-stk-img){padding:0;background:transparent}
+.alb-stk-img{display:block;inline-size:100%;block-size:100%;object-fit:cover}
+.alb-stk-draw{position:absolute;inset:3%;display:grid;grid-template-rows:minmax(0,1fr) auto auto;gap:3.5cqi;padding:4cqi;border-radius:.2rem;background:var(--alb-c)}
+.alb-stk-win{position:relative;overflow:hidden;border:2px solid var(--mag-ink);background:radial-gradient(rgb(0 0 0 / .08) 1px,transparent 1.3px) 0 0/5px 5px,linear-gradient(transparent 62%,rgb(0 0 0 / .26)),radial-gradient(circle at 50% 36%,rgb(255 246 224 / .4),rgb(255 246 224 / .06) 55%,rgb(0 0 0 / .2)),var(--alb-c)}
+.alb-stk-fig{position:absolute;inset:0;inline-size:100%;block-size:100%}
+.alb-fig{filter:drop-shadow(5px 4px 0 rgb(0 0 0 / .28))}
+.alb-stk-fig path,.alb-stk-fig rect,.alb-stk-fig ellipse{stroke:var(--mag-ink);stroke-width:2.6;stroke-linejoin:round}
+.alb-stk-fig .shirt{fill:var(--ivory)}.alb-stk-fig .skin{fill:color-mix(in srgb,var(--mag-paper) 82%,var(--mag-salmon))}.alb-stk-fig .hair{fill:var(--mag-ink)}
+.alb-stk-logo{position:absolute;inset-block-start:5cqi;inset-inline-end:5cqi;inline-size:16cqi;aspect-ratio:1;border-radius:50%;border:1.5px solid var(--mag-ink);
+ background:var(--ivory) url('/brand/fanlife/logo-192.png') center/86% no-repeat}
+.alb-stk-plate{display:grid;justify-items:center;padding:3cqi 5cqi 2.5cqi;border:2px solid var(--mag-ink);background:var(--ivory);color:var(--mag-ink);line-height:1;min-inline-size:0}
+.alb-stk-plate small{font-family:var(--mag-condensed);text-transform:uppercase;letter-spacing:.14em;font-size:5cqi;color:var(--mag-muted);max-inline-size:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.alb-stk-plate b{font-family:var(--mag-display);text-transform:uppercase;font-size:min(15cqi,calc(112cqi / var(--len,8)));letter-spacing:.01em;max-inline-size:100%;overflow:hidden;white-space:nowrap}
+.alb-stk-foot{display:flex;align-items:center;justify-content:space-between;gap:2cqi;min-inline-size:0}
+.alb-stk-foot i{flex:none;font-style:normal;padding:.5cqi 2.5cqi;background:var(--mag-ink);color:var(--ivory);font-family:var(--mag-display);font-size:6.2cqi;letter-spacing:.05em}
+.alb-stk-foot em{font-style:normal;font-family:var(--mag-condensed);font-weight:700;text-transform:uppercase;font-size:4.4cqi;letter-spacing:.04em;color:var(--alb-on);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-inline-size:0}
+.alb-stk[data-variant='gold']{--metal-d:color-mix(in srgb,var(--mag-orange) 55%,var(--mag-ink));--metal:color-mix(in srgb,var(--mag-orange) 70%,var(--mag-paper));--metal-l:color-mix(in srgb,var(--mag-orange) 25%,var(--mag-white))}
+.alb-stk[data-variant='silver']{--metal-d:color-mix(in srgb,var(--mag-muted) 80%,var(--mag-ink));--metal:color-mix(in srgb,var(--mag-muted) 45%,var(--mag-white));--metal-l:var(--mag-white)}
+.alb-stk[data-variant='gold'],.alb-stk[data-variant='silver']{background:linear-gradient(135deg,var(--metal-l),var(--metal) 35%,var(--metal-d) 55%,var(--metal) 75%,var(--metal-l));padding:3%}
+.alb-stk[data-variant='gold']::after,.alb-stk[data-variant='silver']::after{content:'';position:absolute;inset:0;pointer-events:none;
+ background:linear-gradient(115deg,transparent 40%,rgb(255 255 255 / .28) 48%,transparent 56%) 0 0/250% 100%;animation:alb-foil 6s linear infinite}
+.alb-stk-tag{position:absolute;inset-block-end:30%;inset-inline-start:8%;display:grid;place-content:center;inline-size:22%;aspect-ratio:1;border-radius:50%;transform:rotate(-12deg);
+ background:var(--metal);box-shadow:inset 0 0 0 2px var(--metal-d),inset 0 0 0 4px var(--metal-l);color:var(--mag-ink);text-align:center;line-height:1;
+ font-family:var(--mag-condensed);font-weight:700;text-transform:uppercase;font-size:clamp(.4rem,2.4cqi,.7rem);letter-spacing:.08em}
+.alb-stk-tag b{font-family:var(--mag-display);font-weight:400;font-size:1.7em;letter-spacing:.04em}
+
+/* the back of a sticker: what the front leaves out, and the photo credit in a size you can read */
+.alb-flip{inline-size:min(72vw,17rem);aspect-ratio:5/7;animation:alb-flip .45s ease both}
+.alb-flip .alb-stk{block-size:100%}
+.alb-back{block-size:100%;display:grid;align-content:start;gap:.6rem;padding:1rem;border:6px solid var(--alb-c);border-radius:.45rem;background:var(--mag-paper) var(--mag-grain);color:var(--mag-ink);overflow:auto}
+.alb-back-code{margin:0;justify-self:start;padding:.1rem .5rem;background:var(--mag-ink);color:var(--mag-paper);font-family:var(--mag-display);letter-spacing:.06em}
+.alb-back h3{margin:0;font-family:var(--mag-display);text-transform:uppercase;font-size:1.5rem;line-height:1}
+.alb-back dl{margin:0;display:grid;gap:.3rem}
+.alb-back dl div{display:flex;justify-content:space-between;gap:.5rem;border-block-end:1px dashed var(--mag-muted);padding-block-end:.2rem}
+.alb-back dt{font-family:var(--mag-condensed);text-transform:uppercase;letter-spacing:.06em;font-size:.75rem;color:var(--mag-muted)}
+.alb-back dd{margin:0;font-weight:700;font-size:.85rem;text-align:end}
+.alb-back-photo{margin:0;font-size:.82rem;line-height:1.45}
+.alb-back-photo a{color:var(--mag-red-deep);font-weight:700}
+.alb-back .alb-btn{background:var(--mag-ink);color:var(--mag-paper);justify-self:start}
+
+/* the table: envelope ritual + the close look (portalled to <body>) */
+.alb-portal{position:fixed;inset:0;z-index:60;display:grid;place-items:center;padding:1rem;overflow-y:auto;background:rgb(10 10 12 / .92);backdrop-filter:blur(4px);color:var(--mag-paper);font-family:var(--mag-body)}
+.alb-table{inline-size:min(100%,26rem);display:grid;gap:1rem;justify-items:center}
+.alb-table-top{inline-size:100%;display:flex;align-items:center;gap:.5rem}
+.alb-table-top .alb-k{flex:1;color:var(--mag-paper)}
+.alb-mute,.alb-skip{border:0;background:rgb(255 255 255 / .1);color:var(--mag-paper);border-radius:999px;padding-inline:.9rem;font:inherit;font-size:.8rem;cursor:pointer}
+.alb-env{--alb-c:var(--club-primary,var(--mag-vermilion));position:relative;inline-size:min(78vw,17rem);aspect-ratio:3/4;border-radius:.5rem;overflow:hidden;animation:alb-drop .6s cubic-bezier(.2,1.3,.4,1) both;
+ background:linear-gradient(160deg,color-mix(in srgb,var(--alb-c) 85%,var(--mag-white)),var(--alb-c) 45%,color-mix(in srgb,var(--alb-c) 65%,var(--mag-ink)));box-shadow:0 30px 60px rgb(0 0 0 / .6)}
+.alb-env::after{content:'';position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,rgb(255 255 255 / .35) 48%,transparent 60%) 0 0/260% 100%;animation:alb-foil 4s linear infinite;pointer-events:none}
+.alb-env-body{position:absolute;inset:18% 8% 8%;display:grid;align-content:center;justify-items:center;gap:.4rem;border-radius:.4rem;background:var(--mag-paper) var(--mag-grain);color:var(--mag-ink);text-align:center}
+.alb-env-logo{inline-size:42%;aspect-ratio:1;background:url('/brand/fanlife/logo-512.png') center/contain no-repeat}
+.alb-env-title{margin:0;font-family:var(--mag-display);text-transform:uppercase;font-size:2rem;line-height:.9}
+.alb-env-sub{margin:0;font-family:var(--mag-condensed);text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;color:var(--mag-muted)}
+.alb-env-strip{position:absolute;inset-block-start:0;inset-inline:0;block-size:15%;min-block-size:2.75rem;border:0;padding:0;cursor:grab;touch-action:none;background:var(--mag-ink);color:var(--mag-paper);
+ transform-origin:left top;transform:rotate(calc(var(--torn,0) * -14deg)) translateY(calc(var(--torn,0) * -120%));opacity:calc(1 - var(--torn,0) * .6);transition:transform .25s ease-out}
+.alb-env-perf{position:absolute;inset-inline:0;inset-block-end:0;block-size:.4rem;background:radial-gradient(circle at 50% 100%,transparent .18rem,var(--mag-ink) .2rem) 0 0/.6rem .4rem repeat-x}
+.alb-env-hint{font-family:var(--mag-condensed);text-transform:uppercase;letter-spacing:.12em;font-size:.85rem;animation:alb-hint 1.6s ease-in-out infinite}
+.alb-reveal{display:grid;gap:.8rem;justify-items:center;inline-size:100%}
+.alb-reveal-count{margin:0;font-family:var(--mag-mono);font-size:.8rem;opacity:.7}
+.alb-reveal-card{position:relative;inline-size:min(68vw,15rem);container-type:inline-size;aspect-ratio:5/7;perspective:900px;animation:alb-flip .7s cubic-bezier(.3,1.3,.5,1) both}
+.alb-stamp{position:absolute;inset-block-end:-.6rem;inset-inline-end:-.8rem;padding:.25rem .6rem;border:3px solid currentColor;border-radius:.3rem;transform:rotate(-8deg);
+ background:var(--mag-paper);color:var(--mag-muted);font-family:var(--mag-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.8rem;animation:alb-stampin .35s .5s cubic-bezier(.2,1.6,.4,1) both}
+.alb-stamp[data-new]{color:var(--mag-green)}
+.alb-reveal-name{margin:0;display:grid;gap:.15rem;text-align:center}
+.alb-reveal-name b{font-family:var(--mag-display);text-transform:uppercase;font-size:1.6rem;line-height:1}
+.alb-reveal-name span{font-size:.85rem;opacity:.75}
+.alb-reveal-act{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem}
+.alb-portal .alb-btn{background:var(--mag-paper);color:var(--mag-ink)}
+.alb-portal .alb-btn.ghost{background:transparent;color:var(--mag-paper)}
+.alb-portal .alb-fine{color:var(--mag-paper);opacity:.65;text-align:center}
+
+@keyframes alb-nudge{0%,88%,100%{transform:none}92%{transform:rotate(-1.2deg)}96%{transform:rotate(1.2deg)}}
+@keyframes alb-glow{50%{background:color-mix(in srgb,var(--alb-c) 14%,var(--alb-page))}}
+@keyframes alb-press{0%{transform:rotate(var(--tilt,0deg)) scale(1.18);filter:drop-shadow(0 14px 10px rgb(0 0 0 / .35))}100%{transform:rotate(var(--tilt,0deg)) scale(1)}}
+@keyframes alb-foil{to{background-position:-250% 0}}
+@keyframes alb-drop{from{transform:translateY(-30%) rotate(-8deg);opacity:0}}
+@keyframes alb-hint{50%{transform:translateX(.4rem)}}
+@keyframes alb-flip{from{transform:rotateY(180deg) scale(.7);opacity:0}}
+@keyframes alb-stampin{from{transform:rotate(-8deg) scale(2.2);opacity:0}}
+@media (prefers-reduced-motion:reduce){.alb *,.alb-portal *{animation:none!important;transition:none!important}}
+
+/* desktop: the open spread, three slots a row */
+@media (min-width:64rem){
+ .alb{padding:1.5rem 2rem 3rem;max-inline-size:84rem;margin-inline:auto}
+ .alb-mast{grid-template-columns:1fr auto;align-items:end}
+ .alb-stats{grid-template-columns:repeat(3,10rem)}
+ .alb-desk{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}
+ .alb-phone{display:none}
+ .alb-spread{display:grid;grid-template-columns:minmax(0,1fr) 1.4rem minmax(0,1fr);filter:drop-shadow(0 24px 40px rgb(0 0 0 / .55))}
+ .alb-spread .alb-page{box-shadow:none;border-radius:0}
+ .alb-page[data-side='left']{border-start-start-radius:.5rem;border-end-start-radius:.5rem}
+ .alb-page[data-side='right']{border-start-end-radius:.5rem;border-end-end-radius:.5rem}
+ .alb-page[data-side='right']::before{display:none}
+ .alb-page[data-side='left']::after{content:'';position:absolute;inset-block:0;inset-inline-end:0;inline-size:2.5rem;background:linear-gradient(-90deg,rgb(0 0 0 / .16),transparent)}
+ .alb-spine{position:relative;background:linear-gradient(90deg,color-mix(in srgb,var(--alb-page) 75%,var(--mag-ink)),var(--alb-page) 50%,color-mix(in srgb,var(--alb-page) 75%,var(--mag-ink)))}
+ .alb-spine i{position:absolute;inset-inline:.35rem;block-size:2.2rem;border-radius:.15rem;background:linear-gradient(90deg,var(--mag-muted),var(--mag-white),var(--mag-muted));box-shadow:0 1px 2px rgb(0 0 0 / .4)}
+ .alb-spine i:first-child{inset-block-start:22%}.alb-spine i:last-child{inset-block-end:22%}
+ .alb-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem .9rem}
+ .alb-page{padding:1.4rem 1.4rem 2rem}
+ .alb-cover{padding:3rem 2.5rem 2rem}
+}
+
+/* the swaps board (sw-) */
+.sw{display:grid;gap:1rem;padding:1rem;border-radius:.4rem;background:var(--mag-paper) var(--mag-grain);color:var(--mag-ink)}
+.sw-head h2{margin:0;font-family:var(--mag-display);text-transform:uppercase;font-size:1.8rem;line-height:1}
+.sw-head p{margin:.3rem 0 0;font-size:.9rem}
+.sw-new{display:grid;gap:.6rem;padding:.8rem;border:2px dashed var(--mag-ink)}
+.sw-new label{display:grid;gap:.2rem;font-weight:700;font-size:.82rem;min-inline-size:0}
+.sw-new select{inline-size:100%;border:2px solid var(--mag-ink);border-radius:.4rem;padding-inline:.5rem;font:inherit;background:var(--mag-white);color:var(--mag-ink)}
+.sw-arrow{justify-self:center;font-size:1.4rem}
+.sw-block{display:grid;gap:.5rem}
+.sw-block h3{margin:0;font-family:var(--mag-condensed);text-transform:uppercase;letter-spacing:.08em;border-block-end:3px double var(--mag-ink)}
+.sw-only{display:flex;align-items:center;gap:.4rem;font-size:.85rem;min-block-size:2.75rem}
+.sw-list{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}
+.sw-row{display:grid;grid-template-columns:3rem minmax(0,1fr) 3rem;gap:.3rem .6rem;align-items:center;padding:.5rem;border-radius:.5rem;background:var(--mag-card)}
+.sw-row[data-fits]{box-shadow:inset 0 0 0 2px var(--mag-green)}
+.sw-row > .alb-btn,.sw-no{grid-column:1/-1;justify-self:end}
+.sw-what{font-size:.82rem;line-height:1.35;min-inline-size:0;overflow-wrap:anywhere}
+.sw-mini{display:block;inline-size:3rem;aspect-ratio:5/7;container-type:inline-size}
+.sw-mini .alb-stk{block-size:100%}
+.sw-mini-none{background:var(--mag-muted);opacity:.3;border-radius:.3rem}
+.sw-no{font-size:.75rem;color:var(--mag-muted)}
+.sw-done{margin:0;padding-inline-start:1.1rem;font-size:.82rem}
+.alb-tab-swaps{background:var(--mag-green);color:var(--mag-white)}
+@media (min-width:64rem){.sw-new{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto;align-items:end}.sw-list{grid-template-columns:repeat(2,minmax(0,1fr))}}

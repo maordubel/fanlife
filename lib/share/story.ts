@@ -1,4 +1,5 @@
 import { BRAND, SITE_LABEL } from '@/lib/brand'
+import { markFor } from '@/lib/brand/logos'
 import { CLUB } from '@/lib/club/context'
 import { COLOUR_VAR, type KitSpec } from '@/lib/kit/spec'
 
@@ -2686,7 +2687,7 @@ function ticket(ctx: CanvasRenderingContext2D, body: Extract<ArtefactStory, { ki
 
 export async function renderStory(
   card: StoryCard,
-  badgeSrc = '/brand/logo-512.png',
+  badgeSrc = markFor(typeof window === 'undefined' ? null : window.location.host),
 ): Promise<Blob | null> {
   const canvas = document.createElement('canvas')
   canvas.width = STORY_W

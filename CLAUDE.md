@@ -85,6 +85,7 @@ The hub earns its name only if the right door appears at the right moment and th
 - Server authority lives in Postgres (SECURITY DEFINER RPC, RLS, idempotent migrations). FAN LIFE has no edge functions; scheduled work is GitHub Actions and `pg_cron marketing:*`.
 - Heavy jobs (video, research, ingestion, marketing) run in GitHub Actions here, because this repository is public and its minutes are free.
 - LIFE's upstream is THE WORKER: see `upstream.lock.json` and `docs/UPSTREAM-README.md` before changing `lib/life`.
+- Two logos, never mixed: FAN LIFE's colour roundel (`public/brand/fanlife/`) on every FAN LIFE surface; THE WORKER's badge only on Hapoel's own host. Take marks from `lib/brand/logos.ts` (rule two-logos).
 - No yellow, design tokens only, logical properties only, no user-facing string in code (rules 8, 9, 10, 62, 91).
 - Facts carry a source and a confidence; ingestion never invents; the owner is a source (rules 2, 11, 16, 18).
 - Parallel pull requests: a new rule is its own file in `docs/rules/` and one line in `docs/rules/INDEX.md`, which merges as a union. The merger gives it the next number (rule 120).
