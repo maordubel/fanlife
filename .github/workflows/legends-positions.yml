@@ -16,5 +16,6 @@ jobs:
       - uses: actions/setup-node@v4
         with: {node-version: 20}
       - run: node scripts/legends/positions-wave3.mjs
+      - run: echo "W3B64:$(gzip -9c out/positions-wave3.json | base64 -w0)"
       - uses: actions/upload-artifact@v4
         with: {name: positions-wave3, path: out/positions-wave3.json}

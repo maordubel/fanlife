@@ -1,5 +1,6 @@
 'use client'
 import {useCallback,useEffect,useRef,useState} from 'react'
+import {ROLE_FAMILY,roleOf} from '@/lib/legends/roles'
 import {familyLabel} from '@/lib/clubs/display-name'
 import type {GameCopy} from '@/lib/clubs/game-copy'
 import type {Pos,RumbleCard} from '@/lib/clubs/rumble'
@@ -18,6 +19,8 @@ export {nameLabeler} from '@/lib/clubs/display-name'
 export const money=(m:number)=>`€${m}M`
 export const posName=(copy:GameCopy,p:Pos)=>tr(copy,`rr.pos.${p}`)
 export const posShort=(copy:GameCopy,p:Pos)=>tr(copy,`rr.short.${p}`)
+/** a man's exact role where a source states it and it agrees with his family (lib/legends/roles.ts, the Legends census) — CB, FB, DM, CM, AM, W, ST; else his family */
+export const rolePos=(copy:GameCopy,c:{id:string;position:Pos})=>{const r=roleOf(c.id);return r&&ROLE_FAMILY[r]===c.position?tr(copy,`rr.role.${r}`):posShort(copy,c.position)}
 /** the name a shirt carries on the pitch: the last word, as the terraces say it */
 export const shortName=(name:string,label:(n:string)=>string=familyLabel)=>label(name)
 export function years(copy:GameCopy,c:Pick<RumbleCard,'fromYear'|'toYear'>):string{

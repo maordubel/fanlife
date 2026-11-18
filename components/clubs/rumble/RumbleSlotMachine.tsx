@@ -4,7 +4,7 @@ import type {GameCopy} from '@/lib/clubs/game-copy'
 import type {RumbleCard} from '@/lib/clubs/rumble'
 import {reelStrip,reelStops} from '@/lib/clubs/rumble-show'
 import type {RumbleWardrobe} from '@/lib/clubs/rumble-kit'
-import {Bulbs,RumbleShirt,money,posName,posShort,tr,years} from './shared'
+import {Bulbs,RumbleShirt,money,posName,posShort,rolePos,tr,years} from './shared'
 import s from './rumble.module.css'
 
 /**
@@ -41,7 +41,7 @@ export function RumbleCardButton({card,index,selected,disabled,blocked,flip,onPi
   <span className={s.cardGhost} aria-hidden="true">{index+1}</span>
   <span className={s.cardBody}>
    <span className={s.cardTop}>
-    <span><span className={`${s.mono} ${s.cardEntry}`} style={{display:'block'}}>{tr(copy,'rr.entry',{n:String(index+1).padStart(2,'0')})}</span><span className={`${s.mono} ${s.cardPos}`}>{posShort(copy,card.position)}</span></span>
+    <span><span className={`${s.mono} ${s.cardEntry}`} style={{display:'block'}}>{tr(copy,'rr.entry',{n:String(index+1).padStart(2,'0')})}</span><span className={`${s.mono} ${s.cardPos}`}>{rolePos(copy,card)}</span></span>
     <span className={s.price} dir="ltr">{money(card.price)}</span>
    </span>
    {card.price===5&&<span className={`${s.mono} ${s.legendTag}`}>{tr(copy,'rr.legend')}</span>}
@@ -73,7 +73,7 @@ export function RumbleSlotMachine({board,slot,seed,picks,canPick,onPick,copy,war
   <div className={s.marquee}><Bulbs n={9} className={s.bulbs}/><span className={s.marqueeTitle}>{tr(copy,'gate.royal-rumble')}</span><Bulbs n={9} className={s.bulbs}/></div>
   <div className={s.pickHead}>
    <span className={s.pickNo} dir="ltr">{heading?.no??String(slot+1).padStart(2,'0')}</span>
-   <div className={s.pickText}><p className={`${s.mono} ${s.pickMeta}`}>{heading?.meta??`${tr(copy,'rr.pick',{n:slot+1})} · ${card?posShort(copy,card.position):''}`}</p><p className={s.pickQ}>{heading?.question??(card?tr(copy,'rr.question',{position:posName(copy,card.position)}):'')}</p></div>
+   <div className={s.pickText}><p className={`${s.mono} ${s.pickMeta}`}>{heading?.meta??`${tr(copy,'rr.pick',{n:slot+1})} · ${card?rolePos(copy,card):''}`}</p><p className={s.pickQ}>{heading?.question??(card?tr(copy,'rr.question',{position:posName(copy,card.position)}):'')}</p></div>
   </div>
   <p className="sr-only" aria-live="polite">{spinning?tr(copy,'rr.reels'):''}</p>
   <div className={s.reels} role="group" aria-label={card?tr(copy,'rr.question',{position:posName(copy,card.position)}):undefined}>

@@ -357,5 +357,13 @@
   "rr.challenge": "Challenge a friend with this five",
   "rr.challengeCopied": "Link copied. They pick any club and play your five.",
   "rr.challengeHint": "Your five goes in the link — no ratings, only the men.",
-  "rr.challengeFail": "Could not copy — long-press the link instead."
+  "rr.challengeFail": "Could not copy — long-press the link instead.",
+  "rr.role.GK": "GK",
+  "rr.role.CB": "CB",
+  "rr.role.FB": "FB",
+  "rr.role.DM": "DM",
+  "rr.role.CM": "CM",
+  "rr.role.AM": "AM",
+  "rr.role.W": "W",
+  "rr.role.ST": "ST"
 }
