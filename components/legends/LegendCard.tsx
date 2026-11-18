@@ -24,7 +24,7 @@ export function LegendCard({c,tier,locked,children,compact=false,shirt=false}:{c
   <header><p className="lgm-card-pos">{c.role?ROLE_LABEL[c.role]:posName(c.pos)}{c.alt?.length?<small> · also {c.alt.join(', ')}</small>:null}</p><h3>{c.name}</h3><p className="lgm-card-years">{years(c)}</p></header>
   <div className="lgm-card-rate"><Stars value={c.stars} size={compact?'sm':'md'}/><b className="lgm-price">{money(c.price)}</b></div>
   {compact?null:Object.keys(c.attrs).length?<dl className="lgm-attrs">{(ROLE_ATTRS[c.pos]??[]).map(k=><div key={k}><dt>{ATTR_LABEL[k as AttrKey]}</dt><dd><Stars value={c.attrs[k]??c.stars} size="sm"/></dd></div>)}</dl>:<p className="lgm-card-hidden" data-testid="legends-ratings-hidden">{HIDDEN_RATINGS}</p>}
-  {!compact&&c.fm?<FmSheet fm={c.fm} name={c.name}/>:null}
+  {!compact&&c.fm?<FmSheet fm={c.fm} name={c.name} pos={c.pos} {...(c.role?{role:c.role}:{})} {...(c.alt?{alt:c.alt}:{})}/>:null}
   {locked?<p className="lgm-card-lock" role="note">{locked}</p>:null}
   {children}
  </article>

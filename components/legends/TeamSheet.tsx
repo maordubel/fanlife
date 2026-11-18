@@ -6,6 +6,7 @@ import type {Tactics} from '@/lib/legends/types'
 import {Stars} from './Brand'
 import {LegendCard,money,posName,ROLE_LABEL,years} from './LegendCard'
 import {LegendShirt} from './Shirts'
+import {SquadList} from './SquadList'
 import {Portal,Sheet} from './Sheet'
 import {familyLabel,nameLabeler} from '@/lib/clubs/display-name'
 
@@ -41,7 +42,7 @@ const yOn=(y:number)=>6+(y-20)/(84-20)*86
 export function TeamSheet({v,busy,send,mode='sheet'}:{v:CareerView;busy:boolean;send:Send;mode?:'sheet'|'meet'}){
  const saved=():Sheet=>({xi:[...v.lineup.xi],bench:pad(v.lineup.bench),t:v.lineup.tactics,cap:v.lineup.captain,vice:v.lineup.vice})
  const [s,setS]=useState<Sheet>(saved),[past,setPast]=useState<Sheet[]>([])
- const [sel,setSel]=useState<Place|null>(null),[card,setCard]=useState<SquadView|null>(null)
+ const [sel,setSel]=useState<Place|null>(null),[card,setCard]=useState<SquadView|null>(null),[view,setView]=useState<'pitch'|'list'>('pitch')
  useEffect(()=>{setS(saved());setPast([]);setSel(null)},[v.revision]) // eslint-disable-line react-hooks/exhaustive-deps
  const men=useMemo(()=>{const m=new Map<string,Man>()
   for(const q of v.squad)m.set(q.id,{id:q.id,name:q.name,pos:q.pos,...(q.role?{role:q.role}:{}),stars:q.stars,fit:q.fit,from:q.from,to:q.to,squad:q,note:q.injury?`Injured · ${q.injury} round${q.injury===1?'':'s'}`:q.suspension?`Banned · ${q.suspension} match${q.suspension===1?'':'es'}`:''})
@@ -97,8 +98,10 @@ export function TeamSheet({v,busy,send,mode='sheet'}:{v:CareerView;busy:boolean;
  const offLine=(i:number)=>{const m=men.get(s.xi[i]??'');return !!m&&m.pos!==slots[i]!.family}
  const offCount=slots.filter((_,i)=>offLine(i)).length
 
- return <div className="tl-sheet" data-mode={mode}>
-  <section className="tl-pitchcol" aria-labelledby="tl-pitch-h">
+ return <div className="tl-sheet" data-mode={mode} data-view={view}>
+  {mode==='sheet'?<div className="tl-seg lgm-viewseg" role="tablist" aria-label="Team view"><button type="button" role="tab" className="min-h-tap" aria-selected={view==='pitch'} onClick={()=>setView('pitch')} data-testid="legends-view-pitch">Pitch</button><button type="button" role="tab" className="min-h-tap" aria-selected={view==='list'} onClick={()=>setView('list')} data-testid="legends-view-list">Squad list</button></div>:null}
+  {view==='list'?<section className="lgm-panel lgm-sql-panel"><p className="lgm-kicker">The squad · {v.squad.length} men</p><SquadList v={v} open={setCard}/></section>:null}
+  <section className="tl-pitchcol" aria-labelledby="tl-pitch-h" hidden={view==='list'}>
    <header className="tl-pitchhead">
     <div><p className="lgm-kicker" id="tl-pitch-h">{mode==='meet'?'Step 2 · your eleven':'The team sheet'}</p><p className="tl-how">Drag a man onto a place, or tap him and then tap the place.</p></div>
     <div className="tl-seg" role="radiogroup" aria-label="Formation — picks the best fit eleven for it">{FORMATIONS.map(x=><button key={x} type="button" role="radio" className="min-h-tap" aria-checked={v.lineup.formation===x} disabled={busy} onClick={()=>send({kind:'auto',formation:x},`${x} — the best fit eleven.`)}>{x}</button>)}</div>
@@ -121,7 +124,7 @@ export function TeamSheet({v,busy,send,mode='sheet'}:{v:CareerView;busy:boolean;
    {s.cap&&!inXi.has(s.cap)?<p className="tl-warn" role="note">{men.get(s.cap)?.name} is not in the eleven — {s.vice&&inXi.has(s.vice)?`${men.get(s.vice)?.name} wears the armband.`:'the eleven’s best man wears the armband.'}</p>:null}
   </section>
 
-  <section className="tl-side" aria-label="Bench and reserves">
+  <section className="tl-side" aria-label="Bench and reserves" hidden={view==='list'}>
    <div className="tl-block"><p className="lgm-kicker">The bench · {onBench.size} of {BENCH}</p>
     <ol className="tl-bench">{s.bench.map((id,i)=>{const m=men.get(id),k=keyOf({z:'bench',i}),isSel=sel&&keyOf(sel)===k
      return <li key={i}><button type="button" className="tl-chip min-h-tap" data-drop={k} data-over={over===k||undefined} data-sel={isSel||undefined} data-empty={!m||undefined} {...handlers({z:'bench',i})} aria-pressed={isSel||false} aria-label={m?`Bench ${i+1}: ${m.name}, ${posName(m.pos)}`:`Bench ${i+1}: empty`}>

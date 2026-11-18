@@ -132,6 +132,7 @@ function Matchday({v,busy,send,go,kickoff,resume,openWindow,openClub}:{v:CareerV
     <button type="button" className="lgm-ticket-side" onClick={()=>n.away===v.clubId?go('squad'):openClub(n.away)}><ClubMark club={n.away} name={n.awayName} size={48}/><b>{n.awayName}</b></button>
    </div>
    <p className="lgm-fine">{n.opponent.name} · {n.opponent.formation} · their eleven <Stars value={n.opponent.stars} size="sm"/>{n.opponent.xi?` · scouted: ${n.opponent.xi.slice(0,4).join(', ')}…`:''}</p>
+   <Tape v={v}/>
    {n.opponent.report?<ScoutReport o={n.opponent}/>:null}
    {v.lineup.error?<p className="lgm-error" role="alert">{v.lineup.error} <button type="button" className="lgm-link min-h-tap" onClick={()=>send({kind:'auto'},'Best fit eleven picked.')}>Pick the best fit eleven</button></p>:null}
    <p className="lgm-ticket-go"><button type="button" className="lgm-go lgm-go-big min-h-tap" disabled={busy||!!v.lineup.error} onClick={kickoff} data-testid="legends-kickoff">▶ Kick off · watch live</button><button type="button" className="lgm-ghost min-h-tap" onClick={()=>go('squad')}>Team sheet</button></p>
@@ -145,6 +146,31 @@ function Matchday({v,busy,send,go,kickoff,resume,openWindow,openClub}:{v:CareerV
    {v.last.reel?<p className="lgm-actions"><button type="button" className="lgm-link min-h-tap" onClick={()=>setReplay(true)}>▶ Watch the highlights</button></p>:null}</section>:null}
   <section className="lgm-panel"><p className="lgm-kicker">The table</p><Table v={v} rows={v.table.slice(0,Math.max(4,me+1))} openClub={openClub}/><p className="lgm-actions"><button type="button" className="lgm-link min-h-tap" onClick={()=>go('league')}>Full table and results →</button>{v.boardForecast!=null?<span className="lgm-fine" data-testid="legends-forecast">Board forecast: about {money(v.boardForecast)} next season if the table stayed as it is — it can still move.</span>:null}{v.nextWindow&&v.phase==='season'?<span className="lgm-fine">Window opens after round {v.nextWindow}.</span>:null}</p></section>
   {replay&&v.last?.reel?<Replay r={v.last} onClose={()=>setReplay(false)}/>:null}
+ </div>
+}
+/**
+ * The tale of the tape (CM 01/02's match preview): the two sides side by side on the facts a manager weighs before a game — place,
+ * form, goals, the strength of the eleven, the man to watch. Everything here is already the manager's to see: the table, results,
+ * the opponent's stars; no rival rating crosses (lib/legends/fm.ts stays on his own men).
+ */
+function Tape({v}:{v:CareerView}){
+ const n=v.next;if(!n)return null
+ const opp=n.home===v.clubId?n.away:n.home,rows=v.table,mi=rows.findIndex(r=>r.mine),oi=rows.findIndex(r=>r.club===opp)
+ const me=rows[mi],them=rows[oi];if(!me||!them)return null
+ const xi=v.squad.filter(m=>v.lineup.xi.includes(m.id)),mine=xi.length?Math.round(xi.reduce((a,m)=>a+m.stars,0)/xi.length*4)/4:0
+ const top=(list:{name:string;goals:number}[])=>{const t=[...list].sort((a,b)=>b.goals-a.goals)[0];return t&&t.goals>0?`${t.name} · ${t.goals}`:'—'}
+ const theirs=v.clubs.find(c=>c.club===opp)?.squad??[]
+ const line=(label:string,a:import('react').ReactNode,b:import('react').ReactNode,lead?:0|1|null)=><div className="lgm-tape-row" data-lead={lead??undefined}><span>{a}</span><small>{label}</small><span>{b}</span></div>
+ const form=(f:string[])=><span className="lgm-tape-form">{f.length?f.map((x,i)=><i key={i} data-r={x}>{x}</i>):'—'}</span>
+ const better=(a:number,b:number,low=false):0|1|null=>a===b?null:(low?a<b:a>b)?0:1
+ return <div className="lgm-tape" aria-label="The two sides compared" data-testid="legends-tape">
+  <div className="lgm-tape-head"><b>{v.clubName}</b><small>Tale of the tape</small><b>{n.opponent.name}</b></div>
+  {line('Place',me.p?ordinal(mi+1):'—',them.p?ordinal(oi+1):'—',me.p&&them.p?better(mi,oi,true):null)}
+  {line('Points',me.pts,them.pts,better(me.pts,them.pts))}
+  {line('Form',form(me.form),form(them.form))}
+  {line('Goals',`${me.gf}–${me.ga}`,`${them.gf}–${them.ga}`,better(me.gd,them.gd))}
+  {line('Eleven',<Stars value={mine} size="sm"/>,<Stars value={n.opponent.stars} size="sm"/>,better(mine,n.opponent.stars))}
+  {line('Top scorer',top(v.squad),top(theirs))}
  </div>
 }
 function ScoutReport({o}:{o:NonNullable<NonNullable<CareerView['next']>['opponent']>}){
