@@ -46,6 +46,6 @@ describe('manager ratings · hidden outside the squad',()=>{
 describe('manager ratings · reachable',()=>{
  it('a man on the pitch opens his profile from the tray (not only men outside the matchday squad)',async()=>{
   const {readFileSync}=await import('node:fs');const t=readFileSync('components/legends/TeamSheet.tsx','utf8')
-  expect(t).toMatch(/onClick=\{\(\)=>setCard\(held\.squad!\)\} data-testid="legends-open-profile">Profile</)
+  expect(t).toMatch(/onClick=\{\(\)=>\{setCard\(held\.squad!\);setSel\(null\)\}\} data-testid="legends-open-profile">Profile</)
  })
 })

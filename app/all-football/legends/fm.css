@@ -11,9 +11,10 @@
 @media (min-width: 720px) { .lgm-fm-groups { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 .lgm-fm-group h4 { margin: 0 0 4px; font: 400 14px/1 var(--mag-display); letter-spacing: .06em; text-transform: uppercase; color: var(--mag-cyan); }
 .lgm-fm-group ul { display: grid; gap: 2px; margin: 0; padding: 0; list-style: none; }
-@media (max-width: 719px) { .lgm-fm-group ul { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 12px; } }
+/* a phone reads one column, full names: two columns cut "Command of Area" to "Com…" (seen on production 18.11.2026) */
+@media (min-width: 480px) and (max-width: 719px) { .lgm-fm-group ul { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 12px; } }
 .lgm-fm-group li { display: flex; align-items: center; justify-content: space-between; gap: 6px; min-block-size: 26px; padding-inline: 6px 2px; border-block-end: 1px solid color-mix(in srgb, var(--mag-white) 10%, transparent); font: 500 13px/1.2 var(--mag-body); }
-.lgm-fm-group li span { min-inline-size: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lgm-fm-group li span { min-inline-size: 0; overflow-wrap: anywhere; }
 .lgm-fm-group li[data-key] span { font-weight: 800; }
 .lgm-fm-group li[data-key] { border-inline-start: 3px solid var(--mag-cyan); }
 .lgm-fm-group li b { flex: none; display: grid; place-items: center; inline-size: 30px; block-size: 22px; font: 400 15px/1 var(--mag-goal); border-radius: 3px; }
