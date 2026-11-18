@@ -141,13 +141,13 @@ beat(None, word('THE SIX-MINUTE', bg='ink', size=210, d=1.2), word('THE SIX-MINU
 chapter('CHAPTER ONE', 'A SUNDAY IN DECEMBER', 'MADRID · 12 DECEMBER 2004', 'stadium')
 beat("Sunday, the twelfth of December, two thousand and four. Real Madrid are at home to Real Sociedad, in La Liga.",
      img('stadium', 'push', veil=0.1), flap('2026', '2004', at=1.6, d=2.8, small='12 DECEMBER · LA LIGA'),
-     type='matchday', emotion='calm', intensity=0.5, pad=0.3, sound=[('page', 0.0, 1.0, 0.4)])
+     type='matchday', emotion='calm', intensity=0.5, pad=0.3, meta=dict(board=dict(RS, score='0–0')), sound=[('page', 0.0, 1.0, 0.4)])
 beat("Look at the Madrid team that night. Zidane. Ronaldo. Beckham. Roberto Carlos. Raúl. Figo.",
      word('ZIDANE · RONALDO · BECKHAM|ROBERTO CARLOS · RAÚL · FIGO', bg='ink', size=104, small='REAL MADRID · 12 DECEMBER 2004'),
-     type='record', emotion='wonder', intensity=0.7, pad=0.4)
+     type='record', emotion='wonder', intensity=0.7, pad=0.4, meta=dict(board=dict(RS, score='0–0')))
 beat("And on the bench, Michael Owen, who comes on in the second half.", img('dugout', 'push', veil=0.1),
      stamp('MICHAEL OWEN', 'us', x=220, y=200, dt=1.4, size=110, rot=-3, plate=True),
-     type='illustration', emotion='wonder', intensity=0.5, pad=0.3, sound=[('stamp', 1.4, 1.0, 0.5)])
+     type='illustration', emotion='wonder', intensity=0.5, pad=0.3, meta=dict(board=dict(RS, score='0–0')), sound=[('stamp', 1.4, 1.0, 0.5)])
 beat("Just before half-time, Míchel Salgado crosses, and Ronaldo scores with his left foot.", img('volley', 'push', veil=0.0), clock(42),
      type='goal', emotion='joy', intensity=0.9, pad=0.4, meta=dict(board=dict(RS, score='1–0', flip_at=3.4), plain=True), sound=[('goal', 3.4, 4.0, 0.5)])
 beat("In the second half, Real Sociedad's striker Nihat equalises, with an acrobatic finish. One, one.", img('net', 'slam', veil=0.05),
