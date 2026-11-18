@@ -60,6 +60,42 @@ def commons_search(get_json, name):
             if re.search(r'\.(jpe?g|png)$', h['title'], re.I) and names_in(h['title'] + ' ' + re.sub('<[^>]+>', '', h.get('snippet', '')), name)]
 
 
+def labels(get_json, qid):
+    """his name as Wikidata writes it in the languages of our clubs (Greek, Hebrew, Arabic, Croatian, Serbian…)"""
+    j = get_json(WD + 'action=wbgetentities&props=labels|aliases&languages=en|el|he|ar|hr|bs|sr|de|it|tr|fr&ids=' + qid)
+    e = ((j or {}).get('entities', {}).get(qid, {}) or {})
+    out = [v['value'] for v in (e.get('labels') or {}).values()]
+    for vs in (e.get('aliases') or {}).values():
+        out += [v['value'] for v in vs][:2]
+    return [n for n in dict.fromkeys(out) if 4 <= len(n) <= 40][:10]
+
+
+CLUB_WORDS = {'hapoel-tel-aviv': ['הפועל תל אביב'], 'hapoel-petah-tikva': ['הפועל פתח תקווה'], 'maccabi-haifa': ['מכבי חיפה'],
+              'panathinaikos': ['Παναθηναϊκός', 'Panathinaikos'], 'olympiacos': ['Ολυμπιακός', 'Olympiakos'], 'aek-athens': ['ΑΕΚ', 'AEK'],
+              'al-ahly': ['الأهلي', 'Ahly'], 'raja-casablanca': ['الرجاء', 'Raja'], 'wydad-casablanca': ['الوداد', 'Wydad'],
+              'zrinjski-mostar': ['Zrinjski'], 'celtic': ['Celtic'], 'st-pauli': ['St. Pauli', 'Sankt Pauli'], 'atalanta': ['Atalanta']}
+
+
+def club_names(club):
+    return CLUB_WORDS.get(club, [])
+
+
+def surname_club_search(get_json, name, club_words):
+    """Commons files whose title names his surname AND his club (archive match pictures)"""
+    parts = [p for p in re.split(r'\s+', name.strip()) if len(p) > 2]
+    if not parts:
+        return []
+    sur = parts[-1]
+    out = []
+    for cw in club_words[:3]:
+        j = get_json(CM + 'action=query&list=search&srnamespace=6&srlimit=15&srsearch=' + urllib.parse.quote(f'"{sur}" "{cw}"'))
+        for h in (j or {}).get('query', {}).get('search', []):
+            t = h['title']
+            if re.search(r'\.(jpe?g|png|tiff?)$', t, re.I) and fold(sur) in fold(t):
+                out.append(t[5:])
+    return list(dict.fromkeys(out))
+
+
 def openverse(get_json, name, club):
     """free-licence images from Openverse whose own words carry his full name; shaped like stickers.file_meta"""
     q = urllib.parse.urlencode({'q': f'{name} {club}', 'license': 'by,by-sa,cc0,pdm', 'page_size': 20, 'mature': 'false'})
