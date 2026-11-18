@@ -10,6 +10,7 @@ import {maxStopsOf,run,stopsV4} from './engine'
 import {captainOf,fieldable,lineupError,quotaCount,squadError} from './squad'
 import {seasonStats,type SeasonStats} from './stats'
 import {hash} from '@/lib/clubs/rumble-rng'
+import {personOfRecord} from '@/lib/people/by-record'
 import {windowKey} from './market'
 import {adviceFor,type AdviceNote} from './advice'
 import {matchReport} from './report'
@@ -22,7 +23,7 @@ import type {Card,Career,Fixture,MatchEventRow,Tactics} from './types'
  * What the browser may see of a career. Stars and attributes are the game's own values and shown; nothing else about a man's
  * hidden rating leaves the server (the catalog never stored it). Every line of the match log is written here with names.
  */
-export type CardView={id:string;name:string;pos:QuotaPos;/** his exact position where a source states it (17.11.2026) */role?:import('./roles').Role;alt?:QuotaPos[];price:number;stars:number;attrs:Record<string,number>;from:number|null;to:number|null;decades:number[]}
+export type CardView={id:string;/** his one profile across every club (People Registry, 18.11.2026) */person?:string;name:string;pos:QuotaPos;/** his exact position where a source states it (17.11.2026) */role?:import('./roles').Role;alt?:QuotaPos[];price:number;stars:number;attrs:Record<string,number>;from:number|null;to:number|null;decades:number[]}
 export type SquadView=CardView&{quota:QuotaPos;paid:number;apps:number;appsTotal:number;goals:number;yellows:number;suspension:number;injury:number;injuryKind:string|null;fit:boolean;sale:{net:number;quoted:number;fees:number}|null;/** on the manager's transfer list */listed:boolean;/** this season's match ratings (17.11.2026): average, the last five, player-of-the-match awards */form?:import('./form').ManForm}
 export type LogLine={minute:number;side:0|1|null;kind:MatchEventRow['kind'];text:string;mine:boolean}
 export type ResultView={id:string;round:number;home:string;away:string;homeClub:string;awayClub:string;goals:[number,number];pens:[number,number]|null;log:LogLine[];mine:boolean;/** U02: the story of the manager's own match, from its stored log */report?:import('./report').MatchReport|null;/** the highlights reel — attached on the server (`kits.ts`) to the manager's last result */reel?:import('@/lib/highlights/types').Reel}
@@ -59,7 +60,7 @@ export type CareerView={
  talks:{pre:TalkView|null;post:TalkView|null;last:null|{fixture:string;when:'pre'|'post';tone:Tone;toneLabel:string;line:string;reaction:string};mood:{word:MoodWord;label:string;line:string};men:{id:string;name:string;mood:ManMood}[]}
 }
 export type TalkView={fixture:string;when:'pre'|'post';situation:string;kicker:string;prompt:string;opponent:string;answers:{tone:Tone;toneLabel:string;line:string}[]}
-const cv=(c:Card):CardView=>{const r=roleOf(c.id);return {id:c.id,name:c.name,pos:c.pos,...(r?{role:r}:{}),...(c.alt?{alt:c.alt}:{}),price:c.price,stars:c.stars,attrs:c.attrs,from:c.from,to:c.to,decades:c.decades}}
+const cv=(c:Card):CardView=>{const r=roleOf(c.id),person=personOfRecord(c.id);return {id:c.id,...(person?{person}:{}),name:c.name,pos:c.pos,...(r?{role:r}:{}),...(c.alt?{alt:c.alt}:{}),price:c.price,stars:c.stars,attrs:c.attrs,from:c.from,to:c.to,decades:c.decades}}
 function logOf(c:Career,events:readonly MatchEventRow[],f:Fixture,names:(side:0|1,id?:string)=>string):LogLine[]{
  const mine=f.home===c.clubId?0:f.away===c.clubId?1:-1
  return events.filter(e=>e.kind!=='chance'||e.minute%2===0).map(e=>{

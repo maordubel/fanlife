@@ -15,7 +15,7 @@ import css from './archive.module.css'
 const SHOW=4
 export type SheetProps={
  entry:Entry;entries:Entry[];byId:Map<string,Entry>;seen:ReadonlySet<string>;ctx:CardCtx;club:string;clubName:string;locale:UiLocale
- sources:ArchiveWire['sources'];links:{xi:string|null;derby:string|null};saved:boolean
+ sources:ArchiveWire['sources'];links:{xi:string|null;derby:string|null;profiles?:Record<string,string>};saved:boolean
  onOpen:(id:string)=>void;onBack:(()=>void)|null;backTitle:string|null;onToggleSave:(id:string)=>void;onSearch:(q:string)=>void
 }
 
@@ -89,6 +89,7 @@ export function ArchiveSheetBody({entry:e,entries,byId,seen,ctx,club,clubName,lo
    {deeper?<button type="button" className={`${css.tool} ${css.primary}`} onClick={()=>onOpen(deeper.id)}>{t('ar.sheet.deeper')} <span aria-hidden="true" className={css.arrow}>→</span></button>
     :<p className={css.fine} role="status" data-testid="archive-thread-end">{t('ar.sheet.endThread')}</p>}
   </div>
+  {isPlayer&&links.profiles?.[e.id]&&<p className={css.gateLinks}><Link className={`${css.tool} ${css.primary} min-h-tap`} href={`/players/${links.profiles[e.id]}`}>{t('ar.sheet.profile')} <span aria-hidden="true" className={css.arrow}>→</span></Link></p>}
   {(links.xi&&isPlayer||links.derby&&e.refs.some(r=>r.kind==='rival'))&&<nav className={css.gateLinks} aria-label={t('ar.link.more')}>
    {links.xi&&isPlayer&&<Link className={`${css.tool} min-h-tap`} href={links.xi}>{t('ar.link.xi')} ↗</Link>}
    {links.derby&&e.refs.some(r=>r.kind==='rival')&&<Link className={`${css.tool} min-h-tap`} href={links.derby}>{t('ar.link.derby')} ↗</Link>}

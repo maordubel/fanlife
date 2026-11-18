@@ -1,0 +1,1541 @@
+{
+ "note": "Recorded verdicts on two club records (People Registry, 18.11.2026). same = one person; different = two people who share a written name. basis wikidata: one Wikidata footballer item lists both clubs (same) or two items each list one (different) — evidence is the item. Appended by npm run people:links; the owner decides the rest on the desk (Players → Across clubs). Never decided by a name alone (rule 7).",
+ "links": [
+  {
+   "a": "aek-athens:aek-athens:p-0addd5d8a7159c",
+   "b": "olympiacos:olympiacos:oh-vasilis-labropulos",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q3557000",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-2cc604f98efb6d",
+   "b": "olympiacos:olympiacos:wv-287bb86eb2",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q6835945",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-326a3645794d6b",
+   "b": "olympiacos:olympiacos:r26-georgatos",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2546619",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-3e9c0287a00eba",
+   "b": "olympiacos:olympiacos:wv-3881884764",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q465975",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-72626835ce8872",
+   "b": "panathinaikos:panathinaikos:wv-aed9e6667a",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q3555962",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-7e6494d6d7053d",
+   "b": "panathinaikos:panathinaikos:kostas-katsouranis",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q211124",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-866f496334d816",
+   "b": "olympiacos:olympiacos:r26-alexandris",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q610234",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-b34d009e058aa2",
+   "b": "olympiacos:olympiacos:wv-945e0d97fb",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q939590",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-b34d009e058aa2",
+   "b": "panathinaikos:panathinaikos:lazaros-christodoulopoulos",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q939590",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-b4ca429486e8ca",
+   "b": "celtic:celtic:p-dh-0a62477ff661",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q20090771",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-c3bbe2b5c1f856",
+   "b": "panathinaikos:panathinaikos:tasos-bakasetas",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2845537",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-db29bc7f2f256e",
+   "b": "olympiacos:olympiacos:r26-mitropoulos",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2712151",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-db29bc7f2f256e",
+   "b": "panathinaikos:panathinaikos:anastasios-mitropoulos",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2712151",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-0064b6fa035b",
+   "b": "olympiacos:olympiacos:wv-553bb5b0d0",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2444387",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-05a2f60ab448",
+   "b": "panathinaikos:panathinaikos:wv-095ecc1c9f",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q4755585",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-0eb5074ba04e",
+   "b": "olympiacos:olympiacos:r26-manolas",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q650452",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-17abc153cbe1",
+   "b": "olympiacos:olympiacos:wv-ac1bca3cd4",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q318905",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-17ed6a34d4bc",
+   "b": "olympiacos:olympiacos:wv-82f8995251",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q775103",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-1d59c0a199bd",
+   "b": "panathinaikos:panathinaikos:antonis-petropoulos",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q606353",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-2ed681d003d6",
+   "b": "panathinaikos:panathinaikos:wv-98eea958e7",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q7914790",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-360911b23eaf",
+   "b": "panathinaikos:panathinaikos:wv-7718403fcb",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q12884675",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-36e956c9cfaa",
+   "b": "panathinaikos:panathinaikos:angelos-basinas",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q221142",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-444ba7eec1b7",
+   "b": "panathinaikos:panathinaikos:wv-a048113a6a",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q16524787",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-4615868d9b62",
+   "b": "maccabi-haifa:maccabi-haifa:p-u-b8b13cc4cdff1be0",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q55820193",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-48481bff0206",
+   "b": "olympiacos:olympiacos:wv-0bd4ab6d6c",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q14647995",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-4eaa6b1187ec",
+   "b": "olympiacos:olympiacos:wv-d972b79e8a",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q4720821",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-4ec841f55784",
+   "b": "panathinaikos:panathinaikos:wv-763f8f5e17",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q1671926",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-56d87306f11b",
+   "b": "olympiacos:olympiacos:wv-dc14f2f0c8",
+   "verdict": "different",
+   "basis": "wikidata",
+   "evidence": "Q93398297 / Q1278745",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-59716e3ae210",
+   "b": "olympiacos:olympiacos:wv-2357f83676",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q349887",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-597efcba4e9a",
+   "b": "olympiacos:olympiacos:wv-c3a3c48864",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2021805",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-703aaeb8e560",
+   "b": "olympiacos:olympiacos:wv-fc0418641d",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q12882529",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-7d8cde8ee9ae",
+   "b": "olympiacos:olympiacos:wv-98956f073f",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q192923",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-8a017439ca19",
+   "b": "olympiacos:olympiacos:wv-6f7e9b41ee",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q1798311",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-8df066e879b0",
+   "b": "olympiacos:olympiacos:wv-9ec37c1c8f",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q371599",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-91a7c36b977f",
+   "b": "olympiacos:olympiacos:wv-44618d072d",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q719197",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-91b0e63c0ea3",
+   "b": "maccabi-haifa:maccabi-haifa:p-u-27b3e564dd25df25",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q7446647",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-9385e96365f4",
+   "b": "olympiacos:olympiacos:wv-c049b35a3d",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q1778361",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-93f7eb9100da",
+   "b": "olympiacos:olympiacos:wv-6f96004212",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q935587",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-957fb2db5443",
+   "b": "panathinaikos:panathinaikos:miltos-sapanis",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q6860881",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-9be7268386a0",
+   "b": "panathinaikos:panathinaikos:wv-d23c114185",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q14432450",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-9e9856f8d5b5",
+   "b": "olympiacos:olympiacos:wv-34e8ac9ce4",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q965046",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-a73f39380b22",
+   "b": "panathinaikos:panathinaikos:wv-9a738cf52a",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q567929",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-ab07c4c532f8",
+   "b": "panathinaikos:panathinaikos:wv-55c62b3a88",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q691136",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-b10750d35a07",
+   "b": "panathinaikos:panathinaikos:sotiris-kyrgiakos",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q208430",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-b224b6fe1dd5",
+   "b": "panathinaikos:panathinaikos:wv-13a16c4b0b",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q12879960",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-b401ee31a266",
+   "b": "panathinaikos:panathinaikos:mimis-domazos",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q1225972",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-b71a7cac5202",
+   "b": "panathinaikos:panathinaikos:wv-35869b0a47",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q5830311",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-c1361c6af8cf",
+   "b": "olympiacos:olympiacos:r26-rivaldo",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q483577",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-cc3bd7aa98b9",
+   "b": "olympiacos:olympiacos:wv-3505d3d8eb",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q12886129",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-cc50e0056344",
+   "b": "panathinaikos:panathinaikos:levi-garcia",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q22004457",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-db12bc64a3bd",
+   "b": "panathinaikos:panathinaikos:dimitris-saravakos",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q1226009",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-e4a6361f94d3",
+   "b": "olympiacos:olympiacos:wv-54cc07ac73",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q1367592",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-ea757ce5e065",
+   "b": "panathinaikos:panathinaikos:wv-3776f3ef85",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q5277653",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-fb9799662831",
+   "b": "olympiacos:olympiacos:wv-ffc08f607d",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q1395363",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-dh-fde18d6c6a24",
+   "b": "olympiacos:olympiacos:wv-90b9736c07",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q316395",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:p-f9d4ce0d4876b0",
+   "b": "panathinaikos:panathinaikos:wv-5df6603581",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2723951",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:wv-0346530c74",
+   "b": "panathinaikos:panathinaikos:tasos-bakasetas",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2845537",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:wv-325adcd46b",
+   "b": "panathinaikos:panathinaikos:nikos-liberopoulos",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q312515",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:wv-4046b38621",
+   "b": "olympiacos:olympiacos:wv-c2ac554d61",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q25915762",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:wv-57dc24c880",
+   "b": "olympiacos:olympiacos:wv-741abc3461",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q12873283",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:wv-6bb1b4164f",
+   "b": "panathinaikos:panathinaikos:wv-c380af7303",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q331246",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:wv-d5855270fa",
+   "b": "panathinaikos:panathinaikos:wv-d5cbd558d7",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2460873",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:wv-db9da15bc0",
+   "b": "panathinaikos:panathinaikos:wv-4af2d7e8a7",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q8043577",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:wv-e481284d3f",
+   "b": "olympiacos:olympiacos:wv-e4831a3d90",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2961319",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "aek-athens:aek-athens:wv-f48b656205",
+   "b": "olympiacos:olympiacos:wv-887bf8cad5",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q15999059",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "al-ahly:al-ahly:p-mg-0c7ba8ccbdf8",
+   "b": "wydad-casablanca:wydad-casablanca:p-mg-b1c7f391a5df",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q80020069",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "al-ahly:al-ahly:p-mg-712a32dc7c54",
+   "b": "olympiacos:olympiacos:wv-f6ab3d983b",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q5442121",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "al-ahly:al-ahly:p-mg-9c339b4c2cfc",
+   "b": "wydad-casablanca:wydad-casablanca:p-mg-6c580793cf00",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q60616722",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "al-ahly:al-ahly:p-mg-bf1e35305c21",
+   "b": "raja-casablanca:raja-casablanca:p-mg-0c36299bd561",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q1863120",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "al-ahly:al-ahly:p-mg-c7a37fb57c3a",
+   "b": "wydad-casablanca:wydad-casablanca:p-mg-755e70047a00",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q15614928",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "atalanta:atalanta:p-u-1dabc4fabd6281d3",
+   "b": "olympiacos:olympiacos:wv-7ae5be9553",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q16595441",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "celtic:celtic:p-dh-31eca41b1c0a",
+   "b": "maccabi-haifa:maccabi-haifa:p-u-d654a966d461b537",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q713904",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "celtic:celtic:p-dh-61028dca09b6",
+   "b": "wydad-casablanca:wydad-casablanca:p-mg-dde37950be8f",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q439023",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "celtic:celtic:p-dh-650a10c545b2",
+   "b": "hapoel-tel-aviv:p_0567517457",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2843291",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "celtic:celtic:p-dh-77b716bcee0c",
+   "b": "maccabi-haifa:maccabi-haifa:p-u-8aaffcdc3ebdb169",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q1651291",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "celtic:celtic:p-dh-c0a10ce8dfd6",
+   "b": "st-pauli:st-pauli:p-f158c822565fed",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q10544594",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "celtic:celtic:p-dh-ed5916d15e5e",
+   "b": "panathinaikos:panathinaikos:wv-2a82df12d0",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q980653",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "celtic:celtic:p-dh-f01ad993795c",
+   "b": "olympiacos:olympiacos:wv-f61a4d40eb",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q313145",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "celtic:celtic:wv-5932c4d77c",
+   "b": "olympiacos:olympiacos:wv-e4f3cf3068",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q62268160",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:r26-alon-hazan",
+   "b": "hapoel-tel-aviv:p_cc459a96c2",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q373955",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:r26-rafi-cohen-gk",
+   "b": "maccabi-haifa:maccabi-haifa:p-u-4a054a38c6776424",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q7282623",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-1722e6a5e6",
+   "b": "hapoel-tel-aviv:p_7c9ce04140",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q5422552",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-2684d456bf",
+   "b": "hapoel-tel-aviv:p_0503993392",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2455959",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-2684d456bf",
+   "b": "maccabi-haifa:maccabi-haifa:p-u-64da06f155ca34d3",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2455959",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-3511c29d72",
+   "b": "hapoel-tel-aviv:p_3362416fff",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q457504",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-36c34b178b",
+   "b": "hapoel-tel-aviv:p_3a36968e08",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q8047113",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-3d23bc82f5",
+   "b": "hapoel-tel-aviv:p_affbe60583",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q17386351",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-4195ac24bb",
+   "b": "hapoel-tel-aviv:p_5375c40146",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q13416022",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-4195ac24bb",
+   "b": "panathinaikos:panathinaikos:omri-altman",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q13416022",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-4b67113783",
+   "b": "hapoel-tel-aviv:p_1a961df98e",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q5989267",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-5067b6f08d",
+   "b": "hapoel-tel-aviv:p_714585313e",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q4734347",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-5067b6f08d",
+   "b": "maccabi-haifa:maccabi-haifa:p-u-b8833fc0e14d131c",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q4734347",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-533940af08",
+   "b": "hapoel-tel-aviv:p_b6c6274a18",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q1446606",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-533940af08",
+   "b": "maccabi-haifa:maccabi-haifa:p-u-ded55cc00d4d1155",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q1446606",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-5713c2341a",
+   "b": "maccabi-haifa:maccabi-haifa:p-u-f94f0584ac8e00f8",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q7296688",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-6832a5df87",
+   "b": "hapoel-tel-aviv:p_9a7b6e96a1",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2777611",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-72291aa580",
+   "b": "hapoel-tel-aviv:p_c992a64b6f",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q5529235",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-7c69034c47",
+   "b": "hapoel-tel-aviv:p_b150788697",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q664686",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-80fdc146ea",
+   "b": "maccabi-haifa:maccabi-haifa:p-u-495354e26d7ecfba",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q4427011",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-81900c5fd2",
+   "b": "hapoel-tel-aviv:p_9d383f8236",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q16235602",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-8f483b66a1",
+   "b": "maccabi-haifa:maccabi-haifa:p-u-4aa1486c3aea6429",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q1372420",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-9c6e0584d8",
+   "b": "hapoel-tel-aviv:p_6d9974711f",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q7090769",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-9f0bc4deac",
+   "b": "hapoel-tel-aviv:p_be26644441",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2776762",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-a0129ce817",
+   "b": "hapoel-tel-aviv:p_4b46fbda65",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q7050377",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-a1bdbd5d00",
+   "b": "hapoel-tel-aviv:p_fbb04763b0",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q596023",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-a6260c420f",
+   "b": "hapoel-tel-aviv:p_a7bdc2d943",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q1176144",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-a9725e184b",
+   "b": "hapoel-tel-aviv:p_9c70058156",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q7357574",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-b0614557a2",
+   "b": "hapoel-tel-aviv:p_81dbfd0fa0",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q659875",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-b282c8ec63",
+   "b": "hapoel-tel-aviv:p_64938b42c8",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2415570",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-b282c8ec63",
+   "b": "maccabi-haifa:maccabi-haifa:p-u-1fc701f84584b966",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2415570",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-be246d14e2",
+   "b": "maccabi-haifa:maccabi-haifa:p-u-12b68c584bcfa679",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2910831",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-be26c4734f",
+   "b": "maccabi-haifa:maccabi-haifa:p-u-2f9d93563f9f2e09",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q10394344",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-cf93ee9cd1",
+   "b": "hapoel-tel-aviv:p_ab21047b1e",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2580692",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-d2f367070b",
+   "b": "hapoel-tel-aviv:p_04c3d1edb1",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q7289520",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-dc39928c71",
+   "b": "hapoel-tel-aviv:p_98a480c32b",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q1850683",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-dce4b5b63d",
+   "b": "maccabi-haifa:maccabi-haifa:p-u-bb1d62ad5e001c2b",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q10396017",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-e1ebe9e272",
+   "b": "hapoel-tel-aviv:p_b9f2d20d18",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q7496985",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-e5d73554d5",
+   "b": "hapoel-tel-aviv:p_20d52b9cb6",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q7317651",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-e89760c09f",
+   "b": "maccabi-haifa:maccabi-haifa:p-u-10b5f8ccf7db8d6f",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2899906",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-eee770a630",
+   "b": "hapoel-tel-aviv:p_27a9c4a320",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2005343",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-petah-tikva:hapoel-petah-tikva:wv-f94ee01759",
+   "b": "hapoel-tel-aviv:p_5858cf2f9c",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q6556013",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-tel-aviv:p_04fe540318",
+   "b": "olympiacos:olympiacos:wv-a0c58f84d7",
+   "verdict": "different",
+   "basis": "wikidata",
+   "evidence": "Q846845 / Q60736505",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-tel-aviv:p_0503993392",
+   "b": "maccabi-haifa:maccabi-haifa:p-u-64da06f155ca34d3",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2455959",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-tel-aviv:p_11ded33d63",
+   "b": "olympiacos:olympiacos:wv-31477bca81",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q17811642",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-tel-aviv:p_337bf515cf",
+   "b": "maccabi-haifa:maccabi-haifa:p-u-d7216d48f246d71f",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q39710",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-tel-aviv:p_3cb87d334a",
+   "b": "maccabi-haifa:maccabi-haifa:p-u-43fffed235208d4f",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q584000",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-tel-aviv:p_47d5fc2bb5",
+   "b": "panathinaikos:panathinaikos:loukas-vyntra",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q318553",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-tel-aviv:p_4ede2d4c2f",
+   "b": "maccabi-haifa:maccabi-haifa:p-u-d14e063685a0b9e3",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q1362397",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-tel-aviv:p_5375c40146",
+   "b": "panathinaikos:panathinaikos:omri-altman",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q13416022",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-tel-aviv:p_5ca5b74aca",
+   "b": "zrinjski-mostar:zrinjski-mostar:besart-abdurahimi",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q3512195",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-tel-aviv:p_64938b42c8",
+   "b": "maccabi-haifa:maccabi-haifa:p-u-1fc701f84584b966",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2415570",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-tel-aviv:p_6f1fd9dc54",
+   "b": "maccabi-haifa:maccabi-haifa:p-u-34e69b822a6f9cb8",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q1334302",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-tel-aviv:p_714585313e",
+   "b": "maccabi-haifa:maccabi-haifa:p-u-b8833fc0e14d131c",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q4734347",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-tel-aviv:p_b6c6274a18",
+   "b": "maccabi-haifa:maccabi-haifa:p-u-ded55cc00d4d1155",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q1446606",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-tel-aviv:p_c410368a8a",
+   "b": "maccabi-haifa:maccabi-haifa:p-u-996941878ec4a2a5",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q16236167",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-tel-aviv:p_d7910679ca",
+   "b": "maccabi-haifa:maccabi-haifa:p-u-6a9c2381f45b53f9",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q553972",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-tel-aviv:p_d7da5a15cf",
+   "b": "olympiacos:olympiacos:wv-fe1abcce99",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q109521994",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-tel-aviv:p_dd86df8ba8",
+   "b": "maccabi-haifa:maccabi-haifa:p-u-1c7aa157310da27c",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q4544711",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "hapoel-tel-aviv:p_f4d9404511",
+   "b": "olympiacos:olympiacos:wv-af69f81e96",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q559910",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "maccabi-haifa:maccabi-haifa:p-u-ccc6cf19d0463db0",
+   "b": "panathinaikos:panathinaikos:raimondas-zutautas",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2447868",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:oh-aleksandros-anagnostopulos",
+   "b": "panathinaikos:panathinaikos:wv-0ecb6b130c",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q88594038",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:oh-dimitris-diamadakos",
+   "b": "st-pauli:st-pauli:p-dh-322723ec84e8",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2568410",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:r26-elkaabi",
+   "b": "wydad-casablanca:wydad-casablanca:p-mg-9c5606ecd24b",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q42948040",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:r26-mitropoulos",
+   "b": "panathinaikos:panathinaikos:anastasios-mitropoulos",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2712151",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:r26-nikopolidis",
+   "b": "panathinaikos:panathinaikos:antonis-nikopolidis",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q221138",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:wv-09cdc59308",
+   "b": "panathinaikos:panathinaikos:wv-006b391ffd",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q450947",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:wv-09e69be9bc",
+   "b": "panathinaikos:panathinaikos:wv-899ead659b",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q510540",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:wv-09e69be9bc",
+   "b": "st-pauli:st-pauli:wv-3c64c97f36",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q510540",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:wv-16c71c4e2a",
+   "b": "st-pauli:st-pauli:p-dh-ccb7c67cc621",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q289967",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:wv-2428b9832f",
+   "b": "panathinaikos:panathinaikos:wv-93f2171879",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q1362936",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:wv-2554db7b77",
+   "b": "panathinaikos:panathinaikos:wv-de01ecaeb8",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q3564343",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:wv-2a9c4f9669",
+   "b": "panathinaikos:panathinaikos:wv-1547eed7b4",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2705127",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:wv-3268a1f46c",
+   "b": "panathinaikos:panathinaikos:wv-a6441f4cc6",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q5277644",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:wv-399f8661cf",
+   "b": "panathinaikos:panathinaikos:wv-42abfebfe7",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q16235925",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:wv-49c5f317ba",
+   "b": "panathinaikos:panathinaikos:wv-d32e8424e6",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q12875294",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:wv-4a1117cefc",
+   "b": "panathinaikos:panathinaikos:wv-200cf9da2e",
+   "verdict": "different",
+   "basis": "wikidata",
+   "evidence": "Q983677 / Q316457",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:wv-5300b3ebcb",
+   "b": "panathinaikos:panathinaikos:wv-204b66f3f3",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q167381",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:wv-57eb89488e",
+   "b": "panathinaikos:panathinaikos:manolis-siopis",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q23771614",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:wv-6028b036bc",
+   "b": "panathinaikos:panathinaikos:michalis-konstantinou",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q444118",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:wv-74fa7ed405",
+   "b": "st-pauli:st-pauli:wv-45b02fd564",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2568410",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:wv-7faffff756",
+   "b": "panathinaikos:panathinaikos:antonis-antoniadis",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q606403",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:wv-8453eb37a3",
+   "b": "panathinaikos:panathinaikos:sebastian-leto",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q371594",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:wv-8eeee57066",
+   "b": "panathinaikos:panathinaikos:wv-2789f68891",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q56434228",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:wv-945e0d97fb",
+   "b": "panathinaikos:panathinaikos:lazaros-christodoulopoulos",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q939590",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:wv-98cb28c146",
+   "b": "panathinaikos:panathinaikos:stefanos-kapino",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q928459",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:wv-99a75e1d2a",
+   "b": "st-pauli:st-pauli:p-3eae01c86d6d31",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q21066359",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:wv-a20b995ff8",
+   "b": "panathinaikos:panathinaikos:wv-af00eb157e",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q7036706",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:wv-a6bed960d3",
+   "b": "panathinaikos:panathinaikos:wv-1d4dadc658",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q3103803",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:wv-b4e47442cf",
+   "b": "panathinaikos:panathinaikos:efstratios-apostolakis",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q1296639",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:wv-bf682468c9",
+   "b": "panathinaikos:panathinaikos:wv-dfed09b03f",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q26129292",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:wv-c86e449664",
+   "b": "panathinaikos:panathinaikos:wv-721d0162d1",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q1326334",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:wv-deb3b72e71",
+   "b": "panathinaikos:panathinaikos:wv-8c75642a86",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q28474622",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:wv-e679993484",
+   "b": "panathinaikos:panathinaikos:wv-148ec948e6",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q678815",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "olympiacos:olympiacos:wv-ebb9de9746",
+   "b": "panathinaikos:panathinaikos:wv-e0f2a79484",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q15978186",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "panathinaikos:panathinaikos:wv-899ead659b",
+   "b": "st-pauli:st-pauli:wv-3c64c97f36",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q510540",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "raja-casablanca:raja-casablanca:p-mg-13f5e90b20f7",
+   "b": "wydad-casablanca:wydad-casablanca:p-mg-9d62d70ef439",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q12216154",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "raja-casablanca:raja-casablanca:p-mg-14d94cec3d04",
+   "b": "wydad-casablanca:wydad-casablanca:p-mg-22d5e671c93f",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q729870",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "raja-casablanca:raja-casablanca:p-mg-297cb94b4e9e",
+   "b": "wydad-casablanca:wydad-casablanca:p-mg-ead8e9adb57e",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q3574645",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "raja-casablanca:raja-casablanca:p-mg-2abc65e46878",
+   "b": "wydad-casablanca:wydad-casablanca:p-mg-4e4ef11173be",
+   "verdict": "different",
+   "basis": "wikidata",
+   "evidence": "Q3318632 / Q3318631",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "raja-casablanca:raja-casablanca:p-mg-2e5fdb4cda0c",
+   "b": "wydad-casablanca:wydad-casablanca:p-mg-1da7617e5a91",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2422902",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "raja-casablanca:raja-casablanca:p-mg-39a952dbb2b4",
+   "b": "wydad-casablanca:wydad-casablanca:p-mg-2073b30a449b",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q3135179",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "raja-casablanca:raja-casablanca:p-mg-454a21fa1d29",
+   "b": "wydad-casablanca:wydad-casablanca:p-mg-c920e0cf7626",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q3351883",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "raja-casablanca:raja-casablanca:p-mg-736824f1136b",
+   "b": "wydad-casablanca:wydad-casablanca:p-mg-d49b4cba51a3",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q3328920",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "raja-casablanca:raja-casablanca:p-mg-940af6a2b4eb",
+   "b": "wydad-casablanca:wydad-casablanca:p-mg-662b00e8ebf4",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2682965",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "raja-casablanca:raja-casablanca:p-mg-bbbb4c606336",
+   "b": "wydad-casablanca:wydad-casablanca:p-mg-37ea43f50b2c",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2274530",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "raja-casablanca:raja-casablanca:p-mg-d20e52ed952a",
+   "b": "wydad-casablanca:wydad-casablanca:p-mg-776c818b487a",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2627231",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "raja-casablanca:raja-casablanca:p-mg-e00c385b0907",
+   "b": "wydad-casablanca:wydad-casablanca:p-mg-2e556e32fb25",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q16664932",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "raja-casablanca:raja-casablanca:p-mg-e7dd080f50cb",
+   "b": "wydad-casablanca:wydad-casablanca:p-mg-be3d76ee5d96",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2477110",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "raja-casablanca:raja-casablanca:p-mg-ea59ac305e3a",
+   "b": "wydad-casablanca:wydad-casablanca:p-mg-12ed010dbe7b",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q1856221",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "raja-casablanca:raja-casablanca:p-mg-ef48249de670",
+   "b": "wydad-casablanca:wydad-casablanca:p-mg-f154ddce1db6",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2398894",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "raja-casablanca:raja-casablanca:p-mg-fedc105dadd6",
+   "b": "wydad-casablanca:wydad-casablanca:p-mg-6706c7c01da8",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q2687466",
+   "on": "2026-11-18"
+  },
+  {
+   "a": "st-pauli:st-pauli:wv-929952b477",
+   "b": "zrinjski-mostar:zrinjski-mostar:nikola-vasilj",
+   "verdict": "same",
+   "basis": "wikidata",
+   "evidence": "Q77243490",
+   "on": "2026-11-18"
+  }
+ ]
+}

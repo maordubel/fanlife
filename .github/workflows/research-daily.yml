@@ -66,6 +66,12 @@ jobs:
       - name: Head-to-head ledger for the studio and the next-match card
         continue-on-error: true
         run: npm run -s h2h:build
+      - name: People Registry (one id per record, one person across clubs; Wikidata settles what it can prove)
+        # 18.11.2026 — new records get their id; a shared name at two clubs is joined or kept apart only on a Wikidata item, the rest waits on the desk (Players → Across clubs)
+        continue-on-error: true
+        run: |
+          npm run -s people:build 2>&1 | tail -1
+          npm run -s people:links 2>&1 | tail -1
       - name: What a yes would open (staged clubs)
         run: npm run -s research:desk-preview
       - name: Report (+ AI triage when the key exists)
@@ -88,4 +94,7 @@ jobs:
             club-packs/**/ingest.json
             research-reports/**
             content/generated/head-to-head.json
+            content/generated/people-stints.json
+            content/manual/people-ids.json
+            content/manual/people-links.json
           body: 'Automatic daily pull. New rows are unreviewed; see research-reports/ for what changed per club. New clubs wait for the owner on the research desk (Control room → Research).'

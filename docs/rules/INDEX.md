@@ -242,3 +242,4 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [book-shop-separate](book-shop-separate.md) · Broken Collective sells through FAN LIFE's server and Stripe but never in FAN LIFE's shop: worker_book_orders, Lulu for the paperback, Printify's own "Broken Collective" store for the goods (17.11.2026)
 - [club-shirt-only](club-shirt-only.md) · A club game shows the man's shirt only, cropped from the measured SVG; drawn kits win ties; an undated man wears the club's classic drawing, untitled (16.11.2026)
 - [flow-no-films](flow-no-films.md) · Flow makes no films for now: the Flow operator skips Short/promo jobs and makes still images only (CLASSIFIED panels, art library); waiting jobs stay untouched (17.11.2026)
+- [people-registry](people-registry.md) · One person, one id, every club: minted record ids, verdict links (Wikidata or the owner), never a name; /players/<id> profiles (18.11.2026)

@@ -23,7 +23,7 @@ const TABS:ArchiveTab[]=['today','time','index','dig','search','mine']
 const PAGE=24
 export type ClubArchiveProps={
  club:string;clubName:string;version:string;locale:UiLocale;contentLocale:string;copy:GameCopy;wire:ArchiveWire;index:ArchiveIndex;seed:number
- initial:{tab:ArchiveTab;q:string;event:string|null};links:{xi:string|null;derby:string|null};wardrobe:RumbleWardrobe
+ initial:{tab:ArchiveTab;q:string;event:string|null};links:{xi:string|null;derby:string|null;profiles?:Record<string,string>};wardrobe:RumbleWardrobe
 }
 
 const Icon=({tab}:{tab:ArchiveTab})=><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="round" strokeLinecap="round">
