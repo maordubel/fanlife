@@ -13,6 +13,7 @@ import { Suspense } from 'react'
 import { ADSENSE_CLIENT } from '@/lib/ads'
 import { BRAND, SITE_URL } from '@/lib/brand'
 import { DIRECTION, LOCALE, t } from '@/lib/i18n'
+import { editionOf, WORKER_BADGE } from '@/lib/brand/logos'
 import './globals.css'
 import './master.css'
 import './club-theme.css'
@@ -94,8 +95,8 @@ const workerMetadata: Metadata = {
   // rather than the two sources disagreeing about what a reader sees.
   other: { monetag: MONETAG_SITE_VERIFICATION },
   icons: {
-    icon: [{ url: '/brand/logo-192.png', type: 'image/png' }],
-    apple: '/brand/logo-192.png',
+    icon: [{ url: WORKER_BADGE[192], type: 'image/png' }],
+    apple: WORKER_BADGE[192],
   },
 }
 
@@ -137,7 +138,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   // the Dubel top ad (lib/top-ad.ts): the control room's switch AND a page that may carry it; otherwise the body says data-no-ads
   const topAd=topAdAllowedOn(pathname)&&!closed&&((await readState().catch(()=>null))?.ads??DEFAULT_TOP_AD).topAd
   return (
-    <html lang={master||otherTenant?sharedLocale:LOCALE} dir={master||otherTenant?localeDirection(sharedLocale):DIRECTION}>
+    <html data-edition={editionOf(headers().get('host'))} lang={master||otherTenant?sharedLocale:LOCALE} dir={master||otherTenant?localeDirection(sharedLocale):DIRECTION}>
       <head>
         {telegram?<Script id="fanlife-telegram-sdk" src="https://telegram.org/js/telegram-web-app.js" strategy="beforeInteractive" />:null}
         <Analytics off={pathname==='/master'||pathname.startsWith('/master/')||telegram} />
