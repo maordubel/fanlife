@@ -7,9 +7,11 @@
  * already being played (S05).
  */
 export const RULE_VERSION='legends-1.0.0' as const
-export const ENGINE_VERSION='legends-engine-4' as const
+export const ENGINE_VERSION='legends-engine-5' as const
+/** engine 4 and later: the touchline stops a manager asks for, tactics at any stop (engine 5 keeps them — lib/legends/engine.ts) */
+export const touchlineEngine=(e:string)=>e==='legends-engine-4'||e==='legends-engine-5'
 /** every engine a stored match may name — a match started on an older engine keeps that engine's stops and rules (rule 112) */
-export type EngineVersion='legends-engine-1'|'legends-engine-2'|'legends-engine-3'|typeof ENGINE_VERSION
+export type EngineVersion='legends-engine-1'|'legends-engine-2'|'legends-engine-3'|'legends-engine-4'|typeof ENGINE_VERSION
 export const LEGENDS_RULES={
  ruleVersion:RULE_VERSION,
  initialDraftBudgetM:52,firstBoardGrantM:8,
