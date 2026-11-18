@@ -189,6 +189,7 @@ def choose_photo(qid, name, club_name, y0, y1, names=None, club_words=None):
     titles = []
     if qid:
         titles += ([first] if first else []) + category_files(qid) + [f for _, f in SRC.wiki_lead_images(get_json, qid)]
+    trusted = set(titles)  # his own Wikidata picture, his own Commons category, the lead picture of his own article
     names = names or [name]
     for n in names[:6]:
         titles += SRC.commons_search(get_json, n)
@@ -203,12 +204,12 @@ def choose_photo(qid, name, club_name, y0, y1, names=None, club_words=None):
         m = file_meta(t)
         if not m or not FREE.match(m['license'] or ''):
             continue
-        if not qid and club_name and not any(w in m['text'] for w in SRC.fold(club_name).split() if len(w) > 3):
-            continue  # found by name alone: it must also be about his club
+        if t not in trusted and not SRC.football_context(m['text'], club_words or [club_name]):
+            continue  # found by a name search: a namesake (an actor, a politician) unless the picture is about football or his club
         sc, club_era = era_score(m, club_name, y0, y1)
         cands.append((sc + (1 if t == first else 0) - (1 if t in crowd else 0), club_era, dict(m, crowd=t in crowd)))
     for m in SRC.openverse(get_json, name, club_name):
-        if FREE.match(m['license']):
+        if FREE.match(m['license']) and SRC.football_context(m['text'], club_words or [club_name]):
             sc, club_era = era_score(m, club_name, y0, y1)
             cands.append((sc - 1, club_era, m))
     cands.sort(key=lambda c: -c[0])
