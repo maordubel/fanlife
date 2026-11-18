@@ -402,7 +402,7 @@ def main():
                 svg = sticker_svg(st, clubs[club], photo, photo_wh, frame, logo_b64)
                 pg.set_content(f'<html><style>{css} body{{margin:0;background:transparent}} svg{{display:block}}</style><body>{svg}</body></html>')
                 pg.wait_for_timeout(150)
-                png = pg.locator('svg').screenshot(omit_background=True)
+                png = pg.locator('body > svg').screenshot(omit_background=True)
                 Image.open(io.BytesIO(png)).convert('RGBA').save(OUT_DIR / club / f'{st["slot"]}.webp', 'WEBP', quality=84, method=6)
                 ledger['stickers'][sid] = {'person_id': st['person_id'], 'name': st['name'], 'code': f"{clubs[club]['code']}{DASH}{st['slot']:02d}", 'status': 'photo' if src else 'silhouette',
                                            'frame': frame if src else None, 'qid': qid, 'source': src, 'file': f'/album/stickers/{club}/{st["slot"]}.webp'}

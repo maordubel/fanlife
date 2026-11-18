@@ -33,4 +33,4 @@ jobs:
           add-paths: |
             public/album/stickers/**
             content/generated/album-stickers.json
-          body: 'Stickers pressed from Wikimedia Commons photographs under free licences (source, author and licence per sticker in content/generated/album-stickers.json). Men with no free photo keep the silhouette.'
+          body: 'Stickers pressed from Wikimedia Commons photographs under free licences (source, author and licence per sticker in content/generated/album-stickers.json). A man with no free photo wears his club's measured shirt in a drawn figure until one is found.'
