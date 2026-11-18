@@ -654,3 +654,12 @@
 .ls-row { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: start; max-inline-size: none; }
 .ls-row .fl-wiz-chips { grid-column: 1 / -1; }
 .ls-row .fl-wiz-chips button { min-height: 44px; }
+
+/* the doors into an account (18.11.2026): Google, Facebook, e-mail code */
+.wkc-signin { display: flex; flex-direction: column; gap: 8px; margin-block-start: 4px; }
+.wkc-signin-btn { display: flex; align-items: center; justify-content: center; gap: 10px; }
+.wkc-signin-mark { inline-size: 20px; block-size: 20px; flex: none; }
+.wkc-signin-label { font-weight: 700; }
+.wkc-signin-input { inline-size: 100%; border: var(--mag-rule, 2px) solid var(--mag-ink); background: var(--mag-white); color: var(--mag-ink); padding-inline: 12px; font: inherit; font-size: 16px; }
+.wkc-signin-input:focus-visible { outline: 3px solid var(--mag-cyan); outline-offset: 2px; }
+.wkc-signin-code { letter-spacing: .3em; text-align: center; font-size: 22px; font-weight: 800; }
