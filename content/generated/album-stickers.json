@@ -1093,38 +1093,38 @@
    "person_id": "pl_dc836647ad",
    "name": "Stelios Konstantinidis",
    "code": "AEK–15",
-   "status": "silhouette",
-   "frame": null,
+   "status": "photo",
+   "frame": "archive",
    "qid": "Q113563561",
-   "source": null,
-   "traits": {
-    "skin": "#D7A57E",
-    "hair": "#3B2A20",
-    "hairName": "dark",
-    "length": "short",
-    "beard": false,
-    "moustache": false,
-    "measured": false
+   "source": {
+    "file": "Stefanos Konstantinidis.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Stefanos_Konstantinidis.jpg",
+    "author": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "date": "1932",
+    "via": "commons"
    },
+   "traits": null,
    "file": "/album/stickers/aek-athens/15.webp"
   },
   "aek-athens:16": {
    "person_id": "pl_2f0b1773bb",
    "name": "Mimis Papaioannou",
    "code": "AEK–16",
-   "status": "silhouette",
-   "frame": null,
+   "status": "photo",
+   "frame": "archive",
    "qid": "Q2414946",
-   "source": null,
-   "traits": {
-    "skin": "#D7A57E",
-    "hair": "#3B2A20",
-    "hairName": "dark",
-    "length": "short",
-    "beard": false,
-    "moustache": false,
-    "measured": false
+   "source": {
+    "file": "Dimitris Papaioannou in February 2008.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Dimitris_Papaioannou_in_February_2008.jpg",
+    "author": "The original uploader was Kyrichips at English Wikipedia.",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "date": "25 March 2008 (original upload date)",
+    "via": "commons"
    },
+   "traits": null,
    "file": "/album/stickers/aek-athens/16.webp"
   },
   "aek-athens:17": {
@@ -2702,19 +2702,19 @@
    "person_id": "pl_ddac5edd4c",
    "name": "Moustafa Abdou",
    "code": "AHL–06",
-   "status": "silhouette",
-   "frame": null,
+   "status": "photo",
+   "frame": "archive",
    "qid": "Q45030882",
-   "source": null,
-   "traits": {
-    "skin": "#D7A57E",
-    "hair": "#3B2A20",
-    "hairName": "dark",
-    "length": "medium",
-    "beard": false,
-    "moustache": true,
-    "measured": false
+   "source": {
+    "file": "Medhat Montasser & Mostafa Abdou - مدحت منتصر و مصطفى عبده.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Medhat_Montasser_%26_Mostafa_Abdou_-_%D9%85%D8%AF%D8%AD%D8%AA_%D9%85%D9%86%D8%AA%D8%B5%D8%B1_%D9%88_%D9%85%D8%B5%D8%B7%D9%81%D9%89_%D8%B9%D8%A8%D8%AF%D9%87.JPG",
+    "author": "مدحت منتصر",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "date": "1998-10-16",
+    "via": "commons"
    },
+   "traits": null,
    "file": "/album/stickers/al-ahly/6.webp"
   },
   "al-ahly:7": {
@@ -3006,19 +3006,19 @@
    "person_id": "pl_3fa0a6c2aa",
    "name": "Ahmed El-Sayed",
    "code": "AHL–22",
-   "status": "silhouette",
-   "frame": null,
+   "status": "photo",
+   "frame": "archive",
    "qid": "Q930830",
-   "source": null,
-   "traits": {
-    "skin": "#D7A57E",
-    "hair": "#3B2A20",
-    "hairName": "dark",
-    "length": "short",
-    "beard": false,
-    "moustache": false,
-    "measured": false
+   "source": {
+    "file": "صورة شخصية محمود أحمد السيد.png",
+    "page": "https://commons.wikimedia.org/wiki/File:%D8%B5%D9%88%D8%B1%D8%A9_%D8%B4%D8%AE%D8%B5%D9%8A%D8%A9_%D9%85%D8%AD%D9%85%D9%88%D8%AF_%D8%A3%D8%AD%D9%85%D8%AF_%D8%A7%D9%84%D8%B3%D9%8A%D8%AF.png",
+    "author": "Ayman dhū alghiná",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2019-02-14",
+    "via": "commons"
    },
+   "traits": null,
    "file": "/album/stickers/al-ahly/22.webp"
   },
   "al-ahly:23": {
@@ -3356,293 +3356,19 @@
    "person_id": "pl_b4c12151ef",
    "name": "Mohamed Shawky",
    "code": "AHL–26",
-   "status": "silhouette",
-   "frame": null,
+   "status": "photo",
+   "frame": "archive",
    "qid": "Q460008",
-   "source": null,
-   "traits": {
-    "skin": "#BF8862",
-    "hair": "#3B2A20",
-    "hairName": "dark",
-    "length": "medium",
-    "beard": true,
-    "moustache": false,
-    "measured": true,
-    "shape": [
-     [
-      -1.2297500000000001,
-      -0.019250000000000003
-     ],
-     [
-      -1.2175,
-      0.3125
-     ],
-     [
-      -1.1812500000000001,
-      0.6512500000000001
-     ],
-     [
-      -1.10825,
-      0.978
-     ],
-     [
-      -0.9755,
-      1.275
-     ],
-     [
-      -0.7865,
-      1.53625
-     ],
-     [
-      -0.54575,
-      1.7565
-     ],
-     [
-      -0.2795,
-      1.92225
-     ],
-     [
-      0.0225,
-      1.961
-     ],
-     [
-      0.3185,
-      1.9107500000000002
-     ],
-     [
-      0.56125,
-      1.7294999999999998
-     ],
-     [
-      0.7795000000000001,
-      1.5027499999999998
-     ],
-     [
-      0.9524999999999999,
-      1.239
-     ],
-     [
-      1.0687499999999999,
-      0.946
-     ],
-     [
-      1.13375,
-      0.62975
-     ],
-     [
-      1.1625,
-      0.3035
-     ],
-     [
-      1.16525,
-      -0.017750000000000002
-     ],
-     [
-      -0.99025,
-      -0.10625000000000001
-     ],
-     [
-      -0.839,
-      -0.2805
-     ],
-     [
-      -0.60025,
-      -0.34325000000000006
-     ],
-     [
-      -0.34975,
-      -0.317
-     ],
-     [
-      -0.10925,
-      -0.23875
-     ],
-     [
-      0.13574999999999998,
-      -0.23825
-     ],
-     [
-      0.35924999999999996,
-      -0.317
-     ],
-     [
-      0.59675,
-      -0.34775
-     ],
-     [
-      0.8210000000000001,
-      -0.2915
-     ],
-     [
-      0.95875,
-      -0.12475
-     ],
-     [
-      0.018,
-      -0.046
-     ],
-     [
-      0.023,
-      0.165
-     ],
-     [
-      0.029,
-      0.374
-     ],
-     [
-      0.0345,
-      0.59
-     ],
-     [
-      -0.22525,
-      0.7455
-     ],
-     [
-      -0.10350000000000001,
-      0.7887500000000001
-     ],
-     [
-      0.0255,
-      0.818
-     ],
-     [
-      0.1505,
-      0.78825
-     ],
-     [
-      0.26775,
-      0.7424999999999999
-     ],
-     [
-      -0.6977499999999999,
-      -0.0015
-     ],
-     [
-      -0.57475,
-      -0.0645
-     ],
-     [
-      -0.424,
-      -0.07050000000000001
-     ],
-     [
-      -0.295,
-      0.02075
-     ],
-     [
-      -0.429,
-      0.05675
-     ],
-     [
-      -0.5794999999999999,
-      0.05875
-     ],
-     [
-      0.299,
-      0.02025
-     ],
-     [
-      0.426,
-      -0.0695
-     ],
-     [
-      0.5742499999999999,
-      -0.0635
-     ],
-     [
-      0.6912499999999999,
-      -0.0005
-     ],
-     [
-      0.5785,
-      0.058249999999999996
-     ],
-     [
-      0.431,
-      0.05625
-     ],
-     [
-      -0.3855,
-      1.1855000000000002
-     ],
-     [
-      -0.23975000000000002,
-      1.1222500000000002
-     ],
-     [
-      -0.0915,
-      1.076
-     ],
-     [
-      0.024,
-      1.106
-     ],
-     [
-      0.1385,
-      1.076
-     ],
-     [
-      0.27925,
-      1.1207500000000001
-     ],
-     [
-      0.4105,
-      1.1825
-     ],
-     [
-      0.28025,
-      1.3127499999999999
-     ],
-     [
-      0.14700000000000002,
-      1.36175
-     ],
-     [
-      0.023,
-      1.374
-     ],
-     [
-      -0.101,
-      1.36325
-     ],
-     [
-      -0.24275000000000002,
-      1.3162500000000001
-     ],
-     [
-      -0.31099999999999994,
-      1.1885000000000001
-     ],
-     [
-      -0.0935,
-      1.1745
-     ],
-     [
-      0.024,
-      1.186
-     ],
-     [
-      0.1405,
-      1.1735
-     ],
-     [
-      0.33699999999999997,
-      1.1875
-     ],
-     [
-      0.14225,
-      1.20125
-     ],
-     [
-      0.024,
-      1.218
-     ],
-     [
-      -0.09475,
-      1.20375
-     ]
-    ]
+   "source": {
+    "file": "محمد شوقى (ممثل) 2014-01-17 11-14.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:%D9%85%D8%AD%D9%85%D8%AF_%D8%B4%D9%88%D9%82%D9%89_(%D9%85%D9%85%D8%AB%D9%84)_2014-01-17_11-14.jpg",
+    "author": "User:Shawkyam",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "date": "17 January 2014 (original upload date)",
+    "via": "commons"
    },
+   "traits": null,
    "file": "/album/stickers/al-ahly/26.webp"
   },
   "al-ahly:27": {
@@ -6110,19 +5836,19 @@
    "person_id": "pl_11fbeebe32",
    "name": "Dominic Vavassori",
    "code": "ATA–34",
-   "status": "silhouette",
-   "frame": null,
+   "status": "photo",
+   "frame": "club",
    "qid": "Q130545740",
-   "source": null,
-   "traits": {
-    "skin": "#D7A57E",
-    "hair": "#3B2A20",
-    "hairName": "dark",
-    "length": "short",
-    "beard": false,
-    "moustache": false,
-    "measured": false
+   "source": {
+    "file": "Vavassori all Atalanta.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Vavassori_all_Atalanta.jpg",
+    "author": "Edizioni Panini",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "date": "2026-01-17",
+    "via": "commons"
    },
+   "traits": null,
    "file": "/album/stickers/atalanta/34.webp"
   },
   "atalanta:35": {
@@ -6224,19 +5950,19 @@
    "person_id": "pl_6d5c3a52ed",
    "name": "James Quinn",
    "code": "CEL–04",
-   "status": "silhouette",
-   "frame": null,
+   "status": "photo",
+   "frame": "club",
    "qid": null,
-   "source": null,
-   "traits": {
-    "skin": "#D7A57E",
-    "hair": "#3B2A20",
-    "hairName": "dark",
-    "length": "short",
-    "beard": false,
-    "moustache": false,
-    "measured": false
+   "source": {
+    "file": "Jimmy Quinn.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Jimmy_Quinn.jpg",
+    "author": "AnonymousUnknown author",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "date": "1916-01-01",
+    "via": "commons"
    },
+   "traits": null,
    "file": "/album/stickers/celtic/4.webp"
   },
   "celtic:5": {
@@ -7429,19 +7155,19 @@
    "person_id": "pl_ee924ab642",
    "name": "Ohad Cohen",
    "code": "HPT–17",
-   "status": "silhouette",
-   "frame": null,
+   "status": "photo",
+   "frame": "archive",
    "qid": "Q2911816",
-   "source": null,
-   "traits": {
-    "skin": "#D7A57E",
-    "hair": "#3B2A20",
-    "hairName": "dark",
-    "length": "short",
-    "beard": false,
-    "moustache": false,
-    "measured": false
+   "source": {
+    "file": "אוהד כהן.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:%D7%90%D7%95%D7%94%D7%93_%D7%9B%D7%94%D7%9F.jpg",
+    "author": "Monikalev",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2019-01-12",
+    "via": "commons"
    },
+   "traits": null,
    "file": "/album/stickers/hapoel-petah-tikva/17.webp"
   },
   "hapoel-petah-tikva:18": {
@@ -7562,19 +7288,19 @@
    "person_id": "pl_315022e80e",
    "name": "Sagiv Cohen",
    "code": "HPT–24",
-   "status": "silhouette",
-   "frame": null,
+   "status": "photo",
+   "frame": "archive",
    "qid": "Q7399310",
-   "source": null,
-   "traits": {
-    "skin": "#D7A57E",
-    "hair": "#3B2A20",
-    "hairName": "dark",
-    "length": "short",
-    "beard": false,
-    "moustache": false,
-    "measured": false
+   "source": {
+    "file": "ח\"כ צביקה פוגל.jpeg",
+    "page": "https://commons.wikimedia.org/wiki/File:%D7%97%22%D7%9B_%D7%A6%D7%91%D7%99%D7%A7%D7%94_%D7%A4%D7%95%D7%92%D7%9C.jpeg",
+    "author": "שגיב כהן (sagiv cohen)",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "date": "2024",
+    "via": "commons"
    },
+   "traits": null,
    "file": "/album/stickers/hapoel-petah-tikva/24.webp"
   },
   "hapoel-petah-tikva:25": {
@@ -8083,19 +7809,19 @@
    "person_id": "pl_63e81edd47",
    "name": "Willi Berger",
    "code": "HTA–01",
-   "status": "silhouette",
-   "frame": null,
+   "status": "photo",
+   "frame": "archive",
    "qid": "Q10393660",
-   "source": null,
-   "traits": {
-    "skin": "#D7A57E",
-    "hair": "#3B2A20",
-    "hairName": "dark",
-    "length": "short",
-    "beard": false,
-    "moustache": false,
-    "measured": false
+   "source": {
+    "file": "ולאדימיר ( זאב) ברגר חארקוב אחרי מהפכת 1917-PHZPR-1253494.png",
+    "page": "https://commons.wikimedia.org/wiki/File:%D7%95%D7%9C%D7%90%D7%93%D7%99%D7%9E%D7%99%D7%A8_(_%D7%96%D7%90%D7%91)_%D7%91%D7%A8%D7%92%D7%A8_%D7%97%D7%90%D7%A8%D7%A7%D7%95%D7%91_%D7%90%D7%97%D7%A8%D7%99_%D7%9E%D7%94%D7%A4%D7%9B%D7%AA_1917-PHZPR-1253494.png",
+    "author": "הארכיון הציוני המרכזי",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "date": "1917",
+    "via": "commons"
    },
+   "traits": null,
    "file": "/album/stickers/hapoel-tel-aviv/1.webp"
   },
   "hapoel-tel-aviv:2": {
@@ -8368,19 +8094,19 @@
    "person_id": "pl_2d1eb74667",
    "name": "Shabtai Levi",
    "code": "HTA–16",
-   "status": "silhouette",
-   "frame": null,
+   "status": "photo",
+   "frame": "archive",
    "qid": null,
-   "source": null,
-   "traits": {
-    "skin": "#D7A57E",
-    "hair": "#3B2A20",
-    "hairName": "dark",
-    "length": "medium",
-    "beard": false,
-    "moustache": true,
-    "measured": false
+   "source": {
+    "file": "Shabtay Levi Soccer.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Shabtay_Levi_Soccer.jpg",
+    "author": "Eran.ishay",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2016-12-20",
+    "via": "commons"
    },
+   "traits": null,
    "file": "/album/stickers/hapoel-tel-aviv/16.webp"
   },
   "hapoel-tel-aviv:17": {
@@ -9619,19 +9345,19 @@
    "person_id": "pl_aa4690a359",
    "name": "Amir Edri",
    "code": "MHA–17",
-   "status": "silhouette",
-   "frame": null,
+   "status": "photo",
+   "frame": "archive",
    "qid": "Q3614363",
-   "source": null,
-   "traits": {
-    "skin": "#D7A57E",
-    "hair": "#3B2A20",
-    "hairName": "dark",
-    "length": "short",
-    "beard": false,
-    "moustache": false,
-    "measured": false
+   "source": {
+    "file": "אמיר אדרי 19991.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:%D7%90%D7%9E%D7%99%D7%A8_%D7%90%D7%93%D7%A8%D7%99_19991.jpg",
+    "author": "EdenKatz",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2023-01-01 20:59:57",
+    "via": "commons"
    },
+   "traits": null,
    "file": "/album/stickers/maccabi-haifa/17.webp"
   },
   "maccabi-haifa:18": {
@@ -9790,19 +9516,19 @@
    "person_id": "pl_ba63c1c1de",
    "name": "Joshua Cohen",
    "code": "MHA–26",
-   "status": "silhouette",
-   "frame": null,
+   "status": "photo",
+   "frame": "archive",
    "qid": "Q21067416",
-   "source": null,
-   "traits": {
-    "skin": "#D7A57E",
-    "hair": "#3B2A20",
-    "hairName": "dark",
-    "length": "short",
-    "beard": false,
-    "moustache": false,
-    "measured": false
+   "source": {
+    "file": "MHFC-Itzik-Cohen.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:MHFC-Itzik-Cohen.jpg",
+    "author": "This photo was contributed by  Maccabi Haifa Football Club \n\nTo view all images ",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "date": "2014-12-15",
+    "via": "commons"
    },
+   "traits": null,
    "file": "/album/stickers/maccabi-haifa/26.webp"
   },
   "maccabi-haifa:27": {
@@ -9847,19 +9573,19 @@
    "person_id": "pl_76a5a2f17a",
    "name": "Din David",
    "code": "MHA–29",
-   "status": "silhouette",
-   "frame": null,
+   "status": "photo",
+   "frame": "archive",
    "qid": "Q23888352",
-   "source": null,
-   "traits": {
-    "skin": "#D7A57E",
-    "hair": "#3B2A20",
-    "hairName": "dark",
-    "length": "short",
-    "beard": false,
-    "moustache": false,
-    "measured": false
+   "source": {
+    "file": "עורך דין דוד פייל.png",
+    "page": "https://commons.wikimedia.org/wiki/File:%D7%A2%D7%95%D7%A8%D7%9A_%D7%93%D7%99%D7%9F_%D7%93%D7%95%D7%93_%D7%A4%D7%99%D7%99%D7%9C.png",
+    "author": "ארקדי סנדלר",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2024-07-01",
+    "via": "commons"
    },
+   "traits": null,
    "file": "/album/stickers/maccabi-haifa/29.webp"
   },
   "maccabi-haifa:30": {
@@ -11410,19 +11136,19 @@
    "person_id": "pl_424c9dd21e",
    "name": "Mady Camara",
    "code": "OLY–32",
-   "status": "silhouette",
-   "frame": null,
+   "status": "photo",
+   "frame": "archive",
    "qid": "Q30122316",
-   "source": null,
-   "traits": {
-    "skin": "#D7A57E",
-    "hair": "#3B2A20",
-    "hairName": "dark",
-    "length": "short",
-    "beard": false,
-    "moustache": false,
-    "measured": false
+   "source": {
+    "file": "Aguibou Camara (Testspiel, 2022-07-02) 46 (cropped).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Aguibou_Camara_(Testspiel,_2022-07-02)_46_(cropped).jpg",
+    "author": "Werner100359",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2022-07-02 15:13:27",
+    "via": "commons"
    },
+   "traits": null,
    "file": "/album/stickers/olympiacos/32.webp"
   },
   "olympiacos:33": {
@@ -11752,19 +11478,19 @@
    "person_id": "pl_fb3c07e268",
    "name": "Louis Christodoulou",
    "code": "PAO–14",
-   "status": "silhouette",
-   "frame": null,
+   "status": "photo",
+   "frame": "club",
    "qid": "Q105047466",
-   "source": null,
-   "traits": {
-    "skin": "#D7A57E",
-    "hair": "#3B2A20",
-    "hairName": "dark",
-    "length": "medium",
-    "beard": false,
-    "moustache": true,
-    "measured": false
+   "source": {
+    "file": "Fanis Christodoulou Panathinaikos.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Fanis_Christodoulou_Panathinaikos.jpg",
+    "author": "Trifilara",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "date": "1998",
+    "via": "commons"
    },
+   "traits": null,
    "file": "/album/stickers/panathinaikos/14.webp"
   },
   "panathinaikos:15": {
@@ -12927,19 +12653,19 @@
    "person_id": "pl_f2909e8737",
    "name": "Aziz Jawad",
    "code": "RCA–11",
-   "status": "silhouette",
-   "frame": null,
+   "status": "photo",
+   "frame": "archive",
    "qid": null,
-   "source": null,
-   "traits": {
-    "skin": "#D7A57E",
-    "hair": "#3B2A20",
-    "hairName": "dark",
-    "length": "medium",
-    "beard": false,
-    "moustache": false,
-    "measured": false
+   "source": {
+    "file": "Vice President Jawad Nazir Trust Asad Raja at Edhi Homes.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Vice_President_Jawad_Nazir_Trust_Asad_Raja_at_Edhi_Homes.jpg",
+    "author": "Jawadmnazir",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "date": "2012-01-28",
+    "via": "commons"
    },
+   "traits": null,
    "file": "/album/stickers/raja-casablanca/11.webp"
   },
   "raja-casablanca:12": {
@@ -14805,19 +14531,19 @@
    "person_id": "pl_61db26c62e",
    "name": "Fadel Jilal",
    "code": "WAC–09",
-   "status": "silhouette",
-   "frame": null,
+   "status": "photo",
+   "frame": "archive",
    "qid": "Q3738286",
-   "source": null,
-   "traits": {
-    "skin": "#D7A57E",
-    "hair": "#3B2A20",
-    "hairName": "dark",
-    "length": "medium",
-    "beard": false,
-    "moustache": true,
-    "measured": false
+   "source": {
+    "file": "الاعب المغربي فاضل جلال.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:%D8%A7%D9%84%D8%A7%D8%B9%D8%A8_%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8%D9%8A_%D9%81%D8%A7%D8%B6%D9%84_%D8%AC%D9%84%D8%A7%D9%84.jpg",
+    "author": "Nasser Ibrahim Qura",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2023-05-23",
+    "via": "commons"
    },
+   "traits": null,
    "file": "/album/stickers/wydad-casablanca/9.webp"
   },
   "wydad-casablanca:10": {
@@ -14862,19 +14588,19 @@
    "person_id": "pl_42b0e237d9",
    "name": "Mohammed Benchrifa",
    "code": "WAC–12",
-   "status": "silhouette",
-   "frame": null,
+   "status": "photo",
+   "frame": "archive",
    "qid": "Q3319019",
-   "source": null,
-   "traits": {
-    "skin": "#D7A57E",
-    "hair": "#3B2A20",
-    "hairName": "dark",
-    "length": "short",
-    "beard": false,
-    "moustache": false,
-    "measured": false
+   "source": {
+    "file": "أيمن ذو الغنى محمد بنشريفة محمود البعاج.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:%D8%A3%D9%8A%D9%85%D9%86_%D8%B0%D9%88_%D8%A7%D9%84%D8%BA%D9%86%D9%89_%D9%85%D8%AD%D9%85%D8%AF_%D8%A8%D9%86%D8%B4%D8%B1%D9%8A%D9%81%D8%A9_%D9%85%D8%AD%D9%85%D9%88%D8%AF_%D8%A7%D9%84%D8%A8%D8%B9%D8%A7%D8%AC.jpg",
+    "author": "Ayman dhū alghiná",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2006-04-11",
+    "via": "commons"
    },
+   "traits": null,
    "file": "/album/stickers/wydad-casablanca/12.webp"
   },
   "wydad-casablanca:13": {
@@ -15524,19 +15250,19 @@
    "person_id": "pl_91241aa78a",
    "name": "Faouzi Abdelghani",
    "code": "WAC–18",
-   "status": "silhouette",
-   "frame": null,
+   "status": "photo",
+   "frame": "archive",
    "qid": "Q2679224",
-   "source": null,
-   "traits": {
-    "skin": "#D7A57E",
-    "hair": "#3B2A20",
-    "hairName": "dark",
-    "length": "short",
-    "beard": false,
-    "moustache": false,
-    "measured": false
+   "source": {
+    "file": "Mohammed Faouzi, 2008.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Mohammed_Faouzi,_2008.jpg",
+    "author": "Luctor",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "date": "2008-02-23",
+    "via": "commons"
    },
+   "traits": null,
    "file": "/album/stickers/wydad-casablanca/18.webp"
   },
   "wydad-casablanca:19": {
