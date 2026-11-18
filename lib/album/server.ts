@@ -48,3 +48,24 @@ export async function call<T=Record<string,unknown>>(name:string,args?:Record<st
  }catch{return {ok:false,error:'The album is not answering right now. Nothing was lost — try again in a moment.'}}
 }
 export const readMe=()=>call<Me>('worker_album_me')
+
+/**
+ * One album (owner, 18.11.2026): the clubs open to the public ARE the album. The database draws packets only from the
+ * clubs written here, so the server tells it (service role) whenever the open list differs from the last one it sent —
+ * a club the owner opens joins every fan's album on the next page view, and a paused one leaves the draw.
+ */
+const sent=globalThis as unknown as {albumOpen?:{key:string;at:number}}
+export async function syncOpenWings():Promise<void>{
+ if(evaluationMode())return
+ const url=process.env.NEXT_PUBLIC_SUPABASE_URL,key=process.env.SUPABASE_SERVICE_ROLE_KEY
+ if(!url||!key)return
+ const open=(await openWings(false)).map(w=>w.id).sort(),k=open.join(',')
+ if(sent.albumOpen&&sent.albumOpen.key===k&&Date.now()-sent.albumOpen.at<10*60_000)return
+ try{
+  const r=await fetch(`${url}/rest/v1/rpc/worker_album_open_set`,{method:'POST',headers:{apikey:key,Authorization:`Bearer ${key}`,'Content-Type':'application/json'},body:JSON.stringify({p_clubs:open}),cache:'no-store'})
+  if(r.ok)sent.albumOpen={key:k,at:Date.now()}
+ }catch{/* the draw keeps the last list; nothing waits on this (rule 105) */}
+}
+export type Swap={id:string;give:string;want:string;since:string;who?:string;fits?:boolean}
+export type SwapBoard={mine:Swap[];board:Swap[];done:{give:string;want:string;at:string;mine:boolean}[]}
+export const readSwaps=()=>call<SwapBoard>('worker_album_swap_board')

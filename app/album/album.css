@@ -206,3 +206,27 @@
  .alb-page{padding:1.4rem 1.4rem 2rem}
  .alb-cover{padding:3rem 2.5rem 2rem}
 }
+
+/* the swaps board (sw-) */
+.sw{display:grid;gap:1rem;padding:1rem;border-radius:.4rem;background:var(--mag-paper) var(--mag-grain);color:var(--mag-ink)}
+.sw-head h2{margin:0;font-family:var(--mag-display);text-transform:uppercase;font-size:1.8rem;line-height:1}
+.sw-head p{margin:.3rem 0 0;font-size:.9rem}
+.sw-new{display:grid;gap:.6rem;padding:.8rem;border:2px dashed var(--mag-ink)}
+.sw-new label{display:grid;gap:.2rem;font-weight:700;font-size:.82rem;min-inline-size:0}
+.sw-new select{inline-size:100%;border:2px solid var(--mag-ink);border-radius:.4rem;padding-inline:.5rem;font:inherit;background:var(--mag-white);color:var(--mag-ink)}
+.sw-arrow{justify-self:center;font-size:1.4rem}
+.sw-block{display:grid;gap:.5rem}
+.sw-block h3{margin:0;font-family:var(--mag-condensed);text-transform:uppercase;letter-spacing:.08em;border-block-end:3px double var(--mag-ink)}
+.sw-only{display:flex;align-items:center;gap:.4rem;font-size:.85rem;min-block-size:2.75rem}
+.sw-list{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}
+.sw-row{display:grid;grid-template-columns:3rem minmax(0,1fr) 3rem;gap:.3rem .6rem;align-items:center;padding:.5rem;border-radius:.5rem;background:var(--mag-card)}
+.sw-row[data-fits]{box-shadow:inset 0 0 0 2px var(--mag-green)}
+.sw-row > .alb-btn,.sw-no{grid-column:1/-1;justify-self:end}
+.sw-what{font-size:.82rem;line-height:1.35;min-inline-size:0;overflow-wrap:anywhere}
+.sw-mini{display:block;inline-size:3rem;aspect-ratio:5/7;container-type:inline-size}
+.sw-mini .alb-stk{block-size:100%}
+.sw-mini-none{background:var(--mag-muted);opacity:.3;border-radius:.3rem}
+.sw-no{font-size:.75rem;color:var(--mag-muted)}
+.sw-done{margin:0;padding-inline-start:1.1rem;font-size:.82rem}
+.alb-tab-swaps{background:var(--mag-green);color:var(--mag-white)}
+@media (min-width:64rem){.sw-new{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto;align-items:end}.sw-list{grid-template-columns:repeat(2,minmax(0,1fr))}}

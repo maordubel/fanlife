@@ -1,6 +1,6 @@
 'use server'
 import {door} from '@/lib/features-server'
-import {call,openWings} from '@/lib/album/server'
+import {call,openWings,type SwapBoard} from '@/lib/album/server'
 import type {Me,Variant} from '@/lib/album/view'
 
 /** THE ALBUM's intents. Every one goes to a database function that checks the fan and the rules itself (server authority). */
@@ -40,3 +40,9 @@ export async function tradeIn(give:string[],want:string):Promise<R<unknown>>{
  return call('worker_album_trade',{p_give:give,p_want:want})
 }
 export async function refresh():Promise<R<Me>>{const g=await gate();if(!g.ok)return g;return call<Me>('worker_album_me')}
+
+const UUID=/^[0-9a-f-]{36}$/
+export async function swaps():Promise<R<SwapBoard>>{const g=await gate();if(!g.ok)return g;return call<SwapBoard>('worker_album_swap_board')}
+export async function swapOffer(give:string,want:string):Promise<R<unknown>>{const g=await gate();if(!g.ok)return g;if(!ID.test(give)||!ID.test(want)||give===want)return {ok:false,error:'Choose a spare and a sticker you miss.'};return call('worker_album_swap_offer',{p_give:give,p_want:want})}
+export async function swapCancel(id:string):Promise<R<unknown>>{const g=await gate();if(!g.ok)return g;if(!UUID.test(id))return {ok:false,error:'Bad swap.'};return call('worker_album_swap_cancel',{p_swap:id})}
+export async function swapAccept(id:string):Promise<R<unknown>>{const g=await gate();if(!g.ok)return g;if(!UUID.test(id))return {ok:false,error:'Bad swap.'};return call('worker_album_swap_accept',{p_swap:id})}

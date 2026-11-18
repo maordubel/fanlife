@@ -7,6 +7,7 @@ import {albumSound} from './sound'
 import {Ritual} from './ritual/Ritual'
 import {StickScene} from './ritual/StickScene'
 import {Cover} from './ritual/Cover'
+import {Swaps,type SwapActions} from './Swaps'
 import {daysToPick,spareFive,wingView,type CatalogRow,type Me,type Pressed,type Slot,type Variant,type Wing,type WingInfo} from '@/lib/album/view'
 
 /**
@@ -19,7 +20,7 @@ import {daysToPick,spareFive,wingView,type CatalogRow,type Me,type Pressed,type 
 type R<T>={ok:true;data:T}|{ok:false;error:string}
 import type {Drawn} from './ritual/Ritual'
 export type {Drawn}
-export type AlbumActions={
+export type AlbumActions=SwapActions&{
  start:(wing:string,name:string)=>Promise<R<Me>>;wing:(wing:string)=>Promise<R<unknown>>;daily:()=>Promise<R<Drawn>>
  opened:(id:string)=>Promise<R<unknown>>;stick:(id:string)=>Promise<R<unknown>>;pick:(id:string)=>Promise<R<unknown>>
  trade:(give:string[],want:string)=>Promise<R<unknown>>;refresh:()=>Promise<R<Me>>;signIn:()=>void
@@ -63,7 +64,7 @@ export function AlbumApp({wings,catalog,eras,kits,pressed,me:initial,signedIn,pr
  const [muted,setMutedS]=useState(false)
  useEffect(()=>{setMutedS(albumSound.muted)},[])
  const setMuted=(m:boolean)=>{albumSound.setMuted(m);setMutedS(m)}
- const [stickOne,setStickOne]=useState<Slot|null>(null)
+ const [stickOne,setStickOne]=useState<Slot|null>(null),[showSwaps,setShowSwaps]=useState(false)
  const [covered,setCovered]=useState(true)
  useEffect(()=>{try{if(sessionStorage.getItem('alb-cover')==='1')setCovered(false)}catch{/* */}},[])
  const [leaf,setLeaf]=useState<{from:number;dir:1|-1;k:number}|null>(null)
@@ -80,14 +81,14 @@ export function AlbumApp({wings,catalog,eras,kits,pressed,me:initial,signedIn,pr
 
  if(!signedIn)return <main id="main" className="alb alb-front" dir="ltr" lang="en">
   <div className="alb-cover"><span className="alb-cover-logo" aria-hidden="true"/><p className="alb-k">FAN LIFE presents</p><h1 className="alb-title">The Album</h1>
-   <p className="alb-lede">A sticker album for every club. An envelope every day you come in, two stickers inside, a wing for your club — from its first season to today.</p>
+   <p className="alb-lede">One sticker album for every FAN LIFE club. A packet every day you come in, two stickers inside — from any club, any era. Stick yours in, swap the rest with other collectors.</p>
    <button type="button" className="alb-btn big min-h-tap" onClick={actions.signIn}>Sign in with Google to open your album</button>
    <p className="alb-fine">Free. Your album is kept with your account, on every device.</p></div>
  </main>
 
  if(!me?.book)return <main id="main" className="alb alb-front" dir="ltr" lang="en">
   <div className="alb-cover"><span className="alb-cover-logo" aria-hidden="true"/><p className="alb-k">Open your album</p><h1 className="alb-title">The Album</h1>
-   <fieldset className="alb-wings"><legend>Choose the wing you collect first</legend>
+   <fieldset className="alb-wings"><legend>Your club — its colours go on your cover</legend>
     <div className="alb-wing-grid">{wings.map(w=><label key={w.id} className="alb-wing-pick min-h-tap" data-on={pickWing===w.id||undefined} style={livery(w)}>
      <input type="radio" name="wing" value={w.id} className="sr-only" checked={pickWing===w.id} onChange={()=>setPickWing(w.id)}/>
      {w.crest?/* eslint-disable-next-line @next/next/no-img-element -- a crest ships exactly as recorded */<img src={w.crest} alt="" width="40" height="40"/>:<span className="alb-initials">{w.initials}</span>}<span>{w.name}</span></label>)}</div>
@@ -95,7 +96,7 @@ export function AlbumApp({wings,catalog,eras,kits,pressed,me:initial,signedIn,pr
    <label className="alb-field"><span>Name on the cover</span><input className="min-h-tap" value={coverName} maxLength={28} onChange={e=>setCoverName(e.target.value)} placeholder="Your name"/></label>
    {err&&<p className="alb-err" role="alert">{err}</p>}
    <button type="button" className="alb-btn big min-h-tap" disabled={busy||!pickWing} onClick={async()=>{setBusy(true);setErr(null);const r=await actions.start(pickWing,coverName);setBusy(false);if(!r.ok){setErr(r.error);return}setMe(r.data);setViewWing(pickWing)}}>Open my album · 3 envelopes inside</button>
-   <p className="alb-fine">You can collect another club’s wing at any time.</p></div>
+   <p className="alb-fine">Every packet comes from the whole album: every club that is open on FAN LIFE, more as new clubs join.</p></div>
  </main>
 
  const book=me.book,waiting=me.waiting??[],claimed=!!book.claimedToday
@@ -113,7 +114,7 @@ export function AlbumApp({wings,catalog,eras,kits,pressed,me:initial,signedIn,pr
   <header className="alb-mast">
    <div className="alb-mast-cover"><span className="alb-cover-logo sm" aria-hidden="true"/><div><p className="alb-k">{book.cover.name?`${book.cover.name}’s album`:'Your album'} · collector since {since(book.since)}</p><h1 className="alb-title sm">The Album</h1></div></div>
    <dl className="alb-stats">
-    <div><dt>{wing?.info.name}</dt><dd className="tabular-nums">{wing?.stuck??0}/{wing?.total??0}</dd></div>
+    <div><dt>The album</dt><dd className="tabular-nums">{views.reduce((n,v)=>n+v.stuck,0)}/{views.reduce((n,v)=>n+v.total,0)}</dd></div>
     <div><dt>Picks</dt><dd className="tabular-nums">{book.picks}</dd></div>
     <div><dt>This week</dt><dd><span className="alb-dots" aria-label={`${book.weekDays} of 5 days — ${daysToPick(book.weekDays)} to a pick`}>{Array.from({length:5},(_,i)=><i key={i} data-on={i<book.weekDays||undefined}/>)}</span></dd></div>
    </dl>
@@ -121,16 +122,17 @@ export function AlbumApp({wings,catalog,eras,kits,pressed,me:initial,signedIn,pr
   {err&&<p className="alb-err" role="alert">{err}</p>}{note&&<p className="alb-ok" role="status">{note}</p>}
   <section className="alb-desk" aria-label="Your envelope">
    {waiting.length||!claimed?<button type="button" className="alb-env-card min-h-tap" disabled={busy} onClick={()=>void openNext()}>
-     <span className="alb-env-mini" aria-hidden="true"/><span><b>{waiting.length?`${waiting.length} envelope${waiting.length===1?'':'s'} waiting`:'Today’s envelope is here'}</b><small>Two stickers from your {byId.get(book.wing)?.name} wing · tap to tear it open</small></span></button>
+     <span className="alb-env-mini" aria-hidden="true"/><span><b>{waiting.length?`${waiting.length} envelope${waiting.length===1?'':'s'} waiting`:'Today’s envelope is here'}</b><small>Two stickers from the whole album · tap to tear it open</small></span></button>
     :<p className="alb-env-done"><b>Today’s envelope is open.</b> The next one waits for you tomorrow.</p>}
-   <details className="alb-change"><summary className="min-h-tap">Collecting: {byId.get(book.wing)?.name} · change wing</summary>
+   <details className="alb-change"><summary className="min-h-tap">My club: {byId.get(book.wing)?.name} · change</summary>
     <div className="alb-wing-grid">{wings.map(w=><button key={w.id} type="button" className="alb-wing-pick min-h-tap" data-on={book.wing===w.id||undefined} style={livery(w)} disabled={busy}
-     onClick={()=>void run(()=>actions.wing(w.id),`Your next envelopes come from the ${w.name} wing.`).then(ok=>{if(ok){setViewWing(w.id);setPage(0)}})}>
+     onClick={()=>void run(()=>actions.wing(w.id),`${w.name} is your club — its colours on your cover.`).then(ok=>{if(ok){setViewWing(w.id);setPage(0)}})}>
      {w.crest?/* eslint-disable-next-line @next/next/no-img-element -- a crest ships exactly as recorded */<img src={w.crest} alt="" width="32" height="32"/>:<span className="alb-initials">{w.initials}</span>}<span>{w.name}</span></button>)}</div></details>
   </section>
-  <nav className="alb-wing-tabs" aria-label="Wings">{views.filter(v=>v.have>0||v.info.id===book.wing).map(v=><button key={v.info.id} type="button" className="alb-tab min-h-tap" aria-pressed={v.info.id===wing?.info.id} onClick={()=>{setViewWing(v.info.id);setPage(0)}}>{v.info.name} <small className="tabular-nums">{v.stuck}/{v.total}</small></button>)}</nav>
-  {wing&&covered&&<Cover w={wing.info} name={book.cover.name} total={views.reduce((n,v)=>n+v.total,0)} chips={wings.map(x=>x.primary)} onOpen={()=>{setCovered(false);try{sessionStorage.setItem('alb-cover','1')}catch{/* */}}}/>}
-  {wing&&!covered&&<div className="alb-book rk-book-in" aria-label={`${wing.info.name} wing`}>
+  <nav className="alb-wing-tabs" aria-label="Clubs in the album"><button type="button" className="alb-tab alb-tab-swaps min-h-tap" aria-pressed={showSwaps} onClick={()=>setShowSwaps(x=>!x)}>⇄ Swaps</button>{views.map(v=><button key={v.info.id} type="button" className="alb-tab min-h-tap" aria-pressed={v.info.id===wing?.info.id} onClick={()=>{setShowSwaps(false);setViewWing(v.info.id);setPage(0)}}>{v.info.name} <small className="tabular-nums">{v.stuck}/{v.total}</small></button>)}</nav>
+  {showSwaps&&<Swaps slots={allSlots} wings={byId} actions={actions} onDone={()=>void reload()}/>}
+  {!showSwaps&&wing&&covered&&<Cover w={wing.info} name={book.cover.name} total={views.reduce((n,v)=>n+v.total,0)} chips={wings.map(x=>x.primary)} onOpen={()=>{setCovered(false);try{sessionStorage.setItem('alb-cover','1')}catch{/* */}}}/>}
+  {!showSwaps&&wing&&!covered&&<div className="alb-book rk-book-in" aria-label={`${wing.info.name} wing`}>
    <div className="alb-phone rk-turn">{pages[page]&&<PageView p={pages[page]!} w={wing.info} act={act}/>}
     {leaf&&step===1&&pages[leaf.from]&&<div key={leaf.k} className="rk-leaf" data-dir={leaf.dir} onAnimationEnd={()=>setLeaf(null)} aria-hidden="true"><PageView p={pages[leaf.from]!} w={wing.info} act={act}/></div>}</div>
    <div className="alb-spread">{pages[spread]&&<PageView p={pages[spread]!} w={wing.info} act={act} side="left"/>}<span className="alb-spine" aria-hidden="true"><i/><i/></span>{pages[spread+1]&&<PageView p={pages[spread+1]!} w={wing.info} act={act} side="right"/>}

@@ -7,7 +7,7 @@ import type {CatalogRow,CopyRow,Me,Pressed,Variant,WingInfo} from '@/lib/album/v
 export function AlbumHarness({view,wings,catalog,eras,kits,pressed}:{view:string;wings:WingInfo[];catalog:CatalogRow[];eras:Record<string,string>;kits:Record<string,string>;pressed:Record<string,Pressed>}){
  const wing=wings.find(w=>w.id==='panathinaikos')?.id??wings[0]!.id
  const st=useRef({book:view==='new'||view==='out'?null as Me['book']:{wing,cover:{name:'Nikos'},picks:1,weekDays:3,claimedToday:view==='envelope'?false:false,envelopes:9,since:'2026-11-01T10:00:00Z'},
-  copies:new Map<string,CopyRow>(),seq:0})
+  copies:new Map<string,CopyRow>(),seq:0,offers:[] as {id:string;give:string;want:string;since:string}[]})
  useMemo(()=>{if(!st.current.book)return;const ids=catalog.filter(r=>r[1]===wing).map(r=>r[0]);ids.slice(0,14).forEach((id,i)=>st.current.copies.set(id,[id,i%4===0?3:1,i<10,i===2?'gold':i===5?'silver':'base']));ids.slice(20,23).forEach(id=>st.current.copies.set(id,[id,2,false,'base']))},[catalog,wing])
  const me=():Me=>({ok:true,today:'2026-11-18',book:st.current.book,copies:[...st.current.copies.values()],waiting:[]})
  const ok=<T,>(data:T)=>Promise.resolve({ok:true as const,data})
@@ -23,7 +23,13 @@ export function AlbumHarness({view,wings,catalog,eras,kits,pressed}:{view:string
   stick:(id)=>{const c=st.current.copies.get(id);if(!c)return Promise.resolve({ok:false as const,error:'You do not hold it.'});st.current.copies.set(id,[id,c[1],true,c[3]]);return ok({})},
   pick:(id)=>{const b=st.current.book!;if(b.picks<1)return Promise.resolve({ok:false as const,error:'No pick.'});b.picks--;st.current.copies.set(id,[id,1,false,'base']);return ok({})},
   trade:(give,want)=>{for(const g of give){const c=st.current.copies.get(g)!;st.current.copies.set(g,[g,c[1]-1,c[2],c[3]])}st.current.copies.set(want,[want,1,false,'base']);return ok({})},
-  refresh:()=>ok(me()),signIn:()=>{}}
+  refresh:()=>ok(me()),signIn:()=>{},
+  // a sample board (labelled sample in the QA screen): two collectors' offers built from this catalogue
+  swaps:()=>{const ids=catalog.map(r=>r[0]),mine=[...st.current.copies.values()].filter(c=>c[1]>1).map(c=>c[0]),miss=ids.filter(id=>!st.current.copies.has(id))
+   return ok({mine:st.current.offers,board:[{id:'00000000-0000-4000-8000-0000000000a1',give:miss[3]!,want:mine[0]??ids[0]!,since:'2026-11-18T09:00:00Z',who:'Collector #'+'40675',fits:!!mine[0]},{id:'00000000-0000-4000-8000-0000000000a2',give:miss[40]!,want:ids[200]!,since:'2026-11-18T08:00:00Z',who:'Collector #'+'08812',fits:false}],done:[]})},
+  swapOffer:(give,want)=>{st.current.offers=[...st.current.offers,{id:'00000000-0000-4000-8000-0000000000b'+st.current.offers.length,give,want,since:'2026-11-18T10:00:00Z'}];return ok({})},
+  swapCancel:(id)=>{st.current.offers=st.current.offers.filter(o=>o.id!==id);return ok({})},
+  swapAccept:()=>ok({})}
  const initial=view==='out'?null:me()
  if(view==='envelope'&&initial?.book)initial.waiting=[{id:'00000000-0000-4000-8000-000000000001',kind:'daily',...(()=>{const d=draw();return {stickers:d.stickers,variants:d.variants,fresh:d.fresh}})()}]
  return <AlbumApp wings={wings} catalog={catalog} eras={eras} kits={kits} pressed={pressed} me={initial} signedIn={view!=='out'} profiles actions={actions}/>

@@ -491,6 +491,7 @@ describe('פרויקט משותף עם DUBID — THE WORKER touches only what it
       '20261009090000_worker_market_search.sql',
       '20261009120000_worker_deal_wave2.sql', // wave 2: bundle, handover, feedback (supabase/tests/71-deal-wave2.sql)
       '20261009150000_worker_circles_wave3.sql', // wave 3: place, circles, the pipe, identification help (supabase/tests/72-circles-wave3.sql)
+      '20261118150000_worker_album_one_album.sql', // 18.11.2026: one album of every open club, swaps between collectors (docs/rules/one-album.md)
       '20261118120000_worker_album.sql', // 18.11.2026: THE ALBUM — sticker album tables and functions, standalone (tests/album)
       '20261009180000_worker_game_origin.sql', // one closet, two apps: game-built shirts (supabase/tests/73-game-origin.sql)
       '20261009210000_worker_market_text_search.sql', // search by words (supabase/tests/70-market-search.sql)
