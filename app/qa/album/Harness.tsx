@@ -29,7 +29,8 @@ export function AlbumHarness({view,wings,catalog,eras,kits,pressed}:{view:string
    return ok({mine:st.current.offers,board:[{id:'00000000-0000-4000-8000-0000000000a1',give:miss[3]!,want:mine[0]??ids[0]!,since:'2026-11-18T09:00:00Z',who:'Collector #'+'40675',fits:!!mine[0]},{id:'00000000-0000-4000-8000-0000000000a2',give:miss[40]!,want:ids[200]!,since:'2026-11-18T08:00:00Z',who:'Collector #'+'08812',fits:false}],done:[]})},
   swapOffer:(give,want)=>{st.current.offers=[...st.current.offers,{id:'00000000-0000-4000-8000-0000000000b'+st.current.offers.length,give,want,since:'2026-11-18T10:00:00Z'}];return ok({})},
   swapCancel:(id)=>{st.current.offers=st.current.offers.filter(o=>o.id!==id);return ok({})},
-  swapAccept:()=>ok({})}
+  swapAccept:()=>ok({}),
+  redeem:(c)=>c==='WRONG'?Promise.resolve({ok:false as const,error:'That code is not valid (or not any more).'}):ok({packets:1})}
  const initial=view==='out'?null:me()
  if(view==='envelope'&&initial?.book)initial.waiting=[{id:'00000000-0000-4000-8000-000000000001',kind:'daily',...(()=>{const d=draw();return {stickers:d.stickers,variants:d.variants,fresh:d.fresh}})()}]
  return <AlbumApp wings={wings} catalog={catalog} eras={eras} kits={kits} pressed={pressed} me={initial} signedIn={view!=='out'} profiles actions={actions}/>

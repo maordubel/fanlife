@@ -46,3 +46,6 @@ export async function swaps():Promise<R<SwapBoard>>{const g=await gate();if(!g.o
 export async function swapOffer(give:string,want:string):Promise<R<unknown>>{const g=await gate();if(!g.ok)return g;if(!ID.test(give)||!ID.test(want)||give===want)return {ok:false,error:'Choose a spare and a sticker you miss.'};return call('worker_album_swap_offer',{p_give:give,p_want:want})}
 export async function swapCancel(id:string):Promise<R<unknown>>{const g=await gate();if(!g.ok)return g;if(!UUID.test(id))return {ok:false,error:'Bad swap.'};return call('worker_album_swap_cancel',{p_swap:id})}
 export async function swapAccept(id:string):Promise<R<unknown>>{const g=await gate();if(!g.ok)return g;if(!UUID.test(id))return {ok:false,error:'Bad swap.'};return call('worker_album_swap_accept',{p_swap:id})}
+
+/** a promotion code (posted on FAN LIFE's social accounts) → free packets, checked and spent by the database */
+export async function redeemCode(code:string):Promise<R<{packets:number}>>{const g=await gate();if(!g.ok)return g;const c=code.replace(/\s/g,'').slice(0,40);if(c.length<3)return {ok:false,error:'That is not a code.'};return call<{packets:number}>('worker_album_redeem',{p_code:c})}

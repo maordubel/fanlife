@@ -1,5 +1,6 @@
 'use client'
 import {useState} from 'react'
+import {AlbumCoupons} from './desk/AlbumCoupons'
 import {EXPERIENCE_GATES,FEATURE_TEXT,type ExperienceGate,type Features} from '@/lib/features'
 
 const UNIVERSE_PRODUCTS:[string,string][]=[['dubid','DUBID'],['offsides','OFFSIDES'],['legends','LEGENDS MANAGER'],['life','LIFE']]
@@ -33,7 +34,7 @@ export function FeatureControl({initial,api,clubs=[]}:{initial:Features;clubs?:{
    {row('lifeRush')}
    {row('pins')}
    {row('profiles')}
-   {row('album')}
+   {row('album',<AlbumCoupons/>)}
   </ul>
  </section>
 }

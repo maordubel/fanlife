@@ -5,7 +5,7 @@
 export type Variant='base'|'silver'|'gold'
 export type CatalogRow=[id:string,club:string,slot:number,page:number,person:string,name:string]
 export type CopyRow=[id:string,copies:number,stuck:boolean,best:Variant]
-export type Waiting={id:string;kind:'daily'|'starter'|'bonus'|'pick'|'trade';stickers:string[];variants:Variant[];fresh:boolean[]}
+export type Waiting={id:string;kind:'daily'|'starter'|'bonus'|'pick'|'trade'|'swap'|'coupon';stickers:string[];variants:Variant[];fresh:boolean[]}
 export type Book={wing:string;cover:{name?:string};picks:number;weekDays:number;claimedToday:boolean|null;envelopes:number;since:string}
 export type Me={ok:boolean;today:string;book:Book|null;copies?:CopyRow[];waiting?:Waiting[]}
 export type Pressed={file:string;status:'photo'|'silhouette';frame?:'club'|'archive'|null;source?:{author:string;license:string;page:string;licenseUrl?:string;file?:string}|null}

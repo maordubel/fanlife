@@ -20,7 +20,7 @@ import {daysToPick,spareFive,wingView,type CatalogRow,type Me,type Pressed,type 
 type R<T>={ok:true;data:T}|{ok:false;error:string}
 import type {Drawn} from './ritual/Ritual'
 export type {Drawn}
-export type AlbumActions=SwapActions&{
+export type AlbumActions=SwapActions&{redeem:(code:string)=>Promise<R<{packets:number}>>;
  start:(wing:string,name:string)=>Promise<R<Me>>;wing:(wing:string)=>Promise<R<unknown>>;daily:()=>Promise<R<Drawn>>
  opened:(id:string)=>Promise<R<unknown>>;stick:(id:string)=>Promise<R<unknown>>;pick:(id:string)=>Promise<R<unknown>>
  trade:(give:string[],want:string)=>Promise<R<unknown>>;refresh:()=>Promise<R<Me>>;signIn:()=>void
@@ -64,7 +64,7 @@ export function AlbumApp({wings,catalog,eras,kits,pressed,me:initial,signedIn,pr
  const [muted,setMutedS]=useState(false)
  useEffect(()=>{setMutedS(albumSound.muted)},[])
  const setMuted=(m:boolean)=>{albumSound.setMuted(m);setMutedS(m)}
- const [stickOne,setStickOne]=useState<Slot|null>(null),[showSwaps,setShowSwaps]=useState(false)
+ const [code,setCode]=useState(''),[stickOne,setStickOne]=useState<Slot|null>(null),[showSwaps,setShowSwaps]=useState(false)
  const [covered,setCovered]=useState(true)
  useEffect(()=>{try{if(sessionStorage.getItem('alb-cover')==='1')setCovered(false)}catch{/* */}},[])
  const [leaf,setLeaf]=useState<{from:number;dir:1|-1;k:number}|null>(null)
@@ -124,6 +124,10 @@ export function AlbumApp({wings,catalog,eras,kits,pressed,me:initial,signedIn,pr
    {waiting.length||!claimed?<button type="button" className="alb-env-card min-h-tap" disabled={busy} onClick={()=>void openNext()}>
      <span className="alb-env-mini" aria-hidden="true"/><span><b>{waiting.length?`${waiting.length} envelope${waiting.length===1?'':'s'} waiting`:'Today’s envelope is here'}</b><small>Two stickers from the whole album · tap to tear it open</small></span></button>
     :<p className="alb-env-done"><b>Today’s envelope is open.</b> The next one waits for you tomorrow.</p>}
+   <form className="alb-code" onSubmit={e=>{e.preventDefault();const c=code.trim();if(c)void run(()=>actions.redeem(c),'Free packet! It is waiting on the table — tap it to tear it open.').then(ok=>{if(ok)setCode('')})}}>
+    <label><span>Have a code?</span><input className="min-h-tap" value={code} onChange={e=>setCode(e.target.value.toUpperCase().replace(/[^A-Z0-9_-]/g,''))} placeholder="From our socials" maxLength={40} autoComplete="off" autoCapitalize="characters" spellCheck={false}/></label>
+    <button type="submit" className="alb-btn min-h-tap" disabled={busy||code.length<3}>Get my packet</button>
+   </form>
    <details className="alb-change"><summary className="min-h-tap">My club: {byId.get(book.wing)?.name} · change</summary>
     <div className="alb-wing-grid">{wings.map(w=><button key={w.id} type="button" className="alb-wing-pick min-h-tap" data-on={book.wing===w.id||undefined} style={livery(w)} disabled={busy}
      onClick={()=>void run(()=>actions.wing(w.id),`${w.name} is your club — its colours on your cover.`).then(ok=>{if(ok){setViewWing(w.id);setPage(0)}})}>

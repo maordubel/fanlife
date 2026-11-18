@@ -230,3 +230,10 @@
 .sw-done{margin:0;padding-inline-start:1.1rem;font-size:.82rem}
 .alb-tab-swaps{background:var(--mag-green);color:var(--mag-white)}
 @media (min-width:64rem){.sw-new{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto;align-items:end}.sw-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* a promotion code: a free packet (owner, 18.11.2026) */
+.alb-code{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:end;color:var(--mag-paper)}
+.alb-code label{display:grid;gap:4px;min-inline-size:0;font-family:var(--mag-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.75rem}
+.alb-code input{inline-size:100%;border:2px solid var(--mag-paper);border-radius:.5rem;background:transparent;color:var(--mag-paper);padding-inline:.8rem;font-family:var(--mag-mono);font-size:16px;letter-spacing:.12em}
+.alb-code input::placeholder{color:var(--mag-paper);opacity:.5;letter-spacing:0;font-family:var(--mag-body);text-transform:none}
+.alb-code .alb-btn{background:var(--mag-paper);color:var(--mag-ink)}
