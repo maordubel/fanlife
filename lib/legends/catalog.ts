@@ -14,7 +14,9 @@ export function decadesOf(from:number|null,to:number|null):number[]{
  const out:number[]=[];for(let d=Math.floor(from/10)*10;d<=Math.floor(to/10)*10;d+=10)out.push(d);return out
 }
 export type Eligibility={cards:Card[];excluded:{noPrice:number;noPosition:number;notApproved:number;badPrice:number}}
-export function eligible(club:string,pool:readonly PoolRow[],approved:ReadonlySet<string>,priced:(id:string)=>boolean,goals:ReadonlyMap<string,number>,control?:RatingControl):Eligibility{
+/** shapes a man's four game attributes from his manager profile (lib/legends/fm.ts) — the server passes it; tests and the lab may not */
+export type AttrShape=(id:string,pos:QuotaPos,stars:number)=>Record<string,number>
+export function eligible(club:string,pool:readonly PoolRow[],approved:ReadonlySet<string>,priced:(id:string)=>boolean,goals:ReadonlyMap<string,number>,control?:RatingControl,shape?:AttrShape):Eligibility{
  const excluded={noPrice:0,noPosition:0,notApproved:0,badPrice:0},keep:PoolRow[]=[]
  for(const p of pool){
   if(!approved.has(p.id)){excluded.notApproved++;continue}
@@ -24,7 +26,7 @@ export function eligible(club:string,pool:readonly PoolRow[],approved:ReadonlySe
   keep.push(p)
  }
  const rated=rateClub(club,keep.map(p=>({id:p.id,position:p.position,rating:combinedScore(p.rating,p.reputation),goals:goals.get(p.id)??0})),control)
- const cards:Card[]=keep.map(p=>{const r=rated.get(p.id)!;return {id:p.id,name:p.name,pos:p.position,...(p.alt?.filter(a=>a!==p.position).length?{alt:p.alt.filter(a=>a!==p.position)}:{}),price:p.price as Price,stars:r.stars,attrs:r.attrs,from:p.fromYear,to:p.toYear,decades:decadesOf(p.fromYear,p.toYear)}}).sort((a,b)=>a.id.localeCompare(b.id))
+ const cards:Card[]=keep.map(p=>{const r=rated.get(p.id)!,attrs=shape&&!control?.players[`${club}:${p.id}`]?.attrs?shape(p.id,p.position,r.stars):r.attrs;return {id:p.id,name:p.name,pos:p.position,...(p.alt?.filter(a=>a!==p.position).length?{alt:p.alt.filter(a=>a!==p.position)}:{}),price:p.price as Price,stars:r.stars,attrs,from:p.fromYear,to:p.toYear,decades:decadesOf(p.fromYear,p.toYear)}}).sort((a,b)=>a.id.localeCompare(b.id))
  return {cards,excluded}
 }
 export function buildCatalog(club:string,clubName:string,cards:Card[],priceVersion:string):Catalog{

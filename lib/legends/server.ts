@@ -6,6 +6,7 @@ import {hasPrice,PRICE_VERSION} from '@/lib/clubs/rumble-xi/prices'
 import {overrideOf} from '@/lib/players/effective'
 import {serverFeatures} from '@/lib/features-server'
 import {buildCatalog,eligible,type Eligibility} from './catalog'
+import {fmGameAttrs,fmRaw} from './fm'
 import {me,catalogMap,createCareer,slotsOf} from './career'
 import {LEGENDS_RULES as R} from './config'
 import {readiness,type ClubReadiness} from './readiness'
@@ -24,12 +25,13 @@ const cache=g.legendsCatalogs??=new Map()
 const controlKey=(c:RatingControl,club:string)=>JSON.stringify([c.clubs[club]??null,Object.entries(c.players).filter(([k])=>k.startsWith(`${club}:`))])
 export async function catalogFor(club:string,control?:RatingControl):Promise<{catalog:Catalog;elig:Eligibility}|null>{
  const r=await loadClub(club).catch(()=>null);if(!r)return null
- const ctl=control??await readRatingControl(),key=`${r.data.version}|${PRICE_VERSION}|${controlKey(ctl,club)}`
+ const ctl=control??await readRatingControl(),key=`${r.data.version}|${PRICE_VERSION}|fm1|${controlKey(ctl,club)}`
  const hit=cache.get(club);if(hit&&hit.key===key)return hit
  const approved=new Set((r.data.players||[]).filter(f=>f.status==='approved').map(f=>f.value.id))
  // a price the owner set in the Player Control Center counts as a price the list knows
  const priced=(id:string)=>hasPrice(club,id)||typeof overrideOf(club,id)?.price==='number'
- const elig=eligible(club,ratedPool(r.data),approved,priced,goalsByPlayer(r.data),ctl)
+ // the four game attributes take their shape from the man's manager profile (18.11.2026); his stars still set the level
+ const elig=eligible(club,ratedPool(r.data),approved,priced,goalsByPlayer(r.data),ctl,(id,pos,stars)=>fmGameAttrs(fmRaw(club,id,pos),stars,pos))
  const out={key,catalog:buildCatalog(club,r.data.identity.name,elig.cards,PRICE_VERSION),elig}
  cache.set(club,out);return out
 }

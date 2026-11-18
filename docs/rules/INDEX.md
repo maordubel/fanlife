@@ -243,3 +243,4 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [club-shirt-only](club-shirt-only.md) · A club game shows the man's shirt only, cropped from the measured SVG; drawn kits win ties; an undated man wears the club's classic drawing, untitled (16.11.2026)
 - [flow-no-films](flow-no-films.md) · Flow makes no films for now: the Flow operator skips Short/promo jobs and makes still images only (CLASSIFIED panels, art library); waiting jobs stay untouched (17.11.2026)
 - [people-registry](people-registry.md) · One person, one id, every club: minted record ids, verdict links (Wikidata or the owner), never a name; /players/<id> profiles (18.11.2026)
+- [legends-manager-ratings](legends-manager-ratings.md) · Legends manager ratings: FM-style 1–20 shape from the research pack, level from the club-percentile stars, sent only for the manager's own squad (18.11.2026)

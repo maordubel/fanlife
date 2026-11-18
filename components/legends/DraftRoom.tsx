@@ -187,7 +187,7 @@ function OfferCard({o,i,left,wardrobe,flip,disabled,onPick}:{o:Offer;i:number;le
     <span className={s.cardName} dir="auto">{o.name}</span>
     <span className={`${s.mono} ${s.cardYears}`} dir="ltr">{years(o)}</span>
     <span className="lgm-offer-stars"><Stars value={o.stars} size="sm"/></span>
-    <span className="lgm-offer-attrs">{attrs.map(k=><span key={k}><small>{ATTR_LABEL[k as AttrKey]}</small><Stars value={o.attrs[k]??o.stars} size="sm"/></span>)}</span>
+    {Object.keys(o.attrs).length?<span className="lgm-offer-attrs">{attrs.map(k=><span key={k}><small>{ATTR_LABEL[k as AttrKey]}</small><Stars value={o.attrs[k]??o.stars} size="sm"/></span>)}</span>:<span className="lgm-offer-hidden">Ratings revealed when signed</span>}
     <span className={s.bars} aria-hidden="true">{Array.from({length:5},(_,k)=><i key={k} data-on={k<Math.round(o.price)}/>)}</span>
    </span>
   </button>
