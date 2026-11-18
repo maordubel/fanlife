@@ -5,6 +5,7 @@ Tone: **WAR**. Status: **script ready**. Narrator: Kokoro George, Take B. Produc
 ## What the fact-check changed
 
 - Owner draft: 80,000 — reports say about 70,000 were evacuated. Owner draft: "Zidane won a penalty and scored" — Ronaldo won it (fouled by Labaka); Zidane scored it.
+- 18.11.2026: the DOCU film (`studio/docu/films/atb_six_minutes_2004.py`, 7:35) fills the source slot; every line is in `atb22-six-minutes.FACTS.md`. The replayed length is told as three versions (six · six forty · seven), García Remón as "replaced" (UEFA: kept in another role).
 - Checked: stopped at 87–88' with 1–1 on 12 December 2004 after a warning via Gara attributed to ETA; no bomb found; the last minutes plus four added were played on 5 January 2005.
 
 ## Dossier
