@@ -246,3 +246,4 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [legends-manager-ratings](legends-manager-ratings.md) · Legends manager ratings: FM-style 1–20 shape from the research pack, level from the club-percentile stars, sent only for the manager's own squad (18.11.2026)
 - [two-logos](two-logos.md) · FAN LIFE's colour roundel on every FAN LIFE surface; THE WORKER's badge only on Hapoel's own host; marks come from lib/brand/logos.ts, a guard test blocks raw paths (18.11.2026)
 - [one-album](one-album.md) · THE ALBUM is one album of every club open to the public; packets draw from the whole album; collectors swap spares through the database (18.11.2026)
+- [album-coupons](album-coupons.md) · Promotion codes give free album packets; only each code's hash is kept, once per collector, ten tries a day; the owner's master code is unlimited (18.11.2026)
