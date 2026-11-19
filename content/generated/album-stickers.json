@@ -5441,7 +5441,7 @@
    "frame": "archive",
    "qid": "Q965846",
    "source": {
-    "file": "Papu Gomez 02.jpg",
+    "file": "Papu_Gomez_02.jpg",
     "page": "https://commons.wikimedia.org/wiki/File:Papu_Gomez_02.jpg",
     "author": "Ago76",
     "license": "CC BY-SA 4.0",
@@ -6110,19 +6110,19 @@
    "person_id": "pl_11fbeebe32",
    "name": "Dominic Vavassori",
    "code": "ATA–34",
-   "status": "silhouette",
-   "frame": null,
+   "status": "photo",
+   "frame": "club",
    "qid": "Q130545740",
-   "source": null,
-   "traits": {
-    "skin": "#D7A57E",
-    "hair": "#3B2A20",
-    "hairName": "dark",
-    "length": "short",
-    "beard": false,
-    "moustache": false,
-    "measured": false
+   "source": {
+    "file": "Vavassori all Atalanta.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Vavassori_all_Atalanta.jpg",
+    "author": "Edizioni Panini",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "date": "2026-01-17",
+    "via": "commons"
    },
+   "traits": null,
    "file": "/album/stickers/atalanta/34.webp"
   },
   "atalanta:35": {
@@ -6224,19 +6224,19 @@
    "person_id": "pl_6d5c3a52ed",
    "name": "James Quinn",
    "code": "CEL–04",
-   "status": "silhouette",
-   "frame": null,
+   "status": "photo",
+   "frame": "club",
    "qid": null,
-   "source": null,
-   "traits": {
-    "skin": "#D7A57E",
-    "hair": "#3B2A20",
-    "hairName": "dark",
-    "length": "short",
-    "beard": false,
-    "moustache": false,
-    "measured": false
+   "source": {
+    "file": "Jimmy Quinn.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Jimmy_Quinn.jpg",
+    "author": "AnonymousUnknown author",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "date": "1916-01-01",
+    "via": "commons"
    },
+   "traits": null,
    "file": "/album/stickers/celtic/4.webp"
   },
   "celtic:5": {
@@ -7015,12 +7015,12 @@
    "frame": "archive",
    "qid": "Q745056",
    "source": {
-    "file": "Kris Commons 2012.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Kris_Commons_2012.jpg",
-    "author": "Memorino",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "date": "2012-07-17",
+    "file": "Kris Commons.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Kris_Commons.jpg",
+    "author": "Chris Barnes from Derbyshire, England",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "date": "2010-09-28 19:13",
     "via": "commons"
    },
    "traits": null,
@@ -8368,19 +8368,19 @@
    "person_id": "pl_2d1eb74667",
    "name": "Shabtai Levi",
    "code": "HTA–16",
-   "status": "silhouette",
-   "frame": null,
+   "status": "photo",
+   "frame": "archive",
    "qid": null,
-   "source": null,
-   "traits": {
-    "skin": "#D7A57E",
-    "hair": "#3B2A20",
-    "hairName": "dark",
-    "length": "medium",
-    "beard": false,
-    "moustache": true,
-    "measured": false
+   "source": {
+    "file": "Shabtay Levi Soccer.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Shabtay_Levi_Soccer.jpg",
+    "author": "Eran.ishay",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2016-12-20",
+    "via": "commons"
    },
+   "traits": null,
    "file": "/album/stickers/hapoel-tel-aviv/16.webp"
   },
   "hapoel-tel-aviv:17": {
@@ -9927,12 +9927,12 @@
    "frame": "archive",
    "qid": "Q27243375",
    "source": {
-    "file": "Azmin Ali 2022.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Azmin_Ali_2022.jpg",
-    "author": "US Embassy KL",
-    "license": "Public domain",
-    "licenseUrl": "",
-    "date": "2022-06-29 18:46:25",
+    "file": "עלי מוחמד - Ali Mohamed Muhammed Al Faz.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:%D7%A2%D7%9C%D7%99_%D7%9E%D7%95%D7%97%D7%9E%D7%93_-_Ali_Mohamed_Muhammed_Al_Faz.jpg",
+    "author": "Adir Benyamini",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2022-01-30",
     "via": "commons"
    },
    "traits": null,
@@ -12387,19 +12387,19 @@
    "person_id": "pl_12e2690bce",
    "name": "Sebastián Palacios",
    "code": "PAO–33",
-   "status": "photo",
-   "frame": "archive",
+   "status": "silhouette",
+   "frame": null,
    "qid": "Q6122965",
-   "source": {
-    "file": "Asambleísta Sebastián Palacios.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Asamble%C3%ADsta_Sebasti%C3%A1n_Palacios.jpg",
-    "author": "Carovilches",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "date": "2018-10-30",
-    "via": "commons"
+   "source": null,
+   "traits": {
+    "skin": "#D7A57E",
+    "hair": "#3B2A20",
+    "hairName": "dark",
+    "length": "short",
+    "beard": false,
+    "moustache": false,
+    "measured": false
    },
-   "traits": null,
    "file": "/album/stickers/panathinaikos/33.webp"
   },
   "panathinaikos:34": {
@@ -13330,12 +13330,12 @@
    "frame": "club",
    "qid": "Q2669174",
    "source": {
-    "file": "Mohamed Oulhaj 05-04-2014.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Mohamed_Oulhaj_05-04-2014.jpg",
+    "file": "Mohamed Oulhaj 2014.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Mohamed_Oulhaj_2014.jpg",
     "author": "mustapha ennaimi",
     "license": "CC BY 2.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-    "date": "2014-04-05 22:14:28",
+    "date": "2014-04-26 18:44:20",
     "via": "commons"
    },
    "traits": null,
@@ -14805,19 +14805,19 @@
    "person_id": "pl_61db26c62e",
    "name": "Fadel Jilal",
    "code": "WAC–09",
-   "status": "silhouette",
-   "frame": null,
+   "status": "photo",
+   "frame": "archive",
    "qid": "Q3738286",
-   "source": null,
-   "traits": {
-    "skin": "#D7A57E",
-    "hair": "#3B2A20",
-    "hairName": "dark",
-    "length": "medium",
-    "beard": false,
-    "moustache": true,
-    "measured": false
+   "source": {
+    "file": "الاعب المغربي فاضل جلال.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:%D8%A7%D9%84%D8%A7%D8%B9%D8%A8_%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8%D9%8A_%D9%81%D8%A7%D8%B6%D9%84_%D8%AC%D9%84%D8%A7%D9%84.jpg",
+    "author": "Nasser Ibrahim Qura",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2023-05-23",
+    "via": "commons"
    },
+   "traits": null,
    "file": "/album/stickers/wydad-casablanca/9.webp"
   },
   "wydad-casablanca:10": {
@@ -15695,19 +15695,293 @@
    "person_id": "pl_59a7e85590",
    "name": "Jamal Alioui",
    "code": "WAC–27",
-   "status": "photo",
-   "frame": "archive",
+   "status": "silhouette",
+   "frame": null,
    "qid": "Q925242",
-   "source": {
-    "file": "Jamal-alioui-avec-le-staff-avec-les-joueurs-on-va-faire-le-maximum-pour-que-l-asnl-reparte-de-l-avant-il-n-y-a-pas-de-formule-magique-il-faudra-beaucoup-travailler-photo-er-alexandre-marchi-1657546803.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Jamal-alioui-avec-le-staff-avec-les-joueurs-on-va-faire-le-maximum-pour-que-l-asnl-reparte-de-l-avant-il-n-y-a-pas-de-formule-magique-il-faudra-beaucoup-travailler-photo-er-alexandre-marchi-1657546803.jpg",
-    "author": "Alexandre MARCHI",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "date": "2026-05-11",
-    "via": "commons"
+   "source": null,
+   "traits": {
+    "skin": "#BF8862",
+    "hair": "#3B2A20",
+    "hairName": "dark",
+    "length": "short",
+    "beard": false,
+    "moustache": true,
+    "measured": true,
+    "shape": [
+     [
+      -1.1614999999999998,
+      -0.1005
+     ],
+     [
+      -1.1515,
+      0.23725
+     ],
+     [
+      -1.1105,
+      0.5714999999999999
+     ],
+     [
+      -1.037,
+      0.89225
+     ],
+     [
+      -0.914,
+      1.1875
+     ],
+     [
+      -0.742,
+      1.4585
+     ],
+     [
+      -0.53125,
+      1.69325
+     ],
+     [
+      -0.29200000000000004,
+      1.87975
+     ],
+     [
+      -0.006,
+      1.936
+     ],
+     [
+      0.28200000000000003,
+      1.8792499999999999
+     ],
+     [
+      0.52775,
+      1.69375
+     ],
+     [
+      0.746,
+      1.4595
+     ],
+     [
+      0.928,
+      1.1864999999999999
+     ],
+     [
+      1.0510000000000002,
+      0.88875
+     ],
+     [
+      1.1235,
+      0.5705
+     ],
+     [
+      1.1605,
+      0.23575
+     ],
+     [
+      1.1724999999999999,
+      -0.10350000000000001
+     ],
+     [
+      -0.9512499999999999,
+      -0.2115
+     ],
+     [
+      -0.80975,
+      -0.36024999999999996
+     ],
+     [
+      -0.5894999999999999,
+      -0.3905
+     ],
+     [
+      -0.36924999999999997,
+      -0.34575
+     ],
+     [
+      -0.16775,
+      -0.2515
+     ],
+     [
+      0.16725,
+      -0.2545
+     ],
+     [
+      0.37175,
+      -0.35325
+     ],
+     [
+      0.5945,
+      -0.3995
+     ],
+     [
+      0.81725,
+      -0.36675
+     ],
+     [
+      0.9577499999999999,
+      -0.2125
+     ],
+     [
+      -0.0005,
+      -0.023
+     ],
+     [
+      -0.002,
+      0.19
+     ],
+     [
+      -0.0035,
+      0.405
+     ],
+     [
+      -0.004,
+      0.628
+     ],
+     [
+      -0.2595,
+      0.73525
+     ],
+     [
+      -0.136,
+      0.786
+     ],
+     [
+      -0.002,
+      0.826
+     ],
+     [
+      0.134,
+      0.786
+     ],
+     [
+      0.2585,
+      0.73575
+     ],
+     [
+      -0.70225,
+      -0.00875
+     ],
+     [
+      -0.5745,
+      -0.057
+     ],
+     [
+      -0.42474999999999996,
+      -0.057749999999999996
+     ],
+     [
+      -0.28825,
+      0.01975
+     ],
+     [
+      -0.43074999999999997,
+      0.0515
+     ],
+     [
+      -0.5805,
+      0.05225
+     ],
+     [
+      0.28874999999999995,
+      0.01925
+     ],
+     [
+      0.42625,
+      -0.05925
+     ],
+     [
+      0.5754999999999999,
+      -0.057
+     ],
+     [
+      0.69675,
+      -0.00825
+     ],
+     [
+      0.5814999999999999,
+      0.05275
+     ],
+     [
+      0.43225,
+      0.0525
+     ],
+     [
+      -0.39725,
+      1.15275
+     ],
+     [
+      -0.26125,
+      1.0685
+     ],
+     [
+      -0.11199999999999999,
+      1.0214999999999999
+     ],
+     [
+      0.0005,
+      1.054
+     ],
+     [
+      0.11599999999999999,
+      1.0225
+     ],
+     [
+      0.26775000000000004,
+      1.0695000000000001
+     ],
+     [
+      0.40774999999999995,
+      1.15025
+     ],
+     [
+      0.27325,
+      1.32175
+     ],
+     [
+      0.1275,
+      1.39825
+     ],
+     [
+      0.002,
+      1.414
+     ],
+     [
+      -0.1225,
+      1.39875
+     ],
+     [
+      -0.26575000000000004,
+      1.32325
+     ],
+     [
+      -0.3225,
+      1.1565
+     ],
+     [
+      -0.11549999999999999,
+      1.12675
+     ],
+     [
+      0.0,
+      1.139
+     ],
+     [
+      0.1185,
+      1.12625
+     ],
+     [
+      0.3335,
+      1.1555
+     ],
+     [
+      0.12225,
+      1.2245000000000001
+     ],
+     [
+      0.002,
+      1.243
+     ],
+     [
+      -0.11674999999999999,
+      1.2235
+     ]
+    ]
    },
-   "traits": null,
    "file": "/album/stickers/wydad-casablanca/27.webp"
   },
   "wydad-casablanca:28": {
@@ -16663,7 +16937,7 @@
    "code": "ZRI–13",
    "status": "silhouette",
    "frame": null,
-   "qid": "Q2078269",
+   "qid": null,
    "source": null,
    "traits": {
     "skin": "#D7A57E",
