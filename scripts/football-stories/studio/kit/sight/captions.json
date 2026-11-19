@@ -1037,6 +1037,20 @@
 ],
 "id": "lib:doc-telegram-fl1-kr"
 },
+"195439e229abd925": {
+"caption": "An illustrated male supporter in a parka stands with arms raised, holding a red and white scarf above his head.",
+"people": 1,
+"faces": true,
+"action": "holding scarf up",
+"place": "terrace",
+"era": "1970s",
+"mood": "joy",
+"avoid": [
+"player celebrating a victory",
+"referee signaling"
+],
+"id": "lib:sup-scarf-up-fl2-kr"
+},
 "19af3c8d0832678e": {
 "caption": "A football sits on the touchline of a historic stadium with empty stands and city buildings in the background.",
 "people": 1,
@@ -1321,6 +1335,19 @@
 ],
 "id": "lib:obj-beer-cup-fl1-kr"
 },
+"20e2481a93a0939e": {
+"caption": "A cut-out collage figure of a supporter seen from behind, holding a red scarf high with both hands.",
+"people": 1,
+"faces": false,
+"action": "holding scarf high",
+"place": "terrace",
+"mood": "defiance",
+"avoid": [
+"player walking onto pitch",
+"person surrendering"
+],
+"id": "lib:sup-scarf-up-kr"
+},
 "20f16797967a4bfa": {
 "caption": "Fans in green and white colors holding up scarves inside a stadium under floodlights.",
 "people": 5,
@@ -1557,6 +1584,20 @@
 ],
 "id": "beat:common/commentator-booth-night"
 },
+"25a14db16c0cc134": {
+"caption": "A textured paper-craft illustration depicts a person seated at a desk listening to a vintage radio.",
+"people": 1,
+"faces": false,
+"action": "sitting at desk",
+"place": "room",
+"era": "1950s",
+"mood": "calm",
+"avoid": [
+"matchday stadium atmosphere",
+"rioting fans"
+],
+"id": "lib:sup-radio-kr"
+},
 "25ca863e65ff2576": {
 "caption": "A layered paper-cut illustration shows a large red scarf flowing over a traditional mountainous landscape with silhouetted travellers.",
 "people": 6,
@@ -1688,6 +1729,19 @@
 "matchday atmosphere"
 ],
 "id": "lib:pup-supporter-pose-kr"
+},
+"2a33d6a233e1cf0d": {
+"caption": "A paper-craft style figure walks through stylized falling rain and raindrops.",
+"people": 1,
+"faces": false,
+"action": "walking in rain",
+"place": "street",
+"mood": "grief",
+"avoid": [
+"sunny summer day",
+"stadium floodlights"
+],
+"id": "lib:sup-rain-kr"
 },
 "2a8de74451887cb5": {
 "caption": "An illustrated knitted football scarf with red, white, and black horizontal stripes.",
@@ -1833,6 +1887,20 @@
 ],
 "id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/panserraikos-12b7c20ee4e60447"
 },
+"2e8ea5d3fbb50c2d": {
+"caption": "An illustrated fan wearing a bobble hat and scarf holds a radio to his ear.",
+"people": 1,
+"faces": true,
+"action": "listening to radio",
+"place": "abstract",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"modern smartphone user",
+"live match celebration"
+],
+"id": "lib:sup-radio-fl1-kr"
+},
 "2ea539cbe549b123": {
 "caption": "Two players sliding tackle on a muddy pitch during a night match under floodlights.",
 "people": 2,
@@ -1889,6 +1957,19 @@
 "manager press conference"
 ],
 "id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/offsides-promo-arena-open-pitch-phone-ad-v2-3b765a6c465f01e8"
+},
+"2fafbe08a630a0b8": {
+"caption": "A lone player sits on the pitch holding his head in his hands inside an empty stadium.",
+"people": 1,
+"faces": false,
+"action": "player sitting defeated on pitch",
+"place": "stadium",
+"mood": "grief",
+"avoid": [
+"player celebrating a goal",
+"training session warm up"
+],
+"id": "lib:thumb-hero-despair-kr"
 },
 "2fb82b99ebe81180": {
 "caption": "Paper cutout artwork portrays an observer watching a youth football training session on a muddy field.",
@@ -2110,6 +2191,20 @@
 "doorbells"
 ],
 "id": "cut:common/close-hand-press-n"
+},
+"351ef9c8d2636d02": {
+"caption": "A mixed-media collage depicts a supporter from behind wearing a red scarf on stadium steps.",
+"people": 1,
+"faces": false,
+"action": "standing on stairs",
+"place": "terrace",
+"era": "1970s",
+"mood": "calm",
+"avoid": [
+"signing a contract",
+"player walking on pitch"
+],
+"id": "lib:sup-stand-terrace-kr"
 },
 "3527906c2f771483": {
 "caption": "A digital graphic for a football trivia quiz showing a fan cheering with a raised fist.",
@@ -3360,6 +3455,19 @@
 ],
 "id": "beat:common/last-minute-clock-b-n"
 },
+"527064d22baf8de2": {
+"caption": "A papercraft stadium crowd holds scarves and banners with smoke rising in the background.",
+"people": 20,
+"faces": false,
+"action": "crowd cheering in stadium",
+"place": "stadium",
+"mood": "defiance",
+"avoid": [
+"peaceful library gathering",
+"quiet art gallery"
+],
+"id": "lib:thumb-hero-derby-kr"
+},
 "5289876f04c7d92f": {
 "caption": "A large crowd of people walks along a wide street toward a football stadium exterior.",
 "people": 100,
@@ -3496,6 +3604,19 @@
 "floodlight failure mid-game"
 ],
 "id": "beat:common/stadium-lights-off-n"
+},
+"576467adbe484f40": {
+"caption": "A packed stadium is illuminated by bright floodlights at night with fans watching a match.",
+"people": 20,
+"faces": false,
+"action": "floodlights illuminating stadium match",
+"place": "stadium",
+"mood": "tension",
+"avoid": [
+"daytime training session",
+"empty stadium maintenance"
+],
+"id": "lib:thumb-hero-europe-kr"
 },
 "579ffd077a5e18cc": {
 "caption": "An illustrated person sits crouched inside a stadium dugout shelter.",
@@ -4039,6 +4160,20 @@
 "modern player"
 ],
 "id": "lib:ppl-vendor-fl2-kr"
+},
+"64533ab0e334dec4": {
+"caption": "An illustrated supporter in a hooded parka sits despondently on steps with a red and black scarf hanging down.",
+"people": 1,
+"faces": true,
+"action": "sitting dejectedly",
+"place": "terrace",
+"era": "1980s",
+"mood": "grief",
+"avoid": [
+"substitute player sitting on the bench",
+"player resting at half time"
+],
+"id": "lib:sup-sit-step-fl2-kr"
 },
 "647b75c4fa4305d9": {
 "caption": "A knitted striped football supporter scarf with fringed ends rests on a black background.",
@@ -4950,6 +5085,20 @@
 ],
 "id": "beat:common/open-top-bus-kr"
 },
+"7aae1e043a236678": {
+"caption": "An illustrated fan in a red parka raises his fist in the rain.",
+"people": 1,
+"faces": true,
+"action": "raising fist",
+"place": "terrace",
+"era": "1970s",
+"mood": "defiance",
+"avoid": [
+"peaceful protest",
+"indoor celebration"
+],
+"id": "lib:sup-rain-fl2-kr"
+},
 "7b1557cffb19d024": {
 "caption": "A papercraft artwork shows stacks of newspapers at a stand with a distant stadium silhouette under a bright sky.",
 "people": 1,
@@ -5307,6 +5456,20 @@
 ],
 "id": "lib:layer-bar-tv-kr-fg"
 },
+"8542dd04bc03d1b9": {
+"caption": "A illustrated male supporter stands with arms raised, holding a striped scarf above his head and shouting.",
+"people": 1,
+"faces": true,
+"action": "raising scarf and shouting",
+"place": "terrace",
+"era": "1970s",
+"mood": "defiance",
+"avoid": [
+"manager celebrating a goal",
+"player lifting a trophy"
+],
+"id": "lib:sup-scarf-up-fl1-kr"
+},
 "8564d25c012374b5": {
 "caption": "An empty narrow street leads toward a stadium illuminated by floodlights.",
 "people": 0,
@@ -5415,6 +5578,19 @@
 ],
 "id": "lib:obj-banner-rolled-fl1-kr"
 },
+"87cec1f41e57b14e": {
+"caption": "A hand grenade rests on a stack of files on a desk illuminated by a spotlight.",
+"people": 0,
+"faces": false,
+"action": "grenade resting on documents",
+"place": "room",
+"mood": "tension",
+"avoid": [
+"war museum display",
+"military training manual"
+],
+"id": "lib:thumb-classified-war"
+},
 "880c2c15b8325152": {
 "caption": "A layered papercraft night sky featuring a crescent moon, stars, and dark clouds.",
 "people": 0,
@@ -5478,6 +5654,20 @@
 "manager celebrating on touchline"
 ],
 "id": "prop:board_member"
+},
+"894d762a9b1bfa3b": {
+"caption": "A textured cut-out figure walks through a metal turnstile gate.",
+"people": 1,
+"faces": false,
+"action": "walking through turnstile",
+"place": "terrace",
+"era": "1970s",
+"mood": "calm",
+"avoid": [
+"prison bars",
+"entering a building"
+],
+"id": "lib:sup-turnstile-kr"
 },
 "8a4a5a166538a932": {
 "caption": "A collage wall of empty picture frames and red pennants arches over a crowd of fans waving flags.",
@@ -5772,6 +5962,20 @@
 ],
 "id": "beat:job-cb5fda72-1548-41f4-99ad-47978b9f1ff9/20241124-131334-catharsis-2021-2023-100x120cm-acry-ec299b1b6eedac87"
 },
+"92af07ae66ec0118": {
+"caption": "An illustrated supporter sits on concrete steps, looking down while holding a red and black scarf.",
+"people": 1,
+"faces": true,
+"action": "sitting and holding scarf",
+"place": "terrace",
+"era": "1970s",
+"mood": "grief",
+"avoid": [
+"player injured on the pitch",
+"coach waiting for kickoff"
+],
+"id": "lib:sup-sit-step-fl1-kr"
+},
 "92bb2bc3e6c1a751": {
 "caption": "A worn corner flag stands on a pristine pitch under stadium floodlights at night.",
 "people": 0,
@@ -5785,6 +5989,19 @@
 "empty stadium abandonment"
 ],
 "id": "beat:common/corner-flag-night"
+},
+"92d20851d35f8f9b": {
+"caption": "A fabric collage artwork depicts a supporter sitting on steps with head bowed and a long red scarf draped over the shoulder.",
+"people": 1,
+"faces": false,
+"action": "sitting with head bowed",
+"place": "terrace",
+"mood": "grief",
+"avoid": [
+"injured player on a stretcher",
+"mourner at a funeral"
+],
+"id": "lib:sup-sit-step-kr"
 },
 "93141f07fbc0cd49": {
 "caption": "An illustrated football player in a red jersey lifts a large trophy above his head.",
@@ -5867,6 +6084,20 @@
 "running forward normally"
 ],
 "id": "cut:common/fig-defender-slide-n"
+},
+"9555e4e9bf4f7080": {
+"caption": "An illustrated fan leans against a railing in the pouring rain, shouting passionately.",
+"people": 1,
+"faces": true,
+"action": "shouting in rain",
+"place": "terrace",
+"era": "1970s",
+"mood": "defiance",
+"avoid": [
+"sunny day match",
+"indoor press conference"
+],
+"id": "lib:sup-rain-fl1-kr"
 },
 "9594bd8d6306b9df": {
 "caption": "A close-up portrait of a male footballer against a plain background.",
@@ -7444,6 +7675,19 @@
 ],
 "id": "lib:obj-banner-rolled-kr"
 },
+"bb1ebf7a8423b34d": {
+"caption": "A red scarf rests on a stack of files on a desk under a spotlight.",
+"people": 0,
+"faces": false,
+"action": "files resting on desk",
+"place": "room",
+"mood": "tension",
+"avoid": [
+"happy matchday celebration",
+"fan scarf sale"
+],
+"id": "lib:thumb-classified-heart"
+},
 "bb27e8522a4d1d3e": {
 "caption": "A blurred abstract dark image with faint light reflections suggesting a wet street.",
 "people": 0,
@@ -8155,6 +8399,20 @@
 ],
 "id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/20260621-180232-chatgpt-image-jun-21-2026-06-02-30-3b72c3e7e7610658"
 },
+"ce691973a7a7494b": {
+"caption": "An illustrated fan in a red and black scarf listens intently to a portable radio.",
+"people": 1,
+"faces": true,
+"action": "listening to commentary",
+"place": "abstract",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"watching television",
+"celebrating a goal"
+],
+"id": "lib:sup-radio-fl2-kr"
+},
 "cefc3a60d8436308": {
 "caption": "An illustrated crowd of supporters viewed from behind under a canopy of black umbrellas.",
 "people": 26,
@@ -8223,6 +8481,20 @@
 "empty tunnel"
 ],
 "id": "lib:layer-tunnel-fl1-kr"
+},
+"d1a66e6f24c319cc": {
+"caption": "An illustrated supporter wearing a winter coat leans intensely over a stadium railing.",
+"people": 1,
+"faces": true,
+"action": "leaning on barrier",
+"place": "terrace",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"prison bars",
+"leaving the match"
+],
+"id": "lib:sup-stand-terrace-fl2-kr"
 },
 "d1ad3b44acf34e5f": {
 "caption": "A football player in a grey kit performs a sliding tackle.",
@@ -8582,6 +8854,20 @@
 "player signing"
 ],
 "id": "beat:common/press-conference-n"
+},
+"dbf689b595302551": {
+"caption": "An illustrated supporter rushes through a metal turnstile with a ticket in their mouth.",
+"people": 1,
+"faces": true,
+"action": "entering through turnstile",
+"place": "terrace",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"prison entrance",
+"arrested fan"
+],
+"id": "lib:sup-turnstile-fl1-kr"
 },
 "dc52acbbafeef500": {
 "caption": "Black curved paper cuts overlap against a cream background.",
@@ -9657,6 +9943,20 @@
 ],
 "id": "beat:papercut-library/supporters-bus-heading-toward-st-92b40091"
 },
+"f1806ae7004af5cd": {
+"caption": "An illustrated man with a flat cap and scarf passes through a stadium turnstile.",
+"people": 1,
+"faces": true,
+"action": "passing turnstile",
+"place": "terrace",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"prison cell",
+"court appearance"
+],
+"id": "lib:sup-turnstile-fl2-kr"
+},
 "f1e549b4486c5591": {
 "caption": "A crowd of people stands on a street watching a football match broadcast on multiple televisions in a shop window.",
 "people": 15,
@@ -9913,6 +10213,33 @@
 "a street scene"
 ],
 "id": "beat:common/close-boots-tunnel-n"
+},
+"f9e56b5f57e23bd7": {
+"caption": "An illustrated football fan shouts while gripping a metal barrier in the stands.",
+"people": 1,
+"faces": true,
+"action": "shouting at match",
+"place": "terrace",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"prison bars",
+"signing a player"
+],
+"id": "lib:sup-stand-terrace-fl1-kr"
+},
+"fa4ded9e18e1a51c": {
+"caption": "A glass bottle with a cork sits atop a thick stack of files on a dark wooden desk.",
+"people": 0,
+"faces": false,
+"action": "bottle resting on files",
+"place": "room",
+"mood": "tension",
+"avoid": [
+"chemistry class demonstration",
+"poisoning scandal investigation"
+],
+"id": "lib:thumb-classified-laugh"
 },
 "faecd85915807436": {
 "caption": "Twelve vintage football jerseys from various European clubs are displayed on a rustic wall above a collection of old boots and balls.",
