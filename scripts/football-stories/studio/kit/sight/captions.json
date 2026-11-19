@@ -41,6 +41,19 @@
 ],
 "id": "beat:common/celebration-pile-b-kr"
 },
+"01e62323af287b3e": {
+"caption": "A blue and white shield-shaped emblem featuring a central five-pointed star.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "ΙΩΝΙΚΟΣ 1965",
+"avoid": [
+"in-game action",
+"stadium crowd"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/ionikos-nikeas-3007b9520e1756cc"
+},
 "02f500a68e11f5df": {
 "caption": "Papercraft view of a packed football stadium where red-shirted players celebrate a goal near the corner flag.",
 "people": 30,
@@ -648,6 +661,34 @@
 ],
 "id": "beat:common/injury-stretcher-kr"
 },
+"0d8b55363db829ef": {
+"caption": "A circular crest showing two red lions divided diagonally by a spear with club lettering.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "FUSSBALLCLUB WINTERTHUR",
+"avoid": [
+"player signing",
+"match highlight"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/fc-winterthur-0fa85b7aecf32d1b"
+},
+"0ddc7bd1ea3dd05e": {
+"caption": "A Greek sports newspaper open spread featuring a 3-1 football score headline and players celebrating on the pitch.",
+"people": 4,
+"faces": true,
+"action": "celebrating a goal",
+"place": "pitch",
+"era": "2000s",
+"mood": "joy",
+"text": "ΤΟ ΚΥΠΕΛΛΟ ΤΗΣ ΗΔΟΝΗΣ 3-1 OTE 19",
+"avoid": [
+"Greek national team victory: this is domestic club football",
+"match programme: this is a daily newspaper"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/08-contemporary-greek-newspaper-3f84f6b9699dd099"
+},
 "0de6e1ef343606d0": {
 "caption": "Two pairs of hands with crossed fingers emerge from red and white patterned cuffs.",
 "people": 2,
@@ -740,6 +781,20 @@
 "packed crowds"
 ],
 "id": "beat:common/old-ground-wooden-n"
+},
+"113fba148abfbc3c": {
+"caption": "A graphic illustration displays the front design of a white short-sleeved football kit with green accents and sponsor branding.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"era": "2000s",
+"mood": "calm",
+"text": "adidas COSMOTE",
+"avoid": [
+"photograph of a match",
+"player portraits"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/panathinaikos-fc-2008-09-champions-league-away-kit-2c89922721083908"
 },
 "115a0e39df0afa2b": {
 "caption": "A graphic illustration of a red and white triangular club pennant hangs with elaborate fringed tassels.",
@@ -1117,6 +1172,16 @@
 ],
 "id": "lib:ground-1950s-int-fl1-kr"
 },
+"1beb65f8c29f6b12": {
+"caption": "A football club crest displays a red and blue shield with intertwined gold letters and two stars above.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "FCB",
+"avoid": "live football play: graphic emblem only",
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/fc-basel-1893-f4919faaed7a3e0d"
+},
 "1c5724bb87fbad38": {
 "caption": "A queue of people waiting outside a stadium ticket office window to buy tickets.",
 "people": 25,
@@ -1418,6 +1483,20 @@
 ],
 "id": "beat:common/old-ground-wide-b-kr"
 },
+"21e70f3291c704d1": {
+"caption": "A green short-sleeved football shirt with white diamond accents on the right flank stands on a mannequin.",
+"people": 0,
+"faces": false,
+"place": "room",
+"era": "1990s",
+"mood": "calm",
+"text": "adidas PANATHINAIKOS 1908 INTERAMERICAN",
+"avoid": [
+"in-match action",
+"press conferences"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/panathinaikos-fc-1995-96-champions-league-home-kit-f51b984406e1098f"
+},
 "21e7434f8cedda1d": {
 "caption": "An illustration of a rolled-up flag or banner with red and white stripes tied with cords.",
 "people": 0,
@@ -1528,6 +1607,19 @@
 "a protest march"
 ],
 "id": "lib:ppl-family-four-fl2-kr"
+},
+"241cbd053172a035": {
+"caption": "A circular green and white club crest featuring a large clover and Greek lettering.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "ΠΑΝΑΘΗΝΑΪΚΟΣ 1908",
+"avoid": [
+"pitch action",
+"manager interview"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/panathinaikos-athens-9250a17a4518065e"
 },
 "241dd487a7a94983": {
 "caption": "A shield-shaped football club crest with a black and white striped background and red letters FFC.",
@@ -1730,6 +1822,19 @@
 ],
 "id": "lib:pup-supporter-pose-kr"
 },
+"2a3154a1b9dbb3a2": {
+"caption": "A football club emblem shaped as a green shield with blue and green vertical stripes and the year 1961.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "ΛΕΒΑΔΕΙΑΚΟΣ ΠΑΕ 1961",
+"avoid": [
+"match action",
+"player portrait"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/apo-levadiakos-cfeed26d2f5b6833"
+},
 "2a33d6a233e1cf0d": {
 "caption": "A paper-craft style figure walks through stylized falling rain and raindrops.",
 "people": 1,
@@ -1795,6 +1900,21 @@
 "handcuffs"
 ],
 "id": "beat:common/close-fingers-crossed-b-kr"
+},
+"2c7e65990a5264c4": {
+"caption": "A black short-sleeved football jersey with white stripes laid flat.",
+"people": 0,
+"faces": false,
+"action": "kit display",
+"place": "studio",
+"era": "2010s",
+"mood": "calm",
+"text": "adidas ΕΛΛΑΣ ΟΠΑΠ",
+"avoid": [
+"match action",
+"referee"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/panathinaikos-fc-2011-12-third-kit-22935-b07ed1633a4528f0"
 },
 "2d08b78273288673": {
 "caption": "A football goal frame with net is shown against a dark backdrop.",
@@ -2290,6 +2410,20 @@
 ],
 "id": "beat:common/pub-before-b-kr"
 },
+"362167951b429778": {
+"caption": "A flat graphic template depicts a green short-sleeved football kit with a white shamrock emblem and collar.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"era": "2000s",
+"mood": "calm",
+"text": "adidas COSMOTE",
+"avoid": [
+"actual game footage",
+"post-match interview"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/panathinaikos-fc-2008-09-champions-league-home-kit-3bde799febd700d0"
+},
 "3645843dcfefdce3": {
 "caption": "The club crest of RSC Anderlecht is presented in purple and gold with three stars above a crowned shield.",
 "people": 1,
@@ -2757,6 +2891,16 @@
 "celebrations on the pitch"
 ],
 "id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/42106780-43acb2a58d941da4"
+},
+"433b1ca958ef9d56": {
+"caption": "A round green emblem shows white club initials, a founding year, and city name inside concentric rings.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "FCSG 1879 ST. GALLEN",
+"avoid": "live gameplay: graphic crest only",
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/fc-st-gallen-1879-5b0629a146b98c85"
 },
 "43fa133acc06d014": {
 "caption": "A red shirt hangs on a hook in a locker room while a silhouette walks through a doorway.",
@@ -3481,6 +3625,21 @@
 "floodlights"
 ],
 "id": "lib:ground-1950s-ext-fl1-kr"
+},
+"52c835782ea7494f": {
+"caption": "A lime green and dark blue long-sleeved goalkeeper jersey laid flat on a wooden floor.",
+"people": 0,
+"faces": false,
+"action": "kit display",
+"place": "studio",
+"era": "2010s",
+"mood": "calm",
+"text": "adidas cosmote",
+"avoid": [
+"live match action",
+"goalkeeper save"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/panathinaikos-fc-2011-12-gk-2-kit-232133-1782d3280df8b4f2"
 },
 "52f53cbbe2037674": {
 "caption": "An illustration from behind showing a child sitting on a supporter's shoulders wearing winter coats and a red scarf.",
@@ -4554,6 +4713,16 @@
 ],
 "id": "beat:job-19324d9d-b95c-4388-a19b-062dd2002d03/aek-crest-mono-512-55427c064f32f571"
 },
+"6e771d7474522fd4": {
+"caption": "An octagonal club emblem in blue, white, and yellow features two lions facing a football above bold text.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "FCL FUSSBALL CLUB LUZERN",
+"avoid": "stadium atmosphere: graphic badge only",
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/fc-luzern-0039928e83130a6c"
+},
 "6ef561c7d142ea96": {
 "caption": "An illustrated television presenter holding a microphone stands beside a vintage television camera.",
 "people": 1,
@@ -4837,6 +5006,21 @@
 "injury treatment"
 ],
 "id": "lib:pup-supporter-child-kr"
+},
+"73ba420212623d0f": {
+"caption": "A player wearing a yellow goalkeeper kit with arms crossed against a green background.",
+"people": 1,
+"faces": false,
+"action": "kit presentation",
+"place": "studio",
+"era": "2010s",
+"mood": "tension",
+"text": "stoiximan",
+"avoid": [
+"goal celebration",
+"match action"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/panathinaikos-fc-2018-19-gk-home-kit-124862-73b58df25f737962"
 },
 "7532d196409df36e": {
 "caption": "An illustrated paper-craft style image of a player in a red kit kneeling on the grass with head bowed in a packed stadium.",
@@ -5275,6 +5459,19 @@
 ],
 "id": "cut:common/crowd-row-away-small-b-kr"
 },
+"7f8c0203617b356a": {
+"caption": "A collection of green and black football fan stickers featuring olive branches, ancient ruins, a megaphone, a scarf, and stadium terraces.",
+"people": 4,
+"faces": false,
+"place": "abstract",
+"era": "2020s",
+"mood": "calm",
+"avoid": [
+"single badge or logo: this is a sticker sheet",
+"specific player: graphic art only"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/a8-stickers-panathinaikos-original-7ccec96367a1e391"
+},
 "8030aa023b97a2cd": {
 "caption": "An aerial diorama shows a double-decker bus moving down a city street surrounded by a massive crowd of cheering fans.",
 "people": 100,
@@ -5642,6 +5839,16 @@
 ],
 "id": "beat:common/terrace-empty-old-n"
 },
+"88ed6c1e7aa731d3": {
+"caption": "A circular blue and yellow club crest features a silhouette of a person on horseback inside a shield.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "ASTERAS 19 31 ET IN ARCADIA EGO TRIPOLIS F.C.",
+"avoid": "live match action: graphic crest only",
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/asteras-tripoli-fc01b2f430deea7f"
+},
 "8908ce0ba13df3eb": {
 "caption": "A man in a suit stands facing away while holding files.",
 "people": 1,
@@ -5936,6 +6143,21 @@
 ],
 "id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/oud-heverlee-leuven-7d123743a1ea6f47"
 },
+"914981435ce4f112": {
+"caption": "A green short-sleeved football jersey with white accents laid out flat.",
+"people": 0,
+"faces": false,
+"action": "kit display",
+"place": "studio",
+"era": "2010s",
+"mood": "calm",
+"text": "adidas ΕΛΛΑΣ ΟΠΑΠ",
+"avoid": [
+"team celebration",
+"match atmosphere"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/panathinaikos-fc-2011-12-home-kit-22937-58cd5751ae466d02"
+},
 "919ae6d5003a7b5c": {
 "caption": "Disassembled paper cutout parts of a football player including head, torso, arms, and legs.",
 "people": 1,
@@ -6071,6 +6293,16 @@
 "television"
 ],
 "id": "prop:portable_radio"
+},
+"9511d83ec2eda0c8": {
+"caption": "A shield-shaped club logo split in red and white sections displays two red stars and a large letter S.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "FC SION S",
+"avoid": "pitch action: graphic logo only",
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/fc-sion-78c9252a871f779c"
 },
 "954e5e1b731512d6": {
 "caption": "An illustrated monochrome football player in a kit sliding on the ground with one leg extended.",
@@ -6331,6 +6563,16 @@
 "quiet match"
 ],
 "id": "lib:layer-terrace-night-fl1-kr"
+},
+"9dc562e8feecc224": {
+"caption": "A circular monochrome emblem shows white monogram letters set against a black background.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "FCL",
+"avoid": "match event: team logo graphic only",
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/fc-lugano-43bb7702c6f14bdf"
 },
 "9e158b4cdfc00e5a": {
 "caption": "An illustrated nighttime football match under floodlights with players in action and fans holding red flares in the stands.",
@@ -6622,6 +6864,19 @@
 ],
 "id": "lib:ppl-journalist-fl1-kr"
 },
+"a67c45c18b709ceb": {
+"caption": "A circular black and white club emblem with stylized initials in the center surrounded by Greek text.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "ΟΜΙΛΟΣ ΦΙΛΑΘΛΩΝ ΗΡΑΚΛΕΙΟΥ ΚΡΗΤΗΣ 1925 ΟΦΗ",
+"avoid": [
+"match scene",
+"player profile"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/ofi-crete-5a1573e3a6ce1f5b"
+},
 "a6b390cb84cbe331": {
 "caption": "A football player wearing number 22 takes a shot on goal in a crowded penalty area during a night game.",
 "people": 9,
@@ -6692,6 +6947,19 @@
 "final whistle celebrations"
 ],
 "id": "cut:common/fig-referee-whistle-b-n"
+},
+"a7b60f82250b0f52": {
+"caption": "A yellow and black football crest depicting a seated classical statue of Ares above a Greek meander pattern.",
+"people": 1,
+"faces": true,
+"place": "abstract",
+"mood": "calm",
+"text": "ΑΡΗΣ ΘΕΣΣΑΛΟΝΙΚΗ ΠΑΕ",
+"avoid": [
+"match action",
+"live player"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/aris-saloniki-3cadecf1a4897858"
 },
 "a82242386f75497e": {
 "caption": "A layered papercraft illustration shows dark grey storm clouds illuminated by a bright orange glow from underneath.",
@@ -6785,6 +7053,20 @@
 "fans celebrating"
 ],
 "id": "lib:ins-team-bus-window-n"
+},
+"a9ccbf27847a2be9": {
+"caption": "A white long-sleeved football shirt featuring green side pattern and collar is displayed against a white background on a torso form.",
+"people": 0,
+"faces": false,
+"place": "studio",
+"era": "1990s",
+"mood": "calm",
+"text": "adidas PANATHINAIKOS 1908 INTERAMERICAN",
+"avoid": [
+"action play",
+"fan culture"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/panathinaikos-fc-1995-96-champions-league-away-kit-316630e8a4b07cdd"
 },
 "aa03646b363ae1c2": {
 "caption": "A match ticket for Olympiacos FC versus Maccabi Tel Aviv rests among ripped sports newspaper fragments.",
@@ -6958,6 +7240,21 @@
 "football match"
 ],
 "id": "lib:sky-stars-n"
+},
+"ad1633dd91801c75": {
+"caption": "A blue short-sleeved football shirt with sponsor logo displayed on a mannequin.",
+"people": 1,
+"faces": false,
+"action": "kit display",
+"place": "studio",
+"era": "2010s",
+"mood": "calm",
+"text": "adidas ΕΛΛΑΣ ΟΠΑΠ",
+"avoid": [
+"player celebration",
+"match action"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/panathinaikos-fc-2011-12-gk-kit-140739-6c45d0462ae59c82"
 },
 "ad1e0fda7c88fb97": {
 "caption": "An illustrated manager in a dark coat points forward.",
@@ -7794,6 +8091,20 @@
 "player on pitch"
 ],
 "id": "lib:ppl-manager-dugout-fl2-kr"
+},
+"bdb59b9bdce01eb8": {
+"caption": "A modern white short-sleeved football shirt with green trim and a colorful sponsor logo is shown against a plain white studio backdrop.",
+"people": 0,
+"faces": false,
+"place": "studio",
+"era": "2010s",
+"mood": "calm",
+"text": "adidas ОПАП FORMATION",
+"avoid": [
+"active football match",
+"trophy celebrations"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/panathinaikos-fc-2011-12-away-kit-22936-1e668318be39a5d3"
 },
 "bde493b98df70996": {
 "caption": "A cutout of a football player in a white kit celebrating with arms raised against a black background.",
@@ -8697,6 +9008,34 @@
 ],
 "id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/t7-slide-05-908a7e96a259466a"
 },
+"d703abc8e798b8b5": {
+"caption": "A red and white heraldic shield crest featuring a gold star and the club name.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "BERNER OBERLAND FC THUN 1898",
+"avoid": [
+"live match action",
+"stadium atmosphere"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/fc-thun-11c924886aaddd23"
+},
+"d788861a9f3729cd": {
+"caption": "A green patterned short-sleeved football jersey displayed against a white background.",
+"people": 0,
+"faces": false,
+"action": "kit display",
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"text": "adidas Stoiximan Greek Cup Final",
+"avoid": [
+"trophy lift",
+"match action"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/panathinaikos-fc-2023-24-greek-cup-final-kit-25896-41d31c3509c81980"
+},
 "d79e9550e681d165": {
 "caption": "An illustrated red and black paper bag spilling wrapped candies on a pale background.",
 "people": 0,
@@ -9262,6 +9601,19 @@
 ],
 "id": "cut:common/fig-striker-shoot-c-kr"
 },
+"e443b483d989c433": {
+"caption": "A football club crest with a rearing horse inside a maroon and white shield topped with three stars.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "ΑΕΛ",
+"avoid": [
+"match photo",
+"racing club or equestrian sports"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/ae-larisa-51a08d15cefbed1c"
+},
 "e47fabc2c8143b78": {
 "caption": "A papercraft figure of a man in dark clothes and a cap viewed from behind.",
 "people": 1,
@@ -9546,6 +9898,19 @@
 "football players"
 ],
 "id": "lib:city-petah-tikva-fl1-kr"
+},
+"e986dc375125b098": {
+"caption": "A blue and white shield-shaped football crest depicting the classical bust of Apollo and the foundation year 1891.",
+"people": 1,
+"faces": true,
+"place": "abstract",
+"mood": "calm",
+"text": "ΑΠΟΛΛΩΝ 1891",
+"avoid": [
+"real person portrait",
+"match photo"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/apollon-smyrnis-1cabec93c0dc370e"
 },
 "e99ef19e005e7208": {
 "caption": "An illustrated close-up shows intertwined hands with a red band on one wrist against a light background.",
@@ -10419,6 +10784,21 @@
 ],
 "id": "lib:obj-flag-stick-kr"
 },
+"fe227fbc18065f9b": {
+"caption": "A football trivia quiz score graphic displaying a cheering supporter raising a fist alongside text and results.",
+"people": 1,
+"faces": true,
+"action": "cheering with raised fist",
+"place": "abstract",
+"era": "1970s",
+"mood": "joy",
+"text": "FAN LIFE FOOTBALL FOREVER PANATHINAIKOS TRIVIA SAMPLE DATA THINK YOU KNOW YOUR CLUB? A quiz for the ones who were there. 9/12 MY TRIVIA RESULT Best combo: 4 Score: 840 SAME QUESTIONS. YOUR TURN. fanlife.dubelteam.com",
+"avoid": [
+"official club announcement",
+"live match broadcast"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/panathinaikos-d06bf3402cd23722"
+},
 "fe5508988f3e0769": {
 "caption": "A fan in a stadium holds a phone displaying a 5-a-side formation graphic while cheering.",
 "people": 1,
@@ -10445,6 +10825,19 @@
 "players leaving the pitch"
 ],
 "id": "beat:common/rain-pitch-n"
+},
+"ff4b93c1a9b8e3b3": {
+"caption": "A vintage long-sleeved light-colored football jersey with green collar and green branded stripe tape down the sleeves rests on a mannequin.",
+"people": 0,
+"faces": false,
+"place": "room",
+"era": "1980s",
+"mood": "calm",
+"avoid": [
+"live action matches",
+"modern kit reveals"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/panathinaikos-fc-1981-82-away-2-kit-140755-ab6795b68ee06cd6"
 }
 }
 }
