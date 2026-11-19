@@ -167,12 +167,12 @@ beat("And he picks Germany. Every single time.", img('pick-ger', 'push', veil=0.
      stamp('GERMANY · GERMANY · GERMANY', 'us', x=200, y=140, dt=1.6, size=96, rot=-3, plate=True),
      type='illustration', emotion='wonder', intensity=0.7, pad=0.3, sound=[('stamp', 1.6, 1.0, 0.5)])
 beat("Germany beat Poland two nil. Right. Then Germany lose to Croatia, two one. Wrong.",
-     dict(kind='ledger', title='EURO 2008', us=PICKS, them='RESULT', compact=True,
-          rows=[('v POLAND', 'GERMANY', 'GERMANY 2–0'), ('v CROATIA', 'GERMANY', 'CROATIA 2–1')], row_at=[0.4, 2.6]),
+     dict(kind='ledger', title='EURO 2008 · GERMANY', us=PICKS, them='SCORE', compact=True,
+          rows=[('v POLAND', 'GER', '2–0'), ('v CROATIA', 'GER', '1–2')], row_at=[0.4, 2.6]),
      type='record', emotion='wonder', intensity=0.7, pad=0.3)
 beat("Then they beat Austria, Portugal and Turkey, and Germany are in the final. Against Spain.",
-     dict(kind='ledger', title='EURO 2008', us=PICKS, them='RESULT', compact=True,
-          rows=[('v AUSTRIA', 'GERMANY', 'GERMANY 1–0'), ('v PORTUGAL', 'GERMANY', 'GERMANY 3–2'), ('v TURKEY', 'GERMANY', 'GERMANY 3–2')],
+     dict(kind='ledger', title='EURO 2008 · GERMANY', us=PICKS, them='SCORE', compact=True,
+          rows=[('v AUSTRIA', 'GER', '1–0'), ('v PORTUGAL', 'GER', '3–2'), ('v TURKEY', 'GER', '3–2')],
           row_at=[0.6, 1.4, 2.2]),
      type='record', emotion='tension', intensity=0.8, pad=0.3)
 beat("Paul picks Germany. Spain win the final, one nil.", img('despair', 'push', veil=0.05),
@@ -192,23 +192,23 @@ beat("And this time, the cameras come too. His picks are shown live on televisio
      stamp('LIVE', 'them', x=260, y=160, dt=1.8, size=170, rot=-4, plate=True),
      type='illustration', emotion='wonder', intensity=0.7, pad=0.3, sound=[('stamp', 1.8, 1.0, 0.6)])
 beat("First match: Germany against Australia. Paul picks Germany. Germany win four nil.",
-     dict(kind='ledger', title='WORLD CUP 2010', us=PICKS, them='RESULT', compact=True,
-          rows=[('v AUSTRALIA', 'GERMANY', 'GERMANY 4–0')], row_at=[1.6]),
+     dict(kind='ledger', title='WORLD CUP 2010 · GERMANY', us=PICKS, them='SCORE', compact=True,
+          rows=[('v AUSTRALIA', 'GER', '4–0')], row_at=[1.6]),
      type='record', emotion='joy', intensity=0.7, pad=0.3)
 beat("Second match: Germany against Serbia. And this time, Paul does not pick Germany. He opens the box with the Serbian flag.",
      img('pick', 'push', veil=0.0), type='illustration', emotion='tension', intensity=0.8, pad=0.3)
 beat("Serbia win, one nil.", img('net', 'slam', veil=0.0), word('SERBIA 1–0', bg='them', size=230, small='WORLD CUP 2010 · GROUP D', at=0.6),
      type='record', emotion='dread', intensity=0.9, pad=0.4, sound=[('groan', 0.4, 2.0, 0.4)])
 beat("Ghana. He picks Germany, and Germany win one nil. Then the last sixteen. Germany against England.",
-     dict(kind='ledger', title='WORLD CUP 2010', us=PICKS, them='RESULT', compact=True,
-          rows=[('v SERBIA', 'SERBIA', 'SERBIA 1–0'), ('v GHANA', 'GERMANY', 'GERMANY 1–0')], row_at=[0.4, 1.4]),
+     dict(kind='ledger', title='WORLD CUP 2010 · GERMANY', us=PICKS, them='SCORE', compact=True,
+          rows=[('v SERBIA', 'SRB', '0–1'), ('v GHANA', 'GER', '1–0')], row_at=[0.4, 1.4]),
      type='record', emotion='tension', intensity=0.7, pad=0.3)
 beat("The English-born octopus picks Germany. Germany win four one.", img('ferry', 'pull', veil=0.1),
      word('GERMANY 4–1|ENGLAND', bg='us', size=190, small='LAST 16 · PAUL PICKED GERMANY', at=2.4),
      type='record', emotion='joy', intensity=0.8, pad=0.3)
 beat("The quarter-final. Germany against Argentina. He picks Germany. Four nil.",
-     dict(kind='ledger', title='WORLD CUP 2010', us=PICKS, them='RESULT', compact=True,
-          rows=[('v ENGLAND', 'GERMANY', 'GERMANY 4–1'), ('v ARGENTINA', 'GERMANY', 'GERMANY 4–0')], row_at=[0.4, 1.6]),
+     dict(kind='ledger', title='WORLD CUP 2010 · GERMANY', us=PICKS, them='SCORE', compact=True,
+          rows=[('v ENGLAND', 'GER', '4–1'), ('v ARGENTINA', 'GER', '4–0')], row_at=[0.4, 1.6]),
      type='record', emotion='joy', intensity=0.8, pad=0.3)
 beat("In Argentina, people were not amused. A chef posted a recipe for him online.", img('pub', 'push', veil=0.05),
      stamp('A RECIPE', 'them', x=520, y=460, dt=2.4, size=150, rot=-3, plate=True),
@@ -251,8 +251,8 @@ beat("A government minister, Miguel Sebastián, went further. He called for Paul
      img('signing', 'push', veil=0.05), stamp('FREE TRANSFER', 'us', x=240, y=460, dt=3.2, size=140, rot=-3, plate=True),
      type='illustration', emotion='wonder', intensity=0.8, pad=0.3, sound=[('stamp', 3.2, 1.0, 0.6)])
 beat("Meanwhile, Germany still had one match to play. Third place, against Uruguay. Paul picked Germany. Germany won, three two.",
-     dict(kind='ledger', title='WORLD CUP 2010', us=PICKS, them='RESULT', compact=True,
-          rows=[('v SPAIN', 'SPAIN', 'SPAIN 1–0'), ('v URUGUAY', 'GERMANY', 'GERMANY 3–2')], row_at=[0.4, 3.0]),
+     dict(kind='ledger', title='WORLD CUP 2010 · GERMANY', us=PICKS, them='SCORE', compact=True,
+          rows=[('v SPAIN', 'ESP', '0–1'), ('v URUGUAY', 'GER', '3–2')], row_at=[0.4, 3.0]),
      type='record', emotion='calm', intensity=0.7, pad=0.3)
 beat("Seven Germany matches. Seven right. Including the two Germany lost.",
      dict(kind='tally', title='GERMANY · WORLD CUP 2010', cells=[('RIGHT', '7'), ('WRONG', '0')]),
@@ -325,7 +325,7 @@ beat("Some scientists suggested octopuses are drawn to strong horizontal stripes
      word('HORIZONTAL|STRIPES', bg='us', size=210, small='ONE THEORY', at=2.6),
      type='record', emotion='wonder', intensity=0.8, pad=0.3)
 beat("Look at the flags he chose. Germany. Spain. Serbia. All of them, horizontal stripes.", img('pick', 'push', veil=0.0),
-     stamp('STRIPES', 'them', x=980, y=160, dt=2.6, size=170, rot=-4, plate=True),
+     stamp('STRIPES', 'them', x=760, y=160, dt=2.6, size=170, rot=-4, plate=True),
      type='illustration', emotion='wonder', intensity=0.9, pad=0.4, sound=[('stamp', 2.6, 1.0, 0.6)])
 beat("Proof? No. A coin toss, a story we chose to remember, and maybe a taste for stripes.", img('tank', 'pull', veil=0.1),
      type='turning', emotion='calm', intensity=0.8, pad=0.8, meta=dict(turn=True))
