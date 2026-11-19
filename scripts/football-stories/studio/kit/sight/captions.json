@@ -446,6 +446,20 @@
 ],
 "id": "beat:job-cb5fda72-1548-41f4-99ad-47978b9f1ff9/ramatgan-ground-226819f8489279d3"
 },
+"097f8181555d52f5": {
+"caption": "A young supporter leaps up with joy while waving a scarf.",
+"people": 1,
+"faces": true,
+"action": "leaping for joy",
+"place": "abstract",
+"era": "1980s",
+"mood": "joy",
+"avoid": [
+"quiet reflection",
+"match loss"
+],
+"id": "lib:sup-young-fl2-kr"
+},
 "0991e97a08289ce7": {
 "caption": "Several football players in red and white striped kits celebrate with their arms around each other in front of cheering fans.",
 "people": 10,
@@ -2463,6 +2477,19 @@
 ],
 "id": "cut:common/fig-celebrate-knee-slide-b-kr"
 },
+"381ed899c87f80a6": {
+"caption": "A papercut artwork shows a crowd celebrating and lifting a trophy amidst confetti.",
+"people": 12,
+"faces": false,
+"action": "lifting a trophy in celebration",
+"place": "stadium",
+"mood": "joy",
+"avoid": [
+"actual players celebrating",
+"real stadium crowds"
+],
+"id": "lib:thumb-hero-trophy-kr"
+},
 "3893cbdc5cdca5a2": {
 "caption": "An illustrated row of football fans stand along a stadium terrace viewed from behind.",
 "people": 14,
@@ -2559,6 +2586,19 @@
 "actual kitchen baking"
 ],
 "id": "lib:obj-pie-n"
+},
+"39e1d0393bdf8320": {
+"caption": "The crest of PAS Giannina featuring an ox inside a laurel wreath and the year 1966.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "ΠΑ.Σ. ΓΙΑΝΝΙΝΑ ΑΠΕΙ ΡΩΤΑΝ 1966",
+"avoid": [
+"live cattle farming",
+"ancient mythology documentary"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/pas-giannina-ae339ca3267ab5fe"
 },
 "39f163d9e44c8139": {
 "caption": "A cardboard model of a stadium viewed from pitch level under bright daylight.",
@@ -2864,6 +2904,19 @@
 ],
 "id": "beat:common/radio-street-b-kr"
 },
+"42d39d488177721b": {
+"caption": "An adult and a child seen from behind walk together wearing red scarves and patchwork coats.",
+"people": 2,
+"faces": false,
+"action": "walking together",
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"stadium crowds",
+"single adult portraits"
+],
+"id": "lib:sup-young-kr"
+},
 "42eb5cf27a07674f": {
 "caption": "A large stadium clock dominates the view overlooking a floodlit night match with fans watching from the stands.",
 "people": 15,
@@ -3123,6 +3176,19 @@
 "full time"
 ],
 "id": "beat:common/kick-off-centre-kr"
+},
+"4a290d089d8a5e44": {
+"caption": "The round maroon crest of Servette FC with a large letter S and the founding year 1890, topped by a star.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "SERVETTE FC GENEVE 1890",
+"avoid": [
+"hotel service industry",
+"astronomy show"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/servette-fc-7666bba12b5637f4"
 },
 "4a4909aa137bbce3": {
 "caption": "A man in a tracksuit points forward while standing.",
@@ -3394,6 +3460,20 @@
 "score sheet"
 ],
 "id": "prop:tactics_board"
+},
+"4ed3b49962c5e94b": {
+"caption": "A young male football player in a white kit squats down posing for a team photo.",
+"people": 1,
+"faces": true,
+"action": "squatting for portrait",
+"place": "pitch",
+"era": "2020s",
+"mood": "calm",
+"avoid": [
+"Goal celebration",
+"Match action"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/panathinaikos-fc-2026-27-pre-season-away-kit-49635-76f4ed78b2946c15"
 },
 "4ef8e3fb69f958eb": {
 "caption": "A papercraft model of a bass drum with figures standing around it.",
@@ -4468,6 +4548,20 @@
 ],
 "id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/42104452-c662af46cb4c170f"
 },
+"66640ffab413d002": {
+"caption": "A dark green football jersey with pinstripes and white trim is displayed flat.",
+"people": 0,
+"faces": false,
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"text": "SUPERBET",
+"avoid": [
+"Player wearing the shirt",
+"Match action"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/panathinaikos-fc-2026-27-home-kit-495731-4e2e3741322f2f0e"
+},
 "679cd0d1e4112fc3": {
 "caption": "An illustrated supporter from behind holds up a red scarf with both hands.",
 "people": 1,
@@ -4736,6 +4830,20 @@
 "live match action"
 ],
 "id": "lib:ppl-tv-presenter-fl1-kr"
+},
+"6f0276aa0a204500": {
+"caption": "The crest of PAOK featuring a double-headed eagle and the year 1926.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "defiance",
+"text": "1926 PAOK",
+"avoid": [
+"real birds",
+"historical wildlife documentary",
+"Greek history lesson"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/paok-thessaloniki-00e796928695eb18"
 },
 "6f15a14da05f024e": {
 "caption": "Character turnarounds and item collections display various men with vintage clothing and accessories.",
@@ -5694,6 +5802,19 @@
 ],
 "id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/misc-2026-05-12-abcdfaee-478f-4a2a-b96f-a0e1975f9d-560e121283a9cc43"
 },
+"86250fc8e2d91f30": {
+"caption": "A club crest featuring a figure carrying a heavy stone and the year 1926 is shown.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "1926",
+"avoid": [
+"Live match footage",
+"Stadium crowd"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/panetolikos-gfs-d9ca973508a9eeb6"
+},
 "8664fb8608cf45f8": {
 "caption": "An empty stadium terrace features a red and white scarf and a trophy resting on the concrete steps.",
 "people": 0,
@@ -5876,6 +5997,21 @@
 ],
 "id": "lib:sup-turnstile-kr"
 },
+"8a3dad63f164c3f0": {
+"caption": "A vintage newspaper layout frames a papercut diorama of a crowded stadium.",
+"people": 10,
+"faces": false,
+"action": "spectators watching a stadium event",
+"place": "stadium",
+"era": "1950s",
+"mood": "calm",
+"text": "THE WINN PRESS",
+"avoid": [
+"modern digital media",
+"live television broadcast"
+],
+"id": "lib:tr-newsprint-n"
+},
 "8a4a5a166538a932": {
 "caption": "A collage wall of empty picture frames and red pennants arches over a crowd of fans waving flags.",
 "people": 30,
@@ -5957,6 +6093,19 @@
 "quiet match"
 ],
 "id": "beat:common/terrace-full-b-kr"
+},
+"8cd75aaed453c0a7": {
+"caption": "The crest of PAS Lamia featuring a classical figure, blue and white stripes, and the year 1964.",
+"people": 1,
+"faces": true,
+"place": "abstract",
+"mood": "defiance",
+"text": "Π.Α.Σ. ΛΑΜΙΑ 1964",
+"avoid": [
+"live statue exhibition",
+"ancient Greece documentary"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/pas-lamia-1964-45919315054a060c"
 },
 "8ce91458bc72c67d": {
 "caption": "A silver medal with a football motif hanging from a red ribbon.",
@@ -6303,6 +6452,19 @@
 "text": "FC SION S",
 "avoid": "pitch action: graphic logo only",
 "id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/fc-sion-78c9252a871f779c"
+},
+"9523ac427a6aa4ec": {
+"caption": "A papercut artwork depicts a football player kicking a ball towards a goal in a stadium.",
+"people": 2,
+"faces": false,
+"action": "kicking a football",
+"place": "stadium",
+"mood": "tension",
+"avoid": [
+"real match photography",
+"digital video footage"
+],
+"id": "lib:thumb-hero-penalty-kr"
 },
 "954e5e1b731512d6": {
 "caption": "An illustrated monochrome football player in a kit sliding on the ground with one leg extended.",
@@ -6728,6 +6890,19 @@
 "crowd celebrations"
 ],
 "id": "beat:common/terrace-empty-dusk-n"
+},
+"a3203af47a2dadc7": {
+"caption": "A person seen from behind wears a dark patchwork coat and a bright red scarf.",
+"people": 1,
+"faces": false,
+"action": "standing away",
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"real stadium photographs",
+"historical match footage"
+],
+"id": "lib:sup-walk-kr"
 },
 "a41925c4da21db53": {
 "caption": "An elevated view of an old football ground filled with spectators waving red flags.",
@@ -7377,6 +7552,20 @@
 "floodlights"
 ],
 "id": "beat:job-cb5fda72-1548-41f4-99ad-47978b9f1ff9/shared-ground-1920s-ext-kr-7fhxx9-93ea71760778a1e5"
+},
+"afeb9df6373ad3de": {
+"caption": "Three male supporters wearing scarves walk along talking.",
+"people": 3,
+"faces": true,
+"action": "walking and talking",
+"place": "abstract",
+"era": "1970s",
+"mood": "calm",
+"avoid": [
+"matchday stadium scenes",
+"player transfers"
+],
+"id": "lib:sup-walk-fl2-kr"
 },
 "b0b1ee2912721971": {
 "caption": "An illustrated football player in a light-coloured kit walks along barefoot, holding his boots.",
@@ -8077,6 +8266,20 @@
 "damaged equipment"
 ],
 "id": "lib:ins-ball-spin-fl1-kr"
+},
+"bdaf311310751882": {
+"caption": "Three male supporters are walking together, chatting and wearing winter scarves.",
+"people": 3,
+"faces": true,
+"action": "walking and talking",
+"place": "abstract",
+"era": "1970s",
+"mood": "camaraderie",
+"avoid": [
+"matchday pitch action",
+"trophy celebrations"
+],
+"id": "lib:sup-walk-fl1-kr"
 },
 "bdafce63885c0404": {
 "caption": "An illustrated manager in a red coat stands with arms crossed.",
@@ -9008,6 +9211,20 @@
 ],
 "id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/t7-slide-05-908a7e96a259466a"
 },
+"d67cf5bddb0e96fb": {
+"caption": "A young fan with painted cheeks jumps in the air with fists raised in celebration.",
+"people": 1,
+"faces": true,
+"action": "jumping in celebration",
+"place": "abstract",
+"era": "1980s",
+"mood": "joy",
+"avoid": [
+"grief or defeat",
+"sad moments"
+],
+"id": "lib:sup-young-fl1-kr"
+},
 "d703abc8e798b8b5": {
 "caption": "A red and white heraldic shield crest featuring a gold star and the club name.",
 "people": 0,
@@ -9207,6 +9424,21 @@
 "arrested fan"
 ],
 "id": "lib:sup-turnstile-fl1-kr"
+},
+"dc16236bdfd91d6a": {
+"caption": "A football player in a green kit runs across the pitch during a match.",
+"people": 1,
+"faces": true,
+"action": "running on pitch",
+"place": "pitch",
+"era": "2020s",
+"mood": "tension",
+"text": "SUPERBET",
+"avoid": [
+"Player celebrating a goal",
+"Post-match interview"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/panathinaikos-fc-2026-27-pre-season-home-kit-49635-71125eb24be144ca"
 },
 "dc52acbbafeef500": {
 "caption": "Black curved paper cuts overlap against a cream background.",
@@ -9857,6 +10089,20 @@
 ],
 "id": "lib:obj-tifo-panel-fl1-kr"
 },
+"e8d6abc5b9287a28": {
+"caption": "A white football jersey with dark green stripes and sponsor logo is laid out flat on a plain background.",
+"people": 0,
+"faces": false,
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"text": "SUPERBET",
+"avoid": [
+"Player wearing the shirt",
+"Match action"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/panathinaikos-fc-2026-27-away-kit-495732-aafba53c4d3c8ff9"
+},
 "e8f2cdde54c05b35": {
 "caption": "A stadium diorama filled with paper cutout fans in the stands and a pitch below.",
 "people": 40,
@@ -10092,6 +10338,19 @@
 ],
 "id": "beat:job-19324d9d-b95c-4388-a19b-062dd2002d03/gemini-generated-image-10ro9y10ro9y10ro-56608c86f047ad16"
 },
+"ec81c86d26cb44e6": {
+"caption": "The crest of NFC Volos featuring red and blue stripes, footballs for letters, and a map outline.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "N.F.C. VOLOS",
+"avoid": [
+"geography textbook map",
+"cartography tutorial"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/volos-nps-3ec03ab74954210a"
+},
 "ece3725b08ff0d47": {
 "caption": "A paper cut style landscape showcases a large football stadium nestled among city rooftops at dawn.",
 "people": 0,
@@ -10254,6 +10513,19 @@
 ],
 "id": "lib:sky-snow-fl1-kr"
 },
+"ef8694da88344049": {
+"caption": "The crest of FC Volos featuring red and white stripes, football letters, and a geographic silhouette.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "F.C. VOLOS",
+"avoid": [
+"national census report",
+"travel agency logo"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/volos-nps-c4dafdb8747566bd"
+},
 "efce330dd96441a8": {
 "caption": "A scattered collage of aged newspaper style print layouts over a dark background.",
 "people": 0,
@@ -10389,6 +10661,20 @@
 "architecture"
 ],
 "id": "beat:job-cb5fda72-1548-41f4-99ad-47978b9f1ff9/bloomnewday-ground-3bc31851ced2919f"
+},
+"f31951a978524858": {
+"caption": "A black football jersey with purple and green accents is laid out flat on a surface.",
+"people": 0,
+"faces": false,
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"text": "SUPERBET",
+"avoid": [
+"Player wearing the shirt",
+"Match action"
+],
+"id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/panathinaikos-fc-2026-27-third-kit-495733-3fed6f0ebc08f9bc"
 },
 "f3feb0c7a42e01a9": {
 "caption": "Layered paper cutouts create an abstract representation of wavy, flowing lines in shades of grey and cream.",
