@@ -1093,19 +1093,19 @@
    "person_id": "pl_dc836647ad",
    "name": "Stelios Konstantinidis",
    "code": "AEK–15",
-   "status": "photo",
-   "frame": "archive",
+   "status": "silhouette",
+   "frame": null,
    "qid": "Q113563561",
-   "source": {
-    "file": "Stefanos Konstantinidis.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Stefanos_Konstantinidis.jpg",
-    "author": "Unknown authorUnknown author",
-    "license": "Public domain",
-    "licenseUrl": "",
-    "date": "1932",
-    "via": "commons"
+   "source": null,
+   "traits": {
+    "skin": "#D7A57E",
+    "hair": "#3B2A20",
+    "hairName": "dark",
+    "length": "short",
+    "beard": false,
+    "moustache": false,
+    "measured": false
    },
-   "traits": null,
    "file": "/album/stickers/aek-athens/15.webp"
   },
   "aek-athens:16": {
@@ -2702,19 +2702,19 @@
    "person_id": "pl_ddac5edd4c",
    "name": "Moustafa Abdou",
    "code": "AHL–06",
-   "status": "photo",
-   "frame": "archive",
+   "status": "silhouette",
+   "frame": null,
    "qid": "Q45030882",
-   "source": {
-    "file": "Medhat Montasser & Mostafa Abdou - مدحت منتصر و مصطفى عبده.JPG",
-    "page": "https://commons.wikimedia.org/wiki/File:Medhat_Montasser_%26_Mostafa_Abdou_-_%D9%85%D8%AF%D8%AD%D8%AA_%D9%85%D9%86%D8%AA%D8%B5%D8%B1_%D9%88_%D9%85%D8%B5%D8%B7%D9%81%D9%89_%D8%B9%D8%A8%D8%AF%D9%87.JPG",
-    "author": "مدحت منتصر",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "date": "1998-10-16",
-    "via": "commons"
+   "source": null,
+   "traits": {
+    "skin": "#D7A57E",
+    "hair": "#3B2A20",
+    "hairName": "dark",
+    "length": "medium",
+    "beard": false,
+    "moustache": true,
+    "measured": false
    },
-   "traits": null,
    "file": "/album/stickers/al-ahly/6.webp"
   },
   "al-ahly:7": {
@@ -2839,12 +2839,12 @@
    "frame": "archive",
    "qid": "Q1290965",
    "source": {
-    "file": "Hossam Hassan.png",
-    "page": "https://commons.wikimedia.org/wiki/File:Hossam_Hassan.png",
-    "author": "Al AHLY TV",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "date": "2018-08-07",
+    "file": "Hassan Ibrahim, 1952.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Hassan_Ibrahim,_1952.jpg",
+    "author": "Not credited",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "date": "1952; Uploaded on 2013-08-07 13:30:24",
     "via": "commons"
    },
    "traits": null,
@@ -2972,12 +2972,12 @@
    "frame": "archive",
    "qid": "Q578145",
    "source": {
-    "file": "Mohamed Amine Meskini.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Mohamed_Amine_Meskini.jpg",
-    "author": "Bahbouhe",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "date": "2018-08-17 20:08:00",
+    "file": "Shady Mohamed.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Shady_Mohamed.jpg",
+    "author": "Al Ahly Tv",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "date": "2021-06-20",
     "via": "commons"
    },
    "traits": null,
@@ -9790,19 +9790,19 @@
    "person_id": "pl_ba63c1c1de",
    "name": "Joshua Cohen",
    "code": "MHA–26",
-   "status": "photo",
-   "frame": "archive",
+   "status": "silhouette",
+   "frame": null,
    "qid": "Q21067416",
-   "source": {
-    "file": "MHFC-Itzik-Cohen.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:MHFC-Itzik-Cohen.jpg",
-    "author": "This photo was contributed by  Maccabi Haifa Football Club \n\nTo view all images ",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "date": "2014-12-15",
-    "via": "commons"
+   "source": null,
+   "traits": {
+    "skin": "#D7A57E",
+    "hair": "#3B2A20",
+    "hairName": "dark",
+    "length": "short",
+    "beard": false,
+    "moustache": false,
+    "measured": false
    },
-   "traits": null,
    "file": "/album/stickers/maccabi-haifa/26.webp"
   },
   "maccabi-haifa:27": {
@@ -9847,19 +9847,19 @@
    "person_id": "pl_76a5a2f17a",
    "name": "Din David",
    "code": "MHA–29",
-   "status": "photo",
-   "frame": "archive",
+   "status": "silhouette",
+   "frame": null,
    "qid": "Q23888352",
-   "source": {
-    "file": "Shai Ben David - 27 January 2016.JPG",
-    "page": "https://commons.wikimedia.org/wiki/File:Shai_Ben_David_-_27_January_2016.JPG",
-    "author": "Botend",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "date": "2016-01-27 21:59:32",
-    "via": "commons"
+   "source": null,
+   "traits": {
+    "skin": "#D7A57E",
+    "hair": "#3B2A20",
+    "hairName": "dark",
+    "length": "short",
+    "beard": false,
+    "moustache": false,
+    "measured": false
    },
-   "traits": null,
    "file": "/album/stickers/maccabi-haifa/29.webp"
   },
   "maccabi-haifa:30": {
@@ -11410,19 +11410,19 @@
    "person_id": "pl_424c9dd21e",
    "name": "Mady Camara",
    "code": "OLY–32",
-   "status": "photo",
-   "frame": "archive",
+   "status": "silhouette",
+   "frame": null,
    "qid": "Q30122316",
-   "source": {
-    "file": "Aguibou Camara (Testspiel, 2022-07-02) 46 (cropped).jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Aguibou_Camara_(Testspiel,_2022-07-02)_46_(cropped).jpg",
-    "author": "Werner100359",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "date": "2022-07-02 15:13:27",
-    "via": "commons"
+   "source": null,
+   "traits": {
+    "skin": "#D7A57E",
+    "hair": "#3B2A20",
+    "hairName": "dark",
+    "length": "short",
+    "beard": false,
+    "moustache": false,
+    "measured": false
    },
-   "traits": null,
    "file": "/album/stickers/olympiacos/32.webp"
   },
   "olympiacos:33": {
@@ -11752,19 +11752,19 @@
    "person_id": "pl_fb3c07e268",
    "name": "Louis Christodoulou",
    "code": "PAO–14",
-   "status": "photo",
-   "frame": "club",
+   "status": "silhouette",
+   "frame": null,
    "qid": "Q105047466",
-   "source": {
-    "file": "Fanis Christodoulou Panathinaikos.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Fanis_Christodoulou_Panathinaikos.jpg",
-    "author": "Trifilara",
-    "license": "Public domain",
-    "licenseUrl": "",
-    "date": "1998",
-    "via": "commons"
+   "source": null,
+   "traits": {
+    "skin": "#D7A57E",
+    "hair": "#3B2A20",
+    "hairName": "dark",
+    "length": "medium",
+    "beard": false,
+    "moustache": true,
+    "measured": false
    },
-   "traits": null,
    "file": "/album/stickers/panathinaikos/14.webp"
   },
   "panathinaikos:15": {
@@ -12927,19 +12927,19 @@
    "person_id": "pl_f2909e8737",
    "name": "Aziz Jawad",
    "code": "RCA–11",
-   "status": "photo",
-   "frame": "archive",
+   "status": "silhouette",
+   "frame": null,
    "qid": null,
-   "source": {
-    "file": "Vice President Jawad Nazir Trust Asad Raja at Edhi Homes.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Vice_President_Jawad_Nazir_Trust_Asad_Raja_at_Edhi_Homes.jpg",
-    "author": "Jawadmnazir",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "date": "2012-01-28",
-    "via": "commons"
+   "source": null,
+   "traits": {
+    "skin": "#D7A57E",
+    "hair": "#3B2A20",
+    "hairName": "dark",
+    "length": "medium",
+    "beard": false,
+    "moustache": false,
+    "measured": false
    },
-   "traits": null,
    "file": "/album/stickers/raja-casablanca/11.webp"
   },
   "raja-casablanca:12": {
@@ -15524,19 +15524,19 @@
    "person_id": "pl_91241aa78a",
    "name": "Faouzi Abdelghani",
    "code": "WAC–18",
-   "status": "photo",
-   "frame": "archive",
+   "status": "silhouette",
+   "frame": null,
    "qid": "Q2679224",
-   "source": {
-    "file": "Mohammed Faouzi, 2008.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Mohammed_Faouzi,_2008.jpg",
-    "author": "Luctor",
-    "license": "Public domain",
-    "licenseUrl": "",
-    "date": "2008-02-23",
-    "via": "commons"
+   "source": null,
+   "traits": {
+    "skin": "#D7A57E",
+    "hair": "#3B2A20",
+    "hairName": "dark",
+    "length": "short",
+    "beard": false,
+    "moustache": false,
+    "measured": false
    },
-   "traits": null,
    "file": "/album/stickers/wydad-casablanca/18.webp"
   },
   "wydad-casablanca:19": {
