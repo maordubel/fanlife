@@ -474,6 +474,20 @@
 ],
 "id": "beat:olympiacos-maccabi-2024/06-victory-away-end"
 },
+"09b6d15822f611fe": {
+"caption": "A white short-sleeved football shirt with green details and sponsor text laid flat.",
+"people": 0,
+"faces": false,
+"place": "room",
+"era": "2000s",
+"mood": "calm",
+"text": "COSMOTE",
+"avoid": [
+"player wearing jersey",
+"match action"
+],
+"id": "beat:job-92160ae2-eda7-4b60-bac8-46d538d8e5f7/panathinaikos-fc-2008-09-away-kit-55634-3dfc69bb82baf24e"
+},
 "09c8399622856683": {
 "caption": "A paper-cutout figure wears a red scarf in front of a stadium crowd.",
 "people": 1,
@@ -606,6 +620,18 @@
 "real match photography"
 ],
 "id": "cut:common/fig-supporter-child-shoulders-c-kr"
+},
+"0c54f4c55e70f34a": {
+"caption": "A paper-cut artwork featuring a green shamrock surrounded by decorative circular frames.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"real plants",
+"photographs of players"
+],
+"id": "beat:job-92160ae2-eda7-4b60-bac8-46d538d8e5f7/paper-cut-shamrock-diorama-emblem-04fd69d3-918db64322e57cbd"
 },
 "0cc6ad182aaaf924": {
 "caption": "A retro bus driver stands in the open doorway of a red and white bus.",
@@ -1796,6 +1822,18 @@
 ],
 "id": "beat:hapoel-tel-aviv-1999-00/clipboard-player-night"
 },
+"294837a3ec5add60": {
+"caption": "A handcrafted multi-layered papercut shield emblem featuring a prominent green shamrock over striped green and white background.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"real stadium display",
+"live match action"
+],
+"id": "beat:job-92160ae2-eda7-4b60-bac8-46d538d8e5f7/shamrock-paper-cut-diorama-emblem-6315b2dd-35d11208c83bb773"
+},
 "299e9a03823badb6": {
 "caption": "A group of travelers with bags stand by terminal windows looking out at an airplane on the tarmac.",
 "people": 8,
@@ -2135,6 +2173,21 @@
 ],
 "id": "beat:zrinjski-az-2023/bijeli-brijeg-collage"
 },
+"2fe6e54dfc040287": {
+"caption": "A paper-cut diorama style illustration of football players running with a ball on the pitch.",
+"people": 3,
+"faces": true,
+"action": "dribbling the ball",
+"place": "pitch",
+"era": "2000s",
+"mood": "tension",
+"text": "uefa.com 19",
+"avoid": [
+"real photographs",
+"actual video footage"
+],
+"id": "beat:job-92160ae2-eda7-4b60-bac8-46d538d8e5f7/paper-cut-style-design-5909ea22-fd8573e5ce9afb8e"
+},
 "30455ad1d288def6": {
 "caption": "An illustrated footballer in a red shirt and white shorts runs dynamically with arms pumping.",
 "people": 1,
@@ -2231,6 +2284,19 @@
 ],
 "id": "lib:city-hamburg-fl1-kr"
 },
+"31741e8e5ae4e3a5": {
+"caption": "A trivia quiz graphic with retro styling poses a question about an archive detail with four multiple choice options labeled A, B, C, and D.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "FAN LIFE NERDS ONLY! WHICH ARCHIVE DETAIL CAN ONLY A TRUE SUPPORTER REMEMBER? A OPTION ONE B OPTION TWO C OPTION THREE D OPTION FOUR PANATHINAIKOS TRIVIA EXPERT FANLIFE.DUBELTEAM.COM",
+"avoid": [
+"live match coverage",
+"stadium stands"
+],
+"id": "beat:job-92160ae2-eda7-4b60-bac8-46d538d8e5f7/t10-nerds-panathinaikos-7ae19d4cd25a2ea1"
+},
 "31bec785a939e3b0": {
 "caption": "A close-up view of a football player's boots and socks standing on a textured surface.",
 "people": 1,
@@ -2325,6 +2391,20 @@
 "doorbells"
 ],
 "id": "cut:common/close-hand-press-n"
+},
+"34aad18df1a9d208": {
+"caption": "A green Panathinaikos home football shirt laid flat against a white background.",
+"people": 0,
+"faces": false,
+"place": "studio",
+"era": "2000s",
+"mood": "calm",
+"text": "COSMOTE",
+"avoid": [
+"wearing the kit",
+"live match action"
+],
+"id": "beat:job-92160ae2-eda7-4b60-bac8-46d538d8e5f7/panathinaikos-fc-2009-10-home-kit-55633-68433178d0f46d1e"
 },
 "351ef9c8d2636d02": {
 "caption": "A mixed-media collage depicts a supporter from behind wearing a red scarf on stadium steps.",
@@ -3217,6 +3297,21 @@
 "corner kick"
 ],
 "id": "lib:ground-2010s-int-fl1-kr"
+},
+"4afd6fe43a69a7ba": {
+"caption": "A paper-cut style portrait of a celebrating football player with arms raised in front of a stadium crowd.",
+"people": 50,
+"faces": true,
+"action": "celebrating a goal",
+"place": "stadium",
+"era": "2000s",
+"mood": "joy",
+"text": "COSMOTE",
+"avoid": [
+"real celebration",
+"photograph of a player"
+],
+"id": "beat:job-92160ae2-eda7-4b60-bac8-46d538d8e5f7/design-papercut-style-image-822b95a6-941df6c51a028d47"
 },
 "4b1250a3d7e0000a": {
 "caption": "An illustrated football player in a red jersey and white shorts celebrates with arms outstretched from behind.",
@@ -4713,6 +4808,20 @@
 ],
 "id": "beat:job-19324d9d-b95c-4388-a19b-062dd2002d03/unnamed-7-151017148fe428de"
 },
+"6acc7012cb8a8903": {
+"caption": "A white short-sleeved football jersey displayed on a mannequin torso.",
+"people": 0,
+"faces": false,
+"place": "room",
+"era": "2000s",
+"mood": "calm",
+"text": "COSMOTE",
+"avoid": [
+"real player on pitch",
+"live match photo"
+],
+"id": "beat:job-92160ae2-eda7-4b60-bac8-46d538d8e5f7/panathinaikos-fc-2009-10-away-kit-55632-f06c1e037115094e"
+},
 "6bb8521c1a39bca9": {
 "caption": "A low-angle papercraft view shows a football player standing over a ball on the pitch with a stadium in the background.",
 "people": 1,
@@ -4940,6 +5049,20 @@
 ],
 "id": "beat:common/old-photo-wall-b-kr"
 },
+"6f9774e4cd60f761": {
+"caption": "A black Panathinaikos third football shirt hanging on a hanger against a dark background.",
+"people": 0,
+"faces": false,
+"place": "studio",
+"era": "2000s",
+"mood": "calm",
+"text": "COSMOTE",
+"avoid": [
+"wearing the kit",
+"live match action"
+],
+"id": "beat:job-92160ae2-eda7-4b60-bac8-46d538d8e5f7/panathinaikos-fc-2009-10-third-kit-55631-1e4d850f80d9a613"
+},
 "700f29f423ac48af": {
 "caption": "A crowd of people stand facing away with arms and scarves raised.",
 "people": 15,
@@ -5130,6 +5253,21 @@
 ],
 "id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/panathinaikos-fc-2018-19-gk-home-kit-124862-73b58df25f737962"
 },
+"74468cd838948fb5": {
+"caption": "An elevated view of a football stadium during a night match, with digital player position overlays on the pitch.",
+"people": 100,
+"faces": false,
+"action": "football match in progress",
+"place": "stadium",
+"era": "2000s",
+"mood": "tension",
+"text": "Vodafone, SONY, Ford, Mastercard",
+"avoid": [
+"real match footage",
+"live broadcast angle"
+],
+"id": "beat:commons-job-92160ae2-eda7-4b60-bac8-46d538d8e5f7/4851150"
+},
 "7532d196409df36e": {
 "caption": "An illustrated paper-craft style image of a player in a red kit kneeling on the grass with head bowed in a packed stadium.",
 "people": 12,
@@ -5239,6 +5377,21 @@
 "clear player portraits"
 ],
 "id": "beat:job-cb5fda72-1548-41f4-99ad-47978b9f1ff9/allenbyshops-ground-01a7f05113d27e3e"
+},
+"768b6ce227c69215": {
+"caption": "A framed paper-cut artwork displaying multiple portraits of football players in team kits within arched windows.",
+"people": 10,
+"faces": true,
+"action": "posing for team portraits",
+"place": "room",
+"era": "2000s",
+"mood": "calm",
+"text": "COSMOTE",
+"avoid": [
+"actual players",
+"real dressing room"
+],
+"id": "beat:job-92160ae2-eda7-4b60-bac8-46d538d8e5f7/creating-paper-cut-design-8192693b-ef6954fad5dc2cff"
 },
 "77a8cb04cbe798ca": {
 "caption": "One hand hands over a folded red scarf to another outstretched hand.",
@@ -5997,6 +6150,19 @@
 ],
 "id": "lib:sup-turnstile-kr"
 },
+"8a2b1b0326a48982": {
+"caption": "A plain black circular ring on a cream background.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "Panathinaikos Mono",
+"avoid": [
+"solid circle",
+"filled crest"
+],
+"id": "beat:job-92160ae2-eda7-4b60-bac8-46d538d8e5f7/panathinaikos-crest-mono-512-7efc1e989eb242b2"
+},
 "8a3dad63f164c3f0": {
 "caption": "A vintage newspaper layout frames a papercut diorama of a crowded stadium.",
 "people": 10,
@@ -6549,6 +6715,20 @@
 ],
 "id": "beat:common/programme-seller-b-kr"
 },
+"97b34dd85e34451d": {
+"caption": "A green short-sleeved football shirt with white details and sponsor text laid flat.",
+"people": 0,
+"faces": false,
+"place": "room",
+"era": "2000s",
+"mood": "calm",
+"text": "COSMOTE",
+"avoid": [
+"player wearing jersey",
+"match action"
+],
+"id": "beat:job-92160ae2-eda7-4b60-bac8-46d538d8e5f7/panathinaikos-fc-2008-09-home-kit-55635-cd1cb6a50794a331"
+},
 "983b1fe608dae6f3": {
 "caption": "A wide exterior view of a stadium under dark storm clouds and rain.",
 "people": 0,
@@ -6630,6 +6810,21 @@
 "a manager sitting on the bench"
 ],
 "id": "cut:common/fig-celebrate-arms-b-kr"
+},
+"9ad41717bb3966b9": {
+"caption": "A vintage promotional graphic shows a phone displaying a footballer kicking a ball with text reading fan life, your club, your history, and play free.",
+"people": 1,
+"faces": true,
+"action": "footballer kicking ball",
+"place": "abstract",
+"era": "1970s",
+"mood": "calm",
+"text": "FAN LIFE YOUR CLUB. YOUR HISTORY. DID YOU KNOW? Go beyond the score. Play your club's story. PLAY FREE! FANLIFE.DUBELTEAM.COM",
+"avoid": [
+"actual match footage",
+"real player biography"
+],
+"id": "beat:job-92160ae2-eda7-4b60-bac8-46d538d8e5f7/rival-panathinaikos-d3dd1cd2fa174dd2"
 },
 "9b3142e75202ebeb": {
 "caption": "Three people sit around a kitchen table listening to a radio.",
@@ -6985,6 +7180,19 @@
 ],
 "id": "lib:sup-hug-fl2-kr"
 },
+"a61cbac1c81b627e": {
+"caption": "A solid green circle with a thin black border on a cream background.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "Panathinaikos Crest",
+"avoid": [
+"actual crest with details",
+"club badge close-up"
+],
+"id": "beat:job-92160ae2-eda7-4b60-bac8-46d538d8e5f7/panathinaikos-crest-full-1024-5f22130c7248a002"
+},
 "a622635653db75f8": {
 "caption": "An abstract, out-of-focus dark olive green background texture with a hint of vignette.",
 "people": 0,
@@ -7213,6 +7421,19 @@
 "floodlit pitch"
 ],
 "id": "beat:job-cb5fda72-1548-41f4-99ad-47978b9f1ff9/bloomoldstand-ground-d8eda3145e065c91"
+},
+"a99a033da9122173": {
+"caption": "A solid green square with small white text centered on it.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "Panathinaikos App Icon",
+"avoid": [
+"transparent background",
+"photograph"
+],
+"id": "beat:job-92160ae2-eda7-4b60-bac8-46d538d8e5f7/panathinaikos-app-icon-512-cfb413c5f1e816e6"
 },
 "a9a864f4f88b387f": {
 "caption": "A vintage team bus drives past a stadium in heavy rain.",
@@ -7538,6 +7759,20 @@
 "celebration"
 ],
 "id": "lib:ppl-player-shot-fl1-kr"
+},
+"af6ec4ecaae1b6eb": {
+"caption": "A dark blue short-sleeved football shirt with white details and sponsor text laid flat.",
+"people": 0,
+"faces": false,
+"place": "room",
+"era": "2000s",
+"mood": "calm",
+"text": "COSMOTE",
+"avoid": [
+"player wearing jersey",
+"match action"
+],
+"id": "beat:job-92160ae2-eda7-4b60-bac8-46d538d8e5f7/panathinaikos-fc-2008-09-third-kit-391401-762862827aa08359"
 },
 "af8714f9762a37ce": {
 "caption": "A paper-cutout model of fans walking toward a wooden football ground in the 1920s.",
@@ -8119,6 +8354,21 @@
 "historical black and white archive"
 ],
 "id": "beat:common/new-stadium-wide-b-kr"
+},
+"babe7efb44d31f04": {
+"caption": "A paper-cut diorama showing football players walking off a pitch past a scoreboard displaying Inter 0-1 Panathinaikos.",
+"people": 20,
+"faces": true,
+"action": "leaving the pitch after a win",
+"place": "stadium",
+"era": "2000s",
+"mood": "joy",
+"text": "INTER, PANATHINAIKOS, 0-1",
+"avoid": [
+"actual match photo",
+"live broadcast"
+],
+"id": "beat:job-92160ae2-eda7-4b60-bac8-46d538d8e5f7/make-paper-cut-design-a061fa68-f18bd3849c3f99d0"
 },
 "bad04fcfd9fae6d3": {
 "caption": "An illustrated referee stands with back turned, raising one arm to show a card.",
@@ -8967,6 +9217,18 @@
 "live players running"
 ],
 "id": "beat:common/scrapbook-desk-kr"
+},
+"d0efae1cd334decd": {
+"caption": "A paper-cut circular emblem featuring a green shamrock at the center with layered rings.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"real plants",
+"photographs of players"
+],
+"id": "beat:job-92160ae2-eda7-4b60-bac8-46d538d8e5f7/paper-cut-shamrock-emblem-134b7aa9-42189abd1dc30ad7"
 },
 "d18d87d3929a843a": {
 "caption": "An illustrated man climbs a fence while holding a megaphone and waving a scarf.",
@@ -9846,6 +10108,21 @@
 ],
 "id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/ae-larisa-51a08d15cefbed1c"
 },
+"e451d7e645a32e3d": {
+"caption": "A paper-cut diorama of a football stadium showing players celebrating a goal on the pitch with a scoreboard reading 0-1.",
+"people": 10,
+"faces": true,
+"action": "celebrating a goal",
+"place": "stadium",
+"era": "2000s",
+"mood": "joy",
+"text": "INTER 0-1 PANATHINAIKOS 1908",
+"avoid": [
+"real photographs",
+"actual video footage"
+],
+"id": "beat:job-92160ae2-eda7-4b60-bac8-46d538d8e5f7/paper-cut-style-design-0923c267-f174472d0d4c7a64"
+},
 "e47fabc2c8143b78": {
 "caption": "A papercraft figure of a man in dark clothes and a cap viewed from behind.",
 "people": 1,
@@ -10635,6 +10912,21 @@
 "a blueprint"
 ],
 "id": "lib:obj-season-ticket-book-n"
+},
+"f2a933966589e3c8": {
+"caption": "A layered paper-cut illustration of a player celebrating with a stadium crowd and stylized flames in the background.",
+"people": 50,
+"faces": true,
+"action": "celebrating with pyro effect",
+"place": "stadium",
+"era": "2000s",
+"mood": "defiance",
+"text": "COSMOTE, adidas",
+"avoid": [
+"real fire incident",
+"hooligan violence"
+],
+"id": "beat:job-92160ae2-eda7-4b60-bac8-46d538d8e5f7/designing-papercut-image-with-sy-2224ead0-d3f6bd310092567a"
 },
 "f2b86bb5c34d903e": {
 "caption": "A paper-cutout football is caught in the mesh of a goal net.",
