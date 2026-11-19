@@ -31,6 +31,12 @@ export const MAN_PX=15,PX_UP=MAN_PX/1.8
 let W=WIDE,VIEW_L=W/S
 const view=(w:number)=>{W=w;VIEW_L=W/S}
 export type Cam={L:number;D:number;t?:number}
+/** the ball on the screen, in logical pixels: two across under the camera, a pixel and a half at the far touchline (19.11.2026 — it was 1 and 1.5 and got lost on a phone) */
+export const ballRadius=(k:number)=>k>1.05?2:k>.9?1.5:1.25
+/** metres a second (scene units) above which the ball draws its trail: a pass rolls clean, a shot streaks */
+export const BALL_TRAIL_FROM=14
+/** how long the picture shakes after the net is hit, in scene seconds, and by how many logical pixels at most */
+export const NET_SHAKE={for:.34,px:1.5}
 /** whether this page prints the boards in one ink (rule 95) — set by the theatre before it draws */
 export const BOARDS={mono:false}
 const lerp=(a:number,b:number,u:number)=>a+(b-a)*u
@@ -54,7 +60,9 @@ export function draw(c:CanvasRenderingContext2D,sc:Scene,t:number,cam:Cam,yellow
  const near=Math.max(0,1-Math.abs((sc.dir>0?LENGTH:0)-bw.L)/30),want=clampCam(bw.L+sc.dir*4,lerp(bw.D,WIDTH/2,near*.45)-5)
  if(Number.isNaN(cam.L)){cam.L=want.L;cam.D=want.D;cam.t=t}else{const k=1-Math.exp(-Math.max(0,t-(cam.t??t))*5.5);cam.L+=(want.L-cam.L)*k;cam.D+=(want.D-cam.D)*k;cam.t=t}
  c.imageSmoothingEnabled=false
- ground(c,cam,P,t)
+ const hit=sc.cues.find(q=>q.kind==='net'&&t>=q.t&&t<q.t+1.6),since=hit?t-hit.t:Infinity
+ if(since<NET_SHAKE.for){c.fillStyle=P.ref;c.fillRect(0,0,W,H);const a=(1-since/NET_SHAKE.for)*NET_SHAKE.px;c.translate(snap(Math.sin(since*70)*a),snap(Math.cos(since*53)*a*.6))}
+ ground(c,cam,P,t,S,since<1.6?1-since/1.6:0)
  const net=(g:number)=>sc.dir===(g?1:-1)&&sc.cues.some(q=>q.kind==='net'&&t>=q.t&&t<q.t+.6)?t:null
  goal(c,cam,P,0,net(0));goal(c,cam,P,LENGTH,net(LENGTH))
  const card=sc.cues.find(q=>(q.kind==='card-yellow'||q.kind==='card-red')&&t>=q.t)
@@ -62,12 +70,15 @@ export function draw(c:CanvasRenderingContext2D,sc:Scene,t:number,cam:Cam,yellow
   const face=(Math.abs(dL)>.02?Math.sign(dL):Math.sign(bw.L-w.L)||1) as -1|1,speed=Math.hypot(p.x-q.x,p.y-q.y)/.08
   return {a,p,w,face,speed}}).sort((u,v)=>u.w.D-v.w.D)
  // the ball, drawn among the people at its own depth; it spins only while it travels, a turn every 0.7 m
- const prev=ballAt(sc.ball,Math.max(0,t-.06)),travel=Math.hypot(bs.x-prev.x,bs.y-prev.y)>.02
+ const prev=ballAt(sc.ball,Math.max(0,t-.06)),moved=Math.hypot(bs.x-prev.x,bs.y-prev.y),travel=moved>.02,pace=moved/.06
  let ballDrawn=false
  const drawBall=()=>{
-  const s=toScreen(bw.L,bw.D,cam),lift=bs.z*PX_UP*s.k,r=s.k>1.05?1.5:1,spin=travel?Math.floor((bs.x+bs.y)/.7)%2:0
+  const s=toScreen(bw.L,bw.D,cam),lift=bs.z*PX_UP*s.k,r=ballRadius(s.k),spin=travel?Math.floor((bs.x+bs.y)/.7)%2:0
   c.globalAlpha=Math.max(.35,1-bs.z/6);c.fillStyle=P.shadow;c.beginPath();c.ellipse(snap(s.x),snap(s.y),r*1.3,.6*s.k+.2,0,0,Math.PI*2);c.fill();c.globalAlpha=1
   const x=snap(s.x),y=snap(s.y-lift-r)
+  // a struck ball leaves two fading prints behind it (19.11.2026) — the eye follows a shot it could not follow before
+  if(pace>BALL_TRAIL_FROM)for(const [dt,al] of [[.1,.22],[.05,.42]] as const){const b=ballAt(sc.ball,Math.max(0,t-dt)),w2=toWorld(b.x,b.y,sc.dir),q=toScreen(w2.L,w2.D,cam);c.globalAlpha=al;c.fillStyle=P.ball;c.fillRect(snap(q.x)-r*.7,snap(q.y-b.z*PX_UP*q.k-r)-r*.7,r*1.4,r*1.4)}
+  c.globalAlpha=1;c.fillStyle=P.ref;c.fillRect(x-r-.5,y-r,r*2+1,r*2);c.fillRect(x-r,y-r-.5,r*2,r*2+1)
   c.fillStyle=P.ball;c.fillRect(x-r,y-r,r*2,r*2);c.fillStyle=P.ballDark;c.fillRect(x-r+(spin?r:0),y-r+(spin?0:r),r,r)
   ballDrawn=true}
  for(const {a,p,w,face,speed} of items){
@@ -87,20 +98,28 @@ export function tagAt(sc:Scene,id:string,t:number,cam:Cam,w:number){
  view(w);const a=sc.actors.find(x=>x.id===id)!,p=actorAt(a,t),wd=toWorld(p.x,p.y,sc.dir),s=toScreen(wd.L,wd.D,cam)
  return {x:s.x/W*100,y:(s.y-MAN_PX*s.k-8)/H*100}
 }
+/** how deep the cross-cut strips are (share of the shadow ink laid over the grass) */
+export const MOW_CROSS=.09
 /** the stands, the boards, the grass cut in bands across the length, and every line of the ground */
-function ground(c:CanvasRenderingContext2D,cam:Cam,P:Palette,t:number,s=S){
+function ground(c:CanvasRenderingContext2D,cam:Cam,P:Palette,t:number,s=S,roar=0){
  const at=(L:number,D:number)=>toScreen(L,D,cam,s)
  c.fillStyle=P.ref;c.fillRect(0,0,W,H)
  const far=at(cam.L,-4),near=at(cam.L,WIDTH+4)
  // the crowd in the far stand and the near one, a little restless
  const flick=Math.floor(t*3),fy=far.y-11*far.k*(W<WIDE?1.15:1)
- for(let y=0;y<fy;y+=3)for(let x=(y/3)%2?1:0;x<W;x+=3){const k=(x*7+y*13+((x*y+flick)%23===0?3:0))%11;c.fillStyle=k<5?P.skin[k]!:k<8?P.board:P.hair[k%5]!;c.fillRect(x,y,2,2)}
+ const up=roar>0?Math.floor(t*9):0
+ for(let y=0;y<fy;y+=3)for(let x=(y/3)%2?1:0;x<W;x+=3){const k=(x*7+y*13+((x*y+flick)%23===0?3:0))%11,jump=roar>0&&(x*3+y*5+up)%4<2?-1:0;c.fillStyle=k<5?P.skin[k]!:k<8?P.board:P.hair[k%5]!;c.fillRect(x,y+jump,2,2)}
+ // the stand's roof throws its shade on the back rows; a few flashbulbs go off — more of them when the net has just been hit
+ c.fillStyle=P.ref;for(let y=0,i=0;y<Math.min(fy,12);y+=3,i++){c.globalAlpha=.5-i*.12;c.fillRect(0,y,W,3)}c.globalAlpha=1
+ c.fillStyle=P.line;for(let i=0,n=roar>0?9:3;i<n;i++){const h=Math.floor(t*(roar>0?7:2.5))*31+i*97,x=(h*13)%W,y=(h*7)%Math.max(1,Math.floor(fy));if(y<fy-1)c.fillRect(x,y,1,1)}
  const ny=near.y+12*near.k*(W<WIDE?1.15:1)
  for(let y=Math.ceil(ny);y<H;y+=3)for(let x=(y/3)%2?0:1;x<W;x+=3){const k=(x*5+y*11)%11;c.fillStyle=k<5?P.skin[k]!:k<8?P.board:P.hair[k%5]!;c.fillRect(x,y,2,2)}
  // grass, in bands across the length like the cut of a real pitch — each band a trapezoid, narrower at the far side
  const quad=(L0:number,L1:number,D0:number,D1:number)=>{const a=at(L0,D0),b=at(L1,D0),d=at(L1,D1),e=at(L0,D1);c.beginPath();c.moveTo(a.x,a.y);c.lineTo(b.x,b.y);c.lineTo(d.x,d.y);c.lineTo(e.x,e.y);c.closePath();c.fill()}
  c.fillStyle=P.grassB;quad(-40,LENGTH+40,-4,WIDTH+4)
  c.fillStyle=P.grassA;for(let L=-36.75,i=1;L<LENGTH+36.75;L+=5.25,i++)if(i%2)quad(L,L+5.25,-4,WIDTH+4)
+ // the second cut, across the first: every other strip between the touchlines a shade deeper — the chequer of a mown pitch
+ c.globalAlpha=MOW_CROSS;c.fillStyle=P.shadow;for(let D=0,i=0;D<WIDTH;D+=WIDTH/8,i++)if(i%2)quad(0,LENGTH,D,D+WIDTH/8);c.globalAlpha=1
  // the boards along both touchlines: our own banners as LED panels (`boards.ts`), the far row smaller and slower
  const fh=11*far.k*(W<WIDE?1.15:1),nh=12*near.k*(W<WIDE?1.15:1)
  boardRow(c,{y:snap(fy),h:fh,w:W,scroll:cam.L*s*far.k,t,salt:0,mono:BOARDS.mono,ink:P.ref,bed:P.board,light:P.line})

@@ -125,3 +125,18 @@
 .hud { inset-inline: 0; margin-inline: auto; inline-size: fit-content; max-inline-size: calc(100% - 8px); grid-template-columns: auto auto auto; gap: 10px; padding: 3px 10px 4px;
   background: color-mix(in srgb, var(--hl-ink) 84%, transparent); border: 2px solid var(--hl-ink); border-block-start: 0; border-radius: 0 0 6px 6px; }
 @media (max-width: 619px) { .hud { gap: 6px; padding: 2px 6px 3px; } }
+
+/* the commentary bar (19.11.2026): CM's line of text under the pitch — the last three moments, newest on top */
+.ticker { display: grid; gap: 4px; }
+.tickerList { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.tickerList li { display: grid; grid-template-columns: 3.2em 10px minmax(0, 1fr); align-items: center; gap: 8px; padding: 6px 10px; background: color-mix(in srgb, var(--hl-ink) 86%, var(--hl-white)); color: color-mix(in srgb, var(--hl-white) 82%, transparent); border-inline-start: 4px solid transparent; font: 400 clamp(13px, 3.4vw, 15px)/1.3 var(--mag-body, inherit); overflow-wrap: anywhere; }
+.tickerList li[data-new] { background: var(--hl-ink); color: var(--hl-white); }
+.tickerList li[data-tone='goal'] { border-inline-start-color: var(--club-primary, var(--mag-red)); font-weight: 700; }
+.tickerList li[data-tone='goal'][data-new] { animation: hl-tick-goal .9s steps(2, end) 3; }
+.tickerList li[data-tone='card'] { border-inline-start-color: var(--hl-white); }
+.tickerMin { font: 400 13px/1 var(--mag-mono); letter-spacing: .4px; text-align: end; font-variant-numeric: tabular-nums; }
+.tickerChip { inline-size: 10px; block-size: 14px; box-shadow: 0 0 0 1.5px var(--hl-white); }
+.tickerMore { justify-self: start; min-block-size: 44px; padding: 0 10px; background: none; border: 0; color: var(--hl-ghost, var(--hl-ink)); font: 400 13px/1 var(--mag-mono); letter-spacing: .6px; text-transform: uppercase; text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
+@keyframes hl-tick-goal { 50% { background: var(--hl-white); color: var(--hl-ink); } }
+@media (prefers-reduced-motion: reduce) { .tickerList li[data-tone='goal'][data-new] { animation: none; } }
+.theatre[data-full] .ticker { display: none; }

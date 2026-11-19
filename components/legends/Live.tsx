@@ -130,7 +130,7 @@ function FullTime({v,r,colours,onClose}:{v:CareerView;r:ResultView;colours:NonNu
   {r.pens?<p className="lgm-fine">{r.pens[0]}–{r.pens[1]} on penalties</p>:null}
   {r.reel?<Potm reel={r.reel} mineSide={r.reel.mine}/>:null}
   {goals.length?<ol className="lgm-ft-goals">{goals.map((g,i)=><li key={i} data-side={g.side??undefined} data-mine={g.mine||undefined}><b>{g.minute}′</b> {g.text.replace(/^Goal — /,'')}</li>)}</ol>:null}
-  {others.length?<div className="lgm-ft-others"><p className="lgm-kicker">Round {r.round} · elsewhere</p><ul>{others.map(o=><li key={o.id}><span>{o.home}</span><b>{o.goals[0]}–{o.goals[1]}</b><span>{o.away}</span></li>)}</ul></div>:null}
+  {others.length?<div className="lgm-ft-others"><p className="lgm-kicker">Latest scores · round {r.round}</p><ul className="lgm-vidi" data-testid="legends-vidiprinter">{others.map((o,i)=><li key={o.id} style={{'--i':i} as React.CSSProperties}><span>{o.home}</span><b>{o.goals[0]}–{o.goals[1]}</b><span>{o.away}</span></li>)}</ul></div>:null}
   {place&&v.phase!=='season-end'?<p className="lgm-ft-place">{v.clubName} are <b>{place}{place===1?'st':place===2?'nd':place===3?'rd':'th'}</b> of {v.table.length}.</p>:null}
   {r.reel?<MatchBoard reel={r.reel} final/>:null}
   <p className="lgm-actions"><button type="button" className="lgm-go min-h-tap" onClick={onClose} data-testid="legends-ft-continue">Continue</button></p>

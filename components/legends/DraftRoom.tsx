@@ -90,12 +90,15 @@ export function DraftRoom({v,busy,send,wardrobe}:{v:CareerView;busy:boolean;send
  }
  const quota=(['GK','DF','MF','FW'] as const).map(p=>({p,have:d.picks.filter(x=>x.pos===p).length,need:v.rules.minimums[p]}))
  const spent=SPINS-d.rerollsLeft
+ // 19.11.2026: the seventeen are in and no line can offer an eighteenth the money reaches — the draft is over in all but name:
+ // the dead line buttons, the spin and "Opening the next slot…" go, and Register stands alone under the squad rail
+ const noExtra=d.optionalOpen&&!d.group&&d.lines.every(g=>!g.open),closing=done||noExtra
  if(!opened)return <BudgetDraw budget={d.budget} busy={busy} onPull={()=>send({kind:'budget-draw'})} onOpen={()=>setOpened(true)}/>
  return <section className={`${s.game} lgm-draft`} aria-labelledby="lgm-draft-h" data-testid="legends-draft">
   <header className={s.hud}>
    <div className={s.hudCopy}>
     <p className={`${s.mono} ${s.hudKicker}`}>The founding draft · {v.clubName}</p>
-    <h2 id="lgm-draft-h" className={s.hudIntro}>{done?'Your seventeen are chosen':d.optionalOpen?'One more, if you want him':`Pick ${Math.min(d.slot,d.required)} of ${d.required}`}</h2>
+    <h2 id="lgm-draft-h" className={s.hudIntro}>{closing?'Your seventeen are chosen':d.optionalOpen?'One more, if you want him':`Pick ${Math.min(d.slot,d.required)} of ${d.required}`}</h2>
     <p className={`${s.mono} lgm-draft-quota`}>{quota.map(q=><span key={q.p} data-met={q.have>=q.need||undefined}>{q.p} {q.have}/{q.need}</span>)}</p>
    </div>
    <div className={s.money} data-testid="legends-money">
@@ -114,13 +117,20 @@ export function DraftRoom({v,busy,send,wardrobe}:{v:CareerView;busy:boolean;send
    </li>)}</ol>
   </section>
 
-  {!done?<div className="lgm-lines" role="group" aria-label="Choose a line for this slot" data-testid="legends-lines">
+  {done||d.optionalOpen?<div className="lgm-confirm" data-testid="legends-register">
+   {noExtra?<p className="lgm-fine">Nobody on the list fits what is left for an eighteenth man — seventeen it is.</p>:d.optionalOpen?<p className="lgm-fine">The seventeen are in. Register now, or look at one more man below.</p>:null}
+   <p><b>Spent {money(d.spent)} of €{d.budget??LEGENDS_RULES.initialDraftBudgetM}M.</b> On confirming, the board adds a one-off <b>€{LEGENDS_RULES.firstBoardGrantM}M</b>: your window starts with {money(tenths((d.budget??LEGENDS_RULES.initialDraftBudgetM)-d.spent+LEGENDS_RULES.firstBoardGrantM))}.</p>
+   {d.canConfirm&&done?<p className="lgm-error" role="alert">{d.canConfirm}</p>:null}
+   <button type="button" className={`${s.lock} min-h-tap lgm-register`} data-ready={!d.canConfirm} disabled={busy||!!d.canConfirm} onClick={e=>{firePickFxAt(e.currentTarget,{label:'Registered',tone:'red',big:true,haptic:'lock'});send({kind:'draft-confirm'},'The squad is registered.')}}><span><small>{d.picks.length} men · {money(d.spent)}</small><strong>Register the squad</strong></span><span aria-hidden="true">→</span></button>
+  </div>:null}
+
+  {!closing?<div className="lgm-lines" role="group" aria-label="Choose a line for this slot" data-testid="legends-lines">
    {d.lines.map(g=><button key={g.group} type="button" className={`${s.chip} min-h-tap lgm-line`} data-testid={`legends-group-${g.group}`} aria-pressed={d.group===g.group} disabled={busy||!g.open}
     title={g.reason??undefined} onClick={()=>send({kind:'draft',move:{kind:'group',group:g.group}})}>
     <span>{posName(g.group)}</span><small dir="ltr">{g.need>0?`${g.need} to sign`:'extra'}</small></button>)}
   </div>:null}
-  {!done&&!d.group&&!d.stuck?<p className={`${s.mono} lgm-lines-hint`}>Opening the next slot…</p>:null}
-  {d.lines.filter(g=>!g.open&&g.reason).length&&!done&&!d.stuck?<p className={`${s.mono} lgm-lines-why`} role="note">{d.lines.filter(g=>!g.open&&g.reason).map(g=>`${posName(g.group)}: ${g.reason}`)[0]}</p>:null}
+  {!closing&&!d.group&&!d.stuck?<p className={`${s.mono} lgm-lines-hint`}>Opening the next slot…</p>:null}
+  {d.lines.filter(g=>!g.open&&g.reason).length&&!closing&&!d.stuck?<p className={`${s.mono} lgm-lines-why`} role="note">{d.lines.filter(g=>!g.open&&g.reason).map(g=>`${posName(g.group)}: ${g.reason}`)[0]}</p>:null}
 
   {!done&&d.group&&offers.length?<section className={s.cabinet} data-spinning={spinning} data-testid="legends-machine" aria-busy={spinning}>
    <div className={s.marquee}><Bulbs n={9} className={s.bulbs}/><span className={s.marqueeTitle}>Legends draft</span><Bulbs n={9} className={s.bulbs}/></div>
@@ -138,19 +148,13 @@ export function DraftRoom({v,busy,send,wardrobe}:{v:CareerView;busy:boolean;send
   </section>:null}
   {d.stuck?<p className="lgm-error" role="alert">No line can be opened for this pick. The owner has been shown why in the control room.</p>:null}
 
-  {!done?<div className={`${s.chips} lgm-draft-chips`}>
+  {!closing?<div className={`${s.chips} lgm-draft-chips`}>
    <button type="button" className={`${s.chip} min-h-tap lgm-spin`} disabled={busy||spinning||!d.group||d.rerollsLeft<=0} onClick={reroll} data-testid="legends-reroll"
     aria-label={`Spin again — ${d.rerollsLeft} of ${SPINS} spins left`}>
     <span>Spin again</span>
     <span className="lgm-spin-count"><span className="lgm-spin-pips" aria-hidden="true">{Array.from({length:SPINS},(_,k)=><i key={k} data-used={k<spent||undefined}/>)}</span><b dir="ltr">{d.rerollsLeft}/{SPINS}</b></span>
    </button>
    {d.optionalOpen?<button type="button" className={`${s.chip} min-h-tap`} disabled={busy} onClick={()=>send({kind:'draft',move:{kind:'skip'}},'Seventeen it is.')}><span>Keep seventeen</span></button>:null}
-  </div>:null}
-
-  {done||d.optionalOpen?<div className="lgm-confirm">
-   <p><b>Spent {money(d.spent)} of €{d.budget??LEGENDS_RULES.initialDraftBudgetM}M.</b> On confirming, the board adds a one-off <b>€{LEGENDS_RULES.firstBoardGrantM}M</b>: your window starts with {money(tenths((d.budget??LEGENDS_RULES.initialDraftBudgetM)-d.spent+LEGENDS_RULES.firstBoardGrantM))}.</p>
-   {d.canConfirm&&done?<p className="lgm-error" role="alert">{d.canConfirm}</p>:null}
-   <button type="button" className={`${s.lock} min-h-tap lgm-register`} data-ready={!d.canConfirm} disabled={busy||!!d.canConfirm} onClick={e=>{firePickFxAt(e.currentTarget,{label:'Registered',tone:'red',big:true,haptic:'lock'});send({kind:'draft-confirm'},'The squad is registered.')}}><span><small>{d.picks.length} men · {money(d.spent)}</small><strong>Register the squad</strong></span><span aria-hidden="true">→</span></button>
   </div>:null}
 
   <Board v={v} wardrobe={wardrobe}/>

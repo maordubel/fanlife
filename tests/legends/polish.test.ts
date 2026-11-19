@@ -20,7 +20,8 @@ describe('Legends polish',()=>{
  it('the phone header is one slim bar, the table gives names the room, Continue steps above the ad strip',()=>{
   expect(css).toMatch(/\.lgm-head \.lgm-emblem \{ inline-size: 34px/);expect(css).toMatch(/tbody td:nth-of-type\(3\)/)
   expect(css).toMatch(/body:has\(\.promo\[data-up='true'\]:not\(\.promo-card\)\) \.lgm-continue/)
-  expect(readFileSync('app/all-football/legends/styles.ts','utf8').trim().split('\n').pop()).toBe("import './polish.css'")
+  // 19.11.2026: the polish sheet still comes after every sheet it corrects; only the next round's sheet (diamond.css) follows it
+  expect(readFileSync('app/all-football/legends/styles.ts','utf8').trim().split('\n').slice(-2)).toEqual(["import './polish.css'","import './diamond.css'"])
   expect(css).not.toMatch(/#[0-9a-f]{3,8}\b/i)
  })
 })
