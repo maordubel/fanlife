@@ -1,0 +1,63 @@
+/*
+ * LEGENDS MANAGER — the polish round of 19.11.2026 ("several levels up": page division, match flow, the match itself).
+ * One sheet, last in the cascade (styles.ts). Tokens only, logical properties only.
+ */
+/* the matchday card (PreMatch.tsx): the VS and the eleven on one night sheet */
+.lgm-vs-xi { display: grid; gap: 8px; padding: 12px; text-align: start; background: color-mix(in srgb, var(--mag-ink) 34%, transparent); border: 2px solid color-mix(in srgb, var(--mag-white) 38%, transparent); }
+.lgm-vs-xi-h { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 4px 12px; margin: 0; font: 400 12px/1.2 var(--mag-mono); letter-spacing: .08em; text-transform: uppercase; }
+.lgm-vs-xi-h span { display: inline-flex; align-items: center; gap: 6px; }
+.lgm-vs-xi .lgm-pm-lines li { border-block-end-color: color-mix(in srgb, var(--mag-white) 34%, transparent); }
+.lgm-vs-xi .lgm-pm-lines li:last-child { border-block-end: 0; }
+.lgm-vs-xi .lgm-pm-lines b[data-captain] { color: inherit; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.lgm-vs-xi .lgm-fine { margin: 0; }
+.lgm-vs .lgm-actions { justify-content: center; }
+
+/* the budget draw fitted a 360–440 px phone only by overflowing it: the small machine now starts at 440 px, a smaller one at 350 */
+.lgm-slot > * { min-inline-size: 0; max-inline-size: 100%; }
+.lgm-slot-rule { overflow-wrap: anywhere; }
+@media (max-width: 440px) {
+  .lgm-slot { padding-inline: 10px; }
+  .lgm-slot-machine { gap: 8px; padding: 14px 10px; }
+  .lgm-slot-reel { inline-size: 34px; block-size: 52px; } .lgm-slot-reel b { font-size: 36px; } .lgm-slot-sym { font-size: 26px; } .lgm-slot-lever { inline-size: 48px; }
+}
+@media (max-width: 350px) {
+  .lgm-slot-window { padding: 6px; gap: 2px; }
+  .lgm-slot-reel { inline-size: 28px; block-size: 46px; } .lgm-slot-reel b { font-size: 30px; } .lgm-slot-sym { font-size: 20px; } .lgm-slot-lever { inline-size: 44px; }
+}
+
+/* a club's whole name in the career header on a phone: two lines before an ellipsis ("HAPOEL TEL A…") */
+@media (max-width: 899px) {
+  .lgm .lgm-app > .lgm-head h1 { white-space: normal; overflow: visible; text-overflow: clip; text-wrap: balance; font-size: clamp(18px, 5.6vw, 24px); line-height: 1; }
+}
+
+/* matchday in three pages on a phone; a desk shows them all and has no bar */
+.lgm-md-seg { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.lgm-md-seg button:disabled { opacity: .45; }
+.lgm-md-notes { display: contents; }
+@media (max-width: 899px) {
+  .lgm-matchday[data-part='next'] > [data-in]:not([data-in='next']),
+  .lgm-matchday[data-part='last'] > [data-in]:not([data-in='last']),
+  .lgm-matchday[data-part='table'] > [data-in]:not([data-in='table']) { display: none; }
+}
+@media (min-width: 900px) { .lgm-md-seg { display: none; } }
+
+/* the register step once the seventeen are in: it stands first, under the squad rail */
+.lgm-confirm[data-testid='legends-register'] > .lgm-fine { margin: 0; }
+
+/* full time: the other grounds come in one by one, like the vidiprinter on a Saturday at a quarter to five */
+.lgm-vidi li { opacity: 0; animation: lgm-vidi-in .32s steps(4, end) forwards; animation-delay: calc(.5s + var(--i, 0) * .38s); }
+.lgm-vidi li b { font-family: var(--mag-mono); font-variant-numeric: tabular-nums; }
+@keyframes lgm-vidi-in { from { opacity: 0; clip-path: inset(0 100% 0 0); } to { opacity: 1; clip-path: inset(0); } }
+@media (prefers-reduced-motion: reduce) { .lgm-vidi li { opacity: 1; animation: none; } }
+.lgm-md-seg { grid-column: 1 / -1; }
+
+/* player of the match: a pale shirt (a keeper in white, an away kit) left white type on a white card. The card is now the
+   shirt's colour deepened with ink — white type reads on every kit — and the true colour stays as the bar at its start edge */
+.lgm .lgm-potm { --potm-deep: color-mix(in srgb, var(--potm-a, var(--mag-navy)) 45%, var(--mag-ink)); border-inline-start: 10px solid var(--potm-a, var(--mag-navy)); outline: 3px solid var(--mag-ink); outline-offset: -3px;
+  background: radial-gradient(120% 90% at 85% 0%, color-mix(in srgb, var(--potm-deep) 86%, var(--mag-white)), var(--potm-deep) 55%, color-mix(in srgb, var(--potm-deep) 60%, var(--mag-ink)) 100%); }
+.lgm .lgm-potm-who small { opacity: 1; text-shadow: 1px 1px 0 var(--mag-ink); }
+
+/* a desk: the career rail stood UNDER the page (measured 19.11.2026: rail at 1175 px, page at 332 px). It was pinned to grid
+   row 3 while the page — the first in-flow child after the header — auto-placed into row 2. The rail now starts on the page's
+   own row and spans the rows after it, so it sits beside the page whatever the page holds */
+@media (min-width: 901px) { .tl-app:not([data-meet]) > .tl-nav { grid-row: 2 / span 12; } }

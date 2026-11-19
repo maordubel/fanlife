@@ -1,4 +1,5 @@
 'use client'
+import {commentary} from '@/lib/highlights/commentary'
 import {useCallback,useEffect,useMemo,useRef,useState} from 'react'
 import {PALETTE as BASE,type Palette} from '@/lib/highlights/kit'
 import {FX} from '@/lib/highlights/fx'
@@ -155,6 +156,8 @@ export function Theatre({reel,onDone,sound,allow=ALL,max=10,autoStart=false,segm
  const minute=live?(scenes[(phase as {i:number}).i]?.moment.label??`${scenes[(phase as {i:number}).i]?.moment.minute??0}′`):phase.k==='break'||phase.k==='quiet'?`${segment?.to??0}′`:phase.k==='closing'||phase.k==='done'?'FT':'KO'
  const gkey=`${phase.k}:${(phase as {i?:number}).i??''}`
  const at=phase.k==='scene'||phase.k==='title'||phase.k==='ends'?phase.i:phase.k==='closing'||phase.k==='done'||phase.k==='break'?scenes.length:-1
+ // the commentary so far: the scenes already played in this spell, and everything before the spell began (at a stop or at the end: the whole spell)
+ const ended=phase.k==='closing'||phase.k==='done',lines=useMemo(()=>commentary(reel,story.slice(0,Math.max(0,at)),ended?Infinity:phase.k==='break'?(segment?.to??-1):(segment?.from??-1)),[reel,story,at,ended,phase.k,segment?.from,segment?.to])
  return <section ref={root} className={css.theatre} data-full={full||undefined} dir="ltr" data-testid="highlights" data-phase={phase.k} aria-label={`Highlights: ${T[0].name} v ${T[1].name}`}>
   {phase.k==='lineups'?<Lineups teams={T} onStart={()=>{sound?.('whistle');setPhase({k:'title',i:0})}}/>:null}
   <div className={css.screen} data-frame={narrow?'narrow':'wide'} hidden={phase.k==='lineups'}>
@@ -176,6 +179,7 @@ export function Theatre({reel,onDone,sound,allow=ALL,max=10,autoStart=false,segm
     <Progress scenes={scenes} at={at} teams={T}/>
    </div>
   </div>
+  <Ticker lines={lines} teams={T}/>
   <p className={css.controls}>
    {phase.k==='break'?null:phase.k==='done'?<button type="button" className={`${css.btn} min-h-tap`} onClick={again}>Watch again</button>:<>
     <button type="button" className={`${css.btn} min-h-tap`} onClick={skipScene}><span aria-hidden="true" className={css.ico}>⏭</span>{phase.k==='lineups'?'Kick off':<><span className={css.long}>Next highlight</span><span className={css.short}>Next</span></>}</button>
@@ -184,6 +188,22 @@ export function Theatre({reel,onDone,sound,allow=ALL,max=10,autoStart=false,segm
    {canFull?<button type="button" className={`${css.btn} ${css.ghost} ${css.full} min-h-tap`} aria-pressed={full} aria-label={full?'Leave full screen':'Full screen'} onClick={toggleFull}><span aria-hidden="true">{full?'⤡':'⤢'}</span></button>:null}
   </p>
  </section>
+}
+/**
+ * The commentary bar (19.11.2026): the last three moments the picture has shown, newest on top, each with its side's shirt
+ * as a chip — a goal flashes once. Told only after the scene has played; the whole match is one tap away.
+ */
+function Ticker({lines,teams}:{lines:ReturnType<typeof commentary>;teams:Reel['teams']}){
+ const [all,setAll]=useState(false)
+ if(!lines.length)return null
+ const rows=all?lines:lines.slice(0,3)
+ return <div className={css.ticker} data-testid="highlights-commentary">
+  <ol className={css.tickerList} aria-label="Commentary, newest first">
+   {rows.map((l,i)=><li key={l.key} data-tone={l.tone} data-new={i===0||undefined} data-mine={l.mine===null?undefined:l.mine?'yes':'no'}>
+    <b className={css.tickerMin}>{l.label}</b><i className={css.tickerChip} style={{background:teams[l.side]!.kit.shirt}} aria-hidden="true"/><span><span className="sr-only">{teams[l.side]!.name}: </span>{l.text}</span></li>)}
+  </ol>
+  {lines.length>3?<button type="button" className={`${css.tickerMore} min-h-tap`} aria-expanded={all} onClick={()=>setAll(!all)}>{all?'Latest only':`All ${lines.length} moments`}</button>:null}
+ </div>
 }
 /**
  * The reel's running order: one notch per highlight — a goal stands taller in the scoring side's shirt — what has been shown

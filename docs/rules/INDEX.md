@@ -247,3 +247,4 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [two-logos](two-logos.md) · FAN LIFE's colour roundel on every FAN LIFE surface; THE WORKER's badge only on Hapoel's own host; marks come from lib/brand/logos.ts, a guard test blocks raw paths (18.11.2026)
 - [one-album](one-album.md) · THE ALBUM is one album of every club open to the public; packets draw from the whole album; collectors swap spares through the database (18.11.2026)
 - [album-coupons](album-coupons.md) · Promotion codes give free album packets; only each code's hash is kept, once per collector, ten tries a day; the owner's master code is unlimited (18.11.2026)
+- [legends-match-flow-and-commentary](legends-match-flow-and-commentary.md) · Legends and Rumble: the commentary line in the shared theatre, exported picture constants, a two-screen kick-off, matchday in three phone pages, the desk rail beside the page (19.11.2026)
