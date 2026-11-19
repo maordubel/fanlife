@@ -2835,19 +2835,19 @@
    "person_id": "pl_3dbde887d3",
    "name": "Ibrahim Hassan",
    "code": "AHL–13",
-   "status": "photo",
-   "frame": "archive",
+   "status": "silhouette",
+   "frame": null,
    "qid": "Q1290965",
-   "source": {
-    "file": "Hassan Ibrahim, 1952.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Hassan_Ibrahim,_1952.jpg",
-    "author": "Not credited",
-    "license": "Public domain",
-    "licenseUrl": "",
-    "date": "1952; Uploaded on 2013-08-07 13:30:24",
-    "via": "commons"
+   "source": null,
+   "traits": {
+    "skin": "#D7A57E",
+    "hair": "#3B2A20",
+    "hairName": "dark",
+    "length": "medium",
+    "beard": false,
+    "moustache": true,
+    "measured": false
    },
-   "traits": null,
    "file": "/album/stickers/al-ahly/13.webp"
   },
   "al-ahly:14": {
