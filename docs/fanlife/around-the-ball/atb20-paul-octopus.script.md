@@ -1,11 +1,12 @@
 # AROUND THE BALL · 20 · PAUL THE OCTOPUS — script (draft 1, 10.11.2026)
 
-Tone: **LAUGH**. Status: **script ready**. Narrator: Kokoro George, Take B. Production: DOCU film + 3 Shorts + Reel + animated Short (see README).
+Tone: **LAUGH**. Status: **film made 19.11.2026** (storyboard `scripts/football-stories/studio/docu/films/atb_paul_octopus_2010.py`, 8:48). Narrator: Kokoro George, Take B. Production: DOCU film + 3 Shorts + Reel + animated Short (see README).
 
 ## What the fact-check changed
 
 - Owner draft: "the Spanish government offered him security" and "Argentine fans threatened paella" — jokes reported at the time, not policy; told as jokes.
 - Checked: Sea Life Oberhausen; 8 of 8 correct at the 2010 World Cup (Germany's seven matches and the final).
+- 19.11.2026 (the film): the draft's b03 order was wrong — Paul also picked **Serbia** over Germany (right), and Australia, Ghana, England, Argentina, Spain and Uruguay. The Spanish minister was **Miguel Sebastián** (not Elena Espinosa). Euro 2008: he picked Germany every time and got the final wrong (most reports: four of six). Every line of the film rests on two publishers: [atb20-paul-octopus.FACTS.md](atb20-paul-octopus.FACTS.md).
 
 ## Dossier
 
@@ -26,6 +27,7 @@ Tone: **LAUGH**. Status: **script ready**. Narrator: Kokoro George, Take B. Prod
 ## Sources
 
 1. [Paul the Octopus — Wikipedia](https://en.wikipedia.org/wiki/Paul_the_Octopus)
+2. The full ledger (30 sources, two publishers per line, what was cut): [atb20-paul-octopus.FACTS.md](atb20-paul-octopus.FACTS.md)
 
 A slot is filled before recording; a beat that rests only on a slot is cut if the slot stays empty.
 
