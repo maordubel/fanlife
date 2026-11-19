@@ -134,6 +134,7 @@ def file_meta(title):
         txt = lambda k: re.sub(r'<[^>]+>', '', m.get(k, {}).get('value', '')).strip()
         return {'title': title, 'url': ii.get('thumburl') or ii['url'], 'page': ii.get('descriptionurl'), 'license': txt('LicenseShortName'),
                 'licenseUrl': txt('LicenseUrl'), 'artist': txt('Artist')[:80] or 'unknown', 'date': txt('DateTimeOriginal'),
+                'own': (title + ' ' + txt('ImageDescription')).lower(),
                 'text': ' '.join([title, txt('ImageDescription'), txt('Categories')] + [c['title'] for c in p.get('categories', [])]).lower()}
     return None
 
@@ -180,7 +181,7 @@ def faces_in(im):
     return len(_CASC.detectMultiScale(g, 1.06, 9, minSize=(max(24, im.width // 16),) * 2))
 
 
-def choose_photo(qid, name, club_name, y0, y1, names=None, club_words=None):
+def choose_photo(qid, name, club_name, y0, y1, names=None, club_words=None, blocked=()):
     """every free picture of the man, best first; returns (meta, raw, frame) or None.
     Sources: P18, his Commons category, the lead picture of each of his Wikipedia articles (Commons files only),
     Commons full-text search on his full name, Openverse (CC images, Flickr among them) — see sources.py"""
@@ -204,11 +205,17 @@ def choose_photo(qid, name, club_name, y0, y1, names=None, club_words=None):
         m = file_meta(t)
         if not m or not FREE.match(m['license'] or ''):
             continue
+        if t in blocked:
+            continue  # a reviewer found another man in this picture (content/manual/album-photo-block.json)
         if t not in trusted and not SRC.football_context(m['text'], club_words or [club_name]):
             continue  # found by a name search: a namesake (an actor, a politician) unless the picture is about football or his club
+        if t not in trusted and t not in crowd and not any(SRC.names_in(m['own'], n) for n in names):
+            continue  # the file's own title and caption must carry his whole name: a search hit on a page that mentions him is not his picture
         sc, club_era = era_score(m, club_name, y0, y1)
         cands.append((sc + (1 if t == first else 0) - (1 if t in crowd else 0), club_era, dict(m, crowd=t in crowd)))
     for m in SRC.openverse(get_json, name, club_name):
+        if m.get('title') in blocked or not any(SRC.names_in(m.get('title') or '', n) for n in names):
+            continue  # an Openverse picture must name him in its own title
         if FREE.match(m['license']) and SRC.football_context(m['text'], club_words or [club_name]):
             sc, club_era = era_score(m, club_name, y0, y1)
             cands.append((sc - 1, club_era, m))
@@ -431,6 +438,7 @@ def main():
     ap.add_argument('--club')
     ap.add_argument('--limit', type=int, default=999)
     ap.add_argument('--redo', action='store_true')
+    ap.add_argument('--ids', help='comma-separated club:slot list: press only these stickers (implies --redo for them)')
     a = ap.parse_args()
     from PIL import Image
     from rembg import new_session
@@ -445,6 +453,8 @@ def main():
         if l['verdict'] == 'same' and l['basis'] == 'wikidata':
             stint_qid[l['a']] = l['evidence']; stint_qid[l['b']] = l['evidence']
     ledger = json.loads(LEDGER.read_text()) if LEDGER.exists() else {'note': '', 'stickers': {}}
+    block_file = ROOT / 'content/manual/album-photo-block.json'
+    block = json.loads(block_file.read_text())['blocked'] if block_file.exists() else {}
     ledger['note'] = 'THE ALBUM sticker photographs: every image is a Wikimedia Commons file under a free licence, from the person\u2019s Wikidata item (P18) or his Commons category, club-era first; credits are shown on the back of each sticker. Written by scripts/album/stickers.py.'
     logo = Image.open(ROOT / 'public/brand/fanlife/logo-512.png').convert('RGBA').resize((160, 160), Image.LANCZOS)
     b = io.BytesIO(); logo.save(b, 'PNG'); logo_b64 = base64.b64encode(b.getvalue()).decode()
@@ -465,12 +475,14 @@ def main():
                     break
                 sid = f'{club}:{st["slot"]}'
                 prev = ledger['stickers'].get(sid)
-                if prev and not a.redo and prev.get('person_id') == st['person_id'] and prev.get('status') == 'photo':
+                if a.ids and sid not in a.ids.split(','):
+                    continue
+                if prev and not a.redo and not a.ids and prev.get('person_id') == st['person_id'] and prev.get('status') == 'photo':
                     continue
                 qid = stint_qid.get(f'{club}:{st["record_id"]}') or (find_qid(st['name'], club_q[club], st.get('from')) if club in club_q else None)
                 photo, photo_wh, src, frame = None, None, None, 'club'
                 names = [st['name']] + alias_of.get(f"{club}:{st['record_id']}", []) + (SRC.labels(get_json, qid) if qid else [])
-                pick = choose_photo(qid, st['name'], clubs[club]['name'], st.get('from'), st.get('to'), names=list(dict.fromkeys(names)), club_words=[clubs[club]['name']] + SRC.club_names(club))
+                pick = choose_photo(qid, st['name'], clubs[club]['name'], st.get('from'), st.get('to'), names=list(dict.fromkeys(names)), club_words=[clubs[club]['name']] + SRC.club_names(club), blocked=set(block.get(sid, [])))
                 if pick:
                     meta, raw, frame = pick
                     got = cutout(raw, session, frame)
