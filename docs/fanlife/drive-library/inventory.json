@@ -1,6 +1,6 @@
 {
  "root": "1CNLhWlab7Irfq4jJw-QRGHI37tpJcucw",
- "built": "2026-11-19",
+ "built": "2026-11-20",
  "folders": [
   {
    "id": "1TH4WZ5ivHrxiKMiHB-BTCA0WnyfTvZEb",
@@ -121,6 +121,10 @@
   {
    "id": "1isLLhLBkHVkO6s43EVTN6R-JDhPxIiGM",
    "path": "02_Documentary_Studio_Assets/Motion_Tests_and_Animatics"
+  },
+  {
+   "id": "1Q1c3bUqpo6fO2iOfyhqQkb8SjixGFYG4",
+   "path": "02_Documentary_Studio_Assets/pao-inter"
   },
   {
    "id": "1Rvq4ArAxjeF5u9yyMls1FokOL9kAya2N",
@@ -5711,6 +5715,41 @@
    "name": "fanlife-weekly-motion-study.mp4",
    "mime": "video/mp4",
    "bytes": 323015
+  },
+  {
+   "id": "1o-IZF612p2g_fpz_5mv4BVtpcspotMeQ",
+   "path": "02_Documentary_Studio_Assets/pao-inter",
+   "name": "Design_papercut_style_image_822b95a6.jpg",
+   "mime": "image/jpeg",
+   "bytes": null
+  },
+  {
+   "id": "1D0JcVXtWlWbJkDCl9VtMBFAZ58ZhQVO_",
+   "path": "02_Documentary_Studio_Assets/pao-inter",
+   "name": "Designing_papercut_image_with_sy…_2224ead0.jpg",
+   "mime": "image/jpeg",
+   "bytes": null
+  },
+  {
+   "id": "1sePaEbnTIi--EtGicNcYRSSpiB9jVhp7",
+   "path": "02_Documentary_Studio_Assets/pao-inter",
+   "name": "Make_paper_cut_design_a061fa68.jpg",
+   "mime": "image/jpeg",
+   "bytes": null
+  },
+  {
+   "id": "17jq-aOE2DPqmUTBen1m48HACG9Z1M90w",
+   "path": "02_Documentary_Studio_Assets/pao-inter",
+   "name": "Paper_cut_style_design_0923c267.jpg",
+   "mime": "image/jpeg",
+   "bytes": null
+  },
+  {
+   "id": "1fy3a7_k09GzgWTWa-9JSzTIy0IRezAVO",
+   "path": "02_Documentary_Studio_Assets/pao-inter",
+   "name": "Paper_cut_style_design_5909ea22.jpg",
+   "mime": "image/jpeg",
+   "bytes": null
   },
   {
    "id": "1Ogmt7JykG3b93LmajT-yeKf7bLT3gJx4",
