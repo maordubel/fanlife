@@ -314,6 +314,21 @@
 ],
 "id": "beat:common/trophy-lift-crowd-b-kr"
 },
+"07c171a2ea5a4a7c": {
+"caption": "A white football jersey with black trim displayed flat against a plain background.",
+"people": 0,
+"faces": false,
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"text": "ואהבת לרעך כמוך",
+"avoid": [
+"players celebrating",
+"match action",
+"fans in stadium"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1095-away-abe6f986d0f4ef4e"
+},
 "07cc05acfc18a488": {
 "caption": "The club crest of Standard Liège features a crown and star above a red and white shield encircled by a golden laurel wreath.",
 "people": 0,
@@ -942,6 +957,20 @@
 ],
 "id": "prop:referee"
 },
+"14d93ae848cd068e": {
+"caption": "A white football jersey with blue diagonal stripes and the sponsor Jucky Clean & Green displayed on the front.",
+"people": 0,
+"faces": false,
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"text": "KELME JUCKY Clean & Green",
+"avoid": [
+"real match action",
+"players celebrating on the pitch"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1096-away-75f0f2f24aa8d29b"
+},
 "1504ab857e4e97ab": {
 "caption": "A goalkeeper crouches in front of the goal waiting for a penalty kick during a night match.",
 "people": 1,
@@ -1118,6 +1147,20 @@
 ],
 "id": "beat:common/train-supporters-b-kr"
 },
+"185a3147e8f3e565": {
+"caption": "A light blue football jersey with a subtle pattern and the sponsor Jucky Clean & Green on the chest.",
+"people": 0,
+"faces": false,
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"text": "KELME JUCKY Clean & Green",
+"avoid": [
+"real match action",
+"players celebrating on the pitch"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1096-home-69bc33797703b320"
+},
 "18acc6dfe74a4b69": {
 "caption": "An illustrated vintage document features a football player kicking a ball with decorative headers and a signature at the bottom.",
 "people": 1,
@@ -1131,6 +1174,20 @@
 "real photograph"
 ],
 "id": "lib:doc-telegram-fl1-kr"
+},
+"18b32e4427cc2aa5": {
+"caption": "A blue football jersey with thin vertical pinstripes, gold trim, and Israel Canada written across the front.",
+"people": 0,
+"faces": false,
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"text": "FILA ISRAEL CANADA",
+"avoid": [
+"real match action",
+"players celebrating on the pitch"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1097-away-2bb504aa14832072"
 },
 "195439e229abd925": {
 "caption": "An illustrated male supporter in a parka stands with arms raised, holding a red and white scarf above his head.",
@@ -2406,6 +2463,20 @@
 ],
 "id": "beat:job-92160ae2-eda7-4b60-bac8-46d538d8e5f7/panathinaikos-fc-2009-10-home-kit-55633-68433178d0f46d1e"
 },
+"3503a4d3c67c0216": {
+"caption": "A royal blue football jersey featuring darker blue diagonal stripes and the Jucky Clean & Green logo.",
+"people": 0,
+"faces": false,
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"text": "KELME JUCKY Clean & Green",
+"avoid": [
+"real match action",
+"players celebrating on the pitch"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1096-third-a1add205f2e41f2f"
+},
 "351ef9c8d2636d02": {
 "caption": "A mixed-media collage depicts a supporter from behind wearing a red scarf on stadium steps.",
 "people": 1,
@@ -2860,6 +2931,20 @@
 ],
 "id": "lib:layer-old-ground-kr-bg"
 },
+"3f8742e49f3ee4f4": {
+"caption": "A yellow football jersey with blue trim and Israel Canada printed on the chest.",
+"people": 0,
+"faces": false,
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"text": "FILA ISRAEL CANADA",
+"avoid": [
+"real match action",
+"players celebrating on the pitch"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1097-home-c2957380c1f16e99"
+},
 "3fe4f41c901d1128": {
 "caption": "The interior of a pub with red scarves hanging on the wall and an open door showing a stadium down the street.",
 "people": 0,
@@ -2872,6 +2957,19 @@
 "pub brawl"
 ],
 "id": "beat:common/follow-pub-door-kr"
+},
+"404a91f1ca890f58": {
+"caption": "A white football shirt with textured sleeve graphics, a red club crest, and a Hebrew sponsor logo is shown.",
+"people": 0,
+"faces": false,
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"text": "umbro ויקטורי",
+"avoid": [
+"on-pitch action: this is a jersey product shot"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1085-away-399df2ebc44951df"
 },
 "40abdf3e2d498a08": {
 "caption": "A papercraft model shows a team lined up on a pitch facing a packed stadium under floodlights.",
@@ -2956,6 +3054,21 @@
 "construction cranes"
 ],
 "id": "lib:ground-1980s-ext-fl1-kr"
+},
+"428191458695f32c": {
+"caption": "A black football jersey displayed flat against a plain background.",
+"people": 0,
+"faces": false,
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"text": "VOLVO",
+"avoid": [
+"players celebrating",
+"match action",
+"fans in stadium"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1093-third-4720e337ead35bda"
 },
 "428759f6d24b3a59": {
 "caption": "A pair of old-fashioned leather football boots with studs sits on a torn paper background.",
@@ -3203,6 +3316,17 @@
 ],
 "id": "beat:common/header-goalmouth-b-kr"
 },
+"488f3d385617daad": {
+"caption": "A light grey short-sleeved football kit featuring a geometric pattern, black Adidas shoulder stripes, and red Hebrew sponsor lettering.",
+"people": 0,
+"faces": false,
+"place": "other",
+"era": "2020s",
+"mood": "calm",
+"text": "הכשרה חברה לביטוח, HAPOEL TEL-AVIV F.C.",
+"avoid": "live match action: this is a kit display illustration",
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1090-away-fb5f18cf9ad68ea9"
+},
 "490b962d67d23e46": {
 "caption": "A referee stands with a raised arm blowing a whistle in a packed stadium.",
 "people": 10,
@@ -3351,6 +3475,17 @@
 "a protest"
 ],
 "id": "beat:common/close-armband-kr"
+},
+"4b66b5a21c76ec2d": {
+"caption": "A black short-sleeved football shirt with a subtle geometric pattern, white shoulder stripes, and white Hebrew sponsor lettering.",
+"people": 0,
+"faces": false,
+"place": "other",
+"era": "2020s",
+"mood": "calm",
+"text": "הכשרה חברה לביטוח, HAPOEL TEL-AVIV F.C.",
+"avoid": "live match action: this is a kit display illustration",
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1090-third-5adc6188ec2a0dda"
 },
 "4c05913043088fc6": {
 "caption": "A blurred abstract shot showing warm brownish and dark tones.",
@@ -3979,6 +4114,19 @@
 ],
 "id": "cut:common/fig-kneel-despair-kr"
 },
+"57c8507cf0208b1a": {
+"caption": "A black football shirt with pink trim, monochrome sleeve patterns, and Hebrew text is presented on a plain background.",
+"people": 0,
+"faces": false,
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"text": "umbro ויקטורי",
+"avoid": [
+"stadium match: this is a kit template render"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1085-third-a70fd011fb1a351f"
+},
 "5828c4d2cce98f2b": {
 "caption": "The shield-shaped club crest of Aston Villa featuring a golden lion.",
 "people": 0,
@@ -4100,6 +4248,18 @@
 "matchday crowd surge"
 ],
 "id": "beat:common/supporter-cap-old-ground"
+},
+"5a616f9ecd8c6205": {
+"caption": "Vintage painted postcard depicting the twin-funnel passenger liner R.M.S. Celtic navigating open ocean waters.",
+"people": 0,
+"faces": false,
+"action": "ship sailing across the sea",
+"place": "other",
+"era": "1900s",
+"mood": "calm",
+"text": "WHITE STAR LINE. TWIN-SCREW R.M.S. \"CELTIC,\" 21,026 TONS. MONTAGUE BLACK.",
+"avoid": "Celtic FC match play, football stadium or club facilities",
+"id": "beat:commons-job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/87919643"
 },
 "5a8a94fb29aadb8c": {
 "caption": "A production board for a 1980s stadium project details the approach, gate entrance, and interior views of Bloomfield Stadium.",
@@ -4890,6 +5050,20 @@
 ],
 "id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/fanlife-generic-background-blank-stadium-scoreboar-88fd0d59229224f3"
 },
+"6cf8538bf5ef4da3": {
+"caption": "A white football jersey with yellow collar and sleeve trim, featuring Israel Canada across the front.",
+"people": 0,
+"faces": false,
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"text": "FILA ISRAEL CANADA",
+"avoid": [
+"real match action",
+"players celebrating on the pitch"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1097-third-c395e15a8f329fe4"
+},
 "6e55ffd5c616e498": {
 "caption": "A lone figure sits on a bench outside the gates of a large stadium under a cloudy sky.",
 "people": 1,
@@ -5393,6 +5567,21 @@
 ],
 "id": "beat:job-92160ae2-eda7-4b60-bac8-46d538d8e5f7/creating-paper-cut-design-8192693b-ef6954fad5dc2cff"
 },
+"76f3777ce865e265": {
+"caption": "A yellow football jersey with black trim displayed flat against a plain background.",
+"people": 0,
+"faces": false,
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"text": "ואהבת לרעך כמוך",
+"avoid": [
+"players celebrating",
+"match action",
+"fans in stadium"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1095-home-03c1ca80eee96a73"
+},
 "77a8cb04cbe798ca": {
 "caption": "One hand hands over a folded red scarf to another outstretched hand.",
 "people": 2,
@@ -5461,6 +5650,19 @@
 "a specific stadium dressing room"
 ],
 "id": "lib:layer-dressing-room-n-bg"
+},
+"78cc9fa5cbbc7928": {
+"caption": "A bright yellow football shirt featuring black patterned sleeves and sponsors is shown against a neutral backdrop.",
+"people": 0,
+"faces": false,
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"text": "umbro גשם בונים את ישראל",
+"avoid": [
+"in-game celebration: this is an isolated jersey render"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1083-home-03aa0d3952d62350"
 },
 "78d2cc814821c63a": {
 "caption": "An illustration of masses of supporters approaching stadium turnstiles under a grey sky.",
@@ -5789,6 +5991,17 @@
 ],
 "id": "beat:job-302cbed5-9ef4-4d42-a7c3-6969a933bdc2/other-2026-10-12-image-ntvs46kx-cfe75904c0cc2b3b"
 },
+"80a7fba2622ab97e": {
+"caption": "A red football jersey with burgundy sleeves featuring a prominent yellow rectangular sponsor box with Hebrew text.",
+"people": 0,
+"faces": false,
+"place": "other",
+"era": "2020s",
+"mood": "calm",
+"text": "רדיו ירושלים, 89.5 | 101",
+"avoid": "live match action: this is a kit display illustration",
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1091-home-690babc89ed087d0"
+},
 "80ff045ed7574140": {
 "caption": "A papercraft illustration shows a stadium pitch with a clock tower and multiple silhouetted players.",
 "people": 15,
@@ -6008,6 +6221,18 @@
 "players"
 ],
 "id": "lib:sup-old-fl2-kr"
+},
+"86f47268b4c19d0c": {
+"caption": "Players contesting a match on a sunlit pitch at a lower-league ground while photographers sit along the touchline.",
+"people": 15,
+"faces": false,
+"action": "player chasing the ball during a league match",
+"place": "pitch",
+"era": "2000s",
+"mood": "tension",
+"text": "VANS ACRE 50/50",
+"avoid": "elite international stadium, indoor training",
+"id": "beat:commons-job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/4361339"
 },
 "874200175c72a6cd": {
 "caption": "A man in a tracksuit stands in a room looking at a tactical board with a pitch diagram.",
@@ -6608,6 +6833,21 @@
 "television"
 ],
 "id": "prop:portable_radio"
+},
+"94dfea06c3e33c00": {
+"caption": "A green football jersey displayed flat against a plain background.",
+"people": 0,
+"faces": false,
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"text": "VOLVO",
+"avoid": [
+"players celebrating",
+"match action",
+"fans in stadium"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1093-home-f3a3bed2669dc2dd"
 },
 "9511d83ec2eda0c8": {
 "caption": "A shield-shaped club logo split in red and white sections displays two red stars and a large letter S.",
@@ -7926,6 +8166,17 @@
 ],
 "id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/panetolikos-gfs-7403ff5d700fa428"
 },
+"b2b381d54f2c1051": {
+"caption": "Black and white portrait of a balding man with a stern expression wearing a suit and patterned necktie.",
+"people": 1,
+"faces": true,
+"action": "posing for a formal portrait",
+"place": "studio",
+"era": "1950s",
+"mood": "tension",
+"avoid": "celebration or joyful moments, active sporting action",
+"id": "beat:commons-job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/158753285"
+},
 "b32d3705d8201c22": {
 "caption": "An elevated papercraft model view of packed stadium stands under floodlights with a match underway on the pitch.",
 "people": 50,
@@ -7968,6 +8219,17 @@
 ],
 "id": "beat:common/programme-seller-kr"
 },
+"b3d80d88da5d5b83": {
+"caption": "A red short-sleeved football shirt with white Adidas shoulder stripes and white Hebrew sponsor text on the front.",
+"people": 0,
+"faces": false,
+"place": "other",
+"era": "2020s",
+"mood": "calm",
+"text": "הכשרה חברה לביטוח, HAPOEL TEL-AVIV F.C.",
+"avoid": "live match action: this is a kit display illustration",
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1090-home-7c3d4c88e5aa6f10"
+},
 "b3f15d87856b2e60": {
 "caption": "A vintage team photograph features players in red and black striped kits posed standing and crouching with coaches.",
 "people": 15,
@@ -8007,6 +8269,19 @@
 "tiles"
 ],
 "id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/a5-wall-tel-aviv-b-ab17334b33d00b38"
+},
+"b41c2dbfa43da4d5": {
+"caption": "A white football shirt with patterned sleeves, club crest, and Hebrew sponsor text is displayed against a plain background.",
+"people": 0,
+"faces": false,
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"text": "umbro גשם בונים את ישראל",
+"avoid": [
+"live match action: this is a static jersey mock-up"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1083-away-a50ff1968a497b06"
 },
 "b4864abee327e868": {
 "caption": "A referee stands on the pitch with arms raised under floodlights as players celebrate in front of a packed stadium.",
@@ -8852,6 +9127,18 @@
 ],
 "id": "lib:sup-hug-kr"
 },
+"c44bce617520907f": {
+"caption": "Wide angle view from an upper tier overlooking an empty football pitch with blue tiered stands and sunlight slicing across the turf.",
+"people": 15,
+"faces": false,
+"action": "spectators watching pre-match preparations from the concourse",
+"place": "stadium",
+"era": "2000s",
+"mood": "calm",
+"text": "CARLING CENTRAL CAR AUCTIONS CO UK",
+"avoid": "match-winning moments, packed terraces",
+"id": "beat:commons-job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1935736"
+},
 "c45aa9f961758d74": {
 "caption": "A papercraft stadium at night lit by floodlights with empty stands and pitch.",
 "people": 0,
@@ -8918,6 +9205,17 @@
 ],
 "id": "beat:common/pub-before-kr"
 },
+"c6522a85356ca228": {
+"caption": "A blue short-sleeved football jersey with a dark abstract pattern throughout and white Hebrew text across the chest.",
+"people": 0,
+"faces": false,
+"place": "other",
+"era": "2020s",
+"mood": "calm",
+"text": "מבנה",
+"avoid": "live match action: this is a kit display illustration",
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1089-home-11bb70c802c25daf"
+},
 "c67c7b1b8d30647d": {
 "caption": "A headshot portrait of a man with short dark hair and a trimmed beard wearing a blue jersey.",
 "people": 1,
@@ -8931,6 +9229,21 @@
 "celebrations on the pitch"
 ],
 "id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/7868835-0034a0d689327a05"
+},
+"c73975983abbc1dd": {
+"caption": "A yellow and red football jersey displayed flat against a plain background.",
+"people": 0,
+"faces": false,
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"text": "רדיו ירושלים 89.5 | 101",
+"avoid": [
+"players celebrating",
+"match action",
+"fans in stadium"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1091-third-025a9228a5820817"
 },
 "c761a6fe1e37431e": {
 "caption": "Layered paper cutouts depict dark, swirling storm clouds in shades of grey and black.",
@@ -9053,6 +9366,21 @@
 "real photograph"
 ],
 "id": "lib:sky-heat-haze-fl1-kr"
+},
+"cc019d79ad41ebcd": {
+"caption": "A white and black football jersey displayed flat against a plain background.",
+"people": 0,
+"faces": false,
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"text": "VOLVO",
+"avoid": [
+"players celebrating",
+"match action",
+"fans in stadium"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1093-away-a64f3607fa928a0c"
 },
 "cc02dc41f3ebaf69": {
 "caption": "A paper-cut artwork features a flowing red scarf across a landscape with silhouetted trees and figures.",
@@ -9567,6 +9895,18 @@
 "hooligan violence"
 ],
 "id": "lib:pup-supporter-kr"
+},
+"d822b34a45ab7f8d": {
+"caption": "View of Hampden Park stadium with blue and red seats forming a saltire and fans gathered in the foreground stands.",
+"people": 50,
+"faces": false,
+"action": "fans gathering in the stands before kickoff",
+"place": "stadium",
+"era": "2020s",
+"mood": "calm",
+"text": "SCOTLAND HAMPDEN",
+"avoid": "live match action, full crowd scenes",
+"id": "beat:commons-job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/149167085"
 },
 "d8c4a75d073b5f6e": {
 "caption": "The Chelsea FC football club logo features a blue lion holding a staff inside a circular emblem.",
@@ -10709,6 +11049,19 @@
 ],
 "id": "lib:pup-defender-pose-n"
 },
+"ede8d9d30b8720d9": {
+"caption": "A black football jersey featuring a subtle checkerboard pattern, a V-neck collar, and multiple sponsor logos is displayed.",
+"people": 0,
+"faces": false,
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"text": "LEOS MEDIA & INTERACTIVE",
+"avoid": [
+"live game event: this is a product graphic of a kit"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1087-third-ded1b238508f577d"
+},
 "ee5c78ab88027add": {
 "caption": "A papercut artwork of a stadium with a medium-sized trophy on a pedestal and silhouetted reporters and fans in the foreground.",
 "people": 15,
@@ -11265,6 +11618,17 @@
 ],
 "id": "beat:common/shootout-line-kr"
 },
+"fc3872747480bde1": {
+"caption": "High angle shot under the stadium roof looking over an empty pitch prepared for a match with Scottish flag seat patterns in the stands.",
+"people": 10,
+"faces": false,
+"action": "ground staff patrolling the pitch perimeter",
+"place": "stadium",
+"era": "2000s",
+"mood": "calm",
+"avoid": "goal celebrations, full crowd scenes",
+"id": "beat:commons-job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/5767749"
+},
 "fc47ab17c34cdc46": {
 "caption": "A collection of blue and white illustrated football stickers featuring a football, scarf, megaphone, and stadium elements.",
 "people": 0,
@@ -11321,6 +11685,17 @@
 "manager interview"
 ],
 "id": "lib:sup-old-kr"
+},
+"fd2db7a27d3a732e": {
+"caption": "A white short-sleeved football jersey with a blue chevron across the chest, blue trim on the collar and cuffs, and a red crest.",
+"people": 0,
+"faces": false,
+"place": "other",
+"era": "2020s",
+"mood": "calm",
+"text": "פ-ת",
+"avoid": "live match action: this is a kit display illustration",
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1089-alt-1e5911fe460fc0a0"
 },
 "fd81c74ac0221cfc": {
 "caption": "An illustrated goalkeeper stands ready from behind, wearing a full kit and goalie gloves.",
@@ -11416,6 +11791,19 @@
 "modern kit reveals"
 ],
 "id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/panathinaikos-fc-1981-82-away-2-kit-140755-ab6795b68ee06cd6"
+},
+"ff79d91ef1780ae7": {
+"caption": "A black football shirt featuring subtle dark patterns across the torso and white branding is displayed.",
+"people": 0,
+"faces": false,
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"text": "umbro גשם בונים את ישראל",
+"avoid": [
+"match footage: this is a digital kit presentation"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1083-third-8ee7177f1c3e968e"
 }
 }
 }
