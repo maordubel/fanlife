@@ -193,6 +193,19 @@
 ],
 "id": "lib:era-newspaper-front-fl2-kr"
 },
+"05abf6137130fa31": {
+"caption": "A white football jersey with a checkered pattern and black sponsor text BTB Be The Bank displayed on the front.",
+"people": 0,
+"faces": false,
+"place": "studio",
+"mood": "calm",
+"text": "BTB Be The Bank",
+"avoid": [
+"real match action",
+"players celebrating"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/42074476-away-ecd5e89f3e65f34c"
+},
 "05b7989a2179db34": {
 "caption": "A group of football players stand in a defensive wall on the pitch during a match.",
 "people": 8,
@@ -611,6 +624,21 @@
 ],
 "id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/42104419-775013e53c2c9f86"
 },
+"0b8c0124d3f044fc": {
+"caption": "A black and white comic-style illustration of a football player lifting a trophy surrounded by celebrating teammates under floodlights.",
+"people": 6,
+"faces": true,
+"action": "lifting trophy in victory celebration",
+"place": "stadium",
+"era": "1970s",
+"mood": "joy",
+"avoid": [
+"defeat",
+"sadness",
+"relegation"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/moment-final-line-fc0b79584455b695"
+},
 "0bed09f0efc3c220": {
 "caption": "Paper-cut snowflakes are scattered over a dark, layered background of torn paper strips.",
 "people": 0,
@@ -918,6 +946,21 @@
 ],
 "id": "beat:common/street-dusk-kr"
 },
+"146c90e1029fdf1b": {
+"caption": "The blue and white shield crest of Everton Football Club features Prince Rupert's Tower, wreaths, and the motto Nil Satis Nisi Optimum.",
+"people": 0,
+"faces": false,
+"action": "logo display",
+"place": "abstract",
+"mood": "calm",
+"text": "Everton 1878 NIL SATIS NISI OPTIMUM",
+"avoid": [
+"live match action",
+"team celebration",
+"stadium atmosphere"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/everton-fc-86310bdde26b86f2"
+},
 "147d189b451b07bd": {
 "caption": "A textured light beige plaster wall surface with subtle variations.",
 "people": 0,
@@ -1064,6 +1107,20 @@
 ],
 "id": "beat:job-19324d9d-b95c-4388-a19b-062dd2002d03/player-heading-football-in-stadium-9e44c776-7b09298e10c53f61"
 },
+"168a7f79cd538503": {
+"caption": "The Luton Town Football Club crest featuring a straw boater hat and a shield with various symbols.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "joy",
+"text": "LUTON TOWN FOOTBALL CLUB EST 1885",
+"avoid": [
+"Kenilworth Road stands",
+"real players",
+"match action"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/luton-town-1732e6d3c26e6967"
+},
 "17c41a04108d0159": {
 "caption": "A family of four is seen from behind walking together while holding hands.",
 "people": 4,
@@ -1076,6 +1133,18 @@
 "a funeral procession"
 ],
 "id": "lib:ppl-family-four-kr"
+},
+"17e42f1788c659de": {
+"caption": "A football club crest featuring a shield split red and black with white symbols and a football.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "defiance",
+"avoid": [
+"stadium atmosphere",
+"live match"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1900-41c50105466bb133"
 },
 "17f18da841f41f34": {
 "caption": "A man wearing headphones and a red jacket shouts into a microphone with his fist clenched.",
@@ -1649,6 +1718,20 @@
 ],
 "id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/14118432-02498fc9ee2a7e80"
 },
+"2341b3e749fe5a7e": {
+"caption": "A white football jersey with grey collar and trim plus sponsor logos shown flat.",
+"people": 0,
+"faces": false,
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"text": "Zeus BONEHRENIH",
+"avoid": [
+"matchday atmosphere",
+"action shots"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/42027989-third-d56dec258d17093f"
+},
 "2368474e8454a060": {
 "caption": "An illustrated view of a packed football stadium stand under floodlights.",
 "people": 0,
@@ -1827,6 +1910,20 @@
 "actual award ceremony"
 ],
 "id": "lib:obj-rosette-fl1-kr"
+},
+"271df1b4bc6693d2": {
+"caption": "The Manchester City football club crest featuring a sailing ship and a red rose inside a circular border.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "defiance",
+"text": "MANCHESTER CITY 18 94",
+"avoid": [
+"Etihad Stadium",
+"Pep Guardiola",
+"live match"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/manchester-city-32d020d04a88718c"
 },
 "272cb5e9dd87cdc3": {
 "caption": "A crowd of fans watch from behind a fence as a stadium grandstand undergoes demolition.",
@@ -2245,6 +2342,19 @@
 ],
 "id": "beat:job-92160ae2-eda7-4b60-bac8-46d538d8e5f7/paper-cut-style-design-5909ea22-fd8573e5ce9afb8e"
 },
+"30376e7fb39114e8": {
+"caption": "A white football shirt with red trim, a central red and black vertical stripe pattern, and a sponsor logo.",
+"people": 0,
+"faces": false,
+"place": "studio",
+"mood": "calm",
+"text": "White",
+"avoid": [
+"real match action",
+"players on pitch"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/7860421-third-f2dc0cf185c21363"
+},
 "30455ad1d288def6": {
 "caption": "An illustrated footballer in a red shirt and white shorts runs dynamically with arms pumping.",
 "people": 1,
@@ -2627,6 +2737,47 @@
 "getting sent off"
 ],
 "id": "cut:common/fig-celebrate-knee-slide-b-kr"
+},
+"36d757bac3683777": {
+"caption": "The circular crest of Celtic Football Club features a green four-leaf clover in the center and the founding year 1888.",
+"people": 0,
+"faces": false,
+"action": "logo display",
+"place": "abstract",
+"mood": "calm",
+"text": "THE CELTIC FOOTBALL CLUB 1888",
+"avoid": [
+"live match action",
+"team celebration",
+"stadium atmosphere"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/celtic-6359229cba85e989"
+},
+"373360d40b2a5292": {
+"caption": "A blurred close-up of a football club crest on a red and black background.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "tension",
+"avoid": [
+"sharp detail",
+"clear crest"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1900-473e7b26a1f2eb28"
+},
+"3749dc34719a4fbf": {
+"caption": "A white football jersey with red trim and sponsor logos laid out flat.",
+"people": 0,
+"faces": false,
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"text": "LEGEA ALLON VENTURES",
+"avoid": [
+"real match action",
+"players celebrating"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1300671-away-1db3488fd9624cfb"
 },
 "381ed899c87f80a6": {
 "caption": "A papercut artwork shows a crowd celebrating and lifting a trophy amidst confetti.",
@@ -3083,6 +3234,21 @@
 ],
 "id": "lib:obj-boots-old-n"
 },
+"42a2fa0ffa7c1aab": {
+"caption": "A simple black circular outline on a cream background contains tiny text reading Celtic Mono.",
+"people": 0,
+"faces": false,
+"action": "logo display",
+"place": "abstract",
+"mood": "calm",
+"text": "Celtic Mono",
+"avoid": [
+"live match action",
+"stadium",
+"team squad"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/celtic-crest-mono-512-2e759cedc624060e"
+},
 "42a4cbace1382d38": {
 "caption": "A paper art depiction of fans gathered around a vintage car in a city street near floodlights.",
 "people": 9,
@@ -3367,6 +3533,19 @@
 "a matchday programme"
 ],
 "id": "lib:obj-season-ticket-book-fl1-kr"
+},
+"497867f146e2fe9c": {
+"caption": "The Arsenal FC club crest featuring a cannon and the club name.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "Arsenal",
+"avoid": [
+"real match action",
+"players celebrating"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/arsenal-fc-0ef0346800dbfe30"
 },
 "49f46d65deaf1194": {
 "caption": "Two players prepare to kick off at the centre circle while a referee stands nearby in front of a full stadium.",
@@ -5483,6 +5662,21 @@
 ],
 "id": "beat:common/close-hands-fence-b-kr"
 },
+"754b9b9ee0cabadf": {
+"caption": "An official match programme cover featuring vintage illustrations of players and a trophy.",
+"people": 4,
+"faces": true,
+"action": "players reaching for trophy",
+"place": "abstract",
+"era": "1950s",
+"mood": "joy",
+"text": "OFFICIAL PROGRAMME SCOTTISH LEAGUE CUP",
+"avoid": [
+"modern matches",
+"colour television era"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1957-cup-final-674a2f5e7549a5b6"
+},
 "759120219ee089b4": {
 "caption": "An illustrated vintage clipboard holds a handwritten match sheet with tactical arrows and notes alongside a pen.",
 "people": 0,
@@ -5921,6 +6115,19 @@
 "match officials"
 ],
 "id": "cut:common/crowd-row-away-small-b-kr"
+},
+"7f7e4b9b86d10204": {
+"caption": "The Burnley FC crest featuring a castle-like design and a lion.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "BURNLEY FOOTBALL CLUB",
+"avoid": [
+"real match action",
+"players celebrating"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/burnley-fc-a10c8ced24dba0ba"
 },
 "7f8c0203617b356a": {
 "caption": "A collection of green and black football fan stickers featuring olive branches, ancient ruins, a megaphone, a scarf, and stadium terraces.",
@@ -7009,6 +7216,21 @@
 ],
 "id": "lib:layer-kitchen-radio-fl1-kr"
 },
+"99aec895a76d4621": {
+"caption": "A solid green square background displays centered white text reading Celtic App Icon.",
+"people": 0,
+"faces": false,
+"action": "logo display",
+"place": "abstract",
+"mood": "calm",
+"text": "Celtic App Icon",
+"avoid": [
+"live match action",
+"stadium",
+"team squad"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/celtic-app-icon-512-46ebc8fae2eccbfd"
+},
 "99b200ac7d76eb3b": {
 "caption": "A football player in a red shirt and white shorts celebrates with arms outstretched.",
 "people": 1,
@@ -7255,6 +7477,20 @@
 "post-match"
 ],
 "id": "lib:sup-child-hand-fl1-kr"
+},
+"a1218ed071cb239f": {
+"caption": "The Manchester United football club crest featuring a red devil and a ship inside a red and yellow shield.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "defiance",
+"text": "MANCHESTER UNITED",
+"avoid": [
+"Old Trafford",
+"Sir Alex Ferguson",
+"real players"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/manchester-united-0a797939b6b612e1"
 },
 "a1335723b18caf6b": {
 "caption": "A football player seen from behind in silhouette walking through a heavy metal gate towards the light.",
@@ -7828,6 +8064,21 @@
 ],
 "id": "art:terrace-empty"
 },
+"abc3c1f71d6e30b6": {
+"caption": "The circular crest of Celtic Football Club features a green four-leaf clover in the center and the founding year 1888.",
+"people": 0,
+"faces": false,
+"action": "logo display",
+"place": "abstract",
+"mood": "calm",
+"text": "THE CELTIC FOOTBALL CLUB 1888",
+"avoid": [
+"live match action",
+"team celebration",
+"stadium atmosphere"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/celtic-fc-45abfd35e5c6d62f"
+},
 "ac064205996830fc": {
 "caption": "An overhead shot of square stone paving slabs forming a repetitive pattern.",
 "people": 0,
@@ -8166,6 +8417,20 @@
 ],
 "id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/panetolikos-gfs-7403ff5d700fa428"
 },
+"b284e1e6b3190f40": {
+"caption": "The Leeds United football club crest featuring a white rose and blue and yellow stripes.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "defiance",
+"text": "LUFC",
+"avoid": [
+"real players",
+"live match action",
+"historical photo"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/leeds-united-e6a455269484ba86"
+},
 "b2b381d54f2c1051": {
 "caption": "Black and white portrait of a balding man with a stern expression wearing a suit and patterned necktie.",
 "people": 1,
@@ -8282,6 +8547,19 @@
 "live match action: this is a static jersey mock-up"
 ],
 "id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1083-away-a50ff1968a497b06"
+},
+"b44608c6acb5f552": {
+"caption": "A blue football shirt with white and black vertical detailing on the left side and a sponsor logo in the center.",
+"people": 0,
+"faces": false,
+"place": "studio",
+"mood": "calm",
+"text": "White",
+"avoid": [
+"real match action",
+"players on pitch"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/7860421-away-838eb236187111c6"
 },
 "b4864abee327e868": {
 "caption": "A referee stands on the pitch with arms raised under floodlights as players celebrate in front of a packed stadium.",
@@ -9139,6 +9417,20 @@
 "avoid": "match-winning moments, packed terraces",
 "id": "beat:commons-job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1935736"
 },
+"c459c7c89c9f0e26": {
+"caption": "The Liverpool Football Club crest featuring the Liver bird and You'll Never Walk Alone motto.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "defiance",
+"text": "YOU'LL NEVER WALK ALONE LIVERPOOL FOOTBALL CLUB EST. 1892",
+"avoid": [
+"Anfield stadium interior",
+"real players",
+"Jürgen Klopp"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/liverpool-fc-456edb7abd498e38"
+},
 "c45aa9f961758d74": {
 "caption": "A papercraft stadium at night lit by floodlights with empty stands and pitch.",
 "people": 0,
@@ -9449,6 +9741,20 @@
 "trophy lift"
 ],
 "id": "beat:common/newspaper-stand-b-n"
+},
+"cdda64033d5cc362": {
+"caption": "A black and white image showing a line of cars on a highway leading toward a brightly lit stadium at night.",
+"people": 0,
+"faces": false,
+"action": "traffic heading to match",
+"place": "street",
+"mood": "tension",
+"text": "RUSH THE FINAL",
+"avoid": [
+"daytime match",
+"empty stadium"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/a10-rush-the-final-ab7f0a0c3d1042de"
 },
 "cde0c259640f6b65": {
 "caption": "An empty stadium row at dusk features a red and white scarf and a match program left on a seat.",
@@ -9828,6 +10134,21 @@
 ],
 "id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/fc-thun-11c924886aaddd23"
 },
+"d753a83f681f601d": {
+"caption": "A solid green circle is outlined with a thin black border on a cream background, with tiny text reading Celtic Crest.",
+"people": 0,
+"faces": false,
+"action": "logo display",
+"place": "abstract",
+"mood": "calm",
+"text": "Celtic Crest",
+"avoid": [
+"live match action",
+"stadium",
+"team squad"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/celtic-crest-full-1024-887315e7d759a755"
+},
 "d788861a9f3729cd": {
 "caption": "A green patterned short-sleeved football jersey displayed against a white background.",
 "people": 0,
@@ -10027,6 +10348,21 @@
 ],
 "id": "lib:sup-turnstile-fl1-kr"
 },
+"dbff01083a0a255d": {
+"caption": "A social media style graphic showing a trivia quiz result for Celtic with a celebrating fan graphic.",
+"people": 1,
+"faces": true,
+"action": "Celebrating with fist raised",
+"place": "abstract",
+"era": "1970s",
+"mood": "joy",
+"text": "FAN LIFE FOOTBALL FOREVER CELTIC TRIVIA THINK YOU KNOW YOUR CLUB? A quiz for the ones who were there. 9/12 MY TRIVIA RESULT Best combo: 4 Score: 840 SAME QUESTIONS. YOUR TURN. fanlife.dubelteam.com",
+"avoid": [
+"live match broadcast",
+"actual historic photograph from a game"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/celtic-1ef4637165f58411"
+},
 "dc16236bdfd91d6a": {
 "caption": "A football player in a green kit runs across the pitch during a match.",
 "people": 1,
@@ -10150,6 +10486,19 @@
 "daytime match"
 ],
 "id": "beat:job-19324d9d-b95c-4388-a19b-062dd2002d03/02-gate-13-63995d9ef4de26f4"
+},
+"de937a1a622bc8da": {
+"caption": "The Brentford FC circular crest featuring a stylized bee.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "BRENTFORD FOOTBALL CLUB 18 89",
+"avoid": [
+"real match action",
+"players celebrating"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/brentford-fc-2cc89f380892082f"
 },
 "def1443606a4e8ef": {
 "caption": "A football player in a red shirt and shorts kneels on the ground with his hands on his head.",
@@ -10339,6 +10688,20 @@
 "actual match"
 ],
 "id": "lib:layer-away-end-kr-full"
+},
+"e210a7d010d00a8a": {
+"caption": "A blue football jersey with yellow accents and sponsor logos displayed flat.",
+"people": 0,
+"faces": false,
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"text": "Zeus BONEHRENIH",
+"avoid": [
+"players on pitch",
+"fans cheering"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/42027989-home-13b6f0a5f5c8b72a"
 },
 "e24c2fb6af860520": {
 "caption": "An illustrated footballer in a red kit is depicted kicking a football powerfully.",
@@ -10872,6 +11235,19 @@
 "stadium crowds"
 ],
 "id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/t7-slide-01-92bb099846e58b8d"
+},
+"ebac896fc2047c7f": {
+"caption": "The Brighton & Hove Albion circular crest featuring a seagull in flight.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "BRIGHTON & HOVE ALBION",
+"avoid": [
+"real match action",
+"players celebrating"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/brighton-hove-albion-4de7832310998a1b"
 },
 "ebafcb548edeecee": {
 "caption": "A football player in a red and white striped shirt with number 7 runs forward with the ball during a night match.",
@@ -11417,6 +11793,19 @@
 ],
 "id": "cut:common/fig-keeper-dive-c-n"
 },
+"f5c83fb896052691": {
+"caption": "The Aston Villa FC crest featuring a lion and a star above it.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "AVFC",
+"avoid": [
+"real match action",
+"players celebrating"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/aston-villa-55e614b2622dc80b"
+},
 "f633fbea174a32b7": {
 "caption": "A papercraft figure of a man in a tweed coat and flat cap stands with his back turned.",
 "people": 1,
@@ -11656,6 +12045,19 @@
 ],
 "id": "lib:pup-old-man-pose-kr"
 },
+"fc6dba657d42c2c1": {
+"caption": "The crest of AFC Bournemouth featuring a shield with red and black stripes, a football, and a stylized head.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "defiance",
+"text": "AFC BOURNEMOUTH",
+"avoid": [
+"real match action",
+"players celebrating"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/afc-bournemouth-4bc33f2e7bbbd43e"
+},
 "fcd29ea9d0d52a8a": {
 "caption": "A headshot portrait of a man with short dark hair and a beard wearing a blue and white jersey.",
 "people": 1,
@@ -11778,6 +12180,18 @@
 "players leaving the pitch"
 ],
 "id": "beat:common/rain-pitch-n"
+},
+"ff455ee2c1ba5ece": {
+"caption": "A collection of green and white stickers featuring Celtic-themed symbols including a football, scarf, megaphone, and archway.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "joy",
+"avoid": [
+"real match action",
+"actual stadium photos"
+],
+"id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/a8-stickers-celtic-original-96d38fa16cdf458a"
 },
 "ff4b93c1a9b8e3b3": {
 "caption": "A vintage long-sleeved light-colored football jersey with green collar and green branded stripe tape down the sleeves rests on a mannequin.",
