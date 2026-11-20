@@ -1,6 +1,228 @@
 {
- "sources": [],
- "matches": [],
+ "sources": [
+  {
+   "id": "s365-4461872",
+   "title": "365Scores: Zrinjski 0-0 Posusje, 2026-05-16",
+   "url": "https://webws.365scores.com/web/game/?gameId=4461872",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-20"
+  },
+  {
+   "id": "s365-4672014",
+   "title": "365Scores: GOSK Gabela 1-2 Zrinjski, 2026-03-05",
+   "url": "https://webws.365scores.com/web/game/?gameId=4672014",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-20"
+  },
+  {
+   "id": "s365-4672009",
+   "title": "365Scores: Zrinjski 3-2 GOSK Gabela, 2026-03-11",
+   "url": "https://webws.365scores.com/web/game/?gameId=4672009",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-20"
+  },
+  {
+   "id": "s365-4461914",
+   "title": "365Scores: Posusje 1-0 Zrinjski, 2026-03-15",
+   "url": "https://webws.365scores.com/web/game/?gameId=4461914",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-20"
+  },
+  {
+   "id": "s365-4461962",
+   "title": "365Scores: Zrinjski 0-2 Posusje, 2025-11-30",
+   "url": "https://webws.365scores.com/web/game/?gameId=4461962",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-20"
+  }
+ ],
+ "matches": [
+  {
+   "id": "a-m-2026-05-16-zrinjski-posusje",
+   "value": {
+    "name": "Zrinjski 0-0 Posusje",
+    "on": "2026-05-16",
+    "competition": "Premier League",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Karlo Abramović",
+     "Nemanja Bilbija",
+     "Slobodan Jakovljevic",
+     "David Karačić",
+     "Goran Karačić",
+     "Toma Palić",
+     "Igor Savic",
+     "Stefano Surdanović",
+     "Marko Vranjković",
+     "Marijan Ćavar",
+     "Matej Sakota"
+    ],
+    "bench": [],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4461872"
+   ],
+   "researchedAt": "2026-11-20",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-03-15-posusje-zrinjski",
+   "value": {
+    "name": "Posusje 1-0 Zrinjski",
+    "on": "2026-03-15",
+    "competition": "Premier League",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Karlo Abramović",
+     "Hrvoje Barisic",
+     "Duje Dujmović",
+     "Tomi Juric",
+     "Goran Karačić",
+     "Petar Mamic",
+     "Leo Mikic",
+     "Igor Savic",
+     "Marko Vranjković",
+     "Neven Djurasek",
+     "Matej Sakota"
+    ],
+    "bench": [],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4461914"
+   ],
+   "researchedAt": "2026-11-20",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-03-11-zrinjski-gosk-gabela",
+   "value": {
+    "name": "Zrinjski 3-2 GOSK Gabela",
+    "on": "2026-03-11",
+    "competition": "Bosnia Hezergovina Cup - Quarter Finals",
+    "score": "3-2",
+    "venue": null,
+    "lineup": [
+     "Antonio Ivancic",
+     "David Karačić",
+     "Toni Majić",
+     "Petar Mamic",
+     "Leo Mikic",
+     "D. Morris",
+     "Adi Nalić",
+     "Tin Sajko",
+     "Mateo Sušić",
+     "Marijan Ćavar",
+     "Mario Cuze"
+    ],
+    "bench": [],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4672009"
+   ],
+   "researchedAt": "2026-11-20",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-03-05-gosk-gabela-zrinjski",
+   "value": {
+    "name": "GOSK Gabela 1-2 Zrinjski",
+    "on": "2026-03-05",
+    "competition": "Bosnia Hezergovina Cup - Quarter Finals",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Duje Dujmović",
+     "Antonio Ivancic",
+     "David Karačić",
+     "Toni Majić",
+     "Kerim Memija",
+     "Leo Mikic",
+     "D. Morris",
+     "Adi Nalić",
+     "Toma Palić",
+     "Tin Sajko",
+     "Marijan Ćavar"
+    ],
+    "bench": [],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4672014"
+   ],
+   "researchedAt": "2026-11-20",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2025-11-30-zrinjski-posusje",
+   "value": {
+    "name": "Zrinjski 0-2 Posusje",
+    "on": "2025-11-30",
+    "competition": "Premier League",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Nemanja Bilbija",
+     "Antonio Ivancic",
+     "David Karačić",
+     "Marin Ljubić",
+     "Ilija Mašić",
+     "Kerim Memija",
+     "Leo Mikic",
+     "Jakov Pranjić",
+     "Stefano Surdanović",
+     "Ante Sušak",
+     "Marijan Ćavar"
+    ],
+    "bench": [],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4461962"
+   ],
+   "researchedAt": "2026-11-20",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  }
+ ],
  "players": [],
  "kits": [],
  "rivals": []
