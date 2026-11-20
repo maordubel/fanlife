@@ -3898,5 +3898,35 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-11-18T12:14:04.341Z",
   "updatedAt": "2026-11-18T12:14:04.341Z"
+ },
+ {
+  "id": "ga-e283c39513b8fe7e",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "112",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1948-03-27-morton-1-0-celtic-scottish-cup/",
+    "locator": "p7",
+    "quote": "Jock Weir missed a sitter from three yards out at 0-0 13 minutes into extra time but the game was decided by the single goal in the 112th minute.",
+    "bodyHash": "0f7c8eec0a4c5e8102c0c997600924f6fb3bde0bd16c9825a2e3055f4ca028fc",
+    "fetchedAt": "2026-11-20T11:54:55.173Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-20T11:54:55.173Z",
+  "updatedAt": "2026-11-20T11:54:55.173Z"
  }
 ]

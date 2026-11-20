@@ -5,7 +5,7 @@
   "state": "schema-changed",
   "status": 200,
   "reason": "rows lack id/link",
-  "checkedAt": "2026-11-18T12:14:44.682Z"
+  "checkedAt": "2026-11-20T11:55:26.801Z"
  },
  "paopedia:/wp-json/wp/v2/pages": {
   "endpoint": "/wp-json/wp/v2/pages",
@@ -13,7 +13,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-11-18T12:14:50.301Z"
+  "checkedAt": "2026-11-20T11:55:32.620Z"
  },
  "pao-official-history:/en/history/": {
   "endpoint": "/en/history/",

@@ -1432,15 +1432,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2021/06/02/top18-der-2-bundesliga/",
-    "locator": "p7",
-    "quote": "In einem 4-2-3-1 schickt Jussi sein Team auf den Platz. Wobei ich anhand der personellen Aufstellung durchaus bezweifeln möchte, dass die zwei Spieler vor der Abwehr überhaupt eine defensive Rolle einnehmen würden. Denn Jae-Sung Lee und Rodrigo Zalazar bestachen in der Saison eher offensiv und sicher nicht auf der Sechser-Position. Hierzu liefert Jussi auch gleich die passende Erklärung: „ Es ist vermutlich eine zu offensive Aufstellung, die aber sehr gut dafür geeignet ist die letzten 20min zu wirbeln, wenn man 0:1 zurück liegt. „",
-    "bodyHash": "47d45c1752dffb2266952ffb3af433ec5c68704d56e4f7f730a907032f676577",
-    "fetchedAt": "2026-10-29T10:26:02.875Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2022/07/15/lage-am-millerntor-15-juli-2022/",
     "locator": "p25",
     "quote": "Und wenn Ihr immer noch eine Saisonvorschau wollt: Der kicker hat ein 20minütiges Video dazu, Jasmine Baba hat außerdem einen „Everything you need to know…“-Artikel über alle Vereine verfasst.",
@@ -1501,6 +1492,15 @@
     "bodyHash": "a609b7b74c03684c21d92785a062f6c2c6e72799be81ac6e3ef1ba26c8ace2e1",
     "fetchedAt": "2026-11-13T11:15:35.653Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/05/12/lage-am-millerntor-12-mai-2025/",
+    "locator": "p34",
+    "quote": "Oke Göttlich war am Samstag zu Gast im ZDF-Sportstudio (20min) . Da sprach er übrigens auch noch vom „letzten fehlenden Punkt“, ehe es dann um die etwas größeren Themen ging – unter anderem um das Derby in der kommenden Saison, die gerechtere TV-Geldverteilung, Klub-WM, politische und gesellschaftliche Haltung, die Genossenschaft und vieles mehr.",
+    "bodyHash": "753c9ca2333ab0d63f266bbae4672583a616f4b6a0e68f2a88dd2c1ce6ccb7c9",
+    "fetchedAt": "2026-11-20T11:55:52.519Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1508,8 +1508,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-13T11:15:35.653Z",
-  "updatedAt": "2026-11-13T11:15:35.653Z"
+  "createdAt": "2026-11-20T11:55:52.519Z",
+  "updatedAt": "2026-11-20T11:55:52.519Z"
  },
  {
   "id": "ga-c17fa246fc7afd17",
@@ -1825,6 +1825,15 @@
     "bodyHash": "ab600c8074263177188e7c361f64cbc8bab127c83e74483e579256fc52160d07",
     "fetchedAt": "2026-11-06T11:09:20.283Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/04/24/lage-am-millerntor-24-april-2025/",
+    "locator": "p22",
+    "quote": "Außerdem gibt es einen neuen Podcast, „Blind Kick“ , den mit Calvin und Rasmus zwei Spieler des FC St. Pauli und mit Ilker Öztürk ein Spieler des FC Ingolstadt verantworten. Ilker gab allerdings gerade seinen Wechsel zu Schalke 04 bekannt, mal schauen ob das auch thematisiert wird. Nach den Vorstellungen in Episode 1 gibt es nun Folge 2, in der ich mit Rasmus grundlegendes zu den besonderen Regeln der Sportart erzählen durfte. // Spotify (9min)",
+    "bodyHash": "db461bea268184886f2d4f3b45d3cc09533676dce6a37fdc2a4834e1acad8655",
+    "fetchedAt": "2026-11-20T11:55:49.762Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1832,8 +1841,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-06T11:09:20.283Z",
-  "updatedAt": "2026-11-06T11:09:20.283Z"
+  "createdAt": "2026-11-20T11:55:49.762Z",
+  "updatedAt": "2026-11-20T11:55:49.762Z"
  },
  {
   "id": "ga-b034321cdb0cc0d5",
