@@ -13,24 +13,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2023/11/02/lage-am-millerntor-02-november-2023/",
-    "locator": "p123",
-    "quote": "Die ARD-Doku „WM der Schande“ wurde mit vier Episoden im Oktober 2022 veröffentlicht. Wer gestern Abend nach den Zusammenfassungen der Pokalspiele noch dran blieb, konnte ab 0.00h den fünften und letzten Teil sehen, die „Ein Jahr danach“ -Episode (30min).",
-    "bodyHash": "17c919da722bccc19006b5605bb175594639178a13b249183635899f00869cf4",
-    "fetchedAt": "2026-11-08T10:47:46.093Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
-    "url": "https://millernton.de/2023/12/03/viscapauli/",
-    "locator": "p30",
-    "quote": "Gestern wurde der Vlog dann online gestellt – und es war alles erwartbar in der buntesten Comicsprache: „Krass, boah, zack, wumm, peng, boing, huiuiuiui, geisteskrank!“ . // YouTube (30min)",
-    "bodyHash": "5a9ddbe4692a6299cc2dfe948e0ad651469457c354b645fe893e4ba0b33d73ed",
-    "fetchedAt": "2026-11-08T10:47:53.749Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2024/01/19/lage-am-millerntor-19-januar-2023-2/",
     "locator": "p4",
     "quote": "Die gestrige Pressekonferenz zum Spiel könnt Ihr in Text und Bild (30min) nachverfolgen. Der ausführliche Vorbericht von Tim ist ebenfalls bereits online .",
@@ -82,6 +64,24 @@
     "bodyHash": "6ef9802da2fd3f04204335271f9b9eb2344343c6e76a3c31fac5504cf4a18978",
     "fetchedAt": "2026-11-18T12:15:20.308Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/05/14/lage-am-millerntor-14-mai-2025/",
+    "locator": "p37",
+    "quote": "Blau Weiß Ramsloh und der FC Sedelsberg , zwei Vereine im Saterland, irgendwo zwischen Leer, Oldenburg, Cloppenburg und Meppen. Beide Vereine spielen in der Kreisliga Cloppenburg, der 8. Liga. Boris Poscharsky hat für den NDR eine Doku (30min) über das „Saterland-Derby“ gedreht.",
+    "bodyHash": "a5bc7bb7bce5f8f623f6c99d4856cb84845e5e19e042c48ea326ba00f54d2936",
+    "fetchedAt": "2026-11-20T12:13:13.828Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/05/20/lage-am-millerntor-20-mai-2025/",
+    "locator": "p65",
+    "quote": "Der Film spricht mit Menschen, die damals dabei waren und teilweise heute noch traumatisiert sind. Sowohl die Organisation drumherum als auch das baufällige Stadion selbst dürften ihren Anteil an der Tragödie haben. // NDR Sportclub Story (30min)",
+    "bodyHash": "1e46ceb663e921f0d03d7673ed8dd0143eb3cc3a9ff03c33117a49cc33d8564e",
+    "fetchedAt": "2026-11-20T12:13:13.839Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -89,8 +89,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-18T12:15:20.308Z",
-  "updatedAt": "2026-11-18T12:15:20.308Z"
+  "createdAt": "2026-11-20T12:13:13.839Z",
+  "updatedAt": "2026-11-20T12:13:13.839Z"
  },
  {
   "id": "ga-03973ac070b40b9b",
@@ -331,15 +331,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2021/04/14/lage-am-millerntor-14-april-2021/",
-    "locator": "p21",
-    "quote": "Auch die Proteste gegen Dietmar Hopp sind natürlich Thema. WDR-Mediathek (10min)",
-    "bodyHash": "a3cc70841e1d85e592d5a6681fe42a1757caf9d6f8c1412fe983cd0724017290",
-    "fetchedAt": "2026-10-28T10:02:34.148Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2021/06/13/der-fall-christian-eriksen-gespraech-mit-sozialforscher-dr-udo-baer/",
     "locator": "p35",
     "quote": "– Deutschlandfunk – „Players – Der Sportpodcast“ (10min)",
@@ -400,6 +391,15 @@
     "bodyHash": "005bd957599f16989244b1deefc414481fce6825a42b89a5066352cab94b02f1",
     "fetchedAt": "2026-11-18T12:15:15.028Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/06/16/wer-ist-ricky-jade-jones-ein-spielerprofil/",
+    "locator": "p22",
+    "quote": "Einen ziemlich guten Einblick in die Fähigkeiten von Ricky-Jade Jones gibt es im Profil bei The Pitchside Pub auf YouTube (10min) . Auf seinem Instagram-Account (19.100(!) Follower am Samstag um 15.00h) ist er zudem recht aktiv und teilt neben offiziellen Pressefotos auch private Aufnahmen.",
+    "bodyHash": "4448d8df91ab616f306dbddea8840c10ad04518fe95c03b4a4ee6d0441329a15",
+    "fetchedAt": "2026-11-20T12:13:16.405Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -407,8 +407,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-18T12:15:15.028Z",
-  "updatedAt": "2026-11-18T12:15:15.028Z"
+  "createdAt": "2026-11-20T12:13:16.405Z",
+  "updatedAt": "2026-11-20T12:13:16.405Z"
  },
  {
   "id": "ga-51b4860bcfa8ab6d",
@@ -853,6 +853,15 @@
     "bodyHash": "4bcaefd0980466190cdbcdaf24e3086ea36c98a75658dd30e81f158b4ff26df6",
     "fetchedAt": "2026-11-13T11:15:30.642Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/07/17/lage-am-millerntor-17-juli-2025/",
+    "locator": "p8",
+    "quote": "Sonntag, 20. Juli, 16.00h gegen den Karlsruher SC (2x 60min, in Saalfelden)",
+    "bodyHash": "ef333a528d0aa5fb03fc0c9c08e61f83b62aa931472fbd428b5517bcbb6903b6",
+    "fetchedAt": "2026-11-20T12:13:21.893Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -860,8 +869,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-13T11:15:30.642Z",
-  "updatedAt": "2026-11-13T11:15:30.642Z"
+  "createdAt": "2026-11-20T12:13:21.893Z",
+  "updatedAt": "2026-11-20T12:13:21.893Z"
  },
  {
   "id": "ga-c76513ad6243ab28",
@@ -875,15 +884,6 @@
   "scorerAlias": null,
   "ownGoal": false,
   "evidence": [
-   {
-    "sourceId": "millernton",
-    "url": "https://millernton.de/2020/10/03/ich-vermisse-dich-afm-radio-oder-svs-fcsp/",
-    "locator": "p43",
-    "quote": "Sicher alles kein Beinbruch – aber ärgerlich und unnötig, denn ein Punkt wäre am Hardtwald schon drin gewesen und die Länderspielpause hätte etwas positiver begonnen werden können. Ähnlich äußerte sich Robin Himmelmann nach dem Spiel beim NDR (2min).",
-    "bodyHash": "0b7170854beeea3980f13d39f79b19ca7bf8e08a3dc9354bf0244cd3aaf230f5",
-    "fetchedAt": "2026-10-26T09:23:39.234Z",
-    "language": "en"
-   },
    {
     "sourceId": "millernton",
     "url": "https://millernton.de/2023/02/01/lage-am-millerntor-01-februar-2023/",
@@ -946,6 +946,15 @@
     "bodyHash": "9737cfcc7cdf78c54d257aaa42c213fc3b703fbd962219000cbe48661f26c199",
     "fetchedAt": "2026-11-15T11:31:11.046Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/07/07/lage-am-millerntor-07-juli-2025/",
+    "locator": "p82",
+    "quote": "Im Kino 3001 könnt Ihr aktuell den Film „COPA 71“ sehen ( Termine ). Offiziell wurde 1991 die erste Fußball-WM der Frauen ausgetragen, zuvor gab es aber bereits mehrere internationale Turniere ohne die Genehmigung der FIFA. Über eines der frühesten berichtet nun besagter Film, der vom 1971 ausgetragenen Turnier in Mexiko handelt. // Trailer (2min)",
+    "bodyHash": "d41349802d90fb5f1c6a3aff74a47f99feb53dbae359bb7cd99c049fff0d5582",
+    "fetchedAt": "2026-11-20T12:13:18.657Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -953,8 +962,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-15T11:31:11.046Z",
-  "updatedAt": "2026-11-15T11:31:11.046Z"
+  "createdAt": "2026-11-20T12:13:18.657Z",
+  "updatedAt": "2026-11-20T12:13:18.657Z"
  },
  {
   "id": "ga-215c67467d8ebaef",
@@ -1702,6 +1711,15 @@
     "bodyHash": "49ecc64831129ba3764f2ff2ade9ee43203a82cbf769b2fadb666f75da9149e7",
     "fetchedAt": "2026-11-17T12:06:44.694Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/07/07/lage-am-millerntor-07-juli-2025/",
+    "locator": "p83",
+    "quote": "Eine ausführliche Besprechung des Films findet Ihr bei der Bolztribüne , außerdem bietet der Rasenfunk eine Podcast-Folge (53min) , in der mit den Regisseuren des Films gesprochen wurde.",
+    "bodyHash": "d41349802d90fb5f1c6a3aff74a47f99feb53dbae359bb7cd99c049fff0d5582",
+    "fetchedAt": "2026-11-20T12:13:18.657Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1709,8 +1727,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-17T12:06:44.694Z",
-  "updatedAt": "2026-11-17T12:06:44.694Z"
+  "createdAt": "2026-11-20T12:13:18.657Z",
+  "updatedAt": "2026-11-20T12:13:18.657Z"
  },
  {
   "id": "ga-0ca8402e929e8694",
@@ -1858,15 +1876,6 @@
   "evidence": [
    {
     "sourceId": "millernton",
-    "url": "https://millernton.de/2022/12/09/lage-am-millerntor-09-dezember-2022-2/",
-    "locator": "p15",
-    "quote": "– WDR: Die WM-Sklaven (Podcast, 4 Folgen a‘ ca. 40min)",
-    "bodyHash": "fbe06ee332050a946b01aa90959632c491797a675314e7c1a457d51088cb5de7",
-    "fetchedAt": "2026-11-04T11:36:02.705Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "millernton",
     "url": "https://millernton.de/2022/12/12/lage-am-millerntor-12-dezember-2022/",
     "locator": "p15",
     "quote": "– WDR: Die WM-Sklaven (Podcast, 4 Folgen a‘ ca. 40min)",
@@ -1927,6 +1936,15 @@
     "bodyHash": "6158f6c1693e914057dc51435d94b1de4b0b0fec1468a97a345e87d369bd9fc8",
     "fetchedAt": "2026-11-17T12:06:44.696Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/05/19/lage-am-millerntor-19-mai-2025/",
+    "locator": "p55",
+    "quote": "Ja, man kann (oder: muss) es auch als wenig subtiles Product-Placement Werbevideo sehen – nebenbei ist es aber ein durchaus angenehmes Gespräch, in dem man einiges von und über Siebe Van der Heyden erfährt. // YouTube (40min)",
+    "bodyHash": "900ea83eebce6085faea27a8e047c7b1da79413143cd999695c3da09f54ba7e4",
+    "fetchedAt": "2026-11-20T12:13:13.836Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1934,8 +1952,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-17T12:06:44.696Z",
-  "updatedAt": "2026-11-17T12:06:44.696Z"
+  "createdAt": "2026-11-20T12:13:13.836Z",
+  "updatedAt": "2026-11-20T12:13:13.836Z"
  },
  {
   "id": "ga-c61079b9040fc062",
@@ -2281,6 +2299,15 @@
     "bodyHash": "c7fc6b44b161104481f6faed076a810ca0fdbd2229bebea0c58e70d362455c6d",
     "fetchedAt": "2026-11-02T11:43:12.233Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/07/07/lage-am-millerntor-07-juli-2025/",
+    "locator": "p84",
+    "quote": "Zum Thema Fußball-EM der Frauen (die aktuell in der Schweiz stattfindet) gibt es außerdem bei uns die Buchrezension „Wir waren Heldinnen“ , und in der Mediathek die ebenfalls sehr empfehlenswerte ARD-Doku „Mädchen können kein Fußball spielen“ (89min) .",
+    "bodyHash": "d41349802d90fb5f1c6a3aff74a47f99feb53dbae359bb7cd99c049fff0d5582",
+    "fetchedAt": "2026-11-20T12:13:18.657Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2288,8 +2315,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-02T11:43:12.233Z",
-  "updatedAt": "2026-11-02T11:43:12.233Z"
+  "createdAt": "2026-11-20T12:13:18.657Z",
+  "updatedAt": "2026-11-20T12:13:18.657Z"
  },
  {
   "id": "ga-a2a95a611c188455",
@@ -3031,6 +3058,15 @@
     "bodyHash": "1174885b224508cf7bd2be8f079e7dbb58bd40b19ccb0f59bf52179d6d3f3c99",
     "fetchedAt": "2026-11-10T11:25:58.172Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/07/28/lage-am-millerntor-28-juli-2025/",
+    "locator": "p11",
+    "quote": "Okay, versprochen, letztes YouTube-Video (25min) aus dem Vereinskanal für heute – aber es lohnt sich. Scott Banks war zur Navigations-Challenge eingeladen – und meisterte diese nicht nur mit Bravour sondern auch sehr sympathisch. // YouTube",
+    "bodyHash": "5157aa0d6f6396d7a8688213ec06f1939a1abaf9d750e15e69cfbf5d7478e61d",
+    "fetchedAt": "2026-11-20T12:13:24.627Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -3038,8 +3074,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-10T11:25:58.172Z",
-  "updatedAt": "2026-11-10T11:25:58.172Z"
+  "createdAt": "2026-11-20T12:13:24.627Z",
+  "updatedAt": "2026-11-20T12:13:24.627Z"
  },
  {
   "id": "ga-690e32cb743d0203",
@@ -3184,6 +3220,15 @@
     "bodyHash": "b91b12503a457b2698ac44f941865c04723a97da49604ebb3a58e47db3304f65",
     "fetchedAt": "2026-11-18T12:15:20.310Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/05/13/lage-am-millerntor-13-mai-2025/",
+    "locator": "p8",
+    "quote": "Mal wieder ein großer Rundumschlag: Beginnen wir mit dem Abendblatt , wo schon vor dem Spiel bei der Eintracht Ralph Gunesch zu Gast war. Der „Übergangstrainer“ von Eintracht Frankfurt erklärt dort, was dieser Begriff überhaupt bedeutet, spricht generell über die Nachwuchsleistungszentren im Profifußball und natürlich auch über seine Sicht auf den FC St. Pauli ( Text (€) / Podcast (33min) ).",
+    "bodyHash": "a193f1454f1b0a6b46dc7494e0b81b2f5c7241480b67f040304e65888c3a83b4",
+    "fetchedAt": "2026-11-20T12:13:13.822Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -3191,8 +3236,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-18T12:15:20.310Z",
-  "updatedAt": "2026-11-18T12:15:20.310Z"
+  "createdAt": "2026-11-20T12:13:13.822Z",
+  "updatedAt": "2026-11-20T12:13:13.822Z"
  },
  {
   "id": "ga-7c4815fc7c36128a",
@@ -3232,6 +3277,15 @@
     "bodyHash": "04fbc55b14b0bbaa2d0f55114432559895e379ce9c0b0cd0d9a8e8cd732a0106",
     "fetchedAt": "2026-11-13T11:33:11.345Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/08/01/lage-am-millerntor-01-august-2025/",
+    "locator": "p14",
+    "quote": "Wer da noch etwas tiefer einsteigen will, kann dies beim Rasenfunk tun, wo Max mit Julia Möhn von „Fußball kann mehr“ gesprochen hat. „Eine oder keine – Frauen in Vereinen“ (51min)",
+    "bodyHash": "ddf246667dfeb694966cc64304391a4ebbba5c633ba3b9d7d27eab44b2e931d7",
+    "fetchedAt": "2026-11-20T12:13:24.632Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -3239,8 +3293,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-13T11:33:11.345Z",
-  "updatedAt": "2026-11-13T11:33:11.345Z"
+  "createdAt": "2026-11-20T12:13:24.632Z",
+  "updatedAt": "2026-11-20T12:13:24.632Z"
  },
  {
   "id": "ga-6a1a244ece56de71",
@@ -3430,6 +3484,15 @@
     "bodyHash": "5f66d2f0113173b565fe1ef695583eab28b4328e8fa6c5c681dcb96c0777d88c",
     "fetchedAt": "2026-11-06T11:31:25.428Z",
     "language": "en"
+   },
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/05/19/lage-am-millerntor-19-mai-2025/",
+    "locator": "p42",
+    "quote": "Gestern Abend war Hauke Wahl im NDR-Sportclub (21min) zu Gast.",
+    "bodyHash": "900ea83eebce6085faea27a8e047c7b1da79413143cd999695c3da09f54ba7e4",
+    "fetchedAt": "2026-11-20T12:13:13.836Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -3437,8 +3500,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-06T11:31:25.428Z",
-  "updatedAt": "2026-11-06T11:31:25.428Z"
+  "createdAt": "2026-11-20T12:13:13.836Z",
+  "updatedAt": "2026-11-20T12:13:13.836Z"
  },
  {
   "id": "ga-618311f55e778cfd",
@@ -3766,5 +3829,95 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-11-18T12:15:26.375Z",
   "updatedAt": "2026-11-18T12:15:26.375Z"
+ },
+ {
+  "id": "ga-cf3ff4aa22d6cdaa",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "57",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/05/20/lage-am-millerntor-20-mai-2025/",
+    "locator": "p34",
+    "quote": "Der Flugkopfball (57min) hat neben dem Saisonabschluss von Werder und St. Pauli auch gleich noch die Neuverpflichtung von Arkadiusz Pyrka mit auf dem Zettel und bei „In Kontakt bleiben“ (1h11m) ist man trotz der Niederlagen beider Hamburger Teams in sehr entspannter Stimmung.",
+    "bodyHash": "1e46ceb663e921f0d03d7673ed8dd0143eb3cc3a9ff03c33117a49cc33d8564e",
+    "fetchedAt": "2026-11-20T12:13:13.839Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-20T12:13:13.839Z",
+  "updatedAt": "2026-11-20T12:13:13.839Z"
+ },
+ {
+  "id": "ga-208e2b839945b8ca",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "70",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/05/22/lage-am-millerntor-22-mai-2025/",
+    "locator": "p20",
+    "quote": "MT111: FC St. Pauli 1. Frauen (70min)",
+    "bodyHash": "c11e6c43247b9004a1f59af11201da22d4885067d78359f9088b1f9968f80322",
+    "fetchedAt": "2026-11-20T12:13:13.842Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-20T12:13:13.842Z",
+  "updatedAt": "2026-11-20T12:13:13.842Z"
+ },
+ {
+  "id": "ga-ef210773bf614a1c",
+  "clubId": "st-pauli",
+  "sourceIds": [
+   "millernton"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "65",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "millernton",
+    "url": "https://millernton.de/2025/07/22/lage-am-millerntor-22-juli-2025/",
+    "locator": "p50",
+    "quote": "Estudiantes LP [1] – 1 Huracán – Edwuin Cetré 65′ (Great Goal)",
+    "bodyHash": "7648f1c3580bceb30da8fe65e688ca96610fc16e0b0c522dc37b0a2a4b32973d",
+    "fetchedAt": "2026-11-20T12:13:21.896Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-20T12:13:21.896Z",
+  "updatedAt": "2026-11-20T12:13:21.896Z"
  }
 ]
