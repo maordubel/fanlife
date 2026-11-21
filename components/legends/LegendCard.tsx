@@ -1,5 +1,6 @@
 import type {ReactNode} from 'react'
 import {ATTR_LABEL,ROLE_ATTRS,type AttrKey} from '@/lib/legends/ratings'
+import {playerNumber} from '@/lib/people/number'
 import type {CardView} from '@/lib/legends/view'
 import {Stars} from './Brand'
 import {LegendShirt} from './Shirts'
@@ -18,10 +19,11 @@ const TIER:Record<string,string>={premium:'Premium',mid:'Squad',budget:'Bargain'
 export const ROLE_LABEL:Record<string,string>={GK:'Goalkeeper',CB:'Centre-back',FB:'Full-back',DM:'Holding midfielder',CM:'Central midfielder',AM:'Attacking midfielder',W:'Winger',ST:'Striker'}
 export const ROLE_SHORT:Record<string,string>={GK:'GK',CB:'CB',FB:'FB',DM:'DM',CM:'CM',AM:'AM',W:'W',ST:'ST'}
 export function LegendCard({c,tier,locked,children,compact=false,shirt=false}:{c:CardView;tier?:string;locked?:string|null;children?:ReactNode;compact?:boolean;/** draw his era's shirt beside the name (the career's documented kits) */shirt?:boolean}){
+ const id=playerNumber(c.person)
  return <article className="lgm-card" data-pos={c.pos} data-tier={tier} data-locked={locked?'true':undefined} data-compact={compact||undefined} data-shirt={shirt||undefined}>
   {tier?<p className="lgm-card-tier">{TIER[tier]??tier}</p>:null}
   {shirt?<LegendShirt man={c} className="lgm-card-shirt"/>:null}
-  <header><p className="lgm-card-pos">{c.role?ROLE_LABEL[c.role]:posName(c.pos)}{c.alt?.length?<small> · also {c.alt.join(', ')}</small>:null}</p><h3>{c.name}</h3><p className="lgm-card-years">{years(c)}</p></header>
+  <header><p className="lgm-card-pos">{c.role?ROLE_LABEL[c.role]:posName(c.pos)}{c.alt?.length?<small> · also {c.alt.join(', ')}</small>:null}</p><h3>{c.name}</h3><p className="lgm-card-years">{years(c)}{id&&<small className="tabular-nums"> · ID {id}</small>}</p></header>
   <div className="lgm-card-rate"><Stars value={c.stars} size={compact?'sm':'md'}/><b className="lgm-price">{money(c.price)}</b></div>
   {compact?null:Object.keys(c.attrs).length?<dl className="lgm-attrs">{(ROLE_ATTRS[c.pos]??[]).map(k=><div key={k}><dt>{ATTR_LABEL[k as AttrKey]}</dt><dd><Stars value={c.attrs[k]??c.stars} size="sm"/></dd></div>)}</dl>:<p className="lgm-card-hidden" data-testid="legends-ratings-hidden">{HIDDEN_RATINGS}</p>}
   {!compact&&c.fm?<FmSheet fm={c.fm} name={c.name} pos={c.pos} {...(c.role?{role:c.role}:{})} {...(c.alt?{alt:c.alt}:{})}/>:null}

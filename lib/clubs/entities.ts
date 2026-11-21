@@ -39,7 +39,7 @@ export type Entry={
  * whole written name or alias (rule 7) within the player's recorded years; a name that resolves to no player — or to two —
  * is counted in `unnamed`, never guessed. Nothing here is inferred from a decade, a squad list or a surname.
  */
-export type MatchLink={matchId:string;competition:string|null;score:string|null;venue:string|null;started:string[];scored:string[];unnamed:number}
+export type MatchLink={matchId:string;competition:string|null;score:string|null;venue:string|null;started:string[];scored:string[];unnamed:number;report?:true}
 export type TextRef={kind:'rival'|'season';id:string;name:string}
 export const precisionOf=(e:Pick<Entry,'on'|'year'>):Precision=>e.on?'day':e.year!==null?'year':'unknown'
 
@@ -124,7 +124,7 @@ export function buildEntries(data:Pack):Entry[]{
 }
 
 // ------------------------------------------------------------------ moment → match → people (review D01)
-type MatchValue={name?:string;on?:string|null;competition?:string|null;score?:string|null;venue?:string|null;lineup?:unknown;scorers?:unknown}
+type MatchValue={name?:string;on?:string|null;competition?:string|null;score?:string|null;venue?:string|null;lineup?:unknown;scorers?:unknown;opponentLineup?:unknown;goalEvents?:unknown}
 const scoreOf=(s:string|null|undefined)=>{const m=/(\d{1,2})\s*[-–:]\s*(\d{1,2})/.exec(s||'');return m?`${Number(m[1])}-${Number(m[2])}`:null}
 const nameOf=(x:unknown)=>typeof x==='string'?x:x&&typeof x==='object'&&typeof (x as {name?:unknown}).name==='string'?(x as {name:string}).name:null
 /**
@@ -177,7 +177,8 @@ function linkMatches(entries:Entry[],players:Entry[],matches:Matches){
   const started=new Set<string>(),scored=new Set<string>();let unnamed=0
   for(const x of lineup){const id=who(x,e.year);if(id)started.add(id);else unnamed++}
   for(const x of scorers){const id=who(x,e.year);if(id)scored.add(id);else if(nameOf(x))unnamed++}
-  e.match={matchId:m.id,competition:typeof v.competition==='string'?v.competition:null,score:typeof v.score==='string'?v.score:null,venue:typeof v.venue==='string'?v.venue:null,started:[...started].sort(),scored:[...scored].sort(),unnamed}
+  const report=(Array.isArray(v.opponentLineup)&&v.opponentLineup.length>0)||(Array.isArray(v.goalEvents)&&v.goalEvents.length>0)
+  e.match={matchId:m.id,competition:typeof v.competition==='string'?v.competition:null,score:typeof v.score==='string'?v.score:null,venue:typeof v.venue==='string'?v.venue:null,started:[...started].sort(),scored:[...scored].sort(),unnamed,...(report?{report:true as const}:{})}
  }
 }
 
@@ -188,7 +189,7 @@ export function mentionedIn(entries:Entry[],playerId:string):Entry[]{
 export const newestFirst=(a:Entry,b:Entry)=>(b.on||`${b.year??0}`).localeCompare(a.on||`${a.year??0}`)||a.id.localeCompare(b.id)
 
 // ------------------------------------------------------------------ wire (what the server sends the client)
-type WireMatch=[matchId:string,competition:string|null,score:string|null,venue:string|null,started:string[],scored:string[],unnamed:number]
+type WireMatch=[matchId:string,competition:string|null,score:string|null,venue:string|null,started:string[],scored:string[],unnamed:number,report?:1]
 type Wire=[id:string,kind:0|1,title:string,on:string|null,year:number|null,hint:string,conf:number,srcSet:number,note:number,legacy:0|1,player:0|[string,number|null,number|null,string[]],names:0|string[],refs:0|[('r'|'s'),string,string][],match?:0|WireMatch]
 export type ArchiveWire={rows:Wire[];srcSets:string[][];notes:string[];sources:Record<string,[string,string|null]>}
 
@@ -201,7 +202,7 @@ export function encodeArchive(entries:Entry[],sources:Pick<Source,'id'|'title'|'
   return [e.id,e.kind==='player'?1:0,e.title,e.on,e.on?null:e.year,e.hint,e.confidence,si,ni,e.legacy?1:0,
    e.player?[e.player.positions.join('/'),e.player.from,e.player.to,e.player.aliases]:0,e.names.length?e.names:0,
    e.refs.length?e.refs.map(r=>[r.kind==='rival'?'r':'s',r.id,r.name] as ['r'|'s',string,string]):0,
-   e.match?[e.match.matchId,e.match.competition,e.match.score,e.match.venue,e.match.started,e.match.scored,e.match.unnamed]:0]
+   e.match?[e.match.matchId,e.match.competition,e.match.score,e.match.venue,e.match.started,e.match.scored,e.match.unnamed,...(e.match.report?[1] as const:[] as const)]:0]
  })
  const src:Record<string,[string,string|null]>={}
  for(const s of sources)if(used.has(s.id))src[s.id]=[s.title,s.url]
@@ -215,7 +216,7 @@ export function decodeArchive(w:ArchiveWire):Entry[]{
    sources:w.srcSets[si]||[],note:ni>=0?w.notes[ni]??null:null,legacy:legacy===1,
    player:pl?{positions:(pl[0]?pl[0].split('/'):[]) as ClubPlayer['positions'],from:pl[1],to:pl[2],aliases:pl[3]}:null,
    names:names||[],refs:(refs||[]).map(([k,i,n])=>({kind:k==='r'?'rival' as const:'season' as const,id:i,name:n})),
-   match:mt?{matchId:mt[0],competition:mt[1],score:mt[2],venue:mt[3],started:mt[4],scored:mt[5],unnamed:mt[6]}:null,
+   match:mt?{matchId:mt[0],competition:mt[1],score:mt[2],venue:mt[3],started:mt[4],scored:mt[5],unnamed:mt[6],...(mt[7]?{report:true as const}:{})}:null,
   }
  })
 }

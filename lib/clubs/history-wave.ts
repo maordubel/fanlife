@@ -76,11 +76,11 @@ export function mergeHistorical<T extends Raw>(pack:T,wave:Raw):{pack:T;conflict
   // An existing dated event retains chronology priority through mergeWave.
   events.push({...f,id:`${str(f.id)}-moment`,value:{id:`${str(f.id)}-moment`,name:v.name,on,precision:'day',sport:'football',sensitive:false,hint:[str(v.competition),sameSeason(str(v.competition),str(v.season))?'':str(v.season),matched?'Corroborated match record.':''].filter(Boolean).join(' · ')}})
  }
- return {pack:mergeWave({...pack,matches:out},{sources,archive:events}),conflicts}
+ return {pack:mergeWave({...pack,matches:out},{sources,archive:events,players:wave.players,seasons:wave.seasons,trophies:wave.trophies,kits:wave.kits}),conflicts}
 }
 
-export function withHistorical<T extends Raw>(pack:T,clubId:string):{pack:T;conflicts:HistoryConflict[]}{
+export function withHistorical<T extends Raw>(pack:T,clubId:string,additionalWave?:unknown):{pack:T;conflicts:HistoryConflict[]}{
  let cur=pack;const conflicts:HistoryConflict[]=[]
- for(const wave of WAVES[clubId]??[]){const r=mergeHistorical(cur,obj(wave));cur=r.pack;conflicts.push(...r.conflicts)}
+ for(const wave of [...(WAVES[clubId]??[]),...(additionalWave?[additionalWave]:[])]){const r=mergeHistorical(cur,obj(wave));cur=r.pack;conflicts.push(...r.conflicts)}
  return {pack:cur,conflicts}
 }

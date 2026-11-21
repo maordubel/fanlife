@@ -6,15 +6,17 @@ import {door} from '@/lib/features-server'
 import {crestFor} from '@/lib/clubs/crest'
 import {livery,wearLivery} from '@/lib/club-livery'
 import {isPersonId} from '@/lib/people/model'
+import {personIdFromNumber,playerNumber} from '@/lib/people/number'
 import {profileFor,posWord} from '@/lib/people/profile'
 import '../players.css'
 export const dynamic='force-dynamic'
 
 type Props={params:{id:string}}
 export async function generateMetadata({params}:Props){
- if(!isPersonId(params.id))return {title:'Player'}
+ const id=isPersonId(params.id)?params.id:personIdFromNumber(params.id)
+ if(!id)return {title:'Player'}
  const d=await door('profiles')
- const p=d.open?await profileFor(params.id,d.preview).catch(()=>null):null
+ const p=d.open?await profileFor(id,d.preview).catch(()=>null):null
  return p?{title:`${p.name} — player profile`,description:`${p.name}: ${p.stints.map(s=>`${s.clubName} ${s.years}`).join(' · ')}.`,robots:d.preview?{index:false}:undefined}:{title:'Player'}
 }
 
@@ -30,9 +32,10 @@ function Stars({n}:{n:number}){
  * Off for fans until the owner switches "Player profiles" on; the owner previews.
  */
 export default async function Page({params}:Props){
- if(!isPersonId(params.id))notFound()
+ const id=isPersonId(params.id)?params.id:personIdFromNumber(params.id)
+ if(!id)notFound()
  const d=await door('profiles');if(!d.open)notFound()
- const p=await profileFor(params.id,d.preview);if(!p)notFound()
+ const p=await profileFor(id,d.preview);if(!p)notFound()
  if(p.canonicalId!==params.id)permanentRedirect(`/players/${p.canonicalId}`)
  const positions=[...new Set(p.stints.flatMap(s=>s.positions))]
  const apps=p.stints.reduce((n,s)=>n+(s.apps??0),0),goals=p.stints.reduce((n,s)=>n+(s.goals??0),0),counted=p.stints.some(s=>s.apps!==null)
@@ -50,6 +53,7 @@ export default async function Page({params}:Props){
       <h1 dir="auto">{p.name}</h1>
       {p.aliases.length>0&&<p className="plp-aka" dir="auto">Also written {p.aliases.join(' · ')}</p>}
       <dl className="plp-facts">
+       <div><dt>Player ID</dt><dd className="tabular-nums">{playerNumber(p.canonicalId)}</dd></div>
        <div><dt>Positions</dt><dd>{positions.length?positions.map(posWord).join(' · '):'Not recorded'}</dd></div>
        {counted&&<div><dt>Games · goals</dt><dd className="tabular-nums">{apps} · {goals}</dd></div>}
        {p.stars!==null&&<div><dt>Legends rating</dt><dd><Stars n={p.stars}/></dd></div>}
@@ -66,6 +70,12 @@ export default async function Page({params}:Props){
       <p className="plp-years tabular-nums">{s.years}{s.positions.length?` · ${s.positions.map(posWord).join(' / ')}`:''}</p>
       {(s.apps!==null||s.goals!==null)&&<p className="plp-line tabular-nums">{s.apps??'—'} games · {s.goals??'—'} goals</p>}
       {s.stars!==null&&<p className="plp-line">Legends <Stars n={s.stars}/></p>}
+      {s.seasonAppearances.length>0&&<details className="plp-line">
+       <summary>Serie A appearances by season</summary>
+       <table className="tabular-nums"><thead><tr><th scope="col">Season</th><th scope="col">Apps</th><th scope="col">Goals</th></tr></thead>
+        <tbody>{s.seasonAppearances.map(row=><tr key={row.season}><th scope="row">{row.season}</th><td>{row.appearances}</td><td>{row.goals}</td></tr>)}</tbody>
+       </table>
+      </details>}
      </div>
      {s.archiveHref&&<Link className="plp-door min-h-tap" href={s.archiveHref}>In the {s.clubName} archive</Link>}
     </li>})}</ol>

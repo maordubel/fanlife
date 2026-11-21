@@ -20,11 +20,12 @@ import {withForgedTrivia} from '@/lib/trivia/club'
 import {withMemoryPairs} from './memory-pairs'
 import {withArchiveMysteries} from './mystery-forge'
 import {oneNightPerMatch} from './one-night'
+import {withDocumentedMatchDetails} from './documented-match-details'
 import {correctPack,correctMatches} from './corrections'
 import {withCareers,withSeasonHistory} from './careers'
 import {hapoelFrontArchive} from './kit-fronts'
-export const compilePackEuro=(pack:Record<string,unknown>,club:RegistryClub)=>{
- const history=withHistorical(pack,club.id),night=oneNightPerMatch(withCareers(correctPack(withSeasonHistory(withGoalWave(withEuro(history.pack,club.id),club.id),club.id),club.id),club.id)),result=compilePackBase(night.pack as never,club)
+export const compilePackEuro=(pack:Record<string,unknown>,club:RegistryClub,additionalHistory?:unknown)=>{
+ const history=withHistorical(pack,club.id,additionalHistory),night=oneNightPerMatch(withCareers(correctPack(withSeasonHistory(withGoalWave(withEuro(history.pack,club.id),club.id),club.id),club.id),club.id)),result=compilePackBase(withDocumentedMatchDetails(night.pack,additionalHistory) as never,club)
  return {...result,diagnostics:[...result.diagnostics,...night.folded.map(f=>({record:`${club.id}:${f.kept}`,code:'SAME_MATCH_FOLDED',message:`${f.on}: ${f.folded.join(', ')} folded into ${f.kept} (same day, same score).`})),...history.conflicts.map(c=>({record:`${club.id}:${c.incoming}`,code:'HISTORY_CONFLICT',message:`${c.reason}: ${c.on}; existing ${c.existing}. Incoming result withheld from matches and timeline.`}))]}
 }
 /** Existing archives only. New facts stay in review; prior approvals remain authoritative. */
@@ -61,7 +62,7 @@ export const providers:Record<string,()=>Promise<{data:ClubData;diagnostics:Diag
  'wydad-casablanca':async()=>compilePackEuro(mergeWave(mergeWave(mergeWave(mergeWave((await import('@/club-packs/wydad-casablanca/core.json')).default as never,(await import('@/club-packs/wydad-casablanca/wave-research-2026-11-12.json')).default as never),(await import('@/club-packs/wydad-casablanca/wave-history-2026-11-13.json')).default as never),(await import('@/club-packs/wydad-casablanca/wave-kit-colours-2026-11-15.json')).default as never),(await import('@/club-packs/wydad-casablanca/wave-kit-archive-2026-11-15.json')).default as never) as never,REGISTRY.find(c=>c.id==='wydad-casablanca')!),
  'al-ahly':async()=>compilePackEuro(mergeWave(mergeWave(mergeWave(mergeWave((await import('@/club-packs/al-ahly/core.json')).default as never,(await import('@/club-packs/al-ahly/wave-research-2026-11-12.json')).default as never),(await import('@/club-packs/al-ahly/wave-history-2026-11-13.json')).default as never),(await import('@/club-packs/al-ahly/wave-kit-colours-2026-11-15.json')).default as never),(await import('@/club-packs/al-ahly/wave-kit-archive-2026-11-15.json')).default as never) as never,REGISTRY.find(c=>c.id==='al-ahly')!),
  // ↓ promoted from the research desk (scripts/clubs/promote.ts) — one line per club
- 'atalanta':async()=>compilePackEuro(mergeWave(mergeWave(mergeWave((await import('@/club-packs/atalanta/core.json')).default as never,(await import('@/club-packs/atalanta/wave-research-2026-11-14.json')).default as never),(await import('@/club-packs/atalanta/wave-kit-colours-2026-11-15.json')).default as never),(await import('@/club-packs/atalanta/wave-kit-archive-2026-11-15.json')).default as never) as never,REGISTRY.find(c=>c.id==='atalanta')!),
+ 'atalanta':async()=>compilePackEuro(mergeWave(mergeWave(mergeWave((await import('@/club-packs/atalanta/core.json')).default as never,(await import('@/club-packs/atalanta/wave-research-2026-11-14.json')).default as never),(await import('@/club-packs/atalanta/wave-kit-colours-2026-11-15.json')).default as never),(await import('@/club-packs/atalanta/wave-kit-archive-2026-11-15.json')).default as never) as never,REGISTRY.find(c=>c.id==='atalanta')!,(await import('@/club-packs/atalanta/wave-history-2026-11-21.json')).default),
  'maccabi-haifa':async()=>compilePackEuro(mergeWave(mergeWave(mergeWave((await import('@/club-packs/maccabi-haifa/core.json')).default as never,(await import('@/club-packs/maccabi-haifa/wave-research-2026-11-14.json')).default as never),(await import('@/club-packs/maccabi-haifa/wave-kit-colours-2026-11-15.json')).default as never),(await import('@/club-packs/maccabi-haifa/wave-kit-archive-2026-11-15.json')).default as never) as never,REGISTRY.find(c=>c.id==='maccabi-haifa')!),
 }
 /** What `loadClubBase` adds on top of a provider's output: the roster wave, then the forged English trivia. */

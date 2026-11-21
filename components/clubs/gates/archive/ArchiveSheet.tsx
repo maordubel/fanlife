@@ -8,6 +8,7 @@ import {tr} from '@/components/clubs/rumble/shared'
 import {localizedDate,type UiLocale} from '@/lib/clubs/locale'
 import {precisionOf,type Entry} from '@/lib/clubs/entities'
 import {nextStep,related} from '@/lib/clubs/archive-model'
+import {playerNumber} from '@/lib/people/number'
 import type {ArchiveWire} from '@/lib/clubs/entities'
 import {dayMonth,type CardCtx} from './ArchiveCards'
 import css from './archive.module.css'
@@ -61,6 +62,9 @@ export function ArchiveSheetBody({entry:e,entries,byId,seen,ctx,club,clubName,lo
   </dl>
   <p className={css.documented}>{copy.documented}: {e.confidence}/3</p>
   </section>
+  {e.match?.report&&<Link className={`${css.linkBtn} min-h-tap`} href={`/clubs/${club}/archive?${new URLSearchParams({report:e.match.matchId,event:e.id,lang:locale})}`}>
+   {locale==='he'?'הרכבים וכובשים':'Lineups and scorers'}
+  </Link>}
   <p className={css.note} lang={e.legacy?locale:undefined}>{e.legacy?copy.legacy:e.note}</p>
   <section className={css.group}>
    <h3>{t('ar.sheet.sources')}</h3>
@@ -89,7 +93,7 @@ export function ArchiveSheetBody({entry:e,entries,byId,seen,ctx,club,clubName,lo
    {deeper?<button type="button" className={`${css.tool} ${css.primary}`} onClick={()=>onOpen(deeper.id)}>{t('ar.sheet.deeper')} <span aria-hidden="true" className={css.arrow}>→</span></button>
     :<p className={css.fine} role="status" data-testid="archive-thread-end">{t('ar.sheet.endThread')}</p>}
   </div>
-  {isPlayer&&links.profiles?.[e.id]&&<p className={css.gateLinks}><Link className={`${css.tool} ${css.primary} min-h-tap`} href={`/players/${links.profiles[e.id]}`}>{t('ar.sheet.profile')} <span aria-hidden="true" className={css.arrow}>→</span></Link></p>}
+  {isPlayer&&links.profiles?.[e.id]&&<p className={css.gateLinks}><Link className={`${css.tool} ${css.primary} min-h-tap`} href={`/players/${links.profiles[e.id]}`}>{t('ar.sheet.profile')} <small className="tabular-nums">· ID {playerNumber(links.profiles[e.id])}</small> <span aria-hidden="true" className={css.arrow}>→</span></Link></p>}
   {(links.xi&&isPlayer||links.derby&&e.refs.some(r=>r.kind==='rival'))&&<nav className={css.gateLinks} aria-label={t('ar.link.more')}>
    {links.xi&&isPlayer&&<Link className={`${css.tool} min-h-tap`} href={links.xi}>{t('ar.link.xi')} ↗</Link>}
    {links.derby&&e.refs.some(r=>r.kind==='rival')&&<Link className={`${css.tool} min-h-tap`} href={links.derby}>{t('ar.link.derby')} ↗</Link>}

@@ -6,6 +6,7 @@ import {clubWardrobe} from '@/lib/clubs/kit-wardrobe'
 import type {GateView} from '../types'
 import {door as featureDoor} from '@/lib/features-server'
 import {people,peopleFromRepo} from '@/lib/people/registry'
+import {MatchReport} from '@/components/clubs/gates/archive/MatchReport'
 
 const TABS:ArchiveTab[]=['today','time','index','dig','search','mine']
 /**
@@ -15,6 +16,11 @@ const TABS:ArchiveTab[]=['today','time','index','dig','search','mine']
  *   ?player= / ?match=&on=&score= / ?name=&y= open the entry a game names (lib/clubs/archive-door.ts), else search the name.
  */
 export const view:GateView=async({club,locale,copy,round,searchParams,allowed})=>{
+ if(searchParams.report){
+  const match=club.matches?.find(f=>f.id===searchParams.report&&f.status==='approved')
+  if(!match)notFound()
+  return <MatchReport match={match} club={club} locale={locale} event={searchParams.event}/>
+ }
  const {wire,ids,door,index}=archiveProjection(club)
  if(searchParams.event&&!ids.has(searchParams.event))notFound()
  // 12.11.2026 — the door every gate links through: ?player=<id> · ?match=<id>&on=<day>&score=<x-y> · ?name=<printed name>&y=<year>.

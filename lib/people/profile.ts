@@ -12,7 +12,8 @@ import type {Person,Pos} from './model'
  * whose archive is open to fans (rule: only the owner opens a club); the owner's preview sees every record, marked.
  * Hidden ratings never leave the server (rule 4) — the page shows Legends stars, which the game already shows.
  */
-export type ProfileStint={club:string;clubName:string;open:boolean;name:string;years:string;from:number|null;to:number|null;positions:Pos[];apps:number|null;goals:number|null;stars:number|null;archiveHref:string|null}
+export type SeasonAppearance={season:string;appearances:number;goals:number}
+export type ProfileStint={seasonAppearances:SeasonAppearance[];club:string;clubName:string;open:boolean;name:string;years:string;from:number|null;to:number|null;positions:Pos[];apps:number|null;goals:number|null;stars:number|null;archiveHref:string|null}
 export type Profile={id:string;canonicalId:string;name:string;aliases:string[];stints:ProfileStint[];hidden:number;clubs:number;stars:number|null;qid:string|null}
 const POS_WORD:Record<Pos,string>={GK:'Goalkeeper',DF:'Defender',MF:'Midfielder',FW:'Forward'}
 export const posWord=(p:Pos)=>POS_WORD[p]
@@ -30,7 +31,13 @@ export async function profileFor(id:string,owner:boolean):Promise<Profile|null>{
   if(!open&&!owner)continue
   const loaded=await loadClub(s.club).catch(()=>null)
   const entry=loaded?archiveDoor(loaded.data).player(s.eid):null
-  stints.push({club:s.club,clubName:loaded?.data.identity.name??control?.name??s.club,open,name:s.name,years:yearsOf(s.from,s.to),from:s.from,to:s.to,positions:s.pos,apps:s.apps,goals:s.goals,stars:s.stars,archiveHref:open?archiveEventHref(s.club,entry,'en'):null})
+  const seasonAppearances:SeasonAppearance[]=[]
+  for(const row of loaded?.data.seasons??[]){
+   const v=row.value as {season?:string;playerLeagueStats?:{playerId:string;appearances:number;goals:number}[]}
+   const recorded=v.playerLeagueStats?.find(stat=>stat.playerId===s.eid)
+   if(typeof v.season==='string'&&recorded)seasonAppearances.push({season:v.season,appearances:recorded.appearances,goals:recorded.goals})
+  }
+  stints.push({seasonAppearances,club:s.club,clubName:loaded?.data.identity.name??control?.name??s.club,open,name:s.name,years:yearsOf(s.from,s.to),from:s.from,to:s.to,positions:s.pos,apps:s.apps,goals:s.goals,stars:s.stars,archiveHref:open?archiveEventHref(s.club,entry,'en'):null})
  }
  if(!stints.length)return null
  const shown=stints.filter(s=>s.stars!==null).map(s=>s.stars!)

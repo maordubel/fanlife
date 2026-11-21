@@ -32,8 +32,11 @@ const pct=(v:number|null,all:(number|null)[])=>{if(v===null)return 0.4;const kno
 const first=(p:ClubPlayer):Pos|null=>p.positions[0]??null
 /** goals per player (exact normalised name or alias; never fuzzy) from the club's approved matches */
 export function goalsByPlayer(data:ClubData):Map<string,number>{
- const names=new Map<string,string>()
- for(const p of data.players||[])for(const n of [p.value.name,...p.value.aliases])names.set(norm(n),p.value.id)
+ const names=new Map<string,string|null>()
+ for(const p of data.players||[])for(const n of [p.value.name,...p.value.aliases]){
+  const key=norm(n),existing=names.get(key)
+  names.set(key,existing===undefined||existing===p.value.id?p.value.id:null)
+ }
  const out=new Map<string,number>()
  for(const m of data.matches||[]){const sc=(m.value as unknown as {scorers?:{name?:string}[]}).scorers
   for(const s of Array.isArray(sc)?sc:[]){const id=s.name?names.get(norm(s.name)):undefined;if(id)out.set(id,(out.get(id)||0)+1)}}
