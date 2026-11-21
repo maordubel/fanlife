@@ -1036,15 +1036,6 @@
   "evidence": [
    {
     "sourceId": "thecelticwiki",
-    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/70s-pictures/1970-71-pics/1970-08-22-celtic-4-2-heart-of-midlothian-league-cup-pictures/",
-    "locator": "p1",
-    "quote": "Match | 1970-71 Pictures | 1970 – 1971 | 70's Pictures | Year By Year Pictures | Picture Library",
-    "bodyHash": "a305cdbb38d54c2ecf1f8e30394d5d8bc0c1d879ee52a9320fd675b424469fc5",
-    "fetchedAt": "2026-11-12T11:50:10.067Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "thecelticwiki",
     "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/70s-pictures/1970-71-pics/1970-08-26-dundee-united-2-2-celtic-league-cup-pictures/",
     "locator": "p1",
     "quote": "Match | 1970-71 Pictures | 1970 – 1971 | 70's Pictures | Year By Year Pictures | Picture Library",
@@ -1105,6 +1096,15 @@
     "bodyHash": "1872404cebc615befad35ba013323937c7cc2d2701410e6749ddb28654d46d56",
     "fetchedAt": "2026-11-18T12:14:10.326Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1955-01-03-celtic-4-1-raith-rovers-league-division-a/",
+    "locator": "p6",
+    "quote": "Raith had a good opening spell for the first 15 minutes and troubled both Stein and Bell. The Celtic forwards had failed to gel and Mochan had not seen the ball – and started to go wandering from his position at wide left. With Collins operating in a similar manner over on the right side these two started to dictate the play. Evans opened the scoring and Collins increased it ten minutes before half time. Five minutes after the interval Walsh atoned for a stack of misses in the first half and scored with a header. Just after that Raith pulled a goal back but Celtic never looked troubled by the ",
+    "bodyHash": "eef4ecd8f2f6c757d576dd42d32ee9c6d64d56158aa78903cc6ac8922ec67fd2",
+    "fetchedAt": "2026-11-21T11:46:24.089Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1112,8 +1112,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-18T12:14:10.326Z",
-  "updatedAt": "2026-11-18T12:14:10.326Z"
+  "createdAt": "2026-11-21T11:46:24.089Z",
+  "updatedAt": "2026-11-21T11:46:24.089Z"
  },
  {
   "id": "ga-e21180845e547f26",
@@ -1345,6 +1345,15 @@
     "bodyHash": "a3aae4eb5089327c25720a5da2aecfca4eff1c9863d19b639e0ac5c8846f9c1b",
     "fetchedAt": "2026-11-01T10:48:26.288Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1955-01-01-rangers-4-1-celtic-league-division-a/",
+    "locator": "p7",
+    "quote": "Both sides began the game nervously with the ball going astray regularly. In the 9th minute Stein sliced a clearance straight to Greirson who promptly fed Simpson to score. This clearly unsettled the centre half who had a mare of a game. Celtic had the majority of the play in the first half with Evans a stand out but they failed to capitalise until the 32nd minute when Walsh was brought down and Fernie curled the free kick up and over the wall and into the net. The first half was a far from engaging game but the second started at a cracking pace and continued with Hubbard and Simpson virtually",
+    "bodyHash": "fd0d665d0049d5d47d0c4d87593bac47bfb5ab8ed1e9e709fc00db53dd93f4b5",
+    "fetchedAt": "2026-11-21T11:46:24.088Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1352,8 +1361,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-01T10:48:26.288Z",
-  "updatedAt": "2026-11-01T10:48:26.288Z"
+  "createdAt": "2026-11-21T11:46:24.088Z",
+  "updatedAt": "2026-11-21T11:46:24.088Z"
  },
  {
   "id": "ga-217b47b47c0bec0d",
@@ -1618,6 +1627,15 @@
     "bodyHash": "55ced88129e9e2b597d658abcf850e236d29b5ad678b1a245c66f43a4adf56c7",
     "fetchedAt": "2026-11-13T11:14:28.890Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1951-09-22-rangers-1-1-celtic-league-division-a/",
+    "locator": "p7",
+    "quote": "It was the more remarkable in that it was scored when Celtic had only 10 players on the field, McPhail having gone off with a nasty cut above the eye in the 18th minute and needed 4 stitches.",
+    "bodyHash": "8f217643902503a17a3b2e52482b58b8743f66db5ccd398fa381698163b99b44",
+    "fetchedAt": "2026-11-21T11:46:03.119Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1625,8 +1643,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-13T11:14:28.890Z",
-  "updatedAt": "2026-11-13T11:14:28.890Z"
+  "createdAt": "2026-11-21T11:46:03.119Z",
+  "updatedAt": "2026-11-21T11:46:03.119Z"
  },
  {
   "id": "ga-f5fa00d30830a3a2",
@@ -1879,6 +1897,15 @@
     "bodyHash": "de882a981662d1516c2ba918eb725809dfffa6cbbf3a59eb6bf8333649903272",
     "fetchedAt": "2026-11-03T11:03:06.542Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1952-08-09-st-mirren-0-1-celtic-league-cup/",
+    "locator": "p8",
+    "quote": "Celtic went into the lead in the 6th minute when McDonald dispossessed Pirrie and stroked the ball home.",
+    "bodyHash": "070cee28b55e4dbdac85b673aedf4815ee3f00080845107dfd14a3de877f1ee4",
+    "fetchedAt": "2026-11-21T11:46:09.176Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1886,8 +1913,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-03T11:03:06.542Z",
-  "updatedAt": "2026-11-03T11:03:06.542Z"
+  "createdAt": "2026-11-21T11:46:09.176Z",
+  "updatedAt": "2026-11-21T11:46:09.176Z"
  },
  {
   "id": "ga-dbf5658ec20a795c",
@@ -1978,6 +2005,15 @@
     "bodyHash": "b1646a96bc5ca7fb9b999ea5fc605ac279e6e89f536380ec832118166784708e",
     "fetchedAt": "2026-10-31T09:58:03.106Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1953-04-11-celtic-3-2-st-mirren-league-division-a/",
+    "locator": "p8",
+    "quote": "Play speeded up but the quality was poor in the second half. McPhail laid on good passes for Collins and Peacock which came to nothing. McPhail was pushing the Celtic attack forward and playing some good football. Celtic looked to have settled it in the 83rd minute when Collins shot home from a Peacock and McPhail move. However, Bonnar failed to cut out a cross and Gemmell picked up another goal for St Mirren.",
+    "bodyHash": "951aa04e0532f00590f7d8dbc9d160c4a891310dab41ee38849b3c14c7c371e0",
+    "fetchedAt": "2026-11-21T11:46:12.423Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -1985,8 +2021,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-31T09:58:03.106Z",
-  "updatedAt": "2026-10-31T09:58:03.106Z"
+  "createdAt": "2026-11-21T11:46:12.423Z",
+  "updatedAt": "2026-11-21T11:46:12.423Z"
  },
  {
   "id": "ga-069d86c069a8a125",
@@ -2017,6 +2053,15 @@
     "bodyHash": "895b554ef079c5344ed9dd80327709772e6c52657b385137716766b23d735d53",
     "fetchedAt": "2026-10-31T09:58:12.074Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1954-04-24-celtic-2-1-aberdeen-scottish-cup/",
+    "locator": "p32",
+    "quote": "Sean Fallon 64′",
+    "bodyHash": "dd7e716ff4dd8febddc43c07845c97462168acd2d04c9fea1b1f12a05f8b31bf",
+    "fetchedAt": "2026-11-21T11:46:21.100Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2024,8 +2069,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-10-31T09:58:12.074Z",
-  "updatedAt": "2026-10-31T09:58:12.074Z"
+  "createdAt": "2026-11-21T11:46:21.100Z",
+  "updatedAt": "2026-11-21T11:46:21.100Z"
  },
  {
   "id": "ga-1974d5b8607fb677",
@@ -2149,24 +2194,6 @@
   "evidence": [
    {
     "sourceId": "thecelticwiki",
-    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/c/chalmers-stevie/chalmers-stevie-passing-obituaries/",
-    "locator": "p161",
-    "quote": "&ldquo;Look at last weekend, too – our number five, Jozo Simunovic, scored a header that Billy himself would have been proud of, on the 67th minute. I think the big man must have some pull upstairs! Both Billy and Stevie are such a huge part of Celtic&rsquo;s history, they&rsquo;ll never be forgotten. They&rsquo;re in the history books forever, and they&rsquo;re part of the club&rsquo;s greatest history.&rdquo;",
-    "bodyHash": "24f4401e2cc05f0b818ae8a620b42f4cd8fc4450cc3fe528caab5788b76bd76d",
-    "fetchedAt": "2026-10-31T09:58:03.104Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "thecelticwiki",
-    "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/f/fallon-john/fallon-john-miscellaneous-articles/",
-    "locator": "p76",
-    "quote": "SATURDAY’S win over Kilmarnock marked the perfect tribute to Billy McNeill, with Celtic’s current number 5, Jozo Simunovic, netting the game’s only goal on the 67th minute.",
-    "bodyHash": "6dacabe16a8389891fd90857686b4b5718bdd49553afbe2d7889f6213e11e6c5",
-    "fetchedAt": "2026-11-01T10:48:11.260Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "thecelticwiki",
     "url": "https://www.thecelticwiki.com/players/all-time-a-to-z-of-celtic-players/g/gemmell-tommy/",
     "locator": "p43",
     "quote": "In the match following his passing, Celtic defeated St Mirren 4-1 in a cup game. Appropriately for Tommy, a goal was scored in the 67th minute. Celtic had gone behind in this game to fight back and equalise (with that goal by an attacking fullback), and wave after wave of pressure after sustained defence from the opposition led to their collapse and Celtic’s victory. Interesting parallels to the European Cup final in 1967.",
@@ -2218,6 +2245,24 @@
     "bodyHash": "2f42ad95676537f12db4371323aeaeff7cb83c6b191d96bf76f9085b675aa7c0",
     "fetchedAt": "2026-11-17T12:05:30.292Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1953-09-26-celtic-3-0-aberdeen-league-division-a/",
+    "locator": "p9",
+    "quote": "Aberdeen had a cracking free kick at the start of the second half which smacked off the crossbar from 20 yards. But generally play in the second half was unremarkable. In the 67th minute Mitchell completed his hatrick and gave a third penalty away. Collins duly obliged",
+    "bodyHash": "2702961917052cb9f07697231bbea4eba40b934f0e3ee2577bd7fe871d1dda44",
+    "fetchedAt": "2026-11-21T11:46:15.096Z",
+    "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1954-09-25-raith-rovers-1-3-celtic-league-division-a/",
+    "locator": "p8",
+    "quote": "Mochan and Walsh switched poisitions at the start of the second half and the tactic worked. Colville lost a ball to Mochan and his recovery tackle upended Smiler for a penalty. Haughney hit the underside of the bar from the spot but the ball bounced down and over the line. Inn the 67th minute a long low pass down the middle was missed by the Raith defenders and Mochan collected to pass into an empty net. Three minutes later McNaught caught Mochan for a second penalty, this time Haughney making no mistake from the spot. Raith pulled a goal back from Kelly before the end.",
+    "bodyHash": "e16ef6222dc2551416670eca4d0f2a59a19faafa2049bbba6e4698a02740d6c2",
+    "fetchedAt": "2026-11-21T11:46:24.086Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2225,8 +2270,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-17T12:05:30.292Z",
-  "updatedAt": "2026-11-17T12:05:30.292Z"
+  "createdAt": "2026-11-21T11:46:24.086Z",
+  "updatedAt": "2026-11-21T11:46:24.086Z"
  },
  {
   "id": "ga-88685149807493b8",
@@ -2902,15 +2947,6 @@
   "evidence": [
    {
     "sourceId": "thecelticwiki",
-    "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/50s-pictures/1952-53-pics/1952-09-20-celtic-2-1-rangers-league-pictures/",
-    "locator": "p1",
-    "quote": "Match | 1952-53 Pictures | 1952 – 1953 | 50's Pictures | Year By Year Pictures | Picture Library",
-    "bodyHash": "d920fcb311c6bf6a5f5174d9c408221d3eaa3a228216de609e09047e39b08e77",
-    "fetchedAt": "2026-11-06T11:29:51.477Z",
-    "language": "en"
-   },
-   {
-    "sourceId": "thecelticwiki",
     "url": "https://www.thecelticwiki.com/the-photograph-library/year-by-year-pictures/50s-pictures/1952-53-pics/1953-05-11-celtic-1-0-arsenal-coronation-cup-1st-round-pictures/",
     "locator": "p1",
     "quote": "Match | 1952-53 Pictures | 1952 – 1953 | 50's Pictures | Year By Year Pictures | Picture Library",
@@ -2971,6 +3007,15 @@
     "bodyHash": "3f6d945f152acae33add0a187dbd2cb999d3205470a503393dc487a45d272ff0",
     "fetchedAt": "2026-11-17T12:05:30.290Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1954-04-24-celtic-2-1-aberdeen-scottish-cup/",
+    "locator": "p31",
+    "quote": "Alec Young 50′ (o.g.)",
+    "bodyHash": "dd7e716ff4dd8febddc43c07845c97462168acd2d04c9fea1b1f12a05f8b31bf",
+    "fetchedAt": "2026-11-21T11:46:21.100Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -2978,8 +3023,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-17T12:05:30.290Z",
-  "updatedAt": "2026-11-17T12:05:30.290Z"
+  "createdAt": "2026-11-21T11:46:21.100Z",
+  "updatedAt": "2026-11-21T11:46:21.100Z"
  },
  {
   "id": "ga-ee5b3c55d11a63bc",
@@ -3210,7 +3255,7 @@
   "opponentHe": null,
   "minute": "68",
   "scorerAlias": null,
-  "ownGoal": false,
+  "ownGoal": true,
   "evidence": [
    {
     "sourceId": "thecelticwiki",
@@ -3220,6 +3265,15 @@
     "bodyHash": "2216f7887283e7725645a1036486fde55714eabbc004547228cd5ca50ccf5e04",
     "fetchedAt": "2026-11-15T11:29:47.990Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1953-03-21-east-fife-4-1-celtic-league-division-a/",
+    "locator": "p15",
+    "quote": "Tully was stretchered off with concussion and a cut to the brow after he was crashed into the surrounds by Emery. In the 68th minute Celtic pulled one back from an own goal from a melee in the East Fife area.",
+    "bodyHash": "b137e790b4e9aeb1959435c1c6fe7dcd6ffbe08b081602512f379c9f891caa21",
+    "fetchedAt": "2026-11-21T11:46:12.423Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -3227,8 +3281,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-15T11:29:47.990Z",
-  "updatedAt": "2026-11-15T11:29:47.990Z"
+  "createdAt": "2026-11-21T11:46:12.423Z",
+  "updatedAt": "2026-11-21T11:46:12.423Z"
  },
  {
   "id": "ga-87c89924aaf4cdb2",
@@ -3499,6 +3553,15 @@
     "bodyHash": "cbe758f2d6c1127cedccc6e4a612fd6a985351ee860649aac96c4e4859e7e868",
     "fetchedAt": "2026-11-17T12:05:33.266Z",
     "language": "en"
+   },
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1954-12-18-celtic-4-1-dundee-league-division-a/",
+    "locator": "p9",
+    "quote": "The early stages of the game were even with both teams having chances and both goalkeepers called into action. Bell was injured diving at Roy's feet but luckily he was able to continue. In the 29th minute Peacock was brought down in the area by Carmichael.",
+    "bodyHash": "62e5fe63da07a9ad2b314cf6c1eda42404a4d7459b8eadaec81e613ac45b7c7b",
+    "fetchedAt": "2026-11-21T11:46:24.087Z",
+    "language": "en"
    }
   ],
   "steps": [],
@@ -3506,8 +3569,8 @@
   "issues": [],
   "extractorVersion": "goals-text-1",
   "pipelineVersion": "goals-auto-1",
-  "createdAt": "2026-11-17T12:05:33.266Z",
-  "updatedAt": "2026-11-17T12:05:33.266Z"
+  "createdAt": "2026-11-21T11:46:24.087Z",
+  "updatedAt": "2026-11-21T11:46:24.087Z"
  },
  {
   "id": "ga-d8abe1d68018ed6e",
@@ -3928,5 +3991,545 @@
   "pipelineVersion": "goals-auto-1",
   "createdAt": "2026-11-20T11:54:55.173Z",
   "updatedAt": "2026-11-20T11:54:55.173Z"
+ },
+ {
+  "id": "ga-659f3f0048fca6f4",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "80",
+  "scorerAlias": "Thornton",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1950-09-23-celtic-3-2-rangers-league-division-a/",
+    "locator": "p5",
+    "quote": "With 16 minutes left on the clock, Thornton headed what seemed as though it might be a winning goal for Rangers from a Rutherford corner. In the 80th minute a Tully cross was intercepted by Woodburn. The referee, with a clear view, immediately signalled for a penalty to the consternation of Rangers players and fans alike and to the surprise of the other onlookers. Celtic struck again 5 minutes later with yet again a Tully cross leading to the goal.",
+    "bodyHash": "8ec8841980c2831deafc7cf8293a15da3b583713e5b0df04755177d1344ee6dc",
+    "fetchedAt": "2026-11-21T11:45:57.104Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-21T11:45:57.104Z",
+  "updatedAt": "2026-11-21T11:45:57.104Z"
+ },
+ {
+  "id": "ga-a21fb000db44c58c",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "11",
+  "scorerAlias": "Linwood",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1951-07-19-celtic-4-4-clyde-st-mungo-cup/",
+    "locator": "p28",
+    "quote": "Clyde's defence survived however and in the 11th minute, Linwood struck as he has so often done in the past, with just the fraction of a chance. Campbell took a free kick just inside the Celtic half and the centre forward, beating Mallan and Fallon in the jump, glanced the ball exquisitely into the corner of the net where Hunter was not. And now it was a new Clyde, an A Division team once again. The effect of the goal upon Celtic was astonishing; gone were the smooth passing and the free manipulation of the ball and instead there was panic and on at least one occasion, passion. For the remaind",
+    "bodyHash": "00df08c7e0ed8c69519e4cacb58138e8f3c4c06353151a0b5c683aac4ed254e5",
+    "fetchedAt": "2026-11-21T11:46:03.115Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-21T11:46:03.115Z",
+  "updatedAt": "2026-11-21T11:46:03.115Z"
+ },
+ {
+  "id": "ga-41eb0827abf1f25d",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "5",
+  "scorerAlias": "Emery",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1951-12-29-aberdeen-3-4-celtic-league-division-a/",
+    "locator": "p5",
+    "quote": "Celtic won a penalty when Emery handled the ball in the second minute but Aberdeen equalised in the 5th minute when Baird sent a flying header in from an Emery free kick. The game was being played at a fast pace and Watson had to tip over a speculative long drive from Stein. Emery again conceded a penalty in the 25th minute with Collins stroking away his second and on the restart a shot from Baillie which looked to be going wide was deflected into the net by McKenna. The Dons tried hard to come back before the interval and pressed for a goal with Fallon performing wonders in defence. The secon",
+    "bodyHash": "fa1bed3307704ee8f2018ee0de9f18922255374b01c23de31b56547b97fe9483",
+    "fetchedAt": "2026-11-21T11:46:06.082Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-21T11:46:06.082Z",
+  "updatedAt": "2026-11-21T11:46:06.082Z"
+ },
+ {
+  "id": "ga-3e10744968d57e0b",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "69",
+  "scorerAlias": "Gardiner",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1952-03-22-celtic-2-1-east-fife-league-division-a/",
+    "locator": "p7",
+    "quote": "Stein was injured in the second half and though he returned he took up the walking injured spot on the left wing.In the 69th minute Gardiner scored from a Fleming shot which had rebounded back from an upright.",
+    "bodyHash": "c3590e0ce4124d3b7ffd3ca3e775f4f6f4cc27ea1f23574ede942f32166e9c26",
+    "fetchedAt": "2026-11-21T11:46:06.086Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-21T11:46:06.086Z",
+  "updatedAt": "2026-11-21T11:46:06.086Z"
+ },
+ {
+  "id": "ga-2b43f797f7f48bef",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "10",
+  "scorerAlias": "Falkirk",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1952-09-06-celtic-5-3-falkirk-league-division-a/",
+    "locator": "p8",
+    "quote": "Tully had an excellent game and combined well with Millsopp and Baillie. In the 10th minute he fired over a cross which was headed on by Willie Fernie and McPhail hit it with a left foot shot that flew into the net. Fernie got the second, again from a Tully cross. The Falkirk defense was at fault again for the third goal, McPhail's second. At half time Celtic were 3-0 up. Falkirk pulled one back immediately after the interval and followed that up eight minutes later to close the gap to a single goal. Although Celtic tried to up the pace the defense looked shaken and they conceded the equaliser",
+    "bodyHash": "e3399aab5fce820bbb75db1549fe4a46349e1ffc2550ef103a8c97b6e6207e0d",
+    "fetchedAt": "2026-11-21T11:46:09.180Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-21T11:46:09.180Z",
+  "updatedAt": "2026-11-21T11:46:09.180Z"
+ },
+ {
+  "id": "ga-6cf31ba318f80805",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "3",
+  "scorerAlias": "Aberdeen",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1952-09-27-aberdeen-2-2-celtic-league-division-a/",
+    "locator": "p9",
+    "quote": "Aberdeen opened the scoring in the 3rd minute when Hather went on a run down the left wing and his cross beat Evans, Boden and Stein, was deflected on by Baillie and Boyd had a simple tap in to an empty net. Tully yet again was the manipulator behind the Celtic attacks and Evans was the orchestrator from midfield. Aberdeen scored the second from a breakaway move and cross which Hamilton headed home. On 39 minutes Peacock pulled one back fro Celtic with a shot from 25 yards which beat the keeper. At half tiome it stood neatly poised at 2-1 to Aberdeen.",
+    "bodyHash": "157691803b030986ba3afd87bd0ea54332ebd66420fc5b54f1ba570dbdba58a0",
+    "fetchedAt": "2026-11-21T11:46:09.180Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-21T11:46:09.180Z",
+  "updatedAt": "2026-11-21T11:46:09.180Z"
+ },
+ {
+  "id": "ga-b8b372d29cbc6fb3",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "17",
+  "scorerAlias": "Peacock",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1952-10-11-clyde-1-2-celtic-league-division-a/",
+    "locator": "p6",
+    "quote": "Peacock scored the first goal with another blazer – it looked as though this was becoming a habit! The goal was made by Tully. Tully was involved in a collision with Buchanan in the 17th minute and had to leave the field. Even in his absence Celtic played well with Baillie and Peacock outstanding.",
+    "bodyHash": "a89b514c84e8721a87c7a2b4aa690b51f000e835b134665bb886b0c47d184dea",
+    "fetchedAt": "2026-11-21T11:46:09.181Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-21T11:46:09.181Z",
+  "updatedAt": "2026-11-21T11:46:09.181Z"
+ },
+ {
+  "id": "ga-522cfdd0ecd05d2e",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "14",
+  "scorerAlias": "Celtic",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1952-11-08-celtic-5-4-third-lanark-league-division-a/",
+    "locator": "p11",
+    "quote": "As usual Celtic started with fire in their bellies with shots and corners peppering the Thirds goal. Celtic scored through Peacock in the 14th minute, an individual goal, but this was quickly equalised by Cuthbertson from the restart. Dick gave the advantage to Thirds in the 32nd minute when he shot through a goalmouth melee and they could have gone further ahead. The half finished Celtic 1-2 Third Lanark.",
+    "bodyHash": "7ac5dedd41b4eb077b4358ea6b19b1cc65b09518f0155c2084bd7f4610839996",
+    "fetchedAt": "2026-11-21T11:46:09.181Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-21T11:46:09.181Z",
+  "updatedAt": "2026-11-21T11:46:09.181Z"
+ },
+ {
+  "id": "ga-7d467f2271d78a0e",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "35",
+  "scorerAlias": "Fallon",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1952-12-13-celtic-5-0-dundee-league-division-a/",
+    "locator": "p11",
+    "quote": "McIllroy nearly got a second on 15 minutes with a cheeky back heel from a Collins pass. fernie and Collins on the right were causing Dundee no end of problems. Fallon headed out a shot from Stables on 27 minutes. On 34 minutes Walsh had to retire with a leg injury and this made Celtic even more competitive with shots from Evans, Tully and Fallon. Celtic claimed for a penalty in the 35th minute to no avail. At hal;f time it still stood at 1-0 to the Celtic.",
+    "bodyHash": "dbe9d8ad1fe761bd36cdc0385f01ab8ff2644778a9f77f35f7034d2705461eb2",
+    "fetchedAt": "2026-11-21T11:46:12.419Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-21T11:46:12.419Z",
+  "updatedAt": "2026-11-21T11:46:12.419Z"
+ },
+ {
+  "id": "ga-a0c0196aeac31493",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "59",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1952-12-20-falkirk-2-3-celtic-league-division-a/",
+    "locator": "p9",
+    "quote": "The fast pace continued in the second. Falkirk’s Gallacher picked up an ankle injury. This was to celtic’s advantage and in the 59th minute McIlroy got a second for Celtic. Peacock got a third 2 minutes later and at the death Delaney pulled one back for Falkirk.",
+    "bodyHash": "a04dcc5bdb37ccc946fdfb6f644d0199d4795e21020e911a32ddfa1a7ca19163",
+    "fetchedAt": "2026-11-21T11:46:12.420Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-21T11:46:12.420Z",
+  "updatedAt": "2026-11-21T11:46:12.420Z"
+ },
+ {
+  "id": "ga-e114110519cc0b14",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "21",
+  "scorerAlias": "McGrory",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1953-01-17-celtic-2-4-clyde-league-division-a/",
+    "locator": "p6",
+    "quote": "The team started well and challenged the Clyde goal regularly and in the 21st minute were ahead when McGrory scored from 15 yards. Hepburn was playing well but Collins was playing like a lost man over on the left. Clyde just escaped dropping another goal to McGrory just after the restart. Baird and Stein were in a constant tussle and Baird got away to equalise for Clyde on 59 minutes. Celtic then fell behind to two goals from Ring, and finally, two goals behind, they recast their attack line with Collins and Hepburn changing wings. This released Tully to score from a header of a Collins cross.",
+    "bodyHash": "8e24f70b33ce1fb937bb94cf3954557751a60d1dd00354110de99a760d39c5c9",
+    "fetchedAt": "2026-11-21T11:46:12.421Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-21T11:46:12.421Z",
+  "updatedAt": "2026-11-21T11:46:12.421Z"
+ },
+ {
+  "id": "ga-b118c9ac6db2db48",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "48",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1953-08-20-queens-park-0-1-celtic-glasgow-cup/",
+    "locator": "p7",
+    "quote": "But for a gifted goal this might have gone the way of the previous game against Queen's and the result been determined on the toss of a coin. Celtic were almost as bad finishing in this game as they had been so far this season. The first half was described as 'tiresome'. Weir, the Queen's Park goalkeeper marred an otherwise excellent game in the 48th minute by failing to hold a Collins cross which Whyte gratefully accepted and smashed into the roof of the net. Once more the forwards failed to capitalise. Frequently Collins and Mochan changed wings to no real advantage. Evans played the role of",
+    "bodyHash": "cd6477fcdda9391c9224ea59d0fd3cc414c7fc93124a23f3a543ffefa21b804f",
+    "fetchedAt": "2026-11-21T11:46:15.095Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-21T11:46:15.095Z",
+  "updatedAt": "2026-11-21T11:46:15.095Z"
+ },
+ {
+  "id": "ga-8baf3bdae992ef07",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "26",
+  "scorerAlias": "Hamilton",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1953-09-05-hamilton-academicals-2-0-celtic-league-division-a/",
+    "locator": "p7",
+    "quote": "Celtic kicked off but Hamilton had the first shots on goal which were all nervy and wide. Despite their efforts Hamilton mishandled the chances they were given. McPhail was unlucky for Celtic at the other end with a header. Half way through the first half Hamilton had a good few chances all of which Bell was able to cope with eventually. Celtic finally started to play with some directness with McPhail and Fernie combining. Bell had a lucky escape in the 26th minute whan a shot spun out of his grasp and was headed for the goal line before he managed to recover. In an attempt to gain some extra ",
+    "bodyHash": "f4ad99f65ef54d6b143a0ec9bf9c7e094f7cda0d1c372c16815a15824ba97270",
+    "fetchedAt": "2026-11-21T11:46:15.096Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-21T11:46:15.096Z",
+  "updatedAt": "2026-11-21T11:46:15.096Z"
+ },
+ {
+  "id": "ga-c11c717cf8fe1876",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "87",
+  "scorerAlias": null,
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1953-09-12-celtic-1-0-clyde-league-division-a/",
+    "locator": "p7",
+    "quote": "A poor game which neither team really deserved to win. Celtic should have been well in front before Collin' 87th minute goal from a rising shot. The forward line yet again failed to knit together and play looked OK until within scoring range where it generally fell apart. Duncan was seen as a limited winger. Peacock played well but was somewhat selfish. Fernie picked up a foot injury in the second half and played out on the wing. Walsh seldom eluded the Clyde defense. Fernie recovered towards the end and began a move that ended with Collins' goal. Haughney played well. Fallon started shakily j",
+    "bodyHash": "663802e5132d24b6281d6a8a217e8894dbbdb4e48834751701db39f16d126fef",
+    "fetchedAt": "2026-11-21T11:46:15.096Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-21T11:46:15.096Z",
+  "updatedAt": "2026-11-21T11:46:15.096Z"
+ },
+ {
+  "id": "ga-89a7b4abfcc0eca4",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "35",
+  "scorerAlias": "Higgins",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1954-03-06-celtic-4-1-east-fife-league-division-a/",
+    "locator": "p7",
+    "quote": "Celtic had the ball in the net in the first minute from a goal mouth ruck but the goal was ruled out for offside. This just delayed matters and Higgins scored in the third minute from a Walsh and Mochan move. The Celts were playing confidently and Fernie got the second from an inch perfect Tully pass. Further shots followed from Evans, Fernie and Walsh. In the 35th minute East Fife opulled one back when a shot from Bonthrone was parried by Bell and Christie hit the ball from 35 yards. Gardiner then was stretchered off following a clash of heads with Peacock but he came back for the second half",
+    "bodyHash": "e725e654acf52ce29791df363b6ffc01cacace697579aa98e716b41d2ac1638a",
+    "fetchedAt": "2026-11-21T11:46:18.091Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-21T11:46:18.091Z",
+  "updatedAt": "2026-11-21T11:46:18.091Z"
+ },
+ {
+  "id": "ga-398549ec0131b6a9",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "28",
+  "scorerAlias": "Peacock",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1954-08-21-celtic-1-2-heart-of-midlothian-league-cup/",
+    "locator": "p8",
+    "quote": "An entertaining game if a poor result by all accounts. Celtic kicked off and immediately went into full pressure mode on the Hearts goal. An excellent counter from Hearts saw them pass their way up the field and with some intelligent movement cut the Celtic defense open. Wardhaugh’s shot was inches wide. Celtic were playing ruggedly and Hearts were countering with some delicate execution making the Celtic defense look flat-footed. Wardhaugh duly scored from another clean move in the 28th minute. Ten minutes later Peacock headed through his own net when trying to deflect a Wardhaugh header. Bau",
+    "bodyHash": "21430d83e6894cc5dabccfe4387d6d40e2b5dca7fce73f7399de4d0187bc35f0",
+    "fetchedAt": "2026-11-21T11:46:21.102Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-21T11:46:21.102Z",
+  "updatedAt": "2026-11-21T11:46:21.102Z"
+ },
+ {
+  "id": "ga-162e7182920501b1",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "61",
+  "scorerAlias": "Haughney",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1954-10-30-celtic-3-1-falkirk-league-division-a/",
+    "locator": "p11",
+    "quote": "Celtic continued in style after the break with Mochan coming more into it laying on chances for Higgins and Walsh. In the 61st minute, Walsh was dropped by Rae in the penalty area and Haughney scored from the spot. Falkirk got a consolation goal and before the end Haughney had to hack ioff the line after Bonnar was beaten by a header from a corner.",
+    "bodyHash": "404b34ef098526c9c9bae1a96d058c7ad4bb997457c1b32991e72a66d2a86f3c",
+    "fetchedAt": "2026-11-21T11:46:24.087Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-21T11:46:24.087Z",
+  "updatedAt": "2026-11-21T11:46:24.087Z"
+ },
+ {
+  "id": "ga-d8b8cf49edb79ffb",
+  "clubId": "celtic",
+  "sourceIds": [
+   "thecelticwiki"
+  ],
+  "playedOn": null,
+  "opponentHe": null,
+  "minute": "4",
+  "scorerAlias": "Walsh",
+  "ownGoal": false,
+  "evidence": [
+   {
+    "sourceId": "thecelticwiki",
+    "url": "https://www.thecelticwiki.com/1954-11-20-partick-thistle-4-2-celtic-league-division-a/",
+    "locator": "p8",
+    "quote": "Two goals down in five minutes! McPartand beat Haughney in the 4th minute and Howitt had all the time in the world to pick his spot. A minute later Mckenzie crossed from the other side and Smith beat Bonnar with an unstoppable header. Tully started the move for the Celtic goal before crossing and Walsh headed home. Just before the interval Celtic were level. Tull again provided the cross and this time it was Bobby Collins there to fire home. Thiongs stood square at 2-2 at half time but it was Thistle who had had the better of the play and acclimatised to the mud better.",
+    "bodyHash": "f9f260c179d8c9d332759804cd287e78a2ecda7b5d76a987b3c2af7a46a68a7f",
+    "fetchedAt": "2026-11-21T11:46:24.087Z",
+    "language": "en"
+   }
+  ],
+  "steps": [],
+  "status": "candidate",
+  "issues": [],
+  "extractorVersion": "goals-text-1",
+  "pipelineVersion": "goals-auto-1",
+  "createdAt": "2026-11-21T11:46:24.087Z",
+  "updatedAt": "2026-11-21T11:46:24.087Z"
  }
 ]

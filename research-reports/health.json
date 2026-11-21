@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-18T12:37:29.929Z",
+ "generatedAt": "2026-11-21T12:11:51.130Z",
  "alarms": [
   {
    "club": "paok",
@@ -40,6 +40,16 @@
    "club": "fenerbahce",
    "code": "waiting-owner",
    "text": "Fenerbahçe: 9 gates open on your approval — nothing more to collect for them first."
+  },
+  {
+   "club": "leicester-city",
+   "code": "stalled",
+   "text": "Leicester City: no new records for seven days. Its sources are exhausted; it needs a new source, not more of the same pull."
+  },
+  {
+   "club": "union-berlin",
+   "code": "stalled",
+   "text": "1. FC Union Berlin: no new records for seven days. Its sources are exhausted; it needs a new source, not more of the same pull."
   }
  ]
 }

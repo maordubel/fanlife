@@ -1,8 +1,8 @@
 {
- "generatedAt": "2026-11-18T12:37:29.526Z",
+ "generatedAt": "2026-11-21T12:11:50.814Z",
  "clubs": {
   "paok": {
-   "inputHash": "72b4868e349a051c",
+   "inputHash": "5e294b3935d80e7f",
    "base": [
     {
      "key": "xi",
@@ -121,7 +121,7 @@
      ]
     },
     "squad:uefa": {
-     "hash": "f19883c7b749b791",
+     "hash": "891021e93530a976",
      "opens": [
       "xi",
       "trivia",
@@ -139,7 +139,7 @@
       "key": "xi",
       "number": 1,
       "state": "READY",
-      "eligible": 270,
+      "eligible": 336,
       "target": 22,
       "playable": true
      },
@@ -147,7 +147,7 @@
       "key": "trivia",
       "number": 2,
       "state": "READY",
-      "eligible": 763,
+      "eligible": 870,
       "target": 60,
       "playable": true
      },
@@ -155,7 +155,7 @@
       "key": "lineup",
       "number": 3,
       "state": "READY",
-      "eligible": 200,
+      "eligible": 230,
       "target": 5,
       "playable": true
      },
@@ -203,7 +203,7 @@
       "key": "royal-rumble",
       "number": 9,
       "state": "READY",
-      "eligible": 270,
+      "eligible": 336,
       "target": 20,
       "playable": true
      },
@@ -211,7 +211,7 @@
       "key": "blind-cow",
       "number": 10,
       "state": "READY",
-      "eligible": 270,
+      "eligible": 292,
       "target": 30,
       "playable": true
      },
@@ -227,7 +227,7 @@
       "key": "archive",
       "number": 12,
       "state": "READY",
-      "eligible": 455,
+      "eligible": 521,
       "target": 20,
       "playable": true
      },
@@ -255,7 +255,7 @@
    }
   },
   "dinamo-zagreb": {
-   "inputHash": "1594b0b939462fac",
+   "inputHash": "f826cb0eb7a53e6b",
    "base": [
     {
      "key": "xi",
@@ -374,7 +374,7 @@
      ]
     },
     "squad:uefa": {
-     "hash": "5a01656d4f06238b",
+     "hash": "5f69f6015cbf981c",
      "opens": [
       "xi",
       "trivia",
@@ -392,7 +392,7 @@
       "key": "xi",
       "number": 1,
       "state": "READY",
-      "eligible": 152,
+      "eligible": 185,
       "target": 22,
       "playable": true
      },
@@ -400,7 +400,7 @@
       "key": "trivia",
       "number": 2,
       "state": "READY",
-      "eligible": 617,
+      "eligible": 677,
       "target": 60,
       "playable": true
      },
@@ -408,7 +408,7 @@
       "key": "lineup",
       "number": 3,
       "state": "READY",
-      "eligible": 140,
+      "eligible": 170,
       "target": 5,
       "playable": true
      },
@@ -432,7 +432,7 @@
       "key": "memory",
       "number": 6,
       "state": "READY",
-      "eligible": 105,
+      "eligible": 104,
       "target": 6,
       "playable": true
      },
@@ -456,7 +456,7 @@
       "key": "royal-rumble",
       "number": 9,
       "state": "READY",
-      "eligible": 152,
+      "eligible": 185,
       "target": 20,
       "playable": true
      },
@@ -464,7 +464,7 @@
       "key": "blind-cow",
       "number": 10,
       "state": "READY",
-      "eligible": 151,
+      "eligible": 184,
       "target": 30,
       "playable": true
      },
@@ -480,7 +480,7 @@
       "key": "archive",
       "number": 12,
       "state": "READY",
-      "eligible": 272,
+      "eligible": 304,
       "target": 20,
       "playable": true
      },
@@ -488,7 +488,7 @@
       "key": "timeline",
       "number": 13,
       "state": "READY",
-      "eligible": 112,
+      "eligible": 111,
       "target": 11,
       "playable": true
      }
@@ -508,7 +508,7 @@
    }
   },
   "hajduk-split": {
-   "inputHash": "a946af7f5c849164",
+   "inputHash": "65794cf2f0524505",
    "base": [
     {
      "key": "xi",
@@ -522,7 +522,7 @@
      "key": "trivia",
      "number": 2,
      "state": "READY",
-     "eligible": 768,
+     "eligible": 884,
      "target": 60,
      "playable": true
     },
@@ -626,7 +626,7 @@
      ]
     },
     "squad:uefa": {
-     "hash": "da99772ec71757fa",
+     "hash": "29f13978a225f344",
      "opens": [
       "xi",
       "lineup",
@@ -643,7 +643,7 @@
       "key": "xi",
       "number": 1,
       "state": "READY",
-      "eligible": 425,
+      "eligible": 443,
       "target": 22,
       "playable": true
      },
@@ -651,7 +651,7 @@
       "key": "trivia",
       "number": 2,
       "state": "READY",
-      "eligible": 2150,
+      "eligible": 2326,
       "target": 60,
       "playable": true
      },
@@ -659,7 +659,7 @@
       "key": "lineup",
       "number": 3,
       "state": "READY",
-      "eligible": 201,
+      "eligible": 226,
       "target": 5,
       "playable": true
      },
@@ -707,7 +707,7 @@
       "key": "royal-rumble",
       "number": 9,
       "state": "READY",
-      "eligible": 425,
+      "eligible": 443,
       "target": 20,
       "playable": true
      },
@@ -715,7 +715,7 @@
       "key": "blind-cow",
       "number": 10,
       "state": "READY",
-      "eligible": 467,
+      "eligible": 477,
       "target": 30,
       "playable": true
      },
@@ -731,7 +731,7 @@
       "key": "archive",
       "number": 12,
       "state": "READY",
-      "eligible": 499,
+      "eligible": 517,
       "target": 20,
       "playable": true
      },
@@ -758,7 +758,7 @@
    }
   },
   "borussia-dortmund": {
-   "inputHash": "22331597534e4069",
+   "inputHash": "940898962ed47a7a",
    "base": [
     {
      "key": "xi",
@@ -877,7 +877,7 @@
      ]
     },
     "squad:uefa": {
-     "hash": "9b287a0b71500822",
+     "hash": "239d071b737bcfbb",
      "opens": [
       "xi",
       "trivia",
@@ -895,7 +895,7 @@
       "key": "xi",
       "number": 1,
       "state": "READY",
-      "eligible": 151,
+      "eligible": 204,
       "target": 22,
       "playable": true
      },
@@ -903,7 +903,7 @@
       "key": "trivia",
       "number": 2,
       "state": "READY",
-      "eligible": 1981,
+      "eligible": 2031,
       "target": 60,
       "playable": true
      },
@@ -911,7 +911,7 @@
       "key": "lineup",
       "number": 3,
       "state": "READY",
-      "eligible": 140,
+      "eligible": 170,
       "target": 5,
       "playable": true
      },
@@ -935,7 +935,7 @@
       "key": "memory",
       "number": 6,
       "state": "READY",
-      "eligible": 483,
+      "eligible": 481,
       "target": 6,
       "playable": true
      },
@@ -959,7 +959,7 @@
       "key": "royal-rumble",
       "number": 9,
       "state": "READY",
-      "eligible": 151,
+      "eligible": 204,
       "target": 20,
       "playable": true
      },
@@ -967,7 +967,7 @@
       "key": "blind-cow",
       "number": 10,
       "state": "READY",
-      "eligible": 151,
+      "eligible": 204,
       "target": 30,
       "playable": true
      },
@@ -983,7 +983,7 @@
       "key": "archive",
       "number": 12,
       "state": "READY",
-      "eligible": 794,
+      "eligible": 845,
       "target": 20,
       "playable": true
      },
@@ -991,7 +991,7 @@
       "key": "timeline",
       "number": 13,
       "state": "READY",
-      "eligible": 605,
+      "eligible": 603,
       "target": 11,
       "playable": true
      }
@@ -1264,7 +1264,7 @@
    }
   },
   "partizan-belgrade": {
-   "inputHash": "4202e6d5de7bc1ce",
+   "inputHash": "5df5e3f13aae19f3",
    "base": [
     {
      "key": "xi",
@@ -1383,7 +1383,7 @@
      ]
     },
     "squad:uefa": {
-     "hash": "63dc5643e9eb90c4",
+     "hash": "976a6ea1f2c1d3ed",
      "opens": [
       "xi",
       "trivia",
@@ -1401,7 +1401,7 @@
       "key": "xi",
       "number": 1,
       "state": "READY",
-      "eligible": 295,
+      "eligible": 324,
       "target": 22,
       "playable": true
      },
@@ -1409,7 +1409,7 @@
       "key": "trivia",
       "number": 2,
       "state": "READY",
-      "eligible": 706,
+      "eligible": 769,
       "target": 60,
       "playable": true
      },
@@ -1417,7 +1417,7 @@
       "key": "lineup",
       "number": 3,
       "state": "READY",
-      "eligible": 186,
+      "eligible": 216,
       "target": 5,
       "playable": true
      },
@@ -1465,7 +1465,7 @@
       "key": "royal-rumble",
       "number": 9,
       "state": "READY",
-      "eligible": 295,
+      "eligible": 324,
       "target": 20,
       "playable": true
      },
@@ -1473,7 +1473,7 @@
       "key": "blind-cow",
       "number": 10,
       "state": "READY",
-      "eligible": 293,
+      "eligible": 320,
       "target": 30,
       "playable": true
      },
@@ -1489,7 +1489,7 @@
       "key": "archive",
       "number": 12,
       "state": "READY",
-      "eligible": 382,
+      "eligible": 411,
       "target": 20,
       "playable": true
      },
@@ -1770,7 +1770,7 @@
    }
   },
   "fenerbahce": {
-   "inputHash": "cce109ce0f25860e",
+   "inputHash": "68d3ce53e75847e4",
    "base": [
     {
      "key": "xi",
@@ -1784,7 +1784,7 @@
      "key": "trivia",
      "number": 2,
      "state": "READY",
-     "eligible": 776,
+     "eligible": 884,
      "target": 60,
      "playable": true
     },
@@ -1888,7 +1888,7 @@
      ]
     },
     "squad:uefa": {
-     "hash": "d274354222fbbee8",
+     "hash": "388f5ab3b3a65b64",
      "opens": [
       "xi",
       "lineup",
@@ -1905,7 +1905,7 @@
       "key": "xi",
       "number": 1,
       "state": "READY",
-      "eligible": 253,
+      "eligible": 313,
       "target": 22,
       "playable": true
      },
@@ -1913,7 +1913,7 @@
       "key": "trivia",
       "number": 2,
       "state": "READY",
-      "eligible": 2303,
+      "eligible": 2576,
       "target": 60,
       "playable": true
      },
@@ -1921,7 +1921,7 @@
       "key": "lineup",
       "number": 3,
       "state": "READY",
-      "eligible": 201,
+      "eligible": 231,
       "target": 5,
       "playable": true
      },
@@ -1969,7 +1969,7 @@
       "key": "royal-rumble",
       "number": 9,
       "state": "READY",
-      "eligible": 253,
+      "eligible": 313,
       "target": 20,
       "playable": true
      },
@@ -1977,7 +1977,7 @@
       "key": "blind-cow",
       "number": 10,
       "state": "READY",
-      "eligible": 356,
+      "eligible": 417,
       "target": 30,
       "playable": true
      },
@@ -1993,7 +1993,7 @@
       "key": "archive",
       "number": 12,
       "state": "READY",
-      "eligible": 485,
+      "eligible": 545,
       "target": 20,
       "playable": true
      },

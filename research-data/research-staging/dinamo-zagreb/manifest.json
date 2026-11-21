@@ -1,7 +1,7 @@
 {
  "club": "dinamo-zagreb",
- "snapshotAsOf": "2026-11-20",
- "researchVersion": 34,
+ "snapshotAsOf": "2026-11-21",
+ "researchVersion": 35,
  "approvedForProduction": 0,
  "counts": {
   "sources": 5,
@@ -11,7 +11,7 @@
  },
  "collection": {
   "schemaVersion": 1,
-  "runId": "2026-11-20T11-55-08-988Z-c73920",
+  "runId": "2026-11-21T11-46-28-855Z-de77c7",
   "state": "partial_budget",
   "historicalOnly": true,
   "completeArchiveClaim": false,
