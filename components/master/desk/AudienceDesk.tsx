@@ -14,6 +14,7 @@ const pct=(n:number,d:number)=>d?`${Math.round(n/d*100)}%`:'—'
 export function label(gate:string,clubNames:Record<string,string>):{club:string|null;name:string}{
  const m=/^\/clubs\/([a-z0-9-]+)\/([a-z-]+)$/.exec(gate)
  if(m){const g=SHARED_GATES.find(x=>x.key===m[2]);return {club:m[1]!,name:`${clubNames[m[1]!]||m[1]} · ${g?.name||(m[2]==='life'?'LIFE':m[2]!)}`}}
+ if(gate==='/all-football/legends')return {club:null,name:'Legends Manager'}
  const key=gateTitleKey(gate);return {club:null,name:key?`The Worker · ${t(key)}`:gate==='/away-days'?'The Worker · Away days':gate==='/life'?'The Worker · LIFE':gate}
 }
 export async function AudienceDesk({days:rawDays,club,clubNames}:{days?:string;club:string|null;clubNames:Record<string,string>}){

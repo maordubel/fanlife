@@ -1725,3 +1725,9 @@ a.mag-tile.is-shop:hover { box-shadow: none; transform: none; }
 
 /* two marks, never mixed (docs/rules/two-logos.md): FAN LIFE's roundel everywhere, THE WORKER's badge on its own host only */
 html:not([data-edition='worker']) [data-mark='worker'],html[data-edition='worker'] [data-mark='fanlife']{display:none!important}
+
+@media (min-width: 901px) {
+ .mag:has(> .mag-top) { padding-block-start: var(--desktop-masthead, 59px); }
+ .mag > .mag-top { position: fixed; inset-inline: 0; inset-block-start: 0; z-index: 55; }
+ html:has(.mag > .mag-top) { scroll-padding-block-start: 59px; }
+}

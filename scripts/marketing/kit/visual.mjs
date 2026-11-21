@@ -247,8 +247,25 @@ async function card(post) {
   const app = ['dubid', 'offsides'].includes(post.app) ? post.app : 'fanlife'
   return png(designLive('L-CARD', app, {hook: hook || 'Football. Forever.', seed: hook.length}))
 }
+async function shopCard({image, title}) {
+  const url = new URL(image)
+  if (url.protocol !== 'https:' || url.port || url.username || url.password || !url.hostname.endsWith('.printify.com')) throw Error('Invalid product image host')
+  const response = await fetch(url, {redirect: 'error', signal: AbortSignal.timeout(10000)})
+  if (!response.ok) throw Error('Product image is unavailable')
+  const mockup = await sharp(Buffer.from(await response.arrayBuffer()), {limitInputPixels: 24_000_000})
+    .resize(984, 756, {fit: 'contain', background: '#f8eee0'}).png().toBuffer()
+  const words = String(title).match(/.{1,32}(?:\s|$)|.{1,32}/gu)?.slice(0, 3) ?? []
+  const lines = words.map((word, i) => {
+    const safe = word.trim().replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
+    return `<text x="48" y="${920+i*44}" font-size="40">${safe}</text>`
+  }).join('')
+  const frame = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080"><rect width="1080" height="1080" fill="#171410"/><rect y="824" width="1080" height="8" fill="#ed543c"/><g fill="#fff8e9" font-family="sans-serif" font-weight="bold"><text x="48" y="48" font-size="28" letter-spacing="3">FAN LIFE SHOP</text>${lines}</g></svg>`)
+  return sharp(frame).composite([{input: mockup, top: 64, left: 48}]).png().toBuffer()
+}
+
 export async function visualsFor(msg, kit = null) {
   lastError = null
+  if (kit?.t === 'SHOP') return [await shopCard(kit.data)]
   if (kit?.t === 'none') return [] // the morning briefing: operations, no picture
   // v4 (owner, 14.11.2026): pictures drawn ahead of time in Actions (kit/v4/prerender.mjs) — fetched, never redrawn here
   if (Array.isArray(kit?.v4?.png) && kit.v4.png.length) {

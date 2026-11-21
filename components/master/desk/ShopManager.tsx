@@ -1,7 +1,7 @@
 'use client'
 import {useEffect,useMemo,useState,type ReactNode} from 'react'
 import {KIND_SPECS} from '@/lib/shop/kinds'
-import {designKey,inClub,madeInPrintify,shelfOf,KINDS,MIN_QUALITY,qualityOf,type Kind,type Shelf,type ShopDoc,type ShopProduct} from '@/lib/shop/types'
+import {designKey,inClub,isPublic,madeInPrintify,shelfOf,KINDS,MIN_QUALITY,qualityOf,type Kind,type Shelf,type ShopDoc,type ShopProduct} from '@/lib/shop/types'
 
 /**
  * THE PRODUCT MANAGER (owner, 15.11.2026: "adding a product more conveniently, smarter and easier editing, order and
@@ -131,6 +131,11 @@ function Editor({p,doc,clubs,pane,setPane,act,busy,connected,running,press,name,
     {p.status==='live'&&<a className="desk-btn ghost min-h-tap" href={`/shop/p/${encodeURIComponent(p.id)}`} target="_blank" rel="noreferrer">Its page ↗</a>}
     <button type="button" className="desk-btn ghost min-h-tap shopm-danger" disabled={busy} onClick={()=>{if(window.confirm(`Delete “${p.title}” here and in Printify? This cannot be undone.`)){void act('remove',{id:p.id},'Deleted.');onClose()}}}>Delete</button></p>
   </div>}
+  {pane==='details'&&doc.settings.open&&isPublic(p)&&<details className="shopm-pane">
+   <summary>Promote this product</summary>
+   <p>The post uses the product’s name, description and first shop picture. It goes to the connected social channels.</p>
+   <button type="button" className="desk-btn min-h-tap" disabled={busy} onClick={()=>void act('promote',{id:p.id},'Queued for social publishing.')}>Queue social post</button>
+  </details>}
   {pane==='pictures'&&<div className="shopm-pane">
    <p className="desk-fine">The first picture is what the shop shows first. It is chosen automatically — the product worn or in its place when Printify draws one. Pick another here; it stays first until you set it back.</p>
    {pics.length===0?<p className="desk-state">No pictures yet — press the product first.</p>:<ul className="shopm-pics">{pics.map((src,i)=><li key={src}>

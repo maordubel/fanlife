@@ -103,6 +103,7 @@ export function cleanDevice(raw: unknown): string | null {
 export const METERED_ROUTES: readonly string[] = [
   ...GATES.map((gate) => gate.href?.split('?')[0]).filter((href): href is string => Boolean(href)),
   '/away-days',
+  '/all-football/legends',
   '/life',
 ]
 

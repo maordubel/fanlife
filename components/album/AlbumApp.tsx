@@ -1,5 +1,5 @@
 'use client'
-import {useEffect,useMemo,useState,type ReactNode} from 'react'
+import {useEffect,useMemo,useRef,useState,type MouseEvent,type ReactNode,type TouchEvent} from 'react'
 import {createPortal} from 'react-dom'
 import Link from 'next/link'
 import {StickerBack,StickerFace,livery} from './Sticker'
@@ -68,7 +68,8 @@ export function AlbumApp({wings,catalog,eras,kits,pressed,me:initial,signedIn,pr
  const [covered,setCovered]=useState(true)
  useEffect(()=>{try{if(sessionStorage.getItem('alb-cover')==='1')setCovered(false)}catch{/* */}},[])
  const [leaf,setLeaf]=useState<{from:number;dir:1|-1;k:number}|null>(null)
- const turnTo=(n:number,cur:number,max:number)=>{const to=Math.max(0,Math.min(max,n));if(to===cur)return;setLeaf({from:cur,dir:to>cur?1:-1,k:Date.now()});albumSound.page();setPage(to)}
+ const turnTo=(n:number,cur:number,max:number)=>{if(n<0||n>max||n===cur)return;const to=n;setLeaf({from:cur,dir:to>cur?1:-1,k:Date.now()});albumSound.page();setPage(to)}
+ const swipe=useRef<{x:number;y:number}|null>(null)
  const [step,setStep]=useState(1)
  useEffect(()=>{const m=window.matchMedia('(min-width: 64rem)'),f=()=>setStep(m.matches?2:1);f();m.addEventListener('change',f);return()=>m.removeEventListener('change',f)},[])
  const byId=useMemo(()=>new Map(wings.map(w=>[w.id,w])),[wings])
@@ -110,6 +111,26 @@ export function AlbumApp({wings,catalog,eras,kits,pressed,me:initial,signedIn,pr
  }
  const closeDraw=async()=>{const d=draw;setDraw(null);if(d)await actions.opened(d.envelope);await reload()}
  const pages=wing?.pages??[],spread=Math.floor(page/2)*2
+ const loose=views.flatMap(v=>v.pages.flatMap(p=>p.slots.filter(s=>s.have&&!s.stuck).map(slot=>({slot,club:v.info.name}))))
+ const base=Math.floor(page/step)*step
+ const turn=(direction:number)=>turnTo(base+direction*step,page,pages.length-1)
+ const turnOnPage=(event:MouseEvent<HTMLDivElement>)=>{
+  const target=event.target as Element
+  if(target.closest('button,a,input')||!target.closest('.alb-page'))return
+  const bounds=event.currentTarget.getBoundingClientRect()
+  turn(event.clientX<bounds.left+bounds.width/2?-1:1)
+ }
+ const startSwipe=(event:TouchEvent<HTMLDivElement>)=>{
+  const touch=event.touches.length===1?event.touches[0]:null
+  swipe.current=touch?{x:touch.clientX,y:touch.clientY}:null
+ }
+ const finishSwipe=(event:TouchEvent<HTMLDivElement>)=>{
+  const start=swipe.current,touch=event.changedTouches[0]
+  swipe.current=null
+  if(!start||!touch)return
+  const x=touch.clientX-start.x,y=touch.clientY-start.y
+  if(Math.abs(x)>=48&&Math.abs(x)>1.5*Math.abs(y))turn(x<0?1:-1)
+ }
  return <main id="main" className="alb" dir="ltr" lang="en" style={wing?livery(wing.info):undefined}>
   <header className="alb-mast">
    <div className="alb-mast-cover"><span className="alb-cover-logo sm" aria-hidden="true"/><div><p className="alb-k">{book.cover.name?`${book.cover.name}’s album`:'Your album'} · collector since {since(book.since)}</p><h1 className="alb-title sm">The Album</h1></div></div>
@@ -130,21 +151,27 @@ export function AlbumApp({wings,catalog,eras,kits,pressed,me:initial,signedIn,pr
    </form>
    <details className="alb-change"><summary className="min-h-tap">My club: {byId.get(book.wing)?.name} · change</summary>
     <div className="alb-wing-grid">{wings.map(w=><button key={w.id} type="button" className="alb-wing-pick min-h-tap" data-on={book.wing===w.id||undefined} style={livery(w)} disabled={busy}
-     onClick={()=>void run(()=>actions.wing(w.id),`${w.name} is your club — its colours on your cover.`).then(ok=>{if(ok){setViewWing(w.id);setPage(0)}})}>
+     onClick={()=>void run(()=>actions.wing(w.id),`${w.name} is your club — its colours on your cover.`).then(ok=>{if(ok){setViewWing(w.id);setLeaf(null);setPage(0)}})}>
      {w.crest?/* eslint-disable-next-line @next/next/no-img-element -- a crest ships exactly as recorded */<img src={w.crest} alt="" width="32" height="32"/>:<span className="alb-initials">{w.initials}</span>}<span>{w.name}</span></button>)}</div></details>
   </section>
-  <nav className="alb-wing-tabs" aria-label="Clubs in the album"><button type="button" className="alb-tab alb-tab-swaps min-h-tap" aria-pressed={showSwaps} onClick={()=>setShowSwaps(x=>!x)}>⇄ Swaps</button>{views.map(v=><button key={v.info.id} type="button" className="alb-tab min-h-tap" aria-pressed={v.info.id===wing?.info.id} onClick={()=>{setShowSwaps(false);setViewWing(v.info.id);setPage(0)}}>{v.info.name} <small className="tabular-nums">{v.stuck}/{v.total}</small></button>)}</nav>
+  <details className="alb-loose" open={loose.length>0}>
+   <summary>Stickers you haven’t stuck yet <span className="tabular-nums">({loose.length})</span></summary>
+   {loose.length===0?<p>Your collected stickers are already in the album.</p>:<ul>{loose.map(({slot,club})=><li key={slot.id}>
+    <button type="button" className="alb-btn min-h-tap" disabled={busy} onClick={()=>setStickOne(slot)}>Stick {slot.name}<small>{club}</small></button>
+   </li>)}</ul>}
+  </details>
+  <nav className="alb-wing-tabs" aria-label="Clubs in the album"><button type="button" className="alb-tab alb-tab-swaps min-h-tap" aria-pressed={showSwaps} onClick={()=>setShowSwaps(x=>!x)}>⇄ Swaps</button>{views.map(v=><button key={v.info.id} type="button" className="alb-tab min-h-tap" aria-pressed={v.info.id===wing?.info.id} onClick={()=>{setShowSwaps(false);setViewWing(v.info.id);setLeaf(null);setPage(0)}}>{v.info.name} <small className="tabular-nums">{v.stuck}/{v.total}</small></button>)}</nav>
   {showSwaps&&<Swaps slots={allSlots} wings={byId} actions={actions} onDone={()=>void reload()}/>}
   {!showSwaps&&wing&&covered&&<Cover w={wing.info} name={book.cover.name} total={views.reduce((n,v)=>n+v.total,0)} chips={wings.map(x=>x.primary)} onOpen={()=>{setCovered(false);try{sessionStorage.setItem('alb-cover','1')}catch{/* */}}}/>}
   {!showSwaps&&wing&&!covered&&<div className="alb-book rk-book-in" aria-label={`${wing.info.name} wing`}>
-   <div className="alb-phone rk-turn">{pages[page]&&<PageView p={pages[page]!} w={wing.info} act={act}/>}
-    {leaf&&step===1&&pages[leaf.from]&&<div key={leaf.k} className="rk-leaf" data-dir={leaf.dir} onAnimationEnd={()=>setLeaf(null)} aria-hidden="true"><PageView p={pages[leaf.from]!} w={wing.info} act={act}/></div>}</div>
-   <div className="alb-spread">{pages[spread]&&<PageView p={pages[spread]!} w={wing.info} act={act} side="left"/>}<span className="alb-spine" aria-hidden="true"><i/><i/></span>{pages[spread+1]&&<PageView p={pages[spread+1]!} w={wing.info} act={act} side="right"/>}
-    {leaf&&step===2&&<div key={leaf.k} className="rk-leaf rk-leaf-spread" data-dir={leaf.dir} onAnimationEnd={()=>setLeaf(null)} aria-hidden="true">{pages[leaf.dir>0?Math.floor(leaf.from/2)*2+1:Math.floor(leaf.from/2)*2]&&<PageView p={pages[leaf.dir>0?Math.floor(leaf.from/2)*2+1:Math.floor(leaf.from/2)*2]!} w={wing.info} act={act} side={leaf.dir>0?'right':'left'}/>}</div>}</div>
+   <div className="alb-phone rk-turn" onClick={turnOnPage} onTouchStart={startSwipe} onTouchEnd={finishSwipe} onTouchCancel={()=>{swipe.current=null}}>{pages[page]&&<PageView p={pages[page]!} w={wing.info} act={act}/>}
+    {leaf&&step===1&&pages[leaf.from]&&<div key={leaf.k} className="rk-leaf" data-dir={leaf.dir} onAnimationEnd={()=>setLeaf(null)} aria-hidden="true" ref={node=>{if(node)node.inert=true}}><PageView p={pages[leaf.from]!} w={wing.info} act={act}/></div>}</div>
+   <div className="alb-spread" onClick={turnOnPage}>{pages[spread]&&<PageView p={pages[spread]!} w={wing.info} act={act} side="left"/>}<span className="alb-spine" aria-hidden="true"><i/><i/></span>{pages[spread+1]&&<PageView p={pages[spread+1]!} w={wing.info} act={act} side="right"/>}
+    {leaf&&step===2&&<div key={leaf.k} className="rk-leaf rk-leaf-spread" data-dir={leaf.dir} onAnimationEnd={()=>setLeaf(null)} aria-hidden="true" ref={node=>{if(node)node.inert=true}}>{pages[leaf.dir>0?Math.floor(leaf.from/2)*2+1:Math.floor(leaf.from/2)*2]&&<PageView p={pages[leaf.dir>0?Math.floor(leaf.from/2)*2+1:Math.floor(leaf.from/2)*2]!} w={wing.info} act={act} side={leaf.dir>0?'right':'left'}/>}</div>}</div>
    <nav className="alb-pager" aria-label="Pages">
-    <button type="button" className="alb-btn ghost min-h-tap" disabled={page===0} onClick={()=>turnTo(Math.floor(page/step)*step-step,page,pages.length-1)}>Back</button>
+    <button type="button" className="alb-btn ghost min-h-tap" disabled={page===0} onClick={()=>turn(-1)}>Back</button>
     <span className="alb-pages">{pages.map((p,i)=><button key={p.no} type="button" className="alb-pg min-h-tap" aria-current={i===page||undefined} aria-label={`Page ${p.no}`} onClick={()=>turnTo(i,page,pages.length-1)}>{p.no}</button>)}</span>
-    <button type="button" className="alb-btn ghost min-h-tap" disabled={page+step>pages.length-1&&Math.floor(page/step)*step+step>pages.length-1} onClick={()=>turnTo(Math.floor(page/step)*step+step,page,pages.length-1)}>Next</button>
+    <button type="button" className="alb-btn ghost min-h-tap" disabled={base+step>=pages.length} onClick={()=>turn(1)}>Next</button>
    </nav>
   </div>}
   <p className="alb-fine">One envelope a day · every fifth envelope brings a new sticker if you still miss any · five collecting days in a week earn a pick · five spares buy any missing sticker. Photographs are free-licence pictures from Wikimedia Commons; turn a sticker over for its credit.</p>

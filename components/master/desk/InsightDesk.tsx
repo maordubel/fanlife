@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import {createClient} from '@supabase/supabase-js'
 import {PRESETS,loadInsight,periodOf,shiftDay,type Report,type Row,type Totals} from '@/lib/analytics/insight-report'
 import {GamesFunnelDesk} from './GamesFunnelDesk'
 
@@ -92,11 +93,24 @@ export function Breakdown({title,rows,metric,cols,label,link,empty='Nothing reco
  </section>
 }
 
+async function registrationCounts(from:string,to:string) {
+ const url=process.env.NEXT_PUBLIC_SUPABASE_URL
+ const key=process.env.SUPABASE_SERVICE_ROLE_KEY
+ if(!url||!key)return null
+ try {
+  const db=createClient(url,key,{auth:{persistSession:false,autoRefreshToken:false}})
+  const {data,error}=await db.rpc('fanlife_registration_counts',{p_from:from,p_to:to})
+  return error||!data?null:data as {total:number;recent:number}
+ } catch {
+  return null
+ }
+}
+
 export async function InsightDesk({club,clubNames,q}:{club:string|null;clubNames:Record<string,string>;q:Q}){
  const games=q.view==='games'
  const period=periodOf(q)
  const f={from:period.from,to:period.to,club,country:q.country||null,device:q.device||null,source:q.source||null,path:q.path||null}
- const loaded=await loadInsight(f)
+ const [loaded,registrations]=await Promise.all([loadInsight(f),games?null:registrationCounts(period.from,period.to)])
  const clubName=(id:unknown)=>clubNames[String(id)]||String(id)
  const active:[string,string,Partial<Q&{club:string|null}>][]=[
   ...(club?[[`Club: ${clubName(club)}`,'club',{club:null}] as [string,string,Partial<Q&{club:string|null}>]]:[]),
@@ -122,6 +136,10 @@ export async function InsightDesk({club,clubNames,q}:{club:string|null;clubNames
     <li><b>{n(loaded.live.allTime)}</b><span>visitors since counting began</span></li>
    </ul>}
   </header>
+  {!games&&<section className="ins-card" aria-labelledby="registrations-h">
+   <h3 id="registrations-h">Site-wide registrations</h3>
+   {registrations?<p><b>{n(registrations.total)}</b> registered accounts · <b>{n(registrations.recent)}</b> created in the selected dates</p>:<p>Registration counts are unavailable.</p>}
+  </section>}
 
   <nav className="ins-periods" aria-label="Period">{PRESETS.map(p=><Link key={p.key} prefetch={false} className="desk-chip" aria-current={period.preset===p.key?'true':undefined} href={href(club,{...q,from:undefined,to:undefined},{range:p.key})}>{p.label}</Link>)}</nav>
   <details className="ins-filters" open={!!(q.from||active.length)}>

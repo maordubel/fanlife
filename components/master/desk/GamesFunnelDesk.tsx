@@ -23,6 +23,7 @@ const pct=(v:number|null)=>v===null?'—':`${v}%`
 
 /** which game a route is: a club route's gate, else the legacy THE WORKER gate by its title */
 function gameOf(gate:string):{game:string;club:string|null}{
+ if(gate==='/all-football/legends')return {game:'Legends Manager',club:null}
  const m=/^\/clubs\/([a-z0-9-]+)\/([a-z-]+)/.exec(gate)
  if(m){const g=SHARED_GATES.find(x=>x.key===m[2]);return {game:g?.name||(m[2]==='life'?'LIFE':m[2]!),club:m[1]!}}
  // a legacy THE WORKER route: the shared gate of the same name, in English (the legacy titles are Hebrew)

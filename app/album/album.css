@@ -237,3 +237,15 @@
 .alb-code input{inline-size:100%;border:2px solid var(--mag-paper);border-radius:.5rem;background:transparent;color:var(--mag-paper);padding-inline:.8rem;font-family:var(--mag-mono);font-size:16px;letter-spacing:.12em}
 .alb-code input::placeholder{color:var(--mag-paper);opacity:.5;letter-spacing:0;font-family:var(--mag-body);text-transform:none}
 .alb-code .alb-btn{background:var(--mag-paper);color:var(--mag-ink)}
+
+.alb-loose { margin-block: 1rem; padding: .75rem; background: var(--alb-page); color: var(--mag-ink); border-radius: .35rem; }
+.alb-loose summary { cursor: pointer; font-weight: 700; }
+.alb-loose ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); list-style: none; gap: .5rem; padding: 0; }
+.alb-loose button { width: 100%; }
+.alb-loose small { display: block; }
+@media (min-width: 380px) and (max-width: 63.99rem) {
+ .alb-phone .alb-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem .5rem; }
+}
+
+.alb-phone { touch-action: pan-y pinch-zoom; }
+.alb-book .alb-page { cursor: pointer; }

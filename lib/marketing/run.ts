@@ -6,6 +6,8 @@ import {composeBriefing, composeDubid, composeFixtures, composeNumbers, composeO
 import {REGISTRY} from '@/lib/master/registry'
 import {composeInsightDigest,shiftDay,athensDay,type Report as InsightReport} from '@/lib/analytics/insight-report'
 import {SITE_URL} from '@/lib/brand'
+import {readShop} from '@/lib/shop/store'
+import {isPublic} from '@/lib/shop/types'
 
 /** The database side of the social plan (service role, server only). */
 export async function rpc<T = unknown>(name: string, body: Record<string, unknown>): Promise<T | null> {
@@ -26,6 +28,14 @@ export type Due = {id: number; chat_id: string; msg: string; kit?: unknown; kind
  * returned as null. When the data cannot be read the slot is skipped too: a live post never guesses.
  */
 export async function prepare(p: Due, now = new Date(), cache: {data?: LiveData | null} = {}): Promise<Due | null> {
+  const shopKit = p.kit as {t?: string; data?: {product?: string}} | null
+  if (shopKit?.t === 'SHOP') {
+    const shop = await readShop()
+    if (!shop.settings.open || !shop.products.some(product => product.id === shopKit.data?.product && isPublic(product))) {
+      await rpc('worker_marketing_skip', {p_id: p.id, p_why: 'Product is no longer available in the shop'})
+      return null
+    }
+  }
   if (!isLiveKind(p.kind)) return p
   let out: Composed
   try {

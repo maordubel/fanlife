@@ -1,5 +1,8 @@
 import {NextResponse} from 'next/server'
 import {adminFromRequest} from '@/lib/master/admin'
+import {SITE_URL} from '@/lib/brand'
+import {rpc} from '@/lib/marketing/run'
+import {isPublic} from '@/lib/shop/types'
 import {sameOrigin} from '@/lib/master/request'
 import {readShop,updateShop,printifyToken,saveToken} from '@/lib/shop/store'
 import {forgetPublicShop} from '@/lib/shop/store'
@@ -51,6 +54,18 @@ export async function POST(r:Request){
   const b=await r.json() as Record<string,unknown>,id=typeof b.id==='string'?b.id:''
   const kind=KINDS.find(k=>k===b.kind) as Kind|undefined,now=new Date().toISOString()
   switch(b.action){
+   case 'promote': {
+    if(s.role!=='owner')return json({error:'Only the owner can queue a social post.'},403)
+    const shop=await readShop(),product=shop.products.find(p=>p.id===id)
+    if(!shop.settings.open||!product||!isPublic(product))return json({error:'This product is unavailable in the public store.'},422)
+    const image=new URL(product.printify!.images[0]!)
+    if(image.protocol!=='https:'||image.port||image.username||image.password||!image.hostname.endsWith('.printify.com'))return json({error:'A Printify product image is required.'},422)
+    const url=new URL('/shop/p/'+encodeURIComponent(id),SITE_URL).href
+    const post={app:'fanlife',label:'FAN LIFE Shop',hook:product.title,body:[product.description.trim(),'Explore it in the FAN LIFE Shop.'].filter(Boolean).join('\n\n'),url,tags:'#FANLIFE #Football',visual:'FAN LIFE product card with the current shop image.',kit:{t:'SHOP',data:{image:image.href,title:product.title,product:id},to:['facebook','instagram','x']}}
+    const queued=await rpc<number>('worker_marketing_queue_shop',{p_product:id,p_post:post})
+    if(!queued)return json({error:'The post could not be queued.'},503)
+    return json({...await state(),queued})
+   }
    case 'connect':{
     if(typeof b.token==='string'&&b.token.trim()){if(b.token.trim().length<40)return json({error:'That does not look like a Printify API token.'},422);await saveToken(b.token.trim())}
     const out=await connect(by);return json({...(await state()),shops:out.shops})}
