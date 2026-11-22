@@ -1,0 +1,103 @@
+name: Album · painted faces
+# THE ALBUM: painted portraits for the men with no free photograph (scripts/album/faces.py; owner 22.11.2026).
+# Stable Diffusion XL (CreativeML OpenRAIL++-M) + LCM-LoRA on the runner's CPU — free in this public repository.
+# Dispatch: one painting job per ten faces in parallel (about 6-12 minutes a face), then one job presses every sticker again
+# (photographs through the paint filter, painted faces with the club's real shirt) and opens a PR on album/faces-auto.
+# A push to claude/album-faces-lab paints a small test set and commits the contact sheets back to that branch.
+on:
+  workflow_dispatch:
+    inputs:
+      clubs: {description: 'Club ids, comma-separated (empty = every wing)', default: ''}
+      redo: {description: 'Paint again faces that exist (true/false)', default: 'false'}
+  push:
+    branches: [claude/album-faces-lab]
+permissions:
+  contents: write
+  pull-requests: write
+concurrency: {group: album-faces, cancel-in-progress: false}
+env:
+  LAB_IDS: hapoel-tel-aviv:25,aek-athens:9,celtic:8,olympiacos:3,atalanta:5,aek-athens:18
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs: {clubs: '${{ steps.p.outputs.clubs }}'}
+    steps:
+      - uses: actions/checkout@v4
+      - id: p
+        env: {WANT: '${{ inputs.clubs }}', REDO: '${{ inputs.redo }}'}
+        run: |
+          python3 - >> "$GITHUB_OUTPUT" <<'PY'
+          import json, os, pathlib
+          ed = json.load(open('content/generated/album-edition-1.json'))['wings']
+          led = json.load(open('content/generated/album-stickers.json'))['stickers']
+          want = [c for c in os.environ.get('WANT', '').split(',') if c]
+          redo = os.environ.get('REDO') == 'true'
+          ids = [f"{c}:{r['slot']}" for c, rows in ed.items() if not want or c in want for r in rows
+                 if (led.get(f"{c}:{r['slot']}") or {}).get('status') != 'photo'
+                 and (redo or not pathlib.Path(f"content/generated/album-faces/{c}/{r['slot']}.webp").exists())]
+          chunks = [','.join(ids[i:i + 10]) for i in range(0, len(ids), 10)] or ['none']
+          print('clubs=' + json.dumps(chunks))
+          PY
+  paint:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      matrix:
+        club: ${{ github.event_name == 'push' && fromJSON('["lab"]') || fromJSON(needs.plan.outputs.clubs) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/cache@v4
+        with: {path: ~/.cache/huggingface, key: hf-sdxl-lcm-v1}
+      - run: |
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install diffusers transformers accelerate peft rembg onnxruntime pillow playwright "opencv-contrib-python-headless<5" numpy
+          python -m playwright install --with-deps chromium
+      - name: Lab sheet
+        if: github.event_name == 'push'
+        run: |
+          python scripts/album/faces.py --ids "$LAB_IDS" --redo --sheet content/generated/album-faces/_lab.jpg
+          python scripts/album/stickers.py --ids "$LAB_IDS"
+          python -c "import sys;from PIL import Image;ims=[Image.open('public/album/stickers/%s/%s.webp'%tuple(i.split(':'))).convert('RGB') for i in sys.argv[1].split(',')];W=Image.new('RGB',(sum(i.width for i in ims),ims[0].height));x=0
+          for i in ims: W.paste(i,(x,0)); x+=i.width
+          W.save('content/generated/album-faces/_lab-stickers.jpg',quality=90)" "$LAB_IDS"
+          git config user.name github-actions[bot]; git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add content/generated/album-faces && git commit -m "album faces: lab sheet [skip ci]" && git push
+      - name: Paint ten faces
+        if: github.event_name == 'workflow_dispatch' && matrix.club != 'none'
+        env: {IDS: '${{ matrix.club }}'}
+        run: python scripts/album/faces.py --ids "$IDS" --redo
+      - uses: actions/upload-artifact@v4
+        if: github.event_name == 'workflow_dispatch' && matrix.club != 'none'
+        with: {name: 'faces-${{ strategy.job-index }}', path: 'content/generated/album-faces', if-no-files-found: ignore, retention-days: 3}
+  press:
+    needs: paint
+    if: github.event_name == 'workflow_dispatch' && !cancelled()
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: {pattern: 'faces-*', path: '${{ runner.temp }}/faces'}
+      - run: |
+          for d in "$RUNNER_TEMP"/faces/faces-*; do [ -d "$d" ] && cp -r "$d"/. content/generated/album-faces/; done
+          rm -f content/generated/album-faces/_lab*.jpg
+          ls content/generated/album-faces
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: |
+          pip install rembg onnxruntime pillow playwright "opencv-contrib-python-headless<5" numpy
+          curl -sSL -o "$RUNNER_TEMP/lbf.yaml" https://raw.githubusercontent.com/kurnianggoro/GSOC2017/master/data/lbfmodel.yaml
+          python -m playwright install --with-deps chromium
+      - name: Press every sticker again
+        env: {ALBUM_LBF: '${{ runner.temp }}/lbf.yaml'}
+        run: python scripts/album/stickers.py --redo
+      - uses: peter-evans/create-pull-request@v6
+        with:
+          branch: album/faces-auto
+          title: 'album: painted look — photographs painted, painted portraits for men with no free photo'
+          commit-message: 'album: painted look and painted portraits'
+          body: Photographs through the paint filter; men with no free photograph get a painted portrait (SDXL + LCM on CPU, from his measured traits) with his club's real shirt laid over — not his likeness, as the back of each sticker says.

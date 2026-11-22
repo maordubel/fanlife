@@ -85,7 +85,9 @@ def portrait_svg(cx, ey, scale, t, shape=None, uid='p'):
     P = [(cx + x * scale, ey + y * scale) for x, y in S]
     skin, hair = t['skin'], t['hair']
     sk_d, sk_dd, sk_l = shade(skin, .82), shade(skin, .66), shade(skin, 1.12)
-    ink = '#2A1F1A'
+    ink = '#1E1612'
+    grad = (f'<radialGradient id="{uid}gs" cx=".36" cy=".3" r=".85"><stop offset="0" stop-color="{shade(skin, 1.16)}"/><stop offset=".45" stop-color="{skin}"/><stop offset="1" stop-color="{shade(skin, .74)}"/></radialGradient>'
+            f'<radialGradient id="{uid}gh" cx=".35" cy=".2" r=".9"><stop offset="0" stop-color="{shade(t["hair"], 1.35)}"/><stop offset=".5" stop-color="{t["hair"]}"/><stop offset="1" stop-color="{shade(t["hair"], .6)}"/></radialGradient>')
     hl = t['length']
     jaw = P[0:17]
     brow_y = min(P[19][1], P[24][1])
@@ -100,7 +102,7 @@ def portrait_svg(cx, ey, scale, t, shape=None, uid='p'):
     ears = ''
     for side, (a, b) in ((-1, (P[0], P[3])), (1, (P[16], P[13]))):
         ex = a[0] + side * scale * .14
-        ears += (f'<path d="M{a[0]:.1f} {a[1]-scale*.08:.1f} C{ex+side*scale*.12:.1f} {a[1]-scale*.18:.1f} {ex+side*scale*.14:.1f} {b[1]-scale*.1:.1f} {b[0]+side*scale*.02:.1f} {b[1]:.1f} Z" fill="{skin}" stroke="{ink}" stroke-width="1.1"/>'
+        ears += (f'<path d="M{a[0]:.1f} {a[1]-scale*.08:.1f} C{ex+side*scale*.12:.1f} {a[1]-scale*.18:.1f} {ex+side*scale*.14:.1f} {b[1]-scale*.1:.1f} {b[0]+side*scale*.02:.1f} {b[1]:.1f} Z" fill="{skin}" stroke="{ink}" stroke-width="1.8"/>'
                  f'<path d="M{a[0]+side*scale*.07:.1f} {a[1]:.1f} C{ex:.1f} {a[1]+scale*.05:.1f} {ex:.1f} {b[1]-scale*.2:.1f} {b[0]+side*scale*.06:.1f} {b[1]-scale*.12:.1f}" fill="none" stroke="{sk_dd}" stroke-width="1.2"/>')
     # light from the upper left: the right of the face (viewer's right) in shadow
     shadow = _path([P[16], P[14], P[12], P[10], P[8], (cx + scale * .18, P[8][1] - scale * .2), (cx + scale * .62, P[4][1] - scale * .1), (cx + scale * .72, P[1][1] - scale * .2), (cx + half * .6, crown + scale * .45)], close=True)
@@ -170,7 +172,18 @@ def portrait_svg(cx, ey, scale, t, shape=None, uid='p'):
         body = f'{_path(outer)} {_path(hairline).replace("M", "L", 1)} Z'
         strands = ''.join(f'<path d="{_path([off((cx + half * k, crown + scale * .05), thick * .7), (cx + half * k * 1.08, (crown + line_y) / 2), (cx + half * (k * 1.1 + .06), line_y + scale * .02)])}" fill="none" stroke="{hair_d}" stroke-width="{scale*.035:.2f}" stroke-linecap="round" opacity=".7"/>' for k in (-.8, -.55, -.3, -.05, .22, .48, .74))
         shine = f'<path d="{_path([off((cx - half * .6, crown + scale * .2), thick * .55), off((cx - half * .15, crown), thick * .6), off((cx + half * .2, crown + scale * .06), thick * .55)])}" fill="none" stroke="{hair_l}" stroke-width="{scale*.09:.1f}" stroke-linecap="round" opacity=".5"/>'
-        hair_svg = f'<path d="{body}" fill="{hair}" stroke="{ink}" stroke-width="1.1"/>{strands}{shine}'
+        hair_svg = f'<path d="{body}" fill="url(#{uid}gh)" stroke="{ink}" stroke-width="2"/>{strands}{shine}'
+        if t.get('curly'):
+            # curls: small overlapping rounds along the hair's outer line, each inked (measured trait only)
+            pts = []
+            for i in range(len(outer) - 1):
+                (x0, y0), (x1, y1) = outer[i], outer[i + 1]
+                for k in range(3):
+                    pts.append((x0 + (x1 - x0) * k / 3, y0 + (y1 - y0) * k / 3))
+            r = scale * .16
+            hair_svg += ''.join(f'<circle cx="{x_:.1f}" cy="{y_:.1f}" r="{r * (1 + .25 * ((j * 7) % 3 - 1)):.1f}" fill="{hair}" stroke="{ink}" stroke-width="1.4"/>'
+                                f'<path d="M{x_ - r * .5:.1f} {y_:.1f} a{r * .5:.1f} {r * .5:.1f} 0 0 1 {r:.1f} 0" fill="none" stroke="{hair_l}" stroke-width="{scale * .04:.2f}" opacity=".6"/>'
+                                for j, (x_, y_) in enumerate(pts[1:-1]))
         back = ''
         if hl in ('medium', 'long'):
             drop = scale * (.9 if hl == 'medium' else 2.1)
@@ -189,11 +202,11 @@ def portrait_svg(cx, ey, scale, t, shape=None, uid='p'):
     stubble = ''
     if not t.get('beard') and t.get('stubble', True) and t['hairName'] in ('black', 'dark'):
         stubble = f'<path d="{_path([(P[2][0]+scale*.08, P[2][1])] + jaw[3:14] + [(P[14][0]-scale*.08, P[14][1])])} {_path([(P[54][0]+scale*.1, P[54][1]-scale*.2), (P[33][0], P[33][1]+scale*.14), (P[48][0]-scale*.1, P[48][1]-scale*.2)]).replace("M", "L", 1)} Z" fill="{hair}" opacity=".1"/>'
-    return (f'<g>'
-            f'<path d="{neck}" fill="{sk_d}" stroke="{ink}" stroke-width="1.1"/>'
+    return (f'<g><defs>{grad}</defs>'
+            f'<path d="{neck}" fill="{sk_d}" stroke="{ink}" stroke-width="2"/>'
             f'<path d="{_path([P[4], (cx, P[8][1] + scale * .55), P[12]])}" fill="none" stroke="{sk_dd}" stroke-width="5" opacity=".35"/>'
             f'{back}{ears}'
-            f'<path d="{head}" fill="{skin}" stroke="{ink}" stroke-width="1.3"/>'
+            f'<path d="{head}" fill="url(#{uid}gs)" stroke="{ink}" stroke-width="2.2"/>'
             f'<clipPath id="{uid}h"><path d="{head}"/></clipPath>'
             f'<g clip-path="url(#{uid}h)"><path d="{shadow}" fill="{sk_d}" opacity=".7"/>'
             f'<path d="{cheek}" fill="none" stroke="{sk_d}" stroke-width="{scale*.16:.1f}" stroke-linecap="round" opacity=".35"/>'
