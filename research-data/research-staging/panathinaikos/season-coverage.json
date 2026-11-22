@@ -14,8 +14,8 @@
    },
    {
     "collection": "pages",
-    "state": "listed",
-    "pagesRead": 2,
+    "state": "partial_budget",
+    "pagesRead": 1,
     "observedTotalDocuments": 33,
     "observedTotalPages": 2,
     "queue": null,
@@ -37,7 +37,7 @@
     "pagesRead": 0,
     "observedTotalDocuments": 11,
     "observedTotalPages": null,
-    "queue": 0,
+    "queue": 10,
     "lastError": null
    }
   ],

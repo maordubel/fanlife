@@ -1,0 +1,5 @@
+{"code":"FINGERPRINT_CHANGED","providerId":"millernton","url":null,"message":"posts: the listing definition changed — starting again from page 1."}
+{"code":"FINGERPRINT_CHANGED","providerId":"millernton","url":null,"message":"pages: the listing definition changed — starting again from page 1."}
+{"code":"FINGERPRINT_CHANGED","providerId":"fcstpauli-museum","url":null,"message":"posts: the listing definition changed — starting again from page 1."}
+{"code":"FINGERPRINT_CHANGED","providerId":"fcstpauli-museum","url":null,"message":"pages: the listing definition changed — starting again from page 1."}
+{"code":"BUDGET_EXHAUSTED","providerId":"*","url":null,"message":"Budget used; the next run resumes from the checkpoint."}

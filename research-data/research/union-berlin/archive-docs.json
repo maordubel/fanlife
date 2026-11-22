@@ -5,16 +5,18 @@
   "collection": "html",
   "url": "https://www.immerunioner.de/listen.php",
   "title": "listen | immerunioner.de",
-  "contentHash": "03e6132a042d1a2b7741d3b218ca643f70c51f34cc22dff7ed9c4aa70485dc1f",
+  "contentHash": "38b184042997aa3189ee03ce435422b3349824e239e57cfb2c338479939c7bc2",
   "bytes": 20849,
   "publishedAsReported": null,
   "modifiedAsReported": null,
-  "retrievedAt": "2026-10-13T10:49:11.959Z",
+  "retrievedAt": "2026-11-21T16:50:38.754Z",
   "firstRunId": "2026-10-07T04-54-03-557Z-2e7218",
-  "lastRunId": "2026-10-13T10-49-09-557Z-59131c",
+  "lastRunId": "2026-11-21T16-50-21-431Z-35a551",
   "changed": true,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "immerunioner-v1"
  },
  "immer-unioner:html:/trikotliste.php": {
   "providerKey": "immer-unioner:html:/trikotliste.php",
@@ -22,16 +24,18 @@
   "collection": "html",
   "url": "https://www.immerunioner.de/trikotliste.php",
   "title": "Trikots | immerunioner.de",
-  "contentHash": "dd570bab101c852579f5879ac5f448aedcf8b24f5ebc4512a22f9d13366bd763",
-  "bytes": 78662,
+  "contentHash": "6f7d6db61d1a225d1dbbd76a732ffb0f97bd97d070b266402b8dfc4dc405e60d",
+  "bytes": 79101,
   "publishedAsReported": null,
   "modifiedAsReported": null,
-  "retrievedAt": "2026-10-13T10:49:15.643Z",
+  "retrievedAt": "2026-11-21T16:50:40.542Z",
   "firstRunId": "2026-10-07T04-54-03-557Z-2e7218",
-  "lastRunId": "2026-10-13T10-49-09-557Z-59131c",
+  "lastRunId": "2026-11-21T16-50-21-431Z-35a551",
   "changed": true,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "kits",
+  "parserVersion": "immerunioner-v1"
  },
  "immer-unioner:html:/impressum.php": {
   "providerKey": "immer-unioner:html:/impressum.php",
@@ -43,12 +47,14 @@
   "bytes": 24358,
   "publishedAsReported": null,
   "modifiedAsReported": null,
-  "retrievedAt": "2026-10-13T10:49:18.754Z",
+  "retrievedAt": "2026-11-21T16:50:45.518Z",
   "firstRunId": "2026-10-07T04-54-03-557Z-2e7218",
-  "lastRunId": "2026-10-13T10-49-09-557Z-59131c",
+  "lastRunId": "2026-11-21T16-50-21-431Z-35a551",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "immerunioner-v1"
  },
  "immer-unioner:html:/spieler.php?getid=84": {
   "providerKey": "immer-unioner:html:/spieler.php?getid=84",
@@ -60,12 +66,14 @@
   "bytes": 20527,
   "publishedAsReported": null,
   "modifiedAsReported": null,
-  "retrievedAt": "2026-10-16T08:21:46.979Z",
+  "retrievedAt": "2026-11-21T16:50:53.740Z",
   "firstRunId": "2026-10-07T04-54-03-557Z-2e7218",
-  "lastRunId": "2026-10-16T08-21-44-803Z-de26ff",
+  "lastRunId": "2026-11-21T16-50-21-431Z-35a551",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "parsed",
+  "category": "people",
+  "parserVersion": "immerunioner-v1"
  },
  "immer-unioner:html:/spieler.php?getid=453": {
   "providerKey": "immer-unioner:html:/spieler.php?getid=453",
@@ -111,12 +119,14 @@
   "bytes": 108391,
   "publishedAsReported": null,
   "modifiedAsReported": null,
-  "retrievedAt": "2026-11-20T11:56:22.815Z",
+  "retrievedAt": "2026-11-21T16:51:01.486Z",
   "firstRunId": "2026-10-07T04-54-03-557Z-2e7218",
-  "lastRunId": "2026-11-20T11-56-12-030Z-9a3188",
+  "lastRunId": "2026-11-21T16-50-21-431Z-35a551",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "parsed",
+  "category": "season",
+  "parserVersion": "union-official-seasons-v1"
  },
  "dfb-union:html:/en/clubs/1-fc-union-berlin": {
   "providerKey": "dfb-union:html:/en/clubs/1-fc-union-berlin",
@@ -124,16 +134,18 @@
   "collection": "html",
   "url": "https://datencenter.dfb.de/en/clubs/1-fc-union-berlin",
   "title": "DFB data center",
-  "contentHash": "9150ede2bc4b5800e9428a2f595bddae39fef9f7065d0983b1150e0a0404a18f",
-  "bytes": 91527,
+  "contentHash": "12d243a87ef46aaa60c82ae06206b5010a07836f15d5131cf9b8eda1b5e83e9c",
+  "bytes": 91470,
   "publishedAsReported": null,
   "modifiedAsReported": null,
-  "retrievedAt": "2026-11-12T11:52:31.591Z",
+  "retrievedAt": "2026-11-22T03:42:39.526Z",
   "firstRunId": "2026-10-13T10-49-09-557Z-59131c",
-  "lastRunId": "2026-11-12T11-52-06-360Z-9dc2d4",
+  "lastRunId": "2026-11-22T03-42-39-391Z-2fe4ce",
   "changed": true,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "parsed",
+  "category": "results",
+  "parserVersion": "dfb-club-results-v1"
  },
  "footballhistory-union:html:/club/union-berlin.html": {
   "providerKey": "footballhistory-union:html:/club/union-berlin.html",
@@ -145,12 +157,14 @@
   "bytes": 6221,
   "publishedAsReported": null,
   "modifiedAsReported": "Fri, 06 Nov 2026 15:42:07 GMT",
-  "retrievedAt": "2026-11-20T11:56:23.590Z",
+  "retrievedAt": "2026-11-21T16:51:08.814Z",
   "firstRunId": "2026-10-13T10-49-09-557Z-59131c",
-  "lastRunId": "2026-11-20T11-56-12-030Z-9a3188",
+  "lastRunId": "2026-11-21T16-50-21-431Z-35a551",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "club-history",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "immer-unioner:html:/spieler.php?getid=44": {
   "providerKey": "immer-unioner:html:/spieler.php?getid=44",

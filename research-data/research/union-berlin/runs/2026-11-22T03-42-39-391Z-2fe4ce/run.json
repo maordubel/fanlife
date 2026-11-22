@@ -1,0 +1,31 @@
+{
+ "schemaVersion": 1,
+ "id": "2026-11-22T03-42-39-391Z-2fe4ce",
+ "clubId": "union-berlin",
+ "startedAt": "2026-11-22T03:42:39.392Z",
+ "finishedAt": "2026-11-22T03:42:39.537Z",
+ "providers": [
+  "dfb-union"
+ ],
+ "state": "listed",
+ "counts": {
+  "requests": 1,
+  "documentsRead": 1,
+  "newDocuments": 0,
+  "changedDocuments": 1,
+  "unchangedDocuments": 0,
+  "recordsExtracted": 3,
+  "blockedEndpoints": 0,
+  "budgetLeft": 0
+ },
+ "diagnostics": [
+  {
+   "code": "FINGERPRINT_CHANGED",
+   "providerId": "dfb-union",
+   "url": null,
+   "message": "html: seeds or follow rule changed — starting again."
+  }
+ ],
+ "completeArchiveClaim": false,
+ "approvedForProduction": 0
+}

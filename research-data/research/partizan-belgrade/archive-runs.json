@@ -2239,5 +2239,69 @@
   ],
   "completeArchiveClaim": false,
   "approvedForProduction": 0
+ },
+ {
+  "schemaVersion": 1,
+  "id": "2026-11-21T16-50-21-293Z-56cb5d",
+  "clubId": "partizan-belgrade",
+  "startedAt": "2026-11-21T16:50:21.293Z",
+  "finishedAt": "2026-11-21T16:51:23.072Z",
+  "providers": [
+   "partizanopedia",
+   "crno-bela-nostalgija",
+   "partizan-official",
+   "nft-partizan"
+  ],
+  "state": "partial_budget",
+  "counts": {
+   "requests": 9,
+   "documentsRead": 85,
+   "newDocuments": 75,
+   "changedDocuments": 3,
+   "unchangedDocuments": 7,
+   "recordsExtracted": 18,
+   "blockedEndpoints": 0,
+   "budgetLeft": 9
+  },
+  "diagnostics": [
+   {
+    "code": "FINGERPRINT_CHANGED",
+    "providerId": "partizanopedia",
+    "url": null,
+    "message": "html: seeds or follow rule changed — starting again."
+   },
+   {
+    "code": "FINGERPRINT_CHANGED",
+    "providerId": "crno-bela-nostalgija",
+    "url": null,
+    "message": "posts: the listing definition changed — starting again from page 1."
+   },
+   {
+    "code": "FINGERPRINT_CHANGED",
+    "providerId": "crno-bela-nostalgija",
+    "url": null,
+    "message": "pages: the listing definition changed — starting again from page 1."
+   },
+   {
+    "code": "FINGERPRINT_CHANGED",
+    "providerId": "partizan-official",
+    "url": null,
+    "message": "html: seeds or follow rule changed — starting again."
+   },
+   {
+    "code": "FINGERPRINT_CHANGED",
+    "providerId": "nft-partizan",
+    "url": null,
+    "message": "html: seeds or follow rule changed — starting again."
+   },
+   {
+    "code": "BUDGET_EXHAUSTED",
+    "providerId": "*",
+    "url": null,
+    "message": "Budget used; the next run resumes from the checkpoint."
+   }
+  ],
+  "completeArchiveClaim": false,
+  "approvedForProduction": 0
  }
 ]

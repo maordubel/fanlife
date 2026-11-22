@@ -1974,5 +1974,94 @@
   ],
   "completeArchiveClaim": false,
   "approvedForProduction": 0
+ },
+ {
+  "schemaVersion": 1,
+  "id": "2026-11-21T16-50-21-431Z-35a551",
+  "clubId": "union-berlin",
+  "startedAt": "2026-11-21T16:50:21.431Z",
+  "finishedAt": "2026-11-21T16:51:08.814Z",
+  "providers": [
+   "immer-unioner",
+   "union-official",
+   "dfb-union",
+   "footballhistory-union"
+  ],
+  "state": "partial_budget",
+  "counts": {
+   "requests": 6,
+   "documentsRead": 6,
+   "newDocuments": 0,
+   "changedDocuments": 2,
+   "unchangedDocuments": 4,
+   "recordsExtracted": 2,
+   "blockedEndpoints": 0,
+   "budgetLeft": 12
+  },
+  "diagnostics": [
+   {
+    "code": "FINGERPRINT_CHANGED",
+    "providerId": "immer-unioner",
+    "url": null,
+    "message": "html: seeds or follow rule changed — starting again."
+   },
+   {
+    "code": "FINGERPRINT_CHANGED",
+    "providerId": "union-official",
+    "url": null,
+    "message": "html: seeds or follow rule changed — starting again."
+   },
+   {
+    "code": "FINGERPRINT_CHANGED",
+    "providerId": "footballhistory-union",
+    "url": null,
+    "message": "html: seeds or follow rule changed — starting again."
+   },
+   {
+    "code": "NEEDS_PARSER",
+    "providerId": "dfb-union",
+    "url": null,
+    "message": "No tested parser for Deutscher Fußball-Bund yet: documents are kept, nothing is extracted."
+   },
+   {
+    "code": "BUDGET_EXHAUSTED",
+    "providerId": "*",
+    "url": null,
+    "message": "Budget used; the next run resumes from the checkpoint."
+   }
+  ],
+  "completeArchiveClaim": false,
+  "approvedForProduction": 0
+ },
+ {
+  "schemaVersion": 1,
+  "id": "2026-11-22T03-42-39-391Z-2fe4ce",
+  "clubId": "union-berlin",
+  "startedAt": "2026-11-22T03:42:39.392Z",
+  "finishedAt": "2026-11-22T03:42:39.537Z",
+  "providers": [
+   "dfb-union"
+  ],
+  "state": "listed",
+  "counts": {
+   "requests": 1,
+   "documentsRead": 1,
+   "newDocuments": 0,
+   "changedDocuments": 1,
+   "unchangedDocuments": 0,
+   "recordsExtracted": 3,
+   "blockedEndpoints": 0,
+   "budgetLeft": 0
+  },
+  "diagnostics": [
+   {
+    "code": "FINGERPRINT_CHANGED",
+    "providerId": "dfb-union",
+    "url": null,
+    "message": "html: seeds or follow rule changed — starting again."
+   }
+  ],
+  "completeArchiveClaim": false,
+  "approvedForProduction": 0
  }
 ]

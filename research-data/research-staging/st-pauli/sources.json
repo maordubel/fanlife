@@ -8,13 +8,13 @@
   "sourceFamilyId": "millernton-editorial",
   "scope": "mixed",
   "access": "available",
-  "checkedAt": "2026-11-20",
-  "retrievedAt": "2026-11-20T11:56:11.698Z",
+  "checkedAt": "2026-11-21",
+  "retrievedAt": "2026-11-21T16:51:12.829Z",
   "collected": {
    "documents": 3545,
-   "observedTotalDocuments": 4485,
+   "observedTotalDocuments": 4486,
    "state": "partial_budget",
-   "parser": null
+   "parser": "editorial-catalogue-v1"
   },
   "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
   "imagesUsableInApp": false,
@@ -29,13 +29,13 @@
   "sourceFamilyId": "millernton-editorial",
   "scope": "mixed",
   "access": "available",
-  "checkedAt": "2026-11-20",
-  "retrievedAt": "2026-11-20T11:56:11.698Z",
+  "checkedAt": "2026-11-21",
+  "retrievedAt": "2026-11-21T16:51:12.829Z",
   "collected": {
    "documents": 3545,
    "observedTotalDocuments": 20,
-   "state": "listed",
-   "parser": null
+   "state": "partial_budget",
+   "parser": "editorial-catalogue-v1"
   },
   "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
   "imagesUsableInApp": false,
@@ -50,13 +50,13 @@
   "sourceFamilyId": "fcstpauli-museum",
   "scope": "club-history",
   "access": "available",
-  "checkedAt": "2026-11-20",
-  "retrievedAt": "2026-11-20T11:56:11.698Z",
+  "checkedAt": "2026-11-21",
+  "retrievedAt": "2026-11-21T16:51:12.829Z",
   "collected": {
    "documents": 60,
    "observedTotalDocuments": 31,
-   "state": "listed",
-   "parser": null
+   "state": "partial_budget",
+   "parser": "editorial-catalogue-v1"
   },
   "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
   "imagesUsableInApp": false,
@@ -71,13 +71,13 @@
   "sourceFamilyId": "fcstpauli-museum",
   "scope": "club-history",
   "access": "available",
-  "checkedAt": "2026-11-20",
-  "retrievedAt": "2026-11-20T11:56:11.698Z",
+  "checkedAt": "2026-11-21",
+  "retrievedAt": "2026-11-21T16:51:12.829Z",
   "collected": {
    "documents": 60,
    "observedTotalDocuments": 29,
-   "state": "listed",
-   "parser": null
+   "state": "partial_budget",
+   "parser": "editorial-catalogue-v1"
   },
   "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
   "imagesUsableInApp": false,

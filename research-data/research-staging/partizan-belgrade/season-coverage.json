@@ -7,9 +7,9 @@
     "collection": "html",
     "state": "partial_budget",
     "pagesRead": 0,
-    "observedTotalDocuments": 559,
+    "observedTotalDocuments": 108,
     "observedTotalPages": null,
-    "queue": 451,
+    "queue": 105,
     "lastError": null
    }
   ],
@@ -24,12 +24,12 @@
   "listings": [
    {
     "collection": "posts",
-    "state": "blocked",
-    "pagesRead": 0,
-    "observedTotalDocuments": null,
-    "observedTotalPages": null,
+    "state": "partial_budget",
+    "pagesRead": 3,
+    "observedTotalDocuments": 1053,
+    "observedTotalPages": 43,
     "queue": null,
-    "lastError": "HTTP 403 — a refusal is an answer"
+    "lastError": null
    },
    {
     "collection": "pages",
@@ -41,7 +41,7 @@
     "lastError": null
    }
   ],
-  "documents": 5,
+  "documents": 80,
   "historicalRecordsExtracted": 0,
   "seasonReviews": [],
   "note": "Documents read is not historical coverage. Records extracted are candidates for review, not facts."
@@ -80,7 +80,7 @@
    }
   ],
   "documents": 1,
-  "historicalRecordsExtracted": 0,
+  "historicalRecordsExtracted": 18,
   "seasonReviews": [],
   "note": "Documents read is not historical coverage. Records extracted are candidates for review, not facts."
  }

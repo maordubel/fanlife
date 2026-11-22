@@ -95,11 +95,12 @@ describe('research store and worker',()=>{
   expect((await readJobs('fixture-club'))[0]!.state).toBe('unchanged')
  })
  it('a fetched page without a tested parser ends as needs-adapter and keeps its snapshot',async()=>{
-  await upsertJobs('fixture-club',plan(bundle(),profile).jobs)
+  const unknown={...profile,sources:profile.sources.map(s=>({...s,providerId:'unadapted-fixture'}))}
+  await upsertJobs('fixture-club',plan(bundle(),unknown).jobs)
   const f:FetchLike=async url=>url.endsWith('robots.txt')?{status:404,headers:{get:()=>null},arrayBuffer:async()=>new ArrayBuffer(0),text:async()=>''}:{status:200,headers:{get:(n:string)=>n==='etag'?'"x"':null},arrayBuffer:async()=>new TextEncoder().encode('<html/>').buffer as ArrayBuffer,text:async()=>'<html/>'}
-  const run=await runWorker(profile,{fetchImpl:f});expect(run.counts).toMatchObject({fetched:1,needsAdapter:1})
+  const run=await runWorker(unknown,{fetchImpl:f});expect(run.counts).toMatchObject({fetched:1,needsAdapter:1})
   expect((await readJobs('fixture-club'))[0]!.state).toBe('needs-adapter')
   expect(Object.keys(await readSnapshots('fixture-club'))).toEqual(['https://www.pao.gr/en/match/123/'])
-  expect((await runWorker(profile,{fetchImpl:f})).counts.leased).toBe(0)
+  expect((await runWorker(unknown,{fetchImpl:f})).counts.leased).toBe(0)
  })
 })

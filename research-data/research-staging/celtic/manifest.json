@@ -1,21 +1,22 @@
 {
  "club": "celtic",
- "snapshotAsOf": "2026-11-20",
- "researchVersion": 34,
+ "snapshotAsOf": "2026-11-21",
+ "researchVersion": 3,
+ "contentHash": "b9ff203487122eea825cc6df07c9f7af3026fa76a68048828ebc72d712554631",
  "approvedForProduction": 0,
  "counts": {
-  "sources": 2,
-  "matches": 0,
+  "sources": 18,
+  "matches": 16,
   "archive-players": 0,
   "conflicts": 0
  },
  "collection": {
   "schemaVersion": 1,
-  "runId": "2026-11-20T11-54-48-557Z-f14d1e",
+  "runId": "2026-11-21T16-59-53-825Z-8ec807",
   "state": "partial_budget",
   "historicalOnly": true,
   "completeArchiveClaim": false,
   "documents": 7052,
-  "needsParser": 7052
+  "needsParser": 6453
  }
 }

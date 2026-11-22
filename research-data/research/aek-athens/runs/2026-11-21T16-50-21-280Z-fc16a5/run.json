@@ -1,0 +1,44 @@
+{
+ "schemaVersion": 1,
+ "id": "2026-11-21T16-50-21-280Z-fc16a5",
+ "clubId": "aek-athens",
+ "startedAt": "2026-11-21T16:50:21.281Z",
+ "finishedAt": "2026-11-21T16:50:55.870Z",
+ "providers": [
+  "aekpedia",
+  "aek-official-history"
+ ],
+ "state": "partial_budget",
+ "counts": {
+  "requests": 3,
+  "documentsRead": 30,
+  "newDocuments": 0,
+  "changedDocuments": 0,
+  "unchangedDocuments": 30,
+  "recordsExtracted": 25,
+  "blockedEndpoints": 1,
+  "budgetLeft": 2
+ },
+ "diagnostics": [
+  {
+   "code": "FINGERPRINT_CHANGED",
+   "providerId": "aek-official-history",
+   "url": null,
+   "message": "html: seeds or follow rule changed — starting again."
+  },
+  {
+   "code": "SOURCE_BLOCKED",
+   "providerId": "aek-official-history",
+   "url": "https://www.aekfc.gr/pages/history.aspx?lang=el",
+   "message": "HTTP 403 — a refusal is an answer. Who refused (the source, or this server's network) is recorded as unknown until checked from another network."
+  },
+  {
+   "code": "BUDGET_EXHAUSTED",
+   "providerId": "*",
+   "url": null,
+   "message": "Budget used; the next run resumes from the checkpoint."
+  }
+ ],
+ "completeArchiveClaim": false,
+ "approvedForProduction": 0
+}

@@ -19,37 +19,37 @@
    "/povijest/2001-danas"
   ],
   "state": "blocked",
-  "updatedAt": "2026-11-20T11:55:15.224Z",
+  "updatedAt": "2026-11-21T16:50:23.856Z",
   "lastError": "HTTP 403 — a refusal is an answer"
  },
  "torcida:posts": {
   "schemaVersion": 1,
   "providerId": "torcida",
   "collection": "posts",
-  "queryFingerprint": "6e1f3e54546b55ec",
-  "parserVersion": "torcida-history-v1",
-  "nextPage": 22,
-  "lastCommittedPage": 21,
+  "queryFingerprint": "c488f57275050bce",
+  "parserVersion": "editorial-catalogue-v1",
+  "nextPage": 2,
+  "lastCommittedPage": 1,
   "observedTotalDocuments": 657,
   "observedTotalPages": 27,
   "perPage": 25,
   "state": "partial_budget",
-  "updatedAt": "2026-11-20T11:55:21.018Z",
+  "updatedAt": "2026-11-21T16:50:38.633Z",
   "lastError": null
  },
  "torcida:pages": {
   "schemaVersion": 1,
   "providerId": "torcida",
   "collection": "pages",
-  "queryFingerprint": "1bcd11c8e59672cb",
-  "parserVersion": "torcida-history-v1",
+  "queryFingerprint": "031be0a4b6c9d75e",
+  "parserVersion": "editorial-catalogue-v1",
   "nextPage": 2,
   "lastCommittedPage": 1,
   "observedTotalDocuments": 17,
   "observedTotalPages": 1,
   "perPage": 25,
-  "state": "listed",
-  "updatedAt": "2026-11-20T11:55:23.515Z",
+  "state": "partial_budget",
+  "updatedAt": "2026-11-21T16:50:43.210Z",
   "lastError": null
  },
  "wikipedia-hajduk-records:html": {
@@ -68,15 +68,15 @@
    "/wiki/HNK_Hajduk_Split_statistics_and_records"
   ],
   "state": "listed",
-  "updatedAt": "2026-11-20T11:55:23.636Z",
+  "updatedAt": "2026-11-21T16:50:49.253Z",
   "lastError": null
  },
  "hajduk-official-history-en:html": {
   "schemaVersion": 1,
   "providerId": "hajduk-official-history-en",
   "collection": "html",
-  "queryFingerprint": "bc1471686b4efabd",
-  "parserVersion": null,
+  "queryFingerprint": "593929d677ef5714",
+  "parserVersion": "editorial-catalogue-v1",
   "nextPage": 0,
   "lastCommittedPage": 0,
   "observedTotalDocuments": 1,
@@ -86,8 +86,8 @@
   "seen": [
    "/eng/history"
   ],
-  "state": "blocked",
-  "updatedAt": "2026-11-20T11:55:23.636Z",
-  "lastError": "HTTP 403 — a refusal is an answer"
+  "state": "listed",
+  "updatedAt": "2026-11-21T16:50:58.645Z",
+  "lastError": null
  }
 }

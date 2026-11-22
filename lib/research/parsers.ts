@@ -1,4 +1,5 @@
-import type {ResourceKind} from './contract'
+import type {ArchiveRole,ResourceKind} from './contract'
+import {celticWiki,dfbUnion,editorialCatalogue,immerUnioner,nationalFootballTeams,paoMatchPage,partizanopedia,unionOfficial,type DocumentCategory,type ReportedMatch,type ReportedStat} from './archive-readers'
 /**
  * Registered parsers: providerId + kind → pure function (snapshot bytes → observations). A parser enters this table
  * only with a stored fixture and a test (spec §5/§7). Until then a fetched page is kept as a snapshot and its job
@@ -6,14 +7,18 @@ import type {ResourceKind} from './contract'
  */
 export type Observation={subject:string;field:string;value:unknown;locator:string}
 export type Parser=(body:Buffer,ctx:{url:string;subjects:string[]})=>{observations:Observation[];diagnostics:string[]}
-export const PARSERS:Record<string,Partial<Record<ResourceKind,Parser>>>={}
+export const PARSERS:Record<string,Partial<Record<ResourceKind,Parser>>>={'pao-official':{'match-detail':(body,{subjects})=>{
+ const match=paoMatchPage(body.toString('utf8'))
+ return match&&subjects.length===1?{observations:[{subject:subjects[0]!,field:'match',value:match,locator:'.match-score'}],diagnostics:[]}:
+  {observations:[],diagnostics:['The match scorecard was missing or the requested match was ambiguous.']}
+}}}
 export const parserFor=(providerId:string,kind:ResourceKind):Parser|null=>PARSERS[providerId]?.[kind]??null
 /** Archive parsers by parserId. A parser reads ONE document (title, HTML, and the listing's own taxonomy) and returns
  * candidate observations — never a decision. Names stay as the source wrote them; identity stays unresolved. */
-export type ArchiveDocInput={url:string;title:string|null;html:string;providerKey:string;meta:{slug:string|null;categories:string[];parent:number|null}}
-export type ArchiveObservation={schemaVersion:1;id:string;recordType:'player'|'coach'|'season';providerRecordKey:string;sourceUrl:string;parserVersion:string;locator:string
+export type ArchiveDocInput={url:string;title:string|null;html:string;providerKey:string;role?:ArchiveRole;meta:{slug:string|null;categories:string[];parent:number|null}}
+export type ArchiveObservation={schemaVersion:1;id:string;recordType:'player'|'coach'|'season'|'match';providerRecordKey:string;sourceUrl:string;parserVersion:string;locator:string;match?:ReportedMatch;stats?:ReportedStat[];lookupNames?:string[];positions?:string[]
  nameAsReported:string|null;seasonsAsReported:string|null;seasonAsReported:string|null;canonicalId:null;identityState:'unresolved';status:'candidate'}
-export type ArchiveParser={id:string;needsTaxonomy:boolean;parse:(doc:ArchiveDocInput)=>{observations:ArchiveObservation[];diagnostics:string[]}}
+export type ArchiveParser={id:string;needsTaxonomy:boolean;parse:(doc:ArchiveDocInput)=>{observations:ArchiveObservation[];diagnostics:string[];category?:DocumentCategory;awaitsReader?:boolean}}
 const text=(html:string)=>html.replace(/<[^>]*>/g,' ').replace(/&nbsp;/g,' ').replace(/&#8211;|&ndash;/g,'–').replace(/&amp;/g,'&').replace(/\s+/g,' ').trim()
 const SPAN=/\((\d{4}\/\d{2}(?:\s*[-–,]\s*\d{4}\/\d{2})*)\)/
 const SEASON=/(?:^|\D)(\d{4})\s*[-/–]\s*(\d{2}|\d{4})(?:\D|$)/
@@ -44,5 +49,5 @@ const aekpedia:ArchiveParser={id:'aekpedia-football-v1',needsTaxonomy:true,parse
  out.push({...base,id:`obs:${doc.providerKey}:${type}`,recordType:type,locator:span?'content.rendered p:first-of-type':'title.rendered',nameAsReported:doc.title,seasonsAsReported:span,seasonAsReported:null})
  return {observations:out,diagnostics:diag}
 }}
-export const ARCHIVE_PARSERS:Record<string,ArchiveParser>={[aekpedia.id]:aekpedia}
+export const ARCHIVE_PARSERS:Record<string,ArchiveParser>=Object.fromEntries([aekpedia,celticWiki,dfbUnion,immerUnioner,nationalFootballTeams,partizanopedia,unionOfficial,editorialCatalogue].map(p=>[p.id,p]))
 export const archiveParserFor=(id:string|null):ArchiveParser|null=>id?ARCHIVE_PARSERS[id]??null:null

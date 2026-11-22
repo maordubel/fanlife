@@ -1,21 +1,5 @@
 [
  {
-  "id": "parser-dinamo-official",
-  "priority": "P1",
-  "task": "Write and test the dinamo-official parser against stored fixtures (season, person, match pages) before anything is extracted from GNK Dinamo Zagreb.",
-  "taskHe": "לכתוב parser ל-GNK Dinamo Zagreb מול fixtures שמורים (עונה, אדם, משחק) לפני שמחלצים ממנו משהו.",
-  "status": "queued",
-  "owner": null
- },
- {
-  "id": "blocked-dinamo-official-/hr/klub/povijest",
-  "priority": "P2",
-  "task": "GNK Dinamo Zagreb: /hr/klub/povijest answered 403 (HTTP 403 — a refusal is an answer). Recorded as a gap — not bypassed.",
-  "taskHe": "GNK Dinamo Zagreb: /hr/klub/povijest חסום (403). נרשם כפער — לא עוקפים.",
-  "status": "queued",
-  "owner": null
- },
- {
   "id": "blocked-dinamo-official-/en/club/history",
   "priority": "P2",
   "task": "GNK Dinamo Zagreb: /en/club/history answered 403 (HTTP 403 — a refusal is an answer). Recorded as a gap — not bypassed.",
@@ -28,6 +12,14 @@
   "priority": "P2",
   "task": "GNK Dinamo Zagreb: /en/timeline/145 answered 403 (HTTP 403 — a refusal is an answer). Recorded as a gap — not bypassed.",
   "taskHe": "GNK Dinamo Zagreb: /en/timeline/145 חסום (403). נרשם כפער — לא עוקפים.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "continue-dinamo-official-html",
+  "priority": "P3",
+  "task": "GNK Dinamo Zagreb html: 0 page(s) read; the scheduled task continues from the checkpoint.",
+  "taskHe": "GNK Dinamo Zagreb html: נקראו 0 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
   "status": "queued",
   "owner": null
  },
@@ -56,10 +48,18 @@
   "owner": null
  },
  {
-  "id": "parser-bad-blue-boys",
-  "priority": "P1",
-  "task": "Write and test the bbb-history-v1 against stored fixtures (season, person, match pages) before anything is extracted from Bad Blue Boys.",
-  "taskHe": "לכתוב parser ל-Bad Blue Boys מול fixtures שמורים (עונה, אדם, משחק) לפני שמחלצים ממנו משהו.",
+  "id": "continue-bad-blue-boys-posts",
+  "priority": "P3",
+  "task": "Bad Blue Boys posts: 1 page(s) read of 4; the scheduled task continues from the checkpoint.",
+  "taskHe": "Bad Blue Boys posts: נקראו 1 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "continue-bad-blue-boys-pages",
+  "priority": "P3",
+  "task": "Bad Blue Boys pages: 1 page(s) read of 1; the scheduled task continues from the checkpoint.",
+  "taskHe": "Bad Blue Boys pages: נקראו 1 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
   "status": "queued",
   "owner": null
  },
@@ -109,14 +109,6 @@
   "task": "One Wikipedia page counts as one publisher; a record needs a second family (NFT, club, press).",
   "taskHe": "One Wikipedia page counts as one publisher; a record needs a second family (NFT, club, press).",
   "status": "noted",
-  "owner": null
- },
- {
-  "id": "parser-nft-dinamo",
-  "priority": "P1",
-  "task": "Write and test the nft-dinamo parser against stored fixtures (season, person, match pages) before anything is extracted from National Football Teams.",
-  "taskHe": "לכתוב parser ל-National Football Teams מול fixtures שמורים (עונה, אדם, משחק) לפני שמחלצים ממנו משהו.",
-  "status": "queued",
   "owner": null
  },
  {

@@ -27,7 +27,7 @@
     "/en/club/history",
     "/en/timeline/"
    ],
-   "parserId": null,
+   "parserId": "editorial-catalogue-v1",
    "budget": {
     "perPage": 1,
     "maxRequests": 10,
@@ -61,7 +61,7 @@
    "allowedPathPrefixes": [
     "/wp-json/wp/v2/"
    ],
-   "parserId": "bbb-history-v1",
+   "parserId": "editorial-catalogue-v1",
    "budget": {
     "perPage": 25,
     "maxRequests": 10,
@@ -151,7 +151,7 @@
    "allowedPathPrefixes": [
     "/club/504/"
    ],
-   "parserId": null,
+   "parserId": "national-football-teams-squad-v1",
    "budget": {
     "perPage": 1,
     "maxRequests": 12,

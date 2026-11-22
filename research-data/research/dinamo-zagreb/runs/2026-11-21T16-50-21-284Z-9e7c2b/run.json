@@ -1,0 +1,71 @@
+{
+ "schemaVersion": 1,
+ "id": "2026-11-21T16-50-21-284Z-9e7c2b",
+ "clubId": "dinamo-zagreb",
+ "startedAt": "2026-11-21T16:50:21.284Z",
+ "finishedAt": "2026-11-21T16:51:02.447Z",
+ "providers": [
+  "dinamo-official",
+  "bad-blue-boys",
+  "hns-semafor",
+  "wikipedia-dinamo-records",
+  "nft-dinamo"
+ ],
+ "state": "partial_budget",
+ "counts": {
+  "requests": 5,
+  "documentsRead": 45,
+  "newDocuments": 1,
+  "changedDocuments": 3,
+  "unchangedDocuments": 41,
+  "recordsExtracted": 11,
+  "blockedEndpoints": 0,
+  "budgetLeft": 0
+ },
+ "diagnostics": [
+  {
+   "code": "FINGERPRINT_CHANGED",
+   "providerId": "dinamo-official",
+   "url": null,
+   "message": "html: seeds or follow rule changed — starting again."
+  },
+  {
+   "code": "FINGERPRINT_CHANGED",
+   "providerId": "bad-blue-boys",
+   "url": null,
+   "message": "posts: the listing definition changed — starting again from page 1."
+  },
+  {
+   "code": "FINGERPRINT_CHANGED",
+   "providerId": "bad-blue-boys",
+   "url": null,
+   "message": "pages: the listing definition changed — starting again from page 1."
+  },
+  {
+   "code": "FINGERPRINT_CHANGED",
+   "providerId": "nft-dinamo",
+   "url": null,
+   "message": "html: seeds or follow rule changed — starting again."
+  },
+  {
+   "code": "NEEDS_PARSER",
+   "providerId": "hns-semafor",
+   "url": null,
+   "message": "No tested parser for HNS Semafor yet: documents are kept, nothing is extracted."
+  },
+  {
+   "code": "NEEDS_PARSER",
+   "providerId": "wikipedia-dinamo-records",
+   "url": null,
+   "message": "No tested parser for Wikipedia yet: documents are kept, nothing is extracted."
+  },
+  {
+   "code": "BUDGET_EXHAUSTED",
+   "providerId": "*",
+   "url": null,
+   "message": "Budget used; the next run resumes from the checkpoint."
+  }
+ ],
+ "completeArchiveClaim": false,
+ "approvedForProduction": 0
+}

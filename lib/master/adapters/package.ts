@@ -2,6 +2,7 @@ import 'server-only'
 import {existsSync,readFileSync} from 'node:fs'
 import {join} from 'node:path'
 import {collectorStagingRoot} from '@/lib/research/paths'
+import {reportedYears} from '@/lib/research/archive-readers'
 import type {Source,Finding,Job} from '../types'
 import type {Adapter} from './types'
 type Row=Record<string,unknown>
@@ -23,8 +24,14 @@ async function collect(job:Job){
  const manifest=JSON.parse(readFileSync(join(dirs[0]!,'manifest.json'),'utf8')) as Row,now=new Date().toISOString()
  const all=(n:string)=>{const seen=new Set<string>();return dirs.flatMap(d=>read(d,n)).filter(r=>{const id=String(r.id??JSON.stringify(r));if(seen.has(id))return false;seen.add(id);return true})}
  const raw=all('sources'),identity=all('club-identity'),matches=all('matches'),backlog=all('backlog'),conflicts=all('conflicts'),people=all('archive-players')
- const sources:Source[]=raw.filter(s=>https(s.url)).map(s=>({id:`pkg-${s.id}`,title:String(s.title),url:String(s.url),excerpt:`${s.sourceFamilyId||s.publisher} · ${s.scope||'record_specific'} · images usable: ${s.imagesUsableInApp===true}${s.collected&&typeof s.collected==='object'?` · collector: ${(s.collected as Row).documents} documents read (${(s.collected as Row).state}), ${(s.collected as Row).parser?'parser '+(s.collected as Row).parser:'no parser yet — nothing extracted'}`:''}`,reviewed:false,retrievedAt:typeof s.retrievedAt==='string'?s.retrievedAt:now}))
+ const sources:Source[]=raw.filter(s=>https(s.url)).map(s=>({id:`pkg-${s.id}`,title:String(s.title),url:String(s.url),excerpt:`${s.sourceFamilyId||s.publisher} · ${s.scope||'record_specific'} · images usable: ${s.imagesUsableInApp===true}${s.collected&&typeof s.collected==='object'?` · collector: ${(s.collected as Row).documents} documents read (${(s.collected as Row).state}), ${(s.collected as Row).parser?'parser '+(s.collected as Row).parser:'no parser yet — nothing extracted'}`:''}${typeof s.documentHash==='string'?` · document version ${s.documentHash}`:''}`,reviewed:false,retrievedAt:typeof s.retrievedAt==='string'?s.retrievedAt:now}))
  const known=new Set(sources.map(s=>s.id))
+ const citesFor=(row:Row)=>(Array.isArray(row.sourceIds)?row.sourceIds:[]).map(id=>`pkg-${id}`).filter(id=>known.has(id))
+ const linkOf=(row:Row):Finding['archiveLink']=>{
+  const state=row.identityState
+  if(state!=='linked'&&state!=='ambiguous'&&state!=='unresolved')return undefined
+  return {state,canonicalId:state==='linked'&&typeof row.canonicalId==='string'?row.canonicalId:null}
+ }
  const findings:Finding[]=[]
  for(const row of identity){
   const cites=(Array.isArray(row.sourceIds)?row.sourceIds:[]).map(id=>`pkg-${id}`).filter(id=>known.has(id))
@@ -38,11 +45,25 @@ async function collect(job:Job){
  // game data from approved rows, and the compiler still decides what is playable.
  for(const p of people){
   if(p.role!=='player'||typeof p.nameAsReported!=='string'||!p.nameAsReported.trim())continue
-  const cites=(Array.isArray(p.sourceIds)?p.sourceIds:[]).map(id=>`pkg-${id}`).filter(id=>known.has(id))
+  const cites=citesFor(p)
   if(!cites.length)continue
-  const seasons=typeof p.seasonsAsReported==='string'?p.seasonsAsReported:null,years=(seasons?.match(/\b(18|19|20)\d{2}\b/g)||[]).map(Number)
-  const from=years.length?Math.min(...years):null,to=years.length?Math.max(...years):null
-  findings.push({field:'player',value:p.nameAsReported.trim(),sources:cites,approved:false,record:{kind:'player',name:p.nameAsReported.trim(),sourceUrl:typeof p.sourceUrl==='string'?p.sourceUrl:undefined,seasons,positions:[],fromYear:from,toYear:to}})
+  const seasons=typeof p.seasonsAsReported==='string'?p.seasonsAsReported:null
+  const {from,to}=reportedYears(seasons)
+  const seasonStats=Array.isArray(p.stats)?p.stats.filter(x=>typeof x?.season==='string'&&typeof x?.competition==='string'&&Number.isInteger(x?.appearances)&&(x.goals===null||Number.isInteger(x.goals))):undefined
+  const positions=Array.isArray(p.positions)?p.positions.filter(x=>['GK','DF','MF','FW'].includes(x)):[]
+  findings.push({field:'player',value:p.nameAsReported.trim(),sources:cites,approved:false,archiveLink:linkOf(p),record:{kind:'player',name:p.nameAsReported.trim(),sourceUrl:typeof p.sourceUrl==='string'?p.sourceUrl:undefined,seasons,positions,fromYear:from,toYear:to,seasonStats}})
+ }
+ // Collector rows carry a document citation and explicit candidate status. Older package result tables stay in the report.
+ for(const m of matches){
+  if(m.status!=='candidate'||m.identityState==='conflict'||typeof m.on!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(m.on)||
+   typeof m.home!=='string'||typeof m.away!=='string'||typeof m.competition!=='string'||typeof m.homeGoals!=='number'||typeof m.awayGoals!=='number'||
+   !Number.isInteger(m.homeGoals)||!Number.isInteger(m.awayGoals))continue
+  const cites=citesFor(m)
+  const lineup=Array.isArray(m.lineup)&&m.lineup.length===11&&m.lineup.every(p=>typeof p==='string')?m.lineup:undefined
+  const scorers=Array.isArray(m.scorers)?m.scorers.filter(g=>typeof g?.name==='string'&&(typeof g?.minute==='string'||g?.minute===null)):undefined
+  const {on,home,away,homeGoals,awayGoals,competition}=m
+  if(cites.length)findings.push({field:'match',value:`${on} · ${home} ${homeGoals}–${awayGoals} ${away} · ${competition}`,sources:cites,approved:false,archiveLink:linkOf(m),
+   archiveMatch:{on,home,away,homeGoals,awayGoals,competition,season:typeof m.season==='string'?m.season:undefined,lineup,scorers}})
  }
  const report=[
   `REPORT · package v${manifest.researchVersion} · snapshot ${manifest.snapshotAsOf} · ${manifest.approvedForProduction} approved for production`,

@@ -3,8 +3,8 @@
   "schemaVersion": 1,
   "providerId": "fenerbahce-official",
   "collection": "html",
-  "queryFingerprint": "c14c8a20a4f6fb68",
-  "parserVersion": null,
+  "queryFingerprint": "02920ccd05d274b7",
+  "parserVersion": "editorial-catalogue-v1",
   "nextPage": 0,
   "lastCommittedPage": 0,
   "observedTotalDocuments": 1,
@@ -15,7 +15,7 @@
    "/"
   ],
   "state": "blocked",
-  "updatedAt": "2026-11-20T11:55:14.890Z",
+  "updatedAt": "2026-11-21T16:50:37.635Z",
   "lastError": "HTTP 403 — a refusal is an answer"
  }
 }

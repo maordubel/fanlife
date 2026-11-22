@@ -7,6 +7,7 @@ import {extractCandidates} from '@/lib/goals-auto/extract'
 import {documentDate,htmlToText} from '@/lib/goals-auto/text'
 import type {Candidate} from '@/lib/goals-auto/types'
 import {archiveParserFor,type ArchiveObservation} from './parsers'
+import {catalogueCategory,plain} from './archive-readers'
 import {canonicalJson} from './canonical'
 import {RESEARCH_SCHEMA,type ArchiveCheckpoint,type ArchiveDiagnostic,type ArchiveDoc,type ArchiveRun,type ArchiveSource,type EndpointStatus,type SourceProfile} from './contract'
 
@@ -55,13 +56,17 @@ async function keep(ctx:Ctx,src:ArchiveSource,collection:string,id:string,url:st
  // the taxonomy it classifies by was readable — otherwise the document waits, unparsed, for the next run
  // goals: read the paragraph while the body is in memory (metadata-only retention stays true — only short quoted spans
  // with their locator are kept). Only a new or changed document is read, so a second pass adds nothing.
- if(ctx.goalCands&&(!prev||prev.contentHash!==hash)){
+ let trustedLink=false
+ try{trustedLink=new URL(url).origin===src.origin}catch{/* invalid reported link */}
+ if(trustedLink&&ctx.goalCands&&(!prev||prev.contentHash!==hash)){
   try{const text=htmlToText(content);if(text.length>40)ctx.goalCands.push(...extractCandidates({clubId:ctx.club,sourceId:src.providerId,url,body:text,fetchedAt:at,playedOn:documentDate(text),opponentHe:null}))}catch{/* a page that cannot be read as text is not a goal source */}
  }
  const parser=archiveParserFor(src.parserId),tax=ctx.tax[src.providerId]
- let parse:ArchiveDoc['parse']='needs-parser'
- if(parser&&(!parser.needsTaxonomy||tax)){
-  const r=parser.parse({url,title,html:content,providerKey:key,meta:{slug:meta.slug,parent:meta.parent,categories:meta.categories.map(c=>tax?.[String(c)]).filter((x):x is string=>!!x)}})
+ let parse:ArchiveDoc['parse']='needs-parser',category=catalogueCategory(src.role)
+ if(parser&&trustedLink&&content.trim()&&(!parser.needsTaxonomy||tax)){
+  const reading=parser.parse({url,title,html:content,providerKey:key,role:src.role,meta:{slug:meta.slug,parent:meta.parent,categories:meta.categories.map(c=>tax?.[String(c)]).filter((x):x is string=>!!x)}})
+  const r={...reading,observations:reading.observations.filter(o=>!o.match||o.match.on<=at.slice(0,10))}
+  category=r.category??category
   const fresh=new Set(r.observations.map(o=>o.id))
   for(const o of r.observations){
    const had=ctx.obs[o.id],history=[...(had?.history||[])]
@@ -74,9 +79,10 @@ async function keep(ctx:Ctx,src:ArchiveSource,collection:string,id:string,url:st
    const reason=prev&&prev.contentHash!==hash?`document changed (${prev.contentHash.slice(0,12)} → ${hash.slice(0,12)}); ${parser.id} no longer produces this observation`:`${parser.id} no longer produces this observation from document version ${hash.slice(0,12)}`
    ctx.obs[old.id]={...old,retired:{at,runId:ctx.runId,reason},history:[...(old.history||[]),{at,runId:ctx.runId,change:'retired' as const,reason}].slice(-20)}
   }
-  ctx.counts.recordsExtracted+=r.observations.length;parse='parsed'
+  ctx.counts.recordsExtracted+=r.observations.length
+  parse=r.observations.length?'parsed':r.awaitsReader?'needs-parser':'catalogued'
  }
- ctx.docs[key]={providerKey:key,providerId:src.providerId,collection,url,title,contentHash:hash,bytes:Buffer.byteLength(content),publishedAsReported:published,modifiedAsReported:modified,retrievedAt:at,firstRunId:prev?.firstRunId||ctx.runId,lastRunId:ctx.runId,changed:!!prev&&prev.contentHash!==hash,snapshot,parse}
+ ctx.docs[key]={providerKey:key,providerId:src.providerId,collection,url,title,contentHash:hash,bytes:Buffer.byteLength(content),publishedAsReported:published,modifiedAsReported:modified,retrievedAt:at,firstRunId:prev?.firstRunId||ctx.runId,lastRunId:ctx.runId,changed:!!prev&&prev.contentHash!==hash,snapshot,parse,category,...(parser?{parserVersion:parser.id}:{})}
  ctx.counts.documentsRead++;if(!prev)ctx.counts.newDocuments++;else if(prev.contentHash!==hash)ctx.counts.changedDocuments++;else ctx.counts.unchangedDocuments++
 }
 /** The site's own category list (id → slug), read once per source when its parser classifies by it. */
@@ -91,6 +97,40 @@ async function readTaxonomy_(ctx:Ctx,src:ArchiveSource){
 /** Budget left AND time left: a web request must answer before the platform cuts it off; the checkpoint resumes next run. */
 const more=(ctx:Ctx)=>ctx.requests<ctx.budget&&!(ctx.deadline&&Date.now()>ctx.deadline)
 async function get(ctx:Ctx,src:ArchiveSource,url:string){ctx.requests++;const out=await politeFetch(url,asFetchSource(src),null,ctx.fetchImpl,()=>ctx.now().getTime(),undefined,ctx.deadline);ctx.resources.push({url,at:ctx.now().toISOString(),outcome:out.kind,...(out.kind==='fetched'?{status:200,hash:out.meta.hash,bytes:out.meta.bytes,contentType:out.meta.contentType}:out.kind==='refused'?{status:out.status,reason:out.reason}:'reason' in out?{reason:out.reason}:{})});return out}
+const WP_FIELDS='id,link,slug,title,content,date_gmt,modified_gmt,type,parent,categories'
+type WordPressRow=Record<string,unknown>&{id:number;link:string}
+function wpRows(body:Buffer):WordPressRow[]|null{
+ let rows:unknown
+ try{rows=JSON.parse(body.toString('utf8'))}catch{return null}
+ return Array.isArray(rows)&&rows.every(r=>r&&typeof r==='object'&&Number.isInteger(r.id)&&typeof r.link==='string')?rows:null
+}
+async function keepWordPress(ctx:Ctx,src:ArchiveSource,collection:'posts'|'pages',r:WordPressRow){
+ let url:URL|null=null
+ try{url=new URL(r.link)}catch{/* reported URL is invalid */}
+ if(url?.origin!==src.origin)ctx.diag.push({code:'OFF_ORIGIN_LINK',providerId:src.providerId,url:r.link,message:'Document links outside the profiled origin; kept as metadata only.'})
+ const t=(r.title as {rendered?:string}|undefined)?.rendered,c=(r.content as {rendered?:string}|undefined)?.rendered
+ await keep(ctx,src,collection,String(r.id),r.link,typeof t==='string'?plain(t):null,typeof c==='string'?c:'',typeof r.date_gmt==='string'?r.date_gmt:null,typeof r.modified_gmt==='string'?r.modified_gmt:null,
+  src.retention.rawBody==='private-copy'?Buffer.from(JSON.stringify(r)):null,{slug:typeof r.slug==='string'?r.slug:null,categories:Array.isArray(r.categories)?(r.categories as unknown[]).filter((x):x is number=>Number.isInteger(x)):[],parent:Number.isInteger(r.parent)?r.parent as number:null})
+}
+
+/** Prioritise the previously saved match reports as soon as their reader ships. The normal listing still advances. */
+async function recoverCelticMatches(ctx:Ctx,src:ArchiveSource,collection:'posts'|'pages',ep:string,cp:ArchiveCheckpoint){
+ if(src.parserId!=='celticwiki-football-v1'||!more(ctx)||ctx.budget-ctx.requests<2)return
+ const prefix=`${src.providerId}:${collection}:`,missing=new Set(cp.backfillMissing||[])
+ const ids=Object.values(ctx.docs).filter(doc=>doc.providerKey.startsWith(prefix)&&doc.parse==='needs-parser'&&!doc.parserVersion&&
+  /^\d{4}-\d{2}-\d{2}\s*[:–].+\d\s*[-–:]\s*\d/.test(doc.title||'')&&!/\b(?:Pictures|Photos|Gallery|Programmes?)\b/i.test(doc.title||''))
+  .map(doc=>doc.providerKey.slice(prefix.length)).filter(id=>/^\d+$/.test(id)&&!missing.has(id)).slice(0,Math.min(35,src.budget.perPage))
+ if(!ids.length)return
+ const u=new URL(ep,src.origin)
+ u.searchParams.set('per_page',String(ids.length));u.searchParams.set('include',ids.join(','));u.searchParams.set('_fields',WP_FIELDS)
+ const out=await get(ctx,src,u.href)
+ if(out.kind!=='fetched'||!/json/i.test(out.meta.contentType||''))return
+ const rows=wpRows(out.body)
+ if(!rows)return
+ const requested=new Set(ids)
+ for(const row of rows)if(requested.delete(String(row.id)))await keepWordPress(ctx,src,collection,row)
+ cp.backfillMissing=[...missing,...requested]
+}
 
 async function readWordPress(ctx:Ctx,src:ArchiveSource,collection:'posts'|'pages'){
  const ep=`/wp-json/wp/v2/${collection}`,fp=fingerprint(src,collection),k=`${src.providerId}:${collection}`
@@ -100,9 +140,10 @@ async function readWordPress(ctx:Ctx,src:ArchiveSource,collection:'posts'|'pages
  if(cp.state==='listed'||cp.state==='blocked')cp={...cp,nextPage:cp.state==='listed'?1:cp.nextPage,state:'running'} // a new pass re-reads for changes; a block is re-checked once
  if(!allowedPath(src,ep)){ctx.diag.push({code:'PATH_NOT_ALLOWED',providerId:src.providerId,url:ep,message:'The REST path is not in allowedPathPrefixes.'});return}
  await readTaxonomy_(ctx,src)
+ await recoverCelticMatches(ctx,src,collection,ep,cp)
  while(more(ctx)){
   if(cp.observedTotalPages!==null&&cp.nextPage>cp.observedTotalPages){cp.state='listed';break}
-  const u=new URL(ep,src.origin);u.searchParams.set('per_page',String(src.budget.perPage));u.searchParams.set('page',String(cp.nextPage));u.searchParams.set('orderby','id');u.searchParams.set('order','asc');u.searchParams.set('_fields','id,link,slug,title,content,date_gmt,modified_gmt,type,parent,categories')
+  const u=new URL(ep,src.origin);u.searchParams.set('per_page',String(src.budget.perPage));u.searchParams.set('page',String(cp.nextPage));u.searchParams.set('orderby','id');u.searchParams.set('order','asc');u.searchParams.set('_fields',WP_FIELDS)
   const out=await get(ctx,src,u.href)
   if(out.kind==='refused'){const nf=out.status===404,state=nf?'not-found':'blocked';endpoint(ctx,src,ep,state,out.status,out.reason);ctx.diag.push({code:nf?'RESOURCE_NOT_FOUND':'SOURCE_BLOCKED',providerId:src.providerId,url:u.href,message:nf?out.reason:`${out.reason}. Who refused (the source, or this server's network) is recorded as unknown until checked from another network.`});cp.state='blocked';cp.lastError=out.reason;ctx.counts.blockedEndpoints++;break}
   if(out.kind==='retry'||out.kind==='error'){
@@ -112,21 +153,15 @@ async function readWordPress(ctx:Ctx,src:ArchiveSource,collection:'posts'|'pages
   if(out.kind==='unchanged'){cp.lastCommittedPage=cp.nextPage;cp.nextPage++;continue}
   const ct=out.meta.contentType||''
   if(!/json/i.test(ct)){endpoint(ctx,src,ep,'not-json',200,`content-type ${ct||'missing'}`);ctx.diag.push({code:'SOURCE_NOT_JSON',providerId:src.providerId,url:u.href,message:'Expected JSON, got a web page (a login or challenge page is not "no records").'});cp.state='not-json';cp.lastError='not json';ctx.counts.blockedEndpoints++;break}
-  let rows:unknown;try{rows=JSON.parse(out.body.toString('utf8'))}catch{rows=null}
-  const bad=!Array.isArray(rows)||rows.some(r=>!r||typeof r!=='object'||!Number.isInteger((r as Record<string,unknown>).id)||typeof (r as Record<string,unknown>).link!=='string')
-  if(bad){endpoint(ctx,src,ep,'schema-changed',200,'rows lack id/link');ctx.diag.push({code:'SOURCE_SCHEMA_CHANGED',providerId:src.providerId,url:u.href,message:'Rows are not WordPress documents with id and link — nothing stored from this page.'});cp.state='schema-changed';cp.lastError='schema';break}
+  const rows=wpRows(out.body)
+  if(!rows){endpoint(ctx,src,ep,'schema-changed',200,'rows lack id/link');ctx.diag.push({code:'SOURCE_SCHEMA_CHANGED',providerId:src.providerId,url:u.href,message:'Rows are not WordPress documents with id and link — nothing stored from this page.'});cp.state='schema-changed';cp.lastError='schema';break}
   endpoint(ctx,src,ep,'ok',200,null)
   if(out.paging?.total!==null&&out.paging?.total!==undefined){if(cp.observedTotalDocuments!==null&&cp.observedTotalDocuments!==out.paging.total)ctx.diag.push({code:'SOURCE_SCHEMA_CHANGED',providerId:src.providerId,url:null,message:`${collection}: the site now reports ${out.paging.total} documents (was ${cp.observedTotalDocuments}) — pages may have shifted; duplicates are merged by id.`});cp.observedTotalDocuments=out.paging.total}
   if(out.paging?.totalPages!==null&&out.paging?.totalPages!==undefined)cp.observedTotalPages=out.paging.totalPages
-  for(const r of rows as Record<string,unknown>[]){
-   const link=String(r.link);let lu:URL|null=null;try{lu=new URL(link)}catch{}
-   if(!lu||lu.host!==new URL(src.origin).host)ctx.diag.push({code:'OFF_ORIGIN_LINK',providerId:src.providerId,url:link,message:'Document links outside the profiled origin; kept as metadata only.'})
-   const t=(r.title as {rendered?:string}|undefined)?.rendered,c=(r.content as {rendered?:string}|undefined)?.rendered||''
-   await keep(ctx,src,collection,String(r.id),link,t?decode(t):null,c,typeof r.date_gmt==='string'?r.date_gmt:null,typeof r.modified_gmt==='string'?r.modified_gmt:null,src.retention.rawBody==='private-copy'?Buffer.from(JSON.stringify(r)):null,{slug:typeof r.slug==='string'?r.slug:null,categories:Array.isArray(r.categories)?(r.categories as unknown[]).filter((x):x is number=>Number.isInteger(x)):[],parent:Number.isInteger(r.parent)?r.parent as number:null})
-  }
+  for(const r of rows)await keepWordPress(ctx,src,collection,r)
   // commit only after the page's documents are in memory for the atomic write below
   cp.lastCommittedPage=cp.nextPage;cp.nextPage++;cp.state='running';cp.lastError=null
-  if(!(rows as unknown[]).length){cp.state='listed';break}
+  if(!rows.length){cp.state='listed';break}
  }
  if(cp.state==='running')cp.state='partial_budget'
  cp.updatedAt=ctx.now().toISOString();ctx.cps[k]=cp
@@ -139,6 +174,18 @@ async function readHtml(ctx:Ctx,src:ArchiveSource){
  if(cp&&cp.queryFingerprint!==fp){ctx.diag.push({code:'FINGERPRINT_CHANGED',providerId:src.providerId,url:null,message:'html: seeds or follow rule changed — starting again.'});cp=undefined as never}
  cp=cp||{schemaVersion:RESEARCH_SCHEMA,providerId:src.providerId,collection:'html',queryFingerprint:fp,parserVersion:src.parserId,nextPage:0,lastCommittedPage:0,observedTotalDocuments:null,observedTotalPages:null,perPage:1,queue:[...(src.seeds||[])],seen:[],state:'new',updatedAt:ctx.now().toISOString(),lastError:null}
  if(cp.state==='listed'){cp.queue=[...(src.seeds||[])];cp.seen=[];cp.state='running'}
+ const parser=archiveParserFor(src.parserId)
+ if(parser){
+  const queued=new Set([...(cp.queue||[]),...(cp.seen||[])])
+  for(const doc of Object.values(ctx.docs)){
+   if(doc.providerId!==src.providerId||doc.collection!=='html'||doc.parserVersion===parser.id)continue
+   let url:URL
+   try{url=new URL(doc.url)}catch{continue}
+   const p=url.pathname+url.search
+   if(url.origin!==src.origin||!allowedPath(src,p)||queued.has(p))continue
+   queued.add(p);cp.queue!.push(p)
+  }
+ }
  const follow=src.follow?new RegExp(src.follow):null
  while(more(ctx)&&cp.queue!.length){
   const p=cp.queue![0]!
@@ -146,11 +193,21 @@ async function readHtml(ctx:Ctx,src:ArchiveSource){
   const url=new URL(p,src.origin).href,out=await get(ctx,src,url)
   if(out.kind==='refused'){cp.queue!.shift();cp.seen!.push(p);const nf=out.status===404;endpoint(ctx,src,p,nf?'not-found':'blocked',out.status,out.reason);ctx.diag.push({code:nf?'RESOURCE_NOT_FOUND':'SOURCE_BLOCKED',providerId:src.providerId,url,message:nf?out.reason:`${out.reason}. Who refused (the source, or this server's network) is recorded as unknown until checked from another network.`});if(!nf){ctx.counts.blockedEndpoints++;if((src.seeds||[]).includes(p)){cp.state='blocked';cp.lastError=out.reason;break}}continue}
   if(out.kind==='retry'||out.kind==='error'){endpoint(ctx,src,p,'retry-later',0,out.reason);ctx.diag.push({code:'RETRY_LATER',providerId:src.providerId,url,message:out.reason});cp.state='retry-later';cp.lastError=out.reason;break}
-  cp.queue!.shift();cp.seen!.push(p)
-  if(out.kind==='unchanged')continue
+  if(out.kind==='unchanged'){cp.queue!.shift();cp.seen!.push(p);continue}
+  const charset=/charset\s*=\s*["']?([\w-]+)/i.exec(out.meta.contentType||'')?.[1]||
+   /<meta[^>]*charset\s*=\s*["']?([\w-]+)/i.exec(out.body.subarray(0,4096).toString('ascii'))?.[1]||'utf-8'
+  let html:string
+  try{html=new TextDecoder(charset).decode(out.body)}catch{html=out.body.toString('utf8')}
+  const title=html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1]
+  const heading=title?decode(title):null
+  if(heading&&/^(?:just a moment|access denied|attention required|verify you are human|request blocked)\b/i.test(heading)){
+   const reason='Expected archive content, received a challenge page.'
+   endpoint(ctx,src,p,'blocked',200,reason);ctx.diag.push({code:'SOURCE_BLOCKED',providerId:src.providerId,url,message:reason})
+   cp.state='blocked';cp.lastError=reason;ctx.counts.blockedEndpoints++;break
+  }
   endpoint(ctx,src,p,'ok',200,null)
-  const html=out.body.toString('utf8'),title=html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1]
-  await keep(ctx,src,'html',p,url,title?decode(title):null,html,null,out.meta.lastModified,src.retention.rawBody==='private-copy'?out.body:null)
+  await keep(ctx,src,'html',p,url,heading,html,null,out.meta.lastModified,src.retention.rawBody==='private-copy'?out.body:null)
+  cp.queue!.shift();cp.seen!.push(p);cp.state='running';cp.lastError=null
   if(follow)for(const h of hrefs(html)){let u:URL;try{u=new URL(h,url)}catch{continue};if(u.origin!==src.origin)continue;const q=u.pathname+u.search;if(follow.test(q)&&allowedPath(src,q)&&!cp.seen!.includes(q)&&!cp.queue!.includes(q))cp.queue!.push(q)}
  }
  cp.observedTotalDocuments=cp.seen!.length+cp.queue!.length
@@ -165,6 +222,17 @@ export async function collectArchive(clubId:string,sources:ArchiveSource[],{maxR
  return serialRun(clubId,async()=>{
   const f=files(clubId),runId=`${now().toISOString().replace(/[:.]/g,'-')}-${randomUUID().slice(0,6)}`,startedAt=now().toISOString()
   const ctx:Ctx={goalCands:[],deadline,club:clubId,runId,now,fetchImpl,budget:Math.max(1,Math.min(200,maxRequests)),requests:0,diag:[],resources:[],docs:await readArchiveDocs(clubId),cps:await readCheckpoints(clubId),eps:await readEndpoints(clubId),counts:{requests:0,documentsRead:0,newDocuments:0,changedDocuments:0,unchangedDocuments:0,recordsExtracted:0,blockedEndpoints:0,budgetLeft:0},obs:await readObservations(clubId),newObs:[],tax:await readTaxonomy(clubId)}
+  const catalogue=new Map(chosen.filter(src=>src.parserId==='editorial-catalogue-v1').map(src=>[src.providerId,src]))
+  for(const doc of Object.values(ctx.docs)){
+   const src=catalogue.get(doc.providerId)
+   if(!src||doc.parse!=='needs-parser')continue
+   let url:URL
+   try{url=new URL(doc.url)}catch{continue}
+   if(url.origin!==src.origin)continue
+   const parser=archiveParserFor(src.parserId)!
+   const tagged=parser.parse({url:doc.url,title:doc.title,html:'',providerKey:doc.providerKey,role:src.role,meta:{slug:null,categories:[],parent:null}})
+   Object.assign(doc,{parse:'catalogued',category:tagged.category,parserVersion:parser.id})
+  }
   // share the budget fairly: every listing gets a turn, and no source exceeds its own per-run cap
   const total=ctx.budget,tasks=chosen.flatMap(src=>src.reader==='wordpress-rest'?(src.collections||[]).map(c=>({src,c:c as 'posts'|'pages'|'html'})):[{src,c:'html' as const}])
   const per=Math.max(1,Math.floor(total/Math.max(1,tasks.length)))
@@ -198,11 +266,19 @@ export async function archiveStatus(clubId:string,sources:ArchiveSource[]){
  const [docs,cps,eps,runs,obs]=await Promise.all([readArchiveDocs(clubId),readCheckpoints(clubId),readEndpoints(clubId),readArchiveRuns(clubId),readObservations(clubId)])
  const allObs=activeObservations(obs)
  const all=Object.values(docs)
+ const parsers=new Map(sources.map(s=>[s.providerId,archiveParserFor(s.parserId)]))
+ const waiting=(doc:ArchiveDoc)=>doc.parse==='needs-parser'&&!!parsers.get(doc.providerId)&&doc.parserVersion!==parsers.get(doc.providerId)?.id
+ const unsupported=(doc:ArchiveDoc)=>doc.parse==='needs-parser'&&!waiting(doc)
  return {
   sources:sources.map(s=>({providerId:s.providerId,publisher:s.publisher,reader:s.reader,role:s.role,origin:s.origin,familyId:s.familyId,parser:archiveParserFor(s.parserId)?s.parserId:null,plannedParser:s.parserId,knownLimits:s.knownLimits||[],
    listings:(s.reader==='wordpress-rest'?(s.collections||[]):['html']).map(c=>{const cp=cps[`${s.providerId}:${c}`];return {collection:c,state:cp?.state||'new',pagesRead:cp?.lastCommittedPage||0,observedTotalDocuments:cp?.observedTotalDocuments??null,observedTotalPages:cp?.observedTotalPages??null,queue:cp?.queue?.length??null,lastError:cp?.lastError||null}}),
    documents:all.filter(d=>d.providerId===s.providerId).length,observations:allObs.filter(o=>o.providerId===s.providerId).length,changed:all.filter(d=>d.providerId===s.providerId&&d.changed).length,
+   waitingForRead:all.filter(d=>d.providerId===s.providerId&&waiting(d)).length,needsReader:all.filter(d=>d.providerId===s.providerId&&unsupported(d)).length,
+   catalogued:all.filter(d=>d.providerId===s.providerId&&d.parse==='catalogued').length,
    endpoints:Object.values(eps).filter(e=>e.providerId===s.providerId)})),
-  documents:all.length,observations:allObs.length,retiredObservations:Object.values(obs).length-allObs.length,observationsByType:allObs.reduce((a:Record<string,number>,o)=>{a[o.recordType]=(a[o.recordType]||0)+1;return a},{}),needsParser:all.filter(d=>d.parse==='needs-parser').length,lastRun:runs.at(-1)||null,runs:runs.slice(-10).reverse()
+  documents:all.length,observations:allObs.length,retiredObservations:Object.values(obs).length-allObs.length,observationsByType:allObs.reduce((a:Record<string,number>,o)=>{a[o.recordType]=(a[o.recordType]||0)+1;return a},{}),
+  needsParser:all.filter(d=>d.parse==='needs-parser').length,waitingForRead:all.filter(waiting).length,needsReader:all.filter(unsupported).length,
+  catalogued:all.filter(d=>d.parse==='catalogued').length,
+  lastRun:runs.at(-1)||null,runs:runs.slice(-10).reverse()
  }
 }

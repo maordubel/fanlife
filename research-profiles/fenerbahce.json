@@ -23,7 +23,7 @@
       "allowedPathPrefixes": [
         "/"
       ],
-      "parserId": null,
+      "parserId": "editorial-catalogue-v1",
       "budget": {
         "perPage": 1,
         "maxRequests": 8,

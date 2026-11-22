@@ -57,7 +57,7 @@
    "allowedPathPrefixes": [
     "/de/fussball/profis-maenner/saisonarchiv-maenner-kOKT"
    ],
-   "parserId": null,
+   "parserId": "union-official-seasons-v1",
    "budget": {
     "perPage": 1,
     "maxRequests": 10,
@@ -80,7 +80,7 @@
    "publisher": "Deutscher Fußball-Bund",
    "reader": "html",
    "origin": "https://datencenter.dfb.de",
-   "role": "people",
+   "role": "results",
    "locale": "en",
    "seeds": [
     "/en/clubs/1-fc-union-berlin"
@@ -89,7 +89,7 @@
     "/en/clubs/1-fc-union-berlin",
     "/competitions/"
    ],
-   "parserId": null,
+   "parserId": "dfb-club-results-v1",
    "budget": {
     "perPage": 1,
     "maxRequests": 12,
@@ -119,7 +119,7 @@
    "allowedPathPrefixes": [
     "/club/union-berlin.html"
    ],
-   "parserId": null,
+   "parserId": "editorial-catalogue-v1",
    "budget": {
     "perPage": 1,
     "maxRequests": 2,

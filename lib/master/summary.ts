@@ -48,7 +48,7 @@ export type ClubSummary={
  * `listings`: how many listings exist and how many reached their last page; `observedTotal` is the sum of what the
  * sources themselves report, or null when any listing's size is unknown (audit F20: unknown stays unknown).
  */
-export type ArchiveSummary={profile:boolean;health:'ok'|'no-profile'|'profiles-missing'|'profile-unreadable';error:string|null;sources:number;documents:number;needsParser:number;blocked:number;listings:{total:number;listed:number};observedTotal:number|null;lastRun:{state:string;at:string;requests:number}|null}
+export type ArchiveSummary={profile:boolean;health:'ok'|'no-profile'|'profiles-missing'|'profile-unreadable';error:string|null;sources:number;documents:number;needsParser:number;waitingForRead?:number;needsReader?:number;blocked:number;listings:{total:number;listed:number};observedTotal:number|null;lastRun:{state:string;at:string;requests:number}|null}
 /** research → collect → parse → stage → review → pack → publish: where this club stands, and what moves it on */
 export type PipelineStep={key:'profile'|'collect'|'parse'|'stage'|'review'|'pack'|'publish';label:string;state:'done'|'active'|'waiting'|'blocked';detail:string;auto:boolean;progress:Progress}
 
@@ -102,7 +102,8 @@ export async function clubSummary(c:Club,preview=evaluationMode()):Promise<ClubS
  if(summary.publication.state==='choose-gates')next.unshift(`${data!.dataPlayable} gate(s) have playable data — choose which to publish.`)
  if(summary.archive.error)next.unshift(summary.archive.error)
  summary.pipeline=pipeline(summary)
- if(summary.archive.profile&&summary.archive.needsParser)next.push(`${summary.archive.needsParser} collected documents wait for a tested parser — nothing is extracted from them yet.`)
+ if(summary.archive.waitingForRead)next.push(`${summary.archive.waitingForRead} saved pages are queued for automatic reading.`)
+ if(summary.archive.profile&&(summary.archive.needsReader??summary.archive.needsParser))next.push(`${summary.archive.needsReader??summary.archive.needsParser} saved pages need a reader for their format.`)
  return summary
 }
 
@@ -124,7 +125,7 @@ export async function archiveSummary(id:string,cwd=process.cwd()):Promise<Archiv
  const listings=st?st.sources.flatMap(s=>s.listings):[]
  // a listing's size is known when the source reported it (WordPress X-WP-Total) or an HTML crawl reached its end
  const known=listings.length>0&&listings.every(l=>l.observedTotalDocuments!==null&&(l.collection!=='html'||l.state==='listed'))
- return {profile:true,health:'ok',error:null,sources:p.archive.length+p.sources.length,documents:st?.documents||0,needsParser:st?.needsParser||0,blocked:st?st.sources.reduce((n,s)=>n+s.endpoints.filter(e=>e.state==='blocked'||e.state==='not-json').length,0):0,
+ return {profile:true,health:'ok',error:null,sources:p.archive.length+p.sources.length,documents:st?.documents||0,needsParser:st?.needsParser||0,waitingForRead:st?.waitingForRead||0,needsReader:st?.needsReader||0,blocked:st?st.sources.reduce((n,s)=>n+s.endpoints.filter(e=>e.state==='blocked'||e.state==='not-json').length,0):0,
   listings:{total:listings.length,listed:listings.filter(l=>l.state==='listed').length},observedTotal:known?listings.reduce((n,l)=>n+(l.observedTotalDocuments||0),0):null,
   lastRun:st?.lastRun?{state:st.lastRun.state,at:st.lastRun.finishedAt,requests:st.lastRun.counts.requests}:null}
 }

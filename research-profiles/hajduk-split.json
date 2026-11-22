@@ -60,7 +60,7 @@
    "allowedPathPrefixes": [
     "/wp-json/wp/v2/"
    ],
-   "parserId": "torcida-history-v1",
+   "parserId": "editorial-catalogue-v1",
    "budget": {
     "perPage": 25,
     "maxRequests": 10,
@@ -120,7 +120,7 @@
    "allowedPathPrefixes": [
     "/eng/history"
    ],
-   "parserId": null,
+   "parserId": "editorial-catalogue-v1",
    "budget": {
     "perPage": 1,
     "maxRequests": 4,

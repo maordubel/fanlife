@@ -8,13 +8,34 @@
   "sourceFamilyId": "partizanopedia",
   "scope": "people",
   "access": "available",
-  "checkedAt": "2026-11-20",
-  "retrievedAt": "2026-11-20T11:55:43.643Z",
+  "checkedAt": "2026-11-21",
+  "retrievedAt": "2026-11-21T16:51:24.735Z",
   "collected": {
    "documents": 108,
-   "observedTotalDocuments": 559,
+   "observedTotalDocuments": 108,
    "state": "partial_budget",
-   "parser": null
+   "parser": "partizanopedia-v1"
+  },
+  "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
+  "imagesUsableInApp": false,
+  "reviewed": false
+ },
+ {
+  "id": "collector-crno-bela-nostalgija-posts",
+  "title": "Crno-bela Nostalgija — posts (club-history)",
+  "url": "https://crnobelanostalgija.com/wp-json/wp/v2/posts",
+  "providerId": "crno-bela-nostalgija",
+  "publisher": "Crno-bela Nostalgija",
+  "sourceFamilyId": "crnobela-nostalgija",
+  "scope": "club-history",
+  "access": "available",
+  "checkedAt": "2026-11-21",
+  "retrievedAt": "2026-11-21T16:51:24.735Z",
+  "collected": {
+   "documents": 80,
+   "observedTotalDocuments": 1053,
+   "state": "partial_budget",
+   "parser": "editorial-catalogue-v1"
   },
   "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
   "imagesUsableInApp": false,
@@ -29,13 +50,13 @@
   "sourceFamilyId": "crnobela-nostalgija",
   "scope": "club-history",
   "access": "available",
-  "checkedAt": "2026-11-20",
-  "retrievedAt": "2026-11-20T11:55:43.643Z",
+  "checkedAt": "2026-11-21",
+  "retrievedAt": "2026-11-21T16:51:24.735Z",
   "collected": {
-   "documents": 5,
+   "documents": 80,
    "observedTotalDocuments": 5,
    "state": "listed",
-   "parser": null
+   "parser": "editorial-catalogue-v1"
   },
   "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
   "imagesUsableInApp": false,
@@ -50,13 +71,13 @@
   "sourceFamilyId": "partizan-institutional",
   "scope": "club-history",
   "access": "available",
-  "checkedAt": "2026-11-20",
-  "retrievedAt": "2026-11-20T11:55:43.643Z",
+  "checkedAt": "2026-11-21",
+  "retrievedAt": "2026-11-21T16:51:24.735Z",
   "collected": {
    "documents": 1,
    "observedTotalDocuments": 1,
    "state": "listed",
-   "parser": null
+   "parser": "editorial-catalogue-v1"
   },
   "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
   "imagesUsableInApp": false,
@@ -71,13 +92,35 @@
   "sourceFamilyId": "national-football-teams",
   "scope": "people",
   "access": "available",
-  "checkedAt": "2026-11-20",
-  "retrievedAt": "2026-11-20T11:55:43.643Z",
+  "checkedAt": "2026-11-21",
+  "retrievedAt": "2026-11-21T16:51:24.735Z",
   "collected": {
    "documents": 1,
    "observedTotalDocuments": 1,
    "state": "listed",
-   "parser": null
+   "parser": "national-football-teams-squad-v1"
+  },
+  "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
+  "imagesUsableInApp": false,
+  "reviewed": false
+ },
+ {
+  "id": "document-c433e5edb272e4891c614ac8",
+  "title": "Šoškić, Milutin",
+  "url": "https://www.national-football-teams.com/club/2156/1963/Partizan_Beograd.html",
+  "providerId": "nft-partizan",
+  "publisher": "National Football Teams",
+  "sourceFamilyId": "national-football-teams",
+  "scope": "people",
+  "access": "available",
+  "checkedAt": "2026-11-21",
+  "retrievedAt": "2026-11-21",
+  "documentHash": "8eb908c247c293ff6e2e16fe613d3d732c695973617bb34bd9465932ff19990a",
+  "collected": {
+   "documents": 1,
+   "observedTotalDocuments": 1,
+   "state": "parsed",
+   "parser": "national-football-teams-squad-v1"
   },
   "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
   "imagesUsableInApp": false,

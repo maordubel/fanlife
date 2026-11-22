@@ -2,8 +2,16 @@
  {
   "id": "continue-aekpedia-posts",
   "priority": "P3",
-  "task": "AEKpedia posts: 4 page(s) read of 31; the scheduled task continues from the checkpoint.",
-  "taskHe": "AEKpedia posts: נקראו 4 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
+  "task": "AEKpedia posts: 5 page(s) read of 31; the scheduled task continues from the checkpoint.",
+  "taskHe": "AEKpedia posts: נקראו 5 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "continue-aekpedia-pages",
+  "priority": "P3",
+  "task": "AEKpedia pages: 1 page(s) read of 1; the scheduled task continues from the checkpoint.",
+  "taskHe": "AEKpedia pages: נקראו 1 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
   "status": "queued",
   "owner": null
  },
@@ -21,14 +29,6 @@
   "task": "URL slugs like season-1974-75 are discovery hints, not a schema.",
   "taskHe": "URL slugs like season-1974-75 are discovery hints, not a schema.",
   "status": "noted",
-  "owner": null
- },
- {
-  "id": "parser-aek-official-history",
-  "priority": "P1",
-  "task": "Write and test the aek-official-history parser against stored fixtures (season, person, match pages) before anything is extracted from AEK FC.",
-  "taskHe": "לכתוב parser ל-AEK FC מול fixtures שמורים (עונה, אדם, משחק) לפני שמחלצים ממנו משהו.",
-  "status": "queued",
   "owner": null
  },
  {

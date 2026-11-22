@@ -9,12 +9,14 @@
   "bytes": 272,
   "publishedAsReported": "2016-12-02T01:30:35",
   "modifiedAsReported": "2019-11-04T14:20:49",
-  "retrievedAt": "2026-11-20T11:55:30.728Z",
+  "retrievedAt": "2026-11-21T16:50:52.060Z",
   "firstRunId": "2026-10-07T04-52-57-540Z-aa6c7f",
-  "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
+  "lastRunId": "2026-11-21T16-50-21-287Z-2827c3",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:314": {
   "providerKey": "paopedia:pages:314",
@@ -26,12 +28,14 @@
   "bytes": 4628,
   "publishedAsReported": "2017-09-27T13:44:08",
   "modifiedAsReported": "2017-09-27T13:44:08",
-  "retrievedAt": "2026-11-20T11:55:30.728Z",
+  "retrievedAt": "2026-11-21T16:50:52.060Z",
   "firstRunId": "2026-10-07T04-52-57-540Z-aa6c7f",
-  "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
+  "lastRunId": "2026-11-21T16-50-21-287Z-2827c3",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:344": {
   "providerKey": "paopedia:pages:344",
@@ -43,12 +47,14 @@
   "bytes": 30,
   "publishedAsReported": "2016-12-05T21:40:06",
   "modifiedAsReported": "2016-12-05T21:40:06",
-  "retrievedAt": "2026-11-20T11:55:30.728Z",
+  "retrievedAt": "2026-11-21T16:50:52.060Z",
   "firstRunId": "2026-10-07T04-52-57-540Z-aa6c7f",
-  "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
+  "lastRunId": "2026-11-21T16-50-21-287Z-2827c3",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:418": {
   "providerKey": "paopedia:pages:418",
@@ -60,12 +66,14 @@
   "bytes": 16128,
   "publishedAsReported": "2017-09-27T16:21:08",
   "modifiedAsReported": "2020-04-14T16:45:49",
-  "retrievedAt": "2026-11-20T11:55:30.728Z",
+  "retrievedAt": "2026-11-21T16:50:52.060Z",
   "firstRunId": "2026-10-07T04-52-57-540Z-aa6c7f",
-  "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
+  "lastRunId": "2026-11-21T16-50-21-287Z-2827c3",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:652": {
   "providerKey": "paopedia:pages:652",
@@ -77,12 +85,14 @@
   "bytes": 5535,
   "publishedAsReported": "2017-09-29T09:19:39",
   "modifiedAsReported": "2017-09-29T09:19:39",
-  "retrievedAt": "2026-11-20T11:55:30.728Z",
+  "retrievedAt": "2026-11-21T16:50:52.060Z",
   "firstRunId": "2026-10-07T04-52-57-540Z-aa6c7f",
-  "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
+  "lastRunId": "2026-11-21T16-50-21-287Z-2827c3",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:654": {
   "providerKey": "paopedia:pages:654",
@@ -94,12 +104,14 @@
   "bytes": 4140,
   "publishedAsReported": "2017-09-29T09:21:11",
   "modifiedAsReported": "2019-11-04T17:18:29",
-  "retrievedAt": "2026-11-20T11:55:30.729Z",
+  "retrievedAt": "2026-11-21T16:50:52.061Z",
   "firstRunId": "2026-10-07T04-52-57-540Z-aa6c7f",
-  "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
+  "lastRunId": "2026-11-21T16-50-21-287Z-2827c3",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:660": {
   "providerKey": "paopedia:pages:660",
@@ -111,12 +123,14 @@
   "bytes": 1615,
   "publishedAsReported": "2017-09-29T09:23:09",
   "modifiedAsReported": "2017-09-29T09:23:09",
-  "retrievedAt": "2026-11-20T11:55:30.729Z",
+  "retrievedAt": "2026-11-21T16:50:52.061Z",
   "firstRunId": "2026-10-07T04-52-57-540Z-aa6c7f",
-  "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
+  "lastRunId": "2026-11-21T16-50-21-287Z-2827c3",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:1226": {
   "providerKey": "paopedia:pages:1226",
@@ -128,12 +142,14 @@
   "bytes": 18938,
   "publishedAsReported": "2017-10-12T16:59:28",
   "modifiedAsReported": "2017-10-12T16:59:28",
-  "retrievedAt": "2026-11-20T11:55:30.729Z",
+  "retrievedAt": "2026-11-21T16:50:52.061Z",
   "firstRunId": "2026-10-07T04-52-57-540Z-aa6c7f",
-  "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
+  "lastRunId": "2026-11-21T16-50-21-287Z-2827c3",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:1230": {
   "providerKey": "paopedia:pages:1230",
@@ -145,12 +161,14 @@
   "bytes": 20618,
   "publishedAsReported": "2017-10-12T17:00:59",
   "modifiedAsReported": "2017-10-12T17:00:59",
-  "retrievedAt": "2026-11-20T11:55:30.729Z",
+  "retrievedAt": "2026-11-21T16:50:52.061Z",
   "firstRunId": "2026-10-07T04-52-57-540Z-aa6c7f",
-  "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
+  "lastRunId": "2026-11-21T16-50-21-287Z-2827c3",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:1234": {
   "providerKey": "paopedia:pages:1234",
@@ -162,12 +180,14 @@
   "bytes": 20619,
   "publishedAsReported": "2017-10-12T17:02:18",
   "modifiedAsReported": "2017-10-12T17:02:18",
-  "retrievedAt": "2026-11-20T11:55:30.729Z",
+  "retrievedAt": "2026-11-21T16:50:52.062Z",
   "firstRunId": "2026-10-07T04-52-57-540Z-aa6c7f",
-  "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
+  "lastRunId": "2026-11-21T16-50-21-287Z-2827c3",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:1242": {
   "providerKey": "paopedia:pages:1242",
@@ -179,12 +199,14 @@
   "bytes": 20354,
   "publishedAsReported": "2017-10-12T17:04:37",
   "modifiedAsReported": "2017-10-12T17:04:37",
-  "retrievedAt": "2026-11-20T11:55:30.729Z",
+  "retrievedAt": "2026-11-21T16:50:52.062Z",
   "firstRunId": "2026-10-07T04-52-57-540Z-aa6c7f",
-  "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
+  "lastRunId": "2026-11-21T16-50-21-287Z-2827c3",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:2758": {
   "providerKey": "paopedia:pages:2758",
@@ -196,12 +218,14 @@
   "bytes": 48993,
   "publishedAsReported": "2017-09-25T19:03:23",
   "modifiedAsReported": "2019-11-09T01:48:04",
-  "retrievedAt": "2026-11-20T11:55:30.729Z",
+  "retrievedAt": "2026-11-21T16:50:52.063Z",
   "firstRunId": "2026-10-07T04-52-57-540Z-aa6c7f",
-  "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
+  "lastRunId": "2026-11-21T16-50-21-287Z-2827c3",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:2759": {
   "providerKey": "paopedia:pages:2759",
@@ -213,12 +237,14 @@
   "bytes": 20139,
   "publishedAsReported": "2017-09-27T13:45:28",
   "modifiedAsReported": "2017-09-27T13:45:28",
-  "retrievedAt": "2026-11-20T11:55:30.729Z",
+  "retrievedAt": "2026-11-21T16:50:52.063Z",
   "firstRunId": "2026-10-07T04-52-57-540Z-aa6c7f",
-  "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
+  "lastRunId": "2026-11-21T16-50-21-287Z-2827c3",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:2760": {
   "providerKey": "paopedia:pages:2760",
@@ -230,12 +256,14 @@
   "bytes": 27219,
   "publishedAsReported": "2017-09-27T20:37:30",
   "modifiedAsReported": "2017-09-27T20:37:30",
-  "retrievedAt": "2026-11-20T11:55:30.729Z",
+  "retrievedAt": "2026-11-21T16:50:52.063Z",
   "firstRunId": "2026-10-07T04-52-57-540Z-aa6c7f",
-  "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
+  "lastRunId": "2026-11-21T16-50-21-287Z-2827c3",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:2761": {
   "providerKey": "paopedia:pages:2761",
@@ -247,12 +275,14 @@
   "bytes": 23600,
   "publishedAsReported": "2017-09-28T18:30:35",
   "modifiedAsReported": "2017-09-28T18:30:35",
-  "retrievedAt": "2026-11-20T11:55:30.729Z",
+  "retrievedAt": "2026-11-21T16:50:52.065Z",
   "firstRunId": "2026-10-07T04-52-57-540Z-aa6c7f",
-  "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
+  "lastRunId": "2026-11-21T16-50-21-287Z-2827c3",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:2762": {
   "providerKey": "paopedia:pages:2762",
@@ -264,12 +294,14 @@
   "bytes": 942,
   "publishedAsReported": "2017-09-28T18:34:35",
   "modifiedAsReported": "2017-09-28T18:34:35",
-  "retrievedAt": "2026-11-20T11:55:30.729Z",
+  "retrievedAt": "2026-11-21T16:50:52.066Z",
   "firstRunId": "2026-10-07T04-52-57-540Z-aa6c7f",
-  "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
+  "lastRunId": "2026-11-21T16-50-21-287Z-2827c3",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:2763": {
   "providerKey": "paopedia:pages:2763",
@@ -281,12 +313,14 @@
   "bytes": 33982,
   "publishedAsReported": "2017-09-28T18:35:13",
   "modifiedAsReported": "2019-09-01T23:03:30",
-  "retrievedAt": "2026-11-20T11:55:30.730Z",
+  "retrievedAt": "2026-11-21T16:50:52.066Z",
   "firstRunId": "2026-10-07T04-52-57-540Z-aa6c7f",
-  "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
+  "lastRunId": "2026-11-21T16-50-21-287Z-2827c3",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:2764": {
   "providerKey": "paopedia:pages:2764",
@@ -298,12 +332,14 @@
   "bytes": 36799,
   "publishedAsReported": "2017-09-28T18:35:37",
   "modifiedAsReported": "2020-10-28T14:05:49",
-  "retrievedAt": "2026-11-20T11:55:30.730Z",
+  "retrievedAt": "2026-11-21T16:50:52.067Z",
   "firstRunId": "2026-10-07T04-52-57-540Z-aa6c7f",
-  "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
+  "lastRunId": "2026-11-21T16-50-21-287Z-2827c3",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:2765": {
   "providerKey": "paopedia:pages:2765",
@@ -315,12 +351,14 @@
   "bytes": 25085,
   "publishedAsReported": "2017-09-28T18:35:57",
   "modifiedAsReported": "2017-09-28T18:35:57",
-  "retrievedAt": "2026-11-20T11:55:30.730Z",
+  "retrievedAt": "2026-11-21T16:50:52.068Z",
   "firstRunId": "2026-10-07T04-52-57-540Z-aa6c7f",
-  "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
+  "lastRunId": "2026-11-21T16-50-21-287Z-2827c3",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:2766": {
   "providerKey": "paopedia:pages:2766",
@@ -332,12 +370,14 @@
   "bytes": 5535,
   "publishedAsReported": "2017-09-29T09:21:43",
   "modifiedAsReported": "2017-09-29T09:21:43",
-  "retrievedAt": "2026-11-20T11:55:30.730Z",
+  "retrievedAt": "2026-11-21T16:50:52.068Z",
   "firstRunId": "2026-10-07T04-52-57-540Z-aa6c7f",
-  "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
+  "lastRunId": "2026-11-21T16-50-21-287Z-2827c3",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:2767": {
   "providerKey": "paopedia:pages:2767",
@@ -349,12 +389,14 @@
   "bytes": 2566,
   "publishedAsReported": "2017-09-29T09:21:58",
   "modifiedAsReported": "2017-09-29T09:21:58",
-  "retrievedAt": "2026-11-20T11:55:30.730Z",
+  "retrievedAt": "2026-11-21T16:50:52.068Z",
   "firstRunId": "2026-10-07T04-52-57-540Z-aa6c7f",
-  "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
+  "lastRunId": "2026-11-21T16-50-21-287Z-2827c3",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:2770": {
   "providerKey": "paopedia:pages:2770",
@@ -366,12 +408,14 @@
   "bytes": 54890,
   "publishedAsReported": "2017-09-29T17:50:23",
   "modifiedAsReported": "2017-09-29T17:50:23",
-  "retrievedAt": "2026-11-20T11:55:30.730Z",
+  "retrievedAt": "2026-11-21T16:50:52.069Z",
   "firstRunId": "2026-10-07T04-52-57-540Z-aa6c7f",
-  "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
+  "lastRunId": "2026-11-21T16-50-21-287Z-2827c3",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:2771": {
   "providerKey": "paopedia:pages:2771",
@@ -383,12 +427,14 @@
   "bytes": 20409,
   "publishedAsReported": "2017-10-01T20:14:33",
   "modifiedAsReported": "2017-10-01T20:14:33",
-  "retrievedAt": "2026-11-20T11:55:30.730Z",
+  "retrievedAt": "2026-11-21T16:50:52.070Z",
   "firstRunId": "2026-10-07T04-52-57-540Z-aa6c7f",
-  "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
+  "lastRunId": "2026-11-21T16-50-21-287Z-2827c3",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:2772": {
   "providerKey": "paopedia:pages:2772",
@@ -400,12 +446,14 @@
   "bytes": 20409,
   "publishedAsReported": "2017-10-01T20:15:10",
   "modifiedAsReported": "2017-10-01T20:15:10",
-  "retrievedAt": "2026-11-20T11:55:30.730Z",
+  "retrievedAt": "2026-11-21T16:50:52.070Z",
   "firstRunId": "2026-10-07T04-52-57-540Z-aa6c7f",
-  "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
+  "lastRunId": "2026-11-21T16-50-21-287Z-2827c3",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:2773": {
   "providerKey": "paopedia:pages:2773",
@@ -417,12 +465,14 @@
   "bytes": 22185,
   "publishedAsReported": "2017-10-01T20:15:51",
   "modifiedAsReported": "2017-10-01T20:15:51",
-  "retrievedAt": "2026-11-20T11:55:30.730Z",
+  "retrievedAt": "2026-11-21T16:50:52.070Z",
   "firstRunId": "2026-10-07T04-52-57-540Z-aa6c7f",
-  "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
+  "lastRunId": "2026-11-21T16-50-21-287Z-2827c3",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:2774": {
   "providerKey": "paopedia:pages:2774",
@@ -439,7 +489,9 @@
   "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:2775": {
   "providerKey": "paopedia:pages:2775",
@@ -456,7 +508,9 @@
   "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:2776": {
   "providerKey": "paopedia:pages:2776",
@@ -473,7 +527,9 @@
   "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:2777": {
   "providerKey": "paopedia:pages:2777",
@@ -490,7 +546,9 @@
   "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:2778": {
   "providerKey": "paopedia:pages:2778",
@@ -507,7 +565,9 @@
   "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:2779": {
   "providerKey": "paopedia:pages:2779",
@@ -524,7 +584,9 @@
   "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:3257": {
   "providerKey": "paopedia:pages:3257",
@@ -541,7 +603,9 @@
   "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "paopedia:pages:3260": {
   "providerKey": "paopedia:pages:3260",
@@ -558,7 +622,9 @@
   "lastRunId": "2026-11-20T11-55-23-958Z-a831d8",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "pao-official-history:html:/en/history/": {
   "providerKey": "pao-official-history:html:/en/history/",
@@ -566,16 +632,18 @@
   "collection": "html",
   "url": "https://www.pao.gr/en/history/",
   "title": "ΙΣΤΟΡΙΑ | PANATHINAIKOS FC OFFICIAL WEB SITE",
-  "contentHash": "aa969962f0c788118f3a4a1563f6b40d6262aaa0f0425e23a1051b4a0e057426",
+  "contentHash": "29a45e05222c1c228863bb7fdd79b427e0896da39a2a226967481d0a0bf6076b",
   "bytes": 70216,
   "publishedAsReported": null,
-  "modifiedAsReported": null,
-  "retrievedAt": "2026-10-13T10:48:14.950Z",
+  "modifiedAsReported": "Sat, 21 Nov 2026 16:50:58 GMT",
+  "retrievedAt": "2026-11-21T16:51:00.530Z",
   "firstRunId": "2026-10-07T04-52-57-540Z-aa6c7f",
-  "lastRunId": "2026-10-13T10-48-06-349Z-c708ed",
+  "lastRunId": "2026-11-21T16-50-21-287Z-2827c3",
   "changed": true,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "club-history",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "pao-official-history:html:/en/history/championships/": {
   "providerKey": "pao-official-history:html:/en/history/championships/",
@@ -592,7 +660,9 @@
   "lastRunId": "2026-10-13T10-48-06-349Z-c708ed",
   "changed": true,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "club-history",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "pao-official-history:html:/en/history/greek-cups/": {
   "providerKey": "pao-official-history:html:/en/history/greek-cups/",
@@ -609,7 +679,9 @@
   "lastRunId": "2026-10-13T10-48-06-349Z-c708ed",
   "changed": true,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "club-history",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "rsssf-greece:html:/tablesg/grkcuphist.html": {
   "providerKey": "rsssf-greece:html:/tablesg/grkcuphist.html",
@@ -677,7 +749,9 @@
   "lastRunId": "2026-10-16T08-20-42-907Z-27bad5",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "club-history",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "pao-official-history:html:/en/history/valkaniko-kypello/": {
   "providerKey": "pao-official-history:html:/en/history/valkaniko-kypello/",
@@ -694,7 +768,9 @@
   "lastRunId": "2026-10-16T08-20-42-907Z-27bad5",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "club-history",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "pao-official-history:html:/en/history/european-history/": {
   "providerKey": "pao-official-history:html:/en/history/european-history/",
@@ -711,7 +787,9 @@
   "lastRunId": "2026-10-16T08-20-42-907Z-27bad5",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "club-history",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "rsssf-greece:html:/tablesg/grkhist.html": {
   "providerKey": "rsssf-greece:html:/tablesg/grkhist.html",
@@ -762,7 +840,9 @@
   "lastRunId": "2026-10-20T08-43-00-466Z-57527a",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "club-history",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "pao-official-history:html:/en/the-club/stadium/": {
   "providerKey": "pao-official-history:html:/en/the-club/stadium/",
@@ -779,7 +859,9 @@
   "lastRunId": "2026-10-20T08-43-00-466Z-57527a",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "club-history",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "pao-official-history:html:/en/historyitem/all-time-coaches/": {
   "providerKey": "pao-official-history:html:/en/historyitem/all-time-coaches/",
@@ -796,7 +878,9 @@
   "lastRunId": "2026-10-20T08-43-00-466Z-57527a",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "club-history",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "pao-official-history:html:/en/historyitem/all-time-foreigners/": {
   "providerKey": "pao-official-history:html:/en/historyitem/all-time-foreigners/",
@@ -813,7 +897,9 @@
   "lastRunId": "2026-10-23T08-42-07-901Z-777e59",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "club-history",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "pao-official-history:html:/historyitem/all-time-roster/": {
   "providerKey": "pao-official-history:html:/historyitem/all-time-roster/",
@@ -830,6 +916,8 @@
   "lastRunId": "2026-10-23T08-42-07-901Z-777e59",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "club-history",
+  "parserVersion": "editorial-catalogue-v1"
  }
 }

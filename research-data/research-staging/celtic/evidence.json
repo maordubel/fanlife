@@ -1,1 +1,534 @@
-[]
+[
+ {
+  "schemaVersion": 1,
+  "id": "obs:thecelticwiki:pages:396:match",
+  "recordType": "match",
+  "providerRecordKey": "thecelticwiki:pages:396",
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1888-2/1888-11-03-st-bernards-1-4-celtic-scottish-cup/",
+  "parserVersion": "celticwiki-football-v1",
+  "locator": "title.rendered; Match Details",
+  "nameAsReported": null,
+  "seasonsAsReported": null,
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "match": {
+   "on": "1888-11-03",
+   "home": "St Bernard’s",
+   "away": "Celtic",
+   "homeGoals": 1,
+   "awayGoals": 4,
+   "competition": "Scottish Cup",
+   "lineup": [
+    "Dunning",
+    "Gallagher",
+    "McKeown",
+    "McLaren",
+    "Kelly",
+    "W Maley",
+    "Dunbar",
+    "McCallum",
+    "Groves",
+    "T Maley",
+    "Coleman"
+   ]
+  },
+  "providerId": "thecelticwiki",
+  "contentHash": "68a999226f6848eb3988fddb8abb66f243da231661a92bbc9c9f8cedc5b48907",
+  "runId": "2026-11-21T16-59-45-037Z-9cbe6f",
+  "retired": null,
+  "sourceIds": [
+   "document-15e88068e78ec3c7313857ad"
+  ]
+ },
+ {
+  "schemaVersion": 1,
+  "id": "obs:thecelticwiki:pages:439:match",
+  "recordType": "match",
+  "providerRecordKey": "thecelticwiki:pages:439",
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1889-2/1889-08-17-dundee-harp-2-5-celtic-friendly/",
+  "parserVersion": "celticwiki-football-v1",
+  "locator": "title.rendered; Match Details",
+  "nameAsReported": null,
+  "seasonsAsReported": null,
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "match": {
+   "on": "1889-08-17",
+   "home": "Dundee Harp",
+   "away": "Celtic",
+   "homeGoals": 2,
+   "awayGoals": 5,
+   "competition": "Friendly",
+   "lineup": [
+    "McLaughlin",
+    "McLaren",
+    "McKeown",
+    "Kelly",
+    "Gallagher",
+    "Dowds",
+    "Dowling",
+    "Dunbar",
+    "Groves",
+    "Coleman",
+    "Madden ."
+   ]
+  },
+  "providerId": "thecelticwiki",
+  "contentHash": "f6088baaf4e65797fdcdbf04afc87874506d02174d707ab2db943330a7dfdd55",
+  "runId": "2026-11-21T16-59-53-825Z-8ec807",
+  "retired": null,
+  "sourceIds": [
+   "document-8e3ea2ac9b65be704c2fd6bf"
+  ]
+ },
+ {
+  "schemaVersion": 1,
+  "id": "obs:thecelticwiki:pages:444:match",
+  "recordType": "match",
+  "providerRecordKey": "thecelticwiki:pages:444",
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1889-2/1889-09-21-sunderland-0-1-celtic-friendly/",
+  "parserVersion": "celticwiki-football-v1",
+  "locator": "title.rendered; Match Details",
+  "nameAsReported": null,
+  "seasonsAsReported": null,
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "match": {
+   "on": "1889-09-21",
+   "home": "Sunderland",
+   "away": "Celtic",
+   "homeGoals": 0,
+   "awayGoals": 1,
+   "competition": "Friendly",
+   "lineup": [
+    "McLaughlin",
+    "Reynolds",
+    "McKeown",
+    "W Maley",
+    "Kelly",
+    "Gallagher",
+    "Madden",
+    "Dowds",
+    "Groves",
+    "Cunningham",
+    "Dunbar ."
+   ]
+  },
+  "providerId": "thecelticwiki",
+  "contentHash": "af0702f558ad96698a92e2fb0609f8610beca59476610781c264850a3735e1e4",
+  "runId": "2026-11-21T16-59-53-825Z-8ec807",
+  "retired": null,
+  "sourceIds": [
+   "document-250910f893c822825d92e578"
+  ]
+ },
+ {
+  "schemaVersion": 1,
+  "id": "obs:thecelticwiki:pages:462:match",
+  "recordType": "match",
+  "providerRecordKey": "thecelticwiki:pages:462",
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1890-2/1890-01-01-celtic-3-2-everton-friendly/",
+  "parserVersion": "celticwiki-football-v1",
+  "locator": "title.rendered; Match Details",
+  "nameAsReported": null,
+  "seasonsAsReported": null,
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "match": {
+   "on": "1890-01-01",
+   "home": "Celtic",
+   "away": "Everton",
+   "homeGoals": 3,
+   "awayGoals": 2,
+   "competition": "Friendly"
+  },
+  "providerId": "thecelticwiki",
+  "contentHash": "f5f5db8195f838f1566fa89fd8c4441dc8cbf70838a2c82bdb22129f3ac2a453",
+  "runId": "2026-11-21T16-59-53-825Z-8ec807",
+  "retired": null,
+  "sourceIds": [
+   "document-b606463ce3270e3f4722c101"
+  ]
+ },
+ {
+  "schemaVersion": 1,
+  "id": "obs:thecelticwiki:pages:562:match",
+  "recordType": "match",
+  "providerRecordKey": "thecelticwiki:pages:562",
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1891-2/1891-12-19-celtic-3-0-kilmarnock-athletic-scottish-cup/",
+  "parserVersion": "celticwiki-football-v1",
+  "locator": "title.rendered; Match Details",
+  "nameAsReported": null,
+  "seasonsAsReported": null,
+  "seasonAsReported": null,
+  "canonicalId": "h-1891-12-19-kilmarnock-athletic",
+  "identityState": "linked",
+  "status": "candidate",
+  "match": {
+   "on": "1891-12-19",
+   "home": "Celtic",
+   "away": "Kilmarnock Athletic",
+   "homeGoals": 3,
+   "awayGoals": 0,
+   "competition": "Scottish Cup"
+  },
+  "providerId": "thecelticwiki",
+  "contentHash": "5858d9fe4914d0b788e21b8ec04e6b070ac896d05f7c3df950ed9ff9cf49bd42",
+  "runId": "2026-11-21T16-59-53-825Z-8ec807",
+  "retired": null,
+  "sourceIds": [
+   "document-47b95531c2ff1e7b1a197bb4"
+  ]
+ },
+ {
+  "schemaVersion": 1,
+  "id": "obs:thecelticwiki:pages:563:match",
+  "recordType": "match",
+  "providerRecordKey": "thecelticwiki:pages:563",
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1891-2/1891-12-26-celtic-2-1-st-mirren-league/",
+  "parserVersion": "celticwiki-football-v1",
+  "locator": "title.rendered; Match Details",
+  "nameAsReported": null,
+  "seasonsAsReported": null,
+  "seasonAsReported": null,
+  "canonicalId": "h-1891-12-26-st-mirren",
+  "identityState": "linked",
+  "status": "candidate",
+  "match": {
+   "on": "1891-12-26",
+   "home": "Celtic",
+   "away": "St Mirren",
+   "homeGoals": 2,
+   "awayGoals": 1,
+   "competition": "League"
+  },
+  "providerId": "thecelticwiki",
+  "contentHash": "f44be4cdc5a997ea18c28135b2df38b4e17f1c2f0558978eea8df7c2790855e5",
+  "runId": "2026-11-21T16-59-53-825Z-8ec807",
+  "retired": null,
+  "sourceIds": [
+   "document-f93ea0d3cf4551d26a3b4c2a"
+  ]
+ },
+ {
+  "schemaVersion": 1,
+  "id": "obs:thecelticwiki:pages:568:match",
+  "recordType": "match",
+  "providerRecordKey": "thecelticwiki:pages:568",
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1892-2/1892-01-23-celtic-4-1-cowlairs-scottish-cup/",
+  "parserVersion": "celticwiki-football-v1",
+  "locator": "title.rendered; Match Details",
+  "nameAsReported": null,
+  "seasonsAsReported": null,
+  "seasonAsReported": null,
+  "canonicalId": "h-1892-01-23-cowlairs",
+  "identityState": "linked",
+  "status": "candidate",
+  "match": {
+   "on": "1892-01-23",
+   "home": "Celtic",
+   "away": "Cowlairs",
+   "homeGoals": 4,
+   "awayGoals": 1,
+   "competition": "Scottish Cup"
+  },
+  "providerId": "thecelticwiki",
+  "contentHash": "b3a390a2d36c4646adf0d521c6565496309d81b212f5fec101432b72443cd798",
+  "runId": "2026-11-21T16-59-53-825Z-8ec807",
+  "retired": null,
+  "sourceIds": [
+   "document-a4924361b26a09755379a518"
+  ]
+ },
+ {
+  "schemaVersion": 1,
+  "id": "obs:thecelticwiki:pages:578:match",
+  "recordType": "match",
+  "providerRecordKey": "thecelticwiki:pages:578",
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1892-2/1892-04-09-celtic-5-1-queens-park-scottish-cup-final/",
+  "parserVersion": "celticwiki-football-v1",
+  "locator": "title.rendered; Match Details",
+  "nameAsReported": null,
+  "seasonsAsReported": null,
+  "seasonAsReported": null,
+  "canonicalId": "m-dh-726211d808a0",
+  "identityState": "linked",
+  "status": "candidate",
+  "match": {
+   "on": "1892-04-09",
+   "home": "Celtic",
+   "away": "Queen’s Park",
+   "homeGoals": 5,
+   "awayGoals": 1,
+   "competition": "Scottish Cup Final"
+  },
+  "providerId": "thecelticwiki",
+  "contentHash": "0a12d001dc78472e74a428bb54fd917625cb32d44591b9fbb6f3e830eb94d2d7",
+  "runId": "2026-11-21T16-59-53-825Z-8ec807",
+  "retired": null,
+  "sourceIds": [
+   "document-e6a0467e2651d40689f19932"
+  ]
+ },
+ {
+  "schemaVersion": 1,
+  "id": "obs:thecelticwiki:pages:581:match",
+  "recordType": "match",
+  "providerRecordKey": "thecelticwiki:pages:581",
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1892-2/1892-04-23-dumbarton-1-0-celtic-league/",
+  "parserVersion": "celticwiki-football-v1",
+  "locator": "title.rendered; Match Details",
+  "nameAsReported": null,
+  "seasonsAsReported": null,
+  "seasonAsReported": null,
+  "canonicalId": "h-1892-04-23-dumbarton",
+  "identityState": "linked",
+  "status": "candidate",
+  "match": {
+   "on": "1892-04-23",
+   "home": "Dumbarton",
+   "away": "Celtic",
+   "homeGoals": 1,
+   "awayGoals": 0,
+   "competition": "League"
+  },
+  "providerId": "thecelticwiki",
+  "contentHash": "77361c12c2b6f517e36c6c14e1056861c78b973addec368ca6defb396a5705c6",
+  "runId": "2026-11-21T16-59-53-825Z-8ec807",
+  "retired": null,
+  "sourceIds": [
+   "document-6b16b54f1bf044b4ab5452c3"
+  ]
+ },
+ {
+  "schemaVersion": 1,
+  "id": "obs:thecelticwiki:pages:582:match",
+  "recordType": "match",
+  "providerRecordKey": "thecelticwiki:pages:582",
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1892-2/1892-04-30-celtic-3-1-abercorn-league/",
+  "parserVersion": "celticwiki-football-v1",
+  "locator": "title.rendered; Match Details",
+  "nameAsReported": null,
+  "seasonsAsReported": null,
+  "seasonAsReported": null,
+  "canonicalId": "h-1892-04-30-abercorn",
+  "identityState": "linked",
+  "status": "candidate",
+  "match": {
+   "on": "1892-04-30",
+   "home": "Celtic",
+   "away": "Abercorn",
+   "homeGoals": 3,
+   "awayGoals": 1,
+   "competition": "League"
+  },
+  "providerId": "thecelticwiki",
+  "contentHash": "0e35557c9deab1c86ef02d077ec0eee57449f1096d445106500aa0b54d1fff3a",
+  "runId": "2026-11-21T16-59-53-825Z-8ec807",
+  "retired": null,
+  "sourceIds": [
+   "document-8215a58bde24ba793f4f01ec"
+  ]
+ },
+ {
+  "schemaVersion": 1,
+  "id": "obs:thecelticwiki:pages:584:match",
+  "recordType": "match",
+  "providerRecordKey": "thecelticwiki:pages:584",
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1892-2/1892-05-07-rangers-1-1-celtic-league/",
+  "parserVersion": "celticwiki-football-v1",
+  "locator": "title.rendered; Match Details",
+  "nameAsReported": null,
+  "seasonsAsReported": null,
+  "seasonAsReported": null,
+  "canonicalId": "h-1892-05-07-rangers",
+  "identityState": "linked",
+  "status": "candidate",
+  "match": {
+   "on": "1892-05-07",
+   "home": "Rangers",
+   "away": "Celtic",
+   "homeGoals": 1,
+   "awayGoals": 1,
+   "competition": "League",
+   "lineup": [
+    "Cullen",
+    "Reynolds",
+    "Doyle",
+    "Gallacher",
+    "Maley",
+    "Kyle",
+    "Cunningham",
+    "Flannigan",
+    "McCallum",
+    "McMahon",
+    "Campbell"
+   ]
+  },
+  "providerId": "thecelticwiki",
+  "contentHash": "b1616af6eea2d78b4d22fd0147c7552cd3880a05731cac34139055bc963a20d5",
+  "runId": "2026-11-21T16-59-53-825Z-8ec807",
+  "retired": null,
+  "sourceIds": [
+   "document-2467a1b66f0fbbc0153799b4"
+  ]
+ },
+ {
+  "schemaVersion": 1,
+  "id": "obs:thecelticwiki:pages:585:match",
+  "recordType": "match",
+  "providerRecordKey": "thecelticwiki:pages:585",
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1892-2/1892-05-14-celtic-2-0-leith-athletic-league/",
+  "parserVersion": "celticwiki-football-v1",
+  "locator": "title.rendered; Match Details",
+  "nameAsReported": null,
+  "seasonsAsReported": null,
+  "seasonAsReported": null,
+  "canonicalId": "h-1892-05-14-leith-athletic",
+  "identityState": "linked",
+  "status": "candidate",
+  "match": {
+   "on": "1892-05-14",
+   "home": "Celtic",
+   "away": "Leith Athletic",
+   "homeGoals": 2,
+   "awayGoals": 0,
+   "competition": "League"
+  },
+  "providerId": "thecelticwiki",
+  "contentHash": "07a83eeb15132b9506d468cd104f207121cd58499e9217a1e91eb6e7a6c6b304",
+  "runId": "2026-11-21T16-59-53-825Z-8ec807",
+  "retired": null,
+  "sourceIds": [
+   "document-9f8cd3e9d85e33c5cfa4e81a"
+  ]
+ },
+ {
+  "schemaVersion": 1,
+  "id": "obs:thecelticwiki:pages:603:match",
+  "recordType": "match",
+  "providerRecordKey": "thecelticwiki:pages:603",
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1892-2/1892-09-10-celtic-3-2-abercorn-league/",
+  "parserVersion": "celticwiki-football-v1",
+  "locator": "title.rendered; Match Details",
+  "nameAsReported": null,
+  "seasonsAsReported": null,
+  "seasonAsReported": null,
+  "canonicalId": "h-1892-09-10-abercorn",
+  "identityState": "linked",
+  "status": "candidate",
+  "match": {
+   "on": "1892-09-10",
+   "home": "Celtic",
+   "away": "Abercorn",
+   "homeGoals": 3,
+   "awayGoals": 2,
+   "competition": "League"
+  },
+  "providerId": "thecelticwiki",
+  "contentHash": "3d60f160869716bbcab217cf4f1eec8400c1b7a452f2b60d26effaeb1893b120",
+  "runId": "2026-11-21T16-59-53-825Z-8ec807",
+  "retired": null,
+  "sourceIds": [
+   "document-25c45ba268ec76e67324a690"
+  ]
+ },
+ {
+  "schemaVersion": 1,
+  "id": "obs:thecelticwiki:pages:605:match",
+  "recordType": "match",
+  "providerRecordKey": "thecelticwiki:pages:605",
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1892-2/1892-09-17-pollokshaws-2-7-celtic-glasgow-cup-1st-rd/",
+  "parserVersion": "celticwiki-football-v1",
+  "locator": "title.rendered; Match Details",
+  "nameAsReported": null,
+  "seasonsAsReported": null,
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "match": {
+   "on": "1892-09-17",
+   "home": "Pollokshaws",
+   "away": "Celtic",
+   "homeGoals": 2,
+   "awayGoals": 7,
+   "competition": "Glasgow Cup 1st Rd"
+  },
+  "providerId": "thecelticwiki",
+  "contentHash": "3fd8b4d952bb75cc767e3b848c89c4da9450a1f9af18ec2d06389b9b3645c460",
+  "runId": "2026-11-21T16-59-53-825Z-8ec807",
+  "retired": null,
+  "sourceIds": [
+   "document-72690f561928f1ef09c309db"
+  ]
+ },
+ {
+  "schemaVersion": 1,
+  "id": "obs:thecelticwiki:pages:606:match",
+  "recordType": "match",
+  "providerRecordKey": "thecelticwiki:pages:606",
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1892-2/1892-09-24-rangers-2-2-celtic-league/",
+  "parserVersion": "celticwiki-football-v1",
+  "locator": "title.rendered; Match Details",
+  "nameAsReported": null,
+  "seasonsAsReported": null,
+  "seasonAsReported": null,
+  "canonicalId": "h-1892-09-24-rangers",
+  "identityState": "linked",
+  "status": "candidate",
+  "match": {
+   "on": "1892-09-24",
+   "home": "Rangers",
+   "away": "Celtic",
+   "homeGoals": 2,
+   "awayGoals": 2,
+   "competition": "League"
+  },
+  "providerId": "thecelticwiki",
+  "contentHash": "661b7067fdbaeab2838372fd6957b3892aaf39294f35de3e258fac87713558be",
+  "runId": "2026-11-21T16-59-53-825Z-8ec807",
+  "retired": null,
+  "sourceIds": [
+   "document-1e610a6d01b7a7e57c2f3654"
+  ]
+ },
+ {
+  "schemaVersion": 1,
+  "id": "obs:thecelticwiki:pages:607:match",
+  "recordType": "match",
+  "providerRecordKey": "thecelticwiki:pages:607",
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1892-2/1892-10-01-celtic-3-1-clyde-league/",
+  "parserVersion": "celticwiki-football-v1",
+  "locator": "title.rendered; Match Details",
+  "nameAsReported": null,
+  "seasonsAsReported": null,
+  "seasonAsReported": null,
+  "canonicalId": "h-1892-10-01-clyde",
+  "identityState": "linked",
+  "status": "candidate",
+  "match": {
+   "on": "1892-10-01",
+   "home": "Celtic",
+   "away": "Clyde",
+   "homeGoals": 3,
+   "awayGoals": 1,
+   "competition": "League"
+  },
+  "providerId": "thecelticwiki",
+  "contentHash": "d9d1c0dc6310d5d8db89790faa5a8ada7f26fc36a182046ea5215c9345e727fb",
+  "runId": "2026-11-21T16-59-53-825Z-8ec807",
+  "retired": null,
+  "sourceIds": [
+   "document-df0995bc73bbd5d5387c68ad"
+  ]
+ }
+]

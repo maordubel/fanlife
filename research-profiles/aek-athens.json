@@ -57,7 +57,7 @@
         "/pages/history.aspx",
         "/c/gegonota-42826.htm"
       ],
-      "parserId": null,
+      "parserId": "editorial-catalogue-v1",
       "budget": {
         "perPage": 1,
         "maxRequests": 10,

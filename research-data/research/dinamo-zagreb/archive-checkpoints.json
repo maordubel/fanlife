@@ -3,51 +3,52 @@
   "schemaVersion": 1,
   "providerId": "dinamo-official",
   "collection": "html",
-  "queryFingerprint": "700496a9bdb5d89c",
-  "parserVersion": null,
+  "queryFingerprint": "5d2ef1434cb6f47c",
+  "parserVersion": "editorial-catalogue-v1",
   "nextPage": 0,
   "lastCommittedPage": 0,
   "observedTotalDocuments": 3,
   "observedTotalPages": null,
   "perPage": 1,
-  "queue": [],
-  "seen": [
-   "/hr/klub/povijest",
+  "queue": [
    "/en/club/history",
    "/en/timeline/145"
   ],
-  "state": "blocked",
-  "updatedAt": "2026-11-20T11:55:08.994Z",
-  "lastError": "HTTP 403 — a refusal is an answer"
+  "seen": [
+   "/hr/klub/povijest"
+  ],
+  "state": "partial_budget",
+  "updatedAt": "2026-11-21T16:50:39.231Z",
+  "lastError": null
  },
  "bad-blue-boys:posts": {
   "schemaVersion": 1,
   "providerId": "bad-blue-boys",
   "collection": "posts",
-  "queryFingerprint": "784e8d93d109dbb7",
-  "parserVersion": "bbb-history-v1",
-  "nextPage": 5,
-  "lastCommittedPage": 4,
+  "queryFingerprint": "71267f71b4c22daf",
+  "parserVersion": "editorial-catalogue-v1",
+  "nextPage": 2,
+  "lastCommittedPage": 1,
   "observedTotalDocuments": 79,
   "observedTotalPages": 4,
   "perPage": 25,
-  "state": "listed",
-  "updatedAt": "2026-11-20T11:55:11.274Z",
+  "state": "partial_budget",
+  "updatedAt": "2026-11-21T16:50:50.127Z",
   "lastError": null
  },
  "bad-blue-boys:pages": {
   "schemaVersion": 1,
   "providerId": "bad-blue-boys",
   "collection": "pages",
-  "queryFingerprint": "47227d820c1667db",
-  "parserVersion": "bbb-history-v1",
+  "queryFingerprint": "2bec95160ffb2a16",
+  "parserVersion": "editorial-catalogue-v1",
   "nextPage": 2,
   "lastCommittedPage": 1,
   "observedTotalDocuments": 17,
   "observedTotalPages": 1,
   "perPage": 25,
-  "state": "listed",
-  "updatedAt": "2026-11-20T11:55:13.718Z",
+  "state": "partial_budget",
+  "updatedAt": "2026-11-21T16:50:54.427Z",
   "lastError": null
  },
  "hns-semafor:html": {
@@ -66,7 +67,7 @@
    "/klubovi/609/gnk-dinamo/"
   ],
   "state": "blocked",
-  "updatedAt": "2026-11-20T11:55:13.718Z",
+  "updatedAt": "2026-11-21T16:50:54.427Z",
   "lastError": "HTTP 403 — a refusal is an answer"
  },
  "wikipedia-dinamo-records:html": {
@@ -85,15 +86,15 @@
    "/wiki/Dinamo_Zagreb_records_and_statistics"
   ],
   "state": "listed",
-  "updatedAt": "2026-11-20T11:55:13.811Z",
+  "updatedAt": "2026-11-21T16:50:56.409Z",
   "lastError": null
  },
  "nft-dinamo:html": {
   "schemaVersion": 1,
   "providerId": "nft-dinamo",
   "collection": "html",
-  "queryFingerprint": "f167aac06f5c9003",
-  "parserVersion": null,
+  "queryFingerprint": "bd42487e484fcf4e",
+  "parserVersion": "national-football-teams-squad-v1",
   "nextPage": 0,
   "lastCommittedPage": 0,
   "observedTotalDocuments": 1,
@@ -104,7 +105,7 @@
    "/club/504/1953/Dinamo_Zagreb.html"
   ],
   "state": "listed",
-  "updatedAt": "2026-11-20T11:55:14.563Z",
+  "updatedAt": "2026-11-21T16:51:02.446Z",
   "lastError": null
  }
 }

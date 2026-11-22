@@ -1,21 +1,22 @@
 {
  "club": "hajduk-split",
- "snapshotAsOf": "2026-11-20",
- "researchVersion": 34,
+ "snapshotAsOf": "2026-11-21",
+ "researchVersion": 1,
+ "contentHash": "658254e92048eebe6c3c662b4652377724aa6d36cc7a32171be9caba66f02787",
  "approvedForProduction": 0,
  "counts": {
-  "sources": 3,
+  "sources": 4,
   "matches": 0,
   "archive-players": 0,
   "conflicts": 0
  },
  "collection": {
   "schemaVersion": 1,
-  "runId": "2026-11-20T11-55-15-217Z-861a0b",
+  "runId": "2026-11-21T16-50-21-286Z-9e726e",
   "state": "partial_budget",
   "historicalOnly": true,
   "completeArchiveClaim": false,
-  "documents": 675,
-  "needsParser": 675
+  "documents": 676,
+  "needsParser": 3
  }
 }

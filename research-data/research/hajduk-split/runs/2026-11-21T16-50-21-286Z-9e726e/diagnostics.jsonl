@@ -1,0 +1,6 @@
+{"code":"FINGERPRINT_CHANGED","providerId":"torcida","url":null,"message":"posts: the listing definition changed — starting again from page 1."}
+{"code":"FINGERPRINT_CHANGED","providerId":"torcida","url":null,"message":"pages: the listing definition changed — starting again from page 1."}
+{"code":"FINGERPRINT_CHANGED","providerId":"hajduk-official-history-en","url":null,"message":"html: seeds or follow rule changed — starting again."}
+{"code":"NEEDS_PARSER","providerId":"hajduk-official","url":null,"message":"No tested parser for HNK Hajduk Split yet: documents are kept, nothing is extracted."}
+{"code":"NEEDS_PARSER","providerId":"wikipedia-hajduk-records","url":null,"message":"No tested parser for Wikipedia yet: documents are kept, nothing is extracted."}
+{"code":"BUDGET_EXHAUSTED","providerId":"*","url":null,"message":"Budget used; the next run resumes from the checkpoint."}

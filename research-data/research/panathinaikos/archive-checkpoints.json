@@ -3,46 +3,44 @@
   "schemaVersion": 1,
   "providerId": "paopedia",
   "collection": "posts",
-  "queryFingerprint": "f11a75cebc1aaceb",
-  "parserVersion": "paopedia-history-v1",
+  "queryFingerprint": "e7e4357657640393",
+  "parserVersion": "editorial-catalogue-v1",
   "nextPage": 1,
   "lastCommittedPage": 0,
   "observedTotalDocuments": null,
   "observedTotalPages": null,
   "perPage": 25,
   "state": "schema-changed",
-  "updatedAt": "2026-11-20T11:55:26.801Z",
+  "updatedAt": "2026-11-21T16:50:43.671Z",
   "lastError": "schema"
  },
  "paopedia:pages": {
   "schemaVersion": 1,
   "providerId": "paopedia",
   "collection": "pages",
-  "queryFingerprint": "26419cb1cf0dd65f",
-  "parserVersion": "paopedia-history-v1",
-  "nextPage": 3,
-  "lastCommittedPage": 2,
+  "queryFingerprint": "f0dc2c3a47a11a0d",
+  "parserVersion": "editorial-catalogue-v1",
+  "nextPage": 2,
+  "lastCommittedPage": 1,
   "observedTotalDocuments": 33,
   "observedTotalPages": 2,
   "perPage": 25,
-  "state": "listed",
-  "updatedAt": "2026-11-20T11:55:32.621Z",
+  "state": "partial_budget",
+  "updatedAt": "2026-11-21T16:50:52.070Z",
   "lastError": null
  },
  "pao-official-history:html": {
   "schemaVersion": 1,
   "providerId": "pao-official-history",
   "collection": "html",
-  "queryFingerprint": "c96f37ef6ad5a5af",
-  "parserVersion": null,
+  "queryFingerprint": "f151a25dc26bb5f6",
+  "parserVersion": "editorial-catalogue-v1",
   "nextPage": 0,
   "lastCommittedPage": 0,
   "observedTotalDocuments": 11,
   "observedTotalPages": null,
   "perPage": 1,
-  "queue": [],
-  "seen": [
-   "/en/history/",
+  "queue": [
    "/en/history/championships/",
    "/en/history/greek-cups/",
    "/en/history/super-cup/",
@@ -54,8 +52,11 @@
    "/en/historyitem/all-time-foreigners/",
    "/historyitem/all-time-roster/"
   ],
+  "seen": [
+   "/en/history/"
+  ],
   "state": "partial_budget",
-  "updatedAt": "2026-11-20T11:55:32.621Z",
+  "updatedAt": "2026-11-21T16:51:00.610Z",
   "lastError": null
  },
  "rsssf-greece:html": {
@@ -78,7 +79,7 @@
    "/tablesg/grkchamp.html"
   ],
   "state": "partial_budget",
-  "updatedAt": "2026-11-20T11:55:32.621Z",
+  "updatedAt": "2026-11-21T16:51:00.610Z",
   "lastError": null
  }
 }

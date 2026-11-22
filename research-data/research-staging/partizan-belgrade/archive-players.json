@@ -1,1 +1,468 @@
-[]
+[
+ {
+  "id": "obs:nft-partizan:html:/club/2156/1963/Partizan_Beograd.html:squad:bajić mane",
+  "role": "player",
+  "nameAsReported": "Bajić, Mane",
+  "seasonsAsReported": "1963/64",
+  "providerRecordKey": "nft-partizan:html:/club/2156/1963/Partizan_Beograd.html",
+  "sourceUrl": "https://www.national-football-teams.com/club/2156/1963/Partizan_Beograd.html",
+  "sourceIds": [
+   "document-c433e5edb272e4891c614ac8"
+  ],
+  "parserVersion": "national-football-teams-squad-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "stats": [
+   {
+    "season": "1963/64",
+    "competition": "National Football Teams club table",
+    "appearances": 8,
+    "goals": 0
+   }
+  ],
+  "positions": [
+   "MF"
+  ],
+  "status": "candidate"
+ },
+ {
+  "id": "obs:nft-partizan:html:/club/2156/1963/Partizan_Beograd.html:squad:bečejac radoslav",
+  "role": "player",
+  "nameAsReported": "Bečejac, Radoslav",
+  "seasonsAsReported": "1963/64",
+  "providerRecordKey": "nft-partizan:html:/club/2156/1963/Partizan_Beograd.html",
+  "sourceUrl": "https://www.national-football-teams.com/club/2156/1963/Partizan_Beograd.html",
+  "sourceIds": [
+   "document-c433e5edb272e4891c614ac8"
+  ],
+  "parserVersion": "national-football-teams-squad-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "stats": [
+   {
+    "season": "1963/64",
+    "competition": "National Football Teams club table",
+    "appearances": 14,
+    "goals": 2
+   }
+  ],
+  "positions": [
+   "MF"
+  ],
+  "status": "candidate"
+ },
+ {
+  "id": "obs:nft-partizan:html:/club/2156/1963/Partizan_Beograd.html:squad:čebinac zvezdan",
+  "role": "player",
+  "nameAsReported": "Čebinac, Zvezdan",
+  "seasonsAsReported": "1963/64",
+  "providerRecordKey": "nft-partizan:html:/club/2156/1963/Partizan_Beograd.html",
+  "sourceUrl": "https://www.national-football-teams.com/club/2156/1963/Partizan_Beograd.html",
+  "sourceIds": [
+   "document-c433e5edb272e4891c614ac8"
+  ],
+  "parserVersion": "national-football-teams-squad-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "stats": [
+   {
+    "season": "1963/64",
+    "competition": "National Football Teams club table",
+    "appearances": 26,
+    "goals": 2
+   }
+  ],
+  "positions": [
+   "MF"
+  ],
+  "status": "candidate"
+ },
+ {
+  "id": "obs:nft-partizan:html:/club/2156/1963/Partizan_Beograd.html:squad:damjanović milan",
+  "role": "player",
+  "nameAsReported": "Damjanović, Milan",
+  "seasonsAsReported": "1963/64",
+  "providerRecordKey": "nft-partizan:html:/club/2156/1963/Partizan_Beograd.html",
+  "sourceUrl": "https://www.national-football-teams.com/club/2156/1963/Partizan_Beograd.html",
+  "sourceIds": [
+   "document-c433e5edb272e4891c614ac8"
+  ],
+  "parserVersion": "national-football-teams-squad-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "stats": [
+   {
+    "season": "1963/64",
+    "competition": "National Football Teams club table",
+    "appearances": 12,
+    "goals": 0
+   }
+  ],
+  "positions": [
+   "DF"
+  ],
+  "status": "candidate"
+ },
+ {
+  "id": "obs:nft-partizan:html:/club/2156/1963/Partizan_Beograd.html:squad:galić milan",
+  "role": "player",
+  "nameAsReported": "Galić, Milan",
+  "seasonsAsReported": "1963/64",
+  "providerRecordKey": "nft-partizan:html:/club/2156/1963/Partizan_Beograd.html",
+  "sourceUrl": "https://www.national-football-teams.com/club/2156/1963/Partizan_Beograd.html",
+  "sourceIds": [
+   "document-c433e5edb272e4891c614ac8"
+  ],
+  "parserVersion": "national-football-teams-squad-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "stats": [
+   {
+    "season": "1963/64",
+    "competition": "National Football Teams club table",
+    "appearances": 20,
+    "goals": 4
+   }
+  ],
+  "positions": [
+   "FW"
+  ],
+  "status": "candidate"
+ },
+ {
+  "id": "obs:nft-partizan:html:/club/2156/1963/Partizan_Beograd.html:squad:hasanagić mustafa",
+  "role": "player",
+  "nameAsReported": "Hasanagić, Mustafa",
+  "seasonsAsReported": "1963/64",
+  "providerRecordKey": "nft-partizan:html:/club/2156/1963/Partizan_Beograd.html",
+  "sourceUrl": "https://www.national-football-teams.com/club/2156/1963/Partizan_Beograd.html",
+  "sourceIds": [
+   "document-c433e5edb272e4891c614ac8"
+  ],
+  "parserVersion": "national-football-teams-squad-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "stats": [
+   {
+    "season": "1963/64",
+    "competition": "National Football Teams club table",
+    "appearances": 9,
+    "goals": 0
+   }
+  ],
+  "positions": [
+   "FW"
+  ],
+  "status": "candidate"
+ },
+ {
+  "id": "obs:nft-partizan:html:/club/2156/1963/Partizan_Beograd.html:squad:jusufi fahrudin",
+  "role": "player",
+  "nameAsReported": "Jusufi, Fahrudin",
+  "seasonsAsReported": "1963/64",
+  "providerRecordKey": "nft-partizan:html:/club/2156/1963/Partizan_Beograd.html",
+  "sourceUrl": "https://www.national-football-teams.com/club/2156/1963/Partizan_Beograd.html",
+  "sourceIds": [
+   "document-c433e5edb272e4891c614ac8"
+  ],
+  "parserVersion": "national-football-teams-squad-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "stats": [
+   {
+    "season": "1963/64",
+    "competition": "National Football Teams club table",
+    "appearances": 6,
+    "goals": 0
+   }
+  ],
+  "positions": [
+   "DF"
+  ],
+  "status": "candidate"
+ },
+ {
+  "id": "obs:nft-partizan:html:/club/2156/1963/Partizan_Beograd.html:squad:kovačević vladica",
+  "role": "player",
+  "nameAsReported": "Kovačević, Vladica",
+  "seasonsAsReported": "1963/64",
+  "providerRecordKey": "nft-partizan:html:/club/2156/1963/Partizan_Beograd.html",
+  "sourceUrl": "https://www.national-football-teams.com/club/2156/1963/Partizan_Beograd.html",
+  "sourceIds": [
+   "document-c433e5edb272e4891c614ac8"
+  ],
+  "parserVersion": "national-football-teams-squad-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "stats": [
+   {
+    "season": "1963/64",
+    "competition": "National Football Teams club table",
+    "appearances": 20,
+    "goals": 16
+   }
+  ],
+  "positions": [],
+  "status": "candidate"
+ },
+ {
+  "id": "obs:nft-partizan:html:/club/2156/1963/Partizan_Beograd.html:squad:mihajlović branislav",
+  "role": "player",
+  "nameAsReported": "Mihajlović, Branislav",
+  "seasonsAsReported": "1963/64",
+  "providerRecordKey": "nft-partizan:html:/club/2156/1963/Partizan_Beograd.html",
+  "sourceUrl": "https://www.national-football-teams.com/club/2156/1963/Partizan_Beograd.html",
+  "sourceIds": [
+   "document-c433e5edb272e4891c614ac8"
+  ],
+  "parserVersion": "national-football-teams-squad-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "stats": [
+   {
+    "season": "1963/64",
+    "competition": "National Football Teams club table",
+    "appearances": 2,
+    "goals": 0
+   }
+  ],
+  "positions": [
+   "FW"
+  ],
+  "status": "candidate"
+ },
+ {
+  "id": "obs:nft-partizan:html:/club/2156/1963/Partizan_Beograd.html:squad:mihajlović ljubomir",
+  "role": "player",
+  "nameAsReported": "Mihajlović, Ljubomir",
+  "seasonsAsReported": "1963/64",
+  "providerRecordKey": "nft-partizan:html:/club/2156/1963/Partizan_Beograd.html",
+  "sourceUrl": "https://www.national-football-teams.com/club/2156/1963/Partizan_Beograd.html",
+  "sourceIds": [
+   "document-c433e5edb272e4891c614ac8"
+  ],
+  "parserVersion": "national-football-teams-squad-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "stats": [
+   {
+    "season": "1963/64",
+    "competition": "National Football Teams club table",
+    "appearances": 21,
+    "goals": 0
+   }
+  ],
+  "positions": [
+   "DF"
+  ],
+  "status": "candidate"
+ },
+ {
+  "id": "obs:nft-partizan:html:/club/2156/1963/Partizan_Beograd.html:squad:miladinović jovan",
+  "role": "player",
+  "nameAsReported": "Miladinović, Jovan",
+  "seasonsAsReported": "1963/64",
+  "providerRecordKey": "nft-partizan:html:/club/2156/1963/Partizan_Beograd.html",
+  "sourceUrl": "https://www.national-football-teams.com/club/2156/1963/Partizan_Beograd.html",
+  "sourceIds": [
+   "document-c433e5edb272e4891c614ac8"
+  ],
+  "parserVersion": "national-football-teams-squad-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "stats": [
+   {
+    "season": "1963/64",
+    "competition": "National Football Teams club table",
+    "appearances": 19,
+    "goals": 0
+   }
+  ],
+  "positions": [
+   "MF"
+  ],
+  "status": "candidate"
+ },
+ {
+  "id": "obs:nft-partizan:html:/club/2156/1963/Partizan_Beograd.html:squad:pirmajer josip",
+  "role": "player",
+  "nameAsReported": "Pirmajer, Josip",
+  "seasonsAsReported": "1963/64",
+  "providerRecordKey": "nft-partizan:html:/club/2156/1963/Partizan_Beograd.html",
+  "sourceUrl": "https://www.national-football-teams.com/club/2156/1963/Partizan_Beograd.html",
+  "sourceIds": [
+   "document-c433e5edb272e4891c614ac8"
+  ],
+  "parserVersion": "national-football-teams-squad-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "stats": [
+   {
+    "season": "1963/64",
+    "competition": "National Football Teams club table",
+    "appearances": 12,
+    "goals": 2
+   }
+  ],
+  "positions": [
+   "FW"
+  ],
+  "status": "candidate"
+ },
+ {
+  "id": "obs:nft-partizan:html:/club/2156/1963/Partizan_Beograd.html:squad:radović lazar",
+  "role": "player",
+  "nameAsReported": "Radović, Lazar",
+  "seasonsAsReported": "1963/64",
+  "providerRecordKey": "nft-partizan:html:/club/2156/1963/Partizan_Beograd.html",
+  "sourceUrl": "https://www.national-football-teams.com/club/2156/1963/Partizan_Beograd.html",
+  "sourceIds": [
+   "document-c433e5edb272e4891c614ac8"
+  ],
+  "parserVersion": "national-football-teams-squad-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "stats": [
+   {
+    "season": "1963/64",
+    "competition": "National Football Teams club table",
+    "appearances": 21,
+    "goals": 3
+   }
+  ],
+  "positions": [
+   "DF"
+  ],
+  "status": "candidate"
+ },
+ {
+  "id": "obs:nft-partizan:html:/club/2156/1963/Partizan_Beograd.html:squad:rudinski antun",
+  "role": "player",
+  "nameAsReported": "Rudinski, Antun",
+  "seasonsAsReported": "1963/64",
+  "providerRecordKey": "nft-partizan:html:/club/2156/1963/Partizan_Beograd.html",
+  "sourceUrl": "https://www.national-football-teams.com/club/2156/1963/Partizan_Beograd.html",
+  "sourceIds": [
+   "document-c433e5edb272e4891c614ac8"
+  ],
+  "parserVersion": "national-football-teams-squad-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "stats": [
+   {
+    "season": "1963/64",
+    "competition": "National Football Teams club table",
+    "appearances": 1,
+    "goals": 0
+   }
+  ],
+  "positions": [
+   "FW"
+  ],
+  "status": "candidate"
+ },
+ {
+  "id": "obs:nft-partizan:html:/club/2156/1963/Partizan_Beograd.html:squad:sombolac velimir",
+  "role": "player",
+  "nameAsReported": "Sombolac, Velimir",
+  "seasonsAsReported": "1963/64",
+  "providerRecordKey": "nft-partizan:html:/club/2156/1963/Partizan_Beograd.html",
+  "sourceUrl": "https://www.national-football-teams.com/club/2156/1963/Partizan_Beograd.html",
+  "sourceIds": [
+   "document-c433e5edb272e4891c614ac8"
+  ],
+  "parserVersion": "national-football-teams-squad-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "stats": [
+   {
+    "season": "1963/64",
+    "competition": "National Football Teams club table",
+    "appearances": 16,
+    "goals": 0
+   }
+  ],
+  "positions": [
+   "DF"
+  ],
+  "status": "candidate"
+ },
+ {
+  "id": "obs:nft-partizan:html:/club/2156/1963/Partizan_Beograd.html:squad:šoškić milutin",
+  "role": "player",
+  "nameAsReported": "Šoškić, Milutin",
+  "seasonsAsReported": "1963/64",
+  "providerRecordKey": "nft-partizan:html:/club/2156/1963/Partizan_Beograd.html",
+  "sourceUrl": "https://www.national-football-teams.com/club/2156/1963/Partizan_Beograd.html",
+  "sourceIds": [
+   "document-c433e5edb272e4891c614ac8"
+  ],
+  "parserVersion": "national-football-teams-squad-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "stats": [
+   {
+    "season": "1963/64",
+    "competition": "National Football Teams club table",
+    "appearances": 21,
+    "goals": 0
+   }
+  ],
+  "positions": [
+   "GK"
+  ],
+  "status": "candidate"
+ },
+ {
+  "id": "obs:nft-partizan:html:/club/2156/1963/Partizan_Beograd.html:squad:vislavski joakim",
+  "role": "player",
+  "nameAsReported": "Vislavski, Joakim",
+  "seasonsAsReported": "1963/64",
+  "providerRecordKey": "nft-partizan:html:/club/2156/1963/Partizan_Beograd.html",
+  "sourceUrl": "https://www.national-football-teams.com/club/2156/1963/Partizan_Beograd.html",
+  "sourceIds": [
+   "document-c433e5edb272e4891c614ac8"
+  ],
+  "parserVersion": "national-football-teams-squad-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "stats": [
+   {
+    "season": "1963/64",
+    "competition": "National Football Teams club table",
+    "appearances": 18,
+    "goals": 4
+   }
+  ],
+  "positions": [
+   "FW"
+  ],
+  "status": "candidate"
+ },
+ {
+  "id": "obs:nft-partizan:html:/club/2156/1963/Partizan_Beograd.html:squad:vukelić milan",
+  "role": "player",
+  "nameAsReported": "Vukelić, Milan",
+  "seasonsAsReported": "1963/64",
+  "providerRecordKey": "nft-partizan:html:/club/2156/1963/Partizan_Beograd.html",
+  "sourceUrl": "https://www.national-football-teams.com/club/2156/1963/Partizan_Beograd.html",
+  "sourceIds": [
+   "document-c433e5edb272e4891c614ac8"
+  ],
+  "parserVersion": "national-football-teams-squad-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "stats": [
+   {
+    "season": "1963/64",
+    "competition": "National Football Teams club table",
+    "appearances": 8,
+    "goals": 0
+   }
+  ],
+  "positions": [
+   "MF"
+  ],
+  "status": "candidate"
+ }
+]

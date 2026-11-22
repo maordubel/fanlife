@@ -9,6 +9,7 @@ import {stagingDirs} from './adapters/package'
 import {loadClubProfile,profiledClubs} from '@/lib/research/profiles'
 import {collectClub} from '@/lib/research/service'
 import {runWorker} from '@/lib/research/worker'
+import {parserFor} from '@/lib/research/parsers'
 import {readJobs,readJson,writeJson} from '@/lib/research/store'
 import {durable} from './durable'
 import {dataRoot} from '@/lib/dataRoot'
@@ -27,7 +28,7 @@ import {dataRoot} from '@/lib/dataRoot'
 export const AUTOMATION_ACTOR='automation:scheduled-pipeline'
 type ClubStep={clubId:string;collected?:{state:string;requests:number;documents:number};staged?:boolean;queued?:boolean;fetched?:number;error?:string}
 
-const manifestStamp=(clubId:string)=>stagingDirs(clubId).map(d=>{const p=join(d,'manifest.json');return existsSync(p)?readFileSync(p,'utf8'):''}).join('|')
+const manifestStamp=(clubId:string)=>stagingDirs(clubId).map(d=>{const p=join(d,'manifest.json');if(!existsSync(p))return '';const raw=readFileSync(p,'utf8');return JSON.parse(raw).contentHash||raw}).join('|')
 const lastStamp=new Map<string,string>()
 
 /** A web request has ~60s on Vercel and the first scheduled run measured a 504 at 60s with a 40s budget (11.10.2026): single steps (a package queue, a worker pass of three fetches) are not interruptible, so the budget leaves their room. The pipeline stops starting new work at the budget and says which clubs wait. */
@@ -55,9 +56,9 @@ export async function runPipeline({maxRequestsPerClub=6,clubs,budgetMs=PIPELINE_
     step.collected={state:run.state,requests:run.counts.requests,documents:run.counts.documentsRead};step.staged=true
     const after=manifestStamp(clubId),seen=lastStamp.get(clubId)
     // 3 — a package that changed (or was never brought in on this server) goes to the club file as unreviewed rows
-    if(after&&(after!==before||seen!==after)){step.queued=await queuePackage(clubId);lastStamp.set(clubId,after)}
+    if(after&&(after!==before||seen!==after)){step.queued=await queuePackage(clubId);if(step.queued)lastStamp.set(clubId,after)}
    }
-   if(Date.now()<deadline-12000&&profile?.sources.length){const jobs=await readJobs(clubId);if(jobs.some(j=>j.state==='planned'||j.state==='failed')){const r=await runWorker(profile,{max:3});step.fetched=r.counts.fetched}}
+   if(Date.now()<deadline-12000&&profile?.sources.length){const jobs=await readJobs(clubId);if(jobs.some(j=>j.state==='planned'||j.state==='failed'||(j.state==='needs-adapter'&&j.snapshot&&parserFor(j.providerId,j.kind)))){const r=await runWorker(profile,{max:3});step.fetched=r.counts.fetched}}
   }catch(e){step.error=e instanceof Error?e.message:'failed'}
   steps.push(step)
  }

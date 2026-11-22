@@ -1,21 +1,22 @@
 {
  "club": "union-berlin",
- "snapshotAsOf": "2026-11-20",
- "researchVersion": 34,
+ "snapshotAsOf": "2026-11-22",
+ "researchVersion": 2,
+ "contentHash": "6a57a704f05e89b0c25b76304589d983e2f7b6764d5a4e64298410ce275fc59e",
  "approvedForProduction": 0,
  "counts": {
-  "sources": 4,
-  "matches": 0,
-  "archive-players": 0,
+  "sources": 7,
+  "matches": 3,
+  "archive-players": 1,
   "conflicts": 0
  },
  "collection": {
   "schemaVersion": 1,
-  "runId": "2026-11-20T11-56-12-030Z-9a3188",
-  "state": "partial_budget",
+  "runId": "2026-11-22T03-42-39-391Z-2fe4ce",
+  "state": "listed",
   "historicalOnly": true,
   "completeArchiveClaim": false,
   "documents": 144,
-  "needsParser": 144
+  "needsParser": 137
  }
 }

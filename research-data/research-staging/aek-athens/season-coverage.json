@@ -6,7 +6,7 @@
    {
     "collection": "posts",
     "state": "partial_budget",
-    "pagesRead": 4,
+    "pagesRead": 5,
     "observedTotalDocuments": 762,
     "observedTotalPages": 31,
     "queue": null,
@@ -14,7 +14,7 @@
    },
    {
     "collection": "pages",
-    "state": "listed",
+    "state": "partial_budget",
     "pagesRead": 1,
     "observedTotalDocuments": 5,
     "observedTotalPages": 1,
@@ -105,7 +105,7 @@
     "pagesRead": 0,
     "observedTotalDocuments": 2,
     "observedTotalPages": null,
-    "queue": 0,
+    "queue": 1,
     "lastError": "HTTP 403 — a refusal is an answer"
    }
   ],

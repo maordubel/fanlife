@@ -13,7 +13,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-11-20T11:54:45.649Z"
+  "checkedAt": "2026-11-21T16:50:39.691Z"
  },
  "aekpedia:/wp-json/wp/v2/pages": {
   "endpoint": "/wp-json/wp/v2/pages",
@@ -21,7 +21,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-11-20T11:54:48.231Z"
+  "checkedAt": "2026-11-21T16:50:43.357Z"
  },
  "aek-official-history:/pages/history.aspx?lang=el": {
   "endpoint": "/pages/history.aspx?lang=el",
@@ -29,7 +29,7 @@
   "state": "blocked",
   "status": 403,
   "reason": "HTTP 403 — a refusal is an answer",
-  "checkedAt": "2026-10-13T10:47:24.228Z"
+  "checkedAt": "2026-11-21T16:50:55.869Z"
  },
  "aek-official-history:/c/gegonota-42826.htm?lang=en&path=-1828815320": {
   "endpoint": "/c/gegonota-42826.htm?lang=en&path=-1828815320",

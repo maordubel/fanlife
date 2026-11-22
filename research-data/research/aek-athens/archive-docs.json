@@ -1284,12 +1284,14 @@
   "bytes": 830,
   "publishedAsReported": "2024-03-26T09:43:58",
   "modifiedAsReported": "2024-03-26T09:43:59",
-  "retrievedAt": "2026-11-20T11:54:48.231Z",
+  "retrievedAt": "2026-11-21T16:50:43.357Z",
   "firstRunId": "2026-10-07T04-51-53-067Z-8c9f00",
-  "lastRunId": "2026-11-20T11-54-35-539Z-213e10",
+  "lastRunId": "2026-11-21T16-50-21-280Z-fc16a5",
   "changed": false,
   "snapshot": null,
-  "parse": "parsed"
+  "parse": "catalogued",
+  "category": "reference",
+  "parserVersion": "aekpedia-football-v1"
  },
  "aekpedia:pages:6139": {
   "providerKey": "aekpedia:pages:6139",
@@ -1301,12 +1303,14 @@
   "bytes": 0,
   "publishedAsReported": "2024-03-26T09:43:59",
   "modifiedAsReported": "2024-03-26T09:43:59",
-  "retrievedAt": "2026-11-20T11:54:48.231Z",
+  "retrievedAt": "2026-11-21T16:50:43.358Z",
   "firstRunId": "2026-10-07T04-51-53-067Z-8c9f00",
-  "lastRunId": "2026-11-20T11-54-35-539Z-213e10",
+  "lastRunId": "2026-11-21T16-50-21-280Z-fc16a5",
   "changed": false,
   "snapshot": null,
-  "parse": "parsed"
+  "parse": "needs-parser",
+  "category": "reference",
+  "parserVersion": "aekpedia-football-v1"
  },
  "aekpedia:pages:6864": {
   "providerKey": "aekpedia:pages:6864",
@@ -1318,12 +1322,14 @@
   "bytes": 0,
   "publishedAsReported": "2024-06-15T10:08:53",
   "modifiedAsReported": "2024-06-15T15:23:51",
-  "retrievedAt": "2026-11-20T11:54:48.231Z",
+  "retrievedAt": "2026-11-21T16:50:43.358Z",
   "firstRunId": "2026-10-07T04-51-53-067Z-8c9f00",
-  "lastRunId": "2026-11-20T11-54-35-539Z-213e10",
+  "lastRunId": "2026-11-21T16-50-21-280Z-fc16a5",
   "changed": false,
   "snapshot": null,
-  "parse": "parsed"
+  "parse": "needs-parser",
+  "category": "reference",
+  "parserVersion": "aekpedia-football-v1"
  },
  "aekpedia:pages:6873": {
   "providerKey": "aekpedia:pages:6873",
@@ -1335,12 +1341,14 @@
   "bytes": 0,
   "publishedAsReported": "2024-06-15T15:46:55",
   "modifiedAsReported": "2024-06-15T15:46:55",
-  "retrievedAt": "2026-11-20T11:54:48.231Z",
+  "retrievedAt": "2026-11-21T16:50:43.358Z",
   "firstRunId": "2026-10-07T04-51-53-067Z-8c9f00",
-  "lastRunId": "2026-11-20T11-54-35-539Z-213e10",
+  "lastRunId": "2026-11-21T16-50-21-280Z-fc16a5",
   "changed": false,
   "snapshot": null,
-  "parse": "parsed"
+  "parse": "needs-parser",
+  "category": "reference",
+  "parserVersion": "aekpedia-football-v1"
  },
  "aekpedia:pages:6878": {
   "providerKey": "aekpedia:pages:6878",
@@ -1352,12 +1360,14 @@
   "bytes": 0,
   "publishedAsReported": "2024-06-15T16:04:43",
   "modifiedAsReported": "2024-06-15T16:04:43",
-  "retrievedAt": "2026-11-20T11:54:48.231Z",
+  "retrievedAt": "2026-11-21T16:50:43.358Z",
   "firstRunId": "2026-10-07T04-51-53-067Z-8c9f00",
-  "lastRunId": "2026-11-20T11-54-35-539Z-213e10",
+  "lastRunId": "2026-11-21T16-50-21-280Z-fc16a5",
   "changed": false,
   "snapshot": null,
-  "parse": "parsed"
+  "parse": "needs-parser",
+  "category": "reference",
+  "parserVersion": "aekpedia-football-v1"
  },
  "aekpedia:posts:685": {
   "providerKey": "aekpedia:posts:685",
@@ -1794,12 +1804,14 @@
   "bytes": 5599,
   "publishedAsReported": "2015-05-05T12:07:34",
   "modifiedAsReported": "2024-04-14T08:38:15",
-  "retrievedAt": "2026-11-12T11:49:48.463Z",
+  "retrievedAt": "2026-11-21T16:50:39.692Z",
   "firstRunId": "2026-10-16T08-19-43-648Z-fe9e46",
-  "lastRunId": "2026-11-12T11-49-46-877Z-e3a11e",
+  "lastRunId": "2026-11-21T16-50-21-280Z-fc16a5",
   "changed": false,
   "snapshot": null,
-  "parse": "parsed"
+  "parse": "parsed",
+  "category": "reference",
+  "parserVersion": "aekpedia-football-v1"
  },
  "aekpedia:posts:843": {
   "providerKey": "aekpedia:posts:843",
@@ -1811,12 +1823,14 @@
   "bytes": 13040,
   "publishedAsReported": "2015-05-23T17:40:48",
   "modifiedAsReported": "2026-03-28T13:21:05",
-  "retrievedAt": "2026-11-12T11:49:48.464Z",
+  "retrievedAt": "2026-11-21T16:50:39.695Z",
   "firstRunId": "2026-10-16T08-19-43-648Z-fe9e46",
-  "lastRunId": "2026-11-12T11-49-46-877Z-e3a11e",
+  "lastRunId": "2026-11-21T16-50-21-280Z-fc16a5",
   "changed": false,
   "snapshot": null,
-  "parse": "parsed"
+  "parse": "parsed",
+  "category": "reference",
+  "parserVersion": "aekpedia-football-v1"
  },
  "aekpedia:posts:847": {
   "providerKey": "aekpedia:posts:847",
@@ -1828,12 +1842,14 @@
   "bytes": 5427,
   "publishedAsReported": "2015-05-23T17:35:32",
   "modifiedAsReported": "2026-03-28T13:29:32",
-  "retrievedAt": "2026-11-12T11:49:48.464Z",
+  "retrievedAt": "2026-11-21T16:50:39.695Z",
   "firstRunId": "2026-10-16T08-19-43-648Z-fe9e46",
-  "lastRunId": "2026-11-12T11-49-46-877Z-e3a11e",
+  "lastRunId": "2026-11-21T16-50-21-280Z-fc16a5",
   "changed": false,
   "snapshot": null,
-  "parse": "parsed"
+  "parse": "parsed",
+  "category": "reference",
+  "parserVersion": "aekpedia-football-v1"
  },
  "aekpedia:posts:852": {
   "providerKey": "aekpedia:posts:852",
@@ -1845,12 +1861,14 @@
   "bytes": 2201,
   "publishedAsReported": "2015-05-04T12:11:59",
   "modifiedAsReported": "2015-06-01T10:06:23",
-  "retrievedAt": "2026-11-12T11:49:48.464Z",
+  "retrievedAt": "2026-11-21T16:50:39.695Z",
   "firstRunId": "2026-10-16T08-19-43-648Z-fe9e46",
-  "lastRunId": "2026-11-12T11-49-46-877Z-e3a11e",
+  "lastRunId": "2026-11-21T16-50-21-280Z-fc16a5",
   "changed": false,
   "snapshot": null,
-  "parse": "parsed"
+  "parse": "parsed",
+  "category": "reference",
+  "parserVersion": "aekpedia-football-v1"
  },
  "aekpedia:posts:856": {
   "providerKey": "aekpedia:posts:856",
@@ -1862,12 +1880,14 @@
   "bytes": 3535,
   "publishedAsReported": "2015-05-03T12:18:53",
   "modifiedAsReported": "2016-05-03T07:17:15",
-  "retrievedAt": "2026-11-12T11:49:48.464Z",
+  "retrievedAt": "2026-11-21T16:50:39.695Z",
   "firstRunId": "2026-10-16T08-19-43-648Z-fe9e46",
-  "lastRunId": "2026-11-12T11-49-46-877Z-e3a11e",
+  "lastRunId": "2026-11-21T16-50-21-280Z-fc16a5",
   "changed": false,
   "snapshot": null,
-  "parse": "parsed"
+  "parse": "parsed",
+  "category": "reference",
+  "parserVersion": "aekpedia-football-v1"
  },
  "aekpedia:posts:862": {
   "providerKey": "aekpedia:posts:862",
@@ -1879,12 +1899,14 @@
   "bytes": 3971,
   "publishedAsReported": "2015-05-23T17:30:33",
   "modifiedAsReported": "2026-03-28T13:32:37",
-  "retrievedAt": "2026-11-12T11:49:48.464Z",
+  "retrievedAt": "2026-11-21T16:50:39.695Z",
   "firstRunId": "2026-10-16T08-19-43-648Z-fe9e46",
-  "lastRunId": "2026-11-12T11-49-46-877Z-e3a11e",
+  "lastRunId": "2026-11-21T16-50-21-280Z-fc16a5",
   "changed": false,
   "snapshot": null,
-  "parse": "parsed"
+  "parse": "parsed",
+  "category": "reference",
+  "parserVersion": "aekpedia-football-v1"
  },
  "aekpedia:posts:868": {
   "providerKey": "aekpedia:posts:868",
@@ -1896,12 +1918,14 @@
   "bytes": 14652,
   "publishedAsReported": "2015-05-02T12:29:11",
   "modifiedAsReported": "2026-03-08T12:08:53",
-  "retrievedAt": "2026-11-12T11:49:48.465Z",
+  "retrievedAt": "2026-11-21T16:50:39.696Z",
   "firstRunId": "2026-10-16T08-19-43-648Z-fe9e46",
-  "lastRunId": "2026-11-12T11-49-46-877Z-e3a11e",
+  "lastRunId": "2026-11-21T16-50-21-280Z-fc16a5",
   "changed": false,
   "snapshot": null,
-  "parse": "parsed"
+  "parse": "parsed",
+  "category": "reference",
+  "parserVersion": "aekpedia-football-v1"
  },
  "aekpedia:posts:874": {
   "providerKey": "aekpedia:posts:874",
@@ -1913,12 +1937,14 @@
   "bytes": 4300,
   "publishedAsReported": "2015-05-01T12:37:57",
   "modifiedAsReported": "2016-05-03T07:20:57",
-  "retrievedAt": "2026-11-12T11:49:48.465Z",
+  "retrievedAt": "2026-11-21T16:50:39.696Z",
   "firstRunId": "2026-10-16T08-19-43-648Z-fe9e46",
-  "lastRunId": "2026-11-12T11-49-46-877Z-e3a11e",
+  "lastRunId": "2026-11-21T16-50-21-280Z-fc16a5",
   "changed": false,
   "snapshot": null,
-  "parse": "parsed"
+  "parse": "parsed",
+  "category": "reference",
+  "parserVersion": "aekpedia-football-v1"
  },
  "aekpedia:posts:878": {
   "providerKey": "aekpedia:posts:878",
@@ -1930,12 +1956,14 @@
   "bytes": 5332,
   "publishedAsReported": "2015-01-10T14:10:05",
   "modifiedAsReported": "2024-09-12T05:56:08",
-  "retrievedAt": "2026-11-12T11:49:48.465Z",
+  "retrievedAt": "2026-11-21T16:50:39.696Z",
   "firstRunId": "2026-10-16T08-19-43-648Z-fe9e46",
-  "lastRunId": "2026-11-12T11-49-46-877Z-e3a11e",
+  "lastRunId": "2026-11-21T16-50-21-280Z-fc16a5",
   "changed": false,
   "snapshot": null,
-  "parse": "parsed"
+  "parse": "parsed",
+  "category": "reference",
+  "parserVersion": "aekpedia-football-v1"
  },
  "aekpedia:posts:881": {
   "providerKey": "aekpedia:posts:881",
@@ -1947,12 +1975,14 @@
   "bytes": 3140,
   "publishedAsReported": "2015-01-11T14:11:38",
   "modifiedAsReported": "2024-06-08T20:26:05",
-  "retrievedAt": "2026-11-12T11:49:48.465Z",
+  "retrievedAt": "2026-11-21T16:50:39.696Z",
   "firstRunId": "2026-10-16T08-19-43-648Z-fe9e46",
-  "lastRunId": "2026-11-12T11-49-46-877Z-e3a11e",
+  "lastRunId": "2026-11-21T16-50-21-280Z-fc16a5",
   "changed": false,
   "snapshot": null,
-  "parse": "parsed"
+  "parse": "parsed",
+  "category": "reference",
+  "parserVersion": "aekpedia-football-v1"
  },
  "aekpedia:posts:884": {
   "providerKey": "aekpedia:posts:884",
@@ -1964,12 +1994,14 @@
   "bytes": 1337,
   "publishedAsReported": "2015-01-12T14:13:08",
   "modifiedAsReported": "2024-06-08T20:25:53",
-  "retrievedAt": "2026-11-12T11:49:48.465Z",
+  "retrievedAt": "2026-11-21T16:50:39.697Z",
   "firstRunId": "2026-10-16T08-19-43-648Z-fe9e46",
-  "lastRunId": "2026-11-12T11-49-46-877Z-e3a11e",
+  "lastRunId": "2026-11-21T16-50-21-280Z-fc16a5",
   "changed": false,
   "snapshot": null,
-  "parse": "parsed"
+  "parse": "parsed",
+  "category": "reference",
+  "parserVersion": "aekpedia-football-v1"
  },
  "aekpedia:posts:887": {
   "providerKey": "aekpedia:posts:887",
@@ -1981,12 +2013,14 @@
   "bytes": 3936,
   "publishedAsReported": "2015-01-13T14:15:42",
   "modifiedAsReported": "2024-06-08T20:25:39",
-  "retrievedAt": "2026-11-12T11:49:48.465Z",
+  "retrievedAt": "2026-11-21T16:50:39.697Z",
   "firstRunId": "2026-10-16T08-19-43-648Z-fe9e46",
-  "lastRunId": "2026-11-12T11-49-46-877Z-e3a11e",
+  "lastRunId": "2026-11-21T16-50-21-280Z-fc16a5",
   "changed": false,
   "snapshot": null,
-  "parse": "parsed"
+  "parse": "parsed",
+  "category": "reference",
+  "parserVersion": "aekpedia-football-v1"
  },
  "aekpedia:posts:893": {
   "providerKey": "aekpedia:posts:893",
@@ -1998,12 +2032,14 @@
   "bytes": 1773,
   "publishedAsReported": "2015-01-14T14:31:24",
   "modifiedAsReported": "2024-06-08T20:25:23",
-  "retrievedAt": "2026-11-12T11:49:48.465Z",
+  "retrievedAt": "2026-11-21T16:50:39.697Z",
   "firstRunId": "2026-10-16T08-19-43-648Z-fe9e46",
-  "lastRunId": "2026-11-12T11-49-46-877Z-e3a11e",
+  "lastRunId": "2026-11-21T16-50-21-280Z-fc16a5",
   "changed": false,
   "snapshot": null,
-  "parse": "parsed"
+  "parse": "parsed",
+  "category": "reference",
+  "parserVersion": "aekpedia-football-v1"
  },
  "aekpedia:posts:898": {
   "providerKey": "aekpedia:posts:898",
@@ -2015,12 +2051,14 @@
   "bytes": 3341,
   "publishedAsReported": "2015-01-15T14:34:10",
   "modifiedAsReported": "2024-06-08T20:25:07",
-  "retrievedAt": "2026-11-12T11:49:48.465Z",
+  "retrievedAt": "2026-11-21T16:50:39.697Z",
   "firstRunId": "2026-10-16T08-19-43-648Z-fe9e46",
-  "lastRunId": "2026-11-12T11-49-46-877Z-e3a11e",
+  "lastRunId": "2026-11-21T16-50-21-280Z-fc16a5",
   "changed": false,
   "snapshot": null,
-  "parse": "parsed"
+  "parse": "parsed",
+  "category": "reference",
+  "parserVersion": "aekpedia-football-v1"
  },
  "aekpedia:posts:901": {
   "providerKey": "aekpedia:posts:901",
@@ -2032,12 +2070,14 @@
   "bytes": 4473,
   "publishedAsReported": "2015-01-16T14:37:04",
   "modifiedAsReported": "2024-06-08T20:24:56",
-  "retrievedAt": "2026-11-12T11:49:48.465Z",
+  "retrievedAt": "2026-11-21T16:50:39.697Z",
   "firstRunId": "2026-10-16T08-19-43-648Z-fe9e46",
-  "lastRunId": "2026-11-12T11-49-46-877Z-e3a11e",
+  "lastRunId": "2026-11-21T16-50-21-280Z-fc16a5",
   "changed": false,
   "snapshot": null,
-  "parse": "parsed"
+  "parse": "parsed",
+  "category": "reference",
+  "parserVersion": "aekpedia-football-v1"
  },
  "aekpedia:posts:904": {
   "providerKey": "aekpedia:posts:904",
@@ -2049,12 +2089,14 @@
   "bytes": 5678,
   "publishedAsReported": "2015-01-17T14:39:13",
   "modifiedAsReported": "2024-06-08T20:24:35",
-  "retrievedAt": "2026-11-12T11:49:48.465Z",
+  "retrievedAt": "2026-11-21T16:50:39.697Z",
   "firstRunId": "2026-10-16T08-19-43-648Z-fe9e46",
-  "lastRunId": "2026-11-12T11-49-46-877Z-e3a11e",
+  "lastRunId": "2026-11-21T16-50-21-280Z-fc16a5",
   "changed": false,
   "snapshot": null,
-  "parse": "parsed"
+  "parse": "parsed",
+  "category": "reference",
+  "parserVersion": "aekpedia-football-v1"
  },
  "aekpedia:posts:907": {
   "providerKey": "aekpedia:posts:907",
@@ -2066,12 +2108,14 @@
   "bytes": 1105,
   "publishedAsReported": "2015-01-18T14:44:33",
   "modifiedAsReported": "2024-09-12T05:54:30",
-  "retrievedAt": "2026-11-12T11:49:48.465Z",
+  "retrievedAt": "2026-11-21T16:50:39.697Z",
   "firstRunId": "2026-10-16T08-19-43-648Z-fe9e46",
-  "lastRunId": "2026-11-12T11-49-46-877Z-e3a11e",
+  "lastRunId": "2026-11-21T16-50-21-280Z-fc16a5",
   "changed": false,
   "snapshot": null,
-  "parse": "parsed"
+  "parse": "parsed",
+  "category": "reference",
+  "parserVersion": "aekpedia-football-v1"
  },
  "aekpedia:posts:910": {
   "providerKey": "aekpedia:posts:910",
@@ -2083,12 +2127,14 @@
   "bytes": 4673,
   "publishedAsReported": "2015-01-19T14:46:40",
   "modifiedAsReported": "2024-06-08T20:24:01",
-  "retrievedAt": "2026-11-12T11:49:48.465Z",
+  "retrievedAt": "2026-11-21T16:50:39.697Z",
   "firstRunId": "2026-10-16T08-19-43-648Z-fe9e46",
-  "lastRunId": "2026-11-12T11-49-46-877Z-e3a11e",
+  "lastRunId": "2026-11-21T16-50-21-280Z-fc16a5",
   "changed": false,
   "snapshot": null,
-  "parse": "parsed"
+  "parse": "parsed",
+  "category": "reference",
+  "parserVersion": "aekpedia-football-v1"
  },
  "aekpedia:posts:913": {
   "providerKey": "aekpedia:posts:913",
@@ -2100,12 +2146,14 @@
   "bytes": 1599,
   "publishedAsReported": "2015-01-21T14:48:32",
   "modifiedAsReported": "2024-06-08T20:12:59",
-  "retrievedAt": "2026-11-12T11:49:48.465Z",
+  "retrievedAt": "2026-11-21T16:50:39.698Z",
   "firstRunId": "2026-10-16T08-19-43-648Z-fe9e46",
-  "lastRunId": "2026-11-12T11-49-46-877Z-e3a11e",
+  "lastRunId": "2026-11-21T16-50-21-280Z-fc16a5",
   "changed": false,
   "snapshot": null,
-  "parse": "parsed"
+  "parse": "parsed",
+  "category": "reference",
+  "parserVersion": "aekpedia-football-v1"
  },
  "aekpedia:posts:916": {
   "providerKey": "aekpedia:posts:916",
@@ -2117,12 +2165,14 @@
   "bytes": 1732,
   "publishedAsReported": "2015-01-22T14:50:17",
   "modifiedAsReported": "2024-06-08T20:13:13",
-  "retrievedAt": "2026-11-12T11:49:48.465Z",
+  "retrievedAt": "2026-11-21T16:50:39.698Z",
   "firstRunId": "2026-10-16T08-19-43-648Z-fe9e46",
-  "lastRunId": "2026-11-12T11-49-46-877Z-e3a11e",
+  "lastRunId": "2026-11-21T16-50-21-280Z-fc16a5",
   "changed": false,
   "snapshot": null,
-  "parse": "parsed"
+  "parse": "parsed",
+  "category": "reference",
+  "parserVersion": "aekpedia-football-v1"
  },
  "aekpedia:posts:919": {
   "providerKey": "aekpedia:posts:919",
@@ -2134,12 +2184,14 @@
   "bytes": 2475,
   "publishedAsReported": "2015-01-23T14:52:05",
   "modifiedAsReported": "2024-06-08T20:13:41",
-  "retrievedAt": "2026-11-12T11:49:48.465Z",
+  "retrievedAt": "2026-11-21T16:50:39.698Z",
   "firstRunId": "2026-10-16T08-19-43-648Z-fe9e46",
-  "lastRunId": "2026-11-12T11-49-46-877Z-e3a11e",
+  "lastRunId": "2026-11-21T16-50-21-280Z-fc16a5",
   "changed": false,
   "snapshot": null,
-  "parse": "parsed"
+  "parse": "parsed",
+  "category": "reference",
+  "parserVersion": "aekpedia-football-v1"
  },
  "aekpedia:posts:922": {
   "providerKey": "aekpedia:posts:922",
@@ -2151,12 +2203,14 @@
   "bytes": 4919,
   "publishedAsReported": "2015-01-24T14:54:37",
   "modifiedAsReported": "2024-06-08T20:13:51",
-  "retrievedAt": "2026-11-12T11:49:48.465Z",
+  "retrievedAt": "2026-11-21T16:50:39.698Z",
   "firstRunId": "2026-10-16T08-19-43-648Z-fe9e46",
-  "lastRunId": "2026-11-12T11-49-46-877Z-e3a11e",
+  "lastRunId": "2026-11-21T16-50-21-280Z-fc16a5",
   "changed": false,
   "snapshot": null,
-  "parse": "parsed"
+  "parse": "parsed",
+  "category": "reference",
+  "parserVersion": "aekpedia-football-v1"
  },
  "aekpedia:posts:926": {
   "providerKey": "aekpedia:posts:926",
@@ -2168,12 +2222,14 @@
   "bytes": 6777,
   "publishedAsReported": "2015-01-25T14:56:53",
   "modifiedAsReported": "2024-06-08T20:14:05",
-  "retrievedAt": "2026-11-12T11:49:48.465Z",
+  "retrievedAt": "2026-11-21T16:50:39.698Z",
   "firstRunId": "2026-10-16T08-19-43-648Z-fe9e46",
-  "lastRunId": "2026-11-12T11-49-46-877Z-e3a11e",
+  "lastRunId": "2026-11-21T16-50-21-280Z-fc16a5",
   "changed": false,
   "snapshot": null,
-  "parse": "parsed"
+  "parse": "parsed",
+  "category": "reference",
+  "parserVersion": "aekpedia-football-v1"
  },
  "aekpedia:posts:932": {
   "providerKey": "aekpedia:posts:932",
@@ -2185,12 +2241,14 @@
   "bytes": 3221,
   "publishedAsReported": "2015-01-04T16:10:10",
   "modifiedAsReported": "2024-06-08T19:40:00",
-  "retrievedAt": "2026-11-12T11:49:48.465Z",
+  "retrievedAt": "2026-11-21T16:50:39.698Z",
   "firstRunId": "2026-10-16T08-19-43-648Z-fe9e46",
-  "lastRunId": "2026-11-12T11-49-46-877Z-e3a11e",
+  "lastRunId": "2026-11-21T16-50-21-280Z-fc16a5",
   "changed": false,
   "snapshot": null,
-  "parse": "parsed"
+  "parse": "parsed",
+  "category": "reference",
+  "parserVersion": "aekpedia-football-v1"
  },
  "aekpedia:posts:935": {
   "providerKey": "aekpedia:posts:935",
@@ -2202,12 +2260,14 @@
   "bytes": 8144,
   "publishedAsReported": "2015-01-06T16:17:39",
   "modifiedAsReported": "2024-06-08T19:39:36",
-  "retrievedAt": "2026-11-12T11:49:48.465Z",
+  "retrievedAt": "2026-11-21T16:50:39.698Z",
   "firstRunId": "2026-10-16T08-19-43-648Z-fe9e46",
-  "lastRunId": "2026-11-12T11-49-46-877Z-e3a11e",
+  "lastRunId": "2026-11-21T16-50-21-280Z-fc16a5",
   "changed": false,
   "snapshot": null,
-  "parse": "parsed"
+  "parse": "parsed",
+  "category": "reference",
+  "parserVersion": "aekpedia-football-v1"
  },
  "aekpedia:posts:938": {
   "providerKey": "aekpedia:posts:938",

@@ -9,12 +9,14 @@
   "bytes": 1649,
   "publishedAsReported": "2010-05-25T19:39:18",
   "modifiedAsReported": "2011-12-22T23:07:02",
-  "retrievedAt": "2026-11-18T12:14:17.088Z",
+  "retrievedAt": "2026-11-21T16:50:50.124Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:144": {
   "providerKey": "bad-blue-boys:posts:144",
@@ -26,12 +28,14 @@
   "bytes": 1588,
   "publishedAsReported": "2010-05-30T20:19:46",
   "modifiedAsReported": "2011-12-22T23:07:02",
-  "retrievedAt": "2026-11-18T12:14:17.088Z",
+  "retrievedAt": "2026-11-21T16:50:50.124Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:151": {
   "providerKey": "bad-blue-boys:posts:151",
@@ -43,12 +47,14 @@
   "bytes": 5131,
   "publishedAsReported": "2010-08-11T00:51:32",
   "modifiedAsReported": "2011-12-22T23:05:18",
-  "retrievedAt": "2026-11-18T12:14:17.088Z",
+  "retrievedAt": "2026-11-21T16:50:50.124Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:152": {
   "providerKey": "bad-blue-boys:posts:152",
@@ -60,12 +66,14 @@
   "bytes": 2656,
   "publishedAsReported": "2010-08-11T00:54:24",
   "modifiedAsReported": "2012-10-11T15:49:18",
-  "retrievedAt": "2026-11-18T12:14:17.088Z",
+  "retrievedAt": "2026-11-21T16:50:50.124Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:154": {
   "providerKey": "bad-blue-boys:posts:154",
@@ -77,12 +85,14 @@
   "bytes": 1684,
   "publishedAsReported": "2010-08-17T22:31:29",
   "modifiedAsReported": "2011-12-22T23:05:18",
-  "retrievedAt": "2026-11-18T12:14:17.089Z",
+  "retrievedAt": "2026-11-21T16:50:50.124Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:183": {
   "providerKey": "bad-blue-boys:posts:183",
@@ -94,12 +104,14 @@
   "bytes": 3924,
   "publishedAsReported": "2011-02-12T00:40:14",
   "modifiedAsReported": "2011-12-22T23:04:50",
-  "retrievedAt": "2026-11-18T12:14:17.089Z",
+  "retrievedAt": "2026-11-21T16:50:50.124Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:184": {
   "providerKey": "bad-blue-boys:posts:184",
@@ -111,12 +123,14 @@
   "bytes": 3890,
   "publishedAsReported": "2011-02-12T00:45:19",
   "modifiedAsReported": "2011-12-22T23:04:50",
-  "retrievedAt": "2026-11-18T12:14:17.089Z",
+  "retrievedAt": "2026-11-21T16:50:50.125Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:198": {
   "providerKey": "bad-blue-boys:posts:198",
@@ -128,12 +142,14 @@
   "bytes": 455,
   "publishedAsReported": "2011-06-28T18:07:01",
   "modifiedAsReported": "2011-12-22T23:04:35",
-  "retrievedAt": "2026-11-18T12:14:17.089Z",
+  "retrievedAt": "2026-11-21T16:50:50.125Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:200": {
   "providerKey": "bad-blue-boys:posts:200",
@@ -145,12 +161,14 @@
   "bytes": 2612,
   "publishedAsReported": "2011-07-26T01:51:59",
   "modifiedAsReported": "2011-12-22T23:04:35",
-  "retrievedAt": "2026-11-18T12:14:17.089Z",
+  "retrievedAt": "2026-11-21T16:50:50.125Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:202": {
   "providerKey": "bad-blue-boys:posts:202",
@@ -162,12 +180,14 @@
   "bytes": 6281,
   "publishedAsReported": "2011-08-30T13:10:19",
   "modifiedAsReported": "2011-12-22T23:04:35",
-  "retrievedAt": "2026-11-18T12:14:17.089Z",
+  "retrievedAt": "2026-11-21T16:50:50.125Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:203": {
   "providerKey": "bad-blue-boys:posts:203",
@@ -179,12 +199,14 @@
   "bytes": 946,
   "publishedAsReported": "2011-09-05T13:37:00",
   "modifiedAsReported": "2011-12-22T23:04:35",
-  "retrievedAt": "2026-11-18T12:14:17.089Z",
+  "retrievedAt": "2026-11-21T16:50:50.125Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:204": {
   "providerKey": "bad-blue-boys:posts:204",
@@ -196,12 +218,14 @@
   "bytes": 825,
   "publishedAsReported": "2011-09-09T17:39:15",
   "modifiedAsReported": "2011-12-22T23:04:35",
-  "retrievedAt": "2026-11-18T12:14:17.089Z",
+  "retrievedAt": "2026-11-21T16:50:50.125Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:209": {
   "providerKey": "bad-blue-boys:posts:209",
@@ -213,12 +237,14 @@
   "bytes": 2766,
   "publishedAsReported": "2011-09-28T17:44:49",
   "modifiedAsReported": "2011-12-22T23:04:19",
-  "retrievedAt": "2026-11-18T12:14:17.089Z",
+  "retrievedAt": "2026-11-21T16:50:50.125Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:217": {
   "providerKey": "bad-blue-boys:posts:217",
@@ -230,12 +256,14 @@
   "bytes": 1323,
   "publishedAsReported": "2011-11-10T05:44:15",
   "modifiedAsReported": "2012-01-07T16:38:35",
-  "retrievedAt": "2026-11-18T12:14:17.089Z",
+  "retrievedAt": "2026-11-21T16:50:50.125Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:931": {
   "providerKey": "bad-blue-boys:posts:931",
@@ -247,12 +275,14 @@
   "bytes": 2073,
   "publishedAsReported": "2012-02-27T10:39:49",
   "modifiedAsReported": "2012-02-27T15:46:27",
-  "retrievedAt": "2026-11-18T12:14:17.089Z",
+  "retrievedAt": "2026-11-21T16:50:50.125Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:1009": {
   "providerKey": "bad-blue-boys:posts:1009",
@@ -264,12 +294,14 @@
   "bytes": 9218,
   "publishedAsReported": "2012-03-13T04:53:25",
   "modifiedAsReported": "2012-03-13T05:12:53",
-  "retrievedAt": "2026-11-18T12:14:17.089Z",
+  "retrievedAt": "2026-11-21T16:50:50.126Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:1035": {
   "providerKey": "bad-blue-boys:posts:1035",
@@ -281,12 +313,14 @@
   "bytes": 1503,
   "publishedAsReported": "2012-03-14T16:14:25",
   "modifiedAsReported": "2012-03-14T17:28:14",
-  "retrievedAt": "2026-11-18T12:14:17.089Z",
+  "retrievedAt": "2026-11-21T16:50:50.126Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:1232": {
   "providerKey": "bad-blue-boys:posts:1232",
@@ -298,12 +332,14 @@
   "bytes": 981,
   "publishedAsReported": "2012-04-13T20:16:09",
   "modifiedAsReported": "2012-04-13T20:49:23",
-  "retrievedAt": "2026-11-18T12:14:17.089Z",
+  "retrievedAt": "2026-11-21T16:50:50.126Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:1277": {
   "providerKey": "bad-blue-boys:posts:1277",
@@ -315,12 +351,14 @@
   "bytes": 393,
   "publishedAsReported": "2012-05-03T11:54:01",
   "modifiedAsReported": "2012-05-03T11:54:01",
-  "retrievedAt": "2026-11-18T12:14:17.089Z",
+  "retrievedAt": "2026-11-21T16:50:50.126Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:1444": {
   "providerKey": "bad-blue-boys:posts:1444",
@@ -332,12 +370,14 @@
   "bytes": 3746,
   "publishedAsReported": "2012-05-30T11:33:09",
   "modifiedAsReported": "2012-05-30T11:33:09",
-  "retrievedAt": "2026-11-18T12:14:17.089Z",
+  "retrievedAt": "2026-11-21T16:50:50.126Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:1540": {
   "providerKey": "bad-blue-boys:posts:1540",
@@ -349,12 +389,14 @@
   "bytes": 3397,
   "publishedAsReported": "2012-07-30T17:54:38",
   "modifiedAsReported": "2012-07-30T17:54:38",
-  "retrievedAt": "2026-11-18T12:14:17.089Z",
+  "retrievedAt": "2026-11-21T16:50:50.126Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:1723": {
   "providerKey": "bad-blue-boys:posts:1723",
@@ -366,12 +408,14 @@
   "bytes": 851,
   "publishedAsReported": "2012-09-14T10:45:12",
   "modifiedAsReported": "2012-09-14T10:46:22",
-  "retrievedAt": "2026-11-18T12:14:17.089Z",
+  "retrievedAt": "2026-11-21T16:50:50.126Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:1769": {
   "providerKey": "bad-blue-boys:posts:1769",
@@ -383,12 +427,14 @@
   "bytes": 1276,
   "publishedAsReported": "2012-09-19T13:09:44",
   "modifiedAsReported": "2012-09-19T13:21:49",
-  "retrievedAt": "2026-11-18T12:14:17.089Z",
+  "retrievedAt": "2026-11-21T16:50:50.126Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:1787": {
   "providerKey": "bad-blue-boys:posts:1787",
@@ -400,12 +446,14 @@
   "bytes": 12660,
   "publishedAsReported": "2012-09-20T07:58:43",
   "modifiedAsReported": "2014-01-22T15:39:59",
-  "retrievedAt": "2026-11-18T12:14:17.089Z",
+  "retrievedAt": "2026-11-21T16:50:50.126Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:1884": {
   "providerKey": "bad-blue-boys:posts:1884",
@@ -417,12 +465,14 @@
   "bytes": 56344,
   "publishedAsReported": "2012-10-08T10:19:37",
   "modifiedAsReported": "2014-01-22T15:37:34",
-  "retrievedAt": "2026-11-18T12:14:17.090Z",
+  "retrievedAt": "2026-11-21T16:50:50.127Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:1893": {
   "providerKey": "bad-blue-boys:posts:1893",
@@ -439,7 +489,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:1980": {
   "providerKey": "bad-blue-boys:posts:1980",
@@ -456,7 +508,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:2001": {
   "providerKey": "bad-blue-boys:posts:2001",
@@ -473,7 +527,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:2123": {
   "providerKey": "bad-blue-boys:posts:2123",
@@ -490,7 +546,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:2140": {
   "providerKey": "bad-blue-boys:posts:2140",
@@ -507,7 +565,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:2186": {
   "providerKey": "bad-blue-boys:posts:2186",
@@ -524,7 +584,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:2309": {
   "providerKey": "bad-blue-boys:posts:2309",
@@ -541,7 +603,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:2324": {
   "providerKey": "bad-blue-boys:posts:2324",
@@ -558,7 +622,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:2327": {
   "providerKey": "bad-blue-boys:posts:2327",
@@ -575,7 +641,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:2526": {
   "providerKey": "bad-blue-boys:posts:2526",
@@ -592,7 +660,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:2575": {
   "providerKey": "bad-blue-boys:posts:2575",
@@ -609,7 +679,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:2577": {
   "providerKey": "bad-blue-boys:posts:2577",
@@ -626,7 +698,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:2581": {
   "providerKey": "bad-blue-boys:posts:2581",
@@ -643,7 +717,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:2588": {
   "providerKey": "bad-blue-boys:posts:2588",
@@ -660,7 +736,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:2593": {
   "providerKey": "bad-blue-boys:posts:2593",
@@ -677,7 +755,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:2620": {
   "providerKey": "bad-blue-boys:posts:2620",
@@ -694,7 +774,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:2634": {
   "providerKey": "bad-blue-boys:posts:2634",
@@ -711,7 +793,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:2639": {
   "providerKey": "bad-blue-boys:posts:2639",
@@ -728,7 +812,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:2646": {
   "providerKey": "bad-blue-boys:posts:2646",
@@ -745,7 +831,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:2886": {
   "providerKey": "bad-blue-boys:posts:2886",
@@ -762,7 +850,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:3094": {
   "providerKey": "bad-blue-boys:posts:3094",
@@ -779,7 +869,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:3291": {
   "providerKey": "bad-blue-boys:posts:3291",
@@ -796,7 +888,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:3362": {
   "providerKey": "bad-blue-boys:posts:3362",
@@ -813,7 +907,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:3382": {
   "providerKey": "bad-blue-boys:posts:3382",
@@ -830,7 +926,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:3491": {
   "providerKey": "bad-blue-boys:posts:3491",
@@ -847,7 +945,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:3509": {
   "providerKey": "bad-blue-boys:posts:3509",
@@ -864,7 +964,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:3614": {
   "providerKey": "bad-blue-boys:posts:3614",
@@ -881,7 +983,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:3749": {
   "providerKey": "bad-blue-boys:posts:3749",
@@ -898,7 +1002,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:3786": {
   "providerKey": "bad-blue-boys:posts:3786",
@@ -915,7 +1021,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:3839": {
   "providerKey": "bad-blue-boys:posts:3839",
@@ -932,7 +1040,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:3982": {
   "providerKey": "bad-blue-boys:posts:3982",
@@ -949,7 +1059,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:4099": {
   "providerKey": "bad-blue-boys:posts:4099",
@@ -966,7 +1078,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:4153": {
   "providerKey": "bad-blue-boys:posts:4153",
@@ -983,7 +1097,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:4216": {
   "providerKey": "bad-blue-boys:posts:4216",
@@ -1000,7 +1116,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:4386": {
   "providerKey": "bad-blue-boys:posts:4386",
@@ -1017,7 +1135,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:4423": {
   "providerKey": "bad-blue-boys:posts:4423",
@@ -1034,7 +1154,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:4434": {
   "providerKey": "bad-blue-boys:posts:4434",
@@ -1051,7 +1173,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:4538": {
   "providerKey": "bad-blue-boys:posts:4538",
@@ -1068,7 +1192,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:4570": {
   "providerKey": "bad-blue-boys:posts:4570",
@@ -1085,7 +1211,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:4674": {
   "providerKey": "bad-blue-boys:posts:4674",
@@ -1102,7 +1230,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:4684": {
   "providerKey": "bad-blue-boys:posts:4684",
@@ -1119,7 +1249,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:4701": {
   "providerKey": "bad-blue-boys:posts:4701",
@@ -1136,7 +1268,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:4717": {
   "providerKey": "bad-blue-boys:posts:4717",
@@ -1153,7 +1287,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:4731": {
   "providerKey": "bad-blue-boys:posts:4731",
@@ -1170,7 +1306,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:4771": {
   "providerKey": "bad-blue-boys:posts:4771",
@@ -1187,7 +1325,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:4783": {
   "providerKey": "bad-blue-boys:posts:4783",
@@ -1204,7 +1344,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:4798": {
   "providerKey": "bad-blue-boys:posts:4798",
@@ -1221,7 +1363,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:4836": {
   "providerKey": "bad-blue-boys:posts:4836",
@@ -1238,7 +1382,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:4846": {
   "providerKey": "bad-blue-boys:posts:4846",
@@ -1255,7 +1401,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:4865": {
   "providerKey": "bad-blue-boys:posts:4865",
@@ -1272,7 +1420,9 @@
   "lastRunId": "2026-11-18T12-14-15-072Z-901ddb",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:pages:18": {
   "providerKey": "bad-blue-boys:pages:18",
@@ -1284,12 +1434,14 @@
   "bytes": 40,
   "publishedAsReported": "2011-10-21T22:46:39",
   "modifiedAsReported": "2011-12-23T15:18:04",
-  "retrievedAt": "2026-11-20T11:55:13.717Z",
+  "retrievedAt": "2026-11-21T16:50:54.422Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-20T11-55-08-988Z-c73920",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:pages:20": {
   "providerKey": "bad-blue-boys:pages:20",
@@ -1301,12 +1453,14 @@
   "bytes": 4653,
   "publishedAsReported": "2011-10-21T22:47:05",
   "modifiedAsReported": "2011-12-23T15:16:05",
-  "retrievedAt": "2026-11-20T11:55:13.717Z",
+  "retrievedAt": "2026-11-21T16:50:54.422Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-20T11-55-08-988Z-c73920",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:pages:22": {
   "providerKey": "bad-blue-boys:pages:22",
@@ -1318,12 +1472,14 @@
   "bytes": 441,
   "publishedAsReported": "2011-10-21T22:47:17",
   "modifiedAsReported": "2025-04-02T12:41:16",
-  "retrievedAt": "2026-11-20T11:55:13.717Z",
+  "retrievedAt": "2026-11-21T16:50:54.422Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-20T11-55-08-988Z-c73920",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:pages:24": {
   "providerKey": "bad-blue-boys:pages:24",
@@ -1335,12 +1491,14 @@
   "bytes": 24,
   "publishedAsReported": "2011-10-21T22:48:40",
   "modifiedAsReported": "2018-07-25T19:35:37",
-  "retrievedAt": "2026-11-20T11:55:13.717Z",
+  "retrievedAt": "2026-11-21T16:50:54.422Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-20T11-55-08-988Z-c73920",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:pages:26": {
   "providerKey": "bad-blue-boys:pages:26",
@@ -1352,12 +1510,14 @@
   "bytes": 30,
   "publishedAsReported": "2011-10-21T22:49:06",
   "modifiedAsReported": "2011-12-23T15:16:05",
-  "retrievedAt": "2026-11-20T11:55:13.717Z",
+  "retrievedAt": "2026-11-21T16:50:54.422Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-20T11-55-08-988Z-c73920",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:pages:28": {
   "providerKey": "bad-blue-boys:pages:28",
@@ -1369,12 +1529,14 @@
   "bytes": 27,
   "publishedAsReported": "2011-10-21T22:49:26",
   "modifiedAsReported": "2019-11-17T23:12:20",
-  "retrievedAt": "2026-11-20T11:55:13.717Z",
+  "retrievedAt": "2026-11-21T16:50:54.422Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-20T11-55-08-988Z-c73920",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:pages:1283": {
   "providerKey": "bad-blue-boys:pages:1283",
@@ -1386,29 +1548,33 @@
   "bytes": 6626,
   "publishedAsReported": "2012-05-03T21:24:52",
   "modifiedAsReported": "2012-05-09T19:28:56",
-  "retrievedAt": "2026-11-20T11:55:13.717Z",
+  "retrievedAt": "2026-11-21T16:50:54.422Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-20T11-55-08-988Z-c73920",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:pages:1696": {
   "providerKey": "bad-blue-boys:pages:1696",
   "providerId": "bad-blue-boys",
   "collection": "pages",
   "url": "https://www.badblueboys.hr/mamicu-odlazi/",
-  "title": "FELJTONKRONOLOGIJA JEDNOG LUDILA",
-  "contentHash": "b53b2337bb7e0c30e0fa18472c563f3074eed15d0b34dc12b4630d53c113c4d6",
+  "title": "FELJTON KRONOLOGIJA JEDNOG LUDILA",
+  "contentHash": "128973d2c857cae3d8c913acf45bd744c77a0f7206cb814b03962dc31857b7ae",
   "bytes": 1423,
   "publishedAsReported": "2012-09-13T16:23:46",
   "modifiedAsReported": "2012-09-13T19:05:57",
-  "retrievedAt": "2026-11-20T11:55:13.717Z",
+  "retrievedAt": "2026-11-21T16:50:54.422Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-20T11-55-08-988Z-c73920",
-  "changed": false,
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
+  "changed": true,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:pages:1727": {
   "providerKey": "bad-blue-boys:pages:1727",
@@ -1420,12 +1586,14 @@
   "bytes": 2171,
   "publishedAsReported": "2012-09-14T10:48:15",
   "modifiedAsReported": "2012-09-20T08:10:51",
-  "retrievedAt": "2026-11-20T11:55:13.717Z",
+  "retrievedAt": "2026-11-21T16:50:54.423Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-20T11-55-08-988Z-c73920",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:pages:1733": {
   "providerKey": "bad-blue-boys:pages:1733",
@@ -1437,12 +1605,14 @@
   "bytes": 3775,
   "publishedAsReported": "2012-09-14T10:52:25",
   "modifiedAsReported": "2012-09-14T10:52:56",
-  "retrievedAt": "2026-11-20T11:55:13.717Z",
+  "retrievedAt": "2026-11-21T16:50:54.423Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-20T11-55-08-988Z-c73920",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:pages:1811": {
   "providerKey": "bad-blue-boys:pages:1811",
@@ -1454,12 +1624,14 @@
   "bytes": 56599,
   "publishedAsReported": "2012-09-21T08:41:10",
   "modifiedAsReported": "2012-09-23T18:01:02",
-  "retrievedAt": "2026-11-20T11:55:13.717Z",
+  "retrievedAt": "2026-11-21T16:50:54.425Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-20T11-55-08-988Z-c73920",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:pages:1833": {
   "providerKey": "bad-blue-boys:pages:1833",
@@ -1471,12 +1643,14 @@
   "bytes": 1502,
   "publishedAsReported": "2012-09-21T09:06:48",
   "modifiedAsReported": "2012-09-21T09:07:12",
-  "retrievedAt": "2026-11-20T11:55:13.717Z",
+  "retrievedAt": "2026-11-21T16:50:54.426Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-20T11-55-08-988Z-c73920",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:pages:1905": {
   "providerKey": "bad-blue-boys:pages:1905",
@@ -1488,12 +1662,14 @@
   "bytes": 53084,
   "publishedAsReported": "2012-10-11T11:41:18",
   "modifiedAsReported": "2012-10-11T16:13:53",
-  "retrievedAt": "2026-11-20T11:55:13.717Z",
+  "retrievedAt": "2026-11-21T16:50:54.427Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-20T11-55-08-988Z-c73920",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:pages:4073": {
   "providerKey": "bad-blue-boys:pages:4073",
@@ -1505,12 +1681,14 @@
   "bytes": 16,
   "publishedAsReported": "2018-02-08T12:31:29",
   "modifiedAsReported": "2018-02-08T12:53:49",
-  "retrievedAt": "2026-11-20T11:55:13.717Z",
+  "retrievedAt": "2026-11-21T16:50:54.427Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-20T11-55-08-988Z-c73920",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:pages:4082": {
   "providerKey": "bad-blue-boys:pages:4082",
@@ -1522,12 +1700,14 @@
   "bytes": 0,
   "publishedAsReported": "2018-02-08T12:55:52",
   "modifiedAsReported": "2018-02-08T12:55:52",
-  "retrievedAt": "2026-11-20T11:55:13.717Z",
+  "retrievedAt": "2026-11-21T16:50:54.427Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-20T11-55-08-988Z-c73920",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "needs-parser",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:pages:4084": {
   "providerKey": "bad-blue-boys:pages:4084",
@@ -1539,12 +1719,14 @@
   "bytes": 0,
   "publishedAsReported": "2018-02-08T12:56:15",
   "modifiedAsReported": "2018-02-08T12:56:15",
-  "retrievedAt": "2026-11-20T11:55:13.718Z",
+  "retrievedAt": "2026-11-21T16:50:54.427Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-20T11-55-08-988Z-c73920",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "needs-parser",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:pages:4690": {
   "providerKey": "bad-blue-boys:pages:4690",
@@ -1556,12 +1738,14 @@
   "bytes": 27,
   "publishedAsReported": "2019-11-17T23:53:08",
   "modifiedAsReported": "2019-11-17T23:53:08",
-  "retrievedAt": "2026-11-20T11:55:13.718Z",
+  "retrievedAt": "2026-11-21T16:50:54.427Z",
   "firstRunId": "2026-10-07T04-52-27-676Z-73e8c3",
-  "lastRunId": "2026-11-20T11-55-08-988Z-c73920",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "hns-semafor:html:/klubovi/609/gnk-dinamo/": {
   "providerKey": "hns-semafor:html:/klubovi/609/gnk-dinamo/",
@@ -1586,16 +1770,17 @@
   "collection": "html",
   "url": "https://en.wikipedia.org/wiki/Dinamo_Zagreb_records_and_statistics",
   "title": "Dinamo Zagreb records and statistics - Wikipedia",
-  "contentHash": "008e09daa54afc43f29dfeb4bb2b42ff48a0acf27d2d0f008c30be0c9bb6a70e",
-  "bytes": 384658,
+  "contentHash": "7184dda506b13a04365d7c208b65cd050a0afc5437ba5dc5bf38d4310c23f134",
+  "bytes": 385019,
   "publishedAsReported": null,
   "modifiedAsReported": "Tue, 17 Nov 2026 20:04:19 GMT",
-  "retrievedAt": "2026-11-20T11:55:13.807Z",
+  "retrievedAt": "2026-11-21T16:50:56.397Z",
   "firstRunId": "2026-10-13T10-47-45-142Z-d1f940",
-  "lastRunId": "2026-11-20T11-55-08-988Z-c73920",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": true,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "needs-parser",
+  "category": "results"
  },
  "nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html": {
   "providerKey": "nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html",
@@ -1603,16 +1788,18 @@
   "collection": "html",
   "url": "https://www.national-football-teams.com/club/504/1953/Dinamo_Zagreb.html",
   "title": "Dinamo Zagreb (1953/54) | National Football Teams",
-  "contentHash": "e1952b67d6c0013b2eccfa43115886f777d34a3fa7b91e60316781d136b03d94",
-  "bytes": 106016,
+  "contentHash": "6f6837676270fc98844d67508c8d4fd2880f23008b3c4c77ac117e8d480d39f6",
+  "bytes": 106007,
   "publishedAsReported": null,
   "modifiedAsReported": null,
-  "retrievedAt": "2026-11-20T11:55:14.561Z",
+  "retrievedAt": "2026-11-21T16:51:02.196Z",
   "firstRunId": "2026-10-13T10-47-45-142Z-d1f940",
-  "lastRunId": "2026-11-20T11-55-08-988Z-c73920",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
   "changed": true,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "parsed",
+  "category": "people",
+  "parserVersion": "national-football-teams-squad-v1"
  },
  "bad-blue-boys:posts:4940": {
   "providerKey": "bad-blue-boys:posts:4940",
@@ -1629,7 +1816,9 @@
   "lastRunId": "2026-11-20T11-55-08-988Z-c73920",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:4947": {
   "providerKey": "bad-blue-boys:posts:4947",
@@ -1646,7 +1835,9 @@
   "lastRunId": "2026-11-20T11-55-08-988Z-c73920",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:5055": {
   "providerKey": "bad-blue-boys:posts:5055",
@@ -1663,7 +1854,9 @@
   "lastRunId": "2026-11-20T11-55-08-988Z-c73920",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
  },
  "bad-blue-boys:posts:5072": {
   "providerKey": "bad-blue-boys:posts:5072",
@@ -1680,6 +1873,27 @@
   "lastRunId": "2026-11-20T11-55-08-988Z-c73920",
   "changed": false,
   "snapshot": null,
-  "parse": "needs-parser"
+  "parse": "catalogued",
+  "category": "fan-culture",
+  "parserVersion": "editorial-catalogue-v1"
+ },
+ "dinamo-official:html:/hr/klub/povijest": {
+  "providerKey": "dinamo-official:html:/hr/klub/povijest",
+  "providerId": "dinamo-official",
+  "collection": "html",
+  "url": "https://gnkdinamo.hr/hr/klub/povijest",
+  "title": "Dinamo Zagreb",
+  "contentHash": "0704b0e0e4418a519472f1fff472ec6fd53b6eb4e76669f6a8c1c63a30c36777",
+  "bytes": 367727,
+  "publishedAsReported": null,
+  "modifiedAsReported": null,
+  "retrievedAt": "2026-11-21T16:50:39.210Z",
+  "firstRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
+  "lastRunId": "2026-11-21T16-50-21-284Z-9e7c2b",
+  "changed": false,
+  "snapshot": null,
+  "parse": "catalogued",
+  "category": "club-history",
+  "parserVersion": "editorial-catalogue-v1"
  }
 }

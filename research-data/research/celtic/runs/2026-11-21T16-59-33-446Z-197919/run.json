@@ -1,0 +1,37 @@
+{
+ "schemaVersion": 1,
+ "id": "2026-11-21T16-59-33-446Z-197919",
+ "clubId": "celtic",
+ "startedAt": "2026-11-21T16:59:33.447Z",
+ "finishedAt": "2026-11-21T16:59:42.295Z",
+ "providers": [
+  "thecelticwiki"
+ ],
+ "state": "partial_budget",
+ "counts": {
+  "requests": 3,
+  "documentsRead": 235,
+  "newDocuments": 0,
+  "changedDocuments": 25,
+  "unchangedDocuments": 210,
+  "recordsExtracted": 1,
+  "blockedEndpoints": 0,
+  "budgetLeft": 0
+ },
+ "diagnostics": [
+  {
+   "code": "FINGERPRINT_CHANGED",
+   "providerId": "thecelticwiki",
+   "url": null,
+   "message": "pages: the listing definition changed — starting again from page 1."
+  },
+  {
+   "code": "BUDGET_EXHAUSTED",
+   "providerId": "*",
+   "url": null,
+   "message": "Budget used; the next run resumes from the checkpoint."
+  }
+ ],
+ "completeArchiveClaim": false,
+ "approvedForProduction": 0
+}

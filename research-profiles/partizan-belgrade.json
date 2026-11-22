@@ -56,7 +56,7 @@
    "allowedPathPrefixes": [
     "/wp-json/wp/v2/"
    ],
-   "parserId": "cbn-history-v1",
+   "parserId": "editorial-catalogue-v1",
    "budget": {
     "perPage": 25,
     "maxRequests": 10,
@@ -87,7 +87,7 @@
    "allowedPathPrefixes": [
     "/vesti/istorijat"
    ],
-   "parserId": null,
+   "parserId": "editorial-catalogue-v1",
    "budget": {
     "perPage": 1,
     "maxRequests": 10,
@@ -115,7 +115,7 @@
    "allowedPathPrefixes": [
     "/club/2156/"
    ],
-   "parserId": null,
+   "parserId": "national-football-teams-squad-v1",
    "budget": {
     "perPage": 1,
     "maxRequests": 12,

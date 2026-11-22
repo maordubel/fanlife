@@ -8,13 +8,13 @@
   "sourceFamilyId": "immer-unioner",
   "scope": "mixed",
   "access": "available",
-  "checkedAt": "2026-11-20",
-  "retrievedAt": "2026-11-20T11:56:23.597Z",
+  "checkedAt": "2026-11-22",
+  "retrievedAt": "2026-11-22T03:42:39.648Z",
   "collected": {
    "documents": 141,
-   "observedTotalDocuments": 833,
+   "observedTotalDocuments": 141,
    "state": "partial_budget",
-   "parser": null
+   "parser": "immerunioner-v1"
   },
   "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
   "imagesUsableInApp": false,
@@ -29,13 +29,13 @@
   "sourceFamilyId": "union-institutional",
   "scope": "results",
   "access": "available",
-  "checkedAt": "2026-11-20",
-  "retrievedAt": "2026-11-20T11:56:23.597Z",
+  "checkedAt": "2026-11-22",
+  "retrievedAt": "2026-11-22T03:42:39.648Z",
   "collected": {
    "documents": 1,
    "observedTotalDocuments": 1,
    "state": "listed",
-   "parser": null
+   "parser": "union-official-seasons-v1"
   },
   "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
   "imagesUsableInApp": false,
@@ -43,20 +43,20 @@
  },
  {
   "id": "collector-dfb-union-html",
-  "title": "Deutscher Fußball-Bund — pages (people)",
+  "title": "Deutscher Fußball-Bund — pages (results)",
   "url": "https://datencenter.dfb.de/en/clubs/1-fc-union-berlin",
   "providerId": "dfb-union",
   "publisher": "Deutscher Fußball-Bund",
   "sourceFamilyId": "dfb-datacenter",
-  "scope": "people",
+  "scope": "results",
   "access": "available",
-  "checkedAt": "2026-11-20",
-  "retrievedAt": "2026-11-20T11:56:23.597Z",
+  "checkedAt": "2026-11-22",
+  "retrievedAt": "2026-11-22T03:42:39.648Z",
   "collected": {
    "documents": 1,
    "observedTotalDocuments": 1,
-   "state": "retry-later",
-   "parser": null
+   "state": "listed",
+   "parser": "dfb-club-results-v1"
   },
   "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
   "imagesUsableInApp": false,
@@ -71,13 +71,79 @@
   "sourceFamilyId": "footballhistory-org",
   "scope": "club-history",
   "access": "available",
-  "checkedAt": "2026-11-20",
-  "retrievedAt": "2026-11-20T11:56:23.597Z",
+  "checkedAt": "2026-11-22",
+  "retrievedAt": "2026-11-22T03:42:39.648Z",
   "collected": {
    "documents": 1,
    "observedTotalDocuments": 1,
    "state": "listed",
-   "parser": null
+   "parser": "editorial-catalogue-v1"
+  },
+  "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
+  "imagesUsableInApp": false,
+  "reviewed": false
+ },
+ {
+  "id": "document-03c8068d11b3c912b4f8d6c9",
+  "title": "Lutz Hendel",
+  "url": "https://www.immerunioner.de/spieler.php?getid=84",
+  "providerId": "immer-unioner",
+  "publisher": "Immer Unioner",
+  "sourceFamilyId": "immer-unioner",
+  "scope": "mixed",
+  "access": "available",
+  "checkedAt": "2026-11-21",
+  "retrievedAt": "2026-11-21",
+  "documentHash": "8e83ccf5503892a023b782ca6d98ef878e82e5d109b951d49da93eb820f011b5",
+  "collected": {
+   "documents": 1,
+   "observedTotalDocuments": 1,
+   "state": "parsed",
+   "parser": "immerunioner-v1"
+  },
+  "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
+  "imagesUsableInApp": false,
+  "reviewed": false
+ },
+ {
+  "id": "document-fe34fcf4f139aab0626afe4c",
+  "title": "2004/05",
+  "url": "https://www.fc-union-berlin.de/de/fussball/profis-maenner/saisonarchiv-maenner-kOKT?league=01938ba8-e83f-7ac5-a848-1ca5c29f77b9&season=01938ba9-27c0-731d-a3fd-c36f0ec9ddb0",
+  "providerId": "union-official",
+  "publisher": "1. FC Union Berlin",
+  "sourceFamilyId": "union-institutional",
+  "scope": "results",
+  "access": "available",
+  "checkedAt": "2026-11-21",
+  "retrievedAt": "2026-11-21",
+  "documentHash": "5890f72d7f6f6a00d6654170ddac72334e4804db12d42bfb9e3d7d1f29aa1603",
+  "collected": {
+   "documents": 1,
+   "observedTotalDocuments": 1,
+   "state": "parsed",
+   "parser": "union-official-seasons-v1"
+  },
+  "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
+  "imagesUsableInApp": false,
+  "reviewed": false
+ },
+ {
+  "id": "document-9195ea6f38f2f8a40d7f794e",
+  "title": "SC Freiburg v 1. FC Union Berlin",
+  "url": "https://datencenter.dfb.de/en/clubs/1-fc-union-berlin",
+  "providerId": "dfb-union",
+  "publisher": "Deutscher Fußball-Bund",
+  "sourceFamilyId": "dfb-datacenter",
+  "scope": "results",
+  "access": "available",
+  "checkedAt": "2026-11-22",
+  "retrievedAt": "2026-11-22",
+  "documentHash": "12d243a87ef46aaa60c82ae06206b5010a07836f15d5131cf9b8eda1b5e83e9c",
+  "collected": {
+   "documents": 1,
+   "observedTotalDocuments": 1,
+   "state": "parsed",
+   "parser": "dfb-club-results-v1"
   },
   "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
   "imagesUsableInApp": false,

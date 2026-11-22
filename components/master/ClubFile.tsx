@@ -80,6 +80,15 @@ function Decisions({club,api,onChange}:{club:Omit<Club,'sources'|'findings'>;api
   {data?.rows.length===0&&<p className="empty">{state==='pending'?'Nothing is waiting for you here.':'Nothing here.'}</p>}
   {data?.rows.map(row=>'field' in row?<article className="source cr-q" key={row.id}>
     <p className="cr-q-ask">{row.decision?<span className="badge">{row.decision==='approved'?'Yes':row.decision==='rejected'?'No':'Later'}</span>:null}Is this right? <b>{row.field}</b>: <span dir="auto">{row.value}</span></p>
+    {row.archiveLink&&<p className="muted">{row.archiveLink.state==='linked'?<>Linked archive record <code>{row.archiveLink.canonicalId}</code></>:row.archiveLink.state==='ambiguous'?'Several archive records match. Identity needs review.':'Archive link pending.'}</p>}
+    {!!row.record?.seasonStats?.length&&<details><summary>Season appearances and goals</summary>
+     <ul>{row.record.seasonStats.map((stat,i)=><li key={i}>{stat.season} · {stat.competition} · {stat.appearances} apps · {stat.goals??'—'} goals</li>)}</ul>
+    </details>}
+    {row.archiveMatch&&(row.archiveMatch.season||row.archiveMatch.lineup?.length||row.archiveMatch.scorers?.length)?<details><summary>Match details</summary>
+     {row.archiveMatch.season&&<p>Season {row.archiveMatch.season}</p>}
+     {!!row.archiveMatch.lineup?.length&&<p><b>Club starting XI</b> · {row.archiveMatch.lineup.join(', ')}</p>}
+     {!!row.archiveMatch.scorers?.length&&<p><b>Club scorers</b> · {row.archiveMatch.scorers.map(g=>g.minute?`${g.name} ${g.minute}′`:g.name).join(', ')}</p>}
+    </details>:null}
     <p className="cr-q-from">From: {row.sources.map((id,i)=>{const s=info[id];return <span key={id}>{i>0?' · ':''}{s?<><a href={s.url} target="_blank" rel="noreferrer">{s.title} ↗</a>{s.changed?' (changed — check the new copy under Pages)':s.reviewed?' (checked)':' (not checked yet)'}</>:<code>{id}</code>}</span>})}</p>
     {row.reason&&row.decision!=='approved'&&<p className="muted">Note: {row.reason}</p>}
     {!row.decision&&<div className="cr-decide"><button className="min-h-tap button" disabled={api.busy} onClick={()=>decide(row.id!,'approved','finding')}>Yes</button><button className="min-h-tap button secondary" disabled={api.busy} onClick={()=>decide(row.id!,'rejected','finding')}>No</button><button className="min-h-tap" disabled={api.busy} onClick={()=>decide(row.id!,'deferred','finding')}>Later</button></div>}

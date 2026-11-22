@@ -7,14 +7,14 @@
     "collection": "html",
     "state": "partial_budget",
     "pagesRead": 0,
-    "observedTotalDocuments": 833,
+    "observedTotalDocuments": 141,
     "observedTotalPages": null,
-    "queue": 692,
+    "queue": 137,
     "lastError": null
    }
   ],
   "documents": 141,
-  "historicalRecordsExtracted": 0,
+  "historicalRecordsExtracted": 1,
   "seasonReviews": [],
   "note": "Documents read is not historical coverage. Records extracted are candidates for review, not facts."
  },
@@ -33,26 +33,28 @@
    }
   ],
   "documents": 1,
-  "historicalRecordsExtracted": 0,
-  "seasonReviews": [],
+  "historicalRecordsExtracted": 1,
+  "seasonReviews": [
+   "2004/05"
+  ],
   "note": "Documents read is not historical coverage. Records extracted are candidates for review, not facts."
  },
  {
   "providerId": "dfb-union",
-  "role": "people",
+  "role": "results",
   "listings": [
    {
     "collection": "html",
-    "state": "retry-later",
+    "state": "listed",
     "pagesRead": 0,
     "observedTotalDocuments": 1,
     "observedTotalPages": null,
     "queue": 0,
-    "lastError": "HTTP 500"
+    "lastError": null
    }
   ],
   "documents": 1,
-  "historicalRecordsExtracted": 0,
+  "historicalRecordsExtracted": 3,
   "seasonReviews": [],
   "note": "Documents read is not historical coverage. Records extracted are candidates for review, not facts."
  },

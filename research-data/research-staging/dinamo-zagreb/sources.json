@@ -1,5 +1,26 @@
 [
  {
+  "id": "collector-dinamo-official-html",
+  "title": "GNK Dinamo Zagreb — pages (club-history)",
+  "url": "https://gnkdinamo.hr/hr/klub/povijest",
+  "providerId": "dinamo-official",
+  "publisher": "GNK Dinamo Zagreb",
+  "sourceFamilyId": "dinamo-institutional",
+  "scope": "club-history",
+  "access": "available",
+  "checkedAt": "2026-11-21",
+  "retrievedAt": "2026-11-21T16:51:04.351Z",
+  "collected": {
+   "documents": 1,
+   "observedTotalDocuments": 3,
+   "state": "partial_budget",
+   "parser": "editorial-catalogue-v1"
+  },
+  "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
+  "imagesUsableInApp": false,
+  "reviewed": false
+ },
+ {
   "id": "collector-bad-blue-boys-posts",
   "title": "Bad Blue Boys — posts (fan-culture)",
   "url": "https://www.badblueboys.hr/wp-json/wp/v2/posts",
@@ -8,13 +29,13 @@
   "sourceFamilyId": "bbb-zagreb",
   "scope": "fan-culture",
   "access": "available",
-  "checkedAt": "2026-11-20",
-  "retrievedAt": "2026-11-20T11:55:14.568Z",
+  "checkedAt": "2026-11-21",
+  "retrievedAt": "2026-11-21T16:51:04.351Z",
   "collected": {
    "documents": 96,
    "observedTotalDocuments": 79,
-   "state": "listed",
-   "parser": null
+   "state": "partial_budget",
+   "parser": "editorial-catalogue-v1"
   },
   "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
   "imagesUsableInApp": false,
@@ -29,13 +50,13 @@
   "sourceFamilyId": "bbb-zagreb",
   "scope": "fan-culture",
   "access": "available",
-  "checkedAt": "2026-11-20",
-  "retrievedAt": "2026-11-20T11:55:14.568Z",
+  "checkedAt": "2026-11-21",
+  "retrievedAt": "2026-11-21T16:51:04.351Z",
   "collected": {
    "documents": 96,
    "observedTotalDocuments": 17,
-   "state": "listed",
-   "parser": null
+   "state": "partial_budget",
+   "parser": "editorial-catalogue-v1"
   },
   "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
   "imagesUsableInApp": false,
@@ -50,8 +71,8 @@
   "sourceFamilyId": "hns",
   "scope": "results",
   "access": "available",
-  "checkedAt": "2026-11-20",
-  "retrievedAt": "2026-11-20T11:55:14.568Z",
+  "checkedAt": "2026-11-21",
+  "retrievedAt": "2026-11-21T16:51:04.351Z",
   "collected": {
    "documents": 1,
    "observedTotalDocuments": 1,
@@ -71,8 +92,8 @@
   "sourceFamilyId": "wikimedia",
   "scope": "results",
   "access": "available",
-  "checkedAt": "2026-11-20",
-  "retrievedAt": "2026-11-20T11:55:14.568Z",
+  "checkedAt": "2026-11-21",
+  "retrievedAt": "2026-11-21T16:51:04.351Z",
   "collected": {
    "documents": 1,
    "observedTotalDocuments": 1,
@@ -92,13 +113,35 @@
   "sourceFamilyId": "national-football-teams",
   "scope": "people",
   "access": "available",
-  "checkedAt": "2026-11-20",
-  "retrievedAt": "2026-11-20T11:55:14.568Z",
+  "checkedAt": "2026-11-21",
+  "retrievedAt": "2026-11-21T16:51:04.351Z",
   "collected": {
    "documents": 1,
    "observedTotalDocuments": 1,
    "state": "listed",
-   "parser": null
+   "parser": "national-football-teams-squad-v1"
+  },
+  "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
+  "imagesUsableInApp": false,
+  "reviewed": false
+ },
+ {
+  "id": "document-6e5e43f55a8c30ecc74e39a4",
+  "title": "Kralj, Branko",
+  "url": "https://www.national-football-teams.com/club/504/1953/Dinamo_Zagreb.html",
+  "providerId": "nft-dinamo",
+  "publisher": "National Football Teams",
+  "sourceFamilyId": "national-football-teams",
+  "scope": "people",
+  "access": "available",
+  "checkedAt": "2026-11-21",
+  "retrievedAt": "2026-11-21",
+  "documentHash": "6f6837676270fc98844d67508c8d4fd2880f23008b3c4c77ac117e8d480d39f6",
+  "collected": {
+   "documents": 1,
+   "observedTotalDocuments": 1,
+   "state": "parsed",
+   "parser": "national-football-teams-squad-v1"
   },
   "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
   "imagesUsableInApp": false,

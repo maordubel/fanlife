@@ -8,13 +8,13 @@
   "sourceFamilyId": "paopedia-editorial",
   "scope": "mixed",
   "access": "available",
-  "checkedAt": "2026-11-20",
-  "retrievedAt": "2026-11-20T11:55:32.627Z",
+  "checkedAt": "2026-11-21",
+  "retrievedAt": "2026-11-21T16:51:01.995Z",
   "collected": {
    "documents": 33,
    "observedTotalDocuments": 33,
-   "state": "listed",
-   "parser": null
+   "state": "partial_budget",
+   "parser": "editorial-catalogue-v1"
   },
   "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
   "imagesUsableInApp": false,
@@ -29,13 +29,13 @@
   "sourceFamilyId": "panathinaikos-institutional",
   "scope": "club-history",
   "access": "available",
-  "checkedAt": "2026-11-20",
-  "retrievedAt": "2026-11-20T11:55:32.627Z",
+  "checkedAt": "2026-11-21",
+  "retrievedAt": "2026-11-21T16:51:01.995Z",
   "collected": {
    "documents": 11,
    "observedTotalDocuments": 11,
    "state": "partial_budget",
-   "parser": null
+   "parser": "editorial-catalogue-v1"
   },
   "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
   "imagesUsableInApp": false,
@@ -50,8 +50,8 @@
   "sourceFamilyId": "rsssf",
   "scope": "results",
   "access": "available",
-  "checkedAt": "2026-11-20",
-  "retrievedAt": "2026-11-20T11:55:32.627Z",
+  "checkedAt": "2026-11-21",
+  "retrievedAt": "2026-11-21T16:51:01.995Z",
   "collected": {
    "documents": 5,
    "observedTotalDocuments": 5,

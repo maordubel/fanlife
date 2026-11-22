@@ -1,0 +1,6 @@
+{"code":"FINGERPRINT_CHANGED","providerId":"partizanopedia","url":null,"message":"html: seeds or follow rule changed — starting again."}
+{"code":"FINGERPRINT_CHANGED","providerId":"crno-bela-nostalgija","url":null,"message":"posts: the listing definition changed — starting again from page 1."}
+{"code":"FINGERPRINT_CHANGED","providerId":"crno-bela-nostalgija","url":null,"message":"pages: the listing definition changed — starting again from page 1."}
+{"code":"FINGERPRINT_CHANGED","providerId":"partizan-official","url":null,"message":"html: seeds or follow rule changed — starting again."}
+{"code":"FINGERPRINT_CHANGED","providerId":"nft-partizan","url":null,"message":"html: seeds or follow rule changed — starting again."}
+{"code":"BUDGET_EXHAUSTED","providerId":"*","url":null,"message":"Budget used; the next run resumes from the checkpoint."}

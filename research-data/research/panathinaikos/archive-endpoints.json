@@ -5,7 +5,7 @@
   "state": "schema-changed",
   "status": 200,
   "reason": "rows lack id/link",
-  "checkedAt": "2026-11-20T11:55:26.801Z"
+  "checkedAt": "2026-11-21T16:50:43.671Z"
  },
  "paopedia:/wp-json/wp/v2/pages": {
   "endpoint": "/wp-json/wp/v2/pages",
@@ -13,7 +13,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-11-20T11:55:32.620Z"
+  "checkedAt": "2026-11-21T16:50:52.060Z"
  },
  "pao-official-history:/en/history/": {
   "endpoint": "/en/history/",
@@ -21,7 +21,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-13T10:48:14.949Z"
+  "checkedAt": "2026-11-21T16:51:00.529Z"
  },
  "pao-official-history:/en/history/championships/": {
   "endpoint": "/en/history/championships/",

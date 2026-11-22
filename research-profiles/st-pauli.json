@@ -24,7 +24,7 @@
       "allowedPathPrefixes": [
         "/wp-json/wp/v2/"
       ],
-      "parserId": "millernton-stats-v1",
+      "parserId": "editorial-catalogue-v1",
       "budget": {
         "perPage": 25,
         "maxRequests": 10,
@@ -56,7 +56,7 @@
       "allowedPathPrefixes": [
         "/wp-json/wp/v2/"
       ],
-      "parserId": "stpauli-museum-v1",
+      "parserId": "editorial-catalogue-v1",
       "budget": {
         "perPage": 25,
         "maxRequests": 10,

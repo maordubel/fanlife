@@ -28,6 +28,7 @@ export type ResearchJob={
  priority:number;requestedFields:string[];subjects:string[]
  state:JobState;attempts:number;nextAttemptAt:string|null;lease:string|null;leaseUntil:string|null
  snapshot:string|null;error:string|null;updatedAt:string
+ observations?:import('./parsers').Observation[]
 }
 export type SnapshotMeta={hash:string;url:string;fetchedAt:string;status:number;contentType:string|null;bytes:number;etag:string|null;lastModified:string|null}
 
@@ -65,7 +66,8 @@ export type ArchiveDoc={
  providerKey:string;providerId:string;collection:string;url:string;title:string|null;contentHash:string;bytes:number
  /** publication metadata — NEVER the date of the event a page describes */
  publishedAsReported:string|null;modifiedAsReported:string|null;retrievedAt:string
- firstRunId:string;lastRunId:string;changed:boolean;snapshot:string|null;parse:'needs-parser'|'parsed'
+ firstRunId:string;lastRunId:string;changed:boolean;snapshot:string|null;parse:'needs-parser'|'parsed'|'catalogued'
+ category?:import('./archive-readers').DocumentCategory;parserVersion?:string
 }
 export type CheckpointState='new'|'running'|'partial_budget'|'listed'|'blocked'|'not-json'|'schema-changed'|'retry-later'
 export type ArchiveCheckpoint={
@@ -73,6 +75,7 @@ export type ArchiveCheckpoint={
  nextPage:number;lastCommittedPage:number;observedTotalDocuments:number|null;observedTotalPages:number|null;perPage:number
  /** html only: discovered paths still to read, and paths already read */
  queue?:string[];seen?:string[]
+ backfillMissing?:string[]
  state:CheckpointState;updatedAt:string;lastError:string|null
 }
 export type EndpointStatus={endpoint:string;providerId:string;state:'ok'|'blocked'|'not-found'|'not-json'|'schema-changed'|'retry-later'|'error';status:number;reason:string|null;checkedAt:string}

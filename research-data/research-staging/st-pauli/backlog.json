@@ -1,17 +1,17 @@
 [
  {
-  "id": "parser-millernton",
-  "priority": "P1",
-  "task": "Write and test the millernton-stats-v1 against stored fixtures (season, person, match pages) before anything is extracted from MillernTon.",
-  "taskHe": "לכתוב parser ל-MillernTon מול fixtures שמורים (עונה, אדם, משחק) לפני שמחלצים ממנו משהו.",
+  "id": "continue-millernton-posts",
+  "priority": "P3",
+  "task": "MillernTon posts: 1 page(s) read of 180; the scheduled task continues from the checkpoint.",
+  "taskHe": "MillernTon posts: נקראו 1 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
   "status": "queued",
   "owner": null
  },
  {
-  "id": "continue-millernton-posts",
+  "id": "continue-millernton-pages",
   "priority": "P3",
-  "task": "MillernTon posts: 141 page(s) read of 180; the scheduled task continues from the checkpoint.",
-  "taskHe": "MillernTon posts: נקראו 141 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
+  "task": "MillernTon pages: 1 page(s) read of 1; the scheduled task continues from the checkpoint.",
+  "taskHe": "MillernTon pages: נקראו 1 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
   "status": "queued",
   "owner": null
  },
@@ -32,10 +32,18 @@
   "owner": null
  },
  {
-  "id": "parser-fcstpauli-museum",
-  "priority": "P1",
-  "task": "Write and test the stpauli-museum-v1 against stored fixtures (season, person, match pages) before anything is extracted from FC St. Pauli Museum.",
-  "taskHe": "לכתוב parser ל-FC St. Pauli Museum מול fixtures שמורים (עונה, אדם, משחק) לפני שמחלצים ממנו משהו.",
+  "id": "continue-fcstpauli-museum-posts",
+  "priority": "P3",
+  "task": "FC St. Pauli Museum posts: 1 page(s) read of 2; the scheduled task continues from the checkpoint.",
+  "taskHe": "FC St. Pauli Museum posts: נקראו 1 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
+  "status": "queued",
+  "owner": null
+ },
+ {
+  "id": "continue-fcstpauli-museum-pages",
+  "priority": "P3",
+  "task": "FC St. Pauli Museum pages: 1 page(s) read of 2; the scheduled task continues from the checkpoint.",
+  "taskHe": "FC St. Pauli Museum pages: נקראו 1 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
   "status": "queued",
   "owner": null
  },

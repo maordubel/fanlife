@@ -28,11 +28,11 @@ export const upsertJobs=(club:string,jobs:ResearchJob[])=>serial(async()=>{const
 export const appendRun=(club:string,run:ResearchRun)=>serial(async()=>{const runs=await readRunsFor(club);await writeJson(path.join(dir(club),'runs.json'),[...runs,run].slice(-200));return run})
 
 /** Lease up to n due jobs (planned, or failed-with-retry whose time has come, or leases that expired). */
-export const lease=(club:string,n:number,now:Date,ttlMs=120000)=>serial(async()=>{
+export const lease=(club:string,n:number,now:Date,ttlMs=120000,canReplay:(job:ResearchJob)=>boolean=()=>false)=>serial(async()=>{
  const jobs=await readJobs(club),t=now.getTime(),out:ResearchJob[]=[]
  for(const j of [...jobs].sort((a,b)=>b.priority-a.priority||a.id.localeCompare(b.id))){
   if(out.length>=n)break
-  const due=j.state==='planned'||(j.state==='failed'&&j.nextAttemptAt!==null&&Date.parse(j.nextAttemptAt)<=t)||(j.state==='leased'&&j.leaseUntil!==null&&Date.parse(j.leaseUntil)<=t)
+  const due=j.state==='planned'||(j.state==='needs-adapter'&&canReplay(j))||(j.state==='failed'&&j.nextAttemptAt!==null&&Date.parse(j.nextAttemptAt)<=t)||(j.state==='leased'&&j.leaseUntil!==null&&Date.parse(j.leaseUntil)<=t)
   if(!due)continue
   j.state='leased';j.lease=randomUUID();j.leaseUntil=new Date(t+ttlMs).toISOString();j.attempts++;j.updatedAt=now.toISOString();out.push({...j})
  }
@@ -46,3 +46,7 @@ export const saveSnapshot=(club:string,meta:SnapshotMeta,body:Buffer)=>serial(as
  const index=await readSnapshots(club),file=path.join(dir(club),'snapshots',`${meta.hash}.bin`)
  await mkdir(path.dirname(file),{recursive:true});try{await readFile(file)}catch{await writeFile(file,body)}
  index[meta.url]=meta;await writeJson(path.join(dir(club),'snapshots.json'),index);return meta})
+export async function readSnapshotBody(club:string,hash:string|null):Promise<Buffer|null>{
+ if(!hash||!/^[a-f0-9]{64}$/.test(hash))return null
+ try{return await readFile(path.join(dir(club),'snapshots',`${hash}.bin`))}catch(e){if((e as NodeJS.ErrnoException).code==='ENOENT')return null;throw e}
+}

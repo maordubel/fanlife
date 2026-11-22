@@ -28,7 +28,8 @@ const sourceKey=(id:string)=>`s-${hash(id)}`
 const publisherOf=(url:string)=>{try{return new URL(url).hostname.replace(/^www\./,'')}catch{return 'unknown'}}
 
 /** A finding the owner approved that a game can use: an approved player record whose every source is reviewed and unchanged. */
-export function usable(c:Pick<Club,'sources'>,f:Finding){return f.decision==='approved'&&f.record?.kind==='player'&&!!f.record.name&&f.sources.length>0&&f.sources.every(id=>c.sources.some(s=>s.id===id&&s.reviewed&&!s.incoming))}
+export function usable(c:Pick<Club,'sources'>,f:Finding){return f.decision==='approved'&&f.record?.kind==='player'&&!!f.record.name&&
+ f.archiveLink?.state!=='linked'&&f.archiveLink?.state!=='ambiguous'&&f.sources.length>0&&f.sources.every(id=>c.sources.some(s=>s.id===id&&s.reviewed&&!s.incoming))}
 
 /** Pure: the pack the owner's approvals make. */
 export function buildDeskPack(c:Pick<Club,'id'|'sources'|'findings'>,builtBy:string,now=new Date()):DeskPack{

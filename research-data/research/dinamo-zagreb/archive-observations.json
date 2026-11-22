@@ -1,1 +1,361 @@
-{}
+{
+ "obs:nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html:squad:kralj branko": {
+  "schemaVersion": 1,
+  "id": "obs:nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html:squad:kralj branko",
+  "recordType": "player",
+  "providerRecordKey": "nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html",
+  "sourceUrl": "https://www.national-football-teams.com/club/504/1953/Dinamo_Zagreb.html",
+  "parserVersion": "national-football-teams-squad-v1",
+  "locator": "squad table row 2",
+  "nameAsReported": "Kralj, Branko",
+  "seasonsAsReported": "1953/54",
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "lookupNames": [
+   "Branko Kralj"
+  ],
+  "positions": [
+   "GK"
+  ],
+  "stats": [
+   {
+    "season": "1953/54",
+    "competition": "National Football Teams club table",
+    "appearances": 16,
+    "goals": 0
+   }
+  ],
+  "providerId": "nft-dinamo",
+  "contentHash": "6f6837676270fc98844d67508c8d4fd2880f23008b3c4c77ac117e8d480d39f6",
+  "runId": "2026-11-21T16-50-21-284Z-9e7c2b",
+  "retired": null
+ },
+ "obs:nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html:squad:crnković tomislav": {
+  "schemaVersion": 1,
+  "id": "obs:nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html:squad:crnković tomislav",
+  "recordType": "player",
+  "providerRecordKey": "nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html",
+  "sourceUrl": "https://www.national-football-teams.com/club/504/1953/Dinamo_Zagreb.html",
+  "parserVersion": "national-football-teams-squad-v1",
+  "locator": "squad table row 3",
+  "nameAsReported": "Crnković, Tomislav",
+  "seasonsAsReported": "1953/54",
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "lookupNames": [
+   "Tomislav Crnković"
+  ],
+  "positions": [
+   "DF"
+  ],
+  "stats": [
+   {
+    "season": "1953/54",
+    "competition": "National Football Teams club table",
+    "appearances": 20,
+    "goals": 0
+   }
+  ],
+  "providerId": "nft-dinamo",
+  "contentHash": "6f6837676270fc98844d67508c8d4fd2880f23008b3c4c77ac117e8d480d39f6",
+  "runId": "2026-11-21T16-50-21-284Z-9e7c2b",
+  "retired": null
+ },
+ "obs:nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html:squad:horvat ivica": {
+  "schemaVersion": 1,
+  "id": "obs:nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html:squad:horvat ivica",
+  "recordType": "player",
+  "providerRecordKey": "nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html",
+  "sourceUrl": "https://www.national-football-teams.com/club/504/1953/Dinamo_Zagreb.html",
+  "parserVersion": "national-football-teams-squad-v1",
+  "locator": "squad table row 4",
+  "nameAsReported": "Horvat, Ivica",
+  "seasonsAsReported": "1953/54",
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "lookupNames": [
+   "Ivica Horvat"
+  ],
+  "positions": [
+   "DF"
+  ],
+  "stats": [
+   {
+    "season": "1953/54",
+    "competition": "National Football Teams club table",
+    "appearances": 20,
+    "goals": 0
+   }
+  ],
+  "providerId": "nft-dinamo",
+  "contentHash": "6f6837676270fc98844d67508c8d4fd2880f23008b3c4c77ac117e8d480d39f6",
+  "runId": "2026-11-21T16-50-21-284Z-9e7c2b",
+  "retired": null
+ },
+ "obs:nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html:squad:horvat drago": {
+  "schemaVersion": 1,
+  "id": "obs:nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html:squad:horvat drago",
+  "recordType": "player",
+  "providerRecordKey": "nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html",
+  "sourceUrl": "https://www.national-football-teams.com/club/504/1953/Dinamo_Zagreb.html",
+  "parserVersion": "national-football-teams-squad-v1",
+  "locator": "squad table row 5",
+  "nameAsReported": "Horvat, Drago",
+  "seasonsAsReported": "1953/54",
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "lookupNames": [
+   "Drago Horvat"
+  ],
+  "positions": [
+   "DF"
+  ],
+  "stats": [
+   {
+    "season": "1953/54",
+    "competition": "National Football Teams club table",
+    "appearances": 6,
+    "goals": 0
+   }
+  ],
+  "providerId": "nft-dinamo",
+  "contentHash": "6f6837676270fc98844d67508c8d4fd2880f23008b3c4c77ac117e8d480d39f6",
+  "runId": "2026-11-21T16-50-21-284Z-9e7c2b",
+  "retired": null
+ },
+ "obs:nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html:squad:čonč vladimir": {
+  "schemaVersion": 1,
+  "id": "obs:nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html:squad:čonč vladimir",
+  "recordType": "player",
+  "providerRecordKey": "nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html",
+  "sourceUrl": "https://www.national-football-teams.com/club/504/1953/Dinamo_Zagreb.html",
+  "parserVersion": "national-football-teams-squad-v1",
+  "locator": "squad table row 6",
+  "nameAsReported": "Čonč, Vladimir",
+  "seasonsAsReported": "1953/54",
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "lookupNames": [
+   "Vladimir Čonč"
+  ],
+  "positions": [],
+  "stats": [
+   {
+    "season": "1953/54",
+    "competition": "National Football Teams club table",
+    "appearances": 26,
+    "goals": 13
+   }
+  ],
+  "providerId": "nft-dinamo",
+  "contentHash": "6f6837676270fc98844d67508c8d4fd2880f23008b3c4c77ac117e8d480d39f6",
+  "runId": "2026-11-21T16-50-21-284Z-9e7c2b",
+  "retired": null
+ },
+ "obs:nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html:squad:mantula lav": {
+  "schemaVersion": 1,
+  "id": "obs:nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html:squad:mantula lav",
+  "recordType": "player",
+  "providerRecordKey": "nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html",
+  "sourceUrl": "https://www.national-football-teams.com/club/504/1953/Dinamo_Zagreb.html",
+  "parserVersion": "national-football-teams-squad-v1",
+  "locator": "squad table row 7",
+  "nameAsReported": "Mantula, Lav",
+  "seasonsAsReported": "1953/54",
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "lookupNames": [
+   "Lav Mantula"
+  ],
+  "positions": [],
+  "stats": [
+   {
+    "season": "1953/54",
+    "competition": "National Football Teams club table",
+    "appearances": 21,
+    "goals": 2
+   }
+  ],
+  "providerId": "nft-dinamo",
+  "contentHash": "6f6837676270fc98844d67508c8d4fd2880f23008b3c4c77ac117e8d480d39f6",
+  "runId": "2026-11-21T16-50-21-284Z-9e7c2b",
+  "retired": null
+ },
+ "obs:nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html:squad:dvornić dionizije": {
+  "schemaVersion": 1,
+  "id": "obs:nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html:squad:dvornić dionizije",
+  "recordType": "player",
+  "providerRecordKey": "nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html",
+  "sourceUrl": "https://www.national-football-teams.com/club/504/1953/Dinamo_Zagreb.html",
+  "parserVersion": "national-football-teams-squad-v1",
+  "locator": "squad table row 8",
+  "nameAsReported": "Dvornić, Dionizije",
+  "seasonsAsReported": "1953/54",
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "lookupNames": [
+   "Dionizije Dvornić"
+  ],
+  "positions": [
+   "FW"
+  ],
+  "stats": [
+   {
+    "season": "1953/54",
+    "competition": "National Football Teams club table",
+    "appearances": 26,
+    "goals": 16
+   }
+  ],
+  "providerId": "nft-dinamo",
+  "contentHash": "6f6837676270fc98844d67508c8d4fd2880f23008b3c4c77ac117e8d480d39f6",
+  "runId": "2026-11-21T16-50-21-284Z-9e7c2b",
+  "retired": null
+ },
+ "obs:nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html:squad:čajkovski željko": {
+  "schemaVersion": 1,
+  "id": "obs:nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html:squad:čajkovski željko",
+  "recordType": "player",
+  "providerRecordKey": "nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html",
+  "sourceUrl": "https://www.national-football-teams.com/club/504/1953/Dinamo_Zagreb.html",
+  "parserVersion": "national-football-teams-squad-v1",
+  "locator": "squad table row 9",
+  "nameAsReported": "Čajkovski, Željko",
+  "seasonsAsReported": "1953/54",
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "lookupNames": [
+   "Željko Čajkovski"
+  ],
+  "positions": [
+   "FW"
+  ],
+  "stats": [
+   {
+    "season": "1953/54",
+    "competition": "National Football Teams club table",
+    "appearances": 24,
+    "goals": 13
+   }
+  ],
+  "providerId": "nft-dinamo",
+  "contentHash": "6f6837676270fc98844d67508c8d4fd2880f23008b3c4c77ac117e8d480d39f6",
+  "runId": "2026-11-21T16-50-21-284Z-9e7c2b",
+  "retired": null
+ },
+ "obs:nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html:squad:benko aleksandar": {
+  "schemaVersion": 1,
+  "id": "obs:nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html:squad:benko aleksandar",
+  "recordType": "player",
+  "providerRecordKey": "nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html",
+  "sourceUrl": "https://www.national-football-teams.com/club/504/1953/Dinamo_Zagreb.html",
+  "parserVersion": "national-football-teams-squad-v1",
+  "locator": "squad table row 10",
+  "nameAsReported": "Benko, Aleksandar",
+  "seasonsAsReported": "1953/54",
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "lookupNames": [
+   "Aleksandar Benko"
+  ],
+  "positions": [
+   "FW"
+  ],
+  "stats": [
+   {
+    "season": "1953/54",
+    "competition": "National Football Teams club table",
+    "appearances": 21,
+    "goals": 13
+   }
+  ],
+  "providerId": "nft-dinamo",
+  "contentHash": "6f6837676270fc98844d67508c8d4fd2880f23008b3c4c77ac117e8d480d39f6",
+  "runId": "2026-11-21T16-50-21-284Z-9e7c2b",
+  "retired": null
+ },
+ "obs:nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html:squad:lipošinović luka": {
+  "schemaVersion": 1,
+  "id": "obs:nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html:squad:lipošinović luka",
+  "recordType": "player",
+  "providerRecordKey": "nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html",
+  "sourceUrl": "https://www.national-football-teams.com/club/504/1953/Dinamo_Zagreb.html",
+  "parserVersion": "national-football-teams-squad-v1",
+  "locator": "squad table row 11",
+  "nameAsReported": "Lipošinović, Luka",
+  "seasonsAsReported": "1953/54",
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "lookupNames": [
+   "Luka Lipošinović"
+  ],
+  "positions": [
+   "FW"
+  ],
+  "stats": [
+   {
+    "season": "1953/54",
+    "competition": "National Football Teams club table",
+    "appearances": 10,
+    "goals": 3
+   }
+  ],
+  "providerId": "nft-dinamo",
+  "contentHash": "6f6837676270fc98844d67508c8d4fd2880f23008b3c4c77ac117e8d480d39f6",
+  "runId": "2026-11-21T16-50-21-284Z-9e7c2b",
+  "retired": null
+ },
+ "obs:nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html:squad:cimermančić zvonimir": {
+  "schemaVersion": 1,
+  "id": "obs:nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html:squad:cimermančić zvonimir",
+  "recordType": "player",
+  "providerRecordKey": "nft-dinamo:html:/club/504/1953/Dinamo_Zagreb.html",
+  "sourceUrl": "https://www.national-football-teams.com/club/504/1953/Dinamo_Zagreb.html",
+  "parserVersion": "national-football-teams-squad-v1",
+  "locator": "squad table row 12",
+  "nameAsReported": "Cimermančić, Zvonimir",
+  "seasonsAsReported": "1953/54",
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "lookupNames": [
+   "Zvonimir Cimermančić"
+  ],
+  "positions": [
+   "FW"
+  ],
+  "stats": [
+   {
+    "season": "1953/54",
+    "competition": "National Football Teams club table",
+    "appearances": 2,
+    "goals": 0
+   }
+  ],
+  "providerId": "nft-dinamo",
+  "contentHash": "6f6837676270fc98844d67508c8d4fd2880f23008b3c4c77ac117e8d480d39f6",
+  "runId": "2026-11-21T16-50-21-284Z-9e7c2b",
+  "retired": null
+ }
+}

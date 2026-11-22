@@ -51,7 +51,7 @@
       "allowedPathPrefixes": [
         "/wp-json/wp/v2/"
       ],
-      "parserId": "paopedia-history-v1",
+      "parserId": "editorial-catalogue-v1",
       "budget": {
         "perPage": 25,
         "maxRequests": 10,
@@ -94,7 +94,7 @@
         "/en/historyitem/",
         "/historyitem/"
       ],
-      "parserId": null,
+      "parserId": "editorial-catalogue-v1",
       "budget": {
         "perPage": 1,
         "maxRequests": 12,
