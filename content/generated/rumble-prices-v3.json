@@ -52803,11 +52803,11 @@
   },
   "atalanta": {
    "quotaMode": "full",
-   "size": 949,
+   "size": 953,
    "quota": {
-    "1": 341,
-    "2": 332,
-    "3": 190,
+    "1": 342,
+    "2": 334,
+    "3": 191,
     "4": 76,
     "5": 10
    },
@@ -60403,6 +60403,38 @@
      "assignment": "new-member",
      "rationale": "Newly documented Atalanta player; placed in the expanded quota by club rating without altering prior prices.",
      "reviewedAt": "2026-11-21"
+    },
+    "atalanta:daily-player-d36a8f56919ee6afc8cd0758": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "atalanta:daily-player-6f928874e3706e83e0b22bed": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "atalanta:daily-player-15864e5ae3710adb3dbc5709": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "atalanta:daily-player-ccf24dd5fdc67e2cfd2a4b92": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
     }
    }
   },
