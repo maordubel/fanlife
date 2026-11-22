@@ -64,3 +64,14 @@
   .wkd-tabs { align-self: flex-start; inline-size: min(100%, 520px); }
   .wkd-play .wkd-games { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 }
+
+/* THE SHORT FRONT PAGE (owner, 22.11.2026): masthead, doors, your club, the clubs, the contents. Phone: one column in that
+   order, the contents as a two-column index. Desktop: a spread with the contents as the magazine's right-hand column. */
+.wkh[data-short] .wkh-inside ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 900px) { .wkh[data-short] > .wkh-inside { order: 3; } .wkh[data-short] > .wkh-pins { order: 4; } }
+@media (min-width: 901px) {
+  .wkh[data-short]:has(> .wkd) { grid-template-areas: 'mast mast mast' 'doors doors doors' 'hero hero inside' 'pins pins inside' 'back back inside'; grid-template-rows: auto auto auto auto 1fr; align-items: start; }
+  .wkh[data-short] .wkh-inside { grid-area: inside; position: sticky; inset-block-start: 96px; margin-block-start: 30px; }
+  .wkh[data-short] .wkh-inside ol { display: flex; }
+  .wkh[data-short] .wkh-back { grid-area: back; }
+}

@@ -22,7 +22,7 @@ export const FEATURE_TEXT:Record<SwitchKey,{label:string;hint:string}>={
  pins:{label:'Pinned shortcuts',hint:'A fan can pin one or two places of his own — a club, a gate, his LEGENDS career, LIFE, ALL FOOTBALL, DUBID or OFFSIDES. They show as “Your shortcuts” at the top of the menu and on the hub and club home. Never a suggestion; kept on the device only. On for everyone by default (owner, 27.10.2026); off: no toggles and no shortcuts are shown.'},
  profiles:{label:'Player profiles',hint:'One page per player with every one of our clubs he played for, his years, games, goals and Legends stars, and a door into each club’s archive. A man who played for two clubs is one person. Off: only you see the pages.'},
  album:{label:'THE ALBUM',hint:'The sticker album: a daily envelope for a signed-in fan, two stickers inside, a wing for every club. Off: only you see it.'},
- frontDoors:{label:'The three doors',hint:'The front page opens with three actions: Play solo, Challenge friends, Open the archive — and OUR GAMES marks every game Solo or Friends. Off: only you see them.'},
+ frontDoors:{label:'New front page & wayfinding',hint:'The front page opens with three actions (Play solo, Challenge friends, Open the archive) and is cut to one short page with a contents list; every page gets a running head that says where you are, what the page is and what you can do; OUR GAMES marks every game Solo or Friends. Off: only you see it.'},
  highlights:{label:'Match highlights',hint:'The Royal Rumble match on every club page plays as sixteen-bit highlights in the right kits. Off: the match centre. (LEGENDS MANAGER always shows them.)'},
 }
 

@@ -33,6 +33,8 @@ import {hasClubAway} from '@/lib/away-days/club'
 import {bannedHere} from '@/lib/clubs/theme'
 import {indexableStatus} from '@/lib/seo/club'
 import {portalOrigin} from '@/lib/master/registry'
+import {FolioDoor} from '@/components/wayfinding/FolioDoor'
+import {Suspense} from 'react'
 
 /**
  * Each club installs as its own app (manifest + icon), with its own colour in the browser bar. The robots line is set
@@ -88,7 +90,7 @@ export default async function ClubLayout({children,params}:{children:ReactNode;p
    </div>
    <span className="club-band mag-band" data-livery={lv?.pattern} aria-hidden="true"/>
   </header>
-  <div className="club-body">{resting?<main id="main" className="wkk club-resting" data-testid="club-resting"><section className="wk-panel wk-lift club-resting-in">
+  <div className="club-body">{!resting&&<Suspense fallback={null}><FolioDoor/></Suspense>}{resting?<main id="main" className="wkk club-resting" data-testid="club-resting"><section className="wk-panel wk-lift club-resting-in">
    <p className="wk-tag ink">{c.name}</p><h1 className="wk-logo">{copy.clubRestingTitle}</h1><p>{copy.clubRestingNote}</p>
    <a className="wk-btn" href={`${portal}/#clubs`}>{copy.clubSwitchHub}</a>
   </section></main>:children}</div>
