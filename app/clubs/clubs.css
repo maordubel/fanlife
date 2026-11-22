@@ -86,3 +86,7 @@
 .ckp .ckp-seg{align-self:start;min-block-size:52px}
 .ckp-mast .wk-banner{background:var(--mag-paper);color:var(--mag-ink);padding:2px 8px}
 @media (min-width:64rem){.ckp-tools{position:sticky;inset-block-start:0;z-index:5}}
+
+/* the workshop folded to one line on the short page (docs/rules/games-clubs-short.md) */
+.ckp-fold>summary{cursor:pointer;list-style:none;align-items:center;border-block-end:0;padding-block-end:0}.ckp-fold>summary::-webkit-details-marker{display:none}
+.ckp-fold>summary::after{content:'+';margin-inline-start:auto;font-family:var(--mag-display);font-size:1.6rem;line-height:1}.ckp-fold[open]>summary::after{content:'–'}

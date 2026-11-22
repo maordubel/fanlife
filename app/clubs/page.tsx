@@ -12,6 +12,7 @@ import {ClubsIndex,type IndexClub} from '@/components/home/ClubsIndex'
 import en from '@/messages/clubs/en.json'
 import he from '@/messages/clubs/he.json'
 import './clubs.css'
+import {door} from '@/lib/features-server'
 
 export const dynamic='force-dynamic'
 export const metadata:Metadata={title:'The Clubs · FAN LIFE',description:'Every club on FAN LIFE, in its own colours: pick yours and walk into its ground — its archive, its games, its story.'}
@@ -24,7 +25,7 @@ export const metadata:Metadata={title:'The Clubs · FAN LIFE',description:'Every
  */
 export default async function ClubsPage({searchParams}:{searchParams:{lang?:string}}){
  const locale=uiLocale(searchParams.lang),copy=locale==='he'?he:en
- const {clubs}=await readState()
+ const [{clubs},fd]=await Promise.all([readState(),door('frontDoors')])
  const open=clubs.filter(c=>c.status!=='paused').sort((a,b)=>a.name.localeCompare(b.name))
  const {strict}=await hubModels(open,locale)
  const row=(c:(typeof open)[number],live:boolean):IndexClub=>{
@@ -36,7 +37,7 @@ export default async function ClubsPage({searchParams}:{searchParams:{lang?:stri
  const soon=open.filter(c=>!isOpenClub(strict.find(x=>x.id===c.id))).map(c=>row(c,false))
  return <Shell locale={locale}>
   <main id="main" className="ckp" dir="ltr" lang={locale==='he'?'he':'en'}>
-   <ClubsIndex live={live} soon={soon} copy={{
+   <ClubsIndex live={live} soon={soon} tuck={fd.open} copy={{
     kicker:copy.pickClub,title:copy.wkPickClub,note:copy.wkhStickerNote,stamp:copy.wkhStampOpen.replace('{n}',String(live.length)),
     search:copy.ckpSearch,all:copy.ckpAll,az:copy.ckpAz,byCountry:copy.ckpByCountry,none:copy.ckpNone,soon:copy.ckpSoon,soonNote:copy.ckpSoonNote,vote:copy.ckpVote,enter:copy.ckpEnter,back:copy.backTo,
    }}/>

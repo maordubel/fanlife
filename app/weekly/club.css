@@ -781,3 +781,24 @@ button.wkk-stub-ground { min-block-size: 44px; text-decoration: underline; text-
   .wkk-home > .wkk-picker { order: 4; } .wkk-home > .wkk-legends { order: 5; } .wkk-home > .wkk-life { order: 6; } .wkk-home > .wkk-shop { order: 7; } .wkk-home .wkk-foldwrap > .wkt { order: 8; }
   .wkk-home > .wkk-nextwrap { order: 9; } .wkk-home > .wkk-cardwrap { order: 10; } .wkk-home > .wkk-dykwrap { order: 11; } .wkk-home > .wkk-contents { order: 12; }
 }
+
+/* ── THE SHORT CLUB HOME (owner, 22.11.2026: shorten, split, two designs). With the new front page on, a club's home is five things:
+   today's game, the gates, the next match, one "did you know", the contents. Rule: docs/rules/club-home-short.md ── */
+@media (max-width: 900px) {
+  .wkk-home[data-short] .wkk-story-in { block-size: 330px; }
+  /* the terrace's game is the first card of Play, one tap away in the tab bar: on a phone it is not said twice */
+  .wkk-home[data-short] .wkk-yourgate { display: none; }
+  .wkk-home[data-short] > .wkk-nextwrap { order: 5; } .wkk-home[data-short] > .wkk-dykwrap { order: 6; } .wkk-home[data-short] > .wkk-contents { order: 7; } .wkk-home[data-short] > .wkk-shop { order: 8; }
+}
+@media (min-width: 901px) {
+  /* one closing row of three: the next match, the "did you know", the contents — no holes in the spread */
+  .wkk-home[data-short] { grid-auto-flow: row dense; }
+  .wkk-home[data-short] > .wkk-nextwrap { grid-column: 1 / 5; }
+  .wkk-home[data-short] > .wkk-dykwrap { grid-column: 5 / 9; }
+  .wkk-home[data-short] > .wkk-contents { grid-column: 9 / 13; }
+  .wkk-home[data-short]:not(:has(> .wkk-dykwrap)) > .wkk-nextwrap, .wkk-home[data-short]:not(:has(> .wkk-nextwrap)) > .wkk-dykwrap { grid-column: 1 / 7; }
+  .wkk-home[data-short]:not(:has(> .wkk-dykwrap)) > .wkk-contents, .wkk-home[data-short]:not(:has(> .wkk-nextwrap)) > .wkk-contents { grid-column: 7 / 13; }
+  .wkk-home[data-short]:not(:has(> .wkk-dykwrap)):not(:has(> .wkk-nextwrap)) > .wkk-contents { grid-column: 1 / -1; }
+  .wkk-home[data-short] .wkk-dyk { margin-block-start: 0; }
+  .wkk-home[data-short] .wkk-story-in { block-size: 520px; }
+}

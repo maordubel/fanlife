@@ -252,3 +252,5 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [shop-europe-first](shop-europe-first.md) · The shop prints inside the EU first; live products move two an hour; a press never removes the old listing first; the product page names the country and parcel price (22.11.2026)
 - [legend-card-doors](legend-card-doors.md) · A player's card shows his archive record and links to his archive sheet and profile; a door is drawn only when its room is open; one entity, one address (22.11.2026)
 - [wayfinding](wayfinding.md) · One map of the site and a folio on every page (where you are, what this is, what you can do); the front page cut to doors, your club and the contents (22.11.2026)
+- [club-home-short](club-home-short.md) · A club's home is five things (today's game, the gates, next match, did you know, contents); Legends, LIFE, the card and the films each live on one page (22.11.2026)
+- [games-clubs-short](games-clubs-short.md) · Our games opens with the index of every game; The clubs folds the workshop into one line (22.11.2026)

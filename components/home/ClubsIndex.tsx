@@ -26,7 +26,7 @@ function Sticker({c,n,mine,enter}:{c:IndexClub;n:number;mine?:boolean;enter:stri
  </Link>
 }
 
-export function ClubsIndex({live,soon,copy}:{live:IndexClub[];soon:IndexClub[];copy:Copy}){
+export function ClubsIndex({live,soon,copy,tuck}:{live:IndexClub[];soon:IndexClub[];copy:Copy;tuck?:boolean}){
  const [q,setQ]=useState(''),[mode,setMode]=useState<'az'|'country'>('az'),[country,setCountry]=useState<string>(''),[last,setLast]=useState<string|null>(null)
  useEffect(()=>{try{setLast(localStorage.getItem(LAST_CLUB_KEY))}catch{/* no storage */}},[])
  const countries=useMemo(()=>[...new Set(live.map(c=>c.country))].sort(),[live])
@@ -66,11 +66,18 @@ export function ClubsIndex({live,soon,copy}:{live:IndexClub[];soon:IndexClub[];c
    <div className="ckp-grid">{v.map(c=><Sticker key={c.id} c={c} n={live.indexOf(c)} enter={copy.enter}/>)}</div>
   </section>):<p className="ckp-none">{copy.none}</p>}
 
-  {soon.length>0&&<section className="ckp-soon" aria-labelledby="ckp-soon-h">
+  {soon.length>0&&(tuck
+   /* the short page (owner, 22.11.2026): the clubs you can enter are the page; the workshop is one closed line under them */
+   ?<details className="ckp-soon ckp-fold"><summary className="ckp-country min-h-tap">{copy.soon}<small>{soon.length}</small></summary>
+    <p className="ckp-note">{copy.soonNote}</p>
+   <ul className="ckp-soon-list">{soon.map(c=><li key={c.id} style={ink(c)}><span className="ckp-soon-disc">{c.crest?/* eslint-disable-next-line @next/next/no-img-element -- a crest ships exactly as recorded */<img src={c.crest} alt="" width="36" height="36" loading="lazy"/>:c.initials}</span><span><b>{c.name}</b><small>{c.city}</small></span></li>)}</ul>
+   <Link className="wk-btn paper min-h-tap ckp-vote" href="/#suggest">{copy.vote}</Link>
+  </details>
+   :<section className="ckp-soon" aria-labelledby="ckp-soon-h">
    <h2 className="ckp-country" id="ckp-soon-h">{copy.soon}<small>{soon.length}</small></h2>
    <p className="ckp-note">{copy.soonNote}</p>
    <ul className="ckp-soon-list">{soon.map(c=><li key={c.id} style={ink(c)}><span className="ckp-soon-disc">{c.crest?/* eslint-disable-next-line @next/next/no-img-element -- a crest ships exactly as recorded */<img src={c.crest} alt="" width="36" height="36" loading="lazy"/>:c.initials}</span><span><b>{c.name}</b><small>{c.city}</small></span></li>)}</ul>
    <Link className="wk-btn paper min-h-tap ckp-vote" href="/#suggest">{copy.vote}</Link>
-  </section>}
+  </section>)}
  </>
 }
