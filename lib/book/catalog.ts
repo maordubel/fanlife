@@ -27,8 +27,8 @@ export const BOOK_SKU='0550X0850BWSTDPB060UC444MXX'
 /** the print files, built by broken-collective-src/print/build.py and served from the book site (public; the book is free to read anyway) */
 const FILES=process.env.BOOK_PRINT_FILES_URL||'https://www.dubelteam.com/broken-collective/print/pb-2026-11'
 export const EDITIONS:Record<BookLang,{title:string;pages:number;interior:string;cover:string}>={
- he:{title:'קולקטיב שבור · Broken Collective (Hebrew)',pages:188,interior:`${FILES}/broken-collective-he-interior.pdf`,cover:`${FILES}/broken-collective-he-cover.pdf`},
- en:{title:'Broken Collective (English)',pages:214,interior:`${FILES}/broken-collective-en-interior.pdf`,cover:`${FILES}/broken-collective-en-cover.pdf`},
+ he:{title:'קולקטיב שבור · Broken Collective (Hebrew)',pages:190,interior:`${FILES}/broken-collective-he-interior.pdf`,cover:`${FILES}/broken-collective-he-cover.pdf`},
+ en:{title:'Broken Collective (English)',pages:216,interior:`${FILES}/broken-collective-en-interior.pdf`,cover:`${FILES}/broken-collective-en-cover.pdf`},
 }
 
 export const PAPERBACK={cents:1800,pairCents:3200,name:{he:'קולקטיב שבור — הספר המודפס',en:'Broken Collective — the paperback'},
