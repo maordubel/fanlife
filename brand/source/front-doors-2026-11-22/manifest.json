@@ -1,0 +1,190 @@
+{
+  "project": "FANLIFE",
+  "method": "Original illustration generated with built-in ImageGen",
+  "palette": {
+    "paper": "#fff6df",
+    "ink": "#171717",
+    "red": "#cc392c",
+    "navy": "#192e41",
+    "green": "#235440",
+    "ochre": "#d8a33e"
+  },
+  "assets": [
+    {
+      "key": "cover",
+      "folder": "01-cover",
+      "name": "שער המגזין",
+      "alt": "שחקן יוצא ממנהרת האצטדיון אל המגרש המואר",
+      "use": "צילום־רוחב לשער עם מקום לכותרת מימין",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "files": [
+        {
+          "path": "01-cover/cover.png",
+          "sha256": "15723de46764385312a6e9a06242321b1b58187a33c5c82f01445e4422720890",
+          "bytes": 3074646
+        },
+        {
+          "path": "01-cover/cover.webp",
+          "sha256": "229f30a58cb68e531c05a93b6df97ff0b2f2cead1b52049cb9c158171e540932",
+          "bytes": 388404
+        }
+      ]
+    },
+    {
+      "key": "solo",
+      "folder": "02-play",
+      "name": "לשחק לבד",
+      "alt": "שחקן מתאמן עם כדור במגרש עירוני",
+      "use": "כרטיס כניסה למשחק יחיד",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "files": [
+        {
+          "path": "02-play/solo.png",
+          "sha256": "6035bf10556c7f6b3e36bbcd7b1447e32c0c5ec012ec4b40bbb2d0fc931a3e3c",
+          "bytes": 3029723
+        },
+        {
+          "path": "02-play/solo.webp",
+          "sha256": "b2ac7716ccf22f6707bf093bd695237402487ebcb78395c9418a28e94f2a0c48",
+          "bytes": 414240
+        }
+      ]
+    },
+    {
+      "key": "friends",
+      "folder": "02-play",
+      "name": "לשחק עם חברים",
+      "alt": "שני אוהדים עם צעיפי כדורגל משחקים זה מול זה",
+      "use": "כרטיס כניסה לאתגר מול חברים",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "files": [
+        {
+          "path": "02-play/friends.png",
+          "sha256": "2722d2b2b3824a74cc14014e9f69eb8d04d47a8eab2dce624ca735f956f20bc1",
+          "bytes": 3822666
+        },
+        {
+          "path": "02-play/friends.webp",
+          "sha256": "88322f73a63d4b158899d402be88d7bf13d3e9022c738f156c1c56aae4405007",
+          "bytes": 653840
+        }
+      ]
+    },
+    {
+      "key": "archive",
+      "folder": "03-archive",
+      "name": "ארכיון הכדורגל",
+      "alt": "חולצה אדומה, צילום משחק וכרטיס היסטורי על שולחן",
+      "use": "כרטיס כניסה לארכיון ולתוכן ההיסטורי",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "files": [
+        {
+          "path": "03-archive/archive.png",
+          "sha256": "df039463695838ca67980e32fa060a310d78f717491fb9103c9205235b97c464",
+          "bytes": 3572037
+        },
+        {
+          "path": "03-archive/archive.webp",
+          "sha256": "f8802e884bf2dbe9085af7400089c2c3bed957380813cf3fed68fb7c4922e1ca",
+          "bytes": 588872
+        }
+      ]
+    },
+    {
+      "key": "kits",
+      "folder": "03-archive",
+      "name": "ארכיון המדים",
+      "alt": "שלוש חולצות כדורגל מאוירות תלויות על קולבים",
+      "use": "כרטיס כניסה לקטלוג המדים",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "files": [
+        {
+          "path": "03-archive/kits.png",
+          "sha256": "39349237cccac29ac70cd09db876316ce020cd74698d3e4401b331408bea6c94",
+          "bytes": 3166092
+        },
+        {
+          "path": "03-archive/kits.webp",
+          "sha256": "6eaf7331b5e59b879267596f9777e184036b2cd02799a7994f029c9b028c2eb4",
+          "bytes": 487638
+        }
+      ]
+    },
+    {
+      "key": "album",
+      "folder": "04-collection",
+      "name": "אלבום המדבקות",
+      "alt": "יד מניחה מדבקת שחקן באלבום פתוח",
+      "use": "כרטיס כניסה לאלבום ולפעולות האיסוף",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "files": [
+        {
+          "path": "04-collection/album.png",
+          "sha256": "cb27fc3a09cf3176f29c32cc8622e39eb883966548c4bff767f6cff3f50a5aed",
+          "bytes": 3441607
+        },
+        {
+          "path": "04-collection/album.webp",
+          "sha256": "4ba8f57f6f37eeddc79e55778ade6b6272ff71c91337b2d0a7cd63eba7c53435",
+          "bytes": 549614
+        }
+      ]
+    },
+    {
+      "key": "manager",
+      "folder": "05-manager",
+      "name": "מנג׳ר האגדות",
+      "alt": "יד מסדרת מגנט שחקן על לוח הרכב",
+      "use": "כרטיס כניסה לבניית סגל והרכבים",
+      "width": 1536,
+      "height": 1024,
+      "transparent": false,
+      "files": [
+        {
+          "path": "05-manager/manager.png",
+          "sha256": "5fffb1a37a136b74b3fb2dad0aa2a95666e83d7a625c50c7c6e6d5b5ebaed318",
+          "bytes": 3518858
+        },
+        {
+          "path": "05-manager/manager.webp",
+          "sha256": "54c1c4f53975a29b33521e0b7b7da0c8b29355a3ed76e3d71329bbf2cbea3e13",
+          "bytes": 589422
+        }
+      ]
+    },
+    {
+      "key": "player",
+      "folder": "06-players",
+      "name": "דמות שחקן",
+      "alt": "כדורגלן מאויר עם חולצת פסים וכדור",
+      "use": "דמות בדיונית לשילוב בכרטיסים, שכבות גרפיות או מסכי משחק",
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "files": [
+        {
+          "path": "06-players/player.png",
+          "sha256": "c48f30b68883a830f6b27b3e62b060e0bf5a96e3dd49aa447a819002f62fc8fd",
+          "bytes": 1039447
+        },
+        {
+          "path": "06-players/player.webp",
+          "sha256": "5005050f5e02c4c222561b16d4813be5542df1bebee7c4287bd10d5a2539012e",
+          "bytes": 213470
+        }
+      ]
+    }
+  ]
+}

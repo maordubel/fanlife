@@ -10,6 +10,8 @@ import {readState} from '@/lib/master/store'
 import {evaluationMode} from '@/lib/master/mode'
 import {uiLocale} from '@/lib/clubs/locale'
 import {door} from '@/lib/features-server'
+import {PlayIndex} from '@/components/home/PlayIndex'
+import {gameCards,playFilter} from '@/lib/home/doors'
 import en from '@/messages/clubs/en.json'
 import he from '@/messages/clubs/he.json'
 export const dynamic='force-dynamic'
@@ -21,11 +23,12 @@ const Arrow=()=><svg className="wkh-arrow" viewBox="0 0 24 24" aria-hidden="true
  * OUR GAMES (owner, 14.10.2026): the two flagship features side by side — LIFE and LEGENDS MANAGER — and under them the door
  * into every open club ("each club is a world"). The bottom bar's centre tab leads here, on the hub and inside a club.
  */
-export default async function OurGames({searchParams}:{searchParams:{lang?:string}}){
+export default async function OurGames({searchParams}:{searchParams:{lang?:string;play?:string}}){
  const locale=uiLocale(searchParams.lang),copy=locale==='he'?he:en,preview=evaluationMode()
  const {clubs}=await readState()
  const open=clubs.filter(c=>c.status!=='paused').sort((a,b)=>a.name.localeCompare(b.name))
- const [{model,strict},life,fl,lifeDoor]=await Promise.all([hubModels(open,locale),lifeEntries(open,preview),door('fanLeague'),lifeOpen()])
+ const [{model,strict},life,fl,lifeDoor,fd,fr]=await Promise.all([hubModels(open,locale),lifeEntries(open,preview),door('fanLeague'),lifeOpen(),door('frontDoors'),door('friendlies')])
+ const filter=playFilter(searchParams.play)
  const live=open.filter(c=>isOpenClub(strict.find(x=>x.id===c.id)))
  const chooser={title:copy.chooseClub,search:copy.chooserSearch,close:copy.chooserClose,none:copy.chooserNone,workshop:copy.chooserWorkshop,partial:''}
  const lifeMap=Object.fromEntries(open.map(c=>[c.id,life[c.id]?.href??null]))
@@ -52,5 +55,6 @@ export default async function OurGames({searchParams}:{searchParams:{lang?:strin
    <div className="wkg-wtxt"><p className="wk-k white">{copy.ourGamesWorldK.replace('{n}',String(live.length))}</p><h2 className="wk-logo wkg-wtitle" id="og-world">{copy.coverBottom}</h2>
     <GateChooser gate="life" clubs={model} life={worldMap} copy={chooser} className="wk-btn paper wkg-cta">{copy.ourGamesWorldCta} <Arrow/></GateChooser></div>
   </section>
+  {fd.open&&<PlayIndex filter={filter} cards={gameCards({legends:fl.open,friendlies:fl.open&&fr.open,legendsName:copy.wkhLmTitle},filter)} clubs={model} chooser={chooser} lang={locale==='en'?'':`&lang=${locale}`} copy={{kicker:copy.playK,title:copy.playIdxTitle,all:copy.playAll,solo:copy.modeSolo,friends:copy.modeFriends,both:copy.modeBoth,pick:copy.playPick,open:copy.ourGamesPlay,none:copy.playIdxNone}}/>}
  </main></Shell>
 }

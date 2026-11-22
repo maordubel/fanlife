@@ -11,8 +11,8 @@ import {autopilotActive} from './autopilot'
  * The listener (stories-watch.yml → studio/cleanup.py) asks for this every ten minutes: op `trim` in the worker route.
  */
 export const GRACE_HOURS=6
-/** a finished film with no YouTube upload keeps its big files this many days (the owner gave no number: seven) */
-export const UNUPLOADED_DAYS=7
+/** a finished film with no YouTube upload keeps its big files this many days (seven until 22.11.2026; three since the owner approved the storage plan — the bucket is 1 GB) */
+export const UNUPLOADED_DAYS=3
 /** what counts as a big file: video, audio and archives — never a picture, a caption or a job's JSON — and every chunk
  *  of one, whatever its size: `master.mp4.part0`, `master.part3` and the worker's own `master.000.part` (the number
  *  BEFORE `.part`: it was missed, so a chunk under 8 MB stayed in the bucket for ever) */

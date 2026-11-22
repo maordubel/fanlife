@@ -36,6 +36,7 @@ import {WatchBanner} from '@/components/weekly/WatchBanner'
 import {lifeOpen} from '@/lib/clubs/life/entry'
 import {shopIsOpen} from '@/components/shop/ShopStrip'
 import shopCopy from '@/messages/en.shop.json'
+import {FrontDoors} from '@/components/home/FrontDoors'
 export const dynamic='force-dynamic'
 
 const Arrow=()=><svg className="wkh-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -57,7 +58,7 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
  const now=new Date(),preview=evaluationMode()
  // one pass for both readings, and the LIFE doors alongside it (performance audit, 11.10.2026)
  const [{model,strict},life,fl,uv,lifeDoor,shopOpen]=await Promise.all([hubModels(open,locale),lifeEntries(open,preview),door('fanLeague'),door('universe'),lifeOpen(),shopIsOpen()])
- const al=await door('album')
+ const al=await door('album'),fd=await door('frontDoors')
  const isOpen=(id:string)=>isOpenClub(strict.find(x=>x.id===id))
  const live=open.filter(c=>isOpen(c.id)),shop=open.filter(c=>!isOpen(c.id))
  const seed=seedVotes(shop.map(c=>c.id)),order2=rank(seed,shop.map(c=>c.id))
@@ -95,6 +96,9 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
    <p className="wk-k wkh-mast-tag">{copy.wkhForever}<span className="wkh-d-only"> · {copy.tagline}</span></p>
    <time className="wk-k wk-muted wkh-date-m" dateTime={iso}>{date}</time>
   </header>
+
+  {/* THE THREE DOORS (owner spec, 22.11.2026): play solo, challenge friends, open the archive — behind its switch */}
+  {fd.open&&<FrontDoors clubs={model} chooser={chooser} lang={locale==='en'?'':`&lang=${locale}`} preview={fd.preview} copy={{kicker:copy.doorsK,lines:[copy.doorsL1,copy.doorsL2,copy.doorsL3],sub:copy.doorsSub,soloT:copy.doorSoloT,soloSub:copy.doorSoloSub,friendsT:copy.doorFriendsT,friendsSub:copy.doorFriendsSub,archiveT:copy.doorArchiveT,archiveSub:copy.doorArchiveSub,preview:copy.wkhOwnerPreview}}/>}
 
   {/* THE FIRST SCREEN (H1): a new fan sees the crests and taps one; a returning fan continues where they were. */}
   <HubHero clubs={heroClubs} lang={locale==='en'?'':`?lang=${locale}`} copy={heroCopy} crests={<ul className="wkh-hero-crests">{live.map(c=>{const l=livery(c.id);return <li key={c.id}><Link className="wkh-hero-crest min-h-tap" href={`/clubs/${c.id}?lang=${locale}`} style={wearLivery(l)}><span className="wkh-disc">{l&&<Badge club={l}/>}</span><b>{c.name}</b></Link></li>})}</ul>}/>
