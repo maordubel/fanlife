@@ -1,0 +1,8 @@
+/* THE ARCHIVE ON A PLAYER'S CARD (owner, 22.11.2026) — his recorded games and goals, and the doors to his archive sheet and profile. */
+.lgm .lgm-card-rec { margin: 0; padding-block-start: 8px; border-block-start: 2px dashed color-mix(in srgb, var(--mag-ink) 35%, transparent); }
+.lgm .lgm-card-rec div { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; }
+.lgm .lgm-card-rec dt { font-family: var(--mag-mono); font-size: 11px; letter-spacing: 0.6px; text-transform: uppercase; color: var(--mag-muted); }
+.lgm .lgm-card-rec dd { margin: 0; font-family: var(--mag-condensed); font-size: 16px; font-weight: 600; }
+.lgm .lgm-card-doors { margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); gap: 8px; }
+.lgm .lgm-card-door { display: flex; align-items: center; justify-content: space-between; gap: 6px; min-block-size: 44px; padding: 0 10px; border: 2px solid var(--mag-ink); background: var(--mag-paper); color: var(--mag-ink); font-family: var(--mag-display); font-size: 14px; text-transform: uppercase; text-decoration: none; }
+.lgm .lgm-card-door:hover, .lgm .lgm-card-door:focus-visible { background: var(--mag-ink); color: var(--mag-paper); }

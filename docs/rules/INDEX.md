@@ -250,3 +250,4 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [legends-match-flow-and-commentary](legends-match-flow-and-commentary.md) · Legends and Rumble: the commentary line in the shared theatre, exported picture constants, a two-screen kick-off, matchday in three phone pages, the desk rail beside the page (19.11.2026)
 - [front-doors](front-doors.md) · The front page opens with three actions (solo, friends, archive); every game card says how it plays; unuploaded films keep big files three days (22.11.2026)
 - [shop-europe-first](shop-europe-first.md) · The shop prints inside the EU first; live products move two an hour; a press never removes the old listing first; the product page names the country and parcel price (22.11.2026)
+- [legend-card-doors](legend-card-doors.md) · A player's card shows his archive record and links to his archive sheet and profile; a door is drawn only when its room is open; one entity, one address (22.11.2026)
