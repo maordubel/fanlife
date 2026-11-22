@@ -4,11 +4,11 @@
  "clubs": {
   "hapoel-tel-aviv": {
    "quotaMode": "full",
-   "size": 652,
+   "size": 656,
    "quota": {
-    "1": 232,
-    "2": 228,
-    "3": 130,
+    "1": 233,
+    "2": 230,
+    "3": 131,
     "4": 52,
     "5": 10
    },
@@ -5228,6 +5228,38 @@
      "assignment": "auto",
      "rationale": "score 0.110 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-10"
+    },
+    "hapoel-tel-aviv:daily-player-1acf1d68b2f7503a4a2a62fd": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "hapoel-tel-aviv:daily-player-3ccc85fac4d327dcb3f6115b": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "hapoel-tel-aviv:daily-player-24f62f3d76e8204665bb28a4": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "hapoel-tel-aviv:daily-player-0a6838587566303f367be1c2": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
     }
    }
   },

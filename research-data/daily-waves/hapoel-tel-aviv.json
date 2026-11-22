@@ -1,0 +1,3698 @@
+{
+ "schemaVersion": 1,
+ "clubId": "hapoel-tel-aviv",
+ "contentLocale": "en",
+ "sources": [
+  {
+   "id": "daily-src-d52892ea91308cdd50ca246f",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739288",
+   "title": "365Scores: Hapoel Beer Sheva 0-1 Hapoel Tel Aviv, 2026-11-08",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-a23766b347846028ceae0f79",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1800675",
+   "title": "LiveScore: Hapoel Beer Sheva 0-1 Hapoel Tel Aviv, 2026-11-08 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-c75ef67f222257dafed04ebc",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739299",
+   "title": "365Scores: Hapoel Tel Aviv 2-1 Maccabi Haifa, 2026-11-02",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-8073a71e8bf6a817f31632bc",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1800667",
+   "title": "LiveScore: Hapoel Tel Aviv 2-1 Maccabi Haifa, 2026-11-02 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-8effbe3cc465a812a096c3c9",
+   "url": "https://webws.365scores.com/web/game/?gameId=4815899",
+   "title": "365Scores: Maccabi Tel Aviv 2-3 Hapoel Tel Aviv, 2026-10-29",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-1a02c73ccd1bf94ea79ab3bc",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739303",
+   "title": "365Scores: Hapoel Jerusalem 0-3 Hapoel Tel Aviv, 2026-10-24",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-a18c0c4a322f765fe76bbf5c",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1800684",
+   "title": "LiveScore: Hapoel Jerusalem 0-3 Hapoel Tel Aviv, 2026-10-24 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-a7e6c37ddf4cc8d326362a23",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739313",
+   "title": "365Scores: Hapoel Tel Aviv 1-0 Ironi Tiberias, 2026-10-17",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-d0022ea9281b65ea4078a1b6",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1800658",
+   "title": "LiveScore: Hapoel Tel Aviv 1-0 Ironi Tiberias, 2026-10-17 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-6bcd1a770ba677ef18f12454",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739318",
+   "title": "365Scores: Kiryat Shmona 1-3 Hapoel Tel Aviv, 2026-10-10",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-1ca03780c5eb33ff5153da56",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1800656",
+   "title": "LiveScore: Kiryat Shmona 1-3 Hapoel Tel Aviv, 2026-10-10 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-917eb97c5b3c4dc67fe7c32c",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739326",
+   "title": "365Scores: Hapoel Tel Aviv 3-0 Hapoel Petah Tikva, 2026-09-18",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-525b3384725a70485623559d",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1800632",
+   "title": "LiveScore: Hapoel Tel Aviv 3-0 Hapoel Petah Tikva, 2026-09-18 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-59b1dbce7ac509cf5b560a2e",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739333",
+   "title": "365Scores: Maccabi Tel Aviv 4-1 Hapoel Tel Aviv, 2026-09-14",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-885119f5347e16f3afc4dbab",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1800626",
+   "title": "LiveScore: Maccabi Tel Aviv 4-1 Hapoel Tel Aviv, 2026-09-14 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-af82e6d4fefe5a3f9b2a37b6",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739339",
+   "title": "365Scores: Hapoel Tel Aviv 4-0 Hapoel Ramat Gan, 2026-09-07",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-dbb20b627d56e1b2f7afd294",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1800644",
+   "title": "LiveScore: Hapoel Tel Aviv 4-0 Hapoel Ramat Gan, 2026-09-07 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-fda1c0abdec0a4fc825d8a23",
+   "url": "https://webws.365scores.com/web/game/?gameId=4738772",
+   "title": "365Scores: Hapoel Tel Aviv 3-0 Beitar Jerusalem, 2026-09-03",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-f5d2808cded6b62089d5b4dc",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1800618",
+   "title": "LiveScore: Hapoel Tel Aviv 3-0 Beitar Jerusalem, 2026-09-03 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-f18a38132a9c85bd4b40a43c",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739348",
+   "title": "365Scores: Hapoel Haifa 0-0 Hapoel Tel Aviv, 2026-08-30",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-48dcafb9dff006120335085a",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1800640",
+   "title": "LiveScore: Hapoel Haifa 0-0 Hapoel Tel Aviv, 2026-08-30 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-8f7199781a82af4eb3299d94",
+   "url": "https://webws.365scores.com/web/game/?gameId=4807120",
+   "title": "365Scores: Kiryat Shmona 1-2 Hapoel Tel Aviv, 2026-08-16",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-b39f572fe60555fb3d7dcac7",
+   "url": "https://webws.365scores.com/web/game/?gameId=4738904",
+   "title": "365Scores: Beitar Jerusalem 2-2 Hapoel Tel Aviv, 2026-07-18",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-66acea5b446eb88d6a50691f",
+   "url": "https://webws.365scores.com/web/game/?gameId=4702057",
+   "title": "365Scores: Beitar Jerusalem 1-1 Hapoel Tel Aviv, 2026-05-23",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-2a052bc0e6ebe23b9574f83a",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1766846",
+   "title": "LiveScore: Beitar Jerusalem 1-1 Hapoel Tel Aviv, 2026-05-23 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-d9d8810043840a2318e08da5",
+   "url": "https://webws.365scores.com/web/game/?gameId=4702055",
+   "title": "365Scores: Maccabi Haifa 4-1 Hapoel Tel Aviv, 2026-05-19",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-b54418b602540206350a1bd4",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1766839",
+   "title": "LiveScore: Maccabi Haifa 4-1 Hapoel Tel Aviv, 2026-05-19 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-19318650596f52292b501c2d",
+   "url": "https://webws.365scores.com/web/game/?gameId=4702047",
+   "title": "365Scores: Hapoel Tel Aviv 0-2 Hapoel Beer Sheva, 2026-05-15",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-4b0aea75d117c797fadd173b",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1766848",
+   "title": "LiveScore: Hapoel Tel Aviv 0-2 Hapoel Beer Sheva, 2026-05-15 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-4c48cbfbced8a3e6c76dcdbf",
+   "url": "https://webws.365scores.com/web/game/?gameId=4702039",
+   "title": "365Scores: Hapoel Tel Aviv 1-0 Hapoel Petah Tikva, 2026-05-12",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-00eee9ffb340a9443de2dabd",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1766841",
+   "title": "LiveScore: Hapoel Tel Aviv 1-0 Hapoel Petah Tikva, 2026-05-12 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-94491c758e1304a1bd9ad5a6",
+   "url": "https://webws.365scores.com/web/game/?gameId=4702033",
+   "title": "365Scores: Hapoel Tel Aviv 1-1 Maccabi Tel Aviv, 2026-05-09",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-3dadcb2d999c656dc7311e37",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1766837",
+   "title": "LiveScore: Hapoel Tel Aviv 1-1 Maccabi Tel Aviv, 2026-05-09 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-8fbd48231cb09b5aba4a9b60",
+   "url": "https://webws.365scores.com/web/game/?gameId=4702028",
+   "title": "365Scores: Hapoel Tel Aviv 0-1 Beitar Jerusalem, 2026-05-06",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-7e98eb4456e0d1b507fef41b",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1766828",
+   "title": "LiveScore: Hapoel Tel Aviv 0-1 Beitar Jerusalem, 2026-05-06 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-031b96355fc1d18b8717a05e",
+   "url": "https://webws.365scores.com/web/game/?gameId=4702019",
+   "title": "365Scores: Hapoel Beer Sheva 2-0 Hapoel Tel Aviv, 2026-05-02",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-0305103b464c76df5ff716cc",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1766821",
+   "title": "LiveScore: Hapoel Beer Sheva 2-0 Hapoel Tel Aviv, 2026-05-02 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-975ee73c3c97b35ac624865f",
+   "url": "https://webws.365scores.com/web/game/?gameId=4702017",
+   "title": "365Scores: Hapoel Tel Aviv 4-0 Maccabi Haifa, 2026-04-29",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-69c2364662c8ba8fddb4f82e",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1766833",
+   "title": "LiveScore: Hapoel Tel Aviv 4-0 Maccabi Haifa, 2026-04-29 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-a9c66391bb045709fd0083aa",
+   "url": "https://webws.365scores.com/web/game/?gameId=4702005",
+   "title": "365Scores: Hapoel Petah Tikva 0-1 Hapoel Tel Aviv, 2026-04-25",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-29f9ffc5dc7ceead622d7752",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1766823",
+   "title": "LiveScore: Hapoel Petah Tikva 0-1 Hapoel Tel Aviv, 2026-04-25 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-0d3116acc9281bea2f597e41",
+   "url": "https://webws.365scores.com/web/game/?gameId=4701773",
+   "title": "365Scores: Maccabi Tel Aviv 1-0 Hapoel Tel Aviv, 2026-04-19",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-db4689e6fdc0e524abebb9ce",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1766829",
+   "title": "LiveScore: Maccabi Tel Aviv 1-0 Hapoel Tel Aviv, 2026-04-19 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-d25f4bbfe1743220ffedef85",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463385",
+   "title": "365Scores: Hapoel Petah Tikva 0-0 Hapoel Tel Aviv, 2026-04-11",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-7389ce847f5d7378da4b10c8",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463384",
+   "title": "365Scores: Hapoel Tel Aviv 2-0 Maccabi Haifa, 2026-04-06",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-563b2894a3a8f11888e24f51",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463397",
+   "title": "365Scores: Bnei Sakhnin 0-0 Hapoel Tel Aviv, 2026-02-21",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-3114cef854a28d3d5b7d3a93",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463400",
+   "title": "365Scores: Hapoel Tel Aviv 3-1 Hapoel Jerusalem, 2026-02-13",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-4a0ddae000fcdff4591fddb6",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463410",
+   "title": "365Scores: Ironi Tiberias 0-2 Hapoel Tel Aviv, 2026-02-07",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-3050bc2ba3ff33b1e2259ce2",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463415",
+   "title": "365Scores: Hapoel Tel Aviv 2-0 Maccabi Netanya, 2026-01-31",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-e2bd6eac58ace8949dcd90db",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463423",
+   "title": "365Scores: Maccabi Tel Aviv 1-2 Hapoel Tel Aviv, 2026-01-26",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-a9388807d3fa6e2c3c6fbb7f",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463430",
+   "title": "365Scores: Hapoel Tel Aviv 2-1 Hapoel Beer Sheva, 2026-01-19",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-e98a24c649fa7d05a8e1623d",
+   "url": "https://webws.365scores.com/web/game/?gameId=4643040",
+   "title": "365Scores: Hapoel Tel Aviv 1-1 Maccabi Tel Aviv, 2026-01-14",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-c05be48f586c7721bd7083e9",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463436",
+   "title": "365Scores: Hapoel Haifa 3-3 Hapoel Tel Aviv, 2026-01-10",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-028b1620a880bbb947d6a2a2",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463445",
+   "title": "365Scores: Hapoel Tel Aviv 1-0 SC Ashdod, 2026-01-04",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-e269ae4da3d25a95aa463e16",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463449",
+   "title": "365Scores: Beitar Jerusalem 1-0 Hapoel Tel Aviv, 2026-01-01",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-927c0e29b19721aa7466aff5",
+   "url": "https://webws.365scores.com/web/game/?gameId=4609820",
+   "title": "365Scores: Hapoel Tel Aviv 3-0 SC Ashdod, 2025-12-25",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-7a82f87ac5b9f21a5f0bead0",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463460",
+   "title": "365Scores: Hapoel Tel Aviv 3-1 Maccabi Bnei Reineh, 2025-12-20",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-5a0b8f5a3c4aec97c93a0e70",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463462",
+   "title": "365Scores: Kiryat Shmona 2-2 Hapoel Tel Aviv, 2025-12-13",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-7fe3adf8895477f43fa1b7a1",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463475",
+   "title": "365Scores: Hapoel Tel Aviv 4-0 Hapoel Petah Tikva, 2025-12-06",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-0f90aadcd7e85d57ecee14b0",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463476",
+   "title": "365Scores: Maccabi Haifa 2-1 Hapoel Tel Aviv, 2025-12-02",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-873fc71f770f17f60e3dcd7b",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463488",
+   "title": "365Scores: Hapoel Tel Aviv 2-0 Bnei Sakhnin, 2025-11-29",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-28727087468c470315d7bc8e",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463491",
+   "title": "365Scores: Hapoel Jerusalem 0-0 Hapoel Tel Aviv, 2025-11-08",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-2c0011caa4bf8a46798b2803",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463501",
+   "title": "365Scores: Hapoel Tel Aviv 2-0 Ironi Tiberias, 2025-11-01",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-dbda90e2698c8c67eb47aea6",
+   "url": "https://webws.365scores.com/web/game/?gameId=4529370",
+   "title": "365Scores: Hapoel Tel Aviv 1-2 Beitar Jerusalem, 2025-10-28",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-87de3561b765a27f3ec84e90",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463506",
+   "title": "365Scores: Maccabi Netanya 2-0 Hapoel Tel Aviv, 2025-10-25",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-ecb29250a58148f76dd61980",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463514",
+   "title": "365Scores: Hapoel Tel Aviv 0-3 Maccabi Tel Aviv, 2025-10-19",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-725944f9d37b42f5ec20ef16",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382638843",
+   "title": "Nil Abarbanel",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-674bffa45f0d5b662ba897a0",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382670966",
+   "title": "Mahmoud Abbas (footballer)",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-1ef6793c7038d2f228f2103b",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385373781",
+   "title": "Besart Abdurahimi",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-37fb85ede1465072a5d1d55b",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382824923",
+   "title": "Ahmed Abed",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-b594445508111ee1a4933a05",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382544776",
+   "title": "Abedi (footballer)",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-044c453a455b6abbb86dbb5d",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1384591538",
+   "title": "Eyad Abu Abaid",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-3a1bd1bb492cf2e499bf10f8",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382576740",
+   "title": "Yossi Abukasis",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-4ff98ba041e3e5d017246ab8",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382908031",
+   "title": "Shay Abutbul",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-003e9dfdbdbbff0d7cea6038",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382456647",
+   "title": "Olubayo Adefemi",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-27390b4fdabfc5e9b86668f1",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382673504",
+   "title": "Omri Afek",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  }
+ ],
+ "archive": [
+  {
+   "id": "daily-match-4bedd43a62ad46eeadb80bfb-moment",
+   "value": {
+    "name": "Hapoel Beer Sheva 0–1 Hapoel Tel Aviv",
+    "on": "2026-11-08",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-d52892ea91308cdd50ca246f",
+    "daily-src-a23766b347846028ceae0f79"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-c92269bbdfffa3e1b12c3d84-moment",
+   "value": {
+    "name": "Hapoel Tel Aviv 2–1 Maccabi Haifa",
+    "on": "2026-11-02",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c75ef67f222257dafed04ebc",
+    "daily-src-8073a71e8bf6a817f31632bc"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-081f356bcaff2f532f8e79f3-moment",
+   "value": {
+    "name": "Maccabi Tel Aviv 2–3 Hapoel Tel Aviv",
+    "on": "2026-10-29",
+    "precision": "day",
+    "hint": "Toto League Cup - Final",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8effbe3cc465a812a096c3c9"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-027b5211e834d82d493b32f4-moment",
+   "value": {
+    "name": "Hapoel Jerusalem 0–3 Hapoel Tel Aviv",
+    "on": "2026-10-24",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-1a02c73ccd1bf94ea79ab3bc",
+    "daily-src-a18c0c4a322f765fe76bbf5c"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-97a8ac354766668df66b3f1c-moment",
+   "value": {
+    "name": "Hapoel Tel Aviv 1–0 Ironi Tiberias",
+    "on": "2026-10-17",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-a7e6c37ddf4cc8d326362a23",
+    "daily-src-d0022ea9281b65ea4078a1b6"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-04c20bd57cc81441f166d69d-moment",
+   "value": {
+    "name": "Kiryat Shmona 1–3 Hapoel Tel Aviv",
+    "on": "2026-10-10",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-6bcd1a770ba677ef18f12454",
+    "daily-src-1ca03780c5eb33ff5153da56"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-47b2ec1719c0cf2abf37b912-moment",
+   "value": {
+    "name": "Hapoel Tel Aviv 3–0 Hapoel Petah Tikva",
+    "on": "2026-09-18",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-917eb97c5b3c4dc67fe7c32c",
+    "daily-src-525b3384725a70485623559d"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-38f41899725c6a6d8b597ae4-moment",
+   "value": {
+    "name": "Maccabi Tel Aviv 4–1 Hapoel Tel Aviv",
+    "on": "2026-09-14",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-59b1dbce7ac509cf5b560a2e",
+    "daily-src-885119f5347e16f3afc4dbab"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-c0eb44bdb254b496d4d42166-moment",
+   "value": {
+    "name": "Hapoel Tel Aviv 4–0 Hapoel Ramat Gan",
+    "on": "2026-09-07",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-af82e6d4fefe5a3f9b2a37b6",
+    "daily-src-dbb20b627d56e1b2f7afd294"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-1d0b6429caac5a4fcf2dbdad-moment",
+   "value": {
+    "name": "Hapoel Tel Aviv 3–0 Beitar Jerusalem",
+    "on": "2026-09-03",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-fda1c0abdec0a4fc825d8a23",
+    "daily-src-f5d2808cded6b62089d5b4dc"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-ce2e593d31e14c077e09a422-moment",
+   "value": {
+    "name": "Hapoel Haifa 0–0 Hapoel Tel Aviv",
+    "on": "2026-08-30",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-f18a38132a9c85bd4b40a43c",
+    "daily-src-48dcafb9dff006120335085a"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-771f5926e6811741d184e7a1-moment",
+   "value": {
+    "name": "Kiryat Shmona 1–2 Hapoel Tel Aviv",
+    "on": "2026-08-16",
+    "precision": "day",
+    "hint": "Toto League Cup - Semi Finals",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8f7199781a82af4eb3299d94"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-99e0b80147e39a762c768e23-moment",
+   "value": {
+    "name": "Beitar Jerusalem 2–2 Hapoel Tel Aviv",
+    "on": "2026-07-18",
+    "precision": "day",
+    "hint": "Toto League Cup - Quarter Final",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-b39f572fe60555fb3d7dcac7"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-1e1203d0cbc4498be698d434-moment",
+   "value": {
+    "name": "Beitar Jerusalem 1–1 Hapoel Tel Aviv",
+    "on": "2026-05-23",
+    "precision": "day",
+    "hint": "Premier League - Championship Round",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-66acea5b446eb88d6a50691f",
+    "daily-src-2a052bc0e6ebe23b9574f83a"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-df3d4593fab62d0a3fa8b1d2-moment",
+   "value": {
+    "name": "Maccabi Haifa 4–1 Hapoel Tel Aviv",
+    "on": "2026-05-19",
+    "precision": "day",
+    "hint": "Premier League - Championship Round",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-d9d8810043840a2318e08da5",
+    "daily-src-b54418b602540206350a1bd4"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-8dcb3c55b0e681de643f13c9-moment",
+   "value": {
+    "name": "Hapoel Tel Aviv 0–2 Hapoel Beer Sheva",
+    "on": "2026-05-15",
+    "precision": "day",
+    "hint": "Premier League - Championship Round",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-19318650596f52292b501c2d",
+    "daily-src-4b0aea75d117c797fadd173b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-0dc305661a83bdd8166252f4-moment",
+   "value": {
+    "name": "Hapoel Tel Aviv 1–0 Hapoel Petah Tikva",
+    "on": "2026-05-12",
+    "precision": "day",
+    "hint": "Premier League - Championship Round",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-4c48cbfbced8a3e6c76dcdbf",
+    "daily-src-00eee9ffb340a9443de2dabd"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-ee71d4fddfddffaf63a13e9f-moment",
+   "value": {
+    "name": "Hapoel Tel Aviv 1–1 Maccabi Tel Aviv",
+    "on": "2026-05-09",
+    "precision": "day",
+    "hint": "Premier League - Championship Round",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-94491c758e1304a1bd9ad5a6",
+    "daily-src-3dadcb2d999c656dc7311e37"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-3e74d392a4f0dd6905239452-moment",
+   "value": {
+    "name": "Hapoel Tel Aviv 0–1 Beitar Jerusalem",
+    "on": "2026-05-06",
+    "precision": "day",
+    "hint": "Premier League - Championship Round",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8fbd48231cb09b5aba4a9b60",
+    "daily-src-7e98eb4456e0d1b507fef41b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-f2af4eed89e045f3b99d9bc3-moment",
+   "value": {
+    "name": "Hapoel Beer Sheva 2–0 Hapoel Tel Aviv",
+    "on": "2026-05-02",
+    "precision": "day",
+    "hint": "Premier League - Championship Round",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-031b96355fc1d18b8717a05e",
+    "daily-src-0305103b464c76df5ff716cc"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-ea92ea2174ee28571c611733-moment",
+   "value": {
+    "name": "Hapoel Tel Aviv 4–0 Maccabi Haifa",
+    "on": "2026-04-29",
+    "precision": "day",
+    "hint": "Premier League - Championship Round",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-975ee73c3c97b35ac624865f",
+    "daily-src-69c2364662c8ba8fddb4f82e"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-a4e9def76133ec34cbb7981b-moment",
+   "value": {
+    "name": "Hapoel Petah Tikva 0–1 Hapoel Tel Aviv",
+    "on": "2026-04-25",
+    "precision": "day",
+    "hint": "Premier League - Championship Round",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-a9c66391bb045709fd0083aa",
+    "daily-src-29f9ffc5dc7ceead622d7752"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-cb24f15422dd37104c682d48-moment",
+   "value": {
+    "name": "Maccabi Tel Aviv 1–0 Hapoel Tel Aviv",
+    "on": "2026-04-19",
+    "precision": "day",
+    "hint": "Premier League - Championship Round",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0d3116acc9281bea2f597e41",
+    "daily-src-db4689e6fdc0e524abebb9ce"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-b2e3a35f3e040b39207bca92-moment",
+   "value": {
+    "name": "Hapoel Petah Tikva 0–0 Hapoel Tel Aviv",
+    "on": "2026-04-11",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-d25f4bbfe1743220ffedef85"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-3d8eb0d95cfca4537773349e-moment",
+   "value": {
+    "name": "Hapoel Tel Aviv 2–0 Maccabi Haifa",
+    "on": "2026-04-06",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-7389ce847f5d7378da4b10c8"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-7fbe546e91f63609c2e6bde3-moment",
+   "value": {
+    "name": "Bnei Sakhnin 0–0 Hapoel Tel Aviv",
+    "on": "2026-02-21",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-563b2894a3a8f11888e24f51"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-57c1f872e3748265ab8e83e5-moment",
+   "value": {
+    "name": "Hapoel Tel Aviv 3–1 Hapoel Jerusalem",
+    "on": "2026-02-13",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-3114cef854a28d3d5b7d3a93"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-cd04ef9ed5cae4b433081983-moment",
+   "value": {
+    "name": "Ironi Tiberias 0–2 Hapoel Tel Aviv",
+    "on": "2026-02-07",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-4a0ddae000fcdff4591fddb6"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-2e3a7c73e97bb1f4b39e3bcb-moment",
+   "value": {
+    "name": "Hapoel Tel Aviv 2–0 Maccabi Netanya",
+    "on": "2026-01-31",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-3050bc2ba3ff33b1e2259ce2"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-1300934112bc8870c6c10983-moment",
+   "value": {
+    "name": "Maccabi Tel Aviv 1–2 Hapoel Tel Aviv",
+    "on": "2026-01-26",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-e2bd6eac58ace8949dcd90db"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-0d2214b185ff34db28b885dc-moment",
+   "value": {
+    "name": "Hapoel Tel Aviv 2–1 Hapoel Beer Sheva",
+    "on": "2026-01-19",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-a9388807d3fa6e2c3c6fbb7f"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-207e3b2a97a98cbb701e1e43-moment",
+   "value": {
+    "name": "Hapoel Tel Aviv 1–1 Maccabi Tel Aviv",
+    "on": "2026-01-14",
+    "precision": "day",
+    "hint": "FA Cup - Round of 16",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-e98a24c649fa7d05a8e1623d"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-ddbfafd0b0ddf1273fe9b600-moment",
+   "value": {
+    "name": "Hapoel Haifa 3–3 Hapoel Tel Aviv",
+    "on": "2026-01-10",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c05be48f586c7721bd7083e9"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-2025186360975d012ddd65ac-moment",
+   "value": {
+    "name": "Hapoel Tel Aviv 1–0 SC Ashdod",
+    "on": "2026-01-04",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-028b1620a880bbb947d6a2a2"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-88649ab7a671bc4d5de2d27f-moment",
+   "value": {
+    "name": "Beitar Jerusalem 1–0 Hapoel Tel Aviv",
+    "on": "2026-01-01",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-e269ae4da3d25a95aa463e16"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-1c9d2c7af8bc02014e0a9808-moment",
+   "value": {
+    "name": "Hapoel Tel Aviv 3–0 SC Ashdod",
+    "on": "2025-12-25",
+    "precision": "day",
+    "hint": "FA Cup - Round of 32",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-927c0e29b19721aa7466aff5"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-73c5ba16f453dd06b8731329-moment",
+   "value": {
+    "name": "Hapoel Tel Aviv 3–1 Maccabi Bnei Reineh",
+    "on": "2025-12-20",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-7a82f87ac5b9f21a5f0bead0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-dfa621f670adfcfcb47d2c0b-moment",
+   "value": {
+    "name": "Kiryat Shmona 2–2 Hapoel Tel Aviv",
+    "on": "2025-12-13",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-5a0b8f5a3c4aec97c93a0e70"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-5b607c9ed8d8c80794186f54-moment",
+   "value": {
+    "name": "Hapoel Tel Aviv 4–0 Hapoel Petah Tikva",
+    "on": "2025-12-06",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-7fe3adf8895477f43fa1b7a1"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-0a2668558bde2d46b8d121c8-moment",
+   "value": {
+    "name": "Maccabi Haifa 2–1 Hapoel Tel Aviv",
+    "on": "2025-12-02",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0f90aadcd7e85d57ecee14b0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-95e4159e1eb78e1d05134403-moment",
+   "value": {
+    "name": "Hapoel Tel Aviv 2–0 Bnei Sakhnin",
+    "on": "2025-11-29",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-873fc71f770f17f60e3dcd7b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-792f8f09d04daa8a16d5ca2a-moment",
+   "value": {
+    "name": "Hapoel Jerusalem 0–0 Hapoel Tel Aviv",
+    "on": "2025-11-08",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-28727087468c470315d7bc8e"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-bb67d98eb22eb523ddf11bfc-moment",
+   "value": {
+    "name": "Hapoel Tel Aviv 2–0 Ironi Tiberias",
+    "on": "2025-11-01",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-2c0011caa4bf8a46798b2803"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-5ef38324c57bdd553bdea906-moment",
+   "value": {
+    "name": "Hapoel Tel Aviv 1–2 Beitar Jerusalem",
+    "on": "2025-10-28",
+    "precision": "day",
+    "hint": "Toto League Cup - Final",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-dbda90e2698c8c67eb47aea6"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-ba86aae400b8385edebcf66c-moment",
+   "value": {
+    "name": "Maccabi Netanya 2–0 Hapoel Tel Aviv",
+    "on": "2025-10-25",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-87de3561b765a27f3ec84e90"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-7b9d7c5480e79e9722b1c6ff-moment",
+   "value": {
+    "name": "Hapoel Tel Aviv 0–3 Maccabi Tel Aviv",
+    "on": "2025-10-19",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-ecb29250a58148f76dd61980"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  }
+ ],
+ "matches": [
+  {
+   "id": "daily-match-4bedd43a62ad46eeadb80bfb",
+   "value": {
+    "name": "Hapoel Beer Sheva 0–1 Hapoel Tel Aviv",
+    "on": "2026-11-08",
+    "home": "Hapoel Beer Sheva",
+    "away": "Hapoel Tel Aviv",
+    "score": "0-1",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "competition": "Premier League",
+    "lineup": [
+     "Assaf Tzur",
+     "Yannick Leliendal",
+     "Chico",
+     "Fernand Mayembo",
+     "Marcus Coco",
+     "Andrian Kraev",
+     "Lucas Falcão",
+     "Omri Altman",
+     "Roi Alkukin",
+     "Douglas Owusu",
+     "Daniel Dappa"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-d52892ea91308cdd50ca246f",
+    "daily-src-a23766b347846028ceae0f79"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-c92269bbdfffa3e1b12c3d84",
+   "value": {
+    "name": "Hapoel Tel Aviv 2–1 Maccabi Haifa",
+    "on": "2026-11-02",
+    "home": "Hapoel Tel Aviv",
+    "away": "Maccabi Haifa",
+    "score": "2-1",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "competition": "Premier League",
+    "lineup": [
+     "Assaf Tzur",
+     "Yannick Leliendal",
+     "Chico",
+     "Fernand Mayembo",
+     "Marcus Coco",
+     "Andrian Kraev",
+     "Lucas Falcão",
+     "Omri Altman",
+     "Roi Alkukin",
+     "Douglas Owusu",
+     "Daniel Dappa"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c75ef67f222257dafed04ebc",
+    "daily-src-8073a71e8bf6a817f31632bc"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-081f356bcaff2f532f8e79f3",
+   "value": {
+    "name": "Maccabi Tel Aviv 2–3 Hapoel Tel Aviv",
+    "on": "2026-10-29",
+    "home": "Maccabi Tel Aviv",
+    "away": "Hapoel Tel Aviv",
+    "score": "2-3",
+    "homeGoals": 2,
+    "awayGoals": 3,
+    "competition": "Toto League Cup - Final",
+    "lineup": [
+     "Assaf Tzur",
+     "Marcus Coco",
+     "Fernand Mayembo",
+     "Chico",
+     "Yannick Leliendal",
+     "Lucas Falcão",
+     "El Yam Kancepolsky",
+     "Douglas Owusu",
+     "Roi Alkukin",
+     "Omri Altman",
+     "Daniel Dappa"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8effbe3cc465a812a096c3c9"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-027b5211e834d82d493b32f4",
+   "value": {
+    "name": "Hapoel Jerusalem 0–3 Hapoel Tel Aviv",
+    "on": "2026-10-24",
+    "home": "Hapoel Jerusalem",
+    "away": "Hapoel Tel Aviv",
+    "score": "0-3",
+    "homeGoals": 0,
+    "awayGoals": 3,
+    "competition": "Premier League",
+    "lineup": [
+     "Stav Turiel",
+     "Omri Altman",
+     "Daniel Dappa",
+     "Douglas Owusu",
+     "El Yam Kancepolsky",
+     "Lucas Falcão",
+     "Yannick Leliendal",
+     "Chico",
+     "Fernand Mayembo",
+     "Marcus Coco",
+     "Assaf Tzur"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-1a02c73ccd1bf94ea79ab3bc",
+    "daily-src-a18c0c4a322f765fe76bbf5c"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-97a8ac354766668df66b3f1c",
+   "value": {
+    "name": "Hapoel Tel Aviv 1–0 Ironi Tiberias",
+    "on": "2026-10-17",
+    "home": "Hapoel Tel Aviv",
+    "away": "Ironi Tiberias",
+    "score": "1-0",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "competition": "Premier League",
+    "lineup": [
+     "Assaf Tzur",
+     "Yannick Leliendal",
+     "Chico",
+     "Fernand Mayembo",
+     "Marcus Coco",
+     "Andrian Kraev",
+     "El Yam Kancepolsky",
+     "Omri Altman",
+     "Roi Alkukin",
+     "Douglas Owusu",
+     "Emmanuel Boateng"
+    ],
+    "scorers": [
+     {
+      "name": "Omri Altman",
+      "minute": null
+     }
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-a7e6c37ddf4cc8d326362a23",
+    "daily-src-d0022ea9281b65ea4078a1b6"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-04c20bd57cc81441f166d69d",
+   "value": {
+    "name": "Kiryat Shmona 1–3 Hapoel Tel Aviv",
+    "on": "2026-10-10",
+    "home": "Kiryat Shmona",
+    "away": "Hapoel Tel Aviv",
+    "score": "1-3",
+    "homeGoals": 1,
+    "awayGoals": 3,
+    "competition": "Premier League",
+    "lineup": [
+     "Assaf Tzur",
+     "Yannick Leliendal",
+     "Chico",
+     "Fernand Mayembo",
+     "Marcus Coco",
+     "El Yam Kancepolsky",
+     "Lucas Falcão",
+     "Omri Altman",
+     "Roi Alkukin",
+     "Douglas Owusu",
+     "Emmanuel Boateng"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-6bcd1a770ba677ef18f12454",
+    "daily-src-1ca03780c5eb33ff5153da56"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-47b2ec1719c0cf2abf37b912",
+   "value": {
+    "name": "Hapoel Tel Aviv 3–0 Hapoel Petah Tikva",
+    "on": "2026-09-18",
+    "home": "Hapoel Tel Aviv",
+    "away": "Hapoel Petah Tikva",
+    "score": "3-0",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "competition": "Premier League",
+    "lineup": [
+     "Assaf Tzur",
+     "Yannick Leliendal",
+     "Chico",
+     "Fernand Mayembo",
+     "Marcus Coco",
+     "El Yam Kancepolsky",
+     "Lucas Falcão",
+     "Omri Altman",
+     "Roi Alkukin",
+     "Douglas Owusu",
+     "Emmanuel Boateng"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-917eb97c5b3c4dc67fe7c32c",
+    "daily-src-525b3384725a70485623559d"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-38f41899725c6a6d8b597ae4",
+   "value": {
+    "name": "Maccabi Tel Aviv 4–1 Hapoel Tel Aviv",
+    "on": "2026-09-14",
+    "home": "Maccabi Tel Aviv",
+    "away": "Hapoel Tel Aviv",
+    "score": "4-1",
+    "homeGoals": 4,
+    "awayGoals": 1,
+    "competition": "Premier League",
+    "lineup": [
+     "Assaf Tzur",
+     "Doron Leidner",
+     "Chico",
+     "Fernand Mayembo",
+     "Marcus Coco",
+     "Andrian Kraev",
+     "Lucas Falcão",
+     "Douglas Owusu",
+     "Roi Alkukin",
+     "Stav Turiel",
+     "Emmanuel Boateng"
+    ],
+    "scorers": [
+     {
+      "name": "Stav Turiel",
+      "minute": null
+     }
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-59b1dbce7ac509cf5b560a2e",
+    "daily-src-885119f5347e16f3afc4dbab"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-c0eb44bdb254b496d4d42166",
+   "value": {
+    "name": "Hapoel Tel Aviv 4–0 Hapoel Ramat Gan",
+    "on": "2026-09-07",
+    "home": "Hapoel Tel Aviv",
+    "away": "Hapoel Ramat Gan",
+    "score": "4-0",
+    "homeGoals": 4,
+    "awayGoals": 0,
+    "competition": "Premier League",
+    "lineup": [
+     "Assaf Tzur",
+     "Doron Leidner",
+     "Chico",
+     "Fernand Mayembo",
+     "Shahar Piven",
+     "Andrian Kraev",
+     "Lucas Falcão",
+     "Roi Alkukin",
+     "Douglas Owusu",
+     "Stav Turiel",
+     "Emmanuel Boateng"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-af82e6d4fefe5a3f9b2a37b6",
+    "daily-src-dbb20b627d56e1b2f7afd294"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-1d0b6429caac5a4fcf2dbdad",
+   "value": {
+    "name": "Hapoel Tel Aviv 3–0 Beitar Jerusalem",
+    "on": "2026-09-03",
+    "home": "Hapoel Tel Aviv",
+    "away": "Beitar Jerusalem",
+    "score": "3-0",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "competition": "Premier League",
+    "lineup": [
+     "Emmanuel Boateng",
+     "Douglas Owusu",
+     "Roi Alkukin",
+     "Stav Turiel",
+     "Andrian Kraev",
+     "Lucas Falcão",
+     "Doron Leidner",
+     "Chico",
+     "Fernand Mayembo",
+     "Marcus Coco",
+     "Assaf Tzur"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-fda1c0abdec0a4fc825d8a23",
+    "daily-src-f5d2808cded6b62089d5b4dc"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-ce2e593d31e14c077e09a422",
+   "value": {
+    "name": "Hapoel Haifa 0–0 Hapoel Tel Aviv",
+    "on": "2026-08-30",
+    "home": "Hapoel Haifa",
+    "away": "Hapoel Tel Aviv",
+    "score": "0-0",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "competition": "Premier League",
+    "lineup": [
+     "Assaf Tzur",
+     "Doron Leidner",
+     "Chico",
+     "Fernand Mayembo",
+     "Marcus Coco",
+     "Andrian Kraev",
+     "Lucas Falcão",
+     "Mor Buskila",
+     "Roi Alkukin",
+     "Stav Turiel",
+     "Daniel Dappa"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-f18a38132a9c85bd4b40a43c",
+    "daily-src-48dcafb9dff006120335085a"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-771f5926e6811741d184e7a1",
+   "value": {
+    "name": "Kiryat Shmona 1–2 Hapoel Tel Aviv",
+    "on": "2026-08-16",
+    "home": "Kiryat Shmona",
+    "away": "Hapoel Tel Aviv",
+    "score": "1-2",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "competition": "Toto League Cup - Semi Finals",
+    "lineup": [
+     "Assaf Tzur",
+     "El Yam Kancepolsky",
+     "Daniel Dappa",
+     "Tal Archel",
+     "Yonatan Ferber",
+     "Mor Buskila",
+     "Amit Lemkin",
+     "Fernand Mayembo",
+     "Chico",
+     "Xande Silva",
+     "Shahar Piven"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8f7199781a82af4eb3299d94"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-99e0b80147e39a762c768e23",
+   "value": {
+    "name": "Beitar Jerusalem 2–2 Hapoel Tel Aviv",
+    "on": "2026-07-18",
+    "home": "Beitar Jerusalem",
+    "away": "Hapoel Tel Aviv",
+    "score": "2-2",
+    "homeGoals": 2,
+    "awayGoals": 2,
+    "competition": "Toto League Cup - Quarter Final",
+    "lineup": [
+     "Assaf Tzur",
+     "Doron Leidner",
+     "Chico",
+     "Fernand Mayembo",
+     "Marcus Coco",
+     "Omri Altman",
+     "Andrian Kraev",
+     "Lucas Falcão",
+     "Stav Turiel",
+     "Xande Silva",
+     "Emmanuel Boateng"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-b39f572fe60555fb3d7dcac7"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-1e1203d0cbc4498be698d434",
+   "value": {
+    "name": "Beitar Jerusalem 1–1 Hapoel Tel Aviv",
+    "on": "2026-05-23",
+    "home": "Beitar Jerusalem",
+    "away": "Hapoel Tel Aviv",
+    "score": "1-1",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "competition": "Premier League - Championship Round",
+    "lineup": [
+     "Dor Benyamini",
+     "Doron Leidner",
+     "Chico",
+     "Fernand Mayembo",
+     "Tal Archel",
+     "Lucas Falcão",
+     "Andrian Kraev",
+     "Xande Silva",
+     "Loizos Loizou",
+     "Stav Turiel",
+     "Omri Altman"
+    ],
+    "scorers": [
+     {
+      "name": "Omri Altman",
+      "minute": null
+     }
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-66acea5b446eb88d6a50691f",
+    "daily-src-2a052bc0e6ebe23b9574f83a"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-df3d4593fab62d0a3fa8b1d2",
+   "value": {
+    "name": "Maccabi Haifa 4–1 Hapoel Tel Aviv",
+    "on": "2026-05-19",
+    "home": "Maccabi Haifa",
+    "away": "Hapoel Tel Aviv",
+    "score": "4-1",
+    "homeGoals": 4,
+    "awayGoals": 1,
+    "competition": "Premier League - Championship Round",
+    "lineup": [
+     "Gad Amos",
+     "Yazan Nassar",
+     "Tal Archel",
+     "Shahar Piven",
+     "Amit Lemkin",
+     "El Yam Kancepolsky",
+     "Lucas Falcão",
+     "Mor Buskila",
+     "Roi Alkukin",
+     "Xande Silva",
+     "Daniel Dappa"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-d9d8810043840a2318e08da5",
+    "daily-src-b54418b602540206350a1bd4"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-8dcb3c55b0e681de643f13c9",
+   "value": {
+    "name": "Hapoel Tel Aviv 0–2 Hapoel Beer Sheva",
+    "on": "2026-05-15",
+    "home": "Hapoel Tel Aviv",
+    "away": "Hapoel Beer Sheva",
+    "score": "0-2",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "competition": "Premier League - Championship Round",
+    "lineup": [
+     "Assaf Tzur",
+     "Doron Leidner",
+     "Chico",
+     "Tal Archel",
+     "Marcus Coco",
+     "Lucas Falcão",
+     "Andrian Kraev",
+     "Loizos Loizou",
+     "Omri Altman",
+     "Stav Turiel",
+     "Emmanuel Boateng"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-19318650596f52292b501c2d",
+    "daily-src-4b0aea75d117c797fadd173b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-0dc305661a83bdd8166252f4",
+   "value": {
+    "name": "Hapoel Tel Aviv 1–0 Hapoel Petah Tikva",
+    "on": "2026-05-12",
+    "home": "Hapoel Tel Aviv",
+    "away": "Hapoel Petah Tikva",
+    "score": "1-0",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "competition": "Premier League - Championship Round",
+    "lineup": [
+     "Assaf Tzur",
+     "Amit Lemkin",
+     "Chico",
+     "Fernand Mayembo",
+     "Shahar Piven",
+     "Roi Alkukin",
+     "Andrian Kraev",
+     "Xande Silva",
+     "Loizos Loizou",
+     "Stav Turiel",
+     "Emmanuel Boateng"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-4c48cbfbced8a3e6c76dcdbf",
+    "daily-src-00eee9ffb340a9443de2dabd"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-ee71d4fddfddffaf63a13e9f",
+   "value": {
+    "name": "Hapoel Tel Aviv 1–1 Maccabi Tel Aviv",
+    "on": "2026-05-09",
+    "home": "Hapoel Tel Aviv",
+    "away": "Maccabi Tel Aviv",
+    "score": "1-1",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "competition": "Premier League - Championship Round",
+    "lineup": [
+     "Assaf Tzur",
+     "Doron Leidner",
+     "Chico",
+     "Fernand Mayembo",
+     "Marcus Coco",
+     "Andrian Kraev",
+     "Loizos Loizou",
+     "Lucas Falcão",
+     "Stav Turiel",
+     "Emmanuel Boateng",
+     "Roi Alkukin"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-94491c758e1304a1bd9ad5a6",
+    "daily-src-3dadcb2d999c656dc7311e37"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-3e74d392a4f0dd6905239452",
+   "value": {
+    "name": "Hapoel Tel Aviv 0–1 Beitar Jerusalem",
+    "on": "2026-05-06",
+    "home": "Hapoel Tel Aviv",
+    "away": "Beitar Jerusalem",
+    "score": "0-1",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "competition": "Premier League - Championship Round",
+    "lineup": [
+     "Assaf Tzur",
+     "Amit Lemkin",
+     "Chico",
+     "Fernand Mayembo",
+     "Marcus Coco",
+     "El Yam Kancepolsky",
+     "Andrian Kraev",
+     "Xande Silva",
+     "Loizos Loizou",
+     "Stav Turiel",
+     "Emmanuel Boateng"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8fbd48231cb09b5aba4a9b60",
+    "daily-src-7e98eb4456e0d1b507fef41b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-f2af4eed89e045f3b99d9bc3",
+   "value": {
+    "name": "Hapoel Beer Sheva 2–0 Hapoel Tel Aviv",
+    "on": "2026-05-02",
+    "home": "Hapoel Beer Sheva",
+    "away": "Hapoel Tel Aviv",
+    "score": "2-0",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "competition": "Premier League - Championship Round",
+    "lineup": [
+     "Assaf Tzur",
+     "Marcus Coco",
+     "Chico",
+     "Fernand Mayembo",
+     "Shahar Piven",
+     "Omri Altman",
+     "Andrian Kraev",
+     "Lucas Falcão",
+     "Loizos Loizou",
+     "Emmanuel Boateng",
+     "Daniel Dappa"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-031b96355fc1d18b8717a05e",
+    "daily-src-0305103b464c76df5ff716cc"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-ea92ea2174ee28571c611733",
+   "value": {
+    "name": "Hapoel Tel Aviv 4–0 Maccabi Haifa",
+    "on": "2026-04-29",
+    "home": "Hapoel Tel Aviv",
+    "away": "Maccabi Haifa",
+    "score": "4-0",
+    "homeGoals": 4,
+    "awayGoals": 0,
+    "competition": "Premier League - Championship Round",
+    "lineup": [
+     "Assaf Tzur",
+     "Doron Leidner",
+     "Chico",
+     "Fernand Mayembo",
+     "Shahar Piven",
+     "Loizos Loizou",
+     "El Yam Kancepolsky",
+     "Andrian Kraev",
+     "Stav Turiel",
+     "Emmanuel Boateng",
+     "Daniel Dappa"
+    ],
+    "scorers": [
+     {
+      "name": "Loizos Loizou",
+      "minute": null
+     },
+     {
+      "name": "Omri Altman",
+      "minute": null
+     },
+     {
+      "name": "Omri Altman",
+      "minute": null
+     },
+     {
+      "name": "Loizos Loizou",
+      "minute": null
+     }
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-975ee73c3c97b35ac624865f",
+    "daily-src-69c2364662c8ba8fddb4f82e"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-a4e9def76133ec34cbb7981b",
+   "value": {
+    "name": "Hapoel Petah Tikva 0–1 Hapoel Tel Aviv",
+    "on": "2026-04-25",
+    "home": "Hapoel Petah Tikva",
+    "away": "Hapoel Tel Aviv",
+    "score": "0-1",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "competition": "Premier League - Championship Round",
+    "lineup": [
+     "Assaf Tzur",
+     "Amit Lemkin",
+     "Chico",
+     "Fernand Mayembo",
+     "Shahar Piven",
+     "Andrian Kraev",
+     "Lucas Falcão",
+     "Xande Silva",
+     "Loizos Loizou",
+     "Stav Turiel",
+     "Emmanuel Boateng"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-a9c66391bb045709fd0083aa",
+    "daily-src-29f9ffc5dc7ceead622d7752"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-cb24f15422dd37104c682d48",
+   "value": {
+    "name": "Maccabi Tel Aviv 1–0 Hapoel Tel Aviv",
+    "on": "2026-04-19",
+    "home": "Maccabi Tel Aviv",
+    "away": "Hapoel Tel Aviv",
+    "score": "1-0",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "competition": "Premier League - Championship Round",
+    "lineup": [
+     "Assaf Tzur",
+     "Doron Leidner",
+     "Chico",
+     "Fernand Mayembo",
+     "Marcus Coco",
+     "Tal Archel",
+     "Lucas Falcão",
+     "Xande Silva",
+     "Loizos Loizou",
+     "Stav Turiel",
+     "Emmanuel Boateng"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0d3116acc9281bea2f597e41",
+    "daily-src-db4689e6fdc0e524abebb9ce"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-b2e3a35f3e040b39207bca92",
+   "value": {
+    "name": "Hapoel Petah Tikva 0–0 Hapoel Tel Aviv",
+    "on": "2026-04-11",
+    "home": "Hapoel Petah Tikva",
+    "away": "Hapoel Tel Aviv",
+    "score": "0-0",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "competition": "Premier League",
+    "lineup": [
+     "Assaf Tzur",
+     "Doron Leidner",
+     "Chico",
+     "Fernand Mayembo",
+     "Shahar Piven",
+     "Tal Archel",
+     "Lucas Falcão",
+     "Omri Altman",
+     "Loizos Loizou",
+     "Stav Turiel",
+     "Daniel Dappa"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-d25f4bbfe1743220ffedef85"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-3d8eb0d95cfca4537773349e",
+   "value": {
+    "name": "Hapoel Tel Aviv 2–0 Maccabi Haifa",
+    "on": "2026-04-06",
+    "home": "Hapoel Tel Aviv",
+    "away": "Maccabi Haifa",
+    "score": "2-0",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "competition": "Premier League",
+    "lineup": [
+     "Assaf Tzur",
+     "Marcus Coco",
+     "Chico",
+     "Fernand Mayembo",
+     "Shahar Piven",
+     "Roi Alkukin",
+     "Tal Archel",
+     "Omri Altman",
+     "Loizos Loizou",
+     "Stav Turiel",
+     "Emmanuel Boateng"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-7389ce847f5d7378da4b10c8"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-7fbe546e91f63609c2e6bde3",
+   "value": {
+    "name": "Bnei Sakhnin 0–0 Hapoel Tel Aviv",
+    "on": "2026-02-21",
+    "home": "Bnei Sakhnin",
+    "away": "Hapoel Tel Aviv",
+    "score": "0-0",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "competition": "Premier League",
+    "lineup": [
+     "Assaf Tzur",
+     "Doron Leidner",
+     "Chico",
+     "Tal Archel",
+     "Marcus Coco",
+     "Andrian Kraev",
+     "Lucas Falcão",
+     "Amit Lemkin",
+     "Loizos Loizou",
+     "Omri Altman",
+     "Stav Turiel"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-563b2894a3a8f11888e24f51"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-57c1f872e3748265ab8e83e5",
+   "value": {
+    "name": "Hapoel Tel Aviv 3–1 Hapoel Jerusalem",
+    "on": "2026-02-13",
+    "home": "Hapoel Tel Aviv",
+    "away": "Hapoel Jerusalem",
+    "score": "3-1",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "competition": "Premier League",
+    "lineup": [
+     "Assaf Tzur",
+     "Doron Leidner",
+     "Chico",
+     "Tal Archel",
+     "Marcus Coco",
+     "Andrian Kraev",
+     "Lucas Falcão",
+     "Amit Lemkin",
+     "Loizos Loizou",
+     "Stav Turiel",
+     "Omri Altman"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-3114cef854a28d3d5b7d3a93"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-cd04ef9ed5cae4b433081983",
+   "value": {
+    "name": "Ironi Tiberias 0–2 Hapoel Tel Aviv",
+    "on": "2026-02-07",
+    "home": "Ironi Tiberias",
+    "away": "Hapoel Tel Aviv",
+    "score": "0-2",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "competition": "Premier League",
+    "lineup": [
+     "Assaf Tzur",
+     "Ziv Morgan",
+     "Chico",
+     "Tal Archel",
+     "Marcus Coco",
+     "Lucas Falcão",
+     "Andrian Kraev",
+     "Amit Lemkin",
+     "Roy Korine",
+     "Loizos Loizou",
+     "Omri Altman"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-4a0ddae000fcdff4591fddb6"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-2e3a7c73e97bb1f4b39e3bcb",
+   "value": {
+    "name": "Hapoel Tel Aviv 2–0 Maccabi Netanya",
+    "on": "2026-01-31",
+    "home": "Hapoel Tel Aviv",
+    "away": "Maccabi Netanya",
+    "score": "2-0",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "competition": "Premier League",
+    "lineup": [
+     "Assaf Tzur",
+     "Ziv Morgan",
+     "Chico",
+     "Tal Archel",
+     "Marcus Coco",
+     "Andrian Kraev",
+     "Lucas Falcão",
+     "Roy Korine",
+     "Roi Alkukin",
+     "Loizos Loizou",
+     "Daniel Dappa"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-3050bc2ba3ff33b1e2259ce2"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-1300934112bc8870c6c10983",
+   "value": {
+    "name": "Maccabi Tel Aviv 1–2 Hapoel Tel Aviv",
+    "on": "2026-01-26",
+    "home": "Maccabi Tel Aviv",
+    "away": "Hapoel Tel Aviv",
+    "score": "1-2",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "competition": "Premier League",
+    "lineup": [
+     "Assaf Tzur",
+     "Ziv Morgan",
+     "Chico",
+     "Tal Archel",
+     "Marcus Coco",
+     "Andrian Kraev",
+     "Lucas Falcão",
+     "Amit Lemkin",
+     "Roy Korine",
+     "Loizos Loizou",
+     "Anas Mahamid"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-e2bd6eac58ace8949dcd90db"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-0d2214b185ff34db28b885dc",
+   "value": {
+    "name": "Hapoel Tel Aviv 2–1 Hapoel Beer Sheva",
+    "on": "2026-01-19",
+    "home": "Hapoel Tel Aviv",
+    "away": "Hapoel Beer Sheva",
+    "score": "2-1",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "competition": "Premier League",
+    "lineup": [
+     "Assaf Tzur",
+     "Ziv Morgan",
+     "Chico",
+     "Shahar Piven",
+     "Marcus Coco",
+     "Andrian Kraev",
+     "Lucas Falcão",
+     "Roy Korine",
+     "Loizos Loizou",
+     "Stav Turiel",
+     "Daniel Dappa"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-a9388807d3fa6e2c3c6fbb7f"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-207e3b2a97a98cbb701e1e43",
+   "value": {
+    "name": "Hapoel Tel Aviv 1–1 Maccabi Tel Aviv",
+    "on": "2026-01-14",
+    "home": "Hapoel Tel Aviv",
+    "away": "Maccabi Tel Aviv",
+    "score": "1-1",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "competition": "FA Cup - Round of 16",
+    "lineup": [
+     "Assaf Tzur",
+     "Ziv Morgan",
+     "Chico",
+     "Fernand Mayembo",
+     "Marcus Coco",
+     "Andrian Kraev",
+     "Lucas Falcão",
+     "Roy Korine",
+     "Loizos Loizou",
+     "Stav Turiel",
+     "Daniel Dappa"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-e98a24c649fa7d05a8e1623d"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-ddbfafd0b0ddf1273fe9b600",
+   "value": {
+    "name": "Hapoel Haifa 3–3 Hapoel Tel Aviv",
+    "on": "2026-01-10",
+    "home": "Hapoel Haifa",
+    "away": "Hapoel Tel Aviv",
+    "score": "3-3",
+    "homeGoals": 3,
+    "awayGoals": 3,
+    "competition": "Premier League",
+    "lineup": [
+     "Assaf Tzur",
+     "Ziv Morgan",
+     "Fernand Mayembo",
+     "Tal Archel",
+     "Yazan Nassar",
+     "El Yam Kancepolsky",
+     "Lucas Falcão",
+     "Roi Alkukin",
+     "Loizos Loizou",
+     "Roy Korine",
+     "Anas Mahamid"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c05be48f586c7721bd7083e9"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-2025186360975d012ddd65ac",
+   "value": {
+    "name": "Hapoel Tel Aviv 1–0 SC Ashdod",
+    "on": "2026-01-04",
+    "home": "Hapoel Tel Aviv",
+    "away": "SC Ashdod",
+    "score": "1-0",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "competition": "Premier League",
+    "lineup": [
+     "Assaf Tzur",
+     "Chico",
+     "Fernand Mayembo",
+     "Tal Archel",
+     "Yazan Nassar",
+     "Andrian Kraev",
+     "Lucas Falcão",
+     "Roy Korine",
+     "Loizos Loizou",
+     "Omri Altman",
+     "Roi Alkukin"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-028b1620a880bbb947d6a2a2"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-88649ab7a671bc4d5de2d27f",
+   "value": {
+    "name": "Beitar Jerusalem 1–0 Hapoel Tel Aviv",
+    "on": "2026-01-01",
+    "home": "Beitar Jerusalem",
+    "away": "Hapoel Tel Aviv",
+    "score": "1-0",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "competition": "Premier League",
+    "lineup": [
+     "Assaf Tzur",
+     "Yazan Nassar",
+     "Chico",
+     "Fernand Mayembo",
+     "Shahar Piven",
+     "Roi Alkukin",
+     "Andrian Kraev",
+     "Lucas Falcão",
+     "Daniel Dappa",
+     "Omri Altman",
+     "Loizos Loizou"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-e269ae4da3d25a95aa463e16"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-1c9d2c7af8bc02014e0a9808",
+   "value": {
+    "name": "Hapoel Tel Aviv 3–0 SC Ashdod",
+    "on": "2025-12-25",
+    "home": "Hapoel Tel Aviv",
+    "away": "SC Ashdod",
+    "score": "3-0",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "competition": "FA Cup - Round of 32",
+    "lineup": [
+     "Assaf Tzur",
+     "Yazan Nassar",
+     "Chico",
+     "Fernand Mayembo",
+     "Shahar Piven",
+     "Andrian Kraev",
+     "Roi Alkukin",
+     "Omri Altman",
+     "El Yam Kancepolsky",
+     "Daniel Dappa",
+     "Loizos Loizou"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-927c0e29b19721aa7466aff5"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-73c5ba16f453dd06b8731329",
+   "value": {
+    "name": "Hapoel Tel Aviv 3–1 Maccabi Bnei Reineh",
+    "on": "2025-12-20",
+    "home": "Hapoel Tel Aviv",
+    "away": "Maccabi Bnei Reineh",
+    "score": "3-1",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "competition": "Premier League",
+    "lineup": [
+     "Assaf Tzur",
+     "Ziv Morgan",
+     "Chico",
+     "Fernand Mayembo",
+     "Shahar Piven",
+     "Andrian Kraev",
+     "Lucas Falcão",
+     "Omri Altman",
+     "Mor Buskila",
+     "Daniel Dappa",
+     "Loizos Loizou"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-7a82f87ac5b9f21a5f0bead0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-dfa621f670adfcfcb47d2c0b",
+   "value": {
+    "name": "Kiryat Shmona 2–2 Hapoel Tel Aviv",
+    "on": "2025-12-13",
+    "home": "Kiryat Shmona",
+    "away": "Hapoel Tel Aviv",
+    "score": "2-2",
+    "homeGoals": 2,
+    "awayGoals": 2,
+    "competition": "Premier League",
+    "lineup": [
+     "Assaf Tzur",
+     "Yazan Nassar",
+     "Chico",
+     "Fernand Mayembo",
+     "Shahar Piven",
+     "Andrian Kraev",
+     "Roi Alkukin",
+     "Lucas Falcão",
+     "Loizos Loizou",
+     "Daniel Dappa",
+     "Stav Turiel"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-5a0b8f5a3c4aec97c93a0e70"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-5b607c9ed8d8c80794186f54",
+   "value": {
+    "name": "Hapoel Tel Aviv 4–0 Hapoel Petah Tikva",
+    "on": "2025-12-06",
+    "home": "Hapoel Tel Aviv",
+    "away": "Hapoel Petah Tikva",
+    "score": "4-0",
+    "homeGoals": 4,
+    "awayGoals": 0,
+    "competition": "Premier League",
+    "lineup": [
+     "Assaf Tzur",
+     "Yazan Nassar",
+     "Chico",
+     "Fernand Mayembo",
+     "Shahar Piven",
+     "Andrian Kraev",
+     "Lucas Falcão",
+     "Loizos Loizou",
+     "Roi Alkukin",
+     "Stav Turiel",
+     "Daniel Dappa"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-7fe3adf8895477f43fa1b7a1"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-0a2668558bde2d46b8d121c8",
+   "value": {
+    "name": "Maccabi Haifa 2–1 Hapoel Tel Aviv",
+    "on": "2025-12-02",
+    "home": "Maccabi Haifa",
+    "away": "Hapoel Tel Aviv",
+    "score": "2-1",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "competition": "Premier League",
+    "lineup": [
+     "Assaf Tzur",
+     "Doron Leidner",
+     "Chico",
+     "Fernand Mayembo",
+     "Shahar Piven",
+     "Loizos Loizou",
+     "Roi Alkukin",
+     "Andrian Kraev",
+     "Ran Binyamin",
+     "Stav Turiel",
+     "Daniel Dappa"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0f90aadcd7e85d57ecee14b0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-95e4159e1eb78e1d05134403",
+   "value": {
+    "name": "Hapoel Tel Aviv 2–0 Bnei Sakhnin",
+    "on": "2025-11-29",
+    "home": "Hapoel Tel Aviv",
+    "away": "Bnei Sakhnin",
+    "score": "2-0",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "competition": "Premier League",
+    "lineup": [
+     "Assaf Tzur",
+     "Doron Leidner",
+     "Chico",
+     "Fernand Mayembo",
+     "Shahar Piven",
+     "Roi Alkukin",
+     "Andrian Kraev",
+     "Ran Binyamin",
+     "Loizos Loizou",
+     "Stav Turiel",
+     "Daniel Dappa"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-873fc71f770f17f60e3dcd7b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-792f8f09d04daa8a16d5ca2a",
+   "value": {
+    "name": "Hapoel Jerusalem 0–0 Hapoel Tel Aviv",
+    "on": "2025-11-08",
+    "home": "Hapoel Jerusalem",
+    "away": "Hapoel Tel Aviv",
+    "score": "0-0",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "competition": "Premier League",
+    "lineup": [
+     "Assaf Tzur",
+     "Chico",
+     "Fernand Mayembo",
+     "Shahar Piven",
+     "Doron Leidner",
+     "Andrian Kraev",
+     "Lucas Falcão",
+     "Stav Turiel",
+     "Omri Altman",
+     "Xande Silva",
+     "Loizos Loizou"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-28727087468c470315d7bc8e"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-bb67d98eb22eb523ddf11bfc",
+   "value": {
+    "name": "Hapoel Tel Aviv 2–0 Ironi Tiberias",
+    "on": "2025-11-01",
+    "home": "Hapoel Tel Aviv",
+    "away": "Ironi Tiberias",
+    "score": "2-0",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "competition": "Premier League",
+    "lineup": [
+     "Assaf Tzur",
+     "Yazan Nassar",
+     "Chico",
+     "Fernand Mayembo",
+     "Shahar Piven",
+     "Andrian Kraev",
+     "Lucas Falcão",
+     "Ran Binyamin",
+     "Loizos Loizou",
+     "Stav Turiel",
+     "Xande Silva"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-2c0011caa4bf8a46798b2803"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-5ef38324c57bdd553bdea906",
+   "value": {
+    "name": "Hapoel Tel Aviv 1–2 Beitar Jerusalem",
+    "on": "2025-10-28",
+    "home": "Hapoel Tel Aviv",
+    "away": "Beitar Jerusalem",
+    "score": "1-2",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "competition": "Toto League Cup - Final",
+    "lineup": [
+     "Assaf Tzur",
+     "Yazan Nassar",
+     "Chico",
+     "Ziv Morgan",
+     "Shahar Piven",
+     "Andrian Kraev",
+     "Lucas Falcão",
+     "Roi Alkukin",
+     "Loizos Loizou",
+     "Stav Turiel",
+     "Daniel Dappa"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-dbda90e2698c8c67eb47aea6"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-ba86aae400b8385edebcf66c",
+   "value": {
+    "name": "Maccabi Netanya 2–0 Hapoel Tel Aviv",
+    "on": "2025-10-25",
+    "home": "Maccabi Netanya",
+    "away": "Hapoel Tel Aviv",
+    "score": "2-0",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "competition": "Premier League",
+    "lineup": [
+     "Assaf Tzur",
+     "Yazan Nassar",
+     "Chico",
+     "Fernand Mayembo",
+     "Shahar Piven",
+     "Andrian Kraev",
+     "Lucas Falcão",
+     "Ran Binyamin",
+     "Loizos Loizou",
+     "Stav Turiel",
+     "Omri Altman"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-87de3561b765a27f3ec84e90"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-7b9d7c5480e79e9722b1c6ff",
+   "value": {
+    "name": "Hapoel Tel Aviv 0–3 Maccabi Tel Aviv",
+    "on": "2025-10-19",
+    "home": "Hapoel Tel Aviv",
+    "away": "Maccabi Tel Aviv",
+    "score": "0-3",
+    "homeGoals": 0,
+    "awayGoals": 3,
+    "competition": "Premier League",
+    "lineup": [
+     "Chico",
+     "Ran Binyamin",
+     "Andrian Kraev",
+     "Daniel Dappa",
+     "Doron Leidner",
+     "Loizos Loizou",
+     "Fernand Mayembo",
+     "Shahar Piven",
+     "Stav Turiel",
+     "Assaf Tzur",
+     "Lucas Falcão"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-ecb29250a58148f76dd61980"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  }
+ ],
+ "players": [
+  {
+   "id": "daily-player-1acf1d68b2f7503a4a2a62fd",
+   "value": {
+    "name": "Nil Abarbanel",
+    "aliases": [],
+    "positions": [
+     "GK"
+    ],
+    "fromYear": 2006,
+    "toYear": 2010,
+    "career": {
+     "apps": 10,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-725944f9d37b42f5ec20ef16"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-24f62f3d76e8204665bb28a4",
+   "value": {
+    "name": "Mahmoud Abbas",
+    "aliases": [
+     "Mahmoud Abbas (footballer)"
+    ],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2011,
+    "toYear": 2013,
+    "career": {
+     "apps": 20,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-674bffa45f0d5b662ba897a0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-32d663931f41d781281602eb",
+   "value": {
+    "name": "Besart Abdurahimi",
+    "aliases": [],
+    "positions": [],
+    "fromYear": 2013,
+    "toYear": 2014,
+    "career": {
+     "apps": 20,
+     "goals": 4,
+     "basis": "English Wikipedia club stint table"
+    },
+    "archiveOnly": true,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-1ef6793c7038d2f228f2103b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-7a1560721a62232bee28d649",
+   "value": {
+    "name": "Ahmed Abed",
+    "aliases": [],
+    "positions": [],
+    "fromYear": 2018,
+    "toYear": null,
+    "career": {
+     "apps": 49,
+     "goals": 5,
+     "basis": "English Wikipedia club stint table"
+    },
+    "archiveOnly": true,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-37fb85ede1465072a5d1d55b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-0a6838587566303f367be1c2",
+   "value": {
+    "name": "Abedi",
+    "aliases": [
+     "Abedi (footballer)"
+    ],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2007,
+    "toYear": 2008,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-b594445508111ee1a4933a05"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-edecbe1cde0e2d93e2f34e73",
+   "value": {
+    "name": "Eyad Abu Abaid",
+    "aliases": [],
+    "positions": [],
+    "fromYear": 2015,
+    "toYear": 2021,
+    "career": {
+     "apps": 88,
+     "goals": 2,
+     "basis": "English Wikipedia club stint table"
+    },
+    "archiveOnly": true,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-044c453a455b6abbb86dbb5d"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-de30e2f7c7c8cf421ebc791d",
+   "value": {
+    "name": "Yossi Abukasis",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 1987,
+    "toYear": 2007,
+    "career": {
+     "apps": 262,
+     "goals": 30,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-3a1bd1bb492cf2e499bf10f8"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-1cb829bdf655d0ece56bd19b",
+   "value": {
+    "name": "Shay Abutbul",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2002,
+    "toYear": 2015,
+    "career": {
+     "apps": 236,
+     "goals": 18,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-4ff98ba041e3e5d017246ab8"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-3ccc85fac4d327dcb3f6115b",
+   "value": {
+    "name": "Olubayo Adefemi",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2005,
+    "toYear": 2006,
+    "career": {
+     "apps": 10,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-003e9dfdbdbbff0d7cea6038"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-f65ff8f64fb2acb7ca9a9ce7",
+   "value": {
+    "name": "Omri Afek",
+    "aliases": [],
+    "positions": [],
+    "fromYear": 1998,
+    "toYear": 2003,
+    "career": {
+     "apps": 84,
+     "goals": 14,
+     "basis": "English Wikipedia club stint table"
+    },
+    "archiveOnly": true,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-27390b4fdabfc5e9b86668f1"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  }
+ ],
+ "seasons": [],
+ "kits": []
+}

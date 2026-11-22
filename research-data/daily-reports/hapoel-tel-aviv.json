@@ -1,0 +1,265 @@
+{
+ "day": "2026-11-22",
+ "clubId": "hapoel-tel-aviv",
+ "runUrl": "https://github.com/maordubel/fanlife/actions/runs/44985721909",
+ "added": {
+  "matches": 46,
+  "players": 10,
+  "seasons": 0,
+  "kits": 0,
+  "lineups": 46,
+  "scorers": 4
+ },
+ "heldDays": [],
+ "steps": [
+  {
+   "step": "Historical archives",
+   "state": "skipped",
+   "info": "No additional archive profile. The shared match, squad and kit sources still run."
+  },
+  {
+   "step": "UEFA match reports",
+   "state": "ok",
+   "info": "Finished the bounded UEFA pull"
+  },
+  {
+   "step": "Recent league and cup results",
+   "state": "ok",
+   "info": "Refreshed up to 12 recent fixtures"
+  },
+  {
+   "step": "Historical results, elevens and scorers",
+   "state": "ok",
+   "info": "Continued from the historical results checkpoint, up to 30 fixtures"
+  },
+  {
+   "step": "Historical players",
+   "state": "ok",
+   "info": "10 documented senior club stints"
+  },
+  {
+   "step": "Season archives, scoresheets and shirt metadata",
+   "state": "ok",
+   "info": "0 checked seasons and 0 dated results"
+  },
+  {
+   "step": "Kit archive",
+   "state": "gap",
+   "info": "www.footballkitarchive.com: robots.txt disallows this path"
+  },
+  {
+   "step": "Prices for newly eligible cards",
+   "state": "ok",
+   "info": "Existing prices preserved"
+  },
+  {
+   "step": "Head-to-head ledger",
+   "state": "ok",
+   "info": "Rebuilt the club fixture ledger"
+  }
+ ],
+ "dataVersion": "18a60a53db104383",
+ "uncertainties": [
+  {
+   "record": "hapoel-tel-aviv:daily-match-38f41899725c6a6d8b597ae4",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-c0eb44bdb254b496d4d42166",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-1d0b6429caac5a4fcf2dbdad",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-ce2e593d31e14c077e09a422",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-771f5926e6811741d184e7a1",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-99e0b80147e39a762c768e23",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-1e1203d0cbc4498be698d434",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-df3d4593fab62d0a3fa8b1d2",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-8dcb3c55b0e681de643f13c9",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-0dc305661a83bdd8166252f4",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-ee71d4fddfddffaf63a13e9f",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-3e74d392a4f0dd6905239452",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-f2af4eed89e045f3b99d9bc3",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-ea92ea2174ee28571c611733",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-a4e9def76133ec34cbb7981b",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-cb24f15422dd37104c682d48",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-b2e3a35f3e040b39207bca92",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-3d8eb0d95cfca4537773349e",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-7fbe546e91f63609c2e6bde3",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-57c1f872e3748265ab8e83e5",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-cd04ef9ed5cae4b433081983",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-2e3a7c73e97bb1f4b39e3bcb",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-1300934112bc8870c6c10983",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-0d2214b185ff34db28b885dc",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-207e3b2a97a98cbb701e1e43",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-ddbfafd0b0ddf1273fe9b600",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-2025186360975d012ddd65ac",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-88649ab7a671bc4d5de2d27f",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-1c9d2c7af8bc02014e0a9808",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-73c5ba16f453dd06b8731329",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-dfa621f670adfcfcb47d2c0b",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-5b607c9ed8d8c80794186f54",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-0a2668558bde2d46b8d121c8",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-95e4159e1eb78e1d05134403",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-792f8f09d04daa8a16d5ca2a",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-bb67d98eb22eb523ddf11bfc",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-5ef38324c57bdd553bdea906",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-ba86aae400b8385edebcf66c",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-7b9d7c5480e79e9722b1c6ff",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  }
+ ],
+ "featureInputs": {
+  "players": 658,
+  "matches": 3161,
+  "seasons": 0,
+  "kits": 133
+ }
+}
