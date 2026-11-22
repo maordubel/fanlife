@@ -1,18 +1,20 @@
 import 'server-only'
 import {REGIONS,isEdition} from './catalog'
-import {luluAddress,printifyAddress,type PaidSession} from './checkout'
+import {addressGap,luluAddress,printifyAddress,type PaidSession} from './checkout'
 import {createJob,ensureLuluWebhook,luluOpen,type Job} from './lulu'
 import {orderGoods} from './printify'
-import {getBookOrder,moveBookOrder} from './orders'
+import {getBookOrder,moveBookOrder,patchBookOrder,stuckBookOrders,type BookOrder} from './orders'
 import {bookMail} from './mail'
 import {mailOpen,sendMail} from '@/lib/pay/mail'
+import {stripeGet} from '@/lib/pay/stripe'
 
 /**
  * Stripe's word on a book checkout (called by /api/pay/webhook for events whose metadata carries `book`).
  * Paid tip → done + thank-you. Paid paperback → a Lulu print job (one copy, the reader's address, the post they paid for)
  * → printing + "at the printer". Every move happens only from the state it expects, so a repeated event changes nothing.
- * A paperback Lulu cannot take (address incomplete, Lulu down) stays `paid` with the reason in `error`; the order desk
- * row shows it and the job can be sent again from there.
+ * The reader gets "order received" the moment Stripe confirms payment. An order its maker cannot take (address incomplete,
+ * Lulu or Printify down) stays `paid` with the reason in `error`; /api/book/retry (every 10 minutes, GitHub Actions) re-reads
+ * the Stripe session and tries again, applying any owner `fix`, and tells the owner once when an order is stuck.
  */
 type Ev={type:string;data:{object:PaidSession&{metadata?:Record<string,string>;payment_status?:string;payment_intent?:string|null;amount_total?:number|null}}}
 const mail=async(to:string|null|undefined,...a:Parameters<typeof bookMail>)=>{if(to&&mailOpen())try{await sendMail(to,bookMail(...a),`book-${a[0]}-${a[2].order}`)}catch{/* the order stands without its letter */}}
@@ -27,15 +29,47 @@ export async function handleBookEvent(ev:Ev):Promise<void>{
  if(!await moveBookOrder(id,['open','expired'],{status:'paid',paid_at:now,email,stripe_payment:typeof obj.payment_intent==='string'?obj.payment_intent:null}))return
  const o=await getBookOrder({id});if(!o)return
  if(o.kind==='tip'){await moveBookOrder(id,['paid'],{status:'done'});await mail(email,'tip',o.lang,{order:id});return}
- if(o.kind==='tee'||o.kind==='cap'){await sendToPrintify(o.id,obj);return}
- await sendToPrinter(o.id,obj)
+ await mail(email,'received',o.lang,{order:id})
+ await sendOn(o,obj)
+}
+
+/** the one door to the maker: Lulu for paperbacks, Printify for goods; counts attempts and alerts the owner once */
+async function sendOn(o:BookOrder,session:PaidSession):Promise<boolean>{
+ const done=o.kind==='paperback'?!!await sendToPrinter(o.id,session,o.fix):!!await sendToPrintify(o.id,session,o.fix)
+ if(done)return true
+ const now=await getBookOrder({id:o.id});if(!now||now.status!=='paid')return false
+ await patchBookOrder(o.id,{attempts:(now.attempts??0)+1})
+ if(!now.alerted_at){await alertOwner(now);await patchBookOrder(o.id,{alerted_at:new Date().toISOString()})}
+ return false
+}
+async function alertOwner(o:BookOrder){
+ if(!mailOpen())return
+ const to=process.env.BOOK_OWNER_EMAIL||'fanlife@dubelteam.com',what=o.kind==='paperback'?`paperback (${o.variant??o.lang})`:`${o.kind} (${o.variant})`
+ const text=`A paid Broken Collective order has not reached its maker yet.\n\nOrder: ${o.id}\nItem: ${what}\nRegion: ${o.region}\nPaid: ${o.paid_at}\nReason: ${o.error??'unknown'}\n\nThe server retries every 10 minutes. If the reason is a missing detail (a postcode, a phone), send it to Claude and it will be added to the order.`
+ try{await sendMail(to,{subject:`⚠ Book order ${o.id} is waiting — ${o.error?.slice(0,60)??''}`,html:`<pre style="font:14px/1.5 monospace;white-space:pre-wrap">${text.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]!))}</pre>`,text},`book-alert-${o.id}`)}catch{/* the retry loop goes on */}
+}
+
+/** the retry loop: every paid order still without a maker job is tried again from its Stripe session */
+export async function retryStuck():Promise<{tried:number;sent:number;waiting:{id:string;minutes:number;error:string|null}[]}>{
+ const list=await stuckBookOrders(),waiting:{id:string;minutes:number;error:string|null}[]=[];let sent=0
+ for(const o of list){
+  if(!o.stripe_session||(o.attempts??0)>=144)continue
+  try{
+   const s=await stripeGet<PaidSession>(`checkout/sessions/${o.stripe_session}`)
+   if(!(o.attempts??0))await mail(o.email,'received',o.lang,{order:o.id})
+   if(await sendOn(o,s)){sent++;continue}
+  }catch(e){await patchBookOrder(o.id,{error:String((e as Error).message).slice(0,300)})}
+  const now=await getBookOrder({id:o.id})
+  waiting.push({id:o.id,minutes:Math.round((Date.now()-Date.parse(o.paid_at??o.created_at))/60000),error:now?.error??null})
+ }
+ return {tried:list.length,sent,waiting}
 }
 
 /** one copy to Lulu; also the desk's "send again" for a paperback stuck at `paid` */
-export async function sendToPrinter(id:string,session:PaidSession):Promise<Job|null>{
+export async function sendToPrinter(id:string,session:PaidSession,fix:Record<string,string>|null=null):Promise<Job|null>{
  const o=await getBookOrder({id});if(!o||o.kind!=='paperback'||!o.region||!o.ship)return null
- const address=luluAddress(session)
- if(!address){await moveBookOrder(id,['paid'],{error:'The address or phone from Stripe is incomplete.'});return null}
+ const address=luluAddress(session,fix)
+ if(!address){await moveBookOrder(id,['paid'],{error:addressGap(session,fix)||'The address from Stripe is incomplete.'});return null}
  if(!luluOpen()){await moveBookOrder(id,['paid'],{error:'Lulu keys are not set — the order waits.'});return null}
  try{
   try{await ensureLuluWebhook()}catch{/* status mail waits for the hook; the job itself goes on */}
@@ -60,10 +94,10 @@ export async function handleLuluStatus(job:Job){
 }
 
 /** one garment to Printify (the book's own store); also the desk's "send again" */
-export async function sendToPrintify(id:string,session:PaidSession):Promise<string|null>{
+export async function sendToPrintify(id:string,session:PaidSession,fix:Record<string,string>|null=null):Promise<string|null>{
  const o=await getBookOrder({id});if(!o||(o.kind!=='tee'&&o.kind!=='cap')||!o.variant)return null
- const address=printifyAddress(session)
- if(!address){await moveBookOrder(id,['paid'],{error:'The address or phone from Stripe is incomplete.'});return null}
+ const address=printifyAddress(session,fix)
+ if(!address){await moveBookOrder(id,['paid'],{error:addressGap(session,fix)||'The address from Stripe is incomplete.'});return null}
  try{
   const [colour,size]=o.variant.split('|') as [string,string]
   const made=await orderGoods({order:id,kind:o.kind,colour,size:size??'One size',address})

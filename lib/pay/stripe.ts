@@ -40,3 +40,10 @@ export function verify(raw:string,header:string|null,secret=process.env.STRIPE_W
 }
 /** the same authenticated call for other sellers on this account (the book, 17.11.2026) */
 export const stripeCall=call
+/** a read on the same account (the book's retry loop re-reads a paid session) */
+export async function stripeGet<T>(path:string):Promise<T>{
+ const r=await fetch(`https://api.stripe.com/v1/${path}`,{headers:{Authorization:`Bearer ${process.env.STRIPE_SECRET_KEY}`},cache:'no-store'})
+ const j=await r.json() as T&{error?:{message?:string}}
+ if(!r.ok)throw new Error(`Stripe: ${j.error?.message||r.status}`)
+ return j
+}

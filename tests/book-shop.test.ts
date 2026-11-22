@@ -64,3 +64,19 @@ describe('Broken Collective goods (17.11.2026)',()=>{
   expect(a).toMatchObject({first_name:'Dana',last_name:'Levi Cohen',country:'IL',address1:'1 Herzl',zip:'6100',phone:'+972'})
  })
 })
+
+import {addressGap,luluAddress as la} from '@/lib/book/checkout'
+describe('Broken Collective orders reach the printer (22.11.2026)',()=>{
+ const addr={line1:'1 Ermou',line2:null,city:'Athens',state:null,postal_code:null,country:'GR'}
+ it('takes the postcode from the required custom field when Stripe left it empty, and from an owner fix',()=>{
+  const s={customer_details:{name:'R',phone:'+30'},shipping_details:{name:'R',address:addr}}
+  expect(la(s)).toBeNull();expect(addressGap(s)).toContain('postcode')
+  expect(la({...s,custom_fields:[{key:'postcode',text:{value:' 10563 '}}]})?.postcode).toBe('10563')
+  expect(la(s,{postcode:'11141'})?.postcode).toBe('11141')
+ })
+ it('asks for the postcode outside North America only',()=>{
+  const eu=paperbackSession({order:'bk_abcdefgh',lang:'en',edition:'en',region:'eu',ship:'standard'}) as Record<string,unknown>
+  const na=paperbackSession({order:'bk_abcdefgh',lang:'en',edition:'en',region:'na',ship:'standard'}) as Record<string,unknown>
+  expect(eu.custom_fields).toBeDefined();expect(na.custom_fields).toBeUndefined()
+ })
+})
