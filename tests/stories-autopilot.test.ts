@@ -239,11 +239,11 @@ describe('autopilot · the signed cancel link',()=>{
  })
 })
 
-describe('retention · a film nobody uploaded (owner, 12.11.2026: seven days)',()=>{
+describe('retention · a film nobody uploaded (owner, 12.11.2026: seven days; 22.11.2026: three)',()=>{
  const now=D('2026-11-20T12:00:00Z'),old=new Date(+now-UNUPLOADED_DAYS*86_400_000-1000).toISOString(),young=new Date(+now-(UNUPLOADED_DAYS-1)*86_400_000).toISOString()
  const film=(id:string,over:Partial<Job>={}):Job=>({...ready(D('2026-11-01T08:00:00Z')),id,autopilot:null,updatedAt:old,...over})
- it('takes a ready film untouched for seven days — on a fake clock',()=>{
-  expect(UNUPLOADED_DAYS).toBe(7)
+ it('takes a ready film untouched for three days — on a fake clock',()=>{
+  expect(UNUPLOADED_DAYS).toBe(3)
   const j=film('job-stale-001')
   expect(unuploadedDue([j],new Date(Date.parse(old)+UNUPLOADED_DAYS*86_400_000-1))).toEqual([])
   expect(unuploadedDue([j],new Date(Date.parse(old)+UNUPLOADED_DAYS*86_400_000)).map(x=>x.id)).toEqual(['job-stale-001'])
@@ -259,7 +259,7 @@ describe('retention · a film nobody uploaded (owner, 12.11.2026: seven days)',(
   expect(unuploadedDue(rows,now).map(j=>j.id)).toEqual(['job-ok-000001','job-review-01','job-cancel-01'])
  })
  it('says plainly what happened',()=>{
-  expect(trimLog({at:old,bytes:230*1048576,files:7,reason:'unuploaded'})).toMatch(/media removed after 7 days without upload — re-render to get it back[\s\S]*230 MB/)
+  expect(trimLog({at:old,bytes:230*1048576,files:7,reason:'unuploaded'})).toMatch(/media removed after 3 days without upload — re-render to get it back[\s\S]*230 MB/)
   expect(trimLog({at:old,bytes:1048576,files:1})).toMatch(/after the YouTube upload/)
   expect(readFileSync('app/api/master/stories/worker/route.ts','utf8')).toMatch(/unuploadedDue\(jobs\)[\s\S]*reason:'unuploaded'/)
  })
