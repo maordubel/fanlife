@@ -8,10 +8,13 @@ export const matchBlueprint=(spec:KindSpec,list:PBlueprint[]):PBlueprint|null=>{
  for(const re of spec.find){const hit=list.find(b=>re.test(b.title)&&!(spec.avoid?.test(b.title)));if(hit)return hit}
  return null
 }
-export const pickProvider=(list:PProvider[]):PProvider|null=>{
- for(const re of PROVIDER_ORDER){const hit=list.find(p=>re.test(p.title));if(hit)return hit}
- return list[0]??null
+/** every blank of a kind, best first (the kind's patterns in order): the first one a European printer makes is used */
+export const blueprintCandidates=(spec:KindSpec,list:PBlueprint[],max=6):PBlueprint[]=>{
+ const out:PBlueprint[]=[]
+ for(const re of spec.find)for(const b of list)if(re.test(b.title)&&!(spec.avoid?.test(b.title))&&!out.includes(b))out.push(b)
+ return out.slice(0,max)
 }
+export {pickProvider} from './europe'
 const opt=(v:PVariant,name:RegExp)=>Object.entries(v.options||{}).find(([k])=>name.test(k))?.[1]
 /** the variants we enable: the spec's colours and sizes, with a print area, capped */
 export function pickVariants(spec:KindSpec,all:PVariant[]):PVariant[]{

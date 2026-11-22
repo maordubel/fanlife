@@ -39,7 +39,7 @@ export type ShopProduct={
  personal?:boolean
  /** shown on /shop — the owner's switch; only a `live` product with a link can be shown */
  visible:boolean
- printify?:{productId:string;blueprintId:number;providerId:number;images:string[];priceFrom:number;currency:string;url:string|null;publishedAt:string|null;
+ printify?:{productId:string;blueprintId:number;providerId:number;images:string[];priceFrom:number;currency:string;url:string|null;publishedAt:string|null;/** where it is printed and what a parcel to the EU costs (22.11.2026) */madeIn?:string|null;europe?:boolean;ship?:import('./europe').Ship|null;
  /** the mock-up of the back, when the product prints there */
  backImage?:string;
  /** where the press really put the design (15.11.2026): the mock-up choice follows it, not the editor's default */
@@ -60,7 +60,8 @@ export type ShopProduct={
  sold?:number
  createdAt:string;updatedAt:string
 }
-export type KindMatch={blueprintId:number;providerId:number;title:string;provider:string}
+/** `policy`/`europe`/`madeIn`/`ship` (22.11.2026, lib/shop/europe.ts): the rule the match was made under, whether the printer is inside the EU, its country code, and what a parcel to the EU costs; `forced` = the owner chose it in the desk and it is kept */
+export type KindMatch={blueprintId:number;providerId:number;title:string;provider:string;policy?:string;europe?:boolean;madeIn?:string|null;ship?:import('./europe').Ship|null;forced?:boolean}
 export type ShopSettings={
  /** the public door: off until the owner opens the shop */
  open:boolean
@@ -83,6 +84,8 @@ export type ShopSettings={
  matches:Partial<Record<Kind,KindMatch>>
  /** the printer chosen for each whole-catalogue product, by catalogue number */
  picked?:Record<number,KindMatch>
+ /** print inside the European Union whenever a printer there makes the blank (22.11.2026); absent = on */
+ europeFirst?:boolean
 }
 export type ShopAudit={at:string;by:string;what:string}
 export type ShopHealthNote={at:string;ok:boolean;notes:string[];checked:number;repaired:number}
@@ -100,7 +103,7 @@ export type PublicProduct={
  /** the other categories it also sits in */
  also?:Shelf[];/** every club it is listed under: its own first */clubs?:string[];
  /** the sale this product is in (its id), when one is on */
- sale?:string|null;priceFrom:number;currency:string;url:string;/** ≈ whole euros at today's ECB rate (a guide; the checkout is in dollars) */eur?:number|null}
+ sale?:string|null;priceFrom:number;currency:string;url:string;/** ≈ whole euros at today's ECB rate (a guide; the checkout is in dollars) */eur?:number|null;/** printed inside the EU, the printer's country (code), and a parcel to the EU from (cents, the checkout's currency) */europe?:boolean;madeIn?:string|null;shipFrom?:number|null}
 /** below this share of the pixels a product needs, the print comes out blurred: the shop does not sell it, whatever the switch says */
 export const MIN_QUALITY=.2
 export const qualityOf=(p:ShopProduct)=>p.printify?.quality??(()=>{const m=/\((\d+)% of the print size\)/.exec(p.error||'');return m?Number(m[1])/100:1})()
@@ -128,4 +131,4 @@ export const designKey=(p:ShopProduct)=>'library' in p.art?`l-${p.art.library.id
 export const madeInPrintify=(p:Pick<ShopProduct,'art'>)=>'upload' in p.art&&p.art.upload.id==='printify'
 /** is this product listed under that club (its own, or one added) */
 export const inClub=(p:{subject:string;clubs?:string[]},club:string)=>p.subject===club||!!p.clubs?.includes(club)
-export const toPublic=(p:ShopProduct):PublicProduct=>({sold:p.sold??0,...(p.clubs?.length?{clubs:[p.subject,...p.clubs]}:{}),...(p.shelves?.length?{also:p.shelves}:{}),...(p.printify!.sale?.percent?{sale:p.printify!.sale.id,was:p.printify!.sale.was}:{}),shelf:shelfOf(p.kind,p.blueprint?.title),design:designKey(p),since:p.printify!.publishedAt,id:p.id,subject:p.subject,kind:p.kind,title:p.title,description:p.description,image:p.printify!.images[0]!,images:p.printify!.images.slice(0,4),...(p.printify!.backImage?{back:p.printify!.backImage}:{}),priceFrom:p.printify!.priceFrom,currency:p.printify!.currency,url:p.printify!.url!})
+export const toPublic=(p:ShopProduct):PublicProduct=>({sold:p.sold??0,...(p.clubs?.length?{clubs:[p.subject,...p.clubs]}:{}),...(p.shelves?.length?{also:p.shelves}:{}),...(p.printify!.sale?.percent?{sale:p.printify!.sale.id,was:p.printify!.sale.was}:{}),shelf:shelfOf(p.kind,p.blueprint?.title),design:designKey(p),since:p.printify!.publishedAt,id:p.id,subject:p.subject,kind:p.kind,title:p.title,description:p.description,image:p.printify!.images[0]!,images:p.printify!.images.slice(0,4),...(p.printify!.backImage?{back:p.printify!.backImage}:{}),priceFrom:p.printify!.priceFrom,currency:p.printify!.currency,url:p.printify!.url!,...(p.printify!.madeIn?{madeIn:p.printify!.madeIn,europe:!!p.printify!.europe}:{}),...(p.printify!.ship?{shipFrom:p.printify!.ship.first}:{})})
