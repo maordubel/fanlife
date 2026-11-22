@@ -325,6 +325,19 @@
 ],
 "id": "beat:hapoel-tel-aviv-1999-00/tunnel-view-pitch"
 },
+"076a2afda66dfb71": {
+"caption": "A man in military fatigues walks forward carrying a duffel bag.",
+"people": 1,
+"faces": true,
+"action": "walking away",
+"place": "studio",
+"mood": "tension",
+"avoid": [
+"footballer signing",
+"player arrival"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/soldier-away-9262a19de041017d"
+},
 "07b6dc582864baac": {
 "caption": "A player lifts a trophy in the center of a crowded stadium filled with cheering fans.",
 "people": 50,
@@ -851,6 +864,20 @@
 "leaving a match early"
 ],
 "id": "beat:common/tunnel-walk-out"
+},
+"0f3700f58a9f39bd": {
+"caption": "A football player is standing with his back to the camera wearing a white kit with red trim.",
+"people": 1,
+"faces": false,
+"action": "standing",
+"place": "pitch",
+"era": "1970s",
+"mood": "calm",
+"avoid": [
+"a player turning away from the camera in shame",
+"a player being substituted"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/tikva-away-back-3948f8fbc5e57b1d"
 },
 "0fed48520bc8e0e3": {
 "caption": "A white long-distance coach bus is isolated against a black background.",
@@ -4209,6 +4236,20 @@
 ],
 "id": "beat:job-cb5fda72-1548-41f4-99ad-47978b9f1ff9/fanlife-generic-background-red-flare-smoke-clouds--1753edb3438eae48"
 },
+"51e0991ba9f06eae": {
+"caption": "A male footballer stands facing forward in a white kit with red trim.",
+"people": 1,
+"faces": true,
+"action": "standing",
+"place": "studio",
+"era": "1970s",
+"mood": "calm",
+"avoid": [
+"match celebration",
+"scoring a goal"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/tikva-away-1baed5bc7dcfaaee"
+},
 "524492ab79163542": {
 "caption": "A smartphone application interface displays football fixtures and gaming arena options under the heading Offside.",
 "people": 0,
@@ -6374,6 +6415,18 @@
 ],
 "id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/krc-genk-5b6e4c9362169b88"
 },
+"7d9df6d5be89f071": {
+"caption": "The crest of Tottenham Hotspur shows a cockerel standing on a football.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "TOTTENHAM HOTSPUR",
+"avoid": [
+"match action"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/spurs-7026391d8777c51c"
+},
 "7df144e42bbe0de3": {
 "caption": "Supporters wearing yellow and black scarves walk down a street towards a brightly lit stadium at night.",
 "people": 10,
@@ -7462,6 +7515,18 @@
 ],
 "id": "beat:job-92160ae2-eda7-4b60-bac8-46d538d8e5f7/panathinaikos-fc-2008-09-home-kit-55635-cd1cb6a50794a331"
 },
+"982c034cc07c1ef8": {
+"caption": "The Wolverhampton Wanderers crest features a stylized black wolf head inside an orange hexagon.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"a match report",
+"a live game"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/wolverhampton-wanderers-6abd1f751c68bcd3"
+},
 "983b1fe608dae6f3": {
 "caption": "A wide exterior view of a stadium under dark storm clouds and rain.",
 "people": 0,
@@ -7531,6 +7596,18 @@
 "substitution"
 ],
 "id": "lib:ppl-player-celebrate-fl2-kr"
+},
+"9a7ae58f39d2e623": {
+"caption": "The club logo of SV Zulte Waregem displays a rainbow arc, planetary rings, and a football.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "SV ZULTE WAREGEM Grensverleggend",
+"avoid": [
+"live match footage"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/sv-zulte-waregem-cb1b178640536bdb"
 },
 "9aa55a0b1cbca8d8": {
 "caption": "An illustrated goalkeeper diving through the air to his left, seen from behind.",
@@ -8419,6 +8496,20 @@
 ],
 "id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/celtic-fc-45abfd35e5c6d62f"
 },
+"abd12b01051f4bc7": {
+"caption": "A football player in a white kit with red trim is dribbling a ball across the pitch.",
+"people": 1,
+"faces": true,
+"action": "dribbling",
+"place": "pitch",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"a player scoring a goal",
+"a player celebrating"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/tikva-away-ball-4e356592805b0907"
+},
 "ac064205996830fc": {
 "caption": "An overhead shot of square stone paving slabs forming a repetitive pattern.",
 "people": 0,
@@ -8443,6 +8534,18 @@
 "photograph"
 ],
 "id": "beat:hapoel-tel-aviv-1999-00/crowd-behind-goal-scarves"
+},
+"ac5d6484f5d8f4ce": {
+"caption": "The crest of Southampton FC features a haloed football, tree, water waves, and a rose.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "SOUTHAMPTON FC",
+"avoid": [
+"actual team photo"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/southampton-3bfd374338b7db33"
 },
 "ac6982947ae03751": {
 "caption": "A graphic art illustration features a drum with crossed beaters and a red and black scarf attached.",
@@ -8956,6 +9059,17 @@
 ],
 "id": "lib:ppl-player-despair-fl1-kr"
 },
+"b5522cbe2578d98a": {
+"caption": "A white coach bus is shown in profile against a plain background.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"team bus arriving at stadium"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/supporters-bus-c354b57e70fad788"
+},
 "b5523779c6d666ae": {
 "caption": "An illustrated older steward in a coat and flat cap stands by a metal gate.",
 "people": 1,
@@ -9107,6 +9221,19 @@
 "celebration"
 ],
 "id": "cut:common/close-hands-clasp-prayer-c-kr"
+},
+"b6deaf4149735c9a": {
+"caption": "A two-level outdoor terrace area is illuminated by red lights at dusk, featuring graffiti and a panda mascot figure.",
+"people": 3,
+"faces": false,
+"action": "gathering",
+"place": "terrace",
+"mood": "calm",
+"avoid": [
+"a stadium concourse",
+"a football match in progress"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/tipota-venue-two-level-terrace-red-lit-dusk-v1-c6844e4b86ae0dc8"
 },
 "b777a8151f06b8b7": {
 "caption": "The Atalanta BC football club logo features a stylized profile of a woman's head.",
@@ -10093,6 +10220,19 @@
 "people"
 ],
 "id": "beat:job-cb5fda72-1548-41f4-99ad-47978b9f1ff9/gate5-ground-db413543bebe5704"
+},
+"cd81f6f279e18927": {
+"caption": "The Watford Football Club crest features a red moose on a black and yellow shield.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "WATFORD",
+"avoid": [
+"a match report",
+"a live game"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/watford-fc-028c23200b540c93"
 },
 "cd88cd7f21cee7bc": {
 "caption": "A papercraft scene depicts a person at a newspaper stand with a stadium visible in the background.",
