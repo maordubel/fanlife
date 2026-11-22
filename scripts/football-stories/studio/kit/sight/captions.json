@@ -54,6 +54,19 @@
 ],
 "id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/ionikos-nikeas-3007b9520e1756cc"
 },
+"020f9a09b51c2b28": {
+"caption": "An empty vintage football stadium features terracing steps alongside the pitch under a floodlight beam at dusk.",
+"people": 0,
+"faces": false,
+"place": "terrace",
+"era": "1950s",
+"mood": "calm",
+"avoid": [
+"packed crowd",
+"match day celebrations"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/empty-terrace-generated-24c225f84027fccb"
+},
 "02f500a68e11f5df": {
 "caption": "Papercraft view of a packed football stadium where red-shirted players celebrate a goal near the corner flag.",
 "people": 30,
@@ -379,6 +392,20 @@
 "save"
 ],
 "id": "lib:ins-net-bulge-fl1-kr"
+},
+"0844eceeaa9a6385": {
+"caption": "A red and white circular football club crest featuring letters KAKV.",
+"people": 0,
+"faces": false,
+"action": "displaying club crest",
+"place": "abstract",
+"mood": "calm",
+"text": "KAKV KONINKLIJKE VOETBALCLUB KORTRIJK",
+"avoid": [
+"live match action",
+"stadium stands"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/kv-kortrijk-16064243697640a4"
 },
 "086c9cbc7d5ea45e": {
 "caption": "A headshot portrait of a man with short brown hair and a full beard wearing a blue and white sports jersey.",
@@ -933,6 +960,19 @@
 "stadium crowd"
 ],
 "id": "lib:pup-supporter-child-pose-kr"
+},
+"13048c960a413912": {
+"caption": "Oud-Heverlee Leuven football club logo on a white diamond background.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "OHL Oud-Heverlee Leuven",
+"avoid": [
+"stadium views",
+"team line-ups"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/oh-leuven-e8a0204e1b9e7d1e"
 },
 "132761ceae08d127": {
 "caption": "A road leading towards a stadium silhouetted against a dramatic red and black sunset sky.",
@@ -1554,6 +1594,19 @@
 ],
 "id": "beat:common/home-end-night-b-kr"
 },
+"2085bda79d7f8026": {
+"caption": "The Burnley Football Club crest displays a shield with a yellow background, a red chevron, and a black lion, surrounded by light blue.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "defiance",
+"text": "BURNLEY FOOTBALL CLUB",
+"avoid": [
+"live match action",
+"real players on the pitch"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/burnley-c6fb4d40c522ebd9"
+},
 "20d521e7c6d95c2a": {
 "caption": "A vintage comic-style illustration shows a plastic cup filled with a reddish drink and foamy top.",
 "people": 0,
@@ -1690,6 +1743,18 @@
 "manager press conference"
 ],
 "id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/offsides-promo-arena-open-pitch-phone-ad-v3-210b648ee19e2df1"
+},
+"22a6901af4a587c3": {
+"caption": "The Cercle Brugge crest features a white circle with a black pentagon and a white crown above on a green background.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"live match action",
+"real players on the pitch"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/cercle-brugge-8833f0491a6e2d51"
 },
 "22bcc333252f8ee0": {
 "caption": "A glowing blue and green graphic logo for OffSide Bets against a dark background.",
@@ -1925,6 +1990,19 @@
 ],
 "id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/manchester-city-32d020d04a88718c"
 },
+"27210a9c891427c7": {
+"caption": "Leicester City football club badge featuring a fox and white rose.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "LEICESTER CITY FOOTBALL CLUB",
+"avoid": [
+"actual players celebrating on the pitch",
+"fans in stadium stands"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/leicester-city-546de9745f954dd6"
+},
 "272cb5e9dd87cdc3": {
 "caption": "A crowd of fans watch from behind a fence as a stadium grandstand undergoes demolition.",
 "people": 14,
@@ -1975,6 +2053,21 @@
 "coach interview"
 ],
 "id": "beat:hapoel-tel-aviv-1999-00/clipboard-player-night"
+},
+"28d48fddea8dca04": {
+"caption": "Football fans in red shirts waving flags and holding banners in a stadium stand.",
+"people": 30,
+"faces": true,
+"action": "cheering and waving flags",
+"place": "terrace",
+"era": "2000s",
+"mood": "defiance",
+"text": "ANTI MACCABI",
+"avoid": [
+"empty stadium seats",
+"calm post-match scenes"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/other-football-crowd-red-fans-stand-getty-v1-d1214dca6af1ff2f"
 },
 "294837a3ec5add60": {
 "caption": "A handcrafted multi-layered papercut shield emblem featuring a prominent green shamrock over striped green and white background.",
@@ -2424,6 +2517,21 @@
 ],
 "id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/t7-slide-03-1ec710223af58c63"
 },
+"30d449592ea9887d": {
+"caption": "Basketball players in action on a red-themed court during a match.",
+"people": 15,
+"faces": true,
+"action": "playing basketball match",
+"place": "stadium",
+"era": "2010s",
+"mood": "tension",
+"text": "Winner.co.il",
+"avoid": [
+"football matches on grass pitches",
+"outdoor stadium views"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/other-basketball-arena-court-red-crowd-wide-v1-99f49ed86a51cd84"
+},
 "30f5e933f23a634a": {
 "caption": "A papercraft illustration of a large trophy centered in a stadium surrounded by cheering silhouetted fans.",
 "people": 25,
@@ -2436,6 +2544,21 @@
 "real players celebrating"
 ],
 "id": "lib:obj-trophy-plain-big"
+},
+"31227b59f8414d03": {
+"caption": "A dense crowd of football fans stand closely together in stadium stands, many raising their arms.",
+"people": 100,
+"faces": true,
+"action": "standing in crowd",
+"place": "terrace",
+"mood": "tension",
+"text": "gettyimages Credit: Craig Williamson - SNS Group",
+"avoid": [
+"isolated portrait",
+"empty stadium",
+"peaceful gathering"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/other-football-crowd-red-fans-stand-getty-v2-8cb6f310dee04547"
 },
 "31607a4b81efc10e": {
 "caption": "A football match is played in a harbor stadium surrounded by cranes, ships, and traditional brick warehouse buildings.",
@@ -2586,6 +2709,19 @@
 "players celebrating on the pitch"
 ],
 "id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1096-third-a1add205f2e41f2f"
+},
+"351dcff4b74f8b0e": {
+"caption": "The Leeds United crest is a white shield with a blue upper section, a white rose, and vertical stripes with LUFC text.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "LUFC",
+"avoid": [
+"modern logo update",
+"shirt sponsor"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/leeds-united-58a3ab8fb3ddbbca"
 },
 "351ef9c8d2636d02": {
 "caption": "A mixed-media collage depicts a supporter from behind wearing a red scarf on stadium steps.",
@@ -3547,6 +3683,20 @@
 ],
 "id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/arsenal-fc-0ef0346800dbfe30"
 },
+"49dbb7718f1cc8ab": {
+"caption": "Five football fans wearing red scarves sit from behind in a stadium looking out at the pitch under floodlights.",
+"people": 5,
+"faces": false,
+"action": "watching match from stands",
+"place": "stadium",
+"era": "1970s",
+"mood": "tension",
+"avoid": [
+"empty stadium",
+"bright sunny afternoon"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/follow-away-end-gap-kr-743a5eccf5d365f6"
+},
 "49f46d65deaf1194": {
 "caption": "Two players prepare to kick off at the centre circle while a referee stands nearby in front of a full stadium.",
 "people": 25,
@@ -4197,6 +4347,20 @@
 ],
 "id": "beat:common/father-son-walk-b-kr"
 },
+"557b52b47a5761af": {
+"caption": "High angle wide shot of a crowded indoor arena with a red and white basketball court.",
+"people": 100,
+"faces": false,
+"action": "watching basketball game",
+"place": "stadium",
+"era": "2010s",
+"mood": "tension",
+"avoid": [
+"outdoor football stadiums",
+"empty arenas"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/other-basketball-arena-court-red-crowd-wide-v2-1670bc0579e25566"
+},
 "56575d40defcac4c": {
 "caption": "A vintage comic illustration shows a footballer in a red kit kicking a ball across a newspaper background.",
 "people": 1,
@@ -4414,6 +4578,19 @@
 ],
 "id": "lib:pup-striker-pose-kr"
 },
+"5a0d8810cba4e1fb": {
+"caption": "The Club Brugge KV crest features a circular shield with black and blue stripes, surrounded by a white ring with text and a crown on top.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "defiance",
+"text": "1891 CLUB BRUGGE KV",
+"avoid": [
+"live match action",
+"real players on the pitch"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/club-brugge-f30eb09cb48f3f29"
+},
 "5a0fae65a5feecbc": {
 "caption": "A supporter wearing a flat cap holds up a scarf in front of empty stadium stands at an old ground.",
 "people": 1,
@@ -4427,6 +4604,20 @@
 "matchday crowd surge"
 ],
 "id": "beat:common/supporter-cap-old-ground"
+},
+"5a3c9964f506fb46": {
+"caption": "The official crest of RFC Seraing features a red, black, and white shield topped with a crown and flanked by olive branches.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "RFC SERAING 1922",
+"avoid": [
+"real match action",
+"stadium crowd",
+"player interview"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/rfc-seraing-f536399f81ee8111"
 },
 "5a616f9ecd8c6205": {
 "caption": "Vintage painted postcard depicting the twin-funnel passenger liner R.M.S. Celtic navigating open ocean waters.",
@@ -4925,6 +5116,19 @@
 ],
 "id": "beat:common/demolition-stand-b-kr"
 },
+"6645c3472edaaff8": {
+"caption": "The KV Mechelen crest features a yellow and red striped shield with a black eagle, a crown, and laurel wreaths.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "K V M 1904 K.V.MECHELEN",
+"avoid": [
+"modern logo update",
+"shirt sponsor"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/kv-mechelen-4d62afddf3d5b70f"
+},
 "664604463d19d85b": {
 "caption": "An illustrated close-up shows a hand holding a vintage stopwatch.",
 "people": 1,
@@ -5078,6 +5282,18 @@
 ],
 "id": "lib:obj-megaphone-n"
 },
+"68e80ad52c4695ab": {
+"caption": "Norwich City football club badge showing a canary on a ball, lion, and castle.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"real birds flying",
+"live match action"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/norwich-80a4cf20e98bb54b"
+},
 "696ad0326604c5ed": {
 "caption": "An elderly person wearing a cap sits alone on a bench outside stadium gates with a red scarf draped on the seat.",
 "people": 1,
@@ -5175,6 +5391,20 @@
 ],
 "id": "beat:common/penalty-spot-close-b-n"
 },
+"6c3e3fba99f725c4": {
+"caption": "A large crowd of football supporters and flares surround a stadium fence at night.",
+"people": 50,
+"faces": false,
+"action": "supporters storming pitch",
+"place": "stadium",
+"era": "1970s",
+"mood": "defiance",
+"avoid": [
+"peaceful family gathering",
+"calm matchday walk"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/fanlife-generic-scene-supporters-storming-terrace--a744918ed171061b"
+},
 "6c9f207cf192aeb4": {
 "caption": "A headshot of a young dark-haired man with short hair and facial hair against a plain backdrop.",
 "people": 1,
@@ -5242,6 +5472,20 @@
 "players celebrating on the pitch"
 ],
 "id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1097-third-c395e15a8f329fe4"
+},
+"6e17538f90688570": {
+"caption": "A blue and white sports logo featuring a profile of a Native American chief in a headdress.",
+"people": 1,
+"faces": true,
+"action": "displaying club crest",
+"place": "abstract",
+"mood": "calm",
+"text": "KAA GENT STAMNUMMER 7",
+"avoid": [
+"live match action",
+"stadium stands"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/kaa-gent-cbd805c758be326b"
 },
 "6e55ffd5c616e498": {
 "caption": "A lone figure sits on a bench outside the gates of a large stadium under a cloudy sky.",
@@ -5495,6 +5739,20 @@
 "pitch invasion"
 ],
 "id": "lib:ppl-ultras-capo-fl1-kr"
+},
+"71de5fd849c2a1c7": {
+"caption": "The emblem of Royal Antwerp Football Club displays a traditional football graphic inside a white and red shield with a crown above.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "ROYAL ANTWERP FOOTBALL CLUB 1880 1",
+"avoid": [
+"modern logo",
+"referee whistle",
+"empty pitch"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/royal-antwerp-2756e4eb89b9c2f1"
 },
 "7224310a0d53499b": {
 "caption": "A comic-style speech bubble with the word QUIZ written in bold black letters.",
@@ -5789,6 +6047,20 @@
 "shaking hands after a match"
 ],
 "id": "cut:common/close-scarf-handover-kr"
+},
+"77abbc957cb455cd": {
+"caption": "The Sporting de Charleroi club badge features black and white vertical stripes beneath a crown.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "R.C.S.C.",
+"avoid": [
+"colourful celebration",
+"trophy lift",
+"grass pitch"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/rsc-charleroi-1e0a12c20e44ec5d"
 },
 "77ce13e3fd1da628": {
 "caption": "A technical design document for a 1980s-themed narrative game displays character sprites, street environments, and stadium assets.",
@@ -6087,6 +6359,20 @@
 "post-match emptiness"
 ],
 "id": "cut:common/crowd-row-flags-kr"
+},
+"7d5d3603d17ccd0b": {
+"caption": "A blue and white shield-shaped football club crest featuring a large letter G.",
+"people": 0,
+"faces": false,
+"action": "displaying club crest",
+"place": "abstract",
+"mood": "calm",
+"text": "KRC GENK",
+"avoid": [
+"live match action",
+"stadium stands"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/krc-genk-5b6e4c9362169b88"
 },
 "7df144e42bbe0de3": {
 "caption": "Supporters wearing yellow and black scarves walk down a street towards a brightly lit stadium at night.",
@@ -7421,6 +7707,20 @@
 ],
 "id": "beat:common/volley-edge-box-b-kr"
 },
+"9e62a98c6258d6d8": {
+"caption": "The RSC Anderlecht crest includes purple and white vertical stripes, three gold stars, and a crown.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "SCA",
+"avoid": [
+"match highlights",
+"stadium stands",
+"coach on touchline"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/rsc-anderlecht-ea267aea8670cad1"
+},
 "a01c4de9892c59fd": {
 "caption": "A silhouetted figure looks out from an open hotel window towards a distant stadium skyline.",
 "people": 1,
@@ -7434,6 +7734,20 @@
 "indoor training"
 ],
 "id": "beat:common/hotel-window-city-b-kr"
+},
+"a07f1836d975f46e": {
+"caption": "Football fans from behind hold up red scarves in a stadium crowd illustration.",
+"people": 6,
+"faces": false,
+"action": "holding up scarves",
+"place": "terrace",
+"era": "1970s",
+"mood": "joy",
+"avoid": [
+"empty stadium",
+"away fans leaving"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/layer-follow-terrace-fg-kr-dcd9b018c5d5640d"
 },
 "a081a6255ad6783b": {
 "caption": "Supporters gather outside a shop window at night to watch a football game displayed on vintage televisions.",
@@ -7820,6 +8134,19 @@
 ],
 "id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/aris-saloniki-3cadecf1a4897858"
 },
+"a7f09b74e6c5bcec": {
+"caption": "The KV Oostende crest is a shield with angled green, yellow, red, and black bands.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "KV OOSTENDE",
+"avoid": [
+"modern logo update",
+"shirt sponsor"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/kv-oostende-994fdd481e93dbdd"
+},
 "a82242386f75497e": {
 "caption": "A layered papercraft illustration shows dark grey storm clouds illuminated by a bright orange glow from underneath.",
 "people": 0,
@@ -7831,6 +8158,19 @@
 "wildfire documentary"
 ],
 "id": "lib:sky-floodlit-night-n"
+},
+"a85b13d626e84cfc": {
+"caption": "Floodlights illuminate a dark night sky with layered torn-paper clouds in black and red.",
+"people": 0,
+"faces": false,
+"action": "floodlights shining",
+"place": "stadium",
+"mood": "tension",
+"avoid": [
+"daytime match",
+"sunny afternoon fixture"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/layer-follow-terrace-bg-kr-909ba3ef737d86dd"
 },
 "a8ce9f7d7c1b2f2f": {
 "caption": "A silhouette of a crowd in a stadium stands while one person holds up a red card.",
@@ -8169,6 +8509,19 @@
 "happy matchday: never for a normal match preview"
 ],
 "id": "beat:common/scarf-on-railing-b-kr"
+},
+"adf09207ca91ac81": {
+"caption": "The Chelsea Football Club crest shows a blue circular badge with a white rampant lion holding a staff and red flowers.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "defiance",
+"text": "CHELSEA FOOTBALL CLUB",
+"avoid": [
+"live match action",
+"real players on the pitch"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/chelsea-599a618dfcea419b"
 },
 "ae0e330f862d2858": {
 "caption": "A detailed game development asset sheet shows 1980s Jaffa street scenes, football pitch layouts, and stadium interior concepts.",
@@ -9376,6 +9729,20 @@
 ],
 "id": "beat:common/attic-box-scarf-kr"
 },
+"c35e34c5f0349c3a": {
+"caption": "The Sint-Truidense VV logo displays a blue double-headed eagle set against a yellow shield.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"text": "STVV",
+"avoid": [
+"single-headed bird",
+"red and white kit",
+"stadium floodlights"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/sint-truidense-vv-b9ff9664ed8d4e6e"
+},
 "c3a2b64cb21b8193": {
 "caption": "A football match is underway in a packed stadium overlooking a large harbor with cranes and ships.",
 "people": 30,
@@ -9823,6 +10190,19 @@
 "trophy lift"
 ],
 "id": "cut:common/crowd-row-umbrellas-b-n"
+},
+"d0340fcfe139846a": {
+"caption": "The Beerschot football club crest features a white bear standing upright inside a purple shield.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "defiance",
+"text": "BEERSCHOT",
+"avoid": [
+"live match action",
+"real players on the pitch"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/beerschot-v-a-9ab8503c140d58f8"
 },
 "d04027ecd2daa7c4": {
 "caption": "Many workers in red shirts paint large abstract banners across the floor of a large industrial warehouse.",
@@ -11848,6 +12228,19 @@
 ],
 "id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/west-ham-united-2f815b58a947a041"
 },
+"f7f42c18862c9f1f": {
+"caption": "An illustrated football pitch with center circle and striped turf viewed from the touchline towards a covered stand.",
+"people": 0,
+"faces": false,
+"place": "pitch",
+"era": "1970s",
+"mood": "calm",
+"avoid": [
+"crowded stands",
+"match action"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/layer-follow-terrace-mid-kr-fca504a1f0104b92"
+},
 "f8c6f9851794ddfb": {
 "caption": "A football rests on the pitch near the goal net under stadium floodlights at night.",
 "people": 0,
@@ -12006,6 +12399,20 @@
 "actual television broadcast"
 ],
 "id": "beat:common/shootout-line-kr"
+},
+"fc2e41641dbf9173": {
+"caption": "A black and white football club crest with the text KAS EUPEN and a shield design.",
+"people": 0,
+"faces": false,
+"action": "displaying club crest",
+"place": "abstract",
+"mood": "calm",
+"text": "K A S EUPEN",
+"avoid": [
+"live match action",
+"stadium stands"
+],
+"id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/kas-eupen-a29781de8c4128f6"
 },
 "fc3872747480bde1": {
 "caption": "High angle shot under the stadium roof looking over an empty pitch prepared for a match with Scottish flag seat patterns in the stands.",
