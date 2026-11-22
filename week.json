@@ -1,0 +1,317 @@
+{
+  "week": "2026-W48",
+  "monday": "2026-11-23",
+  "built": "2026-11-22T21:05:31.462Z",
+  "shorts": [
+    {
+      "kind": "quiz",
+      "club": "zrinjski-mostar",
+      "prompt": "Zrinjski Mostar on the road in Europe: 10 Aug 2023 in the UEFA Europa League, Third Qualifying Round, First Leg, Zrinjski Mostar 6-2. Who were the opponents?",
+      "options": [
+        "Breidablik",
+        "Slovan Bratislava",
+        "LASK",
+        "AZ Alkmaar"
+      ],
+      "answer": "Breidablik",
+      "explanation": "Zrinjski Mostar 6-2 Breidablik, UEFA Europa League, Third Qualifying Round, First Leg, 10 Aug 2023.",
+      "source": {
+        "title": "Zrinjski ubjedljiv protiv Breidablika",
+        "url": "https://www.nfsbih.ba/vijesti/nogomet-m/wwin-liga-bih/zrinjski-ubjedljiv-protiv-breidablika/",
+        "confidence": 3
+      },
+      "qid": "q_3ca279ec1e1ae6b4",
+      "day": "Mon",
+      "hook": "Only real Zrinjski Mostar fans get this one",
+      "clubName": "Zrinjski Mostar",
+      "primary": "#C92D39",
+      "on": "#FFFFFF",
+      "secondary": "#FFFFFF",
+      "url": "https://fanlife.dubelteam.com/clubs/zrinjski-mostar/trivia",
+      "gate": "trivia",
+      "title": "Only real Zrinjski Mostar fans get this one #Shorts",
+      "caption": "Only real Zrinjski Mostar fans get this one 👀\nAnswer in the comments before the reveal — then play the full round on FAN LIFE (link in bio).\n\n#FANLIFE #Zrinjski #HSKZrinjski #ZrinjskiMostar #FootballQuiz #FootballTrivia #Shorts",
+      "comment": "Answer: Breidablik\nZrinjski Mostar 6-2 Breidablik, UEFA Europa League, Third Qualifying Round, First Leg, 10 Aug 2023.\nPlay the full Zrinjski Mostar round: https://fanlife.dubelteam.com/clubs/zrinjski-mostar/trivia",
+      "tags": "#FANLIFE #Zrinjski #HSKZrinjski #ZrinjskiMostar #FootballQuiz #FootballTrivia"
+    },
+    {
+      "kind": "whoami",
+      "club": "celtic",
+      "prompt": "Who am I?",
+      "clues": [
+        {
+          "label": "Position",
+          "value": "A midfielder."
+        },
+        {
+          "label": "Era",
+          "value": "First recorded at the club in the 1980s."
+        },
+        {
+          "label": "Competition",
+          "value": "Started a UEFA Cup match for the club."
+        },
+        {
+          "label": "Team sheet",
+          "value": "Started against Sporting CP — UEFA Cup, 19 Oct 1983."
+        },
+        {
+          "label": "Competition",
+          "value": "Started a European Cup Winners' Cup match for the club."
+        }
+      ],
+      "answer": "Paul McStay",
+      "explanation": "Paul McStay — Celtic, 1981–1997.",
+      "source": null,
+      "qid": "celtic:arch-m-248bba65f9fe",
+      "day": "Tue",
+      "hook": "Five clues. One Celtic player. Who is it?",
+      "clubName": "Celtic",
+      "primary": "#0B7A3B",
+      "on": "#FFFFFF",
+      "secondary": "#FFFFFF",
+      "url": "https://fanlife.dubelteam.com/clubs/celtic/blind-cow",
+      "gate": "blind-cow",
+      "title": "Five clues. One Celtic player. Who is it? #Shorts",
+      "caption": "Five clues. One Celtic player. Who is it? 👀\nAnswer in the comments before the reveal — then play the full round on FAN LIFE (link in bio).\n\n#FANLIFE #Celtic #CelticFC #COYBIG #SPFL #FootballQuiz #FootballTrivia #Shorts",
+      "comment": "Answer: Paul McStay\nPaul McStay — Celtic, 1981–1997.\nPlay the full Celtic round: https://fanlife.dubelteam.com/clubs/celtic/blind-cow",
+      "tags": "#FANLIFE #Celtic #CelticFC #COYBIG #SPFL #FootballQuiz #FootballTrivia"
+    },
+    {
+      "kind": "score",
+      "club": "st-pauli",
+      "prompt": "FC St. Pauli v Hamburger SV in the Bundesliga, 19 Apr 2002. Name the final score (FC St. Pauli first).",
+      "options": [
+        "4-0",
+        "1-5",
+        "0-5",
+        "0-4"
+      ],
+      "answer": "0-4",
+      "explanation": "FC St. Pauli 0-4 Hamburger SV, Bundesliga, 19 Apr 2002.",
+      "source": {
+        "title": "Deutscher Fußball-Bund · 2001/02",
+        "url": "https://datencenter.dfb.de/competitions/bundesliga/seasons/2001-2002/teams/fc-st-pauli",
+        "confidence": 2
+      },
+      "qid": "q_10f31e45a8de12ef",
+      "day": "Wed",
+      "hook": "Guess the score. FC St. Pauli edition",
+      "clubName": "FC St. Pauli",
+      "primary": "#5A3A22",
+      "on": "#FFFFFF",
+      "secondary": "#FFFFFF",
+      "url": "https://fanlife.dubelteam.com/clubs/st-pauli/trivia",
+      "gate": "trivia",
+      "title": "Guess the score. FC St. Pauli edition #Shorts",
+      "caption": "Guess the score. FC St. Pauli edition 👀\nAnswer in the comments before the reveal — then play the full round on FAN LIFE (link in bio).\n\n#FANLIFE #FCStPauli #StPauli #Bundesliga #GuessTheScore #FootballQuiz #RetroFootball #Shorts",
+      "comment": "Answer: 0-4\nFC St. Pauli 0-4 Hamburger SV, Bundesliga, 19 Apr 2002.\nPlay the full FC St. Pauli round: https://fanlife.dubelteam.com/clubs/st-pauli/trivia",
+      "tags": "#FANLIFE #FCStPauli #StPauli #Bundesliga #GuessTheScore #FootballQuiz #RetroFootball"
+    },
+    {
+      "kind": "order",
+      "club": "aek-athens",
+      "prompt": "Oldest first. Put them in order.",
+      "items": [
+        "A friendly in Belgrade while the city is under bombing",
+        "Olympiacos 0-1 AEK Athens",
+        "PAOK Saloniki 0-2 AEK Athen",
+        "AEK's first relegation from the top flight"
+      ],
+      "answer": "Olympiacos 0-1 AEK Athens (1989) → A friendly in Belgrade while the city is under bombing (1999) → AEK's first relegation from the top flight (2013) → PAOK Saloniki 0-2 AEK Athen (2019)",
+      "order": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "years": [
+        "1989",
+        "1999",
+        "2013",
+        "2019"
+      ],
+      "explanation": "",
+      "source": null,
+      "day": "Thu",
+      "hook": "Put these AEK Athens nights in order",
+      "clubName": "AEK Athens",
+      "primary": "#F3C613",
+      "on": "#151515",
+      "secondary": "#FFFFFF",
+      "url": "https://fanlife.dubelteam.com/clubs/aek-athens/timeline",
+      "gate": "timeline",
+      "title": "Put these AEK Athens nights in order #Shorts",
+      "caption": "Put these AEK Athens nights in order 👀\nAnswer in the comments before the reveal — then play the full round on FAN LIFE (link in bio).\n\n#FANLIFE #AEK #AEKAthens #SuperLeagueGreece #GuessTheYear #FootballTrivia #FootballHistory #Shorts",
+      "comment": "Answer: Olympiacos 0-1 AEK Athens (1989) → A friendly in Belgrade while the city is under bombing (1999) → AEK's first relegation from the top flight (2013) → PAOK Saloniki 0-2 AEK Athen (2019)\nPlay the full AEK Athens round: https://fanlife.dubelteam.com/clubs/aek-athens/timeline",
+      "tags": "#FANLIFE #AEK #AEKAthens #SuperLeagueGreece #GuessTheYear #FootballTrivia #FootballHistory"
+    },
+    {
+      "kind": "scorer",
+      "club": "panathinaikos",
+      "prompt": "Who opened Panathinaikos's scoring against Víkingur R. in the UEFA Conference League on 20 Feb 2025?",
+      "options": [
+        "Filip Mladenović",
+        "Fotis Ioannidis",
+        "Bartłomiej Drągowski",
+        "Adam Gnezda Čerin"
+      ],
+      "answer": "Filip Mladenović",
+      "explanation": "Panathinaikos 2-0 Víkingur R., UEFA Conference League, 20 Feb 2025. Filip Mladenović opened the scoring for Panathinaikos.",
+      "source": {
+        "title": "UEFA: Panathinaikos 2-0 Víkingur R., 2025-02-20",
+        "url": "https://www.uefa.com/uefachampionsleague/match/2044411--",
+        "confidence": 2
+      },
+      "qid": "q_ceeebe0a07292fe9",
+      "day": "Fri",
+      "hook": "One goal. One name. Panathinaikos fans, go",
+      "clubName": "Panathinaikos",
+      "primary": "#0B7A3B",
+      "on": "#FFFFFF",
+      "secondary": "#FFFFFF",
+      "url": "https://fanlife.dubelteam.com/clubs/panathinaikos/trivia",
+      "gate": "trivia",
+      "title": "One goal. One name. Panathinaikos fans, go #Shorts",
+      "caption": "One goal. One name. Panathinaikos fans, go 👀\nAnswer in the comments before the reveal — then play the full round on FAN LIFE (link in bio).\n\n#FANLIFE #Panathinaikos #PAO #SuperLeagueGreece #Goals #FootballMemories #FootballQuiz #Shorts",
+      "comment": "Answer: Filip Mladenović\nPanathinaikos 2-0 Víkingur R., UEFA Conference League, 20 Feb 2025. Filip Mladenović opened the scoring for Panathinaikos.\nPlay the full Panathinaikos round: https://fanlife.dubelteam.com/clubs/panathinaikos/trivia",
+      "tags": "#FANLIFE #Panathinaikos #PAO #SuperLeagueGreece #Goals #FootballMemories #FootballQuiz"
+    },
+    {
+      "kind": "tf",
+      "club": "olympiacos",
+      "prompt": "Scoreboard check: Olympiacos v Luzern, 9 Aug 2018 in the UEFA Europa League. It finished 4-0 (Olympiacos first). True or false?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Olympiacos 4-0 Luzern, UEFA Europa League, 9 Aug 2018.",
+      "source": {
+        "title": "UEFA: Olympiacos 4-0 Luzern, 2018-08-09",
+        "url": "https://www.uefa.com/uefachampionsleague/match/2025344--",
+        "confidence": 2
+      },
+      "qid": "q_1a07e1bc71e68fdb",
+      "day": "Sat",
+      "hook": "Fact or fake? Olympiacos edition",
+      "clubName": "Olympiacos",
+      "primary": "#D71920",
+      "on": "#FFFFFF",
+      "secondary": "#FFFFFF",
+      "url": "https://fanlife.dubelteam.com/clubs/olympiacos/trivia",
+      "gate": "trivia",
+      "title": "Fact or fake? Olympiacos edition #Shorts",
+      "caption": "Fact or fake? Olympiacos edition 👀\nAnswer in the comments before the reveal — then play the full round on FAN LIFE (link in bio).\n\n#FANLIFE #Olympiacos #Thrylos #SuperLeagueGreece #FootballQuiz #FootballTrivia #Shorts",
+      "comment": "Answer: True\nOlympiacos 4-0 Luzern, UEFA Europa League, 9 Aug 2018.\nPlay the full Olympiacos round: https://fanlife.dubelteam.com/clubs/olympiacos/trivia",
+      "tags": "#FANLIFE #Olympiacos #Thrylos #SuperLeagueGreece #FootballQuiz #FootballTrivia"
+    },
+    {
+      "kind": "decade",
+      "club": "hapoel-petah-tikva",
+      "prompt": "Turn back to Lior Asulin's Hapoel Petah Tikva years. In which decade does the archive first place him at the club?",
+      "options": [
+        "1990s",
+        "2020s",
+        "2010s",
+        "1980s"
+      ],
+      "answer": "2010s",
+      "explanation": "Lior Asulin's recorded years at Hapoel Petah Tikva: 2013–2016.",
+      "source": {
+        "title": "Wikipedia — Category:Hapoel Petah Tikva F.C. players",
+        "url": "https://en.wikipedia.org/wiki/Category%3AHapoel_Petah_Tikva_F.C._players",
+        "confidence": 2
+      },
+      "qid": "q_12889ff5824d1b28",
+      "day": "Sun",
+      "hook": "Hapoel Petah Tikva fans: when did he play for you?",
+      "clubName": "Hapoel Petah Tikva",
+      "primary": "#1F4E9C",
+      "on": "#FFFFFF",
+      "secondary": "#FFFFFF",
+      "url": "https://fanlife.dubelteam.com/clubs/hapoel-petah-tikva/trivia",
+      "gate": "trivia",
+      "title": "Hapoel Petah Tikva fans: when did he play for you? #Shorts",
+      "caption": "Hapoel Petah Tikva fans: when did he play for you? 👀\nAnswer in the comments before the reveal — then play the full round on FAN LIFE (link in bio).\n\n#FANLIFE #HapoelPetahTikva #HPT #IsraeliFootball #GuessTheYear #FootballTrivia #FootballHistory #Shorts",
+      "comment": "Answer: 2010s\nLior Asulin's recorded years at Hapoel Petah Tikva: 2013–2016.\nPlay the full Hapoel Petah Tikva round: https://fanlife.dubelteam.com/clubs/hapoel-petah-tikva/trivia",
+      "tags": "#FANLIFE #HapoelPetahTikva #HPT #IsraeliFootball #GuessTheYear #FootballTrivia #FootballHistory"
+    }
+  ],
+  "film": {
+    "feature": "timeline",
+    "name": "Timeline",
+    "title": "Put your club's biggest nights in order | FAN LIFE Timeline",
+    "path": "/clubs/{club}/timeline",
+    "shots": [
+      {
+        "name": "door"
+      },
+      {
+        "name": "run",
+        "click": "Start Chronology"
+      },
+      {
+        "name": "deeper",
+        "scroll": 400
+      }
+    ],
+    "beats": [
+      {
+        "shot": "door",
+        "say": "Timeline takes the dates your club lived through: finals, titles, nights in Europe."
+      },
+      {
+        "shot": "run",
+        "say": "Each card is a real moment from the archive. Your job is to put it in the right place in history."
+      },
+      {
+        "shot": "deeper",
+        "say": "Get the order right and the line grows. Get it wrong and the archive shows you where it really belongs."
+      }
+    ],
+    "hook": "You remember the night. Do you remember the year?",
+    "clubs": [
+      {
+        "id": "aek-athens",
+        "name": "AEK Athens",
+        "primary": "#F3C613"
+      },
+      {
+        "id": "panathinaikos",
+        "name": "Panathinaikos",
+        "primary": "#0B7A3B"
+      },
+      {
+        "id": "celtic",
+        "name": "Celtic",
+        "primary": "#0B7A3B"
+      },
+      {
+        "id": "st-pauli",
+        "name": "FC St. Pauli",
+        "primary": "#5A3A22"
+      },
+      {
+        "id": "zrinjski-mostar",
+        "name": "Zrinjski Mostar",
+        "primary": "#C92D39"
+      },
+      {
+        "id": "hapoel-tel-aviv",
+        "name": "Hapoel Tel Aviv",
+        "primary": "#B02D10"
+      },
+      {
+        "id": "olympiacos",
+        "name": "Olympiacos",
+        "primary": "#D71920"
+      },
+      {
+        "id": "hapoel-petah-tikva",
+        "name": "Hapoel Petah Tikva",
+        "primary": "#1F4E9C"
+      }
+    ]
+  }
+}
