@@ -34,7 +34,10 @@ export default async function OurGames({searchParams}:{searchParams:{lang?:strin
  const lifeMap=Object.fromEntries(open.map(c=>[c.id,life[c.id]?.href??null]))
  const worldMap=Object.fromEntries(open.map(c=>[c.id,live.some(l=>l.id===c.id)?`/clubs/${c.id}?lang=${locale}`:null]))
  return <Shell locale={locale}><main id="main" className="wkh wkg">
-  <header className="wkg-head"><p className="wk-banner">{copy.ourGamesKicker}</p><h1 className="wk-logo green wkg-title">{copy.ourGamesTitle}</h1></header>
+  <header className="wkg-head">{!fd.open&&<p className="wk-banner">{copy.ourGamesKicker}</p>}<h1 className="wk-logo green wkg-title">{copy.ourGamesTitle}</h1></header>
+  {/* the short page (owner, 22.11.2026): every game and who it is for comes first; the two big games follow; choosing a club is The clubs page */}
+  {fd.open&&<PlayIndex filter={filter} cards={gameCards({legends:fl.open,friendlies:fl.open&&fr.open,legendsName:copy.wkhLmTitle},filter)} clubs={model} chooser={chooser} lang={locale==='en'?'':`&lang=${locale}`} copy={{kicker:copy.playK,title:copy.playIdxTitle,all:copy.playAll,solo:copy.modeSolo,friends:copy.modeFriends,both:copy.modeBoth,pick:copy.playPick,open:copy.ourGamesPlay,none:copy.playIdxNone}}/>}
+  {fd.open&&<p className="wk-banner wkg-two">{copy.ourGamesKicker}</p>}
   <div className="wkg-pair">
    <section className="wkg-card wkg-life wk-orangeplate" aria-labelledby="og-life">
     <span className="wk-speed" aria-hidden="true"/>
@@ -49,12 +52,11 @@ export default async function OurGames({searchParams}:{searchParams:{lang?:strin
      {fl.open?<Link className="wk-btn paper wkg-cta min-h-tap" href="/all-football/legends">{copy.ourGamesPlay}{fl.preview?` · ${copy.wkhOwnerPreview}`:''} <Arrow/></Link>:<span className="wk-tag ink wkg-soon">{copy.ourGamesSoon}</span>}</div>
    </section>
   </div>
-  <section className="wkg-world wk-greenplate" aria-labelledby="og-world">
+  {!fd.open&&<section className="wkg-world wk-greenplate" aria-labelledby="og-world">
    <span className="wk-speed" aria-hidden="true"/>
    <Plate art="fans" ink="orange" className="wkg-crowd"/>
    <div className="wkg-wtxt"><p className="wk-k white">{copy.ourGamesWorldK.replace('{n}',String(live.length))}</p><h2 className="wk-logo wkg-wtitle" id="og-world">{copy.coverBottom}</h2>
     <GateChooser gate="life" clubs={model} life={worldMap} copy={chooser} className="wk-btn paper wkg-cta">{copy.ourGamesWorldCta} <Arrow/></GateChooser></div>
-  </section>
-  {fd.open&&<PlayIndex filter={filter} cards={gameCards({legends:fl.open,friendlies:fl.open&&fr.open,legendsName:copy.wkhLmTitle},filter)} clubs={model} chooser={chooser} lang={locale==='en'?'':`&lang=${locale}`} copy={{kicker:copy.playK,title:copy.playIdxTitle,all:copy.playAll,solo:copy.modeSolo,friends:copy.modeFriends,both:copy.modeBoth,pick:copy.playPick,open:copy.ourGamesPlay,none:copy.playIdxNone}}/>}
+  </section>}
  </main></Shell>
 }
