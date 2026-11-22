@@ -1,0 +1,66 @@
+/* THE THREE DOORS (owner spec, 22.11.2026) — prefix .wkd. Tokens only, logical properties only.
+   Phone: a picture band, the headline on ink, three rows a thumb reaches. Desktop: the cover as a spread with the
+   headline in its dark half, three picture cards beneath. Two designs, not one scaled. */
+.wkd { margin-block-start: 18px; display: flex; flex-direction: column; border: 3px solid var(--mag-ink); box-shadow: 5px 5px 0 var(--mag-ink); background: var(--mag-ink); color: var(--mag-paper); }
+.wkd-cover { position: relative; display: flex; flex-direction: column; }
+.wkd-cover-pic { display: block; inline-size: 100%; block-size: 84px; object-fit: cover; object-position: 8% 30%; border-block-end: 3px solid var(--mag-ink); }
+.wkd-cover-t { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; padding: 10px 14px 12px; }
+.wkd .wkd-h { margin: 0; display: flex; flex-direction: column; gap: 2px; font-family: var(--mag-display); font-weight: 400; font-style: normal; font-size: 23px; line-height: 1.04; letter-spacing: 0; text-transform: uppercase; color: var(--mag-paper); }
+.wkd .wkd-h span:last-child { color: var(--mag-orange); }
+.wkd-sub { display: none; margin: 0; font-family: var(--mag-body); font-size: 15px; line-height: 1.35; color: color-mix(in srgb, var(--mag-paper) 86%, transparent); }
+.wkd .wkd-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; background: var(--mag-paper); }
+.wkd-list > li + li { border-block-start: 3px solid var(--mag-ink); }
+.wkd .wkd-door { display: grid; grid-template-columns: 104px minmax(0, 1fr) 24px; align-items: center; gap: 12px; inline-size: 100%; min-block-size: 72px; padding: 0; padding-inline-end: 12px; border: 0; border-radius: 0; background: var(--mag-card); color: var(--mag-ink); font: inherit; text-align: start; text-decoration: none; cursor: pointer; transform: none; box-shadow: none; }
+.wkd-pic { display: block; inline-size: 104px; block-size: 72px; object-fit: cover; border-inline-end: 3px solid var(--mag-ink); }
+.wkd-t { display: flex; flex-direction: column; gap: 3px; min-inline-size: 0; }
+.wkd-t b { font-family: var(--mag-display); font-weight: 400; font-style: normal; font-size: 21px; line-height: 1; text-transform: uppercase; }
+.wkd-t small { font-family: var(--mag-body); font-size: 13px; line-height: 1.2; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; color: var(--mag-muted); }
+.wkd .wkd-door .wkh-arrow { inline-size: 24px; block-size: 24px; fill: none; stroke: currentColor; stroke-width: 3; }
+.wkd .wkd-door:active { background: var(--mag-paper); }
+.wkd .wkd-door:focus-visible, .wkd-tab:focus-visible, .wkd-play .wkd-game:focus-visible { outline: 3px solid var(--mag-vermilion); outline-offset: -3px; }
+
+/* OUR GAMES: every game says how it plays */
+.wkd-play { margin-block-start: 34px; display: flex; flex-direction: column; gap: 14px; scroll-margin-top: calc(var(--app-top, 0px) + 16px); }
+.wkd-play-title { margin: 0; font-size: clamp(30px, 9vw, 48px); line-height: 1; }
+.wkd-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 3px solid var(--mag-ink); background: var(--mag-ink); gap: 3px; }
+.wkd-tab { display: flex; align-items: center; justify-content: center; min-block-size: 46px; padding: 0 6px; background: var(--mag-card); color: var(--mag-ink); font-family: var(--mag-display); font-size: 16px; text-transform: uppercase; text-align: center; text-decoration: none; }
+.wkd-tab[aria-current='page'] { background: var(--mag-ink); color: var(--mag-paper); }
+.wkd-play .wkd-games { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; }
+.wkd-play .wkd-game { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; align-items: center; gap: 10px; inline-size: 100%; min-block-size: 60px; padding: 8px 10px; border: 3px solid var(--mag-ink); border-radius: 0; background: var(--mag-card); color: var(--mag-ink); box-shadow: 3px 3px 0 var(--mag-ink); font: inherit; text-align: start; text-decoration: none; cursor: pointer; }
+.wkd-game-no { display: flex; align-items: center; justify-content: center; inline-size: 44px; block-size: 44px; border: 3px solid var(--mag-ink); background: var(--mag-paper); font-size: 17px; line-height: 1; }
+.wkd-game-t { display: flex; flex-direction: column; gap: 2px; min-inline-size: 0; }
+.wkd-game-t b { font-family: var(--mag-display); font-weight: 400; font-size: 19px; line-height: 1.05; text-transform: uppercase; }
+.wkd-game-t small { font-family: var(--mag-mono); font-size: 11px; letter-spacing: 0.6px; text-transform: uppercase; color: var(--mag-muted); }
+.wkd-mode { padding: 4px 8px; border: 2px solid var(--mag-ink); background: var(--mag-paper); font-family: var(--mag-mono); font-weight: 700; font-size: 11px; letter-spacing: 0.6px; text-transform: uppercase; white-space: nowrap; }
+.wkd-mode[data-mode='both'], .wkd-mode[data-mode='friends'] { background: var(--mag-green); color: var(--mag-paper); }
+
+/* the phone order (hub-order): the doors sit straight under the masthead, before "your club" */
+@media (max-width: 900px) { .wkh > .wkd { order: 0; } }
+@media (min-width: 560px) and (max-width: 900px) {
+  .wkd-cover-pic { block-size: 190px; }
+  .wkd-sub { display: block; }
+  .wkd-play .wkd-games { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 901px) {
+  .wkh:has(> .wkd) { grid-template-areas: 'mast mast mast' 'doors doors doors' 'hero hero hero' 'pins pins pins' 'lm lm lm' 'cover cover inside' 'cover cover cont' 'cover cover life' 'market market market' 'watch watch watch' 'clubs clubs letter' 'back say spec'; grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto 1fr; }
+  .wkd { grid-area: doors; margin-block-start: 30px; box-shadow: 8px 8px 0 var(--mag-ink); }
+  .wkd-cover { display: block; }
+  .wkd-cover-pic { block-size: 400px; object-position: 0 46%; border-block-end: 3px solid var(--mag-ink); }
+  .wkd-cover-t { position: absolute; inset-block: 0; inset-inline-end: 0; inline-size: 46%; justify-content: center; gap: 14px; padding: 28px 40px; }
+  .wkd-cover:dir(rtl) .wkd-cover-pic { transform: scaleX(-1); }
+  .wkd .wkd-h { font-size: 46px; line-height: 0.98; }
+  .wkd-sub { display: block; font-size: 18px; max-inline-size: 30em; }
+  .wkd .wkd-list { flex-direction: row; }
+  .wkd-list > li { flex: 1 1 0; min-inline-size: 0; }
+  .wkd-list > li + li { border-block-start: 0; border-inline-start: 3px solid var(--mag-ink); }
+  .wkd .wkd-door { grid-template-columns: minmax(0, 1fr) 28px; grid-template-rows: auto auto; gap: 0 12px; block-size: 100%; padding: 0 0 16px; }
+  .wkd-pic { grid-column: 1 / -1; inline-size: 100%; block-size: 190px; border-inline-end: 0; border-block-end: 3px solid var(--mag-ink); }
+  .wkd-t { padding-block-start: 14px; padding-inline-start: 18px; gap: 6px; }
+  .wkd-t b { font-size: 32px; }
+  .wkd-t small { font-size: 15px; display: block; }
+  .wkd .wkd-door .wkh-arrow { inline-size: 28px; block-size: 28px; margin-block-start: 14px; margin-inline-end: 18px; justify-self: end; }
+  .wkd .wkd-door:hover { background: var(--mag-paper); }
+  .wkd-play { margin-block-start: 48px; }
+  .wkd-tabs { align-self: flex-start; inline-size: min(100%, 520px); }
+  .wkd-play .wkd-games { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+}
