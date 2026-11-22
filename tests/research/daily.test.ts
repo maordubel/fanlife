@@ -12,16 +12,19 @@ import {readOpenFootball} from '@/lib/research/openfootball'
 import {withConfirmedRegisters} from '@/lib/clubs/confirmed-registers'
 import {hapoelMatches,sourceAdder} from '@/lib/clubs/feeds/worker-masters'
 import {allMatches} from '@/lib/archive/match-master'
-import {withDocumentedSeasons} from '@/lib/clubs/documented-seasons'
+import {buildEntries} from '@/lib/clubs/entities'
+import {documentedSeasonLabel,withDocumentedSeasons} from '@/lib/clubs/documented-seasons'
 import {olderResultPage} from '../../scripts/ingest/clubs/league-lineups'
 
 it('joins documented Hapoel scorers to canonical matches and excludes score conflicts',()=>{
- const matches=new Map(hapoelMatches(sourceAdder(new Map())).map(f=>[f.id,f]))
+ const sources=new Map(),matches=new Map(hapoelMatches(sourceAdder(sources)).map(f=>[f.id,f]))
  const all=allMatches().filter(m=>matches.has(`hapoel-tel-aviv:match-${m.matchId}`))
- const checked=all.find(m=>!m.scorersDisputed&&m.scorers.length>0&&m.scorers.length===m.result?.hapoel&&m.scorers.every(s=>s.confidence>=2&&s.nameHe))!
+ const checked=all.find(m=>!m.lineupRef&&!m.scorersDisputed&&m.scorers.length>0&&m.scorers.length===m.result?.hapoel&&m.scorers.every(s=>s.confidence>=2&&s.nameHe))!
  const disputed=all.find(m=>m.scorersDisputed)!
  expect(matches.get(`hapoel-tel-aviv:match-${checked.matchId}`)?.value).toMatchObject({season:checked.season,scorers:expect.arrayContaining([expect.objectContaining({name:expect.any(String)})])})
  expect(matches.get(`hapoel-tel-aviv:match-${disputed.matchId}`)?.value).not.toHaveProperty('scorers')
+ const available=buildEntries({archive:[],timeline:[],sources:[...sources.values()],matches:[...matches.values()]})
+ expect(available.find(e=>e.id===`hapoel-tel-aviv:match-${checked.matchId}`)?.match?.matchId).toBe(`hapoel-tel-aviv:match-${checked.matchId}`)
 })
 
 const day='2026-11-22',club=REGISTRY.find(c=>c.id==='atalanta')!,clubNames=[club.name,'Atalanta BC']
@@ -163,6 +166,9 @@ describe('evidence and live product integration',()=>{
   const loaded=withDocumentedSeasons(original)
   expect(loaded.seasons?.map(f=>f.value)).toEqual([{id:'atalanta:documented-season-1921-22',name:'1921/22 season',season:'1921/22'}])
   expect(withDocumentedSeasons(loaded)).toBe(loaded)
+  expect(documentedSeasonLabel('1955')).toBe('1955')
+  expect(documentedSeasonLabel('1966/68')).toBe('1966/68')
+  expect(documentedSeasonLabel('1950/60')).toBeNull()
  })
  it('compiles the published Turkish title editions in the staged club archive',()=>{
   const fener=REGISTRY.find(c=>c.id==='fenerbahce')!

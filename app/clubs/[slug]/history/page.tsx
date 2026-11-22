@@ -26,7 +26,7 @@ import {gameCopy} from '@/lib/clubs/game-copy'
 import en from '@/messages/clubs/en.json'
 import he from '@/messages/clubs/he.json'
 import {FirstMatchPrint} from '@/components/shop/FirstMatchPrint'
-import {exactSeason} from '@/lib/research/daily-evidence'
+import {documentedSeasonLabel} from '@/lib/clubs/documented-seasons'
 export const dynamic='force-dynamic'
 export function generateMetadata({params}:{params:{slug:string}}){const c=REGISTRY.find(r=>r.id===params.slug);return c?clubSubMetadata({id:c.id,name:c.name,sub:'history'}):{title:en.historyTitle}}
 
@@ -48,7 +48,7 @@ export default async function History({params,searchParams}:{params:{slug:string
  const locale=uiLocale(searchParams.lang),copy=locale==='he'?he:en,reg=REGISTRY.find(r=>r.id===id)||c,theme=core?.data.theme||clubTheme(reg),w=clubWorld(id),world=worldFor(reg),games=gameCopy(locale)
  const archive=gateAccess(c,sharedGate('archive')!.number,evaluationMode()).allowed?core?.data:null
  const seasons=[...new Set((archive?.seasons||[]).flatMap(row=>{
-  const label=exactSeason((row.value as {season?:string}).season||row.value.name)
+  const label=documentedSeasonLabel((row.value as {season?:string}).season||row.value.name)
   return label?[label]:[]
  }))].sort((a,b)=>b.localeCompare(a))
  const trophySources=new Map(archive?.sources.map(s=>[s.id,s])??[])

@@ -18,11 +18,11 @@ import type {Entity,Fact,Source} from '../contract'
  * open on exactly the material the native gates already use. Nothing here is re-researched or re-approved:
  * every fact keeps its own source and is labelled as a legacy carry-forward.
  */
-type Add=(title:string,url:string|null|undefined)=>string
+type Add=(title:string,url:string|null|undefined,checkedAt?:string)=>string
 const NOTE='Existing The Worker master carried forward with its own source. No new research or approval is claimed.'
 const fact=(id:string,value:Record<string,unknown>,sources:string[]):Fact<Entity>=>({id:`hapoel-tel-aviv:${id}`,value:{...value,id:`hapoel-tel-aviv:${id}`} as Entity,sources,confidence:2,status:'approved',researchedAt:null,approvedAt:null,approvedBy:'legacy-curation',notes:NOTE})
 export function sourceAdder(sources:Map<string,Source>):Add{
- return (title,url)=>{const id=createHash('sha256').update(`${title}:${url||''}`).digest('hex').slice(0,16);if(!sources.has(id))sources.set(id,{id,title,url:url||null,publisher:title,access:'unknown',checkedAt:null});return id}
+ return (title,url,checkedAt)=>{const id=createHash('sha256').update(`${title}:${url||''}`).digest('hex').slice(0,16);if(!sources.has(id))sources.set(id,{id,title,url:url||null,publisher:title,access:checkedAt?'available':'unknown',checkedAt:checkedAt??null});return id}
 }
 const club=(slug:string|null|undefined)=>(slug||'').replace(/-/g,' ')
 const nameOf=(id:string)=>{const p=playerById(id);return p?printedName(p):null}
@@ -31,17 +31,18 @@ const nameOf=(id:string)=>{const p=playerById(id);return p?printedName(p):null}
 export function hapoelMatches(add:Add):Fact<Entity>[]{
  const lineups=new Map(playableLineups().map(r=>[r.matchRef!,r]))
  const archive=add('ויקיפועל · טבלת המשחקים (Games)','https://wiki.red-fans.com/')
- const scorerSource=add('ויקיפועל · כובשים מתוך טבלת המשחקים','https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games')
+ const scorerSource=add('תיעוד כובשים · העותק השמור ב־FANLIFE','https://raw.githubusercontent.com/maordubel/fanlife/8422603f43ed4617b35afbd8f93c1879e3f648d1/content/manual/match-scorers.json','2026-11-22')
  return allMatches().filter(m=>m.sport==='football'&&m.playedOn?.precision==='day'&&m.confidence>=2&&m.score&&Number.isInteger(m.score.home)&&Number.isInteger(m.score.away)).map(m=>{
   const l=lineups.get(m.matchId)
   const starters=l?Object.values(l.xiIds??{}).map(nameOf).filter((n):n is string=>!!n):[]
   const decoys=l?(l.decoys??[]).map(d=>nameOf(d.id)).filter((n):n is string=>!!n):[]
-  const refs=l?[add(l.sourceTitle||'ויקיפועל',l.sourceUrl)]:[archive]
   const scorers=m.scorersDisputed||m.scorers.length!==m.result?.hapoel?[]:m.scorers.flatMap(s=>{
    const name=(s.playerId&&nameOf(s.playerId))||s.nameHe
    return !name||s.confidence<2?[]:[{name,playerId:s.playerId,minute:s.minute,stoppage:s.stoppage,penalty:s.penalty,ownGoal:s.ownGoal}]
   })
+  const refs=l?[add(l.sourceTitle||'ויקיפועל',l.sourceUrl)]:[]
   if(scorers.length)refs.push(scorerSource)
+  else if(!l)refs.push(archive)
   return fact(`match-${m.matchId}`,{name:l?.titleHe||`${club(m.home)} ${m.score!.home}–${m.score!.away} ${club(m.away)}`,on:m.playedOn!.value,season:m.season,competition:club(m.competition),score:`${m.score!.home}–${m.score!.away}`,home:club(m.home),away:club(m.away),homeGoals:m.score!.home,awayGoals:m.score!.away,us:m.hapoelSide??null,...(starters.length===11?{lineup:starters,decoys}:{}),...(scorers.length?{scorers}:{})},refs)
  })
 }
