@@ -1,5 +1,354 @@
 [
  {
+  "id": "obs:immer-unioner:html:/spieler.php?getid=209:player",
+  "role": "player",
+  "nameAsReported": "Tom Persich",
+  "seasonsAsReported": null,
+  "providerRecordKey": "immer-unioner:html:/spieler.php?getid=209",
+  "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=209",
+  "sourceIds": [
+   "document-2447eeee2a5b130d4df9ca8c"
+  ],
+  "parserVersion": "immerunioner-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate"
+ },
+ {
+  "id": "obs:immer-unioner:html:/spieler.php?getid=354:player",
+  "role": "player",
+  "nameAsReported": "Torsten Mattuschka",
+  "seasonsAsReported": null,
+  "providerRecordKey": "immer-unioner:html:/spieler.php?getid=354",
+  "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=354",
+  "sourceIds": [
+   "document-755144afc0b20c7408744503"
+  ],
+  "parserVersion": "immerunioner-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate"
+ },
+ {
+  "id": "obs:immer-unioner:html:/spieler.php?getid=44:player",
+  "role": "player",
+  "nameAsReported": "Joachim Sigusch",
+  "seasonsAsReported": "1970/71, 1971/72, 1972/73, 1973/74, 1974/75, 1975/76, 1976/77, 1977/78, 1978/79, 1979/80, 1980/81",
+  "providerRecordKey": "immer-unioner:html:/spieler.php?getid=44",
+  "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=44",
+  "sourceIds": [
+   "document-37c34da4d45aaf186c2ab1e7"
+  ],
+  "parserVersion": "immerunioner-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "stats": [
+   {
+    "season": "1970/71",
+    "competition": "DDR-Oberliga",
+    "appearances": 14,
+    "goals": 1
+   },
+   {
+    "season": "1970/71",
+    "competition": "FDGB-Pokal",
+    "appearances": 1,
+    "goals": 0
+   },
+   {
+    "season": "1971/72",
+    "competition": "DDR-Oberliga",
+    "appearances": 26,
+    "goals": 1
+   },
+   {
+    "season": "1971/72",
+    "competition": "FDGB-Pokal",
+    "appearances": 2,
+    "goals": 2
+   },
+   {
+    "season": "1972/73",
+    "competition": "DDR-Oberliga",
+    "appearances": 25,
+    "goals": 1
+   },
+   {
+    "season": "1972/73",
+    "competition": "FDGB-Pokal",
+    "appearances": 5,
+    "goals": 1
+   },
+   {
+    "season": "1973/74",
+    "competition": "DDR-Liga Staffel B",
+    "appearances": 20,
+    "goals": 7
+   },
+   {
+    "season": "1973/74",
+    "competition": "FDGB-Pokal",
+    "appearances": 3,
+    "goals": 1
+   },
+   {
+    "season": "1974/75",
+    "competition": "DDR-Liga Staffel B",
+    "appearances": 21,
+    "goals": 6
+   },
+   {
+    "season": "1974/75",
+    "competition": "FDGB-Pokal",
+    "appearances": 5,
+    "goals": 3
+   },
+   {
+    "season": "1975/76",
+    "competition": "DDR-Liga Staffel B",
+    "appearances": 22,
+    "goals": 8
+   },
+   {
+    "season": "1975/76",
+    "competition": "FDGB-Pokal",
+    "appearances": 2,
+    "goals": 2
+   },
+   {
+    "season": "1976/77",
+    "competition": "DDR-Oberliga",
+    "appearances": 26,
+    "goals": 4
+   },
+   {
+    "season": "1976/77",
+    "competition": "FDGB-Pokal",
+    "appearances": 2,
+    "goals": 0
+   },
+   {
+    "season": "1977/78",
+    "competition": "DDR-Oberliga",
+    "appearances": 26,
+    "goals": 3
+   },
+   {
+    "season": "1977/78",
+    "competition": "FDGB-Pokal",
+    "appearances": 1,
+    "goals": 0
+   },
+   {
+    "season": "1978/79",
+    "competition": "DDR-Oberliga",
+    "appearances": 23,
+    "goals": 2
+   },
+   {
+    "season": "1978/79",
+    "competition": "FDGB-Pokal",
+    "appearances": 2,
+    "goals": 0
+   },
+   {
+    "season": "1979/80",
+    "competition": "DDR-Oberliga",
+    "appearances": 20,
+    "goals": 3
+   },
+   {
+    "season": "1979/80",
+    "competition": "FDGB-Pokal",
+    "appearances": 1,
+    "goals": 1
+   },
+   {
+    "season": "1980/81",
+    "competition": "DDR-Liga Staffel B",
+    "appearances": 20,
+    "goals": 3
+   },
+   {
+    "season": "1980/81",
+    "competition": "FDGB-Pokal",
+    "appearances": 3,
+    "goals": 1
+   }
+  ],
+  "status": "candidate"
+ },
+ {
+  "id": "obs:immer-unioner:html:/spieler.php?getid=453:player",
+  "role": "player",
+  "nameAsReported": "Christopher Trimmel",
+  "seasonsAsReported": null,
+  "providerRecordKey": "immer-unioner:html:/spieler.php?getid=453",
+  "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=453",
+  "sourceIds": [
+   "document-05fee253f9212a419a470700"
+  ],
+  "parserVersion": "immerunioner-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate"
+ },
+ {
+  "id": "obs:immer-unioner:html:/spieler.php?getid=69:player",
+  "role": "player",
+  "nameAsReported": "Wolfgang Matthies",
+  "seasonsAsReported": "1972/73, 1974/75, 1975/76, 1976/77, 1977/78, 1978/79, 1979/80, 1981/82, 1982/83, 1985/86, 1986/87, 1987/88",
+  "providerRecordKey": "immer-unioner:html:/spieler.php?getid=69",
+  "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=69",
+  "sourceIds": [
+   "document-771a7aa8282b3c1ded796064"
+  ],
+  "parserVersion": "immerunioner-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "stats": [
+   {
+    "season": "1972/73",
+    "competition": "DDR-Oberliga",
+    "appearances": 0,
+    "goals": null
+   },
+   {
+    "season": "1972/73",
+    "competition": "FDGB-Pokal",
+    "appearances": 0,
+    "goals": null
+   },
+   {
+    "season": "1974/75",
+    "competition": "DDR-Liga Staffel B",
+    "appearances": 7,
+    "goals": 0
+   },
+   {
+    "season": "1974/75",
+    "competition": "FDGB-Pokal",
+    "appearances": 3,
+    "goals": 0
+   },
+   {
+    "season": "1975/76",
+    "competition": "DDR-Liga Staffel B",
+    "appearances": 14,
+    "goals": 0
+   },
+   {
+    "season": "1975/76",
+    "competition": "FDGB-Pokal",
+    "appearances": 2,
+    "goals": 0
+   },
+   {
+    "season": "1976/77",
+    "competition": "DDR-Oberliga",
+    "appearances": 26,
+    "goals": 0
+   },
+   {
+    "season": "1976/77",
+    "competition": "FDGB-Pokal",
+    "appearances": 2,
+    "goals": 0
+   },
+   {
+    "season": "1977/78",
+    "competition": "DDR-Oberliga",
+    "appearances": 26,
+    "goals": 0
+   },
+   {
+    "season": "1977/78",
+    "competition": "FDGB-Pokal",
+    "appearances": 1,
+    "goals": 0
+   },
+   {
+    "season": "1978/79",
+    "competition": "DDR-Oberliga",
+    "appearances": 26,
+    "goals": 0
+   },
+   {
+    "season": "1978/79",
+    "competition": "FDGB-Pokal",
+    "appearances": 2,
+    "goals": 0
+   },
+   {
+    "season": "1979/80",
+    "competition": "DDR-Oberliga",
+    "appearances": 7,
+    "goals": 0
+   },
+   {
+    "season": "1979/80",
+    "competition": "FDGB-Pokal",
+    "appearances": 0,
+    "goals": null
+   },
+   {
+    "season": "1981/82",
+    "competition": "DDR-Liga Staffel B",
+    "appearances": 22,
+    "goals": 0
+   },
+   {
+    "season": "1981/82",
+    "competition": "FDGB-Pokal",
+    "appearances": 3,
+    "goals": 0
+   },
+   {
+    "season": "1982/83",
+    "competition": "DDR-Oberliga",
+    "appearances": 24,
+    "goals": 0
+   },
+   {
+    "season": "1982/83",
+    "competition": "FDGB-Pokal",
+    "appearances": 2,
+    "goals": 0
+   },
+   {
+    "season": "1985/86",
+    "competition": "DDR-Oberliga",
+    "appearances": 26,
+    "goals": 0
+   },
+   {
+    "season": "1985/86",
+    "competition": "FDGB-Pokal",
+    "appearances": 9,
+    "goals": 0
+   },
+   {
+    "season": "1986/87",
+    "competition": "DDR-Oberliga",
+    "appearances": 21,
+    "goals": 0
+   },
+   {
+    "season": "1986/87",
+    "competition": "FDGB-Pokal",
+    "appearances": 1,
+    "goals": 0
+   },
+   {
+    "season": "1987/88",
+    "competition": "DDR-Oberliga",
+    "appearances": 3,
+    "goals": 0
+   }
+  ],
+  "status": "candidate"
+ },
+ {
   "id": "obs:immer-unioner:html:/spieler.php?getid=84:player",
   "role": "player",
   "nameAsReported": "Lutz Hendel",

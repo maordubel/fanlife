@@ -37,7 +37,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-16T08:21:50.912Z"
+  "checkedAt": "2026-11-22T11:33:01.712Z"
  },
  "immer-unioner:/spieler.php?getid=209": {
   "endpoint": "/spieler.php?getid=209",
@@ -45,7 +45,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-16T08:21:54.398Z"
+  "checkedAt": "2026-11-22T11:33:05.691Z"
  },
  "union-official:/de/fussball/profis-maenner/saisonarchiv-maenner-kOKT?league=01938ba8-e83f-7ac5-a848-1ca5c29f77b9&season=01938ba9-27c0-731d-a3fd-c36f0ec9ddb0": {
   "endpoint": "/de/fussball/profis-maenner/saisonarchiv-maenner-kOKT?league=01938ba8-e83f-7ac5-a848-1ca5c29f77b9&season=01938ba9-27c0-731d-a3fd-c36f0ec9ddb0",
@@ -53,7 +53,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-11-21T16:51:01.485Z"
+  "checkedAt": "2026-11-22T11:33:19.470Z"
  },
  "dfb-union:/en/clubs/1-fc-union-berlin": {
   "endpoint": "/en/clubs/1-fc-union-berlin",
@@ -61,7 +61,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-11-22T03:42:39.521Z"
+  "checkedAt": "2026-11-22T11:33:24.230Z"
  },
  "footballhistory-union:/club/union-berlin.html": {
   "endpoint": "/club/union-berlin.html",
@@ -69,7 +69,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-11-21T16:51:08.814Z"
+  "checkedAt": "2026-11-22T11:33:25.492Z"
  },
  "immer-unioner:/spieler.php?getid=44": {
   "endpoint": "/spieler.php?getid=44",
@@ -77,7 +77,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-20T08:43:55.528Z"
+  "checkedAt": "2026-11-22T11:33:09.297Z"
  },
  "immer-unioner:/spieler.php?getid=354": {
   "endpoint": "/spieler.php?getid=354",
@@ -85,7 +85,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-20T08:43:59.516Z"
+  "checkedAt": "2026-11-22T11:33:13.247Z"
  },
  "immer-unioner:/spieler.php?getid=69": {
   "endpoint": "/spieler.php?getid=69",
@@ -93,7 +93,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-20T08:44:03.154Z"
+  "checkedAt": "2026-11-22T11:33:17.294Z"
  },
  "immer-unioner:/spieler.php?getid=401": {
   "endpoint": "/spieler.php?getid=401",

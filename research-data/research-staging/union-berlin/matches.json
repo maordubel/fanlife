@@ -36,14 +36,14 @@
   "locator": "#match_2419401 · home/away and score link"
  },
  {
-  "on": "2026-10-27",
-  "home": "1. FC Köln",
-  "away": "1. FC Union Berlin",
-  "homeGoals": 5,
-  "awayGoals": 0,
-  "competition": "DFB-Pokal",
+  "on": "2026-11-21",
+  "home": "1. FC Union Berlin",
+  "away": "RB Leipzig",
+  "homeGoals": 1,
+  "awayGoals": 5,
+  "competition": "Bundesliga",
   "season": "2026/27",
-  "id": "obs:dfb-union:html:/en/clubs/1-fc-union-berlin:dfb:2430546",
+  "id": "obs:dfb-union:html:/en/clubs/1-fc-union-berlin:dfb:2419436",
   "sourceIds": [
    "document-9195ea6f38f2f8a40d7f794e"
   ],
@@ -51,6 +51,6 @@
   "canonicalId": null,
   "identityState": "unresolved",
   "status": "candidate",
-  "locator": "#match_2430546 · home/away and score link"
+  "locator": "#match_2419436 · home/away and score link"
  }
 ]

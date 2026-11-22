@@ -1,0 +1,773 @@
+{
+ "sources": [
+  {
+   "id": "s365-4755340",
+   "title": "365Scores: Union Berlin 1-5 RB Leipzig, 2026-11-21",
+   "url": "https://webws.365scores.com/web/game/?gameId=4755340",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1812748",
+   "title": "LiveScore: Union Berlin 1-5 RB Leipzig, 2026-11-21 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1812748",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4755349",
+   "title": "365Scores: Freiburg 2-0 Union Berlin, 2026-11-08",
+   "url": "https://webws.365scores.com/web/game/?gameId=4755349",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1812738",
+   "title": "LiveScore: Freiburg 2-0 Union Berlin, 2026-11-08 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1812738",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4755358",
+   "title": "365Scores: Union Berlin 1-1 1. FC Köln, 2026-11-01",
+   "url": "https://webws.365scores.com/web/game/?gameId=4755358",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4847275",
+   "title": "365Scores: 1. FC Köln 5-0 Union Berlin, 2026-10-27",
+   "url": "https://webws.365scores.com/web/game/?gameId=4847275",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1888384",
+   "title": "LiveScore: 1. FC Köln 5-0 Union Berlin, 2026-10-27 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1888384",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4755366",
+   "title": "365Scores: FC Augsburg 1-1 Union Berlin, 2026-10-24",
+   "url": "https://webws.365scores.com/web/game/?gameId=4755366",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1812709",
+   "title": "LiveScore: FC Augsburg 1-1 Union Berlin, 2026-10-24 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1812709",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4755377",
+   "title": "365Scores: Union Berlin 0-0 Borussia Dortmund, 2026-10-17",
+   "url": "https://webws.365scores.com/web/game/?gameId=4755377",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1812725",
+   "title": "LiveScore: Union Berlin 0-0 Borussia Dortmund, 2026-10-17 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1812725",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4755383",
+   "title": "365Scores: Union Berlin 1-0 SV 07 Elversberg, 2026-10-10",
+   "url": "https://webws.365scores.com/web/game/?gameId=4755383",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1812717",
+   "title": "LiveScore: Union Berlin 1-0 SV 07 Elversberg, 2026-10-10 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1812717",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4755398",
+   "title": "365Scores: Bayern Munich 7-0 Union Berlin, 2026-09-18",
+   "url": "https://webws.365scores.com/web/game/?gameId=4755398",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1812681",
+   "title": "LiveScore: Bayern Munich 7-0 Union Berlin, 2026-09-18 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1812681",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4755401",
+   "title": "365Scores: Union Berlin 1-3 Schalke 04, 2026-09-11",
+   "url": "https://webws.365scores.com/web/game/?gameId=4755401",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1812701",
+   "title": "LiveScore: Union Berlin 1-3 Schalke 04, 2026-09-11 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1812701",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4755414",
+   "title": "365Scores: Bayer Leverkusen 4-0 Union Berlin, 2026-09-05",
+   "url": "https://webws.365scores.com/web/game/?gameId=4755414",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1812690",
+   "title": "LiveScore: Bayer Leverkusen 4-0 Union Berlin, 2026-09-05 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1812690",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4755419",
+   "title": "365Scores: Union Berlin 3-3 Eintracht Frankfurt, 2026-08-29",
+   "url": "https://webws.365scores.com/web/game/?gameId=4755419",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1812679",
+   "title": "LiveScore: Union Berlin 3-3 Eintracht Frankfurt, 2026-08-29 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1812679",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4733038",
+   "title": "365Scores: Eintracht Braunschweig 2-4 Union Berlin, 2026-08-23",
+   "url": "https://webws.365scores.com/web/game/?gameId=4733038",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1785778",
+   "title": "LiveScore: Eintracht Braunschweig 2-4 Union Berlin, 2026-08-23 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1785778",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  }
+ ],
+ "matches": [
+  {
+   "id": "a-m-2026-11-21-union-berlin-rb-leipzig",
+   "value": {
+    "name": "Union Berlin 1-5 RB Leipzig",
+    "on": "2026-11-21",
+    "competition": "Bundesliga",
+    "score": "1-5",
+    "venue": null,
+    "lineup": [
+     "Frederik Ronnow",
+     "Derrick Kohn",
+     "Marvin Friedrich",
+     "Zeno Van Den Bosch",
+     "Janik Haberer",
+     "Rani Khedira",
+     "Michel Aebischer",
+     "Andras Schafer",
+     "Kastriot Imeri",
+     "Andrej Ilić",
+     "Oliver Burke"
+    ],
+    "bench": [
+     "Aljoscha Kemlein",
+     "Woo-Yeong Jeong",
+     "Linus Güther",
+     "Mekhi Gray",
+     "Tim Skarke",
+     "Matheo Raab",
+     "Leopold Querfeld",
+     "Christopher Trimmel",
+     "Tom Rothe"
+    ],
+    "scorers": [
+     "Michel Aebischer"
+    ]
+   },
+   "sources": [
+    "s365-4755340",
+    "ls-lu-1812748"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-union-berlin"
+  },
+  {
+   "id": "a-m-2026-11-08-freiburg-union-berlin",
+   "value": {
+    "name": "Freiburg 2-0 Union Berlin",
+    "on": "2026-11-08",
+    "competition": "Bundesliga",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Frederik Ronnow",
+     "Derrick Kohn",
+     "Marvin Friedrich",
+     "Zeno Van Den Bosch",
+     "Janik Haberer",
+     "Rani Khedira",
+     "Michel Aebischer",
+     "Andras Schafer",
+     "Kastriot Imeri",
+     "Livan Burcu",
+     "Tim Skarke"
+    ],
+    "bench": [
+     "Tom Rothe",
+     "Woo-Yeong Jeong",
+     "Linus Güther",
+     "Oliver Burke",
+     "Andrej Ilić",
+     "Matheo Raab",
+     "Leopold Querfeld",
+     "Christopher Trimmel",
+     "Emmanuel Latte Lath"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4755349",
+    "ls-lu-1812738"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-union-berlin"
+  },
+  {
+   "id": "a-m-2026-11-01-union-berlin-1-fc-koln",
+   "value": {
+    "name": "Union Berlin 1-1 1. FC Köln",
+    "on": "2026-11-01",
+    "competition": "Bundesliga",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Frederik Ronnow",
+     "Rani Khedira",
+     "Marvin Friedrich",
+     "Zeno Van Den Bosch",
+     "Derrick Kohn",
+     "Michel Aebischer",
+     "Andras Schafer",
+     "Janik Haberer",
+     "Kastriot Imeri",
+     "Livan Burcu",
+     "Tim Skarke"
+    ],
+    "bench": [
+     "Christopher Trimmel",
+     "Aljoscha Kemlein",
+     "Woo-Yeong Jeong",
+     "Oliver Burke",
+     "Emmanuel Latte Lath",
+     "Matheo Raab",
+     "Leopold Querfeld",
+     "Tom Rothe",
+     "Mekhi Gray"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4755358"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore has no full eleven for this match.",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-10-27-1-fc-koln-union-berlin",
+   "value": {
+    "name": "1. FC Köln 5-0 Union Berlin",
+    "on": "2026-10-27",
+    "competition": "DFB-Pokal - 2nd Round",
+    "score": "5-0",
+    "venue": null,
+    "lineup": [
+     "Matheo Raab",
+     "Tom Rothe",
+     "Leopold Querfeld",
+     "Zeno Van Den Bosch",
+     "Janik Haberer",
+     "Rani Khedira",
+     "Andras Schafer",
+     "Michel Aebischer",
+     "Woo-Yeong Jeong",
+     "Tim Skarke",
+     "Mekhi Gray"
+    ],
+    "bench": [
+     "Derrick Kohn",
+     "Aljoscha Kemlein",
+     "Livan Burcu",
+     "Emmanuel Latte Lath",
+     "Marin Ljubicic",
+     "Frederik Ronnow",
+     "Marvin Friedrich",
+     "Christopher Trimmel",
+     "Kastriot Imeri"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4847275",
+    "ls-lu-1888384"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-union-berlin"
+  },
+  {
+   "id": "a-m-2026-10-24-fc-augsburg-union-berlin",
+   "value": {
+    "name": "FC Augsburg 1-1 Union Berlin",
+    "on": "2026-10-24",
+    "competition": "Bundesliga",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Frederik Ronnow",
+     "Tom Rothe",
+     "Felix Uduokhai",
+     "Zeno Van Den Bosch",
+     "Janik Haberer",
+     "Rani Khedira",
+     "Andras Schafer",
+     "Livan Burcu",
+     "Michel Aebischer",
+     "Woo-Yeong Jeong",
+     "Tim Skarke"
+    ],
+    "bench": [
+     "Leopold Querfeld",
+     "Aljoscha Kemlein",
+     "Oliver Burke",
+     "Mekhi Gray",
+     "Matheo Raab",
+     "Christopher Trimmel",
+     "Derrick Kohn",
+     "Emmanuel Latte Lath",
+     "Marin Ljubicic"
+    ],
+    "scorers": [
+     "Janik Haberer"
+    ]
+   },
+   "sources": [
+    "s365-4755366",
+    "ls-lu-1812709"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-union-berlin"
+  },
+  {
+   "id": "a-m-2026-10-17-union-berlin-borussia-dortmund",
+   "value": {
+    "name": "Union Berlin 0-0 Borussia Dortmund",
+    "on": "2026-10-17",
+    "competition": "Bundesliga",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Frederik Ronnow",
+     "Tom Rothe",
+     "Felix Uduokhai",
+     "Zeno Van Den Bosch",
+     "Janik Haberer",
+     "Rani Khedira",
+     "Andras Schafer",
+     "Kastriot Imeri",
+     "Michel Aebischer",
+     "Woo-Yeong Jeong",
+     "Tim Skarke"
+    ],
+    "bench": [
+     "Christopher Trimmel",
+     "Aljoscha Kemlein",
+     "Linus Güther",
+     "Mekhi Gray",
+     "Emmanuel Latte Lath",
+     "Matheo Raab",
+     "Leopold Querfeld",
+     "Derrick Kohn",
+     "Marin Ljubicic"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4755377",
+    "ls-lu-1812725"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-union-berlin"
+  },
+  {
+   "id": "a-m-2026-10-10-union-berlin-sv-07-elversberg",
+   "value": {
+    "name": "Union Berlin 1-0 SV 07 Elversberg",
+    "on": "2026-10-10",
+    "competition": "Bundesliga",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Frederik Ronnow",
+     "Tom Rothe",
+     "Felix Uduokhai",
+     "Zeno Van Den Bosch",
+     "Janik Haberer",
+     "Rani Khedira",
+     "Andras Schafer",
+     "Kastriot Imeri",
+     "Woo-Yeong Jeong",
+     "Michel Aebischer",
+     "Tim Skarke"
+    ],
+    "bench": [
+     "Christopher Trimmel",
+     "Aljoscha Kemlein",
+     "Livan Burcu",
+     "Oliver Burke",
+     "Mekhi Gray",
+     "Matheo Raab",
+     "Leopold Querfeld",
+     "Derrick Kohn",
+     "Marin Ljubicic"
+    ],
+    "scorers": [
+     "Livan Burcu"
+    ]
+   },
+   "sources": [
+    "s365-4755383",
+    "ls-lu-1812717"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-union-berlin"
+  },
+  {
+   "id": "a-m-2026-09-18-bayern-munich-union-berlin",
+   "value": {
+    "name": "Bayern Munich 7-0 Union Berlin",
+    "on": "2026-09-18",
+    "competition": "Bundesliga",
+    "score": "7-0",
+    "venue": null,
+    "lineup": [
+     "Frederik Ronnow",
+     "Tom Rothe",
+     "Felix Uduokhai",
+     "Leopold Querfeld",
+     "Christopher Trimmel",
+     "Michel Aebischer",
+     "Rani Khedira",
+     "Andras Schafer",
+     "Woo-Yeong Jeong",
+     "Janik Haberer",
+     "Emmanuel Latte Lath"
+    ],
+    "bench": [
+     "Zeno Van Den Bosch",
+     "Derrick Kohn",
+     "Aljoscha Kemlein",
+     "Livan Burcu",
+     "Tim Skarke",
+     "Matheo Raab",
+     "Kastriot Imeri",
+     "Robert Skov",
+     "Marin Ljubicic"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4755398",
+    "ls-lu-1812681"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-union-berlin"
+  },
+  {
+   "id": "a-m-2026-09-11-union-berlin-schalke-04",
+   "value": {
+    "name": "Union Berlin 1-3 Schalke 04",
+    "on": "2026-09-11",
+    "competition": "Bundesliga",
+    "score": "1-3",
+    "venue": null,
+    "lineup": [
+     "Frederik Ronnow",
+     "Tom Rothe",
+     "Felix Uduokhai",
+     "Leopold Querfeld",
+     "Josip Juranovic",
+     "Aljoscha Kemlein",
+     "Livan Burcu",
+     "Michel Aebischer",
+     "Rani Khedira",
+     "Emmanuel Latte Lath",
+     "Woo-Yeong Jeong"
+    ],
+    "bench": [
+     "Janik Haberer",
+     "Andras Schafer",
+     "Robert Skov",
+     "Marin Ljubicic",
+     "Tim Skarke",
+     "Matheo Raab",
+     "Zeno Van Den Bosch",
+     "Christopher Trimmel",
+     "Linus Güther"
+    ],
+    "scorers": [
+     "Tim Skarke"
+    ]
+   },
+   "sources": [
+    "s365-4755401",
+    "ls-lu-1812701"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-union-berlin"
+  },
+  {
+   "id": "a-m-2026-09-05-bayer-leverkusen-union-berlin",
+   "value": {
+    "name": "Bayer Leverkusen 4-0 Union Berlin",
+    "on": "2026-09-05",
+    "competition": "Bundesliga",
+    "score": "4-0",
+    "venue": null,
+    "lineup": [
+     "Frederik Ronnow",
+     "Tom Rothe",
+     "Felix Uduokhai",
+     "Zeno Van Den Bosch",
+     "Josip Juranovic",
+     "Aljoscha Kemlein",
+     "Livan Burcu",
+     "Michel Aebischer",
+     "Rani Khedira",
+     "Emmanuel Latte Lath",
+     "Marin Ljubicic"
+    ],
+    "bench": [
+     "Christopher Trimmel",
+     "Janik Haberer",
+     "Andras Schafer",
+     "Woo-Yeong Jeong",
+     "Tim Skarke",
+     "Matheo Raab",
+     "Leopold Querfeld",
+     "Derrick Kohn",
+     "Robert Skov"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4755414",
+    "ls-lu-1812690"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-union-berlin"
+  },
+  {
+   "id": "a-m-2026-08-29-union-berlin-eintracht-frankfurt",
+   "value": {
+    "name": "Union Berlin 3-3 Eintracht Frankfurt",
+    "on": "2026-08-29",
+    "competition": "Bundesliga",
+    "score": "3-3",
+    "venue": null,
+    "lineup": [
+     "Matheo Raab",
+     "Tom Rothe",
+     "Zeno Van Den Bosch",
+     "Leopold Querfeld",
+     "Josip Juranovic",
+     "Aljoscha Kemlein",
+     "Andras Schafer",
+     "Rani Khedira",
+     "Michel Aebischer",
+     "Emmanuel Latte Lath",
+     "Marin Ljubicic"
+    ],
+    "bench": [
+     "Derrick Kohn",
+     "Janik Haberer",
+     "Woo-Yeong Jeong",
+     "Livan Burcu",
+     "Tim Skarke",
+     "Carl Klaus",
+     "Felix Uduokhai",
+     "Christopher Trimmel",
+     "Linus Güther"
+    ],
+    "scorers": [
+     "Emmanuel Latte Lath",
+     "Leopold Querfeld",
+     "Tim Skarke"
+    ]
+   },
+   "sources": [
+    "s365-4755419",
+    "ls-lu-1812679"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-union-berlin"
+  },
+  {
+   "id": "a-m-2026-08-23-eintracht-braunschweig-union-berlin",
+   "value": {
+    "name": "Eintracht Braunschweig 2-4 Union Berlin",
+    "on": "2026-08-23",
+    "competition": "DFB-Pokal - 1st Round",
+    "score": "2-4",
+    "venue": null,
+    "lineup": [
+     "Matheo Raab",
+     "Tom Rothe",
+     "Zeno Van Den Bosch",
+     "Leopold Querfeld",
+     "Josip Juranovic",
+     "Livan Burcu",
+     "Aljoscha Kemlein",
+     "Rani Khedira",
+     "Woo-Yeong Jeong",
+     "Ilyas Ansah",
+     "Emmanuel Latte Lath"
+    ],
+    "bench": [
+     "Christopher Trimmel",
+     "Michel Aebischer",
+     "Andras Schafer",
+     "Marin Ljubicic",
+     "Carl Klaus",
+     "Oluwaseun Ogbemudia",
+     "Derrick Kohn",
+     "Janik Haberer",
+     "Tim Skarke"
+    ],
+    "scorers": [
+     "Zeno Van Den Bosch",
+     "Tom Rothe",
+     "Marin Ljubicic",
+     "Marin Ljubicic"
+    ]
+   },
+   "sources": [
+    "s365-4733038",
+    "ls-lu-1785778"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-union-berlin"
+  }
+ ],
+ "players": [],
+ "kits": [],
+ "rivals": []
+}

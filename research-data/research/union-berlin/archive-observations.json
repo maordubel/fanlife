@@ -240,7 +240,7 @@
   "status": "candidate",
   "providerId": "union-official",
   "contentHash": "5890f72d7f6f6a00d6654170ddac72334e4804db12d42bfb9e3d7d1f29aa1603",
-  "runId": "2026-11-21T16-50-21-431Z-35a551",
+  "runId": "2026-11-22T11-33-00-096Z-d38a3a",
   "retired": null
  },
  "obs:dfb-union:html:/en/clubs/1-fc-union-berlin:dfb:2419392": {
@@ -267,8 +267,8 @@
    "season": "2026/27"
   },
   "providerId": "dfb-union",
-  "contentHash": "12d243a87ef46aaa60c82ae06206b5010a07836f15d5131cf9b8eda1b5e83e9c",
-  "runId": "2026-11-22T03-42-39-391Z-2fe4ce",
+  "contentHash": "11aa3ff0af01e78b5ebc1611229a180df61f677e83d43d617fa559bd0d13b792",
+  "runId": "2026-11-22T11-33-00-096Z-d38a3a",
   "retired": null
  },
  "obs:dfb-union:html:/en/clubs/1-fc-union-berlin:dfb:2419401": {
@@ -295,8 +295,8 @@
    "season": "2026/27"
   },
   "providerId": "dfb-union",
-  "contentHash": "12d243a87ef46aaa60c82ae06206b5010a07836f15d5131cf9b8eda1b5e83e9c",
-  "runId": "2026-11-22T03-42-39-391Z-2fe4ce",
+  "contentHash": "11aa3ff0af01e78b5ebc1611229a180df61f677e83d43d617fa559bd0d13b792",
+  "runId": "2026-11-22T11-33-00-096Z-d38a3a",
   "retired": null
  },
  "obs:dfb-union:html:/en/clubs/1-fc-union-berlin:dfb:2430546": {
@@ -325,6 +325,415 @@
   "providerId": "dfb-union",
   "contentHash": "12d243a87ef46aaa60c82ae06206b5010a07836f15d5131cf9b8eda1b5e83e9c",
   "runId": "2026-11-22T03-42-39-391Z-2fe4ce",
+  "retired": {
+   "at": "2026-11-22T11:33:24.230Z",
+   "runId": "2026-11-22T11-33-00-096Z-d38a3a",
+   "reason": "document changed (12d243a87ef4 → 11aa3ff0af01); dfb-club-results-v1 no longer produces this observation"
+  },
+  "history": [
+   {
+    "at": "2026-11-22T11:33:24.230Z",
+    "runId": "2026-11-22T11-33-00-096Z-d38a3a",
+    "change": "retired",
+    "reason": "document changed (12d243a87ef4 → 11aa3ff0af01); dfb-club-results-v1 no longer produces this observation"
+   }
+  ]
+ },
+ "obs:immer-unioner:html:/spieler.php?getid=453:player": {
+  "schemaVersion": 1,
+  "id": "obs:immer-unioner:html:/spieler.php?getid=453:player",
+  "recordType": "player",
+  "providerRecordKey": "immer-unioner:html:/spieler.php?getid=453",
+  "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=453",
+  "parserVersion": "immerunioner-v1",
+  "locator": "title; profile URL",
+  "nameAsReported": "Christopher Trimmel",
+  "seasonsAsReported": null,
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "providerId": "immer-unioner",
+  "contentHash": "d97562d2b6c77dd324e7f53bdc4f45769a159bb6fcf6a9214f9e6598cd96a338",
+  "runId": "2026-11-22T11-33-00-096Z-d38a3a",
+  "retired": null
+ },
+ "obs:immer-unioner:html:/spieler.php?getid=209:player": {
+  "schemaVersion": 1,
+  "id": "obs:immer-unioner:html:/spieler.php?getid=209:player",
+  "recordType": "player",
+  "providerRecordKey": "immer-unioner:html:/spieler.php?getid=209",
+  "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=209",
+  "parserVersion": "immerunioner-v1",
+  "locator": "title; profile URL",
+  "nameAsReported": "Tom Persich",
+  "seasonsAsReported": null,
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "providerId": "immer-unioner",
+  "contentHash": "0bf8b5931d7d2ff7c39ccc575fb60cdaf641b0a2f3ce202a6a952c5c0ee45b75",
+  "runId": "2026-11-22T11-33-00-096Z-d38a3a",
+  "retired": null
+ },
+ "obs:immer-unioner:html:/spieler.php?getid=44:player": {
+  "schemaVersion": 1,
+  "id": "obs:immer-unioner:html:/spieler.php?getid=44:player",
+  "recordType": "player",
+  "providerRecordKey": "immer-unioner:html:/spieler.php?getid=44",
+  "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=44",
+  "parserVersion": "immerunioner-v1",
+  "locator": "title; Saison / Einsätze / Tore table",
+  "nameAsReported": "Joachim Sigusch",
+  "seasonsAsReported": "1970/71, 1971/72, 1972/73, 1973/74, 1974/75, 1975/76, 1976/77, 1977/78, 1978/79, 1979/80, 1980/81",
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "stats": [
+   {
+    "season": "1970/71",
+    "competition": "DDR-Oberliga",
+    "appearances": 14,
+    "goals": 1
+   },
+   {
+    "season": "1970/71",
+    "competition": "FDGB-Pokal",
+    "appearances": 1,
+    "goals": 0
+   },
+   {
+    "season": "1971/72",
+    "competition": "DDR-Oberliga",
+    "appearances": 26,
+    "goals": 1
+   },
+   {
+    "season": "1971/72",
+    "competition": "FDGB-Pokal",
+    "appearances": 2,
+    "goals": 2
+   },
+   {
+    "season": "1972/73",
+    "competition": "DDR-Oberliga",
+    "appearances": 25,
+    "goals": 1
+   },
+   {
+    "season": "1972/73",
+    "competition": "FDGB-Pokal",
+    "appearances": 5,
+    "goals": 1
+   },
+   {
+    "season": "1973/74",
+    "competition": "DDR-Liga Staffel B",
+    "appearances": 20,
+    "goals": 7
+   },
+   {
+    "season": "1973/74",
+    "competition": "FDGB-Pokal",
+    "appearances": 3,
+    "goals": 1
+   },
+   {
+    "season": "1974/75",
+    "competition": "DDR-Liga Staffel B",
+    "appearances": 21,
+    "goals": 6
+   },
+   {
+    "season": "1974/75",
+    "competition": "FDGB-Pokal",
+    "appearances": 5,
+    "goals": 3
+   },
+   {
+    "season": "1975/76",
+    "competition": "DDR-Liga Staffel B",
+    "appearances": 22,
+    "goals": 8
+   },
+   {
+    "season": "1975/76",
+    "competition": "FDGB-Pokal",
+    "appearances": 2,
+    "goals": 2
+   },
+   {
+    "season": "1976/77",
+    "competition": "DDR-Oberliga",
+    "appearances": 26,
+    "goals": 4
+   },
+   {
+    "season": "1976/77",
+    "competition": "FDGB-Pokal",
+    "appearances": 2,
+    "goals": 0
+   },
+   {
+    "season": "1977/78",
+    "competition": "DDR-Oberliga",
+    "appearances": 26,
+    "goals": 3
+   },
+   {
+    "season": "1977/78",
+    "competition": "FDGB-Pokal",
+    "appearances": 1,
+    "goals": 0
+   },
+   {
+    "season": "1978/79",
+    "competition": "DDR-Oberliga",
+    "appearances": 23,
+    "goals": 2
+   },
+   {
+    "season": "1978/79",
+    "competition": "FDGB-Pokal",
+    "appearances": 2,
+    "goals": 0
+   },
+   {
+    "season": "1979/80",
+    "competition": "DDR-Oberliga",
+    "appearances": 20,
+    "goals": 3
+   },
+   {
+    "season": "1979/80",
+    "competition": "FDGB-Pokal",
+    "appearances": 1,
+    "goals": 1
+   },
+   {
+    "season": "1980/81",
+    "competition": "DDR-Liga Staffel B",
+    "appearances": 20,
+    "goals": 3
+   },
+   {
+    "season": "1980/81",
+    "competition": "FDGB-Pokal",
+    "appearances": 3,
+    "goals": 1
+   }
+  ],
+  "providerId": "immer-unioner",
+  "contentHash": "26859872a1a114ba8af82ab93c4902e88fe706859d169643c6fbbf5049430fed",
+  "runId": "2026-11-22T11-33-00-096Z-d38a3a",
+  "retired": null
+ },
+ "obs:immer-unioner:html:/spieler.php?getid=354:player": {
+  "schemaVersion": 1,
+  "id": "obs:immer-unioner:html:/spieler.php?getid=354:player",
+  "recordType": "player",
+  "providerRecordKey": "immer-unioner:html:/spieler.php?getid=354",
+  "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=354",
+  "parserVersion": "immerunioner-v1",
+  "locator": "title; profile URL",
+  "nameAsReported": "Torsten Mattuschka",
+  "seasonsAsReported": null,
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "providerId": "immer-unioner",
+  "contentHash": "ba46013daf7e35c5306484506178afb7082fee3d76c36b476b04cdf9911d1dfb",
+  "runId": "2026-11-22T11-33-00-096Z-d38a3a",
+  "retired": null
+ },
+ "obs:immer-unioner:html:/spieler.php?getid=69:player": {
+  "schemaVersion": 1,
+  "id": "obs:immer-unioner:html:/spieler.php?getid=69:player",
+  "recordType": "player",
+  "providerRecordKey": "immer-unioner:html:/spieler.php?getid=69",
+  "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=69",
+  "parserVersion": "immerunioner-v1",
+  "locator": "title; Saison / Einsätze / Tore table",
+  "nameAsReported": "Wolfgang Matthies",
+  "seasonsAsReported": "1972/73, 1974/75, 1975/76, 1976/77, 1977/78, 1978/79, 1979/80, 1981/82, 1982/83, 1985/86, 1986/87, 1987/88",
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "stats": [
+   {
+    "season": "1972/73",
+    "competition": "DDR-Oberliga",
+    "appearances": 0,
+    "goals": null
+   },
+   {
+    "season": "1972/73",
+    "competition": "FDGB-Pokal",
+    "appearances": 0,
+    "goals": null
+   },
+   {
+    "season": "1974/75",
+    "competition": "DDR-Liga Staffel B",
+    "appearances": 7,
+    "goals": 0
+   },
+   {
+    "season": "1974/75",
+    "competition": "FDGB-Pokal",
+    "appearances": 3,
+    "goals": 0
+   },
+   {
+    "season": "1975/76",
+    "competition": "DDR-Liga Staffel B",
+    "appearances": 14,
+    "goals": 0
+   },
+   {
+    "season": "1975/76",
+    "competition": "FDGB-Pokal",
+    "appearances": 2,
+    "goals": 0
+   },
+   {
+    "season": "1976/77",
+    "competition": "DDR-Oberliga",
+    "appearances": 26,
+    "goals": 0
+   },
+   {
+    "season": "1976/77",
+    "competition": "FDGB-Pokal",
+    "appearances": 2,
+    "goals": 0
+   },
+   {
+    "season": "1977/78",
+    "competition": "DDR-Oberliga",
+    "appearances": 26,
+    "goals": 0
+   },
+   {
+    "season": "1977/78",
+    "competition": "FDGB-Pokal",
+    "appearances": 1,
+    "goals": 0
+   },
+   {
+    "season": "1978/79",
+    "competition": "DDR-Oberliga",
+    "appearances": 26,
+    "goals": 0
+   },
+   {
+    "season": "1978/79",
+    "competition": "FDGB-Pokal",
+    "appearances": 2,
+    "goals": 0
+   },
+   {
+    "season": "1979/80",
+    "competition": "DDR-Oberliga",
+    "appearances": 7,
+    "goals": 0
+   },
+   {
+    "season": "1979/80",
+    "competition": "FDGB-Pokal",
+    "appearances": 0,
+    "goals": null
+   },
+   {
+    "season": "1981/82",
+    "competition": "DDR-Liga Staffel B",
+    "appearances": 22,
+    "goals": 0
+   },
+   {
+    "season": "1981/82",
+    "competition": "FDGB-Pokal",
+    "appearances": 3,
+    "goals": 0
+   },
+   {
+    "season": "1982/83",
+    "competition": "DDR-Oberliga",
+    "appearances": 24,
+    "goals": 0
+   },
+   {
+    "season": "1982/83",
+    "competition": "FDGB-Pokal",
+    "appearances": 2,
+    "goals": 0
+   },
+   {
+    "season": "1985/86",
+    "competition": "DDR-Oberliga",
+    "appearances": 26,
+    "goals": 0
+   },
+   {
+    "season": "1985/86",
+    "competition": "FDGB-Pokal",
+    "appearances": 9,
+    "goals": 0
+   },
+   {
+    "season": "1986/87",
+    "competition": "DDR-Oberliga",
+    "appearances": 21,
+    "goals": 0
+   },
+   {
+    "season": "1986/87",
+    "competition": "FDGB-Pokal",
+    "appearances": 1,
+    "goals": 0
+   },
+   {
+    "season": "1987/88",
+    "competition": "DDR-Oberliga",
+    "appearances": 3,
+    "goals": 0
+   }
+  ],
+  "providerId": "immer-unioner",
+  "contentHash": "542a39ba6aa48d09ef2754a53304d6ed3cdb61e3bf9a8d5bb6e102b4a6ad4ed0",
+  "runId": "2026-11-22T11-33-00-096Z-d38a3a",
+  "retired": null
+ },
+ "obs:dfb-union:html:/en/clubs/1-fc-union-berlin:dfb:2419436": {
+  "schemaVersion": 1,
+  "id": "obs:dfb-union:html:/en/clubs/1-fc-union-berlin:dfb:2419436",
+  "recordType": "match",
+  "providerRecordKey": "dfb-union:html:/en/clubs/1-fc-union-berlin",
+  "sourceUrl": "https://datencenter.dfb.de/en/clubs/1-fc-union-berlin",
+  "parserVersion": "dfb-club-results-v1",
+  "locator": "#match_2419436 · home/away and score link",
+  "nameAsReported": null,
+  "seasonsAsReported": null,
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "match": {
+   "on": "2026-11-21",
+   "home": "1. FC Union Berlin",
+   "away": "RB Leipzig",
+   "homeGoals": 1,
+   "awayGoals": 5,
+   "competition": "Bundesliga",
+   "season": "2026/27"
+  },
+  "providerId": "dfb-union",
+  "contentHash": "11aa3ff0af01e78b5ebc1611229a180df61f677e83d43d617fa559bd0d13b792",
+  "runId": "2026-11-22T11-33-00-096Z-d38a3a",
   "retired": null
  }
 }
