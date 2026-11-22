@@ -16,6 +16,7 @@ import {featuresOf} from '@/lib/features'
 import {isOwner} from '@/lib/features-server'
 import en from '@/messages/clubs/en.json'
 import he from '@/messages/clubs/he.json'
+import {FolioDoor} from '@/components/wayfinding/FolioDoor'
 
 /**
  * The magazine's cover furniture: sticky masthead bar, the STOP PRESS strip, the credit footer
@@ -33,6 +34,7 @@ export function Shell({children,club,theme,locale='en',stop}:{children:ReactNode
    <HubMenu locale={locale} current={club?.id??null} theme={identity}/>
   </div></div>
   {stop!==undefined?<div className="mag-stop">{stop}</div>:evaluationMode()?<div className="mag-stop"><div className="mag-stop-in"><b>{copy.stopPress}</b><span>{copy.evaluation} · {copy.evaluationNote}</span></div></div>:null}
+  <Suspense fallback={null}><FolioDoor/></Suspense>
   {children}
   <footer className="mag-foot"><div className="mag-printbar" aria-hidden="true"><i/><i/><i/><i/><i/><i/><u>+</u></div><div className="mag-foot-in">
    <div className="mag-mono">FAN LIFE · {copy.issue}<br/>{copy.footer}<br/>{copy.printed}</div>
