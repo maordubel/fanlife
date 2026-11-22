@@ -278,5 +278,8 @@
  "searchL": "Search the shop",
  "searchP": "Search: a club, a player, a shirt…",
  "searchGo": "Search",
- "searchNone": "Nothing matches “{q}” yet."
+ "searchNone": "Nothing matches “{q}” yet.",
+ "pdpMadeEu": "Printed in {country} · sent from inside the EU, no customs to pay in the Union",
+ "pdpMadeAbroad": "Printed in {country} · sent from outside the EU",
+ "pdpShip": "Delivery to Europe from {price}; the exact price shows at checkout for your address"
 }

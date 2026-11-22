@@ -47,6 +47,9 @@ export async function shopDoctor(by='autopilot',press?:(id:string)=>Promise<unkn
   if(FILE_LIKE.test(n.trim()))needs.push(`Name the design “${n}” (Products → Name) — a file name does not sell`)
   if(l.some(p=>p.design?.shades&&p.design.shades!=='light'&&!p.design.cutout&&'library' in p.art))needs.push(`“${n}” prints on dark colours with its paper ground — switch on Remove background`)
   const live=l.filter(p=>p.status==='live').length;if(live>0&&live<3)needs.push(`“${n}” is on ${live} product(s) only — add it to a shirt, a poster and a mug (Create → Starter pack)`)}
+ // 5 · Europe first: say what still prints outside the EU (the hourly check-up moves what it can)
+ const abroad=doc.products.filter(p=>p.status==='live'&&p.visible&&p.printify?.madeIn&&!p.printify.europe)
+ if(abroad.length)needs.unshift(`${abroad.length} product(s) on show are printed outside the EU (no printer inside it makes them) — a parcel to Europe costs more; hide them or choose another product`)
  const note:ShopDoctorNote={at:now,fixed,needs:needs.slice(0,12)}
  await updateShop(by,'',d=>{d.doctor=note});if(fixed.length)forgetPublicShop()
  return note

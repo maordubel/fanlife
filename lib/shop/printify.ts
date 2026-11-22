@@ -7,7 +7,8 @@ const BASE='https://api.printify.com/v1'
 export class PrintifyError extends Error{constructor(public status:number,message:string){super(message)}}
 export type PShop={id:number;title:string;sales_channel:string}
 export type PBlueprint={id:number;title:string;brand:string;model:string;images:string[]}
-export type PProvider={id:number;title:string}
+export type PProvider={id:number;title:string;location?:{country?:string|null;city?:string|null}|null}
+export type PShipping={handling_time?:{value:number;unit:string};profiles?:import('./europe').ShipProfile[]}
 export type PVariant={id:number;title:string;options:Record<string,string>;placeholders:{position:string;width:number;height:number}[]}
 export type PUpload={id:string;file_name:string;width:number;height:number;preview_url:string}
 export type PProduct={id:string;title:string;visible:boolean;is_locked:boolean;variants:{id:number;cost:number;price:number;is_enabled:boolean}[];images:{src:string;is_default:boolean;position?:string;variant_ids?:number[]}[];external?:{id?:string;handle?:string}}
@@ -28,6 +29,9 @@ export function printify(token:string){
   shops:()=>call<PShop[]>('Reading your stores','/shops.json'),
   blueprints:()=>call<PBlueprint[]>('Reading the catalogue','/catalog/blueprints.json'),
   providers:(bp:number)=>call<PProvider[]>('Reading print providers',`/catalog/blueprints/${bp}/print_providers.json`),
+  /** every print provider with its address (one call): where a printer is */
+  providerBook:()=>call<PProvider[]>('Reading where the printers are','/catalog/print_providers.json'),
+  shipping:(bp:number,pp:number)=>call<PShipping>('Reading the parcel prices',`/catalog/blueprints/${bp}/print_providers/${pp}/shipping.json`),
   variants:(bp:number,pp:number)=>call<{variants:PVariant[]}>('Reading sizes and colours',`/catalog/blueprints/${bp}/print_providers/${pp}/variants.json`),
   uploadUrl:(file_name:string,url:string)=>call<PUpload>('Sending the picture to Printify','/uploads/images.json',{method:'POST',body:{file_name,url}}),
   upload:(file_name:string,contents:string)=>call<PUpload>('Uploading the artwork','/uploads/images.json',{method:'POST',body:{file_name,contents}}),

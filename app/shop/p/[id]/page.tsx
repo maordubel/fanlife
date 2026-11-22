@@ -8,6 +8,7 @@ import {Gallery} from '@/components/shop/Gallery'
 import {publicShop} from '@/lib/shop/store'
 import {subjectName} from '@/lib/shop/subjects'
 import {inClub} from '@/lib/shop/types'
+import {countryName} from '@/lib/shop/europe'
 import copy from '@/messages/en.shop.json'
 import '../../../weekly/shop.css'
 export const dynamic='force-dynamic'
@@ -50,6 +51,7 @@ export default async function Product({params}:{params:{id:string}}){
     {sale?<p className="wks-pdp-sale">{sale.label} · {leftText(sale.until)}</p>:null}
     <CheckoutButton url={p.url} copy={{buy:copy.pdpBuy,opening:copy.pdpOpening,k:copy.pdpOpenK,t:copy.pdpOpenT,sub:copy.pdpOpenSub,reopen:copy.pdpReopen,close:copy.pdpClose,blocked:copy.pdpBlocked,blockedCta:copy.pdpBlockedCta}}/>
     <p className="wk-small">{copy.pdpPick}</p>
+    {p.madeIn&&<p className="wk-small wks-pdp-made" data-testid="pdp-made" data-europe={p.europe?'yes':'no'}>{(p.europe?copy.pdpMadeEu:copy.pdpMadeAbroad).replace('{country}',countryName(p.madeIn)??p.madeIn)}{p.shipFrom?<><br/>{copy.pdpShip.replace('{price}',money(p.shipFrom,p.currency))}</>:null}</p>}
     <ul className="wks-pdp-promise">{copy.pdpPromise.map(t=><li key={t}>{t}</li>)}</ul>
     <details className="wks-fold" open><summary className="min-h-tap">{copy.pdpDetails}</summary><p className="wk-small">{p.description}</p></details>
     {copy.faq.slice(0,3).map(([q,a])=><details key={q} className="wks-fold"><summary className="min-h-tap">{q}</summary><p className="wk-small">{a}</p></details>)}

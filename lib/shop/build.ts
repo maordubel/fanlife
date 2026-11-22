@@ -1,12 +1,13 @@
 import 'server-only'
 import {KIND_SPECS,catalogueSpec,groupOf} from './kinds'
-import {BRAND_SPOTS,labelInk,variantColour,printSide,NOTE,SHARP_KEEP,areasOf,bestVariants,brandPlace,isGarment,listingOf,matchBlueprint,pickProvider,pickVariants,placeAt,positionsOf,price,printAreas,shadedSpec,sheets,sharpness,sizedSpec} from './plan'
+import {BRAND_SPOTS,labelInk,variantColour,printSide,NOTE,SHARP_KEEP,areasOf,bestVariants,brandPlace,isGarment,listingOf,matchBlueprint,blueprintCandidates,pickProvider,pickVariants,placeAt,positionsOf,price,printAreas,shadedSpec,sheets,sharpness,sizedSpec} from './plan'
 import {subjectName} from './subjects'
 import {REGISTRY} from '@/lib/master/registry'
 import {SITE_URL} from '@/lib/brand'
 import {MIN_QUALITY,madeInPrintify} from './types'
 import {original,pictureById} from './library'
-import {printify,type Printify} from './printify'
+import {printify,type Printify,type PBlueprint,type PProvider} from './printify'
+import {POLICY,countryOf,inEurope,shipToEurope,shouldMove} from './europe'
 import {printifyToken,readShop,updateShop} from './store'
 import type {ArtRef,Kind,KindMatch,ShopProduct} from './types'
 
@@ -30,21 +31,40 @@ const catalogueList=async(api:Printify)=>{if(!catalogue||Date.now()-catalogue.at
 /** the desk's whole-catalogue browser: every Printify product, sorted onto shelves (one read an hour) */
 export async function catalogueFor(api:Printify){return (await catalogueList(api)).map(b=>({id:b.id,title:b.title,brand:b.brand,image:b.images?.[0]??'',group:groupOf(b.title)}))}
 /** a catalogue product's printer: a European one first (kept per catalogue number in the shop record) */
+/** where every printer is (one catalogue call, kept for the instance's life: printers do not move) */
+let BOOK:Promise<Map<number,string>>|null=null
+export const providerBook=(api:Printify)=>BOOK??=api.providerBook().then(l=>new Map(l.flatMap(p=>{const c=countryOf(p);return c?[[p.id,c] as [number,string]]:[]}))).catch(()=>{BOOK=null;return new Map<number,string>()})
+/** a match made under today's rule, with where it prints and what a parcel to the EU costs (a nicety: never fails a match) */
+async function located(api:Printify,m:{blueprintId:number;providerId:number;title:string;provider:string},pp:{id:number;title:string;location?:{country?:string|null}|null},book:Map<number,string>,forced=false):Promise<KindMatch>{
+ const madeIn=countryOf(pp,book),ship=await api.shipping(m.blueprintId,m.providerId).then(x=>shipToEurope(x.profiles)).catch(()=>null)
+ return {...m,policy:POLICY,europe:inEurope(madeIn),madeIn,ship,...(forced?{forced:true}:{})}
+}
+const current=(m:KindMatch|undefined,europeFirst:boolean)=>!!m&&(m.forced||!europeFirst||m.policy===POLICY)
 export async function matchBlueprintId(api:Printify,id:number,by:string):Promise<KindMatch>{
- const doc=await readShop(),kept=doc.settings.picked?.[id];if(kept)return kept
+ const doc=await readShop(),europeFirst=doc.settings.europeFirst!==false,kept=doc.settings.picked?.[id];if(current(kept,europeFirst))return kept!
  const bp=(await catalogueList(api)).find(b=>b.id===id);if(!bp)throw new Error(`Printify no longer has catalogue product ${id}.`)
- const pp=pickProvider(await api.providers(id));if(!pp)throw new Error(`No print provider prints “${bp.title}” right now.`)
- const match={blueprintId:id,providerId:pp.id,title:bp.title,provider:pp.title}
- await updateShop(by,'',d=>{d.settings.picked={...(d.settings.picked||{}),[id]:match}});return match
+ const book=europeFirst?await providerBook(api):new Map<number,string>()
+ const pp=pickProvider(await api.providers(id),book,europeFirst);if(!pp)throw new Error(`No print provider prints “${bp.title}” right now.`)
+ const match=await located(api,{blueprintId:id,providerId:pp.id,title:bp.title,provider:pp.title},pp,book)
+ await updateShop(by,kept&&kept.providerId!==pp.id?`Europe first: ${bp.title} → ${pp.title}${match.madeIn?` (${match.madeIn})`:''}`:'',d=>{d.settings.picked={...(d.settings.picked||{}),[id]:match}});return match
 }
 export async function matchKind(api:Printify,kind:Kind,by:string,force?:{blueprintId:number;providerId?:number}):Promise<KindMatch>{
- const doc=await readShop(),kept=doc.settings.matches[kind];if(kept&&!force)return kept
- const list=await catalogueList(api),bp=force?list.find(b=>b.id===force.blueprintId):matchBlueprint(KIND_SPECS[kind],list)
- if(!bp)throw new Error(force?`Printify has no catalogue product number ${force.blueprintId}.`:`Printify's catalogue has no ${KIND_SPECS[kind].label.toLowerCase()} we recognise. Choose one by its catalogue number in Shop → Catalogue.`)
- const providers=await api.providers(bp.id),pp=force?.providerId?providers.find(p=>p.id===force.providerId):pickProvider(providers)
+ const doc=await readShop(),europeFirst=doc.settings.europeFirst!==false,kept=doc.settings.matches[kind];if(!force&&current(kept,europeFirst))return kept!
+ const list=await catalogueList(api),book=europeFirst||force?await providerBook(api):new Map<number,string>()
+ let bp:PBlueprint|undefined,pp:PProvider|null|undefined
+ if(force){bp=list.find(b=>b.id===force.blueprintId);if(!bp)throw new Error(`Printify has no catalogue product number ${force.blueprintId}.`)
+  const providers=await api.providers(bp.id);pp=force.providerId?providers.find(p=>p.id===force.providerId):pickProvider(providers,book,europeFirst)}
+ else{
+  // the kind's blanks, best first: the first one a printer inside the EU makes; if none does, the best blank as before
+  const cands=europeFirst?blueprintCandidates(KIND_SPECS[kind],list):[],first=matchBlueprint(KIND_SPECS[kind],list)
+  for(const c of cands){const ps=await api.providers(c.id).catch(()=>[] as PProvider[]),eu=pickProvider(ps.filter(p=>inEurope(countryOf(p,book))),book,true);if(eu){bp=c;pp=eu;break}}
+  if(!bp){bp=first??undefined;if(!bp)throw new Error(`Printify's catalogue has no ${KIND_SPECS[kind].label.toLowerCase()} we recognise. Choose one by its catalogue number in Shop → Catalogue.`)
+   pp=pickProvider(await api.providers(bp.id),book,europeFirst)}
+ }
  if(!pp)throw new Error(`No print provider prints “${bp.title}” right now.`)
- const match={blueprintId:bp.id,providerId:pp.id,title:bp.title,provider:pp.title}
- await updateShop(by,force?`Catalogue: ${kind} → ${bp.title} (${pp.title})`:'',d=>{d.settings.matches[kind]=match})
+ const match=await located(api,{blueprintId:bp.id,providerId:pp.id,title:bp.title,provider:pp.title},pp,book,!!force)
+ const moved=!!kept&&(kept.blueprintId!==match.blueprintId||kept.providerId!==match.providerId)
+ await updateShop(by,force?`Catalogue: ${kind} → ${bp.title} (${pp.title})`:moved?`Europe first: ${kind} → ${bp.title} (${pp.title}${match.madeIn?`, ${match.madeIn}`:''})`:'',d=>{d.settings.matches[kind]=match})
  return match
 }
 const set=(id:string,patch:Partial<ShopProduct>)=>updateShop('press','',d=>{const p=d.products.find(x=>x.id===id);if(p)Object.assign(p,patch,{updatedAt:new Date().toISOString()})})
@@ -115,13 +135,14 @@ export async function pressProduct(id:string,by:string):Promise<ShopProduct>{
      const mk=marks[tone]!;brandId=brandId||mk.id;for(const sheet of sheets(spec,vs,[pos]))placed.push({sheet,imageId:mk.id,...brandPlace(sheet,mk,'neck')})}}
   }
   const ids=new Set(variants.map(v=>v.id))
-  if(p.printify?.productId)await api.remove(shop,p.printify.productId).catch(()=>{})
   const club=p.subject==='fanlife'?null:REGISTRY.find(c=>c.id===p.subject),list=listingOf(p,club?{name:subjectName(p.subject),city:club.city}:null,p.blueprint?p.blueprint.title.replace(/\s*\([^)]*\)/g,''):base.label)
   const description=p.description&&p.description!==NOTE?p.description:list.description
   // (16.11.2026) Printify's visible:false hides a product from the Pop-Up grid but also 404s its own page, so a supporter's print
   // stays visible — keeping it out of the catalogue is handled apart (see shop-personal-prints rule)
   const made=await api.create(shop,{title:p.title,description,tags:list.tags,blueprint_id:m.blueprintId,print_provider_id:m.providerId,
    variants:[...ids].map(v=>({id:v,price:9900,is_enabled:true})),print_areas:printAreas(placed)})
+  // the old listing leaves only once the new one exists (22.11.2026): a press that fails never takes a product off the shelf
+  if(p.printify?.productId&&p.printify.productId!==made.id)await api.remove(shop,p.printify.productId).catch(()=>{})
   const priced=made.variants.filter(v=>ids.has(v.id)).map(v=>({id:v.id,price:price(v.cost,d?.margin??doc.settings.margin),is_enabled:true}))
   await api.update(shop,made.id,{variants:priced})
   let url:string|null=null,publishedAt:string|null=null
@@ -132,9 +153,36 @@ export async function pressProduct(id:string,by:string):Promise<ShopProduct>{
   const hasBack=placed.some(x=>x.sheet.position==='back'&&x.imageId!==brandId),hasFront=placed.some(x=>x.sheet.position!=='back'&&x.imageId!==brandId)
   const side:'front'|'back'|'both'=hasBack&&hasFront?'both':hasBack?'back':'front',{images,backImage}=mockups(made.images,side)
   url=url||(doc.settings.popupUrl?doc.settings.popupUrl.replace(/\/$/,''):null)
-  await set(id,{retries:publishedAt&&url?0:p.retries,status:publishedAt&&url?'live':'ready',printify:{productId:made.id,blueprintId:m.blueprintId,providerId:m.providerId,images,side,...(backImage?{backImage}:{}),quality:Math.round(soft*100)/100,...(upscaled?{upscaled}:{}),priceFrom:Math.min(...priced.map(v=>v.price)),currency:'USD',url,publishedAt}})
+  await set(id,{retries:publishedAt&&url?0:p.retries,status:publishedAt&&url?'live':'ready',printify:{productId:made.id,blueprintId:m.blueprintId,providerId:m.providerId,images,side,...(backImage?{backImage}:{}),quality:Math.round(soft*100)/100,...(upscaled?{upscaled}:{}),priceFrom:Math.min(...priced.map(v=>v.price)),currency:'USD',url,publishedAt,...(m.madeIn?{madeIn:m.madeIn,europe:!!m.europe}:{}),...(m.ship?{ship:m.ship}:{})}})
  }catch(e){await set(id,{status:'error',error:(e as Error).message.slice(0,400)})}
  return (await readShop()).products.find(x=>x.id===id)!
+}
+/**
+ * EUROPE FIRST, applied to what is already on sale (22.11.2026). Each live product is compared with the printer its kind has
+ * under today's rule: one still printed abroad while a printer inside the EU makes it is pressed again there, the best
+ * sellers first, `max` a run (a press is heavy). A product already at the right printer only gets its country and parcel
+ * price written down. Nothing is hidden, shown or deleted; a product no EU printer makes stays where it is and is counted.
+ */
+export async function europeMoves(by:string,max=2):Promise<{moved:number;left:number;abroad:number;failed:string[]}>{
+ const doc=await readShop(),out={moved:0,left:0,abroad:0,failed:[] as string[]};if(doc.settings.europeFirst===false||!doc.settings.shopId)return out
+ const api=await client(),live=doc.products.filter(p=>!p.personal&&!madeInPrintify(p)&&p.status==='live'&&p.printify)
+ const got=new Map<string,KindMatch|undefined>();let looked=0
+ const targetOf=async(p:ShopProduct)=>{const key=p.blueprint?`b${p.blueprint.id}`:p.kind;if(got.has(key))return got.get(key)
+  let m=p.blueprint?doc.settings.picked?.[p.blueprint.id]:doc.settings.matches[p.kind]
+  if(!m||(!m.forced&&m.policy!==POLICY)){if(looked>=8)return undefined;looked++
+   m=await (p.blueprint?matchBlueprintId(api,p.blueprint.id,by):matchKind(api,p.kind,by)).catch(()=>undefined)}
+  got.set(key,m);return m}
+ const due:ShopProduct[]=[],note:{id:string;m:KindMatch}[]=[]
+ for(const p of live){const m=await targetOf(p);if(!m)continue
+  if(shouldMove(p.printify!,m))due.push(p)
+  else{if(!m.europe)out.abroad++;if(m.providerId===p.printify!.providerId&&m.blueprintId===p.printify!.blueprintId&&m.madeIn&&p.printify!.madeIn!==m.madeIn)note.push({id:p.id,m})}}
+ if(note.length)await updateShop(by,'',d=>{for(const n of note){const x=d.products.find(y=>y.id===n.id);if(x?.printify)x.printify={...x.printify,madeIn:n.m.madeIn??null,europe:!!n.m.europe,...(n.m.ship?{ship:n.m.ship}:{})}}})
+ due.sort((a,b)=>(b.sold??0)-(a.sold??0)||a.createdAt.localeCompare(b.createdAt))
+ for(const p of due.slice(0,max)){const r=await pressProduct(p.id,by).catch(e=>({status:'error',error:(e as Error).message} as Pick<ShopProduct,'status'|'error'>))
+  if(r.status==='live')out.moved++;else out.failed.push(`${p.title}: ${r.error||'not on sale after the move'}`)}
+ out.left=Math.max(0,due.length-out.moved-out.failed.length)
+ if(out.moved)await updateShop(by,`Europe first: ${out.moved} product(s) moved to a printer inside the EU, ${out.left} to go`,()=>{})
+ return out
 }
 /** re-read a product from Printify: its listing address appears a little after publishing */
 export async function refreshProduct(id:string){
