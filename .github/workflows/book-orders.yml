@@ -1,0 +1,34 @@
+# Broken Collective's paid orders reach their maker on their own (owner, 22.11.2026: "the process must be fast and reliable").
+# Every 10 minutes the server retries any paid paperback / shirt / cap that has not reached Lulu or Printify yet; the run goes
+# red when one has waited over 30 minutes, so it is seen (the owner also gets one email per stuck order).
+name: Book orders
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+permissions: {}
+concurrency: {group: book-orders, cancel-in-progress: false}
+jobs:
+  retry:
+    if: vars.FAN_LIFE_RESEARCH_URL != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Send stuck orders on
+        env:
+          URL: ${{ vars.FAN_LIFE_RESEARCH_URL }}
+          CRON_SECRET: ${{ secrets.FAN_LIFE_CRON_SECRET }}
+        run: |
+          set -euo pipefail
+          if [ "${#CRON_SECRET}" -lt 32 ]; then echo "::error::FAN_LIFE_CRON_SECRET is missing."; exit 1; fi
+          code=$(curl --silent --show-error --max-time 130 -X POST -o out.json -w '%{http_code}' -H "Authorization: Bearer $CRON_SECRET" "$URL/api/book/retry")
+          cat out.json; echo
+          if [ "$code" != "200" ]; then echo "::error title=Book retry answered $code::$(head -c 300 out.json)"; exit 1; fi
+          python3 - <<'PY'
+          import json,sys
+          d=json.load(open('out.json'))
+          print(f"tried {d['tried']} · sent {d['sent']} · waiting {len(d['waiting'])}")
+          late=[w for w in d['waiting'] if w['minutes']>30]
+          for w in late: print(f"::error title=Book order {w['id']} waiting {w['minutes']} min::{w['error']}")
+          sys.exit(1 if late else 0)
+          PY

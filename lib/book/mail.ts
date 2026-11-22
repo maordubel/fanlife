@@ -6,17 +6,19 @@ import {BOOK_SITE,type BookLang} from './catalog'
  * a thank-you for a tip, "your copy is at the printer", and "it is on its way" with the tracking link.
  * Sent through the same Resend sender as FAN LIFE's orders (lib/pay/mail.sendMail).
  */
-type Kind='tip'|'printing'|'shipped'|'making'
+type Kind='tip'|'printing'|'shipped'|'making'|'received'
 const PAPER='#F2EADB',INK='#1D1A21',RED='#A8101F',SOFT='#46404D'
 const C:Record<BookLang,Record<Kind,{subject:string;title:string;body:string}>&{sign:string;read:string;track:string}>={
  he:{tip:{subject:'תודה — קולקטיב שבור',title:'החשבון שולם.',body:'תודה. כל טיפ הוא עוד לילה של כתיבה. הספר נשאר חינם לכולם, תמיד — ואתם חלק מהסיבה.'},
   printing:{subject:'העותק שלך בדפוס — קולקטיב שבור',title:'העותק שלך בדפוס.',body:'ההזמנה התקבלה והספר עובר עכשיו להדפסה. כשהוא יוצא לדרך נשלח לך מספר מעקב.'},
   shipped:{subject:'ההזמנה בדרך אליך — קולקטיב שבור',title:'בדרך אליך.',body:'ההזמנה שלך יצאה לדרך.'},
+  received:{subject:'ההזמנה התקבלה — קולקטיב שבור',title:'תודה. ההזמנה התקבלה.',body:'התשלום עבר וההזמנה בדרך לדפוס. מייל נוסף יגיע כשהיא נכנסת להדפסה, ועוד אחד עם מספר מעקב כשהיא יוצאת אליך.'},
   making:{subject:'ההזמנה שלך בהכנה — קולקטיב שבור',title:'בהכנה.',body:'ההזמנה התקבלה ונכנסה להדפסה. כשהיא יוצאת לדרך נשלח לך מספר מעקב.'},
   sign:'מאור · קולקטיב שבור',read:'להמשך הקריאה',track:'למעקב אחרי המשלוח'},
  en:{tip:{subject:'Thank you — Broken Collective',title:'The bill is paid.',body:'Thank you. Every tip is another night of writing. The book stays free for everyone, always — and you are part of the reason.'},
   printing:{subject:'Your copy is at the printer — Broken Collective',title:'Your copy is at the printer.',body:'Your order is in and the book is going to print now. When it leaves, we will send you the tracking number.'},
   shipped:{subject:'Your order is on its way — Broken Collective',title:'On its way.',body:'Your order has been made and posted.'},
+  received:{subject:'Order received — Broken Collective',title:'Thank you. Your order is in.',body:'Payment received and your order is on its way to the printer. Another email follows when it goes to print, and one more with tracking when it leaves.'},
   making:{subject:'Your order is being made — Broken Collective',title:'Being made.',body:'Your order is in and going to print. When it leaves, we will send you the tracking number.'},
   sign:'Maor · Broken Collective',read:'Keep reading',track:'Track the parcel'},
 }
