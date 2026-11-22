@@ -1,0 +1,532 @@
+{
+ "checkedAt": "2026-11-22",
+ "clubs": {
+  "hapoel-tel-aviv": [
+   {
+    "publisher": "Israel Football Association",
+    "authority": "federation",
+    "url": "https://www.football.org.il/clubs/club-titles/?club_id=2176",
+    "titles": [
+     {
+      "name": "Israeli football championship",
+      "editions": [
+       "1933/34",
+       "1934/35",
+       "1938/39",
+       "1940",
+       "1943/44",
+       "1956/57",
+       "1965/66",
+       "1968/69",
+       "1980/81",
+       "1985/86",
+       "1987/88",
+       "1999/00",
+       "2009/10"
+      ],
+      "publishedCount": 13
+     },
+     {
+      "name": "Israel State Cup",
+      "editions": [
+       "1927/28",
+       "1933/34",
+       "1936/37",
+       "1937/38",
+       "1938/39",
+       "1944/45",
+       "1960/61",
+       "1971/72",
+       "1982/83",
+       "1998/99",
+       "1999/00",
+       "2005/06",
+       "2006/07",
+       "2009/10",
+       "2010/11",
+       "2011/12"
+      ],
+      "publishedCount": 16
+     },
+     {
+      "name": "Liga Leumit",
+      "editions": [
+       "2017/18",
+       "2024/25"
+      ]
+     },
+     {
+      "name": "Toto Cup",
+      "editions": [
+       "2001/02"
+      ]
+     },
+     {
+      "name": "Toto Cup Leumit",
+      "editions": [
+       "2024/25"
+      ]
+     }
+    ]
+   },
+   {
+    "publisher": "Asian Football Confederation",
+    "authority": "federation",
+    "url": "https://www.the-afc.com/en/more/news/roll_of_honour.html",
+    "titles": [
+     {
+      "name": "Asian Club Championship",
+      "editions": [
+       "1967"
+      ],
+      "publishedCount": 1
+     }
+    ]
+   }
+  ],
+  "maccabi-haifa": [
+   {
+    "publisher": "Maccabi Haifa FC",
+    "authority": "club",
+    "url": "https://www.mhaifafc.com/history",
+    "titles": [
+     {
+      "name": "Israeli football championship",
+      "editions": [
+       "1983/84",
+       "1984/85",
+       "1988/89",
+       "1990/91",
+       "1993/94",
+       "2000/01",
+       "2001/02",
+       "2003/04",
+       "2004/05",
+       "2005/06",
+       "2008/09",
+       "2010/11",
+       "2020/21",
+       "2021/22",
+       "2022/23"
+      ],
+      "publishedCount": 15
+     }
+    ]
+   },
+   {
+    "publisher": "Israel Football Association",
+    "authority": "federation",
+    "url": "https://www.football.org.il/clubs/club-titles/?club_id=1005",
+    "titles": [
+     {
+      "name": "Israel State Cup",
+      "editions": [
+       "1961/62",
+       "1990/91",
+       "1992/93",
+       "1994/95",
+       "1997/98",
+       "2015/16"
+      ],
+      "publishedCount": 6
+     },
+     {
+      "name": "Toto Cup",
+      "editions": [
+       "1993/94",
+       "2002/03",
+       "2005/06",
+       "2007/08",
+       "2021/22"
+      ]
+     }
+    ]
+   }
+  ],
+  "hajduk-split": [
+   {
+    "publisher": "HNK Hajduk Split",
+    "authority": "club",
+    "url": "https://hajduk.hr/klub/uspjesi",
+    "titles": [
+     {
+      "name": "National league titles",
+      "editions": [
+       "1927",
+       "1929",
+       "1940/41",
+       "1945",
+       "1946",
+       "1950",
+       "1952",
+       "1954/55",
+       "1970/71",
+       "1973/74",
+       "1974/75",
+       "1978/79",
+       "1992",
+       "1993/94",
+       "1994/95",
+       "2000/01",
+       "2003/04",
+       "2004/05"
+      ],
+      "publishedCount": 18
+     },
+     {
+      "name": "National cup titles",
+      "editions": [
+       "1966/67",
+       "1972",
+       "1973",
+       "1974",
+       "1975/76",
+       "1976/77",
+       "1983/84",
+       "1986/87",
+       "1990/91",
+       "1992/93",
+       "1994/95",
+       "1999/00",
+       "2002/03",
+       "2009/10",
+       "2012/13",
+       "2021/22",
+       "2022/23"
+      ],
+      "publishedCount": 17
+     },
+     {
+      "name": "Croatian Super Cup",
+      "editions": [
+       "1992",
+       "1993",
+       "1994",
+       "1995",
+       "2004",
+       "2005"
+      ],
+      "publishedCount": 6
+     }
+    ]
+   }
+  ],
+  "leicester-city": [
+   {
+    "publisher": "Leicester City FC",
+    "authority": "club",
+    "url": "https://www.lcfc.com/more-history-records-men",
+    "titles": [
+     {
+      "name": "Premier League",
+      "editions": [
+       "2015/16"
+      ],
+      "publishedCount": 1
+     },
+     {
+      "name": "FA Cup",
+      "editions": [
+       "2020/21"
+      ],
+      "publishedCount": 1
+     },
+     {
+      "name": "EFL Cup",
+      "editions": [
+       "1963/64",
+       "1996/97",
+       "1999/00"
+      ],
+      "publishedCount": 3
+     },
+     {
+      "name": "FA Community Shield",
+      "editions": [
+       "1971",
+       "2021"
+      ],
+      "publishedCount": 2
+     },
+     {
+      "name": "English second tier",
+      "editions": [
+       "1924/25",
+       "1936/37",
+       "1953/54",
+       "1956/57",
+       "1970/71",
+       "1979/80",
+       "2013/14",
+       "2023/24"
+      ],
+      "publishedCount": 8
+     },
+     {
+      "name": "EFL League One",
+      "editions": [
+       "2008/09"
+      ],
+      "publishedCount": 1
+     }
+    ]
+   }
+  ],
+  "union-berlin": [
+   {
+    "publisher": "1. FC Union Berlin",
+    "authority": "club",
+    "url": "https://www.fc-union-berlin.de/en/news/union-berlin-in-the-dfb-pokal-moments-finals-upsets-DzPaSh",
+    "titles": [
+     {
+      "name": "FDGB Cup",
+      "editions": [
+       "1967/68"
+      ],
+      "publishedCount": 1
+     }
+    ]
+   }
+  ],
+  "partizan-belgrade": [
+   {
+    "publisher": "FK Partizan",
+    "authority": "club",
+    "url": "https://www.partizan.rs/vesti/istorijat",
+    "titles": [
+     {
+      "name": "National league titles",
+      "editions": [
+       "1947",
+       "1949",
+       "1961",
+       "1962",
+       "1963",
+       "1965",
+       "1976",
+       "1978",
+       "1983",
+       "1986",
+       "1987",
+       "1993",
+       "1994",
+       "1996",
+       "1997",
+       "1999",
+       "2002",
+       "2003",
+       "2005",
+       "2008",
+       "2009",
+       "2010",
+       "2011",
+       "2012",
+       "2013",
+       "2015",
+       "2017"
+      ],
+      "publishedCount": 27
+     },
+     {
+      "name": "National cup titles",
+      "editions": [
+       "1947",
+       "1952",
+       "1954",
+       "1957",
+       "1989",
+       "1992",
+       "1994",
+       "1998",
+       "2001",
+       "2008",
+       "2009",
+       "2011",
+       "2016",
+       "2017",
+       "2018",
+       "2019"
+      ],
+      "publishedCount": 16
+     },
+     {
+      "name": "Mitropa Cup",
+      "editions": [
+       "1978"
+      ],
+      "publishedCount": 1
+     }
+    ]
+   }
+  ],
+  "borussia-dortmund": [
+   {
+    "publisher": "UEFA",
+    "authority": "federation",
+    "url": "https://www.uefa.com/news-media/mediaservices/informationkits/competitions/uefachampionsleague/2024/match/2039130/",
+    "titles": [
+     {
+      "name": "UEFA Champions League",
+      "editions": [
+       "1996/97"
+      ],
+      "publishedCount": 1
+     },
+     {
+      "name": "UEFA Cup Winners’ Cup",
+      "editions": [
+       "1965/66"
+      ],
+      "publishedCount": 1
+     },
+     {
+      "name": "Intercontinental Cup",
+      "editions": [
+       "1997"
+      ],
+      "publishedCount": 1
+     },
+     {
+      "name": "German football championship",
+      "editions": [
+       "2011/12"
+      ],
+      "publishedCount": 8
+     },
+     {
+      "name": "DFB-Pokal",
+      "editions": [
+       "2020/21"
+      ],
+      "publishedCount": 5
+     }
+    ]
+   }
+  ],
+  "dinamo-zagreb": [
+   {
+    "publisher": "GNK Dinamo Zagreb",
+    "authority": "club",
+    "url": "https://gnkdinamo.hr/en/club/history",
+    "titles": [
+     {
+      "name": "Inter-Cities Fairs Cup",
+      "editions": [
+       "1966/67"
+      ],
+      "publishedCount": 1
+     }
+    ]
+   },
+   {
+    "publisher": "Croatian Football Federation",
+    "authority": "federation",
+    "url": "https://hns.family/vijesti/31034/dinamo-osvojio-naslov-prvaka-hrvatske/",
+    "titles": [
+     {
+      "name": "Croatian Football League",
+      "editions": [
+       "2025/26"
+      ],
+      "publishedCount": 26
+     }
+    ]
+   },
+   {
+    "publisher": "Croatian Football Federation",
+    "authority": "federation",
+    "url": "https://hns.family/vijesti/31105/dvostruka-kruna-dinamo-osvojio-i-kup/",
+    "titles": [
+     {
+      "name": "Croatian Cup",
+      "editions": [
+       "2025/26"
+      ]
+     }
+    ]
+   }
+  ],
+  "fenerbahce": [
+   {
+    "publisher": "Turkish Football Federation",
+    "authority": "federation",
+    "url": "https://www.tff.org/Default.aspx?pageID=545",
+    "titles": [
+     {
+      "name": "Süper Lig",
+      "editions": [
+       "1959",
+       "1960/61",
+       "1963/64",
+       "1964/65",
+       "1967/68",
+       "1969/70",
+       "1973/74",
+       "1974/75",
+       "1977/78",
+       "1982/83",
+       "1984/85",
+       "1988/89",
+       "1995/96",
+       "2000/01",
+       "2003/04",
+       "2004/05",
+       "2006/07",
+       "2010/11",
+       "2013/14"
+      ],
+      "publishedCount": 19
+     }
+    ]
+   },
+   {
+    "publisher": "Turkish Football Federation",
+    "authority": "federation",
+    "url": "https://www.tff.org/Default.aspx?pageID=411",
+    "titles": [
+     {
+      "name": "Turkish Cup",
+      "editions": [
+       "1967/68",
+       "1973/74",
+       "1978/79",
+       "1982/83",
+       "2011/12",
+       "2012/13",
+       "2022/23"
+      ],
+      "publishedCount": 7
+     }
+    ]
+   },
+   {
+    "publisher": "Turkish Football Federation",
+    "authority": "federation",
+    "url": "https://www.tff.org/default.aspx?ftxtID=49439&pageID=267",
+    "titles": [
+     {
+      "name": "Turkish Super Cup",
+      "editions": [
+       "2025"
+      ]
+     }
+    ]
+   }
+  ],
+  "paok": [
+   {
+    "publisher": "PAOK FC",
+    "authority": "club",
+    "url": "https://www.youtube.com/watch?v=u_dXtlyF9vs",
+    "titles": [
+     {
+      "name": "Greek Cup",
+      "editions": [
+       "2020/21"
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

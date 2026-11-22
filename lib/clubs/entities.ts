@@ -111,7 +111,7 @@ export function buildEntries(data:Pack):Entry[]{
  const players=entries.filter(e=>e.kind==='player')
  const playerIx=indexNames(players.map(e=>({id:e.id,names:[e.title,...(e.player?.aliases||[])]})),multi)
  const rivals=(data.rivals||[]).map(f=>({id:f.id,name:f.value.name})),rivalIx=indexNames(rivals.map(r=>({id:r.id,names:[r.name]})),longOne)
- const rivalName=new Map(rivals.map(r=>[r.id,r.name])),seasons=(data.seasons||[]).map(f=>({id:f.id,name:f.value.name}))
+ const rivalName=new Map(rivals.map(r=>[r.id,r.name])),seasons=(data.seasons||[]).map(f=>({id:f.id,name:(f.value as {season?:string}).season||f.value.name}))
  for(const e of entries){
   if(e.kind!=='moment')continue
   const text=`${e.title} ${e.hint}`,g=grams(text),names=new Set<string>(),rv=new Set<string>()
@@ -119,12 +119,12 @@ export function buildEntries(data:Pack):Entry[]{
   e.names=[...names].sort()
   e.refs=[...[...rv].sort().map(id=>({kind:'rival' as const,id,name:rivalName.get(id)!})),...seasonsIn(text,seasons)]
  }
- linkMatches(entries,players,data.matches||[])
+ linkMatches(entries,players,data.matches||[],seasons)
  return entries
 }
 
 // ------------------------------------------------------------------ moment → match → people (review D01)
-type MatchValue={name?:string;on?:string|null;competition?:string|null;score?:string|null;venue?:string|null;lineup?:unknown;scorers?:unknown;opponentLineup?:unknown;goalEvents?:unknown}
+type MatchValue={name?:string;on?:string|null;competition?:string|null;score?:string|null;venue?:string|null;season?:string|null;lineup?:unknown;scorers?:unknown;opponentLineup?:unknown;goalEvents?:unknown}
 const scoreOf=(s:string|null|undefined)=>{const m=/(\d{1,2})\s*[-–:]\s*(\d{1,2})/.exec(s||'');return m?`${Number(m[1])}-${Number(m[2])}`:null}
 const nameOf=(x:unknown)=>typeof x==='string'?x:x&&typeof x==='object'&&typeof (x as {name?:unknown}).name==='string'?(x as {name:string}).name:null
 /**
@@ -162,9 +162,10 @@ function matchMoments(entries:Entry[],data:Pack):Entry[]{
  }
  return out
 }
-function linkMatches(entries:Entry[],players:Entry[],matches:Matches){
+function linkMatches(entries:Entry[],players:Entry[],matches:Matches,seasons:{id:string;name:string}[]){
  if(!matches.length)return
  const mx=matchIndex(matches)
+ const seasonIds=new Map(seasons.map(season=>[season.name,season]))
  // whole written name → the ONE player; a name two players share names neither (rule 7)
  const ix=indexNames(players.map(e=>({id:e.id,names:[e.title,...(e.player?.aliases||[])]})),()=>true),span=new Map(players.map(e=>[e.id,e.player]))
  const who=(raw:unknown,year:number|null)=>{const n=nameOf(raw);if(!n)return null;const id=ix.get(tokensOf(n).join(' '));if(!id)return null
@@ -174,6 +175,8 @@ function linkMatches(entries:Entry[],players:Entry[],matches:Matches){
   const m=matchFor(e,mx)
   if(!m)continue
   const v=m.value as MatchValue,lineup=Array.isArray(v.lineup)?v.lineup:[],scorers=Array.isArray(v.scorers)?v.scorers:[]
+  const season=v.season?seasonIds.get(v.season):undefined
+  if(season&&!e.refs.some(ref=>ref.kind==='season'&&ref.id===season.id))e.refs.push({kind:'season',...season})
   const started=new Set<string>(),scored=new Set<string>();let unnamed=0
   for(const x of lineup){const id=who(x,e.year);if(id)started.add(id);else unnamed++}
   for(const x of scorers){const id=who(x,e.year);if(id)scored.add(id);else if(nameOf(x))unnamed++}

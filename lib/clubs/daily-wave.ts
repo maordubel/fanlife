@@ -3,6 +3,8 @@ import {readFileSync} from 'node:fs'
 import {join} from 'node:path'
 import {createHash} from 'node:crypto'
 import {sameClub} from '@/lib/fixtures/names'
+import {enClub} from '@/lib/trivia/names'
+import {canonClub} from '@/lib/trivia/club-names'
 import {compilePack} from './compiler'
 import {eligibleArchive} from './archive'
 import {eventGames,sharedReadiness} from './gate-data'
@@ -18,7 +20,7 @@ export function readDailyWave(clubId:string):DailyWave|null {
  catch(e){if((e as NodeJS.ErrnoException).code==='ENOENT')return null;throw e}
 }
 type ClubResult={data:ClubData;diagnostics:Diagnostic[]}
-type MatchValue=Entity&{on?:string;home?:string;away?:string;score?:string;lineup?:unknown[];scorers?:unknown[];season?:string;venue?:string;competition?:string}
+type MatchValue=Entity&{on?:string;home?:string;away?:string;homeGoals?:number;awayGoals?:number;us?:string;score?:string;lineup?:unknown[];scorers?:unknown[];season?:string;venue?:string;competition?:string}
 type Seasonal=Entity&{season?:string;type?:string}
 const missing=(v:unknown)=>!v||(Array.isArray(v)&&!v.length)
 function match(value:MatchValue){
@@ -27,7 +29,8 @@ function match(value:MatchValue){
 }
 function sameMatch(a:MatchValue,b:MatchValue){
  const aa=match(a),bb=match(b)
- return !!(aa.home&&aa.away&&aa.score&&bb.home&&bb.away&&aa.score===bb.score&&sameClub(aa.home,bb.home)&&sameClub(aa.away,bb.away))
+ const team=(name:string)=>canonClub(enClub(name)??name)
+ return !!(aa.home&&aa.away&&aa.score&&bb.home&&bb.away&&aa.score===bb.score&&sameClub(team(aa.home),team(bb.home))&&sameClub(team(aa.away),team(bb.away)))
 }
 const seasonalKey=(v:Entity)=>{
  const s=v as Seasonal
@@ -35,8 +38,22 @@ const seasonalKey=(v:Entity)=>{
 }
 const addSeasonal=(base:Fact<Entity>[]|null,incoming:Fact<Entity>[]|null)=>{
  if(!incoming?.length)return base
- const have=new Set((base||[]).map(f=>seasonalKey(f.value)))
- return [...(base||[]),...incoming.filter(f=>{const k=seasonalKey(f.value);if(have.has(k))return false;have.add(k);return true})]
+ const out=[...(base||[])],indices=new Map<string,number[]>()
+ for(const [i,row] of out.entries()){
+  const key=seasonalKey(row.value)
+  indices.set(key,[...(indices.get(key)||[]),i])
+ }
+ for(const row of incoming){
+  const key=seasonalKey(row.value),matches=indices.get(key)||[]
+  if(!matches.length){indices.set(key,[out.length]);out.push(row);continue}
+  if(matches.length!==1)continue
+  const i=matches[0]!,prior=out[i]!,old=prior.value as Entity&Record<string,unknown>,fresh=row.value as Entity&Record<string,unknown>
+  const fields=old.type||fresh.type?['referenceUrl']:['league','count','seasons','documentedCount']
+  const added=Object.fromEntries(fields
+   .filter(field=>old[field]==null&&fresh[field]!=null).map(field=>[field,fresh[field]]))
+  if(Object.keys(added).length)out[i]={...prior,value:{...old,...added},sources:[...new Set([...prior.sources,...row.sources])]}
+ }
+ return out
 }
 export function integrateDailyWave(base:ClubResult,club:RegistryClub,wave:DailyWave|null):ClubResult{
  if(!wave?.sources.length)return base
@@ -59,6 +76,7 @@ export function integrateDailyWave(base:ClubResult,club:RegistryClub,wave:DailyW
   const additions:Record<string,unknown>={}
   if((old.lineup?.length||0)!==11&&v.lineup?.length===11)additions.lineup=v.lineup
   for(const key of ['scorers','venue','season','competition'] as const)if(missing(old[key])&&!missing(v[key]))additions[key]=v[key]
+  for(const key of ['home','away','homeGoals','awayGoals','us'] as const)if(old[key]==null&&v[key]!=null)additions[key]=v[key]
   if(Object.keys(additions).length)matches[i]={...prior,value:{...old,...additions},sources:[...new Set([...prior.sources,...f.sources])]}
  }
  const players=[...(original.players||[])],nameKeys=new Map<string,Set<number>>()
@@ -87,7 +105,7 @@ export function integrateDailyWave(base:ClubResult,club:RegistryClub,wave:DailyW
  const trivia={...original.trivia,questions:[...original.trivia.questions,...extra.trivia.questions]}
  const memory=[...original.memory,...extra.memory],version=createHash('sha256').update(original.version).update(JSON.stringify(wave)).digest('hex').slice(0,16)
  const data={...original,version,matches:matches.length?matches:original.matches,players:players.length?players:original.players,
-  seasons:addSeasonal(original.seasons,incoming.seasons),kits:addSeasonal(original.kits,incoming.kits),archive,timeline,trivia,memory,readiness,sources}
+  seasons:addSeasonal(original.seasons,incoming.seasons),kits:addSeasonal(original.kits,incoming.kits),trophies:addSeasonal(original.trophies,incoming.trophies),archive,timeline,trivia,memory,readiness,sources}
  return {diagnostics,data:{...data,gates:{...original.gates,timeline:readiness,...sharedReadiness({...data,archiveCount:eligibleArchive(data).length})}}}
 }
 export function withDailyWave(base:ClubResult,club:RegistryClub){

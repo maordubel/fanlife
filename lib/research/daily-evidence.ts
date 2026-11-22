@@ -5,7 +5,7 @@ import {createHash} from 'node:crypto'
 
 export type DailySource={id:string;url:string;title:string;publisher:string;checkedAt:string;access:'available';official?:OfficialBody}
 export type DailyRecord={id:string;value:Record<string,unknown>;sources:string[];status:'approved';confidence:2|3;parserCertainty:'high';conflictFree:true;researchedAt:string;approvedAt:string;approvedBy:string}
-export type DailyWave={schemaVersion:1;clubId:string;contentLocale:'en';sources:DailySource[];archive:DailyRecord[];matches:DailyRecord[];players:DailyRecord[];seasons:DailyRecord[];kits:DailyRecord[]}
+export type DailyWave={schemaVersion:1;clubId:string;contentLocale:'en';sources:DailySource[];archive:DailyRecord[];matches:DailyRecord[];players:DailyRecord[];seasons:DailyRecord[];kits:DailyRecord[];trophies?:DailyRecord[]}
 export const digest=(v:string)=>createHash('sha256').update(v).digest('hex').slice(0,24)
 export const blankWave=(clubId:string):DailyWave=>({schemaVersion:1,clubId,contentLocale:'en',sources:[],archive:[],matches:[],players:[],seasons:[],kits:[]})
 export const dailySource=(url:string,title:string,publisher:string,day:string,official?:OfficialBody):DailySource=>({id:'daily-src-'+digest(url),url,title,publisher,checkedAt:day,access:'available',...(official?{official}:{})})

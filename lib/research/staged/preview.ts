@@ -4,22 +4,26 @@ import {existsSync,readFileSync} from 'node:fs'
 import path from 'node:path'
 import {REGISTRY} from '@/lib/master/registry'
 import {SHARED_GATES,type GateKey} from '@/lib/clubs/gates'
+import {confirmedRegisterInputs} from '@/lib/clubs/confirmed-registers'
+import {readDailyWave} from '@/lib/clubs/daily-wave'
 import {emptyDecisions,rivalCandidates,stagedBatches,type StagedDecisions,type StagedInput} from './model'
 import {readStagedInput,stagedPack} from './pack'
 
 /**
  * "What would a yes open?" — the staged club compiled with no decision, with each batch alone, and with every batch
  * plus the most-met club as rival. Compiling is the only honest answer (the compiler decides what a gate can play), and
- * it costs about a second for the biggest club, so the daily run writes the answers to `research-reports/desk-preview.json`
- * (`npm run research:desk-preview`). The desk reads that file and recompiles a club only when its staged material no
- * longer matches the hash the file was written for.
+ * the desk can reuse answers from `research-reports/desk-preview.json` (`npm run research:desk-preview`).
+ * It recompiles a club once when its staged material or verified research changes.
  */
 export type GateLine={key:GateKey;number:number;state:string;eligible:number;target:number;playable:boolean}
 export type ClubPreview={inputHash:string;base:GateLine[];batches:Record<string,{hash:string;opens:GateKey[]}>;all:{gates:GateLine[];opens:GateKey[]}}
 export type PreviewFile={generatedAt:string;clubs:Record<string,ClubPreview>}
 export const PREVIEW_FILE='research-reports/desk-preview.json'
 
-export const inputHash=(input:StagedInput)=>createHash('sha256').update(JSON.stringify(stagedBatches(input).map(b=>[b.id,b.hash]))+JSON.stringify(rivalCandidates(input,1))).digest('hex').slice(0,16)
+export const inputHash=(input:StagedInput)=>createHash('sha256').update(JSON.stringify({
+ batches:stagedBatches(input).map(b=>[b.id,b.hash]),rivals:rivalCandidates(input,1),
+ research:readDailyWave(input.clubId),registers:confirmedRegisterInputs(input.clubId)
+})).digest('hex').slice(0,16)
 
 async function gatesFor(id:string,d:StagedDecisions):Promise<GateLine[]>{
  const reg=REGISTRY.find(c=>c.id===id)!,sp=await stagedPack(id,d)

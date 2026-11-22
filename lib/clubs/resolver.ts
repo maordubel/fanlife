@@ -49,8 +49,8 @@ async function deskProvider(id:string){const reg=REGISTRY.find(c=>c.id===id);if(
  let base:Record<string,unknown>=pack as unknown as Record<string,unknown>||{schemaVersion:1,clubId:id,contentLocale:'en',sources:[],archive:[]}
  if(staged){const have=new Set(((staged.pack.players as {value:{name:string}}[])||[]).map(p=>p.value.name.normalize('NFKC').toLowerCase()));base=pack?m.mergeWave(staged.pack,{...pack,players:pack.players.filter(p=>!have.has(p.value.name.normalize('NFKC').toLowerCase()))} as never):staged.pack}
  const r=m.compilePackEuro(base,reg),diagnostics=[...r.diagnostics,...(staged?.conflicts||[]).map(c=>{const x=c as {incoming:string;on:string;reason:string;existing:string};return {record:`${id}:${x.incoming}`,code:'HISTORY_CONFLICT',message:`${x.reason}: ${x.on}; existing ${x.existing}. Incoming result withheld from matches and timeline.`}})]
- const enriched=integrateDailyWave({data:r.data,diagnostics},reg,daily)
- return {...enriched,data:m.withMemoryPairs(m.withArchiveMysteries(m.withForgedTrivia(enriched.data)))}}
+ const enriched=m.withConfirmedRegisters(integrateDailyWave({data:r.data,diagnostics},reg,daily),reg)
+ return {...enriched,data:m.withMemoryPairs(m.withArchiveMysteries(m.withForgedTrivia(m.withDocumentedSeasons(enriched.data))))}}
 /** Static packs are immutable within a deployment; content versions travel with each run. */
 export async function loadClub(id:string):Promise<{data:ClubData;diagnostics:Diagnostic[]}|null> {
  const isStatic=isStaticId(id)

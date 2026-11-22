@@ -123,9 +123,11 @@ describe('wiring',()=>{
   const a=readFileSync('lib/research/desk-actions.ts','utf8')
   expect(a).not.toMatch(/status\s*[:=]\s*'live'/)// the desk decides research; only clubs/open-playable publishes
  })
- it('the daily pull grows history and records squads; the report reads the pull\'s log',()=>{
+ it('the daily workflow runs and saves the research runner with bounded history, refreshes and per-club reports',()=>{
   const w=readFileSync('.github/workflows/research-daily.yml','utf8')
-  expect(w).toMatch(/--backfill \d+ --refresh \d+/);expect(w).toContain('research:desk-preview');expect(w).toContain('--wave-log wave.log');expect(w).toContain('research-staging/**/ingest.json')
+  const runner=readFileSync('scripts/research/daily.ts','utf8')
+  expect(w).toContain('scripts/research/daily.ts');expect(w).toContain('git add -A -- research-data');expect(w).toContain('research-staging/$CLUB')
+  expect(runner).toMatch(/'--backfill','\d+','--refresh','\d+'/);expect(runner).toContain("'daily-reports'")
  })
 })
 

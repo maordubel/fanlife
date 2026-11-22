@@ -25,6 +25,8 @@ import {correctPack,correctMatches} from './corrections'
 import {withCareers,withSeasonHistory} from './careers'
 import {hapoelFrontArchive} from './kit-fronts'
 import {withDailyWave} from './daily-wave'
+import {withConfirmedRegisters} from './confirmed-registers'
+import {withDocumentedSeasons} from './documented-seasons'
 import atalantaKitArchive from '@/club-packs/atalanta/wave-kit-archive-2026-11-22.json'
 export const compilePackEuro=(pack:Record<string,unknown>,club:RegistryClub,additionalHistory?:unknown)=>{
  const equipped=club.id==='atalanta'?mergeWave(pack,atalantaKitArchive):pack
@@ -69,10 +71,10 @@ export const providers:Record<string,()=>Promise<{data:ClubData;diagnostics:Diag
  'maccabi-haifa':async()=>compilePackEuro(mergeWave(mergeWave(mergeWave((await import('@/club-packs/maccabi-haifa/core.json')).default as never,(await import('@/club-packs/maccabi-haifa/wave-research-2026-11-14.json')).default as never),(await import('@/club-packs/maccabi-haifa/wave-kit-colours-2026-11-15.json')).default as never),(await import('@/club-packs/maccabi-haifa/wave-kit-archive-2026-11-15.json')).default as never) as never,REGISTRY.find(c=>c.id==='maccabi-haifa')!),
 }
 /** What `loadClubBase` adds on top of a provider's output: the roster wave, then the forged English trivia. */
-export {withForgedTrivia,withArchiveMysteries,mergeWave,withMemoryPairs}
+export {withForgedTrivia,withArchiveMysteries,mergeWave,withMemoryPairs,withConfirmedRegisters,withDocumentedSeasons}
 export const withBaseWaves=(id:string,r:{data:ClubData;diagnostics:Diagnostic[]})=>{
  const club=REGISTRY.find(c=>c.id===id)
  const base={...r,data:withRosterWave(id,r.data)}
- const enriched=club?withDailyWave(base,club):base
- return {...enriched,data:withMemoryPairs(withArchiveMysteries(withForgedTrivia(enriched.data)))}
+ const enriched=club?withConfirmedRegisters(withDailyWave(base,club),club):base
+ return {...enriched,data:withMemoryPairs(withArchiveMysteries(withForgedTrivia(withDocumentedSeasons(enriched.data))))}
 }

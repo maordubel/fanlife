@@ -26,6 +26,7 @@ import {gameCopy} from '@/lib/clubs/game-copy'
 import en from '@/messages/clubs/en.json'
 import he from '@/messages/clubs/he.json'
 import {FirstMatchPrint} from '@/components/shop/FirstMatchPrint'
+import {exactSeason} from '@/lib/research/daily-evidence'
 export const dynamic='force-dynamic'
 export function generateMetadata({params}:{params:{slug:string}}){const c=REGISTRY.find(r=>r.id===params.slug);return c?clubSubMetadata({id:c.id,name:c.name,sub:'history'}):{title:en.historyTitle}}
 
@@ -45,6 +46,19 @@ export default async function History({params,searchParams}:{params:{slug:string
  const c=state.clubs.find(x=>x.id===id)
  if(!c)notFound()
  const locale=uiLocale(searchParams.lang),copy=locale==='he'?he:en,reg=REGISTRY.find(r=>r.id===id)||c,theme=core?.data.theme||clubTheme(reg),w=clubWorld(id),world=worldFor(reg),games=gameCopy(locale)
+ const archive=gateAccess(c,sharedGate('archive')!.number,evaluationMode()).allowed?core?.data:null
+ const seasons=[...new Set((archive?.seasons||[]).flatMap(row=>{
+  const label=exactSeason((row.value as {season?:string}).season||row.value.name)
+  return label?[label]:[]
+ }))].sort((a,b)=>b.localeCompare(a))
+ const trophySources=new Map(archive?.sources.map(s=>[s.id,s])??[])
+ const honours=(archive?.trophies||[]).flatMap(row=>{
+  const v=row.value as {name:string;seasons?:unknown;count?:unknown}
+  const editions=Array.isArray(v.seasons)?v.seasons.filter((s):s is string=>typeof s==='string'):[]
+  if(!editions.length&&typeof v.count!=='number')return []
+  const sources=row.sources.map(s=>trophySources.get(s)).filter(s=>!!s?.url)
+  return [{id:row.id,name:v.name,editions,count:typeof v.count==='number'?v.count:null,sources}]
+ })
  const doors=(['archive','timeline'] as const).filter(k=>core&&gateAccess(c,sharedGate(k)!.number,evaluationMode()).allowed&&gateAvailability(core.data,k).playable)
  const door={archive:copy.historyArchive,timeline:copy.historyTimeline},kits=core?kitViews(core.data).length:0
  const credit=w?worldPublishers(w):[]
@@ -121,6 +135,21 @@ export default async function History({params,searchParams}:{params:{slug:string
     {w.facts.length>0&&<article className="wk-panel shadow wkk-factcard"><div><h2 className="wk-head red">{copy.historyFacts}</h2><ul className="club-factlist">{w.facts.map(f=><li key={f.id}>{f.line}{f.local&&<> <bdi lang={f.script} dir="auto">({f.local})</bdi></>}</li>)}</ul></div></article>}
    </div>
   </>}
+
+  {(seasons.length>0||honours.length>0)&&<section className="wkk-turn" aria-labelledby="records-h" data-testid="history-archive-records">
+   <div className="wkk-sechead"><h2 id="records-h" className="wk-logo red sm wk-tilt">{copy.historyArchiveRecords}</h2></div>
+   {seasons.length>0&&<details className="wk-panel wkk-kit-more">
+    <summary>{copy.historyArchiveSeasons} <bdi>{seasons.length}</bdi></summary>
+    <ul className="club-factlist">{seasons.map(year=><li key={year}><bdi>{year}</bdi></li>)}</ul>
+   </details>}
+   {honours.length>0&&<details className="wk-panel wkk-kit-more">
+    <summary>{copy.historyArchiveHonours}</summary>
+    <ul className="club-factlist">{honours.map(h=><li key={h.id}><bdi>{h.name}</bdi>{h.count!==null&&<> · <bdi>{h.count}</bdi></>}
+     {h.editions.length>0&&<p><bdi>{h.editions.join(' · ')}</bdi></p>}
+     {h.sources.map(s=>s?.url&&<p key={s.id}><a href={s.url} target="_blank" rel="noopener noreferrer">{s.publisher} ↗</a></p>)}
+    </li>)}</ul>
+   </details>}
+  </section>}
 
   {turn.length>0&&<section className="wkk-turn" aria-labelledby="turn-h">
    <div className="wkk-sechead"><h2 id="turn-h" className="wk-logo red sm wk-tilt">{copy.wkkTurnTo}</h2><span className="wk-k muted">{copy.wkkTurnSub}</span></div>

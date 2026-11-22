@@ -22,7 +22,7 @@ function checkedMatch(row:Raw,day:string,clubNames:readonly string[]){
   return name?[{name,minute}]:[]
  })
  const hg=Number(score[1]),ag=Number(score[2]),goals=own(home)?hg:ag
- return {name:`${home} ${hg}–${ag} ${away}`,on,home,away,score:`${hg}-${ag}`,homeGoals:hg,awayGoals:ag,competition,
+ return {name:`${home} ${hg}–${ag} ${away}`,on,home,away,score:`${hg}-${ag}`,homeGoals:hg,awayGoals:ag,us:own(home)?'home':'away',competition,
   ...(season?{season}:{}),...(lineup?{lineup}:{}),...(scorers.length&&scorers.length<=goals?{scorers}:{}),...(words(row.venue)?{venue:words(row.venue)}:{})}
 }
 function matchKey(v:Raw){return [v.on,core(words(v.home)),core(words(v.away)),v.score].join('|')}

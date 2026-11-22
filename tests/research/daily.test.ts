@@ -9,6 +9,8 @@ import {integrateDailyWave} from '@/lib/clubs/daily-wave'
 import {kitViews,lineupMatches} from '@/lib/clubs/gate-content'
 import {fromWikiSeason} from '@/lib/research/daily-wiki-season'
 import {readOpenFootball} from '@/lib/research/openfootball'
+import {withConfirmedRegisters} from '@/lib/clubs/confirmed-registers'
+import {withDocumentedSeasons} from '@/lib/clubs/documented-seasons'
 import {olderResultPage} from '../../scripts/ingest/clubs/league-lineups'
 
 const day='2026-11-22',club=REGISTRY.find(c=>c.id==='atalanta')!,clubNames=[club.name,'Atalanta BC']
@@ -142,5 +144,21 @@ describe('evidence and live product integration',()=>{
   const rows=readOpenFootball({matches:[fixture,{...fixture,date:'2024-08-24'},{...fixture,team1:'Atalanta U23'},{...fixture,score:{ht:[1,0]}},{...fixture,team1:'Napoli'}]},'it.1','2025/26',clubNames,day,source)
   expect(rows).toHaveLength(1)
   expect(rows[0]?.fact.value).toMatchObject({home:'Atalanta',away:'Pisa',on:'2025-08-24',season:'2025/26',competition:'Serie A',score:'1-1'})
+ })
+ it('fills the season index from exact, cited records and leaves an undated season unassigned',()=>{
+  const kit=dailyFact('kit','legacy-home',{name:'Home kit',season:'1921/22',type:'home'},source)
+  const vague=dailyFact('kit','legacy-away',{name:'Away kit',season:'1950s',type:'away'},source)
+  const original=compilePack({...blankWave(club.id),sources:[source],kits:[kit,vague]},club).data
+  const loaded=withDocumentedSeasons(original)
+  expect(loaded.seasons?.map(f=>f.value)).toEqual([{id:'atalanta:documented-season-1921-22',name:'1921/22 season',season:'1921/22'}])
+  expect(withDocumentedSeasons(loaded)).toBe(loaded)
+ })
+ it('compiles the published Turkish title editions in the staged club archive',()=>{
+  const fener=REGISTRY.find(c=>c.id==='fenerbahce')!
+  const result=withConfirmedRegisters(compilePack(blankWave(fener.id),fener),fener)
+  expect(result.diagnostics).toEqual([])
+  expect(result.data.trophies?.find(f=>f.value.name==='Süper Lig')).toMatchObject({confidence:3,value:{count:19,documentedCount:19}})
+  expect(result.data.seasons?.some(f=>f.value.name==='2013/14 season')).toBe(true)
+  expect(result.data.kits?.find(f=>f.value.name.includes('1906/07 home'))).toMatchObject({value:{season:'1906/07',type:'home',referenceUrl:expect.stringContaining('commons.wikimedia.org')}})
  })
 })
