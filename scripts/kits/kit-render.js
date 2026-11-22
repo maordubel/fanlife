@@ -62,11 +62,11 @@ function shirtG(k,id){
   else if(d==='pinstripes'){for(let x=94;x<258;x+=17)pat+=`<rect x="${x}" y="20" width="3.5" height="290" fill="${t}" opacity=".9"/>`}
   else if(d==='half-and-half'){pat=`<rect x="0" y="20" width="170" height="290" fill="${t}"/>`}
   else if(d==='sash'){pat=`<polygon points="82,66 128,52 258,236 258,292 216,292 82,126" fill="${t}"/>`}
-  else if(d==='chest band'){pat=`<rect x="0" y="126" width="340" height="44" fill="${t}"/>`}
+  else if(d==='chest band'){pat=art.bandColours?art.bandColours.map((colour,i)=>`<rect x="0" y="${142+20*i}" width="340" height="20" fill="${colour}"/>`).join(''):`<rect x="0" y="126" width="340" height="44" fill="${t}"/>`}
   else if(d==='diagonal'){let g='';for(let i=-4;i<8;i++)g+=`<rect x="${i*72}" y="-120" width="36" height="520" fill="${t}"/>`;pat=`<g transform="rotate(-38 170 170)">${g}</g>`}
   else if(d==='contrasting sleeves'){sleeveInk=t}
   else if(d==='gradient'){pat=`<rect width="340" height="320" fill="url(#${id}g)"/>`}
-  else if(d==='graphic'){pat=`<g fill="${t}" opacity=".18">${Array.from({length:60},(_,i)=>`<circle cx="${96+(i%10)*17+(Math.floor(i/10)%2)*8}" cy="${96+Math.floor(i/10)*30}" r="3.2"/>`).join('')}</g>`}
+  else if(d==='graphic'&&!art.omitUnmeasuredGraphics){pat=`<g fill="${t}" opacity=".18">${Array.from({length:60},(_,i)=>`<circle cx="${96+(i%10)*17+(Math.floor(i/10)%2)*8}" cy="${96+Math.floor(i/10)*30}" r="3.2"/>`).join('')}</g>`}
   const light=lum(b)>150,ink=light?'#111':'#fff',edge=shade(b,-.55);
   const collar=art.collarInk||(d==='contrasting sleeves'?b:t);
   const asset=(src)=>typeof RESOLVE==='function'?RESOLVE(src):src;
@@ -94,6 +94,7 @@ ${art.plainCuffs?'':`<path d="M16 120 62 148 76 124 30 98Z M324 120 278 148 264 
 <path d="M110 30C128 46 150 56 170 56S212 46 230 30L226 26C210 38 190 46 170 46S130 38 114 26Z" fill="#000" opacity=".55"/>
 <path d="M110 30C128 46 150 56 170 56S212 46 230 30L220 22C204 36 188 42 170 42S136 36 120 22Z" fill="${collar}"/>
 <path d="M120 22C136 36 154 42 170 42S204 36 220 22" stroke="#000" stroke-opacity=".3" stroke-width="1.2" fill="none"/><path d="M112 30C130 47 150 55 170 55S210 47 228 30" stroke="#fff" stroke-opacity=".22" stroke-width="1" fill="none"/>
+${art.poloCollar?`<path d="M120 22L169 44L151 65L123 37Z M220 22L171 44L189 65L217 37Z" fill="${collar}" stroke="${edge}"/><path d="M170 44V76" stroke="${edge}" stroke-width="4"/>`:''}
 <path d="${BODY}" fill="none" stroke="${edge}" stroke-width="2" stroke-linejoin="round"/>
 <path d="M82 120V290M258 120V290M64 46L82 120M276 46L258 120" stroke="#000" stroke-opacity=".3" stroke-width="1.1" stroke-dasharray="4 3" fill="none"/>
 ${art.crestSrc?`<image href="${esc(asset(art.crestSrc))}" x="188" y="80" width="38" height="42" preserveAspectRatio="xMidYMid meet"/>`:k.crest?`<image href="${k.crest}" x="188" y="80" width="38" height="42" preserveAspectRatio="xMidYMid meet"/>`:''}${mk}${sp}`;

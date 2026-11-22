@@ -25,11 +25,19 @@ import {shirtDateText} from '@/lib/fanlife/collector/cards'
 import {KitOwnBar,KitOwnProvider,type OwnCopy} from '@/components/clubs/KitOwn'
 import en from '@/messages/clubs/en.json'
 import he from '@/messages/clubs/he.json'
+import atalantaPhotos from '@/content/manual/kit-photos-atalanta.json'
 export const dynamic='force-dynamic'
 export function generateMetadata({params}:{params:{slug:string}}){const c=REGISTRY.find(r=>r.id===params.slug);return c?clubSubMetadata({id:c.id,name:c.name,sub:'kit-archive'}):{title:en.kitArchiveTitle}}
 
-const TYPES=['home','away','third','special'] as const
-const SURFACE:Record<string,string>={home:'wk-clubplate',away:'wk-sky',third:'wk-navyplate',special:'wk-orangeplate'}
+const TYPES=['home','away','third','fourth','goalkeeper','special'] as const
+const SURFACE:Record<string,string>={home:'wk-clubplate',away:'wk-sky',third:'wk-navyplate',fourth:'wk-navyplate',goalkeeper:'wk-orangeplate',special:'wk-orangeplate'}
+const archiveVariant=(type:string)=>{
+ const key=type.toLowerCase()
+ if(key==='home'||key==='away'||key==='third'||key==='fourth')return key
+ if(/^(?:goalkeeper|gk)\b/.test(key))return 'goalkeeper'
+ return 'special'
+}
+const atalantaPhotosById=new Map(atalantaPhotos.map(photo=>[photo.id,photo]))
 const year=(s:string)=>Number(/(\d{4})/.exec(s)?.[1]??0)
 const anchor=(s:string)=>`season-${s.replace(/[^0-9a-z]+/gi,'-')}`
 const short=(s:string)=>/^\d{4}\/\d{2}$/.test(s)?s.slice(2):s
@@ -49,11 +57,22 @@ export default async function KitArchive({params,searchParams}:{params:{slug:str
  const c=state.clubs.find(x=>x.id===id)
  if(!c)notFound()
  const locale=uiLocale(searchParams.lang),copy=locale==='he'?he:en,theme=core?.data.theme||clubTheme(REGISTRY.find(r=>r.id===id)||c)
+ const variant=id==='atalanta'?archiveVariant:variantOf
  const all=core?kitViews(core.data):[],type=(TYPES as readonly string[]).includes(searchParams.type??'')?searchParams.type!:'all'
- const kits=all.filter(k=>type==='all'||variantOf(k.type)===type).sort((a,b)=>year(b.season)-year(a.season)||TYPES.indexOf(variantOf(a.type))-TYPES.indexOf(variantOf(b.type))||a.id.localeCompare(b.id))
+ const kits=all.filter(k=>type==='all'||variant(k.type)===type).sort((a,b)=>year(b.season)-year(a.season)||TYPES.indexOf(variant(a.type))-TYPES.indexOf(variant(b.type))||a.id.localeCompare(b.id))
  const seasons=[...new Set(kits.map(k=>k.season))]
- const label=(t:string)=>copy[`kitType_${variantOf(t)}` as keyof typeof copy] as string
- const present=TYPES.filter(t=>all.some(k=>variantOf(k.type)===t))
+ const label=(t:string)=>copy[`kitType_${variant(t)}` as keyof typeof copy] as string
+ const cardLabel=(t:string,kitId:string)=>{
+  if(id==='atalanta'&&kitId.endsWith('dublin-2024-final'))return copy.kitDublinFinal
+  if(t.toLowerCase()==='christmas')return copy.kitChristmas
+  if(id==='atalanta'&&t.toLowerCase()==='centenary')return copy.kitCentenary
+  if(id==='atalanta'&&t.toLowerCase()==='european')return copy.kitEuropean
+  if(id==='atalanta'&&t.toLowerCase()==='bortolotti')return copy.kitBortolotti
+  if(id==='atalanta'&&t.startsWith('Coppa Italia'))return copy.kitCoppaAnniversary
+  const part=/^(?:goalkeeper|gk)[ -](home|away|third)$/i.exec(t)?.[1]
+  return part?`${label(t)} · ${label(part.toLowerCase())}`:label(t)
+ }
+ const present=TYPES.filter(t=>all.some(k=>variant(k.type)===t))
  const slugOf=Object.fromEntries(await Promise.all(kits.map(async k=>[k.id,await shirtSlugFor(id,k)] as const)))
  const photoSlug=Object.fromEntries(await Promise.all((cfsFor(id)?.kits??[]).map(async k=>[k.image,await cfsShirtSlug(id,k.image)] as const)))
  const catalogue=await fanShirts(),catSrc:Record<string,string>={}
@@ -69,19 +88,26 @@ export default async function KitArchive({params,searchParams}:{params:{slug:str
  const typeHref=(t:string)=>`${clubHref(id,'kit-archive',locale)}${t==='all'?'':`${locale==='en'?'?':'&'}type=${t}`}`
  const longest=Math.max(6,...c.name.split(/\s+/).map(w=>w.length))
  const Card=({k}:{k:KitView})=>{
-  const photo=clubKitPhotoOf(id,k)??catSrc[k.id]??cfsPhoto(id,k.season,k.type),a=kitArt(id,k.id,k.season,k.type,k.also),img=photo??a?.image,v=variantOf(k.type)
+  const photo=clubKitPhotoOf(id,k)??catSrc[k.id]??cfsPhoto(id,k.season,k.type),a=kitArt(id,k.id,k.season,k.type,k.also),img=photo??a?.image??a?.preview,v=variant(k.type)
+  const reference=id==='atalanta'?[k.id,...(k.also??[])].map(key=>atalantaPhotosById.get(key)).find(Boolean):undefined
   return <li className="wk-sticker wkk-kit" data-testid="kit-archive-kit" data-type={v}>
    <span className={`wkk-kit-art ${SURFACE[v]}`}>
-    {img?<img className="wkk-kit-img" data-archive-photo={photo?'':undefined} src={img} alt={`${k.season} ${label(k.type)}`} width={160} height={215} loading="lazy" decoding="async"/>:<KitPlate kit={k} label={false}/>}
-    <span className="wk-tag red wkk-kit-type">{label(k.type)}</span>
+    {img?<img className="wkk-kit-img" data-archive-photo={photo?'':undefined} src={img} alt={`${k.season} ${cardLabel(k.type,k.id)}`} width={160} height={215} loading="lazy" decoding="async"/>:<KitPlate kit={k} label={false}/>}
+    <span className="wk-tag red wkk-kit-type">{cardLabel(k.type,k.id)}</span>
    </span>
    <div className="wkk-kit-body">
     <p className="wk-head wkk-kit-maker">{k.maker??copy.kitArchiveNoMaker}{k.sponsor&&<> · {k.sponsor}</>}</p>
     {a&&<p className="wk-k wkk-kit-svg"><a href={a.svg} target="_blank" rel="noopener noreferrer">{copy.kitArchiveSvg} ↗</a></p>}
+    {a?.preview&&<p className="wk-k">{a.reference?<a href={a.reference} target="_blank" rel="noopener noreferrer">{a.approximate?copy.kitApproximateDrawing:copy.kitReferenceDrawing} ↗</a>:copy.kitApproximateDrawing}</p>}
     <details className="wkk-kit-more"><summary>{copy.kitArchiveDetails}</summary><dl className="wkk-kit-dl">
      <dt>{copy.kitArchiveDesign}</dt><dd>{k.design??'—'}</dd><dt>{copy.kitArchiveColours}</dt><dd>{k.colours.join(' / ')||'—'}</dd>
      {k.shorts&&<><dt>{copy.kitArchiveShorts}</dt><dd>{[k.shorts.colour,k.shorts.trim].filter(Boolean).join(' / ')}</dd></>}{k.socks&&<><dt>{copy.kitArchiveSocks}</dt><dd>{[k.socks.colour,k.socks.trim].filter(Boolean).join(' / ')}</dd></>}
      <dt>{copy.kitArchiveSources}</dt><dd>{src(k.sources).map(x=><a key={x.id} href={x.url??undefined} target="_blank" rel="noopener noreferrer">{x.publisher}</a>).reduce<React.ReactNode[]>((acc,x,i)=>i?[...acc,' · ',x]:[x],[])}</dd></dl></details>
+    {reference&&<details className="wkk-kit-more"><summary>{copy.kitArchivePhoto}</summary><figure>
+     {/* eslint-disable-next-line @next/next/no-img-element */}
+     <img src={reference.file} alt={`${c.name} ${k.season} · ${label(k.type)}`} width={640} height={420} loading="lazy" style={{width:'100%',height:'auto'}}/>
+     <figcaption>{reference.credit} · <a href={reference.sourceUrl} target="_blank" rel="noopener noreferrer">{copy.kitOriginalPhoto} ↗</a>{' · '}{reference.licenseUrl?<a href={reference.licenseUrl} target="_blank" rel="noopener noreferrer">{reference.license} ↗</a>:reference.license} · {copy.kitPhotoResized}</figcaption>
+    </figure></details>}
     {slugOf[k.id]&&<KitOwnBar slug={slugOf[k.id]!} copy={own}/>}
    </div>
   </li>}

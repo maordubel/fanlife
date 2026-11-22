@@ -30,9 +30,9 @@ import hapoelPetahTikva from '@/content/manual/kit-archive-hapoel-petah-tikva.js
  * A kit finds its files by id (the catalogue kits of a wave keep their `cof-k-NN` id) and otherwise by season and type, so a kit the
  * club pack already held from another source still shows the catalogue's picture of the same shirt.
  */
-export type KitArtRow={id:string;season:string;type:string;euro:boolean;image?:string|null; indexed?:boolean}
+export type KitArtRow={id:string;season:string;type:string;euro:boolean;image?:string|null;indexed?:boolean;readUnsure?:boolean;reference?:string}
 type Row=KitArtRow
-type Art={image:string|null;svg:string;icon:string}
+type Art={image:string|null;svg:string;icon:string;preview:string|null;approximate:boolean;reference:string|null}
 const CATALOGUE:Record<string,Row[]>={
  'aek-athens':aek.kits as Row[],celtic:celtic.kits as Row[],panathinaikos:panathinaikos.kits as Row[],'st-pauli':stPauli.kits as Row[],
  'zrinjski-mostar':zrinjski.kits as Row[],'hapoel-petah-tikva':hapoelPetahTikva.kits as Row[],olympiacos:olympiacos.kits as Row[],'hapoel-tel-aviv':hta.kits as Row[],
@@ -58,7 +58,7 @@ const FILES:Record<string,Row[]>=Object.fromEntries(Object.entries(INDEX).map(([
  const catalogue=new Map(CATALOGUE[club]?.map(row=>[row.id,row])??[])
  return [club,rows.map(row=>({...row,euro:false,...catalogue.get(row.id),indexed:true}))]
 }))
-const art=(club:string,r:Row):Art=>({image:r.image??null,svg:`/club-kits/${club}/svg/${r.id}.svg`,icon:`/club-kits/${club}/icons/${r.id}.svg`})
+const art=(club:string,r:Row):Art=>({image:r.image??null,svg:`/club-kits/${club}/svg/${r.id}.svg`,icon:`/club-kits/${club}/icons/${r.id}.svg`,preview:club==='atalanta'?`/club-kits/${club}/previews/${r.id}.webp`:null,approximate:!!r.readUnsure,reference:r.reference??null})
 const seasonKey=(season:string)=>season.replace(/\s/g,'').replace(/[-–]/g,'/').replace(/\/(\d{2})(\d{2})$/,'/$2')
 /** An exact id wins. Fallback is safe only if the season and type identify one candidate. */
 export function matchKitArt(rows:readonly Row[],club:string,kitId:string,season:string,type:string,also:readonly string[]=[]):Row|null{
@@ -67,6 +67,7 @@ export function matchKitArt(rows:readonly Row[],club:string,kitId:string,season:
  if(exact)return exact
  const ids=new Set(also.map(idOf)),aliased=rows.filter(r=>ids.has(r.id))
  if(aliased.length)return aliased.length===1?aliased[0]!:null
+ if(club==='atalanta')return null
  const candidates=rows.filter(r=>seasonKey(r.season)===seasonKey(season)&&kitTypeKey(r.type)===kitTypeKey(type)&&!r.euro&&(r.indexed||r.image))
  return candidates.length===1?candidates[0]!:null
 }

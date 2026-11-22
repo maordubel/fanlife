@@ -1,0 +1,3236 @@
+{
+ "club": "atalanta",
+ "kits": [
+  {
+   "id": "at-fka-20080",
+   "season": "2000/01",
+   "type": "away",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_1.html",
+   "shirt": {
+    "design": "contrasting sleeves",
+    "colours": [
+     "white",
+     "blue"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "blue": "#1f4ea8"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Asics",
+   "sponsor": "Ortobell",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-20080"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-27140",
+   "season": "2000/01",
+   "type": "home",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_1.html",
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "blue",
+     "black"
+    ],
+    "hex": {
+     "blue": "#0071af",
+     "black": "#1d2020"
+    },
+    "measured": {
+     "runsX": [
+      [
+       0,
+       0.101,
+       1
+      ],
+      [
+       0.101,
+       0.177,
+       0
+      ],
+      [
+       0.177,
+       0.266,
+       1
+      ],
+      [
+       0.266,
+       0.367,
+       0
+      ],
+      [
+       0.367,
+       0.456,
+       1
+      ],
+      [
+       0.456,
+       0.544,
+       0
+      ],
+      [
+       0.544,
+       0.633,
+       1
+      ],
+      [
+       0.633,
+       0.722,
+       0
+      ],
+      [
+       0.722,
+       0.81,
+       1
+      ],
+      [
+       0.81,
+       0.899,
+       0
+      ],
+      [
+       0.899,
+       1,
+       1
+      ]
+     ],
+     "runsY": [
+      [
+       0,
+       0.036,
+       1
+      ],
+      [
+       0.036,
+       1,
+       0
+      ]
+     ]
+    },
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Asics",
+   "sponsor": "Ortobell",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-27140"
+   ],
+   "readUnsure": false,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-27143",
+   "season": "2003/04",
+   "type": "home",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_1.html",
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "blue",
+     "black"
+    ],
+    "hex": {
+     "blue": "#007dc5",
+     "black": "#231f20"
+    },
+    "measured": {
+     "runsX": [
+      [
+       0,
+       0.063,
+       1
+      ],
+      [
+       0.063,
+       0.139,
+       0
+      ],
+      [
+       0.139,
+       0.291,
+       1
+      ],
+      [
+       0.291,
+       0.443,
+       0
+      ],
+      [
+       0.443,
+       0.582,
+       1
+      ],
+      [
+       0.582,
+       0.734,
+       0
+      ],
+      [
+       0.734,
+       0.873,
+       1
+      ],
+      [
+       0.873,
+       0.949,
+       0
+      ],
+      [
+       0.949,
+       1,
+       1
+      ]
+     ],
+     "runsY": [
+      [
+       0,
+       0.118,
+       0
+      ],
+      [
+       0.118,
+       0.2,
+       1
+      ],
+      [
+       0.2,
+       1,
+       0
+      ]
+     ]
+    },
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Asics",
+   "sponsor": "Promatech",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-27143"
+   ],
+   "readUnsure": false,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-27145",
+   "season": "2004/05",
+   "type": "away",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_1.html",
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "white",
+     "blue"
+    ],
+    "hex": {
+     "white": "#e8f1f5",
+     "blue": "#1f4ea8"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": null,
+   "sponsor": "Promatech",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-27145"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-27146",
+   "season": "2004/05",
+   "type": "home",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_1.html",
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "blue",
+     "black"
+    ],
+    "hex": {
+     "blue": "#115fad",
+     "black": "#231f20"
+    },
+    "measured": {
+     "runsX": [
+      [
+       0,
+       0.051,
+       1
+      ],
+      [
+       0.051,
+       0.152,
+       0
+      ],
+      [
+       0.152,
+       0.291,
+       1
+      ],
+      [
+       0.291,
+       0.443,
+       0
+      ],
+      [
+       0.443,
+       0.582,
+       1
+      ],
+      [
+       0.582,
+       0.722,
+       0
+      ],
+      [
+       0.722,
+       0.861,
+       1
+      ],
+      [
+       0.861,
+       0.962,
+       0
+      ],
+      [
+       0.962,
+       1,
+       1
+      ]
+     ],
+     "runsY": [
+      [
+       0,
+       0.045,
+       0
+      ],
+      [
+       0.045,
+       0.182,
+       1
+      ],
+      [
+       0.182,
+       1,
+       0
+      ]
+     ]
+    },
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": null,
+   "sponsor": "Promatech",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-27146"
+   ],
+   "readUnsure": false,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-27147",
+   "season": "2005/06",
+   "type": "home",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_1.html",
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "blue",
+     "black"
+    ],
+    "hex": {
+     "blue": "#2085c7",
+     "black": "#181830"
+    },
+    "measured": {
+     "runsX": [
+      [
+       0,
+       0.089,
+       1
+      ],
+      [
+       0.089,
+       0.253,
+       1
+      ],
+      [
+       0.253,
+       0.418,
+       0
+      ],
+      [
+       0.418,
+       0.595,
+       1
+      ],
+      [
+       0.595,
+       0.772,
+       0
+      ],
+      [
+       0.772,
+       0.937,
+       1
+      ],
+      [
+       0.937,
+       1,
+       1
+      ]
+     ],
+     "runsY": [
+      [
+       0,
+       1,
+       1
+      ]
+     ]
+    },
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Asics",
+   "sponsor": "Sit-in Sport",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-27147"
+   ],
+   "readUnsure": false,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-27148",
+   "season": "2006/07",
+   "type": "home",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_1.html",
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "blue",
+     "black"
+    ],
+    "hex": {
+     "blue": "#0046c6",
+     "black": "#1e1e1e"
+    },
+    "measured": {
+     "runsX": [
+      [
+       0,
+       0.152,
+       1
+      ],
+      [
+       0.152,
+       0.291,
+       0
+      ],
+      [
+       0.291,
+       0.43,
+       1
+      ],
+      [
+       0.43,
+       0.582,
+       0
+      ],
+      [
+       0.582,
+       0.722,
+       1
+      ],
+      [
+       0.722,
+       0.861,
+       0
+      ],
+      [
+       0.861,
+       1,
+       1
+      ]
+     ],
+     "runsY": [
+      [
+       0,
+       0.109,
+       0
+      ],
+      [
+       0.109,
+       1,
+       1
+      ]
+     ]
+    },
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Asics",
+   "sponsor": "Sit-in Sport",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-27148"
+   ],
+   "readUnsure": false,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-27149",
+   "season": "2007/08",
+   "type": "home",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_1.html",
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "blue",
+     "black"
+    ],
+    "hex": {
+     "blue": "#3069b3",
+     "black": "#231f20"
+    },
+    "measured": {
+     "runsX": [
+      [
+       0,
+       0.114,
+       1
+      ],
+      [
+       0.114,
+       0.228,
+       0
+      ],
+      [
+       0.228,
+       0.329,
+       1
+      ],
+      [
+       0.329,
+       0.443,
+       0
+      ],
+      [
+       0.443,
+       0.544,
+       1
+      ],
+      [
+       0.544,
+       0.658,
+       0
+      ],
+      [
+       0.658,
+       0.759,
+       1
+      ],
+      [
+       0.759,
+       0.886,
+       0
+      ],
+      [
+       0.886,
+       1,
+       1
+      ]
+     ],
+     "runsY": [
+      [
+       0,
+       1,
+       0
+      ]
+     ]
+    },
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Errea",
+   "sponsor": "Sit-in Sport",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-27149"
+   ],
+   "readUnsure": false,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-27150",
+   "season": "2008/09",
+   "type": "away",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_2.html",
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "white",
+     "blue"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "blue": "#0063b0"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Errea",
+   "sponsor": "Sit-in Sport",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-27150"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-27151",
+   "season": "2008/09",
+   "type": "home",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_1.html",
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "blue",
+     "black"
+    ],
+    "hex": {
+     "blue": "#3069b3",
+     "black": "#1d1c28"
+    },
+    "measured": {
+     "runsX": [
+      [
+       0,
+       0.051,
+       0
+      ],
+      [
+       0.051,
+       0.177,
+       1
+      ],
+      [
+       0.177,
+       0.316,
+       0
+      ],
+      [
+       0.316,
+       0.443,
+       1
+      ],
+      [
+       0.443,
+       0.57,
+       0
+      ],
+      [
+       0.57,
+       0.709,
+       1
+      ],
+      [
+       0.709,
+       0.835,
+       0
+      ],
+      [
+       0.835,
+       1,
+       1
+      ]
+     ],
+     "runsY": [
+      [
+       0,
+       0.055,
+       1
+      ],
+      [
+       0.055,
+       1,
+       1
+      ]
+     ]
+    },
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Errea",
+   "sponsor": "Sit-in Sport",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-27151"
+   ],
+   "readUnsure": false,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-27152",
+   "season": "2009/10",
+   "type": "away",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_2.html",
+   "shirt": {
+    "design": "pinstripes",
+    "colours": [
+     "white",
+     "black"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "black": "#111111"
+    },
+    "measured": {
+     "runsX": [
+      [
+       0,
+       0.101,
+       0
+      ],
+      [
+       0.101,
+       0.949,
+       0
+      ],
+      [
+       0.949,
+       1,
+       0
+      ]
+     ],
+     "runsY": [
+      [
+       0,
+       1,
+       0
+      ]
+     ]
+    },
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Errea",
+   "sponsor": "Sit-in Sport",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-27152"
+   ],
+   "readUnsure": false,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-2838",
+   "season": "2018/19",
+   "type": "home",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_3.html",
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "blue",
+     "black"
+    ],
+    "hex": {
+     "blue": "#2a5caa",
+     "black": "#333333"
+    },
+    "measured": {
+     "runsX": [
+      [
+       0,
+       0.051,
+       0
+      ],
+      [
+       0.051,
+       0.152,
+       1
+      ],
+      [
+       0.152,
+       0.291,
+       0
+      ],
+      [
+       0.291,
+       0.43,
+       1
+      ],
+      [
+       0.43,
+       0.57,
+       0
+      ],
+      [
+       0.57,
+       0.709,
+       1
+      ],
+      [
+       0.709,
+       0.861,
+       0
+      ],
+      [
+       0.861,
+       0.949,
+       1
+      ],
+      [
+       0.949,
+       1,
+       0
+      ]
+     ],
+     "runsY": [
+      [
+       0,
+       1,
+       1
+      ]
+     ]
+    },
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Joma",
+   "sponsor": "Radici Group",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-2838"
+   ],
+   "readUnsure": false,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-2839",
+   "season": "2018/19",
+   "type": "third",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_3.html",
+   "shirt": {
+    "design": "gradient",
+    "colours": [
+     "skyblue",
+     "navy"
+    ],
+    "hex": {
+     "skyblue": "#6cace4",
+     "navy": "#364664"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Joma",
+   "sponsor": "Radici Group",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-2839"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-2840",
+   "season": "2018/19",
+   "type": "away",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_3.html",
+   "shirt": {
+    "design": "chest band",
+    "colours": [
+     "white",
+     "black"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "black": "#111111"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Joma",
+   "sponsor": "Radici Group",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-2840"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-2841",
+   "season": "2017/18",
+   "type": "home",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_3.html",
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "blue",
+     "black"
+    ],
+    "hex": {
+     "blue": "#2a5caa",
+     "black": "#333333"
+    },
+    "measured": {
+     "runsX": [
+      [
+       0,
+       0.089,
+       0
+      ],
+      [
+       0.089,
+       0.253,
+       1
+      ],
+      [
+       0.253,
+       0.43,
+       0
+      ],
+      [
+       0.43,
+       0.595,
+       1
+      ],
+      [
+       0.595,
+       0.772,
+       0
+      ],
+      [
+       0.772,
+       0.937,
+       1
+      ],
+      [
+       0.937,
+       1,
+       0
+      ]
+     ],
+     "runsY": [
+      [
+       0,
+       0.318,
+       1
+      ],
+      [
+       0.318,
+       0.373,
+       0
+      ],
+      [
+       0.373,
+       1,
+       1
+      ]
+     ]
+    },
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Joma",
+   "sponsor": "Veratour",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-2841"
+   ],
+   "readUnsure": false,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-2842",
+   "season": "2017/18",
+   "type": "away",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_3.html",
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "white",
+     "blue"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "blue": "#1f4ea8"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": null,
+   "sponsor": "Veratour",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-2842"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-2843",
+   "season": "2017/18",
+   "type": "third",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_3.html",
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "green"
+    ],
+    "hex": {
+     "green": "#2ab463"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Joma",
+   "sponsor": null,
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-2843"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-2845",
+   "season": "2016/17",
+   "type": "home",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_3.html",
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "blue",
+     "black"
+    ],
+    "hex": {
+     "blue": "#2a5caa",
+     "black": "#333333"
+    },
+    "measured": {
+     "runsX": [
+      [
+       0,
+       0.051,
+       1
+      ],
+      [
+       0.051,
+       0.139,
+       0
+      ],
+      [
+       0.139,
+       0.215,
+       1
+      ],
+      [
+       0.215,
+       0.304,
+       0
+      ],
+      [
+       0.304,
+       0.38,
+       1
+      ],
+      [
+       0.38,
+       0.481,
+       0
+      ],
+      [
+       0.481,
+       0.557,
+       1
+      ],
+      [
+       0.557,
+       0.646,
+       0
+      ],
+      [
+       0.646,
+       0.722,
+       1
+      ],
+      [
+       0.722,
+       0.81,
+       0
+      ],
+      [
+       0.81,
+       0.886,
+       1
+      ],
+      [
+       0.886,
+       1,
+       0
+      ]
+     ],
+     "runsY": [
+      [
+       0,
+       0.336,
+       1
+      ],
+      [
+       0.336,
+       0.4,
+       0
+      ],
+      [
+       0.4,
+       0.427,
+       0
+      ],
+      [
+       0.427,
+       0.464,
+       1
+      ],
+      [
+       0.464,
+       1,
+       0
+      ]
+     ]
+    },
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": null,
+   "sponsor": "TWS",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-2845"
+   ],
+   "readUnsure": false,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-2846",
+   "season": "2016/17",
+   "type": "away",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_3.html",
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "white",
+     "blue"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "blue": "#1f4ea8"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": null,
+   "sponsor": "TWS",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-2846"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-2847",
+   "season": "2014/15",
+   "type": "home",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_2.html",
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "blue",
+     "black"
+    ],
+    "hex": {
+     "blue": "#034ea2",
+     "black": "#282828"
+    },
+    "measured": {
+     "runsX": [
+      [
+       0,
+       0.063,
+       0
+      ],
+      [
+       0.063,
+       0.165,
+       1
+      ],
+      [
+       0.165,
+       0.266,
+       0
+      ],
+      [
+       0.266,
+       0.367,
+       1
+      ],
+      [
+       0.367,
+       0.468,
+       0
+      ],
+      [
+       0.468,
+       0.57,
+       1
+      ],
+      [
+       0.57,
+       0.671,
+       0
+      ],
+      [
+       0.671,
+       0.772,
+       1
+      ],
+      [
+       0.772,
+       0.873,
+       0
+      ],
+      [
+       0.873,
+       1,
+       1
+      ]
+     ],
+     "runsY": [
+      [
+       0,
+       0.336,
+       1
+      ],
+      [
+       0.336,
+       0.373,
+       0
+      ],
+      [
+       0.373,
+       0.4,
+       1
+      ],
+      [
+       0.4,
+       0.427,
+       0
+      ],
+      [
+       0.427,
+       1,
+       1
+      ]
+     ]
+    },
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Nike",
+   "sponsor": "SuisseGas",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-2847"
+   ],
+   "readUnsure": false,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-2848",
+   "season": "2015/16",
+   "type": "home",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_2.html",
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "blue",
+     "black"
+    ],
+    "hex": {
+     "blue": "#0e53a5",
+     "black": "#282828"
+    },
+    "measured": {
+     "runsX": [
+      [
+       0,
+       0.139,
+       0
+      ],
+      [
+       0.139,
+       0.278,
+       1
+      ],
+      [
+       0.278,
+       0.43,
+       0
+      ],
+      [
+       0.43,
+       0.582,
+       1
+      ],
+      [
+       0.582,
+       0.734,
+       0
+      ],
+      [
+       0.734,
+       0.886,
+       1
+      ],
+      [
+       0.886,
+       1,
+       0
+      ]
+     ],
+     "runsY": [
+      [
+       0,
+       1,
+       0
+      ]
+     ]
+    },
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Nike",
+   "sponsor": "SuisseGas",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-2848"
+   ],
+   "readUnsure": false,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-2849",
+   "season": "2015/16",
+   "type": "away",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_3.html",
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "white",
+     "black"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "black": "#111111"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Nike",
+   "sponsor": "SuisseGas",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-2849"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-2850",
+   "season": "2015/16",
+   "type": "third",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_3.html",
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "lime"
+    ],
+    "hex": {
+     "lime": "#9bd13f"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Nike",
+   "sponsor": "SuisseGas",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-2850"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-2851",
+   "season": "2014/15",
+   "type": "away",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_2.html",
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "white",
+     "black"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "black": "#111111"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Nike",
+   "sponsor": "SuisseGas",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-2851"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-2852",
+   "season": "2014/15",
+   "type": "third",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_2.html",
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "orange",
+     "black"
+    ],
+    "hex": {
+     "orange": "#f47920",
+     "black": "#111111"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Nike",
+   "sponsor": "SuisseGas",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-2852"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-2853",
+   "season": "2013/14",
+   "type": "home",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_2.html",
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "blue",
+     "black"
+    ],
+    "hex": {
+     "blue": "#0063b0",
+     "black": "#282828"
+    },
+    "measured": {
+     "runsX": [
+      [
+       0,
+       0.177,
+       1
+      ],
+      [
+       0.177,
+       0.316,
+       0
+      ],
+      [
+       0.316,
+       0.456,
+       1
+      ],
+      [
+       0.456,
+       0.582,
+       0
+      ],
+      [
+       0.582,
+       0.722,
+       1
+      ],
+      [
+       0.722,
+       0.861,
+       0
+      ],
+      [
+       0.861,
+       1,
+       1
+      ]
+     ],
+     "runsY": [
+      [
+       0,
+       1,
+       1
+      ]
+     ]
+    },
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": null,
+   "sponsor": "AXA",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-2853"
+   ],
+   "readUnsure": false,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-2854",
+   "season": "2013/14",
+   "type": "away",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_2.html",
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "yellow",
+     "black"
+    ],
+    "hex": {
+     "yellow": "#ffd400",
+     "black": "#282828"
+    },
+    "measured": {
+     "runsX": [
+      [
+       0,
+       0.177,
+       0
+      ],
+      [
+       0.177,
+       0.316,
+       1
+      ],
+      [
+       0.316,
+       0.443,
+       0
+      ],
+      [
+       0.443,
+       0.582,
+       1
+      ],
+      [
+       0.582,
+       0.709,
+       0
+      ],
+      [
+       0.709,
+       0.848,
+       1
+      ],
+      [
+       0.848,
+       1,
+       0
+      ]
+     ],
+     "runsY": [
+      [
+       0,
+       0.064,
+       0
+      ],
+      [
+       0.064,
+       1,
+       0
+      ]
+     ]
+    },
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": null,
+   "sponsor": "AXA",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-2854"
+   ],
+   "readUnsure": false,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-2856",
+   "season": "2012/13",
+   "type": "home",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_2.html",
+   "shirt": {
+    "design": "half-and-half",
+    "colours": [
+     "blue",
+     "black"
+    ],
+    "hex": {
+     "blue": "#0063b0",
+     "black": "#282828"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Errea",
+   "sponsor": "AXA",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-2856"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-2857",
+   "season": "2012/13",
+   "type": "away",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_2.html",
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "white",
+     "blue"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "blue": "#0063b0"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Errea",
+   "sponsor": "AXA",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-2857"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-2859",
+   "season": "2011/12",
+   "type": "home",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_2.html",
+   "shirt": {
+    "design": "half-and-half",
+    "colours": [
+     "blue",
+     "black"
+    ],
+    "hex": {
+     "blue": "#0063b0",
+     "black": "#282828"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Errea",
+   "sponsor": "AXA",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-2859"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-2860",
+   "season": "2011/12",
+   "type": "away",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_2.html",
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "white",
+     "blue"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "blue": "#1f4ea8"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Errea",
+   "sponsor": "AXA",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-2860"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-37797",
+   "season": "2009/10",
+   "type": "home",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_2.html",
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "blue",
+     "black"
+    ],
+    "hex": {
+     "blue": "#3069b3",
+     "black": "#24252e"
+    },
+    "measured": {
+     "runsX": [
+      [
+       0,
+       0.165,
+       0
+      ],
+      [
+       0.165,
+       0.304,
+       1
+      ],
+      [
+       0.304,
+       0.443,
+       0
+      ],
+      [
+       0.443,
+       0.582,
+       1
+      ],
+      [
+       0.582,
+       0.722,
+       0
+      ],
+      [
+       0.722,
+       0.861,
+       1
+      ],
+      [
+       0.861,
+       1,
+       0
+      ]
+     ],
+     "runsY": [
+      [
+       0,
+       1,
+       0
+      ]
+     ]
+    },
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Errea",
+   "sponsor": "Sit-in Sport",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-37797"
+   ],
+   "readUnsure": false,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-38284",
+   "season": "2010/11",
+   "type": "home",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_2.html",
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "blue",
+     "black"
+    ],
+    "hex": {
+     "blue": "#3069b3",
+     "black": "#282828"
+    },
+    "measured": {
+     "runsX": [
+      [
+       0,
+       0.051,
+       1
+      ],
+      [
+       0.051,
+       0.127,
+       0
+      ],
+      [
+       0.127,
+       0.203,
+       1
+      ],
+      [
+       0.203,
+       0.266,
+       0
+      ],
+      [
+       0.266,
+       0.342,
+       1
+      ],
+      [
+       0.342,
+       0.405,
+       0
+      ],
+      [
+       0.405,
+       0.481,
+       1
+      ],
+      [
+       0.481,
+       0.544,
+       0
+      ],
+      [
+       0.544,
+       0.62,
+       1
+      ],
+      [
+       0.62,
+       0.696,
+       0
+      ],
+      [
+       0.696,
+       0.759,
+       1
+      ],
+      [
+       0.759,
+       0.835,
+       0
+      ],
+      [
+       0.835,
+       0.899,
+       1
+      ],
+      [
+       0.899,
+       1,
+       0
+      ]
+     ],
+     "runsY": [
+      [
+       0,
+       1,
+       1
+      ]
+     ]
+    },
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Errea",
+   "sponsor": "AXA",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-38284"
+   ],
+   "readUnsure": false,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-38326",
+   "season": "2002/03",
+   "type": "away",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_1.html",
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "white",
+     "blue"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "blue": "#1f4ea8"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Asics",
+   "sponsor": "Promatech",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-38326"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-38388",
+   "season": "2007/08",
+   "type": "away",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_1.html",
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "white",
+     "blue"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "blue": "#1f4ea8"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Errea",
+   "sponsor": "Sit-in Sport",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-38388"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-38390",
+   "season": "2002/03",
+   "type": "home",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_1.html",
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "blue",
+     "black"
+    ],
+    "hex": {
+     "blue": "#275fac",
+     "black": "#1d2020"
+    },
+    "measured": {
+     "runsX": [
+      [
+       0,
+       0.215,
+       1
+      ],
+      [
+       0.215,
+       0.405,
+       0
+      ],
+      [
+       0.405,
+       0.595,
+       1
+      ],
+      [
+       0.595,
+       0.785,
+       0
+      ],
+      [
+       0.785,
+       1,
+       1
+      ]
+     ],
+     "runsY": [
+      [
+       0,
+       1,
+       1
+      ]
+     ]
+    },
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Asics",
+   "sponsor": "Promatech",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-38390"
+   ],
+   "readUnsure": false,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-38953",
+   "season": "2006/07",
+   "type": "away",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_1.html",
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "white",
+     "blue"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "blue": "#1f4ea8"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": null,
+   "sponsor": "Sit-in Sport",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-38953"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-426956",
+   "season": "2009/10",
+   "type": "third",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_2.html",
+   "shirt": {
+    "design": "graphic",
+    "colours": [
+     "white",
+     "black"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "black": "#111111"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Errea",
+   "sponsor": "Sit-in Sport",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-426956"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-67853",
+   "season": "2005/06",
+   "type": "away",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_1.html",
+   "shirt": {
+    "design": "contrasting sleeves",
+    "colours": [
+     "white",
+     "blue"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "blue": "#1f4ea8"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Asics",
+   "sponsor": "Sit-in Sport",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-67853"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-fka-91681",
+   "season": "2003/04",
+   "type": "away",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_1.html",
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "white",
+     "blue"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "blue": "#1f4ea8"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Asics",
+   "sponsor": "Promatech",
+   "shortsSponsor": null,
+   "sources": [
+    "at-fka-s-91681"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-kit-1993-94-away",
+   "season": "1993/94",
+   "type": "away",
+   "kind": "season",
+   "origin": "documented-reference",
+   "euro": false,
+   "sourceTitle": "Atalanta kit reference",
+   "sourceUrl": "https://www.oldfootballshirts.com/en/teams/a/atalanta/old-atalanta-football-shirt-s10538.html",
+   "shirt": {
+    "design": "chest band",
+    "colours": [
+     "white",
+     "black",
+     "blue"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "black": "#111111",
+     "blue": "#1f4ea8"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true,
+     "bandColours": [
+      "#131517",
+      "#1754a3"
+     ],
+     "plainCuffs": true,
+     "collarInk": "#f1f1f0"
+    }
+   },
+   "maker": "Lotto",
+   "sponsor": "Tamoil",
+   "shortsSponsor": null,
+   "sources": [
+    "at-k-fka-1993-94-away",
+    "at-k-fka-index",
+    "at-kit-1993-away-photo"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-kit-2007-08-special",
+   "season": "2007/08",
+   "type": "centenary",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_1.html",
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "black",
+     "blue"
+    ],
+    "hex": {
+     "black": "#231f20",
+     "blue": "#3069b3"
+    },
+    "measured": {
+     "runsX": [
+      [
+       0,
+       0.063,
+       0
+      ],
+      [
+       0.063,
+       0.139,
+       1
+      ],
+      [
+       0.139,
+       0.19,
+       0
+      ],
+      [
+       0.19,
+       0.266,
+       1
+      ],
+      [
+       0.266,
+       0.329,
+       0
+      ],
+      [
+       0.329,
+       0.392,
+       1
+      ],
+      [
+       0.392,
+       0.456,
+       0
+      ],
+      [
+       0.456,
+       0.532,
+       1
+      ],
+      [
+       0.532,
+       0.595,
+       0
+      ],
+      [
+       0.595,
+       0.671,
+       1
+      ],
+      [
+       0.671,
+       0.722,
+       0
+      ],
+      [
+       0.722,
+       0.797,
+       1
+      ],
+      [
+       0.797,
+       0.861,
+       0
+      ],
+      [
+       0.861,
+       0.924,
+       1
+      ],
+      [
+       0.924,
+       1,
+       0
+      ]
+     ],
+     "runsY": [
+      [
+       0,
+       0.473,
+       0
+      ],
+      [
+       0.473,
+       1,
+       1
+      ]
+     ]
+    },
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": null,
+   "sponsor": null,
+   "shortsSponsor": null,
+   "sources": [
+    "at-kit-special-source-2007"
+   ],
+   "readUnsure": false,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-kit-2017-18-special",
+   "season": "2017/18",
+   "type": "European",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": true,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_3.html",
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "blue",
+     "black"
+    ],
+    "hex": {
+     "blue": "#2a5caa",
+     "black": "#333333"
+    },
+    "measured": {
+     "runsX": [
+      [
+       0,
+       0.089,
+       0
+      ],
+      [
+       0.089,
+       0.253,
+       1
+      ],
+      [
+       0.253,
+       0.43,
+       0
+      ],
+      [
+       0.43,
+       0.595,
+       1
+      ],
+      [
+       0.595,
+       0.772,
+       0
+      ],
+      [
+       0.772,
+       0.937,
+       1
+      ],
+      [
+       0.937,
+       1,
+       0
+      ]
+     ],
+     "runsY": [
+      [
+       0,
+       1,
+       1
+      ]
+     ]
+    },
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": null,
+   "sponsor": null,
+   "shortsSponsor": null,
+   "sources": [
+    "at-kit-special-source-2017"
+   ],
+   "readUnsure": false,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-kit-2019-20-away",
+   "season": "2019/20",
+   "type": "away",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_3.html",
+   "shirt": {
+    "design": "chest band",
+    "colours": [
+     "white",
+     "black",
+     "blue"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "black": "#111111",
+     "blue": "#1f4ea8"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Joma",
+   "sponsor": "Radici Group",
+   "shortsSponsor": null,
+   "sources": [
+    "at-k-fka-2019-20-away"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-kit-2019-20-home",
+   "season": "2019/20",
+   "type": "home",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_3.html",
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "black",
+     "blue"
+    ],
+    "hex": {
+     "black": "#333333",
+     "blue": "#2a5caa"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Joma",
+   "sponsor": "Radici Group",
+   "shortsSponsor": null,
+   "sources": [
+    "at-k-fka-2019-20-home"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-kit-2020-21-away",
+   "season": "2020/21",
+   "type": "away",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_3.html",
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "white",
+     "blue",
+     "black"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "blue": "#1f4ea8",
+     "black": "#111111"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Joma",
+   "sponsor": "Plus500",
+   "shortsSponsor": null,
+   "sources": [
+    "at-k-fi-2020-21",
+    "at-k-fka-index"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-kit-2020-21-home",
+   "season": "2020/21",
+   "type": "home",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_3.html",
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "blue",
+     "black"
+    ],
+    "hex": {
+     "blue": "#2a5caa",
+     "black": "#333333"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Joma",
+   "sponsor": "Plus500",
+   "shortsSponsor": null,
+   "sources": [
+    "at-k-fi-2020-21",
+    "at-k-fka-index"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-kit-2020-21-third",
+   "season": "2020/21",
+   "type": "third",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_4.html",
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "skyblue",
+     "blue",
+     "black"
+    ],
+    "hex": {
+     "skyblue": "#6cace4",
+     "blue": "#1f4ea8",
+     "black": "#111111"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Joma",
+   "sponsor": "Plus500",
+   "shortsSponsor": null,
+   "sources": [
+    "at-k-fi-2020-21",
+    "at-k-fka-index"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-kit-2021-22-away",
+   "season": "2021/22",
+   "type": "away",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_4.html",
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "white",
+     "blue",
+     "black"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "blue": "#1f4ea8",
+     "black": "#111111"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Joma",
+   "sponsor": "Plus500",
+   "shortsSponsor": null,
+   "sources": [
+    "at-k-fka-2021-22-away"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-kit-2021-22-home",
+   "season": "2021/22",
+   "type": "home",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_4.html",
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "black",
+     "blue",
+     "gold"
+    ],
+    "hex": {
+     "black": "#333333",
+     "blue": "#3469b3",
+     "gold": "#c9a227"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Joma",
+   "sponsor": "Plus500",
+   "shortsSponsor": null,
+   "sources": [
+    "at-k-fka-2021-22-home"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-kit-2021-22-third",
+   "season": "2021/22",
+   "type": "third",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_4.html",
+   "shirt": {
+    "design": "graphic",
+    "colours": [
+     "coral",
+     "blue"
+    ],
+    "hex": {
+     "coral": "#d5524e",
+     "blue": "#1f4ea8"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Joma",
+   "sponsor": "Plus500",
+   "shortsSponsor": null,
+   "sources": [
+    "at-k-fka-2021-22-third",
+    "at-kc-cof-p4"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-kit-2022-23-away",
+   "season": "2022/23",
+   "type": "away",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_4.html",
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "white",
+     "black",
+     "blue"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "black": "#111111",
+     "blue": "#1f4ea8"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Joma",
+   "sponsor": "Plus500",
+   "shortsSponsor": null,
+   "sources": [
+    "at-k-club-2022-23-home-away",
+    "at-k-fka-index"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-kit-2022-23-home",
+   "season": "2022/23",
+   "type": "home",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_4.html",
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "black",
+     "blue"
+    ],
+    "hex": {
+     "black": "#2e2e2f",
+     "blue": "#3c6ab3"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Joma",
+   "sponsor": "Plus500",
+   "shortsSponsor": null,
+   "sources": [
+    "at-k-club-2022-23-home-away",
+    "at-k-fka-index"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-kit-2023-24-away",
+   "season": "2023/24",
+   "type": "away",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_4.html",
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "white",
+     "black",
+     "blue"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "black": "#111111",
+     "blue": "#0a3391"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Joma",
+   "sponsor": "Paramount+",
+   "shortsSponsor": null,
+   "sources": [
+    "at-k-fh-2023-24-home-away",
+    "at-k-fka-index"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-kit-2023-24-home",
+   "season": "2023/24",
+   "type": "home",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_4.html",
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "black",
+     "blue"
+    ],
+    "hex": {
+     "black": "#05143c",
+     "blue": "#0a39aa"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Joma",
+   "sponsor": "Paramount+",
+   "shortsSponsor": null,
+   "sources": [
+    "at-k-fh-2023-24-home-away",
+    "at-k-fka-index"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-kit-2024-25-away",
+   "season": "2024/25",
+   "type": "away",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_4.html",
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "white",
+     "black",
+     "blue"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "black": "#111111",
+     "blue": "#1f4ea8"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Joma",
+   "sponsor": "Lete",
+   "shortsSponsor": null,
+   "sources": [
+    "at-k-club-2024-25-home-away",
+    "at-k-fka-index"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-kit-2024-25-home",
+   "season": "2024/25",
+   "type": "home",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_4.html",
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "black",
+     "blue"
+    ],
+    "hex": {
+     "black": "#161616",
+     "blue": "#194baa"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "Joma",
+   "sponsor": "Lete",
+   "shortsSponsor": null,
+   "sources": [
+    "at-k-fka-2024-25-home",
+    "at-k-club-2024-25-home-away"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-kit-2025-26-away",
+   "season": "2025/26",
+   "type": "away",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_4.html",
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "white",
+     "gold"
+    ],
+    "hex": {
+     "white": "#f0eee1",
+     "gold": "#c9a227"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "New Balance",
+   "sponsor": "Lete",
+   "shortsSponsor": null,
+   "sources": [
+    "at-k-club-2025-26-away",
+    "at-k-fka-index"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-kit-2025-26-third",
+   "season": "2025/26",
+   "type": "third",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_4.html",
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "orange",
+     "black",
+     "blue"
+    ],
+    "hex": {
+     "orange": "#fe8530",
+     "black": "#2f2326",
+     "blue": "#1f4ea8"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "New Balance",
+   "sponsor": "Lete",
+   "shortsSponsor": null,
+   "sources": [
+    "at-k-fka-2025-26-third"
+   ],
+   "readUnsure": true,
+   "crestOmitted": false
+  },
+  {
+   "id": "at-kit-2026-27-away",
+   "season": "2026/27",
+   "type": "away",
+   "kind": "season",
+   "origin": "measured-reference",
+   "euro": false,
+   "sourceTitle": "Colours of Football · Atalanta kit reference",
+   "sourceUrl": "https://www.colours-of-football.com/colours03/ita/atalanta/atalanta_4.html",
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "white",
+     "blue"
+    ],
+    "hex": {
+     "white": "#ffffff",
+     "blue": "#1f4ea8"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "New Balance",
+   "sponsor": "Lete",
+   "shortsSponsor": null,
+   "sources": [
+    "at-k-fka-2026-27-away"
+   ],
+   "readUnsure": true,
+   "crestOmitted": true
+  },
+  {
+   "id": "at-kit-2026-27-third",
+   "season": "2026/27",
+   "type": "third",
+   "kind": "season",
+   "origin": "documented-reference",
+   "euro": false,
+   "sourceTitle": "Atalanta Store · 2026/27 third kit",
+   "sourceUrl": "https://store.atalanta.it/us/atalanta-third-jersey-2026-27",
+   "shirt": {
+    "design": "plain",
+    "colours": [
+     "gold",
+     "black",
+     "skyblue"
+    ],
+    "hex": {
+     "gold": "#c9a227",
+     "black": "#111111",
+     "skyblue": "#6cace4"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true
+    }
+   },
+   "maker": "New Balance",
+   "sponsor": "Lete",
+   "shortsSponsor": null,
+   "sources": [
+    "at-k-fka-2026-27-third"
+   ],
+   "readUnsure": true,
+   "crestOmitted": true
+  },
+  {
+   "id": "at-kit-dublin-2024-final",
+   "season": "2023/24",
+   "type": "special",
+   "kind": "season",
+   "origin": "documented-reference",
+   "euro": false,
+   "sourceTitle": "Atalanta kit reference",
+   "sourceUrl": "https://www.atalanta.it/news/atalanta-leverkusen-una-maglia-storica-da-collezione",
+   "shirt": {
+    "design": "stripes",
+    "colours": [
+     "blue",
+     "black"
+    ],
+    "hex": {
+     "blue": "#1f4ea8",
+     "black": "#111111"
+    },
+    "measured": {},
+    "artwork": {
+     "omitUnmeasuredGraphics": true,
+     "poloCollar": true,
+     "collarInk": "#121212"
+    }
+   },
+   "maker": "Joma",
+   "sponsor": "Paramount+",
+   "shortsSponsor": null,
+   "sources": [
+    "at-kit-final-official",
+    "at-kit-final-design"
+   ],
+   "readUnsure": true,
+   "crestOmitted": true
+  }
+ ]
+}

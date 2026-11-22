@@ -25,8 +25,10 @@ import {correctPack,correctMatches} from './corrections'
 import {withCareers,withSeasonHistory} from './careers'
 import {hapoelFrontArchive} from './kit-fronts'
 import {withDailyWave} from './daily-wave'
+import atalantaKitArchive from '@/club-packs/atalanta/wave-kit-archive-2026-11-22.json'
 export const compilePackEuro=(pack:Record<string,unknown>,club:RegistryClub,additionalHistory?:unknown)=>{
- const history=withHistorical(pack,club.id,additionalHistory),night=oneNightPerMatch(withCareers(correctPack(withSeasonHistory(withGoalWave(withEuro(history.pack,club.id),club.id),club.id),club.id),club.id)),result=compilePackBase(withDocumentedMatchDetails(night.pack,additionalHistory) as never,club)
+ const equipped=club.id==='atalanta'?mergeWave(pack,atalantaKitArchive):pack
+ const history=withHistorical(equipped,club.id,additionalHistory),night=oneNightPerMatch(withCareers(correctPack(withSeasonHistory(withGoalWave(withEuro(history.pack,club.id),club.id),club.id),club.id),club.id)),result=compilePackBase(withDocumentedMatchDetails(night.pack,additionalHistory) as never,club)
  return {...result,diagnostics:[...result.diagnostics,...night.folded.map(f=>({record:`${club.id}:${f.kept}`,code:'SAME_MATCH_FOLDED',message:`${f.on}: ${f.folded.join(', ')} folded into ${f.kept} (same day, same score).`})),...history.conflicts.map(c=>({record:`${club.id}:${c.incoming}`,code:'HISTORY_CONFLICT',message:`${c.reason}: ${c.on}; existing ${c.existing}. Incoming result withheld from matches and timeline.`}))]}
 }
 /** Existing archives only. New facts stay in review; prior approvals remain authoritative. */

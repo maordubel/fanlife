@@ -13,6 +13,7 @@
  */
 import {readFileSync,writeFileSync,existsSync,mkdirSync} from 'node:fs'
 import {execFileSync} from 'node:child_process'
+import sharp from 'sharp'
 process.env.FANLIFE_PRECOMPILED='off'
 const arg=(k:string)=>{const i=process.argv.indexOf('--'+k);return i<0?null:process.argv[i+1]??null}
 /** the colour words the records use → the ink they are drawn in (shades of the magazine's own palette where one exists) */
@@ -43,6 +44,7 @@ const real=(v:unknown)=>typeof v==='string'&&v.trim()&&!/^(-|none|unbranded|unkn
 
 async function main(){
  const {loadClub,CORE_CLUB_IDS}=await import('@/lib/clubs/resolver')
+ const {kitViews}=await import('@/lib/clubs/gate-content')
  const only=arg('club'),out:Record<string,{drawn:number;fromArchive:number;fromPack:number;noColour:number}>={}
  mkdirSync('content/generated/kit-svgs',{recursive:true})
  for(const club of CORE_CLUB_IDS){
@@ -51,6 +53,8 @@ async function main(){
   // the archive file: kit-archive-<club>.json, or AEK's own kit-<club>.json (same shape)
   const archivePath=[`content/manual/kit-archive-${club}.json`,`content/manual/kit-${club}.json`].find(p=>existsSync(p))??''
   const archive=existsSync(archivePath)?JSON.parse(readFileSync(archivePath,'utf8')) as {kits:Record<string,unknown>[]}:{kits:[]}
+  const visibleIds=club==='atalanta'?new Set(kitViews(data).map(k=>k.id)):null
+  if(visibleIds)archive.kits=archive.kits.filter(k=>visibleIds.has(`${club}:${k.id}`))
   const have=new Set(archive.kits.map(k=>`${k.season}|${k.type}`))
   // a pack record that carries an archive kit's own id is that same shirt under another label (e.g. 'home 2'): one id, one drawing (17.11.2026)
   const ids=new Set(archive.kits.map(k=>String(k.id)))
@@ -58,27 +62,39 @@ async function main(){
   let fromPack=0,noColour=0
   for(const f of (data.kits||[])){
    if(f.status!=='approved')continue
+   if(visibleIds&&!visibleIds.has(f.id))continue
    const v=f.value as unknown as Record<string,any>,season=String(v.season||''),type=String(v.type||'home')
-   if(!season||have.has(`${season}|${type}`)||ids.has(String(f.id).split(':').pop()!.replace(/[^a-z0-9_-]/gi,'-')))continue
+   if(!season||(!visibleIds&&have.has(`${season}|${type}`))||ids.has(String(f.id).split(':').pop()!.replace(/[^a-z0-9_-]/gi,'-')))continue
    const cols=words(v.construction?.colors??v.colours??v.shirt?.colours)
    if(!cols.length){noColour++;continue}
    have.add(`${season}|${type}`)
    const sh=v.shorts&&words(v.shorts.colour)[0],so=v.socks&&words(v.socks.colour)[0]
    kits.push({id:String(f.id).split(':').pop()!.replace(/[^a-z0-9_-]/gi,'-'),origin:'pack',season,kind:'season',type,euro:false,
-    shirt:{design:design(v.construction?.design),colours:cols,hex:Object.fromEntries(cols.map(c=>[c,INK[c]!])),measured:{}},
+    shirt:{design:design(v.construction?.design),colours:cols,hex:Object.fromEntries(cols.map(c=>[c,INK[c]!])),measured:{},...(visibleIds?{artwork:{omitUnmeasuredGraphics:true}}:{})},
     ...(sh?{shorts:{colour:sh,hex:INK[sh],trim:null,trimHex:null}}:{}),...(so?{socks:{colour:so,hex:INK[so],trim:null,trimHex:null,bands:false}}:{}),
-    maker:real(v.manufacturer??v.maker),sponsor:real(v.sponsor),shortsSponsor:null,sources:f.sources,readUnsure:false})
+    maker:real(v.manufacturer??v.maker),sponsor:real(v.sponsor),shortsSponsor:null,sources:f.sources,readUnsure:!!visibleIds,
+    ...(visibleIds?{crestOmitted:season<'1993/94'||season>='2026/27'||!['home','away','third'].includes(type.toLowerCase())}:{})})
    fromPack++
   }
   // the owner's own corrections win over every other source (rule 18), field by field
   const fixes=(JSON.parse(readFileSync('content/manual/kit-owner-corrections.json','utf8')) as Record<string,Record<string,Record<string,unknown>>>)[club]??{}
   for(const k of kits){const fx=fixes[String(k.id)];if(fx)Object.assign(k,fx,{ownerCorrected:true})}
+  if(visibleIds&&kits.length!==visibleIds.size)throw new Error(`${club}: ${visibleIds.size-kits.length} visible kits need documented artwork`)
   const file=`content/generated/kit-svgs/${club}.json`
   writeFileSync(file,JSON.stringify({club,kits})+'\n')
   execFileSync('node',['scripts/kits/export-kit-svgs.mjs',club,file],{stdio:'inherit'})
+  if(visibleIds){
+   execFileSync('node',['scripts/kits/export-kit-icons.mjs',club,file],{stdio:'inherit'})
+   const root=`public/club-kits/${club}`
+   mkdirSync(`${root}/previews`,{recursive:true})
+   for(const kit of kits){
+    await sharp(`${root}/svg/${kit.id}.svg`).resize(360,400,{fit:'inside'}).webp({quality:88}).toFile(`${root}/previews/${kit.id}.webp`)
+   }
+  }
   out[club]={drawn:kits.length,fromArchive:archive.kits.length,fromPack,noColour}
   console.log(`[${club}] ${kits.length} drawings (${archive.kits.length} archive + ${fromPack} pack); ${noColour} approved kits name no colour and are not drawn`)
  }
- writeFileSync('content/generated/kit-svgs/summary.json',JSON.stringify(out,null,1)+'\n')
+ const summary='content/generated/kit-svgs/summary.json'
+ writeFileSync(summary,JSON.stringify(only&&existsSync(summary)?{...JSON.parse(readFileSync(summary,'utf8')),...out}:out,null,1)+'\n')
 }
 main().catch(e=>{console.error(e);process.exit(1)})

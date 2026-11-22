@@ -19,9 +19,10 @@ const eraCrest=p=>{if(!p)return null;const f=[`public/club-kits/${club}/crests/$
 for(const k of data.kits){
   const label=`${club} ${k.type} ${k.season}`,attr=(n,v)=>v==null||v===''?'':` data-${n}="${String(v).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}"`
   // every drawing is tagged with its club, season, type, maker, sponsor and where it was read from, so a file can be found and filtered without the data
-  const tags=attr('club',club)+attr('kit',k.id)+attr('season',k.season)+attr('type',k.type)+attr('maker',k.maker)+attr('sponsor',k.sponsor)+attr('origin',k.origin)+attr('read-unsure',k.readUnsure?'true':'false')
-  const svg=kitSVG({...k,crest:era?eraCrest(era[`${k.season}|${k.type}`]):crest},label).replace('<svg ','<svg xmlns:xlink="http://www.w3.org/1999/xlink"'+tags+' ').replace(/(<svg [^>]*>)/,`$1<title>${label.replace(/[&<>]/g,'')}${k.sponsor?' · '+String(k.sponsor).replace(/[&<>]/g,''):''}</title>`)
-  index.push({id:k.id,season:k.season,type:k.type,maker:k.maker??null,sponsor:k.sponsor??null,origin:k.origin,readUnsure:!!k.readUnsure,crest:!!(era?eraCrest(era[`${k.season}|${k.type}`]):crest)})
+  const tags=attr('club',club)+attr('kit',k.id)+attr('season',k.season)+attr('type',k.type)+attr('maker',k.maker)+attr('sponsor',k.sponsor)+attr('origin',k.origin)+attr('read-unsure',k.readUnsure?'true':'false')+attr('reference',k.sourceUrl)
+  const shirtCrest=k.crestOmitted?null:era?eraCrest(era[`${k.season}|${k.type}`]):crest
+  const svg=kitSVG({...k,crest:shirtCrest},label).replace('<svg ','<svg xmlns:xlink="http://www.w3.org/1999/xlink"'+tags+' ').replace(/(<svg [^>]*>)/,`$1<title>${label.replace(/[&<>]/g,'')}${k.sponsor?' · '+String(k.sponsor).replace(/[&<>]/g,''):''}</title>`)
+  index.push({id:k.id,season:k.season,type:k.type,maker:k.maker??null,sponsor:k.sponsor??null,origin:k.origin,readUnsure:!!k.readUnsure,crest:!!shirtCrest,...(k.sourceUrl?{reference:k.sourceUrl}:{})})
   writeFileSync(`public/club-kits/${club}/svg/${k.id}.svg`,svg);n++
 }
 writeFileSync(`public/club-kits/${club}/svg/index.json`,JSON.stringify({club,count:n,kits:index})+'\n')

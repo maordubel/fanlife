@@ -4,5 +4,11 @@
   "fromArchive": 39,
   "fromPack": 64,
   "noColour": 4
+ },
+ "atalanta": {
+  "drawn": 176,
+  "fromArchive": 62,
+  "fromPack": 114,
+  "noColour": 0
  }
 }

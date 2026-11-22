@@ -21,6 +21,11 @@ describe('kit artwork identity',()=>{
   expect(matchKitArt(rows,'x','unknown','2013/14','home')?.id).toBe('league')
   expect(matchKitArt(rows,'x','unknown','2012/13','home')).toBeNull()
  })
+ it('requires an exact Atalanta kit or a folded alias, even for an otherwise unique season and type',()=>{
+  const rows=[row('league')]
+  expect(matchKitArt(rows,'atalanta','missing','2013/14','home')).toBeNull()
+  expect(matchKitArt(rows,'atalanta','other','2013/14','home',['atalanta:league'])?.id).toBe('league')
+ })
 })
 it('keeps goalkeeper and fourth shirts distinct from home when matching images or collection identities',()=>{
  expect(kitTypeKey('goalkeeper')).toBe('gk')
