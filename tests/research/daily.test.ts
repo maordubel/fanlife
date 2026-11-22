@@ -8,6 +8,7 @@ import {compilePack} from '@/lib/clubs/compiler'
 import {integrateDailyWave} from '@/lib/clubs/daily-wave'
 import {kitViews,lineupMatches} from '@/lib/clubs/gate-content'
 import {fromWikiSeason} from '@/lib/research/daily-wiki-season'
+import {readOpenFootball} from '@/lib/research/openfootball'
 import {olderResultPage} from '../../scripts/ingest/clubs/league-lineups'
 
 const day='2026-11-22',club=REGISTRY.find(c=>c.id==='atalanta')!,clubNames=[club.name,'Atalanta BC']
@@ -135,5 +136,11 @@ describe('evidence and live product integration',()=>{
   expect(fromScoreFeed({sources:[{...row,access:'blocked'}],matches:[fact]},day,clubNames)).toEqual([])
   expect(olderResultPage('/web/games/results/?start=20')).toBe('https://webws.365scores.com/web/games/results/?start=20')
   expect(olderResultPage('//unrelated.example/web/games/results/')).toBeNull()
+ })
+ it('imports only finished league results for the named senior club and the cited season',()=>{
+  const fixture={date:'2025-08-24',team1:'Atalanta BC',team2:'Pisa',score:{ft:[1,1]}}
+  const rows=readOpenFootball({matches:[fixture,{...fixture,date:'2024-08-24'},{...fixture,team1:'Atalanta U23'},{...fixture,score:{ht:[1,0]}},{...fixture,team1:'Napoli'}]},'it.1','2025/26',clubNames,day,source)
+  expect(rows).toHaveLength(1)
+  expect(rows[0]?.fact.value).toMatchObject({home:'Atalanta',away:'Pisa',on:'2025-08-24',season:'2025/26',competition:'Serie A',score:'1-1'})
  })
 })

@@ -28,7 +28,8 @@ async function run(){
  const select=process.argv.indexOf('--club'),only=select>=0?process.argv[select+1]:null
  if(select>=0&&!REGISTRY.some(c=>c.id===only))throw new Error('Unknown club')
  const previous=JSON.parse(readFileSync(path.join(ROOT,OUT),'utf8')) as {clubs:string[];stints:Stint[]}
- const clubs=only?[only]:[...new Set([...CORE_CLUB_IDS,...previous.clubs])],stints=previous.stints.filter(s=>!clubs.includes(s.club))
+ const clubs=only?[only]:process.argv.includes('--all')?REGISTRY.map(c=>c.id):[...new Set([...CORE_CLUB_IDS,...previous.clubs])]
+ const stints=previous.stints.filter(s=>!clubs.includes(s.club))
  const processed:string[]=[]
  for(const club of clubs){
   const loaded=await loadClub(club)

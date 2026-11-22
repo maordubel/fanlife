@@ -131,9 +131,8 @@ async function rebalance(){
   console.log(id,'rebalanced, moved',moved)}
  writeFileSync(FILE,JSON.stringify(doc,null,1)+'\n')
 }
-async function main(){
- if(cmd==='daily'){
-  const id=process.argv[3],current=id?doc.clubs[id]:undefined
+async function priceNew(id:string|undefined){
+  const current=id?doc.clubs[id]:undefined
   if(!id||!current){console.log('No published price list for this club');return}
   const loaded=await loadClub(id);if(!loaded)throw new Error('Club could not be loaded for pricing')
   const pool=rawPool(loaded.data,{extra:extraPositions(id)}),eligible=new Set(pool.map(p=>p.id))
@@ -152,8 +151,20 @@ async function main(){
   }
   if(next!==added.length)throw new Error('Some new cards were not priced')
   Object.assign(current,{quota:counts,quotaMode:mode,size:Object.keys(current.players).length})
-  writeFileSync(FILE,JSON.stringify(doc,null,1)+'\n')
   console.log(id,'new cards priced',next)
+  return true
+}
+async function main(){
+ if(cmd==='daily'){
+  const id=process.argv[3]
+  let changed=false
+  if(id==='--all'){
+   for(const club of Object.keys(doc.clubs)){
+    try{if(await priceNew(club))changed=true}
+    catch(e){console.warn(`::warning::${club} player pricing: ${(e instanceof Error?e.message:String(e)).replace(/[\r\n]+/g,' ')}`)}
+   }
+  }else changed=!!(await priceNew(id))
+  if(changed)writeFileSync(FILE,JSON.stringify(doc,null,1)+'\n')
   return
  }
  if(cmd==='rebalance')await rebalance()

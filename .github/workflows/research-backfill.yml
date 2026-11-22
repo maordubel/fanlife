@@ -1,0 +1,173 @@
+name: Research · archive backfill
+on:
+  workflow_dispatch:
+    inputs:
+      clubs:
+        description: 'Optional comma-separated club IDs. Leave blank to research the entire registry.'
+        type: string
+      league_depth:
+        description: 'Historical fixtures per club to inspect'
+        type: number
+        default: 90
+permissions: {}
+concurrency:
+  group: fanlife-research-writes
+  cancel-in-progress: false
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      matrix: ${{ steps.clubs.outputs.matrix }}
+      base: ${{ steps.clubs.outputs.base }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          ref: ${{ github.ref_name }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Choose clubs
+        id: clubs
+        env:
+          REQUESTED: ${{ inputs.clubs }}
+        run: |
+          echo "base=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          node --disable-warning=ExperimentalWarning --experimental-strip-types --input-type=module <<'JS' >> "$GITHUB_OUTPUT"
+          import { REGISTRY } from './lib/master/registry.ts'
+          const all = REGISTRY.map(c => c.id)
+          const wanted = process.env.REQUESTED.trim() ? [...new Set(process.env.REQUESTED.split(',').map(x => x.trim()))] : all
+          if (!wanted.length || wanted.some(id => !all.includes(id))) throw new Error('Unknown club in the requested list')
+          console.log('matrix=' + JSON.stringify(wanted))
+          JS
+  collect:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 38
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        club: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          ref: ${{ needs.plan.outputs.base }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Load control-room source profiles
+        env:
+          SITE: ${{ vars.FAN_LIFE_RESEARCH_URL }}
+          SCHEDULER_KEY: ${{ secrets.FAN_LIFE_CRON_SECRET }}
+          CLUB: ${{ matrix.club }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/research-overlays"
+          echo "RESEARCH_OVERLAY_DIR=$RUNNER_TEMP/research-overlays" >> "$GITHUB_ENV"
+          if [[ "$SITE" != https://* || -z "$SCHEDULER_KEY" ]]; then exit 0; fi
+          if curl --fail --silent --show-error --max-time 20 --header "Authorization: Bearer $SCHEDULER_KEY" "${SITE%/}/api/master/research/profiles-export" --output "$RUNNER_TEMP/research-profiles.json"; then
+            node -e 'const fs=require("node:fs");const p=JSON.parse(fs.readFileSync(process.env.RUNNER_TEMP+"/research-profiles.json","utf8")).profiles?.[process.env.CLUB];if(p)fs.writeFileSync(process.env.RUNNER_TEMP+"/research-overlays/"+process.env.CLUB+".json",JSON.stringify(p))'
+          fi
+      - name: Research the selected club
+        env:
+          CLUB: ${{ matrix.club }}
+          LEAGUE_DEPTH: ${{ inputs.league_depth }}
+          RESEARCH_DATA_DIR: research-data
+          THESPORTSDB_KEY: ${{ secrets.THESPORTSDB_KEY }}
+        run: node --require ./scripts/master/server-only.cjs --import tsx scripts/research/daily.ts --club "$CLUB" --league-depth "$LEAGUE_DEPTH" --backfill --collect-only
+      - name: Package only this club's verified changes
+        env:
+          CLUB: ${{ matrix.club }}
+        run: |
+          git add -A -- research-data
+          for dir in "club-packs/$CLUB" "research-staging/$CLUB"; do
+            if [[ -d "$dir" ]]; then git add -A -- "$dir"; fi
+          done
+          git diff --cached --check
+          git diff --cached --binary --full-index > "$RUNNER_TEMP/$CLUB.patch"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: archive-backfill-${{ matrix.club }}
+          path: ${{ runner.temp }}/${{ matrix.club }}.patch
+          if-no-files-found: error
+          retention-days: 7
+  publish:
+    needs: [plan, collect]
+    if: always() && !cancelled() && needs.plan.result == 'success' && github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    permissions:
+      contents: write
+      actions: write
+    env:
+      FANLIFE_PRECOMPILED: 'off'
+      NODE_OPTIONS: --max-old-space-size=6144
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ needs.plan.outputs.base }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: archive-backfill-*
+          path: ${{ runner.temp }}/archive-backfill
+          merge-multiple: true
+      - name: Combine results
+        env:
+          EXPECTED: ${{ needs.plan.outputs.matrix }}
+        run: |
+          work="$RUNNER_TEMP/archive-backfill"
+          applied=0
+          for club in $(jq -r '.[]' <<< "$EXPECTED"); do
+            patch="$work/$club.patch"
+            if [[ ! -s "$patch" ]]; then
+              echo "::warning::$club did not return a verified patch"
+              continue
+            fi
+            git apply --index "$patch"
+            applied=$((applied + 1))
+          done
+          if [[ "$applied" == 0 ]]; then exit 1; fi
+          echo "Verified club patches: $applied / $(jq length <<< "$EXPECTED")" >> "$GITHUB_STEP_SUMMARY"
+      - run: npm ci --no-audit --no-fund
+      - name: Connect matchups and player IDs to the archives
+        run: |
+          node --require ./scripts/master/server-only.cjs --import tsx scripts/people/build.ts --all
+          node --require ./scripts/master/server-only.cjs --import tsx scripts/rumble/build-prices-v3.ts daily --all
+          npm run h2h:build
+          npm run research:census -- --out "$RUNNER_TEMP/archive-census.json"
+      - name: Validate data and links
+        run: |
+          npm run repo:hygiene
+          npx vitest run tests/research/daily.test.ts tests/research/archive-readers.test.ts tests/people/registry.test.ts --testTimeout=120000
+      - uses: actions/upload-artifact@v4
+        with:
+          name: archive-census
+          path: ${{ runner.temp }}/archive-census.json
+          if-no-files-found: error
+      - name: Publish verified archives and deploy
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          git config user.name fanlife-research-bot
+          git config user.email actions@users.noreply.github.com
+          git add -- content/generated/people-stints.json content/manual/people-ids.json content/generated/rumble-prices-v3.json content/generated/head-to-head.json
+          git diff --cached --check
+          git diff --cached --quiet && exit 0
+          git commit -m 'Backfill verified club archives'
+          git fetch origin "$DEFAULT_BRANCH"
+          git rebase "origin/$DEFAULT_BRANCH"
+          git push origin "HEAD:refs/heads/$DEFAULT_BRANCH"
+          gh workflow run deploy-cloudrun.yml --ref "$DEFAULT_BRANCH"

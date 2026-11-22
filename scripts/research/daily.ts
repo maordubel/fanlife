@@ -12,6 +12,7 @@ import {nextResearchTurn,researchDay,type ResearchTurn} from '@/lib/research/dai
 import {blankWave,dailyFact,dailyFetch,dailySource,KIT_PAGES,kitRecords,readBiography,wikiCategory,wikiTitle} from '@/lib/research/daily-evidence'
 import {extendDailyWave,fromArchive,fromScoreFeed,OBJECT,type Addition} from '@/lib/research/daily-project'
 import {fromWikiSeason} from '@/lib/research/daily-wiki-season'
+import {openFootball} from '@/lib/research/openfootball'
 
 type Cursor={pending:string[];continuation:string|null;complete:boolean}
 type SavedTurn=ResearchTurn&{runUrl?:string}
@@ -22,6 +23,7 @@ const server=['--require','./scripts/master/server-only.cjs','--import','tsx']
 const wikiOrigin='https://en.wikipedia.org'
 const emptyCursor:Cursor={pending:[],continuation:null,complete:false}
 const depth=Number(option('--league-depth')||30)
+const collectOnly=argv.includes('--collect-only'),backfill=argv.includes('--backfill')
 
 type WikiPage={title:string;source:string;latest:{id:number};content_model:string}
 async function wikiPage(title:string):Promise<WikiPage|null>{
@@ -53,7 +55,7 @@ async function roster(clubId:string,clubNames:string[],day:string):Promise<Addit
   cursor={pending:list.members,continuation:list.next,complete:false}
   if(!cursor.pending.length)throw new Error('No player article was returned for the club category')
  }
- const selected=cursor.pending.slice(0,12)
+ const selected=cursor.pending.slice(0,backfill?36:12)
  const pending=cursor.pending.slice(selected.length)
  const out:Addition[]=[]
  for(const article of selected){
@@ -94,7 +96,8 @@ async function seasons(clubId:string,clubNames:string[],day:string):Promise<Addi
  const file=join('research-data','daily-season-cursors',clubId+'.json')
  const cursor=await readJson(file,{nextYear:current-1})
  const next=cursor.nextYear<1888?current-1:Math.min(cursor.nextYear,current-1)
- const expected=new Map([current,next,next-1,next-2].filter(y=>y>=1888).map(y=>{
+ const span=backfill?10:3
+ const expected=new Map([current,...Array.from({length:span},(_,i)=>next-i)].filter(y=>y>=1888).map(y=>{
   const season=`${y}/${String(y+1).slice(-2)}`
   return [`${season.replace('/','–')} ${title} season`,season]
  }))
@@ -105,7 +108,7 @@ async function seasons(clubId:string,clubNames:string[],day:string):Promise<Addi
   const url=new URL('/w/index.php',wikiOrigin);url.searchParams.set('oldid',String(page.latest.id))
   out.push(...fromWikiSeason(page.source,season,clubNames,dailySource(url.href,page.title,'English Wikipedia',day)))
  }
- await writeJson(file,{nextYear:next-3})
+ await writeJson(file,{nextYear:next-span})
  return out
 }
 
@@ -118,6 +121,7 @@ async function main(){
  const chosen=option('--club'),daily=nextResearchTurn(researchDay(),previous)
  const club=REGISTRY.find(c=>c.id===(chosen||daily.clubId))
  if(!club)throw new Error('Unknown club')
+ if(collectOnly&&!chosen)throw new Error('Collection-only runs require an explicit club')
  if(!Number.isInteger(depth)||depth<1||depth>150)throw new Error('League depth must be between 1 and 150')
  const day=daily.day
  const out=process.env.GITHUB_OUTPUT
@@ -141,7 +145,7 @@ async function main(){
  const profile=await loadClubProfile(club.id),additions:Addition[]=[]
  if(profile?.archive.length){
   await attempt('Historical archives',async()=>{
-   const made=await collectClub(club.id,{maxRequests:22})
+   const made=await collectClub(club.id,{maxRequests:backfill?40:22})
    return `${made.run.counts.documentsRead} pages read, ${made.run.counts.recordsExtracted} observations, ${made.run.counts.blockedEndpoints} refused`
   })
   const observations=activeObservations(await readObservations(club.id))
@@ -171,15 +175,24 @@ async function main(){
   return `${found.filter(f=>f.section==='seasons').length} checked seasons and ${found.filter(f=>f.section==='matches').length} dated results`
  })
  await attempt('Kit archive',async()=>{const found=await shirts(club.id,names,day);additions.push(...found);return `${found.length} documented kit references`})
+ if(backfill)await attempt('Open league season datasets',async()=>{
+  const found=await openFootball(club.id,names,day)
+  if(!found)return 'No league in this source is mapped to this club'
+  additions.push(...found.result)
+  if('stopped' in found)throw new Error(`${found.result.length} checked fixtures retained. ${found.stopped}`)
+  return `${found.result.length} dated results across ${found.files} competition files; ${found.unavailable} historical files unavailable`
+ })
  const old=readDailyWave(club.id)||blankWave(club.id),update=extendDailyWave(old,additions)
  if(update.wave.sources.length&&JSON.stringify(update.wave)!==JSON.stringify(old))await writeJson(dailyWavePath(club.id),update.wave)
- child('scripts/people/build.ts',['--club',club.id],300_000)
- await attempt('Prices for newly eligible cards',()=>{child('scripts/rumble/build-prices-v3.ts',['daily',club.id],300_000);return 'Existing prices preserved'})
+ if(!collectOnly){
+  child('scripts/people/build.ts',['--club',club.id],300_000)
+  await attempt('Prices for newly eligible cards',()=>{child('scripts/rumble/build-prices-v3.ts',['daily',club.id],300_000);return 'Existing prices preserved'})
+ }
  const {loadClub}=await import('@/lib/clubs/resolver')
  const result=await loadClub(club.id)
  if(update.wave.sources.length&&!result)throw new Error('The club cannot read its published research wave')
  if(result?.diagnostics.some(d=>d.record.includes('daily-')&&['ENTITY_INELIGIBLE','SOURCE_INVALID','SOURCE_MISSING','HUMAN_REVIEW','FACT_INVALID','PLAYER_INELIGIBLE'].includes(d.code)))throw new Error('The club compiler refused a draft daily record')
- if(update.added.matches)await attempt('Head-to-head ledger',()=>{child('scripts/archive/build-head-to-head.ts',['--club',club.id],360_000);return 'Rebuilt the club fixture ledger'})
+ if(!collectOnly&&update.added.matches)await attempt('Head-to-head ledger',()=>{child('scripts/archive/build-head-to-head.ts',['--club',club.id],360_000);return 'Rebuilt the club fixture ledger'})
  const runUrl=process.env.GITHUB_SERVER_URL&&process.env.GITHUB_REPOSITORY&&process.env.GITHUB_RUN_ID?`${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`:undefined
  const report={day,clubId:club.id,runUrl,added:update.added,heldDays:update.held,steps:reports,dataVersion:result?.data.version??null,
   uncertainties:result?.diagnostics.filter(d=>d.code.startsWith('DAILY_')).slice(0,40)??[],
