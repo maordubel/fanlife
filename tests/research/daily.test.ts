@@ -10,8 +10,19 @@ import {kitViews,lineupMatches} from '@/lib/clubs/gate-content'
 import {fromWikiSeason} from '@/lib/research/daily-wiki-season'
 import {readOpenFootball} from '@/lib/research/openfootball'
 import {withConfirmedRegisters} from '@/lib/clubs/confirmed-registers'
+import {hapoelMatches,sourceAdder} from '@/lib/clubs/feeds/worker-masters'
+import {allMatches} from '@/lib/archive/match-master'
 import {withDocumentedSeasons} from '@/lib/clubs/documented-seasons'
 import {olderResultPage} from '../../scripts/ingest/clubs/league-lineups'
+
+it('joins documented Hapoel scorers to canonical matches and excludes score conflicts',()=>{
+ const matches=new Map(hapoelMatches(sourceAdder(new Map())).map(f=>[f.id,f]))
+ const all=allMatches().filter(m=>matches.has(`hapoel-tel-aviv:match-${m.matchId}`))
+ const checked=all.find(m=>!m.scorersDisputed&&m.scorers.length>0&&m.scorers.length===m.result?.hapoel&&m.scorers.every(s=>s.confidence>=2&&s.nameHe))!
+ const disputed=all.find(m=>m.scorersDisputed)!
+ expect(matches.get(`hapoel-tel-aviv:match-${checked.matchId}`)?.value).toMatchObject({season:checked.season,scorers:expect.arrayContaining([expect.objectContaining({name:expect.any(String)})])})
+ expect(matches.get(`hapoel-tel-aviv:match-${disputed.matchId}`)?.value).not.toHaveProperty('scorers')
+})
 
 const day='2026-11-22',club=REGISTRY.find(c=>c.id==='atalanta')!,clubNames=[club.name,'Atalanta BC']
 const names=Array.from({length:11},(_,i)=>'Player '+(i+1))

@@ -179,7 +179,7 @@ function linkMatches(entries:Entry[],players:Entry[],matches:Matches,seasons:{id
   if(season&&!e.refs.some(ref=>ref.kind==='season'&&ref.id===season.id))e.refs.push({kind:'season',...season})
   const started=new Set<string>(),scored=new Set<string>();let unnamed=0
   for(const x of lineup){const id=who(x,e.year);if(id)started.add(id);else unnamed++}
-  for(const x of scorers){const id=who(x,e.year);if(id)scored.add(id);else if(nameOf(x))unnamed++}
+  for(const x of scorers){if(x&&typeof x==='object'&&'ownGoal' in x&&x.ownGoal===true)continue;const id=who(x,e.year);if(id)scored.add(id);else if(nameOf(x))unnamed++}
   const report=(Array.isArray(v.opponentLineup)&&v.opponentLineup.length>0)||(Array.isArray(v.goalEvents)&&v.goalEvents.length>0)
   e.match={matchId:m.id,competition:typeof v.competition==='string'?v.competition:null,score:typeof v.score==='string'?v.score:null,venue:typeof v.venue==='string'?v.venue:null,started:[...started].sort(),scored:[...scored].sort(),unnamed,...(report?{report:true as const}:{})}
  }

@@ -27,16 +27,22 @@ export function sourceAdder(sources:Map<string,Source>):Add{
 const club=(slug:string|null|undefined)=>(slug||'').replace(/-/g,' ')
 const nameOf=(id:string)=>{const p=playerById(id);return p?printedName(p):null}
 
-/** Every dated football match with a scoreline, plus the documented eleven where the Line-up Master holds one. */
+/** Every dated football match with a scoreline and its documented starters and scorers. */
 export function hapoelMatches(add:Add):Fact<Entity>[]{
  const lineups=new Map(playableLineups().map(r=>[r.matchRef!,r]))
  const archive=add('ויקיפועל · טבלת המשחקים (Games)','https://wiki.red-fans.com/')
+ const scorerSource=add('ויקיפועל · כובשים מתוך טבלת המשחקים','https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games')
  return allMatches().filter(m=>m.sport==='football'&&m.playedOn?.precision==='day'&&m.confidence>=2&&m.score&&Number.isInteger(m.score.home)&&Number.isInteger(m.score.away)).map(m=>{
   const l=lineups.get(m.matchId)
   const starters=l?Object.values(l.xiIds??{}).map(nameOf).filter((n):n is string=>!!n):[]
   const decoys=l?(l.decoys??[]).map(d=>nameOf(d.id)).filter((n):n is string=>!!n):[]
   const refs=l?[add(l.sourceTitle||'ויקיפועל',l.sourceUrl)]:[archive]
-  return fact(`match-${m.matchId}`,{name:l?.titleHe||`${club(m.home)} ${m.score!.home}–${m.score!.away} ${club(m.away)}`,on:m.playedOn!.value,competition:club(m.competition),score:`${m.score!.home}–${m.score!.away}`,home:club(m.home),away:club(m.away),homeGoals:m.score!.home,awayGoals:m.score!.away,us:m.hapoelSide??null,...(starters.length===11?{lineup:starters,decoys}:{})},refs)
+  const scorers=m.scorersDisputed||m.scorers.length!==m.result?.hapoel?[]:m.scorers.flatMap(s=>{
+   const name=(s.playerId&&nameOf(s.playerId))||s.nameHe
+   return !name||s.confidence<2?[]:[{name,playerId:s.playerId,minute:s.minute,stoppage:s.stoppage,penalty:s.penalty,ownGoal:s.ownGoal}]
+  })
+  if(scorers.length)refs.push(scorerSource)
+  return fact(`match-${m.matchId}`,{name:l?.titleHe||`${club(m.home)} ${m.score!.home}–${m.score!.away} ${club(m.away)}`,on:m.playedOn!.value,season:m.season,competition:club(m.competition),score:`${m.score!.home}–${m.score!.away}`,home:club(m.home),away:club(m.away),homeGoals:m.score!.home,awayGoals:m.score!.away,us:m.hapoelSide??null,...(starters.length===11?{lineup:starters,decoys}:{}),...(scorers.length?{scorers}:{})},refs)
  })
 }
 
