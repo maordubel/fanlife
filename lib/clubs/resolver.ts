@@ -42,12 +42,15 @@ const DESK_TTL_MS=60_000
  * A desk player whose exact name the staged squad already holds is not added twice. Publication is untouched: a club still opens only by the owner's click. */
 async function deskProvider(id:string){const reg=REGISTRY.find(c=>c.id===id);if(!reg)return null
  const [pack,staged]=await Promise.all([readDeskPack(id).catch(()=>null),import('@/lib/research/staged/pack').then(s=>s.stagedPack(id)).catch(()=>null)])
- if(!pack&&!staged)return null
+ const {readDailyWave,integrateDailyWave}=await import('./daily-wave')
+ const daily=readDailyWave(id)
+ if(!pack&&!staged&&!daily)return null
  const m=await compilePath()
- let base:Record<string,unknown>=pack as unknown as Record<string,unknown>
+ let base:Record<string,unknown>=pack as unknown as Record<string,unknown>||{schemaVersion:1,clubId:id,contentLocale:'en',sources:[],archive:[]}
  if(staged){const have=new Set(((staged.pack.players as {value:{name:string}}[])||[]).map(p=>p.value.name.normalize('NFKC').toLowerCase()));base=pack?m.mergeWave(staged.pack,{...pack,players:pack.players.filter(p=>!have.has(p.value.name.normalize('NFKC').toLowerCase()))} as never):staged.pack}
  const r=m.compilePackEuro(base,reg),diagnostics=[...r.diagnostics,...(staged?.conflicts||[]).map(c=>{const x=c as {incoming:string;on:string;reason:string;existing:string};return {record:`${id}:${x.incoming}`,code:'HISTORY_CONFLICT',message:`${x.reason}: ${x.on}; existing ${x.existing}. Incoming result withheld from matches and timeline.`}})]
- return {data:m.withMemoryPairs(m.withArchiveMysteries(m.withForgedTrivia(r.data))),diagnostics}}
+ const enriched=integrateDailyWave({data:r.data,diagnostics},reg,daily)
+ return {...enriched,data:m.withMemoryPairs(m.withArchiveMysteries(m.withForgedTrivia(enriched.data)))}}
 /** Static packs are immutable within a deployment; content versions travel with each run. */
 export async function loadClub(id:string):Promise<{data:ClubData;diagnostics:Diagnostic[]}|null> {
  const isStatic=isStaticId(id)

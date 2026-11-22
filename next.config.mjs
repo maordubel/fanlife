@@ -37,7 +37,7 @@ const nextConfig = {
       '/api/insight': EVALUATION_FILES,
       // pre-compiled club packs (lib/clubs/precompiled.ts): every route that may load a club reads them with fs
       // …and a club with no repository pack is compiled from its staged files (lib/research/staged, research desk 10.11.2026)
-      '/**': ['./content/compiled/*.json', './research-staging/*/wave-*.json', './research-staging/*/ingest.json'],
+      '/**': ['./content/compiled/*.json', './research-staging/*/wave-*.json', './research-staging/*/ingest.json', './research-data/daily-waves/*.json'],
       // the studio's catalog of what a film can be about (lib/stories/catalog.ts reads it with fs)
       '/api/master/stories/**': ['./content/generated/stories/*.json', './content/generated/stories-recommended.json', './scripts/football-stories/comic/classified_manifest.json', './scripts/football-stories/comic/episodes/*.json'],
     },

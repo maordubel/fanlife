@@ -132,6 +132,30 @@ async function rebalance(){
  writeFileSync(FILE,JSON.stringify(doc,null,1)+'\n')
 }
 async function main(){
+ if(cmd==='daily'){
+  const id=process.argv[3],current=id?doc.clubs[id]:undefined
+  if(!id||!current){console.log('No published price list for this club');return}
+  const loaded=await loadClub(id);if(!loaded)throw new Error('Club could not be loaded for pricing')
+  const pool=rawPool(loaded.data,{extra:extraPositions(id)}),eligible=new Set(pool.map(p=>p.id))
+  const added=pool.filter(p=>!current.players[p.id]).sort((a,b)=>b.rating-a.rating||(b.reputation??0)-(a.reputation??0)||a.id.localeCompare(b.id))
+  if(!added.length)return
+  if(Object.keys(current.players).some(key=>!eligible.has(key)))throw new Error('Existing price list needs review; daily research cannot remove a priced player')
+  const {counts,mode}=quotaFor(Object.keys(current.players).length+added.length)
+  const tiers=[5,4,3,2,1] as const
+  const needed=tiers.map(price=>counts[price]-Object.values(current.players).filter(p=>p.priceM===price).length)
+  if(needed.some(n=>n<0))throw new Error('Cannot place new cards without repricing existing cards')
+  let next=0
+  for(const [index,price] of tiers.entries())for(let i=0;i<needed[index]!;i++){
+   const p=added[next++]
+   if(!p)throw new Error('Price allocation exceeds the new cards')
+   current.players[p.id]={priceM:price,priceTier:TIER[price],locked:false,assignment:'new-member',rationale:'Daily research added a documented first-team player.',reviewedAt:today}
+  }
+  if(next!==added.length)throw new Error('Some new cards were not priced')
+  Object.assign(current,{quota:counts,quotaMode:mode,size:Object.keys(current.players).length})
+  writeFileSync(FILE,JSON.stringify(doc,null,1)+'\n')
+  console.log(id,'new cards priced',next)
+  return
+ }
  if(cmd==='rebalance')await rebalance()
  if(cmd==='apply-v2')await applyV2()
  if(cmd==='prune')await prune()

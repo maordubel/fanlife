@@ -1,7 +1,9 @@
 import {randomUUID} from 'node:crypto'
+import {join} from 'node:path'
+import {REGISTRY} from '@/lib/master/registry'
 import {loadBundle,loadProfile} from './bundle'
 import {plan} from './planner'
-import {appendRun,readJobs,readRunsFor,upsertJobs} from './store'
+import {appendRun,readJobs,readJson,readRunsFor,upsertJobs} from './store'
 import type {ResearchRun} from './contract'
 import {loadClubProfile,profiledClubs} from './profiles'
 import {archiveStatus,collectArchive} from './archive'
@@ -21,10 +23,12 @@ export async function planClub(clubId:string){
 }
 /** Runs, job states and archive status for the admin; one club or every club with a profile (repository or admin). */
 export async function readRuns(clubId?:string){
- const ids=clubId?[clubId]:await profiledClubs()
- return Promise.all(ids.map(async id=>{const [runs,jobs,profile]=await Promise.all([readRunsFor(id),readJobs(id),loadClubProfile(id)]);const states=jobs.reduce((a:Record<string,number>,j)=>{a[j.state]=(a[j.state]||0)+1;return a},{})
-  return {clubId:id,hasProfile:!!profile,canPlan:!!loadProfile(id)&&!!profile?.sources.length,runs:runs.slice(-10).reverse(),jobs:jobs.length,states,archive:profile?await archiveStatus(id,profile.archive):null,profileOrigin:profile?.origin||null}}))
+ const ids=clubId?[clubId]:[...new Set([...(await profiledClubs()),...REGISTRY.map(c=>c.id)])]
+ return Promise.all(ids.map(async id=>{const [runs,jobs,profile,daily]=await Promise.all([readRunsFor(id),readJobs(id),loadClubProfile(id),readDailyProgress(id)]);const states=jobs.reduce((a:Record<string,number>,j)=>{a[j.state]=(a[j.state]||0)+1;return a},{})
+  return {clubId:id,hasProfile:!!profile,canPlan:!!loadProfile(id)&&!!profile?.sources.length,runs:runs.slice(-10).reverse(),jobs:jobs.length,states,archive:profile?await archiveStatus(id,profile.archive):null,profileOrigin:profile?.origin||null,daily}}))
 }
+export type DailyProgress={day:string;runUrl?:string;added:Record<string,number>;heldDays:string[];steps:{step:string;state:'ok'|'skipped'|'gap';info:string}[]}
+const readDailyProgress=(id:string)=>/^[a-z][a-z0-9-]+$/.test(id)?readJson<DailyProgress|null>(join('research-data','daily-reports',id+'.json'),null):Promise.resolve(null)
 /** One bounded archive pass for a club, then a fresh staging export — what the button and the scheduler both run. */
 export async function collectClub(clubId:string,{providerId,maxRequests=10,fetchImpl,deadline}:{providerId?:string;maxRequests?:number;fetchImpl?:FetchLike;deadline?:number}={}){
  const profile=await loadClubProfile(clubId)

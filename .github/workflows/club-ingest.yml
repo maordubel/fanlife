@@ -1,14 +1,12 @@
 name: club-ingest
 # Click "Run workflow" (Actions tab) to pull a club's matches, scorers and elevens; no terminal needed.
-# Also runs weekly for the clubs below. It opens a pull request — nothing reaches main unreviewed.
+# Manual UEFA backfill. The scheduled UEFA pass is part of research-daily.
 on:
   workflow_dispatch:
     inputs:
       club:
         description: 'Club id (folder under club-packs/ with ingest.json), or "all"'
         default: all
-  schedule:
-    - cron: '17 4 * * 1'
 permissions:
   contents: write
   pull-requests: write

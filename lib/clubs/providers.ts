@@ -24,6 +24,7 @@ import {withDocumentedMatchDetails} from './documented-match-details'
 import {correctPack,correctMatches} from './corrections'
 import {withCareers,withSeasonHistory} from './careers'
 import {hapoelFrontArchive} from './kit-fronts'
+import {withDailyWave} from './daily-wave'
 export const compilePackEuro=(pack:Record<string,unknown>,club:RegistryClub,additionalHistory?:unknown)=>{
  const history=withHistorical(pack,club.id,additionalHistory),night=oneNightPerMatch(withCareers(correctPack(withSeasonHistory(withGoalWave(withEuro(history.pack,club.id),club.id),club.id),club.id),club.id)),result=compilePackBase(withDocumentedMatchDetails(night.pack,additionalHistory) as never,club)
  return {...result,diagnostics:[...result.diagnostics,...night.folded.map(f=>({record:`${club.id}:${f.kept}`,code:'SAME_MATCH_FOLDED',message:`${f.on}: ${f.folded.join(', ')} folded into ${f.kept} (same day, same score).`})),...history.conflicts.map(c=>({record:`${club.id}:${c.incoming}`,code:'HISTORY_CONFLICT',message:`${c.reason}: ${c.on}; existing ${c.existing}. Incoming result withheld from matches and timeline.`}))]}
@@ -67,4 +68,9 @@ export const providers:Record<string,()=>Promise<{data:ClubData;diagnostics:Diag
 }
 /** What `loadClubBase` adds on top of a provider's output: the roster wave, then the forged English trivia. */
 export {withForgedTrivia,withArchiveMysteries,mergeWave,withMemoryPairs}
-export const withBaseWaves=(id:string,r:{data:ClubData;diagnostics:Diagnostic[]})=>({...r,data:withMemoryPairs(withArchiveMysteries(withForgedTrivia(withRosterWave(id,r.data))))})
+export const withBaseWaves=(id:string,r:{data:ClubData;diagnostics:Diagnostic[]})=>{
+ const club=REGISTRY.find(c=>c.id===id)
+ const base={...r,data:withRosterWave(id,r.data)}
+ const enriched=club?withDailyWave(base,club):base
+ return {...enriched,data:withMemoryPairs(withArchiveMysteries(withForgedTrivia(enriched.data)))}
+}

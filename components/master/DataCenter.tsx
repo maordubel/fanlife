@@ -3,13 +3,14 @@ import {useEffect,useState} from 'react'
 import type {ResearchRun,PlanReport,PlanIssue,ArchiveRun} from '@/lib/research/contract'
 import type {ClubSummary} from '@/lib/master/summary'
 import type {useAdminApi} from './adminApi'
+import type {DailyProgress} from '@/lib/research/service'
 import {Pipeline} from './Pipeline'
 
 type Listing={collection:string;state:string;pagesRead:number;observedTotalDocuments:number|null;observedTotalPages:number|null;queue:number|null;lastError:string|null}
 type ReadingProgress={waitingForRead?:number;needsReader?:number;catalogued?:number}
 type SourceRow=ReadingProgress&{providerId:string;publisher:string;reader:string;role:string;origin:string;familyId:string;parser:string|null;plannedParser:string|null;knownLimits:string[];listings:Listing[];documents:number;observations?:number;changed:number;endpoints:{endpoint:string;state:string;status:number;reason:string|null;checkedAt:string}[]}
 type Archive=ReadingProgress&{sources:SourceRow[];documents:number;observations?:number;observationsByType?:Record<string,number>;needsParser:number;lastRun:ArchiveRun|null;runs:ArchiveRun[]}
-export type RunsRow={clubId:string;hasProfile:boolean;canPlan?:boolean;runs:ResearchRun[];jobs:number;states:Record<string,number>;archive?:Archive|null;profileOrigin?:{repo:boolean;admin:boolean}|null}
+export type RunsRow={clubId:string;hasProfile:boolean;canPlan?:boolean;runs:ResearchRun[];jobs:number;states:Record<string,number>;archive?:Archive|null;profileOrigin?:{repo:boolean;admin:boolean}|null;daily?:DailyProgress|null}
 type PlanResult={ok:true;run:ResearchRun;report:PlanReport;issues:PlanIssue[];issueKinds:Record<string,number>}|{ok:false;reason:string}
 const STATE_TEXT:Record<string,string>={planned:'planned',leased:'in progress',fetched:'fetched',parsed:'parsed',unchanged:'unchanged',failed:'retry later',exhausted:'gave up',blocked:'refused by source','needs-adapter':'kept, needs a parser'}
 const LISTING:Record<string,string>={new:'not read yet',running:'reading',partial_budget:'paused at the budget — resumes next run',listed:'listing read to its last page (not a claim of a complete archive)',blocked:'refused — recorded, not bypassed','not-json':'answered with a web page instead of data','schema-changed':'format changed — stopped','retry-later':'temporarily unavailable — retried next run'}
@@ -43,8 +44,13 @@ export function DataCenter({runs,selected,summary,api,onChange}:{runs:RunsRow[];
    <button className="min-h-tap button secondary" disabled={api.busy} onClick={()=>void bringIn()}>Bring into the club file</button>
    <button className="min-h-tap button secondary" disabled={api.busy} onClick={async()=>{const r=await api.post<{steps:{clubId:string;error?:string}[]}>('pipeline/run',{clubId:selected},'Pipeline ran for this club.');if(r){await refresh();const e=r.steps.find(x=>x.error);if(e)api.setError(e.error!)}}}>Run the whole pipeline now</button>
   </div>
-  <p className="muted">Collection also runs on GitHub every Tuesday and Friday, from a network that can reach the sources, and on demand: <a href="https://github.com/maordubel/fanlife/actions/workflows/archive-collect.yml" target="_blank" rel="noreferrer">Archive collect → Run workflow ↗</a>. Its results land in <code>research-data/</code> and show here after the next deploy.</p>
-  {!row?.hasProfile&&<p className="empty">No research profile for this club yet. Add its first source below — the profile is created with it.</p>}
+  <p className="muted">One club runs every day at 05:41 Athens time. <a href="https://github.com/maordubel/fanlife/actions/workflows/research-daily.yml" target="_blank" rel="noreferrer">Daily club research ↗</a></p>
+  {row?.daily&&<details className="spaced"><summary>Latest daily research · <bdi>{row.daily.day}</bdi></summary>
+   <p>{Object.entries(row.daily.added).map(([kind,count])=>`${count} ${kind}`).join(' · ')} · {row.daily.heldDays.length} match dates held for review</p>
+   <ul>{row.daily.steps.map(s=><li key={s.step}><b>{s.step}</b> · {s.state} · {s.info}</li>)}</ul>
+   {row.daily.runUrl&&<a href={row.daily.runUrl} target="_blank" rel="noreferrer">View this run ↗</a>}
+  </details>}
+  {!row?.hasProfile&&<p className="muted">This club uses the shared daily sources. Add an archive website below to extend its research.</p>}
   {arc&&<>
    <p className="muted">{arc.documents} documents kept · {arc.observations||0} candidates extracted{arc.observationsByType&&Object.keys(arc.observationsByType).length?` (${Object.entries(arc.observationsByType).map(([k,n])=>`${n} ${k}`).join(', ')})`:''} · {arc.catalogued??0} reference pages tagged · {arc.waitingForRead??0} queued to read · {arc.needsReader??arc.needsParser} need a reader · last run {arc.lastRun?`${when(arc.lastRun.finishedAt)} UTC · ${LISTING[arc.lastRun.state]||arc.lastRun.state}`:'never'}{row?.profileOrigin?` · profile from ${[row.profileOrigin.repo&&'the repository',row.profileOrigin.admin&&'the control room'].filter(Boolean).join(' + ')}`:''}</p>
    <div className="cr-sources">{arc.sources.map(s=><article key={s.providerId} className="cr-source">

@@ -18,7 +18,7 @@
  *   NODE_USE_ENV_PROXY=1 npx tsx scripts/ingest/clubs/league-lineups.ts --club celtic [--max 40]
  * Both are unofficial public JSON the sites' own pages call; reads are paced and nothing is retried past a refusal (rule 11).
  */
-import {readFileSync,writeFileSync,existsSync} from 'node:fs'
+import {readFileSync,writeFileSync,existsSync,mkdirSync,renameSync} from 'node:fs'
 import {sameClub} from '../../../lib/fixtures/names'
 const arg=(k:string)=>{const i=process.argv.indexOf('--'+k);return i<0?null:process.argv[i+1]??null}
 const sleep=(ms:number)=>new Promise(r=>setTimeout(r,ms))
@@ -27,6 +27,11 @@ const SPELL:Record<string,string>={ø:'o',æ:'ae',œ:'oe',ß:'ss',đ:'d',ł:'l',
 const fold=(s:string)=>s.toLowerCase().replace(/[øæœßđłıþð]/g,c=>SPELL[c]!).normalize('NFD').replace(/\p{M}+/gu,'').replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim()
 type J=Record<string,any>
 const B365='https://webws.365scores.com/web',Q365='appTypeId=5&langId=1&timezoneName=Europe/London&userCountryId=1',LS='https://prod-cdn-public-api.livescore.com/v1/api/app'
+export function olderResultPage(raw:unknown):string|null {
+ if(typeof raw!=='string'||!raw.startsWith('/web/games/results/'))return null
+ const url=new URL(raw,'https://webws.365scores.com')
+ return url.origin==='https://webws.365scores.com'&&url.pathname==='/web/games/results/'?url.href:null
+}
 async function get(url:string):Promise<any>{
  for(let i=0;i<3;i++){
   try{await sleep(160);const r=await fetch(url,{headers:{accept:'application/json','user-agent':'FanLife-ingest/1.0 (+https://github.com/maordubel/fanlife)'}});if(r.status===403||r.status===404)return null;if(r.ok)return await r.json()}catch{}
@@ -79,14 +84,15 @@ async function resolveId(names:string[]):Promise<number|null>{
 
 async function main(){
  const club=arg('club');if(!club)throw new Error('--club required')
- const max=Number(arg('max')||40),cfgPath=`club-packs/${club}/ingest.json`,cfg=JSON.parse(readFileSync(cfgPath,'utf8'))
+ const home=existsSync(`club-packs/${club}/ingest.json`)?`club-packs/${club}`:`research-staging/${club}`
+ const max=Number(arg('max')||40),cfgPath=`${home}/ingest.json`,cfg=JSON.parse(readFileSync(cfgPath,'utf8'))
  let id=cfg.scores365Id
  if(!id){
   id=await resolveId(cfg.names||[])
   if(!id){console.log(`[${club}] NO_365_TEAM — no single 365Scores club answers to ${(cfg.names||[]).join(' / ')} — nothing pulled.`);return}
   cfg.scores365Id=id;writeFileSync(cfgPath,JSON.stringify(cfg,null,1)+'\n');console.log(`[${club}] 365Scores id ${id} resolved and written to ingest.json`)
  }
- const today=new Date().toISOString().slice(0,10),file=`club-packs/${club}/wave-league-lineups-2026-10-10.json`
+ const today=new Date().toISOString().slice(0,10),file=`${home}/wave-league-lineups-2026-10-10.json`
  const prev=existsSync(file)?JSON.parse(readFileSync(file,'utf8')):{sources:[],matches:[],players:[]}
  const sources=new Map<string,J>(((prev.sources||[]) as J[]).map(s=>[s.id,s])),byId=new Map<string,J>(((prev.matches||[]) as J[]).map(m=>[m.id,m]))
  // the club's own men by full name — a position fills the man the pack already knows instead of adding a second one
@@ -97,13 +103,19 @@ async function main(){
  const lines=new Map<string,{name:string;votes:Map<string,number>;years:Set<number>;srcs:Set<string>}>()
  const prevPlayers=new Map<string,J>(((prev.players||[]) as J[]).map(p=>[p.id,p]))
  const why=new Map<string,number>();let pages=0
- let url:string|null=`${B365}/games/results/?${Q365}&competitors=${id}&showOdds=false`,seen=0,agreed=0,single=0,fetched=0,withScorers=0,posAgree=0,posDiffer=0
+ const first=`${B365}/games/results/?${Q365}&competitors=${id}&showOdds=false`
+ const backfill=process.argv.includes('--history'),cursorDir='research-data/daily-league-cursors',cursorFile=`${cursorDir}/${club}.json`
+ const saved=backfill&&existsSync(cursorFile)?JSON.parse(readFileSync(cursorFile,'utf8')) as {page:string|null;offset:number;complete:boolean}:null
+ if(backfill&&saved?.complete){console.log(`[${club}] reached the oldest results this feed provides`);return}
+ const savedPath=saved?.page?.replace(/^https:\/\/webws\.365scores\.com/,'')
+ let url:string|null=olderResultPage(savedPath)||first,offset=saved?.offset??0,seen=0,agreed=0,single=0,fetched=0,withScorers=0,posAgree=0,posDiffer=0
  const lsDay=new Map<string,any>()
- while(url&&seen<max){
-  const page=await get(url);if(!page)break
+ while(url&&seen<max&&pages<12){
+  const page=await get(url);if(!page||!Array.isArray(page.games))break
   pages++
-  for(const g of (page.games||[])as J[]){
-   if(seen>=max)break
+  const games=page.games as J[]
+  for(;offset<games.length&&seen<max;offset++){
+   const g=games[offset]!
    if(g.statusGroup!==4||!g.hasLineups||EURO.test(String(g.competitionDisplayName||'')))continue
    seen++
    const d=await get(`${B365}/game/?${Q365}&gameId=${g.id}`);const game=d?.game;if(!game)continue
@@ -181,7 +193,11 @@ async function main(){
     notes:ok?`Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames)${scorers.length?'; both print the same scorers':''}.`:`One publisher only — ${why_}.`,
     confidence:ok?3:2,status:ok?'approved':'review',approvedAt:ok?today:null,approvedBy:ok?`automated:cross-source-review-league-lineups-${club}`:null})
   }
-  url=page.paging?.previousPage?`https://webws.365scores.com${page.paging.previousPage}`:null
+  if(offset>=games.length){
+   const next=olderResultPage(page.paging?.previousPage)
+   if(next===url)break
+   url=next;offset=0
+  }
  }
  // positions: one line on every agreed sheet (a man both sites put in two lines over the season is listed, not resolved)
  const players=new Map([...prevPlayers].filter(([id])=>!id.startsWith('p-ll-')))
@@ -194,12 +210,16 @@ async function main(){
   const base={sources:srcs,confidence:3,status:'approved',researchedAt:today,approvedAt:today,approvedBy:`automated:cross-source-review-league-lineups-${club}`,parserCertainty:'high',conflictFree:true,notes:`Both publishers (365Scores, LiveScore) list him in the same line on the agreed team sheets: ${pos}.`}
   // only a man the club already knows is filled: a NEW man belongs to the roster pipeline (English name, frozen price, merges —
   // the Rumble and XI guards), so the feed never adds one (12.11.2026)
-  if(!mine)continue
+  if(!mine||players.has(mine))continue
   players.set(mine,{id:mine,value:{name:ownName.get(mine)??r.name,positions:[pos],sensitive:false},...base});filled++
  }
  const matches=[...byId.values()].sort((x,y)=>String(y.value.on).localeCompare(String(x.value.on)))
+ if(!pages||(seen>0&&!fetched))throw new Error(`[${club}] result listing or its match details were unavailable`)
  const used=new Set([...matches.flatMap(m=>m.sources as string[]),...[...players.values()].flatMap(p=>p.sources as string[])])
- writeFileSync(file,JSON.stringify({sources:[...sources.values()].filter(s=>used.has(s.id)),matches,players:[...players.values()],kits:[],rivals:[]},null,1)+'\n')
+ const temp=file+'.tmp'
+ writeFileSync(temp,JSON.stringify({sources:[...sources.values()].filter(s=>used.has(s.id)),matches,players:[...players.values()],kits:[],rivals:[]},null,1)+'\n')
+ renameSync(temp,file)
+ if(backfill&&pages){mkdirSync(cursorDir,{recursive:true});writeFileSync(cursorFile+'.tmp',JSON.stringify({page:url,offset,complete:!url})+'\n');renameSync(cursorFile+'.tmp',cursorFile)}
  console.log(`[${club}] ${seen} matches read, ${fetched} with detail, ${agreed} agreed by two publishers, ${single} single-source · ${withScorers} with an agreed scoresheet · positions ${posAgree} agreed / ${posDiffer} differ → ${filled} filled, ${split} in two lines · file holds ${matches.length} matches · ${pages} result pages`)
  if(why.size)console.log(`[${club}] single-source reasons: ${[...why].map(([k,n])=>`${n}× ${k}`).join(' | ')}`)
 }

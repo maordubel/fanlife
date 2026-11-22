@@ -41,7 +41,7 @@ const CURSOR='pipeline-cursor.json'
 async function readCursor():Promise<string|null>{const d=durable();if(d){const r=await d.read(CURSOR).catch(()=>null);return r?(JSON.parse(r.text).last??null):null}return (await readJson<{last?:string}>(join(dataRoot(),CURSOR),{})).last??null}
 async function writeCursor(last:string){const d=durable();if(d){for(let i=0;i<3;i++){const r=await d.read(CURSOR).catch(()=>null);if(await d.write(CURSOR,JSON.stringify({last,at:new Date().toISOString()}),r?.etag??null))return}return}await writeJson(join(dataRoot(),CURSOR),{last,at:new Date().toISOString()})}
 export function rotateFrom<T extends string>(ids:T[],last:string|null):T[]{const i=last?ids.indexOf(last as T):-1;return i<0?ids:[...ids.slice(i+1),...ids.slice(0,i+1)]}
-export async function runPipeline({maxRequestsPerClub=6,clubs,budgetMs=PIPELINE_BUDGET_MS}:{maxRequestsPerClub?:number;clubs?:string[];budgetMs?:number}={}){
+export async function runPipeline({maxRequestsPerClub=6,clubs,budgetMs=PIPELINE_BUDGET_MS,collect=true}:{maxRequestsPerClub?:number;clubs?:string[];budgetMs?:number;collect?:boolean}={}){
  const steps:ClubStep[]=[],deadline=Date.now()+budgetMs
  const order=rotateFrom(clubs||await profiledClubs(),await readCursor().catch(()=>null))
  let lastWorked:string|null=null
@@ -52,8 +52,11 @@ export async function runPipeline({maxRequestsPerClub=6,clubs,budgetMs=PIPELINE_
   try{
    const profile=await loadClubProfile(clubId)
    if(profile?.archive.length){
-    const before=manifestStamp(clubId),{run}=await collectClub(clubId,{maxRequests:maxRequestsPerClub,deadline})
-    step.collected={state:run.state,requests:run.counts.requests,documents:run.counts.documentsRead};step.staged=true
+    const before=manifestStamp(clubId)
+    if(collect){
+     const {run}=await collectClub(clubId,{maxRequests:maxRequestsPerClub,deadline})
+     step.collected={state:run.state,requests:run.counts.requests,documents:run.counts.documentsRead};step.staged=true
+    }
     const after=manifestStamp(clubId),seen=lastStamp.get(clubId)
     // 3 — a package that changed (or was never brought in on this server) goes to the club file as unreviewed rows
     if(after&&(after!==before||seen!==after)){step.queued=await queuePackage(clubId);if(step.queued)lastStamp.set(clubId,after)}

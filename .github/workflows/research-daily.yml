@@ -1,100 +1,105 @@
 name: research-daily
-# Every day: pull fresh data for every club (archives, UEFA matches/elevens), measure what each club now holds,
-# write a short report (with an optional AI triage), and open ONE pull request. Nothing is approved or published here
-# (rules 92, 93, 114); collected rows arrive unreviewed. Click "Run workflow" to run it now.
-# 10.11.2026 (research desk): the UEFA pull reads the newest 20, then 30 ties the wave does not hold yet (history grows
-# every day instead of stopping at 80) and re-reads 20 held ties for positions and birth dates; a discovered UEFA team
-# id is saved; the staged clubs get their "what a yes opens" preview; the report names what waits for the owner.
 on:
   workflow_dispatch:
     inputs:
+      club:
+        description: 'Optional club ID for a manual run. Leave blank to use the daily rotation.'
+        type: string
       league_depth:
-        description: 'How many finished matches per club the league feed reads (30 every day; 300 to fill history once)'
-        default: '30'
+        description: 'Maximum number of finished league and cup fixtures to inspect'
+        type: number
+        default: 30
+      publish:
+        description: 'Publish verified data to the default branch'
+        type: boolean
+        default: true
   schedule:
-    - cron: '41 3 * * *'
+    - cron: '41 5 * * *'
+      timezone: Europe/Athens
+
 permissions:
   contents: write
-  pull-requests: write
-concurrency: {group: research-daily, cancel-in-progress: false}
+  actions: write
+
+concurrency:
+  group: fanlife-research-writes
+  cancel-in-progress: false
+
 jobs:
-  daily:
+  research:
     runs-on: ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 50
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with: {node-version: 22, cache: npm}
-      - run: npm ci
-      - name: Archives (polite, small batch per club)
-        continue-on-error: true
-        run: |
-          for f in research-profiles/*.json; do
-            id=$(basename "$f" .json)
-            node -e "process.exit((JSON.parse(require('fs').readFileSync('$f','utf8')).archive||[]).length?0:1)" || continue
-            npm run -s research:collect -- "$id" --max-requests 20 || echo "::warning::$id archive pull failed"
-          done
-      - name: UEFA matches and elevens (every club that has ingest.json)
-        env:
-          THESPORTSDB_KEY: ${{ secrets.THESPORTSDB_KEY }}
-        run: |
-          failed=""
-          for dir in club-packs/*/ research-staging/*/; do
-            id=$(basename "$dir")
-            [ -f "$dir/ingest.json" ] || continue
-            npm run -s club:wave -- --club "$id" --max 20 --backfill 30 --refresh 20 2>&1 | tee -a wave.log || failed="$failed $id"
-          done
-          [ -z "$failed" ] || echo "::warning::club:wave failed for:$failed"
-      - name: League and cup nights, scoresheets and positions (365Scores × LiveScore, every club with ingest.json)
-        # 12.11.2026 — the league feed runs every day now (it had run once, on 10.10): new nights, agreed scorers and agreed lines
-        continue-on-error: true
-        run: |
-          for dir in club-packs/*/; do
-            id=$(basename "$dir")
-            [ -f "$dir/ingest.json" ] || continue
-            npx tsx scripts/ingest/clubs/league-lineups.ts --club "$id" --max "${{ inputs.league_depth || '30' }}" 2>&1 | tee -a wave.log || echo "::warning::$id league feed failed"
-          done
-      - name: Census
-        run: npm run -s research:census -- --out census.json
-      - name: Club history and careers (Celtic every match; Olympiacos careers from olympiacos-history.gr)
-        # 13.11.2026 — the current and last season are re-read daily (the file accumulates); careers refresh with the site's table
-        continue-on-error: true
-        run: |
-          y=$(date +%Y)
-          npx tsx scripts/ingest/clubs/history-scotland.ts --club celtic --from $((y-1)) --to $y 2>&1 | tail -3
-          npx tsx scripts/ingest/clubs/olympiacos-history-fetch.ts 2>&1 | tail -1 && node --require ./scripts/master/server-only.cjs --import tsx scripts/ingest/clubs/olympiacos-history-players.ts 2>&1 | head -1
-      - name: Head-to-head ledger for the studio and the next-match card
-        continue-on-error: true
-        run: npm run -s h2h:build
-      - name: People Registry (one id per record, one person across clubs; Wikidata settles what it can prove)
-        # 18.11.2026 — new records get their id; a shared name at two clubs is joined or kept apart only on a Wikidata item, the rest waits on the desk (Players → Across clubs)
-        continue-on-error: true
-        run: |
-          npm run -s people:build 2>&1 | tail -1
-          npm run -s people:links 2>&1 | tail -1
-      - name: What a yes would open (staged clubs)
-        run: npm run -s research:desk-preview
-      - name: Report (+ AI triage when the key exists)
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: npm run -s research:daily-report -- --census census.json --wave-log wave.log
-      - uses: peter-evans/create-pull-request@v6
         with:
-          branch: research-daily/auto
-          title: 'research-daily: fresh data and report'
-          commit-message: 'research-daily: collected data, wave-auto and report'
-          add-paths: |
-            research-data/**
-            club-packs/**/wave-auto.json
-            club-packs/**/wave-league-lineups-*.json
-            club-packs/celtic/wave-history-scotland.json
-            club-packs/olympiacos/wave-olympiacos-history.json
-            research-staging/**/wave-auto.json
-            research-staging/**/ingest.json
-            club-packs/**/ingest.json
-            research-reports/**
-            content/generated/head-to-head.json
-            content/generated/people-stints.json
-            content/manual/people-ids.json
-            content/manual/people-links.json
-          body: 'Automatic daily pull. New rows are unreviewed; see research-reports/ for what changed per club. New clubs wait for the owner on the research desk (Control room → Research).'
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Load research sources added through the control room
+        env:
+          SITE: ${{ vars.FAN_LIFE_RESEARCH_URL }}
+          SCHEDULER_KEY: ${{ secrets.FAN_LIFE_CRON_SECRET }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/fanlife-research-overlays"
+          echo "RESEARCH_OVERLAY_DIR=$RUNNER_TEMP/fanlife-research-overlays" >> "$GITHUB_ENV"
+          if [[ "$SITE" != https://* || -z "$SCHEDULER_KEY" ]]; then
+            echo 'Using the repository source profiles.' >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          if curl --fail --silent --show-error --max-time 20 --header "Authorization: Bearer $SCHEDULER_KEY" "${SITE%/}/api/master/research/profiles-export" --output "$RUNNER_TEMP/research-profiles.json"; then
+            node -e 'const fs=require("node:fs");const p=JSON.parse(fs.readFileSync(process.env.RUNNER_TEMP+"/research-profiles.json","utf8"));for(const [id,data] of Object.entries(p.profiles||{}))if(/^[a-z][a-z0-9-]{1,60}$/.test(id))fs.writeFileSync(process.env.RUNNER_TEMP+"/fanlife-research-overlays/"+id+".json",JSON.stringify(data))'
+          else
+            echo 'Control-room profiles could not be loaded. Repository sources were used.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Research today's club
+        id: research
+        env:
+          CLUB: ${{ inputs.club }}
+          LEAGUE_DEPTH: ${{ inputs.league_depth || 30 }}
+          THESPORTSDB_KEY: ${{ secrets.THESPORTSDB_KEY }}
+          RESEARCH_DATA_DIR: research-data
+        run: |
+          args=(--league-depth "$LEAGUE_DEPTH")
+          if [[ -n "$CLUB" ]]; then args+=(--club "$CLUB"); fi
+          node --require ./scripts/master/server-only.cjs --import tsx scripts/research/daily.ts "${args[@]}"
+      - name: Verify archive and player linkage
+        run: |
+          npm run repo:hygiene
+          npx vitest run tests/research/daily.test.ts tests/master/schedules.test.ts tests/people/registry.test.ts --testTimeout=120000
+      - name: Save verified research
+        id: publish
+        if: github.ref_name == github.event.repository.default_branch && (github.event_name == 'schedule' || inputs.publish)
+        env:
+          CLUB: ${{ steps.research.outputs.club_id }}
+          DAY: ${{ steps.research.outputs.day }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          set -euo pipefail
+          [[ "$CLUB" =~ ^[a-z][a-z0-9-]+$ ]]
+          [[ "$DAY" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]
+          git config user.name 'fanlife-research-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A -- research-data
+          for dir in "club-packs/$CLUB" "research-staging/$CLUB"; do
+            for file in ingest.json wave-auto.json wave-league-lineups-2026-10-10.json wave-history-scotland.json wave-olympiacos-history.json; do
+              [[ ! -f "$dir/$file" ]] || git add -- "$dir/$file"
+            done
+          done
+          git add -- content/generated/people-stints.json content/manual/people-ids.json content/generated/rumble-prices-v3.json content/generated/head-to-head.json
+          git diff --cached --check
+          git diff --cached --quiet && exit 0
+          git commit -m "Research $CLUB for $DAY"
+          git fetch origin "$DEFAULT_BRANCH"
+          git rebase "origin/$DEFAULT_BRANCH"
+          git push origin "HEAD:refs/heads/$DEFAULT_BRANCH"
+          echo 'saved=true' >> "$GITHUB_OUTPUT"
+      # A push authenticated by GITHUB_TOKEN does not start the normal push-based deployment.
+      - name: Deploy the updated archive
+        if: steps.publish.outputs.saved == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: gh workflow run deploy-cloudrun.yml --ref "$DEFAULT_BRANCH"
