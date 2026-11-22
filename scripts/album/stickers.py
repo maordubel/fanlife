@@ -21,6 +21,7 @@ import argparse, base64, io, json, math, os, re, sys, time, urllib.parse, urllib
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import sources as SRC
 import portrait as POR
+import paint as PNT
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -28,6 +29,7 @@ UA = {'User-Agent': 'FANLIFE-album/1.0 (https://fanlife.dubelteam.com; fanlife@d
 FREE = re.compile(r'^(cc0|public domain|pd|cc by(-sa)? [0-9.]+( [a-z]{2})?|cc by(-sa)?|fal|free art license)', re.I)
 OUT_DIR = ROOT / 'public/album/stickers'
 LEDGER = ROOT / 'content/generated/album-stickers.json'
+FACES_DIR = ROOT / 'content/generated/album-faces'  # painted portraits for men with no free photo (faces.py)
 
 
 def get_json(url, tries=5):
@@ -290,7 +292,7 @@ def kit_image(path):
     return base64.b64encode(src.encode()).decode(), vb
 
 
-def drawn_figure(st, x, y, w, h, traits=None):
+def drawn_figure(st, x, y, w, h, traits=None, head_on=True, chin_at=None):
     """no free photo: a figure in the weekly's manner wearing the club's measured shirt of his years — the shirt is
     documented; the face is drawn from traits measured on his picture (skin, hair, beard — sources.traits), or the
     era's usual look when no picture of him exists at all (the ledger marks it unmeasured)"""
@@ -302,7 +304,7 @@ def drawn_figure(st, x, y, w, h, traits=None):
     t = traits or SRC.era_default(st.get('from'))
     sc_ = 27
     head = POR.portrait_svg(x + w / 2, ey, sc_, t, t.get('shape'), uid='p%d' % st['slot'])
-    chin = ey + max(y_ for _, y_ in (t.get('shape') or POR.MEAN)[6:11]) * sc_
+    chin = chin_at if chin_at is not None else ey + max(y_ for _, y_ in (t.get('shape') or POR.MEAN)[6:11]) * sc_
     sy = chin + sc_ * 1.0 - (56 - 20) * sc
     if k:
         b64, (vx, vy, vw, vh) = k
@@ -311,10 +313,31 @@ def drawn_figure(st, x, y, w, h, traits=None):
     else:
         shirt = (f'<path d="M{x-4} {y+h+4} C{x} {ey+70:.0f} {x+30} {ey+56:.0f} {x+w/2-24:.0f} {ey+50:.0f} L{x+w/2+24:.0f} {ey+50:.0f} '
                  f'C{x+w-30} {ey+56:.0f} {x+w} {ey+70:.0f} {x+w+4} {y+h+4} Z" fill="#FBF6EA" stroke="#15130F" stroke-width="3"/>')
-    return f'<g style="filter:drop-shadow(5px 4px 0 rgb(0 0 0 / .28))">{head}{shirt}</g>'
+    return f'<g style="filter:drop-shadow(5px 4px 0 rgb(0 0 0 / .28))">{head if head_on else ""}{shirt}</g>'
 
 
-def sticker_svg(st, club, photo_b64, photo_wh, frame, logo_b64, variant='base', traits=None):
+FIG_PAD, FIG_SCALE = 12, 4
+
+
+def painted_figure(pg, st, traits):
+    """the drawn figure rendered alone (window + a margin, 4x), then painted like the photographs (paint.py)"""
+    from PIL import Image
+    x, y, w, h = WIN
+    g = drawn_figure(st, x, y, w, h, traits).replace('style="filter:drop-shadow(5px 4px 0 rgb(0 0 0 / .28))"', '')
+    W_ = H_ = max(w, h) + 2 * FIG_PAD
+    svg = f'<svg xmlns="http://www.w3.org/2000/svg" width="{W_*FIG_SCALE}" height="{H_*FIG_SCALE}" viewBox="{x + w / 2 - W_ / 2} {y + h / 2 - H_ / 2} {W_} {H_}">{g}</svg>'
+    pg.set_viewport_size({'width': W_ * FIG_SCALE, 'height': H_ * FIG_SCALE})
+    pg.set_content(f'<html><style>body{{margin:0;background:transparent}} svg{{display:block}}</style><body>{svg}</body></html>')
+    pg.wait_for_timeout(120)
+    png = pg.locator('body > svg').screenshot(omit_background=True)
+    pg.set_viewport_size({'width': 240, 'height': 330})
+    im = Image.open(io.BytesIO(png)).convert('RGBA')
+    im = PNT.paint(im, bands=10, ink_k=45).resize((W_ * 2, H_ * 2), Image.LANCZOS)
+    b = io.BytesIO(); im.save(b, 'PNG')
+    return base64.b64encode(b.getvalue()).decode()
+
+
+def sticker_svg(st, club, photo_b64, photo_wh, frame, logo_b64, variant='base', traits=None, figure_b64=None, kit_over=False):
     c, on, code = club['primary'], club['on'], club['code']
     x, y, w, h = WIN
     parts = st['name'].split(' ')
@@ -335,6 +358,12 @@ def sticker_svg(st, club, photo_b64, photo_wh, frame, logo_b64, variant='base', 
         dy = y + EYE_Y * h - eye * sc
         img = (f'<image href="data:image/png;base64,{photo_b64}" x="{dx:.1f}" y="{dy:.1f}" width="{pw*sc:.1f}" height="{ph*sc:.1f}" filter="url(#drop)"/>'
                f'<image href="data:image/png;base64,{photo_b64}" x="{dx:.1f}" y="{dy:.1f}" width="{pw*sc:.1f}" height="{ph*sc:.1f}"{duo}/>')
+        if kit_over:
+            # a painted portrait: his club's real shirt of his years laid over, its collar under the painted chin
+            img += drawn_figure(st, x, y, w, h, traits, head_on=False, chin_at=dy + (fy + fh * 1.02) * sc)
+    elif figure_b64:
+        side = max(w, h) + 2 * FIG_PAD  # a square around the window's centre (painted_figure, faces.py)
+        img = (f'<image href="data:image/png;base64,{figure_b64}" x="{x + w / 2 - side / 2:.1f}" y="{y + h / 2 - side / 2:.1f}" width="{side}" height="{side}" style="filter:drop-shadow(5px 4px 0 rgb(0 0 0 / .28))"/>')
     else:
         img = drawn_figure(st, x, y, w, h, traits)
     field = '#E9E0CC' if archive else c
@@ -381,7 +410,7 @@ def sticker_svg(st, club, photo_b64, photo_wh, frame, logo_b64, variant='base', 
 </svg>'''
 
 
-def cutout(raw, session, frame):
+def cutout(raw, session, frame, paint_it=True):
     """the man cut from his background with a thin even ivory line (no halo), and his face box for the alignment"""
     from PIL import Image, ImageEnhance, ImageFilter
     from rembg import remove
@@ -406,11 +435,9 @@ def cutout(raw, session, frame):
     if frame == 'archive':
         rgb = rgb.convert('L').convert('RGB')
     line = max(3, round(f[2] / 45) * 2 + 1)        # the same line weight relative to the face on every sticker
-    edge = Image.new('RGBA', rgb.size, (251, 246, 234, 0))
-    edge.putalpha(a.filter(ImageFilter.MaxFilter(line)).filter(ImageFilter.GaussianBlur(0.8)))
     rgb.putalpha(a)
-    edge.alpha_composite(rgb)
-    return edge, f
+    painted = PNT.paint(rgb, mono=frame == 'archive') if paint_it else rgb  # the painted look (owner, 22.11.2026)
+    return PNT.contour(painted, line), f
 
 
 def remove_mask(im, session):
@@ -497,12 +524,23 @@ def main():
                     traits.setdefault('measured', bool(ref))
                     if ref and traits.get('measured') and os.environ.get('ALBUM_LBF'):
                         traits['shape'] = face_shape(ref)
-                svg = sticker_svg(st, clubs[club], photo, photo_wh, frame, logo_b64, traits=traits)
+                face = FACES_DIR / club / f'{st["slot"]}.webp'
+                fig, kit_over, painted = None, False, False
+                if not src and face.exists():
+                    got = cutout(face.read_bytes(), session, 'club', paint_it=False)
+                    if got:
+                        cut, f = got
+                        bb = io.BytesIO(); cut.save(bb, 'PNG'); photo = base64.b64encode(bb.getvalue()).decode(); photo_wh = (*cut.size, *f)
+                        kit_over = painted = True
+                        frame = 'club'  # a painted portrait is never an archive photograph
+                if not src and not painted:
+                    fig = painted_figure(pg, st, traits)
+                svg = sticker_svg(st, clubs[club], photo, photo_wh, frame, logo_b64, traits=traits, figure_b64=fig, kit_over=kit_over)
                 pg.set_content(f'<html><style>{css} body{{margin:0;background:transparent}} svg{{display:block}}</style><body>{svg}</body></html>')
                 pg.wait_for_timeout(150)
                 png = pg.locator('body > svg').screenshot(omit_background=True)
                 Image.open(io.BytesIO(png)).convert('RGBA').save(OUT_DIR / club / f'{st["slot"]}.webp', 'WEBP', quality=84, method=6)
-                ledger['stickers'][sid] = {'person_id': st['person_id'], 'name': st['name'], 'code': f"{clubs[club]['code']}{DASH}{st['slot']:02d}", 'status': 'photo' if src else 'silhouette',
+                ledger['stickers'][sid] = {'person_id': st['person_id'], 'name': st['name'], 'code': f"{clubs[club]['code']}{DASH}{st['slot']:02d}", 'status': 'photo' if src else 'silhouette', 'portrait': 'painted' if painted else None,
                                            'frame': frame if src else None, 'qid': qid, 'source': src, 'traits': traits, 'file': f'/album/stickers/{club}/{st["slot"]}.webp'}
                 done += 1
                 print(sid, 'photo' if src else 'silhouette', st['name'], flush=True)

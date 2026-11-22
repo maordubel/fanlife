@@ -42,7 +42,7 @@ export function StickerBack({s,w,profiles}:{s:Slot;w:WingInfo;profiles:boolean})
   <p className="alb-back-code">{s.code}</p>
   <h3>{s.name}</h3>
   <dl><div><dt>Club</dt><dd>{w.name}</dd></div><div><dt>Album page</dt><dd>{s.era||'—'}</dd></div></dl>
-  <p className="alb-back-photo">{c?<>Photo: {c.author} · {c.licenseUrl?<a href={c.licenseUrl} target="_blank" rel="noopener noreferrer">{c.license}</a>:c.license} · <a href={c.page} target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>{s.archive?' · archive photo, not from his years at the club':''}</>:'No free photograph of him has been found yet. The drawing stands in until one is.'}</p>
+  <p className="alb-back-photo">{c?<>Photo: {c.author} · {c.licenseUrl?<a href={c.licenseUrl} target="_blank" rel="noopener noreferrer">{c.license}</a>:c.license} · <a href={c.page} target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>{s.archive?' · archive photo, not from his years at the club':''}</>:s.painted?'A painted portrait: no free photograph of him has been found yet, so this is not his likeness. His shirt is the club\u2019s own of his years.':'No free photograph of him has been found yet. The drawing stands in until one is.'}</p>
   {profiles&&<Link className="alb-btn min-h-tap" href={`/players/${s.person}`}>His profile — every club</Link>}
  </div>
 }
