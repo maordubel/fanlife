@@ -44,6 +44,8 @@ import {LegendsBanner} from '@/components/legends/ClubBanner'
 import {PinToggle,PinsRow} from '@/components/fanlife/Pins'
 import {ShopStrip,shopIsOpen} from '@/components/shop/ShopStrip'
 import shopCopy from '@/messages/en.shop.json'
+import {door} from '@/lib/features-server'
+import {CHANNEL} from '@/lib/stories/channel'
 export const dynamic='force-dynamic'
 export async function generateMetadata({params}:{params:{slug:string}}){const c=REGISTRY.find(r=>r.id===params.slug);if(!c)return {};const st=await readState().then(s=>s.clubs.find(x=>x.id===c.id)?.status).catch(()=>undefined);return clubMetadata({id:c.id,name:c.name,city:c.city,description:nicknameLine(worldFor(c)),status:st})}
 
@@ -56,7 +58,11 @@ export async function generateMetadata({params}:{params:{slug:string}}){const c=
 export default async function Page({params,searchParams}:{params:{slug:string};searchParams:{lang?:string}}) {
  const id=resolveClubId(headers().get('host'),params.slug,evaluationMode())
  if(!id)notFound()
- const [state,core,shopOn]=await Promise.all([readState(),loadClub(id),shopIsOpen()])
+ const [state,core,shopOn,fd]=await Promise.all([readState(),loadClub(id),shopIsOpen(),door('frontDoors')])
+ // THE SHORT CLUB HOME (owner, 22.11.2026: "shorten pages, split them"): with the new front page on, a club's home is today's game, the
+ // gates, one "did you know", the next match and the shop's shelf; Legends and LIFE live on Play, the card on the terrace, the films and
+ // the stories on History — each named in the contents rows, so nothing is lost and nothing is said twice
+ const short=fd.open
  const c=state.clubs.find(c=>c.id===id)
  if(!c)notFound()
  const locale=uiLocale(searchParams.lang),copy=locale==='he'?he:en,reg=REGISTRY.find(r=>r.id===c.id)||c,theme=core?.data.theme||clubTheme(reg)
@@ -78,7 +84,7 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
  const pickHref=pickGate?clubHref(id,pickGate.key,locale):''
  // the issue's one "Did you know?": the club's own dated moment; without one, a sourced local touch
  const dyk=moment?'moment':flav2&&flav2.id!==flav?.id?'flavour':null
- return <ClubSurface theme={theme} clubId={c.id} locale={locale}><main id="main" className="wkk wkk-home" data-hero={layout}>
+ return <ClubSurface theme={theme} clubId={c.id} locale={locale}><main id="main" className="wkk wkk-home" data-hero={layout} data-short={short||undefined}>
   {core&&<ClubEntrance clubId={id} name={c.name} tap={copy.entranceTap}/>}
 
   {/* ═════ masthead ═════ */}
@@ -105,8 +111,8 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
   {searchParams.lang&&!UI_LOCALES.includes(searchParams.lang as 'en'|'he')&&<p className="wk-cap wkk-span">{copy.fallback}</p>}
 
   {/* ═════ the cover story: today's pick ═════ */}
-  {core&&open.length>0&&<Link className="wk-btn wkk-allgames min-h-tap" href={clubHref(id,'play',locale)} data-testid="all-club-games">{copy.wkkAllClubGames} <span aria-hidden="true">→</span></Link>}
-  {open.includes('kit-builder')&&<Link className="wk-btn paper min-h-tap wkk-span" href={clubHref(id,'kit-builder',locale)} data-testid="club-build-kit">{copy.buildKitEntry} <span aria-hidden="true">→</span></Link>}
+  {!short&&core&&open.length>0&&<Link className="wk-btn wkk-allgames min-h-tap" href={clubHref(id,'play',locale)} data-testid="all-club-games">{copy.wkkAllClubGames} <span aria-hidden="true">→</span></Link>}
+  {!short&&open.includes('kit-builder')&&<Link className="wk-btn paper min-h-tap wkk-span" href={clubHref(id,'kit-builder',locale)} data-testid="club-build-kit">{copy.buildKitEntry} <span aria-hidden="true">→</span></Link>}
   <div className="wkk-lead" data-story={core&&pickGate?'':undefined}>
   {core&&pickGate&&<section className="wkk-story" aria-labelledby="cs-h">
    <Link className="wk-panel wk-lift wkk-story-in" href={pickHref} tabIndex={-1} aria-hidden="true">
@@ -138,9 +144,9 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
     quick:copy.playQuick,deep:copy.playDeep,archive:copy.wkkArchiveShort,quickSub:copy.wkkQuickSub,deepSub:copy.wkkDeepSub,archiveSub:copy.wkkArchiveSub,soon:c.status==='paused'?copy.paused:games.comingSoon,gateWord:copy.wallGate,pick:copy.homeToday,mark}}/>}
 
   {/* ═════ the rest of the issue ═════ */}
-  {core&&<div className="wkk-legends"><Suspense fallback={null}><LegendsBanner club={id} name={c.name} theme={theme}/></Suspense></div>}
-  <ClubLifeCard href={life.href} state={life.state} copy={copy} club={id} pin={life.href?{href:`/clubs/${id}/life`,label:`${c.name} · LIFE`,locale}:undefined} compat={life.href&&core?lifeCompatFor(core.data):null}/>
-  <div className="wkk-foldwrap"><WatchBanner copy={copy} club={id} ink="club"/></div>
+  {!short&&core&&<div className="wkk-legends"><Suspense fallback={null}><LegendsBanner club={id} name={c.name} theme={theme}/></Suspense></div>}
+  {!short&&<ClubLifeCard href={life.href} state={life.state} copy={copy} club={id} pin={life.href?{href:`/clubs/${id}/life`,label:`${c.name} · LIFE`,locale}:undefined} compat={life.href&&core?lifeCompatFor(core.data):null}/>}
+  {!short&&<div className="wkk-foldwrap"><WatchBanner copy={copy} club={id} ink="club"/></div>}
   {dyk==='moment'&&<div className="wkk-dykwrap"><TodayMoment clubId={id} clubName={c.name} moment={moment} locale={locale} dyk={copy.wkkDyk} cta={copy.wkkPlaceIt} copy={{kicker:copy.todayKicker,exact:copy.todayExact,near:copy.todayNear,open:copy.todayOpen,pick:copy.todayPick}}/></div>}
   {dyk==='flavour'&&<div className="wkk-dykwrap"><ClubFlavour item={flav2} kicker={copy.flavourKicker2} label={copy.wkkDyk} variant="dyk"/></div>}
 
@@ -152,22 +158,24 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
     <p className="wk-cap white wkk-ticket-cap">{world.ground.line}</p>
    </MatchTicket></section>:null}/>
   </Suspense>
-  {core&&<section className="wkk-cardwrap" id="card" aria-label={copy.cardKicker}><SupporterCard clubId={id} clubName={c.name} initials={c.initials} pattern={lv?.pattern} locale={locale} open={open} names={names} total={SHARED_GATES.length} next={false} copy={{kicker:copy.cardKicker,title:copy.cardTitle,gates:copy.cardGates,rounds:copy.cardRounds,been:copy.cardBeen,since:copy.cardSince,empty:copy.cardEmpty,next:copy.cardNext}}/></section>}
+  {!short&&core&&<section className="wkk-cardwrap" id="card" aria-label={copy.cardKicker}><SupporterCard clubId={id} clubName={c.name} initials={c.initials} pattern={lv?.pattern} locale={locale} open={open} names={names} total={SHARED_GATES.length} next={false} copy={{kicker:copy.cardKicker,title:copy.cardTitle,gates:copy.cardGates,rounds:copy.cardRounds,been:copy.cardBeen,since:copy.cardSince,empty:copy.cardEmpty,next:copy.cardNext}}/></section>}
 
   <Suspense fallback={null}><ShopStrip subject={id} limit={2} className="wkk-shop"/></Suspense>
 
   <nav className="wkk-contents" aria-label={copy.homeJump}>
    <ul className="wkk-crow">
+    {short&&core&&open.length>0&&<li id="club-play"><Link className="min-h-tap" href={clubHref(id,'play',locale)}><b className="wk-head">{copy.clubTabPlay}</b><small className="wk-k muted">{copy.wkkAllClubGames}</small><Icon name="flag" size={18}/></Link></li>}
     {core&&<li id="terrace"><Link className="min-h-tap" href={clubHref(id,'terrace',locale)}><b className="wk-head">{world.terrace?.name??copy.homeTerraceTitle}</b><small className="wk-k muted">{copy.wkkTerraceRow}</small><Icon name="flag" size={18}/></Link></li>}
     {shopOn&&<li id="club-shop"><Link className="min-h-tap" href={`/shop?club=${id}`}><b className="wk-head">{shopCopy.rowShop}</b><small className="wk-k muted">{shopCopy.rowShopSub}</small><Icon name="shirt" size={18}/></Link></li>}
     {core&&<li id="club-market"><Link className="min-h-tap" href={`/market?club=${id}`}><b className="wk-head">{copy.marketName}</b><small className="wk-k muted">{copy.wkkMarketRow}</small><Icon name="shirt" size={18}/></Link></li>}
     {core&&away&&<li><Link className="min-h-tap" href={away}><b className="wk-head">{copy.awayName}</b><small className="wk-k muted">{copy.wkAwayDaysSub}</small><Icon name="plane" size={18}/></Link></li>}
     <li><Link className="min-h-tap" href={clubHref(id,'history',locale)}><b className="wk-head">{copy.historyTitle}</b><small className="wk-k muted">{copy.wkHistorySub}</small><Icon name="history" size={18}/></Link></li>
+    {short&&<li id="club-films"><a className="min-h-tap" href={`${CHANNEL.url}?utm_source=fanlife&utm_medium=club-contents`} target="_blank" rel="noopener"><b className="wk-head">{copy.wkhInWatch}</b><small className="wk-k muted">{copy.watchKicker}</small><Icon name="history" size={18}/></a></li>}
     <li><Link className="min-h-tap" href="/sources"><b className="wk-head">{copy.wkSources}</b><small className="wk-k muted">{copy.wkSourcesSub}</small><Icon name="sources" size={18}/></Link></li>
    </ul>
-   <div className="wkk-foldwrap"><ClubFlavour item={flav} kicker={copy.flavourKicker} variant="hero"/>
-   {dyk==='moment'&&flav2&&flav2.id!==flav?.id&&<ClubFlavour item={flav2} kicker={copy.historyFacts} variant="terrace"/>}</div>
-   {core&&open.length>0&&<div className="wkk-share"><ShareComposer draft={coverShare(c.id,states.filter(x=>x.allowed&&x.playable).map(x=>SHARED_GATES.find(g=>g.key===x.key)!.name))} label={copy.homeShare}/></div>}
+   {!short&&<div className="wkk-foldwrap"><ClubFlavour item={flav} kicker={copy.flavourKicker} variant="hero"/>
+   {dyk==='moment'&&flav2&&flav2.id!==flav?.id&&<ClubFlavour item={flav2} kicker={copy.historyFacts} variant="terrace"/>}</div>}
+   {!short&&core&&open.length>0&&<div className="wkk-share"><ShareComposer draft={coverShare(c.id,states.filter(x=>x.allowed&&x.playable).map(x=>SHARED_GATES.find(g=>g.key===x.key)!.name))} label={copy.homeShare}/></div>}
   </nav>
  </main></ClubSurface>
 }
