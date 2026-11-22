@@ -24,10 +24,10 @@
   "owner": null
  },
  {
-  "id": "continue-crno-bela-nostalgija-posts",
-  "priority": "P3",
-  "task": "Crno-bela Nostalgija posts: 3 page(s) read of 43; the scheduled task continues from the checkpoint.",
-  "taskHe": "Crno-bela Nostalgija posts: נקראו 3 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
+  "id": "blocked-crno-bela-nostalgija-/wp-json/wp/v2/posts",
+  "priority": "P2",
+  "task": "Crno-bela Nostalgija: /wp-json/wp/v2/posts answered 403 (HTTP 403 — a refusal is an answer). Recorded as a gap — not bypassed.",
+  "taskHe": "Crno-bela Nostalgija: /wp-json/wp/v2/posts חסום (403). נרשם כפער — לא עוקפים.",
   "status": "queued",
   "owner": null
  },

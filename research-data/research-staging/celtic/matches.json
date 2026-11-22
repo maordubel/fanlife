@@ -1,5 +1,22 @@
 [
  {
+  "on": "1914-04-08",
+  "home": "Kilmarnock",
+  "away": "Celtic",
+  "homeGoals": 0,
+  "awayGoals": 1,
+  "competition": "League Division 1",
+  "id": "obs:thecelticwiki:pages:1546:match",
+  "sourceIds": [
+   "document-ddba58d15dd1b65ce55aafc8"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1911-1920/1914-2/1914-04-08-kilmarnock-0-1-celtic-league-division-1/",
+  "canonicalId": "h-1914-04-08-kilmarnock",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
   "on": "1888-11-03",
   "home": "St Bernard’s",
   "away": "Celtic",
@@ -319,6 +336,1718 @@
   ],
   "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1892-2/1892-10-01-celtic-3-1-clyde-league/",
   "canonicalId": "h-1892-10-01-clyde",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1893-01-21",
+  "home": "Celtic",
+  "away": "Third Lanark",
+  "homeGoals": 5,
+  "awayGoals": 1,
+  "competition": "Scottish Cup",
+  "lineup": [
+   "Cullen",
+   "Reynolds",
+   "Doyle",
+   "Maley",
+   "Kelly",
+   "T. Dunbar",
+   "Towie",
+   "Blessington",
+   "Madden",
+   "McMahon",
+   "Campbell"
+  ],
+  "scorers": [
+   {
+    "name": "McMahon",
+    "minute": null
+   },
+   {
+    "name": "McMahon",
+    "minute": null
+   },
+   {
+    "name": "McMahon",
+    "minute": null
+   },
+   {
+    "name": "Towie",
+    "minute": null
+   },
+   {
+    "name": "Towie",
+    "minute": null
+   }
+  ],
+  "id": "obs:thecelticwiki:pages:628:match",
+  "sourceIds": [
+   "document-bf325b8aa09e6d809724e6c3"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-01-21-celtic-5-1-third-lanark-scottish-cup/",
+  "canonicalId": "h-1893-01-21-third-lanark",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1893-01-28",
+  "home": "Leith Athletic",
+  "away": "Celtic",
+  "homeGoals": 0,
+  "awayGoals": 1,
+  "competition": "League",
+  "id": "obs:thecelticwiki:pages:629:match",
+  "sourceIds": [
+   "document-11f1874abbeb3ae3f8c20e7f"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-01-28-leith-athletic-0-1-celtic-league/",
+  "canonicalId": "h-1893-01-28-leith-athletic",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1893-02-04",
+  "home": "Celtic",
+  "away": "St Bernard’s",
+  "homeGoals": 5,
+  "awayGoals": 0,
+  "competition": "Scottish Cup Semi-Final",
+  "id": "obs:thecelticwiki:pages:630:match",
+  "sourceIds": [
+   "document-d69be3f2f9a44935b2455779"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-02-04-celtic-5-0-st-bernards-scottish-cup-semi-final/",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1893-02-11",
+  "home": "Abercorn",
+  "away": "Celtic",
+  "homeGoals": 4,
+  "awayGoals": 2,
+  "competition": "League",
+  "lineup": [
+   "Cullen",
+   "Reynolds",
+   "Doyle",
+   "Clifford",
+   "Kelly",
+   "T. Dunbar",
+   "Davidson",
+   "Blessington",
+   "Madden",
+   "McMahon",
+   "Campbell"
+  ],
+  "scorers": [
+   {
+    "name": "McMahon",
+    "minute": null
+   },
+   {
+    "name": "Davidson",
+    "minute": null
+   }
+  ],
+  "id": "obs:thecelticwiki:pages:631:match",
+  "sourceIds": [
+   "document-aad2aab1aa0376f9e8477473"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-02-11-abercorn-4-2-celtic-league/",
+  "canonicalId": "h-1893-02-11-abercorn",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1893-02-18",
+  "home": "Rangers",
+  "away": "Celtic",
+  "homeGoals": 3,
+  "awayGoals": 1,
+  "competition": "Glasgow Cup Final",
+  "lineup": [
+   "Cullen",
+   "Reynolds",
+   "Doyle",
+   "Maley",
+   "Kelly",
+   "T. Dunbar",
+   "Towie",
+   "Blessington",
+   "Maden",
+   "McMahon",
+   "Campbell"
+  ],
+  "id": "obs:thecelticwiki:pages:633:match",
+  "sourceIds": [
+   "document-277b651cb0960d7f57080c13"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-02-18-rangers-3-1-celtic-glasgow-cup-final/",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1893-03-18",
+  "home": "Celtic",
+  "away": "Dumbarton",
+  "homeGoals": 5,
+  "awayGoals": 1,
+  "competition": "League",
+  "lineup": [
+   "Cullen",
+   "Reynolds",
+   "T. Dunbar",
+   "Maley",
+   "Kelly",
+   "Laughlin",
+   "Blessington",
+   "Davidson",
+   "McMahon",
+   "Mulvey",
+   "Campbell"
+  ],
+  "id": "obs:thecelticwiki:pages:636:match",
+  "sourceIds": [
+   "document-e43165f5a1ce7713fd9c9f97"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-03-18-celtic-5-1-dumbarton-league/",
+  "canonicalId": "h-1893-03-18-dumbarton",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1893-03-27",
+  "home": "Celtic",
+  "away": "All Ireland XI",
+  "homeGoals": 2,
+  "awayGoals": 1,
+  "competition": "Friendly",
+  "id": "obs:thecelticwiki:pages:638:match",
+  "sourceIds": [
+   "document-b0b98db3e9b48565cfb46ccf"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-03-27-celtic-2-1-all-ireland-xi-friendly/",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1893-04-01",
+  "home": "Celtic",
+  "away": "London Caledonian",
+  "homeGoals": 3,
+  "awayGoals": 0,
+  "competition": "Friendly",
+  "lineup": [
+   "Cullen",
+   "Doyle",
+   "Reynolds",
+   "J.McCann",
+   "Byrne",
+   "Dunbar",
+   "Davidson",
+   "Blessington",
+   "Madden",
+   "Mulvey",
+   "E.McCann"
+  ],
+  "id": "obs:thecelticwiki:pages:639:match",
+  "sourceIds": [
+   "document-1af948015d608f613dca7d52"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-04-01-celtic-3-0-london-caledonian-friendly/",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1893-04-03",
+  "home": "Rangers",
+  "away": "Celtic",
+  "homeGoals": 3,
+  "awayGoals": 1,
+  "competition": "Friendly",
+  "scorers": [
+   {
+    "name": "Davidson",
+    "minute": null
+   }
+  ],
+  "id": "obs:thecelticwiki:pages:640:match",
+  "sourceIds": [
+   "document-cc5622155b233a1dbdc1937d"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-04-03-rangers-3-1-celtic-friendly/",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1893-04-15",
+  "home": "Celtic",
+  "away": "Blackburn Rovers",
+  "homeGoals": 2,
+  "awayGoals": 2,
+  "competition": "Friendly",
+  "id": "obs:thecelticwiki:pages:641:match",
+  "sourceIds": [
+   "document-8fbcf6c26ce484334873eb04"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-04-15-celtic-2-2-blackburn-rovers-friendly/",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1893-04-17",
+  "home": "Heart of Midlothian",
+  "away": "Celtic",
+  "homeGoals": 1,
+  "awayGoals": 3,
+  "competition": "League",
+  "id": "obs:thecelticwiki:pages:642:match",
+  "sourceIds": [
+   "document-b02ea0bf72a58ccae8466fd8"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-04-17-heart-of-midlothian-1-3-celtic-league/",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1893-04-22",
+  "home": "Third Lanark",
+  "away": "Celtic",
+  "homeGoals": 0,
+  "awayGoals": 6,
+  "competition": "League",
+  "id": "obs:thecelticwiki:pages:643:match",
+  "sourceIds": [
+   "document-cb8a1fbf325c478b4f41a209"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-04-22-third-lanark-0-6-celtic-league/",
+  "canonicalId": "h-1893-04-22-third-lanark",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1893-04-29",
+  "home": "Celtic",
+  "away": "Rangers",
+  "homeGoals": 3,
+  "awayGoals": 0,
+  "competition": "League",
+  "id": "obs:thecelticwiki:pages:645:match",
+  "sourceIds": [
+   "document-38348ebe9e6a08cd21b88c20"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-04-29-celtic-3-0-rangers-league/",
+  "canonicalId": null,
+  "identityState": "ambiguous",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1893-05-06",
+  "home": "Clyde",
+  "away": "Celtic",
+  "homeGoals": 1,
+  "awayGoals": 2,
+  "competition": "League",
+  "id": "obs:thecelticwiki:pages:647:match",
+  "sourceIds": [
+   "document-43911891b8bdf35fe96e55b8"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-05-06-clyde-1-2-celtic-league/",
+  "canonicalId": "h-1893-05-06-clyde",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1893-05-13",
+  "home": "Celtic",
+  "away": "Dumbarton",
+  "homeGoals": 0,
+  "awayGoals": 0,
+  "competition": "Glasgow Merchants Charity Cup",
+  "id": "obs:thecelticwiki:pages:650:match",
+  "sourceIds": [
+   "document-0a7f5e18563f812a9d819349"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-05-13-celtic-0-0-dumbarton-glasgow-merchants-charity-cup/",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1893-05-27",
+  "home": "Celtic",
+  "away": "Rangers",
+  "homeGoals": 5,
+  "awayGoals": 0,
+  "competition": "Glasgow Charity Cup Final",
+  "id": "obs:thecelticwiki:pages:652:match",
+  "sourceIds": [
+   "document-bf2048912664d2421b4941ac"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-05-27-celtic-5-0-rangers-glasgow-charity-cup-final/",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1893-08-12",
+  "home": "Celtic",
+  "away": "Third Lanark",
+  "homeGoals": 5,
+  "awayGoals": 0,
+  "competition": "League Division 1",
+  "id": "obs:thecelticwiki:pages:657:match",
+  "sourceIds": [
+   "document-a729177e44cd7b628f877f52"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-08-12-celtic-5-0-third-lanark-league-division-1/",
+  "canonicalId": "h-1893-08-12-third-lanark",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1893-08-19",
+  "home": "Dundee",
+  "away": "Celtic",
+  "homeGoals": 1,
+  "awayGoals": 4,
+  "competition": "League Division 1",
+  "id": "obs:thecelticwiki:pages:659:match",
+  "sourceIds": [
+   "document-e620a14ff94d36d1f0dfe171"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-08-19-dundee-1-4-celtic-league-division-1/",
+  "canonicalId": "h-1893-08-19-dundee",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1893-08-26",
+  "home": "Celtic",
+  "away": "Dumbarton",
+  "homeGoals": 0,
+  "awayGoals": 0,
+  "competition": "League Division 1",
+  "id": "obs:thecelticwiki:pages:660:match",
+  "sourceIds": [
+   "document-861b781fd9de628b28008ce1"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-08-26-celtic-0-0-dumbarton-league-division-1/",
+  "canonicalId": "h-1893-08-26-dumbarton",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1893-09-02",
+  "home": "Rangers",
+  "away": "Celtic",
+  "homeGoals": 5,
+  "awayGoals": 0,
+  "competition": "League Division 1",
+  "lineup": [
+   "Cullen",
+   "Reynolds",
+   "Doyle",
+   "Curran",
+   "Kelly",
+   "Dunbar",
+   "Davidson",
+   "Blessington",
+   "Madden",
+   "Cassidy",
+   "Campbell"
+  ],
+  "id": "obs:thecelticwiki:pages:661:match",
+  "sourceIds": [
+   "document-a3bcbf78d15b43b9cbf125d0"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-09-02-rangers-5-0-celtic-league-division-1/",
+  "canonicalId": "h-1893-09-02-rangers",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1893-09-09",
+  "home": "Heart of Midlothian",
+  "away": "Celtic",
+  "homeGoals": 2,
+  "awayGoals": 4,
+  "competition": "League Division 1",
+  "id": "obs:thecelticwiki:pages:662:match",
+  "sourceIds": [
+   "document-125549bf785a008036fab59b"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-09-09-heart-of-midlothian-2-4-celtic-league-division-1/",
+  "canonicalId": "h-1893-09-09-heart-of-midlothian",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1893-09-23",
+  "home": "Celtic",
+  "away": "Leith Athletic",
+  "homeGoals": 4,
+  "awayGoals": 1,
+  "competition": "League Division 1",
+  "id": "obs:thecelticwiki:pages:664:match",
+  "sourceIds": [
+   "document-db055f99e776ecf96e1d8d6f"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-09-23-celtic-4-1-leith-athletic-league-division-1/",
+  "canonicalId": "h-1893-09-23-leith-athletic",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1893-09-30",
+  "home": "St Mirren",
+  "away": "Celtic",
+  "homeGoals": 1,
+  "awayGoals": 2,
+  "competition": "League Division 1",
+  "id": "obs:thecelticwiki:pages:666:match",
+  "sourceIds": [
+   "document-ac078108f27a8ecbe5764342"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-09-30-st-mirren-1-2-celtic-league-division-1/",
+  "canonicalId": "h-1893-09-30-st-mirren",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1893-10-28",
+  "home": "Glasgow Thistle",
+  "away": "Celtic",
+  "homeGoals": 0,
+  "awayGoals": 7,
+  "competition": "Glasgow Cup 3rd Rd",
+  "id": "obs:thecelticwiki:pages:671:match",
+  "sourceIds": [
+   "document-22b03f6d67f7358ea644e3d5"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-10-28-glasgow-thistle-0-7-celtic-glasgow-cup-3rd-rd/",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1893-11-11",
+  "home": "Renton",
+  "away": "Celtic",
+  "homeGoals": 0,
+  "awayGoals": 3,
+  "competition": "League Division 1",
+  "id": "obs:thecelticwiki:pages:673:match",
+  "sourceIds": [
+   "document-b377b0bc0b69303e3f457701"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-11-11-renton-0-3-celtic-league-division-1/",
+  "canonicalId": "h-1893-11-11-renton",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1893-11-18",
+  "home": "Rangers",
+  "away": "Celtic",
+  "homeGoals": 1,
+  "awayGoals": 0,
+  "competition": "Glasgow Cup Semi-Final",
+  "id": "obs:thecelticwiki:pages:674:match",
+  "sourceIds": [
+   "document-0d1675b0355c127413b73449"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-11-18-rangers-1-0-celtic-glasgow-cup-semi-final/",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1893-12-02",
+  "home": "Celtic",
+  "away": "Renton",
+  "homeGoals": 3,
+  "awayGoals": 2,
+  "competition": "League Division 1",
+  "id": "obs:thecelticwiki:pages:676:match",
+  "sourceIds": [
+   "document-b0087fba8de5b36feec3c777"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-12-02-celtic-3-2-renton-league-division-1/",
+  "canonicalId": "h-1893-12-02-renton",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1893-12-09",
+  "home": "Celtic",
+  "away": "Queen’s Park",
+  "homeGoals": 4,
+  "awayGoals": 3,
+  "competition": "Friendly",
+  "id": "obs:thecelticwiki:pages:677:match",
+  "sourceIds": [
+   "document-57eebf3a5ba8431536191c4a"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-12-09-celtic-4-3-queens-park-friendly/",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1893-12-16",
+  "home": "Celtic",
+  "away": "Albion Rovers",
+  "homeGoals": 7,
+  "awayGoals": 0,
+  "competition": "Scottish Cup",
+  "id": "obs:thecelticwiki:pages:678:match",
+  "sourceIds": [
+   "document-b288cedd5893c4caea02cdf1"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-12-16-celtic-7-0-albion-rovers-scottish-cup/",
+  "canonicalId": "h-1893-12-16-albion-rovers",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1893-12-23",
+  "home": "Dumbarton",
+  "away": "Celtic",
+  "homeGoals": 4,
+  "awayGoals": 5,
+  "competition": "League Division 1",
+  "id": "obs:thecelticwiki:pages:679:match",
+  "sourceIds": [
+   "document-0f5ce0cd5bce56033abd98a2"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1893-2/1893-12-23-dumbarton-4-5-celtic-league-division-1/",
+  "canonicalId": "h-1893-12-23-dumbarton",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1894-01-13",
+  "home": "Celtic",
+  "away": "St Bernards",
+  "homeGoals": 8,
+  "awayGoals": 1,
+  "competition": "Scottish Cup",
+  "id": "obs:thecelticwiki:pages:685:match",
+  "sourceIds": [
+   "document-8f94ef3585e1f85de08866d5"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1894-2/1894-01-13-celtic-8-1-st-bernards-scottish-cup/",
+  "canonicalId": "h-1894-01-13-st-bernards",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1894-01-20",
+  "home": "St Bernards",
+  "away": "Celtic",
+  "homeGoals": 1,
+  "awayGoals": 2,
+  "competition": "League Division 1",
+  "id": "obs:thecelticwiki:pages:686:match",
+  "sourceIds": [
+   "document-252d688e3dfab0ce7907659b"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1894-2/1894-01-20-st-bernards-1-2-celtic-league-division-1/",
+  "canonicalId": "h-1894-01-20-st-bernards",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1894-02-03",
+  "home": "Third Lanark",
+  "away": "Celtic",
+  "homeGoals": 3,
+  "awayGoals": 5,
+  "competition": "Scottish Cup",
+  "id": "obs:thecelticwiki:pages:687:match",
+  "sourceIds": [
+   "document-90f6fc31984c59f508ea7d43"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1894-2/1894-02-03-third-lanark-3-5-celtic-scottish-cup/",
+  "canonicalId": "h-1894-02-03-third-lanark",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1894-02-10",
+  "home": "Celtic",
+  "away": "St Mirren",
+  "homeGoals": 5,
+  "awayGoals": 1,
+  "competition": "League Division 1",
+  "id": "obs:thecelticwiki:pages:688:match",
+  "sourceIds": [
+   "document-5290e97893183c70eaafb747"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1894-2/1894-02-10-celtic-5-1-st-mirren-league-division-1/",
+  "canonicalId": "h-1894-02-10-st-mirren",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1895-03-23",
+  "home": "Rangers",
+  "away": "Celtic",
+  "homeGoals": 1,
+  "awayGoals": 1,
+  "competition": "League Division 1",
+  "id": "obs:thecelticwiki:pages:732:match",
+  "sourceIds": [
+   "document-cac1b15d776bb4a75123ac00"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1895-2/1895-03-23-rangers-1-1-celtic-league-division-1/",
+  "canonicalId": "h-1895-03-23-rangers",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1895-04-27",
+  "home": "Celtic",
+  "away": "Clyde",
+  "homeGoals": 2,
+  "awayGoals": 0,
+  "competition": "League Division 1",
+  "id": "obs:thecelticwiki:pages:734:match",
+  "sourceIds": [
+   "document-a0feb29ac7bc220485babb8a"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1895-2/1895-04-27-celtic-2-0-clyde-league-division-1/",
+  "canonicalId": "h-1895-04-27-clyde",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1895-09-28",
+  "home": "Dumbarton",
+  "away": "Celtic",
+  "homeGoals": 2,
+  "awayGoals": 3,
+  "competition": "League Division 1",
+  "id": "obs:thecelticwiki:pages:757:match",
+  "sourceIds": [
+   "document-5856f83c337e8682920bec1f"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1895-2/1895-09-28-dumbarton-2-3-celtic-league-division-1/",
+  "canonicalId": "h-1895-09-28-dumbarton",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1895-12-14",
+  "home": "Celtic",
+  "away": "Rangers",
+  "homeGoals": 6,
+  "awayGoals": 2,
+  "competition": "League Division 1",
+  "id": "obs:thecelticwiki:pages:770:match",
+  "sourceIds": [
+   "document-8d1956d80762170475377182"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1895-2/1895-12-14-celtic-6-2-rangers-league-division-1/",
+  "canonicalId": "h-1895-12-14-rangers",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1896-11-28",
+  "home": "Celtic",
+  "away": "Hibernian",
+  "homeGoals": 1,
+  "awayGoals": 1,
+  "competition": "League Division 1",
+  "lineup": [
+   "McArthur",
+   "T Dunbar",
+   "Doyle",
+   "Kelly",
+   "King",
+   "Russell",
+   "Gilhooley",
+   "Blessington",
+   "Crossan",
+   "W Maley",
+   "Ferguson"
+  ],
+  "id": "obs:thecelticwiki:pages:804:match",
+  "sourceIds": [
+   "document-776a0818cb6b666ab2b5c689"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1896-2/1896-11-28-celtic-1-1-hibernian-league-division-1/",
+  "canonicalId": "h-1896-11-28-hibernian",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1897-09-04",
+  "home": "Celtic",
+  "away": "Hibernian",
+  "homeGoals": 4,
+  "awayGoals": 1,
+  "competition": "League Division 1",
+  "lineup": [
+   "McArthur",
+   "Welford",
+   "Doyle",
+   "Reynolds",
+   "Russell",
+   "W Orr",
+   "Blessington",
+   "Campbell",
+   "Allan",
+   "King",
+   "Henderson"
+  ],
+  "id": "obs:thecelticwiki:pages:816:match",
+  "sourceIds": [
+   "document-760d20a65f40b30dd14f9bc6"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1897-2/1897-09-04-celtic-4-1-hibernian-league-division-1/",
+  "canonicalId": "h-1897-09-04-hibernian",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1897-09-11",
+  "home": "Heart of Midlothian",
+  "away": "Celtic",
+  "homeGoals": 0,
+  "awayGoals": 0,
+  "competition": "League Division 1:",
+  "lineup": [
+   "McArthur",
+   "Welford",
+   "Doyle",
+   "Reynolds",
+   "Russell",
+   "W Orr",
+   "Blessington",
+   "Campbell",
+   "Allan",
+   "King",
+   "Henderson"
+  ],
+  "id": "obs:thecelticwiki:pages:819:match",
+  "sourceIds": [
+   "document-99ebc6adacf5fea13c024737"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1897-2/1897-09-11-heart-of-midlothian-0-0-celtic-league-division-1/",
+  "canonicalId": "h-1897-09-11-heart-of-midlothian",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1897-09-20",
+  "home": "St Bernard’s",
+  "away": "Celtic",
+  "homeGoals": 0,
+  "awayGoals": 2,
+  "competition": "League Division 1",
+  "lineup": [
+   "McArthur",
+   "J Orr",
+   "Doyle",
+   "Goldie",
+   "Russell",
+   "W Orr",
+   "Gilhooly",
+   "Blessington",
+   "Campbell",
+   "King",
+   "Henderson"
+  ],
+  "id": "obs:thecelticwiki:pages:821:match",
+  "sourceIds": [
+   "document-10880cc686be3fc384a99903"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1897-2/1897-09-20-st-bernards-0-2-celtic-league-division-1/",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1897-09-25",
+  "home": "Celtic",
+  "away": "Clyde",
+  "homeGoals": 6,
+  "awayGoals": 1,
+  "competition": "League Division 1",
+  "lineup": [
+   "McArthur",
+   "Welford",
+   "Doyle",
+   "Goldie",
+   "Russell",
+   "W Orr",
+   "Gilhooly",
+   "Campbell",
+   "Allan",
+   "McMahon",
+   "King"
+  ],
+  "id": "obs:thecelticwiki:pages:822:match",
+  "sourceIds": [
+   "document-4347b34266cb6a72c0fd9c81"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1897-2/1897-09-25-celtic-6-1-clyde-league-division-1/",
+  "canonicalId": "h-1897-09-25-clyde",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1897-09-27",
+  "home": "Rangers",
+  "away": "Celtic",
+  "homeGoals": 0,
+  "awayGoals": 4,
+  "competition": "League Division 1",
+  "lineup": [
+   "McArthur",
+   "Welford",
+   "Doyle",
+   "Goldie",
+   "Russell",
+   "W Orr",
+   "Gilhooly",
+   "Campbell",
+   "Allan",
+   "McMahon",
+   "King"
+  ],
+  "id": "obs:thecelticwiki:pages:823:match",
+  "sourceIds": [
+   "document-e36325380736c6f7b81c34a7"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1897-2/1897-09-27-rangers-0-4-celtic-league-division-1/",
+  "canonicalId": "h-1897-09-27-rangers",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1897-10-02",
+  "home": "St Mirren",
+  "away": "Celtic",
+  "homeGoals": 0,
+  "awayGoals": 0,
+  "competition": "League Division 1",
+  "lineup": [
+   "McArthur",
+   "Welford",
+   "Doyle",
+   "Goldie",
+   "Russell",
+   "W Orr",
+   "Gilhooly",
+   "Campbell",
+   "Allan",
+   "McMahon",
+   "King"
+  ],
+  "id": "obs:thecelticwiki:pages:824:match",
+  "sourceIds": [
+   "document-ab8cdba538d79bef48661d73"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1897-2/1897-10-02-st-mirren-0-0-celtic-league-division-1/",
+  "canonicalId": "h-1897-10-02-st-mirren",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1897-10-09",
+  "home": "Third Lanark",
+  "away": "Celtic",
+  "homeGoals": 0,
+  "awayGoals": 1,
+  "competition": "League Division 1",
+  "lineup": [
+   "McArthur",
+   "Welford",
+   "Doyle",
+   "Goldie",
+   "Russell",
+   "W Orr",
+   "Gilhooly",
+   "Campbell",
+   "Allan",
+   "McMahon",
+   "King"
+  ],
+  "id": "obs:thecelticwiki:pages:825:match",
+  "sourceIds": [
+   "document-08f08eef23953ce29788d100"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1897-2/1897-10-09-third-lanark-0-1-celtic-league-division-1/",
+  "canonicalId": "h-1897-10-09-third-lanark",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1897-10-23",
+  "home": "Celtic",
+  "away": "Heart of Midlothian",
+  "homeGoals": 3,
+  "awayGoals": 2,
+  "competition": "League Division 1",
+  "lineup": [
+   "McArthur",
+   "Welford",
+   "Doyle",
+   "Goldie",
+   "Russell",
+   "W Orr",
+   "Gilhooly",
+   "Campbell",
+   "Allan",
+   "McMahon",
+   "King"
+  ],
+  "id": "obs:thecelticwiki:pages:826:match",
+  "sourceIds": [
+   "document-595dde847482768ba1267390"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1897-2/1897-10-23-celtic-3-2-heart-of-midlothian-league-division-1/",
+  "canonicalId": "h-1897-10-23-heart-of-midlothian",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1897-11-06",
+  "home": "Dundee",
+  "away": "Celtic",
+  "homeGoals": 1,
+  "awayGoals": 2,
+  "competition": "League Division 1",
+  "lineup": [
+   "Docherty",
+   "Welford",
+   "Doyle",
+   "Goldie",
+   "Russell",
+   "King",
+   "Gilhooly",
+   "Campbell",
+   "Allan",
+   "Blessington",
+   "Henderson"
+  ],
+  "id": "obs:thecelticwiki:pages:828:match",
+  "sourceIds": [
+   "document-8757662da57e093e77aa8c52"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1897-2/1897-11-06-dundee-1-2-celtic-league-division-1/",
+  "canonicalId": "h-1897-11-06-dundee",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1897-11-27",
+  "home": "Hibernian",
+  "away": "Celtic",
+  "homeGoals": 1,
+  "awayGoals": 2,
+  "competition": "League Division 1:",
+  "id": "obs:thecelticwiki:pages:831:match",
+  "sourceIds": [
+   "document-edd1109228c0be07ccb479a7"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1897-2/1897-11-27-hibernian-1-2-celtic-league-division-1/",
+  "canonicalId": "h-1897-11-27-hibernian",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1897-12-04",
+  "home": "Celtic",
+  "away": "Third Lanark",
+  "homeGoals": 4,
+  "awayGoals": 0,
+  "competition": "League Division 1",
+  "lineup": [
+   "McArthur",
+   "Welford",
+   "W Orr",
+   "Reynolds",
+   "Russell",
+   "King",
+   "Gilhooly",
+   "Campbell",
+   "Allan",
+   "McMahon",
+   "Somers"
+  ],
+  "id": "obs:thecelticwiki:pages:832:match",
+  "sourceIds": [
+   "document-837394926ae29fee545665c3"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1897-2/1897-12-04-celtic-4-0-third-lanark-league-division-1/",
+  "canonicalId": "h-1897-12-04-third-lanark",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1897-12-11",
+  "home": "Partick Thistle",
+  "away": "Celtic",
+  "homeGoals": 3,
+  "awayGoals": 6,
+  "competition": "League Division 1",
+  "lineup": [
+   "McArthur",
+   "W Orr",
+   "Doyle",
+   "Goldie",
+   "Russell",
+   "King",
+   "Gilhooly",
+   "Campbell",
+   "Allan",
+   "McMahon",
+   "Somers"
+  ],
+  "id": "obs:thecelticwiki:pages:833:match",
+  "sourceIds": [
+   "document-126877cde7e8cbc1b7c83e4d"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1897-2/1897-12-11-partick-thistle-3-6-celtic-league-division-1/",
+  "canonicalId": "h-1897-12-11-partick-thistle",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1897-12-18",
+  "home": "Celtic",
+  "away": "St. Bernard’s",
+  "homeGoals": 5,
+  "awayGoals": 1,
+  "competition": "League Division 1",
+  "lineup": [
+   "McArthur",
+   "Welford",
+   "Doyle",
+   "Goldie",
+   "Russell",
+   "King",
+   "Gilhooly",
+   "Campbell",
+   "Allan",
+   "McMahon",
+   "Lynch"
+  ],
+  "id": "obs:thecelticwiki:pages:834:match",
+  "sourceIds": [
+   "document-069e562d64fba501865b80de"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1897-2/1897-12-18-celtic-5-1-st-bernards-league-division-1/",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1897-12-25",
+  "home": "Clyde",
+  "away": "Celtic",
+  "homeGoals": 1,
+  "awayGoals": 9,
+  "competition": "League Division 1",
+  "lineup": [
+   "McArthur",
+   "Welford",
+   "Doyle",
+   "Goldie",
+   "Russell",
+   "King",
+   "Gilhooly",
+   "Campbell",
+   "Allan",
+   "McMahon",
+   "Somers"
+  ],
+  "id": "obs:thecelticwiki:pages:835:match",
+  "sourceIds": [
+   "document-2aae8a63760a509c0ebbc406"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1897-2/1897-12-25-clyde-1-9-celtic-league-division-1/",
+  "canonicalId": "h-1897-12-25-clyde",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1898-01-08",
+  "home": "Arthurlie",
+  "away": "Celtic",
+  "homeGoals": 0,
+  "awayGoals": 7,
+  "competition": "Scottish Cup",
+  "lineup": [
+   "McArthur",
+   "Welford",
+   "Doyle",
+   "Goldie",
+   "Russell",
+   "King",
+   "Blessington",
+   "Campbell",
+   "Allan",
+   "McMahon",
+   "Henderson"
+  ],
+  "id": "obs:thecelticwiki:pages:841:match",
+  "sourceIds": [
+   "document-173f5052310d5f14b5bc3957"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1898-2/1898-01-08-arthurlie-0-7-celtic-scottish-cup/",
+  "canonicalId": "h-1898-01-08-arthurlie",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1898-01-15",
+  "home": "Celtic",
+  "away": "Dundee",
+  "homeGoals": 2,
+  "awayGoals": 1,
+  "competition": "League Division 1",
+  "lineup": [
+   "McArthur",
+   "Welford",
+   "Doyle",
+   "Goldie",
+   "Russell",
+   "Orr",
+   "Allan",
+   "Blessington",
+   "Campbell",
+   "McMahon",
+   "Henderson"
+  ],
+  "id": "obs:thecelticwiki:pages:842:match",
+  "sourceIds": [
+   "document-9103eb0583d136c49b53d07f"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1898-2/1898-01-15-celtic-2-1-dundee-league-division-1/",
+  "canonicalId": "h-1898-01-15-dundee",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1898-01-22",
+  "home": "Third Lanark",
+  "away": "Celtic",
+  "homeGoals": 3,
+  "awayGoals": 2,
+  "competition": "Scottish Cup",
+  "lineup": [
+   "McArthur",
+   "Welford",
+   "Doyle",
+   "Goldie",
+   "Russell",
+   "Orr",
+   "Gilhooly",
+   "Blessington",
+   "Campbell",
+   "King",
+   "Allan"
+  ],
+  "id": "obs:thecelticwiki:pages:843:match",
+  "sourceIds": [
+   "document-98188c2f1b3d47d6f202f28b"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1898-2/1898-01-22-third-lanark-3-2-celtic-scottish-cup/",
+  "canonicalId": "h-1898-01-22-third-lanark",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1898-01-29",
+  "home": "Celtic",
+  "away": "Partick Thistle",
+  "homeGoals": 3,
+  "awayGoals": 1,
+  "competition": "League Division 1",
+  "lineup": [
+   "McArthur",
+   "Welford",
+   "Doyle",
+   "Goldie",
+   "Russell",
+   "Orr",
+   "Gilhooly",
+   "Campbell",
+   "Allan",
+   "McMahon",
+   "Henderson"
+  ],
+  "id": "obs:thecelticwiki:pages:844:match",
+  "sourceIds": [
+   "document-e5f36e7df06ed69445f794b0"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1898-2/1898-01-29-celtic-3-1-partick-thistle-league-division-1/",
+  "canonicalId": "h-1898-01-29-partick-thistle",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1898-02-12",
+  "home": "Celtic",
+  "away": "St Mirren",
+  "homeGoals": 3,
+  "awayGoals": 0,
+  "competition": "League Division 1",
+  "lineup": [
+   "McArthur",
+   "Welford",
+   "Doyle",
+   "Goldie",
+   "Russell",
+   "King",
+   "Gilhooly",
+   "Campbell",
+   "Allan",
+   "McMahon",
+   "Henderson"
+  ],
+  "id": "obs:thecelticwiki:pages:845:match",
+  "sourceIds": [
+   "document-0653a89de1bf5cfa26a5e336"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1898-2/1898-02-12-celtic-3-0-st-mirren-league-division-1/",
+  "canonicalId": null,
+  "identityState": "ambiguous",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1898-04-11",
+  "home": "Celtic",
+  "away": "Rangers",
+  "homeGoals": 0,
+  "awayGoals": 0,
+  "competition": "League Division 1",
+  "lineup": [
+   "McArthur",
+   "Welford",
+   "Doyle",
+   "Orr",
+   "Russell",
+   "King",
+   "Gilhooly",
+   "Campbell",
+   "Allan",
+   "McMahon",
+   "Henderson"
+  ],
+  "id": "obs:thecelticwiki:pages:847:match",
+  "sourceIds": [
+   "document-19e74805eaf632ff52c3c98d"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1898-2/1898-04-11-celtic-0-0-rangers-league-division-1/",
+  "canonicalId": "h-1898-04-11-rangers",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1898-08-20",
+  "home": "Celtic",
+  "away": "Third Lanark",
+  "homeGoals": 2,
+  "awayGoals": 1,
+  "competition": "League Division 1",
+  "lineup": [
+   "Docherty",
+   "Welford",
+   "Storrier",
+   "Orr",
+   "Hynds",
+   "King",
+   "Gilhooly",
+   "McAuley",
+   "Campbell",
+   "McMahon",
+   "Bell"
+  ],
+  "id": "obs:thecelticwiki:pages:849:match",
+  "sourceIds": [
+   "document-0eb653323b6961d886aafdf6"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1898-2/1898-08-20-celtic-2-1-third-lanark-league-division-1/",
+  "canonicalId": "h-1898-08-20-third-lanark",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1898-08-27",
+  "home": "Clyde",
+  "away": "Celtic",
+  "homeGoals": 0,
+  "awayGoals": 0,
+  "competition": "League Division 1",
+  "lineup": [
+   "McArthur",
+   "Welford",
+   "Storrier",
+   "Goldie",
+   "Hynds",
+   "King",
+   "Somers",
+   "Gilhooly",
+   "Campbell",
+   "McMahon",
+   "Bell"
+  ],
+  "id": "obs:thecelticwiki:pages:850:match",
+  "sourceIds": [
+   "document-42c2ad47b1a172cf93fdb014"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1898-2/1898-08-27-clyde-0-0-celtic-league-division-1/",
+  "canonicalId": "h-1898-08-27-clyde",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1898-09-03",
+  "home": "Celtic",
+  "away": "St Mirren",
+  "homeGoals": 4,
+  "awayGoals": 1,
+  "competition": "League Division 1",
+  "lineup": [
+   "McArthur",
+   "Welford",
+   "Storrier",
+   "Goldie",
+   "Hynds",
+   "King",
+   "Bell",
+   "Gilhooly",
+   "Campbell",
+   "McMahon",
+   "Fisher"
+  ],
+  "id": "obs:thecelticwiki:pages:851:match",
+  "sourceIds": [
+   "document-7417717fd67efb66133aed21"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1898-2/1898-09-03-celtic-4-1-st-mirren-league-division-1/",
+  "canonicalId": "h-1898-09-03-st-mirren",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1898-09-10",
+  "home": "Hibernian",
+  "away": "Celtic",
+  "homeGoals": 2,
+  "awayGoals": 1,
+  "competition": "League Division 1",
+  "lineup": [
+   "McArthur",
+   "Welford",
+   "Storrier",
+   "Goldie",
+   "Hynds",
+   "King",
+   "Bell",
+   "Gilhooly",
+   "Campbell",
+   "McMahon",
+   "Fisher"
+  ],
+  "id": "obs:thecelticwiki:pages:852:match",
+  "sourceIds": [
+   "document-2eb3d267e758e36e71244734"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1898-2/1898-09-10-hibernian-2-1-celtic-league-division-1/",
+  "canonicalId": "h-1898-09-10-hibernian",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1898-09-19",
+  "home": "Heart of Midlothian",
+  "away": "Celtic",
+  "homeGoals": 2,
+  "awayGoals": 2,
+  "competition": "League Division 1",
+  "id": "obs:thecelticwiki:pages:854:match",
+  "sourceIds": [
+   "document-01aaa3a7155d653be415a98a"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1898-2/1898-09-19-heart-of-midlothian-2-2-celtic-league-division-1/",
+  "canonicalId": "h-1898-09-19-heart-of-midlothian",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1898-09-24",
+  "home": "Celtic",
+  "away": "Rangers",
+  "homeGoals": 0,
+  "awayGoals": 4,
+  "competition": "League Division 1",
+  "lineup": [
+   "McArthur",
+   "Welford",
+   "Storrier",
+   "Goldie",
+   "Hynds",
+   "King",
+   "Bell",
+   "Gilhooly",
+   "Campbell",
+   "McMahon",
+   "Fisher"
+  ],
+  "id": "obs:thecelticwiki:pages:855:match",
+  "sourceIds": [
+   "document-009efc3781a1c22eb8d2008f"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1898-2/1898-09-24-celtic-0-4-rangers-league-division-1/",
+  "canonicalId": "h-1898-09-24-rangers",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1898-09-26",
+  "home": "Celtic",
+  "away": "Hibernian",
+  "homeGoals": 1,
+  "awayGoals": 2,
+  "competition": "League Division 1",
+  "id": "obs:thecelticwiki:pages:856:match",
+  "sourceIds": [
+   "document-726b4e0793451b4b0f0fdb47"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1898-2/1898-09-26-celtic-1-2-hibernian-league-division-1/",
+  "canonicalId": "h-1898-09-26-hibernian",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1898-10-01",
+  "home": "St Mirren",
+  "away": "Celtic",
+  "homeGoals": 4,
+  "awayGoals": 0,
+  "competition": "League Division 1",
+  "id": "obs:thecelticwiki:pages:857:match",
+  "sourceIds": [
+   "document-ea54e87689a21f5e6e06595f"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1898-2/1898-10-01-st-mirren-4-0-celtic-league-division-1/",
+  "canonicalId": "h-1898-10-01-st-mirren",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1898-10-08",
+  "home": "Celtic",
+  "away": "St Bernard’s",
+  "homeGoals": 1,
+  "awayGoals": 0,
+  "competition": "League Division 1",
+  "id": "obs:thecelticwiki:pages:858:match",
+  "sourceIds": [
+   "document-699de5f0d03f472531e67c86"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1898-2/1898-10-08-celtic-1-0-st-bernards-league-division-1/",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1898-10-29",
+  "home": "St Bernard’s",
+  "away": "Celtic",
+  "homeGoals": 2,
+  "awayGoals": 3,
+  "competition": "League Division 1",
+  "lineup": [
+   "Docherty",
+   "Welford",
+   "Storrier",
+   "Battles",
+   "Hynds",
+   "Orr",
+   "Gilhooly",
+   "Ross",
+   "Campbell",
+   "McMahon",
+   "Divers"
+  ],
+  "id": "obs:thecelticwiki:pages:861:match",
+  "sourceIds": [
+   "document-2b3136cd1e5882d9a1047373"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1898-2/1898-10-29-st-bernards-2-3-celtic-league-division-1/",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1898-11-05",
+  "home": "Celtic",
+  "away": "Clyde",
+  "homeGoals": 9,
+  "awayGoals": 2,
+  "competition": "League Division 1",
+  "id": "obs:thecelticwiki:pages:862:match",
+  "sourceIds": [
+   "document-7b1784acff306f578d029c11"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1898-2/1898-11-05-celtic-9-2-clyde-league-division-1/",
+  "canonicalId": "h-1898-11-05-clyde",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1898-11-19",
+  "home": "Dundee",
+  "away": "Celtic",
+  "homeGoals": 1,
+  "awayGoals": 4,
+  "competition": "League Division 1",
+  "id": "obs:thecelticwiki:pages:863:match",
+  "sourceIds": [
+   "document-cff062008985da977533b1b3"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1898-2/1898-11-19-dundee-1-4-celtic-league-division-1/",
+  "canonicalId": "h-1898-11-19-dundee",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1898-11-26",
+  "home": "Celtic",
+  "away": "Partick Thistle",
+  "homeGoals": 4,
+  "awayGoals": 0,
+  "competition": "League Division 1",
+  "id": "obs:thecelticwiki:pages:864:match",
+  "sourceIds": [
+   "document-89009f211dc81ce3a16441c6"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1898-2/1898-11-26-celtic-4-0-partick-thistle-league-division-1/",
+  "canonicalId": "h-1898-11-26-partick-thistle",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1898-12-03",
+  "home": "Partick Thistle",
+  "away": "Celtic",
+  "homeGoals": 3,
+  "awayGoals": 8,
+  "competition": "League Division 1",
+  "id": "obs:thecelticwiki:pages:865:match",
+  "sourceIds": [
+   "document-2fe24ae5d8f90cbed53e846e"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1898-2/1898-12-03-partick-thistle-3-8-celtic-league-division-1/",
+  "canonicalId": "h-1898-12-03-partick-thistle",
+  "identityState": "linked",
+  "status": "candidate",
+  "locator": "title.rendered; Match Details"
+ },
+ {
+  "on": "1898-12-31",
+  "home": "Third Lanark",
+  "away": "Celtic",
+  "homeGoals": 2,
+  "awayGoals": 4,
+  "competition": "League Division 1",
+  "id": "obs:thecelticwiki:pages:867:match",
+  "sourceIds": [
+   "document-a87e01713a6702bf09530b94"
+  ],
+  "sourceUrl": "https://www.thecelticwiki.com/celtic-games/year-by-year/1887-1900/1898-2/1898-12-31-third-lanark-2-4-celtic-league-division-1/",
+  "canonicalId": "h-1898-12-31-third-lanark",
   "identityState": "linked",
   "status": "candidate",
   "locator": "title.rendered; Match Details"

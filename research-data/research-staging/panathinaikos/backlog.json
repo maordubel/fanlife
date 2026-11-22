@@ -1,26 +1,10 @@
 [
  {
-  "id": "continue-paopedia-pages",
-  "priority": "P3",
-  "task": "Paopedia pages: 1 page(s) read of 2; the scheduled task continues from the checkpoint.",
-  "taskHe": "Paopedia pages: נקראו 1 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
-  "status": "queued",
-  "owner": null
- },
- {
   "id": "limit-paopedia-0",
   "priority": "P3",
   "task": "categories and search answered 403 in sampling — not used as required routes.",
   "taskHe": "categories and search answered 403 in sampling — not used as required routes.",
   "status": "noted",
-  "owner": null
- },
- {
-  "id": "continue-pao-official-history-html",
-  "priority": "P3",
-  "task": "Panathinaikos FC html: 0 page(s) read; the scheduled task continues from the checkpoint.",
-  "taskHe": "Panathinaikos FC html: נקראו 0 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
-  "status": "queued",
   "owner": null
  },
  {

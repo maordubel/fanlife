@@ -1,0 +1,64 @@
+{
+ "day": "2026-11-22",
+ "clubId": "paok",
+ "runUrl": "https://github.com/maordubel/fanlife/actions/runs/45018147326",
+ "added": {
+  "matches": 370,
+  "players": 32,
+  "seasons": 11,
+  "kits": 29,
+  "lineups": 243,
+  "scorers": 171
+ },
+ "heldDays": [],
+ "steps": [
+  {
+   "step": "Historical archives",
+   "state": "skipped",
+   "info": "No additional archive profile. The shared match, squad and kit sources still run."
+  },
+  {
+   "step": "UEFA match reports",
+   "state": "ok",
+   "info": "Finished the bounded UEFA pull"
+  },
+  {
+   "step": "Recent league and cup results",
+   "state": "ok",
+   "info": "Refreshed up to 12 recent fixtures"
+  },
+  {
+   "step": "Historical results, elevens and scorers",
+   "state": "ok",
+   "info": "Continued from the historical results checkpoint, up to 90 fixtures"
+  },
+  {
+   "step": "Historical players",
+   "state": "ok",
+   "info": "32 documented senior club stints"
+  },
+  {
+   "step": "Season archives, scoresheets and shirt metadata",
+   "state": "ok",
+   "info": "11 checked seasons and 127 dated results"
+  },
+  {
+   "step": "Kit archive",
+   "state": "gap",
+   "info": "www.footballkitarchive.com: robots.txt disallows this path"
+  },
+  {
+   "step": "Open league season datasets",
+   "state": "ok",
+   "info": "0 dated results across 5 competition files; 12 historical files unavailable"
+  }
+ ],
+ "dataVersion": "ecbcdaaf9780a85d",
+ "uncertainties": [],
+ "featureInputs": {
+  "players": 32,
+  "matches": 370,
+  "seasons": 11,
+  "kits": 29
+ }
+}

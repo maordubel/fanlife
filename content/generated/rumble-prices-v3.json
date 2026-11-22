@@ -4,12 +4,12 @@
  "clubs": {
   "hapoel-tel-aviv": {
    "quotaMode": "full",
-   "size": 656,
+   "size": 666,
    "quota": {
-    "1": 233,
-    "2": 230,
-    "3": 131,
-    "4": 52,
+    "1": 237,
+    "2": 233,
+    "3": 133,
+    "4": 53,
     "5": 10
    },
    "players": {
@@ -5260,6 +5260,86 @@
      "assignment": "new-member",
      "rationale": "Daily research added a documented first-team player.",
      "reviewedAt": "2026-11-22"
+    },
+    "hapoel-tel-aviv:daily-player-e18f4167c2be86dbba723e6b": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "hapoel-tel-aviv:daily-player-92e8fc37266d5a254f177167": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "hapoel-tel-aviv:daily-player-762eb5a75f992029356fa1c6": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "hapoel-tel-aviv:daily-player-47cc94fb6c3ce0b0e7a3d7db": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "hapoel-tel-aviv:daily-player-db794fba90101e3f528490e1": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "hapoel-tel-aviv:daily-player-d34e2223d0300ac282be78d8": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "hapoel-tel-aviv:daily-player-d9a28f257c2d8282d83c5085": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "hapoel-tel-aviv:daily-player-5c7c335868a83a3b7eab3bd8": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "hapoel-tel-aviv:daily-player-070ab5bc04ae0d34e4bf4fc0": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "hapoel-tel-aviv:daily-player-52ce8411544a767a247846fe": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
     }
    }
   },
@@ -10267,12 +10347,12 @@
   },
   "panathinaikos": {
    "quotaMode": "full",
-   "size": 543,
+   "size": 544,
    "quota": {
     "1": 191,
     "2": 190,
     "3": 109,
-    "4": 43,
+    "4": 44,
     "5": 10
    },
    "players": {
@@ -14619,17 +14699,25 @@
      "assignment": "owner-pinned",
      "rationale": "economy v2 (approved 2026-10-10): was €1M. joined the archive after the list was frozen",
      "reviewedAt": "2026-10-10"
+    },
+    "panathinaikos:daily-player-842965019f43ef21adc43b0a": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
     }
    }
   },
   "aek-athens": {
    "quotaMode": "full",
-   "size": 1181,
+   "size": 1198,
    "quota": {
-    "1": 428,
-    "2": 413,
-    "3": 236,
-    "4": 94,
+    "1": 433,
+    "2": 419,
+    "3": 240,
+    "4": 96,
     "5": 10
    },
    "players": {
@@ -24080,16 +24168,152 @@
      "assignment": "new-member",
      "rationale": "joined the archive after the list was frozen",
      "reviewedAt": "2026-10-10"
+    },
+    "aek-athens:daily-player-d2fed5097accd067670e26d9": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "aek-athens:daily-player-79939ecbb57510e0841cd2b0": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "aek-athens:daily-player-3e9dba757c8136dcfac06858": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "aek-athens:daily-player-a399450d4f38de1f7ffb0033": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "aek-athens:daily-player-b1596cf35db4418c4456de72": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "aek-athens:daily-player-ee03d950d4c463a10cb75c4d": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "aek-athens:daily-player-84abcf910f34d052105583d4": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "aek-athens:daily-player-d039d3df1caceb2f4c01b5c5": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "aek-athens:daily-player-e5e8274249b055e392c7138b": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "aek-athens:daily-player-fbeb2717886a591a2c080052": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "aek-athens:daily-player-7e0936198d209bd20ad32eda": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "aek-athens:daily-player-988f8c235da3799956b413a7": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "aek-athens:daily-player-1eb194c821fb8c20972b7c31": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "aek-athens:daily-player-97d805de7b4f9ce9867acac0": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "aek-athens:daily-player-5718d27be5313db0740d5db0": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "aek-athens:daily-player-9f27dbc0800fdae72bacd4a5": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "aek-athens:daily-player-bbe1b53c5b7cf7a143e30a5b": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
     }
    }
   },
   "celtic": {
    "quotaMode": "full",
-   "size": 1351,
+   "size": 1354,
    "quota": {
-    "1": 490,
-    "2": 473,
-    "3": 270,
+    "1": 491,
+    "2": 474,
+    "3": 271,
     "4": 108,
     "5": 10
    },
@@ -34901,15 +35125,39 @@
      "assignment": "new-member",
      "rationale": "joined the archive after the list was frozen",
      "reviewedAt": "2026-10-10"
+    },
+    "celtic:daily-player-40d9bccf997faef97e9405bb": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "celtic:daily-player-db342ed40af2cd8cb0257e43": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "celtic:daily-player-42517b96525e5a6e184ed3f1": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
     }
    }
   },
   "st-pauli": {
    "quotaMode": "full",
-   "size": 601,
+   "size": 602,
    "quota": {
     "1": 213,
-    "2": 210,
+    "2": 211,
     "3": 120,
     "4": 48,
     "5": 10
@@ -39722,6 +39970,14 @@
      "assignment": "owner-pinned",
      "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
      "reviewedAt": "2026-10-13"
+    },
+    "st-pauli:daily-player-2a806e388054264974d85e5a": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
     }
    }
   },
@@ -45116,12 +45372,12 @@
   },
   "raja-casablanca": {
    "quotaMode": "full",
-   "size": 543,
+   "size": 553,
    "quota": {
-    "1": 191,
-    "2": 190,
-    "3": 109,
-    "4": 43,
+    "1": 194,
+    "2": 194,
+    "3": 111,
+    "4": 44,
     "5": 10
    },
    "players": {
@@ -49468,16 +49724,96 @@
      "assignment": "auto",
      "rationale": "score 0.001 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
+    },
+    "raja-casablanca:daily-player-7c3610e2ae98b3239b3693a1": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "raja-casablanca:daily-player-d099e16bd5578583ed5a251a": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "raja-casablanca:daily-player-876303a212867bcd246ffe36": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "raja-casablanca:daily-player-389baf260ff0db871c08f476": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "raja-casablanca:daily-player-017a6e3fad4003d8518d1b53": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "raja-casablanca:daily-player-37539f695495f619450291f4": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "raja-casablanca:daily-player-efdb0ddcc1e2d8cc38722bb8": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "raja-casablanca:daily-player-a62d05d50611521e450729f2": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "raja-casablanca:daily-player-a8caf60e9fb65f8273e0c399": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "raja-casablanca:daily-player-683a210e63c14554514c8dee": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
     }
    }
   },
   "wydad-casablanca": {
    "quotaMode": "full",
-   "size": 183,
+   "size": 210,
    "quota": {
-    "1": 49,
-    "2": 64,
-    "3": 40,
+    "1": 64,
+    "2": 74,
+    "3": 42,
     "4": 20,
     "5": 10
    },
@@ -50945,17 +51281,233 @@
      "assignment": "auto",
      "rationale": "score 0.002 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
+    },
+    "wydad-casablanca:daily-player-ed48e75ed051eb05d344bdb5": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "wydad-casablanca:daily-player-efdb0ddcc1e2d8cc38722bb8": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "wydad-casablanca:daily-player-6c8804c177dd9216d8c290f9": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "wydad-casablanca:daily-player-b42d9f1c796c0e16cceaf978": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "wydad-casablanca:daily-player-c73196569ee3bf6b4d25aaf4": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "wydad-casablanca:daily-player-7474c116c99c1eaceb750df9": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "wydad-casablanca:daily-player-776759cf9e89b29bedac59d4": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "wydad-casablanca:daily-player-ba4ecd6ec9f62d06b1e2c5f7": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "wydad-casablanca:daily-player-9443be926771f32167767162": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "wydad-casablanca:daily-player-bb8baf8190ee8607430dad58": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "wydad-casablanca:daily-player-c4d632410b58bf999cf70287": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "wydad-casablanca:daily-player-c6ec5c975d553103fae836da": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "wydad-casablanca:daily-player-e32f14bc9b3ae7769bafd51c": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "wydad-casablanca:daily-player-01198bfac7e6619a54da12c9": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "wydad-casablanca:daily-player-4b32d409327d09bb12baa55d": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "wydad-casablanca:daily-player-6727be0e76b0f3837f488365": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "wydad-casablanca:daily-player-78d140f045081fbe5a083d69": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "wydad-casablanca:daily-player-81807da35a209367c3367898": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "wydad-casablanca:daily-player-b2111c3969adcd9bc199b0bb": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "wydad-casablanca:daily-player-b36544ebdb1910bf351981ac": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "wydad-casablanca:daily-player-d3780e338fe67347bc925c97": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "wydad-casablanca:daily-player-dfeccc3163ad2309f9331d50": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "wydad-casablanca:daily-player-01d851e200dab0600cd6c22e": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "wydad-casablanca:daily-player-59173ed61c3e6053c785aca5": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "wydad-casablanca:daily-player-3ca91ba16f36dda604370ba3": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "wydad-casablanca:daily-player-b35a74d0856ca08c9c8a2581": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "wydad-casablanca:daily-player-6d69f5711e2f217edac685fa": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
     }
    }
   },
   "al-ahly": {
    "quotaMode": "full",
-   "size": 234,
+   "size": 263,
    "quota": {
-    "1": 75,
-    "2": 82,
-    "3": 47,
-    "4": 20,
+    "1": 87,
+    "2": 92,
+    "3": 53,
+    "4": 21,
     "5": 10
    },
    "players": {
@@ -52830,17 +53382,249 @@
      "assignment": "auto",
      "rationale": "score 0.085 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-10-28"
+    },
+    "al-ahly:daily-player-2afd3c45df941c13b677a513": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "al-ahly:daily-player-83a66d37dcea961e416fcdfa": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "al-ahly:daily-player-d6676d49e419d14c0a8466aa": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "al-ahly:daily-player-bc0e3754140340e9890d7c05": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "al-ahly:daily-player-01897ff48b230699335f093a": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "al-ahly:daily-player-497da11c3004acaecaa375c2": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "al-ahly:daily-player-cd19b5243086aa5ab417af4f": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "al-ahly:daily-player-2bd25f57b35e652ddbeed71f": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "al-ahly:daily-player-f16afb67ec052f6a6f0dc56b": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "al-ahly:daily-player-955fcb95d990efbf213b5ccc": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "al-ahly:daily-player-3fc30f4c6e1750c8917c3667": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "al-ahly:daily-player-ed5ca9a2a24de11ac08cdeb8": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "al-ahly:daily-player-9b621d31a639cfd676402e1c": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "al-ahly:daily-player-2b53df6635bb13eec609cbc3": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "al-ahly:daily-player-347d0e378b49f88e7a942248": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "al-ahly:daily-player-530f572334c0b42d00f57834": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "al-ahly:daily-player-75cde33932abfa3810d97f3f": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "al-ahly:daily-player-d715a7af2c5204978931bc9f": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "al-ahly:daily-player-4a1d03bd6d8e9f58c67a8bae": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "al-ahly:daily-player-b64940fe24f5c7baa9cbe1a8": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "al-ahly:daily-player-6075ade7af96c046ad479371": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "al-ahly:daily-player-78a063784530ff5a1b7ed55d": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "al-ahly:daily-player-42ccb595d551912e7e2a349f": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "al-ahly:daily-player-e0a4bee5df0539ec24724ff4": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "al-ahly:daily-player-e6e5a2311a9322ba22929b17": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "al-ahly:daily-player-efcc721bd44304251ae2e901": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "al-ahly:daily-player-05ce3123052520207f2dd880": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "al-ahly:daily-player-67669ae6077c9d6d7a23d2e9": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "al-ahly:daily-player-10fb95cb37cfff38c3041be7": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
     }
    }
   },
   "atalanta": {
    "quotaMode": "full",
-   "size": 953,
+   "size": 958,
    "quota": {
-    "1": 342,
-    "2": 334,
-    "3": 191,
-    "4": 76,
+    "1": 344,
+    "2": 335,
+    "3": 192,
+    "4": 77,
     "5": 10
    },
    "players": {
@@ -60467,16 +61251,56 @@
      "assignment": "new-member",
      "rationale": "Daily research added a documented first-team player.",
      "reviewedAt": "2026-11-22"
+    },
+    "atalanta:daily-player-07b77dfd036c0518a1350218": {
+     "priceM": 4,
+     "priceTier": "STAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "atalanta:daily-player-1b248355c053855f60069506": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "atalanta:daily-player-94cc6c765edef37cd0d8854d": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "atalanta:daily-player-371ece84cec6c2b97f1d23c1": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "atalanta:daily-player-3f9398604d0c9c5d0743c426": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
     }
    }
   },
   "maccabi-haifa": {
    "quotaMode": "full",
-   "size": 217,
+   "size": 234,
    "quota": {
-    "1": 68,
-    "2": 76,
-    "3": 43,
+    "1": 75,
+    "2": 82,
+    "3": 47,
     "4": 20,
     "5": 10
    },
@@ -62216,6 +63040,142 @@
      "assignment": "auto",
      "rationale": "score 0.014 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
      "reviewedAt": "2026-11-14"
+    },
+    "maccabi-haifa:daily-player-323f26d99e4f54cc575bbb05": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "maccabi-haifa:daily-player-33fc29781d95697b9fe4d976": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "maccabi-haifa:daily-player-070ab5bc04ae0d34e4bf4fc0": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "maccabi-haifa:daily-player-5c7c335868a83a3b7eab3bd8": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "maccabi-haifa:daily-player-9c06c3807c723c487afff54e": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "maccabi-haifa:daily-player-ae29c263f6e91a1139c1ef3d": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "maccabi-haifa:daily-player-284c84184c8bf857634ef61b": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "maccabi-haifa:daily-player-d381642ce40dbf007f8044db": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "maccabi-haifa:daily-player-19350fc018d2a35a5b04f321": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "maccabi-haifa:daily-player-4affdeb84516d78833c6cb27": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "maccabi-haifa:daily-player-29772e975e8c19f8637ba819": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "maccabi-haifa:daily-player-41abe54c3214c919072f990f": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "maccabi-haifa:daily-player-930b2178eeef8015692a4873": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "maccabi-haifa:daily-player-a75551b34d97bdda8f68cc01": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "maccabi-haifa:daily-player-b35b5de3066c99ba36b97ab4": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "maccabi-haifa:daily-player-0989d0daf6361869a007467e": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
+    },
+    "maccabi-haifa:daily-player-5bc6be7372675b11e947891b": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-22"
     }
    }
   }

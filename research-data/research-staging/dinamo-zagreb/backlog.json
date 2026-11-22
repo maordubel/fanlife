@@ -16,14 +16,6 @@
   "owner": null
  },
  {
-  "id": "continue-dinamo-official-html",
-  "priority": "P3",
-  "task": "GNK Dinamo Zagreb html: 0 page(s) read; the scheduled task continues from the checkpoint.",
-  "taskHe": "GNK Dinamo Zagreb html: נקראו 0 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
-  "status": "queued",
-  "owner": null
- },
- {
   "id": "limit-dinamo-official-0",
   "priority": "P3",
   "task": "The Croatian and English pages are one source family.",
@@ -45,22 +37,6 @@
   "task": "The ClubPulse API addresses in the site's HTML answered 403 and are not used.",
   "taskHe": "The ClubPulse API addresses in the site's HTML answered 403 and are not used.",
   "status": "noted",
-  "owner": null
- },
- {
-  "id": "continue-bad-blue-boys-posts",
-  "priority": "P3",
-  "task": "Bad Blue Boys posts: 1 page(s) read of 4; the scheduled task continues from the checkpoint.",
-  "taskHe": "Bad Blue Boys posts: נקראו 1 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
-  "status": "queued",
-  "owner": null
- },
- {
-  "id": "continue-bad-blue-boys-pages",
-  "priority": "P3",
-  "task": "Bad Blue Boys pages: 1 page(s) read of 1; the scheduled task continues from the checkpoint.",
-  "taskHe": "Bad Blue Boys pages: נקראו 1 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
-  "status": "queued",
   "owner": null
  },
  {

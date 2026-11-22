@@ -2,16 +2,8 @@
  {
   "id": "continue-millernton-posts",
   "priority": "P3",
-  "task": "MillernTon posts: 1 page(s) read of 180; the scheduled task continues from the checkpoint.",
-  "taskHe": "MillernTon posts: נקראו 1 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
-  "status": "queued",
-  "owner": null
- },
- {
-  "id": "continue-millernton-pages",
-  "priority": "P3",
-  "task": "MillernTon pages: 1 page(s) read of 1; the scheduled task continues from the checkpoint.",
-  "taskHe": "MillernTon pages: נקראו 1 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
+  "task": "MillernTon posts: 11 page(s) read of 180; the scheduled task continues from the checkpoint.",
+  "taskHe": "MillernTon posts: נקראו 11 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
   "status": "queued",
   "owner": null
  },
@@ -29,22 +21,6 @@
   "task": "A new article about 1974 is about 1974: publication date is never the event date.",
   "taskHe": "A new article about 1974 is about 1974: publication date is never the event date.",
   "status": "noted",
-  "owner": null
- },
- {
-  "id": "continue-fcstpauli-museum-posts",
-  "priority": "P3",
-  "task": "FC St. Pauli Museum posts: 1 page(s) read of 2; the scheduled task continues from the checkpoint.",
-  "taskHe": "FC St. Pauli Museum posts: נקראו 1 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
-  "status": "queued",
-  "owner": null
- },
- {
-  "id": "continue-fcstpauli-museum-pages",
-  "priority": "P3",
-  "task": "FC St. Pauli Museum pages: 1 page(s) read of 2; the scheduled task continues from the checkpoint.",
-  "taskHe": "FC St. Pauli Museum pages: נקראו 1 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
-  "status": "queued",
   "owner": null
  },
  {

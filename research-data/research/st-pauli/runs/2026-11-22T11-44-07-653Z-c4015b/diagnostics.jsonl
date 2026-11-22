@@ -1,0 +1,2 @@
+{"code":"SOURCE_SCHEMA_CHANGED","providerId":"millernton","url":null,"message":"posts: the site now reports 4487 documents (was 4486) — pages may have shifted; duplicates are merged by id."}
+{"code":"BUDGET_EXHAUSTED","providerId":"*","url":null,"message":"Budget used; the next run resumes from the checkpoint."}

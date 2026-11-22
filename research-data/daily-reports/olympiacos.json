@@ -1,0 +1,285 @@
+{
+ "day": "2026-11-22",
+ "clubId": "olympiacos",
+ "runUrl": "https://github.com/maordubel/fanlife/actions/runs/45018147326",
+ "added": {
+  "matches": 626,
+  "players": 31,
+  "seasons": 11,
+  "kits": 33,
+  "lineups": 399,
+  "scorers": 372
+ },
+ "heldDays": [
+  "2025-10-18",
+  "2025-11-01",
+  "2025-11-09",
+  "2025-11-22",
+  "2025-12-06",
+  "2025-12-14",
+  "2025-12-20",
+  "2026-01-10",
+  "2026-01-24",
+  "2026-02-04",
+  "2026-08-22",
+  "2026-08-30",
+  "2026-09-05",
+  "2026-09-12"
+ ],
+ "steps": [
+  {
+   "step": "Historical archives",
+   "state": "skipped",
+   "info": "No additional archive profile. The shared match, squad and kit sources still run."
+  },
+  {
+   "step": "UEFA match reports",
+   "state": "ok",
+   "info": "Finished the bounded UEFA pull"
+  },
+  {
+   "step": "Recent league and cup results",
+   "state": "ok",
+   "info": "Refreshed up to 12 recent fixtures"
+  },
+  {
+   "step": "Historical results, elevens and scorers",
+   "state": "ok",
+   "info": "Continued from the historical results checkpoint, up to 90 fixtures"
+  },
+  {
+   "step": "Greek historical careers",
+   "state": "ok",
+   "info": "Updated checked career details"
+  },
+  {
+   "step": "Historical players",
+   "state": "ok",
+   "info": "29 documented senior club stints"
+  },
+  {
+   "step": "Season archives, scoresheets and shirt metadata",
+   "state": "ok",
+   "info": "11 checked seasons and 237 dated results"
+  },
+  {
+   "step": "Kit archive",
+   "state": "gap",
+   "info": "www.footballkitarchive.com: robots.txt disallows this path"
+  },
+  {
+   "step": "Open league season datasets",
+   "state": "ok",
+   "info": "0 dated results across 5 competition files; 12 historical files unavailable"
+  }
+ ],
+ "dataVersion": "fca63e4b07f12758",
+ "uncertainties": [
+  {
+   "record": "olympiacos:daily-match-5329c33d3e1085a527cd5783",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-6d462162d47aea2c72727346",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-5e727987713d5206351021a0",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-3d5c060801890fe13dc51b62",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-4d9139cb86efd6e6ae1da358",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-60a1ae45e682bfae03309ff4",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-c6004d1172296cd08f26c807",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-0c30e0a0264e32f8281b5959",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-7eab3e051a8166818f97c7f8",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-2fa3df2cffc42f3655ff3bd9",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-4ed3d3d3c063aa8e922d9d16",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-b96e8642cd7f792bbfca0047",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-029a598d7e3c164f8d732c15",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-200480e65e6cec6d8b0be03b",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-bc7691894cf8b84fe505bd60",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-4305303def8490ac14230ea0",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-8afdedc31626ae45011798c2",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-4fde523039b42df6ab261703",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-79779962e7621128ba540a5f",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-e0b769b7a7a398991acbd6e8",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-50a983f41576bec81e4be9f2",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-e30dd8fb7b79e2b02f372e6e",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-e0724d07a82fb83d96506233",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-f072951ffd5aa8683dbdb7da",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-76ed463938025b5206aa5298",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-5d6b4e0897e3f646bb0a0672",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-3a147a4be383483288bdc524",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-6066d7593ebc0f5f4bda1704",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-6b8264d8f3e64b2ea86f05fc",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-a6c860fbb2ea727d33c21539",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-e392108e763dcf07e186fc3d",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-5e8b6f9798d368977bffe469",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-2ef64726b98b82a7cd7a52de",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-1af5378d752e1531b794706f",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-11a54a6d60c05ebfb1b4953c",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-f7fe6d85d2962e7d5d55c33d",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-e0e55d9c51f45a95bf2eaf36",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-62c32288e2607073ed47d382",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-519cc1007786f81555019472",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "olympiacos:daily-match-d6d878738eeb2d29aaa24fb5",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  }
+ ],
+ "featureInputs": {
+  "players": 1116,
+  "matches": 732,
+  "seasons": 14,
+  "kits": 150
+ }
+}

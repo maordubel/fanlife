@@ -6,15 +6,15 @@
    {
     "collection": "posts",
     "state": "partial_budget",
-    "pagesRead": 1,
-    "observedTotalDocuments": 4486,
+    "pagesRead": 11,
+    "observedTotalDocuments": 4487,
     "observedTotalPages": 180,
     "queue": null,
     "lastError": null
    },
    {
     "collection": "pages",
-    "state": "partial_budget",
+    "state": "listed",
     "pagesRead": 1,
     "observedTotalDocuments": 20,
     "observedTotalPages": 1,
@@ -33,8 +33,8 @@
   "listings": [
    {
     "collection": "posts",
-    "state": "partial_budget",
-    "pagesRead": 1,
+    "state": "listed",
+    "pagesRead": 2,
     "observedTotalDocuments": 31,
     "observedTotalPages": 2,
     "queue": null,
@@ -42,8 +42,8 @@
    },
    {
     "collection": "pages",
-    "state": "partial_budget",
-    "pagesRead": 1,
+    "state": "listed",
+    "pagesRead": 2,
     "observedTotalDocuments": 29,
     "observedTotalPages": 2,
     "queue": null,

@@ -1,0 +1,342 @@
+{
+ "day": "2026-11-22",
+ "clubId": "panathinaikos",
+ "runUrl": "https://github.com/maordubel/fanlife/actions/runs/45018147326",
+ "added": {
+  "matches": 663,
+  "players": 48,
+  "seasons": 11,
+  "kits": 33,
+  "lineups": 362,
+  "scorers": 320
+ },
+ "heldDays": [
+  "2018-09-16",
+  "2018-10-20",
+  "2018-10-29",
+  "2018-11-03",
+  "2018-11-11",
+  "2018-12-02",
+  "2018-12-09",
+  "2019-01-27",
+  "2019-02-24",
+  "2019-03-03",
+  "2019-03-09",
+  "2019-03-17",
+  "2019-04-06",
+  "2019-04-14",
+  "2019-08-31",
+  "2019-09-15",
+  "2019-09-22",
+  "2019-09-29",
+  "2019-10-27",
+  "2019-11-03",
+  "2019-11-10",
+  "2019-12-08",
+  "2019-12-18",
+  "2019-12-22",
+  "2020-01-05",
+  "2020-01-12",
+  "2020-01-25",
+  "2020-02-02",
+  "2020-02-09",
+  "2020-03-01",
+  "2020-06-07",
+  "2020-06-13",
+  "2020-06-21",
+  "2020-06-27",
+  "2020-07-01",
+  "2020-07-05",
+  "2020-07-08",
+  "2020-07-12",
+  "2020-07-15",
+  "2020-07-19",
+  "2024-09-01",
+  "2024-09-15",
+  "2024-09-29",
+  "2024-10-06",
+  "2024-10-20",
+  "2024-10-27",
+  "2024-11-03",
+  "2025-01-05",
+  "2025-01-19",
+  "2025-01-26",
+  "2025-02-01",
+  "2025-02-09",
+  "2025-02-16",
+  "2025-03-30",
+  "2025-04-06",
+  "2025-04-13",
+  "2025-04-27",
+  "2025-05-11",
+  "2025-09-14",
+  "2025-09-21",
+  "2025-10-19",
+  "2025-10-26",
+  "2025-11-01",
+  "2025-12-07",
+  "2025-12-14",
+  "2026-01-14",
+  "2026-01-25",
+  "2026-02-01",
+  "2026-02-15",
+  "2026-02-22",
+  "2026-03-01",
+  "2026-03-04",
+  "2026-03-22",
+  "2026-09-16",
+  "2026-10-25",
+  "2026-10-28"
+ ],
+ "steps": [
+  {
+   "step": "Historical archives",
+   "state": "ok",
+   "info": "18 pages read, 0 observations, 0 refused"
+  },
+  {
+   "step": "UEFA match reports",
+   "state": "ok",
+   "info": "Finished the bounded UEFA pull"
+  },
+  {
+   "step": "Recent league and cup results",
+   "state": "ok",
+   "info": "Refreshed up to 12 recent fixtures"
+  },
+  {
+   "step": "Historical results, elevens and scorers",
+   "state": "ok",
+   "info": "Continued from the historical results checkpoint, up to 90 fixtures"
+  },
+  {
+   "step": "Historical players",
+   "state": "ok",
+   "info": "29 documented senior club stints"
+  },
+  {
+   "step": "Season archives, scoresheets and shirt metadata",
+   "state": "ok",
+   "info": "11 checked seasons and 343 dated results"
+  },
+  {
+   "step": "Kit archive",
+   "state": "gap",
+   "info": "www.footballkitarchive.com: robots.txt disallows this path"
+  },
+  {
+   "step": "Open league season datasets",
+   "state": "ok",
+   "info": "142 dated results across 5 competition files; 12 historical files unavailable"
+  }
+ ],
+ "dataVersion": "92e296bc71f952b9",
+ "uncertainties": [
+  {
+   "record": "panathinaikos:daily-match-6918a069665fd6d69400c296",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-283d50272c6eac71b43d6192",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-93ae15b9599627cda529eb55",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-b51d9b223daed4455d7e816f",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-5c9b8674e2eb582c4a174f56",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-d87c8d8d3381b2e658555e2a",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-264da75a7f3dc68d0a5d6d2c",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-e0d39e2568401a489147302e",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-3889ae06d8bf7d8f16a18d95",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-fe06150ff08f09eb849c1014",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-393e4d91e3f0a86ef7a1ff68",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-9f14ceffd6f899840139596a",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-ff66100de4b08a4235e0b1ba",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-2e3119232563351f277bb8d0",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-4e5414cf38285ddb931ec331",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-7bffedf753cd35f2fdaea283",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-03f7139d35d1dd91a7b2a69f",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-f7cbcade9dace4e7de25232f",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-b6e8a1707217790804aae8d5",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-d83d44372221c33b4a52b872",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-2c821166daa15d39581fb794",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-3bbf7ec0b5f37fdff142e16f",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-c70b5a47b1b6b100d63c0146",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-6b067a73dafa74f7bc2158db",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-37196735dfaf16281ee2d922",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-92eaa47c88720c93c2963710",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-338f0b21c0b93627c7e1f457",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-4aa35f85f3c023479bf59d01",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-5bad55a1fdc165827b4db4ef",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-9c38d0210cf0adaf9b62f1b5",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-83d6ea0ac3a183eed513b21a",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-d028bdcd8ec2e6cdd218caed",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-1642ca02e67e711976c060b2",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-9e5ad9e30a958307bc6e857c",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-31bdfcb3c8bc7d29981c4f84",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-58ff44eae55272b528c25363",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-304400692ef0ca3eab426105",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-7413587282d9ddc712ed605f",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-f857fc608e4ab118d69703d5",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "panathinaikos:daily-match-8a97ff31b4543448fa4aaa51",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  }
+ ],
+ "featureInputs": {
+  "players": 544,
+  "matches": 1103,
+  "seasons": 11,
+  "kits": 167
+ }
+}

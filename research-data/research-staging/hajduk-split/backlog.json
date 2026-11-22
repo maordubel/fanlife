@@ -58,16 +58,8 @@
  {
   "id": "continue-torcida-posts",
   "priority": "P3",
-  "task": "Torcida Split posts: 1 page(s) read of 27; the scheduled task continues from the checkpoint.",
-  "taskHe": "Torcida Split posts: נקראו 1 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
-  "status": "queued",
-  "owner": null
- },
- {
-  "id": "continue-torcida-pages",
-  "priority": "P3",
-  "task": "Torcida Split pages: 1 page(s) read of 1; the scheduled task continues from the checkpoint.",
-  "taskHe": "Torcida Split pages: נקראו 1 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
+  "task": "Torcida Split posts: 9 page(s) read of 27; the scheduled task continues from the checkpoint.",
+  "taskHe": "Torcida Split posts: נקראו 9 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
   "status": "queued",
   "owner": null
  },
@@ -93,6 +85,14 @@
   "task": "One Wikipedia page counts as one publisher.",
   "taskHe": "One Wikipedia page counts as one publisher.",
   "status": "noted",
+  "owner": null
+ },
+ {
+  "id": "blocked-hajduk-official-history-en-/eng/history",
+  "priority": "P2",
+  "task": "HNK Hajduk: /eng/history answered 403 (HTTP 403 — a refusal is an answer). Recorded as a gap — not bypassed.",
+  "taskHe": "HNK Hajduk: /eng/history חסום (403). נרשם כפער — לא עוקפים.",
+  "status": "queued",
   "owner": null
  },
  {

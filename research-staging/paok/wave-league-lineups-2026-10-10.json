@@ -1,0 +1,901 @@
+{
+ "sources": [
+  {
+   "id": "s365-4776064",
+   "title": "365Scores: Olympiacos 1-1 PAOK, 2026-11-08",
+   "url": "https://webws.365scores.com/web/game/?gameId=4776064",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1836606",
+   "title": "LiveScore: Olympiacos 1-1 PAOK, 2026-11-08 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1836606",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4776069",
+   "title": "365Scores: PAOK 2-1 Asteras Tripolis, 2026-11-01",
+   "url": "https://webws.365scores.com/web/game/?gameId=4776069",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1836605",
+   "title": "LiveScore: PAOK 2-1 Asteras Tripolis, 2026-11-01 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1836605",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4823806",
+   "title": "365Scores: PAOK 3-1 AEK Athens, 2026-10-28",
+   "url": "https://webws.365scores.com/web/game/?gameId=4823806",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1882525",
+   "title": "LiveScore: PAOK 3-1 AEK Athens, 2026-10-28 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1882525",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4776076",
+   "title": "365Scores: OFI Crete 2-1 PAOK, 2026-10-25",
+   "url": "https://webws.365scores.com/web/game/?gameId=4776076",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1836598",
+   "title": "LiveScore: OFI Crete 2-1 PAOK, 2026-10-25 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1836598",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4776083",
+   "title": "365Scores: PAOK 2-1 Iraklis, 2026-10-18",
+   "url": "https://webws.365scores.com/web/game/?gameId=4776083",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1836583",
+   "title": "LiveScore: PAOK 2-1 Iraklis, 2026-10-18 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1836583",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4776091",
+   "title": "365Scores: PAOK 1-3 Kalamata, 2026-10-12",
+   "url": "https://webws.365scores.com/web/game/?gameId=4776091",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1836572",
+   "title": "LiveScore: PAOK 1-3 Kalamata, 2026-10-12 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1836572",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4776097",
+   "title": "365Scores: Panetolikos 1-3 PAOK, 2026-09-20",
+   "url": "https://webws.365scores.com/web/game/?gameId=4776097",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1836568",
+   "title": "LiveScore: Panetolikos 1-3 PAOK, 2026-09-20 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1836568",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4823808",
+   "title": "365Scores: Atromitos Athinon 0-1 PAOK, 2026-09-16",
+   "url": "https://webws.365scores.com/web/game/?gameId=4823808",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1882215",
+   "title": "LiveScore: Atromitos Athinon 0-1 PAOK, 2026-09-16 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1882215",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4776105",
+   "title": "365Scores: PAOK 2-0 Aris Salonica, 2026-09-13",
+   "url": "https://webws.365scores.com/web/game/?gameId=4776105",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1836545",
+   "title": "LiveScore: PAOK 2-0 Aris Salonica, 2026-09-13 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1836545",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4776112",
+   "title": "365Scores: Panathinaikos 3-1 PAOK, 2026-09-06",
+   "url": "https://webws.365scores.com/web/game/?gameId=4776112",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1836553",
+   "title": "LiveScore: Panathinaikos 3-1 PAOK, 2026-09-06 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1836553",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4823819",
+   "title": "365Scores: PAOK 0-0 OFI Crete, 2026-09-02",
+   "url": "https://webws.365scores.com/web/game/?gameId=4823819",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1882217",
+   "title": "LiveScore: PAOK 0-0 OFI Crete, 2026-09-02 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1882217",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4776122",
+   "title": "365Scores: Atromitos Athinon 1-2 PAOK, 2026-08-30",
+   "url": "https://webws.365scores.com/web/game/?gameId=4776122",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1836547",
+   "title": "LiveScore: Atromitos Athinon 1-2 PAOK, 2026-08-30 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1836547",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4776125",
+   "title": "365Scores: PAOK 4-0 Levadiakos, 2026-08-23",
+   "url": "https://webws.365scores.com/web/game/?gameId=4776125",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1836556",
+   "title": "LiveScore: PAOK 4-0 Levadiakos, 2026-08-23 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1836556",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  }
+ ],
+ "matches": [
+  {
+   "id": "a-m-2026-11-08-olympiacos-paok",
+   "value": {
+    "name": "Olympiacos 1-1 PAOK",
+    "on": "2026-11-08",
+    "competition": "Super League",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Dimitrios Monastirlis",
+     "Dimitris Giannoulis",
+     "Diego Costa",
+     "Pantelis Chatzidiakos",
+     "Aritz Elustondo",
+     "Christos Zafeiris",
+     "Baptiste Santamaria",
+     "Kristijan Jakic",
+     "Andrija Zivkovic",
+     "Simon Banza",
+     "Cherif Ndiaye"
+    ],
+    "bench": [
+     "Baba Rahman",
+     "Greg Taylor",
+     "Mady Camara",
+     "Ognjen Ugrešić",
+     "Tom Louchet",
+     "Konstantinos Balomenos",
+     "Antonis Tsiftsis",
+     "Dimitrios Bataoulas",
+     "Georgios Kosidis",
+     "Shola Shoretire",
+     "Dimitrios Chatsidis",
+     "Anestis Mythou"
+    ],
+    "scorers": [
+     "Andrija Zivkovic"
+    ]
+   },
+   "sources": [
+    "s365-4776064",
+    "ls-lu-1836606"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-paok"
+  },
+  {
+   "id": "a-m-2026-11-01-paok-asteras-tripolis",
+   "value": {
+    "name": "PAOK 2-1 Asteras Tripolis",
+    "on": "2026-11-01",
+    "competition": "Super League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Dimitrios Monastirlis",
+     "Dimitris Giannoulis",
+     "Diego Costa",
+     "Pantelis Chatzidiakos",
+     "Jonjoe Kenny",
+     "Shola Shoretire",
+     "Baptiste Santamaria",
+     "Christos Zafeiris",
+     "Andrija Zivkovic",
+     "Simon Banza",
+     "Cherif Ndiaye"
+    ],
+    "bench": [
+     "Aritz Elustondo",
+     "Greg Taylor",
+     "Kristijan Jakic",
+     "Mady Camara",
+     "Anestis Mythou",
+     "Konstantinos Balomenos",
+     "Antonis Tsiftsis",
+     "Dimitrios Bataoulas",
+     "Baba Rahman",
+     "Ognjen Ugrešić",
+     "Taison",
+     "Dimitrios Chatsidis"
+    ],
+    "scorers": [
+     "Cherif Ndiaye",
+     "Anestis Mythou"
+    ]
+   },
+   "sources": [
+    "s365-4776069",
+    "ls-lu-1836605"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-paok"
+  },
+  {
+   "id": "a-m-2026-10-28-paok-aek-athens",
+   "value": {
+    "name": "PAOK 3-1 AEK Athens",
+    "on": "2026-10-28",
+    "competition": "Greece Cup - League Phase",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Dimitrios Monastirlis",
+     "Dimitris Giannoulis",
+     "Diego Costa",
+     "Pantelis Chatzidiakos",
+     "Jonjoe Kenny",
+     "Baptiste Santamaria",
+     "Kristijan Jakic",
+     "Dimitrios Chatsidis",
+     "Simon Banza",
+     "Andrija Zivkovic",
+     "Cherif Ndiaye"
+    ],
+    "bench": [
+     "Greg Taylor",
+     "Mady Camara",
+     "Christos Zafeiris",
+     "Shola Shoretire",
+     "Anestis Mythou",
+     "Antonis Tsiftsis",
+     "Dimitrios Bataoulas",
+     "Aritz Elustondo",
+     "Georgios Kosidis",
+     "Baba Rahman",
+     "Ognjen Ugrešić",
+     "Taison"
+    ],
+    "scorers": [
+     "Simon Banza",
+     "Shola Shoretire",
+     "Cherif Ndiaye"
+    ]
+   },
+   "sources": [
+    "s365-4823806",
+    "ls-lu-1882525"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-paok"
+  },
+  {
+   "id": "a-m-2026-10-25-ofi-crete-paok",
+   "value": {
+    "name": "OFI Crete 2-1 PAOK",
+    "on": "2026-10-25",
+    "competition": "Super League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Antonis Tsiftsis",
+     "Baba Rahman",
+     "Giannis Michailidis",
+     "Diego Costa",
+     "Jonjoe Kenny",
+     "Kristijan Jakic",
+     "Christos Zafeiris",
+     "Taison",
+     "Ognjen Ugrešić",
+     "Andrija Zivkovic",
+     "Cherif Ndiaye"
+    ],
+    "bench": [
+     "Aritz Elustondo",
+     "Pantelis Chatzidiakos",
+     "Greg Taylor",
+     "Shola Shoretire",
+     "Simon Banza",
+     "Dimitrios Monastirlis",
+     "Dimitrios Bataoulas",
+     "Dimitris Giannoulis",
+     "Baptiste Santamaria",
+     "Mady Camara",
+     "Dimitrios Chatsidis",
+     "Anestis Mythou"
+    ],
+    "scorers": [
+     "Simon Banza"
+    ]
+   },
+   "sources": [
+    "s365-4776076",
+    "ls-lu-1836598"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-paok"
+  },
+  {
+   "id": "a-m-2026-10-18-paok-iraklis",
+   "value": {
+    "name": "PAOK 2-1 Iraklis",
+    "on": "2026-10-18",
+    "competition": "Super League",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Dimitrios Monastirlis",
+     "Dimitris Giannoulis",
+     "Giannis Michailidis",
+     "Diego Costa",
+     "Jonjoe Kenny",
+     "Kristijan Jakic",
+     "Christos Zafeiris",
+     "Taison",
+     "Ognjen Ugrešić",
+     "Andrija Zivkovic",
+     "Cherif Ndiaye"
+    ],
+    "bench": [
+     "Baba Rahman",
+     "Baptiste Santamaria",
+     "Mady Camara",
+     "Tom Louchet",
+     "Simon Banza",
+     "Vasilios Nikolakoulis",
+     "Aritz Elustondo",
+     "Pantelis Chatzidiakos",
+     "Greg Taylor",
+     "Shola Shoretire",
+     "Dimitrios Chatsidis",
+     "Anestis Mythou"
+    ],
+    "scorers": [
+     "Simon Banza",
+     "Giannis Michailidis"
+    ]
+   },
+   "sources": [
+    "s365-4776083",
+    "ls-lu-1836583"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-paok"
+  },
+  {
+   "id": "a-m-2026-10-12-paok-kalamata",
+   "value": {
+    "name": "PAOK 1-3 Kalamata",
+    "on": "2026-10-12",
+    "competition": "Super League",
+    "score": "1-3",
+    "venue": null,
+    "lineup": [
+     "Antonis Tsiftsis",
+     "Baba Rahman",
+     "Giannis Michailidis",
+     "Diego Costa",
+     "Jonjoe Kenny",
+     "Kristijan Jakic",
+     "Christos Zafeiris",
+     "Taison",
+     "Dimitrios Pelkas",
+     "Dimitrios Chatsidis",
+     "Cherif Ndiaye"
+    ],
+    "bench": [
+     "Dimitrios Monastirlis",
+     "Aritz Elustondo",
+     "Ognjen Ugrešić",
+     "Andrija Zivkovic",
+     "Simon Banza",
+     "Pantelis Chatzidiakos",
+     "Dimitris Giannoulis",
+     "Greg Taylor",
+     "Baptiste Santamaria",
+     "Mady Camara",
+     "Shola Shoretire",
+     "Anestis Mythou"
+    ],
+    "scorers": [
+     "Cherif Ndiaye"
+    ]
+   },
+   "sources": [
+    "s365-4776091",
+    "ls-lu-1836572"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-paok"
+  },
+  {
+   "id": "a-m-2026-09-20-panetolikos-paok",
+   "value": {
+    "name": "Panetolikos 1-3 PAOK",
+    "on": "2026-09-20",
+    "competition": "Super League",
+    "score": "1-3",
+    "venue": null,
+    "lineup": [
+     "Jiri Pavlenka",
+     "Baba Rahman",
+     "Giannis Michailidis",
+     "Aritz Elustondo",
+     "Jonjoe Kenny",
+     "Kristijan Jakic",
+     "Christos Zafeiris",
+     "Taha Ali",
+     "Dimitrios Pelkas",
+     "Andrija Zivkovic",
+     "Cherif Ndiaye"
+    ],
+    "bench": [
+     "Antonis Tsiftsis",
+     "Dimitrios Bataoulas",
+     "Baptiste Santamaria",
+     "Ognjen Ugrešić",
+     "Shola Shoretire",
+     "Dimitrios Monastirlis",
+     "Georgios Kosidis",
+     "Greg Taylor",
+     "Mady Camara",
+     "Simon Banza",
+     "Dimitrios Chatsidis",
+     "Anestis Mythou"
+    ],
+    "scorers": [
+     "Taha Ali",
+     "Cherif Ndiaye",
+     "Shola Shoretire"
+    ]
+   },
+   "sources": [
+    "s365-4776097",
+    "ls-lu-1836568"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-paok"
+  },
+  {
+   "id": "a-m-2026-09-16-atromitos-athinon-paok",
+   "value": {
+    "name": "Atromitos Athinon 0-1 PAOK",
+    "on": "2026-09-16",
+    "competition": "Greece Cup - League Phase",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Antonis Tsiftsis",
+     "Greg Taylor",
+     "Diego Costa",
+     "Aritz Elustondo",
+     "Jonjoe Kenny",
+     "Kristijan Jakic",
+     "Ognjen Ugrešić",
+     "Taha Ali",
+     "Mady Camara",
+     "Dimitrios Chatsidis",
+     "Anestis Mythou"
+    ],
+    "bench": [
+     "Dimitrios Bataoulas",
+     "Baptiste Santamaria",
+     "Christos Zafeiris",
+     "Dimitrios Pelkas",
+     "Cherif Ndiaye",
+     "Dimitrios Monastirlis",
+     "Giannis Michailidis",
+     "Georgios Kosidis",
+     "Baba Rahman",
+     "Andrija Zivkovic",
+     "Taison",
+     "Shola Shoretire"
+    ],
+    "scorers": [
+     "Anestis Mythou"
+    ]
+   },
+   "sources": [
+    "s365-4823808",
+    "ls-lu-1882215"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-paok"
+  },
+  {
+   "id": "a-m-2026-09-13-paok-aris-salonica",
+   "value": {
+    "name": "PAOK 2-0 Aris Salonica",
+    "on": "2026-09-13",
+    "competition": "Super League",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Jiri Pavlenka",
+     "Baba Rahman",
+     "Giannis Michailidis",
+     "Diego Costa",
+     "Jonjoe Kenny",
+     "Ognjen Ugrešić",
+     "Christos Zafeiris",
+     "Taison",
+     "Dimitrios Pelkas",
+     "Andrija Zivkovic",
+     "Cherif Ndiaye"
+    ],
+    "bench": [
+     "Kristijan Jakic",
+     "Mady Camara",
+     "Taha Ali",
+     "Dimitrios Chatsidis",
+     "Anestis Mythou",
+     "Antonis Tsiftsis",
+     "Dimitrios Bataoulas",
+     "Georgios Kosidis",
+     "Greg Taylor",
+     "Baptiste Santamaria",
+     "Konstantinos Thymianis",
+     "Shola Shoretire"
+    ],
+    "scorers": [
+     "Cherif Ndiaye",
+     "Andrija Zivkovic"
+    ]
+   },
+   "sources": [
+    "s365-4776105",
+    "ls-lu-1836545"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-paok"
+  },
+  {
+   "id": "a-m-2026-09-06-panathinaikos-paok",
+   "value": {
+    "name": "Panathinaikos 3-1 PAOK",
+    "on": "2026-09-06",
+    "competition": "Super League",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Jiri Pavlenka",
+     "Dimitris Giannoulis",
+     "Giannis Michailidis",
+     "Aritz Elustondo",
+     "Jonjoe Kenny",
+     "Baptiste Santamaria",
+     "Christos Zafeiris",
+     "Taha Ali",
+     "Dimitrios Pelkas",
+     "Andrija Zivkovic",
+     "Cherif Ndiaye"
+    ],
+    "bench": [
+     "Dimitrios Bataoulas",
+     "Mady Camara",
+     "Ognjen Ugrešić",
+     "Taison",
+     "Dimitrios Chatsidis",
+     "Dimitrios Monastirlis",
+     "Antonis Tsiftsis",
+     "Baba Rahman",
+     "Konstantinos Thymianis",
+     "Shola Shoretire",
+     "Anestis Mythou"
+    ],
+    "scorers": [
+     "Ognjen Ugrešić"
+    ]
+   },
+   "sources": [
+    "s365-4776112",
+    "ls-lu-1836553"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-paok"
+  },
+  {
+   "id": "a-m-2026-09-02-paok-ofi-crete",
+   "value": {
+    "name": "PAOK 0-0 OFI Crete",
+    "on": "2026-09-02",
+    "competition": "Greece Cup - League Phase",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Antonis Tsiftsis",
+     "Baba Rahman",
+     "Giannis Michailidis",
+     "Dimitrios Bataoulas",
+     "Jonjoe Kenny",
+     "Greg Taylor",
+     "Baptiste Santamaria",
+     "Taison",
+     "Ognjen Ugrešić",
+     "Andrija Zivkovic",
+     "Anestis Mythou"
+    ],
+    "bench": [
+     "Mady Camara",
+     "Taha Ali",
+     "Shola Shoretire",
+     "Dimitrios Chatsidis",
+     "Cherif Ndiaye",
+     "Jiri Pavlenka",
+     "Aritz Elustondo",
+     "Georgios Kosidis",
+     "Dimitris Giannoulis",
+     "Konstantinos Thymianis",
+     "Christos Zafeiris",
+     "Dimitrios Berdos"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4823819",
+    "ls-lu-1882217"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-paok"
+  },
+  {
+   "id": "a-m-2026-08-30-atromitos-athinon-paok",
+   "value": {
+    "name": "Atromitos Athinon 1-2 PAOK",
+    "on": "2026-08-30",
+    "competition": "Super League",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Jiri Pavlenka",
+     "Baba Rahman",
+     "Pantelis Chatzidiakos",
+     "Aritz Elustondo",
+     "Jonjoe Kenny",
+     "Greg Taylor",
+     "Christos Zafeiris",
+     "Taha Ali",
+     "Dimitrios Pelkas",
+     "Andrija Zivkovic",
+     "Cherif Ndiaye"
+    ],
+    "bench": [
+     "Giannis Michailidis",
+     "Baptiste Santamaria",
+     "Konstantinos Thymianis",
+     "Dimitrios Chatsidis",
+     "Anestis Mythou",
+     "Dimitrios Monastirlis",
+     "Antonis Tsiftsis",
+     "Dimitrios Bataoulas",
+     "Dimitris Giannoulis",
+     "Jonathan Gómez",
+     "Taison",
+     "Shola Shoretire"
+    ],
+    "scorers": [
+     "Dimitrios Pelkas",
+     "Dimitrios Pelkas"
+    ]
+   },
+   "sources": [
+    "s365-4776122",
+    "ls-lu-1836547"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-paok"
+  },
+  {
+   "id": "a-m-2026-08-23-paok-levadiakos",
+   "value": {
+    "name": "PAOK 4-0 Levadiakos",
+    "on": "2026-08-23",
+    "competition": "Super League",
+    "score": "4-0",
+    "venue": null,
+    "lineup": [
+     "Jiri Pavlenka",
+     "Baba Rahman",
+     "Giannis Michailidis",
+     "Aritz Elustondo",
+     "Jonjoe Kenny",
+     "Tom Louchet",
+     "Greg Taylor",
+     "Shola Shoretire",
+     "Dimitrios Pelkas",
+     "Andrija Zivkovic",
+     "Cherif Ndiaye"
+    ],
+    "bench": [
+     "Baptiste Santamaria",
+     "Konstantinos Thymianis",
+     "Taison",
+     "Dimitrios Chatsidis",
+     "Anestis Mythou",
+     "Dimitrios Monastirlis",
+     "Antonis Tsiftsis",
+     "Dimitrios Bataoulas",
+     "Pantelis Chatzidiakos",
+     "Dimitris Giannoulis",
+     "Jonathan Gómez",
+     "Christos Zafeiris"
+    ],
+    "scorers": [
+     "Shola Shoretire",
+     "Dimitrios Pelkas",
+     "Anestis Mythou",
+     "Andrija Zivkovic"
+    ]
+   },
+   "sources": [
+    "s365-4776125",
+    "ls-lu-1836556"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-paok"
+  }
+ ],
+ "players": [],
+ "kits": [],
+ "rivals": []
+}

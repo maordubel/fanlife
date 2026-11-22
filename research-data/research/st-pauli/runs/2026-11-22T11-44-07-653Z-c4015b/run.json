@@ -1,0 +1,38 @@
+{
+ "schemaVersion": 1,
+ "id": "2026-11-22T11-44-07-653Z-c4015b",
+ "clubId": "st-pauli",
+ "startedAt": "2026-11-22T11:44:07.653Z",
+ "finishedAt": "2026-11-22T11:44:43.120Z",
+ "providers": [
+  "millernton",
+  "fcstpauli-museum"
+ ],
+ "state": "partial_budget",
+ "counts": {
+  "requests": 12,
+  "documentsRead": 260,
+  "newDocuments": 0,
+  "changedDocuments": 5,
+  "unchangedDocuments": 255,
+  "recordsExtracted": 0,
+  "blockedEndpoints": 0,
+  "budgetLeft": 28
+ },
+ "diagnostics": [
+  {
+   "code": "SOURCE_SCHEMA_CHANGED",
+   "providerId": "millernton",
+   "url": null,
+   "message": "posts: the site now reports 4487 documents (was 4486) — pages may have shifted; duplicates are merged by id."
+  },
+  {
+   "code": "BUDGET_EXHAUSTED",
+   "providerId": "*",
+   "url": null,
+   "message": "Budget used; the next run resumes from the checkpoint."
+  }
+ ],
+ "completeArchiveClaim": false,
+ "approvedForProduction": 0
+}

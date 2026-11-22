@@ -1,0 +1,5582 @@
+{
+ "schemaVersion": 1,
+ "clubId": "wydad-casablanca",
+ "contentLocale": "en",
+ "sources": [
+  {
+   "id": "daily-src-2b6f6406df1bd27283b743e6",
+   "url": "https://webws.365scores.com/web/game/?gameId=4882515",
+   "title": "365Scores: Kawkab Marrakech 2-1 Wydad AC, 2026-11-07",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-434d6e33f901a344bf829b4d",
+   "url": "https://webws.365scores.com/web/game/?gameId=4882505",
+   "title": "365Scores: Wydad AC 1-0 Maghreb Tétouan, 2026-10-31",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-af2259f00b0a3e6ebd963311",
+   "url": "https://webws.365scores.com/web/game/?gameId=4882496",
+   "title": "365Scores: US Touarga 0-1 Wydad AC, 2026-10-24",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-9a4a08d4bbb93a1b3287b7b3",
+   "url": "https://webws.365scores.com/web/game/?gameId=4870765",
+   "title": "365Scores: Wydad AC 1-1 Amal Tiznit, 2026-10-18",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-c759f21ca10fd2fc80a17606",
+   "url": "https://webws.365scores.com/web/game/?gameId=4870757",
+   "title": "365Scores: Wydad AC 0-0 CODM Meknes, 2026-10-11",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-c5a2abd505f55f4af3876ccb",
+   "url": "https://webws.365scores.com/web/game/?gameId=4859475",
+   "title": "365Scores: El Jadida 0-2 Wydad AC, 2026-10-03",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-061cd82d4de19cfd9a1d9580",
+   "url": "https://webws.365scores.com/web/game/?gameId=4827866",
+   "title": "365Scores: Wydad AC 3-0 Wydad Temara, 2026-09-26",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-302147616b8ad24e70a8b71a",
+   "url": "https://webws.365scores.com/web/game/?gameId=4754383",
+   "title": "365Scores: Wydad AC 1-2 US Touarga, 2026-07-05",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-63d34a68f19a6d3a34f495cd",
+   "url": "https://webws.365scores.com/web/game/?gameId=4749424",
+   "title": "365Scores: RSB Berkane 2-0 Wydad AC, 2026-07-02",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-b6ebfa8da334259d71c36fbe",
+   "url": "https://webws.365scores.com/web/game/?gameId=4745077",
+   "title": "365Scores: Wydad AC 1-3 Olympique Dcheira, 2026-06-28",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-8a949f9aec2e9b7fdae2d715",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739956",
+   "title": "365Scores: Wydad AC 0-1 Maghreb Fès, 2026-06-25",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-24b21a0af252c1b7b90684ee",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739951",
+   "title": "365Scores: El Jadida 1-0 Wydad AC, 2026-06-21",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-a82eec64aa6d12655818a856",
+   "url": "https://webws.365scores.com/web/game/?gameId=4737137",
+   "title": "365Scores: Wydad AC 1-2 FUS Rabat, 2026-06-18",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-f7a74b5485a04c4f413d84ea",
+   "url": "https://webws.365scores.com/web/game/?gameId=4733317",
+   "title": "365Scores: AS Far Rabat 2-1 Wydad AC, 2026-06-14",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-a14ab0b2f03d5483f2ca641c",
+   "url": "https://webws.365scores.com/web/game/?gameId=4729829",
+   "title": "365Scores: Wydad AC 1-0 Olympique Safi, 2026-06-08",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-4def9b9677c8cfda2a1490d1",
+   "url": "https://webws.365scores.com/web/game/?gameId=4716408",
+   "title": "365Scores: Ittihad Tanger 2-1 Wydad AC, 2026-06-03",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-89f1d4b13eaf6f65f10b26aa",
+   "url": "https://webws.365scores.com/web/game/?gameId=4716391",
+   "title": "365Scores: Wydad AC 3-2 Hassania Agadir, 2026-05-23",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-d86eedd9255a0c6a07360900",
+   "url": "https://webws.365scores.com/web/game/?gameId=4708884",
+   "title": "365Scores: Raja Casablanca 0-1 Wydad AC, 2026-05-09",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-65d82ca6d8b2974594dc6e75",
+   "url": "https://webws.365scores.com/web/game/?gameId=4708877",
+   "title": "365Scores: Wydad AC 2-0 CODM Meknes, 2026-05-06",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-7826ee3f167398a5f6c67ead",
+   "url": "https://webws.365scores.com/web/game/?gameId=4708821",
+   "title": "365Scores: CR Khemis Zemamra 1-0 Wydad AC, 2026-05-03",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-444dcfc0eb1ee459b7101a0b",
+   "url": "https://webws.365scores.com/web/game/?gameId=4704263",
+   "title": "365Scores: Wydad AC 1-2 Union Yacoub El Mansour, 2026-04-29",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-a924491df77e16f90dbc294b",
+   "url": "https://webws.365scores.com/web/game/?gameId=4703027",
+   "title": "365Scores: Kawkab Marrakech 0-0 Wydad AC, 2026-04-25",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-eb16d79cdc9e7fb0a517be23",
+   "url": "https://webws.365scores.com/web/game/?gameId=4700089",
+   "title": "365Scores: Maghreb Fès 1-0 Wydad AC, 2026-04-12",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-42b5290e2e2f09b631b735f9",
+   "url": "https://webws.365scores.com/web/game/?gameId=4696799",
+   "title": "365Scores: Wydad AC 1-1 El Jadida, 2026-04-06",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-ac1e9669d94f524100413f54",
+   "url": "https://webws.365scores.com/web/game/?gameId=4696804",
+   "title": "365Scores: FUS Rabat 1-0 Wydad AC, 2026-04-03",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-1860f9bb166004b6132bc2d8",
+   "url": "https://webws.365scores.com/web/game/?gameId=4674378",
+   "title": "365Scores: Wydad AC 2-2 Olympique Safi, 2026-03-22",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-f6c2b4668ed0765326c15402",
+   "url": "https://webws.365scores.com/web/game/?gameId=4674377",
+   "title": "365Scores: Olympique Safi 1-1 Wydad AC, 2026-03-15",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-ebb5356cd63196d383ececd0",
+   "url": "https://webws.365scores.com/web/game/?gameId=4671921",
+   "title": "365Scores: US Touarga 3-4 Wydad AC, 2026-03-08",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-27ff5f52c6f6d2166270f1b6",
+   "url": "https://webws.365scores.com/web/game/?gameId=4671963",
+   "title": "365Scores: Wydad AC 1-2 AS Far Rabat, 2026-03-04",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-f2b856080074ad0ecfb54674",
+   "url": "https://webws.365scores.com/web/game/?gameId=4671915",
+   "title": "365Scores: Wydad AC 1-0 RSB Berkane, 2026-03-01",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-5c7be642679f5ed742a82865",
+   "url": "https://webws.365scores.com/web/game/?gameId=4671891",
+   "title": "365Scores: Olympique Dcheira 0-5 Wydad AC, 2026-02-21",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-02d941ddd24983848da73bb1",
+   "url": "https://webws.365scores.com/web/game/?gameId=4611619",
+   "title": "365Scores: Wydad AC 2-0 Azam FC, 2026-02-15",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-13445d4c5607bac2793a3b91",
+   "url": "https://webws.365scores.com/web/game/?gameId=4611628",
+   "title": "365Scores: Nairobi United 0-1 Wydad AC, 2026-02-08",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-51d5b9d29731e182e7fcf5b2",
+   "url": "https://webws.365scores.com/web/game/?gameId=4611635",
+   "title": "365Scores: As Maniema Union 2-1 Wydad AC, 2026-02-01",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-5570fe8abb7f64263b18e8fc",
+   "url": "https://webws.365scores.com/web/game/?gameId=4611643",
+   "title": "365Scores: Wydad AC 1-0 As Maniema Union, 2026-01-25",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-c43b57c84f069d43e2777f5a",
+   "url": "https://webws.365scores.com/web/game/?gameId=4610787",
+   "title": "365Scores: Azam FC 0-1 Wydad AC, 2025-11-28",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-6e0584758a1a905535b5f8d2",
+   "url": "https://webws.365scores.com/web/game/?gameId=4610783",
+   "title": "365Scores: Wydad AC 3-0 Nairobi United, 2025-11-23",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-2dacb339b8e7f446eddd3ad2",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385247384",
+   "title": "Naïm Aarab",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-eaf00785b6040eaea7e767d3",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1384591967",
+   "title": "Faouzi Abdelghani",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-ba98508f79f6dd7e5964551f",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385174662",
+   "title": "Amine Aboulfath",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-9bc279381134c914555acc00",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385383258",
+   "title": "Daniel Nii Adjei",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-77547f55b3b4b30549f576b5",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385270983",
+   "title": "Soufyan Ahannach",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-dc4c4ec344b72f22d676da59",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1384798837",
+   "title": "Jamel Aït Ben Idir",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-23bf781436ad5d699b1b36c6",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1381509266",
+   "title": "Abdelhaq Ait Laarif",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-9873bf2bc4afab2b18d9f20c",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1381524651",
+   "title": "Ahmed Ajeddou",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-0a7cced4aaf74cfcf36fb95f",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382982982",
+   "title": "Tarik Ajouadi",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-5fc0cf10507f9eae8de87043",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1383195971",
+   "title": "Fahd Aktaou",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-f7e586c47667b0209d49b781",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1384834943",
+   "title": "Farid El Alagui",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-2643cddfb267d461079e004d",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385267544",
+   "title": "Jamal Alioui",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-1625db2397181814f0186f17",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1386326438",
+   "title": "Houssam Amaanan",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-d6bd35b943d9e1dbba53430a",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385371928",
+   "title": "Ayoub El Amloud",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-b18288bfc0873898687edb90",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1386326524",
+   "title": "Nordin Amrabat",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-613793c6571589a25327ccfa",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382696748",
+   "title": "Hicham El Amrani",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-976c35772bc8fc5f3e6bda1c",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385018496",
+   "title": "Bobley Anderson",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-f4df4683d92e93282366c32b",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382641608",
+   "title": "Pascal Angan",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-e52b785693ac86382b228324",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1386106162",
+   "title": "Badie Aouk",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-cc49fc6aeb75a1a20076aa74",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1384611154",
+   "title": "Mohammed Aoulad",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-d11145180c51abfdfca626e4",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385016659",
+   "title": "Arthur (footballer, born 2005)",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-03f56b5a4cb9b6b7b120b43b",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1384795005",
+   "title": "Hamza Asrir",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-64caf8d59c0cceb4bd45c2b7",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1384580895",
+   "title": "Amine Atouchi",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-044bd730b1534528a1d83a43",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1386326624",
+   "title": "Yahya Attiyat Allah",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-cf6799007d10944ac5b9b067",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385088609",
+   "title": "Stephane Aziz Ki",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-97425d03e964fa959e78b382",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1383271650",
+   "title": "Khalil Azmi",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-48fa995d4f853353e34e4ad0",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385242725",
+   "title": "Michael Babatunde",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-4989daa16c9f37132e07ca12",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1384892058",
+   "title": "2025–26 Wydad AC season",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-222ac96eb7f4b9bef55299ed",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385165630",
+   "title": "2024–25 Wydad AC season",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-d4a6793708eadcc8109ed49e",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385008976",
+   "title": "2023–24 Wydad AC season",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-137e5601f86e6309b2b92b24",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385162547",
+   "title": "2022–23 Wydad AC season",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-c362b29f39ba9fa7390baeef",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1384888952",
+   "title": "2020–21 Wydad AC season",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-6ca6e4b586e5a51b6418747b",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1384763497",
+   "title": "2019–20 Wydad AC season",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-916c3fd92832994188fdf36a",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1384763054",
+   "title": "2018–19 Wydad AC season",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-5b41200a5c88871dc52359d0",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1374760925",
+   "title": "2017–18 Wydad AC season",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  }
+ ],
+ "archive": [
+  {
+   "id": "daily-match-8b10b0140e16aea591fdaf43-moment",
+   "value": {
+    "name": "Kawkab Marrakech 2–1 Wydad AC",
+    "on": "2026-11-07",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-2b6f6406df1bd27283b743e6"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-13e8712734d45fb70086fe7f-moment",
+   "value": {
+    "name": "Wydad AC 1–0 Maghreb Tétouan",
+    "on": "2026-10-31",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-434d6e33f901a344bf829b4d"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-666c3ccbcab2fe5150f25752-moment",
+   "value": {
+    "name": "US Touarga 0–1 Wydad AC",
+    "on": "2026-10-24",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-af2259f00b0a3e6ebd963311"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-ae0cb745c87903dea4476878-moment",
+   "value": {
+    "name": "Wydad AC 1–1 Amal Tiznit",
+    "on": "2026-10-18",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-9a4a08d4bbb93a1b3287b7b3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-0948818435ca303142df1638-moment",
+   "value": {
+    "name": "Wydad AC 0–0 CODM Meknes",
+    "on": "2026-10-11",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c759f21ca10fd2fc80a17606"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-f87296e44d47013d5157857c-moment",
+   "value": {
+    "name": "El Jadida 0–2 Wydad AC",
+    "on": "2026-10-03",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c5a2abd505f55f4af3876ccb"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-658e13a0bc58196ab6c739d9-moment",
+   "value": {
+    "name": "Wydad AC 3–0 Wydad Temara",
+    "on": "2026-09-26",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-061cd82d4de19cfd9a1d9580"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-e803e8fb3f35548b18a4c260-moment",
+   "value": {
+    "name": "Wydad AC 1–2 US Touarga",
+    "on": "2026-07-05",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-302147616b8ad24e70a8b71a"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-cfee5bed2b6a9e2498423d97-moment",
+   "value": {
+    "name": "RSB Berkane 2–0 Wydad AC",
+    "on": "2026-07-02",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-63d34a68f19a6d3a34f495cd"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-bb54166e87fd5024488acb98-moment",
+   "value": {
+    "name": "Wydad AC 1–3 Olympique Dcheira",
+    "on": "2026-06-28",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-b6ebfa8da334259d71c36fbe"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-7448bc5d5840aa35d734c62a-moment",
+   "value": {
+    "name": "Wydad AC 0–1 Maghreb Fès",
+    "on": "2026-06-25",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8a949f9aec2e9b7fdae2d715"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-4e0f036a12fdd1f7c337d355-moment",
+   "value": {
+    "name": "El Jadida 1–0 Wydad AC",
+    "on": "2026-06-21",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-24b21a0af252c1b7b90684ee"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-2f4ddb533a0323365cc5f35f-moment",
+   "value": {
+    "name": "Wydad AC 1–2 FUS Rabat",
+    "on": "2026-06-18",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-a82eec64aa6d12655818a856"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-6dd8ce733fe9773686850e55-moment",
+   "value": {
+    "name": "AS Far Rabat 2–1 Wydad AC",
+    "on": "2026-06-14",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-f7a74b5485a04c4f413d84ea"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-07569fcdb24a399cff525af4-moment",
+   "value": {
+    "name": "Wydad AC 1–0 Olympique Safi",
+    "on": "2026-06-08",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-a14ab0b2f03d5483f2ca641c"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-38ce9305c95edc4fa8e89192-moment",
+   "value": {
+    "name": "Ittihad Tanger 2–1 Wydad AC",
+    "on": "2026-06-03",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-4def9b9677c8cfda2a1490d1"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-b2d0c0a875d289ccb488a970-moment",
+   "value": {
+    "name": "Wydad AC 3–2 Hassania Agadir",
+    "on": "2026-05-23",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-89f1d4b13eaf6f65f10b26aa"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-6794e10d07249cc60107398b-moment",
+   "value": {
+    "name": "Raja Casablanca 0–1 Wydad AC",
+    "on": "2026-05-09",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-d86eedd9255a0c6a07360900"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-a18861f4c57a0e4848706e7e-moment",
+   "value": {
+    "name": "Wydad AC 2–0 CODM Meknes",
+    "on": "2026-05-06",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-65d82ca6d8b2974594dc6e75"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-4bd07f73e35607d577813997-moment",
+   "value": {
+    "name": "CR Khemis Zemamra 1–0 Wydad AC",
+    "on": "2026-05-03",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-7826ee3f167398a5f6c67ead"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-5135cd00d0882631ed73c494-moment",
+   "value": {
+    "name": "Wydad AC 1–2 Union Yacoub El Mansour",
+    "on": "2026-04-29",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-444dcfc0eb1ee459b7101a0b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-a3742457d31830ece8a1e2a6-moment",
+   "value": {
+    "name": "Kawkab Marrakech 0–0 Wydad AC",
+    "on": "2026-04-25",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-a924491df77e16f90dbc294b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-83e24f83772845809ec7d67a-moment",
+   "value": {
+    "name": "Maghreb Fès 1–0 Wydad AC",
+    "on": "2026-04-12",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-eb16d79cdc9e7fb0a517be23"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-815bbadc52447238f7e6fd35-moment",
+   "value": {
+    "name": "Wydad AC 1–1 El Jadida",
+    "on": "2026-04-06",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-42b5290e2e2f09b631b735f9"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-a33d42b2ff800c2ff0490c97-moment",
+   "value": {
+    "name": "FUS Rabat 1–0 Wydad AC",
+    "on": "2026-04-03",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-ac1e9669d94f524100413f54"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-314053a97e0e8c99649c2845-moment",
+   "value": {
+    "name": "Wydad AC 2–2 Olympique Safi",
+    "on": "2026-03-22",
+    "precision": "day",
+    "hint": "CAF Confederation Cup - Quarter Finals",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-1860f9bb166004b6132bc2d8"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-c4281dc9b2352a6fb7887bc9-moment",
+   "value": {
+    "name": "Olympique Safi 1–1 Wydad AC",
+    "on": "2026-03-15",
+    "precision": "day",
+    "hint": "CAF Confederation Cup - Quarter Finals",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-f6c2b4668ed0765326c15402"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-94a2d02e2a902134064fe467-moment",
+   "value": {
+    "name": "US Touarga 3–4 Wydad AC",
+    "on": "2026-03-08",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-ebb5356cd63196d383ececd0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-03c9ea58230edc747ba2f030-moment",
+   "value": {
+    "name": "Wydad AC 1–2 AS Far Rabat",
+    "on": "2026-03-04",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-27ff5f52c6f6d2166270f1b6"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-ded00dffe6d1b0338d337d9f-moment",
+   "value": {
+    "name": "Wydad AC 1–0 RSB Berkane",
+    "on": "2026-03-01",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-f2b856080074ad0ecfb54674"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-52d6d98a8386b6a0582e3dff-moment",
+   "value": {
+    "name": "Olympique Dcheira 0–5 Wydad AC",
+    "on": "2026-02-21",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-5c7be642679f5ed742a82865"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-b7f918266b2e6754db1f2b24-moment",
+   "value": {
+    "name": "Wydad AC 2–0 Azam FC",
+    "on": "2026-02-15",
+    "precision": "day",
+    "hint": "CAF Confederation Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-02d941ddd24983848da73bb1"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-db13e0f379cad37bddb756bc-moment",
+   "value": {
+    "name": "Nairobi United 0–1 Wydad AC",
+    "on": "2026-02-08",
+    "precision": "day",
+    "hint": "CAF Confederation Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-13445d4c5607bac2793a3b91"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-684bc29278524e5ab1756fd2-moment",
+   "value": {
+    "name": "As Maniema Union 2–1 Wydad AC",
+    "on": "2026-02-01",
+    "precision": "day",
+    "hint": "CAF Confederation Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-51d5b9d29731e182e7fcf5b2"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-aba3d0d2b98473430e2d3a28-moment",
+   "value": {
+    "name": "Wydad AC 1–0 As Maniema Union",
+    "on": "2026-01-25",
+    "precision": "day",
+    "hint": "CAF Confederation Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-5570fe8abb7f64263b18e8fc"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-e557ba5c175e2e9d759a9e85-moment",
+   "value": {
+    "name": "Azam FC 0–1 Wydad AC",
+    "on": "2025-11-28",
+    "precision": "day",
+    "hint": "CAF Confederation Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c43b57c84f069d43e2777f5a"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-e84cee0b85bea2f285ff23ca-moment",
+   "value": {
+    "name": "Wydad AC 3–0 Nairobi United",
+    "on": "2025-11-23",
+    "precision": "day",
+    "hint": "CAF Confederation Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-6e0584758a1a905535b5f8d2"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-d67727f175c3a9314c612132-moment",
+   "value": {
+    "name": "Moghreb Tétouan 0–0 Wydad AC",
+    "on": "2023-02-10",
+    "precision": "day",
+    "hint": "Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-137e5601f86e6309b2b92b24"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-3dcd7f5732ec015829a5cd7a-moment",
+   "value": {
+    "name": "Ittihad Tanger 1–1 Wydad AC",
+    "on": "2023-04-12",
+    "precision": "day",
+    "hint": "Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-137e5601f86e6309b2b92b24"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-617738c9283a64a191550ffb-moment",
+   "value": {
+    "name": "Difaâ Hassani El Jadidi 1–2 Wydad AC",
+    "on": "2023-05-24",
+    "precision": "day",
+    "hint": "Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-137e5601f86e6309b2b92b24"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-4b53a1155edf805d3f358734-moment",
+   "value": {
+    "name": "Wydad AC 0–1 Raja CA",
+    "on": "2023-07-09",
+    "precision": "day",
+    "hint": "Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-137e5601f86e6309b2b92b24"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-20c12b6dbf9730f8a717a8c5-moment",
+   "value": {
+    "name": "Wydad AC 1–3 FAR de Rabat",
+    "on": "2019-09-24",
+    "precision": "day",
+    "hint": "Moroccan Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-6ca6e4b586e5a51b6418747b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-e74c219fc6ef00f8dd574edf-moment",
+   "value": {
+    "name": "Kawkab Marrakech 1–2 Wydad AC",
+    "on": "2018-09-02",
+    "precision": "day",
+    "hint": "Moroccan Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-916c3fd92832994188fdf36a"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-6c372959ce9d34b218d5fc7c-moment",
+   "value": {
+    "name": "Wydad AC 2–0 IR Tanger",
+    "on": "2018-10-03",
+    "precision": "day",
+    "hint": "Moroccan Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-916c3fd92832994188fdf36a"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-f3b2a0836973bf4d4ec969f4-moment",
+   "value": {
+    "name": "Wydad AC 2–1 Olympic Safi",
+    "on": "2018-10-07",
+    "precision": "day",
+    "hint": "Moroccan Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-916c3fd92832994188fdf36a"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-2fe5f560c1766914c588deab-moment",
+   "value": {
+    "name": "RSB Berkane 1–1 Wydad AC",
+    "on": "2018-11-02",
+    "precision": "day",
+    "hint": "Moroccan Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-916c3fd92832994188fdf36a"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-ffb6d30194b68b5596de941a-moment",
+   "value": {
+    "name": "Kawkab Marrakech 0–1 Wydad AC",
+    "on": "2017-08-23",
+    "precision": "day",
+    "hint": "Moroccan Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-5b41200a5c88871dc52359d0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-7bc99c5a1a6ecac32917cdb5-moment",
+   "value": {
+    "name": "Wydad AC 2–0 Kawkab Marrakech",
+    "on": "2017-08-27",
+    "precision": "day",
+    "hint": "Moroccan Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-5b41200a5c88871dc52359d0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-9461d858054193ce4277614f-moment",
+   "value": {
+    "name": "Wydad AC 1–1 RSB Berkane",
+    "on": "2017-10-03",
+    "precision": "day",
+    "hint": "Moroccan Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-5b41200a5c88871dc52359d0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-d8bab94e36bf531241ff8675-moment",
+   "value": {
+    "name": "RSB Berkane 2–1 Wydad AC",
+    "on": "2017-10-12",
+    "precision": "day",
+    "hint": "Moroccan Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-5b41200a5c88871dc52359d0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  }
+ ],
+ "matches": [
+  {
+   "id": "daily-match-8b10b0140e16aea591fdaf43",
+   "value": {
+    "name": "Kawkab Marrakech 2–1 Wydad AC",
+    "on": "2026-11-07",
+    "home": "Kawkab Marrakech",
+    "away": "Wydad AC",
+    "score": "2-1",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Rachid Ghanimi",
+     "Mohamed Moufid",
+     "Haitam Hamani",
+     "Aymane El Hassouni",
+     "Sallah Moussaddaq",
+     "Yahia Attiyat Allah",
+     "Silvere Ganvoula",
+     "Oussama Zemraoui",
+     "Issoufou Dayo",
+     "Joseph Bakasu",
+     "Adil Khalloufi"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-2b6f6406df1bd27283b743e6"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-13e8712734d45fb70086fe7f",
+   "value": {
+    "name": "Wydad AC 1–0 Maghreb Tétouan",
+    "on": "2026-10-31",
+    "home": "Wydad AC",
+    "away": "Maghreb Tétouan",
+    "score": "1-0",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Rachid Ghanimi",
+     "Mohamed Moufid",
+     "Aymane El Hassouni",
+     "Sallah Moussaddaq",
+     "Yahia Attiyat Allah",
+     "Silvere Ganvoula",
+     "Nizar Al Rashdan",
+     "Oussama Zemraoui",
+     "Issoufou Dayo",
+     "Joseph Bakasu",
+     "Adil Khalloufi"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-434d6e33f901a344bf829b4d"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-666c3ccbcab2fe5150f25752",
+   "value": {
+    "name": "US Touarga 0–1 Wydad AC",
+    "on": "2026-10-24",
+    "home": "US Touarga",
+    "away": "Wydad AC",
+    "score": "0-1",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Rachid Ghanimi",
+     "Mohamed Moufid",
+     "Aymane El Hassouni",
+     "Sallah Moussaddaq",
+     "Silvere Ganvoula",
+     "Nizar Al Rashdan",
+     "Oussama Zemraoui",
+     "Issoufou Dayo",
+     "Joseph Bakasu",
+     "Yahia Attiyat Allah",
+     "Adil Khalloufi"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-af2259f00b0a3e6ebd963311"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-ae0cb745c87903dea4476878",
+   "value": {
+    "name": "Wydad AC 1–1 Amal Tiznit",
+    "on": "2026-10-18",
+    "home": "Wydad AC",
+    "away": "Amal Tiznit",
+    "score": "1-1",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Mohamed Moufid",
+     "Aymane El Hassouni",
+     "Sallah Moussaddaq",
+     "Yahia Attiyat Allah",
+     "Silvere Ganvoula",
+     "Nizar Al Rashdan",
+     "Mouad Enzo",
+     "Oussama Zemraoui",
+     "Issoufou Dayo",
+     "Adil Khalloufi",
+     "Rachid Ghanimi"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-9a4a08d4bbb93a1b3287b7b3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-0948818435ca303142df1638",
+   "value": {
+    "name": "Wydad AC 0–0 CODM Meknes",
+    "on": "2026-10-11",
+    "home": "Wydad AC",
+    "away": "CODM Meknes",
+    "score": "0-0",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Mohamed Moufid",
+     "Naïm Byar",
+     "Aymane El Hassouni",
+     "Sallah Moussaddaq",
+     "Yahia Attiyat Allah",
+     "Silvere Ganvoula",
+     "El Mehdi Benabid",
+     "Mouad Enzo",
+     "Oussama Zemraoui",
+     "Issoufou Dayo",
+     "Adil Khalloufi"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c759f21ca10fd2fc80a17606"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-f87296e44d47013d5157857c",
+   "value": {
+    "name": "El Jadida 0–2 Wydad AC",
+    "on": "2026-10-03",
+    "home": "El Jadida",
+    "away": "Wydad AC",
+    "score": "0-2",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "competition": "Botola Pro",
+    "lineup": [
+     "El Mehdi Benabid",
+     "Issoufou Dayo",
+     "Sallah Moussaddaq",
+     "Mohamed Moufid",
+     "Adil Khalloufi",
+     "Naïm Byar",
+     "Oussama Zemraoui",
+     "Mouad Enzo",
+     "Aymane El Hassouni",
+     "Silvere Ganvoula",
+     "Yahia Attiyat Allah"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c5a2abd505f55f4af3876ccb"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-658e13a0bc58196ab6c739d9",
+   "value": {
+    "name": "Wydad AC 3–0 Wydad Temara",
+    "on": "2026-09-26",
+    "home": "Wydad AC",
+    "away": "Wydad Temara",
+    "score": "3-0",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "competition": "Botola Pro",
+    "lineup": [
+     "El Mehdi Benabid",
+     "Issoufou Dayo",
+     "Sallah Moussaddaq",
+     "Mohamed Moufid",
+     "Yahya Jabrane",
+     "Naïm Byar",
+     "Oussama Zemraoui",
+     "Mouad Enzo",
+     "Walid Nassi",
+     "Hamza Hanouri",
+     "Yahia Attiyat Allah"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-061cd82d4de19cfd9a1d9580"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-e803e8fb3f35548b18a4c260",
+   "value": {
+    "name": "Wydad AC 1–2 US Touarga",
+    "on": "2026-07-05",
+    "home": "Wydad AC",
+    "away": "US Touarga",
+    "score": "1-2",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Nordin Amrabat",
+     "Joseph Bakasu",
+     "Wissam Ben Yedder",
+     "Ayoub Boucheta",
+     "Naïm Byar",
+     "Mohamed Elouardi",
+     "Ayman El Wafi",
+     "Abdelali M'Hamdi",
+     "Sallah Moussaddaq",
+     "Walid Nassi",
+     "Ramiro Vaca"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-302147616b8ad24e70a8b71a"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-cfee5bed2b6a9e2498423d97",
+   "value": {
+    "name": "RSB Berkane 2–0 Wydad AC",
+    "on": "2026-07-02",
+    "home": "RSB Berkane",
+    "away": "Wydad AC",
+    "score": "2-0",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Nordin Amrabat",
+     "Omar Aqzdaou",
+     "Joseph Bakasu",
+     "Mohamed Bouchouari",
+     "Abdoulaye Coulibaly",
+     "Mohamed Elouardi",
+     "Ayman El Wafi",
+     "Rayane Mahtou",
+     "Moises Paniagua",
+     "Mohamed Rayhi",
+     "Mouhamed Sambou"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-63d34a68f19a6d3a34f495cd"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-bb54166e87fd5024488acb98",
+   "value": {
+    "name": "Wydad AC 1–3 Olympique Dcheira",
+    "on": "2026-06-28",
+    "home": "Wydad AC",
+    "away": "Olympique Dcheira",
+    "score": "1-3",
+    "homeGoals": 1,
+    "awayGoals": 3,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Omar Aqzdaou",
+     "Wissam Ben Yedder",
+     "Ayoub Boucheta",
+     "Mohamed Bouchouari",
+     "Naïm Byar",
+     "Abdoulaye Coulibaly",
+     "Bart Meijers",
+     "Sallah Moussaddaq",
+     "Walid Nassi",
+     "Mohamed Rayhi",
+     "Ramiro Vaca"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-b6ebfa8da334259d71c36fbe"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-7448bc5d5840aa35d734c62a",
+   "value": {
+    "name": "Wydad AC 0–1 Maghreb Fès",
+    "on": "2026-06-25",
+    "home": "Wydad AC",
+    "away": "Maghreb Fès",
+    "score": "0-1",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Nordin Amrabat",
+     "Omar Aqzdaou",
+     "Joseph Bakasu",
+     "Ayoub Boucheta",
+     "Naïm Byar",
+     "Abdoulaye Coulibaly",
+     "Ayman El Wafi",
+     "Bart Meijers",
+     "Sallah Moussaddaq",
+     "Walid Nassi",
+     "Ramiro Vaca"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8a949f9aec2e9b7fdae2d715"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-4e0f036a12fdd1f7c337d355",
+   "value": {
+    "name": "El Jadida 1–0 Wydad AC",
+    "on": "2026-06-21",
+    "home": "El Jadida",
+    "away": "Wydad AC",
+    "score": "1-0",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Nordin Amrabat",
+     "Omar Aqzdaou",
+     "Ayoub Boucheta",
+     "Naïm Byar",
+     "Abdoulaye Coulibaly",
+     "Ayman El Wafi",
+     "Mohamed Moufid",
+     "Sallah Moussaddaq",
+     "Mohamed Rayhi",
+     "Walid Sabbar",
+     "Ramiro Vaca"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-24b21a0af252c1b7b90684ee"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-2f4ddb533a0323365cc5f35f",
+   "value": {
+    "name": "Wydad AC 1–2 FUS Rabat",
+    "on": "2026-06-18",
+    "home": "Wydad AC",
+    "away": "FUS Rabat",
+    "score": "1-2",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Joseph Bakasu",
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Mohamed Bouchouari",
+     "Ayman El Wafi",
+     "Hamza Hanouri",
+     "Mohamed Mounssef",
+     "Sallah Moussaddaq",
+     "Moises Paniagua",
+     "Mohamed Rayhi",
+     "Ramiro Vaca"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-a82eec64aa6d12655818a856"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-6dd8ce733fe9773686850e55",
+   "value": {
+    "name": "AS Far Rabat 2–1 Wydad AC",
+    "on": "2026-06-14",
+    "home": "AS Far Rabat",
+    "away": "Wydad AC",
+    "score": "2-1",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Amine Aboulfath",
+     "Joseph Bakasu",
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Naïm Byar",
+     "Ayman El Wafi",
+     "Hamza Hanouri",
+     "Abdelghafour Lamirat",
+     "Mohamed Moufid",
+     "Walid Nassi",
+     "Hakim Ziyech"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-f7a74b5485a04c4f413d84ea"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-07569fcdb24a399cff525af4",
+   "value": {
+    "name": "Wydad AC 1–0 Olympique Safi",
+    "on": "2026-06-08",
+    "home": "Wydad AC",
+    "away": "Olympique Safi",
+    "score": "1-0",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Wissam Ben Yedder",
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Ayman El Wafi",
+     "Abdelghafour Lamirat",
+     "Mohamed Moufid",
+     "Sallah Moussaddaq",
+     "Mohamed Rayhi",
+     "Walid Sabbar",
+     "Ramiro Vaca",
+     "Hakim Ziyech"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-a14ab0b2f03d5483f2ca641c"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-38ce9305c95edc4fa8e89192",
+   "value": {
+    "name": "Ittihad Tanger 2–1 Wydad AC",
+    "on": "2026-06-03",
+    "home": "Ittihad Tanger",
+    "away": "Wydad AC",
+    "score": "2-1",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Amine Aboulfath",
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Hamza Elowasti",
+     "Abdelghafour Lamirat",
+     "Mohamed Moufid",
+     "Sallah Moussaddaq",
+     "Walid Nassi",
+     "Mohamed Rayhi",
+     "Ramiro Vaca",
+     "Hakim Ziyech"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-4def9b9677c8cfda2a1490d1"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-b2d0c0a875d289ccb488a970",
+   "value": {
+    "name": "Wydad AC 3–2 Hassania Agadir",
+    "on": "2026-05-23",
+    "home": "Wydad AC",
+    "away": "Hassania Agadir",
+    "score": "3-2",
+    "homeGoals": 3,
+    "awayGoals": 2,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Amine Aboulfath",
+     "Joseph Bakasu",
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Naïm Byar",
+     "Hamza Elowasti",
+     "Abdelghafour Lamirat",
+     "Mohamed Moufid",
+     "Sallah Moussaddaq",
+     "Mohamed Rayhi",
+     "Hakim Ziyech"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-89f1d4b13eaf6f65f10b26aa"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-6794e10d07249cc60107398b",
+   "value": {
+    "name": "Raja Casablanca 0–1 Wydad AC",
+    "on": "2026-05-09",
+    "home": "Raja Casablanca",
+    "away": "Wydad AC",
+    "score": "0-1",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Amine Aboulfath",
+     "Joseph Bakasu",
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Naïm Byar",
+     "Hamza Hanouri",
+     "Mohamed Moufid",
+     "Sallah Moussaddaq",
+     "Mohamed Rayhi",
+     "Ramiro Vaca",
+     "Hakim Ziyech"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-d86eedd9255a0c6a07360900"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-a18861f4c57a0e4848706e7e",
+   "value": {
+    "name": "Wydad AC 2–0 CODM Meknes",
+    "on": "2026-05-06",
+    "home": "Wydad AC",
+    "away": "CODM Meknes",
+    "score": "2-0",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Joseph Bakasu",
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Naïm Byar",
+     "Guilherme Ferreira",
+     "Hamza Hanouri",
+     "Mohamed Moufid",
+     "Sallah Moussaddaq",
+     "Mohamed Rayhi",
+     "Ramiro Vaca",
+     "Hakim Ziyech"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-65d82ca6d8b2974594dc6e75"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-4bd07f73e35607d577813997",
+   "value": {
+    "name": "CR Khemis Zemamra 1–0 Wydad AC",
+    "on": "2026-05-03",
+    "home": "CR Khemis Zemamra",
+    "away": "Wydad AC",
+    "score": "1-0",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Joseph Bakasu",
+     "El Mehdi Benabid",
+     "Abdoulaye Coulibaly",
+     "Ayman El Wafi",
+     "Hamza Elowasti",
+     "Nabil Khali",
+     "Abdelghafour Lamirat",
+     "Mohamed Moufid",
+     "Sallah Moussaddaq",
+     "Walid Nassi",
+     "Ramiro Vaca"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-7826ee3f167398a5f6c67ead"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-5135cd00d0882631ed73c494",
+   "value": {
+    "name": "Wydad AC 1–2 Union Yacoub El Mansour",
+    "on": "2026-04-29",
+    "home": "Wydad AC",
+    "away": "Union Yacoub El Mansour",
+    "score": "1-2",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Amine Aboulfath",
+     "Nordin Amrabat",
+     "Wissam Ben Yedder",
+     "El Mehdi Benabid",
+     "Mohamed Bouchouari",
+     "Naïm Byar",
+     "Ayman El Wafi",
+     "Nabil Khali",
+     "Sallah Moussaddaq",
+     "Ramiro Vaca",
+     "Hakim Ziyech"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-444dcfc0eb1ee459b7101a0b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-a3742457d31830ece8a1e2a6",
+   "value": {
+    "name": "Kawkab Marrakech 0–0 Wydad AC",
+    "on": "2026-04-25",
+    "home": "Kawkab Marrakech",
+    "away": "Wydad AC",
+    "score": "0-0",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Mohamed Moufid",
+     "Ayman El Wafi",
+     "Wissam Ben Yedder",
+     "Ramiro Vaca",
+     "Nordin Amrabat",
+     "Sallah Moussaddaq",
+     "Guilherme Ferreira",
+     "Abdelghafour Lamirat",
+     "El Mehdi Benabid",
+     "Joseph Bakasu",
+     "Nabil Khali"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-a924491df77e16f90dbc294b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-83e24f83772845809ec7d67a",
+   "value": {
+    "name": "Maghreb Fès 1–0 Wydad AC",
+    "on": "2026-04-12",
+    "home": "Maghreb Fès",
+    "away": "Wydad AC",
+    "score": "1-0",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "competition": "Botola Pro",
+    "lineup": [
+     "El Mehdi Benabid",
+     "Mohamed Moufid",
+     "Amine Aboulfath",
+     "Ramiro Vaca",
+     "Nordin Amrabat",
+     "Sallah Moussaddaq",
+     "Abdelghafour Lamirat",
+     "Hamza Elowasti",
+     "Moises Paniagua",
+     "Joseph Bakasu",
+     "Walid Nassi"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-eb16d79cdc9e7fb0a517be23"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-815bbadc52447238f7e6fd35",
+   "value": {
+    "name": "Wydad AC 1–1 El Jadida",
+    "on": "2026-04-06",
+    "home": "Wydad AC",
+    "away": "El Jadida",
+    "score": "1-1",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "competition": "Botola Pro",
+    "lineup": [
+     "El Mehdi Benabid",
+     "Mohamed Moufid",
+     "Sallah Moussaddaq",
+     "Nabil Khali",
+     "Joseph Bakasu",
+     "Naïm Byar",
+     "Ramiro Vaca",
+     "Moises Paniagua",
+     "Walid Nassi",
+     "Wissam Ben Yedder",
+     "Hamza Elowasti"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-42b5290e2e2f09b631b735f9"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-a33d42b2ff800c2ff0490c97",
+   "value": {
+    "name": "FUS Rabat 1–0 Wydad AC",
+    "on": "2026-04-03",
+    "home": "FUS Rabat",
+    "away": "Wydad AC",
+    "score": "1-0",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "competition": "Botola Pro",
+    "lineup": [
+     "El Mehdi Benabid",
+     "Mohamed Moufid",
+     "Ayman El Wafi",
+     "Hakim Ziyech",
+     "Mohamed Rayhi",
+     "Wissam Ben Yedder",
+     "Sallah Moussaddaq",
+     "Abdelghafour Lamirat",
+     "Hamza Elowasti",
+     "Joseph Bakasu",
+     "Zouhair El Moutaraji"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-ac1e9669d94f524100413f54"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-314053a97e0e8c99649c2845",
+   "value": {
+    "name": "Wydad AC 2–2 Olympique Safi",
+    "on": "2026-03-22",
+    "home": "Wydad AC",
+    "away": "Olympique Safi",
+    "score": "2-2",
+    "homeGoals": 2,
+    "awayGoals": 2,
+    "competition": "CAF Confederation Cup - Quarter Finals",
+    "lineup": [
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Ayman El Wafi",
+     "Amine Aboulfath",
+     "Mohamed Moufid",
+     "Walid Sabbar",
+     "Abdelghafour Lamirat",
+     "Mohamed Rayhi",
+     "Wissam Ben Yedder",
+     "Moises Paniagua",
+     "Hamza Hanouri"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-1860f9bb166004b6132bc2d8"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-c4281dc9b2352a6fb7887bc9",
+   "value": {
+    "name": "Olympique Safi 1–1 Wydad AC",
+    "on": "2026-03-15",
+    "home": "Olympique Safi",
+    "away": "Wydad AC",
+    "score": "1-1",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "competition": "CAF Confederation Cup - Quarter Finals",
+    "lineup": [
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Ayman El Wafi",
+     "Amine Aboulfath",
+     "Sallah Moussaddaq",
+     "Ramiro Vaca",
+     "Walid Sabbar",
+     "Joseph Bakasu",
+     "Hamza Hanouri",
+     "Wissam Ben Yedder",
+     "Moises Paniagua"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-f6c2b4668ed0765326c15402"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-94a2d02e2a902134064fe467",
+   "value": {
+    "name": "US Touarga 3–4 Wydad AC",
+    "on": "2026-03-08",
+    "home": "US Touarga",
+    "away": "Wydad AC",
+    "score": "3-4",
+    "homeGoals": 3,
+    "awayGoals": 4,
+    "competition": "Botola Pro",
+    "lineup": [
+     "El Mehdi Benabid",
+     "Amine Aboulfath",
+     "Ayman El Wafi",
+     "Mohamed Bouchouari",
+     "Ayoub Boucheta",
+     "Joseph Bakasu",
+     "Naïm Byar",
+     "Ramiro Vaca",
+     "Walid Nassi",
+     "Moises Paniagua",
+     "Wissam Ben Yedder"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-ebb5356cd63196d383ececd0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-03c9ea58230edc747ba2f030",
+   "value": {
+    "name": "Wydad AC 1–2 AS Far Rabat",
+    "on": "2026-03-04",
+    "home": "Wydad AC",
+    "away": "AS Far Rabat",
+    "score": "1-2",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "competition": "Botola Pro",
+    "lineup": [
+     "El Mehdi Benabid",
+     "Sallah Moussaddaq",
+     "Amine Aboulfath",
+     "Mohamed Moufid",
+     "Nabil Khali",
+     "Abdelghafour Lamirat",
+     "Walid Sabbar",
+     "Ramiro Vaca",
+     "Hakim Ziyech",
+     "Walid Nassi",
+     "Hamza Hanouri"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-27ff5f52c6f6d2166270f1b6"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-ded00dffe6d1b0338d337d9f",
+   "value": {
+    "name": "Wydad AC 1–0 RSB Berkane",
+    "on": "2026-03-01",
+    "home": "Wydad AC",
+    "away": "RSB Berkane",
+    "score": "1-0",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "competition": "Botola Pro",
+    "lineup": [
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Amine Aboulfath",
+     "Sallah Moussaddaq",
+     "Mohamed Moufid",
+     "Joseph Bakasu",
+     "Walid Sabbar",
+     "Ramiro Vaca",
+     "Hakim Ziyech",
+     "Nordin Amrabat",
+     "Wissam Ben Yedder"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-f2b856080074ad0ecfb54674"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-52d6d98a8386b6a0582e3dff",
+   "value": {
+    "name": "Olympique Dcheira 0–5 Wydad AC",
+    "on": "2026-02-21",
+    "home": "Olympique Dcheira",
+    "away": "Wydad AC",
+    "score": "0-5",
+    "homeGoals": 0,
+    "awayGoals": 5,
+    "competition": "Botola Pro",
+    "lineup": [
+     "El Mehdi Benabid",
+     "Mohamed Moufid",
+     "Nabil Khali",
+     "Amine Aboulfath",
+     "Sallah Moussaddaq",
+     "Naïm Byar",
+     "Walid Sabbar",
+     "Ramiro Vaca",
+     "Hakim Ziyech",
+     "Nordin Amrabat",
+     "Wissam Ben Yedder"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-5c7be642679f5ed742a82865"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-b7f918266b2e6754db1f2b24",
+   "value": {
+    "name": "Wydad AC 2–0 Azam FC",
+    "on": "2026-02-15",
+    "home": "Wydad AC",
+    "away": "Azam FC",
+    "score": "2-0",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "competition": "CAF Confederation Cup",
+    "lineup": [
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Ayman El Wafi",
+     "Amine Aboulfath",
+     "Walid Sabbar",
+     "Abdelghafour Lamirat",
+     "Mohamed Moufid",
+     "Moises Paniagua",
+     "Ramiro Vaca",
+     "Hakim Ziyech",
+     "Hamza Hanouri"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-02d941ddd24983848da73bb1"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-db13e0f379cad37bddb756bc",
+   "value": {
+    "name": "Nairobi United 0–1 Wydad AC",
+    "on": "2026-02-08",
+    "home": "Nairobi United",
+    "away": "Wydad AC",
+    "score": "0-1",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "competition": "CAF Confederation Cup",
+    "lineup": [
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Amine Aboulfath",
+     "Sallah Moussaddaq",
+     "Mohamed Bouchouari",
+     "Ramiro Vaca",
+     "Naïm Byar",
+     "Hakim Ziyech",
+     "Moises Paniagua",
+     "Hamza Hanouri",
+     "Nordin Amrabat"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-13445d4c5607bac2793a3b91"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-684bc29278524e5ab1756fd2",
+   "value": {
+    "name": "As Maniema Union 2–1 Wydad AC",
+    "on": "2026-02-01",
+    "home": "As Maniema Union",
+    "away": "Wydad AC",
+    "score": "2-1",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "competition": "CAF Confederation Cup",
+    "lineup": [
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Amine Aboulfath",
+     "Guilherme Ferreira",
+     "Mohamed Moufid",
+     "Joseph Bakasu",
+     "Abdelghafour Lamirat",
+     "Hamza Elowasti",
+     "Walid Sabbar",
+     "Walid Nassi",
+     "Wissam Ben Yedder"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-51d5b9d29731e182e7fcf5b2"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-aba3d0d2b98473430e2d3a28",
+   "value": {
+    "name": "Wydad AC 1–0 As Maniema Union",
+    "on": "2026-01-25",
+    "home": "Wydad AC",
+    "away": "As Maniema Union",
+    "score": "1-0",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "competition": "CAF Confederation Cup",
+    "lineup": [
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Amine Aboulfath",
+     "Guilherme Ferreira",
+     "Mohamed Moufid",
+     "Joseph Bakasu",
+     "Abdelghafour Lamirat",
+     "Walid Nassi",
+     "Hakim Ziyech",
+     "Nordin Amrabat",
+     "Hamza Elowasti"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-5570fe8abb7f64263b18e8fc"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-e557ba5c175e2e9d759a9e85",
+   "value": {
+    "name": "Azam FC 0–1 Wydad AC",
+    "on": "2025-11-28",
+    "home": "Azam FC",
+    "away": "Wydad AC",
+    "score": "0-1",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "competition": "CAF Confederation Cup",
+    "lineup": [
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Amine Aboulfath",
+     "Guilherme Ferreira",
+     "Mohamed Bouchouari",
+     "Walid Sabbar",
+     "Thembinkosi Lorch",
+     "Joseph Bakasu",
+     "Nordin Amrabat",
+     "Hamza Hanouri",
+     "Stephane Aziz Ki"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c43b57c84f069d43e2777f5a"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-e84cee0b85bea2f285ff23ca",
+   "value": {
+    "name": "Wydad AC 3–0 Nairobi United",
+    "on": "2025-11-23",
+    "home": "Wydad AC",
+    "away": "Nairobi United",
+    "score": "3-0",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "competition": "CAF Confederation Cup",
+    "lineup": [
+     "El Mehdi Benabid",
+     "Ayoub Boucheta",
+     "Bart Meijers",
+     "Guilherme Ferreira",
+     "Mohamed Bouchouari",
+     "Joseph Bakasu",
+     "Stephane Aziz Ki",
+     "Abdelghafour Lamirat",
+     "Thembinkosi Lorch",
+     "Hamza Hanouri",
+     "Nordin Amrabat"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-6e0584758a1a905535b5f8d2"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-d67727f175c3a9314c612132",
+   "value": {
+    "name": "Moghreb Tétouan 0–0 Wydad AC",
+    "on": "2023-02-10",
+    "home": "Moghreb Tétouan",
+    "away": "Wydad AC",
+    "score": "0-0",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "competition": "Throne Cup",
+    "season": "2022/23",
+    "venue": "Stade Saniat Rmel",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-137e5601f86e6309b2b92b24"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-3dcd7f5732ec015829a5cd7a",
+   "value": {
+    "name": "Ittihad Tanger 1–1 Wydad AC",
+    "on": "2023-04-12",
+    "home": "Ittihad Tanger",
+    "away": "Wydad AC",
+    "score": "1-1",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "competition": "Throne Cup",
+    "season": "2022/23",
+    "scorers": [
+     {
+      "name": "Ayman El Hassouni",
+      "minute": "90+13"
+     }
+    ],
+    "venue": "Ibn Batouta Stadium",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-137e5601f86e6309b2b92b24"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-617738c9283a64a191550ffb",
+   "value": {
+    "name": "Difaâ Hassani El Jadidi 1–2 Wydad AC",
+    "on": "2023-05-24",
+    "home": "Difaâ Hassani El Jadidi",
+    "away": "Wydad AC",
+    "score": "1-2",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "competition": "Throne Cup",
+    "season": "2022/23",
+    "scorers": [
+     {
+      "name": "Amine Farhane",
+      "minute": "37"
+     },
+     {
+      "name": "Ayman El Hassouni",
+      "minute": "74"
+     }
+    ],
+    "venue": "Stade El Abdi",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-137e5601f86e6309b2b92b24"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-4b53a1155edf805d3f358734",
+   "value": {
+    "name": "Wydad AC 0–1 Raja CA",
+    "on": "2023-07-09",
+    "home": "Wydad AC",
+    "away": "Raja CA",
+    "score": "0-1",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "competition": "Throne Cup",
+    "season": "2022/23",
+    "venue": "Stade Mohammed V",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-137e5601f86e6309b2b92b24"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-20c12b6dbf9730f8a717a8c5",
+   "value": {
+    "name": "Wydad AC 1–3 FAR de Rabat",
+    "on": "2019-09-24",
+    "home": "Wydad AC",
+    "away": "FAR de Rabat",
+    "score": "1-3",
+    "homeGoals": 1,
+    "awayGoals": 3,
+    "competition": "Moroccan Throne Cup",
+    "season": "2019/20",
+    "scorers": [
+     {
+      "name": "Ayoub El Kaabi",
+      "minute": "90"
+     }
+    ],
+    "venue": "Stade Mohammed V",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-6ca6e4b586e5a51b6418747b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-e74c219fc6ef00f8dd574edf",
+   "value": {
+    "name": "Kawkab Marrakech 1–2 Wydad AC",
+    "on": "2018-09-02",
+    "home": "Kawkab Marrakech",
+    "away": "Wydad AC",
+    "score": "1-2",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "competition": "Moroccan Throne Cup",
+    "season": "2018/19",
+    "scorers": [
+     {
+      "name": "William Jebor",
+      "minute": "51"
+     },
+     {
+      "name": "Mohamed Ounajem",
+      "minute": "64"
+     }
+    ],
+    "venue": "Marrakesh Stadium",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-916c3fd92832994188fdf36a"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-6c372959ce9d34b218d5fc7c",
+   "value": {
+    "name": "Wydad AC 2–0 IR Tanger",
+    "on": "2018-10-03",
+    "home": "Wydad AC",
+    "away": "IR Tanger",
+    "score": "2-0",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "competition": "Moroccan Throne Cup",
+    "season": "2018/19",
+    "scorers": [
+     {
+      "name": "Badr Gaddarine",
+      "minute": "30"
+     },
+     {
+      "name": "William Jebor",
+      "minute": "34"
+     }
+    ],
+    "venue": "Stade Mohamed V",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-916c3fd92832994188fdf36a"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-f3b2a0836973bf4d4ec969f4",
+   "value": {
+    "name": "Wydad AC 2–1 Olympic Safi",
+    "on": "2018-10-07",
+    "home": "Wydad AC",
+    "away": "Olympic Safi",
+    "score": "2-1",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "competition": "Moroccan Throne Cup",
+    "season": "2018/19",
+    "scorers": [
+     {
+      "name": "Abdelatif Noussir",
+      "minute": "41"
+     },
+     {
+      "name": "Mohamed Ounajem",
+      "minute": "49"
+     }
+    ],
+    "venue": "Stade Mohamed V",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-916c3fd92832994188fdf36a"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-2fe5f560c1766914c588deab",
+   "value": {
+    "name": "RSB Berkane 1–1 Wydad AC",
+    "on": "2018-11-02",
+    "home": "RSB Berkane",
+    "away": "Wydad AC",
+    "score": "1-1",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "competition": "Moroccan Throne Cup",
+    "season": "2018/19",
+    "scorers": [
+     {
+      "name": "Cheick Comara",
+      "minute": "71"
+     }
+    ],
+    "venue": "Fez Stadium",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-916c3fd92832994188fdf36a"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-ffb6d30194b68b5596de941a",
+   "value": {
+    "name": "Kawkab Marrakech 0–1 Wydad AC",
+    "on": "2017-08-23",
+    "home": "Kawkab Marrakech",
+    "away": "Wydad AC",
+    "score": "0-1",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "competition": "Moroccan Throne Cup",
+    "season": "2017/18",
+    "scorers": [
+     {
+      "name": "Achraf Bencharki",
+      "minute": "53"
+     }
+    ],
+    "venue": "Marrakesh Stadium",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-5b41200a5c88871dc52359d0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-7bc99c5a1a6ecac32917cdb5",
+   "value": {
+    "name": "Wydad AC 2–0 Kawkab Marrakech",
+    "on": "2017-08-27",
+    "home": "Wydad AC",
+    "away": "Kawkab Marrakech",
+    "score": "2-0",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "competition": "Moroccan Throne Cup",
+    "season": "2017/18",
+    "scorers": [
+     {
+      "name": "Anas El Asbahi",
+      "minute": "51"
+     },
+     {
+      "name": "Amine Atouchi",
+      "minute": "62"
+     }
+    ],
+    "venue": "Stade Mohammed V",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-5b41200a5c88871dc52359d0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-9461d858054193ce4277614f",
+   "value": {
+    "name": "Wydad AC 1–1 RSB Berkane",
+    "on": "2017-10-03",
+    "home": "Wydad AC",
+    "away": "RSB Berkane",
+    "score": "1-1",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "competition": "Moroccan Throne Cup",
+    "season": "2017/18",
+    "scorers": [
+     {
+      "name": "Abdeladim Khadrouf",
+      "minute": "90+9"
+     }
+    ],
+    "venue": "Stade Mohammed V",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-5b41200a5c88871dc52359d0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-d8bab94e36bf531241ff8675",
+   "value": {
+    "name": "RSB Berkane 2–1 Wydad AC",
+    "on": "2017-10-12",
+    "home": "RSB Berkane",
+    "away": "Wydad AC",
+    "score": "2-1",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "competition": "Moroccan Throne Cup",
+    "season": "2017/18",
+    "scorers": [
+     {
+      "name": "Mohammed Aoulad",
+      "minute": "34"
+     }
+    ],
+    "venue": "Stade d'Honneur D'oujda",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-5b41200a5c88871dc52359d0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  }
+ ],
+ "players": [
+  {
+   "id": "daily-player-b42d9f1c796c0e16cceaf978",
+   "value": {
+    "name": "Naïm Aarab",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2014,
+    "toYear": 2019,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-2dacb339b8e7f446eddd3ad2"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-8af24b158706c7b16124d4d2",
+   "value": {
+    "name": "Faouzi Abdelghani",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2005,
+    "toYear": 2010,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-eaf00785b6040eaea7e767d3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-6c8804c177dd9216d8c290f9",
+   "value": {
+    "name": "Amine Aboulfath",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2020,
+    "toYear": 2021,
+    "career": {
+     "apps": 67,
+     "goals": 1,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-ba98508f79f6dd7e5964551f",
+    "daily-src-c362b29f39ba9fa7390baeef"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-01d851e200dab0600cd6c22e",
+   "value": {
+    "name": "Daniel Nii Adjei",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2018,
+    "toYear": 2018,
+    "career": {
+     "apps": 1,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-9bc279381134c914555acc00"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-78d140f045081fbe5a083d69",
+   "value": {
+    "name": "Soufyan Ahannach",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2023,
+    "toYear": 2024,
+    "career": {
+     "apps": 7,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-77547f55b3b4b30549f576b5"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-806f2b17e185606677b4a0a3",
+   "value": {
+    "name": "Jamel Aït Ben Idir",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2015,
+    "toYear": 2019,
+    "career": {
+     "apps": 37,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-dc4c4ec344b72f22d676da59"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-a8caf60e9fb65f8273e0c399",
+   "value": {
+    "name": "Abdelhaq Ait Laarif",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2001,
+    "toYear": 2011,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-23bf781436ad5d699b1b36c6"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-e5268ba647e94987a71b6fd3",
+   "value": {
+    "name": "Ahmed Ajeddou",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2009,
+    "toYear": 2012,
+    "career": {
+     "apps": 64,
+     "goals": 6,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-9873bf2bc4afab2b18d9f20c"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-644a3a76ad177af693de64cb",
+   "value": {
+    "name": "Tarik Ajouadi",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2007,
+    "toYear": null,
+    "career": {
+     "apps": 82,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0a7cced4aaf74cfcf36fb95f"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-c4d632410b58bf999cf70287",
+   "value": {
+    "name": "Fahd Aktaou",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2016,
+    "toYear": 2018,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-5fc0cf10507f9eae8de87043"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-0c0dcdf514866fdcbcf819e7",
+   "value": {
+    "name": "Farid El Alagui",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2009,
+    "toYear": 2010,
+    "career": {
+     "apps": 10,
+     "goals": 3,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-f7e586c47667b0209d49b781"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-1acfc3e3902f4b5e51ecc3a4",
+   "value": {
+    "name": "Jamal Alioui",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2011,
+    "toYear": 2013,
+    "career": {
+     "apps": 32,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-2643cddfb267d461079e004d"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-59173ed61c3e6053c785aca5",
+   "value": {
+    "name": "Houssam Amaanan",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2017,
+    "toYear": 2017,
+    "career": {
+     "apps": 1,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-1625db2397181814f0186f17"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-866cea67ffdcc7dbfd6aa2ec",
+   "value": {
+    "name": "Ayoub El Amloud",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2019,
+    "toYear": 2024,
+    "career": {
+     "apps": 117,
+     "goals": 9,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-d6bd35b943d9e1dbba53430a"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-7474c116c99c1eaceb750df9",
+   "value": {
+    "name": "Nordin Amrabat",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2025,
+    "toYear": 2026,
+    "career": {
+     "apps": 27,
+     "goals": 2,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-b18288bfc0873898687edb90"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-7171f2924d9dac4dd12d3100",
+   "value": {
+    "name": "Hicham El Amrani",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2011,
+    "toYear": 2015,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-613793c6571589a25327ccfa"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-d7e3b06afdbaff35f02a43d4",
+   "value": {
+    "name": "Bobley Anderson",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2012,
+    "toYear": 2013,
+    "career": {
+     "apps": 24,
+     "goals": 3,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-976c35772bc8fc5f3e6bda1c"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-3b86f9008873e0392f9228a8",
+   "value": {
+    "name": "Pascal Angan",
+    "aliases": [],
+    "positions": [],
+    "fromYear": 2008,
+    "toYear": 2012,
+    "career": {
+     "apps": 53,
+     "goals": 7,
+     "basis": "English Wikipedia club stint table"
+    },
+    "archiveOnly": true,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-f4df4683d92e93282366c32b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-ed48e75ed051eb05d344bdb5",
+   "value": {
+    "name": "Badie Aouk",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2018,
+    "toYear": 2023,
+    "career": {
+     "apps": 96,
+     "goals": 13,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-e52b785693ac86382b228324"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-c73196569ee3bf6b4d25aaf4",
+   "value": {
+    "name": "Mohammed Aoulad",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2017,
+    "toYear": 2018,
+    "career": {
+     "apps": 17,
+     "goals": 9,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-cc49fc6aeb75a1a20076aa74"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-9443be926771f32167767162",
+   "value": {
+    "name": "Arthur",
+    "aliases": [
+     "Arthur (footballer, born 2005)"
+    ],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2024,
+    "toYear": null,
+    "career": {
+     "apps": 0,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-d11145180c51abfdfca626e4"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-ba4ecd6ec9f62d06b1e2c5f7",
+   "value": {
+    "name": "Hamza Asrir",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2019,
+    "toYear": 2023,
+    "career": {
+     "apps": 28,
+     "goals": 1,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-03f56b5a4cb9b6b7b120b43b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-f24d153f427c12f40ea20ad6",
+   "value": {
+    "name": "Amine Atouchi",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2011,
+    "toYear": 2018,
+    "career": {
+     "apps": 66,
+     "goals": 8,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-64caf8d59c0cceb4bd45c2b7"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-153fff9367a83ca10aef9ddf",
+   "value": {
+    "name": "Yahya Attiyat Allah",
+    "aliases": [],
+    "positions": [],
+    "fromYear": 2020,
+    "toYear": null,
+    "career": {
+     "apps": 101,
+     "goals": 7,
+     "basis": "English Wikipedia club stint table"
+    },
+    "archiveOnly": true,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-044bd730b1534528a1d83a43"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-776759cf9e89b29bedac59d4",
+   "value": {
+    "name": "Stephane Aziz Ki",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2025,
+    "toYear": 2026,
+    "career": {
+     "apps": 13,
+     "goals": 2,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-cf6799007d10944ac5b9b067"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-cd37d2b539893e3f0d80b2ca",
+   "value": {
+    "name": "Khalil Azmi",
+    "aliases": [],
+    "positions": [
+     "GK"
+    ],
+    "fromYear": 1984,
+    "toYear": 1992,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-97425d03e964fa959e78b382"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-efdb0ddcc1e2d8cc38722bb8",
+   "value": {
+    "name": "Michael Babatunde",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2018,
+    "toYear": 2021,
+    "career": {
+     "apps": 32,
+     "goals": 12,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-48fa995d4f853353e34e4ad0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-b35a74d0856ca08c9c8a2581",
+   "value": {
+    "name": "Yanis Henin",
+    "aliases": [],
+    "positions": [
+     "GK"
+    ],
+    "fromYear": 2020,
+    "toYear": 2021,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c362b29f39ba9fa7390baeef"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-95f3c6af566cfaad38ea23f4",
+   "value": {
+    "name": "Ayoub Skouma",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2020,
+    "toYear": 2021,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c362b29f39ba9fa7390baeef"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-4bc9791b476563ea0e4bfef3",
+   "value": {
+    "name": "Achraf Dari",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2020,
+    "toYear": 2021,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c362b29f39ba9fa7390baeef"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-31062889651a1e2953da2c59",
+   "value": {
+    "name": "Salaheddine Saidi",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2020,
+    "toYear": 2021,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c362b29f39ba9fa7390baeef"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-e6ba9ddf78249fcb4972a72a",
+   "value": {
+    "name": "Yahya Jabrane",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2020,
+    "toYear": 2021,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c362b29f39ba9fa7390baeef"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-e32f14bc9b3ae7769bafd51c",
+   "value": {
+    "name": "Anas Serrhat",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2020,
+    "toYear": 2021,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c362b29f39ba9fa7390baeef"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-bb8baf8190ee8607430dad58",
+   "value": {
+    "name": "Mohamed Ounajem",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2020,
+    "toYear": 2021,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c362b29f39ba9fa7390baeef"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-850fa30c2305dd5bbbcdb9c8",
+   "value": {
+    "name": "Badr Gaddarine",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2020,
+    "toYear": 2021,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c362b29f39ba9fa7390baeef"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-1eaab59e60a821024bdfcc95",
+   "value": {
+    "name": "Ayoub El Kaabi",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2020,
+    "toYear": 2021,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c362b29f39ba9fa7390baeef"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-dfeccc3163ad2309f9331d50",
+   "value": {
+    "name": "Simon Msuva",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2020,
+    "toYear": 2021,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c362b29f39ba9fa7390baeef"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-37dd58b7b516f940be062beb",
+   "value": {
+    "name": "Yahia Attiyat Allah",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2020,
+    "toYear": 2021,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c362b29f39ba9fa7390baeef"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-9af0ee40652d0c5a7a7af3bf",
+   "value": {
+    "name": "Walid El Karti",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2020,
+    "toYear": 2021,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c362b29f39ba9fa7390baeef"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-cb87968ae5e894353707c600",
+   "value": {
+    "name": "Sofian El Moudane",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2020,
+    "toYear": 2021,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c362b29f39ba9fa7390baeef"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-5ce19b88663ef954b46ab784",
+   "value": {
+    "name": "Ayman El Hassouni",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2020,
+    "toYear": 2021,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c362b29f39ba9fa7390baeef"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-d3780e338fe67347bc925c97",
+   "value": {
+    "name": "Soufiane Karkache",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2020,
+    "toYear": 2021,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c362b29f39ba9fa7390baeef"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-b2111c3969adcd9bc199b0bb",
+   "value": {
+    "name": "Zakaria Kiani",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2020,
+    "toYear": 2021,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c362b29f39ba9fa7390baeef"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-b36544ebdb1910bf351981ac",
+   "value": {
+    "name": "Mohamed Rahim",
+    "aliases": [
+     "Mohamed Rahim (footballer)"
+    ],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2020,
+    "toYear": 2021,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c362b29f39ba9fa7390baeef"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-461cc65919d8f8c87bae2b1f",
+   "value": {
+    "name": "Ahmed Reda Tagnaouti",
+    "aliases": [],
+    "positions": [
+     "GK"
+    ],
+    "fromYear": 2020,
+    "toYear": 2021,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c362b29f39ba9fa7390baeef"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-3ca91ba16f36dda604370ba3",
+   "value": {
+    "name": "Aissa Sioudi",
+    "aliases": [],
+    "positions": [
+     "GK"
+    ],
+    "fromYear": 2020,
+    "toYear": 2021,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c362b29f39ba9fa7390baeef"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-81807da35a209367c3367898",
+   "value": {
+    "name": "Muaid Ellafi",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2020,
+    "toYear": 2021,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c362b29f39ba9fa7390baeef"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-6d69f5711e2f217edac685fa",
+   "value": {
+    "name": "Cheick Comara",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2020,
+    "toYear": 2021,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c362b29f39ba9fa7390baeef"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-4b32d409327d09bb12baa55d",
+   "value": {
+    "name": "Mounsef Chrachem",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2020,
+    "toYear": 2021,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c362b29f39ba9fa7390baeef"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-6727be0e76b0f3837f488365",
+   "value": {
+    "name": "Zouhair El Moutaraji",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2020,
+    "toYear": 2021,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c362b29f39ba9fa7390baeef"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-c6ec5c975d553103fae836da",
+   "value": {
+    "name": "Abdellah Haimoud",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2020,
+    "toYear": 2021,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c362b29f39ba9fa7390baeef"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-01198bfac7e6619a54da12c9",
+   "value": {
+    "name": "Mohamed El Ouardi",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2020,
+    "toYear": 2021,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c362b29f39ba9fa7390baeef"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  }
+ ],
+ "seasons": [
+  {
+   "id": "daily-season-c7235fca246a285e7796c0f1",
+   "value": {
+    "name": "2025/26 season",
+    "season": "2025/26",
+    "league": "Botola",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-4989daa16c9f37132e07ca12"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-season-5cc69f68fceaf09942151b99",
+   "value": {
+    "name": "2024/25 season",
+    "season": "2024/25",
+    "league": "Botola",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-222ac96eb7f4b9bef55299ed"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-season-76381b051ab6cef102dd85f3",
+   "value": {
+    "name": "2023/24 season",
+    "season": "2023/24",
+    "league": "Botola",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-d4a6793708eadcc8109ed49e"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-season-a0490ec8cc3b9545f31c554b",
+   "value": {
+    "name": "2022/23 season",
+    "season": "2022/23",
+    "league": "Botola",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-137e5601f86e6309b2b92b24"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-season-3b5139f13721ec35645a9cd5",
+   "value": {
+    "name": "2020/21 season",
+    "season": "2020/21",
+    "league": "Botola",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c362b29f39ba9fa7390baeef"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-season-d128e8937ff2cc7c3e06a070",
+   "value": {
+    "name": "2019/20 season",
+    "season": "2019/20",
+    "league": "Botola",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-6ca6e4b586e5a51b6418747b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-season-9b1553ee94c6c16fb0d41538",
+   "value": {
+    "name": "2018/19 season",
+    "season": "2018/19",
+    "league": "Botola",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-916c3fd92832994188fdf36a"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-season-298042665fea6d8fa86d478c",
+   "value": {
+    "name": "2017/18 season",
+    "season": "2017/18",
+    "league": "Botola",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-5b41200a5c88871dc52359d0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  }
+ ],
+ "kits": [
+  {
+   "id": "daily-kit-e7044df314699472d3cc541a",
+   "value": {
+    "name": "Wydad AC 2025/26 home kit",
+    "season": "2025/26",
+    "type": "HOME",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1384892058",
+    "wikiKit": {
+     "pattern": "_wydad2526h",
+     "body": "ff0000",
+     "left": "ff0000",
+     "right": "ff0000",
+     "shorts": "ff0000",
+     "socks": "ff0000"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-4989daa16c9f37132e07ca12"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-3e2b71c838a35fc860686676",
+   "value": {
+    "name": "Wydad AC 2025/26 away kit",
+    "season": "2025/26",
+    "type": "AWAY",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1384892058",
+    "wikiKit": {
+     "pattern": "_wydad2526a",
+     "body": "ffffff",
+     "left": "ffffff",
+     "right": "ffffff",
+     "shorts": "ffffff",
+     "socks": "ffffff"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-4989daa16c9f37132e07ca12"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-5ca353f1e407921c444477e3",
+   "value": {
+    "name": "Wydad AC 2025/26 third kit",
+    "season": "2025/26",
+    "type": "THIRD",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1384892058",
+    "wikiKit": {
+     "pattern": "_wydad2526t",
+     "body": "0000c0",
+     "left": "0000c0",
+     "right": "0000c0",
+     "shorts": "0000c0",
+     "socks": "0000c0"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-4989daa16c9f37132e07ca12"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-3a76434257edd5b0af6d849f",
+   "value": {
+    "name": "Wydad AC 2024/25 home kit",
+    "season": "2024/25",
+    "type": "HOME",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1385165630",
+    "wikiKit": {
+     "pattern": "_macronpropuseco24rw",
+     "body": "ffffff",
+     "left": "ff0000",
+     "right": "ff0000",
+     "shorts": null,
+     "socks": "ff0000"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-222ac96eb7f4b9bef55299ed"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-11f168b75111af619bd0f095",
+   "value": {
+    "name": "Wydad AC 2024/25 away kit",
+    "season": "2024/25",
+    "type": "AWAY",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1385165630",
+    "wikiKit": {
+     "pattern": "_macronwyverneco24wr",
+     "body": "ffffff",
+     "left": "ffffff",
+     "right": "ffffff",
+     "shorts": "ffffff",
+     "socks": "ffffff"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-222ac96eb7f4b9bef55299ed"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-4a5977a35270ca8390e8d985",
+   "value": {
+    "name": "Wydad AC 2024/25 third kit",
+    "season": "2024/25",
+    "type": "THIRD",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1385165630",
+    "wikiKit": {
+     "pattern": "_macronwyverneco24ar",
+     "body": "555555",
+     "left": "555555",
+     "right": "555555",
+     "shorts": "555555",
+     "socks": "555555"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-222ac96eb7f4b9bef55299ed"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-e63d887abd1da8edd7ffdcc2",
+   "value": {
+    "name": "Wydad AC 2023/24 home kit",
+    "season": "2023/24",
+    "type": "HOME",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1385008976",
+    "wikiKit": {
+     "pattern": "_macronhalley23rw",
+     "body": null,
+     "left": null,
+     "right": null,
+     "shorts": "ff0000",
+     "socks": "ff0000"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-d4a6793708eadcc8109ed49e"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-565f60ecf287c35fe46f5d7b",
+   "value": {
+    "name": "Wydad AC 2023/24 away kit",
+    "season": "2023/24",
+    "type": "AWAY",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1385008976",
+    "wikiKit": {
+     "pattern": "_macronthemiseco23wr",
+     "body": null,
+     "left": null,
+     "right": null,
+     "shorts": "ffffff",
+     "socks": "ffffff"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-d4a6793708eadcc8109ed49e"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-9ec96917a72a1d784a139072",
+   "value": {
+    "name": "Wydad AC 2023/24 third kit",
+    "season": "2023/24",
+    "type": "THIRD",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1385008976",
+    "wikiKit": {
+     "pattern": "_macroncharoneco23rbrw",
+     "body": null,
+     "left": null,
+     "right": null,
+     "shorts": "0000ff",
+     "socks": "0000ff"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-d4a6793708eadcc8109ed49e"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-245537aa04b4180fd79165e8",
+   "value": {
+    "name": "Wydad AC 2022/23 home kit",
+    "season": "2022/23",
+    "type": "HOME",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1385162547",
+    "wikiKit": {
+     "pattern": "_macronalioth22rw",
+     "body": "ff0000",
+     "left": "ff0000",
+     "right": "ff0000",
+     "shorts": "ff0000",
+     "socks": "ff0000"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-137e5601f86e6309b2b92b24"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-5f54c6b5e62aa424987c7a55",
+   "value": {
+    "name": "Wydad AC 2022/23 away kit",
+    "season": "2022/23",
+    "type": "AWAY",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1385162547",
+    "wikiKit": {
+     "pattern": "_macronalioth22wr",
+     "body": "ffffff",
+     "left": "ff0000",
+     "right": "ff0000",
+     "shorts": "ffffff",
+     "socks": "ffffff"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-137e5601f86e6309b2b92b24"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-ecd3b58dbc6a8a5d73530d8a",
+   "value": {
+    "name": "Wydad AC 2022/23 third kit",
+    "season": "2022/23",
+    "type": "THIRD",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1385162547",
+    "wikiKit": {
+     "pattern": "_macronalioth22bdg",
+     "body": null,
+     "left": null,
+     "right": null,
+     "shorts": "000000",
+     "socks": "000000"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-137e5601f86e6309b2b92b24"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-f3f9bcea3c0dadb66cea7e2c",
+   "value": {
+    "name": "Wydad AC 2020/21 home kit",
+    "season": "2020/21",
+    "type": "HOME",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1384888952",
+    "wikiKit": {
+     "pattern": "_wydad21h",
+     "body": "d60024",
+     "left": "d60024",
+     "right": "d60024",
+     "shorts": "d60024",
+     "socks": "d60024"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c362b29f39ba9fa7390baeef"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-b8dbe3497b00927a336b1abd",
+   "value": {
+    "name": "Wydad AC 2020/21 away kit",
+    "season": "2020/21",
+    "type": "AWAY",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1384888952",
+    "wikiKit": {
+     "pattern": "_wydad21a",
+     "body": "ffffff",
+     "left": "ffffff",
+     "right": "ffffff",
+     "shorts": "ffffff",
+     "socks": "ffffff"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c362b29f39ba9fa7390baeef"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-3a20a10c6a2fd046520cf41d",
+   "value": {
+    "name": "Wydad AC 2020/21 third kit",
+    "season": "2020/21",
+    "type": "THIRD",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1384888952",
+    "wikiKit": {
+     "pattern": "_wydad21t",
+     "body": "050820",
+     "left": "050820",
+     "right": "050820",
+     "shorts": "050820",
+     "socks": "050820"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c362b29f39ba9fa7390baeef"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-cb900392e87d84f7662292c7",
+   "value": {
+    "name": "Wydad AC 2019/20 home kit",
+    "season": "2019/20",
+    "type": "HOME",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1384763497",
+    "wikiKit": {
+     "pattern": "_wac20h",
+     "body": "d52333",
+     "left": "d52333",
+     "right": "d52333",
+     "shorts": "d52333",
+     "socks": "d52333"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-6ca6e4b586e5a51b6418747b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-e3aa532e74ce95fc80342469",
+   "value": {
+    "name": "Wydad AC 2019/20 away kit",
+    "season": "2019/20",
+    "type": "AWAY",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1384763497",
+    "wikiKit": {
+     "pattern": "_wac20a",
+     "body": "ffffff",
+     "left": "ffffff",
+     "right": "ffffff",
+     "shorts": "ffffff",
+     "socks": "ffffff"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-6ca6e4b586e5a51b6418747b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-0ba5120c38830dd2221c9c50",
+   "value": {
+    "name": "Wydad AC 2019/20 third kit",
+    "season": "2019/20",
+    "type": "THIRD",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1384763497",
+    "wikiKit": {
+     "pattern": "_wac20t",
+     "body": "191c2f",
+     "left": "191c2f",
+     "right": "191c2f",
+     "shorts": "191c2f",
+     "socks": "191c2f"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-6ca6e4b586e5a51b6418747b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-c796151a59a7d776ed9a3152",
+   "value": {
+    "name": "Wydad AC 2018/19 home kit",
+    "season": "2018/19",
+    "type": "HOME",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1384763054",
+    "wikiKit": {
+     "pattern": "_dom1819h",
+     "body": "ffffff",
+     "left": "ffffff",
+     "right": "ffffff",
+     "shorts": "ffffff",
+     "socks": "ffffff"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-916c3fd92832994188fdf36a"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-dfb55fb5abaab395e134ec80",
+   "value": {
+    "name": "Wydad AC 2018/19 away kit",
+    "season": "2018/19",
+    "type": "AWAY",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1384763054",
+    "wikiKit": {
+     "pattern": "_wac19a",
+     "body": "dc3048",
+     "left": "dc3048",
+     "right": "dc3048",
+     "shorts": "dc3048",
+     "socks": "dc3048"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-916c3fd92832994188fdf36a"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  }
+ ]
+}

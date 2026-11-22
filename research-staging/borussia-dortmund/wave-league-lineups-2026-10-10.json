@@ -1,0 +1,1251 @@
+{
+ "sources": [
+  {
+   "id": "s365-4755339",
+   "title": "365Scores: Borussia Mönchengladbach 0-1 Borussia Dortmund, 2026-11-21",
+   "url": "https://webws.365scores.com/web/game/?gameId=4755339",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1812749",
+   "title": "LiveScore: Borussia Mönchengladbach 0-1 Borussia Dortmund, 2026-11-21 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1812749",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4755353",
+   "title": "365Scores: Borussia Dortmund 2-1 SV 07 Elversberg, 2026-11-07",
+   "url": "https://webws.365scores.com/web/game/?gameId=4755353",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1812741",
+   "title": "LiveScore: Borussia Dortmund 2-1 SV 07 Elversberg, 2026-11-07 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1812741",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4755364",
+   "title": "365Scores: Bayern Munich 2-2 Borussia Dortmund, 2026-10-31",
+   "url": "https://webws.365scores.com/web/game/?gameId=4755364",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1812769",
+   "title": "LiveScore: Bayern Munich 2-2 Borussia Dortmund, 2026-10-31 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1812769",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4847402",
+   "title": "365Scores: Borussia Dortmund 3-2 Werder Bremen, 2026-10-27",
+   "url": "https://webws.365scores.com/web/game/?gameId=4847402",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1888380",
+   "title": "LiveScore: Borussia Dortmund 3-2 Werder Bremen, 2026-10-27 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1888380",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4755371",
+   "title": "365Scores: Borussia Dortmund 1-0 Eintracht Frankfurt, 2026-10-24",
+   "url": "https://webws.365scores.com/web/game/?gameId=4755371",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1812711",
+   "title": "LiveScore: Borussia Dortmund 1-0 Eintracht Frankfurt, 2026-10-24 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1812711",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4755377",
+   "title": "365Scores: Union Berlin 0-0 Borussia Dortmund, 2026-10-17",
+   "url": "https://webws.365scores.com/web/game/?gameId=4755377",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1812725",
+   "title": "LiveScore: Union Berlin 0-0 Borussia Dortmund, 2026-10-17 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1812725",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4755389",
+   "title": "365Scores: Borussia Dortmund 2-2 Werder Bremen, 2026-10-09",
+   "url": "https://webws.365scores.com/web/game/?gameId=4755389",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1812724",
+   "title": "LiveScore: Borussia Dortmund 2-2 Werder Bremen, 2026-10-09 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1812724",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4755397",
+   "title": "365Scores: Stuttgart 0-1 Borussia Dortmund, 2026-09-19",
+   "url": "https://webws.365scores.com/web/game/?gameId=4755397",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1812688",
+   "title": "LiveScore: Stuttgart 0-1 Borussia Dortmund, 2026-09-19 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1812688",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4755407",
+   "title": "365Scores: Borussia Dortmund 3-0 SC Paderborn 07, 2026-09-12",
+   "url": "https://webws.365scores.com/web/game/?gameId=4755407",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1812700",
+   "title": "LiveScore: Borussia Dortmund 3-0 SC Paderborn 07, 2026-09-12 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1812700",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4755415",
+   "title": "365Scores: Hoffenheim 2-3 Borussia Dortmund, 2026-09-05",
+   "url": "https://webws.365scores.com/web/game/?gameId=4755415",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1812697",
+   "title": "LiveScore: Hoffenheim 2-3 Borussia Dortmund, 2026-09-05 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1812697",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4733025",
+   "title": "365Scores: HEBC Hamburg 0-5 Borussia Dortmund, 2026-09-01",
+   "url": "https://webws.365scores.com/web/game/?gameId=4733025",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1785753",
+   "title": "LiveScore: HEBC Hamburg 0-5 Borussia Dortmund, 2026-09-01 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1785753",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4755424",
+   "title": "365Scores: Borussia Dortmund 2-0 Hamburger SV, 2026-08-29",
+   "url": "https://webws.365scores.com/web/game/?gameId=4755424",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1812676",
+   "title": "LiveScore: Borussia Dortmund 2-0 Hamburger SV, 2026-08-29 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1812676",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4727521",
+   "title": "365Scores: Borussia Dortmund 1-2 Bayern Munich, 2026-08-22",
+   "url": "https://webws.365scores.com/web/game/?gameId=4727521",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1794322",
+   "title": "LiveScore: Borussia Dortmund 1-2 Bayern Munich, 2026-08-22 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1794322",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4764911",
+   "title": "365Scores: Borussia Dortmund 2-2 AS Roma, 2026-08-15",
+   "url": "https://webws.365scores.com/web/game/?gameId=4764911",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1821702",
+   "title": "LiveScore: Borussia Dortmund 2-2 AS Roma, 2026-08-15 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1821702",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4748068",
+   "title": "365Scores: Arsenal 2-3 Borussia Dortmund, 2026-08-09",
+   "url": "https://webws.365scores.com/web/game/?gameId=4748068",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1821948",
+   "title": "LiveScore: Arsenal 2-3 Borussia Dortmund, 2026-08-09 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1821948",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4764889",
+   "title": "365Scores: FC Tokyo 0-1 Borussia Dortmund, 2026-08-01",
+   "url": "https://webws.365scores.com/web/game/?gameId=4764889",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1821699",
+   "title": "LiveScore: FC Tokyo 0-1 Borussia Dortmund, 2026-08-01 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1821699",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4764880",
+   "title": "365Scores: Cerezo Osaka 1-0 Borussia Dortmund, 2026-07-29",
+   "url": "https://webws.365scores.com/web/game/?gameId=4764880",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1821692",
+   "title": "LiveScore: Cerezo Osaka 1-0 Borussia Dortmund, 2026-07-29 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1821692",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4764870",
+   "title": "365Scores: Fortuna Düsseldorf 2-1 Borussia Dortmund, 2026-07-25",
+   "url": "https://webws.365scores.com/web/game/?gameId=4764870",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4764862",
+   "title": "365Scores: Rot-weiss Oberhausen 1-3 Borussia Dortmund, 2026-07-18",
+   "url": "https://webws.365scores.com/web/game/?gameId=4764862",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1821693",
+   "title": "LiveScore: Rot-weiss Oberhausen 1-3 Borussia Dortmund, 2026-07-18 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1821693",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  }
+ ],
+ "matches": [
+  {
+   "id": "a-m-2026-11-21-borussia-monchengladbach-borussia-dortmund",
+   "value": {
+    "name": "Borussia Mönchengladbach 0-1 Borussia Dortmund",
+    "on": "2026-11-21",
+    "competition": "Bundesliga",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Gregor Kobel",
+     "Ramy Bensebaini",
+     "Nico Schlotterbeck",
+     "Joane Gadou",
+     "Daniel Svensson",
+     "Felix Nmecha",
+     "Jobe Bellingham",
+     "Julian Ryerson",
+     "Maximilian Beier",
+     "Konstantinos Karetsas",
+     "Fábio Silva"
+    ],
+    "bench": [
+     "Waldemar Anton",
+     "Marcel Sabitzer",
+     "Joey Veerman",
+     "Ethan Nwaneri",
+     "Mathis Albert",
+     "Alexander Meyer",
+     "Filippo Mané",
+     "Kauã Prates",
+     "Enzo dos Santos"
+    ],
+    "scorers": [
+     "Felix Nmecha"
+    ]
+   },
+   "sources": [
+    "s365-4755339",
+    "ls-lu-1812749"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-borussia-dortmund"
+  },
+  {
+   "id": "a-m-2026-11-07-borussia-dortmund-sv-07-elversberg",
+   "value": {
+    "name": "Borussia Dortmund 2-1 SV 07 Elversberg",
+    "on": "2026-11-07",
+    "competition": "Bundesliga",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Gregor Kobel",
+     "Daniel Svensson",
+     "Nico Schlotterbeck",
+     "Waldemar Anton",
+     "Joane Gadou",
+     "Felix Nmecha",
+     "Joey Veerman",
+     "Jobe Bellingham",
+     "Carney Chukwuemeka",
+     "Fábio Silva",
+     "Konstantinos Karetsas"
+    ],
+    "bench": [
+     "Ramy Bensebaini",
+     "Julian Ryerson",
+     "Marcel Sabitzer",
+     "Ethan Nwaneri",
+     "Maximilian Beier",
+     "Alexander Meyer",
+     "Luca Reggiani",
+     "Mathis Albert",
+     "Samuele Inácio"
+    ],
+    "scorers": [
+     "Felix Nmecha",
+     "Felix Nmecha"
+    ]
+   },
+   "sources": [
+    "s365-4755353",
+    "ls-lu-1812741"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-borussia-dortmund"
+  },
+  {
+   "id": "a-m-2026-10-31-bayern-munich-borussia-dortmund",
+   "value": {
+    "name": "Bayern Munich 2-2 Borussia Dortmund",
+    "on": "2026-10-31",
+    "competition": "Bundesliga",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Gregor Kobel",
+     "Daniel Svensson",
+     "Nico Schlotterbeck",
+     "Waldemar Anton",
+     "Joane Gadou",
+     "Felix Nmecha",
+     "Joey Veerman",
+     "Jobe Bellingham",
+     "Carney Chukwuemeka",
+     "Serhou Guirassy",
+     "Maximilian Beier"
+    ],
+    "bench": [
+     "Julian Ryerson",
+     "Marcel Sabitzer",
+     "Konstantinos Karetsas",
+     "Samuele Inácio",
+     "Fábio Silva",
+     "Alexander Meyer",
+     "Ramy Bensebaini",
+     "Filippo Mané",
+     "Ethan Nwaneri"
+    ],
+    "scorers": [
+     "Serhou Guirassy",
+     "Fábio Silva"
+    ]
+   },
+   "sources": [
+    "s365-4755364",
+    "ls-lu-1812769"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-borussia-dortmund"
+  },
+  {
+   "id": "a-m-2026-10-27-borussia-dortmund-werder-bremen",
+   "value": {
+    "name": "Borussia Dortmund 3-2 Werder Bremen",
+    "on": "2026-10-27",
+    "competition": "DFB-Pokal - 2nd Round",
+    "score": "3-2",
+    "venue": null,
+    "lineup": [
+     "Gregor Kobel",
+     "Nico Schlotterbeck",
+     "Waldemar Anton",
+     "Joane Gadou",
+     "Maximilian Beier",
+     "Felix Nmecha",
+     "Joey Veerman",
+     "Julian Ryerson",
+     "Carney Chukwuemeka",
+     "Jobe Bellingham",
+     "Serhou Guirassy"
+    ],
+    "bench": [
+     "Daniel Svensson",
+     "Marcel Sabitzer",
+     "Ethan Nwaneri",
+     "Fábio Silva",
+     "Patrick Drewes",
+     "Filippo Mané",
+     "Luca Reggiani",
+     "Mathis Albert",
+     "Samuele Inácio"
+    ],
+    "scorers": [
+     "Serhou Guirassy",
+     "Carney Chukwuemeka",
+     "Marcel Sabitzer"
+    ]
+   },
+   "sources": [
+    "s365-4847402",
+    "ls-lu-1888380"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-borussia-dortmund"
+  },
+  {
+   "id": "a-m-2026-10-24-borussia-dortmund-eintracht-frankfurt",
+   "value": {
+    "name": "Borussia Dortmund 1-0 Eintracht Frankfurt",
+    "on": "2026-10-24",
+    "competition": "Bundesliga",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Gregor Kobel",
+     "Ramy Bensebaini",
+     "Nico Schlotterbeck",
+     "Waldemar Anton",
+     "Daniel Svensson",
+     "Felix Nmecha",
+     "Joey Veerman",
+     "Julian Ryerson",
+     "Fábio Silva",
+     "Marcel Sabitzer",
+     "Serhou Guirassy"
+    ],
+    "bench": [
+     "Joane Gadou",
+     "Jobe Bellingham",
+     "Carney Chukwuemeka",
+     "Ethan Nwaneri",
+     "Maximilian Beier",
+     "Alexander Meyer",
+     "Filippo Mané",
+     "Enzo dos Santos",
+     "Samuele Inácio"
+    ],
+    "scorers": [
+     "Maximilian Beier"
+    ]
+   },
+   "sources": [
+    "s365-4755371",
+    "ls-lu-1812711"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-borussia-dortmund"
+  },
+  {
+   "id": "a-m-2026-10-17-union-berlin-borussia-dortmund",
+   "value": {
+    "name": "Union Berlin 0-0 Borussia Dortmund",
+    "on": "2026-10-17",
+    "competition": "Bundesliga",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Gregor Kobel",
+     "Nico Schlotterbeck",
+     "Waldemar Anton",
+     "Joane Gadou",
+     "Daniel Svensson",
+     "Felix Nmecha",
+     "Jobe Bellingham",
+     "Julian Ryerson",
+     "Maximilian Beier",
+     "Ethan Nwaneri",
+     "Serhou Guirassy"
+    ],
+    "bench": [
+     "Konstantinos Karetsas",
+     "Mathis Albert",
+     "Fábio Silva",
+     "Alexander Meyer",
+     "Ramy Bensebaini",
+     "Kauã Prates",
+     "Carney Chukwuemeka",
+     "Marcel Sabitzer",
+     "Joey Veerman"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4755377",
+    "ls-lu-1812725"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-borussia-dortmund"
+  },
+  {
+   "id": "a-m-2026-10-09-borussia-dortmund-werder-bremen",
+   "value": {
+    "name": "Borussia Dortmund 2-2 Werder Bremen",
+    "on": "2026-10-09",
+    "competition": "Bundesliga",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Gregor Kobel",
+     "Nico Schlotterbeck",
+     "Waldemar Anton",
+     "Joane Gadou",
+     "Daniel Svensson",
+     "Felix Nmecha",
+     "Jobe Bellingham",
+     "Maximilian Beier",
+     "Marcel Sabitzer",
+     "Ethan Nwaneri",
+     "Serhou Guirassy"
+    ],
+    "bench": [
+     "Joey Veerman",
+     "Konstantinos Karetsas",
+     "Fábio Silva",
+     "Alexander Meyer",
+     "Ramy Bensebaini",
+     "Luca Reggiani",
+     "Kauã Prates",
+     "Mathis Albert",
+     "Samuele Inácio"
+    ],
+    "scorers": [
+     "Daniel Svensson",
+     "Nico Schlotterbeck"
+    ]
+   },
+   "sources": [
+    "s365-4755389",
+    "ls-lu-1812724"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-borussia-dortmund"
+  },
+  {
+   "id": "a-m-2026-09-19-stuttgart-borussia-dortmund",
+   "value": {
+    "name": "Stuttgart 0-1 Borussia Dortmund",
+    "on": "2026-09-19",
+    "competition": "Bundesliga",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Gregor Kobel",
+     "Nico Schlotterbeck",
+     "Waldemar Anton",
+     "Joane Gadou",
+     "Daniel Svensson",
+     "Felix Nmecha",
+     "Joey Veerman",
+     "Julian Ryerson",
+     "Maximilian Beier",
+     "Ethan Nwaneri",
+     "Serhou Guirassy"
+    ],
+    "bench": [
+     "Ramy Bensebaini",
+     "Jobe Bellingham",
+     "Marcel Sabitzer",
+     "Konstantinos Karetsas",
+     "Fábio Silva",
+     "Alexander Meyer",
+     "Luca Reggiani",
+     "Carney Chukwuemeka",
+     "Samuele Inácio"
+    ],
+    "scorers": [
+     "Maximilian Beier"
+    ]
+   },
+   "sources": [
+    "s365-4755397",
+    "ls-lu-1812688"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-borussia-dortmund"
+  },
+  {
+   "id": "a-m-2026-09-12-borussia-dortmund-sc-paderborn-07",
+   "value": {
+    "name": "Borussia Dortmund 3-0 SC Paderborn 07",
+    "on": "2026-09-12",
+    "competition": "Bundesliga",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Gregor Kobel",
+     "Nico Schlotterbeck",
+     "Waldemar Anton",
+     "Joane Gadou",
+     "Daniel Svensson",
+     "Jobe Bellingham",
+     "Joey Veerman",
+     "Julian Ryerson",
+     "Fábio Silva",
+     "Ethan Nwaneri",
+     "Serhou Guirassy"
+    ],
+    "bench": [
+     "Ramy Bensebaini",
+     "Carney Chukwuemeka",
+     "Felix Nmecha",
+     "Marcel Sabitzer",
+     "Maximilian Beier",
+     "Alexander Meyer",
+     "Luca Reggiani",
+     "Kauã Prates",
+     "Mathis Albert"
+    ],
+    "scorers": [
+     "Fábio Silva",
+     "Felix Nmecha",
+     "Felix Nmecha"
+    ]
+   },
+   "sources": [
+    "s365-4755407",
+    "ls-lu-1812700"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-borussia-dortmund"
+  },
+  {
+   "id": "a-m-2026-09-05-hoffenheim-borussia-dortmund",
+   "value": {
+    "name": "Hoffenheim 2-3 Borussia Dortmund",
+    "on": "2026-09-05",
+    "competition": "Bundesliga",
+    "score": "2-3",
+    "venue": null,
+    "lineup": [
+     "Gregor Kobel",
+     "Filippo Mané",
+     "Waldemar Anton",
+     "Joane Gadou",
+     "Daniel Svensson",
+     "Felix Nmecha",
+     "Jobe Bellingham",
+     "Julian Ryerson",
+     "Maximilian Beier",
+     "Konstantinos Karetsas",
+     "Serhou Guirassy"
+    ],
+    "bench": [
+     "Luca Reggiani",
+     "Marcel Sabitzer",
+     "Joey Veerman",
+     "Ethan Nwaneri",
+     "Fábio Silva",
+     "Alexander Meyer",
+     "Kauã Prates",
+     "Carney Chukwuemeka",
+     "Mathis Albert"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4755415",
+    "ls-lu-1812697"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-borussia-dortmund"
+  },
+  {
+   "id": "a-m-2026-09-01-hebc-hamburg-borussia-dortmund",
+   "value": {
+    "name": "HEBC Hamburg 0-5 Borussia Dortmund",
+    "on": "2026-09-01",
+    "competition": "DFB-Pokal - 1st Round",
+    "score": "0-5",
+    "venue": null,
+    "lineup": [
+     "Alexander Meyer",
+     "Daniel Svensson",
+     "Waldemar Anton",
+     "Filippo Mané",
+     "Julian Ryerson",
+     "Joey Veerman",
+     "Felix Nmecha",
+     "Marcel Sabitzer",
+     "Mathis Albert",
+     "Fábio Silva",
+     "Samuele Inácio"
+    ],
+    "bench": [
+     "Luca Reggiani",
+     "Kauã Prates",
+     "Carney Chukwuemeka",
+     "Konstantinos Karetsas",
+     "Maximilian Beier",
+     "Patrick Drewes",
+     "Joane Gadou",
+     "Jobe Bellingham",
+     "Serhou Guirassy"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4733025",
+    "ls-lu-1785753"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-borussia-dortmund"
+  },
+  {
+   "id": "a-m-2026-08-29-borussia-dortmund-hamburger-sv",
+   "value": {
+    "name": "Borussia Dortmund 2-0 Hamburger SV",
+    "on": "2026-08-29",
+    "competition": "Bundesliga",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Gregor Kobel",
+     "Daniel Svensson",
+     "Waldemar Anton",
+     "Joane Gadou",
+     "Maximilian Beier",
+     "Felix Nmecha",
+     "Jobe Bellingham",
+     "Julian Ryerson",
+     "Giannis Konstantelias",
+     "Serhou Guirassy",
+     "Konstantinos Karetsas"
+    ],
+    "bench": [
+     "Filippo Mané",
+     "Kauã Prates",
+     "Marcel Sabitzer",
+     "Joey Veerman",
+     "Samuele Inácio",
+     "Alexander Meyer",
+     "Luca Reggiani",
+     "Mathis Albert",
+     "Fábio Silva"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4755424",
+    "ls-lu-1812676"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-borussia-dortmund"
+  },
+  {
+   "id": "a-m-2026-08-22-borussia-dortmund-bayern-munich",
+   "value": {
+    "name": "Borussia Dortmund 1-2 Bayern Munich",
+    "on": "2026-08-22",
+    "competition": "Super Cup",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Gregor Kobel",
+     "Ramy Bensebaini",
+     "Waldemar Anton",
+     "Joane Gadou",
+     "Julian Ryerson",
+     "Felix Nmecha",
+     "Jobe Bellingham",
+     "Daniel Svensson",
+     "Samuele Inácio",
+     "Konstantinos Karetsas",
+     "Serhou Guirassy"
+    ],
+    "bench": [
+     "Marcel Sabitzer",
+     "Joey Veerman",
+     "Giannis Konstantelias",
+     "Maximilian Beier",
+     "Fábio Silva",
+     "Alexander Meyer",
+     "Filippo Mané",
+     "Luca Reggiani",
+     "Mathis Albert"
+    ],
+    "scorers": [
+     "Fábio Silva"
+    ]
+   },
+   "sources": [
+    "s365-4727521",
+    "ls-lu-1794322"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-borussia-dortmund"
+  },
+  {
+   "id": "a-m-2026-08-15-borussia-dortmund-as-roma",
+   "value": {
+    "name": "Borussia Dortmund 2-2 AS Roma",
+    "on": "2026-08-15",
+    "competition": "Club Friendlies",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Gregor Kobel",
+     "Ramy Bensebaini",
+     "Filippo Mané",
+     "Joane Gadou",
+     "Julian Ryerson",
+     "Felix Nmecha",
+     "Jobe Bellingham",
+     "Daniel Svensson",
+     "Samuele Inácio",
+     "Konstantinos Karetsas",
+     "Serhou Guirassy"
+    ],
+    "bench": [
+     "Luca Reggiani",
+     "Marcel Sabitzer",
+     "Takato Yamamoto",
+     "Mathis Albert",
+     "Fábio Silva",
+     "Kauã Prates",
+     "Patrick Drewes",
+     "Alexander Meyer",
+     "Jan-Luca Riedl",
+     "Ayman Azhil",
+     "Justin Lerma"
+    ],
+    "scorers": [
+     "Julian Ryerson",
+     "Serhou Guirassy"
+    ]
+   },
+   "sources": [
+    "s365-4764911",
+    "ls-lu-1821702"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-borussia-dortmund"
+  },
+  {
+   "id": "a-m-2026-08-09-arsenal-borussia-dortmund",
+   "value": {
+    "name": "Arsenal 2-3 Borussia Dortmund",
+    "on": "2026-08-09",
+    "competition": "Emirates Cup - Final",
+    "score": "2-3",
+    "venue": null,
+    "lineup": [
+     "Alexander Meyer",
+     "Ramy Bensebaini",
+     "Filippo Mané",
+     "Joane Gadou",
+     "Maximilian Beier",
+     "Felix Nmecha",
+     "Jobe Bellingham",
+     "Daniel Svensson",
+     "Samuele Inácio",
+     "Konstantinos Karetsas",
+     "Fábio Silva"
+    ],
+    "bench": [
+     "Luca Reggiani",
+     "Kauã Prates",
+     "Carney Chukwuemeka",
+     "Marcel Sabitzer",
+     "Takato Yamamoto",
+     "Mathis Albert",
+     "Serhou Guirassy",
+     "Patrick Drewes",
+     "Jan-Luca Riedl",
+     "Almugera Kabar",
+     "Justin Lerma"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4748068",
+    "ls-lu-1821948"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-borussia-dortmund"
+  },
+  {
+   "id": "a-m-2026-08-01-fc-tokyo-borussia-dortmund",
+   "value": {
+    "name": "FC Tokyo 0-1 Borussia Dortmund",
+    "on": "2026-08-01",
+    "competition": "Club Friendlies",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Patrick Drewes",
+     "Roméo Ritter",
+     "Waldemar Anton",
+     "Luca Reggiani",
+     "Maximilian Beier",
+     "Felix Nmecha",
+     "Jobe Bellingham",
+     "Daniel Svensson",
+     "Samuele Inácio",
+     "Carney Chukwuemeka",
+     "Fábio Silva"
+    ],
+    "bench": [
+     "Joane Gadou",
+     "Jan-Luca Riedl",
+     "Yan Couto",
+     "Miguel Adje",
+     "Ayman Azhil",
+     "Takato Yamamoto",
+     "Enzo dos Santos",
+     "Justin Lerma",
+     "Mathis Albert",
+     "Serhou Guirassy",
+     "Alexander Meyer",
+     "Silas Ostrzinski",
+     "Almugera Kabar",
+     "Tom Faust",
+     "Marwan-Omir Mirza",
+     "Arne Wessels"
+    ],
+    "scorers": [
+     "Fábio Silva"
+    ]
+   },
+   "sources": [
+    "s365-4764889",
+    "ls-lu-1821699"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-borussia-dortmund"
+  },
+  {
+   "id": "a-m-2026-07-29-cerezo-osaka-borussia-dortmund",
+   "value": {
+    "name": "Cerezo Osaka 1-0 Borussia Dortmund",
+    "on": "2026-07-29",
+    "competition": "Club Friendlies",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Alexander Meyer",
+     "Luca Reggiani",
+     "Filippo Mané",
+     "Joane Gadou",
+     "Almugera Kabar",
+     "Justin Lerma",
+     "Jobe Bellingham",
+     "Yan Couto",
+     "Samuele Inácio",
+     "Takato Yamamoto",
+     "Serhou Guirassy"
+    ],
+    "bench": [
+     "Jan-Luca Riedl",
+     "Roméo Ritter",
+     "Miguel Adje",
+     "Ayman Azhil",
+     "Enzo dos Santos",
+     "Tom Faust",
+     "Marwan-Omir Mirza",
+     "Mathis Albert",
+     "Arne Wessels",
+     "Fábio Silva",
+     "Patrick Drewes"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4764880",
+    "ls-lu-1821692"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-borussia-dortmund"
+  },
+  {
+   "id": "a-m-2026-07-25-fortuna-dusseldorf-borussia-dortmund",
+   "value": {
+    "name": "Fortuna Düsseldorf 2-1 Borussia Dortmund",
+    "on": "2026-07-25",
+    "competition": "Club Friendlies",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Alexander Meyer",
+     "Jan-Luca Riedl",
+     "Filippo Mané",
+     "Joane Gadou",
+     "Almugera Kabar",
+     "Ayman Azhil",
+     "Enzo dos Santos",
+     "Marwan-Omir Mirza",
+     "Mathis Albert",
+     "Takato Yamamoto",
+     "Serhou Guirassy"
+    ],
+    "bench": [
+     "Patrick Drewes",
+     "Luca Reggiani",
+     "Roméo Ritter",
+     "Yan Couto",
+     "Miguel Adje",
+     "Jobe Bellingham",
+     "Tom Faust",
+     "Justin Lerma",
+     "Arne Wessels",
+     "Samuele Inácio",
+     "Fábio Silva",
+     "Elias Benkara"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4764870"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-07-18-rot-weiss-oberhausen-borussia-dortmund",
+   "value": {
+    "name": "Rot-weiss Oberhausen 1-3 Borussia Dortmund",
+    "on": "2026-07-18",
+    "competition": "Club Friendlies",
+    "score": "1-3",
+    "venue": null,
+    "lineup": [
+     "Alexander Meyer",
+     "Luca Reggiani",
+     "Filippo Mané",
+     "Jan-Luca Riedl",
+     "Almugera Kabar",
+     "Justin Lerma",
+     "Jobe Bellingham",
+     "Yan Couto",
+     "Mathis Albert",
+     "Arne Wessels",
+     "Fábio Silva"
+    ],
+    "bench": [
+     "Patrick Drewes",
+     "Joane Gadou",
+     "Roméo Ritter",
+     "Miguel Adje",
+     "Ayman Azhil",
+     "Enzo dos Santos",
+     "Marwan-Omir Mirza",
+     "Samuele Inácio",
+     "Serhou Guirassy",
+     "Elias Benkara",
+     "Takato Yamamoto",
+     "Tom Faust",
+     "Michael Eberwein"
+    ],
+    "scorers": [
+     "Justin Lerma",
+     "Serhou Guirassy",
+     "Takato Yamamoto"
+    ]
+   },
+   "sources": [
+    "s365-4764862",
+    "ls-lu-1821693"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-borussia-dortmund"
+  }
+ ],
+ "players": [],
+ "kits": [],
+ "rivals": []
+}

@@ -1,14 +1,14 @@
 {
  "day": "2026-11-22",
  "clubId": "hapoel-tel-aviv",
- "runUrl": "https://github.com/maordubel/fanlife/actions/runs/44985721909",
+ "runUrl": "https://github.com/maordubel/fanlife/actions/runs/45018147326",
  "added": {
-  "matches": 46,
-  "players": 10,
-  "seasons": 0,
-  "kits": 0,
-  "lineups": 46,
-  "scorers": 4
+  "matches": 4,
+  "players": 29,
+  "seasons": 2,
+  "kits": 6,
+  "lineups": 0,
+  "scorers": 0
  },
  "heldDays": [],
  "steps": [
@@ -30,17 +30,17 @@
   {
    "step": "Historical results, elevens and scorers",
    "state": "ok",
-   "info": "Continued from the historical results checkpoint, up to 30 fixtures"
+   "info": "Continued from the historical results checkpoint, up to 90 fixtures"
   },
   {
    "step": "Historical players",
    "state": "ok",
-   "info": "10 documented senior club stints"
+   "info": "29 documented senior club stints"
   },
   {
    "step": "Season archives, scoresheets and shirt metadata",
    "state": "ok",
-   "info": "0 checked seasons and 0 dated results"
+   "info": "2 checked seasons and 4 dated results"
   },
   {
    "step": "Kit archive",
@@ -48,17 +48,12 @@
    "info": "www.footballkitarchive.com: robots.txt disallows this path"
   },
   {
-   "step": "Prices for newly eligible cards",
+   "step": "Open league season datasets",
    "state": "ok",
-   "info": "Existing prices preserved"
-  },
-  {
-   "step": "Head-to-head ledger",
-   "state": "ok",
-   "info": "Rebuilt the club fixture ledger"
+   "info": "No league in this source is mapped to this club"
   }
  ],
- "dataVersion": "18a60a53db104383",
+ "dataVersion": "85ed610e66913b18",
  "uncertainties": [
   {
    "record": "hapoel-tel-aviv:daily-match-38f41899725c6a6d8b597ae4",
@@ -254,12 +249,17 @@
    "record": "hapoel-tel-aviv:daily-match-7b9d7c5480e79e9722b1c6ff",
    "code": "DAILY_MATCH_CONFLICT",
    "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "hapoel-tel-aviv:daily-match-5224d4dfeb56e9281926ae0a",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
   }
  ],
  "featureInputs": {
-  "players": 658,
+  "players": 671,
   "matches": 3161,
-  "seasons": 0,
+  "seasons": 2,
   "kits": 133
  }
 }

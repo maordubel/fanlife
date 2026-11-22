@@ -13,7 +13,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-11-21T16:50:38.583Z"
+  "checkedAt": "2026-11-22T11:41:33.551Z"
  },
  "torcida:/wp-json/wp/v2/pages": {
   "endpoint": "/wp-json/wp/v2/pages",
@@ -29,15 +29,15 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-11-21T16:50:49.062Z"
+  "checkedAt": "2026-11-22T11:41:34.150Z"
  },
  "hajduk-official-history-en:/eng/history": {
   "endpoint": "/eng/history",
   "providerId": "hajduk-official-history-en",
-  "state": "ok",
-  "status": 200,
-  "reason": null,
-  "checkedAt": "2026-11-21T16:50:58.644Z"
+  "state": "blocked",
+  "status": 403,
+  "reason": "HTTP 403 — a refusal is an answer",
+  "checkedAt": "2026-11-22T11:41:34.925Z"
  },
  "hajduk-official:/eng/history/players": {
   "endpoint": "/eng/history/players",

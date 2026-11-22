@@ -1,0 +1,5373 @@
+{
+ "schemaVersion": 1,
+ "clubId": "hapoel-petah-tikva",
+ "contentLocale": "en",
+ "sources": [
+  {
+   "id": "daily-src-81efc14c2acb56882e57af23",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739293",
+   "title": "365Scores: Hapoel Petah Tikva 2-1 Hapoel Ramat Gan, 2026-11-07",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-63b57027cf1b7ce74431fad3",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739296",
+   "title": "365Scores: Hapoel Haifa 2-1 Hapoel Petah Tikva, 2026-10-31",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-8b14ba5e45effa276fd52787",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1800665",
+   "title": "LiveScore: Hapoel Haifa 2-1 Hapoel Petah Tikva, 2026-10-31 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-3c11872d329dbb09af7ece96",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739306",
+   "title": "365Scores: Hapoel Petah Tikva 0-1 Beitar Jerusalem, 2026-10-25",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-074b64a82d8871bdd40b7c5f",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739310",
+   "title": "365Scores: Bnei Sakhnin 2-0 Hapoel Petah Tikva, 2026-10-17",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-24cfce159a605b37b272aef4",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739319",
+   "title": "365Scores: Hapoel Petah Tikva 0-3 Maccabi Netanya, 2026-10-10",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-917eb97c5b3c4dc67fe7c32c",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739326",
+   "title": "365Scores: Hapoel Tel Aviv 3-0 Hapoel Petah Tikva, 2026-09-18",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-525b3384725a70485623559d",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1800632",
+   "title": "LiveScore: Hapoel Tel Aviv 3-0 Hapoel Petah Tikva, 2026-09-18 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-cf0dde6563eee9fb4a531507",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739332",
+   "title": "365Scores: Hapoel Petah Tikva 0-2 Hapoel Beer Sheva, 2026-09-13",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-d0c00294704cf23226b7d426",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1800624",
+   "title": "LiveScore: Hapoel Petah Tikva 0-2 Hapoel Beer Sheva, 2026-09-13 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-e55fc840e9ed180af2f61bd4",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739341",
+   "title": "365Scores: Maccabi Haifa 2-1 Hapoel Petah Tikva, 2026-09-05",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-2d903875ab1c12275269079c",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1800647",
+   "title": "LiveScore: Maccabi Haifa 2-1 Hapoel Petah Tikva, 2026-09-05 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-2f648d4bebce2f5defc36ae0",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739345",
+   "title": "365Scores: Hapoel Petah Tikva 1-0 Hapoel Jerusalem, 2026-08-29",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-d79b9780bb72a40761b04ba8",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1800638",
+   "title": "LiveScore: Hapoel Petah Tikva 1-0 Hapoel Jerusalem, 2026-08-29 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-a452f1e241a869175bfe0ba8",
+   "url": "https://webws.365scores.com/web/game/?gameId=4738767",
+   "title": "365Scores: Ironi Tiberias 1-0 Hapoel Petah Tikva, 2026-08-22",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-0bee9033cdb5c51ced7ac9b7",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1800617",
+   "title": "LiveScore: Ironi Tiberias 1-0 Hapoel Petah Tikva, 2026-08-22 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-2210588b6c82a92f6e990854",
+   "url": "https://webws.365scores.com/web/game/?gameId=4807669",
+   "title": "365Scores: Bnei Sakhnin 1-0 Hapoel Petah Tikva, 2026-08-15",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-c752f35f2b8aa9529b1d8292",
+   "url": "https://webws.365scores.com/web/game/?gameId=4738858",
+   "title": "365Scores: Hapoel Jerusalem 3-1 Hapoel Petah Tikva, 2026-08-09",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-0e30bf1affd181498c9ed073",
+   "url": "https://webws.365scores.com/web/game/?gameId=4738857",
+   "title": "365Scores: Hapoel Petah Tikva 0-2 Maccabi Netanya, 2026-08-05",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-3bedc8f518cc6aa10e5bec33",
+   "url": "https://webws.365scores.com/web/game/?gameId=4738849",
+   "title": "365Scores: Hapoel Ramat Gan 2-1 Hapoel Petah Tikva, 2026-07-29",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-6a791443848889a93a732e7f",
+   "url": "https://webws.365scores.com/web/game/?gameId=4738841",
+   "title": "365Scores: Hapoel Petah Tikva 1-0 Maccabi Petah Tikva, 2026-07-25",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-82473d0e2bffb570b0665484",
+   "url": "https://webws.365scores.com/web/game/?gameId=4702056",
+   "title": "365Scores: Hapoel Petah Tikva 2-2 Maccabi Tel Aviv, 2026-05-23",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-91ee2e98d373614b36219744",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1766844",
+   "title": "LiveScore: Hapoel Petah Tikva 2-2 Maccabi Tel Aviv, 2026-05-23 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-cb8b3aaa701fc57c26d68112",
+   "url": "https://webws.365scores.com/web/game/?gameId=4702053",
+   "title": "365Scores: Hapoel Petah Tikva 0-0 Beitar Jerusalem, 2026-05-19",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-0994f94a4ff558e2ce2ae49d",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1766838",
+   "title": "LiveScore: Hapoel Petah Tikva 0-0 Beitar Jerusalem, 2026-05-19 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-b1c9dc1488c8376ff4659dc5",
+   "url": "https://webws.365scores.com/web/game/?gameId=4702046",
+   "title": "365Scores: Maccabi Haifa 1-1 Hapoel Petah Tikva, 2026-05-16",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-54ff6c41f106aae487fa769e",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1766847",
+   "title": "LiveScore: Maccabi Haifa 1-1 Hapoel Petah Tikva, 2026-05-16 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-4c48cbfbced8a3e6c76dcdbf",
+   "url": "https://webws.365scores.com/web/game/?gameId=4702039",
+   "title": "365Scores: Hapoel Tel Aviv 1-0 Hapoel Petah Tikva, 2026-05-12",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-00eee9ffb340a9443de2dabd",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1766841",
+   "title": "LiveScore: Hapoel Tel Aviv 1-0 Hapoel Petah Tikva, 2026-05-12 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-7eec0d0f700263710dfd6fb5",
+   "url": "https://webws.365scores.com/web/game/?gameId=4702031",
+   "title": "365Scores: Hapoel Petah Tikva 2-4 Hapoel Beer Sheva, 2026-05-09",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-e460441f9adcfe9a29d21566",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1766835",
+   "title": "LiveScore: Hapoel Petah Tikva 2-4 Hapoel Beer Sheva, 2026-05-09 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-461ad76ca46820af9ce53fa5",
+   "url": "https://webws.365scores.com/web/game/?gameId=4702026",
+   "title": "365Scores: Maccabi Tel Aviv 4-0 Hapoel Petah Tikva, 2026-05-05",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-da58f0c9554d46a8ed6d59ec",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1766827",
+   "title": "LiveScore: Maccabi Tel Aviv 4-0 Hapoel Petah Tikva, 2026-05-05 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-57783a46527d8434f10fcb15",
+   "url": "https://webws.365scores.com/web/game/?gameId=4702018",
+   "title": "365Scores: Hapoel Petah Tikva 1-2 Maccabi Haifa, 2026-05-02",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-6682ca534e9ec13f60b4156a",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1766822",
+   "title": "LiveScore: Hapoel Petah Tikva 1-2 Maccabi Haifa, 2026-05-02 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-c39f66b131d532c9fd6b39a4",
+   "url": "https://webws.365scores.com/web/game/?gameId=4702013",
+   "title": "365Scores: Beitar Jerusalem 3-1 Hapoel Petah Tikva, 2026-04-28",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-87c3112e181fdbb895d1c28e",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1766831",
+   "title": "LiveScore: Beitar Jerusalem 3-1 Hapoel Petah Tikva, 2026-04-28 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-a9c66391bb045709fd0083aa",
+   "url": "https://webws.365scores.com/web/game/?gameId=4702005",
+   "title": "365Scores: Hapoel Petah Tikva 0-1 Hapoel Tel Aviv, 2026-04-25",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-29f9ffc5dc7ceead622d7752",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1766823",
+   "title": "LiveScore: Hapoel Petah Tikva 0-1 Hapoel Tel Aviv, 2026-04-25 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-9c6091ee18ae3d11481a4091",
+   "url": "https://webws.365scores.com/web/game/?gameId=4701775",
+   "title": "365Scores: Hapoel Beer Sheva 3-0 Hapoel Petah Tikva, 2026-04-18",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-71486f37befecd1feee959b5",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1766834",
+   "title": "LiveScore: Hapoel Beer Sheva 3-0 Hapoel Petah Tikva, 2026-04-18 (line-ups)",
+   "publisher": "LiveScore",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-d25f4bbfe1743220ffedef85",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463385",
+   "title": "365Scores: Hapoel Petah Tikva 0-0 Hapoel Tel Aviv, 2026-04-11",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-27ba7c18ff84a6e040cff594",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463391",
+   "title": "365Scores: Hapoel Beer Sheva 1-1 Hapoel Petah Tikva, 2026-04-04",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-51d3b7f3f56e69405ad4c50b",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463399",
+   "title": "365Scores: Maccabi Haifa 0-1 Hapoel Petah Tikva, 2026-02-21",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-7774c0e5e1b84790beca42cd",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463405",
+   "title": "365Scores: Hapoel Petah Tikva 0-1 Hapoel Haifa, 2026-02-14",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-ac91f869d263578960df4dec",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463412",
+   "title": "365Scores: Bnei Sakhnin 1-2 Hapoel Petah Tikva, 2026-02-07",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-7535cbcb3b5d10461c15ec23",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463419",
+   "title": "365Scores: Hapoel Petah Tikva 2-0 SC Ashdod, 2026-02-01",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-b524ef71cc87b59daa850c96",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463426",
+   "title": "365Scores: Hapoel Jerusalem 2-1 Hapoel Petah Tikva, 2026-01-23",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-1dfc6f9961cc60a6d2ae9011",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463433",
+   "title": "365Scores: Hapoel Petah Tikva 1-3 Beitar Jerusalem, 2026-01-17",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-019f707ccd568d5cd55c02fa",
+   "url": "https://webws.365scores.com/web/game/?gameId=4643045",
+   "title": "365Scores: Hapoel Petah Tikva 1-2 Maccabi Bnei Reineh, 2026-01-13",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-a81c078599d191cb069eef77",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463440",
+   "title": "365Scores: Ironi Tiberias 1-4 Hapoel Petah Tikva, 2026-01-10",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-d7f9694f3bf5de036c3cc771",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463447",
+   "title": "365Scores: Hapoel Petah Tikva 4-1 Maccabi Bnei Reineh, 2026-01-03",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-f850e52dbca05fe5c4fa9719",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463454",
+   "title": "365Scores: Maccabi Netanya 0-2 Hapoel Petah Tikva, 2025-12-31",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-a5eff8bd8e8ca35f900c41ab",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463461",
+   "title": "365Scores: Hapoel Petah Tikva 4-1 Kiryat Shmona, 2025-12-20",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-b8fe2a3959e7d743e6b5cb51",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463468",
+   "title": "365Scores: Maccabi Tel Aviv 2-2 Hapoel Petah Tikva, 2025-12-15",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-7fe3adf8895477f43fa1b7a1",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463475",
+   "title": "365Scores: Hapoel Tel Aviv 4-0 Hapoel Petah Tikva, 2025-12-06",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-8b52c0dcccd5f79d066fa524",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463482",
+   "title": "365Scores: Hapoel Petah Tikva 1-1 Hapoel Beer Sheva, 2025-12-02",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-81e20ebfa279890bcd615a9d",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463489",
+   "title": "365Scores: Hapoel Petah Tikva 0-0 Maccabi Haifa, 2025-11-29",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-b12263cadf48018277424138",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463496",
+   "title": "365Scores: Hapoel Haifa 2-2 Hapoel Petah Tikva, 2025-11-09",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-6f1848e3a8997d5f6654a9e3",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463503",
+   "title": "365Scores: Hapoel Petah Tikva 2-2 Bnei Sakhnin, 2025-11-01",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-be4a8a36676dd70312eed92b",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463510",
+   "title": "365Scores: SC Ashdod 1-1 Hapoel Petah Tikva, 2025-10-25",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-9fd2a1e8b6416ac945e187db",
+   "url": "https://webws.365scores.com/web/game/?gameId=4463517",
+   "title": "365Scores: Hapoel Petah Tikva 0-0 Hapoel Jerusalem, 2025-10-18",
+   "publisher": "365Scores",
+   "checkedAt": "2026-10-10",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-8f61f5080f573690fbd12ff0",
+   "url": "https://www.uefa.com/uefachampionsleague/match/64923--",
+   "title": "UEFA: H. Petah Tikva 1-1 LASK, 2000-06-24",
+   "publisher": "UEFA",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-715268e406ac9bf9ea913065",
+   "url": "https://www.uefa.com/uefachampionsleague/match/64922--",
+   "title": "UEFA: LASK 3-0 H. Petah Tikva, 2000-06-18",
+   "publisher": "UEFA",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-461fe4249819148b0ca4bcea",
+   "url": "https://www.uefa.com/uefachampionsleague/match/54339--",
+   "title": "UEFA: H. Petah Tikva 1-1 SK Rapid, 1997-09-30",
+   "publisher": "UEFA",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-7f7f754ddff1ac80fcab625d",
+   "url": "https://www.uefa.com/uefachampionsleague/match/54338--",
+   "title": "UEFA: SK Rapid 1-0 H. Petah Tikva, 1997-09-16",
+   "publisher": "UEFA",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-e879b8f830e3266be8398654",
+   "url": "https://www.uefa.com/uefachampionsleague/match/54258--",
+   "title": "UEFA: H. Petah Tikva 1-0 VB, 1997-08-26",
+   "publisher": "UEFA",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-6088b18f1b22dfae54add024",
+   "url": "https://www.uefa.com/uefachampionsleague/match/54257--",
+   "title": "UEFA: VB 0-0 H. Petah Tikva, 1997-08-12",
+   "publisher": "UEFA",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-73a6e499d61f03eb8dea403e",
+   "url": "https://www.uefa.com/uefachampionsleague/match/54173--",
+   "title": "UEFA: Flora Tallinn 1-2 H. Petah Tikva, 1997-07-30",
+   "publisher": "UEFA",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-31fb58def1a8f9a4e759ab43",
+   "url": "https://www.uefa.com/uefachampionsleague/match/54172--",
+   "title": "UEFA: H. Petah Tikva 1-0 Flora Tallinn, 1997-07-23",
+   "publisher": "UEFA",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-c45321376f1d5b83c60f308f",
+   "url": "https://www.uefa.com/uefachampionsleague/match/51822--",
+   "title": "UEFA: H. Petah Tikva 0-0 Strasbourg, 1995-07-22",
+   "publisher": "UEFA",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-8e87478dcbc7ba83e2f40772",
+   "url": "https://www.uefa.com/uefachampionsleague/match/51819--",
+   "title": "UEFA: Wacker 2-0 H. Petah Tikva, 1995-07-08",
+   "publisher": "UEFA",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-a850d8fa47fcc4b5d6e6f41d",
+   "url": "https://www.uefa.com/uefachampionsleague/match/51817--",
+   "title": "UEFA: H. Petah Tikva 1-1 Floriana, 1995-07-01",
+   "publisher": "UEFA",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-deb8b1151272e5d159d40e71",
+   "url": "https://www.uefa.com/uefachampionsleague/match/51815--",
+   "title": "UEFA: Gençlerbirliği 4-0 H. Petah Tikva, 1995-06-25",
+   "publisher": "UEFA",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-ad02536b515eaa8a4e1f06bf",
+   "url": "https://www.uefa.com/uefachampionsleague/match/6575--",
+   "title": "UEFA: H. Petah Tikva 2-1 Feyenoord, 1992-09-30",
+   "publisher": "UEFA",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-20279bfef34f1266c16040b0",
+   "url": "https://www.uefa.com/uefachampionsleague/match/6574--",
+   "title": "UEFA: Feyenoord 1-0 H. Petah Tikva, 1992-09-16",
+   "publisher": "UEFA",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-c74ad5bb1f664e88a64a7d98",
+   "url": "https://www.uefa.com/uefachampionsleague/match/6189--",
+   "title": "UEFA: H. Petah Tikva 2-0 Strømsgodset, 1992-09-02",
+   "publisher": "UEFA",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-09b1a8ae649bb1ae96e9ae04",
+   "url": "https://www.uefa.com/uefachampionsleague/match/6190--",
+   "title": "UEFA: Strømsgodset 0-2 H. Petah Tikva, 1992-08-19",
+   "publisher": "UEFA",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-7110289726780e08e255950d",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382945513",
+   "title": "Eli Abarbanel",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-c40a69943f050263500e838b",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385194789",
+   "title": "David Abidor",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-6ff17d31a638e6c3c7ff5f83",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382377059",
+   "title": "Mahran Abu Raiya",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-d95954f19fcecc2441e74852",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382649198",
+   "title": "Salem Abu Siam",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-0d52cea39e61f9118b195036",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1384934345",
+   "title": "Shimon Abuhatzira",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-0867a9dcb524619a2cb93ac6",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1384783106",
+   "title": "Daniel Addo (footballer, born 1987)",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-ad3e9869e1a37186944f6c2d",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385024707",
+   "title": "Dennis Adeniran",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-2e794fbdda8eea369e637015",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382565736",
+   "title": "Yohai Aharoni",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-b02da80ba200d403b763dd19",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385367526",
+   "title": "Angelo Alistar",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-d5b4a64de1a3a07dfc578f17",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385072396",
+   "title": "Omri Altman",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-10e8369e049a243a0d3ce9f3",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382489602",
+   "title": "Miodrag Anđelković",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-5c6fe32e1c4c90d4a96ff3e4",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382496205",
+   "title": "Yigal Antebi",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-65d7164ea549b8eb36964c6d",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1384926386",
+   "title": "Nico Antonitsch",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-2fc2302ce26421f83d1f6f6e",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382813182",
+   "title": "Shlomi Arbeitman",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-9d86579e9626b7624663f8e3",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1383195865",
+   "title": "Facundo Argüello (footballer)",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-1206e5581f2c145104f5a5bf",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382987217",
+   "title": "Yossi Asayag",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-79b47b5636f84eebc873870b",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382370418",
+   "title": "Jonathan Assous",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-5da4bcb1c90a1bdd96ccbd9d",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1383280603",
+   "title": "Lior Asulin",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-69933cadbabe983bdcb5a3bc",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382510091",
+   "title": "Reuven Atar",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-086109762bf1d27c21f0668b",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385531496",
+   "title": "Charlemagne Azongnitode",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-974b60f84f430cd0dbd0bf55",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382950801",
+   "title": "Hen Azriel",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-8fb577e7d9b2d400f8dd6f3d",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1383390041",
+   "title": "Ben Azubel",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-d8f425bfc60d726d42e1c72e",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382846211",
+   "title": "Haim Bachar",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-409f3c9ac8dc98ea19ffc6fa",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385453950",
+   "title": "Walid Badir",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-776fbe33a4e18ce622242b1f",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385267190",
+   "title": "Semir Bajraktarević",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-83560dcc7d460b81fb7ec65e",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1384483079",
+   "title": "Barak Bakhar",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-ec36c5ad354e60710c87711e",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382981144",
+   "title": "Shahar Balilti",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-bf930d1a02ed6a412fc0e163",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1383072042",
+   "title": "Matan Baltaxa",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  }
+ ],
+ "archive": [
+  {
+   "id": "daily-match-908c5a47d2cdcbc62ce5e855-moment",
+   "value": {
+    "name": "Hapoel Petah Tikva 2–1 Hapoel Ramat Gan",
+    "on": "2026-11-07",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-81efc14c2acb56882e57af23"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-4c098a63345d1f5019f9fd4e-moment",
+   "value": {
+    "name": "Hapoel Haifa 2–1 Hapoel Petah Tikva",
+    "on": "2026-10-31",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-63b57027cf1b7ce74431fad3",
+    "daily-src-8b14ba5e45effa276fd52787"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-c83a2ea34f055248f7f1c3ea-moment",
+   "value": {
+    "name": "Hapoel Petah Tikva 0–1 Beitar Jerusalem",
+    "on": "2026-10-25",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-3c11872d329dbb09af7ece96"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-7a893d5dd2d942bfbf3b22e2-moment",
+   "value": {
+    "name": "Bnei Sakhnin 2–0 Hapoel Petah Tikva",
+    "on": "2026-10-17",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-074b64a82d8871bdd40b7c5f"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-744afe32bbd50e0e6baf14dc-moment",
+   "value": {
+    "name": "Hapoel Petah Tikva 0–3 Maccabi Netanya",
+    "on": "2026-10-10",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-24cfce159a605b37b272aef4"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-47b2ec1719c0cf2abf37b912-moment",
+   "value": {
+    "name": "Hapoel Tel Aviv 3–0 Hapoel Petah Tikva",
+    "on": "2026-09-18",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-917eb97c5b3c4dc67fe7c32c",
+    "daily-src-525b3384725a70485623559d"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-2665ffe78bf108c8bf0b99f7-moment",
+   "value": {
+    "name": "Hapoel Petah Tikva 0–2 Hapoel Beer Sheva",
+    "on": "2026-09-13",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-cf0dde6563eee9fb4a531507",
+    "daily-src-d0c00294704cf23226b7d426"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-7d00fab4d98c8be52072473a-moment",
+   "value": {
+    "name": "Maccabi Haifa 2–1 Hapoel Petah Tikva",
+    "on": "2026-09-05",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-e55fc840e9ed180af2f61bd4",
+    "daily-src-2d903875ab1c12275269079c"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-763ee862db0f0dd0dc5069b0-moment",
+   "value": {
+    "name": "Hapoel Petah Tikva 1–0 Hapoel Jerusalem",
+    "on": "2026-08-29",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-2f648d4bebce2f5defc36ae0",
+    "daily-src-d79b9780bb72a40761b04ba8"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-51e0b879b693af5c3cae81eb-moment",
+   "value": {
+    "name": "Ironi Tiberias 1–0 Hapoel Petah Tikva",
+    "on": "2026-08-22",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-a452f1e241a869175bfe0ba8",
+    "daily-src-0bee9033cdb5c51ced7ac9b7"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-6332911e805b259429f4ba00-moment",
+   "value": {
+    "name": "Bnei Sakhnin 1–0 Hapoel Petah Tikva",
+    "on": "2026-08-15",
+    "precision": "day",
+    "hint": "Toto League Cup - Placement Playoffs",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-2210588b6c82a92f6e990854"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-bedf9d019278a72c03cdd6b1-moment",
+   "value": {
+    "name": "Hapoel Jerusalem 3–1 Hapoel Petah Tikva",
+    "on": "2026-08-09",
+    "precision": "day",
+    "hint": "Toto League Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c752f35f2b8aa9529b1d8292"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-2b3c2d75c58cd9ec0f67e335-moment",
+   "value": {
+    "name": "Hapoel Petah Tikva 0–2 Maccabi Netanya",
+    "on": "2026-08-05",
+    "precision": "day",
+    "hint": "Toto League Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0e30bf1affd181498c9ed073"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-4f70394589c180db61e79c19-moment",
+   "value": {
+    "name": "Hapoel Ramat Gan 2–1 Hapoel Petah Tikva",
+    "on": "2026-07-29",
+    "precision": "day",
+    "hint": "Toto League Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-3bedc8f518cc6aa10e5bec33"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-9c05d31741eb287eecdbf68d-moment",
+   "value": {
+    "name": "Hapoel Petah Tikva 1–0 Maccabi Petah Tikva",
+    "on": "2026-07-25",
+    "precision": "day",
+    "hint": "Toto League Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-6a791443848889a93a732e7f"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-9f7ca09ceff6b5fb595e2099-moment",
+   "value": {
+    "name": "Hapoel Petah Tikva 2–2 Maccabi Tel Aviv",
+    "on": "2026-05-23",
+    "precision": "day",
+    "hint": "Premier League - Championship Round",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-82473d0e2bffb570b0665484",
+    "daily-src-91ee2e98d373614b36219744"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-25091a87567f5898b2820450-moment",
+   "value": {
+    "name": "Hapoel Petah Tikva 0–0 Beitar Jerusalem",
+    "on": "2026-05-19",
+    "precision": "day",
+    "hint": "Premier League - Championship Round",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-cb8b3aaa701fc57c26d68112",
+    "daily-src-0994f94a4ff558e2ce2ae49d"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-b787d8a2531e9a7b9a052225-moment",
+   "value": {
+    "name": "Maccabi Haifa 1–1 Hapoel Petah Tikva",
+    "on": "2026-05-16",
+    "precision": "day",
+    "hint": "Premier League - Championship Round",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-b1c9dc1488c8376ff4659dc5",
+    "daily-src-54ff6c41f106aae487fa769e"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-0dc305661a83bdd8166252f4-moment",
+   "value": {
+    "name": "Hapoel Tel Aviv 1–0 Hapoel Petah Tikva",
+    "on": "2026-05-12",
+    "precision": "day",
+    "hint": "Premier League - Championship Round",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-4c48cbfbced8a3e6c76dcdbf",
+    "daily-src-00eee9ffb340a9443de2dabd"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-283af78813ef00d83e00c3b0-moment",
+   "value": {
+    "name": "Hapoel Petah Tikva 2–4 Hapoel Beer Sheva",
+    "on": "2026-05-09",
+    "precision": "day",
+    "hint": "Premier League - Championship Round",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-7eec0d0f700263710dfd6fb5",
+    "daily-src-e460441f9adcfe9a29d21566"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-f80c03a22c68b1a56ce54437-moment",
+   "value": {
+    "name": "Maccabi Tel Aviv 4–0 Hapoel Petah Tikva",
+    "on": "2026-05-05",
+    "precision": "day",
+    "hint": "Premier League - Championship Round",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-461ad76ca46820af9ce53fa5",
+    "daily-src-da58f0c9554d46a8ed6d59ec"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-ee27ad6491a6b70f24b96c03-moment",
+   "value": {
+    "name": "Hapoel Petah Tikva 1–2 Maccabi Haifa",
+    "on": "2026-05-02",
+    "precision": "day",
+    "hint": "Premier League - Championship Round",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-57783a46527d8434f10fcb15",
+    "daily-src-6682ca534e9ec13f60b4156a"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-8ab6b0533340c2b01b98dfcf-moment",
+   "value": {
+    "name": "Beitar Jerusalem 3–1 Hapoel Petah Tikva",
+    "on": "2026-04-28",
+    "precision": "day",
+    "hint": "Premier League - Championship Round",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c39f66b131d532c9fd6b39a4",
+    "daily-src-87c3112e181fdbb895d1c28e"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-a4e9def76133ec34cbb7981b-moment",
+   "value": {
+    "name": "Hapoel Petah Tikva 0–1 Hapoel Tel Aviv",
+    "on": "2026-04-25",
+    "precision": "day",
+    "hint": "Premier League - Championship Round",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-a9c66391bb045709fd0083aa",
+    "daily-src-29f9ffc5dc7ceead622d7752"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-f7e12693786e0f2156aeba1e-moment",
+   "value": {
+    "name": "Hapoel Beer Sheva 3–0 Hapoel Petah Tikva",
+    "on": "2026-04-18",
+    "precision": "day",
+    "hint": "Premier League - Championship Round",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-9c6091ee18ae3d11481a4091",
+    "daily-src-71486f37befecd1feee959b5"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-b2e3a35f3e040b39207bca92-moment",
+   "value": {
+    "name": "Hapoel Petah Tikva 0–0 Hapoel Tel Aviv",
+    "on": "2026-04-11",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-d25f4bbfe1743220ffedef85"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-b185d9377cce08f6a566de9e-moment",
+   "value": {
+    "name": "Hapoel Beer Sheva 1–1 Hapoel Petah Tikva",
+    "on": "2026-04-04",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-27ba7c18ff84a6e040cff594"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-0e41fdde6823a315bc2d7143-moment",
+   "value": {
+    "name": "Maccabi Haifa 0–1 Hapoel Petah Tikva",
+    "on": "2026-02-21",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-51d3b7f3f56e69405ad4c50b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-c60a42236999f37a506cc0c9-moment",
+   "value": {
+    "name": "Hapoel Petah Tikva 0–1 Hapoel Haifa",
+    "on": "2026-02-14",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-7774c0e5e1b84790beca42cd"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-f48222f6333755d666e4ab18-moment",
+   "value": {
+    "name": "Bnei Sakhnin 1–2 Hapoel Petah Tikva",
+    "on": "2026-02-07",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-ac91f869d263578960df4dec"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-734b913e11491d94af8b0a81-moment",
+   "value": {
+    "name": "Hapoel Petah Tikva 2–0 SC Ashdod",
+    "on": "2026-02-01",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-7535cbcb3b5d10461c15ec23"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-346f242247c8dffd1de6cf4a-moment",
+   "value": {
+    "name": "Hapoel Jerusalem 2–1 Hapoel Petah Tikva",
+    "on": "2026-01-23",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-b524ef71cc87b59daa850c96"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-5c0e1b0f1976bd69615425dd-moment",
+   "value": {
+    "name": "Hapoel Petah Tikva 1–3 Beitar Jerusalem",
+    "on": "2026-01-17",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-1dfc6f9961cc60a6d2ae9011"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-50518b1825c00255931d5fdb-moment",
+   "value": {
+    "name": "Hapoel Petah Tikva 1–2 Maccabi Bnei Reineh",
+    "on": "2026-01-13",
+    "precision": "day",
+    "hint": "FA Cup - Round of 16",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-019f707ccd568d5cd55c02fa"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-7fbedbdc0ba8e7fd45646dc5-moment",
+   "value": {
+    "name": "Ironi Tiberias 1–4 Hapoel Petah Tikva",
+    "on": "2026-01-10",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-a81c078599d191cb069eef77"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-50813e72a4221ca35d65074b-moment",
+   "value": {
+    "name": "Hapoel Petah Tikva 4–1 Maccabi Bnei Reineh",
+    "on": "2026-01-03",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-d7f9694f3bf5de036c3cc771"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-8bc30d18da7b2c33027d1e2b-moment",
+   "value": {
+    "name": "Maccabi Netanya 0–2 Hapoel Petah Tikva",
+    "on": "2025-12-31",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-f850e52dbca05fe5c4fa9719"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-4393cec543b3734fa599a85c-moment",
+   "value": {
+    "name": "Hapoel Petah Tikva 4–1 Kiryat Shmona",
+    "on": "2025-12-20",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-a5eff8bd8e8ca35f900c41ab"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-bff5c406f53982da12e2d09d-moment",
+   "value": {
+    "name": "Maccabi Tel Aviv 2–2 Hapoel Petah Tikva",
+    "on": "2025-12-15",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-b8fe2a3959e7d743e6b5cb51"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-5b607c9ed8d8c80794186f54-moment",
+   "value": {
+    "name": "Hapoel Tel Aviv 4–0 Hapoel Petah Tikva",
+    "on": "2025-12-06",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-7fe3adf8895477f43fa1b7a1"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-3a88ee7d0f6c9868c7e135db-moment",
+   "value": {
+    "name": "Hapoel Petah Tikva 1–1 Hapoel Beer Sheva",
+    "on": "2025-12-02",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8b52c0dcccd5f79d066fa524"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-b33b6e1ba6a2f390d07ab0c4-moment",
+   "value": {
+    "name": "Hapoel Petah Tikva 0–0 Maccabi Haifa",
+    "on": "2025-11-29",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-81e20ebfa279890bcd615a9d"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-894b0c1be5a53123bbad69a1-moment",
+   "value": {
+    "name": "Hapoel Haifa 2–2 Hapoel Petah Tikva",
+    "on": "2025-11-09",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-b12263cadf48018277424138"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-2ad342d293542514ab713be4-moment",
+   "value": {
+    "name": "Hapoel Petah Tikva 2–2 Bnei Sakhnin",
+    "on": "2025-11-01",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-6f1848e3a8997d5f6654a9e3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-f7181b33aa0d87814d9d1a7f-moment",
+   "value": {
+    "name": "SC Ashdod 1–1 Hapoel Petah Tikva",
+    "on": "2025-10-25",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-be4a8a36676dd70312eed92b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-324b3e16f6ea258e3d397e3f-moment",
+   "value": {
+    "name": "Hapoel Petah Tikva 0–0 Hapoel Jerusalem",
+    "on": "2025-10-18",
+    "precision": "day",
+    "hint": "Premier League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-9fd2a1e8b6416ac945e187db"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-5f6f3603059b26b4cd63a07f-moment",
+   "value": {
+    "name": "H. Petah Tikva 1–1 LASK",
+    "on": "2000-06-24",
+    "precision": "day",
+    "hint": "UEFA Intertoto Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8f61f5080f573690fbd12ff0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-0ff18dd89f39c209b92c72f7-moment",
+   "value": {
+    "name": "LASK 3–0 H. Petah Tikva",
+    "on": "2000-06-18",
+    "precision": "day",
+    "hint": "UEFA Intertoto Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-715268e406ac9bf9ea913065"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-3b619cd616da0e79a15ebaa3-moment",
+   "value": {
+    "name": "H. Petah Tikva 1–1 SK Rapid",
+    "on": "1997-09-30",
+    "precision": "day",
+    "hint": "UEFA Europa League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-461fe4249819148b0ca4bcea"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-2dc20acbeb43d532ed4090a0-moment",
+   "value": {
+    "name": "SK Rapid 1–0 H. Petah Tikva",
+    "on": "1997-09-16",
+    "precision": "day",
+    "hint": "UEFA Europa League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-7f7f754ddff1ac80fcab625d"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-ca8f0a2cc12bcb17b18a192b-moment",
+   "value": {
+    "name": "H. Petah Tikva 1–0 VB",
+    "on": "1997-08-26",
+    "precision": "day",
+    "hint": "UEFA Europa League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-e879b8f830e3266be8398654"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-f2b152a3a11a477013d74538-moment",
+   "value": {
+    "name": "VB 0–0 H. Petah Tikva",
+    "on": "1997-08-12",
+    "precision": "day",
+    "hint": "UEFA Europa League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-6088b18f1b22dfae54add024"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-fe4bf42aa134fc01a0b12da8-moment",
+   "value": {
+    "name": "Flora Tallinn 1–2 H. Petah Tikva",
+    "on": "1997-07-30",
+    "precision": "day",
+    "hint": "UEFA Europa League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-73a6e499d61f03eb8dea403e"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-dcb5b4e2b8b30990118d8a98-moment",
+   "value": {
+    "name": "H. Petah Tikva 1–0 Flora Tallinn",
+    "on": "1997-07-23",
+    "precision": "day",
+    "hint": "UEFA Europa League",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-31fb58def1a8f9a4e759ab43"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-c6430f7d73356c2edeb2cc64-moment",
+   "value": {
+    "name": "H. Petah Tikva 0–0 Strasbourg",
+    "on": "1995-07-22",
+    "precision": "day",
+    "hint": "UEFA Intertoto Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c45321376f1d5b83c60f308f"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-a20bf7b6b530e0cff5f981af-moment",
+   "value": {
+    "name": "Wacker 2–0 H. Petah Tikva",
+    "on": "1995-07-08",
+    "precision": "day",
+    "hint": "UEFA Intertoto Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8e87478dcbc7ba83e2f40772"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-afe954d1cbab511dbb4172dc-moment",
+   "value": {
+    "name": "H. Petah Tikva 1–1 Floriana",
+    "on": "1995-07-01",
+    "precision": "day",
+    "hint": "UEFA Intertoto Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-a850d8fa47fcc4b5d6e6f41d"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-09e4b37b65348f0e5cb95ae6-moment",
+   "value": {
+    "name": "Gençlerbirliği 4–0 H. Petah Tikva",
+    "on": "1995-06-25",
+    "precision": "day",
+    "hint": "UEFA Intertoto Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-deb8b1151272e5d159d40e71"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-5492c7c9ddc084050c76cc6a-moment",
+   "value": {
+    "name": "H. Petah Tikva 2–1 Feyenoord",
+    "on": "1992-09-30",
+    "precision": "day",
+    "hint": "European Cup Winners' Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-ad02536b515eaa8a4e1f06bf"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-bf01d71445c9c6e26f15ec47-moment",
+   "value": {
+    "name": "Feyenoord 1–0 H. Petah Tikva",
+    "on": "1992-09-16",
+    "precision": "day",
+    "hint": "European Cup Winners' Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-20279bfef34f1266c16040b0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-4d000580e330f420be4df2ba-moment",
+   "value": {
+    "name": "H. Petah Tikva 2–0 Strømsgodset",
+    "on": "1992-09-02",
+    "precision": "day",
+    "hint": "European Cup Winners' Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c74ad5bb1f664e88a64a7d98"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-4f8e2ac147b7749dd3231b68-moment",
+   "value": {
+    "name": "Strømsgodset 0–2 H. Petah Tikva",
+    "on": "1992-08-19",
+    "precision": "day",
+    "hint": "European Cup Winners' Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-09b1a8ae649bb1ae96e9ae04"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  }
+ ],
+ "matches": [
+  {
+   "id": "daily-match-908c5a47d2cdcbc62ce5e855",
+   "value": {
+    "name": "Hapoel Petah Tikva 2–1 Hapoel Ramat Gan",
+    "on": "2026-11-07",
+    "home": "Hapoel Petah Tikva",
+    "away": "Hapoel Ramat Gan",
+    "score": "2-1",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "competition": "Premier League",
+    "lineup": [
+     "Omer Katz",
+     "Harel Shalom",
+     "Or Israelov",
+     "Alex Moussounda",
+     "Stav Israeli",
+     "Boni Amian",
+     "Tomer Altman",
+     "Roy Levi",
+     "Noam Cohen",
+     "Euclides Andrade Clé",
+     "Yves Erick Bile"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-81efc14c2acb56882e57af23"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-4c098a63345d1f5019f9fd4e",
+   "value": {
+    "name": "Hapoel Haifa 2–1 Hapoel Petah Tikva",
+    "on": "2026-10-31",
+    "home": "Hapoel Haifa",
+    "away": "Hapoel Petah Tikva",
+    "score": "2-1",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "competition": "Premier League",
+    "lineup": [
+     "Omer Katz",
+     "Yazan Nassar",
+     "Or Israelov",
+     "Alex Moussounda",
+     "Harel Shalom",
+     "Hamidou Keyta",
+     "Tomer Altman",
+     "Boni Amian",
+     "Euclides Andrade Clé",
+     "Karim Kimvuidi",
+     "Yves Erick Bile"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-63b57027cf1b7ce74431fad3",
+    "daily-src-8b14ba5e45effa276fd52787"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-c83a2ea34f055248f7f1c3ea",
+   "value": {
+    "name": "Hapoel Petah Tikva 0–1 Beitar Jerusalem",
+    "on": "2026-10-25",
+    "home": "Hapoel Petah Tikva",
+    "away": "Beitar Jerusalem",
+    "score": "0-1",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "competition": "Premier League",
+    "lineup": [
+     "Yves Erick Bile",
+     "Karim Kimvuidi",
+     "Euclides Andrade Clé",
+     "Roy Levi",
+     "Boni Amian",
+     "Tomer Altman",
+     "Harel Shalom",
+     "Or Israelov",
+     "Alex Moussounda",
+     "Stav Israeli",
+     "Omer Katz"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-3c11872d329dbb09af7ece96"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-7a893d5dd2d942bfbf3b22e2",
+   "value": {
+    "name": "Bnei Sakhnin 2–0 Hapoel Petah Tikva",
+    "on": "2026-10-17",
+    "home": "Bnei Sakhnin",
+    "away": "Hapoel Petah Tikva",
+    "score": "2-0",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "competition": "Premier League",
+    "lineup": [
+     "Omer Katz",
+     "Yazan Nassar",
+     "Or Israelov",
+     "Alex Moussounda",
+     "Stav Israeli",
+     "Boni Amian",
+     "Itay Ehud",
+     "Karim Kimvuidi",
+     "Roee David",
+     "Roy Levi",
+     "Yves Erick Bile"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-074b64a82d8871bdd40b7c5f"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-744afe32bbd50e0e6baf14dc",
+   "value": {
+    "name": "Hapoel Petah Tikva 0–3 Maccabi Netanya",
+    "on": "2026-10-10",
+    "home": "Hapoel Petah Tikva",
+    "away": "Maccabi Netanya",
+    "score": "0-3",
+    "homeGoals": 0,
+    "awayGoals": 3,
+    "competition": "Premier League",
+    "lineup": [
+     "Omer Katz",
+     "Yazan Nassar",
+     "Or Israelov",
+     "Alex Moussounda",
+     "Stav Israeli",
+     "Boni Amian",
+     "Itay Ehud",
+     "Edmond Asante",
+     "Roee David",
+     "Roy Levi",
+     "Yves Erick Bile"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-24cfce159a605b37b272aef4"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-47b2ec1719c0cf2abf37b912",
+   "value": {
+    "name": "Hapoel Tel Aviv 3–0 Hapoel Petah Tikva",
+    "on": "2026-09-18",
+    "home": "Hapoel Tel Aviv",
+    "away": "Hapoel Petah Tikva",
+    "score": "3-0",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "competition": "Premier League",
+    "lineup": [
+     "Omer Katz",
+     "Yazan Nassar",
+     "Diego Arroyo",
+     "Alex Moussounda",
+     "Stav Israeli",
+     "Boni Amian",
+     "Roee David",
+     "Euclides Andrade Clé",
+     "Karim Kimvuidi",
+     "Avishay Cohen",
+     "Yves Erick Bile"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-917eb97c5b3c4dc67fe7c32c",
+    "daily-src-525b3384725a70485623559d"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-2665ffe78bf108c8bf0b99f7",
+   "value": {
+    "name": "Hapoel Petah Tikva 0–2 Hapoel Beer Sheva",
+    "on": "2026-09-13",
+    "home": "Hapoel Petah Tikva",
+    "away": "Hapoel Beer Sheva",
+    "score": "0-2",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "competition": "Premier League",
+    "lineup": [
+     "Omer Katz",
+     "Yazan Nassar",
+     "Diego Arroyo",
+     "Alex Moussounda",
+     "Stav Israeli",
+     "Roee David",
+     "Itay Ehud",
+     "Boni Amian",
+     "Avishay Cohen",
+     "Euclides Andrade Clé",
+     "Karim Kimvuidi"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-cf0dde6563eee9fb4a531507",
+    "daily-src-d0c00294704cf23226b7d426"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-7d00fab4d98c8be52072473a",
+   "value": {
+    "name": "Maccabi Haifa 2–1 Hapoel Petah Tikva",
+    "on": "2026-09-05",
+    "home": "Maccabi Haifa",
+    "away": "Hapoel Petah Tikva",
+    "score": "2-1",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "competition": "Premier League",
+    "lineup": [
+     "Omer Katz",
+     "Diego Arroyo",
+     "Orel Dgani",
+     "Alex Moussounda",
+     "Yazan Nassar",
+     "Avishay Cohen",
+     "Boni Amian",
+     "Tomer Altman",
+     "Euclides Andrade Clé",
+     "Karim Kimvuidi",
+     "Franck Rivollier"
+    ],
+    "scorers": [
+     {
+      "name": "Boni Amian",
+      "minute": null
+     }
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-e55fc840e9ed180af2f61bd4",
+    "daily-src-2d903875ab1c12275269079c"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-763ee862db0f0dd0dc5069b0",
+   "value": {
+    "name": "Hapoel Petah Tikva 1–0 Hapoel Jerusalem",
+    "on": "2026-08-29",
+    "home": "Hapoel Petah Tikva",
+    "away": "Hapoel Jerusalem",
+    "score": "1-0",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "competition": "Premier League",
+    "lineup": [
+     "Omer Katz",
+     "Orel Dgani",
+     "Alex Moussounda",
+     "Stav Israeli",
+     "Yazan Nassar",
+     "Avishay Cohen",
+     "Roee David",
+     "Boni Amian",
+     "Tomer Altman",
+     "Franck Rivollier",
+     "Karim Kimvuidi"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-2f648d4bebce2f5defc36ae0",
+    "daily-src-d79b9780bb72a40761b04ba8"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-51e0b879b693af5c3cae81eb",
+   "value": {
+    "name": "Ironi Tiberias 1–0 Hapoel Petah Tikva",
+    "on": "2026-08-22",
+    "home": "Ironi Tiberias",
+    "away": "Hapoel Petah Tikva",
+    "score": "1-0",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "competition": "Premier League",
+    "lineup": [
+     "Omer Katz",
+     "Yazan Nassar",
+     "Alex Moussounda",
+     "Orel Dgani",
+     "Avishay Cohen",
+     "Tomer Altman",
+     "Roee David",
+     "Euclides Andrade Clé",
+     "Karim Kimvuidi",
+     "Guy Badash",
+     "Franck Rivollier"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-a452f1e241a869175bfe0ba8",
+    "daily-src-0bee9033cdb5c51ced7ac9b7"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-6332911e805b259429f4ba00",
+   "value": {
+    "name": "Bnei Sakhnin 1–0 Hapoel Petah Tikva",
+    "on": "2026-08-15",
+    "home": "Bnei Sakhnin",
+    "away": "Hapoel Petah Tikva",
+    "score": "1-0",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "competition": "Toto League Cup - Placement Playoffs",
+    "lineup": [
+     "Roee David",
+     "Orel Dgani",
+     "Euclides Andrade Clé",
+     "Boni Amian",
+     "Ido Tassa",
+     "Omer Katz",
+     "Guy Badash",
+     "Tomer Altman",
+     "Yazan Nassar",
+     "Franck Rivollier",
+     "Avishay Cohen"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-2210588b6c82a92f6e990854"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-bedf9d019278a72c03cdd6b1",
+   "value": {
+    "name": "Hapoel Jerusalem 3–1 Hapoel Petah Tikva",
+    "on": "2026-08-09",
+    "home": "Hapoel Jerusalem",
+    "away": "Hapoel Petah Tikva",
+    "score": "3-1",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "competition": "Toto League Cup",
+    "lineup": [
+     "Roy Sason",
+     "Avishay Cohen",
+     "Boni Amian",
+     "Guy Badash",
+     "Harel Shalom",
+     "Karim Kimvuidi",
+     "Stav Israeli",
+     "Ido Tassa",
+     "Songa Chipyoka",
+     "Shavit Mazal",
+     "Tomer Altman"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c752f35f2b8aa9529b1d8292"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-2b3c2d75c58cd9ec0f67e335",
+   "value": {
+    "name": "Hapoel Petah Tikva 0–2 Maccabi Netanya",
+    "on": "2026-08-05",
+    "home": "Hapoel Petah Tikva",
+    "away": "Maccabi Netanya",
+    "score": "0-2",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "competition": "Toto League Cup",
+    "lineup": [
+     "Omer Katz",
+     "Avishay Cohen",
+     "Orel Dgani",
+     "Boni Amian",
+     "Euclides Andrade Clé",
+     "Yazan Nassar",
+     "Karim Kimvuidi",
+     "Stav Israeli",
+     "Songa Chipyoka",
+     "Roee David",
+     "Franck Rivollier"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0e30bf1affd181498c9ed073"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-4f70394589c180db61e79c19",
+   "value": {
+    "name": "Hapoel Ramat Gan 2–1 Hapoel Petah Tikva",
+    "on": "2026-07-29",
+    "home": "Hapoel Ramat Gan",
+    "away": "Hapoel Petah Tikva",
+    "score": "2-1",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "competition": "Toto League Cup",
+    "lineup": [
+     "Roy Sason",
+     "Orel Dgani",
+     "Guy Badash",
+     "Harel Shalom",
+     "Karim Kimvuidi",
+     "Noam Cohen",
+     "Stav Israeli",
+     "Ido Tassa",
+     "Roee David",
+     "Shavit Mazal",
+     "Tomer Altman"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-3bedc8f518cc6aa10e5bec33"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-9c05d31741eb287eecdbf68d",
+   "value": {
+    "name": "Hapoel Petah Tikva 1–0 Maccabi Petah Tikva",
+    "on": "2026-07-25",
+    "home": "Hapoel Petah Tikva",
+    "away": "Maccabi Petah Tikva",
+    "score": "1-0",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "competition": "Toto League Cup",
+    "lineup": [
+     "Omer Katz",
+     "Avishay Cohen",
+     "Orel Dgani",
+     "Boni Amian",
+     "Guy Badash",
+     "Yazan Nassar",
+     "Noam Cohen",
+     "Ido Tassa",
+     "Songa Chipyoka",
+     "Roee David",
+     "Shavit Mazal"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-6a791443848889a93a732e7f"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-9f7ca09ceff6b5fb595e2099",
+   "value": {
+    "name": "Hapoel Petah Tikva 2–2 Maccabi Tel Aviv",
+    "on": "2026-05-23",
+    "home": "Hapoel Petah Tikva",
+    "away": "Maccabi Tel Aviv",
+    "score": "2-2",
+    "homeGoals": 2,
+    "awayGoals": 2,
+    "competition": "Premier League - Championship Round",
+    "scorers": [
+     {
+      "name": "Yonatan Cohen",
+      "minute": null
+     },
+     {
+      "name": "Mamady Diarra",
+      "minute": null
+     }
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-82473d0e2bffb570b0665484",
+    "daily-src-91ee2e98d373614b36219744"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-25091a87567f5898b2820450",
+   "value": {
+    "name": "Hapoel Petah Tikva 0–0 Beitar Jerusalem",
+    "on": "2026-05-19",
+    "home": "Hapoel Petah Tikva",
+    "away": "Beitar Jerusalem",
+    "score": "0-0",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "competition": "Premier League - Championship Round",
+    "lineup": [
+     "Omer Katz",
+     "Shahar Rosen",
+     "Itay Rotman",
+     "Alex Moussounda",
+     "Idan Cohen",
+     "Mamady Diarra",
+     "Ari Cohen",
+     "Tomer Altman",
+     "Euclides Andrade Clé",
+     "Shavit Mazal",
+     "Yonatan Cohen"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-cb8b3aaa701fc57c26d68112",
+    "daily-src-0994f94a4ff558e2ce2ae49d"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-b787d8a2531e9a7b9a052225",
+   "value": {
+    "name": "Maccabi Haifa 1–1 Hapoel Petah Tikva",
+    "on": "2026-05-16",
+    "home": "Maccabi Haifa",
+    "away": "Hapoel Petah Tikva",
+    "score": "1-1",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "competition": "Premier League - Championship Round",
+    "scorers": [
+     {
+      "name": "Yonatan Cohen",
+      "minute": null
+     }
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-b1c9dc1488c8376ff4659dc5",
+    "daily-src-54ff6c41f106aae487fa769e"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-0dc305661a83bdd8166252f4",
+   "value": {
+    "name": "Hapoel Tel Aviv 1–0 Hapoel Petah Tikva",
+    "on": "2026-05-12",
+    "home": "Hapoel Tel Aviv",
+    "away": "Hapoel Petah Tikva",
+    "score": "1-0",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "competition": "Premier League - Championship Round",
+    "lineup": [
+     "Shahar Amsalem",
+     "Shahar Rosen",
+     "Matan Gosha",
+     "Alex Moussounda",
+     "Idan Cohen",
+     "Boni Amian",
+     "Noam Cohen",
+     "Tomer Altman",
+     "Ari Cohen",
+     "Shavit Mazal",
+     "Yonatan Cohen"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-4c48cbfbced8a3e6c76dcdbf",
+    "daily-src-00eee9ffb340a9443de2dabd"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-283af78813ef00d83e00c3b0",
+   "value": {
+    "name": "Hapoel Petah Tikva 2–4 Hapoel Beer Sheva",
+    "on": "2026-05-09",
+    "home": "Hapoel Petah Tikva",
+    "away": "Hapoel Beer Sheva",
+    "score": "2-4",
+    "homeGoals": 2,
+    "awayGoals": 4,
+    "competition": "Premier League - Championship Round",
+    "lineup": [
+     "Omer Katz",
+     "Shahar Rosen",
+     "Itay Rotman",
+     "Orel Dgani",
+     "Noam Cohen",
+     "Roee David",
+     "Ari Cohen",
+     "Boni Amian",
+     "Mamady Diarra",
+     "Mark Koszta",
+     "Euclides Andrade Clé"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-7eec0d0f700263710dfd6fb5",
+    "daily-src-e460441f9adcfe9a29d21566"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-f80c03a22c68b1a56ce54437",
+   "value": {
+    "name": "Maccabi Tel Aviv 4–0 Hapoel Petah Tikva",
+    "on": "2026-05-05",
+    "home": "Maccabi Tel Aviv",
+    "away": "Hapoel Petah Tikva",
+    "score": "4-0",
+    "homeGoals": 4,
+    "awayGoals": 0,
+    "competition": "Premier League - Championship Round",
+    "lineup": [
+     "Omer Katz",
+     "Dror Nir",
+     "Itay Rotman",
+     "Alex Moussounda",
+     "Idan Cohen",
+     "Boni Amian",
+     "Tomer Altman",
+     "Euclides Andrade Clé",
+     "Shavit Mazal",
+     "Mamady Diarra",
+     "Yonatan Cohen"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-461ad76ca46820af9ce53fa5",
+    "daily-src-da58f0c9554d46a8ed6d59ec"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-ee27ad6491a6b70f24b96c03",
+   "value": {
+    "name": "Hapoel Petah Tikva 1–2 Maccabi Haifa",
+    "on": "2026-05-02",
+    "home": "Hapoel Petah Tikva",
+    "away": "Maccabi Haifa",
+    "score": "1-2",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "competition": "Premier League - Championship Round",
+    "lineup": [
+     "Omer Katz",
+     "Shahar Rosen",
+     "Itay Rotman",
+     "Orel Dgani",
+     "Noam Cohen",
+     "Ari Cohen",
+     "Boni Amian",
+     "Roee David",
+     "Euclides Andrade Clé",
+     "Mark Koszta",
+     "Mamady Diarra"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-57783a46527d8434f10fcb15",
+    "daily-src-6682ca534e9ec13f60b4156a"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-8ab6b0533340c2b01b98dfcf",
+   "value": {
+    "name": "Beitar Jerusalem 3–1 Hapoel Petah Tikva",
+    "on": "2026-04-28",
+    "home": "Beitar Jerusalem",
+    "away": "Hapoel Petah Tikva",
+    "score": "3-1",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "competition": "Premier League - Championship Round",
+    "lineup": [
+     "Omer Katz",
+     "Shahar Rosen",
+     "Itay Rotman",
+     "Alex Moussounda",
+     "Idan Cohen",
+     "Tomer Altman",
+     "Boni Amian",
+     "Euclides Andrade Clé",
+     "Roee David",
+     "Yonatan Cohen",
+     "Shavit Mazal"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c39f66b131d532c9fd6b39a4",
+    "daily-src-87c3112e181fdbb895d1c28e"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-a4e9def76133ec34cbb7981b",
+   "value": {
+    "name": "Hapoel Petah Tikva 0–1 Hapoel Tel Aviv",
+    "on": "2026-04-25",
+    "home": "Hapoel Petah Tikva",
+    "away": "Hapoel Tel Aviv",
+    "score": "0-1",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "competition": "Premier League - Championship Round",
+    "lineup": [
+     "Shahar Amsalem",
+     "Dror Nir",
+     "Alex Moussounda",
+     "Orel Dgani",
+     "Noam Cohen",
+     "Boni Amian",
+     "Tomer Altman",
+     "Ari Cohen",
+     "Yonatan Cohen",
+     "Mamady Diarra",
+     "Mark Koszta"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-a9c66391bb045709fd0083aa",
+    "daily-src-29f9ffc5dc7ceead622d7752"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-f7e12693786e0f2156aeba1e",
+   "value": {
+    "name": "Hapoel Beer Sheva 3–0 Hapoel Petah Tikva",
+    "on": "2026-04-18",
+    "home": "Hapoel Beer Sheva",
+    "away": "Hapoel Petah Tikva",
+    "score": "3-0",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "competition": "Premier League - Championship Round",
+    "lineup": [
+     "Omer Katz",
+     "Shahar Rosen",
+     "Itay Rotman",
+     "Alex Moussounda",
+     "Idan Cohen",
+     "Tomer Altman",
+     "Roee David",
+     "Euclides Andrade Clé",
+     "Shavit Mazal",
+     "Yonatan Cohen",
+     "Mark Koszta"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-9c6091ee18ae3d11481a4091",
+    "daily-src-71486f37befecd1feee959b5"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-b2e3a35f3e040b39207bca92",
+   "value": {
+    "name": "Hapoel Petah Tikva 0–0 Hapoel Tel Aviv",
+    "on": "2026-04-11",
+    "home": "Hapoel Petah Tikva",
+    "away": "Hapoel Tel Aviv",
+    "score": "0-0",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "competition": "Premier League",
+    "lineup": [
+     "Omer Katz",
+     "Shahar Rosen",
+     "Itay Rotman",
+     "Alex Moussounda",
+     "Idan Cohen",
+     "Tomer Altman",
+     "Roee David",
+     "Euclides Andrade Clé",
+     "Shavit Mazal",
+     "Yonatan Cohen",
+     "Mark Koszta"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-d25f4bbfe1743220ffedef85"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-b185d9377cce08f6a566de9e",
+   "value": {
+    "name": "Hapoel Beer Sheva 1–1 Hapoel Petah Tikva",
+    "on": "2026-04-04",
+    "home": "Hapoel Beer Sheva",
+    "away": "Hapoel Petah Tikva",
+    "score": "1-1",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "competition": "Premier League",
+    "lineup": [
+     "Omer Katz",
+     "Shahar Rosen",
+     "Itay Rotman",
+     "Orel Dgani",
+     "Idan Cohen",
+     "Tomer Altman",
+     "Roee David",
+     "Euclides Andrade Clé",
+     "Shavit Mazal",
+     "Mamady Diarra",
+     "Mark Koszta"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-27ba7c18ff84a6e040cff594"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-0e41fdde6823a315bc2d7143",
+   "value": {
+    "name": "Maccabi Haifa 0–1 Hapoel Petah Tikva",
+    "on": "2026-02-21",
+    "home": "Maccabi Haifa",
+    "away": "Hapoel Petah Tikva",
+    "score": "0-1",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "competition": "Premier League",
+    "lineup": [
+     "Omer Katz",
+     "Shahar Rosen",
+     "Itay Rotman",
+     "Alex Moussounda",
+     "Noam Cohen",
+     "Roee David",
+     "Boni Amian",
+     "Songa Chipyoka",
+     "Mamady Diarra",
+     "Euclides Andrade Clé",
+     "Mark Koszta"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-51d3b7f3f56e69405ad4c50b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-c60a42236999f37a506cc0c9",
+   "value": {
+    "name": "Hapoel Petah Tikva 0–1 Hapoel Haifa",
+    "on": "2026-02-14",
+    "home": "Hapoel Petah Tikva",
+    "away": "Hapoel Haifa",
+    "score": "0-1",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "competition": "Premier League",
+    "lineup": [
+     "Omer Katz",
+     "Dror Nir",
+     "Itay Rotman",
+     "Orel Dgani",
+     "Noam Cohen",
+     "Boni Amian",
+     "Tomer Altman",
+     "Songa Chipyoka",
+     "Roee David",
+     "Euclides Andrade Clé",
+     "Mark Koszta"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-7774c0e5e1b84790beca42cd"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-f48222f6333755d666e4ab18",
+   "value": {
+    "name": "Bnei Sakhnin 1–2 Hapoel Petah Tikva",
+    "on": "2026-02-07",
+    "home": "Bnei Sakhnin",
+    "away": "Hapoel Petah Tikva",
+    "score": "1-2",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "competition": "Premier League",
+    "lineup": [
+     "Omer Katz",
+     "Dror Nir",
+     "Itay Rotman",
+     "Orel Dgani",
+     "Noam Cohen",
+     "Nadav Nidam",
+     "Boni Amian",
+     "Songa Chipyoka",
+     "Roee David",
+     "Euclides Andrade Clé",
+     "Mark Koszta"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-ac91f869d263578960df4dec"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-734b913e11491d94af8b0a81",
+   "value": {
+    "name": "Hapoel Petah Tikva 2–0 SC Ashdod",
+    "on": "2026-02-01",
+    "home": "Hapoel Petah Tikva",
+    "away": "SC Ashdod",
+    "score": "2-0",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "competition": "Premier League",
+    "lineup": [
+     "Omer Katz",
+     "Dror Nir",
+     "Itay Rotman",
+     "Orel Dgani",
+     "Noam Cohen",
+     "Roee David",
+     "Boni Amian",
+     "Songa Chipyoka",
+     "James Adeniyi",
+     "Euclides Andrade Clé",
+     "Shavit Mazal"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-7535cbcb3b5d10461c15ec23"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-346f242247c8dffd1de6cf4a",
+   "value": {
+    "name": "Hapoel Jerusalem 2–1 Hapoel Petah Tikva",
+    "on": "2026-01-23",
+    "home": "Hapoel Jerusalem",
+    "away": "Hapoel Petah Tikva",
+    "score": "2-1",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "competition": "Premier League",
+    "lineup": [
+     "Omer Katz",
+     "Dror Nir",
+     "Itay Rotman",
+     "Orel Dgani",
+     "Noam Cohen",
+     "Songa Chipyoka",
+     "Golan Beni",
+     "Roee David",
+     "Euclides Andrade Clé",
+     "Shavit Mazal",
+     "Mark Koszta"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-b524ef71cc87b59daa850c96"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-5c0e1b0f1976bd69615425dd",
+   "value": {
+    "name": "Hapoel Petah Tikva 1–3 Beitar Jerusalem",
+    "on": "2026-01-17",
+    "home": "Hapoel Petah Tikva",
+    "away": "Beitar Jerusalem",
+    "score": "1-3",
+    "homeGoals": 1,
+    "awayGoals": 3,
+    "competition": "Premier League",
+    "lineup": [
+     "Omer Katz",
+     "Dror Nir",
+     "Itay Rotman",
+     "Orel Dgani",
+     "Idan Cohen",
+     "Nadav Nidam",
+     "Boni Amian",
+     "Songa Chipyoka",
+     "Roee David",
+     "Euclides Andrade Clé",
+     "Mark Koszta"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-1dfc6f9961cc60a6d2ae9011"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-50518b1825c00255931d5fdb",
+   "value": {
+    "name": "Hapoel Petah Tikva 1–2 Maccabi Bnei Reineh",
+    "on": "2026-01-13",
+    "home": "Hapoel Petah Tikva",
+    "away": "Maccabi Bnei Reineh",
+    "score": "1-2",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "competition": "FA Cup - Round of 16",
+    "lineup": [
+     "Omer Katz",
+     "Golan Beni",
+     "Itay Rotman",
+     "Matan Gosha",
+     "Idan Cohen",
+     "Amit Glazer",
+     "Nadav Nidam",
+     "Songa Chipyoka",
+     "Roee David",
+     "James Adeniyi",
+     "Shavit Mazal"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-019f707ccd568d5cd55c02fa"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-7fbedbdc0ba8e7fd45646dc5",
+   "value": {
+    "name": "Ironi Tiberias 1–4 Hapoel Petah Tikva",
+    "on": "2026-01-10",
+    "home": "Ironi Tiberias",
+    "away": "Hapoel Petah Tikva",
+    "score": "1-4",
+    "homeGoals": 1,
+    "awayGoals": 4,
+    "competition": "Premier League",
+    "lineup": [
+     "Omer Katz",
+     "Dror Nir",
+     "Itay Rotman",
+     "Orel Dgani",
+     "Noam Cohen",
+     "Boni Amian",
+     "Nadav Nidam",
+     "Songa Chipyoka",
+     "Roee David",
+     "Euclides Andrade Clé",
+     "Mark Koszta"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-a81c078599d191cb069eef77"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-50813e72a4221ca35d65074b",
+   "value": {
+    "name": "Hapoel Petah Tikva 4–1 Maccabi Bnei Reineh",
+    "on": "2026-01-03",
+    "home": "Hapoel Petah Tikva",
+    "away": "Maccabi Bnei Reineh",
+    "score": "4-1",
+    "homeGoals": 4,
+    "awayGoals": 1,
+    "competition": "Premier League",
+    "lineup": [
+     "Omer Katz",
+     "Shahar Rosen",
+     "Itay Rotman",
+     "Matan Gosha",
+     "Idan Cohen",
+     "Boni Amian",
+     "Nadav Nidam",
+     "Songa Chipyoka",
+     "Roee David",
+     "Euclides Andrade Clé",
+     "Shavit Mazal"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-d7f9694f3bf5de036c3cc771"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-8bc30d18da7b2c33027d1e2b",
+   "value": {
+    "name": "Maccabi Netanya 0–2 Hapoel Petah Tikva",
+    "on": "2025-12-31",
+    "home": "Maccabi Netanya",
+    "away": "Hapoel Petah Tikva",
+    "score": "0-2",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "competition": "Premier League",
+    "lineup": [
+     "Omer Katz",
+     "Shahar Rosen",
+     "Itay Rotman",
+     "Orel Dgani",
+     "Noam Cohen",
+     "Nadav Nidam",
+     "Boni Amian",
+     "Songa Chipyoka",
+     "James Adeniyi",
+     "Euclides Andrade Clé",
+     "Mark Koszta"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-f850e52dbca05fe5c4fa9719"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-4393cec543b3734fa599a85c",
+   "value": {
+    "name": "Hapoel Petah Tikva 4–1 Kiryat Shmona",
+    "on": "2025-12-20",
+    "home": "Hapoel Petah Tikva",
+    "away": "Kiryat Shmona",
+    "score": "4-1",
+    "homeGoals": 4,
+    "awayGoals": 1,
+    "competition": "Premier League",
+    "lineup": [
+     "Omer Katz",
+     "Shahar Rosen",
+     "Itay Rotman",
+     "Orel Dgani",
+     "Noam Cohen",
+     "Roee David",
+     "Boni Amian",
+     "Songa Chipyoka",
+     "Yonatan Cohen",
+     "Euclides Andrade Clé",
+     "Mark Koszta"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-a5eff8bd8e8ca35f900c41ab"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-bff5c406f53982da12e2d09d",
+   "value": {
+    "name": "Maccabi Tel Aviv 2–2 Hapoel Petah Tikva",
+    "on": "2025-12-15",
+    "home": "Maccabi Tel Aviv",
+    "away": "Hapoel Petah Tikva",
+    "score": "2-2",
+    "homeGoals": 2,
+    "awayGoals": 2,
+    "competition": "Premier League",
+    "lineup": [
+     "Omer Katz",
+     "Shahar Rosen",
+     "Itay Rotman",
+     "Orel Dgani",
+     "Noam Cohen",
+     "Boni Amian",
+     "Nadav Nidam",
+     "Euclides Andrade Clé",
+     "Roee David",
+     "Jocelin Ta Bi",
+     "Yonatan Cohen"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-b8fe2a3959e7d743e6b5cb51"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-5b607c9ed8d8c80794186f54",
+   "value": {
+    "name": "Hapoel Tel Aviv 4–0 Hapoel Petah Tikva",
+    "on": "2025-12-06",
+    "home": "Hapoel Tel Aviv",
+    "away": "Hapoel Petah Tikva",
+    "score": "4-0",
+    "homeGoals": 4,
+    "awayGoals": 0,
+    "competition": "Premier League",
+    "lineup": [
+     "Omer Katz",
+     "Shahar Rosen",
+     "Itay Rotman",
+     "Orel Dgani",
+     "Noam Cohen",
+     "Nadav Nidam",
+     "Tomer Altman",
+     "Euclides Andrade Clé",
+     "Shavit Mazal",
+     "Jocelin Ta Bi",
+     "Songa Chipyoka"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-7fe3adf8895477f43fa1b7a1"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-3a88ee7d0f6c9868c7e135db",
+   "value": {
+    "name": "Hapoel Petah Tikva 1–1 Hapoel Beer Sheva",
+    "on": "2025-12-02",
+    "home": "Hapoel Petah Tikva",
+    "away": "Hapoel Beer Sheva",
+    "score": "1-1",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "competition": "Premier League",
+    "lineup": [
+     "Omer Katz",
+     "Shahar Rosen",
+     "Itay Rotman",
+     "Matan Gosha",
+     "Idan Cohen",
+     "Tomer Altman",
+     "Boni Amian",
+     "Songa Chipyoka",
+     "Shavit Mazal",
+     "Jocelin Ta Bi",
+     "Euclides Andrade Clé"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8b52c0dcccd5f79d066fa524"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-b33b6e1ba6a2f390d07ab0c4",
+   "value": {
+    "name": "Hapoel Petah Tikva 0–0 Maccabi Haifa",
+    "on": "2025-11-29",
+    "home": "Hapoel Petah Tikva",
+    "away": "Maccabi Haifa",
+    "score": "0-0",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "competition": "Premier League",
+    "lineup": [
+     "Omer Katz",
+     "Shahar Rosen",
+     "Itay Rotman",
+     "Orel Dgani",
+     "Noam Cohen",
+     "Tomer Altman",
+     "Nadav Nidam",
+     "Euclides Andrade Clé",
+     "Songa Chipyoka",
+     "Jocelin Ta Bi",
+     "Shavit Mazal"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-81e20ebfa279890bcd615a9d"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-894b0c1be5a53123bbad69a1",
+   "value": {
+    "name": "Hapoel Haifa 2–2 Hapoel Petah Tikva",
+    "on": "2025-11-09",
+    "home": "Hapoel Haifa",
+    "away": "Hapoel Petah Tikva",
+    "score": "2-2",
+    "homeGoals": 2,
+    "awayGoals": 2,
+    "competition": "Premier League",
+    "lineup": [
+     "Omer Katz",
+     "Shahar Rosen",
+     "Itay Rotman",
+     "Matan Gosha",
+     "Noam Cohen",
+     "Nadav Nidam",
+     "Tomer Altman",
+     "Euclides Andrade Clé",
+     "James Adeniyi",
+     "Yonatan Cohen",
+     "Mark Koszta"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-b12263cadf48018277424138"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-2ad342d293542514ab713be4",
+   "value": {
+    "name": "Hapoel Petah Tikva 2–2 Bnei Sakhnin",
+    "on": "2025-11-01",
+    "home": "Hapoel Petah Tikva",
+    "away": "Bnei Sakhnin",
+    "score": "2-2",
+    "homeGoals": 2,
+    "awayGoals": 2,
+    "competition": "Premier League",
+    "lineup": [
+     "Omer Katz",
+     "Shahar Rosen",
+     "Itay Rotman",
+     "Orel Dgani",
+     "Idan Cohen",
+     "Tomer Altman",
+     "Nadav Nidam",
+     "Songa Chipyoka",
+     "Roee David",
+     "Euclides Andrade Clé",
+     "Shavit Mazal"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-6f1848e3a8997d5f6654a9e3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-f7181b33aa0d87814d9d1a7f",
+   "value": {
+    "name": "SC Ashdod 1–1 Hapoel Petah Tikva",
+    "on": "2025-10-25",
+    "home": "SC Ashdod",
+    "away": "Hapoel Petah Tikva",
+    "score": "1-1",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "competition": "Premier League",
+    "lineup": [
+     "Omer Katz",
+     "Shahar Rosen",
+     "Itay Rotman",
+     "Orel Dgani",
+     "Idan Cohen",
+     "Tomer Altman",
+     "Roee David",
+     "Songa Chipyoka",
+     "James Adeniyi",
+     "Jocelin Ta Bi",
+     "Shavit Mazal"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-be4a8a36676dd70312eed92b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-324b3e16f6ea258e3d397e3f",
+   "value": {
+    "name": "Hapoel Petah Tikva 0–0 Hapoel Jerusalem",
+    "on": "2025-10-18",
+    "home": "Hapoel Petah Tikva",
+    "away": "Hapoel Jerusalem",
+    "score": "0-0",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "competition": "Premier League",
+    "lineup": [
+     "Omer Katz",
+     "Dror Nir",
+     "Itay Rotman",
+     "Orel Dgani",
+     "Idan Cohen",
+     "Tomer Altman",
+     "Nadav Nidam",
+     "Euclides Andrade Clé",
+     "James Adeniyi",
+     "Jocelin Ta Bi",
+     "Shavit Mazal"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-9fd2a1e8b6416ac945e187db"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-10-10",
+   "approvedAt": "2026-10-10",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-5f6f3603059b26b4cd63a07f",
+   "value": {
+    "name": "H. Petah Tikva 1–1 LASK",
+    "on": "2000-06-24",
+    "home": "H. Petah Tikva",
+    "away": "LASK",
+    "score": "1-1",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "competition": "UEFA Intertoto Cup",
+    "lineup": [
+     "Eyal Abramov",
+     "Avraham Fletcher",
+     "Yaniv Hermesh",
+     "Alon Maya",
+     "Roi Sabag",
+     "David Fadlon",
+     "Yossef Rosen",
+     "Guy Shamir",
+     "Eliezer Abarbanel",
+     "Michael Zandberg",
+     "Eidan Hillel"
+    ],
+    "scorers": [
+     {
+      "name": "Eliezer Abarbanel",
+      "minute": 76
+     }
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8f61f5080f573690fbd12ff0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-0ff18dd89f39c209b92c72f7",
+   "value": {
+    "name": "LASK 3–0 H. Petah Tikva",
+    "on": "2000-06-18",
+    "home": "LASK",
+    "away": "H. Petah Tikva",
+    "score": "3-0",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "competition": "UEFA Intertoto Cup",
+    "lineup": [
+     "Eyal Abramov",
+     "Rami Amar",
+     "Alon Maya",
+     "Roi Sabag",
+     "Yaniv Hermesh",
+     "David Fadlon",
+     "Guy Shamir",
+     "Yossef Rosen",
+     "Eliezer Abarbanel",
+     "Eidan Hillel",
+     "Michael Zandberg"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-715268e406ac9bf9ea913065"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-3b619cd616da0e79a15ebaa3",
+   "value": {
+    "name": "H. Petah Tikva 1–1 SK Rapid",
+    "on": "1997-09-30",
+    "home": "H. Petah Tikva",
+    "away": "SK Rapid",
+    "score": "1-1",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "competition": "UEFA Europa League",
+    "lineup": [
+     "Shay Hass",
+     "Yaniv Hermesh",
+     "Avraham Fletcher",
+     "Walid Badier",
+     "Ilan Buaron",
+     "Shlomi Benhamo",
+     "Ondrej Kristofik",
+     "Manor Hasan",
+     "Eliezer Abarbanel",
+     "Yaniv Ofri",
+     "Mordachy Kakon"
+    ],
+    "scorers": [
+     {
+      "name": "Mordachy Kakon",
+      "minute": 34
+     }
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-461fe4249819148b0ca4bcea"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-2dc20acbeb43d532ed4090a0",
+   "value": {
+    "name": "SK Rapid 1–0 H. Petah Tikva",
+    "on": "1997-09-16",
+    "home": "SK Rapid",
+    "away": "H. Petah Tikva",
+    "score": "1-0",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "competition": "UEFA Europa League",
+    "lineup": [
+     "Shay Hass",
+     "Avraham Fletcher",
+     "Walid Badier",
+     "Gábor Márton",
+     "Yaniv Ofri",
+     "Mordachy Kakon",
+     "Eliezer Abarbanel",
+     "Yaniv Hermesh",
+     "Shlomi Benhamo",
+     "Manor Hasan",
+     "Ilan Buaron"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-7f7f754ddff1ac80fcab625d"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-ca8f0a2cc12bcb17b18a192b",
+   "value": {
+    "name": "H. Petah Tikva 1–0 VB",
+    "on": "1997-08-26",
+    "home": "H. Petah Tikva",
+    "away": "VB",
+    "score": "1-0",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "competition": "UEFA Europa League",
+    "lineup": [
+     "Shay Hass",
+     "Bingamen Koziashvili",
+     "Gábor Márton",
+     "Walid Badier",
+     "Ilan Buaron",
+     "Avraham Fletcher",
+     "Shlomi Benhamo",
+     "Ondrej Kristofik",
+     "Eliezer Abarbanel",
+     "Manor Hasan",
+     "Mordachy Kakon"
+    ],
+    "scorers": [
+     {
+      "name": "Mordachy Kakon",
+      "minute": 33
+     }
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-e879b8f830e3266be8398654"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-f2b152a3a11a477013d74538",
+   "value": {
+    "name": "VB 0–0 H. Petah Tikva",
+    "on": "1997-08-12",
+    "home": "VB",
+    "away": "H. Petah Tikva",
+    "score": "0-0",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "competition": "UEFA Europa League",
+    "lineup": [
+     "Shay Hass",
+     "Bingamen Koziashvili",
+     "Avraham Fletcher",
+     "Walid Badier",
+     "Gábor Márton",
+     "Yaniv Ofri",
+     "Ondrej Kristofik",
+     "Mordachy Kakon",
+     "Shlomi Benhamo",
+     "Manor Hasan",
+     "Ilan Buaron"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-6088b18f1b22dfae54add024"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-fe4bf42aa134fc01a0b12da8",
+   "value": {
+    "name": "Flora Tallinn 1–2 H. Petah Tikva",
+    "on": "1997-07-30",
+    "home": "Flora Tallinn",
+    "away": "H. Petah Tikva",
+    "score": "1-2",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "competition": "UEFA Europa League",
+    "lineup": [
+     "Shay Hass",
+     "Bingamen Koziashvili",
+     "Alon Cohen",
+     "Walid Badier",
+     "Gábor Márton",
+     "Yaniv Ofri",
+     "Mordachy Kakon",
+     "Shlomi Benhamo",
+     "Manor Hasan",
+     "Ondrej Kristofik",
+     "Ilan Buaron"
+    ],
+    "scorers": [
+     {
+      "name": "Yaniv Ofri",
+      "minute": 46
+     },
+     {
+      "name": "Mordachy Kakon",
+      "minute": 62
+     }
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-73a6e499d61f03eb8dea403e"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-dcb5b4e2b8b30990118d8a98",
+   "value": {
+    "name": "H. Petah Tikva 1–0 Flora Tallinn",
+    "on": "1997-07-23",
+    "home": "H. Petah Tikva",
+    "away": "Flora Tallinn",
+    "score": "1-0",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "competition": "UEFA Europa League",
+    "lineup": [
+     "Shay Hass",
+     "Bingamen Koziashvili",
+     "Alon Cohen",
+     "Walid Badier",
+     "Gábor Márton",
+     "Yaniv Ofri",
+     "Mordachy Kakon",
+     "Shlomi Benhamo",
+     "Manor Hasan",
+     "Ilan Buaron",
+     "Daniel Abas"
+    ],
+    "scorers": [
+     {
+      "name": "Gábor Márton",
+      "minute": 88
+     }
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-31fb58def1a8f9a4e759ab43"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-c6430f7d73356c2edeb2cc64",
+   "value": {
+    "name": "H. Petah Tikva 0–0 Strasbourg",
+    "on": "1995-07-22",
+    "home": "H. Petah Tikva",
+    "away": "Strasbourg",
+    "score": "0-0",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "competition": "UEFA Intertoto Cup",
+    "lineup": [
+     "Yaniv Nahom",
+     "Bingamen Koziashvili",
+     "Giy Sofer",
+     "Manor Hasan",
+     "Peter Kargil",
+     "Yoaav Hersko",
+     "Tomasz Cebula",
+     "Ofir Kopel",
+     "Jaroslaw Araszkiewicz",
+     "Eliezer Abarbanel",
+     "Alon Maya"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c45321376f1d5b83c60f308f"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-a20bf7b6b530e0cff5f981af",
+   "value": {
+    "name": "Wacker 2–0 H. Petah Tikva",
+    "on": "1995-07-08",
+    "home": "Wacker",
+    "away": "H. Petah Tikva",
+    "score": "2-0",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "competition": "UEFA Intertoto Cup",
+    "lineup": [
+     "Yaniv Nahom",
+     "Bingamen Koziashvili",
+     "Ilan Buaron",
+     "Avraham Fletcher",
+     "Peter Kargil",
+     "Adoram Keise",
+     "Eliezer Abarbanel",
+     "Ofir Kopel",
+     "Israel Cohan",
+     "Tomasz Cebula",
+     "Alon Maya"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8e87478dcbc7ba83e2f40772"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-afe954d1cbab511dbb4172dc",
+   "value": {
+    "name": "H. Petah Tikva 1–1 Floriana",
+    "on": "1995-07-01",
+    "home": "H. Petah Tikva",
+    "away": "Floriana",
+    "score": "1-1",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "competition": "UEFA Intertoto Cup",
+    "lineup": [
+     "Yaniv Nahom",
+     "Yoaav Hersko",
+     "Giy Sofer",
+     "Avraham Fletcher",
+     "Peter Kargil",
+     "Adoram Keise",
+     "Eliezer Abarbanel",
+     "Ofir Kopel",
+     "Piotr Prabucki",
+     "Tomasz Cebula",
+     "Manor Hasan"
+    ],
+    "scorers": [
+     {
+      "name": "Alon Maya",
+      "minute": 47
+     }
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-a850d8fa47fcc4b5d6e6f41d"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-09e4b37b65348f0e5cb95ae6",
+   "value": {
+    "name": "Gençlerbirliği 4–0 H. Petah Tikva",
+    "on": "1995-06-25",
+    "home": "Gençlerbirliği",
+    "away": "H. Petah Tikva",
+    "score": "4-0",
+    "homeGoals": 4,
+    "awayGoals": 0,
+    "competition": "UEFA Intertoto Cup",
+    "lineup": [
+     "Yaniv Nahom",
+     "Israel Cohan",
+     "David Pizanti",
+     "Avraham Fletcher",
+     "Peter Kargil",
+     "Adoram Keise",
+     "Eliezer Abarbanel",
+     "Ofir Kopel",
+     "Piotr Prabucki",
+     "Tomasz Cebula",
+     "Jaroslaw Araszkiewicz"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-deb8b1151272e5d159d40e71"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-5492c7c9ddc084050c76cc6a",
+   "value": {
+    "name": "H. Petah Tikva 2–1 Feyenoord",
+    "on": "1992-09-30",
+    "home": "H. Petah Tikva",
+    "away": "Feyenoord",
+    "score": "2-1",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "competition": "European Cup Winners' Cup",
+    "lineup": [
+     "Refael Cohen",
+     "Bingamen Koziashvili",
+     "Avinonam Keysi",
+     "Uda Bahagat",
+     "Karios Olarn",
+     "Adoram Keise",
+     "Mordachy Kakon",
+     "Menache Basson",
+     "Ner Levin",
+     "Uzi Hoaion",
+     "Oz Elia"
+    ],
+    "scorers": [
+     {
+      "name": "Ner Levin",
+      "minute": 3
+     },
+     {
+      "name": "Mordachy Kakon",
+      "minute": 48
+     }
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-ad02536b515eaa8a4e1f06bf"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-bf01d71445c9c6e26f15ec47",
+   "value": {
+    "name": "Feyenoord 1–0 H. Petah Tikva",
+    "on": "1992-09-16",
+    "home": "Feyenoord",
+    "away": "H. Petah Tikva",
+    "score": "1-0",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "competition": "European Cup Winners' Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-20279bfef34f1266c16040b0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-4d000580e330f420be4df2ba",
+   "value": {
+    "name": "H. Petah Tikva 2–0 Strømsgodset",
+    "on": "1992-09-02",
+    "home": "H. Petah Tikva",
+    "away": "Strømsgodset",
+    "score": "2-0",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "competition": "European Cup Winners' Cup",
+    "scorers": [
+     {
+      "name": "Menache Basson",
+      "minute": 68
+     }
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c74ad5bb1f664e88a64a7d98"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-4f8e2ac147b7749dd3231b68",
+   "value": {
+    "name": "Strømsgodset 0–2 H. Petah Tikva",
+    "on": "1992-08-19",
+    "home": "Strømsgodset",
+    "away": "H. Petah Tikva",
+    "score": "0-2",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "competition": "European Cup Winners' Cup",
+    "scorers": [
+     {
+      "name": "Menache Basson",
+      "minute": 68
+     }
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-09b1a8ae649bb1ae96e9ae04"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  }
+ ],
+ "players": [
+  {
+   "id": "daily-player-9f97a88d56bdc4773589d020",
+   "value": {
+    "name": "Eli Abarbanel",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 1993,
+    "toYear": 2009,
+    "career": {
+     "apps": 211,
+     "goals": 44,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-7110289726780e08e255950d"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-119c2c44024ac7cefeb27a78",
+   "value": {
+    "name": "David Abidor",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2019,
+    "toYear": 2019,
+    "career": {
+     "apps": 17,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c40a69943f050263500e838b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-c5141e2d7777a283097ef715",
+   "value": {
+    "name": "Mahran Abu Raiya",
+    "aliases": [],
+    "positions": [],
+    "fromYear": 2006,
+    "toYear": 2007,
+    "career": {
+     "apps": 20,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "archiveOnly": true,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-6ff17d31a638e6c3c7ff5f83"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-439bdae60a5ac8f163ea79d0",
+   "value": {
+    "name": "Salem Abu Siam",
+    "aliases": [],
+    "positions": [],
+    "fromYear": 2009,
+    "toYear": 2010,
+    "career": {
+     "apps": 12,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "archiveOnly": true,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-d95954f19fcecc2441e74852"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-19350fc018d2a35a5b04f321",
+   "value": {
+    "name": "Shimon Abuhatzira",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2006,
+    "toYear": 2009,
+    "career": {
+     "apps": 103,
+     "goals": 21,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0d52cea39e61f9118b195036"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-5d1a29ebfe30fd0537477290",
+   "value": {
+    "name": "Daniel Addo",
+    "aliases": [
+     "Daniel Addo (footballer, born 1987)"
+    ],
+    "positions": [],
+    "fromYear": 2010,
+    "toYear": 2012,
+    "career": {
+     "apps": 65,
+     "goals": 1,
+     "basis": "English Wikipedia club stint table"
+    },
+    "archiveOnly": true,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0867a9dcb524619a2cb93ac6"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-cc0aea39d541f195def5dd17",
+   "value": {
+    "name": "Dennis Adeniran",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2024,
+    "toYear": 2024,
+    "career": {
+     "apps": 8,
+     "goals": 1,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-ad3e9869e1a37186944f6c2d"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-f89e4d0e82ccef720026176a",
+   "value": {
+    "name": "Yohai Aharoni",
+    "aliases": [],
+    "positions": [],
+    "fromYear": 1969,
+    "toYear": 1970,
+    "archiveOnly": true,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-2e794fbdda8eea369e637015"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-4eb88e114ef6447298d520a3",
+   "value": {
+    "name": "Angelo Alistar",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2005,
+    "toYear": 2005,
+    "career": {
+     "apps": 17,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-b02da80ba200d403b763dd19"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-c5c058548f4f9e75fb4fef63",
+   "value": {
+    "name": "Omri Altman",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2014,
+    "toYear": 2015,
+    "career": {
+     "apps": 29,
+     "goals": 4,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-d5b4a64de1a3a07dfc578f17"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-d61380883379f0ecd37865d9",
+   "value": {
+    "name": "Miodrag Anđelković",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 1998,
+    "toYear": 1998,
+    "career": {
+     "apps": 11,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-10e8369e049a243a0d3ce9f3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-630ada84fbf0ab7402ce3bb2",
+   "value": {
+    "name": "Yigal Antebi",
+    "aliases": [],
+    "positions": [],
+    "fromYear": 2010,
+    "toYear": 2012,
+    "career": {
+     "apps": 33,
+     "goals": 1,
+     "basis": "English Wikipedia club stint table"
+    },
+    "archiveOnly": true,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-5c6fe32e1c4c90d4a96ff3e4"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-d6156ca79e89ab6145e8a64a",
+   "value": {
+    "name": "Nico Antonitsch",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2024,
+    "toYear": null,
+    "career": {
+     "apps": 10,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-65d7164ea549b8eb36964c6d"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-762eb5a75f992029356fa1c6",
+   "value": {
+    "name": "Shlomi Arbeitman",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2004,
+    "toYear": 2005,
+    "career": {
+     "apps": 27,
+     "goals": 12,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-2fc2302ce26421f83d1f6f6e"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-48084b32ec84f1ea7f25b45c",
+   "value": {
+    "name": "Facundo Argüello",
+    "aliases": [
+     "Facundo Argüello (footballer)"
+    ],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2006,
+    "toYear": 2006,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-9d86579e9626b7624663f8e3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-4f9961b568e42c54c9350db8",
+   "value": {
+    "name": "Yossi Asayag",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2021,
+    "toYear": 2021,
+    "career": {
+     "apps": 6,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-1206e5581f2c145104f5a5bf"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-27aac96409f5f8129f68f68c",
+   "value": {
+    "name": "Jonathan Assous",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2009,
+    "toYear": 2013,
+    "career": {
+     "apps": 133,
+     "goals": 4,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-79b47b5636f84eebc873870b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-0af96f91fa5e2b484916d63f",
+   "value": {
+    "name": "Lior Asulin",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2013,
+    "toYear": 2016,
+    "career": {
+     "apps": 64,
+     "goals": 19,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-5da4bcb1c90a1bdd96ccbd9d"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-ca0c260eb84cb9040247435e",
+   "value": {
+    "name": "Reuven Atar",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 1998,
+    "toYear": 1999,
+    "career": {
+     "apps": 27,
+     "goals": 5,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-69933cadbabe983bdcb5a3bc"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-f3ddcbdc0e1e7d48b3fa22af",
+   "value": {
+    "name": "Charlemagne Azongnitode",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2024,
+    "toYear": 2025,
+    "career": {
+     "apps": 2,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-086109762bf1d27c21f0668b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-749ae5dd6c03368d6a18d7bf",
+   "value": {
+    "name": "Hen Azriel",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2008,
+    "toYear": 2009,
+    "career": {
+     "apps": 9,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-974b60f84f430cd0dbd0bf55"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-7d5deb08cab7a3860683da48",
+   "value": {
+    "name": "Ben Azubel",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2015,
+    "toYear": 2025,
+    "career": {
+     "apps": 51,
+     "goals": 18,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8fb577e7d9b2d400f8dd6f3d"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-b7b4e7e6fa0a336e6d5b4710",
+   "value": {
+    "name": "Haim Bachar",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 1960,
+    "toYear": 1975,
+    "career": {
+     "apps": 259,
+     "goals": 17,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-d8f425bfc60d726d42e1c72e"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-bc70f754456a9cc7e4eea6de",
+   "value": {
+    "name": "Walid Badir",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 1992,
+    "toYear": 1999,
+    "career": {
+     "apps": 153,
+     "goals": 19,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-409f3c9ac8dc98ea19ffc6fa"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-dde9d10a91b6ecd6292d74b2",
+   "value": {
+    "name": "Semir Bajraktarević",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2017,
+    "toYear": 2017,
+    "career": {
+     "apps": 17,
+     "goals": 2,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-776fbe33a4e18ce622242b1f"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-ef3e4c74513253624bfdb412",
+   "value": {
+    "name": "Barak Bakhar",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2002,
+    "toYear": 2004,
+    "career": {
+     "apps": 50,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-83560dcc7d460b81fb7ec65e"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-95f6b884293e0f437d94f505",
+   "value": {
+    "name": "Shahar Balilti",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2008,
+    "toYear": 2014,
+    "career": {
+     "apps": 91,
+     "goals": 10,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-ec36c5ad354e60710c87711e"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-13e4aa307dbdc5d3d225c87d",
+   "value": {
+    "name": "Matan Baltaxa",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2013,
+    "toYear": 2017,
+    "career": {
+     "apps": 66,
+     "goals": 7,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-bf930d1a02ed6a412fc0e163"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  }
+ ],
+ "seasons": [],
+ "kits": []
+}

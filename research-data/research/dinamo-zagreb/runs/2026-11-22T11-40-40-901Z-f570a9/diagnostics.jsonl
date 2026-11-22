@@ -1,0 +1,3 @@
+{"code":"SOURCE_BLOCKED","providerId":"dinamo-official","url":"https://gnkdinamo.hr/en/club/history","message":"HTTP 403 — a refusal is an answer. Who refused (the source, or this server's network) is recorded as unknown until checked from another network."}
+{"code":"NEEDS_PARSER","providerId":"hns-semafor","url":null,"message":"No tested parser for HNS Semafor yet: documents are kept, nothing is extracted."}
+{"code":"NEEDS_PARSER","providerId":"wikipedia-dinamo-records","url":null,"message":"No tested parser for Wikipedia yet: documents are kept, nothing is extracted."}

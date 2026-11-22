@@ -7,15 +7,21 @@
     "collection": "html",
     "state": "partial_budget",
     "pagesRead": 0,
-    "observedTotalDocuments": 108,
+    "observedTotalDocuments": 119,
     "observedTotalPages": null,
-    "queue": 105,
+    "queue": 108,
     "lastError": null
    }
   ],
   "documents": 108,
-  "historicalRecordsExtracted": 0,
-  "seasonReviews": [],
+  "historicalRecordsExtracted": 109,
+  "seasonReviews": [
+   "1946/47",
+   "1947/48",
+   "1948/49",
+   "1952/53",
+   "1953/54"
+  ],
   "note": "Documents read is not historical coverage. Records extracted are candidates for review, not facts."
  },
  {
@@ -24,12 +30,12 @@
   "listings": [
    {
     "collection": "posts",
-    "state": "partial_budget",
+    "state": "blocked",
     "pagesRead": 3,
     "observedTotalDocuments": 1053,
     "observedTotalPages": 43,
     "queue": null,
-    "lastError": null
+    "lastError": "HTTP 403 — a refusal is an answer"
    },
    {
     "collection": "pages",

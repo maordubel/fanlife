@@ -1,0 +1,1004 @@
+{
+ "sources": [
+  {
+   "id": "s365-4732284",
+   "title": "365Scores: NK Varaždin 1-3 Dinamo Zagreb, 2026-11-08",
+   "url": "https://webws.365scores.com/web/game/?gameId=4732284",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1787207",
+   "title": "LiveScore: NK Varaždin 1-3 Dinamo Zagreb, 2026-11-08 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1787207",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4732293",
+   "title": "365Scores: NK Rudes 1-0 Dinamo Zagreb, 2026-10-31",
+   "url": "https://webws.365scores.com/web/game/?gameId=4732293",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1787186",
+   "title": "LiveScore: NK Rudes 1-0 Dinamo Zagreb, 2026-10-31 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1787186",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4732294",
+   "title": "365Scores: Dinamo Zagreb 2-1 HNK Rijeka, 2026-10-27",
+   "url": "https://webws.365scores.com/web/game/?gameId=4732294",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1787194",
+   "title": "LiveScore: Dinamo Zagreb 2-1 HNK Rijeka, 2026-10-27 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1787194",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4732302",
+   "title": "365Scores: NK Slaven Belupo 1-5 Dinamo Zagreb, 2026-10-18",
+   "url": "https://webws.365scores.com/web/game/?gameId=4732302",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1787203",
+   "title": "LiveScore: NK Slaven Belupo 1-5 Dinamo Zagreb, 2026-10-18 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1787203",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4732305",
+   "title": "365Scores: HNK Hajduk Split 2-1 Dinamo Zagreb, 2026-10-10",
+   "url": "https://webws.365scores.com/web/game/?gameId=4732305",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1787192",
+   "title": "LiveScore: HNK Hajduk Split 2-1 Dinamo Zagreb, 2026-10-10 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1787192",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4850877",
+   "title": "365Scores: Vukovar 0-4 Dinamo Zagreb, 2026-10-04",
+   "url": "https://webws.365scores.com/web/game/?gameId=4850877",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4732311",
+   "title": "365Scores: Dinamo Zagreb 3-2 NK Lokomotiva Zagreb, 2026-09-20",
+   "url": "https://webws.365scores.com/web/game/?gameId=4732311",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1787174",
+   "title": "LiveScore: Dinamo Zagreb 3-2 NK Lokomotiva Zagreb, 2026-09-20 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1787174",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4732316",
+   "title": "365Scores: NK Osijek 4-2 Dinamo Zagreb, 2026-09-12",
+   "url": "https://webws.365scores.com/web/game/?gameId=4732316",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1787182",
+   "title": "LiveScore: NK Osijek 4-2 Dinamo Zagreb, 2026-09-12 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1787182",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4827754",
+   "title": "365Scores: Bedem Ivankovo 0-4 Dinamo Zagreb, 2026-09-09",
+   "url": "https://webws.365scores.com/web/game/?gameId=4827754",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4732320",
+   "title": "365Scores: Dinamo Zagreb 1-0 HNK Gorica, 2026-09-05",
+   "url": "https://webws.365scores.com/web/game/?gameId=4732320",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1787171",
+   "title": "LiveScore: Dinamo Zagreb 1-0 HNK Gorica, 2026-09-05 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1787171",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4732327",
+   "title": "365Scores: Istra 1961 2-2 Dinamo Zagreb, 2026-08-29",
+   "url": "https://webws.365scores.com/web/game/?gameId=4732327",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1787167",
+   "title": "LiveScore: Istra 1961 2-2 Dinamo Zagreb, 2026-08-29 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1787167",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4732329",
+   "title": "365Scores: Dinamo Zagreb 3-1 NK Varaždin, 2026-08-22",
+   "url": "https://webws.365scores.com/web/game/?gameId=4732329",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1787153",
+   "title": "LiveScore: Dinamo Zagreb 3-1 NK Varaždin, 2026-08-22 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1787153",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4732338",
+   "title": "365Scores: Dinamo Zagreb 4-0 NK Rudes, 2026-08-14",
+   "url": "https://webws.365scores.com/web/game/?gameId=4732338",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1787155",
+   "title": "LiveScore: Dinamo Zagreb 4-0 NK Rudes, 2026-08-14 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1787155",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4732347",
+   "title": "365Scores: Dinamo Zagreb 2-0 NK Slaven Belupo, 2026-07-31",
+   "url": "https://webws.365scores.com/web/game/?gameId=4732347",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1787148",
+   "title": "LiveScore: Dinamo Zagreb 2-0 NK Slaven Belupo, 2026-07-31 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1787148",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4452940",
+   "title": "365Scores: Dinamo Zagreb 0-0 NK Lokomotiva Zagreb, 2026-05-23",
+   "url": "https://webws.365scores.com/web/game/?gameId=4452940",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  }
+ ],
+ "matches": [
+  {
+   "id": "a-m-2026-11-08-nk-varazdin-dinamo-zagreb",
+   "value": {
+    "name": "NK Varaždin 1-3 Dinamo Zagreb",
+    "on": "2026-11-08",
+    "competition": "HNL",
+    "score": "1-3",
+    "venue": null,
+    "lineup": [
+     "Dominik Kotarski",
+     "Matteo Vinlöf",
+     "Stjepan Radeljic",
+     "Niko Galesic",
+     "Moris Valincic",
+     "Josip Misic",
+     "Arbër Hoxha",
+     "Luka Stojkovic",
+     "Luka Ivanusec",
+     "Dani Rodríguez",
+     "Dion Beljo"
+    ],
+    "bench": [
+     "Bruno Goda",
+     "Lukas Kacavenda",
+     "Miha Zajc",
+     "Fran Topić",
+     "Mislav Oršić",
+     "Ivan Filipovic",
+     "Sergi Domínguez",
+     "Noa Mikić",
+     "Paul Tabinas",
+     "Kirill Kravtsov",
+     "Sven Šunta",
+     "Smail Prevljak"
+    ],
+    "scorers": [
+     "Luka Stojkovic",
+     "Dion Beljo",
+     "Miha Zajc"
+    ]
+   },
+   "sources": [
+    "s365-4732284",
+    "ls-lu-1787207"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-dinamo-zagreb"
+  },
+  {
+   "id": "a-m-2026-10-31-nk-rudes-dinamo-zagreb",
+   "value": {
+    "name": "NK Rudes 1-0 Dinamo Zagreb",
+    "on": "2026-10-31",
+    "competition": "HNL",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Dominik Kotarski",
+     "Matteo Vinlöf",
+     "Niko Galesic",
+     "Sergi Domínguez",
+     "Moris Valincic",
+     "Miha Zajc",
+     "Josip Misic",
+     "Luka Stojkovic",
+     "Arbër Hoxha",
+     "Dion Beljo",
+     "Dani Rodríguez"
+    ],
+    "bench": [
+     "Luka Ivanusec",
+     "Lukas Kacavenda",
+     "Iker Almena",
+     "Smail Prevljak",
+     "Ivan Filipovic",
+     "Daniel Zagorac",
+     "Paul Tabinas",
+     "Bruno Goda",
+     "Kirill Kravtsov",
+     "Mateo Lisica",
+     "Mislav Oršić",
+     "Aleks Stojaković"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4732293",
+    "ls-lu-1787186"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-dinamo-zagreb"
+  },
+  {
+   "id": "a-m-2026-10-27-dinamo-zagreb-hnk-rijeka",
+   "value": {
+    "name": "Dinamo Zagreb 2-1 HNK Rijeka",
+    "on": "2026-10-27",
+    "competition": "HNL",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Dominik Kotarski",
+     "Bruno Goda",
+     "Stjepan Radeljic",
+     "Sergi Domínguez",
+     "Niko Galesic",
+     "Josip Misic",
+     "Arbër Hoxha",
+     "Miha Zajc",
+     "Luka Stojkovic",
+     "Dani Rodríguez",
+     "Dion Beljo"
+    ],
+    "bench": [
+     "Moris Valincic",
+     "Matteo Vinlöf",
+     "Luka Ivanusec",
+     "Iker Almena",
+     "Mislav Oršić",
+     "Ivan Filipovic",
+     "Paul Tabinas",
+     "Kirill Kravtsov",
+     "Lukas Kacavenda",
+     "Mateo Lisica",
+     "Fran Topić",
+     "Smail Prevljak"
+    ],
+    "scorers": [
+     "Luka Stojkovic",
+     "Luka Stojkovic"
+    ]
+   },
+   "sources": [
+    "s365-4732294",
+    "ls-lu-1787194"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-dinamo-zagreb"
+  },
+  {
+   "id": "a-m-2026-10-18-nk-slaven-belupo-dinamo-zagreb",
+   "value": {
+    "name": "NK Slaven Belupo 1-5 Dinamo Zagreb",
+    "on": "2026-10-18",
+    "competition": "HNL",
+    "score": "1-5",
+    "venue": null,
+    "lineup": [
+     "Josip Misic",
+     "Dominik Kotarski",
+     "Bruno Goda",
+     "Scott McKenna",
+     "Niko Galesic",
+     "Moris Valincic",
+     "Kirill Kravtsov",
+     "Mislav Oršić",
+     "Luka Stojkovic",
+     "Dani Rodríguez",
+     "Dion Beljo"
+    ],
+    "bench": [
+     "Lukas Kacavenda",
+     "Miha Zajc",
+     "Iker Almena",
+     "Fran Topić",
+     "Smail Prevljak",
+     "Ivan Filipovic",
+     "Sergi Domínguez",
+     "Stjepan Radeljic",
+     "Paul Tabinas",
+     "Matteo Vinlöf",
+     "Luka Ivanusec",
+     "Arbër Hoxha"
+    ],
+    "scorers": [
+     "Dani Rodríguez",
+     "Dion Beljo",
+     "Dion Beljo",
+     "Miha Zajc",
+     "Niko Galesic"
+    ]
+   },
+   "sources": [
+    "s365-4732302",
+    "ls-lu-1787203"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-dinamo-zagreb"
+  },
+  {
+   "id": "a-m-2026-10-10-hnk-hajduk-split-dinamo-zagreb",
+   "value": {
+    "name": "HNK Hajduk Split 2-1 Dinamo Zagreb",
+    "on": "2026-10-10",
+    "competition": "HNL",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Dominik Kotarski",
+     "Matteo Vinlöf",
+     "Scott McKenna",
+     "Sergi Domínguez",
+     "Paul Tabinas",
+     "Miha Zajc",
+     "Kirill Kravtsov",
+     "Lukas Kacavenda",
+     "Luka Ivanusec",
+     "Dion Beljo",
+     "Mateo Lisica"
+    ],
+    "bench": [
+     "Niko Galesic",
+     "Moris Valincic",
+     "Iker Almena",
+     "Dani Rodríguez",
+     "Luka Stojkovic",
+     "Ivan Filipovic",
+     "Stjepan Radeljic",
+     "Bruno Goda",
+     "Robert Mudrazija",
+     "Arbër Hoxha",
+     "Mislav Oršić",
+     "Smail Prevljak"
+    ],
+    "scorers": [
+     "Dion Beljo"
+    ]
+   },
+   "sources": [
+    "s365-4732305",
+    "ls-lu-1787192"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-dinamo-zagreb"
+  },
+  {
+   "id": "a-m-2026-10-04-vukovar-dinamo-zagreb",
+   "value": {
+    "name": "Vukovar 0-4 Dinamo Zagreb",
+    "on": "2026-10-04",
+    "competition": "Croatia Cup - Round of 16",
+    "score": "0-4",
+    "venue": null,
+    "lineup": [
+     "Iker Almena",
+     "Sergi Domínguez",
+     "Ivan Filipovic",
+     "Niko Galesic",
+     "Luka Ivanusec",
+     "Lukas Kacavenda",
+     "Kirill Kravtsov",
+     "Mateo Lisica",
+     "Noa Mikić",
+     "Mislav Oršić",
+     "Matteo Vinlöf"
+    ],
+    "bench": [
+     "Moris Valincic",
+     "Robert Mudrazija",
+     "Miha Zajc",
+     "Dani Rodríguez",
+     "Luka Stojkovic",
+     "Daniel Zagorac",
+     "Borna Orlic",
+     "Petar Simun Zaja",
+     "Noah Nsoki",
+     "Fuzy Taylor"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4850877"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore has no full eleven for this match.",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-09-20-dinamo-zagreb-nk-lokomotiva-zagreb",
+   "value": {
+    "name": "Dinamo Zagreb 3-2 NK Lokomotiva Zagreb",
+    "on": "2026-09-20",
+    "competition": "HNL",
+    "score": "3-2",
+    "venue": null,
+    "lineup": [
+     "Dominik Kotarski",
+     "Matteo Vinlöf",
+     "Stjepan Radeljic",
+     "Niko Galesic",
+     "Paul Tabinas",
+     "Lukas Kacavenda",
+     "Josip Misic",
+     "Luka Stojkovic",
+     "Luka Ivanusec",
+     "Dion Beljo",
+     "Mateo Lisica"
+    ],
+    "bench": [
+     "Moris Valincic",
+     "Kirill Kravtsov",
+     "Miha Zajc",
+     "Iker Almena",
+     "Arbër Hoxha",
+     "Ivan Filipovic",
+     "Sergi Domínguez",
+     "Scott McKenna",
+     "Bruno Goda",
+     "Fran Topić",
+     "Mislav Oršić",
+     "Smail Prevljak"
+    ],
+    "scorers": [
+     "Niko Galesic",
+     "Dion Beljo",
+     "Dion Beljo"
+    ]
+   },
+   "sources": [
+    "s365-4732311",
+    "ls-lu-1787174"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-dinamo-zagreb"
+  },
+  {
+   "id": "a-m-2026-09-12-nk-osijek-dinamo-zagreb",
+   "value": {
+    "name": "NK Osijek 4-2 Dinamo Zagreb",
+    "on": "2026-09-12",
+    "competition": "HNL",
+    "score": "4-2",
+    "venue": null,
+    "lineup": [
+     "Dominik Kotarski",
+     "Matteo Vinlöf",
+     "Scott McKenna",
+     "Sergi Domínguez",
+     "Moris Valincic",
+     "Josip Misic",
+     "Arbër Hoxha",
+     "Miha Zajc",
+     "Luka Stojkovic",
+     "Iker Almena",
+     "Smail Prevljak"
+    ],
+    "bench": [
+     "Niko Galesic",
+     "Luka Ivanusec",
+     "Lukas Kacavenda",
+     "Mateo Lisica",
+     "Fran Topić",
+     "Ivan Filipovic",
+     "Stjepan Radeljic",
+     "Paul Tabinas",
+     "Kirill Kravtsov",
+     "Noah Nsoki",
+     "Mislav Oršić"
+    ],
+    "scorers": [
+     "Miha Zajc",
+     "Smail Prevljak"
+    ]
+   },
+   "sources": [
+    "s365-4732316",
+    "ls-lu-1787182"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-dinamo-zagreb"
+  },
+  {
+   "id": "a-m-2026-09-09-bedem-ivankovo-dinamo-zagreb",
+   "value": {
+    "name": "Bedem Ivankovo 0-4 Dinamo Zagreb",
+    "on": "2026-09-09",
+    "competition": "Croatia Cup - Round of 32",
+    "score": "0-4",
+    "venue": null,
+    "lineup": [
+     "Iker Almena",
+     "Ivan Filipovic",
+     "Bruno Goda",
+     "Luka Ivanusec",
+     "Lukas Kacavenda",
+     "Robert Mudrazija",
+     "Noah Nsoki",
+     "Smail Prevljak",
+     "Stjepan Radeljic",
+     "Nikola Radnić",
+     "Paul Tabinas"
+    ],
+    "bench": [
+     "Fran Topić",
+     "Gabrijel Sivalec",
+     "Jona Benkotić",
+     "Kaloyan Bozhkov",
+     "Fuzy Taylor",
+     "Daniel Zagorac",
+     "Moris Valincic",
+     "Arbër Hoxha",
+     "Mislav Ćutuk"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4827754"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-09-05-dinamo-zagreb-hnk-gorica",
+   "value": {
+    "name": "Dinamo Zagreb 1-0 HNK Gorica",
+    "on": "2026-09-05",
+    "competition": "HNL",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Dominik Kotarski",
+     "Matteo Vinlöf",
+     "Scott McKenna",
+     "Sergi Domínguez",
+     "Moris Valincic",
+     "Miha Zajc",
+     "Kirill Kravtsov",
+     "Luka Stojkovic",
+     "Arbër Hoxha",
+     "Dion Beljo",
+     "Mateo Lisica"
+    ],
+    "bench": [
+     "Niko Galesic",
+     "Luka Ivanusec",
+     "Lukas Kacavenda",
+     "Mislav Oršić",
+     "Smail Prevljak",
+     "Ivan Filipovic",
+     "Stjepan Radeljic",
+     "Paul Tabinas",
+     "Bruno Goda",
+     "Josip Misic",
+     "Iker Almena",
+     "Noah Nsoki"
+    ],
+    "scorers": [
+     "Dion Beljo"
+    ]
+   },
+   "sources": [
+    "s365-4732320",
+    "ls-lu-1787171"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-dinamo-zagreb"
+  },
+  {
+   "id": "a-m-2026-08-29-istra-1961-dinamo-zagreb",
+   "value": {
+    "name": "Istra 1961 2-2 Dinamo Zagreb",
+    "on": "2026-08-29",
+    "competition": "HNL",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Ivan Nevistic",
+     "Matteo Vinlöf",
+     "Stjepan Radeljic",
+     "Sergi Domínguez",
+     "Moris Valincic",
+     "Josip Misic",
+     "Arbër Hoxha",
+     "Lukas Kacavenda",
+     "Luka Stojkovic",
+     "Mateo Lisica",
+     "Dion Beljo"
+    ],
+    "bench": [
+     "Scott McKenna",
+     "Kirill Kravtsov",
+     "Fran Topić",
+     "Mislav Oršić",
+     "Smail Prevljak",
+     "Ivan Filipovic",
+     "Daniel Zagorac",
+     "Paul Tabinas",
+     "Bruno Goda",
+     "Robert Mudrazija",
+     "Miha Zajc",
+     "Noah Nsoki"
+    ],
+    "scorers": [
+     "Dion Beljo",
+     "Smail Prevljak"
+    ]
+   },
+   "sources": [
+    "s365-4732327",
+    "ls-lu-1787167"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-dinamo-zagreb"
+  },
+  {
+   "id": "a-m-2026-08-22-dinamo-zagreb-nk-varazdin",
+   "value": {
+    "name": "Dinamo Zagreb 3-1 NK Varaždin",
+    "on": "2026-08-22",
+    "competition": "HNL",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Ivan Nevistic",
+     "Bruno Goda",
+     "Stjepan Radeljic",
+     "Niko Galesic",
+     "Paul Tabinas",
+     "Miha Zajc",
+     "Josip Misic",
+     "Lukas Kacavenda",
+     "Arbër Hoxha",
+     "Dion Beljo",
+     "Mateo Lisica"
+    ],
+    "bench": [
+     "Moris Valincic",
+     "Matteo Vinlöf",
+     "Robert Mudrazija",
+     "Fran Topić",
+     "Mislav Oršić",
+     "Ivan Filipovic",
+     "Sergi Domínguez",
+     "Scott McKenna",
+     "Kirill Kravtsov",
+     "Sven Šunta",
+     "Noah Nsoki",
+     "Smail Prevljak"
+    ],
+    "scorers": [
+     "Dion Beljo",
+     "Niko Galesic",
+     "Robert Mudrazija"
+    ]
+   },
+   "sources": [
+    "s365-4732329",
+    "ls-lu-1787153"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-dinamo-zagreb"
+  },
+  {
+   "id": "a-m-2026-08-14-dinamo-zagreb-nk-rudes",
+   "value": {
+    "name": "Dinamo Zagreb 4-0 NK Rudes",
+    "on": "2026-08-14",
+    "competition": "HNL",
+    "score": "4-0",
+    "venue": null,
+    "lineup": [
+     "Ivan Nevistic",
+     "Bruno Goda",
+     "Stjepan Radeljic",
+     "Niko Galesic",
+     "Paul Tabinas",
+     "Miha Zajc",
+     "Josip Misic",
+     "Lukas Kacavenda",
+     "Arbër Hoxha",
+     "Dion Beljo",
+     "Fran Topić"
+    ],
+    "bench": [
+     "Sergi Domínguez",
+     "Robert Mudrazija",
+     "Sven Šunta",
+     "Mateo Lisica",
+     "Smail Prevljak",
+     "Daniel Zagorac",
+     "Scott McKenna",
+     "Moris Valincic",
+     "Matteo Vinlöf",
+     "Mislav Oršić",
+     "Luka Stojkovic"
+    ],
+    "scorers": [
+     "Dion Beljo",
+     "Lukas Kacavenda",
+     "Dion Beljo",
+     "Arbër Hoxha"
+    ]
+   },
+   "sources": [
+    "s365-4732338",
+    "ls-lu-1787155"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-dinamo-zagreb"
+  },
+  {
+   "id": "a-m-2026-07-31-dinamo-zagreb-nk-slaven-belupo",
+   "value": {
+    "name": "Dinamo Zagreb 2-0 NK Slaven Belupo",
+    "on": "2026-07-31",
+    "competition": "HNL",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Arbër Hoxha",
+     "Dion Beljo",
+     "Fran Topić",
+     "Luka Stojkovic",
+     "Josip Misic",
+     "Lukas Kacavenda",
+     "Matteo Vinlöf",
+     "Stjepan Radeljic",
+     "Niko Galesic",
+     "Paul Tabinas",
+     "Ivan Filipovic"
+    ],
+    "bench": [
+     "Ivan Nevistic",
+     "Raúl Torrente",
+     "Scott McKenna",
+     "Sergi Domínguez",
+     "Moris Valincic",
+     "Bruno Goda",
+     "Miha Zajc",
+     "Robert Mudrazija",
+     "Sven Šunta",
+     "Mateo Lisica",
+     "Gabriel Vidović",
+     "Mislav Oršić"
+    ],
+    "scorers": [
+     "Dion Beljo",
+     "Dion Beljo"
+    ]
+   },
+   "sources": [
+    "s365-4732347",
+    "ls-lu-1787148"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-dinamo-zagreb"
+  },
+  {
+   "id": "a-m-2026-05-23-dinamo-zagreb-nk-lokomotiva-zagreb",
+   "value": {
+    "name": "Dinamo Zagreb 0-0 NK Lokomotiva Zagreb",
+    "on": "2026-05-23",
+    "competition": "HNL",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Dominik Livakovic",
+     "Matteo Vinlöf",
+     "Marko Zebić",
+     "Niko Galesic",
+     "Paul Tabinas",
+     "Ismael Bennacer",
+     "Fran Topić",
+     "Gabriel Vidović",
+     "Marko Soldo",
+     "Mateo Lisica",
+     "Dion Beljo"
+    ],
+    "bench": [
+     "Raúl Torrente",
+     "Sven Šunta",
+     "Juan Cordoba",
+     "Cardoso Varela",
+     "Monsef Bakrar",
+     "Ivan Filipovic",
+     "Daniel Zagorac",
+     "Scott McKenna",
+     "Moris Valincic",
+     "Josip Brundic",
+     "Josip Misic",
+     "Miha Zajc"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4452940"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  }
+ ],
+ "players": [],
+ "kits": [],
+ "rivals": []
+}

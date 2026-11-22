@@ -1,0 +1,1346 @@
+{
+ "sources": [
+  {
+   "id": "s365-4746686",
+   "title": "365Scores: Huddersfield 0-1 Leicester City, 2026-11-21",
+   "url": "https://webws.365scores.com/web/game/?gameId=4746686",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1803057",
+   "title": "LiveScore: Huddersfield 0-1 Leicester City, 2026-11-21 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1803057",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4805898",
+   "title": "365Scores: Leicester City 2-1 Walsall, 2026-11-10",
+   "url": "https://webws.365scores.com/web/game/?gameId=4805898",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1866841",
+   "title": "LiveScore: Leicester City 2-1 Walsall, 2026-11-10 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1866841",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4882324",
+   "title": "365Scores: Oxford City 2-4 Leicester City, 2026-11-06",
+   "url": "https://webws.365scores.com/web/game/?gameId=4882324",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1907741",
+   "title": "LiveScore: Oxford City 2-4 Leicester City, 2026-11-06 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1907741",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4746713",
+   "title": "365Scores: Leicester City 2-2 Stevenage, 2026-10-31",
+   "url": "https://webws.365scores.com/web/game/?gameId=4746713",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1803044",
+   "title": "LiveScore: Leicester City 2-2 Stevenage, 2026-10-31 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1803044",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4746783",
+   "title": "365Scores: Leicester City 3-0 Wigan, 2026-10-27",
+   "url": "https://webws.365scores.com/web/game/?gameId=4746783",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1802986",
+   "title": "LiveScore: Leicester City 3-0 Wigan, 2026-10-27 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1802986",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4746720",
+   "title": "365Scores: Luton 2-1 Leicester City, 2026-10-24",
+   "url": "https://webws.365scores.com/web/game/?gameId=4746720",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1803073",
+   "title": "LiveScore: Luton 2-1 Leicester City, 2026-10-24 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1803073",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4746737",
+   "title": "365Scores: Bromley 0-4 Leicester City, 2026-10-20",
+   "url": "https://webws.365scores.com/web/game/?gameId=4746737",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1802969",
+   "title": "LiveScore: Bromley 0-4 Leicester City, 2026-10-20 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1802969",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4746749",
+   "title": "365Scores: Leicester City 2-1 Doncaster, 2026-10-17",
+   "url": "https://webws.365scores.com/web/game/?gameId=4746749",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1803018",
+   "title": "LiveScore: Leicester City 2-1 Doncaster, 2026-10-17 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1803018",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4746760",
+   "title": "365Scores: Leicester City 1-3 Peterborough, 2026-10-10",
+   "url": "https://webws.365scores.com/web/game/?gameId=4746760",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1803006",
+   "title": "LiveScore: Leicester City 1-3 Peterborough, 2026-10-10 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1803006",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4805929",
+   "title": "365Scores: Stevenage 2-1 Leicester City, 2026-10-06",
+   "url": "https://webws.365scores.com/web/game/?gameId=4805929",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1866839",
+   "title": "LiveScore: Stevenage 2-1 Leicester City, 2026-10-06 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1866839",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4805948",
+   "title": "365Scores: Leicester City 6-1 Fulham U21, 2026-09-22",
+   "url": "https://webws.365scores.com/web/game/?gameId=4805948",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1866838",
+   "title": "LiveScore: Leicester City 6-1 Fulham U21, 2026-09-22 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1866838",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4746798",
+   "title": "365Scores: Barnsley 1-1 Leicester City, 2026-09-19",
+   "url": "https://webws.365scores.com/web/game/?gameId=4746798",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1802932",
+   "title": "LiveScore: Barnsley 1-1 Leicester City, 2026-09-19 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1802932",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4746804",
+   "title": "365Scores: Stockport 3-4 Leicester City, 2026-09-12",
+   "url": "https://webws.365scores.com/web/game/?gameId=4746804",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1802956",
+   "title": "LiveScore: Stockport 3-4 Leicester City, 2026-09-12 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1802956",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4746817",
+   "title": "365Scores: Leicester City 0-4 Oxford United, 2026-09-05",
+   "url": "https://webws.365scores.com/web/game/?gameId=4746817",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1802925",
+   "title": "LiveScore: Leicester City 0-4 Oxford United, 2026-09-05 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1802925",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4746829",
+   "title": "365Scores: Leicester City 2-0 Plymouth, 2026-09-01",
+   "url": "https://webws.365scores.com/web/game/?gameId=4746829",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1802926",
+   "title": "LiveScore: Leicester City 2-0 Plymouth, 2026-09-01 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1802926",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4746842",
+   "title": "365Scores: MK Dons 0-0 Leicester City, 2026-08-29",
+   "url": "https://webws.365scores.com/web/game/?gameId=4746842",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1802958",
+   "title": "LiveScore: MK Dons 0-0 Leicester City, 2026-08-29 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1802958",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4808213",
+   "title": "365Scores: Ipswich 3-1 Leicester City, 2026-08-25",
+   "url": "https://webws.365scores.com/web/game/?gameId=4808213",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1862545",
+   "title": "LiveScore: Ipswich 3-1 Leicester City, 2026-08-25 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1862545",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4746856",
+   "title": "365Scores: Leicester City 1-2 Burton Albion, 2026-08-22",
+   "url": "https://webws.365scores.com/web/game/?gameId=4746856",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1802899",
+   "title": "LiveScore: Leicester City 1-2 Burton Albion, 2026-08-22 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1802899",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4746871",
+   "title": "365Scores: Notts County 1-1 Leicester City, 2026-08-15",
+   "url": "https://webws.365scores.com/web/game/?gameId=4746871",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1802885",
+   "title": "LiveScore: Notts County 1-1 Leicester City, 2026-08-15 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1802885",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4746296",
+   "title": "365Scores: Leicester City 1-0 Northampton, 2026-08-08",
+   "url": "https://webws.365scores.com/web/game/?gameId=4746296",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1804512",
+   "title": "LiveScore: Leicester City 1-0 Northampton, 2026-08-08 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1804512",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4765090",
+   "title": "365Scores: Leicester City 4-0 Northampton, 2026-07-11",
+   "url": "https://webws.365scores.com/web/game/?gameId=4765090",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  }
+ ],
+ "matches": [
+  {
+   "id": "a-m-2026-11-21-huddersfield-leicester-city",
+   "value": {
+    "name": "Huddersfield 0-1 Leicester City",
+    "on": "2026-11-21",
+    "competition": "League One",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Alex McCarthy",
+     "Warren O'Hora",
+     "Harry Souttar",
+     "Caleb Okoli",
+     "Luke Thomas",
+     "John Lundstram",
+     "Will Smallbone",
+     "Will Alves",
+     "Kamari Doyle",
+     "Sammy Braybrooke",
+     "Emil Riis"
+    ],
+    "bench": [
+     "Jayden Joseph",
+     "Harry Howell",
+     "Louis Page",
+     "Conor Chaplin",
+     "David Cornell",
+     "Ilari Kangasniemi",
+     "Liam Cullen"
+    ],
+    "scorers": [
+     "Louis Page"
+    ]
+   },
+   "sources": [
+    "s365-4746686",
+    "ls-lu-1803057"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-leicester-city"
+  },
+  {
+   "id": "a-m-2026-11-10-leicester-city-walsall",
+   "value": {
+    "name": "Leicester City 2-1 Walsall",
+    "on": "2026-11-10",
+    "competition": "EFL Trophy",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "David Cornell",
+     "Luke Thomas",
+     "Warren O'Hora",
+     "Olabade Aluko",
+     "Tom Watson",
+     "John Lundstram",
+     "Will Smallbone",
+     "Will Alves",
+     "Kamari Doyle",
+     "Conor Chaplin",
+     "Admir Bristrić"
+    ],
+    "bench": [
+     "Woyo Coulibaly",
+     "Sammy Braybrooke",
+     "Tommy Neale",
+     "Bobby De Cordova-Reid",
+     "Franco Ravizzoli",
+     "Caleb Okoli",
+     "J. Fletcher"
+    ],
+    "scorers": [
+     "John Lundstram",
+     "Will Smallbone"
+    ]
+   },
+   "sources": [
+    "s365-4805898",
+    "ls-lu-1866841"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-leicester-city"
+  },
+  {
+   "id": "a-m-2026-11-06-oxford-city-leicester-city",
+   "value": {
+    "name": "Oxford City 2-4 Leicester City",
+    "on": "2026-11-06",
+    "competition": "FA Cup - 1st Round",
+    "score": "2-4",
+    "venue": null,
+    "lineup": [
+     "Franco Ravizzoli",
+     "Ilari Kangasniemi",
+     "Warren O'Hora",
+     "Caleb Okoli",
+     "Luke Thomas",
+     "John Lundstram",
+     "Louis Page",
+     "Bobby De Cordova-Reid",
+     "Kamari Doyle",
+     "Sammy Braybrooke",
+     "Emil Riis"
+    ],
+    "bench": [
+     "Olabade Aluko",
+     "Christian McFarlane",
+     "Harry Howell",
+     "Tom Watson",
+     "Admir Bristrić",
+     "David Cornell",
+     "Woyo Coulibaly",
+     "Tommy Neale",
+     "Riley Carr"
+    ],
+    "scorers": [
+     "Louis Page",
+     "Emil Riis",
+     "Kamari Doyle",
+     "Tom Watson"
+    ]
+   },
+   "sources": [
+    "s365-4882324",
+    "ls-lu-1907741"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-leicester-city"
+  },
+  {
+   "id": "a-m-2026-10-31-leicester-city-stevenage",
+   "value": {
+    "name": "Leicester City 2-2 Stevenage",
+    "on": "2026-10-31",
+    "competition": "League One",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Alex McCarthy",
+     "Luke Thomas",
+     "Caleb Okoli",
+     "Harry Souttar",
+     "Warren O'Hora",
+     "John Lundstram",
+     "Kamari Doyle",
+     "Louis Page",
+     "Sammy Braybrooke",
+     "Will Alves",
+     "Emil Riis"
+    ],
+    "bench": [
+     "Will Smallbone",
+     "Liam Cullen",
+     "Wes Burns",
+     "Conor Chaplin",
+     "Franco Ravizzoli",
+     "Ilari Kangasniemi",
+     "Bobby De Cordova-Reid"
+    ],
+    "scorers": [
+     "Sammy Braybrooke",
+     "Kamari Doyle"
+    ]
+   },
+   "sources": [
+    "s365-4746713",
+    "ls-lu-1803044"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-leicester-city"
+  },
+  {
+   "id": "a-m-2026-10-27-leicester-city-wigan",
+   "value": {
+    "name": "Leicester City 3-0 Wigan",
+    "on": "2026-10-27",
+    "competition": "League One",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Alex McCarthy",
+     "Caleb Okoli",
+     "Harry Souttar",
+     "Warren O'Hora",
+     "Luke Thomas",
+     "Louis Page",
+     "Will Smallbone",
+     "Will Alves",
+     "Kamari Doyle",
+     "Conor Chaplin",
+     "Emil Riis"
+    ],
+    "bench": [
+     "Ilari Kangasniemi",
+     "Sammy Braybrooke",
+     "Liam Cullen",
+     "Bobby De Cordova-Reid",
+     "Wes Burns",
+     "Franco Ravizzoli",
+     "Harry Howell"
+    ],
+    "scorers": [
+     "Emil Riis",
+     "Emil Riis",
+     "Bobby De Cordova-Reid"
+    ]
+   },
+   "sources": [
+    "s365-4746783",
+    "ls-lu-1802986"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-leicester-city"
+  },
+  {
+   "id": "a-m-2026-10-24-luton-leicester-city",
+   "value": {
+    "name": "Luton 2-1 Leicester City",
+    "on": "2026-10-24",
+    "competition": "League One",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Alex McCarthy",
+     "Caleb Okoli",
+     "Harry Souttar",
+     "Warren O'Hora",
+     "Luke Thomas",
+     "Louis Page",
+     "John Lundstram",
+     "Will Alves",
+     "Kamari Doyle",
+     "Sammy Braybrooke",
+     "Emil Riis"
+    ],
+    "bench": [
+     "Will Smallbone",
+     "Liam Cullen",
+     "Bobby De Cordova-Reid",
+     "Wes Burns",
+     "Conor Chaplin",
+     "Franco Ravizzoli",
+     "Ilari Kangasniemi"
+    ],
+    "scorers": [
+     "Liam Cullen"
+    ]
+   },
+   "sources": [
+    "s365-4746720",
+    "ls-lu-1803073"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-leicester-city"
+  },
+  {
+   "id": "a-m-2026-10-20-bromley-leicester-city",
+   "value": {
+    "name": "Bromley 0-4 Leicester City",
+    "on": "2026-10-20",
+    "competition": "League One",
+    "score": "0-4",
+    "venue": null,
+    "lineup": [
+     "Alex McCarthy",
+     "Caleb Okoli",
+     "Harry Souttar",
+     "Warren O'Hora",
+     "Luke Thomas",
+     "Louis Page",
+     "John Lundstram",
+     "Will Alves",
+     "Kamari Doyle",
+     "Sammy Braybrooke",
+     "Emil Riis"
+    ],
+    "bench": [
+     "Will Smallbone",
+     "Liam Cullen",
+     "Bobby De Cordova-Reid",
+     "Harry Howell",
+     "Conor Chaplin",
+     "Franco Ravizzoli",
+     "Ilari Kangasniemi"
+    ],
+    "scorers": [
+     "Will Alves",
+     "John Lundstram",
+     "Luke Thomas",
+     "Emil Riis"
+    ]
+   },
+   "sources": [
+    "s365-4746737",
+    "ls-lu-1802969"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-leicester-city"
+  },
+  {
+   "id": "a-m-2026-10-17-leicester-city-doncaster",
+   "value": {
+    "name": "Leicester City 2-1 Doncaster",
+    "on": "2026-10-17",
+    "competition": "League One",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Alex McCarthy",
+     "Caleb Okoli",
+     "Harry Souttar",
+     "Warren O'Hora",
+     "Luke Thomas",
+     "Louis Page",
+     "John Lundstram",
+     "Will Alves",
+     "Kamari Doyle",
+     "Sammy Braybrooke",
+     "Emil Riis"
+    ],
+    "bench": [
+     "Olabade Aluko",
+     "Liam Cullen",
+     "Conor Chaplin",
+     "Franco Ravizzoli",
+     "Ilari Kangasniemi",
+     "Bobby De Cordova-Reid",
+     "Harry Howell"
+    ],
+    "scorers": [
+     "John Lundstram",
+     "Kamari Doyle"
+    ]
+   },
+   "sources": [
+    "s365-4746749",
+    "ls-lu-1803018"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-leicester-city"
+  },
+  {
+   "id": "a-m-2026-10-10-leicester-city-peterborough",
+   "value": {
+    "name": "Leicester City 1-3 Peterborough",
+    "on": "2026-10-10",
+    "competition": "League One",
+    "score": "1-3",
+    "venue": null,
+    "lineup": [
+     "Alex McCarthy",
+     "Luke Thomas",
+     "Warren O'Hora",
+     "Caleb Okoli",
+     "Olabade Aluko",
+     "Louis Page",
+     "John Lundstram",
+     "Will Alves",
+     "Bobby De Cordova-Reid",
+     "Liam Cullen",
+     "Emil Riis"
+    ],
+    "bench": [
+     "Ilari Kangasniemi",
+     "Sammy Braybrooke",
+     "Kamari Doyle",
+     "Harry Howell",
+     "Wes Burns",
+     "Franco Ravizzoli",
+     "Harry Souttar"
+    ],
+    "scorers": [
+     "Emil Riis"
+    ]
+   },
+   "sources": [
+    "s365-4746760",
+    "ls-lu-1803006"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-leicester-city"
+  },
+  {
+   "id": "a-m-2026-10-06-stevenage-leicester-city",
+   "value": {
+    "name": "Stevenage 2-1 Leicester City",
+    "on": "2026-10-06",
+    "competition": "EFL Trophy",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Franco Ravizzoli",
+     "Christian McFarlane",
+     "Harry Souttar",
+     "Olabade Aluko",
+     "Woyo Coulibaly",
+     "Sammy Braybrooke",
+     "Tom Watson",
+     "Tommy Neale",
+     "Kamari Doyle",
+     "Riley Carr",
+     "Admir Bristrić"
+    ],
+    "bench": [
+     "Luke Thomas",
+     "Will Alves",
+     "Bobby De Cordova-Reid",
+     "Harry Howell",
+     "Emil Riis",
+     "Harry French",
+     "H. De Lisle"
+    ],
+    "scorers": [
+     "Emil Riis"
+    ]
+   },
+   "sources": [
+    "s365-4805929",
+    "ls-lu-1866839"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-leicester-city"
+  },
+  {
+   "id": "a-m-2026-09-22-leicester-city-fulham-u21",
+   "value": {
+    "name": "Leicester City 6-1 Fulham U21",
+    "on": "2026-09-22",
+    "competition": "EFL Trophy",
+    "score": "6-1",
+    "venue": null,
+    "lineup": [
+     "Franco Ravizzoli",
+     "Luke Thomas",
+     "Warren O'Hora",
+     "Caleb Okoli",
+     "Olabade Aluko",
+     "Sammy Braybrooke",
+     "Tom Watson",
+     "Bobby De Cordova-Reid",
+     "Kamari Doyle",
+     "Will Alves",
+     "Admir Bristrić"
+    ],
+    "bench": [
+     "Woyo Coulibaly",
+     "Tommy Neale",
+     "L. Hutchinson",
+     "W. Lawrence",
+     "Alex McCarthy",
+     "Wout Faes",
+     "Emil Riis"
+    ],
+    "scorers": [
+     "Admir Bristrić",
+     "Admir Bristrić",
+     "Admir Bristrić",
+     "Tom Watson",
+     "Tom Watson",
+     "Bobby De Cordova-Reid"
+    ]
+   },
+   "sources": [
+    "s365-4805948",
+    "ls-lu-1866838"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-leicester-city"
+  },
+  {
+   "id": "a-m-2026-09-19-barnsley-leicester-city",
+   "value": {
+    "name": "Barnsley 1-1 Leicester City",
+    "on": "2026-09-19",
+    "competition": "League One",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Alex McCarthy",
+     "Luke Thomas",
+     "Wout Faes",
+     "Warren O'Hora",
+     "Olabade Aluko",
+     "Louis Page",
+     "Will Alves",
+     "John Lundstram",
+     "Sammy Braybrooke",
+     "Liam Cullen",
+     "Emil Riis"
+    ],
+    "bench": [
+     "Woyo Coulibaly",
+     "Bobby De Cordova-Reid",
+     "Harry Howell",
+     "Wes Burns",
+     "Tom Watson",
+     "Franco Ravizzoli",
+     "Harry Souttar"
+    ],
+    "scorers": [
+     "Liam Cullen"
+    ]
+   },
+   "sources": [
+    "s365-4746798",
+    "ls-lu-1802932"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-leicester-city"
+  },
+  {
+   "id": "a-m-2026-09-12-stockport-leicester-city",
+   "value": {
+    "name": "Stockport 3-4 Leicester City",
+    "on": "2026-09-12",
+    "competition": "League One",
+    "score": "3-4",
+    "venue": null,
+    "lineup": [
+     "Alex McCarthy",
+     "Luke Thomas",
+     "Harry Souttar",
+     "Warren O'Hora",
+     "Jayden Joseph",
+     "Louis Page",
+     "Will Alves",
+     "John Lundstram",
+     "Sammy Braybrooke",
+     "Liam Cullen",
+     "Emil Riis"
+    ],
+    "bench": [
+     "Ilari Kangasniemi",
+     "Olabade Aluko",
+     "Bobby De Cordova-Reid",
+     "Wes Burns",
+     "Tom Watson",
+     "Franco Ravizzoli",
+     "Harry Howell"
+    ],
+    "scorers": [
+     "Liam Cullen",
+     "Emil Riis",
+     "Emil Riis",
+     "John Lundstram"
+    ]
+   },
+   "sources": [
+    "s365-4746804",
+    "ls-lu-1802956"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-leicester-city"
+  },
+  {
+   "id": "a-m-2026-09-05-leicester-city-oxford-united",
+   "value": {
+    "name": "Leicester City 0-4 Oxford United",
+    "on": "2026-09-05",
+    "competition": "League One",
+    "score": "0-4",
+    "venue": null,
+    "lineup": [
+     "Alex McCarthy",
+     "Christian McFarlane",
+     "Luke Thomas",
+     "Harry Souttar",
+     "Jayden Joseph",
+     "Louis Page",
+     "Will Alves",
+     "Sammy Braybrooke",
+     "Bobby De Cordova-Reid",
+     "Wes Burns",
+     "Emil Riis"
+    ],
+    "bench": [
+     "Olabade Aluko",
+     "Kamari Doyle",
+     "Harry Howell",
+     "Tom Watson",
+     "Admir Bristrić",
+     "Franco Ravizzoli",
+     "Warren O'Hora"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4746817",
+    "ls-lu-1802925"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-leicester-city"
+  },
+  {
+   "id": "a-m-2026-09-01-leicester-city-plymouth",
+   "value": {
+    "name": "Leicester City 2-0 Plymouth",
+    "on": "2026-09-01",
+    "competition": "League One",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Jakub Stolarczyk",
+     "Christian McFarlane",
+     "Luke Thomas",
+     "Harry Souttar",
+     "Jayden Joseph",
+     "Louis Page",
+     "Will Alves",
+     "Sammy Braybrooke",
+     "Bobby De Cordova-Reid",
+     "Harry Howell",
+     "Admir Bristrić"
+    ],
+    "bench": [
+     "Alex McCarthy",
+     "Olabade Aluko",
+     "Liam Cullen",
+     "Wes Burns",
+     "Tom Watson",
+     "Ilari Kangasniemi",
+     "Riley Carr"
+    ],
+    "scorers": [
+     "Will Alves",
+     "Harry Howell"
+    ]
+   },
+   "sources": [
+    "s365-4746829",
+    "ls-lu-1802926"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-leicester-city"
+  },
+  {
+   "id": "a-m-2026-08-29-mk-dons-leicester-city",
+   "value": {
+    "name": "MK Dons 0-0 Leicester City",
+    "on": "2026-08-29",
+    "competition": "League One",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Jakub Stolarczyk",
+     "Christian McFarlane",
+     "Luke Thomas",
+     "Harry Souttar",
+     "Jayden Joseph",
+     "Louis Page",
+     "Tom Watson",
+     "Sammy Braybrooke",
+     "Conor Chaplin",
+     "Wes Burns",
+     "Bobby De Cordova-Reid"
+    ],
+    "bench": [
+     "Will Alves",
+     "Liam Cullen",
+     "Harry Howell",
+     "Admir Bristrić",
+     "Alex McCarthy",
+     "Ilari Kangasniemi",
+     "Olabade Aluko"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4746842",
+    "ls-lu-1802958"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-leicester-city"
+  },
+  {
+   "id": "a-m-2026-08-25-ipswich-leicester-city",
+   "value": {
+    "name": "Ipswich 3-1 Leicester City",
+    "on": "2026-08-25",
+    "competition": "EFL Cup - 2nd Round",
+    "score": "3-1",
+    "venue": null,
+    "lineup": [
+     "Jakub Stolarczyk",
+     "Christian McFarlane",
+     "Luke Thomas",
+     "Olabade Aluko",
+     "Woyo Coulibaly",
+     "Louis Page",
+     "Tom Watson",
+     "Sammy Braybrooke",
+     "Conor Chaplin",
+     "Harry Howell",
+     "Admir Bristrić"
+    ],
+    "bench": [
+     "Jayden Joseph",
+     "Will Alves",
+     "Liam Cullen",
+     "Bobby De Cordova-Reid",
+     "Wes Burns",
+     "Alex McCarthy",
+     "Harry Souttar",
+     "Tommy Neale",
+     "Riley Carr"
+    ],
+    "scorers": [
+     "Olabade Aluko"
+    ]
+   },
+   "sources": [
+    "s365-4808213",
+    "ls-lu-1862545"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-leicester-city"
+  },
+  {
+   "id": "a-m-2026-08-22-leicester-city-burton-albion",
+   "value": {
+    "name": "Leicester City 1-2 Burton Albion",
+    "on": "2026-08-22",
+    "competition": "League One",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Alex McCarthy",
+     "Luke Thomas",
+     "Harry Souttar",
+     "Caleb Okoli",
+     "Olabade Aluko",
+     "O. Skipp",
+     "Will Alves",
+     "Liam Cullen",
+     "Sammy Braybrooke",
+     "Wes Burns",
+     "Admir Bristrić"
+    ],
+    "bench": [
+     "Hamza Choudhury",
+     "Bobby De Cordova-Reid",
+     "Harry Howell",
+     "Louis Page",
+     "Tom Watson",
+     "Jakub Stolarczyk",
+     "Christian McFarlane"
+    ],
+    "scorers": [
+     "Wes Burns"
+    ]
+   },
+   "sources": [
+    "s365-4746856",
+    "ls-lu-1802899"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-leicester-city"
+  },
+  {
+   "id": "a-m-2026-08-15-notts-county-leicester-city",
+   "value": {
+    "name": "Notts County 1-1 Leicester City",
+    "on": "2026-08-15",
+    "competition": "League One",
+    "score": "1-1",
+    "venue": null,
+    "lineup": [
+     "Alex McCarthy",
+     "Luke Thomas",
+     "Harry Souttar",
+     "Caleb Okoli",
+     "Jayden Joseph",
+     "Oliver Skipp",
+     "Will Alves",
+     "Liam Cullen",
+     "Sammy Braybrooke",
+     "Wes Burns",
+     "Bobby De Cordova-Reid"
+    ],
+    "bench": [
+     "Hamza Choudhury",
+     "Harry Howell",
+     "Tom Watson",
+     "Admir Bristrić",
+     "Jakub Stolarczyk",
+     "Olabade Aluko",
+     "Christian McFarlane"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4746871",
+    "ls-lu-1802885"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-leicester-city"
+  },
+  {
+   "id": "a-m-2026-08-08-leicester-city-northampton",
+   "value": {
+    "name": "Leicester City 1-0 Northampton",
+    "on": "2026-08-08",
+    "competition": "EFL Cup - 1st Round",
+    "score": "1-0",
+    "venue": null,
+    "lineup": [
+     "Jakub Stolarczyk",
+     "Luke Thomas",
+     "Harry Souttar",
+     "Caleb Okoli",
+     "Jayden Joseph",
+     "O. Skipp",
+     "Stephy Mavididi",
+     "Liam Cullen",
+     "Sammy Braybrooke",
+     "Will Alves",
+     "Bobby De Cordova-Reid"
+    ],
+    "bench": [
+     "Olabade Aluko",
+     "Hamza Choudhury",
+     "Louis Page",
+     "Tom Watson",
+     "W. Burns",
+     "Woyo Coulibaly",
+     "Tommy Neale",
+     "Riley Carr",
+     "S. Bausor"
+    ],
+    "scorers": [
+     "Caleb Okoli"
+    ]
+   },
+   "sources": [
+    "s365-4746296",
+    "ls-lu-1804512"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-leicester-city"
+  },
+  {
+   "id": "a-m-2026-07-11-leicester-city-northampton",
+   "value": {
+    "name": "Leicester City 4-0 Northampton",
+    "on": "2026-07-11",
+    "competition": "Club Friendlies",
+    "score": "4-0",
+    "venue": null,
+    "lineup": [
+     "Fran Vieites",
+     "Luke Thomas",
+     "Ben Nelson",
+     "Caleb Okoli",
+     "Olabade Aluko",
+     "Hamza Choudhury",
+     "Stephy Mavididi",
+     "Louis Page",
+     "Will Alves",
+     "Riley Carr",
+     "Kirsten Otchere"
+    ],
+    "bench": [
+     "Jakub Stolarczyk",
+     "Wout Faes",
+     "Tom Wilson-Brown",
+     "Woyo Coulibaly",
+     "Jayden Joseph",
+     "Sammy Braybrooke",
+     "Oliver Skipp",
+     "Bobby De Cordova-Reid",
+     "Jake Evans",
+     "Nathaniel Opoku",
+     "L. Hutchinson",
+     "Kevon Gray"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4765090"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  }
+ ],
+ "players": [],
+ "kits": [],
+ "rivals": []
+}

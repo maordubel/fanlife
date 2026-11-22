@@ -23,8 +23,8 @@
    "season": "2026/27"
   },
   "providerId": "dfb-union",
-  "contentHash": "11aa3ff0af01e78b5ebc1611229a180df61f677e83d43d617fa559bd0d13b792",
-  "runId": "2026-11-22T11-33-00-096Z-d38a3a",
+  "contentHash": "a47ffa9657cfecc0224a69775d45bb42a3ebc1c74ad69bca6e8e68ea2efd504f",
+  "runId": "2026-11-22T11-48-10-443Z-54f3c9",
   "retired": null,
   "sourceIds": [
    "document-9195ea6f38f2f8a40d7f794e"
@@ -54,8 +54,8 @@
    "season": "2026/27"
   },
   "providerId": "dfb-union",
-  "contentHash": "11aa3ff0af01e78b5ebc1611229a180df61f677e83d43d617fa559bd0d13b792",
-  "runId": "2026-11-22T11-33-00-096Z-d38a3a",
+  "contentHash": "a47ffa9657cfecc0224a69775d45bb42a3ebc1c74ad69bca6e8e68ea2efd504f",
+  "runId": "2026-11-22T11-48-10-443Z-54f3c9",
   "retired": null,
   "sourceIds": [
    "document-9195ea6f38f2f8a40d7f794e"
@@ -85,8 +85,8 @@
    "season": "2026/27"
   },
   "providerId": "dfb-union",
-  "contentHash": "11aa3ff0af01e78b5ebc1611229a180df61f677e83d43d617fa559bd0d13b792",
-  "runId": "2026-11-22T11-33-00-096Z-d38a3a",
+  "contentHash": "a47ffa9657cfecc0224a69775d45bb42a3ebc1c74ad69bca6e8e68ea2efd504f",
+  "runId": "2026-11-22T11-48-10-443Z-54f3c9",
   "retired": null,
   "sourceIds": [
    "document-9195ea6f38f2f8a40d7f794e"
@@ -116,6 +116,72 @@
  },
  {
   "schemaVersion": 1,
+  "id": "obs:immer-unioner:html:/spieler.php?getid=238:player",
+  "recordType": "player",
+  "providerRecordKey": "immer-unioner:html:/spieler.php?getid=238",
+  "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=238",
+  "parserVersion": "immerunioner-v1",
+  "locator": "title; profile URL",
+  "nameAsReported": "Ronny Nikol",
+  "seasonsAsReported": null,
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "providerId": "immer-unioner",
+  "contentHash": "ff0d700b7b38279b8aa3be48319f35860bc02968e37ca31193fb722771dc0122",
+  "runId": "2026-11-22T11-48-10-443Z-54f3c9",
+  "retired": null,
+  "sourceIds": [
+   "document-e2c8b251cf6bb3da35aa2e0e"
+  ]
+ },
+ {
+  "schemaVersion": 1,
+  "id": "obs:immer-unioner:html:/spieler.php?getid=273:player",
+  "recordType": "player",
+  "providerRecordKey": "immer-unioner:html:/spieler.php?getid=273",
+  "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=273",
+  "parserVersion": "immerunioner-v1",
+  "locator": "title; profile URL",
+  "nameAsReported": "Chibuike Okeke",
+  "seasonsAsReported": null,
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "providerId": "immer-unioner",
+  "contentHash": "dce7dbafbb1e38b0c163755c29068ba6e30539dc5b1aea9d8888c4882b448d0e",
+  "runId": "2026-11-22T11-48-10-443Z-54f3c9",
+  "retired": null,
+  "sourceIds": [
+   "document-ec7ec7704601659dc5966a1c"
+  ]
+ },
+ {
+  "schemaVersion": 1,
+  "id": "obs:immer-unioner:html:/spieler.php?getid=301:player",
+  "recordType": "player",
+  "providerRecordKey": "immer-unioner:html:/spieler.php?getid=301",
+  "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=301",
+  "parserVersion": "immerunioner-v1",
+  "locator": "title; profile URL",
+  "nameAsReported": "Jan Glinker",
+  "seasonsAsReported": null,
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "providerId": "immer-unioner",
+  "contentHash": "e226f56fd4b6ba692f0472f3cd72efb7cf37c94e3242aaf11289d9141d073fda",
+  "runId": "2026-11-22T11-48-10-443Z-54f3c9",
+  "retired": null,
+  "sourceIds": [
+   "document-3e97b315bbe4000a2b1046e8"
+  ]
+ },
+ {
+  "schemaVersion": 1,
   "id": "obs:immer-unioner:html:/spieler.php?getid=354:player",
   "recordType": "player",
   "providerRecordKey": "immer-unioner:html:/spieler.php?getid=354",
@@ -134,6 +200,94 @@
   "retired": null,
   "sourceIds": [
    "document-755144afc0b20c7408744503"
+  ]
+ },
+ {
+  "schemaVersion": 1,
+  "id": "obs:immer-unioner:html:/spieler.php?getid=367:player",
+  "recordType": "player",
+  "providerRecordKey": "immer-unioner:html:/spieler.php?getid=367",
+  "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=367",
+  "parserVersion": "immerunioner-v1",
+  "locator": "title; profile URL",
+  "nameAsReported": "Christian Stuff",
+  "seasonsAsReported": null,
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "providerId": "immer-unioner",
+  "contentHash": "af34b6174e2f6e89760eff8bd4cb30fc46144f3e5ca9dfe9b28982dd62848074",
+  "runId": "2026-11-22T11-48-10-443Z-54f3c9",
+  "retired": null,
+  "sourceIds": [
+   "document-3cad5b9ea4698a9e826383ce"
+  ]
+ },
+ {
+  "schemaVersion": 1,
+  "id": "obs:immer-unioner:html:/spieler.php?getid=376:player",
+  "recordType": "player",
+  "providerRecordKey": "immer-unioner:html:/spieler.php?getid=376",
+  "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=376",
+  "parserVersion": "immerunioner-v1",
+  "locator": "title; profile URL",
+  "nameAsReported": "Christoph Menz",
+  "seasonsAsReported": null,
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "providerId": "immer-unioner",
+  "contentHash": "f9785de702235c4752a118bfa94a4da327c882bd0653a85f61f65399384bb31b",
+  "runId": "2026-11-22T11-48-10-443Z-54f3c9",
+  "retired": null,
+  "sourceIds": [
+   "document-d884e970ca0914e916a65332"
+  ]
+ },
+ {
+  "schemaVersion": 1,
+  "id": "obs:immer-unioner:html:/spieler.php?getid=401:player",
+  "recordType": "player",
+  "providerRecordKey": "immer-unioner:html:/spieler.php?getid=401",
+  "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=401",
+  "parserVersion": "immerunioner-v1",
+  "locator": "title; profile URL",
+  "nameAsReported": "Michael Parensen",
+  "seasonsAsReported": null,
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "providerId": "immer-unioner",
+  "contentHash": "2baedaa519db5cfb6b2a7e25b044c1523d24f4f4aedf4185a047f8552d514abb",
+  "runId": "2026-11-22T11-48-10-443Z-54f3c9",
+  "retired": null,
+  "sourceIds": [
+   "document-a79a18e5222bbea5f682dc7f"
+  ]
+ },
+ {
+  "schemaVersion": 1,
+  "id": "obs:immer-unioner:html:/spieler.php?getid=409:player",
+  "recordType": "player",
+  "providerRecordKey": "immer-unioner:html:/spieler.php?getid=409",
+  "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=409",
+  "parserVersion": "immerunioner-v1",
+  "locator": "title; profile URL",
+  "nameAsReported": "Christopher Quiring",
+  "seasonsAsReported": null,
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "providerId": "immer-unioner",
+  "contentHash": "666dc2fb2203e3659e809e028b4be4f45979cea8da973369766d8255a2265277",
+  "runId": "2026-11-22T11-48-10-443Z-54f3c9",
+  "retired": null,
+  "sourceIds": [
+   "document-f85213253f54b8d461a29723"
   ]
  },
  {
@@ -312,6 +466,72 @@
   "retired": null,
   "sourceIds": [
    "document-05fee253f9212a419a470700"
+  ]
+ },
+ {
+  "schemaVersion": 1,
+  "id": "obs:immer-unioner:html:/spieler.php?getid=531:player",
+  "recordType": "player",
+  "providerRecordKey": "immer-unioner:html:/spieler.php?getid=531",
+  "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=531",
+  "parserVersion": "immerunioner-v1",
+  "locator": "title; profile URL",
+  "nameAsReported": "Julian Ryerson",
+  "seasonsAsReported": null,
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "providerId": "immer-unioner",
+  "contentHash": "a0134e0aef96615bc86be0f9903c7fbc1faf0e44e6e1e68843295c2a1411ccc9",
+  "runId": "2026-11-22T11-48-10-443Z-54f3c9",
+  "retired": null,
+  "sourceIds": [
+   "document-19f3beb66dffede040daa245"
+  ]
+ },
+ {
+  "schemaVersion": 1,
+  "id": "obs:immer-unioner:html:/spieler.php?getid=574:player",
+  "recordType": "player",
+  "providerRecordKey": "immer-unioner:html:/spieler.php?getid=574",
+  "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=574",
+  "parserVersion": "immerunioner-v1",
+  "locator": "title; profile URL",
+  "nameAsReported": "Kevin Behrens",
+  "seasonsAsReported": null,
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "providerId": "immer-unioner",
+  "contentHash": "55c0dde34590b8a3c9d8842af155879c214c55b2d09fd80504560c56870a5116",
+  "runId": "2026-11-22T11-48-10-443Z-54f3c9",
+  "retired": null,
+  "sourceIds": [
+   "document-4537c083c7a5e1c829be3b80"
+  ]
+ },
+ {
+  "schemaVersion": 1,
+  "id": "obs:immer-unioner:html:/spieler.php?getid=590:player",
+  "recordType": "player",
+  "providerRecordKey": "immer-unioner:html:/spieler.php?getid=590",
+  "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=590",
+  "parserVersion": "immerunioner-v1",
+  "locator": "title; profile URL",
+  "nameAsReported": "Tim Skarke",
+  "seasonsAsReported": null,
+  "seasonAsReported": null,
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "providerId": "immer-unioner",
+  "contentHash": "f8067951964157cce6900d5871eb4ea84250313daabc0a6784b57c2308e4fc82",
+  "runId": "2026-11-22T11-48-10-443Z-54f3c9",
+  "retired": null,
+  "sourceIds": [
+   "document-43bde20fcfa03bd89ff1307b"
   ]
  },
  {
@@ -720,7 +940,7 @@
   "status": "candidate",
   "providerId": "union-official",
   "contentHash": "5890f72d7f6f6a00d6654170ddac72334e4804db12d42bfb9e3d7d1f29aa1603",
-  "runId": "2026-11-22T11-33-00-096Z-d38a3a",
+  "runId": "2026-11-22T11-48-10-443Z-54f3c9",
   "retired": null,
   "sourceIds": [
    "document-fe34fcf4f139aab0626afe4c"

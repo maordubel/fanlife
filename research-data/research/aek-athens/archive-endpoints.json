@@ -13,7 +13,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-11-21T16:50:39.691Z"
+  "checkedAt": "2026-11-22T11:40:43.516Z"
  },
  "aekpedia:/wp-json/wp/v2/pages": {
   "endpoint": "/wp-json/wp/v2/pages",
@@ -37,6 +37,6 @@
   "state": "blocked",
   "status": 403,
   "reason": "HTTP 403 — a refusal is an answer",
-  "checkedAt": "2026-10-16T08:19:57.176Z"
+  "checkedAt": "2026-11-22T11:40:44.005Z"
  }
 }

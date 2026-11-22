@@ -687,9 +687,72 @@
    "publisher": "LiveScore",
    "access": "available",
    "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4757618",
+   "title": "365Scores: St. Pauli 2-0 VfL Bochum, 2026-11-21",
+   "url": "https://webws.365scores.com/web/game/?gameId=4757618",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1813409",
+   "title": "LiveScore: St. Pauli 2-0 VfL Bochum, 2026-11-21 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1813409",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
   }
  ],
  "matches": [
+  {
+   "id": "a-m-2026-11-21-st-pauli-vfl-bochum",
+   "value": {
+    "name": "St. Pauli 2-0 VfL Bochum",
+    "on": "2026-11-21",
+    "competition": "Bundesliga 2",
+    "score": "2-0",
+    "venue": null,
+    "lineup": [
+     "Ben Voll",
+     "Tomoya Ando",
+     "Marcus Mathisen",
+     "David Nemeth",
+     "Lars Ritzka",
+     "Joel Chima Fujita",
+     "Eric Smith",
+     "Arkadiusz Pyrka",
+     "Branimir Hrgota",
+     "Abdoulie Ceesay",
+     "Youssoupha Niang"
+    ],
+    "bench": [
+     "Erik Ahlstrand",
+     "Sam Klein",
+     "Connor Metcalfe",
+     "Taichi Hara",
+     "Martijn Kaars",
+     "Dimitar Mitov",
+     "Adam Dzwigala",
+     "Rony Jansson",
+     "Matias Rasmussen"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4757618",
+    "ls-lu-1813409"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-st-pauli"
+  },
   {
    "id": "a-m-2026-11-08-fc-magdeburg-st-pauli",
    "value": {

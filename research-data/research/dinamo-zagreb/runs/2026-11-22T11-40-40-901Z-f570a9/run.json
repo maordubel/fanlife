@@ -1,0 +1,47 @@
+{
+ "schemaVersion": 1,
+ "id": "2026-11-22T11-40-40-901Z-f570a9",
+ "clubId": "dinamo-zagreb",
+ "startedAt": "2026-11-22T11:40:40.902Z",
+ "finishedAt": "2026-11-22T11:40:49.461Z",
+ "providers": [
+  "dinamo-official",
+  "bad-blue-boys",
+  "hns-semafor",
+  "wikipedia-dinamo-records",
+  "nft-dinamo"
+ ],
+ "state": "partial_budget",
+ "counts": {
+  "requests": 6,
+  "documentsRead": 56,
+  "newDocuments": 0,
+  "changedDocuments": 2,
+  "unchangedDocuments": 54,
+  "recordsExtracted": 11,
+  "blockedEndpoints": 1,
+  "budgetLeft": 34
+ },
+ "diagnostics": [
+  {
+   "code": "SOURCE_BLOCKED",
+   "providerId": "dinamo-official",
+   "url": "https://gnkdinamo.hr/en/club/history",
+   "message": "HTTP 403 — a refusal is an answer. Who refused (the source, or this server's network) is recorded as unknown until checked from another network."
+  },
+  {
+   "code": "NEEDS_PARSER",
+   "providerId": "hns-semafor",
+   "url": null,
+   "message": "No tested parser for HNS Semafor yet: documents are kept, nothing is extracted."
+  },
+  {
+   "code": "NEEDS_PARSER",
+   "providerId": "wikipedia-dinamo-records",
+   "url": null,
+   "message": "No tested parser for Wikipedia yet: documents are kept, nothing is extracted."
+  }
+ ],
+ "completeArchiveClaim": false,
+ "approvedForProduction": 0
+}

@@ -2,16 +2,8 @@
  {
   "id": "continue-aekpedia-posts",
   "priority": "P3",
-  "task": "AEKpedia posts: 5 page(s) read of 31; the scheduled task continues from the checkpoint.",
-  "taskHe": "AEKpedia posts: נקראו 5 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
-  "status": "queued",
-  "owner": null
- },
- {
-  "id": "continue-aekpedia-pages",
-  "priority": "P3",
-  "task": "AEKpedia pages: 1 page(s) read of 1; the scheduled task continues from the checkpoint.",
-  "taskHe": "AEKpedia pages: נקראו 1 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
+  "task": "AEKpedia posts: 18 page(s) read of 31; the scheduled task continues from the checkpoint.",
+  "taskHe": "AEKpedia posts: נקראו 18 עמודים; המשימה המתוזמנת ממשיכה מנקודת השמירה.",
   "status": "queued",
   "owner": null
  },

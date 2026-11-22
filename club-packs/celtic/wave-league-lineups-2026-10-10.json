@@ -583,9 +583,77 @@
    "publisher": "LiveScore",
    "access": "available",
    "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4741613",
+   "title": "365Scores: Celtic 4-1 St. Mirren, 2026-11-21",
+   "url": "https://webws.365scores.com/web/game/?gameId=4741613",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1792864",
+   "title": "LiveScore: Celtic 4-1 St. Mirren, 2026-11-21 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1792864",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
   }
  ],
  "matches": [
+  {
+   "id": "a-m-2026-11-21-celtic-st-mirren",
+   "value": {
+    "name": "Celtic 4-1 St. Mirren",
+    "on": "2026-11-21",
+    "competition": "Scottish Premiership",
+    "score": "4-1",
+    "venue": null,
+    "lineup": [
+     "Sam Johnstone",
+     "Kieran Tierney",
+     "Liam Scales",
+     "Cameron Carter-Vickers",
+     "Colby Donovan",
+     "Alex Oxlade-Chamberlain",
+     "Callum McGregor",
+     "Jota",
+     "Luke McCowan",
+     "Hyun-jun Yang",
+     "Camilo Duran"
+    ],
+    "bench": [
+     "Auston Trusty",
+     "Joel van den Berg",
+     "James Forrest",
+     "Shumaira Mheuka",
+     "Callum Osmand",
+     "Viljami Sinisalo",
+     "Dane Murray",
+     "Landon Emenalo",
+     "Kasper Hogh"
+    ],
+    "scorers": [
+     "Alex Oxlade-Chamberlain",
+     "Camilo Duran",
+     "Luke McCowan",
+     "Callum McGregor"
+    ]
+   },
+   "sources": [
+    "s365-4741613",
+    "ls-lu-1792864"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-celtic"
+  },
   {
    "id": "a-m-2026-11-08-celtic-kilmarnock",
    "value": {

@@ -6,7 +6,7 @@
    {
     "collection": "pages",
     "state": "partial_budget",
-    "pagesRead": 6,
+    "pagesRead": 25,
     "observedTotalDocuments": 19320,
     "observedTotalPages": 194,
     "queue": null,
@@ -14,7 +14,7 @@
    }
   ],
   "documents": 7050,
-  "historicalRecordsExtracted": 16,
+  "historicalRecordsExtracted": 91,
   "seasonReviews": [],
   "note": "Documents read is not historical coverage. Records extracted are candidates for review, not facts."
  },

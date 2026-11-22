@@ -1,0 +1,2 @@
+{"code":"FINGERPRINT_CHANGED","providerId":"celtic-official","url":null,"message":"html: seeds or follow rule changed — starting again."}
+{"code":"BUDGET_EXHAUSTED","providerId":"*","url":null,"message":"Budget used; the next run resumes from the checkpoint."}

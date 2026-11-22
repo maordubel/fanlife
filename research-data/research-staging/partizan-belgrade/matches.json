@@ -1,1 +1,1874 @@
-[]
+[
+ {
+  "on": "1946-08-25",
+  "home": "Partizan",
+  "away": "Pobeda",
+  "homeGoals": 1,
+  "awayGoals": 0,
+  "competition": "Yugoslav league",
+  "season": "1946/47",
+  "id": "obs:partizanopedia:html:/4647.html:match:1946-08-25:partizan:pobeda",
+  "sourceIds": [
+   "document-83b436bb7c1e4170ce4373dd"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4647.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1946-09-01",
+  "home": "Partizan",
+  "away": "Budućnost",
+  "homeGoals": 6,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1946/47",
+  "id": "obs:partizanopedia:html:/4647.html:match:1946-09-01:partizan:budućnost",
+  "sourceIds": [
+   "document-83b436bb7c1e4170ce4373dd"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4647.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1946-09-08",
+  "home": "Metalac",
+  "away": "Partizan",
+  "homeGoals": 1,
+  "awayGoals": 2,
+  "competition": "Yugoslav league",
+  "season": "1946/47",
+  "id": "obs:partizanopedia:html:/4647.html:match:1946-09-08:metalac:partizan",
+  "sourceIds": [
+   "document-83b436bb7c1e4170ce4373dd"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4647.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1946-09-15",
+  "home": "Partizan",
+  "away": "Železničar Niš",
+  "homeGoals": 5,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1946/47",
+  "id": "obs:partizanopedia:html:/4647.html:match:1946-09-15:partizan:železničar niš",
+  "sourceIds": [
+   "document-83b436bb7c1e4170ce4373dd"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4647.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1946-09-22",
+  "home": "Nafta",
+  "away": "Partizan",
+  "homeGoals": 0,
+  "awayGoals": 2,
+  "competition": "Yugoslav league",
+  "season": "1946/47",
+  "id": "obs:partizanopedia:html:/4647.html:match:1946-09-22:nafta:partizan",
+  "sourceIds": [
+   "document-83b436bb7c1e4170ce4373dd"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4647.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1946-10-27",
+  "home": "Partizan",
+  "away": "Dinamo",
+  "homeGoals": 5,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1946/47",
+  "id": "obs:partizanopedia:html:/4647.html:match:1946-10-27:partizan:dinamo",
+  "sourceIds": [
+   "document-83b436bb7c1e4170ce4373dd"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4647.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1946-11-03",
+  "home": "Kvarner",
+  "away": "Partizan",
+  "homeGoals": 0,
+  "awayGoals": 3,
+  "competition": "Yugoslav league",
+  "season": "1946/47",
+  "id": "obs:partizanopedia:html:/4647.html:match:1946-11-03:kvarner:partizan",
+  "sourceIds": [
+   "document-83b436bb7c1e4170ce4373dd"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4647.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1946-11-07",
+  "home": "Partizan",
+  "away": "Spartak",
+  "homeGoals": 1,
+  "awayGoals": 0,
+  "competition": "Yugoslav league",
+  "season": "1946/47",
+  "id": "obs:partizanopedia:html:/4647.html:match:1946-11-07:partizan:spartak",
+  "sourceIds": [
+   "document-83b436bb7c1e4170ce4373dd"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4647.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1946-12-01",
+  "home": "Hajduk",
+  "away": "Partizan",
+  "homeGoals": 0,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1946/47",
+  "id": "obs:partizanopedia:html:/4647.html:match:1946-12-01:hajduk:partizan",
+  "sourceIds": [
+   "document-83b436bb7c1e4170ce4373dd"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4647.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1946-12-15",
+  "home": "Partizan",
+  "away": "Ponciana",
+  "homeGoals": 2,
+  "awayGoals": 0,
+  "competition": "Yugoslav league",
+  "season": "1946/47",
+  "id": "obs:partizanopedia:html:/4647.html:match:1946-12-15:partizan:ponciana",
+  "sourceIds": [
+   "document-83b436bb7c1e4170ce4373dd"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4647.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1947-01-05",
+  "home": "Partizan",
+  "away": "Crvena zvezda",
+  "homeGoals": 3,
+  "awayGoals": 4,
+  "competition": "Yugoslav league",
+  "season": "1946/47",
+  "id": "obs:partizanopedia:html:/4647.html:match:1947-01-05:partizan:crvena zvezda",
+  "sourceIds": [
+   "document-83b436bb7c1e4170ce4373dd"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4647.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1947-02-16",
+  "home": "Lokomotiva",
+  "away": "Partizan",
+  "homeGoals": 1,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1946/47",
+  "id": "obs:partizanopedia:html:/4647.html:match:1947-02-16:lokomotiva:partizan",
+  "sourceIds": [
+   "document-83b436bb7c1e4170ce4373dd"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4647.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1947-02-23",
+  "home": "Željezničar",
+  "away": "Partizan",
+  "homeGoals": 0,
+  "awayGoals": 4,
+  "competition": "Yugoslav league",
+  "season": "1946/47",
+  "id": "obs:partizanopedia:html:/4647.html:match:1947-02-23:željezničar:partizan",
+  "sourceIds": [
+   "document-83b436bb7c1e4170ce4373dd"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4647.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1947-03-02",
+  "home": "Budućnost",
+  "away": "Partizan",
+  "homeGoals": 0,
+  "awayGoals": 3,
+  "competition": "Yugoslav league",
+  "season": "1946/47",
+  "id": "obs:partizanopedia:html:/4647.html:match:1947-03-02:budućnost:partizan",
+  "sourceIds": [
+   "document-83b436bb7c1e4170ce4373dd"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4647.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1947-03-09",
+  "home": "Ponciana",
+  "away": "Partizan",
+  "homeGoals": 1,
+  "awayGoals": 2,
+  "competition": "Yugoslav league",
+  "season": "1946/47",
+  "id": "obs:partizanopedia:html:/4647.html:match:1947-03-09:ponciana:partizan",
+  "sourceIds": [
+   "document-83b436bb7c1e4170ce4373dd"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4647.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1947-03-16",
+  "home": "Partizan",
+  "away": "Metalac",
+  "homeGoals": 2,
+  "awayGoals": 0,
+  "competition": "Yugoslav league",
+  "season": "1946/47",
+  "id": "obs:partizanopedia:html:/4647.html:match:1947-03-16:partizan:metalac",
+  "sourceIds": [
+   "document-83b436bb7c1e4170ce4373dd"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4647.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1947-03-23",
+  "home": "Pobeda",
+  "away": "Partizan",
+  "homeGoals": 2,
+  "awayGoals": 3,
+  "competition": "Yugoslav league",
+  "season": "1946/47",
+  "id": "obs:partizanopedia:html:/4647.html:match:1947-03-23:pobeda:partizan",
+  "sourceIds": [
+   "document-83b436bb7c1e4170ce4373dd"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4647.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1947-03-30",
+  "home": "Dinamo",
+  "away": "Partizan",
+  "homeGoals": 4,
+  "awayGoals": 2,
+  "competition": "Yugoslav league",
+  "season": "1946/47",
+  "id": "obs:partizanopedia:html:/4647.html:match:1947-03-30:dinamo:partizan",
+  "sourceIds": [
+   "document-83b436bb7c1e4170ce4373dd"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4647.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1947-04-13",
+  "home": "Partizan",
+  "away": "Lokomotiva",
+  "homeGoals": 4,
+  "awayGoals": 0,
+  "competition": "Yugoslav league",
+  "season": "1946/47",
+  "id": "obs:partizanopedia:html:/4647.html:match:1947-04-13:partizan:lokomotiva",
+  "sourceIds": [
+   "document-83b436bb7c1e4170ce4373dd"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4647.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1947-04-20",
+  "home": "Partizan",
+  "away": "Hajduk",
+  "homeGoals": 2,
+  "awayGoals": 0,
+  "competition": "Yugoslav league",
+  "season": "1946/47",
+  "id": "obs:partizanopedia:html:/4647.html:match:1947-04-20:partizan:hajduk",
+  "sourceIds": [
+   "document-83b436bb7c1e4170ce4373dd"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4647.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1947-04-27",
+  "home": "Crvena zvezda",
+  "away": "Partizan",
+  "homeGoals": 0,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1946/47",
+  "id": "obs:partizanopedia:html:/4647.html:match:1947-04-27:crvena zvezda:partizan",
+  "sourceIds": [
+   "document-83b436bb7c1e4170ce4373dd"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4647.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1947-05-18",
+  "home": "Partizan",
+  "away": "Kvarner",
+  "homeGoals": 5,
+  "awayGoals": 0,
+  "competition": "Yugoslav league",
+  "season": "1946/47",
+  "id": "obs:partizanopedia:html:/4647.html:match:1947-05-18:partizan:kvarner",
+  "sourceIds": [
+   "document-83b436bb7c1e4170ce4373dd"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4647.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1947-06-08",
+  "home": "14. oktobar",
+  "away": "Partizan",
+  "homeGoals": 1,
+  "awayGoals": 10,
+  "competition": "Yugoslav league",
+  "season": "1946/47",
+  "id": "obs:partizanopedia:html:/4647.html:match:1947-06-08:14 oktobar:partizan",
+  "sourceIds": [
+   "document-83b436bb7c1e4170ce4373dd"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4647.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1947-07-06",
+  "home": "Spartak",
+  "away": "Partizan",
+  "homeGoals": 0,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1946/47",
+  "id": "obs:partizanopedia:html:/4647.html:match:1947-07-06:spartak:partizan",
+  "sourceIds": [
+   "document-83b436bb7c1e4170ce4373dd"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4647.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1947-08-17",
+  "home": "Partizan",
+  "away": "Pobeda",
+  "homeGoals": 4,
+  "awayGoals": 0,
+  "competition": "Yugoslav league",
+  "season": "1947/48",
+  "id": "obs:partizanopedia:html:/4748.html:match:1947-08-17:partizan:pobeda",
+  "sourceIds": [
+   "document-78ec78cb10ebf8d10465006f"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4748.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1947-08-24",
+  "home": "Partizan",
+  "away": "Metalac",
+  "homeGoals": 0,
+  "awayGoals": 0,
+  "competition": "Yugoslav league",
+  "season": "1947/48",
+  "id": "obs:partizanopedia:html:/4748.html:match:1947-08-24:partizan:metalac",
+  "sourceIds": [
+   "document-78ec78cb10ebf8d10465006f"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4748.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1947-08-31",
+  "home": "Lokomotiva",
+  "away": "Partizan",
+  "homeGoals": 3,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1947/48",
+  "id": "obs:partizanopedia:html:/4748.html:match:1947-08-31:lokomotiva:partizan",
+  "sourceIds": [
+   "document-78ec78cb10ebf8d10465006f"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4748.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1947-09-07",
+  "home": "Partizan",
+  "away": "Torpedo",
+  "homeGoals": 3,
+  "awayGoals": 3,
+  "competition": "Yugoslav league",
+  "season": "1947/48",
+  "id": "obs:partizanopedia:html:/4748.html:match:1947-09-07:partizan:torpedo",
+  "sourceIds": [
+   "document-78ec78cb10ebf8d10465006f"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4748.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1947-09-18",
+  "home": "Spartak",
+  "away": "Partizan",
+  "homeGoals": 2,
+  "awayGoals": 3,
+  "competition": "Yugoslav league",
+  "season": "1947/48",
+  "id": "obs:partizanopedia:html:/4748.html:match:1947-09-18:spartak:partizan",
+  "sourceIds": [
+   "document-78ec78cb10ebf8d10465006f"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4748.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1947-09-21",
+  "home": "Partizan",
+  "away": "Dinamo",
+  "homeGoals": 3,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1947/48",
+  "id": "obs:partizanopedia:html:/4748.html:match:1947-09-21:partizan:dinamo",
+  "sourceIds": [
+   "document-78ec78cb10ebf8d10465006f"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4748.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1947-10-05",
+  "home": "Partizan",
+  "away": "Crvena zvezda",
+  "homeGoals": 1,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1947/48",
+  "id": "obs:partizanopedia:html:/4748.html:match:1947-10-05:partizan:crvena zvezda",
+  "sourceIds": [
+   "document-78ec78cb10ebf8d10465006f"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4748.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1947-10-08",
+  "home": "Partizan",
+  "away": "Ponciana",
+  "homeGoals": 5,
+  "awayGoals": 0,
+  "competition": "Yugoslav league",
+  "season": "1947/48",
+  "id": "obs:partizanopedia:html:/4748.html:match:1947-10-08:partizan:ponciana",
+  "sourceIds": [
+   "document-78ec78cb10ebf8d10465006f"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4748.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1947-10-26",
+  "home": "Hajduk",
+  "away": "Partizan",
+  "homeGoals": 2,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1947/48",
+  "id": "obs:partizanopedia:html:/4748.html:match:1947-10-26:hajduk:partizan",
+  "sourceIds": [
+   "document-78ec78cb10ebf8d10465006f"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4748.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1948-03-15",
+  "home": "Vardar",
+  "away": "Partizan",
+  "homeGoals": 4,
+  "awayGoals": 3,
+  "competition": "Yugoslav league",
+  "season": "1947/48",
+  "id": "obs:partizanopedia:html:/4748.html:match:1948-03-15:vardar:partizan",
+  "sourceIds": [
+   "document-78ec78cb10ebf8d10465006f"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4748.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1948-03-21",
+  "home": "Metalac",
+  "away": "Partizan",
+  "homeGoals": 1,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1947/48",
+  "id": "obs:partizanopedia:html:/4748.html:match:1948-03-21:metalac:partizan",
+  "sourceIds": [
+   "document-78ec78cb10ebf8d10465006f"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4748.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1948-03-28",
+  "home": "Partizan",
+  "away": "Lokomotiva",
+  "homeGoals": 2,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1947/48",
+  "id": "obs:partizanopedia:html:/4748.html:match:1948-03-28:partizan:lokomotiva",
+  "sourceIds": [
+   "document-78ec78cb10ebf8d10465006f"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4748.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1948-04-04",
+  "home": "Sarajevo",
+  "away": "Partizan",
+  "homeGoals": 1,
+  "awayGoals": 5,
+  "competition": "Yugoslav league",
+  "season": "1947/48",
+  "id": "obs:partizanopedia:html:/4748.html:match:1948-04-04:sarajevo:partizan",
+  "sourceIds": [
+   "document-78ec78cb10ebf8d10465006f"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4748.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1948-04-11",
+  "home": "Partizan",
+  "away": "Spartak",
+  "homeGoals": 3,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1947/48",
+  "id": "obs:partizanopedia:html:/4748.html:match:1948-04-11:partizan:spartak",
+  "sourceIds": [
+   "document-78ec78cb10ebf8d10465006f"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4748.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1948-04-18",
+  "home": "Dinamo",
+  "away": "Partizan",
+  "homeGoals": 1,
+  "awayGoals": 0,
+  "competition": "Yugoslav league",
+  "season": "1947/48",
+  "id": "obs:partizanopedia:html:/4748.html:match:1948-04-18:dinamo:partizan",
+  "sourceIds": [
+   "document-78ec78cb10ebf8d10465006f"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4748.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1948-04-27",
+  "home": "Crvena zvezda",
+  "away": "Partizan",
+  "homeGoals": 0,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1947/48",
+  "id": "obs:partizanopedia:html:/4748.html:match:1948-04-27:crvena zvezda:partizan",
+  "sourceIds": [
+   "document-78ec78cb10ebf8d10465006f"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4748.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1948-05-20",
+  "home": "Ponciana",
+  "away": "Partizan",
+  "homeGoals": 1,
+  "awayGoals": 8,
+  "competition": "Yugoslav league",
+  "season": "1947/48",
+  "id": "obs:partizanopedia:html:/4748.html:match:1948-05-20:ponciana:partizan",
+  "sourceIds": [
+   "document-78ec78cb10ebf8d10465006f"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4748.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1948-05-30",
+  "home": "Partizan",
+  "away": "Hajduk",
+  "homeGoals": 2,
+  "awayGoals": 0,
+  "competition": "Yugoslav league",
+  "season": "1947/48",
+  "id": "obs:partizanopedia:html:/4748.html:match:1948-05-30:partizan:hajduk",
+  "sourceIds": [
+   "document-78ec78cb10ebf8d10465006f"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4748.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1948-09-19",
+  "home": "Dinamo",
+  "away": "Partizan",
+  "homeGoals": 2,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1948/49",
+  "id": "obs:partizanopedia:html:/4849.html:match:1948-09-19:dinamo:partizan",
+  "sourceIds": [
+   "document-5b717cec304d23db7efc8943"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4849.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1948-09-26",
+  "home": "Partizan",
+  "away": "Lokomotiva",
+  "homeGoals": 2,
+  "awayGoals": 0,
+  "competition": "Yugoslav league",
+  "season": "1948/49",
+  "id": "obs:partizanopedia:html:/4849.html:match:1948-09-26:partizan:lokomotiva",
+  "sourceIds": [
+   "document-5b717cec304d23db7efc8943"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4849.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1948-10-06",
+  "home": "Sloga",
+  "away": "Partizan",
+  "homeGoals": 1,
+  "awayGoals": 0,
+  "competition": "Yugoslav league",
+  "season": "1948/49",
+  "id": "obs:partizanopedia:html:/4849.html:match:1948-10-06:sloga:partizan",
+  "sourceIds": [
+   "document-5b717cec304d23db7efc8943"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4849.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1948-10-10",
+  "home": "Partizan",
+  "away": "Budućnost",
+  "homeGoals": 2,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1948/49",
+  "id": "obs:partizanopedia:html:/4849.html:match:1948-10-10:partizan:budućnost",
+  "sourceIds": [
+   "document-5b717cec304d23db7efc8943"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4849.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1948-10-17",
+  "home": "Naša krila",
+  "away": "Partizan",
+  "homeGoals": 0,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1948/49",
+  "id": "obs:partizanopedia:html:/4849.html:match:1948-10-17:naša krila:partizan",
+  "sourceIds": [
+   "document-5b717cec304d23db7efc8943"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4849.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1948-10-24",
+  "home": "Partizan",
+  "away": "Metalac",
+  "homeGoals": 3,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1948/49",
+  "id": "obs:partizanopedia:html:/4849.html:match:1948-10-24:partizan:metalac",
+  "sourceIds": [
+   "document-5b717cec304d23db7efc8943"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4849.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1948-10-31",
+  "home": "Hajduk",
+  "away": "Partizan",
+  "homeGoals": 1,
+  "awayGoals": 3,
+  "competition": "Yugoslav league",
+  "season": "1948/49",
+  "id": "obs:partizanopedia:html:/4849.html:match:1948-10-31:hajduk:partizan",
+  "sourceIds": [
+   "document-5b717cec304d23db7efc8943"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4849.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1948-12-22",
+  "home": "Ponciana",
+  "away": "Partizan",
+  "homeGoals": 1,
+  "awayGoals": 4,
+  "competition": "Yugoslav league",
+  "season": "1948/49",
+  "id": "obs:partizanopedia:html:/4849.html:match:1948-12-22:ponciana:partizan",
+  "sourceIds": [
+   "document-5b717cec304d23db7efc8943"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4849.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1949-03-27",
+  "home": "Partizan",
+  "away": "Dinamo",
+  "homeGoals": 3,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1948/49",
+  "id": "obs:partizanopedia:html:/4849.html:match:1949-03-27:partizan:dinamo",
+  "sourceIds": [
+   "document-5b717cec304d23db7efc8943"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4849.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1949-04-03",
+  "home": "Lokomotiva",
+  "away": "Partizan",
+  "homeGoals": 0,
+  "awayGoals": 3,
+  "competition": "Yugoslav league",
+  "season": "1948/49",
+  "id": "obs:partizanopedia:html:/4849.html:match:1949-04-03:lokomotiva:partizan",
+  "sourceIds": [
+   "document-5b717cec304d23db7efc8943"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4849.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1949-04-10",
+  "home": "Partizan",
+  "away": "Sloga",
+  "homeGoals": 2,
+  "awayGoals": 0,
+  "competition": "Yugoslav league",
+  "season": "1948/49",
+  "id": "obs:partizanopedia:html:/4849.html:match:1949-04-10:partizan:sloga",
+  "sourceIds": [
+   "document-5b717cec304d23db7efc8943"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4849.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1949-05-01",
+  "home": "Crvena zvezda",
+  "away": "Partizan",
+  "homeGoals": 2,
+  "awayGoals": 2,
+  "competition": "Yugoslav league",
+  "season": "1948/49",
+  "id": "obs:partizanopedia:html:/4849.html:match:1949-05-01:crvena zvezda:partizan",
+  "sourceIds": [
+   "document-5b717cec304d23db7efc8943"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4849.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1949-05-08",
+  "home": "Partizan",
+  "away": "Hajduk",
+  "homeGoals": 2,
+  "awayGoals": 0,
+  "competition": "Yugoslav league",
+  "season": "1948/49",
+  "id": "obs:partizanopedia:html:/4849.html:match:1949-05-08:partizan:hajduk",
+  "sourceIds": [
+   "document-5b717cec304d23db7efc8943"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4849.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1949-05-15",
+  "home": "Metalac",
+  "away": "Partizan",
+  "homeGoals": 0,
+  "awayGoals": 3,
+  "competition": "Yugoslav league",
+  "season": "1948/49",
+  "id": "obs:partizanopedia:html:/4849.html:match:1949-05-15:metalac:partizan",
+  "sourceIds": [
+   "document-5b717cec304d23db7efc8943"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4849.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1949-05-18",
+  "home": "Partizan",
+  "away": "Ponciana",
+  "homeGoals": 4,
+  "awayGoals": 0,
+  "competition": "Yugoslav league",
+  "season": "1948/49",
+  "id": "obs:partizanopedia:html:/4849.html:match:1949-05-18:partizan:ponciana",
+  "sourceIds": [
+   "document-5b717cec304d23db7efc8943"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4849.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1949-05-22",
+  "home": "Budućnost",
+  "away": "Partizan",
+  "homeGoals": 2,
+  "awayGoals": 0,
+  "competition": "Yugoslav league",
+  "season": "1948/49",
+  "id": "obs:partizanopedia:html:/4849.html:match:1949-05-22:budućnost:partizan",
+  "sourceIds": [
+   "document-5b717cec304d23db7efc8943"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/4849.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1952-08-30",
+  "home": "Partizan",
+  "away": "Vojvodina",
+  "homeGoals": 4,
+  "awayGoals": 0,
+  "competition": "Yugoslav league",
+  "season": "1952/53",
+  "id": "obs:partizanopedia:html:/5253.html:match:1952-08-30:partizan:vojvodina",
+  "sourceIds": [
+   "document-34a17c3bc715bf2d10011547"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5253.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1952-09-14",
+  "home": "Partizan",
+  "away": "Lokomotiva",
+  "homeGoals": 3,
+  "awayGoals": 0,
+  "competition": "Yugoslav league",
+  "season": "1952/53",
+  "id": "obs:partizanopedia:html:/5253.html:match:1952-09-14:partizan:lokomotiva",
+  "sourceIds": [
+   "document-34a17c3bc715bf2d10011547"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5253.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1952-09-28",
+  "home": "Partizan",
+  "away": "Dinamo",
+  "homeGoals": 3,
+  "awayGoals": 2,
+  "competition": "Yugoslav league",
+  "season": "1952/53",
+  "id": "obs:partizanopedia:html:/5253.html:match:1952-09-28:partizan:dinamo",
+  "sourceIds": [
+   "document-34a17c3bc715bf2d10011547"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5253.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1952-10-12",
+  "home": "Zagreb",
+  "away": "Partizan",
+  "homeGoals": 0,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1952/53",
+  "id": "obs:partizanopedia:html:/5253.html:match:1952-10-12:zagreb:partizan",
+  "sourceIds": [
+   "document-34a17c3bc715bf2d10011547"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5253.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1952-10-19",
+  "home": "Partizan",
+  "away": "Vardar",
+  "homeGoals": 9,
+  "awayGoals": 2,
+  "competition": "Yugoslav league",
+  "season": "1952/53",
+  "id": "obs:partizanopedia:html:/5253.html:match:1952-10-19:partizan:vardar",
+  "sourceIds": [
+   "document-34a17c3bc715bf2d10011547"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5253.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1952-10-26",
+  "home": "Partizan",
+  "away": "BSK",
+  "homeGoals": 5,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1952/53",
+  "id": "obs:partizanopedia:html:/5253.html:match:1952-10-26:partizan:bsk",
+  "sourceIds": [
+   "document-34a17c3bc715bf2d10011547"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5253.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1952-11-16",
+  "home": "Partizan",
+  "away": "Velež",
+  "homeGoals": 4,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1952/53",
+  "id": "obs:partizanopedia:html:/5253.html:match:1952-11-16:partizan:velež",
+  "sourceIds": [
+   "document-34a17c3bc715bf2d10011547"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5253.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1952-11-23",
+  "home": "Crvena zvezda",
+  "away": "Partizan",
+  "homeGoals": 1,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1952/53",
+  "id": "obs:partizanopedia:html:/5253.html:match:1952-11-23:crvena zvezda:partizan",
+  "sourceIds": [
+   "document-34a17c3bc715bf2d10011547"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5253.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1952-12-07",
+  "home": "Partizan",
+  "away": "Sarajevo",
+  "homeGoals": 2,
+  "awayGoals": 2,
+  "competition": "Yugoslav league",
+  "season": "1952/53",
+  "id": "obs:partizanopedia:html:/5253.html:match:1952-12-07:partizan:sarajevo",
+  "sourceIds": [
+   "document-34a17c3bc715bf2d10011547"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5253.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1952-12-14",
+  "home": "Hajduk",
+  "away": "Partizan",
+  "homeGoals": 4,
+  "awayGoals": 2,
+  "competition": "Yugoslav league",
+  "season": "1952/53",
+  "id": "obs:partizanopedia:html:/5253.html:match:1952-12-14:hajduk:partizan",
+  "sourceIds": [
+   "document-34a17c3bc715bf2d10011547"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5253.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1953-03-08",
+  "home": "Vojvodina",
+  "away": "Partizan",
+  "homeGoals": 1,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1952/53",
+  "id": "obs:partizanopedia:html:/5253.html:match:1953-03-08:vojvodina:partizan",
+  "sourceIds": [
+   "document-34a17c3bc715bf2d10011547"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5253.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1953-03-15",
+  "home": "Lokomotiva",
+  "away": "Partizan",
+  "homeGoals": 2,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1952/53",
+  "id": "obs:partizanopedia:html:/5253.html:match:1953-03-15:lokomotiva:partizan",
+  "sourceIds": [
+   "document-34a17c3bc715bf2d10011547"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5253.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1953-03-22",
+  "home": "Dinamo",
+  "away": "Partizan",
+  "homeGoals": 1,
+  "awayGoals": 3,
+  "competition": "Yugoslav league",
+  "season": "1952/53",
+  "id": "obs:partizanopedia:html:/5253.html:match:1953-03-22:dinamo:partizan",
+  "sourceIds": [
+   "document-34a17c3bc715bf2d10011547"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5253.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1953-03-28",
+  "home": "Partizan",
+  "away": "Zagreb",
+  "homeGoals": 2,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1952/53",
+  "id": "obs:partizanopedia:html:/5253.html:match:1953-03-28:partizan:zagreb",
+  "sourceIds": [
+   "document-34a17c3bc715bf2d10011547"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5253.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1953-04-16",
+  "home": "Vardar",
+  "away": "Partizan",
+  "homeGoals": 3,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1952/53",
+  "id": "obs:partizanopedia:html:/5253.html:match:1953-04-16:vardar:partizan",
+  "sourceIds": [
+   "document-34a17c3bc715bf2d10011547"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5253.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1953-04-19",
+  "home": "BSK",
+  "away": "Partizan",
+  "homeGoals": 1,
+  "awayGoals": 0,
+  "competition": "Yugoslav league",
+  "season": "1952/53",
+  "id": "obs:partizanopedia:html:/5253.html:match:1953-04-19:bsk:partizan",
+  "sourceIds": [
+   "document-34a17c3bc715bf2d10011547"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5253.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1953-04-25",
+  "home": "Partizan",
+  "away": "Spartak",
+  "homeGoals": 6,
+  "awayGoals": 2,
+  "competition": "Yugoslav league",
+  "season": "1952/53",
+  "id": "obs:partizanopedia:html:/5253.html:match:1953-04-25:partizan:spartak",
+  "sourceIds": [
+   "document-34a17c3bc715bf2d10011547"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5253.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1953-05-24",
+  "home": "Velež",
+  "away": "Partizan",
+  "homeGoals": 0,
+  "awayGoals": 4,
+  "competition": "Yugoslav league",
+  "season": "1952/53",
+  "id": "obs:partizanopedia:html:/5253.html:match:1953-05-24:velež:partizan",
+  "sourceIds": [
+   "document-34a17c3bc715bf2d10011547"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5253.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1953-05-31",
+  "home": "Partizan",
+  "away": "Crvena zvezda",
+  "homeGoals": 2,
+  "awayGoals": 4,
+  "competition": "Yugoslav league",
+  "season": "1952/53",
+  "id": "obs:partizanopedia:html:/5253.html:match:1953-05-31:partizan:crvena zvezda",
+  "sourceIds": [
+   "document-34a17c3bc715bf2d10011547"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5253.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1953-06-14",
+  "home": "Sarajevo",
+  "away": "Partizan",
+  "homeGoals": 2,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1952/53",
+  "id": "obs:partizanopedia:html:/5253.html:match:1953-06-14:sarajevo:partizan",
+  "sourceIds": [
+   "document-34a17c3bc715bf2d10011547"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5253.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1953-06-21",
+  "home": "Partizan",
+  "away": "Hajduk",
+  "homeGoals": 2,
+  "awayGoals": 4,
+  "competition": "Yugoslav league",
+  "season": "1952/53",
+  "id": "obs:partizanopedia:html:/5253.html:match:1953-06-21:partizan:hajduk",
+  "sourceIds": [
+   "document-34a17c3bc715bf2d10011547"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5253.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1953-08-30",
+  "home": "Lokomotiva",
+  "away": "Partizan",
+  "homeGoals": 0,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1953/54",
+  "id": "obs:partizanopedia:html:/5354.html:match:1953-08-30:lokomotiva:partizan",
+  "sourceIds": [
+   "document-00957d921e57f7967057c6fa"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5354.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1953-09-06",
+  "home": "Partizan",
+  "away": "Sarajevo",
+  "homeGoals": 4,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1953/54",
+  "id": "obs:partizanopedia:html:/5354.html:match:1953-09-06:partizan:sarajevo",
+  "sourceIds": [
+   "document-00957d921e57f7967057c6fa"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5354.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1953-09-09",
+  "home": "Dinamo",
+  "away": "Partizan",
+  "homeGoals": 2,
+  "awayGoals": 0,
+  "competition": "Yugoslav league",
+  "season": "1953/54",
+  "id": "obs:partizanopedia:html:/5354.html:match:1953-09-09:dinamo:partizan",
+  "sourceIds": [
+   "document-00957d921e57f7967057c6fa"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5354.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1953-09-13",
+  "home": "BSK",
+  "away": "Partizan",
+  "homeGoals": 2,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1953/54",
+  "id": "obs:partizanopedia:html:/5354.html:match:1953-09-13:bsk:partizan",
+  "sourceIds": [
+   "document-00957d921e57f7967057c6fa"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5354.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1953-09-20",
+  "home": "Partizan",
+  "away": "Radnički (Beograd)",
+  "homeGoals": 1,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1953/54",
+  "id": "obs:partizanopedia:html:/5354.html:match:1953-09-20:partizan:radnički beograd",
+  "sourceIds": [
+   "document-00957d921e57f7967057c6fa"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5354.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1953-09-26",
+  "home": "Proleter (Osijek)",
+  "away": "Partizan",
+  "homeGoals": 2,
+  "awayGoals": 3,
+  "competition": "Yugoslav league",
+  "season": "1953/54",
+  "id": "obs:partizanopedia:html:/5354.html:match:1953-09-26:proleter osijek:partizan",
+  "sourceIds": [
+   "document-00957d921e57f7967057c6fa"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5354.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1953-10-07",
+  "home": "Spartak",
+  "away": "Partizan",
+  "homeGoals": 2,
+  "awayGoals": 6,
+  "competition": "Yugoslav league",
+  "season": "1953/54",
+  "id": "obs:partizanopedia:html:/5354.html:match:1953-10-07:spartak:partizan",
+  "sourceIds": [
+   "document-00957d921e57f7967057c6fa"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5354.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1953-10-10",
+  "home": "Partizan",
+  "away": "Vojvodina",
+  "homeGoals": 4,
+  "awayGoals": 2,
+  "competition": "Yugoslav league",
+  "season": "1953/54",
+  "id": "obs:partizanopedia:html:/5354.html:match:1953-10-10:partizan:vojvodina",
+  "sourceIds": [
+   "document-00957d921e57f7967057c6fa"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5354.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1953-11-01",
+  "home": "Rabotnički",
+  "away": "Partizan",
+  "homeGoals": 0,
+  "awayGoals": 8,
+  "competition": "Yugoslav league",
+  "season": "1953/54",
+  "id": "obs:partizanopedia:html:/5354.html:match:1953-11-01:rabotnički:partizan",
+  "sourceIds": [
+   "document-00957d921e57f7967057c6fa"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5354.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1953-11-15",
+  "home": "Vardar",
+  "away": "Partizan",
+  "homeGoals": 1,
+  "awayGoals": 2,
+  "competition": "Yugoslav league",
+  "season": "1953/54",
+  "id": "obs:partizanopedia:html:/5354.html:match:1953-11-15:vardar:partizan",
+  "sourceIds": [
+   "document-00957d921e57f7967057c6fa"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5354.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1953-11-29",
+  "home": "Odred (Ljubljana)",
+  "away": "Partizan",
+  "homeGoals": 2,
+  "awayGoals": 6,
+  "competition": "Yugoslav league",
+  "season": "1953/54",
+  "id": "obs:partizanopedia:html:/5354.html:match:1953-11-29:odred ljubljana:partizan",
+  "sourceIds": [
+   "document-00957d921e57f7967057c6fa"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5354.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1953-12-06",
+  "home": "Partizan",
+  "away": "Crvena zvezda",
+  "homeGoals": 7,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1953/54",
+  "id": "obs:partizanopedia:html:/5354.html:match:1953-12-06:partizan:crvena zvezda",
+  "sourceIds": [
+   "document-00957d921e57f7967057c6fa"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5354.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1953-12-13",
+  "home": "Partizan",
+  "away": "Lokomotiva",
+  "homeGoals": 2,
+  "awayGoals": 0,
+  "competition": "Yugoslav league",
+  "season": "1953/54",
+  "id": "obs:partizanopedia:html:/5354.html:match:1953-12-13:partizan:lokomotiva",
+  "sourceIds": [
+   "document-00957d921e57f7967057c6fa"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5354.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1953-12-20",
+  "home": "Sarajevo",
+  "away": "Partizan",
+  "homeGoals": 2,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1953/54",
+  "id": "obs:partizanopedia:html:/5354.html:match:1953-12-20:sarajevo:partizan",
+  "sourceIds": [
+   "document-00957d921e57f7967057c6fa"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5354.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1954-02-14",
+  "home": "Partizan",
+  "away": "Dinamo",
+  "homeGoals": 1,
+  "awayGoals": 0,
+  "competition": "Yugoslav league",
+  "season": "1953/54",
+  "id": "obs:partizanopedia:html:/5354.html:match:1954-02-14:partizan:dinamo",
+  "sourceIds": [
+   "document-00957d921e57f7967057c6fa"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5354.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1954-02-28",
+  "home": "Partizan",
+  "away": "Radnički (Beograd)",
+  "homeGoals": 4,
+  "awayGoals": 2,
+  "competition": "Yugoslav league",
+  "season": "1953/54",
+  "id": "obs:partizanopedia:html:/5354.html:match:1954-02-28:partizan:radnički beograd",
+  "sourceIds": [
+   "document-00957d921e57f7967057c6fa"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5354.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1954-03-04",
+  "home": "Partizan",
+  "away": "BSK",
+  "homeGoals": 1,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1953/54",
+  "id": "obs:partizanopedia:html:/5354.html:match:1954-03-04:partizan:bsk",
+  "sourceIds": [
+   "document-00957d921e57f7967057c6fa"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5354.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1954-03-07",
+  "home": "Partizan",
+  "away": "Proleter (Osijek)",
+  "homeGoals": 3,
+  "awayGoals": 3,
+  "competition": "Yugoslav league",
+  "season": "1953/54",
+  "id": "obs:partizanopedia:html:/5354.html:match:1954-03-07:partizan:proleter osijek",
+  "sourceIds": [
+   "document-00957d921e57f7967057c6fa"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5354.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1954-04-04",
+  "home": "Vojvodina",
+  "away": "Partizan",
+  "homeGoals": 1,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1953/54",
+  "id": "obs:partizanopedia:html:/5354.html:match:1954-04-04:vojvodina:partizan",
+  "sourceIds": [
+   "document-00957d921e57f7967057c6fa"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5354.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1954-04-07",
+  "home": "Hajduk",
+  "away": "Partizan",
+  "homeGoals": 2,
+  "awayGoals": 2,
+  "competition": "Yugoslav league",
+  "season": "1953/54",
+  "id": "obs:partizanopedia:html:/5354.html:match:1954-04-07:hajduk:partizan",
+  "sourceIds": [
+   "document-00957d921e57f7967057c6fa"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5354.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1954-04-11",
+  "home": "Partizan",
+  "away": "Rabotnički",
+  "homeGoals": 8,
+  "awayGoals": 0,
+  "competition": "Yugoslav league",
+  "season": "1953/54",
+  "id": "obs:partizanopedia:html:/5354.html:match:1954-04-11:partizan:rabotnički",
+  "sourceIds": [
+   "document-00957d921e57f7967057c6fa"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5354.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1954-04-14",
+  "home": "Partizan",
+  "away": "Spartak",
+  "homeGoals": 2,
+  "awayGoals": 1,
+  "competition": "Yugoslav league",
+  "season": "1953/54",
+  "id": "obs:partizanopedia:html:/5354.html:match:1954-04-14:partizan:spartak",
+  "sourceIds": [
+   "document-00957d921e57f7967057c6fa"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5354.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1954-04-18",
+  "home": "Partizan",
+  "away": "Vardar",
+  "homeGoals": 1,
+  "awayGoals": 0,
+  "competition": "Yugoslav league",
+  "season": "1953/54",
+  "id": "obs:partizanopedia:html:/5354.html:match:1954-04-18:partizan:vardar",
+  "sourceIds": [
+   "document-00957d921e57f7967057c6fa"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5354.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1954-04-25",
+  "home": "Partizan",
+  "away": "Odred",
+  "homeGoals": 2,
+  "awayGoals": 0,
+  "competition": "Yugoslav league",
+  "season": "1953/54",
+  "id": "obs:partizanopedia:html:/5354.html:match:1954-04-25:partizan:odred",
+  "sourceIds": [
+   "document-00957d921e57f7967057c6fa"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5354.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ },
+ {
+  "on": "1954-05-02",
+  "home": "Partizan",
+  "away": "Crvena zvezda",
+  "homeGoals": 2,
+  "awayGoals": 0,
+  "competition": "Yugoslav league",
+  "season": "1953/54",
+  "id": "obs:partizanopedia:html:/5354.html:match:1954-05-02:partizan:crvena zvezda",
+  "sourceIds": [
+   "document-00957d921e57f7967057c6fa"
+  ],
+  "sourceUrl": "https://partizanopedia.rs/5354.html",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate",
+  "locator": "modal match heading and date"
+ }
+]

@@ -1,0 +1,6284 @@
+{
+ "schemaVersion": 1,
+ "clubId": "raja-casablanca",
+ "contentLocale": "en",
+ "sources": [
+  {
+   "id": "daily-src-71de53473f809b30459f0713",
+   "url": "https://webws.365scores.com/web/game/?gameId=4882520",
+   "title": "365Scores: Raja Casablanca 2-0 Ittihad Tanger, 2026-11-08",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-c0b91e8e4f18c5488e837c15",
+   "url": "https://webws.365scores.com/web/game/?gameId=4882494",
+   "title": "365Scores: AS Far Rabat 1-2 Raja Casablanca, 2026-11-04",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-31445723dfeeec683e8beb8f",
+   "url": "https://webws.365scores.com/web/game/?gameId=4882507",
+   "title": "365Scores: RSB Berkane 2-0 Raja Casablanca, 2026-11-01",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-4a32fd6c8129e1987cce7cbf",
+   "url": "https://webws.365scores.com/web/game/?gameId=4882500",
+   "title": "365Scores: Raja Casablanca 1-1 Hassania Agadir, 2026-10-28",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-a5b021c6812e27a5cfc91c6a",
+   "url": "https://webws.365scores.com/web/game/?gameId=4870760",
+   "title": "365Scores: FUS Rabat 1-1 Raja Casablanca, 2026-10-13",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-4aa98953c62064f5aafafa3a",
+   "url": "https://webws.365scores.com/web/game/?gameId=4870753",
+   "title": "365Scores: Maghreb Fès 0-0 Raja Casablanca, 2026-10-08",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-f20392b8d33a78ef7079f70f",
+   "url": "https://webws.365scores.com/web/game/?gameId=4859476",
+   "title": "365Scores: Raja Casablanca 1-0 CR Khemis Zemamra, 2026-10-03",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-af7832db5bd722210170e4aa",
+   "url": "https://webws.365scores.com/web/game/?gameId=4754382",
+   "title": "365Scores: Olympique Safi 0-2 Raja Casablanca, 2026-07-05",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-b99dd0d75161ec8db218b222",
+   "url": "https://webws.365scores.com/web/game/?gameId=4749418",
+   "title": "365Scores: Raja Casablanca 2-0 Hassania Agadir, 2026-07-02",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-eb194984ff89849ba22dbaeb",
+   "url": "https://webws.365scores.com/web/game/?gameId=4745075",
+   "title": "365Scores: Ittihad Tanger 1-1 Raja Casablanca, 2026-06-28",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-eccbf64e4ed641e98c478cfb",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739954",
+   "title": "365Scores: Union Yacoub El Mansour 2-1 Raja Casablanca, 2026-06-25",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-762f6db910caff2d81ec9dc3",
+   "url": "https://webws.365scores.com/web/game/?gameId=4739949",
+   "title": "365Scores: Raja Casablanca 2-1 CODM Meknes, 2026-06-21",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-54d7c4ba008d8c609e848666",
+   "url": "https://webws.365scores.com/web/game/?gameId=4737135",
+   "title": "365Scores: CR Khemis Zemamra 3-4 Raja Casablanca, 2026-06-17",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-a950fcb4597def00a2256e01",
+   "url": "https://webws.365scores.com/web/game/?gameId=4733314",
+   "title": "365Scores: Raja Casablanca 1-1 US Touarga, 2026-06-14",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-5569edba7b17d491afb21c14",
+   "url": "https://webws.365scores.com/web/game/?gameId=4729834",
+   "title": "365Scores: Kawkab Marrakech 2-0 Raja Casablanca, 2026-06-09",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-d78663c45034d9dd24ea440b",
+   "url": "https://webws.365scores.com/web/game/?gameId=4716409",
+   "title": "365Scores: Raja Casablanca 0-1 RSB Berkane, 2026-06-03",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-1c31b5117a0889ae26f69378",
+   "url": "https://webws.365scores.com/web/game/?gameId=4716393",
+   "title": "365Scores: Olympique Dcheira 0-1 Raja Casablanca, 2026-05-24",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-d86eedd9255a0c6a07360900",
+   "url": "https://webws.365scores.com/web/game/?gameId=4708884",
+   "title": "365Scores: Raja Casablanca 0-1 Wydad AC, 2026-05-09",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-b71d6b8cea8b3c86c1255d1a",
+   "url": "https://webws.365scores.com/web/game/?gameId=4708878",
+   "title": "365Scores: Maghreb Fès 0-2 Raja Casablanca, 2026-05-06",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-6df328f377b1f55ae7b62ffd",
+   "url": "https://webws.365scores.com/web/game/?gameId=4708823",
+   "title": "365Scores: Raja Casablanca 1-0 El Jadida, 2026-05-03",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-3d7021bc8029efeecae8c145",
+   "url": "https://webws.365scores.com/web/game/?gameId=4704267",
+   "title": "365Scores: AS Far Rabat 2-1 Raja Casablanca, 2026-04-30",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-863ddb7df4af057b6085be16",
+   "url": "https://webws.365scores.com/web/game/?gameId=4703026",
+   "title": "365Scores: Raja Casablanca 4-1 FUS Rabat, 2026-04-26",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-141148aa1440577d31680a1c",
+   "url": "https://webws.365scores.com/web/game/?gameId=4671919",
+   "title": "365Scores: Raja Casablanca 2-0 Olympique Safi, 2026-03-07",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-12",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-1a70224bde876711055a8192",
+   "url": "https://webws.365scores.com/web/game/?gameId=4671914",
+   "title": "365Scores: Hassania Agadir 0-1 Raja Casablanca, 2026-03-01",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-80a0024b00c27a117d4aa657",
+   "url": "https://webws.365scores.com/web/game/?gameId=4671951",
+   "title": "365Scores: RSB Berkane 1-1 Raja Casablanca, 2026-02-25",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-85ae47d7612bf3f413b238c1",
+   "url": "https://webws.365scores.com/web/game/?gameId=4671898",
+   "title": "365Scores: Raja Casablanca 2-0 Ittihad Tanger, 2026-02-22",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-74d05638e82da0ed8450fe96",
+   "url": "https://webws.365scores.com/web/game/?gameId=4664975",
+   "title": "365Scores: Raja Casablanca 0-0 Union Yacoub El Mansour, 2026-02-13",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-5908f65f111edb4f43bb5278",
+   "url": "https://webws.365scores.com/web/game/?gameId=4664821",
+   "title": "365Scores: CODM Meknes 1-0 Raja Casablanca, 2026-02-08",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-a9a154179af339a21161f2d9",
+   "url": "https://webws.365scores.com/web/game/?gameId=4656181",
+   "title": "365Scores: Raja Casablanca 3-0 CR Khemis Zemamra, 2026-02-01",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-5427b0fc6fbd769410ee8d2c",
+   "url": "https://webws.365scores.com/web/game/?gameId=4656183",
+   "title": "365Scores: US Touarga 1-1 Raja Casablanca, 2026-01-25",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-24d4051866e87eee558ae948",
+   "url": "https://webws.365scores.com/web/game/?gameId=4628308",
+   "title": "365Scores: Al Ahli Jeddah 1-2 Raja Casablanca, 2025-12-12",
+   "publisher": "365Scores",
+   "checkedAt": "2026-11-13",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-322255f170e56ac24aa331c8",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385048774",
+   "title": "Khairallah Abdelkbir",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-7164f4938f480382fb49c2de",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382611762",
+   "title": "Hafid Abdessadek",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-2a99edb97fc6e2dc8ef39380",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382406688",
+   "title": "Zakaria Aboub",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-5f7ad43327eb0fc0fd77329c",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382613099",
+   "title": "Hicham Aboucherouane",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-7a2e5209c33e88fa87de368d",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382218517",
+   "title": "Hamza Abourazzouk",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-444d2624b2f407e0cea1a26a",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385096043",
+   "title": "Víctor Ábrego",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-23fdf35cdd5667345eabce4d",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385065824",
+   "title": "Mohammad Abu Zrayq",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-83da679ef6d357bae857514d",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382716422",
+   "title": "Youssef Achami",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-5b012244c82c92d644d31557",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1381509609",
+   "title": "Abderrahim Achchakir",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-53b4001a1d232f018ae96c60",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385062030",
+   "title": "Michael Agbekpornu",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-af7271e0c116c0c760157e7e",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382218445",
+   "title": "Hamid Ahadad",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-23bf781436ad5d699b1b36c6",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1381509266",
+   "title": "Abdelhaq Ait Laarif",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-ab1d42293348e585ceb972a5",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1386326369",
+   "title": "El Mehdi Al Harrar",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-b0801041edb6a4791129d9fd",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1384616608",
+   "title": "Saifeddine Alami",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-7f1bf466b1f0242c2c401449",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382847366",
+   "title": "Hassan Amcharrat",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-d6bd35b943d9e1dbba53430a",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385371928",
+   "title": "Ayoub El Amloud",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-613793c6571589a25327ccfa",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382696748",
+   "title": "Hicham El Amrani",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-ad5ed5a9c755892a8c1c1d23",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382006394",
+   "title": "Salaheddine Aqqal",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-b6f7f99b24786bf1cddab8d3",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1384927624",
+   "title": "Omar Arjoune",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-6552156ec14dfc94f898b5a9",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1383027315",
+   "title": "Bouchaib Arrassi",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-7076e3f056ddeec43a2a0005",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1386326586",
+   "title": "Khalid Askri",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-3d73ebde981d0e339a7bd413",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382944805",
+   "title": "Driss El-Asmar",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-315ead9f4120b82256ec938a",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385065521",
+   "title": "Mohamed Awal",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-97425d03e964fa959e78b382",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1383271650",
+   "title": "Khalil Azmi",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-6ae158ddc809e5704080a1e7",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385167389",
+   "title": "Abdelkrim Baadi",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-48fa995d4f853353e34e4ad0",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385242725",
+   "title": "Michael Babatunde",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-16532a6e38e28c129b19c157",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1381993001",
+   "title": "Abdessamad Badaoui",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-19bbe74471a2ed83bd6716a5",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1386701020",
+   "title": "2026–27 Raja CA season",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-681b451b350f0a5a1cf4548d",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1377443548",
+   "title": "2025–26 Raja CA season",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-0a25ee9e690f63fd80b36dc3",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1386700831",
+   "title": "2024–25 Raja CA season",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-85b16ba839c2188955aeffed",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1381210841",
+   "title": "2023–24 Raja CA season",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-3d99e92ddad40703120f0bd0",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1384765180",
+   "title": "2022–23 Raja CA season",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-71edcaea4709f127a0fcf265",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385007373",
+   "title": "2021–22 Raja CA season",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-8951edf12c810af7039198f2",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1384763995",
+   "title": "2020–21 Raja CA season",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-f3c9d89c7d927b16347d4f7c",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385159062",
+   "title": "2019–20 Raja CA season",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-8ed06eebed25cc6456b8e1a8",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1338366390",
+   "title": "2018–19 Raja CA season",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-abc63df8ad9f0fb126bc8554",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1352939536",
+   "title": "2017–18 Raja CA season",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-1ce68b40f326cc89b0798eb0",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1378542122",
+   "title": "2016–17 Raja CA season",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-22",
+   "access": "available"
+  }
+ ],
+ "archive": [
+  {
+   "id": "daily-match-d16d8d91c1866bb8de2411cb-moment",
+   "value": {
+    "name": "Raja Casablanca 2–0 Ittihad Tanger",
+    "on": "2026-11-08",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-71de53473f809b30459f0713"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-a3f31663d59ec405a9b9280a-moment",
+   "value": {
+    "name": "AS Far Rabat 1–2 Raja Casablanca",
+    "on": "2026-11-04",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c0b91e8e4f18c5488e837c15"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-f29635c0e0a6b1c9f025b468-moment",
+   "value": {
+    "name": "RSB Berkane 2–0 Raja Casablanca",
+    "on": "2026-11-01",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-31445723dfeeec683e8beb8f"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-46e56e807928cd85b47aa877-moment",
+   "value": {
+    "name": "Raja Casablanca 1–1 Hassania Agadir",
+    "on": "2026-10-28",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-4a32fd6c8129e1987cce7cbf"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-93cdc4fb438ad82ee291f4e3-moment",
+   "value": {
+    "name": "FUS Rabat 1–1 Raja Casablanca",
+    "on": "2026-10-13",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-a5b021c6812e27a5cfc91c6a"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-938cdf699c25ba118dac21af-moment",
+   "value": {
+    "name": "Maghreb Fès 0–0 Raja Casablanca",
+    "on": "2026-10-08",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-4aa98953c62064f5aafafa3a"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-3803fee55162b640cd40182e-moment",
+   "value": {
+    "name": "Raja Casablanca 1–0 CR Khemis Zemamra",
+    "on": "2026-10-03",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-f20392b8d33a78ef7079f70f"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-c7da7b1306edb5ce49a2b3fb-moment",
+   "value": {
+    "name": "Olympique Safi 0–2 Raja Casablanca",
+    "on": "2026-07-05",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-af7832db5bd722210170e4aa"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-dc4b29eecec04605ad33d12a-moment",
+   "value": {
+    "name": "Raja Casablanca 2–0 Hassania Agadir",
+    "on": "2026-07-02",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-b99dd0d75161ec8db218b222"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-7fb98978db152347dfd3ea58-moment",
+   "value": {
+    "name": "Ittihad Tanger 1–1 Raja Casablanca",
+    "on": "2026-06-28",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-eb194984ff89849ba22dbaeb"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-cdb1717bf18f8c31c760f50f-moment",
+   "value": {
+    "name": "Union Yacoub El Mansour 2–1 Raja Casablanca",
+    "on": "2026-06-25",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-eccbf64e4ed641e98c478cfb"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-ad1d631c3b1f5b60e5e78217-moment",
+   "value": {
+    "name": "Raja Casablanca 2–1 CODM Meknes",
+    "on": "2026-06-21",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-762f6db910caff2d81ec9dc3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-973715a2bade63c70685b90b-moment",
+   "value": {
+    "name": "CR Khemis Zemamra 3–4 Raja Casablanca",
+    "on": "2026-06-17",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-54d7c4ba008d8c609e848666"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-6088793ad29c9bf1f65cef19-moment",
+   "value": {
+    "name": "Raja Casablanca 1–1 US Touarga",
+    "on": "2026-06-14",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-a950fcb4597def00a2256e01"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-0381fdb05b777adc63a0ca7e-moment",
+   "value": {
+    "name": "Kawkab Marrakech 2–0 Raja Casablanca",
+    "on": "2026-06-09",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-5569edba7b17d491afb21c14"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-c16e7c8c856f1c4f707fc9f7-moment",
+   "value": {
+    "name": "Raja Casablanca 0–1 RSB Berkane",
+    "on": "2026-06-03",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-d78663c45034d9dd24ea440b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-555292f800d7a6368e03474e-moment",
+   "value": {
+    "name": "Olympique Dcheira 0–1 Raja Casablanca",
+    "on": "2026-05-24",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-1c31b5117a0889ae26f69378"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-6794e10d07249cc60107398b-moment",
+   "value": {
+    "name": "Raja Casablanca 0–1 Wydad AC",
+    "on": "2026-05-09",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-d86eedd9255a0c6a07360900"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-8f96e6ece5b2c8b61d21265a-moment",
+   "value": {
+    "name": "Maghreb Fès 0–2 Raja Casablanca",
+    "on": "2026-05-06",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-b71d6b8cea8b3c86c1255d1a"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-315119383d6230a257931378-moment",
+   "value": {
+    "name": "Raja Casablanca 1–0 El Jadida",
+    "on": "2026-05-03",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-6df328f377b1f55ae7b62ffd"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-456cf8fa638ae08f037b3bd2-moment",
+   "value": {
+    "name": "AS Far Rabat 2–1 Raja Casablanca",
+    "on": "2026-04-30",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-3d7021bc8029efeecae8c145"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-e3a7da77c0083cc3f396c99d-moment",
+   "value": {
+    "name": "Raja Casablanca 4–1 FUS Rabat",
+    "on": "2026-04-26",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-863ddb7df4af057b6085be16"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-b39ef95c6a94fa9d0b067055-moment",
+   "value": {
+    "name": "Raja Casablanca 2–0 Olympique Safi",
+    "on": "2026-03-07",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-141148aa1440577d31680a1c"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-a1c799a27949166b618ad98e-moment",
+   "value": {
+    "name": "Hassania Agadir 0–1 Raja Casablanca",
+    "on": "2026-03-01",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-1a70224bde876711055a8192"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-c7faab0e7efac4390b6c82c1-moment",
+   "value": {
+    "name": "RSB Berkane 1–1 Raja Casablanca",
+    "on": "2026-02-25",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-80a0024b00c27a117d4aa657"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-a71411d162f18f00509af8aa-moment",
+   "value": {
+    "name": "Raja Casablanca 2–0 Ittihad Tanger",
+    "on": "2026-02-22",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-85ae47d7612bf3f413b238c1"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-d38c970f027ecdb711e14d54-moment",
+   "value": {
+    "name": "Raja Casablanca 0–0 Union Yacoub El Mansour",
+    "on": "2026-02-13",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-74d05638e82da0ed8450fe96"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-41dc32e8b963b87c3c9dbd5d-moment",
+   "value": {
+    "name": "CODM Meknes 1–0 Raja Casablanca",
+    "on": "2026-02-08",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-5908f65f111edb4f43bb5278"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-380731ecc4fb3fbff82f1794-moment",
+   "value": {
+    "name": "Raja Casablanca 3–0 CR Khemis Zemamra",
+    "on": "2026-02-01",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-a9a154179af339a21161f2d9"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-29b46e98f3163a2681af5102-moment",
+   "value": {
+    "name": "US Touarga 1–1 Raja Casablanca",
+    "on": "2026-01-25",
+    "precision": "day",
+    "hint": "Botola Pro",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-5427b0fc6fbd769410ee8d2c"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-c73b4beefce4a7a328fdf8c0-moment",
+   "value": {
+    "name": "Al Ahli Jeddah 1–2 Raja Casablanca",
+    "on": "2025-12-12",
+    "precision": "day",
+    "hint": "Club Friendlies",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-24d4051866e87eee558ae948"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-235bf31f2b054578a32f5b75-moment",
+   "value": {
+    "name": "Raja CA 4–2 Raja Beni Mellal",
+    "on": "2025-03-29",
+    "precision": "day",
+    "hint": "Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0a25ee9e690f63fd80b36dc3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-1bd2949678e4cf57b6e1c1fc-moment",
+   "value": {
+    "name": "USM Oujda 2–1 Raja CA",
+    "on": "2025-04-05",
+    "precision": "day",
+    "hint": "Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0a25ee9e690f63fd80b36dc3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-75e7038f47d2376905f081fd-moment",
+   "value": {
+    "name": "Moghreb Tétouan 0–1 Raja CA",
+    "on": "2024-10-09",
+    "precision": "day",
+    "hint": "Excellence Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0a25ee9e690f63fd80b36dc3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-e3f8898adeb57353006e0be1-moment",
+   "value": {
+    "name": "Kénitra AC 0–1 Raja CA",
+    "on": "2024-10-13",
+    "precision": "day",
+    "hint": "Excellence Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0a25ee9e690f63fd80b36dc3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-aa2c0d955f9bda825c354368-moment",
+   "value": {
+    "name": "Raja CA 2–3 Olympique Khouribga",
+    "on": "2025-02-02",
+    "precision": "day",
+    "hint": "Excellence Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0a25ee9e690f63fd80b36dc3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-51c0a24d8f6cdcc8634f6b84-moment",
+   "value": {
+    "name": "Raja CA 1–0 Moghreb Tétouan",
+    "on": "2025-03-20",
+    "precision": "day",
+    "hint": "Excellence Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0a25ee9e690f63fd80b36dc3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-7a362f78fc4bbd48ebc9a174-moment",
+   "value": {
+    "name": "RCA Zemamra 1–2 Raja CA",
+    "on": "2025-06-02",
+    "precision": "day",
+    "hint": "Excellence Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0a25ee9e690f63fd80b36dc3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-37db4d97bcec2c85bbb09468-moment",
+   "value": {
+    "name": "Raja CA 2–1 COD Meknès",
+    "on": "2025-06-11",
+    "precision": "day",
+    "hint": "Excellence Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0a25ee9e690f63fd80b36dc3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-4649e42f4e3970b42b940b8a-moment",
+   "value": {
+    "name": "Olympique Dcheira 0–0 Raja CA",
+    "on": "2025-06-18",
+    "precision": "day",
+    "hint": "Excellence Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0a25ee9e690f63fd80b36dc3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-fe0380d55710f51d9880a104-moment",
+   "value": {
+    "name": "Wydad de Fès 1–1 Raja CA",
+    "on": "2025-06-24",
+    "precision": "day",
+    "hint": "Excellence Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0a25ee9e690f63fd80b36dc3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-1611a9655846ae6ea6649007-moment",
+   "value": {
+    "name": "Raja CA 2–0 OC Safi",
+    "on": "2024-03-30",
+    "precision": "day",
+    "hint": "Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-85b16ba839c2188955aeffed"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-198d59dda6e6925cf4af7218-moment",
+   "value": {
+    "name": "SCC Mohammédia 0–1 Raja CA",
+    "on": "2024-04-06",
+    "precision": "day",
+    "hint": "Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-85b16ba839c2188955aeffed"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-eb45c4af1294d5673db296a5-moment",
+   "value": {
+    "name": "Hassania Agadir 2–4 Raja CA",
+    "on": "2024-05-11",
+    "precision": "day",
+    "hint": "Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-85b16ba839c2188955aeffed"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-41320e29b5aced666201e8f3-moment",
+   "value": {
+    "name": "Raja CA 4–3 MC Oujda",
+    "on": "2024-06-25",
+    "precision": "day",
+    "hint": "Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-85b16ba839c2188955aeffed"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-99398509a9ac34d732bfb795-moment",
+   "value": {
+    "name": "Youssoufia Berrechid 0–1 Raja CA",
+    "on": "2023-03-15",
+    "precision": "day",
+    "hint": "Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-3d99e92ddad40703120f0bd0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-0825c8459f18015c878b4430-moment",
+   "value": {
+    "name": "Hassania Agadir 0–0 Raja CA",
+    "on": "2023-04-12",
+    "precision": "day",
+    "hint": "Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-3d99e92ddad40703120f0bd0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-c1762abbcc5226618a5e96cb-moment",
+   "value": {
+    "name": "SCC Mohammédia 1–2 Raja CA",
+    "on": "2023-05-14",
+    "precision": "day",
+    "hint": "Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-3d99e92ddad40703120f0bd0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-4b53a1155edf805d3f358734-moment",
+   "value": {
+    "name": "Wydad AC 0–1 Raja CA",
+    "on": "2023-07-09",
+    "precision": "day",
+    "hint": "Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-3d99e92ddad40703120f0bd0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-dc3b63874c9467c9578e77b5-moment",
+   "value": {
+    "name": "RS Berkane 1–0 Raja CA",
+    "on": "2023-07-15",
+    "precision": "day",
+    "hint": "Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-3d99e92ddad40703120f0bd0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-0d437a4fb88db8821e3c56b9-moment",
+   "value": {
+    "name": "JS Kasbah Tadla 2–1 Raja CA",
+    "on": "2022-04-06",
+    "precision": "day",
+    "hint": "Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-71edcaea4709f127a0fcf265"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-151d82e45b01bae82ccbb689-moment",
+   "value": {
+    "name": "Raja de Beni Mellal 3–3 Raja CA",
+    "on": "2022-04-10",
+    "precision": "day",
+    "hint": "Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-71edcaea4709f127a0fcf265"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-cc3993121fc6b79294e8ed17-moment",
+   "value": {
+    "name": "Wydad AC 2–0 Raja CA",
+    "on": "2022-07-07",
+    "precision": "day",
+    "hint": "Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-71edcaea4709f127a0fcf265"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-5bd33b75f3344cf9bea4eec3-moment",
+   "value": {
+    "name": "Raja CA 2–1 Wydad Fès",
+    "on": "2021-01-01",
+    "precision": "day",
+    "hint": "Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8951edf12c810af7039198f2"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-41b602a6ac3c7230917e8674-moment",
+   "value": {
+    "name": "Raja CA 2–0 US Sidi Kacem",
+    "on": "2021-03-03",
+    "precision": "day",
+    "hint": "Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8951edf12c810af7039198f2"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-4774a08605e5e9c66ca71e99-moment",
+   "value": {
+    "name": "AS FAR 1–1 Raja CA",
+    "on": "2021-05-05",
+    "precision": "day",
+    "hint": "Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8951edf12c810af7039198f2"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-ea91104e6c8d1824456568ef-moment",
+   "value": {
+    "name": "Raja CA 2–3 Renaissance Zemamra",
+    "on": "2019-08-31",
+    "precision": "day",
+    "hint": "Moroccan Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-f3c9d89c7d927b16347d4f7c"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-a08e52335be6d7f66192efa6-moment",
+   "value": {
+    "name": "Chabab Atlas Khénifra 0–1 Raja CA",
+    "on": "2018-09-02",
+    "precision": "day",
+    "hint": "Moroccan Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8ed06eebed25cc6456b8e1a8"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-ec70f44f1c1db4a0bf527c42-moment",
+   "value": {
+    "name": "Raja CA 3–1 KAC Kénitra",
+    "on": "2018-09-12",
+    "precision": "day",
+    "hint": "Moroccan Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8ed06eebed25cc6456b8e1a8"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-b5aafe8a170b65e36a951328-moment",
+   "value": {
+    "name": "Rapide Oued Zem 0–1 Raja CA",
+    "on": "2018-10-07",
+    "precision": "day",
+    "hint": "Moroccan Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8ed06eebed25cc6456b8e1a8"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-2f61ca0725d0ff2fa89bec9a-moment",
+   "value": {
+    "name": "Wydad de Fès 1–1 Raja CA",
+    "on": "2018-11-03",
+    "precision": "day",
+    "hint": "Moroccan Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8ed06eebed25cc6456b8e1a8"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-e89abefa90c3fc2e8fa1df50-moment",
+   "value": {
+    "name": "Raja CA 0–0 Olympique Dcheira",
+    "on": "2017-08-23",
+    "precision": "day",
+    "hint": "Moroccan Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-abc63df8ad9f0fb126bc8554"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-6f04e7175205ce300f7e5622-moment",
+   "value": {
+    "name": "Olympique Dcheira 1–4 Raja CA",
+    "on": "2017-08-27",
+    "precision": "day",
+    "hint": "Moroccan Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-abc63df8ad9f0fb126bc8554"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-46d1c5ba6fcec2859e44c240-moment",
+   "value": {
+    "name": "Raja CA 0–0 FUS Rabat",
+    "on": "2017-09-26",
+    "precision": "day",
+    "hint": "Moroccan Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-abc63df8ad9f0fb126bc8554"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-f374042c75cae630fcd6b794-moment",
+   "value": {
+    "name": "FUS Rabat 1–2 Raja CA",
+    "on": "2017-10-12",
+    "precision": "day",
+    "hint": "Moroccan Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-abc63df8ad9f0fb126bc8554"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-9f071530dcd8141a620da250-moment",
+   "value": {
+    "name": "Raja CA 5–1 Chabab Atlas Khénifra",
+    "on": "2017-10-15",
+    "precision": "day",
+    "hint": "Moroccan Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-abc63df8ad9f0fb126bc8554"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-d189798d53eee76ee6a1c990-moment",
+   "value": {
+    "name": "Chabab Atlas Khénifra 0–2 Raja CA",
+    "on": "2017-10-19",
+    "precision": "day",
+    "hint": "Moroccan Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-abc63df8ad9f0fb126bc8554"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-78eb360a4cd10e7dedc37a0c-moment",
+   "value": {
+    "name": "FAR Rabat 1–1 Raja CA",
+    "on": "2017-10-26",
+    "precision": "day",
+    "hint": "Moroccan Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-abc63df8ad9f0fb126bc8554"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-10c273a93088cbee62b1f029-moment",
+   "value": {
+    "name": "Raja CA 0–0 FAR Rabat",
+    "on": "2017-11-02",
+    "precision": "day",
+    "hint": "Moroccan Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-abc63df8ad9f0fb126bc8554"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-6566a51130be176101f8ecde-moment",
+   "value": {
+    "name": "Difaâ El Jadidi 1–1 Raja CA",
+    "on": "2017-11-18",
+    "precision": "day",
+    "hint": "Moroccan Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-abc63df8ad9f0fb126bc8554"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-a95f1a363d0bf7b8ff99d175-moment",
+   "value": {
+    "name": "Difaâ Hassani El Jadidi 1–1 Raja CA",
+    "on": "2016-06-12",
+    "precision": "day",
+    "hint": "Throne Cup",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-1ce68b40f326cc89b0798eb0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  }
+ ],
+ "matches": [
+  {
+   "id": "daily-match-d16d8d91c1866bb8de2411cb",
+   "value": {
+    "name": "Raja Casablanca 2–0 Ittihad Tanger",
+    "on": "2026-11-08",
+    "home": "Raja Casablanca",
+    "away": "Ittihad Tanger",
+    "score": "2-0",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "competition": "Botola Pro",
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Ismail Mokadem",
+     "Bouchaib Arrassi",
+     "Aymen Barkok",
+     "Mohamed Boulacsout",
+     "Ismail Khafi",
+     "Ayoub El Amloud",
+     "Mohamed Al Makahasi",
+     "Mohamed Abu Zraiq Sharara",
+     "Adam Ennaffati",
+     "Mathias Oyewusi"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-71de53473f809b30459f0713"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-a3f31663d59ec405a9b9280a",
+   "value": {
+    "name": "AS Far Rabat 1–2 Raja Casablanca",
+    "on": "2026-11-04",
+    "home": "AS Far Rabat",
+    "away": "Raja Casablanca",
+    "score": "1-2",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "competition": "Botola Pro",
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Chemseddine Knaidil",
+     "Ismail Mokadem",
+     "Bouchaib Arrassi",
+     "Aymen Barkok",
+     "Mohamed Boulacsout",
+     "Ayoub El Amloud",
+     "Mohamed Al Makahasi",
+     "Adam Ennaffati",
+     "Mathias Oyewusi",
+     "Ismail Khafi"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-c0b91e8e4f18c5488e837c15"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-f29635c0e0a6b1c9f025b468",
+   "value": {
+    "name": "RSB Berkane 2–0 Raja Casablanca",
+    "on": "2026-11-01",
+    "home": "RSB Berkane",
+    "away": "Raja Casablanca",
+    "score": "2-0",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "competition": "Botola Pro",
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Marian Huja",
+     "Badr Benoun",
+     "Bouchaib Arrassi",
+     "Chemseddine Knaidil",
+     "Ismail Mokadem",
+     "Ishak Zidani",
+     "Mohamed Boulacsout",
+     "Othmane Chraibi",
+     "Ismail Khafi",
+     "Mathias Oyewusi"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-31445723dfeeec683e8beb8f"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-46e56e807928cd85b47aa877",
+   "value": {
+    "name": "Raja Casablanca 1–1 Hassania Agadir",
+    "on": "2026-10-28",
+    "home": "Raja Casablanca",
+    "away": "Hassania Agadir",
+    "score": "1-1",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Mohamed Abu Zraiq Sharara",
+     "Aymen Barkok",
+     "Yahya Iguiz",
+     "Youness Dahmani",
+     "Othmane Chraibi",
+     "Mohamed Al Makahasi",
+     "Marian Huja",
+     "Chemseddine Knaidil",
+     "Badr Benoun",
+     "Mohamed Boulacsout",
+     "El Mehdi Al Harrar"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-4a32fd6c8129e1987cce7cbf"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-93cdc4fb438ad82ee291f4e3",
+   "value": {
+    "name": "FUS Rabat 1–1 Raja Casablanca",
+    "on": "2026-10-13",
+    "home": "FUS Rabat",
+    "away": "Raja Casablanca",
+    "score": "1-1",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "competition": "Botola Pro",
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Marian Huja",
+     "Chemseddine Knaidil",
+     "Aymen Barkok",
+     "Ishak Zidani",
+     "Felipinho",
+     "Badr Benoun",
+     "Younes Bakiz",
+     "Ayoub El Amloud",
+     "Adel Bettaieb",
+     "Mathias Oyewusi"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-a5b021c6812e27a5cfc91c6a"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-938cdf699c25ba118dac21af",
+   "value": {
+    "name": "Maghreb Fès 0–0 Raja Casablanca",
+    "on": "2026-10-08",
+    "home": "Maghreb Fès",
+    "away": "Raja Casablanca",
+    "score": "0-0",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "competition": "Botola Pro",
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Badr Benoun",
+     "Marian Huja",
+     "Chemseddine Knaidil",
+     "Mohamed Boulacsout",
+     "Michael Agbekpornu",
+     "Othmane Chraibi",
+     "Younes Bakiz",
+     "Youness Dahmani",
+     "Bilal Ould-Chikh",
+     "Adel Bettaieb"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-4aa98953c62064f5aafafa3a"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-3803fee55162b640cd40182e",
+   "value": {
+    "name": "Raja Casablanca 1–0 CR Khemis Zemamra",
+    "on": "2026-10-03",
+    "home": "Raja Casablanca",
+    "away": "CR Khemis Zemamra",
+    "score": "1-0",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "competition": "Botola Pro",
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Marian Huja",
+     "Chemseddine Knaidil",
+     "Mohamed Boulacsout",
+     "Youness Dahmani",
+     "Badr Benoun",
+     "Younes Bakiz",
+     "Othmane Chraibi",
+     "Adel Bettaieb",
+     "Michael Agbekpornu",
+     "Bilal Ould-Chikh"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-f20392b8d33a78ef7079f70f"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-c7da7b1306edb5ce49a2b3fb",
+   "value": {
+    "name": "Olympique Safi 0–2 Raja Casablanca",
+    "on": "2026-07-05",
+    "home": "Olympique Safi",
+    "away": "Raja Casablanca",
+    "score": "0-2",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Mohamed Al Makahasi",
+     "Aymen Barkok",
+     "Mohamed Boulacsout",
+     "Balla Moussa Conte",
+     "Yahya Iguiz",
+     "Abdellah Khafifi",
+     "Ayoub Maamouri",
+     "Mehdi Mchakhchekh",
+     "Ismail Mokadem",
+     "Pape Ousmane Sakho",
+     "Yassine Zoubir"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-af7832db5bd722210170e4aa"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-dc4b29eecec04605ad33d12a",
+   "value": {
+    "name": "Raja Casablanca 2–0 Hassania Agadir",
+    "on": "2026-07-02",
+    "home": "Raja Casablanca",
+    "away": "Hassania Agadir",
+    "score": "2-0",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Mohamed Al Makahasi",
+     "Aymen Barkok",
+     "Ayoub El Amloud",
+     "Hilal Ferdaoussi",
+     "Mathias Oyewusi",
+     "Ismail Khafi",
+     "Abdellah Khafifi",
+     "Amine Khammas",
+     "Mehdi Mchakhchekh",
+     "Ismail Mokadem",
+     "Yassine Zoubir"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-b99dd0d75161ec8db218b222"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-7fb98978db152347dfd3ea58",
+   "value": {
+    "name": "Ittihad Tanger 1–1 Raja Casablanca",
+    "on": "2026-06-28",
+    "home": "Ittihad Tanger",
+    "away": "Raja Casablanca",
+    "score": "1-1",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Mohamed Al Makahasi",
+     "Aymen Barkok",
+     "Badr Benoun",
+     "Ayoub El Amloud",
+     "Hilal Ferdaoussi",
+     "Khalid Kbiri Alaoui",
+     "Mathias Oyewusi",
+     "Ismail Khafi",
+     "Abdellah Khafifi",
+     "Amine Khammas",
+     "Ismail Mokadem"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-eb194984ff89849ba22dbaeb"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-cdb1717bf18f8c31c760f50f",
+   "value": {
+    "name": "Union Yacoub El Mansour 2–1 Raja Casablanca",
+    "on": "2026-06-25",
+    "home": "Union Yacoub El Mansour",
+    "away": "Raja Casablanca",
+    "score": "2-1",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Mohamed Al Makahasi",
+     "Aymen Barkok",
+     "Badr Benoun",
+     "Sabir Bougrine",
+     "Ayoub El Amloud",
+     "Khalid Kbiri Alaoui",
+     "Mathias Oyewusi",
+     "Ismail Khafi",
+     "Abdellah Khafifi",
+     "Azzedine Laftah",
+     "Ismail Mokadem"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-eccbf64e4ed641e98c478cfb"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-ad1d631c3b1f5b60e5e78217",
+   "value": {
+    "name": "Raja Casablanca 2–1 CODM Meknes",
+    "on": "2026-06-21",
+    "home": "Raja Casablanca",
+    "away": "CODM Meknes",
+    "score": "2-1",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Mohamed Al Makahasi",
+     "Abdelkarim Baadi",
+     "Aymen Barkok",
+     "Badr Benoun",
+     "Sabir Bougrine",
+     "Ayoub El Amloud",
+     "Besar Halimi",
+     "Khalid Kbiri Alaoui",
+     "Mathias Oyewusi",
+     "Abdellah Khafifi",
+     "Azzedine Laftah"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-762f6db910caff2d81ec9dc3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-973715a2bade63c70685b90b",
+   "value": {
+    "name": "CR Khemis Zemamra 3–4 Raja Casablanca",
+    "on": "2026-06-17",
+    "home": "CR Khemis Zemamra",
+    "away": "Raja Casablanca",
+    "score": "3-4",
+    "homeGoals": 3,
+    "awayGoals": 4,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Aymen Barkok",
+     "Sabir Bougrine",
+     "Mohamed Boulacsout",
+     "Ayoub El Amloud",
+     "Hilal Ferdaoussi",
+     "Khalid Kbiri Alaoui",
+     "Ismail Khafi",
+     "Azzedine Laftah",
+     "Ayoub Maamouri",
+     "Mehdi Mchakhchekh",
+     "Ismail Mokadem"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-54d7c4ba008d8c609e848666"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-6088793ad29c9bf1f65cef19",
+   "value": {
+    "name": "Raja Casablanca 1–1 US Touarga",
+    "on": "2026-06-14",
+    "home": "Raja Casablanca",
+    "away": "US Touarga",
+    "score": "1-1",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Mohamed Al Makahasi",
+     "Sabir Bougrine",
+     "Mohamed Boulacsout",
+     "Ayoub El Amloud",
+     "Adam Ennaffati",
+     "Hilal Ferdaoussi",
+     "Khalid Kbiri Alaoui",
+     "Mathias Oyewusi",
+     "Mehdi Mchakhchekh",
+     "Ismail Mokadem",
+     "Pape Ousmane Sakho"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-a950fcb4597def00a2256e01"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-0381fdb05b777adc63a0ca7e",
+   "value": {
+    "name": "Kawkab Marrakech 2–0 Raja Casablanca",
+    "on": "2026-06-09",
+    "home": "Kawkab Marrakech",
+    "away": "Raja Casablanca",
+    "score": "2-0",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Mohamed Al Makahasi",
+     "Aymen Barkok",
+     "Badr Benoun",
+     "Mohamed Boulacsout",
+     "Ayoub El Amloud",
+     "Adam Ennaffati",
+     "Besar Halimi",
+     "Khalid Kbiri Alaoui",
+     "Mathias Oyewusi",
+     "Abdellah Khafifi",
+     "Ismail Mokadem"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-5569edba7b17d491afb21c14"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-c16e7c8c856f1c4f707fc9f7",
+   "value": {
+    "name": "Raja Casablanca 0–1 RSB Berkane",
+    "on": "2026-06-03",
+    "home": "Raja Casablanca",
+    "away": "RSB Berkane",
+    "score": "0-1",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Mohamed Al Makahasi",
+     "Badr Benoun",
+     "Sabir Bougrine",
+     "Mohamed Boulacsout",
+     "Adam Ennaffati",
+     "Hilal Ferdaoussi",
+     "Khalid Kbiri Alaoui",
+     "Mathias Oyewusi",
+     "Abdellah Khafifi",
+     "Ismail Mokadem",
+     "Pape Ousmane Sakho"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-d78663c45034d9dd24ea440b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-555292f800d7a6368e03474e",
+   "value": {
+    "name": "Olympique Dcheira 0–1 Raja Casablanca",
+    "on": "2026-05-24",
+    "home": "Olympique Dcheira",
+    "away": "Raja Casablanca",
+    "score": "0-1",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Mohamed Abu Zraiq Sharara",
+     "El Mehdi Al Harrar",
+     "Mohamed Al Makahasi",
+     "Aymen Barkok",
+     "Badr Benoun",
+     "Mohamed Boulacsout",
+     "Besar Halimi",
+     "Mathias Oyewusi",
+     "Abdellah Khafifi",
+     "Ayoub Maamouri",
+     "Ismail Mokadem"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-1c31b5117a0889ae26f69378"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-6794e10d07249cc60107398b",
+   "value": {
+    "name": "Raja Casablanca 0–1 Wydad AC",
+    "on": "2026-05-09",
+    "home": "Raja Casablanca",
+    "away": "Wydad AC",
+    "score": "0-1",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Mohamed Al Makahasi",
+     "Mohamed Abu Zraiq Sharara",
+     "El Mehdi Al Harrar",
+     "Aymen Barkok",
+     "Badr Benoun",
+     "Sabir Bougrine",
+     "Ayoub El Amloud",
+     "Hilal Ferdaoussi",
+     "Mathias Oyewusi",
+     "Abdellah Khafifi",
+     "Ismail Mokadem"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-d86eedd9255a0c6a07360900"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-8f96e6ece5b2c8b61d21265a",
+   "value": {
+    "name": "Maghreb Fès 0–2 Raja Casablanca",
+    "on": "2026-05-06",
+    "home": "Maghreb Fès",
+    "away": "Raja Casablanca",
+    "score": "0-2",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "competition": "Botola Pro",
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Mohamed Al Makahasi",
+     "Aymen Barkok",
+     "Badr Benoun",
+     "Sabir Bougrine",
+     "Ayoub El Amloud",
+     "Adam Ennaffati",
+     "Hilal Ferdaoussi",
+     "Mathias Oyewusi",
+     "Abdellah Khafifi",
+     "Ismail Mokadem"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-b71d6b8cea8b3c86c1255d1a"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-315119383d6230a257931378",
+   "value": {
+    "name": "Raja Casablanca 1–0 El Jadida",
+    "on": "2026-05-03",
+    "home": "Raja Casablanca",
+    "away": "El Jadida",
+    "score": "1-0",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "competition": "Botola Pro",
+    "lineup": [
+     "Mohamed Abu Zraiq Sharara",
+     "El Mehdi Al Harrar",
+     "Mohamed Al Makahasi",
+     "Aymen Barkok",
+     "Badr Benoun",
+     "Mouad Dahak",
+     "Ayoub El Amloud",
+     "Adam Ennaffati",
+     "Ismail Khafi",
+     "Abdellah Khafifi",
+     "Amine Khammas"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-6df328f377b1f55ae7b62ffd"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-456cf8fa638ae08f037b3bd2",
+   "value": {
+    "name": "AS Far Rabat 2–1 Raja Casablanca",
+    "on": "2026-04-30",
+    "home": "AS Far Rabat",
+    "away": "Raja Casablanca",
+    "score": "2-1",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "competition": "Botola Pro",
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Mohamed Al Makahasi",
+     "Badr Benoun",
+     "Sabir Bougrine",
+     "Mohamed Boulacsout",
+     "Adam Ennaffati",
+     "Hilal Ferdaoussi",
+     "Mathias Oyewusi",
+     "Abdellah Khafifi",
+     "Ismail Mokadem",
+     "Pape Ousmane Sakho"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-3d7021bc8029efeecae8c145"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-e3a7da77c0083cc3f396c99d",
+   "value": {
+    "name": "Raja Casablanca 4–1 FUS Rabat",
+    "on": "2026-04-26",
+    "home": "Raja Casablanca",
+    "away": "FUS Rabat",
+    "score": "4-1",
+    "homeGoals": 4,
+    "awayGoals": 1,
+    "competition": "Botola Pro",
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Mohamed Al Makahasi",
+     "Badr Benoun",
+     "Sabir Bougrine",
+     "Mohamed Boulacsout",
+     "Adam Ennaffati",
+     "Hilal Ferdaoussi",
+     "Mathias Oyewusi",
+     "Abdellah Khafifi",
+     "Ismail Mokadem",
+     "Pape Ousmane Sakho"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-863ddb7df4af057b6085be16"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-b39ef95c6a94fa9d0b067055",
+   "value": {
+    "name": "Raja Casablanca 2–0 Olympique Safi",
+    "on": "2026-03-07",
+    "home": "Raja Casablanca",
+    "away": "Olympique Safi",
+    "score": "2-0",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "competition": "Botola Pro",
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Mohamed Boulacsout",
+     "Badr Benoun",
+     "Abdellah Khafifi",
+     "Ismail Mokadem",
+     "Hilal Ferdaoussi",
+     "Mohamed Al Makahasi",
+     "Sabir Bougrine",
+     "Mohamed Abu Zraiq Sharara",
+     "Pape Ousmane Sakho",
+     "Mathias Oyewusi"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-141148aa1440577d31680a1c"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-12",
+   "approvedAt": "2026-11-12",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-a1c799a27949166b618ad98e",
+   "value": {
+    "name": "Hassania Agadir 0–1 Raja Casablanca",
+    "on": "2026-03-01",
+    "home": "Hassania Agadir",
+    "away": "Raja Casablanca",
+    "score": "0-1",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "competition": "Botola Pro",
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Ismail Mokadem",
+     "Badr Benoun",
+     "Abdellah Khafifi",
+     "Mohamed Boulacsout",
+     "Sabir Bougrine",
+     "Hilal Ferdaoussi",
+     "Mohamed Al Makahasi",
+     "Mohamed Abu Zraiq Sharara",
+     "Mathias Oyewusi",
+     "Pape Ousmane Sakho"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-1a70224bde876711055a8192"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-c7faab0e7efac4390b6c82c1",
+   "value": {
+    "name": "RSB Berkane 1–1 Raja Casablanca",
+    "on": "2026-02-25",
+    "home": "RSB Berkane",
+    "away": "Raja Casablanca",
+    "score": "1-1",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "competition": "Botola Pro",
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Ismail Mokadem",
+     "Badr Benoun",
+     "Abdellah Khafifi",
+     "Amine Khammas",
+     "Abdelkarim Baadi",
+     "Othmane Chraibi",
+     "Besar Halimi",
+     "Mohamed Al Makahasi",
+     "Ismail Khafi",
+     "Mathias Oyewusi"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-80a0024b00c27a117d4aa657"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-a71411d162f18f00509af8aa",
+   "value": {
+    "name": "Raja Casablanca 2–0 Ittihad Tanger",
+    "on": "2026-02-22",
+    "home": "Raja Casablanca",
+    "away": "Ittihad Tanger",
+    "score": "2-0",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "competition": "Botola Pro",
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Ismail Mokadem",
+     "Badr Benoun",
+     "Abdellah Khafifi",
+     "Amine Khammas",
+     "Mohamed Boulacsout",
+     "Othmane Chraibi",
+     "Besar Halimi",
+     "Mouad Dahak",
+     "Pape Ousmane Sakho",
+     "Mathias Oyewusi"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-85ae47d7612bf3f413b238c1"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-d38c970f027ecdb711e14d54",
+   "value": {
+    "name": "Raja Casablanca 0–0 Union Yacoub El Mansour",
+    "on": "2026-02-13",
+    "home": "Raja Casablanca",
+    "away": "Union Yacoub El Mansour",
+    "score": "0-0",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "competition": "Botola Pro",
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Ayoub El Amloud",
+     "Ismail Mokadem",
+     "Badr Benoun",
+     "Amine Khammas",
+     "Besar Halimi",
+     "Hilal Ferdaoussi",
+     "Sabir Bougrine",
+     "Mohamed Abu Zraiq Sharara",
+     "Adam Ennaffati",
+     "Mathias Oyewusi"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-74d05638e82da0ed8450fe96"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-41dc32e8b963b87c3c9dbd5d",
+   "value": {
+    "name": "CODM Meknes 1–0 Raja Casablanca",
+    "on": "2026-02-08",
+    "home": "CODM Meknes",
+    "away": "Raja Casablanca",
+    "score": "1-0",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "competition": "Botola Pro",
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Mohamed Boulacsout",
+     "Ismail Mokadem",
+     "Badr Benoun",
+     "Amine Khammas",
+     "Othmane Chraibi",
+     "Aymen Barkok",
+     "Sabir Bougrine",
+     "Mohamed Abu Zraiq Sharara",
+     "Adam Ennaffati",
+     "Mathias Oyewusi"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-5908f65f111edb4f43bb5278"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-380731ecc4fb3fbff82f1794",
+   "value": {
+    "name": "Raja Casablanca 3–0 CR Khemis Zemamra",
+    "on": "2026-02-01",
+    "home": "Raja Casablanca",
+    "away": "CR Khemis Zemamra",
+    "score": "3-0",
+    "homeGoals": 3,
+    "awayGoals": 0,
+    "competition": "Botola Pro",
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Abdelkarim Baadi",
+     "Ismail Mokadem",
+     "Abdellah Khafifi",
+     "Amine Khammas",
+     "Othmane Chraibi",
+     "Aymen Barkok",
+     "Sabir Bougrine",
+     "Mohamed Abu Zraiq Sharara",
+     "Adam Ennaffati",
+     "Mathias Oyewusi"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-a9a154179af339a21161f2d9"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-29b46e98f3163a2681af5102",
+   "value": {
+    "name": "US Touarga 1–1 Raja Casablanca",
+    "on": "2026-01-25",
+    "home": "US Touarga",
+    "away": "Raja Casablanca",
+    "score": "1-1",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "competition": "Botola Pro",
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Mohamed Boulacsout",
+     "Abdellah Khafifi",
+     "Ismail Mokadem",
+     "Amine Khammas",
+     "Othmane Chraibi",
+     "Mohamed Al Makahasi",
+     "Sabir Bougrine",
+     "Mohamed Abu Zraiq Sharara",
+     "Mathias Oyewusi",
+     "Mouad Dahak"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-5427b0fc6fbd769410ee8d2c"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-c73b4beefce4a7a328fdf8c0",
+   "value": {
+    "name": "Al Ahli Jeddah 1–2 Raja Casablanca",
+    "on": "2025-12-12",
+    "home": "Al Ahli Jeddah",
+    "away": "Raja Casablanca",
+    "score": "1-2",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "competition": "Club Friendlies",
+    "lineup": [
+     "El Mehdi Al Harrar",
+     "Abdellah Khafifi",
+     "Ismail Mokadem",
+     "Abdelkarim Baadi",
+     "Bouchaib Arrassi",
+     "Othmane Chraibi",
+     "Mohamed Al Makahasi",
+     "Pape Ousmane Sakho",
+     "Adam Ennaffati",
+     "Mouad Dahak",
+     "Younes Najari"
+    ],
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-24d4051866e87eee558ae948"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-13",
+   "approvedAt": "2026-11-13",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-235bf31f2b054578a32f5b75",
+   "value": {
+    "name": "Raja CA 4–2 Raja Beni Mellal",
+    "on": "2025-03-29",
+    "home": "Raja CA",
+    "away": "Raja Beni Mellal",
+    "score": "4-2",
+    "homeGoals": 4,
+    "awayGoals": 2,
+    "competition": "Throne Cup",
+    "season": "2024/25",
+    "scorers": [
+     {
+      "name": "Adam Ennafati",
+      "minute": "2"
+     },
+     {
+      "name": "Sabir Bougrine",
+      "minute": "9"
+     },
+     {
+      "name": "Abderahmane Soussi",
+      "minute": "79"
+     },
+     {
+      "name": "Bouchaib Arrassi",
+      "minute": "90+9"
+     }
+    ],
+    "venue": "Stade Mohamed V",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0a25ee9e690f63fd80b36dc3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-1bd2949678e4cf57b6e1c1fc",
+   "value": {
+    "name": "USM Oujda 2–1 Raja CA",
+    "on": "2025-04-05",
+    "home": "USM Oujda",
+    "away": "Raja CA",
+    "score": "2-1",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "competition": "Throne Cup",
+    "season": "2024/25",
+    "scorers": [
+     {
+      "name": "Adam Ennafati",
+      "minute": "72"
+     }
+    ],
+    "venue": "Honor Stadium",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0a25ee9e690f63fd80b36dc3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-75e7038f47d2376905f081fd",
+   "value": {
+    "name": "Moghreb Tétouan 0–1 Raja CA",
+    "on": "2024-10-09",
+    "home": "Moghreb Tétouan",
+    "away": "Raja CA",
+    "score": "0-1",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "competition": "Excellence Cup",
+    "season": "2024/25",
+    "scorers": [
+     {
+      "name": "Younes Najari",
+      "minute": "14"
+     }
+    ],
+    "venue": "Saniat Rmel Stadium",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0a25ee9e690f63fd80b36dc3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-e3f8898adeb57353006e0be1",
+   "value": {
+    "name": "Kénitra AC 0–1 Raja CA",
+    "on": "2024-10-13",
+    "home": "Kénitra AC",
+    "away": "Raja CA",
+    "score": "0-1",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "competition": "Excellence Cup",
+    "season": "2024/25",
+    "scorers": [
+     {
+      "name": "Abderahmane Soussi",
+      "minute": "10"
+     }
+    ],
+    "venue": "Kenitra Municipal Stadium",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0a25ee9e690f63fd80b36dc3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-aa2c0d955f9bda825c354368",
+   "value": {
+    "name": "Raja CA 2–3 Olympique Khouribga",
+    "on": "2025-02-02",
+    "home": "Raja CA",
+    "away": "Olympique Khouribga",
+    "score": "2-3",
+    "homeGoals": 2,
+    "awayGoals": 3,
+    "competition": "Excellence Cup",
+    "season": "2024/25",
+    "scorers": [
+     {
+      "name": "Anouar Aalam",
+      "minute": "4"
+     },
+     {
+      "name": "Mansour Nachet",
+      "minute": "90+10"
+     }
+    ],
+    "venue": "Larbi Zaouli Stadium",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0a25ee9e690f63fd80b36dc3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-51c0a24d8f6cdcc8634f6b84",
+   "value": {
+    "name": "Raja CA 1–0 Moghreb Tétouan",
+    "on": "2025-03-20",
+    "home": "Raja CA",
+    "away": "Moghreb Tétouan",
+    "score": "1-0",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "competition": "Excellence Cup",
+    "season": "2024/25",
+    "scorers": [
+     {
+      "name": "Azzeddine Laftah",
+      "minute": "65"
+     }
+    ],
+    "venue": "Larbi Zaouli Stadium",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0a25ee9e690f63fd80b36dc3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-7a362f78fc4bbd48ebc9a174",
+   "value": {
+    "name": "RCA Zemamra 1–2 Raja CA",
+    "on": "2025-06-02",
+    "home": "RCA Zemamra",
+    "away": "Raja CA",
+    "score": "1-2",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "competition": "Excellence Cup",
+    "season": "2024/25",
+    "scorers": [
+     {
+      "name": "Azzeddine Laftah",
+      "minute": "39"
+     },
+     {
+      "name": "Mansour Nachet",
+      "minute": "76"
+     }
+    ],
+    "venue": "Stade Ahmed Choukri",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0a25ee9e690f63fd80b36dc3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-37db4d97bcec2c85bbb09468",
+   "value": {
+    "name": "Raja CA 2–1 COD Meknès",
+    "on": "2025-06-11",
+    "home": "Raja CA",
+    "away": "COD Meknès",
+    "score": "2-1",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "competition": "Excellence Cup",
+    "season": "2024/25",
+    "venue": "Stade Larbi Zaouli",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0a25ee9e690f63fd80b36dc3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-4649e42f4e3970b42b940b8a",
+   "value": {
+    "name": "Olympique Dcheira 0–0 Raja CA",
+    "on": "2025-06-18",
+    "home": "Olympique Dcheira",
+    "away": "Raja CA",
+    "score": "0-0",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "competition": "Excellence Cup",
+    "season": "2024/25",
+    "venue": "18 November Stadium",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0a25ee9e690f63fd80b36dc3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-fe0380d55710f51d9880a104",
+   "value": {
+    "name": "Wydad de Fès 1–1 Raja CA",
+    "on": "2025-06-24",
+    "home": "Wydad de Fès",
+    "away": "Raja CA",
+    "score": "1-1",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "competition": "Excellence Cup",
+    "season": "2024/25",
+    "scorers": [
+     {
+      "name": "Abdellah Azrour",
+      "minute": "79"
+     }
+    ],
+    "venue": "Stade El Massira",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0a25ee9e690f63fd80b36dc3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-1611a9655846ae6ea6649007",
+   "value": {
+    "name": "Raja CA 2–0 OC Safi",
+    "on": "2024-03-30",
+    "home": "Raja CA",
+    "away": "OC Safi",
+    "score": "2-0",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "competition": "Throne Cup",
+    "season": "2023/24",
+    "scorers": [
+     {
+      "name": "Ismael Mokadem",
+      "minute": "90"
+     }
+    ],
+    "venue": "Stade Municipal de Berrechid",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-85b16ba839c2188955aeffed"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-198d59dda6e6925cf4af7218",
+   "value": {
+    "name": "SCC Mohammédia 0–1 Raja CA",
+    "on": "2024-04-06",
+    "home": "SCC Mohammédia",
+    "away": "Raja CA",
+    "score": "0-1",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "competition": "Throne Cup",
+    "season": "2023/24",
+    "scorers": [
+     {
+      "name": "Youssef Belammari",
+      "minute": "42"
+     }
+    ],
+    "venue": "Stade El Bachir",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-85b16ba839c2188955aeffed"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-eb45c4af1294d5673db296a5",
+   "value": {
+    "name": "Hassania Agadir 2–4 Raja CA",
+    "on": "2024-05-11",
+    "home": "Hassania Agadir",
+    "away": "Raja CA",
+    "score": "2-4",
+    "homeGoals": 2,
+    "awayGoals": 4,
+    "competition": "Throne Cup",
+    "season": "2023/24",
+    "scorers": [
+     {
+      "name": "El Mehdi Maouhoub",
+      "minute": "10"
+     },
+     {
+      "name": "Adam Ennafati",
+      "minute": "45"
+     },
+     {
+      "name": "Nawfel Zerhouni",
+      "minute": "73"
+     }
+    ],
+    "venue": "Stade Adrar",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-85b16ba839c2188955aeffed"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-41320e29b5aced666201e8f3",
+   "value": {
+    "name": "Raja CA 4–3 MC Oujda",
+    "on": "2024-06-25",
+    "home": "Raja CA",
+    "away": "MC Oujda",
+    "score": "4-3",
+    "homeGoals": 4,
+    "awayGoals": 3,
+    "competition": "Throne Cup",
+    "season": "2023/24",
+    "venue": "Stade Adrar",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-85b16ba839c2188955aeffed"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-99398509a9ac34d732bfb795",
+   "value": {
+    "name": "Youssoufia Berrechid 0–1 Raja CA",
+    "on": "2023-03-15",
+    "home": "Youssoufia Berrechid",
+    "away": "Raja CA",
+    "score": "0-1",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "competition": "Throne Cup",
+    "season": "2022/23",
+    "scorers": [
+     {
+      "name": "Walid Sabbar",
+      "minute": "43"
+     }
+    ],
+    "venue": "Stade Municipal de Berrechid",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-3d99e92ddad40703120f0bd0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-0825c8459f18015c878b4430",
+   "value": {
+    "name": "Hassania Agadir 0–0 Raja CA",
+    "on": "2023-04-12",
+    "home": "Hassania Agadir",
+    "away": "Raja CA",
+    "score": "0-0",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "competition": "Throne Cup",
+    "season": "2022/23",
+    "venue": "Stade Adrar",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-3d99e92ddad40703120f0bd0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-c1762abbcc5226618a5e96cb",
+   "value": {
+    "name": "SCC Mohammédia 1–2 Raja CA",
+    "on": "2023-05-14",
+    "home": "SCC Mohammédia",
+    "away": "Raja CA",
+    "score": "1-2",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "competition": "Throne Cup",
+    "season": "2022/23",
+    "scorers": [
+     {
+      "name": "Hamza Khabba",
+      "minute": "68"
+     },
+     {
+      "name": "Mohamed Zrida",
+      "minute": "95"
+     }
+    ],
+    "venue": "Stade El Bachir",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-3d99e92ddad40703120f0bd0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-4b53a1155edf805d3f358734",
+   "value": {
+    "name": "Wydad AC 0–1 Raja CA",
+    "on": "2023-07-09",
+    "home": "Wydad AC",
+    "away": "Raja CA",
+    "score": "0-1",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "competition": "Throne Cup",
+    "season": "2022/23",
+    "venue": "Stade Mohammed V",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-3d99e92ddad40703120f0bd0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-dc3b63874c9467c9578e77b5",
+   "value": {
+    "name": "RS Berkane 1–0 Raja CA",
+    "on": "2023-07-15",
+    "home": "RS Berkane",
+    "away": "Raja CA",
+    "score": "1-0",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "competition": "Throne Cup",
+    "season": "2022/23",
+    "venue": "Prince Moulay Abdellah Stadium",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-3d99e92ddad40703120f0bd0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-0d437a4fb88db8821e3c56b9",
+   "value": {
+    "name": "JS Kasbah Tadla 2–1 Raja CA",
+    "on": "2022-04-06",
+    "home": "JS Kasbah Tadla",
+    "away": "Raja CA",
+    "score": "2-1",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "competition": "Throne Cup",
+    "season": "2021/22",
+    "scorers": [
+     {
+      "name": "Hamid Ahaddad",
+      "minute": "110"
+     }
+    ],
+    "venue": "Stade d'honneur de Beni Mellal",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-71edcaea4709f127a0fcf265"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-151d82e45b01bae82ccbb689",
+   "value": {
+    "name": "Raja de Beni Mellal 3–3 Raja CA",
+    "on": "2022-04-10",
+    "home": "Raja de Beni Mellal",
+    "away": "Raja CA",
+    "score": "3-3",
+    "homeGoals": 3,
+    "awayGoals": 3,
+    "competition": "Throne Cup",
+    "season": "2021/22",
+    "scorers": [
+     {
+      "name": "Jamal Harkass",
+      "minute": "90"
+     }
+    ],
+    "venue": "Stade d'honneur de Beni Mellal",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-71edcaea4709f127a0fcf265"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-cc3993121fc6b79294e8ed17",
+   "value": {
+    "name": "Wydad AC 2–0 Raja CA",
+    "on": "2022-07-07",
+    "home": "Wydad AC",
+    "away": "Raja CA",
+    "score": "2-0",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "competition": "Throne Cup",
+    "season": "2021/22",
+    "venue": "Stade Larbi Zaouli",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-71edcaea4709f127a0fcf265"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-5bd33b75f3344cf9bea4eec3",
+   "value": {
+    "name": "Raja CA 2–1 Wydad Fès",
+    "on": "2021-01-01",
+    "home": "Raja CA",
+    "away": "Wydad Fès",
+    "score": "2-1",
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "competition": "Throne Cup",
+    "season": "2020/21",
+    "scorers": [
+     {
+      "name": "Mahmoud Benhalib",
+      "minute": "5"
+     },
+     {
+      "name": "Ben Malango",
+      "minute": "118"
+     }
+    ],
+    "venue": "Stade Mohammed V",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8951edf12c810af7039198f2"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-41b602a6ac3c7230917e8674",
+   "value": {
+    "name": "Raja CA 2–0 US Sidi Kacem",
+    "on": "2021-03-03",
+    "home": "Raja CA",
+    "away": "US Sidi Kacem",
+    "score": "2-0",
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "competition": "Throne Cup",
+    "season": "2020/21",
+    "scorers": [
+     {
+      "name": "Ben Malango",
+      "minute": "38"
+     },
+     {
+      "name": "Mahmoud Benhalib",
+      "minute": "88"
+     }
+    ],
+    "venue": "Stade Mohammed V",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8951edf12c810af7039198f2"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-4774a08605e5e9c66ca71e99",
+   "value": {
+    "name": "AS FAR 1–1 Raja CA",
+    "on": "2021-05-05",
+    "home": "AS FAR",
+    "away": "Raja CA",
+    "score": "1-1",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "competition": "Throne Cup",
+    "season": "2020/21",
+    "scorers": [
+     {
+      "name": "Mahmoud Benhalib",
+      "minute": "53"
+     }
+    ],
+    "venue": "Prince Moulay Abdellah Stadium",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8951edf12c810af7039198f2"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-ea91104e6c8d1824456568ef",
+   "value": {
+    "name": "Raja CA 2–3 Renaissance Zemamra",
+    "on": "2019-08-31",
+    "home": "Raja CA",
+    "away": "Renaissance Zemamra",
+    "score": "2-3",
+    "homeGoals": 2,
+    "awayGoals": 3,
+    "competition": "Moroccan Throne Cup",
+    "season": "2019/20",
+    "scorers": [
+     {
+      "name": "Ayoub Nanah",
+      "minute": "10"
+     },
+     {
+      "name": "Hicham Islah",
+      "minute": "67"
+     }
+    ],
+    "venue": "Stade Mohammed V",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-f3c9d89c7d927b16347d4f7c"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-a08e52335be6d7f66192efa6",
+   "value": {
+    "name": "Chabab Atlas Khénifra 0–1 Raja CA",
+    "on": "2018-09-02",
+    "home": "Chabab Atlas Khénifra",
+    "away": "Raja CA",
+    "score": "0-1",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "competition": "Moroccan Throne Cup",
+    "season": "2018/19",
+    "scorers": [
+     {
+      "name": "Abdelilah Hafidi",
+      "minute": "74"
+     }
+    ],
+    "venue": "Stade municipal de Khénifra",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8ed06eebed25cc6456b8e1a8"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-ec70f44f1c1db4a0bf527c42",
+   "value": {
+    "name": "Raja CA 3–1 KAC Kénitra",
+    "on": "2018-09-12",
+    "home": "Raja CA",
+    "away": "KAC Kénitra",
+    "score": "3-1",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "competition": "Moroccan Throne Cup",
+    "season": "2018/19",
+    "scorers": [
+     {
+      "name": "Mouhcine Iajour",
+      "minute": "14"
+     },
+     {
+      "name": "Abdelilah Hafidi",
+      "minute": "50"
+     },
+     {
+      "name": "Mahmoud Benhalib",
+      "minute": "69"
+     }
+    ],
+    "venue": "Stade Mohammed V",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8ed06eebed25cc6456b8e1a8"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-b5aafe8a170b65e36a951328",
+   "value": {
+    "name": "Rapide Oued Zem 0–1 Raja CA",
+    "on": "2018-10-07",
+    "home": "Rapide Oued Zem",
+    "away": "Raja CA",
+    "score": "0-1",
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "competition": "Moroccan Throne Cup",
+    "season": "2018/19",
+    "scorers": [
+     {
+      "name": "Badr Benoun",
+      "minute": "22"
+     }
+    ],
+    "venue": "Stade municipal de Oued Zem",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8ed06eebed25cc6456b8e1a8"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-2f61ca0725d0ff2fa89bec9a",
+   "value": {
+    "name": "Wydad de Fès 1–1 Raja CA",
+    "on": "2018-11-03",
+    "home": "Wydad de Fès",
+    "away": "Raja CA",
+    "score": "1-1",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "competition": "Moroccan Throne Cup",
+    "season": "2018/19",
+    "scorers": [
+     {
+      "name": "Abdelilah Hafidi",
+      "minute": "20"
+     }
+    ],
+    "venue": "Stade Ibn Batouta",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8ed06eebed25cc6456b8e1a8"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-e89abefa90c3fc2e8fa1df50",
+   "value": {
+    "name": "Raja CA 0–0 Olympique Dcheira",
+    "on": "2017-08-23",
+    "home": "Raja CA",
+    "away": "Olympique Dcheira",
+    "score": "0-0",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "competition": "Moroccan Throne Cup",
+    "season": "2017/18",
+    "venue": "Stade Mohammed V",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-abc63df8ad9f0fb126bc8554"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-6f04e7175205ce300f7e5622",
+   "value": {
+    "name": "Olympique Dcheira 1–4 Raja CA",
+    "on": "2017-08-27",
+    "home": "Olympique Dcheira",
+    "away": "Raja CA",
+    "score": "1-4",
+    "homeGoals": 1,
+    "awayGoals": 4,
+    "competition": "Moroccan Throne Cup",
+    "season": "2017/18",
+    "venue": "Stade Ahmed Fana",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-abc63df8ad9f0fb126bc8554"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-46d1c5ba6fcec2859e44c240",
+   "value": {
+    "name": "Raja CA 0–0 FUS Rabat",
+    "on": "2017-09-26",
+    "home": "Raja CA",
+    "away": "FUS Rabat",
+    "score": "0-0",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "competition": "Moroccan Throne Cup",
+    "season": "2017/18",
+    "venue": "Prince Moulay Abdellah Stadium",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-abc63df8ad9f0fb126bc8554"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-f374042c75cae630fcd6b794",
+   "value": {
+    "name": "FUS Rabat 1–2 Raja CA",
+    "on": "2017-10-12",
+    "home": "FUS Rabat",
+    "away": "Raja CA",
+    "score": "1-2",
+    "homeGoals": 1,
+    "awayGoals": 2,
+    "competition": "Moroccan Throne Cup",
+    "season": "2017/18",
+    "venue": "Stade de FUS",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-abc63df8ad9f0fb126bc8554"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-9f071530dcd8141a620da250",
+   "value": {
+    "name": "Raja CA 5–1 Chabab Atlas Khénifra",
+    "on": "2017-10-15",
+    "home": "Raja CA",
+    "away": "Chabab Atlas Khénifra",
+    "score": "5-1",
+    "homeGoals": 5,
+    "awayGoals": 1,
+    "competition": "Moroccan Throne Cup",
+    "season": "2017/18",
+    "scorers": [
+     {
+      "name": "Zakaria Hadraf",
+      "minute": "62"
+     },
+     {
+      "name": "Jaouad El Yamiq",
+      "minute": "67"
+     },
+     {
+      "name": "Issam Erraki",
+      "minute": "85"
+     }
+    ],
+    "venue": "Stade Mohamed V",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-abc63df8ad9f0fb126bc8554"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-d189798d53eee76ee6a1c990",
+   "value": {
+    "name": "Chabab Atlas Khénifra 0–2 Raja CA",
+    "on": "2017-10-19",
+    "home": "Chabab Atlas Khénifra",
+    "away": "Raja CA",
+    "score": "0-2",
+    "homeGoals": 0,
+    "awayGoals": 2,
+    "competition": "Moroccan Throne Cup",
+    "season": "2017/18",
+    "venue": "Stade municipal de Khénifra",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-abc63df8ad9f0fb126bc8554"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-78eb360a4cd10e7dedc37a0c",
+   "value": {
+    "name": "FAR Rabat 1–1 Raja CA",
+    "on": "2017-10-26",
+    "home": "FAR Rabat",
+    "away": "Raja CA",
+    "score": "1-1",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "competition": "Moroccan Throne Cup",
+    "season": "2017/18",
+    "venue": "Prince Moulay Abdellah Stadium",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-abc63df8ad9f0fb126bc8554"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-10c273a93088cbee62b1f029",
+   "value": {
+    "name": "Raja CA 0–0 FAR Rabat",
+    "on": "2017-11-02",
+    "home": "Raja CA",
+    "away": "FAR Rabat",
+    "score": "0-0",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "competition": "Moroccan Throne Cup",
+    "season": "2017/18",
+    "venue": "Stade Mohamed V",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-abc63df8ad9f0fb126bc8554"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-6566a51130be176101f8ecde",
+   "value": {
+    "name": "Difaâ El Jadidi 1–1 Raja CA",
+    "on": "2017-11-18",
+    "home": "Difaâ El Jadidi",
+    "away": "Raja CA",
+    "score": "1-1",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "competition": "Moroccan Throne Cup",
+    "season": "2017/18",
+    "venue": "Prince Moulay Abdellah Stadium",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-abc63df8ad9f0fb126bc8554"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-match-a95f1a363d0bf7b8ff99d175",
+   "value": {
+    "name": "Difaâ Hassani El Jadidi 1–1 Raja CA",
+    "on": "2016-06-12",
+    "home": "Difaâ Hassani El Jadidi",
+    "away": "Raja CA",
+    "score": "1-1",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "competition": "Throne Cup",
+    "season": "2016/17",
+    "scorers": [
+     {
+      "name": "Mahmoud Benhalib",
+      "minute": "16"
+     }
+    ],
+    "venue": "Ben M'Hamed El Abdi Stadium",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-1ce68b40f326cc89b0798eb0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  }
+ ],
+ "players": [
+  {
+   "id": "daily-player-683a210e63c14554514c8dee",
+   "value": {
+    "name": "Khairallah Abdelkbir",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2004,
+    "toYear": 2004,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-322255f170e56ac24aa331c8"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-f1e98a4c1f12ee064833aa30",
+   "value": {
+    "name": "Hafid Abdessadek",
+    "aliases": [],
+    "positions": [],
+    "fromYear": null,
+    "toYear": null,
+    "archiveOnly": true,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-7164f4938f480382fb49c2de"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-5bab083363b51550d07e54f9",
+   "value": {
+    "name": "Zakaria Aboub",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 1999,
+    "toYear": 2010,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-2a99edb97fc6e2dc8ef39380"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-e7b093d8ee4cefe7fdafe067",
+   "value": {
+    "name": "Hicham Aboucherouane",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 1999,
+    "toYear": 2011,
+    "career": {
+     "apps": 173,
+     "goals": 90,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-5f7ad43327eb0fc0fd77329c"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-7602c7edca88a19daa14bac7",
+   "value": {
+    "name": "Hamza Abourazzouk",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2012,
+    "toYear": 2015,
+    "career": {
+     "apps": 56,
+     "goals": 16,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-7a2e5209c33e88fa87de368d"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-17be6e5abade81ca633996b4",
+   "value": {
+    "name": "Víctor Ábrego",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2024,
+    "toYear": 2026,
+    "career": {
+     "apps": 5,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-444d2624b2f407e0cea1a26a"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-37539f695495f619450291f4",
+   "value": {
+    "name": "Mohammad Abu Zrayq",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2026,
+    "toYear": null,
+    "career": {
+     "apps": 13,
+     "goals": 2,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-23fdf35cdd5667345eabce4d"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-017a6e3fad4003d8518d1b53",
+   "value": {
+    "name": "Youssef Achami",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": null,
+    "toYear": null,
+    "career": {
+     "apps": 0,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-83da679ef6d357bae857514d"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-f88b8551b293571d5cb6e844",
+   "value": {
+    "name": "Abderrahim Achchakir",
+    "aliases": [],
+    "positions": [],
+    "fromYear": 2017,
+    "toYear": 2021,
+    "career": {
+     "apps": 143,
+     "goals": 5,
+     "basis": "English Wikipedia club stint table"
+    },
+    "archiveOnly": true,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-5b012244c82c92d644d31557"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-876303a212867bcd246ffe36",
+   "value": {
+    "name": "Michael Agbekpornu",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2026,
+    "toYear": null,
+    "career": {
+     "apps": 0,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-53b4001a1d232f018ae96c60"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-d099e16bd5578583ed5a251a",
+   "value": {
+    "name": "Hamid Ahadad",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2019,
+    "toYear": 2022,
+    "career": {
+     "apps": 58,
+     "goals": 27,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-af7271e0c116c0c760157e7e"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-a8caf60e9fb65f8273e0c399",
+   "value": {
+    "name": "Abdelhaq Ait Laarif",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2011,
+    "toYear": 2012,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-23bf781436ad5d699b1b36c6"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-49eac02689e2124019f43fde",
+   "value": {
+    "name": "El Mehdi Al Harrar",
+    "aliases": [],
+    "positions": [
+     "GK"
+    ],
+    "fromYear": 2024,
+    "toYear": null,
+    "career": {
+     "apps": 44,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-ab1d42293348e585ceb972a5"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-a62d05d50611521e450729f2",
+   "value": {
+    "name": "Saifeddine Alami",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2018,
+    "toYear": 2019,
+    "career": {
+     "apps": 8,
+     "goals": 1,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-b0801041edb6a4791129d9fd"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-7c3610e2ae98b3239b3693a1",
+   "value": {
+    "name": "Hassan Amcharrat",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 1972,
+    "toYear": 1981,
+    "career": {
+     "apps": 151,
+     "goals": 67,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-7f1bf466b1f0242c2c401449"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-866cea67ffdcc7dbfd6aa2ec",
+   "value": {
+    "name": "Ayoub El Amloud",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2026,
+    "toYear": null,
+    "career": {
+     "apps": 16,
+     "goals": 4,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-d6bd35b943d9e1dbba53430a"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-7171f2924d9dac4dd12d3100",
+   "value": {
+    "name": "Hicham El Amrani",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2007,
+    "toYear": 2009,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-613793c6571589a25327ccfa"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-80d9fdc26ef0e58ef56bb65c",
+   "value": {
+    "name": "Salaheddine Aqqal",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2014,
+    "toYear": 2015,
+    "career": {
+     "apps": 21,
+     "goals": 3,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-ad5ed5a9c755892a8c1c1d23"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-6e31d5560e3c9b4bdb659327",
+   "value": {
+    "name": "Omar Arjoune",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2013,
+    "toYear": 2022,
+    "career": {
+     "apps": 124,
+     "goals": 2,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-b6f7f99b24786bf1cddab8d3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-1df1fe888c868a2ce8140878",
+   "value": {
+    "name": "Bouchaib Arrassi",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2022,
+    "toYear": null,
+    "career": {
+     "apps": 55,
+     "goals": 4,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-6552156ec14dfc94f898b5a9"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-e426c0d802bc9a90b45963b6",
+   "value": {
+    "name": "Khalid Askri",
+    "aliases": [],
+    "positions": [
+     "GK"
+    ],
+    "fromYear": 2012,
+    "toYear": 2015,
+    "career": {
+     "apps": 87,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-7076e3f056ddeec43a2a0005"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-389baf260ff0db871c08f476",
+   "value": {
+    "name": "Driss El-Asmar",
+    "aliases": [],
+    "positions": [
+     "GK"
+    ],
+    "fromYear": 2003,
+    "toYear": 2006,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-3d73ebde981d0e339a7bd413"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-2ab90c1f7f21d50e88e5a86d",
+   "value": {
+    "name": "Mohamed Awal",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2015,
+    "toYear": 2016,
+    "career": {
+     "apps": 23,
+     "goals": 1,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-315ead9f4120b82256ec938a"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-cd37d2b539893e3f0d80b2ca",
+   "value": {
+    "name": "Khalil Azmi",
+    "aliases": [],
+    "positions": [
+     "GK"
+    ],
+    "fromYear": 1992,
+    "toYear": 1994,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-97425d03e964fa959e78b382"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-df00c237a9458a4405a49b60",
+   "value": {
+    "name": "Abdelkrim Baadi",
+    "aliases": [],
+    "positions": [],
+    "fromYear": 2024,
+    "toYear": null,
+    "career": {
+     "apps": 32,
+     "goals": 1,
+     "basis": "English Wikipedia club stint table"
+    },
+    "archiveOnly": true,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-6ae158ddc809e5704080a1e7"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-efdb0ddcc1e2d8cc38722bb8",
+   "value": {
+    "name": "Michael Babatunde",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2015,
+    "toYear": 2016,
+    "career": {
+     "apps": 14,
+     "goals": 3,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-48fa995d4f853353e34e4ad0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-51bda5cfe15344915b26a9db",
+   "value": {
+    "name": "Abdessamad Badaoui",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2022,
+    "toYear": 2023,
+    "career": {
+     "apps": 39,
+     "goals": 1,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-16532a6e38e28c129b19c157"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  }
+ ],
+ "seasons": [
+  {
+   "id": "daily-season-a360d810534344982548d6c5",
+   "value": {
+    "name": "2026/27 season",
+    "season": "2026/27",
+    "league": "Botola",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-19bbe74471a2ed83bd6716a5"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-season-c7235fca246a285e7796c0f1",
+   "value": {
+    "name": "2025/26 season",
+    "season": "2025/26",
+    "league": "Botola",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-681b451b350f0a5a1cf4548d"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-season-5cc69f68fceaf09942151b99",
+   "value": {
+    "name": "2024/25 season",
+    "season": "2024/25",
+    "league": "Botola",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0a25ee9e690f63fd80b36dc3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-season-76381b051ab6cef102dd85f3",
+   "value": {
+    "name": "2023/24 season",
+    "season": "2023/24",
+    "league": "Botola",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-85b16ba839c2188955aeffed"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-season-a0490ec8cc3b9545f31c554b",
+   "value": {
+    "name": "2022/23 season",
+    "season": "2022/23",
+    "league": "Botola",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-3d99e92ddad40703120f0bd0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-season-eac75ab088dc55d45093b11a",
+   "value": {
+    "name": "2021/22 season",
+    "season": "2021/22",
+    "league": "Botola",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-71edcaea4709f127a0fcf265"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-season-3b5139f13721ec35645a9cd5",
+   "value": {
+    "name": "2020/21 season",
+    "season": "2020/21",
+    "league": "Botola",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8951edf12c810af7039198f2"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-season-d128e8937ff2cc7c3e06a070",
+   "value": {
+    "name": "2019/20 season",
+    "season": "2019/20",
+    "league": "Botola",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-f3c9d89c7d927b16347d4f7c"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-season-9b1553ee94c6c16fb0d41538",
+   "value": {
+    "name": "2018/19 season",
+    "season": "2018/19",
+    "league": "Botola",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8ed06eebed25cc6456b8e1a8"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-season-298042665fea6d8fa86d478c",
+   "value": {
+    "name": "2017/18 season",
+    "season": "2017/18",
+    "league": "Botola",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-abc63df8ad9f0fb126bc8554"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-season-a74806bc71b0a041f34a37be",
+   "value": {
+    "name": "2016/17 season",
+    "season": "2016/17",
+    "league": "Botola",
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-1ce68b40f326cc89b0798eb0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  }
+ ],
+ "kits": [
+  {
+   "id": "daily-kit-e7044df314699472d3cc541a",
+   "value": {
+    "name": "Raja CA 2025/26 home kit",
+    "season": "2025/26",
+    "type": "HOME",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1377443548",
+    "wikiKit": {
+     "pattern": "_RajaCasablanca2526h",
+     "body": null,
+     "left": null,
+     "right": null,
+     "shorts": null,
+     "socks": null
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-681b451b350f0a5a1cf4548d"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-3e2b71c838a35fc860686676",
+   "value": {
+    "name": "Raja CA 2025/26 away kit",
+    "season": "2025/26",
+    "type": "AWAY",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1377443548",
+    "wikiKit": {
+     "pattern": "_RajaCasablanca2526a",
+     "body": null,
+     "left": null,
+     "right": null,
+     "shorts": null,
+     "socks": null
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-681b451b350f0a5a1cf4548d"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-3a76434257edd5b0af6d849f",
+   "value": {
+    "name": "Raja CA 2024/25 home kit",
+    "season": "2024/25",
+    "type": "HOME",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1386700831",
+    "wikiKit": {
+     "pattern": "_RajaCACasablanca2425h",
+     "body": null,
+     "left": null,
+     "right": null,
+     "shorts": null,
+     "socks": null
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0a25ee9e690f63fd80b36dc3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-11f168b75111af619bd0f095",
+   "value": {
+    "name": "Raja CA 2024/25 away kit",
+    "season": "2024/25",
+    "type": "AWAY",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1386700831",
+    "wikiKit": {
+     "pattern": "_RajaCACasablanca2425a",
+     "body": null,
+     "left": null,
+     "right": null,
+     "shorts": "006666",
+     "socks": null
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0a25ee9e690f63fd80b36dc3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-4a5977a35270ca8390e8d985",
+   "value": {
+    "name": "Raja CA 2024/25 third kit",
+    "season": "2024/25",
+    "type": "THIRD",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1386700831",
+    "wikiKit": {
+     "pattern": "_RajaCACasablanca2425t",
+     "body": null,
+     "left": null,
+     "right": null,
+     "shorts": null,
+     "socks": null
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0a25ee9e690f63fd80b36dc3"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-e63d887abd1da8edd7ffdcc2",
+   "value": {
+    "name": "Raja CA 2023/24 home kit",
+    "season": "2023/24",
+    "type": "HOME",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1381210841",
+    "wikiKit": {
+     "pattern": "_RajaCasablanca2324h",
+     "body": null,
+     "left": null,
+     "right": null,
+     "shorts": "2f9562",
+     "socks": "2f9562"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-85b16ba839c2188955aeffed"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-565f60ecf287c35fe46f5d7b",
+   "value": {
+    "name": "Raja CA 2023/24 away kit",
+    "season": "2023/24",
+    "type": "AWAY",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1381210841",
+    "wikiKit": {
+     "pattern": "_RajaCasablanca2324a",
+     "body": null,
+     "left": null,
+     "right": null,
+     "shorts": "ffffff",
+     "socks": "ffffff"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-85b16ba839c2188955aeffed"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-9ec96917a72a1d784a139072",
+   "value": {
+    "name": "Raja CA 2023/24 third kit",
+    "season": "2023/24",
+    "type": "THIRD",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1381210841",
+    "wikiKit": {
+     "pattern": "_RajaCasablanca2324t",
+     "body": null,
+     "left": null,
+     "right": null,
+     "shorts": "000000",
+     "socks": "000000"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-85b16ba839c2188955aeffed"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-245537aa04b4180fd79165e8",
+   "value": {
+    "name": "Raja CA 2022/23 home kit",
+    "season": "2022/23",
+    "type": "HOME",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1384765180",
+    "wikiKit": {
+     "pattern": "_RajaAC2122h",
+     "body": null,
+     "left": null,
+     "right": null,
+     "shorts": null,
+     "socks": null
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-3d99e92ddad40703120f0bd0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-5f54c6b5e62aa424987c7a55",
+   "value": {
+    "name": "Raja CA 2022/23 away kit",
+    "season": "2022/23",
+    "type": "AWAY",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1384765180",
+    "wikiKit": {
+     "pattern": "_RajaAC2122a",
+     "body": null,
+     "left": null,
+     "right": null,
+     "shorts": null,
+     "socks": null
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-3d99e92ddad40703120f0bd0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-ecd3b58dbc6a8a5d73530d8a",
+   "value": {
+    "name": "Raja CA 2022/23 third kit",
+    "season": "2022/23",
+    "type": "THIRD",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1384765180",
+    "wikiKit": {
+     "pattern": "_RajaAC2122t",
+     "body": null,
+     "left": null,
+     "right": null,
+     "shorts": null,
+     "socks": null
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-3d99e92ddad40703120f0bd0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-5e17394844ad3a6b700c5aae",
+   "value": {
+    "name": "Raja CA 2021/22 home kit",
+    "season": "2021/22",
+    "type": "HOME",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1385007373",
+    "wikiKit": {
+     "pattern": "_RajaAC2122h",
+     "body": null,
+     "left": null,
+     "right": null,
+     "shorts": null,
+     "socks": null
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-71edcaea4709f127a0fcf265"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-45fe6e66e5b1cf2fb3c2590e",
+   "value": {
+    "name": "Raja CA 2021/22 away kit",
+    "season": "2021/22",
+    "type": "AWAY",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1385007373",
+    "wikiKit": {
+     "pattern": "_RajaAC2122a",
+     "body": null,
+     "left": null,
+     "right": null,
+     "shorts": null,
+     "socks": null
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-71edcaea4709f127a0fcf265"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-94358db32a48418178502ebb",
+   "value": {
+    "name": "Raja CA 2021/22 third kit",
+    "season": "2021/22",
+    "type": "THIRD",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1385007373",
+    "wikiKit": {
+     "pattern": "_RajaAC2122t",
+     "body": null,
+     "left": null,
+     "right": null,
+     "shorts": null,
+     "socks": null
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-71edcaea4709f127a0fcf265"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-f3f9bcea3c0dadb66cea7e2c",
+   "value": {
+    "name": "Raja CA 2020/21 home kit",
+    "season": "2020/21",
+    "type": "HOME",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1384763995",
+    "wikiKit": {
+     "pattern": "_raja21h",
+     "body": "ffffff",
+     "left": "ffffff",
+     "right": "ffffff",
+     "shorts": "ffffff",
+     "socks": "ffffff"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8951edf12c810af7039198f2"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-b8dbe3497b00927a336b1abd",
+   "value": {
+    "name": "Raja CA 2020/21 away kit",
+    "season": "2020/21",
+    "type": "AWAY",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1384763995",
+    "wikiKit": {
+     "pattern": "_raja21a",
+     "body": "05822d",
+     "left": "05822d",
+     "right": "05822d",
+     "shorts": "05822d",
+     "socks": "05822d"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8951edf12c810af7039198f2"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-3a20a10c6a2fd046520cf41d",
+   "value": {
+    "name": "Raja CA 2020/21 third kit",
+    "season": "2020/21",
+    "type": "THIRD",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1384763995",
+    "wikiKit": {
+     "pattern": "_raja21t",
+     "body": "003db4",
+     "left": "003db4",
+     "right": "003db4",
+     "shorts": "2222be",
+     "socks": "2222be"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8951edf12c810af7039198f2"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-cb900392e87d84f7662292c7",
+   "value": {
+    "name": "Raja CA 2019/20 home kit",
+    "season": "2019/20",
+    "type": "HOME",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1385159062",
+    "wikiKit": {
+     "pattern": "_raja3",
+     "body": "ffffff",
+     "left": "ffffff",
+     "right": "ffffff",
+     "shorts": "008000",
+     "socks": "ffffff"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-f3c9d89c7d927b16347d4f7c"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-e3aa532e74ce95fc80342469",
+   "value": {
+    "name": "Raja CA 2019/20 away kit",
+    "season": "2019/20",
+    "type": "AWAY",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1385159062",
+    "wikiKit": {
+     "pattern": "_raja1",
+     "body": "008000",
+     "left": "008000",
+     "right": "008000",
+     "shorts": "008000",
+     "socks": "008000"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-f3c9d89c7d927b16347d4f7c"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-0ba5120c38830dd2221c9c50",
+   "value": {
+    "name": "Raja CA 2019/20 third kit",
+    "season": "2019/20",
+    "type": "THIRD",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1385159062",
+    "wikiKit": {
+     "pattern": "_raja2",
+     "body": "0000ff",
+     "left": "0000ff",
+     "right": "0000ff",
+     "shorts": "0000ff",
+     "socks": "0000ff"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-f3c9d89c7d927b16347d4f7c"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-c796151a59a7d776ed9a3152",
+   "value": {
+    "name": "Raja CA 2018/19 home kit",
+    "season": "2018/19",
+    "type": "HOME",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1338366390",
+    "construction": {
+     "colors": "green",
+     "design": "plain"
+    },
+    "wikiKit": {
+     "pattern": null,
+     "body": "008000",
+     "left": "008000",
+     "right": "008000",
+     "shorts": "008000",
+     "socks": "008000"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8ed06eebed25cc6456b8e1a8"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-dfb55fb5abaab395e134ec80",
+   "value": {
+    "name": "Raja CA 2018/19 away kit",
+    "season": "2018/19",
+    "type": "AWAY",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1338366390",
+    "wikiKit": {
+     "pattern": "_raja2",
+     "body": "0000ff",
+     "left": "0000ff",
+     "right": "0000ff",
+     "shorts": "0000ff",
+     "socks": "0000ff"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8ed06eebed25cc6456b8e1a8"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-3a32c321e067a41ea6a43cad",
+   "value": {
+    "name": "Raja CA 2018/19 third kit",
+    "season": "2018/19",
+    "type": "THIRD",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1338366390",
+    "wikiKit": {
+     "pattern": "_raja3",
+     "body": "ffffff",
+     "left": "ffffff",
+     "right": "ffffff",
+     "shorts": "008000",
+     "socks": "ffffff"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-8ed06eebed25cc6456b8e1a8"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-e053176524f45e737a6306ca",
+   "value": {
+    "name": "Raja CA 2017/18 home kit",
+    "season": "2017/18",
+    "type": "HOME",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1352939536",
+    "construction": {
+     "colors": "green",
+     "design": "plain"
+    },
+    "wikiKit": {
+     "pattern": null,
+     "body": "008000",
+     "left": "008000",
+     "right": "008000",
+     "shorts": "008000",
+     "socks": "008000"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-abc63df8ad9f0fb126bc8554"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-7dd06713cfffc8908418f531",
+   "value": {
+    "name": "Raja CA 2017/18 away kit",
+    "season": "2017/18",
+    "type": "AWAY",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1352939536",
+    "wikiKit": {
+     "pattern": "_raja2",
+     "body": "0000ff",
+     "left": "0000ff",
+     "right": "0000ff",
+     "shorts": "0000ff",
+     "socks": "0000ff"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-abc63df8ad9f0fb126bc8554"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-139eca64372546a9b6ea0497",
+   "value": {
+    "name": "Raja CA 2017/18 third kit",
+    "season": "2017/18",
+    "type": "THIRD",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1352939536",
+    "wikiKit": {
+     "pattern": "_raja3",
+     "body": "ffffff",
+     "left": "ffffff",
+     "right": "ffffff",
+     "shorts": "008000",
+     "socks": "ffffff"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-abc63df8ad9f0fb126bc8554"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-kit-0ee77c05dda9d0668a4ff536",
+   "value": {
+    "name": "Raja CA 2016/17 home kit",
+    "season": "2016/17",
+    "type": "HOME",
+    "referenceUrl": "https://en.wikipedia.org/w/index.php?oldid=1378542122",
+    "wikiKit": {
+     "pattern": "_collargreen",
+     "body": "ffffff",
+     "left": "008000",
+     "right": "008000",
+     "shorts": "008000",
+     "socks": "ffffff"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-1ce68b40f326cc89b0798eb0"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-22",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  }
+ ]
+}

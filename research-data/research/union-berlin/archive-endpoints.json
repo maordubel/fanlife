@@ -53,7 +53,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-11-22T11:33:19.470Z"
+  "checkedAt": "2026-11-22T11:48:50.115Z"
  },
  "dfb-union:/en/clubs/1-fc-union-berlin": {
   "endpoint": "/en/clubs/1-fc-union-berlin",
@@ -61,7 +61,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-11-22T11:33:24.230Z"
+  "checkedAt": "2026-11-22T11:48:54.441Z"
  },
  "footballhistory-union:/club/union-berlin.html": {
   "endpoint": "/club/union-berlin.html",
@@ -69,7 +69,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-11-22T11:33:25.492Z"
+  "checkedAt": "2026-11-22T11:48:55.609Z"
  },
  "immer-unioner:/spieler.php?getid=44": {
   "endpoint": "/spieler.php?getid=44",
@@ -101,7 +101,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-23T08:43:01.898Z"
+  "checkedAt": "2026-11-22T11:48:12.875Z"
  },
  "immer-unioner:/spieler.php?getid=301": {
   "endpoint": "/spieler.php?getid=301",
@@ -109,7 +109,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-23T08:43:05.056Z"
+  "checkedAt": "2026-11-22T11:48:17.022Z"
  },
  "immer-unioner:/spieler.php?getid=367": {
   "endpoint": "/spieler.php?getid=367",
@@ -117,7 +117,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-23T08:43:09.152Z"
+  "checkedAt": "2026-11-22T11:48:20.091Z"
  },
  "immer-unioner:/spieler.php?getid=238": {
   "endpoint": "/spieler.php?getid=238",
@@ -125,7 +125,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-23T08:52:37.445Z"
+  "checkedAt": "2026-11-22T11:48:24.094Z"
  },
  "immer-unioner:/spieler.php?getid=574": {
   "endpoint": "/spieler.php?getid=574",
@@ -133,7 +133,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-23T08:52:41.332Z"
+  "checkedAt": "2026-11-22T11:48:28.055Z"
  },
  "immer-unioner:/spieler.php?getid=273": {
   "endpoint": "/spieler.php?getid=273",
@@ -141,7 +141,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-23T08:52:44.884Z"
+  "checkedAt": "2026-11-22T11:48:32.074Z"
  },
  "immer-unioner:/spieler.php?getid=531": {
   "endpoint": "/spieler.php?getid=531",
@@ -149,7 +149,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-23T08:52:48.885Z"
+  "checkedAt": "2026-11-22T11:48:36.076Z"
  },
  "immer-unioner:/spieler.php?getid=590": {
   "endpoint": "/spieler.php?getid=590",
@@ -157,7 +157,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-23T08:52:52.886Z"
+  "checkedAt": "2026-11-22T11:48:40.069Z"
  },
  "immer-unioner:/spieler.php?getid=409": {
   "endpoint": "/spieler.php?getid=409",
@@ -165,7 +165,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-25T08:45:46.173Z"
+  "checkedAt": "2026-11-22T11:48:44.102Z"
  },
  "immer-unioner:/spieler.php?getid=376": {
   "endpoint": "/spieler.php?getid=376",
@@ -173,7 +173,7 @@
   "state": "ok",
   "status": 200,
   "reason": null,
-  "checkedAt": "2026-10-25T08:45:50.303Z"
+  "checkedAt": "2026-11-22T11:48:48.059Z"
  },
  "immer-unioner:/spieler.php?getid=208": {
   "endpoint": "/spieler.php?getid=208",

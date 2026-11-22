@@ -15,6 +15,51 @@
   "status": "candidate"
  },
  {
+  "id": "obs:immer-unioner:html:/spieler.php?getid=238:player",
+  "role": "player",
+  "nameAsReported": "Ronny Nikol",
+  "seasonsAsReported": null,
+  "providerRecordKey": "immer-unioner:html:/spieler.php?getid=238",
+  "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=238",
+  "sourceIds": [
+   "document-e2c8b251cf6bb3da35aa2e0e"
+  ],
+  "parserVersion": "immerunioner-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate"
+ },
+ {
+  "id": "obs:immer-unioner:html:/spieler.php?getid=273:player",
+  "role": "player",
+  "nameAsReported": "Chibuike Okeke",
+  "seasonsAsReported": null,
+  "providerRecordKey": "immer-unioner:html:/spieler.php?getid=273",
+  "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=273",
+  "sourceIds": [
+   "document-ec7ec7704601659dc5966a1c"
+  ],
+  "parserVersion": "immerunioner-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate"
+ },
+ {
+  "id": "obs:immer-unioner:html:/spieler.php?getid=301:player",
+  "role": "player",
+  "nameAsReported": "Jan Glinker",
+  "seasonsAsReported": null,
+  "providerRecordKey": "immer-unioner:html:/spieler.php?getid=301",
+  "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=301",
+  "sourceIds": [
+   "document-3e97b315bbe4000a2b1046e8"
+  ],
+  "parserVersion": "immerunioner-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate"
+ },
+ {
   "id": "obs:immer-unioner:html:/spieler.php?getid=354:player",
   "role": "player",
   "nameAsReported": "Torsten Mattuschka",
@@ -23,6 +68,66 @@
   "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=354",
   "sourceIds": [
    "document-755144afc0b20c7408744503"
+  ],
+  "parserVersion": "immerunioner-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate"
+ },
+ {
+  "id": "obs:immer-unioner:html:/spieler.php?getid=367:player",
+  "role": "player",
+  "nameAsReported": "Christian Stuff",
+  "seasonsAsReported": null,
+  "providerRecordKey": "immer-unioner:html:/spieler.php?getid=367",
+  "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=367",
+  "sourceIds": [
+   "document-3cad5b9ea4698a9e826383ce"
+  ],
+  "parserVersion": "immerunioner-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate"
+ },
+ {
+  "id": "obs:immer-unioner:html:/spieler.php?getid=376:player",
+  "role": "player",
+  "nameAsReported": "Christoph Menz",
+  "seasonsAsReported": null,
+  "providerRecordKey": "immer-unioner:html:/spieler.php?getid=376",
+  "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=376",
+  "sourceIds": [
+   "document-d884e970ca0914e916a65332"
+  ],
+  "parserVersion": "immerunioner-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate"
+ },
+ {
+  "id": "obs:immer-unioner:html:/spieler.php?getid=401:player",
+  "role": "player",
+  "nameAsReported": "Michael Parensen",
+  "seasonsAsReported": null,
+  "providerRecordKey": "immer-unioner:html:/spieler.php?getid=401",
+  "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=401",
+  "sourceIds": [
+   "document-a79a18e5222bbea5f682dc7f"
+  ],
+  "parserVersion": "immerunioner-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate"
+ },
+ {
+  "id": "obs:immer-unioner:html:/spieler.php?getid=409:player",
+  "role": "player",
+  "nameAsReported": "Christopher Quiring",
+  "seasonsAsReported": null,
+  "providerRecordKey": "immer-unioner:html:/spieler.php?getid=409",
+  "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=409",
+  "sourceIds": [
+   "document-f85213253f54b8d461a29723"
   ],
   "parserVersion": "immerunioner-v1",
   "canonicalId": null,
@@ -187,6 +292,51 @@
   "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=453",
   "sourceIds": [
    "document-05fee253f9212a419a470700"
+  ],
+  "parserVersion": "immerunioner-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate"
+ },
+ {
+  "id": "obs:immer-unioner:html:/spieler.php?getid=531:player",
+  "role": "player",
+  "nameAsReported": "Julian Ryerson",
+  "seasonsAsReported": null,
+  "providerRecordKey": "immer-unioner:html:/spieler.php?getid=531",
+  "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=531",
+  "sourceIds": [
+   "document-19f3beb66dffede040daa245"
+  ],
+  "parserVersion": "immerunioner-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate"
+ },
+ {
+  "id": "obs:immer-unioner:html:/spieler.php?getid=574:player",
+  "role": "player",
+  "nameAsReported": "Kevin Behrens",
+  "seasonsAsReported": null,
+  "providerRecordKey": "immer-unioner:html:/spieler.php?getid=574",
+  "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=574",
+  "sourceIds": [
+   "document-4537c083c7a5e1c829be3b80"
+  ],
+  "parserVersion": "immerunioner-v1",
+  "canonicalId": null,
+  "identityState": "unresolved",
+  "status": "candidate"
+ },
+ {
+  "id": "obs:immer-unioner:html:/spieler.php?getid=590:player",
+  "role": "player",
+  "nameAsReported": "Tim Skarke",
+  "seasonsAsReported": null,
+  "providerRecordKey": "immer-unioner:html:/spieler.php?getid=590",
+  "sourceUrl": "https://www.immerunioner.de/spieler.php?getid=590",
+  "sourceIds": [
+   "document-43bde20fcfa03bd89ff1307b"
   ],
   "parserVersion": "immerunioner-v1",
   "canonicalId": null,

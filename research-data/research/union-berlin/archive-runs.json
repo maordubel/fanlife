@@ -2097,5 +2097,39 @@
   ],
   "completeArchiveClaim": false,
   "approvedForProduction": 0
+ },
+ {
+  "schemaVersion": 1,
+  "id": "2026-11-22T11-48-10-443Z-54f3c9",
+  "clubId": "union-berlin",
+  "startedAt": "2026-11-22T11:48:10.443Z",
+  "finishedAt": "2026-11-22T11:48:55.610Z",
+  "providers": [
+   "immer-unioner",
+   "union-official",
+   "dfb-union",
+   "footballhistory-union"
+  ],
+  "state": "partial_budget",
+  "counts": {
+   "requests": 13,
+   "documentsRead": 13,
+   "newDocuments": 0,
+   "changedDocuments": 2,
+   "unchangedDocuments": 11,
+   "recordsExtracted": 14,
+   "blockedEndpoints": 0,
+   "budgetLeft": 27
+  },
+  "diagnostics": [
+   {
+    "code": "BUDGET_EXHAUSTED",
+    "providerId": "*",
+    "url": null,
+    "message": "Budget used; the next run resumes from the checkpoint."
+   }
+  ],
+  "completeArchiveClaim": false,
+  "approvedForProduction": 0
  }
 ]

@@ -1,0 +1,275 @@
+{
+ "day": "2026-11-22",
+ "clubId": "st-pauli",
+ "runUrl": "https://github.com/maordubel/fanlife/actions/runs/45018147326",
+ "added": {
+  "matches": 512,
+  "players": 31,
+  "seasons": 15,
+  "kits": 29,
+  "lineups": 37,
+  "scorers": 60
+ },
+ "heldDays": [
+  "2017-04-28",
+  "2019-08-02",
+  "2019-10-19",
+  "2019-10-27",
+  "2020-01-28",
+  "2020-05-27",
+  "2021-10-16",
+  "2025-10-19",
+  "2025-12-13",
+  "2026-01-14",
+  "2026-02-07",
+  "2026-02-28",
+  "2026-04-25",
+  "2026-05-16"
+ ],
+ "steps": [
+  {
+   "step": "Historical archives",
+   "state": "ok",
+   "info": "260 pages read, 0 observations, 0 refused"
+  },
+  {
+   "step": "Recent league and cup results",
+   "state": "ok",
+   "info": "Refreshed up to 12 recent fixtures"
+  },
+  {
+   "step": "Historical results, elevens and scorers",
+   "state": "ok",
+   "info": "Continued from the historical results checkpoint, up to 90 fixtures"
+  },
+  {
+   "step": "Historical players",
+   "state": "ok",
+   "info": "25 documented senior club stints"
+  },
+  {
+   "step": "Season archives, scoresheets and shirt metadata",
+   "state": "ok",
+   "info": "10 checked seasons and 112 dated results"
+  },
+  {
+   "step": "Kit archive",
+   "state": "gap",
+   "info": "www.footballkitarchive.com: robots.txt disallows this path"
+  },
+  {
+   "step": "Open league season datasets",
+   "state": "ok",
+   "info": "442 dated results across 31 competition files; 3 historical files unavailable"
+  }
+ ],
+ "dataVersion": "564970c6009baf00",
+ "uncertainties": [
+  {
+   "record": "st-pauli:daily-match-8cb40812835ac886d2b4c04f",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-d62bb9afb91037ae224ecc52",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-82681bf208a8b3b700a08026",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-8180fff62a5636adf17391d5",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-0f952cbb704857208954c999",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-5aab9cefe7e09f7b27d27f03",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-d21f6cb16fe45bc89af66030",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-de7563f683dd179c0eea05fb",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-2f3794ab8ef459b19cb0be9d",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-15ce97e55d4087869c86b7f6",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-bea2b06808de907da01ebfd5",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-8e3591a1b30b88946d4120e1",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-b4123e044b99b74ec4e7b6c4",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-f027d831c6d431fc530e0e68",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-d68eb8e2c01574b793d93ed8",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-f7830a105db1b6fa869023b8",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-45f6f9eb8e41de01b084af83",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-2fabf5430a99ede6dc11d8e0",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-7d9753fca989b647611ced2f",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-7382eeca62111e3e8d328dcd",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-e0d7d0240b6bae3ee93dc963",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-ef74233a720463ca82dc2054",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-bd1fade6df00bd3857b19181",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-1b046b92f7bbc44d1bb67248",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-628193ebf7f3d80302459616",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-08dbbfe4c4fc4193bc2f1900",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-2a4da6b8cfc7a8bf230bab4b",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-7448e885bdd8b4972251d709",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-67dcaeb6846f384c7edb9fb8",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-91c187258efa1174635c8605",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-c6ce0ea24f60e5e8443fd862",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-4f8f8a3aec3faf842424a30c",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-07ab41bde61d0f4c0f6e9630",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-611046a888a496c1f68ee4f3",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-8236ac83141ae140639e6a7a",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-78b36bf22c82d9489b11abef",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-eea42a43211e379f99c1eb51",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-998e04a3411a102141a66869",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-1850646229a3fd287cd0ae19",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "st-pauli:daily-match-5b4d8735d5912a12b74bfa8c",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  }
+ ],
+ "featureInputs": {
+  "players": 609,
+  "matches": 1476,
+  "seasons": 46,
+  "kits": 99
+ }
+}

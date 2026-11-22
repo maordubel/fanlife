@@ -8,11 +8,11 @@
   "sourceFamilyId": "millernton-editorial",
   "scope": "mixed",
   "access": "available",
-  "checkedAt": "2026-11-21",
-  "retrievedAt": "2026-11-21T16:51:12.829Z",
+  "checkedAt": "2026-11-22",
+  "retrievedAt": "2026-11-22T11:44:43.145Z",
   "collected": {
    "documents": 3545,
-   "observedTotalDocuments": 4486,
+   "observedTotalDocuments": 4487,
    "state": "partial_budget",
    "parser": "editorial-catalogue-v1"
   },
@@ -29,12 +29,12 @@
   "sourceFamilyId": "millernton-editorial",
   "scope": "mixed",
   "access": "available",
-  "checkedAt": "2026-11-21",
-  "retrievedAt": "2026-11-21T16:51:12.829Z",
+  "checkedAt": "2026-11-22",
+  "retrievedAt": "2026-11-22T11:44:43.145Z",
   "collected": {
    "documents": 3545,
    "observedTotalDocuments": 20,
-   "state": "partial_budget",
+   "state": "listed",
    "parser": "editorial-catalogue-v1"
   },
   "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
@@ -50,12 +50,12 @@
   "sourceFamilyId": "fcstpauli-museum",
   "scope": "club-history",
   "access": "available",
-  "checkedAt": "2026-11-21",
-  "retrievedAt": "2026-11-21T16:51:12.829Z",
+  "checkedAt": "2026-11-22",
+  "retrievedAt": "2026-11-22T11:44:43.145Z",
   "collected": {
    "documents": 60,
    "observedTotalDocuments": 31,
-   "state": "partial_budget",
+   "state": "listed",
    "parser": "editorial-catalogue-v1"
   },
   "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",
@@ -71,12 +71,12 @@
   "sourceFamilyId": "fcstpauli-museum",
   "scope": "club-history",
   "access": "available",
-  "checkedAt": "2026-11-21",
-  "retrievedAt": "2026-11-21T16:51:12.829Z",
+  "checkedAt": "2026-11-22",
+  "retrievedAt": "2026-11-22T11:44:43.145Z",
   "collected": {
    "documents": 60,
    "observedTotalDocuments": 29,
-   "state": "partial_budget",
+   "state": "listed",
    "parser": "editorial-catalogue-v1"
   },
   "usagePolicy": "factual_extraction_and_linking; no permission inferred for article text or images",

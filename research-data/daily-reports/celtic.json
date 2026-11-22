@@ -1,0 +1,528 @@
+{
+ "day": "2026-11-22",
+ "clubId": "celtic",
+ "runUrl": "https://github.com/maordubel/fanlife/actions/runs/45018147326",
+ "added": {
+  "matches": 5985,
+  "players": 27,
+  "seasons": 11,
+  "kits": 33,
+  "lineups": 276,
+  "scorers": 155
+ },
+ "heldDays": [
+  "1888-11-03",
+  "1892-04-09",
+  "1893-02-04",
+  "1897-09-20",
+  "1897-12-18",
+  "1898-10-08",
+  "1898-10-29",
+  "1963-09-17",
+  "1963-10-09",
+  "1963-12-04",
+  "1963-12-11",
+  "1964-02-26",
+  "1964-03-04",
+  "1964-04-15",
+  "1964-04-29",
+  "1965-10-07",
+  "1965-11-03",
+  "1965-11-17",
+  "1966-01-12",
+  "1966-01-26",
+  "1967-03-01",
+  "1967-03-08",
+  "1967-04-12",
+  "1967-04-25",
+  "1967-05-25",
+  "1967-09-20",
+  "1967-10-04",
+  "1968-09-18",
+  "1968-10-02",
+  "1968-11-13",
+  "1968-11-27",
+  "1969-09-17",
+  "1969-10-01",
+  "1970-04-01",
+  "1970-04-15",
+  "1970-09-16",
+  "1970-09-30",
+  "1971-09-15",
+  "1971-09-29",
+  "1971-10-20",
+  "1971-11-03",
+  "1972-03-08",
+  "1972-03-22",
+  "1972-04-05",
+  "1972-04-19",
+  "1972-10-25",
+  "1972-11-08",
+  "1973-09-19",
+  "1973-10-03",
+  "1973-10-24",
+  "1973-11-06",
+  "1974-02-27",
+  "1974-03-20",
+  "1974-04-10",
+  "1974-04-24",
+  "1974-09-18",
+  "1974-10-02",
+  "1975-09-16",
+  "1975-10-01",
+  "1976-03-03",
+  "1976-03-17",
+  "1976-09-15",
+  "1976-09-29",
+  "1977-09-14",
+  "1977-09-28",
+  "1977-10-19",
+  "1977-11-02",
+  "1979-09-19",
+  "1979-10-03",
+  "1980-08-20",
+  "1980-09-03",
+  "1980-09-17",
+  "1980-10-01",
+  "1983-09-14",
+  "1983-09-28",
+  "1983-10-19",
+  "1983-11-02",
+  "1983-11-23",
+  "1983-12-07",
+  "1984-10-24",
+  "1984-12-12",
+  "1985-09-18",
+  "1985-10-02",
+  "1986-10-22",
+  "1986-11-05",
+  "1987-09-15",
+  "1988-10-26",
+  "1988-11-08",
+  "1989-09-12",
+  "1989-09-27",
+  "1991-09-18",
+  "1991-10-01",
+  "1991-10-22",
+  "1991-11-06",
+  "1992-09-15",
+  "1992-09-30",
+  "1992-10-20",
+  "1992-11-03",
+  "1993-09-14",
+  "1993-09-29",
+  "1993-10-20",
+  "1993-11-03",
+  "1995-10-19",
+  "1995-11-02",
+  "1997-07-23",
+  "1997-07-29",
+  "1997-08-12",
+  "1997-08-26",
+  "1998-07-22",
+  "1998-07-29",
+  "1998-08-12",
+  "1998-08-26",
+  "1998-09-15",
+  "1998-09-29",
+  "1999-08-12",
+  "1999-08-26",
+  "1999-09-16",
+  "1999-09-30",
+  "1999-10-21",
+  "1999-11-04",
+  "2000-08-10",
+  "2000-08-24",
+  "2000-09-14",
+  "2000-09-28",
+  "2000-10-26",
+  "2000-11-09",
+  "2002-08-14",
+  "2002-08-28",
+  "2002-09-19",
+  "2002-10-03",
+  "2002-10-31",
+  "2002-11-14",
+  "2002-11-28",
+  "2002-12-12",
+  "2003-02-20",
+  "2003-02-27",
+  "2003-07-30",
+  "2003-08-06",
+  "2003-08-13",
+  "2003-08-27",
+  "2003-09-17",
+  "2003-11-25",
+  "2004-10-20",
+  "2004-11-02",
+  "2005-07-27",
+  "2005-08-02",
+  "2006-09-13",
+  "2006-11-21",
+  "2007-08-15",
+  "2007-08-29",
+  "2007-09-18",
+  "2007-11-28",
+  "2008-09-17",
+  "2008-10-21",
+  "2008-11-05",
+  "2008-11-25",
+  "2009-07-29",
+  "2009-08-05",
+  "2009-09-17",
+  "2009-10-01",
+  "2009-12-02",
+  "2009-12-17",
+  "2010-07-28",
+  "2010-08-04",
+  "2011-08-18",
+  "2011-08-25",
+  "2011-09-15",
+  "2011-11-30",
+  "2012-08-01",
+  "2012-08-08",
+  "2012-08-21",
+  "2012-08-29",
+  "2012-10-02",
+  "2012-12-05",
+  "2013-07-31",
+  "2013-08-07",
+  "2013-08-20",
+  "2013-08-28",
+  "2014-07-15",
+  "2014-07-22",
+  "2014-07-30",
+  "2014-08-06",
+  "2014-08-20",
+  "2014-08-26",
+  "2014-09-18",
+  "2014-10-02",
+  "2014-10-23",
+  "2014-11-06",
+  "2014-11-27",
+  "2014-12-11",
+  "2015-02-19",
+  "2015-02-26",
+  "2015-07-29",
+  "2015-08-19",
+  "2015-08-25",
+  "2016-07-12",
+  "2016-07-20",
+  "2016-07-27",
+  "2016-08-03",
+  "2016-08-07",
+  "2016-08-17",
+  "2016-08-23",
+  "2016-09-18",
+  "2016-09-28",
+  "2016-10-19",
+  "2016-11-01",
+  "2016-11-05",
+  "2016-12-06",
+  "2017-01-29",
+  "2017-02-11",
+  "2017-03-01",
+  "2017-04-02",
+  "2017-05-21",
+  "2017-07-14",
+  "2017-07-19",
+  "2017-08-16",
+  "2017-08-22",
+  "2017-09-12",
+  "2017-10-18",
+  "2017-10-31",
+  "2017-11-22",
+  "2018-02-15",
+  "2018-02-22",
+  "2018-08-04",
+  "2018-08-23",
+  "2018-08-30",
+  "2018-10-04",
+  "2018-11-11",
+  "2018-12-13",
+  "2019-04-06",
+  "2019-07-24",
+  "2019-07-30",
+  "2019-08-07",
+  "2019-08-13",
+  "2019-08-22",
+  "2019-08-29",
+  "2019-10-03",
+  "2019-10-06",
+  "2019-11-23",
+  "2019-12-12",
+  "2020-03-04",
+  "2020-08-18",
+  "2020-09-19",
+  "2020-09-24",
+  "2020-11-05",
+  "2020-11-26",
+  "2021-01-16",
+  "2021-01-20",
+  "2021-04-10",
+  "2021-08-18",
+  "2021-08-26",
+  "2021-09-16",
+  "2021-09-19",
+  "2021-09-30",
+  "2021-10-30",
+  "2021-11-25",
+  "2021-12-09",
+  "2022-02-24",
+  "2022-03-06",
+  "2022-09-14",
+  "2022-10-05",
+  "2022-10-11",
+  "2022-10-25",
+  "2022-10-30",
+  "2022-12-21",
+  "2023-02-01",
+  "2025-10-26",
+  "2025-12-07",
+  "2026-01-25",
+  "2026-05-16",
+  "2026-05-23",
+  "2026-10-18"
+ ],
+ "steps": [
+  {
+   "step": "Historical archives",
+   "state": "ok",
+   "info": "1937 pages read, 97 observations, 0 refused"
+  },
+  {
+   "step": "UEFA match reports",
+   "state": "ok",
+   "info": "Finished the bounded UEFA pull"
+  },
+  {
+   "step": "Recent league and cup results",
+   "state": "ok",
+   "info": "Refreshed up to 12 recent fixtures"
+  },
+  {
+   "step": "Historical results, elevens and scorers",
+   "state": "ok",
+   "info": "Continued from the historical results checkpoint, up to 90 fixtures"
+  },
+  {
+   "step": "Scottish season archive",
+   "state": "ok",
+   "info": "Refreshed the two most recent seasons"
+  },
+  {
+   "step": "Historical players",
+   "state": "ok",
+   "info": "26 documented senior club stints"
+  },
+  {
+   "step": "Season archives, scoresheets and shirt metadata",
+   "state": "ok",
+   "info": "11 checked seasons and 473 dated results"
+  },
+  {
+   "step": "Kit archive",
+   "state": "gap",
+   "info": "www.footballkitarchive.com: robots.txt disallows this path"
+  },
+  {
+   "step": "Open league season datasets",
+   "state": "ok",
+   "info": "142 dated results across 5 competition files; 12 historical files unavailable"
+  }
+ ],
+ "dataVersion": "b0e713b004a823cf",
+ "uncertainties": [
+  {
+   "record": "celtic:daily-match-e6370eb3cf81be31f1b440bd",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-f4ea4b851facc3e116cb0e55",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-c653a28dc72451f408955ff4",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-90783c53abcd3033ce0aa9be",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-88e0f737b998d18729af813c",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-47b5818d39e026b771ff876e",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-e72f445ae56526539ef7e301",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "1916-04-15",
+   "code": "DAILY_MATCH_AMBIGUOUS",
+   "message": "Several matches share this date. Existing records are preserved."
+  },
+  {
+   "record": "celtic:daily-match-a1666bf8d67967233c8fa861",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-e0bcfcbc86dd401aed6983fc",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-c85668d36dea1b94661632d4",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-cdb6ab43d8f83c4d157fa29d",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-4c701bff33e8a6f10026fe45",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-a91cfb2dea356dd5f7ae579f",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-ba58ca3c4d2cfbe0d8b86215",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-3debe6cd255c7bbdf8700be7",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-c6a1dff54cdb4789e1a8c37f",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-79b1ad805399aa0ac74631b3",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-8ff1136525f5abe7fe09b77f",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-1a971f64bcc164279ea18ce6",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-b3f3ec78f8250e7ff47f4d02",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-5b433cbe7c5bf4c855b6eb20",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-e558e093dc069d639250d890",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-8eeffe0a0d079eea53116ec0",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-45bd8de01955a01951d75bd0",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-f2110dfcda170de2bc7c2752",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-26391b6b7c75547e8e929225",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-cb61a62507be892b9b4c9529",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-4b004f4ee012861b50dec8c5",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-963a6143b37038329ca47408",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-e04cb5e013f6ec9c8a589393",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-a46ef35928123fd98fefaf3c",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-fd80dfda1a83a20a3b566693",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-25aa5271a07bfc6cdb1a6a9a",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-43bde3c2b4df95137323d2ee",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-8b28eba59eb5e54c1ac452fb",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "celtic:daily-match-e92133607cdb16695168f7fc",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  }
+ ],
+ "featureInputs": {
+  "players": 1383,
+  "matches": 6281,
+  "seasons": 11,
+  "kits": 131
+ }
+}

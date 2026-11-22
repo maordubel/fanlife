@@ -11,7 +11,7 @@
   "observedTotalPages": null,
   "perPage": 25,
   "state": "schema-changed",
-  "updatedAt": "2026-11-21T16:50:43.671Z",
+  "updatedAt": "2026-11-22T11:39:48.086Z",
   "lastError": "schema"
  },
  "paopedia:pages": {
@@ -20,13 +20,13 @@
   "collection": "pages",
   "queryFingerprint": "f0dc2c3a47a11a0d",
   "parserVersion": "editorial-catalogue-v1",
-  "nextPage": 2,
-  "lastCommittedPage": 1,
+  "nextPage": 3,
+  "lastCommittedPage": 2,
   "observedTotalDocuments": 33,
   "observedTotalPages": 2,
   "perPage": 25,
-  "state": "partial_budget",
-  "updatedAt": "2026-11-21T16:50:52.070Z",
+  "state": "listed",
+  "updatedAt": "2026-11-22T11:39:51.149Z",
   "lastError": null
  },
  "pao-official-history:html": {
@@ -40,7 +40,9 @@
   "observedTotalDocuments": 11,
   "observedTotalPages": null,
   "perPage": 1,
-  "queue": [
+  "queue": [],
+  "seen": [
+   "/en/history/",
    "/en/history/championships/",
    "/en/history/greek-cups/",
    "/en/history/super-cup/",
@@ -52,11 +54,8 @@
    "/en/historyitem/all-time-foreigners/",
    "/historyitem/all-time-roster/"
   ],
-  "seen": [
-   "/en/history/"
-  ],
-  "state": "partial_budget",
-  "updatedAt": "2026-11-21T16:51:00.610Z",
+  "state": "listed",
+  "updatedAt": "2026-11-22T11:40:28.117Z",
   "lastError": null
  },
  "rsssf-greece:html": {
@@ -79,7 +78,7 @@
    "/tablesg/grkchamp.html"
   ],
   "state": "partial_budget",
-  "updatedAt": "2026-11-21T16:51:00.610Z",
+  "updatedAt": "2026-11-22T11:40:28.117Z",
   "lastError": null
  }
 }

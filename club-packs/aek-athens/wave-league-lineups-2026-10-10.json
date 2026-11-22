@@ -479,9 +479,77 @@
    "publisher": "LiveScore",
    "access": "available",
    "checkedAt": "2026-11-12"
+  },
+  {
+   "id": "s365-4776060",
+   "title": "365Scores: Kalamata 0-1 AEK Athens, 2026-11-21",
+   "url": "https://webws.365scores.com/web/game/?gameId=4776060",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1836619",
+   "title": "LiveScore: Kalamata 0-1 AEK Athens, 2026-11-21 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1836619",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
   }
  ],
  "matches": [
+  {
+   "id": "a-m-2026-11-21-kalamata-aek-athens",
+   "value": {
+    "name": "Kalamata 0-1 AEK Athens",
+    "on": "2026-11-21",
+    "competition": "Super League",
+    "score": "0-1",
+    "venue": null,
+    "lineup": [
+     "Thomas Strakosha",
+     "Stavros Pilios",
+     "Filipe Relvas",
+     "Harold Moukoudi",
+     "Lazaros Rota",
+     "Petros Mantalos",
+     "Milán Vitális",
+     "Kervin Arriaga",
+     "Aboubakary Koita",
+     "Luka Jović",
+     "Barnabas Varga"
+    ],
+    "bench": [
+     "Mijat Gaćinović",
+     "Lovro Majer",
+     "Derek Kutesa",
+     "Alberto Brignoli",
+     "Christos Alexiou",
+     "Martin Georgiev",
+     "Domagoj Vida",
+     "Spyros Christakopoulos",
+     "Hakim Sahabo",
+     "Dimitrios Kaloskamis",
+     "João Mário",
+     "Zini"
+    ],
+    "scorers": [
+     "Aboubakary Koita"
+    ]
+   },
+   "sources": [
+    "s365-4776060",
+    "ls-lu-1836619"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-aek-athens"
+  },
   {
    "id": "a-m-2026-11-08-aek-athens-levadiakos",
    "value": {

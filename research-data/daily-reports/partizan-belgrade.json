@@ -1,0 +1,64 @@
+{
+ "day": "2026-11-22",
+ "clubId": "partizan-belgrade",
+ "runUrl": "https://github.com/maordubel/fanlife/actions/runs/45018147326",
+ "added": {
+  "matches": 413,
+  "players": 48,
+  "seasons": 16,
+  "kits": 25,
+  "lineups": 216,
+  "scorers": 164
+ },
+ "heldDays": [],
+ "steps": [
+  {
+   "step": "Historical archives",
+   "state": "ok",
+   "info": "15 pages read, 127 observations, 1 refused"
+  },
+  {
+   "step": "UEFA match reports",
+   "state": "ok",
+   "info": "Finished the bounded UEFA pull"
+  },
+  {
+   "step": "Recent league and cup results",
+   "state": "ok",
+   "info": "Refreshed up to 12 recent fixtures"
+  },
+  {
+   "step": "Historical results, elevens and scorers",
+   "state": "ok",
+   "info": "Continued from the historical results checkpoint, up to 90 fixtures"
+  },
+  {
+   "step": "Historical players",
+   "state": "ok",
+   "info": "30 documented senior club stints"
+  },
+  {
+   "step": "Season archives, scoresheets and shirt metadata",
+   "state": "ok",
+   "info": "11 checked seasons and 79 dated results"
+  },
+  {
+   "step": "Kit archive",
+   "state": "gap",
+   "info": "www.footballkitarchive.com: robots.txt disallows this path"
+  },
+  {
+   "step": "Open league season datasets",
+   "state": "ok",
+   "info": "No league in this source is mapped to this club"
+  }
+ ],
+ "dataVersion": "2186f03fe6632da3",
+ "uncertainties": [],
+ "featureInputs": {
+  "players": 48,
+  "matches": 413,
+  "seasons": 16,
+  "kits": 25
+ }
+}

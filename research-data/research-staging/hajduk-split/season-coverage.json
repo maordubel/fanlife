@@ -25,7 +25,7 @@
    {
     "collection": "posts",
     "state": "partial_budget",
-    "pagesRead": 1,
+    "pagesRead": 9,
     "observedTotalDocuments": 657,
     "observedTotalPages": 27,
     "queue": null,
@@ -33,7 +33,7 @@
    },
    {
     "collection": "pages",
-    "state": "partial_budget",
+    "state": "listed",
     "pagesRead": 1,
     "observedTotalDocuments": 17,
     "observedTotalPages": 1,
@@ -71,12 +71,12 @@
   "listings": [
    {
     "collection": "html",
-    "state": "listed",
+    "state": "blocked",
     "pagesRead": 0,
     "observedTotalDocuments": 1,
     "observedTotalPages": null,
     "queue": 0,
-    "lastError": null
+    "lastError": "HTTP 403 — a refusal is an answer"
    }
   ],
   "documents": 1,

@@ -1,0 +1,1049 @@
+{
+ "sources": [
+  {
+   "id": "s365-4763743",
+   "title": "365Scores: Kocaelispor 2-2 Fenerbahçe SK, 2026-11-21",
+   "url": "https://webws.365scores.com/web/game/?gameId=4763743",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1821051",
+   "title": "LiveScore: Kocaelispor 2-2 Fenerbahçe SK, 2026-11-21 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1821051",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4763749",
+   "title": "365Scores: Corum FK 0-5 Fenerbahçe SK, 2026-11-08",
+   "url": "https://webws.365scores.com/web/game/?gameId=4763749",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1821080",
+   "title": "LiveScore: Corum FK 0-5 Fenerbahçe SK, 2026-11-08 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1821080",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4763757",
+   "title": "365Scores: Fenerbahçe SK 1-2 Goztepe, 2026-10-31",
+   "url": "https://webws.365scores.com/web/game/?gameId=4763757",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1821045",
+   "title": "LiveScore: Fenerbahçe SK 1-2 Goztepe, 2026-10-31 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1821045",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4763765",
+   "title": "365Scores: Galatasaray 2-1 Fenerbahçe SK, 2026-10-26",
+   "url": "https://webws.365scores.com/web/game/?gameId=4763765",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1821035",
+   "title": "LiveScore: Galatasaray 2-1 Fenerbahçe SK, 2026-10-26 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1821035",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4764321",
+   "title": "365Scores: Fenerbahçe SK 3-0 Alanyaspor, 2026-10-17",
+   "url": "https://webws.365scores.com/web/game/?gameId=4764321",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1821028",
+   "title": "LiveScore: Fenerbahçe SK 3-0 Alanyaspor, 2026-10-17 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1821028",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4764310",
+   "title": "365Scores: Rizespor 0-3 Fenerbahçe SK, 2026-10-10",
+   "url": "https://webws.365scores.com/web/game/?gameId=4764310",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1821021",
+   "title": "LiveScore: Rizespor 0-3 Fenerbahçe SK, 2026-10-10 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1821021",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4864596",
+   "title": "365Scores: Turan-Tovuz IK 0-2 Fenerbahçe SK, 2026-10-03",
+   "url": "https://webws.365scores.com/web/game/?gameId=4864596",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4764304",
+   "title": "365Scores: Fenerbahçe SK 8-0 Eyupspor, 2026-09-20",
+   "url": "https://webws.365scores.com/web/game/?gameId=4764304",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1820997",
+   "title": "LiveScore: Fenerbahçe SK 8-0 Eyupspor, 2026-09-20 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1820997",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4764290",
+   "title": "365Scores: Gaziantep FK 0-0 Fenerbahçe SK, 2026-09-14",
+   "url": "https://webws.365scores.com/web/game/?gameId=4764290",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1820999",
+   "title": "LiveScore: Gaziantep FK 0-0 Fenerbahçe SK, 2026-09-14 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1820999",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4764286",
+   "title": "365Scores: Fenerbahçe SK 1-2 Besiktas, 2026-09-05",
+   "url": "https://webws.365scores.com/web/game/?gameId=4764286",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1821305",
+   "title": "LiveScore: Fenerbahçe SK 1-2 Besiktas, 2026-09-05 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1821305",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4764280",
+   "title": "365Scores: Samsunspor 0-2 Fenerbahçe SK, 2026-08-30",
+   "url": "https://webws.365scores.com/web/game/?gameId=4764280",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1821296",
+   "title": "LiveScore: Samsunspor 0-2 Fenerbahçe SK, 2026-08-30 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1821296",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4764269",
+   "title": "365Scores: Fenerbahçe SK 4-2 Konyaspor, 2026-08-22",
+   "url": "https://webws.365scores.com/web/game/?gameId=4764269",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1821276",
+   "title": "LiveScore: Fenerbahçe SK 4-2 Konyaspor, 2026-08-22 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1821276",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4763770",
+   "title": "365Scores: Genclerbirligi 2-1 Fenerbahçe SK, 2026-08-15",
+   "url": "https://webws.365scores.com/web/game/?gameId=4763770",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "ls-lu-1821282",
+   "title": "LiveScore: Genclerbirligi 2-1 Fenerbahçe SK, 2026-08-15 (line-ups)",
+   "url": "https://prod-cdn-public-api.livescore.com/v1/api/app/lineups/soccer/1821282",
+   "publisher": "LiveScore",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4764852",
+   "title": "365Scores: LASK Linz 1-2 Fenerbahçe SK, 2026-07-14",
+   "url": "https://webws.365scores.com/web/game/?gameId=4764852",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4764847",
+   "title": "365Scores: Fenerbahçe SK 4-0 Pogon, 2026-07-11",
+   "url": "https://webws.365scores.com/web/game/?gameId=4764847",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "s365-4762315",
+   "title": "365Scores: Admira 0-5 Fenerbahçe SK, 2026-07-08",
+   "url": "https://webws.365scores.com/web/game/?gameId=4762315",
+   "publisher": "365Scores",
+   "access": "available",
+   "checkedAt": "2026-11-22"
+  }
+ ],
+ "matches": [
+  {
+   "id": "a-m-2026-11-21-kocaelispor-fenerbahce-sk",
+   "value": {
+    "name": "Kocaelispor 2-2 Fenerbahçe SK",
+    "on": "2026-11-21",
+    "competition": "Super Lig",
+    "score": "2-2",
+    "venue": null,
+    "lineup": [
+     "Ederson Moraes",
+     "Levent Mercan",
+     "Kojo Peprah Oppong",
+     "Milan Skriniar",
+     "Nelson Semedo",
+     "İsmail Yüksek",
+     "Matteo Guendouzi",
+     "Oğuz Aydin",
+     "Irfan Kahveci",
+     "Mason Greenwood",
+     "Romelu Lukaku"
+    ],
+    "bench": [
+     "Mert Muldur",
+     "N'Golo Kanté",
+     "Dorgeles Nene",
+     "Kerem Aktürkoğlu",
+     "Vedat Muriqi",
+     "Mert Günok",
+     "Yigit Demir",
+     "Ognjen Mimović",
+     "Bartuğ Elmaz",
+     "Mert Hakan Yandaş"
+    ],
+    "scorers": [
+     "Milan Skriniar",
+     "Mason Greenwood"
+    ]
+   },
+   "sources": [
+    "s365-4763743",
+    "ls-lu-1821051"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-fenerbahce"
+  },
+  {
+   "id": "a-m-2026-11-08-corum-fk-fenerbahce-sk",
+   "value": {
+    "name": "Corum FK 0-5 Fenerbahçe SK",
+    "on": "2026-11-08",
+    "competition": "Super Lig",
+    "score": "0-5",
+    "venue": null,
+    "lineup": [
+     "Ederson Moraes",
+     "Levent Mercan",
+     "Kojo Peprah Oppong",
+     "Milan Skriniar",
+     "Nelson Semedo",
+     "İsmail Yüksek",
+     "Matteo Guendouzi",
+     "Oğuz Aydin",
+     "Irfan Kahveci",
+     "Mason Greenwood",
+     "Romelu Lukaku"
+    ],
+    "bench": [
+     "Mert Muldur",
+     "N'Golo Kanté",
+     "Mert Hakan Yandaş",
+     "Kerem Aktürkoğlu",
+     "Vedat Muriqi",
+     "Mert Günok",
+     "Yigit Demir",
+     "Ognjen Mimović",
+     "Bartuğ Elmaz",
+     "Dorgeles Nene"
+    ],
+    "scorers": [
+     "Mason Greenwood",
+     "Irfan Kahveci",
+     "Irfan Kahveci",
+     "Mason Greenwood",
+     "Oğuz Aydin"
+    ]
+   },
+   "sources": [
+    "s365-4763749",
+    "ls-lu-1821080"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-fenerbahce"
+  },
+  {
+   "id": "a-m-2026-10-31-fenerbahce-sk-goztepe",
+   "value": {
+    "name": "Fenerbahçe SK 1-2 Goztepe",
+    "on": "2026-10-31",
+    "competition": "Super Lig",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Ederson Moraes",
+     "Levent Mercan",
+     "Kojo Peprah Oppong",
+     "Milan Skriniar",
+     "Nelson Semedo",
+     "Matteo Guendouzi",
+     "N'Golo Kanté",
+     "Kerem Aktürkoğlu",
+     "Irfan Kahveci",
+     "Oğuz Aydin",
+     "Romelu Lukaku"
+    ],
+    "bench": [
+     "Yigit Demir",
+     "Mert Muldur",
+     "Dorgeles Nene",
+     "Vedat Muriqi",
+     "Mert Günok",
+     "Tarik Cetin",
+     "Ognjen Mimović",
+     "Bartuğ Elmaz",
+     "İsmail Yüksek",
+     "Mert Hakan Yandaş"
+    ],
+    "scorers": [
+     "Matteo Guendouzi"
+    ]
+   },
+   "sources": [
+    "s365-4763757",
+    "ls-lu-1821045"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-fenerbahce"
+  },
+  {
+   "id": "a-m-2026-10-26-galatasaray-fenerbahce-sk",
+   "value": {
+    "name": "Galatasaray 2-1 Fenerbahçe SK",
+    "on": "2026-10-26",
+    "competition": "Super Lig",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Ederson Moraes",
+     "Levent Mercan",
+     "Archie Brown",
+     "Milan Skriniar",
+     "Nelson Semedo",
+     "N'Golo Kanté",
+     "Matteo Guendouzi",
+     "Oğuz Aydin",
+     "Irfan Kahveci",
+     "Mason Greenwood",
+     "Romelu Lukaku"
+    ],
+    "bench": [
+     "Kojo Peprah Oppong",
+     "Mert Hakan Yandaş",
+     "Dorgeles Nene",
+     "Kerem Aktürkoğlu",
+     "Vedat Muriqi",
+     "Mert Günok",
+     "Yigit Demir",
+     "Mert Muldur",
+     "Bartuğ Elmaz",
+     "İsmail Yüksek"
+    ],
+    "scorers": [
+     "Irfan Kahveci"
+    ]
+   },
+   "sources": [
+    "s365-4763765",
+    "ls-lu-1821035"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-fenerbahce"
+  },
+  {
+   "id": "a-m-2026-10-17-fenerbahce-sk-alanyaspor",
+   "value": {
+    "name": "Fenerbahçe SK 3-0 Alanyaspor",
+    "on": "2026-10-17",
+    "competition": "Super Lig",
+    "score": "3-0",
+    "venue": null,
+    "lineup": [
+     "Ederson Moraes",
+     "Levent Mercan",
+     "Nathan Aké",
+     "Milan Skriniar",
+     "Nelson Semedo",
+     "Matteo Guendouzi",
+     "N'Golo Kanté",
+     "Oğuz Aydin",
+     "Mason Greenwood",
+     "Irfan Kahveci",
+     "Romelu Lukaku"
+    ],
+    "bench": [
+     "Archie Brown",
+     "Mert Hakan Yandaş",
+     "Dorgeles Nene",
+     "Kerem Aktürkoğlu",
+     "Vedat Muriqi",
+     "Mert Günok",
+     "Yigit Demir",
+     "Kojo Peprah Oppong",
+     "Bartuğ Elmaz",
+     "İsmail Yüksek"
+    ],
+    "scorers": [
+     "Romelu Lukaku",
+     "Kerem Aktürkoğlu",
+     "Vedat Muriqi"
+    ]
+   },
+   "sources": [
+    "s365-4764321",
+    "ls-lu-1821028"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-fenerbahce"
+  },
+  {
+   "id": "a-m-2026-10-10-rizespor-fenerbahce-sk",
+   "value": {
+    "name": "Rizespor 0-3 Fenerbahçe SK",
+    "on": "2026-10-10",
+    "competition": "Super Lig",
+    "score": "0-3",
+    "venue": null,
+    "lineup": [
+     "Ederson Moraes",
+     "Archie Brown",
+     "Nathan Aké",
+     "Milan Skriniar",
+     "Nelson Semedo",
+     "Matteo Guendouzi",
+     "N'Golo Kanté",
+     "Kerem Aktürkoğlu",
+     "Marco Asensio",
+     "Mason Greenwood",
+     "Vedat Muriqi"
+    ],
+    "bench": [
+     "Kojo Peprah Oppong",
+     "İsmail Yüksek",
+     "Irfan Kahveci",
+     "Oğuz Aydin",
+     "Romelu Lukaku",
+     "Mert Günok",
+     "Levent Mercan",
+     "Bartuğ Elmaz",
+     "Mert Hakan Yandaş",
+     "Dorgeles Nene"
+    ],
+    "scorers": [
+     "Marco Asensio",
+     "Irfan Kahveci",
+     "Oğuz Aydin"
+    ]
+   },
+   "sources": [
+    "s365-4764310",
+    "ls-lu-1821021"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-fenerbahce"
+  },
+  {
+   "id": "a-m-2026-10-03-turan-tovuz-ik-fenerbahce-sk",
+   "value": {
+    "name": "Turan-Tovuz IK 0-2 Fenerbahçe SK",
+    "on": "2026-10-03",
+    "competition": "Club Friendlies",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Mert Günok",
+     "Levent Mercan",
+     "Archie Brown",
+     "Matteo Guendouzi",
+     "Nelson Semedo",
+     "Efe Yılmaz",
+     "N'Golo Kanté",
+     "Çağrı Balta",
+     "Marco Asensio",
+     "Mason Greenwood",
+     "Alaettin Ekici"
+    ],
+    "bench": [
+     "Adnan Efe Fettahoğlu",
+     "Ederson Moraes",
+     "Tarik Cetin",
+     "Yigit Demir",
+     "Onur Kuşcu",
+     "Ercüment Sancaklı",
+     "Selahattin Sevim",
+     "Doruk Yazıcı",
+     "Baran Yolaçan",
+     "Gökmen Özdemir"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4864596"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-09-20-fenerbahce-sk-eyupspor",
+   "value": {
+    "name": "Fenerbahçe SK 8-0 Eyupspor",
+    "on": "2026-09-20",
+    "competition": "Super Lig",
+    "score": "8-0",
+    "venue": null,
+    "lineup": [
+     "Ederson Moraes",
+     "Archie Brown",
+     "Nathan Aké",
+     "Milan Skriniar",
+     "Nelson Semedo",
+     "Matteo Guendouzi",
+     "N'Golo Kanté",
+     "Kerem Aktürkoğlu",
+     "Irfan Kahveci",
+     "Mason Greenwood",
+     "Vedat Muriqi"
+    ],
+    "bench": [
+     "Kojo Peprah Oppong",
+     "Levent Mercan",
+     "İsmail Yüksek",
+     "Oğuz Aydin",
+     "Romelu Lukaku",
+     "Mert Günok",
+     "Yigit Demir",
+     "Bartuğ Elmaz",
+     "Marco Asensio",
+     "Dorgeles Nene"
+    ],
+    "scorers": [
+     "Mason Greenwood",
+     "Vedat Muriqi",
+     "Vedat Muriqi",
+     "Matteo Guendouzi",
+     "Irfan Kahveci",
+     "Vedat Muriqi",
+     "Vedat Muriqi",
+     "Mason Greenwood"
+    ]
+   },
+   "sources": [
+    "s365-4764304",
+    "ls-lu-1820997"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-fenerbahce"
+  },
+  {
+   "id": "a-m-2026-09-14-gaziantep-fk-fenerbahce-sk",
+   "value": {
+    "name": "Gaziantep FK 0-0 Fenerbahçe SK",
+    "on": "2026-09-14",
+    "competition": "Super Lig",
+    "score": "0-0",
+    "venue": null,
+    "lineup": [
+     "Ederson Moraes",
+     "Archie Brown",
+     "Nathan Aké",
+     "Milan Skriniar",
+     "Mert Muldur",
+     "Matteo Guendouzi",
+     "İsmail Yüksek",
+     "N'Golo Kanté",
+     "Kerem Aktürkoğlu",
+     "Romelu Lukaku",
+     "Mason Greenwood"
+    ],
+    "bench": [
+     "Nelson Semedo",
+     "Bartuğ Elmaz",
+     "Irfan Kahveci",
+     "Oğuz Aydin",
+     "Vedat Muriqi",
+     "Mert Günok",
+     "Yigit Demir",
+     "Kojo Peprah Oppong",
+     "Levent Mercan",
+     "Dorgeles Nene"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4764290",
+    "ls-lu-1820999"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames).",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-fenerbahce"
+  },
+  {
+   "id": "a-m-2026-09-05-fenerbahce-sk-besiktas",
+   "value": {
+    "name": "Fenerbahçe SK 1-2 Besiktas",
+    "on": "2026-09-05",
+    "competition": "Super Lig",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Ederson Moraes",
+     "Archie Brown",
+     "Nathan Aké",
+     "Milan Skriniar",
+     "Nelson Semedo",
+     "N'Golo Kanté",
+     "Matteo Guendouzi",
+     "Oğuz Aydin",
+     "Irfan Kahveci",
+     "Mason Greenwood",
+     "Vedat Muriqi"
+    ],
+    "bench": [
+     "İsmail Yüksek",
+     "Dorgeles Nene",
+     "Kerem Aktürkoğlu",
+     "Romelu Lukaku",
+     "Mert Günok",
+     "Yigit Demir",
+     "Kojo Peprah Oppong",
+     "Mert Muldur",
+     "Levent Mercan",
+     "Bartuğ Elmaz"
+    ],
+    "scorers": [
+     "Milan Skriniar"
+    ]
+   },
+   "sources": [
+    "s365-4764286",
+    "ls-lu-1821305"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-fenerbahce"
+  },
+  {
+   "id": "a-m-2026-08-30-samsunspor-fenerbahce-sk",
+   "value": {
+    "name": "Samsunspor 0-2 Fenerbahçe SK",
+    "on": "2026-08-30",
+    "competition": "Super Lig",
+    "score": "0-2",
+    "venue": null,
+    "lineup": [
+     "Ederson Moraes",
+     "Archie Brown",
+     "Nathan Aké",
+     "Milan Skriniar",
+     "Nelson Semedo",
+     "N'Golo Kanté",
+     "Matteo Guendouzi",
+     "Oğuz Aydin",
+     "Irfan Kahveci",
+     "Mason Greenwood",
+     "Vedat Muriqi"
+    ],
+    "bench": [
+     "Levent Mercan",
+     "Bartuğ Elmaz",
+     "İsmail Yüksek",
+     "Dorgeles Nene",
+     "Romelu Lukaku",
+     "Mert Günok",
+     "Tarik Cetin",
+     "Yigit Demir",
+     "Kojo Peprah Oppong",
+     "Mert Muldur"
+    ],
+    "scorers": [
+     "Vedat Muriqi",
+     "Oğuz Aydin"
+    ]
+   },
+   "sources": [
+    "s365-4764280",
+    "ls-lu-1821296"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-fenerbahce"
+  },
+  {
+   "id": "a-m-2026-08-22-fenerbahce-sk-konyaspor",
+   "value": {
+    "name": "Fenerbahçe SK 4-2 Konyaspor",
+    "on": "2026-08-22",
+    "competition": "Super Lig",
+    "score": "4-2",
+    "venue": null,
+    "lineup": [
+     "Ederson Moraes",
+     "Archie Brown",
+     "Nathan Aké",
+     "Milan Skriniar",
+     "Nelson Semedo",
+     "Matteo Guendouzi",
+     "N'Golo Kanté",
+     "Kerem Aktürkoğlu",
+     "Marco Asensio",
+     "Mason Greenwood",
+     "Vedat Muriqi"
+    ],
+    "bench": [
+     "Levent Mercan",
+     "Bartuğ Elmaz",
+     "İsmail Yüksek",
+     "Dorgeles Nene",
+     "Oğuz Aydin",
+     "Romelu Lukaku",
+     "Tarik Cetin",
+     "Yigit Demir",
+     "Mert Muldur",
+     "Irfan Kahveci"
+    ],
+    "scorers": [
+     "Vedat Muriqi",
+     "Mason Greenwood",
+     "Marco Asensio",
+     "Mason Greenwood"
+    ]
+   },
+   "sources": [
+    "s365-4764269",
+    "ls-lu-1821276"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-fenerbahce"
+  },
+  {
+   "id": "a-m-2026-08-15-genclerbirligi-fenerbahce-sk",
+   "value": {
+    "name": "Genclerbirligi 2-1 Fenerbahçe SK",
+    "on": "2026-08-15",
+    "competition": "Super Lig",
+    "score": "2-1",
+    "venue": null,
+    "lineup": [
+     "Tarik Cetin",
+     "Levent Mercan",
+     "Nathan Aké",
+     "Milan Skriniar",
+     "Mert Muldur",
+     "Matteo Guendouzi",
+     "İsmail Yüksek",
+     "Oğuz Aydin",
+     "Marco Asensio",
+     "Irfan Kahveci",
+     "Anderson Talisca"
+    ],
+    "bench": [
+     "Nelson Semedo",
+     "N'Golo Kanté",
+     "Mason Greenwood",
+     "Kerem Aktürkoğlu",
+     "Vedat Muriqi",
+     "Kuzey Sapaz",
+     "Yigit Demir",
+     "Archie Brown",
+     "Bartuğ Elmaz",
+     "Dorgeles Nene"
+    ],
+    "scorers": [
+     "Anderson Talisca"
+    ]
+   },
+   "sources": [
+    "s365-4763770",
+    "ls-lu-1821282"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "Two publishers (365Scores, LiveScore) agree on date, clubs, score and the starting eleven (≥10 of 11 surnames); both print the same scorers.",
+   "confidence": 3,
+   "status": "approved",
+   "approvedAt": "2026-11-22",
+   "approvedBy": "automated:cross-source-review-league-lineups-fenerbahce"
+  },
+  {
+   "id": "a-m-2026-07-14-lask-linz-fenerbahce-sk",
+   "value": {
+    "name": "LASK Linz 1-2 Fenerbahçe SK",
+    "on": "2026-07-14",
+    "competition": "Club Friendlies",
+    "score": "1-2",
+    "venue": null,
+    "lineup": [
+     "Mert Günok",
+     "Levent Mercan",
+     "Jayden Oosterwolde",
+     "Milan Skriniar",
+     "Mert Muldur",
+     "Matteo Guendouzi",
+     "Kerem Aktürkoğlu",
+     "Bartuğ Elmaz",
+     "Fred",
+     "Irfan Kahveci",
+     "Anderson Talisca"
+    ],
+    "bench": [
+     "Nathan Aké",
+     "Çağlar Söyüncü",
+     "Archie Brown",
+     "İsmail Yüksek",
+     "Marco Asensio",
+     "Anthony Musaba",
+     "Cengiz Under",
+     "Oğuz Aydin",
+     "Sidiki Cherif",
+     "İ. Eğribayat",
+     "Engin Biterge",
+     "Omar Fayed",
+     "Rodrigo Becão",
+     "Ognjen Mimović",
+     "Emre Demir"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4764852"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-07-11-fenerbahce-sk-pogon",
+   "value": {
+    "name": "Fenerbahçe SK 4-0 Pogon",
+    "on": "2026-07-11",
+    "competition": "Club Friendlies",
+    "score": "4-0",
+    "venue": null,
+    "lineup": [
+     "Mert Günok",
+     "Levent Mercan",
+     "Jayden Oosterwolde",
+     "Milan Skriniar",
+     "Ognjen Mimović",
+     "Matteo Guendouzi",
+     "Anthony Musaba",
+     "Bartuğ Elmaz",
+     "Fred",
+     "Cengiz Under",
+     "Anderson Talisca"
+    ],
+    "bench": [
+     "Tarik Cetin",
+     "Yigit Demir",
+     "Rodrigo Becão",
+     "Çağlar Söyüncü",
+     "Kamil Efe Üregen",
+     "İsmail Yüksek",
+     "Marco Asensio",
+     "Emre Demir",
+     "Irfan Kahveci",
+     "Kerem Aktürkoğlu",
+     "Oğuz Aydin",
+     "Sidiki Cherif",
+     "Engin Biterge",
+     "Çağrı Balta"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4764847"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  },
+  {
+   "id": "a-m-2026-07-08-admira-fenerbahce-sk",
+   "value": {
+    "name": "Admira 0-5 Fenerbahçe SK",
+    "on": "2026-07-08",
+    "competition": "Club Friendlies",
+    "score": "0-5",
+    "venue": null,
+    "lineup": [
+     "Tarik Cetin",
+     "Levent Mercan",
+     "Jayden Oosterwolde",
+     "Milan Skriniar",
+     "Ognjen Mimović",
+     "Matteo Guendouzi",
+     "Anthony Musaba",
+     "Bartuğ Elmaz",
+     "Fred",
+     "Cengiz Under",
+     "Çağrı Balta"
+    ],
+    "bench": [
+     "Yigit Demir",
+     "Yiğit Fidan",
+     "Kamil Efe Üregen",
+     "Marco Asensio",
+     "Adem Yeşilyurt",
+     "Alaettin Ekici",
+     "Emre Demir",
+     "İ. Eğribayat",
+     "Çağrı Fedai",
+     "Rodrigo Becão",
+     "Engin Biterge"
+    ],
+    "scorers": []
+   },
+   "sources": [
+    "s365-4762315"
+   ],
+   "researchedAt": "2026-11-22",
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "notes": "One publisher only — LiveScore lists no matching match (date, both clubs, score).",
+   "confidence": 2,
+   "status": "review",
+   "approvedAt": null,
+   "approvedBy": null
+  }
+ ],
+ "players": [],
+ "kits": [],
+ "rivals": []
+}

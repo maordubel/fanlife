@@ -1,0 +1,268 @@
+{
+ "day": "2026-11-22",
+ "clubId": "aek-athens",
+ "runUrl": "https://github.com/maordubel/fanlife/actions/runs/45018147326",
+ "added": {
+  "matches": 312,
+  "players": 33,
+  "seasons": 68,
+  "kits": 33,
+  "lineups": 299,
+  "scorers": 198
+ },
+ "heldDays": [
+  "2026-01-24",
+  "2026-09-13"
+ ],
+ "steps": [
+  {
+   "step": "Historical archives",
+   "state": "ok",
+   "info": "325 pages read, 324 observations, 1 refused"
+  },
+  {
+   "step": "UEFA match reports",
+   "state": "ok",
+   "info": "Finished the bounded UEFA pull"
+  },
+  {
+   "step": "Recent league and cup results",
+   "state": "ok",
+   "info": "Refreshed up to 12 recent fixtures"
+  },
+  {
+   "step": "Historical results, elevens and scorers",
+   "state": "ok",
+   "info": "Continued from the historical results checkpoint, up to 90 fixtures"
+  },
+  {
+   "step": "Historical players",
+   "state": "ok",
+   "info": "33 documented senior club stints"
+  },
+  {
+   "step": "Season archives, scoresheets and shirt metadata",
+   "state": "ok",
+   "info": "11 checked seasons and 1 dated results"
+  },
+  {
+   "step": "Kit archive",
+   "state": "gap",
+   "info": "www.footballkitarchive.com: robots.txt disallows this path"
+  },
+  {
+   "step": "Open league season datasets",
+   "state": "ok",
+   "info": "0 dated results across 5 competition files; 12 historical files unavailable"
+  }
+ ],
+ "dataVersion": "4f1d6239ffe63e1a",
+ "uncertainties": [
+  {
+   "record": "aek-athens:daily-match-c466c42090c98f81fa3f5dba",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-616e299a75809d5136b4dc9b",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-23cc1a1078663cbd67b5a83a",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-6410f9202822025d8eaf0630",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-a35e1809321bf60b28e2263a",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-e9aa338869dc3dba0f070354",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-0a0fdf1a8c068777036ac74a",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-c719283ac32ee6c5724cc9f0",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-48be1331105a57a073fdd112",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-333e71a7e65fbe54d0bffb4c",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-cd4062ee2fac8d528821ca03",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-71d7c9a52eb811e44792b571",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-26522bf1c2577e7755528ca2",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-940614627aa40543c758531e",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-ff825d00ad3c10d4c70e87d9",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-2971874f2f35a320736fd410",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-2b9780b55b01ef40d158193f",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-98a6efb2c5e647e219168203",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-e568f42afa5a14575fafc75e",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-47276e1dd7c175d0a9ecab4a",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-6233871a848e0d6b5044ab77",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-4939d980283a4152d102ace2",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-fc2e0b60fa287bc2729fb41a",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-acc0bda034fb9fd23cc68ec3",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-78a87639bdcc1df789244209",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-769fd81d495d652ed1c6a235",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-1cb5a791ddc4a0300b13089f",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-1ba2615d7cc8e04f96313fb5",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-126ffb8950bd745a7c53e7b2",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-f3f0a39b931fbf49e45b3cea",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-081b6c5604fd101ef4c808e6",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-477609da1f84b60d397c1605",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-895f7e67f3042dd762054893",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-f34c57f50cb30380888d7b45",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-9a31219bab854cd1ac4bbce3",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-eb8149b5f029d7f49a3a8403",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-9636d431eb98f1df85a78667",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-97dc04cac666f4646fa22ddb",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-f25d489609c020f33561e0db",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  },
+  {
+   "record": "aek-athens:daily-match-f77ddd41b23faa54673f925f",
+   "code": "DAILY_MATCH_CONFLICT",
+   "message": "Different opponents, home/away order or score on the same day."
+  }
+ ],
+ "featureInputs": {
+  "players": 1219,
+  "matches": 3414,
+  "seasons": 68,
+  "kits": 137
+ }
+}
