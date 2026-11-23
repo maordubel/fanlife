@@ -10,11 +10,11 @@ import {LAST_CLUB_KEY} from '@/components/clubs/RememberClub'
 export type IndexClub={id:string;name:string;city:string;country:string;nick:string|null;crest:string|null;initials:string;primary:string;on:string;pattern:string;href:string;live:boolean}
 type Copy={kicker:string;title:string;note:string;stamp:string;search:string;all:string;az:string;byCountry:string;none:string;soon:string;soonNote:string;vote:string;enter:string;back:string}
 
-const fold=(s:string)=>s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase()
+export const fold=(s:string)=>s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase()
 const ink=(c:IndexClub)=>({['--club-primary' as string]:c.primary,['--club-on-primary' as string]:c.on}) as CSSProperties
 const TILT=[-1.2,0.8,-0.5,1.1,-0.9,0.4,1.3,-0.7]
 
-function Sticker({c,n,mine,enter}:{c:IndexClub;n:number;mine?:boolean;enter:string}){
+export function Sticker({c,n,mine,enter}:{c:IndexClub;n:number;mine?:boolean;enter:string}){
  return <Link className="ckp-stk min-h-tap" href={c.href} style={{...ink(c),['--r' as string]:`${TILT[n%TILT.length]}deg`}} data-mine={mine||undefined}>
   <span className="ckp-band" data-livery={c.pattern}>
    <span className="ckp-no" aria-hidden="true">{String(n+1).padStart(2,'0')}</span>
