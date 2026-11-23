@@ -11,18 +11,18 @@ const ICON: Record<BagId, IconName> = {scarf: 'scarf', ticket: 'ticket', pass: '
 /** the supporter, drawn: jacket, trousers, and the terrace scarf in the club's colours when it is worn */
 function Figure({scarf, accent, second}: {scarf: boolean; accent: string; second: string}) {
   return (
-    <svg viewBox="0 0 160 280" role="img" aria-label="" aria-hidden="true">
-      <ellipse cx="80" cy="268" rx="46" ry="6" fill="#000" opacity=".35" />
-      <path d="M62 150h36l4 92H88l-8-60-8 60H58z" fill="#cbb48e" />
-      <path d="M56 242h22v14H52zM82 242h22l4 14H82z" fill="#2a2f38" />
-      <path d="M46 86c0-12 10-20 22-20h24c12 0 22 8 22 20l6 70h-18l-2-44-2 50H62l-2-50-2 44H40z" fill="#1d2b3f" stroke="#fff1dc" strokeOpacity=".25" strokeWidth="1.5" />
-      <path d="M38 100l-8 56h14l8-50zM122 100l8 56h-14l-8-50z" fill="#1d2b3f" stroke="#fff1dc" strokeOpacity=".2" />
-      <circle cx="36" cy="160" r="7" fill="#c98f66" /><circle cx="124" cy="160" r="7" fill="#c98f66" />
-      <rect x="71" y="52" width="18" height="18" rx="6" fill="#c98f66" />
-      <ellipse cx="80" cy="40" rx="20" ry="23" fill="#d9a276" />
-      <path d="M59 36c0-16 10-24 21-24s21 8 21 24c-6-8-13-11-21-11s-15 3-21 11z" fill="#2a1f1a" />
-      <circle cx="73" cy="42" r="2" fill="#2a1f1a" /><circle cx="87" cy="42" r="2" fill="#2a1f1a" />
-      <path d="M74 52q6 4 12 0" fill="none" stroke="#2a1f1a" strokeWidth="1.6" strokeLinecap="round" />
+    <svg viewBox="0 0 160 280" aria-hidden="true">
+      <ellipse cx="80" cy="268" rx="46" ry="6" className={css.lgFShadow} opacity=".35" />
+      <path d="M62 150h36l4 92H88l-8-60-8 60H58z" className={css.lgFPants} />
+      <path d="M56 242h22v14H52zM82 242h22l4 14H82z" className={css.lgFShoe} />
+      <path d="M46 86c0-12 10-20 22-20h24c12 0 22 8 22 20l6 70h-18l-2-44-2 50H62l-2-50-2 44H40z" className={css.lgFJacket} strokeOpacity=".25" strokeWidth="1.5" />
+      <path d="M38 100l-8 56h14l8-50zM122 100l8 56h-14l-8-50z" className={css.lgFJacket} strokeOpacity=".2" />
+      <circle cx="36" cy="160" r="7" className={css.lgFSkin2} /><circle cx="124" cy="160" r="7" className={css.lgFSkin2} />
+      <rect x="71" y="52" width="18" height="18" rx="6" className={css.lgFSkin2} />
+      <ellipse cx="80" cy="40" rx="20" ry="23" className={css.lgFSkin} />
+      <path d="M59 36c0-16 10-24 21-24s21 8 21 24c-6-8-13-11-21-11s-15 3-21 11z" className={css.lgFHair} />
+      <circle cx="73" cy="42" r="2" className={css.lgFHair} /><circle cx="87" cy="42" r="2" className={css.lgFHair} />
+      <path d="M74 52q6 4 12 0" fill="none" className={css.lgFMouth} strokeWidth="1.6" strokeLinecap="round" />
       {scarf && <g>
         <path d="M60 64c12 8 28 8 40 0l3 14c-14 9-32 9-46 0z" fill={accent} />
         <path d="M68 68l-2 11M76 71l-1 12M84 71l1 12M92 68l2 11" stroke={second} strokeWidth="3" />
@@ -50,7 +50,7 @@ export function BagScreen({w, items, accent, second, onWear, onClose, onTab}: {w
         <div className={css.lgSide}>
           <div className={css.lgSlots} role="group" aria-label={w('hood.bag.carrying')}>
             {items.map(i => (
-              <button key={i.id} type="button" className={css.lgSlot} data-state={i.state} aria-pressed={sel === i.id} onClick={() => setSel(i.id)}>
+              <button key={i.id} type="button" className={css.lgSlot + ' min-h-tap'} data-state={i.state} aria-pressed={sel === i.id} onClick={() => setSel(i.id)}>
                 {i.worn && <span className={css.lgSlotWorn} aria-hidden="true" />}
                 {i.count > 1 && <span className={css.lgSlotCount}>{w('hood.bag.count', {n: String(i.count)})}</span>}
                 <Icon n={i.state === 'locked' ? 'lock' : ICON[i.id]} />

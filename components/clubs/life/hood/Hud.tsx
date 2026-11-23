@@ -10,7 +10,7 @@ export type HudRefs = {arrow: MutableRefObject<HTMLElement | null>; dist: Mutabl
 export const RING_R = 47, RING_LEN = 2 * Math.PI * RING_R
 
 export type HudProps = {
-  w: W; refs: HudRefs; hidden: boolean; touch: boolean; cam: 'chase' | 'eyes'; sprintOn: boolean; ghost: boolean
+  w: W; refs: HudRefs; hidden: boolean; touch: boolean; cam: 'chase' | 'eyes'; sprintOn: boolean; ghost: boolean; onCoachOk: () => void
   kicker: string; objective: string; free: boolean; hasTarget: boolean
   place: string | null; banner: Banner | null; near: string | null; cash: number
   stickAt: {x: number; y: number; dx: number; dy: number} | null
@@ -44,7 +44,8 @@ export function Hud(p: HudProps) {
       {p.near && <div className={css.lgPrompt} role="status"><div className={css.lgGlass}>{p.touch ? <Icon n="talk" /> : <kbd>E</kbd>}<span>{p.near}</span></div></div>}
       {p.touch ? (
         <>
-          {p.ghost && <div className={css.lgStickGhost} aria-hidden="true"><i /><span>{w('hood.touch')}</span></div>}
+          {p.ghost && <div className={css.lgStickGhost} aria-hidden="true"><i /></div>}
+          {p.ghost && <div className={css.lgCoach + ' ' + css.lgGlass} role="status"><p>{w('hood.coach')}</p><button type="button" className="min-h-tap" onClick={p.onCoachOk}>{w('hood.coach.ok')}</button></div>}
           <div className={css.lgStickZone} onPointerDown={p.stick.down} onPointerMove={p.stick.move} onPointerUp={p.stick.up} onPointerCancel={p.stick.up} />
           {p.stickAt && <div className={css.lgStick} style={{insetBlockStart: p.stickAt.y, insetInlineStart: p.stickAt.x}}><i style={{transform: `translate(${p.stickAt.dx}px, ${p.stickAt.dy}px)`}} /></div>}
           <div className={css.lgPads}>

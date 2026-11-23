@@ -65,12 +65,13 @@ export function districtModel(level: Level, run?: Pick<HoodRun, 'job' | 'sim' | 
     }
   }
   // the blocks must not sit on the named places
-  const clear = blocks.filter(bl => !h.places.some(p => p.id !== 'ground' && p.id !== 'home' && p.x > bl.x - 3 && p.x < bl.x + bl.w + 3 && p.z > bl.y - 3 && p.z < bl.y + bl.h + 3))
+  const pad = (id: string) => id === 'school' ? 15 : id === 'pitch' ? 11 : 3
+  const clear = blocks.filter(bl => !h.places.some(p => p.id !== 'ground' && p.id !== 'home' && p.x > bl.x - pad(p.id) && p.x < bl.x + bl.w + pad(p.id) && p.z > bl.y - pad(p.id) && p.z < bl.y + bl.h + pad(p.id)))
   const pitch = rect(h.pitch.x - h.pitch.w / 2, h.pitch.x + h.pitch.w / 2, h.pitch.z - h.pitch.d / 2, h.pitch.z + h.pitch.d / 2)
-  const ground = rect(-half - 12, half + 12, b.z0 - 14, b.z0 + 24)
+  const ground = rect(-30, 30, b.z0 - 43, b.z0 - 1)
   const k = level.blocks[0]
   return {
-    bounds: rect(b.x0, b.x1, b.z0 - 16, b.z1),
+    bounds: rect(b.x0, b.x1, b.z0 - 48, b.z1),
     streets, blocks: clear, pitch, ground,
     places: h.places.map(p => ({id: p.id, key: p.key, descKey: `${p.key}.desc`, x: p.x, y: p.z, r: p.r, job: jobs.has(p.id)})),
     kiosk: k ? rect(k.x0, k.x1, k.z0, k.z1) : rect(0, 0, 0, 0),
@@ -100,4 +101,13 @@ export function ringProgress(run: HoodRun): number {
   if (run.job === 'active') return Math.max(0, Math.min(1, (run.sim.step - j.from) / j.steps))
   const b = run.level.bounds
   return Math.max(0, Math.min(1, (run.level.start.z - run.sim.z) / (run.level.start.z - b.z0)))
+}
+
+/**
+ * The way drawn on the map from the player to a place, along the streets: out to the main street's middle, down it to the
+ * place's cross street, then along that street to the place. It is a drawing only; nothing walks it for him.
+ */
+export function routeTo(level: Level, from: {x: number; z: number}, to: {x: number; z: number}): {x: number; z: number}[] {
+  const pts = [{x: from.x, z: from.z}, {x: 0, z: from.z}, {x: 0, z: to.z}, {x: to.x, z: to.z}]
+  return pts.filter((p, i) => i === 0 || Math.hypot(p.x - pts[i - 1]!.x, p.z - pts[i - 1]!.z) > 0.5)
 }

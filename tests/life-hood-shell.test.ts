@@ -10,7 +10,7 @@ import {acceptJob, hoodBot, lineFor, personNear, startHood, stepHood} from '@/li
 import {accentFor, brandAccent, CREAM, LIME, NAVY, cleanName, clockText, contrast, initialShell, reduce, simRuns, type Shell, type ShellEvent} from '@/lib/life/hood/shell'
 import {advance, choose, scriptKeys, talkScript, type TalkCtx} from '@/lib/life/hood/talk'
 import {bagOf, carryOf} from '@/lib/life/hood/bag'
-import {districtModel, hudTarget, jobPlaces, metresTo, placeNear, ringProgress} from '@/lib/life/hood/district'
+import {districtModel, hudTarget, routeTo, jobPlaces, metresTo, placeNear, ringProgress} from '@/lib/life/hood/district'
 import {clearSave, parseSave, readSave, readSettings, restore, saveKey, snapshot, writeSave, writeSettings, type Store} from '@/lib/life/hood/save'
 import {hoodWord, type HoodKey} from '@/lib/life/hood/words'
 import {isYellowHex} from '@/lib/isYellow'
@@ -162,6 +162,12 @@ describe('shell · district map', {timeout: 60_000}, () => {
     expect(m.blocks.length).toBeGreaterThan(8)
     expect(JSON.stringify(districtModel(l))).toBe(JSON.stringify(m))
     for (const bl of m.blocks) for (const s of m.streets) { const hit = bl.x < s.x + s.w && bl.x + bl.w > s.x && bl.y < s.y + s.h && bl.y + bl.h > s.y; if (hit && s.w < 30) expect(hit, 'a block on the main street').toBe(false) }
+  })
+  it('the drawn route runs along the streets from you to the place and ends on it', async () => {
+    const l = hoodLevel(await clubOf('olympiacos'), 2), k = l.hood!.places.find(p => p.id === 'pitch')!
+    const r = routeTo(l, {x: l.start.x, z: l.start.z}, k)
+    expect(r[0]).toEqual({x: l.start.x, z: l.start.z}); expect(r.at(-1)).toEqual({x: k.x, z: k.z})
+    expect(r.slice(1, -1).every(p => p.x === 0)).toBe(true)
   })
   it('a tap finds the nearest place within reach and nothing beyond it', async () => {
     const l = hoodLevel(await clubOf('olympiacos'), 1), m = districtModel(l), k = m.places.find(p => p.id === 'kiosk')!

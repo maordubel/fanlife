@@ -20,7 +20,7 @@ function useTyped(text: string, instant: boolean): {shown: string; done: boolean
   return {shown: text.slice(0, n), done: n >= text.length, finish: () => setN(text.length)}
 }
 
-export function Talk({node, name, w, reduced, onGo, onChoose, onLeave}: {node: TalkNode; name: string; w: W; reduced: boolean; onGo: () => void; onChoose: (i: number) => void; onLeave: () => void}) {
+export function Talk({portrait, node, name, w, reduced, onGo, onChoose, onLeave}: {portrait: string; node: TalkNode; name: string; w: W; reduced: boolean; onGo: () => void; onChoose: (i: number) => void; onLeave: () => void}) {
   const line = w(node.line)
   const {shown, done, finish} = useTyped(line, reduced)
   const choices = node.choices ?? []
@@ -42,10 +42,11 @@ export function Talk({node, name, w, reduced, onGo, onChoose, onLeave}: {node: T
     return () => window.removeEventListener('keydown', key, true)
   }, [])
   return (
-    <div className={css.lgTalk} role="dialog" aria-label={name} data-life="hood-talk">
+    <div className={css.lgTalk + ' z-[60]'} role="dialog" aria-label={name} data-life="hood-talk">
       <div className={css.lgTalkBox} onClick={tap}>
+        <span className={css.lgPortrait2} data-who={portrait} aria-hidden="true"><i /><b>{name.charAt(0)}</b></span>
         <span className={css.lgPlate}>{name}</span>
-        <button type="button" className={css.lgIconBtn + ' ' + css.lgLeave} aria-label={w('hood.talk.leave')} onClick={e => { e.stopPropagation(); onLeave() }}><Icon n="close" /></button>
+        <button type="button" className={css.lgIconBtn + ' min-h-tap ' + css.lgLeave} aria-label={w('hood.talk.leave')} onClick={e => { e.stopPropagation(); onLeave() }}><Icon n="close" /></button>
         <p className={css.lgTalkText} aria-live="polite" aria-label={line}><span aria-hidden="true">{shown}</span>{!done && <span className={css.lgCaret} aria-hidden="true">▌</span>}</p>
         {done && !choices.length && <p className={css.lgTapHint}>{w('hood.talk.tap')}</p>}
       </div>

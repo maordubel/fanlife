@@ -22,6 +22,8 @@ import {Hud, RING_LEN, type Banner} from './Hud'
 import {Talk} from './Talk'
 import {Boot, Cinematic, Help, JobCard, NameEntry, Pause, Settings, Title} from './Screens'
 import {MapScreen} from './MapScreen'
+import {WatchCard} from '../watch/WatchCard'
+import {watchFor, type WatchAnswer} from '@/lib/life/watch'
 import {BagScreen} from './BagScreen'
 import css from './hood.module.css'
 
@@ -51,7 +53,7 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
   const [banner, setBanner] = useState<Banner | null>(null)
   const [talk, setTalk] = useState<{script: TalkScript; id: string} | null>(null)
   const [waypoint, setWaypoint] = useState<PlaceId | null>(null), [wear, setWear] = useState(true), [mapKey, setMapKey] = useState(0)
-  const [savedName, setSavedName] = useState('')
+  const [savedName, setSavedName] = useState(''), [coach, setCoach] = useState(true), [watch, setWatch] = useState<WatchAnswer | null>(null)
   const waypointRef = useRef<PlaceId | null>(null), wayLabelRef = useRef(''), pendingDone = useRef(false), wearRef = useRef(true)
   const storeRef = useRef<ReturnType<typeof browserStore>>(null)
   const timers = useRef<{banner: number; place: number}>({banner: 0, place: 0}), bannerId = useRef(0)
@@ -307,7 +309,7 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
       <canvas ref={canvasRef} className={css.lgCanvas} data-look={lookV} aria-hidden="true" />
       <div className={css.lgVeil} data-v={screen === 'dialogue' ? 'talk' : lookV === 'title' ? 'title' : 'none'} />
       <Hud
-        w={w} refs={hud} hidden={screen !== 'playing'} touch={touch} cam={cam} sprintOn={sprintOn} ghost={ghost}
+        w={w} refs={hud} hidden={screen !== 'playing'} touch={touch} cam={cam} sprintOn={sprintOn} ghost={coach && ghost} onCoachOk={() => setCoach(false)}
         kicker={kicker} objective={objective} free={!active} hasTarget={!!hudTarget(run, waypoint)}
         place={placeName} banner={banner} near={nearPerson} cash={0} stickAt={stickAt}
         onMap={() => go({t: 'open', to: 'map'})} onPause={() => { persist(); go({t: 'open', to: 'pause'}) }} onBag={() => go({t: 'open', to: 'bag'})} onCam={() => setCam(c => c === 'chase' ? 'eyes' : 'chase')}
@@ -318,13 +320,14 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
       {screen === 'name' && <NameEntry w={w} clean={cleanName} onGo={startNew} onBack={() => go({t: 'esc'})} />}
       {screen === 'intro' && <Cinematic lines={introLines} w={w} reduced={reducedEff} onBeat={onIntroBeat} onDone={finishIntro} />}
       {screen === 'cutscene' && <Cinematic lines={outroLines} w={w} reduced={reducedEff} ms={3000} onDone={() => go({t: 'cutDone'})} />}
-      {screen === 'dialogue' && talkNode && <Talk key={`${talk!.script.who}-${talkNode.id}`} node={talkNode} name={names[talkNode.who] ?? ''} w={w} reduced={reducedEff} onGo={onGo} onChoose={onChoose} onLeave={endTalk} />}
+      {screen === 'dialogue' && talkNode && <Talk portrait={talkNode.who} key={`${talk!.script.who}-${talkNode.id}`} node={talkNode} name={names[talkNode.who] ?? ''} w={w} reduced={reducedEff} onGo={onGo} onChoose={onChoose} onLeave={endTalk} />}
       {screen === 'pause' && <Pause w={w} club={club.skin.name} name={shell.name} onResume={() => go({t: 'resume'})} onMap={() => { setMapKey(k => k + 1); go({t: 'open', to: 'map'}) }} onBag={() => go({t: 'open', to: 'bag'})} onSettings={() => go({t: 'open', to: 'settings'})} onHelp={() => go({t: 'open', to: 'help'})} onQuit={() => { persist(); setSavedName(shell.name); go({t: 'quit'}) }} />}
       {screen === 'settings' && <Settings w={w} s={settings} quality={qualityEff} onChange={changeSettings} onBack={() => go({t: 'back'})} />}
       {screen === 'help' && <Help w={w} onBack={() => go({t: 'back'})} />}
-      {screen === 'map' && <MapScreen w={w} run={run} waypoint={waypoint} wayLabel={wayName} accent={accent} mapKey={mapKey} onWaypoint={id => { setWaypoint(id); waypointRef.current = id; persist() }} onClose={() => go({t: 'back'})} onTab={() => go({t: 'open', to: 'bag'})} />}
+      {screen === 'map' && <MapScreen w={w} run={run} waypoint={waypoint} wayLabel={wayName} accent={accent} mapKey={mapKey} reduced={reducedEff} onWaypoint={id => { setWaypoint(id); waypointRef.current = id; persist() }} onClose={() => go({t: 'back'})} onTab={() => go({t: 'open', to: 'bag'})} />}
       {screen === 'bag' && <BagScreen w={w} items={bagOf(carryOf(run), wear)} accent={accent} second={accentFor({...club.skin, p: club.skin.s, s: club.skin.p}).accent} onWear={v => { setWear(v); wearRef.current = v; persist() }} onClose={() => go({t: 'back'})} onTab={() => go({t: 'open', to: 'map'})} />}
-      {screen === 'jobdone' && <JobCard w={w} title={w(job.titleKey)} onGo={() => go({t: 'cardDone'})} onMap={() => { go({t: 'cardDone'}); go({t: 'open', to: 'map'}) }} />}
+      {screen === 'jobdone' && <JobCard w={w} title={w(job.titleKey)} onGo={() => { let a: WatchAnswer | null = null; try { a = watchFor(club.id, {}) } catch { a = null } if (a) setWatch(a); go({t: 'cardDone'}) }} onMap={() => { go({t: 'cardDone'}); go({t: 'open', to: 'map'}) }} />}
+      {watch && screen === 'playing' && <div className={css.lgWatch}><WatchCard highlights={watch.highlights} more={watch.moreHighlights} ourFilm={watch.ourFilm} ourFilmFit={watch.ourFilmFit} accent={accent} onContinue={() => setWatch(null)} /></div>}
       {!bootGone && <Boot w={w} out={screen !== 'boot'} />}
       {error && <div className={css.lgErr}><section className={css.lgCard} role="alertdialog" aria-label={w('hood.boot.err')}><h2>{w('hood.brand')}</h2><p>{w('hood.err')}</p></section></div>}
     </div>

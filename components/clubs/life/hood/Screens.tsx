@@ -158,7 +158,7 @@ export function JobCard({w, title, onGo, onMap}: {w: W; title: string; onGo: () 
         <h2>{title}</h2>
         <p>{w('hood.card.line')}</p>
         <div className={css.lgCardStats}><div><small>{w('hood.card.steps')}</small><b>3 / 3</b></div><div><small>{w('hood.card.cash')}</small><b>0</b></div></div>
-        <button ref={ref} type="button" className={css.lgBtn} data-primary="true" onClick={onGo}>{w('hood.card.go')}<Icon n="chevron" /></button>
+        <button ref={ref} type="button" className={css.lgBtn + ' min-h-tap'} data-primary="true" onClick={onGo}>{w('hood.card.go')}<Icon n="chevron" /></button>
         <button type="button" className={css.lgBtn} data-quiet="true" onClick={onMap}>{w('hood.card.map')}<Icon n="map" /></button>
       </div>
     </section>
