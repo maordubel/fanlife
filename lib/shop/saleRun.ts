@@ -2,7 +2,9 @@ import 'server-only'
 import {client} from './build'
 import {price} from './plan'
 import {readShop,updateShop,forgetPublicShop} from './store'
-import {saleFor,salePrice} from './sales'
+import {saleFor,salePrice,saleBeat,saleWords,covers} from './sales'
+import {isPublic} from './types'
+import {SITE_URL} from '@/lib/brand'
 
 /**
  * Brings every product's price in Printify to what the sales say now: a product in an active sale gets the cut, a product
@@ -46,4 +48,30 @@ export async function countSold(by:string):Promise<number>{
  await updateShop(by,'',d=>{for(const p of d.products){const n=p.printify?sold.get(p.printify.productId)??0:0;if((p.sold??0)!==n){p.sold=n;changed++}}})
  if(changed)forgetPublicShop()
  return [...sold.values()].reduce((a,b)=>a+b,0)
+}
+
+/**
+ * THE SALE ON THE SOCIAL MACHINE (owner, 23.11.2026: approved). Once an hour the checkup asks every sale which announcement
+ * is due (lib/shop/sales.ts → saleBeat) and queues ONE post through the hub's own publisher — the same queue and the same
+ * product card as a product post (worker_marketing_queue_shop), about a product the sale covers, a different one per beat.
+ * The beat is marked only when the queue took the post, so a failed hour is tried again the next.
+ */
+export async function announceSales(by:string):Promise<{queued:string[];errors:string[]}>{
+ const doc=await readShop(),queued:string[]=[],errors:string[]=[]
+ if(!doc.settings.open)return {queued,errors}
+ const {rpc}=await import('@/lib/marketing/run')
+ for(const sale of doc.settings.sales??[]){
+  const beat=saleBeat(sale);if(!beat)continue
+  const pool=doc.products.filter(p=>isPublic(p)&&covers(sale,p)).sort((a,b)=>(b.sold??0)-(a.sold??0))
+  const product=pool[(['soon','on','last'].indexOf(beat))%Math.max(1,pool.length)];if(!product){errors.push(`${sale.label}: no product on the shelf to show`);continue}
+  let image:URL;try{image=new URL(product.printify!.images[0]!)}catch{errors.push(`${sale.label}: the product has no picture`);continue}
+  if(image.protocol!=='https:'||image.port||image.username||image.password||!image.hostname.endsWith('.printify.com')){errors.push(`${sale.label}: a Printify product image is required`);continue}
+  const words=saleWords(sale,beat,doc.settings.margin),url=new URL(beat==='soon'?'/shop':'/shop?shelf=sale',SITE_URL).href
+  const post={app:'fanlife',label:'FAN LIFE Shop',hook:words.hook,body:words.body,url,tags:'#FANLIFE #Football',visual:'FAN LIFE product card with the current shop image.',kit:{t:'SHOP',data:{image:image.href,title:words.hook,product:product.id,sale:sale.id,beat},to:['facebook','instagram','x']}}
+  const id=await rpc<number>('worker_marketing_queue_shop',{p_product:product.id,p_post:post}).catch(()=>null)
+  if(!id){errors.push(`${sale.label}: the post could not be queued`);continue}
+  await updateShop(by,`Sale “${sale.label}” announced (${beat})`,d=>{const x=(d.settings.sales??[]).find(y=>y.id===sale.id);if(x)x.told={...(x.told??{}),[beat]:new Date().toISOString()}})
+  queued.push(`${sale.label}: ${beat}`);break
+ }
+ return {queued,errors}
 }

@@ -58,6 +58,8 @@ export async function shopCheckup(by='autopilot'):Promise<ShopHealth>{
  // 5 · sales start and end on time: prices follow the sales (a few per run); sold counts from the orders
  try{const r=await (await import('./saleRun')).applySales(by,10);repaired+=r.done;for(const e of r.errors.slice(0,3))notes.push(e)}catch(e){notes.push(`Sales: ${(e as Error).message}`)}
  try{await (await import('./saleRun')).countSold(by)}catch{/* orders are a nicety: never a failed check */}
+ // 5a · a sale is announced on the social machine: three days before, at its start, on its last day (owner, 23.11.2026)
+ try{const a=await (await import('./saleRun')).announceSales(by);for(const e of a.errors.slice(0,2))notes.push(`Sale post: ${e}`)}catch(e){notes.push(`Sale post: ${(e as Error).message}`)}
  // 5b · a supporter's own prints are kept 24 hours unless sold (owner, 16.11.2026: Printify cannot list a product off the store's grid and keep its page, so an unordered print leaves after a day): the printer's list stays clean
  try{const old=(await readShop()).products.filter(p=>p.personal&&!(p.sold&&p.sold>0)&&Date.now()-Date.parse(p.createdAt)>864e5).slice(0,10)
   if(old.length){const {removeProduct}=await import('./build');for(const p of old)await removeProduct(p.id,by).catch(()=>{})}}catch{/* tomorrow */}
