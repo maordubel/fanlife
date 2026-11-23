@@ -49,6 +49,36 @@ numbers became. Newest first. The skill reads this before touching the editor an
   final of Atalanta 2023/24 is ranked below a cup semi-final because the archive holds no stage for it; clubs with no
   dossier get plainer scenes — the next research wave should add match details (crowd, city, how the goal came).
 
+## 2026-11-23 (later) · "still boring — not enough movement for the eyes" — life in the frame
+
+- **Owner**, on the story-first sample: still boring, the backgrounds are not good enough, not enough movement for the
+  eyes, not fun to watch.
+- **Measured before** (that sample): moving share 99%, 0 flashes — and nothing INSIDE any shot moved. Every shot was a
+  still under a camera glide. The gate's "moving share" counts a glide as movement, so it could not see this.
+- **Changed**: `docu/life.py` + `Film.life` (the library's painted crowd rows as a moving band at the foot of the frame,
+  falling paper, floodlight beams, flare light, dust and a light leak, the ball in flight), chosen per beat by
+  `life.direct` from the score sheet; the story thread's labels no longer overprint each other; the small-crowd
+  opening stands on an empty stand; the model writer's brief carries the story-first rules; Status → The engine on the
+  studio desk and its four variables on the worker.
+- **Measured after** (same film, 299 s): life on 32 of 38 beats, 18.2 changes a minute, 0 flashes, worst jerk 35.4 px,
+  0 static seconds. Render 58.5 minutes on 2 cores (was 41): the layer costs about 40% more render time.
+- **Lessons**:
+  1. First try drew the crowd and flags as vector shapes: they read as clip art beside the library's painted art.
+     Life is made from the OWNER'S pieces (crowd-row-*), moved — never from a second, cheaper hand.
+  2. A row scaled to the frame's width covered the whole picture when the chosen piece was short. A foreground band has
+     a fixed height and repeats sideways; a test holds it under a third of the frame.
+  3. A 3D transform anywhere (rotationX/Y, perspective) drops HyperFrames' motion blur to its slow "filter" tier for the
+     whole film. Flips are flat (scaleX/scaleY through zero).
+  4. `filter: blur()` on a moving element is overridden by the motion blur and leaves square edges: soft shapes are
+     gradients. A masked gradient is refused by `test_camera` (the sliced-parallax guard).
+  5. A render started with `&` inside a tool call dies when the call returns ("render_cancelled_parent_exited"): start it
+     as a background task, and run nothing heavy (tsc, vitest) beside it on this machine.
+  6. Run the WHOLE studio suite after the last change, not before it: the guard that failed CI was already there.
+- **Next**: the goal replayed from above from the goal-detail contacts (pass, cross, shot, as moving dots and a drawn
+  ball path); a picture made for one match refused on another (a Maccabi ticket still stands over the final); a
+  picture of rain over a line with no weather claim; the gate should measure movement inside the shot, not only the
+  camera; the flags row repainted in the library's hand.
+
 ## 2026-11-17 · "everything flickers — more movement, more film, graphic connections, connecting lines, storytelling"
 
 - **Owner**: the VOX-pass sample (HTA 2009/10) is a failure: flickering, bad work.

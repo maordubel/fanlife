@@ -39,7 +39,7 @@ CSS = ('.lf{position:absolute;left:0;top:0;width:1920px;height:1080px;pointer-ev
        '.lfp{position:absolute;top:-60px;will-change:transform}'
        '.lfb{position:absolute;top:-260px;width:520px;height:1700px;transform-origin:50% 0;mix-blend-mode:screen;will-change:transform;'
        'background:linear-gradient(to bottom,rgba(255,250,235,.42) 0%,rgba(255,250,235,.12) 55%,rgba(255,250,235,0) 100%);'
-       '-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 38%,#000 62%,transparent 100%);clip-path:polygon(42% 0,58% 0,100% 100%,0 100%)}'
+       'clip-path:polygon(42% 0,58% 0,100% 100%,0 100%)}'   # no mask: a masked gradient is how a still was once sliced into bands (test_camera)
        '.lfg{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:50% 100%;mix-blend-mode:screen}'
        '.lfd{position:absolute;border-radius:50%;background:rgba(255,250,235,.85);will-change:transform}'
        '.lfl{position:absolute;top:-200px;width:900px;height:1500px;mix-blend-mode:screen;will-change:transform}'
