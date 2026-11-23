@@ -20,9 +20,11 @@ function useTyped(text: string, instant: boolean): {shown: string; done: boolean
   return {shown: text.slice(0, n), done: n >= text.length, finish: () => setN(text.length)}
 }
 
-export function Talk({portrait, node, name, w, reduced, onGo, onChoose, onLeave}: {portrait: string; node: TalkNode; name: string; w: W; reduced: boolean; onGo: () => void; onChoose: (i: number) => void; onLeave: () => void}) {
+export function Talk({portrait, node, name, w, reduced, onGo, onChoose, onLeave, onTyping}: {portrait: string; node: TalkNode; name: string; w: W; reduced: boolean; onGo: () => void; onChoose: (i: number) => void; onLeave: () => void; /** the words are being typed (the speaker's lips move in the picture) */ onTyping?: (typing: boolean) => void}) {
   const line = w(node.line)
   const {shown, done, finish} = useTyped(line, reduced)
+  const typing = useRef(onTyping); typing.current = onTyping
+  useEffect(() => { typing.current?.(!done); return () => typing.current?.(false) }, [done])
   const choices = node.choices ?? []
   const st = useRef({done, choices: choices.length, onGo, onChoose, finish})
   st.current = {done, choices: choices.length, onGo, onChoose, finish}

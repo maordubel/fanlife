@@ -10,7 +10,11 @@ import type {JobState} from './run'
 
 export type Effect = 'accept'
 export type TalkChoice = {key: string; to: string | null; effect?: Effect}
-export type TalkNode = {id: string; who: PersonId; line: string; choices?: TalkChoice[]; /** the node a tap goes on to (null ends the talk) */ next?: string | null}
+/** what a line FEELS like: the speaker's face, what his arms and body do with it, how the camera holds it, and how the player's own face answers */
+export type TalkMood = 'neutral' | 'warm' | 'smile' | 'laugh' | 'worried' | 'proud' | 'surprised'
+export type TalkGesture = 'open' | 'point' | 'shoulder' | 'ruffle' | 'wave' | 'thumb' | 'cheer' | 'nod' | 'laugh' | 'shrug' | 'give' | 'scarfOn'
+export type Feel = {mood?: TalkMood; gesture?: TalkGesture; /** `close`: the camera goes in on the faces for a line that matters */ shot?: 'two' | 'close'; /** a moment the picture answers (the scarf goes round his neck) */ beat?: 'scarf'; you?: TalkMood}
+export type TalkNode = {id: string; who: PersonId; line: string; choices?: TalkChoice[]; /** the node a tap goes on to (null ends the talk) */ next?: string | null} & Feel
 export type TalkScript = {who: PersonId; start: string; nodes: Record<string, TalkNode>}
 export type TalkCtx = {job: JobState; giver: PersonId; offerKey: string}
 export type TalkStep = {node: TalkNode | null; effect: Effect | null}
@@ -41,6 +45,33 @@ export function talkScript(who: PersonId, key: string, ctx: TalkCtx): TalkScript
     },
   }
   return single(who, key)
+}
+
+/** how each line is played, by its words key; a node's own `mood` / `gesture` / `shot` win over it */
+const FEEL: Record<string, Feel> = {
+  'hood.say.dad.offer': {mood: 'warm', gesture: 'shoulder', you: 'smile'},
+  'hood.say.dad.accepted': {mood: 'proud', gesture: 'point', you: 'proud'},
+  'hood.say.dad.later': {mood: 'warm', gesture: 'nod', you: 'warm'},
+  'hood.say.dad.again': {mood: 'warm', gesture: 'point', you: 'warm'},
+  'hood.say.dad.thanks': {mood: 'proud', gesture: 'scarfOn', shot: 'close', beat: 'scarf', you: 'surprised'},
+  'hood.say.dad.done': {mood: 'smile', gesture: 'thumb', you: 'smile'},
+  'hood.say.dad.idle': {mood: 'warm', gesture: 'nod'},
+  'hood.say.mate.scarf': {mood: 'smile', gesture: 'give', you: 'smile'},
+  'hood.say.mate.wait': {mood: 'laugh', gesture: 'shrug', you: 'worried'},
+  'hood.say.mate.idle': {mood: 'smile', gesture: 'wave', you: 'smile'},
+  'hood.say.mate.a1': {mood: 'laugh', gesture: 'point', you: 'smile'},
+  'hood.say.mate.done': {mood: 'proud', gesture: 'thumb', you: 'smile'},
+  'hood.say.kiosk.idle': {mood: 'warm', gesture: 'open'},
+  'hood.say.kiosk.job': {mood: 'smile', gesture: 'point', you: 'smile'},
+  'hood.say.kiosk.a1': {mood: 'warm', gesture: 'open'},
+  'hood.say.kiosk.done': {mood: 'smile', gesture: 'thumb', you: 'smile'},
+  'hood.say.neighbour.idle': {mood: 'worried', gesture: 'shrug', you: 'warm'},
+  'hood.say.neighbour.done': {mood: 'laugh', gesture: 'laugh', you: 'smile'},
+}
+/** how a node is played: its line's feeling, with the node's own on top; a plain line is said warmly */
+export function feelOf(n: TalkNode): Feel {
+  const f = FEEL[n.line] ?? {}
+  return {mood: n.mood ?? f.mood ?? 'warm', gesture: n.gesture ?? f.gesture, shot: n.shot ?? f.shot ?? 'two', beat: n.beat ?? f.beat, you: n.you ?? f.you ?? 'warm'}
 }
 
 export const nodeOf = (s: TalkScript, id: string): TalkNode | null => s.nodes[id] ?? null

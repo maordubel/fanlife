@@ -21,21 +21,29 @@ import {patrolLook, stepTarget, type Sim} from '@/lib/life/rush/sim'
 import type {MissionSpec} from '@/lib/life/rush/spec'
 import {bannedColour} from './colour'
 import {dressCity} from './city'
-import {dressHood, type HoodDress} from './hood'
+import {dressHood, type HoodDress, type TalkDir} from './hood'
+import {dressLife, type LifeDress} from './life'
+import type {AmbState} from '@/lib/life/hood/ambient'
 import {dressFlat} from './flat'
 import {dressSurface, loadSurface, type SurfaceName} from './surfaces'
 import {loadProps, propCopy} from './props'
 import {dressDusk, DUSK, type Block, type Dusk} from './look/dusk'
 import {dressCrowd} from './look/crowd'
-import {disposeFigure, HAIR, kitTexture, makeFigure, lookAt, makeHand, PANTS, pose, SKIN_TONES, TOPS, type Cloth, type FigureData} from './figure'
+import {disposeFigure, HAIR, kitTexture, makeFigure, lookAt, makeHand, PANTS, pose, seedFigure, turnTo, SKIN_TONES, TOPS, type Cloth, type FigureData, type Gesture, type Mood} from './figure'
 
 export type Quality = 'high' | 'lite'
-export type View = {cam: 'chase' | 'eyes'; ending: boolean; endT: number; outcome: 'good' | 'ok' | 'slip' | null; intro: number; /** the briefing: the place seen from a slow crane before the run */ brief?: boolean; /** the hood: how the job stands (the marker over whoever gives or takes it) */ hood?: {job: 'idle' | 'active' | 'done'}}
+export type View = {cam: 'chase' | 'eyes'; ending: boolean; endT: number; outcome: 'good' | 'ok' | 'slip' | null; intro: number; /** the briefing: the place seen from a slow crane before the run */ brief?: boolean; /** the hood: how the job stands (the marker over whoever gives or takes it) */ hood?: {job: 'idle' | 'active' | 'done';
+  /** a conversation the player started: who speaks, the line's feeling (`talk.ts` → `feelOf`), and whether the words are still being typed */
+  talk?: {who: string; key: string; mood?: Mood; gesture?: Gesture | null; you?: Mood; shot?: 'two' | 'close'; beat?: 'scarf' | null; speak: number} | null
+  /** the scarf is round his neck (the job is done and he wears it) */ scarf?: boolean
+  /** the street's small lives, stepped by the host (it knows the player's presses) */ amb?: AmbState | null}}
 export type Stage = {
   render(sim: Sim, view: View, dt: number): void
   resize(w: number, h: number): void
   /** a world point on the glass, for the speech bubbles (DOM, never canvas text) */
   project(x: number, y: number, z: number): {x: number; y: number; visible: boolean}
+  /** where a street voice's caption goes (`ambient.ts` spot id), on the glass */
+  captionAt(spot: string): {x: number; y: number; visible: boolean} | null
   dispose(): void
 }
 
@@ -490,9 +498,9 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   const tmpl = figOf({template: true, scarf: true})
   tmpl.updateMatrixWorld(true)
   const kidK = level.kids ? 0.78 : 1
-  const tParts = (tmpl.userData as FigureData).meshes.filter(m => !['glint', 'iris', 'eyeW', 'brow', 'blob'].includes(m.userData.role as string))
-  const recolour = new Set(['skin', 'hair', 'pants', 'top', 'beard'])
-  type Person = {x: number; z: number; face: number; look: Look; mode: 'walk' | 'stand' | 'steward' | 'rival' | 'target'; idx: number; react: number; turn: number; bubbleAt: number}
+  const tParts = (tmpl.userData as FigureData).meshes.filter(m => !['glint', 'blob'].includes(m.userData.role as string))
+  const recolour = new Set(['skin', 'hair', 'pants', 'top', 'beard', 'brow'])
+  type Person = {x: number; z: number; face: number; look: Look; mode: 'walk' | 'stand' | 'steward' | 'rival' | 'target'; idx: number; react: number; turn: number; bubbleAt: number; hy?: number}
   const people: Person[] = []
   level.walkers.forEach((w, i) => people.push({x: w.x, z: w.z0, face: Math.PI, look: w.look, mode: 'walk', idx: i, react: 0, turn: Math.PI, bubbleAt: -9}))
   level.standers.forEach((s, i) => { if (s.hidden) return; people.push({x: s.x, z: s.z, face: s.face, look: s.look, mode: s.role === 'rival' ? 'rival' : 'stand', idx: i, react: 0, turn: s.face, bubbleAt: -9}) })
@@ -512,7 +520,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   people.forEach((p, i) => tParts.forEach((m, k) => {
     const r = m.userData.role as string
     const rival = p.mode === 'rival'
-    const col = r === 'skin' ? (p.look.hex?.skin ?? SKIN_TONES[p.look.tone % SKIN_TONES.length]) : r === 'hair' || r === 'beard' ? hairOf(p.look) : r === 'pants' ? (p.look.hex?.pants ?? PANTS[p.look.pants % PANTS.length]) : r === 'top' ? (rival ? '#1d1f24' : p.look.hex?.top ?? tops[p.look.top % tops.length]) : null
+    const col = r === 'skin' ? (p.look.hex?.skin ?? SKIN_TONES[p.look.tone % SKIN_TONES.length]) : r === 'hair' || r === 'beard' || r === 'brow' ? hairOf(p.look) : r === 'pants' ? (p.look.hex?.pants ?? PANTS[p.look.pants % PANTS.length]) : r === 'top' ? (rival ? '#1d1f24' : p.look.hex?.top ?? tops[p.look.top % tops.length]) : null
     if (col) crowd[k]!.setColorAt(i, C(col))
   }))
   crowd.forEach(im => { if (im.instanceColor) im.instanceColor.needsUpdate = true })
@@ -533,6 +541,8 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   const tint = C(skin.p).lerp(C('#ffffff'), 0.3)
   const flat = level.place === 'flat' ? dressFlat({scene, keep, level, skin, night, lite, banned: h => bannedColour(h, skin), ground, glowTex,
     person: f => figOf({kit: false, longSleeves: true, hairStyle: f.hairStyle ?? (f.curly ? 'curly' : 'short'), top: f.top, pants: f.pants, hair: f.hair, mustache: !!f.beard, skinTone: f.skinTone ?? SKIN_TONES[1], scale: (f.scale ?? 1) * 0.94, female: f.female, skirt: f.skirt, glasses: f.glasses, denim: f.denim, jacket: f.jacket, eyes: f.eyes, noBlob: true})}) : null
+  let lifeDress: LifeDress | null = null
+  if (level.hood) { try { lifeDress = dressLife({scene, keep, level, lite, night, primary: skin.p, secondary: skin.s, glowTex, lookFig: (L, o) => lookFig(L, o), rlook}) } catch { lifeDress = null } }
   const hoodDress: HoodDress | null = level.hood ? dressHood({scene, keep, level, skin, night, lite, banned: h => bannedColour(h, skin), tint, person: L => lookFig(L), sign: (a, b, c, w, h) => signTex(a, b, c, w, h)}) : null
   type Npc = {fig: THREE.Group; step: number; extra: THREE.Group[]; x: number; z: number}
   const npcs: Npc[] = []
@@ -754,21 +764,30 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   // highlights (split tone), a touch more saturation, a vignette, grain — the GTA look, not a filter on top of it.
   const composer = new EffectComposer(renderer, new THREE.WebGLRenderTarget(1, 1, {type: THREE.HalfFloatType, samples: lite ? 0 : 4}))
   composer.addPass(new RenderPass(scene, cam))
-  if (!lite) composer.addPass(new UnrealBloomPass(new THREE.Vector2(256, 256), dusk ? 0.32 : night ? 0.55 : 0.22, dusk ? 0.5 : 0.6, dusk ? 1.05 : night ? 0.9 : 1.1))
+  const bloomBase = dusk ? 0.32 : night ? 0.55 : 0.22
+  const bloom = lite ? null : new UnrealBloomPass(new THREE.Vector2(256, 256), bloomBase, dusk ? 0.5 : 0.6, dusk ? 1.05 : night ? 0.9 : 1.1)
+  if (bloom) composer.addPass(bloom)
   const grade = new ShaderPass({
-    uniforms: {tDiffuse: {value: null}, uTime: {value: 0}, uSpeed: {value: 0}, uHeart: {value: 0}, uFlash: {value: 0}, uTint: {value: C(skin.p)}, uAspect: {value: 1}, uNight: {value: dusk ? 0.55 : night ? 1 : 0}, uClose: {value: 0}},
+    uniforms: {tDiffuse: {value: null}, uTime: {value: 0}, uSpeed: {value: 0}, uHeart: {value: 0}, uFlash: {value: 0}, uTint: {value: C(skin.p)}, uAspect: {value: 1}, uNight: {value: dusk ? 0.55 : night ? 1 : 0}, uClose: {value: 0}, uWarm: {value: 0}, uFocus: {value: 0}},
     vertexShader: 'varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); }',
-    fragmentShader: `uniform sampler2D tDiffuse; uniform float uTime,uSpeed,uFlash,uAspect,uHeart,uNight,uClose; uniform vec3 uTint; varying vec2 vUv;
+    fragmentShader: `uniform sampler2D tDiffuse; uniform float uTime,uSpeed,uFlash,uAspect,uHeart,uNight,uClose,uWarm,uFocus; uniform vec3 uTint; varying vec2 vUv;
       float h(float n){ return fract(sin(n)*43758.5453); }
       void main(){ vec2 p=vUv-.5; p.x*=uAspect; float r=length(p); vec2 dir=normalize(vUv-.5+1e-5);
         // a lens: a hair of colour fringing at the edge always, more at speed
         float ca=(.0004+.0016*uSpeed)*r*r*2.4;
         vec3 c=vec3(texture2D(tDiffuse,vUv+dir*ca).r,texture2D(tDiffuse,vUv).g,texture2D(tDiffuse,vUv-dir*ca).b);
         c=max(c,0.);
+        // a conversation: what is round the two of them goes soft and a little dark, the way a long lens leaves it
+        if(uFocus>.01){ float f=smoothstep(.14,.6,r)*uFocus; vec2 o=vec2(.0035,.0035*uAspect)*(1.+r*2.2);
+          vec3 b=texture2D(tDiffuse,vUv+vec2(o.x,0.)).rgb+texture2D(tDiffuse,vUv-vec2(o.x,0.)).rgb+texture2D(tDiffuse,vUv+vec2(0.,o.y)).rgb+texture2D(tDiffuse,vUv-vec2(0.,o.y)).rgb
+            +texture2D(tDiffuse,vUv+o*1.6).rgb+texture2D(tDiffuse,vUv-o*1.6).rgb+texture2D(tDiffuse,vUv+vec2(o.x,-o.y)*1.6).rgb+texture2D(tDiffuse,vUv-vec2(o.x,-o.y)*1.6).rgb;
+          c=mix(c,max(b,0.)/8.,f); c*=1.-f*.3; }
         // split tone: the shadows go cool, the lights go warm (at night the shadows go ink-blue and the lights stay sodium)
         float l=dot(c,vec3(.2126,.7152,.0722));
         vec3 sh=mix(vec3(.86,.94,1.14),vec3(.78,.86,1.22),uNight), hi=mix(vec3(1.08,1.0,.9),vec3(1.1,.98,.84),uNight);
         c*=mix(sh,hi,smoothstep(.03,.7,l));
+        // warmth: the lights go to amber and bloom a little into what is beside them
+        c*=mix(vec3(1.),vec3(1.12,1.0,.84),uWarm*.7); c+=vec3(1.,.7,.4)*pow(max(l-.22,0.),1.4)*.3*uWarm;
         // saturation up, then a filmic S round middle grey: blacks that are black, whites that keep their colour
         l=dot(c,vec3(.2126,.7152,.0722)); c=mix(vec3(l),c,1.14);
         c=pow(c/.18,vec3(1.1))*.18;
@@ -787,9 +806,21 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   /* ───────────── the frame ───────────── */
   const camPos = new THREE.Vector3(level.start.x, 2, level.start.z + 4), camLook = new THREE.Vector3(level.start.x, 1.4, level.start.z - 6)
   let t = 0, shake = 0, speedFx = 0, flash = 0, heart = 0, lastHits = 0, lastCaught = 0
+  let talkKey = '', talkT = 0, talkK = 0, shotKey = '', warm = 0, beatK = 0, talkFov = 40
+  let talkFace: {x: number; y: number; z: number} | null = null, ambNow: AmbState | null = null
+  const talkPos = new THREE.Vector3(), talkLook = new THREE.Vector3(), talkWant = new THREE.Vector3(), talkAim = new THREE.Vector3()
+  const talkLight = new THREE.PointLight('#ffc79a', 0, 6, 1.8); if (level.hood) scene.add(talkLight)
   const eyeHeight = child ? 1.2 : 1.62
 
-  function render(sim: Sim, view: View, dt: number) {
+  function render(sim: Sim, view: View, dtReal: number) {
+    // the conversation's own clock: a new line starts it again; the scarf going on is held a little longer than life
+    const vt = view.hood?.talk ?? null
+    if ((vt?.key ?? '') !== talkKey) { talkKey = vt?.key ?? ''; talkT = 0; shotKey = '' }
+    const beat = vt?.beat === 'scarf'
+    const slow = beat && !reduced && talkT > 0.9 && talkT < 3.1 ? 0.5 : 1
+    const dt = dtReal * slow
+    if (vt) talkT += dt
+    const talkDir: TalkDir | null = vt ? {who: vt.who, mood: vt.mood, gesture: vt.gesture, you: vt.you, shot: vt.shot, beat: vt.beat, speak: vt.speak, tt: talkT} : null
     t += dt
     const heading = sim.heading
     // people
@@ -801,13 +832,22 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       if (d2 > 900 && p.mode !== 'target') { crowd.forEach(im => im.setMatrixAt(i, zero)); continue }
       if (d2 < 9 && !p.react && Math.random() < 0.5 && !sim.ended) p.react = 1.6
       p.react = Math.max(0, p.react - dt)
-      const faceHero = p.mode === 'stand' || p.mode === 'rival' || p.react > 0
+      const hoodMode = !!level.hood
+      const faceHero = hoodMode ? p.mode === 'rival' : p.mode === 'stand' || p.mode === 'rival' || p.react > 0
       const yaw = faceHero && p.mode !== 'target' ? Math.atan2(sim.x - p.x, sim.z - p.z) : p.mode === 'walk' ? Math.PI : p.face
       p.turn += (yaw - p.turn) * Math.min(dt * 4, 1)
-      J.phase = i * 1.7 + t * (p.mode === 'walk' ? 1 : 0)
-      const standing = p.mode !== 'walk'
-      pose(tmpl, {speed: standing ? 0 : level.walkers[p.idx]!.v, scarfUp: p.mode === 'stand' ? Math.sin(t * 2 + i) > -0.2 && level.place !== 'yard' : p.react > 0.6 && p.mode !== 'rival', joy: p.mode === 'rival' ? 0 : standing || p.react > 0 ? 1 : 0.2, talk: p.react > 0, effort: p.mode === 'rival' ? 0.7 : 0}, t, 0)
-      tmpl.position.set(p.x, p.mode === 'stand' ? Math.abs(Math.sin(t * 3 + i)) * 0.05 : 0, p.z); tmpl.rotation.y = p.turn
+      const standing = p.mode !== 'walk', v = standing ? 0 : level.walkers[p.idx]!.v, psc = p.look.size * kidK
+      // a stride covers the ground he covers: the phase is the distance walked over the stride's length (no sliding feet)
+      J.phase = i * 1.7 + (standing ? 0 : (v * sim.t) / (psc * Math.max(0.9, Math.min(3.3, 0.85 + 0.42 * v / psc))) * Math.PI * 2)
+      seedFigure(tmpl, i * 2.39)
+      // he notices the boy going by: the head and the eyes follow him, and the face is glad
+      const rel = Math.atan2(sim.x - p.x, sim.z - p.z) - p.turn, relY = Math.atan2(Math.sin(rel), Math.cos(rel))
+      p.hy = (p.hy ?? 0) + ((hoodMode && d2 < 56 && Math.abs(relY) < 1.75 ? Math.max(-1.05, Math.min(1.05, relY)) : 0) - (p.hy ?? 0)) * Math.min(1, dt * 5)
+      const sing = p.mode === 'stand' && (hoodMode ? i % 5 === 0 && p.z < level.goal.z + 60 && Math.sin(t * 0.4 + i) > 0.2 : Math.sin(t * 2 + i) > -0.2 && level.place !== 'yard')
+      const chat = hoodMode && p.mode === 'stand' && !sing && Math.sin(t * 0.55 + i * 1.3) > 0.45
+      pose(tmpl, {speed: v, scarfUp: sing || (!hoodMode && p.react > 0.6 && p.mode !== 'rival'), joy: p.mode === 'rival' ? 0 : standing || p.react > 0 ? 1 : 0.2, talk: !hoodMode && p.react > 0, speak: chat ? 1 : undefined, effort: p.mode === 'rival' ? 0.7 : 0,
+        gesture: chat ? (i % 3 === 0 ? 'open' : i % 3 === 1 ? 'laugh' : null) : hoodMode && p.react > 0.8 && i % 3 === 0 ? 'lift' : null, mood: hoodMode && p.mode !== 'rival' ? (Math.abs(p.hy) > 0.15 ? 'smile' : chat ? 'laugh' : 'warm') : undefined, lookY: p.hy, gaze: Math.abs(p.hy) > 0.1}, t, 0)
+      tmpl.position.set(p.x, !hoodMode && p.mode === 'stand' ? Math.abs(Math.sin(t * 3 + i)) * 0.05 : 0, p.z); tmpl.rotation.y = p.turn
       const sc = p.look.size * kidK; tmpl.scale.set(sc, sc, sc)
       tmpl.updateMatrixWorld(true)
       tParts.forEach((m, k) => {
@@ -929,7 +969,8 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       })
     }
 
-    hoodDress?.update(sim, view, t, dt)
+    ambNow = lifeDress ? lifeDress.update(sim, view.hood?.amb ?? null, t, dt) : null
+    talkFace = hoodDress ? hoodDress.update(sim, view, t, dt, talkDir, ambNow, child) : null
     duskDress?.update(sim, t, dt, cam.position); duskCrowd?.update(sim, t, dt)
     flat?.update(sim, t, dt, view.ending, view.outcome, {x: camPos.x, z: camPos.z, close: closeK})
     // stewards and the ground they can see
@@ -946,10 +987,34 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     const sp = sim.speed
     const tired = sim.stamina < 0.25
     if (!heroCar) {
-      hero.position.set(sim.x, 0, sim.z); hero.rotation.y = heading
+      hero.position.set(sim.x, 0, sim.z)
+      // he turns the way he goes at a body's pace (the head gets there first, `pose`); in a conversation he turns to whoever he is talking to
+      if (!level.hood || view.ending || view.brief) hero.rotation.y = heading
+      else if (talkDir && talkFace) turnTo(hero, Math.atan2(talkFace.x - sim.x, talkFace.z - sim.z), dt, 7, 6)
+      else turnTo(hero, heading, dt, 18, 14)
       const carrying = (level.verb === 'carry' && sim.holding) || (level.home !== null && sim.back)
       if (view.ending) { hero.rotation.y += (0 - hero.rotation.y) * 0.1; pose(hero, view.outcome === 'slip' ? {speed: 0, knees: true, panting: true, effort: 0.6} : {speed: 0, celebrate: true, joy: 1}, t, dt) }
       else if (view.intro > 0 || view.brief) pose(hero, {speed: 0, joy: 0.4, ticket: level.verb === 'run' && level.place !== 'flat'}, t, dt)
+      else if (level.hood) {
+        const hs = (hero.userData as FigureData).scarf
+        const scarfOn = !!view.hood?.scarf && !(beat && talkT < 1.7)
+        hs?.forEach(o => { o.visible = scarfOn })
+        if (talkDir) {
+          const tt = talkT, you: Mood = beat ? (tt < 1.7 ? 'surprised' : tt < 4.3 ? 'smile' : tt < 7 ? 'laugh' : 'proud') : talkDir.you ?? 'warm'
+          const up = talkFace ? Math.atan2(talkFace.y - (child ? 1.12 : 1.55), Math.max(0.4, Math.hypot(talkFace.x - sim.x, talkFace.z - sim.z))) : 0
+          pose(hero, {speed: 0, mood: you, gaze: true, lookDown: -Math.min(0.5, up) + (beat && tt > 1.2 && tt < 2.6 ? 0.25 : 0), joy: 0.6, gesture: beat && tt > 7.4 ? 'thumb' : null}, t, dt)
+        } else {
+          // he looks at whoever calls to him and at the people he knows as he passes them
+          let gx = 0, gz = 0, gd = 99
+          for (const q of level.hood.people) { const d = Math.hypot(q.x - sim.x, q.z - sim.z); if (d < 7 && d < gd) { gd = d; gx = q.x; gz = q.z } }
+          const cap = ambNow?.captions[ambNow.captions.length - 1], ca = cap ? lifeDress?.anchor(cap.spot) : null
+          if (ca && Math.hypot(ca.x - sim.x, ca.z - sim.z) < 14) { gd = 1; gx = ca.x; gz = ca.z }
+          let gy = 0
+          if (gd < 99) { const r0 = Math.atan2(gx - sim.x, gz - sim.z) - hero.rotation.y, r1 = Math.atan2(Math.sin(r0), Math.cos(r0)); if (Math.abs(r1) < 2) gy = Math.max(-1, Math.min(1, r1)) }
+          const kicked = !!ambNow && ambNow.t - ambNow.kickAt < 0.5
+          pose(hero, {speed: sim.stagger > 0 ? 1 : sp, effort: sim.sprinting ? 0.7 : tired ? 0.7 : 0, panting: tired, stumble: sim.stagger > 0.5, lean: sim.sprinting ? 0.1 : 0, lookY: gy, gaze: gy !== 0, lookDown: gy !== 0 && child && gd < 7 ? -0.18 : 0, mood: gy !== 0 ? 'smile' : 'warm', gesture: kicked ? 'kick' : null}, t, dt)
+        }
+      }
       else pose(hero, {speed: sim.stagger > 0 ? 1 : sp, effort: sim.sprinting ? 0.9 : tired ? 0.7 : Math.min(sp / 9, 0.5), panting: tired, stumble: sim.stagger > 0.5, lean: sim.sprinting ? 0.1 : 0, carry: carrying, crouch: level.place === 'yard' && !sim.sprinting ? 0.55 : 0}, t, dt)
       const hd = hero.userData as FigureData
       // going through a place: he faces it, bends to it, and his hands go through it (a drawer is pulled, a coat patted)
@@ -1074,6 +1139,58 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       hands.children.forEach((a, i) => { if ((a as THREE.Group).isGroup) a.position.y = -0.3 + Math.sin(t * (6 + sp * 1.2) + (i ? Math.PI : 0)) * 0.03 * Math.min(sp / 4, 1.5) })
       const fov = 76 + Math.min(sp, 10) * 1.1; cam.fov += (fov - cam.fov) * Math.min(dt * 4, 1)
     }
+    if (level.hood) {
+      // A conversation is held, not watched from the kerb: over the boy's shoulder onto the face that speaks; for a line that
+      // matters, round to the side so both of them are in the picture. The lens takes the side that has room (never a facade,
+      // never the kiosk), eases in and out, and with reduced motion it cuts.
+      const on = talkDir && talkFace && view.cam === 'chase' ? 1 : 0
+      talkK = reduced ? on : talkK + (on - talkK) * Math.min(1, dtReal * (on ? 2.4 : 2.0))
+      if (on && talkFace) {
+        const shot = talkDir!.shot ?? 'two', key = talkKey + shot
+        const hx = sim.x, hz = sim.z, d0 = Math.hypot(talkFace.x - hx, talkFace.z - hz) || 1, ax = (talkFace.x - hx) / d0, az = (talkFace.z - hz) / d0, px = az, pz = -ax
+        const hh = child ? 1.16 : 1.58, mx = (hx + talkFace.x) / 2, mz = (hz + talkFace.z) / 2
+        if (key !== shotKey) {
+          shotKey = key
+          talkFov = shot === 'close' ? 40 : 44
+          const hf = 2 * Math.atan(Math.tan(THREE.MathUtils.degToRad(talkFov) / 2) * cam.aspect)
+          const dist = Math.max(2.1, Math.min(4.0, 1.1 / (2 * Math.tan(hf / 2))))
+          const free = (x: number, z: number) => {
+            if (!level.crossings.some(c => Math.abs(z - c) < level.half) && Math.abs(x) > level.walk - 0.9) return false
+            for (let k = 0; k <= 8; k++) { const qx = x + (mx - x) * k / 8, qz = z + (mz - z) * k / 8; for (const b of level.blocks) if (qx > b.x0 - 0.45 && qx < b.x1 + 0.45 && qz > b.z0 - 0.45 && qz < b.z1 + 0.45) return false }
+            return true }
+          // two: over the boy's shoulder onto the face that speaks. close: the reverse — past the speaker's shoulder and hands onto the boy's own face
+          const at = (sg: number, k: number) => shot === 'close' ? talkWant.set(talkFace!.x + ax * 0.55 * k + px * sg * 1.45 * k, talkFace!.y - 0.08, talkFace!.z + az * 0.55 * k + pz * sg * 1.45 * k) : talkWant.set(hx - ax * 1.95 * k + px * sg * 0.72, hh + 0.2, hz - az * 1.95 * k + pz * sg * 0.72)
+          // the side with room: the street's side first
+          const pref = Math.abs(mx + px) < Math.abs(mx - px) ? 1 : -1
+          let hit = false
+          pick: for (const k of [1, 0.8, 0.62]) for (const sg of [pref, -pref]) { at(sg, k); if (free(talkWant.x, talkWant.z)) { hit = true; break pick } }
+          let sideOn = false
+          if (!hit) {
+            // no room behind either of them (he stands between the speaker and a wall): from the side, the street's side first
+            sideOn = true
+            for (const sg of [pref, -pref]) { talkWant.set(mx + px * sg * Math.max(2.6, dist * 0.8), hh + 0.4, mz + pz * sg * Math.max(2.6, dist * 0.8)); if (free(talkWant.x, talkWant.z)) { hit = true; break } }
+            if (!hit) talkWant.set(mx - Math.sign(mx || 1) * 3.2, hh + 0.4, mz + 0.9)
+          }
+          if (sideOn) { talkAim.set(mx, (hh + talkFace.y) / 2, mz); talkFov = 54 }
+          else if (shot === 'close') talkAim.set(hx + ax * 0.22, hh - 0.1, hz + az * 0.22); else talkAim.set(hx + (talkFace.x - hx) * 0.82, talkFace.y * 0.72 + hh * 0.28, hz + (talkFace.z - hz) * 0.82)
+          talkPos.copy(talkWant); talkLook.copy(talkAim)
+        }
+        talkLight.position.set(mx + (talkPos.x - mx) * 0.45, 2.3, mz + (talkPos.z - mz) * 0.45)
+      }
+      if (talkK > 0.002) {
+        const e = talkK * talkK * (3 - 2 * talkK)
+        cam.position.lerpVectors(camPos, talkPos, e); cam.lookAt(tmp.copy(camLook).lerp(talkLook, e)); cam.fov += (talkFov - cam.fov) * e
+      }
+      talkLight.intensity = talkK * (night ? 7 : 2)
+      // standing still, the picture breathes with whoever is holding the camera
+      if (!reduced && !view.brief) { const still = 1 - Math.min(1, sp / 1.5); cam.position.x += (Math.sin(t * 0.71) * 0.016 + Math.sin(t * 1.93) * 0.006) * still; cam.position.y += Math.sin(t * 0.87 + 1) * 0.012 * still; cam.rotateZ(Math.sin(t * 0.53) * 0.0028 * still) }
+      // warmth: home is the warmest place on the street, a conversation warms the picture, and the scarf going on warms it most
+      const hd = level.hood.door, homeK = Math.max(0, 1 - Math.hypot(sim.x - hd.x, sim.z - hd.z) / 26)
+      beatK += ((beat && talkT > 0.8 && talkT < 5 ? 1 : 0) - beatK) * Math.min(1, dtReal * 1.6)
+      warm += (Math.max(homeK * 0.32, talkK * 0.4, beatK) - warm) * Math.min(1, dtReal * 3)
+      grade.uniforms.uWarm!.value = warm; grade.uniforms.uFocus!.value = Math.max(talkK * 0.75, beatK)
+      if (bloom) bloom.strength = bloomBase + beatK * 0.4 + talkK * 0.08
+    }
     cam.updateProjectionMatrix()
     speedFx += (((sim.sprinting || (heroCar && sim.speed > 20)) ? 1 : sp > 4 ? 0.35 : 0) * (reduced ? 0 : 1) - speedFx) * Math.min(dt * 4, 1)
     heart += ((tired && !view.ending ? 1 : 0) - heart) * Math.min(dt * 3, 1)
@@ -1119,6 +1236,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     })
   })
 
+  function captionAt(spot: string) { const a = lifeDress?.anchor(spot); return a ? project(a.x, a.y, a.z) : null }
   function dispose() {
     gone = true
     scene.traverse(o2 => { const m = o2 as THREE.Mesh; if (m.isMesh) { m.geometry?.dispose?.() } })
@@ -1129,5 +1247,5 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     try { renderer.forceContextLoss() } catch { /* a lost context is a closed one */ }
   }
 
-  return {render, resize, project, dispose}
+  return {render, resize, project, captionAt, dispose}
 }

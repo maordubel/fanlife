@@ -8,9 +8,15 @@ import type {VoxelSkin} from '@/lib/life/universal/skin'
 import type {Level, Look} from '@/lib/life/rush/level'
 import type {Sim} from '@/lib/life/rush/sim'
 import {hoodWord} from '@/lib/life/hood/words'
-import {lookAt, pose} from './figure'
+import type {AmbState} from '@/lib/life/hood/ambient'
+import {lookAt, pose, turnTo, type FigureData, type Gesture, type Mood} from './figure'
 
-export type HoodDress = {update(sim: Sim, view: {hood?: {job: 'idle' | 'active' | 'done'}}, t: number, dt: number): void}
+/** a conversation as the picture plays it: who speaks, with what face and hands, and how long this line has been on */
+export type TalkDir = {who: string; mood?: Mood; gesture?: Gesture | null; you?: Mood; shot?: 'two' | 'close'; beat?: 'scarf' | null; speak: number; tt: number}
+export type HoodDress = {
+  /** returns where the face of whoever is being talked to is (for the camera), or null */
+  update(sim: Sim, view: {hood?: {job: 'idle' | 'active' | 'done'}}, t: number, dt: number, talk: TalkDir | null, amb: AmbState | null, child: boolean): {x: number; y: number; z: number} | null
+}
 export type HoodCtx = {
   scene: THREE.Scene; keep: <T extends {dispose(): void}>(x: T) => T; level: Level; skin: VoxelSkin; night: boolean; lite?: boolean
   banned: (hex: string) => boolean; tint: THREE.Color
@@ -64,25 +70,68 @@ export function dressHood(x: HoodCtx): HoodDress {
     for (const sd of [-1, 1]) { const gx = p.x + sd * (p.w / 2 - 0.2)
       mesh(box, std('#d0cbc0'), gx, 1.0, p.z - 1.3, 0.1, 2.0, 0.1); mesh(box, std('#d0cbc0'), gx, 1.0, p.z + 1.3, 0.1, 2.0, 0.1); mesh(box, std('#d0cbc0'), gx, 2.0, p.z, 0.1, 0.1, 2.7) } }
 
-  /* the people: named, solid in the sim, turning to whoever comes near */
-  const figs = hood.people.map(p => { const f = x.person(p.look); f.position.set(p.x, 0, p.z); f.rotation.y = Math.atan2(level.start.x - p.x, level.start.z - p.z); scene.add(f); return {p, f} })
+  /* the people: named, solid in the sim. Each sees the boy coming, turns to him, and — in a conversation he started — comes
+     a step nearer, bends to him if he is small, and says the line with his face and his hands (`talk.ts` → `feelOf`). */
+  const figs = hood.people.map(p => { const f = x.person(p.look); f.position.set(p.x, 0, p.z); f.rotation.y = Math.atan2(level.start.x - p.x, level.start.z - p.z); scene.add(f); return {p, f, ox: 0, oz: 0} })
   const mark = new THREE.Mesh(keep(new THREE.OctahedronGeometry(0.17, 0)), keep(new THREE.MeshBasicMaterial({color: x.tint.clone().multiplyScalar(2), toneMapped: false}))); scene.add(mark)
+  // the scarf in Dad's hands, before it goes round the boy's neck
+  const scarfMat = std(ok(skin.p, '#6b6f78'), {roughness: 0.9}), held = new THREE.Group(); held.visible = false; scene.add(held)
+  const bar = new THREE.Mesh(box, scarfMat); held.add(bar)
+  const tails = [0, 1].map(() => { const m = new THREE.Mesh(box, scarfMat); scene.add(m); m.visible = false; return m })
+  const wl = new THREE.Vector3(), wr = new THREE.Vector3()
   void W
 
   return {
-    update(sim, view, t, dt) {
+    update(sim, view, t, dt, talk, amb, child) {
       const job = view.hood?.job ?? 'idle'
       const j = hood.jobs[0]!
       let live: string | null = job === 'idle' ? j.giver : null
-      if (job === 'active') { const st = level.steps[sim.step]; if (st?.kind === 'talk') live = hood.people.find(p => Math.hypot(p.x - st.x, p.z - st.z) < 0.5)?.id ?? null }
-      for (const {p, f} of figs) {
-        const d = Math.hypot(sim.x - p.x, sim.z - p.z), nearHim = d < 14
-        const nh = nearHim ? lookAt(f, Math.atan2(sim.x - p.x, sim.z - p.z), dt) : 0
-        pose(f, {speed: 0, wave: live === p.id && d < 14, joy: 0.6, talk: d < p.r, lookY: nh}, t, dt)
+      const st = job === 'active' ? level.steps[sim.step] : null
+      if (st?.kind === 'talk') live = hood.people.find(p => Math.hypot(p.x - st.x, p.z - st.z) < 0.5)?.id ?? null
+      let faceAt: {x: number; y: number; z: number} | null = null
+      held.visible = false; tails.forEach(m => { m.visible = false })
+      for (const q of figs) {
+        const {p, f} = q
+        const d = Math.hypot(sim.x - p.x, sim.z - p.z), nearHim = d < 14, talking = talk?.who === p.id
+        const tall = f.scale.y || 1, small = child && tall > 0.86
+        // he comes a step nearer to whoever he is talking to (never the other way round: nobody moves the player)
+        let wx = 0, wz = 0
+        if (talking && d > 0.01) { const reach = small ? 0.72 : 0.92, go = Math.max(0, Math.min(1.5, d - reach)); wx = (sim.x - p.x) / d * go; wz = (sim.z - p.z) / d * go }
+        const mx = wx - q.ox, mz = wz - q.oz, md = Math.hypot(mx, mz), stepLen = Math.min(md, 1.25 * dt)
+        if (md > 0.001) { q.ox += mx / md * stepLen; q.oz += mz / md * stepLen }
+        const mv = dt > 0 ? stepLen / dt : 0
+        f.position.set(p.x + q.ox, 0, p.z + q.oz)
+        const to = Math.atan2(sim.x - f.position.x, sim.z - f.position.z)
+        if (talking && talk) {
+          turnTo(f, to, dt, 7, 5)
+          let g = talk.gesture ?? null, mood = talk.mood ?? 'warm'
+          if (talk.beat === 'scarf') { const tt = talk.tt; g = tt < 4.3 ? 'scarfOn' : tt < 6.9 ? 'ruffle' : 'shoulder'; mood = tt < 4.3 ? 'proud' : tt < 7.3 ? 'laugh' : 'smile' }
+          const nextStep = job === 'active' ? level.steps[sim.step] : null
+          const py = Math.atan2((nextStep?.x ?? f.position.x) - f.position.x, (nextStep?.z ?? f.position.z - 30) - f.position.z) - f.rotation.y
+          const hands = g === 'shoulder' || g === 'ruffle' || g === 'scarfOn' || g === 'give'
+          pose(f, {speed: mv, mood, gesture: mv > 0.3 ? null : g, gestureYaw: Math.max(-1.25, Math.min(1.25, Math.atan2(Math.sin(py), Math.cos(py)))), speak: talk.speak, bend: small ? (hands ? 0.5 : 0.24) : 0, lookDown: small ? (hands ? 0.14 : 0.02) : 0, gaze: true}, t, dt)
+          faceAt = {x: f.position.x, y: tall * (small ? 1.5 : 1.62), z: f.position.z}
+          if (talk.beat === 'scarf' && talk.tt > 0.2 && talk.tt < 1.75 && mv < 0.3) {
+            const J = (f.userData as FigureData).J
+            J.wristL!.getWorldPosition(wl); J.wristR!.getWorldPosition(wr)
+            held.visible = true; held.position.copy(wl).lerp(wr, 0.5); held.position.y -= 0.03; held.lookAt(wr); bar.scale.set(0.09, 0.03, Math.max(0.1, wl.distanceTo(wr)))
+            tails.forEach((m, i) => { const h = i ? wr : wl; m.visible = true; m.position.set(h.x, h.y - 0.2, h.z); m.scale.set(0.085, 0.36, 0.03); m.rotation.y = f.rotation.y; m.rotation.x = Math.sin(t * 2 + i) * 0.08 })
+          }
+        } else {
+          const nh = nearHim ? lookAt(f, to, dt) : 0
+          const giver = live === p.id
+          const hail = amb && p.id === 'kiosk' && amb.noticed.kiosk !== undefined && amb.t - amb.noticed.kiosk < 3.2
+          const calls = !!amb?.captions.some(c => c.spot === p.id)
+          // he sees the boy coming and smiles; a wave from far off, open arms as he gets near
+          pose(f, {speed: mv, mood: !nearHim ? 'neutral' : giver || job === 'done' && p.id === j.giver ? (d < 7 ? 'smile' : 'warm') : 'warm',
+            gesture: mv > 0.3 ? null : giver && d < 14 && d > 6.5 ? 'wave' : giver && d <= 6.5 && d > p.r ? 'lift' : hail ? 'lift' : null,
+            lookY: nh, gaze: nearHim && d < 9, lookDown: small && d < 4 ? 0.22 : 0, bend: small && giver && d < 3.2 ? 0.2 : 0, speak: calls ? 1 : 0}, t, dt)
+        }
       }
-      const lp = figs.find(q => q.p.id === live)
+      const lp = talk ? undefined : figs.find(q => q.p.id === live)
       mark.visible = !!lp
       if (lp) { mark.position.set(lp.p.x, 2.15 + Math.sin(t * 3) * 0.08, lp.p.z); mark.rotation.y = t * 2 }
+      return faceAt
     },
   }
 }

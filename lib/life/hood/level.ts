@@ -21,7 +21,7 @@ import type {HoodMeta, HoodPerson, PersonId} from './types'
 /** what the hood needs of a club: its skin and its cast (roles with names where the pack has them) */
 export type HoodClub = {id: string; skin: VoxelSkin; cast: Readonly<Record<string, Pick<CastMember, 'name' | 'role' | 'look'>>>}
 
-export const HOOD = {length: 330, half: 7, walk: 11, side: 62, sideW: 7, age: 27, talk: 2.2} as const
+export const HOOD = {length: 330, half: 7, walk: 11, side: 62, sideW: 7, age: 11, talk: 2.2} as const
 /** the universal cast role each person is, and how it looks to the sim */
 const ROLE: Record<PersonId, string> = {dad: 'dad', mate: 'friend', kiosk: 'kiosk', neighbour: 'neighbour'}
 

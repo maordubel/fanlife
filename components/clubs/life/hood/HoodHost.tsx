@@ -12,7 +12,8 @@ import {hoodWord, type HoodKey} from '@/lib/life/hood/words'
 import {IDLE, STEP, type Input} from '@/lib/life/rush/sim'
 import type {PersonId, PlaceId} from '@/lib/life/hood/types'
 import {accentFor, brandAccent, cleanName, clockText, initialShell, isCrane, isFull, reduce, type Shell, type ShellEvent} from '@/lib/life/hood/shell'
-import {advance, choose, nodeOf, talkScript, type TalkScript} from '@/lib/life/hood/talk'
+import {advance, choose, feelOf, nodeOf, talkScript, type TalkScript} from '@/lib/life/hood/talk'
+import {ballYours, hoodAmbient, stepAmbient, type AmbState} from '@/lib/life/hood/ambient'
 import {bagOf, carryOf} from '@/lib/life/hood/bag'
 import {hudTarget, metresTo, ringProgress} from '@/lib/life/hood/district'
 import {browserStore, DEFAULT_SETTINGS, readSave, readSettings, restore, snapshot, writeSave, writeSettings, type HoodSave, type HoodSettings} from '@/lib/life/hood/save'
@@ -54,12 +55,17 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
   const [talk, setTalk] = useState<{script: TalkScript; id: string} | null>(null)
   const [waypoint, setWaypoint] = useState<PlaceId | null>(null), [wear, setWear] = useState(true), [mapKey, setMapKey] = useState(0)
   const [savedName, setSavedName] = useState(''), [coach, setCoach] = useState(true), [watch, setWatch] = useState<WatchAnswer | null>(null)
+  const [caps, setCaps] = useState<{id: number; spot: string; key: string}[]>([]), [kick, setKick] = useState(false)
+  const ambRef = useRef<AmbState | null>(null), talkRef = useRef<{script: TalkScript; id: string} | null>(null), typingRef = useRef(false), capEls = useRef<Record<number, HTMLElement | null>>({}), capsRef = useRef<{id: number; spot: string; key: string}[]>([])
   const waypointRef = useRef<PlaceId | null>(null), wayLabelRef = useRef(''), pendingDone = useRef(false), wearRef = useRef(true)
   const storeRef = useRef<ReturnType<typeof browserStore>>(null)
   const timers = useRef<{banner: number; place: number}>({banner: 0, place: 0}), bannerId = useRef(0)
 
   const reducedEff = reduced || settings.reduced || osReduced
   const qualityEff: Quality = settings.quality ?? quality ?? (coarse ? 'lite' : 'high')
+  // the street's small lives: one state per street and picture quality (the picture draws the same spots)
+  const amb = useMemo(() => hoodAmbient(level, qualityEff === 'lite'), [level, qualityEff])
+  ambRef.current = amb; talkRef.current = talk
   const {accent, on: onAccent} = useMemo(() => accentFor(club.skin), [club.skin])
   const brand = useMemo(() => brandAccent(club.skin), [club.skin])
 
@@ -69,7 +75,7 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
     for (const p of level.hood!.people) out[p.id] = p.name ?? hoodWord(`hood.who.${p.id}` as HoodKey)
     return out
   }, [level])
-  const vars = useMemo(() => ({mate: names.mate!, kiosk: names.kiosk === hoodWord('hood.who.kiosk') ? hoodWord('hood.who.kiosk').toLowerCase() : `${names.kiosk}’s kiosk`, name: shell.name}), [names, shell.name])
+  const vars = useMemo(() => ({mate: names.mate!, kiosk: names.kiosk === hoodWord('hood.who.kiosk') ? hoodWord('hood.who.kiosk').toLowerCase() : `${names.kiosk}’s kiosk`, name: shell.name || hoodWord('hood.name.default')}), [names, shell.name])
   const w = useCallback((k: string, extra: Record<string, string> = {}) => hoodWord(k, {...vars, ...extra}), [vars])
 
   /* the flow */
@@ -193,7 +199,7 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
 
   /* the loop: fixed steps for the simulation, one picture per frame */
   useEffect(() => {
-    let raf = 0, last = performance.now(), acc = 0, tick = 0, ph = ''
+    let raf = 0, last = performance.now(), acc = 0, tick = 0, ph = '', kickNow = false, capSig = ''
     const pad = (): Input => {
       const k = keys.current
       const x = (k.KeyD || k.ArrowRight ? 1 : 0) - (k.KeyA || k.ArrowLeft ? 1 : 0) + stick.current.x
@@ -213,6 +219,7 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
         while (acc >= STEP && n < 12) {
           const input = shellRef.current.screen === 'playing' ? pad() : IDLE
           const ev = stepHood(run, input)
+          if (shellRef.current.screen === 'playing' && ambRef.current) stepAmbient(ambRef.current, run.sim, input.act, STEP)
           if (input.act) act.current = false
           if (shellRef.current.screen === 'playing') handle(ev)
           acc -= STEP; n++
@@ -225,6 +232,8 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
         if (hud.arrow.current) { hud.arrow.current.style.opacity = tg ? '1' : '0'; if (tg) hud.arrow.current.style.transform = `rotate(${-(Math.atan2(tg.x - sim.x, tg.z - sim.z) - sim.heading)}rad)` }
         if (hud.dist.current) hud.dist.current.textContent = tg ? (tg.kind === 'waypoint' && wayLabelRef.current ? `${wayLabelRef.current} · ` : '') + `${metresTo(run, tg)} m` : ''
         const np = personNear(run)?.id ?? null
+        const by = !!ambRef.current && !np && ballYours(ambRef.current, sim)
+        if (by !== kickNow) { kickNow = by; setKick(by) }
         if ((np ?? '') !== ph) { ph = np ?? ''; setNearId(np) }
         tick++
         if (hud.map.current && tick % 2 === 0) { const c = hud.map.current.getContext('2d'); if (c) drawMap(c, level, sim, club.skin, hud.map.current.clientWidth || 80) }
@@ -234,7 +243,15 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
         }
       }
       const live = playing || isCrane(scr) || scr === 'dialogue'
-      stage.render(sim, {cam: playing || scr === 'dialogue' ? camRef.current : 'chase', ending: false, endT: 0, outcome: null, intro: 0, brief: isCrane(scr), hood: {job: run.job}}, live ? real : 0)
+      // the conversation as the picture plays it: who speaks, the line's feeling, the lips while the words are typed
+      const tk = scr === 'dialogue' ? talkRef.current : null, tn = tk ? nodeOf(tk.script, tk.id) : null, feel = tn ? feelOf(tn) : null
+      const a = ambRef.current
+      stage.render(sim, {cam: playing || scr === 'dialogue' ? camRef.current : 'chase', ending: false, endT: 0, outcome: null, intro: 0, brief: isCrane(scr), hood: {job: run.job, scarf: run.job === 'done' && wearRef.current, amb: playing || scr === 'dialogue' ? a : null,
+        talk: tn && feel ? {who: tn.who, key: `${tk!.script.who}:${tn.id}:${tn.line}`, mood: feel.mood, gesture: feel.gesture ?? null, you: feel.you, shot: feel.shot, beat: feel.beat ?? null, speak: typingRef.current ? 1 : 0} : null}}, live ? real : 0)
+      // street voices: soft captions beside whoever spoke (DOM, placed from the picture)
+      const list = playing && a ? a.captions : [], sig = list.map(c => c.id).join(',')
+      if (sig !== capSig) { capSig = sig; capsRef.current = list.map(c => ({id: c.id, spot: c.spot, key: c.key})); setCaps(capsRef.current) }
+      for (const c of capsRef.current) { const el = capEls.current[c.id], at = el ? stage.captionAt(c.spot) : null; if (el) { el.style.opacity = at?.visible && at.y > 90 ? '1' : '0'; if (at) el.style.transform = `translate(${Math.round(Math.max(84, Math.min((canvasRef.current?.clientWidth ?? 390) - 84, at.x)))}px, ${Math.round(Math.max(120, at.y))}px) translate(-50%, -100%)` } }
     }
     raf = requestAnimationFrame(frame)
     return () => cancelAnimationFrame(raf)
@@ -311,7 +328,7 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
       <Hud
         w={w} refs={hud} hidden={screen !== 'playing'} touch={touch} cam={cam} sprintOn={sprintOn} ghost={coach && ghost} onCoachOk={() => setCoach(false)}
         kicker={kicker} objective={objective} free={!active} hasTarget={!!hudTarget(run, waypoint)}
-        place={placeName} banner={banner} near={nearPerson} cash={0} stickAt={stickAt}
+        place={placeName} banner={banner} near={kick ? w('hood.hud.kick') : nearPerson} cash={0} stickAt={stickAt}
         onMap={() => go({t: 'open', to: 'map'})} onPause={() => { persist(); go({t: 'open', to: 'pause'}) }} onBag={() => go({t: 'open', to: 'bag'})} onCam={() => setCam(c => c === 'chase' ? 'eyes' : 'chase')}
         onTalk={() => { act.current = true }} onSprint={setSprintOn}
         stick={{down: onStickDown, move: onStickMove, up: onStickUp}}
@@ -320,7 +337,8 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
       {screen === 'name' && <NameEntry w={w} clean={cleanName} onGo={startNew} onBack={() => go({t: 'esc'})} />}
       {screen === 'intro' && <Cinematic lines={introLines} w={w} reduced={reducedEff} onBeat={onIntroBeat} onDone={finishIntro} />}
       {screen === 'cutscene' && <Cinematic lines={outroLines} w={w} reduced={reducedEff} ms={3000} onDone={() => go({t: 'cutDone'})} />}
-      {screen === 'dialogue' && talkNode && <Talk portrait={talkNode.who} key={`${talk!.script.who}-${talkNode.id}`} node={talkNode} name={names[talkNode.who] ?? ''} w={w} reduced={reducedEff} onGo={onGo} onChoose={onChoose} onLeave={endTalk} />}
+      {screen === 'dialogue' && talkNode && <Talk portrait={talkNode.who} key={`${talk!.script.who}-${talkNode.id}`} node={talkNode} name={names[talkNode.who] ?? ''} w={w} reduced={reducedEff} onGo={onGo} onChoose={onChoose} onLeave={endTalk} onTyping={v => { typingRef.current = v }} />}
+      {screen === 'playing' && caps.length > 0 && <div className={css.lgCaps} role="log" aria-label={w('hood.amb.label')}>{caps.map(c => <p key={c.id} ref={el => { capEls.current[c.id] = el }} className={css.lgCap}>{w(c.key)}</p>)}</div>}
       {screen === 'pause' && <Pause w={w} club={club.skin.name} name={shell.name} onResume={() => go({t: 'resume'})} onMap={() => { setMapKey(k => k + 1); go({t: 'open', to: 'map'}) }} onBag={() => go({t: 'open', to: 'bag'})} onSettings={() => go({t: 'open', to: 'settings'})} onHelp={() => go({t: 'open', to: 'help'})} onQuit={() => { persist(); setSavedName(shell.name); go({t: 'quit'}) }} />}
       {screen === 'settings' && <Settings w={w} s={settings} quality={qualityEff} onChange={changeSettings} onBack={() => go({t: 'back'})} />}
       {screen === 'help' && <Help w={w} onBack={() => go({t: 'back'})} />}

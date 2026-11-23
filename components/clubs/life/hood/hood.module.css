@@ -443,3 +443,7 @@
   .lgCoach { display: none; }
 }
 @media (max-width: 359px) { .lgMapTitle h1 { font-size: 1.125rem; } }
+
+/* street voices: a soft caption beside whoever spoke (placed from the picture, so the layer is laid out left to right) */
+.lgCaps { position: absolute; inset: 0; pointer-events: none; direction: ltr; overflow: hidden; }
+.lgCap { position: absolute; inset-block-start: 0; inset-inline-start: 0; margin: 0; padding: 6px 12px; max-inline-size: 13.5rem; border-radius: 14px; border-end-start-radius: 4px; background: color-mix(in srgb, var(--lg-navy) 62%, transparent); color: var(--lg-cream); font-size: .8125rem; line-height: 1.25; text-align: center; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); box-shadow: 0 6px 18px color-mix(in srgb, var(--lg-navy) 40%, transparent); opacity: 0; transition: opacity .45s var(--lg-ease); will-change: transform; }
