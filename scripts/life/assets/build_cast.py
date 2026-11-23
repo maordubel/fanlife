@@ -211,7 +211,11 @@ def drop_covered(body, garments):
     for v in bm.verts:
         for t in trees:
             hit, nrm, _, dist = t.find_nearest(v.co, 0.022)
-            if hit is not None and (v.co - hit).dot(nrm) < 0.003: covered.add(v.index); break
+            if hit is None: continue
+            d = v.co - hit; depth = d.dot(nrm)
+            if depth < -0.0005 and abs(depth) > 0.85 * d.length: covered.add(v.index); break   # squarely behind the cloth, not beside its edge
+    edge = {v.index for v in bm.verts if v.index in covered and any(e.other_vert(v).index not in covered for e in v.link_edges)}
+    covered -= edge   # keep one ring of skin under every opening
     faces = [f for f in bm.faces if all(v.index in covered for v in f.verts)]
     n = len(faces); bmesh.ops.delete(bm, geom=faces, context='FACES')
     bmesh.ops.delete(bm, geom=[v for v in bm.verts if not v.link_faces], context='VERTS')
@@ -355,6 +359,10 @@ def build(c, keep=False):
             except Exception as e: traceback.print_exc(); meta['notes'].append(f'tint: {e}')
     if not tinted and garments: meta['notes'].append('no tintable top found')
     if c.get('hair_grey') and 'Hair' in parts: grey_hair(parts['Hair'], c['hair_grey'])
+    if c.get('hair_tint') and 'Hair' in parts:
+        node = base_image(parts['Hair'].material_slots[0].material)
+        if node:
+            im = node.image; px = np.empty(im.size[0] * im.size[1] * 4, dtype=np.float32); im.pixels.foreach_get(px); px = px.reshape(-1, 4); px[:, :3] *= np.array(c['hair_tint'], dtype=np.float32); im.pixels.foreach_set(px.ravel()); im.update(); im.pack()
     for o in parts.values():
         for sl in o.material_slots:
             m = sl.material
@@ -390,8 +398,8 @@ def previews(c, rig, parts, P, cam):
     P.apply(K.stand(1.0)); set_keys(objs, {})
     shoot(cam, (0, 0, H * 0.52), H * 3.4 + 0.6, 0, 85, PREV / f"{c['id']}-front.jpg", (576, 768))
     set_keys(objs, SPEC['expressions']['smile'])
-    hb = P.rig.pose.bones['head']; eye = hb.head.z + (H - hb.head.z) * 0.5
-    shoot(cam, (hb.head.x, hb.head.y - 0.03, eye), 1.05 + (H - hb.head.z) * 1.6, 28, 85, PREV / f"{c['id']}-portrait.jpg", (768, 768), rise=0.03)
+    hb = P.rig.pose.bones['head']; eye = hb.head.z + (H - hb.head.z) * 0.30
+    shoot(cam, (hb.head.x, hb.head.y - 0.03, eye), 0.9 + (H - hb.head.z) * 1.6, 28, 85, PREV / f"{c['id']}-portrait.jpg", (768, 768), rise=0.03)
     shoot(cam, (0, 0, H * 0.52), H * 3.4 + 0.6, 215, 85, PREV / f"{c['id']}-back.jpg", (576, 768))
     P.apply(K.CLIPS['talk_2'][2](0.5)); set_keys(objs, SPEC['expressions']['laugh'])
     shoot(cam, (0, 0, H * 0.52), H * 3.4 + 0.6, 40, 85, PREV / f"{c['id']}-talk.jpg", (576, 768))

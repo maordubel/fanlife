@@ -231,7 +231,7 @@ def _cheer(t):
 
 SIT = {'pelvis': {'lean': -6, 'dy': -0.02}, 'spine': {'lean': 10}, 'neck': {'pitch': -2}, 'head': {'pitch': -2},
        'leg_l': {'fwd': 86, 'out': 7, 'knee': 88, 'foot': 0}, 'leg_r': {'fwd': 86, 'out': 7, 'knee': 88, 'foot': 0},
-       'arm_l': {'dir': (0.2, 0.42, -1), 'elbow': 62, 'fore': 70, 'curl': .3}, 'arm_r': {'dir': (0.2, 0.42, -1), 'elbow': 62, 'fore': 70, 'curl': .3}}
+       'arm_l': {'dir': (0.2, 0.2, -1), 'elbow': 66, 'fore': 75, 'curl': .3}, 'arm_r': {'dir': (0.2, 0.2, -1), 'elbow': 66, 'fore': 75, 'curl': .3}}
 CROUCH = {'pelvis': {'lean': 4}, 'spine': {'lean': 16}, 'neck': {'pitch': -8}, 'head': {'pitch': -6},
           'leg_l': {'fwd': 100, 'out': 12, 'knee': 138, 'foot': 12}, 'leg_r': {'fwd': 38, 'out': 8, 'knee': 128, 'foot': 62, 'toe': -55},
           'arm_l': {'dir': (0.25, 0.75, -0.55), 'elbow': 72, 'fore': 60, 'curl': .25}, 'arm_r': {'dir': (0.3, 0.8, -0.35), 'elbow': 40, 'fore': 30, 'curl': .1}}

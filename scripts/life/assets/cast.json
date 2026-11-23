@@ -63,7 +63,7 @@
     "l-eye-scale-incr": 0.4,
     "r-eye-scale-incr": 0.4
    },
-   "skin": "young_caucasian_female",
+   "skin": "young_caucasian_male",
    "eyes": "green",
    "brows": "eyebrow001",
    "hair": "long01",
@@ -97,7 +97,7 @@
    "skin": "young_caucasian_male2",
    "eyes": "brownlight",
    "brows": "eyebrow003",
-   "hair": "short04",
+   "hair": "short02",
    "clothes": [
     "male_casualsuit02",
     "shoes06"
@@ -106,6 +106,11 @@
     0.78,
     0.1,
     0.12
+   ],
+   "hair_tint": [
+    0.45,
+    0.4,
+    0.38
    ]
   },
   {
@@ -168,6 +173,11 @@
     0.78,
     0.1,
     0.12
+   ],
+   "hair_tint": [
+    0.22,
+    0.2,
+    0.2
    ]
   },
   {
@@ -223,7 +233,7 @@
    "brows": "eyebrow007",
    "hair": "short03",
    "clothes": [
-    "toigo_fisherman_sweater",
+    "toigo_basic_tucked_t-shirt",
     "toigo_wool_pants",
     "shoes03"
    ],
