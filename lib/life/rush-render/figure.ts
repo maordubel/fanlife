@@ -258,6 +258,7 @@ export function makeFigure(cloth: Cloth, kitMap: THREE.Texture, o: FigureOptions
   J.neck = node(J.chest, 0, 0.53, 0)
   part(g.neck!, M.skin, 'skin', J.neck, 0, 0.05, 0)
   J.head = node(J.neck, 0, 0.09, 0)
+  if (!o.child) J.head.scale.setScalar(0.9) // an adult is about seven and a half heads: the sphere was a toy's
   const H = J.headMesh = node(J.head, 0, 0.155, 0.005)
   part(g.head!, M.skin, 'skin', H).scale.set(fem ? 0.96 : 1, 1.08, 1.02)
   // the jaw: the lower face narrows to a chin, which is what turns a ball into a head

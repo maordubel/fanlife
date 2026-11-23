@@ -15,7 +15,7 @@ import type {VoxelSkin} from '@/lib/life/universal/skin'
 import type {Level} from '@/lib/life/rush/level'
 
 export const DUSK = {
-  fog: '#a3809f', fogDensity: 0.0074, exposure: 1.05,
+  fog: '#8d93ad', fogDensity: 0.0074, exposure: 1.05,
   amber: '#ffa862', cream: '#ffc79a', cool: '#a8c6ff',
 }
 export type Block = {x: number; z: number; w: number; h: number; c: string}
@@ -24,7 +24,7 @@ export type DuskCtx = {
   keep: <T extends {dispose(): void}>(x: T) => T; rnd: () => number; glowTex: THREE.Texture
   allowed: (l: readonly string[]) => string[]; banned: (h: string) => boolean
   sign: (text: string, bg: string, fg: string, w?: number, h?: number) => THREE.Texture
-  blocks: Block[]
+  blocks: Block[]; facadeMats: THREE.MeshStandardMaterial[]
 }
 export type Dusk = {update(sim: {x: number; z: number}, t: number, dt: number, cam: THREE.Vector3): void; resize(w: number, h: number): void}
 
@@ -37,7 +37,7 @@ function canvasTex(w: number, h: number, draw: (g: CanvasRenderingContext2D) => 
   return t
 }
 
-const SKY_STOPS: [number, string][] = [[0, '#f6a27a'], [0.05, '#e58a95'], [0.16, '#a9709f'], [0.34, '#5b559f'], [0.62, '#26337e'], [1, '#0f1850']]
+const SKY_STOPS: [number, string][] = [[0, '#f0a878'], [0.045, '#d9929a'], [0.15, '#8d86ad'], [0.34, '#456aa6'], [0.62, '#1f3a7c'], [1, '#0c1a4c']]
 function skyMaterial() {
   return new THREE.ShaderMaterial({side: THREE.BackSide, depthWrite: false, fog: false,
     uniforms: {uC: {value: SKY_STOPS.map(s => C(s[1]))}, uS: {value: SKY_STOPS.map(s => s[0])}, uBelow: {value: C(DUSK.fog)}, uSun: {value: new THREE.Vector3(0, 0.03, -1).normalize()}},
@@ -109,7 +109,7 @@ export function dressDusk(x: DuskCtx): Dusk {
     vertexShader: 'uniform mat4 textureMatrix; varying vec4 vUv; varying vec3 vW; void main(){ vUv=textureMatrix*vec4(position,1.); vW=(modelMatrix*vec4(position,1.)).xyz; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); }',
     fragmentShader: WET_FRAG}
   const refl = new Reflector(keep(new THREE.PlaneGeometry(half * 2, span)), {color: 0xffffff, textureWidth: 256, textureHeight: 512, multisample: 0, shader})
-  const mask = keep(maskTexture(rnd)); refl.material.uniforms.tMask!.value = mask
+  const mask = keep(maskTexture(rnd)); (refl.material as THREE.ShaderMaterial).uniforms.tMask!.value = mask
   const mat = refl.material as THREE.ShaderMaterial; mat.transparent = true; mat.depthWrite = false; keep(refl.getRenderTarget()); keep(mat)
   refl.rotation.x = -Math.PI / 2; refl.position.set(0, 0.022, zMid); refl.renderOrder = 5; add(refl)
   const overlays: THREE.Mesh[] = []
@@ -194,6 +194,72 @@ export function dressDusk(x: DuskCtx): Dusk {
     }
     cornice.count = ci; tank.count = ti; acs.count = ai; pil.count = pi; bals.count = bi; shops.count = si; awnA.count = a1; awnB.count = a2 }
 
+
+  /* ---- real facades: the town's own wall texture in metres, damp toward the ground, with frames, sills, shutters, plants ---- */
+  { const key = ({ath: 'athens', tlv: 'tel-aviv', mos: 'mostar', ham: 'hamburg', gla: 'glasgow'} as Record<string, string>)[skin.town ?? ''] ?? 'glasgow'
+    const loader = new THREE.TextureLoader()
+    const wall = loader.load(`/life/town/tex/walls/${key}-a.webp`, t => { t.needsUpdate = true; x.facadeMats.forEach(m => { m.needsUpdate = true }) })
+    wall.wrapS = wall.wrapT = THREE.RepeatWrapping; wall.colorSpace = THREE.SRGBColorSpace; wall.anisotropy = 4; keep(wall)
+    for (const m of x.facadeMats) {
+      m.map = wall; m.bumpMap = wall; m.bumpScale = 2.2; m.roughness = 0.9
+      m.onBeforeCompile = sh => {
+        sh.vertexShader = 'varying float vWy;\n' + sh.vertexShader.replace('#include <uv_vertex>', `#include <uv_vertex>
+          vec4 wP = modelMatrix * instanceMatrix * vec4(position, 1.0); vWy = wP.y;
+          vec2 wUv = vec2(wP.x + wP.z, wP.y) * vec2(0.17, 0.22);
+          #ifdef USE_MAP
+          vMapUv = wUv;
+          #endif
+          #ifdef USE_BUMPMAP
+          vBumpMapUv = wUv;
+          #endif`)
+        sh.fragmentShader = 'varying float vWy;\n' + sh.fragmentShader.replace('#include <map_fragment>', `#include <map_fragment>
+          diffuseColor.rgb *= mix(0.5, 1.0, smoothstep(0.0, 4.5, vWy)) * (0.85 + 0.15 * smoothstep(8.0, 20.0, vWy));`)
+      }
+      m.customProgramCacheKey = () => 'dusk-facade'; m.needsUpdate = true
+    }
+    const B = x.blocks, rows: {s: number; px: number; py: number; pz: number}[] = []
+    for (const b of B) { const s = Math.sign(b.x); for (let fl = 1; fl * 3.2 + 1 < b.h; fl++) for (let k = 0; k < Math.floor(b.w / 2.6); k++) rows.push({s, px: s * (walk - 0.04), py: fl * 3.2 + 0.4, pz: b.z + b.w / 2 - 1.3 - k * 2.6}) }
+    const fb = (w: number, h: number, d: number, px: number, py: number, pz: number) => new THREE.BoxGeometry(w, h, d).translate(px, py, pz)
+    const frameG = keep(mergeGeometries([fb(1.42, 0.09, 0.14, 0, 0.84, 0.06), fb(1.42, 0.09, 0.14, 0, -0.84, 0.06), fb(0.09, 1.7, 0.14, -0.66, 0, 0.06), fb(0.09, 1.7, 0.14, 0.66, 0, 0.06), fb(0.05, 1.6, 0.06, 0, 0, 0.03), fb(1.62, 0.09, 0.3, 0, -0.93, 0.15)])!)
+    const frames = instanced(frameG, std('#e4ddd0', {roughness: 0.7}), rows.length)
+    const shutG = keep(mergeGeometries([fb(0.5, 1.6, 0.05, -0.98, 0, 0.05), fb(0.5, 1.6, 0.05, 0.98, 0, 0.05)])!), shutters = instanced(shutG, std('#ffffff', {roughness: 0.8}), rows.length)
+    const acG = keep(new THREE.BoxGeometry(0.8, 0.5, 0.45)), acu = instanced(acG, std('#c9ccd2', {roughness: 0.6}), rows.length)
+    const shCols = x.allowed(['#5f7f66', '#7a8aa8', '#a9856a', '#6e7b88', '#b5aea0']); let fi = 0, si = 0, ai = 0
+    for (const r of rows) { put(frames, fi++, r.px, r.py, r.pz, 1, 1, 1, -r.s * Math.PI / 2)
+      if (rnd() < 0.3) { put(shutters, si, r.px, r.py, r.pz, 1, 1, 1, -r.s * Math.PI / 2); shutters.setColorAt(si, C(pick(shCols))); si++ }
+      if (rnd() < 0.1) put(acu, ai++, r.px - r.s * 0.4, r.py - 1.35, r.pz, 1, 1, 1, -r.s * Math.PI / 2) }
+    frames.count = fi; shutters.count = si; acu.count = ai
+    // drainpipes and cables between the facades
+    const pipes = instanced(keep(new THREE.CylinderGeometry(0.06, 0.06, 1, 8)), std('#6a6a70', {metalness: 0.4}), B.length)
+    B.forEach((b, i) => put(pipes, i, Math.sign(b.x) * (walk - 0.12), b.h / 2, b.z - b.w / 2 + 0.95, 1, b.h, 1))
+    const cab: number[] = []; for (let z = -9; z > goalZ + 30; z -= 29) { const H = 7.4 + rnd() * 1.2; for (let k = 0; k < 14; k++) { const a = -walk + k * (walk * 2 / 14), b2 = a + walk * 2 / 14, y = (xx: number) => H - 0.7 * (1 - (xx / walk) ** 2); cab.push(a, y(a), z, b2, y(b2), z) } }
+    const cg = keep(new THREE.BufferGeometry()); cg.setAttribute('position', new THREE.BufferAttribute(new Float32Array(cab), 3)); add(new THREE.LineSegments(cg, keep(new THREE.LineBasicMaterial({color: '#0e0e12'}))))
+    // plants and laundry on the balconies' rails
+    const green = !x.banned('#2f4a33'), pl = instanced(keep(new THREE.IcosahedronGeometry(0.22, 1)), std('#3b5e34', {roughness: 0.9}), 260), ln = instanced(keep(new THREE.PlaneGeometry(0.5, 0.7)), keep(new THREE.MeshStandardMaterial({color: '#ffffff', side: THREE.DoubleSide, roughness: 0.9})), 120)
+    const lc = x.allowed(['#e8e4dc', '#8aa6c8', '#c86a5a', '#b8c8d8', '#d8d0c4']); let pn = 0, ln2 = 0
+    for (const r of rows) if (r.py > 4 && rnd() < 0.18) { const o = -r.s * 0.95
+      if (green && pn < 258 && rnd() < 0.6) { put(pl, pn++, r.px + o, r.py - 0.2, r.pz - 0.4, 1, 1.2, 1); put(pl, pn++, r.px + o, r.py - 0.2, r.pz + 0.4, 1, 1.2, 1) }
+      else if (ln2 < 120) { put(ln, ln2, r.px + o, r.py + 0.1, r.pz, 1, 1, 1, -r.s * Math.PI / 2); ln.setColorAt(ln2, C(pick(lc))); ln2++ } }
+    pl.count = pn; ln.count = ln2 }
+
+  /* ---- street furniture: bins, benches, scooters, bus stops; bay lines and contact shadows ---- */
+  const blobT = keep(canvasTex(64, 64, g => { const r = g.createRadialGradient(32, 32, 0, 32, 32, 32); r.addColorStop(0, 'rgba(0,0,0,.7)'); r.addColorStop(0.6, 'rgba(0,0,0,.35)'); r.addColorStop(1, 'rgba(0,0,0,0)'); g.fillStyle = r; g.fillRect(0, 0, 64, 64) }, false))
+  { const spots: number[] = []; for (let z = zTop - 10; z > goalZ + 30; z -= 31) if (!nearCross(z, 8)) spots.push(z)
+    const bins = instanced(keep(new THREE.CylinderGeometry(0.28, 0.25, 0.9, 12)), std('#3f4a45', {roughness: 0.6, metalness: 0.2}), spots.length * 2)
+    const bench = instanced(keep(mergeGeometries([fb2(1.6, 0.08, 0.5, 0, 0.45, 0), fb2(1.6, 0.5, 0.06, 0, 0.8, -0.23), fb2(0.08, 0.45, 0.45, -0.7, 0.22, 0), fb2(0.08, 0.45, 0.45, 0.7, 0.22, 0)])!), std('#4a3a2c', {roughness: 0.8}), spots.length)
+    const scoot = instanced(keep(mergeGeometries([fb2(0.2, 0.1, 1.1, 0, 0.38, 0), fb2(0.05, 0.9, 0.05, 0, 0.8, 0.5), fb2(0.5, 0.05, 0.05, 0, 1.25, 0.5), new THREE.CylinderGeometry(0.17, 0.17, 0.09, 12).rotateZ(Math.PI / 2).translate(0, 0.17, 0.45), new THREE.CylinderGeometry(0.17, 0.17, 0.09, 12).rotateZ(Math.PI / 2).translate(0, 0.17, -0.45)])!), std('#7a7f89', {roughness: 0.4, metalness: 0.5}), spots.length)
+    let bi = 0, ci = 0, si = 0; spots.forEach((z, k) => { const s = k % 2 ? 1 : -1
+      put(bins, bi++, s * 10.3, 0.62, z + 3); put(bins, bi++, -s * 10.4, 0.62, z - 9)
+      put(bench, ci++, -s * 10.2, 0.16, z - 3, 1, 1, 1, -s * Math.PI / 2)
+      put(scoot, si++, s * 9.4, 0.16, z - 14, 1, 1, 1, Math.PI / 2 + rnd() * 0.4) })
+    bins.count = bi; bench.count = ci; scoot.count = si
+    // two bus stops: a lit shelter on the pavement
+    for (const [sx, sz] of [[1, -46], [-1, -186]] as const) { const z = nearCross(sz, 9) ? sz - 12 : sz
+      const roof = new THREE.Mesh(box, std('#2a2c34')); roof.scale.set(1.6, 0.1, 3.4); roof.position.set(sx * 9.5, 2.5, z); add(roof)
+      const back = new THREE.Mesh(keep(new THREE.PlaneGeometry(3.2, 2.2)), keep(new THREE.MeshBasicMaterial({color: HDR('#bcd2ff', 1.1), toneMapped: false}))); back.position.set(sx * 10.2, 1.3, z); back.rotation.y = -sx * Math.PI / 2; add(back)
+      for (const dz of [-1.6, 1.6]) { const p = new THREE.Mesh(box, std('#2a2c34')); p.scale.set(0.08, 2.5, 0.08); p.position.set(sx * 9.0, 1.25, z + dz); add(p) } } }
+  function fb2(w: number, h: number, d: number, px: number, py: number, pz: number) { return new THREE.BoxGeometry(w, h, d).translate(px, py, pz) }
+
   /* ---- cars: one extruded body, parked along the kerbs and a few rolling slowly ---- */
   const carShape = new THREE.Shape()
   carShape.moveTo(-2.2, 0.35).lineTo(-2.2, 0.85).quadraticCurveTo(-2.2, 1.0, -2.0, 1.03).lineTo(-1.2, 1.06).lineTo(-0.9, 1.38).quadraticCurveTo(-0.8, 1.5, -0.5, 1.5).lineTo(0.5, 1.5).quadraticCurveTo(0.8, 1.5, 1.0, 1.36).lineTo(1.35, 1.06).lineTo(2.05, 0.96).quadraticCurveTo(2.25, 0.9, 2.25, 0.75).lineTo(2.25, 0.35).lineTo(-2.2, 0.35)
@@ -222,13 +288,16 @@ export function dressDusk(x: DuskCtx): Dusk {
   const toWorld = (c: Car, lx: number, lz: number): [number, number] => c.dir < 0 ? [c.x + lz, c.z - lx] : [c.x - lz, c.z + lx]
   const layout = () => cars.forEach((c, i) => {
     const yaw = c.dir < 0 ? Math.PI / 2 : -Math.PI / 2
-    put(bodyM, i, c.x, 0, c.z, 1, 1, 1, yaw); put(glassM, i, c.x, 0, c.z, 1, 1, 1, yaw)
+    put(bodyM, i, c.x, 0, c.z, 1, 1, 1, yaw); put(glassM, i, c.x, 0, c.z, 1, 1, 1, yaw); put(blobs, i, c.x, 0.03, c.z, 5.4, 1, 2.7, 0)
     ;([[1.3, 0.8], [1.3, -0.8], [-1.3, 0.8], [-1.3, -0.8]] as const).forEach(([lx, lz], k) => { const [wx, wz] = toWorld(c, lx, lz); put(wheelM, i * 4 + k, wx, 0.34, wz, 1, 1, 1, yaw) })
     ;([0.58, -0.58] as const).forEach((lz, k) => { const [hx, hz] = toWorld(c, 2.24, lz); put(headM, i * 2 + k, hx, 0.82, hz, 1, 1, 1, yaw); const [tx, tz] = toWorld(c, -2.22, lz); put(tailM, i * 2 + k, tx, 0.9, tz, 1, 1, 1, yaw)
       const [gx, gz] = toWorld(c, 2.6, lz); headGl.set(c.lit ? [gx, 0.85, gz] : [0, -50, 0], i * 6 + k * 3); tailGl.set(c.lit ? [tx, 0.9, tz] : [0, -50, 0], i * 6 + k * 3) })
   })
+  const blobs = instanced(keep(new THREE.PlaneGeometry(1, 1).rotateX(-Math.PI / 2)), keep(new THREE.MeshBasicMaterial({map: blobT, transparent: true, depthWrite: false, fog: false})), N)
+  { const bays = cars.filter(c => !c.moving), bl = instanced(box, std('#d8d3c8', {roughness: 0.5}), bays.length * 2)
+    bays.forEach((c, i) => { for (const [j, d] of [-1, 1].entries()) put(bl, i * 2 + j, c.x - Math.sign(c.x) * 0.2, 0.012, c.z + d * 2.7, 2.3, 0.01, 0.1) }) }
   layout()
-  const carDirty = () => { for (const m of [bodyM, glassM, wheelM, headM, tailM]) m.instanceMatrix.needsUpdate = true; (headPts.geometry.attributes.position as THREE.BufferAttribute).needsUpdate = true; (tailPts.geometry.attributes.position as THREE.BufferAttribute).needsUpdate = true }
+  const carDirty = () => { for (const m of [bodyM, glassM, wheelM, headM, tailM, blobs]) m.instanceMatrix.needsUpdate = true; (headPts.geometry.attributes.position as THREE.BufferAttribute).needsUpdate = true; (tailPts.geometry.attributes.position as THREE.BufferAttribute).needsUpdate = true }
   if (bodyM.instanceColor) bodyM.instanceColor.needsUpdate = true; carDirty()
 
   /* ---- stalls with lit striped awnings and balloons ---- */
@@ -279,10 +348,10 @@ export function dressDusk(x: DuskCtx): Dusk {
     const towers: [number, number, number][] = [[-17, gz - 8, 92], [17, gz - 14, 100], [-50, gz - 6, 86], [50, gz - 12, 94]]
     for (const [tx, tz, th] of towers) {
       const pole = new THREE.Mesh(box, std('#2a2b34', {fog: true})); pole.scale.set(2.6, th, 1.8); pole.position.set(tx, th / 2, tz); add(pole)
-      const lamp = new THREE.Mesh(keep(new THREE.PlaneGeometry(46, 23)), keep(new THREE.MeshBasicMaterial({map: bank, color: HDR('#ffffff', 2.0), toneMapped: false, fog: false}))); lamp.position.set(tx, th + 5, tz + 1); add(lamp)
-      const flare = new THREE.Sprite(keep(new THREE.SpriteMaterial({map: streak, color: HDR('#ffffff', 0.5), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, fog: false}))); flare.scale.set(210, 26, 1); flare.position.set(tx, th + 5, tz + 2); add(flare)
-      const halo = new THREE.Sprite(keep(new THREE.SpriteMaterial({map: glowTex, color: HDR('#ffe6cc', 0.55), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, fog: false}))); halo.scale.set(110, 110, 1); halo.position.set(tx, th + 5, tz + 2); add(halo)
-      const beam = new THREE.Mesh(keep(new THREE.CylinderGeometry(3, 24, 110, 14, 1, true).translate(0, -55, 0)), keep(new THREE.MeshBasicMaterial({map: beamTex, color: HDR('#ffe9d4', 0.22), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, side: THREE.DoubleSide, fog: false}))); beam.position.set(tx, th + 3, tz + 1); beam.rotation.x = -0.5; add(beam) } }
+      const lamp = new THREE.Mesh(keep(new THREE.PlaneGeometry(46, 23)), keep(new THREE.MeshBasicMaterial({map: bank, color: HDR('#ffffff', 1.25), toneMapped: false, fog: false}))); lamp.position.set(tx, th + 5, tz + 1); add(lamp)
+      const flare = new THREE.Sprite(keep(new THREE.SpriteMaterial({map: streak, color: HDR('#ffffff', 0.22), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, fog: false}))); flare.scale.set(210, 26, 1); flare.position.set(tx, th + 5, tz + 2); add(flare)
+      const halo = new THREE.Sprite(keep(new THREE.SpriteMaterial({map: glowTex, color: HDR('#ffe6cc', 0.28), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, fog: false}))); halo.scale.set(110, 110, 1); halo.position.set(tx, th + 5, tz + 2); add(halo)
+      const beam = new THREE.Mesh(keep(new THREE.CylinderGeometry(3, 24, 110, 14, 1, true).translate(0, -55, 0)), keep(new THREE.MeshBasicMaterial({map: beamTex, color: HDR('#ffe9d4', 0.1), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, side: THREE.DoubleSide, fog: false}))); beam.position.set(tx, th + 3, tz + 1); beam.rotation.x = -0.5; add(beam) } }
 
   const resize = (w: number, h: number) => refl.getRenderTarget().setSize(Math.max(64, Math.floor(w * mirrorScale)), Math.max(64, Math.floor(h * mirrorScale)))
   return {

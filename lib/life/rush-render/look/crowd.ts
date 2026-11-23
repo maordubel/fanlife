@@ -71,7 +71,7 @@ export function dressCrowd(x: CrowdCtx) {
   const wk = variants.map((v, i) => v.walk ? i : -1).filter(i => i >= 0), st = variants.map((v, i) => v.walk ? -1 : i).filter(i => i >= 0)
   people.forEach(p => { p.k = p.walk ? wk[Math.floor(rnd() * wk.length)]! : st[Math.floor(rnd() * st.length)]! })
   const ims = variants.map((v, vi) => {
-    const mine = people.filter(p => p.k === vi), im = new THREE.InstancedMesh(v.geo, mat, Math.max(1, mine.length)); im.count = mine.length; im.frustumCulled = false; scene.add(im)
+    const mine = people.filter(p => p.k === vi), im = new THREE.InstancedMesh(v.geo, mat, Math.max(1, mine.length)); im.count = mine.length; im.frustumCulled = false; im.castShadow = !lite; scene.add(im)
     mine.forEach((_, i) => im.setColorAt(i, new THREE.Color(shirts[Math.floor(rnd() * shirts.length)]!)))
     if (im.instanceColor) im.instanceColor.needsUpdate = true
     return {im, mine}

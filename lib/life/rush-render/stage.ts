@@ -121,8 +121,8 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     scene.add(new THREE.Points(g, keep(new THREE.PointsMaterial({color: '#cfd8ff', size: 1.6, sizeAttenuation: false, fog: false, transparent: true, opacity: 0.8}))))
   }
   // less fill, more key: shadows that go somewhere, a sun with a colour, a sky that is blue from above and warm from the ground
-  scene.add(dusk ? new THREE.HemisphereLight('#8a8fd0', '#5a3a4a', 0.7) : new THREE.HemisphereLight(night ? '#5a6ea8' : '#cfe0f5', night ? '#14100f' : '#5a4a3a', night ? 0.34 : 0.62))
-  const key = new THREE.DirectionalLight(dusk ? '#ffb48a' : night ? '#dce8ff' : '#ffdcb0', dusk ? 1.7 : night ? 0.8 : 2.9)
+  scene.add(dusk ? new THREE.HemisphereLight('#86a2d8', '#4a3a3e', 0.62) : new THREE.HemisphereLight(night ? '#5a6ea8' : '#cfe0f5', night ? '#14100f' : '#5a4a3a', night ? 0.34 : 0.62))
+  const key = new THREE.DirectionalLight(dusk ? '#ffbe94' : night ? '#dce8ff' : '#ffdcb0', dusk ? 1.6 : night ? 0.8 : 2.9)
   key.castShadow = !lite; key.shadow.mapSize.set(2048, 2048)
   Object.assign(key.shadow.camera, {left: -18, right: 18, top: 18, bottom: -18, near: 1, far: 140})
   key.shadow.bias = -0.0004; key.shadow.normalBias = 0.025; key.shadow.radius = 3
@@ -186,7 +186,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     }
   }
 
-  const duskBlocks: Block[] = []
+  const duskBlocks: Block[] = [], duskFacades: THREE.MeshStandardMaterial[] = []
   const addBuildings = (walk: number, from: number, to: number, gaps: number[]) => {
     const blocks: {x: number; z: number; w: number; h: number; c: string}[] = [], wins: {x: number; y: number; z: number; lit: boolean; warm: boolean; side: number}[] = []
     for (const side of [-1, 1]) {
@@ -204,6 +204,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     const facade = noiseTex('#ffffff', 22, [1, 1])
     const b = new THREE.InstancedMesh(box, keep(new THREE.MeshStandardMaterial({map: facade, roughness: 0.95})), blocks.length)
     blocks.forEach((x, i) => { m4.makeScale(10, x.h, x.w).setPosition(x.x, x.h / 2, x.z); b.setMatrixAt(i, m4); b.setColorAt(i, C(x.c)) }); b.receiveShadow = true; scene.add(b)
+    if (dusk) duskFacades.push(b.material as THREE.MeshStandardMaterial)
     const plinth = new THREE.InstancedMesh(box, keep(std('#ffffff')), blocks.length)
     blocks.forEach((x, i) => { m4.makeScale(10.3, 3, x.w).setPosition(x.x, 1.5, x.z); plinth.setMatrixAt(i, m4); plinth.setColorAt(i, C(x.c).multiplyScalar(0.55)) }); scene.add(plinth)
     const winGeo = keep(new THREE.PlaneGeometry(1.2, 1.6))
@@ -440,7 +441,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   }
 
   let duskDress: Dusk | null = null
-  if (dusk && level.place === 'street') { try { duskDress = dressDusk({scene, renderer, level, skin, lite, skyline, keep, rnd, glowTex, allowed: l => allowed(l, skin), banned: h => bannedColour(h, skin), sign: (a, b, c, w, h) => signTex(a, b, c, w, h), blocks: duskBlocks}) } catch { duskDress = null } }
+  if (dusk && level.place === 'street') { try { duskDress = dressDusk({scene, renderer, level, skin, lite, skyline, keep, rnd, glowTex, allowed: l => allowed(l, skin), banned: h => bannedColour(h, skin), sign: (a, b, c, w, h) => signTex(a, b, c, w, h), blocks: duskBlocks, facadeMats: duskFacades}) } catch { duskDress = null } }
 
   /* ───────────── cars ───────────── */
   type CarParts = {body: THREE.InstancedMesh; cab: THREE.InstancedMesh; wheel: THREE.InstancedMesh; head: THREE.InstancedMesh; tail: THREE.InstancedMesh; bar: THREE.InstancedMesh}
@@ -753,7 +754,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   // highlights (split tone), a touch more saturation, a vignette, grain — the GTA look, not a filter on top of it.
   const composer = new EffectComposer(renderer, new THREE.WebGLRenderTarget(1, 1, {type: THREE.HalfFloatType, samples: lite ? 0 : 4}))
   composer.addPass(new RenderPass(scene, cam))
-  if (!lite) composer.addPass(new UnrealBloomPass(new THREE.Vector2(256, 256), dusk ? 0.5 : night ? 0.55 : 0.22, dusk ? 0.6 : 0.6, dusk ? 1.0 : night ? 0.9 : 1.1))
+  if (!lite) composer.addPass(new UnrealBloomPass(new THREE.Vector2(256, 256), dusk ? 0.32 : night ? 0.55 : 0.22, dusk ? 0.5 : 0.6, dusk ? 1.05 : night ? 0.9 : 1.1))
   const grade = new ShaderPass({
     uniforms: {tDiffuse: {value: null}, uTime: {value: 0}, uSpeed: {value: 0}, uHeart: {value: 0}, uFlash: {value: 0}, uTint: {value: C(skin.p)}, uAspect: {value: 1}, uNight: {value: dusk ? 0.55 : night ? 1 : 0}, uClose: {value: 0}},
     vertexShader: 'varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); }',
