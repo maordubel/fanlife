@@ -60,5 +60,28 @@ layers['collar'] = 'M262 10C300 2 420 2 456 12C456 60 420 102 360 104C300 102 26
 layers['hem'] = 'M150 585C260 606 460 606 570 585L580 650H140Z'
 # where the marks sit on this cut (template pixels): the crest on the wearer's left chest, the maker on the right, the sponsor across
 layers['marks'] = {'crest': [450, 160, 84, 92], 'maker': [230, 178, 70, 36], 'sponsor': [360, 290, 300, 110]}
+
+
+def part(name, width=206, top=-2):
+    """a collar from the owner's kit studio, as layers a kit colours: A (the collar's light cloth), B (its coloured trim), ink, shade"""
+    im = np.asarray(Image.open(ROOT / f'brand/source/kits/studio/collars/{name}.webp').convert('RGBA')).astype(np.float32)
+    rgb, a = im[..., :3], im[..., 3]
+    Vp = rgb.max(axis=2); Sp = (Vp - rgb.min(axis=2)) / np.maximum(Vp, 1)
+    on = a > 128
+    inkp = on & (Vp < 70)
+    A = on & ~inkp & (Sp < .35)
+    B = on & ~inkp & ~A
+    shadeA = np.clip(1 - Vp / 245, 0, 1) * A
+    vb = np.median(Vp[B]) if B.any() else 200
+    shadeB = np.clip(1 - Vp / vb, 0, 1) * B
+    sh = cv2.GaussianBlur(shadeA + shadeB, (0, 0), 1.2)
+    x0, y0, x1, y1 = Image.fromarray(on.astype(np.uint8) * 255).getbbox()
+    k = width / (x1 - x0)
+    return {'t': f'translate({360 - (x0 + x1) / 2 * k:.1f} {top - y0 * k:.1f}) scale({k:.4f})', 'cut': path_of(blur_mask(on, 1), eps=1, min_area=40),
+            'A': path_of(blur_mask(A, .8), eps=.9, min_area=8), 'B': path_of(blur_mask(B, .8), eps=.9, min_area=8),
+            'ink': path_of(inkp, eps=.7, min_area=3), 'shade': [path_of(sh > t, eps=1, min_area=6) for t in (.08, .2, .38)]}
+
+
+layers['collars'] = {n: part(n, width=232 if n in ('v', 'wrap') else 206) for n in ('crew', 'polo', 'lace', 'v', 'wrap')}
 (ROOT / 'scripts/kits/studio-template.json').write_text(json.dumps(layers))
 print({k: (len(v) if isinstance(v, str) else [len(x) for x in v] if isinstance(v, list) and v and isinstance(v[0], str) else v) for k, v in layers.items()})

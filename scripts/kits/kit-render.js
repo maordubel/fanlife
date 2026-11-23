@@ -112,9 +112,15 @@ ${art.crestSrc?`<image href="${esc(asset(art.crestSrc))}" x="188" y="80" width="
 /* The studio cut (23.11.2026): the owner's drawn crew shirt (scripts/kits/studio-template.json, made by studio-template.py) worn in the
    kit's own colours — its outline, ink folds and fold shadows are the drawing, the colours and patterns are the kit's. Board unchanged. */
 const ST_K=340/721,ST_Y=19.5,ST_T=`translate(0 ${ST_Y}) scale(${ST_K.toFixed(5)})`;
+/* a collar from the owner's kit studio (crew, polo, lace, v, wrap), in the kit's collar colour and trim */
+function collarPart(S,type,a,b){
+  const P=S.collars&&S.collars[type];if(!P)return '';
+  return `<g transform="${P.t}"><path d="${P.A}" fill="${a}"/><path d="${P.B}" fill="${b}"/>${P.shade.map((d,i)=>`<path d="${d}" fill="#000" fill-opacity="${[.1,.14,.2][i]}"/>`).join('')}<path d="${P.ink}" fill="#170f0c"/></g>`;
+}
 function studioShirtG(k,id,o){
   const S=STUDIO,{b,t,pat,sleeveInk,d,ry,art,light,ink,edge}=o;
   const collar=art.collarInk||(d==='contrasting sleeves'?b:t);
+  const cType=(k.shirt.collar||art.collar||(art.poloCollar?'polo':'crew'));
   const asset=(src)=>typeof RESOLVE==='function'?RESOLVE(src):src;
   const box=(n)=>{const [cx,cy,w,h]=S.marks[n];return {x:cx*ST_K-w*ST_K/2,y:ST_Y+cy*ST_K-h*ST_K/2,w:w*ST_K,h:h*ST_K,cx:cx*ST_K,cy:ST_Y+cy*ST_K}};
   const cr=box('crest'),mb=box('maker');
@@ -137,7 +143,7 @@ ${art.plainCuffs?'':`<path d="${S.cuffs}" fill="${d==='contrasting sleeves'?b:t}
 <path d="${S.collar}" fill="${collar}"/>
 <path d="${S.neck}" fill="${shade(collar,-.06)}"/><path d="${S.neck}" fill="url(#${id}n)"/>
 ${shades}<rect width="721" height="638" fill="url(#${id}h)"/></g>
-<path d="${S.ink}" fill="#170f0c"/></g>
+<path d="${S.ink}" fill="#170f0c"/>${collarPart(S,cType,collar,collar===b?t:b)}</g>
 ${crestSrc?`<image href="${crestSrc}" x="${cr.x.toFixed(1)}" y="${cr.y.toFixed(1)}" width="${cr.w.toFixed(1)}" height="${cr.h.toFixed(1)}" preserveAspectRatio="xMidYMid meet"/>`:''}${mk}${sp}`;
 }
 function shortsG(sh,id){
@@ -152,7 +158,7 @@ ${sh.trim?`<polygon points="0,0 30,0 26,140 0,140" fill="${t}"/><polygon points=
 <g filter="url(#${id}sb)" fill="none" stroke="#000" stroke-linecap="round"><path d="M100 20C102 60 100 100 100 118" stroke-opacity=".3" stroke-width="7"/><path d="M52 22C62 62 60 100 50 128" stroke-opacity=".16" stroke-width="7"/><path d="M148 22C138 62 140 100 150 128" stroke-opacity=".16" stroke-width="7"/></g>
 <path d="M0 118H200" stroke="#000" stroke-opacity=".14" stroke-width="4"/>
 <path d="M92 16Q86 40 88 52M108 16Q114 40 112 52" stroke="${light?'#000':'#fff'}" stroke-opacity=".55" stroke-width="1.6" fill="none" stroke-linecap="round"/></g>
-<path d="${SHORTS}" fill="none" stroke="${shade(b,-.55)}" stroke-width="2" stroke-linejoin="round"/>
+<path d="${SHORTS}" fill="none" stroke="#1c1714" stroke-width="3" stroke-linejoin="round"/>
 <g fill="none" stroke="${light?'#000':'#fff'}" stroke-opacity=".4" stroke-width="1.2" stroke-dasharray="3 3"><rect x="22" y="86" width="26" height="30" rx="3"/></g>`;
 }
 function sockG(so,dx){
@@ -160,7 +166,7 @@ function sockG(so,dx){
   return `<g transform="translate(${dx} 0)"><clipPath id="sk${n}"><path d="${SOCK}"/></clipPath><filter id="skb${n}"><feGaussianBlur stdDeviation="2"/></filter><g clip-path="url(#sk${n})"><rect x="-10" width="60" height="200" fill="${b}"/>${bands}
 <rect x="-10" width="60" height="9" fill="#000" opacity=".16"/><path d="M-4 9H44" stroke="#000" stroke-opacity=".2"/>
 <g filter="url(#skb${n})"><rect x="-10" width="20" height="200" fill="#000" opacity=".2"/><rect x="26" width="12" height="200" fill="#fff" opacity=".12"/><path d="M0 150Q20 140 50 160" stroke="#000" stroke-opacity=".2" stroke-width="6" fill="none"/></g>
-<path d="M4 176Q36 186 64 178" stroke="#000" stroke-opacity=".25" stroke-width="2" fill="none"/></g><path d="${SOCK}" fill="none" stroke="${shade(b,-.55)}" stroke-width="2" stroke-linejoin="round"/></g>`;
+<path d="M4 176Q36 186 64 178" stroke="#000" stroke-opacity=".25" stroke-width="2" fill="none"/></g><path d="${SOCK}" fill="none" stroke="#1c1714" stroke-width="3" stroke-linejoin="round"/></g>`;
 }
 function kitSVG(k,label){
   const id='k'+(++uid);
