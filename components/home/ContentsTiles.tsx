@@ -7,8 +7,9 @@ export type Tile={href:string;title:string;sub:string;go:string;pic?:Scene|'kits
  * experience"). Each feature is a picture card that says what happens behind it. Phone: two a row, the first one across.
  * Desktop: four a row. Pictures: the owner's packs (scripts/brand/art-vol2.py, scripts/brand/front-doors.py).
  */
-export function ContentsTiles({title,tiles}:{title:string;tiles:Tile[]}){
- return <nav className="wkx" aria-label={title} data-testid="contents-tiles">
+/** `mono` (a club's own pages, rule 95): the pictures print in one ink, the club's — no picture brings a rival's colours into a club's ground */
+export function ContentsTiles({title,tiles,mono}:{title:string;tiles:Tile[];mono?:boolean}){
+ return <nav className="wkx" aria-label={title} data-testid="contents-tiles" data-mono={mono||undefined}>
   <p className="wk-banner wkx-k">{title}</p>
   <ol className="wkx-list">{tiles.map((x,i)=>{
    const p=x.pic?(x.pic==='kits'?{src:'/brand/fanlife/doors/kits-960.webp',srcSet:'/brand/fanlife/doors/kits-480.webp 480w, /brand/fanlife/doors/kits-960.webp 960w'}:scene(x.pic)):null,c=x.cut?bit(x.cut):null
