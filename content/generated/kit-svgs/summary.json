@@ -64,5 +64,17 @@
   "fromArchive": 22,
   "fromPack": 41,
   "noColour": 0
+ },
+ "raja-casablanca": {
+  "drawn": 130,
+  "fromArchive": 0,
+  "fromPack": 130,
+  "noColour": 3
+ },
+ "wydad-casablanca": {
+  "drawn": 74,
+  "fromArchive": 0,
+  "fromPack": 74,
+  "noColour": 2
  }
 }
