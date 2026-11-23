@@ -1,0 +1,70 @@
+/*
+ * LIFE · the hood — the glass over the open neighbourhood. Club theme tokens only, no colour written here, radius 0,
+ * logical properties only, touch targets 44px and up. Phone first (390 and 320 wide); a second layout from 900px up.
+ */
+.hoodRoot {
+  --h-ink: var(--mag-ink, var(--club-text));
+  --h-light: var(--mag-white, var(--club-surface));
+  --h-prime: var(--club-primary);
+  --h-on: var(--club-on-primary);
+  --h-glass: color-mix(in srgb, var(--h-ink) 88%, transparent);
+  --h-safe-t: env(safe-area-inset-top, 0px);
+  --h-safe-b: env(safe-area-inset-bottom, 0px);
+  position: fixed; inset: 0; overflow: hidden; touch-action: none; user-select: none; -webkit-user-select: none;
+  background: var(--mag-night, var(--h-ink)); color: var(--h-light); font-family: var(--mag-body);
+}
+:where(.hoodRoot) button { font: inherit; cursor: pointer; }
+.hoodCanvas { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; display: block; }
+.hoodHud { position: absolute; inset: 0; pointer-events: none; }
+.hoodPlate { position: absolute; background: var(--h-glass); color: var(--h-light); padding: 6px 10px; border: 2px solid var(--h-ink); box-shadow: 3px 3px 0 color-mix(in srgb, var(--h-ink) 70%, transparent); font-family: var(--mag-mono); font-size: .8125rem; letter-spacing: .05em; }
+.hoodJob { inset-block-start: calc(10px + var(--h-safe-t)); inset-inline-start: 10px; inline-size: min(calc(100vw - 140px), 22rem); display: grid; gap: 2px; border-block-end: 4px solid var(--h-prime); }
+.hoodJob small { font-size: .6875rem; letter-spacing: .1em; text-transform: uppercase; opacity: .75; }
+.hoodJob b { font-family: var(--mag-display); font-size: 1rem; font-weight: 400; line-height: 1.2; text-transform: uppercase; letter-spacing: .02em; }
+.hoodJob span { display: inline-flex; align-items: center; gap: 8px; font-variant-numeric: tabular-nums; }
+.hoodArrow { display: inline-block; inline-size: 0; block-size: 0; border-inline: 7px solid transparent; border-block-end: 14px solid var(--h-prime); }
+.hoodCarry { inset-block-start: calc(112px + var(--h-safe-t)); inset-inline-start: 10px; }
+.hoodPlace { inset-block-end: calc(212px + var(--h-safe-b)); inset-inline-start: 10px; text-transform: uppercase; }
+.hoodMap { position: absolute; inset-block-start: calc(10px + var(--h-safe-t)); inset-inline-end: 10px; inline-size: 96px; block-size: 96px; }
+.hoodPause { pointer-events: auto; position: absolute; inset-block-start: calc(116px + var(--h-safe-t)); inset-inline-end: 10px; min-inline-size: 44px; min-block-size: 44px; border: 2px solid var(--h-light); background: var(--h-ink); color: var(--h-light); }
+.hoodSay { position: absolute; inset-inline: 0; inset-block-end: calc(224px + var(--h-safe-b)); display: grid; justify-items: center; pointer-events: none; }
+.hoodSay div { max-inline-size: min(92vw, 30rem); padding: 8px 12px; background: var(--mag-lilac, var(--h-light)); color: var(--h-ink); border: 3px solid var(--h-ink); opacity: 0; transition: opacity .2s; }
+.hoodSay div[data-on='true'] { opacity: 1; }
+.hoodSay b { display: block; font-family: var(--mag-mono); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; }
+.hoodSay span { font-size: 1rem; line-height: 1.35; }
+.hoodToast { position: absolute; inset-block-start: 36%; inset-inline: 0; text-align: center; pointer-events: none; }
+.hoodToast span { display: inline-block; padding: 6px 14px; background: var(--h-prime); color: var(--h-on); border: 3px solid var(--h-ink); font-family: var(--mag-display); text-transform: uppercase; }
+.hoodStickZone { position: absolute; inset-block: 32% 0; inset-inline-start: 0; inline-size: 55%; pointer-events: auto; }
+.hoodStick { position: absolute; inline-size: 110px; block-size: 110px; margin-block-start: -55px; margin-inline-start: -55px; border: 2px solid color-mix(in srgb, var(--h-light) 55%, transparent); border-radius: 50%; pointer-events: none; }
+.hoodStick > i { position: absolute; inset: 30px; border-radius: 50%; background: color-mix(in srgb, var(--h-light) 70%, transparent); }
+.hoodGhost { position: absolute; inset-block-end: calc(120px + var(--h-safe-b)); inset-inline-start: 28px; display: grid; justify-items: center; gap: 6px; pointer-events: none; font-family: var(--mag-mono); font-size: .75rem; }
+.hoodGhost i { inline-size: 84px; block-size: 84px; border: 2px dashed color-mix(in srgb, var(--h-light) 60%, transparent); border-radius: 50%; }
+.hoodPads { position: absolute; inset-inline-end: 12px; inset-block-end: calc(18px + var(--h-safe-b)); display: grid; gap: 10px; justify-items: end; pointer-events: auto; }
+.hoodPad { min-inline-size: 64px; min-block-size: 64px; border: 3px solid var(--h-light); background: var(--h-ink); color: var(--h-light); font-family: var(--mag-display); font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; }
+.hoodPad[data-big='true'] { min-inline-size: 84px; min-block-size: 84px; border-radius: 50%; }
+.hoodPad[data-on='true'], .hoodPad[data-hot='true'] { background: var(--h-prime); color: var(--h-on); border-color: var(--h-ink); }
+.hoodKeys { position: absolute; inset-block-end: calc(12px + var(--h-safe-b)); inset-inline: 0; text-align: center; font-family: var(--mag-mono); font-size: .75rem; opacity: .75; pointer-events: none; }
+.hoodCover { position: absolute; inset: 0; display: grid; place-items: center; padding: 16px; background: color-mix(in srgb, var(--h-ink) 70%, transparent); }
+.hoodCard { inline-size: min(100%, 26rem); padding: 20px; background: var(--mag-card, var(--h-light)); color: var(--h-ink); border: 3px solid var(--h-ink); border-block-start: 14px solid var(--h-prime); box-shadow: 5px 5px 0 var(--h-ink); display: grid; gap: 10px; }
+.hoodCard h2 { margin: 0; font-family: var(--mag-display); font-size: 1.75rem; font-weight: 400; }
+.hoodBtn { min-block-size: 48px; padding: 0 18px; border: 3px solid var(--h-ink); background: var(--mag-card, var(--h-light)); color: var(--h-ink); font-family: var(--mag-display); text-transform: uppercase; }
+.hoodBtn[data-primary='true'] { background: var(--h-prime); color: var(--h-on); box-shadow: 4px 4px 0 var(--h-ink); }
+.hoodBtn:focus-visible { outline: 3px solid var(--h-ink); outline-offset: 2px; }
+
+/* a phone 320 wide: the map steps under the job plate, the plates shrink */
+@media (max-width: 380px) {
+  .hoodJob { inline-size: calc(100vw - 118px); }
+  .hoodMap { inline-size: 80px; block-size: 80px; }
+  .hoodPause { inset-block-start: calc(100px + var(--h-safe-t)); }
+  .hoodCarry { inset-block-start: calc(104px + var(--h-safe-t)); }
+}
+/* the desktop layout: job and carrying top left, the map bigger top right, words low and centred, no thumb controls */
+@media (min-width: 900px) {
+  .hoodJob { inline-size: 24rem; }
+  .hoodJob b { font-size: 1.2rem; }
+  .hoodMap { inline-size: 168px; block-size: 168px; }
+  .hoodPause { inset-block-start: calc(190px + var(--h-safe-t)); }
+  .hoodCarry { inset-block-start: calc(104px + var(--h-safe-t)); }
+  .hoodPlace { inset-block-end: 56px; }
+  .hoodSay { inset-block-end: 96px; }
+}
+@media (prefers-reduced-motion: reduce) { .hoodSay div { transition: none; } }

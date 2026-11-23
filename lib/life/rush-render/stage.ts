@@ -19,14 +19,16 @@ import type {VoxelSkin} from '@/lib/life/universal/skin'
 import {carAt, walkerAt, type Level, type Look, type PickupKind} from '@/lib/life/rush/level'
 import {patrolLook, stepTarget, type Sim} from '@/lib/life/rush/sim'
 import type {MissionSpec} from '@/lib/life/rush/spec'
+import {bannedColour} from './colour'
 import {dressCity} from './city'
+import {dressHood, type HoodDress} from './hood'
 import {dressFlat} from './flat'
 import {dressSurface, loadSurface, type SurfaceName} from './surfaces'
 import {loadProps, propCopy} from './props'
 import {disposeFigure, HAIR, kitTexture, makeFigure, lookAt, makeHand, PANTS, pose, SKIN_TONES, TOPS, type Cloth, type FigureData} from './figure'
 
 export type Quality = 'high' | 'lite'
-export type View = {cam: 'chase' | 'eyes'; ending: boolean; endT: number; outcome: 'good' | 'ok' | 'slip' | null; intro: number; /** the briefing: the place seen from a slow crane before the run */ brief?: boolean}
+export type View = {cam: 'chase' | 'eyes'; ending: boolean; endT: number; outcome: 'good' | 'ok' | 'slip' | null; intro: number; /** the briefing: the place seen from a slow crane before the run */ brief?: boolean; /** the hood: how the job stands (the marker over whoever gives or takes it) */ hood?: {job: 'idle' | 'active' | 'done'}}
 export type Stage = {
   render(sim: Sim, view: View, dt: number): void
   resize(w: number, h: number): void
@@ -40,25 +42,7 @@ const std = (color: THREE.ColorRepresentation, o: THREE.MeshStandardMaterialPara
 
 /* ───────────── colour policy ───────────── */
 
-function hsv(hex: string) {
-  const n = parseInt(hex.slice(1), 16), r = (n >> 16 & 255) / 255, g = (n >> 8 & 255) / 255, b = (n & 255) / 255
-  const mx = Math.max(r, g, b), mn = Math.min(r, g, b), d = mx - mn
-  let h = 0
-  if (d) h = mx === r ? ((g - b) / d) % 6 : mx === g ? (b - r) / d + 2 : (r - g) / d + 4
-  return {h: (h * 60 + 360) % 360, s: mx ? d / mx : 0, v: mx}
-}
-function family(hex: string): string | null {
-  const x = hsv(hex)
-  if (x.s < 0.2) return null
-  return x.h <= 18 || x.h >= 342 ? 'red' : x.h >= 38 && x.h <= 70 ? 'yellow' : x.h >= 90 && x.h <= 170 ? 'green' : x.h >= 190 && x.h <= 260 ? 'blue' : null
-}
-/** a colour this club's picture never shows: a rival's family, or a hue the club's own policy forbids */
-export function bannedColour(hex: string, skin: Pick<VoxelSkin, 'rivals' | 'policy'>): boolean {
-  const f = family(hex)
-  if (f && skin.rivals?.includes(f)) return true
-  const c = hsv(hex)
-  return skin.policy.some(r => c.s >= r.minSaturation && c.v >= r.minValue && (r.hue[0] <= r.hue[1] ? c.h >= r.hue[0] && c.h <= r.hue[1] : c.h >= r.hue[0] || c.h <= r.hue[1]))
-}
+export {bannedColour}
 const allowed = (list: readonly string[], skin: VoxelSkin, fallback = '#7a7f89') => { const ok = list.filter(c => !bannedColour(c, skin)); return ok.length ? ok : [fallback] }
 
 /* ───────────── canvas textures ───────────── */
@@ -500,7 +484,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   type Person = {x: number; z: number; face: number; look: Look; mode: 'walk' | 'stand' | 'steward' | 'rival' | 'target'; idx: number; react: number; turn: number; bubbleAt: number}
   const people: Person[] = []
   level.walkers.forEach((w, i) => people.push({x: w.x, z: w.z0, face: Math.PI, look: w.look, mode: 'walk', idx: i, react: 0, turn: Math.PI, bubbleAt: -9}))
-  level.standers.forEach((s, i) => people.push({x: s.x, z: s.z, face: s.face, look: s.look, mode: s.role === 'rival' ? 'rival' : 'stand', idx: i, react: 0, turn: s.face, bubbleAt: -9}))
+  level.standers.forEach((s, i) => { if (s.hidden) return; people.push({x: s.x, z: s.z, face: s.face, look: s.look, mode: s.role === 'rival' ? 'rival' : 'stand', idx: i, react: 0, turn: s.face, bubbleAt: -9}) })
   const tgt = level.targets[0]
   if (tgt?.kind === 'person' && tgt.look) people.push({x: tgt.x, z: tgt.z, face: Math.PI, look: tgt.look, mode: 'target', idx: 0, react: 0, turn: Math.PI, bubbleAt: -9})
   const N = Math.max(1, people.length)
@@ -537,6 +521,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   const tint = C(skin.p).lerp(C('#ffffff'), 0.3)
   const flat = level.place === 'flat' ? dressFlat({scene, keep, level, skin, night, lite, banned: h => bannedColour(h, skin), ground, glowTex,
     person: f => figOf({kit: false, longSleeves: true, hairStyle: f.hairStyle ?? (f.curly ? 'curly' : 'short'), top: f.top, pants: f.pants, hair: f.hair, mustache: !!f.beard, skinTone: f.skinTone ?? SKIN_TONES[1], scale: (f.scale ?? 1) * 0.94, female: f.female, skirt: f.skirt, glasses: f.glasses, denim: f.denim, jacket: f.jacket, eyes: f.eyes, noBlob: true})}) : null
+  const hoodDress: HoodDress | null = level.hood ? dressHood({scene, keep, level, skin, night, banned: h => bannedColour(h, skin), tint, person: L => lookFig(L), sign: (a, b, c, w, h) => signTex(a, b, c, w, h)}) : null
   type Npc = {fig: THREE.Group; step: number; extra: THREE.Group[]; x: number; z: number}
   const npcs: Npc[] = []
   level.steps.forEach((st, i) => {
@@ -932,6 +917,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       })
     }
 
+    hoodDress?.update(sim, view, t, dt)
     flat?.update(sim, t, dt, view.ending, view.outcome, {x: camPos.x, z: camPos.z, close: closeK})
     // stewards and the ground they can see
     if (level.place !== 'flat') level.patrols.forEach((p, i) => {

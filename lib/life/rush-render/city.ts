@@ -137,7 +137,7 @@ export function dressCity(x: CityCtx): boolean {
   const plateGeo = keep(new THREE.PlaneGeometry(1.4, 0.44)), plateMat = lit('#ffffff', 0.9, {map: plateTex})
   for (const c of level.crossings) for (const side of [-1, 1]) onWall(plateGeo, plateMat, side, 3.6, c + 9.8, 0.05)
 
-  if (town === 'ath') kiosk(x, paint, std, lit, z0 - 26)
+  if (town === 'ath') kiosk(x, paint, std, lit, level.hood ? level.hood.kiosk.z : z0 - 26)
   if (town === 'mos') bazaar(x, rnd, paint, std, lit, bays, onWall)
 
   /* ───────── trees: orange trees in Athens, palms in Tel Aviv — never where green is a rival's ───────── */
