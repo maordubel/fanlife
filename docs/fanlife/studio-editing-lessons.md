@@ -15,6 +15,40 @@ numbers became. Newest first. The skill reads this before touching the editor an
 | story thread | on every chapter with ≥ 3 knots | owner: "connecting lines, storytelling" |
 | jump cut to a closer framing of the same picture | never (cold open excepted) | it read as flicker |
 
+## 2026-11-23 · "I want a film, a story" — the raconteur and the archive on screen
+
+- **Owner**: the editing, directing and script are not at the level; smarter, more dynamic, more varied; "I want a
+  story"; reference Kan 11's "The Unimportant"; "if it talks about a season it pulls its kit, the card of the player
+  it talks about"; the information should talk "in a fun, hypnotic, humorous way".
+- **Measured before** (Olympiacos 2023/24, house crew, 239 s): 15.3 changes a minute, 3 flashes (36.6, 107.1, 209.0 s),
+  worst jerk 95.8 px, mix 73% documentary / 19% explainer / 8% kinetic, end card 17.9 s. On the sheet: the final was
+  ONE beat under one `?–?` board for about 50 s.
+- **Cause**: not the picture — the words. The house script read tallies aloud ("18 matches: 11 won, 3 drawn, 4 lost.
+  40 goals scored, 18 conceded."), poured the same craft lines over every chapter, and told the final as one 90-word
+  beat. The dossier's best material (370 people in Bačka Topola, three managers, a final in AEK's ground) was a list at
+  the end of a sentence. One long beat = one board = a slide, whatever the editor does under it.
+- **Changed**: `studio/raconteur.py` (the lead house writer: the small door, scenes, a tie as one scene in two acts, one
+  dry aside a scene, the night as five short beats); `studio/archive_props.py` + `Adapter.archive_device` +
+  `Film.kitdev` / `Film.pcard` (the season's shirt on its hanger, the named player's archive card); the VOX pass lets
+  an archive prop fire on a line's first sentence (a name is said there). Rule: `docs/rules/studio-story-first.md`.
+- **Measured after** (same club and season, same machine, 299 s): 17.8 changes a minute, **0 flashes**, worst jerk
+  **35.2 px**, mix 58% / 26% / 15%, 38 edited beats (was 21), the final in 6 beats with its own pictures. One static
+  stretch of 2.2 s at 143.5 s (a held ticket) and the 18 s end card remain.
+- **Seen on the sheet, fixed after that render** (not in it): the night's first beat was a `versus` board, which printed
+  1–0 before the goal → now a matchday card; the card's numbers sat on its dashed rule; the shirt's label ran into the
+  subtitle band.
+- **Lessons**:
+  1. When the gate passes and the film is still a slideshow, read the script before touching the editor. Beat length is
+     set by the writer: a 90-word beat is 40 s under one device.
+  2. A prop that listens for a NAME must listen in a line's first sentence; the VOX pass skipped it by rule.
+  3. `versus` prints the result. A beat before the reveal takes `matchday`.
+  4. A local render stops at the master (the intro lives on Drive): judge `picture.mp4`, mux it with `mix/mix.m4a`.
+  5. This machine (2 cores) renders about 3.7 frames a second: a 5-minute film is 40 minutes. Test a device alone first.
+- **Next**: match, tie and rivalry films by the raconteur; a wrong-match ticket over the final (the picker took a
+  "ticket" by subject with sight off — a picture made for one match should be refused on another); the Europa League
+  final of Atalanta 2023/24 is ranked below a cup semi-final because the archive holds no stage for it; clubs with no
+  dossier get plainer scenes — the next research wave should add match details (crowd, city, how the goal came).
+
 ## 2026-11-17 · "everything flickers — more movement, more film, graphic connections, connecting lines, storytelling"
 
 - **Owner**: the VOX-pass sample (HTA 2009/10) is a failure: flickering, bad work.

@@ -45,7 +45,7 @@ ACCENT_MAX = 4.2
 SKIP = {'end', 'follow', 'trailer', 'quote'}   # never cut: the closing cards and a quote are read whole
 CARDS = {'chapter', 'open', 'record', 'race', 'form', 'run', 'timeline', 'table'}   # cut after their card: the card keeps its first segment
 TYPED = {'kinetic', 'word', 'question', 'lead', 'rule', 'verdict', 'quote', 'stat', 'explain', 'flap', 'table', 'form', 'ledger',
-         'tally', 'cities', 'atlas', 'chalk', 'objects', 'score', 'ticket', 'card', 'press', 'clockdev', 'locator'}
+         'tally', 'cities', 'atlas', 'chalk', 'objects', 'score', 'ticket', 'card', 'press', 'clockdev', 'locator', 'kitdev', 'pcard'}
 SCORE = re.compile(r'\b(\d{1,2})\s?[–-]\s?(\d{1,2})\b')
 NUM_NOUN = re.compile(r'\b(\d{2,6}|\d)\s+([a-z]{3,14})\b', re.I)
 NOUN_OK = {'matches', 'games', 'goals', 'minutes', 'seasons', 'years', 'days', 'weeks', 'months', 'points', 'wins', 'defeats', 'draws',
@@ -185,12 +185,15 @@ def accent(seg: dict, text: str, last: list[str], ad) -> dict | None:
     tried = []
     obj = getattr(ad, 'object_device', None)
     place = getattr(ad, 'place_device', None)
-    order = ['place', 'objects', 'score', 'number', 'phrase']
+    arch = getattr(ad, 'archive_device', None)
+    order = ['archive', 'place', 'objects', 'score', 'number', 'phrase']
     if last[-2:] and len(set(last[-2:])) == 1:   # never the same kind three times running
         order = [k for k in order if k != last[-1]] + [last[-1]]
     for kind in order:
         dev = None
-        if kind == 'place' and place:
+        if kind == 'archive' and arch:
+            dev = arch(seg_text, ws, t0, end)
+        elif kind == 'place' and place:
             dev = place(seg_text, ws, t0, end, seg)
         elif kind == 'objects' and obj:
             dev = obj(seg_text, ws, t0, end)
@@ -222,6 +225,21 @@ def accent(seg: dict, text: str, last: list[str], ad) -> dict | None:
             return dev
         tried.append(kind)
     return None
+
+
+def archive_accent(seg: dict, text: str, ad) -> dict | None:
+    """The archive's props alone (the season's shirt, a named player's card: Adapter.archive_device) for a segment."""
+    arch = getattr(ad, 'archive_device', None)
+    if not arch:
+        return None
+    t0, end = seg['t'], seg['t'] + seg['d']
+    ws = [(w, tt) for w, tt in word_times(text, (seg.get('_words_all') or [])) if t0 - 0.01 <= tt < end - 0.01]
+    if len(ws) < 2:
+        return None
+    dev = arch(' '.join(w for w, _ in ws), ws, t0, end)
+    if dev:
+        dev['accent'] = 'archive'
+    return dev
 
 
 def merge_blind(segs: list[dict]) -> list[dict]:
@@ -283,7 +301,14 @@ def run(raw: list[dict], ad) -> list[dict]:
                 kinds.append('board')
                 continue
             if k == 0 and len(segs) > 1:
-                continue   # the beat's first sentence is its own picture: the accents come with the sentences after it
+                # the beat's first sentence is its own picture: the accents come with the sentences after it — except the
+                # archive's own props (23.11.2026): a player is named in a line's FIRST sentence, and his card comes on his name
+                dev = archive_accent(sg, text, ad)
+                if dev and not busy(sg):
+                    sg['shots'].append(dev)
+                    kinds.append('archive')
+                    ad.cue(m['n'], round(sg['t'] - float(s.get('start') or b['t']) + dev['dt'] + 0.6, 2), 'paper')
+                continue
             dev = accent(sg, text, kinds, ad)
             if dev and not any(x['kind'] in TYPED and x.get('dt', 0) < dev['dt'] + dev['d'] and dev['dt'] < x.get('dt', 0) + x.get('d', sg['d'])
                                for x in sg['shots']):

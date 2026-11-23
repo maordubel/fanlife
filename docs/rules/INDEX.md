@@ -257,3 +257,4 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [games-clubs-short](games-clubs-short.md) · Our games opens with the index of every game; The clubs folds the workshop into one line (22.11.2026)
 - [welcome-and-picker](welcome-and-picker.md) · The welcome screen on a first visit, Pick your club as a wall of stickers with more ways in, and the contents as pictures; check a class prefix is free before using it (23.11.2026)
 - [sale-teaser](sale-teaser.md) · A saved sale that starts later is announced up to 10 days ahead in the shop ribbon and the front page's shop window (23.11.2026)
+- [studio-story-first](studio-story-first.md) · The raconteur writes first (the small door, scenes, one dry aside, the night as a set piece, never a tally read aloud); the season's shirt and the named player's archive card on screen; life in the frame; the engine on the studio desk (23.11.2026)
