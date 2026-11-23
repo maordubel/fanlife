@@ -173,6 +173,8 @@ export type FigureOptions = {
   female?: boolean; skirt?: string; glasses?: boolean; eyes?: number; denim?: boolean; jacket?: string
   /** no contact shadow (a figure drawn by instancing draws none; the flat draws its own) */
   noBlob?: boolean
+  /** the skinned people only (`human/`): which body plays him, and how much he matters to the picture (0 the player … 3 a face in the crowd) */
+  cast?: string; rank?: number
 }
 
 type Joints = Record<string, THREE.Object3D>
@@ -327,6 +329,8 @@ export type Pose = {
   mood?: Mood; gesture?: Gesture | null; gestureYaw?: number
   /** the lips while a line is spoken (0 … 1); a bend toward somebody smaller (0 … 1); sitting; riding on somebody's shoulders; eyes held on somebody */
   speak?: number; bend?: number; sit?: boolean; ride?: boolean; gaze?: boolean
+  /** the skinned people only (`human/`): where the right and the left hand should arrive, in the world; down on one knee to a child (0 … 1) */
+  reach?: {x: number; y: number; z: number} | null; reachL?: {x: number; y: number; z: number} | null; kneel?: number
 }
 
 const clamp = (v: number, a: number, b: number) => Math.max(a, Math.min(b, v))
@@ -409,6 +413,9 @@ function curl(hand: THREE.Object3D | undefined, grip: number, index: number, thu
  * `dt = 0` is a still (the crowd's shared template): nothing is remembered and nothing eases.
  */
 export function pose(fig: THREE.Object3D, st: Pose, t: number, dt: number): void {
+  // a skinned person (human/human.ts) is posed by his own backend; the code-built figure below is the fallback
+  const hp = (fig.userData as {pose?: (f: THREE.Object3D, st: Pose, t: number, dt: number, classic: typeof pose) => void}).pose
+  if (hp) { hp(fig, st, t, dt, pose); return }
   const u = fig.userData as FigureData
   const {J, face} = u
   const live = dt > 0, S = (u.s ??= newLive()) as Live
@@ -527,5 +534,6 @@ export function seedFigure(fig: THREE.Object3D, seed: number): void { const u = 
 
 export function disposeFigure(fig: THREE.Object3D): void {
   const u = fig.userData as FigureData
+  if ((u as {human?: unknown}).human) return // his troupe disposes him
   u.materials?.forEach(m => m.dispose())
 }

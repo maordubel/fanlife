@@ -9,6 +9,7 @@ import * as THREE from 'three'
 import type {Level, Look} from '@/lib/life/rush/level'
 import {hoodAmbient, spotAt, stepAmbient, type AmbSpot, type AmbState} from '@/lib/life/hood/ambient'
 import {pose, turnTo, type FigureOptions, type Pose} from './figure'
+import {isSkinned} from './human/human'
 
 export type LifeCtx = {
   scene: THREE.Scene; keep: <T extends {dispose(): void}>(x: T) => T; level: Level; lite: boolean; night: boolean
@@ -53,7 +54,7 @@ export function dressLife(x: LifeCtx): LifeDress {
       mesh(box, std('#23262e', {metalness: 0.5}), s.x - side * 0.52, s.y - 0.95, s.z, 0.06, 0.06, 2.6, g)
       const door = mesh(keep(new THREE.PlaneGeometry(1.3, 2.1)), glow('#d98442', x.night ? 0.9 : 0.6), s.x + side * 0.5, s.y - 0.9, s.z, 1, 1, 1, g); door.rotation.y = -side * Math.PI / 2
       for (const dz of [-0.9, 0.9]) mesh(box, std('#6a4a36'), s.x + side * 0.38, s.y - 1.7, s.z + dz, 0.3, 0.32, 0.3, g)
-      const f = fig({kit: false, beard: false}, {female: true, hairStyle: 'bun', noBlob: true, top: '#7a5a5e'}); f.position.set(s.x - side * 0.12, s.y - 1.93, s.z); f.rotation.y = s.face
+      const f = fig({kit: false, beard: false}, {female: true, hairStyle: 'bun', noBlob: true, top: '#7a5a5e', cast: 'grandmother'}); f.position.set(s.x - side * 0.12, s.y - 1.93, s.z); f.rotation.y = s.face
       parts.push({s, show: v => { g.visible = f.visible = v }, head: () => ({x: f.position.x, y: s.y - 0.1, z: s.z}),
         tick(me, a, t, dt) { const n = a.noticed[s.id], since = n === undefined ? 99 : a.t - n; turnTo(f, Math.atan2(me.x - f.position.x, me.z - f.position.z) * (since < 30 ? 1 : 0) + (since < 30 ? 0 : s.face), dt, 3, 2)
           pose(f, {speed: 0, gesture: since < 4.5 ? 'wave' : null, mood: since < 30 ? 'smile' : 'warm', bend: 0.22, lookDown: since < 30 ? 0.45 : 0.2, gaze: since < 30, speak: a.captions.some(c => c.spot === s.id) ? 1 : 0}, t, dt) }})
@@ -73,14 +74,14 @@ export function dressLife(x: LifeCtx): LifeDress {
       mesh(box, std('#3a2a20'), 0, 0.775, 0, 0.46, 0.03, 0.34, g); for (let i = -2; i <= 2; i++) mesh(box, std('#d8cdb8'), i * 0.08, 0.792, 0, 0.03, 0.004, 0.28, g)
       for (const dz of [-0.62, 0.62]) mesh(keep(new THREE.CylinderGeometry(0.17, 0.15, 0.48, 12)), std('#6b5a48'), 0, 0.24, dz, 1, 1, 1, g)
       pool(s.x, s.z, 4.2, 4.2, '#ffb070', x.night ? 0.3 : 0.1)
-      const men = [-1, 1].map((dz, i) => { const f = fig({beard: i === 0, cap: i === 1, kit: false, grey: true}, {hairStyle: i ? 'short' : 'bald', longSleeves: true, noBlob: true, glasses: i === 0}); f.position.set(s.x, 0, s.z + dz * 0.62); f.rotation.y = dz < 0 ? 0 : Math.PI; return f })
+      const men = [-1, 1].map((dz, i) => { const f = fig({beard: i === 0, cap: i === 1, kit: false, grey: true}, {hairStyle: i ? 'short' : 'bald', longSleeves: true, noBlob: true, glasses: i === 0, cast: i ? 'father_heavy' : 'grandfather'}); f.position.set(s.x, 0, s.z + dz * 0.62); f.rotation.y = dz < 0 ? 0 : Math.PI; return f })
       parts.push({s, show: v => { g.visible = v; men.forEach(m => { m.visible = v }) }, head: () => ({x: s.x, y: 1.55, z: s.z}),
         tick(me, a, t, dt, _p, d) { const talks = a.captions.some(c => c.spot === s.id), who = (a.count[s.id] ?? 0) % 2
           men.forEach((f, i) => { const turn = d < 5 && Math.sin(t * 0.5 + i * 2) > 0.2 ? notice(f, me, 5) : {}
             pose(f, {speed: 0, sit: true, gesture: talks && who === i ? 'laugh' : 'play', gestureYaw: i * 2.6, mood: talks ? 'laugh' : i ? 'warm' : 'neutral', speak: talks && who !== i ? 1 : 0, ...turn}, t, dt) }) }})
     } else if (s.kind === 'kids') {
       const n = lite ? 2 : 3
-      const kids = Array.from({length: n}, (_, i) => { const f = fig({kit: true, scarf: i === 1, size: 0.7 + i * 0.05}, {child: true, hairStyle: i === 2 ? 'curly' : 'short', female: false}); f.position.set(s.x + [0, 0.5, -0.2][i]!, 0, s.z + [0, -1.5, 1.4][i]!); f.rotation.y = s.face; return f })
+      const kids = Array.from({length: n}, (_, i) => { const f = fig({kit: true, scarf: i === 1, size: 0.7 + i * 0.05}, {child: true, hairStyle: i === 2 ? 'curly' : 'short', female: i === 1, cast: i === 1 ? 'girl' : 'boy'}); f.position.set(s.x + [0, 0.5, -0.2][i]!, 0, s.z + [0, -1.5, 1.4][i]!); f.rotation.y = s.face; return f })
       const ballM = std('#f1eee6', {roughness: 0.5}), ball = mesh(keep(new THREE.IcosahedronGeometry(0.11, 1)), ballM, s.x, 0.11, s.z); ball.castShadow = !lite
       mesh(keep(new THREE.IcosahedronGeometry(0.112, 0)), keep(new THREE.MeshStandardMaterial({color: '#23262e', wireframe: true})), 0, 0, 0, 1, 1, 1, ball)
       let lx = s.x, lz = s.z
@@ -111,8 +112,9 @@ export function dressLife(x: LifeCtx): LifeDress {
     } else if (s.kind === 'shoulders') {
       const dad = fig({kit: true, scarf: true, beard: true, size: 1.06}), mum = fig({kit: false, scarf: true}, {female: true, hairStyle: 'long'})
       const kid = x.lookFig(x.rlook({kit: true, scarf: true, cap: false, size: 1}), {child: true, noBlob: true, scale: 0.5}); (dad.userData as {J: Record<string, THREE.Object3D>}).J.chest!.add(kid); kid.position.set(0, 0.2, -0.04)
+      const place = () => { if (isSkinned(kid) && isSkinned(dad)) kid.position.set(0, -0.1, -0.07); else kid.position.set(0, 0.2, -0.04) }
       parts.push({s, show: v => { dad.visible = mum.visible = v }, head: () => ({x: dad.position.x, y: 2.5, z: dad.position.z}),
-        tick(me, a, t, dt, p) { dad.position.set(p.x, 0, p.z); dad.rotation.y = Math.PI; mum.position.set(p.x - side * 0.85, 0, p.z + 0.2); mum.rotation.y = Math.PI
+        tick(me, a, t, dt, p) { place(); dad.position.set(p.x, 0, p.z); dad.rotation.y = Math.PI; mum.position.set(p.x - side * 0.85, 0, p.z + 0.2); mum.rotation.y = Math.PI
           const said = a.captions.some(c => c.spot === s.id)
           pose(dad, {speed: s.v, gesture: 'carryKid', mood: 'smile', speak: said ? 1 : 0, ...notice(dad, me, 4.5)}, t, dt)
           pose(kid, {speed: 0, ride: true, mood: 'laugh', gesture: Math.sin(t * 0.5) > 0.5 ? 'cheer' : null, lookY: Math.sin(t * 0.6) * 0.5, joy: 1}, t, dt)

@@ -10,17 +10,18 @@ import type {Sim} from '@/lib/life/rush/sim'
 import {hoodWord} from '@/lib/life/hood/words'
 import type {AmbState} from '@/lib/life/hood/ambient'
 import {lookAt, pose, turnTo, type FigureData, type Gesture, type Mood} from './figure'
+import {humanPoint, isSkinned} from './human/human'
 
 /** a conversation as the picture plays it: who speaks, with what face and hands, and how long this line has been on */
 export type TalkDir = {who: string; mood?: Mood; gesture?: Gesture | null; you?: Mood; shot?: 'two' | 'close'; beat?: 'scarf' | null; speak: number; tt: number}
 export type HoodDress = {
   /** returns where the face of whoever is being talked to is (for the camera), or null */
-  update(sim: Sim, view: {hood?: {job: 'idle' | 'active' | 'done'}}, t: number, dt: number, talk: TalkDir | null, amb: AmbState | null, child: boolean): {x: number; y: number; z: number} | null
+  update(sim: Sim, view: {hood?: {job: 'idle' | 'active' | 'done'}}, t: number, dt: number, talk: TalkDir | null, amb: AmbState | null, child: boolean, hero?: THREE.Object3D): {x: number; y: number; z: number; fig?: THREE.Object3D} | null
 }
 export type HoodCtx = {
   scene: THREE.Scene; keep: <T extends {dispose(): void}>(x: T) => T; level: Level; skin: VoxelSkin; night: boolean; lite?: boolean
   banned: (hex: string) => boolean; tint: THREE.Color
-  person: (l: Look) => THREE.Group
+  person: (l: Look, id?: string) => THREE.Group
   sign: (text: string, bg: string, fg: string, w?: number, h?: number) => THREE.Texture
 }
 
@@ -72,28 +73,31 @@ export function dressHood(x: HoodCtx): HoodDress {
 
   /* the people: named, solid in the sim. Each sees the boy coming, turns to him, and — in a conversation he started — comes
      a step nearer, bends to him if he is small, and says the line with his face and his hands (`talk.ts` → `feelOf`). */
-  const figs = hood.people.map(p => { const f = x.person(p.look); f.position.set(p.x, 0, p.z); f.rotation.y = Math.atan2(level.start.x - p.x, level.start.z - p.z); scene.add(f); return {p, f, ox: 0, oz: 0} })
+  const figs = hood.people.map(p => { const f = x.person(p.look, p.id); f.position.set(p.x, 0, p.z); f.rotation.y = Math.atan2(level.start.x - p.x, level.start.z - p.z); scene.add(f); return {p, f, ox: 0, oz: 0} })
   const mark = new THREE.Mesh(keep(new THREE.OctahedronGeometry(0.17, 0)), keep(new THREE.MeshBasicMaterial({color: x.tint.clone().multiplyScalar(2), toneMapped: false}))); scene.add(mark)
   // the scarf in Dad's hands, before it goes round the boy's neck
   const scarfMat = std(ok(skin.p, '#6b6f78'), {roughness: 0.9}), held = new THREE.Group(); held.visible = false; scene.add(held)
   const bar = new THREE.Mesh(box, scarfMat); held.add(bar)
   const tails = [0, 1].map(() => { const m = new THREE.Mesh(box, scarfMat); scene.add(m); m.visible = false; return m })
   const wl = new THREE.Vector3(), wr = new THREE.Vector3()
+  // where a real hand goes on a real boy (the skinned people only): his neck, his shoulders, the top of his head
+  const nk = new THREE.Vector3(), sL = new THREE.Vector3(), sR = new THREE.Vector3(), cr = new THREE.Vector3(), hd = new THREE.Vector3(), rR = new THREE.Vector3(), rL = new THREE.Vector3()
+  const ss = (a: number, b: number, v: number) => { const u = Math.max(0, Math.min(1, (v - a) / (b - a))); return u * u * (3 - 2 * u) }
   void W
 
   return {
-    update(sim, view, t, dt, talk, amb, child) {
+    update(sim, view, t, dt, talk, amb, child, hero) {
       const job = view.hood?.job ?? 'idle'
       const j = hood.jobs[0]!
       let live: string | null = job === 'idle' ? j.giver : null
       const st = job === 'active' ? level.steps[sim.step] : null
       if (st?.kind === 'talk') live = hood.people.find(p => Math.hypot(p.x - st.x, p.z - st.z) < 0.5)?.id ?? null
-      let faceAt: {x: number; y: number; z: number} | null = null
+      let faceAt: {x: number; y: number; z: number; fig?: THREE.Object3D} | null = null
       held.visible = false; tails.forEach(m => { m.visible = false })
       for (const q of figs) {
         const {p, f} = q
         const d = Math.hypot(sim.x - p.x, sim.z - p.z), nearHim = d < 14, talking = talk?.who === p.id
-        const tall = f.scale.y || 1, small = child && tall > 0.86
+        const tall = (f.userData as {tall?: number}).tall ?? (f.scale.y || 1), small = child && tall > 0.86
         // he comes a step nearer to whoever he is talking to (never the other way round: nobody moves the player)
         let wx = 0, wz = 0
         if (talking && d > 0.01) { const reach = small ? 0.72 : 0.92, go = Math.max(0, Math.min(1.5, d - reach)); wx = (sim.x - p.x) / d * go; wz = (sim.z - p.z) / d * go }
@@ -109,8 +113,30 @@ export function dressHood(x: HoodCtx): HoodDress {
           const nextStep = job === 'active' ? level.steps[sim.step] : null
           const py = Math.atan2((nextStep?.x ?? f.position.x) - f.position.x, (nextStep?.z ?? f.position.z - 30) - f.position.z) - f.rotation.y
           const hands = g === 'shoulder' || g === 'ruffle' || g === 'scarfOn' || g === 'give'
-          pose(f, {speed: mv, mood, gesture: mv > 0.3 ? null : g, gestureYaw: Math.max(-1.25, Math.min(1.25, Math.atan2(Math.sin(py), Math.cos(py)))), speak: talk.speak, bend: small ? (hands ? 0.5 : 0.24) : 0, lookDown: small ? (hands ? 0.14 : 0.02) : 0, gaze: true}, t, dt)
-          faceAt = {x: f.position.x, y: tall * (small ? 1.5 : 1.62), z: f.position.z}
+          // a skinned father with a skinned son: he goes down on one knee for the scarf, and his hands arrive where they are going
+          const real = isSkinned(f) && isSkinned(hero) && mv < 0.3
+          let reach: THREE.Vector3 | null = null, reachL: THREE.Vector3 | null = null, kneel = 0
+          if (real && hands && humanPoint(hero, 'neck', nk) && humanPoint(hero, 'shoulderL', sL) && humanPoint(hero, 'shoulderR', sR) && humanPoint(hero, 'crown', cr)) {
+            // the boy faces him: the hand on dad's right lands on the shoulder at dad's right
+            const fx = Math.sin(f.rotation.y), fz = Math.cos(f.rotation.y), rx = -fz, rz = fx
+            const mineR = (sR.x - sL.x) * rx + (sR.z - sL.z) * rz > 0 ? sR : sL, mineL = mineR === sR ? sL : sR
+            if (g === 'shoulder') reach = rR.set(mineR.x - fx * 0.06, mineR.y + 0.035, mineR.z - fz * 0.06)
+            else if (g === 'ruffle') reach = rR.set(cr.x - fx * 0.15 + Math.sin(t * 9) * 0.03, cr.y - 0.035, cr.z - fz * 0.15 + Math.cos(t * 7) * 0.02)
+            else if (g === 'give') reach = rR.copy(nk).addScaledVector(wl.set(fx, 0, fz), -0.3).setY(nk.y - 0.12)
+            else if (g === 'scarfOn') { const tt = talk.tt, a = ss(0, 0.8, tt), b = ss(0.9, 1.7, tt), c = ss(1.9, 2.7, tt), d = ss(3.0, 3.8, tt)
+              kneel = small ? 1 : 0
+              // held out in both hands, taken round his neck, the hands come to rest on his shoulders, one stays
+              const out = 0.3 * (1 - b) + 0.07, wide = 0.17 - 0.06 * b + 0.02 * c, up = -0.16 * (1 - b) - 0.05 * b
+              rR.set(nk.x - fx * out + rx * wide, nk.y + up, nk.z - fz * out + rz * wide).lerp(wr.set(mineR.x - fx * 0.06, mineR.y + 0.03, mineR.z - fz * 0.06), c)
+              rL.set(nk.x - fx * out - rx * wide, nk.y + up, nk.z - fz * out - rz * wide).lerp(wr.set(mineL.x - fx * 0.06, mineL.y + 0.03, mineL.z - fz * 0.06), c)
+              reach = a > 0.02 ? rR : null; reachL = a > 0.02 && d < 0.5 ? rL : null }
+          }
+          if (real && talk.beat === 'scarf' && small) kneel = 1 // he stays down at the boy's eye level for the whole of it
+          // his eyes are on the boy's, wherever the boy's are
+          let down = kneel ? 0 : small ? (hands ? 0.14 : 0.02) : 0
+          if (real && humanPoint(hero, 'eyes', cr) && humanPoint(f, 'eyes', hd)) down = Math.max(-0.5, Math.min(0.62, Math.atan2(hd.y - cr.y, Math.max(0.3, Math.hypot(hd.x - cr.x, hd.z - cr.z))) - (kneel ? 0 : small ? (hands ? 0.25 : 0.12) : 0)))
+          pose(f, {speed: mv, mood, gesture: mv > 0.3 ? null : g, gestureYaw: Math.max(-1.25, Math.min(1.25, Math.atan2(Math.sin(py), Math.cos(py)))), speak: talk.speak, bend: kneel ? 0 : small ? (hands ? 0.5 : 0.24) : 0, lookDown: down, gaze: true, reach, reachL, kneel}, t, dt)
+          faceAt = humanPoint(f, 'head', hd) ? {x: hd.x, y: hd.y + 0.085, z: hd.z, fig: f} : {x: f.position.x, y: tall * (small ? 1.5 : 1.62), z: f.position.z, fig: f}
           if (talk.beat === 'scarf' && talk.tt > 0.2 && talk.tt < 1.75 && mv < 0.3) {
             const J = (f.userData as FigureData).J
             J.wristL!.getWorldPosition(wl); J.wristR!.getWorldPosition(wr)

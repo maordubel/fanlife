@@ -29,6 +29,8 @@ import {dressSurface, loadSurface, type SurfaceName} from './surfaces'
 import {loadProps, propCopy} from './props'
 import {dressDusk, DUSK, type Block, type Dusk} from './look/dusk'
 import {dressCrowd} from './look/crowd'
+import {castFor, createTroupe, humanPoint, isSkinned, type Troupe} from './human/human'
+import {charNow, type CastId} from './human/kit'
 import {disposeFigure, HAIR, kitTexture, makeFigure, lookAt, makeHand, PANTS, pose, seedFigure, turnTo, SKIN_TONES, TOPS, type Cloth, type FigureData, type Gesture, type Mood} from './figure'
 
 export type Quality = 'high' | 'lite'
@@ -70,7 +72,7 @@ function seeded(seed: number) { let s = (seed >>> 0) % 2147483647 || 1984; retur
 /** the missions played at another club's ground: no sign of ours goes up there (rule 135) */
 const AWAY_GROUNDS: readonly string[] = ['away-pen', 'europe-night']
 
-export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: MissionSpec; skin: VoxelSkin; quality: Quality; reduced: boolean; gateLabel: string}): Stage {
+export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: MissionSpec; skin: VoxelSkin; quality: Quality; reduced: boolean; gateLabel: string; /** the hood's people: skinned humans when the kit is loaded (the default), or the code-built figures */ people?: 'human' | 'classic'}): Stage {
   const {canvas, level, spec, skin, quality, reduced} = o
   const lite = quality === 'lite'
   const renderer = new THREE.WebGLRenderer({canvas, antialias: !lite, powerPreference: 'high-performance'})
@@ -494,6 +496,10 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
 
   /* ───────────── people ───────────── */
   const figOf = (opts: Parameters<typeof makeFigure>[2]) => makeFigure(cloth, kitMap, opts)
+  // the hood's people are skinned humans (human/): the nearest few drawn as people, everybody else the cheap figure in the same colours
+  const troupe: Troupe | null = level.hood && o.people !== 'classic' && charNow('boy') && charNow('father') ? createTroupe({max: lite ? 8 : 16, lite}) : null
+  const scarfOf = {p: skin.p, s: bannedColour(skin.s, skin) ? '#f3efe6' : skin.s}
+  const nobody = () => new THREE.Group()
   // the crowd: one posed template, each part instanced
   const tmpl = figOf({template: true, scarf: true})
   tmpl.updateMatrixWorld(true)
@@ -534,7 +540,14 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   // women with their hair down, denim, glasses, a jacket at night, eyes of their own colour
   const lookFig = (L: Look, o: Parameters<typeof makeFigure>[2] = {}) => {
     const h = L.tone * 7 + L.hair * 3 + L.top * 5 + L.pants * 11
-    const female = !L.beard && !L.hex && h % 3 === 0
+    const female = o.female ?? (!L.beard && !L.hex && h % 3 === 0)
+    const classic = () => classicFig(L, o, h, female)
+    if (!troupe) return classic()
+    const cast = (o.cast as CastId | undefined) ?? castFor({child: o.child, female, grey: L.grey, heavy: h % 5 === 2, pick: h})
+    return troupe.make(cast, {top: L.kit ? skin.p : o.top ?? L.hex?.top ?? tops[L.top % tops.length]!, skin: o.skinTone ?? L.hex?.skin ?? SKIN_TONES[L.tone % SKIN_TONES.length], hair: L.grey ? undefined : L.hex?.hair ?? (o.rank === 1 ? undefined : HAIR[L.hair % HAIR.length]),
+      pants: L.hex?.pants ?? PANTS[L.pants % PANTS.length], height: (o.scale ?? L.size * 0.94 * kidK) * 1.87, child: o.child, scarf: (o.scarf ?? L.scarf) ? scarfOf : null, pack: o.pack, noBlob: o.noBlob, rank: o.rank ?? 2}, o.rank === 3 ? nobody : classic)
+  }
+  const classicFig = (L: Look, o: Parameters<typeof makeFigure>[2], h: number, female: boolean) => {
     return figOf({kit: L.kit, scarf: L.scarf, cap: L.cap && !female, mustache: L.beard, hair: hairOf(L), skinTone: L.hex?.skin ?? SKIN_TONES[L.tone % SKIN_TONES.length], top: L.hex?.top ?? tops[L.top % tops.length], pants: L.hex?.pants ?? PANTS[L.pants % PANTS.length], longSleeves: !L.kit, scale: L.size * 0.94 * kidK,
       female, hairStyle: female ? (h % 2 ? 'long' : 'bun') : h % 5 === 0 ? 'curly' : h % 7 === 0 ? 'bald' : 'short', glasses: h % 6 === 0, denim: L.pants % 2 === 0, eyes: L.hair % 5, jacket: !L.kit && night ? (L.top % 2 ? '#2a2f3a' : '#3b3630') : undefined, ...o})
   }
@@ -543,7 +556,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     person: f => figOf({kit: false, longSleeves: true, hairStyle: f.hairStyle ?? (f.curly ? 'curly' : 'short'), top: f.top, pants: f.pants, hair: f.hair, mustache: !!f.beard, skinTone: f.skinTone ?? SKIN_TONES[1], scale: (f.scale ?? 1) * 0.94, female: f.female, skirt: f.skirt, glasses: f.glasses, denim: f.denim, jacket: f.jacket, eyes: f.eyes, noBlob: true})}) : null
   let lifeDress: LifeDress | null = null
   if (level.hood) { try { lifeDress = dressLife({scene, keep, level, lite, night, primary: skin.p, secondary: skin.s, glowTex, lookFig: (L, o) => lookFig(L, o), rlook}) } catch { lifeDress = null } }
-  const hoodDress: HoodDress | null = level.hood ? dressHood({scene, keep, level, skin, night, lite, banned: h => bannedColour(h, skin), tint, person: L => lookFig(L), sign: (a, b, c, w, h) => signTex(a, b, c, w, h)}) : null
+  const hoodDress: HoodDress | null = level.hood ? dressHood({scene, keep, level, skin, night, lite, banned: h => bannedColour(h, skin), tint, person: (L, id) => lookFig(L, {rank: 1, cast: id === 'dad' ? 'father' : id === 'kiosk' ? 'father_heavy' : id === 'neighbour' ? 'grandfather' : id === 'mate' ? 'teen' : undefined, scale: id === 'mate' ? 0.81 : undefined}), sign: (a, b, c, w, h) => signTex(a, b, c, w, h)}) : null
   type Npc = {fig: THREE.Group; step: number; extra: THREE.Group[]; x: number; z: number}
   const npcs: Npc[] = []
   level.steps.forEach((st, i) => {
@@ -654,8 +667,12 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
 
   // the supporter: his own figure, or his car
   const child = spec.age < 13
-  const hero = figOf({kit: true, scarf: true, band: !child && level.verb === 'run', pack: level.verb === 'run' || level.verb === 'find', roll: level.verb === 'carry', pants: '#2f3e5e', denim: true, eyes: 1, hair: HAIR[1], skinTone: SKIN_TONES[1], child, scale: child ? 0.78 : 0.94, noBlob: level.place === 'flat'})
+  const heroOpts = {kit: true, scarf: true, band: !child && level.verb === 'run', pack: level.verb === 'run' || level.verb === 'find', roll: level.verb === 'carry', pants: '#2f3e5e', denim: true, eyes: 1, hair: HAIR[1], skinTone: SKIN_TONES[1], child, scale: child ? 0.78 : 0.94, noBlob: level.place === 'flat'}
+  const hero = troupe ? troupe.make(child ? 'boy' : spec.age < 19 ? 'teen' : 'father', {top: skin.p, height: child ? 1.42 : 1.76, child, scarf: scarfOf, pack: true, rank: 0}, () => figOf(heroOpts)) : figOf(heroOpts)
   if (!heroCar) scene.add(hero)
+  // the near crowd as people: whoever comes within a few steps gets a body of his own (the troupe draws the nearest it can afford)
+  const extras: (THREE.Group | undefined)[] = [], crowdExtras = new Map<number, THREE.Group>()
+  const rimLight = new THREE.PointLight('#cfe0ff', 0, 5, 1.6); if (level.hood) scene.add(rimLight)
   // the banner he takes on the ultras route: rolled cloth in neutral grey and white, never the other club's colours
   const loot = new THREE.Mesh(keep(new THREE.CylinderGeometry(0.14, 0.14, 1.2, 14).rotateZ(Math.PI / 2)), keep(std('#c9c5bd', {roughness: 0.85})))
   loot.visible = false; scene.add(loot)
@@ -807,7 +824,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   const camPos = new THREE.Vector3(level.start.x, 2, level.start.z + 4), camLook = new THREE.Vector3(level.start.x, 1.4, level.start.z - 6)
   let t = 0, shake = 0, speedFx = 0, flash = 0, heart = 0, lastHits = 0, lastCaught = 0
   let talkKey = '', talkT = 0, talkK = 0, shotKey = '', warm = 0, beatK = 0, talkFov = 40
-  let talkFace: {x: number; y: number; z: number} | null = null, ambNow: AmbState | null = null
+  let talkFace: {x: number; y: number; z: number; fig?: THREE.Object3D} | null = null, ambNow: AmbState | null = null
   const talkPos = new THREE.Vector3(), talkLook = new THREE.Vector3(), talkWant = new THREE.Vector3(), talkAim = new THREE.Vector3()
   const talkLight = new THREE.PointLight('#ffc79a', 0, 6, 1.8); if (level.hood) scene.add(talkLight)
   const eyeHeight = child ? 1.2 : 1.62
@@ -843,6 +860,19 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       // he notices the boy going by: the head and the eyes follow him, and the face is glad
       const rel = Math.atan2(sim.x - p.x, sim.z - p.z) - p.turn, relY = Math.atan2(Math.sin(rel), Math.cos(rel))
       p.hy = (p.hy ?? 0) + ((hoodMode && d2 < 56 && Math.abs(relY) < 1.75 ? Math.max(-1.05, Math.min(1.05, relY)) : 0) - (p.hy ?? 0)) * Math.min(1, dt * 5)
+      if (troupe) {
+        let xf = extras[i]
+        if (d2 < 110 && !xf) { xf = extras[i] = lookFig(p.look, {rank: 3}); scene.add(xf) }
+        if (xf) {
+          xf.visible = d2 < 120
+          if (xf.visible) {
+            xf.position.set(p.x, 0, p.z); xf.rotation.y = p.turn
+            const chat2 = p.mode === 'stand' && Math.sin(t * 0.55 + i * 1.3) > 0.45
+            pose(xf, {speed: v, mood: p.mode === 'rival' ? 'neutral' : Math.abs(p.hy) > 0.15 ? 'smile' : chat2 ? 'laugh' : 'warm', lookY: p.hy, gaze: Math.abs(p.hy) > 0.1, speak: chat2 ? 1 : 0, gesture: chat2 ? (i % 3 === 0 ? 'open' : i % 3 === 1 ? 'laugh' : null) : p.react > 0.8 && i % 3 === 0 ? 'lift' : null}, t, dt)
+            if (isSkinned(xf)) { crowd.forEach(im => im.setMatrixAt(i, zero)); continue }
+          }
+        }
+      }
       const sing = p.mode === 'stand' && (hoodMode ? i % 5 === 0 && p.z < level.goal.z + 60 && Math.sin(t * 0.4 + i) > 0.2 : Math.sin(t * 2 + i) > -0.2 && level.place !== 'yard')
       const chat = hoodMode && p.mode === 'stand' && !sing && Math.sin(t * 0.55 + i * 1.3) > 0.45
       pose(tmpl, {speed: v, scarfUp: sing || (!hoodMode && p.react > 0.6 && p.mode !== 'rival'), joy: p.mode === 'rival' ? 0 : standing || p.react > 0 ? 1 : 0.2, talk: !hoodMode && p.react > 0, speak: chat ? 1 : undefined, effort: p.mode === 'rival' ? 0.7 : 0,
@@ -970,8 +1000,16 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     }
 
     ambNow = lifeDress ? lifeDress.update(sim, view.hood?.amb ?? null, t, dt) : null
-    talkFace = hoodDress ? hoodDress.update(sim, view, t, dt, talkDir, ambNow, child) : null
-    duskDress?.update(sim, t, dt, cam.position); duskCrowd?.update(sim, t, dt)
+    talkFace = hoodDress ? hoodDress.update(sim, view, t, dt, talkDir, ambNow, child, hero) : null
+    duskDress?.update(sim, t, dt, cam.position)
+    if (troupe) crowdExtras.forEach(f => { f.visible = false })
+    duskCrowd?.update(sim, t, dt, troupe ? (i, px, pz, yaw, v, sc, col) => {
+      let f = crowdExtras.get(i)
+      if (!f) { if (crowdExtras.size > 40) return false; f = troupe.make(castFor({female: i % 3 === 0, grey: i % 7 === 3, heavy: i % 4 === 1, pick: i}), {top: '#' + col.getHexString(), skin: SKIN_TONES[(i * 5 + 1) % SKIN_TONES.length], hair: i % 7 === 3 ? undefined : HAIR[i % HAIR.length], pants: PANTS[i % PANTS.length], height: sc * 1.74, scarf: i % 4 !== 2 ? scarfOf : null, rank: 3}, nobody); scene.add(f); crowdExtras.set(i, f) }
+      f.visible = true; f.position.set(px, 0, pz); f.rotation.y = yaw
+      pose(f, {speed: v, mood: i % 3 ? 'warm' : 'smile', joy: 0.6, speak: v === 0 && Math.sin(t * 0.5 + i) > 0.6 ? 1 : 0, gesture: v === 0 && Math.sin(t * 0.5 + i) > 0.6 ? 'open' : null, lookY: Math.sin(t * 0.3 + i) * 0.3}, t, dt)
+      return isSkinned(f)
+    } : undefined)
     flat?.update(sim, t, dt, view.ending, view.outcome, {x: camPos.x, z: camPos.z, close: closeK})
     // stewards and the ground they can see
     if (level.place !== 'flat') level.patrols.forEach((p, i) => {
@@ -1175,13 +1213,16 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
           else if (shot === 'close') talkAim.set(hx + ax * 0.22, hh - 0.1, hz + az * 0.22); else talkAim.set(hx + (talkFace.x - hx) * 0.82, talkFace.y * 0.72 + hh * 0.28, hz + (talkFace.z - hz) * 0.82)
           talkPos.copy(talkWant); talkLook.copy(talkAim)
         }
-        talkLight.position.set(mx + (talkPos.x - mx) * 0.45, 2.3, mz + (talkPos.z - mz) * 0.45)
+        talkLight.position.set(mx + (talkPos.x - mx) * 0.45, troupe ? talkFace.y + 0.35 : 2.3, mz + (talkPos.z - mz) * 0.45)
       }
       if (talkK > 0.002) {
         const e = talkK * talkK * (3 - 2 * talkK)
         cam.position.lerpVectors(camPos, talkPos, e); cam.lookAt(tmp.copy(camLook).lerp(talkLook, e)); cam.fov += (talkFov - cam.fov) * e
       }
-      talkLight.intensity = talkK * (night ? 7 : 2)
+      talkLight.intensity = talkK * (night ? (troupe ? 11 : 7) : 2)
+      // faces in a conversation: a soft warm key from the lens's side and a cool rim from behind, so skin is never flat or grey
+      if (troupe && talkFace) { const bx = talkFace.x - cam.position.x, bz = talkFace.z - cam.position.z, bl = Math.hypot(bx, bz) || 1; rimLight.position.set(talkFace.x + bx / bl * 1.1, talkFace.y + 0.55, talkFace.z + bz / bl * 1.1) }
+      rimLight.intensity = troupe ? talkK * (night ? 9 : 3) : 0
       // standing still, the picture breathes with whoever is holding the camera
       if (!reduced && !view.brief) { const still = 1 - Math.min(1, sp / 1.5); cam.position.x += (Math.sin(t * 0.71) * 0.016 + Math.sin(t * 1.93) * 0.006) * still; cam.position.y += Math.sin(t * 0.87 + 1) * 0.012 * still; cam.rotateZ(Math.sin(t * 0.53) * 0.0028 * still) }
       // warmth: home is the warmest place on the street, a conversation warms the picture, and the scarf going on warms it most
@@ -1192,6 +1233,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       if (bloom) bloom.strength = bloomBase + beatK * 0.4 + talkK * 0.08
     }
     cam.updateProjectionMatrix()
+    troupe?.update(cam.position, talkDir ? talkFace?.fig ?? null : null)
     speedFx += (((sim.sprinting || (heroCar && sim.speed > 20)) ? 1 : sp > 4 ? 0.35 : 0) * (reduced ? 0 : 1) - speedFx) * Math.min(dt * 4, 1)
     heart += ((tired && !view.ending ? 1 : 0) - heart) * Math.min(dt * 3, 1)
     flash = Math.max(0, flash - dt * 2.4)
@@ -1242,6 +1284,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     scene.traverse(o2 => { const m = o2 as THREE.Mesh; if (m.isMesh) { m.geometry?.dispose?.() } })
     disposables.forEach(d => { try { d.dispose() } catch { /* already gone */ } })
     crowd.forEach(im => im.dispose())
+    troupe?.dispose()
     composer.dispose()
     renderer.dispose()
     try { renderer.forceContextLoss() } catch { /* a lost context is a closed one */ }

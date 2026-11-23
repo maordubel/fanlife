@@ -15,7 +15,9 @@ export type CrowdCtx = {
   keep: <T extends {dispose(): void}>(x: T) => T; allowed: (l: readonly string[]) => string[]
   figOf: (o: FigureOptions) => THREE.Group
 }
-type P = {x: number; z: number; yaw: number; v: number; k: number; ph: number; sc: number; walk: boolean; d: number; col: THREE.Color}
+type P = {x: number; z: number; yaw: number; v: number; k: number; ph: number; sc: number; walk: boolean; d: number; col: THREE.Color; i: number; hum: boolean}
+/** somebody near enough to be a person: the stage draws him as a skinned human and says whether it did */
+export type CrowdNear = (i: number, x: number, z: number, yaw: number, v: number, sc: number, col: THREE.Color) => boolean
 
 export function dressCrowd(x: CrowdCtx) {
   const {scene, level, skin, lite, rnd, keep} = x
@@ -72,7 +74,7 @@ export function dressCrowd(x: CrowdCtx) {
   for (let i = 0; i < total; i++) {
     const near = i < total * 0.55, z = near ? -14 - rnd() * 90 : -90 - Math.pow(rnd(), 0.7) * (-G - 100), walk = rnd() < 0.3
     const lane = rnd(), px = lane < 0.5 ? (rnd() < 0.5 ? -1 : 1) * (7.4 + rnd() * 2.8) : (rnd() - 0.5) * 12
-    people.push({x: px, z: Math.max(G + 14, z), yaw: walk ? Math.PI : rnd() * 6.28, v: walk ? 0.9 + rnd() * 0.8 : 0, k: 0, ph: rnd() * 6, sc: 0.94 + rnd() * 0.14, walk, d: rnd() * 3, col: new THREE.Color(shirts[Math.floor(rnd() * shirts.length)]!)})
+    people.push({x: px, z: Math.max(G + 14, z), yaw: walk ? Math.PI : rnd() * 6.28, v: walk ? 0.9 + rnd() * 0.8 : 0, k: 0, ph: rnd() * 6, sc: 0.94 + rnd() * 0.14, walk, d: rnd() * 3, col: new THREE.Color(shirts[Math.floor(rnd() * shirts.length)]!), i, hum: false})
   }
   // walkers use the walking builds, the rest the standing ones
   const wk = [...new Set(variants.filter(v => v.walk).map(v => v.grp))], st = [...new Set(variants.filter(v => !v.walk).map(v => v.grp))]
@@ -86,10 +88,12 @@ export function dressCrowd(x: CrowdCtx) {
   const none = new THREE.Matrix4().makeScale(0, 0, 0)
   const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), e = new THREE.Euler(), p3 = new THREE.Vector3(), s3 = new THREE.Vector3()
   return {
-    update(sim: {x: number; z: number}, t: number, dt: number) {
-      for (const p of people) if (p.walk) { p.z -= p.v * dt; p.d += p.v * dt; if (p.z < G + 12) p.z = L - 6 - rnd() * 20 }
+    update(sim: {x: number; z: number}, t: number, dt: number, near?: CrowdNear) {
+      for (const p of people) { if (p.walk) { p.z -= p.v * dt; p.d += p.v * dt; if (p.z < G + 12) p.z = L - 6 - rnd() * 20 }
+        const dx = p.x - sim.x, dz = p.z - sim.z; p.hum = !!near && dx * dx + dz * dz < 121 && near(p.i, Math.abs(dz) < 1.8 && Math.abs(dx) < 1.3 ? sim.x + (dx >= 0 ? 1.3 : -1.3) : p.x, p.z, p.yaw, p.v, p.sc, p.col) }
       for (const {im, mine, v} of ims) {
         mine.forEach((p, i) => {
+          if (p.hum) { im.setMatrixAt(i, none); return }
           if (v.walk) { const h = p.sc * 0.94, stride = h * Math.max(0.9, Math.min(3.3, 0.85 + 0.42 * p.v / h)), u = (p.d / stride) % 1; if (Math.floor(u * NPH) % NPH !== v.ph) { im.setMatrixAt(i, none); return } }
           let px = p.x; const dx = px - sim.x, dz = p.z - sim.z
           if (Math.abs(dz) < 1.8 && Math.abs(dx) < 1.3) px = sim.x + (dx >= 0 ? 1.3 : -1.3)

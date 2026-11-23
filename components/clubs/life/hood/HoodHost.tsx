@@ -28,12 +28,12 @@ import {watchFor, type WatchAnswer} from '@/lib/life/watch'
 import {BagScreen} from './BagScreen'
 import css from './hood.module.css'
 
-export type HoodHostProps = {club: HoodClub; seed?: number; time?: 'day' | 'night' | 'dusk'; quality?: Quality; reduced?: boolean; /** the QA stand only: exposes the run as `window.__hood` and the shell as `window.__hoodShell` */ probe?: boolean; /** `play`: skip the title and start roaming (the QA stand) */ start?: 'title' | 'play'}
+export type HoodHostProps = {club: HoodClub; seed?: number; time?: 'day' | 'night' | 'dusk'; quality?: Quality; reduced?: boolean; /** `classic` keeps the code-built figures (the skinned people are the default) */ people?: 'human' | 'classic'; /** the QA stand only: exposes the run as `window.__hood` and the shell as `window.__hoodShell` */ probe?: boolean; /** `play`: skip the title and start roaming (the QA stand) */ start?: 'title' | 'play'}
 
 /** where the intro's camera subject stands on each beat: along the main street, mid-block, never on a crossing */
 const INTRO_Z = [8, -48, -108, -270]
 
-export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = false, probe, start = 'title'}: HoodHostProps) {
+export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = false, probe, start = 'title', people = 'human'}: HoodHostProps) {
   const level = useMemo(() => hoodLevel(club, seed), [club, seed])
   const spec = useMemo(() => hoodSpec(club.id, seed, time), [club.id, seed, time])
   const runRef = useRef<HoodRun | null>(null)
@@ -188,14 +188,17 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
     let alive = true
     const canvas = canvasRef.current
     if (!canvas) return
-    import('@/lib/life/rush-render/stage').then(({createStage}) => {
+    // the people are real skinned humans: the boy and his father are fetched before the picture is built (the rest arrive
+    // behind them); a kit that cannot be had leaves the code-built figures, and nothing waits on a file for ever
+    const humans = people === 'classic' ? Promise.resolve(false) : import('@/lib/life/rush-render/human/kit').then(k => k.preloadHumans(qualityEff === 'lite')).catch(() => false)
+    Promise.all([import('@/lib/life/rush-render/stage'), humans]).then(([{createStage}, ok]) => {
       if (!alive) return
-      try { const st = createStage({canvas, level, spec, skin: club.skin, quality: qualityEff, reduced: reducedEff, gateLabel: club.skin.strings.gate ?? club.skin.strings.ground ?? ''}); stageRef.current = st; st.resize(canvas.clientWidth || window.innerWidth, canvas.clientHeight || window.innerHeight); setReady(true) } catch { setError(true) }
+      try { const st = createStage({canvas, level, spec, skin: club.skin, quality: qualityEff, reduced: reducedEff, gateLabel: club.skin.strings.gate ?? club.skin.strings.ground ?? '', people: ok ? 'human' : 'classic'}); stageRef.current = st; st.resize(canvas.clientWidth || window.innerWidth, canvas.clientHeight || window.innerHeight); setReady(true) } catch { setError(true) }
     }).catch(() => { if (alive) setError(true) })
     const onResize = () => stageRef.current?.resize(canvas.clientWidth || window.innerWidth, canvas.clientHeight || window.innerHeight)
     window.addEventListener('resize', onResize)
     return () => { alive = false; window.removeEventListener('resize', onResize); stageRef.current?.dispose(); stageRef.current = null }
-  }, [level, spec, club.skin, qualityEff, reducedEff])
+  }, [level, spec, club.skin, qualityEff, reducedEff, people])
 
   /* the loop: fixed steps for the simulation, one picture per frame */
   useEffect(() => {
