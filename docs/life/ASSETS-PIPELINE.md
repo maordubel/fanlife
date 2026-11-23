@@ -97,4 +97,6 @@ The pack pages say CC0, but some files inside the "CC0" community packs carry an
 line and its pack record and refuses anything that is not CC0; the manifest records both statements for every part used.
 Pack index: https://static.makehumancommunity.org/assets/assetpacks.html
 
+Skin that a garment covers is deleted from `Body` (one ring is kept under every opening), so cloth cannot show skin through it when it bends.
+
 No real person's likeness: every face is MakeHuman macro values. No logo or text: tinted tops are flattened to grey.

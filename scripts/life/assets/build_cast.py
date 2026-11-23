@@ -213,7 +213,7 @@ def drop_covered(body, garments):
             hit, nrm, _, dist = t.find_nearest(v.co, 0.022)
             if hit is None: continue
             d = v.co - hit; depth = d.dot(nrm)
-            if depth < -0.0005 and abs(depth) > 0.85 * d.length: covered.add(v.index); break   # squarely behind the cloth, not beside its edge
+            if depth < 0.012 and abs(depth) > 0.85 * d.length: covered.add(v.index); break   # squarely under the cloth (or poking just through it), not beside its edge
     edge = {v.index for v in bm.verts if v.index in covered and any(e.other_vert(v).index not in covered for e in v.link_edges)}
     covered -= edge   # keep one ring of skin under every opening
     faces = [f for f in bm.faces if all(v.index in covered for v in f.verts)]
