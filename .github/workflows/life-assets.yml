@@ -49,7 +49,7 @@ jobs:
         if: always()
         run: |
           git config user.name github-actions[bot]; git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add -A public/life/assets docs/life/assets-preview docs/life/assets-catalogue scripts/life/assets/vendor 2>/dev/null || true
+          for d in public/life/assets docs/life/assets-preview docs/life/assets-catalogue scripts/life/assets/vendor; do [ -e "$d" ] && git add -A "$d"; done
           git diff --cached --quiet && { echo 'nothing to commit'; exit 0; }
           git commit -q -m "LIFE assets: built by the runner (${GITHUB_SHA::7}) [skip ci]"
           git pull -q --rebase origin "${GITHUB_REF_NAME}" && git push -q origin "HEAD:${GITHUB_REF_NAME}"
