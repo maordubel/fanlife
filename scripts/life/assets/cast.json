@@ -1,42 +1,356 @@
 {
-  "_": "The LIFE cast. Each entry is a recipe: MakeHuman macro values, small face targets, and the CC0 assets it wears. tint = the default colour of the tintable top (the game replaces it).",
-  "style": {"l-eye-scale-incr": 0.3, "r-eye-scale-incr": 0.3, "mouth-angles-up": 0.35, "l-cheek-volume-incr": 0.15, "r-cheek-volume-incr": 0.15},
-  "cast": [
-    {"id": "boy", "label": "boy, about 10", "pheno": {"gender": 1.0, "age": 0.1875, "muscle": 0.42, "weight": 0.48, "height": 0.5, "race": [0.1, 0.8, 0.1]},
-     "targets": {"head-round": 0.25, "l-eye-scale-incr": 0.45, "r-eye-scale-incr": 0.45},
-     "skin": "young_caucasian_male", "eyes": "brown", "brows": "eyebrow001", "hair": "short02", "clothes": ["male_casualsuit04", "shoes05"], "tint": [0.78, 0.1, 0.12]},
-    {"id": "girl", "label": "girl, about 10", "pheno": {"gender": 0.0, "age": 0.1875, "muscle": 0.4, "weight": 0.47, "height": 0.5, "cupsize": 0.0, "race": [0.1, 0.8, 0.1]},
-     "targets": {"head-round": 0.25, "l-eye-scale-incr": 0.5, "r-eye-scale-incr": 0.5},
-     "skin": "young_caucasian_female", "eyes": "green", "brows": "eyebrow006", "hair": "ponytail01", "clothes": ["toigo_basic_tucked_t-shirt", "toigo_skirt_with_lace_ruffle", "shoes05"], "tint": [0.78, 0.1, 0.12]},
-    {"id": "teen", "label": "teenage boy, about 15", "pheno": {"gender": 1.0, "age": 0.3, "muscle": 0.45, "weight": 0.45, "height": 0.55, "race": [0.15, 0.6, 0.25]},
-     "targets": {},
-     "skin": "young_caucasian_male2", "eyes": "brownlight", "brows": "eyebrow003", "hair": "short03", "clothes": ["male_casualsuit02", "shoes06"], "tint": [0.78, 0.1, 0.12]},
-    {"id": "father", "label": "father, about 40", "pheno": {"gender": 1.0, "age": 0.615, "muscle": 0.55, "weight": 0.58, "height": 0.55, "race": [0.1, 0.8, 0.1]},
-     "targets": {"mouth-laugh-lines-in": 0.3},
-     "skin": "middleage_caucasian_male", "eyes": "brown", "brows": "eyebrow002", "hair": "short04", "clothes": ["male_casualsuit06", "shoes02"], "tint": [0.78, 0.1, 0.12]},
-    {"id": "father_heavy", "label": "father, heavier build", "pheno": {"gender": 1.0, "age": 0.63, "muscle": 0.5, "weight": 0.85, "height": 0.5, "race": [0.6, 0.2, 0.2]},
-     "targets": {},
-     "skin": "middleage_african_male", "eyes": "brown", "brows": "eyebrow002", "hair": "afro01", "clothes": ["male_casualsuit05", "shoes04"], "tint": [0.78, 0.1, 0.12]},
-    {"id": "mother", "label": "mother, about 38", "pheno": {"gender": 0.0, "age": 0.6, "muscle": 0.45, "weight": 0.52, "height": 0.5, "cupsize": 0.45, "race": [0.1, 0.8, 0.1]},
-     "targets": {},
-     "skin": "middleage_caucasian_female", "eyes": "bluegreen", "brows": "eyebrow007", "hair": "bob01", "clothes": ["female_casualsuit01", "shoes06"], "tint": [0.78, 0.1, 0.12]},
-    {"id": "mother_heavy", "label": "mother, fuller build", "pheno": {"gender": 0.0, "age": 0.6, "muscle": 0.42, "weight": 0.82, "height": 0.45, "cupsize": 0.6, "race": [0.6, 0.2, 0.2]},
-     "targets": {},
-     "skin": "middleage_asian_female", "eyes": "brown", "brows": "eyebrow007", "hair": "long01", "clothes": ["toigo_fisherman_sweater", "toigo_wool_pants", "shoes03"], "tint": [0.78, 0.1, 0.12]},
-    {"id": "grandfather", "label": "older man, about 70", "pheno": {"gender": 1.0, "age": 0.85, "muscle": 0.4, "weight": 0.62, "height": 0.45, "race": [0.1, 0.8, 0.1]},
-     "targets": {},
-     "skin": "old_caucasian_male", "eyes": "grey", "brows": "eyebrow002", "hair": "short01", "hair_grey": 0.9, "clothes": ["male_casualsuit05", "shoes01"], "tint": [0.78, 0.1, 0.12]},
-    {"id": "grandmother", "label": "older woman, about 70", "pheno": {"gender": 0.0, "age": 0.85, "muscle": 0.38, "weight": 0.6, "height": 0.42, "cupsize": 0.5, "race": [0.1, 0.8, 0.1]},
-     "targets": {},
-     "skin": "old_caucasian_female", "eyes": "lightblue", "brows": "eyebrow007", "hair": "bob02", "hair_grey": 0.6, "clothes": ["female_elegantsuit01", "shoes03"], "tint": [0.78, 0.1, 0.12]}
-  ],
-  "expressions": {
-    "smile": {"mouthSmileLeft": 0.75, "mouthSmileRight": 0.75, "cheekSquintLeft": 0.45, "cheekSquintRight": 0.45, "eyeSquintLeft": 0.25, "eyeSquintRight": 0.25},
-    "laugh": {"mouthSmileLeft": 1.0, "mouthSmileRight": 1.0, "jawOpen": 0.35, "cheekSquintLeft": 0.8, "cheekSquintRight": 0.8, "eyeSquintLeft": 0.6, "eyeSquintRight": 0.6, "browInnerUp": 0.2},
-    "brows_up": {"browInnerUp": 0.8, "browOuterUpLeft": 0.8, "browOuterUpRight": 0.8, "eyeWideLeft": 0.3, "eyeWideRight": 0.3},
-    "worried": {"browInnerUp": 0.9, "browDownLeft": 0.25, "browDownRight": 0.25, "mouthFrownLeft": 0.4, "mouthFrownRight": 0.4},
-    "brows_down": {"browDownLeft": 0.9, "browDownRight": 0.9, "eyeSquintLeft": 0.3, "eyeSquintRight": 0.3},
-    "blink": {"eyeBlinkLeft": 1.0, "eyeBlinkRight": 1.0},
-    "viseme_A": {"viseme_aa": 1.0}, "viseme_E": {"viseme_E": 1.0}, "viseme_O": {"viseme_O": 1.0}, "viseme_M": {"viseme_PP": 1.0}
+ "_": "The LIFE cast. Each entry is a recipe: MakeHuman macro values, small face targets, and the CC0 assets it wears. tint = the default colour of the tintable top (the game replaces it).",
+ "style": {
+  "l-eye-scale-incr": 0.4,
+  "r-eye-scale-incr": 0.4,
+  "mouth-angles-up": 0.35,
+  "l-cheek-volume-incr": 0.15,
+  "r-cheek-volume-incr": 0.15
+ },
+ "cast": [
+  {
+   "id": "boy",
+   "label": "boy, about 10",
+   "pheno": {
+    "gender": 1.0,
+    "age": 0.1875,
+    "muscle": 0.42,
+    "weight": 0.48,
+    "height": 0.5,
+    "race": [
+     0.1,
+     0.8,
+     0.1
+    ]
+   },
+   "targets": {
+    "head-round": 0.25,
+    "l-eye-scale-incr": 0.45,
+    "r-eye-scale-incr": 0.45
+   },
+   "skin": "young_caucasian_male",
+   "eyes": "brown",
+   "brows": "eyebrow001",
+   "hair": "short02",
+   "clothes": [
+    "male_casualsuit04",
+    "shoes05"
+   ],
+   "tint": [
+    0.78,
+    0.1,
+    0.12
+   ]
+  },
+  {
+   "id": "girl",
+   "label": "girl, about 10",
+   "pheno": {
+    "gender": 0.0,
+    "age": 0.1875,
+    "muscle": 0.4,
+    "weight": 0.47,
+    "height": 0.5,
+    "cupsize": 0.0,
+    "race": [
+     0.1,
+     0.8,
+     0.1
+    ]
+   },
+   "targets": {
+    "head-round": 0.25,
+    "l-eye-scale-incr": 0.4,
+    "r-eye-scale-incr": 0.4
+   },
+   "skin": "young_caucasian_female",
+   "eyes": "green",
+   "brows": "eyebrow001",
+   "hair": "long01",
+   "clothes": [
+    "toigo_basic_tucked_t-shirt",
+    "toigo_skirt_with_lace_ruffle",
+    "shoes05"
+   ],
+   "tint": [
+    0.78,
+    0.1,
+    0.12
+   ]
+  },
+  {
+   "id": "teen",
+   "label": "teenage boy, about 15",
+   "pheno": {
+    "gender": 1.0,
+    "age": 0.3,
+    "muscle": 0.45,
+    "weight": 0.45,
+    "height": 0.55,
+    "race": [
+     0.15,
+     0.6,
+     0.25
+    ]
+   },
+   "targets": {},
+   "skin": "young_caucasian_male2",
+   "eyes": "brownlight",
+   "brows": "eyebrow003",
+   "hair": "short04",
+   "clothes": [
+    "male_casualsuit02",
+    "shoes06"
+   ],
+   "tint": [
+    0.78,
+    0.1,
+    0.12
+   ]
+  },
+  {
+   "id": "father",
+   "label": "father, about 40",
+   "pheno": {
+    "gender": 1.0,
+    "age": 0.615,
+    "muscle": 0.55,
+    "weight": 0.58,
+    "height": 0.55,
+    "race": [
+     0.1,
+     0.8,
+     0.1
+    ]
+   },
+   "targets": {
+    "mouth-laugh-lines-in": 0.3
+   },
+   "skin": "middleage_caucasian_male",
+   "eyes": "brown",
+   "brows": "eyebrow002",
+   "hair": "short01",
+   "clothes": [
+    "male_casualsuit06",
+    "shoes02"
+   ],
+   "tint": [
+    0.78,
+    0.1,
+    0.12
+   ]
+  },
+  {
+   "id": "father_heavy",
+   "label": "father, heavier build",
+   "pheno": {
+    "gender": 1.0,
+    "age": 0.63,
+    "muscle": 0.5,
+    "weight": 0.97,
+    "height": 0.5,
+    "race": [
+     0.6,
+     0.2,
+     0.2
+    ]
+   },
+   "targets": {},
+   "skin": "middleage_african_male",
+   "eyes": "brown",
+   "brows": "eyebrow002",
+   "hair": "short02",
+   "clothes": [
+    "male_casualsuit05",
+    "shoes04"
+   ],
+   "tint": [
+    0.78,
+    0.1,
+    0.12
+   ]
+  },
+  {
+   "id": "mother",
+   "label": "mother, about 38",
+   "pheno": {
+    "gender": 0.0,
+    "age": 0.6,
+    "muscle": 0.45,
+    "weight": 0.52,
+    "height": 0.5,
+    "cupsize": 0.45,
+    "race": [
+     0.1,
+     0.8,
+     0.1
+    ]
+   },
+   "targets": {},
+   "skin": "middleage_caucasian_female",
+   "eyes": "bluegreen",
+   "brows": "eyebrow007",
+   "hair": "ponytail01",
+   "clothes": [
+    "female_casualsuit01",
+    "shoes06"
+   ],
+   "tint": [
+    0.78,
+    0.1,
+    0.12
+   ]
+  },
+  {
+   "id": "mother_heavy",
+   "label": "mother, fuller build",
+   "pheno": {
+    "gender": 0.0,
+    "age": 0.6,
+    "muscle": 0.42,
+    "weight": 0.9,
+    "height": 0.45,
+    "cupsize": 0.6,
+    "race": [
+     0.6,
+     0.2,
+     0.2
+    ]
+   },
+   "targets": {},
+   "skin": "middleage_asian_female",
+   "eyes": "brown",
+   "brows": "eyebrow007",
+   "hair": "short03",
+   "clothes": [
+    "toigo_fisherman_sweater",
+    "toigo_wool_pants",
+    "shoes03"
+   ],
+   "tint": [
+    0.78,
+    0.1,
+    0.12
+   ]
+  },
+  {
+   "id": "grandfather",
+   "label": "older man, about 70",
+   "pheno": {
+    "gender": 1.0,
+    "age": 0.85,
+    "muscle": 0.4,
+    "weight": 0.62,
+    "height": 0.45,
+    "race": [
+     0.1,
+     0.8,
+     0.1
+    ]
+   },
+   "targets": {},
+   "skin": "old_caucasian_male",
+   "eyes": "grey",
+   "brows": "eyebrow002",
+   "hair": "short04",
+   "hair_grey": 0.9,
+   "clothes": [
+    "male_casualsuit05",
+    "shoes01"
+   ],
+   "tint": [
+    0.78,
+    0.1,
+    0.12
+   ]
+  },
+  {
+   "id": "grandmother",
+   "label": "older woman, about 70",
+   "pheno": {
+    "gender": 0.0,
+    "age": 0.85,
+    "muscle": 0.38,
+    "weight": 0.6,
+    "height": 0.42,
+    "cupsize": 0.5,
+    "race": [
+     0.1,
+     0.8,
+     0.1
+    ]
+   },
+   "targets": {},
+   "skin": "old_caucasian_female",
+   "eyes": "lightblue",
+   "brows": "eyebrow007",
+   "hair": "bob02",
+   "hair_grey": 0.6,
+   "clothes": [
+    "female_elegantsuit01",
+    "shoes03"
+   ],
+   "tint": [
+    0.78,
+    0.1,
+    0.12
+   ]
   }
+ ],
+ "expressions": {
+  "smile": {
+   "mouthSmileLeft": 0.75,
+   "mouthSmileRight": 0.75,
+   "cheekSquintLeft": 0.3,
+   "cheekSquintRight": 0.3,
+   "eyeSquintLeft": 0.08,
+   "eyeSquintRight": 0.08
+  },
+  "laugh": {
+   "mouthSmileLeft": 1.0,
+   "mouthSmileRight": 1.0,
+   "jawOpen": 0.35,
+   "cheekSquintLeft": 0.8,
+   "cheekSquintRight": 0.8,
+   "eyeSquintLeft": 0.3,
+   "eyeSquintRight": 0.3,
+   "browInnerUp": 0.2
+  },
+  "brows_up": {
+   "browInnerUp": 0.8,
+   "browOuterUpLeft": 0.8,
+   "browOuterUpRight": 0.8,
+   "eyeWideLeft": 0.3,
+   "eyeWideRight": 0.3
+  },
+  "worried": {
+   "browInnerUp": 0.9,
+   "browDownLeft": 0.25,
+   "browDownRight": 0.25,
+   "mouthFrownLeft": 0.4,
+   "mouthFrownRight": 0.4
+  },
+  "brows_down": {
+   "browDownLeft": 0.9,
+   "browDownRight": 0.9,
+   "eyeSquintLeft": 0.3,
+   "eyeSquintRight": 0.3
+  },
+  "blink": {
+   "eyeBlinkLeft": 1.0,
+   "eyeBlinkRight": 1.0
+  },
+  "viseme_A": {
+   "viseme_aa": 1.0
+  },
+  "viseme_E": {
+   "viseme_E": 1.0
+  },
+  "viseme_O": {
+   "viseme_O": 1.0
+  },
+  "viseme_M": {
+   "viseme_PP": 1.0
+  }
+ }
 }

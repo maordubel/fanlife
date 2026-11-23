@@ -102,7 +102,6 @@ def tint_top(ob, rig, colour, sources):
     info = [(isl, *stats(isl)) for isl in islands]
     tops = [i for i in info if i[2] > hip * 1.08 and i[4] > hip * 1.25]
     if not tops: bm.free(); return False
-    big = max(t[1] for t in tops); tops = [t for t in tops if t[1] > big * 0.12]
     src = ob.material_slots[0].material if ob.material_slots else None
     if not src: bm.free(); return False
     mat = src.copy(); mat.name = 'tint_top'; mat['tint'] = 'top'; me.materials.append(mat); slot = len(me.materials) - 1
@@ -202,6 +201,23 @@ def split_head(body):
     return head_ob
 
 
+def drop_covered(body, garments):
+    """delete the skin a garment hides (within 2 cm under its surface), so no skin pokes through cloth when it bends"""
+    from mathutils.bvhtree import BVHTree
+    trees = []
+    for g in garments:
+        b = bmesh.new(); b.from_mesh(g.data); b.transform(body.matrix_world.inverted() @ g.matrix_world); trees.append(BVHTree.FromBMesh(b)); b.free()
+    bm = bmesh.new(); bm.from_mesh(body.data); covered = set()
+    for v in bm.verts:
+        for t in trees:
+            hit, nrm, _, dist = t.find_nearest(v.co, 0.022)
+            if hit is not None and (v.co - hit).dot(nrm) < 0.003: covered.add(v.index); break
+    faces = [f for f in bm.faces if all(v.index in covered for v in f.verts)]
+    n = len(faces); bmesh.ops.delete(bm, geom=faces, context='FACES')
+    bmesh.ops.delete(bm, geom=[v for v in bm.verts if not v.link_faces], context='VERTS')
+    bm.to_mesh(body.data); bm.free(); return n
+
+
 def set_keys(objs, weights):
     for o in objs:
         if o.type == 'MESH' and o.data.shape_keys:
@@ -218,13 +234,13 @@ def studio():
         try: sc.view_settings.view_transform = 'AgX'
         except Exception: pass
     w = bpy.data.worlds.new('studio'); sc.world = w; w.use_nodes = True
-    bg = w.node_tree.nodes['Background']; bg.inputs[0].default_value = (0.86, 0.80, 0.74, 1); bg.inputs[1].default_value = 0.42
+    bg = w.node_tree.nodes['Background']; bg.inputs[0].default_value = (0.86, 0.80, 0.74, 1); bg.inputs[1].default_value = 0.34
     def light(name, typ, loc, energy, size, col=(1, 1, 1)):
         d = bpy.data.lights.new(name, typ); d.energy = energy; d.color = col
         if typ == 'AREA': d.size = size
         o = bpy.data.objects.new(name, d); sc.collection.objects.link(o); o.location = loc
         o.rotation_euler = (Vector((0, 0, 1.2)) - Vector(loc)).to_track_quat('-Z', 'Y').to_euler(); return o
-    light('key', 'AREA', (2.2, -3.2, 2.8), 330, 2.5, (1.0, 0.95, 0.88)); light('fill', 'AREA', (-3.0, -2.2, 1.6), 90, 3.5, (0.86, 0.92, 1.0)); light('rim', 'AREA', (-1.5, 3.2, 2.6), 300, 2.0, (1.0, 0.9, 0.8))
+    light('key', 'AREA', (2.6, -2.8, 2.9), 260, 2.2, (1.0, 0.93, 0.84)); light('fill', 'AREA', (-3.0, -2.2, 1.6), 60, 3.5, (0.86, 0.92, 1.0)); light('rim', 'AREA', (-1.5, 3.2, 2.6), 300, 2.0, (1.0, 0.9, 0.8))
     me = bpy.data.meshes.new('floor'); me.from_pydata([(-30, -30, 0), (30, -30, 0), (30, 30, 0), (-30, 30, 0)], [], [(0, 1, 2, 3)])
     fl = bpy.data.objects.new('floor', me); sc.collection.objects.link(fl)
     m = bpy.data.materials.new('floor'); m.use_nodes = True; m.node_tree.nodes['Principled BSDF'].inputs['Base Color'].default_value = (0.78, 0.72, 0.66, 1); m.node_tree.nodes['Principled BSDF'].inputs['Roughness'].default_value = 0.9; me.materials.append(m)
@@ -319,6 +335,10 @@ def build(c, keep=False):
     if 'Eyes' in parts: meta['eyes'] = add_eye_bones(rig, parts['Eyes'])
     head = split_head(body)
     if head: head.name = 'Head'; head.data.name = c['id'] + '_Head'; parts['Head'] = head
+    try:
+        gs = [o for n, o in parts.items() if n.startswith('Clothes')]
+        if gs: meta['skinFacesHidden'] = drop_covered(body, gs)
+    except Exception as e: traceback.print_exc(); meta['notes'].append(f'covered skin: {e}')
     for o in parts.values():
         keep_groups = {b.name for b in rig.data.bones}
         for g in list(o.vertex_groups):
