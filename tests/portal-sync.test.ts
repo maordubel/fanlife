@@ -526,6 +526,7 @@ describe('פרויקט משותף עם DUBID — THE WORKER touches only what it
       '20261117190000_worker_events_insight.sql', // 17.11.2026: the games funnel as a report — standalone
       '20261117090000_worker_book_orders.sql', // 17.11.2026: Broken Collective's own sales (docs/rules/book-shop-separate.md) — standalone
       '20261122160000_worker_book_orders_fix.sql', // 22.11.2026: book orders retry + owner fix — standalone
+      '20261123120000_worker_book_orders_letters.sql', // 23.11.2026: the letter ledger + the 5-minute book tick (docs/rules/book-order-journey.md) — standalone
     ]
     for (const name of readdirSync(dir)) {
       if (live.includes(name)) continue

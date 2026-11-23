@@ -1,11 +1,13 @@
 import 'server-only'
 import {randomBytes} from 'node:crypto'
 import type {BookLang,Region,Ship} from './catalog'
+import type {Ledger} from './journey'
 
 /** public.worker_book_orders — RLS on, no policies: only this server, with the service key, reads or writes it. */
 export type BookOrder={id:string;kind:'tip'|'paperback'|'tee'|'cap';variant:string|null;printify_order:string|null;lang:BookLang;region:Region|null;ship:Ship|null;amount_cents:number;currency:string
  status:'open'|'paid'|'printing'|'shipped'|'done'|'failed'|'refunded'|'expired'|'canceled';email:string|null;stripe_session:string|null;stripe_payment:string|null
- lulu_job:number|null;lulu_status:string|null;lulu_cost:string|null;tracking:Record<string,unknown>|null;error:string|null;fix:Record<string,string>|null;attempts:number;alerted_at:string|null;created_at:string;paid_at:string|null;shipped_at:string|null}
+ lulu_job:number|null;lulu_status:string|null;lulu_cost:string|null;tracking:Record<string,unknown>|null;error:string|null;fix:Record<string,string>|null;attempts:number;alerted_at:string|null;created_at:string;paid_at:string|null;shipped_at:string|null
+ mails:Ledger|null;lulu_checked_at:string|null}
 const base=()=>`${process.env.FAN_LIFE_STORE_URL||process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/worker_book_orders`
 const head=(extra:Record<string,string>={})=>{const k=process.env.SUPABASE_SERVICE_ROLE_KEY!;return {apikey:k,Authorization:`Bearer ${k}`,'Content-Type':'application/json',...extra}}
 export const newBookId=()=>`bk_${randomBytes(9).toString('base64url')}`
@@ -34,4 +36,11 @@ export async function stuckBookOrders():Promise<BookOrder[]>{
 }
 export async function patchBookOrder(id:string,patch:Partial<BookOrder>){
  await fetch(`${base()}?id=eq.${encodeURIComponent(id)}`,{method:'PATCH',headers:head({Prefer:'return=minimal'}),body:JSON.stringify(patch)})
+}
+
+/** every order still on its way, or posted lately (the tick's list: letters owed, Lulu jobs to ask about) */
+export async function liveBookOrders():Promise<BookOrder[]>{
+ const since=new Date(Date.now()-60*86400000).toISOString()
+ const r=await fetch(`${base()}?status=in.(paid,printing,shipped,done)&created_at=gte.${since}&select=*&order=created_at.asc&limit=100`,{headers:head(),cache:'no-store'})
+ return r.ok?await r.json() as BookOrder[]:[]
 }
