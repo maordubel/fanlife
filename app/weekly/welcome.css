@@ -7,7 +7,7 @@ html[data-welcome] { overflow: hidden; }
 html[data-welcome] .wko { display: grid; position: fixed; inset: 0; z-index: 1000; overflow: hidden; background: var(--mag-night); color: var(--mag-paper); align-items: end; }
 html[data-welcome='out'] .wko { animation: wko-out .42s cubic-bezier(.6, 0, .9, .3) forwards; pointer-events: none; }
 .wko-bg, .wko-rays { position: absolute; inset: 0; pointer-events: none; }
-html[data-welcome] .wko-bg { background: var(--mag-night) image-set(url('/brand/fanlife/art/matchday-960.webp') 1x) 30% 0 / cover no-repeat; animation: wko-zoom 14s ease-out both; }
+html[data-welcome] .wko-bg { background: var(--mag-night) image-set(url('/brand/fanlife/art/matchday-640.webp') 1x, url('/brand/fanlife/art/matchday-960.webp') 2x) 30% 0 / cover no-repeat; animation: wko-zoom 14s ease-out both; }
 .wko-rays { background: linear-gradient(to bottom, color-mix(in srgb, var(--mag-night) 10%, transparent) 0, color-mix(in srgb, var(--mag-night) 72%, transparent) 38%, var(--mag-night) 78%), radial-gradient(color-mix(in srgb, var(--mag-paper) 9%, transparent) 1px, transparent 1.4px) 0 0 / 6px 6px; }
 .wko-in { position: relative; max-block-size: 100dvh; overflow-y: auto; overscroll-behavior: contain; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; inline-size: 100%; max-inline-size: 560px; margin-inline: auto; padding: 18px 18px calc(14px + env(safe-area-inset-bottom, 0px)); }
 .wko-in > * { animation: wko-rise .5s cubic-bezier(.2, .8, .2, 1) both; }
@@ -212,3 +212,16 @@ html[data-welcome] [data-art='ticket'] .wko-art { background-image: image-set(ur
 .wkk-home[data-short] .wkx { margin-block-start: 8px; }
 @media (min-width: 901px) { .wkk-home[data-short] .wkk-contents .wkx-list > li { flex: 1 1 calc(50% - 22px); min-inline-size: 150px; } .wkk-home[data-short] .wkk-contents .wkx-t b { font-size: 18px; } }
 .wkx[data-mono] .wkx-pic { background-color: var(--mag-paper); }
+
+/* THE FRONT PAGE'S LOADING COVER (prefix .wkfl): the paper is on its way, and the page says so. The welcome lies over it. */
+.wkfl { position: relative; min-block-size: 100dvh; }
+.wko-wait { display: none; align-self: center; align-items: center; gap: 6px; margin: 0; color: var(--mag-orange); }
+html:has([data-front-loading]) .wko-wait { display: flex; } html:has([data-front-loading]) .wko-free { display: none; }
+.wko-wait i { inline-size: 7px; block-size: 7px; border-radius: 50%; background: currentColor; animation: wko-dot 1s ease-in-out infinite; }
+.wko-wait i:nth-of-type(2) { animation-delay: .15s; } .wko-wait i:nth-of-type(3) { animation-delay: .3s; }
+@keyframes wko-dot { 0%, 100% { opacity: .25; translate: 0 0; } 40% { opacity: 1; translate: 0 -4px; } }
+@media (min-width: 901px) { .wko-wait { align-self: flex-end; } }
+@media (prefers-reduced-motion: reduce) { .wko-wait i { animation: none; } }
+/* a page that arrives within a third of a second never flashes its cover */
+.wkfl { animation: wkfl-in .2s .35s both; } @keyframes wkfl-in { from { opacity: 0; } }
+html[data-welcome] .wkfl { animation: none; }

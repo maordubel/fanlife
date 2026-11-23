@@ -39,6 +39,7 @@ import shopCopy from '@/messages/en.shop.json'
 import {FrontDoors} from '@/components/home/FrontDoors'
 import {CHANNEL} from '@/lib/stories/channel'
 import {Welcome} from '@/components/home/Welcome'
+import {PressWait} from '@/components/weekly/PressWait'
 import {ShopWindow} from '@/components/shop/ShopWindow'
 import {ClubPicker} from '@/components/home/ClubPicker'
 import {ContentsTiles,type Tile} from '@/components/home/ContentsTiles'
@@ -57,9 +58,28 @@ const Arrow=()=><svg className="wkh-arrow" viewBox="0 0 24 24" aria-hidden="true
  * The phone reads it top to bottom; the desktop lays the same sections out as a spread (CSS grid areas, app/weekly/hub.css).
  * Nothing scrolls sideways. All inks are allowed here — the hub has no rival.
  */
-export default async function Home({searchParams}:{searchParams:{lang?:string}}){
+/**
+ * THE FRONT PAGE COMES UP AT ONCE (owner, 23.11.2026: "the whole point of the opening screen is that it opens fast while the
+ * rest of the site loads behind it, so a first-time visitor never thinks something is stuck"). The page is two streams: the
+ * welcome, which waits only for its switch, and the paper itself, which waits for the clubs, the feeds and the shop. Until the
+ * paper arrives a loading cover says so; the welcome lies over it and says "the paper is on its way". Rule: welcome-and-picker.md
+ */
+export default function Page({searchParams}:{searchParams:{lang?:string}}){
  const hc=headers().get('x-fan-life-club')
  if(hc)redirect(hc==='hapoel-tel-aviv'?'/ground':`/clubs/${hc}`)
+ const locale=uiLocale(searchParams.lang),copy=locale==='he'?he:en
+ return <>
+  <Suspense fallback={null}><WelcomeDoor copy={copy}/></Suspense>
+  <Suspense fallback={<div className="wkfl" data-front-loading="" data-testid="front-loading"><PressWait label={copy.frontLoading}/></div>}><Home searchParams={searchParams}/></Suspense>
+ </>
+}
+/** the welcome waits for two cheap answers only: is the new front page on, and does the shop sell (its fourth beat) */
+async function WelcomeDoor({copy}:{copy:typeof en}){
+ const [fd,shopOpen]=await Promise.all([door('frontDoors'),shopIsOpen()])
+ if(!fd.open)return null
+ return <Welcome copy={{kicker:copy.welK,to:copy.welTo,lead:copy.welLead,s1:copy.welS1,s1Sub:copy.welS1Sub,s2:copy.welS2,s2Sub:copy.welS2Sub,s3:copy.welS3,s3Sub:copy.welS3Sub,...(shopOpen?{s4:copy.welS4,s4Sub:copy.welS4Sub}:{}),go:copy.welGo,skip:copy.welSkip,free:copy.welFree,wait:copy.welWait}}/>
+}
+async function Home({searchParams}:{searchParams:{lang?:string}}){
  const locale=uiLocale(searchParams.lang),copy=locale==='he'?he:en
  const {clubs}=await readState()
  const open=clubs.filter(c=>c.status!=='paused').sort((a,b)=>a.name.localeCompare(b.name))
@@ -120,8 +140,6 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
   return {id:c.id,name:c.name,city:c.city,country:r?.country??'',nick:w?.nicknames[0]?.text??null,crest:crestFor(c.id),initials:l?.initials??c.initials,primary:l?.primary??'var(--mag-ink)',on:l?.on??'var(--mag-white)',pattern:l?.pattern??'',href:`/clubs/${c.id}?lang=${locale}`,live:on}}
  const pickLive=short?live.map(c=>pickRow(c,true)):[],pickSoon=short?shop.map(c=>pickRow(c,false)):[]
  return <Shell locale={locale} stop={stop}>
-  {/* THE WELCOME (owner, 23.11.2026): up before the first paint on a first visit, three beats and a way in */}
-  {short&&<Welcome copy={{kicker:copy.welK,to:copy.welTo,lead:copy.welLead,s1:copy.welS1,s1Sub:copy.welS1Sub,s2:copy.welS2,s2Sub:copy.welS2Sub,s3:copy.welS3,s3Sub:copy.welS3Sub,...(shopOpen?{s4:copy.welS4,s4Sub:copy.welS4Sub}:{}),go:copy.welGo,skip:copy.welSkip,free:copy.welFree}}/>}
   <main id="main" className="wkh" data-short={short||undefined}>
 
   {/* THE MASTHEAD: the paper's name on a green plate, a supporter breaking the frame (board Hub-M / Hub-D). */}

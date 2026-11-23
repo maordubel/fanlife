@@ -30,7 +30,7 @@ def main() -> None:
                 r.save(CUT / f'{src.stem}-{w}.webp', 'WEBP', quality=82, method=6)
             continue
         im = im.convert('RGB')
-        for w in (480, 960) + ((1536,) if src.stem == 'matchday' else ()):
+        for w in (480, 960) + ((640, 1536) if src.stem == 'matchday' else ()):
             im.resize((w, round(im.height * w / im.width)), Image.LANCZOS).save(ART / f'{src.stem}-{w}.webp', 'WEBP', quality=(78 if w <= 480 else 70), method=6)
     for src in sorted(BITS.glob('*.webp')):
         cut = trimmed(Image.open(src))
