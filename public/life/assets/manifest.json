@@ -131,8 +131,8 @@
    "kind": "character",
    "label": "boy, about 10",
    "file": "cast/boy.glb",
-   "bytes": 1092840,
-   "triangles": 34848,
+   "bytes": 1094040,
+   "triangles": 34988,
    "bones": 55,
    "height": 1.3718,
    "hipHeight": 0.7043,
@@ -190,8 +190,8 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 8116,
-     "vertices": 4136,
+     "triangles": 8256,
+     "vertices": 4196,
      "morphs": 0
     },
     "Head": {
@@ -388,7 +388,7 @@
    "id": "clips",
    "kind": "animation",
    "file": "clips/clips.glb",
-   "bytes": 496512,
+   "bytes": 497416,
    "fps": 30,
    "bones": 55,
    "hipHeight": 0.9499,
@@ -511,8 +511,8 @@
    "kind": "character",
    "label": "father, about 40",
    "file": "cast/father.glb",
-   "bytes": 1219412,
-   "triangles": 39014,
+   "bytes": 1221112,
+   "triangles": 39182,
    "bones": 55,
    "height": 1.7959,
    "hipHeight": 0.9499,
@@ -570,8 +570,8 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 7984,
-     "vertices": 4069,
+     "triangles": 8152,
+     "vertices": 4156,
      "morphs": 0
     },
     "Head": {
@@ -769,8 +769,8 @@
    "kind": "character",
    "label": "father, heavier build",
    "file": "cast/father_heavy.glb",
-   "bytes": 1111236,
-   "triangles": 36452,
+   "bytes": 1101328,
+   "triangles": 36728,
    "bones": 55,
    "height": 1.7715,
    "hipHeight": 0.9331,
@@ -828,8 +828,8 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 6668,
-     "vertices": 3468,
+     "triangles": 6944,
+     "vertices": 3575,
      "morphs": 0
     },
     "Head": {
@@ -1027,8 +1027,8 @@
    "kind": "character",
    "label": "girl, about 10",
    "file": "cast/girl.glb",
-   "bytes": 1502424,
-   "triangles": 41758,
+   "bytes": 1501056,
+   "triangles": 42286,
    "bones": 55,
    "height": 1.2791,
    "hipHeight": 0.6526,
@@ -1091,8 +1091,8 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 9306,
-     "vertices": 4747,
+     "triangles": 9834,
+     "vertices": 5098,
      "morphs": 0
     },
     "Head": {
@@ -1200,7 +1200,7 @@
    },
    "sources": [
     {
-     "file": "skins/young_caucasian_female/young_caucasian_female.mhmat",
+     "file": "skins/young_caucasian_male/young_caucasian_male.mhmat",
      "licence": "CC0 1.0",
      "stated_in_file": "",
      "stated_in_pack": "CC0",
@@ -1299,8 +1299,8 @@
    "kind": "character",
    "label": "older man, about 70",
    "file": "cast/grandfather.glb",
-   "bytes": 1219112,
-   "triangles": 34144,
+   "bytes": 1221728,
+   "triangles": 34434,
    "bones": 55,
    "height": 1.7042,
    "hipHeight": 0.8968,
@@ -1358,8 +1358,8 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 6650,
-     "vertices": 3465,
+     "triangles": 6940,
+     "vertices": 3569,
      "morphs": 0
     },
     "Head": {
@@ -1557,8 +1557,8 @@
    "kind": "character",
    "label": "older woman, about 70",
    "file": "cast/grandmother.glb",
-   "bytes": 1086764,
-   "triangles": 35314,
+   "bytes": 1090756,
+   "triangles": 35700,
    "bones": 55,
    "height": 1.558,
    "hipHeight": 0.7904,
@@ -1616,8 +1616,8 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 7726,
-     "vertices": 3969,
+     "triangles": 8112,
+     "vertices": 4170,
      "morphs": 0
     },
     "Head": {
@@ -1815,8 +1815,8 @@
    "kind": "character",
    "label": "mother, about 38",
    "file": "cast/mother.glb",
-   "bytes": 1162212,
-   "triangles": 37596,
+   "bytes": 1165108,
+   "triangles": 37820,
    "bones": 55,
    "height": 1.6063,
    "hipHeight": 0.8192,
@@ -1874,8 +1874,8 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 7932,
-     "vertices": 4004,
+     "triangles": 8156,
+     "vertices": 4140,
      "morphs": 0
     },
     "Head": {
@@ -2073,8 +2073,8 @@
    "kind": "character",
    "label": "mother, fuller build",
    "file": "cast/mother_heavy.glb",
-   "bytes": 1079372,
-   "triangles": 37402,
+   "bytes": 1077880,
+   "triangles": 38364,
    "bones": 55,
    "height": 1.6026,
    "hipHeight": 0.8154,
@@ -2122,8 +2122,8 @@
      "morphs": 12
     },
     "Clothes": {
-     "triangles": 4164,
-     "vertices": 2126,
+     "triangles": 2700,
+     "vertices": 1391,
      "morphs": 0
     },
     "Clothes2": {
@@ -2137,8 +2137,8 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 7482,
-     "vertices": 3930,
+     "triangles": 9908,
+     "vertices": 5293,
      "morphs": 0
     },
     "Head": {
@@ -2309,7 +2309,7 @@
      "kind": "Hair"
     },
     {
-     "file": "clothes/toigo_fisherman_sweater/toigo_fisherman_sweater.mhclo",
+     "file": "clothes/toigo_basic_tucked_t-shirt/toigo_basic_tucked_t-shirt.mhclo",
      "licence": "CC0 1.0",
      "stated_in_file": "CC0",
      "stated_in_pack": "CC0",
@@ -2345,10 +2345,10 @@
    "kind": "character",
    "label": "teenage boy, about 15",
    "file": "cast/teen.glb",
-   "bytes": 1102332,
-   "triangles": 31684,
+   "bytes": 1080144,
+   "triangles": 34192,
    "bones": 55,
-   "height": 1.5332,
+   "height": 1.5445,
    "hipHeight": 0.8051,
    "eyes": {
     "l": [
@@ -2389,8 +2389,8 @@
      "morphs": 0
     },
     "Hair": {
-     "triangles": 1050,
-     "vertices": 865,
+     "triangles": 3344,
+     "vertices": 1755,
      "morphs": 0
     },
     "Teeth": {
@@ -2404,8 +2404,8 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 6354,
-     "vertices": 3243,
+     "triangles": 6568,
+     "vertices": 3352,
      "morphs": 0
     },
     "Head": {
@@ -2567,7 +2567,7 @@
      "kind": "Tongue"
     },
     {
-     "file": "hair/short04/short04.mhclo",
+     "file": "hair/short02/short02.mhclo",
      "licence": "CC0 1.0",
      "stated_in_file": "",
      "stated_in_pack": "CC0",
