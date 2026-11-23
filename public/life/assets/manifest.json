@@ -72,10 +72,10 @@
    "smile": {
     "mouthSmileLeft": 0.75,
     "mouthSmileRight": 0.75,
-    "cheekSquintLeft": 0.45,
-    "cheekSquintRight": 0.45,
-    "eyeSquintLeft": 0.25,
-    "eyeSquintRight": 0.25
+    "cheekSquintLeft": 0.3,
+    "cheekSquintRight": 0.3,
+    "eyeSquintLeft": 0.08,
+    "eyeSquintRight": 0.08
    },
    "laugh": {
     "mouthSmileLeft": 1.0,
@@ -83,8 +83,8 @@
     "jawOpen": 0.35,
     "cheekSquintLeft": 0.8,
     "cheekSquintRight": 0.8,
-    "eyeSquintLeft": 0.6,
-    "eyeSquintRight": 0.6,
+    "eyeSquintLeft": 0.3,
+    "eyeSquintRight": 0.3,
     "browInnerUp": 0.2
    },
    "brows_up": {
@@ -131,8 +131,8 @@
    "kind": "character",
    "label": "boy, about 10",
    "file": "cast/boy.glb",
-   "bytes": 1096992,
-   "triangles": 35204,
+   "bytes": 1092840,
+   "triangles": 34848,
    "bones": 55,
    "height": 1.3718,
    "hipHeight": 0.7043,
@@ -190,8 +190,8 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 8472,
-     "vertices": 4339,
+     "triangles": 8116,
+     "vertices": 4136,
      "morphs": 0
     },
     "Head": {
@@ -511,10 +511,10 @@
    "kind": "character",
    "label": "father, about 40",
    "file": "cast/father.glb",
-   "bytes": 1149664,
-   "triangles": 36838,
+   "bytes": 1219412,
+   "triangles": 39014,
    "bones": 55,
-   "height": 1.7826,
+   "height": 1.7959,
    "hipHeight": 0.9499,
    "eyes": {
     "l": [
@@ -555,8 +555,8 @@
      "morphs": 0
     },
     "Hair": {
-     "triangles": 1050,
-     "vertices": 865,
+     "triangles": 3678,
+     "vertices": 2984,
      "morphs": 0
     },
     "Teeth": {
@@ -570,8 +570,8 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 8436,
-     "vertices": 4308,
+     "triangles": 7984,
+     "vertices": 4069,
      "morphs": 0
     },
     "Head": {
@@ -733,7 +733,7 @@
      "kind": "Tongue"
     },
     {
-     "file": "hair/short04/short04.mhclo",
+     "file": "hair/short01/short01.mhclo",
      "licence": "CC0 1.0",
      "stated_in_file": "",
      "stated_in_pack": "CC0",
@@ -769,10 +769,10 @@
    "kind": "character",
    "label": "father, heavier build",
    "file": "cast/father_heavy.glb",
-   "bytes": 1209800,
-   "triangles": 35624,
+   "bytes": 1111236,
+   "triangles": 36452,
    "bones": 55,
-   "height": 1.785,
+   "height": 1.7715,
    "hipHeight": 0.9331,
    "eyes": {
     "l": [
@@ -787,11 +787,6 @@
     ]
    },
    "meshes": {
-    "Hair": {
-     "triangles": 2192,
-     "vertices": 2196,
-     "morphs": 0
-    },
     "Brows": {
      "triangles": 192,
      "vertices": 124,
@@ -817,6 +812,11 @@
      "vertices": 1722,
      "morphs": 0
     },
+    "Hair": {
+     "triangles": 3344,
+     "vertices": 1755,
+     "morphs": 0
+    },
     "Teeth": {
      "triangles": 7120,
      "vertices": 3868,
@@ -828,13 +828,13 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 6996,
-     "vertices": 3588,
+     "triangles": 6668,
+     "vertices": 3468,
      "morphs": 0
     },
     "Head": {
-     "triangles": 8820,
-     "vertices": 4437,
+     "triangles": 8824,
+     "vertices": 4439,
      "morphs": 66
     }
    },
@@ -991,7 +991,7 @@
      "kind": "Tongue"
     },
     {
-     "file": "hair/afro01/afro01.mhclo",
+     "file": "hair/short02/short02.mhclo",
      "licence": "CC0 1.0",
      "stated_in_file": "",
      "stated_in_pack": "CC0",
@@ -1027,10 +1027,10 @@
    "kind": "character",
    "label": "girl, about 10",
    "file": "cast/girl.glb",
-   "bytes": 1555580,
-   "triangles": 46192,
+   "bytes": 1502424,
+   "triangles": 41758,
    "bones": 55,
-   "height": 1.2744,
+   "height": 1.2791,
    "hipHeight": 0.6526,
    "eyes": {
     "l": [
@@ -1048,21 +1048,21 @@
     "Brows": {
      "triangles": 192,
      "vertices": 124,
-     "morphs": 24
+     "morphs": 42
     },
     "Lashes": {
      "triangles": 368,
      "vertices": 250,
      "morphs": 27
     },
+    "Hair": {
+     "triangles": 4108,
+     "vertices": 3239,
+     "morphs": 0
+    },
     "Eyes": {
      "triangles": 172,
      "vertices": 96,
-     "morphs": 0
-    },
-    "Hair": {
-     "triangles": 5352,
-     "vertices": 3718,
      "morphs": 0
     },
     "Shoes": {
@@ -1091,8 +1091,8 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 12496,
-     "vertices": 6336,
+     "triangles": 9306,
+     "vertices": 4747,
      "morphs": 0
     },
     "Head": {
@@ -1218,7 +1218,7 @@
      "kind": "Eyes"
     },
     {
-     "file": "eyebrows/eyebrow006/eyebrow006.mhclo",
+     "file": "eyebrows/eyebrow001/eyebrow001.mhclo",
      "licence": "CC0 1.0",
      "stated_in_file": "",
      "stated_in_pack": "CC0",
@@ -1254,7 +1254,7 @@
      "kind": "Tongue"
     },
     {
-     "file": "hair/ponytail01/ponytail01.mhclo",
+     "file": "hair/long01/long01.mhclo",
      "licence": "CC0 1.0",
      "stated_in_file": "",
      "stated_in_pack": "CC0",
@@ -1299,10 +1299,10 @@
    "kind": "character",
    "label": "older man, about 70",
    "file": "cast/grandfather.glb",
-   "bytes": 1308556,
-   "triangles": 37110,
+   "bytes": 1219112,
+   "triangles": 34144,
    "bones": 55,
-   "height": 1.7172,
+   "height": 1.7042,
    "hipHeight": 0.8968,
    "eyes": {
     "l": [
@@ -1343,8 +1343,8 @@
      "morphs": 0
     },
     "Hair": {
-     "triangles": 3678,
-     "vertices": 2984,
+     "triangles": 1050,
+     "vertices": 865,
      "morphs": 0
     },
     "Teeth": {
@@ -1358,8 +1358,8 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 6988,
-     "vertices": 3582,
+     "triangles": 6650,
+     "vertices": 3465,
      "morphs": 0
     },
     "Head": {
@@ -1521,7 +1521,7 @@
      "kind": "Tongue"
     },
     {
-     "file": "hair/short01/short01.mhclo",
+     "file": "hair/short04/short04.mhclo",
      "licence": "CC0 1.0",
      "stated_in_file": "",
      "stated_in_pack": "CC0",
@@ -1557,8 +1557,8 @@
    "kind": "character",
    "label": "older woman, about 70",
    "file": "cast/grandmother.glb",
-   "bytes": 1093932,
-   "triangles": 36086,
+   "bytes": 1086764,
+   "triangles": 35314,
    "bones": 55,
    "height": 1.558,
    "hipHeight": 0.7904,
@@ -1616,8 +1616,8 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 8498,
-     "vertices": 4347,
+     "triangles": 7726,
+     "vertices": 3969,
      "morphs": 0
     },
     "Head": {
@@ -1815,10 +1815,10 @@
    "kind": "character",
    "label": "mother, about 38",
    "file": "cast/mother.glb",
-   "bytes": 1151616,
-   "triangles": 41086,
+   "bytes": 1162212,
+   "triangles": 37596,
    "bones": 55,
-   "height": 1.6182,
+   "height": 1.6063,
    "hipHeight": 0.8192,
    "eyes": {
     "l": [
@@ -1833,11 +1833,6 @@
     ]
    },
    "meshes": {
-    "Hair": {
-     "triangles": 8474,
-     "vertices": 5203,
-     "morphs": 0
-    },
     "Brows": {
      "triangles": 192,
      "vertices": 124,
@@ -1858,6 +1853,11 @@
      "vertices": 96,
      "morphs": 0
     },
+    "Hair": {
+     "triangles": 5352,
+     "vertices": 3718,
+     "morphs": 0
+    },
     "Shoes": {
      "triangles": 3064,
      "vertices": 1594,
@@ -1874,8 +1874,8 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 8300,
-     "vertices": 4219,
+     "triangles": 7932,
+     "vertices": 4004,
      "morphs": 0
     },
     "Head": {
@@ -2037,7 +2037,7 @@
      "kind": "Tongue"
     },
     {
-     "file": "hair/bob01/bob01.mhclo",
+     "file": "hair/ponytail01/ponytail01.mhclo",
      "licence": "CC0 1.0",
      "stated_in_file": "",
      "stated_in_pack": "CC0",
@@ -2073,21 +2073,21 @@
    "kind": "character",
    "label": "mother, fuller build",
    "file": "cast/mother_heavy.glb",
-   "bytes": 1182132,
-   "triangles": 45602,
+   "bytes": 1079372,
+   "triangles": 37402,
    "bones": 55,
-   "height": 1.6085,
-   "hipHeight": 0.8178,
+   "height": 1.6026,
+   "hipHeight": 0.8154,
    "eyes": {
     "l": [
      0.0284,
-     -0.1217,
-     1.495
+     -0.1216,
+     1.4914
     ],
     "r": [
      -0.0284,
-     -0.1217,
-     1.495
+     -0.1216,
+     1.4914
     ]
    },
    "meshes": {
@@ -2101,11 +2101,6 @@
      "vertices": 250,
      "morphs": 27
     },
-    "Hair": {
-     "triangles": 4108,
-     "vertices": 3239,
-     "morphs": 0
-    },
     "Eyes": {
      "triangles": 172,
      "vertices": 96,
@@ -2114,6 +2109,11 @@
     "Shoes": {
      "triangles": 4128,
      "vertices": 2222,
+     "morphs": 0
+    },
+    "Hair": {
+     "triangles": 1922,
+     "vertices": 1011,
      "morphs": 0
     },
     "Teeth": {
@@ -2137,13 +2137,13 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 13500,
-     "vertices": 6795,
+     "triangles": 7482,
+     "vertices": 3930,
      "morphs": 0
     },
     "Head": {
-     "triangles": 8728,
-     "vertices": 4391,
+     "triangles": 8732,
+     "vertices": 4393,
      "morphs": 66
     }
    },
@@ -2300,7 +2300,7 @@
      "kind": "Tongue"
     },
     {
-     "file": "hair/long01/long01.mhclo",
+     "file": "hair/short03/short03.mhclo",
      "licence": "CC0 1.0",
      "stated_in_file": "",
      "stated_in_pack": "CC0",
@@ -2345,10 +2345,10 @@
    "kind": "character",
    "label": "teenage boy, about 15",
    "file": "cast/teen.glb",
-   "bytes": 1085044,
-   "triangles": 33222,
+   "bytes": 1102332,
+   "triangles": 31684,
    "bones": 55,
-   "height": 1.5363,
+   "height": 1.5332,
    "hipHeight": 0.8051,
    "eyes": {
     "l": [
@@ -2389,8 +2389,8 @@
      "morphs": 0
     },
     "Hair": {
-     "triangles": 1922,
-     "vertices": 1011,
+     "triangles": 1050,
+     "vertices": 865,
      "morphs": 0
     },
     "Teeth": {
@@ -2404,8 +2404,8 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 7020,
-     "vertices": 3612,
+     "triangles": 6354,
+     "vertices": 3243,
      "morphs": 0
     },
     "Head": {
@@ -2567,7 +2567,7 @@
      "kind": "Tongue"
     },
     {
-     "file": "hair/short03/short03.mhclo",
+     "file": "hair/short04/short04.mhclo",
      "licence": "CC0 1.0",
      "stated_in_file": "",
      "stated_in_pack": "CC0",
