@@ -201,3 +201,14 @@ html[data-welcome] [data-art='ticket'] .wko-art { background-image: image-set(ur
 @media (min-width: 901px) { .wkz .wkz-stamp { inline-size: 132px; block-size: 132px; inset-block-start: 18px; inset-inline-start: 18px; } .wkz-stamp b { font-size: 38px; } .wkz-stamp span { font-size: 12px; } }
 @media (prefers-reduced-motion: no-preference) { .wkz .wkz-stamp { animation: wkz-pop .5s cubic-bezier(.2, .9, .3, 1.4) both; } }
 @keyframes wkz-pop { from { scale: .6; opacity: 0; } }
+
+/* one ink on a club's own pages (rule 95): the picture goes grey and the club's colour is printed over it */
+.wkx[data-mono] .wkx-pic > img:not(.wkx-cut) { filter: grayscale(1) contrast(1.2) brightness(1.05); }
+.wkx[data-mono] .wkx-pic::after { content: ''; position: absolute; inset: 0; background: var(--club-primary, var(--mag-ink)); mix-blend-mode: multiply; opacity: .78; pointer-events: none; }
+.wkx[data-mono] .wkx-pic::before { content: ''; position: absolute; inset: 0; z-index: 1; background: radial-gradient(color-mix(in srgb, var(--mag-ink) 22%, transparent) 1.2px, transparent 1.6px) 0 0 / 6px 6px; pointer-events: none; }
+.wkx[data-mono] .wkx-no { z-index: 2; }
+.wkx[data-mono] .wkx-tile[data-plate] .wkx-pic { background-color: var(--club-primary, var(--mag-ink)); } .wkx[data-mono] .wkx-cut { filter: grayscale(1) contrast(1.15) drop-shadow(3px 4px 0 color-mix(in srgb, var(--mag-ink) 60%, transparent)); position: relative; z-index: 1; }
+.wkx[data-mono] .wkx-tile[data-plate] .wkx-pic::after { display: none; }
+.wkk-home[data-short] .wkx { margin-block-start: 8px; }
+@media (min-width: 901px) { .wkk-home[data-short] .wkk-contents .wkx-list > li { flex: 1 1 calc(50% - 22px); min-inline-size: 150px; } .wkk-home[data-short] .wkk-contents .wkx-t b { font-size: 18px; } }
+.wkx[data-mono] .wkx-pic { background-color: var(--mag-paper); }

@@ -8,3 +8,4 @@
 - **Phone**: the terrace's game is not repeated (it opens Play); the cover is 330px. **Desktop**: it stays in the side column, and the page closes with one row of three — next match, did you know, contents.
 - Measured 22.11.2026 (Olympiacos, as owner): 6.6 → 3.7 screens on a 390px phone, 4.4 → 2.5 on a 1440px desktop; no sideways scroll, no page errors.
 - With the switch off the page is exactly the old one.
+- **The contents are pictures in one ink** (23.11.2026): on the short club home "Inside this issue" is `ContentsTiles mono` — the owner's pictures printed grey with the club's colour over them (rule 95: no picture brings a rival's colours into a club's ground). Measured as owner: Olympiacos 3.9 screens on a 390px phone, 2.8 on a 1440px desktop.
