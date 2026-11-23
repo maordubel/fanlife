@@ -37,8 +37,12 @@ describe('the welcome (docs/rules/welcome-and-picker.md)',()=>{
  it('is hidden unless raised, and loads its pictures only when raised',()=>{
   expect(css).toMatch(/^\.wko \{ display: none; \}/m)
   for(const line of css.split('\n').filter(l=>l.includes('url(')))expect(line,line.slice(0,60)).toMatch(/^\s*html\[data-welcome\]/)
-  expect(css).toMatch(/matchday-640\.webp'\) 1x[^;]*url\('data:image\/webp;base64,/)   // the tiny copy under the real picture
-  expect(page).toContain("preload('/brand/fanlife/art/matchday-640.webp',{as:'image',media:'(max-width: 900px)'}")
+  expect(css).toMatch(/url\('\/brand\/fanlife\/art\/matchday-640\.webp'\)[^;]*url\('data:image\/webp;base64,/)   // the tiny copy under the real picture
+  // one picture per screen, each preloaded only where the stylesheet uses it
+  expect(page).toContain('<link rel="preload" as="image" href="/brand/fanlife/art/matchday-640.webp" media="(max-width: 900px)"/>')
+  expect(page).toContain('<link rel="preload" as="image" href="/brand/fanlife/art/matchday-1280.webp" media="(min-width: 901px)"/>')
+  expect(page).not.toContain("from 'react-dom'")
+  expect(css).not.toContain('matchday-960')
   expect(existsSync('public/brand/fanlife/art/matchday-1280.webp')).toBe(true)
  })
  it('uses class prefixes nobody else owns',()=>{
