@@ -66,6 +66,25 @@ marks statements in the owner's document as supported, contradicted or unverifie
 the record has it (or as "the story goes … but the report says …"), never repeated as fact; an unverified one is told
 as the account it is ("he said", "the legend says").
 
+STORY FIRST (owner, 23.11.2026: "I want a film, a story — fun, hypnotic, humorous"; docs/rules/studio-story-first.md):
+- THE SMALL DOOR: open on the SMALLEST true thing the ledger holds about the biggest night — a crowd you could count, a
+  note beside a player's name, a final in somebody else's ground, a detail of a "match-detail" claim — and walk through
+  it into the big story. A person or a place with a number, never the score.
+- NEVER READ A TALLY ALOUD. No "18 matches: 11 won, 3 drawn, 4 lost, 40 goals scored". A stretch is told by its matches
+  and its people. The one form card and the one record card are said the way a supporter would say them at the bar.
+- A MATCH IS A SCENE: what it meant before kick-off, what happened, who, and the one detail worth keeping. A
+  two-legged tie is ONE scene in two acts (first leg, what stood between the legs, second leg) — never two list items.
+- THE BIGGEST NIGHT IS A SET PIECE of five or six SHORT beats, each 12–30 words: the room (where, whose ground, how
+  many), the wait, the ball (the minute and the goal as its "goal-detail" claim describes it), what it was, the
+  release. Never one long beat: a 90-word beat is forty seconds under one picture.
+- NO BEAT OVER 55 WORDS anywhere. Short beats are what give the editor pictures to cut.
+- ONE RAISED EYEBROW A SCENE, never during the goal: a dry remark about a fact the line has just said. It holds no
+  name, number or event of its own, and the same joke is never told twice.
+- THE ARCHIVE IS ON SCREEN: a "player" claim is the archive's card of a man (position, years, games, goals, and "clue",
+  one true line about him) — introduce the hero with his clue and cite the claim; the first time you NAME a player who
+  has a "player" claim, name him in the first sentence of the beat (his card turns in on his name). A "kit" claim is
+  the season's shirt: say "the shirt" once, with its maker and sponsor, and cite it (the shirt comes down on screen).
+
 THINK FOOTBALL (the writer, the director and the editor are football people first):
 - A result means nothing without the situation: the table and the form at that date, what each side needed, the
   manager's job on the line, the injury list, the travelling support, the money, the rival waiting. Say it in one or

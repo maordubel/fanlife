@@ -52,6 +52,7 @@ def check(led, kind):
 
 
 class HouseWriters(unittest.TestCase):
+    @mock.patch.dict(os.environ, {'STORIES_HOUSE_LEAD': 'unit'})   # the three unit writers themselves (the raconteur leads by default: test_raconteur)
     def test_every_writer_writes_a_season_that_passes_every_check(self):
         led = ledger(season_claims())
         hooks, titles = set(), set()
@@ -116,7 +117,9 @@ class WriterHandsOver(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp, mock.patch.dict(os.environ, env), mock.patch.object(writer, '_MODEL_DOWN', [None, 0.0]):
             opts = writer.write_options({'duration': 5, 'kind': 'season'}, led, Path(tmp), lambda m: None)
         self.assertEqual([o['_director'] for o in opts], ['broadcaster', 'terrace', 'trailer'])
-        self.assertEqual([o['_house']['writer'] for o in opts], ['chronicler', 'poet', 'mythmaker'])
+        # 23.11.2026: the raconteur leads — the first script of a season film is his (studio/raconteur.py); the other two
+        # options stay their directors' own house writers
+        self.assertEqual([o['_house']['writer'] for o in opts], ['raconteur', 'poet', 'mythmaker'])
 
     def test_a_spent_quota_is_not_waited_for(self):
         led = ledger(season_claims())

@@ -3,6 +3,7 @@ import {jobKind,type Job} from '@/lib/stories/jobs'
 import {plainError,queueText,type Facts} from '@/lib/stories/banners'
 import {filmTitle} from '@/lib/stories/social'
 import {HealthStrip,when} from './stories-desk'
+import {ENGINE} from '@/lib/stories/engine'
 import css from './studio.module.css'
 
 /** The engine room: the lights, the queue, the last Drive scans and the recent failures in plain words. */
@@ -26,6 +27,10 @@ export function StatusTab({facts,jobs}:{facts:Facts;jobs:Job[]|null}){
    </div></section>
    <section className={css.panel} aria-labelledby="st-f"><div className={css.bar}><span id="st-f">Recent failures</span><span>{failed.length}</span></div><div className={css.body}>
     {failed.length?<ul className={css.checks}>{failed.map(j=><li key={j.id}><b>{KIND_TEXT[jobKind(j)]} · {filmTitle(j)}</b><br/>{plainError(j.error?.code||'INTERNAL',j.error?.message||'')}<br/><span className={css.meta}>[{j.error?.code}] {when(j.updatedAt)} · {j.error?.retryable?'safe to retry':'fix the cause first'}</span></li>)}</ul>:<p className={css.hint}>Nothing failed recently.</p>}
+   </div></section>
+   <section className={css.panel} aria-labelledby="st-e"><div className={css.bar}><span id="st-e">The engine</span><span>{ENGINE.length} parts</span></div><div className={css.body}>
+    <p className={css.hint}>What every film is made with. Each part is on unless its variable is set (GitHub → Settings → Secrets and variables → Actions → Variables).</p>
+    <ul className={css.checks}>{ENGINE.map(e=><li key={e.id}><b>{e.name}</b> <span className={css.meta}>since {e.since}</span><br/>{e.what}<br/><span className={css.meta}>{e.variable==='—'?'Always on':`${e.variable} = ${e.off} turns it off`}</span></li>)}</ul>
    </div></section>
   </div>
  </>
