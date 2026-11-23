@@ -10,5 +10,59 @@
   "fromArchive": 62,
   "fromPack": 114,
   "noColour": 0
+ },
+ "celtic": {
+  "drawn": 157,
+  "fromArchive": 101,
+  "fromPack": 56,
+  "noColour": 1
+ },
+ "olympiacos": {
+  "drawn": 137,
+  "fromArchive": 76,
+  "fromPack": 61,
+  "noColour": 0
+ },
+ "aek-athens": {
+  "drawn": 139,
+  "fromArchive": 102,
+  "fromPack": 37,
+  "noColour": 1
+ },
+ "al-ahly": {
+  "drawn": 97,
+  "fromArchive": 0,
+  "fromPack": 97,
+  "noColour": 0
+ },
+ "st-pauli": {
+  "drawn": 107,
+  "fromArchive": 54,
+  "fromPack": 53,
+  "noColour": 0
+ },
+ "maccabi-haifa": {
+  "drawn": 93,
+  "fromArchive": 0,
+  "fromPack": 93,
+  "noColour": 4
+ },
+ "panathinaikos": {
+  "drawn": 130,
+  "fromArchive": 65,
+  "fromPack": 65,
+  "noColour": 0
+ },
+ "hapoel-petah-tikva": {
+  "drawn": 84,
+  "fromArchive": 6,
+  "fromPack": 78,
+  "noColour": 0
+ },
+ "zrinjski-mostar": {
+  "drawn": 63,
+  "fromArchive": 22,
+  "fromPack": 41,
+  "noColour": 0
  }
 }

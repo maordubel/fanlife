@@ -23,13 +23,14 @@ describe('Panathinaikos 2024/25 home illustration', () => {
    const src=fs.readFileSync('scripts/kits/kit-render.js','utf8');
    const SPONSOR_TYPE=JSON.parse(fs.readFileSync('content/manual/sponsor-type.json','utf8'));
    const MARKS=JSON.parse(fs.readFileSync('content/manual/maker-marks.json','utf8'));
+   const STUDIO=JSON.parse(fs.readFileSync('scripts/kits/studio-template.json','utf8'));
    const RESOLVE=(path)=>'data:image/svg+xml;base64,'+fs.readFileSync('public'+path).toString('base64');
    const kit=JSON.parse(fs.readFileSync('content/manual/kit-archive-panathinaikos.json','utf8')).kits.find(x=>x.id==='cof-k-56');
-   process.stdout.write(new Function('RESOLVE','SPONSOR_TYPE','MARKS',src+';return kitSVG')(RESOLVE,SPONSOR_TYPE,MARKS)(kit,'test'));
+   process.stdout.write(new Function('RESOLVE','SPONSOR_TYPE','MARKS','STUDIO',src+';return kitSVG')(RESOLVE,SPONSOR_TYPE,MARKS,STUDIO)(kit,'test'));
   `
   const svg = execFileSync(process.execPath, ['-e', script], {encoding: 'utf8'})
   expect(svg).toContain('x="124" y="20" width="92"')
-  expect(svg).toContain('M111 30Q79 38 56 61')
+  expect(svg).toContain('M134 22Q98 30 62 62') // the shoulder stripes on the studio cut (23.11.2026)
   expect(svg.match(/data:image\/svg\+xml;base64,/g)).toHaveLength(2)
   expect(svg).not.toContain('STOIXIMAN</text>')
  })

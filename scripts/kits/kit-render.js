@@ -10,8 +10,16 @@ let uid=0;
 /* One complete kit on a 430x470 board: shirt (340x320), shorts below, socks to the right. Drawn from the measured layers only.
    Realism pass (10.10.2026): soft fold shading under the arms and along the armhole seams, ribbed collar with the dark inside of the neck,
    cuff bands cut to the sleeve, hem and waist ribs, drawstring, a finer weave and a ground shadow. Geometry of the board is unchanged. */
-const BODY='M110 30C128 46 150 56 170 56S212 46 230 30L276 46 324 120 278 148 258 120V292C222 304 118 304 82 292V120L62 148 16 120 64 46Z';
-const SL_L='M64 46L16 120 62 148 82 120V66Z',SL_R='M276 46L324 120 278 148 258 120V66Z';
+/* Studio pass (23.11.2026, owner: "this is the level for every club" — the Hapoel kit-studio drawings): a tailored cut (sloped shoulders,
+   set-in sleeves on a curved armhole, a body that narrows to the waist and a rounded hem), an ink contour, fold creases where cloth gathers,
+   a ribbed collar with the inside of the neck showing, ribbed cuffs. Same 340x320 board and the same crest, maker and sponsor places. */
+const BODY='M124 30C138 47 153 53 170 53S202 47 216 30L272 42C292 70 316 120 336 145L306 174C296 160 282 146 265 136C262 180 255 222 255 252C256 270 259 286 260 300C206 312 134 312 80 300C81 286 84 270 85 252C85 222 78 180 75 136C58 146 44 160 34 174L4 145C24 120 48 70 68 42Z';
+const SL_L='M84 38L68 42C48 70 24 120 4 145L34 174C44 160 58 146 75 136C88 110 94 70 84 38Z',SL_R='M256 38L272 42C292 70 316 120 336 145L306 174C296 160 282 146 265 136C252 110 246 70 256 38Z';
+const CUFFS='M4 145L34 174L40 162L10 133Z M336 145L306 174L300 162L330 133Z';
+const NECK_IN='M128 29C145 21 195 21 212 29C198 42 142 42 128 29Z';
+/* the cloth's creases, drawn once for the left half and mirrored */
+const FOLDS_SOFT='<path d="M78 140C80 170 84 200 86 236" stroke-opacity=".26" stroke-width="14"/><path d="M84 38C94 70 88 110 75 136" stroke-opacity=".28" stroke-width="9"/><path d="M24 132C36 116 50 106 66 102" stroke-opacity=".22" stroke-width="10"/><path d="M80 140C96 150 108 158 124 164" stroke-opacity=".24" stroke-width="7"/><path d="M80 292C120 300 150 302 170 302" stroke-opacity=".12" stroke-width="8"/>';
+const FOLDS_INK='<path d="M78 140C92 150 104 156 120 160"/><path d="M80 152C92 162 102 168 114 176"/><path d="M76 132C86 128 96 128 106 133"/><path d="M86 222C96 230 104 236 114 240" stroke-opacity=".22"/><path d="M88 252C98 258 108 260 118 260" stroke-opacity=".2"/><path d="M30 134C40 126 52 122 62 124"/><path d="M46 110C54 104 62 102 70 104" stroke-opacity=".22"/><path d="M122 42C112 58 102 72 94 84" stroke-opacity=".18"/>';
 const SHORTS='M8 0H192L200 112Q200 128 184 130L114 130Q104 130 100 114Q96 130 86 130L16 130Q0 128 0 112Z';
 const SOCK='M0 0H34L36 112Q36 140 54 150Q72 160 66 182Q40 190 12 184Q-4 176 0 150Z';
 
@@ -55,9 +63,9 @@ function shirtG(k,id){
   let pat='',sleeveInk=b;
   const runInk=i=>k.shirt.hex[k.shirt.colours[i]]||b,ry=m.runsY,rx=m.runsX;
   if(!art.centralPanel&&d==='hoops'&&ry&&ry.length>=3){pat=ry.map(r=>`<rect x="0" y="${(30+r[0]*266).toFixed(1)}" width="340" height="${((r[1]-r[0])*266+.6).toFixed(1)}" fill="${runInk(r[2])}"/>`).join('')}
-  else if(!art.centralPanel&&(d==='stripes'||d==='pinstripes')&&rx&&rx.length>=3){pat=rx.map(r=>`<rect x="${(82+r[0]*176).toFixed(1)}" y="20" width="${((r[1]-r[0])*176+.6).toFixed(1)}" height="290" fill="${runInk(r[2])}"/>`).join('')}
+  else if(!art.centralPanel&&(d==='stripes'||d==='pinstripes')&&rx&&rx.length>=3){pat=rx.map(r=>`<rect x="${(82+r[0]*176).toFixed(1)}" y="20" width="${((r[1]-r[0])*176+.6).toFixed(1)}" height="300" fill="${runInk(r[2])}"/>`).join('')}
   else if(art.centralPanel){pat=`<rect x="${art.centralPanel.x}" y="20" width="${art.centralPanel.width}" height="290" fill="${t}"/>`}
-  else if(d==='stripes'){const n=Math.max(1,m.stripes||4),w=176/(2*n+1);for(let i=0;i<n;i++)pat+=`<rect x="${82+w*(2*i+1)}" y="20" width="${w}" height="290" fill="${t}"/>`}
+  else if(d==='stripes'){const n=Math.max(1,m.stripes||4),w=176/(2*n+1);for(let i=0;i<n;i++)pat+=`<rect x="${82+w*(2*i+1)}" y="20" width="${w}" height="300" fill="${t}"/>`}
   else if(d==='hoops'){const n=Math.max(1,m.hoops||3),h=240/(2*n+1);for(let i=0;i<n;i++)pat+=`<rect x="0" y="${64+h*(2*i+1)}" width="340" height="${h}" fill="${t}"/>`}
   else if(d==='pinstripes'){for(let x=94;x<258;x+=17)pat+=`<rect x="${x}" y="20" width="3.5" height="290" fill="${t}" opacity=".9"/>`}
   else if(d==='half-and-half'){pat=`<rect x="0" y="20" width="170" height="290" fill="${t}"/>`}
@@ -68,6 +76,7 @@ function shirtG(k,id){
   else if(d==='gradient'){pat=`<rect width="340" height="320" fill="url(#${id}g)"/>`}
   else if(d==='graphic'&&!art.omitUnmeasuredGraphics){pat=`<g fill="${t}" opacity=".18">${Array.from({length:60},(_,i)=>`<circle cx="${96+(i%10)*17+(Math.floor(i/10)%2)*8}" cy="${96+Math.floor(i/10)*30}" r="3.2"/>`).join('')}</g>`}
   const light=lum(b)>150,ink=light?'#111':'#fff',edge=shade(b,-.55);
+  if(typeof STUDIO!=='undefined'&&STUDIO&&!art.legacyCut)return studioShirtG(k,id,{b,t,pat,sleeveInk,d,ry,art,light,ink,edge});
   const collar=art.collarInk||(d==='contrasting sleeves'?b:t);
   const asset=(src)=>typeof RESOLVE==='function'?RESOLVE(src):src;
   const sp=art.sponsorSrc?`<image href="${esc(asset(art.sponsorSrc))}" x="110" y="128" width="120" height="40" preserveAspectRatio="xMidYMid meet"/>`:k.sponsor?sponsorSVG(k.sponsor,b,{neutral:!!k.neutralSponsor,trim:t,patterned:['stripes','hoops','pinstripes','half-and-half','sash','chest band','diagonal','graphic'].includes(d)}):'';
@@ -77,27 +86,59 @@ function shirtG(k,id){
 <pattern id="${id}p" width="3" height="3" patternUnits="userSpaceOnUse"><path d="M0 .5H3M.5 0V3" stroke="#000" stroke-opacity=".5" stroke-width=".5"/></pattern>
 <filter id="${id}b" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5"/></filter>
 <filter id="${id}b2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2"/></filter>
-<linearGradient id="${id}f" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity=".30"/><stop offset=".2" stop-color="#fff" stop-opacity=".06"/><stop offset=".45" stop-color="#fff" stop-opacity=".14"/><stop offset=".78" stop-color="#000" stop-opacity=".05"/><stop offset="1" stop-color="#000" stop-opacity=".34"/></linearGradient>
+<linearGradient id="${id}f" x1="0" x2="1"><stop offset=".18" stop-color="#000" stop-opacity=".34"/><stop offset=".32" stop-color="#fff" stop-opacity=".06"/><stop offset=".46" stop-color="#fff" stop-opacity=".16"/><stop offset=".7" stop-color="#000" stop-opacity=".06"/><stop offset=".84" stop-color="#000" stop-opacity=".36"/></linearGradient>
 <linearGradient id="${id}v" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".22"/></linearGradient>
 <linearGradient id="${id}g" x1="0" y1="0" x2="0" y2="1"><stop offset=".2" stop-color="${b}"/><stop offset="1" stop-color="${t}"/></linearGradient></defs>
-<ellipse cx="170" cy="304" rx="104" ry="9" fill="#000" opacity=".16" filter="url(#${id}b)"/>
-<g clip-path="url(#${id}c)"><rect width="340" height="320" fill="${b}"/>${pat}
+<ellipse cx="170" cy="306" rx="104" ry="8" fill="#000" opacity=".22" filter="url(#${id}b)"/>
+<g clip-path="url(#${id}c)"><rect width="340" height="330" fill="${b}"/>${pat}
 ${d==='hoops'&&ry&&ry.length>=3?'':`<path d="${SL_L}" fill="${sleeveInk}"/><path d="${SL_R}" fill="${sleeveInk}"/>`}
-${art.plainCuffs?'':`<path d="M16 120 62 148 76 124 30 98Z M324 120 278 148 264 124 310 98Z" fill="${d==='contrasting sleeves'?b:t}" opacity=".96"/>`}${art.shoulderStripes?`\n<g fill="none" stroke="${t}" stroke-width="3.2" stroke-linecap="round"><path d="M111 30Q79 38 56 61"/><path d="M114 35Q82 43 59 66"/><path d="M117 40Q85 48 62 71"/><path d="M229 30Q261 38 284 61"/><path d="M226 35Q258 43 281 66"/><path d="M223 40Q255 48 278 71"/></g>`:''}
-<path d="M30 98 76 124M310 98 264 124" stroke="#000" stroke-opacity=".28" stroke-width="1"/>
-<rect width="340" height="320" fill="url(#${id}f)"/><rect width="340" height="320" fill="url(#${id}v)"/>
-<g filter="url(#${id}b)" fill="none" stroke="#000" stroke-linecap="round"><path d="M84 128C80 150 82 176 86 200" stroke-opacity=".11" stroke-width="10"/><path d="M256 128C260 150 258 176 254 200" stroke-opacity=".11" stroke-width="10"/><path d="M64 52L84 124M276 52L256 124" stroke-opacity=".14" stroke-width="7"/></g>
-<g filter="url(#${id}b2)" fill="none" stroke-linecap="round"><path d="M104 160C122 190 118 236 106 288" stroke="#000" stroke-opacity=".07" stroke-width="6"/><path d="M236 160C218 190 222 236 234 288" stroke="#000" stroke-opacity=".07" stroke-width="6"/><path d="M142 200C160 214 186 214 204 200" stroke="#000" stroke-opacity=".07" stroke-width="5"/><path d="M130 100C150 90 190 90 210 100" stroke="#fff" stroke-opacity=".16" stroke-width="8"/></g>
-<rect width="340" height="320" fill="url(#${id}p)" opacity=".05"/>
-<path d="M88 276C130 286 210 286 252 276L252 292C216 304 124 304 88 292Z" fill="#000" opacity=".1"/>
-<path d="M82 282C124 296 216 296 258 282" stroke="${t}" stroke-width="5" stroke-opacity=".5" fill="none"/></g>
-<path d="M110 30C128 46 150 56 170 56S212 46 230 30L226 26C210 38 190 46 170 46S130 38 114 26Z" fill="#000" opacity=".55"/>
-<path d="M110 30C128 46 150 56 170 56S212 46 230 30L220 22C204 36 188 42 170 42S136 36 120 22Z" fill="${collar}"/>
-<path d="M120 22C136 36 154 42 170 42S204 36 220 22" stroke="#000" stroke-opacity=".3" stroke-width="1.2" fill="none"/><path d="M112 30C130 47 150 55 170 55S210 47 228 30" stroke="#fff" stroke-opacity=".22" stroke-width="1" fill="none"/>
-${art.poloCollar?`<path d="M120 22L169 44L151 65L123 37Z M220 22L171 44L189 65L217 37Z" fill="${collar}" stroke="${edge}"/><path d="M170 44V76" stroke="${edge}" stroke-width="4"/>`:''}
-<path d="${BODY}" fill="none" stroke="${edge}" stroke-width="2" stroke-linejoin="round"/>
-<path d="M82 120V290M258 120V290M64 46L82 120M276 46L258 120" stroke="#000" stroke-opacity=".3" stroke-width="1.1" stroke-dasharray="4 3" fill="none"/>
+${art.plainCuffs?'':`<path d="${CUFFS}" fill="${d==='contrasting sleeves'?b:t}"/><path d="M10 133L40 162M330 133L300 162" stroke="#000" stroke-opacity=".4" stroke-width="1.3"/><path d="M7 139L37 168M333 139L303 168" stroke="#000" stroke-opacity=".12" stroke-width="1"/>`}${art.shoulderStripes?`\n<g fill="none" stroke="${t}" stroke-width="3.2" stroke-linecap="round"><path d="M124 28Q92 36 64 60"/><path d="M127 33Q95 41 67 65"/><path d="M130 38Q98 46 70 70"/><path d="M216 28Q248 36 276 60"/><path d="M213 33Q245 41 273 65"/><path d="M210 38Q242 46 270 70"/></g>`:''}
+<rect width="340" height="330" fill="url(#${id}f)"/><rect width="340" height="330" fill="url(#${id}v)"/>
+<g filter="url(#${id}b)" fill="none" stroke="#000" stroke-linecap="round">${FOLDS_SOFT}<g transform="matrix(-1 0 0 1 340 0)">${FOLDS_SOFT}</g><path d="M146 92C162 104 178 104 194 92" stroke="#fff" stroke-opacity=".2" stroke-width="26"/></g>
+<g fill="none" stroke="#000" stroke-linecap="round" stroke-opacity=".42" stroke-width="1.5">${FOLDS_INK}<g transform="matrix(-1 0 0 1 340 0)">${FOLDS_INK}</g></g>
+<rect width="340" height="330" fill="url(#${id}p)" opacity=".05"/>
+<path d="M80 292C134 304 206 304 260 292L260 300C206 312 134 312 80 300Z" fill="#000" opacity=".16"/>
+<path d="M81 295C134 307 206 307 259 295" stroke="${t}" stroke-width="3" stroke-opacity=".55" fill="none"/></g>
+<path d="${NECK_IN}" fill="${shade(collar,-.38)}"/><path d="M132 29C148 24 192 24 208 29" stroke="#000" stroke-opacity=".4" stroke-width="2.2" fill="none"/>
+<path d="M124 30C138 47 153 53 170 53S202 47 216 30L203 24C192 36 182 40 170 40S148 36 137 24Z" fill="${collar}"/>
+<g fill="none" stroke="#000" stroke-linecap="round"><path d="M130 27C142 42 155 47 170 47S198 42 210 27" stroke-opacity=".16" stroke-width=".9"/><path d="M137 24C148 36 158 40 170 40S192 36 203 24" stroke-opacity=".55" stroke-width="1.4"/></g>
+<path d="M125 31C139 48 153 54 170 54S201 48 215 31" stroke="#000" stroke-opacity=".3" stroke-width="1.2" fill="none"/>
+${art.poloCollar?`<path d="M137 24L169 48L153 70L128 38Z M203 24L171 48L187 70L212 38Z" fill="${collar}" stroke="${edge}" stroke-width="1.6" stroke-linejoin="round"/><path d="M170 44V80" stroke="${edge}" stroke-width="4"/><circle cx="170" cy="58" r="2.4" fill="${edge}"/><circle cx="170" cy="70" r="2.4" fill="${edge}"/>`:''}
+<path d="M84 38C94 70 88 110 75 136M256 38C246 70 252 110 265 136" stroke="#000" stroke-opacity=".32" stroke-width="1.2" stroke-dasharray="4 3" fill="none"/>
+<path d="${BODY}" fill="none" stroke="#1c1714" stroke-width="3.2" stroke-linejoin="round"/>
 ${art.crestSrc?`<image href="${esc(asset(art.crestSrc))}" x="188" y="80" width="38" height="42" preserveAspectRatio="xMidYMid meet"/>`:k.crest?`<image href="${k.crest}" x="188" y="80" width="38" height="42" preserveAspectRatio="xMidYMid meet"/>`:''}${mk}${sp}`;
+}
+
+/* The studio cut (23.11.2026): the owner's drawn crew shirt (scripts/kits/studio-template.json, made by studio-template.py) worn in the
+   kit's own colours — its outline, ink folds and fold shadows are the drawing, the colours and patterns are the kit's. Board unchanged. */
+const ST_K=340/721,ST_Y=19.5,ST_T=`translate(0 ${ST_Y}) scale(${ST_K.toFixed(5)})`;
+function studioShirtG(k,id,o){
+  const S=STUDIO,{b,t,pat,sleeveInk,d,ry,art,light,ink,edge}=o;
+  const collar=art.collarInk||(d==='contrasting sleeves'?b:t);
+  const asset=(src)=>typeof RESOLVE==='function'?RESOLVE(src):src;
+  const box=(n)=>{const [cx,cy,w,h]=S.marks[n];return {x:cx*ST_K-w*ST_K/2,y:ST_Y+cy*ST_K-h*ST_K/2,w:w*ST_K,h:h*ST_K,cx:cx*ST_K,cy:ST_Y+cy*ST_K}};
+  const cr=box('crest'),mb=box('maker');
+  const sp=art.sponsorSrc?`<image href="${esc(asset(art.sponsorSrc))}" x="110" y="128" width="120" height="40" preserveAspectRatio="xMidYMid meet"/>`:k.sponsor?sponsorSVG(k.sponsor,b,{neutral:!!k.neutralSponsor,trim:t,patterned:['stripes','hoops','pinstripes','half-and-half','sash','chest band','diagonal','graphic'].includes(d)}):'';
+  const mm=k.maker?markOf('makers',k.maker):null,mAr=mm?(q=>q[2]/q[3])(mm.viewBox.split(' ').map(Number)):1;
+  const mk=k.maker?(mm?markG(mm,mb.cx,mb.cy,mAr>3?34:(mm.kind==='stroke'?30:24),mAr>3?9:(mm.kind==='stroke'?17:15),art.makerInk||ink,art.makerHalo||(light?'#fff':'#000')):`<text x="${mb.cx.toFixed(1)}" y="${(mb.cy+4).toFixed(1)}" text-anchor="middle" font-family="Archivo,Arial,sans-serif" font-weight="700" font-size="${k.maker.length>8?9:11}" letter-spacing=".6" fill="${ink}" fill-opacity=".8">${esc(k.maker.toUpperCase())}</text>`):'';
+  const crestSrc=art.crestSrc?esc(asset(art.crestSrc)):k.crest||null;
+  const shades=S.shade.map((dd,i)=>`<path d="${dd}" fill="#000" fill-opacity="${[.1,.12,.14,.18][i]}"/>`).join('');
+  return `<defs><clipPath id="${id}c"><path d="${S.cut}" transform="${ST_T}"/></clipPath><clipPath id="${id}t"><path d="${S.cut}"/></clipPath>
+<filter id="${id}b" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5"/></filter>
+<radialGradient id="${id}h" cx=".48" cy=".3" r=".55"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<linearGradient id="${id}g" x1="0" y1="0" x2="0" y2="1"><stop offset=".2" stop-color="${b}"/><stop offset="1" stop-color="${t}"/></linearGradient>
+<linearGradient id="${id}n" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity=".45"/><stop offset=".6" stop-color="#000" stop-opacity=".08"/></linearGradient></defs>
+<ellipse cx="170" cy="312" rx="96" ry="8" fill="#000" opacity=".2" filter="url(#${id}b)"/>
+<g clip-path="url(#${id}c)"><rect width="340" height="340" fill="${b}"/>${pat}</g>
+${art.shoulderStripes?`<g clip-path="url(#${id}c)" fill="none" stroke="${t}" stroke-width="3.2" stroke-linecap="round"><path d="M134 22Q98 30 62 62"/><path d="M137 27Q101 35 65 67"/><path d="M140 32Q104 40 68 72"/><path d="M206 22Q242 30 278 62"/><path d="M203 27Q239 35 275 67"/><path d="M200 32Q236 40 272 72"/></g>`:''}
+<g transform="${ST_T}"><g clip-path="url(#${id}t)">
+${d==='hoops'&&ry&&ry.length>=3?'':`<path d="${S.sleeves}" fill="${sleeveInk}"/>`}
+${art.plainCuffs?'':`<path d="${S.cuffs}" fill="${d==='contrasting sleeves'?b:t}"/>`}
+<path d="${S.collar}" fill="${collar}"/>
+<path d="${S.neck}" fill="${shade(collar,-.06)}"/><path d="${S.neck}" fill="url(#${id}n)"/>
+${shades}<rect width="721" height="638" fill="url(#${id}h)"/></g>
+<path d="${S.ink}" fill="#170f0c"/></g>
+${crestSrc?`<image href="${crestSrc}" x="${cr.x.toFixed(1)}" y="${cr.y.toFixed(1)}" width="${cr.w.toFixed(1)}" height="${cr.h.toFixed(1)}" preserveAspectRatio="xMidYMid meet"/>`:''}${mk}${sp}`;
 }
 function shortsG(sh,id){
   const b=sh.hex,t=sh.trimHex||shade(b,-.2),light=lum(b)>150;

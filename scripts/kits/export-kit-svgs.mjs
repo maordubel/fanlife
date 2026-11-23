@@ -5,9 +5,10 @@ const club=process.argv[2];if(!club){console.error('usage: export-kit-svgs.mjs <
 const data=JSON.parse(readFileSync(process.argv[3]||`content/manual/kit-archive-${club}.json`,'utf8'))
 const SPONSOR_TYPE=readFileSync('content/manual/sponsor-type.json','utf8')
 const MARKS=readFileSync('content/manual/maker-marks.json','utf8')
+const STUDIO=readFileSync('scripts/kits/studio-template.json','utf8') // the studio cut (23.11.2026)
 const RESOLVE_SRC=src=>{const f='public'+src,ext=src.split('.').pop();const mime={webp:'image/webp',svg:'image/svg+xml',png:'image/png'}[ext]||'application/octet-stream';return existsSync(f)?`data:${mime};base64,`+readFileSync(f).toString('base64'):src}
 globalThis.__resolve=RESOLVE_SRC
-const {kitSVG}=new Function('const RESOLVE=globalThis.__resolve;const SPONSOR_TYPE='+SPONSOR_TYPE+';const MARKS='+MARKS+';'+readFileSync('scripts/kits/kit-render.js','utf8')+';return {kitSVG}')()
+const {kitSVG}=new Function('const RESOLVE=globalThis.__resolve;const SPONSOR_TYPE='+SPONSOR_TYPE+';const MARKS='+MARKS+';const STUDIO='+STUDIO+';'+readFileSync('scripts/kits/kit-render.js','utf8')+';return {kitSVG}')()
 const crestFile=`public/club-kits/${club}/crest-96.png`
 const crest=existsSync(crestFile)?'data:image/png;base64,'+readFileSync(crestFile).toString('base64'):null
 mkdirSync(`public/club-kits/${club}/svg`,{recursive:true})
