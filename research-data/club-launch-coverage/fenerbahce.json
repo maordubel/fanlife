@@ -63,553 +63,632 @@
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 0,
-      "venue": 0
+      "venue": 0,
+      "attendance": 0
     },
     "1912/13": {
       "matches": 1,
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 0,
-      "venue": 0
+      "venue": 0,
+      "attendance": 0
     },
     "1913/14": {
       "matches": 11,
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 1,
-      "venue": 0
+      "venue": 0,
+      "attendance": 0
     },
     "1916/17": {
       "matches": 8,
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 0,
-      "venue": 0
+      "venue": 0,
+      "attendance": 0
     },
     "1919/20": {
       "matches": 1,
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 0,
-      "venue": 0
+      "venue": 0,
+      "attendance": 0
     },
     "1927/28": {
       "matches": 2,
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 0,
-      "venue": 0
+      "venue": 0,
+      "attendance": 0
     },
     "1928": {
       "matches": 10,
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 0,
-      "venue": 0
+      "venue": 0,
+      "attendance": 0
     },
     "1931/32": {
       "matches": 2,
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 0,
-      "venue": 0
+      "venue": 0,
+      "attendance": 0
     },
     "1935/36": {
       "matches": 24,
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 0,
-      "venue": 0
+      "venue": 0,
+      "attendance": 0
     },
     "1936": {
       "matches": 26,
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 1,
-      "venue": 0
+      "venue": 0,
+      "attendance": 0
     },
     "1937/38": {
       "matches": 24,
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 1,
-      "venue": 0
+      "venue": 0,
+      "attendance": 0
     },
     "1942/43": {
       "matches": 40,
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 1,
-      "venue": 0
+      "venue": 0,
+      "attendance": 0
     },
     "1943/44": {
       "matches": 38,
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 1,
-      "venue": 0
+      "venue": 0,
+      "attendance": 0
     },
     "1947/48": {
       "matches": 16,
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 0,
-      "venue": 0
+      "venue": 0,
+      "attendance": 0
     },
     "1952": {
       "matches": 35,
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 2,
-      "venue": 0
+      "venue": 0,
+      "attendance": 0
     },
     "1955": {
       "matches": 18,
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 0,
-      "venue": 0
+      "venue": 0,
+      "attendance": 0
     },
     "1955/56": {
       "matches": 24,
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 1,
-      "venue": 0
+      "venue": 0,
+      "attendance": 0
     },
     "1956/57": {
       "matches": 20,
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 0,
-      "venue": 0
+      "venue": 0,
+      "attendance": 0
     },
     "1958/59": {
       "matches": 40,
       "clubElevens": 5,
       "bothElevens": 5,
       "fullGoalEvents": 9,
-      "venue": 5
+      "venue": 5,
+      "attendance": 0
     },
     "1960/61": {
       "matches": 2,
       "clubElevens": 2,
       "bothElevens": 2,
       "fullGoalEvents": 2,
-      "venue": 2
+      "venue": 2,
+      "attendance": 0
     },
     "1963/64": {
       "matches": 45,
       "clubElevens": 9,
       "bothElevens": 8,
       "fullGoalEvents": 17,
-      "venue": 8
+      "venue": 8,
+      "attendance": 0
     },
     "1964/65": {
       "matches": 2,
       "clubElevens": 2,
       "bothElevens": 2,
       "fullGoalEvents": 2,
-      "venue": 2
+      "venue": 2,
+      "attendance": 0
     },
     "1967/68": {
       "matches": 4,
       "clubElevens": 4,
       "bothElevens": 4,
       "fullGoalEvents": 4,
-      "venue": 4
+      "venue": 4,
+      "attendance": 0
     },
     "1969/70": {
       "matches": 37,
       "clubElevens": 2,
       "bothElevens": 2,
       "fullGoalEvents": 11,
-      "venue": 2
+      "venue": 2,
+      "attendance": 0
     },
     "1971/72": {
       "matches": 42,
       "clubElevens": 2,
       "bothElevens": 2,
       "fullGoalEvents": 10,
-      "venue": 2
+      "venue": 2,
+      "attendance": 0
     },
     "1970/71": {
       "matches": 2,
       "clubElevens": 2,
       "bothElevens": 2,
       "fullGoalEvents": 2,
-      "venue": 2
+      "venue": 2,
+      "attendance": 0
     },
     "1973/74": {
       "matches": 50,
       "clubElevens": 4,
       "bothElevens": 4,
       "fullGoalEvents": 14,
-      "venue": 4
+      "venue": 4,
+      "attendance": 0
     },
     "1972/73": {
       "matches": 4,
       "clubElevens": 4,
       "bothElevens": 4,
       "fullGoalEvents": 4,
-      "venue": 4
+      "venue": 4,
+      "attendance": 0
     },
     "1975/76": {
       "matches": 45,
       "clubElevens": 2,
       "bothElevens": 2,
       "fullGoalEvents": 7,
-      "venue": 2
+      "venue": 2,
+      "attendance": 0
     },
     "1974/75": {
       "matches": 2,
       "clubElevens": 2,
       "bothElevens": 2,
       "fullGoalEvents": 2,
-      "venue": 2
+      "venue": 2,
+      "attendance": 0
     },
     "1976/77": {
       "matches": 44,
       "clubElevens": 2,
       "bothElevens": 2,
       "fullGoalEvents": 10,
-      "venue": 2
+      "venue": 2,
+      "attendance": 0
     },
     "1978/79": {
       "matches": 43,
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 4,
-      "venue": 0
+      "venue": 0,
+      "attendance": 0
     },
     "1977/78": {
       "matches": 2,
       "clubElevens": 2,
       "bothElevens": 2,
       "fullGoalEvents": 2,
-      "venue": 2
+      "venue": 2,
+      "attendance": 0
     },
     "1979/80": {
       "matches": 4,
       "clubElevens": 4,
       "bothElevens": 4,
       "fullGoalEvents": 4,
-      "venue": 4
+      "venue": 4,
+      "attendance": 0
     },
     "1981": {
       "matches": 42,
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 5,
-      "venue": 0
+      "venue": 0,
+      "attendance": 0
     },
     "1981/82": {
       "matches": 47,
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 7,
-      "venue": 0
+      "venue": 0,
+      "attendance": 0
     },
     "1982": {
       "matches": 50,
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 6,
-      "venue": 0
+      "venue": 0,
+      "attendance": 0
     },
     "1982/83": {
       "matches": 2,
       "clubElevens": 1,
       "bothElevens": 1,
       "fullGoalEvents": 2,
-      "venue": 2
+      "venue": 2,
+      "attendance": 0
     },
     "1983/84": {
       "matches": 2,
       "clubElevens": 2,
       "bothElevens": 2,
       "fullGoalEvents": 2,
-      "venue": 2
+      "venue": 2,
+      "attendance": 0
     },
     "1985/86": {
       "matches": 43,
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 9,
-      "venue": 0
+      "venue": 0,
+      "attendance": 0
     },
     "1984/85": {
       "matches": 4,
       "clubElevens": 4,
       "bothElevens": 4,
       "fullGoalEvents": 4,
-      "venue": 4
+      "venue": 4,
+      "attendance": 0
     },
     "1986/87": {
       "matches": 44,
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 6,
-      "venue": 0
+      "venue": 0,
+      "attendance": 0
     },
     "1987/88": {
       "matches": 44,
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 5,
-      "venue": 0
+      "venue": 0,
+      "attendance": 0
     },
     "1988/89": {
       "matches": 2,
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 2,
-      "venue": 2
+      "venue": 2,
+      "attendance": 0
     },
     "1989/90": {
       "matches": 4,
       "clubElevens": 4,
       "bothElevens": 4,
       "fullGoalEvents": 4,
-      "venue": 4
+      "venue": 4,
+      "attendance": 0
     },
     "1992/93": {
       "matches": 37,
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 0,
-      "venue": 0
+      "venue": 0,
+      "attendance": 0
     },
     "1991/92": {
       "matches": 4,
       "clubElevens": 4,
       "bothElevens": 4,
       "fullGoalEvents": 4,
-      "venue": 4
+      "venue": 4,
+      "attendance": 0
     },
     "1994/95": {
       "matches": 47,
       "clubElevens": 4,
       "bothElevens": 4,
       "fullGoalEvents": 5,
-      "venue": 4
+      "venue": 4,
+      "attendance": 0
     },
     "1993/94": {
       "matches": 4,
       "clubElevens": 4,
       "bothElevens": 4,
       "fullGoalEvents": 4,
-      "venue": 3
+      "venue": 3,
+      "attendance": 0
     },
     "1995/96": {
       "matches": 54,
       "clubElevens": 8,
       "bothElevens": 8,
       "fullGoalEvents": 12,
-      "venue": 8
+      "venue": 8,
+      "attendance": 0
     },
     "1996/97": {
       "matches": 2,
       "clubElevens": 2,
       "bothElevens": 2,
       "fullGoalEvents": 1,
-      "venue": 2
+      "venue": 2,
+      "attendance": 0
     },
     "1998/99": {
       "matches": 38,
       "clubElevens": 2,
       "bothElevens": 2,
       "fullGoalEvents": 4,
-      "venue": 2
+      "venue": 2,
+      "attendance": 0
     },
     "1997/98": {
       "matches": 4,
       "clubElevens": 4,
       "bothElevens": 4,
       "fullGoalEvents": 4,
-      "venue": 4
+      "venue": 4,
+      "attendance": 0
     },
     "1999/00": {
       "matches": 37,
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 3,
-      "venue": 0
+      "venue": 0,
+      "attendance": 0
     },
     "2000/01": {
       "matches": 8,
       "clubElevens": 8,
       "bothElevens": 8,
       "fullGoalEvents": 8,
-      "venue": 8
+      "venue": 8,
+      "attendance": 0
     },
     "2002/03": {
       "matches": 36,
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 4,
-      "venue": 0
+      "venue": 0,
+      "attendance": 0
     },
     "2001/02": {
       "matches": 6,
       "clubElevens": 6,
       "bothElevens": 6,
       "fullGoalEvents": 6,
-      "venue": 6
+      "venue": 6,
+      "attendance": 0
     },
     "2003/04": {
       "matches": 8,
       "clubElevens": 8,
       "bothElevens": 8,
       "fullGoalEvents": 8,
-      "venue": 8
+      "venue": 8,
+      "attendance": 0
     },
     "2004/05": {
       "matches": 6,
       "clubElevens": 6,
       "bothElevens": 6,
       "fullGoalEvents": 6,
-      "venue": 6
+      "venue": 6,
+      "attendance": 0
     },
     "2005/06": {
       "matches": 12,
       "clubElevens": 12,
       "bothElevens": 12,
       "fullGoalEvents": 12,
-      "venue": 12
+      "venue": 12,
+      "attendance": 0
     },
     "2007/08": {
       "matches": 57,
       "clubElevens": 12,
       "bothElevens": 12,
       "fullGoalEvents": 17,
-      "venue": 12
+      "venue": 12,
+      "attendance": 0
     },
     "2008/09": {
       "matches": 58,
       "clubElevens": 10,
       "bothElevens": 10,
       "fullGoalEvents": 14,
-      "venue": 10
+      "venue": 10,
+      "attendance": 0
     },
     "2009/10": {
       "matches": 12,
       "clubElevens": 12,
       "bothElevens": 0,
       "fullGoalEvents": 11,
-      "venue": 12
+      "venue": 12,
+      "attendance": 0
     },
     "2010/11": {
       "matches": 44,
       "clubElevens": 4,
       "bothElevens": 0,
       "fullGoalEvents": 6,
-      "venue": 4
+      "venue": 4,
+      "attendance": 0
     },
     "2012/13": {
       "matches": 18,
       "clubElevens": 18,
       "bothElevens": 18,
       "fullGoalEvents": 18,
-      "venue": 18
+      "venue": 18,
+      "attendance": 0
     },
     "2013": {
       "matches": 46,
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 3,
-      "venue": 0
+      "venue": 0,
+      "attendance": 0
     },
     "2013/14": {
       "matches": 46,
       "clubElevens": 4,
       "bothElevens": 4,
       "fullGoalEvents": 7,
-      "venue": 4
+      "venue": 4,
+      "attendance": 0
     },
     "2015/16": {
       "matches": 14,
       "clubElevens": 14,
       "bothElevens": 14,
       "fullGoalEvents": 14,
-      "venue": 14
+      "venue": 14,
+      "attendance": 0
     },
     "2016/17": {
       "matches": 57,
       "clubElevens": 12,
       "bothElevens": 12,
       "fullGoalEvents": 14,
-      "venue": 12
+      "venue": 12,
+      "attendance": 0
     },
     "2017/18": {
       "matches": 4,
       "clubElevens": 4,
       "bothElevens": 4,
       "fullGoalEvents": 4,
-      "venue": 4
+      "venue": 4,
+      "attendance": 0
     },
     "2018/19": {
       "matches": 50,
       "clubElevens": 10,
       "bothElevens": 10,
       "fullGoalEvents": 13,
-      "venue": 10
+      "venue": 10,
+      "attendance": 0
     },
     "2019/20": {
       "matches": 39,
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 2,
-      "venue": 0
+      "venue": 0,
+      "attendance": 0
     },
     "2020/21": {
       "matches": 44,
       "clubElevens": 0,
       "bothElevens": 0,
       "fullGoalEvents": 3,
-      "venue": 0
+      "venue": 0,
+      "attendance": 0
     },
     "2021/22": {
       "matches": 10,
       "clubElevens": 10,
       "bothElevens": 10,
       "fullGoalEvents": 10,
-      "venue": 10
+      "venue": 10,
+      "attendance": 0
     },
     "2022/23": {
       "matches": 15,
       "clubElevens": 14,
       "bothElevens": 14,
       "fullGoalEvents": 14,
-      "venue": 14
+      "venue": 14,
+      "attendance": 0
     },
     "2023/24": {
       "matches": 58,
       "clubElevens": 16,
       "bothElevens": 16,
       "fullGoalEvents": 19,
-      "venue": 16
+      "venue": 16,
+      "attendance": 0
     },
     "2024/25": {
       "matches": 56,
-      "clubElevens": 16,
-      "bothElevens": 16,
-      "fullGoalEvents": 18,
-      "venue": 16
+      "clubElevens": 52,
+      "bothElevens": 52,
+      "fullGoalEvents": 47,
+      "venue": 52,
+      "attendance": 0
     },
     "2025/26": {
       "matches": 25,
       "clubElevens": 14,
       "bothElevens": 14,
       "fullGoalEvents": 16,
-      "venue": 14
+      "venue": 14,
+      "attendance": 0
     },
     "2026/27": {
       "matches": 10,
       "clubElevens": 10,
       "bothElevens": 10,
       "fullGoalEvents": 10,
-      "venue": 10
+      "venue": 10,
+      "attendance": 0
     }
   },
   "matchConflictDates": [
@@ -671,5 +750,18 @@
       "status": "Print reference identified; match pages have not been checked against it."
     }
   ],
-  "fullySpecifiedKitBuilderShirts": 3
+  "fullySpecifiedKitBuilderShirts": 3,
+  "latestMatchResearch": {
+    "counts": {
+      "lineup": 36,
+      "bench": 36,
+      "opponentLineup": 36,
+      "goalEvents": 29,
+      "scorers": 27,
+      "venue": 36,
+      "referee": 36,
+      "matchesEnriched": 36
+    },
+    "heldReportDates": []
+  }
 }

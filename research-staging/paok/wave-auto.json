@@ -43599,7 +43599,7 @@
     "on": "2010-08-26",
     "competition": "UEFA Europa League",
     "score": "1-1",
-    "venue": null,
+    "venue": "Fenerbahçe Şükrü Saracoğlu Spor Kompleksi",
     "lineup": [
      "Dario Krešić",
      "Anis Boussaidi",
@@ -43804,7 +43804,40 @@
       "Vassilis Koutsianikoulis",
       "Miroslaw Sznaucner"
      ]
-    }
+    },
+    "opponentLineup": [
+     "Volkan Demirel",
+     "Diego Lugano",
+     "Emre Belözoğlu",
+     "Mamadou Niang",
+     "Alex",
+     "Miroslav Stoch",
+     "Cristian",
+     "André Santos",
+     "Mehmet Topuz",
+     "Bilica",
+     "Gökhan Gönül"
+    ],
+    "goalEvents": [
+     {
+      "name": "Emre Belözoğlu",
+      "minute": 50,
+      "side": "home",
+      "own_goal": false
+     },
+     {
+      "name": "Zlatan Muslimović",
+      "minute": 102,
+      "side": "away",
+      "own_goal": false
+     }
+    ],
+    "season": "2010/11",
+    "homeGoals": 1,
+    "awayGoals": 1,
+    "home": "Fenerbahçe",
+    "away": "PAOK",
+    "us": "away"
    },
    "sources": [
     "a-src-uefa-2003130"
@@ -43825,7 +43858,7 @@
     "on": "2010-08-19",
     "competition": "UEFA Europa League",
     "score": "1-0",
-    "venue": null,
+    "venue": "Toumba Stadium",
     "lineup": [
      "Dario Krešić",
      "Anis Boussaidi",
@@ -44030,7 +44063,34 @@
       "Miroslaw Sznaucner",
       "Lucio Filomeno"
      ]
-    }
+    },
+    "opponentLineup": [
+     "Volkan Demirel",
+     "Diego Lugano",
+     "İlhan Eker",
+     "Alex",
+     "Cristian",
+     "Selçuk Şahin",
+     "Semih Şentürk",
+     "André Santos",
+     "Mehmet Topuz",
+     "Gökhan Gönül",
+     "Caner Erkin"
+    ],
+    "goalEvents": [
+     {
+      "name": "Vieirinha",
+      "minute": 19,
+      "side": "home",
+      "own_goal": false
+     }
+    ],
+    "season": "2010/11",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "home": "PAOK",
+    "away": "Fenerbahçe",
+    "us": "home"
    },
    "sources": [
     "a-src-uefa-2003093"

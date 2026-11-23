@@ -124,7 +124,7 @@ export function buildEntries(data:Pack):Entry[]{
 }
 
 // ------------------------------------------------------------------ moment → match → people (review D01)
-type MatchValue={name?:string;on?:string|null;competition?:string|null;score?:string|null;venue?:string|null;season?:string|null;lineup?:unknown;scorers?:unknown;opponentLineup?:unknown;goalEvents?:unknown}
+type MatchValue={name?:string;on?:string|null;competition?:string|null;score?:string|null;venue?:string|null;season?:string|null;lineup?:unknown;scorers?:unknown;opponentLineup?:unknown;goalEvents?:unknown;attendance?:number;referee?:string}
 const scoreOf=(s:string|null|undefined)=>{const m=/(\d{1,2})\s*[-–:]\s*(\d{1,2})/.exec(s||'');return m?`${Number(m[1])}-${Number(m[2])}`:null}
 const nameOf=(x:unknown)=>typeof x==='string'?x:x&&typeof x==='object'&&typeof (x as {name?:unknown}).name==='string'?(x as {name:string}).name:null
 /**
@@ -180,7 +180,7 @@ function linkMatches(entries:Entry[],players:Entry[],matches:Matches,seasons:{id
   const started=new Set<string>(),scored=new Set<string>();let unnamed=0
   for(const x of lineup){const id=who(x,e.year);if(id)started.add(id);else unnamed++}
   for(const x of scorers){if(x&&typeof x==='object'&&'ownGoal' in x&&x.ownGoal===true)continue;const id=who(x,e.year);if(id)scored.add(id);else if(nameOf(x))unnamed++}
-  const report=(Array.isArray(v.opponentLineup)&&v.opponentLineup.length>0)||(Array.isArray(v.goalEvents)&&v.goalEvents.length>0)
+  const report=typeof v.attendance==='number'||!!v.referee||(Array.isArray(v.opponentLineup)&&v.opponentLineup.length>0)||(Array.isArray(v.goalEvents)&&v.goalEvents.length>0)
   e.match={matchId:m.id,competition:typeof v.competition==='string'?v.competition:null,score:typeof v.score==='string'?v.score:null,venue:typeof v.venue==='string'?v.venue:null,started:[...started].sort(),scored:[...scored].sort(),unnamed,...(report?{report:true as const}:{})}
  }
 }

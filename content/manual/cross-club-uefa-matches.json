@@ -1,0 +1,1714 @@
+{
+  "atalanta": {
+    "sources": [
+      {
+        "id": "uefa-3250",
+        "title": "UEFA · Fenerbahçe 0-1 Atalanta · 1990-10-24",
+        "url": "https://www.uefa.com/uefaeuropaleague/match/3250--",
+        "publisher": "UEFA",
+        "access": "available",
+        "checkedAt": "2026-11-23",
+        "official": "competition"
+      },
+      {
+        "id": "uefa-3251",
+        "title": "UEFA · Atalanta 4-1 Fenerbahçe · 1990-11-07",
+        "url": "https://www.uefa.com/uefaeuropaleague/match/3251--",
+        "publisher": "UEFA",
+        "access": "available",
+        "checkedAt": "2026-11-23",
+        "official": "competition"
+      }
+    ],
+    "matches": [
+      {
+        "id": "m-uefa-3250",
+        "value": {
+          "name": "Fenerbahçe 0-1 Atalanta",
+          "on": "1990-10-24",
+          "competition": "UEFA Cup",
+          "season": "1989/90",
+          "home": "Fenerbahçe",
+          "away": "Atalanta",
+          "homeGoals": 0,
+          "awayGoals": 1,
+          "score": "0-1",
+          "us": "away",
+          "venue": "Ferencváros Stadion",
+          "sport": "football",
+          "scorers": [
+            {
+              "name": "Eligio Nicolini",
+              "minute": 43,
+              "ownGoal": false
+            }
+          ],
+          "lineup": [
+            "Fabrizio Ferron",
+            "Renzo Contratto",
+            "Luigino Pasciullo",
+            "Sergio Porrini",
+            "Tebaldo Bigliardi",
+            "Domenico Progna",
+            "Roberto Bordin",
+            "Walter Bonacina",
+            "Aparecido Pauli Evair",
+            "Eligio Nicolini",
+            "Carlo Perrone"
+          ],
+          "bench": [],
+          "goalEvents": [
+            {
+              "name": "Eligio Nicolini",
+              "minute": 43,
+              "side": "away",
+              "own_goal": false
+            }
+          ],
+          "opponentLineup": [
+            "Harald Schumacher",
+            "Erdi Demir",
+            "Semíh Yuvakuran",
+            "Hasan Özdemir",
+            "Müjdat Yetkiner",
+            "Ismail Kartal",
+            "Hakan Tecimer",
+            "Senol Çorlu",
+            "Fadilj Vokri",
+            "Oğuz Çetin",
+            "Aykut Kocaman"
+          ]
+        },
+        "sources": [
+          "uefa-3250"
+        ],
+        "confidence": 2,
+        "status": "approved",
+        "researchedAt": "2026-11-23",
+        "approvedAt": "2026-11-23",
+        "approvedBy": "automated:archive-source-verification",
+        "parserCertainty": "high",
+        "conflictFree": true
+      },
+      {
+        "id": "m-uefa-3251",
+        "value": {
+          "name": "Atalanta 4-1 Fenerbahçe",
+          "on": "1990-11-07",
+          "competition": "UEFA Cup",
+          "season": "1989/90",
+          "home": "Atalanta",
+          "away": "Fenerbahçe",
+          "homeGoals": 4,
+          "awayGoals": 1,
+          "score": "4-1",
+          "us": "home",
+          "venue": "Stadio di Bergamo",
+          "sport": "football",
+          "scorers": [
+            {
+              "name": "Aparecido Pauli Evair",
+              "minute": 2,
+              "ownGoal": false
+            },
+            {
+              "name": "Carlo Perrone",
+              "minute": 55,
+              "ownGoal": false
+            },
+            {
+              "name": "Eligio Nicolini",
+              "minute": 56,
+              "ownGoal": false
+            },
+            {
+              "name": "Walter Bonacina",
+              "minute": 61,
+              "ownGoal": false
+            }
+          ],
+          "lineup": [
+            "Fabrizio Ferron",
+            "Renzo Contratto",
+            "Luigino Pasciullo",
+            "Walter Bonacina",
+            "Sergio Porrini",
+            "Domenico Progna",
+            "Glenn Strömberg",
+            "Roberto Bordin",
+            "Aparecido Pauli Evair",
+            "Eligio Nicolini",
+            "Carlo Perrone"
+          ],
+          "bench": [],
+          "goalEvents": [
+            {
+              "name": "Aparecido Pauli Evair",
+              "minute": 2,
+              "side": "home",
+              "own_goal": false
+            },
+            {
+              "name": "Carlo Perrone",
+              "minute": 55,
+              "side": "home",
+              "own_goal": false
+            },
+            {
+              "name": "Eligio Nicolini",
+              "minute": 56,
+              "side": "home",
+              "own_goal": false
+            },
+            {
+              "name": "Walter Bonacina",
+              "minute": 61,
+              "side": "home",
+              "own_goal": false
+            },
+            {
+              "name": "Ismail Kartal",
+              "minute": 90,
+              "side": "away",
+              "own_goal": false
+            }
+          ],
+          "opponentLineup": [
+            "Harald Schumacher",
+            "Ahmet Suphi Evke",
+            "Semíh Yuvakuran",
+            "Ercan Kol",
+            "Müjdat Yetkiner",
+            "Gökhan Gedikali",
+            "Ismail Kartal",
+            "Ridvan Dilmen",
+            "Fadilj Vokri",
+            "Oğuz Çetin",
+            "Aykut Kocaman"
+          ]
+        },
+        "sources": [
+          "uefa-3251"
+        ],
+        "confidence": 2,
+        "status": "approved",
+        "researchedAt": "2026-11-23",
+        "approvedAt": "2026-11-23",
+        "approvedBy": "automated:archive-source-verification",
+        "parserCertainty": "high",
+        "conflictFree": true
+      }
+    ]
+  },
+  "celtic": {
+    "sources": [
+      {
+        "id": "uefa-2016947",
+        "title": "UEFA · Celtic 2-2 Fenerbahçe · 2015-10-01",
+        "url": "https://www.uefa.com/uefaeuropaleague/match/2016947--",
+        "publisher": "UEFA",
+        "access": "available",
+        "checkedAt": "2026-11-23",
+        "official": "competition"
+      },
+      {
+        "id": "uefa-2017043",
+        "title": "UEFA · Fenerbahçe 1-1 Celtic · 2015-12-10",
+        "url": "https://www.uefa.com/uefaeuropaleague/match/2017043--",
+        "publisher": "UEFA",
+        "access": "available",
+        "checkedAt": "2026-11-23",
+        "official": "competition"
+      },
+      {
+        "id": "uefa-1211",
+        "title": "UEFA · Partizan 2-1 Celtic · 1989-09-12",
+        "url": "https://www.uefa.com/uefasupercup/match/1211--",
+        "publisher": "UEFA",
+        "access": "available",
+        "checkedAt": "2026-11-23",
+        "official": "competition"
+      },
+      {
+        "id": "uefa-1212",
+        "title": "UEFA · Celtic 5-4 Partizan · 1989-09-27",
+        "url": "https://www.uefa.com/uefasupercup/match/1212--",
+        "publisher": "UEFA",
+        "access": "available",
+        "checkedAt": "2026-11-23",
+        "official": "competition"
+      }
+    ],
+    "matches": [
+      {
+        "id": "m-uefa-2016947",
+        "value": {
+          "name": "Celtic 2-2 Fenerbahçe",
+          "on": "2015-10-01",
+          "competition": "UEFA Europa League",
+          "season": "2015/16",
+          "home": "Celtic",
+          "away": "Fenerbahçe",
+          "homeGoals": 2,
+          "awayGoals": 2,
+          "score": "2-2",
+          "us": "home",
+          "venue": "Celtic Park",
+          "sport": "football",
+          "scorers": [
+            {
+              "name": "Leigh Griffiths",
+              "minute": 28,
+              "ownGoal": false
+            },
+            {
+              "name": "Kris Commons",
+              "minute": 32,
+              "ownGoal": false
+            }
+          ],
+          "lineup": [
+            "Craig Gordon",
+            "Efe Ambrose",
+            "Nir Bitton",
+            "Scott Brown",
+            "Leigh Griffiths",
+            "Kris Commons",
+            "Dedryck Boyata",
+            "Mikael Lustig",
+            "Stefan Johansen",
+            "James Forrest",
+            "Kieran Tierney"
+          ],
+          "bench": [],
+          "goalEvents": [
+            {
+              "name": "Leigh Griffiths",
+              "minute": 28,
+              "side": "home",
+              "own_goal": false
+            },
+            {
+              "name": "Kris Commons",
+              "minute": 32,
+              "side": "home",
+              "own_goal": false
+            },
+            {
+              "name": "Fernandão",
+              "minute": 43,
+              "side": "away",
+              "own_goal": false
+            },
+            {
+              "name": "Fernandão",
+              "minute": 48,
+              "side": "away",
+              "own_goal": false
+            }
+          ],
+          "opponentLineup": [
+            "Fabiano",
+            "Hasan Ali Kaldırım",
+            "Simon Kjær",
+            "Mehmet Topal",
+            "Ozan Tufan",
+            "Robin van Persie",
+            "Raul Meireles",
+            "Nani",
+            "Şener Özbayraklı",
+            "Volkan Şen",
+            "Bruno Alves"
+          ]
+        },
+        "sources": [
+          "uefa-2016947"
+        ],
+        "confidence": 2,
+        "status": "approved",
+        "researchedAt": "2026-11-23",
+        "approvedAt": "2026-11-23",
+        "approvedBy": "automated:archive-source-verification",
+        "parserCertainty": "high",
+        "conflictFree": true
+      },
+      {
+        "id": "m-uefa-2017043",
+        "value": {
+          "name": "Fenerbahçe 1-1 Celtic",
+          "on": "2015-12-10",
+          "competition": "UEFA Europa League",
+          "season": "2015/16",
+          "home": "Fenerbahçe",
+          "away": "Celtic",
+          "homeGoals": 1,
+          "awayGoals": 1,
+          "score": "1-1",
+          "us": "away",
+          "venue": "Fenerbahçe Şükrü Saracoğlu Spor Kompleksi",
+          "sport": "football",
+          "scorers": [
+            {
+              "name": "Kris Commons",
+              "minute": 75,
+              "ownGoal": false
+            }
+          ],
+          "lineup": [
+            "Craig Gordon",
+            "Jozo Šimunović",
+            "Nir Bitton",
+            "Nadir Çiftçi",
+            "Stuart Armstrong",
+            "Scott Allan",
+            "Dedryck Boyata",
+            "Mikael Lustig",
+            "Stefan Johansen",
+            "Callum McGregor",
+            "Kieran Tierney"
+          ],
+          "bench": [],
+          "goalEvents": [
+            {
+              "name": "Lazar Marković",
+              "minute": 39,
+              "side": "home",
+              "own_goal": false
+            },
+            {
+              "name": "Kris Commons",
+              "minute": 75,
+              "side": "away",
+              "own_goal": false
+            }
+          ],
+          "opponentLineup": [
+            "Fabiano",
+            "Hasan Ali Kaldırım",
+            "Mehmet Topal",
+            "Souza",
+            "Fernandão",
+            "Diego",
+            "Bruno Alves",
+            "Alper Potuk",
+            "Lazar Marković",
+            "Abdoulaye Ba",
+            "Gökhan Gönül"
+          ]
+        },
+        "sources": [
+          "uefa-2017043"
+        ],
+        "confidence": 2,
+        "status": "approved",
+        "researchedAt": "2026-11-23",
+        "approvedAt": "2026-11-23",
+        "approvedBy": "automated:archive-source-verification",
+        "parserCertainty": "high",
+        "conflictFree": true
+      },
+      {
+        "id": "m-uefa-1211",
+        "value": {
+          "name": "Partizan 2-1 Celtic",
+          "on": "1989-09-12",
+          "competition": "European Cup Winners' Cup",
+          "season": "1989/90",
+          "home": "Partizan",
+          "away": "Celtic",
+          "homeGoals": 2,
+          "awayGoals": 1,
+          "score": "2-1",
+          "us": "away",
+          "venue": null,
+          "sport": "football",
+          "scorers": [
+            {
+              "name": "Mike Galloway",
+              "minute": 41,
+              "ownGoal": false
+            }
+          ],
+          "lineup": [
+            "Pat Bonner",
+            "Chris Morris",
+            "Anthony Rogan",
+            "Roy Aitken",
+            "Derek Whyte",
+            "Peter Grant",
+            "Mike Galloway",
+            "Paul McStay",
+            "Dariusz Dziekanowski",
+            "Tommy Coyne",
+            "Tommy Burns"
+          ],
+          "bench": [],
+          "goalEvents": [
+            {
+              "name": "Goran Milojević",
+              "minute": 19,
+              "side": "home",
+              "own_goal": false
+            },
+            {
+              "name": "Mike Galloway",
+              "minute": 41,
+              "side": "away",
+              "own_goal": false
+            },
+            {
+              "name": "Milan Djurdjevic",
+              "minute": 54,
+              "side": "home",
+              "own_goal": false
+            }
+          ],
+          "opponentLineup": [
+            "Fahrudin Omerovic",
+            "Bajro Zupic",
+            "Darko Milanič",
+            "Predrag Spasic",
+            "Goran Petric",
+            "Budimir Vujacic",
+            "Aleksandar Djordjevic",
+            "Goran Milojević",
+            "Milan Djurdjevic",
+            "Milko Djurovski",
+            "Goran Bogdanovic"
+          ]
+        },
+        "sources": [
+          "uefa-1211"
+        ],
+        "confidence": 2,
+        "status": "approved",
+        "researchedAt": "2026-11-23",
+        "approvedAt": "2026-11-23",
+        "approvedBy": "automated:archive-source-verification",
+        "parserCertainty": "high",
+        "conflictFree": true
+      },
+      {
+        "id": "m-uefa-1212",
+        "value": {
+          "name": "Celtic 5-4 Partizan",
+          "on": "1989-09-27",
+          "competition": "European Cup Winners' Cup",
+          "season": "1989/90",
+          "home": "Celtic",
+          "away": "Partizan",
+          "homeGoals": 5,
+          "awayGoals": 4,
+          "score": "5-4",
+          "us": "home",
+          "venue": null,
+          "sport": "football",
+          "scorers": [
+            {
+              "name": "Dariusz Dziekanowski",
+              "minute": 25,
+              "ownGoal": false
+            },
+            {
+              "name": "Dariusz Dziekanowski",
+              "minute": 47,
+              "ownGoal": false
+            },
+            {
+              "name": "Dariusz Dziekanowski",
+              "minute": 56,
+              "ownGoal": false
+            },
+            {
+              "name": "Andy Walker",
+              "minute": 64,
+              "ownGoal": false
+            },
+            {
+              "name": "Dariusz Dziekanowski",
+              "minute": 81,
+              "ownGoal": false
+            }
+          ],
+          "lineup": [],
+          "bench": [],
+          "goalEvents": [
+            {
+              "name": "Budimir Vujacic",
+              "minute": 8,
+              "side": "away",
+              "own_goal": false
+            },
+            {
+              "name": "Dariusz Dziekanowski",
+              "minute": 25,
+              "side": "home",
+              "own_goal": false
+            },
+            {
+              "name": "Dariusz Dziekanowski",
+              "minute": 47,
+              "side": "home",
+              "own_goal": false
+            },
+            {
+              "name": "Aleksandar Djordjevic",
+              "minute": 50,
+              "side": "away",
+              "own_goal": false
+            },
+            {
+              "name": "Dariusz Dziekanowski",
+              "minute": 56,
+              "side": "home",
+              "own_goal": false
+            },
+            {
+              "name": "Milko Djurovski",
+              "minute": 60,
+              "side": "away",
+              "own_goal": false
+            },
+            {
+              "name": "Andy Walker",
+              "minute": 64,
+              "side": "home",
+              "own_goal": false
+            },
+            {
+              "name": "Dariusz Dziekanowski",
+              "minute": 81,
+              "side": "home",
+              "own_goal": false
+            },
+            {
+              "name": "Sladjan Šćepović",
+              "minute": 89,
+              "side": "away",
+              "own_goal": false
+            }
+          ],
+          "opponentLineup": []
+        },
+        "sources": [
+          "uefa-1212"
+        ],
+        "confidence": 2,
+        "status": "approved",
+        "researchedAt": "2026-11-23",
+        "approvedAt": "2026-11-23",
+        "approvedBy": "automated:archive-source-verification",
+        "parserCertainty": "high",
+        "conflictFree": true
+      }
+    ]
+  },
+  "maccabi-haifa": {
+    "sources": [
+      {
+        "id": "uefa-52996",
+        "title": "UEFA · Maccabi Haifa 0-1 Partizan · 1996-07-17",
+        "url": "https://www.uefa.com/uefaeuropaleague/match/52996--",
+        "publisher": "UEFA",
+        "access": "available",
+        "checkedAt": "2026-11-23",
+        "official": "competition"
+      },
+      {
+        "id": "uefa-52997",
+        "title": "UEFA · Partizan 3-1 Maccabi Haifa · 1996-07-24",
+        "url": "https://www.uefa.com/uefaeuropaleague/match/52997--",
+        "publisher": "UEFA",
+        "access": "available",
+        "checkedAt": "2026-11-23",
+        "official": "competition"
+      },
+      {
+        "id": "uefa-85023",
+        "title": "UEFA · Maccabi Haifa 1-0 Partizan · 2006-11-23",
+        "url": "https://www.uefa.com/uefaeuropaleague/match/85023--",
+        "publisher": "UEFA",
+        "access": "available",
+        "checkedAt": "2026-11-23",
+        "official": "competition"
+      }
+    ],
+    "matches": [
+      {
+        "id": "m-uefa-52996",
+        "value": {
+          "name": "Maccabi Haifa 0-1 Partizan",
+          "on": "1996-07-17",
+          "competition": "UEFA Cup",
+          "season": "1995/96",
+          "home": "Maccabi Haifa",
+          "away": "Partizan",
+          "homeGoals": 0,
+          "awayGoals": 1,
+          "score": "0-1",
+          "us": "home",
+          "venue": "Kiryat Eliezer",
+          "sport": "football",
+          "scorers": [],
+          "lineup": [
+            "Bonni Ginzburg",
+            "Alon Harazi",
+            "Alon Hazan",
+            "Serhiy Balanchuk",
+            "Serhiy Kandaurov",
+            "Roni Levi",
+            "Eyal Berkovic",
+            "Marko Balbul",
+            "Arik Benado",
+            "Savo Barac",
+            "Beni Hadad"
+          ],
+          "bench": [],
+          "goalEvents": [
+            {
+              "name": "Djordje Svetlicic",
+              "minute": 8,
+              "side": "away",
+              "own_goal": false
+            }
+          ],
+          "opponentLineup": [
+            "Nicola Damjanac",
+            "Drazen Bolic",
+            "Niša Saveljić",
+            "Igor Tasevski",
+            "Viktor Trenevski",
+            "Georgi Hristov",
+            "Dragan Ciric",
+            "Damir Čakar",
+            "Djordje Svetlicic",
+            "Nenad Dukanovic",
+            "Darko Tešović"
+          ]
+        },
+        "sources": [
+          "uefa-52996"
+        ],
+        "confidence": 2,
+        "status": "approved",
+        "researchedAt": "2026-11-23",
+        "approvedAt": "2026-11-23",
+        "approvedBy": "automated:archive-source-verification",
+        "parserCertainty": "high",
+        "conflictFree": true
+      },
+      {
+        "id": "m-uefa-52997",
+        "value": {
+          "name": "Partizan 3-1 Maccabi Haifa",
+          "on": "1996-07-24",
+          "competition": "UEFA Cup",
+          "season": "1995/96",
+          "home": "Partizan",
+          "away": "Maccabi Haifa",
+          "homeGoals": 3,
+          "awayGoals": 1,
+          "score": "3-1",
+          "us": "away",
+          "venue": "Stadion FK Partizan",
+          "sport": "football",
+          "scorers": [
+            {
+              "name": "Haim Revivo",
+              "minute": 9,
+              "ownGoal": false
+            }
+          ],
+          "lineup": [
+            "Bonni Ginzburg",
+            "Avishay Zano",
+            "Alon Harazi",
+            "Haim Silvas",
+            "Serhiy Balanchuk",
+            "Serhiy Kandaurov",
+            "Roni Levi",
+            "Eyal Berkovic",
+            "Haim Revivo",
+            "Arik Benado",
+            "Savo Barac"
+          ],
+          "bench": [],
+          "goalEvents": [
+            {
+              "name": "Haim Revivo",
+              "minute": 9,
+              "side": "away",
+              "own_goal": false
+            },
+            {
+              "name": "Viktor Trenevski",
+              "minute": 34,
+              "side": "home",
+              "own_goal": false
+            },
+            {
+              "name": "Niša Saveljić",
+              "minute": 52,
+              "side": "home",
+              "own_goal": false
+            },
+            {
+              "name": "Georgi Hristov",
+              "minute": 83,
+              "side": "home",
+              "own_goal": false
+            }
+          ],
+          "opponentLineup": [
+            "Nicola Damjanac",
+            "Niša Saveljić",
+            "Zoltan Sabo",
+            "Igor Tasevski",
+            "Viktor Trenevski",
+            "Georgi Hristov",
+            "Dragan Ciric",
+            "Damir Čakar",
+            "Djordje Svetlicic",
+            "Nenad Dukanovic",
+            "Darko Tešović"
+          ]
+        },
+        "sources": [
+          "uefa-52997"
+        ],
+        "confidence": 2,
+        "status": "approved",
+        "researchedAt": "2026-11-23",
+        "approvedAt": "2026-11-23",
+        "approvedBy": "automated:archive-source-verification",
+        "parserCertainty": "high",
+        "conflictFree": true
+      },
+      {
+        "id": "m-uefa-85023",
+        "value": {
+          "name": "Maccabi Haifa 1-0 Partizan",
+          "on": "2006-11-23",
+          "competition": "UEFA Cup",
+          "season": "2005/06",
+          "home": "Maccabi Haifa",
+          "away": "Partizan",
+          "homeGoals": 1,
+          "awayGoals": 0,
+          "score": "1-0",
+          "us": "home",
+          "venue": "Bloomfield Stadium",
+          "sport": "football",
+          "scorers": [
+            {
+              "name": "Xavier Anderson",
+              "minute": 20,
+              "ownGoal": false
+            }
+          ],
+          "lineup": [
+            "Nir Davidovitch",
+            "Alon Harazi",
+            "Xavier Anderson",
+            "Adoram Keise",
+            "Gustavo Boccoli",
+            "Roberto Colautti",
+            "Alain Masudi",
+            "Rafael Olarra",
+            "Yaniv Katan",
+            "Dekel Keinan",
+            "Lior Refaelov"
+          ],
+          "bench": [],
+          "goalEvents": [
+            {
+              "name": "Xavier Anderson",
+              "minute": 20,
+              "side": "home",
+              "own_goal": false
+            }
+          ],
+          "opponentLineup": [
+            "Safet Jahić",
+            "Nenad Djordjević",
+            "Branimir Bajić",
+            "Bojan Zajić",
+            "Miloš Mihajlov",
+            "Marko Lomić",
+            "Obiora Odita",
+            "Ljubiša Vukelia",
+            "Nebojša Marinković",
+            "Nenad Mirosavljević",
+            "Milan Smiljanić"
+          ]
+        },
+        "sources": [
+          "uefa-85023"
+        ],
+        "confidence": 2,
+        "status": "approved",
+        "researchedAt": "2026-11-23",
+        "approvedAt": "2026-11-23",
+        "approvedBy": "automated:archive-source-verification",
+        "parserCertainty": "high",
+        "conflictFree": true
+      }
+    ]
+  },
+  "olympiacos": {
+    "sources": [
+      {
+        "id": "uefa-2033197",
+        "title": "UEFA · Fenerbahçe 0-3 Olympiacos · 2021-09-30",
+        "url": "https://www.uefa.com/uefaeuropaleague/match/2033197--",
+        "publisher": "UEFA",
+        "access": "available",
+        "checkedAt": "2026-11-23",
+        "official": "competition"
+      },
+      {
+        "id": "uefa-2033245",
+        "title": "UEFA · Olympiacos 1-0 Fenerbahçe · 2021-11-25",
+        "url": "https://www.uefa.com/uefaeuropaleague/match/2033245--",
+        "publisher": "UEFA",
+        "access": "available",
+        "checkedAt": "2026-11-23",
+        "official": "competition"
+      },
+      {
+        "id": "uefa-2040505",
+        "title": "UEFA · Olympiacos 3-2 Fenerbahçe · 2024-04-11",
+        "url": "https://www.uefa.com/uefaconferenceleague/match/2040505--",
+        "publisher": "UEFA",
+        "access": "available",
+        "checkedAt": "2026-11-23",
+        "official": "competition"
+      },
+      {
+        "id": "uefa-2040509",
+        "title": "UEFA · Fenerbahçe 1-0 Olympiacos · 2024-04-18",
+        "url": "https://www.uefa.com/uefaconferenceleague/match/2040509--",
+        "publisher": "UEFA",
+        "access": "available",
+        "checkedAt": "2026-11-23",
+        "official": "competition"
+      },
+      {
+        "id": "uefa-2021546",
+        "title": "UEFA · Partizan 1-3 Olympiacos · 2017-07-25",
+        "url": "https://www.uefa.com/uefachampionsleague/match/2021546--",
+        "publisher": "UEFA",
+        "access": "available",
+        "checkedAt": "2026-11-23",
+        "official": "competition"
+      },
+      {
+        "id": "uefa-2021561",
+        "title": "UEFA · Olympiacos 2-2 Partizan · 2017-08-02",
+        "url": "https://www.uefa.com/uefachampionsleague/match/2021561--",
+        "publisher": "UEFA",
+        "access": "available",
+        "checkedAt": "2026-11-23",
+        "official": "competition"
+      }
+    ],
+    "matches": [
+      {
+        "id": "m-uefa-2033197",
+        "value": {
+          "name": "Fenerbahçe 0-3 Olympiacos",
+          "on": "2021-09-30",
+          "competition": "UEFA Europa League",
+          "season": "2021/22",
+          "home": "Fenerbahçe",
+          "away": "Olympiacos",
+          "homeGoals": 0,
+          "awayGoals": 3,
+          "score": "0-3",
+          "us": "away",
+          "venue": "Fenerbahçe Şükrü Saracoğlu Spor Kompleksi",
+          "sport": "football",
+          "scorers": [
+            {
+              "name": "Tiquinho Soares",
+              "minute": 6,
+              "ownGoal": false
+            },
+            {
+              "name": "Giorgos Masouras",
+              "minute": 63,
+              "ownGoal": false
+            },
+            {
+              "name": "Giorgos Masouras",
+              "minute": 68,
+              "ownGoal": false
+            }
+          ],
+          "lineup": [
+            "Tomáš Vaclík",
+            "Mady Camara",
+            "Andreas Bouchalakis",
+            "Henry Onyekuru",
+            "Sokratis Papastathopoulos",
+            "Giorgos Masouras",
+            "Aguibou Camara",
+            "Ousseynou Ba",
+            "Tiquinho Soares",
+            "Oleg Reabciuk",
+            "Pape Abou Cisse"
+          ],
+          "bench": [],
+          "goalEvents": [
+            {
+              "name": "Tiquinho Soares",
+              "minute": 6,
+              "side": "away",
+              "own_goal": false
+            },
+            {
+              "name": "Giorgos Masouras",
+              "minute": 63,
+              "side": "away",
+              "own_goal": false
+            },
+            {
+              "name": "Giorgos Masouras",
+              "minute": 68,
+              "side": "away",
+              "own_goal": false
+            }
+          ],
+          "opponentLineup": [
+            "Altay Bayındır",
+            "Minjae Kim",
+            "Mert Hakan Yandaş",
+            "Diego Rossi",
+            "Enner Valencia",
+            "Dimitris Pelkas",
+            "Ferdi Kadıoğlu",
+            "Luiz Gustavo",
+            "Bright Osayi-Samuel",
+            "Filip Novák",
+            "Attila Szalai"
+          ]
+        },
+        "sources": [
+          "uefa-2033197"
+        ],
+        "confidence": 2,
+        "status": "approved",
+        "researchedAt": "2026-11-23",
+        "approvedAt": "2026-11-23",
+        "approvedBy": "automated:archive-source-verification",
+        "parserCertainty": "high",
+        "conflictFree": true
+      },
+      {
+        "id": "m-uefa-2033245",
+        "value": {
+          "name": "Olympiacos 1-0 Fenerbahçe",
+          "on": "2021-11-25",
+          "competition": "UEFA Europa League",
+          "season": "2021/22",
+          "home": "Olympiacos",
+          "away": "Fenerbahçe",
+          "homeGoals": 1,
+          "awayGoals": 0,
+          "score": "1-0",
+          "us": "home",
+          "venue": "Stadio Georgios Karaiskakis",
+          "sport": "football",
+          "scorers": [
+            {
+              "name": "Tiquinho Soares",
+              "minute": 90,
+              "ownGoal": false
+            }
+          ],
+          "lineup": [
+            "Tomáš Vaclík",
+            "Mady Camara",
+            "Yann M'Vila",
+            "Henry Onyekuru",
+            "Youssef El-Arabi",
+            "Sokratis Papastathopoulos",
+            "Giorgos Masouras",
+            "Aguibou Camara",
+            "Kenny Lala",
+            "Oleg Reabciuk",
+            "Pape Abou Cisse"
+          ],
+          "bench": [],
+          "goalEvents": [
+            {
+              "name": "Tiquinho Soares",
+              "minute": 90,
+              "side": "home",
+              "own_goal": false
+            }
+          ],
+          "opponentLineup": [
+            "Berke Özer",
+            "Minjae Kim",
+            "José Sosa",
+            "Mert Hakan Yandaş",
+            "Diego Rossi",
+            "Mergim Berisha",
+            "İrfan Can Kahveci",
+            "Bright Osayi-Samuel",
+            "Miha Zajc",
+            "Marcel Tisserand",
+            "Filip Novák"
+          ]
+        },
+        "sources": [
+          "uefa-2033245"
+        ],
+        "confidence": 2,
+        "status": "approved",
+        "researchedAt": "2026-11-23",
+        "approvedAt": "2026-11-23",
+        "approvedBy": "automated:archive-source-verification",
+        "parserCertainty": "high",
+        "conflictFree": true
+      },
+      {
+        "id": "m-uefa-2040505",
+        "value": {
+          "name": "Olympiacos 3-2 Fenerbahçe",
+          "on": "2024-04-11",
+          "competition": "UEFA Conference League",
+          "season": "2023/24",
+          "home": "Olympiacos",
+          "away": "Fenerbahçe",
+          "homeGoals": 3,
+          "awayGoals": 2,
+          "score": "3-2",
+          "us": "home",
+          "venue": "Stadio Georgios Karaiskakis",
+          "sport": "football",
+          "scorers": [
+            {
+              "name": "Kostas Fortounis",
+              "minute": 8,
+              "ownGoal": false
+            },
+            {
+              "name": "Stevan Jovetić",
+              "minute": 32,
+              "ownGoal": false
+            },
+            {
+              "name": "Chiquinho",
+              "minute": 57,
+              "ownGoal": false
+            }
+          ],
+          "lineup": [
+            "Kostas Tzolakis",
+            "Francisco Ortega",
+            "Chiquinho",
+            "Kostas Fortounis",
+            "Ayoub El Kaabi",
+            "David Carmo",
+            "Giorgos Masouras",
+            "Stevan Jovetić",
+            "Rodinei ",
+            "Santiago Hezze",
+            "Panagiotis Retsos"
+          ],
+          "bench": [],
+          "goalEvents": [
+            {
+              "name": "Kostas Fortounis",
+              "minute": 8,
+              "side": "home",
+              "own_goal": false
+            },
+            {
+              "name": "Stevan Jovetić",
+              "minute": 32,
+              "side": "home",
+              "own_goal": false
+            },
+            {
+              "name": "Chiquinho",
+              "minute": 57,
+              "side": "home",
+              "own_goal": false
+            },
+            {
+              "name": "Dušan Tadić",
+              "minute": 68,
+              "side": "away",
+              "own_goal": false
+            },
+            {
+              "name": "İrfan Can Kahveci",
+              "minute": 74,
+              "side": "away",
+              "own_goal": false
+            }
+          ],
+          "opponentLineup": [
+            "Dominik Livaković",
+            "Çağlar Söyüncü",
+            "Edin Džeko",
+            "Dušan Tadić",
+            "İrfan Can Kahveci",
+            "Bright Osayi-Samuel",
+            "Jayden Oosterwolde",
+            "Miha Zajc",
+            "Rade Krunić",
+            "Rodrigo Becão",
+            "Sebastian Szymański"
+          ]
+        },
+        "sources": [
+          "uefa-2040505"
+        ],
+        "confidence": 2,
+        "status": "approved",
+        "researchedAt": "2026-11-23",
+        "approvedAt": "2026-11-23",
+        "approvedBy": "automated:archive-source-verification",
+        "parserCertainty": "high",
+        "conflictFree": true
+      },
+      {
+        "id": "m-uefa-2040509",
+        "value": {
+          "name": "Fenerbahçe 1-0 Olympiacos",
+          "on": "2024-04-18",
+          "competition": "UEFA Conference League",
+          "season": "2023/24",
+          "home": "Fenerbahçe",
+          "away": "Olympiacos",
+          "homeGoals": 1,
+          "awayGoals": 0,
+          "score": "1-0",
+          "us": "away",
+          "venue": "Fenerbahçe Şükrü Saracoğlu Spor Kompleksi",
+          "sport": "football",
+          "scorers": [],
+          "lineup": [
+            "Kostas Tzolakis",
+            "Francisco Ortega",
+            "Chiquinho",
+            "Kostas Fortounis",
+            "Ayoub El Kaabi",
+            "David Carmo",
+            "Stevan Jovetić",
+            "Rodinei ",
+            "Santiago Hezze",
+            "Daniel Podence",
+            "Andreas Ntoi"
+          ],
+          "bench": [],
+          "goalEvents": [
+            {
+              "name": "İrfan Can Kahveci",
+              "minute": 11,
+              "side": "home",
+              "own_goal": false
+            }
+          ],
+          "opponentLineup": [
+            "Dominik Livaković",
+            "İsmail Yüksek",
+            "Alexander Djiku",
+            "Ferdi Kadıoğlu",
+            "Edin Džeko",
+            "Dušan Tadić",
+            "İrfan Can Kahveci",
+            "Bright Osayi-Samuel",
+            "Fred",
+            "Rodrigo Becão",
+            "Sebastian Szymański"
+          ]
+        },
+        "sources": [
+          "uefa-2040509"
+        ],
+        "confidence": 2,
+        "status": "approved",
+        "researchedAt": "2026-11-23",
+        "approvedAt": "2026-11-23",
+        "approvedBy": "automated:archive-source-verification",
+        "parserCertainty": "high",
+        "conflictFree": true
+      },
+      {
+        "id": "m-uefa-2021546",
+        "value": {
+          "name": "Partizan 1-3 Olympiacos",
+          "on": "2017-07-25",
+          "competition": "UEFA Champions League",
+          "season": "2017/18",
+          "home": "Partizan",
+          "away": "Olympiacos",
+          "homeGoals": 1,
+          "awayGoals": 3,
+          "score": "1-3",
+          "us": "away",
+          "venue": "Stadion FK Partizan",
+          "sport": "football",
+          "scorers": [
+            {
+              "name": "El Fardou Ben Nabouhane",
+              "minute": 6,
+              "ownGoal": false
+            },
+            {
+              "name": "El Fardou Ben Nabouhane",
+              "minute": 56,
+              "ownGoal": false
+            },
+            {
+              "name": "Emmanuel Emenike",
+              "minute": 90,
+              "ownGoal": false
+            }
+          ],
+          "lineup": [
+            "Stefanos Kapino",
+            "Alaixys Romao",
+            "Vadis Odjidja-Ofoe",
+            "Marko Marin",
+            "Manolis Siopis",
+            "Leonardo Koutris",
+            "El Fardou Ben Nabouhane",
+            "Mehdi Carcela",
+            "Panagiotis Retsos",
+            "Diogo Figueiras",
+            "Sebá"
+          ],
+          "bench": [],
+          "goalEvents": [
+            {
+              "name": "El Fardou Ben Nabouhane",
+              "minute": 6,
+              "side": "away",
+              "own_goal": false
+            },
+            {
+              "name": "Leandre Tawamba",
+              "minute": 10,
+              "side": "home",
+              "own_goal": false
+            },
+            {
+              "name": "El Fardou Ben Nabouhane",
+              "minute": 56,
+              "side": "away",
+              "own_goal": false
+            },
+            {
+              "name": "Emmanuel Emenike",
+              "minute": 90,
+              "side": "away",
+              "own_goal": false
+            }
+          ],
+          "opponentLineup": [
+            "Filip Kljajić",
+            "Leandre Tawamba",
+            "Miroslav Vulićević",
+            "Lazar Ćirković",
+            "Marko Janković",
+            "Bojan Ostojić",
+            "Everton Bilher",
+            "Nemanja Miletić",
+            "Nebojša Kosović",
+            "Uroš Đurđević",
+            "Leonardo"
+          ]
+        },
+        "sources": [
+          "uefa-2021546"
+        ],
+        "confidence": 2,
+        "status": "approved",
+        "researchedAt": "2026-11-23",
+        "approvedAt": "2026-11-23",
+        "approvedBy": "automated:archive-source-verification",
+        "parserCertainty": "high",
+        "conflictFree": true
+      },
+      {
+        "id": "m-uefa-2021561",
+        "value": {
+          "name": "Olympiacos 2-2 Partizan",
+          "on": "2017-08-02",
+          "competition": "UEFA Champions League",
+          "season": "2017/18",
+          "home": "Olympiacos",
+          "away": "Partizan",
+          "homeGoals": 2,
+          "awayGoals": 2,
+          "score": "2-2",
+          "us": "home",
+          "venue": "Stadio Georgios Karaiskakis",
+          "sport": "football",
+          "scorers": [
+            {
+              "name": "Mehdi Carcela",
+              "minute": 22,
+              "ownGoal": false
+            },
+            {
+              "name": "Kostas Fortounis",
+              "minute": 51,
+              "ownGoal": false
+            }
+          ],
+          "lineup": [
+            "Stefanos Kapino",
+            "Alaixys Romao",
+            "Kostas Fortounis",
+            "Vadis Odjidja-Ofoe",
+            "Marko Marin",
+            "Leonardo Koutris",
+            "Jagoš Vuković",
+            "El Fardou Ben Nabouhane",
+            "Mehdi Carcela",
+            "Panagiotis Retsos",
+            "Diogo Figueiras"
+          ],
+          "bench": [],
+          "goalEvents": [
+            {
+              "name": "Mehdi Carcela",
+              "minute": 22,
+              "side": "home",
+              "own_goal": false
+            },
+            {
+              "name": "Seydouba Soumah",
+              "minute": 33,
+              "side": "away",
+              "own_goal": false
+            },
+            {
+              "name": "Kostas Fortounis",
+              "minute": 51,
+              "side": "home",
+              "own_goal": false
+            },
+            {
+              "name": "Uroš Đurđević",
+              "minute": 85,
+              "side": "away",
+              "own_goal": false
+            }
+          ],
+          "opponentLineup": [
+            "Filip Kljajić",
+            "Leandre Tawamba",
+            "Miroslav Vulićević",
+            "Lazar Ćirković",
+            "Marko Janković",
+            "Seydouba Soumah",
+            "Marko Jevtović",
+            "Bojan Ostojić",
+            "Everton Bilher",
+            "Nemanja Miletić",
+            "Uroš Đurđević"
+          ]
+        },
+        "sources": [
+          "uefa-2021561"
+        ],
+        "confidence": 2,
+        "status": "approved",
+        "researchedAt": "2026-11-23",
+        "approvedAt": "2026-11-23",
+        "approvedBy": "automated:archive-source-verification",
+        "parserCertainty": "high",
+        "conflictFree": true
+      }
+    ]
+  },
+  "panathinaikos": {
+    "sources": [
+      {
+        "id": "uefa-70306",
+        "title": "UEFA · Fenerbahçe 1-1 Panathinaikos · 2002-10-31",
+        "url": "https://www.uefa.com/uefaeuropaleague/match/70306--",
+        "publisher": "UEFA",
+        "access": "available",
+        "checkedAt": "2026-11-23",
+        "official": "competition"
+      },
+      {
+        "id": "uefa-70307",
+        "title": "UEFA · Panathinaikos 4-1 Fenerbahçe · 2002-11-14",
+        "url": "https://www.uefa.com/uefaeuropaleague/match/70307--",
+        "publisher": "UEFA",
+        "access": "available",
+        "checkedAt": "2026-11-23",
+        "official": "competition"
+      }
+    ],
+    "matches": [
+      {
+        "id": "m-uefa-70306",
+        "value": {
+          "name": "Fenerbahçe 1-1 Panathinaikos",
+          "on": "2002-10-31",
+          "competition": "UEFA Cup",
+          "season": "2001/02",
+          "home": "Fenerbahçe",
+          "away": "Panathinaikos",
+          "homeGoals": 1,
+          "awayGoals": 1,
+          "score": "1-1",
+          "us": "away",
+          "venue": "Fenerbahçe Şükrü Saracoğlu Spor Kompleksi",
+          "sport": "football",
+          "scorers": [
+            {
+              "name": "Angelos Basinas",
+              "minute": 14,
+              "ownGoal": false
+            }
+          ],
+          "lineup": [
+            "Antonis Nikopolidis",
+            "René Henriksen",
+            "Giourkas Seitaridis",
+            "Jan Michaelsen",
+            "Sotiris Kyrgiakos",
+            "Michalis Konstantinou",
+            "Angelos Basinas",
+            "Nikos Liberopoulos",
+            "Giorgos Karagounis",
+            "Pantelis Konstantinidis",
+            "Takis Fyssas"
+          ],
+          "bench": [],
+          "goalEvents": [
+            {
+              "name": "Angelos Basinas",
+              "minute": 14,
+              "side": "away",
+              "own_goal": false
+            },
+            {
+              "name": "Washington",
+              "minute": 42,
+              "side": "home",
+              "own_goal": false
+            }
+          ],
+          "opponentLineup": [
+            "Rüştü Reçber",
+            "Ogün Temizkanoğlu",
+            "Ümit Özat",
+            "Milan Rapaić",
+            "Eris Ceyhun",
+            "Tuncay Şanlı",
+            "Washington",
+            "Fatih Akyel",
+            "Ariel Ortega",
+            "Samuel Johnson",
+            "Miroslav Stevic"
+          ]
+        },
+        "sources": [
+          "uefa-70306"
+        ],
+        "confidence": 2,
+        "status": "approved",
+        "researchedAt": "2026-11-23",
+        "approvedAt": "2026-11-23",
+        "approvedBy": "automated:archive-source-verification",
+        "parserCertainty": "high",
+        "conflictFree": true
+      },
+      {
+        "id": "m-uefa-70307",
+        "value": {
+          "name": "Panathinaikos 4-1 Fenerbahçe",
+          "on": "2002-11-14",
+          "competition": "UEFA Cup",
+          "season": "2001/02",
+          "home": "Panathinaikos",
+          "away": "Fenerbahçe",
+          "homeGoals": 4,
+          "awayGoals": 1,
+          "score": "4-1",
+          "us": "home",
+          "venue": "Stadio Apostolos Nikolaidis",
+          "sport": "football",
+          "scorers": [
+            {
+              "name": "Nikos Liberopoulos",
+              "minute": 24,
+              "ownGoal": false
+            },
+            {
+              "name": "Giannis Goumas",
+              "minute": 31,
+              "ownGoal": false
+            },
+            {
+              "name": "Jan Michaelsen",
+              "minute": 42,
+              "ownGoal": false
+            },
+            {
+              "name": "Krzysztof Warzycha",
+              "minute": 89,
+              "ownGoal": false
+            }
+          ],
+          "lineup": [
+            "Antonis Nikopolidis",
+            "René Henriksen",
+            "Giourkas Seitaridis",
+            "Giannis Goumas",
+            "Jan Michaelsen",
+            "Sotiris Kyrgiakos",
+            "Angelos Basinas",
+            "Nikos Liberopoulos",
+            "Emmanuel Olisadebe",
+            "Giorgos Karagounis",
+            "Takis Fyssas"
+          ],
+          "bench": [],
+          "goalEvents": [
+            {
+              "name": "Nikos Liberopoulos",
+              "minute": 24,
+              "side": "home",
+              "own_goal": false
+            },
+            {
+              "name": "Giannis Goumas",
+              "minute": 31,
+              "side": "home",
+              "own_goal": false
+            },
+            {
+              "name": "Tuncay Şanlı",
+              "minute": 37,
+              "side": "away",
+              "own_goal": false
+            },
+            {
+              "name": "Jan Michaelsen",
+              "minute": 42,
+              "side": "home",
+              "own_goal": false
+            },
+            {
+              "name": "Krzysztof Warzycha",
+              "minute": 89,
+              "side": "home",
+              "own_goal": false
+            }
+          ],
+          "opponentLineup": [
+            "Rüştü Reçber",
+            "Ogün Temizkanoğlu",
+            "Ümit Özat",
+            "Milan Rapaić",
+            "Akın Serhat",
+            "Tuncay Şanlı",
+            "Yusuf Şimşek",
+            "Fatih Akyel",
+            "Ariel Ortega",
+            "Samuel Johnson",
+            "Miroslav Stevic"
+          ]
+        },
+        "sources": [
+          "uefa-70307"
+        ],
+        "confidence": 2,
+        "status": "approved",
+        "researchedAt": "2026-11-23",
+        "approvedAt": "2026-11-23",
+        "approvedBy": "automated:archive-source-verification",
+        "parserCertainty": "high",
+        "conflictFree": true
+      }
+    ]
+  },
+  "zrinjski-mostar": {
+    "sources": [
+      {
+        "id": "uefa-appeal-2007",
+        "title": "UEFA Appeals Body · Partizan disqualification",
+        "url": "https://www.uefa.com/uefaeuropaleague/news/01c4-0e6e62da2b3c-4d98a9806069-1000--partizan-disqualified-from-uefa-cup/",
+        "publisher": "UEFA",
+        "official": "competition",
+        "access": "available",
+        "checkedAt": "2026-11-23"
+      }
+    ],
+    "matches": [],
+    "archive": [
+      {
+        "id": "uefa-appeal-2007-context",
+        "value": {
+          "name": "UEFA reinstates Zrinjski in the UEFA Cup",
+          "on": "2007-08-07",
+          "precision": "day",
+          "sport": "football",
+          "sensitive": false,
+          "hint": "Partizan won 6–1 in Mostar and 5–0 in Belgrade. UEFA rejected Partizan’s appeal against disqualification, so Zrinjski advanced."
+        },
+        "sources": [
+          "uefa-appeal-2007"
+        ],
+        "confidence": 2,
+        "status": "approved",
+        "researchedAt": "2026-11-23",
+        "approvedAt": "2026-11-23",
+        "approvedBy": "automated:archive-source-verification",
+        "parserCertainty": "high",
+        "conflictFree": true
+      }
+    ]
+  },
+  "partizan-belgrade": {
+    "sources": [
+      {
+        "id": "uefa-appeal-2007",
+        "title": "UEFA Appeals Body · Partizan disqualification",
+        "url": "https://www.uefa.com/uefaeuropaleague/news/01c4-0e6e62da2b3c-4d98a9806069-1000--partizan-disqualified-from-uefa-cup/",
+        "publisher": "UEFA",
+        "official": "competition",
+        "access": "available",
+        "checkedAt": "2026-11-23"
+      }
+    ],
+    "matches": [],
+    "archive": [
+      {
+        "id": "uefa-appeal-2007-context",
+        "value": {
+          "name": "UEFA upholds Partizan’s disqualification from the UEFA Cup",
+          "on": "2007-08-07",
+          "precision": "day",
+          "sport": "football",
+          "sensitive": false,
+          "hint": "Partizan won 6–1 in Mostar and 5–0 in Belgrade. UEFA rejected Partizan’s appeal against disqualification, so Zrinjski advanced."
+        },
+        "sources": [
+          "uefa-appeal-2007"
+        ],
+        "confidence": 2,
+        "status": "approved",
+        "researchedAt": "2026-11-23",
+        "approvedAt": "2026-11-23",
+        "approvedBy": "automated:archive-source-verification",
+        "parserCertainty": "high",
+        "conflictFree": true
+      }
+    ]
+  }
+}
