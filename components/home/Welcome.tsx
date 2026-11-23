@@ -1,7 +1,6 @@
 import {WELCOME_BOOT} from '@/lib/home/art'
-import {WelcomeGo} from './WelcomeGo'
 
-export type WelcomeCopy={kicker:string;to:string;lead:string;s1:string;s1Sub:string;s2:string;s2Sub:string;s3:string;s3Sub:string;s4?:string;s4Sub?:string;go:string;skip:string;free:string}
+export type WelcomeCopy={kicker:string;to:string;lead:string;s1:string;s1Sub:string;s2:string;s2Sub:string;s3:string;s3Sub:string;s4?:string;s4Sub?:string;go:string;skip:string;free:string;wait:string}
 
 /**
  * THE WELCOME (owner, 23.11.2026: "an opening screen that comes up really fast while the rest of the site loads, a graphic
@@ -23,7 +22,13 @@ export function Welcome({copy}:{copy:WelcomeCopy}){
     <ol className="wko-steps" data-n={steps.length}>{steps.map(([art,t,sub],i)=><li key={art} data-art={art}>
      <span className="wko-art" aria-hidden="true"/><span className="wko-no wk-num" aria-hidden="true">{i+1}</span>
      <span className="wko-t"><b>{t}</b><small>{sub}</small></span></li>)}</ol>
-    <WelcomeGo go={copy.go} skip={copy.skip}/>
+    {/* plain buttons: the boot line answers them, so they work before any bundle arrives */}
+    <div className="wko-go">
+     <button type="button" className="wk-btn wko-kick min-h-tap" data-welcome-act="go" data-testid="welcome-go" autoFocus>{copy.go} <svg className="wkh-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+     <button type="button" className="wko-skip min-h-tap" data-welcome-act="skip" data-testid="welcome-skip">{copy.skip}</button>
+    </div>
+    {/* said only while the page behind is still on its way (the front page's loading cover is in the document) */}
+    <p className="wko-wait wk-k" role="status"><span>{copy.wait}</span><i aria-hidden="true"/><i aria-hidden="true"/><i aria-hidden="true"/></p>
     <p className="wko-free wk-k">{copy.free}</p>
    </div>
   </div>
