@@ -131,8 +131,8 @@
    "kind": "character",
    "label": "boy, about 10",
    "file": "cast/boy.glb",
-   "bytes": 1094040,
-   "triangles": 34988,
+   "bytes": 1094080,
+   "triangles": 34984,
    "bones": 55,
    "height": 1.3718,
    "hipHeight": 0.7043,
@@ -190,7 +190,7 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 8256,
+     "triangles": 8252,
      "vertices": 4196,
      "morphs": 0
     },
@@ -511,8 +511,8 @@
    "kind": "character",
    "label": "father, about 40",
    "file": "cast/father.glb",
-   "bytes": 1221112,
-   "triangles": 39182,
+   "bytes": 1221012,
+   "triangles": 39172,
    "bones": 55,
    "height": 1.7959,
    "hipHeight": 0.9499,
@@ -570,8 +570,8 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 8152,
-     "vertices": 4156,
+     "triangles": 8142,
+     "vertices": 4153,
      "morphs": 0
     },
     "Head": {
@@ -769,8 +769,8 @@
    "kind": "character",
    "label": "father, heavier build",
    "file": "cast/father_heavy.glb",
-   "bytes": 1101328,
-   "triangles": 36728,
+   "bytes": 1101072,
+   "triangles": 36704,
    "bones": 55,
    "height": 1.7715,
    "hipHeight": 0.9331,
@@ -828,8 +828,8 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 6944,
-     "vertices": 3575,
+     "triangles": 6920,
+     "vertices": 3571,
      "morphs": 0
     },
     "Head": {
@@ -1027,8 +1027,8 @@
    "kind": "character",
    "label": "girl, about 10",
    "file": "cast/girl.glb",
-   "bytes": 1501056,
-   "triangles": 42286,
+   "bytes": 1498952,
+   "triangles": 42152,
    "bones": 55,
    "height": 1.2791,
    "hipHeight": 0.6526,
@@ -1091,8 +1091,8 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 9834,
-     "vertices": 5098,
+     "triangles": 9700,
+     "vertices": 4997,
      "morphs": 0
     },
     "Head": {
@@ -1299,8 +1299,8 @@
    "kind": "character",
    "label": "older man, about 70",
    "file": "cast/grandfather.glb",
-   "bytes": 1221728,
-   "triangles": 34434,
+   "bytes": 1221768,
+   "triangles": 34410,
    "bones": 55,
    "height": 1.7042,
    "hipHeight": 0.8968,
@@ -1358,7 +1358,7 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 6940,
+     "triangles": 6916,
      "vertices": 3569,
      "morphs": 0
     },
@@ -1557,8 +1557,8 @@
    "kind": "character",
    "label": "older woman, about 70",
    "file": "cast/grandmother.glb",
-   "bytes": 1090756,
-   "triangles": 35700,
+   "bytes": 1090288,
+   "triangles": 35658,
    "bones": 55,
    "height": 1.558,
    "hipHeight": 0.7904,
@@ -1616,8 +1616,8 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 8112,
-     "vertices": 4170,
+     "triangles": 8070,
+     "vertices": 4146,
      "morphs": 0
     },
     "Head": {
@@ -1815,8 +1815,8 @@
    "kind": "character",
    "label": "mother, about 38",
    "file": "cast/mother.glb",
-   "bytes": 1165108,
-   "triangles": 37820,
+   "bytes": 1164484,
+   "triangles": 37758,
    "bones": 55,
    "height": 1.6063,
    "hipHeight": 0.8192,
@@ -1874,8 +1874,8 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 8156,
-     "vertices": 4140,
+     "triangles": 8094,
+     "vertices": 4115,
      "morphs": 0
     },
     "Head": {
@@ -2073,8 +2073,8 @@
    "kind": "character",
    "label": "mother, fuller build",
    "file": "cast/mother_heavy.glb",
-   "bytes": 1077880,
-   "triangles": 38364,
+   "bytes": 1072200,
+   "triangles": 37964,
    "bones": 55,
    "height": 1.6026,
    "hipHeight": 0.8154,
@@ -2137,8 +2137,8 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 9908,
-     "vertices": 5293,
+     "triangles": 9508,
+     "vertices": 5002,
      "morphs": 0
     },
     "Head": {
