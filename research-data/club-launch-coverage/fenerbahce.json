@@ -55,7 +55,7 @@
   ],
   "matchCount": 1922,
   "listedPlayers": 756,
-  "kits": 76,
+  "kits": 22,
   "uefaStartsChecked": 291,
   "matchCoverageBySeason": {
     "1909": {
@@ -670,5 +670,6 @@
       "url": "https://www.kitapvekahve.com/fenerbahce-tarihi",
       "status": "Print reference identified; match pages have not been checked against it."
     }
-  ]
+  ],
+  "fullySpecifiedKitBuilderShirts": 3
 }
