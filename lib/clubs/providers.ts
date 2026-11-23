@@ -69,6 +69,8 @@ export const providers:Record<string,()=>Promise<{data:ClubData;diagnostics:Diag
  // ↓ promoted from the research desk (scripts/clubs/promote.ts) — one line per club
  'atalanta':async()=>compilePackEuro(mergeWave(mergeWave(mergeWave((await import('@/club-packs/atalanta/core.json')).default as never,(await import('@/club-packs/atalanta/wave-research-2026-11-14.json')).default as never),(await import('@/club-packs/atalanta/wave-kit-colours-2026-11-15.json')).default as never),(await import('@/club-packs/atalanta/wave-kit-archive-2026-11-15.json')).default as never) as never,REGISTRY.find(c=>c.id==='atalanta')!,(await import('@/club-packs/atalanta/wave-history-2026-11-21.json')).default),
  'maccabi-haifa':async()=>compilePackEuro(mergeWave(mergeWave(mergeWave((await import('@/club-packs/maccabi-haifa/core.json')).default as never,(await import('@/club-packs/maccabi-haifa/wave-research-2026-11-14.json')).default as never),(await import('@/club-packs/maccabi-haifa/wave-kit-colours-2026-11-15.json')).default as never),(await import('@/club-packs/maccabi-haifa/wave-kit-archive-2026-11-15.json')).default as never) as never,REGISTRY.find(c=>c.id==='maccabi-haifa')!),
+ 'fenerbahce':async()=>compilePackEuro((await import('@/club-packs/fenerbahce/core.json')).default,REGISTRY.find(c=>c.id==='fenerbahce')!),
+ 'partizan-belgrade':async()=>compilePackEuro((await import('@/club-packs/partizan-belgrade/core.json')).default,REGISTRY.find(c=>c.id==='partizan-belgrade')!),
 }
 /** What `loadClubBase` adds on top of a provider's output: the roster wave, then the forged English trivia. */
 export {withForgedTrivia,withArchiveMysteries,mergeWave,withMemoryPairs,withConfirmedRegisters,withDocumentedSeasons}
