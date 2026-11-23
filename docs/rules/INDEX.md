@@ -254,3 +254,4 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [wayfinding](wayfinding.md) · One map of the site and a folio on every page (where you are, what this is, what you can do); the front page cut to doors, your club and the contents (22.11.2026)
 - [club-home-short](club-home-short.md) · A club's home is five things (today's game, the gates, next match, did you know, contents); Legends, LIFE, the card and the films each live on one page (22.11.2026)
 - [games-clubs-short](games-clubs-short.md) · Our games opens with the index of every game; The clubs folds the workshop into one line (22.11.2026)
+- [welcome-and-picker](welcome-and-picker.md) · The welcome screen on a first visit, Pick your club as a wall of stickers with more ways in, and the contents as pictures; check a class prefix is free before using it (23.11.2026)
