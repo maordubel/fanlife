@@ -103,6 +103,8 @@ def main():
     pipe.load_lora_weights(LCM)
     pipe.fuse_lora()
     pipe.set_progress_bar_config(disable=True)
+    pipe.enable_attention_slicing()
+    pipe.enable_vae_slicing()
     torch.set_num_threads(max(1, torch.get_num_threads()))
     want = set(a.ids.split(',')) if a.ids else None
     made, sheet = 0, []
@@ -137,6 +139,7 @@ def main():
                     print(sid, 'repaint', k + 1, flush=True)
                 if fig is None:
                     continue
+                import gc; gc.collect()
                 out.parent.mkdir(parents=True, exist_ok=True)
                 fig.save(out, 'WEBP', quality=88, method=6)
                 made += 1
