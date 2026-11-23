@@ -52,7 +52,10 @@ def main():
         name = fold(n)
         hits = [h for h in hits if name and name[:5] in fold(h)][:3]
         for i, t in enumerate(hits):
-            info = json.loads(get(API, {'action': 'query', 'titles': t, 'prop': 'imageinfo', 'iiprop': 'url|extmetadata', 'format': 'json'}))
+            raw = get(API, {'action': 'query', 'titles': t, 'prop': 'imageinfo', 'iiprop': 'url|extmetadata', 'format': 'json'})
+            if not raw:
+                continue
+            info = json.loads(raw)
             page = next(iter(info['query']['pages'].values()))
             ii = (page.get('imageinfo') or [{}])[0]
             meta = ii.get('extmetadata', {})
@@ -63,7 +66,8 @@ def main():
             (OUT / f'{slug}.svg').write_bytes(body)
             found.append({'group': g, 'name': n, 'uses': uses, 'file': f'{slug}.svg', 'title': t, 'page': ii.get('descriptionurl'),
                           'license': (meta.get('LicenseShortName') or {}).get('value'), 'author': re.sub('<[^>]+>', '', (meta.get('Artist') or {}).get('value', ''))[:120]})
-        time.sleep(.3)
+        time.sleep(1)
+        (OUT / 'candidates.json').write_text(json.dumps(found, ensure_ascii=False, indent=1) + '\n')
     (OUT / 'candidates.json').write_text(json.dumps(found, ensure_ascii=False, indent=1) + '\n')
     print(len(want), 'names without a mark;', len({(c['group'], c['name']) for c in found}), 'with candidates;', len(found), 'files')
 
