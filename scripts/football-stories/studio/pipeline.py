@@ -133,7 +133,7 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
         if progress:
             progress(stage, frac, msg)
 
-    from . import characters, director, drama_facts, research, writer, script as sc, voice, edit, audio, package, qa
+    from . import archive_props, characters, director, drama_facts, research, writer, script as sc, voice, edit, audio, package, qa
 
     brief = {**brief, 'media_cache': str(cache / 'images')}
     live_sets = ingest_art(brief, log)
@@ -186,6 +186,7 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
         director.attach(ledger)  # the story the record proves (docs/fanlife/66-directors-cut.md §1), after any focus or pick
         drama_facts.attach(ledger)  # what each match meant before kick-off: the record, the drought, the road, the clock
         characters.attach(ledger)   # the hero, the wound and the film's angle (studio/characters.py)
+        archive_props.attach(ledger)   # the season's shirt and the players' archive cards, as claims (studio/archive_props.py)
         write_json(lp, ledger)
         log(f'Research: {len(ledger["claims"])} claims, {len(ledger["held"])} held')
     ledger = read_json(lp)
@@ -208,6 +209,7 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
         director.attach(ledger)  # a ledger written before the Director's Cut: its story is read off its own claims
         drama_facts.attach(ledger)
         characters.attach(ledger)
+        archive_props.attach(ledger)
         write_json(lp, ledger)
 
     from . import commons

@@ -159,6 +159,11 @@ jobs:
           # free unless the owner turns paid providers on (repository variables)
           STORIES_ALLOW_PAID: ${{ vars.STORIES_ALLOW_PAID }}
           STORIES_VOICE: ${{ vars.STORIES_VOICE }}
+          # the film engine's switches (lib/stories/engine.ts, docs/rules/studio-story-first.md); empty = the default (on)
+          STORIES_WRITER: ${{ vars.STORIES_WRITER }}
+          STORIES_HOUSE_LEAD: ${{ vars.STORIES_HOUSE_LEAD }}
+          STORIES_ARCHIVE_PROPS: ${{ vars.STORIES_ARCHIVE_PROPS }}
+          STORIES_LIFE: ${{ vars.STORIES_LIFE }}
           STORIES_MASTER_PRESET: medium
           # scan the owner's Drive live for this story's packs (studio/drive_scan.py)
           STORIES_DRIVE_SCAN: '1'

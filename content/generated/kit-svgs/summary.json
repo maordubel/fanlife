@@ -76,5 +76,17 @@
   "fromArchive": 0,
   "fromPack": 74,
   "noColour": 2
+ },
+ "fenerbahce": {
+  "drawn": 53,
+  "fromArchive": 53,
+  "fromPack": 0,
+  "noColour": 110
+ },
+ "partizan-belgrade": {
+  "drawn": 36,
+  "fromArchive": 36,
+  "fromPack": 0,
+  "noColour": 22
  }
 }

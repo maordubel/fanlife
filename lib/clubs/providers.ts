@@ -13,7 +13,7 @@ import celticCof from '@/club-packs/celtic/wave-kits-cof-2026-10-09.json'
 import panathinaikosCof from '@/club-packs/panathinaikos/wave-kits-cof-2026-10-09.json'
 import zrinjskiCof from '@/club-packs/zrinjski-mostar/wave-kits-cof-2026-10-09.json'
 import {withEuro} from './euro-wave'
-import {withHistorical} from './history-wave'
+import {withCrossClubHistory,withHistorical} from './history-wave'
 import {withGoalWave} from './goal-wave'
 import {withRosterWave} from './roster-wave'
 import {withForgedTrivia} from '@/lib/trivia/club'
@@ -30,8 +30,9 @@ import {withDocumentedSeasons} from './documented-seasons'
 import atalantaKitArchive from '@/club-packs/atalanta/wave-kit-archive-2026-11-22.json'
 export const compilePackEuro=(pack:Record<string,unknown>,club:RegistryClub,additionalHistory?:unknown)=>{
  const equipped=club.id==='atalanta'?mergeWave(pack,atalantaKitArchive):pack
- const history=withHistorical(equipped,club.id,additionalHistory),night=oneNightPerMatch(withCareers(correctPack(withSeasonHistory(withGoalWave(withEuro(history.pack,club.id),club.id),club.id),club.id),club.id)),result=compilePackBase(withDocumentedMatchDetails(night.pack,additionalHistory) as never,club)
- return {...result,diagnostics:[...result.diagnostics,...night.folded.map(f=>({record:`${club.id}:${f.kept}`,code:'SAME_MATCH_FOLDED',message:`${f.on}: ${f.folded.join(', ')} folded into ${f.kept} (same day, same score).`})),...history.conflicts.map(c=>({record:`${club.id}:${c.incoming}`,code:'HISTORY_CONFLICT',message:`${c.reason}: ${c.on}; existing ${c.existing}. Incoming result withheld from matches and timeline.`}))]}
+ const history=withHistorical(equipped,club.id,additionalHistory),night=oneNightPerMatch(withCareers(correctPack(withSeasonHistory(withGoalWave(withEuro(history.pack,club.id),club.id),club.id),club.id),club.id))
+ const cross=withCrossClubHistory(night.pack,club.id),result=compilePackBase(withDocumentedMatchDetails(cross.pack,additionalHistory) as never,club)
+ return {...result,diagnostics:[...result.diagnostics,...night.folded.map(f=>({record:`${club.id}:${f.kept}`,code:'SAME_MATCH_FOLDED',message:`${f.on}: ${f.folded.join(', ')} folded into ${f.kept} (same day, same score).`})),...[...history.conflicts,...cross.conflicts].map(c=>({record:`${club.id}:${c.incoming}`,code:'HISTORY_CONFLICT',message:`${c.reason}: ${c.on}; existing ${c.existing}. Incoming result withheld from matches and timeline.`}))]}
 }
 /** Existing archives only. New facts stay in review; prior approvals remain authoritative. */
 /** The colours-of-football catalogue kits the club pack has no (season, type) for: status `review`, so they reach no gate until the owner approves them. */

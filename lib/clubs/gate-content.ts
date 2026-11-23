@@ -12,7 +12,7 @@ import {GATE_THRESHOLDS as T} from './thresholds'
 export type LineupMatch={id:string;name:string;on:string|null;competition:string;score:string|null;starters:string[];bench:string[];decoys:string[];sources:string[]}
 /** the rest of the kit, when a source documents it: shorts and socks as a colour name and an optional second colour */
 export type KitPart={colour:string;trim:string|null}
-export type KitView={id:string;season:string;type:string;maker:string|null;design:string|null;sponsor?:string|null;colours:string[];shorts?:KitPart|null;socks?:KitPart|null;sources:string[];/** the ids of the same shirt's other records, folded into this one (the catalogue's second image, a source's twin) */also?:string[]}
+export type KitView={id:string;season:string;type:string;maker:string|null;design:string|null;sponsor?:string|null;catalogueVariant?:string;colours:string[];shorts?:KitPart|null;socks?:KitPart|null;sources:string[];/** the ids of the same shirt's other records, folded into this one (the catalogue's second image, a source's twin) */also?:string[]}
 const str=(v:unknown)=>typeof v==='string'&&v.trim()?v.trim():null
 const strs=(v:unknown)=>Array.isArray(v)?v.filter((x):x is string=>typeof x==='string'&&!!x.trim()).map(x=>x.trim()):[]
 const obj=(v:unknown):Record<string,unknown>=>v&&typeof v==='object'&&!Array.isArray(v)?v as Record<string,unknown>:{}
@@ -39,7 +39,7 @@ export function kitViews(data:ClubData):KitView[] {
   if(!season)return []
   const colours=(str(c.colors)||str(v.colors)||'').split(/[\/,]/).map(x=>x.trim().toLowerCase()).filter(Boolean)
   const part=(x:unknown):KitPart|null=>{const o=obj(x),colour=str(o.colour)?.toLowerCase();return colour?{colour,trim:str(o.trim)?.toLowerCase()??null}:null}
-  return [{id:f.id,season,type:str(v.type)||'home',maker:str(v.manufacturer),design:str(c.design)||str(v.design),sponsor:str(v.sponsor),colours,shorts:part(v.shorts),socks:part(v.socks),sources:f.sources}]
+  return [{id:f.id,season,type:str(v.type)||'home',maker:str(v.manufacturer),design:str(c.design)||str(v.design),sponsor:str(v.sponsor),...(str(v.catalogueVariant)?{catalogueVariant:str(v.catalogueVariant)!}:{}),colours,shorts:part(v.shorts),socks:part(v.socks),sources:f.sources}]
  }))
 }
 
@@ -77,7 +77,7 @@ export function dedupeKits(list:KitView[]):KitView[]{
   const sorted=[...members].sort((a,b)=>score(b)-score(a)||a.id.localeCompare(b.id)),clusters:KitView[][]=[]
   for(const k of sorted){
    const stub=k.design===null&&k.colours.length<=1 // a source's bare twin (UEFA's FKA record: no design, one colour) says only that the shirt exists
-   const home=clusters.find(c=>{const lead=c[0]!;return c.every(other=>sponsorOk(other.sponsor,k.sponsor))&&makerOk(lead.maker,k.maker)&&(stub||(coloursOk(lead.colours,k.colours)&&designOk(lead.design,k.design)))})
+   const home=clusters.find(c=>{const lead=c[0]!;return c.every(other=>sponsorOk(other.sponsor,k.sponsor)&&(!other.catalogueVariant||!k.catalogueVariant||other.catalogueVariant===k.catalogueVariant))&&makerOk(lead.maker,k.maker)&&(stub||(coloursOk(lead.colours,k.colours)&&designOk(lead.design,k.design)))})
    if(home)home.push(k);else clusters.push([k])
   }
   for(const c of clusters){

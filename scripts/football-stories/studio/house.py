@@ -68,6 +68,19 @@ EDITORS: list[dict] = [
     {'id': 'montage', 'unit': 'trailer', 'name': 'The Montage',
      'tagline': 'Trailer rhythm: bursts of quick cuts, then one long held breath.', 'tempo': 0.82, 'card': 0.8, 'calm': 1.25},
 ]
+# The lead writer (studio/raconteur.py, owner 23.11.2026): he writes the first script of every season film, whoever directs it.
+LEAD = {'id': 'raconteur', 'unit': 'house', 'name': 'The Raconteur',
+        'tagline': 'The small door: one true detail, the people behind it, the road as scenes, and a raised eyebrow.',
+        'craft': 'Opens on the smallest thing the record holds about the biggest night and walks through it. A tie is one scene in two acts. '
+                 'One dry aside a scene, never during the goal. The biggest night is five short beats that build to one peak.'}
+
+
+def lead_wanted() -> bool:
+    """STORIES_HOUSE_LEAD=unit gives every director his own unit's writer back (for comparison)."""
+    import os
+    return os.environ.get('STORIES_HOUSE_LEAD', 'raconteur').strip().lower() != 'unit'
+
+
 UNITS = {w['unit']: {'writer': w, 'director': d, 'editor': e} for w, d, e in zip(WRITERS, DIRECTORS, EDITORS)}
 DEFAULT_UNIT = 'broadcaster'
 
@@ -80,7 +93,7 @@ def unit(director_id: str | None) -> dict:
 def roster() -> dict:
     """What the desk shows: the nine people of the house crew, by role."""
     pick = ('id', 'unit', 'name', 'tagline')
-    return {'writers': [{k: w[k] for k in pick} for w in WRITERS], 'directors': [{k: d[k] for k in pick} for d in DIRECTORS],
+    return {'lead': {k: LEAD[k] for k in pick}, 'writers': [{k: w[k] for k in pick} for w in WRITERS], 'directors': [{k: d[k] for k in pick} for d in DIRECTORS],
             'editors': [{k: e[k] for k in pick} for e in EDITORS]}
 
 
@@ -182,10 +195,21 @@ def write(brief: dict, ledger: dict, director_id: str | None, log=print, avoid: 
     cannot carry a film at all. `check_at(script, minutes) -> [errors]` is the writer's own validation (writer.py)."""
     from .house_writer import write_script
     u = unit(director_id)
-    s = write_script(brief, ledger, u['writer']['id'], log=log, avoid=avoid, check_at=check_at)
-    s['_house'] = {'writer': u['writer']['id'], 'director': u['director']['id'], 'editor': u['editor']['id'],
+    s, who = None, u['writer']
+    if lead_wanted() and not avoid:
+        # the raconteur leads (owner, 23.11.2026): the first script of a film is his — the small door, people, scenes,
+        # dry wit — and the other options stay their directors' own. A film that is not his to tell goes to the unit.
+        from . import raconteur
+        from .common import StageError
+        try:
+            s, who = raconteur.write_script(brief, ledger, log=log, avoid=avoid, check_at=check_at), LEAD
+        except StageError as e:
+            log(f'House: the raconteur passes ({e.code}) — {u["writer"]["name"]} writes')
+    if s is None:
+        s = write_script(brief, ledger, u['writer']['id'], log=log, avoid=avoid, check_at=check_at)
+    s['_house'] = {'writer': who['id'], 'director': u['director']['id'], 'editor': u['editor']['id'],
                    'unit': u['writer']['unit'], **({'why': reason[:200]} if reason else {})}
-    log(f'House: {u["writer"]["name"]} wrote "{s["title_candidates"][s["selected"]]["title"]}" · '
+    log(f'House: {who["name"]} wrote "{s["title_candidates"][s["selected"]]["title"]}" · '
         f'{sum(len(b["narration"].split()) for ch in s["chapters"] for b in ch["beats"])} words · {s["_minutes"]:g} min'
         + (f' — {reason[:120]}' if reason else ''))
     return s
