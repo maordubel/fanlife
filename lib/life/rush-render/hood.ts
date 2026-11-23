@@ -12,7 +12,7 @@ import {lookAt, pose} from './figure'
 
 export type HoodDress = {update(sim: Sim, view: {hood?: {job: 'idle' | 'active' | 'done'}}, t: number, dt: number): void}
 export type HoodCtx = {
-  scene: THREE.Scene; keep: <T extends {dispose(): void}>(x: T) => T; level: Level; skin: VoxelSkin; night: boolean
+  scene: THREE.Scene; keep: <T extends {dispose(): void}>(x: T) => T; level: Level; skin: VoxelSkin; night: boolean; lite?: boolean
   banned: (hex: string) => boolean; tint: THREE.Color
   person: (l: Look) => THREE.Group
   sign: (text: string, bg: string, fg: string, w?: number, h?: number) => THREE.Texture
@@ -36,7 +36,7 @@ export function dressHood(x: HoodCtx): HoodDress {
     fan.rotation.y = Math.PI / 2
     const pl = mesh(keep(new THREE.PlaneGeometry(0.4, 0.28)), keep(new THREE.MeshBasicMaterial({map: x.sign('27', '#1b1e26', '#f3efe6', 128, 96), toneMapped: false})), d.x + 0.12, 1.8, d.z + 1.1)
     pl.rotation.y = Math.PI / 2
-    if (night) { const l = new THREE.PointLight('#ffd6a8', 18, 9, 1.6); l.position.set(d.x + 1.6, 2.4, d.z); add(l) } }
+    if (night && !x.lite) { const l = new THREE.PointLight('#ffd6a8', 18, 9, 1.6); l.position.set(d.x + 1.6, 2.4, d.z); add(l) } }
 
   /* the kiosk stall (a periptero is already there in Athens) */
   if (skin.town !== 'ath') { const k = hood.kiosk
@@ -44,7 +44,7 @@ export function dressHood(x: HoodCtx): HoodDress {
     mesh(box, std('#e9e4da'), k.x, 2.5, k.z, 2.3, 0.18, 3.1)
     const shelf = mesh(keep(new THREE.PlaneGeometry(2.4, 1.5)), keep(new THREE.MeshBasicMaterial({color: new THREE.Color('#ffcf9e').multiplyScalar(night ? 1.1 : 0.7), toneMapped: false})), k.x + 0.92, 1.25, k.z); shelf.rotation.y = Math.PI / 2
     const sg = mesh(keep(new THREE.PlaneGeometry(2.6, 0.6)), keep(new THREE.MeshBasicMaterial({map: x.sign((skin.strings.kiosk ?? hoodWord('hood.who.kiosk')).toUpperCase(), '#1b1e26', '#f3efe6'), toneMapped: false})), k.x + 0.95, 2.85, k.z); sg.rotation.y = Math.PI / 2
-    if (night) { const l = new THREE.PointLight('#ffd6a8', 22, 8, 1.6); l.position.set(k.x + 1.8, 1.8, k.z); add(l) } }
+    if (night && !x.lite) { const l = new THREE.PointLight('#ffd6a8', 22, 8, 1.6); l.position.set(k.x + 1.8, 1.8, k.z); add(l) } }
 
   /* the school gate: two piers, an arch with the word over it, railings along the wall */
   { const s = hood.school, zf = s.z + 0.2

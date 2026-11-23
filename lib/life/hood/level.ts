@@ -25,7 +25,7 @@ export const HOOD = {length: 330, half: 7, walk: 11, side: 62, sideW: 7, age: 27
 /** the universal cast role each person is, and how it looks to the sim */
 const ROLE: Record<PersonId, string> = {dad: 'dad', mate: 'friend', kiosk: 'kiosk', neighbour: 'neighbour'}
 
-export function hoodSpec(clubId: string, seed: number, time: 'day' | 'night' = 'day'): MissionSpec {
+export function hoodSpec(clubId: string, seed: number, time: 'day' | 'night' | 'dusk' = 'dusk'): MissionSpec {
   return {template: 'hood', verb: 'run', camera: 'chase', route: 'main', seed, skin: clubId, age: HOOD.age, time, weather: 'clear', clock: 1, hazards: ['traffic', 'crowd'], difficulty: 1, mandatory: false, anchor: null, title: 'The hood', brief: ''}
 }
 

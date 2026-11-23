@@ -25,6 +25,8 @@ import {dressHood, type HoodDress} from './hood'
 import {dressFlat} from './flat'
 import {dressSurface, loadSurface, type SurfaceName} from './surfaces'
 import {loadProps, propCopy} from './props'
+import {dressDusk, DUSK, type Block, type Dusk} from './look/dusk'
+import {dressCrowd} from './look/crowd'
 import {disposeFigure, HAIR, kitTexture, makeFigure, lookAt, makeHand, PANTS, pose, SKIN_TONES, TOPS, type Cloth, type FigureData} from './figure'
 
 export type Quality = 'high' | 'lite'
@@ -67,8 +69,10 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, lite ? 1.25 : 2))
   renderer.toneMapping = THREE.ACESFilmicToneMapping
   // a home mission keeps its own hour (a grounded boy goes out at night whatever the day's clock says)
-  const night = level.house ? level.house.night : spec.time === 'night'
-  renderer.toneMappingExposure = night ? 1.0 : 0.92
+  // the hood at dusk: lit like night (lamps, windows) under a graded sky and haze (look/dusk.ts)
+  const dusk = !!level.hood && spec.time === 'dusk'
+  const night = dusk || (level.house ? level.house.night : spec.time === 'night')
+  renderer.toneMappingExposure = dusk ? DUSK.exposure : night ? 1.0 : 0.92
   renderer.outputColorSpace = THREE.SRGBColorSpace
   renderer.shadowMap.enabled = !lite
   renderer.shadowMap.type = THREE.PCFSoftShadowMap
@@ -104,21 +108,21 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   /* sky, light, weather */
   // a deeper sky and a warm haze band at the horizon: the air has depth (GTA's afternoons are smog-gold, its nights ink)
   const skyTop = night ? '#02040a' : '#2f63a6', skyMid = night ? '#0f1730' : '#9fbbd4', glowC = night ? '#3a1f2e' : '#f0cfa0'
-  scene.fog = new THREE.FogExp2(night ? '#0a0d19' : '#b5c3cc', level.place === 'road' ? 0.0035 : level.place === 'flat' ? 0.004 : 0.0075)
+  scene.fog = new THREE.FogExp2(dusk ? DUSK.fog : night ? '#0a0d19' : '#b5c3cc', dusk ? DUSK.fogDensity : level.place === 'road' ? 0.0035 : level.place === 'flat' ? 0.004 : 0.0075)
   const skyMat = keep(new THREE.ShaderMaterial({side: THREE.BackSide, depthWrite: false, fog: false,
     uniforms: {uTop: {value: C(skyTop)}, uMid: {value: C(skyMid)}, uGlow: {value: C(glowC)}},
     vertexShader: 'varying vec3 vP; void main(){ vP = normalize(position); gl_Position = projectionMatrix*modelViewMatrix*vec4(position,1.); }',
     fragmentShader: 'uniform vec3 uTop,uMid,uGlow; varying vec3 vP; void main(){ float h=vP.y; vec3 c=mix(uMid,uTop,smoothstep(0.,.55,h)); c=mix(c,uGlow,smoothstep(.25,0.,abs(h-.02))*smoothstep(.2,-.9,vP.z)); gl_FragColor=vec4(c,1.); }'}))
-  const sky = new THREE.Mesh(keep(new THREE.SphereGeometry(1400, 32, 16)), skyMat); scene.add(sky)
-  if (night) {
+  const sky = new THREE.Mesh(keep(new THREE.SphereGeometry(1400, 32, 16)), skyMat); sky.visible = !dusk; scene.add(sky)
+  if (night && !dusk) {
     const st = new Float32Array(900 * 3)
     for (let i = 0; i < 900; i++) { const a = rnd() * Math.PI * 2, e = 0.08 + rnd() * 1.3, r = 1300; st[i * 3] = Math.cos(a) * Math.cos(e) * r; st[i * 3 + 1] = Math.sin(e) * r; st[i * 3 + 2] = Math.sin(a) * Math.cos(e) * r }
     const g = keep(new THREE.BufferGeometry()); g.setAttribute('position', new THREE.BufferAttribute(st, 3))
     scene.add(new THREE.Points(g, keep(new THREE.PointsMaterial({color: '#cfd8ff', size: 1.6, sizeAttenuation: false, fog: false, transparent: true, opacity: 0.8}))))
   }
   // less fill, more key: shadows that go somewhere, a sun with a colour, a sky that is blue from above and warm from the ground
-  scene.add(new THREE.HemisphereLight(night ? '#5a6ea8' : '#cfe0f5', night ? '#14100f' : '#5a4a3a', night ? 0.34 : 0.62))
-  const key = new THREE.DirectionalLight(night ? '#dce8ff' : '#ffdcb0', night ? 0.8 : 2.9)
+  scene.add(dusk ? new THREE.HemisphereLight('#8a8fd0', '#5a3a4a', 0.7) : new THREE.HemisphereLight(night ? '#5a6ea8' : '#cfe0f5', night ? '#14100f' : '#5a4a3a', night ? 0.34 : 0.62))
+  const key = new THREE.DirectionalLight(dusk ? '#ffb48a' : night ? '#dce8ff' : '#ffdcb0', dusk ? 1.7 : night ? 0.8 : 2.9)
   key.castShadow = !lite; key.shadow.mapSize.set(2048, 2048)
   Object.assign(key.shadow.camera, {left: -18, right: 18, top: 18, bottom: -18, near: 1, far: 140})
   key.shadow.bias = -0.0004; key.shadow.normalBias = 0.025; key.shadow.radius = 3
@@ -135,7 +139,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   }
 
   /* ground + the shared street pieces */
-  const wet = spec.weather === 'rain'
+  const wet = spec.weather === 'rain' || dusk
   // the ground's materials, by surface: the loom tiles replace the canvas ones when they arrive (surfaces.ts)
   const grounds: Record<SurfaceName, THREE.MeshStandardMaterial[]> = {asphalt: [], slabs: [], concrete: [], boards: [], tiles: [], carpet: []}
   const ground = (name: SurfaceName, m: THREE.MeshStandardMaterial) => { grounds[name].push(m); return m }
@@ -174,7 +178,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     for (let k = 0; k < drains.count; k++) { m4.makeScale(0.5, 0.012, 0.3).setPosition((k % 2 ? 1 : -1) * (half - 0.35), 0.006, zStart - 7 - k * 14); drains.setMatrixAt(k, m4) }
     scene.add(drains)
     // the rain leaves the road in mirrors: puddles along the kerb and in the camber
-    if (wet) {
+    if (wet && !dusk) {
       const np = Math.floor(span / 7)
       const puddles = new THREE.InstancedMesh(keep(new THREE.CircleGeometry(1, 24).rotateX(-Math.PI / 2)), keep(new THREE.MeshStandardMaterial({color: '#1a1d24', roughness: 0.04, metalness: 0.9, transparent: true, opacity: 0.85})), np)
       for (let k = 0; k < np; k++) { q.setFromAxisAngle(up, rnd() * 3); m4.compose(tmp.set((rnd() - 0.5) * half * 1.6, 0.012, zStart - rnd() * span), q, tmp2.set(0.6 + rnd() * 1.6, 1, 0.4 + rnd() * 0.8)); puddles.setMatrixAt(k, m4) }
@@ -182,6 +186,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     }
   }
 
+  const duskBlocks: Block[] = []
   const addBuildings = (walk: number, from: number, to: number, gaps: number[]) => {
     const blocks: {x: number; z: number; w: number; h: number; c: string}[] = [], wins: {x: number; y: number; z: number; lit: boolean; warm: boolean; side: number}[] = []
     for (const side of [-1, 1]) {
@@ -195,6 +200,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
         z -= w + (rnd() < 0.2 ? 2 : 0.2)
       }
     }
+    if (dusk) duskBlocks.push(...blocks)
     const facade = noiseTex('#ffffff', 22, [1, 1])
     const b = new THREE.InstancedMesh(box, keep(new THREE.MeshStandardMaterial({map: facade, roughness: 0.95})), blocks.length)
     blocks.forEach((x, i) => { m4.makeScale(10, x.h, x.w).setPosition(x.x, x.h / 2, x.z); b.setMatrixAt(i, m4); b.setColorAt(i, C(x.c)) }); b.receiveShadow = true; scene.add(b)
@@ -219,7 +225,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       const shop = new THREE.Mesh(keep(new THREE.PlaneGeometry(3.8, 2.2)), keep(new THREE.MeshBasicMaterial({color: C('#ffcf9e').multiplyScalar(night ? 1.1 : 0.7), toneMapped: false}))); shop.rotation.y = -side * Math.PI / 2; shop.position.set(side * (walk - 0.04), 1.3, z); scene.add(shop)
     }
     // trees, never where green is a rival's
-    if (!bannedColour('#2f4a33', skin)) {
+    if (!dusk && !bannedColour('#2f4a33', skin)) {
       const trunks: [number, number][] = [], crowns: [number, number, number, number][] = []
       for (const side of [-1, 1]) for (let z = from - 4; z > to + 10; z -= 27) { if (gaps.some(c => Math.abs(z - c) < 9)) continue; trunks.push([side * (level.half + 2.6), z]); for (let k = 0; k < 4; k++) crowns.push([side * (level.half + 2.6) + (rnd() - 0.5) * 1.4, 4.2 + rnd() * 1.6, z + (rnd() - 0.5) * 1.4, 0.9 + rnd() * 0.6]) }
       const tm = new THREE.InstancedMesh(keep(new THREE.CylinderGeometry(0.12, 0.18, 4, 8)), keep(std('#3d2c22')), trunks.length)
@@ -231,6 +237,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
 
   const addLamps = (half: number, from: number, to: number, every: number) => {
     for (let z = from; z > to; z -= every) lampZ.push(z)
+    if (dusk) { for (let k = 0; k < (lite ? 3 : 5); k++) { const pl = new THREE.PointLight('#ffa862', 40, 20, 1.6); scene.add(pl); lampLights.push(pl) } return }
     const poles = new THREE.InstancedMesh(keep(new THREE.CylinderGeometry(0.07, 0.1, 6.5, 8)), keep(std('#22252c')), lampZ.length * 2)
     const heads = new THREE.InstancedMesh(keep(new THREE.CapsuleGeometry(0.14, 0.9, 4, 8).rotateZ(Math.PI / 2)), keep(new THREE.MeshBasicMaterial({color: C('#ffd9b8').multiplyScalar(night ? 3.2 : 1), toneMapped: false})), lampZ.length * 2)
     const pools = new THREE.InstancedMesh(keep(new THREE.PlaneGeometry(1, 1)), keep(new THREE.MeshBasicMaterial({map: glowTex, color: C('#ff9c5c').multiplyScalar(night ? 0.85 : 0), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending})), lampZ.length * 2)
@@ -265,7 +272,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     const shell = new THREE.Mesh(keep(new THREE.CylinderGeometry(78, 84, 26, 48, 1, true)), keep(std('#2b2f3a', {side: THREE.DoubleSide}))); shell.position.y = 13; stad.add(shell)
     const ring = new THREE.Mesh(keep(new THREE.TorusGeometry(80, 1.2, 6, 64)), keep(new THREE.MeshBasicMaterial({color: C(skin.p).multiplyScalar(1.6), toneMapped: false}))); ring.rotation.x = Math.PI / 2; ring.position.y = 26.5; stad.add(ring)
     const glow = new THREE.Mesh(keep(new THREE.PlaneGeometry(420, 200)), keep(new THREE.MeshBasicMaterial({map: glowTex, color: C(night ? '#cfe0ff' : '#ffffff').multiplyScalar((night ? 0.9 : 0.25) * (skyline ? 0.3 : 1)), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, fog: false}))); glow.position.set(0, 50, -40); stad.add(glow)
-    for (const [x, zz] of [[-70, 40], [70, 40], [-70, -40], [70, -40]] as const) {
+    for (const [x, zz] of (dusk ? [] : [[-70, 40], [70, 40], [-70, -40], [70, -40]]) as readonly (readonly [number, number])[]) {
       const tw = new THREE.Mesh(box, keep(new THREE.MeshStandardMaterial({color: '#30343e', fog: false}))); tw.scale.set(2.2, 82, 2.2); tw.position.set(x, 41, zz); stad.add(tw)
       const lamp = new THREE.Mesh(box, keep(new THREE.MeshBasicMaterial({color: C('#eaf2ff').multiplyScalar(night ? 7 : 1.5), toneMapped: false, fog: false}))); lamp.scale.set(12, 6, 1.2); lamp.position.set(x, 84, zz); lamp.lookAt(0, 0, 0); stad.add(lamp)
       if (night) { const halo = new THREE.Sprite(keep(new THREE.SpriteMaterial({map: glowTex, color: C('#dfe9ff').multiplyScalar(1.4), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, fog: false}))); halo.scale.set(70, 70, 1); halo.position.set(x, 84, zz); stad.add(halo); towers.push(halo) }
@@ -351,7 +358,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     addBuildings(level.walk, level.bounds.z1 + 16, level.goal.z + 40, level.crossings)
     if (level.side) addSideStreets()
     addLamps(level.half, level.bounds.z1 + 4, level.goal.z + 20, 18)
-    addPennants(level.walk, -20, level.goal.z + 30)
+    if (!dusk) addPennants(level.walk, -20, level.goal.z + 30)
     // a city with a landmark at the end of the road shows the gate and not the bowl, so the landmark reads behind it
     skyline = dressCity({scene, keep, level, skin, clubId: spec.skin, seed: spec.seed, night, lite, banned: h => bannedColour(h, skin), glowTex})
     const banner = new THREE.Mesh(keep(new THREE.PlaneGeometry(16, 2.4)), keep(new THREE.MeshBasicMaterial({map: signTex(`${o.gateLabel} · ${skin.name.toUpperCase()}`, skin.p, skin.s, 1024, 154), toneMapped: false}))); banner.position.set(0, 9.5, level.goal.z + 26); scene.add(banner)
@@ -432,6 +439,9 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     if (!school) addGround(level.bounds.z0 - 100, level.bounds.z0 - 12)
   }
 
+  let duskDress: Dusk | null = null
+  if (dusk && level.place === 'street') { try { duskDress = dressDusk({scene, renderer, level, skin, lite, skyline, keep, rnd, glowTex, allowed: l => allowed(l, skin), banned: h => bannedColour(h, skin), sign: (a, b, c, w, h) => signTex(a, b, c, w, h), blocks: duskBlocks}) } catch { duskDress = null } }
+
   /* ───────────── cars ───────────── */
   type CarParts = {body: THREE.InstancedMesh; cab: THREE.InstancedMesh; wheel: THREE.InstancedMesh; head: THREE.InstancedMesh; tail: THREE.InstancedMesh; bar: THREE.InstancedMesh}
   let cars: CarParts | null = null
@@ -506,6 +516,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   }))
   crowd.forEach(im => { if (im.instanceColor) im.instanceColor.needsUpdate = true })
   const zero = new THREE.Matrix4().makeScale(0, 0, 0)
+  const duskCrowd = dusk ? dressCrowd({scene, level, skin, lite, rnd, keep, allowed: l => allowed(l, skin), figOf}) : null
 
 
   /* ───────────── the quest: who waits for you, what lies on the ground, where to go next ───────────── */
@@ -521,7 +532,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   const tint = C(skin.p).lerp(C('#ffffff'), 0.3)
   const flat = level.place === 'flat' ? dressFlat({scene, keep, level, skin, night, lite, banned: h => bannedColour(h, skin), ground, glowTex,
     person: f => figOf({kit: false, longSleeves: true, hairStyle: f.hairStyle ?? (f.curly ? 'curly' : 'short'), top: f.top, pants: f.pants, hair: f.hair, mustache: !!f.beard, skinTone: f.skinTone ?? SKIN_TONES[1], scale: (f.scale ?? 1) * 0.94, female: f.female, skirt: f.skirt, glasses: f.glasses, denim: f.denim, jacket: f.jacket, eyes: f.eyes, noBlob: true})}) : null
-  const hoodDress: HoodDress | null = level.hood ? dressHood({scene, keep, level, skin, night, banned: h => bannedColour(h, skin), tint, person: L => lookFig(L), sign: (a, b, c, w, h) => signTex(a, b, c, w, h)}) : null
+  const hoodDress: HoodDress | null = level.hood ? dressHood({scene, keep, level, skin, night, lite, banned: h => bannedColour(h, skin), tint, person: L => lookFig(L), sign: (a, b, c, w, h) => signTex(a, b, c, w, h)}) : null
   type Npc = {fig: THREE.Group; step: number; extra: THREE.Group[]; x: number; z: number}
   const npcs: Npc[] = []
   level.steps.forEach((st, i) => {
@@ -742,9 +753,9 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   // highlights (split tone), a touch more saturation, a vignette, grain — the GTA look, not a filter on top of it.
   const composer = new EffectComposer(renderer, new THREE.WebGLRenderTarget(1, 1, {type: THREE.HalfFloatType, samples: lite ? 0 : 4}))
   composer.addPass(new RenderPass(scene, cam))
-  if (!lite) composer.addPass(new UnrealBloomPass(new THREE.Vector2(256, 256), night ? 0.55 : 0.22, 0.6, night ? 0.9 : 1.1))
+  if (!lite) composer.addPass(new UnrealBloomPass(new THREE.Vector2(256, 256), dusk ? 0.5 : night ? 0.55 : 0.22, dusk ? 0.6 : 0.6, dusk ? 1.0 : night ? 0.9 : 1.1))
   const grade = new ShaderPass({
-    uniforms: {tDiffuse: {value: null}, uTime: {value: 0}, uSpeed: {value: 0}, uHeart: {value: 0}, uFlash: {value: 0}, uTint: {value: C(skin.p)}, uAspect: {value: 1}, uNight: {value: night ? 1 : 0}, uClose: {value: 0}},
+    uniforms: {tDiffuse: {value: null}, uTime: {value: 0}, uSpeed: {value: 0}, uHeart: {value: 0}, uFlash: {value: 0}, uTint: {value: C(skin.p)}, uAspect: {value: 1}, uNight: {value: dusk ? 0.55 : night ? 1 : 0}, uClose: {value: 0}},
     vertexShader: 'varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); }',
     fragmentShader: `uniform sampler2D tDiffuse; uniform float uTime,uSpeed,uFlash,uAspect,uHeart,uNight,uClose; uniform vec3 uTint; varying vec2 vUv;
       float h(float n){ return fract(sin(n)*43758.5453); }
@@ -918,6 +929,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     }
 
     hoodDress?.update(sim, view, t, dt)
+    duskDress?.update(sim, t, dt, cam.position); duskCrowd?.update(sim, t, dt)
     flat?.update(sim, t, dt, view.ending, view.outcome, {x: camPos.x, z: camPos.z, close: closeK})
     // stewards and the ground they can see
     if (level.place !== 'flat') level.patrols.forEach((p, i) => {
@@ -972,6 +984,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     // lights follow him
     key.position.set(sim.x - 12, 30, sim.z - 40); key.target.position.set(sim.x, 0, sim.z)
     if (!night) key.position.set(sim.x + 20, 40, sim.z + 10)
+    if (dusk) key.position.set(sim.x - 10, 16, sim.z + 24)
     rim.position.set(sim.x + 1.4, 2.2, sim.z - 1.2); fill.position.set(sim.x - 1.2, 1.8, sim.z + 1.6)
     if (lampLights.length) { const near = lampZ.filter(z => z < sim.z + 30).slice(0, lampLights.length / 2 + 1); lampLights.forEach((l, k) => { const z = near[Math.floor(k / 2)] ?? -9999; l.position.set((k % 2 ? 1 : -1) * (level.half - 0.2), 6, z) }) }
     towers.forEach((h, i) => h.scale.setScalar(70 + Math.sin(t * 0.7 + i) * 3))
@@ -1040,15 +1053,19 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       camLook.lerp(tmp3.set(sim.x * 0.8, 1.2, sim.z - 14), Math.min(dt * 6, 1)); cam.lookAt(camLook)
       const fov = 58 + Math.min(sim.speed, 30) * 0.5; cam.fov += (fov - cam.fov) * Math.min(dt * 3, 1)
     } else if (view.cam === 'chase') {
-      const back = 3.1 + sp * 0.1, high = (child ? 1.55 : 1.85) + sp * 0.02, side = 0.75
+      const back = dusk ? 6.4 + sp * 0.1 : 3.1 + sp * 0.1, high = dusk ? 3.5 : (child ? 1.55 : 1.85) + sp * 0.02, side = dusk ? 0.9 : 0.75
       const fx = Math.sin(heading), fz = Math.cos(heading)
       // over the right shoulder, behind the way he faces
       // his right hand is (−fz, fx)
       const drop = Math.max(0, view.intro) / 2.4
       const target = tmp.set(sim.x - fx * (back + drop * 6) - fz * side + jx, high + jy + breath + drop * drop * 10, sim.z - fz * (back + drop * 6) + fx * side)
-      camPos.lerp(target, Math.min(dt * 5, 1)); cam.position.copy(camPos)
-      camLook.lerp(new THREE.Vector3(sim.x + fx * 7 - fz * side * 0.4, 1.45, sim.z + fz * 7 + fx * side * 0.4), Math.min(dt * 6, 1)); cam.lookAt(camLook)
-      const fov = (view.intro > 0 ? 48 : 54) + Math.min(sp, 10) * 1.2; cam.fov += (fov - cam.fov) * Math.min(dt * 4, 1)
+      camPos.lerp(target, Math.min(dt * (dusk ? 3.5 : 5), 1))
+      // the lens never goes into a facade: on the main street it stays inside the pavements (a crossing lets it out)
+      if (dusk && !level.crossings.some(c => Math.abs(camPos.z - c) < 8)) camPos.x = THREE.MathUtils.clamp(camPos.x, -(level.walk - 0.8), level.walk - 0.8)
+      cam.position.copy(camPos)
+      const ahead = dusk ? 24 : 7
+      camLook.lerp(new THREE.Vector3(sim.x + fx * ahead - fz * side * 0.4, dusk ? 1.6 : 1.45, sim.z + fz * ahead + fx * side * 0.4), Math.min(dt * 6, 1)); cam.lookAt(camLook)
+      const fov = (view.intro > 0 ? 48 : dusk ? 64 : 54) + Math.min(sp, 10) * 1.2; cam.fov += (fov - cam.fov) * Math.min(dt * 4, 1)
     } else {
       const hb = reduced ? 0 : Math.sin(t * (6 + sp * 1.2)) * 0.055 * Math.min(sp / 6, 1.4)
       cam.position.set(sim.x + jx, eyeHeight + hb + jy + breath - (level.place === 'yard' && !sim.sprinting ? 0.35 : 0), sim.z)
@@ -1067,6 +1084,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   function resize(w: number, h: number) {
     renderer.setSize(w, h, false)
     composer.setSize(w, h)
+    duskDress?.resize(w, h)
     cam.aspect = w / Math.max(1, h); cam.updateProjectionMatrix()
     grade.uniforms.uAspect!.value = w / Math.max(1, h)
   }
