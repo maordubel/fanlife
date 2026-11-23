@@ -1,71 +1,323 @@
 /*
- * LIFE · the hood — the glass over the open neighbourhood. Club theme tokens only, no colour written here, radius 0,
- * logical properties only, touch targets 44px and up. Phone first (390 and 320 wide); a second layout from 900px up.
+ * LIFE · the game — the shell and the HUD over the open street.
+ * LIFE's own identity: dark navy, cream type, thin rules, one accent. Not the magazine look.
+ * Tokens first; the in-game accent (--lg-accent) and the brand accent (--lg-brand) are set inline by the host after the colour policy.
+ * Logical properties only, touch targets 44px and up, motion off under prefers-reduced-motion and the Reduced motion setting.
  */
-.hoodRoot {
-  --h-ink: var(--mag-ink, var(--club-text));
-  --h-light: var(--mag-white, var(--club-surface));
-  --h-prime: var(--club-primary);
-  --h-on: var(--club-on-primary);
-  --h-glass: color-mix(in srgb, var(--h-ink) 88%, transparent);
-  --h-safe-t: env(safe-area-inset-top, 0px);
-  --h-safe-b: env(safe-area-inset-bottom, 0px);
+.lgRoot {
+  --lg-navy: #0f1a28;
+  --lg-navy-2: #16263a;
+  --lg-navy-3: #1f3550;
+  --lg-cream: #fff1dc;
+  --lg-cream-dim: color-mix(in srgb, var(--lg-cream) 68%, transparent);
+  --lg-line: color-mix(in srgb, var(--lg-cream) 16%, transparent);
+  --lg-glass: color-mix(in srgb, var(--lg-navy) 66%, transparent);
+  --lg-glass-solid: color-mix(in srgb, var(--lg-navy) 94%, var(--lg-cream));
+  --lg-brand: #b9e36a;
+  --lg-accent: var(--lg-brand);
+  --lg-on-accent: var(--lg-navy);
+  --lg-head: var(--mag-condensed, Impact, 'Arial Narrow', sans-serif);
+  --lg-body: var(--mag-body, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif);
+  --lg-r: 18px;
+  --lg-safe-t: env(safe-area-inset-top, 0px);
+  --lg-safe-b: env(safe-area-inset-bottom, 0px);
+  --lg-ease: cubic-bezier(.2, .8, .2, 1);
   position: fixed; inset: 0; overflow: hidden; touch-action: none; user-select: none; -webkit-user-select: none;
-  background: var(--mag-night, var(--h-ink)); color: var(--h-light); font-family: var(--mag-body);
+  background: var(--lg-navy); color: var(--lg-cream); font-family: var(--lg-body); -webkit-tap-highlight-color: transparent;
 }
-:where(.hoodRoot) button { font: inherit; cursor: pointer; }
-.hoodCanvas { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; display: block; }
-.hoodHud { position: absolute; inset: 0; pointer-events: none; }
-.hoodPlate { position: absolute; background: var(--h-glass); color: var(--h-light); padding: 6px 10px; border: 2px solid var(--h-ink); box-shadow: 3px 3px 0 color-mix(in srgb, var(--h-ink) 70%, transparent); font-family: var(--mag-mono); font-size: .8125rem; letter-spacing: .05em; }
-.hoodJob { inset-block-start: calc(10px + var(--h-safe-t)); inset-inline-start: 10px; inline-size: min(calc(100vw - 140px), 22rem); display: grid; gap: 2px; border-block-end: 4px solid var(--h-prime); }
-.hoodJob small { font-size: .6875rem; letter-spacing: .1em; text-transform: uppercase; opacity: .75; }
-.hoodJob b { font-family: var(--mag-display); font-size: 1rem; font-weight: 400; line-height: 1.2; text-transform: uppercase; letter-spacing: .02em; }
-.hoodJob span { display: inline-flex; align-items: center; gap: 8px; font-variant-numeric: tabular-nums; }
-.hoodArrow { display: inline-block; inline-size: 0; block-size: 0; border-inline: 7px solid transparent; border-block-end: 14px solid var(--h-prime); }
-.hoodCarry { inset-block-start: calc(112px + var(--h-safe-t)); inset-inline-start: 10px; }
-.hoodPlace { inset-block-end: calc(212px + var(--h-safe-b)); inset-inline-start: 10px; text-transform: uppercase; }
-.hoodMap { position: absolute; inset-block-start: calc(10px + var(--h-safe-t)); inset-inline-end: 10px; inline-size: 96px; block-size: 96px; }
-.hoodPause { pointer-events: auto; position: absolute; inset-block-start: calc(116px + var(--h-safe-t)); inset-inline-end: 10px; min-inline-size: 44px; min-block-size: 44px; border: 2px solid var(--h-light); background: var(--h-ink); color: var(--h-light); }
-.hoodSay { position: absolute; inset-inline: 0; inset-block-end: calc(224px + var(--h-safe-b)); display: grid; justify-items: center; pointer-events: none; }
-.hoodSay div { max-inline-size: min(calc(100vw - 104px), 30rem); margin-inline-end: 88px; padding: 8px 12px; background: var(--mag-lilac, var(--h-light)); color: var(--h-ink); border: 3px solid var(--h-ink); opacity: 0; transition: opacity .2s; }
-.hoodSay div[data-on='true'] { opacity: 1; }
-.hoodSay b { display: block; font-family: var(--mag-mono); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; }
-.hoodSay span { font-size: 1rem; line-height: 1.35; }
-.hoodToast { position: absolute; inset-block-start: 36%; inset-inline: 0; text-align: center; pointer-events: none; }
-.hoodToast span { display: inline-block; padding: 6px 14px; background: var(--h-prime); color: var(--h-on); border: 3px solid var(--h-ink); font-family: var(--mag-display); text-transform: uppercase; }
-.hoodStickZone { position: absolute; inset-block: 32% 0; inset-inline-start: 0; inline-size: 55%; pointer-events: auto; }
-.hoodStick { position: absolute; inline-size: 110px; block-size: 110px; margin-block-start: -55px; margin-inline-start: -55px; border: 2px solid color-mix(in srgb, var(--h-light) 55%, transparent); border-radius: 50%; pointer-events: none; }
-.hoodStick > i { position: absolute; inset: 30px; border-radius: 50%; background: color-mix(in srgb, var(--h-light) 70%, transparent); }
-.hoodGhost { position: absolute; inset-block-end: calc(120px + var(--h-safe-b)); inset-inline-start: 28px; display: grid; justify-items: center; gap: 6px; pointer-events: none; font-family: var(--mag-mono); font-size: .75rem; }
-.hoodGhost i { inline-size: 84px; block-size: 84px; border: 2px dashed color-mix(in srgb, var(--h-light) 60%, transparent); border-radius: 50%; }
-.hoodPads { position: absolute; inset-inline-end: 12px; inset-block-end: calc(18px + var(--h-safe-b)); display: grid; gap: 10px; justify-items: end; pointer-events: auto; }
-.hoodPad { min-inline-size: 64px; min-block-size: 64px; border: 3px solid var(--h-light); background: var(--h-ink); color: var(--h-light); font-family: var(--mag-display); font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; }
-.hoodPad[data-big='true'] { min-inline-size: 84px; min-block-size: 84px; border-radius: 50%; }
-.hoodPad[data-on='true'], .hoodPad[data-hot='true'] { background: var(--h-prime); color: var(--h-on); border-color: var(--h-ink); }
-.hoodKeys { position: absolute; inset-block-end: calc(12px + var(--h-safe-b)); inset-inline: 0; text-align: center; font-family: var(--mag-mono); font-size: .75rem; opacity: .75; pointer-events: none; }
-.hoodCover { position: absolute; inset: 0; display: grid; place-items: center; padding: 16px; background: color-mix(in srgb, var(--h-ink) 70%, transparent); }
-.hoodCard { inline-size: min(100%, 26rem); padding: 20px; background: var(--mag-card, var(--h-light)); color: var(--h-ink); border: 3px solid var(--h-ink); border-block-start: 14px solid var(--h-prime); box-shadow: 5px 5px 0 var(--h-ink); display: grid; gap: 10px; }
-.hoodCard h2 { margin: 0; font-family: var(--mag-display); font-size: 1.75rem; font-weight: 400; }
-.hoodBtn { min-block-size: 48px; padding: 0 18px; border: 3px solid var(--h-ink); background: var(--mag-card, var(--h-light)); color: var(--h-ink); font-family: var(--mag-display); text-transform: uppercase; }
-.hoodBtn[data-primary='true'] { background: var(--h-prime); color: var(--h-on); box-shadow: 4px 4px 0 var(--h-ink); }
-.hoodBtn:focus-visible { outline: 3px solid var(--h-ink); outline-offset: 2px; }
+:where(.lgRoot) button { font: inherit; color: inherit; cursor: pointer; }
+:where(.lgRoot) h1, :where(.lgRoot) h2, :where(.lgRoot) p { margin: 0; }
+.lgRoot :focus-visible { outline: 3px solid var(--lg-cream); outline-offset: 2px; box-shadow: 0 0 0 5px var(--lg-navy); }
 
-/* a phone 320 wide: the map steps under the job plate, the plates shrink */
-@media (max-width: 380px) {
-  .hoodJob { inline-size: calc(100vw - 118px); }
-  .hoodMap { inline-size: 80px; block-size: 80px; }
-  .hoodPause { inset-block-start: calc(100px + var(--h-safe-t)); }
-  .hoodCarry { inset-block-start: calc(104px + var(--h-safe-t)); }
+/* ───── the picture ───── */
+.lgCanvas { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; display: block; transition: filter .6s var(--lg-ease), transform 1.2s var(--lg-ease); }
+.lgCanvas[data-look='title'] { filter: blur(3px) brightness(.62) saturate(1.1); transform: scale(1.04); }
+.lgCanvas[data-look='dim'] { filter: blur(8px) brightness(.42); transform: scale(1.03); }
+.lgVeil { position: absolute; inset: 0; pointer-events: none; transition: opacity .5s; }
+.lgVeil[data-v='title'] { background: linear-gradient(to top, var(--lg-navy) 4%, color-mix(in srgb, var(--lg-navy) 78%, transparent) 42%, color-mix(in srgb, var(--lg-navy) 18%, transparent) 100%); }
+.lgVeil[data-v='talk'] { background: linear-gradient(to top, color-mix(in srgb, var(--lg-navy) 92%, transparent) 0, transparent 46%); }
+.lgVeil[data-v='none'] { opacity: 0; }
+
+/* ───── motion ───── */
+@keyframes lgRise { from { opacity: 0; transform: translateY(18px); } }
+@keyframes lgFade { from { opacity: 0; } }
+@keyframes lgPop { 0% { opacity: 0; transform: translateY(-10px) scale(.82); } 55% { opacity: 1; transform: translateY(0) scale(1.06); } 100% { transform: scale(1); } }
+@keyframes lgDrop { from { opacity: 0; transform: translateY(-14px); } }
+@keyframes lgSlideIn { from { opacity: 0; transform: translateX(-26px); } }
+@keyframes lgBarTop { from { transform: translateY(-101%); } }
+@keyframes lgBarBot { from { transform: translateY(101%); } }
+@keyframes lgBlink { 50% { opacity: .25; } }
+@keyframes lgPulse { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--lg-accent) 60%, transparent); } 100% { box-shadow: 0 0 0 14px transparent; } }
+.lgIn { animation: lgRise .6s var(--lg-ease) both; animation-delay: calc(var(--i, 0) * 80ms + 120ms); }
+.lgFadeIn { animation: lgFade .5s both; }
+
+/* ───── screens ───── */
+.lgScreen { position: absolute; inset: 0; display: flex; flex-direction: column; padding: calc(14px + var(--lg-safe-t)) 18px calc(18px + var(--lg-safe-b)); overflow-y: auto; overflow-x: hidden; touch-action: pan-y; animation: lgFade .35s both; }
+.lgScreen[data-solid='true'] { background: color-mix(in srgb, var(--lg-navy) 88%, transparent); }
+.lgBar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block-end: 10px; border-block-end: 1px solid var(--lg-line); flex: none; }
+.lgBrandMark { display: inline-flex; align-items: center; gap: 8px; font-family: var(--lg-head); letter-spacing: .14em; font-size: .75rem; text-transform: uppercase; color: var(--lg-cream-dim); }
+.lgBrandMark img { block-size: 26px; inline-size: auto; display: block; }
+.lgTabs { display: flex; gap: 4px; }
+.lgTab { min-block-size: 44px; padding-inline: 12px; background: none; border: 0; border-block-end: 2px solid transparent; font-size: .8125rem; letter-spacing: .04em; color: var(--lg-cream-dim); }
+.lgTab[aria-current='true'] { color: var(--lg-cream); border-block-end-color: var(--lg-brand); }
+.lgIconBtn { inline-size: 44px; block-size: 44px; display: inline-grid; place-items: center; border-radius: 50%; border: 1px solid var(--lg-line); background: var(--lg-glass); }
+.lgIconBtn svg { inline-size: 20px; block-size: 20px; }
+.lgKicker { font-family: var(--lg-head); font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; color: var(--lg-brand); }
+.lgH1 { font-family: var(--lg-head); font-size: 2.5rem; line-height: .98; text-transform: uppercase; letter-spacing: .01em; }
+
+/* buttons */
+.lgBtn { position: relative; min-block-size: 52px; inline-size: 100%; padding-inline: 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-radius: 14px; border: 1px solid var(--lg-line); background: var(--lg-glass); color: var(--lg-cream); font-family: var(--lg-head); font-size: 1.125rem; letter-spacing: .08em; text-transform: uppercase; text-align: start; transition: transform .12s var(--lg-ease), background .2s, border-color .2s; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.lgBtn svg { inline-size: 18px; block-size: 18px; flex: none; opacity: .8; }
+.lgBtn:hover { border-color: var(--lg-cream-dim); }
+.lgBtn:active { transform: scale(.97); }
+.lgBtn[data-primary='true'] { background: var(--lg-brand); color: var(--lg-navy); border-color: transparent; }
+.lgBtn[data-quiet='true'] { background: transparent; }
+.lgBtn[disabled] { opacity: .45; cursor: default; }
+
+/* ───── boot ───── */
+.lgBoot { position: absolute; inset: 0; display: grid; place-items: center; align-content: center; gap: 18px; background: var(--lg-navy); z-index: 9; transition: opacity .6s; }
+.lgBoot img { inline-size: min(60vw, 260px); block-size: auto; animation: lgFade .8s both; }
+.lgBoot p { font-family: var(--lg-head); letter-spacing: .2em; font-size: .75rem; text-transform: uppercase; color: var(--lg-cream-dim); animation: lgBlink 1.4s infinite; }
+
+/* ───── title ───── */
+.lgTitle { justify-content: flex-end; gap: 0; padding-block-start: calc(70px + var(--lg-safe-t)); }
+.lgTitleTop { position: absolute; inset-block-start: calc(14px + var(--lg-safe-t)); inset-inline: 18px; display: flex; justify-content: space-between; align-items: center; }
+.lgWordmark { inline-size: min(62vw, 270px); aspect-ratio: 600 / 393; display: block; margin-block-end: 6px; }
+.lgWordmark img { inline-size: 100%; block-size: 100%; display: block; object-fit: contain; filter: drop-shadow(0 6px 24px rgba(0, 0, 0, .5)); }
+.lgTagline { font-family: var(--lg-head); font-size: 2.125rem; line-height: 1; text-transform: uppercase; letter-spacing: .01em; margin-block: 6px 6px; max-inline-size: 11ch; }
+.lgClub { display: flex; align-items: center; gap: 10px; font-size: .8125rem; letter-spacing: .12em; text-transform: uppercase; color: var(--lg-cream-dim); margin-block-end: 18px; }
+.lgClub::before { content: ''; inline-size: 28px; block-size: 2px; background: var(--lg-brand); }
+.lgMenu { display: grid; gap: 10px; inline-size: min(100%, 26rem); }
+.lgFoot { margin-block-start: 14px; font-size: .75rem; color: var(--lg-cream-dim); letter-spacing: .04em; min-block-size: 1.2em; }
+
+/* ───── name entry ───── */
+.lgName { justify-content: center; gap: 14px; }
+.lgField { display: grid; gap: 8px; max-inline-size: 26rem; }
+.lgField label { font-size: .75rem; letter-spacing: .16em; text-transform: uppercase; color: var(--lg-cream-dim); }
+.lgField input { min-block-size: 60px; padding-inline: 18px; border-radius: 14px; border: 1px solid var(--lg-cream-dim); background: var(--lg-glass-solid); color: var(--lg-cream); font-family: var(--lg-head); font-size: 1.75rem; letter-spacing: .06em; text-transform: uppercase; user-select: text; -webkit-user-select: text; }
+.lgField input::placeholder { color: var(--lg-cream-dim); opacity: .6; }
+.lgField small { color: var(--lg-cream-dim); font-size: .8125rem; }
+
+/* ───── cinematic ───── */
+.lgCine { position: absolute; inset: 0; pointer-events: auto; animation: lgFade .3s both; }
+.lgBarT, .lgBarB { position: absolute; inset-inline: 0; background: #05090f; block-size: 13%; min-block-size: 64px; }
+.lgBarT { inset-block-start: 0; animation: lgBarTop .9s var(--lg-ease) both; }
+.lgBarB { inset-block-end: 0; animation: lgBarBot .9s var(--lg-ease) both; }
+.lgCineSkip { position: absolute; inset-block-start: calc(10px + var(--lg-safe-t)); inset-inline-end: 14px; min-block-size: 44px; padding-inline: 18px; border-radius: 22px; border: 1px solid var(--lg-cream-dim); background: transparent; font-family: var(--lg-head); letter-spacing: .16em; font-size: .875rem; text-transform: uppercase; }
+.lgCineText { position: absolute; inset-inline: 22px; inset-block-end: calc(13% + 22px); text-align: center; font-size: 1.1875rem; line-height: 1.4; text-shadow: 0 2px 14px rgba(0, 0, 0, .85); animation: lgRise .7s var(--lg-ease) both; }
+.lgDots { position: absolute; inset-inline: 0; inset-block-end: calc(13% / 2 - 4px); display: flex; justify-content: center; gap: 8px; }
+.lgDots i { inline-size: 22px; block-size: 3px; background: var(--lg-line); transition: background .3s; }
+.lgDots i[data-on='true'] { background: var(--lg-cream); }
+
+/* ───── pause ───── */
+.lgPause { justify-content: center; }
+.lgPauseHead { display: grid; gap: 4px; margin-block-end: 18px; }
+.lgPauseList { display: grid; gap: 8px; inline-size: min(100%, 26rem); }
+.lgPauseList .lgBtn { animation: lgSlideIn .45s var(--lg-ease) both; animation-delay: calc(var(--i, 0) * 55ms); }
+.lgSaved { margin-block-start: 14px; font-size: .75rem; color: var(--lg-cream-dim); letter-spacing: .04em; }
+
+/* settings + help */
+.lgPanelPage { gap: 12px; }
+.lgRows { display: grid; gap: 8px; max-inline-size: 34rem; }
+.lgRow { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-block-size: 56px; padding: 6px 16px; border-radius: 14px; border: 1px solid var(--lg-line); background: var(--lg-glass-solid); }
+.lgRow > span { font-size: 1rem; }
+.lgSeg { display: inline-flex; border: 1px solid var(--lg-line); border-radius: 12px; overflow: hidden; }
+.lgSeg button { min-block-size: 44px; min-inline-size: 64px; padding-inline: 14px; border: 0; background: transparent; font-size: .875rem; letter-spacing: .04em; }
+.lgSeg button[aria-pressed='true'], .lgSeg button[aria-checked='true'] { background: var(--lg-brand); color: var(--lg-navy); font-weight: 700; }
+.lgNote { font-size: .8125rem; color: var(--lg-cream-dim); max-inline-size: 34rem; }
+.lgHelpCols { display: grid; gap: 12px; max-inline-size: 44rem; }
+.lgHelpCol { padding: 14px 16px; border-radius: 14px; border: 1px solid var(--lg-line); background: var(--lg-glass-solid); display: grid; gap: 8px; }
+.lgHelpCol h2 { font-family: var(--lg-head); font-size: 1.125rem; letter-spacing: .1em; text-transform: uppercase; color: var(--lg-brand); }
+.lgHelpCol p { font-size: .9375rem; line-height: 1.35; padding-block: 2px; border-block-end: 1px solid var(--lg-line); }
+.lgHelpCol p:last-child { border: 0; }
+
+/* ───── job done card ───── */
+.lgCardWrap { justify-content: center; align-items: center; }
+.lgCard { inline-size: min(100%, 26rem); padding: 22px 20px; border-radius: 22px; border: 1px solid var(--lg-line); background: var(--lg-glass-solid); display: grid; gap: 12px; animation: lgPop .6s var(--lg-ease) both; }
+.lgCard h2 { font-family: var(--lg-head); font-size: 2.25rem; text-transform: uppercase; line-height: 1; }
+.lgCard p { color: var(--lg-cream-dim); line-height: 1.4; }
+.lgCardStats { display: flex; gap: 10px; }
+.lgCardStats div { flex: 1; padding: 10px 12px; border-radius: 12px; background: var(--lg-navy-2); display: grid; gap: 2px; }
+.lgCardStats small { font-size: .6875rem; letter-spacing: .14em; text-transform: uppercase; color: var(--lg-cream-dim); }
+.lgCardStats b { font-family: var(--lg-head); font-size: 1.5rem; letter-spacing: .04em; }
+.lgTick { inline-size: 44px; block-size: 44px; border-radius: 50%; background: var(--lg-accent); color: var(--lg-on-accent); display: grid; place-items: center; }
+.lgTick svg { inline-size: 22px; block-size: 22px; }
+
+/* ───── district map ───── */
+.lgMapPage { gap: 12px; }
+.lgMapHead { display: grid; gap: 2px; flex: none; }
+.lgMapBody { flex: 1; min-block-size: 0; display: grid; gap: 10px; grid-template-rows: minmax(240px, 1fr) auto; }
+.lgMapBox { position: relative; border-radius: 16px; border: 1px solid var(--lg-line); overflow: hidden; background: #0a121c; min-block-size: 240px; touch-action: none; cursor: grab; }
+.lgMapBox:active { cursor: grabbing; }
+.lgMapSvg { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; display: block; }
+.lgMapTools { position: absolute; inset-block-start: 8px; inset-inline-end: 8px; display: grid; gap: 8px; }
+.lgSide { display: grid; gap: 10px; align-content: start; }
+.lgChips { display: flex; flex-wrap: wrap; gap: 6px; }
+.lgChip { min-block-size: 44px; padding-inline: 12px; border-radius: 22px; border: 1px solid var(--lg-line); background: var(--lg-glass-solid); font-size: .8125rem; letter-spacing: .03em; display: inline-flex; align-items: center; gap: 6px; }
+.lgChip[aria-pressed='true'] { border-color: var(--lg-brand); color: var(--lg-brand); }
+.lgChip[data-way='true']::after { content: ''; inline-size: 7px; block-size: 7px; border-radius: 50%; background: var(--lg-brand); }
+.lgInfo { padding: 14px 16px; border-radius: 16px; border: 1px solid var(--lg-line); background: var(--lg-glass-solid); display: grid; gap: 6px; }
+.lgInfo h2 { font-family: var(--lg-head); font-size: 1.5rem; text-transform: uppercase; line-height: 1; }
+.lgInfo p { font-size: .875rem; line-height: 1.4; color: var(--lg-cream-dim); }
+.lgInfo .lgBtn { min-block-size: 48px; font-size: 1rem; }
+.lgInfoFlag { font-size: .6875rem; letter-spacing: .16em; text-transform: uppercase; color: var(--lg-brand); }
+.lgStatus { display: flex; flex-wrap: wrap; gap: 6px 18px; padding: 10px 14px; border-radius: 12px; border: 1px solid var(--lg-line); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--lg-cream-dim); }
+.lgStatus b { color: var(--lg-cream); margin-inline-start: 6px; letter-spacing: .04em; }
+.lgMapPin { cursor: pointer; }
+.lgMapPin:focus-visible { outline: none; }
+.lgMapPin:focus-visible circle.lgHit { stroke: var(--lg-cream); stroke-width: 1.2; }
+
+/* ───── kit bag ───── */
+.lgBagPage { gap: 12px; }
+.lgBagBody { display: grid; gap: 12px; grid-template-columns: 1fr; }
+.lgPortrait { position: relative; border-radius: 16px; border: 1px solid var(--lg-line); background: radial-gradient(ellipse at 50% 40%, var(--lg-navy-3), var(--lg-navy-2) 70%); min-block-size: 190px; display: grid; place-items: center; overflow: hidden; }
+.lgPortrait svg { block-size: 100%; max-block-size: 230px; inline-size: auto; }
+.lgPortrait small { position: absolute; inset-block-end: 8px; inset-inline-start: 12px; font-size: .6875rem; letter-spacing: .16em; text-transform: uppercase; color: var(--lg-cream-dim); }
+.lgSlots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.lgSlot { position: relative; min-block-size: 88px; border-radius: 14px; border: 1px solid var(--lg-line); background: var(--lg-navy-2); display: grid; place-items: center; align-content: center; gap: 6px; padding: 8px 4px; font-size: .6875rem; letter-spacing: .04em; text-align: center; transition: transform .12s, border-color .2s; }
+.lgSlot svg { inline-size: 36px; block-size: 36px; }
+.lgSlot:active { transform: scale(.96); }
+.lgSlot[aria-pressed='true'] { border-color: var(--lg-brand); box-shadow: inset 0 0 0 1px var(--lg-brand); }
+.lgSlot[data-state='locked'], .lgSlot[data-state='empty'] { opacity: .6; }
+.lgSlot[data-state='locked'] svg, .lgSlot[data-state='empty'] svg { opacity: .55; }
+.lgSlotCount { position: absolute; inset-block-start: 6px; inset-inline-end: 8px; font-family: var(--lg-head); font-size: .875rem; color: var(--lg-brand); }
+.lgSlotWorn { position: absolute; inset-block-start: 6px; inset-inline-start: 8px; inline-size: 8px; block-size: 8px; border-radius: 50%; background: var(--lg-brand); }
+.lgDetail { display: grid; gap: 6px; }
+
+/* ───── dialogue ───── */
+.lgTalk { position: absolute; inset-inline: 12px; inset-block-end: calc(14px + var(--lg-safe-b)); display: grid; gap: 8px; max-inline-size: 44rem; margin-inline: auto; animation: lgRise .35s var(--lg-ease) both; }
+.lgTalkBox { position: relative; padding: 22px 16px 14px; border-radius: 20px; border: 1px solid var(--lg-line); background: var(--lg-glass-solid); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+.lgPlate { position: absolute; inset-block-start: -15px; inset-inline-start: 14px; padding: 4px 14px; border-radius: 999px; background: var(--lg-accent); color: var(--lg-on-accent); font-family: var(--lg-head); font-size: .9375rem; letter-spacing: .1em; text-transform: uppercase; }
+.lgTalkText { font-size: 1.125rem; line-height: 1.42; min-block-size: 3.2em; }
+.lgCaret { display: inline-block; inline-size: .6em; animation: lgBlink 1s infinite; color: var(--lg-accent); }
+.lgLeave { position: absolute; inset-block-start: -22px; inset-inline-end: 4px; }
+.lgChoices { display: grid; gap: 8px; animation: lgRise .3s var(--lg-ease) both; }
+.lgChoice { min-block-size: 52px; padding: 8px 14px; border-radius: 14px; border: 1px solid var(--lg-line); background: var(--lg-glass-solid); display: flex; align-items: center; gap: 12px; text-align: start; font-size: 1.0625rem; line-height: 1.25; transition: transform .12s, border-color .2s; }
+.lgChoice:hover { border-color: var(--lg-accent); }
+.lgChoice:active { transform: scale(.98); }
+.lgChoice i { flex: none; inline-size: 30px; block-size: 30px; border-radius: 50%; display: grid; place-items: center; font-style: normal; font-family: var(--lg-head); background: var(--lg-accent); color: var(--lg-on-accent); }
+.lgTapHint { font-size: .6875rem; letter-spacing: .14em; text-transform: uppercase; color: var(--lg-cream-dim); text-align: end; margin-block-start: 4px; }
+
+/* ───── HUD ───── */
+.lgHud { position: absolute; inset: 0; pointer-events: none; transition: opacity .3s; }
+.lgHud[data-hidden='true'] { opacity: 0; visibility: hidden; }
+.lgGlass { background: var(--lg-glass); border: 1px solid var(--lg-line); border-radius: var(--lg-r); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) { .lgGlass, .lgBtn { background: var(--lg-glass-solid); } }
+.lgMiniWrap { position: absolute; inset-block-start: calc(10px + var(--lg-safe-t)); inset-inline-start: 10px; inline-size: 88px; block-size: 88px; pointer-events: auto; padding: 0; border: 0; background: none; border-radius: 50%; }
+.lgMiniWrap canvas { position: absolute; inset: 4px; inline-size: calc(100% - 8px); block-size: calc(100% - 8px); border-radius: 50%; }
+.lgRing { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; transform: rotate(-90deg); }
+.lgRing circle { fill: none; stroke-width: 4; }
+.lgRing .lgRingBg { stroke: var(--lg-line); }
+.lgRing .lgRingFg { stroke: var(--lg-accent); stroke-linecap: round; transition: stroke-dashoffset .4s; }
+.lgObj { position: absolute; inset-block-start: calc(10px + var(--lg-safe-t)); inset-inline: 106px 64px; padding: 8px 12px 9px; display: grid; gap: 2px; }
+.lgObj small { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: .625rem; letter-spacing: .14em; text-transform: uppercase; color: var(--lg-accent); }
+.lgObj b { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-family: var(--lg-head); font-weight: 400; font-size: 1rem; line-height: 1.12; text-transform: uppercase; letter-spacing: .02em; }
+.lgObj span { display: inline-flex; align-items: center; gap: 6px; font-size: .75rem; color: var(--lg-cream-dim); font-variant-numeric: tabular-nums; }
+.lgObj[data-free='true'] b { font-size: .9375rem; color: var(--lg-cream); }
+.lgArrow { inline-size: 16px; block-size: 16px; display: inline-block; opacity: 0; transition: opacity .2s; }
+.lgArrow svg { inline-size: 100%; block-size: 100%; fill: var(--lg-accent); display: block; }
+.lgChips2 { position: absolute; inset-block-start: calc(10px + var(--lg-safe-t) + 92px); inset-inline-start: 106px; display: flex; gap: 6px; flex-wrap: wrap; }
+.lgPill { display: inline-flex; align-items: center; gap: 6px; min-block-size: 28px; padding-inline: 10px; font-size: .75rem; letter-spacing: .06em; font-variant-numeric: tabular-nums; }
+.lgPill svg { inline-size: 14px; block-size: 14px; flex: none; }
+.lgTopRight { position: absolute; inset-block-start: calc(10px + var(--lg-safe-t)); inset-inline-end: 10px; display: grid; gap: 8px; pointer-events: auto; }
+.lgTopRight .lgIconBtn { border-radius: 14px; }
+.lgPlaceToast { position: absolute; inset-block-start: calc(140px + var(--lg-safe-t)); inset-inline: 0; display: grid; justify-items: center; pointer-events: none; }
+.lgPlaceToast div { padding: 6px 18px 8px; text-align: center; animation: lgDrop .45s var(--lg-ease) both; }
+.lgPlaceToast small { display: block; font-size: .625rem; letter-spacing: .16em; text-transform: uppercase; color: var(--lg-accent); }
+.lgPlaceToast b { font-family: var(--lg-head); font-weight: 400; font-size: 1.25rem; text-transform: uppercase; letter-spacing: .05em; }
+.lgBanner { position: absolute; inset-block-start: 32%; inset-inline: 0; display: grid; justify-items: center; pointer-events: none; }
+.lgBanner div { display: grid; justify-items: center; gap: 2px; padding: 12px 28px 14px; border-radius: 20px; background: var(--lg-accent); color: var(--lg-on-accent); animation: lgPop .55s var(--lg-ease) both; text-align: center; max-inline-size: calc(100vw - 32px); }
+.lgBanner b { font-family: var(--lg-head); font-weight: 400; font-size: 1.75rem; letter-spacing: .06em; text-transform: uppercase; line-height: 1; }
+.lgBanner span { font-size: .875rem; }
+.lgBanner[data-kind='minor'] div { background: var(--lg-glass-solid); color: var(--lg-cream); border: 1px solid var(--lg-accent); padding: 8px 20px; }
+.lgBanner[data-kind='minor'] b { font-size: 1.125rem; }
+.lgPrompt { position: absolute; inset-inline: 0; inset-block-end: calc(150px + var(--lg-safe-b)); display: grid; justify-items: center; pointer-events: none; }
+.lgPrompt div { display: inline-flex; align-items: center; gap: 8px; min-block-size: 40px; padding: 0 16px 0 8px; border-radius: 999px; animation: lgRise .25s var(--lg-ease) both; font-size: .9375rem; }
+.lgPrompt kbd { inline-size: 26px; block-size: 26px; display: grid; place-items: center; border-radius: 8px; background: var(--lg-accent); color: var(--lg-on-accent); font-family: var(--lg-head); font-size: .8125rem; }
+.lgPrompt svg { inline-size: 22px; block-size: 22px; color: var(--lg-accent); }
+
+/* thumbs */
+.lgStickZone { position: absolute; inset-block: 30% 0; inset-inline-start: 0; inline-size: 56%; pointer-events: auto; touch-action: none; }
+.lgStickGhost, .lgStick { position: absolute; inline-size: 112px; block-size: 112px; border-radius: 50%; border: 2px solid color-mix(in srgb, var(--lg-cream) 38%, transparent); background: color-mix(in srgb, var(--lg-navy) 28%, transparent); pointer-events: none; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+.lgStickGhost { inset-block-end: calc(26px + var(--lg-safe-b)); inset-inline-start: 22px; }
+.lgStick { margin-block-start: -56px; margin-inline-start: -56px; }
+.lgStickGhost i, .lgStick i { position: absolute; inset: 32px; border-radius: 50%; background: color-mix(in srgb, var(--lg-cream) 72%, transparent); box-shadow: 0 2px 10px rgba(0, 0, 0, .4); }
+.lgStickGhost span { position: absolute; inset-block-start: -22px; inset-inline: -20px; text-align: center; font-size: .6875rem; letter-spacing: .08em; color: var(--lg-cream-dim); }
+.lgPads { position: absolute; inset-inline-end: 14px; inset-block-end: calc(24px + var(--lg-safe-b)); inline-size: 150px; block-size: 150px; pointer-events: none; }
+.lgPad { position: absolute; border-radius: 50%; display: grid; place-items: center; align-content: center; gap: 1px; pointer-events: auto; border: 2px solid var(--lg-line); background: var(--lg-glass); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); font-family: var(--lg-head); font-size: .6875rem; letter-spacing: .1em; text-transform: uppercase; touch-action: none; transition: transform .1s, background .2s, border-color .2s; }
+.lgPad svg { inline-size: 26px; block-size: 26px; }
+.lgPad:active { transform: scale(.92); }
+.lgPad[data-kind='sprint'] { inset-inline-end: 0; inset-block-end: 0; inline-size: 88px; block-size: 88px; border-color: var(--lg-accent); }
+.lgPad[data-kind='sprint'][data-on='true'] { background: var(--lg-accent); color: var(--lg-on-accent); }
+.lgPad[data-kind='talk'] { inset-inline-end: 84px; inset-block-end: 70px; inline-size: 64px; block-size: 64px; }
+.lgPad[data-kind='talk'][data-hot='true'] { background: var(--lg-accent); color: var(--lg-on-accent); border-color: transparent; animation: lgPulse 1.1s infinite; }
+.lgPad[data-kind='cam'] { inset-inline-end: 2px; inset-block-end: 100px; inline-size: 44px; block-size: 44px; }
+.lgPad[data-kind='cam'] svg { inline-size: 20px; block-size: 20px; }
+.lgPad[data-kind='cam'][aria-pressed='true'] { border-color: var(--lg-accent); }
+.lgKeys { position: absolute; inset-block-end: calc(14px + var(--lg-safe-b)); inset-inline: 0; display: flex; justify-content: center; pointer-events: none; }
+.lgKeys p { padding: 6px 14px; border-radius: 999px; font-size: .75rem; letter-spacing: .04em; color: var(--lg-cream-dim); }
+
+.lgErr { position: absolute; inset: 0; display: grid; place-items: center; padding: 18px; background: color-mix(in srgb, var(--lg-navy) 92%, transparent); z-index: 12; }
+
+/* a phone 320 wide */
+@media (max-width: 359px) {
+  .lgMiniWrap { inline-size: 72px; block-size: 72px; }
+  .lgObj { inset-inline: 90px 60px; padding: 6px 10px 7px; }
+  .lgObj b { font-size: .9375rem; }
+  .lgChips2 { inset-inline-start: 90px; inset-block-start: calc(10px + var(--lg-safe-t) + 92px); }
+  
+  .lgTagline { font-size: 1.875rem; }
+  .lgH1 { font-size: 2rem; }
+  .lgSlot { min-block-size: 80px; }
+  .lgPads { inline-size: 136px; }
+  .lgPad[data-kind='sprint'] { inline-size: 80px; block-size: 80px; }
+  .lgPad[data-kind='talk'] { inset-inline-end: 76px; }
+  .lgStickGhost { inline-size: 96px; block-size: 96px; }
+  .lgStickGhost i { inset: 26px; }
+  .lgTalkText { font-size: 1rem; }
+  .lgBtn { font-size: 1rem; }
 }
-/* the desktop layout: job and carrying top left, the map bigger top right, words low and centred, no thumb controls */
+/* short phones: the thumb cluster is lower, the prompt keeps clear of it */
+@media (max-block-size: 700px) { .lgPrompt { inset-block-end: calc(132px + var(--lg-safe-b)); } .lgWordmark { inline-size: min(48vw, 220px); } }
+
+/* ───── desktop: its own layout ───── */
 @media (min-width: 900px) {
-  .hoodSay div { margin-inline-end: 0; max-inline-size: 34rem; }
-  .hoodJob { inline-size: 24rem; }
-  .hoodJob b { font-size: 1.2rem; }
-  .hoodMap { inline-size: 168px; block-size: 168px; }
-  .hoodPause { inset-block-start: calc(190px + var(--h-safe-t)); }
-  .hoodCarry { inset-block-start: calc(104px + var(--h-safe-t)); }
-  .hoodPlace { inset-block-end: 56px; }
-  .hoodSay { inset-block-end: 96px; }
+  .lgScreen { padding: 22px 56px 28px; }
+  .lgTitle { padding-block-start: 90px; padding-inline-start: 8vw; }
+  .lgTitle::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, color-mix(in srgb, var(--lg-navy) 92%, transparent) 0, color-mix(in srgb, var(--lg-navy) 60%, transparent) 38%, transparent 72%); pointer-events: none; }
+  .lgTitle > * { position: relative; }
+  .lgTitleTop { inset-inline: 56px; }
+  .lgTitle { justify-content: center; }
+  .lgWordmark { inline-size: 340px; }
+  .lgTagline { font-size: 3.5rem; max-inline-size: none; }
+  .lgMenu { inline-size: 22rem; }
+  .lgName { padding-inline-start: 8vw; }
+  .lgPause { padding-inline-start: 8vw; background: linear-gradient(to right, color-mix(in srgb, var(--lg-navy) 90%, transparent) 0, color-mix(in srgb, var(--lg-navy) 60%, transparent) 40%, transparent 75%); }
+  .lgH1 { font-size: 3.25rem; }
+  .lgMapBody { grid-template-columns: 1fr 22rem; grid-template-rows: minmax(0, 1fr) auto; }
+  .lgMapBox { grid-row: 1; grid-column: 1; }
+  .lgSide { grid-row: 1; grid-column: 2; align-content: start; }
+  .lgStatus { grid-column: 1 / -1; grid-row: 2; }
+  .lgChips { display: grid; grid-template-columns: 1fr 1fr; }
+  .lgBagBody { grid-template-columns: 22rem 1fr; align-items: start; }
+  .lgPortrait { min-block-size: 420px; }
+  .lgPortrait svg { max-block-size: 400px; }
+  .lgSlots { grid-template-columns: repeat(4, 1fr); }
+  .lgSlot { min-block-size: 120px; font-size: .8125rem; }
+  .lgSlot svg { inline-size: 44px; block-size: 44px; }
+  .lgHelpCols { grid-template-columns: 1fr 1fr; }
+  .lgMiniWrap { inline-size: 148px; block-size: 148px; inset-block-start: calc(16px + var(--lg-safe-t)); inset-inline-start: 16px; }
+  .lgObj { inset-inline: 178px auto; inline-size: 25rem; inset-block-start: calc(16px + var(--lg-safe-t)); }
+  .lgObj b { font-size: 1.3rem; }
+  .lgChips2 { inset-inline-start: 178px; inset-block-start: calc(16px + var(--lg-safe-t) + 82px); }
+  .lgTopRight { inset-block-start: calc(16px + var(--lg-safe-t)); inset-inline-end: 16px; }
+  .lgPlaceToast { inset-block-start: 16px; }
+  .lgPrompt { inset-block-end: 90px; }
+  .lgTalk { inset-block-end: 40px; }
+  .lgTalkText { font-size: 1.3125rem; }
+  .lgCineText { font-size: 1.625rem; }
+  .lgBanner b { font-size: 2.25rem; }
 }
-@media (prefers-reduced-motion: reduce) { .hoodSay div { transition: none; } }
+
+@media (prefers-reduced-motion: reduce) { .lgRoot *, .lgRoot *::before, .lgRoot *::after { animation: none !important; transition: none !important; } }
+.lgRoot[data-reduced='true'] *, .lgRoot[data-reduced='true'] *::before, .lgRoot[data-reduced='true'] *::after { animation: none !important; transition: none !important; }

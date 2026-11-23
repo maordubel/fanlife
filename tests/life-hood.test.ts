@@ -7,7 +7,7 @@ import {describe, expect, it} from 'vitest'
 import {CORE_CLUB_IDS, loadClub} from '@/lib/clubs/resolver'
 import {clubLife} from '@/lib/clubs/life/pack'
 import {hoodLevel, hoodSpec, type HoodClub} from '@/lib/life/hood/level'
-import {hoodBot, personNear, placeAt, startHood, stepHood, type HoodEvent} from '@/lib/life/hood/run'
+import {acceptJob, hoodBot, personNear, placeAt, startHood, stepHood, type HoodEvent} from '@/lib/life/hood/run'
 import {hoodWord, type HoodKey} from '@/lib/life/hood/words'
 import {inArea, type Level} from '@/lib/life/rush/level'
 import {IDLE, STEP} from '@/lib/life/rush/sim'
@@ -73,7 +73,11 @@ describe('the hood · Before kick-off, every core club', {timeout: 120_000}, () 
     for (const seed of [1, 2, 3]) {
       const run = startHood(hoodLevel(club, seed)), events: HoodEvent[] = []
       let n = 0
-      while (run.job !== 'done' && n < 60 * 600) { events.push(...stepHood(run, hoodBot(run))); n++ }
+      while (run.job !== 'done' && n < 60 * 600) {
+        const ev = stepHood(run, hoodBot(run)); events.push(...ev); n++
+        // the offer is a conversation: the bot picks "I'll get them"
+        if (ev.some(e => e.k === 'say' && e.key === 'hood.say.dad.offer')) events.push(...acceptJob(run))
+      }
       if (run.job !== 'done') { failures.push(`seed ${seed}: stuck at (${run.sim.x.toFixed(1)}, ${run.sim.z.toFixed(1)}) step ${run.sim.step} after ${Math.round(run.sim.t)}s`); continue }
       const starts = events.filter(e => e.k === 'job' && e.state === 'start').length
       if (starts !== 1) failures.push(`seed ${seed}: the job started ${starts} times`)
@@ -118,7 +122,11 @@ describe('the hood · nothing is done for him', {timeout: 60_000}, () => {
     expect(personNear(run)?.id).toBe('dad')
     stepHood(run, IDLE)
     expect(run.job).toBe('idle')
-    stepHood(run, {...IDLE, act: true})
+    const ev = stepHood(run, {...IDLE, act: true})
+    // talking is only the offer: the job opens on the accept choice
+    expect(ev.some(e => e.k === 'say' && e.key === 'hood.say.dad.offer')).toBe(true)
+    expect(run.job).toBe('idle')
+    acceptJob(run)
     expect(run.job).toBe('active')
   })
   it('talking to the others never locks him: he can always walk away mid-conversation', async () => {

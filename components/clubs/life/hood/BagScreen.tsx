@@ -1,0 +1,71 @@
+'use client'
+/** LIFE · the game — the kit bag: the supporter's figure, the wearing slot, the starter slots and what he carries, an item detail. */
+import {useState} from 'react'
+import type {BagId, BagItem} from '@/lib/life/hood/bag'
+import {Icon, type IconName} from './Icons'
+import css from './hood.module.css'
+
+type W = (k: string, extra?: Record<string, string>) => string
+const ICON: Record<BagId, IconName> = {scarf: 'scarf', ticket: 'ticket', pass: 'pass', bag: 'bag', batteries: 'battery', 'dads-scarf': 'scarf'}
+
+/** the supporter, drawn: jacket, trousers, and the terrace scarf in the club's colours when it is worn */
+function Figure({scarf, accent, second}: {scarf: boolean; accent: string; second: string}) {
+  return (
+    <svg viewBox="0 0 160 280" role="img" aria-label="" aria-hidden="true">
+      <ellipse cx="80" cy="268" rx="46" ry="6" fill="#000" opacity=".35" />
+      <path d="M62 150h36l4 92H88l-8-60-8 60H58z" fill="#cbb48e" />
+      <path d="M56 242h22v14H52zM82 242h22l4 14H82z" fill="#2a2f38" />
+      <path d="M46 86c0-12 10-20 22-20h24c12 0 22 8 22 20l6 70h-18l-2-44-2 50H62l-2-50-2 44H40z" fill="#1d2b3f" stroke="#fff1dc" strokeOpacity=".25" strokeWidth="1.5" />
+      <path d="M38 100l-8 56h14l8-50zM122 100l8 56h-14l-8-50z" fill="#1d2b3f" stroke="#fff1dc" strokeOpacity=".2" />
+      <circle cx="36" cy="160" r="7" fill="#c98f66" /><circle cx="124" cy="160" r="7" fill="#c98f66" />
+      <rect x="71" y="52" width="18" height="18" rx="6" fill="#c98f66" />
+      <ellipse cx="80" cy="40" rx="20" ry="23" fill="#d9a276" />
+      <path d="M59 36c0-16 10-24 21-24s21 8 21 24c-6-8-13-11-21-11s-15 3-21 11z" fill="#2a1f1a" />
+      <circle cx="73" cy="42" r="2" fill="#2a1f1a" /><circle cx="87" cy="42" r="2" fill="#2a1f1a" />
+      <path d="M74 52q6 4 12 0" fill="none" stroke="#2a1f1a" strokeWidth="1.6" strokeLinecap="round" />
+      {scarf && <g>
+        <path d="M60 64c12 8 28 8 40 0l3 14c-14 9-32 9-46 0z" fill={accent} />
+        <path d="M68 68l-2 11M76 71l-1 12M84 71l1 12M92 68l2 11" stroke={second} strokeWidth="3" />
+        <path d="M86 76h14l4 56h-16z" fill={accent} /><path d="M88 96h14M89 110h14M90 124h14" stroke={second} strokeWidth="3.5" />
+      </g>}
+    </svg>
+  )
+}
+
+export function BagScreen({w, items, accent, second, onWear, onClose, onTab}: {w: W; items: BagItem[]; accent: string; second: string; onWear: (on: boolean) => void; onClose: () => void; onTab: () => void}) {
+  const [sel, setSel] = useState<BagId>('scarf')
+  const it = items.find(i => i.id === sel) ?? items[0]!
+  const wearing = items.find(i => i.id === 'scarf')?.worn ?? false
+  const stateWord = it.state === 'locked' ? w('hood.bag.locked') : it.state === 'empty' ? w('hood.bag.empty') : it.state === 'carried' ? w('hood.bag.carrying') : it.worn ? w('hood.bag.worn') : ''
+  return (
+    <section className={css.lgScreen + ' ' + css.lgBagPage} data-solid="true" aria-label={w('hood.bag.title')} data-life="hood-bag">
+      <div className={css.lgBar}>
+        <span className={css.lgBrandMark}>{w('hood.brand')}</span>
+        <div className={css.lgTabs}><button type="button" className={css.lgTab} onClick={onTab}>{w('hood.pause.map')}</button><button type="button" className={css.lgTab} aria-current="true">{w('hood.pause.bag')}</button></div>
+        <button type="button" className={css.lgIconBtn} aria-label={w('hood.close')} onClick={onClose}><Icon n="close" /></button>
+      </div>
+      <div><p className={css.lgKicker}>{w('hood.bag.kicker')}</p><h1 className={css.lgH1}>{w('hood.bag.title')}</h1></div>
+      <div className={css.lgBagBody}>
+        <div className={css.lgPortrait}><Figure scarf={wearing} accent={accent} second={second} /><small>{w('hood.bag.portrait')}{wearing ? ` · ${w('hood.bag.wearing')}: ${w('hood.bag.scarf')}` : ''}</small></div>
+        <div className={css.lgSide}>
+          <div className={css.lgSlots} role="group" aria-label={w('hood.bag.carrying')}>
+            {items.map(i => (
+              <button key={i.id} type="button" className={css.lgSlot} data-state={i.state} aria-pressed={sel === i.id} onClick={() => setSel(i.id)}>
+                {i.worn && <span className={css.lgSlotWorn} aria-hidden="true" />}
+                {i.count > 1 && <span className={css.lgSlotCount}>{w('hood.bag.count', {n: String(i.count)})}</span>}
+                <Icon n={i.state === 'locked' ? 'lock' : ICON[i.id]} />
+                <span>{w(i.nameKey)}</span>
+              </button>
+            ))}
+          </div>
+          <div className={css.lgInfo + ' ' + css.lgDetail} aria-live="polite">
+            {stateWord && <span className={css.lgInfoFlag}>{stateWord}</span>}
+            <h2>{w(it.nameKey)}</h2>
+            <p>{w(it.descKey)}</p>
+            {it.wearable && <button type="button" className={css.lgBtn} data-primary={!it.worn} onClick={() => onWear(!it.worn)}>{it.worn ? w('hood.bag.takeoff') : w('hood.bag.wear')}<Icon n="scarf" /></button>}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}

@@ -3,7 +3,7 @@
  *
  * `stepHood` is one `stepSim` plus the few rules the open neighbourhood adds:
  *   · there is no clock and no fail state; nothing ends — finishing a job returns to roaming with the job marked done;
- *   · a job starts only when the player presses talk beside the person who gives it; nothing is ever done for him
+ *   · a job starts only when the player presses talk beside the person who gives it AND picks the accept choice (`acceptJob`); nothing is ever done for him
  *     (a step only advances on the player's own walk or talk, exactly as in a mission);
  *   · any other person near him answers a talk with a line that fits the moment; a talk never locks anything.
  */
@@ -51,7 +51,7 @@ export function placeAt(level: Level, x: number, z: number): HoodPlace | null {
 }
 
 /** what a person says now, given how the job stands */
-function lineFor(run: HoodRun, p: HoodPerson): string {
+export function lineFor(run: HoodRun, p: HoodPerson): string {
   const j = jobOf(run), step = openStep(run)
   if (p.id === j.giver) return run.job === 'idle' ? j.offerKey : run.job === 'active' ? j.againKey : j.doneKey
   if (p.id === 'kiosk') return run.job === 'active' && step === j.from ? 'hood.say.kiosk.job' : run.job === 'done' ? 'hood.say.kiosk.done' : 'hood.say.kiosk.idle'
@@ -78,13 +78,21 @@ export function stepHood(run: HoodRun, input: Input, dt = STEP): HoodEvent[] {
     if (p && sim.t - (run.said[p.id] ?? -9) > COOLDOWN) {
       run.said[p.id] = sim.t
       const key = lineFor(run, p)
-      if (p.id === j.giver && run.job === 'idle') { run.job = 'active'; sim.step = j.from; out.push({k: 'job', state: 'start', id: j.id}); out.push({k: 'step', next: sim.step}) }
+      // the offer is a conversation: the job opens only when the player picks the accept choice (`acceptJob`)
       out.push({k: 'say', who: p.id, key})
     }
   }
   const pl = placeAt(level, sim.x, sim.z)?.id ?? null
   if (pl !== run.lastPlace) { run.lastPlace = pl; out.push({k: 'place', id: pl}) }
   return out
+}
+
+/** the accept choice of the giver's offer: the job opens, its first step is the open one. Nothing else opens a job. */
+export function acceptJob(run: HoodRun): HoodEvent[] {
+  if (run.job !== 'idle') return []
+  const j = jobOf(run)
+  run.job = 'active'; run.sim.step = j.from
+  return [{k: 'job', state: 'start', id: j.id}, {k: 'step', next: run.sim.step}]
 }
 
 /**
