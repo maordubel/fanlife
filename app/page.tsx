@@ -39,6 +39,8 @@ import shopCopy from '@/messages/en.shop.json'
 import {FrontDoors} from '@/components/home/FrontDoors'
 import {CHANNEL} from '@/lib/stories/channel'
 import {Welcome} from '@/components/home/Welcome'
+import {preload} from 'react-dom'
+import {shopLastKnown} from '@/lib/shop/store'
 import {PressWait} from '@/components/weekly/PressWait'
 import {ShopWindow} from '@/components/shop/ShopWindow'
 import {ClubPicker} from '@/components/home/ClubPicker'
@@ -75,8 +77,13 @@ export default function Page({searchParams}:{searchParams:{lang?:string}}){
 }
 /** the welcome waits for two cheap answers only: is the new front page on, and does the shop sell (its fourth beat) */
 async function WelcomeDoor({copy}:{copy:typeof en}){
- const [fd,shopOpen]=await Promise.all([door('frontDoors'),shopIsOpen()])
+ // nothing slow stands before the welcome: the switch is one cached read; the shop's fourth beat goes by what this instance last
+ // saw (measured on production 23.11.2026: awaiting the shop file held the welcome back a full second on a cold instance)
+ const fd=await door('frontDoors'),shopOpen=shopLastKnown()
  if(!fd.open)return null
+ // the welcome's picture starts downloading with the styles, not after them (measured: it used to start 0.9 s later)
+ preload('/brand/fanlife/art/matchday-640.webp',{as:'image',media:'(max-width: 900px)'} as Parameters<typeof preload>[1])
+ preload('/brand/fanlife/art/matchday-1280.webp',{as:'image',media:'(min-width: 901px)'} as Parameters<typeof preload>[1])
  return <Welcome copy={{kicker:copy.welK,to:copy.welTo,lead:copy.welLead,s1:copy.welS1,s1Sub:copy.welS1Sub,s2:copy.welS2,s2Sub:copy.welS2Sub,s3:copy.welS3,s3Sub:copy.welS3Sub,...(shopOpen?{s4:copy.welS4,s4Sub:copy.welS4Sub}:{}),go:copy.welGo,skip:copy.welSkip,free:copy.welFree,wait:copy.welWait}}/>
 }
 async function Home({searchParams}:{searchParams:{lang?:string}}){

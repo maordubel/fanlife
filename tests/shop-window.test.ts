@@ -17,6 +17,6 @@ describe('the shop window on the front page (docs/rules/welcome-and-picker.md)',
  it('is on the new front page only, and the welcome names the shop only while it sells',()=>{
   expect(page).toContain('{short&&<Suspense fallback={null}><ShopWindow/></Suspense>}')
   expect(page).toContain('...(shopOpen?{s4:copy.welS4,s4Sub:copy.welS4Sub}:{})')
-  expect(page).toContain('const [fd,shopOpen]=await Promise.all([door(\'frontDoors\'),shopIsOpen()])')
+  expect(page).toContain("const fd=await door('frontDoors'),shopOpen=shopLastKnown()")
  })
 })
