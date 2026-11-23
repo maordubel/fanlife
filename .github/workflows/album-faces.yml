@@ -52,6 +52,8 @@ jobs:
         with: {python-version: '3.12'}
       - uses: actions/cache@v4
         with: {path: ~/.cache/huggingface, key: hf-sdxl-lcm-v1}
+      - name: Swap (SDXL on CPU needs more than the runner's memory when many jobs run)
+        run: sudo fallocate -l 12G /swapfile2 && sudo chmod 600 /swapfile2 && sudo mkswap /swapfile2 && sudo swapon /swapfile2 && free -g
       - run: |
           pip install torch --index-url https://download.pytorch.org/whl/cpu
           pip install diffusers transformers accelerate peft rembg onnxruntime pillow playwright "opencv-contrib-python-headless<5" numpy
