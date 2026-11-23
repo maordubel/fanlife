@@ -23,7 +23,7 @@ const photos = new Set(
     JSON.parse(readFileSync(join(ROOT, 'content/manual/kit-photos.json'), 'utf8')) as { records: { file: string }[] },
     // per-club photograph manifests (FAN LIFE): files are `<club>/<name>.webp`, yellow measured on the decode
     ...readdirSync(join(ROOT, 'content/manual')).filter((f) => /^kit-photos-.+\.json$/.test(f)).map((f) => JSON.parse(readFileSync(join(ROOT, 'content/manual', f), 'utf8')) as { records: { file: string }[] }),
-  ].flatMap((m) => m.records.map((row) => row.file)),
+  ].flatMap((m) => (Array.isArray(m) ? [] : m.records).map((row) => row.file)), // a bare list (kit-photos-atalanta.json) lives under public/club-kits, not public/kits
 )
 
 /**

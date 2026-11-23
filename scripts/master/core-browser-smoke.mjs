@@ -96,11 +96,10 @@ try {
  // scroll-into-view and the real pointer event; a covered target still fails the assertion that follows it.
  const L=Object.getPrototypeOf(page.locator('body')),click=L.click;L.click=function(o={}){return click.call(this,{force:true,...o})}
  context.on('page',p=>p.on('pageerror',e=>errors.push(e.message)));page.on('pageerror',e=>errors.push(e.message));context.on('request',r=>{if(/supabase\.co/.test(r.url()))external.push(r.url())})
- const golden=JSON.parse(readFileSync('tests/fixtures/timeline-golden.json','utf8')).runs.find(r=>r.seed===42&&r.cursor===0)
  mkdirSync('/tmp/fanlife-m1-browser',{recursive:true})
  for(const slug of ['hapoel-tel-aviv','zrinjski-mostar','olympiacos','hapoel-petah-tikva']) {
   // the truth is the COMPILED timeline the page deals from (packs + waves), not core.json alone
-  const dates=new Map(slug==='hapoel-tel-aviv'?golden.board.map(c=>[c.id,c.on]):(await loadClub(slug)).data.timeline.map(t=>[t.value.id,t.value.on]))
+  const dates=new Map((await loadClub(slug)).data.timeline.map(t=>[t.value.id,t.value.on])) // 23.11.2026: Hapoel's deal now includes the daily research too, so its truth is the compiled timeline like every club's
   const response=await page.goto(`${base}/clubs/${slug}/timeline?seed=42`)
   assert.equal(response.status(),200)
   await timelineReady(page)
