@@ -7,7 +7,8 @@ html[data-welcome] { overflow: hidden; }
 html[data-welcome] .wko { display: grid; position: fixed; inset: 0; z-index: 1000; overflow: hidden; background: var(--mag-night); color: var(--mag-paper); align-items: end; }
 html[data-welcome='out'] .wko { animation: wko-out .42s cubic-bezier(.6, 0, .9, .3) forwards; pointer-events: none; }
 .wko-bg, .wko-rays { position: absolute; inset: 0; pointer-events: none; }
-html[data-welcome] .wko-bg { background: var(--mag-night) image-set(url('/brand/fanlife/art/matchday-640.webp') 1x, url('/brand/fanlife/art/matchday-960.webp') 2x) 30% 0 / cover no-repeat; animation: wko-zoom 14s ease-out both; }
+/* the picture is there from the first frame: a 0.3 KB copy of it is in this file, and the real one is drawn over it when it lands */
+html[data-welcome] .wko-bg { background: image-set(url('/brand/fanlife/art/matchday-640.webp') 1x, url('/brand/fanlife/art/matchday-960.webp') 2x) 30% 0 / cover no-repeat, url('data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAABwBQCdASogABUAPu1qqFCppiOiqA1RMB2JYgCdMyYCmBHvQnDFkZoPvWK6AM6W0NoXXEQAAP6sBf7dBvSs5O10Juem6QoGcOi/gDmP5hL9N8oKD9wKlb6XptDH/qw3aM64yUjejTVDeocL0b4ADwEScPsXhK80diaXqhgR/exBKEP1EZispe4mAAA=') 30% 0 / cover no-repeat var(--mag-night); animation: wko-zoom 14s ease-out both; }
 .wko-rays { background: linear-gradient(to bottom, color-mix(in srgb, var(--mag-night) 10%, transparent) 0, color-mix(in srgb, var(--mag-night) 72%, transparent) 38%, var(--mag-night) 78%), radial-gradient(color-mix(in srgb, var(--mag-paper) 9%, transparent) 1px, transparent 1.4px) 0 0 / 6px 6px; }
 .wko-in { position: relative; max-block-size: 100dvh; overflow-y: auto; overscroll-behavior: contain; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; inline-size: 100%; max-inline-size: 560px; margin-inline: auto; padding: 18px 18px calc(14px + env(safe-area-inset-bottom, 0px)); }
 .wko-in > * { animation: wko-rise .5s cubic-bezier(.2, .8, .2, 1) both; }
@@ -37,7 +38,7 @@ html[data-welcome] [data-art='ticket'] .wko-art { background-image: image-set(ur
 @media (max-height: 640px) { .wko-lead { display: none; } .wko .wko-h b { font-size: 50px; } .wko-steps > li { min-block-size: 54px; } .wko-t small { display: none; } }
 @media (min-width: 901px) {
   html[data-welcome] .wko { align-items: center; }
-  html[data-welcome] .wko-bg { background-image: url('/brand/fanlife/art/matchday-1536.webp'); background-position: 0 40%; }
+  html[data-welcome] .wko-bg { background-image: url('/brand/fanlife/art/matchday-1280.webp'), url('data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAABwBQCdASogABUAPu1qqFCppiOiqA1RMB2JYgCdMyYCmBHvQnDFkZoPvWK6AM6W0NoXXEQAAP6sBf7dBvSs5O10Juem6QoGcOi/gDmP5hL9N8oKD9wKlb6XptDH/qw3aM64yUjejTVDeocL0b4ADwEScPsXhK80diaXqhgR/exBKEP1EZispe4mAAA='); background-position: 0 40%; }
   .wko-rays { background: linear-gradient(to left, var(--mag-night) 0, color-mix(in srgb, var(--mag-night) 88%, transparent) 42%, color-mix(in srgb, var(--mag-night) 12%, transparent) 78%), radial-gradient(color-mix(in srgb, var(--mag-paper) 8%, transparent) 1px, transparent 1.4px) 0 0 / 7px 7px; }
   .wko-in { max-inline-size: none; padding: 40px 6vw; align-items: flex-end; text-align: end; gap: 14px; }
   .wko-in > * { max-inline-size: 620px; }
