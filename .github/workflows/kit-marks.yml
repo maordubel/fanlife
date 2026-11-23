@@ -1,0 +1,20 @@
+name: Kits · marks research
+# Owner 23.11.2026: real sponsor and maker marks on every drawn shirt. Looks for free SVG logos on Wikimedia Commons for the names
+# content/manual/maker-marks.json does not hold yet, and commits the candidates to the branch for a person to pick (approve-marks.py).
+on:
+  workflow_dispatch:
+  push:
+    branches: [claude/kit-marks-lab]
+permissions: {contents: write}
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: python scripts/kits/fetch-marks.py
+      - run: |
+          git config user.name github-actions[bot]; git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add content/research/kit-marks && git commit -m "kit marks: candidates [skip ci]" && git push || true
