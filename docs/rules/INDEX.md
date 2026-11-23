@@ -8,6 +8,7 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 ## LIFE — the game runtime
 
 - [life-one-engine-hood](life-one-engine-hood.md) · LIFE is one engine: RUSH becomes the open neighbourhood; the player performs every action; a job starts from a person (23.11.2026)
+- [life-story-watch](life-story-watch.md) · LIFE always has a mission in front of you (approaches, complication, convergence, aftermath); a film is a recorded link or nothing; the studio is asked, not triggered (23.11.2026)
 - [39](039.md) · THE WORKER LIFE is a GAME RUNTIME, not a fourteenth gate
 - [40](040.md) · THE WORKER LIFE is drawn with Maor's concept boards, not around them
 - [41](041.md) · A door you cannot see is not a door

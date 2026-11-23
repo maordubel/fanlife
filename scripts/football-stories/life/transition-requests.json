@@ -1,0 +1,7382 @@
+{
+ "schema": 1,
+ "what": "LIFE interstitials the story asks the studio for. Requests only: nothing is rendered, uploaded or published by this file.",
+ "rule": "docs/rules/life-story-watch.md",
+ "clubs": {
+  "aek-athens": {
+   "birthYear": 1978,
+   "requests": [
+    {
+     "id": "aek-athens:first-noise:chapter-card",
+     "club": "aek-athens",
+     "chapter": "first-noise",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 6,
+     "night": {
+      "factId": "aek-athens:t-dh-87ef046c0d6c",
+      "on": "1983-04-03",
+      "year": 1983,
+      "precision": "day",
+      "title": "AEK Athens 4-1 Panathinaikos",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "AEK Athens 4-1 Panathinaikos — AEKdata",
+        "publisher": "AEKdata",
+        "url": "https://aekdata.gr/agonas/870-aek-panathinaikos-4-1"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 6",
+      "The First Noise",
+      "1983-04-03"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "aek-athens:first-noise:matchday-opener",
+     "club": "aek-athens",
+     "chapter": "first-noise",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 6,
+     "night": {
+      "factId": "aek-athens:t-dh-87ef046c0d6c",
+      "on": "1983-04-03",
+      "year": 1983,
+      "precision": "day",
+      "title": "AEK Athens 4-1 Panathinaikos",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "AEK Athens 4-1 Panathinaikos — AEKdata",
+        "publisher": "AEKdata",
+        "url": "https://aekdata.gr/agonas/870-aek-panathinaikos-4-1"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "1983-04-03",
+      "AEK Athens 4-1 Panathinaikos"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "aek-athens:six-short:time-bridge",
+     "club": "aek-athens",
+     "chapter": "six-short",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 7,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 6",
+      "Age 7",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "aek-athens:six-short:chapter-card",
+     "club": "aek-athens",
+     "chapter": "six-short",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 7,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 7",
+      "Six Short"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "aek-athens:the-way-in:time-bridge",
+     "club": "aek-athens",
+     "chapter": "the-way-in",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 8,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 7",
+      "Age 8",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "aek-athens:the-way-in:chapter-card",
+     "club": "aek-athens",
+     "chapter": "the-way-in",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 8,
+     "night": {
+      "factId": "aek-athens:t-dh-b7701d9915a7",
+      "on": "1986-02-09",
+      "year": 1986,
+      "precision": "day",
+      "title": "AEK Athens 0-0 Olympiacos",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "AEK Athens 0-0 Olympiacos — AEKdata",
+        "publisher": "AEKdata",
+        "url": "https://aekdata.gr/agonas/1019-aek-olympiakos-0-0"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 8",
+      "The Way In",
+      "1986-02-09"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "aek-athens:the-way-in:matchday-opener",
+     "club": "aek-athens",
+     "chapter": "the-way-in",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 8,
+     "night": {
+      "factId": "aek-athens:t-dh-b7701d9915a7",
+      "on": "1986-02-09",
+      "year": 1986,
+      "precision": "day",
+      "title": "AEK Athens 0-0 Olympiacos",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "AEK Athens 0-0 Olympiacos — AEKdata",
+        "publisher": "AEKdata",
+        "url": "https://aekdata.gr/agonas/1019-aek-olympiakos-0-0"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "1986-02-09",
+      "AEK Athens 0-0 Olympiacos"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "aek-athens:monday-colours:time-bridge",
+     "club": "aek-athens",
+     "chapter": "monday-colours",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 8",
+      "Age 9",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "aek-athens:monday-colours:chapter-card",
+     "club": "aek-athens",
+     "chapter": "monday-colours",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 9",
+      "Monday Colours"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "aek-athens:the-window:chapter-card",
+     "club": "aek-athens",
+     "chapter": "the-window",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 9",
+      "The Window"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "aek-athens:missing-square:time-bridge",
+     "club": "aek-athens",
+     "chapter": "missing-square",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 10,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 9",
+      "Age 10",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "aek-athens:missing-square:chapter-card",
+     "club": "aek-athens",
+     "chapter": "missing-square",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 10,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 10",
+      "The Missing Square"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "aek-athens:her-seat:chapter-card",
+     "club": "aek-athens",
+     "chapter": "her-seat",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 10,
+     "night": {
+      "factId": "aek-athens:t-dh-c860919ea008",
+      "on": "1988-04-24",
+      "year": 1988,
+      "precision": "day",
+      "title": "AEK Athens 2-2 Panathinaikos",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "AEK Athens 2-2 Panathinaikos — AEKdata",
+        "publisher": "AEKdata",
+        "url": "https://aekdata.gr/agonas/968-aek-panathinaikos-2-2"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 10",
+      "Her Seat",
+      "1988-04-24"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "aek-athens:her-seat:matchday-opener",
+     "club": "aek-athens",
+     "chapter": "her-seat",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 10,
+     "night": {
+      "factId": "aek-athens:t-dh-c860919ea008",
+      "on": "1988-04-24",
+      "year": 1988,
+      "precision": "day",
+      "title": "AEK Athens 2-2 Panathinaikos",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "AEK Athens 2-2 Panathinaikos — AEKdata",
+        "publisher": "AEKdata",
+        "url": "https://aekdata.gr/agonas/968-aek-panathinaikos-2-2"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "1988-04-24",
+      "AEK Athens 2-2 Panathinaikos"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "aek-athens:lead-the-way:time-bridge",
+     "club": "aek-athens",
+     "chapter": "lead-the-way",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 10",
+      "Age 11",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "aek-athens:lead-the-way:chapter-card",
+     "club": "aek-athens",
+     "chapter": "lead-the-way",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 11",
+      "Lead the Way"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "aek-athens:lead-the-way:matchday-opener",
+     "club": "aek-athens",
+     "chapter": "lead-the-way",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "Lead the Way"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "aek-athens:the-banner:chapter-card",
+     "club": "aek-athens",
+     "chapter": "the-banner",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 11,
+     "night": {
+      "factId": "aek-athens:t-dh-2c9e35117d08",
+      "on": "1989-03-12",
+      "year": 1989,
+      "precision": "day",
+      "title": "AEK Athens 3-2 Olympiacos Volos",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "AEK Athens 3-2 Olympiacos Volos — AEKdata",
+        "publisher": "AEKdata",
+        "url": "https://aekdata.gr/agonas/839-aek-olympiakos-volou-3-2"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 11",
+      "The Banner",
+      "1989-03-12"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "aek-athens:no-ticket:time-bridge",
+     "club": "aek-athens",
+     "chapter": "no-ticket",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 12,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 11",
+      "Age 12",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "aek-athens:no-ticket:chapter-card",
+     "club": "aek-athens",
+     "chapter": "no-ticket",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 12,
+     "night": {
+      "factId": "aek-athens:t-dh-1754b3590b3d",
+      "on": "1991-02-06",
+      "year": 1991,
+      "precision": "day",
+      "title": "AEK Athens 1-0 Olympiacos",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "AEK Athens 1-0 Olympiacos — AEKdata",
+        "publisher": "AEKdata",
+        "url": "https://aekdata.gr/agonas/695-aek-olympiakos-1-0"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 12",
+      "No Ticket",
+      "1991-02-06"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "aek-athens:no-ticket:matchday-opener",
+     "club": "aek-athens",
+     "chapter": "no-ticket",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 12,
+     "night": {
+      "factId": "aek-athens:t-dh-1754b3590b3d",
+      "on": "1991-02-06",
+      "year": 1991,
+      "precision": "day",
+      "title": "AEK Athens 1-0 Olympiacos",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "AEK Athens 1-0 Olympiacos — AEKdata",
+        "publisher": "AEKdata",
+        "url": "https://aekdata.gr/agonas/695-aek-olympiakos-1-0"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "1991-02-06",
+      "AEK Athens 1-0 Olympiacos"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "aek-athens:the-box:chapter-card",
+     "club": "aek-athens",
+     "chapter": "the-box",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 12,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 12",
+      "The Box"
+     ],
+     "status": "requested"
+    }
+   ]
+  },
+  "al-ahly": {
+   "birthYear": 2006,
+   "requests": [
+    {
+     "id": "al-ahly:first-noise:chapter-card",
+     "club": "al-ahly",
+     "chapter": "first-noise",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 6,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 6",
+      "The First Noise"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "al-ahly:first-noise:matchday-opener",
+     "club": "al-ahly",
+     "chapter": "first-noise",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 6,
+     "night": null,
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "The First Noise"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "al-ahly:six-short:time-bridge",
+     "club": "al-ahly",
+     "chapter": "six-short",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 7,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 6",
+      "Age 7",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "al-ahly:six-short:chapter-card",
+     "club": "al-ahly",
+     "chapter": "six-short",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 7,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 7",
+      "Six Short"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "al-ahly:the-way-in:time-bridge",
+     "club": "al-ahly",
+     "chapter": "the-way-in",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 8,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 7",
+      "Age 8",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "al-ahly:the-way-in:chapter-card",
+     "club": "al-ahly",
+     "chapter": "the-way-in",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 8,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 8",
+      "The Way In"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "al-ahly:the-way-in:matchday-opener",
+     "club": "al-ahly",
+     "chapter": "the-way-in",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 8,
+     "night": null,
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "The Way In"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "al-ahly:monday-colours:time-bridge",
+     "club": "al-ahly",
+     "chapter": "monday-colours",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 8",
+      "Age 9",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "al-ahly:monday-colours:chapter-card",
+     "club": "al-ahly",
+     "chapter": "monday-colours",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 9",
+      "Monday Colours"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "al-ahly:the-window:chapter-card",
+     "club": "al-ahly",
+     "chapter": "the-window",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 9",
+      "The Window"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "al-ahly:missing-square:time-bridge",
+     "club": "al-ahly",
+     "chapter": "missing-square",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 10,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 9",
+      "Age 10",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "al-ahly:missing-square:chapter-card",
+     "club": "al-ahly",
+     "chapter": "missing-square",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 10,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 10",
+      "The Missing Square"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "al-ahly:her-seat:chapter-card",
+     "club": "al-ahly",
+     "chapter": "her-seat",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 10,
+     "night": {
+      "factId": "al-ahly:daily-match-6969003331404e25076d6df2-moment",
+      "on": "2017-12-06",
+      "year": 2017,
+      "precision": "day",
+      "title": "Al Ahly 1–0 Al Assiouty",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "2017–18 Al Ahly SC season",
+        "publisher": "English Wikipedia",
+        "url": "https://en.wikipedia.org/w/index.php?oldid=1386782646"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 10",
+      "Her Seat",
+      "2017-12-06"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "al-ahly:her-seat:matchday-opener",
+     "club": "al-ahly",
+     "chapter": "her-seat",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 10,
+     "night": {
+      "factId": "al-ahly:daily-match-6969003331404e25076d6df2-moment",
+      "on": "2017-12-06",
+      "year": 2017,
+      "precision": "day",
+      "title": "Al Ahly 1–0 Al Assiouty",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "2017–18 Al Ahly SC season",
+        "publisher": "English Wikipedia",
+        "url": "https://en.wikipedia.org/w/index.php?oldid=1386782646"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "2017-12-06",
+      "Al Ahly 1–0 Al Assiouty"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "al-ahly:lead-the-way:time-bridge",
+     "club": "al-ahly",
+     "chapter": "lead-the-way",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 10",
+      "Age 11",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "al-ahly:lead-the-way:chapter-card",
+     "club": "al-ahly",
+     "chapter": "lead-the-way",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 11",
+      "Lead the Way"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "al-ahly:lead-the-way:matchday-opener",
+     "club": "al-ahly",
+     "chapter": "lead-the-way",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "Lead the Way"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "al-ahly:the-banner:chapter-card",
+     "club": "al-ahly",
+     "chapter": "the-banner",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 11,
+     "night": {
+      "factId": "al-ahly:daily-match-20ff126a88ce9eb01c051f5e-moment",
+      "on": "2018-04-26",
+      "year": 2018,
+      "precision": "day",
+      "title": "Al Ahly 1–2 Zamalek",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "2017–18 Al Ahly SC season",
+        "publisher": "English Wikipedia",
+        "url": "https://en.wikipedia.org/w/index.php?oldid=1386782646"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 11",
+      "The Banner",
+      "2018-04-26"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "al-ahly:no-ticket:time-bridge",
+     "club": "al-ahly",
+     "chapter": "no-ticket",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 12,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 11",
+      "Age 12",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "al-ahly:no-ticket:chapter-card",
+     "club": "al-ahly",
+     "chapter": "no-ticket",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 12,
+     "night": {
+      "factId": "al-ahly:daily-match-80290d6f79a5441c06f212a3-moment",
+      "on": "2019-09-20",
+      "year": 2019,
+      "precision": "day",
+      "title": "Al Ahly 3–2 Zamalek",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "2018–19 Al Ahly SC season",
+        "publisher": "English Wikipedia",
+        "url": "https://en.wikipedia.org/w/index.php?oldid=1386782865"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 12",
+      "No Ticket",
+      "2019-09-20"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "al-ahly:no-ticket:matchday-opener",
+     "club": "al-ahly",
+     "chapter": "no-ticket",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 12,
+     "night": {
+      "factId": "al-ahly:daily-match-80290d6f79a5441c06f212a3-moment",
+      "on": "2019-09-20",
+      "year": 2019,
+      "precision": "day",
+      "title": "Al Ahly 3–2 Zamalek",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "2018–19 Al Ahly SC season",
+        "publisher": "English Wikipedia",
+        "url": "https://en.wikipedia.org/w/index.php?oldid=1386782865"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "2019-09-20",
+      "Al Ahly 3–2 Zamalek"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "al-ahly:the-box:chapter-card",
+     "club": "al-ahly",
+     "chapter": "the-box",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 12,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 12",
+      "The Box"
+     ],
+     "status": "requested"
+    }
+   ]
+  },
+  "atalanta": {
+   "birthYear": 1978,
+   "requests": [
+    {
+     "id": "atalanta:first-noise:chapter-card",
+     "club": "atalanta",
+     "chapter": "first-noise",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 6,
+     "night": {
+      "factId": "atalanta:at-hist-1984-11-25-5ff70371bd-moment",
+      "on": "1984-11-25",
+      "year": 1984,
+      "precision": "day",
+      "title": "Atalanta 3-3 Avellino",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Atalanta season 1984",
+        "publisher": "Wikipedia in italiano contributors",
+        "url": "https://it.wikipedia.org/wiki/Atalanta_Bergamasca_Calcio_1984-1985"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 6",
+      "The First Noise",
+      "1984-11-25"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "atalanta:first-noise:matchday-opener",
+     "club": "atalanta",
+     "chapter": "first-noise",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 6,
+     "night": {
+      "factId": "atalanta:at-hist-1984-11-25-5ff70371bd-moment",
+      "on": "1984-11-25",
+      "year": 1984,
+      "precision": "day",
+      "title": "Atalanta 3-3 Avellino",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Atalanta season 1984",
+        "publisher": "Wikipedia in italiano contributors",
+        "url": "https://it.wikipedia.org/wiki/Atalanta_Bergamasca_Calcio_1984-1985"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "1984-11-25",
+      "Atalanta 3-3 Avellino"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "atalanta:six-short:time-bridge",
+     "club": "atalanta",
+     "chapter": "six-short",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 7,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 6",
+      "Age 7",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "atalanta:six-short:chapter-card",
+     "club": "atalanta",
+     "chapter": "six-short",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 7,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 7",
+      "Six Short"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "atalanta:the-way-in:time-bridge",
+     "club": "atalanta",
+     "chapter": "the-way-in",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 8,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 7",
+      "Age 8",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "atalanta:the-way-in:chapter-card",
+     "club": "atalanta",
+     "chapter": "the-way-in",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 8,
+     "night": {
+      "factId": "atalanta:at-hist-1987-12-13-bca491ff37-moment",
+      "on": "1987-12-13",
+      "year": 1987,
+      "precision": "day",
+      "title": "Atalanta 1-0 Genoa",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Atalanta season 1987",
+        "publisher": "Wikipedia in italiano contributors",
+        "url": "https://it.wikipedia.org/wiki/Atalanta_Bergamasca_Calcio_1987-1988"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 8",
+      "The Way In",
+      "1987-12-13"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "atalanta:the-way-in:matchday-opener",
+     "club": "atalanta",
+     "chapter": "the-way-in",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 8,
+     "night": {
+      "factId": "atalanta:at-hist-1987-12-13-bca491ff37-moment",
+      "on": "1987-12-13",
+      "year": 1987,
+      "precision": "day",
+      "title": "Atalanta 1-0 Genoa",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Atalanta season 1987",
+        "publisher": "Wikipedia in italiano contributors",
+        "url": "https://it.wikipedia.org/wiki/Atalanta_Bergamasca_Calcio_1987-1988"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "1987-12-13",
+      "Atalanta 1-0 Genoa"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "atalanta:monday-colours:time-bridge",
+     "club": "atalanta",
+     "chapter": "monday-colours",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 8",
+      "Age 9",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "atalanta:monday-colours:chapter-card",
+     "club": "atalanta",
+     "chapter": "monday-colours",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 9",
+      "Monday Colours"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "atalanta:the-window:chapter-card",
+     "club": "atalanta",
+     "chapter": "the-window",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 9",
+      "The Window"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "atalanta:missing-square:time-bridge",
+     "club": "atalanta",
+     "chapter": "missing-square",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 10,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 9",
+      "Age 10",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "atalanta:missing-square:chapter-card",
+     "club": "atalanta",
+     "chapter": "missing-square",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 10,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 10",
+      "The Missing Square"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "atalanta:her-seat:chapter-card",
+     "club": "atalanta",
+     "chapter": "her-seat",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 10,
+     "night": {
+      "factId": "atalanta:at-hist-1987-10-11-c8fc535e6e-moment",
+      "on": "1987-10-11",
+      "year": 1987,
+      "precision": "day",
+      "title": "Atalanta 4-1 Sambenedettese",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Atalanta season 1987",
+        "publisher": "Wikipedia in italiano contributors",
+        "url": "https://it.wikipedia.org/wiki/Atalanta_Bergamasca_Calcio_1987-1988"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 10",
+      "Her Seat",
+      "1987-10-11"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "atalanta:her-seat:matchday-opener",
+     "club": "atalanta",
+     "chapter": "her-seat",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 10,
+     "night": {
+      "factId": "atalanta:at-hist-1987-10-11-c8fc535e6e-moment",
+      "on": "1987-10-11",
+      "year": 1987,
+      "precision": "day",
+      "title": "Atalanta 4-1 Sambenedettese",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Atalanta season 1987",
+        "publisher": "Wikipedia in italiano contributors",
+        "url": "https://it.wikipedia.org/wiki/Atalanta_Bergamasca_Calcio_1987-1988"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "1987-10-11",
+      "Atalanta 4-1 Sambenedettese"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "atalanta:lead-the-way:time-bridge",
+     "club": "atalanta",
+     "chapter": "lead-the-way",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 10",
+      "Age 11",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "atalanta:lead-the-way:chapter-card",
+     "club": "atalanta",
+     "chapter": "lead-the-way",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 11",
+      "Lead the Way"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "atalanta:lead-the-way:matchday-opener",
+     "club": "atalanta",
+     "chapter": "lead-the-way",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "Lead the Way"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "atalanta:the-banner:chapter-card",
+     "club": "atalanta",
+     "chapter": "the-banner",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 11,
+     "night": {
+      "factId": "atalanta:at-hist-1988-01-03-ef7f94ea2b-moment",
+      "on": "1988-01-03",
+      "year": 1988,
+      "precision": "day",
+      "title": "Atalanta 1-0 Brescia",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Atalanta season 1987",
+        "publisher": "Wikipedia in italiano contributors",
+        "url": "https://it.wikipedia.org/wiki/Atalanta_Bergamasca_Calcio_1987-1988"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 11",
+      "The Banner",
+      "1988-01-03"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "atalanta:no-ticket:time-bridge",
+     "club": "atalanta",
+     "chapter": "no-ticket",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 12,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 11",
+      "Age 12",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "atalanta:no-ticket:chapter-card",
+     "club": "atalanta",
+     "chapter": "no-ticket",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 12,
+     "night": {
+      "factId": "atalanta:at-hist-1990-04-22-bca491ff37-moment",
+      "on": "1990-04-22",
+      "year": 1990,
+      "precision": "day",
+      "title": "Atalanta 1-0 Genoa",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Atalanta season 1989",
+        "publisher": "Wikipedia in italiano contributors",
+        "url": "https://it.wikipedia.org/wiki/Atalanta_Bergamasca_Calcio_1989-1990"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 12",
+      "No Ticket",
+      "1990-04-22"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "atalanta:no-ticket:matchday-opener",
+     "club": "atalanta",
+     "chapter": "no-ticket",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 12,
+     "night": {
+      "factId": "atalanta:at-hist-1990-04-22-bca491ff37-moment",
+      "on": "1990-04-22",
+      "year": 1990,
+      "precision": "day",
+      "title": "Atalanta 1-0 Genoa",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Atalanta season 1989",
+        "publisher": "Wikipedia in italiano contributors",
+        "url": "https://it.wikipedia.org/wiki/Atalanta_Bergamasca_Calcio_1989-1990"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "1990-04-22",
+      "Atalanta 1-0 Genoa"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "atalanta:the-box:chapter-card",
+     "club": "atalanta",
+     "chapter": "the-box",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 12,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 12",
+      "The Box"
+     ],
+     "status": "requested"
+    }
+   ]
+  },
+  "celtic": {
+   "birthYear": 1978,
+   "requests": [
+    {
+     "id": "celtic:first-noise:chapter-card",
+     "club": "celtic",
+     "chapter": "first-noise",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 6,
+     "night": {
+      "factId": "celtic:t-dh-5728c4b1c437",
+      "on": "1984-11-07",
+      "year": 1984,
+      "precision": "day",
+      "title": "Celtic 3-0 Rapid Vienna",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Celtic 3-0 Rapid Vienna — The Celtic Wiki",
+        "publisher": "The Celtic Wiki",
+        "url": "https://www.thecelticwiki.com/1984-11-07-celtic-3-0-rapid-vienna-ecwc/"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 6",
+      "The First Noise",
+      "1984-11-07"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "celtic:first-noise:matchday-opener",
+     "club": "celtic",
+     "chapter": "first-noise",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 6,
+     "night": {
+      "factId": "celtic:t-dh-5728c4b1c437",
+      "on": "1984-11-07",
+      "year": 1984,
+      "precision": "day",
+      "title": "Celtic 3-0 Rapid Vienna",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Celtic 3-0 Rapid Vienna — The Celtic Wiki",
+        "publisher": "The Celtic Wiki",
+        "url": "https://www.thecelticwiki.com/1984-11-07-celtic-3-0-rapid-vienna-ecwc/"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "1984-11-07",
+      "Celtic 3-0 Rapid Vienna"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "celtic:six-short:time-bridge",
+     "club": "celtic",
+     "chapter": "six-short",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 7,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 6",
+      "Age 7",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "celtic:six-short:chapter-card",
+     "club": "celtic",
+     "chapter": "six-short",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 7,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 7",
+      "Six Short"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "celtic:the-way-in:time-bridge",
+     "club": "celtic",
+     "chapter": "the-way-in",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 8,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 7",
+      "Age 8",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "celtic:the-way-in:chapter-card",
+     "club": "celtic",
+     "chapter": "the-way-in",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 8,
+     "night": {
+      "factId": "celtic:t-dh-283593e0248a",
+      "on": "1985-05-18",
+      "year": 1985,
+      "precision": "day",
+      "title": "Celtic 2-1 Dundee United",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Celtic 2-1 Dundee United — The Celtic Wiki",
+        "publisher": "The Celtic Wiki",
+        "url": "https://www.thecelticwiki.com/1985-05-18-celtic-2-1-dundee-united-scottish-cup-final/"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 8",
+      "The Way In",
+      "1985-05-18"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "celtic:the-way-in:matchday-opener",
+     "club": "celtic",
+     "chapter": "the-way-in",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 8,
+     "night": {
+      "factId": "celtic:t-dh-283593e0248a",
+      "on": "1985-05-18",
+      "year": 1985,
+      "precision": "day",
+      "title": "Celtic 2-1 Dundee United",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Celtic 2-1 Dundee United — The Celtic Wiki",
+        "publisher": "The Celtic Wiki",
+        "url": "https://www.thecelticwiki.com/1985-05-18-celtic-2-1-dundee-united-scottish-cup-final/"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "1985-05-18",
+      "Celtic 2-1 Dundee United"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "celtic:monday-colours:time-bridge",
+     "club": "celtic",
+     "chapter": "monday-colours",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 8",
+      "Age 9",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "celtic:monday-colours:chapter-card",
+     "club": "celtic",
+     "chapter": "monday-colours",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 9",
+      "Monday Colours"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "celtic:the-window:chapter-card",
+     "club": "celtic",
+     "chapter": "the-window",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 9",
+      "The Window"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "celtic:missing-square:time-bridge",
+     "club": "celtic",
+     "chapter": "missing-square",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 10,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 9",
+      "Age 10",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "celtic:missing-square:chapter-card",
+     "club": "celtic",
+     "chapter": "missing-square",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 10,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 10",
+      "The Missing Square"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "celtic:her-seat:chapter-card",
+     "club": "celtic",
+     "chapter": "her-seat",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 10,
+     "night": {
+      "factId": "celtic:t-dh-a8feced8fedd",
+      "on": "1988-04-23",
+      "year": 1988,
+      "precision": "day",
+      "title": "Celtic 3-0 Dundee",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Celtic 3-0 Dundee — The Celtic Wiki",
+        "publisher": "The Celtic Wiki",
+        "url": "https://www.thecelticwiki.com/1988-04-23-celtic-3-0-dundee-premier-division/"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 10",
+      "Her Seat",
+      "1988-04-23"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "celtic:her-seat:matchday-opener",
+     "club": "celtic",
+     "chapter": "her-seat",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 10,
+     "night": {
+      "factId": "celtic:t-dh-a8feced8fedd",
+      "on": "1988-04-23",
+      "year": 1988,
+      "precision": "day",
+      "title": "Celtic 3-0 Dundee",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Celtic 3-0 Dundee — The Celtic Wiki",
+        "publisher": "The Celtic Wiki",
+        "url": "https://www.thecelticwiki.com/1988-04-23-celtic-3-0-dundee-premier-division/"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "1988-04-23",
+      "Celtic 3-0 Dundee"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "celtic:lead-the-way:time-bridge",
+     "club": "celtic",
+     "chapter": "lead-the-way",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 10",
+      "Age 11",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "celtic:lead-the-way:chapter-card",
+     "club": "celtic",
+     "chapter": "lead-the-way",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 11",
+      "Lead the Way"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "celtic:lead-the-way:matchday-opener",
+     "club": "celtic",
+     "chapter": "lead-the-way",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "Lead the Way"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "celtic:the-banner:chapter-card",
+     "club": "celtic",
+     "chapter": "the-banner",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 11,
+     "night": {
+      "factId": "celtic:t-dh-8340df52d7fc",
+      "on": "1989-04-30",
+      "year": 1989,
+      "precision": "day",
+      "title": "Celtic 0-4 Liverpool",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Celtic 0-4 Liverpool — The Celtic Wiki",
+        "publisher": "The Celtic Wiki",
+        "url": "https://www.thecelticwiki.com/1989-04-30-celtic-0-4-liverpool-hillsborough-memorial-match/"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 11",
+      "The Banner",
+      "1989-04-30"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "celtic:no-ticket:time-bridge",
+     "club": "celtic",
+     "chapter": "no-ticket",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 12,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 11",
+      "Age 12",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "celtic:no-ticket:chapter-card",
+     "club": "celtic",
+     "chapter": "no-ticket",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 12,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 12",
+      "No Ticket"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "celtic:no-ticket:matchday-opener",
+     "club": "celtic",
+     "chapter": "no-ticket",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 12,
+     "night": null,
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "No Ticket"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "celtic:the-box:chapter-card",
+     "club": "celtic",
+     "chapter": "the-box",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 12,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 12",
+      "The Box"
+     ],
+     "status": "requested"
+    }
+   ]
+  },
+  "hapoel-petah-tikva": {
+   "birthYear": 1978,
+   "requests": [
+    {
+     "id": "hapoel-petah-tikva:first-noise:chapter-card",
+     "club": "hapoel-petah-tikva",
+     "chapter": "first-noise",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 6,
+     "night": {
+      "factId": "hapoel-petah-tikva:history-hpt-1291-moment",
+      "on": "1983-11-26",
+      "year": 1983,
+      "precision": "day",
+      "title": "Hapoel Petah Tikva 1-2 Hapoel Hadera",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Hapoel Petah Tikva Museum — 1983/84",
+        "publisher": "Hapoel Petah Tikva Museum",
+        "url": "https://hpt.co.il/seasons/1984"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 6",
+      "The First Noise",
+      "1983-11-26"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-petah-tikva:first-noise:matchday-opener",
+     "club": "hapoel-petah-tikva",
+     "chapter": "first-noise",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 6,
+     "night": {
+      "factId": "hapoel-petah-tikva:history-hpt-1291-moment",
+      "on": "1983-11-26",
+      "year": 1983,
+      "precision": "day",
+      "title": "Hapoel Petah Tikva 1-2 Hapoel Hadera",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Hapoel Petah Tikva Museum — 1983/84",
+        "publisher": "Hapoel Petah Tikva Museum",
+        "url": "https://hpt.co.il/seasons/1984"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "1983-11-26",
+      "Hapoel Petah Tikva 1-2 Hapoel Hadera"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-petah-tikva:six-short:time-bridge",
+     "club": "hapoel-petah-tikva",
+     "chapter": "six-short",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 7,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 6",
+      "Age 7",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-petah-tikva:six-short:chapter-card",
+     "club": "hapoel-petah-tikva",
+     "chapter": "six-short",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 7,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 7",
+      "Six Short"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-petah-tikva:the-way-in:time-bridge",
+     "club": "hapoel-petah-tikva",
+     "chapter": "the-way-in",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 8,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 7",
+      "Age 8",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-petah-tikva:the-way-in:chapter-card",
+     "club": "hapoel-petah-tikva",
+     "chapter": "the-way-in",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 8,
+     "night": {
+      "factId": "hapoel-petah-tikva:history-hpt-491-moment",
+      "on": "1985-02-02",
+      "year": 1985,
+      "precision": "day",
+      "title": "Hapoel Petah Tikva 0-0 Maccabi Yavne",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Hapoel Petah Tikva Museum — 1984/85",
+        "publisher": "Hapoel Petah Tikva Museum",
+        "url": "https://hpt.co.il/seasons/1985"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 8",
+      "The Way In",
+      "1985-02-02"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-petah-tikva:the-way-in:matchday-opener",
+     "club": "hapoel-petah-tikva",
+     "chapter": "the-way-in",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 8,
+     "night": {
+      "factId": "hapoel-petah-tikva:history-hpt-491-moment",
+      "on": "1985-02-02",
+      "year": 1985,
+      "precision": "day",
+      "title": "Hapoel Petah Tikva 0-0 Maccabi Yavne",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Hapoel Petah Tikva Museum — 1984/85",
+        "publisher": "Hapoel Petah Tikva Museum",
+        "url": "https://hpt.co.il/seasons/1985"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "1985-02-02",
+      "Hapoel Petah Tikva 0-0 Maccabi Yavne"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-petah-tikva:monday-colours:time-bridge",
+     "club": "hapoel-petah-tikva",
+     "chapter": "monday-colours",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 8",
+      "Age 9",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-petah-tikva:monday-colours:chapter-card",
+     "club": "hapoel-petah-tikva",
+     "chapter": "monday-colours",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 9",
+      "Monday Colours"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-petah-tikva:the-window:chapter-card",
+     "club": "hapoel-petah-tikva",
+     "chapter": "the-window",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 9",
+      "The Window"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-petah-tikva:missing-square:time-bridge",
+     "club": "hapoel-petah-tikva",
+     "chapter": "missing-square",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 10,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 9",
+      "Age 10",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-petah-tikva:missing-square:chapter-card",
+     "club": "hapoel-petah-tikva",
+     "chapter": "missing-square",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 10,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 10",
+      "The Missing Square"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-petah-tikva:her-seat:chapter-card",
+     "club": "hapoel-petah-tikva",
+     "chapter": "her-seat",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 10,
+     "night": {
+      "factId": "hapoel-petah-tikva:history-hpt-929-moment",
+      "on": "1988-12-03",
+      "year": 1988,
+      "precision": "day",
+      "title": "Hapoel Petah Tikva 3-1 Hapoel Tel Aviv",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Hapoel Petah Tikva Museum — 1988/89",
+        "publisher": "Hapoel Petah Tikva Museum",
+        "url": "https://hpt.co.il/seasons/1989"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 10",
+      "Her Seat",
+      "1988-12-03"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-petah-tikva:her-seat:matchday-opener",
+     "club": "hapoel-petah-tikva",
+     "chapter": "her-seat",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 10,
+     "night": {
+      "factId": "hapoel-petah-tikva:history-hpt-929-moment",
+      "on": "1988-12-03",
+      "year": 1988,
+      "precision": "day",
+      "title": "Hapoel Petah Tikva 3-1 Hapoel Tel Aviv",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Hapoel Petah Tikva Museum — 1988/89",
+        "publisher": "Hapoel Petah Tikva Museum",
+        "url": "https://hpt.co.il/seasons/1989"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "1988-12-03",
+      "Hapoel Petah Tikva 3-1 Hapoel Tel Aviv"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-petah-tikva:lead-the-way:time-bridge",
+     "club": "hapoel-petah-tikva",
+     "chapter": "lead-the-way",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 10",
+      "Age 11",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-petah-tikva:lead-the-way:chapter-card",
+     "club": "hapoel-petah-tikva",
+     "chapter": "lead-the-way",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 11",
+      "Lead the Way"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-petah-tikva:lead-the-way:matchday-opener",
+     "club": "hapoel-petah-tikva",
+     "chapter": "lead-the-way",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "Lead the Way"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-petah-tikva:the-banner:chapter-card",
+     "club": "hapoel-petah-tikva",
+     "chapter": "the-banner",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 11,
+     "night": {
+      "factId": "hapoel-petah-tikva:history-hpt-1926-moment",
+      "on": "1988-02-05",
+      "year": 1988,
+      "precision": "day",
+      "title": "Hapoel Petah Tikva 2-1 Maccabi Petah Tikva",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Hapoel Petah Tikva Museum — 1987/88",
+        "publisher": "Hapoel Petah Tikva Museum",
+        "url": "https://hpt.co.il/seasons/1988"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 11",
+      "The Banner",
+      "1988-02-05"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-petah-tikva:no-ticket:time-bridge",
+     "club": "hapoel-petah-tikva",
+     "chapter": "no-ticket",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 12,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 11",
+      "Age 12",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-petah-tikva:no-ticket:chapter-card",
+     "club": "hapoel-petah-tikva",
+     "chapter": "no-ticket",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 12,
+     "night": {
+      "factId": "hapoel-petah-tikva:r26-lilian-cup-final",
+      "on": "1989-11-28",
+      "year": 1989,
+      "precision": "day",
+      "title": "Hapoel Petah Tikva beat Beitar Tel Aviv in the Lilian Cup final",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "RSSSF: Israel 1989/90",
+        "publisher": "RSSSF",
+        "url": "https://rsssf.org/tablesi/isra90.html"
+       },
+       {
+        "title": "HPT Museum: games played on 28/11",
+        "publisher": "HPT Museum",
+        "url": "https://www.hpt.co.il/?Search=1&What2Use=SpecificDate&SpMonth=11&SpDay=28"
+       },
+       {
+        "title": "Wikipedia: Hapoel Petah Tikva F.C.",
+        "publisher": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Hapoel_Petah_Tikva_F.C."
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 12",
+      "No Ticket",
+      "1989-11-28"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-petah-tikva:no-ticket:matchday-opener",
+     "club": "hapoel-petah-tikva",
+     "chapter": "no-ticket",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 12,
+     "night": {
+      "factId": "hapoel-petah-tikva:r26-lilian-cup-final",
+      "on": "1989-11-28",
+      "year": 1989,
+      "precision": "day",
+      "title": "Hapoel Petah Tikva beat Beitar Tel Aviv in the Lilian Cup final",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "RSSSF: Israel 1989/90",
+        "publisher": "RSSSF",
+        "url": "https://rsssf.org/tablesi/isra90.html"
+       },
+       {
+        "title": "HPT Museum: games played on 28/11",
+        "publisher": "HPT Museum",
+        "url": "https://www.hpt.co.il/?Search=1&What2Use=SpecificDate&SpMonth=11&SpDay=28"
+       },
+       {
+        "title": "Wikipedia: Hapoel Petah Tikva F.C.",
+        "publisher": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Hapoel_Petah_Tikva_F.C."
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "1989-11-28",
+      "Hapoel Petah Tikva beat Beitar Tel Aviv in the Lilian Cup final"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-petah-tikva:the-box:chapter-card",
+     "club": "hapoel-petah-tikva",
+     "chapter": "the-box",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 12,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 12",
+      "The Box"
+     ],
+     "status": "requested"
+    }
+   ]
+  },
+  "hapoel-tel-aviv": {
+   "birthYear": 1978,
+   "requests": [
+    {
+     "id": "hapoel-tel-aviv:first-noise:chapter-card",
+     "club": "hapoel-tel-aviv",
+     "chapter": "first-noise",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 6,
+     "night": {
+      "factId": "30446434f568",
+      "on": "1985-05-18",
+      "year": 1985,
+      "precision": "day",
+      "title": "Hapoel Tel Aviv 4-0 Hakoah Ramat Gan",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Vikipoel (in Hebrew)",
+        "publisher": "Vikipoel (in Hebrew)",
+        "url": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 6",
+      "The First Noise",
+      "1985-05-18"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-tel-aviv:first-noise:matchday-opener",
+     "club": "hapoel-tel-aviv",
+     "chapter": "first-noise",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 6,
+     "night": {
+      "factId": "30446434f568",
+      "on": "1985-05-18",
+      "year": 1985,
+      "precision": "day",
+      "title": "Hapoel Tel Aviv 4-0 Hakoah Ramat Gan",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Vikipoel (in Hebrew)",
+        "publisher": "Vikipoel (in Hebrew)",
+        "url": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "1985-05-18",
+      "Hapoel Tel Aviv 4-0 Hakoah Ramat Gan"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-tel-aviv:six-short:time-bridge",
+     "club": "hapoel-tel-aviv",
+     "chapter": "six-short",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 7,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 6",
+      "Age 7",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-tel-aviv:six-short:chapter-card",
+     "club": "hapoel-tel-aviv",
+     "chapter": "six-short",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 7,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 7",
+      "Six Short"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-tel-aviv:the-way-in:time-bridge",
+     "club": "hapoel-tel-aviv",
+     "chapter": "the-way-in",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 8,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 7",
+      "Age 8",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-tel-aviv:the-way-in:chapter-card",
+     "club": "hapoel-tel-aviv",
+     "chapter": "the-way-in",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 8,
+     "night": {
+      "factId": "a0a9acf69c7b",
+      "on": "1986-12-06",
+      "year": 1986,
+      "precision": "day",
+      "title": "Hapoel Tel Aviv 0-1 Beitar Jerusalem",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Vikipoel (in Hebrew)",
+        "publisher": "Vikipoel (in Hebrew)",
+        "url": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 8",
+      "The Way In",
+      "1986-12-06"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-tel-aviv:the-way-in:matchday-opener",
+     "club": "hapoel-tel-aviv",
+     "chapter": "the-way-in",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 8,
+     "night": {
+      "factId": "a0a9acf69c7b",
+      "on": "1986-12-06",
+      "year": 1986,
+      "precision": "day",
+      "title": "Hapoel Tel Aviv 0-1 Beitar Jerusalem",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Vikipoel (in Hebrew)",
+        "publisher": "Vikipoel (in Hebrew)",
+        "url": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "1986-12-06",
+      "Hapoel Tel Aviv 0-1 Beitar Jerusalem"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-tel-aviv:monday-colours:time-bridge",
+     "club": "hapoel-tel-aviv",
+     "chapter": "monday-colours",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 8",
+      "Age 9",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-tel-aviv:monday-colours:chapter-card",
+     "club": "hapoel-tel-aviv",
+     "chapter": "monday-colours",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 9",
+      "Monday Colours"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-tel-aviv:the-window:chapter-card",
+     "club": "hapoel-tel-aviv",
+     "chapter": "the-window",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 9",
+      "The Window"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-tel-aviv:missing-square:time-bridge",
+     "club": "hapoel-tel-aviv",
+     "chapter": "missing-square",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 10,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 9",
+      "Age 10",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-tel-aviv:missing-square:chapter-card",
+     "club": "hapoel-tel-aviv",
+     "chapter": "missing-square",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 10,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 10",
+      "The Missing Square"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-tel-aviv:her-seat:chapter-card",
+     "club": "hapoel-tel-aviv",
+     "chapter": "her-seat",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 10,
+     "night": {
+      "factId": "fed01219c668",
+      "on": "1989-01-28",
+      "year": 1989,
+      "precision": "day",
+      "title": "Hapoel Tel Aviv 0-2 Hapoel Jerusalem",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Vikipoel (in Hebrew)",
+        "publisher": "Vikipoel (in Hebrew)",
+        "url": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 10",
+      "Her Seat",
+      "1989-01-28"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-tel-aviv:her-seat:matchday-opener",
+     "club": "hapoel-tel-aviv",
+     "chapter": "her-seat",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 10,
+     "night": {
+      "factId": "fed01219c668",
+      "on": "1989-01-28",
+      "year": 1989,
+      "precision": "day",
+      "title": "Hapoel Tel Aviv 0-2 Hapoel Jerusalem",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Vikipoel (in Hebrew)",
+        "publisher": "Vikipoel (in Hebrew)",
+        "url": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "1989-01-28",
+      "Hapoel Tel Aviv 0-2 Hapoel Jerusalem"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-tel-aviv:lead-the-way:time-bridge",
+     "club": "hapoel-tel-aviv",
+     "chapter": "lead-the-way",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 10",
+      "Age 11",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-tel-aviv:lead-the-way:chapter-card",
+     "club": "hapoel-tel-aviv",
+     "chapter": "lead-the-way",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 11",
+      "Lead the Way"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-tel-aviv:lead-the-way:matchday-opener",
+     "club": "hapoel-tel-aviv",
+     "chapter": "lead-the-way",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "Lead the Way"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-tel-aviv:the-banner:chapter-card",
+     "club": "hapoel-tel-aviv",
+     "chapter": "the-banner",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 11,
+     "night": {
+      "factId": "9702cf498b6c",
+      "on": "1990-09-15",
+      "year": 1990,
+      "precision": "day",
+      "title": "Hapoel Tel Aviv 1-1 Maccabi Tel Aviv",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Vikipoel (in Hebrew)",
+        "publisher": "Vikipoel (in Hebrew)",
+        "url": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 11",
+      "The Banner",
+      "1990-09-15"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-tel-aviv:no-ticket:time-bridge",
+     "club": "hapoel-tel-aviv",
+     "chapter": "no-ticket",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 12,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 11",
+      "Age 12",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-tel-aviv:no-ticket:chapter-card",
+     "club": "hapoel-tel-aviv",
+     "chapter": "no-ticket",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 12,
+     "night": {
+      "factId": "ac435574bd8c",
+      "on": "1991-03-09",
+      "year": 1991,
+      "precision": "day",
+      "title": "Hapoel Tel Aviv 0-0 Maccabi Tel Aviv",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Vikipoel (in Hebrew)",
+        "publisher": "Vikipoel (in Hebrew)",
+        "url": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 12",
+      "No Ticket",
+      "1991-03-09"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-tel-aviv:no-ticket:matchday-opener",
+     "club": "hapoel-tel-aviv",
+     "chapter": "no-ticket",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 12,
+     "night": {
+      "factId": "ac435574bd8c",
+      "on": "1991-03-09",
+      "year": 1991,
+      "precision": "day",
+      "title": "Hapoel Tel Aviv 0-0 Maccabi Tel Aviv",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Vikipoel (in Hebrew)",
+        "publisher": "Vikipoel (in Hebrew)",
+        "url": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "1991-03-09",
+      "Hapoel Tel Aviv 0-0 Maccabi Tel Aviv"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "hapoel-tel-aviv:the-box:chapter-card",
+     "club": "hapoel-tel-aviv",
+     "chapter": "the-box",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 12,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 12",
+      "The Box"
+     ],
+     "status": "requested"
+    }
+   ]
+  },
+  "maccabi-haifa": {
+   "birthYear": 1992,
+   "requests": [
+    {
+     "id": "maccabi-haifa:first-noise:chapter-card",
+     "club": "maccabi-haifa",
+     "chapter": "first-noise",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 6,
+     "night": {
+      "factId": "maccabi-haifa:a-m-1997-07-19-maccabi-haifa-nizhni-novgorod",
+      "on": "1997-07-19",
+      "year": 1997,
+      "precision": "day",
+      "title": "Maccabi Haifa 0-4 Nizhni Novgorod",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "UEFA: Maccabi Haifa 0-4 Nizhni Novgorod, 1997-07-19",
+        "publisher": "UEFA",
+        "url": "https://www.uefa.com/uefachampionsleague/match/53901--"
+       },
+       {
+        "title": "UEFA: Maccabi Haifa 0-4 Nizhni Novgorod, 1997-07-19",
+        "publisher": "UEFA",
+        "url": "https://www.uefa.com/uefachampionsleague/match/53901--"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 6",
+      "The First Noise",
+      "1997-07-19"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "maccabi-haifa:first-noise:matchday-opener",
+     "club": "maccabi-haifa",
+     "chapter": "first-noise",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 6,
+     "night": {
+      "factId": "maccabi-haifa:a-m-1997-07-19-maccabi-haifa-nizhni-novgorod",
+      "on": "1997-07-19",
+      "year": 1997,
+      "precision": "day",
+      "title": "Maccabi Haifa 0-4 Nizhni Novgorod",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "UEFA: Maccabi Haifa 0-4 Nizhni Novgorod, 1997-07-19",
+        "publisher": "UEFA",
+        "url": "https://www.uefa.com/uefachampionsleague/match/53901--"
+       },
+       {
+        "title": "UEFA: Maccabi Haifa 0-4 Nizhni Novgorod, 1997-07-19",
+        "publisher": "UEFA",
+        "url": "https://www.uefa.com/uefachampionsleague/match/53901--"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "1997-07-19",
+      "Maccabi Haifa 0-4 Nizhni Novgorod"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "maccabi-haifa:six-short:time-bridge",
+     "club": "maccabi-haifa",
+     "chapter": "six-short",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 7,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 6",
+      "Age 7",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "maccabi-haifa:six-short:chapter-card",
+     "club": "maccabi-haifa",
+     "chapter": "six-short",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 7,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 7",
+      "Six Short"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "maccabi-haifa:the-way-in:time-bridge",
+     "club": "maccabi-haifa",
+     "chapter": "the-way-in",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 8,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 7",
+      "Age 8",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "maccabi-haifa:the-way-in:chapter-card",
+     "club": "maccabi-haifa",
+     "chapter": "the-way-in",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 8,
+     "night": {
+      "factId": "maccabi-haifa:a-m-2000-09-28-maccabi-haifa-vitesse",
+      "on": "2000-09-28",
+      "year": 2000,
+      "precision": "day",
+      "title": "Maccabi Haifa 2-1 Vitesse",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "UEFA: Maccabi Haifa 2-1 Vitesse, 2000-09-28",
+        "publisher": "UEFA",
+        "url": "https://www.uefa.com/uefachampionsleague/match/66081--"
+       },
+       {
+        "title": "UEFA: Maccabi Haifa 2-1 Vitesse, 2000-09-28",
+        "publisher": "UEFA",
+        "url": "https://www.uefa.com/uefachampionsleague/match/66081--"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 8",
+      "The Way In",
+      "2000-09-28"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "maccabi-haifa:the-way-in:matchday-opener",
+     "club": "maccabi-haifa",
+     "chapter": "the-way-in",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 8,
+     "night": {
+      "factId": "maccabi-haifa:a-m-2000-09-28-maccabi-haifa-vitesse",
+      "on": "2000-09-28",
+      "year": 2000,
+      "precision": "day",
+      "title": "Maccabi Haifa 2-1 Vitesse",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "UEFA: Maccabi Haifa 2-1 Vitesse, 2000-09-28",
+        "publisher": "UEFA",
+        "url": "https://www.uefa.com/uefachampionsleague/match/66081--"
+       },
+       {
+        "title": "UEFA: Maccabi Haifa 2-1 Vitesse, 2000-09-28",
+        "publisher": "UEFA",
+        "url": "https://www.uefa.com/uefachampionsleague/match/66081--"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "2000-09-28",
+      "Maccabi Haifa 2-1 Vitesse"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "maccabi-haifa:monday-colours:time-bridge",
+     "club": "maccabi-haifa",
+     "chapter": "monday-colours",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 8",
+      "Age 9",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "maccabi-haifa:monday-colours:chapter-card",
+     "club": "maccabi-haifa",
+     "chapter": "monday-colours",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 9",
+      "Monday Colours"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "maccabi-haifa:the-window:chapter-card",
+     "club": "maccabi-haifa",
+     "chapter": "the-window",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 9",
+      "The Window"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "maccabi-haifa:missing-square:time-bridge",
+     "club": "maccabi-haifa",
+     "chapter": "missing-square",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 10,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 9",
+      "Age 10",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "maccabi-haifa:missing-square:chapter-card",
+     "club": "maccabi-haifa",
+     "chapter": "missing-square",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 10,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 10",
+      "The Missing Square"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "maccabi-haifa:her-seat:chapter-card",
+     "club": "maccabi-haifa",
+     "chapter": "her-seat",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 10,
+     "night": {
+      "factId": "maccabi-haifa:a-m-2002-10-29-maccabi-haifa-man-utd",
+      "on": "2002-10-29",
+      "year": 2002,
+      "precision": "day",
+      "title": "Maccabi Haifa 3-0 Man Utd",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "UEFA: Maccabi Haifa 3-0 Man Utd, 2002-10-29",
+        "publisher": "UEFA",
+        "url": "https://www.uefa.com/uefachampionsleague/match/70133--"
+       },
+       {
+        "title": "UEFA: Maccabi Haifa 3-0 Man Utd, 2002-10-29",
+        "publisher": "UEFA",
+        "url": "https://www.uefa.com/uefachampionsleague/match/70133--"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 10",
+      "Her Seat",
+      "2002-10-29"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "maccabi-haifa:her-seat:matchday-opener",
+     "club": "maccabi-haifa",
+     "chapter": "her-seat",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 10,
+     "night": {
+      "factId": "maccabi-haifa:a-m-2002-10-29-maccabi-haifa-man-utd",
+      "on": "2002-10-29",
+      "year": 2002,
+      "precision": "day",
+      "title": "Maccabi Haifa 3-0 Man Utd",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "UEFA: Maccabi Haifa 3-0 Man Utd, 2002-10-29",
+        "publisher": "UEFA",
+        "url": "https://www.uefa.com/uefachampionsleague/match/70133--"
+       },
+       {
+        "title": "UEFA: Maccabi Haifa 3-0 Man Utd, 2002-10-29",
+        "publisher": "UEFA",
+        "url": "https://www.uefa.com/uefachampionsleague/match/70133--"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "2002-10-29",
+      "Maccabi Haifa 3-0 Man Utd"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "maccabi-haifa:lead-the-way:time-bridge",
+     "club": "maccabi-haifa",
+     "chapter": "lead-the-way",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 10",
+      "Age 11",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "maccabi-haifa:lead-the-way:chapter-card",
+     "club": "maccabi-haifa",
+     "chapter": "lead-the-way",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 11",
+      "Lead the Way"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "maccabi-haifa:lead-the-way:matchday-opener",
+     "club": "maccabi-haifa",
+     "chapter": "lead-the-way",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "Lead the Way"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "maccabi-haifa:the-banner:chapter-card",
+     "club": "maccabi-haifa",
+     "chapter": "the-banner",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 11,
+     "night": {
+      "factId": "maccabi-haifa:a-m-2003-08-28-maccabi-haifa-cwmbran",
+      "on": "2003-08-28",
+      "year": 2003,
+      "precision": "day",
+      "title": "Maccabi Haifa 3-0 Cwmbran",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "UEFA: Maccabi Haifa 3-0 Cwmbran, 2003-08-28",
+        "publisher": "UEFA",
+        "url": "https://www.uefa.com/uefachampionsleague/match/71342--"
+       },
+       {
+        "title": "UEFA: Maccabi Haifa 3-0 Cwmbran, 2003-08-28",
+        "publisher": "UEFA",
+        "url": "https://www.uefa.com/uefachampionsleague/match/71342--"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 11",
+      "The Banner",
+      "2003-08-28"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "maccabi-haifa:no-ticket:time-bridge",
+     "club": "maccabi-haifa",
+     "chapter": "no-ticket",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 12,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 11",
+      "Age 12",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "maccabi-haifa:no-ticket:chapter-card",
+     "club": "maccabi-haifa",
+     "chapter": "no-ticket",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 12,
+     "night": {
+      "factId": "maccabi-haifa:a-m-2003-12-11-maccabi-haifa-valencia",
+      "on": "2003-12-11",
+      "year": 2003,
+      "precision": "day",
+      "title": "Maccabi Haifa 0-4 Valencia",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "UEFA: Maccabi Haifa 0-4 Valencia, 2003-12-11",
+        "publisher": "UEFA",
+        "url": "https://www.uefa.com/uefachampionsleague/match/73633--"
+       },
+       {
+        "title": "UEFA: Maccabi Haifa 0-4 Valencia, 2003-12-11",
+        "publisher": "UEFA",
+        "url": "https://www.uefa.com/uefachampionsleague/match/73633--"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 12",
+      "No Ticket",
+      "2003-12-11"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "maccabi-haifa:no-ticket:matchday-opener",
+     "club": "maccabi-haifa",
+     "chapter": "no-ticket",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 12,
+     "night": {
+      "factId": "maccabi-haifa:a-m-2003-12-11-maccabi-haifa-valencia",
+      "on": "2003-12-11",
+      "year": 2003,
+      "precision": "day",
+      "title": "Maccabi Haifa 0-4 Valencia",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "UEFA: Maccabi Haifa 0-4 Valencia, 2003-12-11",
+        "publisher": "UEFA",
+        "url": "https://www.uefa.com/uefachampionsleague/match/73633--"
+       },
+       {
+        "title": "UEFA: Maccabi Haifa 0-4 Valencia, 2003-12-11",
+        "publisher": "UEFA",
+        "url": "https://www.uefa.com/uefachampionsleague/match/73633--"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "2003-12-11",
+      "Maccabi Haifa 0-4 Valencia"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "maccabi-haifa:the-box:chapter-card",
+     "club": "maccabi-haifa",
+     "chapter": "the-box",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 12,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 12",
+      "The Box"
+     ],
+     "status": "requested"
+    }
+   ]
+  },
+  "olympiacos": {
+   "birthYear": 1978,
+   "requests": [
+    {
+     "id": "olympiacos:first-noise:chapter-card",
+     "club": "olympiacos",
+     "chapter": "first-noise",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 6,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 6",
+      "The First Noise"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "olympiacos:first-noise:matchday-opener",
+     "club": "olympiacos",
+     "chapter": "first-noise",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 6,
+     "night": null,
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "The First Noise"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "olympiacos:six-short:time-bridge",
+     "club": "olympiacos",
+     "chapter": "six-short",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 7,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 6",
+      "Age 7",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "olympiacos:six-short:chapter-card",
+     "club": "olympiacos",
+     "chapter": "six-short",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 7,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 7",
+      "Six Short"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "olympiacos:the-way-in:time-bridge",
+     "club": "olympiacos",
+     "chapter": "the-way-in",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 8,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 7",
+      "Age 8",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "olympiacos:the-way-in:chapter-card",
+     "club": "olympiacos",
+     "chapter": "the-way-in",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 8,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 8",
+      "The Way In"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "olympiacos:the-way-in:matchday-opener",
+     "club": "olympiacos",
+     "chapter": "the-way-in",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 8,
+     "night": null,
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "The Way In"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "olympiacos:monday-colours:time-bridge",
+     "club": "olympiacos",
+     "chapter": "monday-colours",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 8",
+      "Age 9",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "olympiacos:monday-colours:chapter-card",
+     "club": "olympiacos",
+     "chapter": "monday-colours",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 9",
+      "Monday Colours"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "olympiacos:the-window:chapter-card",
+     "club": "olympiacos",
+     "chapter": "the-window",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 9",
+      "The Window"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "olympiacos:missing-square:time-bridge",
+     "club": "olympiacos",
+     "chapter": "missing-square",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 10,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 9",
+      "Age 10",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "olympiacos:missing-square:chapter-card",
+     "club": "olympiacos",
+     "chapter": "missing-square",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 10,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 10",
+      "The Missing Square"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "olympiacos:her-seat:chapter-card",
+     "club": "olympiacos",
+     "chapter": "her-seat",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 10,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 10",
+      "Her Seat"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "olympiacos:her-seat:matchday-opener",
+     "club": "olympiacos",
+     "chapter": "her-seat",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 10,
+     "night": null,
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "Her Seat"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "olympiacos:lead-the-way:time-bridge",
+     "club": "olympiacos",
+     "chapter": "lead-the-way",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 10",
+      "Age 11",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "olympiacos:lead-the-way:chapter-card",
+     "club": "olympiacos",
+     "chapter": "lead-the-way",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 11",
+      "Lead the Way"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "olympiacos:lead-the-way:matchday-opener",
+     "club": "olympiacos",
+     "chapter": "lead-the-way",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "Lead the Way"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "olympiacos:the-banner:chapter-card",
+     "club": "olympiacos",
+     "chapter": "the-banner",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 11",
+      "The Banner"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "olympiacos:no-ticket:time-bridge",
+     "club": "olympiacos",
+     "chapter": "no-ticket",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 12,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 11",
+      "Age 12",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "olympiacos:no-ticket:chapter-card",
+     "club": "olympiacos",
+     "chapter": "no-ticket",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 12,
+     "night": {
+      "factId": "olympiacos:r26-cup-ofi-90",
+      "on": "1990-05-17",
+      "year": 1990,
+      "precision": "day",
+      "title": "Olympiacos beat OFI 4-2 in the Greek Cup final",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "1990 Greek Football Cup final",
+        "publisher": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/1990_Greek_Football_Cup_final"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 12",
+      "No Ticket",
+      "1990-05-17"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "olympiacos:no-ticket:matchday-opener",
+     "club": "olympiacos",
+     "chapter": "no-ticket",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 12,
+     "night": {
+      "factId": "olympiacos:r26-cup-ofi-90",
+      "on": "1990-05-17",
+      "year": 1990,
+      "precision": "day",
+      "title": "Olympiacos beat OFI 4-2 in the Greek Cup final",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "1990 Greek Football Cup final",
+        "publisher": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/1990_Greek_Football_Cup_final"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "1990-05-17",
+      "Olympiacos beat OFI 4-2 in the Greek Cup final"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "olympiacos:the-box:chapter-card",
+     "club": "olympiacos",
+     "chapter": "the-box",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 12,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 12",
+      "The Box"
+     ],
+     "status": "requested"
+    }
+   ]
+  },
+  "panathinaikos": {
+   "birthYear": 1978,
+   "requests": [
+    {
+     "id": "panathinaikos:first-noise:chapter-card",
+     "club": "panathinaikos",
+     "chapter": "first-noise",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 6,
+     "night": {
+      "factId": "panathinaikos:greek-cup-final-1984",
+      "on": "1984-06-06",
+      "year": 1984,
+      "precision": "day",
+      "title": "Panathinaikos 2–0 Larisa",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Greece 1983/84",
+        "publisher": "RSSSF",
+        "url": "https://rsssf.org/tablesg/grk84.html"
+       },
+       {
+        "title": "1984 Greek Football Cup final",
+        "publisher": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/1984_Greek_Football_Cup_final"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 6",
+      "The First Noise",
+      "1984-06-06"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "panathinaikos:first-noise:matchday-opener",
+     "club": "panathinaikos",
+     "chapter": "first-noise",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 6,
+     "night": {
+      "factId": "panathinaikos:greek-cup-final-1984",
+      "on": "1984-06-06",
+      "year": 1984,
+      "precision": "day",
+      "title": "Panathinaikos 2–0 Larisa",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Greece 1983/84",
+        "publisher": "RSSSF",
+        "url": "https://rsssf.org/tablesg/grk84.html"
+       },
+       {
+        "title": "1984 Greek Football Cup final",
+        "publisher": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/1984_Greek_Football_Cup_final"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "1984-06-06",
+      "Panathinaikos 2–0 Larisa"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "panathinaikos:six-short:time-bridge",
+     "club": "panathinaikos",
+     "chapter": "six-short",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 7,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 6",
+      "Age 7",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "panathinaikos:six-short:chapter-card",
+     "club": "panathinaikos",
+     "chapter": "six-short",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 7,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 7",
+      "Six Short"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "panathinaikos:the-way-in:time-bridge",
+     "club": "panathinaikos",
+     "chapter": "the-way-in",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 8,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 7",
+      "Age 8",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "panathinaikos:the-way-in:chapter-card",
+     "club": "panathinaikos",
+     "chapter": "the-way-in",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 8,
+     "night": {
+      "factId": "panathinaikos:greek-cup-final-1986",
+      "on": "1986-05-28",
+      "year": 1986,
+      "precision": "day",
+      "title": "Panathinaikos 4–0 Olympiacos",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Greece 1985/86",
+        "publisher": "RSSSF",
+        "url": "https://rsssf.org/tablesg/grk86.html"
+       },
+       {
+        "title": "1986 Greek Football Cup final",
+        "publisher": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/1986_Greek_Football_Cup_final"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 8",
+      "The Way In",
+      "1986-05-28"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "panathinaikos:the-way-in:matchday-opener",
+     "club": "panathinaikos",
+     "chapter": "the-way-in",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 8,
+     "night": {
+      "factId": "panathinaikos:greek-cup-final-1986",
+      "on": "1986-05-28",
+      "year": 1986,
+      "precision": "day",
+      "title": "Panathinaikos 4–0 Olympiacos",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Greece 1985/86",
+        "publisher": "RSSSF",
+        "url": "https://rsssf.org/tablesg/grk86.html"
+       },
+       {
+        "title": "1986 Greek Football Cup final",
+        "publisher": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/1986_Greek_Football_Cup_final"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "1986-05-28",
+      "Panathinaikos 4–0 Olympiacos"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "panathinaikos:monday-colours:time-bridge",
+     "club": "panathinaikos",
+     "chapter": "monday-colours",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 8",
+      "Age 9",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "panathinaikos:monday-colours:chapter-card",
+     "club": "panathinaikos",
+     "chapter": "monday-colours",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 9",
+      "Monday Colours"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "panathinaikos:the-window:chapter-card",
+     "club": "panathinaikos",
+     "chapter": "the-window",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 9",
+      "The Window"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "panathinaikos:missing-square:time-bridge",
+     "club": "panathinaikos",
+     "chapter": "missing-square",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 10,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 9",
+      "Age 10",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "panathinaikos:missing-square:chapter-card",
+     "club": "panathinaikos",
+     "chapter": "missing-square",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 10,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 10",
+      "The Missing Square"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "panathinaikos:her-seat:chapter-card",
+     "club": "panathinaikos",
+     "chapter": "her-seat",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 10,
+     "night": {
+      "factId": "panathinaikos:greek-cup-final-1989",
+      "on": "1989-05-11",
+      "year": 1989,
+      "precision": "day",
+      "title": "Panathinaikos 3–1 Panionios",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Greece 1988/89",
+        "publisher": "RSSSF",
+        "url": "https://rsssf.org/tablesg/grk89.html"
+       },
+       {
+        "title": "1989 Greek Football Cup final",
+        "publisher": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/1989_Greek_Football_Cup_final"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 10",
+      "Her Seat",
+      "1989-05-11"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "panathinaikos:her-seat:matchday-opener",
+     "club": "panathinaikos",
+     "chapter": "her-seat",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 10,
+     "night": {
+      "factId": "panathinaikos:greek-cup-final-1989",
+      "on": "1989-05-11",
+      "year": 1989,
+      "precision": "day",
+      "title": "Panathinaikos 3–1 Panionios",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Greece 1988/89",
+        "publisher": "RSSSF",
+        "url": "https://rsssf.org/tablesg/grk89.html"
+       },
+       {
+        "title": "1989 Greek Football Cup final",
+        "publisher": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/1989_Greek_Football_Cup_final"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "1989-05-11",
+      "Panathinaikos 3–1 Panionios"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "panathinaikos:lead-the-way:time-bridge",
+     "club": "panathinaikos",
+     "chapter": "lead-the-way",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 10",
+      "Age 11",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "panathinaikos:lead-the-way:chapter-card",
+     "club": "panathinaikos",
+     "chapter": "lead-the-way",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 11",
+      "Lead the Way"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "panathinaikos:lead-the-way:matchday-opener",
+     "club": "panathinaikos",
+     "chapter": "lead-the-way",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "Lead the Way"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "panathinaikos:the-banner:chapter-card",
+     "club": "panathinaikos",
+     "chapter": "the-banner",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 11,
+     "night": {
+      "factId": "panathinaikos:greek-cup-final-1988",
+      "on": "1988-05-08",
+      "year": 1988,
+      "precision": "day",
+      "title": "Panathinaikos 2–2 Olympiacos",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Greece 1987/88",
+        "publisher": "RSSSF",
+        "url": "https://rsssf.org/tablesg/grk88.html"
+       },
+       {
+        "title": "1988 Greek Football Cup final",
+        "publisher": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/1988_Greek_Football_Cup_final"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 11",
+      "The Banner",
+      "1988-05-08"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "panathinaikos:no-ticket:time-bridge",
+     "club": "panathinaikos",
+     "chapter": "no-ticket",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 12,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 11",
+      "Age 12",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "panathinaikos:no-ticket:chapter-card",
+     "club": "panathinaikos",
+     "chapter": "no-ticket",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 12,
+     "night": {
+      "factId": "panathinaikos:uefa-ev-1776",
+      "on": "1989-10-18",
+      "year": 1989,
+      "precision": "day",
+      "title": "Panathinaikos 0–2 Dinamo Bucureşti",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "UEFA match centre — official match record 1776",
+        "publisher": "UEFA",
+        "url": "https://match.uefa.com/v5/matches?matchId=1776"
+       },
+       {
+        "title": "Wikipedia — 1989–90 European Cup Winners' Cup",
+        "publisher": "Wikimedia",
+        "url": "https://en.wikipedia.org/wiki/1989%E2%80%9390_European_Cup_Winners'_Cup"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 12",
+      "No Ticket",
+      "1989-10-18"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "panathinaikos:no-ticket:matchday-opener",
+     "club": "panathinaikos",
+     "chapter": "no-ticket",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 12,
+     "night": {
+      "factId": "panathinaikos:uefa-ev-1776",
+      "on": "1989-10-18",
+      "year": 1989,
+      "precision": "day",
+      "title": "Panathinaikos 0–2 Dinamo Bucureşti",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "UEFA match centre — official match record 1776",
+        "publisher": "UEFA",
+        "url": "https://match.uefa.com/v5/matches?matchId=1776"
+       },
+       {
+        "title": "Wikipedia — 1989–90 European Cup Winners' Cup",
+        "publisher": "Wikimedia",
+        "url": "https://en.wikipedia.org/wiki/1989%E2%80%9390_European_Cup_Winners'_Cup"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "1989-10-18",
+      "Panathinaikos 0–2 Dinamo Bucureşti"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "panathinaikos:the-box:chapter-card",
+     "club": "panathinaikos",
+     "chapter": "the-box",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 12,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 12",
+      "The Box"
+     ],
+     "status": "requested"
+    }
+   ]
+  },
+  "raja-casablanca": {
+   "birthYear": 2007,
+   "requests": [
+    {
+     "id": "raja-casablanca:first-noise:chapter-card",
+     "club": "raja-casablanca",
+     "chapter": "first-noise",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 6,
+     "night": {
+      "factId": "raja-casablanca:m-2013-12-18-atletico-mineiro",
+      "on": "2013-12-18",
+      "year": 2013,
+      "precision": "day",
+      "title": "Raja CA 3-1 Atlético Mineiro",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "ESPN match page: Raja Casablanca v Atlético-MG, Club World Cup semi-final 2013",
+        "publisher": "ESPN",
+        "url": "https://africa.espn.com/football/match/_/gameId/383396/atletico-mg-raja-casablanca"
+       },
+       {
+        "title": "SportEden: Raja Casablanca vs Atlético-MG",
+        "publisher": "SportEden",
+        "url": "https://sporteden.com/football/match/498894/raja-casablanca-vs-atletico-mg"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 6",
+      "The First Noise",
+      "2013-12-18"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "raja-casablanca:first-noise:matchday-opener",
+     "club": "raja-casablanca",
+     "chapter": "first-noise",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 6,
+     "night": {
+      "factId": "raja-casablanca:m-2013-12-18-atletico-mineiro",
+      "on": "2013-12-18",
+      "year": 2013,
+      "precision": "day",
+      "title": "Raja CA 3-1 Atlético Mineiro",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "ESPN match page: Raja Casablanca v Atlético-MG, Club World Cup semi-final 2013",
+        "publisher": "ESPN",
+        "url": "https://africa.espn.com/football/match/_/gameId/383396/atletico-mg-raja-casablanca"
+       },
+       {
+        "title": "SportEden: Raja Casablanca vs Atlético-MG",
+        "publisher": "SportEden",
+        "url": "https://sporteden.com/football/match/498894/raja-casablanca-vs-atletico-mg"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "2013-12-18",
+      "Raja CA 3-1 Atlético Mineiro"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "raja-casablanca:six-short:time-bridge",
+     "club": "raja-casablanca",
+     "chapter": "six-short",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 7,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 6",
+      "Age 7",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "raja-casablanca:six-short:chapter-card",
+     "club": "raja-casablanca",
+     "chapter": "six-short",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 7,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 7",
+      "Six Short"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "raja-casablanca:the-way-in:time-bridge",
+     "club": "raja-casablanca",
+     "chapter": "the-way-in",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 8,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 7",
+      "Age 8",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "raja-casablanca:the-way-in:chapter-card",
+     "club": "raja-casablanca",
+     "chapter": "the-way-in",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 8,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 8",
+      "The Way In"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "raja-casablanca:the-way-in:matchday-opener",
+     "club": "raja-casablanca",
+     "chapter": "the-way-in",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 8,
+     "night": null,
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "The Way In"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "raja-casablanca:monday-colours:time-bridge",
+     "club": "raja-casablanca",
+     "chapter": "monday-colours",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 8",
+      "Age 9",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "raja-casablanca:monday-colours:chapter-card",
+     "club": "raja-casablanca",
+     "chapter": "monday-colours",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 9",
+      "Monday Colours"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "raja-casablanca:the-window:chapter-card",
+     "club": "raja-casablanca",
+     "chapter": "the-window",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 9",
+      "The Window"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "raja-casablanca:missing-square:time-bridge",
+     "club": "raja-casablanca",
+     "chapter": "missing-square",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 10,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 9",
+      "Age 10",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "raja-casablanca:missing-square:chapter-card",
+     "club": "raja-casablanca",
+     "chapter": "missing-square",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 10,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 10",
+      "The Missing Square"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "raja-casablanca:her-seat:chapter-card",
+     "club": "raja-casablanca",
+     "chapter": "her-seat",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 10,
+     "night": {
+      "factId": "raja-casablanca:daily-match-46d1c5ba6fcec2859e44c240-moment",
+      "on": "2017-09-26",
+      "year": 2017,
+      "precision": "day",
+      "title": "Raja CA 0–0 FUS Rabat",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "2017–18 Raja CA season",
+        "publisher": "English Wikipedia",
+        "url": "https://en.wikipedia.org/w/index.php?oldid=1352939536"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 10",
+      "Her Seat",
+      "2017-09-26"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "raja-casablanca:her-seat:matchday-opener",
+     "club": "raja-casablanca",
+     "chapter": "her-seat",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 10,
+     "night": {
+      "factId": "raja-casablanca:daily-match-46d1c5ba6fcec2859e44c240-moment",
+      "on": "2017-09-26",
+      "year": 2017,
+      "precision": "day",
+      "title": "Raja CA 0–0 FUS Rabat",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "2017–18 Raja CA season",
+        "publisher": "English Wikipedia",
+        "url": "https://en.wikipedia.org/w/index.php?oldid=1352939536"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "2017-09-26",
+      "Raja CA 0–0 FUS Rabat"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "raja-casablanca:lead-the-way:time-bridge",
+     "club": "raja-casablanca",
+     "chapter": "lead-the-way",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 10",
+      "Age 11",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "raja-casablanca:lead-the-way:chapter-card",
+     "club": "raja-casablanca",
+     "chapter": "lead-the-way",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 11",
+      "Lead the Way"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "raja-casablanca:lead-the-way:matchday-opener",
+     "club": "raja-casablanca",
+     "chapter": "lead-the-way",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "Lead the Way"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "raja-casablanca:the-banner:chapter-card",
+     "club": "raja-casablanca",
+     "chapter": "the-banner",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 11,
+     "night": {
+      "factId": "raja-casablanca:t-m-mg-derby-2019-11-23",
+      "on": "2019-11-23",
+      "year": 2019,
+      "precision": "day",
+      "title": "Raja CA 4-4 Wydad AC — Arab Club Champions Cup",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Yabiladi — DERBY19",
+        "publisher": "Yabiladi",
+        "url": "https://www.yabiladi.com/investir/details/85941/coupe-arabe-mohammed-clubs-raja.html"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 11",
+      "The Banner",
+      "2019-11-23"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "raja-casablanca:no-ticket:time-bridge",
+     "club": "raja-casablanca",
+     "chapter": "no-ticket",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 12,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 11",
+      "Age 12",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "raja-casablanca:no-ticket:chapter-card",
+     "club": "raja-casablanca",
+     "chapter": "no-ticket",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 12,
+     "night": {
+      "factId": "raja-casablanca:m-2018-11-25-as-vita-club",
+      "on": "2018-11-25",
+      "year": 2018,
+      "precision": "day",
+      "title": "Raja CA 3-0 AS Vita Club",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Wikipedia: 2018 CAF Confederation Cup final (Kiwix mirror)",
+        "publisher": "Wikipedia",
+        "url": "https://kaweah.freedombox.rocks/kiwix/wikipedia_en_all_maxi_2023-10/2018_CAF_Confederation_Cup_Final"
+       },
+       {
+        "title": "ESPN match page: Raja v AS Vita Club, Confederation Cup final 1st leg 2018",
+        "publisher": "ESPN",
+        "url": "https://espndeportes.espn.com/futbol/partido/_/juegoId/528046/as-vita-club-raja-casablanca"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 12",
+      "No Ticket",
+      "2018-11-25"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "raja-casablanca:no-ticket:matchday-opener",
+     "club": "raja-casablanca",
+     "chapter": "no-ticket",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 12,
+     "night": {
+      "factId": "raja-casablanca:m-2018-11-25-as-vita-club",
+      "on": "2018-11-25",
+      "year": 2018,
+      "precision": "day",
+      "title": "Raja CA 3-0 AS Vita Club",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Wikipedia: 2018 CAF Confederation Cup final (Kiwix mirror)",
+        "publisher": "Wikipedia",
+        "url": "https://kaweah.freedombox.rocks/kiwix/wikipedia_en_all_maxi_2023-10/2018_CAF_Confederation_Cup_Final"
+       },
+       {
+        "title": "ESPN match page: Raja v AS Vita Club, Confederation Cup final 1st leg 2018",
+        "publisher": "ESPN",
+        "url": "https://espndeportes.espn.com/futbol/partido/_/juegoId/528046/as-vita-club-raja-casablanca"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "2018-11-25",
+      "Raja CA 3-0 AS Vita Club"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "raja-casablanca:the-box:chapter-card",
+     "club": "raja-casablanca",
+     "chapter": "the-box",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 12,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 12",
+      "The Box"
+     ],
+     "status": "requested"
+    }
+   ]
+  },
+  "st-pauli": {
+   "birthYear": 1978,
+   "requests": [
+    {
+     "id": "st-pauli:first-noise:chapter-card",
+     "club": "st-pauli",
+     "chapter": "first-noise",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 6,
+     "night": {
+      "factId": "st-pauli:ea-event-d4403576d8f797ed",
+      "on": "1985-05-18",
+      "year": 1985,
+      "precision": "day",
+      "title": "FC St. Pauli 1-0 1. FC Saarbrücken",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Deutscher Fußball-Bund · 1984/85",
+        "publisher": "Deutscher Fußball-Bund",
+        "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/1984-1985/teams/fc-st-pauli"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 6",
+      "The First Noise",
+      "1985-05-18"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "st-pauli:first-noise:matchday-opener",
+     "club": "st-pauli",
+     "chapter": "first-noise",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 6,
+     "night": {
+      "factId": "st-pauli:ea-event-d4403576d8f797ed",
+      "on": "1985-05-18",
+      "year": 1985,
+      "precision": "day",
+      "title": "FC St. Pauli 1-0 1. FC Saarbrücken",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Deutscher Fußball-Bund · 1984/85",
+        "publisher": "Deutscher Fußball-Bund",
+        "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/1984-1985/teams/fc-st-pauli"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "1985-05-18",
+      "FC St. Pauli 1-0 1. FC Saarbrücken"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "st-pauli:six-short:time-bridge",
+     "club": "st-pauli",
+     "chapter": "six-short",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 7,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 6",
+      "Age 7",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "st-pauli:six-short:chapter-card",
+     "club": "st-pauli",
+     "chapter": "six-short",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 7,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 7",
+      "Six Short"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "st-pauli:the-way-in:time-bridge",
+     "club": "st-pauli",
+     "chapter": "the-way-in",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 8,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 7",
+      "Age 8",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "st-pauli:the-way-in:chapter-card",
+     "club": "st-pauli",
+     "chapter": "the-way-in",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 8,
+     "night": {
+      "factId": "st-pauli:ea-event-379f824ef0e6b10a",
+      "on": "1987-10-31",
+      "year": 1987,
+      "precision": "day",
+      "title": "FC St. Pauli 1-1 SC Freiburg",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Deutscher Fußball-Bund · 1987/88",
+        "publisher": "Deutscher Fußball-Bund",
+        "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/1987-1988/teams/fc-st-pauli"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 8",
+      "The Way In",
+      "1987-10-31"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "st-pauli:the-way-in:matchday-opener",
+     "club": "st-pauli",
+     "chapter": "the-way-in",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 8,
+     "night": {
+      "factId": "st-pauli:ea-event-379f824ef0e6b10a",
+      "on": "1987-10-31",
+      "year": 1987,
+      "precision": "day",
+      "title": "FC St. Pauli 1-1 SC Freiburg",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Deutscher Fußball-Bund · 1987/88",
+        "publisher": "Deutscher Fußball-Bund",
+        "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/1987-1988/teams/fc-st-pauli"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "1987-10-31",
+      "FC St. Pauli 1-1 SC Freiburg"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "st-pauli:monday-colours:time-bridge",
+     "club": "st-pauli",
+     "chapter": "monday-colours",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 8",
+      "Age 9",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "st-pauli:monday-colours:chapter-card",
+     "club": "st-pauli",
+     "chapter": "monday-colours",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 9",
+      "Monday Colours"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "st-pauli:the-window:chapter-card",
+     "club": "st-pauli",
+     "chapter": "the-window",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 9",
+      "The Window"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "st-pauli:missing-square:time-bridge",
+     "club": "st-pauli",
+     "chapter": "missing-square",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 10,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 9",
+      "Age 10",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "st-pauli:missing-square:chapter-card",
+     "club": "st-pauli",
+     "chapter": "missing-square",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 10,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 10",
+      "The Missing Square"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "st-pauli:her-seat:chapter-card",
+     "club": "st-pauli",
+     "chapter": "her-seat",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 10,
+     "night": {
+      "factId": "st-pauli:ea-event-2479f75a9126f838",
+      "on": "1987-05-19",
+      "year": 1987,
+      "precision": "day",
+      "title": "FC St. Pauli 2-0 Arminia Bielefeld",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Deutscher Fußball-Bund · 1986/87",
+        "publisher": "Deutscher Fußball-Bund",
+        "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/1986-1987/teams/fc-st-pauli"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 10",
+      "Her Seat",
+      "1987-05-19"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "st-pauli:her-seat:matchday-opener",
+     "club": "st-pauli",
+     "chapter": "her-seat",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 10,
+     "night": {
+      "factId": "st-pauli:ea-event-2479f75a9126f838",
+      "on": "1987-05-19",
+      "year": 1987,
+      "precision": "day",
+      "title": "FC St. Pauli 2-0 Arminia Bielefeld",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Deutscher Fußball-Bund · 1986/87",
+        "publisher": "Deutscher Fußball-Bund",
+        "url": "https://datencenter.dfb.de/competitions/2-bundesliga/seasons/1986-1987/teams/fc-st-pauli"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "1987-05-19",
+      "FC St. Pauli 2-0 Arminia Bielefeld"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "st-pauli:lead-the-way:time-bridge",
+     "club": "st-pauli",
+     "chapter": "lead-the-way",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 10",
+      "Age 11",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "st-pauli:lead-the-way:chapter-card",
+     "club": "st-pauli",
+     "chapter": "lead-the-way",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 11",
+      "Lead the Way"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "st-pauli:lead-the-way:matchday-opener",
+     "club": "st-pauli",
+     "chapter": "lead-the-way",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "Lead the Way"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "st-pauli:the-banner:chapter-card",
+     "club": "st-pauli",
+     "chapter": "the-banner",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 11,
+     "night": {
+      "factId": "st-pauli:ea-event-d2fe00d931de11b0",
+      "on": "1989-03-23",
+      "year": 1989,
+      "precision": "day",
+      "title": "FC St. Pauli 1-2 Hamburger SV",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Deutscher Fußball-Bund · 1988/89",
+        "publisher": "Deutscher Fußball-Bund",
+        "url": "https://datencenter.dfb.de/competitions/bundesliga/seasons/1988-1989/teams/fc-st-pauli"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 11",
+      "The Banner",
+      "1989-03-23"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "st-pauli:no-ticket:time-bridge",
+     "club": "st-pauli",
+     "chapter": "no-ticket",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 12,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 11",
+      "Age 12",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "st-pauli:no-ticket:chapter-card",
+     "club": "st-pauli",
+     "chapter": "no-ticket",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 12,
+     "night": {
+      "factId": "st-pauli:ea-event-e24dce4806fe3b40",
+      "on": "1989-09-16",
+      "year": 1989,
+      "precision": "day",
+      "title": "FC St. Pauli 0-0 Hamburger SV",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Deutscher Fußball-Bund · 1989/90",
+        "publisher": "Deutscher Fußball-Bund",
+        "url": "https://datencenter.dfb.de/competitions/bundesliga/seasons/1989-1990/teams/fc-st-pauli"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 12",
+      "No Ticket",
+      "1989-09-16"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "st-pauli:no-ticket:matchday-opener",
+     "club": "st-pauli",
+     "chapter": "no-ticket",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 12,
+     "night": {
+      "factId": "st-pauli:ea-event-e24dce4806fe3b40",
+      "on": "1989-09-16",
+      "year": 1989,
+      "precision": "day",
+      "title": "FC St. Pauli 0-0 Hamburger SV",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Deutscher Fußball-Bund · 1989/90",
+        "publisher": "Deutscher Fußball-Bund",
+        "url": "https://datencenter.dfb.de/competitions/bundesliga/seasons/1989-1990/teams/fc-st-pauli"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "1989-09-16",
+      "FC St. Pauli 0-0 Hamburger SV"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "st-pauli:the-box:chapter-card",
+     "club": "st-pauli",
+     "chapter": "the-box",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 12,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 12",
+      "The Box"
+     ],
+     "status": "requested"
+    }
+   ]
+  },
+  "wydad-casablanca": {
+   "birthYear": 2008,
+   "requests": [
+    {
+     "id": "wydad-casablanca:first-noise:chapter-card",
+     "club": "wydad-casablanca",
+     "chapter": "first-noise",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 6,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 6",
+      "The First Noise"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "wydad-casablanca:first-noise:matchday-opener",
+     "club": "wydad-casablanca",
+     "chapter": "first-noise",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 6,
+     "night": null,
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "The First Noise"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "wydad-casablanca:six-short:time-bridge",
+     "club": "wydad-casablanca",
+     "chapter": "six-short",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 7,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 6",
+      "Age 7",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "wydad-casablanca:six-short:chapter-card",
+     "club": "wydad-casablanca",
+     "chapter": "six-short",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 7,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 7",
+      "Six Short"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "wydad-casablanca:the-way-in:time-bridge",
+     "club": "wydad-casablanca",
+     "chapter": "the-way-in",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 8,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 7",
+      "Age 8",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "wydad-casablanca:the-way-in:chapter-card",
+     "club": "wydad-casablanca",
+     "chapter": "the-way-in",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 8,
+     "night": {
+      "factId": "wydad-casablanca:m-2017-11-04-al-ahly",
+      "on": "2017-11-04",
+      "year": 2017,
+      "precision": "day",
+      "title": "Wydad AC 1-0 Al Ahly",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Wikipedia: 2017 CAF Champions League final (Kiwix mirror)",
+        "publisher": "Wikipedia",
+        "url": "https://wiki.krisyotam.com/content/wikipedia_en_all_nopic_2026-03/2017_CAF_Champions_League_final"
+       },
+       {
+        "title": "ESPN match page: Wydad AC v Al Ahly, CAF CL final 2nd leg 2017",
+        "publisher": "ESPN",
+        "url": "https://global.espn.com/football/match/_/gameId/494361/al-ahly-wydad-casablanca"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 8",
+      "The Way In",
+      "2017-11-04"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "wydad-casablanca:the-way-in:matchday-opener",
+     "club": "wydad-casablanca",
+     "chapter": "the-way-in",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 8,
+     "night": {
+      "factId": "wydad-casablanca:m-2017-11-04-al-ahly",
+      "on": "2017-11-04",
+      "year": 2017,
+      "precision": "day",
+      "title": "Wydad AC 1-0 Al Ahly",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Wikipedia: 2017 CAF Champions League final (Kiwix mirror)",
+        "publisher": "Wikipedia",
+        "url": "https://wiki.krisyotam.com/content/wikipedia_en_all_nopic_2026-03/2017_CAF_Champions_League_final"
+       },
+       {
+        "title": "ESPN match page: Wydad AC v Al Ahly, CAF CL final 2nd leg 2017",
+        "publisher": "ESPN",
+        "url": "https://global.espn.com/football/match/_/gameId/494361/al-ahly-wydad-casablanca"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "2017-11-04",
+      "Wydad AC 1-0 Al Ahly"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "wydad-casablanca:monday-colours:time-bridge",
+     "club": "wydad-casablanca",
+     "chapter": "monday-colours",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 8",
+      "Age 9",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "wydad-casablanca:monday-colours:chapter-card",
+     "club": "wydad-casablanca",
+     "chapter": "monday-colours",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 9",
+      "Monday Colours"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "wydad-casablanca:the-window:chapter-card",
+     "club": "wydad-casablanca",
+     "chapter": "the-window",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 9",
+      "The Window"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "wydad-casablanca:missing-square:time-bridge",
+     "club": "wydad-casablanca",
+     "chapter": "missing-square",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 10,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 9",
+      "Age 10",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "wydad-casablanca:missing-square:chapter-card",
+     "club": "wydad-casablanca",
+     "chapter": "missing-square",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 10,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 10",
+      "The Missing Square"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "wydad-casablanca:her-seat:chapter-card",
+     "club": "wydad-casablanca",
+     "chapter": "her-seat",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 10,
+     "night": {
+      "factId": "wydad-casablanca:daily-match-7bc99c5a1a6ecac32917cdb5-moment",
+      "on": "2017-08-27",
+      "year": 2017,
+      "precision": "day",
+      "title": "Wydad AC 2–0 Kawkab Marrakech",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "2017–18 Wydad AC season",
+        "publisher": "English Wikipedia",
+        "url": "https://en.wikipedia.org/w/index.php?oldid=1374760925"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 10",
+      "Her Seat",
+      "2017-08-27"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "wydad-casablanca:her-seat:matchday-opener",
+     "club": "wydad-casablanca",
+     "chapter": "her-seat",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 10,
+     "night": {
+      "factId": "wydad-casablanca:daily-match-7bc99c5a1a6ecac32917cdb5-moment",
+      "on": "2017-08-27",
+      "year": 2017,
+      "precision": "day",
+      "title": "Wydad AC 2–0 Kawkab Marrakech",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "2017–18 Wydad AC season",
+        "publisher": "English Wikipedia",
+        "url": "https://en.wikipedia.org/w/index.php?oldid=1374760925"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "2017-08-27",
+      "Wydad AC 2–0 Kawkab Marrakech"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "wydad-casablanca:lead-the-way:time-bridge",
+     "club": "wydad-casablanca",
+     "chapter": "lead-the-way",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 10",
+      "Age 11",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "wydad-casablanca:lead-the-way:chapter-card",
+     "club": "wydad-casablanca",
+     "chapter": "lead-the-way",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 11",
+      "Lead the Way"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "wydad-casablanca:lead-the-way:matchday-opener",
+     "club": "wydad-casablanca",
+     "chapter": "lead-the-way",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "Lead the Way"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "wydad-casablanca:the-banner:chapter-card",
+     "club": "wydad-casablanca",
+     "chapter": "the-banner",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 11,
+     "night": {
+      "factId": "wydad-casablanca:m-2019-05-24-esperance",
+      "on": "2019-05-24",
+      "year": 2019,
+      "precision": "day",
+      "title": "Wydad AC 1-1 Espérance de Tunis",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Wikipedia: 2019 CAF Champions League final (Kiwix mirror)",
+        "publisher": "Wikipedia",
+        "url": "https://wiki.krisyotam.com/content/wikipedia_en_all_nopic_2026-03/2019_CAF_Champions_League_Final"
+       },
+       {
+        "title": "ESPN match page: Wydad AC v ES Tunis, CAF CL final 1st leg 2019",
+        "publisher": "ESPN",
+        "url": "https://africa.espn.com/football/match/_/gameId/539801/esperance-sportive-de-tunis-wydad-casablanca"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 11",
+      "The Banner",
+      "2019-05-24"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "wydad-casablanca:no-ticket:time-bridge",
+     "club": "wydad-casablanca",
+     "chapter": "no-ticket",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 12,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 11",
+      "Age 12",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "wydad-casablanca:no-ticket:chapter-card",
+     "club": "wydad-casablanca",
+     "chapter": "no-ticket",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 12,
+     "night": {
+      "factId": "wydad-casablanca:t-m-mg-e17fe4b7b019",
+      "on": "2021-11-06",
+      "year": 2021,
+      "precision": "day",
+      "title": "Wydad AC 1-1 Raja CA — Botola Pro",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Wikipedia — WS",
+        "publisher": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/2021%E2%80%9322_Wydad_AC_season"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 12",
+      "No Ticket",
+      "2021-11-06"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "wydad-casablanca:no-ticket:matchday-opener",
+     "club": "wydad-casablanca",
+     "chapter": "no-ticket",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 12,
+     "night": {
+      "factId": "wydad-casablanca:t-m-mg-e17fe4b7b019",
+      "on": "2021-11-06",
+      "year": 2021,
+      "precision": "day",
+      "title": "Wydad AC 1-1 Raja CA — Botola Pro",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "Wikipedia — WS",
+        "publisher": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/2021%E2%80%9322_Wydad_AC_season"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "2021-11-06",
+      "Wydad AC 1-1 Raja CA — Botola Pro"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "wydad-casablanca:the-box:chapter-card",
+     "club": "wydad-casablanca",
+     "chapter": "the-box",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 12,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 12",
+      "The Box"
+     ],
+     "status": "requested"
+    }
+   ]
+  },
+  "zrinjski-mostar": {
+   "birthYear": 1994,
+   "requests": [
+    {
+     "id": "zrinjski-mostar:first-noise:chapter-card",
+     "club": "zrinjski-mostar",
+     "chapter": "first-noise",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 6,
+     "night": {
+      "factId": "zrinjski-mostar:ev-2000-06-25-vastra-frolunda-home",
+      "on": "2000-06-25",
+      "year": 2000,
+      "precision": "day",
+      "title": "Zrinjski 2–1 Västra Frölunda",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "UEFA match feed – Zrinjski 2000–2005",
+        "publisher": "UEFA",
+        "url": "https://match.uefa.com/v5/matches?teamId=73390&order=ASC&offset=0&limit=100"
+       },
+       {
+        "title": "On this day 25 years ago, HŠK Zrinjski played its first European match in Mostar",
+        "publisher": "HŠK Zrinjski Mostar",
+        "url": "https://hskzrinjski.ba/en/?p=5692"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 6",
+      "The First Noise",
+      "2000-06-25"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "zrinjski-mostar:first-noise:matchday-opener",
+     "club": "zrinjski-mostar",
+     "chapter": "first-noise",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 6,
+     "night": {
+      "factId": "zrinjski-mostar:ev-2000-06-25-vastra-frolunda-home",
+      "on": "2000-06-25",
+      "year": 2000,
+      "precision": "day",
+      "title": "Zrinjski 2–1 Västra Frölunda",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "UEFA match feed – Zrinjski 2000–2005",
+        "publisher": "UEFA",
+        "url": "https://match.uefa.com/v5/matches?teamId=73390&order=ASC&offset=0&limit=100"
+       },
+       {
+        "title": "On this day 25 years ago, HŠK Zrinjski played its first European match in Mostar",
+        "publisher": "HŠK Zrinjski Mostar",
+        "url": "https://hskzrinjski.ba/en/?p=5692"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "2000-06-25",
+      "Zrinjski 2–1 Västra Frölunda"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "zrinjski-mostar:six-short:time-bridge",
+     "club": "zrinjski-mostar",
+     "chapter": "six-short",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 7,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 6",
+      "Age 7",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "zrinjski-mostar:six-short:chapter-card",
+     "club": "zrinjski-mostar",
+     "chapter": "six-short",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 7,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 7",
+      "Six Short"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "zrinjski-mostar:the-way-in:time-bridge",
+     "club": "zrinjski-mostar",
+     "chapter": "the-way-in",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 8,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 7",
+      "Age 8",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "zrinjski-mostar:the-way-in:chapter-card",
+     "club": "zrinjski-mostar",
+     "chapter": "the-way-in",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 8,
+     "night": {
+      "factId": "zrinjski-mostar:history-rsssf-756eb20d79c90f96-moment",
+      "on": "2002-03-30",
+      "year": 2002,
+      "precision": "day",
+      "title": "Zrinjski Mostar 2-0 Troglav",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "RSSSF — 2001/02",
+        "publisher": "RSSSF",
+        "url": "https://www.rsssf.org/tablesb/bih02.html"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 8",
+      "The Way In",
+      "2002-03-30"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "zrinjski-mostar:the-way-in:matchday-opener",
+     "club": "zrinjski-mostar",
+     "chapter": "the-way-in",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 8,
+     "night": {
+      "factId": "zrinjski-mostar:history-rsssf-756eb20d79c90f96-moment",
+      "on": "2002-03-30",
+      "year": 2002,
+      "precision": "day",
+      "title": "Zrinjski Mostar 2-0 Troglav",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "RSSSF — 2001/02",
+        "publisher": "RSSSF",
+        "url": "https://www.rsssf.org/tablesb/bih02.html"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "2002-03-30",
+      "Zrinjski Mostar 2-0 Troglav"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "zrinjski-mostar:monday-colours:time-bridge",
+     "club": "zrinjski-mostar",
+     "chapter": "monday-colours",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 8",
+      "Age 9",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "zrinjski-mostar:monday-colours:chapter-card",
+     "club": "zrinjski-mostar",
+     "chapter": "monday-colours",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 9",
+      "Monday Colours"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "zrinjski-mostar:the-window:chapter-card",
+     "club": "zrinjski-mostar",
+     "chapter": "the-window",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 9,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 9",
+      "The Window"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "zrinjski-mostar:missing-square:time-bridge",
+     "club": "zrinjski-mostar",
+     "chapter": "missing-square",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 10,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 9",
+      "Age 10",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "zrinjski-mostar:missing-square:chapter-card",
+     "club": "zrinjski-mostar",
+     "chapter": "missing-square",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 10,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 10",
+      "The Missing Square"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "zrinjski-mostar:her-seat:chapter-card",
+     "club": "zrinjski-mostar",
+     "chapter": "her-seat",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 10,
+     "night": {
+      "factId": "zrinjski-mostar:history-rsssf-4a41c5a9df6585cb-moment",
+      "on": "2003-05-10",
+      "year": 2003,
+      "precision": "day",
+      "title": "Zrinjski Mostar 5-2 Mladost",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "RSSSF — 2002/03",
+        "publisher": "RSSSF",
+        "url": "https://www.rsssf.org/tablesb/bih03.html"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 10",
+      "Her Seat",
+      "2003-05-10"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "zrinjski-mostar:her-seat:matchday-opener",
+     "club": "zrinjski-mostar",
+     "chapter": "her-seat",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 10,
+     "night": {
+      "factId": "zrinjski-mostar:history-rsssf-4a41c5a9df6585cb-moment",
+      "on": "2003-05-10",
+      "year": 2003,
+      "precision": "day",
+      "title": "Zrinjski Mostar 5-2 Mladost",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "RSSSF — 2002/03",
+        "publisher": "RSSSF",
+        "url": "https://www.rsssf.org/tablesb/bih03.html"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "2003-05-10",
+      "Zrinjski Mostar 5-2 Mladost"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "zrinjski-mostar:lead-the-way:time-bridge",
+     "club": "zrinjski-mostar",
+     "chapter": "lead-the-way",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 10",
+      "Age 11",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "zrinjski-mostar:lead-the-way:chapter-card",
+     "club": "zrinjski-mostar",
+     "chapter": "lead-the-way",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 11",
+      "Lead the Way"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "zrinjski-mostar:lead-the-way:matchday-opener",
+     "club": "zrinjski-mostar",
+     "chapter": "lead-the-way",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 11,
+     "night": null,
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "Lead the Way"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "zrinjski-mostar:the-banner:chapter-card",
+     "club": "zrinjski-mostar",
+     "chapter": "the-banner",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 11,
+     "night": {
+      "factId": "zrinjski-mostar:history-rsssf-17fffab927daf3c0-moment",
+      "on": "2004-10-31",
+      "year": 2004,
+      "precision": "day",
+      "title": "Zrinjski Mostar 0-0 Široki Brijeg",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "RSSSF — 2004/05",
+        "publisher": "RSSSF",
+        "url": "https://www.rsssf.org/tablesb/bih05.html"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 11",
+      "The Banner",
+      "2004-10-31"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "zrinjski-mostar:no-ticket:time-bridge",
+     "club": "zrinjski-mostar",
+     "chapter": "no-ticket",
+     "kind": "time-bridge",
+     "stage": "child",
+     "age": 12,
+     "night": null,
+     "seconds": 3,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Age 11",
+      "Age 12",
+      "Same street. A little taller."
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "zrinjski-mostar:no-ticket:chapter-card",
+     "club": "zrinjski-mostar",
+     "chapter": "no-ticket",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 12,
+     "night": {
+      "factId": "zrinjski-mostar:history-rsssf-60ff92081191391f-moment",
+      "on": "2007-05-05",
+      "year": 2007,
+      "precision": "day",
+      "title": "Zrinjski Mostar 2-1 Velež",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "RSSSF — 2006/07",
+        "publisher": "RSSSF",
+        "url": "https://www.rsssf.org/tablesb/bih07.html"
+       }
+      ]
+     },
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 12",
+      "No Ticket",
+      "2007-05-05"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "zrinjski-mostar:no-ticket:matchday-opener",
+     "club": "zrinjski-mostar",
+     "chapter": "no-ticket",
+     "kind": "matchday-opener",
+     "stage": "child",
+     "age": 12,
+     "night": {
+      "factId": "zrinjski-mostar:history-rsssf-60ff92081191391f-moment",
+      "on": "2007-05-05",
+      "year": 2007,
+      "precision": "day",
+      "title": "Zrinjski Mostar 2-1 Velež",
+      "locale": "en",
+      "sources": [
+       {
+        "title": "RSSSF — 2006/07",
+        "publisher": "RSSSF",
+        "url": "https://www.rsssf.org/tablesb/bih07.html"
+       }
+      ]
+     },
+     "seconds": 5,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Matchday",
+      "2007-05-05",
+      "Zrinjski Mostar 2-1 Velež"
+     ],
+     "status": "requested"
+    },
+    {
+     "id": "zrinjski-mostar:the-box:chapter-card",
+     "club": "zrinjski-mostar",
+     "chapter": "the-box",
+     "kind": "chapter-card",
+     "stage": "child",
+     "age": 12,
+     "night": null,
+     "seconds": 4,
+     "formats": [
+      "9:16",
+      "16:9"
+     ],
+     "beats": [
+      "Childhood",
+      "Age 12",
+      "The Box"
+     ],
+     "status": "requested"
+    }
+   ]
+  }
+ }
+}
