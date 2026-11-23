@@ -245,6 +245,8 @@ main.wks ul { margin: 0; padding: 0; }
 .wks2-clubs ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
 .wks2-club { display: inline-flex; align-items: center; gap: 8px; padding: 0 14px; border: 2px solid var(--mag-ink); border-radius: 999px; background: var(--mag-paper); color: var(--mag-ink); font-weight: 800; font-size: 14px; text-decoration: none; }
 .wks2-club i { inline-size: 12px; block-size: 12px; border-radius: 50%; background: var(--club); border: 2px solid var(--mag-ink); }
+.wks2-club img { inline-size: 28px; block-size: 28px; object-fit: contain; margin-inline-start: -8px; padding: 2px; border-radius: 50%; background: var(--mag-white); border: 2px solid var(--club, var(--mag-ink)); }
+.wks2-club small { font-family: var(--mag-mono); font-size: 11px; font-weight: 700; opacity: .65; }
 .wks2-club[aria-current] { background: var(--mag-ink); color: var(--mag-paper); }
 .wks2-sale { position: relative; overflow: hidden; display: grid; grid-template-columns: 76px minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 12px 14px; border: 3px solid var(--mag-ink); box-shadow: 4px 4px 0 var(--mag-ink); color: var(--mag-paper); text-decoration: none; }
 .wks2-sale .wks-burst { inline-size: 72px; block-size: 72px; font-size: 20px; }

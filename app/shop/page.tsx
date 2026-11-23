@@ -6,6 +6,7 @@ import {saleDay,ShopCard,isNew,leftText} from '@/components/shop/ShopStrip'
 import {publicShop,type PublicSale} from '@/lib/shop/store'
 import {subjectName} from '@/lib/shop/subjects'
 import {REGISTRY} from '@/lib/master/registry'
+import {crestFor} from '@/lib/clubs/crest'
 import type {PublicProduct,Shelf} from '@/lib/shop/types'
 import {inClub} from '@/lib/shop/types'
 import copy from '@/messages/en.shop.json'
@@ -39,6 +40,8 @@ export default async function Shop({searchParams}:{searchParams:{club?:string;sh
  const shop=await publicShop(),all=shop.products,fav=new Set(shop.promoters.featured)
  const subjects=[...new Set(all.flatMap(p=>p.clubs??[p.subject]))].sort((a,b)=>a==='fanlife'?-1:b==='fanlife'?1:subjectName(a).localeCompare(subjectName(b)))
  const name=(s:string)=>s==='fanlife'?copy.house:subjectName(s)
+ // the club's own crest on its chip, and how many products wait behind it (23.11.2026: "more graphic"); FAN LIFE's own line wears the roundel
+ const crestOf=(x:string)=>x==='fanlife'?'/brand/fanlife/logo-96.webp':crestFor(x)
  const who=subjects.includes(searchParams.club||'')?searchParams.club!:null
  const dept=DEPTS.find(s=>s===searchParams.shelf)??null,budget=BUDGETS.find(b=>b===searchParams.price)??null
  const design=all.some(p=>p.design===searchParams.design)?searchParams.design!:null,sort=SORTS.find(s=>s===searchParams.sort)??null
@@ -71,7 +74,7 @@ export default async function Shop({searchParams}:{searchParams:{club?:string;sh
   <img src={t.img} alt="" loading="lazy" width={240} height={240}/><b>{copy.depts[t.d]}</b></Link></li>)}</ul></nav>
  const clubChips=subjects.length>1&&<nav className="wks2-clubs" aria-label={copy.byClub}><span className="wks2-label">{copy.byClub}</span><ul>
   <li><Link className="wks2-club min-h-tap" href={browsing?href({club:null}):'/shop?view=all'} aria-current={!who?'page':undefined}>{copy.byClubAll}</Link></li>
-  {subjects.map(x=>{const c=REGISTRY.find(r=>r.id===x);return <li key={x}><Link className="wks2-club min-h-tap" href={href({club:who===x?null:x,design:null,view:'all'})} aria-current={who===x?'page':undefined} style={{['--club' as string]:x==='fanlife'?'var(--mag-vermilion)':c?.primary??'var(--mag-ink)'}}><i aria-hidden="true"/>{name(x)}</Link></li>})}</ul></nav>
+  {subjects.map(x=>{const c=REGISTRY.find(r=>r.id===x);return <li key={x}><Link className="wks2-club min-h-tap" href={href({club:who===x?null:x,design:null,view:'all'})} aria-current={who===x?'page':undefined} style={{['--club' as string]:x==='fanlife'?'var(--mag-vermilion)':c?.primary??'var(--mag-ink)'}}>{crestOf(x)?/* eslint-disable-next-line @next/next/no-img-element -- a crest ships exactly as recorded */<img src={crestOf(x)!} alt="" width={28} height={28} loading="lazy"/>:<i aria-hidden="true"/>}{name(x)}<small>{all.filter(p=>inClub(p,x)).length}</small></Link></li>})}</ul></nav>
 
  if(open&&browsing){
   let list=design?all.filter(p=>p.design===design):mine
