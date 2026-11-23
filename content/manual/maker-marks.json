@@ -56,6 +56,13 @@
    "src": "/kits/marks/maker-macron.webp",
    "print": "mono",
    "source": "The Worker (public/kits/marks)"
+  },
+  "kappa": {
+   "viewBox": "0 0 240 116",
+   "kind": "raster",
+   "src": "/club-kits/marks/maker-kappa-omini.png",
+   "print": "mono",
+   "source": "https://www.kappa.com/cdn/shop/files/Omini_red_logo_fd6cb97b-9c0b-4aac-aa44-597a195030a0.png"
   }
  },
  "sponsors": {
@@ -279,6 +286,14 @@
    "replace": true,
    "source": "Wikimedia Commons, File:Aluminij.svg",
    "plate": true
+  },
+  "chobani": {
+   "viewBox": "0 0 922 230",
+   "kind": "raster",
+   "src": "/club-kits/marks/sponsor-chobani.png",
+   "print": "mono",
+   "replace": true,
+   "source": "https://chobani.com/cdn/shop/t/2/assets/chobani-logo.png?v=2172369873904759051792529918"
   }
  }
 }

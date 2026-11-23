@@ -53,6 +53,7 @@ function shirtG(k,id){
   const b=hex(k,0),t=k.shirt.colours.length>1?hex(k,1):shade(hex(k,0),-.14),m=k.shirt.measured||{},d=k.shirt.design;
   const art=k.shirt.artwork||{};
   let pat='',sleeveInk=b;
+  const panel=Array.isArray(art.bodyTiles)?art.bodyTiles.filter(t=>/^#[a-f0-9]{6}$/i.test(t.fill)&&/^[MHVZ0-9 .-]+$/.test(t.path)):[];
   const runInk=i=>k.shirt.hex[k.shirt.colours[i]]||b,ry=m.runsY,rx=m.runsX;
   if(!art.centralPanel&&d==='hoops'&&ry&&ry.length>=3){pat=ry.map(r=>`<rect x="0" y="${(30+r[0]*266).toFixed(1)}" width="340" height="${((r[1]-r[0])*266+.6).toFixed(1)}" fill="${runInk(r[2])}"/>`).join('')}
   else if(!art.centralPanel&&(d==='stripes'||d==='pinstripes')&&rx&&rx.length>=3){pat=rx.map(r=>`<rect x="${(82+r[0]*176).toFixed(1)}" y="20" width="${((r[1]-r[0])*176+.6).toFixed(1)}" height="290" fill="${runInk(r[2])}"/>`).join('')}
@@ -67,12 +68,14 @@ function shirtG(k,id){
   else if(d==='contrasting sleeves'){sleeveInk=t}
   else if(d==='gradient'){pat=`<rect width="340" height="320" fill="url(#${id}g)"/>`}
   else if(d==='graphic'&&!art.omitUnmeasuredGraphics){pat=`<g fill="${t}" opacity=".18">${Array.from({length:60},(_,i)=>`<circle cx="${96+(i%10)*17+(Math.floor(i/10)%2)*8}" cy="${96+Math.floor(i/10)*30}" r="3.2"/>`).join('')}</g>`}
+  if(panel.length)pat=panel.map(t=>`<path d="${t.path}" fill="${t.fill}"/>`).join('');
   const light=lum(b)>150,ink=light?'#111':'#fff',edge=shade(b,-.55);
   const collar=art.collarInk||(d==='contrasting sleeves'?b:t);
   const asset=(src)=>typeof RESOLVE==='function'?RESOLVE(src):src;
   const sp=art.sponsorSrc?`<image href="${esc(asset(art.sponsorSrc))}" x="110" y="128" width="120" height="40" preserveAspectRatio="xMidYMid meet"/>`:k.sponsor?sponsorSVG(k.sponsor,b,{neutral:!!k.neutralSponsor,trim:t,patterned:['stripes','hoops','pinstripes','half-and-half','sash','chest band','diagonal','graphic'].includes(d)}):'';
   const mm=k.maker?markOf('makers',k.maker):null,mAr=mm?(q=>q[2]/q[3])(mm.viewBox.split(' ').map(Number)):1;
   const mk=k.maker?(mm?markG(mm,132,95,mAr>3?34:(mm.kind==='stroke'?30:24),mAr>3?9:(mm.kind==='stroke'?17:15),art.makerInk||ink,art.makerHalo||(light?'#fff':'#000')):`<text x="132" y="98" text-anchor="middle" font-family="Archivo,Arial,sans-serif" font-weight="700" font-size="${k.maker.length>8?9:11}" letter-spacing=".6" fill="${ink}" fill-opacity=".8">${esc(k.maker.toUpperCase())}</text>`):'';
+  const crestTag=art.crestSrc?`<image href="${esc(asset(art.crestSrc))}" x="188" y="80" width="38" height="42" preserveAspectRatio="xMidYMid meet"/>`:k.crest?`<image href="${k.crest}" x="188" y="80" width="38" height="42" preserveAspectRatio="xMidYMid meet"/>`:'';
   return `<defs><clipPath id="${id}c"><path d="${BODY}"/></clipPath>
 <pattern id="${id}p" width="3" height="3" patternUnits="userSpaceOnUse"><path d="M0 .5H3M.5 0V3" stroke="#000" stroke-opacity=".5" stroke-width=".5"/></pattern>
 <filter id="${id}b" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5"/></filter>
@@ -81,23 +84,25 @@ function shirtG(k,id){
 <linearGradient id="${id}v" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".22"/></linearGradient>
 <linearGradient id="${id}g" x1="0" y1="0" x2="0" y2="1"><stop offset=".2" stop-color="${b}"/><stop offset="1" stop-color="${t}"/></linearGradient></defs>
 <ellipse cx="170" cy="304" rx="104" ry="9" fill="#000" opacity=".16" filter="url(#${id}b)"/>
-<g clip-path="url(#${id}c)"><rect width="340" height="320" fill="${b}"/>${pat}
-${d==='hoops'&&ry&&ry.length>=3?'':`<path d="${SL_L}" fill="${sleeveInk}"/><path d="${SL_R}" fill="${sleeveInk}"/>`}
+<g clip-path="url(#${id}c)"><g data-layer="shirt-body"><rect width="340" height="320" fill="${b}"/></g><g data-layer="shirt-design">${pat}</g>
+<g data-layer="sleeves">
+${d==='hoops'&&ry&&ry.length>=3?'':`<path d="${SL_L}" fill="${art.leftSleeveInk||sleeveInk}"/><path d="${SL_R}" fill="${art.rightSleeveInk||sleeveInk}"/>`}
 ${art.plainCuffs?'':`<path d="M16 120 62 148 76 124 30 98Z M324 120 278 148 264 124 310 98Z" fill="${d==='contrasting sleeves'?b:t}" opacity=".96"/>`}${art.shoulderStripes?`\n<g fill="none" stroke="${t}" stroke-width="3.2" stroke-linecap="round"><path d="M111 30Q79 38 56 61"/><path d="M114 35Q82 43 59 66"/><path d="M117 40Q85 48 62 71"/><path d="M229 30Q261 38 284 61"/><path d="M226 35Q258 43 281 66"/><path d="M223 40Q255 48 278 71"/></g>`:''}
-<path d="M30 98 76 124M310 98 264 124" stroke="#000" stroke-opacity=".28" stroke-width="1"/>
+<path d="M30 98 76 124M310 98 264 124" stroke="#000" stroke-opacity=".28" stroke-width="1"/></g>
+<g data-layer="fabric-shading">
 <rect width="340" height="320" fill="url(#${id}f)"/><rect width="340" height="320" fill="url(#${id}v)"/>
 <g filter="url(#${id}b)" fill="none" stroke="#000" stroke-linecap="round"><path d="M84 128C80 150 82 176 86 200" stroke-opacity=".11" stroke-width="10"/><path d="M256 128C260 150 258 176 254 200" stroke-opacity=".11" stroke-width="10"/><path d="M64 52L84 124M276 52L256 124" stroke-opacity=".14" stroke-width="7"/></g>
 <g filter="url(#${id}b2)" fill="none" stroke-linecap="round"><path d="M104 160C122 190 118 236 106 288" stroke="#000" stroke-opacity=".07" stroke-width="6"/><path d="M236 160C218 190 222 236 234 288" stroke="#000" stroke-opacity=".07" stroke-width="6"/><path d="M142 200C160 214 186 214 204 200" stroke="#000" stroke-opacity=".07" stroke-width="5"/><path d="M130 100C150 90 190 90 210 100" stroke="#fff" stroke-opacity=".16" stroke-width="8"/></g>
 <rect width="340" height="320" fill="url(#${id}p)" opacity=".05"/>
 <path d="M88 276C130 286 210 286 252 276L252 292C216 304 124 304 88 292Z" fill="#000" opacity=".1"/>
-<path d="M82 282C124 296 216 296 258 282" stroke="${t}" stroke-width="5" stroke-opacity=".5" fill="none"/></g>
-<path d="M110 30C128 46 150 56 170 56S212 46 230 30L226 26C210 38 190 46 170 46S130 38 114 26Z" fill="#000" opacity=".55"/>
+<path d="M82 282C124 296 216 296 258 282" stroke="${t}" stroke-width="5" stroke-opacity=".5" fill="none"/></g></g>
+<g data-layer="collar">${art.vCollar?`<path d="M110 29 170 73 230 29 221 23 170 57 119 23Z" fill="${collar}" stroke="${edge}" stroke-width="1"/>`:`<path d="M110 30C128 46 150 56 170 56S212 46 230 30L226 26C210 38 190 46 170 46S130 38 114 26Z" fill="#000" opacity=".55"/>
 <path d="M110 30C128 46 150 56 170 56S212 46 230 30L220 22C204 36 188 42 170 42S136 36 120 22Z" fill="${collar}"/>
-<path d="M120 22C136 36 154 42 170 42S204 36 220 22" stroke="#000" stroke-opacity=".3" stroke-width="1.2" fill="none"/><path d="M112 30C130 47 150 55 170 55S210 47 228 30" stroke="#fff" stroke-opacity=".22" stroke-width="1" fill="none"/>
+<path d="M120 22C136 36 154 42 170 42S204 36 220 22" stroke="#000" stroke-opacity=".3" stroke-width="1.2" fill="none"/><path d="M112 30C130 47 150 55 170 55S210 47 228 30" stroke="#fff" stroke-opacity=".22" stroke-width="1" fill="none"/>`}
 ${art.poloCollar?`<path d="M120 22L169 44L151 65L123 37Z M220 22L171 44L189 65L217 37Z" fill="${collar}" stroke="${edge}"/><path d="M170 44V76" stroke="${edge}" stroke-width="4"/>`:''}
-<path d="${BODY}" fill="none" stroke="${edge}" stroke-width="2" stroke-linejoin="round"/>
+</g><path d="${BODY}" fill="none" stroke="${edge}" stroke-width="2" stroke-linejoin="round"/>
 <path d="M82 120V290M258 120V290M64 46L82 120M276 46L258 120" stroke="#000" stroke-opacity=".3" stroke-width="1.1" stroke-dasharray="4 3" fill="none"/>
-${art.crestSrc?`<image href="${esc(asset(art.crestSrc))}" x="188" y="80" width="38" height="42" preserveAspectRatio="xMidYMid meet"/>`:k.crest?`<image href="${k.crest}" x="188" y="80" width="38" height="42" preserveAspectRatio="xMidYMid meet"/>`:''}${mk}${sp}`;
+<g data-layer="club-crest">${crestTag}</g><g data-layer="manufacturer">${mk}</g><g data-layer="sponsor">${sp}</g>`;
 }
 function shortsG(sh,id){
   const b=sh.hex,t=sh.trimHex||shade(b,-.2),light=lum(b)>150;
@@ -124,5 +129,5 @@ function sockG(so,dx){
 function kitSVG(k,label){
   const id='k'+(++uid);
   return `<svg viewBox="${k.shorts||k.socks?'0 0 430 470':'0 20 340 300'}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${esc(label||'')}">${shirtG(k,id)}`
-   .replace('</svg>','')+(k.shorts?`<g transform="translate(70 318)">${shortsG(k.shorts,id)}</g>`:'')+(k.socks?`<g transform="translate(336 128)">${sockG(k.socks,0)}${sockG(k.socks,24)}</g>`:'')+'</svg>';
+   .replace('</svg>','')+(k.shorts?`<g data-layer="shorts" transform="translate(70 318)">${shortsG(k.shorts,id)}</g>`:'')+(k.socks?`<g data-layer="socks" transform="translate(336 128)">${sockG(k.socks,0)}${sockG(k.socks,24)}</g>`:'')+'</svg>';
 }

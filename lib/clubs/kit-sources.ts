@@ -13,6 +13,8 @@ import rajaSvg from '@/public/club-kits/raja-casablanca/svg/index.json'
 import pauliSvg from '@/public/club-kits/st-pauli/svg/index.json'
 import wydadSvg from '@/public/club-kits/wydad-casablanca/svg/index.json'
 import zrinjskiSvg from '@/public/club-kits/zrinjski-mostar/svg/index.json'
+import fenerbahceSvg from '@/public/club-kits/fenerbahce/svg/index.json'
+import partizanSvg from '@/public/club-kits/partizan-belgrade/svg/index.json'
 import {kitTypeKey} from './kit-model'
 
 import aek from '@/content/manual/kit-aek-athens.json'
@@ -39,6 +41,8 @@ const CATALOGUE:Record<string,Row[]>={
 }
 const INDEX:Record<string,readonly Omit<Row,'euro'>[]>={
  'aek-athens':aekSvg.kits,
+ fenerbahce:fenerbahceSvg.kits,
+ 'partizan-belgrade':partizanSvg.kits,
  'al-ahly':ahlySvg.kits,
  'atalanta':atalantaSvg.kits,
  'celtic':celticSvg.kits,
@@ -67,7 +71,7 @@ export function matchKitArt(rows:readonly Row[],club:string,kitId:string,season:
  if(exact)return exact
  const ids=new Set(also.map(idOf)),aliased=rows.filter(r=>ids.has(r.id))
  if(aliased.length)return aliased.length===1?aliased[0]!:null
- if(club==='atalanta')return null
+ if(['atalanta','fenerbahce','partizan-belgrade'].includes(club))return null
  const candidates=rows.filter(r=>seasonKey(r.season)===seasonKey(season)&&kitTypeKey(r.type)===kitTypeKey(type)&&!r.euro&&(r.indexed||r.image))
  return candidates.length===1?candidates[0]!:null
 }

@@ -775,7 +775,7 @@
       "status": "Several recent league seasons checked; domestic cup and other reports still require reconciliation."
     }
   ],
-  "fullySpecifiedKitBuilderShirts": 3,
+  "fullySpecifiedKitBuilderShirts": 6,
   "latestMatchResearch": {
     "counts": {
       "attendance": 2431,
@@ -791,5 +791,11 @@
       },
       "heldReportDates": []
     }
-  }
+  },
+  "kitArtwork": {
+    "drawings": 36,
+    "recordsWithoutDrawing": 21,
+    "catalogueRowsWithUnavailableArtwork": 19
+  },
+  "sourcedGoalReplays": 2
 }

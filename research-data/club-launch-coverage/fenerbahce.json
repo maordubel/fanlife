@@ -55,7 +55,7 @@
   ],
   "matchCount": 1922,
   "listedPlayers": 756,
-  "kits": 22,
+  "kits": 126,
   "uefaStartsChecked": 291,
   "matchCoverageBySeason": {
     "1909": {
@@ -750,7 +750,7 @@
       "status": "Print reference identified; match pages have not been checked against it."
     }
   ],
-  "fullySpecifiedKitBuilderShirts": 3,
+  "fullySpecifiedKitBuilderShirts": 16,
   "latestMatchResearch": {
     "counts": {
       "lineup": 36,
@@ -763,5 +763,11 @@
       "matchesEnriched": 36
     },
     "heldReportDates": []
-  }
+  },
+  "kitArtwork": {
+    "drawings": 53,
+    "recordsWithoutDrawing": 73,
+    "catalogueRowsWithUnavailableArtwork": 75
+  },
+  "sourcedGoalReplays": 3
 }
