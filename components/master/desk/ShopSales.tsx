@@ -33,6 +33,7 @@ export function ShopSales({doc,act,api,connected,subjects,designs,onDoc}:{doc:Sh
  return <>
   <section className="desk-card" aria-labelledby="shs1"><h2 className="desk-h2" id="shs1">Sales</h2>
    <p className="desk-fine">A real price cut: the shop lowers the price in Printify for the sale’s days — no code at checkout — shows the old price, a −% badge, a sale shelf and a countdown, and puts the price back when it ends. A price never goes below the printer’s cost + 10%.</p>
+   <p className="desk-fine"><b>A sale set to start later is announced from the day you save it</b> (up to 10 days ahead): its name, its cut and its day show in the shop’s ribbon and on the front page’s shop window, so today’s visitor comes back to buy.</p>
    {run&&<p className="desk-state" role="status"><b>{run}</b> Keep this page open.</p>}
    {pending>0&&!run&&<p className="desk-state" data-tone="bad">{pending} product price(s) still to update in Printify. <button className="desk-btn min-h-tap" disabled={api.busy||!connected} onClick={apply}>Apply now</button></p>}
    {sales.length>0&&<ul className="shop-sales">{sales.map(x=>{const on=isActive(x),soon=x.on&&!!x.starts&&Date.parse(x.starts)>Date.now()

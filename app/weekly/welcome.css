@@ -190,3 +190,14 @@ html[data-welcome] [data-art='ticket'] .wko-art { background-image: image-set(ur
   .wkz-scarf { inset-block-start: 160px; inline-size: 150px; inset-inline-end: -40px; }
   .wkz .wkz-shelf { padding: 24px; align-content: center; grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
+
+/* the window's stamp: the sale that is on, or the one that is coming (lib/shop/sales.ts → nextSale) */
+.wkz .wkz-stamp { position: absolute; inset-block-start: 12px; inset-inline-start: 12px; display: grid; justify-items: center; align-content: center; gap: 1px; inline-size: 112px; block-size: 112px; padding: 8px; border-radius: 50%; background: var(--mag-ink); color: var(--mag-white); border: 3px solid var(--mag-white); box-shadow: 4px 4px 0 color-mix(in srgb, var(--mag-ink) 60%, transparent); rotate: -9deg; text-align: center; text-decoration: none; }
+.wkz-stamp b { font-family: var(--mag-display); font-weight: 400; font-size: 30px; line-height: 1; color: var(--mag-orange); }
+.wkz-stamp span { font-family: var(--mag-condensed); font-weight: 700; font-size: 11px; line-height: 1.05; letter-spacing: .06em; text-transform: uppercase; overflow-wrap: anywhere; }
+.wkz-stamp small { font-family: var(--mag-condensed); font-size: 10px; line-height: 1.1; letter-spacing: .04em; text-transform: uppercase; opacity: .9; }
+.wkz-stamp[data-soon] { background: var(--mag-navy); }
+.wkz .wkz-stamp:focus-visible { outline: 3px solid var(--mag-cyan); outline-offset: 3px; }
+@media (min-width: 901px) { .wkz .wkz-stamp { inline-size: 132px; block-size: 132px; inset-block-start: 18px; inset-inline-start: 18px; } .wkz-stamp b { font-size: 38px; } .wkz-stamp span { font-size: 12px; } }
+@media (prefers-reduced-motion: no-preference) { .wkz .wkz-stamp { animation: wkz-pop .5s cubic-bezier(.2, .9, .3, 1.4) both; } }
+@keyframes wkz-pop { from { scale: .6; opacity: 0; } }

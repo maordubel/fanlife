@@ -1,5 +1,5 @@
 import {describe,expect,it} from 'vitest'
-import {covers,isActive,saleFor,saleFromForm,salePrice,timeLeft,type Sale} from '@/lib/shop/sales'
+import {covers,isActive,saleFor,saleFromForm,salePrice,timeLeft,nextSale,TEASE_DAYS,type Sale} from '@/lib/shop/sales'
 
 const now=Date.parse('2026-11-14T10:00:00Z')
 const sale=(o:Partial<Sale>):Sale=>({id:'s-a1b2',label:'Sale',percent:20,scope:{type:'all'},starts:null,until:'2026-11-20T21:59:00Z',on:true,createdAt:'2026-11-14T00:00:00Z',...o})
@@ -39,5 +39,15 @@ describe('shop sales',()=>{
  it('counts down',()=>{
   expect(timeLeft('2026-11-16T13:00:00Z',now)).toEqual({days:2,hours:3})
   expect(timeLeft('2026-11-13T13:00:00Z',now)).toBeNull()
+ })
+ it('announces the next sale before it starts: the soonest one that is on, within the teaser window',()=>{
+  const fri=sale({id:'s-fri1',label:'Black Friday',percent:30,starts:'2026-11-26T22:00:00Z',until:'2026-11-30T21:59:00Z'}),dec=sale({id:'s-dec1',starts:'2026-11-20T22:00:00Z',until:'2026-11-22T21:59:00Z'})
+  expect(nextSale([fri,dec],now)?.id).toBe('s-dec1')
+  expect(nextSale([fri],Date.parse('2026-11-23T05:00:00Z'))?.id).toBe('s-fri1')
+  expect(nextSale([sale({})],now)).toBeNull()                                  // already running: not "coming"
+  expect(nextSale([{...fri,on:false}],now)).toBeNull()                          // stopped by the owner
+  expect(nextSale([fri],Date.parse(fri.starts!)-(TEASE_DAYS+1)*864e5)).toBeNull() // too far ahead to promise
+  expect(nextSale([sale({starts:'2026-11-26T22:00:00Z',until:'2026-11-25T00:00:00Z'})],now)).toBeNull() // ends before it starts
+  expect(nextSale(undefined,now)).toBeNull()
  })
 })

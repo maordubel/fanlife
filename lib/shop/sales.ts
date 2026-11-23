@@ -45,6 +45,19 @@ export function salePrice(regular:number,cost:number,percent:number){
  const cut=Math.ceil(regular*(1-percent/100)/100)*100-1,floor=Math.ceil(cost*(1+FLOOR_SHARE))+INSERT_CENTS
  return Math.min(regular,Math.max(cut,floor))
 }
+/** how far ahead the shop announces a sale that has not started yet */
+export const TEASE_DAYS=10
+/** THE COMING SALE (23.11.2026, "sales have to be pushed wisely"): the next sale that is switched on and starts within
+ *  TEASE_DAYS — the shop says its name, its cut and its day before it starts, so the visit today becomes the order on the day */
+export function nextSale(sales:Sale[]|undefined,now=Date.now()):Sale|null{
+ let best:Sale|null=null
+ for(const s of sales??[]){
+  if(!s.on||!(s.percent>0)||!s.starts)continue
+  const at=Date.parse(s.starts);if(!(at>now)||at-now>TEASE_DAYS*864e5||(s.until&&Date.parse(s.until)<=at))continue
+  if(!best||at<Date.parse(best.starts!))best=s
+ }
+ return best
+}
 /** "2 days 4 hours" / "5 hours" / "less than an hour" — how long a sale still runs */
 export function timeLeft(until:string|null,now=Date.now()):{days:number;hours:number}|null{
  if(!until)return null;const ms=Date.parse(until)-now;if(!(ms>0))return null
