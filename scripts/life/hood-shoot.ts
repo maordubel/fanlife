@@ -20,6 +20,7 @@ async function main() {
     const ctx = await browser.newContext({viewport: phone ? {width: 390, height: 844} : {width: 1440, height: 900}, deviceScaleFactor: 1, hasTouch: phone, isMobile: phone})
     const page = await ctx.newPage()
     page.on('pageerror', e => { errors++; console.log('PAGE ERROR', club, e.message) })
+    await page.addInitScript(() => { (window as unknown as {H: () => unknown}).H = () => (window as unknown as {__hood: unknown}).__hood })
     const tag = `${club}-${size}`, shot = (n: string) => page.screenshot({path: `${out}/${tag}-${n}.png`, timeout: 300000})
     await page.goto(`${base}/qa/life-world?club=${club}&time=day&quality=${phone ? 'lite' : 'high'}`, {waitUntil: 'load', timeout: 600000})
     await page.waitForFunction(() => !!(window as unknown as {__hood?: Run}).__hood && (H().sim.t > 0.5), null, {timeout: 300000})

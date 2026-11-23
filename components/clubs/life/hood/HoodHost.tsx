@@ -144,7 +144,7 @@ export function HoodHost({club, seed = 1, time = 'day', quality, reduced = false
   const job = level.hood!.jobs[0]!
   const stepKey = objIx >= 0 ? level.steps[objIx]?.key : null
   const objective = jobState === 'active' && stepKey ? w(stepKey) : jobState === 'done' ? w('hood.hud.done') : w('hood.free')
-  const carrying = [carry.batteries ? `${carry.batteries} ${w('hood.item.battery')}` : '', carry.scarf ? w('hood.item.scarf') : ''].filter(Boolean).join(' · ') || w('hood.hud.none')
+  const carrying = [carry.batteries ? `${carry.batteries} ${w(carry.batteries === 1 ? 'hood.item.battery' : 'hood.item.batteries')}` : '', carry.scarf ? w('hood.item.scarf') : ''].filter(Boolean).join(' · ') || w('hood.hud.none')
   const placeName = place ? w(`hood.place.${place}`) : w('hood.place.street')
 
   return (

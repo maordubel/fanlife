@@ -27,7 +27,7 @@
 .hoodMap { position: absolute; inset-block-start: calc(10px + var(--h-safe-t)); inset-inline-end: 10px; inline-size: 96px; block-size: 96px; }
 .hoodPause { pointer-events: auto; position: absolute; inset-block-start: calc(116px + var(--h-safe-t)); inset-inline-end: 10px; min-inline-size: 44px; min-block-size: 44px; border: 2px solid var(--h-light); background: var(--h-ink); color: var(--h-light); }
 .hoodSay { position: absolute; inset-inline: 0; inset-block-end: calc(224px + var(--h-safe-b)); display: grid; justify-items: center; pointer-events: none; }
-.hoodSay div { max-inline-size: min(92vw, 30rem); padding: 8px 12px; background: var(--mag-lilac, var(--h-light)); color: var(--h-ink); border: 3px solid var(--h-ink); opacity: 0; transition: opacity .2s; }
+.hoodSay div { max-inline-size: min(calc(100vw - 104px), 30rem); margin-inline-end: 88px; padding: 8px 12px; background: var(--mag-lilac, var(--h-light)); color: var(--h-ink); border: 3px solid var(--h-ink); opacity: 0; transition: opacity .2s; }
 .hoodSay div[data-on='true'] { opacity: 1; }
 .hoodSay b { display: block; font-family: var(--mag-mono); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; }
 .hoodSay span { font-size: 1rem; line-height: 1.35; }
@@ -59,6 +59,7 @@
 }
 /* the desktop layout: job and carrying top left, the map bigger top right, words low and centred, no thumb controls */
 @media (min-width: 900px) {
+  .hoodSay div { margin-inline-end: 0; max-inline-size: 34rem; }
   .hoodJob { inline-size: 24rem; }
   .hoodJob b { font-size: 1.2rem; }
   .hoodMap { inline-size: 168px; block-size: 168px; }

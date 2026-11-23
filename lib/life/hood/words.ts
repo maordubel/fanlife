@@ -19,7 +19,7 @@ const EN = {
   'hood.place.home': 'Home', 'hood.place.kiosk': 'Kiosk corner', 'hood.place.corner': 'The corner', 'hood.place.school': 'School gate', 'hood.place.pitch': 'The pitch', 'hood.place.ground': 'The ground', 'hood.place.street': 'Main street',
   'hood.job.before-kickoff': 'Before kick-off',
   'hood.obj.batteries': 'Two batteries from {kiosk}', 'hood.obj.scarf': 'Dad’s scarf from {mate}', 'hood.obj.dad': 'Back to Dad',
-  'hood.item.battery': 'battery', 'hood.item.scarf': 'scarf',
+  'hood.item.battery': 'battery', 'hood.item.batteries': 'batteries', 'hood.item.scarf': 'scarf',
   'hood.ev.job': 'Job: Before kick-off', 'hood.ev.done': 'Job done: Before kick-off', 'hood.ev.battery': 'Battery', 'hood.ev.hit': 'Sorry — sorry!',
   // what people say
   'hood.say.dad.offer': '“Before kick-off: the radio wants two batteries, and {mate} still has my scarf. No hurry. Mind the corners.”',
