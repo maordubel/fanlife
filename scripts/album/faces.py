@@ -123,7 +123,7 @@ def main():
     pipe.fuse_lora()
     pipe.set_progress_bar_config(disable=True)
     pipe.enable_attention_slicing()
-    pipe.enable_vae_slicing()
+    pipe.vae.enable_slicing()
     refine = StableDiffusionXLImg2ImgPipeline(**pipe.components)  # the face pass: the same painter, closer
     refine.set_progress_bar_config(disable=True)
     torch.set_num_threads(max(1, torch.get_num_threads()))
