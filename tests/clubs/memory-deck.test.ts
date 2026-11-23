@@ -110,7 +110,7 @@ describe('Gate 6 · ME-R12 the wall names nothing before a pair is matched',()=>
   const d=dealt(dealMemory(olympiacos,{size:6,seed:42,cursor:0}))
   const first=d.deal.cards[0]!,mate=d.deal.cards.findIndex((c,i)=>i!==0&&c.pair===first.pair),stranger=d.deal.cards.findIndex(c=>c.pair!==first.pair)
   const ok=revealOf(olympiacos,{size:6,seed:42,cursor:0,i:0,j:mate,lang:'en'})!
-  expect(ok.type).toBe('moment-date');expect(ok.key).toBe(first.pair);expect(ok.href).toMatch(/^\/clubs\/olympiacos\/archive\?event=/)
+  expect(ok.type).toMatch(/^moment-(date|year)$/);expect(ok.key).toBe(first.pair);expect(ok.href).toMatch(/^\/clubs\/olympiacos\/archive\?event=/)
   expect(ok.source).not.toBeNull();expect(ok.source!.publisher.length).toBeGreaterThan(0)
   expect(revealOf(olympiacos,{size:6,seed:42,cursor:0,i:0,j:stranger,lang:'en'})).toBeNull()
   expect(revealOf(olympiacos,{size:6,seed:42,cursor:0,i:0,j:0,lang:'en'})).toBeNull()

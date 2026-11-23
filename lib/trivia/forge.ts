@@ -255,7 +255,16 @@ export function forgeTrivia(club:ClubData,extras:ForgeExtras={}):{trivia:ClubTri
   if(!name||!ss.length)continue
   honours.push({id:f.id,name,seasons:ss,complete:typeof v.count==='number'&&v.count===ss.length,count:typeof v.count==='number'?v.count:null,source:sourceOf(f)})
  }
+ // one competition, one honour: a documented-seasons record (22.11.2026) may repeat a trophy the pack already holds — fold them
+ const byName=new Map<string,(typeof honours)[number]>()
  for(const t of honours){
+  const k=t.name.toLowerCase(),seen=byName.get(k)
+  if(!seen){byName.set(k,{...t,seasons:[...t.seasons]});continue}
+  const seasons=[...new Set([...seen.seasons,...t.seasons])].sort()
+  const count=seen.count??t.count
+  byName.set(k,{...seen,seasons,count,complete:typeof count==='number'&&count===seasons.length})
+ }
+ for(const t of byName.values()){
   const won=new Set(t.seasons)
   for(const s of t.seasons){
    const y=seasonYear(s),L=clampLevel(2+(y<1980?1:0)+(y>=2010?-1:0))

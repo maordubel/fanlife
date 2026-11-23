@@ -4,11 +4,11 @@
  "clubs": {
   "hapoel-tel-aviv": {
    "quotaMode": "full",
-   "size": 666,
+   "size": 662,
    "quota": {
-    "1": 237,
-    "2": 233,
-    "3": 133,
+    "1": 235,
+    "2": 232,
+    "3": 132,
     "4": 53,
     "5": 10
    },
@@ -4358,12 +4358,12 @@
      "reviewedAt": "2026-10-10"
     },
     "p_63d75941bb": {
-     "priceM": 1,
-     "priceTier": "REST",
+     "priceM": 2,
+     "priceTier": "REGULAR",
      "locked": false,
-     "assignment": "auto",
-     "rationale": "score 0.144 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
-     "reviewedAt": "2026-10-10"
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after 4 men left the archive (2026-11-23): was €1M. score 0.144 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-23"
     },
     "p_64631ae185": {
      "priceM": 1,
@@ -5237,14 +5237,6 @@
      "rationale": "Daily research added a documented first-team player.",
      "reviewedAt": "2026-11-22"
     },
-    "hapoel-tel-aviv:daily-player-3ccc85fac4d327dcb3f6115b": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "Daily research added a documented first-team player.",
-     "reviewedAt": "2026-11-22"
-    },
     "hapoel-tel-aviv:daily-player-24f62f3d76e8204665bb28a4": {
      "priceM": 2,
      "priceTier": "REGULAR",
@@ -5277,22 +5269,6 @@
      "rationale": "Daily research added a documented first-team player.",
      "reviewedAt": "2026-11-22"
     },
-    "hapoel-tel-aviv:daily-player-762eb5a75f992029356fa1c6": {
-     "priceM": 3,
-     "priceTier": "LEADING",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "Daily research added a documented first-team player.",
-     "reviewedAt": "2026-11-22"
-    },
-    "hapoel-tel-aviv:daily-player-47cc94fb6c3ce0b0e7a3d7db": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "Daily research added a documented first-team player.",
-     "reviewedAt": "2026-11-22"
-    },
     "hapoel-tel-aviv:daily-player-db794fba90101e3f528490e1": {
      "priceM": 2,
      "priceTier": "REGULAR",
@@ -5318,14 +5294,6 @@
      "reviewedAt": "2026-11-22"
     },
     "hapoel-tel-aviv:daily-player-5c7c335868a83a3b7eab3bd8": {
-     "priceM": 1,
-     "priceTier": "REST",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "Daily research added a documented first-team player.",
-     "reviewedAt": "2026-11-22"
-    },
-    "hapoel-tel-aviv:daily-player-070ab5bc04ae0d34e4bf4fc0": {
      "priceM": 1,
      "priceTier": "REST",
      "locked": false,
@@ -14712,12 +14680,12 @@
   },
   "aek-athens": {
    "quotaMode": "full",
-   "size": 1198,
+   "size": 1186,
    "quota": {
-    "1": 433,
-    "2": 419,
-    "3": 240,
-    "4": 96,
+    "1": 429,
+    "2": 415,
+    "3": 237,
+    "4": 95,
     "5": 10
    },
    "players": {
@@ -21146,12 +21114,12 @@
      "reviewedAt": "2026-10-10"
     },
     "aek-athens:p-dh-bc8d556bf669": {
-     "priceM": 1,
-     "priceTier": "REST",
+     "priceM": 2,
+     "priceTier": "REGULAR",
      "locked": false,
-     "assignment": "auto",
-     "rationale": "score 0.223 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
-     "reviewedAt": "2026-10-10"
+     "assignment": "owner-pinned",
+     "rationale": "ladder restored after 12 men left the archive (2026-11-23): was €1M. score 0.223 (strength 55 · years 20 · goals 15 · terrace 10, parts on file only)",
+     "reviewedAt": "2026-11-23"
     },
     "aek-athens:p-dh-c04b53138d5a": {
      "priceM": 1,
@@ -24177,38 +24145,6 @@
      "rationale": "Daily research added a documented first-team player.",
      "reviewedAt": "2026-11-22"
     },
-    "aek-athens:daily-player-79939ecbb57510e0841cd2b0": {
-     "priceM": 4,
-     "priceTier": "STAR",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "Daily research added a documented first-team player.",
-     "reviewedAt": "2026-11-22"
-    },
-    "aek-athens:daily-player-3e9dba757c8136dcfac06858": {
-     "priceM": 3,
-     "priceTier": "LEADING",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "Daily research added a documented first-team player.",
-     "reviewedAt": "2026-11-22"
-    },
-    "aek-athens:daily-player-a399450d4f38de1f7ffb0033": {
-     "priceM": 3,
-     "priceTier": "LEADING",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "Daily research added a documented first-team player.",
-     "reviewedAt": "2026-11-22"
-    },
-    "aek-athens:daily-player-b1596cf35db4418c4456de72": {
-     "priceM": 3,
-     "priceTier": "LEADING",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "Daily research added a documented first-team player.",
-     "reviewedAt": "2026-11-22"
-    },
     "aek-athens:daily-player-ee03d950d4c463a10cb75c4d": {
      "priceM": 3,
      "priceTier": "LEADING",
@@ -24217,47 +24153,7 @@
      "rationale": "Daily research added a documented first-team player.",
      "reviewedAt": "2026-11-22"
     },
-    "aek-athens:daily-player-84abcf910f34d052105583d4": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "Daily research added a documented first-team player.",
-     "reviewedAt": "2026-11-22"
-    },
-    "aek-athens:daily-player-d039d3df1caceb2f4c01b5c5": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "Daily research added a documented first-team player.",
-     "reviewedAt": "2026-11-22"
-    },
-    "aek-athens:daily-player-e5e8274249b055e392c7138b": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "Daily research added a documented first-team player.",
-     "reviewedAt": "2026-11-22"
-    },
-    "aek-athens:daily-player-fbeb2717886a591a2c080052": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "Daily research added a documented first-team player.",
-     "reviewedAt": "2026-11-22"
-    },
     "aek-athens:daily-player-7e0936198d209bd20ad32eda": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "Daily research added a documented first-team player.",
-     "reviewedAt": "2026-11-22"
-    },
-    "aek-athens:daily-player-988f8c235da3799956b413a7": {
      "priceM": 2,
      "priceTier": "REGULAR",
      "locked": false,
@@ -24273,31 +24169,7 @@
      "rationale": "Daily research added a documented first-team player.",
      "reviewedAt": "2026-11-22"
     },
-    "aek-athens:daily-player-97d805de7b4f9ce9867acac0": {
-     "priceM": 1,
-     "priceTier": "REST",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "Daily research added a documented first-team player.",
-     "reviewedAt": "2026-11-22"
-    },
-    "aek-athens:daily-player-5718d27be5313db0740d5db0": {
-     "priceM": 1,
-     "priceTier": "REST",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "Daily research added a documented first-team player.",
-     "reviewedAt": "2026-11-22"
-    },
     "aek-athens:daily-player-9f27dbc0800fdae72bacd4a5": {
-     "priceM": 1,
-     "priceTier": "REST",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "Daily research added a documented first-team player.",
-     "reviewedAt": "2026-11-22"
-    },
-    "aek-athens:daily-player-bbe1b53c5b7cf7a143e30a5b": {
      "priceM": 1,
      "priceTier": "REST",
      "locked": false,
@@ -24309,11 +24181,11 @@
   },
   "celtic": {
    "quotaMode": "full",
-   "size": 1354,
+   "size": 1352,
    "quota": {
     "1": 491,
-    "2": 474,
-    "3": 271,
+    "2": 473,
+    "3": 270,
     "4": 108,
     "5": 10
    },
@@ -24679,12 +24551,12 @@
      "reviewedAt": "2026-10-10"
     },
     "celtic:p-dh-3d8a854bb324": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
+     "priceM": 1,
+     "priceTier": "REST",
      "locked": true,
      "assignment": "owner-pinned",
-     "rationale": "owner pricing review (8-club consolidated CSV) (proportional)",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after 2 men left the archive (2026-11-23): was €2M. owner pricing review (8-club consolidated CSV) (proportional)",
+     "reviewedAt": "2026-11-23"
     },
     "celtic:p-dh-2febe2603ad9": {
      "priceM": 4,
@@ -24799,12 +24671,12 @@
      "reviewedAt": "2026-10-10"
     },
     "celtic:p-b6036e28231e5e": {
-     "priceM": 3,
-     "priceTier": "LEADING",
+     "priceM": 2,
+     "priceTier": "REGULAR",
      "locked": true,
      "assignment": "owner-pinned",
-     "rationale": "owner pricing review (8-club consolidated CSV) (proportional)",
-     "reviewedAt": "2026-10-10"
+     "rationale": "ladder restored after 2 men left the archive (2026-11-23): was €3M. owner pricing review (8-club consolidated CSV) (proportional)",
+     "reviewedAt": "2026-11-23"
     },
     "celtic:p-d12cd9fa46644a": {
      "priceM": 4,
@@ -35133,31 +35005,15 @@
      "assignment": "new-member",
      "rationale": "Daily research added a documented first-team player.",
      "reviewedAt": "2026-11-22"
-    },
-    "celtic:daily-player-db342ed40af2cd8cb0257e43": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "Daily research added a documented first-team player.",
-     "reviewedAt": "2026-11-22"
-    },
-    "celtic:daily-player-42517b96525e5a6e184ed3f1": {
-     "priceM": 1,
-     "priceTier": "REST",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "Daily research added a documented first-team player.",
-     "reviewedAt": "2026-11-22"
     }
    }
   },
   "st-pauli": {
    "quotaMode": "full",
-   "size": 602,
+   "size": 601,
    "quota": {
     "1": 213,
-    "2": 211,
+    "2": 210,
     "3": 120,
     "4": 48,
     "5": 10
@@ -39970,14 +39826,6 @@
      "assignment": "owner-pinned",
      "rationale": "ladder restored after the archive grew to 601 (2026-10-13): was €1M. joined the archive after the list was frozen",
      "reviewedAt": "2026-10-13"
-    },
-    "st-pauli:daily-player-2a806e388054264974d85e5a": {
-     "priceM": 2,
-     "priceTier": "REGULAR",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "Daily research added a documented first-team player.",
-     "reviewedAt": "2026-11-22"
     }
    }
   },
@@ -53619,11 +53467,11 @@
   },
   "atalanta": {
    "quotaMode": "full",
-   "size": 958,
+   "size": 957,
    "quota": {
     "1": 344,
     "2": 335,
-    "3": 192,
+    "3": 191,
     "4": 77,
     "5": 10
    },
@@ -61255,14 +61103,6 @@
     "atalanta:daily-player-07b77dfd036c0518a1350218": {
      "priceM": 4,
      "priceTier": "STAR",
-     "locked": false,
-     "assignment": "new-member",
-     "rationale": "Daily research added a documented first-team player.",
-     "reviewedAt": "2026-11-22"
-    },
-    "atalanta:daily-player-1b248355c053855f60069506": {
-     "priceM": 3,
-     "priceTier": "LEADING",
      "locked": false,
      "assignment": "new-member",
      "rationale": "Daily research added a documented first-team player.",
