@@ -19,6 +19,7 @@ html[data-welcome] .wko-bg { background: var(--mag-night) image-set(url('/brand/
 .wko-steps > li { position: relative; display: grid; grid-template-columns: 64px 26px minmax(0, 1fr); align-items: center; gap: 10px; min-block-size: 62px; padding: 6px 12px 6px 6px; background: var(--mag-card); color: var(--mag-ink); border: 3px solid var(--mag-ink); box-shadow: 4px 4px 0 color-mix(in srgb, var(--mag-ink) 80%, transparent); animation: wko-step .45s cubic-bezier(.2, .9, .3, 1.2) both; }
 .wko-steps > li:nth-child(1) { animation-delay: .28s; rotate: -.6deg; } .wko-steps > li:nth-child(2) { animation-delay: .4s; rotate: .5deg; } .wko-steps > li:nth-child(3) { animation-delay: .52s; rotate: -.4deg; }
 .wko-art { inline-size: 64px; block-size: 50px; background: center / contain no-repeat; scale: 1.25; }
+html[data-welcome] [data-art='flag'] .wko-art { background-image: image-set(url('/brand/fanlife/bits/terrace-flag-160.webp') 1x, url('/brand/fanlife/bits/terrace-flag-320.webp') 2x); }
 html[data-welcome] [data-art='scarf'] .wko-art { background-image: image-set(url('/brand/fanlife/bits/supporter-scarf-160.webp') 1x, url('/brand/fanlife/bits/supporter-scarf-320.webp') 2x); }
 html[data-welcome] [data-art='ball'] .wko-art { background-image: image-set(url('/brand/fanlife/bits/vintage-football-160.webp') 1x, url('/brand/fanlife/bits/vintage-football-320.webp') 2x); }
 html[data-welcome] [data-art='ticket'] .wko-art { background-image: image-set(url('/brand/fanlife/bits/match-ticket-160.webp') 1x, url('/brand/fanlife/bits/match-ticket-320.webp') 2x); }
@@ -158,3 +159,34 @@ html[data-welcome] [data-art='ticket'] .wko-art { background-image: image-set(ur
 /* finish: the kicker reads on the night plate; long names shrink instead of breaking mid-word on a phone */
 .wkq-head .wk-banner { color: var(--mag-orange); }
 @media (max-width: 900px) { .wkq-wall .ckp-nm b { font-size: .72rem; overflow-wrap: normal; hyphens: none; letter-spacing: -.01em; } .wkq-chips .ckp-chip { padding-inline: 10px; } }
+
+/* four beats (the shop is open): tighter rows on a phone, four cards on a desktop */
+.wko-steps > li:nth-child(4) { animation-delay: .64s; rotate: .4deg; }
+@media (max-width: 900px) { .wko-steps[data-n='4'] > li { min-block-size: 54px; } .wko-steps[data-n='4'] .wko-art { block-size: 42px; } .wko-steps[data-n='4'] .wko-t small { font-size: 12px; } }
+@media (max-width: 900px) and (max-height: 760px) { .wko-steps[data-n='4'] .wko-t small { display: none; } }
+@media (min-width: 901px) { .wko .wko-steps[data-n='4'] { max-inline-size: 980px; } .wko-in > .wko-steps[data-n='4'] { max-inline-size: 980px; } }
+
+/* ── THE SHOP WINDOW (prefix .wkz) ── */
+.wkz { position: relative; margin-block-start: 34px; display: flex; flex-direction: column; border: 3px solid var(--mag-ink); box-shadow: 5px 5px 0 var(--mag-ink); background: var(--mag-card); }
+.wkz-head { position: relative; display: flex; flex-direction: column; background: var(--mag-vermilion); color: var(--mag-white); border-block-end: 3px solid var(--mag-ink); background-image: radial-gradient(color-mix(in srgb, var(--mag-ink) 14%, transparent) 1.3px, transparent 1.7px); background-size: 7px 7px; }
+.wkz-pic { display: block; inline-size: 100%; block-size: 150px; object-fit: cover; object-position: 50% 60%; border-block-end: 3px solid var(--mag-ink); }
+.wkz-head-t { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding: 14px 14px 16px; }
+.wkz-head .wk-banner { color: var(--mag-white); }
+.wkz .wkz-h { margin: 0; font-family: var(--mag-display); font-weight: 400; font-size: clamp(36px, 11vw, 46px); line-height: .95; text-transform: uppercase; color: var(--mag-white); text-shadow: 3px 3px 0 var(--mag-ink); }
+.wkz-sub { margin: 0; font-family: var(--mag-body); font-size: 15px; line-height: 1.35; color: color-mix(in srgb, var(--mag-white) 94%, transparent); }
+.wkz .wkz-why { list-style: none; margin: 2px 0 0; padding: 0; display: flex; flex-direction: column; gap: 4px; font-family: var(--mag-condensed); font-weight: 700; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
+.wkz-why li::before { content: '✓'; margin-inline-end: 8px; }
+.wkz .wkz-go { margin-block-start: 6px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-block-size: 52px; padding-inline: 26px; background: var(--mag-ink); color: var(--mag-white); border: 3px solid var(--mag-white); box-shadow: 4px 4px 0 color-mix(in srgb, var(--mag-ink) 70%, transparent); font-family: var(--mag-display); font-weight: 400; font-size: 20px; text-transform: uppercase; text-decoration: none; }
+.wkz .wkz-go:focus-visible { outline: 3px solid var(--mag-cyan); outline-offset: 3px; }
+.wkz-scarf { position: absolute; inset-block-start: 112px; inset-inline-end: -6px; inline-size: 112px; block-size: auto; rotate: -8deg; filter: drop-shadow(3px 4px 0 color-mix(in srgb, var(--mag-ink) 55%, transparent)); pointer-events: none; }
+.wkz .wkz-shelf { margin: 0; padding: 14px 12px 16px; }
+@media (max-width: 900px) { .wkh > .wkz { order: 2; } }
+@media (min-width: 901px) {
+  .wkh[data-short]:has(> .wkq):has(> .wkz) { grid-template-areas: 'mast' 'doors' 'pick' 'shop' 'pins' 'tiles' 'back'; }
+  .wkh[data-short] > .wkz { grid-area: shop; }
+  .wkz { margin-block-start: 54px; display: grid; grid-template-columns: minmax(300px, 32%) minmax(0, 1fr); box-shadow: 8px 8px 0 var(--mag-ink); }
+  .wkz-head { border-block-end: 0; border-inline-end: 3px solid var(--mag-ink); }
+  .wkz-pic { block-size: 210px; } .wkz-head-t { padding: 22px 26px 26px; gap: 10px; } .wkz .wkz-h { font-size: clamp(46px, 4.4vw, 64px); } .wkz-sub { font-size: 16px; }
+  .wkz-scarf { inset-block-start: 160px; inline-size: 150px; inset-inline-end: -40px; }
+  .wkz .wkz-shelf { padding: 24px; align-content: center; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}

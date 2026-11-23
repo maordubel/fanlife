@@ -39,6 +39,7 @@ import shopCopy from '@/messages/en.shop.json'
 import {FrontDoors} from '@/components/home/FrontDoors'
 import {CHANNEL} from '@/lib/stories/channel'
 import {Welcome} from '@/components/home/Welcome'
+import {ShopWindow} from '@/components/shop/ShopWindow'
 import {ClubPicker} from '@/components/home/ClubPicker'
 import {ContentsTiles,type Tile} from '@/components/home/ContentsTiles'
 import type {IndexClub} from '@/components/home/ClubsIndex'
@@ -120,7 +121,7 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
  const pickLive=short?live.map(c=>pickRow(c,true)):[],pickSoon=short?shop.map(c=>pickRow(c,false)):[]
  return <Shell locale={locale} stop={stop}>
   {/* THE WELCOME (owner, 23.11.2026): up before the first paint on a first visit, three beats and a way in */}
-  {short&&<Welcome copy={{kicker:copy.welK,to:copy.welTo,lead:copy.welLead,s1:copy.welS1,s1Sub:copy.welS1Sub,s2:copy.welS2,s2Sub:copy.welS2Sub,s3:copy.welS3,s3Sub:copy.welS3Sub,go:copy.welGo,skip:copy.welSkip,free:copy.welFree}}/>}
+  {short&&<Welcome copy={{kicker:copy.welK,to:copy.welTo,lead:copy.welLead,s1:copy.welS1,s1Sub:copy.welS1Sub,s2:copy.welS2,s2Sub:copy.welS2Sub,s3:copy.welS3,s3Sub:copy.welS3Sub,...(shopOpen?{s4:copy.welS4,s4Sub:copy.welS4Sub}:{}),go:copy.welGo,skip:copy.welSkip,free:copy.welFree}}/>}
   <main id="main" className="wkh" data-short={short||undefined}>
 
   {/* THE MASTHEAD: the paper's name on a green plate, a supporter breaking the frame (board Hub-M / Hub-D). */}
@@ -142,6 +143,9 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
   {/* THE FIRST SCREEN (H1): a new fan sees the crests and taps one; a returning fan continues where they were. */}
   {short?<ClubPicker live={pickLive} soon={pickSoon} lang={locale==='en'?'':`?lang=${locale}`} copy={{kicker:copy.wkhHeroNewK,title:copy.wkhHeroNewT,sub:copy.pickSub,back:copy.pickBack,cont:copy.dockContinue,change:copy.pickChange,search:copy.pickSearch,all:copy.pickAll,none:copy.chooserNone,enter:copy.pickEnter,moreK:copy.pickMoreK,surprise:copy.pickSurprise,surpriseSub:copy.pickSurpriseSub,allClubs:copy.pickAllClubs,allClubsSub:copy.pickAllClubsSub,noClub:copy.pickNoClub,noClubSub:copy.pickNoClubSub,soonK:copy.pickSoonK,soonT:copy.pickSoonT,vote:copy.pickVote}}/>
   :<HubHero clubs={heroClubs} lang={locale==='en'?'':`?lang=${locale}`} copy={heroCopy} crests={<ul className="wkh-hero-crests">{live.map(c=>{const l=livery(c.id);return <li key={c.id}><Link className="wkh-hero-crest min-h-tap" href={`/clubs/${c.id}?lang=${locale}`} style={wearLivery(l)}><span className="wkh-disc">{l&&<Badge club={l}/>}</span><b>{c.name}</b></Link></li>})}</ul>}/>}
+
+  {/* THE SHOP WINDOW (owner, 23.11.2026): the shop has its own spread on the front page, only while it sells */}
+  {short&&<Suspense fallback={null}><ShopWindow/></Suspense>}
 
   {/* YOUR SHORTCUTS: what the fan pinned himself — never a suggestion (owner audit 27.10.2026 §5.5) */}
   <div className="wkp-strip wkh-pins"><PinsRow locale={locale} where="hub"/></div>
