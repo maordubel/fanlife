@@ -850,6 +850,86 @@
    "publisher": "English Wikipedia",
    "checkedAt": "2026-11-22",
    "access": "available"
+  },
+  {
+   "id": "daily-src-60e6287434e07f5f868afd5b",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1384788717",
+   "title": "Emmanuel Banahene",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-23",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-db1d4c9fba125a923198e5a9",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382908225",
+   "title": "Stasys Baranauskas",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-23",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-11b6069506df2738ff7abf96",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1383402575",
+   "title": "Gal Barel",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-23",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-eec126e3a71bfdfbad478577",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382387960",
+   "title": "Orr Barouch",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-23",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-9e2a212f38257a497d9af334",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382775358",
+   "title": "Ibrahim Basit",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-23",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-0cb73c4245d75ccd749cc35b",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1384818238",
+   "title": "Orel Baye",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-23",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-699793f3628ce37266dd6953",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1382721883",
+   "title": "Eyal Ben Ami",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-23",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-ae846f5e69203b7e26c42fe1",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1381392049",
+   "title": "Dedi Ben Dayan",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-23",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-3d0b0c85a204e74df1f4bd55",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1383376901",
+   "title": "Tomer Ben Haim",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-23",
+   "access": "available"
+  },
+  {
+   "id": "daily-src-5c16cd6440cab34a49a411fa",
+   "url": "https://en.wikipedia.org/w/index.php?oldid=1385445743",
+   "title": "Shlomi Ben Hemo",
+   "publisher": "English Wikipedia",
+   "checkedAt": "2026-11-23",
+   "access": "available"
   }
  ],
  "archive": [
@@ -5365,6 +5445,295 @@
    "conflictFree": true,
    "researchedAt": "2026-11-22",
    "approvedAt": "2026-11-22",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-9f8d2bbd862224b1c0e35302",
+   "value": {
+    "name": "Emmanuel Banahene",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2008,
+    "toYear": 2009,
+    "career": {
+     "apps": 16,
+     "goals": 1,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-60e6287434e07f5f868afd5b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-23",
+   "approvedAt": "2026-11-23",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-9ec5a7fa406d2fc12306c711",
+   "value": {
+    "name": "Stasys Baranauskas",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 1989,
+    "toYear": 1991,
+    "career": {
+     "apps": 13,
+     "goals": 1,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-db1d4c9fba125a923198e5a9"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-23",
+   "approvedAt": "2026-11-23",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-7aef0ace65a07dd3ba12b860",
+   "value": {
+    "name": "Gal Barel",
+    "aliases": [],
+    "positions": [],
+    "fromYear": 2015,
+    "toYear": 2016,
+    "career": {
+     "apps": 12,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "archiveOnly": true,
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-11b6069506df2738ff7abf96"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-23",
+   "approvedAt": "2026-11-23",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-f195fff332701d71d888ad7c",
+   "value": {
+    "name": "Orr Barouch",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2017,
+    "toYear": 2018,
+    "career": {
+     "apps": 33,
+     "goals": 10,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-eec126e3a71bfdfbad478577"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-23",
+   "approvedAt": "2026-11-23",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-4b296ccb48a1f34c8009e114",
+   "value": {
+    "name": "Ibrahim Basit",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2009,
+    "toYear": 2010,
+    "career": {
+     "apps": 11,
+     "goals": 5,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-9e2a212f38257a497d9af334"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-23",
+   "approvedAt": "2026-11-23",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-5188bd47db7cfcdb0dd66bb5",
+   "value": {
+    "name": "Orel Baye",
+    "aliases": [],
+    "positions": [
+     "FW"
+    ],
+    "fromYear": 2026,
+    "toYear": null,
+    "career": {
+     "apps": 5,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-0cb73c4245d75ccd749cc35b"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-23",
+   "approvedAt": "2026-11-23",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-ec0635646ab981b555400be3",
+   "value": {
+    "name": "Eyal Ben Ami",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2000,
+    "toYear": 2001,
+    "career": {
+     "apps": 33,
+     "goals": 6,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-699793f3628ce37266dd6953"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-23",
+   "approvedAt": "2026-11-23",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-71d2d57aa58c86cd3e65e3d3",
+   "value": {
+    "name": "Dedi Ben Dayan",
+    "aliases": [],
+    "positions": [
+     "DF"
+    ],
+    "fromYear": 2002,
+    "toYear": 2002,
+    "career": {
+     "apps": 5,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-ae846f5e69203b7e26c42fe1"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-23",
+   "approvedAt": "2026-11-23",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-72f09851752477c97fd488e3",
+   "value": {
+    "name": "Tomer Ben Haim",
+    "aliases": [],
+    "positions": [
+     "MF"
+    ],
+    "fromYear": 2009,
+    "toYear": 2010,
+    "career": {
+     "apps": 10,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-3d0b0c85a204e74df1f4bd55"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-23",
+   "approvedAt": "2026-11-23",
+   "approvedBy": "automated:daily-research-single-source"
+  },
+  {
+   "id": "daily-player-5c627a2f746132d9d5742747",
+   "value": {
+    "name": "Shlomi Ben Hemo",
+    "aliases": [],
+    "positions": [
+     "GK"
+    ],
+    "fromYear": 2005,
+    "toYear": 2006,
+    "career": {
+     "apps": 1,
+     "goals": 0,
+     "basis": "English Wikipedia club stint table"
+    },
+    "sport": "football",
+    "sensitive": false
+   },
+   "sources": [
+    "daily-src-5c16cd6440cab34a49a411fa"
+   ],
+   "status": "approved",
+   "confidence": 2,
+   "parserCertainty": "high",
+   "conflictFree": true,
+   "researchedAt": "2026-11-23",
+   "approvedAt": "2026-11-23",
    "approvedBy": "automated:daily-research-single-source"
   }
  ],

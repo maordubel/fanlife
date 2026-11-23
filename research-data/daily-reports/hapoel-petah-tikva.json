@@ -1,14 +1,14 @@
 {
- "day": "2026-11-22",
+ "day": "2026-11-23",
  "clubId": "hapoel-petah-tikva",
- "runUrl": "https://github.com/maordubel/fanlife/actions/runs/45018147326",
+ "runUrl": "https://github.com/maordubel/fanlife/actions/runs/45186071013",
  "added": {
-  "matches": 62,
-  "players": 28,
+  "matches": 0,
+  "players": 10,
   "seasons": 0,
   "kits": 0,
-  "lineups": 57,
-  "scorers": 12
+  "lineups": 0,
+  "scorers": 0
  },
  "heldDays": [],
  "steps": [
@@ -30,12 +30,12 @@
   {
    "step": "Historical results, elevens and scorers",
    "state": "ok",
-   "info": "Continued from the historical results checkpoint, up to 90 fixtures"
+   "info": "Continued from the historical results checkpoint, up to 30 fixtures"
   },
   {
    "step": "Historical players",
    "state": "ok",
-   "info": "28 documented senior club stints"
+   "info": "10 documented senior club stints"
   },
   {
    "step": "Season archives, scoresheets and shirt metadata",
@@ -48,35 +48,15 @@
    "info": "www.footballkitarchive.com: robots.txt disallows this path"
   },
   {
-   "step": "Open league season datasets",
+   "step": "Prices for newly eligible cards",
    "state": "ok",
-   "info": "No league in this source is mapped to this club"
+   "info": "Existing prices preserved"
   }
  ],
- "dataVersion": "81da07b023247eb5",
+ "dataVersion": "9092f811360e6886",
  "uncertainties": [
   {
    "record": "hapoel-petah-tikva:daily-match-744afe32bbd50e0e6baf14dc",
-   "code": "DAILY_MATCH_CONFLICT",
-   "message": "Different opponents, home/away order or score on the same day."
-  },
-  {
-   "record": "hapoel-petah-tikva:daily-match-2665ffe78bf108c8bf0b99f7",
-   "code": "DAILY_MATCH_CONFLICT",
-   "message": "Different opponents, home/away order or score on the same day."
-  },
-  {
-   "record": "hapoel-petah-tikva:daily-match-283af78813ef00d83e00c3b0",
-   "code": "DAILY_MATCH_CONFLICT",
-   "message": "Different opponents, home/away order or score on the same day."
-  },
-  {
-   "record": "hapoel-petah-tikva:daily-match-f7e12693786e0f2156aeba1e",
-   "code": "DAILY_MATCH_CONFLICT",
-   "message": "Different opponents, home/away order or score on the same day."
-  },
-  {
-   "record": "hapoel-petah-tikva:daily-match-b185d9377cce08f6a566de9e",
    "code": "DAILY_MATCH_CONFLICT",
    "message": "Different opponents, home/away order or score on the same day."
   },
@@ -97,11 +77,6 @@
   },
   {
    "record": "hapoel-petah-tikva:daily-match-4393cec543b3734fa599a85c",
-   "code": "DAILY_MATCH_CONFLICT",
-   "message": "Different opponents, home/away order or score on the same day."
-  },
-  {
-   "record": "hapoel-petah-tikva:daily-match-3a88ee7d0f6c9868c7e135db",
    "code": "DAILY_MATCH_CONFLICT",
    "message": "Different opponents, home/away order or score on the same day."
   },
@@ -184,7 +159,7 @@
  "featureInputs": {
   "players": 367,
   "matches": 3010,
-  "seasons": 6,
+  "seasons": 86,
   "kits": 92
  }
 }
