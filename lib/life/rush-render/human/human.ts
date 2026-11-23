@@ -77,8 +77,9 @@ export function createTroupe(x: {max: number; lite: boolean}): Troupe {
   let blobMat: THREE.MeshBasicMaterial | null = null
   const blob = () => { if (!blobMat) { const c = document.createElement('canvas'); c.width = c.height = 64; const g = c.getContext('2d')!, r = g.createRadialGradient(32, 32, 0, 32, 32, 32); r.addColorStop(0, 'rgba(0,0,0,.5)'); r.addColorStop(0.4, 'rgba(0,0,0,.28)'); r.addColorStop(1, 'rgba(0,0,0,0)'); g.fillStyle = r; g.fillRect(0, 0, 64, 64); blobMat = keep(new THREE.MeshBasicMaterial({map: keep(new THREE.CanvasTexture(c)), transparent: true, depthWrite: false, opacity: 0.6})) } return blobMat }
   const scarfMats = new Map<string, THREE.Material>()
-  // a club scarf: the club's colour with bars of its second, lit a little from inside so it keeps its colour at dusk
-  const scarfMat = (c: string) => { let m = scarfMats.get(c); if (!m) { m = keep(new THREE.MeshStandardMaterial({color: c, roughness: 0.95, emissive: new THREE.Color(c), emissiveIntensity: 0.45})); scarfMats.set(c, m) } return m }
+  // a club scarf: the club's colour with bars of its second, lit a little from inside so it keeps its colour at dusk.
+  // Never the pure hue: a fully saturated colour goes out of gamut under the film tone map and the grade turns it black.
+  const scarfMat = (c: string) => { let m = scarfMats.get(c); if (!m) { const soft = new THREE.Color(c).lerp(WHITE, 0.12); m = keep(new THREE.MeshStandardMaterial({color: soft, roughness: 0.95, emissive: soft.clone(), emissiveIntensity: 0.4})); scarfMats.set(c, m) } return m }
 
   function build(h: Human, a: CharAsset): void {
     if (gone || h.dead) return
@@ -93,7 +94,7 @@ export function createTroupe(x: {max: number; lite: boolean}): Troupe {
       if ((n as THREE.Bone).isBone) h.b[n.name] = n
       const m = n as THREE.Mesh; if (!m.isMesh) return
       const src = m.material as THREE.MeshStandardMaterial, nm = src.name
-      if (nm === 'tint_top') m.material = mat(`${a.id}|top|${o.top}`, src, c => { c.color.set(o.top).lerp(WHITE, 0.1); c.emissive.set(o.top); c.emissiveIntensity = 0.42 })
+      if (nm === 'tint_top') m.material = mat(`${a.id}|top|${o.top}`, src, c => { c.color.set(o.top).lerp(WHITE, 0.12); c.emissive.copy(c.color); c.emissiveIntensity = 0.4 })
       else if (nm === 'skin' && tone) m.material = mat(`${a.id}|skin|${o.skin}`, src, c => { c.color.copy(tone); c.emissive.set('#ff9a70').multiply(tone) })
       else if (nm.endsWith('_hair') && o.hair) m.material = mat(`${a.id}|hair|${o.hair}`, src, c => { c.color.set(o.hair!).lerp(new THREE.Color('#ffffff'), 0.35) })
       else if (nm.endsWith('_brows') && o.hair) m.material = mat(`${a.id}|brow|${o.hair}`, src, c => { c.color.set(o.hair!).lerp(new THREE.Color('#ffffff'), 0.3) })

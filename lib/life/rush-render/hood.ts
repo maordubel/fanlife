@@ -76,7 +76,7 @@ export function dressHood(x: HoodCtx): HoodDress {
   const figs = hood.people.map(p => { const f = x.person(p.look, p.id); f.position.set(p.x, 0, p.z); f.rotation.y = Math.atan2(level.start.x - p.x, level.start.z - p.z); scene.add(f); return {p, f, ox: 0, oz: 0} })
   const mark = new THREE.Mesh(keep(new THREE.OctahedronGeometry(0.17, 0)), keep(new THREE.MeshBasicMaterial({color: x.tint.clone().multiplyScalar(2), toneMapped: false}))); scene.add(mark)
   // the scarf in Dad's hands, before it goes round the boy's neck
-  const scarfMat = std(ok(skin.p, '#6b6f78'), {roughness: 0.9}), held = new THREE.Group(); held.visible = false; scene.add(held)
+  const scarfC = new THREE.Color(ok(skin.p, '#6b6f78')).lerp(new THREE.Color('#ffffff'), 0.12), scarfMat = std(scarfC, {roughness: 0.9, emissive: scarfC.clone(), emissiveIntensity: 0.4}), held = new THREE.Group(); held.visible = false; scene.add(held)
   const bar = new THREE.Mesh(box, scarfMat); held.add(bar)
   const tails = [0, 1].map(() => { const m = new THREE.Mesh(box, scarfMat); scene.add(m); m.visible = false; return m })
   const wl = new THREE.Vector3(), wr = new THREE.Vector3()
