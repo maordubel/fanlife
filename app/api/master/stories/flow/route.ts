@@ -1,4 +1,4 @@
-import {flowDone,flowQueue,flowUrls,panelNeeds,ticketOk,type LibPiece} from '@/lib/stories/flowOperator'
+import {flowDone,flowQueue,flowUrls,panelNeeds,ticketOk,type LibPiece,type LifeNeed} from '@/lib/stories/flowOperator'
 import {body,fail,json,limited} from '@/lib/stories/http'
 export const dynamic='force-dynamic'
 export const runtime='nodejs'
@@ -9,7 +9,8 @@ export const runtime='nodejs'
  *   {ticket,op:'queue',manifest?}      → what to make: waiting Shorts/promos, and the CLASSIFIED panels of the manifest
  *                                        it sends (comic/classified_manifest.json) that Flow has not made yet
  *   ... library? (studio/cinema/flow_library.json pieces) → also the art-library pieces not drawn yet
- *   {ticket,op:'urls',id|file|lib,names} → signed upload urls for those slots / panels / library pieces (private bucket)
+ *   ... life? (scripts/life/flow/life-library.json pieces) → also LIFE's own pictures not drawn yet, by priority
+ *   {ticket,op:'urls',id|file|lib|life,names} → signed upload urls for those slots / panels / library / LIFE pieces (private bucket)
  *   {ticket,op:'done',id,files}        → record what landed; a full set queues the edit
  */
 const ORIGINS=['https://flow.google.com','https://labs.google']
@@ -23,9 +24,9 @@ export async function POST(r:Request){
  if(o&&!ORIGINS.includes(o))return json({error:'Not this origin.'},403)
  if(limited('flow-operator',120,60_000))return cors(json({error:'Too many requests.'},429),at)
  try{
-  const b=await body(r,400_000) as Record<string,unknown> // the queue carries the manifest + library spec (~145 KB)
+  const b=await body(r,400_000) as Record<string,unknown> // the queue carries the manifest + library spec (~145 KB) + LIFE's order (~95 KB)
   if(!await ticketOk(b.ticket))return cors(json({error:'No valid ticket.'},401),at)
-  if(b.op==='queue')return cors(json(await flowQueue(panelNeeds({files:(b.manifest&&typeof b.manifest==='object'?(b.manifest as {files?:never}).files:undefined)??{}}),Array.isArray(b.library)?b.library as LibPiece[]:[])),at)
+  if(b.op==='queue')return cors(json(await flowQueue(panelNeeds({files:(b.manifest&&typeof b.manifest==='object'?(b.manifest as {files?:never}).files:undefined)??{}}),Array.isArray(b.library)?b.library as LibPiece[]:[],Array.isArray(b.life)?b.life as LifeNeed[]:[])),at)
   if(b.op==='urls')return cors(json(await flowUrls(b)),at)
   if(b.op==='done')return cors(json(await flowDone(b)),at)
   return cors(json({error:'Unknown op.'},400),at)
