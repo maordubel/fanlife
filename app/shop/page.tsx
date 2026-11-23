@@ -2,7 +2,7 @@ import type {Metadata} from 'next'
 import Link from 'next/link'
 import {Shell} from '@/components/master/Shell'
 import {Plate} from '@/components/weekly/Plate'
-import {ShopCard,isNew,leftText} from '@/components/shop/ShopStrip'
+import {saleDay,ShopCard,isNew,leftText} from '@/components/shop/ShopStrip'
 import {publicShop,type PublicSale} from '@/lib/shop/store'
 import {subjectName} from '@/lib/shop/subjects'
 import {REGISTRY} from '@/lib/master/registry'
@@ -55,6 +55,7 @@ export default async function Shop({searchParams}:{searchParams:{club?:string;sh
  const sale:PublicSale|null=[...shop.sales].sort((a,b)=>b.percent-a.percent)[0]??null
  const onSale=mine.filter(p=>p.was)
  const ribbon=sale&&onSale.length?{text:copy.ribbonSale.replace('{label}',sale.label).replace('{n}',String(sale.percent)).replace('{left}',leftText(sale.until)),href:'/shop?shelf=sale'}
+  :shop.next?{text:copy.ribbonSoon.replace('{label}',shop.next.label).replace('{n}',String(shop.next.percent)).replace('{day}',saleDay(shop.next.starts)),href:null}
   :shop.promoters.ribbon?{text:shop.promoters.ribbon,href:null}
   :shop.promoters.freeShipOver?{text:copy.ribbonShip.replace('{price}',`$${shop.promoters.freeShipOver}`),href:null}
   :shop.promo?.code?{text:`${shop.promo.label} · ${copy.ribbonCode.replace('{code}',shop.promo.code)}`,href:null}

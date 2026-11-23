@@ -289,5 +289,8 @@
  "windowWhy1": "Printed to order, in Europe first",
  "windowWhy2": "Secure checkout by card",
  "windowWhy3": "Every design is our own",
- "windowGo": "Open the shop"
+ "windowGo": "Open the shop",
+ "ribbonSoon": "{label}: −{n}% · starts {day}",
+ "windowSoonK": "The club shop · A sale is coming",
+ "windowFrom": "from {day}"
 }
