@@ -242,7 +242,7 @@ beat("And early in the second half, Aristidis Kamaras scores for Panathinaikos. 
      img('volley', 'push', veil=0.0), stamp('KAMARAS', 'us', x=520, y=200, dt=2.8, size=110, rot=-3, plate=True),
      type='goal', emotion='release', intensity=0.8, pad=0.3, meta=dict(plain=True), sound=[('goal', 2.8, 3.0, 0.4)])
 beat("Red Star four, Panathinaikos one.",
-     dict(kind='score', us='PANATHINAIKOS', them='RED STAR', us_goals=1, them_goals=4, cap='SEMI-FINAL · FIRST LEG · BELGRADE', bg='bowl.jpg'),
+     dict(kind='score', us='PANATHINAIKOS', us_crest='crest-pao.png', them='RED STAR', us_goals=1, them_goals=4, cap='SEMI-FINAL · FIRST LEG · BELGRADE', bg='bowl.jpg'),
      type='score', emotion='grief', intensity=0.9, pad=0.4, meta=dict(outcome='loss', plain=True, claims=['result']), sound=[('final', 0.3, 4.0, 0.4)])
 beat("To reach the final, three nil in Athens would do it, on that away goal. Against the champions of Yugoslavia.",
      img('despair', 'push', veil=0.1), word('3–0 WOULD DO', bg='ink', size=200, small='THE RETURN · ATHENS · TWO WEEKS', at=2.6),
@@ -263,12 +263,10 @@ beat("And then Kamaras. Three nil.",
      img('net-b', 'slam', veil=0.0), type='goal', emotion='release', intensity=1.0, pad=0.4,
      meta=dict(board=dict(RS, score='4–4', flip_at=1.4), plain=True), sound=[('impact2', 1.4, 2.0, 0.9), ('goal', 1.6, 5.0, 0.6)])
 beat("Four, four on aggregate. And the away goal from Belgrade, Kamaras's goal, sends Panathinaikos through.",
-     dict(kind='explain', form='timeline', title='RED STAR v PANATHINAIKOS · 4–4', left='BELGRADE', right='ATHENS',
-          marks=[dict(at=0.15, label='4–1')], ticks=[dict(at=0.15, label='KAMARAS · THE AWAY GOAL', value=1, suffix=' GOAL'),
-                                                    dict(at=0.9, label='ATHENS · 3–0', value=3, suffix=' GOALS', hot=True)]),
+     word('4–4|AWAY GOALS', bg='us', size=230, small='BELGRADE 4–1 · ATHENS 3–0', at=2.0),
      type='record', emotion='pride', intensity=0.9, pad=0.6, meta=dict(board=dict(RS, score='4–4')))
 beat("Panathinaikos three, Red Star nil.",
-     dict(kind='score', us='PANATHINAIKOS', them='RED STAR', us_goals=3, them_goals=0, cap='SEMI-FINAL · SECOND LEG · ATHENS', bg='home-end.jpg'),
+     dict(kind='score', us='PANATHINAIKOS', us_crest='crest-pao.png', them='RED STAR', us_goals=3, them_goals=0, cap='SEMI-FINAL · SECOND LEG · ATHENS', bg='home-end.jpg'),
      type='score', emotion='joy', intensity=1.0, pad=0.4, meta=dict(outcome='win', plain=True, claims=['result']), sound=[('final', 0.3, 5.0, 0.5)])
 beat("There is one more thing to say about that night. Greece in nineteen seventy-one was ruled by a military dictatorship.",
      img('rooftops', 'push', veil=0.15), type='illustration', emotion='tension', intensity=0.6, pad=0.3)
@@ -305,7 +303,7 @@ beat("Late on, the substitute Arie Haan shoots. It hits Kapsis, and goes in. Two
      img('net', 'slam', veil=0.05), type='goal', emotion='grief', intensity=0.9, pad=0.4,
      meta=dict(board=dict(AJ, score='2–0', flip_at=3.6), plain=True), sound=[('groan', 3.6, 2.0, 0.4)])
 beat("Ajax two, Panathinaikos nil.",
-     dict(kind='score', us='PANATHINAIKOS', them='AJAX', us_goals=0, them_goals=2, cap='FINAL · WEMBLEY · 2 JUNE 1971', bg='home-end-b.jpg'),
+     dict(kind='score', us='PANATHINAIKOS', us_crest='crest-pao.png', them='AJAX', us_goals=0, them_goals=2, cap='FINAL · WEMBLEY · 2 JUNE 1971', bg='home-end-b.jpg'),
      type='score', emotion='grief', intensity=0.9, pad=0.4, meta=dict(outcome='loss', plain=True, claims=['result']), sound=[('final', 0.3, 4.0, 0.4)])
 beat("It is the first European Cup of Ajax.",
      img('trophy', 'pull', veil=0.2), type='illustration', emotion='grief', intensity=0.6, pad=0.3)
