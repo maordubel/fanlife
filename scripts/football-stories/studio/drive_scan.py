@@ -29,6 +29,7 @@ from .common import ROOT
 ROOT_ID = '1CNLhWlab7Irfq4jJw-QRGHI37tpJcucw'   # FAN LIFE's shared library (owner, 3.11.2026)
 INVENTORY = ROOT / 'docs' / 'fanlife' / 'drive-library' / 'inventory.json'
 PICTURE = re.compile(r'\.(png|jpe?g|webp|heic)$', re.I)
+VIDEO = re.compile(r'\.(mp4|mov|m4v|webm)$', re.I)
 NOTE = re.compile(r'(readme|asset_index|prompts?|notes?|credits?|sources?)\.(md|txt|csv)$', re.I)
 STORY_DOCUMENT = re.compile(r'\.(md|txt)$', re.I)
 # words that say nothing about WHICH story a folder is
@@ -211,7 +212,8 @@ def plan(tree: dict, brief: dict, limit: int = 60) -> dict:
     pics, notes = [], []
     for p in packs:
         for f in files_under(tree, p['path']):
-            (pics if PICTURE.search(f['name']) else notes if NOTE.search(f['name']) or (p.get('pinned') and STORY_DOCUMENT.search(f['name'])) else []).append({**f, 'pack': p['path'], 'required': bool(p.get('pinned'))})
+            # a video clip only from a pack pinned to or named by this film (owner, 24.11.2026) — never the general library
+            (pics if PICTURE.search(f['name']) or VIDEO.search(f['name']) else notes if NOTE.search(f['name']) or (p.get('pinned') and STORY_DOCUMENT.search(f['name'])) else []).append({**f, 'pack': p['path'], 'required': bool(p.get('pinned'))})
     # A selected folder is a requirement, not a top-N suggestion. Rank optional pictures by their own names too.
     from .media_assets import rank_files
     required = {f['id']: f for f in pics if f['required']}

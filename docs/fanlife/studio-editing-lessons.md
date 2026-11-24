@@ -162,3 +162,29 @@ numbers became. Newest first. The skill reads this before touching the editor an
   2. A motif told in every chapter becomes a refrain: three "the road ran through…" beats in a 5-minute film. Now once.
   3. Director rule 6 refuses lines about the film ("This is the story of…"). Angle lines speak about the season.
 - **Open**: ClubElo answered 502 to every request from the Actions runner on 17.11. The weekly job retries.
+
+## 23.11.2026 (evening) · The press: a front page as the hook, collage instead of banal backgrounds
+
+- **Owner**: "still boring … banal backgrounds … no visual hook … I can't watch more than 50 seconds." Go to Flow, make
+  proper graphics; newspaper, halftone figures, newsprint; Vox collage, paper, bold outlines, handmade frame rate.
+- **Built**: seven kit pieces from his Flow (`studio/kit/press/`), `docu/press.py` (front page on the opening beat,
+  four collage scenes on illustration beats, 8 fps boil), rule `docs/rules/studio-press.md`.
+- **Measured** (Olympiacos 2023/24, 4.99 min, house writer): flashes 0 (v4 0), worst jerk 62.8 px (v4 35.4), 18.4
+  changes a minute (v4 18.2), longest shot 22.7 s (the closing cards), 16 press beats.
+- **Lesson**: the cold open's own `question` title printed over the front page's headline. A device that is the
+  title removes every other title from its beat (test: ThePress).
+- **Next**: a second front page at the night (the final's result as the edition's headline); more kit pieces (a
+  ticket stub, a scarf, a trophy, a newsprint column texture).
+
+## 24.11.2026 · The owner's pictures and clips as VOX moments; the FanLife Gazette cover
+
+- **Owner**: his uploads must enter with motion and text, between the speech, never as a slideshow; his video files in
+  the edit; covers and titles of our own, from his picture, tied to the script.
+- **Built**: `owner_media.py` (clip proxies), `docu/reveal.py` (five entrances), `thumbs/gazette.py` (cover 1), the
+  front page's photo from the same picture, video in the desk, rule `docs/rules/studio-owner-media.md`.
+- **Measured** (device harness, 6 reveals): every entrance reads; the cover headline 9.1–9.7 px at 168×94 (target 9).
+- **Lessons**: (1) a `<video>` that moves is drawn only once it settles (~0.5 s) → its poster goes under it. (2) An
+  animated jagged `clip-path` reads as shards, not a tear → static torn edges on two moving halves. (3) A device kind
+  name must be unique: the press engine first reused `press`, the designer's clipping, and overrode it (now `gazette`).
+  (4) `immediateRender:false` on a single entrance shows its end state before it starts (the front page's headline was
+  visible at frame 0): only a second tween of the same property takes it.

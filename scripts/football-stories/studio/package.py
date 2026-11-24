@@ -189,11 +189,11 @@ def description(script: dict, plan: dict, ledger: dict, manifest: dict) -> str:
     return text[:4900]
 
 
-def thumbnails(script: dict, ledger: dict, palette: Palette, out: Path, director: str | None = None) -> list[dict]:
+def thumbnails(script: dict, ledger: dict, palette: Palette, out: Path, director: str | None = None, plan: dict | None = None) -> list[dict]:
     """Three thumbnails with three different hooks (score, emotion, question) and the Shorts cover — the hook engine
     (studio/thumbs, docs/fanlife/68-thumbnail-hooks.md). Returns the rows youtube.json lists."""
     from . import thumbs
-    return thumbs.for_film(script, ledger, palette, out, director=director)
+    return thumbs.for_film(script, ledger, palette, out, director=director, plan=plan)
 
 
 def youtube_metadata(script: dict, plan: dict, ledger: dict, manifest: dict) -> dict:

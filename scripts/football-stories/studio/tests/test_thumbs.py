@@ -184,19 +184,21 @@ class Films(unittest.TestCase):
 
     def test_three_variants_and_a_shorts_cover(self):
         files = [r['file'] for r in self.rows]
-        self.assertEqual(files, ['thumbnail-1.jpg', 'thumbnail-2.jpg', 'thumbnail-3.jpg', 'thumbnail-short.jpg'])
+        # the FanLife Gazette cover first (thumbs/gazette.py, owner 24.11.2026), then the three documentary hooks
+        self.assertEqual(files, ['thumbnail-1.jpg', 'thumbnail-2.jpg', 'thumbnail-3.jpg', 'thumbnail-4.jpg', 'thumbnail-short.jpg'])
+        self.assertTrue(self.rows[0].get('gazette'))
         for r in self.rows:
             with Image.open(self.out / r['file']) as im:
                 self.assertEqual(list(im.size), r['size'])
         self.assertEqual(json.loads((self.out / 'thumbnails.json').read_text()), json.loads(json.dumps(self.rows)))
 
     def test_every_hook_reads_at_168_by_94(self):
-        for r in self.rows[:3]:
+        for r in self.rows[:4]:
             self.assertTrue(r['legibility']['ok'], (r['file'], r['legibility']))
             self.assertEqual(r['legibility']['size'], [168, 94])
 
     def test_the_three_pictures_differ(self):
-        keys = [art.base_key(r['picture']['key']) for r in self.rows[:3]]
+        keys = [art.base_key(r['picture']['key']) for r in self.rows[1:4]]
         self.assertEqual(len(set(keys)), 3)
 
     def test_hapoel_thumbnail_renders(self):
@@ -221,9 +223,9 @@ class Films(unittest.TestCase):
         out = tmpdir()
         for d in ('broadcaster', 'terrace', 'trailer'):
             rows = thumbs.for_film(None, self.L, PAL, out / d, director=d)
-            self.assertEqual(rows[0]['director'], d)
-            self.assertTrue(all(r['legibility']['ok'] for r in rows[:3]), (d, [r['legibility'] for r in rows]))
-        with Image.open(out / 'trailer' / 'thumbnail-1.jpg') as im:   # the letterbox: ink bars top and bottom
+            self.assertEqual(rows[1]['director'], d)
+            self.assertTrue(all(r['legibility']['ok'] for r in rows[:4]), (d, [r['legibility'] for r in rows]))
+        with Image.open(out / 'trailer' / 'thumbnail-2.jpg') as im:   # the letterbox: ink bars top and bottom
             a = np.asarray(im.convert('L'))
             self.assertLess(a[:60].mean(), 40)
             self.assertLess(a[-60:].mean(), 40)
@@ -231,8 +233,9 @@ class Films(unittest.TestCase):
     def test_the_package_lists_the_thumbnails(self):
         from studio import package
         rows = package.thumbnails(None, self.L, PAL, tmpdir())
-        self.assertEqual(len(rows), 4)
-        for r in rows[:3]:
+        self.assertEqual(len(rows), 5)
+        self.assertEqual(rows[0]['kind'], 'gazette')
+        for r in rows[1:4]:
             self.assertIn(r['kind'], ('score', 'emotion', 'question'))
             self.assertTrue(r['claims'])
 

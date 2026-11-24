@@ -1114,6 +1114,44 @@ class Film:
         for js in tw:
             self.tween(js)
 
+    def reveal(self, s, t, d):
+        """The owner's picture or clip as a VOX moment (docu/reveal.py — owner, 24.11.2026: "an effect, a transition with
+        motion, a cool entrance onto the screen, together with the text — not as a slideshow"): a print sliding onto
+        newsprint, the paper tearing open, strips closing, a frame the camera pushes through, a print dropping on the pile."""
+        from . import reveal as RV
+        cid = self.id('rv')
+        clips, tw, snd = RV.build(cid, s, t, d, self.INK, self.US)
+        for k, z, html, kind in clips:
+            if kind == 'video':
+                box = html
+                extra = box.pop('extra', '')
+                self.made.append({'id': k, 't': t, 'z': t + d, 'layer': z})
+                self.clips.append(f'<video id="{k}" class="clip" src="assets/img/{e(s["src"])}" muted playsinline data-start="{r2(t)}" data-duration="{r2(d)}" '
+                                  f'data-media-start="{s.get("from", 0)}" style="position:absolute;left:{box["left"]}px;top:{box["top"]}px;width:{box["width"]}px;'
+                                  f'height:{box["height"]}px;object-fit:cover;z-index:{z};{extra}"></video>')
+            else:
+                self.clip(k, t, d, html, z)
+        for js in tw:
+            self.tween(js)
+        for name, at, vol in snd:
+            if at < t + d:
+                self.sound(name, at, None, vol)
+
+    def gazette(self, s, t, d):
+        """The press (docu/press.py): the film's front page, or a collage scene — halftone pieces from the press kit on
+        newsprint, in the club's colour, pasted pieces moving on twos and threes."""
+        from . import press as PR
+        cid = self.id('pr')
+        fn = PR.front_page if s.get('page') == 'front' else PR.scene
+        html, tw = fn(cid, s, t, d, self.INK, self.US, self.PAPER)
+        self.clip(cid, t, d, f'<div class="pr">{html}</div>', s.get('z', 3))
+        for js in tw:
+            self.tween(js)
+        if s.get('page') == 'front' and not s.get('off'):
+            self.sound('page', t, None, 0.5)
+            for i in range(len(s.get('head') or [])):
+                self.sound('stamp', t + 0.7 + i * 0.42, None, 0.5)
+
     def kitdev(self, s, t, d):
         """The season's own shirt (studio/archive_props.py — owner, 23.11.2026: "if it talks about a season it pulls that
         season's kit into the film"). The archive's measured drawing, shirt only, comes down into the picture on a hanger
@@ -1421,7 +1459,7 @@ class Film:
 .clip{{position:absolute;left:0;top:0;width:1920px;height:1080px}}
 video.clip{{width:1920px;height:1080px}}
 .ph{{overflow:hidden}} .phi{{position:absolute;left:0;top:0;width:1920px;height:1080px;background-size:cover}}
-''' + C.CSS + XP_CSS.replace('INK', INK).replace('PAPER', P) + __import__('studio.docu.life', fromlist=['CSS']).CSS + f'''
+''' + C.CSS + XP_CSS.replace('INK', INK).replace('PAPER', P) + __import__('studio.docu.life', fromlist=['CSS']).CSS + __import__('studio.docu.press', fromlist=['CSS']).CSS.replace('INK', INK) + __import__('studio.docu.reveal', fromlist=['CSS']).CSS.replace('INK', INK) + f'''
 .veil{{position:absolute;left:0;top:0;width:1920px;height:1080px;background:{INK}}}
 .recon{{position:absolute;right:40px;top:34px;font:700 18px 'Mono';color:{P};opacity:.75;letter-spacing:1px}} .r2{{right:120px;top:90px}}
 .frame{{border:58px solid {P};box-sizing:border-box}} .paper{{background:{P}}} .ink{{background:{INK}}}

@@ -14,6 +14,7 @@ describe('Required studio pictures',()=>{
  })
  it('rejects the whole batch instead of silently dropping bad files',()=>{
   expect(()=>validatePictures([file('good.png'),file('bad.pdf')])).toThrow('bad.pdf')
+  expect(()=>validatePictures([file('fans-before-kickoff.mp4'),file('tunnel.mov'),file('clip.webm')])).not.toThrow()   // the owner's clips (24.11.2026)
   expect(()=>validatePictures([file('empty.png','')])).toThrow('empty.png')
   expect(()=>validatePictures(Array.from({length:31},()=>file('image.png')))).toThrow('30')
  })

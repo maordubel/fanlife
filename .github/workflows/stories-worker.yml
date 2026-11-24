@@ -164,6 +164,9 @@ jobs:
           STORIES_HOUSE_LEAD: ${{ vars.STORIES_HOUSE_LEAD }}
           STORIES_ARCHIVE_PROPS: ${{ vars.STORIES_ARCHIVE_PROPS }}
           STORIES_LIFE: ${{ vars.STORIES_LIFE }}
+          STORIES_PRESS: ${{ vars.STORIES_PRESS }}
+          STORIES_REVEAL: ${{ vars.STORIES_REVEAL }}
+          STORIES_GAZETTE_COVER: ${{ vars.STORIES_GAZETTE_COVER }}
           STORIES_MASTER_PRESET: medium
           # scan the owner's Drive live for this story's packs (studio/drive_scan.py)
           STORIES_DRIVE_SCAN: '1'
