@@ -210,7 +210,7 @@ describe('history and the watch card', {timeout: 300_000}, () => {
     expect(kindsOf(n, view)).toEqual(expect.arrayContaining(['match', 'home', 'title']))
     const card = watchForNight('hapoel-tel-aviv', n)!
     expect(card.highlights).toMatchObject({id: '1986-championship', youtubeId: 'dFykPEa8NAE', status: 'verified'})
-    expect(slateOf(n)).toMatchObject({date: '1986-05-24', result: 'Hapoel Tel Aviv 1–0 Maccabi Haifa', title: 'minute 86'})
+    expect(slateOf(n)).toMatchObject({date: '1986-05-24', result: 'Hapoel Tel Aviv 1–0 Maccabi Haifa', title: null})
   })
 
   it('the watch card holds only recorded ids, and the 24.5.1986 title night resolves to the recorded highlights', () => {

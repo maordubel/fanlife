@@ -42,7 +42,7 @@ function personLook(club: HoodClub, id: PersonId, scarf: boolean): Look {
 const STEP: Omit<Step, 'kind' | 'x' | 'z' | 'key' | 'say'> = {r: HOOD.talk, npc: null, cost: 0, hold: 0, group: 0, joins: false, leaves: false, reveals: false}
 
 export function hoodLevel(club: HoodClub, seed: number): Level {
-  const r = rng(seed ^ 0x9e3779b1), jr = rng(seed + 7919)
+  const r = rng(seed ^ 2_654_435_761), jr = rng(seed + 7919)
   const {length: L, half, walk, side, sideW} = HOOD
   const gateZ = -L
   // the side streets move with the seed (their own stream): the same hood, a different corner every time

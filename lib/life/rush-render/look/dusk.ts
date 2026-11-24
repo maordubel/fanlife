@@ -122,7 +122,7 @@ export function dressDusk(x: DuskCtx): Dusk {
   const shader = {name: 'WetMirror', uniforms: {color: {value: null}, tDiffuse: {value: null}, textureMatrix: {value: null}, tMask: {value: null}, uTime: {value: 0}, uBase: {value: 0.22}, uPud: {value: 0.56}, uFog: {value: DUSK.fogDensity}},
     vertexShader: 'uniform mat4 textureMatrix; varying vec4 vUv; varying vec3 vW; void main(){ vUv=textureMatrix*vec4(position,1.); vW=(modelMatrix*vec4(position,1.)).xyz; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); }',
     fragmentShader: WET_FRAG}
-  const refl = new Reflector(keep(new THREE.PlaneGeometry(half * 2, span)), {color: 0xffffff, textureWidth: 256, textureHeight: 512, multisample: 0, shader})
+  const refl = new Reflector(keep(new THREE.PlaneGeometry(half * 2, span)), {color: '#ffffff', textureWidth: 256, textureHeight: 512, multisample: 0, shader})
   const mask = keep(maskTexture(rnd)); (refl.material as THREE.ShaderMaterial).uniforms.tMask!.value = mask
   const mat = refl.material as THREE.ShaderMaterial; mat.transparent = true; mat.depthWrite = false; keep(refl.getRenderTarget()); keep(mat)
   refl.rotation.x = -Math.PI / 2; refl.position.set(0, 0.022, zMid); refl.renderOrder = 5; add(refl)
