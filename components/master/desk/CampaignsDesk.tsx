@@ -8,10 +8,10 @@ import {CLUB_CARDS,FEATURES,PLAYLISTS,TEMPLATES,TOPICS,OPEN_CLUBS,OPENING_SOON,t
  * they went, the visits they brought), pause / resume / stop, and a new campaign from a simple template: pick, preview,
  * launch. The pictures draw themselves (v4, two hours ahead) and the marketing machine publishes; nothing else to do.
  */
-type Row={id:string;name:string;topic:Topic;state:'running'|'waiting'|'paused'|'done';sent:number;pending:number;waiting:number;paused:number;skipped:number;failed:number
+type Row={id:string;name:string;topic:Topic;state:'running'|'waiting'|'paused'|'stopped'|'done';sent:number;pending:number;waiting:number;paused:number;skipped:number;failed:number
  facebook:number;instagram:number;visitors:number;views:number;clicks:number;first_at:string;last_at:string;next_at:string|null;next_label:string|null;hold:string|null}
 type Preview={campaign:{id:string;name:string;days:number};rows:{at:string;t:string;label:string;hook:string;held:boolean}[]}
-const STATE_L={running:'Running',waiting:'Waits for the club to open',paused:'Paused',done:'Finished'}
+const STATE_L={running:'Running',waiting:'Waits for the club to open',paused:'Paused',stopped:'Stopped',done:'Finished'}
 const T_L:Record<string,string>={'L-CLUB':'Club card','L-SHOP':'Product','L-SALE':'Sale','L-FILM':'Film','L-YT':'Channel','L-RUMBLE':'Royal Rumble','L-KITS':'Kit archive','L-MARKET':'Market','L-GATE':'Legends Manager','L-ALBUM':'Album','L-HUB':'FAN LIFE wall','L-GTA':'LIFE'}
 const FEATURE_L={rumble:'Royal Rumble',kits:'Kit archive',legends:'Legends Manager',market:'The market'}
 const when=(iso:string|null)=>iso?new Date(iso).toLocaleString('en-GB',{weekday:'short',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit',timeZone:'Europe/Athens'}):'—'
@@ -60,7 +60,7 @@ export function CampaignsDesk(){
     <div className="camp-acts">
      {r.state==='running'&&<button type="button" className="desk-btn ghost min-h-tap" disabled={busy} onClick={()=>set(r.id,'pause')}>Pause</button>}
      {r.state==='paused'&&<button type="button" className="desk-btn min-h-tap" disabled={busy} onClick={()=>set(r.id,'resume')}>Resume</button>}
-     {r.state!=='done'&&<button type="button" className="desk-btn ghost min-h-tap" disabled={busy} onClick={()=>set(r.id,'stop')}>Stop</button>}
+     {(r.state==='running'||r.state==='waiting'||r.state==='paused')&&<button type="button" className="desk-btn ghost min-h-tap" disabled={busy} onClick={()=>set(r.id,'stop')}>Stop</button>}
     </div>
    </li>)}</ul>}
   <Builder onLaunched={async m=>{setNote(m);await load()}}/>
