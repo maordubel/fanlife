@@ -1,0 +1,1053 @@
+{
+ "version": 1,
+ "pieces": {
+  "life-facade-ath-02-fl1": {
+   "kind": "facade",
+   "town": "ath",
+   "key": "02",
+   "stem": "life-facade-ath-02-fl1",
+   "src": {
+    "w": 1024,
+    "h": 1024
+   },
+   "files": {
+    "1024": {
+     "w": 1024,
+     "h": 1024,
+     "bytes": 141050,
+     "sha": "250c107eefed6db6"
+    },
+    "512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 41412,
+     "sha": "ecf414a486843db4"
+    },
+    "n-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 31454,
+     "sha": "c3ce5aef850de881"
+    },
+    "r-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 26336,
+     "sha": "781e5b05dade7cfb"
+    },
+    "e-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 6082,
+     "sha": "d5cecd0dbee08eea"
+    }
+   },
+   "yellow": 0.0003,
+   "families": {
+    "red": 0.0007,
+    "yellow": 0.0003,
+    "green": 0.0,
+    "blue": 0.0
+   },
+   "avg": "#5d5854",
+   "glow": 0.0512,
+   "floors": 3,
+   "from": {
+    "size": 236302,
+    "etag": "3959ab475840f7c5e2830868cf895b3e",
+    "updated": "2026-11-23T08:46:29.548Z"
+   },
+   "use": true,
+   "note": "auto: baked, not yet reviewed"
+  },
+  "life-facade-ath-03-fl1": {
+   "kind": "facade",
+   "town": "ath",
+   "key": "03",
+   "stem": "life-facade-ath-03-fl1",
+   "src": {
+    "w": 1024,
+    "h": 1024
+   },
+   "files": {
+    "1024": {
+     "w": 1024,
+     "h": 1024,
+     "bytes": 134882,
+     "sha": "de46180433691b7c"
+    },
+    "512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 38368,
+     "sha": "44e7d203f9a51932"
+    },
+    "n-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 29622,
+     "sha": "81221d8821ead184"
+    },
+    "r-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 23520,
+     "sha": "2029139dff24f044"
+    },
+    "e-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 7052,
+     "sha": "a01a1a35eb5e258f"
+    }
+   },
+   "yellow": 0.0001,
+   "families": {
+    "red": 0.003,
+    "yellow": 0.0001,
+    "green": 0.0,
+    "blue": 0.0
+   },
+   "avg": "#585552",
+   "glow": 0.0495,
+   "floors": 4,
+   "from": {
+    "size": 228063,
+    "etag": "e397b6663201d0a34fc742f259766e32",
+    "updated": "2026-11-23T12:39:22.636Z"
+   },
+   "use": true,
+   "note": "auto: baked, not yet reviewed"
+  },
+  "life-facade-ath-05-fl1": {
+   "kind": "facade",
+   "town": "ath",
+   "key": "05",
+   "stem": "life-facade-ath-05-fl1",
+   "src": {
+    "w": 1024,
+    "h": 1024
+   },
+   "files": {
+    "1024": {
+     "w": 1024,
+     "h": 1024,
+     "bytes": 136988,
+     "sha": "859d130e79d6701e"
+    },
+    "512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 39636,
+     "sha": "de5f988922b9293f"
+    },
+    "n-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 28900,
+     "sha": "ca02750164d8100e"
+    },
+    "r-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 25120,
+     "sha": "0ee9bb41da03dbb3"
+    },
+    "e-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 5538,
+     "sha": "3a3a99ddb5f347cc"
+    }
+   },
+   "yellow": 0.0002,
+   "families": {
+    "red": 0.0003,
+    "yellow": 0.0002,
+    "green": 0.0,
+    "blue": 0.0
+   },
+   "avg": "#56514d",
+   "glow": 0.0607,
+   "floors": 2,
+   "from": {
+    "size": 224421,
+    "etag": "e5d73967ec82815caa3e4945dbeabb89",
+    "updated": "2026-11-23T18:40:40.438Z"
+   },
+   "use": true,
+   "note": "auto: baked, not yet reviewed"
+  },
+  "life-facade-eur-01-fl1": {
+   "kind": "facade",
+   "town": "eur",
+   "key": "01",
+   "stem": "life-facade-eur-01-fl1",
+   "src": {
+    "w": 1024,
+    "h": 1024
+   },
+   "files": {
+    "1024": {
+     "w": 1024,
+     "h": 1024,
+     "bytes": 125360,
+     "sha": "2d26ec9627c957fb"
+    },
+    "512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 36634,
+     "sha": "244fb6f4db6cfd7c"
+    },
+    "n-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 30474,
+     "sha": "a54a40762056bbef"
+    },
+    "r-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 21916,
+     "sha": "7cd8461fc07b3bdf"
+    },
+    "e-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 6634,
+     "sha": "ef5f3d0cb29b59f8"
+    }
+   },
+   "yellow": 0.0,
+   "families": {
+    "red": 0.002,
+    "yellow": 0.0,
+    "green": 0.0,
+    "blue": 0.0
+   },
+   "avg": "#5e5751",
+   "glow": 0.0737,
+   "floors": 4,
+   "from": {
+    "size": 220504,
+    "etag": "3069d5754eec09bce1fbb3ad1f4d711d",
+    "updated": "2026-11-23T22:38:18.290Z"
+   },
+   "use": true,
+   "note": "auto: baked, not yet reviewed"
+  },
+  "life-facade-eur-03-fl1": {
+   "kind": "facade",
+   "town": "eur",
+   "key": "03",
+   "stem": "life-facade-eur-03-fl1",
+   "src": {
+    "w": 1024,
+    "h": 1024
+   },
+   "files": {
+    "1024": {
+     "w": 1024,
+     "h": 1024,
+     "bytes": 180000,
+     "sha": "1dbbdcb850ccffd8"
+    },
+    "512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 48724,
+     "sha": "4e4663dd7fbeaa86"
+    },
+    "n-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 33742,
+     "sha": "641916b0b687c59c"
+    },
+    "r-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 28808,
+     "sha": "5931be9942e9411d"
+    },
+    "e-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 6014,
+     "sha": "cc75940a1e764577"
+    }
+   },
+   "yellow": 0.0007,
+   "families": {
+    "red": 0.0005,
+    "yellow": 0.0005,
+    "green": 0.0,
+    "blue": 0.0
+   },
+   "avg": "#4c4239",
+   "glow": 0.0407,
+   "floors": 2,
+   "from": {
+    "size": 272692,
+    "etag": "5665517e434e62c4bf69c2f082efe01c",
+    "updated": "2026-11-23T23:47:55.668Z"
+   },
+   "use": true,
+   "note": "auto: baked, not yet reviewed"
+  },
+  "life-facade-eur-04-fl1": {
+   "kind": "facade",
+   "town": "eur",
+   "key": "04",
+   "stem": "life-facade-eur-04-fl1",
+   "src": {
+    "w": 1024,
+    "h": 1024
+   },
+   "files": {
+    "1024": {
+     "w": 1024,
+     "h": 1024,
+     "bytes": 177682,
+     "sha": "7a5fe5e4d69379e4"
+    },
+    "512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 48264,
+     "sha": "2eaa5ee351b5dba2"
+    },
+    "n-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 32246,
+     "sha": "b3c57183702029e4"
+    },
+    "r-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 38400,
+     "sha": "d050cb8750beebca"
+    },
+    "e-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 3214,
+     "sha": "3a18b60c184a4dc5"
+    }
+   },
+   "yellow": 0.0,
+   "families": {
+    "red": 0.0001,
+    "yellow": 0.0,
+    "green": 0.0,
+    "blue": 0.0051
+   },
+   "avg": "#3a3c40",
+   "glow": 0.0265,
+   "from": {
+    "size": 265967,
+    "etag": "30f13ab4874d752a5344a7640c2888b0",
+    "updated": "2026-11-24T00:42:17.283Z"
+   },
+   "use": true,
+   "note": "auto: baked, not yet reviewed"
+  },
+  "life-facade-mos-01-fl1": {
+   "kind": "facade",
+   "town": "mos",
+   "key": "01",
+   "stem": "life-facade-mos-01-fl1",
+   "src": {
+    "w": 1024,
+    "h": 1024
+   },
+   "files": {
+    "1024": {
+     "w": 1024,
+     "h": 1024,
+     "bytes": 249598,
+     "sha": "0ca5c1f5edb9f27a"
+    },
+    "512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 68212,
+     "sha": "3d2bed83a9d52466"
+    },
+    "n-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 46592,
+     "sha": "1d3a4b1317a4f81c"
+    },
+    "r-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 32760,
+     "sha": "5fe3e8da83c699c6"
+    },
+    "e-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 18400,
+     "sha": "3b4cde3ec0893a30"
+    }
+   },
+   "yellow": 0.0,
+   "families": {
+    "red": 0.0033,
+    "yellow": 0.0,
+    "green": 0.0,
+    "blue": 0.0
+   },
+   "avg": "#716862",
+   "glow": 0.1352,
+   "floors": 2,
+   "from": {
+    "size": 333475,
+    "etag": "e47481f8755510fc4a41af462ba93ce8",
+    "updated": "2026-11-23T20:42:28.826Z"
+   },
+   "use": true,
+   "note": "auto: baked, not yet reviewed"
+  },
+  "life-facade-mos-02-fl1": {
+   "kind": "facade",
+   "town": "mos",
+   "key": "02",
+   "stem": "life-facade-mos-02-fl1",
+   "src": {
+    "w": 1024,
+    "h": 1024
+   },
+   "files": {
+    "1024": {
+     "w": 1024,
+     "h": 1024,
+     "bytes": 168012,
+     "sha": "8813133c35e366e7"
+    },
+    "512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 46792,
+     "sha": "5e31bf621bdbbe72"
+    },
+    "n-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 33216,
+     "sha": "ef741d522994f4f9"
+    },
+    "r-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 25528,
+     "sha": "9a4760b4f99062dd"
+    },
+    "e-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 7998,
+     "sha": "87ed2b6ff1bb401b"
+    }
+   },
+   "yellow": 0.0006,
+   "families": {
+    "red": 0.0022,
+    "yellow": 0.0006,
+    "green": 0.0,
+    "blue": 0.0002
+   },
+   "avg": "#5c5651",
+   "glow": 0.0651,
+   "floors": 3,
+   "from": {
+    "size": 261409,
+    "etag": "c68dbdff996746935c2e938b22b61a92",
+    "updated": "2026-11-23T21:40:02.480Z"
+   },
+   "use": true,
+   "note": "auto: baked, not yet reviewed"
+  },
+  "life-facade-mos-03-fl1": {
+   "kind": "facade",
+   "town": "mos",
+   "key": "03",
+   "stem": "life-facade-mos-03-fl1",
+   "src": {
+    "w": 1024,
+    "h": 1024
+   },
+   "files": {
+    "1024": {
+     "w": 1024,
+     "h": 1024,
+     "bytes": 142108,
+     "sha": "a30399c5d247da33"
+    },
+    "512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 42638,
+     "sha": "2a9e925856d30213"
+    },
+    "n-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 34412,
+     "sha": "b443689773c42396"
+    },
+    "r-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 27492,
+     "sha": "cf48e40710d1fab4"
+    },
+    "e-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 4068,
+     "sha": "6e360058f0e6f736"
+    }
+   },
+   "yellow": 0.0,
+   "families": {
+    "red": 0.0017,
+    "yellow": 0.0,
+    "green": 0.0,
+    "blue": 0.0
+   },
+   "avg": "#525253",
+   "glow": 0.0201,
+   "floors": 5,
+   "from": {
+    "size": 234910,
+    "etag": "0be26c1487beebb7c3eb548449a3e962",
+    "updated": "2026-11-23T21:40:03.255Z"
+   },
+   "use": true,
+   "note": "auto: baked, not yet reviewed"
+  },
+  "life-facade-tlv-01-fl1": {
+   "kind": "facade",
+   "town": "tlv",
+   "key": "01",
+   "stem": "life-facade-tlv-01-fl1",
+   "src": {
+    "w": 1024,
+    "h": 1024
+   },
+   "files": {
+    "1024": {
+     "w": 1024,
+     "h": 1024,
+     "bytes": 75534,
+     "sha": "1cc2be0cf9756f50"
+    },
+    "512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 24808,
+     "sha": "9a1d30d8a10c02d7"
+    },
+    "n-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 22790,
+     "sha": "6b70cd865c04ee8c"
+    },
+    "r-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 12836,
+     "sha": "95b0ae1378a90fb6"
+    },
+    "e-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 6858,
+     "sha": "71dbc43adb12346b"
+    }
+   },
+   "yellow": 0.0,
+   "families": {
+    "red": 0.0,
+    "yellow": 0.0,
+    "green": 0.0,
+    "blue": 0.0013
+   },
+   "avg": "#7c7a78",
+   "glow": 0.1069,
+   "floors": 3,
+   "from": {
+    "size": 158229,
+    "etag": "995290caf749c74e8ef72359d32d80e1",
+    "updated": "2026-11-23T08:46:29.942Z"
+   },
+   "use": true,
+   "note": "auto: baked, not yet reviewed"
+  },
+  "life-facade-tlv-03-fl1": {
+   "kind": "facade",
+   "town": "tlv",
+   "key": "03",
+   "stem": "life-facade-tlv-03-fl1",
+   "src": {
+    "w": 1024,
+    "h": 1024
+   },
+   "files": {
+    "1024": {
+     "w": 1024,
+     "h": 1024,
+     "bytes": 176632,
+     "sha": "b3774b7dc65f5cf1"
+    },
+    "512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 41046,
+     "sha": "debb948caadcf3f3"
+    },
+    "n-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 27232,
+     "sha": "d3d6dc7ad8c3037e"
+    },
+    "r-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 22140,
+     "sha": "738a89719014b6cf"
+    },
+    "e-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 8868,
+     "sha": "b944d8d6b4227584"
+    }
+   },
+   "yellow": 0.0002,
+   "families": {
+    "red": 0.0003,
+    "yellow": 0.0002,
+    "green": 0.0,
+    "blue": 0.0
+   },
+   "avg": "#6d6965",
+   "glow": 0.0898,
+   "floors": 2,
+   "from": {
+    "size": 261966,
+    "etag": "afeab4d7e64996475b4fba7c86cff226",
+    "updated": "2026-11-23T11:42:13.881Z"
+   },
+   "use": true,
+   "note": "auto: baked, not yet reviewed"
+  },
+  "life-facade-tlv-04-fl1": {
+   "kind": "facade",
+   "town": "tlv",
+   "key": "04",
+   "stem": "life-facade-tlv-04-fl1",
+   "src": {
+    "w": 1024,
+    "h": 1024
+   },
+   "files": {
+    "1024": {
+     "w": 1024,
+     "h": 1024,
+     "bytes": 185364,
+     "sha": "3d4a4e4569aeea0f"
+    },
+    "512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 49880,
+     "sha": "8713ca1e1eee675b"
+    },
+    "n-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 34588,
+     "sha": "74b1cd96748dbf27"
+    },
+    "r-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 25794,
+     "sha": "adda07784a24caf6"
+    },
+    "e-512": {
+     "w": 512,
+     "h": 512,
+     "bytes": 8248,
+     "sha": "f43b0d87909e0ee3"
+    }
+   },
+   "yellow": 0.0,
+   "families": {
+    "red": 0.0011,
+    "yellow": 0.0,
+    "green": 0.0,
+    "blue": 0.0
+   },
+   "avg": "#5d5750",
+   "glow": 0.0562,
+   "floors": 3,
+   "from": {
+    "size": 273392,
+    "etag": "4a40029032a573e306a84d7bd4c5cd70",
+    "updated": "2026-11-23T18:40:42.257Z"
+   },
+   "use": true,
+   "note": "auto: baked, not yet reviewed"
+  },
+  "life-skyline-ath-fl1": {
+   "kind": "skyline",
+   "town": "ath",
+   "stem": "life-skyline-ath-fl1",
+   "src": {
+    "w": 1376,
+    "h": 768
+   },
+   "files": {
+    "2048": {
+     "w": 1376,
+     "h": 768,
+     "bytes": 94612,
+     "sha": "9b458ea54a4a23ed"
+    },
+    "1024": {
+     "w": 1024,
+     "h": 572,
+     "bytes": 58436,
+     "sha": "542abbe2e3968ca4"
+    }
+   },
+   "yellow": 0.0001,
+   "families": {
+    "red": 0.0031,
+    "yellow": 0.0001,
+    "green": 0.0,
+    "blue": 0.2155
+   },
+   "avg": "#637081",
+   "from": {
+    "size": 240477,
+    "etag": "e434f4d5725f0274ebfc369304d72bb0",
+    "updated": "2026-11-23T16:41:59.010Z"
+   },
+   "use": true,
+   "note": "auto: baked, not yet reviewed"
+  },
+  "life-skyline-tlv-fl1": {
+   "kind": "skyline",
+   "town": "tlv",
+   "stem": "life-skyline-tlv-fl1",
+   "src": {
+    "w": 1376,
+    "h": 768
+   },
+   "files": {
+    "2048": {
+     "w": 1376,
+     "h": 768,
+     "bytes": 67634,
+     "sha": "2209f5a1738da9bf"
+    },
+    "1024": {
+     "w": 1024,
+     "h": 572,
+     "bytes": 44442,
+     "sha": "795e26348f2e0fb9"
+    }
+   },
+   "yellow": 0.0,
+   "families": {
+    "red": 0.0109,
+    "yellow": 0.0,
+    "green": 0.0,
+    "blue": 0.1286
+   },
+   "avg": "#3e3f47",
+   "from": {
+    "size": 202662,
+    "etag": "4baf297b275ef51b856562cdfa43701e",
+    "updated": "2026-11-23T16:41:59.431Z"
+   },
+   "use": true,
+   "note": "auto: baked, not yet reviewed"
+  },
+  "life-stadium-aek-athens-a-fl1": {
+   "kind": "stadium",
+   "club": "aek-athens",
+   "town": "ath",
+   "key": "a",
+   "stem": "life-stadium-aek-athens-a-fl1",
+   "src": {
+    "w": 1376,
+    "h": 768
+   },
+   "files": {
+    "2048": {
+     "w": 1376,
+     "h": 768,
+     "bytes": 80780,
+     "sha": "f2a3ab8066351104"
+    },
+    "1024": {
+     "w": 1024,
+     "h": 572,
+     "bytes": 48384,
+     "sha": "209d842571d71c02"
+    }
+   },
+   "yellow": 0.0001,
+   "families": {
+    "red": 0.0087,
+    "yellow": 0.0001,
+    "green": 0.0,
+    "blue": 0.0807
+   },
+   "avg": "#41434a",
+   "from": {
+    "size": 150748,
+    "etag": "9dc4a0f1c5fde028a24ff82e7da1670f",
+    "updated": "2026-11-23T12:45:15.296Z"
+   },
+   "use": true,
+   "note": "auto: baked, not yet reviewed"
+  },
+  "life-stadium-hapoel-tel-aviv-a-fl1": {
+   "kind": "stadium",
+   "club": "hapoel-tel-aviv",
+   "town": "tlv",
+   "key": "a",
+   "stem": "life-stadium-hapoel-tel-aviv-a-fl1",
+   "src": {
+    "w": 1376,
+    "h": 768
+   },
+   "files": {
+    "2048": {
+     "w": 1376,
+     "h": 768,
+     "bytes": 118752,
+     "sha": "699601712db988df"
+    },
+    "1024": {
+     "w": 1024,
+     "h": 572,
+     "bytes": 70492,
+     "sha": "94be8f396ff61907"
+    }
+   },
+   "yellow": 0.0027,
+   "families": {
+    "red": 0.0217,
+    "yellow": 0.0009,
+    "green": 0.0,
+    "blue": 0.2485
+   },
+   "avg": "#4c5059",
+   "from": {
+    "size": 199745,
+    "etag": "af80c7d4578a1d77c8940a59c0835721",
+    "updated": "2026-11-23T11:43:49.382Z"
+   },
+   "use": true,
+   "note": "auto: baked, not yet reviewed"
+  },
+  "life-stadium-hapoel-tel-aviv-b-fl1": {
+   "kind": "stadium",
+   "club": "hapoel-tel-aviv",
+   "town": "tlv",
+   "key": "b",
+   "stem": "life-stadium-hapoel-tel-aviv-b-fl1",
+   "src": {
+    "w": 1376,
+    "h": 768
+   },
+   "files": {
+    "2048": {
+     "w": 1376,
+     "h": 768,
+     "bytes": 102398,
+     "sha": "d0b1be5041165c52"
+    },
+    "1024": {
+     "w": 1024,
+     "h": 572,
+     "bytes": 56440,
+     "sha": "e28dbb47d3adc97f"
+    }
+   },
+   "yellow": 0.0,
+   "families": {
+    "red": 0.0048,
+    "yellow": 0.0,
+    "green": 0.0,
+    "blue": 0.1317
+   },
+   "avg": "#414c59",
+   "from": {
+    "size": 269892,
+    "etag": "a5750dc138c880afbdeda6c6f5f13903",
+    "updated": "2026-11-24T01:50:17.172Z"
+   },
+   "use": true,
+   "note": "auto: baked, not yet reviewed"
+  },
+  "life-stadium-olympiacos-a-fl1": {
+   "kind": "stadium",
+   "club": "olympiacos",
+   "town": "ath",
+   "key": "a",
+   "stem": "life-stadium-olympiacos-a-fl1",
+   "src": {
+    "w": 1376,
+    "h": 768
+   },
+   "files": {
+    "2048": {
+     "w": 1376,
+     "h": 768,
+     "bytes": 159204,
+     "sha": "483e1c2627c93647"
+    },
+    "1024": {
+     "w": 1024,
+     "h": 572,
+     "bytes": 92160,
+     "sha": "ec24b3857a7408c7"
+    }
+   },
+   "yellow": 0.003,
+   "families": {
+    "red": 0.0353,
+    "yellow": 0.0028,
+    "green": 0.0,
+    "blue": 0.164
+   },
+   "avg": "#4c4f52",
+   "from": {
+    "size": 245296,
+    "etag": "0ffe1eda69be2a8d1c919044b8e7304b",
+    "updated": "2026-11-23T12:47:27.719Z"
+   },
+   "use": true,
+   "note": "auto: baked, not yet reviewed"
+  },
+  "life-stadium-panathinaikos-a-fl1": {
+   "kind": "stadium",
+   "club": "panathinaikos",
+   "town": "ath",
+   "key": "a",
+   "stem": "life-stadium-panathinaikos-a-fl1",
+   "src": {
+    "w": 1376,
+    "h": 768
+   },
+   "files": {
+    "2048": {
+     "w": 1376,
+     "h": 768,
+     "bytes": 140152,
+     "sha": "89816aab73f968e5"
+    },
+    "1024": {
+     "w": 1024,
+     "h": 572,
+     "bytes": 83818,
+     "sha": "b3481ffbd4fe6158"
+    }
+   },
+   "yellow": 0.0006,
+   "families": {
+    "red": 0.0085,
+    "yellow": 0.0003,
+    "green": 0.0,
+    "blue": 0.216
+   },
+   "avg": "#39434e",
+   "from": {
+    "size": 226856,
+    "etag": "a6e3697c5f9e1e8d66174b2e3b86920f",
+    "updated": "2026-11-23T12:44:29.290Z"
+   },
+   "use": true,
+   "note": "auto: baked, not yet reviewed"
+  },
+  "life-story-first-walk-fl1": {
+   "kind": "story",
+   "key": "first-walk",
+   "stem": "life-story-first-walk-fl1",
+   "src": {
+    "w": 1376,
+    "h": 768
+   },
+   "files": {
+    "1600": {
+     "w": 1376,
+     "h": 768,
+     "bytes": 107298,
+     "sha": "c50e7255a9a9e140"
+    }
+   },
+   "yellow": 0.0008,
+   "families": {
+    "red": 0.0323,
+    "yellow": 0.0006,
+    "green": 0.0,
+    "blue": 0.0043
+   },
+   "avg": "#525154",
+   "from": {
+    "size": 281971,
+    "etag": "08f215979b8850f63c8486eabdd3e330",
+    "updated": "2026-11-23T16:41:59.845Z"
+   },
+   "use": true,
+   "note": "auto: baked, not yet reviewed"
+  },
+  "life-story-kitchen-radio-fl1": {
+   "kind": "story",
+   "key": "kitchen-radio",
+   "stem": "life-story-kitchen-radio-fl1",
+   "src": {
+    "w": 1376,
+    "h": 768
+   },
+   "files": {
+    "1600": {
+     "w": 1376,
+     "h": 768,
+     "bytes": 77794,
+     "sha": "f1ff434376edffe2"
+    }
+   },
+   "yellow": 0.0008,
+   "families": {
+    "red": 0.0019,
+    "yellow": 0.0008,
+    "green": 0.0,
+    "blue": 0.1899
+   },
+   "avg": "#273236",
+   "from": {
+    "size": 236344,
+    "etag": "9e559048e6404f5e1bf0422e6f360528",
+    "updated": "2026-11-23T16:43:41.395Z"
+   },
+   "use": true,
+   "note": "auto: baked, not yet reviewed"
+  }
+ },
+ "baked": "2026-11-24T06:01:03Z"
+}
