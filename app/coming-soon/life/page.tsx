@@ -3,6 +3,7 @@ import Link from 'next/link'
 import copy from '@/messages/life-soon/en.json'
 import styles from './soon.module.css'
 import {CHANNEL} from '@/lib/stories/channel'
+import {Shell} from '@/components/master/Shell'
 
 export const metadata: Metadata = {title: copy.metaTitle, description: copy.metaDescription, robots: {index: false, follow: true}}
 
@@ -13,6 +14,7 @@ export const metadata: Metadata = {title: copy.metaTitle, description: copy.meta
  */
 export default function LifeComingSoon() {
   return (
+    <Shell>
     <main id="main" className={styles.soon}>
       <picture className={styles.art}>
         <source media="(min-width: 900px)" srcSet="/life-soon/terrace-1080.webp" />
@@ -33,5 +35,6 @@ export default function LifeComingSoon() {
         </nav>
       </section>
     </main>
+    </Shell>
   )
 }

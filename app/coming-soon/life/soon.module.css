@@ -1,5 +1,5 @@
 /* LIFE · Coming soon. Phone first: the terrace is the whole screen and the words stand on its floor. */
-.soon { position: relative; min-block-size: 100dvh; display: grid; align-items: end; overflow: hidden; background: rgb(var(--ink)); color: rgb(var(--paper)); isolation: isolate; }
+.soon { position: relative; min-block-size: min(100dvh, 860px); display: grid; align-items: end; overflow: hidden; background: rgb(var(--ink)); color: rgb(var(--paper)); isolation: isolate; }
 .art { position: absolute; inset: 0; z-index: -2; }
 .art img { inline-size: 100%; block-size: 100%; object-fit: cover; object-position: 50% 30%; filter: saturate(.85) contrast(1.05); animation: drift 24s ease-in-out infinite alternate; }
 .veil { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgb(var(--ink) / .15) 0%, rgb(var(--ink) / .35) 38%, rgb(var(--ink) / .92) 70%, rgb(var(--ink)) 100%); }
@@ -20,7 +20,7 @@
 /* Desk: words on the left on solid night, the terrace as a tall plate on the right. */
 @media (min-width: 900px) {
   .soon { grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); align-items: center; }
-  .art { position: relative; inset: auto; grid-column: 2; grid-row: 1; block-size: 100dvh; z-index: 0; }
+  .art { position: relative; inset: auto; grid-column: 2; grid-row: 1; block-size: min(100dvh, 860px); z-index: 0; }
   .veil { background: linear-gradient(90deg, rgb(var(--ink)) 0%, rgb(var(--ink)) 50%, rgb(var(--ink) / .4) 62%, transparent 80%); z-index: 1; }
   .copy { grid-column: 1; grid-row: 1; z-index: 2; padding-inline: clamp(40px, 7vw, 120px) 24px; padding-block: 64px; gap: 14px; max-inline-size: 640px; }
   .title { font-size: clamp(150px, 16vw, 260px); }
