@@ -5,7 +5,8 @@ import {ratedPool} from '@/lib/clubs/rumble'
 import {norm} from '@/lib/fixtures/names'
 import {mergesFor} from '@/lib/clubs/rumble-xi/merges'
 
-const NO_WAVE_YET=new Set(['raja-casablanca','wydad-casablanca','al-ahly'])
+// Fenerbahce and Partizan were wired by hand on 23.11.2026 from their archives: no research wave has run for them yet
+const NO_WAVE_YET=new Set(['raja-casablanca','wydad-casablanca','al-ahly','fenerbahce','partizan-belgrade'])
 const promoted=(id:string)=>{try{return /^Promoted from the research desk/.test(String(JSON.parse(readFileSync(`club-packs/${id}/core.json`,'utf8')).note||''))}catch{return false}}
 describe('roster wave (10.10.2026): researched men are in the archive and in the game',()=>{
  for(const id of CORE_CLUB_IDS)it(`${id}: every wave man is sourced, owner-approved (confidence 2 since 17.11.2026), unique, and dealt`,{timeout:60000},async()=>{

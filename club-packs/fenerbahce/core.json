@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "clubId": "fenerbahce",
   "contentLocale": "en",
+ "note": "Wired by hand on 2026-11-23, outside the research desk; the rest of the opening was written by scripts/clubs/promote.ts --complete on 2026-11-24. Nothing in it was approved by that script.",
   "sources": [
     {"id": "uefa-61506", "title": "UEFA · Fenerbahçe 1-1 Csepel · 1959-09-13", "url": "https://www.uefa.com/uefachampionsleague/match/61506--", "publisher": "UEFA", "access": "available", "checkedAt": "2026-11-23", "official": "competition"},
     {"id": "uefa-61507", "title": "UEFA · Csepel 2-3 Fenerbahçe · 1959-09-23", "url": "https://www.uefa.com/uefachampionsleague/match/61507--", "publisher": "UEFA", "access": "available", "checkedAt": "2026-11-23", "official": "competition"},

@@ -8,6 +8,7 @@ const OPEN=['aek-athens','celtic','olympiacos','panathinaikos','st-pauli','zrinj
 // repository clubs since 13–14.11.2026: their staged history moved into their packs on 17.11.2026 (rule archive-single-source)
 const MOVED=['atalanta','maccabi-haifa']
 
+const HAND_WIRED=new Set(['fenerbahce','partizan-belgrade'])
 describe('research bundle 2026-10-20',()=>{
  for(const id of OPEN)it(`${id}: every approved record reaches the club or is reported as a conflict`,async()=>{
   const w=wave(id),approved=w.matches.filter(m=>m.status==='approved')
@@ -30,8 +31,9 @@ describe('research bundle 2026-10-20',()=>{
   const dirs=readdirSync('research-staging').filter(d=>existsSync(`research-staging/${d}/wave-history-2026-10-20.json`))
   expect(dirs.length).toBeGreaterThanOrEqual(8)
   // 10.11.2026 (rule 143): a club the owner opened on the research desk is promoted — its pack says so, and the staged file stays as it was, the record of what he approved
+  // 24.11.2026: Fenerbahce and Partizan were wired by hand on 23.11.2026, outside the desk; their packs say exactly that (scripts/clubs/promote.ts --complete). No other way in.
   for(const d of dirs){const w=JSON.parse(readFileSync(`research-staging/${d}/wave-history-2026-10-20.json`,'utf8')) as W;expect(w.matches.every(m=>m.status==='review')).toBe(true)
-   if(existsSync(`club-packs/${d}/core.json`))expect(String(JSON.parse(readFileSync(`club-packs/${d}/core.json`,'utf8')).note||'')).toMatch(/^Promoted from the research desk/);else expect(existsSync(`club-packs/${d}`)).toBe(false)}
+   if(existsSync(`club-packs/${d}/core.json`))expect(String(JSON.parse(readFileSync(`club-packs/${d}/core.json`,'utf8')).note||'')).toMatch(HAND_WIRED.has(d)?/^Wired by hand on 2026-11-23, outside the research desk/:/^Promoted from the research desk/);else expect(existsSync(`club-packs/${d}`)).toBe(false)}
  })
  it('only CC0 sources feed the new waves',()=>{
   for(const id of OPEN){const w=JSON.parse(readFileSync(`club-packs/${id}/wave-history-2026-10-20.json`,'utf8')) as {sources:{license?:string}[]};expect(w.sources.every(s=>s.license==='CC0-1.0')).toBe(true)}
