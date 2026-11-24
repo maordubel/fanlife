@@ -9,6 +9,7 @@ const EN = {
   'watch.youtube': 'Watch on YouTube',
   'watch.film.night': 'Our film about this night',
   'watch.film.season': 'Our film about this season',
+  'watch.film.club': 'Our film about this club',
   'watch.film.by': 'FanLife: Football Stories',
   'watch.more': 'More from this night',
   'watch.source': 'Archive: {publisher}',

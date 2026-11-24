@@ -49,3 +49,14 @@ export function chapterFits(view: ClubArchiveView, birthYear: number | null, mis
   }
   return out
 }
+
+/**
+ * The nights a life stands on, ready for the hood: mission id → the archive row, exactly as approved, for every chapter
+ * the Fitter dated. A chapter that is not here is personal (no date, no score). Serialisable: the page hands it to the game.
+ */
+export function storyNights(view: ClubArchiveView, birthYear: number | null, missions: readonly Mission[] = CHILDHOOD): Record<string, ArchiveRef> {
+  const fits = chapterFits(view, birthYear, missions)
+  const out: Record<string, ArchiveRef> = {}
+  for (const m of missions) { const n = nightFor(m, fits, birthYear); if (n.dated) out[m.id] = n.anchor }
+  return out
+}

@@ -17,7 +17,7 @@
  *   highlights   HighlightsMoment | null   the match film (from `watchFor`), or null
  *   more         HighlightsMoment[]        other recorded films of the same night (optional)
  *   ourFilm      OurFilmMoment | null      the studio's film (optional)
- *   ourFilmFit   'night' | 'season' | null which heading the film gets (optional; default 'night')
+ *   ourFilmFit   'night' | 'season' | 'club' | null  which heading the film gets (optional; default 'night')
  *   slate        WatchSlate | null         the archive row's own facts (optional)
  *   accent       string                    the club accent AFTER the colour policy (optional; cream when absent)
  *   onContinue   () => void                the one way on
@@ -31,7 +31,7 @@ export type WatchCardProps = {
   highlights: HighlightsMoment | null
   more?: readonly HighlightsMoment[]
   ourFilm?: OurFilmMoment | null
-  ourFilmFit?: 'night' | 'season' | null
+  ourFilmFit?: 'night' | 'season' | 'club' | null
   slate?: WatchSlate | null
   accent?: string
   onContinue: () => void
@@ -50,7 +50,7 @@ export function WatchCard({highlights, more = [], ourFilm = null, ourFilmFit = '
   const src = playing ? embedUrl(playing) : null
   const start = (m: Playing) => { setPlaying(m); onPlay?.(m) }
   const style = accent ? ({'--wc-accent': accent} as CSSProperties) : undefined
-  const filmHead = ourFilmFit === 'season' ? watchWord('watch.film.season') : watchWord('watch.film.night')
+  const filmHead = ourFilmFit === 'season' ? watchWord('watch.film.season') : ourFilmFit === 'club' ? watchWord('watch.film.club') : watchWord('watch.film.night')
   const shown = playing ?? first
   const link = shown ? watchUrl(shown) : null
 

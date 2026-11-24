@@ -31,7 +31,8 @@ const PERSON_PLACE: Record<PersonId, PlaceId | null> = {dad: 'home', mate: 'corn
 /** where the job's next stop is: a place id, or null */
 export function jobPlaces(run: Pick<HoodRun, 'job' | 'sim' | 'level'>): Set<PlaceId> {
   const out = new Set<PlaceId>(), h = run.level.hood!
-  if (run.job === 'idle') out.add(PERSON_PLACE[h.jobs[0]!.giver]!)
+  const at = h.jobs[0] ? PERSON_PLACE[h.jobs[0].giver] : null
+  if (run.job === 'idle' && at) out.add(at)
   else if (run.job === 'active') {
     const s = run.level.steps[run.sim.step]
     if (s) { const near = h.places.map(p => [p, Math.hypot(p.x - s.x, p.z - s.z)] as const).sort((a, b) => a[1] - b[1])[0]; if (near) out.add(near[0].id) }
@@ -85,20 +86,22 @@ export function placeNear(m: DistrictModel, x: number, y: number, tol: number): 
   return best
 }
 
-export type Target = {x: number; z: number; kind: 'waypoint' | 'step'}
+export type Target = {x: number; z: number; kind: 'waypoint' | 'step' | 'giver'}
 /** what the HUD arrow points to: the player's waypoint first, else the open step of the job, else nothing */
-export function hudTarget(run: HoodRun, waypoint: PlaceId | null): Target | null {
+export function hudTarget(run: HoodRun, waypoint: PlaceId | null, giver: PersonId | null = null): Target | null {
   if (waypoint) { const p = run.level.hood!.places.find(q => q.id === waypoint); if (p) return {x: p.x, z: p.z, kind: 'waypoint'} }
   if (openStep(run) >= 0) { const t = stepTarget(run.level, run.sim); if (t) return {x: t.x, z: t.z, kind: 'step'} }
+  // nothing open: the person who gives the next mission (the story always has one; nothing walks him there)
+  if (giver) { const p = run.level.hood!.people.find(q => q.id === giver); if (p) return {x: p.x, z: p.z, kind: 'giver'} }
   return null
 }
 export const metresTo = (run: Pick<HoodRun, 'sim'>, t: {x: number; z: number}): number => Math.round(Math.hypot(t.x - run.sim.x, t.z - run.sim.z))
 
 /** the minimap's ring: how far through the job (when one is open) or how far down the street to the ground */
 export function ringProgress(run: HoodRun): number {
-  const h = run.level.hood!, j = h.jobs[0]!
+  const h = run.level.hood!, j = h.jobs[0]
   if (run.job === 'done') return 1
-  if (run.job === 'active') return Math.max(0, Math.min(1, (run.sim.step - j.from) / j.steps))
+  if (run.job === 'active' && j) return Math.max(0, Math.min(1, (run.sim.step - j.from) / j.steps))
   const b = run.level.bounds
   return Math.max(0, Math.min(1, (run.level.start.z - run.sim.z) / (run.level.start.z - b.z0)))
 }

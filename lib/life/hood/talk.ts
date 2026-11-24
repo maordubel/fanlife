@@ -8,14 +8,16 @@
 import type {PersonId} from './types'
 import type {JobState} from './run'
 
-export type Effect = 'accept'
+/** `accept`: the M1 job opens. A story choice: `story:accept:<mission>:<approach>`, `story:answer:<choice>`, `story:end-day`. */
+export type Effect = 'accept' | `story:${string}`
 export type TalkChoice = {key: string; to: string | null; effect?: Effect}
 /** what a line FEELS like: the speaker's face, what his arms and body do with it, how the camera holds it, and how the player's own face answers */
 export type TalkMood = 'neutral' | 'warm' | 'smile' | 'laugh' | 'worried' | 'proud' | 'surprised'
 export type TalkGesture = 'open' | 'point' | 'shoulder' | 'ruffle' | 'wave' | 'thumb' | 'cheer' | 'nod' | 'laugh' | 'shrug' | 'give' | 'scarfOn'
 export type Feel = {mood?: TalkMood; gesture?: TalkGesture; /** `close`: the camera goes in on the faces for a line that matters */ shot?: 'two' | 'close'; /** a moment the picture answers (the scarf goes round his neck) */ beat?: 'scarf'; you?: TalkMood}
 export type TalkNode = {id: string; who: PersonId; line: string; choices?: TalkChoice[]; /** the node a tap goes on to (null ends the talk) */ next?: string | null} & Feel
-export type TalkScript = {who: PersonId; start: string; nodes: Record<string, TalkNode>}
+/** `narration`: nobody in the street is speaking (a complication told as it happens); the picture holds no talk shot */
+export type TalkScript = {who: PersonId; start: string; nodes: Record<string, TalkNode>; narration?: boolean}
 export type TalkCtx = {job: JobState; giver: PersonId; offerKey: string}
 export type TalkStep = {node: TalkNode | null; effect: Effect | null}
 
@@ -67,6 +69,15 @@ const FEEL: Record<string, Feel> = {
   'hood.say.kiosk.done': {mood: 'smile', gesture: 'thumb', you: 'smile'},
   'hood.say.neighbour.idle': {mood: 'worried', gesture: 'shrug', you: 'warm'},
   'hood.say.neighbour.done': {mood: 'laugh', gesture: 'laugh', you: 'smile'},
+  // the story's lines that matter: the scarf goes on at the first noise, the box is handed over
+  'story.s.first-noise.dad': {mood: 'proud', gesture: 'scarfOn', shot: 'close', beat: 'scarf', you: 'surprised'},
+  'story.s.first-noise.mate': {mood: 'smile', gesture: 'give', you: 'smile'},
+  'story.s.six-short.shirt': {mood: 'proud', gesture: 'ruffle', shot: 'close', you: 'proud'},
+  'story.s.the-way-in.dad': {mood: 'warm', gesture: 'shoulder', you: 'warm'},
+  'story.s.no-ticket.home': {mood: 'warm', gesture: 'shoulder', shot: 'close', you: 'worried'},
+  'story.s.the-box.dad': {mood: 'proud', gesture: 'give', shot: 'close', you: 'proud'},
+  'story.s.her-seat.after': {mood: 'warm', gesture: 'open', shot: 'close', you: 'warm'},
+  'story.s.lead-the-way.dad': {mood: 'warm', gesture: 'point', you: 'proud'},
 }
 /** how a node is played: its line's feeling, with the node's own on top; a plain line is said warmly */
 export function feelOf(n: TalkNode): Feel {

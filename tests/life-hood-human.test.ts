@@ -18,7 +18,8 @@ async function clubOf(id: string): Promise<HoodClub> {
   return {id, skin: pack.skin, cast: pack.cast}
 }
 
-describe('the street notices the player', () => {
+// the first `loadClub` of a club compiles its whole pack from source (6–10 s cold, measured 24.11.2026); the tests themselves run in milliseconds
+describe('the street notices the player', {timeout: 60_000}, () => {
   it('every voice has words: warm, short, no digits, greetings by the name he typed', async () => {
     const a = hoodAmbient(hoodLevel(await clubOf('olympiacos'), 1))
     for (const k of ambientKeys(a)) {
@@ -62,7 +63,7 @@ describe('the street notices the player', () => {
   })
 })
 
-describe('lines carry a feeling', () => {
+describe('lines carry a feeling', {timeout: 60_000}, () => {
   it('Dad offers with a hand on the shoulder, and the scarf is a beat the picture answers', async () => {
     const level = hoodLevel(await clubOf('olympiacos'), 1), j = level.hood!.jobs[0]!
     const offer = talkScript('dad', j.offerKey, {job: 'idle', giver: j.giver, offerKey: j.offerKey})

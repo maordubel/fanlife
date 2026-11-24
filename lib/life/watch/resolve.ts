@@ -38,6 +38,18 @@ export function watchFor(clubId: string, q: WatchQuery): WatchAnswer | null {
   return {highlights: hs[0] ?? null, moreHighlights: hs.slice(1), ourFilm, ourFilmFit: night ? 'night' : season ? 'season' : null, transition}
 }
 
+/**
+ * The watch moment after a mission that stands on a real night: the night's highlights or our film of the night or its
+ * season (`watchFor`), otherwise our own film about the club, labelled as a film about the club and not about the night;
+ * otherwise nothing. Only recorded ids, as everywhere in this layer.
+ */
+export function watchForNight(clubId: string, day: string | null): WatchAnswer | null {
+  const a = day ? watchFor(clubId, {matchDate: day}) : null
+  if (a) return a
+  const film = OUR_FILMS.find(f => f.clubId === clubId && f.form === 'film' && isYoutubeId(f.youtubeId))
+  return film ? {highlights: null, moreHighlights: [], ourFilm: film, ourFilmFit: 'club', transition: null} : null
+}
+
 /** the interstitial for a use, where one exists for this club (today: the Worker's clips, Hapoel Tel Aviv only) */
 export const transitionFor = (clubId: string, use: TransitionMoment['use']): TransitionMoment | null => TRANSITION_CLIPS.find(t => t.clubId === clubId && t.use === use) ?? null
 

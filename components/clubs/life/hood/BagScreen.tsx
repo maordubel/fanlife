@@ -6,7 +6,9 @@ import {Icon, type IconName} from './Icons'
 import css from './hood.module.css'
 
 type W = (k: string, extra?: Record<string, string>) => string
-const ICON: Record<BagId, IconName> = {scarf: 'scarf', ticket: 'ticket', pass: 'pass', bag: 'bag', batteries: 'battery', 'dads-scarf': 'scarf'}
+const ICON: Record<string, IconName> = {scarf: 'scarf', ticket: 'ticket', pass: 'pass', bag: 'bag', batteries: 'battery', 'dads-scarf': 'scarf', 'carry:battery': 'battery', 'keep:scarf': 'scarf', 'keep:ticket': 'ticket', 'keep:box': 'pass'}
+/** a story thing: its own icon where there is one, a bag for what he carries, the ticket's half for what went in the Box */
+const iconOf = (id: BagId): IconName => ICON[id] ?? (id.startsWith('carry:') ? 'bag' : id.startsWith('keep:') ? 'ticket' : 'bag')
 
 /** the supporter, drawn: jacket, trousers, and the terrace scarf in the club's colours when it is worn */
 function Figure({scarf, accent, second}: {scarf: boolean; accent: string; second: string}) {
@@ -53,7 +55,7 @@ export function BagScreen({w, items, accent, second, onWear, onClose, onTab}: {w
               <button key={i.id} type="button" className={css.lgSlot + ' min-h-tap'} data-state={i.state} aria-pressed={sel === i.id} onClick={() => setSel(i.id)}>
                 {i.worn && <span className={css.lgSlotWorn} aria-hidden="true" />}
                 {i.count > 1 && <span className={css.lgSlotCount}>{w('hood.bag.count', {n: String(i.count)})}</span>}
-                <Icon n={i.state === 'locked' ? 'lock' : ICON[i.id]} />
+                <Icon n={i.state === 'locked' ? 'lock' : iconOf(i.id)} />
                 <span>{w(i.nameKey)}</span>
               </button>
             ))}

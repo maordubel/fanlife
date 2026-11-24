@@ -12,13 +12,15 @@ import {isYellowHex} from '@/lib/isYellow'
 import {bannedColour} from '@/lib/life/rush-render/colour'
 import type {VoxelSkin} from '@/lib/life/universal/skin'
 
-export type Screen = 'boot' | 'title' | 'name' | 'intro' | 'playing' | 'pause' | 'map' | 'bag' | 'dialogue' | 'cutscene' | 'jobdone' | 'settings' | 'help'
+/** `story`: the story's own cards over the street (a chapter's title card, the watch card, the aftermath), one after another */
+export type Screen = 'boot' | 'title' | 'name' | 'intro' | 'playing' | 'pause' | 'map' | 'bag' | 'dialogue' | 'cutscene' | 'jobdone' | 'settings' | 'help' | 'story'
 export type Shell = {screen: Screen; /** where settings / help / map / bag go back to */ back: Screen | null; hasSave: boolean; name: string}
 export type ShellEvent =
   | {t: 'booted'; hasSave: boolean; play?: boolean; name?: string}
   | {t: 'new'} | {t: 'name'; name: string} | {t: 'introDone'} | {t: 'continue'; name?: string}
   | {t: 'open'; to: 'pause' | 'map' | 'bag' | 'settings' | 'help'}
   | {t: 'back'} | {t: 'resume'} | {t: 'talk'} | {t: 'talkEnd'} | {t: 'jobDone'} | {t: 'cutDone'} | {t: 'cardDone'} | {t: 'quit'} | {t: 'esc'}
+  | {t: 'story'} | {t: 'storyDone'}
 
 export const initialShell: Shell = {screen: 'boot', back: null, hasSave: false, name: ''}
 /** only here does the street simulate with the player's input */
@@ -26,7 +28,7 @@ export const simRuns = (s: Screen): boolean => s === 'playing'
 /** screens over the live street where the picture turns slowly by itself (the crane), no player in it */
 export const isCrane = (s: Screen): boolean => s === 'title' || s === 'name' || s === 'intro' || s === 'cutscene' || s === 'boot'
 /** screens that dim the picture behind a full panel */
-export const isFull = (s: Screen): boolean => s === 'pause' || s === 'map' || s === 'bag' || s === 'settings' || s === 'help' || s === 'jobdone'
+export const isFull = (s: Screen): boolean => s === 'pause' || s === 'map' || s === 'bag' || s === 'settings' || s === 'help' || s === 'jobdone' || s === 'story'
 
 export const NAME_MAX = 14
 /** letters, digits, space, apostrophe and hyphen only; collapsed spaces; at most NAME_MAX */
@@ -58,6 +60,9 @@ export function reduce(s: Shell, e: ShellEvent): Shell {
     case 'cutDone': return at === 'cutscene' ? go(s, 'jobdone') : s
     case 'cardDone': return at === 'jobdone' ? go(s, 'playing') : s
     case 'quit': return at === 'pause' ? go(s, 'title') : s
+    // the story's cards open over the street once a talk has closed, and always give it back
+    case 'story': return at === 'playing' || at === 'dialogue' ? go(s, 'story') : s
+    case 'storyDone': return at === 'story' ? go(s, 'playing') : s
     case 'esc': switch (at) {
       case 'playing': return go(s, 'pause')
       case 'pause': return go(s, 'playing')
@@ -67,6 +72,7 @@ export function reduce(s: Shell, e: ShellEvent): Shell {
       case 'cutscene': return go(s, 'jobdone')
       case 'name': return go(s, 'title')
       case 'jobdone': return go(s, 'playing')
+      case 'story': return go(s, 'playing')
       default: return s
     }
   }

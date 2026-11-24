@@ -6,7 +6,8 @@ import type {Look} from '@/lib/life/rush/level'
 
 export type PlaceId = 'home' | 'kiosk' | 'corner' | 'school' | 'pitch' | 'ground'
 export type PersonId = 'dad' | 'mate' | 'kiosk' | 'neighbour'
-export type JobId = 'before-kickoff'
+/** a job's id: the M1 job, or a story mission's id (`lib/life/hood/story`) */
+export type JobId = string
 
 /** a named place: a words key (`hood.place.*`), where it is and how near counts as "at" it */
 export type HoodPlace = {id: PlaceId; key: string; x: number; z: number; r: number}

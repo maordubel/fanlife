@@ -13,7 +13,11 @@ import type {HoodJob, HoodPerson, HoodPlace, PersonId} from './types'
 import {HOOD} from './level'
 
 export type JobState = 'idle' | 'active' | 'done'
-export type HoodRun = {level: Level; sim: Sim; job: JobState; said: Partial<Record<PersonId, number>>; lastPlace: string | null}
+/**
+ * `job` is the state of the job IN FOCUS, which is always `level.hood.jobs[0]` (the one the renderer marks and the HUD names);
+ * `board` holds every job the run knows: offered (idle), the one being done (active), and those finished (done).
+ */
+export type HoodRun = {level: Level; sim: Sim; job: JobState; board: Record<string, JobState>; said: Partial<Record<PersonId, number>>; lastPlace: string | null}
 export type HoodEvent =
   | {k: 'say'; who: PersonId; key: string}
   | {k: 'job'; state: 'start' | 'done'; id: string}
@@ -29,10 +33,23 @@ export function startHood(level: Level): HoodRun {
   const sim = startSim(level)
   // no job is open until somebody gives it: the sim's step points past the last step
   sim.step = level.steps.length
-  return {level, sim, job: 'idle', said: {}, lastPlace: null}
+  return {level, sim, job: 'idle', board: Object.fromEntries(level.hood.jobs.map(j => [j.id, 'idle' as JobState])), said: {}, lastPlace: null}
 }
 
 const jobOf = (run: HoodRun): HoodJob => run.level.hood!.jobs[0]!
+
+/**
+ * What is on offer now (the story director decides it): the list becomes the level's jobs, the first one in focus. The job
+ * being done stays in focus while it is open; a job already finished keeps its place on the board.
+ */
+export function offerJobs(run: HoodRun, jobs: HoodJob[]): void {
+  const h = run.level.hood!
+  const open = run.job === 'active' ? h.jobs[0]! : null
+  const list = open ? [open, ...jobs.filter(j => j.id !== open.id)] : jobs
+  h.jobs.splice(0, h.jobs.length, ...list)
+  for (const j of jobs) if (run.board[j.id] !== 'active') run.board[j.id] = 'idle'
+  if (!open) { run.job = h.jobs.length ? 'idle' : 'done'; run.sim.step = run.level.steps.length }
+}
 /** the job's step that is open now (-1 when no job is open) */
 export const openStep = (run: HoodRun): number => run.job === 'active' ? run.sim.step : -1
 
@@ -53,6 +70,7 @@ export function placeAt(level: Level, x: number, z: number): HoodPlace | null {
 /** what a person says now, given how the job stands */
 export function lineFor(run: HoodRun, p: HoodPerson): string {
   const j = jobOf(run), step = openStep(run)
+  if (!j) return `hood.say.${p.id}.idle`
   if (p.id === j.giver) return run.job === 'idle' ? j.offerKey : run.job === 'active' ? j.againKey : j.doneKey
   if (p.id === 'kiosk') return run.job === 'active' && step === j.from ? 'hood.say.kiosk.job' : run.job === 'done' ? 'hood.say.kiosk.done' : 'hood.say.kiosk.idle'
   if (p.id === 'mate') return run.job === 'active' && step > j.from + 1 ? 'hood.say.mate.done' : run.job === 'active' ? 'hood.say.mate.wait' : run.job === 'done' ? 'hood.say.mate.done' : 'hood.say.mate.idle'
@@ -65,13 +83,19 @@ export function stepHood(run: HoodRun, input: Input, dt = STEP): HoodEvent[] {
   const out: HoodEvent[] = []
   let spoke = false
   for (const e of sim.events) {
-    if (e.k === 'talk') { out.push({k: 'say', who: (e.key.split('.')[2] ?? 'dad') as PersonId, key: e.key}); spoke = true }
+    // a step's line is said by whoever stands at the step (a story line's key does not name its speaker)
+    if (e.k === 'talk') { out.push({k: 'say', who: personNear(run)?.id ?? (e.key.split('.')[2] ?? 'dad') as PersonId, key: e.key}); spoke = true }
     else if (e.k === 'step') out.push({k: 'step', next: e.next})
     else if (e.k === 'pickup') out.push({k: 'pickup', kind: e.kind})
     else if (e.k === 'hit') out.push({k: 'hit'})
   }
   const j = jobOf(run)
-  if (run.job === 'active' && sim.step >= j.from + j.steps) { run.job = 'done'; out.push({k: 'job', state: 'done', id: j.id}) }
+  if (j && run.job === 'active' && sim.step >= j.from + j.steps) {
+    run.job = 'done'; run.board[j.id] = 'done'
+    // nothing is open until somebody gives the next job (the steps after this one belong to other jobs)
+    sim.step = level.steps.length
+    out.push({k: 'job', state: 'done', id: j.id})
+  }
   // talk: the player pressed it beside somebody who did not already answer through a step
   if (input.act && !spoke) {
     const p = personNear(run)
@@ -88,10 +112,18 @@ export function stepHood(run: HoodRun, input: Input, dt = STEP): HoodEvent[] {
 }
 
 /** the accept choice of the giver's offer: the job opens, its first step is the open one. Nothing else opens a job. */
-export function acceptJob(run: HoodRun): HoodEvent[] {
-  if (run.job !== 'idle') return []
+export function acceptJob(run: HoodRun, id?: string, as?: HoodJob): HoodEvent[] {
+  const h = run.level.hood!
+  if (run.job === 'active') return []
+  if (id !== undefined) {
+    const i = h.jobs.findIndex(x => x.id === id)
+    if (i < 0 && !as) return []
+    // the accepted job comes into focus; `as` is the same job with the steps of the way he chose to do it
+    const pick = as ?? h.jobs[i]!
+    h.jobs.splice(0, h.jobs.length, pick, ...h.jobs.filter(x => x.id !== pick.id))
+  } else if (run.job !== 'idle') return []
   const j = jobOf(run)
-  run.job = 'active'; run.sim.step = j.from
+  run.job = 'active'; run.board[j.id] = 'active'; run.sim.step = j.from
   return [{k: 'job', state: 'start', id: j.id}, {k: 'step', next: run.sim.step}]
 }
 

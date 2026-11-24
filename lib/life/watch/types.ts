@@ -72,7 +72,8 @@ export type WatchAnswer = {
   /** other recorded films of the same night (a goal, the penalties, an interview) */
   moreHighlights: HighlightsMoment[]
   ourFilm: OurFilmMoment | null
-  /** 'night': the studio's record names this very night; 'season': the film is of the season the night falls in */
-  ourFilmFit: 'night' | 'season' | null
+  /** 'night': the studio's record names this very night; 'season': the film is of the season the night falls in;
+   *  'club': no film of the night or its season, so our film about the club, labelled as such (`watchForNight`) */
+  ourFilmFit: 'night' | 'season' | 'club' | null
   transition: TransitionMoment | null
 }

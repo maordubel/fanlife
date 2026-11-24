@@ -2819,17 +2819,22 @@
      "stage": "child",
      "age": 6,
      "night": {
-      "factId": "30446434f568",
-      "on": "1985-05-18",
-      "year": 1985,
+      "factId": "deb56ea97ab5",
+      "on": "1983-06-01",
+      "year": 1983,
       "precision": "day",
-      "title": "Hapoel Tel Aviv 4-0 Hakoah Ramat Gan",
+      "title": "Landau's hand",
       "locale": "en",
       "sources": [
        {
+        "title": "ynet (in Hebrew)",
+        "publisher": "ynet (in Hebrew)",
+        "url": "https://www.ynet.co.il/articles/0,7340,L-219628,00.html"
+       },
+       {
         "title": "Vikipoel (in Hebrew)",
         "publisher": "Vikipoel (in Hebrew)",
-        "url": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games"
+        "url": "https://wiki.red-fans.com/"
        }
       ]
      },
@@ -2842,7 +2847,7 @@
       "Childhood",
       "Age 6",
       "The First Noise",
-      "1985-05-18"
+      "1983-06-01"
      ],
      "status": "requested"
     },
@@ -2854,17 +2859,22 @@
      "stage": "child",
      "age": 6,
      "night": {
-      "factId": "30446434f568",
-      "on": "1985-05-18",
-      "year": 1985,
+      "factId": "deb56ea97ab5",
+      "on": "1983-06-01",
+      "year": 1983,
       "precision": "day",
-      "title": "Hapoel Tel Aviv 4-0 Hakoah Ramat Gan",
+      "title": "Landau's hand",
       "locale": "en",
       "sources": [
        {
+        "title": "ynet (in Hebrew)",
+        "publisher": "ynet (in Hebrew)",
+        "url": "https://www.ynet.co.il/articles/0,7340,L-219628,00.html"
+       },
+       {
         "title": "Vikipoel (in Hebrew)",
         "publisher": "Vikipoel (in Hebrew)",
-        "url": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games"
+        "url": "https://wiki.red-fans.com/"
        }
       ]
      },
@@ -2875,8 +2885,8 @@
      ],
      "beats": [
       "Matchday",
-      "1985-05-18",
-      "Hapoel Tel Aviv 4-0 Hakoah Ramat Gan"
+      "1983-06-01",
+      "Landau's hand"
      ],
      "status": "requested"
     },
@@ -2948,17 +2958,17 @@
      "stage": "child",
      "age": 8,
      "night": {
-      "factId": "a0a9acf69c7b",
-      "on": "1986-12-06",
+      "factId": "ca4aa4d00c5c",
+      "on": "1986-05-24",
       "year": 1986,
       "precision": "day",
-      "title": "Hapoel Tel Aviv 0-1 Beitar Jerusalem",
+      "title": "minute 86",
       "locale": "en",
       "sources": [
        {
-        "title": "Vikipoel (in Hebrew)",
-        "publisher": "Vikipoel (in Hebrew)",
-        "url": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games"
+        "title": "ynet (in Hebrew)",
+        "publisher": "ynet (in Hebrew)",
+        "url": "https://www.ynet.co.il/articles/0,7340,L-3717109,00.html"
        }
       ]
      },
@@ -2971,7 +2981,7 @@
       "Childhood",
       "Age 8",
       "The Way In",
-      "1986-12-06"
+      "1986-05-24"
      ],
      "status": "requested"
     },
@@ -2983,17 +2993,17 @@
      "stage": "child",
      "age": 8,
      "night": {
-      "factId": "a0a9acf69c7b",
-      "on": "1986-12-06",
+      "factId": "ca4aa4d00c5c",
+      "on": "1986-05-24",
       "year": 1986,
       "precision": "day",
-      "title": "Hapoel Tel Aviv 0-1 Beitar Jerusalem",
+      "title": "minute 86",
       "locale": "en",
       "sources": [
        {
-        "title": "Vikipoel (in Hebrew)",
-        "publisher": "Vikipoel (in Hebrew)",
-        "url": "https://wiki.red-fans.com/index.php?title=Special:CargoTables/Games"
+        "title": "ynet (in Hebrew)",
+        "publisher": "ynet (in Hebrew)",
+        "url": "https://www.ynet.co.il/articles/0,7340,L-3717109,00.html"
        }
       ]
      },
@@ -3004,8 +3014,8 @@
      ],
      "beats": [
       "Matchday",
-      "1986-12-06",
-      "Hapoel Tel Aviv 0-1 Beitar Jerusalem"
+      "1986-05-24",
+      "minute 86"
      ],
      "status": "requested"
     },
