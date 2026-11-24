@@ -180,6 +180,16 @@ def tint_regions(cloth, rig):
                         if y in bedges and y not in seen: seen.add(y); stack.append(y)
             loops.append(comp)
         bset = set(bedges); loops = [l for l in loops if len(l) >= 6]
+        # a seam between two pieces of the same top is not an opening: drop loops whose vertices sit on another loop's
+        allv = [(k, v.co.copy()) for k, l in enumerate(loops) for e in l for v in e.verts]
+        kd_all = KDTree(len(allv))
+        for i, (k, co) in enumerate(allv): kd_all.insert(co, i)
+        kd_all.balance()
+        def is_seam(k):
+            vs = [v.co for e in loops[k] for v in e.verts]
+            near = sum(1 for co in vs if any(allv[i][0] != k for _, i, _ in kd_all.find_range(co, 0.003)))
+            return near > 0.5 * len(vs)
+        loops = [l for k, l in enumerate(loops) if not is_seam(k)]
         if len(loops) >= 2:
             cz = [sum(v.co.z for e in l for v in e.verts) / (2 * len(l)) for l in loops]
             hem = cz.index(min(cz))
