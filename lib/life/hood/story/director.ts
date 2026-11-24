@@ -69,7 +69,8 @@ export function nextMissions(state: StoryState): Offer[] {
   const main = waits(state) === 0 ? ahead(state).map(m => offer(state, m, 'main')) : []
   const sides = MISSIONS.filter(m => m.kind === 'side' && !state.done.includes(m.id) && m.age <= state.age && holds(state, m.needs)).map(m => offer(state, m, 'side'))
   // the week's work of the stage he is living (a boy's papers round, a young man's shift)
-  const standing = main.length ? [] : standingFor(state.age).map(m => offer(state, m, 'standing'))
+  // (the one done least often first, so the week is never the same chore twice in a row)
+  const standing = main.length ? [] : rotate(standingFor(state.age), state).map(m => offer(state, m, 'standing'))
   return [...main, ...sides, ...standing].filter(o => o.approaches.length > 0)
 }
 
@@ -85,6 +86,16 @@ export function accept(state: StoryState, missionId: string, approachId: string)
 /** he changed his mind before the end: the mission closes with nothing changed and is offered again */
 export const walkAway = (state: StoryState): StoryState => ({...state, open: null})
 
+/** the week's work, the one done least often first (a stable order between equals) */
+export const rotate = (list: readonly Mission[], state: Pick<StoryState, 'times'>): Mission[] =>
+  list.map((m, i) => ({m, i})).sort((a, b) => (state.times[a.m.id] ?? 0) - (state.times[b.m.id] ?? 0) || a.i - b.i).map(x => x.m)
+
+/** what an outcome changes, landed on the state (the feel layer lands a challenge's slip or clean finish through it) */
+export function applyEffects(state: StoryState, effects: readonly Effect[]): {state: StoryState; events: StoryEvent[]} {
+  const events: StoryEvent[] = []
+  return {state: apply(state, effects, events), events}
+}
+
 function apply(state: StoryState, effects: readonly Effect[], events: StoryEvent[]): StoryState {
   const s = {...state, flags: {...state.flags}, bonds: {...state.bonds}, keeps: [...state.keeps]}
   for (const e of effects) {
@@ -97,8 +108,17 @@ function apply(state: StoryState, effects: readonly Effect[], events: StoryEvent
   return s
 }
 
+/**
+ * The day moves on. The build-up to matchday is FELT, not served (feel pass, 24.11.2026): when the next chapter waits for
+ * matchday, a day of the week's work jumps to its eve, and the eve to the day itself, so at most two small jobs stand
+ * between two matchday chapters and the week still reads Monday → the eve → matchday.
+ */
 const tomorrow = (s: StoryState, events: StoryEvent[]): StoryState => {
-  if (s.day < MATCHDAY) return {...s, day: s.day + 1}
+  if (s.day < MATCHDAY) {
+    const w = waits(s)
+    if (w > 1) { events.push({k: 'midweek', from: s.day, to: MATCHDAY - 1}); return {...s, day: MATCHDAY - 1} }
+    return {...s, day: s.day + 1}
+  }
   events.push({k: 'week', week: s.week + 1})
   return {...s, day: 0, week: s.week + 1}
 }

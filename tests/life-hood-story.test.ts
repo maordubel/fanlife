@@ -20,6 +20,7 @@ import {
   applyEffect, beatsAfter, complicationTalk, finishStory, keepOff, newPlay, openingBeat, planKey, stepDone, storyLevel, storyOver, storyTalk, syncOffers, walkToTalk, wantsComplication,
   type Beat, type StoryLevel, type StoryPlay,
 } from '@/lib/life/hood/story/play'
+import {searchInput} from '@/lib/life/hood/story/challenge/run'
 import {HIGHLIGHTS, OUR_FILMS, slateOf, watchFor, watchForNight} from '@/lib/life/watch'
 import {kindsOf} from '@/lib/life/rush/archive'
 import type {ArchiveRef} from '@/lib/life/universal/types'
@@ -65,7 +66,7 @@ function liveInTheHood(clubId: string, sl: StoryLevel, run: HoodRun, seed: numbe
     if (!play.plan) {
       if (!target) target = offers[Math.floor(r() * offers.length)]!.mission.giver
       input = walkToTalk(run, target)
-    } else input = botInput(run.level, run.sim)
+    } else input = searchInput(run, botInput(run.level, run.sim))
     // a player who walks into a corner steps out of it: still for two seconds → two seconds the other way
     if (frames % 120 === 0) { const moved = Math.hypot(run.sim.x - last.x, run.sim.z - last.z); last = {x: run.sim.x, z: run.sim.z}; if (moved < 0.3) unstick = 120 }
     if (unstick > 0) { unstick--; input = {...IDLE, x: Math.sin(seed + frames / 400), z: 0.6} }
@@ -148,9 +149,11 @@ describe('the story in the street', {timeout: 120_000}, () => {
     let play = newPlay(); syncOffers(run, sl, play)
     expect(run.level.hood!.jobs[0]!.id).toBe('first-noise'); expect(run.job).toBe('idle')
     const t = storyTalk(play, 'dad')
-    expect(t.start).toBe('menu')
+    // a chapter is never behind a menu (feel pass, 24.11.2026): its offer first, the small jobs behind "Something else?"
+    expect(t.start).toBe('m:first-noise')
     const offer = t.nodes['m:first-noise']!
-    expect(offer.choices!.map(c => c.key)).toEqual(['story.m.first-noise.a.kiosk-first', 'story.m.first-noise.a.scarf-first', 'story.m.first-noise.a.next-door', 'story.talk.later'])
+    expect(offer.choices!.map(c => c.key)).toEqual(['story.m.first-noise.a.kiosk-first', 'story.m.first-noise.a.scarf-first', 'story.m.first-noise.a.next-door', 'story.talk.other', 'story.talk.later'])
+    expect(t.nodes.menu!.choices!.some(c => c.key === 'story.m.old-photo.title')).toBe(true)
     expect(offer.choices!.at(-1)!.effect).toBeUndefined()
     play = applyEffect(run, sl, play, 'story:accept:first-noise:next-door').play
     expect(play.plan).toBe(planKey('first-noise', 'next-door')); expect(run.job).toBe('active')

@@ -219,6 +219,18 @@
 .lgChips2 { position: absolute; inset-block-start: calc(10px + var(--lg-safe-t) + 92px); inset-inline-start: 106px; display: flex; gap: 6px; flex-wrap: wrap; }
 .lgPill { display: inline-flex; align-items: center; gap: 6px; min-block-size: 28px; padding-inline: 10px; font-size: .75rem; letter-spacing: .06em; font-variant-numeric: tabular-nums; }
 .lgPill svg { inline-size: 14px; block-size: 14px; flex: none; }
+/* the feel pass: the Heart (a quiet meter, never a popup), the mission's clock, his inner voice */
+.lgHeart { position: relative; overflow: hidden; }
+.lgHeart i { position: absolute; inset-block: 0; inset-inline-start: 0; background: var(--lg-accent); opacity: .22; pointer-events: none; }
+.lgHeart b { font-weight: 400; opacity: .8; }
+.lgTick { position: absolute; inset-block-start: calc(118px + var(--lg-safe-t, 0px)); inset-inline: 12px; margin-inline: auto; max-inline-size: 360px; display: grid; gap: 2px; padding: 8px 14px; border-radius: 16px; font-size: .8125rem; text-align: center; pointer-events: none; font-variant-numeric: tabular-nums; }
+.lgTick b { font-family: var(--lg-head); font-weight: 400; font-size: 1rem; letter-spacing: .05em; }
+.lgTick[data-hot='true'] { border: 1px solid var(--lg-accent); animation: lgPulse 1s ease-in-out infinite alternate; }
+.lgVoice { position: absolute; inset-inline: 16px; inset-block-end: calc(210px + var(--lg-safe-b)); margin: 0 auto; max-inline-size: 420px; padding: 8px 14px; border-radius: 14px; background: var(--lg-glass-solid); color: var(--lg-cream); font-style: italic; font-size: .9375rem; line-height: 1.35; text-align: center; pointer-events: none; animation: lgRise .35s var(--lg-ease) both; }
+@keyframes lgPulse { from { box-shadow: 0 0 0 0 transparent; } to { box-shadow: 0 0 0 3px var(--lg-accent); } }
+@media (min-width: 900px) { .lgTick { inset-block-start: 24px; max-inline-size: 420px; } .lgVoice { inset-block-end: 120px; font-size: 1.0625rem; max-inline-size: 560px; } }
+@media (prefers-reduced-motion: reduce) { .lgTick[data-hot='true'], .lgVoice { animation: none; } }
+[data-reduced='true'] .lgTick[data-hot='true'], [data-reduced='true'] .lgVoice { animation: none; }
 .lgTopRight { position: absolute; inset-block-start: calc(10px + var(--lg-safe-t)); inset-inline-end: 10px; display: grid; gap: 8px; pointer-events: auto; }
 .lgTopRight .lgIconBtn { border-radius: 14px; }
 .lgPlaceToast { position: absolute; inset-block-start: calc(140px + var(--lg-safe-t)); inset-inline: 0; display: grid; justify-items: center; pointer-events: none; }

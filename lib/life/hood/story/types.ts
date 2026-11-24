@@ -114,6 +114,8 @@ export type StoryEvent =
   /** this chapter can stand on an archive night: the watch layer is asked after it */
   | {k: 'watch'; mission: string; template: string}
   | {k: 'week'; week: number}
+  /** the build-up jumped to the eve of matchday (the week is felt, never served day by day) */
+  | {k: 'midweek'; from: number; to: number}
   | {k: 'stage-end'; stage: StageId}
 
 export const MATCHDAY = 6

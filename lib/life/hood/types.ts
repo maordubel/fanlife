@@ -28,4 +28,6 @@ export type HoodMeta = {
   kiosk: {x: number; z: number}
   school: {x: number; z: number}
   pitch: {x: number; z: number; w: number; d: number}
+  /** the year the street is in when the hood knows the life's birth year (`rush-render/era.ts` dresses it); absent: no era */
+  year?: number | null
 }
