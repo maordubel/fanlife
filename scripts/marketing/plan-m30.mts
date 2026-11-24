@@ -58,4 +58,17 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   writeFileSync('supabase/marketing/0011_marketing_campaigns_m30.sql', lines.join('\n'))
   writeFileSync('scripts/marketing/plan-m30.json', JSON.stringify(built.map(b => ({...b.campaign, rows: b.rows.map(r => ({at: r.at, t: r.main.kit.t, label: r.main.label, held: !!r.held, hook: r.main.hook}))})), null, 1))
   console.log(`${built.length} campaigns, ${total} posts`)
+  // --apply (GitHub Actions, .github/workflows/marketing-campaigns.yml): each campaign goes in through worker_marketing_campaign_add;
+  // a campaign already in the queue is left alone (run twice, nothing doubles)
+  if (process.argv.includes('--apply')) {
+    const DB = (process.env.SUPABASE_URL || '').replace(/\/$/, ''), KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || ''
+    if (!DB || !KEY) throw Error('SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY missing')
+    const rpc = async (name: string, body: unknown) => { const r = await fetch(`${DB}/rest/v1/rpc/${name}`, {method: 'POST', headers: {apikey: KEY, Authorization: `Bearer ${KEY}`, 'Content-Type': 'application/json'}, body: JSON.stringify(body)}); const t = await r.text(); if (!r.ok) throw Error(`${name} ${r.status}: ${t.slice(0, 300)}`); return t ? JSON.parse(t) : null }
+    const have = new Set(((await rpc('worker_marketing_campaigns', {p_days: 365})) as {id: string}[]).map(c => c.id))
+    for (const b of built) {
+      if (have.has(b.campaign.id)) { console.log(`${b.campaign.id}: already queued`); continue }
+      const r = await rpc('worker_marketing_campaign_add', {p_rows: b.rows}) as {n: number; dropped: number}
+      console.log(`${b.campaign.id}: ${r.n} queued, ${r.dropped} in the past left out`)
+    }
+  }
 }
