@@ -18,6 +18,8 @@ const addDays = (d: string, k: number) => new Date(Date.parse(`${d}T12:00:00Z`) 
 
 export const M30: CampaignInput[] = [
   ...ROTATION.map((club, i) => ({template: 'club-days' as const, club, start: addDays(FROM, i * 3), days: 3, id: `m30-club-${club}`, name: `30 days · ${club} days`})),
+  // Football Fairy Tales on the club's own days, in its language: Good Morning on its first morning, Good Night the next night
+  ...['panathinaikos', 'olympiacos', 'aek-athens', 'celtic', 'hapoel-tel-aviv'].map(club => ({template: 'fairy-tales' as const, club, start: addDays(FROM, ROTATION.indexOf(club) * 3), days: 2, id: `m30-tales-${club}`, name: `Fairy Tales · ${club}`})),
   // Black Friday (saved in the shop: −30% Fri 27 – Mon 30 Nov): the day before, every day of it, twice on the last
   {template: 'sale-beats', start: '2026-11-26', days: 5, clubs: ['panathinaikos', 'olympiacos', 'olympiacos', 'olympiacos', 'aek-athens'], id: 'm30-black-friday', name: 'Black Friday 2026',
     sale: {label: 'Black Friday', percent: 30, ends: 'Mon 30 Nov', starts: '2026-11-27'}, times: ['08:31', '21:13']},

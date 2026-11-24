@@ -127,6 +127,34 @@ Send it to the one who’d have been there 👇
 Subscribe so the next one finds you.`,
     visual: 'L-FILM: a frame from the film itself.', kit: {t: 'L-FILM', data: {playlist: pl.id, kicker: pl.name, cta: 'Watch the film'}, to: ['feed', 'story']}}
 }
+/** FOOTBALL FAIRY TALES (owner, 24.11.2026: "Reels and viral things from Good Morning and Good Night, in the club's own
+ *  language, smart hooks, linked to YouTube, perfect branding"). The film is found at drawing time in the language's own
+ *  playlist by its title, so a scheduled episode is used the moment it is public. */
+type Tale = {list: string; gm: string; gn: string; voc: string; lang: 'el' | 'he' | 'en'; title?: {gm: string; gn: string}}
+export const FAIRY_TALES: Record<string, Tale> = {
+  'panathinaikos': {list: 'PLZ444_YkvCCE', gm: 'Καλημέρα, Παναθηναϊκ', gn: 'Καληνύχτα, Παναθηναϊκ', voc: 'Παναθηναϊκέ', lang: 'el'},
+  'olympiacos': {list: 'PLZ444_YkvCCE', gm: 'Καλημέρα, Ολυμπιακ', gn: 'Καληνύχτα, Ολυμπιακ', voc: 'Ολυμπιακέ', lang: 'el'},
+  'aek-athens': {list: 'PLZ444_YkvCCE', gm: 'Καλημέρα, ΑΕΚ', gn: 'Καληνύχτα, ΑΕΚ', voc: 'ΑΕΚ', lang: 'el'},
+  'hapoel-tel-aviv': {list: 'PLHUPZxGDyO1Q', gm: 'בוקר טוב, הפועל', gn: 'לילה טוב, הפועל', voc: 'הפועל תל אביב', lang: 'he', title: {gm: 'Good Morning, Hapoel Tel Aviv', gn: 'Good Night, Hapoel Tel Aviv'}},
+  'celtic': {list: 'PLMhV68httZF4', gm: 'Good Morning, Celtic', gn: 'Good Night, Celtic', voc: 'Celtic', lang: 'en'},
+}
+const COLOUR_EL: Record<string, string> = {'panathinaikos': 'πράσινο', 'olympiacos': 'ερυθρόλευκο', 'aek-athens': 'κιτρινόμαυρο'}
+export function fairyPost(c: ClubCard, k: C, when: 'gm' | 'gn'): Omit<Main, 'campaign'> | null {
+  const t = FAIRY_TALES[c.id]
+  if (!t) return null
+  const words = t.lang === 'el'
+    ? when === 'gm' ? {hook: `☀️ Καλημέρα, ${t.voc}! Ένα ποδοσφαιρικό παραμύθι για τον μικρό σου ${COLOUR_EL[c.id] || ''} οπαδό.`, body: 'Βάλ’ το στο παιδί πριν φύγετε για το γήπεδο — δωρεάν στο YouTube.\n\nΣτείλ’ το σε έναν μπαμπά της κερκίδας 👇', kicker: 'Ποδοσφαιρικά Παραμύθια', cta: 'Δες το τώρα'}
+      : {hook: `🌙 Καληνύχτα, ${t.voc}! Ένα ποδοσφαιρικό παραμύθι πριν τον ύπνο.`, body: 'Μετράμε αστέρια μαζί με τους θρύλους της ομάδας — δωρεάν στο YouTube.\n\nΣτείλ’ το σε όποιον βάζει παιδί για ύπνο απόψε 👇', kicker: 'Ποδοσφαιρικά Παραμύθια', cta: 'Δες το τώρα'}
+    : t.lang === 'he'
+      ? when === 'gm' ? {hook: `⚽ בוקר טוב, ${t.voc}! אגדת כדורגל לילדים ולאוהדים.`, body: 'שימו לקטנים לפני שיוצאים למשחק — בחינם ביוטיוב.\n\nשלחו לאבא אדום אחד 👇', kicker: 'Football Fairy Tales', cta: 'Watch now'}
+        : {hook: `💤 לילה טוב, ${t.voc}! אגדת כדורגל לפני השינה.`, body: 'סופרים כוכבים עם האגדות של המועדון — בחינם ביוטיוב.\n\nשלחו למי שמשכיב ילדים הערב 👇', kicker: 'Football Fairy Tales', cta: 'Watch now'}
+      : when === 'gm' ? {hook: `⚽ Good morning, ${t.voc}! A football fairy tale for the little supporter in your house.`, body: 'Put it on before you leave for the game — free on YouTube.\n\nSend it to a dad from the terrace 👇', kicker: 'Football Fairy Tales', cta: 'Watch now'}
+        : {hook: `🌙 Good night, ${t.voc}. A bedtime football story — counting stars with the club’s legends.`, body: 'Free on YouTube.\n\nSend it to whoever is putting a little one to bed tonight 👇', kicker: 'Football Fairy Tales', cta: 'Watch now'}
+  return {app: 'fanlife', label: `Fairy Tales · ${c.name} · ${when === 'gm' ? 'Good Morning' : 'Good Night'}`, tags: c.tags + ' #FootballFairyTales #KidsFootball',
+    hook: words.hook, body: `${words.body}
+Subscribe: FanLife: Football Stories.`, visual: 'L-FILM: a frame of the episode itself, in the club’s own language.',
+    kit: {t: 'L-FILM', data: {club: {id: c.id}, playlist: t.list, match: when === 'gm' ? t.gm : t.gn, kicker: words.kicker, cta: words.cta, ...(t.title ? {title: t.title[when]} : {})}, to: ['feed', 'story']}}
+}
 export function channelPost(c: ClubCard | null, k: C): Omit<Main, 'campaign'> {
   return {app: 'fanlife', label: 'YouTube · Football Stories', tags: '#FANLIFE #FootballStories #FootballDocumentary #FootballHistory',
     hook: 'Football stories nobody else tells. Free, every week. ▶️',
@@ -197,6 +225,7 @@ export const TEMPLATES = {
   'product-push': {label: 'Shop products', topic: 'shop', hint: 'One live product of the club (or the whole shop) every day.', needs: [], days: 7},
   'sale-beats': {label: 'Sale', topic: 'sale', hint: 'Every day of the sale saved in the shop: before, during, last day.', needs: [], days: 4},
   'film-push': {label: 'YouTube films', topic: 'youtube', hint: 'The club’s films, one a day, and the channel on Sundays.', needs: [], days: 7},
+  'fairy-tales': {label: 'Football Fairy Tales', topic: 'youtube', hint: 'Good Morning on the first morning, Good Night the next evening — in the club’s own language.', needs: ['club'], days: 2},
   'album-push': {label: 'The Album', topic: 'album', hint: 'The daily envelope, a club wing a day, and the launch code if you give one.', needs: [], days: 7},
   'feature-push': {label: 'A game or feature', topic: 'legends', hint: 'Legends Manager, Royal Rumble, the market or the kit archive — a club a day.', needs: ['feature'], days: 7},
 } as const satisfies Record<string, {label: string; topic: Topic; hint: string; needs: readonly string[]; days: number}>
@@ -261,6 +290,9 @@ export function buildCampaign(i: CampaignInput): {campaign: C & {template: Templ
       if (phase === 'last') put(day, T(1, '21:13'), salePost(null, k, 'last', sale))
     } else if (i.template === 'film-push') {
       put(day, T(0, '20:47'), i.playlist && !clubs.length ? playlistPost(i.playlist, k) : dow(day) === 0 ? channelPost(clubs.length ? c : null, k) : filmPost(c, k))
+    } else if (i.template === 'fairy-tales') {
+      const m = fairyPost(c, k, d % 2 ? 'gn' : 'gm')
+      if (m) put(day, T(d % 2, d % 2 ? '21:31' : '07:31'), m)
     } else if (i.template === 'album-push') {
       const angle = i.code ? (['code', 'wing', 'daily'] as const)[d % 3]! : d % 2 ? 'wing' : 'daily'
       put(day, T(0, '11:07'), albumPost(c, k, angle, i.code, d))

@@ -118,13 +118,13 @@ language plpgsql
 security definer
 set search_path to ''
 as $$
-declare launch timestamptz; target timestamptz; delta interval; r record; t timestamptz; n int := 0; local timestamp;
+declare launch timestamptz; target timestamptz; delta interval; r record; t timestamptz; n int := 0; v_local timestamp;
 begin
   if p_hold !~ '^open:[a-z0-9-]{2,60}$' then raise exception 'hold must be open:<club>'; end if;
   select send_at into launch from marketing.posts where status = 'skipped' and main->>'hold' = p_hold and main->>'launch' = 'true' order by send_at limit 1;
   if launch is null then return jsonb_build_object('ok', true, 'n', 0); end if;
-  local := now() at time zone 'Europe/Athens';
-  target := ((date_trunc('day', local) + case when local::time < time '18:30' then interval '19 hours 47 minutes' else interval '1 day 19 hours 47 minutes' end) at time zone 'Europe/Athens');
+  v_local := now() at time zone 'Europe/Athens';
+  target := ((date_trunc('day', v_local) + case when v_local::time < time '18:30' then interval '19 hours 47 minutes' else interval '1 day 19 hours 47 minutes' end) at time zone 'Europe/Athens');
   delta := target - launch;
   for r in select id, send_at from marketing.posts where status = 'skipped' and main->>'hold' = p_hold and send_at >= launch order by send_at loop
     t := r.send_at + delta;

@@ -218,11 +218,12 @@ async function main() {
           for (const k of ['hook', 'body']) if (post.fill?.[k]) patch[k] = fillWords(post.fill[k], w)
         }
         if ((s.t === 'L-FILM' || s.t === 'L-YT') && data.playlist) {
-          const films = await playlistFilms(data.playlist)
-          if (!films.length) throw Error('the playlist feed is empty')
+          let films = await playlistFilms(data.playlist)
+          if (data.match) films = films.filter(f => f.title.includes(data.match)) // one episode by its title (Fairy Tales)
+          if (!films.length) throw Error(data.match ? `no public film titled “${data.match}” yet` : 'the playlist feed is empty')
           if (s.t === 'L-FILM') {
             const long = films.filter(x => !/#shorts?\b/i.test(x.title)), pool = long.length ? long : films, f = pool[post.id % pool.length]
-            data.yt = f.id; data.title ||= f.title.replace(/\s*#\w+/g, '').trim()
+            data.yt = f.id; data.title ||= f.title.replace(/\s*#\w+/g, '').replace(/\s*[☀🌙⚽💤][\s\S]*$/u, '').trim()
             for (const k of ['hook', 'body']) if (post.fill?.[k]) patch[k] = fillWords(post.fill[k], {title: data.title})
           } else {
             const pick = films.slice(0, 6), out = []

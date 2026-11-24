@@ -922,6 +922,131 @@
   ]
  },
  {
+  "id": "m30-tales-panathinaikos",
+  "topic": "youtube",
+  "name": "Fairy Tales · panathinaikos",
+  "template": "fairy-tales",
+  "club": "panathinaikos",
+  "start": "2026-11-25",
+  "days": 2,
+  "rows": [
+   {
+    "at": "2026-11-25 07:31",
+    "t": "L-FILM",
+    "label": "Fairy Tales · Panathinaikos · Good Morning",
+    "held": false,
+    "hook": "☀️ Καλημέρα, Παναθηναϊκέ! Ένα ποδοσφαιρικό παραμύθι για τον μικρό σου πράσινο οπαδό."
+   },
+   {
+    "at": "2026-11-26 21:31",
+    "t": "L-FILM",
+    "label": "Fairy Tales · Panathinaikos · Good Night",
+    "held": false,
+    "hook": "🌙 Καληνύχτα, Παναθηναϊκέ! Ένα ποδοσφαιρικό παραμύθι πριν τον ύπνο."
+   }
+  ]
+ },
+ {
+  "id": "m30-tales-olympiacos",
+  "topic": "youtube",
+  "name": "Fairy Tales · olympiacos",
+  "template": "fairy-tales",
+  "club": "olympiacos",
+  "start": "2026-11-28",
+  "days": 2,
+  "rows": [
+   {
+    "at": "2026-11-28 07:31",
+    "t": "L-FILM",
+    "label": "Fairy Tales · Olympiacos · Good Morning",
+    "held": false,
+    "hook": "☀️ Καλημέρα, Ολυμπιακέ! Ένα ποδοσφαιρικό παραμύθι για τον μικρό σου ερυθρόλευκο οπαδό."
+   },
+   {
+    "at": "2026-11-29 21:31",
+    "t": "L-FILM",
+    "label": "Fairy Tales · Olympiacos · Good Night",
+    "held": false,
+    "hook": "🌙 Καληνύχτα, Ολυμπιακέ! Ένα ποδοσφαιρικό παραμύθι πριν τον ύπνο."
+   }
+  ]
+ },
+ {
+  "id": "m30-tales-aek-athens",
+  "topic": "youtube",
+  "name": "Fairy Tales · aek-athens",
+  "template": "fairy-tales",
+  "club": "aek-athens",
+  "start": "2026-12-01",
+  "days": 2,
+  "rows": [
+   {
+    "at": "2026-12-01 07:31",
+    "t": "L-FILM",
+    "label": "Fairy Tales · AEK Athens · Good Morning",
+    "held": false,
+    "hook": "☀️ Καλημέρα, ΑΕΚ! Ένα ποδοσφαιρικό παραμύθι για τον μικρό σου κιτρινόμαυρο οπαδό."
+   },
+   {
+    "at": "2026-12-02 21:31",
+    "t": "L-FILM",
+    "label": "Fairy Tales · AEK Athens · Good Night",
+    "held": false,
+    "hook": "🌙 Καληνύχτα, ΑΕΚ! Ένα ποδοσφαιρικό παραμύθι πριν τον ύπνο."
+   }
+  ]
+ },
+ {
+  "id": "m30-tales-celtic",
+  "topic": "youtube",
+  "name": "Fairy Tales · celtic",
+  "template": "fairy-tales",
+  "club": "celtic",
+  "start": "2026-12-04",
+  "days": 2,
+  "rows": [
+   {
+    "at": "2026-12-04 07:31",
+    "t": "L-FILM",
+    "label": "Fairy Tales · Celtic · Good Morning",
+    "held": false,
+    "hook": "⚽ Good morning, Celtic! A football fairy tale for the little supporter in your house."
+   },
+   {
+    "at": "2026-12-05 21:31",
+    "t": "L-FILM",
+    "label": "Fairy Tales · Celtic · Good Night",
+    "held": false,
+    "hook": "🌙 Good night, Celtic. A bedtime football story — counting stars with the club’s legends."
+   }
+  ]
+ },
+ {
+  "id": "m30-tales-hapoel-tel-aviv",
+  "topic": "youtube",
+  "name": "Fairy Tales · hapoel-tel-aviv",
+  "template": "fairy-tales",
+  "club": "hapoel-tel-aviv",
+  "start": "2026-12-10",
+  "days": 2,
+  "rows": [
+   {
+    "at": "2026-12-10 07:31",
+    "t": "L-FILM",
+    "label": "Fairy Tales · Hapoel Tel Aviv · Good Morning",
+    "held": false,
+    "hook": "⚽ בוקר טוב, הפועל תל אביב! אגדת כדורגל לילדים ולאוהדים."
+   },
+   {
+    "at": "2026-12-11 21:31",
+    "t": "L-FILM",
+    "label": "Fairy Tales · Hapoel Tel Aviv · Good Night",
+    "held": false,
+    "hook": "💤 לילה טוב, הפועל תל אביב! אגדת כדורגל לפני השינה."
+   }
+  ]
+ },
+ {
   "id": "m30-black-friday",
   "topic": "sale",
   "name": "Black Friday 2026",
