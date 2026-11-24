@@ -20,7 +20,7 @@ function useTyped(text: string, instant: boolean): {shown: string; done: boolean
   return {shown: text.slice(0, n), done: n >= text.length, finish: () => setN(text.length)}
 }
 
-export function Talk({portrait, node, name, w, reduced, onGo, onChoose, onLeave, onTyping}: {portrait: string; node: TalkNode; name: string; w: W; reduced: boolean; onGo: () => void; onChoose: (i: number) => void; onLeave: () => void; /** the words are being typed (the speaker's lips move in the picture) */ onTyping?: (typing: boolean) => void}) {
+export function Talk({portrait, face, node, name, w, reduced, onGo, onChoose, onLeave, onTyping}: {portrait: string; /** a painted face for a generic person (THE WORKER's universal portraits) */ face?: string | null; node: TalkNode; name: string; w: W; reduced: boolean; onGo: () => void; onChoose: (i: number) => void; onLeave: () => void; /** the words are being typed (the speaker's lips move in the picture) */ onTyping?: (typing: boolean) => void}) {
   const line = w(node.line)
   const {shown, done, finish} = useTyped(line, reduced)
   const typing = useRef(onTyping); typing.current = onTyping
@@ -46,7 +46,7 @@ export function Talk({portrait, node, name, w, reduced, onGo, onChoose, onLeave,
   return (
     <div className={css.lgTalk + ' z-[60]'} role="dialog" aria-label={name} data-life="hood-talk">
       <div className={css.lgTalkBox} onClick={tap}>
-        <span className={css.lgPortrait2} data-who={portrait} aria-hidden="true"><i /><b>{name.charAt(0)}</b></span>
+        <span className={css.lgPortrait2} data-who={portrait} data-face={!!face} aria-hidden="true"><i />{face ? <img src={face} alt="" decoding="async" /> : <b>{name.charAt(0)}</b>}</span>
         <span className={css.lgPlate}>{name}</span>
         <button type="button" className={css.lgIconBtn + ' min-h-tap ' + css.lgLeave} aria-label={w('hood.talk.leave')} onClick={e => { e.stopPropagation(); onLeave() }}><Icon n="close" /></button>
         <p className={css.lgTalkText} aria-live="polite" aria-label={line}><span aria-hidden="true">{shown}</span>{!done && <span className={css.lgCaret} aria-hidden="true">▌</span>}</p>

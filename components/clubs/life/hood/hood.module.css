@@ -485,3 +485,10 @@
 .lgGiver text { font-family: var(--lg-head); font-size: 13px; fill: var(--lg-navy); }
 .lgGiver[data-kind='side'] text { fill: var(--lg-cream); }
 .lgMAerial { mix-blend-mode: luminosity; }
+/* THE WORKER's painted things: a face in the talk, an item in the bag, the Box on the aftermath */
+.lgPortrait2[data-face='true'] img { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; object-fit: cover; border-radius: inherit; }
+.lgSlotArt { inline-size: 34px; block-size: 34px; object-fit: contain; }
+.lgDetailArt { display: block; max-inline-size: 160px; max-block-size: 110px; object-fit: contain; margin-block-end: 6px; }
+.lgStoryArt { align-self: flex-start; max-inline-size: 132px; max-block-size: 96px; object-fit: contain; filter: drop-shadow(0 8px 16px color-mix(in srgb, var(--lg-navy) 80%, transparent)); }
+.lgStoryPaperArt { float: inline-end; inline-size: 54px; block-size: auto; margin-inline-start: 10px; opacity: .9; }
+.lgPortrait2[data-face='true'] i { display: none; }

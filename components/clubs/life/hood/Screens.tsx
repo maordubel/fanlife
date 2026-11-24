@@ -174,6 +174,10 @@ export type StoryCardView = {
   archive: {kicker: string; date: string | null; result: string | null; title: string | null; titleLocale: string | null; source: string | null} | null
   /** the painted Flow plate behind it, when the manifest has one */
   plate: string | null
+  /** a painted thing beside it: what went in the Box, the bus ticket, the paper */
+  art?: string | null
+  /** the paper the archive's line is printed on */
+  paper?: string | null
   go: string
 }
 
@@ -189,9 +193,11 @@ export function StoryCard({view, onGo}: {view: StoryCardView; onGo: () => void})
         <p className={css.lgKicker + ' ' + css.lgIn}>{view.kicker}</p>
         <h1 className={css.lgStoryTitle + ' ' + css.lgIn} style={{'--i': 1} as React.CSSProperties}>{view.title}</h1>
         {view.lines.map((l, i) => <p key={i} className={css.lgStoryLine + ' ' + css.lgIn} style={{'--i': 2 + i} as React.CSSProperties}>{l}</p>)}
+        {view.art && <img className={css.lgStoryArt + ' ' + css.lgIn} src={view.art} alt="" decoding="async" style={{'--i': 2} as React.CSSProperties} />}
         {view.chips.length > 0 && <ul className={css.lgStoryChips + ' ' + css.lgIn} style={{'--i': 3} as React.CSSProperties}>{view.chips.map((c, i) => <li key={i} data-tone={c.tone}><small>{c.label}</small><b>{c.value}</b></li>)}</ul>}
         {view.archive && (
           <aside className={css.lgStoryPaper + ' ' + css.lgIn} style={{'--i': 4} as React.CSSProperties} aria-label={view.archive.kicker}>
+            {view.paper && <img className={css.lgStoryPaperArt} src={view.paper} alt="" decoding="async" />}
             <small>{view.archive.kicker}</small>
             {view.archive.date && <p className={css.lgStoryDate}>{view.archive.date}</p>}
             {view.archive.result && <p className={css.lgStoryResult}><bdi dir="ltr">{view.archive.result}</bdi></p>}

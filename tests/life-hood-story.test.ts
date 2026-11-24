@@ -222,3 +222,23 @@ describe('history and the watch card', {timeout: 300_000}, () => {
     expect(watchForNight('st-pauli', '1987-10-31')).toBeNull()
   })
 })
+
+describe('THE WORKER\'s pictures in the story', () => {
+  it('names only imported files of the universal and Tel Aviv classes, and Tel Aviv only for Tel Aviv', async () => {
+    const {readFileSync, existsSync} = await import('node:fs')
+    const {WORKER_ART_USED, workerPlate, workerDoc, isTelAviv} = await import('@/lib/life/hood/workerArt')
+    const imported = JSON.parse(readFileSync('lib/life/worker-art/imported.json', 'utf8')) as {files: {out: string; cls: string}[]}
+    const cls = new Map(imported.files.map(f => [`/${f.out.replace(/^public\//, '')}`, f.cls]))
+    for (const f of WORKER_ART_USED) {
+      expect(existsSync(`public${f}`), f).toBe(true)
+      expect(['universal', 'tlv'], f).toContain(cls.get(f))
+    }
+    for (const m of [...CHILDHOOD.map(x => x.id), 'papers']) {
+      for (const town of ['Glasgow', 'Athens', 'Casablanca', null]) {
+        for (const f of [workerPlate(m, town), workerDoc(m, town)]) if (f) expect(cls.get(f), `${m} in ${town}`).toBe('universal')
+      }
+    }
+    expect(isTelAviv('Tel Aviv')).toBe(true); expect(isTelAviv('Petah Tikva')).toBe(false)
+    expect(workerPlate('first-noise', 'Tel Aviv')).toBe('/life/worker/tlv/introBeacon.webp')
+  })
+})

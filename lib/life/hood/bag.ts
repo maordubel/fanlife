@@ -7,7 +7,7 @@ import type {HoodRun} from './run'
 /** the starter slots and the M1 job's things; a story item or a kept thing has its own id (`keep:<id>`, `carry:<kind>`) */
 export type BagId = 'scarf' | 'ticket' | 'pass' | 'bag' | 'batteries' | 'dads-scarf' | `keep:${string}` | `carry:${string}`
 export type BagState = 'owned' | 'carried' | 'locked' | 'empty'
-export type BagItem = {id: BagId; nameKey: string; descKey: string; state: BagState; count: number; wearable: boolean; worn: boolean}
+export type BagItem = {id: BagId; nameKey: string; descKey: string; state: BagState; count: number; wearable: boolean; worn: boolean; /** a painted picture of it, where one exists */ art?: string | null}
 export type Carry = {batteries: number; dadsScarf: boolean}
 
 /** what he is carrying for the job right now; once the job is done it has been handed over */

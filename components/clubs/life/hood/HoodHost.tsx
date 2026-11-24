@@ -29,6 +29,7 @@ import {chapter as chapterOf, missionById, storyWord} from '@/lib/life/hood/stor
 import {applyEffect, beatsAfter, carried, complicationTalk, fastForward, finishStory, focusOf, giversOf, keepOff, newPlay, openingBeat, planKey, stepDone, storyLevel, storyTalk, syncOffers, wantsComplication, type Beat, type StoryPlay} from '@/lib/life/hood/story/play'
 import {loadFlow, pick, PLATE_HINT, urlOf, type FlowManifest} from '@/lib/life/hood/flowRef'
 import type {ArchiveRef} from '@/lib/life/universal/types'
+import {WORKER_PAPER, workerDoc, workerFace, workerPlate, workerProp} from '@/lib/life/hood/workerArt'
 import {BagScreen} from './BagScreen'
 import css from './hood.module.css'
 
@@ -443,7 +444,8 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
 
   /* the story's cards */
   const beat = screen === 'story' ? beats[0] ?? null : null
-  const plateFor = (id: string | null, salt: number) => { const p = pick(flow, {kind: 'story', club: club.id, hint: id ? PLATE_HINT[id] ?? [id] : [], salt}); return p && flow ? urlOf(flow, p, 1080) : null }
+  // a painted Flow plate first, else THE WORKER's universal room or street (Tel Aviv's own streets only for Tel Aviv)
+  const plateFor = (id: string | null, salt: number) => { const p = pick(flow, {kind: 'story', club: club.id, hint: id ? PLATE_HINT[id] ?? [id] : [], salt}); return p && flow ? urlOf(flow, p, 1080) : workerPlate(id, club.town) }
   const aerialP = pick(flow, {kind: 'aerial', club: club.id})
   const aerial = aerialP && flow ? {href: urlOf(flow, aerialP, 1600), world: aerialP.world} : null
   const cardOf = (b: Beat): StoryCardView | null => {
@@ -463,7 +465,8 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
     ]
     const sl8 = b.night ? slateOf(b.night) : null
     const archive = b.night && sl8 ? {kicker: w(b.approach === 'radio' || b.approach === 'next-door' ? 'story.archive.radio' : 'story.archive.paper'), date: sl8.date ? slateDate(sl8.date) : null, result: sl8.result, title: sl8.title, titleLocale: sl8.titleLocale, source: sl8.publisher ? w('story.archive.source', {publisher: sl8.publisher}) : null} : null
-    return {kind: 'aftermath', kicker: w('story.aftermath'), title: w(`story.m.${b.mission}.title`), lines: [w(`story.m.${b.mission}.aftermath`), ...(chips.length ? [] : [w('story.delta.none')])], chips, archive, plate: plateFor(b.mission, 1), go: w('story.card.continue')}
+    const art = d.kept.map(k => workerProp(`keep:${k}`)).find(Boolean) ?? workerDoc(b.mission, club.town)
+    return {kind: 'aftermath', kicker: w('story.aftermath'), title: w(`story.m.${b.mission}.title`), lines: [w(`story.m.${b.mission}.aftermath`), ...(chips.length ? [] : [w('story.delta.none')])], chips, archive, plate: plateFor(b.mission, 1), art, paper: archive ? WORKER_PAPER : null, go: w('story.card.continue')}
   }
   const watchAns = beat?.k === 'watch' ? watchForNight(club.id, beat.night.on) : null
   const giverMarks: MapGiver[] = (() => { const g = giversOf(play), ppl = level.hood!.people; return [...(g.main ? [{id: g.main, kind: 'main' as const}] : []), ...g.side.map(id => ({id, kind: 'side' as const}))].flatMap(x => { const p = ppl.find(q => q.id === x.id); return p ? [{id: x.id, x: p.x, z: p.z, kind: x.kind, label: `${names[x.id] ?? ''} · ${w(x.kind === 'main' ? 'story.map.next' : 'story.map.side')}`, letter: x.kind === 'main' ? '!' : '·'}] : [] }) })()
@@ -484,13 +487,13 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
       {screen === 'name' && <NameEntry w={w} clean={cleanName} onGo={startNew} onBack={() => go({t: 'esc'})} />}
       {screen === 'intro' && <Cinematic lines={introLines} w={w} reduced={reducedEff} onBeat={onIntroBeat} onDone={finishIntro} />}
       {screen === 'cutscene' && <Cinematic lines={outroLines} w={w} reduced={reducedEff} ms={3000} onDone={() => go({t: 'cutDone'})} />}
-      {screen === 'dialogue' && talkNode && <Talk portrait={talkNode.who} key={`${talk!.script.who}-${talkNode.id}`} node={talkNode} name={talk!.script.narration ? w('story.complication') : names[talkNode.who] ?? ''} w={w} reduced={reducedEff} onGo={onGo} onChoose={onChoose} onLeave={endTalk} onTyping={v => { typingRef.current = v }} />}
+      {screen === 'dialogue' && talkNode && <Talk portrait={talkNode.who} face={talk!.script.narration ? null : workerFace(talkNode.who)} key={`${talk!.script.who}-${talkNode.id}`} node={talkNode} name={talk!.script.narration ? w('story.complication') : names[talkNode.who] ?? ''} w={w} reduced={reducedEff} onGo={onGo} onChoose={onChoose} onLeave={endTalk} onTyping={v => { typingRef.current = v }} />}
       {screen === 'playing' && caps.length > 0 && <div className={css.lgCaps} role="log" aria-label={w('hood.amb.label')}>{caps.map(c => <p key={c.id} ref={el => { capEls.current[c.id] = el }} className={css.lgCap}>{w(c.key)}</p>)}</div>}
       {screen === 'pause' && <Pause w={w} club={club.skin.name} name={shell.name} onResume={() => go({t: 'resume'})} onMap={() => { setMapKey(k => k + 1); go({t: 'open', to: 'map'}) }} onBag={() => go({t: 'open', to: 'bag'})} onSettings={() => go({t: 'open', to: 'settings'})} onHelp={() => go({t: 'open', to: 'help'})} onQuit={() => { persist(); setSavedName(shell.name); go({t: 'quit'}) }} />}
       {screen === 'settings' && <Settings w={w} s={settings} quality={qualityEff} onChange={changeSettings} onBack={() => go({t: 'back'})} />}
       {screen === 'help' && <Help w={w} onBack={() => go({t: 'back'})} />}
       {screen === 'map' && <MapScreen w={w} run={run} waypoint={waypoint} wayLabel={wayName} accent={accent} mapKey={mapKey} reduced={reducedEff} givers={giverMarks} aerial={aerial} onWaypoint={id => { setWaypoint(id); waypointRef.current = id; persist() }} onClose={() => go({t: 'back'})} onTab={() => go({t: 'open', to: 'bag'})} />}
-      {screen === 'bag' && <BagScreen w={w} items={bagOf({batteries: 0, dadsScarf: false}, wear, {keeps: play.state.keeps, carried: carried(run, sl, play)})} accent={accent} second={accentFor({...club.skin, p: club.skin.s, s: club.skin.p}).accent} onWear={v => { setWear(v); wearRef.current = v; persist() }} onClose={() => go({t: 'back'})} onTab={() => go({t: 'open', to: 'map'})} />}
+      {screen === 'bag' && <BagScreen w={w} items={bagOf({batteries: 0, dadsScarf: false}, wear, {keeps: play.state.keeps, carried: carried(run, sl, play)}).map(i => ({...i, art: workerProp(i.id)}))} accent={accent} second={accentFor({...club.skin, p: club.skin.s, s: club.skin.p}).accent} onWear={v => { setWear(v); wearRef.current = v; persist() }} onClose={() => go({t: 'back'})} onTab={() => go({t: 'open', to: 'map'})} />}
       {beat?.k === 'watch' && (watchAns
         ? <div className={css.lgWatch} data-life="hood-watch"><WatchCard highlights={watchAns.highlights} more={watchAns.moreHighlights} ourFilm={watchAns.ourFilm} ourFilmFit={watchAns.ourFilmFit} slate={slateOf(beat.night)} accent={accent} onContinue={nextBeat} /></div>
         : <StoryCard view={cardOf({k: 'aftermath', mission: beat.mission, night: beat.night, delta: {bonds: [], money: 0, rep: 0, kept: []}, approach: ''})!} onGo={nextBeat} />)}

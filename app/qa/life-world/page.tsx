@@ -27,7 +27,7 @@ export default async function LifeWorldQaPage({ searchParams }: { searchParams: 
   const nights = storyNights(rushView(club.data), typeof birth === 'number' ? birth : null)
   return (
     <ClubSurface theme={club.data.theme} clubId={club.data.identity.id} locale="en" tabbar={false}>
-      <WorldQa club={{ id: club.data.identity.id, skin: pack.skin, cast: pack.cast, nights }} chapterAt={searchParams.chapter} seed={Number(searchParams.seed ?? 1) || 1} time={searchParams.time === 'night' ? 'night' : searchParams.time === 'day' ? 'day' : 'dusk'} quality={searchParams.quality === 'high' ? 'high' : searchParams.quality === 'lite' ? 'lite' : undefined} start={searchParams.start === 'play' ? 'play' : 'title'} people={searchParams.people === 'classic' ? 'classic' : 'human'} />
+      <WorldQa club={{ id: club.data.identity.id, skin: pack.skin, cast: pack.cast, nights, town: club.data.identity.city }} chapterAt={searchParams.chapter} seed={Number(searchParams.seed ?? 1) || 1} time={searchParams.time === 'night' ? 'night' : searchParams.time === 'day' ? 'day' : 'dusk'} quality={searchParams.quality === 'high' ? 'high' : searchParams.quality === 'lite' ? 'lite' : undefined} start={searchParams.start === 'play' ? 'play' : 'title'} people={searchParams.people === 'classic' ? 'classic' : 'human'} />
     </ClubSurface>
   )
 }

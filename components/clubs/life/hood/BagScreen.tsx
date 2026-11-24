@@ -55,13 +55,14 @@ export function BagScreen({w, items, accent, second, onWear, onClose, onTab}: {w
               <button key={i.id} type="button" className={css.lgSlot + ' min-h-tap'} data-state={i.state} aria-pressed={sel === i.id} onClick={() => setSel(i.id)}>
                 {i.worn && <span className={css.lgSlotWorn} aria-hidden="true" />}
                 {i.count > 1 && <span className={css.lgSlotCount}>{w('hood.bag.count', {n: String(i.count)})}</span>}
-                <Icon n={i.state === 'locked' ? 'lock' : iconOf(i.id)} />
+                {i.art && i.state !== 'locked' ? <img className={css.lgSlotArt} src={i.art} alt="" decoding="async" /> : <Icon n={i.state === 'locked' ? 'lock' : iconOf(i.id)} />}
                 <span>{w(i.nameKey)}</span>
               </button>
             ))}
           </div>
           <div className={css.lgInfo + ' ' + css.lgDetail} aria-live="polite">
             {stateWord && <span className={css.lgInfoFlag}>{stateWord}</span>}
+            {it.art && it.state !== 'locked' && <img className={css.lgDetailArt} src={it.art} alt="" decoding="async" />}
             <h2>{w(it.nameKey)}</h2>
             <p>{w(it.descKey)}</p>
             {it.wearable && <button type="button" className={css.lgBtn} data-primary={!it.worn} onClick={() => onWear(!it.worn)}>{it.worn ? w('hood.bag.takeoff') : w('hood.bag.wear')}<Icon n="scarf" /></button>}
