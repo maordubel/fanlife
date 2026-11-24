@@ -397,9 +397,9 @@
    "use": "stadium",
    "club": "partizan-belgrade",
    "town": "beg",
-   "confidence": "generic",
+   "confidence": "specific",
    "priority": 3,
-   "prompt": "A city football ground with tall floodlights and plain concrete stands, seen along the main road among grey interwar apartment houses and long concrete housing blocks. Exterior establishing view on a match evening from street level about 150 metres away: the ground rises at the end of the street beyond the last buildings, floodlights on and glowing in the haze, wet street in the foreground, a few supporters far off seen only from behind. Seats, cladding and trim in neutral grey and bare concrete unless the description says otherwise. The building carries no name, no scoreboard and no banners. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+   "prompt": "A large post-war oval football ground with a running track around the pitch: long open concrete terraces sweep round both ends, a single roofed main stand runs along one side, and tall floodlight towers stand over a leafy residential district of a hilly Balkan capital. Exterior establishing view on a match evening from street level about 150 metres away: the ground rises at the end of the street beyond the last buildings, floodlights on and glowing in the haze, wet street in the foreground, a few supporters far off seen only from behind. Seats, cladding and trim in neutral grey and bare concrete unless the description says otherwise. The building carries no name, no scoreboard and no banners. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
   },
   {
    "stem": "life-aerial-mos-fl1",
