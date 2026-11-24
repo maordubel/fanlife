@@ -88,7 +88,7 @@ def for_film(script: dict | None, ledger: dict, palette, out: Path, director: st
         p = _save(B, out / f'thumbnail-{i}.jpg', palette.render_bans)
         rows.append({'file': p.name, 'size': [1280, 720], **_public(h), 'picture': {'key': pic.key, 'kind': pic.kind, 'figure': pic.figure_key},
                      'director': director, 'legibility': legibility(B)})
-    # the channel's own cover first (thumbs/gazette.py — owner, 24.11.2026): the Terrace Gazette, the owner's picture
+    # the channel's own cover first (thumbs/gazette.py — owner, 24.11.2026): the FanLife Gazette, the owner's picture
     # when he gave one, and the line the film says over it as the headline (the same picture opens the film)
     import os
     if os.environ.get('STORIES_GAZETTE_COVER', '1') != '0':

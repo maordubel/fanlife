@@ -1305,6 +1305,8 @@ class Adapter:
                         x['horizon'] = h
         from . import life, press
         pk = {k: self.asset(v, 'press') for k, v in press.kit().items()}
+        if press.BRAND.exists():
+            pk['brand'] = self.asset(press.BRAND, 'brand')
         by_n = {s['n']: s for s in self.plan['shots']}
         # the owner's first picture under a spoken line is the front page's photograph (and the cover: thumbs/gazette.py)
         from ..thumbs.gazette import owner_picture

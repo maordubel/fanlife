@@ -1,4 +1,4 @@
-"""The Terrace Gazette cover — the channel's own thumbnail (owner, 24.11.2026: "titles and preview pictures that are
+"""The FanLife Gazette cover — the channel's own thumbnail (owner, 24.11.2026: "titles and preview pictures that are
 different, special and ours, that don't look like all of YouTube and the current trend … the cover picture preferably
 from a picture I upload, connected directly to the script through the picture").
 
@@ -23,7 +23,7 @@ from .render import INK, Board, fit_size, line, medallion, pen_stroke, wordmark
 
 PAPER_TEX = Path(__file__).resolve().parents[1] / 'kit' / 'press' / 'paper.webp'
 WHITE = (247, 241, 227)
-MAST = 'THE TERRACE GAZETTE'
+MAST = 'THE FANLIFE GAZETTE'
 
 
 def _inks(pal):
@@ -63,6 +63,16 @@ def head_of(line_text: str) -> list[str]:
 
 def _cover(im: Image.Image, w: int, h: int) -> Image.Image:
     return ImageOps.fit(im, (w, h), Image.LANCZOS, centering=(0.5, 0.42))
+
+
+BRAND = Path(__file__).resolve().parents[4] / 'public' / 'brand' / 'fanlife' / 'logo-192.png'
+
+
+def _roundel(d: int) -> Image.Image | None:
+    if not BRAND.exists():
+        return None
+    with Image.open(BRAND) as im:
+        return im.convert('RGBA').resize((d, d), Image.LANCZOS)
 
 
 def _paper(size) -> Image.Image:
@@ -120,7 +130,12 @@ def front(h: dict, pic: Image.Image, pal, crest_path, seed: int = 0, size=(1280,
     # the masthead: a heavy rule, the name, a double rule
     d.rectangle([34, 22, W - 34, 30], fill=INK)
     mast, mm = line(MAST, 'ultra', 50, INK)
-    B.paste(mast, ((W - mast.width) // 2, 40))
+    logo = _roundel(58)
+    mx = (W - mast.width - (logo.width + 14 if logo else 0)) // 2
+    if logo:   # the FanLife roundel beside the name (rule two-logos)
+        B.paste(logo, (mx, 36))
+        mx += logo.width + 14
+    B.paste(mast, (mx, 40))
     side = f'{club.upper()} EDITION' if club else 'FOOTBALL STORIES'
     for txt, x_of in ((side, lambda w: 40), ('FOOTBALL. FOREVER.', lambda w: W - 40 - w)):
         im, _ = line(txt, 'caps', 18, INK, track=2.5)

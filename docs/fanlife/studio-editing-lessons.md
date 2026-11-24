@@ -176,7 +176,7 @@ numbers became. Newest first. The skill reads this before touching the editor an
 - **Next**: a second front page at the night (the final's result as the edition's headline); more kit pieces (a
   ticket stub, a scarf, a trophy, a newsprint column texture).
 
-## 24.11.2026 · The owner's pictures and clips as VOX moments; the Terrace Gazette cover
+## 24.11.2026 · The owner's pictures and clips as VOX moments; the FanLife Gazette cover
 
 - **Owner**: his uploads must enter with motion and text, between the speech, never as a slideshow; his video files in
   the edit; covers and titles of our own, from his picture, tied to the script.

@@ -21,12 +21,16 @@ I upload, if I upload one; a direct connection to the script through the picture
    Soft entrances (rule 142), no 3D, no filter, no mask gradient; the paper and tape boil at 8 fps.
 4. **A clip is drawn once it settles**: the renderer leaves a moving `<video>` blank for its first ~0.5 s (measured on
    24.11), so the clip's poster frame sits under it in the print or frame.
-5. **The cover is the Terrace Gazette** (`thumbs/gazette.py`), thumbnail 1, before the three documentary hooks: the
+5. **The cover is the FanLife Gazette** (`thumbs/gazette.py`), thumbnail 1, before the three documentary hooks: the
    masthead, the line the film says over the owner's first picture under a spoken line as the headline, his picture as a
    taped print on a disc of the club's colour, the number ringed by hand, the crest pinned to the print. With no owner
    picture, the first hook and its picture. It must read at 168×94 (≥ 9 px a letter; held by test_thumbs).
 6. **One picture, three places**: that same picture is the photograph on the film's front page (`docu/press.front_page`),
    so the cover, the first frame and the script are one thing.
-7. Switches: `STORIES_REVEAL=0` (pictures cut in as before), `STORIES_GAZETTE_COVER=0` (the three hook covers only).
+7. **Branding** (owner, 24.11.2026: "from now on title it THE FANLIFE GAZETTE and brand everything more correctly as
+   FANLIFE when you make graphics"): the paper is THE FANLIFE GAZETTE everywhere (front page, cover); its masthead
+   carries the FanLife colour roundel (`public/brand/fanlife/logo-192.png`, rule two-logos) and the cover the FanLife
+   wordmark. Every new graphic device carries the FanLife mark, never a borrowed or invented name.
+8. Switches: `STORIES_REVEAL=0` (pictures cut in as before), `STORIES_GAZETTE_COVER=0` (the three hook covers only).
 
 Held by `studio/tests/test_owner_media.py` and `test_thumbs.py`.

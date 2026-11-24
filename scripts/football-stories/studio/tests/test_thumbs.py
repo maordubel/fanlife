@@ -184,7 +184,7 @@ class Films(unittest.TestCase):
 
     def test_three_variants_and_a_shorts_cover(self):
         files = [r['file'] for r in self.rows]
-        # the Terrace Gazette cover first (thumbs/gazette.py, owner 24.11.2026), then the three documentary hooks
+        # the FanLife Gazette cover first (thumbs/gazette.py, owner 24.11.2026), then the three documentary hooks
         self.assertEqual(files, ['thumbnail-1.jpg', 'thumbnail-2.jpg', 'thumbnail-3.jpg', 'thumbnail-4.jpg', 'thumbnail-short.jpg'])
         self.assertTrue(self.rows[0].get('gazette'))
         for r in self.rows:

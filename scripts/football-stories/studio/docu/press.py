@@ -43,7 +43,7 @@ CSS = ('.pr{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:h
        '.prk{position:absolute;will-change:transform}'
        ".prmast{position:absolute;left:90px;right:90px;top:44px;height:92px;border-top:10px solid INK;border-bottom:4px double INK;display:flex;"
        "align-items:center;justify-content:space-between;font:700 26px 'Cond';letter-spacing:7px;color:INK}"
-       ".prmast b{font:400 66px/1 'Ultra';letter-spacing:1px}"
+       ".prmast b{font:400 66px/1 'Ultra';letter-spacing:1px;display:flex;align-items:center;gap:22px} .prlogo{width:76px;height:76px}"
        ".prh{position:absolute;left:90px;top:176px;width:1180px;font:400 172px/0.9 'Ultra';color:INK;text-transform:uppercase;letter-spacing:-2px}"
        ".prh span{display:block;white-space:nowrap;transform-origin:0% 60%;will-change:transform} .prh i{font-style:normal;position:relative}"
        ".prsub{position:absolute;left:96px;width:1150px;font:700 46px/1.1 'Cond';letter-spacing:3px;color:INK;text-transform:uppercase}"
@@ -59,6 +59,9 @@ CSS = ('.pr{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:h
 
 def r2(x: float) -> float:
     return round(x + 1e-9, 2)
+
+
+BRAND = Path(__file__).resolve().parents[4] / 'public' / 'brand' / 'fanlife' / 'logo-192.png'   # the FanLife roundel (rule two-logos)
 
 
 def kit() -> dict[str, Path]:
@@ -111,6 +114,7 @@ def front_page(cid: str, s: dict, t: float, d: float, ink: str, us: str, paper: 
     rg = random.Random(7)
     im = lambda k: f'assets/img/{f[k]}'   # noqa: E731
     lines = s['head']
+    brand = f'<img class="prlogo" src="assets/img/{f["brand"]}">' if f.get('brand') else ''
     size = int(min(172, 1150 / (max(len(x) for x in lines) * 0.74)))   # Ultra is wide: the longest line sets the size, no line wraps
     def line_html(i: int, x: str) -> str:
         x = e(x)
@@ -122,7 +126,7 @@ def front_page(cid: str, s: dict, t: float, d: float, ink: str, us: str, paper: 
     sub_y = 176 + head_h + 26
     body = e(' '.join([s.get('body') or ''] * 6))[:2600]
     html = (f'<div class="prc" id="{cid}cam"><div class="prp" style="background-image:url({im("paper")})"></div>'
-            f'<div class="prmast"><span>{e(s.get("dateline") or "")}</span><b>{e(s.get("mast") or "THE TERRACE GAZETTE")}</b><span>FOOTBALL. FOREVER.</span></div>'
+            f'<div class="prmast"><span>{e(s.get("dateline") or "")}</span><b>{brand}{e(s.get("mast") or "THE FANLIFE GAZETTE")}</b><span>FOOTBALL. FOREVER.</span></div>'
             f'<div class="prh" style="font-size:{size}px">{hl}</div>'
             f'<div class="prsub" id="{cid}sub" style="top:{sub_y:.0f}px">{e(s.get("deck") or "")}</div>'
             f'<div class="prkick" id="{cid}k" style="left:96px;top:{sub_y + 124:.0f}px;background:{us}">{e((s.get("kicker") or "").upper())}</div>'
@@ -219,7 +223,7 @@ def direct(beats: list[dict], shots: dict[int, dict], files: dict[str, str], clu
         for b in first:
             keep = [x for x in b['shots'] if x['kind'] not in ('image', 'video', 'tint', 'lead', 'thread', 'word', 'kinetic', 'life', 'cutout', 'objects', 'explain', 'question')]   # the page is the title: a second title over its headline was printed on the 23.11 sample
             b['shots'] = [{'kind': 'gazette', 'page': 'front', 'head': head, 'deck': deck, 'kicker': (sh.get('visual') or {}).get('kicker') or '',
-                           'mast': 'THE TERRACE GAZETTE', 'dateline': f'{club.upper()} EDITION' if club else '', 'body': text, 'files': files,
+                           'mast': 'THE FANLIFE GAZETTE', 'dateline': f'{club.upper()} EDITION' if club else '', 'body': text, 'files': files,
                            'off': round(off, 3), 'total': round(total, 3), 'dt': 0.0, 'd': round(b['d'], 3)}] + keep
             off += b['d']
             made['front'] += 1

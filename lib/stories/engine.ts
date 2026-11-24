@@ -16,7 +16,7 @@ export const ENGINE: EnginePart[] = [
     what: 'The collage look. The film opens on a printed front page: the narrator\'s first sentence stamped as the headline, a halftone photograph, a cut-out figure, the number ringed by hand. A line with no picture of its own becomes a pasted collage on newsprint in the club\'s colour, boiling at 8 frames a second.' },
   { id: 'reveal', name: 'Your pictures and clips', since: '24.11.2026', variable: 'STORIES_REVEAL', off: '0',
     what: 'Every picture or video clip you upload (or pin in Drive) enters under its own line with motion and the line\'s words: a print sliding onto newsprint, the paper torn open, strips closing, a frame the camera flies through, a print dropped on the pile. Never a slide; clips play muted under the narration.' },
-  { id: 'gazette-cover', name: 'The Terrace Gazette cover', since: '24.11.2026', variable: 'STORIES_GAZETTE_COVER', off: '0',
+  { id: 'gazette-cover', name: 'The FanLife Gazette cover', since: '24.11.2026', variable: 'STORIES_GAZETTE_COVER', off: '0',
     what: 'Thumbnail 1 is a front page of our own: your picture pasted as a print, the line the film says over it as the headline, the number ringed by hand. The same picture opens the film on its front page.' },
   { id: 'atlas', name: 'The atlas', since: '17.11.2026', variable: 'STORIES_ATLAS', off: '0',
     what: 'A named place is a camera flight over a printed map with the route drawn.' },
