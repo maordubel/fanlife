@@ -1,0 +1,394 @@
+clothes	clothes/aethelraed_flapper_dress/aethelraed_flapper_dress.mhclo	2303KB	author AEthelraed_Unraed | homepage http://www.makehuman.org/ | license CC0 verts=6690 files=flapper_dress_green.png,green.mhmat
+clothes	clothes/aethelraed_flapper_dress/green.mhmat	0KB	
+clothes	clothes/cortu_cargo_pants/cargo_pants.mhmat	0KB	
+clothes	clothes/cortu_cargo_pants/cortu_cargo_pants.mhclo	6823KB	 verts=211 files=cargo_pants.mhmat,cargo_pants_diff.png,cargo_pants_norm.png
+clothes	clothes/cortu_floppy_overknee_shoes/cortu_floppy_overknee_shoes.mhclo	17561KB	 verts=1586 files=floppy_overknee_shoe.mhmat,floppy_overknee_shoe_diff.png,floppy_overknee_shoe_mask.png,floppy_overknee_shoe_norm.png
+clothes	clothes/cortu_floppy_overknee_shoes/floppy_overknee_shoe.mhmat	0KB	
+clothes	clothes/cortu_jeans_shorts/cortu_jeans_shorts.mhclo	7578KB	 verts=285 files=jean_shorts.mhmat,jean_shorts_diff.png,jean_shorts_norm.png
+clothes	clothes/cortu_jeans_shorts/jean_shorts.mhmat	0KB	
+clothes	clothes/cortu_t-bar/cortu_t-bar.mhclo	6209KB	 verts=392 files=tbar.mhmat,tbar_diff.png,tbar_mask.png,tbar_norm.png
+clothes	clothes/cortu_t-bar/tbar.mhmat	0KB	
+clothes	clothes/culturalibre_hero_boots_1/culturalibre_hero_boots_1.mhclo	269KB	author culturalibre | homepage http://www.makehuman.org/ | license CC-0 verts=1448 files=hero_boots_1.mhmat,hero_boots_1.png
+clothes	clothes/culturalibre_hero_boots_1/hero_boots_1.mhmat	0KB	
+clothes	clothes/culturalibre_hero_boots_2/culturalibre_hero_boots_2.mhclo	214KB	author culturalibre | homepage http://www.makehuman.org/ | license CC-0 verts=1160 files=blue.png,hero_boots_2.mhmat
+clothes	clothes/culturalibre_hero_boots_2/hero_boots_2.mhmat	0KB	
+clothes	clothes/culturalibre_hero_boots_3/culturalibre_hero_boots_3.mhclo	211KB	author culturalibre | homepage http://www.makehuman.org/ | license CC-0 verts=1160 files=green.png,hero_boots_3.mhmat
+clothes	clothes/culturalibre_hero_boots_3/hero_boots_3.mhmat	0KB	
+clothes	clothes/culturalibre_hero_boots_4/culturalibre_hero_boots_4.mhclo	216KB	author culturalibre | homepage http://www.makehuman.org/ | license CC-0 verts=1160 files=blue.png,hero_boots_4.mhmat
+clothes	clothes/culturalibre_hero_boots_4/hero_boots_4.mhmat	0KB	
+clothes	clothes/culturalibre_hero_boots_5/culturalibre_hero_boots_5.mhclo	1148KB	author culturalibre | homepage http://www.makehuman.org/ | license CC-0 verts=5780 files=hero_boots_5.mhmat,red.png
+clothes	clothes/culturalibre_hero_boots_5/hero_boots_5.mhmat	0KB	
+clothes	clothes/culturalibre_heroine_boots_1/culturalibre_heroine_boots_1.mhclo	346KB	author culturalibre | homepage http://www.makehuman.org/ | license CC-0 verts=2056 files=black.png,heroine_boots_1.mhmat
+clothes	clothes/culturalibre_heroine_boots_1/heroine_boots_1.mhmat	0KB	
+clothes	clothes/culturalibre_heroine_boots_2/culturalibre_heroine_boots_2.mhclo	255KB	author culturalibre | homepage http://www.makehuman.org/ | license CC-0 verts=1364 files=green.png,heroine_boots_2.mhmat
+clothes	clothes/culturalibre_heroine_boots_2/heroine_boots_2.mhmat	0KB	
+clothes	clothes/culturalibre_heroine_boots_3/culturalibre_heroine_boots_3.mhclo	251KB	author culturalibre | homepage http://www.makehuman.org/ | license CC-0 verts=1364 files=heroine_boots_3.mhmat,purple.png
+clothes	clothes/culturalibre_heroine_boots_3/heroine_boots_3.mhmat	0KB	
+clothes	clothes/culturalibre_heroine_boots_4/culturalibre_heroine_boots_4.mhclo	210KB	author culturalibre | homepage http://www.makehuman.org/ | license CC-0 verts=852 files=heroine_boots_4.mhmat,heroine_boots_4.png
+clothes	clothes/culturalibre_heroine_boots_4/heroine_boots_4.mhmat	0KB	
+clothes	clothes/culturalibre_male_boots/culturalibre_male_boots.mhclo	2810KB	author culturalibre | homepage http://www.makehuman.org/ | license CC-0 verts=15308 files=boot.png,male_boots.mhmat
+clothes	clothes/culturalibre_male_boots/male_boots.mhmat	0KB	
+clothes	clothes/elvs_crude_t-shirt_male/crude_male_shirt.mhmat	0KB	
+clothes	clothes/elvs_crude_t-shirt_male/elvs_crude_t-shirt_male.mhclo	194KB	author Makehuman edited by Elvaerwyn | homepage http://www.makehuman.org/ | license CC0 verts=1095 files=crude_male_shirt.mhmat,crude_male_tex.png
+clothes	clothes/fedora01/fedora.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+clothes	clothes/fedora01/fedora01.mhclo	7516KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=634 files=fedora.mhmat,fedora_diffuse.png,fedora_normal.png
+clothes	clothes/fedora_cocked/fedora.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+clothes	clothes/fedora_cocked/fedora_cocked.mhclo	7521KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=634 files=fedora.mhmat,fedora_diffuse.png,fedora_normal.png
+clothes	clothes/female_casualsuit01/female_casualsuit01.mhclo	11011KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=2197 files=female_casualsuit01.mhmat,female_casualsuit01_ao.png,female_casualsuit01_diffuse.png,female_casualsuit01_normal.png
+clothes	clothes/female_casualsuit01/female_casualsuit01.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+clothes	clothes/female_casualsuit02/female_casualsuit02.mhclo	7933KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=2876 files=female_casualsuit02.mhmat,female_casualsuit02_ao.png,female_casualsuit02_diffuse.png,female_casualsuit02_normal.png
+clothes	clothes/female_casualsuit02/female_casualsuit02.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+clothes	clothes/female_elegantsuit01/female_elegantsuit01.mhclo	5150KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=2205 files=female_elegantsuit01.mhmat,female_elegantsuit01_ao.png,female_elegantsuit01_diffuse.png,female_elegantsuit01_normal.png
+clothes	clothes/female_elegantsuit01/female_elegantsuit01.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+clothes	clothes/female_sportsuit01/female_sportsuit01.mhclo	3548KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=1797 files=female_sportsuit01.mhmat,female_sportsuit01_ao.png,female_sportsuit01_diffuse.png,female_sportsuit01_normal.png
+clothes	clothes/female_sportsuit01/female_sportsuit01.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+clothes	clothes/frankyaye_mini_skirt_01/frankyaye_mini_skirt_01.mhclo	3728KB	author frankyaye | homepage http://www.makehuman.org/ | license AGPL3 (see also http://www.makehuman.org/doc/node/external_tools_license.html) verts=905 files=mini_skirt_01.mhmat,mini_skirt_01_diffuse.png,mini_skirt_01_normal.png
+clothes	clothes/frankyaye_mini_skirt_01/mini_skirt_01.mhmat	0KB	
+clothes	clothes/frankyaye_mini_skirt_02/frankyaye_mini_skirt_02.mhclo	2309KB	author frankyaye | homepage http://www.makehuman.org/ | license AGPL3 (see also http://www.makehuman.org/doc/node/external_tools_license.html) verts=1385 files=mini_skirt_01_diffuse.png,mini_skirt_02.mhmat
+clothes	clothes/frankyaye_mini_skirt_02/mini_skirt_02.mhmat	0KB	
+clothes	clothes/grinsegold_female_pirate_boots/grinsegold_female_pirate_boots.mhclo	5377KB	author RicoCilliers/Grinsegold | homepage http://www.makehuman.org/ | license AGPL3 (see also http://www.makehuman.org/doc/node/external_tools_license.html) verts=31862 files=BootsDiff.jpg,BootsNormals.jpg,BootsSpec.jpg,Boots_Bump.jpg,Tileable_metal_scratch_rust_texture_SPECULAR.jpg,leatherboots_2cm.mhmat
+clothes	clothes/grinsegold_female_pirate_boots/leatherboots_2cm.mhmat	0KB	
+clothes	clothes/joepal_crude_t-shirt_female/crudefemaletshirt.mhmat	0KB	
+clothes	clothes/joepal_crude_t-shirt_female/joepal_crude_t-shirt_female.mhclo	419KB	author Joel Palmius | homepage http://www.makehumancommunity.org/ | license CC0 verts=1095 files=CrudeFemaleTshirtDiffuse.png,crudefemaletshirt.mhmat
+clothes	clothes/male_casualsuit01/male_casualsuit01.mhclo	9147KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=8426 files=male_casualsuit01.mhmat,male_casualsuit01_ao.png,male_casualsuit01_diffuse.png,male_casualsuit01_normal.png
+clothes	clothes/male_casualsuit01/male_casualsuit01.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+clothes	clothes/male_casualsuit02/male_casualsuit02.mhclo	9970KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=2136 files=male_casualsuit02.mhmat,male_casualsuit02_ao.png,male_casualsuit02_diffuse.png,male_casualsuit02_normal.png
+clothes	clothes/male_casualsuit02/male_casualsuit02.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+clothes	clothes/male_casualsuit03/male_casualsuit03.mhclo	15310KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=2499 files=male_casualsuit03.mhmat,male_casualsuit03_ao.png,male_casualsuit03_diffuse.png,male_casualsuit03_normal.png
+clothes	clothes/male_casualsuit03/male_casualsuit03.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+clothes	clothes/male_casualsuit04/male_casualsuit04.mhclo	10639KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=1696 files=male_casualsuit04.mhmat,male_casualsuit04_ao.png,male_casualsuit04_diffuse.png,male_casualsuit04_normal.png
+clothes	clothes/male_casualsuit04/male_casualsuit04.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+clothes	clothes/male_casualsuit05/male_casualsuit05.mhclo	14535KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=3195 files=male_casualsuit05.mhmat,male_casualsuit05_ao.png,male_casualsuit05_diffuse.png,male_casualsuit05_normal.png
+clothes	clothes/male_casualsuit05/male_casualsuit05.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+clothes	clothes/male_casualsuit06/male_casualsuit06.mhclo	6258KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=3708 files=male_casualsuit06.mhmat,male_casualsuit06_ao.png,male_casualsuit06_diffuse.png,male_casualsuit06_normal.png
+clothes	clothes/male_casualsuit06/male_casualsuit06.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+clothes	clothes/male_elegantsuit01/male_elegantsuit01.mhclo	3059KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=7613 files=male_elegantsuit01.mhmat,male_elegantsuit01_diffuse.png
+clothes	clothes/male_elegantsuit01/male_elegantsuit01.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+clothes	clothes/male_worksuit01/male_worksuit01.mhclo	12083KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=3763 files=male_worksuit01.mhmat,male_worksuit01_ao.png,male_worksuit01_diffuse.png,male_worksuit01_normal.png
+clothes	clothes/male_worksuit01/male_worksuit01.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+clothes	clothes/mindfront_kimono/f_kimono.mhmat	0KB	
+clothes	clothes/mindfront_kimono/mindfront_kimono.mhclo	5609KB	author Mindfront (Sweden) | homepage http://www.makehumancommunity.org | license CC0 verts=3546 files=F_Kimono_COL.png,F_Kimono_NRM.png,F_Kimono_SPEC.png,f_kimono.mhmat
+clothes	clothes/namuhekam_male_polo_shirt/Polo_t-shirt.mhmat	0KB	author: Namuhekam | license: CC0
+clothes	clothes/namuhekam_male_polo_shirt/namuhekam_male_polo_shirt.mhclo	8341KB	author: Namuhekam | license: CC0 verts=2189 files=Polo_Base_Color.png,Polo_Height.png,Polo_Normal_OpenGL.png,Polo_Roughness.png,Polo_t-shirt.mhmat
+clothes	clothes/scailman_gogo_platform_boots/gogo_boots.mhmat	0KB	
+clothes	clothes/scailman_gogo_platform_boots/scailman_gogo_platform_boots.mhclo	2581KB	author Unknown | homepage http://www.makehuman.org/ | license AGPL3 (see also http://www.makehuman.org/doc/node/external_tools_license.html) verts=5196 files=gogo_boots.mhmat,gogo_boots.png
+clothes	clothes/scailman_semitransparent_water_boots/botas_102.mhmat	0KB	
+clothes	clothes/scailman_semitransparent_water_boots/scailman_semitransparent_water_boots.mhclo	1372KB	author Unknown | homepage http://www.makehuman.org/ | license AGPL3 (see also http://www.makehuman.org/doc/node/external_tools_license.html) verts=5468 files=Botas_102.png,botas_102.mhmat
+clothes	clothes/shoes01/shoes01.mhclo	2767KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=1722 files=shoes01.mhmat,shoes01_diffuse.png,shoes01_normal.png
+clothes	clothes/shoes01/shoes01.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+clothes	clothes/shoes02/shoes02.mhclo	1828KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=1594 files=shoes02.mhmat,shoes02_diffuse.png
+clothes	clothes/shoes02/shoes02.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+clothes	clothes/shoes03/shoes03.mhclo	1062KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=2222 files=shoes03.mhmat,shoes03_diffuse.png
+clothes	clothes/shoes03/shoes03.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+clothes	clothes/shoes04/shoes04.mhclo	2157KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=1722 files=shoes04.mhmat,shoes04_diffuse.png,shoes04_normal.png
+clothes	clothes/shoes04/shoes04.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+clothes	clothes/shoes05/shoes05.mhclo	1834KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=1594 files=shoes05.mhmat,shoes05_diffuse.png
+clothes	clothes/shoes05/shoes05.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+clothes	clothes/shoes06/shoes06.mhclo	2004KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=1594 files=shoes06.mhmat,shoes06_diffuse.png
+clothes	clothes/shoes06/shoes06.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+clothes	clothes/skalldyrssuppe_tube_top_funky_colors/skalldyrssuppe_tube_top_funky_colors.mhclo	1092KB	author OddoJ | homepage http://www.makehuman.org/ | license AGPL3 (see also http://www.makehuman.org/doc/node/external_tools_license.html) verts=1456 files=tube_top.mhmat,tube_top_diff.png,tube_top_uv.png
+clothes	clothes/skalldyrssuppe_tube_top_funky_colors/tube_top.mhmat	0KB	
+clothes	clothes/toigo_ankle_boots_female/boots_ankle.mhmat	0KB	
+clothes	clothes/toigo_ankle_boots_female/toigo_ankle_boots_female.mhclo	4115KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=2084 files=BootsAnkle-norm.png,BootsAnkle-spec.png,BootsAnkle.png,boots_ankle.mhmat
+clothes	clothes/toigo_ankle_boots_male/boots_ankle_male.mhmat	0KB	
+clothes	clothes/toigo_ankle_boots_male/toigo_ankle_boots_male.mhclo	4240KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=2084 files=BootsAnkle-norm.png,BootsAnkle-spec.png,BootsAnkleM.png,boots_ankle_male.mhmat
+clothes	clothes/toigo_ballet_flats/flats_ballet.mhmat	0KB	
+clothes	clothes/toigo_ballet_flats/toigo_ballet_flats.mhclo	7474KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=4558 files=BalletFlats.png,BalletFlatsPlainNorm.png,BalletFlatsSPEC.png,flats_ballet.mhmat
+clothes	clothes/toigo_ballet_flats_with_bows/flats_ballet_bow.mhmat	0KB	
+clothes	clothes/toigo_ballet_flats_with_bows/toigo_ballet_flats_with_bows.mhclo	10212KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=7756 files=BalletFlatsBowNORM.png,BalletFlatsBowUV.png,BalletFlatsSPEC.png,flats_ballet_bow.mhmat
+clothes	clothes/toigo_ballet_flats_with_flowers/flats_ballet_flower.mhmat	0KB	
+clothes	clothes/toigo_ballet_flats_with_flowers/toigo_ballet_flats_with_flowers.mhclo	9533KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=5340 files=BalletFlatsFlowerNORM.png,BalletFlatsFlowerUV.png,BalletFlatsSPEC.png,flats_ballet_flower.mhmat
+clothes	clothes/toigo_basic_tucked_t-shirt/t_shirt_basic_tucked.mhmat	0KB	
+clothes	clothes/toigo_basic_tucked_t-shirt/toigo_basic_tucked_t-shirt.mhclo	1279KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=1391 files=T-shirt_basic-bump.png,T-shirt_basic.png,t_shirt_basic_tucked.mhmat
+clothes	clothes/toigo_bodice-style_top/bodice_style_top.mhmat	0KB	
+clothes	clothes/toigo_bodice-style_top/toigo_bodice-style_top.mhclo	2600KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=1017 files=Bodice-NORM.png,Bodice-spec.png,Bodice.png,bodice_style_top.mhmat
+clothes	clothes/toigo_bodice_dress_with_lace_ruffle_skirt/dress_bodice_ruffle_skirt.mhmat	0KB	
+clothes	clothes/toigo_bodice_dress_with_lace_ruffle_skirt/toigo_bodice_dress_with_lace_ruffle_skirt.mhclo	4048KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=4488 files=SkirtLaceRuffle.png,dress_bodice_ruffle_skirt.mhmat
+clothes	clothes/toigo_camisole_dress_with_full_skirt/dress_camisole_full_skirt.mhmat	0KB	
+clothes	clothes/toigo_camisole_dress_with_full_skirt/toigo_camisole_dress_with_full_skirt.mhclo	8204KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=5504 files=CamisoleDressUV.png,dress_camisole_full_skirt.mhmat
+clothes	clothes/toigo_camisole_top/camisole_top.mhmat	0KB	
+clothes	clothes/toigo_camisole_top/toigo_camisole_top.mhclo	5408KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=4224 files=CamisoleTop.png,camisole_top.mhmat
+clothes	clothes/toigo_cut_out_dress/dress_cut_outs.mhmat	0KB	
+clothes	clothes/toigo_cut_out_dress/toigo_cut_out_dress.mhclo	7922KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=3151 files=cutOutDress.png,dress_cut_outs.mhmat
+clothes	clothes/toigo_dress_with_tiered_skirt/dresstierskirt.mhmat	0KB	
+clothes	clothes/toigo_dress_with_tiered_skirt/toigo_dress_with_tiered_skirt.mhclo	3258KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=9643 files=DressTierSkirt.png,dresstierskirt.mhmat
+clothes	clothes/toigo_fisherman_sweater/sweater_fisherman.mhmat	0KB	
+clothes	clothes/toigo_fisherman_sweater/toigo_fisherman_sweater.mhclo	3229KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=2126 files=shirt-knit-NORM.png,shirt-knit.png,sweater_fisherman.mhmat
+clothes	clothes/toigo_flats/flats.mhmat	0KB	
+clothes	clothes/toigo_flats/toigo_flats.mhclo	12072KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=28808 files=Shoe.png,ShoeSpec.png,flats.mhmat
+clothes	clothes/toigo_halter_dress_knee_length/dress_knee_halter.mhmat	0KB	
+clothes	clothes/toigo_halter_dress_knee_length/toigo_halter_dress_knee_length.mhclo	986KB	author MRT | homepage http://www.makehumancommunity.org/content/user_contributed_assets.html | license CC0 verts=2031 files=DressCloth3UV.png,dress_knee_halter.mhmat
+clothes	clothes/toigo_halter_dress_midi/dress_midi_halter.mhmat	0KB	
+clothes	clothes/toigo_halter_dress_midi/toigo_halter_dress_midi.mhclo	6046KB	author MRT | homepage http://www.makehumancommunity.org/content/user_contributed_assets.html | license CC0 verts=2655 files=DressClothUV.png,dress_midi_halter.mhmat
+clothes	clothes/toigo_halter_dress_with_fluted_skirt/dress_long_fluted_skirt.mhmat	0KB	
+clothes	clothes/toigo_halter_dress_with_fluted_skirt/toigo_halter_dress_with_fluted_skirt.mhclo	2929KB	author MRT | homepage http://www.makehumancommunity.org/content/user_contributed_assets.html | license CC0 verts=3279 files=DressCloth2UV.png,dress_long_fluted_skirt.mhmat
+clothes	clothes/toigo_harem_pants/pants_harem.mhmat	0KB	
+clothes	clothes/toigo_harem_pants/toigo_harem_pants.mhclo	6546KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=5527 files=HaremPants.png,pants_harem.mhmat
+clothes	clothes/toigo_keyhole_neck_dress/dress_keyhole_neck.mhmat	0KB	
+clothes	clothes/toigo_keyhole_neck_dress/toigo_keyhole_neck_dress.mhclo	2725KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=9067 files=ZebraD.png,dress_keyhole_neck.mhmat
+clothes	clothes/toigo_keyhole_tank_top/tank_keyhole_neck.mhmat	0KB	
+clothes	clothes/toigo_keyhole_tank_top/toigo_keyhole_tank_top.mhclo	1483KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=726 files=Giraffe.png,tank_keyhole_neck.mhmat
+clothes	clothes/toigo_long_full_skirt/skirt_full_long.mhmat	0KB	
+clothes	clothes/toigo_long_full_skirt/toigo_long_full_skirt.mhclo	10203KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=2992 files=skirtFullLong.png,skirt_full_long.mhmat
+clothes	clothes/toigo_mj_cloth_shoes/mj_shoes.mhmat	0KB	
+clothes	clothes/toigo_mj_cloth_shoes/toigo_mj_cloth_shoes.mhclo	4216KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=556 files=MJ-shoes-spec.png,MJ-shoes3-NORM.png,MJ-shoes3.png,mj_shoes.mhmat
+clothes	clothes/toigo_shift_dress/dress_shift.mhmat	0KB	
+clothes	clothes/toigo_shift_dress/toigo_shift_dress.mhclo	2637KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=6892 files=ShiftDress.png,dress_shift.mhmat
+clothes	clothes/toigo_skirt_with_lace_ruffle/skirt_full_lace_ruffle.mhmat	0KB	
+clothes	clothes/toigo_skirt_with_lace_ruffle/toigo_skirt_with_lace_ruffle.mhclo	9286KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=2856 files=LaceRuffleSkirt.png,skirt_full_lace_ruffle.mhmat
+clothes	clothes/toigo_stiletto_booties/booties_stiletto.mhmat	0KB	
+clothes	clothes/toigo_stiletto_booties/toigo_stiletto_booties.mhclo	7518KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=22414 files=booties-spec.png,bootiesNORM.png,bootiesUV.png,booties_stiletto.mhmat
+clothes	clothes/toigo_strapless_ruffle_top_dress/dress_strapless_ruffle_top.mhmat	0KB	
+clothes	clothes/toigo_strapless_ruffle_top_dress/toigo_strapless_ruffle_top_dress.mhclo	4812KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=5301 files=SkirtRuffleTop.png,dress_strapless_ruffle_top.mhmat
+clothes	clothes/toigo_tiered_mini_skirt/tier_skirt_mini.mhmat	0KB	
+clothes	clothes/toigo_tiered_mini_skirt/toigo_tiered_mini_skirt.mhclo	3088KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=5472 files=SkirtMini-blackLeather-NORM.png,SkirtMini-blackLeather-spec.png,SkirtMini-blackLeather.png,tier_skirt_mini.mhmat
+clothes	clothes/toigo_tiered_skirt/tier_skirt.mhmat	0KB	
+clothes	clothes/toigo_tiered_skirt/toigo_tiered_skirt.mhclo	2771KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=6552 files=ShadesTex-PINK.png,tier_skirt.mhmat
+clothes	clothes/toigo_turtleneck_halter_top/toigo_turtleneck_halter_top.mhclo	2197KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=2875 files=ShadesTex-PINK.png,turtleneck_halter.mhmat
+clothes	clothes/toigo_turtleneck_halter_top/turtleneck_halter.mhmat	0KB	
+clothes	clothes/toigo_wool_pants/pants_wool.mhmat	0KB	
+clothes	clothes/toigo_wool_pants/toigo_wool_pants.mhclo	1557KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=1372 files=Pants_wool.png,pants_wool.mhmat
+clothes	clothes/wdg_mycenaean_tunic/mycenaean_tunic.mhmat	0KB	
+clothes	clothes/wdg_mycenaean_tunic/wdg_mycenaean_tunic.mhclo	1054KB	author WDG | homepage http://www.makehuman.org/ | license AGPL3 (see also http://www.makehuman.org/doc/node/external_tools_license.html) verts=1371 files=Mycenaean_Tunic_texture.png,mycenaean_tunic.mhmat
+eyebrows	eyebrows/eyebrow001/eyebrow001.mhclo	239KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=124 files=eyebrow001.mhmat,eyebrow001.png
+eyebrows	eyebrows/eyebrow001/eyebrow001.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+eyebrows	eyebrows/eyebrow002/eyebrow002.mhclo	246KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=124 files=eyebrow002.mhmat,eyebrow002.png
+eyebrows	eyebrows/eyebrow002/eyebrow002.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+eyebrows	eyebrows/eyebrow003/eyebrow003.mhclo	242KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=124 files=eyebrow003.mhmat,eyebrow003.png
+eyebrows	eyebrows/eyebrow003/eyebrow003.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+eyebrows	eyebrows/eyebrow004/eyebrow004.mhclo	238KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=124 files=eyebrow004.mhmat,eyebrow004.png
+eyebrows	eyebrows/eyebrow004/eyebrow004.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+eyebrows	eyebrows/eyebrow005/eyebrow005.mhclo	225KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=124 files=eyebrow005.mhmat,eyebrow005.png
+eyebrows	eyebrows/eyebrow005/eyebrow005.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+eyebrows	eyebrows/eyebrow006/eyebrow006.mhclo	170KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=124 files=eyebrow006.mhmat,eyebrow006.png
+eyebrows	eyebrows/eyebrow006/eyebrow006.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+eyebrows	eyebrows/eyebrow007/eyebrow007.mhclo	169KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=124 files=eyebrow007.mhmat,eyebrow007.png
+eyebrows	eyebrows/eyebrow007/eyebrow007.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+eyebrows	eyebrows/eyebrow008/eyebrow008.mhclo	250KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=124 files=eyebrow008.mhmat,eyebrow008.png
+eyebrows	eyebrows/eyebrow008/eyebrow008.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+eyebrows	eyebrows/eyebrow009/eyebrow009.mhclo	377KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=124 files=eyebrow009.mhmat,eyebrow009.png
+eyebrows	eyebrows/eyebrow009/eyebrow009.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+eyebrows	eyebrows/eyebrow010/eyebrow010.mhclo	222KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=124 files=eyebrow010.mhmat,eyebrow010.png
+eyebrows	eyebrows/eyebrow010/eyebrow010.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+eyebrows	eyebrows/eyebrow011/eyebrow011.mhclo	193KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=124 files=eyebrow011.mhmat,eyebrow011.png
+eyebrows	eyebrows/eyebrow011/eyebrow011.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+eyebrows	eyebrows/eyebrow012/eyebrow012.mhclo	243KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=124 files=eyebrow012.mhmat,eyebrow012.png
+eyebrows	eyebrows/eyebrow012/eyebrow012.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+eyelashes	eyelashes/eyelashes01/eyelashes01.mhclo	248KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=250 files=eyelashes01.mhmat,eyelashes01.png
+eyelashes	eyelashes/eyelashes01/eyelashes01.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+eyelashes	eyelashes/eyelashes02/eyelashes02.mhclo	292KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=250 files=eyelashes02.mhmat,eyelashes02.png
+eyelashes	eyelashes/eyelashes02/eyelashes02.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+eyelashes	eyelashes/eyelashes03/eyelashes03.mhclo	294KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=250 files=eyelashes03.mhmat,eyelashes03.png
+eyelashes	eyelashes/eyelashes03/eyelashes03.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+eyelashes	eyelashes/eyelashes04/eyelashes04.mhclo	254KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=250 files=eyelashes04.mhmat,eyelashes04.png
+eyelashes	eyelashes/eyelashes04/eyelashes04.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+eyes	eyes/high-poly/high-poly.mhclo	189KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=1064 files=
+eyes	eyes/low-poly/low-poly.mhclo	23KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=96 files=
+eyes	eyes/materials/blue.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+eyes	eyes/materials/bluegreen.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+eyes	eyes/materials/brown.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+eyes	eyes/materials/brownlight.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+eyes	eyes/materials/deepblue.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+eyes	eyes/materials/green.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+eyes	eyes/materials/grey.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+eyes	eyes/materials/ice.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+eyes	eyes/materials/lightblue.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+hair	hair/afro01/afro01.mhclo	5024KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=2196 files=afro01.mhmat,afro_diffuse.png
+hair	hair/afro01/afro01.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+hair	hair/bob01/bob01.mhclo	4928KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=5203 files=bob01.mhmat,bob01_diffuse.png
+hair	hair/bob01/bob01.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+hair	hair/bob02/bob02.mhclo	3565KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=1653 files=bob02.mhmat,bob02_diffuse.png
+hair	hair/bob02/bob02.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+hair	hair/braid01/braid01.mhclo	3176KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=4493 files=braid01.mhmat,braid01_diffuse.png
+hair	hair/braid01/braid01.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+hair	hair/cortu_shaggy_green_hair/cortu_shaggy_green_hair.mhclo	888KB	 verts=968 files=shaggy_green.mhmat,shaggy_green_diff.png,shaggy_green_norm.png
+hair	hair/cortu_shaggy_green_hair/shaggy_green.mhmat	0KB	
+hair	hair/cortu_short_messy_hair/cortu_short_messy_hair.mhclo	1034KB	 verts=832 files=short_messy.mhmat,short_messy_diff.png,short_messy_objnorm.png
+hair	hair/cortu_short_messy_hair/short_messy.mhmat	0KB	
+hair	hair/cortu_straight_bangs/cortu_straight_bangs.mhclo	777KB	 verts=848 files=straight_bangs.mhmat,straight_bangs_diff.png,straight_bangs_objnorm.png
+hair	hair/cortu_straight_bangs/straight_bangs.mhmat	0KB	
+hair	hair/cortu_strawberry_cloud_hair/cortu_strawberry_cloud_hair.mhclo	1288KB	 verts=479 files=strawberry_cloud.mhmat,strawberry_cloud_diff.png,strawberry_cloud_norm.png
+hair	hair/cortu_strawberry_cloud_hair/strawberry_cloud.mhmat	0KB	
+hair	hair/culturalibre_hair_01/culturalibre_hair_01.mhclo	6302KB	author Unknown | homepage http://www.makehuman.org/ | license AGPL3 (see also http://www.makehuman.org/node/320) verts=3138 files=diffuse_black.png,fhair01.mhmat,normals.png
+hair	hair/culturalibre_hair_01/fhair01.mhmat	0KB	
+hair	hair/culturalibre_hair_02/culturalibre_hair_02.mhclo	4645KB	author MHteam | homepage http://www.makehuman.org/ | license AGPL3 (see also http://www.makehuman.org/node/320) verts=2314 files=male02_black.mhmat,male02_diffuse_black.png
+hair	hair/culturalibre_hair_02/male02_black.mhmat	0KB	
+hair	hair/culturalibre_hair_05/culturalibre_hair_05.mhclo	473KB	author culturalibre | homepage http://www.makehuman.org/ | license CC-0 verts=2604 files=hair_05.mhmat,hair_05.png
+hair	hair/culturalibre_hair_05/hair_05.mhmat	0KB	
+hair	hair/culturalibre_hair_06/culturalibre_hair_06.mhclo	1550KB	author culturalibre | homepage http://www.makehuman.org/ | license CC-0 verts=7548 files=hair_06.mhmat,pink.png
+hair	hair/culturalibre_hair_06/hair_06.mhmat	0KB	
+hair	hair/elvs_double_mh_braid/double_mhbraid.mhmat	0KB	
+hair	hair/elvs_double_mh_braid/elvs_double_mh_braid.mhclo	2475KB	author Unknown | homepage http://www.makehuman.org/ | license AGPL3 (see also http://www.makehuman.org/doc/node/external_tools_license.html) verts=7969 files=braid01_diffuse_black.png,double_mhbraid.mhmat
+hair	hair/elvs_french_braid_variation/elvs_french_braid_variation.mhclo	4070KB	author Unknown | homepage http://www.makehuman.org/ | license AGPL3 (see also http://www.makehuman.org/doc/node/external_tools_license.html) verts=6452 files=braid01_diffuse_mahogany.png,frenchbraid1mh01.mhmat
+hair	hair/elvs_french_braid_variation/frenchbraid1mh01.mhmat	0KB	
+hair	hair/elvs_reverse_french_braid_bun/elvs_reverse_french_braid_bun.mhclo	4123KB	author Elvaerwyn | homepage http://www.makehuman.org/ | license CC_by verts=5712 files=braid01_diffuse_grapewash.png,rev_fr_braidbun1.mhmat
+hair	hair/elvs_reverse_french_braid_bun/rev_fr_braidbun1.mhmat	0KB	
+hair	hair/elvs_unkempt_french_braid/elvs_unkempt_french_braid.mhclo	2873KB	author Unknown | homepage http://www.makehuman.org/ | license AGPL3 (see also http://www.makehuman.org/doc/node/external_tools_license.html) verts=6506 files=braid01_diffuse_brightginger.png,unkempt_mhbraidfr.mhmat
+hair	hair/elvs_unkempt_french_braid/unkempt_mhbraidfr.mhmat	0KB	
+hair	hair/faydaen_hair_1/faydaen_hair_1.mhclo	670KB	author: unknown | license: CC0 verts=541 files=hair.png,hair1.mhmat
+hair	hair/faydaen_hair_1/hair1.mhmat	0KB	author: unknown | license: CC0
+hair	hair/learning_anime_hair/animehair.mhmat	0KB	
+hair	hair/learning_anime_hair/learning_anime_hair.mhclo	7390KB	author Unknown | homepage http://www.makehuman.org/ | license AGPL3 (see also http://www.makehuman.org/doc/node/external_tools_license.html) verts=45860 files=animehair.mhmat,pink.png
+hair	hair/littleright_bobcut_hair/littleright_bobcut_hair.mhclo	653KB	author littleright | homepage https://twitter.com/littleright_lr | license AGPL3 (see also http://www.makehuman.org/doc/node/external_tools_license.html) verts=1901 files=hairtex.png,littleright_hair_bobcut.mhmat
+hair	hair/littleright_bobcut_hair/littleright_hair_bobcut.mhmat	0KB	
+hair	hair/long01/long01.mhclo	3308KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=3239 files=long01.mhmat,long01_diffuse.png
+hair	hair/long01/long01.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+hair	hair/o4saken_long01/o4saken_long01.mhclo	9363KB	author 04saken | homepage http://www.makehuman.org/ | license CC BY 4.0 verts=15007 files=o4saken_long01.mhmat,o4saken_long01.png,o4saken_long01_nrm.png
+hair	hair/o4saken_long01/o4saken_long01.mhmat	0KB	
+hair	hair/ponytail01/ponytail01.mhclo	4371KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=3718 files=ponytail01.mhmat,ponytail01_diffuse.png
+hair	hair/ponytail01/ponytail01.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+hair	hair/rehmanpolanski_hair_bun_brown/hair_bun_brown.mhmat	0KB	
+hair	hair/rehmanpolanski_hair_bun_brown/rehmanpolanski_hair_bun_brown.mhclo	4618KB	author Rehman Polanski | homepage http://www.makehuman.org/ | license AGPL3 (see also http://www.makehuman.org/doc/node/external_tools_license.html) verts=2524 files=Hair_bun_brown.png,hair_bun_brown.mhmat
+hair	hair/short01/short01.mhclo	2721KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=2984 files=short01.mhmat,short01_diffuse.png
+hair	hair/short01/short01.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+hair	hair/short02/short02.mhclo	5353KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=1755 files=short02.mhmat,short02_diffuse.png,short02_normal.png
+hair	hair/short02/short02.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+hair	hair/short03/short03.mhclo	2517KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=1011 files=short03.mhmat,short03_diffuse.png
+hair	hair/short03/short03.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+hair	hair/short04/short04.mhclo	2407KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=865 files=short04.mhmat,short04_diffuse.png
+hair	hair/short04/short04.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+hair	hair/sonntag78_blond_with_headband/blondwithheadband.mhmat	0KB	
+hair	hair/sonntag78_blond_with_headband/sonntag78_blond_with_headband.mhclo	30421KB	author Unknown | homepage http://www.makehuman.org/ | license AGPL3 (see also http://www.makehuman.org/doc/node/external_tools_license.html) verts=1265 files=blondbump.png,blondwithheadband.mhmat,untitledv3.png
+hair	hair/sonntag78_junglebook_hair/junglebookhair.mhmat	0KB	
+hair	hair/sonntag78_junglebook_hair/sonntag78_junglebook_hair.mhclo	5808KB	author Unknown | homepage http://www.makehuman.org/ | license AGPL3 (see also http://www.makehuman.org/doc/node/external_tools_license.html) verts=4885 files=Hairblackseamless2png.png,junglebookhair.mhmat
+hair	hair/toigo_blunt_bob/bob_blunt.mhmat	0KB	
+hair	hair/toigo_blunt_bob/toigo_blunt_bob.mhclo	25920KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=1510 files=BakedHairNORMAL.png,BakedHair_spec.png,StrawberryBlondHair.png,bob_blunt.mhmat
+hair	hair/toigo_blunt_bob_with_bangs/bob_blunt_bangs.mhmat	0KB	
+hair	hair/toigo_blunt_bob_with_bangs/toigo_blunt_bob_with_bangs.mhclo	23935KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=2665 files=AuburnHair.png,BakedHairNORMAL.png,BakedHair_spec.png,bob_blunt_bangs.mhmat
+hair	hair/toigo_curled_under_bob/bob_curled_under.mhmat	0KB	
+hair	hair/toigo_curled_under_bob/toigo_curled_under_bob.mhclo	25978KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=1507 files=BakedHairNORMAL.png,BakedHair_spec.png,GingerHair.png,bob_curled_under.mhmat
+hair	hair/toigo_curled_under_bob_with_bangs/bob_curled_under_bangs.mhmat	0KB	
+hair	hair/toigo_curled_under_bob_with_bangs/toigo_curled_under_bob_with_bangs.mhclo	29121KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=2665 files=BakedHairNORMAL.png,BakedHair_spec.png,BlondHair.png,bob_curled_under_bangs.mhmat
+hair	hair/toigo_inverted_bob/bob_inverted.mhmat	0KB	
+hair	hair/toigo_inverted_bob/toigo_inverted_bob.mhclo	23311KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=1509 files=BakedHairNORMAL.png,BakedHair_spec.png,GoldenBlondHair.png,bob_inverted.mhmat
+hair	hair/toigo_inverted_bob_with_bangs/bob_inverted_bangs.mhmat	0KB	
+hair	hair/toigo_inverted_bob_with_bangs/toigo_inverted_bob_with_bangs.mhclo	18454KB	author MRT | homepage http://www.makehuman.org/ | license CC0 verts=2670 files=BakedHairNORMAL.png,BakedHair_spec.png,BlackHair.png,bob_inverted_bangs.mhmat
+packs	packs/dress01.json	10KB	
+packs	packs/faceunits01.json	18KB	
+packs	packs/hair01.json	16KB	
+packs	packs/makehuman_system_assets.json	38KB	
+packs	packs/pants01.json	2KB	
+packs	packs/shirts01.json	8KB	
+packs	packs/shoes01.json	14KB	
+packs	packs/skirts01.json	4KB	
+packs	packs/visemes02.json	5KB	
+proxymeshes	proxymeshes/female1605/female1605.proxy	294KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+proxymeshes	proxymeshes/female_generic/female_generic.proxy	1459KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+proxymeshes	proxymeshes/female_muscle_13442/female_muscle_13442.proxy	1655KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+proxymeshes	proxymeshes/male1591/male1591.proxy	293KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+proxymeshes	proxymeshes/male_generic/male_generic.proxy	1583KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+proxymeshes	proxymeshes/male_muscle_13290/male_muscle_13290.proxy	1528KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+proxymeshes	proxymeshes/proxy741/proxy741.proxy	164KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+skins	skins/middleage_african_female/middleage_african_female.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+skins	skins/middleage_african_male/middleage_african_male.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+skins	skins/middleage_asian_female/middleage_asian_female.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+skins	skins/middleage_asian_male/middleage_asian_male.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+skins	skins/middleage_caucasian_female/middleage_caucasian_female.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+skins	skins/middleage_caucasian_male/middleage_caucasian_male.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+skins	skins/old_african_female/old_african_female.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+skins	skins/old_african_male/old_african_male.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+skins	skins/old_asian_female/old_asian_female.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+skins	skins/old_asian_male/old_asian_male.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+skins	skins/old_caucasian_female/old_caucasian_female.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+skins	skins/old_caucasian_male/old_caucasian_male.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+skins	skins/toon01/toon01.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+skins	skins/young_african_female/young_african_female.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+skins	skins/young_african_male/young_african_male.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+skins	skins/young_asian_female/young_asian_female.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+skins	skins/young_asian_male/young_asian_male.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+skins	skins/young_caucasian_female/young_caucasian_female.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+skins	skins/young_caucasian_female2/young_caucasian_female2.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+skins	skins/young_caucasian_female_special_suit/young_caucasian_female_special_suit.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+skins	skins/young_caucasian_male/young_caucasian_male.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+skins	skins/young_caucasian_male2/young_caucasian_male2.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+skins	skins/young_caucasian_male_special_suit/young_caucasian_male_special_suit.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+targets	targets/faceunits/browDownLeft.target	11KB	
+targets	targets/faceunits/browDownRight.target	10KB	
+targets	targets/faceunits/browInnerUp.target	11KB	
+targets	targets/faceunits/browOuterUpLeft.target	6KB	
+targets	targets/faceunits/browOuterUpRight.target	6KB	
+targets	targets/faceunits/cheekPuff.target	39KB	
+targets	targets/faceunits/cheekSquintLeft.target	14KB	
+targets	targets/faceunits/cheekSquintRight.target	14KB	
+targets	targets/faceunits/eyeBlinkLeft.target	15KB	
+targets	targets/faceunits/eyeBlinkRight.target	15KB	
+targets	targets/faceunits/eyeLookDownLeft.target	11KB	
+targets	targets/faceunits/eyeLookDownRight.target	11KB	
+targets	targets/faceunits/eyeLookInLeft.target	9KB	
+targets	targets/faceunits/eyeLookInRight.target	8KB	
+targets	targets/faceunits/eyeLookOutLeft.target	9KB	
+targets	targets/faceunits/eyeLookOutRight.target	9KB	
+targets	targets/faceunits/eyeLookUpLeft.target	16KB	
+targets	targets/faceunits/eyeLookUpRight.target	16KB	
+targets	targets/faceunits/eyeSquintLeft.target	8KB	
+targets	targets/faceunits/eyeSquintRight.target	8KB	
+targets	targets/faceunits/eyeWideLeft.target	9KB	
+targets	targets/faceunits/eyeWideRight.target	8KB	
+targets	targets/faceunits/jawForward.target	38KB	
+targets	targets/faceunits/jawLeft.target	40KB	
+targets	targets/faceunits/jawOpen.target	50KB	
+targets	targets/faceunits/jawRight.target	41KB	
+targets	targets/faceunits/mouthClose.target	37KB	
+targets	targets/faceunits/mouthDimpleLeft.target	18KB	
+targets	targets/faceunits/mouthDimpleRight.target	18KB	
+targets	targets/faceunits/mouthFrownLeft.target	16KB	
+targets	targets/faceunits/mouthFrownRight.target	15KB	
+targets	targets/faceunits/mouthFunnel.target	33KB	
+targets	targets/faceunits/mouthLeft.target	35KB	
+targets	targets/faceunits/mouthLowerDownLeft.target	6KB	
+targets	targets/faceunits/mouthLowerDownRight.target	6KB	
+targets	targets/faceunits/mouthPressLeft.target	21KB	
+targets	targets/faceunits/mouthPressRight.target	21KB	
+targets	targets/faceunits/mouthPucker.target	32KB	
+targets	targets/faceunits/mouthRight.target	36KB	
+targets	targets/faceunits/mouthRollLower.target	10KB	
+targets	targets/faceunits/mouthRollUpper.target	18KB	
+targets	targets/faceunits/mouthShrugLower.target	6KB	
+targets	targets/faceunits/mouthShrugUpper.target	15KB	
+targets	targets/faceunits/mouthSmileLeft.target	31KB	
+targets	targets/faceunits/mouthSmileRight.target	32KB	
+targets	targets/faceunits/mouthStretchLeft.target	24KB	
+targets	targets/faceunits/mouthStretchRight.target	24KB	
+targets	targets/faceunits/mouthUpperUpLeft.target	15KB	
+targets	targets/faceunits/mouthUpperUpRight.target	15KB	
+targets	targets/faceunits/noseSneerLeft.target	20KB	
+targets	targets/faceunits/noseSneerRight.target	19KB	
+targets	targets/faceunits/tongueOut.target	4KB	
+targets	targets/visemes/viseme_CH.target	32KB	
+targets	targets/visemes/viseme_DD.target	29KB	
+targets	targets/visemes/viseme_E.target	51KB	
+targets	targets/visemes/viseme_FF.target	29KB	
+targets	targets/visemes/viseme_I.target	30KB	
+targets	targets/visemes/viseme_O.target	42KB	
+targets	targets/visemes/viseme_PP.target	40KB	
+targets	targets/visemes/viseme_RR.target	30KB	
+targets	targets/visemes/viseme_SS.target	39KB	
+targets	targets/visemes/viseme_TH.target	30KB	
+targets	targets/visemes/viseme_U.target	29KB	
+targets	targets/visemes/viseme_aa.target	48KB	
+targets	targets/visemes/viseme_kk.target	38KB	
+targets	targets/visemes/viseme_nn.target	46KB	
+targets	targets/visemes/viseme_sil.target	0KB	
+teeth	teeth/teeth_base/teeth.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+teeth	teeth/teeth_base/teeth_base.mhclo	2370KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=3868 files=teeth.mhmat,teeth.png
+teeth	teeth/teeth_shape01/teeth.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+teeth	teeth/teeth_shape01/teeth_shape01.mhclo	2370KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=3868 files=teeth.mhmat,teeth.png
+teeth	teeth/teeth_shape02/teeth.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+teeth	teeth/teeth_shape02/teeth_shape02.mhclo	2372KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=3868 files=teeth.mhmat,teeth.png
+teeth	teeth/teeth_shape03/teeth.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+teeth	teeth/teeth_shape03/teeth_shape03.mhclo	2370KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=3868 files=teeth.mhmat,teeth.png
+teeth	teeth/teeth_shape04/teeth.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+teeth	teeth/teeth_shape04/teeth_shape04.mhclo	2371KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=3868 files=teeth.mhmat,teeth.png
+teeth	teeth/teeth_shape05/teeth.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+teeth	teeth/teeth_shape05/teeth_shape05.mhclo	2370KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=3868 files=teeth.mhmat,teeth.png
+tongue	tongue/tongue01/tongue01.mhclo	679KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier verts=226 files=tongue01.mhmat,tongue01_diffuse.png
+tongue	tongue/tongue01/tongue01.mhmat	1KB	Copyright (C) 2020 Data Collection AB, https://www.datacollection.se | Copyright (C) 2020 Joel Palmius | Copyright (C) 2020 Jonas Hauquier
+zip	dress01.zip	45506KB
+zip	faceunits01.zip	251KB
+zip	hair01.zip	222437KB
+zip	makehuman_system_assets.zip	274157KB
+zip	pants01.zip	21395KB
+zip	shirts01.zip	23905KB
+zip	shoes01.zip	81009KB
+zip	skirts01.zip	28861KB
+zip	visemes02.zip	127KB
