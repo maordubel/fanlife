@@ -24,8 +24,10 @@ SHOULDER = (118, 222)          # the board's shoulder seams' x at the collar's f
 
 def shirt_svg(kit_path):
     """the kit drawing with the inside of the collar taken out: his own neck shows there"""
+    if not kit_path:
+        return None
     f = ROOT / 'public' / kit_path.lstrip('/')
-    if not kit_path or not f.exists():
+    if not f.is_file():
         return None
     src = f.read_text()
     neck = re.escape(TEMPLATE['neck'])
