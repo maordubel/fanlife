@@ -788,7 +788,7 @@ button.wkk-stub-ground { min-block-size: 44px; text-decoration: underline; text-
   .wkk-home[data-short] .wkk-story-in { block-size: 330px; }
   /* the terrace's game is the first card of Play, one tap away in the tab bar: on a phone it is not said twice */
   .wkk-home[data-short] .wkk-yourgate { display: none; }
-  .wkk-home[data-short] > .wkk-nextwrap { order: 5; } .wkk-home[data-short] > .wkk-dykwrap { order: 6; } .wkk-home[data-short] > .wkk-contents { order: 7; } .wkk-home[data-short] > .wkk-shop { order: 8; }
+  .wkk-home[data-short] > .wkk-nextwrap { order: 5; } .wkk-home[data-short] > .wkk-dykwrap { order: 6; } .wkk-home[data-short] > .wkk-shopwin { order: 7; } .wkk-home[data-short] > .wkk-contents { order: 8; } .wkk-home[data-short] > .wkk-shop { order: 9; }
 }
 @media (min-width: 901px) {
   /* one closing row of three: the next match, the "did you know", the contents — no holes in the spread */
@@ -801,4 +801,46 @@ button.wkk-stub-ground { min-block-size: 44px; text-decoration: underline; text-
   .wkk-home[data-short]:not(:has(> .wkk-dykwrap)):not(:has(> .wkk-nextwrap)) > .wkk-contents { grid-column: 1 / -1; }
   .wkk-home[data-short] .wkk-dyk { margin-block-start: 0; }
   .wkk-home[data-short] .wkk-story-in { block-size: 520px; }
+}
+
+/* ── THE CLUB HOME, SECOND PASS (owner, 24.11.2026: "each club's home is still not at the level asked") ── */
+/* three ways in (prefix .wkcd): the club says what you can do here, under the masthead, in its one ink */
+.wkcd { display: flex; flex-direction: column; gap: 10px; }
+.wkcd-k { align-self: flex-start; margin: 0; }
+.wkcd .wkcd-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.wkcd .wkcd-door { display: grid; grid-template-columns: 104px minmax(0, 1fr) 26px; align-items: center; gap: 12px; min-block-size: 72px; padding-inline-end: 12px; background: var(--mag-card); color: var(--mag-ink); text-decoration: none; border: 3px solid var(--mag-ink); box-shadow: 4px 4px 0 var(--club-primary, var(--mag-ink)); transition: translate .08s, box-shadow .08s; }
+.wkcd-pic { position: relative; align-self: stretch; overflow: hidden; background: var(--club-primary, var(--mag-ink)); border-inline-end: 3px solid var(--mag-ink); }
+.wkcd-pic img { display: block; inline-size: 100%; block-size: 100%; object-fit: cover; filter: grayscale(1) contrast(1.25) brightness(1.08); mix-blend-mode: multiply; }
+.wkcd-pic::after { content: ''; position: absolute; inset: 0; background: radial-gradient(color-mix(in srgb, var(--mag-ink) 22%, transparent) 1.2px, transparent 1.6px) 0 0 / 6px 6px; pointer-events: none; }
+.wkcd-no { position: absolute; z-index: 1; inset-block-start: 4px; inset-inline-start: 4px; display: grid; place-items: center; inline-size: 24px; block-size: 24px; border-radius: 50%; background: var(--mag-ink); color: var(--mag-paper); font-size: 13px; line-height: 1; }
+.wkcd-t { display: flex; flex-direction: column; gap: 3px; min-inline-size: 0; padding-block: 8px; }
+.wkcd-t b { font-family: var(--mag-display); font-weight: 400; font-size: 21px; line-height: 1; text-transform: uppercase; }
+.wkcd-t small { font-family: var(--mag-body); font-size: 13px; line-height: 1.25; color: var(--mag-muted); }
+.wkcd-go { inline-size: 24px; block-size: 24px; fill: none; stroke: currentColor; stroke-width: 3; }
+.wkcd .wkcd-door:active { translate: 2px 2px; box-shadow: 2px 2px 0 var(--club-primary, var(--mag-ink)); }
+.wkcd .wkcd-door:focus-visible { outline: 3px solid var(--mag-ink); outline-offset: 3px; }
+@media (max-width: 900px) { .wkk-home[data-short] > .wkcd { order: 1; } }
+
+/* the gates fill their row: three across on a desktop, the odd one out across on a phone */
+.wkk-home[data-short] .wkk-covers > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+@media (min-width: 640px) { .wkk-home[data-short] .wkk-covers > :last-child:nth-child(odd) { grid-column: auto; } }
+@media (min-width: 901px) { .wkk-home[data-short] .wkk-covers { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; } .wkk-home[data-short] .wkk-cover .wk-cover-art { block-size: 260px; } }
+
+/* the club's shop window wears the club's ink, its picture printed mono (rule 95) */
+
+@media (min-width: 901px) {
+  .wkcd .wkcd-list { flex-direction: row; gap: 20px; }
+  .wkcd-list > li { flex: 1 1 0; }
+  .wkcd .wkcd-door { grid-template-columns: minmax(0, 1fr) 26px; grid-template-rows: auto auto; padding: 0 16px 14px 0; block-size: 100%; box-shadow: 6px 6px 0 var(--club-primary, var(--mag-ink)); }
+  .wkcd-pic { grid-column: 1 / -1; aspect-ratio: 16 / 7; border-inline-end: 0; border-block-end: 3px solid var(--mag-ink); }
+  .wkcd-t { padding: 10px 0 0 16px; } .wkcd-t b { font-size: 26px; } .wkcd-t small { font-size: 14px; }
+  .wkcd-go { align-self: end; }
+  .wkcd .wkcd-door:hover { translate: -3px -3px; box-shadow: 9px 9px 0 var(--club-primary, var(--mag-ink)); }
+  /* the closing rows: next match beside "did you know", then the shop, then the contents across the page */
+  .wkk-home[data-short] > .wkcd { grid-column: 1 / -1; }
+  .wkk-home[data-short] > .wkk-nextwrap { grid-column: 1 / 7; }
+  .wkk-home[data-short] > .wkk-dykwrap { grid-column: 7 / 13; }
+  .wkk-home[data-short]:not(:has(> .wkk-dykwrap)) > .wkk-nextwrap, .wkk-home[data-short]:not(:has(> .wkk-nextwrap)) > .wkk-dykwrap { grid-column: 1 / -1; }
+  .wkk-home[data-short] > .wkk-shopwin { grid-column: 1 / -1; }
+  .wkk-home[data-short] > .wkk-contents, .wkk-home[data-short]:not(:has(> .wkk-dykwrap)) > .wkk-contents, .wkk-home[data-short]:not(:has(> .wkk-nextwrap)) > .wkk-contents { grid-column: 1 / -1; }
 }
