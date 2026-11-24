@@ -398,7 +398,7 @@ VERTICAL = [
         dict(src='despair.jpg', focus=(0.5, 0.5), zoom=(1.0, 1.2), vo=L['To reach the final']),
         dict(src='header-b.jpg', focus=(0.5, 0.5), zoom=(1.2, 1.35), vo=L['Inside two minutes']),
         dict(card=dict(big='Did they do it?', small='The answer is in the film', size=120), d=2.6)]),
-    dict(name='short-2-part-timers', kind='short', hook='He worked in insurance. Then he outscored all of Europe.', kicker='Puskás’s Panathinaikos · 1971', music=M + 'under-the-iron-watch.mp3', end=END, scenes=[
+    dict(name='short-2-part-timers', kind='short', hook='An insurance man. Then Europe’s top scorer.', kicker='Puskás’s Panathinaikos · 1971', music=M + 'under-the-iron-watch.mp3', end=END, scenes=[
         dict(src='training.jpg', focus=(0.5, 0.5), zoom=(1.0, 1.2), vo=L['And his players are not']),
         dict(src='photos.jpg', focus=(0.5, 0.5), zoom=(1.05, 1.2), vo=L['And Antoniadis finishes']),
         dict(card=dict(big='How did they get there?', small='The whole road is in the film', size=120), d=2.6)]),

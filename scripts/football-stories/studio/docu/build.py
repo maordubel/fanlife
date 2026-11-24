@@ -1742,7 +1742,9 @@ def turn_cards(beats: list[dict]) -> None:
         z = (at[j + 1] if j + 1 < len(at) else b['vo_t'] + b['vo_d']) - b['t']
         words = ' '.join(ws[:j + 1]).upper().split()
         h = (len(words) + 1) // 2
-        b['shots'].append({'kind': 'word', 'text': ' '.join(words[:h]) + '|' + ' '.join(words[h:]), 'bg': 'ink', 'size': 120,
+        lines = (' '.join(words[:h]), ' '.join(words[h:]))
+        size = min(120, int(1700 / (0.8 * max(len(x) for x in lines))))   # the head runs ~0.8 × size a capital: held inside 1,700 px
+        b['shots'].append({'kind': 'word', 'text': '|'.join(lines), 'bg': 'ink', 'size': size,
                            'at': round(a, 3), 'd': round(min(b['d'], z + 0.9), 3), 'z': 16})
         shown, last = shown + 1, b['t']
 
