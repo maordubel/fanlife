@@ -51,7 +51,7 @@ jobs:
       - uses: actions/setup-python@v5
         with: {python-version: '3.12'}
       - uses: actions/cache@v4
-        with: {path: ~/.cache/huggingface, key: hf-sdxl-lcm-v1}
+        with: {path: ~/.cache/huggingface, key: hf-realvis-lightning-v1}
       - name: Swap (SDXL on CPU needs more than the runner's memory when many jobs run)
         run: sudo fallocate -l 12G /swapfile2 && sudo chmod 600 /swapfile2 && sudo mkswap /swapfile2 && sudo swapon /swapfile2 && free -g
       - run: |

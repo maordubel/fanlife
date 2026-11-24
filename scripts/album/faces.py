@@ -2,7 +2,7 @@
 
 The structure is ours: the drawn figure (his measured traits — skin, hair colour and length, curls, beard, moustache —
 or his era's usual look, and his club's measured shirt of his years) is rendered and handed to an open image model
-(Stable Diffusion XL, CreativeML OpenRAIL++-M, commercial use allowed; LCM-LoRA for few steps; CPU, free in GitHub
+(RealVisXL (SDXL), OpenRAIL++-M, commercial use allowed; SDXL-Lightning for 8 steps; a face pass; CPU, free in GitHub
 Actions) as the starting picture. The model paints it in the album's style; the club's real shirt is laid back over
 it, and the same paint filter as the photographs finishes it. Seeded by his person id: the same man, the same face,
 every run. The face is NOT his likeness — the back of the sticker says so.
@@ -18,13 +18,13 @@ import paint as PNT  # noqa: E402
 
 ROOT = S.ROOT
 OUT = S.FACES_DIR
-MODEL = 'stabilityai/stable-diffusion-xl-base-1.0'  # CreativeML OpenRAIL++-M: commercial use allowed
-LCM = 'latent-consistency/lcm-lora-sdxl'
+MODEL = 'SG161222/RealVisXL_V5.0'  # a realism-tuned SDXL (owner 23.11: the base model's faces were ugly); OpenRAIL++-M, commercial use allowed
+LIGHTNING = ('ByteDance/SDXL-Lightning', 'sdxl_lightning_8step_lora.safetensors')  # 8 good steps on a CPU; OpenRAIL++-M
 SIDE = 768
 SKIN_WORDS = ['very fair', 'fair', 'light olive', 'olive', 'tanned', 'brown', 'dark brown']
 HAIR_WORDS = {'black': 'black', 'dark': 'dark brown', 'brown': 'brown', 'light': 'light brown', 'blond': 'blond', 'red': 'ginger', 'grey': 'grey', 'white': 'white'}
-STYLE = ('painted illustration, realistic face, ink outlines, painterly shading, vivid warm colours, vintage football card art, '
-         'head and shoulders, front view, plain white background')
+STYLE = ('detailed realistic portrait painting, natural skin texture, sharp eyes, oil paint brushwork, bold black ink contour, '
+         'warm saturated colours, head and shoulders, front view, plain light background')
 NEG = ('cartoon, chibi, anime, flat vector, simple face, photo, blurry, deformed face, asymmetric eyes, extra eyes, text, letters, '
        'watermark, logo, border, frame, oval frame, vignette, close-up, cropped head, hat, cap, headband, glasses, woman, child')
 HEAD = 0.66  # the painted crop: this share of the window's width around the face — the face a third of the model's canvas
@@ -76,6 +76,24 @@ def box(crop):
     return x + w / 2 - side / 2, y + h / 2 - side / 2, side
 
 
+def face_pass(refine, img, f, prompt, seed, steps):
+    """paint the face again at full size (eyes, skin, hair), then blend it back with a soft edge"""
+    import torch
+    from PIL import Image, ImageDraw, ImageFilter
+    x, y, w, h = f
+    cx, cy, side = x + w / 2, y + h / 2, int(w * 2.0)
+    box = (int(max(0, cx - side / 2)), int(max(0, cy - side / 2)), int(min(SIDE, cx + side / 2)), int(min(SIDE, cy + side / 2)))
+    crop = img.crop(box).resize((SIDE, SIDE), Image.LANCZOS)
+    g = torch.Generator().manual_seed(seed + 99)
+    done = refine(prompt=prompt, image=crop, strength=0.35, num_inference_steps=steps, guidance_scale=0, generator=g).images[0]
+    done = done.resize((box[2] - box[0], box[3] - box[1]), Image.LANCZOS)
+    m = Image.new('L', done.size, 0)
+    ImageDraw.Draw(m).ellipse((done.width * .08, done.height * .05, done.width * .92, done.height * .97), fill=255)
+    out = img.copy()
+    out.paste(done, box[:2], m.filter(ImageFilter.GaussianBlur(done.width * .06)))
+    return out
+
+
 def seed_of(person_id):
     return int(hashlib.sha256(person_id.encode()).hexdigest()[:8], 16)
 
@@ -87,24 +105,27 @@ def main():
     ap.add_argument('--limit', type=int, default=999)
     ap.add_argument('--redo', action='store_true')
     ap.add_argument('--strength', type=float, default=0.78)
-    ap.add_argument('--steps', type=int, default=6)
+    ap.add_argument('--steps', type=int, default=8)
     ap.add_argument('--sheet')
     a = ap.parse_args()
     import torch
-    from diffusers import StableDiffusionXLPipeline, LCMScheduler
+    from diffusers import StableDiffusionXLPipeline, StableDiffusionXLImg2ImgPipeline, EulerDiscreteScheduler
+    from huggingface_hub import hf_hub_download
     from PIL import Image, ImageFilter
     from playwright.sync_api import sync_playwright
 
     edition = json.loads((ROOT / 'content/generated/album-edition-1.json').read_text())
     clubs = json.loads((ROOT / 'content/generated/album-clubs.json').read_text())
     ledger = json.loads(S.LEDGER.read_text())['stickers']
-    pipe = StableDiffusionXLPipeline.from_pretrained(MODEL, torch_dtype=torch.float32, variant='fp16', use_safetensors=True)
-    pipe.scheduler = LCMScheduler.from_config(pipe.scheduler.config)
-    pipe.load_lora_weights(LCM)
+    pipe = StableDiffusionXLPipeline.from_pretrained(MODEL, torch_dtype=torch.float32, use_safetensors=True)
+    pipe.scheduler = EulerDiscreteScheduler.from_config(pipe.scheduler.config, timestep_spacing='trailing')
+    pipe.load_lora_weights(hf_hub_download(*LIGHTNING))
     pipe.fuse_lora()
     pipe.set_progress_bar_config(disable=True)
     pipe.enable_attention_slicing()
-    pipe.enable_vae_slicing()
+    pipe.vae.enable_slicing()
+    refine = StableDiffusionXLImg2ImgPipeline(**pipe.components)  # the face pass: the same painter, closer
+    refine.set_progress_bar_config(disable=True)
     torch.set_num_threads(max(1, torch.get_num_threads()))
     want = set(a.ids.split(',')) if a.ids else None
     made, sheet = 0, []
@@ -130,8 +151,8 @@ def main():
                 fig = None
                 for k in range(4):  # a painting the press cannot use (no clear face, a close-up, a crowd) is painted again
                     g = torch.Generator().manual_seed(seed_of(st['person_id']) + k)
-                    cand = pipe(prompt=prompt_of(st, t, clubs[club]['primary']), negative_prompt=NEG, width=SIDE, height=SIDE,
-                                num_inference_steps=a.steps, guidance_scale=2.0, generator=g).images[0]
+                    cand = pipe(prompt=prompt_of(st, t, clubs[club]['primary']), width=SIDE, height=SIDE,
+                                num_inference_steps=a.steps, guidance_scale=0, generator=g).images[0]
                     f = S.face_of(cand)
                     if f and 0.12 * SIDE <= f[2] <= 0.5 * SIDE and f[1] + f[3] < 0.86 * SIDE:  # a clear face, head and shoulders
                         fig = cand
@@ -139,6 +160,7 @@ def main():
                     print(sid, 'repaint', k + 1, flush=True)
                 if fig is None:
                     continue
+                fig = face_pass(refine, fig, S.face_of(fig), prompt_of(st, t, clubs[club]['primary']), seed_of(st['person_id']), a.steps)
                 import gc; gc.collect()
                 out.parent.mkdir(parents=True, exist_ok=True)
                 fig.save(out, 'WEBP', quality=88, method=6)
