@@ -32,6 +32,12 @@ export const M30: CampaignInput[] = [
   {template: 'album-push', start: FROM, days: 30, code: 'FANLIFE99', id: 'm30-album', name: 'The Album · FANLIFE99 launch', times: ['11:07']},
   // the research's best YouTube performers were the atmosphere films: Friday and Saturday nights
   {template: 'film-push', start: FROM, days: 30, playlist: 'ultras', id: 'm30-ultras-nights', name: 'Ultras nights · YouTube', times: ['22:07']},
+  // 24.11.2026, second wave (owner: general FAN LIFE campaigns, LIFE coming soon, the two new clubs, the reels)
+  {template: 'fanlife-brand', start: FROM, days: 30, id: 'm30-brand', name: 'FAN LIFE · every club', times: ['16:07']},
+  {template: 'life-soon', start: FROM, days: 30, id: 'm30-life-soon', name: 'LIFE · coming soon', times: ['18:13']},
+  {template: 'reels', start: FROM, days: 16, id: 'm30-reels-tales', name: 'Reels · Football Fairy Tales'},
+  {template: 'club-days', club: 'fenerbahce', start: '2026-12-25', days: 3, id: 'm30-club-fenerbahce', name: '30 days · fenerbahce days'},
+  {template: 'club-days', club: 'partizan-belgrade', start: '2026-12-28', days: 3, id: 'm30-club-partizan-belgrade', name: '30 days · partizan-belgrade days'},
   {template: 'club-opening', club: 'partizan-belgrade', start: '2026-11-25', days: 6, id: 'm30-open-partizan-belgrade', name: 'New club · Partizan Belgrade', times: ['19:32', '15:37']},
 ]
 
@@ -39,6 +45,9 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const built = M30.map(buildCampaign)
   // Black Friday days: the club's noon product post gives way to the sale post (one shop message a day, not two)
   const bfDays = new Set(['2026-11-27', '2026-11-28', '2026-11-29', '2026-11-30'])
+  // weekday filters: the brand every Mon/Wed/Fri/Sun, LIFE every Tue/Thu/Sat (0 = Sunday)
+  const ON: Record<string, number[]> = {'m30-brand': [0, 1, 3, 5], 'm30-life-soon': [2, 4, 6]}
+  for (const b of built) if (ON[b.campaign.id]) b.rows = b.rows.filter(r => ON[b.campaign.id]!.includes(new Date(`${r.at.slice(0, 10)}T12:00:00Z`).getUTCDay()))
   // ultras nights: Fridays and Saturdays only
   for (const b of built) if (b.campaign.id === 'm30-ultras-nights') b.rows = b.rows.filter(r => [5, 6].includes(new Date(`${r.at.slice(0, 10)}T12:00:00Z`).getUTCDay()))
   for (const b of built) if (b.campaign.template === 'club-days') b.rows = b.rows.filter(r => !(bfDays.has(r.at.slice(0, 10)) && r.main.kit.t === 'L-SHOP'))

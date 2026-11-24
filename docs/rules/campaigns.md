@@ -14,3 +14,10 @@ The owner asked for a campaign area: reports, new campaigns from simple template
   answers 200 (`worker_marketing_open_release`): opening night at the next 19:47 Athens, the rest keep their spacing.
 - A club whose colour is black (Partizan) gets white as its accent, never the default red (its rival's colour).
 - Pause, resume and stop change only posts still ahead. Nothing already sent is touched; old plans are skipped, not deleted.
+- 24.11.2026, second wave: the **FAN LIFE wall** (`L-HUB`, no single club), **LIFE · coming soon** (`L-GTA`, links to
+  `/coming-soon/life` while LIFE is closed) and **Reels** (`kit.to` = `reel`, `kit.reel` = an MP4 of the `social-reels`
+  release; `meta-publish.mjs` posts it as a Facebook Page reel and an Instagram reel instead of the feed picture). Reels are
+  cut from the Fairy Tales episodes by `scripts/marketing/reels/build.mjs` (workflow `marketing-reels.yml`).
+- **Fresh pictures:** a picture records the asset stamp it was drawn from (`kit.v4.ver = 4.0+<stamp of public/album,
+  public/club-kits, public/crests, public/brand, scripts/marketing/kit>`) and when (`kit.v4.at`). The hourly picture run
+  redraws every pending picture whose stamp differs from main, and every post due within 6 h drawn more than 8 h ago.

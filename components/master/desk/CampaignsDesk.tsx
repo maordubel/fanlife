@@ -12,7 +12,7 @@ type Row={id:string;name:string;topic:Topic;state:'running'|'waiting'|'paused'|'
  facebook:number;instagram:number;visitors:number;views:number;clicks:number;first_at:string;last_at:string;next_at:string|null;next_label:string|null;hold:string|null}
 type Preview={campaign:{id:string;name:string;days:number};rows:{at:string;t:string;label:string;hook:string;held:boolean}[]}
 const STATE_L={running:'Running',waiting:'Waits for the club to open',paused:'Paused',done:'Finished'}
-const T_L:Record<string,string>={'L-CLUB':'Club card','L-SHOP':'Product','L-SALE':'Sale','L-FILM':'Film','L-YT':'Channel','L-RUMBLE':'Royal Rumble','L-KITS':'Kit archive','L-MARKET':'Market','L-GATE':'Legends Manager','L-ALBUM':'Album'}
+const T_L:Record<string,string>={'L-CLUB':'Club card','L-SHOP':'Product','L-SALE':'Sale','L-FILM':'Film','L-YT':'Channel','L-RUMBLE':'Royal Rumble','L-KITS':'Kit archive','L-MARKET':'Market','L-GATE':'Legends Manager','L-ALBUM':'Album','L-HUB':'FAN LIFE wall','L-GTA':'LIFE'}
 const FEATURE_L={rumble:'Royal Rumble',kits:'Kit archive',legends:'Legends Manager',market:'The market'}
 const when=(iso:string|null)=>iso?new Date(iso).toLocaleString('en-GB',{weekday:'short',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit',timeZone:'Europe/Athens'}):'—'
 const today=()=>new Date(Date.now()+864e5).toLocaleDateString('en-CA',{timeZone:'Europe/Athens'})

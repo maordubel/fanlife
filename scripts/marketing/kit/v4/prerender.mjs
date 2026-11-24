@@ -11,9 +11,17 @@ import {tmpdir} from 'node:os'
 import path from 'node:path'
 import {png, story, close} from './render.mjs'
 import {capture, phonePage, GATE_ROUTE, SITE} from './screens.mjs'
-import {clubId} from './assets.mjs'
+import {clubId, REPO as REPO_ROOT} from './assets.mjs'
+import {createHash} from 'node:crypto'
+import {execFileSync} from 'node:child_process'
 
 export const V4_VERSION = '4.0'
+/** the asset folders a picture is drawn from (kits, stickers, crests, the kit itself): when any of them changes on main,
+ *  every pending picture in the window is drawn again (owner, 24.11.2026: always the newest files before publishing) */
+export const ASSET_DIRS = ['public/album', 'public/club-kits', 'public/crests', 'public/brand', 'scripts/marketing/kit']
+function assetStamp() {
+  try { return createHash('sha1').update(execFileSync('git', ['rev-parse', ...ASSET_DIRS.map(d => `HEAD:${d}`)], {cwd: REPO_ROOT, stdio: ['ignore', 'pipe', 'ignore']})).digest('hex').slice(0, 8) } catch { return 'local' }
+}
 const DB = (process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://afxpjfxwpdjvlmuoawda.supabase.co').replace(/\/$/, '') // Football Master's public address
 const KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || ''
 const GH = process.env.GITHUB_TOKEN || ''
@@ -184,8 +192,10 @@ async function main() {
       const r = await rpc('worker_marketing_open_release', {p_hold: h}); console.log(`${h}: opened — ${r?.n ?? 0} post(s) released, opening night ${r?.launch ?? '—'}`)
     }
   } catch (e) { console.log(`::warning title=opening campaigns::${e.message}`) }
-  const queue = (await rpc('worker_marketing_v4_queue', {p_hours: HOURS, p_ver: V4_VERSION})).slice(0, LIMIT)
-  console.log(`queue: ${queue.length} post(s) without v${V4_VERSION} pictures in the next ${HOURS}h`)
+  const VER = `${V4_VERSION}+${assetStamp()}`, RUN = Date.now().toString(36)
+  // pictures from other asset files, or due within 6 h and drawn more than 8 h ago, are drawn again from the newest files
+  const queue = (await rpc('worker_marketing_v4_due', {p_hours: HOURS, p_ver: VER, p_fresh_hours: 6, p_age_hours: 8})).slice(0, LIMIT)
+  console.log(`queue: ${queue.length} post(s) to draw (assets ${VER}) in the next ${HOURS}h`)
   const rel = await release()
   let existing = await assets(rel)
   // retention: assets older than five days go (the posts they belong to have been sent)
@@ -259,17 +269,17 @@ async function main() {
         if (screen) data.screen = screen
         const buf = await png(s.t, post.app || 'fanlife', data)
         if (!buf) throw Error(`no v4 layout for ${s.t}`)
-        urls.push(await upload(rel, existing, `p${post.id}-${i + 1}-v${V4_VERSION}.png`, buf, 'image/png'))
+        urls.push(await upload(rel, existing, `p${post.id}-${i + 1}-v${VER}-${RUN}.png`, buf, 'image/png'))
         if (i === 0) slides[0]._screen = screen
       }
       let storyUrl = null
       if (slides.length === 1 || (Array.isArray(kit.to) && kit.to.includes('story'))) {
         const s = slides[0], data = {...(s.data || {}), ...(s._screen ? {screen: s._screen} : {})}
         const file = await story(s.t, post.app || 'fanlife', data, {seconds: 7, out: path.join(dir, `p${post.id}.mp4`)})
-        if (file) storyUrl = await upload(rel, existing, `p${post.id}-story-v${V4_VERSION}.mp4`, readFileSync(file), 'video/mp4')
+        if (file) storyUrl = await upload(rel, existing, `p${post.id}-story-v${VER}-${RUN}.mp4`, readFileSync(file), 'video/mp4')
       }
       if (Object.keys(patch).length) await rpc('worker_marketing_v4_patch', {p_id: post.id, p_patch: patch})
-      const r = await rpc('worker_marketing_v4_set', {p_id: post.id, p_v4: {ver: V4_VERSION, png: urls, story: storyUrl}})
+      const r = await rpc('worker_marketing_v4_set', {p_id: post.id, p_v4: {ver: VER, at: new Date().toISOString(), png: urls, story: storyUrl}})
       if (!r?.ok) throw Error('post no longer pending')
       ok++; console.log(`ok ${post.id} ${slides[0].t} · ${urls.length} picture(s)${storyUrl ? ' + story' : ''}`)
     } catch (e) { bad++; console.log(`::warning title=v4 picture ${post.id}::${String(e?.message || e).slice(0, 240)}`) }

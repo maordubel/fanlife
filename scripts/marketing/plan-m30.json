@@ -1296,9 +1296,9 @@
    {
     "at": "2026-12-05 11:07",
     "t": "L-ALBUM",
-    "label": "The Album · Panathinaikos",
+    "label": "The Album · Fenerbahçe",
     "held": false,
-    "hook": "The Panathinaikos wing of the album is waiting. How many have you stuck? 📒"
+    "hook": "The Fenerbahçe wing of the album is waiting. How many have you stuck? 📒"
    },
    {
     "at": "2026-12-06 11:07",
@@ -1317,9 +1317,9 @@
    {
     "at": "2026-12-08 11:07",
     "t": "L-ALBUM",
-    "label": "The Album · Celtic",
+    "label": "The Album · Olympiacos",
     "held": false,
-    "hook": "The Celtic wing of the album is waiting. How many have you stuck? 📒"
+    "hook": "The Olympiacos wing of the album is waiting. How many have you stuck? 📒"
    },
    {
     "at": "2026-12-09 11:07",
@@ -1338,9 +1338,9 @@
    {
     "at": "2026-12-11 11:07",
     "t": "L-ALBUM",
-    "label": "The Album · FC St. Pauli",
+    "label": "The Album · Zrinjski Mostar",
     "held": false,
-    "hook": "The FC St. Pauli wing of the album is waiting. How many have you stuck? 📒"
+    "hook": "The Zrinjski Mostar wing of the album is waiting. How many have you stuck? 📒"
    },
    {
     "at": "2026-12-12 11:07",
@@ -1359,9 +1359,9 @@
    {
     "at": "2026-12-14 11:07",
     "t": "L-ALBUM",
-    "label": "The Album · Raja Casablanca",
+    "label": "The Album · Atalanta",
     "held": false,
-    "hook": "The Raja Casablanca wing of the album is waiting. How many have you stuck? 📒"
+    "hook": "The Atalanta wing of the album is waiting. How many have you stuck? 📒"
    },
    {
     "at": "2026-12-15 11:07",
@@ -1380,9 +1380,9 @@
    {
     "at": "2026-12-17 11:07",
     "t": "L-ALBUM",
-    "label": "The Album · AEK Athens",
+    "label": "The Album · Fenerbahçe",
     "held": false,
-    "hook": "The AEK Athens wing of the album is waiting. How many have you stuck? 📒"
+    "hook": "The Fenerbahçe wing of the album is waiting. How many have you stuck? 📒"
    },
    {
     "at": "2026-12-18 11:07",
@@ -1401,9 +1401,9 @@
    {
     "at": "2026-12-20 11:07",
     "t": "L-ALBUM",
-    "label": "The Album · Hapoel Tel Aviv",
+    "label": "The Album · Olympiacos",
     "held": false,
-    "hook": "The Hapoel Tel Aviv wing of the album is waiting. How many have you stuck? 📒"
+    "hook": "The Olympiacos wing of the album is waiting. How many have you stuck? 📒"
    },
    {
     "at": "2026-12-21 11:07",
@@ -1422,9 +1422,9 @@
    {
     "at": "2026-12-23 11:07",
     "t": "L-ALBUM",
-    "label": "The Album · Hapoel Petah Tikva",
+    "label": "The Album · Zrinjski Mostar",
     "held": false,
-    "hook": "The Hapoel Petah Tikva wing of the album is waiting. How many have you stuck? 📒"
+    "hook": "The Zrinjski Mostar wing of the album is waiting. How many have you stuck? 📒"
    },
    {
     "at": "2026-12-24 11:07",
@@ -1498,6 +1498,548 @@
     "label": "Film · Ultras & Atmosphere",
     "held": false,
     "hook": "▶️ Ultras & Atmosphere — free on YouTube."
+   }
+  ]
+ },
+ {
+  "id": "m30-brand",
+  "topic": "brand",
+  "name": "FAN LIFE · every club",
+  "template": "fanlife-brand",
+  "start": "2026-11-25",
+  "days": 30,
+  "rows": [
+   {
+    "at": "2026-11-25 16:07",
+    "t": "L-HUB",
+    "label": "FAN LIFE · clubs",
+    "held": false,
+    "hook": "12 clubs. One home for the supporters. Is yours in? 🏟️"
+   },
+   {
+    "at": "2026-11-27 16:07",
+    "t": "L-HUB",
+    "label": "FAN LIFE · archive",
+    "held": false,
+    "hook": "Every match. Every line-up. Every scorer. 📚"
+   },
+   {
+    "at": "2026-11-29 16:07",
+    "t": "L-HUB",
+    "label": "FAN LIFE · shop",
+    "held": false,
+    "hook": "Fan art for the terrace, printed for you. 👕"
+   },
+   {
+    "at": "2026-11-30 16:07",
+    "t": "L-HUB",
+    "label": "FAN LIFE · youtube",
+    "held": false,
+    "hook": "Football stories nobody else tells. ▶️"
+   },
+   {
+    "at": "2026-12-02 16:07",
+    "t": "L-HUB",
+    "label": "FAN LIFE · games",
+    "held": false,
+    "hook": "13 games about your club. Free, in your browser. 🎮"
+   },
+   {
+    "at": "2026-12-04 16:07",
+    "t": "L-HUB",
+    "label": "FAN LIFE · album",
+    "held": false,
+    "hook": "A free envelope of legends. Every day. ✉️"
+   },
+   {
+    "at": "2026-12-06 16:07",
+    "t": "L-HUB",
+    "label": "FAN LIFE · youtube",
+    "held": false,
+    "hook": "Football stories nobody else tells. ▶️"
+   },
+   {
+    "at": "2026-12-07 16:07",
+    "t": "L-HUB",
+    "label": "FAN LIFE · clubs",
+    "held": false,
+    "hook": "12 clubs. One home for the supporters. Is yours in? 🏟️"
+   },
+   {
+    "at": "2026-12-09 16:07",
+    "t": "L-HUB",
+    "label": "FAN LIFE · archive",
+    "held": false,
+    "hook": "Every match. Every line-up. Every scorer. 📚"
+   },
+   {
+    "at": "2026-12-11 16:07",
+    "t": "L-HUB",
+    "label": "FAN LIFE · shop",
+    "held": false,
+    "hook": "Fan art for the terrace, printed for you. 👕"
+   },
+   {
+    "at": "2026-12-13 16:07",
+    "t": "L-HUB",
+    "label": "FAN LIFE · clubs",
+    "held": false,
+    "hook": "12 clubs. One home for the supporters. Is yours in? 🏟️"
+   },
+   {
+    "at": "2026-12-14 16:07",
+    "t": "L-HUB",
+    "label": "FAN LIFE · games",
+    "held": false,
+    "hook": "13 games about your club. Free, in your browser. 🎮"
+   },
+   {
+    "at": "2026-12-16 16:07",
+    "t": "L-HUB",
+    "label": "FAN LIFE · album",
+    "held": false,
+    "hook": "A free envelope of legends. Every day. ✉️"
+   },
+   {
+    "at": "2026-12-18 16:07",
+    "t": "L-HUB",
+    "label": "FAN LIFE · youtube",
+    "held": false,
+    "hook": "Football stories nobody else tells. ▶️"
+   },
+   {
+    "at": "2026-12-20 16:07",
+    "t": "L-HUB",
+    "label": "FAN LIFE · games",
+    "held": false,
+    "hook": "13 games about your club. Free, in your browser. 🎮"
+   },
+   {
+    "at": "2026-12-21 16:07",
+    "t": "L-HUB",
+    "label": "FAN LIFE · archive",
+    "held": false,
+    "hook": "Every match. Every line-up. Every scorer. 📚"
+   },
+   {
+    "at": "2026-12-23 16:07",
+    "t": "L-HUB",
+    "label": "FAN LIFE · shop",
+    "held": false,
+    "hook": "Fan art for the terrace, printed for you. 👕"
+   }
+  ]
+ },
+ {
+  "id": "m30-life-soon",
+  "topic": "life",
+  "name": "LIFE · coming soon",
+  "template": "life-soon",
+  "start": "2026-11-25",
+  "days": 30,
+  "rows": [
+   {
+    "at": "2026-11-26 18:13",
+    "t": "L-GTA",
+    "label": "LIFE · coming soon",
+    "held": false,
+    "hook": "Matchday. The march starts at the pub and ends at the gate."
+   },
+   {
+    "at": "2026-11-28 18:13",
+    "t": "L-GTA",
+    "label": "LIFE · coming soon",
+    "held": false,
+    "hook": "Athens, Glasgow, Hamburg, Tel Aviv… Which city should LIFE open first? 👇"
+   },
+   {
+    "at": "2026-12-01 18:13",
+    "t": "L-GTA",
+    "label": "LIFE · coming soon",
+    "held": false,
+    "hook": "Matchday. The march starts at the pub and ends at the gate."
+   },
+   {
+    "at": "2026-12-03 18:13",
+    "t": "L-GTA",
+    "label": "LIFE · coming soon",
+    "held": false,
+    "hook": "Athens, Glasgow, Hamburg, Tel Aviv… Which city should LIFE open first? 👇"
+   },
+   {
+    "at": "2026-12-05 18:13",
+    "t": "L-GTA",
+    "label": "LIFE · coming soon",
+    "held": false,
+    "hook": "LIFE: the GTA of football supporters. In build. 🏙️"
+   },
+   {
+    "at": "2026-12-08 18:13",
+    "t": "L-GTA",
+    "label": "LIFE · coming soon",
+    "held": false,
+    "hook": "Athens, Glasgow, Hamburg, Tel Aviv… Which city should LIFE open first? 👇"
+   },
+   {
+    "at": "2026-12-10 18:13",
+    "t": "L-GTA",
+    "label": "LIFE · coming soon",
+    "held": false,
+    "hook": "LIFE: the GTA of football supporters. In build. 🏙️"
+   },
+   {
+    "at": "2026-12-12 18:13",
+    "t": "L-GTA",
+    "label": "LIFE · coming soon",
+    "held": false,
+    "hook": "From your first match on your dad’s shoulders to your first away day. LIFE is coming."
+   },
+   {
+    "at": "2026-12-15 18:13",
+    "t": "L-GTA",
+    "label": "LIFE · coming soon",
+    "held": false,
+    "hook": "LIFE: the GTA of football supporters. In build. 🏙️"
+   },
+   {
+    "at": "2026-12-17 18:13",
+    "t": "L-GTA",
+    "label": "LIFE · coming soon",
+    "held": false,
+    "hook": "From your first match on your dad’s shoulders to your first away day. LIFE is coming."
+   },
+   {
+    "at": "2026-12-19 18:13",
+    "t": "L-GTA",
+    "label": "LIFE · coming soon",
+    "held": false,
+    "hook": "Real supporters only. Tourists wait outside. LIFE is in build."
+   },
+   {
+    "at": "2026-12-22 18:13",
+    "t": "L-GTA",
+    "label": "LIFE · coming soon",
+    "held": false,
+    "hook": "From your first match on your dad’s shoulders to your first away day. LIFE is coming."
+   },
+   {
+    "at": "2026-12-24 18:13",
+    "t": "L-GTA",
+    "label": "LIFE · coming soon",
+    "held": false,
+    "hook": "Real supporters only. Tourists wait outside. LIFE is in build."
+   }
+  ]
+ },
+ {
+  "id": "m30-reels-tales",
+  "topic": "youtube",
+  "name": "Reels · Football Fairy Tales",
+  "template": "reels",
+  "start": "2026-11-25",
+  "days": 16,
+  "rows": [
+   {
+    "at": "2026-11-25 08:47",
+    "t": "L-FILM",
+    "label": "Reel · Panathinaikos · Good Morning · open",
+    "held": false,
+    "hook": "☀️ Καλημέρα, Παναθηναϊκέ! Ένα ποδοσφαιρικό παραμύθι για τον μικρό σου πράσινο οπαδό."
+   },
+   {
+    "at": "2026-11-26 08:47",
+    "t": "L-FILM",
+    "label": "Reel · Panathinaikos · Good Morning · heart",
+    "held": false,
+    "hook": "☀️ Καλημέρα, Παναθηναϊκέ! Ένα ποδοσφαιρικό παραμύθι για τον μικρό σου πράσινο οπαδό."
+   },
+   {
+    "at": "2026-11-27 20:31",
+    "t": "L-FILM",
+    "label": "Reel · Panathinaikos · Good Night · open",
+    "held": false,
+    "hook": "🌙 Καληνύχτα, Παναθηναϊκέ! Ένα ποδοσφαιρικό παραμύθι πριν τον ύπνο."
+   },
+   {
+    "at": "2026-11-28 20:31",
+    "t": "L-FILM",
+    "label": "Reel · Panathinaikos · Good Night · heart",
+    "held": false,
+    "hook": "🌙 Καληνύχτα, Παναθηναϊκέ! Ένα ποδοσφαιρικό παραμύθι πριν τον ύπνο."
+   },
+   {
+    "at": "2026-11-29 08:47",
+    "t": "L-FILM",
+    "label": "Reel · Olympiacos · Good Morning · open",
+    "held": false,
+    "hook": "☀️ Καλημέρα, Ολυμπιακέ! Ένα ποδοσφαιρικό παραμύθι για τον μικρό σου ερυθρόλευκο οπαδό."
+   },
+   {
+    "at": "2026-11-30 08:47",
+    "t": "L-FILM",
+    "label": "Reel · Olympiacos · Good Morning · heart",
+    "held": false,
+    "hook": "☀️ Καλημέρα, Ολυμπιακέ! Ένα ποδοσφαιρικό παραμύθι για τον μικρό σου ερυθρόλευκο οπαδό."
+   },
+   {
+    "at": "2026-12-01 20:31",
+    "t": "L-FILM",
+    "label": "Reel · Olympiacos · Good Night · open",
+    "held": false,
+    "hook": "🌙 Καληνύχτα, Ολυμπιακέ! Ένα ποδοσφαιρικό παραμύθι πριν τον ύπνο."
+   },
+   {
+    "at": "2026-12-02 20:31",
+    "t": "L-FILM",
+    "label": "Reel · Olympiacos · Good Night · heart",
+    "held": false,
+    "hook": "🌙 Καληνύχτα, Ολυμπιακέ! Ένα ποδοσφαιρικό παραμύθι πριν τον ύπνο."
+   },
+   {
+    "at": "2026-12-03 08:47",
+    "t": "L-FILM",
+    "label": "Reel · AEK Athens · Good Morning · open",
+    "held": false,
+    "hook": "☀️ Καλημέρα, ΑΕΚ! Ένα ποδοσφαιρικό παραμύθι για τον μικρό σου κιτρινόμαυρο οπαδό."
+   },
+   {
+    "at": "2026-12-04 08:47",
+    "t": "L-FILM",
+    "label": "Reel · AEK Athens · Good Morning · heart",
+    "held": false,
+    "hook": "☀️ Καλημέρα, ΑΕΚ! Ένα ποδοσφαιρικό παραμύθι για τον μικρό σου κιτρινόμαυρο οπαδό."
+   },
+   {
+    "at": "2026-12-05 20:31",
+    "t": "L-FILM",
+    "label": "Reel · AEK Athens · Good Night · open",
+    "held": false,
+    "hook": "🌙 Καληνύχτα, ΑΕΚ! Ένα ποδοσφαιρικό παραμύθι πριν τον ύπνο."
+   },
+   {
+    "at": "2026-12-06 20:31",
+    "t": "L-FILM",
+    "label": "Reel · AEK Athens · Good Night · heart",
+    "held": false,
+    "hook": "🌙 Καληνύχτα, ΑΕΚ! Ένα ποδοσφαιρικό παραμύθι πριν τον ύπνο."
+   },
+   {
+    "at": "2026-12-07 08:47",
+    "t": "L-FILM",
+    "label": "Reel · Hapoel Tel Aviv · Good Morning · open",
+    "held": false,
+    "hook": "⚽ בוקר טוב, הפועל תל אביב! אגדת כדורגל לילדים ולאוהדים."
+   },
+   {
+    "at": "2026-12-08 08:47",
+    "t": "L-FILM",
+    "label": "Reel · Hapoel Tel Aviv · Good Morning · heart",
+    "held": false,
+    "hook": "⚽ בוקר טוב, הפועל תל אביב! אגדת כדורגל לילדים ולאוהדים."
+   },
+   {
+    "at": "2026-12-09 20:31",
+    "t": "L-FILM",
+    "label": "Reel · Hapoel Tel Aviv · Good Night · open",
+    "held": false,
+    "hook": "💤 לילה טוב, הפועל תל אביב! אגדת כדורגל לפני השינה."
+   },
+   {
+    "at": "2026-12-10 20:31",
+    "t": "L-FILM",
+    "label": "Reel · Hapoel Tel Aviv · Good Night · heart",
+    "held": false,
+    "hook": "💤 לילה טוב, הפועל תל אביב! אגדת כדורגל לפני השינה."
+   }
+  ]
+ },
+ {
+  "id": "m30-club-fenerbahce",
+  "topic": "club",
+  "name": "30 days · fenerbahce days",
+  "template": "club-days",
+  "club": "fenerbahce",
+  "start": "2026-12-25",
+  "days": 3,
+  "rows": [
+   {
+    "at": "2026-12-25 09:13",
+    "t": "L-CLUB",
+    "label": "Club · Fenerbahçe",
+    "held": false,
+    "hook": "Fenerbahçe supporters: your whole club is already in here. 🏟️"
+   },
+   {
+    "at": "2026-12-25 12:31",
+    "t": "L-SHOP",
+    "label": "Shop",
+    "held": false,
+    "hook": "New in the FAN LIFE shop."
+   },
+   {
+    "at": "2026-12-25 17:03",
+    "t": "L-RUMBLE",
+    "label": "Royal Rumble · Fenerbahçe",
+    "held": false,
+    "hook": "Fenerbahçe: your all-time five on one budget. Who makes it? 🥊"
+   },
+   {
+    "at": "2026-12-25 20:47",
+    "t": "L-YT",
+    "label": "YouTube · Football Stories",
+    "held": false,
+    "hook": "Football stories nobody else tells. Free, every week. ▶️"
+   },
+   {
+    "at": "2026-12-26 09:13",
+    "t": "L-CLUB",
+    "label": "Club · Fenerbahçe",
+    "held": false,
+    "hook": "Fenerbahçe supporters: your whole club is already in here. 🏟️"
+   },
+   {
+    "at": "2026-12-26 12:31",
+    "t": "L-SHOP",
+    "label": "Shop",
+    "held": false,
+    "hook": "New in the FAN LIFE shop."
+   },
+   {
+    "at": "2026-12-26 17:03",
+    "t": "L-KITS",
+    "label": "Kit archive · Fenerbahçe",
+    "held": false,
+    "hook": "53 Fenerbahçe shirts, 1906 to now. Which one was yours? 👕"
+   },
+   {
+    "at": "2026-12-26 20:47",
+    "t": "L-YT",
+    "label": "YouTube · Football Stories",
+    "held": false,
+    "hook": "Football stories nobody else tells. Free, every week. ▶️"
+   },
+   {
+    "at": "2026-12-27 09:13",
+    "t": "L-CLUB",
+    "label": "Club · Fenerbahçe",
+    "held": false,
+    "hook": "Fenerbahçe supporters: your whole club is already in here. 🏟️"
+   },
+   {
+    "at": "2026-12-27 12:31",
+    "t": "L-SHOP",
+    "label": "Shop",
+    "held": false,
+    "hook": "New in the FAN LIFE shop."
+   },
+   {
+    "at": "2026-12-27 17:03",
+    "t": "L-GATE",
+    "label": "Legends Manager",
+    "held": false,
+    "hook": "You’ve shouted at the Fenerbahçe manager for years. Your turn. 🧠"
+   },
+   {
+    "at": "2026-12-27 20:47",
+    "t": "L-YT",
+    "label": "YouTube · Football Stories",
+    "held": false,
+    "hook": "Football stories nobody else tells. Free, every week. ▶️"
+   }
+  ]
+ },
+ {
+  "id": "m30-club-partizan-belgrade",
+  "topic": "club",
+  "name": "30 days · partizan-belgrade days",
+  "template": "club-days",
+  "club": "partizan-belgrade",
+  "start": "2026-12-28",
+  "days": 3,
+  "rows": [
+   {
+    "at": "2026-12-28 09:13",
+    "t": "L-CLUB",
+    "label": "Club · Partizan Belgrade",
+    "held": false,
+    "hook": "Partizan Belgrade supporters: your whole club is already in here. 🏟️"
+   },
+   {
+    "at": "2026-12-28 12:31",
+    "t": "L-SHOP",
+    "label": "Shop",
+    "held": false,
+    "hook": "New in the FAN LIFE shop."
+   },
+   {
+    "at": "2026-12-28 17:03",
+    "t": "L-RUMBLE",
+    "label": "Royal Rumble · Partizan Belgrade",
+    "held": false,
+    "hook": "Partizan Belgrade: your all-time five on one budget. Who makes it? 🥊"
+   },
+   {
+    "at": "2026-12-28 20:47",
+    "t": "L-YT",
+    "label": "YouTube · Football Stories",
+    "held": false,
+    "hook": "Football stories nobody else tells. Free, every week. ▶️"
+   },
+   {
+    "at": "2026-12-29 09:13",
+    "t": "L-CLUB",
+    "label": "Club · Partizan Belgrade",
+    "held": false,
+    "hook": "Partizan Belgrade supporters: your whole club is already in here. 🏟️"
+   },
+   {
+    "at": "2026-12-29 12:31",
+    "t": "L-SHOP",
+    "label": "Shop",
+    "held": false,
+    "hook": "New in the FAN LIFE shop."
+   },
+   {
+    "at": "2026-12-29 17:03",
+    "t": "L-KITS",
+    "label": "Kit archive · Partizan Belgrade",
+    "held": false,
+    "hook": "36 Partizan Belgrade shirts, 2007 to now. Which one was yours? 👕"
+   },
+   {
+    "at": "2026-12-29 20:47",
+    "t": "L-YT",
+    "label": "YouTube · Football Stories",
+    "held": false,
+    "hook": "Football stories nobody else tells. Free, every week. ▶️"
+   },
+   {
+    "at": "2026-12-30 09:13",
+    "t": "L-CLUB",
+    "label": "Club · Partizan Belgrade",
+    "held": false,
+    "hook": "Partizan Belgrade supporters: your whole club is already in here. 🏟️"
+   },
+   {
+    "at": "2026-12-30 12:31",
+    "t": "L-SHOP",
+    "label": "Shop",
+    "held": false,
+    "hook": "New in the FAN LIFE shop."
+   },
+   {
+    "at": "2026-12-30 17:03",
+    "t": "L-GATE",
+    "label": "Legends Manager",
+    "held": false,
+    "hook": "You’ve shouted at the Partizan Belgrade manager for years. Your turn. 🧠"
+   },
+   {
+    "at": "2026-12-30 20:47",
+    "t": "L-YT",
+    "label": "YouTube · Football Stories",
+    "held": false,
+    "hook": "Football stories nobody else tells. Free, every week. ▶️"
    }
   ]
  },

@@ -86,7 +86,7 @@ ${strip({s1: '#FFFBF2', s2: hot})}${top(p, crestImg(c))}
 
 /** LIFE — the GTA campaign: the owner's comic art is the hero, full size; a mission card from the real LIFE missions
  *  (lib/life/rush) sits under it. Portrait art fills the post; wide art runs as a cinematic band. */
-const GTA_ART = {'cover-life': 'tall', 'cover-fanlife': 'tall', 'next-generation': 'wide', 'panels-wide': 'wide', 'panels-graffiti': 'wide'}
+const GTA_ART = {terrace: 'tall', 'cover-life': 'tall', 'cover-fanlife': 'tall', 'next-generation': 'wide', 'panels-wide': 'wide', 'panels-graffiti': 'wide'}
 async function gta(d, o) {
   const art = GTA_ART[d.art] ? d.art : 'next-generation', tall = GTA_ART[art] === 'tall'
   const src = local(`v4/art/life-gta/${art}.jpg`), hot = d.hot || '#E8212B'
@@ -574,13 +574,31 @@ async function album(d, o) {
 </div>${foot(d.cta || 'Open today’s envelope', 'fanlife.dubelteam.com/album')}`}
 }
 
+
+/** FAN LIFE ITSELF (owner, 24.11.2026: "general FAN LIFE campaigns, not tied to one club"): the roundel, one big line,
+ *  every open club's crest on a paper wall, three numbers on tickets, the hub in a phone */
+async function hub(d, o) {
+  const ids = (d.clubs || []).filter(id => CLUBS[id]).slice(0, 12)
+  const crests = (await Promise.all(ids.map(id => crest(CLUBS[id].name)))).filter(Boolean)
+  const p = {bg: '#15130F', on: '#FFFBF2', s1: '#0B6E3A', s2: '#D71920', light: false}, scr = local(d.screen)
+  const cols = o.story ? 4 : scr ? 4 : 6
+  const wall = crests.length ? `<div class="paper" style="display:grid;grid-template-columns:repeat(${cols},minmax(0,1fr));gap:${o.story ? 22 : 16}px;padding:${o.story ? 34 : 24}px;box-shadow:12px 12px 0 #D71920;transform:rotate(-1.5deg);flex:1;min-width:0;align-content:center"${at('wipe', .45)}>${crests.map((c, i) => `<img src="${c}" alt="" style="width:100%;aspect-ratio:1;object-fit:contain"${at('pop', .55 + i * .05)}>`).join('')}</div>` : ''
+  const stats = (d.stats || []).slice(0, 3)
+  return {vars: vars(p, '--hot:#D71920;--accent:#D71920'), inner: `${dots('rgba(255,255,255,.06)')}${strip(p)}${top(p, '<span class="k" style="font-size:20px">Every club · one home</span>')}
+<div class="body" style="padding-top:${o.story ? 110 : 22}px">${tag(d.kicker || 'FAN LIFE · every club', true)}
+<p class="h shadowed" style="font-size:${sized(d.headline, 118, 96, 80, 18, 32)}px;margin-top:14px"${at('slam', .3)}>${esc(d.headline || 'Every club. Every shirt. Every legend.')}</p>
+<div style="flex:1;display:flex;gap:30px;align-items:center;min-height:0;margin:26px 0 22px">${wall}${scr && !o.story ? phone(scr, 230, .9, 4) : ''}</div>
+${stats.length ? `<div style="display:flex;gap:18px;margin-bottom:30px">${stats.map((s, i) => ticket(s.n, s.label, i)).join('')}</div>` : ''}
+</div>${foot(d.cta || 'Pick your club', d.url || 'fanlife.dubelteam.com')}`}
+}
+
 /** the dare above the foot: one line that pokes the supporter's pride (owner, 14.11.2026: "lots of hooks, emotion, ego") */
 const DARE = {'L-GATE': 'Bet you can’t do it first time', 'L-LIFE': 'Your club. Your streets. Your story.', 'L-LOADING': 'Coming soon. Your city first?', 'L-LEGENDS': 'Think you can manage them? Prove it.',
   'L-FACT': 'Tag the one mate who knew this', 'T10-NERDS': 'Real fans don’t need the options', 'L-QUIZ': 'Real fans don’t need the options', 'L-DEBATE': 'Pick a side. No fence-sitting.',
   'T9-OTD': 'Were you there? Prove it in the comments', 'T11-SPICY': 'Were you there? Tell us.', 'L-FILM': 'Watch it before your mates do', 'L-NUMBERS': 'Is your club on the board?',
   'L-BINGO': 'Under 8? Not a real fan.', 'L-ZOOM': 'Real fans need one look', 'L-TIER': 'Wrong? Fight us in the comments', 'L-VOTE': 'Your club not on top? Send this.',
   'L-SHOP': 'Wear it to the next match', 'L-FRAME': 'Your name. Your XI. Your wall.', 'L-GTA': 'Real supporters only. Tourists wait outside.', 'L-TEE': 'Wear it. Let them read it.', 'L-MARKET': 'One supporter’s shirt. Your wardrobe next.', 'L-ARTICLE': 'Read it. Then argue with your dad.',
-  'L-CLUB': 'Tag the mate who goes with you', 'L-SALE': 'Gone when it’s gone', 'L-RUMBLE': 'Your five beat your mate’s five?', 'L-KITS': 'Which one did you wear?', 'L-YT': 'Send it to the one who was there', 'L-ALBUM': 'Got all of them? Prove it.'}
+  'L-CLUB': 'Tag the mate who goes with you', 'L-SALE': 'Gone when it’s gone', 'L-RUMBLE': 'Your five beat your mate’s five?', 'L-KITS': 'Which one did you wear?', 'L-YT': 'Send it to the one who was there', 'L-ALBUM': 'Got all of them? Prove it.', 'L-HUB': 'Tag the mate who supports the wrong club'}
 const SHOP_DARE = {framed: 'Put it where your mates can see it', poster: 'Put it where your mates can see it', canvas: 'Put it where your mates can see it', mug: 'Your club with every morning coffee',
   'kids-tee': 'Start them young', puzzle: 'A thousand pieces of your club', sticker: 'Stick it everywhere', 'phone-case': 'Your club in your pocket', tote: 'Carry your club everywhere'}
 export const dareFor = (t, d) => d?.dare === '' ? '' : d?.dare || (t === 'L-SHOP' && SHOP_DARE[d?.kind]) || DARE[t] || ''
@@ -588,7 +606,7 @@ export const dareFor = (t, d) => d?.dare === '' ? '' : d?.dare || (t === 'L-SHOP
 const MAP = {'L-GATE': gate, 'L-LIFE': life, 'L-LOADING': loading, 'L-LEGENDS': legends, 'L-FACT': fact, 'T10-NERDS': quiz, 'L-QUIZ': quiz, 'L-DEBATE': debate, 'T9-OTD': otd, 'T11-SPICY': spicy,
   'L-FILM': film, 'L-SLIDE': slide, 'L-NUMBERS': numbers, 'L-CARD': card, 'L-DUBID-SYSTEM': (d, o) => system(d, o, 'dubid'), 'L-OFFSIDES-SYSTEM': (d, o) => system(d, o, 'offsides'),
   'L-FIXTURES': (d, o) => matchList(d, o, 'L-FIXTURES'), 'L-RESULTS': (d, o) => matchList(d, o, 'L-RESULTS'), 'L-VOTE': vote, 'L-BINGO': bingo, 'L-ZOOM': zoom, 'L-TIER': tier, 'L-SHOP': shop, 'L-MARKET': market, 'L-FRAME': frame, 'L-GTA': gta, 'L-TEE': tee, 'L-ARTICLE': article,
-  'L-CLUB': club, 'L-SALE': sale, 'L-RUMBLE': rumble, 'L-KITS': kits, 'L-YT': yt, 'L-ALBUM': album}
+  'L-CLUB': club, 'L-SALE': sale, 'L-RUMBLE': rumble, 'L-KITS': kits, 'L-YT': yt, 'L-ALBUM': album, 'L-HUB': hub}
 export const V4_TEMPLATES = Object.keys(MAP)
 
 /** the page for one kit, or null when v4 has no layout for it (v2 then draws it) */
