@@ -20,6 +20,7 @@ import lifekit as K
 import refine as R
 import motion as M
 import strips as ST
+import hairgen as HG
 
 WORK = Path(sys.argv[1]); ONLY = [x for x in (sys.argv[2] if len(sys.argv) > 2 else '').split(',') if x]
 RAW = WORK / 'raw'; PREV = WORK / 'preview'; RAW.mkdir(parents=True, exist_ok=True); PREV.mkdir(parents=True, exist_ok=True)
@@ -255,7 +256,7 @@ def build(c, keep=False):
         if not path: meta['notes'].append(f'{sub}/{name} not installed'); return None
         try:
             lic = licence_of(path); ob = S.HumanService.add_mhclo_asset(path, bm, asset_type=typ, subdiv_levels=0, material_type='GAMEENGINE')
-            meta['sources'].append(dict(lic, kind=typ)); return ob
+            meta['sources'].append(dict(lic, kind=typ)); ob['life_asset'] = name; return ob
         except Exception as e:
             traceback.print_exc(); meta['notes'].append(f'{sub}/{name}: {e}'); return None
 
@@ -310,13 +311,16 @@ def build(c, keep=False):
             if m.type != 'ARMATURE': o.modifiers.remove(m)
         name = {'Basemesh': 'Body', 'Eyes': 'Eyes', 'Eyebrows': 'Brows', 'Eyelashes': 'Lashes', 'Teeth': 'Teeth', 'Tongue': 'Tongue', 'Hair': 'Hair'}.get(t)
         if o.get('life_role') == 'hair2': name = 'Hair2'
-        if not name: name = 'Shoes' if 'shoe' in o.name.lower() else 'Clothes'
+        if not name: name = 'Shoes' if ('shoe' in o.name.lower() or 'shoe' in str(o.get('life_asset', '')).lower() or 'flats' in str(o.get('life_asset', ''))) else 'Clothes'
         while name in parts: name += '2'
         parts[name] = o; o.name = name; o.data.name = c['id'] + '_' + name
     body = parts['Body']
     if 'Eyes' in parts: meta['eyes'] = add_eye_bones(rig, parts['Eyes'])
     head = split_head(body)
     if head: head.name = 'Head'; head.data.name = c['id'] + '_Head'; parts['Head'] = head
+    if c.get('_pre'):   # a look's garment cuts (keep a top or bottoms, hems) before the covered skin goes
+        try: c['_pre'](rig, parts, meta)
+        except Exception as e: traceback.print_exc(); meta['notes'].append(f'outfit (pre): {e}')
     try:
         gs = [o for n, o in parts.items() if n.startswith('Clothes')]
         if gs: meta['skinFacesHidden'] = drop_covered(body, gs)
@@ -346,6 +350,11 @@ def build(c, keep=False):
                 if r.get('trim'): regions.append('tint_trim')
             except Exception as e: traceback.print_exc(); meta['notes'].append(f'tint regions: {e}')
     meta['tintRegions'] = regions
+    if c.get('_post'):  # a look's colours: bands, bottoms, shoes, skin and brows
+        try: c['_post'](rig, parts, meta)
+        except Exception as e: traceback.print_exc(); meta['notes'].append(f'outfit (post): {e}')
+        for name, o in parts.items():
+            if name.startswith('Clothes') and any(m and m.name == 'tint_trim' for m in o.data.materials) and 'tint_trim' not in meta['tintRegions']: meta['tintRegions'].append('tint_trim')
     for hn in ('Hair', 'Hair2'):
         if hn not in parts: continue
         if c.get('hair_grey'): grey_hair(parts[hn], c['hair_grey'])
@@ -373,19 +382,29 @@ def build(c, keep=False):
     rest = dict(SPEC.get('resting', {}).get('adult' if c['pheno']['age'] > 0.5 else 'young', {})); rest.update(c.get('resting', {}))
     if rest:
         R.bake_resting([o for o in parts.values()], rest); meta['restingBaked'] = rest
+    if c.get('hairgen'):   # a look's own hair, grown on this head (hairgen.py)
+        try:
+            F0 = R.head_frame(parts)
+            hair, hlod, ntri = HG.make_hair(rig, parts, F0, c['hairgen'], c.get('hair_colour_lin', (0.05, 0.035, 0.025)), seed=c.get('seed', 1))
+            parts['Hair'] = hair; parts['HairLOD'] = hlod; meta['hairTriangles'] = ntri
+        except Exception as e: traceback.print_exc(); meta['notes'].append(f'hair: {e}')
     hc = (0.1, 0.08, 0.06)
     node = base_image(parts['Hair'].material_slots[0].material) if 'Hair' in parts and parts['Hair'].material_slots else None
     if node:
         hp = np.empty(node.image.size[0] * node.image.size[1] * 4, np.float32); node.image.pixels.foreach_get(hp); hp = hp.reshape(-1, 4)
         sel = hp[:, 3] > 0.5; hc = tuple(float(x) for x in (hp[sel, :3].mean(0) if sel.any() else hp[:, :3].mean(0)) * 0.85)
     try:
-        acc, _ = R.accessories(rig, parts, hc, adult=c['pheno']['age'] > 0.5 and c['pheno']['gender'] > 0.5)
+        acc, _ = R.accessories(rig, parts, hc, adult=c['pheno']['age'] > 0.5 and c['pheno']['gender'] > 0.5, want=c.get('acc_want', R.ALL_ACC), facial=c.get('facial'))
         for k, o in acc.items():
             nm = o.name; parts[nm] = o
         meta['accessories'] = {k: o.name for k, o in acc.items()}
+        if c.get('_extras'):   # a look's made-by-script pieces (scarf, apron, bangles, backpack)
+            for k, o in c['_extras'](rig, parts, meta).items(): parts[o.name] = o; meta['accessories'][k] = o.name
     except Exception as e: traceback.print_exc(); meta['notes'].append(f'accessories: {e}'); meta['accessories'] = {}
     try:
-        lod, ntri = R.build_lod(rig, {n: o for n, o in parts.items() if n in R.LOD_TARGET})
+        shown = set(c.get('wear', []))
+        lod_parts = {n: o for n, o in parts.items() if (n in R.LOD_TARGET or n == 'HairLOD') and (not n.startswith(('Acc_', 'Look_')) or n in shown)}
+        lod, ntri = R.build_lod(rig, lod_parts)
         bpy.ops.object.select_all(action='DESELECT'); rig.select_set(True); lod.select_set(True); bpy.context.view_layer.objects.active = rig
         bpy.ops.export_scene.gltf(filepath=str(RAW / (c['id'] + '-lod1.glb')), export_format='GLB', use_selection=True, export_apply=False, export_skins=True, export_morph=False,
                                   export_animations=False, export_image_format='WEBP', export_image_quality=80, export_yup=True, export_extras=True, export_tangents=False,
@@ -396,10 +415,15 @@ def build(c, keep=False):
     P = K.Poser(rig)
     morphs = [k.name for k in parts['Head'].data.shape_keys.key_blocks[1:]] if 'Head' in parts and parts['Head'].data.shape_keys else []
     meta.update(bones=[b.name for b in rig.data.bones], morphs=morphs, hipHeight=round(P.hip, 4), height=round(max((o.matrix_world @ Vector(co)).z for o in parts.values() for co in o.bound_box), 4),
-                meshes={n: {'triangles': sum(len(p.vertices) - 2 for p in o.data.polygons), 'vertices': len(o.data.vertices), 'morphs': len(o.data.shape_keys.key_blocks) - 1 if o.data.shape_keys else 0} for n, o in parts.items()},
+                meshes={n: {'triangles': sum(len(p.vertices) - 2 for p in o.data.polygons), 'vertices': len(o.data.vertices), 'morphs': len(o.data.shape_keys.key_blocks) - 1 if o.data.shape_keys else 0} for n, o in parts.items() if n != 'HairLOD'},
                 tint={'top': bool(tinted), 'default': c.get('tint')})
-    meta['triangles'] = sum(m['triangles'] for n, m in meta['meshes'].items() if not n.startswith(('Acc_', 'Hair2', 'Hair_hat')))
-    meta['optional'] = [n for n in parts if n.startswith(('Acc_', 'Hair2', 'Hair_hat'))]
+    shown = set(c.get('wear', []))
+    meta['triangles'] = sum(m['triangles'] for n, m in meta['meshes'].items() if not n.startswith(('Acc_', 'Hair2', 'Hair_hat', 'Look_')) or n in shown)
+    meta['optional'] = [n for n in parts if n.startswith(('Acc_', 'Hair2', 'Hair_hat', 'Look_')) and n not in shown]
+    meta['wear'] = [n for n in parts if n in shown]
+    for n, o in parts.items():
+        if n.startswith(('Acc_', 'Hair2', 'Hair_hat', 'Look_')): o['visible'] = n in shown
+    parts.pop('HairLOD', None)
     bpy.ops.object.select_all(action='DESELECT'); rig.select_set(True)
     for o in parts.values(): o.hide_set(False); o.select_set(True)
     bpy.context.view_layer.objects.active = rig
@@ -407,7 +431,8 @@ def build(c, keep=False):
                               export_morph_normal=False, export_animations=False, export_image_format='WEBP', export_image_quality=82, export_yup=True, export_extras=True, export_tangents=False)
     (RAW / (c['id'] + '.json')).write_text(json.dumps(meta, indent=1))
     for n, o in parts.items():
-        if n.startswith(('Acc_', 'Hair2', 'Hair_hat')): o.hide_render = True
+        if n.startswith(('Acc_', 'Hair2', 'Hair_hat', 'Look_')): o.hide_render = n not in shown
+    if 'HairLOD' in bpy.data.objects: bpy.data.objects['HairLOD'].hide_render = True
     bpy.data.libraries.write(str(WORK / (c['id'] + '.blend')), {rig, *parts.values(), *([lod] if lod else [])}, fake_user=True)
     meta['_lod'] = lod.name if lod else None
     return rig, parts, P, meta
@@ -521,4 +546,5 @@ def main():
     if not done: sys.exit(1)
 
 
-main()
+if __name__ == '__main__':
+    main()

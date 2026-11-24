@@ -1,0 +1,2373 @@
+{
+ "_": "LIFE looks: how each character LOOKS, as data. build_looks.py turns every entry into cast/look-<id>.glb (+ LOD). (a) family \"canon\": THE WORKER's own people, for Hapoel Tel Aviv's pack only (club = hapoel-tel-aviv; their names never appear in another club). (b) family \"universal\": the archetypes those people inspire, for every club. A universal look is built in its default region; every region is a material colour (manifest regionVariants: skin, hair, brows, facial hair), and the tinted clothes take the club colours. face = MakeHuman targets (lr- means both sides); body = macro values; hair = hairgen.py style; outfit = CC0 garments + colours; wear = optional meshes shown by default; extras = pieces made by script (scarf, apron, bangles, backpack).",
+ "regions": {
+  "mediterranean": {
+   "label": "Mediterranean (Tel Aviv, Athens, Naples, Marseille, Istanbul)",
+   "skin": "#c69a77",
+   "skin_child": "#d0a582",
+   "hair": "#1d1511",
+   "hair_child": "#3a281b",
+   "brows": "#1a120e"
+  },
+  "balkan": {
+   "label": "Balkan (Belgrade, Zagreb, Sofia, Bucharest, Thessaloniki)",
+   "skin": "#d7ae8f",
+   "skin_child": "#e0b899",
+   "hair": "#2d2119",
+   "hair_child": "#4a3424",
+   "brows": "#241a14"
+  },
+  "north_african": {
+   "label": "North African (Casablanca, Tunis, Algiers, Cairo)",
+   "skin": "#a87657",
+   "skin_child": "#b07f5f",
+   "hair": "#120d0b",
+   "hair_child": "#1e1611",
+   "brows": "#100b09"
+  },
+  "northern_european": {
+   "label": "Northern European (Glasgow, Hamburg, Copenhagen, Amsterdam, Manchester)",
+   "skin": "#ebcab2",
+   "skin_child": "#f0d2bb",
+   "hair": "#7a5b3e",
+   "hair_child": "#9a7650",
+   "brows": "#5e4530"
+  }
+ },
+ "decades": {
+  "80s": "1980s",
+  "90s": "1990s",
+  "00s": "2000s",
+  "10s": "2010s",
+  "20s": "2020s"
+ },
+ "palette": {
+  "red": "#c41e2a",
+  "white": "#f2efe8",
+  "navy": "#1f2a44",
+  "cream": "#efe6d2",
+  "burgundy": "#6e1f2b",
+  "lilac": "#a993c4",
+  "jeans_light": "#8ea8c8",
+  "jeans": "#5f7fa8",
+  "jeans_dark": "#33435f",
+  "charcoal": "#3b3e44",
+  "black_jeans": "#26282d",
+  "grey_trousers": "#4b4b4e",
+  "olive": "#5d6b3b",
+  "sky": "#9cc4e6",
+  "darkred": "#8e1b22",
+  "shorts_navy": "#2b3452",
+  "skirt_navy": "#232c45",
+  "skirt_grey": "#6b645c",
+  "shirt_blue": "#c6d3dd"
+ },
+ "looks": [
+  {
+   "id": "hta-kobi",
+   "family": "canon",
+   "role": "father",
+   "label": "Kobi, the father (38)",
+   "age": 38,
+   "decade": "80s",
+   "region": "mediterranean",
+   "club": "hapoel-tel-aviv",
+   "name": "Kobi",
+   "source": "THE WORKER public/life/art: kobi, kobi90, faceKobi, faceKobi90; R6: slim, short dark curly hair, full dark moustache, warm olive skin, kind tired eyes, navy tracksuit top with white/red chest band, light blue jeans, white trainers",
+   "body": {
+    "gender": 1,
+    "muscle": 0.5,
+    "weight": 0.44,
+    "height": 0.56
+   },
+   "face": {
+    "head-oval": 0.35,
+    "chin-width-incr": 0.25,
+    "chin-height-incr": 0.15,
+    "nose-scale-vert-incr": 0.35,
+    "nose-hump-incr": 0.35,
+    "nose-scale-horiz-incr": 0.12,
+    "nose-point-width-incr": 0.2,
+    "mouth-scale-horiz-incr": 0.12,
+    "lr-eye-bag-incr": 0.45,
+    "lr-eye-eyefold-down": 0.3,
+    "lr-eye-scale-incr": 0.35,
+    "lr-cheek-bones-incr": 0.2,
+    "eyebrows-trans-down": 0.15,
+    "eyebrows-angle-down": 0.25,
+    "mouth-angles-up": 0.35,
+    "forehead-nubian-decr": 0.3
+   },
+   "resting": {
+    "mouthSmileLeft": 0.12,
+    "mouthSmileRight": 0.12,
+    "browInnerUp": 0.12,
+    "eyeSquintLeft": 0.1,
+    "eyeSquintRight": 0.1
+   },
+   "skin": "#c29672",
+   "eyes": "brown",
+   "brows": "eyebrow009",
+   "hair": {
+    "style": "curly",
+    "length": 0.075,
+    "volume": 0.036,
+    "curl": 0.0085,
+    "pitch": 0.028,
+    "density": 440,
+    "width": 0.026,
+    "front_len": 0.8,
+    "back_len": 0.62,
+    "cross": 0.35,
+    "colour": "#1b1410"
+   },
+   "facial": "full",
+   "outfit": {
+    "garments": [
+     {
+      "asset": "male_casualsuit05"
+     },
+     {
+      "asset": "shoes05"
+     }
+    ],
+    "top": "#1f2a44",
+    "inner": "#f2efe8",
+    "bottom": "#8ea8c8",
+    "shoes": "#f2efe8",
+    "bands": [
+     [
+      0.56,
+      0.72
+     ]
+    ],
+    "trim": "#f2efe8"
+   },
+   "wear": [
+    "Acc_moustache"
+   ],
+   "extras": [],
+   "optional": [],
+   "seed": 11
+  },
+  {
+   "id": "hta-rachel",
+   "family": "canon",
+   "role": "mother",
+   "label": "Rachel, the mother (36)",
+   "age": 36,
+   "decade": "80s",
+   "region": "mediterranean",
+   "club": "hapoel-tel-aviv",
+   "name": "Rachel",
+   "source": "THE WORKER public/life/art: rachel, rachel90, faceRachel; R6: long dark-brown curly hair, warm olive skin, sharp humorous eyes, burgundy cardigan over cream blouse, navy skirt below the knee, thin bangles",
+   "body": {
+    "gender": 0,
+    "muscle": 0.45,
+    "weight": 0.5,
+    "height": 0.48,
+    "cupsize": 0.45
+   },
+   "face": {
+    "head-oval": 0.45,
+    "nose-scale-vert-incr": 0.18,
+    "nose-hump-incr": 0.2,
+    "nose-point-width-incr": 0.1,
+    "mouth-scale-horiz-incr": 0.1,
+    "mouth-lowerlip-volume-incr": 0.2,
+    "lr-eye-scale-incr": 0.3,
+    "lr-eye-corner2-up": 0.25,
+    "lr-eye-eyefold-angle-up": 0.2,
+    "lr-cheek-bones-incr": 0.25,
+    "chin-prominent-incr": 0.15,
+    "eyebrows-angle-up": 0.15
+   },
+   "resting": {
+    "mouthSmileLeft": 0.18,
+    "mouthSmileRight": 0.1,
+    "eyeSquintLeft": 0.12,
+    "eyeSquintRight": 0.08
+   },
+   "skin": "#c99d7a",
+   "eyes": "brown",
+   "brows": "eyebrow007",
+   "hair": {
+    "style": "curly",
+    "length": 0.3,
+    "volume": 0.042,
+    "curl": 0.012,
+    "pitch": 0.05,
+    "density": 420,
+    "width": 0.03,
+    "cross": 0.35,
+    "hairline": -0.004,
+    "colour": "#2a1a13"
+   },
+   "outfit": {
+    "garments": [
+     {
+      "asset": "female_elegantsuit01",
+      "keep": "top"
+     },
+     {
+      "asset": "toigo_long_full_skirt",
+      "hem": "below_knee"
+     },
+     {
+      "asset": "shoes03"
+     }
+    ],
+    "top": "#6e1f2b",
+    "inner": "#efe6d2",
+    "skirt": "#232c45",
+    "skirt_flat": true,
+    "shoes": "#2a2220"
+   },
+   "wear": [
+    "Look_bangles"
+   ],
+   "extras": [
+    "bangles"
+   ],
+   "optional": [],
+   "seed": 12
+  },
+  {
+   "id": "hta-pogi-6",
+   "family": "canon",
+   "role": "hero",
+   "label": "Pogi, the hero (6)",
+   "age": 6,
+   "decade": "80s",
+   "region": "mediterranean",
+   "club": "hapoel-tel-aviv",
+   "name": "Pogi",
+   "source": "THE WORKER public/life/art: pogi, facePogi; R6: short brown hair, light olive skin, curious eyes, a red-and-white scarf",
+   "body": {
+    "gender": 1,
+    "muscle": 0.45,
+    "weight": 0.45,
+    "height": 0.55
+   },
+   "face": {
+    "head-round": 0.25,
+    "head-oval": 0.2,
+    "lr-eye-scale-incr": 0.5,
+    "nose-scale-vert-incr": 0.1,
+    "mouth-angles-up": 0.2,
+    "lr-cheek-volume-incr": 0.15
+   },
+   "resting": {
+    "mouthSmileLeft": 0.06,
+    "mouthSmileRight": 0.06,
+    "cheekSquintLeft": 0.024,
+    "cheekSquintRight": 0.024
+   },
+   "skin": "#d2a988",
+   "eyes": "brown",
+   "brows": "eyebrow001",
+   "hair": {
+    "style": "curly",
+    "length": 0.06,
+    "volume": 0.03,
+    "curl": 0.0065,
+    "pitch": 0.028,
+    "density": 400,
+    "width": 0.024,
+    "fringe": true,
+    "front_len": 0.75,
+    "back_len": 0.65,
+    "cross": 0.35,
+    "colour": "#3a2719"
+   },
+   "outfit": {
+    "garments": [
+     {
+      "asset": "male_casualsuit04"
+     },
+     {
+      "asset": "shoes05"
+     }
+    ],
+    "top": "#c41e2a",
+    "bottom": "#5f7fa8",
+    "bottom_flat": false,
+    "shoes": "#f2efe8"
+   },
+   "wear": [
+    "Acc_backpack"
+   ],
+   "extras": [
+    "backpack"
+   ],
+   "optional": [],
+   "seed": 26
+  },
+  {
+   "id": "hta-pogi-8",
+   "family": "canon",
+   "role": "hero",
+   "label": "Pogi, the hero (8)",
+   "age": 8,
+   "decade": "80s",
+   "region": "mediterranean",
+   "club": "hapoel-tel-aviv",
+   "name": "Pogi",
+   "source": "THE WORKER public/life/art: pogi, pogi-scarf; R6: short brown hair, light olive skin, curious eyes, a red-and-white scarf",
+   "body": {
+    "gender": 1,
+    "muscle": 0.45,
+    "weight": 0.45,
+    "height": 0.55
+   },
+   "face": {
+    "head-round": 0.25,
+    "head-oval": 0.2,
+    "lr-eye-scale-incr": 0.5,
+    "nose-scale-vert-incr": 0.1,
+    "mouth-angles-up": 0.2,
+    "lr-cheek-volume-incr": 0.15
+   },
+   "resting": {
+    "mouthSmileLeft": 0.06,
+    "mouthSmileRight": 0.06,
+    "cheekSquintLeft": 0.024,
+    "cheekSquintRight": 0.024
+   },
+   "skin": "#d2a988",
+   "eyes": "brown",
+   "brows": "eyebrow001",
+   "hair": {
+    "style": "curly",
+    "length": 0.06,
+    "volume": 0.03,
+    "curl": 0.0065,
+    "pitch": 0.028,
+    "density": 400,
+    "width": 0.024,
+    "fringe": true,
+    "front_len": 0.75,
+    "back_len": 0.65,
+    "cross": 0.35,
+    "colour": "#3a2719"
+   },
+   "outfit": {
+    "garments": [
+     {
+      "asset": "male_casualsuit04"
+     },
+     {
+      "asset": "shoes05"
+     }
+    ],
+    "top": "#c41e2a",
+    "bottom": "#5f7fa8",
+    "bottom_flat": false,
+    "shoes": "#f2efe8"
+   },
+   "wear": [
+    "Look_scarf",
+    "Acc_backpack"
+   ],
+   "extras": [
+    "scarf",
+    "backpack"
+   ],
+   "optional": [],
+   "seed": 28
+  },
+  {
+   "id": "hta-pogi-12",
+   "family": "canon",
+   "role": "hero",
+   "label": "Pogi, the hero (12)",
+   "age": 12,
+   "decade": "80s",
+   "region": "mediterranean",
+   "club": "hapoel-tel-aviv",
+   "name": "Pogi",
+   "source": "THE WORKER public/life/art: hero80, faceHero80; R6: short brown hair, light olive skin, curious eyes, a red-and-white scarf",
+   "body": {
+    "gender": 1,
+    "muscle": 0.45,
+    "weight": 0.45,
+    "height": 0.55
+   },
+   "face": {
+    "head-oval": 0.45,
+    "lr-eye-scale-incr": 0.35,
+    "nose-scale-vert-incr": 0.25,
+    "nose-hump-incr": 0.15,
+    "chin-width-incr": 0.1,
+    "eyebrows-trans-down": 0.1,
+    "lr-cheek-bones-incr": 0.15
+   },
+   "resting": {
+    "mouthSmileLeft": 0.06,
+    "mouthSmileRight": 0.06,
+    "cheekSquintLeft": 0.024,
+    "cheekSquintRight": 0.024
+   },
+   "skin": "#d2a988",
+   "eyes": "brown",
+   "brows": "eyebrow001",
+   "hair": {
+    "style": "curly",
+    "length": 0.09,
+    "volume": 0.042,
+    "curl": 0.009,
+    "pitch": 0.032,
+    "density": 460,
+    "width": 0.026,
+    "fringe": true,
+    "front_len": 0.7,
+    "back_len": 0.7,
+    "cross": 0.35,
+    "colour": "#3a2719"
+   },
+   "outfit": {
+    "garments": [
+     {
+      "asset": "male_casualsuit05"
+     },
+     {
+      "asset": "shoes05"
+     }
+    ],
+    "top": "#c41e2a",
+    "inner": "#f2efe8",
+    "bottom": "#8ea8c8",
+    "shoes": "#f2efe8",
+    "bands": [
+     [
+      0.9,
+      1.2
+     ]
+    ],
+    "trim": "#f2efe8"
+   },
+   "wear": [
+    "Look_scarf",
+    "Acc_backpack"
+   ],
+   "extras": [
+    "scarf",
+    "backpack"
+   ],
+   "optional": [],
+   "seed": 32
+  },
+  {
+   "id": "hta-pogi-15",
+   "family": "canon",
+   "role": "hero",
+   "label": "Pogi, the hero (15)",
+   "age": 15,
+   "decade": "90s",
+   "region": "mediterranean",
+   "club": "hapoel-tel-aviv",
+   "name": "Pogi",
+   "source": "THE WORKER public/life/art: hero90, faceHero90; R6: short brown hair, light olive skin, curious eyes, a red-and-white scarf",
+   "body": {
+    "gender": 1,
+    "muscle": 0.45,
+    "weight": 0.45,
+    "height": 0.55
+   },
+   "face": {
+    "head-oval": 0.45,
+    "lr-eye-scale-incr": 0.35,
+    "nose-scale-vert-incr": 0.25,
+    "nose-hump-incr": 0.15,
+    "chin-width-incr": 0.1,
+    "eyebrows-trans-down": 0.1,
+    "lr-cheek-bones-incr": 0.15
+   },
+   "resting": {
+    "mouthSmileLeft": 0.06,
+    "mouthSmileRight": 0.06,
+    "cheekSquintLeft": 0.024,
+    "cheekSquintRight": 0.024
+   },
+   "skin": "#d2a988",
+   "eyes": "brown",
+   "brows": "eyebrow003",
+   "hair": {
+    "style": "curly",
+    "length": 0.09,
+    "volume": 0.042,
+    "curl": 0.009,
+    "pitch": 0.032,
+    "density": 460,
+    "width": 0.026,
+    "fringe": true,
+    "front_len": 0.7,
+    "back_len": 0.7,
+    "cross": 0.35,
+    "colour": "#3a2719"
+   },
+   "outfit": {
+    "garments": [
+     {
+      "asset": "male_casualsuit05"
+     },
+     {
+      "asset": "shoes05"
+     }
+    ],
+    "top": "#c41e2a",
+    "inner": "#f2efe8",
+    "bottom": "#8ea8c8",
+    "shoes": "#f2efe8"
+   },
+   "wear": [
+    "Look_scarf",
+    "Acc_backpack"
+   ],
+   "extras": [
+    "scarf",
+    "backpack"
+   ],
+   "optional": [],
+   "seed": 35
+  },
+  {
+   "id": "hta-pogi-18",
+   "family": "canon",
+   "role": "hero",
+   "label": "Pogi, the hero (18)",
+   "age": 18,
+   "decade": "90s",
+   "region": "mediterranean",
+   "club": "hapoel-tel-aviv",
+   "name": "Pogi",
+   "source": "THE WORKER public/life/art: pogi90-1; R6: short brown hair, light olive skin, curious eyes, a red-and-white scarf",
+   "body": {
+    "gender": 1,
+    "muscle": 0.52,
+    "weight": 0.45,
+    "height": 0.55
+   },
+   "face": {
+    "head-oval": 0.45,
+    "lr-eye-scale-incr": 0.3,
+    "nose-scale-vert-incr": 0.3,
+    "nose-hump-incr": 0.25,
+    "chin-width-incr": 0.2,
+    "eyebrows-trans-down": 0.15,
+    "lr-cheek-bones-incr": 0.2
+   },
+   "resting": {
+    "mouthSmileLeft": 0.06,
+    "mouthSmileRight": 0.06,
+    "cheekSquintLeft": 0.024,
+    "cheekSquintRight": 0.024
+   },
+   "skin": "#c99f7f",
+   "eyes": "brown",
+   "brows": "eyebrow003",
+   "hair": {
+    "style": "curly",
+    "length": 0.09,
+    "volume": 0.042,
+    "curl": 0.009,
+    "pitch": 0.032,
+    "density": 460,
+    "width": 0.026,
+    "fringe": true,
+    "front_len": 0.7,
+    "back_len": 0.7,
+    "cross": 0.35,
+    "colour": "#2a1c14"
+   },
+   "outfit": {
+    "garments": [
+     {
+      "asset": "male_casualsuit05"
+     },
+     {
+      "asset": "shoes05"
+     }
+    ],
+    "top": "#c41e2a",
+    "inner": "#f2efe8",
+    "bottom": "#8ea8c8",
+    "shoes": "#f2efe8",
+    "bands": [
+     [
+      0.9,
+      1.2
+     ]
+    ],
+    "trim": "#f2efe8"
+   },
+   "wear": [
+    "Look_scarf"
+   ],
+   "extras": [
+    "scarf",
+    "backpack"
+   ],
+   "optional": [
+    "Acc_backpack"
+   ],
+   "seed": 38
+  },
+  {
+   "id": "hta-pogi-adult",
+   "family": "canon",
+   "role": "hero",
+   "label": "Pogi, the hero (adult)",
+   "age": 32,
+   "decade": "10s",
+   "region": "mediterranean",
+   "club": "hapoel-tel-aviv",
+   "name": "Pogi",
+   "source": "THE WORKER public/life/art: pogi32, pogi40; R6: short brown hair, light olive skin, curious eyes, a red-and-white scarf",
+   "body": {
+    "gender": 1,
+    "muscle": 0.52,
+    "weight": 0.45,
+    "height": 0.55
+   },
+   "face": {
+    "head-oval": 0.45,
+    "lr-eye-scale-incr": 0.3,
+    "nose-scale-vert-incr": 0.3,
+    "nose-hump-incr": 0.25,
+    "chin-width-incr": 0.2,
+    "eyebrows-trans-down": 0.15,
+    "lr-cheek-bones-incr": 0.2
+   },
+   "resting": {
+    "mouthSmileLeft": 0.06,
+    "mouthSmileRight": 0.06,
+    "cheekSquintLeft": 0.024,
+    "cheekSquintRight": 0.024
+   },
+   "skin": "#c99f7f",
+   "eyes": "brown",
+   "brows": "eyebrow003",
+   "hair": {
+    "style": "curly",
+    "length": 0.055,
+    "volume": 0.026,
+    "curl": 0.007,
+    "pitch": 0.026,
+    "density": 420,
+    "width": 0.024,
+    "front_len": 0.8,
+    "back_len": 0.55,
+    "cross": 0.35,
+    "colour": "#2a1c14"
+   },
+   "outfit": {
+    "garments": [
+     {
+      "asset": "male_casualsuit05"
+     },
+     {
+      "asset": "shoes02"
+     }
+    ],
+    "top": "#1f2a44",
+    "inner": "#c41e2a",
+    "bottom": "#33435f",
+    "shoes": "#8d8f93"
+   },
+   "wear": [],
+   "extras": [],
+   "optional": [],
+   "seed": 52
+  },
+  {
+   "id": "hta-ofir",
+   "family": "canon",
+   "role": "friend",
+   "label": "Ofir, the childhood friend (8)",
+   "age": 8,
+   "decade": "80s",
+   "region": "mediterranean",
+   "club": "hapoel-tel-aviv",
+   "name": "Ofir",
+   "source": "THE WORKER public/life/art: ofir, ofir90, faceOfir; R6: buzz-cut black hair, big grin, red t-shirt, denim shorts (the painting wears jeans)",
+   "body": {
+    "gender": 1,
+    "muscle": 0.5,
+    "weight": 0.44,
+    "height": 0.5
+   },
+   "face": {
+    "head-round": 0.35,
+    "chin-width-incr": 0.2,
+    "lr-eye-scale-incr": 0.35,
+    "mouth-scale-horiz-incr": 0.2
+   },
+   "resting": {
+    "mouthSmileLeft": 0.38,
+    "mouthSmileRight": 0.38,
+    "cheekSquintLeft": 0.15200000000000002,
+    "cheekSquintRight": 0.15200000000000002,
+    "jawOpen": 0.06
+   },
+   "skin": "#c59a78",
+   "eyes": "brown",
+   "brows": "eyebrow001",
+   "hair": {
+    "style": "buzz",
+    "hairline": 0.0,
+    "colour": "#151110"
+   },
+   "outfit": {
+    "garments": [
+     {
+      "asset": "male_casualsuit04"
+     },
+     {
+      "asset": "shoes05"
+     }
+    ],
+    "top": "#c41e2a",
+    "bottom": "#5f7fa8",
+    "bottom_flat": false,
+    "shoes": "#f2efe8"
+   },
+   "wear": [],
+   "extras": [],
+   "optional": [],
+   "seed": 31
+  },
+  {
+   "id": "hta-efi",
+   "family": "canon",
+   "role": "friend",
+   "label": "Efi (8)",
+   "age": 8,
+   "decade": "80s",
+   "region": "mediterranean",
+   "club": "hapoel-tel-aviv",
+   "name": "Efi",
+   "source": "THE WORKER public/life/art: efi, efi96, faceEfi: tight dark curls, dark red t-shirt, dark shorts",
+   "body": {
+    "gender": 1,
+    "muscle": 0.45,
+    "weight": 0.5,
+    "height": 0.45
+   },
+   "face": {
+    "head-round": 0.4,
+    "lr-cheek-volume-incr": 0.3,
+    "lr-eye-scale-incr": 0.45,
+    "nose-scale-horiz-incr": 0.15
+   },
+   "resting": {
+    "mouthSmileLeft": 0.05,
+    "mouthSmileRight": 0.05,
+    "cheekSquintLeft": 0.020000000000000004,
+    "cheekSquintRight": 0.020000000000000004
+   },
+   "skin": "#be9170",
+   "eyes": "brown",
+   "brows": "eyebrow001",
+   "hair": {
+    "style": "curly",
+    "length": 0.07,
+    "volume": 0.056,
+    "curl": 0.011,
+    "pitch": 0.022,
+    "density": 520,
+    "width": 0.028,
+    "front_len": 0.9,
+    "back_len": 0.8,
+    "cross": 0.4,
+    "colour": "#120d0b"
+   },
+   "outfit": {
+    "garments": [
+     {
+      "asset": "male_casualsuit04",
+      "hem": "shorts"
+     },
+     {
+      "asset": "shoes05"
+     }
+    ],
+    "top": "#8e1b22",
+    "bottom": "#2b3452",
+    "bottom_flat": true,
+    "shoes": "#f2efe8"
+   },
+   "wear": [],
+   "extras": [],
+   "optional": [],
+   "seed": 32
+  },
+  {
+   "id": "hta-keren",
+   "family": "canon",
+   "role": "rival",
+   "label": "Keren (9)",
+   "age": 9,
+   "decade": "80s",
+   "region": "mediterranean",
+   "club": "hapoel-tel-aviv",
+   "name": "Keren",
+   "source": "THE WORKER public/life/art: keren, faceKeren: dark wavy hair tied back with a fringe, red-and-white striped t-shirt, denim shorts, sandals",
+   "body": {
+    "gender": 0,
+    "muscle": 0.42,
+    "weight": 0.44,
+    "height": 0.5,
+    "cupsize": 0.0
+   },
+   "face": {
+    "head-oval": 0.3,
+    "lr-eye-scale-incr": 0.45,
+    "mouth-scale-horiz-incr": 0.05,
+    "chin-prominent-incr": 0.1
+   },
+   "resting": {
+    "mouthSmileLeft": 0.3,
+    "mouthSmileRight": 0.08,
+    "cheekSquintLeft": 0.12,
+    "browOuterUpRight": 0.12
+   },
+   "skin": "#c79c7a",
+   "eyes": "brown",
+   "brows": "eyebrow001",
+   "hair": {
+    "style": "ponytail",
+    "gather": "mid",
+    "tail": 0.26,
+    "curl": 0.006,
+    "density": 360,
+    "width": 0.024,
+    "fringe": true,
+    "fringe_len": 0.07,
+    "tail_locks": 50,
+    "colour": "#1e1511"
+   },
+   "outfit": {
+    "garments": [
+     {
+      "asset": "female_casualsuit02"
+     },
+     {
+      "asset": "shoes05"
+     }
+    ],
+    "top": "#c41e2a",
+    "bands": {
+     "hoops": 6,
+     "from": -0.05,
+     "to": 1.2
+    },
+    "trim": "#f2efe8",
+    "shoes": "#8a6a50"
+   },
+   "wear": [],
+   "extras": [],
+   "optional": [],
+   "seed": 33
+  },
+  {
+   "id": "hta-amit",
+   "family": "canon",
+   "role": "friend",
+   "label": "Amit (11)",
+   "age": 11,
+   "decade": "80s",
+   "region": "mediterranean",
+   "club": "hapoel-tel-aviv",
+   "name": "Amit",
+   "source": "THE WORKER public/life/art: amit, amit90, faceAmit: dark straight hair with a fringe, no glasses, navy jacket over a red t-shirt, jeans, scarf",
+   "body": {
+    "gender": 1,
+    "muscle": 0.45,
+    "weight": 0.42,
+    "height": 0.55
+   },
+   "face": {
+    "head-oval": 0.4,
+    "lr-eye-scale-incr": 0.4,
+    "nose-scale-vert-incr": 0.15
+   },
+   "resting": {
+    "mouthSmileLeft": 0.06,
+    "mouthSmileRight": 0.06,
+    "cheekSquintLeft": 0.024,
+    "cheekSquintRight": 0.024
+   },
+   "skin": "#cfa584",
+   "eyes": "brown",
+   "brows": "eyebrow003",
+   "hair": {
+    "style": "straight",
+    "texture": "straight",
+    "length": 0.075,
+    "volume": 0.02,
+    "curl": 0.0,
+    "density": 420,
+    "width": 0.024,
+    "fringe": true,
+    "front_len": 0.9,
+    "back_len": 0.6,
+    "cross": 0.3,
+    "colour": "#1a1310"
+   },
+   "outfit": {
+    "garments": [
+     {
+      "asset": "male_casualsuit05"
+     },
+     {
+      "asset": "shoes05"
+     }
+    ],
+    "top": "#1f2a44",
+    "inner": "#c41e2a",
+    "bottom": "#5f7fa8",
+    "shoes": "#f2efe8"
+   },
+   "wear": [
+    "Look_scarf"
+   ],
+   "extras": [
+    "scarf"
+   ],
+   "optional": [],
+   "seed": 34
+  },
+  {
+   "id": "hta-kiosk",
+   "family": "canon",
+   "role": "kiosk",
+   "label": "Rafi, the kiosk keeper (56)",
+   "age": 56,
+   "decade": "80s",
+   "region": "mediterranean",
+   "club": "hapoel-tel-aviv",
+   "name": "Rafi",
+   "source": "THE WORKER public/life/art: faceOldMan, faceVendor; R6: heavy-set, grey moustache, flat cap, short-sleeved shirt, cream apron",
+   "body": {
+    "gender": 1,
+    "muscle": 0.45,
+    "weight": 0.88,
+    "height": 0.47
+   },
+   "face": {
+    "head-fat-incr": 0.6,
+    "head-round": 0.3,
+    "neck-double-incr": 0.5,
+    "nose-volume-incr": 0.4,
+    "nose-scale-horiz-incr": 0.3,
+    "nose-scale-vert-incr": 0.2,
+    "lr-cheek-volume-incr": 0.4,
+    "lr-eye-bag-incr": 0.6,
+    "mouth-scale-horiz-incr": 0.15,
+    "eyebrows-angle-down": 0.2,
+    "mouth-angles-up": 0.3
+   },
+   "resting": {
+    "mouthSmileLeft": 0.16,
+    "mouthSmileRight": 0.16,
+    "cheekSquintLeft": 0.064,
+    "cheekSquintRight": 0.064
+   },
+   "skin": "#c4987a",
+   "eyes": "brown",
+   "brows": "eyebrow002",
+   "hair": {
+    "style": "straight",
+    "texture": "wavy",
+    "length": 0.045,
+    "volume": 0.012,
+    "curl": 0.0,
+    "density": 360,
+    "width": 0.022,
+    "hairline": 0.018,
+    "back_len": 0.7,
+    "cross": 0.3,
+    "colour": "#a8a49e"
+   },
+   "facial": "grey",
+   "outfit": {
+    "garments": [
+     {
+      "asset": "male_casualsuit06"
+     },
+     {
+      "asset": "shoes01"
+     }
+    ],
+    "top": "#c6d3dd",
+    "bottom": "#4b4b4e",
+    "bottom_flat": true,
+    "shoes": "#5a3d2b"
+   },
+   "wear": [
+    "Acc_moustache",
+    "Acc_cap_flat",
+    "Hair_hat",
+    "Look_apron"
+   ],
+   "extras": [
+    "apron"
+   ],
+   "optional": [],
+   "seed": 35
+  },
+  {
+   "id": "hta-neighbour",
+   "family": "canon",
+   "role": "neighbour",
+   "label": "The neighbour (64)",
+   "age": 64,
+   "decade": "80s",
+   "region": "mediterranean",
+   "club": "hapoel-tel-aviv",
+   "name": "The neighbour",
+   "source": "R6: small, grey bun, round glasses, lilac cardigan",
+   "body": {
+    "gender": 0,
+    "muscle": 0.4,
+    "weight": 0.55,
+    "height": 0.28,
+    "cupsize": 0.45
+   },
+   "face": {
+    "head-round": 0.3,
+    "lr-eye-scale-incr": 0.25,
+    "mouth-scale-horiz-decr": 0.15,
+    "nose-point-width-incr": 0.15,
+    "lr-cheek-volume-incr": 0.2,
+    "mouth-angles-up": 0.35,
+    "lr-eye-bag-incr": 0.3
+   },
+   "resting": {
+    "mouthSmileLeft": 0.18,
+    "mouthSmileRight": 0.18,
+    "cheekSquintLeft": 0.072,
+    "cheekSquintRight": 0.072
+   },
+   "skin": "#d4ac90",
+   "eyes": "brown",
+   "brows": "eyebrow007",
+   "hair": {
+    "style": "bun",
+    "gather": "low",
+    "bun": 0.033,
+    "texture": "wavy",
+    "density": 360,
+    "width": 0.024,
+    "colour": "#cfccc6"
+   },
+   "outfit": {
+    "garments": [
+     {
+      "asset": "female_elegantsuit01",
+      "keep": "top"
+     },
+     {
+      "asset": "toigo_long_full_skirt",
+      "hem": "below_knee"
+     },
+     {
+      "asset": "shoes03"
+     }
+    ],
+    "top": "#a993c4",
+    "inner": "#efe6d2",
+    "skirt": "#6b645c",
+    "skirt_flat": true,
+    "shoes": "#2a2220"
+   },
+   "wear": [
+    "Acc_glasses_round"
+   ],
+   "extras": [],
+   "optional": [],
+   "seed": 36
+  },
+  {
+   "id": "father",
+   "family": "universal",
+   "role": "father",
+   "label": "the father, 1980s",
+   "age": 38,
+   "decade": "80s",
+   "region": "mediterranean",
+   "body": {
+    "gender": 1,
+    "muscle": 0.5,
+    "weight": 0.5,
+    "height": 0.55
+   },
+   "face": {
+    "head-oval": 0.2,
+    "chin-width-incr": 0.25,
+    "chin-height-incr": 0.15,
+    "nose-scale-vert-incr": 0.35,
+    "nose-hump-incr": 0.35,
+    "nose-scale-horiz-incr": 0.12,
+    "nose-point-width-incr": 0.2,
+    "mouth-scale-horiz-incr": 0.12,
+    "lr-eye-bag-incr": 0.45,
+    "lr-eye-eyefold-down": 0.3,
+    "lr-eye-scale-incr": 0.35,
+    "lr-cheek-bones-incr": 0.2,
+    "eyebrows-trans-down": 0.15,
+    "eyebrows-angle-down": 0.25,
+    "mouth-angles-up": 0.35,
+    "forehead-nubian-decr": 0.3,
+    "head-square": 0.15
+   },
+   "resting": {
+    "mouthSmileLeft": 0.12,
+    "mouthSmileRight": 0.12,
+    "browInnerUp": 0.1
+   },
+   "eyes": "brown",
+   "brows": "eyebrow009",
+   "hair": {
+    "style": "curly",
+    "length": 0.075,
+    "volume": 0.036,
+    "curl": 0.0085,
+    "pitch": 0.028,
+    "density": 440,
+    "width": 0.026,
+    "front_len": 0.8,
+    "back_len": 0.62,
+    "cross": 0.35,
+    "colour": null
+   },
+   "facial": "full",
+   "outfit": {
+    "garments": [
+     {
+      "asset": "male_casualsuit05"
+     },
+     {
+      "asset": "shoes05"
+     }
+    ],
+    "top": "#1f2a44",
+    "inner": "#f2efe8",
+    "bottom": "#8ea8c8",
+    "shoes": "#f2efe8",
+    "bands": [
+     [
+      0.56,
+      0.72
+     ]
+    ],
+    "trim": "#f2efe8"
+   },
+   "wear": [
+    "Acc_moustache"
+   ],
+   "extras": [],
+   "optional": [],
+   "seed": 41
+  },
+  {
+   "id": "father-90s",
+   "family": "universal",
+   "role": "father",
+   "label": "the father, 1990s",
+   "age": 38,
+   "decade": "90s",
+   "region": "mediterranean",
+   "body": {
+    "gender": 1,
+    "muscle": 0.5,
+    "weight": 0.5,
+    "height": 0.55
+   },
+   "face": {
+    "head-oval": 0.2,
+    "chin-width-incr": 0.25,
+    "chin-height-incr": 0.15,
+    "nose-scale-vert-incr": 0.35,
+    "nose-hump-incr": 0.35,
+    "nose-scale-horiz-incr": 0.12,
+    "nose-point-width-incr": 0.2,
+    "mouth-scale-horiz-incr": 0.12,
+    "lr-eye-bag-incr": 0.45,
+    "lr-eye-eyefold-down": 0.3,
+    "lr-eye-scale-incr": 0.35,
+    "lr-cheek-bones-incr": 0.2,
+    "eyebrows-trans-down": 0.15,
+    "eyebrows-angle-down": 0.25,
+    "mouth-angles-up": 0.35,
+    "forehead-nubian-decr": 0.3,
+    "head-square": 0.15
+   },
+   "resting": {
+    "mouthSmileLeft": 0.12,
+    "mouthSmileRight": 0.12,
+    "browInnerUp": 0.1
+   },
+   "eyes": "brown",
+   "brows": "eyebrow009",
+   "hair": {
+    "style": "curly",
+    "length": 0.075,
+    "volume": 0.036,
+    "curl": 0.0085,
+    "pitch": 0.028,
+    "density": 440,
+    "width": 0.026,
+    "front_len": 0.8,
+    "back_len": 0.62,
+    "cross": 0.35,
+    "colour": null
+   },
+   "facial": "full",
+   "outfit": {
+    "garments": [
+     {
+      "asset": "male_casualsuit03"
+     },
+     {
+      "asset": "shoes05"
+     }
+    ],
+    "top": "#1f2a44",
+    "bottom": "#7f9bbd",
+    "shoes": "#f2efe8"
+   },
+   "wear": [
+    "Acc_moustache"
+   ],
+   "extras": [],
+   "optional": [],
+   "seed": 41
+  },
+  {
+   "id": "father-00s",
+   "family": "universal",
+   "role": "father",
+   "label": "the father, 2000s",
+   "age": 38,
+   "decade": "00s",
+   "region": "mediterranean",
+   "body": {
+    "gender": 1,
+    "muscle": 0.5,
+    "weight": 0.5,
+    "height": 0.55
+   },
+   "face": {
+    "head-oval": 0.2,
+    "chin-width-incr": 0.25,
+    "chin-height-incr": 0.15,
+    "nose-scale-vert-incr": 0.35,
+    "nose-hump-incr": 0.35,
+    "nose-scale-horiz-incr": 0.12,
+    "nose-point-width-incr": 0.2,
+    "mouth-scale-horiz-incr": 0.12,
+    "lr-eye-bag-incr": 0.45,
+    "lr-eye-eyefold-down": 0.3,
+    "lr-eye-scale-incr": 0.35,
+    "lr-cheek-bones-incr": 0.2,
+    "eyebrows-trans-down": 0.15,
+    "eyebrows-angle-down": 0.25,
+    "mouth-angles-up": 0.35,
+    "forehead-nubian-decr": 0.3,
+    "head-square": 0.15
+   },
+   "resting": {
+    "mouthSmileLeft": 0.12,
+    "mouthSmileRight": 0.12,
+    "browInnerUp": 0.1
+   },
+   "eyes": "brown",
+   "brows": "eyebrow009",
+   "hair": {
+    "style": "curly",
+    "length": 0.075,
+    "volume": 0.036,
+    "curl": 0.0085,
+    "pitch": 0.028,
+    "density": 440,
+    "width": 0.026,
+    "front_len": 0.8,
+    "back_len": 0.62,
+    "cross": 0.35,
+    "colour": null
+   },
+   "facial": "full",
+   "outfit": {
+    "garments": [
+     {
+      "asset": "namuhekam_male_polo_shirt"
+     },
+     {
+      "asset": "male_casualsuit04",
+      "keep": "bottom"
+     },
+     {
+      "asset": "shoes02"
+     }
+    ],
+    "top": "#1f2a44",
+    "bottom": "#3d5576",
+    "shoes": "#8d8f93"
+   },
+   "wear": [
+    "Acc_moustache"
+   ],
+   "extras": [],
+   "optional": [],
+   "seed": 41
+  },
+  {
+   "id": "father-10s",
+   "family": "universal",
+   "role": "father",
+   "label": "the father, 2010s",
+   "age": 38,
+   "decade": "10s",
+   "region": "mediterranean",
+   "body": {
+    "gender": 1,
+    "muscle": 0.5,
+    "weight": 0.5,
+    "height": 0.55
+   },
+   "face": {
+    "head-oval": 0.2,
+    "chin-width-incr": 0.25,
+    "chin-height-incr": 0.15,
+    "nose-scale-vert-incr": 0.35,
+    "nose-hump-incr": 0.35,
+    "nose-scale-horiz-incr": 0.12,
+    "nose-point-width-incr": 0.2,
+    "mouth-scale-horiz-incr": 0.12,
+    "lr-eye-bag-incr": 0.45,
+    "lr-eye-eyefold-down": 0.3,
+    "lr-eye-scale-incr": 0.35,
+    "lr-cheek-bones-incr": 0.2,
+    "eyebrows-trans-down": 0.15,
+    "eyebrows-angle-down": 0.25,
+    "mouth-angles-up": 0.35,
+    "forehead-nubian-decr": 0.3,
+    "head-square": 0.15
+   },
+   "resting": {
+    "mouthSmileLeft": 0.12,
+    "mouthSmileRight": 0.12,
+    "browInnerUp": 0.1
+   },
+   "eyes": "brown",
+   "brows": "eyebrow009",
+   "hair": {
+    "style": "curly",
+    "length": 0.075,
+    "volume": 0.036,
+    "curl": 0.0085,
+    "pitch": 0.028,
+    "density": 440,
+    "width": 0.026,
+    "front_len": 0.8,
+    "back_len": 0.62,
+    "cross": 0.35,
+    "colour": null
+   },
+   "facial": "full",
+   "outfit": {
+    "garments": [
+     {
+      "asset": "male_casualsuit05"
+     },
+     {
+      "asset": "shoes02"
+     }
+    ],
+    "top": "#3b3e44",
+    "inner": "#1f2a44",
+    "bottom": "#33435f",
+    "shoes": "#8d8f93"
+   },
+   "wear": [
+    "Acc_moustache"
+   ],
+   "extras": [],
+   "optional": [],
+   "seed": 41
+  },
+  {
+   "id": "father-20s",
+   "family": "universal",
+   "role": "father",
+   "label": "the father, 2020s",
+   "age": 38,
+   "decade": "20s",
+   "region": "mediterranean",
+   "body": {
+    "gender": 1,
+    "muscle": 0.5,
+    "weight": 0.5,
+    "height": 0.55
+   },
+   "face": {
+    "head-oval": 0.2,
+    "chin-width-incr": 0.25,
+    "chin-height-incr": 0.15,
+    "nose-scale-vert-incr": 0.35,
+    "nose-hump-incr": 0.35,
+    "nose-scale-horiz-incr": 0.12,
+    "nose-point-width-incr": 0.2,
+    "mouth-scale-horiz-incr": 0.12,
+    "lr-eye-bag-incr": 0.45,
+    "lr-eye-eyefold-down": 0.3,
+    "lr-eye-scale-incr": 0.35,
+    "lr-cheek-bones-incr": 0.2,
+    "eyebrows-trans-down": 0.15,
+    "eyebrows-angle-down": 0.25,
+    "mouth-angles-up": 0.35,
+    "forehead-nubian-decr": 0.3,
+    "head-square": 0.15
+   },
+   "resting": {
+    "mouthSmileLeft": 0.12,
+    "mouthSmileRight": 0.12,
+    "browInnerUp": 0.1
+   },
+   "eyes": "brown",
+   "brows": "eyebrow009",
+   "hair": {
+    "style": "curly",
+    "length": 0.075,
+    "volume": 0.036,
+    "curl": 0.0085,
+    "pitch": 0.028,
+    "density": 440,
+    "width": 0.026,
+    "front_len": 0.8,
+    "back_len": 0.62,
+    "cross": 0.35,
+    "colour": null
+   },
+   "facial": "full",
+   "outfit": {
+    "garments": [
+     {
+      "asset": "toigo_fisherman_sweater"
+     },
+     {
+      "asset": "male_casualsuit04",
+      "keep": "bottom"
+     },
+     {
+      "asset": "shoes05"
+     }
+    ],
+    "top": "#1f2a44",
+    "bottom": "#2c3a52",
+    "shoes": "#f2efe8"
+   },
+   "wear": [
+    "Acc_moustache"
+   ],
+   "extras": [],
+   "optional": [],
+   "seed": 41
+  },
+  {
+   "id": "mother",
+   "family": "universal",
+   "role": "mother",
+   "label": "the mother",
+   "age": 36,
+   "decade": "80s",
+   "region": "mediterranean",
+   "body": {
+    "gender": 0,
+    "muscle": 0.45,
+    "weight": 0.52,
+    "height": 0.48,
+    "cupsize": 0.45
+   },
+   "face": {
+    "head-oval": 0.45,
+    "nose-scale-vert-incr": 0.18,
+    "nose-hump-incr": 0.2,
+    "nose-point-width-incr": 0.1,
+    "mouth-scale-horiz-incr": 0.1,
+    "mouth-lowerlip-volume-incr": 0.2,
+    "lr-eye-scale-incr": 0.3,
+    "lr-eye-corner2-up": 0.25,
+    "lr-eye-eyefold-angle-up": 0.2,
+    "lr-cheek-bones-incr": 0.25,
+    "chin-prominent-incr": 0.15,
+    "eyebrows-angle-up": 0.15
+   },
+   "resting": {
+    "mouthSmileLeft": 0.12,
+    "mouthSmileRight": 0.12,
+    "cheekSquintLeft": 0.048,
+    "cheekSquintRight": 0.048
+   },
+   "eyes": "brown",
+   "brows": "eyebrow007",
+   "hair": {
+    "style": "curly",
+    "length": 0.3,
+    "volume": 0.042,
+    "curl": 0.012,
+    "pitch": 0.05,
+    "density": 420,
+    "width": 0.03,
+    "cross": 0.35,
+    "hairline": -0.004,
+    "colour": null
+   },
+   "outfit": {
+    "garments": [
+     {
+      "asset": "female_elegantsuit01",
+      "keep": "top"
+     },
+     {
+      "asset": "toigo_long_full_skirt",
+      "hem": "below_knee"
+     },
+     {
+      "asset": "shoes03"
+     }
+    ],
+    "top": "#6e1f2b",
+    "inner": "#efe6d2",
+    "skirt": "#232c45",
+    "skirt_flat": true,
+    "shoes": "#2a2220"
+   },
+   "wear": [
+    "Look_bangles"
+   ],
+   "extras": [
+    "bangles"
+   ],
+   "optional": [],
+   "seed": 42
+  },
+  {
+   "id": "friend",
+   "family": "universal",
+   "role": "friend",
+   "label": "the buzz-cut friend (8)",
+   "age": 8,
+   "decade": "80s",
+   "region": "mediterranean",
+   "body": {
+    "gender": 1,
+    "muscle": 0.5,
+    "weight": 0.44,
+    "height": 0.5
+   },
+   "face": {
+    "head-round": 0.35,
+    "chin-width-incr": 0.2,
+    "lr-eye-scale-incr": 0.35,
+    "mouth-scale-horiz-incr": 0.2
+   },
+   "resting": {
+    "mouthSmileLeft": 0.38,
+    "mouthSmileRight": 0.38,
+    "cheekSquintLeft": 0.15200000000000002,
+    "cheekSquintRight": 0.15200000000000002,
+    "jawOpen": 0.06
+   },
+   "eyes": "brown",
+   "brows": "eyebrow001",
+   "hair": {
+    "style": "buzz",
+    "hairline": 0.0,
+    "colour": null
+   },
+   "outfit": {
+    "garments": [
+     {
+      "asset": "male_casualsuit04",
+      "hem": "shorts"
+     },
+     {
+      "asset": "shoes05"
+     }
+    ],
+    "top": "#c41e2a",
+    "bottom": "#5f7fa8",
+    "bottom_flat": true,
+    "shoes": "#f2efe8"
+   },
+   "wear": [],
+   "extras": [],
+   "optional": [],
+   "seed": 43
+  },
+  {
+   "id": "wild",
+   "family": "universal",
+   "role": "friend",
+   "label": "the wild kid (11)",
+   "age": 11,
+   "decade": "80s",
+   "region": "mediterranean",
+   "body": {
+    "gender": 1,
+    "muscle": 0.5,
+    "weight": 0.4,
+    "height": 0.55
+   },
+   "face": {
+    "head-oval": 0.2,
+    "lr-eye-scale-incr": 0.35,
+    "mouth-scale-horiz-incr": 0.15,
+    "eyebrows-angle-up": 0.3
+   },
+   "resting": {
+    "mouthSmileLeft": 0.32,
+    "mouthSmileRight": 0.12,
+    "browOuterUpLeft": 0.2
+   },
+   "eyes": "brown",
+   "brows": "eyebrow001",
+   "hair": {
+    "style": "spiky",
+    "length": 0.05,
+    "density": 380,
+    "width": 0.018,
+    "cross": 0.5,
+    "colour": null
+   },
+   "outfit": {
+    "garments": [
+     {
+      "asset": "male_casualsuit04"
+     },
+     {
+      "asset": "shoes05"
+     }
+    ],
+    "top": "#5d6b3b",
+    "bottom": "#5f7fa8",
+    "bottom_flat": false,
+    "shoes": "#f2efe8"
+   },
+   "wear": [],
+   "extras": [],
+   "optional": [],
+   "seed": 44
+  },
+  {
+   "id": "rival",
+   "family": "universal",
+   "role": "rival",
+   "label": "the rival girl (10)",
+   "age": 10,
+   "decade": "80s",
+   "region": "mediterranean",
+   "body": {
+    "gender": 0,
+    "muscle": 0.45,
+    "weight": 0.42,
+    "height": 0.55,
+    "cupsize": 0.0
+   },
+   "face": {
+    "head-oval": 0.3,
+    "lr-eye-scale-incr": 0.4,
+    "chin-prominent-incr": 0.15,
+    "eyebrows-angle-up": 0.15
+   },
+   "resting": {
+    "mouthSmileLeft": 0.3,
+    "mouthSmileRight": 0.05,
+    "cheekSquintLeft": 0.12,
+    "browOuterUpRight": 0.15
+   },
+   "eyes": "brown",
+   "brows": "eyebrow001",
+   "hair": {
+    "style": "ponytail",
+    "gather": "high",
+    "tail": 0.28,
+    "curl": 0.0,
+    "texture": "wavy",
+    "density": 360,
+    "width": 0.024,
+    "tail_locks": 50,
+    "colour": null
+   },
+   "outfit": {
+    "garments": [
+     {
+      "asset": "female_casualsuit01"
+     },
+     {
+      "asset": "shoes05"
+     }
+    ],
+    "top": "#9cc4e6",
+    "bottom": "#5f7fa8",
+    "shoes": "#f2efe8"
+   },
+   "wear": [],
+   "extras": [],
+   "optional": [],
+   "seed": 45
+  },
+  {
+   "id": "kiosk",
+   "family": "universal",
+   "role": "kiosk",
+   "label": "the kiosk keeper",
+   "age": 56,
+   "decade": "80s",
+   "region": "mediterranean",
+   "body": {
+    "gender": 1,
+    "muscle": 0.45,
+    "weight": 0.85,
+    "height": 0.47
+   },
+   "face": {
+    "head-fat-incr": 0.6,
+    "head-round": 0.3,
+    "neck-double-incr": 0.5,
+    "nose-volume-incr": 0.4,
+    "nose-scale-horiz-incr": 0.3,
+    "nose-scale-vert-incr": 0.2,
+    "lr-cheek-volume-incr": 0.4,
+    "lr-eye-bag-incr": 0.6,
+    "mouth-scale-horiz-incr": 0.15,
+    "eyebrows-angle-down": 0.2,
+    "mouth-angles-up": 0.3
+   },
+   "resting": {
+    "mouthSmileLeft": 0.16,
+    "mouthSmileRight": 0.16,
+    "cheekSquintLeft": 0.064,
+    "cheekSquintRight": 0.064
+   },
+   "eyes": "brown",
+   "brows": "eyebrow002",
+   "hair": {
+    "style": "straight",
+    "texture": "wavy",
+    "length": 0.045,
+    "volume": 0.012,
+    "curl": 0.0,
+    "density": 360,
+    "width": 0.022,
+    "hairline": 0.018,
+    "back_len": 0.7,
+    "cross": 0.3,
+    "colour": null
+   },
+   "facial": "grey",
+   "outfit": {
+    "garments": [
+     {
+      "asset": "male_casualsuit06"
+     },
+     {
+      "asset": "shoes01"
+     }
+    ],
+    "top": "#c6d3dd",
+    "bottom": "#4b4b4e",
+    "bottom_flat": true,
+    "shoes": "#5a3d2b"
+   },
+   "wear": [
+    "Acc_moustache",
+    "Acc_cap_flat",
+    "Hair_hat",
+    "Look_apron"
+   ],
+   "extras": [
+    "apron"
+   ],
+   "optional": [],
+   "seed": 46
+  },
+  {
+   "id": "neighbour",
+   "family": "universal",
+   "role": "neighbour",
+   "label": "the neighbour",
+   "age": 64,
+   "decade": "80s",
+   "region": "mediterranean",
+   "body": {
+    "gender": 0,
+    "muscle": 0.4,
+    "weight": 0.55,
+    "height": 0.28,
+    "cupsize": 0.45
+   },
+   "face": {
+    "head-round": 0.3,
+    "lr-eye-scale-incr": 0.25,
+    "mouth-scale-horiz-decr": 0.15,
+    "nose-point-width-incr": 0.15,
+    "lr-cheek-volume-incr": 0.2,
+    "mouth-angles-up": 0.35,
+    "lr-eye-bag-incr": 0.3
+   },
+   "resting": {
+    "mouthSmileLeft": 0.18,
+    "mouthSmileRight": 0.18,
+    "cheekSquintLeft": 0.072,
+    "cheekSquintRight": 0.072
+   },
+   "eyes": "brown",
+   "brows": "eyebrow007",
+   "hair": {
+    "style": "bun",
+    "gather": "low",
+    "bun": 0.033,
+    "texture": "wavy",
+    "density": 360,
+    "width": 0.024,
+    "colour": null
+   },
+   "outfit": {
+    "garments": [
+     {
+      "asset": "female_elegantsuit01",
+      "keep": "top"
+     },
+     {
+      "asset": "toigo_long_full_skirt",
+      "hem": "below_knee"
+     },
+     {
+      "asset": "shoes03"
+     }
+    ],
+    "top": "#a993c4",
+    "inner": "#efe6d2",
+    "skirt": "#6b645c",
+    "skirt_flat": true,
+    "shoes": "#2a2220"
+   },
+   "wear": [
+    "Acc_glasses_round"
+   ],
+   "extras": [],
+   "optional": [],
+   "seed": 47
+  },
+  {
+   "id": "hero-6",
+   "family": "universal",
+   "role": "hero",
+   "label": "the hero at 6",
+   "age": 6,
+   "decade": "80s",
+   "region": "mediterranean",
+   "body": {
+    "gender": 1,
+    "muscle": 0.45,
+    "weight": 0.45,
+    "height": 0.55
+   },
+   "face": {
+    "head-round": 0.25,
+    "head-oval": 0.2,
+    "lr-eye-scale-incr": 0.5,
+    "nose-scale-vert-incr": 0.1,
+    "mouth-angles-up": 0.2,
+    "lr-cheek-volume-incr": 0.15
+   },
+   "resting": {
+    "mouthSmileLeft": 0.06,
+    "mouthSmileRight": 0.06,
+    "cheekSquintLeft": 0.024,
+    "cheekSquintRight": 0.024
+   },
+   "eyes": "brown",
+   "brows": "eyebrow001",
+   "hair": {
+    "style": "curly",
+    "length": 0.06,
+    "volume": 0.03,
+    "curl": 0.0065,
+    "pitch": 0.028,
+    "density": 400,
+    "width": 0.024,
+    "fringe": true,
+    "front_len": 0.75,
+    "back_len": 0.65,
+    "cross": 0.35,
+    "colour": null
+   },
+   "outfit": {
+    "garments": [
+     {
+      "asset": "male_casualsuit04"
+     },
+     {
+      "asset": "shoes05"
+     }
+    ],
+    "top": "#c41e2a",
+    "bottom": "#5f7fa8",
+    "bottom_flat": false,
+    "shoes": "#f2efe8"
+   },
+   "wear": [
+    "Acc_backpack"
+   ],
+   "extras": [
+    "backpack"
+   ],
+   "optional": [],
+   "seed": 56
+  },
+  {
+   "id": "hero-12",
+   "family": "universal",
+   "role": "hero",
+   "label": "the hero at 12, 1980s",
+   "age": 12,
+   "decade": "80s",
+   "region": "mediterranean",
+   "body": {
+    "gender": 1,
+    "muscle": 0.45,
+    "weight": 0.45,
+    "height": 0.55
+   },
+   "face": {
+    "head-oval": 0.45,
+    "lr-eye-scale-incr": 0.35,
+    "nose-scale-vert-incr": 0.25,
+    "nose-hump-incr": 0.15,
+    "chin-width-incr": 0.1,
+    "eyebrows-trans-down": 0.1,
+    "lr-cheek-bones-incr": 0.15
+   },
+   "resting": {
+    "mouthSmileLeft": 0.06,
+    "mouthSmileRight": 0.06,
+    "cheekSquintLeft": 0.024,
+    "cheekSquintRight": 0.024
+   },
+   "eyes": "brown",
+   "brows": "eyebrow001",
+   "hair": {
+    "style": "curly",
+    "length": 0.09,
+    "volume": 0.042,
+    "curl": 0.009,
+    "pitch": 0.032,
+    "density": 460,
+    "width": 0.026,
+    "fringe": true,
+    "front_len": 0.7,
+    "back_len": 0.7,
+    "cross": 0.35,
+    "colour": null
+   },
+   "outfit": {
+    "garments": [
+     {
+      "asset": "male_casualsuit04"
+     },
+     {
+      "asset": "shoes05"
+     }
+    ],
+    "top": "#c41e2a",
+    "bottom": "#5f7fa8",
+    "bottom_flat": false,
+    "shoes": "#f2efe8"
+   },
+   "wear": [
+    "Look_scarf",
+    "Acc_backpack"
+   ],
+   "extras": [
+    "scarf",
+    "backpack"
+   ],
+   "optional": [],
+   "seed": 62
+  },
+  {
+   "id": "hero-12-90s",
+   "family": "universal",
+   "role": "hero",
+   "label": "the hero at 12, 1990s",
+   "age": 12,
+   "decade": "90s",
+   "region": "mediterranean",
+   "body": {
+    "gender": 1,
+    "muscle": 0.45,
+    "weight": 0.45,
+    "height": 0.55
+   },
+   "face": {
+    "head-oval": 0.45,
+    "lr-eye-scale-incr": 0.35,
+    "nose-scale-vert-incr": 0.25,
+    "nose-hump-incr": 0.15,
+    "chin-width-incr": 0.1,
+    "eyebrows-trans-down": 0.1,
+    "lr-cheek-bones-incr": 0.15
+   },
+   "resting": {
+    "mouthSmileLeft": 0.06,
+    "mouthSmileRight": 0.06,
+    "cheekSquintLeft": 0.024,
+    "cheekSquintRight": 0.024
+   },
+   "eyes": "brown",
+   "brows": "eyebrow001",
+   "hair": {
+    "style": "curly",
+    "length": 0.09,
+    "volume": 0.042,
+    "curl": 0.009,
+    "pitch": 0.032,
+    "density": 460,
+    "width": 0.026,
+    "fringe": true,
+    "front_len": 0.7,
+    "back_len": 0.7,
+    "cross": 0.35,
+    "colour": null
+   },
+   "outfit": {
+    "garments": [
+     {
+      "asset": "male_casualsuit05"
+     },
+     {
+      "asset": "shoes05"
+     }
+    ],
+    "top": "#c41e2a",
+    "inner": "#f2efe8",
+    "bottom": "#8ea8c8",
+    "shoes": "#f2efe8",
+    "bands": [
+     [
+      0.9,
+      1.2
+     ]
+    ],
+    "trim": "#f2efe8"
+   },
+   "wear": [
+    "Look_scarf",
+    "Acc_backpack"
+   ],
+   "extras": [
+    "scarf",
+    "backpack"
+   ],
+   "optional": [],
+   "seed": 62
+  },
+  {
+   "id": "hero-12-00s",
+   "family": "universal",
+   "role": "hero",
+   "label": "the hero at 12, 2000s",
+   "age": 12,
+   "decade": "00s",
+   "region": "mediterranean",
+   "body": {
+    "gender": 1,
+    "muscle": 0.45,
+    "weight": 0.45,
+    "height": 0.55
+   },
+   "face": {
+    "head-oval": 0.45,
+    "lr-eye-scale-incr": 0.35,
+    "nose-scale-vert-incr": 0.25,
+    "nose-hump-incr": 0.15,
+    "chin-width-incr": 0.1,
+    "eyebrows-trans-down": 0.1,
+    "lr-cheek-bones-incr": 0.15
+   },
+   "resting": {
+    "mouthSmileLeft": 0.06,
+    "mouthSmileRight": 0.06,
+    "cheekSquintLeft": 0.024,
+    "cheekSquintRight": 0.024
+   },
+   "eyes": "brown",
+   "brows": "eyebrow001",
+   "hair": {
+    "style": "curly",
+    "length": 0.09,
+    "volume": 0.042,
+    "curl": 0.009,
+    "pitch": 0.032,
+    "density": 460,
+    "width": 0.026,
+    "fringe": true,
+    "front_len": 0.7,
+    "back_len": 0.7,
+    "cross": 0.35,
+    "colour": null
+   },
+   "outfit": {
+    "garments": [
+     {
+      "asset": "namuhekam_male_polo_shirt"
+     },
+     {
+      "asset": "male_casualsuit04",
+      "keep": "bottom"
+     },
+     {
+      "asset": "shoes05"
+     }
+    ],
+    "top": "#c41e2a",
+    "bottom": "#4a6790",
+    "shoes": "#f2efe8"
+   },
+   "wear": [
+    "Look_scarf",
+    "Acc_backpack"
+   ],
+   "extras": [
+    "scarf",
+    "backpack"
+   ],
+   "optional": [],
+   "seed": 62
+  },
+  {
+   "id": "hero-12-10s",
+   "family": "universal",
+   "role": "hero",
+   "label": "the hero at 12, 2010s",
+   "age": 12,
+   "decade": "10s",
+   "region": "mediterranean",
+   "body": {
+    "gender": 1,
+    "muscle": 0.45,
+    "weight": 0.45,
+    "height": 0.55
+   },
+   "face": {
+    "head-oval": 0.45,
+    "lr-eye-scale-incr": 0.35,
+    "nose-scale-vert-incr": 0.25,
+    "nose-hump-incr": 0.15,
+    "chin-width-incr": 0.1,
+    "eyebrows-trans-down": 0.1,
+    "lr-cheek-bones-incr": 0.15
+   },
+   "resting": {
+    "mouthSmileLeft": 0.06,
+    "mouthSmileRight": 0.06,
+    "cheekSquintLeft": 0.024,
+    "cheekSquintRight": 0.024
+   },
+   "eyes": "brown",
+   "brows": "eyebrow001",
+   "hair": {
+    "style": "curly",
+    "length": 0.09,
+    "volume": 0.042,
+    "curl": 0.009,
+    "pitch": 0.032,
+    "density": 460,
+    "width": 0.026,
+    "fringe": true,
+    "front_len": 0.7,
+    "back_len": 0.7,
+    "cross": 0.35,
+    "colour": null
+   },
+   "outfit": {
+    "garments": [
+     {
+      "asset": "male_casualsuit02"
+     },
+     {
+      "asset": "shoes06"
+     }
+    ],
+    "top": "#c41e2a",
+    "bottom": "#33435f",
+    "shoes": "#2a3350"
+   },
+   "wear": [
+    "Look_scarf",
+    "Acc_backpack"
+   ],
+   "extras": [
+    "scarf",
+    "backpack"
+   ],
+   "optional": [],
+   "seed": 62
+  },
+  {
+   "id": "hero-12-20s",
+   "family": "universal",
+   "role": "hero",
+   "label": "the hero at 12, 2020s",
+   "age": 12,
+   "decade": "20s",
+   "region": "mediterranean",
+   "body": {
+    "gender": 1,
+    "muscle": 0.45,
+    "weight": 0.45,
+    "height": 0.55
+   },
+   "face": {
+    "head-oval": 0.45,
+    "lr-eye-scale-incr": 0.35,
+    "nose-scale-vert-incr": 0.25,
+    "nose-hump-incr": 0.15,
+    "chin-width-incr": 0.1,
+    "eyebrows-trans-down": 0.1,
+    "lr-cheek-bones-incr": 0.15
+   },
+   "resting": {
+    "mouthSmileLeft": 0.06,
+    "mouthSmileRight": 0.06,
+    "cheekSquintLeft": 0.024,
+    "cheekSquintRight": 0.024
+   },
+   "eyes": "brown",
+   "brows": "eyebrow001",
+   "hair": {
+    "style": "curly",
+    "length": 0.09,
+    "volume": 0.042,
+    "curl": 0.009,
+    "pitch": 0.032,
+    "density": 460,
+    "width": 0.026,
+    "fringe": true,
+    "front_len": 0.7,
+    "back_len": 0.7,
+    "cross": 0.35,
+    "colour": null
+   },
+   "outfit": {
+    "garments": [
+     {
+      "asset": "toigo_fisherman_sweater"
+     },
+     {
+      "asset": "male_casualsuit04",
+      "keep": "bottom"
+     },
+     {
+      "asset": "shoes05"
+     }
+    ],
+    "top": "#c41e2a",
+    "bottom": "#26282d",
+    "shoes": "#f2efe8"
+   },
+   "wear": [
+    "Look_scarf",
+    "Acc_backpack"
+   ],
+   "extras": [
+    "scarf",
+    "backpack"
+   ],
+   "optional": [],
+   "seed": 62
+  },
+  {
+   "id": "hero-15",
+   "family": "universal",
+   "role": "hero",
+   "label": "the hero at 15",
+   "age": 15,
+   "decade": "80s",
+   "region": "mediterranean",
+   "body": {
+    "gender": 1,
+    "muscle": 0.45,
+    "weight": 0.45,
+    "height": 0.55
+   },
+   "face": {
+    "head-oval": 0.45,
+    "lr-eye-scale-incr": 0.35,
+    "nose-scale-vert-incr": 0.25,
+    "nose-hump-incr": 0.15,
+    "chin-width-incr": 0.1,
+    "eyebrows-trans-down": 0.1,
+    "lr-cheek-bones-incr": 0.15
+   },
+   "resting": {
+    "mouthSmileLeft": 0.06,
+    "mouthSmileRight": 0.06,
+    "cheekSquintLeft": 0.024,
+    "cheekSquintRight": 0.024
+   },
+   "eyes": "brown",
+   "brows": "eyebrow003",
+   "hair": {
+    "style": "curly",
+    "length": 0.09,
+    "volume": 0.042,
+    "curl": 0.009,
+    "pitch": 0.032,
+    "density": 460,
+    "width": 0.026,
+    "fringe": true,
+    "front_len": 0.7,
+    "back_len": 0.7,
+    "cross": 0.35,
+    "colour": null
+   },
+   "outfit": {
+    "garments": [
+     {
+      "asset": "male_casualsuit05"
+     },
+     {
+      "asset": "shoes05"
+     }
+    ],
+    "top": "#c41e2a",
+    "inner": "#f2efe8",
+    "bottom": "#8ea8c8",
+    "shoes": "#f2efe8",
+    "bands": [
+     [
+      0.9,
+      1.2
+     ]
+    ],
+    "trim": "#f2efe8"
+   },
+   "wear": [
+    "Look_scarf",
+    "Acc_backpack"
+   ],
+   "extras": [
+    "scarf",
+    "backpack"
+   ],
+   "optional": [],
+   "seed": 65
+  }
+ ]
+}

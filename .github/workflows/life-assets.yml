@@ -1,13 +1,13 @@
 name: LIFE · character assets
 # LIFE: skinned human characters with facial morph targets, built on the runner for free (public repository).
 # Headless Blender (the `bpy` wheel) + MPFB2 (MakeHuman for Blender) + the MakeHuman CC0 asset packs, driven by
-# scripts/life/assets/. A push to claude/life-assets that touches the pipeline, or a dispatch, builds the cast,
-# the clips, the manifest and the previews, and commits them back to the SAME branch. It never writes to main.
-# docs/life/ASSETS-PIPELINE.md is the manual.
+# scripts/life/assets/. A push to claude/life-assets that touches the pipeline, or a dispatch, builds the cast, the
+# clips, the looks (four parallel shards), the manifest and the previews, and commits them back to the SAME branch.
+# It never writes to main. scripts/life/assets/build.json says which parts a push builds. docs/life/ASSETS-PIPELINE.md is the manual.
 on:
   workflow_dispatch:
     inputs:
-      only: {description: 'Character ids, comma-separated (empty = whole cast)', default: ''}
+      only: {description: 'Character or look ids, comma-separated (empty = all)', default: ''}
   push:
     branches: [claude/life-assets]
     paths: ['scripts/life/assets/**', '.github/workflows/life-assets.yml']
@@ -19,15 +19,31 @@ env:
   BPY_VERSION: 5.3.0
   PACKS_KEY: v1
 jobs:
-  build:
+  plan:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    outputs:
+      cast: ${{ steps.p.outputs.cast }}
+      looks: ${{ steps.p.outputs.looks }}
+      only: ${{ steps.p.outputs.only }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: p
+        run: |
+          f=scripts/life/assets/build.json
+          echo "cast=$(jq -r '.cast // true' $f)" >> "$GITHUB_OUTPUT"
+          echo "looks=$(jq -r '.looks // true' $f)" >> "$GITHUB_OUTPUT"
+          o='${{ inputs.only }}'; [ -z "$o" ] && o=$(jq -r '.only // ""' $f)
+          echo "only=$o" >> "$GITHUB_OUTPUT"
+
+  cast:
+    needs: plan
+    if: needs.plan.outputs.cast == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 100
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: '3.13', cache: pip, cache-dependency-path: scripts/life/assets/requirements.txt}
-      - uses: actions/setup-node@v4
-        with: {node-version: '20'}
       - name: Asset packs (cached)
         uses: actions/cache@v4
         with: {path: '${{ runner.temp }}/packs', key: 'life-asset-packs-${{ env.PACKS_KEY }}-${{ hashFiles(''scripts/life/assets/packs.txt'') }}'}
@@ -37,16 +53,90 @@ jobs:
           sudo apt-get update -qq && sudo apt-get install -y -qq libxi6 libxxf86vm1 libxfixes3 libxrender1 libxkbcommon0 libsm6 libgl1 libegl1 >/dev/null
           git clone -q https://github.com/makehumancommunity/mpfb2 "$RUNNER_TEMP/mpfb2" && git -C "$RUNNER_TEMP/mpfb2" checkout -q "$MPFB_SHA"
           (cd "$RUNNER_TEMP/mpfb2/src" && zip -qr "$RUNNER_TEMP/mpfb.zip" mpfb)
-      - name: Build
+      - name: Build the cast and the clips
         env:
-          LIFE_ONLY: '${{ inputs.only }}'
+          LIFE_ONLY: '${{ needs.plan.outputs.only }}'
           LIFE_PACKS: '${{ runner.temp }}/packs'
           LIFE_MPFB_ZIP: '${{ runner.temp }}/mpfb.zip'
           LIFE_MPFB_SRC: '${{ runner.temp }}/mpfb2'
           LIFE_WORK: '${{ runner.temp }}/life-work'
-        run: bash scripts/life/assets/run.sh
-      - name: Commit back to this branch
+        run: bash scripts/life/assets/run.sh cast
+      - uses: actions/upload-artifact@v4
         if: always()
+        with:
+          name: work-cast
+          path: |
+            ${{ runner.temp }}/life-work/raw/
+            ${{ runner.temp }}/life-work/preview/
+            ${{ runner.temp }}/life-work/cast-built.json
+            ${{ runner.temp }}/life-work/clips.json
+            !${{ runner.temp }}/life-work/raw/look-*
+          retention-days: 3
+          if-no-files-found: ignore
+
+  looks:
+    needs: plan
+    if: needs.plan.outputs.looks == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix: {shard: [0, 1, 2, 3]}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.13', cache: pip, cache-dependency-path: scripts/life/assets/requirements.txt}
+      - name: Asset packs (cached)
+        uses: actions/cache@v4
+        with: {path: '${{ runner.temp }}/packs', key: 'life-asset-packs-${{ env.PACKS_KEY }}-${{ hashFiles(''scripts/life/assets/packs.txt'') }}'}
+      - name: Tools
+        run: |
+          pip install -r scripts/life/assets/requirements.txt
+          sudo apt-get update -qq && sudo apt-get install -y -qq libxi6 libxxf86vm1 libxfixes3 libxrender1 libxkbcommon0 libsm6 libgl1 libegl1 >/dev/null
+          git clone -q https://github.com/makehumancommunity/mpfb2 "$RUNNER_TEMP/mpfb2" && git -C "$RUNNER_TEMP/mpfb2" checkout -q "$MPFB_SHA"
+          (cd "$RUNNER_TEMP/mpfb2/src" && zip -qr "$RUNNER_TEMP/mpfb.zip" mpfb)
+      - name: Build the looks (shard ${{ matrix.shard }} of 4)
+        env:
+          LIFE_ONLY: '${{ needs.plan.outputs.only }}'
+          LIFE_SHARD: '${{ matrix.shard }}/4'
+          LIFE_PACKS: '${{ runner.temp }}/packs'
+          LIFE_MPFB_ZIP: '${{ runner.temp }}/mpfb.zip'
+          LIFE_MPFB_SRC: '${{ runner.temp }}/mpfb2'
+          LIFE_WORK: '${{ runner.temp }}/life-work'
+        run: bash scripts/life/assets/run.sh looks
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: work-looks-${{ matrix.shard }}
+          path: |
+            ${{ runner.temp }}/life-work/raw/look-*
+            ${{ runner.temp }}/life-work/preview/looks/
+            ${{ runner.temp }}/life-work/looks-built-*.json
+          retention-days: 3
+          if-no-files-found: ignore
+
+  finish:
+    needs: [plan, cast, looks]
+    if: always() && needs.plan.result == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.13'}
+      - uses: actions/setup-node@v4
+        with: {node-version: '20'}
+      - uses: actions/download-artifact@v4
+        with: {pattern: 'work-*', path: '${{ runner.temp }}/dl'}
+      - name: Merge the shards
+        run: |
+          W="$RUNNER_TEMP/life-work"; mkdir -p "$W"
+          for d in "$RUNNER_TEMP"/dl/*/; do [ -d "$d" ] && cp -r "$d". "$W"/; done
+          ls "$W" "$W/raw" 2>/dev/null | head -80
+      - name: Finish (compress, manifest, sheets)
+        run: |
+          pip install -q pillow numpy
+          python3 scripts/life/assets/finish.py "$RUNNER_TEMP/life-work" "$GITHUB_WORKSPACE"
+      - name: Commit back to this branch
         run: |
           git config user.name github-actions[bot]; git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           for d in public/life/assets docs/life/assets-preview docs/life/assets-catalogue scripts/life/assets/vendor; do [ -e "$d" ] && git add -A "$d"; done

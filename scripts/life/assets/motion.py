@@ -281,8 +281,7 @@ SIT = {'pelvis': {'lean': -6, 'dy': -0.02}, 'spine': {'lean': 10}, 'neck': {'pit
 CROUCH = {'pelvis': {'lean': 4}, 'spine': {'lean': 16}, 'neck': {'pitch': -8}, 'head': {'pitch': -6}, 'kneel': True,
           'leg_l': {'fwd': 100, 'out': 12, 'knee': 138, 'foot': 12}, 'leg_r': {'fwd': 38, 'out': 8, 'knee': 128, 'foot': 62, 'toe': -55},
           'arm_l': {'dir': (0.25, 0.75, -0.55), 'elbow': 72, 'fore': 60, 'hand': 'palm_down_rest'}, 'arm_r': {'dir': (0.3, 0.8, -0.35), 'elbow': 40, 'fore': 30, 'hand': 'relaxed'}}
-SHOULDER = {'spine': {'lean': 3, 'roll': -3, 'yaw': -6}, 'head': {'yaw': -22, 'pitch': 12, 'roll': -3}, 'neck': {'pitch': 4},
-            'arm_r': {'dir': (0.62, 0.42, -0.16), 'twist': 60, 'elbow': 52, 'fore': -20, 'wrist': -22, 'hand': 'palm_down_rest', 'shrug': 3}}
+SHOULDER = {'spine': {'lean': 3, 'roll': -4, 'yaw': -8}, 'head': {'yaw': -24, 'pitch': 14, 'roll': -4}, 'neck': {'pitch': 5}, 'pelvis': {'dx': -0.015, 'roll': 1.5}}
 HUG = {'spine': {'lean': 12}, 'neck': {'pitch': 6}, 'head': {'pitch': 8, 'roll': 10, 'yaw': 12},
        'arm_l': {'dir': (0.45, 0.85, -0.12), 'twist': 40, 'elbow': 96, 'fore': 0, 'hand': 'cup', 'shrug': 6, 'reach': 10},
        'arm_r': {'dir': (0.45, 0.8, -0.38), 'twist': 40, 'elbow': 104, 'fore': 0, 'hand': 'cup', 'shrug': 4, 'reach': 10},
@@ -443,6 +442,16 @@ def hug_partner(t, T=4.2, low=False):
 
 KNEEL_LEGS = {'leg_l': {'fwd': 8, 'out': 6, 'knee': 98, 'foot': 52, 'toe': -50}, 'leg_r': {'fwd': 80, 'out': 28, 'knee': 95, 'foot': 4, 'foot_out': -10}}
 
+def hand_on_shoulder(t, T=6.0):
+    """beside a child at his right: the trunk turns a little toward the child, the right hand comes out and down and
+    rests flat on the child's near shoulder (palm down, fingers over the front of the shoulder), then stays"""
+    p = to(SHOULDER, t, 0.9)
+    k = ease5((t - 0.12) / 0.95)
+    p['arm_r'] = mix(stand(t, .5)['arm_r'], {'dir': (0.55, 0.32, -0.55), 'twist': 30, 'elbow': 38, 'fore': -10, 'wrist': -12, 'hand': 'palm_down_rest', 'shrug': 2}, k)
+    sink = 0.004 * s(t, 4.0)   # the weight of the hand settles with the breath
+    p['ik'] = {'r': {'to': ('C', 'clavicle_l@0.72', (0.005, -0.03, 0.068 + sink)), 'pole': (0.25, -0.55, -1.0), 'w': back(k, 0.25) if k < 1 else 1, 'palm': (0.05, 0.1, -1)}}
+    return p
+
 def hug_child_adult(t, T=4.6):
     """an adult and a child of about 1.35 m: the adult goes down on one knee, opens his arms, holds the child close,
     cheek beside the child's head, a slow rock"""
@@ -517,7 +526,8 @@ SCENES = {
     'sit_play_board': _scene(7.0, True, 'seated at a table (top 0.72 m, board 40 cm ahead): takes a piece, moves it, looks up', {'A': (sit_play_board, None)}, {'A': 'sit_play_board'}),
     'lean_on_rail': _scene(8.0, True, 'forearms on a rail (top 1.05 m, 40 cm ahead), one foot crossed', {'A': (lean_on_rail, None)}, {'A': 'lean_on_rail'}),
     'crouch_to_child': _scene(6.0, False, 'down on one knee to a child\'s eye level, then held', {'A': (lambda t: to(CROUCH, t, 1.2), None)}, {'A': 'crouch_to_child'}),
-    'hand_on_shoulder': _scene(6.0, False, 'right hand out and down onto the shoulder of a child standing at the right side, then held', {'A': (lambda t: to(SHOULDER, t, 0.9), None)}, {'A': 'hand_on_shoulder'}),
+    'hand_on_shoulder': _scene(6.0, False, 'beside a child (1.35 m, 38 cm to the right, 12 cm ahead): the right hand comes down and rests flat on the child\'s near shoulder, then held',
+                               {'C': (lambda t: child_attend(t, 6.0), (-0.38, 0.12, 0)), 'A': (hand_on_shoulder, (0, 0, 0))}, {'A': 'hand_on_shoulder'}),
     'hug': _scene(6.0, False, 'both arms round someone in front, then held', {'A': (lambda t: to(HUG, t, 1.0), None)}, {'A': 'hug'}),
     'ruffle_hair': _scene(3.6, False, "standing at a child's left (child 1.35 m, 35 cm to the right, 30 cm ahead): the right hand ruffles the child's hair",
                           {'C': (lambda t: child_attend(t), (-0.33, 0.28, 0)), 'A': (ruffle_hair, (0, 0, 0))}, {'A': 'ruffle_hair'}),
@@ -535,7 +545,7 @@ SCENES = {
 for name, shape in HAND_CLIPS.items():
     SCENES[name] = _scene(1.0, True, f'hand shape "{shape}" on both hands: finger bones only, for an override or additive layer', {'A': (hand_clip(shape), None)}, {'A': name}, hands_only=True)
 
-STRIPS = ['put_scarf_on', 'ruffle_hair', 'hold_hand_walk', 'child_on_shoulders', 'kick_ball', 'hug_child', 'hug_partner',
+STRIPS = ['hand_on_shoulder', 'put_scarf_on', 'ruffle_hair', 'hold_hand_walk', 'child_on_shoulders', 'kick_ball', 'hug_child', 'hug_partner',
           'walk_child', 'idle_2', 'idle_3', 'laugh_body', 'lean_on_rail', 'sit_play_board', 'step_turn']
 STILL_AT = {'idle': 1.0, 'idle_2': 3.5, 'idle_3': 2.0, 'walk': 0.28, 'run': 0.2, 'carry': 0.3, 'walk_child': 0.2, 'turn': 0.5, 'step_turn_l': 0.5, 'step_turn_r': 0.5,
             'talk_1': 0.3, 'talk_2': 0.5, 'talk_3': 2.2, 'wave': 0.2, 'cheer': 0.15, 'laugh_body': 1.0, 'sit': 3.0, 'sit_play_board': 2.4, 'lean_on_rail': 2.0,

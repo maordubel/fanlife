@@ -312,8 +312,10 @@ def envelope(F, hair_pts, ctr, squash=0.22):
     return need
 
 
-def _dome(F, need, gap, flat=0.0, cut_front=0.016, cut_back=-0.03):
-    """a cap shell over the skull: a UV sphere fitted to the head and the (pressed) hair, cut on a plane through the brow and above the ears"""
+def _dome(F, need, gap, flat=0.0, cut_front=0.016, cut_back=-0.03, spread=10):
+    """a cap shell over the skull: an ellipsoid fitted to the head, then grown where the (pressed) hair needs room.
+    The growth is a smooth field (each vertex's shortfall spread to its neighbours with a cos^spread falloff and the
+    largest taken), so a lone tuft makes a gentle swell, never a point. Cut on a plane through the brow and above the ears."""
     ctr = F['ctr']
     bm = bmesh.new(); bmesh.ops.create_uvsphere(bm, u_segments=40, v_segments=20, radius=1.0)
     rx = F['temple'] + 0.004; ry = (F['back'] - F['front']) / 2 + 0.004; rz = (F['crown'] - ctr.z + 0.004) * (1 - flat)
@@ -321,14 +323,18 @@ def _dome(F, need, gap, flat=0.0, cut_front=0.016, cut_back=-0.03):
     plane = F['plane'](cut_front, cut_back)
     bmesh.ops.delete(bm, geom=[f for f in bm.faces if all(v.co.z < plane(v.co) for v in f.verts)], context='FACES')
     bmesh.ops.delete(bm, geom=[v for v in bm.verts if not v.link_faces], context='VERTS')
-    def push():
-        for v in bm.verts:
+    vs = list(bm.verts)
+    D = np.array([(v.co - ctr).normalized()[:] for v in vs]); R = np.array([(v.co - ctr).length for v in vs])
+    E = np.array([max(0.0, need(v.co)[0] + gap - r) for v, r in zip(vs, R)])
+    W = np.clip(D @ D.T, 0, 1) ** spread
+    add = (W * E[None, :]).max(1)
+    for v, d, r, a in zip(vs, D, R, add): v.co = ctr + Vector(d) * (r + a)
+    for _ in range(4):
+        bmesh.ops.smooth_vert(bm, verts=vs, factor=0.5, use_axis_x=True, use_axis_y=True, use_axis_z=True)
+        for v in vs:
             nd, rr = need(v.co)
-            if rr < nd + gap: v.co = ctr + (v.co - ctr).normalized() * (nd + gap)
+            if rr < nd + gap * 0.6: v.co = ctr + (v.co - ctr).normalized() * (nd + gap * 0.6)
             if v.co.z < plane(v.co) or v.is_boundary: v.co.z = plane(v.co)
-    push()
-    for _ in range(8):
-        bmesh.ops.smooth_vert(bm, verts=bm.verts, factor=0.6, use_axis_x=True, use_axis_y=True, use_axis_z=True); push()
     rim = [v for v in bm.verts if v.is_boundary]
     return bm, plane, rim
 
@@ -366,46 +372,34 @@ def _planar_uv(bm, axis_u=0, axis_v=2, scale=8.0):
     return uvl
 
 
-def accessories(rig, parts, hair_col=(0.08, 0.06, 0.05), adult=True, seed=0):
+ALL_ACC = ('hair_hat', 'beanie', 'cap_flat', 'glasses_round', 'glasses_square', 'moustache', 'beard')
+
+
+def accessories(rig, parts, hair_col=(0.08, 0.06, 0.05), adult=True, seed=0, want=ALL_ACC, facial=None):
     """flat cap, beanie, round and square glasses; moustache and short beard for adults. Each is a separate small mesh on the
-    head bone, fitted to this head and hair, exported with the character and hidden by default (manifest: accessories)."""
+    head bone, fitted to this head and hair, exported with the character and hidden by default (manifest: accessories).
+    want: which to make (a look makes only what it wears); facial: {'moustache': 'full' | 'grey', 'factor': True}"""
     F = head_frame(parts); out = {}
     hair = parts.get('Hair')
     hair_pts = np.array([(hair.matrix_world @ v.co)[:] for v in hair.data.vertices]) if hair else None
     need = envelope(F, hair_pts, F['ctr'])
-    if hair: out['hair_hat'], _ = hair_under_hat(rig, hair, F, need)
-    # beanie: ribbed knit, folded cuff
-    bm, plane, rim = _dome(F, need, 0.004, cut_front=0.024, cut_back=-0.03)
+    hats = {'beanie', 'cap_flat'} & set(want)
+    if hair and hats and 'hair_hat' in want: out['hair_hat'], _ = hair_under_hat(rig, hair, F, need)
     ctr = F['ctr']
-    for v in bm.verts:
-        h = v.co.z - plane(v.co)
-        if h < 0.032: v.co = ctr + (v.co - ctr) * (1 + 0.045 * (1 - h / 0.032) ** 0.5)   # the turned-up cuff stands proud
-    _planar_uv(bm, 0, 2, 6)
-    o = _obj('Acc_beanie', bm, rig, _mat('acc_beanie', (0.12, 0.14, 0.22), 0.95, img=_knit_image('acc_beanie_knit', (0.2, 0.22, 0.32)))); _solidify(o, 0.004); out['beanie'] = o
-    # flat cap: flatter crown pulled forward over a short brim
-    bm, plane, rim = _dome(F, need, 0.004, flat=0.3, cut_front=0.032, cut_back=-0.02)
-    top = max(v.co.z for v in bm.verts)
-    for v in bm.verts:
-        k = max(0.0, (v.co.z - ctr.z) / max(top - ctr.z, 1e-3))
-        if v.co.y < ctr.y: v.co.y -= 0.022 * k * min(1.0, (ctr.y - v.co.y) / 0.06)
-    ang = lambda v: math.degrees(math.atan2(v.co.x - ctr.x, -(v.co.y - ctr.y)))
-    ring = sorted([v for v in rim if abs(ang(v)) < 62], key=ang)
-    if len(ring) > 3:
-        tips = []
-        for v in ring:
-            k = math.cos(math.radians(ang(v)) * 90 / 62) ** 0.6
-            out_ = Vector((v.co.x - ctr.x, v.co.y - ctr.y, 0)).normalized()
-            tips.append(bm.verts.new(v.co + out_ * (0.052 * k + 0.003) + Vector((0, 0, -0.014 * k))))
-        for a_, b_, c_, d_ in zip(ring, ring[1:], tips[1:], tips):
-            try: bm.faces.new((a_, b_, c_, d_))
-            except ValueError: pass
-    _planar_uv(bm, 0, 1, 10)
-    o = _obj('Acc_cap_flat', bm, rig, _mat('acc_cap', (0.25, 0.22, 0.18), 0.9, img=_knit_image('acc_cap_tweed', (0.33, 0.29, 0.24), rib=False))); _solidify(o, 0.003); out['cap_flat'] = o
+    if 'beanie' in want:   # ribbed knit, folded cuff
+        bm, plane, rim = _dome(F, need, 0.004, cut_front=0.024, cut_back=-0.03)
+        for v in bm.verts:
+            h = v.co.z - plane(v.co)
+            if h < 0.032: v.co = ctr + (v.co - ctr) * (1 + 0.045 * (1 - h / 0.032) ** 0.5)   # the turned-up cuff stands proud
+        _planar_uv(bm, 0, 2, 6)
+        o = _obj('Acc_beanie', bm, rig, _mat('acc_beanie', (0.12, 0.14, 0.22), 0.95, img=_knit_image('acc_beanie_knit', (0.2, 0.22, 0.32)))); _solidify(o, 0.004); out['beanie'] = o
+    if 'cap_flat' in want: out['cap_flat'] = flat_cap(rig, F, need)
     # glasses
     if F['el'] is not None:
         y_lens = min(F['el'][1] - F['er_rad'] - 0.011, F['bridge_y'] - 0.004)
         temple_x = F['temple'] + 0.004; ear_y = (F['front'] + F['back']) / 2 + 0.005
-        for style, col, metal, rough, shape, thick in (('round', (0.55, 0.5, 0.42), 1.0, 0.3, 'round', 0.0016), ('square', (0.04, 0.035, 0.035), 0.0, 0.35, 'square', 0.0028)):
+        for style, col, metal, rough, shape, thick in (('round', (0.42, 0.42, 0.44), 1.0, 0.3, 'round', 0.0016), ('square', (0.04, 0.035, 0.035), 0.0, 0.35, 'square', 0.0028)):
+            if 'glasses_' + style not in want: continue
             bm = bmesh.new()
             for e in (F['el'], F['er']):
                 c = Vector((e[0] * 1.03, y_lens, e[2] - 0.002)); pts = []
@@ -420,14 +414,59 @@ def accessories(rig, parts, hair_col=(0.08, 0.06, 0.05), adult=True, seed=0):
                 outer = max(pts, key=lambda p: abs(p.x)); top = max(pts, key=lambda p: p.z)
                 sx = 1 if e[0] > 0 else -1
                 hinge = Vector((sx * temple_x, y_lens + 0.008, outer.z + 0.004))
-                _tube(bm, [outer, hinge, Vector((sx * temple_x, ear_y, hinge.z - 0.004)), Vector((sx * (temple_x - 0.006), ear_y + 0.025, hinge.z - 0.03))], thick * 0.8)
+                # the arm runs straight back to the top of the ear and stops there (no hook showing beside the ear)
+                _tube(bm, [outer, hinge, Vector((sx * temple_x, ear_y - 0.004, hinge.z - 0.006))], thick * 0.8)
             il = Vector((F['el'][0] * 1.03 - (0.021 if shape == 'round' else 0.026), y_lens, F['el'][2] + 0.004))
             _tube(bm, [il, Vector((0, min(y_lens, F['bridge_y'] - 0.006) - 0.002, il.z + 0.003)), Vector((-il.x, y_lens, il.z))], thick * 0.9)
             out['glasses_' + style] = _obj('Acc_glasses_' + style, bm, rig, _mat('acc_glasses_' + style, col, rough, metal))
-    if adult:
-        out.update(facial_hair(rig, parts, F, hair_col))
+    if adult and ({'moustache', 'beard'} & set(want)):
+        out.update(facial_hair(rig, parts, F, hair_col, want=want, style=facial or {}))
     for o in out.values(): o.hide_render = True
     return out, F
+
+
+def flat_cap(rig, F, need):
+    """a flat cap: a low crown, flat on top and sloping down to the front, its front pulled forward over a short stiff
+    brim that is snapped to it; the back sits low on the head. Tweed."""
+    ctr = F['ctr']
+    bm, plane, rim = _dome(F, need, 0.005, flat=0.5, cut_front=0.026, cut_back=-0.01)
+    front, back = F['front'], F['back']; crown = max(v.co.z for v in bm.verts)
+    zlim = lambda y: crown - 0.006 - 0.042 * (back - y) / max(back - front, 1e-3)
+    for v in bm.verts:
+        h = v.co.z - plane(v.co)
+        if h <= 0.002: continue
+        if v.co.z > zlim(v.co.y): v.co.z = zlim(v.co.y) + (v.co.z - zlim(v.co.y)) * 0.12      # the flat top
+        k = min(1.0, h / 0.05)
+        v.co.x = ctr.x + (v.co.x - ctr.x) * (1 + 0.07 * k)                                    # a fuller crown at the sides
+        if v.co.y < ctr.y: v.co.y -= 0.036 * k * min(1.0, (ctr.y - v.co.y) / 0.05)            # pulled forward over the brim
+    for _ in range(2): bmesh.ops.smooth_vert(bm, verts=[v for v in bm.verts if not v.is_boundary], factor=0.4, use_axis_x=True, use_axis_y=True, use_axis_z=True)
+    ang = lambda v: math.degrees(math.atan2(v.co.x - ctr.x, -(v.co.y - ctr.y)))
+    rim = [v for v in bm.verts if v.is_boundary]
+    ring = sorted([v for v in rim if abs(ang(v)) < 70], key=ang)
+    if len(ring) > 3:
+        tips = []
+        for v in ring:
+            a = math.radians(ang(v)); k = max(0.0, math.cos(a * 90 / 70)) ** 0.5
+            out_ = Vector((v.co.x - ctr.x, v.co.y - ctr.y, 0)).normalized()
+            tips.append(bm.verts.new(v.co + out_ * (0.034 * k + 0.002) + Vector((0, 0, -0.02 * k))))
+        for a_, b_, c_, d_ in zip(ring, ring[1:], tips[1:], tips):
+            try: bm.faces.new((a_, b_, c_, d_))
+            except ValueError: pass
+    _planar_uv(bm, 0, 1, 10)
+    o = _obj('Acc_cap_flat', bm, rig, _mat('acc_cap', (0.3, 0.28, 0.25), 0.92, img=_tweed_image('acc_cap_tweed', (0.36, 0.33, 0.29)))); _solidify(o, 0.0035)
+    return o
+
+
+def _tweed_image(name, col, size=128):
+    """herringbone tweed: a fine zigzag twill with flecks"""
+    rng = np.random.default_rng(9); im = bpy.data.images.new(name, size, size, alpha=False)
+    x = np.arange(size)[None, :]; y = np.arange(size)[:, None]
+    zig = ((x + np.where((y // 8) % 2 == 0, y, -y)) // 2) % 4 < 2
+    tone = 0.86 + 0.12 * zig + 0.1 * (rng.random((size, size)) - 0.5)
+    fleck = rng.random((size, size)) > 0.985
+    px = np.ones((size, size, 4), np.float32); px[..., :3] = np.array(col)[None, None, :] * tone[..., None]
+    px[fleck, :3] = np.array(col) * 1.5
+    im.pixels.foreach_set(np.clip(px, 0, 1).ravel()); im.pack(); return im
 
 
 def _tube(bm, pts, r, closed=False, seg=6):
@@ -446,11 +485,13 @@ def _tube(bm, pts, r, closed=False, seg=6):
         for R in (rings[0], rings[-1]): bm.faces.new(R)
 
 
-def facial_hair(rig, parts, F, col):
+def facial_hair(rig, parts, F, col, want=('moustache', 'beard'), style=None):
     """moustache and short beard: the head's own skin in that region, lifted 2-4 mm, carrying the mouth and jaw morphs,
     with a strand texture whose edge thins out"""
     from PIL import Image, ImageDraw, ImageFilter
-    head = parts['Head']; co = F['co']; m = F['mouth']; mw = F['mouth_w']; out = {}
+    head = parts['Head']; co = F['co']; m = F['mouth']; mw = F['mouth_w']; out = {}; style = style or {}
+    full = style.get('moustache') in ('full', 'grey')
+    tex_col = (0.6, 0.6, 0.6) if style.get('factor') else col
     pk = F['pucker'] if F['pucker'] is not None else np.zeros(len(co))
     lip = pk > 0.45 * pk.max() if pk.max() > 0 else np.zeros(len(co), bool)
     jaw = F['jaw'] if F['jaw'] is not None else np.zeros(len(co))
@@ -458,12 +499,13 @@ def facial_hair(rig, parts, F, col):
     nose_base = F['nose'][2] - 0.012
     ax = np.abs(co[:, 0]); inner = mw * 0.55; T = F['temple']
     k = np.clip((ax - inner) / max(T - inner, 1e-3), 0, 1)
-    top = np.where(ax <= inner, m[2] - 0.013, (m[2] - 0.006) + (F['eye_z'] - 0.03 - (m[2] - 0.006)) * k ** 1.5)
+    top = np.where(ax <= inner, m[2] - 0.013, (m[2] - 0.006) + (F['eye_z'] - 0.045 - (m[2] - 0.006)) * k ** 1.5)   # the sideburn stops well below the ear's top
     face = co[:, 1] < (F['front'] + F['back']) / 2 - 0.01
-    droop = np.clip((ax - mw * 0.3) / (mw * 0.3), 0, 1) * 0.009
-    moustache = face & (ax < mw * 0.6) & (co[:, 2] > m[2] + 0.0025 - droop) & (co[:, 2] < F['nose'][2] - 0.0035) & (co[:, 1] < m[1] + 0.006)
-    beard = face & (ax < T - 0.004) & (co[:, 2] <= top) & (co[:, 2] > F['chin_z'] - 0.028)
-    regions = {'moustache': moustache, 'beard': beard | moustache}
+    droop = np.clip((ax - mw * 0.3) / (mw * 0.3), 0, 1) * (0.012 if full else 0.009)
+    wide = 0.64 if full else 0.6
+    moustache = face & (ax < mw * wide) & (co[:, 2] > m[2] + (0.0015 if full else 0.0025) - droop) & (co[:, 2] < F['nose'][2] - (0.002 if full else 0.0035)) & (co[:, 1] < m[1] + 0.008)
+    beard = face & (ax < T - 0.012) & (co[:, 2] <= top) & (co[:, 2] > F['chin_z'] - 0.028)
+    regions = {k: v for k, v in {'moustache': moustache, 'beard': beard | moustache}.items() if k in want}
     for name, sel in regions.items():
         if sel.sum() < 12: continue
         o = head.copy(); o.data = head.data.copy(); bpy.context.scene.collection.objects.link(o); o.name = 'Acc_' + name
@@ -473,7 +515,7 @@ def facial_hair(rig, parts, F, col):
         _select_only(o); bpy.ops.object.mode_set(mode='EDIT'); bpy.ops.mesh.select_mode(type='FACE'); bpy.ops.mesh.delete(type='FACE')
         bpy.ops.mesh.select_all(action='SELECT'); bpy.ops.mesh.delete_loose(); bpy.ops.object.mode_set(mode='OBJECT')
         if not len(me.vertices): bpy.data.objects.remove(o, do_unlink=True); continue
-        lift = 0.0035 if name == 'beard' else 0.0028
+        lift = 0.0035 if name == 'beard' else (0.0034 if full else 0.0028)
         n = len(me.vertices); nr = np.empty(n * 3, np.float32); me.vertices.foreach_get('normal', nr); nr = nr * lift
         if me.shape_keys:
             B = np.empty(n * 3, np.float32); me.shape_keys.key_blocks[0].data.foreach_get('co', B)
@@ -504,29 +546,44 @@ def facial_hair(rig, parts, F, col):
         rng = np.random.default_rng(11 + len(name))
         strands = np.asarray(Image.fromarray(np.uint8(rng.random((S, S)) * 255)).filter(ImageFilter.GaussianBlur(0.6)).resize((S, S)), np.float32) / 255
         streak = np.asarray(Image.fromarray(np.uint8(rng.random((S, S // 6)) * 255)).resize((S, S), Image.BILINEAR), np.float32) / 255
-        dens = np.clip(dist / 9.0, 0, 1) ** 0.8 * (0.42 + 0.33 * streak)
+        dens = np.clip(dist / (6.0 if full and name == 'moustache' else 9.0), 0, 1) ** 0.8 * ((0.66 + 0.3 * streak) if full and name == 'moustache' else (0.42 + 0.33 * streak))
         alpha = (strands < dens + 0.03).astype(np.float32) * (np.asarray(mask, np.float32) / 255)
         im = bpy.data.images.new('acc_' + name + '_strands', S, S, alpha=True)
         px = np.ones((S, S, 4), np.float32); tone = 0.75 + 0.35 * strands
-        px[..., :3] = np.array(col)[None, None, :] * tone[..., None]; px[..., 3] = alpha
+        px[..., :3] = np.array(tex_col)[None, None, :] * tone[..., None]; px[..., 3] = alpha
         im.pixels.foreach_set(px[::-1].ravel()); im.pack()
-        me.materials.clear(); me.materials.append(_mat('acc_' + name, col, 0.85, img=im, alpha=True))
+        me.materials.clear(); fm = _mat('acc_' + name, col, 0.85, img=im, alpha=True); me.materials.append(fm)
+        if style.get('factor'):
+            import outfit; outfit.factor(fm, style['factor'])
         for g in list(o.vertex_groups): o.vertex_groups.remove(g)
         g = o.vertex_groups.new(name='head'); g.add(list(range(len(me.vertices))), 1.0, 'REPLACE')
         o['accessory'] = 'Acc_' + name; out[name] = o
     return out
 
 
+def limit_weights(o, limit=4):
+    """keep each vertex's `limit` largest weights and normalise them (in Python: the operator crashed on joined meshes)"""
+    groups = list(o.vertex_groups)
+    for v in o.data.vertices:
+        ws = sorted(((g.weight, g.group) for g in v.groups if g.weight > 1e-5), reverse=True)
+        keep = ws[:limit]; tot = sum(w for w, _ in keep) or 1.0; kept = {gi for _, gi in keep}
+        for g in list(v.groups):
+            if g.group not in kept: groups[g.group].remove([v.index])
+        for w, gi in keep: groups[gi].add([v.index], w / tot, 'REPLACE')
+
+
 # ------------------------------------------------------------------------------------------------ the far-crowd copy
-LOD_TARGET = {'Body': 1500, 'Head': 700, 'Clothes': 1000, 'Clothes2': 500, 'Shoes': 240, 'Hair': 520, 'Eyes': 96}
-TINT_SLOT = {'tint_top': 0, 'tint_inner': 1, 'tint_trim': 2}
+LOD_TARGET = {'Body': 1500, 'Head': 700, 'Clothes': 1000, 'Clothes2': 500, 'Clothes3': 400, 'Shoes': 240, 'Hair': 520, 'Eyes': 96,
+              'Look_scarf': 160, 'Look_apron': 120, 'Look_bangles': 24, 'Acc_cap_flat': 200, 'Acc_beanie': 160, 'Acc_backpack': 200}
+TINT_SLOT = {'tint_top': 0, 'tint_inner': 1, 'tint_trim': 2, 'tint_scarf_a': 0, 'tint_scarf_b': 2}
 
 
 def build_lod(rig, parts, size=512, gutter=4):
     """one mesh, one material, ~4k triangles, every texture packed into one atlas; COLOR_0 carries the tint regions:
     R = tint_top, G = tint_inner, B = tint_trim (1 where the club colour goes), A = 1."""
     from PIL import Image
-    use = [n for n in ('Body', 'Head', 'Clothes', 'Clothes2', 'Shoes', 'Hair', 'Eyes') if n in parts]
+    if 'HairLOD' in parts: parts = {('Hair' if n == 'HairLOD' else n): o for n, o in parts.items() if n != 'Hair'}
+    use = [n for n in ('Body', 'Head', 'Clothes', 'Clothes2', 'Clothes3', 'Shoes', 'Hair', 'Eyes') if n in parts] + [n for n in parts if n.startswith('Look_') or n in ('Acc_cap_flat', 'Acc_beanie', 'Acc_backpack')]
     copies = []; tiles = {}
     for n in use:
         o = parts[n]; c = o.copy(); c.data = o.data.copy(); bpy.context.scene.collection.objects.link(c); c.name = 'lod_' + n
@@ -543,7 +600,7 @@ def build_lod(rig, parts, size=512, gutter=4):
                 tiles[key] = {'px': px, 'part': n, 'alpha': alpha}
         copies.append(c)
     # shelf-pack the tiles into a square: skin and clothes big, hair and shoes smaller, eyes small
-    want = {'Body': 0.5, 'Head': 0.5, 'Clothes': 0.5, 'Clothes2': 0.25, 'Shoes': 0.25, 'Hair': 0.25, 'Eyes': 0.125}
+    want = {'Body': 0.5, 'Head': 0.5, 'Clothes': 0.5, 'Clothes2': 0.25, 'Clothes3': 0.25, 'Shoes': 0.25, 'Hair': 0.25, 'Eyes': 0.125}
     order = sorted(tiles, key=lambda k: -want.get(tiles[k]['part'], 0.125))
     A = 1024; x = y = 0; row = 0; atlas = np.zeros((A, A, 4), np.float32); atlas[..., 3] = 1
     for k in order:
@@ -586,6 +643,6 @@ def build_lod(rig, parts, size=512, gutter=4):
     bpy.context.view_layer.objects.active = copies[0]; bpy.ops.object.join()
     lod = bpy.context.active_object; lod.name = 'LOD1'; lod.data.name = 'LOD1'
     _select_only(lod); bpy.ops.object.mode_set(mode='EDIT'); bpy.ops.mesh.select_all(action='SELECT'); bpy.ops.mesh.remove_doubles(threshold=0.0004); bpy.ops.object.mode_set(mode='OBJECT')
-    bpy.ops.object.vertex_group_limit_total(group_select_mode='ALL', limit=4); bpy.ops.object.vertex_group_normalize_all(lock_active=False)
+    limit_weights(lod, 4)
     if lod.data.color_attributes.get('tint'): lod.data.color_attributes.active_color = lod.data.color_attributes['tint']
     return lod, sum(len(p.vertices) - 2 for p in lod.data.polygons)

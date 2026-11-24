@@ -35,6 +35,8 @@ def squeeze(src, dst):
 
 
 built = json.loads((WORK / 'cast-built.json').read_text()) if (WORK / 'cast-built.json').exists() else {}
+for f in sorted(WORK.glob('looks-built-*.json')): built.update(json.loads(f.read_text()))
+LOOKS = json.loads((HERE / 'looks.json').read_text())
 old = json.loads((OUT / 'manifest.json').read_text()) if (OUT / 'manifest.json').exists() else {'assets': []}
 assets = {a['id']: a for a in old.get('assets', [])}
 def fix_materials(j):
@@ -67,6 +69,12 @@ for cid, meta in built.items():
                    'sources': meta['sources'] + [{'what': 'accessories (caps, glasses, facial hair), LOD, teeth reduction, brow thickening', 'licence': 'made by script in scripts/life/assets/refine.py (this repository), from the CC0 parts above'}],
                    'licence': 'CC0 1.0 (every part; see sources)',
                    'sourceUrl': 'https://static.makehumancommunity.org/assets/assetpacks.html', 'notes': meta['notes']}
+    if meta.get('look'):
+        lk = meta['look']; a = assets[cid]; a['kind'] = 'character-look'; a['look'] = lk
+        a['wear'] = meta.get('wear', []); a['accessories'] = {k: v for k, v in meta.get('accessories', {}).items()}
+        a['hairTriangles'] = meta.get('hairTriangles')
+        a['sources'] = a['sources'][:-1] + [{'what': 'hair (hairgen.py), scarf, apron, bangles, backpack, caps, glasses, facial hair, colours, LOD, teeth reduction, brow thickening',
+                                             'licence': 'made by script in scripts/life/assets/ (this repository), on the CC0 parts above'}]
     print(cid, dst.stat().st_size // 1024, 'KB', meta['triangles'], 'tris')
 
 clips = None
@@ -93,6 +101,11 @@ if (WORK / 'raw/clips.glb').exists():
                          {'what': 'every other clip', 'source': 'keyframed by script in scripts/life/assets/motion.py (poses, eased keys, IK contacts)', 'licence': 'made in this repository'}]}
     assets['clips'] = clips; print('clips', dst.stat().st_size // 1024, 'KB', len(clips['clips']))
 
+look_ids = {l['id'] for l in LOOKS['looks']}
+looks_index = [{'id': a['look']['id'], 'asset': k, 'file': a['file'], 'lod1': (a.get('lod1') or {}).get('file'), 'family': a['look']['family'], 'club': a['look'].get('club'),
+                'name': a['look'].get('name'), 'role': a['look']['role'], 'age': a['look']['age'], 'region': a['look']['region'], 'decade': a['look']['decade'],
+                'bytes': a['bytes'], 'tintRegions': a['tint']['regions'], 'wear': a.get('wear', []), 'optional': a.get('optionalMeshes', [])}
+               for k, a in sorted(assets.items()) if a.get('kind') == 'character-look' and a['look']['id'] in look_ids]
 manifest = {'version': 1, 'generator': 'scripts/life/assets (GitHub Actions: LIFE · character assets)',
             'skeleton': {'name': 'MPFB2 game_engine (Unreal-mannequin names) + eye_l, eye_r', 'bones': next((m['bones'] for m in built.values()), old.get('skeleton', {}).get('bones')),
                          'axes': 'glTF: +Y up, the character faces +Z, metres'},
@@ -104,6 +117,11 @@ manifest = {'version': 1, 'generator': 'scripts/life/assets (GitHub Actions: LIF
             'lod': {'convention': 'cast/<id>-lod1.glb: the same 55-bone skeleton (the same clips play), one mesh, one material, about 4k triangles, a 512 px atlas; the tint regions are in COLOR_0 (R top, G inner, B trim). Colour it with a shader that mixes the club colour in by that mask, e.g. onBeforeCompile: diffuseColor.rgb *= mix(vec3(1.), uTop, vColor.r) * mix(vec3(1.), uInner, vColor.g) * mix(vec3(1.), uTrim, vColor.b) (and keep vertexColors off so the mask itself does not tint).'},
             'face': {'morphTargets': 'ARKit face units (52 names, MPFB faceunits01, CC0) and Meta/Oculus visemes (viseme_*, MPFB visemes02, CC0), on Head, Lashes, Brows, Teeth, Tongue; set the same influence by name on every mesh that has it',
                      'eyes': 'bones eye_l and eye_r turn the eyeballs; the eyeLook* morphs move the lids with them', 'expressions': SPEC['expressions']},
+            'looks': {'convention': 'cast/look-<id>.glb: a character LOOK (face, hair, clothes, colours) on the same 55-bone skeleton, so every clip plays. family "canon" = THE WORKER\'s own people, used only in the club named in `club` (hapoel-tel-aviv); family "universal" = the archetypes, for every club. '
+                                    'Meshes in `wear` are shown by default (a look\'s moustache, cap, apron, scarf, glasses, bangles; with a cap show Hair_hat instead of Hair); meshes in `optional` are hidden (Acc_backpack: shown up to age 15, off from 16). '
+                                    'Region (universal looks): set material.color of the materials named in look.materials (skin, hair, brows, facial) to look.regionVariants[region].baseColorFactor (linear RGB). '
+                                    'Club colours: tint_top / tint_inner / tint_trim (bands and hoops are tint_trim) and tint_scarf_a / tint_scarf_b as for the cast. The LOD carries tint_trim and the scarf\'s second colour in COLOR_0.b.',
+                      'regions': LOOKS['regions'], 'decades': LOOKS['decades'], 'index': looks_index},
             'assets': [assets[k] for k in sorted(assets)]}
 (OUT / 'manifest.json').write_text(json.dumps(manifest, indent=1) + '\n')
 
@@ -135,6 +153,31 @@ if src.is_dir():
     lods = []
     for cid in ids: lods += [src / f'lod-{cid}-{t}.jpg' for t in ('full', 'lod1', 'full-near', 'lod1-near')]
     sheet([l for l in lods if l.exists()], PREV / 'lod-vs-full.jpg', 8, cell=(240, 360))
+    # the looks: per look a portrait and a full body at dusk; a sheet per region (universal looks); an era sheet (father, hero at 12)
+    LP = PREV / 'looks'; LP.mkdir(exist_ok=True); ls = src / 'looks'
+    if ls.is_dir():
+        for f in ls.glob('*.jpg'):
+            if not f.name.startswith('region-'): shutil.copy(f, LP / f.name)
+        def labelled(files, out, cols, cell, labels, title=None):
+            ims = [(Image.open(f), lab) for f, lab in zip(files, labels) if Path(f).exists()]
+            if not ims: return
+            top = 40 if title else 0; rows = (len(ims) + cols - 1) // cols
+            S_ = Image.new('RGB', (cols * cell[0], top + rows * (cell[1] + 24)), (22, 20, 26)); d = ImageDraw.Draw(S_)
+            if title: d.text((12, 12), title, fill=(240, 236, 230))
+            for i, (im, lab) in enumerate(ims):
+                x, y = (i % cols) * cell[0], top + (i // cols) * (cell[1] + 24)
+                S_.paste(im.resize(cell), (x, y + 24)); d.text((x + 8, y + 6), lab, fill=(230, 226, 220))
+            S_.save(out, quality=86)
+        base_roles = [l for l in LOOKS['looks'] if l['family'] == 'universal' and (l['decade'] == '80s' or l['id'] == 'hero-15')]
+        for region, r in LOOKS['regions'].items():
+            labelled([ls / f'region-{region}-{l["id"]}.jpg' for l in base_roles], LP / f'region-{region}.jpg', 5, (360, 480), [l['label'] for l in base_roles], 'region: ' + r['label'])
+        for who, ids in (('father', ['father', 'father-90s', 'father-00s', 'father-10s', 'father-20s']), ('hero', ['hero-12', 'hero-12-90s', 'hero-12-00s', 'hero-12-10s', 'hero-12-20s'])):
+            labelled([ls / f'{i}-full.jpg' for i in ids], LP / f'era-{who}.jpg', 5, (450, 600), [LOOKS['decades'][next(l['decade'] for l in LOOKS['looks'] if l['id'] == i)] for i in ids], f'the {who} across the decades')
+        canon = [l for l in LOOKS['looks'] if l['family'] == 'canon']
+        labelled([ls / f'{l["id"]}-portrait.jpg' for l in canon], LP / 'canon-faces.jpg', 7, (360, 360), [l['label'] for l in canon], "THE WORKER's people (Hapoel Tel Aviv only): portraits at dusk")
+        labelled([ls / f'{l["id"]}-full.jpg' for l in canon], LP / 'canon-bodies.jpg', 7, (360, 480), [l['label'] for l in canon], "THE WORKER's people (Hapoel Tel Aviv only): full body at dusk")
+        uni = [l for l in LOOKS['looks'] if l['family'] == 'universal']
+        labelled([ls / f'{l["id"]}-portrait.jpg' for l in uni], LP / 'universal-faces.jpg', 6, (360, 360), [l['label'] for l in uni], 'universal archetypes (default region): portraits at dusk')
     if (PREV / 'father-portrait-before.jpg').exists() and (src / 'father-portrait.jpg').exists():
         a, b = Image.open(PREV / 'father-portrait-before.jpg').resize((640, 640)), Image.open(src / 'father-portrait.jpg').resize((640, 640))
         W = Image.new('RGB', (1280, 670), (24, 24, 24)); W.paste(a, (0, 30)); W.paste(b, (640, 30)); d = ImageDraw.Draw(W)

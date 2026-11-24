@@ -10,7 +10,7 @@ import bpy
 from mathutils import Vector
 
 STRIP_VIEW = {   # scene → camera azimuth (0 = in front of the first adult, 90 = from his left), height of aim
-    'put_scarf_on': (70, 0.75), 'ruffle_hair': (25, 0.95), 'hold_hand_walk': (20, 0.85), 'child_on_shoulders': (30, 1.25),
+    'hand_on_shoulder': (-25, 1.0), 'put_scarf_on': (70, 0.75), 'ruffle_hair': (25, 0.95), 'hold_hand_walk': (20, 0.85), 'child_on_shoulders': (30, 1.25),
     'kick_ball': (60, 0.6), 'hug_child': (75, 0.95), 'hug_partner': (80, 1.0), 'lean_on_rail': (130, 1.0), 'sit_play_board': (120, 0.8),
     'walk_child': (80, 0.7), 'idle_2': (20, 0.9), 'idle_3': (20, 0.9), 'laugh_body': (60, 0.9), 'step_turn': (30, 0.9)}
 
