@@ -47,6 +47,8 @@ import shopCopy from '@/messages/en.shop.json'
 import {door} from '@/lib/features-server'
 import {CHANNEL} from '@/lib/stories/channel'
 import {ContentsTiles,type Tile} from '@/components/home/ContentsTiles'
+import {ClubDoors} from '@/components/clubs/ClubDoors'
+import {ShopWindow} from '@/components/shop/ShopWindow'
 export const dynamic='force-dynamic'
 export async function generateMetadata({params}:{params:{slug:string}}){const c=REGISTRY.find(r=>r.id===params.slug);if(!c)return {};const st=await readState().then(s=>s.clubs.find(x=>x.id===c.id)?.status).catch(()=>undefined);return clubMetadata({id:c.id,name:c.name,city:c.city,description:nicknameLine(worldFor(c)),status:st})}
 
@@ -111,6 +113,13 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
   <div className="wkk-span wkp-strip"><PinsRow locale={locale} where="club"/></div>
   {searchParams.lang&&!UI_LOCALES.includes(searchParams.lang as 'en'|'he')&&<p className="wk-cap wkk-span">{copy.fallback}</p>}
 
+  {/* ═════ three ways in (24.11.2026): what a supporter can do here, before anything else ═════ */}
+  {short&&core&&open.length>0&&<ClubDoors kicker={copy.clubDoorsK.replace('{club}',c.name)} doors={[
+   {key:'solo',href:pickHref||clubHref(id,'play',locale),title:copy.doorSoloT,sub:pickGate?copy.clubDoorSoloSub.replace('{gate}',String(games[`gate.${pickGate.key}` as keyof typeof games]??'')):copy.wkkAllClubGames},
+   {key:'friends',href:open.includes('blind-cow' as GateKey)?clubHref(id,'blind-cow',locale):`/our-games?play=friends${locale==='en'?'':`&lang=${locale}`}`,title:copy.doorFriendsT,sub:copy.clubDoorFriendsSub},
+   {key:'archive',href:clubHref(id,'history',locale),title:copy.doorArchiveT,sub:copy.clubDoorArchiveSub},
+  ]}/>}
+
   {/* ═════ the cover story: today's pick ═════ */}
   {!short&&core&&open.length>0&&<Link className="wk-btn wkk-allgames min-h-tap" href={clubHref(id,'play',locale)} data-testid="all-club-games">{copy.wkkAllClubGames} <span aria-hidden="true">→</span></Link>}
   {!short&&open.includes('kit-builder')&&<Link className="wk-btn paper min-h-tap wkk-span" href={clubHref(id,'kit-builder',locale)} data-testid="club-build-kit">{copy.buildKitEntry} <span aria-hidden="true">→</span></Link>}
@@ -161,7 +170,8 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
   </Suspense>
   {!short&&core&&<section className="wkk-cardwrap" id="card" aria-label={copy.cardKicker}><SupporterCard clubId={id} clubName={c.name} initials={c.initials} pattern={lv?.pattern} locale={locale} open={open} names={names} total={SHARED_GATES.length} next={false} copy={{kicker:copy.cardKicker,title:copy.cardTitle,gates:copy.cardGates,rounds:copy.cardRounds,been:copy.cardBeen,since:copy.cardSince,empty:copy.cardEmpty,next:copy.cardNext}}/></section>}
 
-  <Suspense fallback={null}><ShopStrip subject={id} limit={2} className="wkk-shop"/></Suspense>
+  {/* the club's own shop window on the short home (24.11.2026: sales pushed wisely): only while it has the club's products */}
+  {short?<div className="wkk-shopwin"><Suspense fallback={null}><ShopWindow subject={id} mono/></Suspense></div>:<Suspense fallback={null}><ShopStrip subject={id} limit={2} className="wkk-shop"/></Suspense>}
 
   <nav className="wkk-contents" aria-label={copy.homeJump}>
    {short?<ContentsTiles mono title={copy.wkkInsideIssue} tiles={[

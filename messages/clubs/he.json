@@ -759,5 +759,9 @@
   "welS4": "ללבוש את זה",
   "welS4Sub": "חולצות מקוריות למועדון שלך, בהדפסה לפי הזמנה.",
   "welWait": "העיתון בדרך",
-  "frontLoading": "טוען."
+  "frontLoading": "טוען.",
+  "clubDoorsK": "שלוש דרכים אל {club}",
+  "clubDoorSoloSub": "היום: {gate}. כמה דקות, לבד.",
+  "clubDoorFriendsSub": "שלח לחבר את אותו סבב. הניקוד הגבוה מנצח.",
+  "clubDoorArchiveSub": "משחקים, הרכבים, כובשים ומדים, מתועדים."
 }

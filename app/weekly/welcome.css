@@ -226,3 +226,15 @@ html:has([data-front-loading]) .wko-wait { display: flex; } html:has([data-front
 /* a page that arrives within a third of a second never flashes its cover */
 .wkfl { animation: wkfl-in .2s .35s both; } @keyframes wkfl-in { from { opacity: 0; } }
 html[data-welcome] .wkfl { animation: none; }
+
+/* the club home's contents (club-home-short.md): three to a row on a desktop, never a stretched last row */
+@media (min-width: 901px) {
+  .wkk-home[data-short] .wkk-contents .wkx .wkx-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px 22px; }
+  .wkk-home[data-short] .wkk-contents .wkx-list > li:last-child:nth-child(odd) { grid-column: auto; }
+  .wkk-home[data-short] .wkk-contents .wkx-list > li .wkx-pic { aspect-ratio: 16 / 9; }
+}
+
+/* the club's own shop window (club-home-short.md): the club's one ink */
+.wkz[data-mono] .wkz-head { background-color: var(--club-primary, var(--mag-vermilion)); color: var(--club-on-primary, var(--mag-white)); }
+.wkz[data-mono] .wkz-head .wk-banner, .wkz[data-mono] .wkz-h, .wkz[data-mono] .wkz-sub, .wkz[data-mono] .wkz-why { color: var(--club-on-primary, var(--mag-white)); }
+.wkz[data-mono] .wkz-pic, .wkz[data-mono] .wkz-scarf { filter: grayscale(1) contrast(1.15); }
