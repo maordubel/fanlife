@@ -15,7 +15,8 @@ describe('the record', () => {
   it('holds only ids that its named source file holds, letter for letter', () => {
     expect(new Set(ALL_WATCH.map(m => m.id)).size).toBe(ALL_WATCH.length)
     const tube = [...HIGHLIGHTS, ...OUR_FILMS]
-    expect(new Set(tube.map(m => m.youtubeId)).size).toBe(tube.length)
+    // one film may serve both sides of a derby (Raja–Wydad, 9.7.2023), never twice for one club
+    expect(new Set(tube.map(m => `${m.clubId} ${m.youtubeId}`)).size).toBe(tube.length)
     for (const m of tube) {
       expect(isYoutubeId(m.youtubeId), m.id).toBe(true)
       expect(read(m.source.file).includes(m.youtubeId), `${m.id}: ${m.youtubeId} is not in ${m.source.file}`).toBe(true)
@@ -37,7 +38,8 @@ describe('the record', () => {
   it('counts per club', () => {
     const rows = CORE_CLUB_IDS.map(id => { const l = watchLibrary(id); return `${id.padEnd(20)} highlights ${l.highlights.length} · films ${l.films.length} · shorts ${l.shorts.length} · interstitials ${l.transitions.length}` })
     console.log(`WATCH links on record\n${rows.join('\n')}`)
-    expect(watchLibrary('hapoel-tel-aviv').highlights.length).toBe(11)
+    // 11 from the Worker's record + 3 new checked films from the hunt of 24.11.2026
+    expect(watchLibrary('hapoel-tel-aviv').highlights.length).toBe(14)
     expect(OUR_FILMS.filter(f => f.form === 'film').length).toBe(6)
   })
 })
@@ -103,5 +105,25 @@ describe('the player and the slate', () => {
     expect(slateDate('1986-05-24')).toBe('24 May 1986'); expect(slateDate('1986')).toBe('1986'); expect(slateDate('spring')).toBe('spring')
     expect(watchWord('watch.source', {publisher: 'X'})).toBe('Archive: X')
     for (const v of Object.values(WATCH_WORDS)) expect(v).not.toMatch(/\b(19|20)\d{2}\b/)
+  })
+})
+
+describe('the highlights hunt of 24.11.2026', () => {
+  it('is generated from the file the owner sent back, and is current', async () => {
+    const {parseHunt} = await import('../scripts/life/watch/import-hunt')
+    const md = readFileSync(join(process.cwd(), 'docs/life/highlights/hunt-2026-11-24-audited.md'), 'utf8')
+    const {verified, pending, none} = parseHunt(md)
+    expect([verified.length, pending.length, none]).toEqual([124, 60, 126])
+    const {HUNT_VERIFIED, HUNT_PENDING} = await import('@/lib/life/watch/hunt')
+    expect(HUNT_VERIFIED.map(h => h.id)).toEqual(verified.map(r => r.factId))
+    expect(HUNT_PENDING.map(h => h.id)).toEqual(pending.map(r => r.factId))
+  })
+  it('serves the checked films and never one with an open check', async () => {
+    const {HUNT_PENDING} = await import('@/lib/life/watch/hunt')
+    for (const p of HUNT_PENDING) expect(HIGHLIGHTS.some(h => h.clubId === p.clubId && h.youtubeId === p.youtubeId && h.id === p.id), p.id).toBe(false)
+    const zr = watchFor('zrinjski-mostar', {matchId: 'zrinjski-mostar:r26-palace-home-2026'})
+    expect(zr?.highlights?.youtubeId).toBe('1qX2JobEiWw')
+    const pao = watchFor('panathinaikos', {matchDate: '1986-05-28'})
+    expect(pao?.highlights?.youtubeId).toBe('umk1pXcQcuM')
   })
 })
