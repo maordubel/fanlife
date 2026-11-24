@@ -29,6 +29,7 @@ import {dressSurface, loadSurface, type SurfaceName} from './surfaces'
 import {loadProps, propCopy} from './props'
 import {dressDusk, DUSK, type Block, type Dusk} from './look/dusk'
 import {dressCrowd} from './look/crowd'
+import {dressFlow, type FlowDress} from './look/flowStreet'
 import {castFor, createTroupe, humanPoint, isSkinned, type Troupe} from './human/human'
 import {charNow, type CastId} from './human/kit'
 import {disposeFigure, HAIR, kitTexture, makeFigure, lookAt, makeHand, PANTS, pose, seedFigure, turnTo, SKIN_TONES, TOPS, type Cloth, type FigureData, type Gesture, type Mood} from './figure'
@@ -196,7 +197,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     }
   }
 
-  const duskBlocks: Block[] = [], duskFacades: THREE.MeshStandardMaterial[] = []
+  const duskBlocks: Block[] = [], duskFacades: THREE.MeshStandardMaterial[] = [], mainFronts: THREE.Object3D[] = []
   const addBuildings = (walk: number, from: number, to: number, gaps: number[]) => {
     const blocks: {x: number; z: number; w: number; h: number; c: string}[] = [], wins: {x: number; y: number; z: number; lit: boolean; warm: boolean; side: number}[] = []
     for (const side of [-1, 1]) {
@@ -224,6 +225,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     let nw = 0, nc = 0, nd = 0
     for (const w of wins) { q.setFromAxisAngle(up, -w.side * Math.PI / 2); m4.compose(tmp.set(w.x, w.y, w.z), q, one); if (!w.lit) dark.setMatrixAt(nd++, m4); else if (w.warm) warm.setMatrixAt(nw++, m4); else cool.setMatrixAt(nc++, m4) }
     warm.count = nw; cool.count = nc; dark.count = nd; scene.add(warm, cool, dark)
+    if (dusk) mainFronts.push(b, plinth, warm, cool, dark)
     // shop fronts with the club's own words over them
     const words = [skin.strings.kiosk, skin.strings.cafe, skin.strings.snack, skin.strings.shop, skin.strings.news, skin.strings.ticket].filter((x): x is string => !!x)
     for (const side of [-1, 1]) for (let z = from - 8; z > to + 10; z -= 22 + rnd() * 10) {
@@ -275,6 +277,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
 
   /** the ground at the end of the road: a lit bowl, floodlights, the gate in the club's word for it */
   const towers: THREE.Sprite[] = []
+  let bowl: THREE.Object3D | null = null
   const addGround = (z: number, wallZ: number) => {
     const stad = new THREE.Group(); stad.position.set(0, 0, z)
     // a city with its landmark painted at the end of the road keeps only the gate: the bowl and its floodlights
@@ -282,6 +285,8 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     if (!skyline) scene.add(stad)
     const shell = new THREE.Mesh(keep(new THREE.CylinderGeometry(78, 84, 26, 48, 1, true)), keep(std('#2b2f3a', {side: THREE.DoubleSide}))); shell.position.y = 13; stad.add(shell)
     const ring = new THREE.Mesh(keep(new THREE.TorusGeometry(80, 1.2, 6, 64)), keep(new THREE.MeshBasicMaterial({color: C(skin.p).multiplyScalar(1.6), toneMapped: false}))); ring.rotation.x = Math.PI / 2; ring.position.y = 26.5; stad.add(ring)
+    // the bowl alone (shell and ring), so a ground's picture can take its place (look/flowStreet.ts)
+    bowl = new THREE.Group(); stad.add(bowl); bowl.add(shell, ring)
     const glow = new THREE.Mesh(keep(new THREE.PlaneGeometry(420, 200)), keep(new THREE.MeshBasicMaterial({map: glowTex, color: C(night ? '#cfe0ff' : '#ffffff').multiplyScalar((night ? 0.9 : 0.25) * (skyline ? 0.3 : 1)), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, fog: false}))); glow.position.set(0, 50, -40); stad.add(glow)
     for (const [x, zz] of (dusk ? [] : [[-70, 40], [70, 40], [-70, -40], [70, -40]]) as readonly (readonly [number, number])[]) {
       const tw = new THREE.Mesh(box, keep(new THREE.MeshStandardMaterial({color: '#30343e', fog: false}))); tw.scale.set(2.2, 82, 2.2); tw.position.set(x, 41, zz); stad.add(tw)
@@ -371,7 +376,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     addLamps(level.half, level.bounds.z1 + 4, level.goal.z + 20, 18)
     if (!dusk) addPennants(level.walk, -20, level.goal.z + 30)
     // a city with a landmark at the end of the road shows the gate and not the bowl, so the landmark reads behind it
-    skyline = dressCity({scene, keep, level, skin, clubId: spec.skin, seed: spec.seed, night, lite, banned: h => bannedColour(h, skin), glowTex})
+    skyline = dressCity({scene, keep, level, skin, clubId: spec.skin, seed: spec.seed, night, lite, banned: h => bannedColour(h, skin), glowTex, fronts: dusk ? mainFronts : undefined})
     const banner = new THREE.Mesh(keep(new THREE.PlaneGeometry(16, 2.4)), keep(new THREE.MeshBasicMaterial({map: signTex(`${o.gateLabel} · ${skin.name.toUpperCase()}`, skin.p, skin.s, 1024, 154), toneMapped: false}))); banner.position.set(0, 9.5, level.goal.z + 26); scene.add(banner)
     addGround(level.goal.z - 51, level.goal.z - 7)
   } else if (level.place === 'road') {
@@ -452,6 +457,9 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
 
   let duskDress: Dusk | null = null
   if (dusk && level.place === 'street') { try { duskDress = dressDusk({scene, renderer, level, skin, lite, skyline, keep, rnd, glowTex, allowed: l => allowed(l, skin), banned: h => bannedColour(h, skin), sign: (a, b, c, w, h) => signTex(a, b, c, w, h), blocks: duskBlocks, facadeMats: duskFacades}) } catch { duskDress = null } }
+  // the town's own pictures (rule life-flow-art): facades, the ground's plate, the skyline band; lazy and failing soft
+  let flowDress: FlowDress | null = null
+  if (duskDress && level.hood) { const dd = duskDress; try { flowDress = dressFlow({scene, renderer, level, clubId: spec.skin, skinTown: skin.town, lite, keep, rnd: seeded(spec.seed ^ 0xf10a), banned: h => bannedColour(h, skin), replaces: () => [...mainFronts, ...dd.front], wallMat: duskFacades[0] ?? null, bowl, blocks: duskBlocks}) } catch { flowDress = null } }
 
   /* ───────────── cars ───────────── */
   type CarParts = {body: THREE.InstancedMesh; cab: THREE.InstancedMesh; wheel: THREE.InstancedMesh; head: THREE.InstancedMesh; tail: THREE.InstancedMesh; bar: THREE.InstancedMesh}
@@ -1002,6 +1010,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     ambNow = lifeDress ? lifeDress.update(sim, view.hood?.amb ?? null, t, dt) : null
     talkFace = hoodDress ? hoodDress.update(sim, view, t, dt, talkDir, ambNow, child, hero) : null
     duskDress?.update(sim, t, dt, cam.position)
+    flowDress?.update(cam.position)
     if (troupe) crowdExtras.forEach(f => { f.visible = false })
     duskCrowd?.update(sim, t, dt, troupe ? (i, px, pz, yaw, v, sc, col) => {
       let f = crowdExtras.get(i)
@@ -1282,6 +1291,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   function dispose() {
     gone = true
     scene.traverse(o2 => { const m = o2 as THREE.Mesh; if (m.isMesh) { m.geometry?.dispose?.() } })
+    flowDress?.dispose()
     disposables.forEach(d => { try { d.dispose() } catch { /* already gone */ } })
     crowd.forEach(im => im.dispose())
     troupe?.dispose()

@@ -1,7 +1,8 @@
 name: LIFE · Flow bake
 # Rule life-flow-art: the hourly Flow operator draws LIFE's pictures into the private bucket (library/life). This job
 # turns them into the static WebP files and material maps the game reads (public/life/flow + manifest.json), baking only
-# what is new or changed, and commits them back to the branch it ran for. Never to main.
+# what is new or changed, and commits them back to the branch it ran for. Never to main. (The schedule only fires once
+# this file is on the default branch; until then a push to the bake paths runs it.)
 on:
   workflow_dispatch:
   schedule:
