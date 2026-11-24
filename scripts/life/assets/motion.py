@@ -430,15 +430,15 @@ def hug_partner(t, T=4.2, low=False):
             'pelvis': {'dy': 0.0}, 'leg_l': {'fwd': 4, 'out': 5, 'knee': 6}, 'leg_r': {'fwd': -2, 'out': 5, 'knee': 4},
             'arm_r': {'dir': (0.5, 0.8, 0.0), 'elbow': 100, 'fore': 0, 'hand': 'palm_down_rest', 'shrug': 8, 'reach': 12},
             'arm_l': {'dir': (0.5, 0.8, -0.4), 'elbow': 100, 'fore': 0, 'hand': 'palm_down_rest', 'shrug': 2, 'reach': 10},
-            'ik': {'r': {'to': (P, 'spine_03@0.6', (0.09, -0.12, 0.02)), 'pole': (1.0, -0.2, 0.0), 'palm': (0, -1, 0)},
-                   'l': {'to': (P, 'spine_01@0.5', (-0.11, -0.07, 0.0)), 'pole': (1.0, -0.1, -0.5), 'palm': (0, -1, 0)}}}
+            'ik': {'r': {'to': (P, 'spine_03@0.6', (0.08, -0.035, 0.03)), 'pole': (1.0, -0.2, 0.0), 'palm': (0, -1, 0)},
+                   'l': {'to': (P, 'spine_01@0.5', (-0.09, -0.03, 0.0)), 'pole': (1.0, -0.1, -0.5), 'palm': (0, -1, 0)}}}
     p = keyed(t, [(0, st), (0.45, open_), (1.05, hold), (T, hold)], lag={'arm_r': 0.06, 'arm_l': 0.1, 'head': 0.08})
     k = ease5((t - 0.45) / 0.6)
     p['ik'] = {sd: dict(v, w=back(k, 0.3)) for sd, v in hold['ik'].items()}
     sway = ease5((t - 1.0) / 0.4) * s(t - 1.0, 2.6)
     p['spine'] = add(p.get('spine', {}), {'roll': 2.5 * sway, 'lean': 0.6 * s(t, 3.2)}); p['pelvis'] = add(p.get('pelvis', {}), {'roll': -1.5 * sway})
     pat = sum(math.exp(-((t - c) / 0.07) ** 2) for c in (2.2, 2.55))
-    p['ik']['r'] = dict(p['ik']['r'], to=(P, 'spine_03@0.6', (0.09, -0.12 - 0.03 * pat, 0.02 + 0.015 * pat)))
+    p['ik']['r'] = dict(p['ik']['r'], to=(P, 'spine_03@0.6', (0.08, -0.035 - 0.025 * pat, 0.03 + 0.012 * pat)))
     return p
 
 KNEEL_LEGS = {'leg_l': {'fwd': 8, 'out': 6, 'knee': 98, 'foot': 52, 'toe': -50}, 'leg_r': {'fwd': 80, 'out': 28, 'knee': 95, 'foot': 4, 'foot_out': -10}}

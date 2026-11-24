@@ -442,6 +442,16 @@ def previews(c, rig, parts, P, cam, meta):
     lod = bpy.data.objects.get(meta.get('_lod') or '')
     if lod:
         lod.hide_set(False)
+        try:   # show the club colour through the vertex mask, as the game's shader would
+            m = lod.material_slots[0].material.copy(); lod.material_slots[0].material = m; nt = m.node_tree
+            b = nt.nodes['Principled BSDF']; tex = next(n for n in nt.nodes if n.type == 'TEX_IMAGE')
+            at = nt.nodes.new('ShaderNodeVertexColor'); at.layer_name = 'tint'
+            sep = nt.nodes.new('ShaderNodeSeparateColor'); nt.links.new(at.outputs['Color'], sep.inputs[0])
+            mx = nt.nodes.new('ShaderNodeMix'); mx.data_type = 'RGBA'; mx.inputs[6].default_value = (1, 1, 1, 1); mx.inputs[7].default_value = (*c.get('tint', [0.8, 0.1, 0.1]), 1)
+            nt.links.new(sep.outputs[0], mx.inputs[0])
+            mul = nt.nodes.new('ShaderNodeMix'); mul.data_type = 'RGBA'; mul.blend_type = 'MULTIPLY'; mul.inputs[0].default_value = 1.0
+            nt.links.new(tex.outputs['Color'], mul.inputs[6]); nt.links.new(mx.outputs[2], mul.inputs[7]); nt.links.new(mul.outputs[2], b.inputs['Base Color'])
+        except Exception as e: print('lod preview tint', e)
         for tag, full in (('full', True), ('lod1', False)):
             for o in objs: o.hide_render = not full
             lod.hide_render = full
