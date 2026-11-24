@@ -1,0 +1,49 @@
+name: LIFE · Flow bake
+# Rule life-flow-art: the hourly Flow operator draws LIFE's pictures into the private bucket (library/life). This job
+# turns them into the static WebP files and material maps the game reads (public/life/flow + manifest.json), baking only
+# what is new or changed, and commits them back to the branch it ran for. Never to main.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 */3 * * *'
+  push:
+    branches: [claude/life-flow-art]
+    paths:
+      - scripts/life/flow/bake.py
+      - .github/workflows/life-flow-bake.yml
+permissions:
+  contents: write
+concurrency:
+  group: life-flow-bake
+  cancel-in-progress: false
+jobs:
+  bake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL || 'https://afxpjfxwpdjvlmuoawda.supabase.co' }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      TARGET: ${{ github.event_name == 'schedule' && 'claude/life-flow-art' || github.ref_name }}
+    steps:
+      - name: Refuse main
+        run: '[ "$TARGET" != "main" ] || { echo "the bake never commits to main"; exit 1; }'
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'schedule' && 'claude/life-flow-art' || github.ref }}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install --quiet pillow==11.0.0 numpy==2.1.3
+      - run: python scripts/life/flow/bake.py --out public/life/flow
+      - name: Commit what changed
+        run: |
+          git add public/life/flow
+          if git diff --cached --quiet; then echo "nothing new"; exit 0; fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -q -F - <<'MSG'
+          LIFE Flow bake: new or changed pictures into public/life/flow
+
+          Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+          Claude-Session: https://claude.ai/code/session_01M6WcLsZqDXt331d4B8J8Zu
+          MSG
+          for i in 1 2 3; do git pull -q --rebase origin "$TARGET" && git push -q origin "HEAD:$TARGET" && exit 0; sleep 5; done
+          exit 1
