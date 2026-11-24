@@ -26,7 +26,9 @@ export type DuskCtx = {
   sign: (text: string, bg: string, fg: string, w?: number, h?: number) => THREE.Texture
   blocks: Block[]; facadeMats: THREE.MeshStandardMaterial[]
 }
-export type Dusk = {update(sim: {x: number; z: number}, t: number, dt: number, cam: THREE.Vector3): void; resize(w: number, h: number): void}
+export type Dusk = {update(sim: {x: number; z: number}, t: number, dt: number, cam: THREE.Vector3): void; resize(w: number, h: number): void
+  /** the procedural fronts of the main street (frames, shutters, balconies, cornices, roof kit, lit shops): what the Flow facades replace */
+  front: THREE.Object3D[]}
 
 const C = (h: THREE.ColorRepresentation) => new THREE.Color(h)
 const HDR = (h: string, k: number) => C(h).multiplyScalar(k)
@@ -38,7 +40,7 @@ function canvasTex(w: number, h: number, draw: (g: CanvasRenderingContext2D) => 
 }
 
 const SKY_STOPS: [number, string][] = [[0, '#f0a878'], [0.045, '#d9929a'], [0.15, '#8d86ad'], [0.34, '#456aa6'], [0.62, '#1f3a7c'], [1, '#0c1a4c']]
-function skyMaterial() {
+export function skyMaterial() {
   return new THREE.ShaderMaterial({side: THREE.BackSide, depthWrite: false, fog: false,
     uniforms: {uC: {value: SKY_STOPS.map(s => C(s[1]))}, uS: {value: SKY_STOPS.map(s => s[0])}, uBelow: {value: C(DUSK.fog)}, uSun: {value: new THREE.Vector3(0, 0.03, -1).normalize()}},
     vertexShader: 'varying vec3 vD; void main(){ vD = position; gl_Position = projectionMatrix*modelViewMatrix*vec4(position,1.); }',
@@ -86,6 +88,7 @@ export function dressDusk(x: DuskCtx): Dusk {
   const box = keep(new THREE.BoxGeometry(1, 1, 1))
   const nearCross = (z: number, m = 9) => level.crossings.some(c => Math.abs(z - c) < m)
   const group = new THREE.Group(); scene.add(group)
+  const front: THREE.Object3D[] = []
   const add = <T extends THREE.Object3D>(o: T) => { group.add(o); return o }
   const instanced = (g: THREE.BufferGeometry, m: THREE.Material, n: number) => { const im = new THREE.InstancedMesh(g, m, Math.max(1, n)); im.frustumCulled = false; return add(im) }
   const std = (c: THREE.ColorRepresentation, o: THREE.MeshStandardMaterialParameters = {}) => keep(new THREE.MeshStandardMaterial({color: c, roughness: 0.8, ...o}))
@@ -192,7 +195,8 @@ export function dressDusk(x: DuskCtx): Dusk {
         q.setFromEuler(e.set(0, s > 0 ? Math.PI : 0, s * 0.25 * (s > 0 ? -1 : 1))); void idx
         im.setMatrixAt(idx, m4.compose(p3.set(s * (walk - 0.85), 2.75, zz), q, s3.set(1, 1, 1))) } }
     }
-    cornice.count = ci; tank.count = ti; acs.count = ai; pil.count = pi; bals.count = bi; shops.count = si; awnA.count = a1; awnB.count = a2 }
+    cornice.count = ci; tank.count = ti; acs.count = ai; pil.count = pi; bals.count = bi; shops.count = si; awnA.count = a1; awnB.count = a2
+    front.push(cornice, tank, acs, pil, bals, shops) }
 
 
   /* ---- real facades: the town's own wall texture in metres, damp toward the ground, with frames, sills, shutters, plants ---- */
@@ -228,10 +232,10 @@ export function dressDusk(x: DuskCtx): Dusk {
     for (const r of rows) { put(frames, fi++, r.px, r.py, r.pz, 1, 1, 1, -r.s * Math.PI / 2)
       if (rnd() < 0.3) { put(shutters, si, r.px, r.py, r.pz, 1, 1, 1, -r.s * Math.PI / 2); shutters.setColorAt(si, C(pick(shCols))); si++ }
       if (rnd() < 0.1) put(acu, ai++, r.px - r.s * 0.4, r.py - 1.35, r.pz, 1, 1, 1, -r.s * Math.PI / 2) }
-    frames.count = fi; shutters.count = si; acu.count = ai
+    frames.count = fi; shutters.count = si; acu.count = ai; front.push(frames, shutters, acu)
     // drainpipes and cables between the facades
     const pipes = instanced(keep(new THREE.CylinderGeometry(0.06, 0.06, 1, 8)), std('#6a6a70', {metalness: 0.4}), B.length)
-    B.forEach((b, i) => put(pipes, i, Math.sign(b.x) * (walk - 0.12), b.h / 2, b.z - b.w / 2 + 0.95, 1, b.h, 1))
+    B.forEach((b, i) => put(pipes, i, Math.sign(b.x) * (walk - 0.12), b.h / 2, b.z - b.w / 2 + 0.95, 1, b.h, 1)); front.push(pipes)
     const cab: number[] = []; for (let z = -9; z > goalZ + 30; z -= 29) { const H = 7.4 + rnd() * 1.2; for (let k = 0; k < 14; k++) { const a = -walk + k * (walk * 2 / 14), b2 = a + walk * 2 / 14, y = (xx: number) => H - 0.7 * (1 - (xx / walk) ** 2); cab.push(a, y(a), z, b2, y(b2), z) } }
     const cg = keep(new THREE.BufferGeometry()); cg.setAttribute('position', new THREE.BufferAttribute(new Float32Array(cab), 3)); add(new THREE.LineSegments(cg, keep(new THREE.LineBasicMaterial({color: '#0e0e12'}))))
     // plants and laundry on the balconies' rails
@@ -240,7 +244,7 @@ export function dressDusk(x: DuskCtx): Dusk {
     for (const r of rows) if (r.py > 4 && rnd() < 0.18) { const o = -r.s * 0.95
       if (green && pn < 258 && rnd() < 0.6) { put(pl, pn++, r.px + o, r.py - 0.2, r.pz - 0.4, 1, 1.2, 1); put(pl, pn++, r.px + o, r.py - 0.2, r.pz + 0.4, 1, 1.2, 1) }
       else if (ln2 < 120) { put(ln, ln2, r.px + o, r.py + 0.1, r.pz, 1, 1, 1, -r.s * Math.PI / 2); ln.setColorAt(ln2, C(pick(lc))); ln2++ } }
-    pl.count = pn; ln.count = ln2 }
+    pl.count = pn; ln.count = ln2; front.push(pl, ln) }
 
   /* ---- street furniture: bins, benches, scooters, bus stops; bay lines and contact shadows ---- */
   const blobT = keep(canvasTex(64, 64, g => { const r = g.createRadialGradient(32, 32, 0, 32, 32, 32); r.addColorStop(0, 'rgba(0,0,0,.7)'); r.addColorStop(0.6, 'rgba(0,0,0,.35)'); r.addColorStop(1, 'rgba(0,0,0,0)'); g.fillStyle = r; g.fillRect(0, 0, 64, 64) }, false))
@@ -355,7 +359,7 @@ export function dressDusk(x: DuskCtx): Dusk {
 
   const resize = (w: number, h: number) => refl.getRenderTarget().setSize(Math.max(64, Math.floor(w * mirrorScale)), Math.max(64, Math.floor(h * mirrorScale)))
   return {
-    resize,
+    resize, front,
     update(sim, t, dt, cam) {
       dome.position.copy(cam)
       mat.uniforms.uTime!.value = t; overlays.forEach(o => { (o.material as THREE.ShaderMaterial).uniforms.uTime!.value = t })

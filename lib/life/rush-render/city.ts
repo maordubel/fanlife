@@ -29,6 +29,9 @@ export type CityCtx = {
   /** true when the club's policy forbids this colour */
   banned: (hex: string) => boolean
   glowTex: THREE.Texture
+  /** collects what the town hangs on the main street's upper floors (balconies, rails, awnings, A/C), so a facade
+   *  picture that shows its own can take their place (look/flowStreet.ts) */
+  fronts?: THREE.Object3D[]
 }
 
 /** the words a shop front letters, in the city's own script — ordinary street words, never a fact */
@@ -85,7 +88,7 @@ export function dressCity(x: CityCtx): boolean {
       q.setFromAxisAngle(up, -b.side * Math.PI / 2); m4.compose(v.set(b.side * (W - 1.22), y + 0.6, b.z), q, s.set(1, 1, 1)); rails.setMatrixAt(i, m4)
       i++
     }
-    slabs.castShadow = !lite; scene.add(slabs, rails)
+    slabs.castShadow = !lite; scene.add(slabs, rails); x.fronts?.push(slabs, rails)
   }
   // striped awnings: Athens blue and white, Tel Aviv faded, Mostar the bazaar's red and cream
   const stripes: Record<Town, [string, string][]> = {
@@ -100,14 +103,14 @@ export function dressCity(x: CityCtx): boolean {
   for (const b of bays) if (rnd() < (town === 'ath' ? 0.55 : 0.35) && awnMats.length) {
     const f = pick(floors) + 1
     const a = new THREE.Mesh(awnGeo, pick(awnMats)); a.rotation.set(0, -b.side * Math.PI / 2, 0); a.rotateX(-0.9)
-    a.position.set(b.side * (W - 0.7), f * 3.2 - 0.25, b.z); scene.add(a)
+    a.position.set(b.side * (W - 0.7), f * 3.2 - 0.25, b.z); scene.add(a); x.fronts?.push(a)
   }
   if (town !== 'mos') {
     const n = bays.length
     const ac = new THREE.InstancedMesh(box, std('#d9d9d4', {roughness: 0.5}), n)
     let k = 0
     for (const b of bays) if (rnd() < (town === 'tlv' ? 0.85 : 0.45)) { m4.makeScale(0.42, 0.55, 0.85).setPosition(b.side * (W - 0.25), (1 + Math.floor(rnd() * 3)) * 3.2 + 1.6, b.z + 1.6); ac.setMatrixAt(k++, m4) }
-    ac.count = k; scene.add(ac)
+    ac.count = k; scene.add(ac); x.fronts?.push(ac)
   }
 
   /* ───────── ground floors: shop words, the kiosk, stone and rugs in Mostar ───────── */

@@ -47,6 +47,8 @@ worker edits → the film arrives on Telegram
    `{"jobs":[],"classified":[]}` → stop quietly.
    Send also `library`: the `pieces` of `scripts/football-stories/studio/cinema/flow_library.json` from main — the
    answer then lists the art-library pieces not drawn yet.
+   Send also `life`: the `pieces` of `scripts/life/flow/life-library.json` from main — the answer's `life` list is
+   LIFE's own pictures not drawn yet, most valuable first (§LIFE's picture order below).
 4. One job per run, oldest first (or up to 20 CLASSIFIED panels); when neither waits, up to 12 art-library pieces
    (Image, the piece's aspect, its prompt) — uploaded with `op:'urls', lib:true, names:[stem]`, no `done` needed. In a Flow project named after it:
    * characters (a Short): Image, 9:16, Nano Banana, each `characters[].prompt`;
@@ -71,6 +73,52 @@ grounds of every decade (1950s–2020s, inside and out), and each club's own cit
 red becomes each club's colour at render time, so one drawing serves every club. Stored at `library/flow/<stem>.png`;
 the worker adds them to the cinema library (`library.list_flow`, worker op `library_flow`) next to the owner's
 drawings.
+
+## LIFE's picture order (23.11.2026)
+Owner, 23.11.2026, in meaning: use Flow wherever it makes LIFE more real (the streets of Athens and of Tel Aviv, grounds
+that recall the originals) and tie the story to what is seen. Rule `life-flow-art`. It is a **separate order** from the
+art library above: its own spec (`scripts/life/flow/life-library.ts` writes `life-library.json`, 77 pieces), its own
+stems (`life-…-fl1`, no `-kr`: photoreal, never recoloured), its own folder (`library/life/<stem>.png`). The films'
+library, its stems and `library/flow` are untouched.
+
+| Use | Stem | Aspect | What it is |
+|---|---|---|---|
+| facade | `life-facade-<town>-<nn>-fl1` | 1:1 | one local building, front-on and edge to edge, to map on a box |
+| stadium | `life-stadium-<club-id>-<a\|b>-fl1` | 16:9 | the club's ground from the street, recalling the original with no name on it |
+| skyline | `life-skyline-<town>-fl1` | 16:9 | the town's roofs and landmarks as a wide dusk band |
+| aerial | `life-aerial-<town>-fl1` | 1:1 | a straight-down district with a ground in one corner |
+| story | `life-story-<key>-fl1` | 16:9 | a childhood chapter's plate, people from behind only |
+
+Towns: `ath` `tlv` `mos` `gla` `ham` `bgo` `cas` `cai` `hfa` `ptk`, and `eur` (a generic set any club falls back on).
+
+**What the hourly operator does** (stills only, so rule `flow-no-films` does not stop it):
+
+1. With the queue request send `life`: the `pieces` array of
+   `https://raw.githubusercontent.com/maordubel/fanlife/main/scripts/life/flow/life-library.json`.
+   The answer's `life` list holds at most 40 pieces not stored yet, sorted by `priority` (1 first).
+2. Order inside one run: CLASSIFIED panels first (a film waits for them); then any art-library piece whose stem starts
+   `person-` (a named man's picture a film is holding a card for, rule `studio-pictures` §3); then **up to 6 LIFE
+   pieces**; then up to 6 art-library pieces. So the studio's blocking needs stay first, and LIFE's small order (77
+   pictures, about 13 runs) is not parked behind the open-ended library of 167.
+3. Each LIFE piece, top of the list first: Flow → Image, the piece's `aspect`, its `prompt` exactly as given (it
+   already carries the look and the negatives; add nothing, name nothing), ×1. One prompt submitted before the next is
+   typed.
+4. Look at the result before uploading. Redo once, then skip for this run, when it shows any lettering, number, crest,
+   logo, flag, a recognisable face, or yellow paint or clothing; for a facade also when it is not front-on or shows sky
+   or street. A skipped piece stays in the queue.
+5. Upload: `fetch(src)` → blob (image/*, over 50 KB) → `POST {ticket, op:'urls', life:true, names:[stem]}` → `PUT` the
+   blob to `urls[stem]` (`x-upsert: true`). No `done`. The piece leaves the queue because the file is there.
+6. Stop the LIFE part when Flow's credits fall under 20 (leave the rest for the studio and the next hour), on a
+   refusal, or on anything unexpected. `"life":[]` → nothing to do, quietly.
+
+**How the game reads them** (`lib/life/flowArt.ts`, server only, not wired into the renderer yet): `lifeArt({use,
+town, club, stem})` and `clubLifeArt(clubId)` list `library/life` and return signed links (one hour); storage that
+refuses is an empty answer and the street keeps today's drawn geometry. The hood renderer will take:
+facades → one atlas texture per town, a tile per building wall (a town with none yet wears `eur`);
+the stadium plate → the backdrop at the end of the street; the skyline → the lower band of the sky dome;
+the aerial → the base art of the district map; a story plate → the still behind its chapter's card.
+A ground's look is claimed only where the club's pack names its ground (`world.json`); the five packs without one get
+a neutral city ground (`confidence: generic`) until the pack is written.
 
 ## Studio operator (9.11.2026)
 The same two-hour ticket also opens `POST /api/master/stories/operator`, called from a tab of the site itself (same

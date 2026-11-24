@@ -4,6 +4,7 @@ import {getJob,listJobs,updateJob} from './store'
 import {listNames,signedDownload,signedUpload} from './media'
 import {durable} from '@/lib/master/durable'
 import {createHash,timingSafeEqual} from 'node:crypto'
+import {LIFE_DIR,LIFE_STEM,lifePath} from '@/lib/life/flowArtSpec'
 
 /**
  * The Flow operator (owner, 9.11.2026: "easy, convenient, automatic — no login"). Google Flow has no API, so Claude makes
@@ -13,6 +14,7 @@ import {createHash,timingSafeEqual} from 'node:crypto'
  * that ticket — queue, signed upload urls, done — and puts each file straight into the private bucket.
  *   - a waiting animated Short or marketing film: its missing slots (clip-N.mp4, still-N.jpg) and their Flow prompts
  *   - a CLASSIFIED FILE: the panels its manifest names with no Drive picture and no stored picture yet, with prompts
+ *   - LIFE's picture order (scripts/life/flow/life-library.json), kept apart from the films' art library: library/life
  * CLASSIFIED panels live in the private bucket at classified/<file>/<panel>.png — never in the repository.
  */
 export const FILE_ID=/^file\d{2}$/
@@ -22,11 +24,17 @@ export const LIB_STEM=/^(ppl|sup|obj|era|doc|ins|layer|sky|ground|city)-[a-z0-9-
 export const LIB_DIR='library/flow'
 export const libPath=(stem:string)=>`${LIB_DIR}/${stem}.png`
 export type LibPiece={stem:string;aspect?:string;prompt:string}
+/** LIFE's own picture order (rule life-flow-art; spec scripts/life/flow/life-library.json): photoreal streets, grounds,
+ *  skylines and story plates for the game, stored under library/life. Never a piece of the films' library above. */
+export {LIFE_DIR,LIFE_STEM,lifePath}
+export const LIFE_CAP=200
+export const LIFE_ANSWER=40
+export type LifeNeed={stem:string;aspect?:string;prompt:string;priority?:number;use?:string}
 export type PanelNeed={file:string;title?:string;panels:{id:string;role?:string;prompt:string}[]}
 
 const waiting=(j:Job)=>FLOW_KINDS.includes(jobKind(j))&&!!j.flow&&['needs_review','paused','failed'].includes(j.state)&&j.stage!=='done'&&!j.lease
 
-export async function flowQueue(needs:PanelNeed[],lib:LibPiece[]=[]){
+export async function flowQueue(needs:PanelNeed[],lib:LibPiece[]=[],lifeLib:LifeNeed[]=[]){
  const jobs=(await listJobs(200)).filter(waiting).sort((a,b)=>a.createdAt.localeCompare(b.createdAt)).map(j=>{
   const have=new Set((j.brief.art??[]).map(a=>a.name)),f=j.flow!
   return {id:j.id,kind:jobKind(j),title:f.title,characters:f.characters,clips:f.clips,stills:f.stills,missing:flowFiles(f).filter(n=>!have.has(n))}
@@ -44,16 +52,27 @@ export async function flowQueue(needs:PanelNeed[],lib:LibPiece[]=[]){
  const want=lib.filter(p=>LIB_STEM.test(String(p.stem))&&typeof p.prompt==='string'&&p.prompt.length>20).slice(0,400)
  const have=new Set(want.length?await listNames(LIB_DIR,2000):[])
  const library=want.filter(p=>!have.has(`${p.stem}.png`)).map(p=>({stem:p.stem,aspect:p.aspect==='16:9'?'16:9':'1:1',prompt:p.prompt.slice(0,2400)}))
- return {jobs,classified,library}
+ // LIFE's order: the pieces not stored yet, most valuable first (priority 1 before 2; the spec's own order inside one)
+ const rank=(p:LifeNeed)=>typeof p.priority==='number'&&Number.isFinite(p.priority)?p.priority:99
+ const lifeWant=lifeLib.filter(p=>p&&LIFE_STEM.test(String(p.stem))&&typeof p.prompt==='string'&&p.prompt.length>20).slice(0,LIFE_CAP)
+ const lifeHave=new Set(lifeWant.length?await listNames(LIFE_DIR,1000):[])
+ const life=lifeWant.filter(p=>!lifeHave.has(`${p.stem}.png`)).map((p,i)=>({p,i})).sort((a,b)=>rank(a.p)-rank(b.p)||a.i-b.i).slice(0,LIFE_ANSWER)
+  .map(({p})=>({stem:p.stem,aspect:p.aspect==='16:9'?'16:9':'1:1',priority:rank(p),use:String(p.use??'').slice(0,20),prompt:p.prompt.slice(0,2400)}))
+ return {jobs,classified,library,life}
 }
 
-export async function flowUrls(b:{id?:unknown;file?:unknown;lib?:unknown;names?:unknown}){
+export async function flowUrls(b:{id?:unknown;file?:unknown;lib?:unknown;life?:unknown;names?:unknown}){
  const names=Array.isArray(b.names)?b.names.slice(0,40).map(String):[]
  if(!names.length)throw new StoryError('FLOW','Name the files.')
  const urls:Record<string,string>={}
  if(b.lib===true){
   if(names.some(n=>!LIB_STEM.test(n)))throw new StoryError('FLOW','Unknown library piece.')
   for(const n of names)urls[n]=await signedUpload(libPath(n))
+  return {urls}
+ }
+ if(b.life===true){
+  if(names.some(n=>!LIFE_STEM.test(n)))throw new StoryError('FLOW','Unknown LIFE piece.')
+  for(const n of names)urls[n]=await signedUpload(lifePath(n))
   return {urls}
  }
  if(typeof b.file==='string'){
