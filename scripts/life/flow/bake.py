@@ -95,6 +95,38 @@ def hue_yellow_share(rgb):
     return float(y.mean())
 
 
+def families(rgb):
+    """Share of clearly coloured pixels per colour family, the same families as rush-render/colour.ts (rival policy)."""
+    a = rgb.astype(np.float32) / 255
+    mx, mn = a.max(-1), a.min(-1)
+    d = mx - mn
+    s = np.where(mx > 0, d / np.maximum(mx, 1e-6), 0)
+    r, g, b = a[..., 0], a[..., 1], a[..., 2]
+    dd = np.maximum(d, 1e-6)
+    h = np.where(mx == r, 60 * (((g - b) / dd) % 6), np.where(mx == g, 60 * ((b - r) / dd + 2), 60 * ((r - g) / dd + 4))) % 360
+    on = (s >= 0.4) & (mx >= 0.3)
+    fam = {'red': (h <= 18) | (h >= 342), 'yellow': (h >= 38) & (h <= 70), 'green': (h >= 90) & (h <= 170), 'blue': (h >= 190) & (h <= 260)}
+    return {k: round(float((on & v).mean()), 4) for k, v in fam.items()}
+
+
+WORDS = {'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9, 'ten': 10}
+
+
+def library_floors(path='scripts/life/flow/life-library.json'):
+    """Storeys per facade stem, read from its prompt ('a three-storey ...'): the game sizes the picture from it (~3 m a floor)."""
+    import re
+    try:
+        lib = json.load(open(path))
+    except Exception:
+        return {}
+    out = {}
+    for p in lib.get('pieces', []):
+        m = re.search(r'\b(' + '|'.join(WORDS) + r')-storey', p.get('prompt', ''))
+        if p.get('use') == 'facade' and m:
+            out[p['stem']] = WORDS[m.group(1)]
+    return out
+
+
 def fit_width(im, w):
     if im.width <= w:
         return im.copy()
@@ -164,7 +196,7 @@ def bake_one(stem, meta, png, out):
     sm = np.asarray(im.resize((256, round(256 * im.height / im.width))), dtype=np.uint8)
     avg = sm.reshape(-1, 3).mean(0)
     return {**meta, 'stem': stem, 'src': {'w': im.width, 'h': im.height}, 'files': files,
-            'yellow': round(hue_yellow_share(sm), 4), 'avg': '#%02x%02x%02x' % tuple(int(x) for x in avg), **extra}
+            'yellow': round(hue_yellow_share(sm), 4), 'families': families(sm), 'avg': '#%02x%02x%02x' % tuple(int(x) for x in avg), **extra}
 
 
 def main():
@@ -190,7 +222,11 @@ def main():
         fetch = lambda s: _req(f'{url}/storage/v1/object/authenticated/{BUCKET}/{PREFIX}/{s}.png', key).read()
 
     print(f'{len(listing)} pictures in {PREFIX}')
+    floors = library_floors()
     changed = 0
+    for stem, rec in pieces.items():  # facts from the order itself, refreshed every run
+        if stem in floors and rec.get('floors') != floors[stem]:
+            rec['floors'] = floors[stem]; changed += 1
     for row in listing:
         stem, meta = row['stem'], parse(row['stem'])
         if not meta:
@@ -204,6 +240,8 @@ def main():
         except Exception as e:  # fail soft per piece
             print('download failed:', stem, e); continue
         rec = bake_one(stem, meta, png, a.out)
+        if stem in floors:
+            rec['floors'] = floors[stem]
         rec['from'] = {'size': row['size'], 'etag': row['etag'], 'updated': row['updated']}
         if old and 'use' in old and not str(old.get('note', '')).startswith('auto'):
             rec['use'], rec['note'] = old['use'], old.get('note', '')
