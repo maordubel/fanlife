@@ -9,5 +9,6 @@ export async function serverFeatures():Promise<Features>{return featuresOf(await
 export function isOwner():boolean{try{return adminSession()!==null}catch{return false}}
 export async function door(key:import('./features').SwitchKey):Promise<FeatureDoor&{features:Features}>{
  const f=await serverFeatures()
- return {...featureDoor(f[key],isOwner()),features:f}
+ // LIFE is owner-only, whatever the saved switch says (owner, 24.11.2026: closed to the public until finished)
+ return {...featureDoor(key==='life'?false:f[key],isOwner()),features:f}
 }

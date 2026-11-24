@@ -1,16 +1,19 @@
 import {HEBREW_ENABLED} from '@/lib/clubs/locale'
 import {describe,it,expect} from 'vitest'
 import {NextRequest} from 'next/server'
-import {middleware} from '@/middleware'
+import {middleware as runMiddleware} from '@/middleware'
+import type {NextResponse} from 'next/server'
+/** every path here but LIFE answers synchronously; LIFE's owner check is async (24.11.2026) */
+const middleware=(r:NextRequest)=>runMiddleware(r) as NextResponse
 
 const request=(path:string,host='olympiacos.localhost:3217',method='GET')=>new NextRequest(`http://${host}${path}`,{method,headers:{host}})
 
 describe('club Timeline entry routing',()=>{
- it('sets document language from supported club-route locale and ignores forged headers',()=>{
+ it('sets document language from supported club-route locale and ignores forged headers',async()=>{
   const r=request('/clubs/olympiacos?lang=he');r.headers.set('x-fan-life-locale','el')
   expect(middleware(r).headers.get('x-middleware-request-x-fan-life-locale')).toBe(HEBREW_ENABLED?'he':'en')
   expect(middleware(request('/clubs/olympiacos?lang=el')).headers.get('x-middleware-request-x-fan-life-locale')).toBe('en')
-  expect(middleware(request('/life?lang=he','localhost:3217')).headers.get('x-middleware-request-x-fan-life-locale')).toBe('en')
+  expect((await runMiddleware(request('/life?lang=he','localhost:3217'))).headers.get('x-middleware-request-x-fan-life-locale')).toBe('en')
  })
  it('redirects both legacy entry points before the legacy layout, preserving the round and language',()=>{
   for(const path of ['/timeline','/timeline/order']){
@@ -23,8 +26,8 @@ describe('club Timeline entry routing',()=>{
   for(const host of ['hapoeltelaviv.localhost:3217','localhost:3217','unknown.localhost:3217'])expect(middleware(request('/timeline/order',host)).headers.get('location')).toBeNull()
   expect(middleware(request('/goal')).headers.get('location')).toBeNull()
  })
- it('routes migrated gate entry points to host-owned club data',()=>{
-  for(const [path,gate] of [['/trivia','trivia'],['/memory','memory'],['/xi','xi'],['/archive','archive'],['/polls','polls'],['/blind-cow','blind-cow'],['/life','life']]){expect(middleware(request(`${path}?lang=he`)).headers.get('location')).toBe(`http://olympiacos.localhost:3217/clubs/olympiacos/${gate}?lang=he`);expect(middleware(request(path!,'hapoeltelaviv.localhost:3217')).headers.get('location')).toBeNull();expect(middleware(request(path!,'olympiacos.localhost:3217','POST')).headers.get('location')).toBeNull()}
+ it('routes migrated gate entry points to host-owned club data',async()=>{
+  for(const [path,gate] of [['/trivia','trivia'],['/memory','memory'],['/xi','xi'],['/archive','archive'],['/polls','polls'],['/blind-cow','blind-cow'],['/life','life']]){expect((await runMiddleware(request(`${path}?lang=he`))).headers.get('location')).toBe(`http://olympiacos.localhost:3217/clubs/olympiacos/${gate}?lang=he`);expect((await runMiddleware(request(path!,'hapoeltelaviv.localhost:3217'))).headers.get('location')).toBeNull();expect((await runMiddleware(request(path!,'olympiacos.localhost:3217','POST'))).headers.get('location')).toBeNull()}
  })
  it('does not redirect legacy action payloads into the shared route',()=>{
   expect(middleware(request('/timeline/order','olympiacos.localhost:3217','POST')).headers.get('location')).toBeNull()

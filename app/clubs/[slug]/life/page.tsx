@@ -1,11 +1,12 @@
 import type {Metadata} from 'next'
 import {headers} from 'next/headers'
-import {notFound} from 'next/navigation'
+import {notFound, redirect} from 'next/navigation'
 import {ClubSurface} from '@/components/clubs/ClubSurface'
 import {LifeGame} from '@/components/clubs/life/LifeGame'
 import {clubLife} from '@/lib/clubs/life/pack'
 import {rushDoor} from '@/lib/clubs/life/rush'
-import {door} from '@/lib/features-server'
+import {door, isOwner} from '@/lib/features-server'
+import {LIFE_SOON_PATH} from '@/lib/life/lock/paths'
 import {uiLocale} from '@/lib/clubs/locale'
 import {loadClub, resolveClubId} from '@/lib/clubs/resolver'
 import {clubWorld} from '@/lib/clubs/world'
@@ -25,13 +26,15 @@ export const metadata: Metadata = {title: en.metaTitle, robots: {index: false, f
  */
 export default async function Page({params, searchParams}: {params: {slug: string}; searchParams: {lang?: string}}) {
   const preview = evaluationMode()
-  if (!(await lifeOpen())) notFound()   // LIFE is closed to fans until it is finished (switch `life`, owner 9.11.2026)
+  // LIFE is closed to the public (owner, 24.11.2026): only the owner's session enters (the middleware already shows everyone else Coming soon)
+  if (!(await lifeOpen())) redirect(LIFE_SOON_PATH)
+  const owner = isOwner()
   const id = resolveClubId(headers().get('host'), params.slug, preview)
   if (!id) notFound()
   const [state, club, rushSwitch] = await Promise.all([readState(), loadClub(id), door('lifeRush')])
   const control = state.clubs.find(c => c.id === id)
   if (!club || !control || control.status === 'paused') notFound()
-  if (!preview && control.status !== 'live') notFound()
+  if (!preview && !owner && control.status !== 'live') notFound()   // the owner plays every club's LIFE, published or not
   const locale = uiLocale(searchParams.lang), base = `/clubs/${id}`, copy = locale === 'he' ? he : en
   const pack = clubLife(club.data, {locale})
   if (!pack.readiness.playable) notFound()
