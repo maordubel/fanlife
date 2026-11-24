@@ -11,7 +11,7 @@ describe('club world data',()=>{
    expect(validateWorld(clubWorld(c.id)??{},c.id),c.id).toEqual([])
    expect(clubWorld(c.id),c.id).not.toBeNull()
   }
-  expect(WORLD_IDS.length).toBe(8)
+  expect(WORLD_IDS.length).toBe(9)
  })
  it('rejects a line with one publisher, a low confidence, http, a long tab and a forbidden word',()=>{
   const base=clubWorld('olympiacos')!

@@ -124,6 +124,9 @@ const GROUNDS: Record<string, Ground> = {
   'st-pauli': {for: 'Millerntor-Stadion', plates: [
     'A compact city-centre football ground of four steep straight stands in dark brick and steel at the edge of a wide open fairground field: a massive windowless wartime concrete bunker tower looms beside it, a ferris wheel turns far off and the lights of an entertainment district glow behind.',
   ]},
+  'partizan-belgrade': {for: 'Partizan Stadium', plates: [
+    'A large post-war oval football ground with a running track around the pitch: long open concrete terraces sweep round both ends, a single roofed main stand runs along one side, and tall floodlight towers stand over a leafy residential district of a hilly Balkan capital.',
+  ]},
   'zrinjski-mostar': {for: 'Stadion pod Bijelim Brijegom', plates: [
     'An open, low mid-century football ground on the west bank of a Balkan river town, lying at the foot of a pale bare rocky hill: plain concrete stands, floodlight masts, stone and rendered houses on the streets around it.',
   ]},
