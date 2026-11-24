@@ -63,7 +63,20 @@
   "axes": "glTF: +Y up, the character faces +Z, metres"
  },
  "tint": {
-  "convention": "the top garment is its own primitive with a material named `tint_top` (extras.tint = \"top\"). Its texture there is neutral light grey with the cloth shading only; multiply it by a club colour with material.color.set(colour). The exported colour is just a default."
+  "convention": "the top garment is its own primitive with a material named `tint_top` (extras.tint = \"top\"). Its texture there is neutral light grey with the cloth shading only; multiply it by a club colour with material.color.set(colour). The exported colour is just a default.",
+  "regions": {
+   "tint_top": "the outer top (a jacket, where there is one)",
+   "tint_inner": "the shirt under a jacket",
+   "tint_trim": "collar and cuffs of a top without a jacket (a band about 2 cm wide)"
+  },
+  "stripes": "every tinted primitive carries a second UV set (TEXCOORD_1, Blender name tint_uv): u runs round the body (0.5 = front centre, 0/1 = back centre), v = 0 at the hip joints and 1 at the shoulder joints. For hoops, a texture with horizontal bands on texture.channel = 1 with RepeatWrapping (repeat.y = number of hoops); for vertical stripes, bands along u. Sleeves follow the body's height, so hoops run round them too."
+ },
+ "accessories": {
+  "convention": "optional meshes inside each character GLB, skinned 100 % to the head bone (facial hair also carries the mouth and jaw morphs): Acc_cap_flat, Acc_beanie, Acc_glasses_round, Acc_glasses_square and, for adults, Acc_moustache and Acc_beard; Hair2 is a second hairstyle (adults), Hair_hat is the hair pressed under a hat. Node extras.accessory names them. Hide them all on load (mesh.visible = false) and show the ones an instance wears; with a hat show Hair_hat instead of Hair.",
+  "licence": "modelled by script in scripts/life/assets/refine.py (no CC0 cap, beanie or glasses asset of acceptable quality was in the packs), fitted to each head"
+ },
+ "lod": {
+  "convention": "cast/<id>-lod1.glb: the same 55-bone skeleton (the same clips play), one mesh, one material, about 4k triangles, a 512 px atlas; the tint regions are in COLOR_0 (R top, G inner, B trim). Colour it with a shader that mixes the club colour in by that mask, e.g. onBeforeCompile: diffuseColor.rgb *= mix(vec3(1.), uTop, vColor.r) * mix(vec3(1.), uInner, vColor.g) * mix(vec3(1.), uTrim, vColor.b) (and keep vertexColors off so the mask itself does not tint)."
  },
  "face": {
   "morphTargets": "ARKit face units (52 names, MPFB faceunits01, CC0) and Meta/Oculus visemes (viseme_*, MPFB visemes02, CC0), on Head, Lashes, Brows, Teeth, Tongue; set the same influence by name on every mesh that has it",
@@ -72,10 +85,10 @@
    "smile": {
     "mouthSmileLeft": 0.75,
     "mouthSmileRight": 0.75,
-    "cheekSquintLeft": 0.45,
-    "cheekSquintRight": 0.45,
-    "eyeSquintLeft": 0.25,
-    "eyeSquintRight": 0.25
+    "cheekSquintLeft": 0.3,
+    "cheekSquintRight": 0.3,
+    "eyeSquintLeft": 0.08,
+    "eyeSquintRight": 0.08
    },
    "laugh": {
     "mouthSmileLeft": 1.0,
@@ -83,8 +96,8 @@
     "jawOpen": 0.35,
     "cheekSquintLeft": 0.8,
     "cheekSquintRight": 0.8,
-    "eyeSquintLeft": 0.6,
-    "eyeSquintRight": 0.6,
+    "eyeSquintLeft": 0.3,
+    "eyeSquintRight": 0.3,
     "browInnerUp": 0.2
    },
    "brows_up": {
@@ -131,10 +144,10 @@
    "kind": "character",
    "label": "boy, about 10",
    "file": "cast/boy.glb",
-   "bytes": 1096992,
-   "triangles": 35204,
+   "bytes": 1139992,
+   "triangles": 28864,
    "bones": 55,
-   "height": 1.3718,
+   "height": 1.3957,
    "hipHeight": 0.7043,
    "eyes": {
     "l": [
@@ -180,8 +193,8 @@
      "morphs": 0
     },
     "Teeth": {
-     "triangles": 7120,
-     "vertices": 3868,
+     "triangles": 1000,
+     "vertices": 674,
      "morphs": 12
     },
     "Tongue": {
@@ -190,14 +203,39 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 8472,
-     "vertices": 4339,
+     "triangles": 8252,
+     "vertices": 4196,
      "morphs": 0
     },
     "Head": {
      "triangles": 8784,
      "vertices": 4421,
      "morphs": 66
+    },
+    "Hair_hat": {
+     "triangles": 3344,
+     "vertices": 1755,
+     "morphs": 0
+    },
+    "Acc_beanie": {
+     "triangles": 2268,
+     "vertices": 1136,
+     "morphs": 0
+    },
+    "Acc_cap_flat": {
+     "triangles": 2380,
+     "vertices": 1192,
+     "morphs": 0
+    },
+    "Acc_glasses_round": {
+     "triangles": 792,
+     "vertices": 402,
+     "morphs": 0
+    },
+    "Acc_glasses_square": {
+     "triangles": 792,
+     "vertices": 402,
+     "morphs": 0
     }
    },
    "morphTargets": [
@@ -276,10 +314,15 @@
     "Head"
    ],
    "materials": [
+    "acc_beanie",
+    "acc_cap",
+    "acc_glasses_round",
+    "acc_glasses_square",
     "skin",
     "boy_brows",
     "boy_clothes_0",
     "tint_top",
+    "tint_trim",
     "boy_eyes",
     "boy_hair",
     "boy_lashes",
@@ -287,7 +330,7 @@
     "boy_teeth",
     "boy_tongue"
    ],
-   "textures": 10,
+   "textures": 12,
    "tint": {
     "top": true,
     "default": [
@@ -295,7 +338,44 @@
      0.1,
      0.12
     ],
-    "material": "tint_top"
+    "material": "tint_top",
+    "regions": [
+     "tint_top",
+     "tint_trim"
+    ]
+   },
+   "lod1": {
+    "file": "cast/boy-lod1.glb",
+    "bytes": 87180,
+    "triangles": 4056,
+    "materials": 1,
+    "atlas": "512 px WebP, alpha-tested (hair)",
+    "tintMask": "COLOR_0: R = tint_top, G = tint_inner, B = tint_trim (1 = club colour), A = 1"
+   },
+   "teethTriangles": 1000,
+   "restingFace": {
+    "baked": {
+     "mouthSmileLeft": 0.08,
+     "mouthSmileRight": 0.08,
+     "cheekSquintLeft": 0.03,
+     "cheekSquintRight": 0.03
+    },
+    "recommendedIdleMix": {},
+    "note": "already folded into the base shape; leave every morph at 0 for the resting face"
+   },
+   "optionalMeshes": [
+    "Hair_hat",
+    "Acc_beanie",
+    "Acc_cap_flat",
+    "Acc_glasses_round",
+    "Acc_glasses_square"
+   ],
+   "accessories": {
+    "hair_hat": "Hair_hat",
+    "beanie": "Acc_beanie",
+    "cap_flat": "Acc_cap_flat",
+    "glasses_round": "Acc_glasses_round",
+    "glasses_square": "Acc_glasses_square"
    },
    "sources": [
     {
@@ -378,6 +458,10 @@
      "author": "makehuman_system",
      "pack": "makehuman_system_assets",
      "kind": "Clothes"
+    },
+    {
+     "what": "accessories (caps, glasses, facial hair), LOD, teeth reduction, brow thickening",
+     "licence": "made by script in scripts/life/assets/refine.py (this repository), from the CC0 parts above"
     }
    ],
    "licence": "CC0 1.0 (every part; see sources)",
@@ -388,108 +472,580 @@
    "id": "clips",
    "kind": "animation",
    "file": "clips/clips.glb",
-   "bytes": 496512,
+   "bytes": 1217512,
    "fps": 30,
    "bones": 55,
    "hipHeight": 0.9499,
+   "childHipHeight": 0.7043,
+   "contacts": "locomotion clips: contacts.l / contacts.r = heel-strike frames, stance = [strike, toe-off] frames, speed = ground speed in m/s for the reference body (scale by hipHeight); walk and run start on the left heel at frame 0",
+   "pairs": "two-person clips: pair.<other>.at = (x metres to the left, metres forward, yaw degrees) of the other body's root in this body's frame, or an attach rule (bone, offset)",
    "clips": [
     {
      "name": "idle",
      "seconds": 8.0,
      "frames": 241,
      "loop": true,
-     "what": "standing: breathing and a slow shift of weight"
+     "what": "standing: breathing and a slow shift of weight",
+     "body": "adult"
+    },
+    {
+     "name": "idle_2",
+     "seconds": 9.0,
+     "frames": 271,
+     "loop": true,
+     "what": "standing on the left leg, right hand on the hip, a look to the side",
+     "body": "adult"
+    },
+    {
+     "name": "idle_3",
+     "seconds": 10.0,
+     "frames": 301,
+     "loop": true,
+     "what": "feet apart, hands held loosely in front, scanning the crowd",
+     "body": "adult"
     },
     {
      "name": "walk",
      "seconds": 1.104,
      "frames": 34,
      "loop": true,
-     "what": "one captured stride, in place (CMU mocap, averaged)"
+     "what": "one captured stride, in place (CMU mocap, averaged); left heel strikes at frame 0",
+     "body": "adult",
+     "contacts": {
+      "l": [
+       0
+      ],
+      "r": [
+       17
+      ]
+     },
+     "stance": {
+      "l": [
+       [
+        0,
+        20
+       ]
+      ],
+      "r": [
+       [
+        17,
+        36
+       ]
+      ]
+     },
+     "speed": 1.049
     },
     {
      "name": "run",
      "seconds": 0.746,
      "frames": 23,
      "loop": true,
-     "what": "one captured running stride, in place (CMU mocap, averaged)"
+     "what": "one captured running stride, in place (CMU mocap, averaged); left foot lands at frame 0",
+     "body": "adult",
+     "contacts": {
+      "l": [
+       0
+      ],
+      "r": [
+       11
+      ]
+     },
+     "stance": {
+      "l": [
+       [
+        0,
+        11
+       ]
+      ],
+      "r": [
+       [
+        11,
+        22
+       ]
+      ]
+     },
+     "speed": 1.973
     },
     {
      "name": "carry",
      "seconds": 1.104,
      "frames": 34,
      "loop": true,
-     "what": "the captured walk with both arms holding a box"
+     "what": "the captured walk with both arms holding a box",
+     "body": "adult",
+     "contacts": {
+      "l": [
+       0
+      ],
+      "r": [
+       17
+      ]
+     },
+     "stance": {
+      "l": [
+       [
+        0,
+        20
+       ]
+      ],
+      "r": [
+       [
+        17,
+        36
+       ]
+      ]
+     },
+     "speed": 1.049
+    },
+    {
+     "name": "walk_child",
+     "seconds": 0.839,
+     "frames": 26,
+     "loop": true,
+     "what": "a child's walk: quicker, bouncier, bigger arm swing; left heel at frame 0",
+     "body": "child",
+     "contacts": {
+      "l": [
+       0
+      ],
+      "r": [
+       13
+      ]
+     },
+     "stance": {
+      "l": [
+       [
+        0,
+        15
+       ]
+      ],
+      "r": [
+       [
+        13,
+        28
+       ]
+      ]
+     },
+     "speed": 1.107
+    },
+    {
+     "name": "hold_hand_walk_adult",
+     "seconds": 2.5,
+     "frames": 76,
+     "loop": true,
+     "what": "adult and child walking hand in hand (child at the adult's right, 52 cm across): two adult strides = three child strides",
+     "body": "adult",
+     "contacts": {
+      "l": [
+       0,
+       38
+      ],
+      "r": [
+       19,
+       56
+      ]
+     },
+     "stance": {
+      "l": [
+       [
+        0,
+        22
+       ],
+       [
+        38,
+        60
+       ]
+      ],
+      "r": [
+       [
+        19,
+        41
+       ],
+       [
+        56,
+        79
+       ]
+      ]
+     },
+     "speed": 0.954,
+     "pair": {
+      "C": {
+       "clip": "hold_hand_walk_child",
+       "at": [
+        -0.52,
+        0.04,
+        0
+       ]
+      }
+     }
+    },
+    {
+     "name": "hold_hand_walk_child",
+     "seconds": 2.5,
+     "frames": 76,
+     "loop": true,
+     "what": "adult and child walking hand in hand (child at the adult's right, 52 cm across): two adult strides = three child strides",
+     "body": "child",
+     "contacts": {
+      "l": [
+       0,
+       25,
+       50
+      ],
+      "r": [
+       13,
+       38,
+       63
+      ]
+     },
+     "stance": {
+      "l": [
+       [
+        0,
+        15
+       ],
+       [
+        25,
+        40
+       ],
+       [
+        50,
+        65
+       ]
+      ],
+      "r": [
+       [
+        13,
+        27
+       ],
+       [
+        38,
+        52
+       ],
+       [
+        63,
+        77
+       ]
+      ]
+     },
+     "speed": 0.993,
+     "pair": {
+      "A": {
+       "clip": "hold_hand_walk_adult",
+       "at": [
+        0,
+        0,
+        0
+       ]
+      }
+     }
     },
     {
      "name": "turn",
-     "seconds": 1.0,
-     "frames": 31,
+     "seconds": 1.15,
+     "frames": 35,
      "loop": false,
-     "what": "a quarter turn to the left on the spot (Root bone turns 90 degrees)"
+     "what": "a quarter turn to the left in two steps (Root turns 90 degrees)",
+     "body": "adult"
+    },
+    {
+     "name": "step_turn_l",
+     "seconds": 1.15,
+     "frames": 35,
+     "loop": false,
+     "what": "a quarter turn in two steps, head first, trunk then feet (Root turns 90 degrees)",
+     "body": "adult"
     },
     {
      "name": "talk_1",
      "seconds": 2.4,
      "frames": 73,
      "loop": true,
-     "what": "talking: open hands"
+     "what": "talking: open hands",
+     "body": "adult"
     },
     {
      "name": "talk_2",
      "seconds": 4.0,
      "frames": 121,
      "loop": true,
-     "what": "talking: one hand explains"
+     "what": "talking: one hand explains",
+     "body": "adult"
     },
     {
      "name": "talk_3",
      "seconds": 3.0,
      "frames": 91,
      "loop": true,
-     "what": "talking: a shrug, then pointing ahead"
+     "what": "talking: a shrug, then pointing ahead",
+     "body": "adult"
     },
     {
      "name": "wave",
      "seconds": 2.2,
      "frames": 67,
      "loop": true,
-     "what": "right arm up, waving"
+     "what": "right arm up, waving",
+     "body": "adult"
     },
     {
      "name": "cheer",
      "seconds": 1.2,
      "frames": 37,
      "loop": true,
-     "what": "both fists up, bouncing: a goal"
+     "what": "both fists up, bouncing: a goal",
+     "body": "adult"
+    },
+    {
+     "name": "laugh_body",
+     "seconds": 3.2,
+     "frames": 97,
+     "loop": false,
+     "what": "a laugh through the whole body: back, folding forward in bursts, a hand to the belly",
+     "body": "adult"
     },
     {
      "name": "sit",
      "seconds": 6.0,
      "frames": 181,
      "loop": false,
-     "what": "stand to seated (seat at knee height), then held"
+     "what": "stand to seated (seat at knee height), then held",
+     "body": "adult"
+    },
+    {
+     "name": "sit_play_board",
+     "seconds": 7.0,
+     "frames": 211,
+     "loop": true,
+     "what": "seated at a table (top 0.72 m, board 40 cm ahead): takes a piece, moves it, looks up",
+     "body": "adult"
+    },
+    {
+     "name": "lean_on_rail",
+     "seconds": 8.0,
+     "frames": 241,
+     "loop": true,
+     "what": "forearms on a rail (top 1.05 m, 40 cm ahead), one foot crossed",
+     "body": "adult"
     },
     {
      "name": "crouch_to_child",
      "seconds": 6.0,
      "frames": 181,
      "loop": false,
-     "what": "down on one knee to a child's eye level, then held"
+     "what": "down on one knee to a child's eye level, then held",
+     "body": "adult"
     },
     {
      "name": "hand_on_shoulder",
      "seconds": 6.0,
      "frames": 181,
      "loop": false,
-     "what": "right hand out and down onto the shoulder of a child standing at the right side, then held"
+     "what": "right hand out and down onto the shoulder of a child standing at the right side, then held",
+     "body": "adult"
     },
     {
      "name": "hug",
      "seconds": 6.0,
      "frames": 181,
      "loop": false,
-     "what": "both arms round someone in front, then held"
+     "what": "both arms round someone in front, then held",
+     "body": "adult"
+    },
+    {
+     "name": "ruffle_hair",
+     "seconds": 3.6,
+     "frames": 109,
+     "loop": false,
+     "what": "standing at a child's left (child 1.35 m, 35 cm to the right, 30 cm ahead): the right hand ruffles the child's hair",
+     "body": "adult",
+     "pair": {
+      "C": {
+       "clip": null,
+       "at": [
+        -0.33,
+        0.28,
+        0
+       ]
+      }
+     }
+    },
+    {
+     "name": "put_scarf_on",
+     "seconds": 4.4,
+     "frames": 133,
+     "loop": false,
+     "what": "kneeling in front of a child (50 cm ahead, facing): a scarf round the neck with both hands, a pat, hands to the shoulders",
+     "body": "adult",
+     "pair": {
+      "C": {
+       "clip": null,
+       "at": [
+        0.0,
+        0.5,
+        180
+       ]
+      }
+     }
+    },
+    {
+     "name": "child_on_shoulders_carrier",
+     "seconds": 6.0,
+     "frames": 181,
+     "loop": true,
+     "what": "a child on the shoulders: the carrier holds the shins; the rider holds the head and waves once",
+     "body": "adult",
+     "pair": {
+      "C": {
+       "clip": "child_on_shoulders_rider",
+       "at": [
+        "attach",
+        "A",
+        "neck_01",
+        [
+         0.0,
+         -0.14,
+         0.05
+        ]
+       ]
+      }
+     }
+    },
+    {
+     "name": "child_on_shoulders_rider",
+     "seconds": 6.0,
+     "frames": 181,
+     "loop": true,
+     "what": "a child on the shoulders: the carrier holds the shins; the rider holds the head and waves once",
+     "body": "child",
+     "pair": {
+      "A": {
+       "clip": "child_on_shoulders_carrier",
+       "at": [
+        0,
+        0,
+        0
+       ]
+      }
+     }
+    },
+    {
+     "name": "kick_ball",
+     "seconds": 1.9,
+     "frames": 58,
+     "loop": false,
+     "what": "a child's kick with the right foot; the foot meets the ball at 0.70 s",
+     "body": "child",
+     "events": {
+      "strike": 21
+     }
+    },
+    {
+     "name": "hug_partner",
+     "seconds": 4.2,
+     "frames": 127,
+     "loop": false,
+     "what": "two adults embracing (both play this clip, facing, roots 42 cm apart): right arm over the shoulder, left round the waist, a sway, two pats",
+     "body": "adult",
+     "pair": {
+      "A2": {
+       "clip": null,
+       "at": [
+        0,
+        0.42,
+        180
+       ]
+      }
+     }
+    },
+    {
+     "name": "hug_partner_adult",
+     "seconds": 4.6,
+     "frames": 139,
+     "loop": false,
+     "what": "an adult down on one knee and a child of about 1.35 m embracing (facing, roots 46 cm apart)",
+     "body": "adult",
+     "pair": {
+      "C": {
+       "clip": "hug_partner_child",
+       "at": [
+        0,
+        0.46,
+        180
+       ]
+      }
+     }
+    },
+    {
+     "name": "hug_partner_child",
+     "seconds": 4.6,
+     "frames": 139,
+     "loop": false,
+     "what": "an adult down on one knee and a child of about 1.35 m embracing (facing, roots 46 cm apart)",
+     "body": "child",
+     "pair": {
+      "A": {
+       "clip": "hug_partner_adult",
+       "at": [
+        0,
+        0,
+        0
+       ]
+      }
+     }
+    },
+    {
+     "name": "hand_relaxed",
+     "seconds": 1.0,
+     "frames": 31,
+     "loop": true,
+     "what": "hand shape \"relaxed\" on both hands: finger bones only, for an override or additive layer",
+     "body": "adult",
+     "tracks": "fingers"
+    },
+    {
+     "name": "hand_fist",
+     "seconds": 1.0,
+     "frames": 31,
+     "loop": true,
+     "what": "hand shape \"fist\" on both hands: finger bones only, for an override or additive layer",
+     "body": "adult",
+     "tracks": "fingers"
+    },
+    {
+     "name": "hand_point",
+     "seconds": 1.0,
+     "frames": 31,
+     "loop": true,
+     "what": "hand shape \"point\" on both hands: finger bones only, for an override or additive layer",
+     "body": "adult",
+     "tracks": "fingers"
+    },
+    {
+     "name": "hand_thumb_up",
+     "seconds": 1.0,
+     "frames": 31,
+     "loop": true,
+     "what": "hand shape \"thumb_up\" on both hands: finger bones only, for an override or additive layer",
+     "body": "adult",
+     "tracks": "fingers"
+    },
+    {
+     "name": "hand_palm_down_rest",
+     "seconds": 1.0,
+     "frames": 31,
+     "loop": true,
+     "what": "hand shape \"palm_down_rest\" on both hands: finger bones only, for an override or additive layer",
+     "body": "adult",
+     "tracks": "fingers"
+    },
+    {
+     "name": "step_turn_r",
+     "seconds": 1.15,
+     "frames": 35,
+     "loop": false,
+     "what": "a quarter turn in two steps, head first, trunk then feet (Root turns 90 degrees)",
+     "body": "adult"
     }
    ],
    "tracks": "bone rotations (parent space) for every bone, and the position of `pelvis` only; scale the pelvis position by character.hipHeight / clips.hipHeight",
@@ -501,7 +1057,7 @@
     },
     {
      "what": "every other clip",
-     "source": "keyframed by formula in scripts/life/assets/lifekit.py",
+     "source": "keyframed by script in scripts/life/assets/motion.py (poses, eased keys, IK contacts)",
      "licence": "made in this repository"
     }
    ]
@@ -511,10 +1067,10 @@
    "kind": "character",
    "label": "father, about 40",
    "file": "cast/father.glb",
-   "bytes": 1149664,
-   "triangles": 36838,
+   "bytes": 1530044,
+   "triangles": 33052,
    "bones": 55,
-   "height": 1.7826,
+   "height": 1.7984,
    "hipHeight": 0.9499,
    "eyes": {
     "l": [
@@ -555,13 +1111,18 @@
      "morphs": 0
     },
     "Hair": {
+     "triangles": 3678,
+     "vertices": 2984,
+     "morphs": 0
+    },
+    "Hair2": {
      "triangles": 1050,
      "vertices": 865,
      "morphs": 0
     },
     "Teeth": {
-     "triangles": 7120,
-     "vertices": 3868,
+     "triangles": 1000,
+     "vertices": 670,
      "morphs": 12
     },
     "Tongue": {
@@ -570,14 +1131,49 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 8436,
-     "vertices": 4308,
+     "triangles": 8142,
+     "vertices": 4153,
      "morphs": 0
     },
     "Head": {
      "triangles": 8820,
      "vertices": 4437,
      "morphs": 66
+    },
+    "Hair_hat": {
+     "triangles": 3678,
+     "vertices": 2984,
+     "morphs": 0
+    },
+    "Acc_beanie": {
+     "triangles": 2268,
+     "vertices": 1136,
+     "morphs": 0
+    },
+    "Acc_cap_flat": {
+     "triangles": 2380,
+     "vertices": 1192,
+     "morphs": 0
+    },
+    "Acc_glasses_round": {
+     "triangles": 792,
+     "vertices": 402,
+     "morphs": 0
+    },
+    "Acc_glasses_square": {
+     "triangles": 792,
+     "vertices": 402,
+     "morphs": 0
+    },
+    "Acc_moustache": {
+     "triangles": 316,
+     "vertices": 237,
+     "morphs": 42
+    },
+    "Acc_beard": {
+     "triangles": 976,
+     "vertices": 634,
+     "morphs": 46
     }
    },
    "morphTargets": [
@@ -653,21 +1249,31 @@
     "Lashes",
     "Teeth",
     "Tongue",
-    "Head"
+    "Head",
+    "Acc_moustache",
+    "Acc_beard"
    ],
    "materials": [
+    "acc_beanie",
+    "acc_beard",
+    "acc_cap",
+    "acc_glasses_round",
+    "acc_glasses_square",
+    "acc_moustache",
     "skin",
     "father_brows",
     "father_clothes_0",
     "tint_top",
+    "tint_trim",
     "father_eyes",
     "father_hair",
+    "father_hair2",
     "father_lashes",
     "father_shoes",
     "father_teeth",
     "father_tongue"
    ],
-   "textures": 10,
+   "textures": 15,
    "tint": {
     "top": true,
     "default": [
@@ -675,799 +1281,54 @@
      0.1,
      0.12
     ],
-    "material": "tint_top"
+    "material": "tint_top",
+    "regions": [
+     "tint_top",
+     "tint_trim"
+    ]
+   },
+   "lod1": {
+    "file": "cast/father-lod1.glb",
+    "bytes": 100596,
+    "triangles": 4054,
+    "materials": 1,
+    "atlas": "512 px WebP, alpha-tested (hair)",
+    "tintMask": "COLOR_0: R = tint_top, G = tint_inner, B = tint_trim (1 = club colour), A = 1"
+   },
+   "teethTriangles": 1000,
+   "restingFace": {
+    "baked": {
+     "mouthSmileLeft": 0.2,
+     "mouthSmileRight": 0.2,
+     "cheekSquintLeft": 0.08,
+     "cheekSquintRight": 0.08,
+     "browInnerUp": 0.1
+    },
+    "recommendedIdleMix": {},
+    "note": "already folded into the base shape; leave every morph at 0 for the resting face"
+   },
+   "optionalMeshes": [
+    "Hair2",
+    "Hair_hat",
+    "Acc_beanie",
+    "Acc_cap_flat",
+    "Acc_glasses_round",
+    "Acc_glasses_square",
+    "Acc_moustache",
+    "Acc_beard"
+   ],
+   "accessories": {
+    "hair_hat": "Hair_hat",
+    "beanie": "Acc_beanie",
+    "cap_flat": "Acc_cap_flat",
+    "glasses_round": "Acc_glasses_round",
+    "glasses_square": "Acc_glasses_square",
+    "moustache": "Acc_moustache",
+    "beard": "Acc_beard"
    },
    "sources": [
     {
      "file": "skins/middleage_caucasian_male/middleage_caucasian_male.mhmat",
-     "licence": "CC0 1.0",
-     "stated_in_file": "",
-     "stated_in_pack": "CC0",
-     "author": "makehuman_system",
-     "pack": "makehuman_system_assets",
-     "kind": "Skin"
-    },
-    {
-     "file": "eyes/low-poly/low-poly.mhclo",
-     "licence": "CC0 1.0",
-     "stated_in_file": "",
-     "stated_in_pack": "CC0",
-     "author": "makehuman_system",
-     "pack": "makehuman_system_assets",
-     "kind": "Eyes"
-    },
-    {
-     "file": "eyebrows/eyebrow002/eyebrow002.mhclo",
-     "licence": "CC0 1.0",
-     "stated_in_file": "",
-     "stated_in_pack": "CC0",
-     "author": "makehuman_system",
-     "pack": "makehuman_system_assets",
-     "kind": "Eyebrows"
-    },
-    {
-     "file": "eyelashes/eyelashes01/eyelashes01.mhclo",
-     "licence": "CC0 1.0",
-     "stated_in_file": "",
-     "stated_in_pack": "CC0",
-     "author": "makehuman_system",
-     "pack": "makehuman_system_assets",
-     "kind": "Eyelashes"
-    },
-    {
-     "file": "teeth/teeth_base/teeth_base.mhclo",
-     "licence": "CC0 1.0",
-     "stated_in_file": "",
-     "stated_in_pack": "CC0",
-     "author": "makehuman_system",
-     "pack": "makehuman_system_assets",
-     "kind": "Teeth"
-    },
-    {
-     "file": "tongue/tongue01/tongue01.mhclo",
-     "licence": "CC0 1.0",
-     "stated_in_file": "",
-     "stated_in_pack": "CC0",
-     "author": "makehuman_system",
-     "pack": "makehuman_system_assets",
-     "kind": "Tongue"
-    },
-    {
-     "file": "hair/short04/short04.mhclo",
-     "licence": "CC0 1.0",
-     "stated_in_file": "",
-     "stated_in_pack": "CC0",
-     "author": "makehuman_system",
-     "pack": "makehuman_system_assets",
-     "kind": "Hair"
-    },
-    {
-     "file": "clothes/male_casualsuit06/male_casualsuit06.mhclo",
-     "licence": "CC0 1.0",
-     "stated_in_file": "",
-     "stated_in_pack": "CC0",
-     "author": "makehuman_system",
-     "pack": "makehuman_system_assets",
-     "kind": "Clothes"
-    },
-    {
-     "file": "clothes/shoes02/shoes02.mhclo",
-     "licence": "CC0 1.0",
-     "stated_in_file": "",
-     "stated_in_pack": "CC0",
-     "author": "makehuman_system",
-     "pack": "makehuman_system_assets",
-     "kind": "Clothes"
-    }
-   ],
-   "licence": "CC0 1.0 (every part; see sources)",
-   "sourceUrl": "https://static.makehumancommunity.org/assets/assetpacks.html",
-   "notes": []
-  },
-  {
-   "id": "father_heavy",
-   "kind": "character",
-   "label": "father, heavier build",
-   "file": "cast/father_heavy.glb",
-   "bytes": 1209800,
-   "triangles": 35624,
-   "bones": 55,
-   "height": 1.785,
-   "hipHeight": 0.9331,
-   "eyes": {
-    "l": [
-     0.0299,
-     -0.1326,
-     1.6448
-    ],
-    "r": [
-     -0.0299,
-     -0.1326,
-     1.6448
-    ]
-   },
-   "meshes": {
-    "Hair": {
-     "triangles": 2192,
-     "vertices": 2196,
-     "morphs": 0
-    },
-    "Brows": {
-     "triangles": 192,
-     "vertices": 124,
-     "morphs": 31
-    },
-    "Lashes": {
-     "triangles": 368,
-     "vertices": 250,
-     "morphs": 27
-    },
-    "Eyes": {
-     "triangles": 172,
-     "vertices": 96,
-     "morphs": 0
-    },
-    "Clothes": {
-     "triangles": 5996,
-     "vertices": 3195,
-     "morphs": 0
-    },
-    "Shoes": {
-     "triangles": 3320,
-     "vertices": 1722,
-     "morphs": 0
-    },
-    "Teeth": {
-     "triangles": 7120,
-     "vertices": 3868,
-     "morphs": 12
-    },
-    "Tongue": {
-     "triangles": 448,
-     "vertices": 226,
-     "morphs": 13
-    },
-    "Body": {
-     "triangles": 6996,
-     "vertices": 3588,
-     "morphs": 0
-    },
-    "Head": {
-     "triangles": 8820,
-     "vertices": 4437,
-     "morphs": 66
-    }
-   },
-   "morphTargets": [
-    "browDownLeft",
-    "browDownRight",
-    "browInnerUp",
-    "browOuterUpLeft",
-    "browOuterUpRight",
-    "cheekPuff",
-    "cheekSquintLeft",
-    "cheekSquintRight",
-    "eyeBlinkLeft",
-    "eyeBlinkRight",
-    "eyeLookDownLeft",
-    "eyeLookDownRight",
-    "eyeLookInLeft",
-    "eyeLookInRight",
-    "eyeLookOutLeft",
-    "eyeLookOutRight",
-    "eyeLookUpLeft",
-    "eyeLookUpRight",
-    "eyeSquintLeft",
-    "eyeSquintRight",
-    "eyeWideLeft",
-    "eyeWideRight",
-    "jawForward",
-    "jawLeft",
-    "jawOpen",
-    "jawRight",
-    "mouthClose",
-    "mouthDimpleLeft",
-    "mouthDimpleRight",
-    "mouthFrownLeft",
-    "mouthFrownRight",
-    "mouthFunnel",
-    "mouthLeft",
-    "mouthLowerDownLeft",
-    "mouthLowerDownRight",
-    "mouthPressLeft",
-    "mouthPressRight",
-    "mouthPucker",
-    "mouthRight",
-    "mouthRollLower",
-    "mouthRollUpper",
-    "mouthShrugLower",
-    "mouthShrugUpper",
-    "mouthSmileLeft",
-    "mouthSmileRight",
-    "mouthStretchLeft",
-    "mouthStretchRight",
-    "mouthUpperUpLeft",
-    "mouthUpperUpRight",
-    "noseSneerLeft",
-    "noseSneerRight",
-    "tongueOut",
-    "viseme_PP",
-    "viseme_FF",
-    "viseme_TH",
-    "viseme_DD",
-    "viseme_kk",
-    "viseme_CH",
-    "viseme_SS",
-    "viseme_nn",
-    "viseme_RR",
-    "viseme_aa",
-    "viseme_E",
-    "viseme_I",
-    "viseme_O",
-    "viseme_U"
-   ],
-   "morphMeshes": [
-    "Brows",
-    "Lashes",
-    "Teeth",
-    "Tongue",
-    "Head"
-   ],
-   "materials": [
-    "skin",
-    "father_heavy_brows",
-    "father_heavy_clothes_0",
-    "tint_top",
-    "father_heavy_eyes",
-    "father_heavy_hair",
-    "father_heavy_lashes",
-    "father_heavy_shoes",
-    "father_heavy_teeth",
-    "father_heavy_tongue"
-   ],
-   "textures": 11,
-   "tint": {
-    "top": true,
-    "default": [
-     0.78,
-     0.1,
-     0.12
-    ],
-    "material": "tint_top"
-   },
-   "sources": [
-    {
-     "file": "skins/middleage_african_male/middleage_african_male.mhmat",
-     "licence": "CC0 1.0",
-     "stated_in_file": "",
-     "stated_in_pack": "CC0",
-     "author": "makehuman_system",
-     "pack": "makehuman_system_assets",
-     "kind": "Skin"
-    },
-    {
-     "file": "eyes/low-poly/low-poly.mhclo",
-     "licence": "CC0 1.0",
-     "stated_in_file": "",
-     "stated_in_pack": "CC0",
-     "author": "makehuman_system",
-     "pack": "makehuman_system_assets",
-     "kind": "Eyes"
-    },
-    {
-     "file": "eyebrows/eyebrow002/eyebrow002.mhclo",
-     "licence": "CC0 1.0",
-     "stated_in_file": "",
-     "stated_in_pack": "CC0",
-     "author": "makehuman_system",
-     "pack": "makehuman_system_assets",
-     "kind": "Eyebrows"
-    },
-    {
-     "file": "eyelashes/eyelashes01/eyelashes01.mhclo",
-     "licence": "CC0 1.0",
-     "stated_in_file": "",
-     "stated_in_pack": "CC0",
-     "author": "makehuman_system",
-     "pack": "makehuman_system_assets",
-     "kind": "Eyelashes"
-    },
-    {
-     "file": "teeth/teeth_base/teeth_base.mhclo",
-     "licence": "CC0 1.0",
-     "stated_in_file": "",
-     "stated_in_pack": "CC0",
-     "author": "makehuman_system",
-     "pack": "makehuman_system_assets",
-     "kind": "Teeth"
-    },
-    {
-     "file": "tongue/tongue01/tongue01.mhclo",
-     "licence": "CC0 1.0",
-     "stated_in_file": "",
-     "stated_in_pack": "CC0",
-     "author": "makehuman_system",
-     "pack": "makehuman_system_assets",
-     "kind": "Tongue"
-    },
-    {
-     "file": "hair/afro01/afro01.mhclo",
-     "licence": "CC0 1.0",
-     "stated_in_file": "",
-     "stated_in_pack": "CC0",
-     "author": "makehuman_system",
-     "pack": "makehuman_system_assets",
-     "kind": "Hair"
-    },
-    {
-     "file": "clothes/male_casualsuit05/male_casualsuit05.mhclo",
-     "licence": "CC0 1.0",
-     "stated_in_file": "",
-     "stated_in_pack": "CC0",
-     "author": "makehuman_system",
-     "pack": "makehuman_system_assets",
-     "kind": "Clothes"
-    },
-    {
-     "file": "clothes/shoes04/shoes04.mhclo",
-     "licence": "CC0 1.0",
-     "stated_in_file": "",
-     "stated_in_pack": "CC0",
-     "author": "makehuman_system",
-     "pack": "makehuman_system_assets",
-     "kind": "Clothes"
-    }
-   ],
-   "licence": "CC0 1.0 (every part; see sources)",
-   "sourceUrl": "https://static.makehumancommunity.org/assets/assetpacks.html",
-   "notes": []
-  },
-  {
-   "id": "girl",
-   "kind": "character",
-   "label": "girl, about 10",
-   "file": "cast/girl.glb",
-   "bytes": 1555580,
-   "triangles": 46192,
-   "bones": 55,
-   "height": 1.2744,
-   "hipHeight": 0.6526,
-   "eyes": {
-    "l": [
-     0.0259,
-     -0.0936,
-     1.1728
-    ],
-    "r": [
-     -0.0259,
-     -0.0936,
-     1.1728
-    ]
-   },
-   "meshes": {
-    "Brows": {
-     "triangles": 192,
-     "vertices": 124,
-     "morphs": 24
-    },
-    "Lashes": {
-     "triangles": 368,
-     "vertices": 250,
-     "morphs": 27
-    },
-    "Eyes": {
-     "triangles": 172,
-     "vertices": 96,
-     "morphs": 0
-    },
-    "Hair": {
-     "triangles": 5352,
-     "vertices": 3718,
-     "morphs": 0
-    },
-    "Shoes": {
-     "triangles": 3064,
-     "vertices": 1594,
-     "morphs": 0
-    },
-    "Teeth": {
-     "triangles": 7120,
-     "vertices": 3868,
-     "morphs": 12
-    },
-    "Clothes": {
-     "triangles": 2700,
-     "vertices": 1391,
-     "morphs": 0
-    },
-    "Clothes2": {
-     "triangles": 5576,
-     "vertices": 2856,
-     "morphs": 0
-    },
-    "Tongue": {
-     "triangles": 448,
-     "vertices": 226,
-     "morphs": 13
-    },
-    "Body": {
-     "triangles": 12496,
-     "vertices": 6336,
-     "morphs": 0
-    },
-    "Head": {
-     "triangles": 8704,
-     "vertices": 4380,
-     "morphs": 66
-    }
-   },
-   "morphTargets": [
-    "browDownLeft",
-    "browDownRight",
-    "browInnerUp",
-    "browOuterUpLeft",
-    "browOuterUpRight",
-    "cheekPuff",
-    "cheekSquintLeft",
-    "cheekSquintRight",
-    "eyeBlinkLeft",
-    "eyeBlinkRight",
-    "eyeLookDownLeft",
-    "eyeLookDownRight",
-    "eyeLookInLeft",
-    "eyeLookInRight",
-    "eyeLookOutLeft",
-    "eyeLookOutRight",
-    "eyeLookUpLeft",
-    "eyeLookUpRight",
-    "eyeSquintLeft",
-    "eyeSquintRight",
-    "eyeWideLeft",
-    "eyeWideRight",
-    "jawForward",
-    "jawLeft",
-    "jawOpen",
-    "jawRight",
-    "mouthClose",
-    "mouthDimpleLeft",
-    "mouthDimpleRight",
-    "mouthFrownLeft",
-    "mouthFrownRight",
-    "mouthFunnel",
-    "mouthLeft",
-    "mouthLowerDownLeft",
-    "mouthLowerDownRight",
-    "mouthPressLeft",
-    "mouthPressRight",
-    "mouthPucker",
-    "mouthRight",
-    "mouthRollLower",
-    "mouthRollUpper",
-    "mouthShrugLower",
-    "mouthShrugUpper",
-    "mouthSmileLeft",
-    "mouthSmileRight",
-    "mouthStretchLeft",
-    "mouthStretchRight",
-    "mouthUpperUpLeft",
-    "mouthUpperUpRight",
-    "noseSneerLeft",
-    "noseSneerRight",
-    "tongueOut",
-    "viseme_PP",
-    "viseme_FF",
-    "viseme_TH",
-    "viseme_DD",
-    "viseme_kk",
-    "viseme_CH",
-    "viseme_SS",
-    "viseme_nn",
-    "viseme_RR",
-    "viseme_aa",
-    "viseme_E",
-    "viseme_I",
-    "viseme_O",
-    "viseme_U"
-   ],
-   "morphMeshes": [
-    "Brows",
-    "Lashes",
-    "Teeth",
-    "Tongue",
-    "Head"
-   ],
-   "materials": [
-    "skin",
-    "girl_brows",
-    "tint_top",
-    "girl_clothes2",
-    "girl_eyes",
-    "girl_hair",
-    "girl_lashes",
-    "girl_shoes",
-    "girl_teeth",
-    "girl_tongue"
-   ],
-   "textures": 10,
-   "tint": {
-    "top": true,
-    "default": [
-     0.78,
-     0.1,
-     0.12
-    ],
-    "material": "tint_top"
-   },
-   "sources": [
-    {
-     "file": "skins/young_caucasian_female/young_caucasian_female.mhmat",
-     "licence": "CC0 1.0",
-     "stated_in_file": "",
-     "stated_in_pack": "CC0",
-     "author": "makehuman_system",
-     "pack": "makehuman_system_assets",
-     "kind": "Skin"
-    },
-    {
-     "file": "eyes/low-poly/low-poly.mhclo",
-     "licence": "CC0 1.0",
-     "stated_in_file": "",
-     "stated_in_pack": "CC0",
-     "author": "makehuman_system",
-     "pack": "makehuman_system_assets",
-     "kind": "Eyes"
-    },
-    {
-     "file": "eyebrows/eyebrow006/eyebrow006.mhclo",
-     "licence": "CC0 1.0",
-     "stated_in_file": "",
-     "stated_in_pack": "CC0",
-     "author": "makehuman_system",
-     "pack": "makehuman_system_assets",
-     "kind": "Eyebrows"
-    },
-    {
-     "file": "eyelashes/eyelashes01/eyelashes01.mhclo",
-     "licence": "CC0 1.0",
-     "stated_in_file": "",
-     "stated_in_pack": "CC0",
-     "author": "makehuman_system",
-     "pack": "makehuman_system_assets",
-     "kind": "Eyelashes"
-    },
-    {
-     "file": "teeth/teeth_base/teeth_base.mhclo",
-     "licence": "CC0 1.0",
-     "stated_in_file": "",
-     "stated_in_pack": "CC0",
-     "author": "makehuman_system",
-     "pack": "makehuman_system_assets",
-     "kind": "Teeth"
-    },
-    {
-     "file": "tongue/tongue01/tongue01.mhclo",
-     "licence": "CC0 1.0",
-     "stated_in_file": "",
-     "stated_in_pack": "CC0",
-     "author": "makehuman_system",
-     "pack": "makehuman_system_assets",
-     "kind": "Tongue"
-    },
-    {
-     "file": "hair/ponytail01/ponytail01.mhclo",
-     "licence": "CC0 1.0",
-     "stated_in_file": "",
-     "stated_in_pack": "CC0",
-     "author": "makehuman_system",
-     "pack": "makehuman_system_assets",
-     "kind": "Hair"
-    },
-    {
-     "file": "clothes/toigo_basic_tucked_t-shirt/toigo_basic_tucked_t-shirt.mhclo",
-     "licence": "CC0 1.0",
-     "stated_in_file": "CC0",
-     "stated_in_pack": "CC0",
-     "author": "MRT",
-     "pack": "shirts01",
-     "kind": "Clothes"
-    },
-    {
-     "file": "clothes/toigo_skirt_with_lace_ruffle/toigo_skirt_with_lace_ruffle.mhclo",
-     "licence": "CC0 1.0",
-     "stated_in_file": "CC0",
-     "stated_in_pack": "CC0",
-     "author": "MRT",
-     "pack": "skirts01",
-     "kind": "Clothes"
-    },
-    {
-     "file": "clothes/shoes05/shoes05.mhclo",
-     "licence": "CC0 1.0",
-     "stated_in_file": "",
-     "stated_in_pack": "CC0",
-     "author": "makehuman_system",
-     "pack": "makehuman_system_assets",
-     "kind": "Clothes"
-    }
-   ],
-   "licence": "CC0 1.0 (every part; see sources)",
-   "sourceUrl": "https://static.makehumancommunity.org/assets/assetpacks.html",
-   "notes": []
-  },
-  {
-   "id": "grandfather",
-   "kind": "character",
-   "label": "older man, about 70",
-   "file": "cast/grandfather.glb",
-   "bytes": 1308556,
-   "triangles": 37110,
-   "bones": 55,
-   "height": 1.7172,
-   "hipHeight": 0.8968,
-   "eyes": {
-    "l": [
-     0.0293,
-     -0.1292,
-     1.5884
-    ],
-    "r": [
-     -0.0293,
-     -0.1292,
-     1.5884
-    ]
-   },
-   "meshes": {
-    "Brows": {
-     "triangles": 192,
-     "vertices": 124,
-     "morphs": 31
-    },
-    "Lashes": {
-     "triangles": 368,
-     "vertices": 250,
-     "morphs": 27
-    },
-    "Eyes": {
-     "triangles": 172,
-     "vertices": 96,
-     "morphs": 0
-    },
-    "Clothes": {
-     "triangles": 5996,
-     "vertices": 3195,
-     "morphs": 0
-    },
-    "Shoes": {
-     "triangles": 3320,
-     "vertices": 1722,
-     "morphs": 0
-    },
-    "Hair": {
-     "triangles": 3678,
-     "vertices": 2984,
-     "morphs": 0
-    },
-    "Teeth": {
-     "triangles": 7120,
-     "vertices": 3868,
-     "morphs": 12
-    },
-    "Tongue": {
-     "triangles": 448,
-     "vertices": 226,
-     "morphs": 13
-    },
-    "Body": {
-     "triangles": 6988,
-     "vertices": 3582,
-     "morphs": 0
-    },
-    "Head": {
-     "triangles": 8828,
-     "vertices": 4441,
-     "morphs": 66
-    }
-   },
-   "morphTargets": [
-    "browDownLeft",
-    "browDownRight",
-    "browInnerUp",
-    "browOuterUpLeft",
-    "browOuterUpRight",
-    "cheekPuff",
-    "cheekSquintLeft",
-    "cheekSquintRight",
-    "eyeBlinkLeft",
-    "eyeBlinkRight",
-    "eyeLookDownLeft",
-    "eyeLookDownRight",
-    "eyeLookInLeft",
-    "eyeLookInRight",
-    "eyeLookOutLeft",
-    "eyeLookOutRight",
-    "eyeLookUpLeft",
-    "eyeLookUpRight",
-    "eyeSquintLeft",
-    "eyeSquintRight",
-    "eyeWideLeft",
-    "eyeWideRight",
-    "jawForward",
-    "jawLeft",
-    "jawOpen",
-    "jawRight",
-    "mouthClose",
-    "mouthDimpleLeft",
-    "mouthDimpleRight",
-    "mouthFrownLeft",
-    "mouthFrownRight",
-    "mouthFunnel",
-    "mouthLeft",
-    "mouthLowerDownLeft",
-    "mouthLowerDownRight",
-    "mouthPressLeft",
-    "mouthPressRight",
-    "mouthPucker",
-    "mouthRight",
-    "mouthRollLower",
-    "mouthRollUpper",
-    "mouthShrugLower",
-    "mouthShrugUpper",
-    "mouthSmileLeft",
-    "mouthSmileRight",
-    "mouthStretchLeft",
-    "mouthStretchRight",
-    "mouthUpperUpLeft",
-    "mouthUpperUpRight",
-    "noseSneerLeft",
-    "noseSneerRight",
-    "tongueOut",
-    "viseme_PP",
-    "viseme_FF",
-    "viseme_TH",
-    "viseme_DD",
-    "viseme_kk",
-    "viseme_CH",
-    "viseme_SS",
-    "viseme_nn",
-    "viseme_RR",
-    "viseme_aa",
-    "viseme_E",
-    "viseme_I",
-    "viseme_O",
-    "viseme_U"
-   ],
-   "morphMeshes": [
-    "Brows",
-    "Lashes",
-    "Teeth",
-    "Tongue",
-    "Head"
-   ],
-   "materials": [
-    "skin",
-    "grandfather_brows",
-    "grandfather_clothes_0",
-    "tint_top",
-    "grandfather_eyes",
-    "grandfather_hair",
-    "grandfather_lashes",
-    "grandfather_shoes",
-    "grandfather_teeth",
-    "grandfather_tongue"
-   ],
-   "textures": 11,
-   "tint": {
-    "top": true,
-    "default": [
-     0.78,
-     0.1,
-     0.12
-    ],
-    "material": "tint_top"
-   },
-   "sources": [
-    {
-     "file": "skins/old_caucasian_male/old_caucasian_male.mhmat",
      "licence": "CC0 1.0",
      "stated_in_file": "",
      "stated_in_pack": "CC0",
@@ -1530,6 +1391,379 @@
      "kind": "Hair"
     },
     {
+     "file": "hair/short04/short04.mhclo",
+     "licence": "CC0 1.0",
+     "stated_in_file": "",
+     "stated_in_pack": "CC0",
+     "author": "makehuman_system",
+     "pack": "makehuman_system_assets",
+     "kind": "Hair"
+    },
+    {
+     "file": "clothes/male_casualsuit06/male_casualsuit06.mhclo",
+     "licence": "CC0 1.0",
+     "stated_in_file": "",
+     "stated_in_pack": "CC0",
+     "author": "makehuman_system",
+     "pack": "makehuman_system_assets",
+     "kind": "Clothes"
+    },
+    {
+     "file": "clothes/shoes02/shoes02.mhclo",
+     "licence": "CC0 1.0",
+     "stated_in_file": "",
+     "stated_in_pack": "CC0",
+     "author": "makehuman_system",
+     "pack": "makehuman_system_assets",
+     "kind": "Clothes"
+    },
+    {
+     "what": "accessories (caps, glasses, facial hair), LOD, teeth reduction, brow thickening",
+     "licence": "made by script in scripts/life/assets/refine.py (this repository), from the CC0 parts above"
+    }
+   ],
+   "licence": "CC0 1.0 (every part; see sources)",
+   "sourceUrl": "https://static.makehumancommunity.org/assets/assetpacks.html",
+   "notes": []
+  },
+  {
+   "id": "father_heavy",
+   "kind": "character",
+   "label": "father, heavier build",
+   "file": "cast/father_heavy.glb",
+   "bytes": 1463812,
+   "triangles": 30584,
+   "bones": 55,
+   "height": 1.785,
+   "hipHeight": 0.9331,
+   "eyes": {
+    "l": [
+     0.0299,
+     -0.1326,
+     1.6448
+    ],
+    "r": [
+     -0.0299,
+     -0.1326,
+     1.6448
+    ]
+   },
+   "meshes": {
+    "Hair2": {
+     "triangles": 2192,
+     "vertices": 2196,
+     "morphs": 0
+    },
+    "Brows": {
+     "triangles": 192,
+     "vertices": 124,
+     "morphs": 31
+    },
+    "Lashes": {
+     "triangles": 368,
+     "vertices": 250,
+     "morphs": 27
+    },
+    "Eyes": {
+     "triangles": 172,
+     "vertices": 96,
+     "morphs": 0
+    },
+    "Clothes": {
+     "triangles": 5996,
+     "vertices": 3195,
+     "morphs": 0
+    },
+    "Shoes": {
+     "triangles": 3320,
+     "vertices": 1722,
+     "morphs": 0
+    },
+    "Hair": {
+     "triangles": 3344,
+     "vertices": 1755,
+     "morphs": 0
+    },
+    "Teeth": {
+     "triangles": 1000,
+     "vertices": 668,
+     "morphs": 12
+    },
+    "Tongue": {
+     "triangles": 448,
+     "vertices": 226,
+     "morphs": 13
+    },
+    "Body": {
+     "triangles": 6920,
+     "vertices": 3571,
+     "morphs": 0
+    },
+    "Head": {
+     "triangles": 8824,
+     "vertices": 4439,
+     "morphs": 66
+    },
+    "Hair_hat": {
+     "triangles": 3344,
+     "vertices": 1755,
+     "morphs": 0
+    },
+    "Acc_beanie": {
+     "triangles": 2212,
+     "vertices": 1108,
+     "morphs": 0
+    },
+    "Acc_cap_flat": {
+     "triangles": 2312,
+     "vertices": 1158,
+     "morphs": 0
+    },
+    "Acc_glasses_round": {
+     "triangles": 792,
+     "vertices": 402,
+     "morphs": 0
+    },
+    "Acc_glasses_square": {
+     "triangles": 792,
+     "vertices": 402,
+     "morphs": 0
+    },
+    "Acc_moustache": {
+     "triangles": 348,
+     "vertices": 248,
+     "morphs": 42
+    },
+    "Acc_beard": {
+     "triangles": 996,
+     "vertices": 639,
+     "morphs": 46
+    }
+   },
+   "morphTargets": [
+    "browDownLeft",
+    "browDownRight",
+    "browInnerUp",
+    "browOuterUpLeft",
+    "browOuterUpRight",
+    "cheekPuff",
+    "cheekSquintLeft",
+    "cheekSquintRight",
+    "eyeBlinkLeft",
+    "eyeBlinkRight",
+    "eyeLookDownLeft",
+    "eyeLookDownRight",
+    "eyeLookInLeft",
+    "eyeLookInRight",
+    "eyeLookOutLeft",
+    "eyeLookOutRight",
+    "eyeLookUpLeft",
+    "eyeLookUpRight",
+    "eyeSquintLeft",
+    "eyeSquintRight",
+    "eyeWideLeft",
+    "eyeWideRight",
+    "jawForward",
+    "jawLeft",
+    "jawOpen",
+    "jawRight",
+    "mouthClose",
+    "mouthDimpleLeft",
+    "mouthDimpleRight",
+    "mouthFrownLeft",
+    "mouthFrownRight",
+    "mouthFunnel",
+    "mouthLeft",
+    "mouthLowerDownLeft",
+    "mouthLowerDownRight",
+    "mouthPressLeft",
+    "mouthPressRight",
+    "mouthPucker",
+    "mouthRight",
+    "mouthRollLower",
+    "mouthRollUpper",
+    "mouthShrugLower",
+    "mouthShrugUpper",
+    "mouthSmileLeft",
+    "mouthSmileRight",
+    "mouthStretchLeft",
+    "mouthStretchRight",
+    "mouthUpperUpLeft",
+    "mouthUpperUpRight",
+    "noseSneerLeft",
+    "noseSneerRight",
+    "tongueOut",
+    "viseme_PP",
+    "viseme_FF",
+    "viseme_TH",
+    "viseme_DD",
+    "viseme_kk",
+    "viseme_CH",
+    "viseme_SS",
+    "viseme_nn",
+    "viseme_RR",
+    "viseme_aa",
+    "viseme_E",
+    "viseme_I",
+    "viseme_O",
+    "viseme_U"
+   ],
+   "morphMeshes": [
+    "Brows",
+    "Lashes",
+    "Teeth",
+    "Tongue",
+    "Head",
+    "Acc_moustache",
+    "Acc_beard"
+   ],
+   "materials": [
+    "acc_beanie",
+    "acc_beard",
+    "acc_cap",
+    "acc_glasses_round",
+    "acc_glasses_square",
+    "acc_moustache",
+    "skin",
+    "father_heavy_brows",
+    "father_heavy_clothes_0",
+    "tint_top",
+    "tint_inner",
+    "father_heavy_eyes",
+    "father_heavy_hair",
+    "father_heavy_hair2",
+    "father_heavy_lashes",
+    "father_heavy_shoes",
+    "father_heavy_teeth",
+    "father_heavy_tongue"
+   ],
+   "textures": 16,
+   "tint": {
+    "top": true,
+    "default": [
+     0.78,
+     0.1,
+     0.12
+    ],
+    "material": "tint_top",
+    "regions": [
+     "tint_top",
+     "tint_inner"
+    ]
+   },
+   "lod1": {
+    "file": "cast/father_heavy-lod1.glb",
+    "bytes": 87524,
+    "triangles": 4052,
+    "materials": 1,
+    "atlas": "512 px WebP, alpha-tested (hair)",
+    "tintMask": "COLOR_0: R = tint_top, G = tint_inner, B = tint_trim (1 = club colour), A = 1"
+   },
+   "teethTriangles": 1000,
+   "restingFace": {
+    "baked": {
+     "mouthSmileLeft": 0.12,
+     "mouthSmileRight": 0.12,
+     "cheekSquintLeft": 0.05,
+     "cheekSquintRight": 0.05,
+     "browInnerUp": 0.06
+    },
+    "recommendedIdleMix": {},
+    "note": "already folded into the base shape; leave every morph at 0 for the resting face"
+   },
+   "optionalMeshes": [
+    "Hair2",
+    "Hair_hat",
+    "Acc_beanie",
+    "Acc_cap_flat",
+    "Acc_glasses_round",
+    "Acc_glasses_square",
+    "Acc_moustache",
+    "Acc_beard"
+   ],
+   "accessories": {
+    "hair_hat": "Hair_hat",
+    "beanie": "Acc_beanie",
+    "cap_flat": "Acc_cap_flat",
+    "glasses_round": "Acc_glasses_round",
+    "glasses_square": "Acc_glasses_square",
+    "moustache": "Acc_moustache",
+    "beard": "Acc_beard"
+   },
+   "sources": [
+    {
+     "file": "skins/middleage_african_male/middleage_african_male.mhmat",
+     "licence": "CC0 1.0",
+     "stated_in_file": "",
+     "stated_in_pack": "CC0",
+     "author": "makehuman_system",
+     "pack": "makehuman_system_assets",
+     "kind": "Skin"
+    },
+    {
+     "file": "eyes/low-poly/low-poly.mhclo",
+     "licence": "CC0 1.0",
+     "stated_in_file": "",
+     "stated_in_pack": "CC0",
+     "author": "makehuman_system",
+     "pack": "makehuman_system_assets",
+     "kind": "Eyes"
+    },
+    {
+     "file": "eyebrows/eyebrow002/eyebrow002.mhclo",
+     "licence": "CC0 1.0",
+     "stated_in_file": "",
+     "stated_in_pack": "CC0",
+     "author": "makehuman_system",
+     "pack": "makehuman_system_assets",
+     "kind": "Eyebrows"
+    },
+    {
+     "file": "eyelashes/eyelashes01/eyelashes01.mhclo",
+     "licence": "CC0 1.0",
+     "stated_in_file": "",
+     "stated_in_pack": "CC0",
+     "author": "makehuman_system",
+     "pack": "makehuman_system_assets",
+     "kind": "Eyelashes"
+    },
+    {
+     "file": "teeth/teeth_base/teeth_base.mhclo",
+     "licence": "CC0 1.0",
+     "stated_in_file": "",
+     "stated_in_pack": "CC0",
+     "author": "makehuman_system",
+     "pack": "makehuman_system_assets",
+     "kind": "Teeth"
+    },
+    {
+     "file": "tongue/tongue01/tongue01.mhclo",
+     "licence": "CC0 1.0",
+     "stated_in_file": "",
+     "stated_in_pack": "CC0",
+     "author": "makehuman_system",
+     "pack": "makehuman_system_assets",
+     "kind": "Tongue"
+    },
+    {
+     "file": "hair/short02/short02.mhclo",
+     "licence": "CC0 1.0",
+     "stated_in_file": "",
+     "stated_in_pack": "CC0",
+     "author": "makehuman_system",
+     "pack": "makehuman_system_assets",
+     "kind": "Hair"
+    },
+    {
+     "file": "hair/afro01/afro01.mhclo",
+     "licence": "CC0 1.0",
+     "stated_in_file": "",
+     "stated_in_pack": "CC0",
+     "author": "makehuman_system",
+     "pack": "makehuman_system_assets",
+     "kind": "Hair"
+    },
+    {
      "file": "clothes/male_casualsuit05/male_casualsuit05.mhclo",
      "licence": "CC0 1.0",
      "stated_in_file": "",
@@ -1539,13 +1773,17 @@
      "kind": "Clothes"
     },
     {
-     "file": "clothes/shoes01/shoes01.mhclo",
+     "file": "clothes/shoes04/shoes04.mhclo",
      "licence": "CC0 1.0",
      "stated_in_file": "",
      "stated_in_pack": "CC0",
      "author": "makehuman_system",
      "pack": "makehuman_system_assets",
      "kind": "Clothes"
+    },
+    {
+     "what": "accessories (caps, glasses, facial hair), LOD, teeth reduction, brow thickening",
+     "licence": "made by script in scripts/life/assets/refine.py (this repository), from the CC0 parts above"
     }
    ],
    "licence": "CC0 1.0 (every part; see sources)",
@@ -1553,46 +1791,41 @@
    "notes": []
   },
   {
-   "id": "grandmother",
+   "id": "girl",
    "kind": "character",
-   "label": "older woman, about 70",
-   "file": "cast/grandmother.glb",
-   "bytes": 1093932,
-   "triangles": 36086,
+   "label": "girl, about 10",
+   "file": "cast/girl.glb",
+   "bytes": 1577812,
+   "triangles": 36032,
    "bones": 55,
-   "height": 1.558,
-   "hipHeight": 0.7904,
+   "height": 1.3096,
+   "hipHeight": 0.6526,
    "eyes": {
     "l": [
-     0.0283,
-     -0.1392,
-     1.445
+     0.0259,
+     -0.0936,
+     1.1728
     ],
     "r": [
-     -0.0283,
-     -0.1392,
-     1.445
+     -0.0259,
+     -0.0936,
+     1.1728
     ]
    },
    "meshes": {
-    "Hair": {
-     "triangles": 2248,
-     "vertices": 1653,
-     "morphs": 0
-    },
     "Brows": {
      "triangles": 192,
      "vertices": 124,
-     "morphs": 17
+     "morphs": 42
     },
     "Lashes": {
      "triangles": 368,
      "vertices": 250,
      "morphs": 27
     },
-    "Clothes": {
-     "triangles": 4192,
-     "vertices": 2205,
+    "Hair": {
+     "triangles": 4108,
+     "vertices": 3239,
      "morphs": 0
     },
     "Eyes": {
@@ -1601,14 +1834,24 @@
      "morphs": 0
     },
     "Shoes": {
-     "triangles": 4128,
-     "vertices": 2222,
+     "triangles": 3064,
+     "vertices": 1594,
      "morphs": 0
     },
     "Teeth": {
-     "triangles": 7120,
-     "vertices": 3868,
+     "triangles": 1000,
+     "vertices": 672,
      "morphs": 12
+    },
+    "Clothes": {
+     "triangles": 2700,
+     "vertices": 1391,
+     "morphs": 0
+    },
+    "Clothes2": {
+     "triangles": 5576,
+     "vertices": 2856,
+     "morphs": 0
     },
     "Tongue": {
      "triangles": 448,
@@ -1616,14 +1859,39 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 8498,
-     "vertices": 4347,
+     "triangles": 9700,
+     "vertices": 4997,
      "morphs": 0
     },
     "Head": {
-     "triangles": 8720,
-     "vertices": 4385,
+     "triangles": 8704,
+     "vertices": 4380,
      "morphs": 66
+    },
+    "Hair_hat": {
+     "triangles": 4108,
+     "vertices": 3239,
+     "morphs": 0
+    },
+    "Acc_beanie": {
+     "triangles": 2348,
+     "vertices": 1176,
+     "morphs": 0
+    },
+    "Acc_cap_flat": {
+     "triangles": 2456,
+     "vertices": 1230,
+     "morphs": 0
+    },
+    "Acc_glasses_round": {
+     "triangles": 792,
+     "vertices": 402,
+     "morphs": 0
+    },
+    "Acc_glasses_square": {
+     "triangles": 792,
+     "vertices": 402,
+     "morphs": 0
     }
    },
    "morphTargets": [
@@ -1702,18 +1970,23 @@
     "Head"
    ],
    "materials": [
+    "acc_beanie",
+    "acc_cap",
+    "acc_glasses_round",
+    "acc_glasses_square",
     "skin",
-    "grandmother_brows",
-    "grandmother_clothes_0",
+    "girl_brows",
     "tint_top",
-    "grandmother_eyes",
-    "grandmother_hair",
-    "grandmother_lashes",
-    "grandmother_shoes",
-    "grandmother_teeth",
-    "grandmother_tongue"
+    "tint_trim",
+    "girl_clothes2",
+    "girl_eyes",
+    "girl_hair",
+    "girl_lashes",
+    "girl_shoes",
+    "girl_teeth",
+    "girl_tongue"
    ],
-   "textures": 10,
+   "textures": 12,
    "tint": {
     "top": true,
     "default": [
@@ -1721,7 +1994,754 @@
      0.1,
      0.12
     ],
-    "material": "tint_top"
+    "material": "tint_top",
+    "regions": [
+     "tint_top",
+     "tint_trim"
+    ]
+   },
+   "lod1": {
+    "file": "cast/girl-lod1.glb",
+    "bytes": 101252,
+    "triangles": 4551,
+    "materials": 1,
+    "atlas": "512 px WebP, alpha-tested (hair)",
+    "tintMask": "COLOR_0: R = tint_top, G = tint_inner, B = tint_trim (1 = club colour), A = 1"
+   },
+   "teethTriangles": 1000,
+   "restingFace": {
+    "baked": {
+     "mouthSmileLeft": 0.08,
+     "mouthSmileRight": 0.08,
+     "cheekSquintLeft": 0.03,
+     "cheekSquintRight": 0.03
+    },
+    "recommendedIdleMix": {},
+    "note": "already folded into the base shape; leave every morph at 0 for the resting face"
+   },
+   "optionalMeshes": [
+    "Hair_hat",
+    "Acc_beanie",
+    "Acc_cap_flat",
+    "Acc_glasses_round",
+    "Acc_glasses_square"
+   ],
+   "accessories": {
+    "hair_hat": "Hair_hat",
+    "beanie": "Acc_beanie",
+    "cap_flat": "Acc_cap_flat",
+    "glasses_round": "Acc_glasses_round",
+    "glasses_square": "Acc_glasses_square"
+   },
+   "sources": [
+    {
+     "file": "skins/young_caucasian_male/young_caucasian_male.mhmat",
+     "licence": "CC0 1.0",
+     "stated_in_file": "",
+     "stated_in_pack": "CC0",
+     "author": "makehuman_system",
+     "pack": "makehuman_system_assets",
+     "kind": "Skin"
+    },
+    {
+     "file": "eyes/low-poly/low-poly.mhclo",
+     "licence": "CC0 1.0",
+     "stated_in_file": "",
+     "stated_in_pack": "CC0",
+     "author": "makehuman_system",
+     "pack": "makehuman_system_assets",
+     "kind": "Eyes"
+    },
+    {
+     "file": "eyebrows/eyebrow001/eyebrow001.mhclo",
+     "licence": "CC0 1.0",
+     "stated_in_file": "",
+     "stated_in_pack": "CC0",
+     "author": "makehuman_system",
+     "pack": "makehuman_system_assets",
+     "kind": "Eyebrows"
+    },
+    {
+     "file": "eyelashes/eyelashes01/eyelashes01.mhclo",
+     "licence": "CC0 1.0",
+     "stated_in_file": "",
+     "stated_in_pack": "CC0",
+     "author": "makehuman_system",
+     "pack": "makehuman_system_assets",
+     "kind": "Eyelashes"
+    },
+    {
+     "file": "teeth/teeth_base/teeth_base.mhclo",
+     "licence": "CC0 1.0",
+     "stated_in_file": "",
+     "stated_in_pack": "CC0",
+     "author": "makehuman_system",
+     "pack": "makehuman_system_assets",
+     "kind": "Teeth"
+    },
+    {
+     "file": "tongue/tongue01/tongue01.mhclo",
+     "licence": "CC0 1.0",
+     "stated_in_file": "",
+     "stated_in_pack": "CC0",
+     "author": "makehuman_system",
+     "pack": "makehuman_system_assets",
+     "kind": "Tongue"
+    },
+    {
+     "file": "hair/long01/long01.mhclo",
+     "licence": "CC0 1.0",
+     "stated_in_file": "",
+     "stated_in_pack": "CC0",
+     "author": "makehuman_system",
+     "pack": "makehuman_system_assets",
+     "kind": "Hair"
+    },
+    {
+     "file": "clothes/toigo_basic_tucked_t-shirt/toigo_basic_tucked_t-shirt.mhclo",
+     "licence": "CC0 1.0",
+     "stated_in_file": "CC0",
+     "stated_in_pack": "CC0",
+     "author": "MRT",
+     "pack": "shirts01",
+     "kind": "Clothes"
+    },
+    {
+     "file": "clothes/toigo_skirt_with_lace_ruffle/toigo_skirt_with_lace_ruffle.mhclo",
+     "licence": "CC0 1.0",
+     "stated_in_file": "CC0",
+     "stated_in_pack": "CC0",
+     "author": "MRT",
+     "pack": "skirts01",
+     "kind": "Clothes"
+    },
+    {
+     "file": "clothes/shoes05/shoes05.mhclo",
+     "licence": "CC0 1.0",
+     "stated_in_file": "",
+     "stated_in_pack": "CC0",
+     "author": "makehuman_system",
+     "pack": "makehuman_system_assets",
+     "kind": "Clothes"
+    },
+    {
+     "what": "accessories (caps, glasses, facial hair), LOD, teeth reduction, brow thickening",
+     "licence": "made by script in scripts/life/assets/refine.py (this repository), from the CC0 parts above"
+    }
+   ],
+   "licence": "CC0 1.0 (every part; see sources)",
+   "sourceUrl": "https://static.makehumancommunity.org/assets/assetpacks.html",
+   "notes": []
+  },
+  {
+   "id": "grandfather",
+   "kind": "character",
+   "label": "older man, about 70",
+   "file": "cast/grandfather.glb",
+   "bytes": 1606156,
+   "triangles": 28290,
+   "bones": 55,
+   "height": 1.7172,
+   "hipHeight": 0.8968,
+   "eyes": {
+    "l": [
+     0.0293,
+     -0.1292,
+     1.5884
+    ],
+    "r": [
+     -0.0293,
+     -0.1292,
+     1.5884
+    ]
+   },
+   "meshes": {
+    "Brows": {
+     "triangles": 192,
+     "vertices": 124,
+     "morphs": 31
+    },
+    "Lashes": {
+     "triangles": 368,
+     "vertices": 250,
+     "morphs": 27
+    },
+    "Eyes": {
+     "triangles": 172,
+     "vertices": 96,
+     "morphs": 0
+    },
+    "Clothes": {
+     "triangles": 5996,
+     "vertices": 3195,
+     "morphs": 0
+    },
+    "Shoes": {
+     "triangles": 3320,
+     "vertices": 1722,
+     "morphs": 0
+    },
+    "Hair2": {
+     "triangles": 3678,
+     "vertices": 2984,
+     "morphs": 0
+    },
+    "Hair": {
+     "triangles": 1050,
+     "vertices": 865,
+     "morphs": 0
+    },
+    "Teeth": {
+     "triangles": 1000,
+     "vertices": 671,
+     "morphs": 12
+    },
+    "Tongue": {
+     "triangles": 448,
+     "vertices": 226,
+     "morphs": 13
+    },
+    "Body": {
+     "triangles": 6916,
+     "vertices": 3569,
+     "morphs": 0
+    },
+    "Head": {
+     "triangles": 8828,
+     "vertices": 4441,
+     "morphs": 66
+    },
+    "Hair_hat": {
+     "triangles": 1050,
+     "vertices": 865,
+     "morphs": 0
+    },
+    "Acc_beanie": {
+     "triangles": 2212,
+     "vertices": 1108,
+     "morphs": 0
+    },
+    "Acc_cap_flat": {
+     "triangles": 2296,
+     "vertices": 1150,
+     "morphs": 0
+    },
+    "Acc_glasses_round": {
+     "triangles": 792,
+     "vertices": 402,
+     "morphs": 0
+    },
+    "Acc_glasses_square": {
+     "triangles": 792,
+     "vertices": 402,
+     "morphs": 0
+    },
+    "Acc_moustache": {
+     "triangles": 284,
+     "vertices": 211,
+     "morphs": 42
+    },
+    "Acc_beard": {
+     "triangles": 912,
+     "vertices": 590,
+     "morphs": 46
+    }
+   },
+   "morphTargets": [
+    "browDownLeft",
+    "browDownRight",
+    "browInnerUp",
+    "browOuterUpLeft",
+    "browOuterUpRight",
+    "cheekPuff",
+    "cheekSquintLeft",
+    "cheekSquintRight",
+    "eyeBlinkLeft",
+    "eyeBlinkRight",
+    "eyeLookDownLeft",
+    "eyeLookDownRight",
+    "eyeLookInLeft",
+    "eyeLookInRight",
+    "eyeLookOutLeft",
+    "eyeLookOutRight",
+    "eyeLookUpLeft",
+    "eyeLookUpRight",
+    "eyeSquintLeft",
+    "eyeSquintRight",
+    "eyeWideLeft",
+    "eyeWideRight",
+    "jawForward",
+    "jawLeft",
+    "jawOpen",
+    "jawRight",
+    "mouthClose",
+    "mouthDimpleLeft",
+    "mouthDimpleRight",
+    "mouthFrownLeft",
+    "mouthFrownRight",
+    "mouthFunnel",
+    "mouthLeft",
+    "mouthLowerDownLeft",
+    "mouthLowerDownRight",
+    "mouthPressLeft",
+    "mouthPressRight",
+    "mouthPucker",
+    "mouthRight",
+    "mouthRollLower",
+    "mouthRollUpper",
+    "mouthShrugLower",
+    "mouthShrugUpper",
+    "mouthSmileLeft",
+    "mouthSmileRight",
+    "mouthStretchLeft",
+    "mouthStretchRight",
+    "mouthUpperUpLeft",
+    "mouthUpperUpRight",
+    "noseSneerLeft",
+    "noseSneerRight",
+    "tongueOut",
+    "viseme_PP",
+    "viseme_FF",
+    "viseme_TH",
+    "viseme_DD",
+    "viseme_kk",
+    "viseme_CH",
+    "viseme_SS",
+    "viseme_nn",
+    "viseme_RR",
+    "viseme_aa",
+    "viseme_E",
+    "viseme_I",
+    "viseme_O",
+    "viseme_U"
+   ],
+   "morphMeshes": [
+    "Brows",
+    "Lashes",
+    "Teeth",
+    "Tongue",
+    "Head",
+    "Acc_moustache",
+    "Acc_beard"
+   ],
+   "materials": [
+    "acc_beanie",
+    "acc_beard",
+    "acc_cap",
+    "acc_glasses_round",
+    "acc_glasses_square",
+    "acc_moustache",
+    "skin",
+    "grandfather_brows",
+    "grandfather_clothes_0",
+    "tint_top",
+    "tint_inner",
+    "grandfather_eyes",
+    "grandfather_hair",
+    "grandfather_hair2",
+    "grandfather_lashes",
+    "grandfather_shoes",
+    "grandfather_teeth",
+    "grandfather_tongue"
+   ],
+   "textures": 16,
+   "tint": {
+    "top": true,
+    "default": [
+     0.78,
+     0.1,
+     0.12
+    ],
+    "material": "tint_top",
+    "regions": [
+     "tint_top",
+     "tint_inner"
+    ]
+   },
+   "lod1": {
+    "file": "cast/grandfather-lod1.glb",
+    "bytes": 102392,
+    "triangles": 4053,
+    "materials": 1,
+    "atlas": "512 px WebP, alpha-tested (hair)",
+    "tintMask": "COLOR_0: R = tint_top, G = tint_inner, B = tint_trim (1 = club colour), A = 1"
+   },
+   "teethTriangles": 1000,
+   "restingFace": {
+    "baked": {
+     "mouthSmileLeft": 0.12,
+     "mouthSmileRight": 0.12,
+     "cheekSquintLeft": 0.05,
+     "cheekSquintRight": 0.05,
+     "browInnerUp": 0.06
+    },
+    "recommendedIdleMix": {},
+    "note": "already folded into the base shape; leave every morph at 0 for the resting face"
+   },
+   "optionalMeshes": [
+    "Hair2",
+    "Hair_hat",
+    "Acc_beanie",
+    "Acc_cap_flat",
+    "Acc_glasses_round",
+    "Acc_glasses_square",
+    "Acc_moustache",
+    "Acc_beard"
+   ],
+   "accessories": {
+    "hair_hat": "Hair_hat",
+    "beanie": "Acc_beanie",
+    "cap_flat": "Acc_cap_flat",
+    "glasses_round": "Acc_glasses_round",
+    "glasses_square": "Acc_glasses_square",
+    "moustache": "Acc_moustache",
+    "beard": "Acc_beard"
+   },
+   "sources": [
+    {
+     "file": "skins/old_caucasian_male/old_caucasian_male.mhmat",
+     "licence": "CC0 1.0",
+     "stated_in_file": "",
+     "stated_in_pack": "CC0",
+     "author": "makehuman_system",
+     "pack": "makehuman_system_assets",
+     "kind": "Skin"
+    },
+    {
+     "file": "eyes/low-poly/low-poly.mhclo",
+     "licence": "CC0 1.0",
+     "stated_in_file": "",
+     "stated_in_pack": "CC0",
+     "author": "makehuman_system",
+     "pack": "makehuman_system_assets",
+     "kind": "Eyes"
+    },
+    {
+     "file": "eyebrows/eyebrow002/eyebrow002.mhclo",
+     "licence": "CC0 1.0",
+     "stated_in_file": "",
+     "stated_in_pack": "CC0",
+     "author": "makehuman_system",
+     "pack": "makehuman_system_assets",
+     "kind": "Eyebrows"
+    },
+    {
+     "file": "eyelashes/eyelashes01/eyelashes01.mhclo",
+     "licence": "CC0 1.0",
+     "stated_in_file": "",
+     "stated_in_pack": "CC0",
+     "author": "makehuman_system",
+     "pack": "makehuman_system_assets",
+     "kind": "Eyelashes"
+    },
+    {
+     "file": "teeth/teeth_base/teeth_base.mhclo",
+     "licence": "CC0 1.0",
+     "stated_in_file": "",
+     "stated_in_pack": "CC0",
+     "author": "makehuman_system",
+     "pack": "makehuman_system_assets",
+     "kind": "Teeth"
+    },
+    {
+     "file": "tongue/tongue01/tongue01.mhclo",
+     "licence": "CC0 1.0",
+     "stated_in_file": "",
+     "stated_in_pack": "CC0",
+     "author": "makehuman_system",
+     "pack": "makehuman_system_assets",
+     "kind": "Tongue"
+    },
+    {
+     "file": "hair/short04/short04.mhclo",
+     "licence": "CC0 1.0",
+     "stated_in_file": "",
+     "stated_in_pack": "CC0",
+     "author": "makehuman_system",
+     "pack": "makehuman_system_assets",
+     "kind": "Hair"
+    },
+    {
+     "file": "hair/short01/short01.mhclo",
+     "licence": "CC0 1.0",
+     "stated_in_file": "",
+     "stated_in_pack": "CC0",
+     "author": "makehuman_system",
+     "pack": "makehuman_system_assets",
+     "kind": "Hair"
+    },
+    {
+     "file": "clothes/male_casualsuit05/male_casualsuit05.mhclo",
+     "licence": "CC0 1.0",
+     "stated_in_file": "",
+     "stated_in_pack": "CC0",
+     "author": "makehuman_system",
+     "pack": "makehuman_system_assets",
+     "kind": "Clothes"
+    },
+    {
+     "file": "clothes/shoes01/shoes01.mhclo",
+     "licence": "CC0 1.0",
+     "stated_in_file": "",
+     "stated_in_pack": "CC0",
+     "author": "makehuman_system",
+     "pack": "makehuman_system_assets",
+     "kind": "Clothes"
+    },
+    {
+     "what": "accessories (caps, glasses, facial hair), LOD, teeth reduction, brow thickening",
+     "licence": "made by script in scripts/life/assets/refine.py (this repository), from the CC0 parts above"
+    }
+   ],
+   "licence": "CC0 1.0 (every part; see sources)",
+   "sourceUrl": "https://static.makehumancommunity.org/assets/assetpacks.html",
+   "notes": []
+  },
+  {
+   "id": "grandmother",
+   "kind": "character",
+   "label": "older woman, about 70",
+   "file": "cast/grandmother.glb",
+   "bytes": 1248248,
+   "triangles": 29538,
+   "bones": 55,
+   "height": 1.5697,
+   "hipHeight": 0.7904,
+   "eyes": {
+    "l": [
+     0.0283,
+     -0.1392,
+     1.445
+    ],
+    "r": [
+     -0.0283,
+     -0.1392,
+     1.445
+    ]
+   },
+   "meshes": {
+    "Hair": {
+     "triangles": 2248,
+     "vertices": 1653,
+     "morphs": 0
+    },
+    "Brows": {
+     "triangles": 192,
+     "vertices": 124,
+     "morphs": 17
+    },
+    "Lashes": {
+     "triangles": 368,
+     "vertices": 250,
+     "morphs": 27
+    },
+    "Clothes": {
+     "triangles": 4192,
+     "vertices": 2205,
+     "morphs": 0
+    },
+    "Eyes": {
+     "triangles": 172,
+     "vertices": 96,
+     "morphs": 0
+    },
+    "Shoes": {
+     "triangles": 4128,
+     "vertices": 2222,
+     "morphs": 0
+    },
+    "Teeth": {
+     "triangles": 1000,
+     "vertices": 670,
+     "morphs": 12
+    },
+    "Hair2": {
+     "triangles": 2856,
+     "vertices": 1509,
+     "morphs": 0
+    },
+    "Tongue": {
+     "triangles": 448,
+     "vertices": 226,
+     "morphs": 13
+    },
+    "Body": {
+     "triangles": 8070,
+     "vertices": 4146,
+     "morphs": 0
+    },
+    "Head": {
+     "triangles": 8720,
+     "vertices": 4385,
+     "morphs": 66
+    },
+    "Hair_hat": {
+     "triangles": 2248,
+     "vertices": 1653,
+     "morphs": 0
+    },
+    "Acc_beanie": {
+     "triangles": 2244,
+     "vertices": 1124,
+     "morphs": 0
+    },
+    "Acc_cap_flat": {
+     "triangles": 2372,
+     "vertices": 1188,
+     "morphs": 0
+    },
+    "Acc_glasses_round": {
+     "triangles": 792,
+     "vertices": 402,
+     "morphs": 0
+    },
+    "Acc_glasses_square": {
+     "triangles": 792,
+     "vertices": 402,
+     "morphs": 0
+    }
+   },
+   "morphTargets": [
+    "browDownLeft",
+    "browDownRight",
+    "browInnerUp",
+    "browOuterUpLeft",
+    "browOuterUpRight",
+    "cheekPuff",
+    "cheekSquintLeft",
+    "cheekSquintRight",
+    "eyeBlinkLeft",
+    "eyeBlinkRight",
+    "eyeLookDownLeft",
+    "eyeLookDownRight",
+    "eyeLookInLeft",
+    "eyeLookInRight",
+    "eyeLookOutLeft",
+    "eyeLookOutRight",
+    "eyeLookUpLeft",
+    "eyeLookUpRight",
+    "eyeSquintLeft",
+    "eyeSquintRight",
+    "eyeWideLeft",
+    "eyeWideRight",
+    "jawForward",
+    "jawLeft",
+    "jawOpen",
+    "jawRight",
+    "mouthClose",
+    "mouthDimpleLeft",
+    "mouthDimpleRight",
+    "mouthFrownLeft",
+    "mouthFrownRight",
+    "mouthFunnel",
+    "mouthLeft",
+    "mouthLowerDownLeft",
+    "mouthLowerDownRight",
+    "mouthPressLeft",
+    "mouthPressRight",
+    "mouthPucker",
+    "mouthRight",
+    "mouthRollLower",
+    "mouthRollUpper",
+    "mouthShrugLower",
+    "mouthShrugUpper",
+    "mouthSmileLeft",
+    "mouthSmileRight",
+    "mouthStretchLeft",
+    "mouthStretchRight",
+    "mouthUpperUpLeft",
+    "mouthUpperUpRight",
+    "noseSneerLeft",
+    "noseSneerRight",
+    "tongueOut",
+    "viseme_PP",
+    "viseme_FF",
+    "viseme_TH",
+    "viseme_DD",
+    "viseme_kk",
+    "viseme_CH",
+    "viseme_SS",
+    "viseme_nn",
+    "viseme_RR",
+    "viseme_aa",
+    "viseme_E",
+    "viseme_I",
+    "viseme_O",
+    "viseme_U"
+   ],
+   "morphMeshes": [
+    "Brows",
+    "Lashes",
+    "Teeth",
+    "Tongue",
+    "Head"
+   ],
+   "materials": [
+    "acc_beanie",
+    "acc_cap",
+    "acc_glasses_round",
+    "acc_glasses_square",
+    "skin",
+    "grandmother_brows",
+    "grandmother_clothes_0",
+    "tint_top",
+    "tint_trim",
+    "grandmother_eyes",
+    "grandmother_hair",
+    "grandmother_hair2",
+    "grandmother_lashes",
+    "grandmother_shoes",
+    "grandmother_teeth",
+    "grandmother_tongue"
+   ],
+   "textures": 14,
+   "tint": {
+    "top": true,
+    "default": [
+     0.78,
+     0.1,
+     0.12
+    ],
+    "material": "tint_top",
+    "regions": [
+     "tint_top",
+     "tint_trim"
+    ]
+   },
+   "lod1": {
+    "file": "cast/grandmother-lod1.glb",
+    "bytes": 95724,
+    "triangles": 4053,
+    "materials": 1,
+    "atlas": "512 px WebP, alpha-tested (hair)",
+    "tintMask": "COLOR_0: R = tint_top, G = tint_inner, B = tint_trim (1 = club colour), A = 1"
+   },
+   "teethTriangles": 1000,
+   "restingFace": {
+    "baked": {
+     "mouthSmileLeft": 0.12,
+     "mouthSmileRight": 0.12,
+     "cheekSquintLeft": 0.05,
+     "cheekSquintRight": 0.05,
+     "browInnerUp": 0.06
+    },
+    "recommendedIdleMix": {},
+    "note": "already folded into the base shape; leave every morph at 0 for the resting face"
+   },
+   "optionalMeshes": [
+    "Hair2",
+    "Hair_hat",
+    "Acc_beanie",
+    "Acc_cap_flat",
+    "Acc_glasses_round",
+    "Acc_glasses_square"
+   ],
+   "accessories": {
+    "hair_hat": "Hair_hat",
+    "beanie": "Acc_beanie",
+    "cap_flat": "Acc_cap_flat",
+    "glasses_round": "Acc_glasses_round",
+    "glasses_square": "Acc_glasses_square"
    },
    "sources": [
     {
@@ -1788,6 +2808,15 @@
      "kind": "Hair"
     },
     {
+     "file": "hair/toigo_inverted_bob/toigo_inverted_bob.mhclo",
+     "licence": "CC0 1.0",
+     "stated_in_file": "CC0",
+     "stated_in_pack": "CC0",
+     "author": "MRT",
+     "pack": "hair01",
+     "kind": "Hair"
+    },
+    {
      "file": "clothes/female_elegantsuit01/female_elegantsuit01.mhclo",
      "licence": "CC0 1.0",
      "stated_in_file": "",
@@ -1804,6 +2833,10 @@
      "author": "makehuman_system",
      "pack": "makehuman_system_assets",
      "kind": "Clothes"
+    },
+    {
+     "what": "accessories (caps, glasses, facial hair), LOD, teeth reduction, brow thickening",
+     "licence": "made by script in scripts/life/assets/refine.py (this repository), from the CC0 parts above"
     }
    ],
    "licence": "CC0 1.0 (every part; see sources)",
@@ -1815,10 +2848,10 @@
    "kind": "character",
    "label": "mother, about 38",
    "file": "cast/mother.glb",
-   "bytes": 1151616,
-   "triangles": 41086,
+   "bytes": 1395040,
+   "triangles": 31637,
    "bones": 55,
-   "height": 1.6182,
+   "height": 1.6322,
    "hipHeight": 0.8192,
    "eyes": {
     "l": [
@@ -1833,7 +2866,7 @@
     ]
    },
    "meshes": {
-    "Hair": {
+    "Hair2": {
      "triangles": 8474,
      "vertices": 5203,
      "morphs": 0
@@ -1858,14 +2891,19 @@
      "vertices": 96,
      "morphs": 0
     },
+    "Hair": {
+     "triangles": 5352,
+     "vertices": 3718,
+     "morphs": 0
+    },
     "Shoes": {
      "triangles": 3064,
      "vertices": 1594,
      "morphs": 0
     },
     "Teeth": {
-     "triangles": 7120,
-     "vertices": 3868,
+     "triangles": 999,
+     "vertices": 672,
      "morphs": 12
     },
     "Tongue": {
@@ -1874,14 +2912,39 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 8300,
-     "vertices": 4219,
+     "triangles": 8094,
+     "vertices": 4115,
      "morphs": 0
     },
     "Head": {
      "triangles": 8712,
      "vertices": 4383,
      "morphs": 66
+    },
+    "Hair_hat": {
+     "triangles": 5352,
+     "vertices": 3718,
+     "morphs": 0
+    },
+    "Acc_beanie": {
+     "triangles": 2236,
+     "vertices": 1120,
+     "morphs": 0
+    },
+    "Acc_cap_flat": {
+     "triangles": 2372,
+     "vertices": 1188,
+     "morphs": 0
+    },
+    "Acc_glasses_round": {
+     "triangles": 792,
+     "vertices": 402,
+     "morphs": 0
+    },
+    "Acc_glasses_square": {
+     "triangles": 792,
+     "vertices": 402,
+     "morphs": 0
     }
    },
    "morphTargets": [
@@ -1960,18 +3023,24 @@
     "Head"
    ],
    "materials": [
+    "acc_beanie",
+    "acc_cap",
+    "acc_glasses_round",
+    "acc_glasses_square",
     "skin",
     "mother_brows",
     "mother_clothes_0",
     "tint_top",
+    "tint_trim",
     "mother_eyes",
     "mother_hair",
+    "mother_hair2",
     "mother_lashes",
     "mother_shoes",
     "mother_teeth",
     "mother_tongue"
    ],
-   "textures": 10,
+   "textures": 13,
    "tint": {
     "top": true,
     "default": [
@@ -1979,7 +3048,46 @@
      0.1,
      0.12
     ],
-    "material": "tint_top"
+    "material": "tint_top",
+    "regions": [
+     "tint_top",
+     "tint_trim"
+    ]
+   },
+   "lod1": {
+    "file": "cast/mother-lod1.glb",
+    "bytes": 100056,
+    "triangles": 4053,
+    "materials": 1,
+    "atlas": "512 px WebP, alpha-tested (hair)",
+    "tintMask": "COLOR_0: R = tint_top, G = tint_inner, B = tint_trim (1 = club colour), A = 1"
+   },
+   "teethTriangles": 999,
+   "restingFace": {
+    "baked": {
+     "mouthSmileLeft": 0.12,
+     "mouthSmileRight": 0.12,
+     "cheekSquintLeft": 0.05,
+     "cheekSquintRight": 0.05,
+     "browInnerUp": 0.06
+    },
+    "recommendedIdleMix": {},
+    "note": "already folded into the base shape; leave every morph at 0 for the resting face"
+   },
+   "optionalMeshes": [
+    "Hair2",
+    "Hair_hat",
+    "Acc_beanie",
+    "Acc_cap_flat",
+    "Acc_glasses_round",
+    "Acc_glasses_square"
+   ],
+   "accessories": {
+    "hair_hat": "Hair_hat",
+    "beanie": "Acc_beanie",
+    "cap_flat": "Acc_cap_flat",
+    "glasses_round": "Acc_glasses_round",
+    "glasses_square": "Acc_glasses_square"
    },
    "sources": [
     {
@@ -2037,6 +3145,15 @@
      "kind": "Tongue"
     },
     {
+     "file": "hair/ponytail01/ponytail01.mhclo",
+     "licence": "CC0 1.0",
+     "stated_in_file": "",
+     "stated_in_pack": "CC0",
+     "author": "makehuman_system",
+     "pack": "makehuman_system_assets",
+     "kind": "Hair"
+    },
+    {
      "file": "hair/bob01/bob01.mhclo",
      "licence": "CC0 1.0",
      "stated_in_file": "",
@@ -2062,6 +3179,10 @@
      "author": "makehuman_system",
      "pack": "makehuman_system_assets",
      "kind": "Clothes"
+    },
+    {
+     "what": "accessories (caps, glasses, facial hair), LOD, teeth reduction, brow thickening",
+     "licence": "made by script in scripts/life/assets/refine.py (this repository), from the CC0 parts above"
     }
    ],
    "licence": "CC0 1.0 (every part; see sources)",
@@ -2073,21 +3194,21 @@
    "kind": "character",
    "label": "mother, fuller build",
    "file": "cast/mother_heavy.glb",
-   "bytes": 1182132,
-   "triangles": 45602,
+   "bytes": 1243796,
+   "triangles": 31844,
    "bones": 55,
-   "height": 1.6085,
-   "hipHeight": 0.8178,
+   "height": 1.6171,
+   "hipHeight": 0.8154,
    "eyes": {
     "l": [
      0.0284,
-     -0.1217,
-     1.495
+     -0.1216,
+     1.4914
     ],
     "r": [
      -0.0284,
-     -0.1217,
-     1.495
+     -0.1216,
+     1.4914
     ]
    },
    "meshes": {
@@ -2101,11 +3222,6 @@
      "vertices": 250,
      "morphs": 27
     },
-    "Hair": {
-     "triangles": 4108,
-     "vertices": 3239,
-     "morphs": 0
-    },
     "Eyes": {
      "triangles": 172,
      "vertices": 96,
@@ -2116,14 +3232,24 @@
      "vertices": 2222,
      "morphs": 0
     },
+    "Hair": {
+     "triangles": 1922,
+     "vertices": 1011,
+     "morphs": 0
+    },
     "Teeth": {
-     "triangles": 7120,
-     "vertices": 3868,
+     "triangles": 1000,
+     "vertices": 672,
      "morphs": 12
     },
     "Clothes": {
-     "triangles": 4164,
-     "vertices": 2126,
+     "triangles": 2700,
+     "vertices": 1391,
+     "morphs": 0
+    },
+    "Hair2": {
+     "triangles": 2852,
+     "vertices": 1507,
      "morphs": 0
     },
     "Clothes2": {
@@ -2137,14 +3263,39 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 13500,
-     "vertices": 6795,
+     "triangles": 9508,
+     "vertices": 5002,
      "morphs": 0
     },
     "Head": {
-     "triangles": 8728,
-     "vertices": 4391,
+     "triangles": 8732,
+     "vertices": 4393,
      "morphs": 66
+    },
+    "Hair_hat": {
+     "triangles": 1922,
+     "vertices": 1011,
+     "morphs": 0
+    },
+    "Acc_beanie": {
+     "triangles": 2260,
+     "vertices": 1132,
+     "morphs": 0
+    },
+    "Acc_cap_flat": {
+     "triangles": 2380,
+     "vertices": 1192,
+     "morphs": 0
+    },
+    "Acc_glasses_round": {
+     "triangles": 792,
+     "vertices": 402,
+     "morphs": 0
+    },
+    "Acc_glasses_square": {
+     "triangles": 792,
+     "vertices": 402,
+     "morphs": 0
     }
    },
    "morphTargets": [
@@ -2223,18 +3374,24 @@
     "Head"
    ],
    "materials": [
+    "acc_beanie",
+    "acc_cap",
+    "acc_glasses_round",
+    "acc_glasses_square",
     "skin",
     "mother_heavy_brows",
     "tint_top",
+    "tint_trim",
     "mother_heavy_clothes2",
     "mother_heavy_eyes",
     "mother_heavy_hair",
+    "mother_heavy_hair2",
     "mother_heavy_lashes",
     "mother_heavy_shoes",
     "mother_heavy_teeth",
     "mother_heavy_tongue"
    ],
-   "textures": 10,
+   "textures": 14,
    "tint": {
     "top": true,
     "default": [
@@ -2242,7 +3399,46 @@
      0.1,
      0.12
     ],
-    "material": "tint_top"
+    "material": "tint_top",
+    "regions": [
+     "tint_top",
+     "tint_trim"
+    ]
+   },
+   "lod1": {
+    "file": "cast/mother_heavy-lod1.glb",
+    "bytes": 91828,
+    "triangles": 4548,
+    "materials": 1,
+    "atlas": "512 px WebP, alpha-tested (hair)",
+    "tintMask": "COLOR_0: R = tint_top, G = tint_inner, B = tint_trim (1 = club colour), A = 1"
+   },
+   "teethTriangles": 1000,
+   "restingFace": {
+    "baked": {
+     "mouthSmileLeft": 0.12,
+     "mouthSmileRight": 0.12,
+     "cheekSquintLeft": 0.05,
+     "cheekSquintRight": 0.05,
+     "browInnerUp": 0.06
+    },
+    "recommendedIdleMix": {},
+    "note": "already folded into the base shape; leave every morph at 0 for the resting face"
+   },
+   "optionalMeshes": [
+    "Hair2",
+    "Hair_hat",
+    "Acc_beanie",
+    "Acc_cap_flat",
+    "Acc_glasses_round",
+    "Acc_glasses_square"
+   ],
+   "accessories": {
+    "hair_hat": "Hair_hat",
+    "beanie": "Acc_beanie",
+    "cap_flat": "Acc_cap_flat",
+    "glasses_round": "Acc_glasses_round",
+    "glasses_square": "Acc_glasses_square"
    },
    "sources": [
     {
@@ -2300,7 +3496,7 @@
      "kind": "Tongue"
     },
     {
-     "file": "hair/long01/long01.mhclo",
+     "file": "hair/short03/short03.mhclo",
      "licence": "CC0 1.0",
      "stated_in_file": "",
      "stated_in_pack": "CC0",
@@ -2309,7 +3505,16 @@
      "kind": "Hair"
     },
     {
-     "file": "clothes/toigo_fisherman_sweater/toigo_fisherman_sweater.mhclo",
+     "file": "hair/toigo_curled_under_bob/toigo_curled_under_bob.mhclo",
+     "licence": "CC0 1.0",
+     "stated_in_file": "CC0",
+     "stated_in_pack": "CC0",
+     "author": "MRT",
+     "pack": "hair01",
+     "kind": "Hair"
+    },
+    {
+     "file": "clothes/toigo_basic_tucked_t-shirt/toigo_basic_tucked_t-shirt.mhclo",
      "licence": "CC0 1.0",
      "stated_in_file": "CC0",
      "stated_in_pack": "CC0",
@@ -2334,6 +3539,10 @@
      "author": "makehuman_system",
      "pack": "makehuman_system_assets",
      "kind": "Clothes"
+    },
+    {
+     "what": "accessories (caps, glasses, facial hair), LOD, teeth reduction, brow thickening",
+     "licence": "made by script in scripts/life/assets/refine.py (this repository), from the CC0 parts above"
     }
    ],
    "licence": "CC0 1.0 (every part; see sources)",
@@ -2345,10 +3554,10 @@
    "kind": "character",
    "label": "teenage boy, about 15",
    "file": "cast/teen.glb",
-   "bytes": 1085044,
-   "triangles": 33222,
+   "bytes": 1126716,
+   "triangles": 28071,
    "bones": 55,
-   "height": 1.5363,
+   "height": 1.5525,
    "hipHeight": 0.8051,
    "eyes": {
     "l": [
@@ -2389,13 +3598,13 @@
      "morphs": 0
     },
     "Hair": {
-     "triangles": 1922,
-     "vertices": 1011,
+     "triangles": 3344,
+     "vertices": 1755,
      "morphs": 0
     },
     "Teeth": {
-     "triangles": 7120,
-     "vertices": 3868,
+     "triangles": 999,
+     "vertices": 671,
      "morphs": 12
     },
     "Tongue": {
@@ -2404,14 +3613,39 @@
      "morphs": 13
     },
     "Body": {
-     "triangles": 7020,
-     "vertices": 3612,
+     "triangles": 6568,
+     "vertices": 3352,
      "morphs": 0
     },
     "Head": {
      "triangles": 8796,
      "vertices": 4426,
      "morphs": 66
+    },
+    "Hair_hat": {
+     "triangles": 3344,
+     "vertices": 1755,
+     "morphs": 0
+    },
+    "Acc_beanie": {
+     "triangles": 2236,
+     "vertices": 1120,
+     "morphs": 0
+    },
+    "Acc_cap_flat": {
+     "triangles": 2372,
+     "vertices": 1188,
+     "morphs": 0
+    },
+    "Acc_glasses_round": {
+     "triangles": 792,
+     "vertices": 402,
+     "morphs": 0
+    },
+    "Acc_glasses_square": {
+     "triangles": 792,
+     "vertices": 402,
+     "morphs": 0
     }
    },
    "morphTargets": [
@@ -2490,10 +3724,15 @@
     "Head"
    ],
    "materials": [
+    "acc_beanie",
+    "acc_cap",
+    "acc_glasses_round",
+    "acc_glasses_square",
     "skin",
     "teen_brows",
     "teen_clothes_0",
     "tint_top",
+    "tint_trim",
     "teen_eyes",
     "teen_hair",
     "teen_lashes",
@@ -2501,7 +3740,7 @@
     "teen_teeth",
     "teen_tongue"
    ],
-   "textures": 10,
+   "textures": 12,
    "tint": {
     "top": true,
     "default": [
@@ -2509,7 +3748,44 @@
      0.1,
      0.12
     ],
-    "material": "tint_top"
+    "material": "tint_top",
+    "regions": [
+     "tint_top",
+     "tint_trim"
+    ]
+   },
+   "lod1": {
+    "file": "cast/teen-lod1.glb",
+    "bytes": 86720,
+    "triangles": 4054,
+    "materials": 1,
+    "atlas": "512 px WebP, alpha-tested (hair)",
+    "tintMask": "COLOR_0: R = tint_top, G = tint_inner, B = tint_trim (1 = club colour), A = 1"
+   },
+   "teethTriangles": 999,
+   "restingFace": {
+    "baked": {
+     "mouthSmileLeft": 0.08,
+     "mouthSmileRight": 0.08,
+     "cheekSquintLeft": 0.03,
+     "cheekSquintRight": 0.03
+    },
+    "recommendedIdleMix": {},
+    "note": "already folded into the base shape; leave every morph at 0 for the resting face"
+   },
+   "optionalMeshes": [
+    "Hair_hat",
+    "Acc_beanie",
+    "Acc_cap_flat",
+    "Acc_glasses_round",
+    "Acc_glasses_square"
+   ],
+   "accessories": {
+    "hair_hat": "Hair_hat",
+    "beanie": "Acc_beanie",
+    "cap_flat": "Acc_cap_flat",
+    "glasses_round": "Acc_glasses_round",
+    "glasses_square": "Acc_glasses_square"
    },
    "sources": [
     {
@@ -2567,7 +3843,7 @@
      "kind": "Tongue"
     },
     {
-     "file": "hair/short03/short03.mhclo",
+     "file": "hair/short02/short02.mhclo",
      "licence": "CC0 1.0",
      "stated_in_file": "",
      "stated_in_pack": "CC0",
@@ -2592,6 +3868,10 @@
      "author": "makehuman_system",
      "pack": "makehuman_system_assets",
      "kind": "Clothes"
+    },
+    {
+     "what": "accessories (caps, glasses, facial hair), LOD, teeth reduction, brow thickening",
+     "licence": "made by script in scripts/life/assets/refine.py (this repository), from the CC0 parts above"
     }
    ],
    "licence": "CC0 1.0 (every part; see sources)",
