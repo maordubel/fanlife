@@ -2,7 +2,7 @@
  * LIFE · the hood runs the story (rule life-story-watch): a bot plays the whole childhood THROUGH THE HOOD for every core
  * club — it walks to the giver, talks, picks a way in the conversation, does every step itself in the street, answers the
  * complication, and goes on to whatever is offered next — with no stuck state, always a mission in front of it; saves
- * round-trip mid-mission; a date or a score is printed only from an archive row; the watch card holds only recorded ids.
+ * round-trip mid-mission; the whole life, six to forty-eight, plays the same way; a date or a score is printed only from an archive row; the watch card holds only recorded ids.
  */
 import {describe, expect, it} from 'vitest'
 import {CORE_CLUB_IDS, loadClub} from '@/lib/clubs/resolver'
@@ -52,7 +52,7 @@ function playTalk(s: TalkScript, pick: (n: number, keys: string[]) => number): s
 type Life = {play: StoryPlay; beats: Beat[]; missions: string[]; frames: number}
 
 /** the whole childhood, played through the hood with seeded random choices */
-function liveInTheHood(clubId: string, sl: StoryLevel, run: HoodRun, seed: number, nights: Record<string, ArchiveRef>, cap = 400_000): Life {
+function liveInTheHood(clubId: string, sl: StoryLevel, run: HoodRun, seed: number, nights: Record<string, ArchiveRef>, cap = 2_000_000): Life {
   const r = rng(seed)
   let play = newPlay(), frames = 0, target: PersonId | null = null, saidAt = -9, unstick = 0, last = {x: 0, z: 0}
   const beats: Beat[] = [openingBeat(play.state)], missions: string[] = []
@@ -83,7 +83,7 @@ function liveInTheHood(clubId: string, sl: StoryLevel, run: HoodRun, seed: numbe
         const fin = finishStory(run, sl, play)
         missions.push(`${fin.mission.id}/${fin.approach}`)
         const night = fin.mission.kind === 'main' ? nights[fin.mission.id] ?? null : null
-        beats.push(...beatsAfter({mission: fin.mission, approach: fin.approach, events: fin.events, delta: fin.delta, state: fin.play.state, night, canWatch: !!watchForNight(clubId, night?.on ?? null)}))
+        beats.push(...beatsAfter({mission: fin.mission, approach: fin.approach, events: fin.events, delta: fin.delta, state: fin.play.state, night, canWatch: !!watchForNight(clubId, night)}))
         play = fin.play
       }
     }
@@ -100,7 +100,7 @@ function liveInTheHood(clubId: string, sl: StoryLevel, run: HoodRun, seed: numbe
 }
 
 describe('the hood plays the story', {timeout: 600_000}, () => {
-  for (const id of CORE_CLUB_IDS) it(`${id}: a bot lives the whole childhood in the street, always with a mission ahead`, async () => {
+  for (const id of CORE_CLUB_IDS) it(`${id}: a bot lives the whole life, six to forty-eight, in the street, always with a mission ahead`, async () => {
     const {hood, nights} = await clubOf(id)
     for (const seed of [1, 2]) {
       const sl = storyLevel(hoodLevel(hood, seed)), run = startHood(sl.level)
@@ -108,6 +108,9 @@ describe('the hood plays the story', {timeout: 600_000}, () => {
       console.log(`${id} seed ${seed}: ${life.missions.length} missions, ${life.frames} frames, ${Date.now() - t0} ms`)
       expect(life.play.state.keeps).toContain('box')
       expect(life.play.state.done).toEqual(expect.arrayContaining(['first-noise', 'the-box']))
+      // the whole written life: every slot of the spine behind him, every stage closed with its card, and he is grown
+      expect(life.play.state.age).toBeGreaterThanOrEqual(31)
+      expect(life.beats.filter(b => b.k === 'stage-end').map(b => (b as {stage: string}).stage)).toEqual(['child', 'teen', 'young', 'adult'])
       // free roam after the written life: still a mission in front of him, and the focus job has a giver
       expect(nextMissions(life.play.state).length).toBeGreaterThan(0)
       expect(run.level.hood!.jobs.length).toBeGreaterThan(0)
@@ -188,7 +191,7 @@ describe('history and the watch card', {timeout: 300_000}, () => {
         expect(missionById(mission)?.template, mission).toBeTruthy()
         expect(a.factId.length).toBeGreaterThan(3); expect(a.sources.length).toBeGreaterThan(0)
       }
-      const w = Object.entries(nights).map(([m, a]) => { const x = watchForNight(id, a.on); return `${m} ${a.on ?? a.year}${x ? ` → ${x.highlights ? 'highlights' : x.ourFilmFit}` : ''}` })
+      const w = Object.entries(nights).map(([m, a]) => { const x = watchForNight(id, a); return `${m} ${a.on ?? a.year}${x ? ` → ${x.highlights ? 'highlights' : x.ourFilmFit}` : ''}` })
       lines.push(`${id.padEnd(20)} ${w.join(' · ') || 'personal (no bound night)'}`)
     }
     console.log(`BOUND NIGHTS\n${lines.join('\n')}`)
@@ -202,7 +205,7 @@ describe('history and the watch card', {timeout: 300_000}, () => {
     expect(n.sources.map(x => x.publisher)).toContain('ynet (in Hebrew)')
     const club = await loadClub('hapoel-tel-aviv'), view = rushView(club!.data)
     expect(kindsOf(n, view)).toEqual(expect.arrayContaining(['match', 'home', 'title']))
-    const card = watchForNight('hapoel-tel-aviv', n.on)!
+    const card = watchForNight('hapoel-tel-aviv', n)!
     expect(card.highlights).toMatchObject({id: '1986-championship', youtubeId: 'dFykPEa8NAE', status: 'verified'})
     expect(slateOf(n)).toMatchObject({date: '1986-05-24', result: 'Hapoel Tel Aviv 1–0 Maccabi Haifa', title: 'minute 86'})
   })
@@ -210,16 +213,17 @@ describe('history and the watch card', {timeout: 300_000}, () => {
   it('the watch card holds only recorded ids, and the 24.5.1986 title night resolves to the recorded highlights', () => {
     const recorded = new Set([...HIGHLIGHTS, ...OUR_FILMS].map(m => m.youtubeId))
     for (const id of CORE_CLUB_IDS) for (const day of [null, '1986-05-24', '2000-05-17', '2024-05-29', '1990-01-01']) {
-      const a = watchForNight(id, day)
+      const a = watchForNight(id, day ? {factId: `none-${day}`, on: day} : null)
       if (!a) continue
       for (const m of [a.highlights, a.ourFilm, ...a.moreHighlights]) if (m) { expect(recorded.has(m.youtubeId)).toBe(true); expect(m.clubId).toBe(id) }
     }
-    const t = watchForNight('hapoel-tel-aviv', '1986-05-24')!
+    const t = watchForNight('hapoel-tel-aviv', {factId: 'ca4aa4d00c5c', on: '1986-05-24'})!
     expect(t.highlights).toMatchObject({id: '1986-championship', youtubeId: 'dFykPEa8NAE'})
-    expect(t).toEqual(watchFor('hapoel-tel-aviv', {matchDate: '1986-05-24'}))
+    expect(t.highlights).toEqual(watchFor('hapoel-tel-aviv', {matchDate: '1986-05-24'})!.highlights)
     // a night with nothing recorded falls back to our own club film, labelled as such, or to nothing
-    expect(watchForNight('hapoel-tel-aviv', '1986-12-06')).toMatchObject({highlights: null, ourFilmFit: 'club'})
-    expect(watchForNight('st-pauli', '1987-10-31')).toBeNull()
+    expect(watchForNight('hapoel-tel-aviv', {factId: 'none', on: '1986-12-06'})).toMatchObject({highlights: null, ourFilmFit: 'club'})
+    // a night the hunt checked is served by its row id (Hapoel v Maccabi, 9.3.1991, the no-ticket night)
+    expect(watchForNight('hapoel-tel-aviv', {factId: 'ac435574bd8c', on: '1991-03-09'})!.highlights!.youtubeId).toBe('celQonvaW8g')
   })
 })
 

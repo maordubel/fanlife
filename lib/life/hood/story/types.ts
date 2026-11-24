@@ -16,9 +16,9 @@ export type RouteId = 'family' | 'ultras' | 'away' | 'member' | 'far'
 /** the life stages; `authored` says whether its arc is written yet (an unwritten stage is never faked) */
 export const STAGES: readonly {id: StageId; ages: [number, number]; authored: boolean}[] = [
   {id: 'child', ages: [6, 12], authored: true},
-  {id: 'teen', ages: [13, 18], authored: false},
-  {id: 'young', ages: [19, 30], authored: false},
-  {id: 'adult', ages: [31, 48], authored: false},
+  {id: 'teen', ages: [13, 18], authored: true},
+  {id: 'young', ages: [19, 30], authored: true},
+  {id: 'adult', ages: [31, 48], authored: true},
 ]
 /** the routes a life can lean into from the teens on; childhood is the family route for everyone */
 export const ROUTES: readonly RouteId[] = ['family', 'ultras', 'away', 'member', 'far']

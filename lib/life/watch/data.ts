@@ -11,13 +11,14 @@
  * link in its home file first, then cite that file here. Never type an id that no file holds.
  */
 import type {HighlightsMoment, OurFilmMoment, TransitionMoment} from './types'
+import {HUNT_VERIFIED} from './hunt'
 
 const HTA = 'hapoel-tel-aviv'
 const CUTS = 'lib/life/cutscenes.ts', DAYS = 'lib/life/history/days.ts', CH = 'scripts/football-stories/channel'
 const hl = (id: string, youtubeId: string, title: string, matchDate: string | null, chapter: string | null, status: HighlightsMoment['status'], summary: boolean, file: string, note: string): HighlightsMoment =>
   ({kind: 'highlights', id, clubId: HTA, youtubeId, title, titleLocale: 'he', matchDate, chapter, status, summary, source: {file, note}})
 
-export const HIGHLIGHTS: readonly HighlightsMoment[] = [
+const BASE_HIGHLIGHTS: readonly HighlightsMoment[] = [
   hl('1986-championship', 'dFykPEa8NAE', 'משחק האליפות', '1986-05-24', '1986', 'verified', true, CUTS, 'CUTSCENES[1986-championship]: the full broadcast summary, on the archive row of 24.5.1986; opens once at the end of the 1986 chapter'),
   hl('1993-cup', 'I5FHT27dRgY', 'גמר הגביע — ארכיון', null, '1993-cup', 'verified', true, CUTS, 'CUTSCENES[1993-cup]: the record gives the chapter and no day'),
   hl('2000-title', 'pdQLDp_-Xgo', 'האליפות — ארכיון', '2000-05-13', '2000-title', 'verified', true, CUTS, 'CUTSCENES[2000-title]: tied by its record to the archive day 13.5.2000'),
@@ -29,6 +30,16 @@ export const HIGHLIGHTS: readonly HighlightsMoment[] = [
   hl('film-00-fans', '3jT_ULOU09U', 'ראיון אוהדים אחרי המשחק', '2000-05-17', null, 'archive-row', false, DAYS, 'day 2000-05-17, films[film-00-fans], source Vikipoel'),
   hl('film-99-full', '0z6DE0LL-2g', 'התקציר המלא של הגמר', '1999-05-19', null, 'archive-row', true, DAYS, 'day 1999-05-19, films[film-99-full], source Vikipoel'),
   hl('film-99-goal', 'HIycf4LjzKY', 'השער של שלום תקוה', '1999-05-19', null, 'archive-row', false, DAYS, 'day 1999-05-19, films[film-99-goal], source Vikipoel'),
+]
+
+/**
+ * The owner's highlights hunt of 24.11.2026 (`lib/life/watch/hunt.ts`, generated from
+ * `docs/life/highlights/hunt-2026-11-24-audited.md`): every checked match film of every club's story nights. A film the
+ * Worker's record already holds for the same club keeps the Worker's row (its chapter and its own words).
+ */
+export const HIGHLIGHTS: readonly HighlightsMoment[] = [
+  ...BASE_HIGHLIGHTS,
+  ...HUNT_VERIFIED.filter(h => !BASE_HIGHLIGHTS.some(b => b.clubId === h.clubId && b.youtubeId === h.youtubeId)),
 ]
 
 const film = (id: string, clubId: string, youtubeId: string, form: OurFilmMoment['form'], title: string, matchDates: string[], season: string | null, publishedOn: string | null, file: string, note: string): OurFilmMoment =>

@@ -2,6 +2,8 @@
 
 Source: `maordubel/The-Worker` @ `15229a9`, every file under `public/life`, `public/uss`, `public/kits`, `public/og`, `public/video` (1993 files). Machine-readable: `lib/life/worker-art/catalog.json`. Rule: `docs/rules/life-worker-art.md`. Rebuilt by `scripts/life/worker-art/classify.py`. Game-size copies are written by `scripts/life/worker-art/import.ts` and listed in `lib/life/worker-art/imported.json`.
 
+**Film, 24.11.2026:** 18 of the 1989 / 1995 Tel Aviv clips are imported for LIFE Tel Aviv chapter bridges into `public/life/worker/tlv/film/` (promenade 5, street 6, dusk 7; 640x360 H.264, 4–5 s each, 6.3 MB in all, none dropped for yellow; worst decoded frame 0.0135 % against the 0.05 % ceiling). Picks: `PICKS_FILM` in `classify.py`.
+
 **Already in FAN LIFE:** `public/life/{art,film,transitions,opening,artefacts,docs,deck,share}` is a byte-identical mirror of THE WORKER, kept by the LIFE upstream import. Hapoel-only art is read from there and needs no copy.
 
 ## Counts
@@ -30,9 +32,9 @@ Source: `maordubel/The-Worker` @ `15229a9`, every file under `public/life`, `pub
 | title-card | 19 | 1 | 39 | 0 |
 | ui | 0 | 29 | 2 | 0 |
 
-**Blockers found** (files): `real-person` 239, `owner-muted-synth` 128, `yellow` 64, `provenance-unknown` 58, `club-red` 58, `real-stadium-shared-by-tlv-clubs` 57, `licence-unverified` 36, `hebrew-text` 28, `provenance-partial` 19, `sponsor-marks` 8, `trademark` 4, `third-party-print` 4, `licence` 4, `burned-filename-text` 1, `red-white-bunting` 1.
+**Blockers found** (files): `real-person` 239, `owner-muted-synth` 128, `yellow` 64, `provenance-unknown` 58, `club-red` 58, `real-stadium-shared-by-tlv-clubs` 57, `hebrew-text` 28, `provenance-partial` 19, `sponsor-marks` 8, `trademark` 4, `third-party-print` 4, `licence` 4, `burned-filename-text` 1, `red-white-bunting` 1.
 
-What they mean: `real-person` covers players and the cards, which are Hapoel-only. `owner-muted-synth` marks the 63 synthesised sounds, which THE WORKER stopped playing on 6.9.2026. `club-red` is red club décor to recolour to the club skin. `real-stadium-shared-by-tlv-clubs` is Bloomfield, home to more than one Tel Aviv club. `hebrew-text` is burned-in Hebrew signage, fine for Tel Aviv and wrong elsewhere. `sponsor-marks` covers real brands on boards and fridges. `licence-unverified` is the 1989 and 1995 films. `provenance-unknown` means confidence 0 in THE WORKER's asset-provenance, so the file is refused. `yellow` means yellow measured in the source; every imported copy is clean.
+What they mean: `real-person` covers players and the cards, which are Hapoel-only. `owner-muted-synth` marks the 63 synthesised sounds, which THE WORKER stopped playing on 6.9.2026. `club-red` is red club décor to recolour to the club skin. `real-stadium-shared-by-tlv-clubs` is Bloomfield, home to more than one Tel Aviv club. `hebrew-text` is burned-in Hebrew signage, fine for Tel Aviv and wrong elsewhere. `sponsor-marks` covers real brands on boards and fridges. The 1989 and 1995 Tel Aviv films carried `licence-unverified` until they were cleared for use on 24.11.2026; they now carry no blocker and a `clearedForUse` date. `provenance-unknown` means confidence 0 in THE WORKER's asset-provenance, so the file is refused. `yellow` means yellow measured in the source; every imported copy is clean.
 
 ## Top picks for Tel Aviv (and Israeli cities)
 
@@ -213,7 +215,7 @@ How each role fits the 3D hood: an **env-map** (360° pano) is wrapped on a cyli
 | `docs/kt*` | 4 | hapoel-only | tlv | doc | real-person |  |
 | `docs/sg*` | 91 | hapoel-only | tlv | doc | real-person, provenance-unknown 16, yellow 3 |  |
 | `docs/sgcup*` | 14 | hapoel-only | tlv | doc | real-person |  |
-| `film/` | 39 | tlv 36, hapoel-only 2, no 1 | tlv 38, * 1 | film 38, title-card 18, index 1 | licence-unverified 36, yellow 2 | grade-dusk 36 |
+| `film/` | 39 | tlv 36, hapoel-only 2, no 1 | tlv 38, * 1 | film 38, title-card 18, index 1 | yellow 2 (cleared for use 24.11.2026: 36) | grade-dusk 36 |
 | `kits/assembly` | 18 | hapoel-only | tlv | prop |  |  |
 | `kits/fka-*` | 54 | hapoel-only | tlv | prop | yellow 2 |  |
 | `kits/marks` | 4 | no | * |  | trademark |  |

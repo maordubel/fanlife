@@ -23,7 +23,8 @@ function live(seed: number, cap = 600): {state: StoryState; turns: number; event
   const r = rng(seed)
   let s = newLife(), turns = 0
   const events: StoryEvent[] = [], path: string[] = []
-  while (!isFinished(s)) {
+  // childhood: the first slots of the whole life's spine (tests/life-story-arc.test.ts walks the rest)
+  while (chapter(s) < CHILDHOOD_SPINE.length) {
     if (++turns > cap) throw new Error(`life ${seed} did not finish in ${cap} turns (chapter ${chapter(s)})`)
     const offers = nextMissions(s)
     expect(offers.length, `seed ${seed} turn ${turns}: nothing offered`).toBeGreaterThan(0)
@@ -45,8 +46,9 @@ function live(seed: number, cap = 600): {state: StoryState; turns: number; event
 describe('the story graph', () => {
   it('is well formed: unique ids, a spine that names real main missions, 2–4 approaches, a complication, a way through', () => {
     expect(new Set(MISSIONS.map(m => m.id)).size).toBe(MISSIONS.length)
-    expect(SPINE).toBe(CHILDHOOD_SPINE)
-    expect(SPINE.flat().sort()).toEqual(CHILDHOOD.map(m => m.id).sort())
+    // the whole life's spine opens on childhood's
+    expect(SPINE.slice(0, CHILDHOOD_SPINE.length)).toEqual(CHILDHOOD_SPINE)
+    expect(SPINE.slice(0, CHILDHOOD_SPINE.length).flat().sort()).toEqual(CHILDHOOD.map(m => m.id).sort())
     expect(CHILDHOOD.length).toBeGreaterThanOrEqual(8)
     for (const m of CHILDHOOD) {
       expect(m.kind, m.id).toBe('main')
@@ -149,8 +151,8 @@ describe('a life', () => {
       const seed = hash(`${id}#${n}`)
       const a = live(seed), b = live(seed)
       expect(b.path, `${id} #${n} is not deterministic`).toEqual(a.path)
-      expect(isFinished(a.state)).toBe(true)
-      expect(a.state.age).toBe(12)
+      expect(chapter(a.state)).toBe(CHILDHOOD_SPINE.length)
+      expect(a.state.age).toBeGreaterThanOrEqual(12)
       expect(a.state.keeps).toEqual(expect.arrayContaining(['scarf', 'shirt', 'ticket', 'album', 'box']))
       expect(a.state.flags['story:box-started']).toBe(true)
       expect(a.state.money).toBeGreaterThanOrEqual(0)
@@ -233,9 +235,10 @@ describe('the night under a chapter, and what the studio is asked for', () => {
   it('asks for a card per chapter, a bridge per year gained and an opener per matchday; a personal chapter carries no date', () => {
     const personal = transitionRequests('some-club', [])
     expect(new Set(personal.map(r => r.id)).size).toBe(personal.length)
-    expect(personal.filter(r => r.kind === 'chapter-card').map(r => r.chapter).sort()).toEqual(CHILDHOOD.map(m => m.id).sort())
-    expect(personal.filter(r => r.kind === 'matchday-opener').map(r => r.chapter).sort()).toEqual(CHILDHOOD.filter(m => m.day === 'matchday').map(m => m.id).sort())
-    expect(personal.filter(r => r.kind === 'time-bridge').length).toBe(new Set(CHILDHOOD.map(m => m.age)).size - 1)
+    const chapters = SPINE.flat().map(id => missionById(id)!)
+    expect(personal.filter(r => r.kind === 'chapter-card').map(r => r.chapter).sort()).toEqual(chapters.map(m => m.id).sort())
+    expect(personal.filter(r => r.kind === 'matchday-opener').map(r => r.chapter).sort()).toEqual(chapters.filter(m => m.day === 'matchday').map(m => m.id).sort())
+    expect(personal.filter(r => r.kind === 'time-bridge').length).toBe(new Set(chapters.map(m => m.age)).size - 1)
     for (const r of personal) {
       expect(r.night).toBeNull(); expect(r.formats).toEqual(['9:16', '16:9']); expect(r.seconds).toBeGreaterThan(0); expect(r.status).toBe('requested')
       expect(r.beats.length).toBeGreaterThan(0)

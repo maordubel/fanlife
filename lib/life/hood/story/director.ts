@@ -9,12 +9,13 @@
  *   · the week walks to matchday (day 6) and starts again; a chapter moves the life on to its own age.
  * It never reads a club: the club arrives later, as a cast, a skin and (through `night.ts`) an archive night.
  */
-import {CHILDHOOD, CHILDHOOD_SIDES, CHILDHOOD_SPINE, STANDING} from './childhood'
+import {LIFE_MISSIONS, LIFE_SPINE, routeOf, standingFor} from './stages'
 import {MATCHDAY, STAGES, type Approach, type Cond, type Effect, type Mission, type Offer, type StageId, type StoryEvent, type StoryState} from './types'
 
-export const MISSIONS: readonly Mission[] = [...CHILDHOOD, ...CHILDHOOD_SIDES, ...STANDING]
+/** the whole written life, six to forty-eight (`stages.ts`): chapters, small jobs and the standing work of every stage */
+export const MISSIONS: readonly Mission[] = LIFE_MISSIONS
 /** the written life, slot after slot (a slot of two is a fork). Later stages join here as they are written. */
-export const SPINE: readonly (readonly string[])[] = CHILDHOOD_SPINE
+export const SPINE: readonly (readonly string[])[] = LIFE_SPINE
 const BY_ID = new Map(MISSIONS.map(m => [m.id, m]))
 
 export const missionById = (id: string): Mission | null => BY_ID.get(id) ?? null
@@ -67,7 +68,8 @@ export function nextMissions(state: StoryState): Offer[] {
   if (state.open) { const m = BY_ID.get(state.open.id); if (m) return [offer(state, m, 'open')] }
   const main = waits(state) === 0 ? ahead(state).map(m => offer(state, m, 'main')) : []
   const sides = MISSIONS.filter(m => m.kind === 'side' && !state.done.includes(m.id) && m.age <= state.age && holds(state, m.needs)).map(m => offer(state, m, 'side'))
-  const standing = main.length ? [] : STANDING.map(m => offer(state, m, 'standing'))
+  // the week's work of the stage he is living (a boy's papers round, a young man's shift)
+  const standing = main.length ? [] : standingFor(state.age).map(m => offer(state, m, 'standing'))
   return [...main, ...sides, ...standing].filter(o => o.approaches.length > 0)
 }
 
@@ -123,6 +125,8 @@ export function resolve(state: StoryState, choice?: string): {state: StoryState;
   s = apply(s, m.aftermath, events)
   s.flags[`story:how:${m.id}`] = how.id
   if (picked) s.flags[`story:met:${m.id}`] = picked.id
+  // the route he leans into follows the last fork's lean (a lean, not a lock)
+  s = {...s, route: routeOf(s)}
   if (m.kind === 'standing') s = {...s, times: {...s.times, [m.id]: (s.times[m.id] ?? 0) + 1}}
   else { s = {...s, done: [...s.done, m.id]}; s.flags[doneFlag(m.id)] = true }
   events.push({k: 'aftermath', mission: m.id, key: `story.m.${m.id}.aftermath`})

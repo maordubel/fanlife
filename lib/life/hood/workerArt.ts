@@ -48,5 +48,12 @@ export function workerDoc(mission: string, town: string | null | undefined): str
   return mission === 'lead-the-way' || mission === 'the-way-in' ? `${T}/docEggedLira.webp` : mission === 'papers' ? `${T}/docToto4085.webp` : null
 }
 
+/** Tel Aviv only: THE WORKER's 1989 and 1995 street films (cleared 24.11.2026, rule life-worker-art §7) as the bridge behind a chapter's time card */
+const TLV_BRIDGES = ['street-morning', 'promenade-walk', 'bus-street-95', 'market', 'palms-evening', 'promenade-95', 'shops-95', 'street-cars-95', 'sea-road-95', 'plaza-evening', 'promenade-dusk', 'night-lights', 'alley-shade', 'boardwalk-95', 'breakwater-95', 'jaffa-95', 'promenade-rail-95', 'sea-wall'] as const
+export function workerBridge(chapterIndex: number, town: string | null | undefined): string | null {
+  if (!isTelAviv(town)) return null
+  return `${T}/film/${TLV_BRIDGES[Math.abs(chapterIndex) % TLV_BRIDGES.length]}.mp4`
+}
+
 /** every file this module names (for the test that holds them to the catalogue) */
-export const WORKER_ART_USED: readonly string[] = [...new Set([...Object.values(PLATES), ...Object.values(TLV_PLATES), ...Object.values(FACES), ...Object.values(PROPS), WORKER_PAPER, WORKER_SCORE, `${T}/docEggedLira.webp`, `${T}/docToto4085.webp`])]
+export const WORKER_ART_USED: readonly string[] = [...new Set([...Object.values(PLATES), ...Object.values(TLV_PLATES), ...Object.values(FACES), ...Object.values(PROPS), WORKER_PAPER, WORKER_SCORE, `${T}/docEggedLira.webp`, `${T}/docToto4085.webp`, ...TLV_BRIDGES.map(b => `${T}/film/${b}.mp4`)])]

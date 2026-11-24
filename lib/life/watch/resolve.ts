@@ -43,8 +43,9 @@ export function watchFor(clubId: string, q: WatchQuery): WatchAnswer | null {
  * season (`watchFor`), otherwise our own film about the club, labelled as a film about the club and not about the night;
  * otherwise nothing. Only recorded ids, as everywhere in this layer.
  */
-export function watchForNight(clubId: string, day: string | null): WatchAnswer | null {
-  const a = day ? watchFor(clubId, {matchDate: day}) : null
+export function watchForNight(clubId: string, night: {factId: string; on: string | null} | null): WatchAnswer | null {
+  // by the archive row itself (the hunt keys its films by the row's id) and by its day
+  const a = night ? watchFor(clubId, {matchId: night.factId, matchDate: night.on}) : null
   if (a) return a
   const film = OUR_FILMS.find(f => f.clubId === clubId && f.form === 'film' && isYoutubeId(f.youtubeId))
   return film ? {highlights: null, moreHighlights: [], ourFilm: film, ourFilmFit: 'club', transition: null} : null

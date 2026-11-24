@@ -174,6 +174,8 @@ export type StoryCardView = {
   archive: {kicker: string; date: string | null; result: string | null; title: string | null; titleLocale: string | null; source: string | null} | null
   /** the painted Flow plate behind it, when the manifest has one */
   plate: string | null
+  /** a short street film behind a time card (Tel Aviv's own, muted, looping); never when motion is reduced */
+  film?: string | null
   /** a painted thing beside it: what went in the Box, the bus ticket, the paper */
   art?: string | null
   /** the paper the archive's line is printed on */
@@ -182,12 +184,13 @@ export type StoryCardView = {
 }
 
 /** a chapter's title card, the aftermath, the end of a stage: full-screen, a painted plate behind (or the drawn dusk), one way on */
-export function StoryCard({view, onGo}: {view: StoryCardView; onGo: () => void}) {
+export function StoryCard({view, onGo, reduced = false}: {view: StoryCardView; onGo: () => void; reduced?: boolean}) {
   const ref = useRef<HTMLButtonElement | null>(null)
   useEffect(() => { ref.current?.focus({preventScroll: true}) }, [view])
   return (
     <section className={css.lgScreen + ' ' + css.lgStory} data-kind={view.kind} data-plate={!!view.plate} aria-label={view.title} data-life="hood-story">
-      {view.plate && <span className={css.lgStoryPlate} aria-hidden="true">{/* eslint-disable-next-line @next/next/no-img-element */}<img src={view.plate} alt="" decoding="async" /></span>}
+      {view.film && !reduced && <span className={css.lgStoryPlate} aria-hidden="true"><video src={view.film} autoPlay muted loop playsInline preload="auto" poster={view.plate ?? undefined} /></span>}
+      {view.plate && !(view.film && !reduced) && <span className={css.lgStoryPlate} aria-hidden="true">{/* eslint-disable-next-line @next/next/no-img-element */}<img src={view.plate} alt="" decoding="async" /></span>}
       <span className={css.lgStoryShade} aria-hidden="true" />
       <div className={css.lgStoryIn}>
         <p className={css.lgKicker + ' ' + css.lgIn}>{view.kicker}</p>

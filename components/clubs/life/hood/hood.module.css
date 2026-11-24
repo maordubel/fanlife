@@ -492,3 +492,4 @@
 .lgStoryArt { align-self: flex-start; max-inline-size: 132px; max-block-size: 96px; object-fit: contain; filter: drop-shadow(0 8px 16px color-mix(in srgb, var(--lg-navy) 80%, transparent)); }
 .lgStoryPaperArt { float: inline-end; inline-size: 54px; block-size: auto; margin-inline-start: 10px; opacity: .9; }
 .lgPortrait2[data-face='true'] i { display: none; }
+.lgStoryPlate video { inline-size: 100%; block-size: 100%; object-fit: cover; }

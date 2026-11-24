@@ -6,6 +6,8 @@
  * has none). A date or a score is never written here: it comes from the archive night, printed as recorded.
  * Same shape as `lib/life/hood/words.ts`: a key table and one function, so a second language is a second table.
  */
+import {ARC_WORDS} from './arc-words'
+
 const EN = {
   // the frame
   'story.stage.child': 'Childhood', 'story.stage.teen': 'The teens', 'story.stage.young': 'On your own', 'story.stage.adult': 'Your turn',
@@ -20,7 +22,8 @@ const EN = {
   'story.idle.dad': '“Go on, have a wander. I’m here.”', 'story.idle.mate': '“Same corner as always. Where else would I be?”', 'story.idle.kiosk': '“Papers, sweets, batteries. Take your time.”', 'story.idle.neighbour': '“Mind how you go. I’m always on the balcony if you want me.”',
   'story.chapter': 'Chapter {n}', 'story.begin': 'It starts here.', 'story.later.1': 'A year later.', 'story.later.n': '{k} years later.',
   'story.num.2': 'Two', 'story.num.3': 'Three', 'story.num.4': 'Four', 'story.num.5': 'Five', 'story.num.6': 'Six',
-  'story.stage-end.child': 'That was a childhood.', 'story.stage-end.line': 'The teens are still being written. The street is yours in the meantime.',
+  'story.stage-end.child': 'That was a childhood.', 'story.stage-end.teen': 'That was growing up.', 'story.stage-end.young': 'That was your own time.', 'story.stage-end.adult': 'That was a life.',
+  'story.stage-end.line': 'The street is still yours. The next chapter starts when you are ready.', 'story.stage-end.last': 'The Box belongs to somebody smaller now. The street is still yours.',
   'story.delta.money': 'Money', 'story.delta.rep': 'The street', 'story.delta.kept': 'Into the Box', 'story.delta.none': 'Nothing changed but the day.',
   'story.card.continue': 'Continue', 'story.card.go': 'Back to the street',
   'story.archive.kicker': 'From the archive', 'story.archive.paper': 'In the paper the next morning', 'story.archive.radio': 'On the radio that night', 'story.archive.source': 'Source: {publisher}', 'story.archive.tonight': 'Tonight, as the archive has it',
@@ -156,9 +159,10 @@ const EN = {
 } as const
 
 export type StoryKey = keyof typeof EN
-export const STORY_WORDS: Record<string, string> = EN
+/** childhood's words and the rest of the life's (`arc-words.ts`), one table */
+export const STORY_WORDS: Record<string, string> = {...ARC_WORDS, ...EN}
 
 export function storyWord(key: StoryKey | string, vars: Record<string, string> = {}): string {
-  const s = (EN as Record<string, string>)[key] ?? key
+  const s = STORY_WORDS[key] ?? key
   return s.replace(/\{(\w+)\}/g, (_, k: string) => vars[k] ?? `{${k}}`)
 }

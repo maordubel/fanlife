@@ -23,6 +23,9 @@ async function main() {
   const {chapterFits} = await import('@/lib/life/hood/story/night')
   const {LIFE_TIMELINE} = await import('@/lib/clubs/life/packs')
   const {manifestOf} = await import('@/lib/life/hood/story/requests')
+  const {LIFE_MISSIONS} = await import('@/lib/life/hood/story/stages')
+  // every chapter of the whole life is asked of the Fitter, over the years it is lived
+  const chapters = LIFE_MISSIONS.filter(m => m.kind === 'main')
 
   const args = process.argv.slice(2), check = args.includes('--check')
   const only = args.filter(a => !a.startsWith('-'))
@@ -33,7 +36,7 @@ async function main() {
     if (!club) { console.log(`!! ${id}: not loadable — no requests`); continue }
     const birth = (LIFE_TIMELINE as Record<string, {birthYear?: number} | undefined>)[id]?.birthYear
     const birthYear = typeof birth === 'number' ? birth : null
-    clubs[id] = {birthYear, fits: chapterFits(rushView(club.data), birthYear)}
+    clubs[id] = {birthYear, fits: chapterFits(rushView(club.data), birthYear, chapters)}
   }
   const manifest = manifestOf(clubs)
   const text = JSON.stringify(manifest, null, 1) + '\n'

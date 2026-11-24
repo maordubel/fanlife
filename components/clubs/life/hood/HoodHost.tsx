@@ -25,11 +25,11 @@ import {Boot, Cinematic, Help, NameEntry, Pause, Settings, StoryCard, Title, typ
 import {MapScreen, type MapGiver} from './MapScreen'
 import {WatchCard} from '../watch/WatchCard'
 import {slateDate, slateOf, watchForNight, watchWord, type WatchKey} from '@/lib/life/watch'
-import {chapter as chapterOf, missionById, storyWord} from '@/lib/life/hood/story'
+import {chapter as chapterOf, missionById, stageOf as stageOfAge, storyWord} from '@/lib/life/hood/story'
 import {applyEffect, beatsAfter, carried, complicationTalk, fastForward, finishStory, focusOf, giversOf, keepOff, newPlay, openingBeat, planKey, stepDone, storyLevel, storyTalk, syncOffers, wantsComplication, type Beat, type StoryPlay} from '@/lib/life/hood/story/play'
 import {loadFlow, pick, PLATE_HINT, urlOf, type FlowManifest} from '@/lib/life/hood/flowRef'
 import type {ArchiveRef} from '@/lib/life/universal/types'
-import {WORKER_PAPER, workerDoc, workerFace, workerPlate, workerProp} from '@/lib/life/hood/workerArt'
+import {WORKER_PAPER, workerBridge, workerDoc, workerFace, workerPlate, workerProp} from '@/lib/life/hood/workerArt'
 import {BagScreen} from './BagScreen'
 import css from './hood.module.css'
 
@@ -176,7 +176,7 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
       const fin = finishStory(run, sl, playRef.current)
       setPlay(fin.play); setJobState(run.job); setObjIx(-1)
       const night = fin.mission.kind === 'main' ? nightOf(fin.mission.id) : null
-      const list = beatsAfter({mission: fin.mission, approach: fin.approach, events: fin.events, delta: fin.delta, state: fin.play.state, night, canWatch: !!(night && watchForNight(club.id, night.on))})
+      const list = beatsAfter({mission: fin.mission, approach: fin.approach, events: fin.events, delta: fin.delta, state: fin.play.state, night, canWatch: !!(night && watchForNight(club.id, night))})
       persist()
       if (fin.mission.kind === 'standing') showBanner('minor', w(`story.m.${fin.mission.id}.title`), w(`story.m.${fin.mission.id}.aftermath`))
       if (list.length) { setBeats(list); go({t: 'story'}) }
@@ -429,7 +429,7 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
   // the HUD always names what is in front of him: the step of the open mission, or "Next: <mission>" and who gives it
   const focus = play.plan ? null : focusOf(play)
   const openId = play.plan?.split('/')[0] ?? null, openNight = nightOf(openId)
-  const stageWord = w(`story.stage.${play.state.age <= 12 ? 'child' : play.state.age <= 18 ? 'teen' : play.state.age <= 30 ? 'young' : 'adult'}`)
+  const stageWord = w(`story.stage.${stageOfAge(play.state.age)}`)
   const kicker = active ? (openNight ? nightLine(openNight) : w('story.active.kicker', {title: w(job!.titleKey), n: String(objIx - job!.from + 1), m: String(job!.steps)}))
     : focus ? w('story.next.kicker', {stage: stageWord, n: String(play.state.age), day: w(`story.day.${play.state.day}`)}) : waypoint ? w('hood.hud.waypoint') : w('hood.kicker')
   const objective = active ? w(stepKey!) : focus ? w('story.next', {title: w(`story.m.${focus.id}.title`)}) : waypoint ? wayName : w('hood.free')
@@ -452,9 +452,9 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
     if (b.k === 'chapter') {
       const n = chapterOf(play.state) + 1, yrs = b.from === null ? 0 : b.to - b.from
       const when = b.from === null ? w('story.begin') : yrs === 1 ? w('story.later.1') : w('story.later.n', {k: w(`story.num.${Math.min(6, yrs)}`)})
-      return {kind: 'chapter', kicker: `${w(`story.stage.${b.stage}`)} · ${w('story.chapter', {n: String(n)})}`, title: b.next ? w(`story.m.${b.next}.title`) : w(`story.stage.${b.stage}`), lines: [`${when} ${w('story.age', {n: String(b.to)})}.`], chips: [], archive: null, plate: plateFor(b.next, n), go: w('story.card.continue')}
+      return {kind: 'chapter', kicker: `${w(`story.stage.${b.stage}`)} · ${w('story.chapter', {n: String(n)})}`, title: b.next ? w(`story.m.${b.next}.title`) : w(`story.stage.${b.stage}`), lines: [`${when} ${w('story.age', {n: String(b.to)})}.`, ...(b.from === null || stageOfAge(b.from) !== b.stage ? [w(`story.theme.${b.stage}`)] : [])], chips: [], archive: null, plate: plateFor(b.next, n), film: b.from === null ? null : workerBridge(n, club.town), go: w('story.card.continue')}
     }
-    if (b.k === 'stage-end') return {kind: 'stage-end', kicker: w(`story.stage.${b.stage}`), title: w('story.stage-end.child'), lines: [w('story.stage-end.line')], chips: [], archive: null, plate: plateFor('the-box', 0), go: w('story.card.go')}
+    if (b.k === 'stage-end') return {kind: 'stage-end', kicker: w(`story.stage.${b.stage}`), title: w(`story.stage-end.${b.stage}`), lines: [w(b.stage === 'adult' ? 'story.stage-end.last' : 'story.stage-end.line')], chips: [], archive: null, plate: plateFor('the-box', 0), go: w('story.card.go')}
     if (b.k !== 'aftermath') return null
     const d = b.delta, sign = (n: number) => (n > 0 ? `+${n}` : String(n))
     const chips: StoryCardView['chips'] = [
@@ -468,7 +468,7 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
     const art = d.kept.map(k => workerProp(`keep:${k}`)).find(Boolean) ?? workerDoc(b.mission, club.town)
     return {kind: 'aftermath', kicker: w('story.aftermath'), title: w(`story.m.${b.mission}.title`), lines: [w(`story.m.${b.mission}.aftermath`), ...(chips.length ? [] : [w('story.delta.none')])], chips, archive, plate: plateFor(b.mission, 1), art, paper: archive ? WORKER_PAPER : null, go: w('story.card.continue')}
   }
-  const watchAns = beat?.k === 'watch' ? watchForNight(club.id, beat.night.on) : null
+  const watchAns = beat?.k === 'watch' ? watchForNight(club.id, beat.night) : null
   const giverMarks: MapGiver[] = (() => { const g = giversOf(play), ppl = level.hood!.people; return [...(g.main ? [{id: g.main, kind: 'main' as const}] : []), ...g.side.map(id => ({id, kind: 'side' as const}))].flatMap(x => { const p = ppl.find(q => q.id === x.id); return p ? [{id: x.id, x: p.x, z: p.z, kind: x.kind, label: `${names[x.id] ?? ''} · ${w(x.kind === 'main' ? 'story.map.next' : 'story.map.side')}`, letter: x.kind === 'main' ? '!' : '·'}] : [] }) })()
 
   return (
@@ -497,7 +497,7 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
       {beat?.k === 'watch' && (watchAns
         ? <div className={css.lgWatch} data-life="hood-watch"><WatchCard highlights={watchAns.highlights} more={watchAns.moreHighlights} ourFilm={watchAns.ourFilm} ourFilmFit={watchAns.ourFilmFit} slate={slateOf(beat.night)} accent={accent} onContinue={nextBeat} /></div>
         : <StoryCard view={cardOf({k: 'aftermath', mission: beat.mission, night: beat.night, delta: {bonds: [], money: 0, rep: 0, kept: []}, approach: ''})!} onGo={nextBeat} />)}
-      {beat && beat.k !== 'watch' && cardOf(beat) && <StoryCard key={`${beat.k}-${beats.length}`} view={cardOf(beat)!} onGo={nextBeat} />}
+      {beat && beat.k !== 'watch' && cardOf(beat) && <StoryCard key={`${beat.k}-${beats.length}`} view={cardOf(beat)!} onGo={nextBeat} reduced={reducedEff} />}
       {!bootGone && <Boot w={w} out={screen !== 'boot'} />}
       {error && <div className={css.lgErr}><section className={css.lgCard} role="alertdialog" aria-label={w('hood.boot.err')}><h2>{w('hood.brand')}</h2><p>{w('hood.err')}</p></section></div>}
     </div>
