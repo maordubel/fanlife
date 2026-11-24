@@ -30,6 +30,7 @@ FREE = re.compile(r'^(cc0|public domain|pd|cc by(-sa)? [0-9.]+( [a-z]{2})?|cc by
 OUT_DIR = ROOT / 'public/album/stickers'
 LEDGER = ROOT / 'content/generated/album-stickers.json'
 FACES_DIR = ROOT / 'content/generated/album-faces'  # painted portraits for men with no free photo (faces.py)
+DRESSED_DIR = ROOT / 'content/generated/album-dressed'  # the painted man in his club's real shirt, worn, not laid over (dress.py)
 
 
 def get_json(url, tries=5):
@@ -525,13 +526,15 @@ def main():
                     if ref and traits.get('measured') and os.environ.get('ALBUM_LBF'):
                         traits['shape'] = face_shape(ref)
                 face = FACES_DIR / club / f'{st["slot"]}.webp'
+                worn = DRESSED_DIR / club / f'{st["slot"]}.webp'
                 fig, kit_over, painted = None, False, False
                 if not src and face.exists():
-                    got = cutout(face.read_bytes(), session, 'club', paint_it=False)
+                    got = cutout((worn if worn.exists() else face).read_bytes(), session, 'club', paint_it=False)
                     if got:
                         cut, f = got
                         bb = io.BytesIO(); cut.save(bb, 'PNG'); photo = base64.b64encode(bb.getvalue()).decode(); photo_wh = (*cut.size, *f)
-                        kit_over = painted = True
+                        painted = True
+                        kit_over = not worn.exists()  # an undressed painting still gets the shirt laid over
                         frame = 'club'  # a painted portrait is never an archive photograph
                 if not src and not painted:
                     fig = painted_figure(pg, st, traits)
