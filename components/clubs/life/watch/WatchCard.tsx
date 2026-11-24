@@ -24,7 +24,7 @@
  *   onPlay       (moment) => void          told when a film is started (optional; for the save / the funnel)
  */
 import {useState, type CSSProperties} from 'react'
-import {embedUrl, slateDate, watchUrl, watchWord, type HighlightsMoment, type OurFilmMoment, type WatchSlate} from '@/lib/life/watch'
+import {embedUrl, slateDate, watchTitle, watchUrl, watchWord, type HighlightsMoment, type OurFilmMoment, type WatchSlate} from '@/lib/life/watch'
 import css from './watch.module.css'
 
 export type WatchCardProps = {
@@ -75,7 +75,7 @@ export function WatchCard({highlights, more = [], ourFilm = null, ourFilmFit = '
                 <span className={css.wcPosterLines} aria-hidden="true" />
                 <PlayMark />
                 <span className={css.wcPosterLabel}>{watchWord(first.kind === 'highlights' ? 'watch.play' : 'watch.play.film')}</span>
-                <span className={css.wcPosterTitle} lang={first.titleLocale} dir="auto">{first.title}</span>
+                <span className={css.wcPosterTitle}>{watchTitle(first.title, first.titleLocale)}</span>
               </button>
             )}
           </div>
@@ -93,7 +93,7 @@ export function WatchCard({highlights, more = [], ourFilm = null, ourFilmFit = '
           <div className={css.wcMore}>
             <p className={css.wcKicker}>{watchWord('watch.more')}</p>
             <ul className={css.wcList}>
-              {more.map(m => <li key={m.id}><button type="button" className={`${css.wcRow} min-h-tap`} onClick={() => start(m)} aria-pressed={playing?.id === m.id}><PlayMark /><span lang={m.titleLocale} dir="auto">{m.title}</span></button></li>)}
+              {more.map(m => <li key={m.id}><button type="button" className={`${css.wcRow} min-h-tap`} onClick={() => start(m)} aria-pressed={playing?.id === m.id}><PlayMark /><span>{watchTitle(m.title, m.titleLocale)}</span></button></li>)}
             </ul>
           </div>
         ) : null}

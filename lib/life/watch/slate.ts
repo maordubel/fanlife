@@ -18,6 +18,7 @@ export type WatchSlate = {
   publisher: string | null
 }
 
+const BARE_MINUTE = /^(minute|min\.?)\s*\d+'?$/i
 export function slateOf(ref: ArchiveRef | null, competition: string | null = null): WatchSlate | null {
   if (!ref) return null
   const m = ref.match
@@ -25,7 +26,8 @@ export function slateOf(ref: ArchiveRef | null, competition: string | null = nul
     date: ref.precision === 'day' && ref.on ? ref.on : String(ref.year),
     competition,
     result: m ? `${m.home} ${m.homeGoals}–${m.awayGoals} ${m.away}` : null,
-    title: ref.title, titleLocale: ref.locale,
+    // a row whose title is only a bare minute ("minute 86") says nothing on its own: no line rather than a fragment
+    title: BARE_MINUTE.test(ref.title?.trim() ?? '') ? null : ref.title, titleLocale: ref.locale,
     publisher: ref.sources[0]?.publisher ?? null,
   }
 }

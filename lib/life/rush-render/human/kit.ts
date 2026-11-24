@@ -10,10 +10,12 @@ import {MeshoptDecoder} from 'three/examples/jsm/libs/meshopt_decoder.module.js'
 
 export const CAST = ['boy', 'girl', 'teen', 'father', 'father_heavy', 'mother', 'mother_heavy', 'grandfather', 'grandmother'] as const
 export type CastId = typeof CAST[number]
-/** what a phone downloads: five bodies. A full machine takes all nine. */
-export const CAST_LITE: readonly CastId[] = ['boy', 'father', 'mother', 'grandfather', 'teen']
+/** what a phone downloads: four bodies and the clips, under 7 MB (the clips grew to 37 in the second asset round, so the
+ *  grandfather left the phone's set: his grey head is the father's there; the far crowd still has his light body). A full
+ *  machine takes all nine. */
+export const CAST_LITE: readonly CastId[] = ['boy', 'father', 'mother', 'teen']
 /** who stands in for a character that is not loaded (the lite set covers every one) */
-export const STAND_IN: Record<CastId, CastId> = {boy: 'boy', girl: 'boy', teen: 'teen', father: 'father', father_heavy: 'grandfather', mother: 'mother', mother_heavy: 'mother', grandfather: 'grandfather', grandmother: 'mother'}
+export const STAND_IN: Record<CastId, CastId> = {boy: 'boy', girl: 'boy', teen: 'teen', father: 'father', father_heavy: 'father', mother: 'mother', mother_heavy: 'mother', grandfather: 'father', grandmother: 'mother'}
 export const ASSET_BASE = '/life/assets/'
 
 export type Layer = 'full' | 'lo' | 'up' | 'arms'
@@ -64,9 +66,12 @@ function loadClips(): Promise<ClipSet> {
 }
 
 /** skin that is alive at dusk, eyes that are wet, teeth that are not black: once per character, shared by every clone */
+/** the optional pieces inside a body (manifest `accessories`): hidden on load; a person shows the ones he wears (`human.ts`) */
+export const isAccessory = (name: string) => name.startsWith('Acc_') || name === 'Hair2' || name === 'Hair_hat'
 function dress(scene: THREE.Object3D): void {
   const seen = new Set<THREE.Material>()
   scene.traverse(o => {
+    if (isAccessory(o.name) || (o.userData as {accessory?: string}).accessory) o.visible = false
     const m = o as THREE.Mesh; if (!m.isMesh) return
     m.frustumCulled = false; m.castShadow = true; m.receiveShadow = false
     const mats = Array.isArray(m.material) ? m.material : [m.material]
@@ -84,13 +89,19 @@ function dress(scene: THREE.Object3D): void {
   })
 }
 
-export function loadChar(id: CastId): Promise<CharAsset> {
-  let p = CHARS.get(id)
+export function loadChar(id: CastId): Promise<CharAsset> { return loadBody(id, false) }
+const LODS = new Map<CastId, Promise<CharAsset>>()
+/** the far body (`cast/<id>-lod1.glb`: the same skeleton and clips, one ~4k-triangle mesh, the tint regions in COLOR_0) */
+export function loadLod(id: CastId): Promise<CharAsset> { return loadBody(id, true) }
+
+function loadBody(id: CastId, lod: boolean): Promise<CharAsset> {
+  const cache = lod ? LODS : CHARS
+  let p = cache.get(id)
   if (!p) {
-    p = Promise.all([loader().loadAsync(ASSET_BASE + `cast/${id}.glb`), loadClips(), manifest()]).then(([g, cs, m]) => {
+    p = Promise.all([loader().loadAsync(ASSET_BASE + `cast/${id}${lod ? '-lod1' : ''}.glb`), loadClips(), manifest()]).then(([g, cs, m]) => {
       const row = m.assets.find(a => a.id === id)
       const hip = row?.hipHeight ?? 0.95, height = row?.height ?? 1.75, k = hip / cs.hip
-      dress(g.scene)
+      if (!lod) dress(g.scene)
       const made = new Map<string, THREE.AnimationClip | null>()
       const clip = (name: string, layer: Layer) => {
         const key = name + '.' + layer
@@ -107,11 +118,11 @@ export function loadChar(id: CastId): Promise<CharAsset> {
       }
       const a: CharAsset = {id, scene: g.scene, height, hip, k, bytes: row?.bytes ?? 0, clip,
         stride: {walk: cs.stride.walk * k, run: cs.stride.run * k, walkT: cs.clips.get('walk')?.duration ?? 1.1, runT: cs.clips.get('run')?.duration ?? 0.74}}
-      READY.set(id, a)
+      if (!lod) READY.set(id, a)
       return a
     })
     p.catch(() => { /* the caller falls back to the classic figure */ })
-    CHARS.set(id, p)
+    cache.set(id, p)
   }
   return p
 }

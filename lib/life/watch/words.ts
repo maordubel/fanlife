@@ -18,10 +18,19 @@ const EN = {
   'watch.back': 'Back to the slate',
   'watch.none': 'No film of this night is on record yet.',
   'watch.frame': 'Video player: {title}',
+  'watch.title.local': 'As published, in {language}',
+  'watch.lang.he': 'Hebrew', 'watch.lang.el': 'Greek', 'watch.lang.de': 'German', 'watch.lang.it': 'Italian', 'watch.lang.es': 'Spanish', 'watch.lang.hr': 'Croatian', 'watch.lang.bs': 'Bosnian', 'watch.lang.other': 'its own language',
 } as const
 
 export type WatchKey = keyof typeof EN
 export const WATCH_WORDS: Record<string, string> = EN
+/** a film's recorded title on the card: as recorded when it is English, otherwise an English line naming its language (the
+ *  interface is English; the recorded title stays on YouTube, one tap away) */
+export function watchTitle(title: string, locale?: string | null): string {
+  if (!locale || locale === 'en') return title
+  const k = `watch.lang.${locale}` as WatchKey
+  return watchWord('watch.title.local', {language: k in EN ? watchWord(k) : watchWord('watch.lang.other')})
+}
 export function watchWord(key: WatchKey, vars: Record<string, string> = {}): string {
   return (EN[key] as string).replace(/\{(\w+)\}/g, (_, k: string) => vars[k] ?? `{${k}}`)
 }

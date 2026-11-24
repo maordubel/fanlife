@@ -543,7 +543,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   }))
   crowd.forEach(im => { if (im.instanceColor) im.instanceColor.needsUpdate = true })
   const zero = new THREE.Matrix4().makeScale(0, 0, 0)
-  const duskCrowd = dusk ? dressCrowd({scene, level, skin, lite, rnd, keep, allowed: l => allowed(l, skin), figOf}) : null
+  const duskCrowd = dusk ? dressCrowd({scene, level, skin, lite, rnd, keep, allowed: l => allowed(l, skin), figOf, humans: !!troupe}) : null
 
 
   /* ───────────── the quest: who waits for you, what lies on the ground, where to go next ───────────── */
@@ -557,7 +557,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
     if (!troupe) return classic()
     const cast = (o.cast as CastId | undefined) ?? castFor({child: o.child, female, grey: L.grey, heavy: h % 5 === 2, pick: h})
     return troupe.make(cast, {top: L.kit ? skin.p : o.top ?? L.hex?.top ?? tops[L.top % tops.length]!, skin: o.skinTone ?? L.hex?.skin ?? SKIN_TONES[L.tone % SKIN_TONES.length], hair: L.grey ? undefined : L.hex?.hair ?? (o.rank === 1 ? undefined : HAIR[L.hair % HAIR.length]),
-      pants: L.hex?.pants ?? PANTS[L.pants % PANTS.length], height: (o.scale ?? L.size * 0.94 * kidK) * 1.87, child: o.child, scarf: (o.scarf ?? L.scarf) ? scarfOf : null, pack: o.pack, noBlob: o.noBlob, rank: o.rank ?? 2}, o.rank === 3 ? nobody : classic)
+      pants: L.hex?.pants ?? PANTS[L.pants % PANTS.length], height: (o.scale ?? L.size * 0.94 * kidK) * 1.87, child: o.child, scarf: (o.scarf ?? L.scarf) ? scarfOf : null, pack: o.pack, noBlob: o.noBlob, rank: o.rank ?? 2, wear: {cap: (L.cap || !!o.cap) && !female, beard: L.beard && !female, glasses: h % 6 === 0}}, o.rank === 3 ? nobody : classic)
   }
   const classicFig = (L: Look, o: Parameters<typeof makeFigure>[2], h: number, female: boolean) => {
     return figOf({kit: L.kit, scarf: L.scarf, cap: L.cap && !female, mustache: L.beard, hair: hairOf(L), skinTone: L.hex?.skin ?? SKIN_TONES[L.tone % SKIN_TONES.length], top: L.hex?.top ?? tops[L.top % tops.length], pants: L.hex?.pants ?? PANTS[L.pants % PANTS.length], longSleeves: !L.kit, scale: L.size * 0.94 * kidK,
@@ -838,6 +838,8 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   let t = 0, shake = 0, speedFx = 0, flash = 0, heart = 0, lastHits = 0, lastCaught = 0
   let talkKey = '', talkT = 0, talkK = 0, shotKey = '', warm = 0, beatK = 0, talkFov = 40
   let talkFace: {x: number; y: number; z: number; fig?: THREE.Object3D} | null = null, ambNow: AmbState | null = null
+  const rayCaster = new THREE.Raycaster(), rayFrom = new THREE.Vector3(), rayDir = new THREE.Vector3()
+  let occluders: THREE.Object3D[] | null = null
   const talkPos = new THREE.Vector3(), talkLook = new THREE.Vector3(), talkWant = new THREE.Vector3(), talkAim = new THREE.Vector3()
   const talkLight = new THREE.PointLight('#ffc79a', 0, 6, 1.8); if (level.hood) scene.add(talkLight)
   const eyeH = () => child ? 1.2 : 1.62
@@ -1192,6 +1194,17 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
       const fov = 76 + Math.min(sp, 10) * 1.1; cam.fov += (fov - cam.fov) * Math.min(dt * 4, 1)
     }
     if (level.hood) {
+      // whatever solid stands between a lens and the two people (a post, a tree, a stall, a wall the plan does not know):
+      // a ray from the lens to the middle of the pair, against the scene's opaque things, not the people themselves
+      const blocked = (ax: number, ay: number, az: number, bx: number, by: number, bz: number) => {
+        rayFrom.set(ax, ay, az); rayDir.set(bx - ax, by - ay, bz - az); const len = rayDir.length(); if (len < 0.3) return false
+        rayCaster.set(rayFrom, rayDir.divideScalar(len)); rayCaster.far = len - 0.5
+        if (!occluders) { const list: THREE.Object3D[] = []; occluders = list; scene.traverse(o => { const m = o as THREE.Mesh; if (!m.isMesh || (m as THREE.SkinnedMesh).isSkinnedMesh || !m.visible) return
+          const mt = m.material as THREE.Material; if (Array.isArray(mt) || mt.transparent || !mt.depthWrite || m.userData.role || m.geometry.attributes.aMask || m.geometry.attributes.aTint) return
+          for (let p: THREE.Object3D | null = m; p; p = p.parent) if ((p.userData as {human?: unknown}).human || p === hero) return
+          list.push(m) }) }
+        return rayCaster.intersectObjects(occluders, false).length > 0
+      }
       // A conversation is held, not watched from the kerb: over the boy's shoulder onto the face that speaks; for a line that
       // matters, round to the side so both of them are in the picture. The lens takes the side that has room (never a facade,
       // never the kiosk), eases in and out, and with reduced motion it cuts.
@@ -1202,12 +1215,17 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
         const hx = sim.x, hz = sim.z, d0 = Math.hypot(talkFace.x - hx, talkFace.z - hz) || 1, ax = (talkFace.x - hx) / d0, az = (talkFace.z - hz) / d0, px = az, pz = -ax
         const hh = child ? 1.16 : 1.58, mx = (hx + talkFace.x) / 2, mz = (hz + talkFace.z) / 2
         if (key !== shotKey) {
-          shotKey = key
+          shotKey = key; occluders = null
           talkFov = shot === 'close' ? 40 : 44
           const hf = 2 * Math.atan(Math.tan(THREE.MathUtils.degToRad(talkFov) / 2) * cam.aspect)
           const dist = Math.max(2.1, Math.min(4.0, 1.1 / (2 * Math.tan(hf / 2))))
           const free = (x: number, z: number) => {
             if (!level.crossings.some(c => Math.abs(z - c) < level.half) && Math.abs(x) > level.walk - 0.9) return false
+            // nothing across the speaker's face, the boy's head or the middle of the pair
+            const cy = hh + 0.25
+            if (blocked(x, cy, z, mx, (hh + talkFace!.y) / 2, mz) || blocked(x, cy, z, talkFace!.x, talkFace!.y, talkFace!.z) || blocked(x, cy, z, hx, hh, hz)) return false
+            // and nothing solid right at the lens's sides (a stall or a box filling half the frame)
+            for (const [ox, oz] of [[0.45, 0], [-0.45, 0], [0, 0.45], [0, -0.45]] as const) if (blocked(x + ox, cy, z + oz, talkFace!.x, talkFace!.y, talkFace!.z)) return false
             for (let k = 0; k <= 8; k++) { const qx = x + (mx - x) * k / 8, qz = z + (mz - z) * k / 8; for (const b of level.blocks) if (qx > b.x0 - 0.45 && qx < b.x1 + 0.45 && qz > b.z0 - 0.45 && qz < b.z1 + 0.45) return false
               // the dusk street's lamp posts (look/dusk.ts lays them every 16 m, the right side 8 m on): never a post across the lens
               if (dusk && Math.abs(Math.abs(qx) - (level.half + 1.2)) < 0.6) { const off = qx > 0 ? 8 : 0, r = ((level.bounds.z1 + 4 + off - qz) % 16 + 16) % 16; if (r < 0.7 || r > 15.3) return false } }
@@ -1223,6 +1241,8 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
             // no room behind either of them (he stands between the speaker and a wall): from the side, the street's side first
             sideOn = true
             for (const sg of [pref, -pref]) { talkWant.set(mx + px * sg * Math.max(2.6, dist * 0.8), hh + 0.4, mz + pz * sg * Math.max(2.6, dist * 0.8)); if (free(talkWant.x, talkWant.z)) { hit = true; break } }
+            // still nothing: round the pair at three distances, the first clear lens wins
+            if (!hit) ring: for (const r of [3.2, 2.4, 4.4]) for (let k = 0; k < 12; k++) { const an = k * Math.PI / 6; talkWant.set(mx + Math.cos(an) * r, hh + 0.4, mz + Math.sin(an) * r); if (free(talkWant.x, talkWant.z)) { hit = true; break ring } }
             if (!hit) talkWant.set(mx - Math.sign(mx || 1) * 3.2, hh + 0.4, mz + 0.9)
           }
           if (sideOn) { talkAim.set(mx, (hh + talkFace.y) / 2, mz); talkFov = 54 }

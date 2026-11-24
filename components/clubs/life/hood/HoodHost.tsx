@@ -293,7 +293,7 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
     const humans = people === 'classic' ? Promise.resolve(false) : import('@/lib/life/rush-render/human/kit').then(k => k.preloadHumans(qualityEff === 'lite')).catch(() => false)
     Promise.all([import('@/lib/life/rush-render/stage'), humans]).then(([{createStage}, ok]) => {
       if (!alive) return
-      try { const st = createStage({canvas, level, spec, skin: club.skin, quality: qualityEff, reduced: reducedEff, gateLabel: club.skin.strings.gate ?? club.skin.strings.ground ?? '', people: ok ? 'human' : 'classic'}); stageRef.current = st; st.resize(canvas.clientWidth || window.innerWidth, canvas.clientHeight || window.innerHeight); setReady(true) } catch { setError(true) }
+      try { const mk = (q: Quality) => createStage({canvas, level, spec, skin: club.skin, quality: q, reduced: reducedEff, gateLabel: club.skin.strings.gate ?? club.skin.strings.ground ?? '', people: ok ? 'human' : 'classic'}); let st: Stage; try { st = mk(qualityEff) } catch (e) { if (qualityEff === 'lite') throw e; st = mk('lite') /* a device that cannot draw the full street draws the light one, never the error card */ } stageRef.current = st; st.resize(canvas.clientWidth || window.innerWidth, canvas.clientHeight || window.innerHeight); setReady(true) } catch { setError(true) }
     }).catch(() => { if (alive) setError(true) })
     const onResize = () => stageRef.current?.resize(canvas.clientWidth || window.innerWidth, canvas.clientHeight || window.innerHeight)
     window.addEventListener('resize', onResize)

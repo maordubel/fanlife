@@ -22,6 +22,8 @@ export type HumanOptions = {
   scarf?: {p: string; s: string} | null; pack?: boolean; noBlob?: boolean
   /** 0 the player, 1 somebody with a name, 2 the street, 3 a face in the crowd */
   rank?: number
+  /** what a named person is known to wear; the street's people are varied by the troupe instead (no twins) */
+  wear?: {cap?: boolean; beard?: boolean; glasses?: boolean}
 }
 type Act = {a: THREE.AnimationAction; w: number; want: number; once: boolean; manual: boolean; dur: number; on: boolean}
 type Live = {sp: number; ph: number; yaw: number; yr: number; hy: number; hx: number; sx: number; sy: number; sac: number; blink: number; seed: number; fresh: boolean
@@ -48,7 +50,7 @@ const PROC = ['spine_01', 'spine_02', 'spine_03', 'neck_01', 'head', 'eye_l', 'e
 /** bones turned by hand after the clips. The mixer only writes a bone when its own result changed, so each keeps what the
  *  clips last gave it (`base`) and what was left on it (`last`): a held pose is never turned twice. */
 const HAND = [...PROC, 'upperarm_l', 'upperarm_r', 'lowerarm_l', 'lowerarm_r'] as const
-const ONCE = new Set(['sit', 'crouch_to_child', 'hand_on_shoulder', 'hug'])
+const ONCE = new Set(['sit', 'crouch_to_child', 'hand_on_shoulder', 'hug', 'put_scarf_on', 'ruffle_hair', 'kick_ball', 'laugh_body'])
 const v1 = new THREE.Vector3(), v2 = new THREE.Vector3(), q1 = new THREE.Quaternion(), q2 = new THREE.Quaternion(), e1 = new THREE.Euler()
 const WHITE = new THREE.Color('#ffffff')
 const REF_SKIN = new THREE.Color('#e6b48f')
@@ -83,9 +85,34 @@ export function createTroupe(x: {max: number; lite: boolean}): Troupe {
   // Never the pure hue: a fully saturated colour goes out of gamut under the film tone map and the grade turns it black.
   const scarfMat = (c: string) => { let m = scarfMats.get(c); if (!m) { const soft = new THREE.Color(c).lerp(WHITE, 0.12); m = keep(new THREE.MeshStandardMaterial({color: soft, roughness: 0.95, emissive: soft.clone(), emissiveIntensity: 0.4})); scarfMats.set(c, m) } return m }
 
+  // the street's people in one body are told apart: a second hairstyle, a cap or a beanie, glasses, a moustache or a beard
+  const seen = new Map<CastId, number>()
+  function wearOf(h: Human, a: CharAsset): Set<string> {
+    const o = h.o, adult = !o.child && a.id !== 'teen', out = new Set<string>()
+    if ((o.rank ?? 2) <= 1) {
+      if (o.wear?.cap) out.add('Acc_cap_flat')
+      if (o.wear?.glasses) out.add('Acc_glasses_round')
+      if (o.wear?.beard && adult) out.add('Acc_beard')
+      return out
+    }
+    const k = seen.get(a.id) ?? 0; seen.set(a.id, k + 1)
+    if (adult && k % 2 === 1) out.add('Hair2')
+    const hat = k % 5 === 2 ? 'Acc_cap_flat' : k % 5 === 4 ? 'Acc_beanie' : null
+    if (hat) out.add(hat)
+    if (k % 7 === 3) out.add('Acc_glasses_round'); else if (k % 7 === 5) out.add('Acc_glasses_square')
+    if (adult && (a.id.startsWith('father') || a.id === 'grandfather')) { if (k % 4 === 1) out.add('Acc_moustache'); else if (k % 4 === 3) out.add('Acc_beard') }
+    return out
+  }
   function build(h: Human, a: CharAsset): void {
     if (gone || h.dead) return
     const o = h.o, model = SkeletonUtils.clone(a.scene)
+    { const wear = wearOf(h, a), hat = wear.has('Acc_cap_flat') || wear.has('Acc_beanie'), hasHat = !!model.getObjectByName('Hair_hat'), two = wear.has('Hair2') && !hat && !!model.getObjectByName('Hair2')
+      model.traverse(n => {
+        if (n.name.startsWith('Acc_')) n.visible = wear.has(n.name)
+        else if (n.name === 'Hair2') n.visible = two
+        else if (n.name === 'Hair_hat') n.visible = hat && hasHat
+        else if (n.name === 'Hair' && (n as THREE.Mesh).isMesh) n.visible = !two && !(hat && hasHat)
+      }) }
     h.asset = a; h.model = model
     h.scale = clamp(o.height / a.height, o.child ? 0.62 : 0.9, o.child ? 1.12 : 1.1)
     h.root.scale.setScalar(h.scale)
@@ -97,6 +124,8 @@ export function createTroupe(x: {max: number; lite: boolean}): Troupe {
       const m = n as THREE.Mesh; if (!m.isMesh) return
       const src = m.material as THREE.MeshStandardMaterial, nm = src.name
       if (nm === 'tint_top') m.material = mat(`${a.id}|top|${o.top}`, src, c => { c.color.set(o.top).lerp(WHITE, 0.12); c.emissive.copy(c.color); c.emissiveIntensity = 0.4 })
+      // the collar and cuffs in the scarf's second colour (the club's), or a deeper shade of the top
+      else if (nm === 'tint_trim') { const tc = o.scarf ? o.scarf.s : '#' + new THREE.Color(o.top).multiplyScalar(0.62).getHexString(); m.material = mat(`${a.id}|trim|${tc}`, src, c => { c.color.set(tc).lerp(WHITE, 0.1); c.emissive.copy(c.color); c.emissiveIntensity = 0.3 }) }
       else if (nm === 'skin' && tone) m.material = mat(`${a.id}|skin|${o.skin}`, src, c => { c.color.copy(tone); c.emissive.set('#ff9a70').multiply(tone) })
       else if (nm.endsWith('_hair') && o.hair) m.material = mat(`${a.id}|hair|${o.hair}`, src, c => { c.color.set(o.hair!).lerp(new THREE.Color('#ffffff'), 0.35) })
       else if (nm.endsWith('_brows') && o.hair) m.material = mat(`${a.id}|brow|${o.hair}`, src, c => { c.color.set(o.hair!).lerp(new THREE.Color('#ffffff'), 0.3) })
@@ -222,8 +251,12 @@ function turn(h: Human, bone: string, x: number, y: number, z: number): void {
   b.quaternion.multiply(q1.copy(h.qi[bone]!).multiply(q2).multiply(qb))
 }
 /** which clip a gesture is, on which part of the body, and how much of it */
-const CLIP: Partial<Record<Gesture, readonly [string, number]>> = {open: ['talk_1', 1], point: ['talk_3', 1], shrug: ['talk_3', 0.9], shoulder: ['hand_on_shoulder', 1], ruffle: ['hand_on_shoulder', 1], wave: ['wave', 1], lift: ['wave', 0.8],
-  thumb: ['talk_2', 0.9], cheer: ['cheer', 1], laugh: ['talk_1', 0.35], give: ['talk_2', 0.7], scarfOn: ['hug', 0.85], hug: ['hug', 1], carryKid: ['cheer', 1], play: ['talk_2', 0.55]}
+const CLIP: Partial<Record<Gesture, readonly [string, number]>> = {open: ['talk_1', 1], point: ['talk_3', 1], shrug: ['talk_3', 0.9], shoulder: ['hand_on_shoulder', 1], ruffle: ['ruffle_hair', 1], wave: ['wave', 1], lift: ['wave', 0.8],
+  thumb: ['talk_2', 0.9], cheer: ['cheer', 1], laugh: ['talk_1', 0.35], give: ['talk_2', 0.7], scarfOn: ['put_scarf_on', 1], hug: ['hug', 1], carryKid: ['child_on_shoulders_carrier', 1], play: ['talk_2', 0.55]}
+/** the clips that carry the arms only (the legs keep walking or kneeling under them) */
+const ARMS = new Set(['hand_on_shoulder', 'hug', 'ruffle_hair', 'put_scarf_on', 'child_on_shoulders_carrier'])
+/** a hand shape that goes with a gesture (finger bones only) */
+const HANDSHAPE: Partial<Record<Gesture, string>> = {shoulder: 'hand_palm_down_rest', ruffle: 'hand_relaxed', point: 'hand_point', thumb: 'hand_thumb_up', cheer: 'hand_fist', carryKid: 'hand_fist'}
 
 function poseHuman(h: Human, st: Pose, t: number, dt: number, classicPose: (f: THREE.Object3D, st: Pose, t: number, dt: number) => void): void {
   if (h.classic && h.classic.visible && (h.classic.userData as {J?: unknown}).J) classicPose(h.classic, st, t, dt)
@@ -246,8 +279,16 @@ function poseHuman(h: Human, st: Pose, t: number, dt: number, classicPose: (f: T
   const cheer = !!st.celebrate || !!st.scarfUp || gest === 'cheer'
   let full = sit ? 1 : kneel
   for (const A of h.acts.values()) A.want = 0
-  if (sit) want(h, 'sit', 'full', 1)
+  // a child riding on somebody's shoulders holds on and waves (the pair's own clip), not a chair's sit
+  if (st.ride && a.clip('child_on_shoulders_rider', 'full')) want(h, 'child_on_shoulders_rider', 'full', 1)
+  else if (sit) want(h, 'sit', 'full', 1)
   else if (kneel > 0) want(h, 'crouch_to_child', 'full', kneel)
+  // a kick at the ball: the captured kick, once each time it starts (the hand-turned thigh is the code-built figure's)
+  const kickClip = gest === 'kick' && !!a.clip('kick_ball', 'full')
+  if (kickClip && !sit) { full = Math.max(full, 1); want(h, 'kick_ball', 'full', 1) }
+  // hand in hand: the paired walk replaces the plain one while they move (mother and child)
+  const pairWalk = (gest === 'hold' || gest === 'held') && !sit ? (gest === 'hold' ? 'hold_hand_walk_adult' : 'hold_hand_walk_child') : null
+  const hasPair = !!pairWalk && !!a.clip(pairWalk, 'full')
   // what the arms say (the chest, arms, neck and head), over whatever the legs are doing
   let up = 0, upName = ''
   if (cheer) { upName = 'cheer'; up = 1 }
@@ -256,10 +297,14 @@ function poseHuman(h: Human, st: Pose, t: number, dt: number, classicPose: (f: T
   else if (st.ticket) { upName = 'talk_2'; up = 0.8 }
   else if (gest && CLIP[gest]) { upName = CLIP[gest]![0]; up = CLIP[gest]![1] }
   if (sit && upName === 'cheer') full = 0.35
-  const lo = 1 - (sit ? 1 : kneel), bodyUp = (1 - full) * (1 - up)
-  want(h, 'idle', 'lo', lo * (1 - moving)); want(h, 'walk', 'lo', lo * moving * (1 - run)); want(h, 'run', 'lo', lo * moving * run)
-  want(h, 'idle', 'up', bodyUp * (1 - moving)); want(h, 'walk', 'up', bodyUp * moving * (1 - run)); want(h, 'run', 'up', bodyUp * moving * run)
-  if (upName) want(h, upName, upName === 'hand_on_shoulder' || upName === 'hug' ? 'arms' : 'up', up * (1 - full) + (sit || kneel ? up * full : 0))
+  const lo = kickClip && !sit ? 0 : 1 - (sit ? 1 : kneel), bodyUp = (1 - full) * (1 - up)
+  const pw = hasPair ? moving : 0
+  want(h, 'idle', 'lo', lo * (1 - moving)); want(h, 'walk', 'lo', lo * moving * (1 - run) * (1 - pw)); want(h, 'run', 'lo', lo * moving * run * (1 - pw))
+  want(h, 'idle', 'up', bodyUp * (1 - moving)); want(h, 'walk', 'up', bodyUp * moving * (1 - run) * (1 - pw)); want(h, 'run', 'up', bodyUp * moving * run * (1 - pw))
+  if (hasPair) want(h, pairWalk!, 'full', pw)
+  if (upName) want(h, upName, ARMS.has(upName) ? 'arms' : 'up', up * (1 - full) + (sit || kneel ? up * full : 0))
+  const hand = gest ? HANDSHAPE[gest] : undefined
+  if (hand && a.clip(hand, 'arms')) want(h, hand, 'arms', 0.85)
   const rate = ez(5.5)
   for (const A of h.acts.values()) {
     A.w += (A.want - A.w) * rate
@@ -290,7 +335,7 @@ function poseHuman(h: Human, st: Pose, t: number, dt: number, classicPose: (f: T
   turn(h, 'neck_01', headX * 0.4, headY * 0.36, tilt * 0.5)
   turn(h, 'head', headX * 0.6, headY * 0.5, tilt)
   if (st.ride) { turn(h, 'thigh_l', 0, 0.42, 0); turn(h, 'thigh_r', 0, -0.42, 0) }
-  if (gest === 'kick') { const kk = Math.sin(clamp(S.gT / 0.45, 0, 1) * Math.PI); turn(h, 'thigh_r', -kk * 1.0, 0, 0) }
+  if (gest === 'kick' && !kickClip) { const kk = Math.sin(clamp(S.gT / 0.45, 0, 1) * Math.PI); turn(h, 'thigh_r', -kk * 1.0, 0, 0) }
   // the eyes get there before the head, and are never quite still
   if (live) { S.sac -= dt; if (S.sac < 0) { S.sac = 0.5 + Math.random() * (st.gaze ? 2.4 : 1.5); const r = st.gaze ? 0.12 : 0.45; S.sx = (Math.random() - 0.5) * 2 * r; S.sy = (Math.random() - 0.5) * r } }
   const ex = clamp((st.eyeX ?? 0) + S.sx + clamp((wantY - S.hy) * 2.2, -1, 1), -1, 1) * 0.42, ey = clamp(-(st.eyeY ?? 0) + S.sy + clamp((wantX - S.hx) * 2, -0.8, 0.8), -1, 1) * 0.3

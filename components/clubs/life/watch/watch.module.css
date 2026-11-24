@@ -22,7 +22,7 @@
   -webkit-tap-highlight-color: transparent;
 }
 .wcRoot p, .wcRoot h2, .wcRoot ul { margin: 0; padding: 0; }
-.wcRoot button { font: inherit; color: inherit; cursor: pointer; }
+.wcRoot :where(button) { font: inherit; color: inherit; cursor: pointer; } /* zero weight for the element: a button's own class (the cream Continue in navy ink) wins */
 .wcRoot :focus-visible { outline: 3px solid var(--wc-cream); outline-offset: 2px; }
 
 /* ───── the archive slate: a clapper's top edge, then the facts the row holds ───── */

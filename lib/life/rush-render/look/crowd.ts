@@ -8,12 +8,54 @@ import * as THREE from 'three'
 import {mergeGeometries} from 'three/examples/jsm/utils/BufferGeometryUtils.js'
 import type {VoxelSkin} from '@/lib/life/universal/skin'
 import type {Level} from '@/lib/life/rush/level'
+import * as SkeletonUtils from 'three/examples/jsm/utils/SkeletonUtils.js'
 import {HAIR, PANTS, SKIN_TONES, pose, disposeFigure, type FigureData, type FigureOptions} from '../figure'
+import {loadLod, type CastId, type CharAsset} from '../human/kit'
 
 export type CrowdCtx = {
   scene: THREE.Scene; level: Level; skin: VoxelSkin; lite: boolean; rnd: () => number
   keep: <T extends {dispose(): void}>(x: T) => T; allowed: (l: readonly string[]) => string[]
   figOf: (o: FigureOptions) => THREE.Group
+  /** the skinned people are in: the far crowd becomes their own far bodies (`cast/<id>-lod1.glb`), so the street has one
+   *  kind of person from the nearest face to the farthest back, and no seam where a figure turns into a human */
+  humans?: boolean
+}
+
+/** each pose of the far crowd, as which far body plays it and which moment of which clip (set 0 is all a phone loads) */
+const LOD_POSES: {body: [CastId, CastId]; clip: [string, string]; at: number}[] = [
+  {body: ['father', 'grandfather'], clip: ['idle_2', 'idle_3'], at: 0.3},
+  {body: ['mother', 'father_heavy'], clip: ['talk_1', 'talk_2'], at: 0.45},
+  {body: ['teen', 'father'], clip: ['cheer', 'cheer'], at: 0.2},
+  {body: ['father', 'teen'], clip: ['walk', 'walk'], at: 0},
+  {body: ['mother', 'mother_heavy'], clip: ['walk', 'walk'], at: 0},
+  {body: ['grandfather', 'teen'], clip: ['cheer', 'wave'], at: 0.6},
+]
+
+/** a far body held still at one moment of a clip, skinned once on the CPU into a plain mesh: its atlas, and the tint mask
+ *  (COLOR_0: R the top, B the trim) as an attribute the material mixes the shirt colour in by */
+function bakeLod(a: CharAsset, clip: string, at: number): {geo: THREE.BufferGeometry; map: THREE.Texture | null} | null {
+  const model = SkeletonUtils.clone(a.scene)
+  const c = a.clip(clip, 'full'); if (!c) return null
+  const mixer = new THREE.AnimationMixer(model), act = mixer.clipAction(c); act.play(); act.time = c.duration * at; mixer.update(0)
+  model.updateMatrixWorld(true)
+  let sm: THREE.SkinnedMesh | null = null
+  model.traverse(o => { if (!sm && (o as THREE.SkinnedMesh).isSkinnedMesh) sm = o as THREE.SkinnedMesh })
+  if (!sm) { mixer.uncacheRoot(model); return null }
+  const m = sm as THREE.SkinnedMesh
+  m.skeleton.update()
+  const src = m.geometry, pos = src.attributes.position!, n = pos.count, out = new Float32Array(n * 3), v = new THREE.Vector3()
+  for (let i = 0; i < n; i++) { v.fromBufferAttribute(pos, i); m.applyBoneTransform(i, v); v.applyMatrix4(m.matrixWorld); out.set([v.x, v.y, v.z], i * 3) }
+  const geo = new THREE.BufferGeometry()
+  geo.setAttribute('position', new THREE.BufferAttribute(out, 3))
+  if (src.attributes.uv) geo.setAttribute('uv', src.attributes.uv.clone())
+  const col = src.attributes.color
+  const mask = new Float32Array(n * 3); if (col) for (let i = 0; i < n; i++) mask.set([col.getX(i), col.getY(i), col.getZ(i)], i * 3)
+  geo.setAttribute('aMask', new THREE.BufferAttribute(mask, 3))
+  if (src.index) geo.setIndex(src.index.clone())
+  geo.computeVertexNormals()
+  const map = (m.material as THREE.MeshStandardMaterial).map ?? null
+  mixer.stopAllAction(); mixer.uncacheRoot(model); m.skeleton.dispose()
+  return {geo, map}
 }
 type P = {x: number; z: number; yaw: number; v: number; k: number; ph: number; sc: number; walk: boolean; d: number; col: THREE.Color; i: number; hum: boolean}
 /** somebody near enough to be a person: the stage draws him as a skinned human and says whether it did */
@@ -58,13 +100,13 @@ export function dressCrowd(x: CrowdCtx) {
   // a walker is a stride, not a statue sliding: each walking build is baked at several moments of the captured stride and
   // every walker shows the one his own distance has reached (a foot that is down stays down)
   const NPH = lite ? 4 : 6
-  const variants: {geo: THREE.BufferGeometry; walk: boolean; grp: number; ph: number}[] = []
+  const variants: {geo: THREE.BufferGeometry; walk: boolean; grp: number; ph: number; d: number; s: number}[] = []
   let groups = 0
   for (let s = 0; s < sets; s++) defs.forEach((d, i) => {
     for (let k = 0; k < (d.walk ? NPH : 1); k++) {
       const f = x.figOf({kit: true, scarf: true, noBlob: true, pack: i % 3 === 0, ...d.o, scale: 0.94})
       ;(f.userData as FigureData).phase = d.walk ? k / NPH * Math.PI * 2 : d.t * 2; pose(f, d.p, d.t, 0)
-      variants.push({geo: bake(f, SKIN_TONES[(i * 2 + s * 3 + 1) % SKIN_TONES.length]!, HAIR[(i + s * 2) % HAIR.length]!, PANTS[(i + s) % PANTS.length]!), walk: !!d.walk, grp: groups, ph: k}); disposeFigure(f)
+      variants.push({geo: bake(f, SKIN_TONES[(i * 2 + s * 3 + 1) % SKIN_TONES.length]!, HAIR[(i + s * 2) % HAIR.length]!, PANTS[(i + s) % PANTS.length]!), walk: !!d.walk, grp: groups, ph: k, d: i, s}); disposeFigure(f)
     }
     groups++
   })
@@ -85,6 +127,32 @@ export function dressCrowd(x: CrowdCtx) {
     if (im.instanceColor) im.instanceColor.needsUpdate = true
     return {im, mine, v}
   })
+  // the far bodies, when they arrive: every pose is re-baked from its body and swapped in place (the people keep their places)
+  if (x.humans) {
+    let alive = true
+    keep({dispose: () => { alive = false }})
+    // the far bodies are ~100 KB each: a phone takes the few its one set of poses asks for
+    const ids = [...new Set(LOD_POSES.flatMap(p => p.body.slice(0, sets)))]
+    void Promise.all(ids.map(id => loadLod(id).then(a => [id, a] as const, () => null))).then(list => {
+      if (!alive) return
+      const got = new Map(list.filter((e): e is readonly [CastId, CharAsset] => !!e))
+      const mats = new Map<THREE.Texture, THREE.MeshStandardMaterial>()
+      const lodMat = (map: THREE.Texture) => { let m = mats.get(map); if (!m) {
+        m = keep(new THREE.MeshStandardMaterial({map, roughness: 0.85}))
+        m.onBeforeCompile = sh => { sh.vertexShader = 'attribute vec3 aMask;\n' + sh.vertexShader.replace('#include <color_vertex>', `#include <color_vertex>
+          #ifdef USE_INSTANCING_COLOR
+          vColor = mix(vec3(1.0), instanceColor.xyz, aMask.r) * mix(vec3(1.0), instanceColor.xyz * 0.6, aMask.b);
+          #endif`) }
+        m.customProgramCacheKey = () => 'lod-crowd'; mats.set(map, m) } return m }
+      for (const it of ims) {
+        const P = LOD_POSES[it.v.d]!, body = P.body[it.v.s] ?? P.body[0], a = got.get(body) ?? got.get(P.body[0]); if (!a) continue
+        const at = it.v.walk ? it.v.ph / NPH : P.at
+        const b = bakeLod(a, P.clip[it.v.s] ?? P.clip[0], at); if (!b || !b.map) { b?.geo.dispose(); continue }
+        // the far body is drawn at its own height: the instance scale (0.94-1.08) stays a person's own build
+        it.im.geometry = keep(b.geo); it.im.material = lodMat(b.map)
+      }
+    })
+  }
   const none = new THREE.Matrix4().makeScale(0, 0, 0)
   const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), e = new THREE.Euler(), p3 = new THREE.Vector3(), s3 = new THREE.Vector3()
   return {

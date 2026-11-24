@@ -112,7 +112,7 @@ export function dressLife(x: LifeCtx): LifeDress {
     } else if (s.kind === 'shoulders') {
       const dad = fig({kit: true, scarf: true, beard: true, size: 1.06}), mum = fig({kit: false, scarf: true}, {female: true, hairStyle: 'long'})
       const kid = x.lookFig(x.rlook({kit: true, scarf: true, cap: false, size: 1}), {child: true, noBlob: true, scale: 0.5}); (dad.userData as {J: Record<string, THREE.Object3D>}).J.chest!.add(kid); kid.position.set(0, 0.2, -0.04)
-      const place = () => { if (isSkinned(kid) && isSkinned(dad)) kid.position.set(0, -0.1, -0.07); else kid.position.set(0, 0.2, -0.04) }
+      const place = () => { if (isSkinned(kid) && isSkinned(dad)) kid.position.set(0, 0.04, 0.05); else kid.position.set(0, 0.2, -0.04) }
       parts.push({s, show: v => { dad.visible = mum.visible = v }, head: () => ({x: dad.position.x, y: 2.5, z: dad.position.z}),
         tick(me, a, t, dt, p) { place(); dad.position.set(p.x, 0, p.z); dad.rotation.y = Math.PI; mum.position.set(p.x - side * 0.85, 0, p.z + 0.2); mum.rotation.y = Math.PI
           const said = a.captions.some(c => c.spot === s.id)
@@ -122,7 +122,9 @@ export function dressLife(x: LifeCtx): LifeDress {
     } else if (s.kind === 'mother') {
       const mum = fig({kit: false, scarf: true}, {female: true, hairStyle: 'long', top: '#6a5560'}), kid = fig({kit: true, scarf: true, size: 0.62}, {child: true})
       parts.push({s, show: v => { mum.visible = kid.visible = v }, head: () => ({x: mum.position.x, y: 1.85, z: mum.position.z}),
-        tick(me, a, t, dt, p) { mum.position.set(p.x, 0, p.z); mum.rotation.y = Math.PI; kid.position.set(p.x + 0.5, 0, p.z + 0.05 + Math.sin(t * 0.9) * 0.06); kid.rotation.y = Math.PI + Math.sin(t * 0.7) * 0.12
+        tick(me, a, t, dt, p) { mum.position.set(p.x, 0, p.z); mum.rotation.y = Math.PI; // hand in hand: the captured pair walk puts the child 52 cm to her right and 4 cm ahead, so their hands meet
+          const paired = isSkinned(kid) && isSkinned(mum)
+          kid.position.set(p.x + (paired ? 0.52 : 0.5), 0, p.z + (paired ? -0.04 : 0.05 + Math.sin(t * 0.9) * 0.06)); kid.rotation.y = Math.PI + (paired ? 0 : Math.sin(t * 0.7) * 0.12)
           const said = a.captions.some(c => c.spot === s.id), up = Math.sin(t * 0.45) > 0.3
           pose(mum, {speed: s.v, gesture: 'hold', mood: 'warm', lookY: said || up ? -0.7 : 0, lookDown: said || up ? 0.4 : 0, speak: said ? 1 : 0}, t, dt)
           pose(kid, {speed: s.v, gesture: 'held', mood: 'smile', joy: 0.8, ...(up ? {lookY: 0.8, lookDown: -0.45} : notice(kid, me, 5))}, t, dt) }})
