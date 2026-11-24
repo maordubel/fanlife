@@ -16,7 +16,7 @@ export type Wing={info:WingInfo;pages:Page[];have:number;stuck:number;total:numb
 
 /** a short mark of what the press made (photo or drawn face): a new pressing gets a new address, so no cache keeps the old one */
 export function pressMark(p:Pressed):string{
- const t=JSON.stringify([p.status,p.frame,p.source?.file??null,p.traits??null,p.portrait??null,'painted-1'])
+ const t=JSON.stringify([p.status,p.frame,p.source?.file??null,p.traits??null,p.portrait??null,'worn-1'])
  let h=2166136261
  for(let i=0;i<t.length;i++){h^=t.charCodeAt(i);h=Math.imul(h,16777619)}
  return (h>>>0).toString(36)

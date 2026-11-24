@@ -1,0 +1,108 @@
+name: Album · worn shirts
+# THE ALBUM: each painted man wears his club's real shirt of his years (scripts/album/dress.py; owner 24.11.2026).
+# The approved painted face stays; the kit is fitted to his shoulders and the same open painter (RealVisXL + Lightning, CPU,
+# free in this public repository) repaints only the seam — the neck into the collar, the shoulder line.
+# Dispatch: one job per ten men in parallel, then the painted stickers are pressed again and a PR opens on album/dress-auto.
+# A push to claude/album-dress-lab dresses a small test set and commits the contact sheets back to that branch.
+on:
+  workflow_dispatch:
+    inputs:
+      clubs: {description: 'Club ids, comma-separated (empty = every wing)', default: ''}
+      redo: {description: 'Dress again men already dressed (true/false)', default: 'false'}
+  push:
+    branches: [claude/album-dress-lab]
+permissions:
+  contents: write
+  pull-requests: write
+concurrency: {group: album-dress, cancel-in-progress: false}
+env:
+  LAB_IDS: al-ahly:1,al-ahly:23,celtic:11,olympiacos:15,aek-athens:4,hapoel-petah-tikva:32
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs: {chunks: '${{ steps.p.outputs.chunks }}', ids: '${{ steps.p.outputs.ids }}'}
+    steps:
+      - uses: actions/checkout@v4
+      - id: p
+        env: {WANT: '${{ inputs.clubs }}', REDO: '${{ inputs.redo }}'}
+        run: |
+          python3 - >> "$GITHUB_OUTPUT" <<'PY'
+          import json, os, pathlib
+          ed = json.load(open('content/generated/album-edition-1.json'))['wings']
+          led = json.load(open('content/generated/album-stickers.json'))['stickers']
+          want = [c for c in os.environ.get('WANT', '').split(',') if c]
+          redo = os.environ.get('REDO') == 'true'
+          ids = [f"{c}:{r['slot']}" for c, rows in ed.items() if not want or c in want for r in rows
+                 if (led.get(f"{c}:{r['slot']}") or {}).get('status') != 'photo'
+                 and pathlib.Path(f"content/generated/album-faces/{c}/{r['slot']}.webp").exists()
+                 and (redo or not pathlib.Path(f"content/generated/album-dressed/{c}/{r['slot']}.webp").exists())]
+          chunks = [','.join(ids[i:i + 10]) for i in range(0, len(ids), 10)] or ['none']
+          print('chunks=' + json.dumps(chunks))
+          print('ids=' + ','.join(ids))
+          PY
+  dress:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      matrix:
+        ids: ${{ github.event_name == 'push' && fromJSON('["lab"]') || fromJSON(needs.plan.outputs.chunks) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/cache@v4
+        with: {path: ~/.cache/huggingface, key: hf-realvis-lightning-inpaint-v1}
+      - name: Swap (SDXL on CPU needs more than the runner's memory)
+        run: sudo fallocate -l 12G /swapfile2 && sudo chmod 600 /swapfile2 && sudo mkswap /swapfile2 && sudo swapon /swapfile2 && free -g
+      - run: |
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install diffusers transformers accelerate peft rembg onnxruntime pillow playwright "opencv-contrib-python-headless<5" numpy
+          python -m playwright install --with-deps chromium
+      - name: Lab sheet
+        if: github.event_name == 'push'
+        run: |
+          python scripts/album/dress.py --ids "$LAB_IDS" --redo --sheet content/generated/album-dressed/_lab.jpg
+          curl -sSL -o "$RUNNER_TEMP/lbf.yaml" https://raw.githubusercontent.com/kurnianggoro/GSOC2017/master/data/lbfmodel.yaml
+          ALBUM_LBF="$RUNNER_TEMP/lbf.yaml" python scripts/album/stickers.py --ids "$LAB_IDS"
+          python -c "import sys;from PIL import Image;ims=[Image.open('public/album/stickers/%s/%s.webp'%tuple(i.split(':'))).convert('RGB') for i in sys.argv[1].split(',')];W=Image.new('RGB',(sum(i.width for i in ims),ims[0].height));x=0
+          for i in ims: W.paste(i,(x,0)); x+=i.width
+          W.save('content/generated/album-dressed/_lab-stickers.jpg',quality=90)" "$LAB_IDS"
+          git config user.name github-actions[bot]; git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add content/generated/album-dressed && git commit -m "album dress: lab sheet [skip ci]" && git push
+      - name: Dress ten men
+        if: github.event_name == 'workflow_dispatch' && matrix.ids != 'none'
+        env: {IDS: '${{ matrix.ids }}', REDO: '${{ inputs.redo }}'}
+        run: python scripts/album/dress.py --ids "$IDS" $([ "$REDO" = true ] && echo --redo)
+      - uses: actions/upload-artifact@v4
+        if: github.event_name == 'workflow_dispatch' && matrix.ids != 'none'
+        with: {name: 'dressed-${{ strategy.job-index }}', path: 'content/generated/album-dressed', if-no-files-found: ignore, retention-days: 3}
+  press:
+    needs: [plan, dress]
+    if: github.event_name == 'workflow_dispatch' && !cancelled() && needs.plan.outputs.ids != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: {pattern: 'dressed-*', path: '${{ runner.temp }}/dressed'}
+      - run: |
+          mkdir -p content/generated/album-dressed
+          for d in "$RUNNER_TEMP"/dressed/dressed-*; do [ -d "$d" ] && cp -r "$d"/. content/generated/album-dressed/; done
+          rm -f content/generated/album-dressed/_lab*.jpg
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: |
+          pip install rembg onnxruntime pillow playwright "opencv-contrib-python-headless<5" numpy
+          curl -sSL -o "$RUNNER_TEMP/lbf.yaml" https://raw.githubusercontent.com/kurnianggoro/GSOC2017/master/data/lbfmodel.yaml
+          python -m playwright install --with-deps chromium
+      - name: Press the dressed men's stickers again
+        env: {ALBUM_LBF: '${{ runner.temp }}/lbf.yaml', IDS: '${{ needs.plan.outputs.ids }}'}
+        run: python scripts/album/stickers.py --redo --ids "$IDS"
+      - uses: peter-evans/create-pull-request@v6
+        with:
+          branch: album/dress-auto
+          title: 'album: painted men wear their club''s real shirt'
+          commit-message: 'album: worn shirts for the painted men'
+          body: Each painted man now wears his club's real shirt of his years (dress.py) — fitted to his shoulders, his neck painted into the collar; the face is unchanged. Workflow-token PR — push a commit to run CI before merging.

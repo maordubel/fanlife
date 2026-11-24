@@ -1,0 +1,12 @@
+# MakeHuman asset packs the cast is built from. One per line: <name> <path under the mirrors> <licence stated on its page>
+# Pages: https://static.makehumancommunity.org/assets/assetpacks.html (every pack below is in a CC0 section there).
+# Mirrors tried in order: https://files.makehumancommunity.org/ then https://files2.makehumancommunity.org/
+makehuman_system_assets asset_packs/makehuman_system_assets/makehuman_system_assets_cc0.zip CC0
+hair01 asset_packs/hair01/hair01_cc0.zip CC0
+shirts01 asset_packs/shirts01/shirts01_cc0.zip CC0
+pants01 asset_packs/pants01/pants01_cc0.zip CC0
+skirts01 asset_packs/skirts01/skirts01_cc0.zip CC0
+dress01 asset_packs/dress01/dress01_cc0.zip CC0
+shoes01 asset_packs/shoes01/shoes01_cc0.zip CC0
+faceunits01 functional/faceunits01.zip CC0
+visemes02 functional/visemes02.zip CC0

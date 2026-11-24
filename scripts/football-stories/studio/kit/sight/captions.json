@@ -122,6 +122,20 @@
 ],
 "id": "beat:hapoel-tel-aviv-1999-00/window-trophy-newspaper"
 },
+"0417b4f80aaa7a3c": {
+"caption": "A papercut scene shows players scrambling on the pitch as a goalkeeper dives to save a shot.",
+"people": 4,
+"faces": false,
+"action": "diving save",
+"place": "pitch",
+"era": "1950s",
+"mood": "tension",
+"avoid": [
+"easy goal",
+"referee blowing whistle"
+],
+"id": "beat:job-75cea319-6c2c-451a-80f6-47fe135e3daa/goalkeeper-diving-to-save-shot-0d118933-2k-213a7deea7588ca0"
+},
 "0432c17103ac822c": {
 "caption": "A man in a suit sits at a desk with audio equipment and headphones, viewed from behind.",
 "people": 1,
@@ -879,6 +893,20 @@
 ],
 "id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/tikva-away-back-3948f8fbc5e57b1d"
 },
+"0f4da4a035c7b1ab": {
+"caption": "A paper-cut style illustration shows football players in green and white hoops and blue kits on a pitch.",
+"people": 5,
+"faces": false,
+"action": "football match",
+"place": "pitch",
+"era": "1960s",
+"mood": "tension",
+"avoid": [
+"a photograph of a real game",
+"a modern digital broadcast"
+],
+"id": "beat:job-75cea319-6c2c-451a-80f6-47fe135e3daa/vintage-football-match-paper-cut-092da9a1-2k-4bc45a862c9a80a6"
+},
 "0fed48520bc8e0e3": {
 "caption": "A white long-distance coach bus is isolated against a black background.",
 "people": 0,
@@ -1188,6 +1216,19 @@
 ],
 "id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/luton-town-1732e6d3c26e6967"
 },
+"16df8272393e26ab": {
+"caption": "A close-up portrait of a man in a suit smiling.",
+"people": 1,
+"faces": true,
+"action": "smiling",
+"place": "studio",
+"mood": "calm",
+"avoid": [
+"football manager",
+"club chairman"
+],
+"id": "beat:commons-job-75cea319-6c2c-451a-80f6-47fe135e3daa/20471438"
+},
 "17c41a04108d0159": {
 "caption": "A family of four is seen from behind walking together while holding hands.",
 "people": 4,
@@ -1362,6 +1403,21 @@
 "people"
 ],
 "id": "beat:job-cb5fda72-1548-41f4-99ad-47978b9f1ff9/kitchen-ground-1cf5819b531d8377"
+},
+"1a6e138d871c0173": {
+"caption": "A vintage newspaper clipping displaying a headline about a football match result between Celtic and Rangers.",
+"people": 0,
+"faces": false,
+"action": "reading match report",
+"place": "other",
+"era": "1950s",
+"mood": "tension",
+"text": "CELTIC 7 RANGERS 1 A real Rangers rout at Hampden",
+"avoid": [
+"live television broadcast",
+"modern internet article"
+],
+"id": "beat:job-75cea319-6c2c-451a-80f6-47fe135e3daa/images-3-f76d608bbe6fc882"
 },
 "1a8ea8ce31fcc240": {
 "caption": "A silhouetted crowd of football fans behind a red goal net stands against a transparent background.",
@@ -1975,6 +2031,18 @@
 ],
 "id": "beat:common/tr-curtain-scarf-kr"
 },
+"25cff336c2d029d5": {
+"caption": "A steamy bathroom mirror hangs above an empty glass shelf against tiled walls.",
+"people": 0,
+"faces": false,
+"place": "room",
+"mood": "calm",
+"avoid": [
+"crowded matchday",
+"dressing room celebrations"
+],
+"id": "beat:job-75cea319-6c2c-451a-80f6-47fe135e3daa/fanlife-generic-scene-empty-tiled-bathroom-shelf-a-4dae9bffef81652c"
+},
 "263aba68a3d13113": {
 "caption": "An illustrated football match in a traditional stadium with players sliding for the ball in the muddy penalty box.",
 "people": 100,
@@ -2375,6 +2443,20 @@
 ],
 "id": "beat:common/header-goalmouth-kr"
 },
+"2f0abe59660e72e9": {
+"caption": "A layered papercraft illustration shows football players in green kits reaching out toward a large trophy.",
+"people": 4,
+"faces": false,
+"action": "reaching for trophy",
+"place": "studio",
+"era": "1950s",
+"mood": "joy",
+"avoid": [
+"actual football match action",
+"real players celebrating"
+],
+"id": "beat:job-75cea319-6c2c-451a-80f6-47fe135e3daa/vintage-sports-match-programme-c-3ab425c1-2k-7c31323c306b94b9"
+},
 "2f1df08eda04f989": {
 "caption": "A large crowd of supporters carrying red scarves and flags marches down a city street toward a stadium.",
 "people": 40,
@@ -2681,6 +2763,20 @@
 "stadium atmosphere"
 ],
 "id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/crystal-palace-0544c6819edcd288"
+},
+"331cd63f8d7b6788": {
+"caption": "A papercut stadium scene is viewed from behind a dark football goal net during a match.",
+"people": 5,
+"faces": false,
+"action": "playing football",
+"place": "pitch",
+"era": "1950s",
+"mood": "tension",
+"avoid": [
+"modern arena",
+"colour television broadcast"
+],
+"id": "beat:job-75cea319-6c2c-451a-80f6-47fe135e3daa/football-match-through-goal-net-a7ef58cb-2k-75f33409d1b69a39"
 },
 "33bbadad3bb6ee95": {
 "caption": "Papercraft stadium scene with a football hitting the back of the net and cheering fans holding red scarves in the foreground.",
@@ -3353,6 +3449,20 @@
 "referee showing red card"
 ],
 "id": "lib:ppl-old-woman-scarf-fl2-kr"
+},
+"4249a7d82f449680": {
+"caption": "A papercut artwork shows a goalkeeper in a green jersey leaping to catch the ball near the goal.",
+"people": 5,
+"faces": false,
+"action": "goalkeeper catching ball",
+"place": "stadium",
+"era": "1950s",
+"mood": "tension",
+"avoid": [
+"penalty shootout",
+"manager on touchline"
+],
+"id": "beat:job-75cea319-6c2c-451a-80f6-47fe135e3daa/goalkeeper-catching-football-027496ad-2k-e034b4114babb22b"
 },
 "424e6f039067c8f6": {
 "caption": "Fans walk along the street outside an older football stadium with traditional floodlight pylons.",
@@ -4373,6 +4483,20 @@
 ],
 "id": "beat:hapoel-tel-aviv-1999-00/supporter-scarf-raised"
 },
+"53b2205109925670": {
+"caption": "A paper-cut style collage of a football team posing for a formal portrait with a trophy.",
+"people": 13,
+"faces": false,
+"action": "team photo",
+"place": "pitch",
+"era": "1960s",
+"mood": "calm",
+"avoid": [
+"a modern team announcement",
+"a training session"
+],
+"id": "beat:job-75cea319-6c2c-451a-80f6-47fe135e3daa/vintage-football-team-posing-tog-0f828897-2k-7b4343858d6b197c"
+},
 "54617368b645fb06": {
 "caption": "An illustrated paper-craft style image of an adult and child walking hand in hand up a cobbled street towards a floodlit stadium.",
 "people": 10,
@@ -5241,6 +5365,20 @@
 ],
 "id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/panathinaikos-fc-2026-27-home-kit-495731-4e2e3741322f2f0e"
 },
+"671abb26ddbebb6b": {
+"caption": "A papercut artwork depicts a single player celebrating on a football pitch in front of a stadium crowd.",
+"people": 1,
+"faces": false,
+"action": "celebrating",
+"place": "stadium",
+"era": "1950s",
+"mood": "joy",
+"avoid": [
+"real match footage",
+"modern stadium architecture"
+],
+"id": "beat:job-75cea319-6c2c-451a-80f6-47fe135e3daa/athlete-celebrating-on-sports-field-5e7f2dd6-2k-7ffb3af89d173262"
+},
 "679cd0d1e4112fc3": {
 "caption": "An illustrated supporter from behind holds up a red scarf with both hands.",
 "people": 1,
@@ -5976,6 +6114,20 @@
 ],
 "id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1957-cup-final-674a2f5e7549a5b6"
 },
+"7563d0e3476c0254": {
+"caption": "A graphic design layout featuring a quiz question about football fan knowledge.",
+"people": 0,
+"faces": false,
+"action": "trivia quiz",
+"place": "room",
+"mood": "calm",
+"text": "FAN LIFE NERDS ONLY! WHICH ARCHIVE DETAIL CAN ONLY A TRUE SUPPORTER REMEMBER? A OPTION ONE B OPTION TWO C OPTION THREE D OPTION FOUR CELTIC TRIVIA EXPERT FANLIFE.DUBELTEAM.COM",
+"avoid": [
+"a real match event",
+"a live stadium atmosphere"
+],
+"id": "beat:job-75cea319-6c2c-451a-80f6-47fe135e3daa/t10-nerds-celtic-ad35a562f05cfe26"
+},
 "759120219ee089b4": {
 "caption": "An illustrated vintage clipboard holds a handwritten match sheet with tactical arrows and notes alongside a pen.",
 "people": 0,
@@ -6004,6 +6156,19 @@
 "crowd"
 ],
 "id": "beat:job-11485d34-d377-4574-8e89-fea2ac68b8e6/2000083674-ce67131fcb825950"
+},
+"75b85e0d78244cf4": {
+"caption": "A man in a suit standing before an American flag.",
+"people": 1,
+"faces": true,
+"action": "posing for a portrait",
+"place": "room",
+"mood": "calm",
+"avoid": [
+"football manager",
+"club chairman"
+],
+"id": "beat:commons-job-75cea319-6c2c-451a-80f6-47fe135e3daa/10383386"
 },
 "761cc6de896b1569": {
 "caption": "An illustrated paper-craft style image of a football player kneeling in despair on a pitch while crowds cheer in the stands.",
@@ -7017,6 +7182,21 @@
 ],
 "id": "lib:layer-street-march-kr-full"
 },
+"8c5d53d7d1df5f8b": {
+"caption": "A referee showing a red card to a player on the pitch.",
+"people": 8,
+"faces": true,
+"action": "refereeing a match",
+"place": "pitch",
+"era": "2010s",
+"mood": "tension",
+"text": "7",
+"avoid": [
+"goal celebration",
+"final whistle"
+],
+"id": "beat:job-75cea319-6c2c-451a-80f6-47fe135e3daa/10-red-card-source-3dae0435477b1a5e"
+},
 "8ca004e18dfcb364": {
 "caption": "A packed stadium terrace filled with cheering fans holding up red scarves.",
 "people": 50,
@@ -7122,6 +7302,20 @@
 "actual telegram"
 ],
 "id": "lib:doc-telegram-fl2-kr"
+},
+"8f169d95ebe5dd15": {
+"caption": "A group of football players in red kits celebrate together in a pile on the pitch under floodlights.",
+"people": 10,
+"faces": true,
+"action": "group celebration",
+"place": "stadium",
+"era": "1980s",
+"mood": "joy",
+"avoid": [
+"silent training session",
+"disappointed team"
+],
+"id": "beat:job-75cea319-6c2c-451a-80f6-47fe135e3daa/fanlife-generic-scene-teammates-in-red-celebrating-83501d1e0f796fb4"
 },
 "8f41853c6e0433f7": {
 "caption": "A stylized illustration of a fan wearing a scarf and playing a large bass drum.",
@@ -9222,6 +9416,20 @@
 ],
 "id": "cut:common/close-hands-clasp-prayer-c-kr"
 },
+"b680fb98d724ba1c": {
+"caption": "The crest of Real Oviedo featuring a crown, a cross, and a football.",
+"people": 0,
+"faces": false,
+"action": "displaying club badge",
+"place": "abstract",
+"mood": "calm",
+"text": "R O",
+"avoid": [
+"English club badge",
+"trophy lift"
+],
+"id": "beat:job-75cea319-6c2c-451a-80f6-47fe135e3daa/real-oviedo-7b067aadda5946e2"
+},
 "b6deaf4149735c9a": {
 "caption": "A two-level outdoor terrace area is illuminated by red lights at dusk, featuring graffiti and a panda mascot figure.",
 "people": 3,
@@ -9856,6 +10064,21 @@
 ],
 "id": "beat:common/attic-box-scarf-kr"
 },
+"c356227e73d0b841": {
+"caption": "A mobile app interface showing a match prediction screen for Canada versus Bosnia & Herzegovina.",
+"people": 0,
+"faces": false,
+"action": "setting score prediction",
+"place": "room",
+"era": "2020s",
+"mood": "calm",
+"text": "Canada vs Bosnia & Herzegovina Exact Final Score",
+"avoid": [
+"live stadium action",
+"post-match interview"
+],
+"id": "beat:job-75cea319-6c2c-451a-80f6-47fe135e3daa/offsides-app-screenshot-match-prediction-home-v1-f43a8b5e586e00e8"
+},
 "c35e34c5f0349c3a": {
 "caption": "The Sint-Truidense VV logo displays a blue double-headed eagle set against a yellow shield.",
 "people": 0,
@@ -10454,6 +10677,19 @@
 ],
 "id": "cut:common/close-scarf-over-mouth-c-kr"
 },
+"d1bec65c2f571737": {
+"caption": "An official tournament logo featuring a trophy inside a shield.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"era": "2010s",
+"mood": "calm",
+"avoid": [
+"live match action",
+"player interview"
+],
+"id": "beat:job-75cea319-6c2c-451a-80f6-47fe135e3daa/1301388-2016-3497069ebe0d4388"
+},
 "d208ea855b07c7a5": {
 "caption": "A portrait of a young male footballer with short dark hair looking directly at the camera.",
 "people": 1,
@@ -10641,6 +10877,18 @@
 ],
 "id": "lib:sup-young-fl1-kr"
 },
+"d6d7ce1b3b0f003a": {
+"caption": "A single piece of red string is twisted and laid against a light background.",
+"people": 0,
+"faces": false,
+"place": "abstract",
+"mood": "calm",
+"avoid": [
+"a blood trail",
+"a physical injury"
+],
+"id": "beat:job-75cea319-6c2c-451a-80f6-47fe135e3daa/shared-cl-red-string-s1skld-b774e0311705f990"
+},
 "d703abc8e798b8b5": {
 "caption": "A red and white heraldic shield crest featuring a gold star and the club name.",
 "people": 0,
@@ -10762,6 +11010,21 @@
 "stadium atmosphere"
 ],
 "id": "beat:job-9de426c8-c257-4800-8f90-124a1785b7b2/chelsea-fc-ca7245bd1c793aca"
+},
+"d8e9bc09c402d4e3": {
+"caption": "A smartphone screen displaying a football betting app with match results and leaderboards.",
+"people": 0,
+"faces": false,
+"action": "browsing app leaderboard",
+"place": "room",
+"era": "2020s",
+"mood": "calm",
+"text": "Saudi Arabia vs Uruguay 1 : 1",
+"avoid": [
+"historic 20th-century newspaper",
+"physical scoreboard"
+],
+"id": "beat:job-75cea319-6c2c-451a-80f6-47fe135e3daa/offsides-app-screenshot-live-match-lineup-v1-a073a1612a80e664"
 },
 "d8f86dc99549d18d": {
 "caption": "Two illustrated hands grip a chain-link fence tightly.",
@@ -11209,6 +11472,20 @@
 ],
 "id": "lib:layer-away-end-kr-full"
 },
+"e1dc071113ac6cee": {
+"caption": "The circular crest of Rangers Football Club with a red lion rampant inside.",
+"people": 0,
+"faces": false,
+"action": "displaying club badge",
+"place": "abstract",
+"mood": "defiance",
+"text": "RANGERS FOOTBALL CLUB READY",
+"avoid": [
+"Celtic crest",
+"national flag"
+],
+"id": "beat:job-75cea319-6c2c-451a-80f6-47fe135e3daa/rangers-fc-cd25564f8c9f7732"
+},
 "e210a7d010d00a8a": {
 "caption": "A blue football jersey with yellow accents and sponsor logos displayed flat.",
 "people": 0,
@@ -11290,6 +11567,19 @@
 "busy restaurant"
 ],
 "id": "lib:layer-kitchen-radio-kr-bg"
+},
+"e3a5097aad67b68a": {
+"caption": "An aerial view of a football stadium filled with red and green smoke.",
+"people": 0,
+"faces": false,
+"action": "smoke filling stadium",
+"place": "stadium",
+"mood": "tension",
+"avoid": [
+"a specific team's victory",
+"a peaceful match"
+],
+"id": "beat:job-75cea319-6c2c-451a-80f6-47fe135e3daa/red-and-green-smoke-football-e3317f5b-dff017871d8e23f1"
 },
 "e3c394bac578d121": {
 "caption": "Close-up papercraft view of a football bulging the net with celebrating fans visible in the background.",
@@ -11958,6 +12248,20 @@
 ],
 "id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/1087-third-ded1b238508f577d"
 },
+"ee067a49875cd7be": {
+"caption": "A paper-cut style illustration of a football team posing for a group photo with a trophy.",
+"people": 13,
+"faces": false,
+"action": "team photo",
+"place": "pitch",
+"era": "1960s",
+"mood": "calm",
+"avoid": [
+"a candid locker room shot",
+"a post-match brawl"
+],
+"id": "beat:job-75cea319-6c2c-451a-80f6-47fe135e3daa/vintage-football-team-posing-e8461940-2k-af7fe6a1339cbc15"
+},
 "ee5c78ab88027add": {
 "caption": "A papercut artwork of a stadium with a medium-sized trophy on a pedestal and silhouetted reporters and fans in the foreground.",
 "people": 15,
@@ -12216,6 +12520,21 @@
 "Match action"
 ],
 "id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/panathinaikos-fc-2026-27-third-kit-495733-3fed6f0ebc08f9bc"
+},
+"f3e835f1127bc394": {
+"caption": "The front page of a 1957 newspaper featuring football match scores and league tables.",
+"people": 3,
+"faces": false,
+"action": "viewing match action photograph",
+"place": "other",
+"era": "1950s",
+"mood": "tension",
+"text": "EVENING TIMES CELTIC 7 RANGERS 1",
+"avoid": [
+"color photography",
+"digital tablet screen"
+],
+"id": "beat:job-75cea319-6c2c-451a-80f6-47fe135e3daa/images-4-b808304214854bc7"
 },
 "f3feb0c7a42e01a9": {
 "caption": "Layered paper cutouts create an abstract representation of wavy, flowing lines in shades of grey and cream.",
@@ -12605,6 +12924,21 @@
 ],
 "id": "beat:job-79bbd741-811c-49a5-9ddb-d5de2abd88e9/afc-bournemouth-4bc33f2e7bbbd43e"
 },
+"fca6eb402de96e64": {
+"caption": "Two football players standing on the pitch during a match.",
+"people": 3,
+"faces": true,
+"action": "playing a football match",
+"place": "pitch",
+"era": "2000s",
+"mood": "tension",
+"text": "NOVARTIS CARLING AXPO",
+"avoid": [
+"goal celebration",
+"trophy lift"
+],
+"id": "beat:commons-job-75cea319-6c2c-451a-80f6-47fe135e3daa/2772043"
+},
 "fcd29ea9d0d52a8a": {
 "caption": "A headshot portrait of a man with short dark hair and a beard wearing a blue and white jersey.",
 "people": 1,
@@ -12714,6 +13048,21 @@
 "official team announcement"
 ],
 "id": "beat:job-79973818-6a71-4152-8b75-ece090c35465/01-build-your-five-0119a42a0be43af1"
+},
+"fe9bc6c92f267f72": {
+"caption": "A referee holding up a red card during a football match.",
+"people": 8,
+"faces": true,
+"action": "showing a red card",
+"place": "pitch",
+"era": "2010s",
+"mood": "tension",
+"text": "7",
+"avoid": [
+"goal celebration",
+"final whistle"
+],
+"id": "beat:job-75cea319-6c2c-451a-80f6-47fe135e3daa/10-red-card-8dc161b742a1599f"
 },
 "fefd54b31e3740a0": {
 "caption": "An empty football pitch and stands under heavy rainfall.",
