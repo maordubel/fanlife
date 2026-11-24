@@ -277,7 +277,7 @@ export function KitBuilder(props:KitBuilderProps){
     :<div className={css.panel} role="tabpanel" data-testid="kb-review">
      <p className={css.question}>{say('kb.review.title')}</p>
      <ul className={css.reviewList}>{steps.map((s,i)=>{const o=optionOf(s.step,mine[s.step]);return <li key={s.step}><button type="button" className={`min-h-tap ${css.reviewRow}`} onClick={()=>openStep(i)}><small>{stepName(s.step)}</small><b lang={contentLocale} dir="auto">{o?optionLabel(copy,o):'—'}</b><span aria-hidden="true">{say('kb.change')}</span></button></li>})}</ul>
-     <button type="button" className={`min-h-tap ${css.cta} ${css.primary}`} onClick={check} disabled={!allPlaced||pending} data-testid="kb-check"><b>{pending==='grade'?say('kb.checking'):say('kb.check')}</b></button>
+     <button type="button" className={`min-h-tap ${css.cta} ${css.primary}`} onClick={check} disabled={!allPlaced||pending!==null} data-testid="kb-check"><b>{pending==='grade'?say('kb.checking'):say('kb.check')}</b></button>
     </div>}
     {!inReview&&allPlaced&&<button type="button" className={`min-h-tap ${css.cta} ${css.primary}`} onClick={()=>openStep(REVIEW)} data-testid="kb-to-review"><b>{say('kb.toReview')}</b></button>}
     {error&&<div className={css.error} role="alert"><p>{say(`kb.err.${error}`)}</p>{error==='stale'?<button type="button" className={`min-h-tap ${css.tool}`} onClick={()=>location.reload()}>{say('kb.err.reload')}</button>:<button type="button" className={`min-h-tap ${css.tool}`} onClick={()=>retryRequest.current?.()}>{say('kb.err.retry')}</button>}</div>}
