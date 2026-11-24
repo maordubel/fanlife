@@ -32,6 +32,8 @@ R=sys.argv[1].rstrip('/')+'/'
 OUT=sys.argv[2]
 inv=inventory()
 prov=json.load(open(R+'content/manual/asset-provenance.json'))['records']
+# provenance keys whose use was cleared on a given day (24.11.2026: THE WORKER's 1989 and 1995 Tel Aviv films)
+CLEARED={'film-1989':'2026-11-24','film-1995':'2026-11-24'}
 def provOf(p):
   folder,base=os.path.dirname(p),os.path.basename(p)
   for r in prov:
@@ -117,7 +119,8 @@ def cls(r):
   elif p.startswith('public/life/film/'):
     if f.startswith('cup83'): S('hapoel-only','tlv',['film']); out['block'].append('yellow')
     elif f=='manifest': S('no','*',['index'])
-    else: S('tlv','tlv',['film','title-card'] if base.endswith('.jpg') else ['film'],['grade-dusk'],'1989 / 1995 Tel Aviv street footage'); out['block'].append('licence-unverified')
+    # the 1989 and 1995 Tel Aviv films: cleared for use 24.11.2026 (rule life-worker-art §3), so no licence blocker
+    else: S('tlv','tlv',['film','title-card'] if base.endswith('.jpg') else ['film'],['grade-dusk'],'1989 / 1995 Tel Aviv street footage, cleared for use 24.11.2026')
   elif p.startswith('public/life/transitions/') or p.startswith('public/life/opening/') or p.startswith('public/video/'):
     S('hapoel-only','tlv',['film','title-card'] if base.endswith('.png') else ['film'],note='Hapoel identity throughout (crests, red crowd, canon family)')
     if p.startswith('public/video/'): out['block'].append('yellow')
@@ -153,10 +156,11 @@ for r in inv:
   if c['cls'] in ('universal','tlv') and y and y>0.001 and 'de-yellow' not in c['proc']: c['proc'].insert(0,'de-yellow')
   approved=bool(pr and pr['origin'] in('maor-upload','original-artwork','procedural') and pr['confidence']==2)
   if pr and pr['confidence']==0 and 'provenance-unknown' not in c['block']: c['block'].append('provenance-unknown')
-  if pr and pr['confidence']==1 and 'licence-unverified' not in c['block'] and 'licence' not in c['block']: c['block'].append('provenance-partial')
+  if pr and pr['confidence']==1 and pr['key'] not in CLEARED and 'licence-unverified' not in c['block'] and 'licence' not in c['block']: c['block'].append('provenance-partial')
   fam=re.sub(r'(--.*|[-_]?\d.*|[A-Z].*)$','',os.path.basename(p).rsplit('.',1)[0]) or os.path.basename(p)
   row=dict(path=p,family=('/'.join(p.split('/')[:-1]))+':'+fam,kind=r['kind'],bytes=r['bytes'],w=r.get('w'),h=r.get('h'),cls=c['cls'],town=c['town'],roles=c['roles'],blockers=sorted(set(c['block'])),processing=c['proc'],approvedByPack=approved,provenance=(pr['key'] if pr else None),yellowShare=y)
   if c['note']: row['note']=c['note']
+  if pr and pr['key'] in CLEARED: row['clearedForUse']=CLEARED[pr['key']]
   rows.append(row)
 from collections import Counter
 print(Counter(r['cls'] for r in rows))
@@ -228,6 +232,32 @@ for rank,(n,role,why) in enumerate(PICKS_TLV+PICKS_UNI):
   r=byname[n]; assert r['cls'] in('tlv','universal'),(n,r['cls']); assert r['approvedByPack'] or r['provenance'] in('life-artefacts-2026-09-17',),(n,r['provenance'])
   if role not in r['roles']: r['roles'].append(role)
   r['pick']=dict(group='tlv' if r['cls']=='tlv' else 'universal',role=role,why=why,width=SIZE[role],out=f"public/life/worker/{r['cls']}/{n}.webp")
+# film picks: short Tel Aviv clips for LIFE's chapter bridges, re-encoded (<= 8 s, <= 720p H.264, de-yellowed and
+# measured) by import.ts into public/life/worker/tlv/film/. role = where the clip belongs in the game.
+PICKS_FILM=[
+ ('promenade-dusk','promenade','the sea promenade at last light: the walk to the ground along the water'),
+ ('promenade-walk','promenade','people on the promenade, last light: a bridge between the street and the trip out'),
+ ('promenade-95','promenade','the promenade with the city line behind: the ride along the sea'),
+ ('promenade-rail-95','promenade','the promenade rail and the street across it: back into the city'),
+ ('boardwalk-95','promenade','people walking the boardwalk: the way home'),
+ ('street-morning','street','a street in the morning, shutters and balconies: leaving the house'),
+ ('market','street','stalls, crates, people buying: the way to the kiosk and every errand'),
+ ('alley-shade','street','a narrow alley, washing, shade: the alley and the pitch'),
+ ('shops-95','street','an old building front and a shop: the way to the kiosk'),
+ ('street-cars-95','street','a residential street, parked cars: leaving the house'),
+ ('bus-street-95','street','a tree-lined street with a bus: the city on the way to the stop'),
+ ('night-lights','dusk','evening lights and people out: the matchday night begins'),
+ ('plaza-evening','dusk','a lit square in the evening: the years move on, the same city'),
+ ('palms-evening','dusk','palms and chairs on the promenade at evening: a chapter that ended well'),
+ ('sea-wall','dusk','a man walking the breakwater, a wave breaks: walking towards something big'),
+ ('breakwater-95','dusk','the sea past the rail and the breakwater: before a big night'),
+ ('jaffa-95','dusk','the beach with the old port on the horizon: the end of a chapter'),
+ ('sea-road-95','dusk','the sea road with parked cars: the city, on the way out'),
+]
+films={os.path.basename(r['path']).rsplit('.',1)[0]:r for r in rows if r['path'].startswith('public/life/film/') and r['kind']=='video'}
+for n,role,why in PICKS_FILM:
+  r=films[n]; assert r['cls']=='tlv' and r.get('clearedForUse') and not r['blockers'],(n,r['cls'],r['blockers'])
+  r['pick']=dict(group='tlv',role=role,why=why,width=1280,out=f"public/life/worker/tlv/film/{n}.mp4",maxSeconds=8)
 cat=dict(version=1,source=dict(repo='maordubel/The-Worker',commit='15229a9',checkedAt='2026-11-24'),
   classes=dict(tlv='usable for Tel Aviv and Israeli-city LIFE',universal='usable for every city after colour handling',**{'hapoel-only':'Hapoel identity or canon: only inside Hapoel\'s own pack'},no='not reusable'),
   note='Every file in THE WORKER public/life, public/uss, public/kits, public/og, public/video. public/life/* is already mirrored byte-for-byte in FAN LIFE under the same paths by the LIFE upstream import; picks are the game-size LIFE copies written by scripts/life/worker-art/import.ts.',
