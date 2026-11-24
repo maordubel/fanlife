@@ -494,6 +494,7 @@ describe('פרויקט משותף עם DUBID — THE WORKER touches only what it
       '20261118190000_worker_album_coupons.sql', // 18.11.2026: promotion codes for free packets, hashed (docs/rules/album-coupons.md)
       '20261121160000_fanlife_registration_counts.sql', // 21.11.2026: registration counts for the owner desk, standalone
       '20261121160500_worker_marketing_queue_shop.sql', // 21.11.2026: shop posts in the marketing queue, standalone
+      '20261124050000_worker_marketing_campaigns.sql', // 24.11.2026: campaigns — add, pause/resume/stop, report, opening holds — standalone
       '20261118150000_worker_album_one_album.sql', // 18.11.2026: one album of every open club, swaps between collectors (docs/rules/one-album.md)
       '20261118120000_worker_album.sql', // 18.11.2026: THE ALBUM — sticker album tables and functions, standalone (tests/album)
       '20261009180000_worker_game_origin.sql', // one closet, two apps: game-built shirts (supabase/tests/73-game-origin.sql)

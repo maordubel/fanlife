@@ -636,3 +636,33 @@ select.pcc-inline { inline-size: 92px; cursor: pointer; } select.pcc-inline:disa
 .acp-form{display:grid;grid-template-columns:repeat(auto-fill,minmax(9rem,1fr));gap:8px;align-items:end;margin-block:8px}
 .acp-form label{display:grid;gap:2px;font-size:12px;font-weight:700}
 .acp-form input,.acp-form select{inline-size:100%;font:inherit;padding-inline:8px}
+
+/* Campaigns (24.11.2026): the report as cards, the builder as template tiles — one column on a phone, a grid on a desk */
+.desk-chip[aria-pressed='true'] { background: var(--mag-ink); color: var(--mag-paper); }
+.camp-kpis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 0 0 16px; }
+.camp-kpis div, .camp-nums div { border: 2px solid var(--mag-ink); background: var(--mag-card); padding: 8px 10px; }
+.camp-kpis dt, .camp-nums dt { font-family: var(--mag-mono); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+.camp-kpis dd { margin: 4px 0 0; font-family: var(--mag-goal); font-size: 28px; line-height: 1; }
+.camp-list { list-style: none; margin: 0 0 24px; padding: 0; display: grid; gap: 12px; }
+.camp-card { border: 2px solid var(--mag-ink); background: var(--mag-card); padding: 14px; box-shadow: var(--mag-shadow); }
+.camp-card[data-state='done'] { box-shadow: none; opacity: .8; }
+.camp-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; }
+.camp-head b { font-family: var(--mag-condensed); font-size: 22px; text-transform: uppercase; margin-inline-end: auto; }
+.camp-tag, .camp-state { font-family: var(--mag-mono); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; padding: 3px 8px; border: 1px solid var(--mag-ink); }
+.camp-card[data-state='running'] .camp-state { background: var(--mag-green); color: var(--mag-white); border-color: var(--mag-green); }
+.camp-card[data-state='waiting'] .camp-state { background: var(--mag-navy); color: var(--mag-white); border-color: var(--mag-navy); }
+.camp-nums { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; margin: 8px 0; }
+.camp-nums dd { margin: 2px 0 0; font-weight: 700; font-variant-numeric: tabular-nums; }
+.camp-acts { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+.camp-templates { display: grid; grid-template-columns: 1fr; gap: 8px; margin: 0 0 16px; }
+.camp-tpl { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: start; padding: 12px 14px; border: 2px solid var(--mag-ink); background: var(--mag-card); color: var(--mag-ink); }
+.camp-tpl b { font-family: var(--mag-condensed); font-size: 20px; text-transform: uppercase; }
+.camp-tpl small { font-size: 13px; }
+.camp-tpl[aria-checked='true'] { background: var(--mag-ink); color: var(--mag-paper); box-shadow: 4px 4px 0 var(--mag-vermilion); }
+.camp-fields { flex-wrap: wrap; }
+@media (min-width: 900px) {
+  .camp-kpis { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .camp-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .camp-templates { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .camp-nums { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+}

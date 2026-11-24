@@ -17,6 +17,7 @@ import {TaskDesk} from '@/components/master/desk/TaskDesk'
 import {GamesDesk} from '@/components/master/desk/GamesDesk'
 import {MissionsCard, MissionsDesk} from '@/components/master/desk/MissionsDesk'
 import {MarketDesk,CommunityDesk} from '@/components/master/desk/MarketDesk'
+import {CampaignsDesk} from '@/components/master/desk/CampaignsDesk'
 import {ExperienceCard,ExperienceDesk} from '@/components/master/desk/ExperienceDesk'
 import {lightState} from '@/lib/master/lightState'
 import {readState,storageInfo} from '@/lib/master/store'
@@ -41,7 +42,7 @@ import '../../research-desk.css'
 import '../../insight.css'
 export const dynamic='force-dynamic'
 
-const SECTION_KEYS=['overview','clubs','research','players','games','studio','shop','market','community','audience','data','operations','advertising','settings','more'] as const
+const SECTION_KEYS=['overview','campaigns','clubs','research','players','games','studio','shop','market','community','audience','data','operations','advertising','settings','more'] as const
 /** Old bookmarks keep working (rule 99 §2): `?tab=` and `?section=data&view=players` land where they always did. */
 const LEGACY:Record<string,{section:Section;view?:string}>={overview:{section:'overview'},club:{section:'clubs',view:'evidence'},data:{section:'data'},display:{section:'settings'},updates:{section:'operations'},activity:{section:'operations'}}
 /** sections the Admin component draws (the rest are the desk's own panels) */
@@ -85,6 +86,7 @@ async function DeskContent({section,view,club,owner,searchParams,overview,scoped
  if(section==='studio')return <StoriesDesk view={deskTab(view)}/>
  if(section==='shop'){const [doc,token]=await Promise.all([readShop(),printifyToken()]);return <ShopDesk initial={{doc,connected:!!token}} subjects={SUBJECT_IDS.map(id=>({id,name:subjectName(id)}))} pictures={LIBRARY.map(({bytes:_b,...p})=>p)}/>}
  if(section==='market')return <MarketDesk/>
+ if(section==='campaigns')return <CampaignsDesk/>
  if(section==='community')return <CommunityDesk/>
  if(section==='operations')await refreshMigrationState()
  const overviewData=await overview
