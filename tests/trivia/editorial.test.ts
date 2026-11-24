@@ -61,7 +61,9 @@ describe('Original, source-backed club trivia',()=>{
 // band, so Standard stays shut BY NAME and the honest History round opens instead. A research wave that opens Standard fails here (rule 65).
 // 12.11.2026 — the CAF research wave (kits, goals, positions) gave all three the topics Standard needs: it opens, and is held to a full,
 // fact-unique round below. A club that loses those topics again belongs back in this set.
-const STANDARD_NOT_YET=new Set<string>([])
+// 24.11.2026 — Partizan was wired by hand on 23.11.2026: its bank cannot yet fill a verified Standard round (TRIVIA_DECK_UNVERIFIED),
+// so Standard stays shut by name and the History round opens instead. Fenerbahce's bank already fills one.
+const STANDARD_NOT_YET=new Set<string>(['partizan-belgrade'])
 for(const club of ['raja-casablanca','wydad-casablanca','al-ahly'])it(`${club}: the research wave opened Standard — a full, fact-unique round`,()=>{
   const bank=banks.get(club)!
   for(let seed=1;seed<=12;seed++){

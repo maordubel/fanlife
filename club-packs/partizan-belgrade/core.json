@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "clubId": "partizan-belgrade",
   "contentLocale": "en",
+ "note": "Wired by hand on 2026-11-23, outside the research desk; the rest of the opening was written by scripts/clubs/promote.ts --complete on 2026-11-24. Nothing in it was approved by that script.",
   "sources": [
     {"id": "uefa-61150", "title": "UEFA · Sporting CP 3-3 Partizan · 1955-09-04", "url": "https://www.uefa.com/uefachampionsleague/match/61150--", "publisher": "UEFA", "access": "available", "checkedAt": "2026-11-23", "official": "competition"},
     {"id": "uefa-61151", "title": "UEFA · Partizan 5-2 Sporting CP · 1955-10-12", "url": "https://www.uefa.com/uefachampionsleague/match/61151--", "publisher": "UEFA", "access": "available", "checkedAt": "2026-11-23", "official": "competition"},

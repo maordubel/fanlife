@@ -382,6 +382,26 @@
    "prompt": "A city football ground with tall floodlights and plain concrete stands, seen along the main road among limestone and plaster apartment blocks stepping up a wooded slope. Exterior establishing view on a match evening from street level about 150 metres away: the ground rises at the end of the street beyond the last buildings, floodlights on and glowing in the haze, wet street in the foreground, a few supporters far off seen only from behind. Seats, cladding and trim in neutral grey and bare concrete unless the description says otherwise. The building carries no name, no scoreboard and no banners. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
   },
   {
+   "stem": "life-stadium-fenerbahce-a-fl1",
+   "aspect": "16:9",
+   "use": "stadium",
+   "club": "fenerbahce",
+   "town": "ist",
+   "confidence": "generic",
+   "priority": 3,
+   "prompt": "A city football ground with tall floodlights and plain concrete stands, seen along the main road among pastel apartment houses with awninged balconies on a street sloping to the water. Exterior establishing view on a match evening from street level about 150 metres away: the ground rises at the end of the street beyond the last buildings, floodlights on and glowing in the haze, wet street in the foreground, a few supporters far off seen only from behind. Seats, cladding and trim in neutral grey and bare concrete unless the description says otherwise. The building carries no name, no scoreboard and no banners. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-stadium-partizan-belgrade-a-fl1",
+   "aspect": "16:9",
+   "use": "stadium",
+   "club": "partizan-belgrade",
+   "town": "beg",
+   "confidence": "generic",
+   "priority": 3,
+   "prompt": "A city football ground with tall floodlights and plain concrete stands, seen along the main road among grey interwar apartment houses and long concrete housing blocks. Exterior establishing view on a match evening from street level about 150 metres away: the ground rises at the end of the street beyond the last buildings, floodlights on and glowing in the haze, wet street in the foreground, a few supporters far off seen only from behind. Seats, cladding and trim in neutral grey and bare concrete unless the description says otherwise. The building carries no name, no scoreboard and no banners. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
    "stem": "life-aerial-mos-fl1",
    "aspect": "1:1",
    "use": "aerial",
@@ -526,6 +546,38 @@
    "prompt": "A four-storey Israeli public-housing block of the 1960s: plaster and exposed concrete, balconies closed with slatted shutters, air-conditioner units, solar-boiler tanks on the roof, small shops behind shutters. Strictly front-on orthographic elevation of this ONE building, flat and straight like an architect's elevation rendered as a photograph: no perspective, no vanishing point, no side walls, no sky, no street, no pavement, no people, no vehicles, nothing in front of it. The building fills the square frame from edge to edge on all four sides, roof line at the top edge and ground-floor shop fronts with closed roller shutters and blank fascias at the bottom edge, so the picture can be mapped onto a box. Evenly lit at dusk, some windows glowing warm and others dark. Muted natural materials only: off-white, beige, grey, stone, weathered wood, dark metal; no saturated red, green or blue surfaces. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
   },
   {
+   "stem": "life-facade-ist-01-fl1",
+   "aspect": "1:1",
+   "use": "facade",
+   "town": "ist",
+   "priority": 4,
+   "prompt": "A five-storey Istanbul apartment house of the 1960s on the Asian shore: pastel render, deep balconies with iron railings and striped awnings, bay windows stacked above a corner shop behind a roller shutter, satellite dishes at the roof edge. Strictly front-on orthographic elevation of this ONE building, flat and straight like an architect's elevation rendered as a photograph: no perspective, no vanishing point, no side walls, no sky, no street, no pavement, no people, no vehicles, nothing in front of it. The building fills the square frame from edge to edge on all four sides, roof line at the top edge and ground-floor shop fronts with closed roller shutters and blank fascias at the bottom edge, so the picture can be mapped onto a box. Evenly lit at dusk, some windows glowing warm and others dark. Muted natural materials only: off-white, beige, grey, stone, weathered wood, dark metal; no saturated red, green or blue surfaces. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-facade-ist-02-fl1",
+   "aspect": "1:1",
+   "use": "facade",
+   "town": "ist",
+   "priority": 4,
+   "prompt": "A three-storey old wooden Istanbul town house: weathered dark timber boards, a projecting upper bay on wooden brackets, tall narrow windows with shutters, a stone base with a workshop door. Strictly front-on orthographic elevation of this ONE building, flat and straight like an architect's elevation rendered as a photograph: no perspective, no vanishing point, no side walls, no sky, no street, no pavement, no people, no vehicles, nothing in front of it. The building fills the square frame from edge to edge on all four sides, roof line at the top edge and ground-floor shop fronts with closed roller shutters and blank fascias at the bottom edge, so the picture can be mapped onto a box. Evenly lit at dusk, some windows glowing warm and others dark. Muted natural materials only: off-white, beige, grey, stone, weathered wood, dark metal; no saturated red, green or blue surfaces. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-facade-beg-01-fl1",
+   "aspect": "1:1",
+   "use": "facade",
+   "town": "beg",
+   "priority": 4,
+   "prompt": "A four-storey interwar Belgrade apartment house: grey rendered facade with simple modernist lines, rounded corner balconies, tall double windows, a ground-floor bakery front with a closed shutter. Strictly front-on orthographic elevation of this ONE building, flat and straight like an architect's elevation rendered as a photograph: no perspective, no vanishing point, no side walls, no sky, no street, no pavement, no people, no vehicles, nothing in front of it. The building fills the square frame from edge to edge on all four sides, roof line at the top edge and ground-floor shop fronts with closed roller shutters and blank fascias at the bottom edge, so the picture can be mapped onto a box. Evenly lit at dusk, some windows glowing warm and others dark. Muted natural materials only: off-white, beige, grey, stone, weathered wood, dark metal; no saturated red, green or blue surfaces. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-facade-beg-02-fl1",
+   "aspect": "1:1",
+   "use": "facade",
+   "town": "beg",
+   "priority": 4,
+   "prompt": "A long socialist-era Belgrade housing block: raw concrete panels, rows of recessed loggias with laundry and added glazing, a flat roof edge with aerials, a kiosk and small shops along the base. Strictly front-on orthographic elevation of this ONE building, flat and straight like an architect's elevation rendered as a photograph: no perspective, no vanishing point, no side walls, no sky, no street, no pavement, no people, no vehicles, nothing in front of it. The building fills the square frame from edge to edge on all four sides, roof line at the top edge and ground-floor shop fronts with closed roller shutters and blank fascias at the bottom edge, so the picture can be mapped onto a box. Evenly lit at dusk, some windows glowing warm and others dark. Muted natural materials only: off-white, beige, grey, stone, weathered wood, dark metal; no saturated red, green or blue surfaces. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
    "stem": "life-facade-ptk-01-fl1",
    "aspect": "1:1",
    "use": "facade",
@@ -590,6 +642,22 @@
    "prompt": "Haifa at dusk: a city stepping down a wooded mountain ridge to a wide bay, port cranes, a domed shrine above terraced gardens on the slope, industrial chimneys far around the bay. Very wide panoramic backdrop for a sky dome: the horizon sits in the lower third, the bottom of the frame is one continuous band of distant roofs in silhouette and soft haze, the upper two thirds are a dusk sky from deep blue to a last warm band at the horizon with thin broken cloud. The glow of one football ground's floodlights rises somewhere among the roofs. No foreground objects and no people; the left and right edges are calm so the picture can wrap. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
   },
   {
+   "stem": "life-skyline-ist-fl1",
+   "aspect": "16:9",
+   "use": "skyline",
+   "town": "ist",
+   "priority": 4,
+   "prompt": "Istanbul seen from its Asian shore at dusk: apartment blocks stepping down to a wide strait, ferries crossing, a low headland opposite with domes and slender minarets in silhouette, gulls, a long suspension bridge far off. Very wide panoramic backdrop for a sky dome: the horizon sits in the lower third, the bottom of the frame is one continuous band of distant roofs in silhouette and soft haze, the upper two thirds are a dusk sky from deep blue to a last warm band at the horizon with thin broken cloud. The glow of one football ground's floodlights rises somewhere among the roofs. No foreground objects and no people; the left and right edges are calm so the picture can wrap. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-skyline-beg-fl1",
+   "aspect": "16:9",
+   "use": "skyline",
+   "town": "beg",
+   "priority": 4,
+   "prompt": "Belgrade at dusk: a city on a ridge above the meeting of two wide rivers, an old stone fortress on the bluff, a large domed church, long concrete housing blocks on the far bank, bridges. Very wide panoramic backdrop for a sky dome: the horizon sits in the lower third, the bottom of the frame is one continuous band of distant roofs in silhouette and soft haze, the upper two thirds are a dusk sky from deep blue to a last warm band at the horizon with thin broken cloud. The glow of one football ground's floodlights rises somewhere among the roofs. No foreground objects and no people; the left and right edges are calm so the picture can wrap. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
    "stem": "life-skyline-ptk-fl1",
    "aspect": "16:9",
    "use": "skyline",
@@ -644,6 +712,22 @@
    "town": "hfa",
    "priority": 5,
    "prompt": "A Haifa neighbourhood on the slope: winding contour streets, stepped lanes between limestone and plaster blocks, pine trees. Straight-down aerial view, camera pointing vertically at the ground, no horizon and no tilt, of a dense neighbourhood about 600 metres across at dusk: readable street grid, block roofs, one small square, lit streets with warm lamps and shining wet asphalt, and a football ground with its pitch and glowing floodlights in ONE corner of the square frame. Clean and legible like the base art of a game's district map, photoreal materials. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-aerial-ist-fl1",
+   "aspect": "1:1",
+   "use": "aerial",
+   "town": "ist",
+   "priority": 5,
+   "prompt": "A neighbourhood on Istanbul's Asian shore: tight blocks of apartment houses on sloping streets, a busy market lane, a ferry pier and a tree-lined seafront along one edge. Straight-down aerial view, camera pointing vertically at the ground, no horizon and no tilt, of a dense neighbourhood about 600 metres across at dusk: readable street grid, block roofs, one small square, lit streets with warm lamps and shining wet asphalt, and a football ground with its pitch and glowing floodlights in ONE corner of the square frame. Clean and legible like the base art of a game's district map, photoreal materials. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-aerial-beg-fl1",
+   "aspect": "1:1",
+   "use": "aerial",
+   "town": "beg",
+   "priority": 5,
+   "prompt": "A Belgrade neighbourhood on a wooded hill: villas and apartment houses on winding streets, a wide boulevard, a park, long housing blocks at the foot of the slope. Straight-down aerial view, camera pointing vertically at the ground, no horizon and no tilt, of a dense neighbourhood about 600 metres across at dusk: readable street grid, block roofs, one small square, lit streets with warm lamps and shining wet asphalt, and a football ground with its pitch and glowing floodlights in ONE corner of the square frame. Clean and legible like the base art of a game's district map, photoreal materials. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
   },
   {
    "stem": "life-aerial-ptk-fl1",

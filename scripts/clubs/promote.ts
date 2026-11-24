@@ -65,12 +65,49 @@ export function findCrest(files:string[],names:string[],country:string):string|n
  const hist=ranked('history/').sort((a,b)=>b.f.localeCompare(a.f));return hist[0]?.f??null
 }
 
+async function finishByHand(id:string,reg:{name:string;country:string}){
+ const dir=`club-packs/${id}`,stage=`research-staging/${id}`,changed:string[]=[]
+ if(!existsSync(`${dir}/core.json`))throw new Error(`${id}: no pack to complete`)
+ const text=readFileSync(`${dir}/core.json`,'utf8'),pack=JSON.parse(text) as Raw
+ // the pack says how the club came in — one line added in place, the rest of the file untouched
+ if(!pack.note){
+  const probe=/("contentLocale":\s*"[a-z-]+",\n)/
+  if(!probe.test(text))throw new Error(`${id}: core.json changed shape`)
+  writeFileSync(`${dir}/core.json`,text.replace(probe,`$1 "note": "Wired by hand on ${arg('wired')||new Date().toISOString().slice(0,10)}, outside the research desk; the rest of the opening was written by scripts/clubs/promote.ts --complete on ${new Date().toISOString().slice(0,10)}. Nothing in it was approved by that script.",\n`));changed.push(`${dir}/core.json`)
+ }
+ mkdirSync(`${dir}/life`,{recursive:true})
+ if(existsSync(`${stage}/wave-auto.json`)&&!existsSync(`${dir}/wave-auto.json`)){renameSync(`${stage}/wave-auto.json`,`${dir}/wave-auto.json`);changed.push(`${dir}/wave-auto.json`)}
+ if(!existsSync(`${dir}/wave-auto.json`)){writeFileSync(`${dir}/wave-auto.json`,JSON.stringify({sources:[],matches:[],kits:[],rivals:[]},null,1)+'\n');changed.push(`${dir}/wave-auto.json`)}
+ const years=[...((pack.matches as Raw[])??[]),...((pack.archive as Raw[])??[])].map(f=>Number(String((f.value as Raw)?.on||'').slice(0,4))).filter(y=>y>1850).sort((a,b)=>a-b)
+ const first=years[0]??null,birth=first===null||first<=1986?1978:Math.min(2007,first-8),n=NAMES[reg.country]??ANY
+ if(!existsSync(`${dir}/life/cast.json`)){writeFileSync(`${dir}/life/cast.json`,JSON.stringify({schemaVersion:1,clubId:id,status:'proposed',note:'Proposed fictional first names; awaiting owner approval. Nobody here is a real person.',names:n},null,1)+'\n');changed.push(`${dir}/life/cast.json`)}
+ if(!existsSync(`${dir}/life/timeline.json`)){writeFileSync(`${dir}/life/timeline.json`,JSON.stringify({schemaVersion:1,clubId:id,birthYear:birth,status:'proposed',note:birth===1978?'1978, the life every club is handed (rule 139). Proposed; awaiting owner approval.':`${birth}: the club's recorded archive begins in ${first}. Proposed; awaiting owner approval.`},null,1)+'\n');changed.push(`${dir}/life/timeline.json`)}
+ const v=varName(id)
+ edit('lib/clubs/euro-wave.ts',`${v}PromotedAuto`,s=>insertAfter(insertAfter(s,'// ↓ promoted wave-auto imports (scripts/clubs/promote.ts)',`import ${v}PromotedAuto from '@/club-packs/${id}/wave-auto.json'`),'const AUTO:Record<string,unknown>={',`'${id}':${v}PromotedAuto,`),changed)
+ edit('lib/clubs/life/packs.ts',`${v}PromotedCast`,s=>{
+  let t=insertAfter(s,'// ↓ promoted LIFE imports (scripts/clubs/promote.ts)',`import ${v}PromotedCast from '@/club-packs/${id}/life/cast.json'\nimport ${v}PromotedTimeline from '@/club-packs/${id}/life/timeline.json'`)
+  t=insertBeforeClose(t,'export const LIFE_CAST: Record<string, CastManifest> = {',`  '${id}': ${v}PromotedCast as CastManifest,`)
+  return insertBeforeClose(t,'export const LIFE_TIMELINE: Record<string, TimelineManifest> = {',`  '${id}': ${v}PromotedTimeline as TimelineManifest,`)
+ },changed)
+ const {readStagedInput}=await import('@/lib/research/staged/pack')
+ const names=[...new Set([reg.name,...(readStagedInput(id)?.names??[])])]
+ edit('lib/clubs/spellings.ts',`'${id}':`,s=>insertBeforeClose(s,'export const CLUB_SPELLINGS',`  '${id}': ${JSON.stringify(names).replace(/","/g,"', '").replace(/^\["/,"['").replace(/"\]$/,"']")},`),changed)
+ const tag='#'+norm(reg.name).split(' ').map(w=>w[0]!.toUpperCase()+w.slice(1)).join('')
+ edit('lib/marketing/tags.ts',`'${id}': [`,s=>insertBeforeClose(s,'export const CLUB_TAGS',`  '${id}': ['${tag}'],`),changed)
+ console.log(JSON.stringify({id,completed:changed},null,1))
+}
+
 async function main(){
  const id=arg('club');if(!id)throw new Error('--club <id> required')
  const {REGISTRY}=await import('@/lib/master/registry')
  const {STATIC_CLUB_IDS}=await import('@/lib/clubs/resolver-ids')
  const reg=REGISTRY.find(c=>c.id===id);if(!reg)throw new Error(`${id} is not in the registry`)
- if(STATIC_CLUB_IDS.includes(id)){console.log(`[${id}] already a repository club — nothing to do.`);return}
+ // --complete (24.11.2026): a club that was wired by hand (pack, provider and resolver only) gets every other place the opening
+ // writes — LIFE, the daily pull's wave, spellings, the social tag — from its own pack. Nothing is approved here and nothing the
+ // pack holds is changed; the pack's note says how the club came in.
+ const complete=arg('complete')==='true'
+ if(STATIC_CLUB_IDS.includes(id)&&!complete){console.log(`[${id}] already a repository club — nothing to do.`);return}
+ if(complete){await finishByHand(id,reg);return}
  const {readStagedInput}=await import('@/lib/research/staged/pack')
  const {composeStaged,emptyDecisions}=await import('@/lib/research/staged/model')
  const {mergeHistorical}=await import('@/lib/clubs/history-wave')

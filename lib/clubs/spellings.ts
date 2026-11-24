@@ -20,4 +20,6 @@ export const CLUB_SPELLINGS: Readonly<Record<string, readonly string[]>> = {
   'al-ahly': ['Al Ahly', 'Al-Ahly'],
   'atalanta': ['Atalanta'],
   'maccabi-haifa': ['Maccabi Haifa', 'M. Haifa'],
+  'fenerbahce': ['Fenerbahçe', 'Fenerbahce'],
+  'partizan-belgrade': ['Partizan Belgrade', 'Partizan', 'FK Partizan'],
 }
