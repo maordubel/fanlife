@@ -2,7 +2,7 @@
 
 Owner, 23.11.2026, in meaning: connect the film studio to produce transitions; one full flow of game and story; freedom of choice, but there is always a mission in front of you and it can go several ways; keep the emotion and the real history. The Worker's 1986 chapter ends on the real match film, and that is the model: a viewing experience beside the game.
 
-This document is the design. The code is `lib/life/hood/story/` (the story director), `lib/life/watch/` (the watch layer), `components/clubs/life/watch/WatchCard.tsx` (the viewing moment) and `scripts/life/transition-requests.ts` (the studio bridge). Rule: `docs/rules/life-story-watch.md`. Nothing here is mounted in the hood yet (section 8).
+This document is the design. The code is `lib/life/hood/story/` (the story director), `lib/life/watch/` (the watch layer), `components/clubs/life/watch/WatchCard.tsx` (the viewing moment) and `scripts/life/transition-requests.ts` (the studio bridge). Rule: `docs/rules/life-story-watch.md`. Mounted in the hood on 24.11.2026 through `lib/life/hood/story/play.ts` (section 8).
 
 ## 1 · The loop
 
@@ -76,9 +76,10 @@ Between them the street adds: `monday-colours` or `the-window` (a fork at nine t
 
 ## 8 · Not done
 
-- Nothing is mounted: `HoodHost` still runs the single M1 job. `toHoodJob(level, mission, approachId)` returns the job, the steps and the pickups to append; `JobId` in `lib/life/hood/types.ts` has to widen to `string`, and the run has to hold more than one job.
+- Mounted (24.11.2026): `storyLevel` lays every approach into the level once; the run holds a board of jobs (`jobs[0]` is in focus); `HoodHost` plays offer → approach → steps → complication → convergence → watch card (a dated night) → aftermath → time card; the save holds the director state (old saves load). The M1 job stays in `hoodLevel` for its own tests and is not offered by the host.
+- A curated day row whose title is not a scoreline now carries the club's one recorded match of that day (`withRecordedMatch` in `lib/clubs/life/rush.ts`): Hapoel Tel Aviv's age-8 chapter stands on 24.5.1986 and its card opens the recorded highlights.
+- Inside childhood the renderer draws one child height (`rush-render/stage.ts`: `spec.age < 13`), so the boy does not grow between 6 and 12 yet.
 - Teens, young adult and adult arcs, and the routes, are tables only.
-- The save does not hold `StoryState` yet.
 - Only Hapoel Tel Aviv has match highlights on record. Other clubs get them when a link is recorded in their archive (a `films`-style row with a source), never by search.
 - No interstitial was rendered. The eight Worker clips are the only ones that exist.
 - No handoff: a "watch on our channel" door to YouTube is not a cross-app moment in `ecosystem/contract.json`; if the channel should count in the funnel it needs its own decision.
