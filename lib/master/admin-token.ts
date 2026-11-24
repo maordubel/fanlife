@@ -1,4 +1,6 @@
 import {createHash,createHmac,timingSafeEqual} from 'node:crypto'
+import {ADMIN_COOKIE,ADMIN_SESSION_DAYS,configuredKey,adminPolicy,normalizeKey,type AdminEnv} from './admin-token-pure'
+export {ADMIN_COOKIE,ADMIN_SESSION_DAYS,ADMIN_KEY_MIN,adminPolicy,configuredKey,normalizeKey,type AdminPolicy,type AdminEnv} from './admin-token-pure'
 /**
  * The owner key (audit F01, 7.10.2026) — the pure half, so every rule here is tested without a server.
  *
@@ -12,19 +14,11 @@ import {createHash,createHmac,timingSafeEqual} from 'node:crypto'
  *  · no key (or too short) in production  → `closed`: fail closed, nobody gets in.
  * Evaluation mode (fans can play every gate) never enters this decision.
  */
-export const ADMIN_COOKIE='fan-life-admin'
-export const ADMIN_SESSION_DAYS=30
-export const ADMIN_KEY_MIN=16
 const DAY=86400
-export type AdminPolicy='keyed'|'open-dev'|'closed'
-export type AdminEnv={FAN_LIFE_ADMIN_KEY?:string;NODE_ENV?:string}
 /** Who an audit entry says acted. `owner` only ever comes from a verified cookie. */
 export type AdminSession={actor:'owner'|'local-developer';role:'owner'|'dev-open'}
 /** The key as typed or pasted: Unicode-normalised, outer spaces and one pair of wrapping quotes dropped — a value pasted
  * into Vercel as "abc…" or typed with a trailing space from a phone keyboard is still the same key. */
-export const normalizeKey=(v:string)=>{let k=v.normalize('NFKC').trim();const q=k.match(/^(["'“”‘’])(.*)(["'“”‘’])$/s);if(q)k=q[2]!.trim();return k}
-export const configuredKey=(env:AdminEnv)=>{const k=normalizeKey(env.FAN_LIFE_ADMIN_KEY||'');return k.length>=ADMIN_KEY_MIN?k:''}
-export function adminPolicy(env:AdminEnv):AdminPolicy{if(configuredKey(env))return 'keyed';return env.NODE_ENV==='production'?'closed':'open-dev'}
 const signingSecret=(key:string)=>createHmac('sha256',key).update('fan-life-admin-session-v1').digest()
 const sign=(key:string,payload:string)=>createHmac('sha256',signingSecret(key)).update(payload).digest('base64url')
 /** Constant-time comparison of what was typed against the key; hashing first makes the lengths equal. */

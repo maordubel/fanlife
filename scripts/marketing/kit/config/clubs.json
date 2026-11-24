@@ -106,5 +106,11 @@
   "primary": "#1B2A5C",
   "on": "#FFFFFF",
   "pattern": "halves"
+ },
+ "raja-casablanca": {
+  "name": "Raja Casablanca",
+  "primary": "#00843D",
+  "on": "#FFFFFF",
+  "pattern": "solid"
  }
 }

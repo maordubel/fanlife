@@ -65,12 +65,12 @@ async function main(){
    if(visibleIds&&!visibleIds.has(f.id))continue
    const v=f.value as unknown as Record<string,any>,season=String(v.season||''),type=String(v.type||'home')
    if(!season||(!visibleIds&&have.has(`${season}|${type}`))||ids.has(String(f.id).split(':').pop()!.replace(/[^a-z0-9_-]/gi,'-')))continue
-   const cols=words(v.construction?.colors??v.colours??v.shirt?.colours)
+   const cols=words(v.construction?.colors??v.colors??v.colours??v.shirt?.colours)
    if(!cols.length){noColour++;continue}
    have.add(`${season}|${type}`)
    const sh=v.shorts&&words(v.shorts.colour)[0],so=v.socks&&words(v.socks.colour)[0]
    kits.push({id:String(f.id).split(':').pop()!.replace(/[^a-z0-9_-]/gi,'-'),origin:'pack',season,kind:'season',type,euro:false,
-    shirt:{design:design(v.construction?.design),colours:cols,hex:Object.fromEntries(cols.map(c=>[c,INK[c]!])),measured:{},...(visibleIds?{artwork:{omitUnmeasuredGraphics:true}}:{})},
+    shirt:{design:design(v.construction?.design??v.design),colours:cols,hex:Object.fromEntries(cols.map(c=>[c,INK[c]!])),measured:{},...(visibleIds?{artwork:{omitUnmeasuredGraphics:true}}:{})},
     ...(sh?{shorts:{colour:sh,hex:INK[sh],trim:null,trimHex:null}}:{}),...(so?{socks:{colour:so,hex:INK[so],trim:null,trimHex:null,bands:false}}:{}),
     maker:real(v.manufacturer??v.maker),sponsor:real(v.sponsor),shortsSponsor:null,sources:f.sources,readUnsure:!!visibleIds,
     ...(visibleIds?{crestOmitted:season<'1993/94'||season>='2026/27'||!['home','away','third'].includes(type.toLowerCase())}:{})})

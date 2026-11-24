@@ -1,8 +1,12 @@
 /** v4 templates: one per topic the plan markets. build(t, app, data) → {html} for a feed post (1080 × 1350) and the
  *  same composition as a story (1080 × 1920) that moves (see render.mjs). The data shapes are the plan's own kit data,
  *  unchanged, so every row already in marketing.posts draws in the new language without being rebuilt. */
+import {existsSync, readdirSync} from 'node:fs'
+import path from 'node:path'
 import {shell} from './style.mjs'
-import {brand, clubId, crest, lifeShot, legendsFx, local, paint, plate, shirts, CLUBS, mix} from './assets.mjs'
+import {brand, clubId, crest, lifeShot, legendsFx, local, paint, plate, shirts, CLUBS, mix, lum, REPO, url} from './assets.mjs'
+/** a club's accent on a dark picture: its own colour; white when the colour is black (Partizan: never the rival's red) */
+const hotOf = (id, fallback = '#E8212B') => { const c = id && CLUBS[id]?.primary; return !c ? fallback : lum(c) < .18 ? '#FFFBF2' : c }
 
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]))
 const at = (kind, s) => ` data-in="${kind}" data-d="${s}"`
@@ -82,7 +86,7 @@ ${strip({s1: '#FFFBF2', s2: hot})}${top(p, crestImg(c))}
 
 /** LIFE — the GTA campaign: the owner's comic art is the hero, full size; a mission card from the real LIFE missions
  *  (lib/life/rush) sits under it. Portrait art fills the post; wide art runs as a cinematic band. */
-const GTA_ART = {'cover-life': 'tall', 'cover-fanlife': 'tall', 'next-generation': 'wide', 'panels-wide': 'wide', 'panels-graffiti': 'wide'}
+const GTA_ART = {terrace: 'tall', 'cover-life': 'tall', 'cover-fanlife': 'tall', 'next-generation': 'wide', 'panels-wide': 'wide', 'panels-graffiti': 'wide'}
 async function gta(d, o) {
   const art = GTA_ART[d.art] ? d.art : 'next-generation', tall = GTA_ART[art] === 'tall'
   const src = local(`v4/art/life-gta/${art}.jpg`), hot = d.hot || '#E8212B'
@@ -201,7 +205,7 @@ async function spicy(d, o) {
 
 async function film(d, o) {
   // a club's film wears the club's colour, never its rival's (Panathinaikos: no red)
-  const id = clubId(d), hot = id ? paint(id).primary || '#D71920' : '#D71920'
+  const id = clubId(d), hot = hotOf(id, '#D71920')
   const p = {bg: '#0B0B0B', on: '#FFFBF2', s1: '#FFFBF2', s2: hot, light: false}
   const th = local(d.thumb)
   return {vars: vars(p, `--hot:${hot};--accent:${hot}`), inner: `${strip(p)}${top(p, `<span class="pill" style="box-shadow:none">▶ ${esc(d.kicker || 'Now on YouTube')}</span>`)}
@@ -433,7 +437,22 @@ ${names.map((n, i) => `<div style="position:absolute;left:${slots[i][0] * 100}%;
 
 /** the market: a real listing from a supporter, its photo the hero */
 async function market(d, o) {
+  if (!d.image && !d.photo && !d.cut && !d.card) return marketCall(d, o)
   return shop({...d, kicker: d.kicker || 'The market · from a supporter', cta: d.cta || 'See the listing'}, o)
+}
+
+/** the market's open call (no listing to show yet): real shirts from a club's archive, the market in a phone */
+async function marketCall(d, o) {
+  const id = clubId(d) || 'celtic', p0 = paint(id), ks = await shirts(id, 3), scr = local(d.screen)
+  const p = {bg: '#F4ECD8', on: '#15130F', s1: '#15130F', s2: p0.light ? '#15130F' : p0.primary || '#D71920', light: true}
+  return {vars: vars(p, `--hot:${p.s2}`), light: true, inner: `${dots('rgba(21,19,15,.1)')}${strip(p)}${top(p, '<span class="k">The market</span>')}
+<div class="body" style="padding-top:${o.story ? 120 : 30}px">${tag(d.kicker || 'Supporters sell to supporters', true)}
+<p class="h" style="font-size:${sized(d.headline, 120, 100, 84, 18, 34)}px;margin-top:16px"${at('slam', .3)}>${esc(d.headline || 'The shirt in your wardrobe has a buyer.')}</p>
+<div style="flex:1;display:flex;align-items:center;gap:30px;min-height:0;margin-top:20px">
+<div style="flex:1;display:grid;grid-template-columns:repeat(${Math.max(1, ks.length)},minmax(0,1fr));gap:10px;align-items:end;min-width:0">${ks.map((k, i) => `<div style="display:flex;flex-direction:column;align-items:center"><img src="${k.src}" alt="" style="width:100%;object-fit:contain;filter:drop-shadow(8px 10px 0 rgba(0,0,0,.18))"${at('up', .5 + i * .12)}><span class="num" style="font-size:40px;margin-top:6px">${k.year}</span></div>`).join('')}</div>
+${scr ? phone(scr, o.story ? 380 : 270, .9, 4) : ''}</div>
+<p class="lead" style="margin:22px 0 26px"${at('up', 1)}>${esc(d.line || 'List it in a minute. Find the one you missed.')}</p>
+</div>${foot(d.cta || 'Open the market', 'fanlife.dubelteam.com/market')}`}
 }
 
 /** a Back Pages article (blog): kicker, title, the first line — the way into SEO pages from social */
@@ -447,19 +466,147 @@ async function article(d, o) {
 </div>${foot('Read it')}`}
 }
 
+
+// ── the 30-day plan (24.11.2026): one club a day, the shop, the sale, the films, the big games ─────────────────────
+/** a stat on a torn ticket: the number in Ultra, its label under it */
+const ticket = (n, label, i, ink = '#15130F') => `<div class="paper" style="flex:1;min-width:0;padding:22px 20px 18px;border-top:4px dashed rgba(21,19,15,.35);box-shadow:8px 8px 0 rgba(0,0,0,.3);transform:rotate(${[-2, 1.5, -1][i % 3]}deg)"${at('pop', .7 + i * .12)}><p class="num" style="margin:0;font-size:${String(n).length > 5 ? 50 : 66}px;color:${ink}">${esc(n)}</p><p class="k" style="font-size:17px;margin-top:10px;color:#15130F;letter-spacing:.14em">${esc(label)}</p></div>`
+
+/** CLUB OF THE DAY: the club's own colours, its crest as the hero, its nickname, one line in its own language, three
+ *  real numbers from its archive and its own home screen in a phone — "your club is already here" */
+async function club(d, o) {
+  const id = clubId(d), p = paint(id), c = await crest(d.crestName || p.name), scr = local(d.screen)
+  const stats = (d.stats || []).slice(0, 3)
+  const ink = p.light ? '#15130F' : mix(p.primary || '#15130F', '#000000', .2)
+  const nm = d.name || p.name || ''
+  const crestBig = c ? `<img src="${c}" alt="" style="width:${o.story ? 440 : 300}px;height:${o.story ? 440 : 300}px;object-fit:contain;filter:drop-shadow(16px 16px 0 rgba(0,0,0,.35))"${at('pop', .3)}>` : ''
+  return {vars: vars(p), light: p.light, inner: `${dots(p.light ? 'rgba(0,0,0,.16)' : 'rgba(0,0,0,.3)')}${strip(p)}${top(p, `<span class="k" style="font-size:20px">${esc(d.city || '')}</span>`)}
+<div class="body" style="padding-top:${o.story ? 110 : 26}px">${tag(d.kicker || 'Club of the day')}
+<p class="h shadowed" style="font-size:${nm.length <= 8 ? 150 : nm.length <= 13 ? 122 : nm.length <= 18 ? 96 : 80}px;margin-top:14px"${at('slam', .45)}>${esc(nm)}</p>
+${d.nickname ? `<p class="h" style="font-size:46px;opacity:.85;margin-top:10px"${at('up', .6)}>${esc(d.nickname)}</p>` : ''}
+<div style="flex:1;display:flex;gap:40px;align-items:center;justify-content:space-between;min-height:0;margin-top:14px">
+<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:22px;align-items:flex-start">${crestBig}
+${d.local ? `<p class="lead" style="font-size:${o.story ? 40 : 31}px;font-style:italic;opacity:.95"${at('up', .75)}>“${esc(d.local)}”</p>` : ''}</div>
+${scr ? phone(scr, o.story ? 400 : 200, .9, 4) : ''}</div>
+<p class="h" style="font-size:${sized(d.headline, 64, 54, 46, 30, 52)}px;margin:20px 0 24px"${at('up', .65)}>${esc(d.headline || 'Your club is already here.')}</p>
+${stats.length ? `<div style="display:flex;gap:18px;margin-bottom:34px">${stats.map((s, i) => ticket(s.n, s.label, i, ink)).join('')}</div>` : ''}
+</div>${foot(d.cta || 'Walk in', d.url || `fanlife.dubelteam.com/clubs/${id || ''}`)}`}
+}
+
+/** THE SALE (Black Friday, a weekend sale, Christmas): the cut as the headline in Ultra, the product on its stage, the
+ *  last day on a stamp. Says "up to" because the shop's price floor can stop a cut short (lib/shop/sales.ts). */
+async function sale(d, o) {
+  const id = clubId({club: d.subject && d.subject !== 'fanlife' ? {id: d.subject} : d.club}), p0 = id ? paint(id) : null
+  const hot = hotOf(id)
+  const p = {bg: '#0B0B0B', on: '#FFFBF2', s1: '#FFFBF2', s2: hot, light: false}
+  const label = String(d.label || 'Black Friday'), [w1, ...rest] = label.toUpperCase().split(' '), w2 = rest.join(' ')
+  const phase = {soon: 'Starts soon', on: 'On now', last: 'Last day'}[d.phase] || 'On now'
+  const pic = local(d.cut) || local(d.photo) || local(d.card) || local(d.image)
+  const art = pic ? (d.cut ? `<img src="${pic}" alt="" style="max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 30px 30px rgba(0,0,0,.6))"${at('up', .7)} data-kb>`
+    : `<div class="paper" style="height:100%;aspect-ratio:1;max-width:100%;padding:14px;box-shadow:16px 16px 0 ${hot};transform:rotate(-2deg)"${at('pop', .7)}><img src="${pic}" alt="" style="width:100%;height:100%;object-fit:cover" data-kb></div>`) : ''
+  return {vars: vars(p, `--hot:${hot};--accent:${hot}`), inner: `${dots('rgba(255,255,255,.07)')}${strip(p)}${top(p, `<span class="pill" style="box-shadow:6px 6px 0 #000;color:${hot === '#FFFBF2' ? '#15130F' : '#FFFBF2'}">● ${esc(phase)}</span>`)}
+<div class="body" style="padding-top:${o.story ? 120 : 20}px">
+<p class="h" style="font-size:${o.story ? 210 : 168}px;line-height:.8"${at('slam', .2)}>${esc(w1)}${w2 ? `<br><span style="color:transparent;-webkit-text-stroke:4px #FFFBF2">${esc(w2)}</span>` : ''}</p>
+<div style="display:flex;align-items:flex-end;gap:20px;margin-top:20px"${at('left', .45)}>${d.upTo !== false ? `<p class="k" style="font-size:30px;margin:0 0 30px">Up to</p>` : ''}<p class="num" style="margin:0;font-size:${o.story ? 230 : 190}px;color:${hot};text-shadow:10px 10px 0 rgba(255,255,255,.12)">−${esc(d.percent || 20)}%</p></div>
+<div style="flex:1;display:flex;align-items:center;justify-content:center;min-height:0;position:relative;margin:10px 0 20px">${art}
+${d.ends ? `<div class="stamp" style="left:-6px;top:10px;width:250px;height:120px;--hot:${hot}"${at('pop', 1)}><span class="k" style="font-size:16px">${esc(d.phase === 'soon' ? 'Starts' : 'Ends')}</span><span class="h" style="font-size:40px;color:#15130F">${esc(d.ends)}</span></div>` : ''}</div>
+<p class="k" style="font-size:20px;opacity:.8;margin-bottom:24px"${at('up', .9)}>${esc(d.line || 'Every club · every design · printed to order')}</p>
+</div>${foot(d.cta || 'Shop the sale', 'fanlife.dubelteam.com/shop')}`}
+}
+
+/** ROYAL RUMBLE: the ring in the club's colours (three ropes), the game's name as a fight bill, the real game in a phone */
+async function rumble(d, o) {
+  const id = clubId(d), p0 = paint(id), c = await crest(d.crestName || p0.name), scr = local(d.screen)
+  const rope = hotOf(id, '#D71920')
+  const p = {bg: '#100D18', on: '#FFFBF2', s1: '#FFFBF2', s2: rope, light: false}
+  const ropes = [0, 1, 2].map(i => `<div style="position:absolute;left:0;right:0;top:${(o.story ? 1530 : 1060) + i * 40}px;height:12px;background:${i === 1 ? '#FFFBF2' : rope};box-shadow:0 6px 0 rgba(0,0,0,.4);transform:rotate(-2deg)"></div>`).join('')
+  return {vars: vars(p, `--hot:${rope === '#15130F' ? '#FF5A4E' : rope}`), inner: `<div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 35%,#2A2238,#100D18 70%)"></div>${ropes}${strip(p)}${top(p, crestImg(c))}
+<div class="body" style="padding-top:${o.story ? 110 : 26}px">${tag(d.kicker || `${p0.name || 'Your club'} · Royal Rumble`, true)}
+<p class="h" style="font-size:${o.story ? 210 : 176}px;line-height:.8;margin-top:16px;text-shadow:12px 12px 0 ${rope === '#15130F' ? '#000' : rope}"${at('slam', .3)}>Royal<br>Rumble</p>
+<div style="flex:1;display:flex;gap:36px;align-items:center;min-height:0;margin-top:20px">
+<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:22px;position:relative;z-index:2">
+<p class="h shadowed" style="font-size:${sized(d.headline, 68, 58, 48, 24, 44)}px"${at('up', .6)}>${esc(d.headline || 'Your club’s all-time five. One budget.')}</p>
+${(d.body || []).slice(0, 2).map((s, i) => `<p class="lead" style="font-size:30px;opacity:.9"${at('up', .75 + i * .12)}>${esc(s)}</p>`).join('')}</div>
+${scr ? phone(scr, o.story ? 400 : 300, .8, 4) : ''}</div>
+</div>${foot(d.cta || 'Enter the ring')}`}
+}
+
+/** THE SHIRT ARCHIVE of one club: four home shirts across its eras on a paper rail, the count and the years */
+async function kits(d, o) {
+  const id = clubId(d), p = paint(id), c = await crest(d.crestName || p.name)
+  const ks = await shirts(id, o.story ? 4 : 4)
+  return {vars: vars(p), light: p.light, inner: `${dots(p.light ? 'rgba(0,0,0,.16)' : 'rgba(0,0,0,.3)')}${strip(p)}${top(p, crestImg(c))}
+<div class="body" style="padding-top:${o.story ? 120 : 30}px">${tag(d.kicker || `${p.name || ''} · the shirt archive`)}
+<p class="h shadowed" style="font-size:${o.story ? 150 : 124}px;margin-top:14px"${at('slam', .3)}>Every shirt.<br>Every era.</p>
+${ks.length ? `<div class="paper" style="margin:36px -64px 0;padding:34px 40px 24px;display:grid;grid-template-columns:repeat(${ks.length},minmax(0,1fr));gap:14px;flex:1;min-height:0"${at('wipe', .5)}>${ks.map((k, i) => `<div style="display:flex;flex-direction:column;align-items:center;justify-content:flex-end;min-height:0"><img src="${k.src}" alt="" style="width:100%;flex:1;min-height:0;object-fit:contain;filter:drop-shadow(8px 10px 0 rgba(0,0,0,.18))"${at('up', .65 + i * .12)}><span class="num" style="font-size:52px;margin-top:8px"${at('slam', .9 + i * .12)}>${k.year}</span></div>`).join('')}</div>` : '<div style="flex:1"></div>'}
+<div style="display:flex;align-items:baseline;gap:22px;margin:30px 0 26px"${at('up', 1)}><p class="num" style="margin:0;font-size:110px">${esc(d.count || '')}</p><p class="h" style="font-size:46px">${esc(d.span || 'shirts in the archive')}</p></div>
+</div>${foot(d.cta || 'Open the archive', d.url)}`}
+}
+
+/** FOOTBALL STORIES on YouTube: three frames from the club's own films, the channel, Subscribe */
+async function yt(d, o) {
+  const id = clubId(d), hot = hotOf(id)
+  const p = {bg: '#0B0B0B', on: '#FFFBF2', s1: '#FFFBF2', s2: hot, light: false}
+  const th = (d.thumbs || []).map(local).filter(Boolean).slice(0, 3)
+  const tiles = th.map((t, i) => `<div class="frame" style="height:${o.story ? 300 : 210}px;transform:rotate(${[-2, 1.5, -1][i]}deg)"${at(i % 2 ? 'right' : 'left', .5 + i * .15)}><img src="${t}" alt="" style="width:100%;height:100%;object-fit:cover" data-kb></div>`).join('')
+  return {vars: vars(p, `--hot:${hot};--accent:${hot}`), inner: `${strip(p)}${top(p, `<span class="pill" style="box-shadow:6px 6px 0 #000;color:${hot === '#FFFBF2' ? '#15130F' : '#FFFBF2'}">▶ YouTube</span>`)}
+<div class="body" style="padding-top:${o.story ? 120 : 30}px">${tag(d.kicker || 'FanLife: Football Stories', true)}
+<p class="h shadowed" style="font-size:${sized(d.headline, 124, 104, 84, 18, 34)}px;margin-top:16px"${at('slam', .3)}>${esc(d.headline || 'Football stories nobody else tells.')}</p>
+<div style="flex:1;display:grid;grid-template-columns:${th.length > 1 ? '1fr 1fr' : '1fr'};gap:26px;align-content:center;min-height:0;margin:24px 0">${tiles.replace(/(<div class="frame"[^>]*?)style="height/, `$1style="grid-column:1/-1;height`)}</div>
+${d.line ? `<p class="lead" style="margin-bottom:26px;opacity:.9"${at('up', .9)}>${esc(d.line)}</p>` : ''}
+</div>${foot(d.cta || 'Subscribe', 'YouTube · @FanLifeFootballStories')}`}
+}
+
+
+/** THE ALBUM: the club's own stickers fanned out like a fresh packet, the daily envelope, and the code on a stamp */
+async function album(d, o) {
+  const id = clubId(d), p = id ? paint(id) : {bg: '#14365C', on: '#FFFBF2', s1: '#FFFBF2', s2: '#D71920', light: false}, c = id ? await crest(d.crestName || p.name) : null
+  const dir = path.join(REPO, 'public/album/stickers', id || '')
+  const files = id && existsSync(dir) ? readdirSync(dir).filter(f => /^\d+\.webp$/.test(f)).sort((a, b) => parseInt(a) - parseInt(b)) : []
+  const pick = files.length ? [0, 1, 2, 3].map(i => files[(Number(d.seed || 0) * 4 + i * 3) % files.length]) : []
+  const W = o.story ? 300 : 236
+  const fan = pick.map((f, i) => `<img src="${url(path.join(dir, f))}" alt="" style="position:absolute;left:50%;bottom:0;width:${W}px;margin-left:${-W / 2 + (i - 1.5) * W * .62}px;transform:rotate(${(i - 1.5) * 9}deg) translateY(${Math.abs(i - 1.5) * 26}px);transform-origin:50% 120%;box-shadow:10px 10px 0 rgba(0,0,0,.35);border-radius:6px"${at('up', .5 + i * .14)}>`).join('')
+  const code = d.code ? `<div class="stamp" style="right:20px;top:${o.story ? 40 : 10}px;width:${o.story ? 420 : 370}px;height:${o.story ? 180 : 156}px;transform:rotate(5deg)"${at('pop', 1.1)}><span class="k" style="font-size:15px;letter-spacing:.14em">${esc(d.codeLine || 'Code · +3 free envelopes')}</span><span class="num" style="font-size:${o.story ? 58 : 50}px;margin:8px 0 0">${esc(d.code)}</span></div>` : ''
+  return {vars: vars(p), light: p.light, inner: `${dots(p.light ? 'rgba(0,0,0,.16)' : 'rgba(0,0,0,.3)')}${strip(p)}${top(p, crestImg(c))}
+<div class="body" style="padding-top:${o.story ? 120 : 28}px">${tag(d.kicker || 'The Album · free')}
+<p class="h shadowed" style="font-size:${o.story ? 120 : sized(d.headline, 112, 92, 76, 16, 30)}px;margin-top:14px"${at('slam', .3)}>${esc(d.headline || 'A free envelope. Every day.')}</p>
+<div style="flex:1;position:relative;min-height:${o.story ? 700 : 400}px;margin-top:20px">${fan}${code}</div>
+<p class="lead" style="margin:56px 0 26px"${at('up', 1)}>${esc(d.line || 'Sign in, open today’s envelope, stick your legends in.')}</p>
+</div>${foot(d.cta || 'Open today’s envelope', 'fanlife.dubelteam.com/album')}`}
+}
+
+
+/** FAN LIFE ITSELF (owner, 24.11.2026: "general FAN LIFE campaigns, not tied to one club"): the roundel, one big line,
+ *  every open club's crest on a paper wall, three numbers on tickets, the hub in a phone */
+async function hub(d, o) {
+  const ids = (d.clubs || []).filter(id => CLUBS[id]).slice(0, 12)
+  const crests = (await Promise.all(ids.map(id => crest(CLUBS[id].name)))).filter(Boolean)
+  const p = {bg: '#15130F', on: '#FFFBF2', s1: '#0B6E3A', s2: '#D71920', light: false}, scr = local(d.screen)
+  const cols = o.story ? 4 : scr ? 4 : 6
+  const wall = crests.length ? `<div class="paper" style="display:grid;grid-template-columns:repeat(${cols},minmax(0,1fr));gap:${o.story ? 22 : 16}px;padding:${o.story ? 34 : 24}px;box-shadow:12px 12px 0 #D71920;transform:rotate(-1.5deg);flex:1;min-width:0;align-content:center"${at('wipe', .45)}>${crests.map((c, i) => `<img src="${c}" alt="" style="width:100%;aspect-ratio:1;object-fit:contain"${at('pop', .55 + i * .05)}>`).join('')}</div>` : ''
+  const stats = (d.stats || []).slice(0, 3)
+  return {vars: vars(p, '--hot:#D71920;--accent:#D71920'), inner: `${dots('rgba(255,255,255,.06)')}${strip(p)}${top(p, '<span class="k" style="font-size:20px">Every club · one home</span>')}
+<div class="body" style="padding-top:${o.story ? 110 : 22}px">${tag(d.kicker || 'FAN LIFE · every club', true)}
+<p class="h shadowed" style="font-size:${sized(d.headline, 118, 96, 80, 18, 32)}px;margin-top:14px"${at('slam', .3)}>${esc(d.headline || 'Every club. Every shirt. Every legend.')}</p>
+<div style="flex:1;display:flex;gap:30px;align-items:center;min-height:0;margin:26px 0 22px">${wall}${scr && !o.story ? phone(scr, 230, .9, 4) : ''}</div>
+${stats.length ? `<div style="display:flex;gap:18px;margin-bottom:30px">${stats.map((s, i) => ticket(s.n, s.label, i)).join('')}</div>` : ''}
+</div>${foot(d.cta || 'Pick your club', d.url || 'fanlife.dubelteam.com')}`}
+}
+
 /** the dare above the foot: one line that pokes the supporter's pride (owner, 14.11.2026: "lots of hooks, emotion, ego") */
 const DARE = {'L-GATE': 'Bet you can’t do it first time', 'L-LIFE': 'Your club. Your streets. Your story.', 'L-LOADING': 'Coming soon. Your city first?', 'L-LEGENDS': 'Think you can manage them? Prove it.',
   'L-FACT': 'Tag the one mate who knew this', 'T10-NERDS': 'Real fans don’t need the options', 'L-QUIZ': 'Real fans don’t need the options', 'L-DEBATE': 'Pick a side. No fence-sitting.',
   'T9-OTD': 'Were you there? Prove it in the comments', 'T11-SPICY': 'Were you there? Tell us.', 'L-FILM': 'Watch it before your mates do', 'L-NUMBERS': 'Is your club on the board?',
   'L-BINGO': 'Under 8? Not a real fan.', 'L-ZOOM': 'Real fans need one look', 'L-TIER': 'Wrong? Fight us in the comments', 'L-VOTE': 'Your club not on top? Send this.',
-  'L-SHOP': 'Wear it to the next match', 'L-FRAME': 'Your name. Your XI. Your wall.', 'L-GTA': 'Real supporters only. Tourists wait outside.', 'L-TEE': 'Wear it. Let them read it.', 'L-MARKET': 'One supporter’s shirt. Your wardrobe next.', 'L-ARTICLE': 'Read it. Then argue with your dad.'}
+  'L-SHOP': 'Wear it to the next match', 'L-FRAME': 'Your name. Your XI. Your wall.', 'L-GTA': 'Real supporters only. Tourists wait outside.', 'L-TEE': 'Wear it. Let them read it.', 'L-MARKET': 'One supporter’s shirt. Your wardrobe next.', 'L-ARTICLE': 'Read it. Then argue with your dad.',
+  'L-CLUB': 'Tag the mate who goes with you', 'L-SALE': 'Gone when it’s gone', 'L-RUMBLE': 'Your five beat your mate’s five?', 'L-KITS': 'Which one did you wear?', 'L-YT': 'Send it to the one who was there', 'L-ALBUM': 'Got all of them? Prove it.', 'L-HUB': 'Tag the mate who supports the wrong club'}
 const SHOP_DARE = {framed: 'Put it where your mates can see it', poster: 'Put it where your mates can see it', canvas: 'Put it where your mates can see it', mug: 'Your club with every morning coffee',
   'kids-tee': 'Start them young', puzzle: 'A thousand pieces of your club', sticker: 'Stick it everywhere', 'phone-case': 'Your club in your pocket', tote: 'Carry your club everywhere'}
 export const dareFor = (t, d) => d?.dare === '' ? '' : d?.dare || (t === 'L-SHOP' && SHOP_DARE[d?.kind]) || DARE[t] || ''
 
 const MAP = {'L-GATE': gate, 'L-LIFE': life, 'L-LOADING': loading, 'L-LEGENDS': legends, 'L-FACT': fact, 'T10-NERDS': quiz, 'L-QUIZ': quiz, 'L-DEBATE': debate, 'T9-OTD': otd, 'T11-SPICY': spicy,
   'L-FILM': film, 'L-SLIDE': slide, 'L-NUMBERS': numbers, 'L-CARD': card, 'L-DUBID-SYSTEM': (d, o) => system(d, o, 'dubid'), 'L-OFFSIDES-SYSTEM': (d, o) => system(d, o, 'offsides'),
-  'L-FIXTURES': (d, o) => matchList(d, o, 'L-FIXTURES'), 'L-RESULTS': (d, o) => matchList(d, o, 'L-RESULTS'), 'L-VOTE': vote, 'L-BINGO': bingo, 'L-ZOOM': zoom, 'L-TIER': tier, 'L-SHOP': shop, 'L-MARKET': market, 'L-FRAME': frame, 'L-GTA': gta, 'L-TEE': tee, 'L-ARTICLE': article}
+  'L-FIXTURES': (d, o) => matchList(d, o, 'L-FIXTURES'), 'L-RESULTS': (d, o) => matchList(d, o, 'L-RESULTS'), 'L-VOTE': vote, 'L-BINGO': bingo, 'L-ZOOM': zoom, 'L-TIER': tier, 'L-SHOP': shop, 'L-MARKET': market, 'L-FRAME': frame, 'L-GTA': gta, 'L-TEE': tee, 'L-ARTICLE': article,
+  'L-CLUB': club, 'L-SALE': sale, 'L-RUMBLE': rumble, 'L-KITS': kits, 'L-YT': yt, 'L-ALBUM': album, 'L-HUB': hub}
 export const V4_TEMPLATES = Object.keys(MAP)
 
 /** the page for one kit, or null when v4 has no layout for it (v2 then draws it) */

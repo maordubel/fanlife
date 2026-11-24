@@ -28,8 +28,9 @@ jobs:
   stories:
     runs-on: ubuntu-latest
     # Studio now has 335 frame-rendering tests (~7 min), followed by the comic and legacy suites.
-    # Keep every check; allow the combined job to finish on a slower hosted runner.
-    timeout-minutes: 20
+    # Keep every check; allow the combined job to finish on a slower hosted runner (24.11.2026: 741 studio tests passed
+    # at 19m48s and the comic suites were cut at 20).
+    timeout-minutes: 30
     # tests never reach the owner's Drive: the committed owner tracks score them (studio/audio._fetch_drive_track)
     env: {STORIES_MUSIC_FETCH: '0'}
     steps:

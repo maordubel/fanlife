@@ -41,8 +41,9 @@ describe('desk pack',()=>{
  it('is stored, listed and loaded by the engine for a club with no repository pack',async()=>{
   const dir=await mkdtemp(path.join(tmpdir(),'fanlife-desk-'));vi.stubEnv('FAN_LIFE_DATA_DIR',dir)
   try{
-   // 10.11.2026 (rule 143): a registry club with staged material already loads from it — UEFA's own ties only, no XI until something is approved
-   expect(gateAvailability((await loadClub('dinamo-zagreb'))!.data,'xi').playable).toBe(false)
+   // 10.11.2026 (rule 143): a registry club with staged material already loads from it. Since 22.11.2026 its daily research
+   // (research-data/daily-waves) brings approved line-up men too, so the XI may already play before the desk pack: not asserted here.
+   expect(await loadClub('dinamo-zagreb')).toBeTruthy()
    await writeDeskPack(buildDeskPack(club(Array.from({length:13},(_,i)=>player(i+1,'approved')),[src('a')],'dinamo-zagreb'),'owner'))
    invalidateClub('dinamo-zagreb')
    expect((await readDeskPack('dinamo-zagreb'))?.players).toHaveLength(13)

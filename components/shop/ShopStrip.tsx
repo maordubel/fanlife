@@ -11,6 +11,8 @@ import {timeLeft} from '@/lib/shop/sales'
 /** how long a sale still runs, in the ribbon's words */
 export function leftText(until:string|null){const t=timeLeft(until);if(!t)return copy.leftOpen
  return t.days>1?copy.leftDays.replace('{d}',String(t.days)).replace('{h}',String(t.hours)):t.days===1?copy.leftDay.replace('{h}',String(t.hours)):t.hours>2?copy.leftHours.replace('{h}',String(t.hours)):copy.leftSoon}
+/** the day a coming sale starts, as the owner's clock reads it: "Fri 27 Nov" */
+export const saleDay=(iso:string)=>new Intl.DateTimeFormat('en-GB',{weekday:'short',day:'numeric',month:'short',timeZone:'Europe/Athens'}).format(new Date(iso))
 export const isNew=(p:PublicProduct)=>!!p.since&&Date.now()-Date.parse(p.since)<NEW_DAYS*864e5
 /**
  * One product as a sticker card (13.11.2026, the selling storefront): the mock-up with the back in a corner when it prints

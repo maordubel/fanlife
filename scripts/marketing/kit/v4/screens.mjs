@@ -43,17 +43,25 @@ export async function phonePage(browser) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const {chromium} = await import('playwright')
   const out = process.argv[2] || 'screens'
-  const clubs = process.argv.slice(3).length ? process.argv.slice(3) : ['olympiacos', 'celtic', 'aek-athens']
+  // 24.11.2026: the screens of the newest designs — the welcome, the club picker, the album, the shop, the market, LIFE's
+  // coming-soon, every open club's home and its gates; the hub pages also at desk size (two designs, never one scaled)
+  const clubs = process.argv.slice(3).length ? process.argv.slice(3) : ['panathinaikos', 'olympiacos', 'aek-athens', 'celtic', 'zrinjski-mostar', 'hapoel-tel-aviv', 'st-pauli', 'atalanta', 'hapoel-petah-tikva', 'raja-casablanca', 'fenerbahce', 'partizan-belgrade']
   mkdirSync(out, {recursive: true})
   const browser = await chromium.launch()
   const page = await phonePage(browser)
-  const shots = [['hub-today', '/today'], ['hub-our-games', '/our-games'], ['legends', '/all-football/legends'], ['legends-play', '/all-football/legends', true]]
+  const HUB = [['hub-home', '/'], ['hub-clubs', '/clubs'], ['hub-our-games', '/our-games'], ['hub-album', '/album'], ['hub-shop', '/shop'], ['hub-market', '/market'], ['hub-life-soon', '/coming-soon/life'], ['hub-today', '/today']]
+  const shots = [...HUB, ['legends', '/all-football/legends'], ['legends-play', '/all-football/legends', true]]
   for (const c of clubs) {
-    shots.push([`${c}-home`, `/clubs/${c}`])
+    shots.push([`${c}-home`, `/clubs/${c}`], [`${c}-kit-archive`, `/clubs/${c}/kit-archive`])
     for (const g of GATE_KEYS) shots.push([`${c}-${g}-play`, `/clubs/${c}/${g}`, true])
   }
   for (const [name, route, play] of shots) {
     try { writeFileSync(path.join(out, name + '.png'), await capture(page, route, {play})); console.log('ok', name) } catch (e) { console.log('miss', name, String(e?.message || e).slice(0, 120)) }
+  }
+  const desk = await (await browser.newContext({viewport: {width: 1440, height: 900}, deviceScaleFactor: 1, locale: 'en-GB'})).newPage()
+  await desk.context().addCookies([{name: 'fl_consent', value: 'essential', url: SITE}]).catch(() => {})
+  for (const [name, route] of HUB) {
+    try { writeFileSync(path.join(out, name + '-desk.png'), await capture(desk, route)); console.log('ok', name + '-desk') } catch (e) { console.log('miss', name + '-desk', String(e?.message || e).slice(0, 120)) }
   }
   await browser.close()
 }

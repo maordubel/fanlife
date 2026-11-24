@@ -12,6 +12,10 @@ import {timelineReadiness,type ClubData,type Diagnostic,type Entity,type Fact} f
 import type {RegistryClub} from '@/lib/master/registry'
 import type {DailyWave} from '@/lib/research/daily-evidence'
 import {exactName,exactSeason,words} from '@/lib/research/daily-evidence'
+import {englishName} from '@/lib/clubs/rumble-xi/names'
+
+/** a name as a key: exact, but without accents (Ajdarević and Ajdarevic are one man's name) */
+const nameKey=(n:string)=>exactName(n.normalize('NFKD').replace(/\p{M}/gu,''))
 
 export const dailyWavePath=(clubId:string)=>join('research-data','daily-waves',clubId+'.json')
 export function readDailyWave(clubId:string):DailyWave|null {
@@ -82,11 +86,12 @@ export function integrateDailyWave(base:ClubResult,club:RegistryClub,wave:DailyW
  const players=[...(original.players||[])],nameKeys=new Map<string,Set<number>>()
  function remember(index:number){
   const p=players[index]!.value
-  for(const n of [p.name,...p.aliases].map(exactName)){const ids=nameKeys.get(n)||new Set<number>();ids.add(index);nameKeys.set(n,ids)}
+  // the English name the club's cards print is a name of his too: a daily report in English finds the man archived in Hebrew or Greek
+  for(const n of [p.name,...p.aliases,englishName(club.id,players[index]!.id,p.name)].map(nameKey)){const ids=nameKeys.get(n)||new Set<number>();ids.add(index);nameKeys.set(n,ids)}
  }
  players.forEach((_,i)=>remember(i))
  for(const f of incoming.players||[]){
-  const p=f.value,links=new Set([p.name,...p.aliases].flatMap(n=>[...(nameKeys.get(exactName(n))||[])]))
+  const p=f.value,links=new Set([p.name,...p.aliases].flatMap(n=>[...(nameKeys.get(nameKey(n))||[])]))
   if(!links.size){players.push(f);remember(players.length-1);continue}
   if(links.size!==1){diagnostics.push({record:f.id,code:'DAILY_PLAYER_AMBIGUOUS',message:'The reported name matches more than one existing player.'});continue}
   const i=[...links][0]!,prior=players[i]!,old=prior.value

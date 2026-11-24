@@ -3,6 +3,8 @@ export const SECTIONS=[
  {key:'overview',label:'Desk',hint:'What needs you now'},
  // 17.11.2026: the audience is the second area
  {key:'audience',label:'Audience',hint:'Visitors, places, clicks, games'},
+ // 24.11.2026: the owner's campaign area — build, run and measure marketing by topic
+ {key:'campaigns',label:'Campaigns',hint:'Build, run and measure marketing'},
  {key:'clubs',label:'Clubs',hint:'Research, readiness, publish'},
  {key:'research',label:'Research',hint:'New clubs, one yes at a time'},
  {key:'players',label:'Players',hint:'Positions, prices, duplicates'},

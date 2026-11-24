@@ -1,8 +1,9 @@
-/** Shared by the new-film form and the paused job. No rejected file silently disappears from a selection. */
+/** Shared by the new-film form and the paused job: the owner's pictures and video clips (24.11.2026: clips play inside the
+ * edit, muted, as VOX reveals — studio/owner_media.py, docu/reveal.py). No rejected file silently disappears from a selection. */
 export function validatePictures(files:readonly File[]):void{
  if(files.length>30)throw new Error('At most 30 uploaded pictures. Use a Drive folder for a larger selection.')
- const bad=files.filter(f=>!/^.+\.(png|jpe?g|webp)$/i.test(f.name)||f.size===0||f.size>45*1024*1024)
- if(bad.length)throw new Error(`These files cannot be added: ${bad.map(f=>f.name).join(', ')}. Use PNG, JPG or WebP, at most 45 MB each.`)
+ const bad=files.filter(f=>!/^.+\.(png|jpe?g|webp|mp4|mov|m4v|webm)$/i.test(f.name)||f.size===0||f.size>45*1024*1024)
+ if(bad.length)throw new Error(`These files cannot be added: ${bad.map(f=>f.name).join(', ')}. Use PNG, JPG or WebP pictures, or MP4, MOV or WebM clips, at most 45 MB each.`)
 }
 
 export async function pictureName(file:File):Promise<string>{

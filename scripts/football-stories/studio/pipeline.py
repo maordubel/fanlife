@@ -58,7 +58,8 @@ def ingest_art(brief: dict, log) -> list[str]:
         pillow_heif.register_heif_opener()
     except ImportError:
         pass
-    art_sets, entries = [], []
+    from . import owner_media
+    art_sets, entries, videos = [], [], []
     cache = Path(brief['media_cache']) if brief.get('media_cache') else None
     if brief.get('art_dir'):
         for a in brief.get('art') or []:
@@ -71,10 +72,21 @@ def ingest_art(brief: dict, log) -> list[str]:
         rows = pack['files'] if pack else [{'file': str(p.relative_to(root))} for p in sorted(root.rglob('*')) if p.is_file()]
         for r in rows:
             path = root / r['file']
-            if path.suffix.lower() in ('.png', '.jpg', '.jpeg', '.webp', '.heic'):
+            if owner_media.is_video(path):   # a clip in a Drive folder pinned to the film (owner, 24.11.2026)
+                videos.append({'path': path, 'source': r.get('name') or path.name, 'source_id': r.get('source_id') or r['file'],
+                               'required': bool(r.get('required')), 'pack': r.get('pack') or 'Club library',
+                               'origin': 'owner-drive', 'licence': 'Owner-approved for FanLife use'})
+            elif path.suffix.lower() in ('.png', '.jpg', '.jpeg', '.webp', '.heic'):
                 entries.append({'path': path, 'source': r.get('name') or path.name, 'source_id': r.get('source_id') or r['file'],
                                 'required': bool(r.get('required')), 'pack': r.get('pack') or 'Club library',
                                 'origin': 'owner-drive', 'licence': 'Owner-approved for FanLife use'})
+    # the owner's video clips (studio/owner_media.py): uploads named .mp4/.mov/.webm, and clips from a pinned Drive folder
+    videos = [x for x in entries if owner_media.is_video(x['path'])] + videos
+    entries = [x for x in entries if not owner_media.is_video(x['path'])]
+    if videos:
+        vset = brief.get('media_set') or brief.get('art_set') or ('media-' + brief['club_id'])
+        if owner_media.ingest_videos(vset, videos, brief['club_id'], brief['season'], log):
+            art_sets.append(vset)
     if entries:
         # Per-job names and content-derived slugs prevent two image.png files (or non-Latin names) overwriting each other.
         set_id = brief.get('media_set') or brief.get('art_set') or ('media-' + brief['club_id'])
@@ -109,7 +121,8 @@ def ingest_art(brief: dict, log) -> list[str]:
             sources.append(path)
         if sources:
             idx = kit_ingest.ingest(set_id, sources, masks, brief['club_id'], brief['season'], 'Pictures for this production; required means selected by the owner.')
-            art_sets.append(set_id)
+            if set_id not in art_sets:
+                art_sets.append(set_id)
             log(f'Pictures: {len(idx["pieces"])} readable, {sum(bool(p.get("required")) for p in idx["pieces"])} required in the film')
     if brief.get('visual_style') == 'papercut':
         art_sets.append('papercut-library')
@@ -133,7 +146,7 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
         if progress:
             progress(stage, frac, msg)
 
-    from . import characters, director, drama_facts, research, writer, script as sc, voice, edit, audio, package, qa
+    from . import archive_props, characters, director, drama_facts, research, writer, script as sc, voice, edit, audio, package, qa
 
     brief = {**brief, 'media_cache': str(cache / 'images')}
     live_sets = ingest_art(brief, log)
@@ -186,6 +199,7 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
         director.attach(ledger)  # the story the record proves (docs/fanlife/66-directors-cut.md §1), after any focus or pick
         drama_facts.attach(ledger)  # what each match meant before kick-off: the record, the drought, the road, the clock
         characters.attach(ledger)   # the hero, the wound and the film's angle (studio/characters.py)
+        archive_props.attach(ledger)   # the season's shirt and the players' archive cards, as claims (studio/archive_props.py)
         write_json(lp, ledger)
         log(f'Research: {len(ledger["claims"])} claims, {len(ledger["held"])} held')
     ledger = read_json(lp)
@@ -199,7 +213,8 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
         log('Research: applied the owner’s exact names and declared facts')
     # New uploads after Pause must reach the edit even when the ledger and chosen script already exist.
     ledger['art_sets'] = list(dict.fromkeys([*(ledger.get('art_sets') or []), *live_sets]))
-    ledger['media_assets'] = [p for sid in live_sets for p in beat_index(sid)]
+    from .paper import clip_index
+    ledger['media_assets'] = [p for sid in dict.fromkeys(live_sets) for p in [*beat_index(sid), *clip_index(sid)]]
     for asset in ledger['media_assets']:
         if asset.get('required'):
             media_assets.require_file(asset['key'])
@@ -208,6 +223,7 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
         director.attach(ledger)  # a ledger written before the Director's Cut: its story is read off its own claims
         drama_facts.attach(ledger)
         characters.attach(ledger)
+        archive_props.attach(ledger)
         write_json(lp, ledger)
 
     from . import commons
@@ -413,7 +429,7 @@ def run(job_dir: Path, brief: dict, palette: Palette, progress=None, script_file
     write_json(out / 'assets.json', manifest)
     meta = package.youtube_metadata(s, plan, ledger, manifest)
     # the hook engine (studio/thumbs): three thumbnails, three hooks, and the Shorts cover — listed in youtube.json
-    meta['thumbnails'] = package.thumbnails(s, ledger, palette, out, director=brief.get('director'))
+    meta['thumbnails'] = package.thumbnails(s, ledger, palette, out, director=brief.get('director'), plan=plan)
     write_json(out / 'youtube.json', meta)
     (out / 'description.txt').write_text(meta['description'], encoding='utf-8')
 

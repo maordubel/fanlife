@@ -38,6 +38,16 @@ import {shopIsOpen} from '@/components/shop/ShopStrip'
 import shopCopy from '@/messages/en.shop.json'
 import {FrontDoors} from '@/components/home/FrontDoors'
 import {CHANNEL} from '@/lib/stories/channel'
+import {Welcome} from '@/components/home/Welcome'
+import {shopLastKnown} from '@/lib/shop/store'
+import {PressWait} from '@/components/weekly/PressWait'
+import {ShopWindow} from '@/components/shop/ShopWindow'
+import {ClubPicker} from '@/components/home/ClubPicker'
+import {ContentsTiles,type Tile} from '@/components/home/ContentsTiles'
+import type {IndexClub} from '@/components/home/ClubsIndex'
+import {crestFor} from '@/lib/clubs/crest'
+import {REGISTRY} from '@/lib/master/registry'
+import '@/app/clubs/clubs.css'
 export const dynamic='force-dynamic'
 
 const Arrow=()=><svg className="wkh-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -49,9 +59,37 @@ const Arrow=()=><svg className="wkh-arrow" viewBox="0 0 24 24" aria-hidden="true
  * The phone reads it top to bottom; the desktop lays the same sections out as a spread (CSS grid areas, app/weekly/hub.css).
  * Nothing scrolls sideways. All inks are allowed here — the hub has no rival.
  */
-export default async function Home({searchParams}:{searchParams:{lang?:string}}){
+/**
+ * THE FRONT PAGE COMES UP AT ONCE (owner, 23.11.2026: "the whole point of the opening screen is that it opens fast while the
+ * rest of the site loads behind it, so a first-time visitor never thinks something is stuck"). The page is two streams: the
+ * welcome, which waits only for its switch, and the paper itself, which waits for the clubs, the feeds and the shop. Until the
+ * paper arrives a loading cover says so; the welcome lies over it and says "the paper is on its way". Rule: welcome-and-picker.md
+ */
+export default function Page({searchParams}:{searchParams:{lang?:string}}){
  const hc=headers().get('x-fan-life-club')
  if(hc)redirect(hc==='hapoel-tel-aviv'?'/ground':`/clubs/${hc}`)
+ const locale=uiLocale(searchParams.lang),copy=locale==='he'?he:en
+ return <>
+  <Suspense fallback={null}><WelcomeDoor copy={copy}/></Suspense>
+  <Suspense fallback={<div className="wkfl" data-front-loading="" data-testid="front-loading"><PressWait label={copy.frontLoading}/></div>}><Home searchParams={searchParams}/></Suspense>
+ </>
+}
+/** the welcome waits for two cheap answers only: is the new front page on, and does the shop sell (its fourth beat) */
+async function WelcomeDoor({copy}:{copy:typeof en}){
+ // nothing slow stands before the welcome: the switch is one cached read; the shop's fourth beat goes by what this instance last
+ // saw (measured on production 23.11.2026: awaiting the shop file held the welcome back a full second on a cold instance)
+ const fd=await door('frontDoors'),shopOpen=shopLastKnown()
+ if(!fd.open)return null
+ // The welcome's picture starts downloading with the styles, not after them — ONE picture per screen: the phone's on a phone, the
+ // desktop's on a desktop. (Measured on production 23.11.2026: react-dom's preload() drops `media`, so both were fetched; a
+ // plain link keeps it.)
+ return <>
+  <link rel="preload" as="image" href="/brand/fanlife/art/matchday-640.webp" media="(max-width: 900px)"/>
+  <link rel="preload" as="image" href="/brand/fanlife/art/matchday-1280.webp" media="(min-width: 901px)"/>
+  <Welcome copy={{kicker:copy.welK,to:copy.welTo,lead:copy.welLead,s1:copy.welS1,s1Sub:copy.welS1Sub,s2:copy.welS2,s2Sub:copy.welS2Sub,s3:copy.welS3,s3Sub:copy.welS3Sub,...(shopOpen?{s4:copy.welS4,s4Sub:copy.welS4Sub}:{}),go:copy.welGo,skip:copy.welSkip,free:copy.welFree,wait:copy.welWait}}/>
+ </>
+}
+async function Home({searchParams}:{searchParams:{lang?:string}}){
  const locale=uiLocale(searchParams.lang),copy=locale==='he'?he:en
  const {clubs}=await readState()
  const open=clubs.filter(c=>c.status!=='paused').sort((a,b)=>a.name.localeCompare(b.name))
@@ -98,7 +136,21 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
   {href:'#watch',title:copy.wkhInWatch,sub:copy.watchKicker,go:'↓'},
  ]
  const inside=short?contents:insideLong
- return <Shell locale={locale} stop={stop}><main id="main" className="wkh" data-short={short||undefined}>
+ // THE PICTURE CONTENTS and THE CLUB PICKER (owner, 23.11.2026): each feature is a picture that says what happens behind it; every club is a sticker
+ const tiles:Tile[]=[
+  {href:'/our-games',title:copy.tabOurGames,sub:copy.tileGames,go:'→',pic:'duel'},
+  ...(fl.open?[{href:'/all-football/legends',title:copy.wkhLmTitle,sub:copy.tileLegends,go:'→',pic:'lineup'} as Tile]:[]),
+  ...(al.open?[{href:'/album',title:copy.wkAlbum,sub:copy.tileAlbum,go:'→',pic:'sticker-pack'} as Tile]:[]),
+  ...(shopOpen?[{href:'/shop',title:shopCopy.navShop,sub:copy.tileShop,go:'→',pic:'kit-detail'} as Tile]:[]),
+  {href:'/market',title:copy.navMarket,sub:copy.tileMarket,go:'→',pic:'kits'},
+  {href:`${CHANNEL.url}?utm_source=fanlife&utm_medium=contents`,title:copy.wkhInWatch,sub:copy.tileFilms,go:'↗',pic:'matchday'},
+  {href:'/me',title:copy.corner,sub:copy.tileCorner,go:'→',cut:'trophy',plate:'navy'},
+ ]
+ const pickRow=(c:(typeof open)[number],on:boolean):IndexClub=>{const l=livery(c.id),w=clubWorld(c.id),r=REGISTRY.find(x=>x.id===c.id)
+  return {id:c.id,name:c.name,city:c.city,country:r?.country??'',nick:w?.nicknames[0]?.text??null,crest:crestFor(c.id),initials:l?.initials??c.initials,primary:l?.primary??'var(--mag-ink)',on:l?.on??'var(--mag-white)',pattern:l?.pattern??'',href:`/clubs/${c.id}?lang=${locale}`,live:on}}
+ const pickLive=short?live.map(c=>pickRow(c,true)):[],pickSoon=short?shop.map(c=>pickRow(c,false)):[]
+ return <Shell locale={locale} stop={stop}>
+  <main id="main" className="wkh" data-short={short||undefined}>
 
   {/* THE MASTHEAD: the paper's name on a green plate, a supporter breaking the frame (board Hub-M / Hub-D). */}
   <header className="wkh-mast">
@@ -117,7 +169,11 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
   {fd.open&&<FrontDoors clubs={model} chooser={chooser} lang={locale==='en'?'':`&lang=${locale}`} preview={fd.preview} copy={{kicker:copy.doorsK,lines:[copy.doorsL1,copy.doorsL2,copy.doorsL3],sub:copy.doorsSub,soloT:copy.doorSoloT,soloSub:copy.doorSoloSub,friendsT:copy.doorFriendsT,friendsSub:copy.doorFriendsSub,archiveT:copy.doorArchiveT,archiveSub:copy.doorArchiveSub,preview:copy.wkhOwnerPreview}}/>}
 
   {/* THE FIRST SCREEN (H1): a new fan sees the crests and taps one; a returning fan continues where they were. */}
-  <HubHero clubs={heroClubs} lang={locale==='en'?'':`?lang=${locale}`} copy={heroCopy} crests={<ul className="wkh-hero-crests">{live.map(c=>{const l=livery(c.id);return <li key={c.id}><Link className="wkh-hero-crest min-h-tap" href={`/clubs/${c.id}?lang=${locale}`} style={wearLivery(l)}><span className="wkh-disc">{l&&<Badge club={l}/>}</span><b>{c.name}</b></Link></li>})}</ul>}/>
+  {short?<ClubPicker live={pickLive} soon={pickSoon} lang={locale==='en'?'':`?lang=${locale}`} copy={{kicker:copy.wkhHeroNewK,title:copy.wkhHeroNewT,sub:copy.pickSub,back:copy.pickBack,cont:copy.dockContinue,change:copy.pickChange,search:copy.pickSearch,all:copy.pickAll,none:copy.chooserNone,enter:copy.pickEnter,moreK:copy.pickMoreK,surprise:copy.pickSurprise,surpriseSub:copy.pickSurpriseSub,allClubs:copy.pickAllClubs,allClubsSub:copy.pickAllClubsSub,noClub:copy.pickNoClub,noClubSub:copy.pickNoClubSub,soonK:copy.pickSoonK,soonT:copy.pickSoonT,vote:copy.pickVote}}/>
+  :<HubHero clubs={heroClubs} lang={locale==='en'?'':`?lang=${locale}`} copy={heroCopy} crests={<ul className="wkh-hero-crests">{live.map(c=>{const l=livery(c.id);return <li key={c.id}><Link className="wkh-hero-crest min-h-tap" href={`/clubs/${c.id}?lang=${locale}`} style={wearLivery(l)}><span className="wkh-disc">{l&&<Badge club={l}/>}</span><b>{c.name}</b></Link></li>})}</ul>}/>}
+
+  {/* THE SHOP WINDOW (owner, 23.11.2026): the shop has its own spread on the front page, only while it sells */}
+  {short&&<Suspense fallback={null}><ShopWindow/></Suspense>}
 
   {/* YOUR SHORTCUTS: what the fan pinned himself — never a suggestion (owner audit 27.10.2026 §5.5) */}
   <div className="wkp-strip wkh-pins"><PinsRow locale={locale} where="hub"/></div>
@@ -187,10 +243,10 @@ export default async function Home({searchParams}:{searchParams:{lang?:string}})
   </div>}
 
   {/* INSIDE THIS ISSUE: the index of our features — three cells a row on a phone, the contents column on a desktop. */}
-  <nav className="wkh-inside" aria-label={copy.insideTitle}>
+  {short?<ContentsTiles title={copy.insideTitle} tiles={tiles}/>:<nav className="wkh-inside" aria-label={copy.insideTitle}>
    <p className="wk-banner wkh-inside-k">{copy.insideTitle}</p>
    <ol>{inside.map((x,i)=><li key={x.href}><a href={x.href} className="min-h-tap" {...(x.href.startsWith('http')?{target:'_blank',rel:'noopener'}:{})}><span className="no wk-num" aria-hidden="true">{String(i+1).padStart(2,'0')}</span><span className="t"><b>{x.title}</b><small>{x.sub}</small></span><span className="pg" aria-hidden="true">{x.go}</span></a></li>)}</ol>
-  </nav>
+  </nav>}
   {/* the "continue at <club>" coupon left the page (16.11.2026): the hero's welcome-back card says the same, one screen up */}
 
   {/* TOP TEAMS: the sticker page — every open club, A–Z, in its own colours. A wrapping grid, never a rail. */}

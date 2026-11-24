@@ -281,5 +281,16 @@
  "searchNone": "Nothing matches “{q}” yet.",
  "pdpMadeEu": "Printed in {country} · sent from inside the EU, no customs to pay in the Union",
  "pdpMadeAbroad": "Printed in {country} · sent from outside the EU",
- "pdpShip": "Delivery to Europe from {price}; the exact price shows at checkout for your address"
+ "pdpShip": "Delivery to Europe from {price}; the exact price shows at checkout for your address",
+ "windowK": "The club shop",
+ "windowSaleK": "The club shop · Sale on now",
+ "windowT": "Wear the story",
+ "windowSub": "Original shirts and prints for your club and for football itself. Made when you order — never a warehouse copy.",
+ "windowWhy1": "Printed to order, in Europe first",
+ "windowWhy2": "Secure checkout by card",
+ "windowWhy3": "Every design is our own",
+ "windowGo": "Open the shop",
+ "ribbonSoon": "{label}: −{n}% · starts {day}",
+ "windowSoonK": "The club shop · A sale is coming",
+ "windowFrom": "from {day}"
 }

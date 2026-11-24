@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "clubId": "partizan-belgrade",
+  "review": "cross-source-2026-11-24",
+  "note": "Display flavour for the club's own app. Every sourced line needs two independent publishers. Left out on purpose: the terrace section and the supporters' group (no neutral two-source description of the stand found), the stadium capacity (sources split between 29,775 and 32,710), 'Parni valjak' (one independent publisher found), and anything about rivalries or politics. Culture research still open: food, habit, humour, meetup, route.",
+  "voice": {
+    "welcome": "Welcome to the Black-Whites.",
+    "kicker": "Belgrade · Black and white"
+  },
+  "nicknames": [
+    {
+      "text": "Crno-beli · The Black-Whites",
+      "confidence": 3,
+      "sources": [
+        {
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/FK_Partizan"
+        },
+        {
+          "publisher": "Football History",
+          "url": "https://footballhistory.org/club/partizan.html"
+        }
+      ]
+    }
+  ],
+  "ground": {
+    "name": "Partizan Stadium",
+    "line": "Partizan Stadium in Belgrade, built on the old BSK ground. The club has played there since 1949.",
+    "confidence": 3,
+    "sources": [
+      {
+        "publisher": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/FK_Partizan"
+      },
+      {
+        "publisher": "Kurir",
+        "url": "https://www.kurir.rs/sport/fudbal/3542389/na-danasnji-dan-rodjen-je-partizan-crno-beli-slave-75-rodjendan"
+      }
+    ]
+  },
+  "founded": {
+    "line": "Founded in Belgrade on 4 October 1945 and named after the wartime Partisans.",
+    "confidence": 3,
+    "sources": [
+      {
+        "publisher": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/FK_Partizan"
+      },
+      {
+        "publisher": "FK Partizan",
+        "url": "https://partizan.rs/vesti/2629"
+      }
+    ]
+  },
+  "colours": {
+    "line": "Black and white.",
+    "confidence": 3,
+    "sources": [
+      {
+        "publisher": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/JSD_Partizan"
+      },
+      {
+        "publisher": "Football History",
+        "url": "https://footballhistory.org/club/partizan.html"
+      }
+    ]
+  },
+  "facts": [
+    {
+      "id": "brussels-1966",
+      "line": "In 1966 Partizan became the first club from Eastern Europe to reach a European Cup final, losing 2-1 to Real Madrid at Heysel, Brussels.",
+      "confidence": 3,
+      "sources": [
+        {
+          "publisher": "UEFA",
+          "url": "https://www.uefa.com/uefachampionsleague/news/0258-0e6a050c59da-d347df74d538-1000--1965-66-madrid-make-it-six"
+        },
+        {
+          "publisher": "Real Madrid",
+          "url": "https://www.realmadrid.com/en-US/news/club/latest-news/hace-60-anos-se-gano-la-sexta-copa-de-europa-10-05-2026"
+        }
+      ]
+    }
+  ]
+}

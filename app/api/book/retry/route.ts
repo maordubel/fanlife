@@ -1,5 +1,5 @@
 import {NextResponse} from 'next/server'
-import {retryStuck} from '@/lib/book/fulfil'
+import {tick} from '@/lib/book/fulfil'
 import {cronAuthorized} from '@/lib/master/request'
 
 export const runtime='nodejs'
@@ -12,5 +12,5 @@ export const maxDuration=120
  */
 export async function POST(r:Request){
  if(!cronAuthorized(r))return new NextResponse('unauthorized',{status:401})
- return NextResponse.json(await retryStuck())
+ return NextResponse.json(await tick())
 }

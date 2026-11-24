@@ -30,7 +30,7 @@ describe('LIFE\'s picture order for Flow (scripts/life/flow/life-library.json, r
  })
  it('is a lean first order, every piece named for LIFE and never for the films\' library',()=>{
   expect(pieces.length).toBeGreaterThanOrEqual(60)
-  expect(pieces.length).toBeLessThanOrEqual(90)
+  expect(pieces.length).toBeLessThanOrEqual(100)
   expect(new Set(pieces.map(p=>p.stem)).size).toBe(pieces.length)
   for(const p of pieces){
    expect(LIFE_STEM.test(p.stem),p.stem).toBe(true)

@@ -19,6 +19,20 @@ describe('historical source reconciliation',()=>{
   expect(merged.pack.archive).toHaveLength(1)
   expect(mergeHistorical(merged.pack,wave).pack).toEqual(merged.pack)
  })
+ it('fills empty match details and preserves an existing scorer from an agreeing report',()=>{
+  const old=fact('old','2024-01-01','Fenerbahçe 1-0 Partizan',{us:'home',lineup:[],scorers:[{name:'Existing scorer'}],venue:null})
+  const incoming=fact('new','2024-01-01','Fenerbahçe 1-0 Partizan',{us:'home',lineup:['Documented starter'],scorers:[{name:'Other name'}],venue:'Documented venue'})
+  const {pack,conflicts}=mergeHistorical({matches:[old],archive:[],sources:[source]},{matches:[incoming],sources:[source]})
+  expect(conflicts).toEqual([])
+  expect(pack.matches[0]).toMatchObject({id:'old',value:{lineup:['Documented starter'],scorers:[{name:'Existing scorer'}],venue:'Documented venue'}})
+ })
+ it('retains the recorded home and away when a neutral fixture is listed in reverse',()=>{
+  const old=fact('old','2024-01-01','Fenerbahçe 1-0 Partizan',{neutral:true,us:'home',lineup:[]})
+  const incoming=fact('new','2024-01-01','Partizan 0-1 Fenerbahçe',{us:'away',home:'Partizan',away:'Fenerbahçe',homeGoals:0,awayGoals:1,lineup:['Documented starter']})
+  const {pack,conflicts}=mergeHistorical({matches:[old],archive:[],sources:[source]},{matches:[incoming],sources:[source]})
+  expect(conflicts).toEqual([])
+  expect(pack.matches[0]).toEqual(old)
+ })
  it('withholds contradictory opponents/scores from both matches and chronology',()=>{
   const old=fact('old','2000-01-01','Zrinjski Mostar 1-0 Velez')
   for(const name of ['Zrinjski Mostar 2-0 Velez','Zrinjski Mostar 1-0 Sarajevo']){

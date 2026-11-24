@@ -57,7 +57,7 @@ export type Brief={
  /** Optional: the owner's own pictures for this film (uploaded to the job's private folder before it starts). */
  art?:ArtFile[];hold?:boolean
 }
-export const ART_NAME=/^[a-z0-9][a-z0-9._-]{0,60}\.(png|jpe?g|webp)$/
+export const ART_NAME=/^[a-z0-9][a-z0-9._-]{0,60}\.(png|jpe?g|webp|mp4|mov|m4v|webm)$/
 /** The files an animated Short is edited from, as Google Flow made them (studio/flowkit.py names the slots). */
 /** A Reel or Short the owner made outside the pipeline, added to a finished film for the Social panel (10.11.2026). */
 export const REEL_NAME=/^reel-[a-z0-9][a-z0-9-]{0,40}\.mp4$/
@@ -267,7 +267,7 @@ export function ownerAct(job:Job,a:OwnerAction,actor:string,now=new Date()):Job{
    if(!reviewingScenes&&!['queued','paused'].includes(j.state))no('Pictures can be added before the film starts or during scene review.')
    if(j.lease)no('The worker is still stopping. Wait for it to pause, then add your pictures.')
    const files=Array.isArray(a.files)?a.files:[]
-   if(!files.length||files.some(f=>!f||typeof f.name!=='string'||!ART_NAME.test(f.name)))throw new StoryError('ART','Picture names: lower-case letters, digits, dots and dashes, ending .png, .jpg or .webp.')
+   if(!files.length||files.some(f=>!f||typeof f.name!=='string'||!ART_NAME.test(f.name)))throw new StoryError('ART','Picture names: lower-case letters, digits, dots and dashes, ending .png, .jpg, .webp, .mp4, .mov or .webm.')
    const keep=new Map((j.brief.art??[]).map(f=>[f.name,f]))
    for(const f of files)keep.set(f.name,{name:f.name,illustrated:f.illustrated===true,...(typeof f.originalName==='string'?{originalName:f.originalName.slice(0,200)}:{})})
    if(keep.size>30)throw new StoryError('ART','At most 30 pictures for one film.')

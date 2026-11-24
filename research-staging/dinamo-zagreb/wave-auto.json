@@ -1359,6 +1359,24 @@
    "publisher": "UEFA",
    "access": "available",
    "checkedAt": "2026-11-22"
+  },
+  {
+   "id": "uefa-54146",
+   "title": "UEFA · Partizan 1-0 GNK Dinamo · 1997-07-23",
+   "url": "https://www.uefa.com/uefachampionsleague/match/54146--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-11-23",
+   "official": "competition"
+  },
+  {
+   "id": "uefa-54147",
+   "title": "UEFA · GNK Dinamo 5-0 Partizan · 1997-07-30",
+   "url": "https://www.uefa.com/uefachampionsleague/match/54147--",
+   "publisher": "UEFA",
+   "access": "available",
+   "checkedAt": "2026-11-23",
+   "official": "competition"
   }
  ],
  "matches": [
@@ -6589,7 +6607,7 @@
     "on": "2025-09-24",
     "competition": "UEFA Europa League",
     "score": "3-1",
-    "venue": null,
+    "venue": "Stadion Maksimir",
     "lineup": [
      "Ivan Nevistić",
      "Bruno Goda",
@@ -6860,7 +6878,52 @@
       "Kévin Théophile-Catherine",
       "Mounsef Bakrar"
      ]
-    }
+    },
+    "opponentLineup": [
+     "Ederson",
+     "Archie Brown",
+     "Çağlar Söyüncü",
+     "Kerem Aktürkoğlu",
+     "Youssef En-Nesyri",
+     "Marco Asensio",
+     "Jayden Oosterwolde",
+     "Nélson Semedo",
+     "Milan Škriniar",
+     "Dorgeles Nene",
+     "Sebastian Szymański"
+    ],
+    "goalEvents": [
+     {
+      "name": "Dion Beljo",
+      "minute": 21,
+      "side": "home",
+      "own_goal": false
+     },
+     {
+      "name": "Sebastian Szymański",
+      "minute": 25,
+      "side": "away",
+      "own_goal": false
+     },
+     {
+      "name": "Dion Beljo",
+      "minute": 50,
+      "side": "home",
+      "own_goal": false
+     },
+     {
+      "name": "Mounsef Bakrar",
+      "minute": 90,
+      "side": "home",
+      "own_goal": false
+     }
+    ],
+    "season": "2025/26",
+    "homeGoals": 3,
+    "awayGoals": 1,
+    "home": "GNK Dinamo",
+    "away": "Fenerbahçe",
+    "us": "home"
    },
    "sources": [
     "a-src-uefa-2046155"
@@ -29617,7 +29680,7 @@
     "on": "2018-11-29",
     "competition": "UEFA Europa League",
     "score": "0-0",
-    "venue": null,
+    "venue": "Fenerbahçe Şükrü Saracoğlu Spor Kompleksi",
     "lineup": [
      "Dominik Livaković",
      "Arijan Ademi",
@@ -29812,7 +29875,26 @@
       "Dino Perić",
       "Damian Kądzior"
      ]
-    }
+    },
+    "opponentLineup": [
+     "Harun Tekin",
+     "Hasan Ali Kaldırım",
+     "Mauricio Isla",
+     "Michael Frey",
+     "Barış Alıcı",
+     "Mathieu Valbuena",
+     "Jailson",
+     "Roman Neustädter",
+     "Martin Škrtel",
+     "Yassine Benzia",
+     "Eljif Elmas"
+    ],
+    "season": "2018/19",
+    "homeGoals": 0,
+    "awayGoals": 0,
+    "home": "Fenerbahçe",
+    "away": "GNK Dinamo",
+    "us": "away"
    },
    "sources": [
     "a-src-uefa-2025264"
@@ -30535,7 +30617,7 @@
     "on": "2018-09-20",
     "competition": "UEFA Europa League",
     "score": "4-1",
-    "venue": null,
+    "venue": "Stadion Maksimir",
     "lineup": [
      "Dominik Livaković",
      "Dani Olmo",
@@ -30764,7 +30846,58 @@
       "Marko Lešković",
       "Damian Kądzior"
      ]
-    }
+    },
+    "opponentLineup": [
+     "Harun Tekin",
+     "Mehmet Topal",
+     "İsmail Köybaşı",
+     "Alper Potuk",
+     "Şener Özbayraklı",
+     "Michael Frey",
+     "Diego Reyes",
+     "Roman Neustädter",
+     "Yassine Benzia",
+     "Aatif Chahechouhe",
+     "Eljif Elmas"
+    ],
+    "goalEvents": [
+     {
+      "name": "Ivan Šunjić",
+      "minute": 16,
+      "side": "home",
+      "own_goal": false
+     },
+     {
+      "name": "Izet Hajrovic",
+      "minute": 27,
+      "side": "home",
+      "own_goal": false
+     },
+     {
+      "name": "Roman Neustädter",
+      "minute": 47,
+      "side": "away",
+      "own_goal": false
+     },
+     {
+      "name": "Izet Hajrovic",
+      "minute": 57,
+      "side": "home",
+      "own_goal": false
+     },
+     {
+      "name": "Dani Olmo",
+      "minute": 60,
+      "side": "home",
+      "own_goal": false
+     }
+    ],
+    "season": "2018/19",
+    "homeGoals": 4,
+    "awayGoals": 1,
+    "home": "GNK Dinamo",
+    "away": "Fenerbahçe",
+    "us": "home"
    },
    "sources": [
     "a-src-uefa-2025156"
@@ -44249,6 +44382,182 @@
    "status": "approved",
    "approvedAt": "2026-11-22",
    "approvedBy": "editorial:2026-11-22"
+  },
+  {
+   "id": "m-uefa-54146",
+   "value": {
+    "name": "Partizan 1-0 GNK Dinamo",
+    "on": "1997-07-23",
+    "competition": "UEFA Champions League",
+    "season": "1996/97",
+    "home": "Partizan",
+    "away": "GNK Dinamo",
+    "homeGoals": 1,
+    "awayGoals": 0,
+    "score": "1-0",
+    "us": "away",
+    "venue": "Stadion FK Partizan",
+    "sport": "football",
+    "scorers": [],
+    "lineup": [
+     "Dražen Ladić",
+     "Damir Krznar",
+     "Silvio Maric",
+     "Goran Juric",
+     "Robert Prosinečki",
+     "Mark Viduka",
+     "Dario Šimić",
+     "Daniel Šarić",
+     "Stjepan Tomas",
+     "Igor Cvitanović",
+     "Krunoslav Jurčić"
+    ],
+    "bench": [],
+    "goalEvents": [
+     {
+      "name": "Dragan Isailovic",
+      "minute": 84,
+      "side": "home",
+      "own_goal": false
+     }
+    ],
+    "opponentLineup": [
+     "Ivica Kralj",
+     "Drazen Bolic",
+     "Ivan Tomić",
+     "Dejan Vukicevic",
+     "Goran Trobok",
+     "Djordje Svetlicic",
+     "Goran Obradović",
+     "Dragan Stojisavljevic",
+     "Mladen Krstajić",
+     "Ljubisa Ranković",
+     "Predrag Pažin"
+    ]
+   },
+   "sources": [
+    "uefa-54146"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-23",
+   "approvedAt": "2026-11-23",
+   "approvedBy": "automated:archive-source-verification",
+   "parserCertainty": "high",
+   "conflictFree": true
+  },
+  {
+   "id": "m-uefa-54147",
+   "value": {
+    "name": "GNK Dinamo 5-0 Partizan",
+    "on": "1997-07-30",
+    "competition": "UEFA Champions League",
+    "season": "1996/97",
+    "home": "GNK Dinamo",
+    "away": "Partizan",
+    "homeGoals": 5,
+    "awayGoals": 0,
+    "score": "5-0",
+    "us": "home",
+    "venue": "Stadion Maksimir",
+    "sport": "football",
+    "scorers": [
+     {
+      "name": "Silvio Maric",
+      "minute": 12,
+      "ownGoal": false
+     },
+     {
+      "name": "Igor Cvitanović",
+      "minute": 15,
+      "ownGoal": false
+     },
+     {
+      "name": "Mark Viduka",
+      "minute": 23,
+      "ownGoal": false
+     },
+     {
+      "name": "Silvio Maric",
+      "minute": 42,
+      "ownGoal": false
+     },
+     {
+      "name": "Igor Cvitanović",
+      "minute": 68,
+      "ownGoal": false
+     }
+    ],
+    "lineup": [
+     "Dražen Ladić",
+     "Damir Krznar",
+     "Silvio Maric",
+     "Goran Juric",
+     "Robert Prosinečki",
+     "Mark Viduka",
+     "Edin Mujčin",
+     "Dario Šimić",
+     "Daniel Šarić",
+     "Igor Cvitanović",
+     "Krunoslav Jurčić"
+    ],
+    "bench": [],
+    "goalEvents": [
+     {
+      "name": "Silvio Maric",
+      "minute": 12,
+      "side": "home",
+      "own_goal": false
+     },
+     {
+      "name": "Igor Cvitanović",
+      "minute": 15,
+      "side": "home",
+      "own_goal": false
+     },
+     {
+      "name": "Mark Viduka",
+      "minute": 23,
+      "side": "home",
+      "own_goal": false
+     },
+     {
+      "name": "Silvio Maric",
+      "minute": 42,
+      "side": "home",
+      "own_goal": false
+     },
+     {
+      "name": "Igor Cvitanović",
+      "minute": 68,
+      "side": "home",
+      "own_goal": false
+     }
+    ],
+    "opponentLineup": [
+     "Ivica Kralj",
+     "Drazen Bolic",
+     "Djordje Svetlicic",
+     "Ivan Tomić",
+     "Zoltan Sabo",
+     "Igor Tasevski",
+     "Dejan Vukicevic",
+     "Goran Trobok",
+     "Mladen Krstajić",
+     "Goran Obradović",
+     "Dragan Stojisavljevic"
+    ]
+   },
+   "sources": [
+    "uefa-54147"
+   ],
+   "confidence": 2,
+   "status": "approved",
+   "researchedAt": "2026-11-23",
+   "approvedAt": "2026-11-23",
+   "approvedBy": "automated:archive-source-verification",
+   "parserCertainty": "high",
+   "conflictFree": true
   }
  ],
  "kits": [],

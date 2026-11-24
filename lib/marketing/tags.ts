@@ -14,6 +14,8 @@ export const CLUB_TAGS: Record<string, string[]> = {
   'zrinjski-mostar': ['#Zrinjski', '#HSKZrinjski', '#ZrinjskiMostar'],
   'atalanta': ['#Atalanta'],
   'maccabi-haifa': ['#MaccabiHaifa'],
+  'fenerbahce': ['#Fenerbahce'],
+  'partizan-belgrade': ['#PartizanBelgrade'],
 }
 export const TOPIC_TAGS = {
   otd: ['#OnThisDay', '#FootballHistory', '#RetroFootball'],

@@ -43,6 +43,10 @@ import wydadCasablancaTimeline from '@/club-packs/wydad-casablanca/life/timeline
 import alAhlyTimeline from '@/club-packs/al-ahly/life/timeline.json'
 import panathinaikosTimeline from '@/club-packs/panathinaikos/life/timeline.json'
 // ↓ promoted LIFE imports (scripts/clubs/promote.ts)
+import partizanBelgradePromotedCast from '@/club-packs/partizan-belgrade/life/cast.json'
+import partizanBelgradePromotedTimeline from '@/club-packs/partizan-belgrade/life/timeline.json'
+import fenerbahcePromotedCast from '@/club-packs/fenerbahce/life/cast.json'
+import fenerbahcePromotedTimeline from '@/club-packs/fenerbahce/life/timeline.json'
 import maccabiHaifaPromotedCast from '@/club-packs/maccabi-haifa/life/cast.json'
 import maccabiHaifaPromotedTimeline from '@/club-packs/maccabi-haifa/life/timeline.json'
 import atalantaPromotedCast from '@/club-packs/atalanta/life/cast.json'
@@ -70,6 +74,8 @@ export const LIFE_CAST: Record<string, CastManifest> = {
   'al-ahly': alAhlyCast as CastManifest,
   'atalanta': atalantaPromotedCast as CastManifest,
   'maccabi-haifa': maccabiHaifaPromotedCast as CastManifest,
+  'fenerbahce': fenerbahcePromotedCast as CastManifest,
+  'partizan-belgrade': partizanBelgradePromotedCast as CastManifest,
 }
 
 export const LIFE_TIMELINE: Record<string, TimelineManifest> = {
@@ -86,6 +92,8 @@ export const LIFE_TIMELINE: Record<string, TimelineManifest> = {
   'al-ahly': alAhlyTimeline as TimelineManifest,
   'atalanta': atalantaPromotedTimeline as TimelineManifest,
   'maccabi-haifa': maccabiHaifaPromotedTimeline as TimelineManifest,
+  'fenerbahce': fenerbahcePromotedTimeline as TimelineManifest,
+  'partizan-belgrade': partizanBelgradePromotedTimeline as TimelineManifest,
 }
 
 export const LIFE_ANCHORS: Record<string, AnchorSelection> = {

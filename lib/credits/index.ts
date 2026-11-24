@@ -151,7 +151,8 @@ const address = (value: Json | undefined): string | null => {
 }
 
 function readFile(file: string, json: Json, out: Citation[]): void {
-  if (!json || typeof json !== 'object' || Array.isArray(json)) return
+  if (Array.isArray(json)) return readFile(file, { records: json } as Json, out) // a bare list of rows (kit-photos-atalanta.json)
+  if (!json || typeof json !== 'object') return
   const keyed = new Map<string, Keyed>()
   const top = json.sources
   if (Array.isArray(top)) {

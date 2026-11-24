@@ -63,7 +63,7 @@ export function ArchiveSheetBody({entry:e,entries,byId,seen,ctx,club,clubName,lo
   <p className={css.documented}>{copy.documented}: {e.confidence}/3</p>
   </section>
   {e.match?.report&&<Link className={`${css.linkBtn} min-h-tap`} href={`/clubs/${club}/archive?${new URLSearchParams({report:e.match.matchId,event:e.id,lang:locale})}`}>
-   {t('ar.sheet.report')}
+   {t('ar.sheet.lineups')}
   </Link>}
   <p className={css.note} lang={e.legacy?locale:undefined}>{e.legacy?copy.legacy:e.note}</p>
   <section className={css.group}>

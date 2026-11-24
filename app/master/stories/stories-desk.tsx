@@ -120,7 +120,7 @@ export function NewFilm({clubs,onMade}:{clubs:Club[];onMade:(id:string)=>Promise
     <Step n={8} title="Extras">
      <label className={css.check}><input type="checkbox" checked={drive} onChange={e=>setDrive(e.target.checked)}/> Scan the Google Drive library for this story (its own packs first, then the club&rsquo;s pictures)</label>
     <label className={css.lab}>Drive folder for this story (optional)<input value={folder} onChange={e=>setFolder(e.target.value)} placeholder="https://drive.google.com/drive/folders/…" inputMode="url"/><span className={css.hint}>Every supported image in this folder and its subfolders must appear in the film. Text and Markdown files become your story brief and are checked against the research. A folder can contain only text. Share it as “Anyone with the link”. Leave empty for automatic library matching.</span></label>
-     <label className={css.lab}>Your pictures (required in the film)<input type="file" accept="image/png,image/jpeg,image/webp" multiple disabled={busy} onChange={e=>setPictures(Array.from(e.target.files??[]))}/><span className={css.hint}>{pictures.length?`${pictures.length} picture(s) selected. `:''}All selected pictures will appear. The film may run longer to give each one time on screen; missing files stop the job.</span></label>
+     <label className={css.lab}>Your pictures and video clips (required in the film)<input type="file" accept="image/png,image/jpeg,image/webp,video/mp4,video/quicktime,video/webm" multiple disabled={busy} onChange={e=>setPictures(Array.from(e.target.files??[]))}/><span className={css.hint}>{pictures.length?`${pictures.length} picture(s) selected. `:''}Every picture and clip will appear, entering with motion under the line it belongs to (never as a slide). Clips play muted under the narration, their first 20 seconds at most. Missing files stop the job.</span></label>
      <p className={css.hint}>Each script searches Wikimedia Commons for relevant public-domain and CC0 photographs. Matches supplement your required pictures; sources and licences are included in the production package.</p>
      <label className={css.check}><input type="checkbox" checked={reel} onChange={e=>setReel(e.target.checked)}/> Send the first Reel to my Telegram when it is done</label>
      <div className={css.lab}>YouTube visibility<div className={css.chips} role="group" aria-label="Visibility">{(['private','unlisted','public','scheduled'] as const).map(p=><button type="button" key={p} className={`${css.chip} min-h-tap`} aria-pressed={privacy===p} onClick={()=>setPrivacy(p)}>{p}</button>)}</div></div>
@@ -342,10 +342,10 @@ function Pictures({job,onChange,busy}:{job:Job;onChange:()=>void;busy:boolean}){
   }catch(e){setMsg(e instanceof Error?e.message:'Upload failed')}finally{setUp(false);onChange()}
  }
  return <div className={css.pics}>
-  <h3 className={css.h3}>Your pictures</h3>
-  <p style={{fontSize:14}}>Every picture you add must appear in the film. Descriptive names help place it in the right scene (<i>el-kaabi-header.png</i>). Blur any personal details (a name or ID on a ticket, a real newspaper&rsquo;s masthead) before uploading.</p>
+  <h3 className={css.h3}>Your pictures and clips</h3>
+  <p style={{fontSize:14}}>Every picture or video clip you add appears in the film, under the line it matches. Descriptive names help place it (<i>el-kaabi-header.png</i>, <i>fans-before-kickoff.mp4</i>). The first one under a spoken line also becomes the film&rsquo;s front page and its cover. Blur any personal details (a name or ID on a ticket, a real newspaper&rsquo;s masthead) before uploading.</p>
   <label className={css.check}><input type="checkbox" checked={illustrated} onChange={e=>setIllustrated(e.target.checked)}/> These look like photographs or documents (the film marks them ILLUSTRATION and the upload says so)</label>
-  <input type="file" accept="image/png,image/jpeg,image/webp" multiple disabled={busy||up} onChange={e=>void send(e.target.files)} className={css.input}/>
+  <input type="file" accept="image/png,image/jpeg,image/webp,video/mp4,video/quicktime,video/webm" multiple disabled={busy||up} onChange={e=>void send(e.target.files)} className={css.input}/>
   {art.length?<p className={css.meta}>In the brief: {art.map(x=>(x.originalName||x.name)+(x.illustrated?' (illustration)':'')).join(', ')}</p>:null}
   {msg&&<p className={css.meta} role="status">{msg}</p>}
  </div>

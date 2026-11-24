@@ -313,6 +313,96 @@ class Adapter:
         self._atlas_t = t0
         return {'kind': 'atlas', 'stops': out, 'highlight': hl, 'dt': round(a0 - seg['t'], 3), 'd': round(d, 3), 'vox': True, 'fade_out': False}
 
+    # ── the archive on screen (studio/archive_props.py; owner, 23.11.2026) ──────────────────────────────────────────
+    KIT_WORDS = re.compile(r"\b(shirt|shirts|kit|kits|jersey|strip|wore|wearing|colours)\b", re.I)
+    PROP_MIN_S = 3.2      # a card needs time to turn in, be read and count up
+
+    def shirt_file(self) -> str | None:
+        """The season's home shirt as a file of this film (the archive's drawing, cut to the shirt), or None."""
+        if not hasattr(self, '_shirt'):
+            from .. import archive_props as AP
+            self._shirt, self._kit = None, None
+            k = next((c['fact'] for c in self.led.get('claims') or [] if (c.get('fact') or {}).get('kind') == 'kit' and c['fact'].get('type') == 'home'), None)
+            if k:
+                f = AP.write_shirt(self.pal.club_id, k['kit_id'], self.jd / 'props' / f'shirt-{k["kit_id"]}.svg')
+                self._shirt, self._kit = (self.asset(f, 'kit') if f else None), k
+        return self._shirt
+
+    def life_rows(self) -> dict:
+        """The library's crowd rows for the life layer (docu/life.py), painted in the club's colour like every library
+        piece: {'far', 'near', 'flags': {'src', 'w', 'h'}}. Empty when this machine holds no such piece."""
+        out: dict = {}
+        try:
+            from PIL import Image
+            from ..cinema import library as L
+            recs = [r for r in self.picker.by.values() if r.get('kind') == 'cutout' and 'crowd-row' in str(r.get('id'))
+                    and not self.picker.refused(r, 'cutout')]
+        except Exception:  # noqa: BLE001 — no index, no rows: the life layer goes on without a crowd
+            return out
+        def pick(*words):
+            cands = [r for r in recs if any(w in r['id'] for w in words)]
+            def wide(r):
+                try:
+                    with Image.open(r['path']) as im:
+                        return im.width / max(1, im.height)
+                except OSError:
+                    return 0.0
+            return max(cands, key=wide, default=None)   # the widest row repeats least
+        for key, r in (('far', pick('arms-up')), ('near', pick('scarves-up', 'celebrate')), ('flags', pick('flags'))):
+            if not r:
+                continue
+            png = self.jd / 'cut' / f"{Path(r['path']).stem}-life.png"
+            try:
+                if not png.exists():
+                    png.parent.mkdir(parents=True, exist_ok=True)
+                    im = Image.open(r['path']).convert('RGBA')
+                    h = 420
+                    im = im.resize((max(1, round(im.width * h / im.height)), h), Image.LANCZOS)
+                    L.paint(im, 'kr' if r.get('accent') == 'key-red' else None, self.pal.accent, self.pal.render_bans).save(png, compress_level=1)
+                with Image.open(png) as im:
+                    out[key] = {'src': self.asset(png, 'row'), 'w': im.width, 'h': im.height}
+            except OSError:
+                continue
+        return out
+
+    def archive_device(self, seg_text: str, ws: list[tuple[str, float]], t0: float, end: float) -> dict | None:
+        """The season's shirt when the line talks about the shirt; the archive card of a player the line names. Each
+        player's card once a film, the shirt once a film, never two props inside `PROP_GAP_S`. Everything a prop prints
+        is a field of its claim in the ledger (the pack's approved record) — nothing is composed here."""
+        from .. import archive_props as AP
+        if os.environ.get('STORIES_ARCHIVE_PROPS', '1') == '0' or end - t0 < self.PROP_MIN_S:
+            return None
+        used = self.__dict__.setdefault('_props_used', set())
+        latin = lambda v: v if v and all(ord(ch) < 0x250 for ch in str(v)) else None   # noqa: E731
+        words = [(AP.fold(w), tt) for w, tt in ws]
+        said = ' '.join(w for w, _ in words if w)
+        m = self.KIT_WORDS.search(seg_text)
+        if m and 'kit' not in used and self.shirt_file():
+            at = next((tt for w, tt in words if w == AP.fold(m.group(1))), ws[0][1])
+            a0 = max(t0, at - 0.5)
+            if end - a0 >= self.PROP_MIN_S:
+                used.add('kit')
+                k = self._kit
+                return {'kind': 'kitdev', 'src': self._shirt, 'season': k.get('season'), 'type': k.get('type'), 'maker': latin(k.get('maker')),
+                        'sponsor': latin(k.get('sponsor')), 'dt': round(a0 - t0, 3), 'd': round(min(6.5, end - a0), 3), 'vox': True, 'side': len(used) % 2}
+        cards = self.__dict__.get('_cards')
+        if cards is None:
+            cards = self._cards = AP.cards(self.led)
+        for key, c in sorted(cards.items(), key=lambda kv: -len(kv[0])):
+            x = c['fact']
+            if c['id'] in used or f' {key} ' not in f' {said} ':
+                continue
+            first = key.split()[0]
+            at = next((tt for w, tt in words if w == first), ws[0][1])
+            a0 = max(t0, at - 0.3)
+            if end - a0 < self.PROP_MIN_S:
+                continue
+            used.add(c['id'])
+            return {'kind': 'pcard', 'name': x['name'], 'position': x.get('position'), 'from_year': x.get('from_year'), 'to_year': x.get('to_year'),
+                    'apps': x.get('apps'), 'goals': x.get('goals'), 'clue': x.get('clue'), 'shirt': self.shirt_file(),
+                    'dt': round(a0 - t0, 3), 'd': round(min(7.5, end - a0), 3), 'vox': True, 'side': len(used) % 2}
+        return None
+
     def object_device(self, seg_text: str, ws: list[tuple[str, float]], t0: float, end: float) -> dict | None:
         """The objects a sentence names (studio/objects.py), printed in this club's inks, entering on their own word."""
         from .. import objects as O
@@ -1019,6 +1109,11 @@ class Adapter:
         the year before (or this year, the first time) to it, on the word. At most one a chapter, four a film. Only a
         year the narration says — the board prints nothing the script does not."""
         by_n = {s['n']: s for s in self.plan['shots']}
+        # the owner's first picture under a spoken line is the front page's photograph (and the cover: thumbs/gazette.py)
+        from ..thumbs.gazette import owner_picture
+        own = next((s['required_asset'] for s in self.plan['shots'] if s.get('required_asset') and str(s.get('narration') or '').strip()), None)
+        if own and owner_picture(own):
+            pk['owner'] = self.asset(owner_picture(own), 'own')
         shown, last, chapters = 0, str(Date.today().year), set()
         for b in beats:
             if shown >= self.FLAPS_MAX or b['meta']['type'] in ('end', 'follow', 'chapter', 'open'):
@@ -1096,6 +1191,11 @@ class Adapter:
         word, in the film's ink, the way the question card is. Only the narration's own words; two a film, 45 s apart,
         never in the cold open or on a card, a goal or the hand-over."""
         by_n = {s['n']: s for s in self.plan['shots']}
+        # the owner's first picture under a spoken line is the front page's photograph (and the cover: thumbs/gazette.py)
+        from ..thumbs.gazette import owner_picture
+        own = next((s['required_asset'] for s in self.plan['shots'] if s.get('required_asset') and str(s.get('narration') or '').strip()), None)
+        if own and owner_picture(own):
+            pk['owner'] = self.asset(owner_picture(own), 'own')
         shown, last_t = 0, -1e9
         for b in beats:
             if shown >= self.TURN_MAX:
@@ -1133,6 +1233,11 @@ class Adapter:
         screen type card the moment the narrator asks it, and the same card comes back before the hand-over, where the
         film has answered it (the bookend). Only a real question the narration asks (ending in "?"), never invented."""
         by_n = {s['n']: s for s in self.plan['shots']}
+        # the owner's first picture under a spoken line is the front page's photograph (and the cover: thumbs/gazette.py)
+        from ..thumbs.gazette import owner_picture
+        own = next((s['required_asset'] for s in self.plan['shots'] if s.get('required_asset') and str(s.get('narration') or '').strip()), None)
+        if own and owner_picture(own):
+            pk['owner'] = self.asset(owner_picture(own), 'own')
         q = None
         for b in beats:
             if b['t'] >= self.QUESTION_BY_S:
@@ -1198,6 +1303,34 @@ class Adapter:
                     h = self.horizon(x['src'])
                     if h is not None:
                         x['horizon'] = h
+        from . import life, press
+        pk = {k: self.asset(v, 'press') for k, v in press.kit().items()}
+        if press.BRAND.exists():
+            pk['brand'] = self.asset(press.BRAND, 'brand')
+        by_n = {s['n']: s for s in self.plan['shots']}
+        # the owner's first picture under a spoken line is the front page's photograph (and the cover: thumbs/gazette.py)
+        from ..thumbs.gazette import owner_picture
+        own = next((s['required_asset'] for s in self.plan['shots'] if s.get('required_asset') and str(s.get('narration') or '').strip()), None)
+        if own and owner_picture(own):
+            pk['owner'] = self.asset(owner_picture(own), 'own')
+        from . import reveal
+        self.reveal_made = reveal.direct(out, by_n, pk, f'{self.pal.club_id}|{self.jd.name}')   # the owner's pictures and clips, never slides
+        for bt in out:   # a clip's poster frame (studio/owner_media.poster) goes under it in the print
+            for x in bt['shots']:
+                if x['kind'] == 'reveal' and x.get('clip') and x['src'] in self.files:
+                    pst = Path(self.files[x['src']]).with_suffix('.jpg')
+                    x['poster'] = self.asset(pst, 'img') if pst.exists() else None
+        self.press_made = press.direct(out, by_n, pk, self.pal.club_name or '')
+        rows = self.life_rows()
+        n = life.direct(out, {s['n']: s.get('narration') or '' for s in self.plan['shots']}, f'{self.pal.club_id}|{self.led.get("season")}')
+        self.life_beats = n
+        for bt in out:
+            for x in bt['shots']:
+                if x['kind'] == 'life':
+                    if 'crowd' in x['fx'] and rows:
+                        x['rows'] = rows
+                    elif 'crowd' in x['fx']:
+                        x['fx'] = [f for f in x['fx'] if f not in ('crowd', 'flags')] or ['dust']
         return self.spoken(out)
 
 

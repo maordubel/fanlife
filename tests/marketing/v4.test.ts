@@ -25,6 +25,11 @@ const samples: [string, Record<string, unknown>][] = [
   ['L-GTA', {art: 'cover-life', n: 1, mission: 'The march', headline: 'The whole street sings.'}], ['L-GTA', {art: 'next-generation', headline: 'Keep close, kid.'}],
   ['L-FILM', {club: {id: 'panathinaikos'}, title: 'Καλημέρα, Παναθηναϊκέ', cta: 'Δες το τώρα', channel: 'Ποδοσφαιρικά Παραμύθια'}],
   ['L-ARTICLE', {title: 'LIFE: An Open-World Football Fan Game', lede: 'Football supporters have never had one of their own.'}],
+  ['L-CLUB', {club: {id: 'panathinaikos'}, name: 'Panathinaikos', nickname: 'The Greens', city: 'Athens · Greece', local: 'Για όσους μεγάλωσαν πράσινοι.', stats: [{n: '1,103', label: 'Matches'}, {n: 544, label: 'Players'}, {n: 130, label: 'Shirts'}]}],
+  ['L-SALE', {label: 'Black Friday', percent: 30, phase: 'on', ends: 'Mon 30 Nov', cut: 'v4/art/shop/football-forever-tee-black-cut.png'}], ['L-SALE', {label: 'Weekend sale', percent: 15, phase: 'soon', ends: 'Fri 4 Dec', subject: 'partizan-belgrade'}],
+  ['L-RUMBLE', {club: {id: 'olympiacos'}, headline: 'Your club’s all-time five. One budget.'}], ['L-KITS', {club: {id: 'celtic'}, count: 157, span: 'shirts · 1888–2026'}],
+  ['L-YT', {club: {id: 'aek-athens'}, thumbs: []}], ['L-MARKET', {club: {id: 'st-pauli'}}],
+  ['L-HUB', {clubs: ['panathinaikos', 'celtic', 'fenerbahce', 'partizan-belgrade'], stats: [{n: 12, label: 'Clubs'}]}], ['L-GTA', {art: 'terrace', mission: 'Matchday', headline: 'The city is your terrace.'}],
 ]
 
 describe('social pictures v4', () => {

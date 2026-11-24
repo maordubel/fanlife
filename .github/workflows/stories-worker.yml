@@ -8,14 +8,22 @@ name: Football Stories worker
 # Paid answers (script, voice) are kept per job between runs, so a retry never pays twice.
 # Secrets: FAN_LIFE_CRON_SECRET (required) · ANTHROPIC_API_KEY / OPENAI_API_KEY / GEMINI_API_KEY (one writer) ·
 # ELEVENLABS_API_KEY (optional premium voice; without it the free Kokoro British voice is used).
+run-name: Football Stories worker · lane ${{ inputs.lane || 'a' }}
 on:
   workflow_dispatch:
+    inputs:
+      lane:
+        description: 'Production lane (a or b): two films are made side by side (owner, 24.11.2026: a film waited 40 min)'
+        required: false
+        default: 'a'
   schedule:
     - cron: '*/30 * * * *'  # fallback only: the listener starts films (9.11.2026, fewer Vercel calls)
 permissions:
   contents: write  # a CLASSIFIED FILE written by the studio is committed to main (studio/kinds.run_casefile)
 concurrency:
-  group: stories-worker
+  # two lanes: a film no longer waits for the one before it to finish. Each run claims one job with a lease, so two
+  # lanes never make the same film (a run that loses the claim says 'No film waiting' and ends).
+  group: stories-worker-${{ inputs.lane || 'a' }}
   cancel-in-progress: false
 jobs:
   produce:
@@ -159,6 +167,14 @@ jobs:
           # free unless the owner turns paid providers on (repository variables)
           STORIES_ALLOW_PAID: ${{ vars.STORIES_ALLOW_PAID }}
           STORIES_VOICE: ${{ vars.STORIES_VOICE }}
+          # the film engine's switches (lib/stories/engine.ts, docs/rules/studio-story-first.md); empty = the default (on)
+          STORIES_WRITER: ${{ vars.STORIES_WRITER }}
+          STORIES_HOUSE_LEAD: ${{ vars.STORIES_HOUSE_LEAD }}
+          STORIES_ARCHIVE_PROPS: ${{ vars.STORIES_ARCHIVE_PROPS }}
+          STORIES_LIFE: ${{ vars.STORIES_LIFE }}
+          STORIES_PRESS: ${{ vars.STORIES_PRESS }}
+          STORIES_REVEAL: ${{ vars.STORIES_REVEAL }}
+          STORIES_GAZETTE_COVER: ${{ vars.STORIES_GAZETTE_COVER }}
           STORIES_MASTER_PRESET: medium
           # scan the owner's Drive live for this story's packs (studio/drive_scan.py)
           STORIES_DRIVE_SCAN: '1'

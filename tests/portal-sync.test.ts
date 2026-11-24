@@ -492,6 +492,11 @@ describe('פרויקט משותף עם DUBID — THE WORKER touches only what it
       '20261009120000_worker_deal_wave2.sql', // wave 2: bundle, handover, feedback (supabase/tests/71-deal-wave2.sql)
       '20261009150000_worker_circles_wave3.sql', // wave 3: place, circles, the pipe, identification help (supabase/tests/72-circles-wave3.sql)
       '20261118190000_worker_album_coupons.sql', // 18.11.2026: promotion codes for free packets, hashed (docs/rules/album-coupons.md)
+      '20261121160000_fanlife_registration_counts.sql', // 21.11.2026: registration counts for the owner desk, standalone
+      '20261121160500_worker_marketing_queue_shop.sql', // 21.11.2026: shop posts in the marketing queue, standalone
+      '20261124050000_worker_marketing_campaigns.sql', // 24.11.2026: campaigns — add, pause/resume/stop, report, opening holds — standalone
+      '20261124090000_worker_marketing_v4_due.sql', // 24.11.2026: fresh pictures — redraw on new asset files and before going out — standalone
+      '20261124110000_worker_marketing_campaigns_report.sql', // 24.11.2026: campaigns report — stopped state, soonest first — standalone
       '20261118150000_worker_album_one_album.sql', // 18.11.2026: one album of every open club, swaps between collectors (docs/rules/one-album.md)
       '20261118120000_worker_album.sql', // 18.11.2026: THE ALBUM — sticker album tables and functions, standalone (tests/album)
       '20261009180000_worker_game_origin.sql', // one closet, two apps: game-built shirts (supabase/tests/73-game-origin.sql)
@@ -524,6 +529,7 @@ describe('פרויקט משותף עם DUBID — THE WORKER touches only what it
       '20261117190000_worker_events_insight.sql', // 17.11.2026: the games funnel as a report — standalone
       '20261117090000_worker_book_orders.sql', // 17.11.2026: Broken Collective's own sales (docs/rules/book-shop-separate.md) — standalone
       '20261122160000_worker_book_orders_fix.sql', // 22.11.2026: book orders retry + owner fix — standalone
+      '20261123120000_worker_book_orders_letters.sql', // 23.11.2026: the letter ledger + the 5-minute book tick (docs/rules/book-order-journey.md) — standalone
     ]
     for (const name of readdirSync(dir)) {
       if (live.includes(name)) continue

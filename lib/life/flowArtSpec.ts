@@ -11,13 +11,15 @@ export const lifePath=(stem:string)=>`${LIFE_DIR}/${stem}.png`
 export const LIFE_USES=['facade','stadium','skyline','aerial','story'] as const
 export type LifeUse=typeof LIFE_USES[number]
 /** The towns the order is drawn for. `eur` is the generic European set any club may fall back on. */
-export const LIFE_TOWNS=['ath','tlv','mos','eur','gla','ham','bgo','cas','cai','hfa','ptk'] as const
+export const LIFE_TOWNS=['ath','tlv','mos','eur','gla','ham','bgo','cas','cai','hfa','ptk','ist','beg'] as const
 export type LifeTown=typeof LIFE_TOWNS[number]
 /** Which town's streets a club lives in (Piraeus rides with Athens, Jaffa with Tel Aviv). */
 export const CLUB_TOWN:Readonly<Record<string,LifeTown>>={
  'hapoel-tel-aviv':'tlv','olympiacos':'ath','panathinaikos':'ath','aek-athens':'ath','zrinjski-mostar':'mos',
  'celtic':'gla','st-pauli':'ham','atalanta':'bgo','raja-casablanca':'cas','wydad-casablanca':'cas','al-ahly':'cai',
  'maccabi-haifa':'hfa','hapoel-petah-tikva':'ptk',
+ // 24.11.2026: Istanbul's Asian shore and Belgrade, authored when the two clubs' opening was completed
+ 'fenerbahce':'ist','partizan-belgrade':'beg',
 }
 export type LifePiece={stem:string;aspect:'1:1'|'16:9';prompt:string;use:LifeUse;priority:number;town?:LifeTown;club?:string;chapter?:string;confidence?:'specific'|'generic'}
 export type LifeLibrary={version:number;style:string;negatives:string;pieces:LifePiece[]}

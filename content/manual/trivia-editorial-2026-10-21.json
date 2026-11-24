@@ -181,7 +181,7 @@
         "factIds": [
           "span:p_98a480c32b"
         ],
-        "sourceUrl": "https://wiki.red-fans.com/",
+        "sourceUrl": "https://en.wikipedia.org/w/index.php?oldid=1385453950",
         "prompt": "Walid Badir in the Hapoel Tel Aviv record: in which decade is he first listed?",
         "explanation": "Walid Badir's recorded years at Hapoel Tel Aviv: 2005–2013.",
         "basePrompt": "Walid Badir in the Hapoel Tel Aviv record: in which decade is he first listed?",
@@ -266,22 +266,22 @@
         "baseExplanation": "16 wins: 1999/00, 2005/06, 2006/07, 2009/10, 2010/11, 2011/12 and more."
       },
       {
-        "questionId": "q_0d7366b8a32c4258",
+        "questionId": "q_b78c23a1a104e5fc",
         "answer": [
-          "Yoel Shoham",
-          "Shavit Elimelech",
-          "Rami Halis"
+          "Roei Gordana",
+          "Raz Shlomo",
+          "Liad Ramot"
         ],
         "factIds": [
-          "span:p_a389316c8d",
-          "span:p_9a7b6e96a1",
-          "span:p_9388f9c2ce"
+          "span:p_9c70058156",
+          "span:p_f3d90770ef",
+          "span:p_430514c3e2"
         ],
-        "sourceUrl": "https://wiki.red-fans.com/api.php?action=query&prop=categories",
+        "sourceUrl": "https://www.worldfootball.net/report/europa-league-2011-2012-gruppe-c-hapoel-tel-aviv-psv-eindhoven/",
         "prompt": "Three chapters of Hapoel Tel Aviv history. Put these players in order of their first recorded club year, earliest first.",
-        "explanation": "Yoel Shoham (1963) → Shavit Elimelech (1996) → Rami Halis (2001)",
+        "explanation": "Roei Gordana (2007) → Raz Shlomo (2016) → Liad Ramot (2021)",
         "basePrompt": "Three chapters of Hapoel Tel Aviv history. Put these players in order of their first recorded club year, earliest first.",
-        "baseExplanation": "Yoel Shoham (1963) → Shavit Elimelech (1996) → Rami Halis (2001)"
+        "baseExplanation": "Roei Gordana (2007) → Raz Shlomo (2016) → Liad Ramot (2021)"
       },
       {
         "questionId": "q_a3d5775f60dda9f3",
@@ -302,22 +302,22 @@
         "baseExplanation": "Shabtai Levi (1977) → Kfir Udi (1996) → Eran Zahavi (2006)"
       },
       {
-        "questionId": "q_83316e473a46a03d",
+        "questionId": "q_cd6db14b4a57ae62",
         "answer": [
-          "Kobi Shalu",
-          "Sergei Kleschenko",
-          "Ariel Cohen"
+          "Ya'akov Hodorov",
+          "Kobi Hadadi",
+          "Rubi Levkovich"
         ],
         "factIds": [
-          "span:p_77fb9ae6d9",
-          "span:p_6f1fd9dc54",
-          "span:p_0b4143e70d"
+          "span:p_30f1a8b59b",
+          "span:p_69e9291fab",
+          "span:p_fde4eb7dae"
         ],
         "sourceUrl": "https://wiki.red-fans.com/api.php?action=query&prop=categories",
         "prompt": "Three chapters of Hapoel Tel Aviv history. Put these players in order of their first recorded club year, earliest first.",
-        "explanation": "Kobi Shalu (1996) → Sergei Kleschenko (2001) → Ariel Cohen (2022)",
+        "explanation": "Ya'akov Hodorov (1946) → Kobi Hadadi (1967) → Rubi Levkovich (2018)",
         "basePrompt": "Three chapters of Hapoel Tel Aviv history. Put these players in order of their first recorded club year, earliest first.",
-        "baseExplanation": "Kobi Shalu (1996) → Sergei Kleschenko (2001) → Ariel Cohen (2022)"
+        "baseExplanation": "Ya'akov Hodorov (1946) → Kobi Hadadi (1967) → Rubi Levkovich (2018)"
       },
       {
         "questionId": "q_f1963d70e09ffe7e",
@@ -337,7 +337,7 @@
         "factIds": [
           "hapoel-tel-aviv:match-m_67a2f41af253"
         ],
-        "sourceUrl": "https://wiki.red-fans.com/index.php?title=%D7%A6%27%D7%9C%D7%A1%D7%99",
+        "sourceUrl": "https://raw.githubusercontent.com/maordubel/fanlife/8422603f43ed4617b35afbd8f93c1879e3f648d1/content/manual/match-scorers.json",
         "prompt": "Find the year on the ticket stub: Hapoel Tel Aviv beat Chelsea 2-0 in the UEFA Cup. Which season?",
         "explanation": "Hapoel Tel Aviv 2-0 Chelsea, UEFA Cup, 18 Oct 2001.",
         "basePrompt": "Find the year on the ticket stub: Hapoel Tel Aviv beat Chelsea 2-0 in the UEFA Cup. Which season?",
@@ -349,7 +349,7 @@
         "factIds": [
           "hapoel-tel-aviv:match-m_73bc1426d0e3"
         ],
-        "sourceUrl": "https://wiki.red-fans.com/",
+        "sourceUrl": "https://raw.githubusercontent.com/maordubel/fanlife/8422603f43ed4617b35afbd8f93c1879e3f648d1/content/manual/match-scorers.json",
         "prompt": "Hapoel Tel Aviv drew 1-1 with Chelsea in the UEFA Cup. Which season does that result belong to?",
         "explanation": "Chelsea 1-1 Hapoel Tel Aviv, UEFA Cup, 1 Nov 2001.",
         "basePrompt": "Hapoel Tel Aviv drew 1-1 with Chelsea in the UEFA Cup. Which season does that result belong to?",
@@ -361,7 +361,7 @@
         "factIds": [
           "hapoel-tel-aviv:match-m_50b241094fed"
         ],
-        "sourceUrl": "https://wiki.red-fans.com/",
+        "sourceUrl": "https://raw.githubusercontent.com/maordubel/fanlife/8422603f43ed4617b35afbd8f93c1879e3f648d1/content/manual/match-scorers.json",
         "prompt": "Full time, 1 Nov 1967: Hapoel Tel Aviv v Maccabi Tel Aviv in the Israel State Cup. What did the scoreboard say? (Hapoel Tel Aviv first)",
         "explanation": "Maccabi Tel Aviv 2-1 Hapoel Tel Aviv, Israel State Cup, 1 Nov 1967.",
         "basePrompt": "Full time, 1 Nov 1967: Hapoel Tel Aviv v Maccabi Tel Aviv in the Israel State Cup. What did the scoreboard say? (Hapoel Tel Aviv first)",
@@ -397,7 +397,7 @@
         "factIds": [
           "hapoel-tel-aviv:match-m_c4fdcf7a9b56"
         ],
-        "sourceUrl": "https://wiki.red-fans.com/",
+        "sourceUrl": "https://raw.githubusercontent.com/maordubel/fanlife/8422603f43ed4617b35afbd8f93c1879e3f648d1/content/manual/match-scorers.json",
         "prompt": "Hapoel Tel Aviv v Teplice in the UEFA Europa League, 20 Aug 2009. Name the final score (Hapoel Tel Aviv first).",
         "explanation": "Teplice 1-2 Hapoel Tel Aviv, UEFA Europa League, 20 Aug 2009.",
         "basePrompt": "Hapoel Tel Aviv v Teplice in the UEFA Europa League, 20 Aug 2009. Name the final score (Hapoel Tel Aviv first).",
@@ -1155,7 +1155,7 @@
         "prompt": "Hapoel Petah Tikva v Maccabi Haifa in the Israel State Cup final, 4 Jun 1991. Name the final score (Hapoel Petah Tikva first).",
         "explanation": "Hapoel Petah Tikva 1-3 Maccabi Haifa, Israel State Cup final, 4 Jun 1991.",
         "basePrompt": "Hapoel Petah Tikva v Maccabi Haifa in the Israel State Cup final, 4 Jun 1991. Name the final score (Hapoel Petah Tikva first).",
-        "baseExplanation": "Hapoel Petah Tikva 1-3 Maccabi Haifa, Israel State Cup final, 4 Jun 1991."
+        "baseExplanation": "Maccabi Haifa 3-1 Hapoel Petah Tikva, Israel State Cup final, 4 Jun 1991."
       },
       {
         "questionId": "q_eaffdca6dcae520c",
@@ -1167,7 +1167,7 @@
         "prompt": "Full time, 9 Jun 1992: Hapoel Petah Tikva v Maccabi Tel Aviv in the Israel State Cup final. What did the scoreboard say? (Hapoel Petah Tikva first)",
         "explanation": "Hapoel Petah Tikva 3-1 Maccabi Tel Aviv, Israel State Cup final, 9 Jun 1992.",
         "basePrompt": "Full time, 9 Jun 1992: Hapoel Petah Tikva v Maccabi Tel Aviv in the Israel State Cup final. What did the scoreboard say? (Hapoel Petah Tikva first)",
-        "baseExplanation": "Hapoel Petah Tikva 3-1 Maccabi Tel Aviv, Israel State Cup final, 9 Jun 1992."
+        "baseExplanation": "Maccabi Tel Aviv 1-3 Hapoel Petah Tikva, Israel State Cup final, 9 Jun 1992."
       },
       {
         "questionId": "q_9da4ccd01fab3786",
@@ -1179,7 +1179,7 @@
         "prompt": "Hapoel Petah Tikva beat Maccabi Jaffa 2-1 in the Israel State Cup final. Which season does that result belong to?",
         "explanation": "Hapoel Petah Tikva 2-1 Maccabi Jaffa, Israel State Cup final, 6 Jul 1957.",
         "basePrompt": "Hapoel Petah Tikva beat Maccabi Jaffa 2-1 in the Israel State Cup final. Which season does that result belong to?",
-        "baseExplanation": "Hapoel Petah Tikva 2-1 Maccabi Jaffa, Israel State Cup final, 6 Jul 1957."
+        "baseExplanation": "Maccabi Jaffa 1-2 Hapoel Petah Tikva, Israel State Cup final, 6 Jul 1957."
       },
       {
         "questionId": "q_85efd581318fcf98",
@@ -2814,22 +2814,22 @@
         "explanation": "André Golke (1982) → Patrick Mölzl (2003) → Lennart Thy (2012)"
       },
       {
-        "questionId": "q_381cb28c09c48323",
+        "questionId": "q_ef63a2b723d44ffa",
         "answer": [
-          "Berkan Algan",
-          "Robert Palikuča",
-          "Ryō Miyaichi"
+          "Rolf Bergeest",
+          "Ivan Klasnić",
+          "Jonathan Beaulieu-Bourgault"
         ],
         "factIds": [
-          "span:st-pauli:wv-af33ebde41",
-          "span:st-pauli:wv-aebce6c52a",
-          "span:st-pauli:p-dh-ad0b88bd96a0"
+          "span:st-pauli:p-dh-fe8279a34fab",
+          "span:st-pauli:p-dh-4a108c728a63",
+          "span:st-pauli:p-dh-32c6c039286f"
         ],
-        "sourceUrl": "https://en.wikipedia.org/wiki/Category%3AFC_St._Pauli_players",
+        "sourceUrl": "https://www.weltfussball.de/person/pe256641/rolf-bergeest/",
         "basePrompt": "Three chapters of FC St. Pauli history. Put these players in order of their first recorded club year, earliest first.",
-        "baseExplanation": "Berkan Algan (1998) → Robert Palikuča (2004) → Ryō Miyaichi (2015)",
+        "baseExplanation": "Rolf Bergeest (1956) → Ivan Klasnić (1997) → Jonathan Beaulieu-Bourgault (2006)",
         "prompt": "Three chapters of FC St. Pauli history. Put these players in order of their first recorded club year, earliest first.",
-        "explanation": "Berkan Algan (1998) → Robert Palikuča (2004) → Ryō Miyaichi (2015)"
+        "explanation": "Rolf Bergeest (1956) → Ivan Klasnić (1997) → Jonathan Beaulieu-Bourgault (2006)"
       },
       {
         "questionId": "q_4b7559bc8229b01f",
@@ -3239,22 +3239,22 @@
         "baseExplanation": "Olympiacos 1-2 Anderlecht, UEFA Europa League, 25 Feb 2016. Kostas Fortounis scored for Olympiacos."
       },
       {
-        "questionId": "q_0c847aa0b8d7f88a",
+        "questionId": "q_343559e854a1b743",
         "answer": [
-          "Konstantinos Orfanos",
-          "Kostas Mendrinos",
-          "Panagiotis Retsos"
+          "Savvas Theodoridis",
+          "Georgios Xenitidis",
+          "Tiquinho Soares"
         ],
         "factIds": [
-          "span:olympiacos:wv-0eca782bbe",
-          "span:olympiacos:wv-c0a1870abb",
-          "span:olympiacos:wv-8b06c402e7"
+          "span:olympiacos:wv-589c704daa",
+          "span:olympiacos:wv-e6ac37f49a",
+          "span:olympiacos:wv-0b1205dc43"
         ],
         "sourceUrl": "https://en.wikipedia.org/wiki/Category%3AOlympiacos_F.C._players",
         "basePrompt": "Three chapters of Olympiacos history. Put these players in order of their first recorded club year, earliest first.",
-        "baseExplanation": "Konstantinos Orfanos (1980) → Kostas Mendrinos (2002) → Panagiotis Retsos (2016)",
+        "baseExplanation": "Savvas Theodoridis (1953) → Georgios Xenitidis (2017) → Tiquinho Soares (2021)",
         "prompt": "Three chapters of Olympiacos history. Put these players in order of their first recorded club year, earliest first.",
-        "explanation": "Konstantinos Orfanos (1980) → Kostas Mendrinos (2002) → Panagiotis Retsos (2016)"
+        "explanation": "Savvas Theodoridis (1953) → Georgios Xenitidis (2017) → Tiquinho Soares (2021)"
       },
       {
         "questionId": "q_b8ac8dfca8bb6210",

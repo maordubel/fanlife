@@ -56,6 +56,16 @@ export function Launch({clubId,api,onChange}:{clubId:string;api:Api;onChange:()=
   <section className="desk-sub launch-step" aria-labelledby="l4"><h2 id="l4">4 · What can open, what is missing</h2>
    {playable.length>0?<ul className="launch-gates" data-kind="open">{playable.map(g=><li key={g.number}><b>{g.number}. {g.name}</b> <span>{g.openNow?'open to players':g.state==='READY'?'ready':'short round'}</span><small>{g.eligible}{g.target?` / ${g.target}`:''}</small></li>)}</ul>:<p>No game has enough data yet.</p>}
    <details className="launch-missing"><summary>{closed.length} games still need data — what each one needs</summary><ul>{closed.map(g=><li key={g.number}><b>{g.number}. {g.name}</b> — {g.missing||'more data'}<br/><small>How: {g.how}</small></li>)}</ul></details>
+   {v.coverage&&<details className="launch-missing">
+    <summary>Historical archive coverage</summary>
+    <ul>
+     <li>{v.coverage.matches.toLocaleString()} recorded matches</li>
+     <li>{v.coverage.players.toLocaleString()} player records and {v.coverage.kits.toLocaleString()} kit entries</li>
+     <li>{v.coverage.clubLineups.toLocaleString()} club lineups and {v.coverage.bothLineups.toLocaleString()} matches with both starting elevens</li>
+     <li>{v.coverage.fullGoalLogs.toLocaleString()} matches with a complete goal log or a scoreless result</li>
+    </ul>
+    <p className="desk-fine">Counts cover the loaded archive. Historical completeness depends on surviving records.</p>
+   </details>}
    <div className="launch-open">
     {v.canOpen.length>0?<><button className="desk-btn min-h-tap" disabled={api.busy} onClick={async()=>{if(await api.post('clubs/open-playable',{id:clubId,version:v.version,reason:'Opened from Launch'},`${v.name} is open to players.`))await after()}}>Open {v.name} to players · {v.canOpen.length} game{v.canOpen.length===1?'':'s'}</button><p className="desk-fine">Sets the club live with every playable game switched on. You can pause it any time in Readiness.</p></>
      :playable.length&&playable.every(g=>g.openNow)?<p>Open to players. <a href={`/clubs/${clubId}`} target="_blank" rel="noreferrer">See the club page ↗</a></p>:null}

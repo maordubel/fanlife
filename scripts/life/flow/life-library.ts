@@ -85,6 +85,14 @@ const FACADES: Record<LifeTown, string[]> = {
     'A three-storey 1930s apartment house of an Israeli port city on a mountain slope: rough-cut pale limestone cladding, deep shaded balconies, a tall stair window, flat roof with solar boilers.',
     'A four-storey Israeli public-housing block of the 1960s: plaster and exposed concrete, balconies closed with slatted shutters, air-conditioner units, solar-boiler tanks on the roof, small shops behind shutters.',
   ],
+  ist: [
+    'A five-storey Istanbul apartment house of the 1960s on the Asian shore: pastel render, deep balconies with iron railings and striped awnings, bay windows stacked above a corner shop behind a roller shutter, satellite dishes at the roof edge.',
+    'A three-storey old wooden Istanbul town house: weathered dark timber boards, a projecting upper bay on wooden brackets, tall narrow windows with shutters, a stone base with a workshop door.',
+  ],
+  beg: [
+    'A four-storey interwar Belgrade apartment house: grey rendered facade with simple modernist lines, rounded corner balconies, tall double windows, a ground-floor bakery front with a closed shutter.',
+    'A long socialist-era Belgrade housing block: raw concrete panels, rows of recessed loggias with laundry and added glazing, a flat roof edge with aerials, a kiosk and small shops along the base.',
+  ],
   ptk: [
     'A three-storey Israeli housing block of the 1950s in a town of the coastal plain: plain plaster, small balconies with slatted plastic shutters, solar boilers on the flat roof, a grocery front with a roller shutter.',
     'A two-storey old colony house of an Israeli farming town: thick plastered walls, a clay-tile roof edge, wooden shutters, a veranda upstairs, a shop front with a closed wooden shutter.',
@@ -134,6 +142,9 @@ const GROUNDS: Record<string, Ground> = {
   'st-pauli': {for: 'Millerntor-Stadion', plates: [
     'A compact city-centre football ground of four steep straight stands in dark brick and steel at the edge of a wide open fairground field: a massive windowless wartime concrete bunker tower looms beside it, a ferris wheel turns far off and the lights of an entertainment district glow behind.',
   ]},
+  'partizan-belgrade': {for: 'Partizan Stadium', plates: [
+    'A large post-war oval football ground with a running track around the pitch: long open concrete terraces sweep round both ends, a single roofed main stand runs along one side, and tall floodlight towers stand over a leafy residential district of a hilly Balkan capital.',
+  ]},
   'zrinjski-mostar': {for: 'Stadion pod Bijelim Brijegom', plates: [
     'An open, low mid-century football ground on the west bank of a Balkan river town, lying at the foot of a pale bare rocky hill: plain concrete stands, floodlight masts, stone and rendered houses on the streets around it.',
   ]},
@@ -149,6 +160,7 @@ const STREETS: Record<LifeTown, string> = {
   bgo: 'Lombard town houses with shutters and clay-tile roofs under the foothills', cas: 'white apartment blocks along a palm-lined boulevard',
   cai: 'tall sand-coloured apartment blocks with balconies and satellite dishes', hfa: 'limestone and plaster apartment blocks stepping up a wooded slope',
   ptk: 'three-storey plaster housing blocks with solar boilers',
+  ist: 'pastel apartment houses with awninged balconies on a street sloping to the water', beg: 'grey interwar apartment houses and long concrete housing blocks',
 }
 const GENERIC_VIEW = ['seen along the main road', 'seen from a narrow side street']
 
@@ -163,6 +175,8 @@ const TOWNS: {town: LifeTown; skyline: string; district: string}[] = [
   {town: 'cas', skyline: 'Casablanca at dusk: white flat-roofed blocks and Art Deco towers, a very tall square minaret by the ocean, palm tops, Atlantic haze.', district: 'A central Casablanca neighbourhood: white Art Deco blocks on a radial street plan, palm-lined boulevards, a small market square.'},
   {town: 'cai', skyline: 'Cairo at dusk: dense sand-coloured blocks to the horizon, many minarets and domes, a wide river with bridges, a slender lattice tower, desert haze.', district: 'A Cairo neighbourhood: tall close-packed apartment blocks, a wide avenue with a central reservation, narrow lanes, a small garden square.'},
   {town: 'hfa', skyline: 'Haifa at dusk: a city stepping down a wooded mountain ridge to a wide bay, port cranes, a domed shrine above terraced gardens on the slope, industrial chimneys far around the bay.', district: 'A Haifa neighbourhood on the slope: winding contour streets, stepped lanes between limestone and plaster blocks, pine trees.'},
+  {town: 'ist', skyline: 'Istanbul seen from its Asian shore at dusk: apartment blocks stepping down to a wide strait, ferries crossing, a low headland opposite with domes and slender minarets in silhouette, gulls, a long suspension bridge far off.', district: 'A neighbourhood on Istanbul\'s Asian shore: tight blocks of apartment houses on sloping streets, a busy market lane, a ferry pier and a tree-lined seafront along one edge.'},
+  {town: 'beg', skyline: 'Belgrade at dusk: a city on a ridge above the meeting of two wide rivers, an old stone fortress on the bluff, a large domed church, long concrete housing blocks on the far bank, bridges.', district: 'A Belgrade neighbourhood on a wooded hill: villas and apartment houses on winding streets, a wide boulevard, a park, long housing blocks at the foot of the slope.'},
   {town: 'ptk', skyline: 'An Israeli town of the coastal plain at dusk: low plaster apartment blocks with solar boilers, a few glass office towers, an old water tower, dark lines of citrus groves at the edge.', district: 'A neighbourhood of an Israeli town of the coastal plain: rows of long housing blocks with gardens between, a main shopping street, a small park.'},
 ]
 
@@ -181,7 +195,6 @@ const STORIES: {key: string; chapter: string; priority: number; scene: string}[]
 
 const ATHENS_AND_TEL_AVIV: LifeTown[] = ['ath', 'tlv']
 const FOUR = ['hapoel-tel-aviv', 'olympiacos', 'panathinaikos', 'aek-athens']
-/** grounds the street still shows without a picture of their own (24.11.2026): drawn next, after the four */
 const NEXT_GROUNDS = ['zrinjski-mostar', 'celtic', 'st-pauli', 'atalanta']
 const two = (n: number) => String(n).padStart(2, '0')
 const groundName = (root: string, club: string): string | null => {

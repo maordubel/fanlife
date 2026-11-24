@@ -62,6 +62,7 @@ Order = the strongest hook first, alternating tone so the playlist never plays t
 | 26 | [atb26-meroni.script.md](atb26-meroni.script.md) | HEART |
 | 27 | [atb27-quini.script.md](atb27-quini.script.md) | WAR |
 | 28 | [atb28-australia-curse.script.md](atb28-australia-curse.script.md) | LAUGH |
+| 29 | [atb29-panathinaikos-1971.FACTS.md](atb29-panathinaikos-1971.FACTS.md) · film `studio/docu/films/atb_panathinaikos_1971.py` | HEART |
 
 Ali Dia (Southampton, 1996) was on the list too: it is already **CLASSIFIED FILE 04 · THE COUSIN** (`docs/fanlife/classified/file04-the-cousin.script.md`), so it is not written twice.
 

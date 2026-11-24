@@ -130,6 +130,22 @@ XP_CSS = ('.bloom{position:absolute;left:0;top:0;width:1920px;height:1080px;mix-
           ".kn.vx .kw{background:PAPER;color:INK;padding:6px 18px 2px;margin:0 10px 12px 0;box-shadow:8px 8px 0 INK;border:4px solid INK}"
           ".kn.vx .kw.hot{color:#fff} .kn.vx .kw .hl{top:0;height:100%}"
           '.obx{position:absolute;left:0;top:0;width:1920px;height:1080px}'
+          # the archive on screen (studio/archive_props.py): the season's shirt on its hanger, the player's card
+          '.apx{position:absolute;left:0;top:0;width:1920px;height:1080px}'
+          '.akit{position:absolute;width:520px;transform-origin:50% -200px;will-change:transform}'
+          '.akit .cord{position:absolute;left:258px;top:-420px;width:4px;height:440px;background:INK}'
+          '.akit .hang{position:absolute;left:150px;top:-8px;width:220px;height:46px;border-top:9px solid INK;border-radius:50% 50% 0 0/100% 100% 0 0}'
+          '.akit img{display:block;width:520px;height:459px;filter:drop-shadow(16px 20px 0 rgba(20,17,13,.42))}'
+          ".akl{position:absolute;padding:10px 24px 6px;background:PAPER;color:INK;border:5px solid INK;box-shadow:10px 10px 0 INK;white-space:nowrap}"
+          ".akl b{display:block;font:400 62px/1 'Head';letter-spacing:2px} .akl span{display:block;margin-top:4px;font:700 30px 'Cond';letter-spacing:5px}"
+          '.apc{position:absolute;width:500px;height:760px;background:PAPER;border:7px solid INK;box-shadow:16px 18px 0 rgba(20,17,13,.55);border-radius:22px;overflow:hidden;will-change:transform}'
+          ".apc .hd{height:86px;display:flex;align-items:center;justify-content:space-between;padding:0 26px;color:#fff;font:700 34px 'Cond';letter-spacing:6px;border-bottom:7px solid INK}"
+          '.apc .sh{position:absolute;left:90px;top:104px;width:320px;height:282px}'
+          '.apc .ht{position:absolute;left:0;top:96px;width:100%;height:300px;background:radial-gradient(circle at 50% 46%,rgba(20,17,13,.20) 1.6px,transparent 2.2px) 0 0/13px 13px}'
+          ".apc .nm{position:absolute;left:0;top:398px;width:100%;text-align:center;font:400 54px/0.98 'Head';color:INK;padding:0 18px;box-sizing:border-box}"
+          ".apc .st{position:absolute;left:0;top:500px;width:100%;display:flex;justify-content:center;gap:34px;color:INK}"
+          ".apc .st div{text-align:center} .apc .st b{display:block;font:400 70px/1 'Ultra'} .apc .st small{display:block;margin-top:4px;font:700 24px 'Cond';letter-spacing:5px}"
+          ".apc .cl{position:absolute;left:22px;right:22px;bottom:18px;font:700 23px/1.22 'Mono';color:INK;text-align:center;border-top:4px dashed INK;padding-top:10px}"
           '.obj{position:absolute;filter:drop-shadow(14px 18px 0 rgba(20,17,13,.38));will-change:transform}'
           ".obl{position:absolute;padding:8px 22px 4px;background:PAPER;color:INK;border:5px solid INK;box-shadow:10px 10px 0 INK;font:400 64px/1 'Head';letter-spacing:2px;white-space:nowrap}"
           '.obl .hl{top:0;height:100%} .obl em{position:relative;font-style:normal;z-index:1}'
@@ -886,8 +902,10 @@ class Film:
                       f'<b class="thl" id="{cid}l{i}" style="left:{nx - 140:.0f}px;top:{y + 22:.0f}px">{e(nd["word"])}</b>')
             self.tween(f'tl.fromTo("#{cid}k{i}",{{scale:0,opacity:0}},{{scale:1,opacity:1,duration:0.5,ease:"power2.out"}},{r2(t + nd["at"])});'
                        f'tl.fromTo("#{cid}l{i}",{{y:-8,opacity:0}},{{y:0,opacity:1,duration:0.6,ease:"power2.out"}},{r2(t + nd["at"] + 0.15)});')
-            if i:   # the label before it steps back: the thread keeps only the story so far, the latest word in front
-                self.tween(f'tl.to("#{cid}l{i - 1}",{{opacity:0.45,duration:0.6,ease:"sine.inOut"}},{r2(t + nd["at"])});')
+            if i:   # the label before it steps back: the thread keeps only the story so far, the latest word in front —
+                # and leaves altogether when the next knot is tied too close to read both (23.11.2026: "OLYMPIACOMACCAKARAISKAKIS")
+                px = x0 + (x1 - x0) * (nodes[i - 1]['at'] / span if span else 0)
+                self.tween(f'tl.to("#{cid}l{i - 1}",{{opacity:{0.45 if nx - px >= 230 else 0},duration:0.6,ease:"sine.inOut"}},{r2(t + nd["at"])});')
         self.clip(cid, t, d, f'<div class="thr">{inner}</div>', s.get('z', 16))
         self.tween(f'tl.fromTo("#{cid}p",{{strokeDashoffset:{L:.1f}}},{{strokeDashoffset:{L * (1 - min(1.0, (d - 0.6) / (span + 1.0))):.1f},duration:{r2(max(0.5, d - 0.6))},ease:"none"}},{r2(t)});'
                    f'tl.fromTo("#{cid} .thr",{{opacity:0}},{{opacity:1,duration:0.8,ease:"sine.inOut"}},{r2(t)});'
@@ -1058,6 +1076,135 @@ class Film:
         self.tween(f'tl.to("#{cid} .obx",{{opacity:0,duration:0.5,ease:"sine.in"}},{r2(t + d - 0.5)});')
         for js in tw:
             self.tween(js)
+
+    def life(self, s, t, d):
+        """Life in the frame (docu/life.py): the scene's own movement between the picture and the graphics — a crowd on
+        its feet, flags that wave, falling paper, floodlight beams, flare smoke, dust in the light, the ball in flight."""
+        from . import life as L
+        cid = self.id('lf')
+        rg = L.rng_of(s.get('seed') or cid)
+        lv = float(s.get('level', 0.5))
+        html, tw = '', []
+        for fx in s.get('fx') or []:
+            if fx == 'crowd':
+                if not s.get('rows'):
+                    continue
+                h, w = L.crowd(cid, t, d, rg, s['rows'], lv if {'confetti', 'glow'} & set(s['fx']) else lv * 0.4, 'flags' in s['fx'])
+            elif fx == 'flags':
+                continue   # the flags row is drawn with the crowd
+            elif fx == 'confetti':
+                h, w = L.confetti(cid, t, d, rg, self.INK, self.US, self.PAPER, 80 if lv >= 0.8 else 50)
+            elif fx == 'beams':
+                h, w = L.beams(cid, t, d, rg)
+            elif fx == 'glow':
+                h, w = L.glow(cid, t, d, rg, self.US)
+            elif fx == 'dust':
+                h, w = L.dust(cid, t, d, rg, self.US)
+            elif fx == 'ball':
+                h, w = L.ball(cid, t, d, rg, s.get('ball'), self.INK, self.PAPER)
+            else:
+                continue
+            html, tw = html + h, tw + w
+        if not html:
+            return
+        self.clip(cid, t, d, f'<div class="lf" id="{cid}x">{html}</div>', s.get('z', 5))
+        self.tween(f'tl.fromTo("#{cid}x",{{opacity:0}},{{opacity:1,duration:{L.FADE_IN},ease:"sine.out"}},{r2(t)});')
+        if not s.get('fade_out') is False:
+            self.tween(f'tl.to("#{cid}x",{{opacity:0,duration:{L.FADE_OUT},ease:"sine.in"}},{r2(t + d - L.FADE_OUT)});')
+        for js in tw:
+            self.tween(js)
+
+    def reveal(self, s, t, d):
+        """The owner's picture or clip as a VOX moment (docu/reveal.py — owner, 24.11.2026: "an effect, a transition with
+        motion, a cool entrance onto the screen, together with the text — not as a slideshow"): a print sliding onto
+        newsprint, the paper tearing open, strips closing, a frame the camera pushes through, a print dropping on the pile."""
+        from . import reveal as RV
+        cid = self.id('rv')
+        clips, tw, snd = RV.build(cid, s, t, d, self.INK, self.US)
+        for k, z, html, kind in clips:
+            if kind == 'video':
+                box = html
+                extra = box.pop('extra', '')
+                self.made.append({'id': k, 't': t, 'z': t + d, 'layer': z})
+                self.clips.append(f'<video id="{k}" class="clip" src="assets/img/{e(s["src"])}" muted playsinline data-start="{r2(t)}" data-duration="{r2(d)}" '
+                                  f'data-media-start="{s.get("from", 0)}" style="position:absolute;left:{box["left"]}px;top:{box["top"]}px;width:{box["width"]}px;'
+                                  f'height:{box["height"]}px;object-fit:cover;z-index:{z};{extra}"></video>')
+            else:
+                self.clip(k, t, d, html, z)
+        for js in tw:
+            self.tween(js)
+        for name, at, vol in snd:
+            if at < t + d:
+                self.sound(name, at, None, vol)
+
+    def gazette(self, s, t, d):
+        """The press (docu/press.py): the film's front page, or a collage scene — halftone pieces from the press kit on
+        newsprint, in the club's colour, pasted pieces moving on twos and threes."""
+        from . import press as PR
+        cid = self.id('pr')
+        fn = PR.front_page if s.get('page') == 'front' else PR.scene
+        html, tw = fn(cid, s, t, d, self.INK, self.US, self.PAPER)
+        self.clip(cid, t, d, f'<div class="pr">{html}</div>', s.get('z', 3))
+        for js in tw:
+            self.tween(js)
+        if s.get('page') == 'front' and not s.get('off'):
+            self.sound('page', t, None, 0.5)
+            for i in range(len(s.get('head') or [])):
+                self.sound('stamp', t + 0.7 + i * 0.42, None, 0.5)
+
+    def kitdev(self, s, t, d):
+        """The season's own shirt (studio/archive_props.py — owner, 23.11.2026: "if it talks about a season it pulls that
+        season's kit into the film"). The archive's measured drawing, shirt only, comes down into the picture on a hanger
+        and settles once (it eases out and stops: rule 142); its label — the season, home or away, the maker and the
+        sponsor as the archive holds them — is drawn out beside it and joined to it by a pen line. Then it turns a
+        little on its cord, the nearest plane of the shot."""
+        cid = self.id('kt')
+        right = s.get('side', 0) == 0
+        x, y = (1250, 170) if right else (150, 170)
+        lx, ly = (x - 60, 690) if right else (x + 40, 690)   # clear of the subtitle band
+        sub = ' · '.join(v for v in (s.get('maker'), s.get('sponsor')) if v)
+        inner = (f'<div class="akit" id="{cid}k" style="left:{x}px;top:{y}px"><i class="cord"></i><i class="hang"></i>'
+                 f'<img src="assets/img/{e(s["src"])}"></div>'
+                 f'<div class="akl" id="{cid}l" style="left:{lx}px;top:{ly}px"><b>{e(s.get("season") or "")} · {e((s.get("type") or "home").upper())}</b>'
+                 + (f'<span>{e(sub.upper())}</span>' if sub else '') + '</div>')
+        self.clip(cid, t, d, f'<div class="apx">{inner}</div>', s.get('z', 11))
+        way = 1 if right else -1
+        self.tween(f'tl.fromTo("#{cid}k",{{y:-760,rotation:{7 * way},opacity:0}},{{y:0,rotation:0,opacity:1,duration:1.2,ease:"power2.out"}},{r2(t)});')
+        rest = max(0.5, d - 1.7)
+        self.tween(f'tl.to("#{cid}k",{{rotation:{-2.2 * way},y:-10,duration:{r2(rest)},ease:"sine.inOut"}},{r2(t + 1.2)});')
+        self.tween(f'tl.fromTo("#{cid}l",{{scaleX:0,opacity:0}},{{scaleX:1,opacity:1,duration:0.5,ease:"power2.out",transformOrigin:"left center"}},{r2(t + 0.85)});')
+        self.tween(f'tl.to("#{cid} .apx",{{opacity:0,duration:0.5,ease:"sine.in"}},{r2(t + d - 0.5)});')
+        self.sound('swish', t + 0.1, None, 0.26)
+        self.sound('page', t + 1.0, None, 0.3)
+
+    def pcard(self, s, t, d):
+        """The archive card of the player the line names (owner, 23.11.2026: "it pulls the card of the player it talks
+        about"): a sticker-album card in the club's colour — his position, the season's shirt (never a stranger's face:
+        docs/rules/studio-pictures.md §2), his name, his games and goals at the club rolling up, and the one line the
+        archive keeps about the man. It turns in on its edge as his name is said, settles, and floats as the nearest plane."""
+        cid = self.id('pc')
+        right = s.get('side', 0) == 0
+        x, y = (1300, 110) if right else (120, 110)
+        way = 1 if right else -1
+        years = f'{s["from_year"]}–{s.get("to_year") or ""}' if s.get('from_year') else ''
+        stats = ''
+        if s.get('apps'):
+            stats += f'<div><b>{self.odo(int(s["apps"]), t + 0.9, dur=1.5)}</b><small>GAMES</small></div>'
+            if s.get('goals') is not None:
+                stats += f'<div><b>{self.odo(int(s["goals"]), t + 1.1, dur=1.5)}</b><small>GOALS</small></div>'
+        shirt = f'<img class="sh" src="assets/img/{e(s["shirt"])}">' if s.get('shirt') else ''
+        inner = (f'<div class="apc" id="{cid}c" style="left:{x}px;top:{y}px"><div class="hd" style="background:{self.US}"><span>{e((s.get("position") or "").upper())}</span>'
+                 f'<span>{e(years)}</span></div><i class="ht"></i>{shirt}<div class="nm">{e(s["name"].upper())}</div>'
+                 f'<div class="st">{stats}</div>' + (f'<div class="cl">{e(s["clue"])}</div>' if s.get('clue') else '') + '</div>')
+        # it turns in on its edge as a flat turn (scaleX from its edge), not a 3D rotation: a 3D transform on the page drops
+        # the renderer's motion blur to its slow tier for the whole film
+        self.clip(cid, t, d, f'<div class="apx">{inner}</div>', s.get('z', 11))
+        self.tween(f'tl.fromTo("#{cid}c",{{x:{420 * way},scaleX:0.08,rotation:{5 * way},opacity:0,transformOrigin:"{"0% 50%" if right else "100% 50%"}"}},'
+                   f'{{x:0,scaleX:1,rotation:{1.5 * way},opacity:1,duration:1.0,ease:"power2.out"}},{r2(t)});')
+        rest = max(0.5, d - 1.5)
+        self.tween(f'tl.to("#{cid}c",{{y:-16,x:{-26 * way},rotation:{-0.8 * way},duration:{r2(rest)},ease:"sine.inOut"}},{r2(t + 1.0)});')
+        self.tween(f'tl.to("#{cid} .apx",{{opacity:0,duration:0.5,ease:"sine.in"}},{r2(t + d - 0.5)});')
+        self.sound('page', t + 0.6, None, 0.36)
 
     def locator(self, s, t, d):
         """A SCHEMATIC of where a ground sits in its city — drawn in code, labelled as not to scale, and never passed off
@@ -1312,7 +1459,7 @@ class Film:
 .clip{{position:absolute;left:0;top:0;width:1920px;height:1080px}}
 video.clip{{width:1920px;height:1080px}}
 .ph{{overflow:hidden}} .phi{{position:absolute;left:0;top:0;width:1920px;height:1080px;background-size:cover}}
-''' + C.CSS + XP_CSS.replace('INK', INK).replace('PAPER', P) + f'''
+''' + C.CSS + XP_CSS.replace('INK', INK).replace('PAPER', P) + __import__('studio.docu.life', fromlist=['CSS']).CSS + __import__('studio.docu.press', fromlist=['CSS']).CSS.replace('INK', INK) + __import__('studio.docu.reveal', fromlist=['CSS']).CSS.replace('INK', INK) + f'''
 .veil{{position:absolute;left:0;top:0;width:1920px;height:1080px;background:{INK}}}
 .recon{{position:absolute;right:40px;top:34px;font:700 18px 'Mono';color:{P};opacity:.75;letter-spacing:1px}} .r2{{right:120px;top:90px}}
 .frame{{border:58px solid {P};box-sizing:border-box}} .paper{{background:{P}}} .ink{{background:{INK}}}
@@ -1633,7 +1780,9 @@ def turn_cards(beats: list[dict]) -> None:
         z = (at[j + 1] if j + 1 < len(at) else b['vo_t'] + b['vo_d']) - b['t']
         words = ' '.join(ws[:j + 1]).upper().split()
         h = (len(words) + 1) // 2
-        b['shots'].append({'kind': 'word', 'text': ' '.join(words[:h]) + '|' + ' '.join(words[h:]), 'bg': 'ink', 'size': 120,
+        lines = (' '.join(words[:h]), ' '.join(words[h:]))
+        size = min(120, int(1700 / (0.8 * max(len(x) for x in lines))))   # the head runs ~0.8 × size a capital: held inside 1,700 px
+        b['shots'].append({'kind': 'word', 'text': '|'.join(lines), 'bg': 'ink', 'size': size,
                            'at': round(a, 3), 'd': round(min(b['d'], z + 0.9), 3), 'z': 16})
         shown, last = shown + 1, b['t']
 

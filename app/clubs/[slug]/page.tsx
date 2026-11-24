@@ -46,6 +46,9 @@ import {ShopStrip,shopIsOpen} from '@/components/shop/ShopStrip'
 import shopCopy from '@/messages/en.shop.json'
 import {door} from '@/lib/features-server'
 import {CHANNEL} from '@/lib/stories/channel'
+import {ContentsTiles,type Tile} from '@/components/home/ContentsTiles'
+import {ClubDoors} from '@/components/clubs/ClubDoors'
+import {ShopWindow} from '@/components/shop/ShopWindow'
 export const dynamic='force-dynamic'
 export async function generateMetadata({params}:{params:{slug:string}}){const c=REGISTRY.find(r=>r.id===params.slug);if(!c)return {};const st=await readState().then(s=>s.clubs.find(x=>x.id===c.id)?.status).catch(()=>undefined);return clubMetadata({id:c.id,name:c.name,city:c.city,description:nicknameLine(worldFor(c)),status:st})}
 
@@ -110,6 +113,13 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
   <div className="wkk-span wkp-strip"><PinsRow locale={locale} where="club"/></div>
   {searchParams.lang&&!UI_LOCALES.includes(searchParams.lang as 'en'|'he')&&<p className="wk-cap wkk-span">{copy.fallback}</p>}
 
+  {/* ═════ three ways in (24.11.2026): what a supporter can do here, before anything else ═════ */}
+  {short&&core&&open.length>0&&<ClubDoors kicker={copy.clubDoorsK.replace('{club}',c.name)} doors={[
+   {key:'solo',href:pickHref||clubHref(id,'play',locale),title:copy.doorSoloT,sub:pickGate?copy.clubDoorSoloSub.replace('{gate}',String(games[`gate.${pickGate.key}` as keyof typeof games]??'')):copy.wkkAllClubGames},
+   {key:'friends',href:open.includes('blind-cow' as GateKey)?clubHref(id,'blind-cow',locale):`/our-games?play=friends${locale==='en'?'':`&lang=${locale}`}`,title:copy.doorFriendsT,sub:copy.clubDoorFriendsSub},
+   {key:'archive',href:clubHref(id,'history',locale),title:copy.doorArchiveT,sub:copy.clubDoorArchiveSub},
+  ]}/>}
+
   {/* ═════ the cover story: today's pick ═════ */}
   {!short&&core&&open.length>0&&<Link className="wk-btn wkk-allgames min-h-tap" href={clubHref(id,'play',locale)} data-testid="all-club-games">{copy.wkkAllClubGames} <span aria-hidden="true">→</span></Link>}
   {!short&&open.includes('kit-builder')&&<Link className="wk-btn paper min-h-tap wkk-span" href={clubHref(id,'kit-builder',locale)} data-testid="club-build-kit">{copy.buildKitEntry} <span aria-hidden="true">→</span></Link>}
@@ -160,19 +170,27 @@ export default async function Page({params,searchParams}:{params:{slug:string};s
   </Suspense>
   {!short&&core&&<section className="wkk-cardwrap" id="card" aria-label={copy.cardKicker}><SupporterCard clubId={id} clubName={c.name} initials={c.initials} pattern={lv?.pattern} locale={locale} open={open} names={names} total={SHARED_GATES.length} next={false} copy={{kicker:copy.cardKicker,title:copy.cardTitle,gates:copy.cardGates,rounds:copy.cardRounds,been:copy.cardBeen,since:copy.cardSince,empty:copy.cardEmpty,next:copy.cardNext}}/></section>}
 
-  <Suspense fallback={null}><ShopStrip subject={id} limit={2} className="wkk-shop"/></Suspense>
+  {/* the club's own shop window on the short home (24.11.2026: sales pushed wisely): only while it has the club's products */}
+  {short?<div className="wkk-shopwin"><Suspense fallback={null}><ShopWindow subject={id} mono/></Suspense></div>:<Suspense fallback={null}><ShopStrip subject={id} limit={2} className="wkk-shop"/></Suspense>}
 
   <nav className="wkk-contents" aria-label={copy.homeJump}>
-   <ul className="wkk-crow">
-    {short&&core&&open.length>0&&<li id="club-play"><Link className="min-h-tap" href={clubHref(id,'play',locale)}><b className="wk-head">{copy.clubTabPlay}</b><small className="wk-k muted">{copy.wkkAllClubGames}</small><Icon name="flag" size={18}/></Link></li>}
+   {short?<ContentsTiles mono title={copy.wkkInsideIssue} tiles={[
+    ...(core&&open.length>0?[{href:clubHref(id,'play',locale),title:copy.clubTabPlay,sub:copy.wkkAllClubGames,go:'→',pic:'duel'} as Tile]:[]),
+    ...(core?[{href:clubHref(id,'terrace',locale),title:world.terrace?.name??copy.homeTerraceTitle,sub:copy.wkkTerraceRow,go:'→',pic:'terrace'} as Tile]:[]),
+    {href:clubHref(id,'history',locale),title:copy.historyTitle,sub:copy.wkHistorySub,go:'→',pic:'match-archive'},
+    ...(shopOn?[{href:`/shop?club=${id}`,title:shopCopy.rowShop,sub:shopCopy.rowShopSub,go:'→',pic:'kit-detail'} as Tile]:[]),
+    ...(core?[{href:`/market?club=${id}`,title:copy.marketName,sub:copy.wkkMarketRow,go:'→',pic:'kits'} as Tile]:[]),
+    ...(core&&away?[{href:away,title:copy.awayName,sub:copy.wkAwayDaysSub,go:'→',cut:'corner-flag',plate:'green'} as Tile]:[]),
+    {href:`${CHANNEL.url}?utm_source=fanlife&utm_medium=club-contents`,title:copy.wkhInWatch,sub:copy.watchKicker,go:'↗',pic:'matchday'},
+   ]}/>
+   :<ul className="wkk-crow">
     {core&&<li id="terrace"><Link className="min-h-tap" href={clubHref(id,'terrace',locale)}><b className="wk-head">{world.terrace?.name??copy.homeTerraceTitle}</b><small className="wk-k muted">{copy.wkkTerraceRow}</small><Icon name="flag" size={18}/></Link></li>}
     {shopOn&&<li id="club-shop"><Link className="min-h-tap" href={`/shop?club=${id}`}><b className="wk-head">{shopCopy.rowShop}</b><small className="wk-k muted">{shopCopy.rowShopSub}</small><Icon name="shirt" size={18}/></Link></li>}
     {core&&<li id="club-market"><Link className="min-h-tap" href={`/market?club=${id}`}><b className="wk-head">{copy.marketName}</b><small className="wk-k muted">{copy.wkkMarketRow}</small><Icon name="shirt" size={18}/></Link></li>}
     {core&&away&&<li><Link className="min-h-tap" href={away}><b className="wk-head">{copy.awayName}</b><small className="wk-k muted">{copy.wkAwayDaysSub}</small><Icon name="plane" size={18}/></Link></li>}
     <li><Link className="min-h-tap" href={clubHref(id,'history',locale)}><b className="wk-head">{copy.historyTitle}</b><small className="wk-k muted">{copy.wkHistorySub}</small><Icon name="history" size={18}/></Link></li>
-    {short&&<li id="club-films"><a className="min-h-tap" href={`${CHANNEL.url}?utm_source=fanlife&utm_medium=club-contents`} target="_blank" rel="noopener"><b className="wk-head">{copy.wkhInWatch}</b><small className="wk-k muted">{copy.watchKicker}</small><Icon name="history" size={18}/></a></li>}
     <li><Link className="min-h-tap" href="/sources"><b className="wk-head">{copy.wkSources}</b><small className="wk-k muted">{copy.wkSourcesSub}</small><Icon name="sources" size={18}/></Link></li>
-   </ul>
+   </ul>}
    {!short&&<div className="wkk-foldwrap"><ClubFlavour item={flav} kicker={copy.flavourKicker} variant="hero"/>
    {dyk==='moment'&&flav2&&flav2.id!==flav?.id&&<ClubFlavour item={flav2} kicker={copy.historyFacts} variant="terrace"/>}</div>}
    {!short&&core&&open.length>0&&<div className="wkk-share"><ShareComposer draft={coverShare(c.id,states.filter(x=>x.allowed&&x.playable).map(x=>SHARED_GATES.find(g=>g.key===x.key)!.name))} label={copy.homeShare}/></div>}

@@ -16,8 +16,9 @@ describe('the short club home (docs/rules/club-home-short.md)',()=>{
   }
  })
  it('names what moved in the contents rows',()=>{
-  expect(page).toMatch(/short&&core&&open\.length>0&&<li id="club-play">/)
-  expect(page).toMatch(/short&&<li id="club-films">/)
+  expect(page).toContain('{short?<ContentsTiles mono title={copy.wkkInsideIssue}')
+  expect(page).toContain("title:copy.clubTabPlay,sub:copy.wkkAllClubGames")
+  expect(page).toContain("title:copy.wkhInWatch,sub:copy.watchKicker")
  })
  it('has a phone design and a desktop design of its own',()=>{
   const at=css.indexOf('THE SHORT CLUB HOME'),own=css.slice(at)

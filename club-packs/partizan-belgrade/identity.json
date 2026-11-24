@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "secondary": "#FFFFFF",
+  "surface": "#FFFFFF",
+  "text": "#151515",
+  "muted": "#4F4F4F",
+  "accent": "#2A2A2A",
+  "fonts": {
+    "display": "archivo",
+    "body": "heebo",
+    "mono": "courier",
+    "poster": "karantina"
+  },
+  "colorPolicy": {
+    "status": "approved",
+    "rivalIdentityColors": ["#D71920"],
+    "approvedBy": "editorial:2026-11-24",
+    "approvedAt": "2026-11-24",
+    "legacyRules": []
+  },
+  "historicalExemptions": [],
+  "clubId": "partizan-belgrade",
+  "background": "#F2F2F0",
+  "pattern": "stripes"
+}

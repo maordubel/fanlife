@@ -50,9 +50,18 @@ jobs:
           writer_check() {
             python3 scripts/football-stories/studio/writer_check.py 2>/dev/null | tail -1 | grep '^{' || echo '{"provider":"gemini","ok":null,"note":"check could not run"}'
           }
-          worker_busy() {
-            n=$(gh run list --workflow stories-worker.yml --limit 5 --json status --jq '[.[]|select(.status!="completed")]|length' 2>/dev/null || echo 0)
-            [ "${n:-0}" -gt 0 ]
+          # two production lanes (owner, 24.11.2026: a film waited 40 minutes behind another). A free lane is started for
+          # a waiting film; lane b only once lane a's run is past its setup and has claimed its own film (8 min), so the
+          # two never reach for the same one.
+          free_lane() {
+            runs=$(gh run list --workflow stories-worker.yml --limit 10 --json status,displayTitle,createdAt 2>/dev/null || echo '[]')
+            printf '%s' "$runs" | python3 -c '
+          import json, sys, datetime as d
+          runs = [r for r in json.load(sys.stdin) if r["status"] != "completed"]
+          busy = {("b" if r["displayTitle"].endswith("lane b") else "a"): r for r in runs}
+          now = d.datetime.now(d.timezone.utc)
+          settled = all((now - d.datetime.fromisoformat(r["createdAt"].replace("Z", "+00:00"))).total_seconds() > 480 for r in runs)
+          print("" if not settled else next((x for x in ("a", "b") if x not in busy), ""))'
           }
           social_busy() {
             n=$(gh run list --workflow stories-social.yml --limit 5 --json status --jq '[.[]|select(.status!="completed")]|length' 2>/dev/null || echo 0)
@@ -85,9 +94,11 @@ jobs:
             if [ "$(printf '%s' "$peek" | python3 -c "import sys,json;print(bool(json.load(sys.stdin).get('autopilot')))" 2>/dev/null || echo False)" = "True" ]; then
               python3 scripts/football-stories/studio/autopilot.py || echo "::warning::the autopilot will retry on the next round"
             fi
-            if [ -n "$next" ] && ! worker_busy; then
-              echo "$(date -u +%T) film waiting: $next — starting the worker"
-              gh workflow run stories-worker.yml || echo "::warning::could not start the worker"
+            lane=""
+            [ -n "$next" ] && lane=$(free_lane)
+            if [ -n "$lane" ]; then
+              echo "$(date -u +%T) film waiting: $next — starting the worker in lane $lane"
+              gh workflow run stories-worker.yml -f lane="$lane" || echo "::warning::could not start the worker"
               sleep 90
             fi
             sleep 420  # 7 minutes: the peek is the account's largest steady Vercel CPU cost (owner, 9.11.2026: stay inside the quotas)

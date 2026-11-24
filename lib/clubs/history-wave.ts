@@ -13,6 +13,7 @@ import maccabiHaifa20 from '@/club-packs/maccabi-haifa/wave-history-2026-10-20.j
 import {mergeWave} from './waves'
 import {enClub} from '@/lib/trivia/names'
 import aliases from '@/content/manual/names-en/history-side-aliases.json'
+import crossClub from '@/content/manual/cross-club-uefa-matches.json'
 
 type Raw=Record<string,unknown>
 const obj=(x:unknown):Raw=>x&&typeof x==='object'&&!Array.isArray(x)?x as Raw:{}
@@ -66,8 +67,16 @@ export function mergeHistorical<T extends Raw>(pack:T,wave:Raw):{pack:T;conflict
     out[i]={...f,sources:[...new Set([...pSources.filter(x=>usable.has(x)),...(f.sources as string[])])]}
     matched=true
    }else{
-   // Core approval, identifiers, documented season, lineup and scorers survive.
-   out[i]={...p,value:{...v,...pv,season:pv.season??v.season},sources:[...new Set([...(Array.isArray(p.sources)?p.sources as string[]:[]),...(f.sources as string[])])]}
+   // Same orientation is required for details whose meaning depends on home, away or the club side.
+   const details:Raw={}
+   if(same&&(!pv.us||!v.us||pv.us===v.us)){
+    for(const field of ['lineup','opponentLineup','bench','scorers','goalEvents']){
+     const next=v[field],previous=pv[field]
+     if(Array.isArray(next)&&next.length&&(!Array.isArray(previous)||!previous.length))details[field]=next
+    }
+    for(const field of ['venue','attendance','referee'])if(pv[field]==null&&v[field]!=null)details[field]=v[field]
+   }
+   out[i]={...p,value:{...(same?v:{}),...pv,...details,season:pv.season??v.season},sources:[...new Set([...pSources,...(f.sources as string[])])]}
    matched=true
    }
   }else{byDay.set(on,[out.length]);out.push(f)}
@@ -83,4 +92,9 @@ export function withHistorical<T extends Raw>(pack:T,clubId:string,additionalWav
  let cur=pack;const conflicts:HistoryConflict[]=[]
  for(const wave of [...(WAVES[clubId]??[]),...(additionalWave?[additionalWave]:[])]){const r=mergeHistorical(cur,obj(wave));cur=r.pack;conflicts.push(...r.conflicts)}
  return {pack:cur,conflicts}
+}
+
+export function withCrossClubHistory<T extends Raw>(pack:T,clubId:string):{pack:T;conflicts:HistoryConflict[]}{
+ const wave=(crossClub as Record<string,unknown>)[clubId]
+ return wave?mergeHistorical(pack,obj(wave)):{pack,conflicts:[]}
 }

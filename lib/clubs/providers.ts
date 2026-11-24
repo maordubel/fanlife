@@ -13,7 +13,7 @@ import celticCof from '@/club-packs/celtic/wave-kits-cof-2026-10-09.json'
 import panathinaikosCof from '@/club-packs/panathinaikos/wave-kits-cof-2026-10-09.json'
 import zrinjskiCof from '@/club-packs/zrinjski-mostar/wave-kits-cof-2026-10-09.json'
 import {withEuro} from './euro-wave'
-import {withHistorical} from './history-wave'
+import {withCrossClubHistory,withHistorical} from './history-wave'
 import {withGoalWave} from './goal-wave'
 import {withRosterWave} from './roster-wave'
 import {withForgedTrivia} from '@/lib/trivia/club'
@@ -30,8 +30,9 @@ import {withDocumentedSeasons} from './documented-seasons'
 import atalantaKitArchive from '@/club-packs/atalanta/wave-kit-archive-2026-11-22.json'
 export const compilePackEuro=(pack:Record<string,unknown>,club:RegistryClub,additionalHistory?:unknown)=>{
  const equipped=club.id==='atalanta'?mergeWave(pack,atalantaKitArchive):pack
- const history=withHistorical(equipped,club.id,additionalHistory),night=oneNightPerMatch(withCareers(correctPack(withSeasonHistory(withGoalWave(withEuro(history.pack,club.id),club.id),club.id),club.id),club.id)),result=compilePackBase(withDocumentedMatchDetails(night.pack,additionalHistory) as never,club)
- return {...result,diagnostics:[...result.diagnostics,...night.folded.map(f=>({record:`${club.id}:${f.kept}`,code:'SAME_MATCH_FOLDED',message:`${f.on}: ${f.folded.join(', ')} folded into ${f.kept} (same day, same score).`})),...history.conflicts.map(c=>({record:`${club.id}:${c.incoming}`,code:'HISTORY_CONFLICT',message:`${c.reason}: ${c.on}; existing ${c.existing}. Incoming result withheld from matches and timeline.`}))]}
+ const history=withHistorical(equipped,club.id,additionalHistory),night=oneNightPerMatch(withCareers(correctPack(withSeasonHistory(withGoalWave(withEuro(history.pack,club.id),club.id),club.id),club.id),club.id))
+ const cross=withCrossClubHistory(night.pack,club.id),result=compilePackBase(withDocumentedMatchDetails(cross.pack,additionalHistory) as never,club)
+ return {...result,diagnostics:[...result.diagnostics,...night.folded.map(f=>({record:`${club.id}:${f.kept}`,code:'SAME_MATCH_FOLDED',message:`${f.on}: ${f.folded.join(', ')} folded into ${f.kept} (same day, same score).`})),...[...history.conflicts,...cross.conflicts].map(c=>({record:`${club.id}:${c.incoming}`,code:'HISTORY_CONFLICT',message:`${c.reason}: ${c.on}; existing ${c.existing}. Incoming result withheld from matches and timeline.`}))]}
 }
 /** Existing archives only. New facts stay in review; prior approvals remain authoritative. */
 /** The colours-of-football catalogue kits the club pack has no (season, type) for: status `review`, so they reach no gate until the owner approves them. */
@@ -69,6 +70,8 @@ export const providers:Record<string,()=>Promise<{data:ClubData;diagnostics:Diag
  // ↓ promoted from the research desk (scripts/clubs/promote.ts) — one line per club
  'atalanta':async()=>compilePackEuro(mergeWave(mergeWave(mergeWave((await import('@/club-packs/atalanta/core.json')).default as never,(await import('@/club-packs/atalanta/wave-research-2026-11-14.json')).default as never),(await import('@/club-packs/atalanta/wave-kit-colours-2026-11-15.json')).default as never),(await import('@/club-packs/atalanta/wave-kit-archive-2026-11-15.json')).default as never) as never,REGISTRY.find(c=>c.id==='atalanta')!,(await import('@/club-packs/atalanta/wave-history-2026-11-21.json')).default),
  'maccabi-haifa':async()=>compilePackEuro(mergeWave(mergeWave(mergeWave((await import('@/club-packs/maccabi-haifa/core.json')).default as never,(await import('@/club-packs/maccabi-haifa/wave-research-2026-11-14.json')).default as never),(await import('@/club-packs/maccabi-haifa/wave-kit-colours-2026-11-15.json')).default as never),(await import('@/club-packs/maccabi-haifa/wave-kit-archive-2026-11-15.json')).default as never) as never,REGISTRY.find(c=>c.id==='maccabi-haifa')!),
+ 'fenerbahce':async()=>compilePackEuro((await import('@/club-packs/fenerbahce/core.json')).default,REGISTRY.find(c=>c.id==='fenerbahce')!),
+ 'partizan-belgrade':async()=>compilePackEuro((await import('@/club-packs/partizan-belgrade/core.json')).default,REGISTRY.find(c=>c.id==='partizan-belgrade')!),
 }
 /** What `loadClubBase` adds on top of a provider's output: the roster wave, then the forged English trivia. */
 export {withForgedTrivia,withArchiveMysteries,mergeWave,withMemoryPairs,withConfirmedRegisters,withDocumentedSeasons}
