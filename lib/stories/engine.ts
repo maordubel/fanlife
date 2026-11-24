@@ -12,6 +12,8 @@ export const ENGINE: EnginePart[] = [
     what: 'The season\'s shirt from the kit archive comes down when the line says the shirt; a named player\'s archive card turns in on his name (position, years, games, goals, one true line).' },
   { id: 'life', name: 'Life in the frame', since: '23.11.2026', variable: 'STORIES_LIFE', off: '0',
     what: 'Movement inside the picture: the painted crowd rows bouncing or swaying, falling paper on joy, floodlight beams, flare light, dust in the light, the ball in flight.' },
+  { id: 'press', name: 'The press', since: '23.11.2026', variable: 'STORIES_PRESS', off: '0',
+    what: 'The collage look. The film opens on a printed front page: the narrator\'s first sentence stamped as the headline, a halftone photograph, a cut-out figure, the number ringed by hand. A line with no picture of its own becomes a pasted collage on newsprint in the club\'s colour, boiling at 8 frames a second.' },
   { id: 'atlas', name: 'The atlas', since: '17.11.2026', variable: 'STORIES_ATLAS', off: '0',
     what: 'A named place is a camera flight over a printed map with the route drawn.' },
   { id: 'house-first', name: 'House crew writes first', since: '16.11.2026', variable: 'STORIES_WRITER', off: '(empty)',

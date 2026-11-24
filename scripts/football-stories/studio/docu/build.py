@@ -1114,6 +1114,21 @@ class Film:
         for js in tw:
             self.tween(js)
 
+    def press(self, s, t, d):
+        """The press (docu/press.py): the film's front page, or a collage scene — halftone pieces from the press kit on
+        newsprint, in the club's colour, pasted pieces moving on twos and threes."""
+        from . import press as PR
+        cid = self.id('pr')
+        fn = PR.front_page if s.get('page') == 'front' else PR.scene
+        html, tw = fn(cid, s, t, d, self.INK, self.US, self.PAPER)
+        self.clip(cid, t, d, f'<div class="pr">{html}</div>', s.get('z', 3))
+        for js in tw:
+            self.tween(js)
+        if s.get('page') == 'front' and not s.get('off'):
+            self.sound('page', t, None, 0.5)
+            for i in range(len(s.get('head') or [])):
+                self.sound('stamp', t + 0.7 + i * 0.42, None, 0.5)
+
     def kitdev(self, s, t, d):
         """The season's own shirt (studio/archive_props.py — owner, 23.11.2026: "if it talks about a season it pulls that
         season's kit into the film"). The archive's measured drawing, shirt only, comes down into the picture on a hanger
@@ -1421,7 +1436,7 @@ class Film:
 .clip{{position:absolute;left:0;top:0;width:1920px;height:1080px}}
 video.clip{{width:1920px;height:1080px}}
 .ph{{overflow:hidden}} .phi{{position:absolute;left:0;top:0;width:1920px;height:1080px;background-size:cover}}
-''' + C.CSS + XP_CSS.replace('INK', INK).replace('PAPER', P) + __import__('studio.docu.life', fromlist=['CSS']).CSS + f'''
+''' + C.CSS + XP_CSS.replace('INK', INK).replace('PAPER', P) + __import__('studio.docu.life', fromlist=['CSS']).CSS + __import__('studio.docu.press', fromlist=['CSS']).CSS.replace('INK', INK) + f'''
 .veil{{position:absolute;left:0;top:0;width:1920px;height:1080px;background:{INK}}}
 .recon{{position:absolute;right:40px;top:34px;font:700 18px 'Mono';color:{P};opacity:.75;letter-spacing:1px}} .r2{{right:120px;top:90px}}
 .frame{{border:58px solid {P};box-sizing:border-box}} .paper{{background:{P}}} .ink{{background:{INK}}}

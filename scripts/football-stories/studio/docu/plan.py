@@ -1288,7 +1288,9 @@ class Adapter:
                     h = self.horizon(x['src'])
                     if h is not None:
                         x['horizon'] = h
-        from . import life
+        from . import life, press
+        pk = {k: self.asset(v, 'press') for k, v in press.kit().items()}
+        self.press_made = press.direct(out, {s['n']: s for s in self.plan['shots']}, pk, self.pal.club_name or '')
         rows = self.life_rows()
         n = life.direct(out, {s['n']: s.get('narration') or '' for s in self.plan['shots']}, f'{self.pal.club_id}|{self.led.get("season")}')
         self.life_beats = n
