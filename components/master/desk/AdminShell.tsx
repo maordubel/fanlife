@@ -49,7 +49,7 @@ export function AdminShell({section,club,clubName,owner,children,renderOverviewB
     <ol>{SECTIONS.map((s,i)=><li key={s.key}><Link prefetch={false} href={deskHref(s.key,keep(s.key))} aria-current={section===s.key?'page':undefined}><span className="desk-no">{String(i+1).padStart(2,'0')}</span><span><b>{s.label}{s.key==='overview'&&renderOverviewBadge?.()}</b><small>{s.hint}</small></span></Link></li>)}</ol>
     <p className="desk-side-label">Tools</p>
     <ul className="desk-tools">{TOOLS.map(t=><li key={t.key}><Link prefetch={false} href={deskHref(t.key,keep(t.key))} aria-current={section===t.key?'page':undefined}><b>{t.label}</b><small>{t.hint}</small></Link></li>)}</ul>
-    <p className="desk-side-foot"><Link href="/master/test-lab">Test lab ↗</Link><Link href="/master/core">Compiler diagnostics ↗</Link></p>
+    <p className="desk-side-foot"><Link href="/master/life">LIFE (closed) ↗</Link><Link href="/master/test-lab">Test lab ↗</Link><Link href="/master/core">Compiler diagnostics ↗</Link></p>
    </nav>
    <main id="desk-main" className="desk-main" tabIndex={-1}>{children}</main>
   </div>
@@ -66,6 +66,7 @@ export function MoreMenu({owner}:{owner:boolean}){
  return <section className="desk-panel" aria-labelledby="more-h"><h1 id="more-h" className="desk-h1">More</h1>
   <ul className="desk-list">
    {rows.map(r=><li key={r.key}><Link href={deskHref(r.key)}><b>{r.label}</b><small>{r.hint}</small></Link></li>)}
+   <li><Link href="/master/life"><b>LIFE ↗</b><small>Closed to fans · your door in</small></Link></li>
    <li><Link href="/master/test-lab"><b>Test lab ↗</b><small>Verification tools</small></Link></li>
    <li><Link href="/master/core"><b>Compiler diagnostics ↗</b><small>Club packs, evidence, codes</small></Link></li>
    <li><a href="/" target="_blank" rel="noreferrer"><b>View site ↗</b><small>The public FAN LIFE</small></a></li>
