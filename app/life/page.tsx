@@ -8,9 +8,6 @@ import { resolveChapterAnchor, resolvePrologueAnchor, resolveStageBAnchor, resol
 import { lifeDoors, lifeTriviaDoors } from '@/lib/life/bridge'
 import { chapterFor } from '@/lib/life/content/chapters'
 
-import { lifeOpen } from '@/lib/clubs/life/entry'
-import { LifeSoon } from '@/components/clubs/LifeSoon'
-
 import { LifeStage } from './LifeStage'
 import { resolveMechanicCatalog } from './mechanicCatalog'
 
@@ -39,10 +36,7 @@ export function generateMetadata({ searchParams }: { searchParams?: { ch?: strin
   return { ...base, description, openGraph: { ...base.openGraph, description }, twitter: { ...base.twitter, description } }
 }
 
-// 24.11.2026 (owner: "LIFE must stay closed to the public. Coming soon only."): this address had no door of its own. It now
-// asks the same switch as every club's LIFE; closed, it is the coming-soon screen and nothing of the game is resolved.
-export default async function LifePage() {
-  if (!(await lifeOpen())) return <LifeSoon back="/our-games"/>
+export default function LifePage() {
   const anchor = resolveChapterAnchor()
   const prologueAnchor = resolvePrologueAnchor()
   // `prologue` is in the map because `{anchor}` in a 1983 line must resolve to the 1983

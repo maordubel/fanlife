@@ -259,5 +259,4 @@ Adding a rule: write `docs/rules/<next number>.md` and add one line here under i
 - [welcome-and-picker](welcome-and-picker.md) · The welcome screen on a first visit, Pick your club as a wall of stickers with more ways in, and the contents as pictures; check a class prefix is free before using it (23.11.2026)
 - [sale-teaser](sale-teaser.md) · A saved sale that starts later is announced up to 10 days ahead in the shop ribbon and the front page's shop window (23.11.2026)
 - [studio-story-first](studio-story-first.md) · The raconteur writes first (the small door, scenes, one dry aside, the night as a set piece, never a tally read aloud); the season's shirt and the named player's archive card on screen; life in the frame; the engine on the studio desk (23.11.2026)
-- [life-coming-soon](life-coming-soon.md) · LIFE is closed to the public: every LIFE address and door says Coming soon while the switch is off (24.11.2026)
 - [club-wired-by-hand](club-wired-by-hand.md) · A club that came in outside the research desk is finished with promote.ts --complete, the Rumble lists and its LIFE town; never push a club to main without the suite (24.11.2026)

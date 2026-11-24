@@ -226,12 +226,3 @@ html:has([data-front-loading]) .wko-wait { display: flex; } html:has([data-front
 /* a page that arrives within a third of a second never flashes its cover */
 .wkfl { animation: wkfl-in .2s .35s both; } @keyframes wkfl-in { from { opacity: 0; } }
 html[data-welcome] .wkfl { animation: none; }
-
-/* LIFE · COMING SOON (prefix .wkls): the one screen every LIFE address shows while the switch is off */
-.wkls { min-block-size: 78dvh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 40px 20px 60px; text-align: center; background: var(--mag-night); color: var(--mag-paper); background-image: radial-gradient(color-mix(in srgb, var(--mag-paper) 8%, transparent) 1.3px, transparent 1.7px); background-size: 7px 7px; }
-.wkls-art { inline-size: 180px; block-size: auto; rotate: -7deg; filter: drop-shadow(4px 5px 0 color-mix(in srgb, var(--mag-ink) 70%, transparent)); }
-.wkls .wk-banner { color: var(--mag-orange); margin: 0; }
-.wkls .wkls-h { margin: 0; font-family: var(--mag-display); font-weight: 400; font-size: clamp(72px, 24vw, 150px); line-height: .9; text-transform: uppercase; color: var(--mag-paper); text-shadow: 5px 5px 0 var(--mag-vermilion); rotate: -3deg; }
-.wkls-note { margin: 6px 0 0; max-inline-size: 34ch; font-family: var(--mag-body); font-size: 17px; line-height: 1.4; color: color-mix(in srgb, var(--mag-paper) 88%, transparent); }
-.wkls .wkls-back { margin-block-start: 10px; display: inline-flex; align-items: center; gap: 10px; min-block-size: 52px; padding-inline: 28px; background: var(--mag-paper); color: var(--mag-ink); border: 3px solid var(--mag-ink); box-shadow: 4px 4px 0 var(--mag-vermilion); font-family: var(--mag-display); font-weight: 400; font-size: 20px; text-transform: uppercase; text-decoration: none; }
-.wkls .wkls-back:focus-visible { outline: 3px solid var(--mag-cyan); outline-offset: 3px; }
