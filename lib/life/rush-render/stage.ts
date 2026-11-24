@@ -460,10 +460,10 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   }
 
   let duskDress: Dusk | null = null
-  if (dusk && level.place === 'street') { try { duskDress = dressDusk({scene, renderer, level, skin, lite, skyline, keep, rnd, glowTex, allowed: l => allowed(l, skin), banned: h => bannedColour(h, skin), sign: (a, b, c, w, h) => signTex(a, b, c, w, h), blocks: duskBlocks, facadeMats: duskFacades}) } catch { duskDress = null } }
+  if (dusk && level.place === 'street') { try { duskDress = dressDusk({scene, renderer, level, skin, lite, skyline, keep, rnd, glowTex, allowed: l => allowed(l, skin), banned: h => bannedColour(h, skin), sign: (a, b, c, w, h) => signTex(a, b, c, w, h), blocks: duskBlocks, facadeMats: duskFacades, clubId: spec.skin}) } catch { duskDress = null } }
   // the town's own pictures (rule life-flow-art): facades, the ground's plate, the skyline band; lazy and failing soft
   let flowDress: FlowDress | null = null
-  if (duskDress && level.hood) { const dd = duskDress; try { flowDress = dressFlow({scene, renderer, level, clubId: spec.skin, skinTown: skin.town, lite, keep, rnd: seeded(spec.seed ^ 0xf10a), banned: h => bannedColour(h, skin), replaces: () => [...mainFronts, ...dd.front], wallMat: duskFacades[0] ?? null, bowl, ground: dd.ground, blocks: duskBlocks}) } catch { flowDress = null } }
+  if (duskDress && level.hood) { const dd = duskDress; try { flowDress = dressFlow({scene, renderer, level, clubId: spec.skin, skinTown: skin.town, lite, keep, rnd: seeded(spec.seed ^ 0xf10a), banned: h => bannedColour(h, skin), replaces: () => [...mainFronts, ...dd.front], wallMat: duskFacades[0] ?? null, bowl, ground: dd.ground, blocks: duskBlocks, onFronts: l => dd.onFronts(l)}) } catch { flowDress = null } }
 
   /* ───────────── cars ───────────── */
   type CarParts = {body: THREE.InstancedMesh; cab: THREE.InstancedMesh; wheel: THREE.InstancedMesh; head: THREE.InstancedMesh; tail: THREE.InstancedMesh; bar: THREE.InstancedMesh}
@@ -681,7 +681,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   let child = spec.age < 13
   const heroOpts = {kit: true, scarf: true, band: !child && level.verb === 'run', pack: level.verb === 'run' || level.verb === 'find', roll: level.verb === 'carry', pants: '#2f3e5e', denim: true, eyes: 1, hair: HAIR[1], skinTone: SKIN_TONES[1], child, scale: child ? 0.78 : 0.94, noBlob: level.place === 'flat'}
   const body0 = level.hood ? heroBody(spec.age) : {cast: child ? 'boy' as const : spec.age < 19 ? 'teen' as const : 'father' as const, height: child ? 1.42 : 1.76, child}
-  const hero = troupe ? troupe.make(body0.cast, {top: skin.p, height: body0.height, child, scarf: scarfOf, pack: true, rank: 0}, () => figOf(heroOpts)) : figOf(heroOpts)
+  const hero = troupe ? troupe.make(body0.cast, {top: skin.p, height: body0.height, child, scarf: scarfOf, pack: 'pack' in body0 ? body0.pack : true, rank: 0}, () => figOf(heroOpts)) : figOf(heroOpts)
   if (!heroCar) scene.add(hero)
   // the near crowd as people: whoever comes within a few steps gets a body of his own (the troupe draws the nearest it can afford)
   const extras: (THREE.Group | undefined)[] = [], crowdExtras = new Map<number, THREE.Group>()
@@ -819,7 +819,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
         // warmth: the lights go to amber and bloom a little into what is beside them
         c*=mix(vec3(1.),vec3(1.12,1.0,.84),uWarm*.7); c+=vec3(1.,.7,.4)*pow(max(l-.22,0.),1.4)*.3*uWarm;
         // saturation up, then a filmic S round middle grey: blacks that are black, whites that keep their colour
-        l=dot(c,vec3(.2126,.7152,.0722)); c=max(mix(vec3(l),c,1.14),0.); // a saturated light pushed past zero would be NaN under pow: a black hole
+        l=dot(c,vec3(.2126,.7152,.0722)); c=max(mix(vec3(l),c,1.02),0.); // a saturated light pushed past zero would be NaN under pow: a black hole
         c=pow(c/.18,vec3(1.1))*.18;
         // speed: streaks at the rim; tired: a heartbeat that darkens the edge in the club's colour
         float a=atan(p.y,p.x); float n=h(floor(a*70.)+floor(uTime*14.)); c+=smoothstep(.93,1.,n)*smoothstep(.42,1.05,r)*uSpeed*.22*vec3(.9,.95,1.);
@@ -1330,7 +1330,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
   const setAge = (age: number) => {
     if (!troupe || !level.hood) return
     const b = heroBody(age)
-    troupe.recast(hero, b.cast, {height: b.height, child: b.child})
+    troupe.recast(hero, b.cast, {height: b.height, child: b.child, pack: b.pack})
     child = b.child
   }
   return {render, resize, project, captionAt, setAge, dispose}

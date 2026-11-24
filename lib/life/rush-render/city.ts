@@ -14,6 +14,7 @@
 import * as THREE from 'three'
 import type {VoxelSkin} from '@/lib/life/universal/skin'
 import type {Level} from '@/lib/life/rush/level'
+import {signMarks} from './look/town'
 
 export type Town = NonNullable<VoxelSkin['town']>
 
@@ -124,10 +125,8 @@ export function dressCity(x: CityCtx): boolean {
     const word = pick(words), bg = pick(signBg)
     const t = keep(canvas(512, 120, (g, w, h) => {
       g.fillStyle = bg; g.fillRect(0, 0, w, h); g.strokeStyle = 'rgba(243,239,230,.55)'; g.lineWidth = 4; g.strokeRect(6, 6, w - 12, h - 12)
-      g.fillStyle = '#f6e7cf'; g.textAlign = 'center'; g.textBaseline = 'middle'
-      let size = 74; const f = (n: number) => `700 ${n}px 'Fira Sans Condensed','Heebo','Arial Narrow',system-ui,sans-serif`
-      g.font = f(size); while (g.measureText(word).width > w * 0.86 && size > 12) { size -= 2; g.font = f(size) }
-      g.fillText(word, w / 2, h / 2 + 3)
+      // the sign's shape and its lettering's rhythm, never a readable word (no text in the world)
+      signMarks(g, w, h, '#f6e7cf', rnd); void word
     }))
     onWall(signGeo, lit('#ffffff', night ? 1.05 : 0.85, {map: t}), b.side, 3.05, b.z, 0.08)
     onWall(glass, lit(night ? '#ffc89a' : '#9fb0bd', night ? 0.95 : 0.6), b.side, 1.3, b.z, 0.05)
@@ -136,18 +135,19 @@ export function dressCity(x: CityCtx): boolean {
   const plateTxt = STREET[town]!
   const plateTex = keep(canvas(256, 80, (g, w, h) => {
     g.fillStyle = paint(town === 'tlv' ? '#1f4d8f' : town === 'ath' ? '#1f4e9c' : '#1c4a8a', '#2b2f38'); g.fillRect(0, 0, w, h)
-    g.strokeStyle = '#f3efe6'; g.lineWidth = 5; g.strokeRect(6, 6, w - 12, h - 12); g.fillStyle = '#f3efe6'; g.textAlign = 'center'; g.textBaseline = 'middle'
-    g.font = `700 34px 'Fira Sans Condensed','Heebo',system-ui,sans-serif`; g.fillText(plateTxt, w / 2, h / 2 + 2)
+    g.strokeStyle = '#f3efe6'; g.lineWidth = 5; g.strokeRect(6, 6, w - 12, h - 12); signMarks(g, w, h, '#f3efe6', rnd); void plateTxt
   }))
   const plateGeo = keep(new THREE.PlaneGeometry(1.4, 0.44)), plateMat = lit('#ffffff', 0.9, {map: plateTex})
   for (const c of level.crossings) for (const side of [-1, 1]) onWall(plateGeo, plateMat, side, 3.6, c + 9.8, 0.05)
 
-  if (town === 'ath') kiosk(x, paint, std, lit, level.hood ? level.hood.kiosk.z : z0 - 26)
+  // at dusk the town builds its own periptero (look/town.ts)
+  if (town === 'ath' && !x.dusk) kiosk(x, paint, std, lit, level.hood ? level.hood.kiosk.z : z0 - 26)
   if (town === 'mos') bazaar(x, rnd, paint, std, lit, bays, onWall)
 
   /* ───────── trees: orange trees in Athens, palms in Tel Aviv — never where green is a rival's ───────── */
+  // at dusk the town plants its own (bitter orange, ficus and palms in look/town.ts)
   const leaf = '#2f5a35'
-  if (!x.banned(leaf)) {
+  if (!x.banned(leaf) && !x.dusk) {
     const spots: number[] = []
     for (let z = z0 - 13; z > z1; z -= 27) if (clear(z)) spots.push(z)
     if (town === 'tlv') palms(x, spots, std)
@@ -171,7 +171,7 @@ export function dressCity(x: CityCtx): boolean {
   const parked: {side: number; z: number; kind: 'vespa' | 'scooter' | 'bike'}[] = []
   const kinds: ('vespa' | 'scooter' | 'bike')[] = town === 'ath' ? ['vespa', 'vespa', 'bike'] : town === 'tlv' ? ['scooter', 'scooter', 'bike', 'bike'] : ['bike']
   for (const b of bays) if (rnd() < (town === 'tlv' ? 0.4 : 0.25)) parked.push({side: b.side, z: b.z + 1.2, kind: pick(kinds)})
-  rides(x, parked, paint, std)
+  if (!x.dusk) rides(x, parked, paint, std) // at dusk the town parks its own motorbikes, instanced
 
   /* ───────── the club's cloth across the street (the dusk rig hangs its own) ───────── */
   if (!x.dusk) bunting(x, rnd, paint)
@@ -203,7 +203,7 @@ function kiosk(x: CityCtx, paint: Paint, std: Std, lit: Lit, z: number) {
     for (let r = 0; r < 6; r++) for (let k = 0; k < 7; k++) { c.fillStyle = paint(cols[(r * 3 + k) % cols.length]!, '#9a9488'); c.fillRect(8 + k * 35, 10 + r * 40, 28, 32) }
   }))
   const shelf = new THREE.Mesh(keep(new THREE.PlaneGeometry(2.4, 1.9)), lit('#ffffff', night ? 1.05 : 0.85, {map: front})); shelf.rotation.y = Math.PI / 2; shelf.position.set(0.91, 1.25, 0); g.add(shelf)
-  const sign = keep(canvas(512, 110, (c, w, h) => { c.fillStyle = '#1b1e26'; c.fillRect(0, 0, w, h); c.fillStyle = '#f3efe6'; c.textAlign = 'center'; c.textBaseline = 'middle'; c.font = `700 52px 'Fira Sans Condensed',system-ui,sans-serif`; c.fillText('ΤΣΙΓΑΡΑ · ΕΦΗΜΕΡΙΔΕΣ', w / 2, h / 2 + 3) }))
+  const sign = keep(canvas(512, 110, (c, w, h) => { c.fillStyle = '#1b1e26'; c.fillRect(0, 0, w, h); signMarks(c, w, h, '#f3efe6', seeded(z)) }))
   const sg = new THREE.Mesh(keep(new THREE.PlaneGeometry(2.6, 0.55)), lit('#ffffff', night ? 1.2 : 0.9, {map: sign})); sg.rotation.y = Math.PI / 2; sg.position.set(0.95, 2.85, 0); g.add(sg)
   if (night) { const l = new THREE.PointLight('#ffd6a8', 22, 8, 1.6); l.position.set(1.8, 1.8, 0); g.add(l) }
 }

@@ -192,7 +192,7 @@ export function createTroupe(x: {max: number; lite: boolean}): Troupe {
     recast(fig, cast, patch) {
       const h = humanOf(fig); if (!h || gone || h.dead) return
       const o = {...h.o, ...patch}
-      if (h.cast === cast && Math.abs(o.height - h.o.height) < 0.005 && !!o.child === !!h.o.child) return
+      if (h.cast === cast && Math.abs(o.height - h.o.height) < 0.005 && !!o.child === !!h.o.child && !!o.pack === !!h.o.pack) return
       h.o = o; h.cast = cast
       // the old body goes: its clips, its bones and everything hung on them (scarf, bag, catch-lights), its shadow
       h.mixer?.stopAllAction(); if (h.model) { h.mixer?.uncacheRoot(h.model); h.model.traverse(n => { const sk = (n as THREE.SkinnedMesh).skeleton; if (sk) sk.dispose() }); h.root.remove(h.model) }

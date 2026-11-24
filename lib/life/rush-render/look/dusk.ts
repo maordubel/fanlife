@@ -13,6 +13,8 @@ import {Reflector} from 'three/examples/jsm/objects/Reflector.js'
 import {mergeGeometries} from 'three/examples/jsm/utils/BufferGeometryUtils.js'
 import type {VoxelSkin} from '@/lib/life/universal/skin'
 import type {Level} from '@/lib/life/rush/level'
+import {decadeOf, lampTone} from '../era'
+import {dressTown, shopTexture, shutterTexture, signMarks, type Front, type Town} from './town'
 
 export const DUSK = {
   fog: '#8d93ad', fogDensity: 0.0074, exposure: 1.05,
@@ -25,12 +27,16 @@ export type DuskCtx = {
   allowed: (l: readonly string[]) => string[]; banned: (h: string) => boolean
   sign: (text: string, bg: string, fg: string, w?: number, h?: number) => THREE.Texture
   blocks: Block[]; facadeMats: THREE.MeshStandardMaterial[]
+  /** the club (the port's cranes are Piraeus' own) */
+  clubId?: string
 }
 export type Dusk = {update(sim: {x: number; z: number}, t: number, dt: number, cam: THREE.Vector3): void; resize(w: number, h: number): void
   /** the procedural fronts of the main street (frames, shutters, balconies, cornices, roof kit, lit shops): what the Flow facades replace */
   front: THREE.Object3D[]
   /** the stand wings and floodlight towers at the end of the road (hidden when a picture of the ground takes their place) */
-  ground: THREE.Object3D}
+  ground: THREE.Object3D
+  /** the buildings the street now wears (the Flow pictures, once they are in): the town hangs its balconies on them */
+  onFronts(list: Front[]): void}
 
 const C = (h: THREE.ColorRepresentation) => new THREE.Color(h)
 const HDR = (h: string, k: number) => C(h).multiplyScalar(k)
@@ -84,6 +90,9 @@ const WET_FRAG = `uniform vec3 color; uniform sampler2D tDiffuse,tMask; uniform 
 export function dressDusk(x: DuskCtx): Dusk {
   const {scene, renderer, level, skin, lite, keep, rnd, glowTex} = x
   const pick = <T,>(a: readonly T[]) => a[Math.floor(rnd() * a.length)]!
+  // the street lamps of the story's decade: sodium orange into the nineties, whiter LED after (era.ts)
+  const year = level.hood?.year ?? null, lampC = lampTone(typeof year === 'number' ? decadeOf(year) : null)
+  const taken: {x: number; z: number; r: number}[] = []
   const half = level.half, walk = level.walk, goalZ = level.goal.z, zTop = level.bounds.z1
   const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), e = new THREE.Euler(), one = new THREE.Vector3(1, 1, 1), p3 = new THREE.Vector3(), s3 = new THREE.Vector3()
   const put = (im: THREE.InstancedMesh, i: number, px: number, py: number, pz: number, sx = 1, sy = 1, sz = 1, ry = 0, rz = 0) => { q.setFromEuler(e.set(0, ry, rz)); im.setMatrixAt(i, m4.compose(p3.set(px, py, pz), q, s3.set(sx, sy, sz))) }
@@ -110,7 +119,7 @@ export function dressDusk(x: DuskCtx): Dusk {
 
   /* ---- the wet street: one mirror at reduced resolution, blended by a puddle mask ---- */
   const span = zTop + 30 - (goalZ - 60), zMid = (zTop + 30 + goalZ - 60) / 2
-  const shader = {name: 'WetMirror', uniforms: {color: {value: null}, tDiffuse: {value: null}, textureMatrix: {value: null}, tMask: {value: null}, uTime: {value: 0}, uBase: {value: 0.2}, uPud: {value: 0.42}, uFog: {value: DUSK.fogDensity}},
+  const shader = {name: 'WetMirror', uniforms: {color: {value: null}, tDiffuse: {value: null}, textureMatrix: {value: null}, tMask: {value: null}, uTime: {value: 0}, uBase: {value: 0.22}, uPud: {value: 0.56}, uFog: {value: DUSK.fogDensity}},
     vertexShader: 'uniform mat4 textureMatrix; varying vec4 vUv; varying vec3 vW; void main(){ vUv=textureMatrix*vec4(position,1.); vW=(modelMatrix*vec4(position,1.)).xyz; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.); }',
     fragmentShader: WET_FRAG}
   const refl = new Reflector(keep(new THREE.PlaneGeometry(half * 2, span)), {color: 0xffffff, textureWidth: 256, textureHeight: 512, multisample: 0, shader})
@@ -129,7 +138,8 @@ export function dressDusk(x: DuskCtx): Dusk {
   refl.onBeforeRender = function (this: THREE.Mesh, ...a: Parameters<THREE.Object3D['onBeforeRender']>) { overlays.forEach(o => { o.visible = false }); orig.apply(this, a); overlays.forEach(o => { o.visible = true }) }
   const mirrorScale = lite ? 0.33 : 0.5
   // road details: edge lines, manholes, patches
-  { const n = Math.floor(span / 4), edge = instanced(box, std('#d8d3c8', {roughness: 0.5}), n * 2)
+  { const worn = keep(canvasTex(16, 128, g => { g.fillStyle = '#fff'; g.fillRect(0, 0, 16, 128); for (let i = 0; i < 90; i++) { g.fillStyle = `rgba(0,0,0,${0.4 + rnd() * 0.6})`; g.fillRect(rnd() * 16, rnd() * 128, 2 + rnd() * 6, 2 + rnd() * 10) } }, false))
+    const n = Math.floor(span / 4), edge = instanced(box, std('#cfcabd', {roughness: 0.55, alphaMap: worn, transparent: true, depthWrite: false}), n * 2)
     for (let k = 0; k < n; k++) for (const [j, s] of [-1, 1].entries()) put(edge, k * 2 + j, s * (half - 0.45), 0.012, zTop + 30 - k * 4, 0.12, 0.01, 2.4)
     const mh = instanced(keep(new THREE.CylinderGeometry(0.4, 0.4, 0.02, 18)), std('#2c2e34', {metalness: 0.7, roughness: 0.4}), 14)
     for (let k = 0; k < 14; k++) put(mh, k, (rnd() - 0.5) * 8, 0.015, zTop - 8 - k * 24)
@@ -141,13 +151,13 @@ export function dressDusk(x: DuskCtx): Dusk {
   { const nL = lampZ.length * 2
     const poles = instanced(keep(new THREE.CylinderGeometry(0.07, 0.1, 6.8, 8)), std('#23252c', {metalness: 0.5}), nL)
     const arms = instanced(box, std('#23252c', {metalness: 0.5}), nL)
-    const heads = instanced(box, keep(new THREE.MeshBasicMaterial({color: HDR(DUSK.amber, 5), toneMapped: false})), nL)
-    const pools = instanced(keep(new THREE.PlaneGeometry(1, 1).rotateX(-Math.PI / 2)), keep(new THREE.MeshBasicMaterial({map: glowTex, color: HDR(DUSK.amber, 0.9), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending})), nL)
+    const heads = instanced(box, keep(new THREE.MeshBasicMaterial({color: HDR(lampC.head, 5), toneMapped: false})), nL)
+    const pools = instanced(keep(new THREE.PlaneGeometry(1, 1).rotateX(-Math.PI / 2)), keep(new THREE.MeshBasicMaterial({map: glowTex, color: HDR(lampC.pool, 0.95), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending})), nL)
     const gl = new Float32Array(nL * 3); let i = 0
     lampZ.forEach((z, k) => { for (const s of [-1, 1]) { const zz = z + (s > 0 ? 8 : 0), bx = s * (half + 1.2)
       put(poles, i, bx, 3.4, zz); put(arms, i, bx - s * 0.9, 6.75, zz, 1.9, 0.1, 0.1); put(heads, i, bx - s * 1.7, 6.66, zz, 0.9, 0.14, 0.42); put(pools, i, bx - s * 2.2, 0.035, zz, 11, 1, 11)
       gl.set([bx - s * 1.7, 6.6, zz], i * 3); i++ } void k })
-    glowPoints(gl, lite ? 3.6 : 4.8, HDR(DUSK.amber, 1.1)) }
+    glowPoints(gl, lite ? 3.6 : 4.8, HDR(lampC.head, 1.1)) }
 
   /* ---- string lights high across the street, and on every other span the club's own cloth: small pennants or a scarf
      garland in its two colours (colour policy; never a national flag). Kept high and light so the street and the ground
@@ -193,7 +203,8 @@ export function dressDusk(x: DuskCtx): Dusk {
     const balG = keep(mergeGeometries([bal, ...rails])!)
     const nBal = B.reduce((a, b) => a + Math.floor(b.h / 3.2) * Math.floor(b.w / 2.6), 0)
     const bals = instanced(balG, std('#2d3038', {roughness: 0.6}), Math.ceil(nBal * 0.4))
-    const shops = instanced(keep(new THREE.PlaneGeometry(1, 1)), keep(new THREE.MeshBasicMaterial({color: '#ffffff', toneMapped: false})), B.length)
+    const shops = instanced(keep(new THREE.PlaneGeometry(1, 1)), keep(new THREE.MeshBasicMaterial({color: '#ffffff', map: keep(shopTexture(rnd)), toneMapped: false})), B.length)
+    const shut = instanced(keep(new THREE.PlaneGeometry(1, 1)), std('#ffffff', {map: keep(shutterTexture(rnd)), roughness: 0.6, metalness: 0.3}), B.length); let hi = 0
     // awning: slats alternating the club's colour and cream, baked as vertex colours
     const slat = (col: string, z0: number) => { const g = new THREE.BoxGeometry(1.7, 0.08, 0.48).translate(0, 0, z0); const c = C(col), n = g.attributes.position!.count, a = new Float32Array(n * 3); for (let i = 0; i < n; i++) a.set([c.r, c.g, c.b], i * 3); g.setAttribute('color', new THREE.BufferAttribute(a, 3)); return g }
     const awnG = (a: string) => keep(mergeGeometries([0, 1, 2, 3, 4, 5].map(k => slat(k % 2 ? '#efe6da' : a, (k - 2.5) * 0.48)))!)
@@ -206,14 +217,16 @@ export function dressDusk(x: DuskCtx): Dusk {
       if (rnd() < 0.7) put(tank, ti++, s * (walk + 3 + rnd() * 4), b.h + 1.1, b.z + (rnd() - 0.5) * b.w * 0.6)
       for (let k = 0; k < 2; k++) if (rnd() < 0.8) put(acs, ai++, s * (walk + 1 + rnd() * 7), b.h + 0.5, b.z + (rnd() - 0.5) * b.w * 0.8, 1.4, 1, 1.0 + rnd())
       for (let fl = 2; fl * 3.2 + 1 < b.h; fl++) for (let k = 0; k < Math.floor(b.w / 2.6); k++) if (rnd() < 0.38 && bi < bals.count) { put(bals, bi++, s * (walk - 0.04), fl * 3.2 - 0.4, b.z + b.w / 2 - 1.3 - k * 2.6, 1, 1, s > 0 ? -1 : 1, s > 0 ? Math.PI / 2 : -Math.PI / 2) }
-      const shopC = pick([DUSK.amber, DUSK.cream, '#ffd8b4', DUSK.cool]); if (rnd() < 0.85) { q.setFromEuler(e.set(0, -s * Math.PI / 2, 0)); shops.setMatrixAt(si, m4.compose(p3.set(s * (walk - 0.03), 1.35, b.z), q, s3.set(b.w - 1.6, 2.2, 1))); shops.setColorAt(si, HDR(shopC, 1.5 + rnd())); si++ }
+      const shopC = pick([DUSK.amber, DUSK.cream, '#ffd8b4', DUSK.cool]); if (rnd() < 0.85) { q.setFromEuler(e.set(0, -s * Math.PI / 2, 0)); shops.setMatrixAt(si, m4.compose(p3.set(s * (walk - 0.03), 1.35, b.z), q, s3.set(b.w - 1.6, 2.2, 1))); shops.setColorAt(si, HDR(shopC, 0.9 + rnd() * 0.5)); si++
+        // the shutter half down at dusk (or down all the way where the shop has gone home)
+        const down = rnd() < 0.35 ? 2.2 : 0.6 + rnd() * 0.8; shut.setMatrixAt(hi++, m4.compose(p3.set(s * (walk - 0.05), 2.45 - down / 2, b.z), q, s3.set(b.w - 1.5, down, 1))) }
       for (let k = 0; k < Math.floor(b.w / 3); k++) { const zz = b.z - b.w / 2 + 1.5 + k * 3; if (rnd() < 0.7) { const im = rnd() < 0.5 ? awnA : awnB; const idx = im === awnA ? a1++ : a2++
         // slats run along z, the awning drops toward the street
         q.setFromEuler(e.set(0, s > 0 ? Math.PI : 0, s * 0.25 * (s > 0 ? -1 : 1))); void idx
         im.setMatrixAt(idx, m4.compose(p3.set(s * (walk - 0.85), 2.75, zz), q, s3.set(1, 1, 1))) } }
     }
-    cornice.count = ci; tank.count = ti; acs.count = ai; pil.count = pi; bals.count = bi; shops.count = si; awnA.count = a1; awnB.count = a2
-    front.push(cornice, tank, acs, pil, bals, shops) }
+    cornice.count = ci; tank.count = ti; acs.count = ai; pil.count = pi; bals.count = bi; shops.count = si; shut.count = hi; awnA.count = a1; awnB.count = a2
+    front.push(cornice, tank, acs, pil, bals, shops, shut) }
 
 
   /* ---- real facades: the town's own wall texture in metres, damp toward the ground, with frames, sills, shutters, plants ---- */
@@ -272,10 +285,11 @@ export function dressDusk(x: DuskCtx): Dusk {
     let bi = 0, ci = 0, si = 0; spots.forEach((z, k) => { const s = k % 2 ? 1 : -1
       put(bins, bi++, s * 10.3, 0.62, z + 3); put(bins, bi++, -s * 10.4, 0.62, z - 9)
       put(bench, ci++, -s * 10.2, 0.16, z - 3, 1, 1, 1, -s * Math.PI / 2)
-      put(scoot, si++, s * 9.4, 0.16, z - 14, 1, 1, 1, Math.PI / 2 + rnd() * 0.4) })
+      put(scoot, si++, s * 9.4, 0.16, z - 14, 1, 1, 1, Math.PI / 2 + rnd() * 0.4)
+      taken.push({x: s * 10.3, z: z + 3, r: 0.6}, {x: -s * 10.4, z: z - 9, r: 0.6}, {x: -s * 10.2, z: z - 3, r: 1.1}, {x: s * 9.4, z: z - 14, r: 0.8}) })
     bins.count = bi; bench.count = ci; scoot.count = si
     // two bus stops: a lit shelter on the pavement
-    for (const [sx, sz] of [[1, -46], [-1, -186]] as const) { const z = nearCross(sz, 9) ? sz - 12 : sz
+    for (const [sx, sz] of [[1, -46], [-1, -186]] as const) { const z = nearCross(sz, 9) ? sz - 12 : sz; taken.push({x: sx * 9.5, z, r: 2.2})
       const roof = new THREE.Mesh(box, std('#2a2c34')); roof.scale.set(1.6, 0.1, 3.4); roof.position.set(sx * 9.5, 2.5, z); add(roof)
       const back = new THREE.Mesh(keep(new THREE.PlaneGeometry(3.2, 2.2)), keep(new THREE.MeshBasicMaterial({color: HDR('#bcd2ff', 1.1), toneMapped: false}))); back.position.set(sx * 10.2, 1.3, z); back.rotation.y = -sx * Math.PI / 2; add(back)
       for (const dz of [-1.6, 1.6]) { const p = new THREE.Mesh(box, std('#2a2c34')); p.scale.set(0.08, 2.5, 0.08); p.position.set(sx * 9.0, 1.25, z + dz); add(p) } } }
@@ -288,7 +302,7 @@ export function dressDusk(x: DuskCtx): Dusk {
   const glassS = new THREE.Shape(); glassS.moveTo(-0.85, 1.1).lineTo(-0.6, 1.43).lineTo(0.5, 1.43).lineTo(0.92, 1.3).lineTo(1.22, 1.1)
   const glassG = keep(new THREE.ExtrudeGeometry(glassS, {depth: 1.62, bevelEnabled: false}).translate(0, 0, -0.81))
   const wheelG = keep(new THREE.CylinderGeometry(0.34, 0.34, 0.24, 14).rotateX(Math.PI / 2))
-  const carCols = x.allowed(['#ece8de', '#2c3a55', '#7a7f89', '#1d1f24', '#9a3a2c', '#3f5f4c', '#6b6f78'])
+  const carCols = x.allowed([...lampC.cars, '#7a7f89', '#1d1f24']); scene.userData.duskCars = true
   type Car = {x: number; z: number; dir: -1 | 1; v: number; moving: boolean; col: string; lit: boolean}
   const cars: Car[] = []
   { const stall = (z: number) => nearCross(z, 9) || z > -34
@@ -329,13 +343,13 @@ export function dressDusk(x: DuskCtx): Dusk {
     let bn = 0; const cols = x.allowed([skin.p, '#efe6da', skin.s])
     want.forEach((zw, k) => {
       let z = zw; while (nearCross(z, 9) || Math.abs(z - (level.hood?.kiosk.z ?? 1e9)) < 5 || level.hood?.people.some(p => Math.abs(p.z - z) < 4 && Math.abs(p.x) > 8)) z -= 3
-      const s = k % 2 ? 1 : -1, bx = s * 9.7, g = new THREE.Group(); g.position.set(bx, 0, z); g.rotation.y = s > 0 ? -Math.PI / 2 : Math.PI / 2
+      const s = k % 2 ? 1 : -1, bx = s * 9.7, g = new THREE.Group(); g.position.set(bx, 0, z); g.rotation.y = s > 0 ? -Math.PI / 2 : Math.PI / 2; taken.push({x: bx, z, r: 2.2})
       const part = (geo: THREE.BufferGeometry, m: THREE.Material, px: number, py: number, pz: number, sx = 1, sy = 1, sz = 1) => { const o = new THREE.Mesh(geo, m); o.position.set(px, py, pz); o.scale.set(sx, sy, sz); g.add(o); return o }
       part(box, std('#efe6da'), 0, 0.5, 0, 2.2, 1.0, 1.1); part(box, std('#3a3e48'), 0, 1.1, -0.45, 2.3, 2.2, 0.3)
       for (const px of [-1.05, 1.05]) part(box, std('#cfcfd4', {metalness: 0.5}), px, 1.2, 0.55, 0.06, 2.4, 0.06)
       const canopy = part(box, keep(new THREE.MeshStandardMaterial({map: awn, roughness: 0.8, emissive: C('#5a2a1a'), emissiveIntensity: 0.5})), 0, 2.5, 0.2, 2.6, 0.1, 1.7); canopy.rotation.x = 0.22
       part(keep(new THREE.PlaneGeometry(2.0, 1.1)), keep(new THREE.MeshBasicMaterial({color: HDR(DUSK.amber, 1.6), toneMapped: false})), 0, 1.4, -0.28)
-      part(keep(new THREE.PlaneGeometry(2.4, 0.5)), keep(new THREE.MeshBasicMaterial({map: x.sign((words[k % Math.max(1, words.length)] ?? '').toUpperCase() || ' ', '#15161c', '#f3efe6'), toneMapped: false})), 0, 2.2, 0.62)
+      part(keep(new THREE.PlaneGeometry(2.4, 0.5)), keep(new THREE.MeshBasicMaterial({map: keep(canvasTex(256, 52, gg => { gg.fillStyle = '#15161c'; gg.fillRect(0, 0, 256, 52); signMarks(gg, 256, 52, '#f3efe6', rnd) })), toneMapped: false})), 0, 2.2, 0.62); void words
       part(box, std(sg[0]!), 0.9, 0.5, 0.58, 0.05, 1, 1)
       scene.add(g); group.add(g)
       glow.push(bx - s * 0.4, 1.6, z); for (let b = 0; b < 6; b++) { put(bl, bn, bx + s * 0.1 + (b % 3) * 0.28 * s, 2.7 + (b % 2) * 0.35, z + 1.0 + (b % 3) * 0.15, 1, 1.2, 1); bl.setColorAt(bn, C(cols[b % cols.length]!)); bn++ }
@@ -343,7 +357,8 @@ export function dressDusk(x: DuskCtx): Dusk {
     glowPoints(new Float32Array(glow), 5, HDR(DUSK.amber, 1.1)) }
 
   /* ---- trees with volume (never where green is a rival's) ---- */
-  if (!x.banned('#2f4a33')) {
+  const townId = skin.town === 'ath' || skin.town === 'tlv' ? skin.town : 'other'
+  if (!x.banned('#2f4a33') && townId === 'other') {
     const spots: number[] = []; for (let z = zTop - 6; z > goalZ + 30; z -= 24) if (!nearCross(z, 9)) spots.push(z)
     const blobs: THREE.BufferGeometry[] = []
     ;([[0, 0, 0, 1.5], [0.9, 0.5, 0.3, 1.1], [-0.9, 0.3, -0.4, 1.2], [0.2, 1.2, -0.3, 1.0], [-0.3, 0.9, 0.8, 1.0], [0.7, -0.2, -0.8, 0.9]] as const).forEach(([bx, by, bz, r]) => {
@@ -352,7 +367,7 @@ export function dressDusk(x: DuskCtx): Dusk {
       g.setAttribute('color', new THREE.BufferAttribute(col, 3)); blobs.push(g) })
     const crownG = keep(mergeGeometries(blobs)!), cr = instanced(crownG, keep(new THREE.MeshStandardMaterial({vertexColors: true, roughness: 0.9})), spots.length * 2)
     const tr = instanced(keep(new THREE.CylinderGeometry(0.12, 0.2, 4.4, 8)), std('#3d2c22'), spots.length * 2)
-    let ti = 0; for (const z of spots) for (const s of [-1, 1]) { const zz = z + (s > 0 ? 12 : 0), sc = 0.95 + rnd() * 0.4; put(tr, ti, s * 9.7, 2.2, zz); put(cr, ti, s * 9.7, 5.6 * sc, zz, sc, sc, sc, rnd() * 6); ti++ }
+    let ti = 0; for (const z of spots) for (const s of [-1, 1]) { const zz = z + (s > 0 ? 12 : 0), sc = 0.95 + rnd() * 0.4; put(tr, ti, s * 9.7, 2.2, zz); put(cr, ti, s * 9.7, 5.6 * sc, zz, sc, sc, sc, rnd() * 6); taken.push({x: s * 9.7, z: zz, r: 1.4}); ti++ }
     cr.count = tr.count = ti
   }
 
@@ -376,11 +391,20 @@ export function dressDusk(x: DuskCtx): Dusk {
       const halo = new THREE.Sprite(keep(new THREE.SpriteMaterial({map: glowTex, color: HDR('#ffe6cc', 0.28), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, fog: false}))); halo.scale.set(70, 70, 1); halo.position.set(tx, th + 5, tz + 2); add(halo)
       const beam = new THREE.Mesh(keep(new THREE.CylinderGeometry(2, 14, 60, 14, 1, true).translate(0, -30, 0)), keep(new THREE.MeshBasicMaterial({map: beamTex, color: HDR('#ffe9d4', 0.1), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, side: THREE.DoubleSide, fog: false}))); beam.position.set(tx, th + 3, tz + 1); beam.rotation.x = -0.5; add(beam) } }
 
+  /* ---- the town: its own balconies on every front, its pavement, trees, kiosk and cafés, and the life in it (town.ts) ---- */
+  let town: Town | null = null
+  try {
+    town = dressTown({scene: group, level, town: townId, clubId: x.clubId ?? '', lite, year, keep, rnd, glowTex, banned: x.banned, taken})
+    town.fronts(x.blocks.map(b => ({s: Math.sign(b.x), zc: b.z, W: b.w, H: b.h, floors: Math.max(1, Math.floor((b.h - 1) / 3.2))})))
+  } catch { town = null }
+
   const resize = (w: number, h: number) => refl.getRenderTarget().setSize(Math.max(64, Math.floor(w * mirrorScale)), Math.max(64, Math.floor(h * mirrorScale)))
   return {
     resize, front, ground,
+    onFronts(list) { try { town?.fronts(list) } catch { /* the town keeps the balconies it had */ } },
     update(sim, t, dt, cam) {
       dome.position.copy(cam)
+      town?.update(sim, t, dt)
       mat.uniforms.uTime!.value = t; overlays.forEach(o => { (o.material as THREE.ShaderMaterial).uniforms.uTime!.value = t })
       // slow cars brake for whoever stands ahead of them
       for (const c of cars) { if (!c.moving) continue

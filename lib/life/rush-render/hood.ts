@@ -7,11 +7,11 @@ import * as THREE from 'three'
 import type {VoxelSkin} from '@/lib/life/universal/skin'
 import type {Level, Look} from '@/lib/life/rush/level'
 import type {Sim} from '@/lib/life/rush/sim'
-import {hoodWord} from '@/lib/life/hood/words'
 import type {AmbState} from '@/lib/life/hood/ambient'
 import {lookAt, pose, turnTo, type FigureData, type Gesture, type Mood} from './figure'
 import {humanPoint, isSkinned} from './human/human'
 import {dressEra} from './era'
+import {signMarks} from './look/town'
 
 /** a conversation as the picture plays it: who speaks, with what face and hands, and how long this line has been on */
 export type TalkDir = {who: string; mood?: Mood; gesture?: Gesture | null; you?: Mood; shot?: 'two' | 'close'; beat?: 'scarf' | null; speak: number; tt: number}
@@ -34,6 +34,9 @@ export function dressHood(x: HoodCtx): HoodDress {
   const add = (m: THREE.Object3D) => { scene.add(m); return m }
   const mesh = (g: THREE.BufferGeometry, m: THREE.Material, px: number, py: number, pz: number, sx = 1, sy = 1, sz = 1) => { const o = new THREE.Mesh(g, m); o.scale.set(sx, sy, sz); o.position.set(px, py, pz); o.castShadow = false; return add(o) as THREE.Mesh }
   const W = level.walk
+  // a sign's shape and lettering rhythm, never a readable word (no text in the world)
+  let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647
+  const marks = (bg: string, fg: string, w = 256, h = 64) => { const c = document.createElement('canvas'); c.width = w; c.height = h; const g = c.getContext('2d')!; g.fillStyle = bg; g.fillRect(0, 0, w, h); signMarks(g, w, h, fg, rnd); const t = keep(new THREE.CanvasTexture(c)); t.colorSpace = THREE.SRGBColorSpace; return t }
   dressEra(x) // the era's dressing (feel pass; `era.ts` owns it)
 
   /* the front door: on the facade of the home block, a step, the number plate, a lit fanlight */
@@ -43,7 +46,7 @@ export function dressHood(x: HoodCtx): HoodDress {
     mesh(box, std('#8f8a80'), d.x + 0.5, 0.1, d.z, 1.2, 0.2, 1.7)
     const fan = mesh(keep(new THREE.PlaneGeometry(1.0, 0.4)), keep(new THREE.MeshBasicMaterial({color: new THREE.Color('#ffd9a0').multiplyScalar(night ? 1.6 : 0.8), toneMapped: false})), d.x + 0.1, 2.45, d.z)
     fan.rotation.y = Math.PI / 2
-    const pl = mesh(keep(new THREE.PlaneGeometry(0.4, 0.28)), keep(new THREE.MeshBasicMaterial({map: x.sign('27', '#1b1e26', '#f3efe6', 128, 96), toneMapped: false})), d.x + 0.12, 1.8, d.z + 1.1)
+    const pl = mesh(keep(new THREE.PlaneGeometry(0.4, 0.28)), keep(new THREE.MeshBasicMaterial({map: marks('#1b1e26', '#f3efe6', 128, 96), toneMapped: false})), d.x + 0.12, 1.8, d.z + 1.1)
     pl.rotation.y = Math.PI / 2
     if (night && !x.lite) { const l = new THREE.PointLight('#ffd6a8', 18, 9, 1.6); l.position.set(d.x + 1.6, 2.4, d.z); add(l) } }
 
@@ -52,7 +55,7 @@ export function dressHood(x: HoodCtx): HoodDress {
     mesh(box, std(ok(skin.p, '#4a505c')), k.x, 1.2, k.z, 1.8, 2.4, 2.6)
     mesh(box, std('#e9e4da'), k.x, 2.5, k.z, 2.3, 0.18, 3.1)
     const shelf = mesh(keep(new THREE.PlaneGeometry(2.4, 1.5)), keep(new THREE.MeshBasicMaterial({color: new THREE.Color('#ffcf9e').multiplyScalar(night ? 1.1 : 0.7), toneMapped: false})), k.x + 0.92, 1.25, k.z); shelf.rotation.y = Math.PI / 2
-    const sg = mesh(keep(new THREE.PlaneGeometry(2.6, 0.6)), keep(new THREE.MeshBasicMaterial({map: x.sign((skin.strings.kiosk ?? hoodWord('hood.who.kiosk')).toUpperCase(), '#1b1e26', '#f3efe6'), toneMapped: false})), k.x + 0.95, 2.85, k.z); sg.rotation.y = Math.PI / 2
+    const sg = mesh(keep(new THREE.PlaneGeometry(2.6, 0.6)), keep(new THREE.MeshBasicMaterial({map: marks('#1b1e26', '#f3efe6'), toneMapped: false})), k.x + 0.95, 2.85, k.z); sg.rotation.y = Math.PI / 2
     if (night && !x.lite) { const l = new THREE.PointLight('#ffd6a8', 22, 8, 1.6); l.position.set(k.x + 1.8, 1.8, k.z); add(l) } }
 
   /* the school gate: two piers, an arch with the word over it, railings along the wall */
@@ -60,7 +63,7 @@ export function dressHood(x: HoodCtx): HoodDress {
     for (const dx of [-2.2, 2.2]) mesh(box, std('#8f8a80'), s.x + dx, 1.6, zf, 0.7, 3.2, 0.7)
     mesh(box, std('#2b2f3a'), s.x, 3.3, zf, 5.1, 0.25, 0.4)
     for (let i = -6; i <= 6; i++) mesh(box, std('#2b2f3a'), s.x + i * 0.3, 0.9, zf + 0.05, 0.05, 1.8, 0.05)
-    mesh(keep(new THREE.PlaneGeometry(4, 0.8)), keep(new THREE.MeshBasicMaterial({map: x.sign((skin.strings.school ?? hoodWord('hood.place.school')).toUpperCase(), ok(skin.p, '#2c4d8a'), '#f3efe6'), toneMapped: false})), s.x, 3.9, zf + 0.25)
+    mesh(keep(new THREE.PlaneGeometry(4, 0.8)), keep(new THREE.MeshBasicMaterial({map: marks(ok(skin.p, '#2c4d8a'), '#f3efe6'), toneMapped: false})), s.x, 3.9, zf + 0.25)
     for (const sd of [-1, 1]) for (let i = 0; i < 14; i++) mesh(box, std('#2b2f3a'), s.x + sd * (3.4 + i * 0.4), 0.8, zf + 0.05, 0.04, 1.6, 0.04) }
 
   /* the pitch at the end of the side street: lines and two small goals, a hard surface (never a rival's green) */

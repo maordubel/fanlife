@@ -52,6 +52,54 @@
    "prompt": "A two-storey old Jaffa building of pale sandstone: pointed and round-arched windows with wooden shutters, a small iron balcony, heavy metal workshop doors at street level. Strictly front-on orthographic elevation of this ONE building, flat and straight like an architect's elevation rendered as a photograph: no perspective, no vanishing point, no side walls, no sky, no street, no pavement, no people, no vehicles, nothing in front of it. The building fills the square frame from edge to edge on all four sides, roof line at the top edge and ground-floor shop fronts with closed roller shutters and blank fascias at the bottom edge, so the picture can be mapped onto a box. Evenly lit at dusk, some windows glowing warm and others dark. Muted natural materials only: off-white, beige, grey, stone, weathered wood, dark metal; no saturated red, green or blue surfaces. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
   },
   {
+   "stem": "life-facade-ath-shop1-fl1",
+   "aspect": "1:1",
+   "use": "facade",
+   "town": "ath",
+   "priority": 1,
+   "prompt": "The ground floor of an Athenian apartment block, one small neighbourhood shop: a wide glazed front with its grey metal roller shutter pulled half down, warm light from inside on plain shelves of unlabelled goods and a counter, a marble step and a marble-clad pillar on each side, a blank fascia above. Strictly front-on orthographic elevation, flat and straight like an architect's elevation rendered as a photograph: no perspective, no vanishing point, no side walls, no sky, no street, no pavement, no vehicles, nothing in front of it. The subject fills the square frame from edge to edge. Dusk light, warm light from inside where there is an inside. Every fascia, awning and shutter is blank. Muted natural materials only: off-white, beige, grey, stone, weathered wood, dark metal; no saturated red, green or blue surfaces. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-facade-ath-kiosk-fl1",
+   "aspect": "1:1",
+   "use": "facade",
+   "town": "ath",
+   "priority": 1,
+   "prompt": "An Athenian street kiosk seen straight from the front: a small metal booth with a deep overhanging roof, its front window crowded with racks of magazines and newspapers whose covers are blank and colourful, a wall of small cigarette packs without markings, a glass-door drinks fridge glowing beside it, papers pegged along the edges, lit from inside like a lantern. Strictly front-on orthographic elevation, flat and straight like an architect's elevation rendered as a photograph: no perspective, no vanishing point, no side walls, no sky, no street, no pavement, no vehicles, nothing in front of it. The subject fills the square frame from edge to edge. Dusk light, warm light from inside where there is an inside. Every fascia, awning and shutter is blank. Muted natural materials only: off-white, beige, grey, stone, weathered wood, dark metal; no saturated red, green or blue surfaces. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-facade-ath-corner-fl1",
+   "aspect": "1:1",
+   "use": "facade",
+   "town": "ath",
+   "priority": 1,
+   "prompt": "A five-storey Athenian corner apartment block of the 1970s seen straight on its rounded, chamfered corner: continuous balconies wrapping the corner on every floor with thin metal railings and striped canvas awnings let down half way, plants in pots, a shop with a half-down shutter at the foot of the corner. Strictly front-on orthographic elevation, flat and straight like an architect's elevation rendered as a photograph: no perspective, no vanishing point, no side walls, no sky, no street, no pavement, no vehicles, nothing in front of it. The subject fills the square frame from edge to edge. Dusk light, warm light from inside where there is an inside. Every fascia, awning and shutter is blank. Muted natural materials only: off-white, beige, grey, stone, weathered wood, dark metal; no saturated red, green or blue surfaces. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-facade-tlv-shop1-fl1",
+   "aspect": "1:1",
+   "use": "facade",
+   "town": "tlv",
+   "priority": 1,
+   "prompt": "The ground floor of a Tel Aviv apartment house, a small neighbourhood grocery: a narrow glazed front with its metal roller shutter half down, warm light inside on plain shelves of unlabelled goods, crates of fruit on a low stand by the door, a blank fascia above, the plaster stained above the door. Strictly front-on orthographic elevation, flat and straight like an architect's elevation rendered as a photograph: no perspective, no vanishing point, no side walls, no sky, no street, no pavement, no vehicles, nothing in front of it. The subject fills the square frame from edge to edge. Dusk light, warm light from inside where there is an inside. Every fascia, awning and shutter is blank. Muted natural materials only: off-white, beige, grey, stone, weathered wood, dark metal; no saturated red, green or blue surfaces. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-facade-tlv-kiosk-fl1",
+   "aspect": "1:1",
+   "use": "facade",
+   "town": "tlv",
+   "priority": 1,
+   "prompt": "A Tel Aviv street kiosk built into the front of an old building, seen straight on: a hatch window under a short metal canopy, glowing fridges of drinks, racks of sweets and newspapers with blank covers, plastic crates stacked to one side, lit from inside. Strictly front-on orthographic elevation, flat and straight like an architect's elevation rendered as a photograph: no perspective, no vanishing point, no side walls, no sky, no street, no pavement, no vehicles, nothing in front of it. The subject fills the square frame from edge to edge. Dusk light, warm light from inside where there is an inside. Every fascia, awning and shutter is blank. Muted natural materials only: off-white, beige, grey, stone, weathered wood, dark metal; no saturated red, green or blue surfaces. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-facade-tlv-pilotis-fl1",
+   "aspect": "1:1",
+   "use": "facade",
+   "town": "tlv",
+   "priority": 1,
+   "prompt": "A three-storey white International Style apartment house of 1930s Tel Aviv raised on round concrete columns (pilotis): the open ground floor is a shaded space between the columns with a bare bulb, bicycles leaning on a column and the dark floor of the yard behind; above it long horizontal ribbon windows, balconies with rounded ends and solid parapets, slatted shutters half down, a flat roof edge. Strictly front-on orthographic elevation, flat and straight like an architect's elevation rendered as a photograph: no perspective, no vanishing point, no side walls, no sky, no street, no pavement, no vehicles, nothing in front of it. The subject fills the square frame from edge to edge. Dusk light, warm light from inside where there is an inside. Every fascia, awning and shutter is blank. Muted natural materials only: off-white, beige, grey, stone, weathered wood, dark metal; no saturated red, green or blue surfaces. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
    "stem": "life-stadium-hapoel-tel-aviv-a-fl1",
    "aspect": "16:9",
    "use": "stadium",
@@ -212,6 +260,38 @@
    "prompt": "An old European workshop and warehouse front: soot-dark brick, large metal-framed windows, two big sliding metal doors, a hoist beam under the eaves. Strictly front-on orthographic elevation of this ONE building, flat and straight like an architect's elevation rendered as a photograph: no perspective, no vanishing point, no side walls, no sky, no street, no pavement, no people, no vehicles, nothing in front of it. The building fills the square frame from edge to edge on all four sides, roof line at the top edge and ground-floor shop fronts with closed roller shutters and blank fascias at the bottom edge, so the picture can be mapped onto a box. Evenly lit at dusk, some windows glowing warm and others dark. Muted natural materials only: off-white, beige, grey, stone, weathered wood, dark metal; no saturated red, green or blue surfaces. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
   },
   {
+   "stem": "life-facade-ath-cafe-fl1",
+   "aspect": "1:1",
+   "use": "facade",
+   "town": "ath",
+   "priority": 2,
+   "prompt": "The ground floor of an old Athenian neighbourhood coffee house: tall glazed doors folded open, warm light inside on small marble tables and wooden chairs, a long counter at the back, an empty pavement edge in front, a plain canvas awning rolled out above. Strictly front-on orthographic elevation, flat and straight like an architect's elevation rendered as a photograph: no perspective, no vanishing point, no side walls, no sky, no street, no pavement, no vehicles, nothing in front of it. The subject fills the square frame from edge to edge. Dusk light, warm light from inside where there is an inside. Every fascia, awning and shutter is blank. Muted natural materials only: off-white, beige, grey, stone, weathered wood, dark metal; no saturated red, green or blue surfaces. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-facade-ath-balcony-fl1",
+   "aspect": "1:1",
+   "use": "facade",
+   "town": "ath",
+   "priority": 2,
+   "prompt": "A strip of three floors of an Athenian apartment block, only the balconies: continuous concrete balcony slabs with thin metal railings, retractable striped canvas awnings in faded off-white and grey-blue pulled out at different lengths, potted plants, a folded chair, laundry on a rack. Strictly front-on orthographic elevation, flat and straight like an architect's elevation rendered as a photograph: no perspective, no vanishing point, no side walls, no sky, no street, no pavement, no vehicles, nothing in front of it. The subject fills the square frame from edge to edge. Dusk light, warm light from inside where there is an inside. Every fascia, awning and shutter is blank. Muted natural materials only: off-white, beige, grey, stone, weathered wood, dark metal; no saturated red, green or blue surfaces. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-facade-tlv-cafe-fl1",
+   "aspect": "1:1",
+   "use": "facade",
+   "town": "tlv",
+   "priority": 2,
+   "prompt": "The ground floor of a white Tel Aviv apartment house turned into a small café: wide glazed doors opened, warm light inside on small round tables and bentwood chairs, a counter with a coffee machine shape at the back, a plain canvas awning above. Strictly front-on orthographic elevation, flat and straight like an architect's elevation rendered as a photograph: no perspective, no vanishing point, no side walls, no sky, no street, no pavement, no vehicles, nothing in front of it. The subject fills the square frame from edge to edge. Dusk light, warm light from inside where there is an inside. Every fascia, awning and shutter is blank. Muted natural materials only: off-white, beige, grey, stone, weathered wood, dark metal; no saturated red, green or blue surfaces. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-facade-tlv-balcony-fl1",
+   "aspect": "1:1",
+   "use": "facade",
+   "town": "tlv",
+   "priority": 2,
+   "prompt": "A strip of three floors of a white Bauhaus apartment house in Tel Aviv, only the balconies: long horizontal balconies with rounded ends and solid rendered parapets, slatted plastic roller shutters at different heights behind them, an air-conditioner unit, plants in pots. Strictly front-on orthographic elevation, flat and straight like an architect's elevation rendered as a photograph: no perspective, no vanishing point, no side walls, no sky, no street, no pavement, no vehicles, nothing in front of it. The subject fills the square frame from edge to edge. Dusk light, warm light from inside where there is an inside. Every fascia, awning and shutter is blank. Muted natural materials only: off-white, beige, grey, stone, weathered wood, dark metal; no saturated red, green or blue surfaces. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
    "stem": "life-stadium-hapoel-tel-aviv-b-fl1",
    "aspect": "16:9",
    "use": "stadium",
@@ -252,6 +332,26 @@
    "prompt": "A narrow residential street of two- and three-storey houses and small trees leading straight to a new football arena: its pale stone-coloured wall of round arches and piers fills the end of the street, glowing from within. Exterior establishing view on a match evening from street level about 150 metres away: the ground rises at the end of the street beyond the last buildings, floodlights on and glowing in the haze, wet street in the foreground, a few supporters far off seen only from behind. Seats, cladding and trim in neutral grey and bare concrete unless the description says otherwise. The building carries no name, no scoreboard and no banners. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
   },
   {
+   "stem": "life-stadium-celtic-a-fl1",
+   "aspect": "16:9",
+   "use": "stadium",
+   "club": "celtic",
+   "town": "gla",
+   "confidence": "specific",
+   "priority": 2,
+   "prompt": "A very large football ground towering over the sandstone tenement streets of the east end of a northern industrial city: three huge two-tier stands under a pale steel cantilever roof with exposed trusses, and an older, lower main stand with a red-brick front, at the end of a long straight road. Exterior establishing view on a match evening from street level about 150 metres away: the ground rises at the end of the street beyond the last buildings, floodlights on and glowing in the haze, wet street in the foreground, a few supporters far off seen only from behind. Seats, cladding and trim in neutral grey and bare concrete unless the description says otherwise. The building carries no name, no scoreboard and no banners. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-stadium-st-pauli-a-fl1",
+   "aspect": "16:9",
+   "use": "stadium",
+   "club": "st-pauli",
+   "town": "ham",
+   "confidence": "specific",
+   "priority": 2,
+   "prompt": "A compact city-centre football ground of four steep straight stands in dark brick and steel at the edge of a wide open fairground field: a massive windowless wartime concrete bunker tower looms beside it, a ferris wheel turns far off and the lights of an entertainment district glow behind. Exterior establishing view on a match evening from street level about 150 metres away: the ground rises at the end of the street beyond the last buildings, floodlights on and glowing in the haze, wet street in the foreground, a few supporters far off seen only from behind. Seats, cladding and trim in neutral grey and bare concrete unless the description says otherwise. The building carries no name, no scoreboard and no banners. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
    "stem": "life-stadium-olympiacos-b-fl1",
    "aspect": "16:9",
    "use": "stadium",
@@ -260,6 +360,16 @@
    "confidence": "specific",
    "priority": 2,
    "prompt": "A modern football ground seen across a wide wet forecourt from the coast-road side: the ring of tall red-painted steel roof masts catches the floodlight, the roof edge glows, port cranes and the lights of ferries stand on the horizon behind. Exterior establishing view on a match evening from street level about 150 metres away: the ground rises at the end of the street beyond the last buildings, floodlights on and glowing in the haze, wet street in the foreground, a few supporters far off seen only from behind. Seats, cladding and trim in neutral grey and bare concrete unless the description says otherwise. The building carries no name, no scoreboard and no banners. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
+  },
+  {
+   "stem": "life-stadium-atalanta-a-fl1",
+   "aspect": "16:9",
+   "use": "stadium",
+   "club": "atalanta",
+   "town": "bgo",
+   "confidence": "generic",
+   "priority": 2,
+   "prompt": "A city football ground with tall floodlights and plain concrete stands, seen along the main road among Lombard town houses with shutters and clay-tile roofs under the foothills. Exterior establishing view on a match evening from street level about 150 metres away: the ground rises at the end of the street beyond the last buildings, floodlights on and glowing in the haze, wet street in the foreground, a few supporters far off seen only from behind. Seats, cladding and trim in neutral grey and bare concrete unless the description says otherwise. The building carries no name, no scoreboard and no banners. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
   },
   {
    "stem": "life-aerial-ath-fl1",
@@ -312,26 +422,6 @@
    "prompt": "A small modern football ground at the edge of an Israeli town's business district: two roofed stands along the sides and open ends, clean concrete and metal, glass office blocks behind, wide car parks shining after rain. Exterior establishing view on a match evening from street level about 150 metres away: the ground rises at the end of the street beyond the last buildings, floodlights on and glowing in the haze, wet street in the foreground, a few supporters far off seen only from behind. Seats, cladding and trim in neutral grey and bare concrete unless the description says otherwise. The building carries no name, no scoreboard and no banners. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
   },
   {
-   "stem": "life-stadium-celtic-a-fl1",
-   "aspect": "16:9",
-   "use": "stadium",
-   "club": "celtic",
-   "town": "gla",
-   "confidence": "specific",
-   "priority": 3,
-   "prompt": "A very large football ground towering over the sandstone tenement streets of the east end of a northern industrial city: three huge two-tier stands under a pale steel cantilever roof with exposed trusses, and an older, lower main stand with a red-brick front, at the end of a long straight road. Exterior establishing view on a match evening from street level about 150 metres away: the ground rises at the end of the street beyond the last buildings, floodlights on and glowing in the haze, wet street in the foreground, a few supporters far off seen only from behind. Seats, cladding and trim in neutral grey and bare concrete unless the description says otherwise. The building carries no name, no scoreboard and no banners. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
-  },
-  {
-   "stem": "life-stadium-st-pauli-a-fl1",
-   "aspect": "16:9",
-   "use": "stadium",
-   "club": "st-pauli",
-   "town": "ham",
-   "confidence": "specific",
-   "priority": 3,
-   "prompt": "A compact city-centre football ground of four steep straight stands in dark brick and steel at the edge of a wide open fairground field: a massive windowless wartime concrete bunker tower looms beside it, a ferris wheel turns far off and the lights of an entertainment district glow behind. Exterior establishing view on a match evening from street level about 150 metres away: the ground rises at the end of the street beyond the last buildings, floodlights on and glowing in the haze, wet street in the foreground, a few supporters far off seen only from behind. Seats, cladding and trim in neutral grey and bare concrete unless the description says otherwise. The building carries no name, no scoreboard and no banners. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
-  },
-  {
    "stem": "life-stadium-raja-casablanca-a-fl1",
    "aspect": "16:9",
    "use": "stadium",
@@ -360,16 +450,6 @@
    "confidence": "generic",
    "priority": 3,
    "prompt": "A city football ground with tall floodlights and plain concrete stands, seen along the main road among tall sand-coloured apartment blocks with balconies and satellite dishes. Exterior establishing view on a match evening from street level about 150 metres away: the ground rises at the end of the street beyond the last buildings, floodlights on and glowing in the haze, wet street in the foreground, a few supporters far off seen only from behind. Seats, cladding and trim in neutral grey and bare concrete unless the description says otherwise. The building carries no name, no scoreboard and no banners. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
-  },
-  {
-   "stem": "life-stadium-atalanta-a-fl1",
-   "aspect": "16:9",
-   "use": "stadium",
-   "club": "atalanta",
-   "town": "bgo",
-   "confidence": "generic",
-   "priority": 3,
-   "prompt": "A city football ground with tall floodlights and plain concrete stands, seen along the main road among Lombard town houses with shutters and clay-tile roofs under the foothills. Exterior establishing view on a match evening from street level about 150 metres away: the ground rises at the end of the street beyond the last buildings, floodlights on and glowing in the haze, wet street in the foreground, a few supporters far off seen only from behind. Seats, cladding and trim in neutral grey and bare concrete unless the description says otherwise. The building carries no name, no scoreboard and no banners. Photorealistic cinematic environment for a modern open-world game: blue-hour dusk after rain, wet reflective ground wherever ground shows, warm amber-orange street lamps, natural colour, high detail. No text, no letters, no numbers, no signs with writing, no logos, no crests, no sponsor marks, no advertising, no flags, no real person's likeness, no yellow paint and no yellow clothing."
   },
   {
    "stem": "life-stadium-maccabi-haifa-a-fl1",

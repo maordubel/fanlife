@@ -69,6 +69,17 @@ export const ERA_DRESS: Readonly<Record<Decade, EraDress>> = {
   '10s': {cars: [TALL, ROUND, TALL], paint: ['#c9cdd1', '#4a4f56', '#7a7f86', '#2f343a'], wares: ['era.ware.papers', 'era.ware.stickers', 'era.ware.topup'], aerials: 1, dishes: 3, posters: 2, phone: 'none'},
   '20s': {cars: [TALL, TALL, ROUND], paint: ['#d6d8da', '#3b4047', '#8a9097', '#5a6068'], wares: ['era.ware.papers', 'era.ware.stickers'], aerials: 0, dishes: 2, posters: 1, phone: 'none'},
 }
+/**
+ * The street lamps of a decade and the paint on its parked cars, for the dusk rig (look/dusk.ts): low-pressure sodium,
+ * deep orange, into the nineties; high-pressure sodium warmer-white in the 2000s; LED, nearly white, from the 2010s.
+ * Lamp colours stay under 30 degrees of hue or desaturated (never yellow, rule 8). With no year: today's mix.
+ */
+export function lampTone(d: Decade | null): {head: string; pool: string; cars: string[]} {
+  const head = d === '70s' || d === '80s' || d === '90s' ? '#ff9440' : d === '00s' ? '#ffac6a' : d ? '#f4e6da' : '#ffa862'
+  const pool = d === '70s' || d === '80s' || d === '90s' ? '#ff8a3a' : d === '00s' ? '#ffa264' : d ? '#e8dcd2' : '#ffa862'
+  return {head, pool, cars: d ? [...ERA_DRESS[d].paint] : ['#ece8de', '#2c3a55', '#9a3a2c', '#3f5f4c', '#6b6f78']}
+}
+
 /** the things each dressing table puts in the street (the anachronism test reads this) */
 export const DRESS_ITEMS: Readonly<Record<Decade, string[]>> = Object.fromEntries(DECADES.map(d => {
   const t = ERA_DRESS[d], out: string[] = []
@@ -94,10 +105,11 @@ export function dressEra(x: DressCtx): void {
   const mats = new Map<string, THREE.Material>()
   const mat = (c: string) => { if (!mats.has(c)) mats.set(c, x.keep(new THREE.MeshStandardMaterial({color: c, roughness: 0.75}))); return mats.get(c)! }
   const put = (c: string, px: number, py: number, pz: number, sx: number, sy: number, sz: number) => { const m = new THREE.Mesh(box, mat(c)); m.position.set(px, py, pz); m.scale.set(sx, sy, sz); x.scene.add(m); return m }
-  // parked cars: in the road's edge between the crossings, never on a crossing, never by a person
+  // parked cars: in the road's edge between the crossings, never on a crossing, never by a person (the dusk rig parks its
+  // own, shaped and painted by the decade, so the plain boxes stand down there)
   const clear = (z: number) => x.level.crossings.every(c => Math.abs(c - z) > 12) && hood.people.every(p => Math.abs(p.z - z) > 6) && Math.abs(hood.kiosk.z - z) > 6
   let k = 0
-  for (let z = -20; z > -x.level.length + 30; z -= 17) {
+  for (let z = -20; z > -x.level.length + 30 && !x.scene.userData.duskCars; z -= 17) {
     if (!clear(z)) continue
     const s = t.cars[k % t.cars.length]!, side = k % 2 ? 1 : -1, cx = side * (x.level.half - 1.1), paint = t.paint[k % t.paint.length]!
     put(paint, cx, 0.45, z, 1.75, s.h * (1 - s.cabin) + 0.2, s.len)
