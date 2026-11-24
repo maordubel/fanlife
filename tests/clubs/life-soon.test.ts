@@ -17,7 +17,7 @@ describe('LIFE is closed to fans until the owner opens it',()=>{
   vi.doMock('@/lib/features-server',()=>({door:async()=>({open:false,preview:false})}))
   const {lifeEntry}=await import('@/lib/clubs/life/entry')
   expect(await lifeEntry('hapoel-tel-aviv',{evaluation:true,status:'live'})).toEqual({state:'soon',href:null})
-  expect(src('app/clubs/[slug]/life/page.tsx')).toMatch(/if \(!\(await lifeOpen\(\)\)\) notFound\(\)/)
+  expect(src('app/clubs/[slug]/life/page.tsx')).toMatch(/if \(!\(await lifeOpen\(\)\)\) redirect\(LIFE_SOON_PATH\)/)
   expect(src('components/clubs/ClubLifeCard.tsx')).toContain("state==='soon'")
   expect(src('app/page.tsx')).toContain('copy.lifeSoon')
  })
