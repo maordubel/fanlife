@@ -30,6 +30,8 @@ import paoSheets from '@/club-packs/panathinaikos/wave-pao-lineups-2026-10-12.js
 // 12.10.2026 — St. Pauli plays no UEFA football: its Blind Cow comes from the DFB squad registrations (scripts/club-research/build-dfb-mysteries-2026-10-12.py)
 import stPauliMys from '@/club-packs/st-pauli/wave-mysteries-dfb-2026-10-12.json'
 // ↓ promoted wave-auto imports (scripts/clubs/promote.ts)
+import partizanBelgradePromotedAuto from '@/club-packs/partizan-belgrade/wave-auto.json'
+import fenerbahcePromotedAuto from '@/club-packs/fenerbahce/wave-auto.json'
 import maccabiHaifaPromotedAuto from '@/club-packs/maccabi-haifa/wave-auto.json'
 import atalantaPromotedAuto from '@/club-packs/atalanta/wave-auto.json'
 
@@ -37,6 +39,8 @@ type Raw=Record<string,unknown>
 const arr=(v:unknown):Raw[]=>Array.isArray(v)?v as Raw[]:[]
 const obj=(v:unknown):Raw=>v&&typeof v==='object'&&!Array.isArray(v)?v as Raw:{}
 const AUTO:Record<string,unknown>={
+'partizan-belgrade':partizanBelgradePromotedAuto,
+'fenerbahce':fenerbahcePromotedAuto,
 'maccabi-haifa':maccabiHaifaPromotedAuto,
 'atalanta':atalantaPromotedAuto,'zrinjski-mostar':zrinjskiAuto,'aek-athens':aekAuto,celtic:celticAuto,olympiacos:olympiacosAuto,panathinaikos:panathinaikosAuto,'hapoel-petah-tikva':petahAuto}
 const LEAGUE:Record<string,unknown>={'hapoel-tel-aviv':htaLeague,'zrinjski-mostar':zrinjskiLeague,'aek-athens':aekLeague,celtic:celticLeague,olympiacos:olympiacosLeague,panathinaikos:panathinaikosLeague,'hapoel-petah-tikva':petahLeague,'st-pauli':stPauliLeague,'raja-casablanca':rajaLeague,'wydad-casablanca':wydadLeague,'al-ahly':ahlyLeague}

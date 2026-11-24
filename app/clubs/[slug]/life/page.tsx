@@ -11,6 +11,7 @@ import {loadClub, resolveClubId} from '@/lib/clubs/resolver'
 import {clubWorld} from '@/lib/clubs/world'
 import {evaluationMode} from '@/lib/master/mode'
 import {lifeOpen} from '@/lib/clubs/life/entry'
+import {LifeSoon} from '@/components/clubs/LifeSoon'
 import {readState} from '@/lib/master/store'
 import en from '@/messages/life-universal/en.json'
 import he from '@/messages/life-universal/he.json'
@@ -25,7 +26,9 @@ export const metadata: Metadata = {title: en.metaTitle, robots: {index: false, f
  */
 export default async function Page({params, searchParams}: {params: {slug: string}; searchParams: {lang?: string}}) {
   const preview = evaluationMode()
-  if (!(await lifeOpen())) notFound()   // LIFE is closed to fans until it is finished (switch `life`, owner 9.11.2026)
+  // LIFE is closed to the public until the owner opens it (switch `life`, 9.11.2026; 24.11.2026: "Coming soon only"): a visitor
+  // gets the coming-soon screen and nothing of the game is loaded behind it
+  if (!(await lifeOpen())) return <LifeSoon back={`/clubs/${params.slug}/play`} locale={uiLocale(searchParams.lang)}/>
   const id = resolveClubId(headers().get('host'), params.slug, preview)
   if (!id) notFound()
   const [state, club, rushSwitch] = await Promise.all([readState(), loadClub(id), door('lifeRush')])
