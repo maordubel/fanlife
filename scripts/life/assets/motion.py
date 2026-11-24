@@ -441,35 +441,40 @@ def hug_partner(t, T=4.2, low=False):
     p['ik']['r'] = dict(p['ik']['r'], to=(P, 'spine_03@0.6', (0.09, -0.12 - 0.03 * pat, 0.02 + 0.015 * pat)))
     return p
 
-def hug_child_adult(t, T=4.4):
-    """an adult hugging a child of about 1.35 m: knees soften, trunk bows, arms round the shoulders, cheek to the top of the head"""
-    st = stand(t, .4)
-    open_ = add(st, {'spine': {'lean': 10}, 'head': {'pitch': 8}})
-    for sd in 'lr': open_['arm_' + sd] = {'dir': (0.7, 0.55, -0.35), 'elbow': 40, 'fore': 0, 'hand': 'cup', 'shrug': 3}
-    hold = {'pelvis': {'lean': 4, 'dy': 0.05}, 'spine': {'lean': 13}, 'neck': {'pitch': 14}, 'head': {'pitch': 18, 'yaw': 18, 'roll': 10},
-            'leg_l': {'fwd': 30, 'out': 9, 'knee': 48, 'foot': -12}, 'leg_r': {'fwd': 22, 'out': 9, 'knee': 40, 'foot': -12},
-            'arm_l': {'dir': (0.5, 0.75, -0.4), 'elbow': 100, 'fore': 0, 'hand': 'palm_down_rest', 'shrug': 3, 'reach': 8},
-            'arm_r': {'dir': (0.5, 0.75, -0.3), 'elbow': 105, 'fore': 0, 'hand': 'palm_down_rest', 'shrug': 5, 'reach': 8},
-            'ik': {'l': {'to': ('C', 'spine_03@0.4', (-0.08, -0.10, 0.0)), 'pole': (1.0, 0.0, -0.4), 'palm': (0, -1, 0)},
-                   'r': {'to': ('C', 'spine_03@0.9', (0.09, -0.09, 0.03)), 'pole': (1.0, 0.0, -0.2), 'palm': (0, -1, 0)}}}
-    p = keyed(t, [(0, st), (0.5, open_), (1.2, hold), (T, hold)], lag={'arm_l': 0.07, 'arm_r': 0.04, 'head': 0.1})
-    k = ease5((t - 0.5) / 0.7)
+KNEEL_LEGS = {'leg_l': {'fwd': 8, 'out': 6, 'knee': 98, 'foot': 52, 'toe': -50}, 'leg_r': {'fwd': 80, 'out': 28, 'knee': 95, 'foot': 4, 'foot_out': -10}}
+
+def hug_child_adult(t, T=4.6):
+    """an adult and a child of about 1.35 m: the adult goes down on one knee, opens his arms, holds the child close,
+    cheek beside the child's head, a slow rock"""
+    st = dict(stand(t, .4), kneel=True)
+    down = dict(KNEEL_LEGS, kneel=True, pelvis={'dy': 0.03}, spine={'lean': 6}, neck={'pitch': 4}, head={'pitch': 6},
+                arm_l={'dir': (0.3, 0.4, -0.8), 'elbow': 30, 'fore': 10}, arm_r={'dir': (0.3, 0.4, -0.8), 'elbow': 30, 'fore': 10})
+    open_ = dict(down, spine={'lean': 4}, head={'pitch': -2},
+                 arm_l={'dir': (0.8, 0.55, -0.1), 'elbow': 35, 'fore': 0, 'hand': 'cup', 'shrug': 4}, arm_r={'dir': (0.8, 0.55, -0.1), 'elbow': 35, 'fore': 0, 'hand': 'cup', 'shrug': 4})
+    hold = dict(down, spine={'lean': 8, 'yaw': -3}, neck={'pitch': 4}, head={'pitch': 4, 'yaw': 24, 'roll': 10},
+                arm_l={'dir': (0.5, 0.8, -0.3), 'elbow': 100, 'fore': 0, 'hand': 'palm_down_rest', 'shrug': 3, 'reach': 8},
+                arm_r={'dir': (0.5, 0.8, -0.2), 'elbow': 100, 'fore': 0, 'hand': 'palm_down_rest', 'shrug': 5, 'reach': 8},
+                ik={'l': {'to': ('C', 'spine_03@0.3', (-0.07, -0.045, 0.0)), 'pole': (1.0, 0.0, -0.5), 'palm': (0, -1, 0)},
+                    'r': {'to': ('C', 'spine_03@0.9', (0.08, -0.04, 0.02)), 'pole': (1.0, 0.0, -0.3), 'palm': (0, -1, 0)}})
+    p = keyed(t, [(0, st), (0.9, down), (1.35, open_), (1.95, hold), (T, hold)], lag={'arm_l': 0.07, 'arm_r': 0.04, 'head': 0.1})
+    k = ease5((t - 1.35) / 0.6)
     p['ik'] = {sd: dict(v, w=back(k, 0.3)) for sd, v in hold['ik'].items()}
-    sway = ease5((t - 1.2) / 0.4) * s(t - 1.2, 2.8)
+    p['kneel'] = True
+    sway = ease5((t - 1.95) / 0.4) * s(t - 1.95, 2.8)
     p['spine'] = add(p['spine'], {'roll': 2.5 * sway}); p['head'] = add(p['head'], {'roll': 2 * sway})
     return p
 
-def hug_child_child(t, T=4.4):
-    """the child's side: arms round the grown-up's middle, the cheek turned against the chest"""
+def hug_child_child(t, T=4.6):
+    """the child's side: steps in, arms round the kneeling grown-up's neck, cheek on his shoulder"""
     st = stand(t, .4)
-    hold = {'spine': {'lean': 8}, 'neck': {'pitch': 0}, 'head': {'yaw': -55, 'pitch': -4, 'roll': -6},
-            'pelvis': {'dy': 0.0}, 'leg_l': {'fwd': 6, 'out': 4, 'knee': 6, 'foot': 0}, 'leg_r': {'fwd': -2, 'out': 4, 'knee': 4, 'foot': 0},
-            'arm_l': {'dir': (0.5, 0.75, -0.4), 'elbow': 95, 'fore': 0, 'hand': 'palm_down_rest', 'reach': 8},
-            'arm_r': {'dir': (0.5, 0.75, -0.4), 'elbow': 95, 'fore': 0, 'hand': 'palm_down_rest', 'reach': 8},
-            'ik': {'l': {'to': ('A', 'spine_01@0.6', (0.11, -0.06, 0.0)), 'pole': (1.0, -0.1, -0.5), 'palm': (0, -1, 0)},
-                   'r': {'to': ('A', 'spine_01@0.6', (-0.11, -0.06, -0.02)), 'pole': (1.0, -0.1, -0.5), 'palm': (0, -1, 0)}}}
-    p = keyed(t, [(0, st), (0.6, st), (1.15, hold), (T, hold)], lag={'arm_l': 0.05, 'arm_r': 0.08, 'head': -0.05})
-    k = ease5((t - 0.6) / 0.55)
+    hold = {'spine': {'lean': 6}, 'neck': {'pitch': 2}, 'head': {'yaw': -38, 'pitch': 4, 'roll': -8},
+            'leg_l': {'fwd': 6, 'out': 4, 'knee': 6, 'foot': 0}, 'leg_r': {'fwd': -3, 'out': 4, 'knee': 8, 'foot': 4},
+            'arm_l': {'dir': (0.5, 0.75, 0.0), 'elbow': 95, 'fore': 0, 'hand': 'palm_down_rest', 'reach': 10, 'shrug': 6},
+            'arm_r': {'dir': (0.5, 0.75, 0.0), 'elbow': 95, 'fore': 0, 'hand': 'palm_down_rest', 'reach': 10, 'shrug': 6},
+            'ik': {'l': {'to': ('A', 'neck_01@0.5', (0.07, -0.08, -0.02)), 'pole': (1.0, -0.2, -0.3), 'palm': (0, -1, 0)},
+                   'r': {'to': ('A', 'neck_01@0.5', (-0.07, -0.08, -0.04)), 'pole': (1.0, -0.2, -0.3), 'palm': (0, -1, 0)}}}
+    p = keyed(t, [(0, st), (1.3, st), (1.9, hold), (T, hold)], lag={'arm_l': 0.05, 'arm_r': 0.08, 'head': -0.05})
+    k = ease5((t - 1.3) / 0.6)
     p['ik'] = {sd: dict(v, w=back(k, 0.3)) for sd, v in hold['ik'].items()}
     return p
 
@@ -524,8 +529,8 @@ SCENES = {
     'kick_ball': _scene(1.9, False, "a child's kick with the right foot; the foot meets the ball at 0.70 s", {'C': (kick_ball, None)}, {'C': 'kick_ball'}, events={'strike': 0.70}),
     'hug_partner': _scene(4.2, False, 'two adults embracing (both play this clip, facing, roots 42 cm apart): right arm over the shoulder, left round the waist, a sway, two pats',
                           {'A2': (hug_partner, (0, 0.42, 180)), 'A': (hug_partner, (0, 0, 0))}, {'A': 'hug_partner'}),
-    'hug_child': _scene(4.4, False, 'an adult and a child of about 1.35 m embracing (facing, roots 36 cm apart)',
-                        {'A': (hug_child_adult, (0, 0, 0)), 'C': (hug_child_child, (0, 0.36, 180))}, {'A': 'hug_partner_adult', 'C': 'hug_partner_child'}, order=['A', 'C', 'ikA', 'ikC']),
+    'hug_child': _scene(4.6, False, 'an adult down on one knee and a child of about 1.35 m embracing (facing, roots 46 cm apart)',
+                        {'A': (hug_child_adult, (0, 0, 0)), 'C': (hug_child_child, (0, 0.46, 180))}, {'A': 'hug_partner_adult', 'C': 'hug_partner_child'}, order=['A', 'C', 'ikA', 'ikC']),
 }
 for name, shape in HAND_CLIPS.items():
     SCENES[name] = _scene(1.0, True, f'hand shape "{shape}" on both hands: finger bones only, for an override or additive layer', {'A': (hand_clip(shape), None)}, {'A': name}, hands_only=True)
