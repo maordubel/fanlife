@@ -10,7 +10,7 @@ import {readFileSync, writeFileSync, mkdtempSync, existsSync, readdirSync} from 
 import {tmpdir} from 'node:os'
 import path from 'node:path'
 import {png, story, close} from './render.mjs'
-import {capture, phonePage, GATE_ROUTE} from './screens.mjs'
+import {capture, phonePage, GATE_ROUTE, SITE} from './screens.mjs'
 import {clubId} from './assets.mjs'
 
 export const V4_VERSION = '4.0'
@@ -47,13 +47,40 @@ async function upload(rel, existing, name, buf, type) {
 
 // ── live fills: a post that names a moving target is filled at drawing time, from the real source ───────────────────
 /** the open shop's live products (the storefront's own rule: visible, live, a Printify page and a picture) */
+let shopDocP = null
+function shopDoc() {
+  shopDocP ??= fetch(`${DB}/rest/v1/worker_fanlife_files?name=eq.shop%2Fshop.json&select=body`, {headers: {apikey: KEY, Authorization: `Bearer ${KEY}`}, signal: AbortSignal.timeout(30_000)})
+    .then(async r => { if (!r.ok) return null; let doc = (await r.json())[0]?.body; for (let i = 0; i < 2 && typeof doc === 'string'; i++) doc = JSON.parse(doc); return doc || null }).catch(() => null)
+  return shopDocP
+}
 async function shopProducts() {
-  const r = await fetch(`${DB}/rest/v1/worker_fanlife_files?name=eq.shop%2Fshop.json&select=body`, {headers: {apikey: KEY, Authorization: `Bearer ${KEY}`}, signal: AbortSignal.timeout(30_000)})
-  if (!r.ok) return []
-  let doc = (await r.json())[0]?.body
-  for (let i = 0; i < 2 && typeof doc === 'string'; i++) doc = JSON.parse(doc)
-  if (doc?.settings?.open === false) return []
+  const doc = await shopDoc()
+  if (!doc || doc?.settings?.open === false) return []
   return (doc?.products || []).filter(p => p.visible && p.status === 'live' && p.printify?.url && p.printify?.images?.length && p.printify?.priceFrom)
+}
+/** a post can ask for one club's products (data.subject); with none on the shelf it falls back to the whole shop */
+export const ofSubject = (list, subject) => { const own = subject ? list.filter(p => p.subject === subject) : []; return own.length ? own : list }
+const DAY = new Intl.DateTimeFormat('en-GB', {timeZone: 'Europe/Athens', weekday: 'short', day: 'numeric', month: 'short'})
+/** the sale a post announces: the one running now, else the next to start within ten days (the shop's own settings) */
+export function saleNow(sales, now = Date.now()) {
+  const live = (sales || []).filter(x => x?.on && Date.parse(x.until) > now && Date.parse(x.starts) < now + 10 * 864e5)
+    .sort((a, b) => Date.parse(a.starts) - Date.parse(b.starts))
+  const s = live.find(x => Date.parse(x.starts) <= now) || live[0]
+  if (!s) return null
+  const started = Date.parse(s.starts) <= now, left = Date.parse(s.until) - now
+  return {label: s.label, percent: s.percent, phase: !started ? 'soon' : left < 864e5 ? 'last' : 'on',
+    ends: DAY.format(new Date(started ? Date.parse(s.until) : Date.parse(s.starts))).replace(',', ''), scope: s.scope}
+}
+/** a club's films from its YouTube playlist (the public feed; no key): full films before Shorts */
+export async function playlistFilms(list) {
+  try {
+    const r = await fetch(`https://www.youtube.com/feeds/videos.xml?playlist_id=${encodeURIComponent(list)}`, {signal: AbortSignal.timeout(20_000)})
+    if (!r.ok) return []
+    const xml = await r.text(), seen = new Set(), out = []
+    for (const m of xml.matchAll(/<yt:videoId>([\w-]{11})<\/yt:videoId>[\s\S]*?<title>([^<]+)<\/title>/g)) if (!seen.has(m[1])) { seen.add(m[1]); out.push({id: m[1], title: m[2].replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, '’')}) }
+    const isShort = f => /#shorts?\b/i.test(f.title)
+    return [...out.filter(f => !isShort(f)), ...out.filter(isShort)]
+  } catch { return [] }
 }
 const money = (c, cur = 'USD') => `${cur === 'EUR' ? '€' : cur === 'GBP' ? '£' : '$'}${(c / 100).toFixed(2).replace(/\.00$/, '')}`
 /** a different random product for every shop post of a run; the caption's {product} and {price} are filled with it */
@@ -124,20 +151,23 @@ async function youtube(ids, frame = 2) {
   }
   return null
 }
-export const fillWords = (s, w) => String(s ?? '').replace(/\{(product|name|price)\}/g, (m, k) => w[k] ?? m)
+export const fillWords = (s, w) => String(s ?? '').replace(/\{(product|name|price|title|percent|ends)\}/g, (m, k) => w[k] ?? m)
 /** campaigns waiting for a feature: released the first run after the feature's file is on main */
 /** the frame campaign also waits for real product mock-ups (the owner's rule: products are shown as the product, never
  *  as a drawing): art/shop/frame-xi-*.jpg, a real Printify mock-up of a personal print */
 export const HOLDS = {'frame-xi': 'app/api/shop/personal/route.ts'}
 export const HOLD_ART = {'frame-xi': /^frame-xi-.+\.(jpe?g|png)$/}
 
+/** the 30-day plan's own screens: the club's home, its Royal Rumble, the market (a listing post has its own photo) */
+const PLAN_SCREEN = {'L-CLUB': id => `/clubs/${id}`, 'L-RUMBLE': id => `/clubs/${id}/royal-rumble`, 'L-MARKET': () => '/market'}
 /** the real screen behind a post: a gate's own game (pressed past its start), LIFE, Legends Manager */
 async function screenFor(page, kit, dir) {
   const d = kit.data || {}, id = clubId(d), name = String(d.name || '').toUpperCase()
   const route = kit.t === 'L-GATE' && GATE_ROUTE[name] && id ? `/clubs/${id}/${GATE_ROUTE[name]}`
-    : name === 'LEGENDS MANAGER' || d.brand === 'legends' ? '/all-football/legends' : null
-  if (!route) return null
-  try { const f = path.join(dir, `screen-${id || 'hub'}-${GATE_ROUTE[name] || 'legends'}.png`); writeFileSync(f, await capture(page, route, {play: true})); return f } catch { return null }
+    : name === 'LEGENDS MANAGER' || d.brand === 'legends' ? '/all-football/legends'
+    : PLAN_SCREEN[kit.t] && (id || kit.t === 'L-MARKET') ? PLAN_SCREEN[kit.t](id) : null
+  if (!route || d.noScreen || (kit.t === 'L-MARKET' && (d.image || d.photo))) return null
+  try { const f = path.join(dir, `screen-${route.replace(/\W+/g, '-')}.png`); writeFileSync(f, await capture(page, route, {play: kit.t !== 'L-CLUB' && kit.t !== 'L-MARKET'})); return f } catch { return null }
 }
 
 async function main() {
@@ -146,6 +176,14 @@ async function main() {
   for (const [hold, file] of Object.entries(HOLDS)) if (existsSync(file) && (!HOLD_ART[hold] || readdirSync(path.join(path.dirname(new URL(import.meta.url).pathname), 'art', 'shop')).some(f => HOLD_ART[hold].test(f)))) {
     try { const r = await rpc('worker_marketing_release', {p_hold: hold}); if (r?.n) console.log(`released ${r.n} post(s) held for ${hold}`) } catch (e) { console.log(`::warning title=release ${hold}::${e.message}`) }
   }
+  // a new club's opening campaign waits for the club itself: released the first run its page answers to the public
+  try {
+    for (const h of (await rpc('worker_marketing_holds', {})).filter(h => /^open:[a-z0-9-]+$/.test(h))) {
+      const page = await fetch(`${SITE}/clubs/${h.slice(5)}`, {redirect: 'manual', signal: AbortSignal.timeout(30_000)}).catch(() => null)
+      if (page?.status !== 200) { console.log(`${h}: the club is not open yet`); continue }
+      const r = await rpc('worker_marketing_open_release', {p_hold: h}); console.log(`${h}: opened — ${r?.n ?? 0} post(s) released, opening night ${r?.launch ?? '—'}`)
+    }
+  } catch (e) { console.log(`::warning title=opening campaigns::${e.message}`) }
   const queue = (await rpc('worker_marketing_v4_queue', {p_hours: HOURS, p_ver: V4_VERSION})).slice(0, LIMIT)
   console.log(`queue: ${queue.length} post(s) without v${V4_VERSION} pictures in the next ${HOURS}h`)
   const rel = await release()
@@ -168,9 +206,36 @@ async function main() {
       const urls = [], patch = {}
       for (const [i, s] of slides.entries()) {
         const data = {...(s.data || {})}
+        if (s.t === 'L-SALE') {
+          const now = saleNow((await shopDoc())?.settings?.sales)
+          if (!now && data.needsSale) throw Error('no sale running or coming — the post waits for the v2 fallback')
+          if (now) Object.assign(data, {label: now.label, percent: now.percent, phase: now.phase, ends: now.ends})
+          products ??= await shopProducts()
+          const p = pickProduct(ofSubject(products, data.subject), used)
+          if (p) { const a = pickArt(p.printify.images, post.id); if (a.scene) data.photo = a.scene; else if (a.studio) data.card = a.studio; data.title = p.title }
+          s.data = data
+          const w = {percent: String(data.percent || ''), ends: data.ends || '', product: p?.title || '', name: String(p?.title || '').split(' · ')[0]}
+          for (const k of ['hook', 'body']) if (post.fill?.[k]) patch[k] = fillWords(post.fill[k], w)
+        }
+        if ((s.t === 'L-FILM' || s.t === 'L-YT') && data.playlist) {
+          let films = await playlistFilms(data.playlist)
+          if (data.match) films = films.filter(f => f.title.includes(data.match)) // one episode by its title (Fairy Tales)
+          if (!films.length) throw Error(data.match ? `no public film titled “${data.match}” yet` : 'the playlist feed is empty')
+          if (s.t === 'L-FILM') {
+            const long = films.filter(x => !/#shorts?\b/i.test(x.title)), pool = long.length ? long : films, f = pool[post.id % pool.length]
+            data.yt = f.id; data.title ||= f.title.replace(/\s*#\w+/g, '').replace(/\s*[☀🌙⚽💤][\s\S]*$/u, '').trim()
+            for (const k of ['hook', 'body']) if (post.fill?.[k]) patch[k] = fillWords(post.fill[k], {title: data.title})
+          } else {
+            const pick = films.slice(0, 6), out = []
+            for (let k = 0; k < pick.length && out.length < 3; k++) { const y = await youtube(pick[(post.id + k) % pick.length].id, (k % 3) + 1); if (y && !out.includes(y.thumb)) out.push(y.thumb) }
+            if (!out.length) throw Error('no film frame confirmed')
+            data.thumbs = out
+          }
+          s.data = data
+        }
         if (s.t === 'L-SHOP' && data.random) {
           products ??= await shopProducts()
-          const p = pickProduct(products, used)
+          const p = pickProduct(ofSubject(products, data.subject), used)
           if (!p) throw Error('the shop has no live product')
           const f = shopFill(p)
           Object.assign(data, f.data)

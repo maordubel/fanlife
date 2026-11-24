@@ -65,6 +65,8 @@ export function AlbumApp({wings,catalog,eras,kits,pressed,me:initial,signedIn,pr
  useEffect(()=>{setMutedS(albumSound.muted)},[])
  const setMuted=(m:boolean)=>{albumSound.setMuted(m);setMutedS(m)}
  const [code,setCode]=useState(''),[stickOne,setStickOne]=useState<Slot|null>(null),[showSwaps,setShowSwaps]=useState(false)
+ // a campaign link (/album?code=FANLIFE99) arrives with its code already typed: one tap to the free packets (24.11.2026)
+ useEffect(()=>{const c=new URLSearchParams(window.location.search).get('code');if(c)setCode(c.toUpperCase().replace(/[^A-Z0-9_-]/g,'').slice(0,40))},[])
  const [covered,setCovered]=useState(true)
  useEffect(()=>{try{if(sessionStorage.getItem('alb-cover')==='1')setCovered(false)}catch{/* */}},[])
  const [leaf,setLeaf]=useState<{from:number;dir:1|-1;k:number}|null>(null)
