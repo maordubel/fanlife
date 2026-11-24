@@ -149,10 +149,6 @@ class TheArchiveOnScreen(unittest.TestCase):
         self.assertTrue({'kitdev', 'pcard'} <= vox.TYPED)
 
 
-if __name__ == '__main__':
-    unittest.main()
-
-
 class LifeInTheFrame(unittest.TestCase):
     """docu/life.py (owner, 23.11.2026: "not enough movement for the eyes"): the scene itself moves, calmly."""
 
@@ -196,3 +192,60 @@ class LifeInTheFrame(unittest.TestCase):
         a, b = B.Film({'palette': {'us': '#B02D10', 'them': '#333333'}, 'silent': True}, __import__('pathlib').Path('.')), None
         a.life({'fx': ['confetti', 'crowd', 'beams', 'glow', 'dust', 'ball'], 'rows': rows, 'level': 0.9, 'seed': 'x'}, 2.0, 6.0)
         self.assertEqual(a.tw, f.tw)                      # one seed, one film: any frame renders the same
+
+
+class ThePress(unittest.TestCase):
+    """docu/press.py (owner, 23.11.2026: "no visual hook … the backgrounds are banal"; his newspaper brief)."""
+
+    def test_the_headline_is_the_narrators_own_words_in_order(self):
+        from studio.docu import press
+        for line in ('370 people were in the ground in Oldtown on 14 March 2002.', 'Avi Cohen played 212 games for Test FC, by the archive\'s count.',
+                     'City, 20 May 2002: one night that Test FC supporters still describe with their hands.'):
+            head, deck = press.headline(line)
+            said = re.sub(r'[.,:;]', '', line).split()
+            got = re.sub(r'[.,:;]', '', ' '.join(head + [deck])).split()
+            self.assertEqual(got, said)                    # nothing added, dropped or moved
+            self.assertLessEqual(len(head), 3)
+            self.assertNotIn(head[-1].split()[-1].lower(), press.STOP)
+
+    def test_the_front_page_opens_the_film_and_a_line_with_no_picture_becomes_a_collage(self):
+        from studio.docu import press
+        files = {k: f'{k}.webp' for k in press.PIECES}
+        mk = lambda n, typ, d=6.0: {'t': n * 6.0, 'd': d, 'meta': {'n': n, 'type': typ}, 'shots': [{'kind': 'image', 'src': 'x.jpg', 'dt': 0.0}, {'kind': 'thread'}, {'kind': 'question', 'text': 'x'}]}   # noqa: E731
+        beats = [mk(0, 'open'), mk(1, 'matchday'), mk(2, 'illustration'), mk(3, 'illustration'), mk(4, 'illustration', 2.0)]
+        shots = {0: {'narration': '370 people were in the ground in Oldtown. That is a guest list.', 'visual': {'kicker': 'Cup'}},
+                 2: {'visual': {'art': 'terrace-crowd'}}, 3: {'visual': {'art': 'terrace-crowd'}}, 4: {'visual': {'art': 'tunnel'}}}
+        made = press.direct(beats, shots, files, 'Test FC')
+        self.assertEqual(made, {'front': 1, 'scenes': 2})
+        front = beats[0]['shots'][0]
+        self.assertEqual((front['kind'], front['page'], front['head'][0]), ('press', 'front', '370 people'))
+        self.assertEqual([x['kind'] for x in beats[0]['shots']], ['press'])   # no second title over the headline
+        self.assertEqual(beats[1]['shots'][0]['kind'], 'image')           # a beat with its own board keeps it
+        a, b = beats[2]['shots'][0], beats[3]['shots'][0]
+        self.assertEqual(a['scene'], 'duotone')
+        self.assertNotEqual(a['scene'], b['scene'])                        # never the same collage twice running
+        self.assertEqual(beats[4]['shots'][0]['kind'], 'image')           # too short to paste a scene
+        with mock.patch.dict(os.environ, {'STORIES_PRESS': '0'}):
+            self.assertEqual(press.direct([mk(0, 'open')], shots, files, 'Test FC'), {'front': 0, 'scenes': 0})
+
+    def test_the_press_prints_only_the_clubs_colour_paper_and_ink_and_stays_flat(self):
+        from studio.docu import press
+        files = {k: f'{k}.webp' for k in press.PIECES}
+        f = B.Film({'palette': {'us': '#B02D10', 'them': '#333333'}, 'silent': True}, __import__('pathlib').Path('.'))
+        f.press({'page': 'front', 'head': ['370 people', 'were in the', 'ground'], 'deck': 'in Oldtown', 'kicker': 'Cup', 'body': 'x', 'files': files, 'off': 0, 'total': 8}, 0.0, 8.0)
+        for sc in press.SCENES:
+            f.press({'page': 'scene', 'scene': sc, 'files': files, 'seed': sc}, 8.0, 4.0)
+        html, js = ' '.join(f.clips), ' '.join(f.tw)
+        self.assertIn('370</i> people', html)
+        self.assertNotRegex(js, r'rotationX|rotationY|perspective')       # a 3D transform drops the motion blur to its slow tier
+        self.assertNotIn('mask-image', html + press.CSS)
+        colours = set(re.findall(r'#[0-9a-fA-F]{6}\b', html)) - {'#B02D10', f.PAPER, f.INK}
+        self.assertFalse(colours, colours)                                 # ink and paper come from the film; nothing else is printed
+
+    def test_the_press_kit_is_in_the_repository(self):
+        from studio.docu import press
+        self.assertEqual(set(press.kit()), set(press.PIECES))
+
+
+if __name__ == '__main__':
+    unittest.main()

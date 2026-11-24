@@ -162,3 +162,16 @@ numbers became. Newest first. The skill reads this before touching the editor an
   2. A motif told in every chapter becomes a refrain: three "the road ran through…" beats in a 5-minute film. Now once.
   3. Director rule 6 refuses lines about the film ("This is the story of…"). Angle lines speak about the season.
 - **Open**: ClubElo answered 502 to every request from the Actions runner on 17.11. The weekly job retries.
+
+## 23.11.2026 (evening) · The press: a front page as the hook, collage instead of banal backgrounds
+
+- **Owner**: "still boring … banal backgrounds … no visual hook … I can't watch more than 50 seconds." Go to Flow, make
+  proper graphics; newspaper, halftone figures, newsprint; Vox collage, paper, bold outlines, handmade frame rate.
+- **Built**: seven kit pieces from his Flow (`studio/kit/press/`), `docu/press.py` (front page on the opening beat,
+  four collage scenes on illustration beats, 8 fps boil), rule `docs/rules/studio-press.md`.
+- **Measured** (Olympiacos 2023/24, 4.99 min, house writer): flashes 0 (v4 0), worst jerk 62.8 px (v4 35.4), 18.4
+  changes a minute (v4 18.2), longest shot 22.7 s (the closing cards), 16 press beats.
+- **Lesson**: the cold open's own `question` title printed over the front page's headline. A device that is the
+  title removes every other title from its beat (test: ThePress).
+- **Next**: a second front page at the night (the final's result as the edition's headline); more kit pieces (a
+  ticket stub, a scarf, a trophy, a newsprint column texture).
