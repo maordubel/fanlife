@@ -6,10 +6,10 @@
  * (after the colour policy) as --wc-accent.
  */
 .wcRoot {
-  --wc-navy: var(--lg-navy, #0f1a28);
-  --wc-navy-2: var(--lg-navy-2, #16263a);
-  --wc-navy-3: var(--lg-navy-3, #1f3550);
-  --wc-cream: var(--lg-cream, #fff1dc);
+  --wc-navy: var(--lg-navy, var(--life-scene-navy));
+  --wc-navy-2: var(--lg-navy-2, var(--life-scene-navy-raised));
+  --wc-navy-3: var(--lg-navy-3, var(--life-scene-navy-bright));
+  --wc-cream: var(--lg-cream, var(--life-scene-cream));
   --wc-dim: color-mix(in srgb, var(--wc-cream) 66%, transparent);
   --wc-line: color-mix(in srgb, var(--wc-cream) 18%, transparent);
   --wc-accent: var(--wc-cream);

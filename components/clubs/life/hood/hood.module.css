@@ -5,15 +5,15 @@
  * Logical properties only, touch targets 44px and up, motion off under prefers-reduced-motion and the Reduced motion setting.
  */
 .lgRoot {
-  --lg-navy: #0f1a28;
-  --lg-navy-2: #16263a;
-  --lg-navy-3: #1f3550;
-  --lg-cream: #fff1dc;
+  --lg-navy: var(--life-scene-navy);
+  --lg-navy-2: var(--life-scene-navy-raised);
+  --lg-navy-3: var(--life-scene-navy-bright);
+  --lg-cream: var(--life-scene-cream);
   --lg-cream-dim: color-mix(in srgb, var(--lg-cream) 68%, transparent);
   --lg-line: color-mix(in srgb, var(--lg-cream) 16%, transparent);
   --lg-glass: color-mix(in srgb, var(--lg-navy) 66%, transparent);
   --lg-glass-solid: color-mix(in srgb, var(--lg-navy) 94%, var(--lg-cream));
-  --lg-brand: #b9e36a;
+  --lg-brand: var(--life-scene-brand-default);
   --lg-accent: var(--lg-brand);
   --lg-on-accent: var(--lg-navy);
   --lg-head: var(--mag-condensed, Impact, 'Arial Narrow', sans-serif);
@@ -83,7 +83,7 @@
 .lgTitle { justify-content: flex-end; gap: 0; padding-block-start: calc(70px + var(--lg-safe-t)); }
 .lgTitleTop { position: absolute; inset-block-start: calc(14px + var(--lg-safe-t)); inset-inline: 18px; display: flex; justify-content: space-between; align-items: center; }
 .lgWordmark { inline-size: min(62vw, 270px); aspect-ratio: 600 / 393; display: block; margin-block-end: 6px; }
-.lgWordmark img { inline-size: 100%; block-size: 100%; display: block; object-fit: contain; filter: drop-shadow(0 6px 24px rgba(0, 0, 0, .5)); }
+.lgWordmark img { inline-size: 100%; block-size: 100%; display: block; object-fit: contain; filter: drop-shadow(0 6px 24px color-mix(in srgb, var(--life-scene-black) 50%, transparent)); }
 .lgTagline { font-family: var(--lg-head); font-size: 2.125rem; line-height: 1; text-transform: uppercase; letter-spacing: .01em; margin-block: 6px 6px; max-inline-size: 11ch; }
 .lgClub { display: flex; align-items: center; gap: 10px; font-size: .8125rem; letter-spacing: .12em; text-transform: uppercase; color: var(--lg-cream-dim); margin-block-end: 18px; }
 .lgClub::before { content: ''; inline-size: 28px; block-size: 2px; background: var(--lg-brand); }
@@ -100,11 +100,11 @@
 
 /* ───── cinematic ───── */
 .lgCine { position: absolute; inset: 0; pointer-events: auto; animation: lgFade .3s both; }
-.lgBarT, .lgBarB { position: absolute; inset-inline: 0; background: #05090f; block-size: 13%; min-block-size: 64px; }
+.lgBarT, .lgBarB { position: absolute; inset-inline: 0; background: var(--life-scene-cinema-bar); block-size: 13%; min-block-size: 64px; }
 .lgBarT { inset-block-start: 0; animation: lgBarTop .9s var(--lg-ease) both; }
 .lgBarB { inset-block-end: 0; animation: lgBarBot .9s var(--lg-ease) both; }
 .lgCineSkip { position: absolute; inset-block-start: calc(10px + var(--lg-safe-t)); inset-inline-end: 14px; min-block-size: 44px; padding-inline: 18px; border-radius: 22px; border: 1px solid var(--lg-cream-dim); background: transparent; font-family: var(--lg-head); letter-spacing: .16em; font-size: .875rem; text-transform: uppercase; }
-.lgCineText { position: absolute; inset-inline: 22px; inset-block-end: calc(13% + 22px); text-align: center; font-size: 1.1875rem; line-height: 1.4; text-shadow: 0 2px 14px rgba(0, 0, 0, .85); animation: lgRise .7s var(--lg-ease) both; }
+.lgCineText { position: absolute; inset-inline: 22px; inset-block-end: calc(13% + 22px); text-align: center; font-size: 1.1875rem; line-height: 1.4; text-shadow: 0 2px 14px color-mix(in srgb, var(--life-scene-black) 85%, transparent); animation: lgRise .7s var(--lg-ease) both; }
 .lgDots { position: absolute; inset-inline: 0; inset-block-end: calc(13% / 2 - 4px); display: flex; justify-content: center; gap: 8px; }
 .lgDots i { inline-size: 22px; block-size: 3px; background: var(--lg-line); transition: background .3s; }
 .lgDots i[data-on='true'] { background: var(--lg-cream); }
@@ -147,7 +147,7 @@
 .lgMapPage { gap: 12px; }
 .lgMapHead { display: grid; gap: 2px; flex: none; }
 .lgMapBody { flex: 1; min-block-size: 0; display: grid; gap: 10px; grid-template-rows: minmax(240px, 1fr) auto; }
-.lgMapBox { position: relative; border-radius: 16px; border: 1px solid var(--lg-line); overflow: hidden; background: #0a121c; min-block-size: 240px; touch-action: none; cursor: grab; }
+.lgMapBox { position: relative; border-radius: 16px; border: 1px solid var(--lg-line); overflow: hidden; background: var(--life-scene-mini-map); min-block-size: 240px; touch-action: none; cursor: grab; }
 .lgMapBox:active { cursor: grabbing; }
 .lgMapSvg { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; display: block; }
 .lgMapTools { position: absolute; inset-block-start: 8px; inset-inline-end: 8px; display: grid; gap: 8px; }
@@ -253,7 +253,7 @@
 .lgStickGhost, .lgStick { position: absolute; inline-size: 112px; block-size: 112px; border-radius: 50%; border: 2px solid color-mix(in srgb, var(--lg-cream) 38%, transparent); background: color-mix(in srgb, var(--lg-navy) 28%, transparent); pointer-events: none; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
 .lgStickGhost { inset-block-end: calc(26px + var(--lg-safe-b)); inset-inline-start: 22px; }
 .lgStick { margin-block-start: -56px; margin-inline-start: -56px; }
-.lgStickGhost i, .lgStick i { position: absolute; inset: 32px; border-radius: 50%; background: color-mix(in srgb, var(--lg-cream) 72%, transparent); box-shadow: 0 2px 10px rgba(0, 0, 0, .4); }
+.lgStickGhost i, .lgStick i { position: absolute; inset: 32px; border-radius: 50%; background: color-mix(in srgb, var(--lg-cream) 72%, transparent); box-shadow: 0 2px 10px color-mix(in srgb, var(--life-scene-black) 40%, transparent); }
 .lgStickGhost span { position: absolute; inset-block-start: -22px; inset-inline: -20px; text-align: center; font-size: .6875rem; letter-spacing: .08em; color: var(--lg-cream-dim); }
 .lgPads { position: absolute; inset-inline-end: 14px; inset-block-end: calc(24px + var(--lg-safe-b)); inline-size: 150px; block-size: 150px; pointer-events: none; }
 .lgPad { position: absolute; border-radius: 50%; display: grid; place-items: center; align-content: center; gap: 1px; pointer-events: auto; border: 2px solid var(--lg-line); background: var(--lg-glass); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); font-family: var(--lg-head); font-size: .6875rem; letter-spacing: .1em; text-transform: uppercase; touch-action: none; transition: transform .1s, background .2s, border-color .2s; }
@@ -335,18 +335,18 @@
 .lgRoot[data-reduced='true'] *, .lgRoot[data-reduced='true'] *::before, .lgRoot[data-reduced='true'] *::after { animation: none !important; transition: none !important; }
 
 /* ───── polish: real depth on glass, one icon weight, press states ───── */
-.lgGlass { box-shadow: inset 0 1px 0 color-mix(in srgb, var(--lg-cream) 22%, transparent), inset 0 -1px 0 color-mix(in srgb, #000 30%, transparent), 0 8px 24px -8px rgba(0, 0, 0, .55); background-image: linear-gradient(to bottom, color-mix(in srgb, var(--lg-cream) 8%, transparent), transparent 60%); }
+.lgGlass { box-shadow: inset 0 1px 0 color-mix(in srgb, var(--lg-cream) 22%, transparent), inset 0 -1px 0 color-mix(in srgb, var(--life-scene-black) 30%, transparent), 0 8px 24px -8px color-mix(in srgb, var(--life-scene-black) 55%, transparent); background-image: linear-gradient(to bottom, color-mix(in srgb, var(--lg-cream) 8%, transparent), transparent 60%); }
 .lgIconBtn { transition: transform .12s var(--lg-ease), border-color .2s, background-color .2s; box-shadow: inset 0 1px 0 color-mix(in srgb, var(--lg-cream) 18%, transparent); }
 .lgIconBtn:hover { border-color: var(--lg-cream-dim); }
 .lgIconBtn:active { transform: scale(.92); }
 .lgIconBtn svg { stroke-width: 2; }
-.lgBtn { box-shadow: inset 0 1px 0 color-mix(in srgb, var(--lg-cream) 18%, transparent), 0 10px 22px -12px rgba(0, 0, 0, .7); }
-.lgBtn[data-primary='true'] { box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), 0 12px 26px -10px color-mix(in srgb, var(--lg-brand) 70%, transparent); }
+.lgBtn { box-shadow: inset 0 1px 0 color-mix(in srgb, var(--lg-cream) 18%, transparent), 0 10px 22px -12px color-mix(in srgb, var(--life-scene-black) 70%, transparent); }
+.lgBtn[data-primary='true'] { box-shadow: inset 0 1px 0 color-mix(in srgb, var(--life-scene-white) 50%, transparent), 0 12px 26px -10px color-mix(in srgb, var(--lg-brand) 70%, transparent); }
 .lgBtn:hover { background-color: color-mix(in srgb, var(--lg-cream) 10%, var(--lg-glass)); }
 .lgBtn[data-primary='true']:hover { background-color: var(--lg-brand); filter: brightness(1.06); }
-.lgH1 { text-shadow: 0 2px 20px rgba(0, 0, 0, .35); }
+.lgH1 { text-shadow: 0 2px 20px color-mix(in srgb, var(--life-scene-black) 35%, transparent); }
 .lgKicker { font-weight: 700; }
-.lgSlot, .lgInfo, .lgRow, .lgHelpCol, .lgCard { box-shadow: inset 0 1px 0 color-mix(in srgb, var(--lg-cream) 10%, transparent), 0 12px 28px -16px rgba(0, 0, 0, .7); }
+.lgSlot, .lgInfo, .lgRow, .lgHelpCol, .lgCard { box-shadow: inset 0 1px 0 color-mix(in srgb, var(--lg-cream) 10%, transparent), 0 12px 28px -16px color-mix(in srgb, var(--life-scene-black) 70%, transparent); }
 .lgScreen { animation: lgFade .35s both, lgRise .45s var(--lg-ease) both; }
 
 /* coach mark: shown once, dismissible, clear of the stick */
@@ -356,21 +356,21 @@
 .lgWatch { position: absolute; inset: 0; z-index: 8; overflow-y: auto; touch-action: pan-y; background: color-mix(in srgb, var(--lg-navy) 90%, transparent); }
 
 /* dialogue portrait */
-.lgPortrait2 { position: absolute; inset-block-end: calc(100% - 22px); inset-inline-end: 62px; inline-size: 64px; block-size: 64px; border-radius: 50%; border: 2px solid var(--lg-accent); background: radial-gradient(circle at 50% 35%, var(--lg-navy-3), var(--lg-navy-2)); display: grid; place-items: center; overflow: hidden; box-shadow: 0 8px 20px -8px rgba(0, 0, 0, .7); }
-.lgPortrait2 i { position: absolute; inset-block-start: 14px; inset-inline: 19px; block-size: 26px; border-radius: 50% 50% 46% 46%; background: #d9a276; }
-.lgPortrait2 i::before { content: ''; position: absolute; inset-block-start: -4px; inset-inline: -2px; block-size: 12px; border-radius: 50% 50% 20% 20%; background: #2a1f1a; }
+.lgPortrait2 { position: absolute; inset-block-end: calc(100% - 22px); inset-inline-end: 62px; inline-size: 64px; block-size: 64px; border-radius: 50%; border: 2px solid var(--lg-accent); background: radial-gradient(circle at 50% 35%, var(--lg-navy-3), var(--lg-navy-2)); display: grid; place-items: center; overflow: hidden; box-shadow: 0 8px 20px -8px color-mix(in srgb, var(--life-scene-black) 70%, transparent); }
+.lgPortrait2 i { position: absolute; inset-block-start: 14px; inset-inline: 19px; block-size: 26px; border-radius: 50% 50% 46% 46%; background: var(--life-scene-skin); }
+.lgPortrait2 i::before { content: ''; position: absolute; inset-block-start: -4px; inset-inline: -2px; block-size: 12px; border-radius: 50% 50% 20% 20%; background: var(--life-scene-hair); }
 .lgPortrait2 b { position: absolute; inset-block-end: -2px; inset-inline: 8px; block-size: 20px; border-radius: 16px 16px 0 0; background: var(--lg-navy-3); border: 1px solid var(--lg-line); font-size: 0; }
-.lgPortrait2[data-who='mate'] i { background: #c98f66; } .lgPortrait2[data-who='kiosk'] i::before { background: #8a8f99; } .lgPortrait2[data-who='dad'] b { background: var(--lg-accent); }
+.lgPortrait2[data-who='mate'] i { background: var(--life-scene-skin-deep); } .lgPortrait2[data-who='kiosk'] i::before { background: var(--life-scene-kiosk-hair); } .lgPortrait2[data-who='dad'] b { background: var(--lg-accent); }
 
 /* figure (kit bag) */
-.lgFShadow { fill: #000; } .lgFPants { fill: #cbb48e; } .lgFShoe { fill: #2a2f38; } .lgFJacket { fill: #1d2b3f; stroke: var(--lg-cream); } .lgFSkin { fill: #d9a276; } .lgFSkin2 { fill: #c98f66; } .lgFHair { fill: #2a1f1a; } .lgFMouth { stroke: #2a1f1a; }
+.lgFShadow { fill: var(--life-scene-black); } .lgFPants { fill: var(--life-scene-trousers); } .lgFShoe { fill: var(--life-scene-shoe); } .lgFJacket { fill: var(--life-scene-jacket); stroke: var(--lg-cream); } .lgFSkin { fill: var(--life-scene-skin); } .lgFSkin2 { fill: var(--life-scene-skin-deep); } .lgFHair { fill: var(--life-scene-hair); } .lgFMouth { stroke: var(--life-scene-hair); }
 
 /* ───── the district map: edge to edge, dusk ───── */
-.lgMapFull { position: absolute; inset: 0; overflow: hidden; background: #0b1320; animation: lgFade .4s both; }
+.lgMapFull { position: absolute; inset: 0; overflow: hidden; background: var(--life-scene-map-overlay); animation: lgFade .4s both; }
 .lgMapView { position: absolute; inset: 0; touch-action: none; cursor: grab; }
 .lgMapView:active { cursor: grabbing; }
 .lgMapSvg { position: absolute; inset: 0; display: block; }
-.lgVignette { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 50% 46%, transparent 46%, rgba(6, 10, 18, .55) 78%, rgba(6, 10, 18, .9) 100%); }
+.lgVignette { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 50% 46%, transparent 46%, color-mix(in srgb, var(--life-scene-vignette) 55%, transparent) 78%, color-mix(in srgb, var(--life-scene-vignette) 90%, transparent) 100%); }
 .lgGrain { position: absolute; inset: 0; pointer-events: none; opacity: .09; mix-blend-mode: overlay; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .9 0'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>"); }
 .lgMapTop { position: absolute; inset-inline: 10px; inset-block-start: calc(10px + var(--lg-safe-t)); display: grid; gap: 8px; pointer-events: none; }
 .lgMapHeader { display: flex; align-items: center; gap: 10px; padding: 6px 10px 6px 6px; pointer-events: auto; }
@@ -390,12 +390,12 @@
 .lgCompass svg { inline-size: 40px; block-size: 40px; display: block; margin-inline: auto; }
 .lgCompassRing { fill: color-mix(in srgb, var(--lg-navy) 70%, transparent); stroke: var(--lg-line); stroke-width: 1.5; } .lgCompassS { fill: var(--lg-cream-dim); }
 .lgCompass b { font-family: var(--lg-head); font-size: .75rem; letter-spacing: .1em; color: var(--lg-cream); }
-.lgScale { position: absolute; inset-inline-start: 14px; inset-block-start: calc(142px + var(--lg-safe-t)); display: grid; gap: 3px; pointer-events: none; font-size: .625rem; letter-spacing: .1em; color: var(--lg-cream); text-shadow: 0 1px 4px #000; }
+.lgScale { position: absolute; inset-inline-start: 14px; inset-block-start: calc(142px + var(--lg-safe-t)); display: grid; gap: 3px; pointer-events: none; font-size: .625rem; letter-spacing: .1em; color: var(--lg-cream); text-shadow: 0 1px 4px var(--life-scene-black); }
 .lgScale i { block-size: 4px; border: 1.5px solid var(--lg-cream); border-block-start: 0; display: block; }
 
 /* pins */
 .lgPin { cursor: pointer; outline: none; }
-.lgPinBody { fill: var(--lg-navy); stroke: var(--lg-cream); stroke-width: 2.4; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, .55)); transition: r .2s; }
+.lgPinBody { fill: var(--lg-navy); stroke: var(--lg-cream); stroke-width: 2.4; filter: drop-shadow(0 4px 6px color-mix(in srgb, var(--life-scene-black) 55%, transparent)); transition: r .2s; }
 .lgPinText { font-family: var(--lg-head); font-size: 17px; font-weight: 700; fill: var(--lg-cream); pointer-events: none; }
 .lgPinText[data-on='true'] { fill: var(--lg-on-accent); }
 .lgPin:focus-visible .lgPinBody { stroke-width: 4; }
@@ -404,7 +404,7 @@
 .lgPinPulse, .lgYouPulse { fill: none; stroke-width: 2; transform-box: fill-box; transform-origin: center; animation: lgRadar 1.8s ease-out infinite; }
 .lgYouPulse { fill-opacity: .18; }
 @keyframes lgRadar { from { transform: scale(.5); opacity: .9; } to { transform: scale(1.5); opacity: 0; } }
-.lgYouArrow { stroke: var(--lg-navy); stroke-width: 2.4; stroke-linejoin: round; filter: drop-shadow(0 3px 4px rgba(0, 0, 0, .6)); }
+.lgYouArrow { stroke: var(--lg-navy); stroke-width: 2.4; stroke-linejoin: round; filter: drop-shadow(0 3px 4px color-mix(in srgb, var(--life-scene-black) 60%, transparent)); }
 .lgMRoute { fill: none; stroke-linecap: round; stroke-linejoin: round; animation: lgDash 1.2s linear infinite; }
 .lgMRouteCase { fill: none; stroke: var(--lg-navy); stroke-opacity: .75; stroke-linecap: round; stroke-linejoin: round; }
 @keyframes lgDash { to { stroke-dashoffset: -30; } }
@@ -412,7 +412,7 @@
 /* the sheet */
 .lgSheet { position: absolute; inset-inline: 0; inset-block-end: 0; padding: 0 10px calc(12px + var(--lg-safe-b)); transform: translateY(110%); transition: transform .45s var(--lg-ease); pointer-events: none; }
 .lgSheet[data-open='true'] { transform: none; pointer-events: auto; }
-.lgSheetIn { position: relative; border-radius: 22px 22px 18px 18px; border: 1px solid var(--lg-line); background: var(--lg-glass-solid); overflow: hidden; display: grid; box-shadow: inset 0 1px 0 color-mix(in srgb, var(--lg-cream) 14%, transparent), 0 -16px 40px -12px rgba(0, 0, 0, .7); max-inline-size: 34rem; margin-inline: auto; }
+.lgSheetIn { position: relative; border-radius: 22px 22px 18px 18px; border: 1px solid var(--lg-line); background: var(--lg-glass-solid); overflow: hidden; display: grid; box-shadow: inset 0 1px 0 color-mix(in srgb, var(--lg-cream) 14%, transparent), 0 -16px 40px -12px color-mix(in srgb, var(--life-scene-black) 70%, transparent); max-inline-size: 34rem; margin-inline: auto; }
 .lgArt { inline-size: 100%; block-size: 92px; display: block; }
 .lgSheetText { padding: 12px 16px 16px; display: grid; gap: 6px; }
 .lgSheetText h2 { font-family: var(--lg-head); font-size: 1.625rem; text-transform: uppercase; line-height: 1; }
@@ -420,27 +420,27 @@
 .lgSheetDist { font-variant-numeric: tabular-nums; }
 .lgSheetText .lgBtn { min-block-size: 50px; margin-block-start: 4px; }
 .lgSheetX { position: absolute; inset-block-start: 8px; inset-inline-end: 8px; background: color-mix(in srgb, var(--lg-navy) 70%, transparent); }
-.lgArtSky { fill: #1c2c47; } .lgArtGround { fill: #2a3647; }
+.lgArtSky { fill: var(--life-scene-illustration-sky); } .lgArtGround { fill: var(--life-scene-illustration-ground); }
 
 /* the drawing's palette (dusk): every colour of the map lives here */
-.lgMGround { fill: #101a2b; } .lgMShadow { fill: #04070d; opacity: .42; }
-.lgMWalk { fill: #4d5a6d; } .lgMRoad { fill: #262f3d; }
-.lgMLaneC { stroke: #dfe4ec; stroke-width: .35; stroke-dasharray: 2.4 2.4; opacity: .7; } .lgMLaneE { stroke: #dfe4ec; stroke-width: .25; opacity: .35; }
-.lgMZebra { fill: #e6eaf1; opacity: .82; }
-.lgMWall { fill: #151c28; } .lgMRoof0 { fill: #a9553f; } .lgMRoof1 { fill: #8f4a3c; } .lgMRoof2 { fill: #5d6c82; } .lgMRoof3 { fill: #6b7a91; } .lgMRoof4 { fill: #b87a56; } .lgMRoof5 { fill: #3f6266; }
-.lgMTileLine { stroke: #000; stroke-width: .18; opacity: .28; fill: none; } .lgMRidge { stroke: #fff1dc; stroke-width: .35; opacity: .22; }
-.lgMCourt { fill: #2d4a3a; } .lgMVent { fill: #1a2230; } .lgMWin { fill: #ff9a4d; opacity: .95; }
-.lgMTree0 { fill: #2f6b45; } .lgMTree1 { fill: #3a7a4c; } .lgMTree2 { fill: #28593d; } .lgMTreeHi { fill: #6bb66f; opacity: .45; }
-.lgMCar0 { fill: #c9453c; } .lgMCar1 { fill: #e8eaee; } .lgMCar2 { fill: #34506f; } .lgMCar3 { fill: #1b1f27; } .lgMCar4 { fill: #7c8794; } .lgMCar5 { fill: #3f8d6a; } .lgMGlass { fill: #0b1018; opacity: .75; }
-.lgMLamp { mix-blend-mode: screen; } .lgMLampA { stop-color: #ffb066; stop-opacity: .7; } .lgMLampB { stop-color: #ffb066; stop-opacity: 0; }
-.lgMFloodA { stop-color: #ffffff; stop-opacity: .5; } .lgMFloodB { stop-color: #cfe0ff; stop-opacity: 0; } .lgMFlood { mix-blend-mode: screen; }
-.lgMGroundA { stop-color: #cfe0ff; stop-opacity: .16; } .lgMGroundB { stop-color: #cfe0ff; stop-opacity: 0; }
-.lgMHazeA { stop-color: #1a2740; stop-opacity: 0; } .lgMHazeB { stop-color: #1a2740; stop-opacity: .86; }
-.lgMGrass { fill: #2f7a4b; } .lgMMow { fill: #3a8a58; } .lgMLine { fill: none; stroke: #eaf3ec; stroke-width: .35; opacity: .9; } .lgMFence { fill: #1a2230; }
-.lgMYard { fill: #566377; } .lgMFlag { stroke: #e8eaee; stroke-width: .5; }
-.lgMAw0 { fill: #d85a46; } .lgMAw1 { fill: #f4ead8; }
-.lgMBowl { fill: #1e2736; } .lgMSeats { opacity: .55; } .lgMSeats2 { fill: #2a3a55; } .lgMRoofG { fill: #3a465c; } .lgMRoofSeg { fill: none; stroke: #0b1018; stroke-width: .6; stroke-dasharray: 1.6 1.2; opacity: .55; }
-.lgMMast { fill: #ffffff; } .lgMBeam { stroke: #ffffff; stroke-width: .5; } .lgMGate { fill: #ff9a4d; opacity: .9; }
+.lgMGround { fill: var(--life-scene-map-ground); } .lgMShadow { fill: var(--life-scene-map-shadow); opacity: .42; }
+.lgMWalk { fill: var(--life-scene-sidewalk); } .lgMRoad { fill: var(--life-scene-map-road); }
+.lgMLaneC { stroke: var(--life-scene-road-mark); stroke-width: .35; stroke-dasharray: 2.4 2.4; opacity: .7; } .lgMLaneE { stroke: var(--life-scene-road-mark); stroke-width: .25; opacity: .35; }
+.lgMZebra { fill: var(--life-scene-crossing); opacity: .82; }
+.lgMWall { fill: var(--life-scene-map-wall); } .lgMRoof0 { fill: var(--life-scene-roof-terracotta); } .lgMRoof1 { fill: var(--life-scene-roof-brown); } .lgMRoof2 { fill: var(--life-scene-roof-slate); } .lgMRoof3 { fill: var(--life-scene-roof-light); } .lgMRoof4 { fill: var(--life-scene-roof-tan); } .lgMRoof5 { fill: var(--life-scene-roof-teal); }
+.lgMTileLine { stroke: var(--life-scene-black); stroke-width: .18; opacity: .28; fill: none; } .lgMRidge { stroke: var(--life-scene-cream); stroke-width: .35; opacity: .22; }
+.lgMCourt { fill: var(--life-scene-court); } .lgMVent { fill: var(--life-scene-map-metal); } .lgMWin { fill: var(--life-scene-window); opacity: .95; }
+.lgMTree0 { fill: var(--life-scene-tree-base); } .lgMTree1 { fill: var(--life-scene-tree-mid); } .lgMTree2 { fill: var(--life-scene-tree-dark); } .lgMTreeHi { fill: var(--life-scene-tree-light); opacity: .45; }
+.lgMCar0 { fill: var(--life-scene-car-red); } .lgMCar1 { fill: var(--life-scene-car-white); } .lgMCar2 { fill: var(--life-scene-car-blue); } .lgMCar3 { fill: var(--life-scene-car-charcoal); } .lgMCar4 { fill: var(--life-scene-car-grey); } .lgMCar5 { fill: var(--life-scene-car-green); } .lgMGlass { fill: var(--life-scene-map-glass); opacity: .75; }
+.lgMLamp { mix-blend-mode: screen; } .lgMLampA { stop-color: var(--life-scene-lamp); stop-opacity: .7; } .lgMLampB { stop-color: var(--life-scene-lamp); stop-opacity: 0; }
+.lgMFloodA { stop-color: var(--life-scene-white); stop-opacity: .5; } .lgMFloodB { stop-color: var(--life-scene-floodlight); stop-opacity: 0; } .lgMFlood { mix-blend-mode: screen; }
+.lgMGroundA { stop-color: var(--life-scene-floodlight); stop-opacity: .16; } .lgMGroundB { stop-color: var(--life-scene-floodlight); stop-opacity: 0; }
+.lgMHazeA { stop-color: var(--life-scene-map-haze); stop-opacity: 0; } .lgMHazeB { stop-color: var(--life-scene-map-haze); stop-opacity: .86; }
+.lgMGrass { fill: var(--life-scene-grass); } .lgMMow { fill: var(--life-scene-grass-stripe); } .lgMLine { fill: none; stroke: var(--life-scene-pitch-mark); stroke-width: .35; opacity: .9; } .lgMFence { fill: var(--life-scene-map-metal); }
+.lgMYard { fill: var(--life-scene-yard); } .lgMFlag { stroke: var(--life-scene-car-white); stroke-width: .5; }
+.lgMAw0 { fill: var(--life-scene-awning-red); } .lgMAw1 { fill: var(--life-scene-awning-cream); }
+.lgMBowl { fill: var(--life-scene-stadium-bowl); } .lgMSeats { opacity: .55; } .lgMSeats2 { fill: var(--life-scene-stadium-seats); } .lgMRoofG { fill: var(--life-scene-stadium-roof); } .lgMRoofSeg { fill: none; stroke: var(--life-scene-map-glass); stroke-width: .6; stroke-dasharray: 1.6 1.2; opacity: .55; }
+.lgMMast { fill: var(--life-scene-white); } .lgMBeam { stroke: var(--life-scene-white); stroke-width: .5; } .lgMGate { fill: var(--life-scene-window); opacity: .9; }
 
 @media (min-width: 900px) {
   .lgMapHeader .lgTabs { display: flex; }

@@ -1627,3 +1627,66 @@ select {
   .arena-logo, .arena-line { animation: none; opacity: 1; transform: none; filter: none; }
 }
 /* ARENA ENTRANCE — end */
+
+/* Shared LIFE scenery and interface palette. Club accents are supplied by the club theme. */
+:root {
+  --life-scene-black: #000;
+  --life-scene-map-shadow: #04070d;
+  --life-scene-cinema-bar: #05090f;
+  --life-scene-mini-map: #0a121c;
+  --life-scene-map-glass: #0b1018;
+  --life-scene-map-overlay: #0b1320;
+  --life-scene-navy: #0f1a28;
+  --life-scene-map-ground: #101a2b;
+  --life-scene-map-wall: #151c28;
+  --life-scene-navy-raised: #16263a;
+  --life-scene-map-metal: #1a2230;
+  --life-scene-map-haze: #1a2740;
+  --life-scene-car-charcoal: #1b1f27;
+  --life-scene-illustration-sky: #1c2c47;
+  --life-scene-jacket: #1d2b3f;
+  --life-scene-stadium-bowl: #1e2736;
+  --life-scene-navy-bright: #1f3550;
+  --life-scene-map-road: #262f3d;
+  --life-scene-tree-dark: #28593d;
+  --life-scene-hair: #2a1f1a;
+  --life-scene-shoe: #2a2f38;
+  --life-scene-illustration-ground: #2a3647;
+  --life-scene-stadium-seats: #2a3a55;
+  --life-scene-court: #2d4a3a;
+  --life-scene-tree-base: #2f6b45;
+  --life-scene-grass: #2f7a4b;
+  --life-scene-car-blue: #34506f;
+  --life-scene-stadium-roof: #3a465c;
+  --life-scene-tree-mid: #3a7a4c;
+  --life-scene-grass-stripe: #3a8a58;
+  --life-scene-roof-teal: #3f6266;
+  --life-scene-car-green: #3f8d6a;
+  --life-scene-sidewalk: #4d5a6d;
+  --life-scene-yard: #566377;
+  --life-scene-roof-slate: #5d6c82;
+  --life-scene-roof-light: #6b7a91;
+  --life-scene-tree-light: #6bb66f;
+  --life-scene-car-grey: #7c8794;
+  --life-scene-kiosk-hair: #8a8f99;
+  --life-scene-roof-brown: #8f4a3c;
+  --life-scene-roof-terracotta: #a9553f;
+  --life-scene-roof-tan: #b87a56;
+  --life-scene-brand-default: #b9e36a;
+  --life-scene-car-red: #c9453c;
+  --life-scene-skin-deep: #c98f66;
+  --life-scene-trousers: #cbb48e;
+  --life-scene-floodlight: #cfe0ff;
+  --life-scene-awning-red: #d85a46;
+  --life-scene-skin: #d9a276;
+  --life-scene-road-mark: #dfe4ec;
+  --life-scene-crossing: #e6eaf1;
+  --life-scene-car-white: #e8eaee;
+  --life-scene-pitch-mark: #eaf3ec;
+  --life-scene-awning-cream: #f4ead8;
+  --life-scene-window: #ff9a4d;
+  --life-scene-lamp: #ffb066;
+  --life-scene-cream: #fff1dc;
+  --life-scene-white: #ffffff;
+  --life-scene-vignette: #060a12;
+}
