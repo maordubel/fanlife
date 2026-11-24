@@ -165,5 +165,16 @@
   "kb.crest.circle-1927": "סמל circle 1927",
   "kb.crest.keter-ball-patch": "סמל keter ball patch",
   "kb.crest.keter-ball-black": "סמל keter ball black",
-  "kb.retryShirt": "נסו שוב את החולצה הזאת"
+  "kb.retryShirt": "נסו שוב את החולצה הזאת",
+ "kb.progress": "הורכבו {done} מתוך {n} חלקים",
+ "kb.err.network": "החיבור נקטע. הבחירות שלך נשמרו על הלוח.",
+ "kb.hint.loading": "מחפשים רמז…",
+ "kb.rec.done": "סבב הזיהוי הסתיים",
+ "kb.rec.score": "{score} מתוך {max} תשובות נכונות",
+ "kb.rec.again": "לסבב נוסף",
+ "kb.rec.progress": "התקדמות בסבב הזיהוי",
+ "kb.rec.shirt": "החולצה לזיהוי",
+ "kb.zoom.in": "מבט מקרוב",
+ "kb.zoom.out": "הצגת החולצות במלואן",
+ "kb.rec.streak": "{n} חולצות מושלמות ברצף"
 }

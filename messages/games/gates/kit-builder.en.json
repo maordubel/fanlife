@@ -165,5 +165,16 @@
   "kb.crest.circle-1927": "circle 1927",
   "kb.crest.keter-ball-patch": "keter ball patch",
   "kb.crest.keter-ball-black": "keter ball black",
-  "kb.retryShirt": "Try this shirt again"
+  "kb.retryShirt": "Try this shirt again",
+ "kb.progress": "{done} of {n} parts fitted",
+ "kb.err.network": "The connection dropped. Your work is still here.",
+ "kb.hint.loading": "Finding a hint…",
+ "kb.rec.done": "Recognition round complete",
+ "kb.rec.score": "{score} of {max} correct",
+ "kb.rec.again": "Play another round",
+ "kb.rec.progress": "Recognition round progress",
+ "kb.rec.shirt": "Shirt to identify",
+ "kb.zoom.in": "Inspect shirts",
+ "kb.zoom.out": "Show full shirts",
+ "kb.rec.streak": "{n} perfect shirts in a row"
 }
