@@ -1114,7 +1114,7 @@ class Film:
         for js in tw:
             self.tween(js)
 
-    def press(self, s, t, d):
+    def gazette(self, s, t, d):
         """The press (docu/press.py): the film's front page, or a collage scene — halftone pieces from the press kit on
         newsprint, in the club's colour, pasted pieces moving on twos and threes."""
         from . import press as PR

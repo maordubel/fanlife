@@ -218,7 +218,7 @@ def direct(beats: list[dict], shots: dict[int, dict], files: dict[str, str], clu
         off = 0.0
         for b in first:
             keep = [x for x in b['shots'] if x['kind'] not in ('image', 'video', 'tint', 'lead', 'thread', 'word', 'kinetic', 'life', 'cutout', 'objects', 'explain', 'question')]   # the page is the title: a second title over its headline was printed on the 23.11 sample
-            b['shots'] = [{'kind': 'press', 'page': 'front', 'head': head, 'deck': deck, 'kicker': (sh.get('visual') or {}).get('kicker') or '',
+            b['shots'] = [{'kind': 'gazette', 'page': 'front', 'head': head, 'deck': deck, 'kicker': (sh.get('visual') or {}).get('kicker') or '',
                            'mast': 'THE TERRACE GAZETTE', 'dateline': f'{club.upper()} EDITION' if club else '', 'body': text, 'files': files,
                            'off': round(off, 3), 'total': round(total, 3), 'dt': 0.0, 'd': round(b['d'], 3)}] + keep
             off += b['d']
@@ -238,7 +238,7 @@ def direct(beats: list[dict], shots: dict[int, dict], files: dict[str, str], clu
                                                          'paste': {'striker', 'keeper'}}[x] <= set(files)), None)
         if not sc:
             continue
-        b['shots'] = [{'kind': 'press', 'page': 'scene', 'scene': sc, 'files': files, 'seed': f'{club}|{m.get("n")}|{k}', 'flip': k % 2 == 1,
+        b['shots'] = [{'kind': 'gazette', 'page': 'scene', 'scene': sc, 'files': files, 'seed': f'{club}|{m.get("n")}|{k}', 'flip': k % 2 == 1,
                        'dt': 0.0, 'd': round(b['d'], 3)}] + [x for x in b['shots'] if x['kind'] not in ('image', 'video', 'tint', 'life', 'cutout')]
         last, k = sc, k + 1
         made['scenes'] += 1

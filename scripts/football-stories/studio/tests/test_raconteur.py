@@ -218,8 +218,8 @@ class ThePress(unittest.TestCase):
         made = press.direct(beats, shots, files, 'Test FC')
         self.assertEqual(made, {'front': 1, 'scenes': 2})
         front = beats[0]['shots'][0]
-        self.assertEqual((front['kind'], front['page'], front['head'][0]), ('press', 'front', '370 people'))
-        self.assertEqual([x['kind'] for x in beats[0]['shots']], ['press'])   # no second title over the headline
+        self.assertEqual((front['kind'], front['page'], front['head'][0]), ('gazette', 'front', '370 people'))
+        self.assertEqual([x['kind'] for x in beats[0]['shots']], ['gazette'])   # no second title over the headline
         self.assertEqual(beats[1]['shots'][0]['kind'], 'image')           # a beat with its own board keeps it
         a, b = beats[2]['shots'][0], beats[3]['shots'][0]
         self.assertEqual(a['scene'], 'duotone')
@@ -232,15 +232,22 @@ class ThePress(unittest.TestCase):
         from studio.docu import press
         files = {k: f'{k}.webp' for k in press.PIECES}
         f = B.Film({'palette': {'us': '#B02D10', 'them': '#333333'}, 'silent': True}, __import__('pathlib').Path('.'))
-        f.press({'page': 'front', 'head': ['370 people', 'were in the', 'ground'], 'deck': 'in Oldtown', 'kicker': 'Cup', 'body': 'x', 'files': files, 'off': 0, 'total': 8}, 0.0, 8.0)
+        f.gazette({'page': 'front', 'head': ['370 people', 'were in the', 'ground'], 'deck': 'in Oldtown', 'kicker': 'Cup', 'body': 'x', 'files': files, 'off': 0, 'total': 8}, 0.0, 8.0)
         for sc in press.SCENES:
-            f.press({'page': 'scene', 'scene': sc, 'files': files, 'seed': sc}, 8.0, 4.0)
+            f.gazette({'page': 'scene', 'scene': sc, 'files': files, 'seed': sc}, 8.0, 4.0)
         html, js = ' '.join(f.clips), ' '.join(f.tw)
         self.assertIn('370</i> people', html)
         self.assertNotRegex(js, r'rotationX|rotationY|perspective')       # a 3D transform drops the motion blur to its slow tier
         self.assertNotIn('mask-image', html + press.CSS)
         colours = set(re.findall(r'#[0-9a-fA-F]{6}\b', html)) - {'#B02D10', f.PAPER, f.INK}
         self.assertFalse(colours, colours)                                 # ink and paper come from the film; nothing else is printed
+
+    def test_the_designers_newspaper_clipping_keeps_its_own_device(self):
+        """The press engine is the `gazette` device: `press` is the designer's clipping (a newspaper print with its
+        translation), and one name for two devices overrode it on 23.11."""
+        f = B.Film({'palette': {'us': '#B02D10', 'them': '#333333'}, 'silent': True}, __import__('pathlib').Path('.'))
+        f.press({'src': 'clip.jpg', 'small': 'OUTLET', 'translation': 'A headline'}, 0.0, 4.0)
+        self.assertIn('A headline', ' '.join(f.clips))
 
     def test_the_press_kit_is_in_the_repository(self):
         from studio.docu import press
