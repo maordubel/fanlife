@@ -1,5 +1,5 @@
 'use client'
-import {useCallback,useEffect,useMemo,useRef,useState,useTransition} from 'react'
+import {useCallback,useEffect,useMemo,useRef,useState} from 'react'
 import Link from 'next/link'
 import {SlideSheet} from '@/components/stage/SlideSheet'
 import {firePickFxAt} from '@/components/stage/PickFx'
@@ -44,8 +44,10 @@ export function KitBuilder(props:KitBuilderProps){
  const size=mode?Math.min(MODE_SIZE[mode],puzzles.length):0
  const [idx,setIdx]=useState(0),[stepIx,setStepIx]=useState(0),[auto,setAuto]=useState(false)
  const [placed,setPlaced]=useState<Record<number,Placed>>({}),[hints,setHints]=useState<Record<number,HintState>>({})
- const [graded,setGraded]=useState<Record<number,Graded>>({}),[error,setError]=useState<Fail['error']|null>(null),[notice,setNotice]=useState('')
- const [pending,startGrade]=useTransition(),[sheet,setSheet]=useState<null|{kind:'info';option:Option}|{kind:'rules'}>(null)
+ const [graded,setGraded]=useState<Record<number,Graded>>({}),[error,setError]=useState<Fail['error']|'network'|null>(null),[notice,setNotice]=useState('')
+ const [pending,setPending]=useState<'hint'|'grade'|null>(null),inFlight=useRef(false)
+ const retryRequest=useRef<(()=>void)|null>(null)
+ const [sheet,setSheet]=useState<null|{kind:'info';option:Option}|{kind:'rules'}>(null)
  const [wide,setWide]=useState(false),garmentRef=useRef<HTMLDivElement>(null),opener=useRef<HTMLElement|null>(null),timer=useRef<number|null>(null),reported=useRef(false)
 
  useEffect(()=>{const q=window.matchMedia('(min-width: 901px)'),on=()=>setWide(q.matches);on();q.addEventListener('change',on);return()=>q.removeEventListener('change',on)},[])
@@ -61,19 +63,44 @@ export function KitBuilder(props:KitBuilderProps){
  const variantName=puzzle?say(`kb.variant.${puzzle.variant}`):''
 
  function nextOpen(from:number,m:Placed){for(let i=from+1;i<steps.length;i++)if(!m[steps[i]!.step])return i;for(let i=0;i<=from&&i<steps.length;i++)if(!m[steps[i]!.step])return i;return REVIEW}
+ function cancelAdvance(){
+  if(timer.current!==null)window.clearTimeout(timer.current)
+  timer.current=null
+ }
+ function openStep(index:number){
+  cancelAdvance()
+  setError(null)
+  setStepIx(index)
+ }
+ async function runRequest(kind:'hint'|'grade',task:()=>Promise<void>){
+  if(inFlight.current)return
+  cancelAdvance()
+  inFlight.current=true
+  retryRequest.current=()=>{void runRequest(kind,task)}
+  setPending(kind)
+  setError(null)
+  try{
+   await task()
+  }catch{
+   setError('network')
+  }finally{
+   inFlight.current=false
+   setPending(null)
+  }
+ }
  function place(step:Step,id:string){
-  if(phase!=='play'||hint.struck[step]?.includes(id))return
+  if(phase!=='play'||inFlight.current||hint.struck[step]?.includes(id))return
   const next={...mine,[step]:id},o=optionOf(step,id)
   setPlaced(p=>({...p,[idx]:next}));setNotice('');setError(null)
   window.requestAnimationFrame(()=>firePickFxAt(garmentRef.current,{label:o?optionLabel(copy,o).slice(0,14):undefined}))
-  if(auto){const at=steps.findIndex(s=>s.step===step);if(timer.current)window.clearTimeout(timer.current);timer.current=window.setTimeout(()=>setStepIx(nextOpen(at,next)),ADVANCE_MS)}
+  if(auto){const at=steps.findIndex(s=>s.step===step);cancelAdvance();timer.current=window.setTimeout(()=>openStep(nextOpen(at,next)),ADVANCE_MS)}
  }
- function unplace(step:Step){setPlaced(p=>{const n={...(p[idx]??{})};delete n[step];return {...p,[idx]:n}})}
+ function unplace(step:Step){if(inFlight.current)return;cancelAdvance();setPlaced(p=>{const n={...(p[idx]??{})};delete n[step];return {...p,[idx]:n}})}
 
  function askHint(){
   const row=steps[stepIx];if(!row||hint.n>=HINT_LIMIT||pending)return
   const done=hint.struck[row.step]??[]
-  startGrade(async()=>{
+  void runRequest('hint',async()=>{
    const r=await hintKitShirt(club,version,seed,cursor,game,idx,row.step,done.length)
    if(!r.ok){setError(r.error);return}
    if(!r.optionId){setNotice(say('kb.hint.none'));return}
@@ -85,7 +112,7 @@ export function KitBuilder(props:KitBuilderProps){
  function check(){
   if(!allPlaced||pending)return
   setError(null)
-  startGrade(async()=>{
+  void runRequest('grade',async()=>{
    const r=await gradeKitShirt(club,version,seed,cursor,game,idx,mine as Record<string,string>,hint.receipts)
    if(!r.ok){setError(r.error);return}
    setGraded(g=>({...g,[idx]:r}))
@@ -219,7 +246,7 @@ export function KitBuilder(props:KitBuilderProps){
  const row=steps[stepIx],inReview=stepIx>=REVIEW
  const struck=row?hint.struck[row.step]??[]:[]
  const canHint=!!row&&hint.n<HINT_LIMIT&&row.options.length-struck.length>2&&!pending
- const progress=Object.keys(mine).length
+ const progress=steps.filter(s=>mine[s.step]).length
  return <section className={css.stage} data-testid="kit-builder" data-phase="play" data-step={row?.step??'review'}>
   <div className={css.layout}>
    <div className={css.colShirt}>
@@ -229,31 +256,32 @@ export function KitBuilder(props:KitBuilderProps){
      <button type="button" className={`min-h-tap ${css.tool}`} onClick={askHint} disabled={!canHint||inReview} aria-label={say('kb.hint.aria',{pts:HINT_PENALTY,left:HINT_LIMIT-hint.n})} data-testid="kb-hint"><span aria-hidden="true">?</span><small>{HINT_LIMIT-hint.n}</small></button>
      <button type="button" className={`min-h-tap ${css.tool}`} onClick={openSheet({kind:'rules'})} aria-label={say('kb.rules.open')}><span aria-hidden="true">i</span></button>
     </div>
-    <div className={`wk-sky ${css.garment}`} ref={garmentRef} {...dropZone('kit-shirt')} data-testid="kb-garment">
+    <div className={`wk-sky ${css.garment}`} ref={garmentRef} aria-busy={pending!==null} {...dropZone('kit-shirt')} data-testid="kb-garment">
      <span className="wk-speed" aria-hidden="true"/>
      <KitCloth spec={cloth} sponsorContext={{club,season:puzzle.seasonLabel,variant:puzzle.variant}} sponsorBox={puzzle.sponsorBox} shirtOutline={puzzle.shirtOutline} missing={missing} monogram={monogram} crestSrc={crestFor(club)} title={say('kb.garment.aria',{season:puzzle.seasonLabel,variant:variantName,done:progress,n:steps.length})}/>
     </div>
    </div>
    <div className={css.colWork}>
+    <progress className={css.buildProgress} max={steps.length||1} value={progress} aria-label={say('kb.progress',{done:progress,n:steps.length})}/>
     <ol className={css.rail} role="tablist" aria-label={say('kb.rail')}>
-     {steps.map((s,i)=><li key={s.step}><button type="button" role="tab" aria-selected={stepIx===i} data-done={!!mine[s.step]} className={`min-h-tap ${css.railBtn}`} onClick={()=>setStepIx(i)} data-testid={`kb-step-${s.step}`}><i>{mine[s.step]?'✓':i+1}</i><span>{stepName(s.step)}</span></button></li>)}
-     <li><button type="button" role="tab" aria-selected={inReview} className={`min-h-tap ${css.railBtn}`} data-done={allPlaced} onClick={()=>setStepIx(REVIEW)} disabled={!allPlaced} data-testid="kb-step-review"><i>{allPlaced?'✓':'★'}</i><span>{say('kb.step.review')}</span></button></li>
+     {steps.map((s,i)=><li key={s.step}><button type="button" role="tab" aria-selected={stepIx===i} data-done={!!mine[s.step]} className={`min-h-tap ${css.railBtn}`} onClick={()=>openStep(i)} data-testid={`kb-step-${s.step}`}><i>{mine[s.step]?'✓':i+1}</i><span>{stepName(s.step)}</span></button></li>)}
+     <li><button type="button" role="tab" aria-selected={inReview} className={`min-h-tap ${css.railBtn}`} data-done={allPlaced} onClick={()=>openStep(REVIEW)} disabled={!allPlaced} data-testid="kb-step-review"><i>{allPlaced?'✓':'★'}</i><span>{say('kb.step.review')}</span></button></li>
     </ol>
     <div className={css.work}>
     {!inReview&&row?<div className={css.panel} role="tabpanel">
      <p className={css.question}>{say(`kb.q.${row.step}`,{season:puzzle.seasonLabel,variant:variantName})}</p>
-     <ul className={css.cards} data-testid="kb-cards">{row.options.map(o=><li key={o.id}><OptionCard o={o} label={optionLabel(copy,o)} copy={copy} selected={mine[row.step]===o.id} struck={struck.includes(o.id)} wide={wide} cloth={cloth} contentLocale={contentLocale} monogram={monogram} onPlace={()=>place(row.step,o.id)} onDropped={()=>place(row.step,o.id)} onInfo={openSheet({kind:'info',option:o})} infoLabel={say('kb.info.open',{name:optionLabel(copy,o)})} struckLabel={say('kb.struck')}/></li>)}</ul>
-     {!auto&&mine[row.step]&&!allPlaced&&<button type="button" className={`min-h-tap ${css.cta} ${css.primary}`} onClick={()=>setStepIx(nextOpen(stepIx,mine))}>{say('kb.step.next')}</button>}
-     <label className={css.autoRow}><input type="checkbox" checked={auto} onChange={e=>setAuto(e.target.checked)}/>{say('kb.auto')}</label>
+     <ul className={css.cards} data-testid="kb-cards">{row.options.map(o=><li key={o.id}><OptionCard o={o} label={optionLabel(copy,o)} copy={copy} selected={mine[row.step]===o.id} busy={pending!==null} struck={struck.includes(o.id)} wide={wide} cloth={cloth} contentLocale={contentLocale} monogram={monogram} onPlace={()=>place(row.step,o.id)} onDropped={()=>place(row.step,o.id)} onInfo={openSheet({kind:'info',option:o})} infoLabel={say('kb.info.open',{name:optionLabel(copy,o)})} struckLabel={say('kb.struck')}/></li>)}</ul>
+     {!auto&&mine[row.step]&&!allPlaced&&<button type="button" className={`min-h-tap ${css.cta} ${css.primary}`} onClick={()=>openStep(nextOpen(stepIx,mine))}>{say('kb.step.next')}</button>}
+     <label className={css.autoRow}><input type="checkbox" checked={auto} onChange={e=>{cancelAdvance();setAuto(e.target.checked)}}/>{say('kb.auto')}</label>
     </div>
     :<div className={css.panel} role="tabpanel" data-testid="kb-review">
      <p className={css.question}>{say('kb.review.title')}</p>
-     <ul className={css.reviewList}>{steps.map((s,i)=>{const o=optionOf(s.step,mine[s.step]);return <li key={s.step}><button type="button" className={`min-h-tap ${css.reviewRow}`} onClick={()=>setStepIx(i)}><small>{stepName(s.step)}</small><b lang={contentLocale} dir="auto">{o?optionLabel(copy,o):'—'}</b><span aria-hidden="true">{say('kb.change')}</span></button></li>})}</ul>
-     <button type="button" className={`min-h-tap ${css.cta} ${css.primary}`} onClick={check} disabled={!allPlaced||pending} data-testid="kb-check"><b>{pending?say('kb.checking'):say('kb.check')}</b></button>
+     <ul className={css.reviewList}>{steps.map((s,i)=>{const o=optionOf(s.step,mine[s.step]);return <li key={s.step}><button type="button" className={`min-h-tap ${css.reviewRow}`} onClick={()=>openStep(i)}><small>{stepName(s.step)}</small><b lang={contentLocale} dir="auto">{o?optionLabel(copy,o):'—'}</b><span aria-hidden="true">{say('kb.change')}</span></button></li>})}</ul>
+     <button type="button" className={`min-h-tap ${css.cta} ${css.primary}`} onClick={check} disabled={!allPlaced||pending} data-testid="kb-check"><b>{pending==='grade'?say('kb.checking'):say('kb.check')}</b></button>
     </div>}
-    {!inReview&&allPlaced&&<button type="button" className={`min-h-tap ${css.cta} ${css.primary}`} onClick={()=>setStepIx(REVIEW)} data-testid="kb-to-review"><b>{say('kb.toReview')}</b></button>}
-    {error&&<div className={css.error} role="alert"><p>{say(`kb.err.${error}`)}</p>{error==='stale'?<button type="button" className={`min-h-tap ${css.tool}`} onClick={()=>location.reload()}>{say('kb.err.reload')}</button>:<button type="button" className={`min-h-tap ${css.tool}`} onClick={check}>{say('kb.err.retry')}</button>}</div>}
-    <p className={css.status} role="status">{notice}</p>
+    {!inReview&&allPlaced&&<button type="button" className={`min-h-tap ${css.cta} ${css.primary}`} onClick={()=>openStep(REVIEW)} data-testid="kb-to-review"><b>{say('kb.toReview')}</b></button>}
+    {error&&<div className={css.error} role="alert"><p>{say(`kb.err.${error}`)}</p>{error==='stale'?<button type="button" className={`min-h-tap ${css.tool}`} onClick={()=>location.reload()}>{say('kb.err.reload')}</button>:<button type="button" className={`min-h-tap ${css.tool}`} onClick={()=>retryRequest.current?.()}>{say('kb.err.retry')}</button>}</div>}
+    <p className={css.status} role="status">{pending==='hint'?say('kb.hint.loading'):notice}</p>
     </div>
    </div>
   </div>
@@ -269,12 +297,12 @@ export function KitBuilder(props:KitBuilderProps){
  </section>
 }
 
-function OptionCard({o,label,copy,selected,struck,wide,cloth,contentLocale,monogram,onPlace,onDropped,onInfo,infoLabel,struckLabel}:{o:Option;label:string;copy:GameCopy;selected:boolean;struck:boolean;wide:boolean;cloth:ClothSpec;contentLocale:string;monogram:string;onPlace:()=>void;onDropped:()=>void;onInfo:(e:React.SyntheticEvent)=>void;infoLabel:string;struckLabel:string}){
- const drag=useDragSource({payload:o.id,disabled:struck,axis:wide?'any':'up',onDrop:zone=>{if(zone==='kit-shirt')onDropped()}})
+function OptionCard({o,label,copy,selected,busy,struck,wide,cloth,contentLocale,monogram,onPlace,onDropped,onInfo,infoLabel,struckLabel}:{o:Option;label:string;copy:GameCopy;selected:boolean;busy:boolean;struck:boolean;wide:boolean;cloth:ClothSpec;contentLocale:string;monogram:string;onPlace:()=>void;onDropped:()=>void;onInfo:(e:React.SyntheticEvent)=>void;infoLabel:string;struckLabel:string}){
+ const drag=useDragSource({payload:o.id,disabled:struck||busy,axis:wide?'any':'up',onDrop:zone=>{if(zone==='kit-shirt')onDropped()}})
  // a design card shows the cut on the cloth already chosen — or on neutral cloth if nothing is placed yet
  const preview:ClothSpec={...cloth,maker:null,sponsor:null,crest:false,...o.patch,...(o.step==='construction'?{pattern:o.patch.pattern!}:{})}
  return <div className={css.cardWrap} data-struck={struck}>
-  <button type="button" className={`min-h-tap ${css.card}`} aria-pressed={selected} disabled={struck} aria-label={struck?`${label} — ${struckLabel}`:label} data-testid={`kb-option-${o.step}`} data-option={o.id} onClick={onPlace} {...drag}>
+  <button type="button" className={`min-h-tap ${css.card}`} aria-pressed={selected} disabled={struck||busy} aria-label={struck?`${label} — ${struckLabel}`:label} data-testid={`kb-option-${o.step}`} data-option={o.id} onClick={onPlace} {...drag}>
    <span className={css.cardArt}>
     {o.step==='body'&&<span className={css.discs} aria-hidden="true"><i style={{background:colourHex(o.patch.base!)}}/>{o.patch.trim&&<i style={{background:colourHex(o.patch.trim)}}/>}</span>}
     {o.step==='construction'&&<KitCloth spec={{...preview,base:cloth.base??'grey',trim:cloth.trim??(cloth.base?null:'white')}} texture={false} monogram={monogram} viewBox="40 36 240 262"/>}

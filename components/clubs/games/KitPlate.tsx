@@ -5,7 +5,9 @@ import {useId} from 'react'
 const TOKEN:Record<string,string>={red:'--mag-vermilion',white:'--mag-white',cream:'--mag-paper',blue:'--mag-navy',navy:'--mag-navy',green:'--mag-green',black:'--mag-ink',purple:'--mag-purple',grey:'--mag-muted',gray:'--mag-muted'}
 const CLUB_ONLY=['yellow','maroon','skyblue','pink','orange','brown']
 export const paint=(name:string|undefined)=>name&&TOKEN[name]?`var(${TOKEN[name]})`:name&&CLUB_ONLY.includes(name)?SWATCH[name]!:null
-const BODY='M82 18 L120 6 Q170 28 220 6 L258 18 L312 74 L282 110 L252 92 L252 300 L88 300 L88 92 L58 110 L28 74 Z'
+const BODY='M82 18Q103 9 120 6Q170 32 220 6Q237 9 258 18C277 31 300 57 312 74Q300 94 282 110L252 92C253 159 246 229 252 298Q170 310 88 298C94 229 87 159 88 92L58 110Q40 94 28 74C40 57 63 31 82 18Z'
+const NECK='M120 6Q170 54 220 6'
+const PANELS='M95 27C93 56 92 72 88 92M245 27C247 56 248 72 252 92M37 72Q46 87 64 101M303 72Q294 87 276 101M94 288Q170 298 246 288'
 /**
  * One garment, drawn from the sourced fields only: design (hoops/stripes/checkers/halves/sash/solid) and up to two painted colours.
  * `paints` lets a caller dress it in CSS variables instead (the club livery, when the archive documents no kit);
@@ -17,12 +19,21 @@ function Shorts({p,id}:{p:KitPart;id:string}){const a=paint(p.colour);if(!a)retu
  return <g transform="translate(70 318)"><clipPath id={`${id}s`}><path d={SHORTS}/></clipPath><g clipPath={`url(#${id}s)`}><rect width="200" height="140" fill={a}/>{t&&<><polygon points="0,0 30,0 26,140 0,140" fill={t}/><polygon points="200,0 170,0 174,140 200,140" fill={t}/></>}<rect width="200" height="12" fill="var(--mag-ink)" opacity=".16"/></g><path d={SHORTS} fill="none" stroke="var(--mag-ink)" strokeWidth="5" strokeLinejoin="round"/></g>}
 function Socks({p,id}:{p:KitPart;id:string}){const a=paint(p.colour);if(!a)return null;const t=p.trim?paint(p.trim):null
  return <g transform="translate(336 128)">{[0,24].map(dx=><g key={dx} transform={`translate(${dx} 0)`}><clipPath id={`${id}k${dx}`}><path d={SOCK}/></clipPath><g clipPath={`url(#${id}k${dx})`}><rect x="-10" width="60" height="200" fill={a}/>{t&&<><rect x="-8" y="12" width="52" height="12" fill={t}/><rect x="-8" y="34" width="52" height="12" fill={t}/></>}</g><path d={SOCK} fill="none" stroke="var(--mag-ink)" strokeWidth="5"/></g>)}</g>}
-export function KitPlate({kit,label=true,paints,decorative=false,className='kit-plate'}:{kit:Pick<KitView,'id'|'design'|'colours'|'season'>&Partial<Pick<KitView,'shorts'|'socks'>>;label?:boolean;paints?:{a:string;b?:string|null};decorative?:boolean;className?:string}) {
+export function KitPlate({kit,label=true,paints,decorative=false,detail=false,className='kit-plate'}:{kit:Pick<KitView,'id'|'design'|'colours'|'season'>&Partial<Pick<KitView,'shorts'|'socks'>>;label?:boolean;detail?:boolean;paints?:{a:string;b?:string|null};decorative?:boolean;className?:string}) {
  const instance=useId().replace(/:/g,'')
  const a=paints?.a??paint(kit.colours[0]),b=(paints?paints.b:paint(kit.colours[1]))||a,id=`kp-${instance}`,design=(kit.design||'').toLowerCase()
  const painted=!!a,whole=painted&&!!(kit.shorts||kit.socks)
  return <svg viewBox={whole?'0 0 430 470':'0 0 340 320'} role={decorative?undefined:'img'} aria-hidden={decorative||undefined} aria-label={decorative?undefined:`${kit.season} ${kit.design||''} ${kit.colours.join('/')}`.trim()} className={className} data-painted={painted}>
-  <defs><clipPath id={id}><path d={BODY}/></clipPath></defs>
+  <defs>
+   <clipPath id={id}><path d={BODY}/></clipPath>
+   {detail&&<linearGradient id={`${id}-volume`}>
+    <stop offset="0" stopColor="var(--mag-ink)" stopOpacity=".25"/>
+    <stop offset=".27" stopColor="var(--mag-ink)" stopOpacity=".08"/>
+    <stop offset=".54" stopColor="var(--mag-white)" stopOpacity=".18"/>
+    <stop offset=".78" stopColor="var(--mag-white)" stopOpacity=".03"/>
+    <stop offset="1" stopColor="var(--mag-ink)" stopOpacity=".23"/>
+   </linearGradient>}
+  </defs>
   <g clipPath={`url(#${id})`}>
    <rect width="340" height="320" fill={a||'var(--mag-card)'}/>
    {painted&&design.includes('hoop')&&Array.from({length:6},(_,i)=><rect key={i} x="0" y={20+i*48} width="340" height="24" fill={b!}/>)}
@@ -36,9 +47,13 @@ export function KitPlate({kit,label=true,paints,decorative=false,className='kit-
    {painted&&design.includes('chest band')&&<rect x="0" y="120" width="340" height="56" fill={b!}/>}
    {painted&&design.includes('shoulder')&&<><polygon points="82,18 150,8 120,70 40,90 28,74" fill={b!}/><polygon points="258,18 190,8 220,70 300,90 312,74" fill={b!}/></>}
    {painted&&design.includes('side panel')&&<><rect x="88" y="100" width="22" height="200" fill={b!}/><rect x="230" y="100" width="22" height="200" fill={b!}/></>}
+   {detail&&painted&&<>
+    <rect width="340" height="320" fill={`url(#${id}-volume)`}/>
+    <path d={PANELS} fill="none" stroke="var(--mag-ink)" strokeOpacity=".5" strokeWidth="2" strokeDasharray="3 3"/>
+   </>}
   </g>
   <path d={BODY} fill="none" stroke="var(--mag-ink)" strokeWidth="5" strokeLinejoin="round"/>
-  <path d="M120 6 Q170 40 220 6" fill="none" stroke="var(--mag-ink)" strokeWidth="5"/>
+  <path d={NECK} fill="none" stroke="var(--mag-ink)" strokeWidth="5"/>
   {whole&&kit.shorts&&<Shorts p={kit.shorts} id={id}/>}
   {whole&&kit.socks&&<Socks p={kit.socks} id={id}/>}
   {label&&<text x="170" y="170" textAnchor="middle" fontFamily="var(--mag-mono)" fontSize="22" fontWeight="700" fill={painted?'var(--mag-ink)':'var(--mag-muted)'} stroke={painted?'var(--mag-white)':'none'} strokeWidth="5" paintOrder="stroke">{kit.season}</text>}

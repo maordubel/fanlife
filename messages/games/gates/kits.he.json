@@ -168,5 +168,17 @@
   "ks.coll.otherSeasons": "עונות אחרות",
   "ks.coll.page": "עמוד {n}",
   "ks.coll.openOf": "{n} מתוך {total} פתוחות",
-  "ks.coll.buildOne": "בנו אחת!"
+  "ks.coll.buildOne": "בנו אחת!",
+ "ks.coll.search": "חיפוש חולצה",
+ "ks.coll.onlyOpen": "חולצות זמינות",
+ "ks.coll.results": "{n} חולצות",
+ "ks.coll.noResults": "לא נמצאו חולצות שמתאימות לסינון.",
+ "ks.compare.title": "השוואת חולצות",
+ "ks.compare.clear": "ניקוי",
+ "ks.compare.add": "הוספה להשוואה",
+ "ks.compare.remove": "הסרה מההשוואה",
+ "ks.compare.second": "פתחו חולצה נוספת כדי להשוות אותה כאן.",
+ "ks.card.art": "תצוגת חולצה",
+ "ks.card.photo": "צילום ארכיון",
+ "ks.card.vector": "איור SVG"
 }

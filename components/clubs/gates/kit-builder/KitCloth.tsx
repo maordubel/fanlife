@@ -55,8 +55,27 @@ export function KitCloth({spec,view='front',missing=[],texture=true,title,classN
  return <svg viewBox={viewBox} preserveAspectRatio="xMidYMid meet" className={className} role={title?'img':'presentation'} aria-label={title} aria-hidden={title?undefined:true} data-cloth-view={view} data-cloth-base={spec.base??'blank'} data-cloth-pattern={spec.pattern}>
   <defs>
    <clipPath id={id('cut')}>{outline?<path d={outline.path} transform={outlineTransform}/>:<><path d={back?BODY_BACK:BODY}/><path d={SLEEVE_L}/><path d={SLEEVE_R}/></>}</clipPath>
-   <filter id={id('weave')} x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch" result="n"/><feColorMatrix type="saturate" values="0" in="n"/></filter>
-   <filter id={id('soft')} x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="7"/></filter>
+   {!outline&&spec.sleeveInk==='trim'&&<clipPath id={id('body')}><path d={back?BODY_BACK:BODY}/></clipPath>}
+   {texture&&spec.base&&<>
+    <linearGradient id={id('folds')} x1="0" x2="1" y1="0" y2="0">
+     <stop offset="0" stopColor="var(--mag-ink)" stopOpacity=".24"/>
+     <stop offset=".18" stopColor="var(--mag-ink)" stopOpacity=".11"/>
+     <stop offset=".39" stopColor="var(--mag-white)" stopOpacity=".08"/>
+     <stop offset=".56" stopColor="var(--mag-white)" stopOpacity=".16"/>
+     <stop offset=".78" stopColor="var(--mag-ink)" stopOpacity=".04"/>
+     <stop offset="1" stopColor="var(--mag-ink)" stopOpacity=".24"/>
+    </linearGradient>
+    <linearGradient id={id('drape')} x1="0" x2="0" y1="0" y2="1">
+     <stop offset="0" stopColor="var(--mag-white)" stopOpacity=".19"/>
+     <stop offset=".37" stopColor="var(--mag-white)" stopOpacity="0"/>
+     <stop offset=".8" stopColor="var(--mag-ink)" stopOpacity="0"/>
+     <stop offset="1" stopColor="var(--mag-ink)" stopOpacity=".2"/>
+    </linearGradient>
+    <pattern id={id('knit')} width="4" height="4" patternUnits="userSpaceOnUse">
+     <path d="M1 0v2m2 0v2" fill="none" stroke="var(--mag-white)" strokeOpacity=".17" strokeWidth=".45"/>
+     <path d="M2 0v2m2 0v2M0 2v2" fill="none" stroke="var(--mag-ink)" strokeOpacity=".13" strokeWidth=".45"/>
+    </pattern>
+   </>}
   </defs>
   {outline?<path d={outline.path} transform={outlineTransform} fill={baseFill} stroke="var(--mag-ink)" strokeWidth="2" strokeLinejoin="round" vectorEffect="non-scaling-stroke" data-kit-outline/>:<>
    <path d={SLEEVE_L} fill={sleeve} stroke="var(--mag-ink)" strokeWidth="2" strokeLinejoin="round"/>
@@ -64,17 +83,18 @@ export function KitCloth({spec,view='front',missing=[],texture=true,title,classN
    <path d={back?BODY_BACK:BODY} fill={baseFill} stroke="var(--mag-ink)" strokeWidth="2" strokeLinejoin="round" strokeDasharray={spec.base?undefined:'6 4'}/>
   </>}
   <g clipPath={`url(#${id('cut')})`}>
-   <Pattern id={spec.pattern} ink={patternInk}/>
-   <g filter={`url(#${id('soft')})`}>
-    <path d="M92 112C104 118 112 128 118 140C110 176 106 220 106 292H92C90 220 88 158 92 112Z" fill="var(--mag-ink)" opacity="0.16"/>
-    <path d="M228 112C216 118 208 128 202 140C210 176 214 220 214 292H228C230 220 232 158 228 112Z" fill="var(--mag-ink)" opacity="0.16"/>
-    <path d="M136 210C150 206 172 206 186 210C184 250 184 274 186 296H136C138 272 138 248 136 210Z" fill="var(--mag-ink)" opacity="0.07"/>
-    <path d="M128 92C142 86 178 86 192 92C190 122 190 158 192 194C178 188 142 188 128 194C130 158 130 122 128 92Z" fill="var(--mag-white)" opacity="0.12"/>
-    <path d="M46 132C56 104 74 76 96 60C90 82 86 100 84 118C70 122 56 128 46 132Z" fill="var(--mag-ink)" opacity="0.13"/>
-    <path d="M274 132C264 104 246 76 224 60C230 82 234 100 236 118C250 122 264 128 274 132Z" fill="var(--mag-ink)" opacity="0.13"/>
-    <path d="M86 280C120 292 200 292 234 280C234 288 234 292 234 292C200 300 120 300 86 292Z" fill="var(--mag-ink)" opacity="0.1"/>
+   <g clipPath={!outline&&spec.sleeveInk==='trim'?`url(#${id('body')})`:undefined}>
+    <Pattern id={spec.pattern} ink={patternInk}/>
    </g>
-   {texture&&<rect x="20" y="20" width="300" height="290" filter={`url(#${id('weave')})`} style={{mixBlendMode:'multiply'}} opacity="0.13"/>}
+   {texture&&spec.base&&<g aria-hidden="true">
+    <rect x="46" y="48" width="228" height="250" fill={`url(#${id('folds')})`}/>
+    <rect x="46" y="48" width="228" height="250" fill={`url(#${id('drape')})`}/>
+    <rect x="46" y="48" width="228" height="250" fill={`url(#${id('knit')})`}/>
+    {!outline&&<g fill="none" stroke="var(--mag-white)" strokeOpacity=".22" strokeWidth=".85" strokeLinecap="round">
+     <path d="M107 59C96 80 91 101 90 126M213 59C224 80 229 101 230 126"/>
+     <path d="M92 283C126 292 194 292 228 283"/>
+    </g>}
+   </g>}
    {!outline&&<g fill="none" stroke="var(--mag-ink)" strokeOpacity="0.3" strokeWidth="1" strokeDasharray="3 2.5">
     <path d="M96 112C98 90 102 72 106 56"/><path d="M224 112C222 90 218 72 214 56"/><path d="M88 285C122 294 198 294 232 285"/><path d="M56 128C64 140 74 149 88 154"/><path d="M264 128C256 140 246 149 232 154"/>
    </g>}

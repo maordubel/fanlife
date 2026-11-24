@@ -30,6 +30,7 @@ const TRIM_PREFERENCE:ColourKey[]=['white','cream','black','navy','red','blue','
 const TOOL_ICON:Record<Tool,string>={body:'M8 3L3 6l2 5 2-1v11h10V10l2 1 2-5-5-3c-1 2-2 3-4 3S9 5 8 3z',trim:'M8 3L3 6l2 5 2-1v11h10V10l2 1 2-5-5-3M8 3c1 2 2 3 4 3s3-1 4-3',design:'M4 4h16v16H4zM9 4v16M15 4v16',collar:'M5 5l7 10 7-10M8 5l4 6 4-6',sleeves:'M3 8l5-3 2 6-4 3zM21 8l-5-3-2 6 4 3z',maker:'M4 18l4-12 4 12M5.5 14h5M15 12a3 3 0 1 1 0 6a3 3 0 1 1 0-6M18 12v6',sponsor:'M3 9h18v6H3zM6 12h2M10 12h2M14 12h2M18 12h0',crest:'M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z',back:'M9 4L7 20M15 4l-2 16M4 9h16M3 15h16'}
 /** the season's decade, read from its first year ("2020/21" → 2020); a season the archive writes some other way sits apart */
 const decadeOf=(season:string)=>{const m=/(\d{3})\d/.exec(season);return m?Number(`${m[1]}0`):null}
+const searchable=(text:string)=>text.normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim()
 
 export type KitStudioProps={/** Build the Kit's shared gate number, printed on the "Build one!" plate */builderNo?:number|null;club:string;clubName:string;locale:UiLocale;contentLocale:string;copy:GameCopy;monogram:string;limits:StudioLimits;identity:StudioIdentity;rows:CollectionRow[];gate4:boolean;focusKit:string|null;/** a fan design in the link, still to be validated here against this club's palette */sharedDesign:string|null;/** the closet's catalogue slug by kit id, for the "I have it" bar on an open shirt */slugs?:Record<string,string>;/** cut-out archive photos by kit id, only for shirts that are open */photos?:Record<string,string>}
 
@@ -43,8 +44,11 @@ export function KitStudio(props:KitStudioProps){
  const [designs,setDesigns]=useState<SavedDesign[]>([]),[designId,setDesignId]=useState<string|null>(null),[designName,setDesignName]=useState(''),[fromKit,setFromKit]=useState<string|null>(null),[confirmDel,setConfirmDel]=useState<string|null>(null)
  const [opened,setOpened]=useState<Record<string,OpenKit>>(()=>Object.fromEntries(rows.flatMap(r=>r.open?[[r.id,r.open]]:[])))
  const [built,setBuilt]=useState<Record<string,Built>>({}),[filter,setFilter]=useState<'all'|'home'|'away'|'third'>('all')
+ const [query,setQuery]=useState(''),[onlyOpen,setOnlyOpen]=useState(false)
+ const [compareIds,setCompareIds]=useState<string[]>([]),[art,setArt]=useState<'photo'|'vector'>('photo')
  const [briefId,setBriefId]=useState<BriefId>('free'),[memoryId,setMemoryId]=useState<string|null>(null)
  const [sheet,setSheet]=useState<Sheet>(null),[notice,setNotice]=useState(''),[checking,setChecking]=useState(false),[saveName,setSaveName]=useState('')
+ const compareShelf=useRef<HTMLElement|null>(null)
  const opener=useRef<HTMLElement|null>(null),garmentRef=useRef<HTMLDivElement>(null),focused=useRef(false)
  const spec=hist.present
 
@@ -98,7 +102,7 @@ export function KitStudio(props:KitStudioProps){
  },[tab,sheet])
 
  // ---- sheets
- const openSheet=(s:NonNullable<Sheet>)=>(e?:React.SyntheticEvent)=>{opener.current=(e?.currentTarget as HTMLElement)??null;setSheet(s)}
+ const openSheet=(s:NonNullable<Sheet>)=>(e?:React.SyntheticEvent)=>{opener.current=(e?.currentTarget as HTMLElement)??null;if(s.k==='shirt')setArt('photo');setSheet(s)}
  const closeSheet=()=>{setSheet(null);opener.current?.focus?.()}
  const hasDesign=spec.base!==null
 
@@ -131,7 +135,22 @@ export function KitStudio(props:KitStudioProps){
  // ---- the collection
  const variantName=(v:string)=>say(`kb.variant.${v}`)
  const variants=useMemo(()=>[...new Set(rows.map(r=>r.variant))],[rows])
- const shown=rows.filter(r=>filter==='all'||r.variant===filter)
+ const words=searchable(query).split(' ').filter(Boolean)
+ const isFiltering=words.length>0||onlyOpen||filter!=='all'
+ const shown=rows.filter(r=>{
+  const kit=opened[r.id]
+  if((filter!=='all'&&r.variant!==filter)||(onlyOpen&&!kit))return false
+  if(!words.length)return true
+  const text=searchable([r.season,variantName(r.variant),kit?.design,kit?.maker,kit?.sponsor,...(kit?.colours??[])].filter(Boolean).join(' '))
+  return words.every(word=>text.includes(word))
+ })
+ const comparison=compareIds.flatMap(id=>opened[id]?[opened[id]!]:[])
+ function toggleCompare(id:string){
+  const adding=!compareIds.includes(id)
+  setCompareIds(ids=>adding?[...ids.slice(-1),id]:ids.filter(x=>x!==id))
+  closeSheet()
+  if(adding)requestAnimationFrame(()=>compareShelf.current?.focus())
+ }
  // the album's pages: one per decade, newest open, older ones folded (never a sideways shelf)
  const pages=useMemo(()=>{const m=new Map<number|null,CollectionRow[]>();for(const r of shown){const d=decadeOf(r.season);m.set(d,[...(m.get(d)??[]),r])}return [...m.entries()].map(([decade,rs])=>({decade,rows:rs})).sort((a,b)=>(b.decade??-1)-(a.decade??-1))},[shown])
  const openCount=rows.filter(r=>opened[r.id]).length
@@ -249,9 +268,24 @@ export function KitStudio(props:KitStudioProps){
     {checking&&<p className={css.fine}>{say('ks.coll.checking')}</p>}
     <p className="wk-cap white">{gate4?say('ks.coll.lockedNote'):say('ks.coll.openNote')}</p>
    </header>
+   {rows.length>0&&<div className={css.archiveTools}>
+    <label className={css.search}><span>{say('ks.coll.search')}</span><input type="search" value={query} onChange={e=>setQuery(e.target.value)} dir="auto" /></label>
+    <label className={css.openFilter}><input type="checkbox" checked={onlyOpen} onChange={e=>setOnlyOpen(e.target.checked)}/>{say('ks.coll.onlyOpen')}</label>
+   </div>}
+   {comparison.length>0&&<section ref={compareShelf} tabIndex={-1} className={css.comparison} aria-label={say('ks.compare.title')}>
+    <header><h3>{say('ks.compare.title')}</h3><button type="button" className={`min-h-tap ${css.tool}`} onClick={()=>setCompareIds([])}>{say('ks.compare.clear')}</button></header>
+    <div className={css.compareGrid}>{comparison.map(kit=><figure key={kit.id}>
+     <div className={css.compareArt}>{kit.svg?<img src={kit.svg} alt="" width={240} height={240}/>:kit.cloth?<KitCloth spec={kit.cloth} sponsorContext={{club,season:kit.season,variant:kit.variant}} monogram={monogram} crestSrc={crestFor(club)}/>:photoOf(kit)?<img src={photoOf(kit)} alt="" width={240} height={240}/>:<span>{say('ks.card.undrawn')}</span>}</div>
+     <figcaption><bdi>{kit.season}</bdi> · {variantName(kit.variant)}</figcaption>
+     <p><bdi>{[kit.design,kit.maker,kit.sponsor].filter(Boolean).join(' · ')}</bdi></p>
+    </figure>)}
+    {comparison.length===1&&<p className={css.compareEmpty}>{say('ks.compare.second')}</p>}
+    </div>
+   </section>}
    {variants.length>1&&<div className={css.filters} role="group" aria-label={say('ks.filter')} data-n={variants.length+1}>
     {(['all',...variants] as const).map(v=><button key={v} type="button" className={`min-h-tap ${css.chip}`} aria-pressed={filter===v} onClick={()=>setFilter(v as typeof filter)}><b>{v==='all'?say('ks.filter.all'):variantName(v)}</b><small>{v==='all'?rows.length:rows.filter(r=>r.variant===v).length}</small></button>)}</div>}
-   {rows.length===0?<p className={css.note}>{say('ks.coll.empty')}</p>:<div className={css.pages} data-testid="ks-grid">
+   {isFiltering&&<p className={css.fine} role="status">{say('ks.coll.results',{n:shown.length})}</p>}
+   {rows.length===0?<p className={css.note}>{say('ks.coll.empty')}</p>:shown.length===0?<p className={css.note}>{say('ks.coll.noResults')}</p>:<div className={css.pages} data-testid="ks-grid">
     {pages.map((pg,pi)=>{const openHere=pg.rows.filter(r=>opened[r.id]).length
      const body=<ul className={css.grid}>{pg.rows.map(r=>{
       const k=opened[r.id],b=built[r.id]
@@ -262,7 +296,7 @@ export function KitStudio(props:KitStudioProps){
        {k&&<span className={css.ownTag} data-ownership={r.open?'shelf':'earned'}>{r.open?say('ks.own.shelf'):say('ks.own.earned')}</span>}
       </button></li>})}</ul>
      const label=pg.decade===null?say('ks.coll.otherSeasons'):say('ks.coll.decade',{decade:pg.decade})
-     return pi===0
+     return pi===0||isFiltering
       ?<section key={String(pg.decade)} className={css.page} aria-label={label}>
         <div className={css.pageHead}><span className={css.kicker}>{say('ks.coll.page',{n:pages.length})}</span><h3>{label}</h3><span className="wk-tag red">{say('ks.coll.openOf',{n:openHere,total:pg.rows.length})}</span></div>
         {body}
@@ -284,7 +318,12 @@ export function KitStudio(props:KitStudioProps){
   <SlideSheet open={sheet?.k==='shirt'} onClose={closeSheet} title={sheetKit?`${sheetKit.season} · ${variantName(sheetKit.variant)}`:''} closeLabel={copy['play.close']}>
    {sheetKit&&<div className={css.sheetBody} data-testid="ks-shirt-card">
     {sheetOpen?<>
-     {(photoOf(sheetOpen)||sheetOpen.svg)?<div className={css.bigShirt}><img src={photoOf(sheetOpen)||sheetOpen.svg} alt={`${sheetOpen.season} ${variantName(sheetOpen.variant)}`} width={320} height={320} data-archive-photo={photoOf(sheetOpen)?'':undefined}/></div>:sheetOpen.cloth?<div className={css.bigShirt}><KitCloth spec={sheetOpen.cloth} sponsorContext={{club,season:sheetOpen.season,variant:sheetOpen.variant}} monogram={monogram} crestSrc={crestFor(club)} title={`${sheetOpen.season} ${variantName(sheetOpen.variant)}`}/></div>:<p className={css.note}>{say('ks.card.undrawn')}</p>}
+     {photoOf(sheetOpen)&&(sheetOpen.svg||sheetOpen.cloth)&&<div className={css.artModes} role="group" aria-label={say('ks.card.art')}>
+      <button type="button" className={`min-h-tap ${css.chip}`} aria-pressed={art==='photo'} onClick={()=>setArt('photo')}>{say('ks.card.photo')}</button>
+      <button type="button" className={`min-h-tap ${css.chip}`} aria-pressed={art==='vector'} onClick={()=>setArt('vector')}>{say('ks.card.vector')}</button>
+     </div>}
+     {((art==='photo'&&photoOf(sheetOpen))||sheetOpen.svg)?<div className={css.bigShirt}><img src={(art==='photo'?photoOf(sheetOpen):null)||sheetOpen.svg} alt={`${sheetOpen.season} ${variantName(sheetOpen.variant)}`} width={320} height={320} data-archive-photo={art==='photo'&&photoOf(sheetOpen)?'':undefined}/></div>:sheetOpen.cloth?<div className={css.bigShirt}><KitCloth spec={sheetOpen.cloth} sponsorContext={{club,season:sheetOpen.season,variant:sheetOpen.variant}} monogram={monogram} crestSrc={crestFor(club)} title={`${sheetOpen.season} ${variantName(sheetOpen.variant)}`}/></div>:<p className={css.note}>{say('ks.card.undrawn')}</p>}
+     <button type="button" className={`min-h-tap ${css.cta}`} aria-pressed={compareIds.includes(sheetOpen.id)} onClick={()=>toggleCompare(sheetOpen.id)}>{say(compareIds.includes(sheetOpen.id)?'ks.compare.remove':'ks.compare.add')}</button>
      <dl className={css.facts}>
       <div><dt>{say('ks.fact.season')}</dt><dd><bdi>{sheetOpen.season}</bdi></dd></div>
       <div><dt>{say('ks.fact.strip')}</dt><dd>{variantName(sheetOpen.variant)}</dd></div>

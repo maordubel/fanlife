@@ -168,5 +168,17 @@
   "ks.coll.otherSeasons": "Other seasons",
   "ks.coll.page": "Page {n}",
   "ks.coll.openOf": "{n} of {total} open",
-  "ks.coll.buildOne": "Build one!"
+  "ks.coll.buildOne": "Build one!",
+ "ks.coll.search": "Find a shirt",
+ "ks.coll.onlyOpen": "Available shirts",
+ "ks.coll.results": "{n} shirts",
+ "ks.coll.noResults": "No shirts match these filters.",
+ "ks.compare.title": "Compare shirts",
+ "ks.compare.clear": "Clear",
+ "ks.compare.add": "Add to comparison",
+ "ks.compare.remove": "Remove from comparison",
+ "ks.compare.second": "Open another shirt to compare it here.",
+ "ks.card.art": "Shirt view",
+ "ks.card.photo": "Archive photo",
+ "ks.card.vector": "SVG drawing"
 }
