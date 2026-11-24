@@ -89,6 +89,14 @@ const FACADES: Record<LifeTown, string[]> = {
     'A three-storey Israeli housing block of the 1950s in a town of the coastal plain: plain plaster, small balconies with slatted plastic shutters, solar boilers on the flat roof, a grocery front with a roller shutter.',
     'A two-storey old colony house of an Israeli farming town: thick plastered walls, a clay-tile roof edge, wooden shutters, a veranda upstairs, a shop front with a closed wooden shutter.',
   ],
+  ist: [
+    'A four-storey apartment house on the Asian side of Istanbul: pale rendered walls, narrow balconies with wrought-iron railings, bay windows on the upper floors, a corner grocery with a striped awning at street level.',
+    'An old three-storey wooden town house of an Istanbul neighbourhood: painted clapboard walls, an overhanging upper floor with tall sash windows, a tiled roof edge, a tea house front with a closed shutter below.',
+  ],
+  beg: [
+    'A five-storey socialist-era apartment block of Belgrade: grey concrete and plaster, long rows of balconies, some glazed over, satellite dishes, a small kiosk and a bakery front at its foot.',
+    'A three-storey early-twentieth-century town house of central Belgrade: ochre plaster with moulded window frames, a wrought-iron balcony, a tall wooden gate, a cafe front with a closed shutter.',
+  ],
 }
 
 // ── b · the grounds: what each club's own ground recalls. `for` is the pack's ground name the lines were written for.
@@ -131,6 +139,7 @@ const STREETS: Record<LifeTown, string> = {
   bgo: 'Lombard town houses with shutters and clay-tile roofs under the foothills', cas: 'white apartment blocks along a palm-lined boulevard',
   cai: 'tall sand-coloured apartment blocks with balconies and satellite dishes', hfa: 'limestone and plaster apartment blocks stepping up a wooded slope',
   ptk: 'three-storey plaster housing blocks with solar boilers',
+  ist: 'rendered apartment houses with iron balconies on a hillside above the sea', beg: 'socialist-era concrete blocks and ochre plaster town houses',
 }
 const GENERIC_VIEW = ['seen along the main road', 'seen from a narrow side street']
 
@@ -146,6 +155,8 @@ const TOWNS: {town: LifeTown; skyline: string; district: string}[] = [
   {town: 'cai', skyline: 'Cairo at dusk: dense sand-coloured blocks to the horizon, many minarets and domes, a wide river with bridges, a slender lattice tower, desert haze.', district: 'A Cairo neighbourhood: tall close-packed apartment blocks, a wide avenue with a central reservation, narrow lanes, a small garden square.'},
   {town: 'hfa', skyline: 'Haifa at dusk: a city stepping down a wooded mountain ridge to a wide bay, port cranes, a domed shrine above terraced gardens on the slope, industrial chimneys far around the bay.', district: 'A Haifa neighbourhood on the slope: winding contour streets, stepped lanes between limestone and plaster blocks, pine trees.'},
   {town: 'ptk', skyline: 'An Israeli town of the coastal plain at dusk: low plaster apartment blocks with solar boilers, a few glass office towers, an old water tower, dark lines of citrus groves at the edge.', district: 'A neighbourhood of an Israeli town of the coastal plain: rows of long housing blocks with gardens between, a main shopping street, a small park.'},
+  {town: 'ist', skyline: 'A great city on two shores at dusk: the Asian bank in front, dense apartment houses climbing low hills, a ferry crossing the strait, minarets and domes on the far shore, the long line of a suspension bridge.', district: 'A crowded neighbourhood on the Asian side of Istanbul: steep streets of apartment houses, a market street with awnings, a small square with plane trees, the sea at the end of the streets.'},
+  {town: 'beg', skyline: 'A river city at dusk where two rivers meet: an old fortress on a wooded ridge, church domes and socialist-era tower blocks, bridges over wide water, barges moored below.', district: 'A Belgrade neighbourhood: long concrete housing blocks with green courtyards between them, a tram line along a boulevard, a market with stalls, older plaster houses on the side streets.'},
 ]
 
 // ── d · the childhood chapters (docs/life/LIFE-STORY-FLOW-2026-11-23.md §6; lib/life/hood/story/childhood.ts) ───────
