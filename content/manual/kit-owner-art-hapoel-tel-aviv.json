@@ -1,0 +1,37 @@
+{
+ "_note": "The owner's own drawings of Hapoel Tel Aviv shirts (23.11.2026, brand/source/kits/hapoel-owner), matched to an archived kit only where the season, the colours and the sponsor agree. The drawing replaces the generated one for that kit.",
+ "kits": {
+  "hta-fka-70783": {
+   "art": "/club-kits/hapoel-tel-aviv/art/hta-fka-70783.webp",
+   "from": "s04-1980-81"
+  },
+  "hta-fka-24631": {
+   "art": "/club-kits/hapoel-tel-aviv/art/hta-fka-24631.webp",
+   "from": "s05-1982-83"
+  },
+  "kit-kit-1985-86-home": {
+   "art": "/club-kits/hapoel-tel-aviv/art/kit-kit-1985-86-home.webp",
+   "from": "s17-1985-86"
+  },
+  "hta-fka-70780": {
+   "art": "/club-kits/hapoel-tel-aviv/art/hta-fka-70780.webp",
+   "from": "s02-1991-92"
+  },
+  "hta-fka-24619": {
+   "art": "/club-kits/hapoel-tel-aviv/art/hta-fka-24619.webp",
+   "from": "s14-1998-99"
+  },
+  "cof-k-01": {
+   "art": "/club-kits/hapoel-tel-aviv/art/cof-k-01.webp",
+   "from": "s18-2002-03"
+  },
+  "cof-k-04": {
+   "art": "/club-kits/hapoel-tel-aviv/art/cof-k-04.webp",
+   "from": "s07-2006-07"
+  },
+  "kit-kit-2009-10-home": {
+   "art": "/club-kits/hapoel-tel-aviv/art/kit-kit-2009-10-home.webp",
+   "from": "s13-2009-10"
+  }
+ }
+}
