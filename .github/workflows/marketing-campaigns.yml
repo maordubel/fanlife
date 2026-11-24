@@ -1,0 +1,20 @@
+name: Marketing · Campaigns plan
+# The 30-day plan (owner, 24.11.2026): puts the plan's campaigns into the marketing queue through
+# worker_marketing_campaign_add. A campaign already queued is skipped, so a second run changes nothing.
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 20, cache: npm}
+      - run: npm ci --ignore-scripts
+      - run: node --import tsx scripts/marketing/plan-m30.mts --apply
