@@ -61,7 +61,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   // --apply (GitHub Actions, .github/workflows/marketing-campaigns.yml): each campaign goes in through worker_marketing_campaign_add;
   // a campaign already in the queue is left alone (run twice, nothing doubles)
   if (process.argv.includes('--apply')) {
-    const DB = (process.env.SUPABASE_URL || '').replace(/\/$/, ''), KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || ''
+    const DB = (process.env.SUPABASE_URL || 'https://afxpjfxwpdjvlmuoawda.supabase.co').replace(/\/$/, ''), KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || ''
     if (!DB || !KEY) throw Error('SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY missing')
     const rpc = async (name: string, body: unknown) => { const r = await fetch(`${DB}/rest/v1/rpc/${name}`, {method: 'POST', headers: {apikey: KEY, Authorization: `Bearer ${KEY}`, 'Content-Type': 'application/json'}, body: JSON.stringify(body)}); const t = await r.text(); if (!r.ok) throw Error(`${name} ${r.status}: ${t.slice(0, 300)}`); return t ? JSON.parse(t) : null }
     const have = new Set(((await rpc('worker_marketing_campaigns', {p_days: 365})) as {id: string}[]).map(c => c.id))
