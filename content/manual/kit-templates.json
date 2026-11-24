@@ -727,6 +727,32 @@
         "trim-alpha"
       ],
       "measuredOn": "2026-11-14"
+    },
+    {
+      "file": "marks/sponsor-etisalat.webp",
+      "role": "granted-mark",
+      "bytes": 25498,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "commons-file",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-11-24"
+    },
+    {
+      "file": "marks/sponsor-oldspice.webp",
+      "role": "granted-mark",
+      "bytes": 24698,
+      "yellowPx": 0,
+      "yellowPct": 0.0,
+      "method": "decoded-rgba",
+      "treatment": [
+        "commons-file",
+        "trim-alpha"
+      ],
+      "measuredOn": "2026-11-24"
     }
   ]
 }
