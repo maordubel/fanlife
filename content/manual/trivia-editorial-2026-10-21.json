@@ -1155,7 +1155,7 @@
         "prompt": "Hapoel Petah Tikva v Maccabi Haifa in the Israel State Cup final, 4 Jun 1991. Name the final score (Hapoel Petah Tikva first).",
         "explanation": "Hapoel Petah Tikva 1-3 Maccabi Haifa, Israel State Cup final, 4 Jun 1991.",
         "basePrompt": "Hapoel Petah Tikva v Maccabi Haifa in the Israel State Cup final, 4 Jun 1991. Name the final score (Hapoel Petah Tikva first).",
-        "baseExplanation": "Hapoel Petah Tikva 1-3 Maccabi Haifa, Israel State Cup final, 4 Jun 1991."
+        "baseExplanation": "Maccabi Haifa 3-1 Hapoel Petah Tikva, Israel State Cup final, 4 Jun 1991."
       },
       {
         "questionId": "q_eaffdca6dcae520c",
@@ -1167,7 +1167,7 @@
         "prompt": "Full time, 9 Jun 1992: Hapoel Petah Tikva v Maccabi Tel Aviv in the Israel State Cup final. What did the scoreboard say? (Hapoel Petah Tikva first)",
         "explanation": "Hapoel Petah Tikva 3-1 Maccabi Tel Aviv, Israel State Cup final, 9 Jun 1992.",
         "basePrompt": "Full time, 9 Jun 1992: Hapoel Petah Tikva v Maccabi Tel Aviv in the Israel State Cup final. What did the scoreboard say? (Hapoel Petah Tikva first)",
-        "baseExplanation": "Hapoel Petah Tikva 3-1 Maccabi Tel Aviv, Israel State Cup final, 9 Jun 1992."
+        "baseExplanation": "Maccabi Tel Aviv 1-3 Hapoel Petah Tikva, Israel State Cup final, 9 Jun 1992."
       },
       {
         "questionId": "q_9da4ccd01fab3786",
@@ -1179,7 +1179,7 @@
         "prompt": "Hapoel Petah Tikva beat Maccabi Jaffa 2-1 in the Israel State Cup final. Which season does that result belong to?",
         "explanation": "Hapoel Petah Tikva 2-1 Maccabi Jaffa, Israel State Cup final, 6 Jul 1957.",
         "basePrompt": "Hapoel Petah Tikva beat Maccabi Jaffa 2-1 in the Israel State Cup final. Which season does that result belong to?",
-        "baseExplanation": "Hapoel Petah Tikva 2-1 Maccabi Jaffa, Israel State Cup final, 6 Jul 1957."
+        "baseExplanation": "Maccabi Jaffa 1-2 Hapoel Petah Tikva, Israel State Cup final, 6 Jul 1957."
       },
       {
         "questionId": "q_85efd581318fcf98",

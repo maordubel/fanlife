@@ -275,5 +275,17 @@
       "why": "\"Joe Gyau\" and \"Joseph-Claude Agyeman Gyau\": one man (same last word, same or nickname first name, years compatible, no other candidate)"
     }
   ],
-  "olympiacos": []
+  "olympiacos": [],
+  "fenerbahce": [
+    {
+      "keep": "fenerbahce:p-d814509cc1ad60726e",
+      "drop": "fenerbahce:p-8412301d476c9eb07a",
+      "why": "\"Fabiano\" GK with no years (squad list src-70dda36ad27c96af66) is the Fabiano GK of 2015–2016 (UEFA): one goalkeeper of that name in the archive"
+    },
+    {
+      "keep": "fenerbahce:p-38e6aaa3b36ec0d2b9",
+      "drop": "fenerbahce:p-ecac31ba425e23f38a",
+      "why": "\"Fabiano\" DF with no years (squad list src-70dda36ad27c96af66) is the Fabiano DF of 2004 (UEFA): one defender of that name in the archive"
+    }
+  ]
 }

@@ -1,0 +1,13 @@
+{
+ "schemaVersion": 1,
+ "clubId": "partizan-belgrade",
+ "status": "proposed",
+ "note": "Proposed fictional first names; awaiting owner approval. Nobody here is a real person.",
+ "names": {
+  "dad": "Dragan",
+  "mum": "Jelena",
+  "friend": "Marko",
+  "kiosk": "Čika Mile",
+  "elder": "Deda Milan"
+ }
+}
