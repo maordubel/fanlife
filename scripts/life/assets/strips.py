@@ -73,9 +73,10 @@ def wear_frame(rigs, posers, fr):
 
 def render_strip(name, data, rigs, posers, cam, out, cell=(360, 480)):
     from PIL import Image, ImageDraw
+    saved = {o: o.hide_render for r in rigs.values() for o in [r] + list(r.children_recursive)}
     for w, r in rigs.items():
-        vis = w in data['people']
-        for o in [r] + list(r.children_recursive): o.hide_render = not vis
+        if w not in data['people']:
+            for o in [r] + list(r.children_recursive): o.hide_render = True
     made = props(name)
     pts = []
     for fr in data['frames']:
@@ -97,8 +98,7 @@ def render_strip(name, data, rigs, posers, cam, out, cell=(360, 480)):
         W.paste(Image.open(p), (x, y + 22)); d.text((x + 8, y + 5), f'{name}  {i + 1}/{len(tiles)}', fill=(230, 230, 230)); os.remove(p)
     W.save(out, quality=86)
     for o in made: bpy.data.objects.remove(o, do_unlink=True)
-    for r in rigs.values():
-        for o in [r] + list(r.children_recursive): o.hide_render = False
+    for o, h in saved.items(): o.hide_render = h
 
 
 def hands_closeup(rig, poser, stills, fingers, cam, out, cell=(400, 400)):

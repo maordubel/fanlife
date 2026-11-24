@@ -138,5 +138,5 @@ if src.is_dir():
     if (PREV / 'father-portrait-before.jpg').exists() and (src / 'father-portrait.jpg').exists():
         a, b = Image.open(PREV / 'father-portrait-before.jpg').resize((640, 640)), Image.open(src / 'father-portrait.jpg').resize((640, 640))
         W = Image.new('RGB', (1280, 670), (24, 24, 24)); W.paste(a, (0, 30)); W.paste(b, (640, 30)); d = ImageDraw.Draw(W)
-        d.text((10, 8), 'father, before (23.11): resting face', fill=(230, 230, 230)); d.text((650, 8), 'father, after: softened brow, larger eyes, a resting smile baked in, fuller brows', fill=(230, 230, 230))
+        d.text((10, 8), 'father, before (23.11): the old portrait, with the smile morph applied', fill=(230, 230, 230)); d.text((650, 8), 'father, after: resting face, no morph applied (softer brow, larger eyes, baked resting smile, fuller brows)', fill=(230, 230, 230))
         W.save(PREV / 'father-before-after.jpg', quality=88)

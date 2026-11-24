@@ -379,7 +379,7 @@ def build(c, keep=False):
         hp = np.empty(node.image.size[0] * node.image.size[1] * 4, np.float32); node.image.pixels.foreach_get(hp); hp = hp.reshape(-1, 4)
         sel = hp[:, 3] > 0.5; hc = tuple(float(x) for x in (hp[sel, :3].mean(0) if sel.any() else hp[:, :3].mean(0)) * 0.85)
     try:
-        acc, _ = R.accessories(rig, parts, hc, adult=c['pheno']['age'] > 0.5)
+        acc, _ = R.accessories(rig, parts, hc, adult=c['pheno']['age'] > 0.5 and c['pheno']['gender'] > 0.5)
         for k, o in acc.items():
             nm = o.name; parts[nm] = o
         meta['accessories'] = {k: o.name for k, o in acc.items()}
@@ -482,7 +482,7 @@ def main():
         for i, cid in enumerate(order):
             r = load_blend(cid); r.location = ((i - (len(order) - 1) / 2) * 0.62, 0, 0); P_ = K.Poser(r); P_.wear(clips['stills']['idle']['q'])
         cam = studio(); shoot(cam, (0, 0, 1.0), 9.0, 0, 50, PREV / 'cast-row.jpg', (2400, 900))
-        shoot(cam, (0, 0, 1.45), 6.5, 0, 135, PREV / 'cast-row-faces.jpg', (2400, 600))
+        shoot(cam, (0, 0, 1.3), 8.6, 0, 50, PREV / 'cast-row-faces.jpg', (2400, 700))
     except Exception: traceback.print_exc()
     # motion: the shared clips worn by the real father and boy (a second father for two-adult scenes)
     if (WORK / 'father.blend').exists() and (WORK / 'boy.blend').exists():
@@ -495,6 +495,7 @@ def main():
                 ST.render_strip(name, st, rigs, posers, cam, PREV / f'strip-{name}.jpg'); print('strip', name, flush=True)
             for w in ('A2', 'C'):
                 for o in [rigs[w]] + list(rigs[w].children_recursive): o.hide_render = True
+            for o in rigs['A'].children_recursive: o.hide_render = bool(o.get('accessory')) or o.name.startswith(('Hair2', 'LOD1'))
             rigs['A'].location = (0, 0, 0); rigs['A'].rotation_euler = (0, 0, 0)
             set_keys(list(rigs['A'].children_recursive), {})
             ST.hands_closeup(rigs['A'], posers['A'], clips['stills'], clips['fingerBones'], cam, PREV / 'hand-poses.jpg')
@@ -502,7 +503,7 @@ def main():
                 if name.startswith('hand_'): continue
                 r, Pw = (rigs['C'], posers['C']) if st.get('child') else (rigs['A'], posers['A'])
                 for w, rr in rigs.items():
-                    for o in [rr] + list(rr.children_recursive): o.hide_render = rr is not r
+                    for o in [rr] + list(rr.children_recursive): o.hide_render = rr is not r or bool(o.get('accessory')) or o.name.startswith(('Hair2', 'LOD1'))
                 r.location = (0, 0, 0); r.rotation_euler = (0, 0, 0)
                 Pw.wear(st['q'], pelvis_hips=st['pelvis']); shoot(cam, (0, 0, 0.95), 6.4, 28, 85, PREV / f'clip-{name}.jpg', (384, 512))
         except Exception: traceback.print_exc()

@@ -162,6 +162,8 @@ def tint_regions(cloth, rig):
     result = {'top': True}
     if inner and sum(area(isl[i]) for i in inner) > 0.04 * sum(area(I) for I in isl):
         mat = src.copy(); mat.name = 'tint_inner'; mat['tint'] = 'inner'; me.materials.append(mat); slot = len(me.materials) - 1
+        for nd in mat.node_tree.nodes:   # default: a light shirt under the club-coloured jacket
+            if nd.type == 'MIX' and getattr(nd, 'blend_type', '') == 'MULTIPLY': nd.inputs[7].default_value = (0.86, 0.86, 0.84, 1)
         for i in inner:
             for f in isl[i]: f.material_index = slot
         result['inner'] = True
@@ -277,7 +279,7 @@ def _obj(name, bm, rig, mat):
     o['accessory'] = name; return o
 
 
-def _shell_bins(points, center, NB=(36, 18)):
+def _shell_bins(points, center, NB=(36, 18), smooth=False):
     d = points - np.array(center); r = np.linalg.norm(d, axis=1); u = d / np.maximum(r[:, None], 1e-9)
     th = np.arctan2(u[:, 0], -u[:, 1]); ph = np.arcsin(np.clip(u[:, 2], -1, 1))
     ti = ((th + math.pi) / math.tau * NB[0]).astype(int) % NB[0]; pi = np.clip(((ph + math.pi / 2) / math.pi * NB[1]).astype(int), 0, NB[1] - 1)
@@ -285,6 +287,11 @@ def _shell_bins(points, center, NB=(36, 18)):
     g2 = grid.copy()   # spread each bin to its neighbours so no gap slips between them
     for dx in (-1, 0, 1):
         for dy in (-1, 0, 1): g2 = np.maximum(g2, np.roll(np.roll(grid, dx, 0), dy, 1))
+    if smooth:   # then even out lone tufts (they make spikes in a hat)
+        acc = np.zeros_like(g2); n = 0
+        for dx in (-2, -1, 0, 1, 2):
+            for dy in (-2, -1, 0, 1, 2): acc += np.roll(np.roll(g2, dx, 0), dy, 1); n += 1
+        g2 = np.minimum(g2, acc / n + 0.006)
     def lookup(v):
         dv = np.array(v) - np.array(center); rr = np.linalg.norm(dv); uu = dv / max(rr, 1e-9)
         t = math.atan2(uu[0], -uu[1]); p = math.asin(max(-1, min(1, uu[2])))
@@ -292,10 +299,10 @@ def _shell_bins(points, center, NB=(36, 18)):
     return lookup
 
 
-def envelope(F, hair_pts, ctr, squash=0.35):
+def envelope(F, hair_pts, ctr, squash=0.22):
     """radius, in every direction from ctr, that a hat must clear: the scalp, plus the hair pressed down to `squash` of its height"""
     scalp = _shell_bins(F['co'][F['co'][:, 2] > F['eye_z'] - 0.06], ctr)
-    hair = _shell_bins(hair_pts, ctr) if hair_pts is not None and len(hair_pts) else None
+    hair = _shell_bins(hair_pts, ctr, smooth=True) if hair_pts is not None and len(hair_pts) else None
     def need(co):
         s_, rr = scalp(co)
         if hair:
@@ -319,7 +326,7 @@ def _dome(F, need, gap, flat=0.0, cut_front=0.016, cut_back=-0.03):
             if rr < nd + gap: v.co = ctr + (v.co - ctr).normalized() * (nd + gap)
             if v.co.z < plane(v.co) or v.is_boundary: v.co.z = plane(v.co)
     push()
-    for _ in range(4):
+    for _ in range(8):
         bmesh.ops.smooth_vert(bm, verts=bm.verts, factor=0.6, use_axis_x=True, use_axis_y=True, use_axis_z=True); push()
     rim = [v for v in bm.verts if v.is_boundary]
     return bm, plane, rim
@@ -381,11 +388,11 @@ def accessories(rig, parts, hair_col=(0.08, 0.06, 0.05), adult=True, seed=0):
         k = max(0.0, (v.co.z - ctr.z) / max(top - ctr.z, 1e-3))
         if v.co.y < ctr.y: v.co.y -= 0.022 * k * min(1.0, (ctr.y - v.co.y) / 0.06)
     ang = lambda v: math.degrees(math.atan2(v.co.x - ctr.x, -(v.co.y - ctr.y)))
-    ring = sorted([v for v in rim if abs(ang(v)) < 72], key=ang)
+    ring = sorted([v for v in rim if abs(ang(v)) < 62], key=ang)
     if len(ring) > 3:
         tips = []
         for v in ring:
-            k = math.cos(math.radians(ang(v)) * 90 / 72) ** 0.6
+            k = math.cos(math.radians(ang(v)) * 90 / 62) ** 0.6
             out_ = Vector((v.co.x - ctr.x, v.co.y - ctr.y, 0)).normalized()
             tips.append(bm.verts.new(v.co + out_ * (0.052 * k + 0.003) + Vector((0, 0, -0.014 * k))))
         for a_, b_, c_, d_ in zip(ring, ring[1:], tips[1:], tips):
