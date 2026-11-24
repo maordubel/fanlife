@@ -175,3 +175,16 @@ numbers became. Newest first. The skill reads this before touching the editor an
   title removes every other title from its beat (test: ThePress).
 - **Next**: a second front page at the night (the final's result as the edition's headline); more kit pieces (a
   ticket stub, a scarf, a trophy, a newsprint column texture).
+
+## 24.11.2026 · The owner's pictures and clips as VOX moments; the Terrace Gazette cover
+
+- **Owner**: his uploads must enter with motion and text, between the speech, never as a slideshow; his video files in
+  the edit; covers and titles of our own, from his picture, tied to the script.
+- **Built**: `owner_media.py` (clip proxies), `docu/reveal.py` (five entrances), `thumbs/gazette.py` (cover 1), the
+  front page's photo from the same picture, video in the desk, rule `docs/rules/studio-owner-media.md`.
+- **Measured** (device harness, 6 reveals): every entrance reads; the cover headline 9.1–9.7 px at 168×94 (target 9).
+- **Lessons**: (1) a `<video>` that moves is drawn only once it settles (~0.5 s) → its poster goes under it. (2) An
+  animated jagged `clip-path` reads as shards, not a tear → static torn edges on two moving halves. (3) A device kind
+  name must be unique: the press engine first reused `press`, the designer's clipping, and overrode it (now `gazette`).
+  (4) `immediateRender:false` on a single entrance shows its end state before it starts (the front page's headline was
+  visible at frame 0): only a second tween of the same property takes it.

@@ -127,8 +127,8 @@ def front_page(cid: str, s: dict, t: float, d: float, ink: str, us: str, paper: 
             f'<div class="prsub" id="{cid}sub" style="top:{sub_y:.0f}px">{e(s.get("deck") or "")}</div>'
             f'<div class="prkick" id="{cid}k" style="left:96px;top:{sub_y + 124:.0f}px;background:{us}">{e((s.get("kicker") or "").upper())}</div>'
             f'<div class="prcol" id="{cid}col" style="left:96px;top:{sub_y + 206:.0f}px;width:1130px;height:{max(120, 1010 - sub_y - 206):.0f}px;column-count:4">{body}</div>'
-            f'<div class="prph" id="{cid}ph" style="left:1330px;top:186px;width:500px;height:330px;background-image:url({im("crowd")})"></div>'
-            f'<div class="prcap" style="left:1330px;top:536px">The terrace · file photograph</div>'
+            f'<div class="prph" id="{cid}ph" style="left:1330px;top:186px;width:500px;height:330px;background-image:url({im("owner" if f.get("owner") else "crowd")})"></div>'
+            f'<div class="prcap" style="left:1330px;top:536px">{"Pictured in this story" if f.get("owner") else "The terrace · file photograph"}</div>'
             f'<div class="prdisc" id="{cid}d" style="left:1290px;top:560px;width:560px;height:560px;background:{us}"></div>'
             f'<img class="prk" id="{cid}fig" src="{im("striker")}" style="left:1270px;top:500px;width:560px">'
             f'<svg class="prring" id="{cid}ring" style="left:50px;top:{150 + (172 - size) * 0.2:.0f}px" width="{size * 4.2:.0f}" height="{size * 1.5:.0f}" viewBox="0 0 700 260" preserveAspectRatio="none">'
@@ -136,18 +136,18 @@ def front_page(cid: str, s: dict, t: float, d: float, ink: str, us: str, paper: 
             f'stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/></svg></div>')
     tw = []
     # the sheet lands (on threes), then each headline line is stamped in
-    tw.append(f'tl.fromTo("#{cid}cam",{{y:-1150,rotation:-5}},{{y:0,rotation:-1.2,duration:0.55,ease:"steps(5)",immediateRender:false}},{r2(t0)});')
+    tw.append(f'tl.fromTo("#{cid}cam",{{y:-1150,rotation:-5}},{{y:0,rotation:-1.2,duration:0.55,ease:"steps(5)"}},{r2(t0)});')
     for i in range(len(lines)):
         at = t0 + 0.7 + i * 0.42
-        tw.append(f'tl.fromTo("#{cid}h{i}",{{scale:1.5,opacity:0}},{{scale:1,opacity:1,duration:0.28,ease:"steps(3)",immediateRender:false}},{r2(at)});')
+        tw.append(f'tl.fromTo("#{cid}h{i}",{{scale:1.5,opacity:0}},{{scale:1,opacity:1,duration:0.28,ease:"steps(3)"}},{r2(at)});')
     after = t0 + 0.7 + len(lines) * 0.42
-    tw.append(f'tl.fromTo("#{cid}sub",{{opacity:0,y:14}},{{opacity:1,y:0,duration:0.4,ease:"power2.out",immediateRender:false}},{r2(after)});')
-    tw.append(f'tl.fromTo("#{cid}k",{{scaleX:0}},{{scaleX:1,duration:0.36,ease:"steps(4)",immediateRender:false}},{r2(after + 0.25)});')
-    tw.append(f'tl.fromTo("#{cid}col",{{opacity:0}},{{opacity:0.78,duration:0.5,ease:"sine.out",immediateRender:false}},{r2(after + 0.35)});')
-    tw.append(f'tl.fromTo("#{cid}ph",{{y:-40,rotation:4,opacity:0}},{{y:0,rotation:1.5,opacity:1,duration:0.4,ease:"steps(4)",immediateRender:false}},{r2(after + 0.1)});')
-    tw.append(f'tl.fromTo("#{cid}d",{{scale:0}},{{scale:1,duration:0.45,ease:"steps(5)",immediateRender:false}},{r2(after + 0.5)});')
-    tw.append(f'tl.fromTo("#{cid}fig",{{x:700,rotation:14}},{{x:0,rotation:-3,duration:0.6,ease:"steps(6)",immediateRender:false}},{r2(after + 0.7)});')
-    tw.append(f'tl.fromTo("#{cid}rp",{{strokeDashoffset:1}},{{strokeDashoffset:0,duration:0.7,ease:"power1.inOut",immediateRender:false}},{r2(after + 1.2)});')
+    tw.append(f'tl.fromTo("#{cid}sub",{{opacity:0,y:14}},{{opacity:1,y:0,duration:0.4,ease:"power2.out"}},{r2(after)});')
+    tw.append(f'tl.fromTo("#{cid}k",{{scaleX:0}},{{scaleX:1,duration:0.36,ease:"steps(4)"}},{r2(after + 0.25)});')
+    tw.append(f'tl.fromTo("#{cid}col",{{opacity:0}},{{opacity:0.78,duration:0.5,ease:"sine.out"}},{r2(after + 0.35)});')
+    tw.append(f'tl.fromTo("#{cid}ph",{{y:-40,rotation:4,opacity:0}},{{y:0,rotation:1.5,opacity:1,duration:0.4,ease:"steps(4)"}},{r2(after + 0.1)});')
+    tw.append(f'tl.fromTo("#{cid}d",{{scale:0}},{{scale:1,duration:0.45,ease:"steps(5)"}},{r2(after + 0.5)});')
+    tw.append(f'tl.fromTo("#{cid}fig",{{x:700,rotation:14}},{{x:0,rotation:-3,duration:0.6,ease:"steps(6)"}},{r2(after + 0.7)});')
+    tw.append(f'tl.fromTo("#{cid}rp",{{strokeDashoffset:1}},{{strokeDashoffset:0,duration:0.7,ease:"power1.inOut"}},{r2(after + 1.2)});')
     # the camera: a long push into the headline, smooth (the page is handmade; the camera is not)
     tw.append(f'tl.to("#{cid}cam",{{scale:1.22,x:150,y:70,rotation:0.4,duration:{r2(max(1.0, total - 1.4))},ease:"sine.inOut",transformOrigin:"30% 30%"}},{r2(t0 + 1.4)});')
     tw += boil(f'#{cid}fig', max(t, after + 1.35), max(0.2, t + d - max(t, after + 1.35)), rg, 0.7, 3)

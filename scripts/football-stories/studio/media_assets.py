@@ -294,7 +294,13 @@ def verify_rendered(job_dir: Path, plan: dict) -> dict:
 
 
 def require_file(key: str) -> Path:
-    from .paper import beat_path
+    from .paper import beat_path, clip_path
+    if str(key).startswith('clip:'):   # the owner's video clip (studio/owner_media.py): its proxy plays, its poster is read
+        from .owner_media import poster_path, probe
+        clip = clip_path(key)
+        if clip is None or probe(clip) <= 0 or poster_path(key) is None:
+            raise StageError('REQUIRED_MEDIA', f'Your selected video {key} is missing; the film cannot replace it with stock footage.', retryable=True)
+        return clip
     path = beat_path(key)
     if path is None:
         raise StageError('REQUIRED_MEDIA', f'Your selected picture {key} is missing; the film cannot replace it with stock art.', retryable=True)

@@ -67,7 +67,7 @@ def cutting(ledger: dict, h: dict) -> dict | None:
     return None
 
 
-def for_film(script: dict | None, ledger: dict, palette, out: Path, director: str | None = None) -> list[dict]:
+def for_film(script: dict | None, ledger: dict, palette, out: Path, director: str | None = None, plan: dict | None = None) -> list[dict]:
     """A documentary's three thumbnails and its Shorts cover. Returns the rows youtube.json lists."""
     out = Path(out)
     hs = hooks.film_hooks(script, ledger)
@@ -88,6 +88,28 @@ def for_film(script: dict | None, ledger: dict, palette, out: Path, director: st
         p = _save(B, out / f'thumbnail-{i}.jpg', palette.render_bans)
         rows.append({'file': p.name, 'size': [1280, 720], **_public(h), 'picture': {'key': pic.key, 'kind': pic.kind, 'figure': pic.figure_key},
                      'director': director, 'legibility': legibility(B)})
+    # the channel's own cover first (thumbs/gazette.py — owner, 24.11.2026): the Terrace Gazette, the owner's picture
+    # when he gave one, and the line the film says over it as the headline (the same picture opens the film)
+    import os
+    if os.environ.get('STORIES_GAZETTE_COVER', '1') != '0':
+        from . import gazette
+        own = gazette.owner_cover(ledger, plan)
+        lines = gazette.head_of(own['line']) if own and own['line'] else []
+        if lines:
+            gh = {'kind': 'gazette', 'lines': lines, 'headline': ' '.join(lines), 'kicker': hs[0].get('kicker') or '', 'claims': own['claims']}
+        else:
+            lines = gazette.head_of(hs[0]['headline'])[:3 if not hs[0].get('chip') else 2] + ([hs[0]['chip']] if hs[0].get('chip') else [])
+            gh = {'kind': 'gazette', 'lines': lines, 'headline': hs[0]['headline'], 'kicker': hs[0].get('kicker') or '', 'claims': hs[0].get('claims') or []}
+        picture = own['image'] if own else pics[0].image
+        G = gazette.front(gh, picture, palette, crest, seed=7, club=getattr(palette, 'club_name', '') or '')
+        for r in sorted(rows, key=lambda r: r['file'], reverse=True):   # the documentary covers move down one: 1→2, 2→3, 3→4
+            k = int(re.search(r'(\d+)', r['file']).group(1))
+            (out / r['file']).replace(out / f'thumbnail-{k + 1}.jpg')
+            r['file'] = f'thumbnail-{k + 1}.jpg'
+        gp = _save(G, out / 'thumbnail-1.jpg', palette.render_bans)
+        rows.insert(0, {'file': gp.name, 'size': [1280, 720], **_public(gh), 'gazette': True,
+                        'picture': {'key': own['key'] if own else pics[0].key, 'kind': 'owner' if own else pics[0].kind, 'line': own['n'] if own else None},
+                        'legibility': legibility(G)})
     S = compose.documentary_short(hs[0], pics[0], palette, crest, director, seed=1)
     sp = _save(S, out / SHORT_NAME, palette.render_bans)
     rows.append({'file': sp.name, 'size': [1080, 1920], 'shorts_cover': True, **_public(hs[0]),

@@ -32,7 +32,7 @@ import re
 W, H = 1920, 1080
 ROW_H = {'far': 230, 'near': 310}   # the crowd is a band at the foot of the frame: under a third of it, always
 FADE_IN, FADE_OUT = 0.8, 0.6
-BOARDS = {'press', 'gazette', 'atlas', 'table', 'form', 'ledger', 'end', 'follow', 'cities', 'chalk', 'flap', 'replay', 'verdict', 'rule', 'question', 'lead', 'stat', 'tally'}
+BOARDS = {'press', 'gazette', 'reveal', 'atlas', 'table', 'form', 'ledger', 'end', 'follow', 'cities', 'chalk', 'flap', 'replay', 'verdict', 'rule', 'question', 'lead', 'stat', 'tally'}
 GOAL_TALK = re.compile(r'\b(scored|scores|goal|goals|header|headed|finish|finished|net|struck|shot|winner|equalis\w+|penalt\w+)\b', re.I)
 CSS = ('.lf{position:absolute;left:0;top:0;width:1920px;height:1080px;pointer-events:none;overflow:hidden}'
        '.lfc{position:absolute;max-width:none;will-change:transform}'

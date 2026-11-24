@@ -1109,6 +1109,11 @@ class Adapter:
         the year before (or this year, the first time) to it, on the word. At most one a chapter, four a film. Only a
         year the narration says — the board prints nothing the script does not."""
         by_n = {s['n']: s for s in self.plan['shots']}
+        # the owner's first picture under a spoken line is the front page's photograph (and the cover: thumbs/gazette.py)
+        from ..thumbs.gazette import owner_picture
+        own = next((s['required_asset'] for s in self.plan['shots'] if s.get('required_asset') and str(s.get('narration') or '').strip()), None)
+        if own and owner_picture(own):
+            pk['owner'] = self.asset(owner_picture(own), 'own')
         shown, last, chapters = 0, str(Date.today().year), set()
         for b in beats:
             if shown >= self.FLAPS_MAX or b['meta']['type'] in ('end', 'follow', 'chapter', 'open'):
@@ -1186,6 +1191,11 @@ class Adapter:
         word, in the film's ink, the way the question card is. Only the narration's own words; two a film, 45 s apart,
         never in the cold open or on a card, a goal or the hand-over."""
         by_n = {s['n']: s for s in self.plan['shots']}
+        # the owner's first picture under a spoken line is the front page's photograph (and the cover: thumbs/gazette.py)
+        from ..thumbs.gazette import owner_picture
+        own = next((s['required_asset'] for s in self.plan['shots'] if s.get('required_asset') and str(s.get('narration') or '').strip()), None)
+        if own and owner_picture(own):
+            pk['owner'] = self.asset(owner_picture(own), 'own')
         shown, last_t = 0, -1e9
         for b in beats:
             if shown >= self.TURN_MAX:
@@ -1223,6 +1233,11 @@ class Adapter:
         screen type card the moment the narrator asks it, and the same card comes back before the hand-over, where the
         film has answered it (the bookend). Only a real question the narration asks (ending in "?"), never invented."""
         by_n = {s['n']: s for s in self.plan['shots']}
+        # the owner's first picture under a spoken line is the front page's photograph (and the cover: thumbs/gazette.py)
+        from ..thumbs.gazette import owner_picture
+        own = next((s['required_asset'] for s in self.plan['shots'] if s.get('required_asset') and str(s.get('narration') or '').strip()), None)
+        if own and owner_picture(own):
+            pk['owner'] = self.asset(owner_picture(own), 'own')
         q = None
         for b in beats:
             if b['t'] >= self.QUESTION_BY_S:
@@ -1290,7 +1305,20 @@ class Adapter:
                         x['horizon'] = h
         from . import life, press
         pk = {k: self.asset(v, 'press') for k, v in press.kit().items()}
-        self.press_made = press.direct(out, {s['n']: s for s in self.plan['shots']}, pk, self.pal.club_name or '')
+        by_n = {s['n']: s for s in self.plan['shots']}
+        # the owner's first picture under a spoken line is the front page's photograph (and the cover: thumbs/gazette.py)
+        from ..thumbs.gazette import owner_picture
+        own = next((s['required_asset'] for s in self.plan['shots'] if s.get('required_asset') and str(s.get('narration') or '').strip()), None)
+        if own and owner_picture(own):
+            pk['owner'] = self.asset(owner_picture(own), 'own')
+        from . import reveal
+        self.reveal_made = reveal.direct(out, by_n, pk, f'{self.pal.club_id}|{self.jd.name}')   # the owner's pictures and clips, never slides
+        for bt in out:   # a clip's poster frame (studio/owner_media.poster) goes under it in the print
+            for x in bt['shots']:
+                if x['kind'] == 'reveal' and x.get('clip') and x['src'] in self.files:
+                    pst = Path(self.files[x['src']]).with_suffix('.jpg')
+                    x['poster'] = self.asset(pst, 'img') if pst.exists() else None
+        self.press_made = press.direct(out, by_n, pk, self.pal.club_name or '')
         rows = self.life_rows()
         n = life.direct(out, {s['n']: s.get('narration') or '' for s in self.plan['shots']}, f'{self.pal.club_id}|{self.led.get("season")}')
         self.life_beats = n

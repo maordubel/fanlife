@@ -30,7 +30,7 @@ export async function POST(r:Request,{params}:{params:{id:string}}){
    for(const n of names)urls[n]=await signedUpload(mediaPath(cur.job.id,`art-${n}`))
    return json({urls})
   }
-  if(!names.length||names.length>30||names.some(n=>!ART_NAME.test(n)))throw new StoryError('ART','Picture names: lower-case letters, digits, dots and dashes, ending .png, .jpg or .webp (at most 30).')
+  if(!names.length||names.length>30||names.some(n=>!ART_NAME.test(n)))throw new StoryError('ART','Picture names: lower-case letters, digits, dots and dashes, ending .png, .jpg, .webp, .mp4, .mov or .webm (at most 30).')
   if(['classified','vlog'].includes(cur.job.kind??''))throw new StoryError('ART','Use this series\' own footage input. This picture uploader is for Football Stories documentaries.')
   const reviewing=cur.job.state==='needs_review'&&cur.job.stage==='edit'&&cur.job.brief.review==='editorial'
   if(!reviewing&&!['queued','paused'].includes(cur.job.state))throw new StoryError('ART','Pictures can be added before the film starts or during scene review.',409)
