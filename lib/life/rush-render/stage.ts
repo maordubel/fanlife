@@ -814,7 +814,7 @@ export function createStage(o: {canvas: HTMLCanvasElement; level: Level; spec: M
         // warmth: the lights go to amber and bloom a little into what is beside them
         c*=mix(vec3(1.),vec3(1.12,1.0,.84),uWarm*.7); c+=vec3(1.,.7,.4)*pow(max(l-.22,0.),1.4)*.3*uWarm;
         // saturation up, then a filmic S round middle grey: blacks that are black, whites that keep their colour
-        l=dot(c,vec3(.2126,.7152,.0722)); c=mix(vec3(l),c,1.14);
+        l=dot(c,vec3(.2126,.7152,.0722)); c=max(mix(vec3(l),c,1.14),0.); // a saturated light pushed past zero would be NaN under pow: a black hole
         c=pow(c/.18,vec3(1.1))*.18;
         // speed: streaks at the rim; tired: a heartbeat that darkens the edge in the club's colour
         float a=atan(p.y,p.x); float n=h(floor(a*70.)+floor(uTime*14.)); c+=smoothstep(.93,1.,n)*smoothstep(.42,1.05,r)*uSpeed*.22*vec3(.9,.95,1.);

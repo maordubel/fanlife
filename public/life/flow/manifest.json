@@ -58,7 +58,7 @@
     "updated": "2026-11-23T08:46:29.548Z"
    },
    "use": true,
-   "note": "auto: baked, not yet reviewed"
+   "note": "reviewed: front-on interwar town house, shutters, wall lamps; no text, crest or flag"
   },
   "life-facade-ath-03-fl1": {
    "kind": "facade",
@@ -117,7 +117,7 @@
     "updated": "2026-11-23T12:39:22.636Z"
    },
    "use": true,
-   "note": "auto: baked, not yet reviewed"
+   "note": "reviewed: front-on 1950s block, balconies and stair glazing; no text; reads 5 rows with shops"
   },
   "life-facade-ath-05-fl1": {
    "kind": "facade",
@@ -176,7 +176,7 @@
     "updated": "2026-11-23T18:40:40.438Z"
    },
    "use": true,
-   "note": "auto: baked, not yet reviewed"
+   "note": "reviewed: front-on two-storey house over shuttered shop fronts; no text"
   },
   "life-facade-eur-01-fl1": {
    "kind": "facade",
@@ -235,7 +235,7 @@
     "updated": "2026-11-23T22:38:18.290Z"
    },
    "use": true,
-   "note": "auto: baked, not yet reviewed"
+   "note": "reviewed: front-on rendered town house with dormers; no text"
   },
   "life-facade-eur-03-fl1": {
    "kind": "facade",
@@ -294,7 +294,7 @@
     "updated": "2026-11-23T23:47:55.668Z"
    },
    "use": true,
-   "note": "auto: baked, not yet reviewed"
+   "note": "reviewed: front-on brick corner-bar building, lit windows; no text"
   },
   "life-facade-eur-04-fl1": {
    "kind": "facade",
@@ -352,7 +352,7 @@
     "updated": "2026-11-24T00:42:17.283Z"
    },
    "use": true,
-   "note": "auto: baked, not yet reviewed"
+   "note": "reviewed: front-on dark brick workshop with metal windows; no text"
   },
   "life-facade-mos-01-fl1": {
    "kind": "facade",
@@ -411,7 +411,7 @@
     "updated": "2026-11-23T20:42:28.826Z"
    },
    "use": true,
-   "note": "auto: baked, not yet reviewed"
+   "note": "reviewed: front-on stone house with timber bay; no text"
   },
   "life-facade-mos-02-fl1": {
    "kind": "facade",
@@ -470,7 +470,7 @@
     "updated": "2026-11-23T21:40:02.480Z"
    },
    "use": true,
-   "note": "auto: baked, not yet reviewed"
+   "note": "reviewed: front-on Austro-Hungarian house, wall lamps; no text"
   },
   "life-facade-mos-03-fl1": {
    "kind": "facade",
@@ -529,7 +529,7 @@
     "updated": "2026-11-23T21:40:03.255Z"
    },
    "use": true,
-   "note": "auto: baked, not yet reviewed"
+   "note": "reviewed: front-on socialist block with laundry; draws 7 rows where the prompt says five storeys (windows read small)"
   },
   "life-facade-tlv-01-fl1": {
    "kind": "facade",
@@ -588,7 +588,7 @@
     "updated": "2026-11-23T08:46:29.942Z"
    },
    "use": true,
-   "note": "auto: baked, not yet reviewed"
+   "note": "reviewed: front-on white 1930s house with rounded balconies, stair window; no text"
   },
   "life-facade-tlv-03-fl1": {
    "kind": "facade",
@@ -647,7 +647,7 @@
     "updated": "2026-11-23T11:42:13.881Z"
    },
    "use": true,
-   "note": "auto: baked, not yet reviewed"
+   "note": "reviewed: front-on sandstone house with arched windows; no text"
   },
   "life-facade-tlv-04-fl1": {
    "kind": "facade",
@@ -706,7 +706,7 @@
     "updated": "2026-11-23T18:40:42.257Z"
    },
    "use": true,
-   "note": "auto: baked, not yet reviewed"
+   "note": "reviewed: front-on eclectic house with iron balconies; no text"
   },
   "life-skyline-ath-fl1": {
    "kind": "skyline",
@@ -744,7 +744,7 @@
     "updated": "2026-11-23T16:41:59.010Z"
    },
    "use": true,
-   "note": "auto: baked, not yet reviewed"
+   "note": "reviewed: city and hills at dusk, a lit ground among roofs; horizon low; no text"
   },
   "life-skyline-tlv-fl1": {
    "kind": "skyline",
@@ -782,7 +782,7 @@
     "updated": "2026-11-23T16:41:59.431Z"
    },
    "use": true,
-   "note": "auto: baked, not yet reviewed"
+   "note": "reviewed: low roofs, towers, a headland; ground glow; no text"
   },
   "life-stadium-aek-athens-a-fl1": {
    "kind": "stadium",
@@ -822,7 +822,7 @@
     "updated": "2026-11-23T12:45:15.296Z"
    },
    "use": true,
-   "note": "auto: baked, not yet reviewed"
+   "note": "reviewed: arched pale arena at the end of a wet street; people from behind; no text or crest"
   },
   "life-stadium-hapoel-tel-aviv-a-fl1": {
    "kind": "stadium",
@@ -862,7 +862,7 @@
     "updated": "2026-11-23T11:43:49.382Z"
    },
    "use": true,
-   "note": "auto: baked, not yet reviewed"
+   "note": "reviewed: rectangular ground with flat roof over low blocks and palms; people from behind; no text"
   },
   "life-stadium-hapoel-tel-aviv-b-fl1": {
    "kind": "stadium",
@@ -902,7 +902,7 @@
     "updated": "2026-11-24T01:50:17.172Z"
    },
    "use": true,
-   "note": "auto: baked, not yet reviewed"
+   "note": "reviewed: the old ground (open terraces, lattice pylons) for the father's chapters; not used on today's street yet"
   },
   "life-stadium-olympiacos-a-fl1": {
    "kind": "stadium",
@@ -942,7 +942,7 @@
     "updated": "2026-11-23T12:47:27.719Z"
    },
    "use": true,
-   "note": "auto: baked, not yet reviewed"
+   "note": "reviewed: bowl under red masts (the club's own colour), railway and port; people from behind; no text"
   },
   "life-stadium-panathinaikos-a-fl1": {
    "kind": "stadium",
@@ -982,7 +982,7 @@
     "updated": "2026-11-23T12:44:29.290Z"
    },
    "use": true,
-   "note": "auto: baked, not yet reviewed"
+   "note": "reviewed: old concrete ground between apartment blocks under a wooded hill; no text"
   },
   "life-story-first-walk-fl1": {
    "kind": "story",
@@ -1014,7 +1014,7 @@
     "updated": "2026-11-23T16:41:59.845Z"
    },
    "use": true,
-   "note": "auto: baked, not yet reviewed"
+   "note": "reviewed: father and child from behind, plain cream scarf; no face, no text"
   },
   "life-story-kitchen-radio-fl1": {
    "kind": "story",
@@ -1046,7 +1046,7 @@
     "updated": "2026-11-23T16:43:41.395Z"
    },
    "use": true,
-   "note": "auto: baked, not yet reviewed"
+   "note": "reviewed: kitchen, radio, empty chairs, floodlights over roofs; nobody in the room; no text"
   }
  },
  "baked": "2026-11-24T06:01:03Z"

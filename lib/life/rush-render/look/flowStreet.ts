@@ -75,7 +75,8 @@ export function dressFlow(x: FlowCtx): FlowDress {
   const group = new THREE.Group(); group.name = 'flow-art'; group.visible = false; scene.add(group)
   const urls: string[] = []
   let band: THREE.Mesh | null = null, dead = false
-  const fits = (p: FlowPiece) => flowFits(p, f => f === 'yellow' || x.banned(FAMILY_HEX[f]))
+  // a wall carrying a rival's colour is skipped; a plate or a skyline is judged on yellow only (its sky is always blue)
+  const fits = (p: FlowPiece) => flowFits(p, f => f === 'yellow' || (p.kind === 'facade' && x.banned(FAMILY_HEX[f])))
   const town = flowTown(x.clubId, x.skinTown)
 
   /* ---- 1 · facades ---- */
@@ -84,7 +85,7 @@ export function dressFlow(x: FlowCtx): FlowDress {
   type Source = {id: string; m: THREE.MeshStandardMaterial; H: number; aspect: number; u: [number, number]; v: [number, number]; f: [number, number]; max?: number; nearGround?: boolean; avg: string}
   const facadeMat = (map: THREE.Texture, o: {emi?: THREE.Texture | null; nrm?: THREE.Texture | null; rough?: THREE.Texture | null; grade?: THREE.ColorRepresentation; key: string}) => {
     const m = keep(new THREE.MeshStandardMaterial({map, roughness: 1, metalness: 0, color: C(o.grade ?? '#ffffff'),
-      emissive: o.emi ? C(DUSK.cream) : C('#000000'), emissiveMap: o.emi ?? null, emissiveIntensity: o.emi ? 2.2 : 0,
+      emissive: o.emi ? C(DUSK.cream) : C('#000000'), emissiveMap: o.emi ?? null, emissiveIntensity: o.emi ? 1.7 : 0,
       normalMap: o.nrm ?? null, normalScale: new THREE.Vector2(0.7, 0.7), roughnessMap: o.rough ?? null}))
     // the picture sits in the street's light: damp and darker toward the pavement, a touch dimmer up the wall
     m.onBeforeCompile = sh => {
@@ -191,7 +192,7 @@ export function dressFlow(x: FlowCtx): FlowDress {
     const mat = keep(new THREE.ShaderMaterial({transparent: true, depthWrite: false, fog: false, vertexShader: HAZE_VERT, fragmentShader: HAZE_FRAG,
       uniforms: {map: {value: tex}, uFog: {value: C(DUSK.fog)}, uGrade: {value: new THREE.Vector3(1.0, 0.98, 1.04)}, uMix: {value: pl.mix}, uV0: {value: pl.v[0]}, uV1: {value: pl.v[1]}, uEdge: {value: 0.16}, uTop: {value: 0.3}, uBottom: {value: 0.25}, uRep: {value: 1}}}))
     const m = new THREE.Mesh(keep(new THREE.PlaneGeometry(W, H)), mat)
-    m.position.set(0, H / 2 + pl.y, level.goal.z - 150); m.renderOrder = -1; m.frustumCulled = false; group.add(m)
+    m.position.set(0, H / 2 + pl.y, level.goal.z - 115); m.renderOrder = -1; m.frustumCulled = false; group.add(m)
     return pl.id
   }
 
@@ -201,8 +202,9 @@ export function dressFlow(x: FlowCtx): FlowDress {
     if (dead) return []
     const out: string[] = []
     if (mist) {
-      const m = new THREE.Mesh(keep(new THREE.PlaneGeometry(240, 135 * 0.5)), keep(new THREE.MeshBasicMaterial({map: mist, color: C(DUSK.fog).multiplyScalar(1.15), transparent: true, opacity: 0.55, depthWrite: false, fog: false})))
-      mist.repeat.set(1, 0.5); mist.offset.set(0, 0); m.position.set(0, 135 * 0.25 - 6, level.goal.z - 40); m.renderOrder = 2; group.add(m); out.push('worker:overlayMist')
+      // a low bank only: it lies along the foot of the ground's picture and never over the stands
+      const m = new THREE.Mesh(keep(new THREE.PlaneGeometry(260, 26)), keep(new THREE.MeshBasicMaterial({map: mist, color: C(DUSK.fog).multiplyScalar(1.1), transparent: true, opacity: 0.32, depthWrite: false, fog: false})))
+      mist.repeat.set(1, 0.42); m.position.set(0, 7, level.goal.z - 60); m.renderOrder = 2; group.add(m); out.push('worker:overlayMist')
     }
     if (haze) {
       const m = new THREE.Mesh(keep(new THREE.PlaneGeometry(300, 170)), keep(new THREE.MeshBasicMaterial({map: haze, color: C('#ffe9d4').multiplyScalar(0.22), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, fog: false})))
@@ -245,9 +247,10 @@ export function dressFlow(x: FlowCtx): FlowDress {
 
   let started: Promise<FlowReport> | null = null
   const run = async (): Promise<FlowReport> => {
+    // no manifest yet is no Flow pictures yet: THE WORKER's plate, air and reflections still dress the street
     const man = await loadFlowManifest()
     const empty: FlowReport = {facades: [], stadium: null, skyline: null, urls}
-    if (!man || dead) return empty
+    if (dead) return empty
     const fac = flowPieces(man, {kind: 'facade', town, club: x.clubId}).filter(fits)
     const st = flowPieces(man, {kind: 'stadium', club: x.clubId}).filter(fits)
     const sk = flowPieces(man, {kind: 'skyline', town, club: x.clubId}).filter(fits)
@@ -255,7 +258,7 @@ export function dressFlow(x: FlowCtx): FlowDress {
     const own = st.find(p => p.key === 'a') ?? st[0], ownSize = own && flowSize(own, lite ? [1024, 2048] : [2048, 1024])
     const worker = WORKER_PLATES[x.clubId]
     const pl: Plate | null = worker && (worker.prefer || !own) ? worker.plate
-      : own && ownSize ? {id: own.stem, url: flowUrl(own.stem, ownSize), v: [0.3, 1], aspect: 16 / 9, W: 330, y: -14, mix: 0.36} : null
+      : own && ownSize ? {id: own.stem, url: flowUrl(own.stem, ownSize), v: [0.36, 1], aspect: 16 / 9, W: 290, y: -14, mix: 0.22} : null
     const [f, s, k, a, e] = await Promise.all([fac.length ? facades(fac) : [], pl ? plate(pl) : null, sk[0] ? sky(sk[0]) : null, air(), env()])
     if (dead) return empty
     if (f.length) for (const o of x.replaces()) o.visible = false
