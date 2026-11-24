@@ -5136,6 +5136,18 @@
 ],
 "id": "lib:ppl-drummer-kr"
 },
+"630cd674376ad797": {
+"caption": "Footballers in white and blue kits celebrate a goal on the pitch in an empty stadium.",
+"people": 5,
+"faces": true,
+"action": "celebrating a goal",
+"place": "stadium",
+"era": "2020s",
+"mood": "joy",
+"text": "Plus500 19 72",
+"avoid": "crowd celebration: stadium stands are empty",
+"id": "beat:job-0c14b1f5-d59b-4302-859d-22da7fc306b1/1-a2e9c28291ca6240"
+},
 "63a5102a8bbebdf4": {
 "caption": "An illustrated crowd of people in red hoodies raising scarves and flags in celebration.",
 "people": 28,
@@ -5665,6 +5677,18 @@
 "stadium stands"
 ],
 "id": "beat:job-6aa2c3d5-8cba-413e-bd43-fcaab486e702/kaa-gent-cbd805c758be326b"
+},
+"6e3ad459ba1f4256": {
+"caption": "A graphic displaying team lineups and substitute lists for a match between Liverpool FC and Atalanta BC.",
+"people": 0,
+"faces": false,
+"action": "displaying lineup graphic",
+"place": "studio",
+"era": "2020s",
+"mood": "calm",
+"text": "LIVERPOOL FC ATALANTA BC SUBSTITUTES",
+"avoid": "match footage: graphic diagram",
+"id": "beat:job-0c14b1f5-d59b-4302-859d-22da7fc306b1/combining-images-into-paper-cut-fd14c6f7-6491ed94636829ae"
 },
 "6e55ffd5c616e498": {
 "caption": "A lone figure sits on a bench outside the gates of a large stadium under a cloudy sky.",
@@ -7950,6 +7974,18 @@
 "avoid": "match event: team logo graphic only",
 "id": "beat:job-4e8a30ef-da94-4800-88af-6895c5156986/fc-lugano-43bb7702c6f14bdf"
 },
+"9de62d08f6097885": {
+"caption": "A player slides to stretch for the ball alongside an opponent in front of the open goal post.",
+"people": 3,
+"faces": true,
+"action": "stretching for ball",
+"place": "stadium",
+"era": "2020s",
+"mood": "tension",
+"text": "Standard Chartered",
+"avoid": "penalty shot: open play sliding challenge",
+"id": "beat:job-0c14b1f5-d59b-4302-859d-22da7fc306b1/apply-style-to-images-a413e34d-75041d0dadafd0c3"
+},
 "9e158b4cdfc00e5a": {
 "caption": "An illustrated nighttime football match under floodlights with players in action and fans holding red flares in the stands.",
 "people": 11,
@@ -8197,6 +8233,18 @@
 "ocean waves"
 ],
 "id": "lib:sky-fog-n"
+},
+"a53358d0a0a1add6": {
+"caption": "Players in white celebrate a goal as opponents in red stand disappointed on the field.",
+"people": 5,
+"faces": true,
+"action": "celebrating goal",
+"place": "stadium",
+"era": "2020s",
+"mood": "joy",
+"text": "8",
+"avoid": "full stadium: stands are empty",
+"id": "beat:job-0c14b1f5-d59b-4302-859d-22da7fc306b1/applying-style-to-images-14c3ddf4-8d6ac52b7ef62109"
 },
 "a5408c978a5c5fb0": {
 "caption": "An illustrated football player in a red shirt celebrates on his knees with arms raised.",
@@ -9332,6 +9380,18 @@
 "referee blowing whistle"
 ],
 "id": "cut:common/fig-ballboy-n"
+},
+"b5c95793477a4995": {
+"caption": "A player in a white and blue shirt controls the ball while being closely defended by opponents in red kits.",
+"people": 4,
+"faces": true,
+"action": "dribbling past defenders",
+"place": "pitch",
+"era": "2020s",
+"mood": "tension",
+"text": "Plus500 MANE 10",
+"avoid": "handball appeal: player dribbling with feet",
+"id": "beat:job-0c14b1f5-d59b-4302-859d-22da7fc306b1/222222-45078fc5d4dbfe7c"
 },
 "b5f4b14763e73f06": {
 "caption": "An open scrapbook lies flat on a dark desk surrounded by paper craft stadium stands and crafting tools.",
@@ -11297,6 +11357,17 @@
 "prayer"
 ],
 "id": "lib:ppl-player-despair-fl2-kr"
+},
+"df0992c95620a3db": {
+"caption": "A paper-cut shadow box artwork depicting a football action scene near the goal line.",
+"people": 7,
+"faces": true,
+"action": "scoring a goal artwork",
+"place": "abstract",
+"era": "2020s",
+"mood": "tension",
+"avoid": "real match photo: paper cut illustration",
+"id": "beat:job-0c14b1f5-d59b-4302-859d-22da7fc306b1/creating-paper-cut-style-image-f9dcfd98-5c752a56371bb5e6"
 },
 "df19ffee5a53bff9": {
 "caption": "A solid brown square background featuring small white text reading St_Pauli App Icon.",
