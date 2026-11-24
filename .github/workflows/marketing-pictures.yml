@@ -5,7 +5,7 @@ name: Marketing · Pictures v4
 # five days are deleted on every run.
 on:
   schedule:
-    - cron: '17 */2 * * *'
+    - cron: '17 * * * *'
   workflow_dispatch:
 permissions:
   contents: write

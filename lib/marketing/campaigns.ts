@@ -11,6 +11,8 @@
 export const SITE = 'https://fanlife.dubelteam.com'
 
 export const TOPICS = [
+  {key: 'brand', label: 'FAN LIFE (all clubs)', hint: 'The hub itself — no single club'},
+  {key: 'life', label: 'LIFE · coming soon', hint: 'The GTA of football supporters, in build'},
   {key: 'club', label: 'Clubs', hint: 'One club at a time, in its colours and its language'},
   {key: 'opening', label: 'New clubs', hint: 'Teaser, opening night, the first week'},
   {key: 'shop', label: 'Shop products', hint: 'A club’s products, one at a time'},
@@ -54,17 +56,17 @@ export const CLUB_CARDS: Record<string, ClubCard> = {
   'partizan-belgrade': {id: 'partizan-belgrade', name: 'Partizan Belgrade', crestName: 'Partizan Belgrade', nickname: 'The Black-Whites', city: 'Belgrade · Serbia', local: 'Za sve koji su odrasli crno-beli.',
     tags: '#FANLIFE #Partizan #FKPartizan #Grobari #BalkanFootball #FootballHistory', stats: {matches: 2950, players: 624, shirts: 36, from: 2007}},
 }
-/** the clubs open to the public on 24.11.2026 (the clubs page). Fenerbahçe and Partizan open this week (owner) — their
- *  opening campaign waits for the club page itself (hold `open:<id>`), so no post ever sends a fan to a closed door. */
-export const OPEN_CLUBS = ['panathinaikos', 'olympiacos', 'aek-athens', 'celtic', 'zrinjski-mostar', 'hapoel-tel-aviv', 'st-pauli', 'atalanta', 'hapoel-petah-tikva', 'raja-casablanca']
-export const OPENING_SOON = ['fenerbahce', 'partizan-belgrade']
+/** the clubs open to the public (the clubs page). A new club's opening campaign waits for its page (hold `open:<id>`). */
+export const OPEN_CLUBS = ['panathinaikos', 'olympiacos', 'aek-athens', 'celtic', 'zrinjski-mostar', 'hapoel-tel-aviv', 'st-pauli', 'atalanta', 'hapoel-petah-tikva', 'raja-casablanca', 'fenerbahce', 'partizan-belgrade']
+/** clubs announced but not open yet (Fenerbahçe and Partizan opened 24.11.2026) */
+export const OPENING_SOON: string[] = []
 
 const n = (x: number) => x.toLocaleString('en-GB')
 /** every link a campaign posts carries the campaign, so the Audience desk and the campaign report can count its visits */
 export const track = (path: string, campaign: string) => `${SITE}${path}${path.includes('?') ? '&' : '?'}utm_source=social&utm_campaign=${encodeURIComponent(campaign)}`
 
 export type Main = {app: 'fanlife'; label: string; tags: string; hook: string; body: string; url?: string; visual: string; comment?: string
-  kit: {t: string; data: Record<string, unknown>; to: string[]}; campaign: {id: string; topic: Topic; name: string}; fill?: {hook?: string; body?: string}; hold?: string; launch?: boolean}
+  kit: {t: string; data: Record<string, unknown>; to: string[]; reel?: string}; campaign: {id: string; topic: Topic; name: string}; fill?: {hook?: string; body?: string}; hold?: string; launch?: boolean}
 /** a row for marketing.posts: `at` is Athens wall time 'YYYY-MM-DD HH:MM' */
 export type Row = {at: string; format: 'post'; main: Main; held?: boolean}
 type C = {id: string; topic: Topic; name: string}
@@ -194,6 +196,57 @@ Tag the mate who still hasn’t opened his 👇`,
     kit: {t: 'L-ALBUM', data: {club: c ? {id: c.id} : undefined, code, headline: 'A free envelope. Every day.', seed}, to: ['feed', 'story']}}
 }
 
+/** FAN LIFE ITSELF (owner, 24.11.2026): the hub, no single club — every club's crest on one wall */
+export const BRAND_ANGLES = ['clubs', 'games', 'archive', 'album', 'shop', 'youtube'] as const
+export function brandPost(angle: typeof BRAND_ANGLES[number], k: C): Omit<Main, 'campaign'> {
+  const clubs = OPEN_CLUBS.length, w = {
+    clubs: {hook: `${clubs} clubs. One home for the supporters. Is yours in? 🏟️`, body: `Panathinaikos, Olympiacos, AEK, Celtic, Fenerbahçe, Partizan, St. Pauli, Atalanta and more — each with its own archive, games and shirts.\n\nTag the mate who supports the wrong club 👇`, headline: 'Every club. Every shirt. Every legend.', path: '/clubs', cta: 'Pick your club'},
+    games: {hook: '13 games about your club. Free, in your browser. 🎮', body: 'All-time XI, trivia, the blind cow, the derby, the kit builder, Royal Rumble, Legends Manager…\nPlay solo or challenge your mates.\n\nWhich one first? 👇', headline: '13 games about your club. Free.', path: '/our-games', cta: 'Play free'},
+    archive: {hook: 'Every match. Every line-up. Every scorer. 📚', body: 'The FAN LIFE archive: your club’s whole history, season by season, sourced.\nFind the day you were there.\n\nWhat’s the first match you remember? 👇', headline: 'Your club’s whole history. Sourced.', path: '/clubs', cta: 'Open the archive'},
+    album: {hook: 'A free envelope of legends. Every day. ✉️', body: 'The FAN LIFE sticker album: every club’s wing, swaps with other supporters, a free envelope daily.\nNew? Code FANLIFE99 = 3 more.\n\nWho did you pull? 👇', headline: 'One album. Every club’s legends.', path: '/album?code=FANLIFE99', cta: 'Open today’s envelope'},
+    shop: {hook: 'Fan art for the terrace, printed for you. 👕', body: 'Shirts, hoodies, mugs, posters — every club, no official crests, made by supporters.\n\nWho are you getting it for? 👇', headline: 'Made for the terrace.', path: '/shop', cta: 'Shop now'},
+    youtube: {hook: 'Football stories nobody else tells. ▶️', body: 'Club documentaries, the strangest true stories, fairy tales for the little ones.\nFanLife: Football Stories on YouTube.\n\nWhich club’s story next? 👇', headline: 'Football stories nobody else tells.', path: '', cta: 'Subscribe'},
+  }[angle]
+  return {app: 'fanlife', label: `FAN LIFE · ${angle}`, tags: '#FANLIFE #FootballHistory #FootballFans #RetroFootball #FootballGames',
+    hook: w.hook, body: w.body, comment: angle === 'clubs' ? 'Which club should open next? 👇' : undefined,
+    url: w.path ? track(w.path, k.id) : 'https://www.youtube.com/@FanLifeFootballStories?sub_confirmation=1', visual: 'L-HUB: every open club’s crest on one wall.',
+    kit: {t: 'L-HUB', data: {clubs: OPEN_CLUBS, headline: w.headline, cta: w.cta, kicker: 'FAN LIFE · every club',
+      stats: angle === 'clubs' || angle === 'games' ? [{n: clubs, label: 'Clubs'}, {n: 13, label: 'Games'}, {n: '€0', label: 'To play'}] : undefined}, to: ['feed', 'story']}}
+}
+
+/** LIFE · COMING SOON (owner, 24.11.2026; LIFE is closed to the public — every door lands on /coming-soon/life): the GTA of
+ *  football supporters, in build. The owner's own art, one mission line, the city as the terrace. */
+export const LIFE_BEATS = [
+  {art: 'terrace', mission: 'Matchday', headline: 'The city is your terrace.', hook: 'LIFE: the GTA of football supporters. In build. 🏙️', line: 'Your city · your club · your life'},
+  {art: 'cover-life', mission: 'The march', headline: 'The whole street sings. You walk in front.', hook: 'Matchday. The march starts at the pub and ends at the gate.', line: 'LIFE · coming soon'},
+  {art: 'panels-wide', mission: 'First away day', headline: 'Grow up on the terrace.', hook: 'From your first match on your dad’s shoulders to your first away day. LIFE is coming.', line: 'Childhood → terrace → legend'},
+  {art: 'panels-graffiti', mission: 'Your colours', headline: 'Every club gets its own city.', hook: 'Athens, Glasgow, Hamburg, Tel Aviv… Which city should LIFE open first? 👇', line: 'Comment your city'},
+  {art: 'next-generation', mission: 'The next generation', headline: 'Real supporters only.', hook: 'Real supporters only. Tourists wait outside. LIFE is in build.', line: 'Coming soon'},
+] as const
+export function lifePost(i: number, k: C): Omit<Main, 'campaign'> {
+  const b = LIFE_BEATS[i % LIFE_BEATS.length]!
+  return {app: 'fanlife', label: 'LIFE · coming soon', tags: '#FANLIFE #LIFE #FootballGame #GTA6 #FootballFans #ComingSoon',
+    hook: b.hook, body: 'An open world for football supporters — from childhood to the terrace, in your club’s own city.\nIn build. Coming soon.\n\nWhich city first? Comment it 👇',
+    url: track('/coming-soon/life', k.id), visual: 'L-GTA: the owner’s LIFE art, a mission card.',
+    kit: {t: 'L-GTA', data: {n: i % LIFE_BEATS.length + 1, art: b.art, mission: b.mission, headline: b.headline, line: b.line, cta: 'Coming soon'}, to: ['feed', 'story']}}
+}
+
+/** REELS from the Football Fairy Tales (owner, 24.11.2026): vertical clips built by scripts/marketing/reels/build.mjs in the
+ *  social-reels release; the post is the reel itself, its picture a frame of the episode, its link the episode on YouTube. */
+export const REEL_BASE = 'https://github.com/maordubel/fanlife/releases/download/social-reels/'
+export const REELS: {key: string; club: string; when: 'gm' | 'gn'}[] = [
+  {key: 'pgm-el', club: 'panathinaikos', when: 'gm'}, {key: 'pgn-el', club: 'panathinaikos', when: 'gn'},
+  {key: 'ogm-el', club: 'olympiacos', when: 'gm'}, {key: 'ogn-el', club: 'olympiacos', when: 'gn'},
+  {key: 'agm-el', club: 'aek-athens', when: 'gm'}, {key: 'agn-el', club: 'aek-athens', when: 'gn'},
+  {key: 'hgm-he', club: 'hapoel-tel-aviv', when: 'gm'}, {key: 'hgn-he', club: 'hapoel-tel-aviv', when: 'gn'},
+]
+export function reelPost(r: typeof REELS[number], part: 'open' | 'heart', k: C): Omit<Main, 'campaign'> | null {
+  const base = fairyPost(CLUB_CARDS[r.club]!, k, r.when)
+  if (!base) return null
+  return {...base, label: `Reel · ${base.label.replace('Fairy Tales · ', '')} · ${part}`, visual: 'A reel: the episode cut vertical, the hook in the club’s language.',
+    kit: {...base.kit, reel: `${REEL_BASE}reel-${r.key}-${part}.mp4`, to: ['reel', 'story']} as Main['kit']}
+}
+
 export type Feature = 'legends' | 'rumble' | 'market' | 'kits'
 export function featurePost(f: Feature, c: ClubCard, k: C): Omit<Main, 'campaign'> {
   if (f === 'rumble') return {app: 'fanlife', label: `Royal Rumble · ${c.name}`, tags: c.tags + ' #FootballGames',
@@ -225,6 +278,9 @@ export const TEMPLATES = {
   'product-push': {label: 'Shop products', topic: 'shop', hint: 'One live product of the club (or the whole shop) every day.', needs: [], days: 7},
   'sale-beats': {label: 'Sale', topic: 'sale', hint: 'Every day of the sale saved in the shop: before, during, last day.', needs: [], days: 4},
   'film-push': {label: 'YouTube films', topic: 'youtube', hint: 'The club’s films, one a day, and the channel on Sundays.', needs: [], days: 7},
+  'fanlife-brand': {label: 'FAN LIFE (all clubs)', topic: 'brand', hint: 'The hub itself: every club, the games, the archive, the album, the shop, YouTube — one a day.', needs: [], days: 6},
+  'life-soon': {label: 'LIFE · coming soon', topic: 'life', hint: 'The GTA of football supporters, in build — the owner’s art and a mission card.', needs: [], days: 5},
+  'reels': {label: 'Reels · Fairy Tales', topic: 'youtube', hint: 'The Good Morning / Good Night episodes as vertical reels, in the club’s language.', needs: [], days: 8},
   'fairy-tales': {label: 'Football Fairy Tales', topic: 'youtube', hint: 'Good Morning on the first morning, Good Night the next evening — in the club’s own language.', needs: ['club'], days: 2},
   'album-push': {label: 'The Album', topic: 'album', hint: 'The daily envelope, a club wing a day, and the launch code if you give one.', needs: [], days: 7},
   'feature-push': {label: 'A game or feature', topic: 'legends', hint: 'Legends Manager, Royal Rumble, the market or the kit archive — a club a day.', needs: ['feature'], days: 7},
@@ -290,6 +346,14 @@ export function buildCampaign(i: CampaignInput): {campaign: C & {template: Templ
       if (phase === 'last') put(day, T(1, '21:13'), salePost(null, k, 'last', sale))
     } else if (i.template === 'film-push') {
       put(day, T(0, '20:47'), i.playlist && !clubs.length ? playlistPost(i.playlist, k) : dow(day) === 0 ? channelPost(clubs.length ? c : null, k) : filmPost(c, k))
+    } else if (i.template === 'fanlife-brand') {
+      put(day, T(0, '16:07'), brandPost(BRAND_ANGLES[d % BRAND_ANGLES.length]!, k))
+    } else if (i.template === 'life-soon') {
+      put(day, T(0, '18:13'), lifePost(d, k))
+    } else if (i.template === 'reels') {
+      const own = REELS.filter(r => clubs.includes(r.club)), pool = own.length ? own : REELS
+      const r = pool[Math.floor(d / 2) % pool.length], m = r ? reelPost(r, d % 2 ? 'heart' : 'open', k) : null
+      if (m) put(day, T(0, r!.when === 'gm' ? '08:47' : '20:31'), m)
     } else if (i.template === 'fairy-tales') {
       const m = fairyPost(c, k, d % 2 ? 'gn' : 'gm')
       if (m) put(day, T(d % 2, d % 2 ? '21:31' : '07:31'), m)

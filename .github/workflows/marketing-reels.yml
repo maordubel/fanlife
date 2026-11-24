@@ -1,0 +1,24 @@
+name: Marketing · Reels
+# Reels from the Football Fairy Tales (owner, 24.11.2026): vertical clips in the club's language, built from the episode
+# files by scripts/marketing/reels/build.mjs and kept on the "social-reels" release under stable names the campaign posts use.
+on:
+  workflow_dispatch:
+    inputs:
+      only: {description: 'episode keys, comma separated (empty = all)', required: false, default: ''}
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      ONLY: ${{ inputs.only }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 20, cache: npm}
+      - run: npm ci --ignore-scripts
+      - run: npx playwright install --with-deps chromium
+      - run: sudo apt-get install -y -qq ffmpeg > /dev/null
+      - run: node scripts/marketing/reels/build.mjs reels-out --upload

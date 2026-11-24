@@ -138,4 +138,21 @@ describe('Meta publishing (docs/fanlife/53-meta-publishing.md)', () => {
     expect(st.body.video_url).toContain('p1-story-v4.0.mp4')
     expect(calls.some(c => c.url.endsWith('/media') && c.body.caption)).toBe(true) // the feed post too
   })
+
+  it('24.11.2026: a reel goes up as a Facebook Page reel and an Instagram reel, and the feed picture is not posted', async () => {
+    const {calls, fetcher} = fakeGraph()
+    const f = async (u: URL | string, init: {method: string; body?: FormData | URLSearchParams; headers?: Record<string, string>}) => {
+      const url = u.toString()
+      if (url.includes('rupload.facebook.com')) { calls.push({method: 'POST', url, body: {file_url: String(init.headers?.file_url)}}); return Response.json({success: true}) }
+      if (url.endsWith('/video_reels') && (init.body as URLSearchParams)?.get('upload_phase') === 'start') { calls.push({method: 'POST', url, body: {upload_phase: 'start'}}); return Response.json({video_id: 'v77'}) }
+      return fetcher(new URL(url), init as never)
+    }
+    const kit = {t: 'L-FILM', data: {}, to: ['reel'], reel: 'https://github.com/maordubel/fanlife/releases/download/social-reels/reel-pgm-el-open.mp4'}
+    const r = await publishToMeta({id: 20, msg: msg('Post'), kit}, [png], {env: ON, fetcher: f as never})
+    expect(r.facebook).toBe('published reel v77')
+    expect(r.instagram).toMatch(/^published reel/)
+    expect(calls.find(c => c.url.includes('rupload'))!.body.file_url).toBe(kit.reel)
+    expect(calls.find(c => c.url.endsWith('/media'))!.body.media_type).toBe('REELS')
+    expect(calls.some(c => c.url.endsWith('/photos'))).toBe(false)
+  })
 })

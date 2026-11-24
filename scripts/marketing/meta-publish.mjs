@@ -38,8 +38,8 @@ export function metaConfig(env = process.env) {
 /** Where a post goes. Plan v5 names it in the kit (`kit.to`: feed · story · tiktok); an older row falls back to its format. */
 export function targetsOf(p, parts) {
   const to = Array.isArray(p?.kit?.to) ? p.kit.to : null
-  if (to) return {feed: to.includes('feed'), story: to.includes('story'), tiktok: to.includes('tiktok'), named: true}
-  return {feed: PUBLISH.has(parts.format), story: false, tiktok: false, named: false}
+  if (to) return {feed: to.includes('feed'), story: to.includes('story'), reel: to.includes('reel') && /^https:\/\//.test(String(p?.kit?.reel || '')), tiktok: to.includes('tiktok'), named: true}
+  return {feed: PUBLISH.has(parts.format), story: false, reel: false, tiktok: false, named: false}
 }
 
 /** Why this post is not for Meta, or null when it is. */
@@ -47,7 +47,7 @@ export function skipReason(p, parts, pngs, cfg) {
   if (!cfg.on) return 'off'
   if (p.kind === 'briefing' || p.kit?.data?.briefing === true || /briefing/i.test(String(p.msg).split('\n')[0])) return 'owner briefing'
   const tg = targetsOf(p, parts)
-  if (!tg.feed && !tg.story) return tg.named ? 'not for Facebook or Instagram' : `${parts.format || 'unknown format'} stays a Telegram draft`
+  if (!tg.feed && !tg.story && !tg.reel) return tg.named ? 'not for Facebook or Instagram' : `${parts.format || 'unknown format'} stays a Telegram draft`
   if (!parts.caption && !tg.story) return 'no caption'
   if (!pngs?.length) return 'no picture'
   if (!parts.app) return 'unknown app'
@@ -125,6 +125,39 @@ async function publishStory(p, png, cfg, api) {
   return {...out, line, story: true}
 }
 
+/** A Reel (owner, 24.11.2026: "Shorts as Reels in our campaign"): a vertical MP4 from the social-reels release, as a
+ *  Facebook Page reel (video_reels: start → hosted file → finish) and an Instagram reel shared to the feed. */
+async function publishReel(p, parts, cfg, api, fetcher) {
+  const out = {facebook: '', instagram: ''}, video = String(p.kit.reel)
+  try {
+    const start = await api(`${cfg.page}/video_reels`, {upload_phase: 'start'})
+    const up = await fetcher(start.upload_url || `https://rupload.facebook.com/video-upload/${cfg.version}/${start.video_id}`,
+      {method: 'POST', headers: {Authorization: `OAuth ${cfg.token}`, file_url: video}, signal: AbortSignal.timeout(25_000)})
+    const uj = await up.json().catch(() => ({}))
+    if (!up.ok || uj.success === false) throw new Error(uj?.debug_info?.message || `upload ${up.status}`)
+    await api(`${cfg.page}/video_reels`, {upload_phase: 'finish', video_id: start.video_id, video_state: 'PUBLISHED', description: parts.caption})
+    out.facebook = `published reel ${start.video_id}`
+  } catch (e) { out.facebook = `refused: ${clean(e?.message || e, cfg.token)}` }
+  if (!cfg.ig) out.instagram = 'skipped: no Instagram account (META_IG_USER_ID)'
+  else try {
+    const creation = (await api(`${cfg.ig}/media`, {media_type: 'REELS', video_url: video, caption: parts.caption, share_to_feed: 'true'})).id
+    let done = false
+    for (let i = 0; i < 26 && !done; i++) {
+      const s = await api(creation, {fields: 'status_code'}, {method: 'GET'}).catch(() => ({}))
+      if (s.status_code === 'ERROR') throw new Error('Instagram could not process the reel')
+      done = s.status_code === 'FINISHED'
+      if (!done) await wait(1500)
+    }
+    if (!done) throw new Error('Instagram was still processing the reel — post it by hand from the box')
+    const media = (await api(`${cfg.ig}/media_publish`, {creation_id: creation})).id
+    if (parts.comment) await api(`${media}/comments`, {message: parts.comment}).catch(() => {})
+    out.instagram = `published reel ${media}`
+  } catch (e) { out.instagram = `refused: ${clean(e?.message || e, cfg.token)}` }
+  const line = `${mark(out.facebook)} Facebook reel · ${mark(out.instagram)} Instagram reel` +
+    (out.facebook.startsWith('refused') || out.instagram.startsWith('refused') ? ` — post the ⚠️ one by hand: ${video}` : ' — published automatically.')
+  return {...out, line}
+}
+
 /**
  * Publish one claimed post. Returns {facebook, instagram} — each 'published <id>', 'skipped: …' or 'refused: …' —
  * and a line for the owner's Telegram message. Never throws.
@@ -137,7 +170,9 @@ export async function publishToMeta(p, pngs, {env = process.env, fetcher = fetch
   // a post meant for the feed AND the stories (plan v9) goes to both, in parallel; a story-only post stops here
   const tg = targetsOf(p, parts)
   let st = null
-  if (tg.story) { st = await publishStory(p, pngs[0], cfg, api); if (!tg.feed) return st }
+  if (tg.story) { st = await publishStory(p, pngs[0], cfg, api); if (!tg.feed && !tg.reel) return st }
+  // a reel replaces the feed picture: the video is the post (its picture still goes to Telegram and the story)
+  if (tg.reel) { const rl = await publishReel(p, parts, cfg, api, fetcher); return st ? {...rl, line: `${rl.line}\n${st.line}`, story: true, storyResult: {facebook: st.facebook, instagram: st.instagram}} : rl }
   const files = await Promise.all(pngs.slice(0, 10).map(b => asJpeg(b).catch(() => ({buf: b, type: 'image/png', ig: false}))))
   const out = {facebook: '', instagram: ''}
   const urls = []

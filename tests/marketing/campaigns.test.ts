@@ -41,3 +41,18 @@ describe('campaigns', () => {
   })
   it('links carry the campaign', () => { expect(track('/shop?club=celtic', 'x-1')).toBe('https://fanlife.dubelteam.com/shop?club=celtic&utm_source=social&utm_campaign=x-1') })
 })
+
+describe('campaigns · second wave (24.11.2026)', () => {
+  it('the FAN LIFE wall, LIFE and the reels build without a club', () => {
+    for (const template of ['fanlife-brand', 'life-soon', 'reels'] as const) {
+      const {rows} = buildCampaign({template, start: '2026-12-01', days: 4})
+      expect(rows.length, template).toBe(4)
+    }
+    const life = buildCampaign({template: 'life-soon', start: '2026-12-01', days: 1}).rows[0]!
+    expect(life.main.url).toContain('/coming-soon/life') // LIFE is closed: every door goes to Coming soon
+    const reel = buildCampaign({template: 'reels', start: '2026-12-01', days: 1}).rows[0]!
+    expect(reel.main.kit.to).toEqual(['reel', 'story'])
+    expect(reel.main.kit.reel).toMatch(/^https:\/\/github\.com\/maordubel\/fanlife\/releases\/download\/social-reels\/reel-pgm-el-open\.mp4$/)
+  })
+  it('Fenerbahçe and Partizan are open clubs now', () => { expect(OPEN_CLUBS).toEqual(expect.arrayContaining(['fenerbahce', 'partizan-belgrade'])) })
+})

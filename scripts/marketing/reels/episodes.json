@@ -1,0 +1,13 @@
+{
+ "_": "Football Fairy Tales episode files (owner, 24.11.2026: Reels from Good Morning / Good Night in the club's language). Each file lives in a commit of the studio's upload branch; raw.githubusercontent.com serves it by commit.",
+ "episodes": [
+  {"key": "pgm-el", "sha": "4bee9e4a93bc9d3e2840666b16db23770d7a4823", "dir": "q", "parts": 3, "club": "panathinaikos", "lang": "el", "kind": "gm"},
+  {"key": "pgn-el", "sha": "a71b4addacbaf4358b341f0bf652d1703f0488f6", "dir": "v", "parts": 2, "club": "panathinaikos", "lang": "el", "kind": "gn"},
+  {"key": "ogm-el", "sha": "9872a5918f7a240e658c05cf2833e2ef43a3f4a7", "dir": "v", "parts": 3, "club": "olympiacos", "lang": "el", "kind": "gm"},
+  {"key": "ogn-el", "sha": "ca35e9d9d0e52a273b6c5785ec45b39577c74667", "dir": "v", "parts": 2, "club": "olympiacos", "lang": "el", "kind": "gn"},
+  {"key": "agm-el", "sha": "123ed47990540cc24be41f8660266857cd987175", "dir": "v", "parts": 3, "club": "aek-athens", "lang": "el", "kind": "gm"},
+  {"key": "agn-el", "sha": "ac7209553be9609c3b185ae91a42e217952db500", "dir": "v", "parts": 2, "club": "aek-athens", "lang": "el", "kind": "gn"},
+  {"key": "hgm-he", "sha": "1c97fb2878900651118591d44e2bcd07424528f8", "dir": "f", "parts": 4, "club": "hapoel-tel-aviv", "lang": "he", "kind": "gm"},
+  {"key": "hgn-he", "sha": "cbbec8e998a862cca16900959f361b1329443cb8", "dir": "v", "parts": 2, "club": "hapoel-tel-aviv", "lang": "he", "kind": "gn"}
+ ]
+}
