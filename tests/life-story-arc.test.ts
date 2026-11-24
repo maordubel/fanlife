@@ -12,7 +12,7 @@ import {CORE_CLUB_IDS} from '@/lib/clubs/resolver'
 import {rng} from '@/lib/life/rush/level'
 import {templateById} from '@/lib/life/rush/templates'
 import {
-  accept, CHILDHOOD, doneFlag, endDay, holds, isFinished, MATCHDAY, MISSIONS, newLife, nextMissions, nightFor, objectiveKey, resolve, ROUTES, STANDING, stepsOf, STORY_WORDS,
+  accept, CHILDHOOD, doneFlag, endDay, holds, rotate, isFinished, MATCHDAY, MISSIONS, newLife, nextMissions, nightFor, objectiveKey, resolve, ROUTES, STANDING, stepsOf, STORY_WORDS,
   type Approach, type Effect, type Mission, type StoryState,
 } from '@/lib/life/hood/story'
 import {LIFE_MISSIONS, LIFE_SPINE, LIFE_STAGES, lifeStageOf, routeFlag, routeOf, standingFor, stageById} from '@/lib/life/hood/story/stages'
@@ -152,7 +152,8 @@ function offersOf(s: StoryState): {m: Mission; ways: Approach[]; why: string}[] 
   const waits = !ahead.length || ahead.some(m => m.day === 'any') ? 0 : (MATCHDAY - s.day + 7) % 7
   const main = waits === 0 ? ahead.map(m => ({m, ways: openOf(s, m), why: 'main'})) : []
   const sides = LIFE_MISSIONS.filter(m => m.kind === 'side' && !s.done.includes(m.id) && m.age <= s.age && holds(s, m.needs)).map(m => ({m, ways: openOf(s, m), why: 'side'}))
-  const standing = main.length ? [] : standingFor(s.age).map(m => ({m, ways: openOf(s, m), why: 'standing'}))
+  // the week's work, the one done least often first (feel pass, 24.11.2026)
+  const standing = main.length ? [] : rotate(standingFor(s.age), s).map(m => ({m, ways: openOf(s, m), why: 'standing'}))
   return [...main, ...sides, ...standing].filter(o => o.ways.length > 0)
 }
 function liveWhole(seed: number, cap = 4000): Walk {

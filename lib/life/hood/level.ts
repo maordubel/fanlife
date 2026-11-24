@@ -19,7 +19,7 @@ import type {VoxelSkin} from '@/lib/life/universal/skin'
 import type {HoodMeta, HoodPerson, PersonId} from './types'
 
 /** what the hood needs of a club: its skin and its cast (roles with names where the pack has them) */
-export type HoodClub = {id: string; skin: VoxelSkin; cast: Readonly<Record<string, Pick<CastMember, 'name' | 'role' | 'look'>>>; /** the archive nights the Fitter dated, by chapter (`storyNights`); absent: every chapter is personal */ nights?: Readonly<Record<string, ArchiveRef>>; /** the club's own city as its pack records it (Tel Aviv pictures only for Tel Aviv) */ town?: string | null}
+export type HoodClub = {id: string; skin: VoxelSkin; cast: Readonly<Record<string, Pick<CastMember, 'name' | 'role' | 'look'>>>; /** the archive nights the Fitter dated, by chapter (`storyNights`); absent: every chapter is personal */ nights?: Readonly<Record<string, ArchiveRef>>; /** the club's own city as its pack records it (Tel Aviv pictures only for Tel Aviv) */ town?: string | null; /** the life's birth year (`LIFE_TIMELINE`), when the club has one: the street is dressed for the boy's years */ born?: number | null; /** the country the pack records, for the era's money */ country?: string | null}
 
 export const HOOD = {length: 330, half: 7, walk: 11, side: 62, sideW: 7, age: 11, talk: 2.2} as const
 /** the universal cast role each person is, and how it looks to the sim */
@@ -88,7 +88,7 @@ export function hoodLevel(club: HoodClub, seed: number): Level {
   for (let i = 0; i < 4; i++) stand(pitch.x - 4 + r() * 8, pitch.z - 4 + r() * 8, {size: 0.92, kit: true, scarf: false})
 
   const meta: HoodMeta = {
-    people, door, kiosk, school, pitch,
+    people, door, kiosk, school, pitch, year: typeof club.born === 'number' ? club.born + HOOD.age - 2 : null,
     places: [
       {id: 'home', key: 'hood.place.home', x: door.x + 2, z: door.z, r: 14},
       {id: 'kiosk', key: 'hood.place.kiosk', x: kiosk.x, z: kz, r: 11},

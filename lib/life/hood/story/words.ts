@@ -7,6 +7,7 @@
  * Same shape as `lib/life/hood/words.ts`: a key table and one function, so a second language is a second table.
  */
 import {ARC_WORDS} from './arc-words'
+import {FEEL_WORDS} from './feel/words'
 
 const EN = {
   // the frame
@@ -160,7 +161,7 @@ const EN = {
 
 export type StoryKey = keyof typeof EN
 /** childhood's words and the rest of the life's (`arc-words.ts`), one table */
-export const STORY_WORDS: Record<string, string> = {...ARC_WORDS, ...EN}
+export const STORY_WORDS: Record<string, string> = {...ARC_WORDS, ...FEEL_WORDS, ...EN}
 
 export function storyWord(key: StoryKey | string, vars: Record<string, string> = {}): string {
   const s = STORY_WORDS[key] ?? key

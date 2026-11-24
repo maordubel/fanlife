@@ -20,6 +20,7 @@ import {
   applyEffect, beatsAfter, complicationTalk, finishStory, keepOff, newPlay, openingBeat, planKey, stepDone, storyLevel, storyOver, storyTalk, syncOffers, walkToTalk, wantsComplication,
   type Beat, type StoryLevel, type StoryPlay,
 } from '@/lib/life/hood/story/play'
+import {searchInput} from '@/lib/life/hood/story/challenge/run'
 import {HIGHLIGHTS, OUR_FILMS, slateOf, watchFor, watchForNight} from '@/lib/life/watch'
 import {kindsOf} from '@/lib/life/rush/archive'
 import type {ArchiveRef} from '@/lib/life/universal/types'
@@ -65,7 +66,7 @@ function liveInTheHood(clubId: string, sl: StoryLevel, run: HoodRun, seed: numbe
     if (!play.plan) {
       if (!target) target = offers[Math.floor(r() * offers.length)]!.mission.giver
       input = walkToTalk(run, target)
-    } else input = botInput(run.level, run.sim)
+    } else input = searchInput(run, botInput(run.level, run.sim))
     // a player who walks into a corner steps out of it: still for two seconds → two seconds the other way
     if (frames % 120 === 0) { const moved = Math.hypot(run.sim.x - last.x, run.sim.z - last.z); last = {x: run.sim.x, z: run.sim.z}; if (moved < 0.3) unstick = 120 }
     if (unstick > 0) { unstick--; input = {...IDLE, x: Math.sin(seed + frames / 400), z: 0.6} }

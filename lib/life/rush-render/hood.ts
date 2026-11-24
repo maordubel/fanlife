@@ -11,6 +11,7 @@ import {hoodWord} from '@/lib/life/hood/words'
 import type {AmbState} from '@/lib/life/hood/ambient'
 import {lookAt, pose, turnTo, type FigureData, type Gesture, type Mood} from './figure'
 import {humanPoint, isSkinned} from './human/human'
+import {dressEra} from './era'
 
 /** a conversation as the picture plays it: who speaks, with what face and hands, and how long this line has been on */
 export type TalkDir = {who: string; mood?: Mood; gesture?: Gesture | null; you?: Mood; shot?: 'two' | 'close'; beat?: 'scarf' | null; speak: number; tt: number}
@@ -33,6 +34,7 @@ export function dressHood(x: HoodCtx): HoodDress {
   const add = (m: THREE.Object3D) => { scene.add(m); return m }
   const mesh = (g: THREE.BufferGeometry, m: THREE.Material, px: number, py: number, pz: number, sx = 1, sy = 1, sz = 1) => { const o = new THREE.Mesh(g, m); o.scale.set(sx, sy, sz); o.position.set(px, py, pz); o.castShadow = false; return add(o) as THREE.Mesh }
   const W = level.walk
+  dressEra(x) // the era's dressing (feel pass; `era.ts` owns it)
 
   /* the front door: on the facade of the home block, a step, the number plate, a lit fanlight */
   { const d = hood.door

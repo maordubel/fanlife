@@ -20,6 +20,7 @@ import type {TalkChoice, TalkNode, TalkScript} from '../talk'
 import type {HoodJob, PersonId} from '../types'
 import {accept as acceptMission, ahead, endDay, isFinished, missionById, MISSIONS, newLife, nextMissions, resolve, stageOf, walkAway, waits} from './director'
 import {toHoodJob, type StoryJobPlan} from './job'
+import {layFinds} from './challenge/run'
 import type {Mission, Offer, StoryEvent, StoryState} from './types'
 
 export const planKey = (mission: string, approach: string): string => `${mission}/${approach}`
@@ -44,6 +45,12 @@ export function storyLevel(base: Level): StoryLevel {
     level.steps.push(...plan.steps); level.pickups.push(...plan.pickups)
     plans[planKey(m.id, a.id)] = plan; picks[planKey(m.id, a.id)] = plan.pickups.map((_, i) => at + i)
   }
+  // knots of people singing on the main street, between the crossings (RUSH's own rings): on a matchday walk, stand in
+  // one a moment and the song carries him — the walk to the ground has something in it (feel pass)
+  const gate = -(base.length - 14)
+  for (const f of [0.3, 0.55, 0.8]) { const z = Math.round(gate * f); if (base.crossings.every(c => Math.abs(c - z) > 11)) level.rings = [...level.rings, {x: 0, z, r: 3.6}] }
+  // the FIND ways hide their first thing in one of a few places (`challenge/run.ts`)
+  layFinds(level, plans, picks, base.seed)
   const sl: StoryLevel = {level, plans, picks}
   // a new life's offers are in the level from the start: the picture always has somebody to mark
   level.hood!.jobs.push(...nextMissions(newLife()).map(o => offerJob(sl, o)))
@@ -99,6 +106,9 @@ export function storyTalk(play: StoryPlay, who: PersonId): TalkScript {
   if (mine.length === 1 && !dayOff) return {who, start: `m:${mine[0]!.mission.id}`, nodes}
   const menu: TalkChoice[] = [...mine.slice(0, 4).map(o => ({key: `story.m.${o.mission.id}.title`, to: `m:${o.mission.id}`})), ...(dayOff ? [{key: 'story.end-day', to: 'night', effect: 'story:end-day' as const}] : []), LATER]
   nodes.menu = {id: 'menu', who, line: 'story.talk.menu', choices: menu}
+  // a chapter is never behind a menu (feel pass): its offer comes first, the small jobs behind "Something else?"
+  const main = mine.find(o => o.why === 'main')
+  if (main) { const n = nodes[`m:${main.mission.id}`]!; nodes[n.id] = {...n, choices: [...n.choices!.slice(0, -1), {key: 'story.talk.other', to: 'menu'}, LATER]}; return {who, start: n.id, nodes} }
   return {who, start: 'menu', nodes}
 }
 
@@ -187,6 +197,10 @@ export type Beat =
   | {k: 'aftermath'; mission: string; night: ArchiveRef | null; delta: StoryDelta; approach: string}
   | {k: 'chapter'; from: number | null; to: number; next: string | null; stage: string}
   | {k: 'stage-end'; stage: string}
+  /** the feel pass: the paper the morning after a dated matchday (the headline is the archive row's), his name in the caption */
+  | {k: 'paper'; mission: string; night: ArchiveRef; age: number}
+  /** the feel pass: the stage looked back on — his ways, the Box, the people, the Heart (`feel/voice.ts → recapOf`) */
+  | {k: 'recap'; stage: string}
 
 /**
  * The order of the cards: a mission on a dated night gets the watch card first (when something is on record to watch),
