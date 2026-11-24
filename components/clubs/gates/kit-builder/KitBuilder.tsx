@@ -15,7 +15,7 @@ import {ShareComposer} from '@/components/share/v3/ShareComposer'
 import {kitShare} from '@/lib/share/v3/adapters'
 import {saveBuilt} from '@/lib/clubs/kit-studio'
 import {gradeKitShirt,hintKitShirt,type Fail,type Graded} from './actions'
-import {KitCloth} from './KitCloth'
+import {KitCloth,moveKitLight,resetKitLight} from './KitCloth'
 import {KitPartMark} from '@/components/clubs/games/KitPartMark'
 import css from './kit-builder.module.css'
 import {KitOwnBar,KitOwnProvider} from '@/components/clubs/KitOwn'
@@ -42,6 +42,7 @@ export function KitBuilder(props:KitBuilderProps){
  const [mode,setMode]=useState<KitMode|null>(props.mode)
  const [phase,setPhase]=useState<Phase>(props.mode?'play':'intro')
  const size=mode?Math.min(MODE_SIZE[mode],puzzles.length):0
+ const [closeup,setCloseup]=useState(false)
  const [idx,setIdx]=useState(0),[stepIx,setStepIx]=useState(0),[auto,setAuto]=useState(false)
  const [placed,setPlaced]=useState<Record<number,Placed>>({}),[hints,setHints]=useState<Record<number,HintState>>({})
  const [graded,setGraded]=useState<Record<number,Graded>>({}),[error,setError]=useState<Fail['error']|'network'|null>(null),[notice,setNotice]=useState('')
@@ -122,12 +123,14 @@ export function KitBuilder(props:KitBuilderProps){
   })
  }
  function retryShirt(){
+  setCloseup(false)
   if(timer.current)window.clearTimeout(timer.current)
   setPlaced(p=>({...p,[idx]:{}}))
   setHints(h=>({...h,[idx]:noHints()}))
   setStepIx(0);setNotice('');setError(null);setPhase('play')
  }
  function advance(){
+  setCloseup(false)
   if(idx+1>=size){setPhase('summary');return}
   setIdx(idx+1);setStepIx(0);setPhase('play');setNotice('')
  }
@@ -218,7 +221,10 @@ export function KitBuilder(props:KitBuilderProps){
      <p className={`wk-burst ${css.revealScore}`}><b className="wk-num">{v.score}</b><span>{say('kb.cert.pts')}</span></p>
      <p className={css.fine} data-testid="kb-field-accuracy">{say('kb.reveal.field',{f:v.fieldPoints})}</p>
     </header>
-    <div className={css.pair}>
+    <div className={css.revealControls}>
+     <button type="button" className={`min-h-tap ${css.tool}`} aria-pressed={closeup} onClick={()=>setCloseup(value=>!value)}>{say(closeup?'kb.zoom.out':'kb.zoom.in')}</button>
+    </div>
+    <div className={css.pair} data-zoom={closeup}>
      <figure><figcaption>{referenceTitle}</figcaption><div className={css.pairShirt}>{v.referencePhoto?<img src={v.referencePhoto} alt={referenceTitle} width={320} height={320} data-kit-reference/>:g.archiveSvg?<img src={g.archiveSvg} alt={say('kb.reveal.archiveArt')} width={430} height={470}/>:<KitCloth spec={v.answer} sponsorContext={sponsorContext} sponsorBox={puzzle.sponsorBox} shirtOutline={puzzle.shirtOutline} monogram={monogram} crestSrc={crestFor(club)} title={referenceTitle}/>}</div></figure>
      <figure><figcaption>{mineTitle}</figcaption><div className={css.pairShirt}><KitCloth spec={cloth} sponsorContext={sponsorContext} sponsorBox={puzzle.sponsorBox} shirtOutline={puzzle.shirtOutline} monogram={monogram} crestSrc={crestFor(club)} title={mineTitle}/></div></figure>
     </div>
@@ -256,7 +262,7 @@ export function KitBuilder(props:KitBuilderProps){
      <button type="button" className={`min-h-tap ${css.tool}`} onClick={askHint} disabled={!canHint||inReview} aria-label={say('kb.hint.aria',{pts:HINT_PENALTY,left:HINT_LIMIT-hint.n})} data-testid="kb-hint"><span aria-hidden="true">?</span><small>{HINT_LIMIT-hint.n}</small></button>
      <button type="button" className={`min-h-tap ${css.tool}`} onClick={openSheet({kind:'rules'})} aria-label={say('kb.rules.open')}><span aria-hidden="true">i</span></button>
     </div>
-    <div className={`wk-sky ${css.garment}`} ref={garmentRef} aria-busy={pending!==null} {...dropZone('kit-shirt')} data-testid="kb-garment">
+    <div className={`wk-sky ${css.garment}`} ref={garmentRef} onPointerMove={moveKitLight} onPointerLeave={resetKitLight} aria-busy={pending!==null} {...dropZone('kit-shirt')} data-testid="kb-garment">
      <span className="wk-speed" aria-hidden="true"/>
      <KitCloth spec={cloth} sponsorContext={{club,season:puzzle.seasonLabel,variant:puzzle.variant}} sponsorBox={puzzle.sponsorBox} shirtOutline={puzzle.shirtOutline} missing={missing} monogram={monogram} crestSrc={crestFor(club)} title={say('kb.garment.aria',{season:puzzle.seasonLabel,variant:variantName,done:progress,n:steps.length})}/>
     </div>

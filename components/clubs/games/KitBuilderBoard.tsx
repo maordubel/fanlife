@@ -19,8 +19,11 @@ export function KitBuilderBoard({items,nextHref,club,version,locale}:{items:Item
  const copy=gameCopy(locale),say=(key:string,args?:Record<string,string|number>)=>tr(copy,key,args)
  const [n,setN]=useState(0),[sel,setSel]=useState(EMPTY)
  const [res,setRes]=useState<Awaited<ReturnType<typeof gradeKit>>>(null)
- const [pending,setPending]=useState(false),[error,setError]=useState(false),[score,setScore]=useState(0)
+ const [pending,setPending]=useState(false),[error,setError]=useState(false),[results,setResults]=useState<number[]>([])
  const inFlight=useRef(false),k=items[n]
+ const score=results.reduce((sum,points)=>sum+points,0)
+ let streak=0
+ for(let i=results.length-1;i>=0&&results[i]===3;i--)streak++
  const right=res?[res.season,res.maker,res.design].filter(Boolean).length:0
  async function check(){
   if(!k||inFlight.current||res||!sel.season||!sel.maker||!sel.design)return
@@ -32,7 +35,7 @@ export function KitBuilderBoard({items,nextHref,club,version,locale}:{items:Item
    if(!result){setError(true);return}
    setRes(result)
    const points=[result.season,result.maker,result.design].filter(Boolean).length
-   setScore(total=>total+points)
+   setResults(tally=>[...tally,points])
    void completeRun(club,'kit-builder',`kit-builder:${version}:${n}:${k.id}`,points)
   }catch{
    setError(true)
@@ -45,7 +48,7 @@ export function KitBuilderBoard({items,nextHref,club,version,locale}:{items:Item
  if(!k)return <section className="game-panel mag-card" data-testid="kit-builder">
   <h2>{say('kb.rec.done')}</h2>
   <p className="mag-bowl">{say('kb.rec.score',{score,max:items.length*3})}</p>
-  <Link className="mag-cta min-h-tap" href={nextHref} onClick={()=>{setN(0);setScore(0)}}>{say('kb.rec.again')}</Link>
+  <Link className="mag-cta min-h-tap" href={nextHref} onClick={()=>{setN(0);setResults([])}}>{say('kb.rec.again')}</Link>
  </section>
 
  const row=(field:Field,label:string,options:string[])=><fieldset className="mag-chips" key={field} disabled={pending||res!==null}>
@@ -61,13 +64,14 @@ export function KitBuilderBoard({items,nextHref,club,version,locale}:{items:Item
    <p className="mag-kicker">{say('kb.shirtN',{i:n+1,n:items.length})}</p>
   </header>
   <progress className={css.buildProgress} max={items.length} value={n+(res?1:0)} aria-label={say('kb.rec.progress')}/>
-  <div className={css.recognitionShirt} role="img" aria-label={say('kb.rec.shirt')}>
+  <div key={k.id} className={css.recognitionShirt} data-revealed={res!==null} role="img" aria-label={say('kb.rec.shirt')}>
    <KitPlate kit={{id:k.id,design:k.design,colours:k.colours,season:'?'}} label={false} decorative detail/>
   </div>
   {row('season',copy.kitSeason,k.seasons)}{row('maker',copy.kitMaker,k.makers)}{row('design',copy.kitDesign,k.designs)}
   {error&&<p role="alert">{say('kb.err.invalid')}</p>}
   {!res?<button className="mag-cta min-h-tap" type="button" disabled={!sel.season||!sel.maker||!sel.design||pending} onClick={()=>void check()}>{pending?say('kb.checking'):copy.kitCheck}</button>
-   :<div aria-live="polite">
+   :<div className={css.recognitionResult} aria-live="polite">
+    {streak>1&&<p className={css.recognitionStreak}>{say('kb.rec.streak',{n:streak})}</p>}
     <p className="mag-bowl">{right}/3 · {right===3?copy.kitRight:copy.kitWrong}</p>
     <p><bdi>{res.truth.season} · {res.truth.maker} · {res.truth.design}</bdi></p>
     <ShareComposer draft={kitShare(club,{right,forbidden:[res.truth.season,res.truth.maker,res.truth.design].filter((value):value is string=>!!value)})}/>

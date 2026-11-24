@@ -15,7 +15,7 @@ import {ShareComposer} from '@/components/share/v3/ShareComposer'
 import {templateById} from '@/lib/share/v3/templates'
 import {coverShare} from '@/lib/share/v3/adapters'
 import type {CollectionRow,OpenKit} from '@/lib/clubs/kit-collection'
-import {KitCloth} from '../kit-builder/KitCloth'
+import {KitCloth,moveKitLight,resetKitLight} from '../kit-builder/KitCloth'
 import {KitPartMark} from '@/components/clubs/games/KitPartMark'
 import {colourLabel} from '../kit-builder/KitBuilder'
 import {openBuiltKits} from './actions'
@@ -45,6 +45,7 @@ export function KitStudio(props:KitStudioProps){
  const [opened,setOpened]=useState<Record<string,OpenKit>>(()=>Object.fromEntries(rows.flatMap(r=>r.open?[[r.id,r.open]]:[])))
  const [built,setBuilt]=useState<Record<string,Built>>({}),[filter,setFilter]=useState<'all'|'home'|'away'|'third'>('all')
  const [query,setQuery]=useState(''),[onlyOpen,setOnlyOpen]=useState(false)
+ const [zoom,setZoom]=useState(false)
  const [compareIds,setCompareIds]=useState<string[]>([]),[art,setArt]=useState<'photo'|'vector'>('photo')
  const [briefId,setBriefId]=useState<BriefId>('free'),[memoryId,setMemoryId]=useState<string|null>(null)
  const [sheet,setSheet]=useState<Sheet>(null),[notice,setNotice]=useState(''),[checking,setChecking]=useState(false),[saveName,setSaveName]=useState('')
@@ -190,14 +191,15 @@ export function KitStudio(props:KitStudioProps){
      <button type="button" className={`min-h-tap ${css.tool}`} onClick={doRedo} disabled={!hist.future.length} aria-label={say('ks.redo')} data-testid="ks-redo"><span aria-hidden="true">↷</span></button>
      <button type="button" className={`min-h-tap ${css.tool}`} onClick={doReset} disabled={!hasDesign&&!hist.past.length} data-testid="ks-reset">{say('ks.reset')}</button>
      <span className={css.grow}/>
+     <button type="button" className={`min-h-tap ${css.tool}`} aria-pressed={zoom} onClick={()=>setZoom(value=>!value)}>{say(zoom?'ks.zoom.out':'ks.zoom.in')}</button>
      <button type="button" className={`min-h-tap ${css.tool}`} aria-pressed={view==='back'} onClick={()=>setView(v=>v==='front'?'back':'front')} data-testid="ks-flip">{view==='front'?say('ks.view.back'):say('ks.view.front')}</button>
     </div>
-    <div className={css.garment} ref={garmentRef} data-testid="ks-garment">
+    <div className={css.garment} ref={garmentRef} data-zoom={zoom} onPointerMove={moveKitLight} onPointerLeave={resetKitLight} data-testid="ks-garment">
      <span className={css.ruler} aria-hidden="true">{Array.from({length:10},(_,i)=><i key={i}>{i+1}</i>)}</span>
      <span className={css.stamp} data-testid="ks-stamp">{say('ks.stamp')}</span>
      <span className={css.designName}><bdi>{designName||say('ks.untitled')}</bdi></span>
      <svg className={css.scissors} viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.1 15.9M14.5 14.5L20 20M8.1 8.1L12 12"/></svg>
-     <KitCloth spec={spec} view={view} monogram={monogram} crestSrc={crestFor(club)} title={hasDesign?say('ks.garment.aria',{view:view==='front'?say('ks.view.front'):say('ks.view.back')}):say('ks.garment.blank')}/>
+     <KitCloth key={view} className={css.previewCloth} spec={spec} view={view} monogram={monogram} crestSrc={crestFor(club)} title={hasDesign?say('ks.garment.aria',{view:view==='front'?say('ks.view.front'):say('ks.view.back')}):say('ks.garment.blank')}/>
     </div>
    </div>
 

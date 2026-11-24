@@ -180,5 +180,7 @@
  "ks.compare.second": "Open another shirt to compare it here.",
  "ks.card.art": "Shirt view",
  "ks.card.photo": "Archive photo",
- "ks.card.vector": "SVG drawing"
+ "ks.card.vector": "SVG drawing",
+ "ks.zoom.in": "Inspect cloth",
+ "ks.zoom.out": "Show full shirt"
 }

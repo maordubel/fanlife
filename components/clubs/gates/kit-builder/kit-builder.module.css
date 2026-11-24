@@ -225,3 +225,18 @@
 .recognitionHeader { display:flex; flex-wrap:wrap; justify-content:space-between; gap:6px 20px; }
 .recognitionShirt { display:grid; place-items:center; inline-size:min(100%,340px); margin-inline:auto; padding:20px; background:radial-gradient(ellipse at 50% 35%,var(--mag-white),var(--mag-paper)); border-radius:14px; }
 .recognitionShirt svg { inline-size:100%; block-size:auto; max-block-size:265px; }
+.revealControls { display:flex; justify-content:end; }
+.pairShirt { overflow:hidden; }
+.pairShirt > svg,.pairShirt > img { transform-origin:50% 38%; transition:transform 240ms cubic-bezier(.2,.7,.2,1); }
+.pair[data-zoom='true'] .pairShirt > svg,.pair[data-zoom='true'] .pairShirt > img { transform:scale(1.55); }
+.garment::after { content:''; position:absolute; inset:0; pointer-events:none; background:radial-gradient(ellipse at var(--kit-light-x,50%) var(--kit-light-y,34%),color-mix(in srgb,var(--mag-white) 23%,transparent),transparent 58%); mix-blend-mode:soft-light; }
+.recognitionResult { padding-block-start:8px; }
+.recognitionStreak { color:var(--mag-ink); font-weight:800; margin-block:6px; }
+@media (prefers-reduced-motion:no-preference) {
+ .reveal .pair figure,.recognitionShirt,.recognitionResult { animation:shirt-arrive 280ms cubic-bezier(.2,.7,.2,1) both; }
+ .reveal .pair figure+figure { animation-delay:60ms; }
+ .recognitionShirt[data-revealed='true'] > svg { animation:shirt-settle 260ms ease-out; }
+ @keyframes shirt-arrive { from { opacity:0; transform:translateY(7px); } to { opacity:1; transform:translateY(0); } }
+ @keyframes shirt-settle { from { transform:scale(.97); } to { transform:scale(1); } }
+}
+@media (prefers-reduced-motion:reduce) { .pairShirt > svg,.pairShirt > img { transition:none; } }

@@ -173,5 +173,8 @@
  "kb.rec.score": "{score} מתוך {max} תשובות נכונות",
  "kb.rec.again": "לסבב נוסף",
  "kb.rec.progress": "התקדמות בסבב הזיהוי",
- "kb.rec.shirt": "החולצה לזיהוי"
+ "kb.rec.shirt": "החולצה לזיהוי",
+ "kb.zoom.in": "מבט מקרוב",
+ "kb.zoom.out": "הצגת החולצות במלואן",
+ "kb.rec.streak": "{n} חולצות מושלמות ברצף"
 }

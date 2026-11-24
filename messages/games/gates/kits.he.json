@@ -180,5 +180,7 @@
  "ks.compare.second": "פתחו חולצה נוספת כדי להשוות אותה כאן.",
  "ks.card.art": "תצוגת חולצה",
  "ks.card.photo": "צילום ארכיון",
- "ks.card.vector": "איור SVG"
+ "ks.card.vector": "איור SVG",
+ "ks.zoom.in": "מבט מקרוב",
+ "ks.zoom.out": "הצגת חולצה מלאה"
 }

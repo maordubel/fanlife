@@ -254,3 +254,10 @@
 .compareArt { display:grid; place-items:center; padding:8%; aspect-ratio:1; background:radial-gradient(ellipse at 50% 35%,var(--mag-white),var(--mag-paper)); border-radius:8px; }
 .compareArt > img,.compareArt > svg { display:block; inline-size:100%; block-size:100%; object-fit:contain; }
 .compareEmpty { display:grid; align-items:center; padding:12px; border:1px dashed var(--mag-muted); border-radius:8px; }
+.garment::after { content:''; position:absolute; inset:0; pointer-events:none; background:radial-gradient(ellipse at var(--kit-light-x,50%) var(--kit-light-y,34%),color-mix(in srgb,var(--mag-white) 22%,transparent),transparent 57%); mix-blend-mode:soft-light; }
+.garment .previewCloth { transform-origin:50% 38%; filter:drop-shadow(0 8px 7px color-mix(in srgb,var(--mag-ink) 26%,transparent)); }
+.garment[data-zoom='true'] .previewCloth { transform:scale(1.48); }
+@media (prefers-reduced-motion:no-preference) {
+ .garment .previewCloth { transition:transform 240ms cubic-bezier(.2,.7,.2,1); animation:cloth-turned 230ms ease-out both; }
+ @keyframes cloth-turned { from { opacity:.45; } to { opacity:1; } }
+}

@@ -1,5 +1,5 @@
 'use client'
-import {useId} from 'react'
+import {useId,type PointerEvent} from 'react'
 import {DOUBLE_HOME_RED,DOUBLE_HOME_VIEWBOX,HapoelDoubleShirt} from '@/components/kit/HapoelDoubleShirt'
 import {sponsorLines,SPONSOR_FONT} from '@/lib/clubs/sponsor-type'
 import {fitMark,sponsorMark,type Mark,type SponsorContext} from '@/lib/clubs/marks'
@@ -24,6 +24,18 @@ function shirtFrame(outline:ShirtOutline|undefined){
  if(!outline)return GARMENT
  const w=Math.min(GARMENT.w,GARMENT.h*outline.aspect),h=w/outline.aspect
  return {x:160-w/2,y:GARMENT.y+(GARMENT.h-h)/2,w,h}
+}
+
+export function moveKitLight(event:PointerEvent<HTMLElement>){
+ if(event.pointerType!=='mouse'||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return
+ const stage=event.currentTarget
+ const bounds=stage.getBoundingClientRect()
+ stage.style.setProperty('--kit-light-x',`${100*(event.clientX-bounds.left)/bounds.width}%`)
+ stage.style.setProperty('--kit-light-y',`${100*(event.clientY-bounds.top)/bounds.height}%`)
+}
+export function resetKitLight(event:PointerEvent<HTMLElement>){
+ event.currentTarget.style.removeProperty('--kit-light-x')
+ event.currentTarget.style.removeProperty('--kit-light-y')
 }
 
 export type ClothProps={spec:ClothSpec;view?:'front'|'back';/** slots still to be filled, drawn as a dashed frame */missing?:SlotKey[];texture?:boolean;title?:string;className?:string;/** letters printed in the crest slot when `spec.crest` is on */monogram?:string;/** the club's own crest, printed in the crest slot instead of the monogram */crestSrc?:string|null;viewBox?:string;sponsorContext?:SponsorContext;sponsorBox?:SponsorBox;shirtOutline?:ShirtOutline}

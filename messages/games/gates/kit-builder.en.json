@@ -173,5 +173,8 @@
  "kb.rec.score": "{score} of {max} correct",
  "kb.rec.again": "Play another round",
  "kb.rec.progress": "Recognition round progress",
- "kb.rec.shirt": "Shirt to identify"
+ "kb.rec.shirt": "Shirt to identify",
+ "kb.zoom.in": "Inspect shirts",
+ "kb.zoom.out": "Show full shirts",
+ "kb.rec.streak": "{n} perfect shirts in a row"
 }
