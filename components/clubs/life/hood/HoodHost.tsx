@@ -31,6 +31,9 @@ import {loadFlow, pick, PLATE_HINT, urlOf, type FlowManifest} from '@/lib/life/h
 import type {ArchiveRef} from '@/lib/life/universal/types'
 import {WORKER_PAPER, workerBridge, workerDoc, workerFace, workerPlate, workerProp} from '@/lib/life/hood/workerArt'
 import {BagScreen} from './BagScreen'
+import {COLD_OPEN, feelAfterCards, feelEffect, feelFinish, feelHud, feelStart, feelStep, feelVars, newFeel, type FeelHud, type FeelNote, type FeelState} from '@/lib/life/hood/story/feel/session'
+import {heartOf, recapOf} from '@/lib/life/hood/story/feel/voice'
+import {LifeSound} from '../sound'
 import css from './hood.module.css'
 
 export type HoodHostProps = {club: HoodClub; seed?: number; time?: 'day' | 'night' | 'dusk'; quality?: Quality; reduced?: boolean; /** `classic` keeps the code-built figures (the skinned people are the default) */ people?: 'human' | 'classic'; /** the QA stand only: exposes the run as `window.__hood` and the shell as `window.__hoodShell` */ probe?: boolean; /** the QA stand only: start the story at this chapter (the director is walked on without the street) */ chapterAt?: string; /** `play`: skip the title and start roaming (the QA stand) */ start?: 'title' | 'play'}
@@ -84,9 +87,20 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
   const ambRef = useRef<AmbState | null>(null), talkRef = useRef<{script: TalkScript; id: string} | null>(null), typingRef = useRef(false), capEls = useRef<Record<number, HTMLElement | null>>({}), capsRef = useRef<{id: number; spot: string; key: string}[]>([])
   const waypointRef = useRef<PlaceId | null>(null), wayLabelRef = useRef(''), pendingDone = useRef(false), wearRef = useRef(true)
   const storeRef = useRef<ReturnType<typeof browserStore>>(null)
-  const timers = useRef<{banner: number; place: number}>({banner: 0, place: 0}), bannerId = useRef(0)
+  const timers = useRef<{banner: number; place: number; voice: number}>({banner: 0, place: 0, voice: 0}), bannerId = useRef(0)
+  // the feel layer (feel/session.ts): the mission's challenge, his voice, the era; the HUD's clock; the sound when allowed
+  const feelRef = useRef<FeelState>(newFeel({born: club.born, country: club.country}))
+  const [feelHudV, setFeelHud] = useState<FeelHud | null>(null), [voice, setVoice] = useState<{id: number; text: string} | null>(null)
+  const soundRef = useRef<LifeSound | null>(null), soundOn = useRef(true)
 
   const reducedEff = reduced || settings.reduced || osReduced
+  soundOn.current = settings.sound
+  useEffect(() => {
+    // synthesised cues only (sound.ts); browsers refuse audio nobody asked for, so the first gesture wakes it
+    const wake = () => { if (!soundOn.current) return; if (!soundRef.current) soundRef.current = new LifeSound(); soundRef.current.wake() }
+    window.addEventListener('pointerdown', wake, {once: true}); window.addEventListener('keydown', wake, {once: true})
+    return () => { window.removeEventListener('pointerdown', wake); window.removeEventListener('keydown', wake); soundRef.current?.close(); soundRef.current = null }
+  }, [])
   const qualityEff: Quality = settings.quality ?? quality ?? (coarse ? 'lite' : 'high')
   // the street's small lives: one state per street and picture quality (the picture draws the same spots)
   const amb = useMemo(() => hoodAmbient(level, qualityEff === 'lite'), [level, qualityEff])
@@ -108,7 +122,7 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
     const own = (id: string) => level.hood!.people.find(p => p.id === id)?.name ?? hoodWord(`hood.who.${id}` as HoodKey).toLowerCase()
     return {mate: own('mate'), kiosk: own('kiosk'), neighbour: own('neighbour'), name: shell.name || hoodWord('hood.name.default')}
   }, [level, shell.name])
-  const w = useCallback((k: string, extra: Record<string, string> = {}) => k.startsWith('story.') ? storyWord(k, {...storyVars, ...extra}) : k.startsWith('watch.') ? watchWord(k as WatchKey, extra) : hoodWord(k, {...vars, ...extra}), [vars, storyVars])
+  const w = useCallback((k: string, extra: Record<string, string> = {}) => k.startsWith('story.') || k.startsWith('feel.') || k.startsWith('era.') ? storyWord(k, {...storyVars, ...feelVars(feelRef.current, playRef.current), ...extra}) : k.startsWith('watch.') ? watchWord(k as WatchKey, extra) : hoodWord(k, {...vars, ...extra}), [vars, storyVars])
 
   /* the flow */
   const go = useCallback((e: ShellEvent) => {
@@ -125,10 +139,11 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
   }, [club.id])
   const freshRun = useCallback((p: StoryPlay = newPlay()) => {
     runRef.current = startHood(level)
+    feelRef.current = newFeel({born: club.born, country: club.country, name: shellRef.current.name})
     if (probe) (window as unknown as {__hood?: unknown}).__hood = runRef.current
     setPlay(p); syncOffers(runRef.current, sl, p)
     setJobState(runRef.current.job); setObjIx(-1); setWaypoint(null); waypointRef.current = null; setWear(true); wearRef.current = true; pendingDone.current = false; setPlace(null); setTalk(null); setBeats([])
-  }, [level, probe, sl, setPlay])
+  }, [level, probe, sl, setPlay, club.born, club.country])
   const loadSave = useCallback((s: HoodSave) => {
     freshRun()
     const run = runRef.current!
@@ -153,6 +168,17 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
     timers.current.banner = window.setTimeout(() => setBanner(null), kind === 'major' ? 2600 : 1700)
   }, [])
 
+  /** what the feel layer noticed: his voice as a line over the street, a banner, a sound (when sound is on) */
+  const showNotes = useCallback((notes: readonly FeelNote[]) => {
+    for (const n of notes) {
+      const v = Object.fromEntries(Object.entries(n.vars ?? {}).map(([k, x]) => [k, /^(hood|story|feel|era)\./.test(x) ? w(x) : namesRef.current[x] ?? x]))
+      if (n.what === 'cold-open' || n.what === 'home-next-day' || n.what.startsWith('chapter:')) continue
+      const text = w(n.what, v)
+      if (n.show === 'caption') { window.clearTimeout(timers.current.voice); setVoice({id: ++bannerId.current, text}); timers.current.voice = window.setTimeout(() => setVoice(null), 4200) }
+      else if (n.show === 'major' || n.show === 'minor') showBanner(n.show, text)
+      if (n.sound && soundOn.current) soundRef.current?.play(n.sound)
+    }
+  }, [w, showBanner])
   const openTalk = useCallback((who: PersonId, key: string) => {
     // a step's own line is played as written; anything else a person says comes from the story (offers, ways, idle words)
     const script = key.startsWith('story.s.') ? talkScript(who, key, {job: 'active', giver: who, offerKey: ''}) : storyTalk(playRef.current, who)
@@ -173,18 +199,25 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
     const run = runRef.current!
     if (pendingDone.current && playRef.current.plan) {
       pendingDone.current = false
-      const fin = finishStory(run, sl, playRef.current)
+      const ff = feelFinish(feelRef.current, {run, sl, play: playRef.current})
+      showNotes(ff.notes)
+      const fin = finishStory(run, sl, ff.play)
       setPlay(fin.play); setJobState(run.job); setObjIx(-1)
       const night = fin.mission.kind === 'main' ? nightOf(fin.mission.id) : null
       const list = beatsAfter({mission: fin.mission, approach: fin.approach, events: fin.events, delta: fin.delta, state: fin.play.state, night, canWatch: !!(night && watchForNight(club.id, night))})
       persist()
       if (fin.mission.kind === 'standing') showBanner('minor', w(`story.m.${fin.mission.id}.title`), w(`story.m.${fin.mission.id}.aftermath`))
-      if (list.length) { setBeats(list); go({t: 'story'}) }
+      // the paper the morning after, the stage's recap, and the next offer made at the high (the giver calls him over)
+      const fa = feelAfterCards(feelRef.current, {run, sl, play: fin.play, cards: list, mission: fin.mission, delta: fin.delta, events: fin.events, night})
+      showNotes(fa.notes)
+      feelRef.current.pending = fa.talk
+      if (fa.cards.length) { setBeats(fa.cards); go({t: 'story'}) }
+      else if (fa.talk) { feelRef.current.pending = null; openScript(fa.talk) }
       return
     }
     const cm = wantsComplication(run, playRef.current)
     if (cm) { setPlay({...playRef.current, asked: true}); const c = complicationTalk(cm); if (c) openScript(c) }
-  }, [sl, setPlay, nightOf, club.id, persist, showBanner, w, go, openScript])
+  }, [sl, setPlay, nightOf, club.id, persist, showBanner, w, go, openScript, showNotes])
 
   const handle = useCallback((evs: HoodEvent[]) => {
     const run = runRef.current!, j = run.level.hood!.jobs[0]
@@ -220,7 +253,9 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
   const onChoose = useCallback((i: number) => {
     if (!talk) return
     const s = choose(talk.script, talk.id, i)
-    const run = runRef.current!, out = applyEffect(run, sl, playRef.current, s.effect)
+    const run = runRef.current!
+    if (s.effect?.startsWith('story:feel:')) { const fe = feelEffect(feelRef.current, {run, sl, play: playRef.current}, s.effect); if (fe.play !== playRef.current) setPlay(fe.play); showNotes(fe.notes) }
+    const out = applyEffect(run, sl, playRef.current, s.effect)
     if (out.play !== playRef.current) setPlay(out.play)
     const a = out.act
     if (a?.k === 'accepted') {
@@ -230,23 +265,29 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
     } else if (a?.k === 'day') { showBanner(a.events.some(e => e.k === 'week') ? 'major' : 'minor', w(`story.day.${out.play.state.day}`), a.events.some(e => e.k === 'week') ? w('story.banner.week') : undefined); setJobState(run.job); persist() }
     else if (a?.k === 'dropped') { setJobState(run.job); setObjIx(-1); persist() }
     if (s.node) setTalk({...talk, id: s.node.id}); else endTalk()
-  }, [talk, endTalk, sl, setPlay, nightOf, nightLine, showBanner, w, persist])
+  }, [talk, endTalk, sl, setPlay, nightOf, nightLine, showBanner, w, persist, showNotes])
 
   /** the cards after a mission, one after another; the last one gives the street back */
   const nextBeat = useCallback(() => {
     setBeats(b => {
       const rest = b.slice(1)
-      if (!rest.length) window.setTimeout(() => { go({t: 'storyDone'}); persist(); afterward() }, 0)
+      if (!rest.length) window.setTimeout(() => {
+        go({t: 'storyDone'}); persist(); afterward()
+        const t = feelRef.current.pending
+        if (t && shellRef.current.screen === 'playing') { feelRef.current.pending = null; openScript(t) }
+      }, 0)
       return rest
     })
-  }, [go, persist, afterward])
+  }, [go, persist, afterward, openScript])
 
   const finishIntro = useCallback(() => {
     // the QA stand may start at a later chapter (the director walked on without the street); a life always starts on its title card
     const p = chapterAt && missionById(chapterAt) ? newPlay(fastForward(newPlay().state, chapterAt)) : newPlay()
     freshRun(p); go({t: 'introDone'}); persist()
+    // the cold open: Dad's offer is in his ear the moment the chapter card closes
+    feelRef.current = feelStart({club, born: club.born ?? null, name: shellRef.current.name, run: runRef.current!, sl, play: p}).feel
     setBeats([openingBeat(p.state)]); go({t: 'story'})
-  }, [freshRun, go, persist, chapterAt])
+  }, [freshRun, go, persist, chapterAt, club, sl])
   const startNew = useCallback((raw: string) => { go({t: 'name', name: cleanName(raw)}) }, [go])
   const doContinue = useCallback(() => {
     const s = readSave(storeRef.current, club.id)
@@ -277,8 +318,8 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
     setSavedName(s?.name ?? '')
     go({t: 'booted', hasSave: !!s, play: start === 'play', name: s?.name ?? ''})
     // the QA stand goes straight to the street: a fresh life there, on its first card
-    if (start === 'play') { const p = chapterAt && missionById(chapterAt) ? newPlay(fastForward(newPlay().state, chapterAt)) : newPlay(); freshRun(p); setBeats([openingBeat(p.state)]); go({t: 'story'}) }
-  }, [ready, club.id, go, start, chapterAt, freshRun])
+    if (start === 'play') { const p = chapterAt && missionById(chapterAt) ? newPlay(fastForward(newPlay().state, chapterAt)) : newPlay(); freshRun(p); feelRef.current = feelStart({club, born: club.born ?? null, name: shellRef.current.name, run: runRef.current!, sl, play: p}).feel; setBeats([openingBeat(p.state)]); go({t: 'story'}) }
+  }, [ready, club, go, start, chapterAt, freshRun, sl])
   useEffect(() => { if (shell.screen !== 'boot') { const t = window.setTimeout(() => setBootGone(true), 900); return () => window.clearTimeout(t) } }, [shell.screen])
   useEffect(() => () => { window.clearTimeout(timers.current.banner); window.clearTimeout(timers.current.place) }, [])
   useEffect(() => { if (probe) { const win = window as unknown as {__hood?: unknown; __hoodShell?: unknown}; win.__hood = runRef.current; win.__hoodShell = {go, get screen() { return shellRef.current.screen }, openTalk, get story() { return playRef.current }, nextBeat} } }, [probe, go, openTalk, nextBeat])
@@ -320,16 +361,25 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
         acc += real
         let n = 0
         while (acc >= STEP && n < 12) {
-          const input = shellRef.current.screen === 'playing' ? pad() : IDLE
+          const raw = shellRef.current.screen === 'playing' ? pad() : IDLE
+          // carrying something: no running with it (the challenge says so on the HUD)
+          const input = feelRef.current.ch?.c.kind === 'carry' ? {...raw, sprint: false} : raw
           const ev = stepHood(run, input)
           if (shellRef.current.screen === 'playing' && ambRef.current) stepAmbient(ambRef.current, run.sim, input.act, STEP)
           if (input.act) act.current = false
           if (shellRef.current.screen === 'playing') handle(ev)
+          if (shellRef.current.screen === 'playing') {
+            const fe = feelStep(feelRef.current, {run, sl, play: playRef.current, ev})
+            if (fe.play !== playRef.current) setPlay(fe.play)
+            if (fe.notes.length) showNotes(fe.notes)
+            if (fe.talk) { openScript(fe.talk); acc = 0; break }
+          }
           acc -= STEP; n++
           if (shellRef.current.screen !== scr) break
         }
         if (acc > STEP * 12) acc = 0
       } else acc = 0
+      if (playing && tick % 15 === 0) setFeelHud(feelHud(feelRef.current, run))
       if (playing) {
         const fm = playRef.current.plan ? null : focusOf(playRef.current)
         const tg = hudTarget(run, waypointRef.current, fm?.giver ?? null)
@@ -371,7 +421,7 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
     }
     raf = requestAnimationFrame(frame)
     return () => cancelAnimationFrame(raf)
-  }, [level, club.skin, handle])
+  }, [level, club.skin, handle, sl, setPlay, showNotes, openScript])
 
   /* progress is saved while he plays, and when the page goes away */
   useEffect(() => {
@@ -437,7 +487,7 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
   const placeName = place ? w(`hood.place.${place}`) : null
   const screen = shell.screen
   const lookV = screen === 'title' || screen === 'name' || screen === 'intro' || screen === 'boot' ? 'title' : isFull(screen) ? 'dim' : 'none'
-  const introLines = [1, 2, 3, 4].map(n => w(`hood.intro.${n}`)), outroLines = [1, 2].map(n => w(`hood.outro.${n}`))
+  const introLines = COLD_OPEN.lines.map(k => w(k)), outroLines = [1, 2].map(n => w(`hood.outro.${n}`))
   const onIntroBeat = (i: number) => { const r = runRef.current!; r.sim.x = 0; r.sim.z = INTRO_Z[i] ?? INTRO_Z[0]!; r.sim.vx = 0; r.sim.vz = 0 }
   const clubHref = `/clubs/${club.id}`
   const talkNode = talk ? nodeOf(talk.script, talk.id) : null
@@ -455,6 +505,21 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
       return {kind: 'chapter', kicker: `${w(`story.stage.${b.stage}`)} · ${w('story.chapter', {n: String(n)})}`, title: b.next ? w(`story.m.${b.next}.title`) : w(`story.stage.${b.stage}`), lines: [`${when} ${w('story.age', {n: String(b.to)})}.`, ...(b.from === null || stageOfAge(b.from) !== b.stage ? [w(`story.theme.${b.stage}`)] : [])], chips: [], archive: null, plate: plateFor(b.next, n), film: b.from === null ? null : workerBridge(n, club.town), go: w('story.card.continue')}
     }
     if (b.k === 'stage-end') return {kind: 'stage-end', kicker: w(`story.stage.${b.stage}`), title: w(`story.stage-end.${b.stage}`), lines: [w(b.stage === 'adult' ? 'story.stage-end.last' : 'story.stage-end.line')], chips: [], archive: null, plate: plateFor('the-box', 0), go: w('story.card.go')}
+    if (b.k === 'paper') {
+      // the paper the morning after: its headline is the archive row's own; his name is in the crowd photo's caption
+      const s8 = slateOf(b.night)
+      return {kind: 'aftermath', kicker: w('feel.paper.kicker'), title: s8?.result ?? b.night.title, lines: [w('feel.paper.caption', {name: shell.name || hoodWord('hood.name.default'), age: String(b.age)}), w('feel.paper.line')], chips: [],
+        archive: s8 ? {kicker: w('story.archive.paper'), date: s8.date ? slateDate(s8.date) : null, result: s8.result, title: s8.title, titleLocale: s8.titleLocale, source: s8.publisher ? w('story.archive.source', {publisher: s8.publisher}) : null} : null, plate: plateFor(b.mission, 2), paper: WORKER_PAPER, go: w('story.card.continue')}
+    }
+    if (b.k === 'recap') {
+      // the stage looked back on: his name and age, the ways he chose, the Box, who stood by him, the Heart
+      const r = recapOf(play.state, b.stage as 'child' | 'teen' | 'young' | 'adult')
+      const ways = r.ways.map(x => w(`story.m.${x.mission}.a.${x.approach}`)).filter(x => !x.startsWith('story.')).slice(-4)
+      return {kind: 'stage-end', kicker: w('feel.recap.kicker', {stage: w(`story.stage.${b.stage}`).toLowerCase()}), title: w('feel.recap.title', {name: shell.name || hoodWord('hood.name.default'), age: String(r.age)}),
+        lines: [`${w('feel.recap.ways')}: ${ways.join(' · ')}`, w('feel.recap.heart', {n: String(r.heart)}), ...(r.slips ? [w('feel.recap.slips', {n: String(r.slips)})] : [])],
+        chips: [...r.keeps.map(k => ({label: w('feel.recap.box'), value: w(`story.keep.${k}`), tone: 'box' as const})), ...r.people.map(x => ({label: w('feel.recap.people'), value: names[x.who] ?? w(`hood.who.${x.who}`), tone: 'up' as const}))],
+        archive: null, plate: plateFor('the-box', 3), go: w('story.card.continue')}
+    }
     if (b.k !== 'aftermath') return null
     const d = b.delta, sign = (n: number) => (n > 0 ? `+${n}` : String(n))
     const chips: StoryCardView['chips'] = [
@@ -478,14 +543,15 @@ export function HoodHost({club, seed = 1, time = 'dusk', quality, reduced = fals
       <Hud
         w={w} refs={hud} hidden={screen !== 'playing'} touch={touch} cam={cam} sprintOn={sprintOn} ghost={coach && ghost} onCoachOk={() => setCoach(false)}
         kicker={kicker} objective={objective} free={!active} hasTarget={!!hudTarget(run, waypoint, focus?.giver ?? null)}
-        place={placeName} banner={banner} near={kick ? w('hood.hud.kick') : nearPerson} cash={play.state.money} stickAt={stickAt}
+        place={placeName} banner={banner} near={kick ? w('hood.hud.kick') : nearPerson ?? (feelHudV?.find && run.level.searches.some((q, i) => q.for === run.sim.step && !run.sim.searched[i] && Math.hypot(q.x - run.sim.x, q.z - run.sim.z) < 1.15) ? w('feel.find.search') : null)} cash={play.state.money} stickAt={stickAt}
         onMap={() => go({t: 'open', to: 'map'})} onPause={() => { persist(); go({t: 'open', to: 'pause'}) }} onBag={() => go({t: 'open', to: 'bag'})} onCam={() => setCam(c => c === 'chase' ? 'eyes' : 'chase')}
         onTalk={() => { act.current = true }} onSprint={setSprintOn}
+        feel={play.plan ? feelHudV : null} voice={voice} heart={heartOf(play.state)}
         stick={{down: onStickDown, move: onStickMove, up: onStickUp}}
       />
       {screen === 'title' && <Title w={w} club={club.skin.name} clubHref={clubHref} hasSave={shell.hasSave} saveName={savedName} onContinue={doContinue} onNew={() => go({t: 'new'})} onSettings={() => go({t: 'open', to: 'settings'})} />}
       {screen === 'name' && <NameEntry w={w} clean={cleanName} onGo={startNew} onBack={() => go({t: 'esc'})} />}
-      {screen === 'intro' && <Cinematic lines={introLines} w={w} reduced={reducedEff} onBeat={onIntroBeat} onDone={finishIntro} />}
+      {screen === 'intro' && <Cinematic lines={introLines} w={w} reduced={reducedEff} ms={COLD_OPEN.ms} onBeat={onIntroBeat} onDone={finishIntro} />}
       {screen === 'cutscene' && <Cinematic lines={outroLines} w={w} reduced={reducedEff} ms={3000} onDone={() => go({t: 'cutDone'})} />}
       {screen === 'dialogue' && talkNode && <Talk portrait={talkNode.who} face={talk!.script.narration ? null : workerFace(talkNode.who)} key={`${talk!.script.who}-${talkNode.id}`} node={talkNode} name={talk!.script.narration ? w('story.complication') : names[talkNode.who] ?? ''} w={w} reduced={reducedEff} onGo={onGo} onChoose={onChoose} onLeave={endTalk} onTyping={v => { typingRef.current = v }} />}
       {screen === 'playing' && caps.length > 0 && <div className={css.lgCaps} role="log" aria-label={w('hood.amb.label')}>{caps.map(c => <p key={c.id} ref={el => { capEls.current[c.id] = el }} className={css.lgCap}>{w(c.key)}</p>)}</div>}

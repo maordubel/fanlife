@@ -137,7 +137,5 @@ export const FEEL_WORDS: Record<string, string> = {
   'era.live.phone': 'The phone buzzes with every goal, everyone’s phone, all at once.',
   'era.ware.papers': 'The morning papers', 'era.ware.sweets': 'Loose sweets', 'era.ware.batteries': 'Batteries', 'era.ware.cassettes': 'Blank cassettes',
   'era.ware.stickers': 'Sticker packets', 'era.ware.phonecards': 'Phone cards', 'era.ware.topup': 'Phone top-up cards',
-  'era.money.coins': '{n} coins', 'era.money.shekel': '{n} shekels', 'era.money.drachma': '{n} drachmas', 'era.money.lira': '{n} lire', 'era.money.euro': '€{n}',
-  'era.money.mark': '{n} marks', 'era.money.pound': '£{n}', 'era.money.dirham': '{n} dirhams', 'era.money.egp': '{n} pounds', 'era.money.km': '{n} marks', 'era.money.dinar': '{n} dinars',
   'story.keep.programme': 'The matchday programme',
 }

@@ -2,6 +2,7 @@
 /** LIFE · the game — the HUD over the street: glass panels, round minimap with a progress ring, objective pill, thumbs, prompt, banners. */
 import type {MutableRefObject, PointerEvent as RPE} from 'react'
 import {Icon} from './Icons'
+import type {FeelHud} from '@/lib/life/hood/story/feel/session'
 import css from './hood.module.css'
 
 type W = (k: string, extra?: Record<string, string>) => string
@@ -16,7 +17,15 @@ export type HudProps = {
   stickAt: {x: number; y: number; dx: number; dy: number} | null
   onMap: () => void; onPause: () => void; onBag: () => void; onCam: () => void; onTalk: () => void; onSprint: (on: boolean) => void
   stick: {down: (e: RPE<HTMLDivElement>) => void; move: (e: RPE<HTMLDivElement>) => void; up: (e: RPE<HTMLDivElement>) => void}
+  /** the feel pass: the open mission's clock and its reason, the promises, the watcher, carrying, a find's warmth */
+  feel?: FeelHud | null
+  /** his inner voice, one line at a time over the street */
+  voice?: {id: number; text: string} | null
+  /** how much the club is his, 0–100 (never popped, only shown) */
+  heart?: number
 }
+
+const mmss = (s: number) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`
 
 export function Hud(p: HudProps) {
   const {w, refs} = p
@@ -34,7 +43,18 @@ export function Hud(p: HudProps) {
       <div className={css.lgChips2}>
         <span className={css.lgGlass + ' ' + css.lgPill} aria-label={w('hood.hud.time')}><Icon n="pin" /><b ref={refs.clock} style={{fontWeight: 400}}>17:40</b></span>
         <span className={css.lgGlass + ' ' + css.lgPill} aria-label={w('hood.hud.cash')}><Icon n="coin" />{p.cash}</span>
+        {typeof p.heart === 'number' && <span className={css.lgGlass + ' ' + css.lgPill + ' ' + css.lgHeart} aria-label={w('feel.heart.label')} title={w('feel.heart.label')}><i aria-hidden="true" style={{inlineSize: `${Math.max(4, p.heart)}%`}} /><b>{w('feel.heart')}</b>{p.heart}</span>}
       </div>
+      {p.feel && (p.feel.clock || p.feel.promises.length > 0 || p.feel.watch || p.feel.carry || p.feel.find) && (
+        <div className={css.lgGlass + ' ' + css.lgTick} role="status" data-hot={!!p.feel.clock?.hot} data-life="hood-tick">
+          {p.feel.clock && <b>{p.feel.clock.late ? w('feel.clock.late') : w(p.feel.clock.key, {left: mmss(p.feel.clock.left)})}</b>}
+          {p.feel.promises.map(x => <span key={x.who}>{w(x.kept === null ? 'feel.promise' : x.kept ? 'feel.promise.kept' : 'feel.promise.broke', {who: w(`feel.bond.${x.who}`), left: mmss(x.left)})}</span>)}
+          {p.feel.watch && <span>{w('feel.watch.on')}</span>}
+          {p.feel.carry && <span>{w('feel.carry.on')}</span>}
+          {p.feel.find && <span>{w(`feel.find.${p.feel.find}`)}</span>}
+        </div>
+      )}
+      {p.voice && <p className={css.lgVoice} key={p.voice.id} role="status">{p.voice.text}</p>}
       <div className={css.lgTopRight}>
         <button type="button" className={css.lgGlass + ' ' + css.lgIconBtn} aria-label={w('hood.hud.pause')} onClick={p.onPause}><Icon n="pause" /></button>
         <button type="button" className={css.lgGlass + ' ' + css.lgIconBtn} aria-label={w('hood.hud.bag')} onClick={p.onBag}><Icon n="bag" /></button>

@@ -23,7 +23,7 @@ import {storyTalk, type Beat, type StoryDelta, type StoryLevel, type StoryPlay} 
 import {MATCHDAY, type Effect, type Mission, type StoryEvent} from '../types'
 import {startChallenge, tickChallenge, outcomeOf, type ChallengeRun, type ChallengeNote, findSpots} from '../challenge/run'
 import {CLEAN, SLIP, type Challenge} from '../challenge/table'
-import {moneyOf, texture, yearAt} from './era'
+import {moneyOf, moneyWord, texture, yearAt} from './era'
 import {acceptVoice, endVoice, nickOf} from './voice'
 import {storyWord} from '../words'
 
@@ -83,7 +83,7 @@ const busTalk = (): TalkScript => ({who: 'mate', start: 'b', narration: true, no
  * `{p1}` (a spend's two prices). The game adds them to every words call; the harness reads the same.
  */
 export function feelVars(fs: FeelState, play: StoryPlay): Record<string, string> {
-  const age = play.state.age, say = (u: number) => { const m = money(fs, u, age); return storyWord(m.key, m.vars) }
+  const age = play.state.age, say = (u: number) => { const m = moneyOf(u, fs.country, yearAt(fs.born, age)); return moneyWord(m.key, m.n) }
   const c = fs.ch?.c, offers = c?.kind === 'spend' ? c.offers : []
   return {nick: storyWord(nickOf(play.state)), name: fs.name, money: say(1), p0: say((offers[0]?.units ?? 0) + 1), p1: say((offers[1]?.units ?? 0) + 1)}
 }

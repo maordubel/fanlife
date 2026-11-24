@@ -15,7 +15,7 @@ import {playthrough, summary} from '@/lib/life/hood/story/feel/playthrough'
 import {CHALLENGES} from '@/lib/life/hood/story/challenge/table'
 import {CALLBACKS} from '@/lib/life/hood/story/feel/voice'
 import {FEEL_WORDS} from '@/lib/life/hood/story/feel/words'
-import {liveOf, moneyOf, texture, TEXTURE} from '@/lib/life/hood/story/feel/era'
+import {liveOf, MONEY_WORDS, moneyOf, moneyWord, texture, TEXTURE} from '@/lib/life/hood/story/feel/era'
 import {DECADES, DRESS_ITEMS, ERA_DRESS, ERA_ITEMS, decadeStart, inEra} from '@/lib/life/rush-render/era'
 import type {ArchiveRef} from '@/lib/life/universal/types'
 
@@ -83,6 +83,10 @@ describe('the era shows nothing before its year', () => {
     }
     expect(moneyOf(6, 'Nowhere', 1985).key).toBe('era.money.coins')
     expect(moneyOf(6, null, null)).toEqual({n: 6, key: 'era.money.coins'})
+    for (const c of ['Israel', 'Greece', 'Italy', 'Germany', 'Scotland', 'Morocco', 'Egypt', 'Bosnia and Herzegovina']) for (const y of [1985, 1995, 2005, 2015]) expect(moneyOf(1, c, y).key in MONEY_WORDS, `${c} ${y}`).toBe(true)
+    expect(moneyWord('era.money.euro', 2)).toBe('€2')
+    // a country's money never reaches the universal words
+    for (const k of Object.keys(MONEY_WORDS)) expect(k in STORY_WORDS, k).toBe(false)
   })
 })
 

@@ -28,6 +28,16 @@ const CURRENCY: Readonly<Record<string, (year: number) => Money>> = {
 }
 const NEUTRAL: Partial<Record<Decade, number>> = {'70s': 1, '80s': 1, '90s': 2, '00s': 3, '10s': 4, '20s': 5}
 
+/**
+ * The money's words, by the country the club pack gives. Kept OUT of the universal story table on purpose: a country's
+ * money is printed only for that country's clubs (the universal words name no country's money).
+ */
+export const MONEY_WORDS: Readonly<Record<string, string>> = {
+  'era.money.coins': '{n} coins', 'era.money.shekel': '{n} shekels', 'era.money.drachma': '{n} drachmas', 'era.money.lira': '{n} lire', 'era.money.euro': '€{n}',
+  'era.money.mark': '{n} marks', 'era.money.pound': '£{n}', 'era.money.dirham': '{n} dirhams', 'era.money.egp': '{n} pounds', 'era.money.km': '{n} marks', 'era.money.dinar': '{n} dinars',
+}
+export const moneyWord = (key: string, n: number): string => (MONEY_WORDS[key] ?? MONEY_WORDS['era.money.coins']!).replace('{n}', String(n))
+
 /** the amount said out loud for `units`, and the words key of the money (`{n}` fills it) */
 export function moneyOf(units: number, country: string | null | undefined, year: number | null): {n: number; key: string} {
   if (year === null) return {n: units, key: 'era.money.coins'}
