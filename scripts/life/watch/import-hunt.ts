@@ -19,16 +19,17 @@ export function parseHunt(md: string): {verified: Row[]; pending: Row[]; none: n
   const verified: Row[] = [], pending: Row[] = []
   let club = '', part: 'a' | 'b' = 'a', none = 0
   for (const line of md.split('\n')) {
-    const h = line.match(/^## .+ · `([a-z0-9-]+)`/); if (h) { club = h[1]; continue }
+    const h = line.match(/^## .+ · `([a-z0-9-]+)`/); if (h?.[1]) { club = h[1]; continue }
     if (line.startsWith('**חלק א')) part = 'a'
     if (line.startsWith('**חלק ב')) part = 'b'
     const cells = line.split('|').map(c => c.trim())
-    if (cells.length < 8 || !cells[1].startsWith('`')) continue
-    const factId = cells[1].replace(/`/g, ''), on = cells[2], title = cells[3].replace(/\s*ℹ️\s*$/, ''), link = cells[6]
+    const [, idCell = '', on = '', titleCell = '', kindCell = '', , link = ''] = cells
+    if (cells.length < 8 || !idCell.startsWith('`')) continue
+    const factId = idCell.replace(/`/g, ''), title = titleCell.replace(/\s*ℹ️\s*$/, '')
     if (link === 'NONE' || !link) { none++; continue }
     const m = link.match(/youtube\.com\/watch\?v=([A-Za-z0-9_-]{11})(\s*\?)?\s*$/)
-    if (!m) throw new Error(`${club} ${factId}: unreadable link "${link}"`)
-    const chapter = part === 'a' ? (cells[4].match(/^([a-z-]+)/)?.[1] ?? null) : null
+    if (!m?.[1]) throw new Error(`${club} ${factId}: unreadable link "${link}"`)
+    const chapter = part === 'a' ? (kindCell.match(/^([a-z-]+)/)?.[1] ?? null) : null
     ;(m[2] ? pending : verified).push({clubId: club, factId, on, title, youtubeId: m[1], part, chapter})
   }
   return {verified, pending, none}
