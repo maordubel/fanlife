@@ -239,3 +239,18 @@ export function walkToTalk(run: HoodRun, who: PersonId): Input {
 
 /** the story has nothing more written for him (free roam and the week's work go on) */
 export const storyOver = (play: StoryPlay): boolean => isFinished(play.state)
+
+/**
+ * The QA stand only: the director walked on, without the street, until `missionId` is offered (first open way, first
+ * answer each time). It never runs in the game; it lets a test or a screenshot start at a later chapter.
+ */
+export function fastForward(state: StoryState, missionId: string, cap = 200): StoryState {
+  let s = state
+  for (let i = 0; i < cap && !nextMissions(s).some(o => o.mission.id === missionId) && !isFinished(s); i++) {
+    const offers = nextMissions(s), main = offers.find(o => o.why === 'main')
+    if (!main && waits(s) > 0) { s = endDay(s).state; continue }
+    const o = main ?? offers[0]!
+    s = resolve(acceptMission(s, o.mission.id, o.approaches[0]!.id)).state
+  }
+  return s
+}

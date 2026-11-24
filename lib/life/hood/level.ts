@@ -14,12 +14,12 @@ import {look, rng, type Car, type Level, type Look, type Pickup, type Stander, t
 import {knownLook} from '@/lib/life/rush/call'
 import type {MissionSpec} from '@/lib/life/rush/spec'
 import {bannedColour} from '@/lib/life/rush-render/colour'
-import type {CastMember} from '@/lib/life/universal/types'
+import type {ArchiveRef, CastMember} from '@/lib/life/universal/types'
 import type {VoxelSkin} from '@/lib/life/universal/skin'
 import type {HoodMeta, HoodPerson, PersonId} from './types'
 
 /** what the hood needs of a club: its skin and its cast (roles with names where the pack has them) */
-export type HoodClub = {id: string; skin: VoxelSkin; cast: Readonly<Record<string, Pick<CastMember, 'name' | 'role' | 'look'>>>}
+export type HoodClub = {id: string; skin: VoxelSkin; cast: Readonly<Record<string, Pick<CastMember, 'name' | 'role' | 'look'>>>; /** the archive nights the Fitter dated, by chapter (`storyNights`); absent: every chapter is personal */ nights?: Readonly<Record<string, ArchiveRef>>}
 
 export const HOOD = {length: 330, half: 7, walk: 11, side: 62, sideW: 7, age: 11, talk: 2.2} as const
 /** the universal cast role each person is, and how it looks to the sim */

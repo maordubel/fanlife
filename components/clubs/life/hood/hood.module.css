@@ -447,3 +447,41 @@
 /* street voices: a soft caption beside whoever spoke (placed from the picture, so the layer is laid out left to right) */
 .lgCaps { position: absolute; inset: 0; pointer-events: none; direction: ltr; overflow: hidden; }
 .lgCap { position: absolute; inset-block-start: 0; inset-inline-start: 0; margin: 0; padding: 6px 12px; max-inline-size: 13.5rem; border-radius: 14px; border-end-start-radius: 4px; background: color-mix(in srgb, var(--lg-navy) 62%, transparent); color: var(--lg-cream); font-size: .8125rem; line-height: 1.25; text-align: center; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); box-shadow: 0 6px 18px color-mix(in srgb, var(--lg-navy) 40%, transparent); opacity: 0; transition: opacity .45s var(--lg-ease); will-change: transform; }
+
+/* ───────────── the story's cards: a chapter's title, the aftermath, the end of a stage ───────────── */
+.lgStory { padding: 0; justify-content: flex-end; background: radial-gradient(120% 80% at 50% 0%, var(--lg-navy-3), var(--lg-navy) 70%); }
+.lgStoryPlate { position: absolute; inset: 0; overflow: hidden; }
+.lgStoryPlate img { inline-size: 100%; block-size: 100%; object-fit: cover; animation: lgPlate 14s var(--lg-ease) both; }
+@keyframes lgPlate { from { transform: scale(1.08); } to { transform: scale(1); } }
+.lgRoot[data-reduced='true'] .lgStoryPlate img { animation: none; }
+.lgStoryShade { position: absolute; inset: 0; background: linear-gradient(to top, var(--lg-navy) 8%, color-mix(in srgb, var(--lg-navy) 84%, transparent) 44%, color-mix(in srgb, var(--lg-navy) 10%, transparent) 100%); }
+.lgStory[data-plate='false'] .lgStoryShade { background: repeating-linear-gradient(115deg, transparent 0 22px, color-mix(in srgb, var(--lg-cream) 3%, transparent) 22px 23px), linear-gradient(to top, var(--lg-navy) 10%, transparent 90%); }
+.lgStoryIn { position: relative; display: flex; flex-direction: column; gap: 12px; padding: 24px 22px calc(24px + var(--lg-safe-b)); max-inline-size: 620px; }
+.lgStoryTitle { margin: 0; font-family: var(--lg-head); font-weight: 400; font-size: clamp(2.3rem, 11vw, 3.6rem); line-height: .95; letter-spacing: .01em; text-transform: uppercase; color: var(--lg-cream); }
+.lgStory[data-kind='chapter'] .lgStoryTitle { color: var(--lg-accent); }
+.lgStoryLine { margin: 0; font-size: 1.0625rem; line-height: 1.45; color: var(--lg-cream); max-inline-size: 34ch; }
+.lgStoryLine + .lgStoryLine { color: var(--lg-cream-dim); font-size: .9375rem; }
+.lgStoryChips { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.lgStoryChips li { display: flex; flex-direction: column; gap: 2px; padding: 8px 12px; border: 1px solid var(--lg-line); border-radius: 12px; background: var(--lg-glass); min-inline-size: 84px; }
+.lgStoryChips small { font-size: .6875rem; letter-spacing: .08em; text-transform: uppercase; color: var(--lg-cream-dim); }
+.lgStoryChips b { font-family: var(--lg-head); font-weight: 400; font-size: 1.25rem; }
+.lgStoryChips li[data-tone='up'] b { color: var(--lg-accent); }
+.lgStoryChips li[data-tone='box'] { border-color: color-mix(in srgb, var(--lg-accent) 60%, transparent); }
+.lgStoryChips li[data-tone='box'] b { font-family: var(--lg-body); font-weight: 600; font-size: .9375rem; }
+.lgStoryPaper { margin-block-start: 4px; padding: 12px 14px; background: var(--lg-cream); color: var(--lg-navy); border-radius: 4px; transform: rotate(-0.6deg); box-shadow: 0 10px 30px color-mix(in srgb, var(--lg-navy) 70%, transparent); }
+.lgStoryPaper small { display: block; font-size: .6875rem; letter-spacing: .12em; text-transform: uppercase; opacity: .7; }
+.lgStoryPaper p { margin: 2px 0 0; }
+.lgStoryDate { font-weight: 700; }
+.lgStoryResult { font-family: var(--lg-head); font-size: 1.5rem; line-height: 1.05; }
+.lgStorySrc { font-size: .75rem; opacity: .7; }
+.lgStory .lgBtn { margin-block-start: 6px; }
+@media (min-width: 900px) {
+  .lgStory { justify-content: center; align-items: flex-start; }
+  .lgStoryIn { margin-inline-start: 8vw; padding-block: 48px; }
+  .lgStoryShade { background: linear-gradient(to right, var(--lg-navy) 12%, color-mix(in srgb, var(--lg-navy) 70%, transparent) 46%, transparent 100%); }
+}
+/* the givers on the district map: the next mission filled, a small job hollow */
+.lgGiver circle { stroke-width: 2.5; }
+.lgGiver text { font-family: var(--lg-head); font-size: 13px; fill: var(--lg-navy); }
+.lgGiver[data-kind='side'] text { fill: var(--lg-cream); }
+.lgMAerial { mix-blend-mode: luminosity; }

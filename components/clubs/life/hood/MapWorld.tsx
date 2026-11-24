@@ -73,7 +73,10 @@ function Tree({t}: {t: Dot}) {
   return <g><circle cx={t.x + t.r * 0.55} cy={t.y + t.r * 0.6} r={t.r} className={css.lgMShadow} /><circle cx={t.x} cy={t.y} r={t.r} className={[css.lgMTree0, css.lgMTree1, css.lgMTree2][t.v]} /><circle cx={t.x - t.r * 0.3} cy={t.y - t.r * 0.3} r={t.r * 0.55} className={css.lgMTreeHi} /></g>
 }
 
-export const MapWorld = memo(function MapWorld({model, seed, crossings, half, walk, accent, schoolAt}: {model: DistrictModel; seed: number; crossings: number[]; half: number; walk: number; accent: string; schoolAt: {x: number; y: number} | null}) {
+/** the town's painted aerial (the Flow bake), laid under the drawing; `world` is the rect it covers in metres, else the district */
+export type MapAerial = {href: string; world: {x: number; y: number; w: number; h: number} | null}
+
+export const MapWorld = memo(function MapWorld({model, seed, crossings, half, walk, accent, schoolAt, aerial = null}: {model: DistrictModel; seed: number; crossings: number[]; half: number; walk: number; accent: string; schoolAt: {x: number; y: number} | null; aerial?: MapAerial | null}) {
   const sc = useMemo(() => build(model, seed, crossings, half, walk), [model, seed, crossings, half, walk])
   const b = model.bounds
   const mains = model.streets.filter(s => s.w < 30), sides = model.streets.filter(s => s.w >= 30)
@@ -92,6 +95,8 @@ export const MapWorld = memo(function MapWorld({model, seed, crossings, half, wa
       {sc.far.map((r, i) => <g key={i}><rect x={r.x + 2} y={r.y + 2} width={r.w} height={r.h} className={css.lgMShadow} /><rect x={r.x} y={r.y} width={r.w} height={r.h} rx={1} className={roofCls[i % 6]} /><rect x={r.x} y={r.y} width={r.w} height={r.h} fill="url(#lgTiles)" /></g>)}
       {sc.farTrees.map((t, i) => <Tree key={i} t={t} />)}
       <rect x={-700} y={b.y - 500} width={1400} height={b.h + 1000} fill="url(#lgHaze)" />
+      {/* the painted aerial under the streets, at a third: the drawing on top keeps every street and pin crisp */}
+      {aerial && <image href={aerial.href} x={(aerial.world ?? b).x} y={(aerial.world ?? b).y} width={(aerial.world ?? b).w} height={(aerial.world ?? b).h} preserveAspectRatio="xMidYMid slice" opacity={0.35} className={css.lgMAerial} />}
       {/* pavements, then roads */}
       {model.streets.map((s, i) => <rect key={i} x={s.x - 0.8} y={s.y - 0.8} width={s.w + 1.6} height={s.h + 1.6} rx={1.5} className={css.lgMWalk} />)}
       {mains.map((s, i) => <rect key={i} x={-sc.mainW} y={s.y} width={sc.mainW * 2} height={s.h} className={css.lgMRoad} />)}

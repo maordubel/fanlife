@@ -10,7 +10,7 @@ import {districtModel, routeTo} from '@/lib/life/hood/district'
 import type {HoodRun} from '@/lib/life/hood/run'
 import type {PlaceId} from '@/lib/life/hood/types'
 import {Icon} from './Icons'
-import {MapWorld} from './MapWorld'
+import {MapWorld, type MapAerial} from './MapWorld'
 import css from './hood.module.css'
 
 type W = (k: string, extra?: Record<string, string>) => string
@@ -32,7 +32,10 @@ function PlaceArt({id}: {id: PlaceId}) {
   )
 }
 
-export function MapScreen({w, run, waypoint, wayLabel, onWaypoint, onClose, onTab, accent, mapKey, reduced}: {w: W; run: HoodRun; waypoint: PlaceId | null; wayLabel: string; onWaypoint: (id: PlaceId | null) => void; onClose: () => void; onTab: () => void; accent: string; mapKey: number; reduced: boolean}) {
+/** a person to mark on the map: who gives the next mission (filled) or a small job (hollow) */
+export type MapGiver = {id: string; x: number; z: number; kind: 'main' | 'side'; label: string; letter: string}
+
+export function MapScreen({w, run, waypoint, wayLabel, onWaypoint, onClose, onTab, accent, mapKey, reduced, givers = [], aerial = null}: {w: W; run: HoodRun; waypoint: PlaceId | null; wayLabel: string; onWaypoint: (id: PlaceId | null) => void; onClose: () => void; onTab: () => void; accent: string; mapKey: number; reduced: boolean; givers?: MapGiver[]; aerial?: MapAerial | null}) {
   const level = run.level
   const model = useMemo(() => districtModel(level, run), [level, run, mapKey])  // eslint-disable-line react-hooks/exhaustive-deps
   const [sel, setSel] = useState<PlaceId | null>(waypoint)
@@ -129,7 +132,7 @@ export function MapScreen({w, run, waypoint, wayLabel, onWaypoint, onClose, onTa
       <div ref={box} className={css.lgMapView} onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp} onPointerCancel={e => { ptrs.current.delete(e.pointerId) }}>
         <svg className={css.lgMapSvg} width={dim.w} height={dim.h} viewBox={`0 0 ${dim.w} ${dim.h}`} role="img" aria-label={w('hood.map.aria')}>
           <g transform={tf}>
-            <MapWorld model={model} seed={level.seed} crossings={level.crossings} half={level.half} walk={level.walk} accent={accent} schoolAt={school ? {x: school.x, y: school.y} : null} />
+            <MapWorld model={model} seed={level.seed} crossings={level.crossings} half={level.half} walk={level.walk} accent={accent} schoolAt={school ? {x: school.x, y: school.y} : null} aerial={aerial} />
             {route && route.length > 1 && <g><polyline points={route.map(p => `${p.x},${p.z}`).join(' ')} className={css.lgMRouteCase} style={{strokeWidth: 3.4 / view.s * 2.2}} /><polyline points={route.map(p => `${p.x},${p.z}`).join(' ')} className={css.lgMRoute} style={{stroke: accent, strokeWidth: 2 / view.s * 2.2, strokeDasharray: `${9 / view.s * 2.2} ${6 / view.s * 2.2}`}} /></g>}
           </g>
           {/* screen-space: pins and you */}
@@ -143,6 +146,17 @@ export function MapScreen({w, run, waypoint, wayLabel, onWaypoint, onClose, onTa
                 <circle r={on ? 19 : 16} className={css.lgPinBody} style={on || way ? {fill: accent} : undefined} />
                 <text y={5.5} textAnchor="middle" className={css.lgPinText} data-on={on || way}>{pinLetter(p.id)}</text>
                 {(on || way || showLabels) && <g transform="translate(0 34)"><rect x={-w(p.key).length * 3.6 - 9} y={-11} width={w(p.key).length * 7.2 + 18} height={22} rx={11} className={css.lgPinTag} /><text y={4.5} textAnchor="middle" className={css.lgPinTagText}>{w(p.key)}</text></g>}
+              </g>
+            )
+          })}
+          {givers.map(g => {
+            const s = toScreen(g.x, g.z)
+            if (s.x < -30 || s.x > dim.w + 30 || s.y < -30 || s.y > dim.h + 30) return null
+            return (
+              <g key={`${g.kind}-${g.id}`} transform={`translate(${s.x} ${s.y - 26})`} className={css.lgGiver} data-kind={g.kind} role="img" aria-label={g.label}>
+                {g.kind === 'main' && <circle r={20} className={css.lgPinPulse} style={{stroke: accent}} />}
+                <circle r={g.kind === 'main' ? 12 : 9} style={g.kind === 'main' ? {fill: accent, stroke: accent} : {fill: 'transparent', stroke: accent}} />
+                <text y={4.5} textAnchor="middle">{g.letter}</text>
               </g>
             )
           })}

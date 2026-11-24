@@ -6,7 +6,7 @@ import {Icon} from './Icons'
 import css from './hood.module.css'
 
 type W = (k: string, extra?: Record<string, string>) => string
-const LETTERS = ['A', 'B', 'C', 'D']
+const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F']
 
 /** the line, typed on (instantly when motion is reduced); returns the shown text and whether it has finished */
 function useTyped(text: string, instant: boolean): {shown: string; done: boolean; finish: () => void} {
@@ -33,7 +33,7 @@ export function Talk({portrait, node, name, w, reduced, onGo, onChoose, onLeave,
     const key = (e: KeyboardEvent) => {
       const s = st.current, t = e.target as HTMLElement | null
       if (t && (t.tagName === 'INPUT') ) return
-      const idx = e.code === 'KeyA' || e.code === 'Digit1' ? 0 : e.code === 'KeyB' || e.code === 'Digit2' ? 1 : -1
+      const idx = e.code === 'KeyA' ? 0 : e.code === 'KeyB' ? 1 : e.code === 'KeyC' ? 2 : e.code === 'KeyD' ? 3 : /^Digit[1-6]$/.test(e.code) ? Number(e.code.slice(5)) - 1 : -1
       if (idx >= 0 && s.done && idx < s.choices) { e.preventDefault(); e.stopPropagation(); s.onChoose(idx); return }
       if (e.code === 'Enter' || e.code === 'Space' || e.code === 'KeyE') {
         if (t && t.tagName === 'BUTTON') return

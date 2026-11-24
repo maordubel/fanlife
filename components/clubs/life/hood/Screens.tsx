@@ -164,3 +164,43 @@ export function JobCard({w, title, onGo, onMap}: {w: W; title: string; onGo: () 
     </section>
   )
 }
+
+/** what a story card prints, prepared by the host from the director and the archive row (every word already looked up) */
+export type StoryCardView = {
+  kind: 'chapter' | 'aftermath' | 'stage-end'
+  kicker: string; title: string; lines: string[]
+  chips: {label: string; value: string; tone: 'up' | 'down' | 'box'}[]
+  /** the archive row's own facts; null for a personal chapter (no date, no score) */
+  archive: {kicker: string; date: string | null; result: string | null; title: string | null; titleLocale: string | null; source: string | null} | null
+  /** the painted Flow plate behind it, when the manifest has one */
+  plate: string | null
+  go: string
+}
+
+/** a chapter's title card, the aftermath, the end of a stage: full-screen, a painted plate behind (or the drawn dusk), one way on */
+export function StoryCard({view, onGo}: {view: StoryCardView; onGo: () => void}) {
+  const ref = useRef<HTMLButtonElement | null>(null)
+  useEffect(() => { ref.current?.focus({preventScroll: true}) }, [view])
+  return (
+    <section className={css.lgScreen + ' ' + css.lgStory} data-kind={view.kind} data-plate={!!view.plate} aria-label={view.title} data-life="hood-story">
+      {view.plate && <span className={css.lgStoryPlate} aria-hidden="true">{/* eslint-disable-next-line @next/next/no-img-element */}<img src={view.plate} alt="" decoding="async" /></span>}
+      <span className={css.lgStoryShade} aria-hidden="true" />
+      <div className={css.lgStoryIn}>
+        <p className={css.lgKicker + ' ' + css.lgIn}>{view.kicker}</p>
+        <h1 className={css.lgStoryTitle + ' ' + css.lgIn} style={{'--i': 1} as React.CSSProperties}>{view.title}</h1>
+        {view.lines.map((l, i) => <p key={i} className={css.lgStoryLine + ' ' + css.lgIn} style={{'--i': 2 + i} as React.CSSProperties}>{l}</p>)}
+        {view.chips.length > 0 && <ul className={css.lgStoryChips + ' ' + css.lgIn} style={{'--i': 3} as React.CSSProperties}>{view.chips.map((c, i) => <li key={i} data-tone={c.tone}><small>{c.label}</small><b>{c.value}</b></li>)}</ul>}
+        {view.archive && (
+          <aside className={css.lgStoryPaper + ' ' + css.lgIn} style={{'--i': 4} as React.CSSProperties} aria-label={view.archive.kicker}>
+            <small>{view.archive.kicker}</small>
+            {view.archive.date && <p className={css.lgStoryDate}>{view.archive.date}</p>}
+            {view.archive.result && <p className={css.lgStoryResult}><bdi dir="ltr">{view.archive.result}</bdi></p>}
+            {view.archive.title && <p lang={view.archive.titleLocale ?? undefined} dir="auto">{view.archive.title}</p>}
+            {view.archive.source && <p className={css.lgStorySrc}>{view.archive.source}</p>}
+          </aside>
+        )}
+        <button ref={ref} type="button" className={css.lgBtn + ' min-h-tap ' + css.lgIn} data-primary="true" style={{'--i': 5} as React.CSSProperties} onClick={onGo}>{view.go}<Icon n="chevron" /></button>
+      </div>
+    </section>
+  )
+}
