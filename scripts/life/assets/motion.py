@@ -261,7 +261,7 @@ def laugh_body(t, T=3.2):
     shake = math.exp(-max(0, t - 0.4) * 0.9) * clamp(t / 0.4) * s(t, 0.21)
     hand = ease5((t - 0.5) / 0.45) * (1 - ease5((t - 2.2) / 0.8))
     p = stand(t, .4)
-    p['spine'] = {'lean': -7 * up + 14 * fold + 2.5 * shake, 'roll': 3 * fold, 'yaw': 4 * fold}
+    p['spine'] = {'lean': -9 * up + 20 * fold + 3.5 * shake, 'roll': 4 * fold, 'yaw': 5 * fold}
     p['neck'] = {'pitch': -6 * up + 4 * fold}
     p['head'] = {'pitch': -16 * up + 6 * fold + 3 * shake, 'roll': 4 * fold, 'yaw': -5 * fold}
     p['pelvis'] = {'dz': -0.008 * fold, 'lean': -3 * fold}
@@ -269,7 +269,7 @@ def laugh_body(t, T=3.2):
         p['leg_' + sd] = {'fwd': 3 * fold, 'out': 4, 'knee': 6 * fold + 2, 'foot': 0}
         p['arm_' + sd] = dict(HANG, shrug=5 * up + 3 * abs(shake), elbow=16 + 20 * fold)
     p['arm_r'] = mix(p['arm_r'], {'dir': (0.3, 0.45, -0.8), 'elbow': 95, 'fore': 70, 'hand': 'cup', 'shrug': 3 * abs(shake)}, hand)
-    p['ik'] = {'r': {'to': ('self', 'spine_01', (-0.03, 0.14, -0.04)), 'pole': (0.9, -0.2, -0.4), 'w': hand}}
+    p['ik'] = {'r': {'to': ('self', 'spine_02', (-0.04, 0.15, 0.0)), 'pole': (0.9, -0.2, -0.4), 'w': hand, 'palm': (-0.3, -1, 0)}}
     p['arm_l'] = mix(p['arm_l'], {'dir': (0.32, 0.2, -1), 'elbow': 30, 'fore': 20, 'hand': 'relaxed'}, fold)
     return p
 

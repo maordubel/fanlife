@@ -305,7 +305,8 @@ def envelope(F, hair_pts, ctr, squash=0.22):
     hair = _shell_bins(hair_pts, ctr, smooth=True) if hair_pts is not None and len(hair_pts) else None
     def need(co):
         s_, rr = scalp(co)
-        if hair:
+        up = (Vector(co) - ctr).normalized().z
+        if hair and up < 0.8:   # over the crown the hat simply sits on the scalp: no tufts pushing it into a point
             h, _ = hair(co); s_ = max(s_, s_ + squash * max(0.0, h - s_))
         return s_, rr
     return need
