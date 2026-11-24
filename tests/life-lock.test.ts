@@ -25,3 +25,16 @@ describe('LIFE lock (owner, 24.11.2026)', () => {
     expect(featureDoor(false, true).open).toBe(true)
   })
 })
+
+describe('fans are redirected to an absolute Coming soon address on the public host', () => {
+  it('builds the address from the host the request came in on, never another site', async () => {
+    const {NextRequest} = await import('next/server')
+    const {middleware} = await import('@/middleware')
+    const prev = {k: process.env.FAN_LIFE_ADMIN_KEY, n: process.env.NODE_ENV}
+    process.env.FAN_LIFE_ADMIN_KEY = 'a-long-enough-owner-key-123'
+    const go = async (host: string) => (await middleware(new NextRequest('https://localhost:3000/clubs/olympiacos/life', {headers: {host}}))).headers.get('location')
+    expect(await go('fanlife.dubelteam.com')).toBe('https://fanlife.dubelteam.com/coming-soon/life')
+    expect(await go('evil.example')).toBe('https://fanlife.dubelteam.com/coming-soon/life')
+    process.env.FAN_LIFE_ADMIN_KEY = prev.k
+  })
+})
