@@ -61136,11 +61136,11 @@
   },
   "maccabi-haifa": {
    "quotaMode": "full",
-   "size": 234,
+   "size": 241,
    "quota": {
-    "1": 75,
-    "2": 82,
-    "3": 47,
+    "1": 79,
+    "2": 84,
+    "3": 48,
     "4": 20,
     "5": 10
    },
@@ -63016,6 +63016,62 @@
      "assignment": "new-member",
      "rationale": "Daily research added a documented first-team player.",
      "reviewedAt": "2026-11-22"
+    },
+    "maccabi-haifa:daily-player-bc70f754456a9cc7e4eea6de": {
+     "priceM": 3,
+     "priceTier": "LEADING",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-24"
+    },
+    "maccabi-haifa:daily-player-7e31e95a0a8c6c27c65352bf": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-24"
+    },
+    "maccabi-haifa:daily-player-7bb6925b799ef99191293e5b": {
+     "priceM": 2,
+     "priceTier": "REGULAR",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-24"
+    },
+    "maccabi-haifa:daily-player-1b0d8ce10355797291a21577": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-24"
+    },
+    "maccabi-haifa:daily-player-f4f8b666947fdbfce524eef1": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-24"
+    },
+    "maccabi-haifa:daily-player-4812c27fee5be02d83758cf7": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-24"
+    },
+    "maccabi-haifa:daily-player-a60859b1dc54e241471f774c": {
+     "priceM": 1,
+     "priceTier": "REST",
+     "locked": false,
+     "assignment": "new-member",
+     "rationale": "Daily research added a documented first-team player.",
+     "reviewedAt": "2026-11-24"
     }
    }
   },

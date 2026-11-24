@@ -1,18 +1,16 @@
 {
- "day": "2026-11-22",
+ "day": "2026-11-24",
  "clubId": "maccabi-haifa",
- "runUrl": "https://github.com/maordubel/fanlife/actions/runs/45018147326",
+ "runUrl": "https://github.com/maordubel/fanlife/actions/runs/45412214473",
  "added": {
-  "matches": 301,
-  "players": 33,
-  "seasons": 11,
-  "kits": 27,
-  "lineups": 196,
-  "scorers": 148
+  "matches": 25,
+  "players": 10,
+  "seasons": 3,
+  "kits": 8,
+  "lineups": 2,
+  "scorers": 0
  },
  "heldDays": [
-  "2026-05-06",
-  "2026-05-23",
   "2026-07-28"
  ],
  "steps": [
@@ -34,17 +32,17 @@
   {
    "step": "Historical results, elevens and scorers",
    "state": "ok",
-   "info": "Continued from the historical results checkpoint, up to 90 fixtures"
+   "info": "Continued from the historical results checkpoint, up to 30 fixtures"
   },
   {
    "step": "Historical players",
    "state": "ok",
-   "info": "28 documented senior club stints"
+   "info": "10 documented senior club stints"
   },
   {
    "step": "Season archives, scoresheets and shirt metadata",
    "state": "ok",
-   "info": "11 checked seasons and 120 dated results"
+   "info": "4 checked seasons and 28 dated results"
   },
   {
    "step": "Kit archive",
@@ -52,12 +50,17 @@
    "info": "www.footballkitarchive.com: robots.txt disallows this path"
   },
   {
-   "step": "Open league season datasets",
+   "step": "Prices for newly eligible cards",
    "state": "ok",
-   "info": "No league in this source is mapped to this club"
+   "info": "Existing prices preserved"
+  },
+  {
+   "step": "Head-to-head ledger",
+   "state": "ok",
+   "info": "Rebuilt the club fixture ledger"
   }
  ],
- "dataVersion": "10e963316438e775",
+ "dataVersion": "e50460b8cf653d69",
  "uncertainties": [
   {
    "record": "maccabi-haifa:daily-match-09f335276245bd7b84114b7f",
@@ -138,17 +141,12 @@
    "record": "maccabi-haifa:daily-match-3f5759b3d325772d9aa47544",
    "code": "DAILY_MATCH_CONFLICT",
    "message": "Different opponents, home/away order or score on the same day."
-  },
-  {
-   "record": "maccabi-haifa:daily-match-a615e200845a7bebb5d735e6",
-   "code": "DAILY_MATCH_CONFLICT",
-   "message": "Different opponents, home/away order or score on the same day."
   }
  ],
  "featureInputs": {
-  "players": 237,
-  "matches": 316,
-  "seasons": 11,
+  "players": 244,
+  "matches": 341,
+  "seasons": 43,
   "kits": 100
  }
 }
